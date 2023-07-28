@@ -122,7 +122,7 @@ describe "Budget Investments" do
     create(:budget_investment, heading: heading)
     visit budget_investments_path(budget, heading_id: heading.id)
     within("#sidebar") do
-      expect(page).to have_css(".map_location")
+      expect(page).to have_css(".map-location")
     end
 
     unlocated_heading = create(:budget_heading, name: "No Map", price: 500, group: group,
@@ -130,7 +130,7 @@ describe "Budget Investments" do
     create(:budget_investment, heading: unlocated_heading)
     visit budget_investments_path(budget, heading_id: unlocated_heading.id)
     within("#sidebar") do
-      expect(page).not_to have_css(".map_location")
+      expect(page).not_to have_css(".map-location")
     end
   end
 
@@ -1637,7 +1637,7 @@ describe "Budget Investments" do
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
-      within ".map_location" do
+      within ".map-location" do
         expect(page).to have_css(".map-icon", count: 6, visible: :all)
       end
     end
@@ -1651,7 +1651,7 @@ describe "Budget Investments" do
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
-      within ".map_location" do
+      within ".map-location" do
         expect(page).to have_css(".map-icon", count: 2, visible: :all)
       end
     end
@@ -1675,7 +1675,7 @@ describe "Budget Investments" do
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
-      within ".map_location" do
+      within ".map-location" do
         expect(page).to have_css(".map-icon", count: 4, visible: :all)
       end
     end
@@ -1693,9 +1693,30 @@ describe "Budget Investments" do
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
-      within ".map_location" do
+      within ".map-location" do
         expect(page).to have_css(".map-icon", count: 0, visible: :all)
       end
+    end
+
+    scenario "Shows the polygon associated to the current heading" do
+      triangle = '{ "geometry": { "type": "Polygon", "coordinates": [[-0.1,51.5],[-0.2,51.4],[-0.3,51.6]] } }'
+      rectangle = '{ "geometry": { "type": "Polygon", "coordinates": [[-0.1,51.5],[-0.2,51.5],[-0.2,51.6],[-0.1,51.6]] } }'
+
+      park = create(:geozone, geojson: triangle, color: "#03ee03")
+      square = create(:geozone, geojson: rectangle, color: "#ff04ff")
+
+      group = create(:budget_group)
+      green_areas = create(:budget_heading, group: group, geozone: park, latitude: 51.5, longitude: -0.2)
+      create(:budget_heading, group: group, geozone: square, latitude: 51.5, longitude: -0.2)
+
+      visit budget_investments_path(group.budget, heading_id: green_areas)
+
+      expect(page).to have_css ".map-polygon[fill='#03ee03']"
+      expect(page).not_to have_css ".map-polygon[fill='#ff04ff']"
+
+      find(".map-polygon").click
+
+      expect(page).not_to have_css ".leaflet-popup"
     end
 
     scenario "Shows all investments and not only the ones on the current page" do
@@ -1711,7 +1732,7 @@ describe "Budget Investments" do
         expect(page).to have_css(".budget-investment", count: 2)
       end
 
-      within(".map_location") do
+      within(".map-location") do
         expect(page).to have_css(".map-icon", count: 3, visible: :all)
       end
     end

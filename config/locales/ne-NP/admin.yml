@@ -1,0 +1,1757 @@
+ne:
+  admin:
+    header:
+      title: प्रशासन
+    actions:
+      actions: कार्यहरू
+      block_author: "लेखकलाई ब्लक गर्नुहोस्"
+      confirm_action: "के तपाईँ निश्चित हुनु हुन्छ? %{action} \"%{name}\""
+      confirm_delete: "के तपाईँ निश्चित हुनुहुन्छ? यो कार्यबाट \"%{name}\" मेटिने छ र पूर्ववत गर्न सकिँदैन।"
+      confirm_hide: मध्यस्थता पुष्टि गर्नुहोस्
+      delete: "मेट्नुहोस्"
+      hide: लुकाउनुहोस्
+      label: "%{action} %{name}"
+      restore: पुनर्स्थापन गर्नुहोस्
+      mark_featured: चित्रित
+      unmark_featured: विशेष चिन्ह हटाउनुहोस्
+      edit: "सम्पादन\nसम्पादन गर्नुहोस्"
+      configure: कन्फिगर
+    officing_booth:
+      title: "तपाईं %{booth} स्थित बुथमा अफिस गर्दै हुनुहुन्छ। यदि यो सही छैन भने, जारी नराख्नुहोस् र मद्दतका लागी फोन नम्बरमा कल गर्नुहोस्। धन्यवाद।"
+    banners:
+      index:
+        title: ब्यानरहरू
+        create: ब्यानर बनाउनुहोस्
+        filters:
+          all: सबै
+          with_active: सक्रिय
+          with_inactive: निष्क्रिय
+        preview: पूर्वावलोकन
+      banner:
+        sections_label: खण्डहरू जहाँ यो देखा पर्नेछ
+        sections:
+          homepage: गृहपृष्ठ
+          debates: बहसहरू
+          proposals: प्रस्तावहरू
+          budgets: सहभागितामूलक बजेट
+          help_page: सहायता पृष्ठ
+          sdg: एस डि जि
+      create:
+        notice: "ब्यानर सफलतापूर्वक सिर्जना गरियो"
+      destroy:
+        notice: "ब्यानर सफलतापूर्वक मेटाइयो"
+      edit:
+        editing: ब्यानर सम्पादन गर्नुहोस्
+        form:
+          submit_button: परिवर्तनहरू सुरक्षित गर्नुहोस
+      new:
+        creating: ब्यानर सिर्जना गर्नुहोस्
+      update:
+        notice: "ब्यानर सफलतापूर्वक अद्यावधिक गरियो"
+    activity:
+      show:
+        action: कार्य
+        actions:
+          block: अवरुद्ध गरियो
+          hide: लुकाइएको
+          restore: पुनर्स्थापित गरियो
+        by: द्वारा मध्यस्थता
+        content: सामग्री
+        filter: देखाउनु
+        filters:
+          all: सबै
+          on_comments: टिप्पणीहरू
+          on_debates: बहसहरू
+          on_proposals: प्रस्तावहरू
+          on_users: प्रयोगकर्ताहरू
+          on_system_emails: प्रणालीका इमेलहरू
+        title: मध्यस्थकर्ता क्रियाकलाप
+        type: प्रकार
+        no_activity: त्यहाँ मध्यस्थकर्ताका कुनै गतिविधि छैन।
+    budgets:
+      actions:
+        ballots: "बुथहरू सिर्जना गर्नुहोस्"
+        confirm:
+          ballots: "के तपाईँ निश्चित हुनुहुन्छ? यो कार्य मात्र आवश्यक छ यदि तपाइँ अन्तिम मतदान चरणको समयमा भौतिक बुथहरू प्रयोग गर्न जाँदै हुनुहुन्छ। नागरिकहरूले अझै पनि भौतिक बुथहरूसँग वा बिना वेब मार्फत मतदान गर्न सक्षम हुनेछन्।"
+          destroy: "के तपाईँ निश्चित हुनुहुन्छ? यसले बजेट र यससँग सम्बन्धित सबै समूह र शीर्षकहरू मेटाउनेछ। यो कार्य पूर्ववत गर्न सकिँदैन।"
+        descriptions:
+          ballots: "यसले तपाईंलाई भौतिक मतपत्रहरू व्यवस्थापन गर्न दिनेछ। यदि तपाइँ अन्तिम मतदान चरणको समयमा मतपत्रहरू सङ्कलन गर्न भौतिक बुथहरू प्रयोग गर्न जाँदै हुनुहुन्छ भने मात्र यो विकल्प प्रयोग गर्नुहोस्।"
+          calculate_winners: 'परिणामहरू गणना गरेपछि, केवल प्रशासकहरूले तिनीहरूलाई पहुँच गर्न सक्षम हुनेछन्। तिनीहरू सार्वजनिक हुनेछन् जब परियोजना "%{phase}" चरणमा पुग्छ <strong>यदि विकल्प "नतिजा देखाउनुहोस्" सक्षम पारिएको छ भने</strong> बजेट सम्पादन गर्दा।'
+          destroy: "यसले बजेट र यससँग सम्बन्धित सबै समूह र शीर्षकहरू मेटाउनेछ। यो कार्य अन्डू गर्न सकिँदैन।"
+        edit: "बजेट सम्पादन"
+        preview: "पूर्वावलोकन"
+        preview_results: "परिणामहरू पूर्वावलोकन"
+      index:
+        title: सहभागितामूलक बजेटहरू
+        new_link: नयाँ बजेट बनाउनुहोस्
+        filter: फिल्टर
+        filters:
+          all: सबै
+          open: खोल्नुहोस्
+          finished: समाप्त भयो
+        budget_investments: लगानीका परियोजनाहरू
+        table_budget_type: "प्रकार"
+        table_completed: सम्पन्न
+        table_draft: "मस्यौदा"
+        table_duration: "अवधि"
+        table_name: नाम
+        table_phase: चरण
+        table_phase_progress: "(%{current_phase_number}/%{total_phases})"
+        type_multiple: "बहु शीर्षक"
+        type_pending: "विचाराधीन: अहिलेसम्म कुनै शीर्षकहरू छैनन्"
+        type_single: "एकल शीर्षक"
+        admin_ballots: मतपत्रहरू
+        no_budgets: "बजेट छैन ।"
+      create:
+        notice: नयाँ सहभागितामूलक बजेट सफलतापूर्वक सिर्जना गरियो!
+      update:
+        notice: सहभागितामूलक बजेट सफलतापूर्वक अद्यावधिक गरियो
+      publish:
+        notice: "सहभागितामूलक बजेट सफलतापूर्वक प्रकाशित"
+      edit:
+        title: सहभागितामूलक बजेट सम्पादन गर्नुहोस्
+        drafting: "यो सहभागी बजेट मस्यौदा मोडमा छ, केवल प्रशासकहरूले यसलाई सार्वजनिक साइटमा देख्न सक्छन्। एक पटक प्रकाशित भएपछि यसलाई फेरि ड्राफ्ट मोडमा परिवर्तन गर्न सकिँदैन"
+        publish: "बजेट सार्वजनिक गर्ने"
+        delete: बजेट हटाउनुहोस्
+        phase: चरण
+        phases_caption: "चरणहरू"
+        phases_table_help_text: "यी चरणहरूको कन्फिगरेसन जानकारी उद्देश्यका लागि मात्र प्रयोग गरिन्छ। यसको कार्य सहभागी बजेटको सार्वजनिक पृष्ठमा प्रदर्शित चरणहरू जानकारी परिभाषित गर्न हो।"
+        duration: "अवधि"
+        enabled: क्रियाशील
+        actions: कार्यहरू
+        enable_phase: "%{phase} चरण सक्रिय गर्नुहोस्"
+        active: सक्रिय
+        blank_dates: मितिहरू खाली छन्
+        administrators:
+          zero: "Select administrators"
+          one: "१ प्रशासक चयन गरियो"
+          other: "%{count} प्रशासकहरू चयन गरियो"
+        valuators:
+          zero: "Select valuators"
+          one: "१ मूल्याङ्कनकर्ता चयन गरियो"
+          other: "%{count} मूल्याङ्कनकर्ताहरू चयन गरियो"
+        empty_administrators: "प्रशासकहरू छैनन्"
+        empty_valuators: "मूल्याङ्कन गर्नेहरू छैनन्"
+        name_description: "यो सक्रिय हुँदा हेडर र कार्डहरूमा प्रयोग हुने सहभागितामूलक बजेटको नाम हो"
+        image_description: "यदि छवि अपलोड गरिएको छ भने यो सहभागितामूलक बजेटको शीर्षमा ब्यानरको रूपमा प्रयोग गरिनेछ, अन्यथा बजेटको लागि पूर्वनिर्धारित रंग प्रयोग गरिनेछ।"
+        main_call_to_action: "मुख्य कार्य कल गर्नुस् (वैकल्पिक)"
+        main_call_to_action_description: "यो लिङ्क यस सहभागितामूलक बजेटको मुख्य ब्यानरमा देखा पर्नेछ र तपाइँको प्रयोगकर्तालाई प्रस्ताव सिर्जना गर्ने, अवस्थितका लागि मतदान गर्ने वा प्रक्रियाको बारेमा थप जान्ने जस्ता विशिष्ट कार्यहरू गर्न प्रोत्साहित गर्दछ।"
+        info:
+          budget_settings: "सामान्य सहभागिता बजेट सेटिङहरू"
+          staff_settings: "बजेटका लागि तोकिएका प्रशासक र मूल्याङ्कनकर्ताहरू"
+        hide_money: "पैसा लुकाउनुहोस्"
+        hide_money_help_text: "यदि यो विकल्प चुनाव गरियो भने, पैसाको रकम देखाउने सबै फिल्डहरू सम्पूर्ण प्रक्रियाभर लुकाइनेछ।"
+      destroy:
+        success_notice: ब्यानर सफलतापूर्वक मेटाइयो
+        unable_notice: तपाईंले सम्बद्ध लगानीहरू भएको बजेट मेटाउन सक्नुहुन्न
+        unable_notice_polls: तपाईले सम्बद्ध जनमत भएको बजेट मेटाउन सक्नुहुन्न
+      new:
+        title_multiple: बहु शीर्षक नयाँ बजेट
+        title_single: नयाँ एकल शीर्षक बजेट
+      help:
+        budgets: "सहभागितामूलक बजेटले नागरिकहरूलाई संस्थाद्वारा प्रस्तावहरूको अनुगमन र कठोर मूल्याङ्कन गरी बजेटको केही अंश कसरी खर्च गर्ने भनेर प्रत्यक्ष रूपमा प्रस्ताव गर्न र निर्णय गर्न अनुमति दिन्छ।"
+        groups:
+          multiple: "समूहहरू शीर्षकहरू व्यवस्थित गर्नका लागि हुन्। समूह सिर्जना भएपछि र यसमा शीर्षकहरू समावेश भए पछि, प्रयोगकर्ताले प्रति समूह कतिवटा शीर्षकहरूमा मतदान गर्न सक्छन् भनेर निर्धारण गर्न सम्भव छ।"
+          single: "समूहहरू शीर्षकहरू व्यवस्थित गर्नका लागि हुन्, किनकि यो बजेटमा एउटा शीर्षक मात्र हुनेछ, उही नाम प्रयोग गर्न सकिन्छ किनभने यो कतै देखिने छैन। तपाईं मात्र अर्को चरण जारी राख्न सक्नुहुन्छ।"
+        headings:
+          multiple: "शीर्षकहरू सहभागी बजेटको पैसा विभाजित गर्नका लागि हुन्। यहाँ तपाईंले यस समूहको लागि शीर्षकहरू थप्न सक्नुहुन्छ र प्रत्येक शीर्षकको लागि प्रयोग गरिने रकम तोक्न सक्नुहुन्छ।"
+          single: "शीर्षकहरू सहभागी बजेटको पैसा विभाजित गर्नका लागि हुन्। यस बजेटले एउटा शीर्षक मात्र समावेश गर्ने भएकोले, यो सहभागीता बजेटमा खर्च हुने पैसालाई तपाईंले स्थापना गर्ने ठाउँ हो।"
+        phases: "सहभागितामूलक बजेटका विभिन्न चरण हुन्छन् । यहाँ तपाइँ चरणहरू सक्षम वा असक्षम गर्न सक्नुहुन्छ र प्रत्येक व्यक्तिगत चरण अनुकूलन गर्न सक्नुहुन्छ। यी चरणहरूको कन्फिगरेसन जानकारी उद्देश्यका लागि मात्र प्रयोग गरिन्छ र सहभागी बजेटको सार्वजनिक पृष्ठमा प्रदर्शित हुनेछ।"
+      show:
+        add_group: "समूह थप्नुहोस्"
+        add_heading: "शीर्षक थप्नुहोस्"
+        groups_and_headings: "शीर्षक समूहहरू"
+        headings_caption: "%{group} मा शीर्षकहरू"
+      winners:
+        calculate: विजेताकाे लगानी गणना गर्नुहोस्
+        calculated: विजेताहरूको गणना भइरहेको छ, यसले एक मिनेट लिन सक्छ।
+        recalculate: 'विजेताकाे लगानी पुन: गणना गर्नुहोस्'
+    budget_groups:
+      name: "नाम"
+      headings_name: "शीर्षकहरू"
+      headings_manage: "शीर्षकहरू"
+      no_groups: "त्यहाँ कुनै समूहहरू छैनन्।"
+      amount:
+        one: "त्यहाँ १ समूह छ ।"
+        other: "त्यहाँ %{count} समूहहरू छन् ।"
+      create:
+        notice: "समूह सफलतापूर्वक सिर्जना गरियो!"
+      update:
+        notice: "समूह सफलतापूर्वक अद्यावधिक गरियो"
+      destroy:
+        success_notice: "समूह सफलतापूर्वक मेटाइयो"
+        unable_notice: "तपाईंले सम्बद्ध शीर्षकहरू भएको समूह मेटाउन सक्नुहुन्न"
+      form:
+        create: "नयाँ समूह सिर्जना गर्नुहोस्"
+        edit: "समूह सम्पादन गर्नुहोस्"
+        max_votable_headings_info: "केवल छनौट परियोजना चरणमा लागू हुन्छ। परियोजनाहरू मतदान चरणहरूमा प्रयोगकर्ताहरूले प्रति समूह एक शीर्षकमा मात्र मतदान गर्न सक्छन्।"
+        submit: "समूह सुरक्षित गर्नुहोस्"
+      index:
+        new_button: "नयाँ समूह थप्नुहोस्"
+    budget_headings:
+      no_headings: "<strong>%{group}</strong> समूहमा कुनै शीर्षकहरू छैनन्।"
+      create:
+        notice: "शीर्षक सफलतापूर्वक सिर्जना गरियो!"
+      update:
+        notice: "शीर्षक सफलतापूर्वक अद्यावधिक गरियो"
+      destroy:
+        success_notice: "शीर्षक सफलतापूर्वक मेटाइयो"
+        unable_notice: "तपाईंले लगानीसँग सम्बन्धित शीर्षक मेटाउन सक्नुहुन्न"
+      form:
+        max_ballot_lines_info: '"भोटिंग परियोजनाहरू" चरणमा प्रयोगकर्ताले यो शीर्षकमा भोट गर्न सक्ने परियोजनाहरूको अधिकतम संख्या। अनुमोदन मतदान प्रयोग गरेर बजेटहरूको लागि मात्र।'
+        population_info: "बजेट शीर्षक जनसङ्ख्या क्षेत्रलाई बजेटको अन्त्यमा तथ्याङ्क उद्देश्यका लागि प्रयोग गरिन्छ जुन प्रतिशतले मतदान गरेको जनसंख्या भएको क्षेत्र प्रतिनिधित्व गर्दछ। फिल्ड ऐच्छिक छ त्यसैले यदि यो लागू हुँदैन भने तपाईंले यसलाई खाली छोड्न सक्नुहुन्छ।"
+        coordinates_info: "यदि अक्षांश र देशान्तर प्रदान गरिएको छ भने, यो शीर्षकको लागि लगानी पृष्ठमा नक्सा समावेश हुनेछ। यो नक्सा ती निर्देशांकहरू प्रयोग गरेर केन्द्रित हुनेछ।"
+        content_blocks_info: "यदि अनुमति दिनुहोस् सामग्री ब्लक जाँच गरिएको छ भने, तपाइँ सेटिङहरू > अनुकूलन सामग्री ब्लकहरू बाट यस शीर्षकसँग सम्बन्धित अनुकूलन सामग्री सिर्जना गर्न सक्षम हुनुहुनेछ। यो सामग्री यस शीर्षकको लागि लगानी पृष्ठमा देखा पर्नेछ।"
+        create: "नयाँ शीर्षक सिर्जना गर्नुहोस्"
+        edit: "शीर्षक सम्पादन गर्नुहोस्"
+        submit: "शीर्षक सुरक्षित गर्नुहोस्"
+      group_switcher:
+        currently_showing: "<strong>%{group}</strong> समूहबाट शीर्षकहरू देखाउँदै।"
+        different_group: "फरक समूहबाट शीर्षकहरू प्रबन्ध गर्नुहोस्"
+        the_other_group: "%{group} समूहबाट शीर्षकहरू प्रबन्ध गर्नुहोस्।"
+      index:
+        back: "समूहहरूमा फर्कनुहोस्"
+        new_button: "नयाँ शीर्षक थप्नुहोस्"
+        title: "%{budget} / %{group} शीर्षकहरू"
+    budget_phases:
+      edit:
+        title: "चरण सम्पादन"
+        dates_help_text: "जानकारी उद्देश्यका लागि मात्र"
+        description_help_text: चरण सक्रिय हुँदा यो पाठ हेडरमा देखा पर्नेछ
+        duration: "चरणको अवधि"
+        duration_description: "यी क्षेत्रहरू सूचना उद्देश्यका लागि मात्र प्रयोग गरिन्छ र <strong>सक्रिय चरणको स्वचालित अद्यावधिक ट्रिगर नगर्नुहोस्।</strong> यसलाई अद्यावधिक गर्नको लागि, बजेट सम्पादन गर्नुहोस् र सक्रिय चरण चयन गर्नुहोस्।"
+        enabled_help_text: यो चरण बजेटको चरणबद्ध टाइमलाइनमा सार्वजनिक हुनेछ।
+        image_description: "यदि छवि अपलोड गरिएको छ भने यो यस चरणको विवरणको छेउमा प्रदर्शित हुनेछ।"
+        main_call_to_action: "मुख्य कार्य कल गर्नुस् (वैकल्पिक)"
+        main_call_to_action_description: "यो लिङ्क यस सहभागी बजेटको मुख्य ब्यानरमा देखा पर्नेछ जब यो चरण सक्षम हुन्छ र तपाइँको प्रयोगकर्तालाई प्रस्ताव सिर्जना गर्ने, अवस्थितका लागि मतदान गर्ने वा प्रक्रियाको बारेमा थप जान्ने जस्ता विशिष्ट कार्यहरू गर्न प्रोत्साहित गर्दछ।"
+        name_help_text: "यो चरणको शीर्षक हो । जब यो चरण सक्रिय हुन्छ प्रयोगकर्ताहरूले हेडरमा पढ्नेछन्।"
+        save_changes: परिवर्तनहरू सुरक्षित गर्नुहोस
+      index:
+        title: "%{budget} चरणहरू"
+    budget_investments:
+      index:
+        heading_filter_all: सबै शीर्षकहरू
+        administrator_filter_all: सबै प्रशासकहरू
+        valuator_filter_all: सबै मूल्याङ्कनकर्ताहरू
+        tags_filter_all: सबै ट्यागहरू
+        advanced_filters: उन्नत फिल्टरहरू
+        placeholder: परियोजनाहरू खोज्नुहोस्
+        filters:
+          all: सबै
+          without_admin: बिना नियुक्त व्यवस्थापक
+          without_valuator: बिना नियुक्त मूल्याङ्कनकर्ता
+          under_valuation: अबमुल्यांन
+          valuation_finished: मूल्याङ्कन सकियो
+          feasible: सम्भाव्य
+          selected: छानिएकाे
+          undecided: अनिश्चित
+          unfeasible: असम्भाव्य
+          min_total_supports: न्यूनतम समर्थनहरू
+          max_total_supports: अधिकतम समर्थनहरू
+          winners: विजेताहरू
+          one_filter: "हाल लागू गरिएका फिल्टरहरू: <b><em>%{filter}</em></b>"
+          two_filters: "हाल लागू गरिएका फिल्टरहरू: <b><em>%{filter}, %{advanced_filters}</em></b>"
+        buttons:
+          filter: फिल्टर
+        download_current_selection: "हालको चयन डाउनलोड गर्नुहोस्"
+        no_budget_investments: "लगानीका आयोजना छैनन् ।"
+        title: लगानी परियोजनाहरू
+        columns: स्तम्भहरू
+        assigned_admin: नियुक्त प्रशासक
+        no_admin_assigned: कुनै प्रशासक नियुक्त गरिएको छैन
+        no_valuators_assigned: कुनै मूल्याङ्कनकर्ता तोकिएका छैनन्
+        feasibility:
+          feasible: "सम्भाव्य"
+          unfeasible: "असम्भाव्य"
+          undecided: "अनिश्चित"
+        selected: "छानिएकाे"
+        select: "छनाेट"
+        list:
+          id: ID
+          title: टाइटल
+          supports: सहयाेगहरू
+          admin: प्रशासक
+          valuator: मूल्याङ्कनकर्ता
+          valuation_group: मूल्याङ्कन समूह
+          geozone: सञ्चालनको दायरा
+          feasibility: सम्भाव्यता
+          valuation_finished: Val. Fin.
+          selected: छानिएकाे
+          visible_to_valuators: मूल्याङ्कनकर्ताहरूलाई देखाउनुहोस्
+          author_username: लेखक प्रयोगकर्ता नाम
+          incompatible: असंगत
+          price: मूल्य
+          author: लेखक
+        cannot_calculate_winners: विजेता परियोजनाहरू गणना गर्न बजेट चरण "%{phase}" मा रहनुपर्छ
+        see_results: "परिणामहरू हेर्नुहोस्"
+        milestone_tags_filter_all: "सबै माइलस्टोन ट्यागहरू"
+      show:
+        assigned_admin: नियुक्त प्रशासक
+        assigned_valuators: नियुक्त मूल्याङ्कनकर्ताहरू
+        classification: वर्गीकरण
+        info: "%{budget_name} - समूह: %{group_name} - लगानीका परियोजना %{id}"
+        edit: सम्पादन
+        edit_classification: वर्गीकरणलाई सम्पादन गर्नुहोस्
+        by: द्वारा
+        sent: पठाइएको
+        group: समूह
+        heading: शीर्षक
+        dossier: दस्तावेजहरू
+        edit_dossier: दस्तावेजहरू सम्पादन गर्नुहोस्
+        tags: ट्यागहरू
+        undefined: अपरिभाषित
+        compatibility:
+          title: संगतता
+          "true": असंगत
+          "false": मिल्दो
+        selection:
+          title: छनोट
+        winner:
+          title: विजेता
+          "true": "हो"
+          "false": "होइन"
+        valuator_groups: "मूल्याङ्कनकर्ताका समूहहरू"
+        preview: लगानी पूर्वावलोकन
+      edit:
+        classification: वर्गीकरण
+        compatibility: संगतता
+        selection: छनोट
+        assigned_valuators: मूल्याङ्कनकर्ताहरू
+        select_heading: शीर्षक चयन गर्नुहोस्
+        submit_button: अद्यावधिक
+        user_tags: प्रयोगकर्ता तोकिएको ट्यागहरू
+        tags_placeholder: "तपाईंले अल्पविरामद्वारा छुट्याउन चाहनुभएको ट्यागहरू लेख्नुहोस् (,)"
+        undefined: अपरिभाषित
+      search_unfeasible: असम्भाव्य खोज्नुस्
+    budgets_wizard:
+      creation_timeline:
+        budget: बजेट
+        groups: समूहहरू
+        headings: शीर्षकहरू
+        phases: चरणहरू
+      budgets:
+        continue: "समूहहरूमा जारी राख्नुहोस्"
+      groups:
+        back: "बजेट सम्पादन गर्न फर्कनुहोस्"
+        continue: "शीर्षकहरूमा जारी राख्नुहोस्"
+      headings:
+        continue: "चरणहरूमा जारी राख्नुहोस्"
+        single:
+          back: "समूह सम्पादनमा फर्कनुहोस्"
+      heading_mode:
+        multiple:
+          description: "धेरै समूहहरू, जिल्लाहरू वा विषयहरूसँग प्रक्रिया सिर्जना गर्नुहोस्। तपाईंसँग पैसाको धेरै झोलाहरू जस्तै केहि छ। उदाहरणका लागि, \"उत्तर-काठमाडौं\" को लागि नेरू ४, ०००, ००० \"\"दक्षिण-काठमाडौं\" को लागि नेरू ३, ०००, ०००, \"केन्द्र-काठमाडौं\" र सम्पूर्ण शहरको लागि नेरू २, ८००, ०००। वा खेल, संस्कृति वा स्वास्थ्य जस्ता धेरै विषयवस्तुहरूको लागि।."
+          link: "बहु शीर्षक बजेट"
+          title: "<strong>बहु शीर्षकहरू</strong> बजेट"
+        single:
+          description: "समूह, जिल्ला वा विषयको साथ प्रक्रिया सिर्जना गर्नुहोस्। तपाईंसँग पैसाको झोला जस्तै केहि छ। उदाहरण को लागी, जिल्ला को लागी नेरू २५०,०००, वा १००,००० संस्कृति को लागी।."
+          link: "एकल शीर्षक बजेट"
+          title: "<strong>एकल शीर्षक</strong> बजेट"
+        title: "सहभागितामूलक बजेटका प्रकार"
+      phases:
+        continue: "समाप्त"
+        multiple:
+          back: "शीर्षकहरूमा फर्कनुहोस्"
+        single:
+          back: "शीर्षक सम्पादन गर्न फर्कनुहोस्"
+    milestones:
+      index:
+        table_id: "आईडी"
+        table_title: "टाइटल"
+        table_description: "विवरण"
+        table_publication_date: "प्रकाशन मिति"
+        table_status: अवस्था
+        table_actions: "कार्यहरू"
+        no_milestones: "परिभाषित माइलस्टोनहरू छैन"
+        image: "छवि"
+        show_image: "छवि देखाउनुहोस्"
+        documents: "कागजातहरू"
+        milestone: माइलस्टोन
+        new_milestone: नयाँ माइलस्टोन सिर्जना गर्नुहोस्
+        milestone_tags: माइलस्टोन ट्यागहरू
+      form:
+        admin_statuses: स्थितिहरू व्यवस्थापन गर्नुहोस्
+        no_statuses_defined: त्यहाँ अझै कुनै परिभाषित स्थितिहरू छैनन्
+      new:
+        creating: माइलस्टोन सिर्जना गर्नुहोस्
+      edit:
+        title: माइलस्टोन सम्पादन गर्नुहोस्
+      create:
+        notice: नयाँ माइलस्टोन सफलतापूर्वक सिर्जना गरियो!
+      update:
+        notice: माइलस्टोन सफलतापूर्वक अद्यावधिक गरियो
+      delete:
+        notice: माइलस्टोन सफलतापूर्वक मेटाइयो
+    statuses:
+      index:
+        title: माइलस्टोन स्थितिहरू
+        empty_statuses: त्यहाँ कुनै माइलस्टोन स्थितिहरू सिर्जना गरिएको छैन
+        new_status: नयाँ माइलस्टोनकाे स्थिति सिर्जना गर्नुहोस्
+        table_name: नाम
+        table_description: विवरण
+        table_actions: कार्यहरू
+      edit:
+        title: माइलस्टोन स्थिति सम्पादन गर्नुहोस्
+      update:
+        notice: माइलस्टोनकाे स्थिति सफलतापूर्वक अद्यावधिक गरियो
+      new:
+        title: माइलस्टोनकाे स्थिति सिर्जना गर्नुहोस्
+      create:
+        notice: माइलस्टोन स्थिति सफलतापूर्वक सिर्जना गरियो
+      delete:
+        notice: माइलस्टोन स्थिति सफलतापूर्वक मेटाइयो
+    progress_bars:
+      manage: "प्रगति बारहरू व्यवस्थापन गर्नुहोस्"
+      index:
+        title: "प्रगति बारहरू"
+        no_progress_bars: "त्यहाँ कुनै प्रगति बारहरू छैनन् "
+        new_progress_bar: "नयाँ प्रगति बारहरू सिर्जना गर्नुहोस्"
+        primary: "प्राथमिक प्रगति बार"
+        table_id: "ID"
+        table_kind: "प्रकार"
+        table_title: "टाइटल"
+        table_percentage: "हालको प्रगति"
+      new:
+        creating: "प्रगति बार सिर्जना गर्नुहोस्"
+      edit:
+        title:
+          primary: "प्राथमिक प्रगति बार सम्पादन गर्नुहोस्"
+          secondary: "प्रगति बार %{title} सम्पादन गर्नुहोस्"
+      create:
+        notice: "प्रगति बार सफलतापूर्वक सिर्जना गरियो!"
+      update:
+        notice: "प्रगति बार सफलतापूर्वक अद्यावधिक गरियो"
+      delete:
+        notice: "प्रगति बार सफलतापूर्वक मेटियो"
+    comments:
+      index:
+        id: "ID"
+        content: "सामग्री"
+        author: "लेखक"
+        commentable_type: "प्रकार"
+        title: टिप्पणीहरू
+        no_comments: त्यहाँ कुनै टिप्पणीहरू छैनन्।
+        table_link: "लिङ्क"
+    hidden_comments:
+      index:
+        filter: फिल्टर
+        filters:
+          all: सबै
+          with_confirmed_hide: पुष्टि भयो
+          without_confirmed_hide: विचाराधीन
+        hidden_debate: लुकाइएका बहस
+        hidden_proposal: लुकाइएका प्रस्ताव
+        title: लुकाइएका टिप्पणीहरू
+        no_hidden_comments: त्यहाँ कुनै लुकाइएका टिप्पणीहरू छैनन्।
+    dashboard:
+      index:
+        back: '%{org} मा फर्कनुहोस्'
+        title: प्रशासन
+        description: '%{org} प्रशासक प्यानलमा स्वागत छ।'
+      actions:
+        index:
+          description: "जब प्रयोगकर्ताहरूले प्रस्तावहरू सिर्जना गर्छन् उनीहरूले उनीहरूको प्रस्तावको ड्यासबोर्ड पहुँच गर्न सक्छन्, जहाँ तपाइँ उनीहरूको विचारको लागि समर्थन प्राप्त गर्न स्रोतहरू र सिफारिसहरू प्रस्ताव गर्न सक्नुहुन्छ।"
+          create: स्रोत वा कार्य सिर्जना गर्नुहोस्
+          active: 'हो'
+          inactive: 'होइन'
+          title: संसाधन र कार्यहरू
+          action_title: टाइटल
+          action_type: प्रकार
+          required_supports: आवश्यक समर्थनहरू
+          day_offset: आवश्यक दिनहरू
+          action_active: सक्रिय
+          order: क्रम संख्या
+          published_proposal: प्रकाशित प्रस्ताव
+          default:
+            email: इमेल
+            polls: मतदान
+            poster: पोष्टर
+        new:
+          creating: प्रस्ताव ड्यासबोर्डको लागि नयाँ कार्य
+          back: सूचीमा फर्कनुहोस्
+        create:
+          notice: कार्य सफलतापूर्वक सिर्जना गरियो
+        edit:
+          editing: प्रस्तावहरू ड्यासबोर्डको लागि कार्य सम्पादन गर्नुहोस्
+          back: सूचीमा फर्कनुहोस्
+        delete:
+          success: कार्य सफलतापूर्वक मेटाइयो
+        form:
+          submit_button: सुरक्षित गर्नुहोस्
+          help_text: ० प्रविष्ट गर्नुहोस् ताकि यो मानलाई ध्यानमा नदिनुहोस्
+          published_proposal_help_text: प्रकाशित प्रस्तावहरूको लागि मात्र कार्य सिर्जना गर्न यो जाँच बाकस चिन्ह लगाउनुहोस्
+      administrator_tasks:
+        index:
+          description: "प्रस्तावहरूको ड्यासबोर्डमा प्रकाशित संसाधनहरूले प्रशासकहरूलाई अनुरोध गर्न बटन समावेश गर्न सक्छ। प्रयोगकर्ता अनुरोधहरू तल देखाइएको छ।"
+          title: स्रोतसाधन माग गरिएको
+          solve: समाधान गर्नुहोस्
+          no_records: त्यहाँ कुनै स्रोतहरू अनुरोध गरिएको छैन
+          source: स्रोत
+          resource: अनुरोध गरिएको स्रोत
+          filter: फिल्टर
+          filters:
+            pending: विचाराधीन
+            done: समाधान गरियो
+        edit:
+          back: विचाराधीन रहेका कार्यहरूको सूचीमा फर्कनुहोस्
+          solving: विचाराधीन कार्य हल गर्नुहाेस्
+        form:
+          solve: हल गरिएको रूपमा चिन्ह लगाउनुहोस्
+          proposal: प्रस्ताव
+          request: अनुरोध गरिएको स्रोत
+        update:
+          success: कार्य समाधान भएको रूपमा चिन्ह लगाइएको छ।
+    debates:
+      index:
+        id: आईडी
+        author: लेखक
+        title: बहसहरू
+        no_debates: त्यहाँ कुनै बहसहरू छैनन्।
+    hidden_debates:
+      index:
+        filter: फिल्टर
+        filters:
+          all: सबै
+          with_confirmed_hide: पुष्टि भयो
+          without_confirmed_hide: विचाराधीन
+        title: लुकेका बहसहरू
+        no_hidden_debates: त्यहाँ कुनै लुकाइएका बहसहरू छैनन्।
+    documents:
+      new:
+        title: "कागजात अपलोड गर्नुहोस्"
+        submit_button: "अपलोड"
+      index:
+        new_link: "नयाँ कागजात थप्नुहोस्"
+        no_documents: "त्यहाँ कुनै कागजात छैनन्।"
+        title: "कागजातहरू"
+        format: "ढाँचा"
+        size: "आकार"
+        url: "URL"
+      create:
+        success_notice: "कागजात सफलतापूर्वक अपलोड गरियो"
+        unable_notice: "अवैध कागजात"
+      destroy:
+        success_notice: "कागजात सफलतापूर्वक मेटाइयो"
+    hidden_users:
+      index:
+        filter: फिल्टर
+        filters:
+          all: सबै
+          with_confirmed_hide: पुष्टि भयो
+          without_confirmed_hide: विचाराधीन
+        title: लुकाइएका प्रयोगकर्ताहरू
+        user: प्रयोगकर्ता
+        no_hidden_users: त्यहाँ कुनै लुकाइएका प्रयोगकर्ता छैनन्।
+      show:
+        email: "इमेल:"
+        hidden_at: "लुकेको छ:"
+        registered_at: "मा दर्ता गरिएको:"
+        title: प्रयोगकर्ताको गतिविधि (%{user})
+    hidden_budget_investments:
+      index:
+        filter: फिल्टर
+        filters:
+          all: सबै
+          with_confirmed_hide: पुष्टि भयो
+          without_confirmed_hide: विचाराधीन
+        title: लुकाइएको बजेट लगानी
+        no_hidden_budget_investments: त्यहाँ कुनै लुकाइएका बजेट लगानी छैन
+    legislation:
+      processes:
+        create:
+          notice: 'प्रक्रिया सफलतापूर्वक सिर्जना गरियो। <a href="%{link}">भिजिट गर्न क्लिक गर्नुहोस्</a>'
+          error: प्रक्रिया सिर्जना गर्न सकिएन
+        update:
+          notice: 'प्रक्रिया सफलतापूर्वक अद्यावधिक गरियो। <a href="%{link}">भिजिट गर्न क्लिक गर्नुहोस्</a>'
+          error: प्रक्रिया अद्यावधिक गर्न सकिएन
+        destroy:
+          notice: प्रक्रिया सफलतापूर्वक मेटियो
+        edit:
+          back: फिर्ता
+          submit_button: परिवर्तनहरू सुरक्षित गर्नुहोस
+        form:
+          enabled: क्रियाशील
+          process: प्रक्रिया
+          debate_phase: बहस चरण
+          draft_phase: मस्यौदा चरण
+          draft_phase_description: यदि यो चरण सक्रिय छ भने, "प्रक्रिया" प्रक्रिया अनुक्रमणिकामा सूचीबद्ध गरिने छैन। प्रक्रिया पूर्वावलोकन गर्न र सुरु हुनु अघि सामग्री सिर्जना गर्न अनुमति दिनुहोस्।
+          allegations_phase: टिप्पणी चरण
+          proposals_phase: प्रस्ताव चरण
+          use_markdown: पाठकाे ढाँचा मिलाउन चिन्ह प्रयोग गर्नुहोस्
+          homepage_description: यहाँ तपाइँ प्रक्रियाको सामग्री व्याख्या गर्न सक्नुहुन्छ
+          banner_title: हेडर रंगहरू
+        index:
+          create: नयाँ प्रक्रिया
+          title: सहयोगात्मक कानून
+          filters:
+            active: सक्रिय
+            all: सबै
+        new:
+          back: फिर्ता
+          title: फिर्ता
+          submit_button: प्रक्रिया सिर्जना गर्नुहोस्
+        proposals:
+          orders:
+            id: "आईडी द्वारा क्रमबद्ध गर्नुहोस्"
+            title: "शीर्षक अनुसार क्रमबद्ध गर्नुहोस्"
+            supports: "कुल समर्थन द्वारा क्रमबद्ध गर्नुहोस्"
+        process:
+          title: प्रक्रिया
+          comments: टिप्पणीहरू
+          status: अवस्था
+          start_date: सुरू मिति
+          end_date: समाप्ति मिति
+          status_open: खोल्नुहोस्
+          status_closed: बन्द भयो
+          status_planned: नियोजित
+        subnav:
+          info: जानकारी
+          homepage: गृहपृष्ठ
+          draft_versions: मस्यौदा
+          questions: बहस
+          proposals: प्रस्तावहरू
+          milestones: पछ्याउँदै
+      homepage:
+        edit:
+          title: तपाईंको प्रक्रिया गृहपृष्ठ कन्फिगर गर्नुहोस्
+      proposals:
+        index:
+          title: टाइटल
+          back: फिर्ता
+          id: आईडी
+          supports: कुल समर्थनहरू
+        form:
+          custom_categories: वर्गहरू
+          custom_categories_description: अधिकतम १६० अक्षरहरूका वर्गहरू प्रयोगकर्ताहरूले प्रस्ताव सिर्जना गर्न चयन गर्न सक्छन्।
+          custom_categories_placeholder: तपाईले प्रयोग गर्न चाहनुहुने ट्यागहरू प्रविष्ट गर्नुहोस्, अल्पविराम (,) र उद्धरणहरू ("") बीचमा विभाजित गर्न प्रयाेग गर्न्नुस
+      draft_versions:
+        create:
+          notice: 'मस्यौदा सफलतापूर्वक सिर्जना गरियो। <a href="%{link}">भिजिट गर्न क्लिक गर्नुहोस्</a>'
+          error: मस्यौदा सिर्जना गर्न सकिएन
+        update:
+          notice: 'प्रक्रिया सफलतापूर्वक अद्यावधिक गरियो। <a href="%{link}">भिजिट गर्न क्लिक गर्नुहोस्</a>'
+          error: मस्यौदा अद्यावधिक गर्न सकिएन
+        destroy:
+          notice: मस्यौदा सफलतापूर्वक मेटाइयो
+        edit:
+          back: फिर्ता
+          submit_button: परिवर्तनहरू सुरक्षित गर्नुहोस
+          warning: तपाईंले पाठ सम्पादन गर्नुभएको छ, परिवर्तनहरू स्थायी रूपमा सुरक्षित गर्न बचत बटनमा क्लिक गर्न नबिर्सनुहोस्।
+          markdown_changes_message: "तपाईंले पाठलाई बचत नगरी सम्पादन गर्नुभएको छ। के तपाइँ पृष्ठ छोड्न पुष्टि गर्नुहुन्छ?"
+        form:
+          title: 'सम्पादन गर्दै <span class="strong">%{draft_version_title}</span> प्रक्रियाबाट <span class="strong">%{process_title}</span>'
+          launch_text_editor: पाठ सम्पादक सुरु गर्नुहोस्
+          close_text_editor: पाठ सम्पादक बन्द गर्नुहोस्
+          use_markdown: पाठकाे ढाँचा मिलाउन चिन्ह प्रयोग गर्नुहोस्
+          hints:
+            final_version: यो संस्करण, यस प्रक्रियाको लागि अन्तिम परिणामको रूपमा प्रकाशित गरिनेछ। यस संस्करणमा टिप्पणीहरूलाई अनुमति दिइने छैन।
+            status:
+              draft: तपाइँ प्रशासकको रूपमा पूर्वावलोकन गर्न सक्नुहुन्छ, अरू कसैले यसलाई देख्न सक्दैन
+              published: सबैका लागि देखिने
+          changelog_placeholder: अघिल्लो संस्करणबाट मुख्य परिवर्तनहरू थप्नुहोस्
+        index:
+          title: मस्यौदा संस्करणहरू
+          create: संस्करण सिर्जना गर्नुहोस्
+          delete: मेट्नुहोस्
+          preview: पूर्वावलोकन
+        new:
+          back: फिर्ता
+          title: नयाँ संस्करण सिर्जना गर्नुहोस्
+          submit_button: संस्करण सिर्जना गर्नुहोस्
+        table:
+          title: टाइटल
+          created_at: मा सिर्जना गरियो
+          comments: टिप्पणीहरू
+          final_version: अन्तिम संस्करण
+          status: अवस्था
+      questions:
+        create:
+          notice: 'प्रश्न सफलतापूर्वक सिर्जना गरियो। <a href="%{link}">भिजिट गर्न क्लिक गर्नुहोस्</a>'
+          error: प्रश्न सिर्जना गर्न सकिएन
+        update:
+          notice: 'प्रश्न सफलतापूर्वक अद्यावधिक गरियो। <a href="%{link}">भिजिट गर्न क्लिक गर्नुहोस्</a>'
+          error: प्रश्न अद्यावधिक गर्न सकिएन
+        destroy:
+          notice: प्रश्न सफलतापूर्वक मेटियो
+        edit:
+          back: फिर्ता
+          title: "\"%{question_title}\" सम्पादन गर्नुहोस्"
+          submit_button: परिवर्तनहरू सुरक्षित गर्नुहोस
+        form:
+          add_option: विकल्प थप्नुहोस्
+          value_placeholder: नजिक जवाफ थप्नुहोस्
+          question_options: "सम्भावित उत्तरहरू (वैकल्पिक, पूर्वनिर्धारित खुला जवाफहरू)"
+        index:
+          back: फिर्ता
+          title: यस प्रक्रियासँग सम्बन्धित प्रश्नहरू
+          create: प्रश्न सिर्जना गर्नुहोस्
+          delete: मेट्नुहोस्
+        new:
+          back: फिर्ता
+          title: नयाँ प्रश्न सिर्जना गर्नुहोस्
+          submit_button: प्रश्न सिर्जना गर्नुहोस्
+        table:
+          title: टाइटल
+          question_options: प्रश्नको विकल्पहरू
+          answers_count: जवाफहरू गणना
+          comments_count: टिप्पणीहरू गणना
+        question_option_fields:
+          remove_option: विकल्प हटाउनुहोस्
+      milestones:
+        index:
+          title: पछ्याउँदै
+    managers:
+      index:
+        title: व्यवस्थापकहरू
+        no_managers: त्यहाँ कुनै व्यवस्थापकहरू छैनन्।
+      manager:
+        add: थप्नुहोस्
+      search:
+        title: "व्यवस्थापक: प्रयोगकर्ता खोजी"
+    sdg_managers:
+      index:
+        no_sdg_managers: त्यहाँ कुनै प्रयोगकर्ताहरू छैनन्।
+    sdg/managers:
+      sdg/manager:
+        add: थप्नुहोस्
+    menu:
+      activity: मध्यस्थकर्ता क्रियाकलाप
+      admin: व्यवस्थापक मेनु
+      banner: ब्यानर व्यवस्थापन गर्नुहोस्
+      proposals: प्रस्तावहरू
+      proposals_topics: प्रस्तावित विषयहरू
+      budgets: सहभागितामूलक बजेटहरू
+      geozones: भौगोलिक क्षेत्रहरू व्यवस्थापन गर्नुहोस्
+      hidden_comments: लुकाइएका टिप्पणीहरू
+      hidden_debates: लुकेका बहसहरू
+      hidden_proposals: लुकाइएका प्रस्तावहरू
+      hidden_budget_investments: लुकाइएको बजेट लगानीहरू
+      hidden_proposal_notifications: लुकाइएका प्रस्ताव सूचनाहरू
+      hidden_users: लुकाइएका प्रयोगकर्ताहरू
+      administrators: प्रशासकहरू
+      managers: व्यवस्थापकहरू
+      sdg_managers: SDG व्यवस्थापकहरू
+      moderators: मध्यस्थकर्ताहरू
+      messaging_users: प्रयोगकर्ताहरूलाई सन्देशहरू
+      newsletters: समाचारपत्रहरू
+      admin_notifications: सूचनाहरू
+      system_emails: प्रणालीका इमेलहरू
+      emails_download: इमेलहरू डाउनलोड गर्नुहोस्
+      valuators: मूल्याङ्कनकर्ताहरू
+      poll_officers: मतदान अधिकारीहरू
+      polls: मतदान
+      poll_booths: बुथ स्थान
+      poll_booth_assignments: बुथका कार्यभारहरू
+      poll_shifts: सिफ्टहरू व्यवस्थापन गर्नुहोस्
+      officials: अधिकारीहरू
+      organizations: संस्थाहरू
+      settings: ग्लोबल सेटिङहरू
+      stats: तथ्याङ्क
+      signature_sheets: हस्ताक्षर पानाहरू
+      site_customization:
+        documents: अनुकूलन कागजातहरू
+        homepage: गृहपृष्ठ
+        pages: आफू अनुकूल पृष्ठहरू
+        images: आफू अनुकूल छवि अथवा इमेजहरू
+        content_blocks: कस्टम सामग्री ब्लकहरू
+        information_texts: अनुकूलन जानकारी पाठ
+        information_texts_menu:
+          basic: "आधारभूत अनुकूलन"
+          debates: "बहसहरू"
+          community: "समुदाय"
+          proposals: "प्रस्तावहरू"
+          polls: "मतदान"
+          layouts: "लेआउटहरू"
+          machine_learning: "एआई / मेसिन लर्निङ"
+          mailers: "इमेल"
+          management: "व्यवस्थापन"
+          welcome: "स्वागत छ"
+        buttons:
+          save: "सुरक्षित गर्नुहोस्"
+          content_block:
+            update: "ब्लक अद्यावधिक गर्नुहोस्"
+      title_moderated_content: मध्यस्थ सामग्री
+      title_profiles: प्रोफाइलहरू
+      title_settings: सेटिङहरू
+      title_site_customization: साइट सामग्री
+      title_booths: मतदान केन्द्रहरू
+      legislation: सहयोगात्मक कानून
+      users: प्रयोगकर्ताहरू
+      dashboard: प्रस्ताव ड्यासबोर्ड
+      administrator_tasks: स्रोतसाधन माग गरिएको
+      dashboard_actions: संसाधन र कार्यहरू
+      debates: "बहसहरू"
+      comments: "टिप्पणीहरू"
+      local_census_records: स्थानीय जनगणना प्रबन्ध गर्नुहोस्
+      machine_learning: "एआई / मेसिन लर्निङ"
+      multitenancy: बहुभाडा वालाहरू
+    administrators:
+      index:
+        title: प्रशासकहरू
+        id: प्रशासक आईडी
+        no_administrators: प्रशासकहरू छैनन्।
+      administrator:
+        add: थप्नुहोस्
+        restricted_removal: "माफ गर्नुहोस्, तपाईंले आफैलाई प्रशासकहरूबाट हटाउन सक्नुहुन्न"
+      search:
+        title: "प्रशासकहरू: प्रयोगकर्ता खोज"
+      form:
+        edit_title: "प्रशासक सम्पादन गर्नुहोस्"
+        updated: "प्रशासक सफलतापूर्वक अद्यावधिक गरियो"
+    moderators:
+      index:
+        title: मध्यस्थकर्ताहरू
+        no_moderators: त्यहाँ कुनै मध्यस्थकर्ताहरू छैनन्।
+      moderator:
+        add: थप्नुहोस्
+      search:
+        title: "मध्यस्थकर्ताहरू: प्रयोगकर्ता खोजी"
+    segment_recipient:
+      all_users: सबै प्रयाेगकर्ताहरू
+      administrators: प्रशासकहरू
+      all_proposal_authors: प्रस्ताव लेखकहरू (संग्रहित र फिर्ता सहित)
+      proposal_authors: प्रस्ताव लेखकहरू
+      investment_authors: चालु बजेटमा लगानी लेखकहरू
+      feasible_and_undecided_investment_authors: "हालको बजेटमा केही लगानीका लेखकहरू जसले पालना गर्दैनन्: [मूल्याङ्कन समाप्त असम्भव]"
+      selected_investment_authors: वर्तमान बजेटमा चयन गरिएका लगानीका लेखकहरू
+      winner_investment_authors: वर्तमान बजेटमा विजेता लगानीका लेखकहरू
+      not_supported_on_current_budget: हालको बजेटमा लगानीलाई समर्थन नगर्ने प्रयोगकर्ताहरू
+      invalid_recipients_segment: "प्रापक प्रयोगकर्ता खण्ड अमान्य छ"
+    newsletters:
+      create_success: न्यूजलेटर सफलतापूर्वक सिर्जना गरियो
+      update_success: न्यूजलेटर सफलतापूर्वक अद्यावधिक गरियो
+      send_success: न्यूजलेटर सफलतापूर्वक पठाइयाे
+      delete_success: न्यूजलेटर सफलतापूर्वक मेटाइयो
+      index:
+        title: समाचारपत्रहरू
+        new_newsletter: नयाँ समाचारपत्र
+        subject: विषय
+        segment_recipient: प्राप्तकर्ताहरू
+        sent: पठाइएको
+        actions: कार्यहरू
+        draft: मस्यौदा
+        preview: पूर्वावलोकन
+        empty_newsletters: देखाउनको लागि कुनै समाचारपत्रहरू छैनन्
+      new:
+        title: नयाँ समाचारपत्र
+        header_footer_help_text: "शीर्षक र फुटर सबै इमेलहरूको लागि समान छन्, तपाईंले तिनीहरूलाई <code>app/views/layouts/mailer_header</code> र <code>app/views/layouts/mailer_footer</code> मा परिमार्जन गर्न सक्नुहुन्छ।<br>तपाईं %{link} मा हेडर छवि बदल्न सक्छ।"
+        image_link: "आफू अनुकूल छवि अथवा इमेजहरू"
+      edit:
+        title: समाचारपत्र सम्पादन गर्नुहोस्
+      show:
+        title: समाचार पत्र पूर्वावलोकन
+        send: पठाउनुहोस्
+        affected_users: (%{n} प्रभावित प्रयोगकर्ताहरू)
+        sent_emails:
+          one: १ वटा इमेल पठाइयो
+          other: "%{count} वटा इमेलहरू पठाइयो"
+        sent_at: मा पठाइयो
+        subject: विषय
+        segment_recipient: प्राप्तकर्ताहरू
+        from: इ-मेल ठेगाना जुन समाचारपत्र पठाउनेका रूपमा देखा पर्नेछ
+        body: इमेल सामग्री
+        body_help_text: प्रयोगकर्ताहरूले इमेल यसरी देख्नेछन्।
+        send_alert: के तपाइँ यो समाचारपत्र %{n} प्रयोगकर्ताहरूलाई पठाउन निश्चित हुनुहुन्छ?
+    admin_notifications:
+      create_success: सूचना सफलतापूर्वक सिर्जना गरियो
+      update_success: सूचना सफलतापूर्वक अद्यावधिक गरियो
+      send_success: सूचना सफलतापूर्वक पठाइयो
+      delete_success: सूचना सफलतापूर्वक मेटियो
+      index:
+        section_title: सूचनाहरू
+        new_notification: नयाँ सूचनाहरू
+        title: टाइटल
+        segment_recipient: प्राप्तकर्ताहरू
+        sent: पठाइएको
+        actions: कार्यहरू
+        draft: मस्यौदा
+        preview: पूर्वावलोकन
+        view: हेर्नुहोस्
+        empty_notifications: देखाउनको लागि कुनै सूचनाहरू छैनन्
+      new:
+        section_title: नयाँ सूचना
+        submit_button: सूचना सिर्जना गर्नुहोस्
+      edit:
+        section_title: सूचना सम्पादन गर्नुहोस्
+        submit_button: अद्यावधिक सूचना
+      show:
+        section_title: सूचना पूर्वावलोकन
+        send: सूचना पठाउनुहोस्
+        will_get_notified: (%{n} प्रयोगकर्ताहरूलाई सूचित गरिनेछ)
+        got_notified: (%{n} प्रयोगकर्ताहरूलाई सूचित गरियो)
+        sent_at: मा पठाइयो
+        title: टाइटल
+        body: पाठ
+        link: लिङ्क
+        segment_recipient: प्राप्तकर्ताहरू
+        preview_guide: "प्रयोगकर्ताहरूले सुचना यसरी देख्नेछन्।:"
+        sent_guide: "यसरी प्रयोगकर्ताहरूले सूचना देख्छन्:"
+        send_alert: के तपाइँ यो सूचना %{n} प्रयोगकर्ताहरूलाई पठाउन निश्चित हुनुहुन्छ?
+    system_emails:
+      preview_pending:
+        action: विचाराधीन पूर्वावलोकन गर्नुस्
+        preview_of: '%{name} को पूर्वावलोकन'
+        pending_to_be_sent: यो पठाउन बाँकी सामग्री हो
+        moderate_pending: मध्यम सूचना पठाउनुहोस्
+        send_pending: बाँकी पठाउनुहोस्
+        send_pending_notification: बाँकी सूचनाहरू सफलतापूर्वक पठाइयो
+      proposal_notification_digest:
+        title: "प्रस्ताव सूचना डाइजेस्ट"
+        description: "धेरै इमेलहरूबाट बच्न एकल सन्देशमा प्रयोगकर्ताका लागि सबै प्रस्ताव सूचनाहरू जम्मा गर्दछ।."
+        preview_detail: "प्रयोगकर्ताहरूले, उनीहरूले पछ्याउने प्रस्तावहरूबाट मात्र सूचनाहरू प्राप्त गर्नेछन्"
+      budget_investment_created:
+        title: "बजेट लगानी सिर्जना गरियो"
+        description: "प्रयोगकर्ताले बजेट लगानी सिर्जना गर्दा पठाइन्छ।."
+      budget_investment_selected:
+        title: "बजेट लगानी चयन गरियो"
+        description: "लेखकलाई पठाइयो, जब यसको बजेट लगानी छनोट भयो।."
+      budget_investment_unfeasible:
+        title: "बजेट लगानी सम्भव छैन"
+        description: "जब लेखककाे बजेट लगानी असम्भवको रूपमा चिन्ह लगाइन्छ, लेखकलाई फिर्ता पठाइन्छ ।"
+      budget_investment_unselected:
+        title: "अचयनित बजेट लगानी"
+        description: "जब यसको बजेट लगानी मतदान चरणको लागि चयन गरिएको छैन। लेखकलाई फिर्ता पठाइयो"
+      comment:
+        title: "टिप्पणी"
+        description: "टिप्पणी प्राप्त गर्दा लेखकलाई पठाइयो।"
+      reply:
+        title: "जवाफ दिनुहोस्"
+        description: "प्रतिक्रिया प्राप्त भएपछि टिप्पणी लेखकलाई पठाइयो।"
+      direct_message_for_receiver:
+        title: "निजी सन्देश प्राप्तकर्ता"
+        description: "निजी सन्देशको रिसिभरमा पठाइयो।"
+      direct_message_for_sender:
+        title: "निजी सन्देश प्रेषक"
+        description: "निजी सन्देशको प्रेषकलाई पठाइयो।"
+      email_verification:
+        title: "इमेल प्रमाणिकरण"
+        description: "नयाँ प्रयोगकर्तालाई खाता प्रमाणित गर्न पठाइयो।"
+      user_invite:
+        title: "प्रयोगकर्तालाइ निमन्त्रणा"
+        description: "खाता दर्ता गर्न आमन्त्रित गरिएको व्यक्तिलाई पठाइयो।"
+      evaluation_comment:
+        title: "नयाँ मूल्याङ्कन टिप्पणी"
+        description: "टिप्पणी गरिएको लगानीसँग सम्बन्धित प्रशासकहरू र मूल्याङ्कनकर्ताहरूलाई पठाइयो"
+      edit_info: "तपाईं यो इमेल मा सम्पादन गर्न सक्नुहुन्छ"
+      message_title: "सन्देशको शीर्षक"
+      message_body: "यो सन्देशको सामग्रीको नमूना हो।"
+      alert:
+        no_investments: "त्यहाँ कुनै बजेट लगानी सिर्जना गरिएको छैन। इमेल पूर्वावलोकन गर्न केही उदाहरण डेटा आवश्यक छ।"
+        no_comments: "त्यहाँ कुनै पनि टिप्पणीहरू सिर्जना गरिएको छैन। इमेल पूर्वावलोकन गर्न केही उदाहरण डेटा आवश्यक छ।"
+        no_replies: "त्यहाँ कुनै पनि जवाफहरू सिर्जना गरिएको छैन। इमेल पूर्वावलोकन गर्न केही उदाहरण डेटा आवश्यक छ।"
+        no_evaluation_comments: "त्यहाँ कुनै पनि मूल्याङ्कन टिप्पणीहरू सिर्जना गरिएको छैन। इमेल पूर्वावलोकन गर्न केही उदाहरण डेटा आवश्यक छ।"
+    emails_download:
+      index:
+        title: इमेलहरू डाउनलोड गर्नुहोस्
+        download_segment: इमेल ठेगानाहरू डाउनलोड गर्नुहोस्
+        download_segment_help_text: CSV ढाँचामा डाउनलोड गर्नुहोस्
+        download_emails_button: इमेल सूची डाउनलोड गर्नुहोस्
+    valuators:
+      index:
+        title: मूल्याङ्कनकर्ताहरू
+        name: नाम
+        email: इमेल
+        description: विवरण
+        no_description: बिना विवरण
+        no_valuators: मूल्याङ्कन गर्नेहरू छैनन्
+        valuator_groups: "मूल्याङ्कनकर्ताका समूहहरू"
+        group: "समूह"
+        no_group: "बिना समुह"
+        abilities: "क्षमताहरू"
+        can_comment: "टिप्पणी गर्न सक्नुहुन्छ"
+        can_edit_dossier: "कागजातहरू सम्पादन गर्न सक्नुहुन्छ"
+      valuator:
+        add: मूल्याङ्कनकर्ताहरू थप्नुहाेस्
+      search:
+        title: "मूल्याङ्कनकर्ताहरू: प्रयोगकर्ता खोजी"
+      form:
+        edit_title: "मूल्याङ्कनकर्ताहरू: मूल्याङ्कनकर्ता सम्पादन गर्नुहोस्"
+        updated: "मूल्याङ्कनकर्ता सफलतापूर्वक अद्यावधिक गरियो"
+      show:
+        description: "विवरण"
+        email: "इमेल"
+        group: "समूह"
+        abilities: "क्षमताहरू"
+        no_description: "बिना विवरण"
+        no_group: "समूह बिना"
+        no_abilities: "बिना क्षमता"
+    valuator_groups:
+      index:
+        title: "मूल्याङ्कनकर्ताकाे समूहहरू"
+        new: "मूल्याङ्कनहरूकाे समूह सिर्जना गर्नुहोस्"
+        name: "नाम"
+        members: "सदस्यहरू"
+        no_groups: "त्यहाँ कुनै मूल्याङ्कनकर्ता समूहहरू छैनन्"
+      show:
+        title: "मूल्याङ्कनकर्ताहरूकाे समूह: %{group}"
+        no_valuators: "यस समूहमा कुनै पनि मूल्याङ्कनकर्ताहरू तोकिएका छैनन्"
+      form:
+        new: "मूल्याङ्कनकर्ताहरूकाे समूह सिर्जना गर्नुहोस्"
+        edit: "मूल्याङ्कनकर्ताहरूकाे समूह सुरक्षित गर्नुहोस्"
+    poll_officers:
+      index:
+        title: मतदान अधिकारीहरू
+      officer:
+        add: थप्नुहोस्
+        delete: स्थान मेटाउनुहोस्
+        name: नाम
+        email: इमेल
+        entry_name: अधिकारी
+      search:
+        email_placeholder: ईमेल द्वारा प्रयोगकर्ता खोज्नुहोस्
+        user_not_found: प्रयोगकर्ता फेला परेन
+        help: "पोल अधिकारीहरू थप्न वा हटाउन तलको खोज फारम प्रयोग गर्नुहोस्।."
+    poll_officer_assignments:
+      index:
+        officers_title: "अधिकारीहरूको सूची"
+        no_officers: "यस मतदानमा कुनै अधिकारीहरू तोकिएका छैनन्।."
+        table_name: "नाम"
+        table_email: "इमेल"
+      by_officer:
+        date: "मिति"
+        booth: "बुथ"
+        assignments: "यस मतदानमा अफिसिङ परिवर्तन हुन्छ"
+        no_assignments: "यो प्रयोगकर्ताको, यो पोलमा कुनै अफिसिङ शिफ्ट छैन।"
+    poll_shifts:
+      new:
+        add_shift: "शिफ्ट थप्नुहोस्"
+        shift: "कार्यभार"
+        shifts: "यस बुथमा शिफ्टहरू"
+        date: "मिति"
+        edit_shifts: शिफ्टहरू सम्पादन गर्नुहोस्
+        new_shift: "नयाँ शिफ्टहरू"
+        no_shifts: "यो बुथमा कुनै शिफ्ट छैन"
+        officer: "अधिकारी"
+        remove_shift: "हटाउनुहोस्"
+        search_officer_button: खोज्नुहोस्
+        search_officer_placeholder: अधिकारी खोज्नुहाेस्
+        search_officer_text: नयाँ शिफ्ट तोक्न अफिसर खोज्नुहोस्
+        select_date: "दिन चयन गर्नुहोस्"
+        no_voting_days: "मतदानकाे दिन सकियो"
+        select_task: "कार्य चयन गर्नुहोस्"
+        table_shift: "शिफ्ट"
+        table_email: "इमेल"
+        table_name: "नाम"
+      flash:
+        create: "शिफ्ट थपियो"
+        destroy: "शिफ्ट हटाइयाे"
+        unable_to_destroy: "शिफ्टहरूसँग सम्बद्ध परिणामहरू वा पुन: गणनाहरू मेटाउन सकिँदैन"
+        date_missing: "मिति चयन हुनै पर्छ"
+      vote_collection: मतहरू सङ्कलन गर्नुहोस्
+      recount_scrutiny: 'पुन: गणना र छानबिन'
+    booth_assignments:
+      manage_assignments: निर्देशित कार्यभार व्यवस्थापन गर्नुहोस्
+      manage:
+        assignments_list: "सर्वेक्षणका लागि निर्देशित कार्यहरू '%{poll}'"
+        status:
+          assign_status: तोकिएको कार्यभार
+          assigned: तोकिएको
+          unassigned: तोकिएको छैन
+        actions:
+          assign: तोकिएको बुथ
+          unassign: नतोकिएको बुथ
+    poll_booth_assignments:
+      alert:
+        shifts: "यस बुथसँग सम्बन्धित शिफ्टहरू छन्। यदि तपाईंले बुथ असाइनमेन्ट हटाउनुभयो भने, सिफ्टहरू पनि मेटिने छन्। जारी राख्ने हो?"
+      show:
+        location: "स्थान"
+        officers: "अधिकारीहरू"
+        officers_list: "यस बुथको लागि पदाधिकारीहरूको सूची"
+        no_officers: "यस बुथका लागि कुनै पदाधिकारीहरू छैनन्"
+        recounts: "पुन: गणना"
+        recounts_list: "यस बुथको लागि पुन: गणना सूची"
+        results: "परिणामहरू"
+        date: "मिति"
+        count_final: "अन्तिम पुन: गणना (अधिकारी द्वारा)"
+        count_by_system: "मतहरू (स्वचालित)"
+        total_system: कुल मतहरू (स्वचालित)
+      index:
+        booths_title: "बुथहरूको सूची"
+        no_booths: "यस मतदानका लागि कुनै बुथ तोकिएको छैन।"
+        table_name: "नाम"
+        table_location: "स्थान"
+    active_polls:
+      edit:
+        title: "सर्वेक्षणहरूका विवरण"
+      form:
+        description:
+          help_text: "यो पाठ मतदान पृष्ठको हेडरमा देखा पर्नेछ। यसलाई खुला मतदानमा सन्दर्भ थप्न प्रयोग गर्न सकिन्छ।"
+    polls:
+      index:
+        title: "सर्वेक्षणको सूची"
+        no_polls: "त्यहाँ कुनै सर्वेक्षण छैन।"
+        create: "सर्वेक्षण सिर्जना गर्नुहोस्"
+        name: "नाम"
+        dates: "मितिहरू"
+        start_date: "सुरू मिति"
+        closing_date: "बन्द हुने मिति"
+        geozone_restricted: "जिल्लामा मात्र सीमित छ"
+      new:
+        title: "नयाँ सर्वेक्षण"
+        submit_button: "सर्वेक्षण सिर्जना गर्नुहोस्"
+      edit:
+        title: "सर्वेक्षण सम्पादन गर्नुस्"
+        submit_button: "सर्वेक्षण अद्यावधिक गर्नुहाेस्"
+      show:
+        questions_tab: प्रश्नहरू
+        booths_tab: बुथहरू
+        officers_tab: अधिकारीहरू
+        recounts_tab: 'पुन: गणना'
+        results_tab: परिणामहरू
+        no_questions: "यस सर्वेक्षणमा कुनै प्रश्नहरू तोकिएका छैनन्।"
+        questions_title: "प्रश्नहरूकाे सुची"
+        table_title: "टाइटल"
+        edit_answers: जवाफ सम्पादन गर्नुहोस्
+        see_proposal: "(प्रस्ताव हेर्नुहोस्)"
+      destroy:
+        alert: "यस कार्यले मतदान र यससँग सम्बन्धित सबै प्रश्नहरू हटाउनेछ।"
+        success_notice: "मतदान सफलतापूर्वक मेटाइयो"
+        unable_notice: "तपाईंले मत भएको मतदान मेटाउन सक्नुहुन्न"
+      votation_type:
+        title: "मतदानका प्रकार"
+        unique_description: "यो प्रश्नको जवाफ एक पटक मात्र सम्भव छ।"
+        multiple_description: "धेरै उत्तरहरू छनौट गर्न अनुमति दिन्छ। उत्तरहरूको अधिकतम संख्या सेट गर्न सम्भव छ।"
+    questions:
+      index:
+        title: "प्रश्नहरू"
+        create: "प्रश्न सिर्जना गर्नुहोस्"
+        no_questions: "कुनै प्रश्नहरू छैनन्।"
+        filter_poll: मतदानद्वारा फिल्टर गर्नुहोस्
+        select_poll: मतदान चयन गर्नुहोस्
+        questions_tab: "प्रश्नहरू"
+        successful_proposals_tab: "सफल प्रस्तावहरू"
+        create_question: "प्रश्न सिर्जना गर्नुहोस्"
+        table_proposal: "प्रस्ताव"
+        table_question: "प्रश्न"
+        table_poll: "मतदान"
+        poll_not_assigned: "मतदान तोकिएको छैन"
+      edit:
+        title: "प्रश्न सम्पादन गर्नुहोस्"
+      form:
+        poll_help: "तपाईंले अहिलेसम्म सुरु नभएका मतदानहरू मात्र चयन गर्न सक्नुहुन्छ"
+      new:
+        title: "मतदान %{poll} मा प्रश्न सिर्जना गर्नुहोस्"
+        title_proposal: "प्रश्न सिर्जना गर्नुहोस्"
+      destroy:
+        notice: "प्रश्न सफलतापूर्वक मेटियो"
+      answers:
+        images:
+          add_image: "छवि थप्नुहोस्"
+          save_image: "छवि सुरक्षित गर्नुहोस्"
+      show:
+        proposal: मूल प्रस्ताव
+        author: लेखक
+        question: प्रश्न
+        edit_question: प्रश्न सम्पादन गर्नुहोस्
+        valid_answers: मान्य उत्तरहरू
+        add_answer: जवाफ थप्नुहोस्
+        video_url: बाह्य भिडियो
+        answers:
+          title: जवाफ
+          description: विवरण
+          videos: भिडियोहरू
+          video_list: भिडियो सुची
+          images: छविहरू
+          images_list: छविहरूकाे सुची
+          documents: कागजातहरू
+          documents_list: कागजातहरू सुची
+          document_title: टाइटल
+          document_actions: कार्यहरू
+      no_edit: "एक पटक मतदान सुरु भएपछि प्रश्न, उत्तर वा मतदानसँग सम्बन्धित कुनै पनि सामग्री सिर्जना गर्न, सम्पादन गर्न वा मेटाउन सम्भव हुने छैन।"
+    answers:
+      new:
+        title: नयाँ जवाफ
+      edit:
+        title: जवाफ सम्पादन गर्नुहोस्
+      destroy:
+        success_notice: "उत्तर सफलतापूर्वक मेटाइयो"
+      images:
+        index:
+          title: छविहरू
+      videos:
+        index:
+          title: भिडियोहरू
+          add_video: भिडियो थप्नुहोस्
+          video_title: टाइटल
+          video_url: बाह्य भिडियो
+        new:
+          title: नयाँ भिडियो
+        edit:
+          title: भिडियो सम्पादन गर्नुहोस्
+    recounts:
+      index:
+        title: "पुन: गणना"
+        no_recounts: "गनिने केही छैन"
+        all_booths_total: "सबै बुथहरूबाट संचयी कुल:"
+        total_final: "अन्तिम गणनाहरू"
+        total_system: "मतहरू (स्वचालित)"
+        table_booth_name: "बुथ"
+        table_total_recount: "कुल पुन: गणना (अधिकारी द्वारा)"
+        table_system_count: "मतहरू (स्वचालित)"
+    results:
+      index:
+        title: "परिणामहरू"
+        no_results: "त्यहाँ कुनै परिणामहरू छैनन्"
+      result:
+        table_whites: "पूर्ण रूपमा खाली मतपत्रहरू"
+        table_nulls: "अमान्य मतपत्रहरू"
+        table_total: "मान्य मतपत्रहरू"
+        table_answer: जवाफ
+        table_votes: मतहरू
+      results_by_booth:
+        booth: बुथ
+        results: परिणामहरू
+        see_results: परिणामहरू हेर्नुहोस्
+        title: "बुथ द्वारा परिणामहरू"
+    booths:
+      index:
+        title: "सक्रिय बुथहरूको सूची"
+        no_booths: "कुनै पनि आगामी सर्वेक्षणको लागि सक्रिय बुथहरू छैनन्।"
+        add_booth: "बुथ थप्नुहोस्"
+        name: "नाम"
+        location: "स्थान"
+        no_location: "स्थान छैन"
+      new:
+        title: "नयाँ बुथ"
+        submit_button: "बुथ सिर्जना गर्नुहोस्"
+      edit:
+        title: "बुथ सम्पादन गर्नुहोस्"
+        submit_button: "बूथ अद्यावधिक गर्नुहोस्"
+      show:
+        location: "स्थान"
+      booth:
+        shifts: "सिफ्टहरू व्यवस्थापन गर्नुहोस्"
+    officials:
+      edit:
+        destroy: '"आधिकारिक" स्थिति हटाउनुहोस्'
+        title: "अधिकारीहरू: प्रयोगकर्ता सम्पादन गर्नुहोस्"
+      flash:
+        official_destroyed: "विवरणहरू सुरक्षित गरिएको छ: प्रयोगकर्ता अब आधिकारिक छैन"
+        official_updated: अधिकारीक विवरण सुरक्षित गरियाे
+      index:
+        title: अधिकारीहरू
+        help: अधिकारीहरूको रूपमा चिन्ह लगाइएका प्रयोगकर्ता खाताहरूले प्लेटफर्म हाइलाइट गरिएकामा हस्तक्षेप गर्न सक्नेछन्। तपाईंले यी खाताहरूको प्रयोगकर्ता नामको छेउमा देखिने लेबललाई सबैभन्दा महत्त्वपूर्ण (स्तर १) देखि कम्तीमा (स्तर ५) परिभाषित गर्न सक्नुहुन्छ।
+        no_officials: अधिकारीहरू छैनन् ।
+        name: नाम
+        official_position: आधिकारिक पद
+        official_level: तह
+      level_0: आधिकारिक होइन
+      level_1: तह १
+      level_2: तह २
+      level_3: तह ३
+      level_4: तह ४
+      level_5: तह ५
+      search:
+        make_official: आधिकारिक बनाउनुहोस्
+        title: "आधिकारिक पदहरू: प्रयोगकर्ता खोज"
+        no_results: आधिकारिक पदहरू फेला परेन।
+    organizations:
+      index:
+        filter: फिल्टर
+        filters:
+          all: सबै
+          pending: विचाराधीन
+          rejected: अस्वीकृत
+          verified: प्रमाणित
+        hidden_count:
+          one: बिना कुनै प्रयोगकर्ता वा लुकेका प्रयोगकर्ताको भएकाे <strong>एउटा संगठन</strong> त्यहाँ पनि छ ।
+          other: बिना कुनै प्रयोगकर्ता वा लुकेका प्रयोगकर्ताको भएकाे <strong>%{count} संगठनहरू</strong> त्यहाँ पनि छन् ।
+        name: नाम
+        email: इमेल
+        phone_number: फोन
+        responsible_name: जिम्मेवार
+        status: अवस्था
+        no_organizations: संस्थाहरू छैनन्।
+        reject: अस्वीकार
+        rejected: अस्वीकृत
+        title: संस्थाहरू
+        verified: प्रमाणित
+        verify: प्रमाणित गर्नुहोस्
+        pending: विचाराधीन
+      search:
+        title: संगठनहरू खोज्नु
+        no_results: कुनै संस्थाहरू भेटिएन।
+    proposals:
+      index:
+        title: प्रस्तावहरू
+        id: आईडी
+        author: लेखक
+        select: छनाेट
+        selected: छानिएकाे
+        milestones: माइलस्टोनहरू
+        no_proposals: कुनै प्रस्तावहरू छैनन्।
+      show:
+        create_question: यो प्रस्तावलाई मतका लागि मतदानमा थप्नुहोस्
+      form:
+        update: प्रस्ताव अद्यावधिक गर्नुहोस्
+      update:
+        notice: प्रस्ताव सफलतापूर्वक अद्यावधिक गरियो
+    hidden_proposals:
+      index:
+        filter: फिल्टर
+        filters:
+          all: सबै
+          with_confirmed_hide: पुष्टि भयो
+          without_confirmed_hide: विचाराधीन
+        title: लुकाइएका प्रस्तावहरू
+        no_hidden_proposals: त्यहाँ कुनै लुकाइएका प्रस्तावहरू छैनन्।
+    hidden_proposal_notifications:
+      index:
+        filter: फिल्टर
+        filters:
+          all: सबै
+          with_confirmed_hide: पुष्टि भयो
+          without_confirmed_hide: विचाराधीन
+        title: लुकाइएको सूचनाहरू
+        no_hidden_proposals: त्यहाँ कुनै लुकाइएका सूचनाहरू छैनन्।
+    settings:
+      flash:
+        updated: मूल्य अद्यावधिक गरियो
+      index:
+        title: सेटिङहरू
+        general: कन्फिगरेसन सेटिङहरू
+        update_setting: अद्यावधिक
+        participation_processes: "सहभागिता प्रक्रियाहरू"
+        images_and_documents: "छविहरू र कागजातहरू"
+        feature_flags: विशेषताहरु
+        features:
+          enabled: "क्रियाशील"
+        map:
+          title: नक्सा विन्यास
+          help: यहाँ तपाईँले प्रयोगकर्ताहरूलाई नक्सा देखाउने तरिका अनुकूलन गर्न सक्नुहुन्छ। नक्सा मार्कर तान्नुहोस् वा नक्सामा जहाँ पनि क्लिक गर्नुहोस्, इच्छित जुम सेट गर्नुहोस् र बटन "अपडेट" क्लिक गर्नुहोस्।
+          flash:
+            update: नक्सा कन्फिगरेसन सफलतापूर्वक अद्यावधिक गरियो।
+          form:
+            submit: अद्यावधिक
+          how_to_enable: 'प्रयोगकर्ताहरूलाई नक्सा देखाउन तपाईंले "विशेषताहरू" ट्याबमा "प्रस्तावहरू र बजेट लगानी भौगोलिक स्थान" सक्षम गर्नुपर्छ।'
+        dashboard:
+          title: प्रस्ताव ड्यासबोर्ड
+        remote_census:
+          title: रिमोट जनगणना कन्फिगरेसन
+          how_to_enable: 'रिमोट सेन्सस (SOAP) कन्फिगर गर्न तपाईंले "सुविधाहरू" ट्याबमा "रिमोट सेन्सस (SOAP) मा जडान कन्फिगर गर्नुहोस्" सक्षम गर्नुपर्छ।'
+        sdg:
+          title: एसडीजी कन्फिगरेसन
+          how_to_enable: 'दिगो विकास लक्ष्यहरूबाट कन्फिगरेसन विकल्पहरू देखाउन तपाईंले "विशेषताहरू" ट्याबमा "एसडीजी" सक्षम गर्नुपर्छ।'
+      remote_census_general_name: सामान्य जानकारी
+      remote_census_request_name: डेटा अनुरोध गर्नुहोस्
+      remote_census_response_name: प्रतिक्रिया डाटा
+      setting: विशेषता
+      setting_name: सेटिङहरू
+      setting_value: मान
+      no_description: "बिना विवरण"
+    shared:
+      search:
+        advanced_filters:
+          sdg_goals:
+            all: "सबै लक्ष्यहरू"
+            label: "लक्ष्य द्वारा"
+          sdg_targets:
+            all: "सबै उद्देश्यहरू"
+            label: "लक्ष्य अनुसार"
+        label:
+          booths: "नाम वा स्थान द्वारा बूथ खोज्नुहोस्"
+          budget_investments: "शीर्षक, विवरण वा शीर्षकद्वारा लगानी खोज्नुहोस्"
+          comments: "टिप्पणीहरू खोज्नुहोस्"
+          debates: "शीर्षक वा विवरण द्वारा बहस खोज्नुहोस्"
+          legislation_processes: "शीर्षक वा विवरण द्वारा प्रक्रियाहरू खोज्नुहोस्"
+          legislation_proposals: "शीर्षक वा विवरण द्वारा प्रस्तावहरू खोज्नुहोस्"
+          local_census_records: "कागजात नम्बर द्वारा खोज्नुहोस्"
+          organizations: "नाम, इमेल वा फोन नम्बर"
+          poll_officers: "मतदान अधिकारीहरू खोज्नुहोस्"
+          poll_questions: "सर्वेक्षणका प्रश्नहरू खोज्नुहोस्"
+          polls: "नाम वा विवरणद्वारा सर्वेक्षण खोज्नुहोस्"
+          proposals: "शीर्षक, कोड, विवरण वा प्रश्नद्वारा प्रस्तावहरू खोज्नुहोस्"
+          proposal_notifications: "शीर्षक वा विवरण द्वारा सूचनाहरू खोज्नुहोस्"
+          users: "नाम वा इमेल द्वारा प्रयोगकर्ता खोज्नुहोस्"
+        search: "खोज्नुहोस्"
+      search_results: "परिणामहरू खोज्नुहोस्"
+      no_search_results: "कुनै परिणाम फेला परेन।"
+      actions: कार्यहरू
+      title: टाइटल
+      description: विवरण
+      image: छवि
+      show_image: छवि देखाउनुहोस्
+      moderated_content: "मध्यस्थकर्ताहरूले मध्यस्थ गरिएको सामग्री जाँच गर्नुहोस्, र यदि मध्यस्थता सही रूपमा गरिएको छ भने पुष्टि गर्नुहोस्।"
+      view: हेर्नुहोस्
+      proposal: प्रस्ताव
+      author: लेखक
+      content: सामग्री
+      created_at: मा सिर्जना गरियो
+      color_help: Hexadecimal ढाँचा
+      show_results_and_stats: "परिणाम र तथ्याङ्क देखाउनुहोस्"
+      results_and_stats_reminder: "यी चेकबक्सहरू चिन्ह लगाउँदा परिणामहरू र/वा तथ्याङ्कहरू सार्वजनिक रूपमा उपलब्ध हुनेछन् र प्रत्येक प्रयोगकर्ताले तिनीहरूलाई देख्नेछन्।"
+      close_modal: मोडल बन्द गर्नुहोस्
+      example_url: "उदाहरणका लागि, https://consulproject.org वा /help"
+    geozones:
+      index:
+        title: भौगोलिक क्षेत्र
+        create: भौगोलिक क्षेत्र बनाउनुहोस्
+      geozone:
+        name: नाम
+        external_code: बाह्य काेड
+        census_code: जनगणना कोड
+        code_help: जनगणना API का लागि भौगोलिक क्षेत्रकाे प्रतिक्रिया काेड
+        coordinates: निर्देशांकहरू
+        coordinates_help: HTML छवि नक्सामा क्लिकयोग्य क्षेत्र उत्पन्न गर्ने निर्देशांकहरू
+      edit:
+        form:
+          submit_button: परिवर्तनहरू सुरक्षित गर्नुहोस
+        editing: भौगोलिक क्षेत्र संपादन गर्नुहाेस्
+        back: फिर्ता जानुहोस्
+      new:
+        back: फिर्ता जानुहोस्
+        creating: जिल्ला बनाउनुहोस्
+      delete:
+        success: भौगोलिक क्षेत्र सफलतापूर्वक मेटाइयो
+        error: यो भौगोलिक मेटाउन सकिँदैन किनभने यसमा अरू तत्वहरू संलग्न छन्
+    signature_sheets:
+      author: लेखक
+      created_at: बनाएको मिति
+      name: नाम
+      no_signature_sheets: "त्यहाँ हस्ताक्षर_पानाहरू छैनन्"
+      index:
+        title: हस्ताक्षर_पानाहरू
+        new: नयाँ हस्ताक्षर पानाहरू
+      new:
+        title: नयाँ हस्ताक्षर पानाहरू
+        document_numbers_note: "अर्धविराम (;) द्वारा विभाजित संख्याहरू लेख्नुहोस्"
+        submit: हस्ताक्षर पाना सिर्जना गर्नुहोस्
+        text_help:
+          required_fields_note: "प्रयोगकर्ता प्रमाणीकरण गर्न, तपाइँको आवेदनमा कागजात नम्बर आवश्यक छ:"
+          date_of_birth_note: ", जन्म दिन (dd/mm/yyyy)"
+          postal_code_note: " र हुलाक कोड"
+          required_fields_structure_note: "प्रत्येक प्रयोगकर्ताका लागि आवश्यक क्षेत्रहरू अल्पविरामद्वारा छुट्याइनुपर्छ र प्रत्येक प्रयोगकर्तालाई अर्धविरामद्वारा छुट्याइनुपर्छ।"
+          example_text: "उदाहरण:"
+      show:
+        created_at: बनाइयो
+        author: लेखक
+        users: प्रयोगकर्ताहरू
+        signature_count: "हस्ताक्षर संख्या:"
+        verified:
+          one: "त्यहाँ %{count} मान्य हस्ताक्षर छ"
+          other: "त्यहाँ %{count} मान्य हस्ताक्षरहरू छन्"
+        unverified:
+          one: "त्यहाँ %{count} अमान्य हस्ताक्षर रहेकाे छ"
+          other: "त्यहाँ %{count} अमान्य हस्ताक्षरहरू रहेकाे छन्"
+        unverified_error: (जनगणना द्वारा अप्रमाणित)
+        voted:
+          zero: "There are no votes created from the verified signatures."
+          one: "त्यहाँ %{count} मत प्रमाणित हस्ताक्षरहरूबाट सिर्जना गरिएको छ।"
+          other: "त्यहाँ %{count} मतहरू प्रमाणित हस्ताक्षरहरूबाट सिर्जना गरिएको छ।"
+        loading: "त्यहाँ अझै पनि हस्ताक्षरहरू छन् जुन जनगणनाद्वारा प्रमाणित भइरहेका छन्, कृपया केही क्षणमा पृष्ठ पुन: ताजा गर्नुहोस्"
+    stats:
+      show:
+        stats_title: तथ्याङ्क
+        summary:
+          comment_votes: टिप्पणी मतहरू
+          comments: टिप्पणीहरू
+          debate_votes: बहस मतहरू
+          debates: बहसहरू
+          proposal_votes: प्रस्ताव मतहरू
+          proposals: प्रस्तावहरू
+          budgets: खुला बजेटहरू
+          budget_investments: लगानीका परियोजनाहरू
+          unverified_users: अप्रमाणित प्रयोगकर्ताहरू
+          user_level_three: तेस्रो तहका प्रयोगकर्ताहरू
+          user_level_two: दोस्रो तहका प्रयोगकर्ताहरू
+          users: जम्मा प्रयोगकर्ताहरू
+          verified_users: प्रमाणित प्रयोगकर्ताहरू
+          verified_users_who_didnt_vote_proposals: प्रमाणित प्रयोगकर्ताहरू जसले प्रस्तावहरूलाई मतदान गरेनन्
+          visits: भ्रमणहरू
+          votes: कुल मतहरू
+        budgets_title: सहभागितामूलक बजेट
+        participatory_budgets: सहभागितामूलक बजेटहरू
+        direct_messages: प्रत्यक्ष सन्देशहरू
+        proposal_notifications: प्रस्ताव सूचनाहरू
+        incomplete_verifications: अपूर्ण प्रमाणीकरणहरू
+        polls: सर्वेक्षणहरू
+        sdg: एस डि जि
+      graph:
+        debate_created: बहसहरू
+        visit: भ्रमणहरू
+        level_2_user: दोस्रो तहका प्रयोगकर्ताहरू
+        proposal_created: नागरिक प्रस्तावहरू
+      budgets:
+        no_data_before_balloting_phase: "मतदान चरण अघि देखाउन को लागी कुनै डाटा छैन।"
+        title: "सहभागितामूलक बजेट - सहभागिता तथ्याङ्क"
+        supporting_phase: समर्थन चरण
+        balloting_phase: अन्तिम मतदान
+      budget_balloting:
+        title: "अन्तिम मतदान तथ्याङ्क"
+        vote_count: मतहरू
+        participant_count: सहभागीहरू
+        votes_per_heading: प्रति शीर्षक मतहरू
+        participants_per_district: प्रति जिल्ला सहभागीहरू
+      budget_supporting:
+        title: "समर्थन चरणका तथ्याङ्क"
+        headings: शीर्षकहरू
+        users: प्रयोगकर्ताहरू
+        vote_count: मतहरू
+        participant_count: सहभागीहरू
+      direct_messages:
+        title: प्रत्यक्ष सन्देशहरू
+        total: कुल
+        users_who_have_sent_message: निजी सन्देश पठाउने प्रयोगकर्ताहरू
+      proposal_notifications:
+        title: प्रस्तावका सूचनाहरू
+        total: जम्मा
+        proposals_with_notifications: सूचनाहरू सहितका प्रस्तावहरू
+        not_available: "प्रस्ताव उपलब्ध छैन"
+      polls:
+        title: सर्वेक्षणका तथ्याङ्क
+        all: सर्वेक्षणहरू
+        web_participants: वेब सहभागीहरू
+        total_participants: कुल सहभागीहरू
+        poll_questions: "सर्वेक्षणबाट प्रश्नहरू: %{poll}"
+        table:
+          poll_name: सर्वेक्षण
+          question_name: प्रश्न
+          origin_web: वेब सहभागीहरू
+          origin_total: कुल सहभागीहरू
+      sdg:
+        budget_investments:
+          amount: "स्वीकृत रकम"
+          winners: "विजेता लगानी परियोजनाहरू"
+          sent: "लगानी परियोजनाहरू पठाइयो"
+        debates: "बहसहरू"
+        polls: "मतदान"
+        proposals: "प्रस्तावहरू"
+        title: "दिगो विकास लक्ष्यहरू - तथ्याङ्क"
+    tags:
+      create: विषय सिर्जना गर्नुहोस्
+      index:
+        add_tag: नयाँ प्रस्ताव विषय थप्नुहोस्
+        title: प्रस्ताव विषयहरू
+        topic: विषय
+        help: "जब प्रयोगकर्ताले प्रस्ताव सिर्जना गर्दछ, निम्न विषयहरूलाई पूर्वनिर्धारित ट्यागको रूपमा सुझाव दिइन्छ।"
+    users:
+      columns:
+        id: आईडी
+        erase_reason: मेटाउनुकाे कारण
+        name: नाम
+        email: इमेल
+        document_number: कागजात संख्या
+        roles: भूमिकाहरू
+        verification_level: प्रमाणीकरणकाे स्तर
+      index:
+        title: प्रयोगकर्ता
+        no_users: त्यहाँ कुनै प्रयोगकर्ताहरू छैनन्।
+        filter: फिल्टर
+        filters:
+          active: सक्रिय
+          erased: मेटाइयो
+      search:
+        placeholder: इमेल, नाम वा कागजात नम्बर द्वारा प्रयोगकर्ता खोज्नुहोस्
+    verifications:
+      index:
+        phone_not_given: फोन दिएको छैन
+        sms_code_not_confirmed: एसएमएस कोड पुष्टि भएको छैन
+        title: अपूर्ण प्रमाणीकरणहरू
+    site_customization:
+      content_blocks:
+        information: सामग्री ब्लक बारे जानकारी
+        about: "तपाइँ HTML सामग्री ब्लकहरू सिर्जना गर्न सक्नुहुन्छ जुन तपाइँको वेबसाइटको विभिन्न स्थानहरूमा सम्मिलित गर्न सकिन्छ।"
+        html_format: "सामग्री ब्लक लिङ्कहरूको समूह हो, र यो निम्न ढाँचा हुनुपर्छ:"
+        no_blocks: "त्यहाँ कुनै सामग्री ब्लकहरू छैनन्।"
+        create:
+          notice: सामग्री ब्लक सफलतापूर्वक सिर्जना गरियो
+          error: सामग्री ब्लक सिर्जना गर्न सकिएन
+        update:
+          notice: सामग्री ब्लक सफलतापूर्वक अद्यावधिक गरियो
+          error: सामग्री ब्लक अद्यावधिक गर्न सकिएन
+        destroy:
+          notice: सामग्री ब्लक सफलतापूर्वक मेटाइयो
+        edit:
+          title: सामग्री ब्लक सम्पादन गर्दै
+        index:
+          create: नयाँ सामग्री ब्लक सिर्जना गर्नुहोस्
+          delete: ब्लक मेटाउनुहोस्
+          title: सामग्री ब्लकहरू
+        new:
+          title: नयाँ सामग्री ब्लक सिर्जना गर्नुहोस्
+        content_block:
+          body: शरीर
+          name: नाम
+          names:
+            top_links: शीर्ष लिङ्कहरू
+            footer: फुटर
+            subnavigation_left: मुख्य नेभिगेसन बायाँ
+            subnavigation_right: मुख्य नेभिगेसन दायाँ
+      images:
+        index:
+          title: आफू अनुकूल छवि अथवा इमेजहरू
+          update: अद्यावधिक
+          delete: मेट्नुहोस्
+          image: छवि
+        update:
+          notice: छवि सफलतापूर्वक अद्यावधिक गरियो
+          error: छवि अद्यावधिक गर्न सकिएन
+        destroy:
+          notice: छवि सफलतापूर्वक मेटाइयो
+          error: छवि मेटाउन सकिएन
+      pages:
+        create:
+          notice: पृष्ठ सफलतापूर्वक सिर्जना गरियो
+          error: पृष्ठ सिर्जना गर्न सकिएन
+        update:
+          notice: पृष्ठ सफलतापूर्वक अद्यावधिक गरियो
+          error: पृष्ठ अद्यावधिक गर्न सकिएन
+        destroy:
+          notice: पृष्ठ सफलतापूर्वक मेटाइयो
+        edit:
+          title: सम्पादन %{page_title}
+        form:
+          options: विकल्पहरू
+        index:
+          create: नयाँ पृष्ठ सिर्जना गर्नुहोस्
+          delete: पृष्ठ मेटाउनुहोस्
+          title: अनुकूलन पृष्ठहरू
+          see_page: हेर्नुहोस्
+        new:
+          title: नयाँ अनुकूलन पृष्ठ सिर्जना गर्नुहोस्
+          slug_help: "URL मा यो पृष्ठ पहिचान गर्न पाठ, उदाहरणका लागि <code>https://consulproject.org/page-slug</code>"
+        page:
+          created_at: मा बनाइयो
+          status: अवस्था
+          updated_at: मा अद्यावधिक गरियो
+          title: टाइटल
+          slug: सल्ग
+          see_cards: कार्डहरू व्यवस्थापन गर्नुहोस्
+        cards:
+          cards_title: कार्डहरू
+          create_card: कार्ड बनाउनुहोस्
+          no_cards: त्यहाँ कुनै कार्डहरू छैनन्।
+          columns_help: "स्तम्भहरूको संख्यामा कार्डको चौडाइ। मोबाइल स्क्रिनहरूमा यो सधैं १००% को चौडाइ हुन्छ।"
+          create:
+            notice: "कार्ड सफलतापूर्वक सिर्जना गरियो!"
+          update:
+            notice: "कार्ड सफलतापूर्वक अद्यावधिक गरियो"
+          destroy:
+            notice: "कार्ड सफलतापूर्वक हटाइयो"
+    tenants:
+      create:
+        notice: भाडामा लिने व्यक्ति सफलतापूर्वक सिर्जना गरियो
+      index:
+        create: भाडावाला सिर्जना गर्नुहोस्
+      new:
+        title: नयाँ भाडामा लिने व्यक्ति
+      update:
+        notice: भाडामा लिने व्यक्ति सफलतापूर्वक अपडेट भयो
+    homepage:
+      title: गृहपृष्ठ
+      description: सक्रिय मोड्युलहरू यहाँ जस्तै गृहपृष्ठमा देखा पर्दछ।
+      header_title: शीर्षक
+      no_header: कुनै हेडरहरू छैनन्।
+      create_header: हेडर सिर्जना गर्नुहोस्
+      cards_title: कार्डहरू
+      create_card: कार्ड बनाउनुहोस्
+      no_cards: त्यहाँ कुनै कार्डहरू छैनन्।
+      feeds:
+        proposals: प्रस्तावहरू
+        debates: बहसहरू
+        processes: प्रक्रियाहरू
+      new:
+        header_title: नयाँ हेडर
+        submit_header: हेडर सिर्जना गर्नुहोस्
+        card_title: नयाँ कार्ड
+        submit_card: कार्ड बनाउनुहोस्
+      edit:
+        header_title: हेडर सम्पादन गर्नुहोस्
+        submit_header: हेडर सुरक्षित गर्नुहोस्
+        card_title: कार्ड सम्पादन गर्नुहोस्
+        submit_card: कार्ड सुरक्षित गर्नुहोस्
+    audits:
+      title: "परिवर्तन टिपाेट"
+      changes: "परिवर्तनहरूको सूची"
+      id: "आईडी"
+      field: "क्षेत्र"
+      new_value: "नयाँ मान"
+      old_value: "पुरानो मूल्य"
+      edited_at: "मा सम्पादन गरियो"
+      edited_by: "द्वारा सम्पादन गरिएको"
+      actions: "कार्यहरू"
+      empty: "त्यहाँ कुनै परिवर्तनहरू टिपाेट छैनन्"
+    local_census_records:
+      index:
+        title: स्थानीय जनगणनाको व्यवस्थापन गर्ने
+        create: नयाँ स्थानीय जनगणना रेकर्ड सिर्जना गर्नुहोस्
+        no_local_census_records: त्यहाँ कुनै स्थानीय जनगणना रेकर्ड छैन।
+        document_type: कागजात प्रकार
+        document_number: कागजात संख्या
+        date_of_birth: जन्म मिति
+        postal_code: हुलाक कोड
+        import: CSV आयात गर्नुहोस्
+      new:
+        creating: नयाँ स्थानीय जनगणना रेकर्ड सिर्जना गर्दै
+      create:
+        notice: नयाँ स्थानीय जनगणना रेकर्ड सफलतापूर्वक सिर्जना गरियो!
+      edit:
+        editing: स्थानीय जनगणना अभिलेख सम्पादन गर्दै
+      update:
+        notice: स्थानीय जनगणना रेकर्ड सफलतापूर्वक अद्यावधिक गरियो!
+      destroy:
+        notice: स्थानीय जनगणना रेकर्ड सफलतापूर्वक हटाइयो!
+      imports:
+        new:
+          title: स्थानीय जनगणना अभिलेख
+          subtitle: CSV फाइल आयात गर्नुहोस्
+        create:
+          notice: स्थानीय जनगणना अभिलेख आयात प्रक्रिया सफलतापूर्वक सम्पन्न भयो!
+        show:
+          title: स्थानीय जनगणना प्रबन्ध गर्नुहोस्
+          subtitle: प्रक्रिया परिणामहरू आयात गर्नुहोस्
+          import: फेरि आयात गर्नुहोस्
+          errored: त्रुटिपूर्ण पङ्क्तिहरू
+          created: रेकर्डहरू सिर्जना गरे
+        local_census_records:
+          no_records_found: कुनै रेकर्ड भेटिएन।
+    machine_learning:
+      cancel: "सञ्चालन रद्द गर्नुहोस्"
+      cancel_alert: "यो कार्यले हालको स्क्रिप्ट रद्द गर्नेछ र स्क्रिप्ट पुन: चलाउन आवश्यक हुनेछ।"
+      comments_summary: "टिप्पणीहरू सारांश"
+      comments_summary_description: "टिप्पणी गर्न सकिने सबै वस्तुहरूमा स्वचालित रूपमा उत्पन्न टिप्पणी सारांश प्रदर्शन गर्दछ।"
+      data_folder_content: "डाटा फोल्डर सामग्री"
+      error: "त्रुटि:"
+      execute_script: "स्क्रिप्ट कार्यान्वयन गर्नुहोस्"
+      executed_by: "द्वारा निष्पादित:"
+      executed_script: "कार्यान्वयन लिपि:"
+      feature_disabled: "यो सुविधा असक्षम गरिएको छ। मेसिन लर्निङ प्रयोग गर्नको लागि तपाईले यसलाई %{link} बाट सक्षम गर्न सक्नुहुन्छ।"
+      feature_disabled_link: "सेटिङ पृष्ठ"
+      help:
+        title_1: "एआई / मेसिन लर्निङ भनेको के हो?"
+        description_1: "परम्परागत रूपमा, कम्प्युटर प्रोग्रामहरू प्रत्येक परिस्थितिमा कार्यक्रमले के गर्नुपर्छ र प्रत्येक क्षणमा उपलब्ध जानकारीलाई कसरी प्रशोधन गर्ने भन्ने बारे सटीक नियमहरू स्थापना गरेर डिजाइन गरिन्छ। जसलाई सामान्यतया AI/Machine Learning भनेर चिनिन्छ त्यो एक प्रकारको कार्यक्रम हो जसको लागि के गर्नु पर्ने कार्य के हो र यो कार्य राम्रो वा खराब भएको छ कि छैन भनेर कसरी मूल्याङ्कन गरिन्छ। तर पहिलेको विपरीत, प्रणालीले कार्य गर्नको लागि सबैभन्दा उपयुक्त विधि कुन हो भनेर पत्ता लगाउँछ वा सिक्छ।"
+        title_2: "CONSUL मा नयाँ एआई / मेसिन लर्निङ मोड्युलले के गर्छ?"
+        description_2: "यो मोड्युलले CONSUL मा कुनै पनि प्रकारको एआई/मेसिन लर्निङ कार्यक्रमहरू लागू गर्न अनुमति दिन्छ। कार्यक्रमहरूले CONSUL मा उपलब्ध जानकारीहरू प्रशोधन गर्न सक्छन् र परिणामहरू उत्पादन गर्न सक्छन् जसले प्रयोगकर्ताहरू र प्रशासकहरूलाई थप प्रभावकारी र बुद्धिमानी नागरिक सहभागिता पूरा गर्न मद्दत गर्दछ। कन्सुलको सामान्य कोड र यी नयाँ कार्यक्रमहरूको कोडलाई एकअर्काबाट स्वतन्त्र राख्दै नयाँ कार्यक्रमहरू कार्यान्वयन गर्न र सञ्चालन गर्न सजिलो बनाउन मोड्युलको विकास गरिएको हो।"
+        title_3: "यो मोड्युल कसरी प्रयोग गर्ने"
+        description_3: "यो पहिलो पटक प्रयोग गर्न यो मोड्युल राम्रोसँग सक्रिय गर्न CONSUL कागजातमा उपलब्ध निर्देशनहरू पालना गर्न आवश्यक छ। एकचोटि मोड्युल सही रूपमा सक्रिय भएपछि, प्रोग्रामहरू \"एक्जीक्यूट स्क्रिप्टहरू\" ट्याबबाट कार्यान्वयन गरिन्छ। यसलाई कार्यान्वयन गर्नु अघि, हामी एउटै ट्याबमा कार्यान्वयन समय र अन्य सान्दर्भिक जानकारीको अनुमान हेर्न सक्छौं। कार्यान्वयनको अन्त्यमा, हामी \"सेटिङ्हरू\" ट्याबबाट CONSUL मा देखाइने सामग्री सक्रिय गर्न सक्छौं, साथै हाम्रो लागि उपयोगी हुन सक्ने अन्य उत्पन्न फाइलहरू डाउनलोड गर्न सक्छौं।"
+        title_4: "नयाँ एआई / मेसिन लर्निङ स्क्रिप्टहरू कसरी लागू गर्ने"
+        description_4: "कृपया उदाहरणको रूपमा अघिल्लो स्क्रिप्टहरू प्रयोग गर्नुहोस्।"
+        description_4b: "नयाँ स्क्रिप्टहरू फोल्डरमा अवस्थित हुनुपर्छ <code>public/machine_learning/scripts</code>"
+        description_4c: "स्क्रिप्टद्वारा प्रयोग गरिने इनपुट डेटा फोल्डर <code>../data</code> मा JSON फाइलहरूको रूपमा सिर्जना गरिनेछ।"
+        description_4d: "कुनै पनि उत्पन्न आउटपुट फोल्डर <code>../data</code> मा राखिएको हुनुपर्छ"
+        description_4e: "स्क्रिप्टको समान नाम र कन्फिगर्सरद्वारा पढ्न सकिने स्क्रिप्टको सेटिङहरूसँग स्वतन्त्र <code>.ini</code> पाठ फाइल सिर्जना गर्न सिफारिस गरिन्छ। यस फाइलले प्रशासकहरूद्वारा सेटिङहरू परिवर्तन गर्न मद्दत गर्नेछ।"
+        description_4f: "स्क्रिप्टको पहिलो पङ्क्तिको रूपमा यसको बारेमा केही संक्षिप्त जानकारी र कुनै पनि सान्दर्भिक जानकारीको लिङ्कहरू सहित प्रारम्भिक ट्रिपल-उद्धरण स्ट्रिङ समावेश गर्न सिफारिस गरिन्छ। यो स्ट्रिङ स्वतः प्रशासन इन्टरफेसमा देखाइनेछ।"
+        description_4g: "स्क्रिप्टको नामको साथ, <code>.log</code> पाठ फाइलमा स्क्रिप्टको सान्दर्भिक जानकारी लग गर्न सिफारिस गरिन्छ।"
+        title_5: "एआई / मेसिन लर्निङ स्क्रिप्टहरू प्रयोग गर्नको लागि तपाईंले आफ्नो सर्भरमा पाइथन स्थापना गरेको हुनुपर्छ"
+        description_5: "यहाँ तपाईंले Ubuntu 18.04 सर्भरको लागि उदाहरण निर्देशनहरू हेर्न सक्नुहुन्छ:"
+      help_text: "यो कार्यक्षमता प्रयोगात्मक छ।"
+      last_execution: "अन्तिम कार्यान्वयन"
+      no_content: "अहिलेसम्म कुनै सामग्री उत्पन्न भएको छैन।"
+      notice:
+        success: "अन्तिम स्क्रिप्ट सफलतापूर्वक कार्यान्वयन गरिएको छ।"
+        error: "त्रुटी देखा पर्यो। तपाईं तल विवरणहरू हेर्न सक्नुहुन्छ।"
+        working: "स्क्रिप्ट चलिरहेको छ। यसलाई कार्यान्वयन गर्ने प्रशासकले यो समाप्त भएपछि इमेल प्राप्त गर्नेछ।"
+        delete_generated_content: "उत्पन्न सामग्री सफलतापूर्वक मेटाइएको छ।"
+      output_files: "आउटपुट फाइलहरू:"
+      related_content: "सम्बन्धित सामग्री"
+      related_content_description: "स्वचालित रूपमा उत्पन्न सम्बन्धित सामग्री, प्रस्तावहरू र सहभागी बजेट परियोजनाहरूमा थपिन्छन्।"
+      script_info: "तपाईंले %{email} मा एउटा इमेल प्राप्त गर्नुहुनेछ जब स्क्रिप्ट चल्ने समाप्त हुन्छ।"
+      script_name: "स्क्रिप्ट नाम:"
+      select_script: "कार्यान्वयन गर्न पाइथन स्क्रिप्ट चयन गर्नुहोस्"
+      started_at: "मा सुरु भयो:"
+      tab_help: "मद्दत"
+      tab_scripts: "स्क्रिप्ट कार्यान्वयन गर्नुहोस्"
+      tab_settings: "सेटिङहरू / उत्पन्न सामग्री"
+      tags: "ट्यागहरू"
+      tags_description: "ट्याग गर्न सकिने सबै वस्तुहरूमा स्वचालित ट्यागहरू उत्पन्न गर्दछ।"
+      title: "एआई / मेसिन लर्निङ"

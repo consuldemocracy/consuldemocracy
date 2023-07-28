@@ -23,7 +23,7 @@
     </p>
     <div class="proposal-image">
       <% if proposal.image.present? %>
-        <div class="overflow-image" style="background-image: url(<%= polymorphic_url(proposal.image.variant(:large)) %>);"></div>
+        <div class="overflow-image" style="<%= attached_background_css polymorphic_url(proposal.image.variant(:large)) %>"></div>
       <% else %>
         <div class="overflow-image" style="background-image:url('<%= "file://#{Rails.root.join("app","assets","images","default_mailing.jpg")}" %>');"></div>
       <% end %>

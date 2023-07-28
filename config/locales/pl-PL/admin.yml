@@ -4,6 +4,7 @@ pl:
       title: Administracja
     actions:
       actions: Akcje
+      block_author: "Blokuj autora"
       confirm_hide: Potwierdź moderację
       delete: "Usuń"
       hide: Ukryj
@@ -138,7 +139,7 @@ pl:
       edit:
         title: "Edytuj etap"
         description_help_text: Ten tekst pojawi się w nagłówku, gdy faza jest aktywna
-        enabled_help_text: Faza ta będzie publiczna na osi czasu fazy budżetowej, a także będzie aktywna do jakichkolwiek innych celów
+        enabled_help_text: Faza ta będzie publiczna na osi czasu fazy budżetowej, a także będzie aktywna do jakichkolwiek innych celów.
         save_changes: Zapisz zmiany
     budget_investments:
       index:

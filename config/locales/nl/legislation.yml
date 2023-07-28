@@ -12,11 +12,11 @@ nl:
       form:
         phase_not_open: Deze fase is nog niet gestart
       index:
-        title: Comments
+        title: Reacties
         comments_about: Reacties over
         see_in_context: Bekijk in de context
       show:
-        title: Commentaar
+        title: Reactie
       version_chooser:
         seeing_version: Reacties voor versie
         see_text: Bekijk concept tekst
@@ -27,7 +27,7 @@ nl:
         see_text: Bekijk concept tekst
       show:
         loading_comments: Reacties worden geladen
-        seeing_version: Je bekijkt nu de concept versie
+        seeing_version: Je bekijkt nu de conceptversie
         select_draft_version: Selecteer concept
         select_version_submit: bekijk
         updated_at: bijgewerkt op %{date}
@@ -52,7 +52,7 @@ nl:
         filter: Filter
         filters:
           open: Open plannen
-          past: Verleden
+          past: Oud
         no_open_processes: Er zijn geen actieve plannen
         no_past_processes: Er zijn geen afgesloten plannen
         section_header:
@@ -73,9 +73,9 @@ nl:
         key_dates: Data
         homepage: Homepage
         debate_dates: Debat
-        draft_publication_date: Concept publicatie
-        allegations_dates: Comments
-        result_publication_date: Eindversie publicatie
+        draft_publication_date: Publicatie concept
+        allegations_dates: Reacties
+        result_publication_date: Publicatie eindversie
         milestones_date: Volgend
         proposals_dates: Voorstellen
     questions:
@@ -104,15 +104,31 @@ nl:
       share_comment: Geef een reactie op %{version_name} van het concept proces %{process_name}
     proposals:
       form:
-        tags_label: "Categorieen"
+        tags_label: "Categorieën"
       not_verified: "Om op voorstellen te stemmen %{verify_account}."
       process_title: Samenwerken in plannen
     summary:
       title: "Samenvatting"
       votes:
         zero: "%{count} stemmen"
+        one: "%{count} stem"
+        other: "%{count} stemmen"
       debate_phase: "Debatfase"
       proposals_phase: "Voorstelfase"
       allegations_phase: "Opmerkingenfase"
+      debates:
+        zero: "Geen debatten"
+        one: "%{count} debat"
+        other: "%{count} debatten"
+      proposals:
+        zero: "Geen voorstellen"
+        one: "%{count} voorstel"
+        other: "%{count} voorstellen"
+      download: "Download samenvatting"
       top_comments:
         zero: "Geen reacties"
+        one: "%{count} reactie"
+        other: "Beste reacties"
+      most_voted_comments: "Reacties met de meeste stemmen"
+      no_allegation: "Er zijn geen reacties"
+      process_empty: "Dit proces had geen participatiefasen"

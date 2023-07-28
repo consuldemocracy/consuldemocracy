@@ -1,11 +1,11 @@
-//  CONSUL Settings
+//  CONSUL DEMOCRACY Settings
 //  -----------------------------
 //
 //  Table of Contents:
 //
 //  1. Foundation settings overrides
-//  2. CONSUL variables
-//  3. Foundation overrides depending on CONSUL variables
+//  2. CONSUL DEMOCRACY variables
+//  3. Foundation overrides depending on CONSUL DEMOCRACY variables
 //  4. Foundation fixes
 
 // 1. Foundation settings overrides
@@ -50,8 +50,8 @@ $orbit-caption-background: #eee;
 
 $show-header-for-stacked: true !default;
 
-// 2. CONSUL variables
-// --------------------
+// 2. CONSUL DEMOCRACY variables
+// -----------------------------
 
 $body-margin: calc(50vw - #{$global-width / 2}) !default;
 $full-width-margin: unquote("#{$global-width / 2} - 50vw") !default;
@@ -147,8 +147,8 @@ $sdg-colors: (
   17: #19486a
 ) !default;
 
-// 3. Foundation overrides depending on CONSUL variables
-// -----------------------------------------------------
+// 3. Foundation overrides depending on CONSUL DEMOCRACY variables
+// ---------------------------------------------------------------
 
 $anchor-color: $brand !default;
 $anchor-color-hover: darken($anchor-color, 20%) !default;

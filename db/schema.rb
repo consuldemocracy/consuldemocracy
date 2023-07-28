@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_06_141152) do
+ActiveRecord::Schema.define(version: 2023_05_23_090028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -238,9 +238,11 @@ ActiveRecord::Schema.define(version: 2023_02_06_141152) do
     t.boolean "allow_custom_content", default: false
     t.text "latitude"
     t.text "longitude"
+    t.integer "geozone_id"
     t.integer "max_ballot_lines", default: 1
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["geozone_id"], name: "index_budget_headings_on_geozone_id"
     t.index ["group_id"], name: "index_budget_headings_on_group_id"
   end
 
@@ -635,6 +637,8 @@ ActiveRecord::Schema.define(version: 2023_02_06_141152) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "census_code"
+    t.text "geojson"
+    t.string "color"
   end
 
   create_table "geozones_polls", id: :serial, force: :cascade do |t|
@@ -1630,7 +1634,6 @@ ActiveRecord::Schema.define(version: 2023_02_06_141152) do
     t.string "redeemable_code"
     t.string "gender", limit: 10
     t.datetime "date_of_birth"
-    t.boolean "email_on_proposal_notification", default: true
     t.boolean "email_digest", default: true
     t.boolean "email_on_direct_message", default: true
     t.boolean "official_position_badge", default: false
@@ -1776,6 +1779,7 @@ ActiveRecord::Schema.define(version: 2023_02_06_141152) do
   add_foreign_key "administrators", "users"
   add_foreign_key "budget_administrators", "administrators"
   add_foreign_key "budget_administrators", "budgets"
+  add_foreign_key "budget_headings", "geozones"
   add_foreign_key "budget_investments", "communities"
   add_foreign_key "budget_valuators", "budgets"
   add_foreign_key "budget_valuators", "valuators"

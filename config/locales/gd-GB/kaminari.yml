@@ -8,7 +8,7 @@ gd:
         few: Innteartan
         other: Innteartan
       more_pages:
-        display_entries: A’ sealltainn <strong>%{first} - %{last}</strong> à <strong>%{total} %{entry_name}</strong>
+        display_entries: A' sealltainn <strong>%{first}&nbsp;-&nbsp;%{last}</strong> de <strong>%{total} %{entry_name}</strong>
       one_page:
         display_entries:
           zero: "%{entry_name} - cha ghabh seo a lorg"

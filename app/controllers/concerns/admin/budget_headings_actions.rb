@@ -59,7 +59,7 @@ module Admin::BudgetHeadingsActions
     end
 
     def allowed_params
-      valid_attributes = [:price, :population, :allow_custom_content, :latitude, :longitude, :max_ballot_lines]
+      valid_attributes = [:price, :population, :allow_custom_content, :latitude, :longitude, :max_ballot_lines, :geozone_id]
 
       [*valid_attributes, translation_params(Budget::Heading)]
     end

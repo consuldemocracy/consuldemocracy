@@ -1,5 +1,8 @@
 fr:
   pages:
+    census_terms:
+      title: "Modalités et conditions d'accès au Registre"
+      description: "Page d'information sur les modalités d'accès au Registre."
     conditions:
       title: Termes et conditions d'utilisation
       subtitle: AVIS JURIDIQUE SUR LES CONDITIONS D’UTILISATION, CONFIDENTIALITÉ ET PROTECTION DES DONNÉES PERSONNELLES DU PORTAIL

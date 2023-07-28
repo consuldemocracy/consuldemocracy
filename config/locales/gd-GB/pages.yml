@@ -1,1 +1,173 @@
 gd:
+  pages:
+    census_terms:
+      title: "Teirmichean is cumhaichean ruigsinneachd a’ Chunntais-sluaigh"
+      description: "Duilleag fiosrachaidh mu theirmichean is cumhaichean ruigsinneachd a’ Chunntas-sluaigh."
+    conditions:
+      title: Teirmichean is Cumhaichean cleachdaidh
+      subtitle: BRATH LAGHAIL MU CHUMAICHEAN CLEACHDAIDH, PRÌOBHAIDEACHD AGUS DÌON DÀTA PEARSANTA AIR PORTAL AN RIAGHALTAIS FHOSGAILTE
+      description: Duilleag fiosrachaidh mu chumhachan cleachdaidh, prìobhaideachd agus dìon dàta pearsanta.
+    help:
+      title: "Tha %{org} na àrd-ùrlar airson com-pàirteachadh nan saoranach"
+      guide: "Mìnichidh an iùl seo dè nì gach earrann de %{org} agus mar a tha iad ag obrachadh."
+      menu:
+        debates: "Deasbadan"
+        proposals: "Molaidhean"
+        budgets: "Buidseatan com-pàirteachail"
+        polls: "Cunntasan-bheachd"
+        other: "Fiosrachadh feumail eile"
+        processes: "Pròiseasan"
+      debates:
+        title: "Deasbadan"
+        description: "Anns an earrainn %{link} ’s urrainn dhut do bheachd a thaisbeanadh agus a cho-roinn le daoine eile air cùisean a tha cudromach dhut co-cheangailte ri do bhaile. ’S e àite a th’ ann cuideachd airson beachdan a chruthachadh a bhios ag adhbharachadh gnìomhan an da-rìribh leis a’ Chomhairle tro na h-earrannan eile aig %{org}. "
+        link: "deasbadan saoranach"
+        feature: "Faodaidh tu deasbadan fhosgladh, beachdan a thoirt orra agus measadh a dhèanamh orra leis na <strong>tha mi ag aontachadh</strong> no <strong>chan eil mi ag aontachadh</strong> . Feumaidh tu %{link} airson sin."
+        feature_link: "clàraich ann an %{org}"
+        image_alt: "Putanan gus na deasbadan a mheas"
+        figcaption: 'Putanan "Tha mi ag aontachadh" agus "Chan eil mi ag aontachadh" gus na deasbadan a mheas.'
+      proposals:
+        title: "Molaidhean"
+        description: "Anns an earrann %{link} faodaidh tu molaidhean a dhèanamh dhan Chomhairle. Feumaidh na molaidhean taic bhon phoball, agus ma gheibh iad taic gu leòr, thèid bhòtadh orra leis a’ phoball. Bidh a’ Chomhairle a’ gabhail ris na molaidhean a chaidh aontachadh ann am bhòtaichean nan saoranach sin agus bidh iad gan cur an gnìomh."
+        link: "molaidhean nan saoranach"
+        image_alt: "Putan gus taic a thoirt do mholadh"
+        figcaption: 'Putan gus “Taic” a thoirt do mholadh.'
+      budgets:
+        title: "Buidseat com-pàirteachail"
+        description: "Tha an earrann %{link} a’ cuideachadh dhaoine gus co-dhùnadh dìreach a dhèanamh air dè a thèid cuid de bhuidseat na comhairle a chosg air."
+        link: "buidseatan com-pàirteachail"
+        image_alt: "Ìrean eadar-dhealaichte de bhuidseit com-pàirteachaidh"
+        figcaption: 'Ìrean “Taic” agus “Bhòtaidh” de bhuidseatan com-pàirteachail.'
+      polls:
+        title: "Cunntasan-bheachd"
+        description: "Thèid an earrann %{link} a chur an gnìomh gach turas a ruigeas moladh taic 1% agus a thèid e gu bhòt no nuair a bhios a’ Chomhairle a’ moladh cùis air am faod daoine co-dhùnadh a dhèanamh."
+        link: "cunntasan-bheachd"
+        feature_1: "Gus pàirt a ghabhail sa bhòtadh feumaidh tu %{link} agus an cunntas agad a dhearbhadh."
+        feature_1_link: "clàraich ann an %{org_name}"
+      processes:
+        title: "Pròiseasan"
+        description: "Anns an earrann %{link}, bidh saoranaich a’ gabhail pàirt ann a bhith a’ sgrìobhadh agus ag atharrachadh riaghailtean a tha a’ toirt buaidh air a’ bhaile agus is urrainn dhaibh am beachdan a thoirt seachad air poileasaidhean na coimhairle ann an deasbadan."
+        link: "pròiseasan"
+        feature: "Gus pàirt a ghabhail sna pròiseasan feumaidh tu %{link} agus an cunntas agad a dhearbhadh."
+        feature_link: "clàraich ann an %{org_name}"
+      faq:
+        title: "A bheil duilgheadasan teicnigeach agad?"
+        description: "Leugh na Ceistean Cumanta gus na freagairtean agad fhuasgladh."
+        button: "Faic na ceistean cumanta "
+        page:
+          title: "Ceistean Cumanta"
+          description: "Cleachd an duilleag seo gus fuasgladh fhaighinn air na Ceistean Cumanta aig cleachdaichean na làraich."
+      other:
+        title: "Fiosrachadh feumail eile"
+        how_to_use: "Cleachd %{org_name} sa bhaile agad"
+        sdg: "Taic le Amasan Leasachaidh Seasmhaich"
+      how_to_use:
+        text: |-
+          Cleachd e san ùghdarras ionadail agad no cuidich sinn gus a leasachadh, is e bathar-bog an-asgaidh a th’ ann.
+
+          Bidh am Portal Riaghaltas Fosgailte seo a’ cleachdadh an [CONSUL app] (https://github.com/consul/consul ‘consul github’) a tha na bhathar-bog an-asgaidh, le [cead AGPLv3](http://www.gnu.org/licenses/ agpl-3.0.html ‘AGPLv3 gnu’ ), a tha a’ ciallachadh ann am faclan sìmplidh gun urrainn do dhuine sam bith an còd a chleachdadh gu saor, lethbhreac a dhèanamh dheth, fhaicinn gu mionaideach, atharrachadh agus ath-sgaoileadh dhan t-saoghal leis na h-atharrachaidhean a tha iad ag iarraidh (a’ leigeil le daoine eile an aon rud a dhèanamh). Oir tha gu bheil sinn den bheachd gu bheil cultar nas fheàrr agus nas beairtiche nuair a thèid a leigeil ma sgaoil.
+
+          Mas e prògramadair a th’ annad, chì thu an còd agus faodaidh tu ar cuideachadh gus piseach a thoirt air aig [app CONSUL] (https://github.com/consul/consul ‘consul github’).
+      titles:
+        how_to_use: Cleachd e airson an ùghdarrais ionadail agad
+    privacy:
+      title: Poileasaidh Prìobhaideachd
+      subtitle: "Duilleag fiosrachaidh mu phrìobhaideachd"
+    accessibility:
+      title: So-ruigsinneachd
+      description: |-
+        Tha ruigsinneachd lìn a’ ciallachadh gum bi cothrom aig a h-uile duine air an lìon agus na tha air, ge b’ e dè na ciorraman (corporra, inntleachdail no teignigeach) a dh’fhaodadh a bhith orra no a dh’fhaodadh tighinn bhon cho-theacsa cleachdaidh (teicneòlach no àrainneachdail).
+
+        Nuair a tha làraichean-lìn air an dealbhadh le ruigsinneachd san amharc, faodaidh gach neach-cleachdaidh cothrom fhaighinn air susbaint ann an suidheachaidhean co-ionann, mar eisimpleir:
+      examples:
+        - Le bhith a’ toirt seachad alt-text aig na h-ìomhaighean, faodaidh luchd-cleachdaidh dall no le trioblaidean fradhairc leughadairean sònraichte a chleachdadh gus am fiosrachadh fhaighinn.
+        - Nuair a bhios fo-thiotalan aig bhidiothan, is urrainn luchd-cleachdaidh le duilgheadasan claisneachd an tuigsinn.
+        - Ma tha an t-susbaint sgrìobhte ann an cànan sìmplidh le dealbhan, bidh e nas fhasa do luchd-cleachdaidh le duilgheadasan ionnsachaidh gus an tuigsinn.
+        - Ma tha duilgheadasan gluasadachd aig a’ chleachdaiche agus ma tha e duilich an luchag a chleachdadh, cuidichidh na roghainnean eile leis a’ mheur-chlàr gus am prògram a chleachdadh.
+      keyboard_shortcuts:
+        title: Ath-ghoiridean a’ mheur-chlàir
+        navigation_table:
+          description: Gus a bhith comasach air seòladh tron làraich-lìn seo ann an dòigh ruigsinneach, chaidh buidheann de dh'iuchraichean ruigsinneachd luath a phrògramadh a chruinnicheas na prìomh earrannan anns a bheil ùidh choitcheann air an làraich seo.
+          caption: Ath-ghoiridean meur-chlàr airson a’ chlàir-taice
+          key_header: Iuchair
+          page_header: Taobh-duilleig
+          rows:
+            - 
+              key_column: 0
+              page_column: Dachaigh
+            - 
+              key_column: 1
+              page_column: Deasbadan
+            - 
+              key_column: 2
+              page_column: Molaidhean
+            - 
+              key_column: 3
+              page_column: Bhòtaichean
+            - 
+              key_column: 4
+              page_column: Buidseatan Com-pàirteachail
+            - 
+              key_column: 5
+              page_column: Pròiseasan reachdais
+        browser_table:
+          description: "A rèir an t-siostam obrachaidh agus a’ bhrabhsair a thathar a’ cleachdadh, bidh òrdugh nan iuchraichean mar a leanas:"
+          caption: Òrdugh nan iuchraichean a rèir an t-siostam obrachaidh agus a’ bhrabhsair
+          browser_header: Brabhsair
+          key_header: 'Òrdugh nan iuchraichean:'
+          rows:
+            - 
+              browser_column: Explorer
+              key_column: ALT + ath-ghoirid agus an uair sin ENTER
+            - 
+              browser_column: Firefox
+              key_column: ALT + CAPS + ath-ghoirid
+            - 
+              browser_column: Chrome
+              key_column: ALT + ath-ghoirid (CTRL + ALT + ath-ghoirid airson MAC)
+            - 
+              browser_column: Safari
+              key_column: ALT + ath-ghoirid (CMD + ath-ghoirid airson MAC)
+            - 
+              browser_column: Opera
+              key_column: CAPS + ESC + ath-ghoirid
+      textsize:
+        title: Meud an teacsa
+        browser_settings_table:
+          description: Tha cruth ruigsinneach na làraich-lìn seo a’ leigeil leis a’ chleachdaiche meud teacsa a tha freagarrach dhaibh a thaghadh. Faodar an gnìomh seo a dhèanamh ann an diofar dhòighean a rèir a’ bhrabhsair a thathar a chleachdadh.
+          browser_header: Brabhsair
+          action_header: Gnìomh ri ghabhail
+          rows:
+            - 
+              browser_column: Explorer
+              action_column: View > Text size
+            - 
+              browser_column: Firefox
+              action_column: View > Size
+            - 
+              browser_column: Chrome
+              action_column: Settings (icon) > Options > Advanced > Web Content > Text size
+            - 
+              browser_column: Safari
+              action_column: View > Zoom In/Zoom out
+            - 
+              browser_column: Opera
+              action_column: View > scale
+        browser_shortcuts_table:
+          description: "Is e dòigh eile air meud an teacsa atharrachadh na h-ath-ghoiridean meur-chlàr a tha air am mìneachadh ann am brabhsairean a chleachdadh, gu sònraichte na h-iuchraichean a leanas:"
+          rows:
+            - 
+              shortcut_column: CTRL agus + (CMD agus + air MAC)
+              description_column: Meudaichidh seo mead an teacsa
+            - 
+              shortcut_column: CTRL agus - (CMD agus - air MAC)
+              description_column: Lùghdaichidh seo meud an teacsa
+      compatibility:
+        title: Co-chòrdalachd le inbhean agus dealbhadh lèirsinneach
+        description: 'Tha a h-uile duilleag den làraich-lìn seo a’ cumail ris an <strong>Stiùireadh Ruigsinneachd</strong> no Prionnsapalan Coitcheann Dealbhadh Ruigsinneachd a stèidhich Buidheann-obrach <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> le W3C.'
+    titles:
+      help: "Dè th’ ann an %{org}? - Com-pàirteachadh saoranaich"
+    verify:
+      info: "Gus do chunntas a dhearbhadh cuir a-steach an dàta inntrigidh agad:"
+      info_code: "Cuir a-steach an còd a fhuair thu san litir a-nis:"
+      submit: Dearbhaich mo chunntas
+      title: Dearbhaich do chunntas

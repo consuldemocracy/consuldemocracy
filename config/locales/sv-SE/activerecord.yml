@@ -201,7 +201,9 @@ sv:
       geozone:
         name: Namn
         external_code: "Extern kod (valfri)"
+        color: "Färg (valfritt)"
         census_code: "Adressregisterkod (valfri)"
+        geojson: "GeoJSON-data (valfritt)"
         html_map_coordinates: "HTML-<map>koordinater (valfritt)"
       milestone:
         status_id: "Nuvarande status (valfritt)"
@@ -382,7 +384,10 @@ sv:
       tag:
         name: "Skriv namnet på ämnet"
       tenant:
+        domain: "Domän"
         schema: "Underdomän"
+        subdomain: "Underdomän"
+        url: "URL"
       topic:
         title: "Titel"
         description: "Inledande text"
@@ -459,7 +464,7 @@ sv:
         description: Beskrivning
       poll/question/answer/translation:
         title: Svar
-        description: "Beskrivning"
+        description: "Beskrivning (valfritt)"
       poll/question/answer/video:
         title: Titel
         url: Extern video
@@ -542,6 +547,10 @@ sv:
           attributes:
             max_per_day:
               invalid: "Du har skickat det högsta antalet tillåtna privata meddelanden per dag"
+        geozone:
+          attributes:
+            geojson:
+              invalid: "Angiven GeoJSON följer inte korrekt format. Den måste följa ett format av typen \"Polygon\" eller \"MultiPolygon\"."
         image:
           attributes:
             attachment:

@@ -118,7 +118,7 @@ class CreateSharedExtensionsSchema < ActiveRecord::Migration[6.0]
         ---------------------- Multitenancy Warning ----------------------
           Multitenancy is a feature that allows managing multiple
           institutions in a completely independent way using just one
-          CONSUL installation.
+          CONSUL DEMOCRACY installation.
 
           NOTE: If you aren't going to use multitenancy, you can safely
           ignore this warning.
@@ -127,7 +127,7 @@ class CreateSharedExtensionsSchema < ActiveRecord::Migration[6.0]
             #{warning_messages.join(";\n    ")};
           using a user with enough database privileges.
 
-          Check the CONSUL release notes for more information.
+          Check the CONSUL DEMOCRACY release notes for more information.
         ------------------------------------------------------------------
       WARNING
 

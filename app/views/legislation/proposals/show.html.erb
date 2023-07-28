@@ -94,7 +94,7 @@
 
         <%= render "shared/tags", taggable: @proposal %>
 
-        <%= render "shared/geozone", geozonable: @proposal %>
+        <%= render Shared::GeozoneLinkComponent.new(@proposal, legislation_process_proposals_path(@process, search: geozone_name(@proposal))) %>
 
         <div class="js-moderator-proposal-actions margin">
           <%= render "legislation/proposals/actions", proposal: @proposal %>
@@ -105,8 +105,7 @@
         <div class="sidebar-divider"></div>
         <h2><%= t("votes.supports") %></h2>
         <div id="<%= dom_id(@proposal) %>_votes">
-          <%= render "votes",
-                    { proposal: @proposal, vote_url: vote_legislation_process_proposal_path(@proposal.legislation_process_id, @proposal, value: "yes") } %>
+          <%= render Legislation::Proposals::VotesComponent.new(@proposal) %>
         </div>
         <%= render "shared/social_share",
           share_title: t("proposals.show.share"),

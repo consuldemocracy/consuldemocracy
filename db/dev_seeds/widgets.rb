@@ -13,7 +13,7 @@ section "Creating header and cards for the homepage" do
         -> { I18n.t("seeds.cards.header.#{attribute}") }
       end
     ).merge(
-      link_url: "http://consulproject.org/",
+      link_url: "http://consuldemocracy.org/",
       header: true,
       image_attributes: create_image_attachment("header")
     )

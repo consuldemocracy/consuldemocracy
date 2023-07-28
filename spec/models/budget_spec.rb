@@ -6,6 +6,7 @@ describe Budget do
   it_behaves_like "sluggable", updatable_slug_trait: :drafting
   it_behaves_like "reportable"
   it_behaves_like "globalizable", :budget
+  it_behaves_like "acts as imageable", :budget_image
 
   describe "scopes" do
     describe ".open" do
@@ -131,7 +132,7 @@ describe Budget do
     end
 
     it "is valid if main_link_text and main_link_url are both provided" do
-      valid_budget = build(:budget, main_link_text: "Text link", main_link_url: "https://consulproject.org")
+      valid_budget = build(:budget, main_link_text: "Text link", main_link_url: "https://consuldemocracy.org")
 
       expect(valid_budget).to be_valid
     end

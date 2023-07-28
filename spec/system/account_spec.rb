@@ -103,6 +103,22 @@ describe "Account" do
     expect(find("#account_email_on_comment_reply")).to be_checked
   end
 
+  describe "Email digest checkbox" do
+    scenario "Appears when the proposals process is enabled" do
+      visit account_path
+
+      expect(page).to have_field "Receive a summary of proposal notifications", checked: true
+    end
+
+    scenario "Does not appear when the proposals process is disabled" do
+      Setting["process.proposals"] = false
+
+      visit account_path
+
+      expect(page).not_to have_field "Receive a summary of proposal notifications"
+    end
+  end
+
   context "Option to display badge for official position" do
     scenario "Users with official position of level 1" do
       official_user = create(:user, official_level: 1)

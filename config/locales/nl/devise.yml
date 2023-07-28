@@ -55,12 +55,12 @@ nl:
       unlocked: "uw account is ontgrendeld. U kunt nu weer inloggen."
   errors:
     messages:
-      already_confirmed: "is reeds bevestigd"
+      already_confirmed: "Je bent al geverifieerd; log alsjeblieft in."
       confirmation_period_expired: "moet worden bevestigd binnen %{period}, probeer het a.u.b. nog een keer"
       expired: "is verlopen, vraag een nieuwe aan\""
-      not_found: "niet gevonden"
-      not_locked: "is niet gesloten"
+      not_found: "niet gevonden."
+      not_locked: "was niet geblokkeerd."
       not_saved:
         one: "1 error voorkwam dat dit %{resource} werd opgeslagen. Check alsjeblieft de gemarkeerde velden om ze te corrigeren."
         other: "%{count} errors voorkwamen dat deze %{resource} werden opgeslagen. Check alsjeblieft de gemarkeerde velden om ze te corrigeren:"
-      equal_to_current_password: "moet anders zijn dan het vorige wachtwoord"
+      equal_to_current_password: "moet anders dan het huidige wachtwoord zijn."

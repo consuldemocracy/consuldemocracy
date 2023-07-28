@@ -235,6 +235,11 @@ cs:
         few: Záznamy místního registru občanů
         many: Záznamů místního registru občanů
         other: Záznamů místního registru občanů
+      votation_type:
+        one: Typ hlasování
+        few: Typy hlasování
+        many: Typů hlasování
+        other: Typů hlasování
     attributes:
       budget:
         name: "Name"
@@ -276,7 +281,7 @@ cs:
         selected_true: "Vybrané"
         selected_false: "Není vybráno"
         unfeasibility_explanation: "Vysvětlení proveditelnosti"
-        valuation_finished: "Naceňování bylo ukončeno"
+        valuation_finished: "Vyhodnocení dokončeno"
         valuator_ids: "Skupiny"
         valuation_tag_list: "Štítky"
       budget/investment/translation:
@@ -285,7 +290,9 @@ cs:
       geozone:
         name: Název
         external_code: "Externí kód (volitelný)"
+        color: "Barva (volitelně)"
         census_code: "Kód registru občanů (nepovinné)"
+        geojson: "GeoJSON data (volitelně)"
         html_map_coordinates: "HTML <map> Souřadnice (nepovinné)"
       milestone:
         status_id: "Aktuální stav (volitelné)"
@@ -465,6 +472,11 @@ cs:
         body: Body
       tag:
         name: "Zadejte název tématu"
+      tenant:
+        domain: "Doména"
+        schema: "Doména / subdoména"
+        subdomain: "Subdoména"
+        url: "URL"
       topic:
         title: "Předmět"
         description: "Úvodní text"
@@ -541,7 +553,7 @@ cs:
         description: Popis
       poll/question/answer/translation:
         title: Answer
-        description: "Popis"
+        description: "Popis (volitelné)"
       poll/question/answer/video:
         title: Předmět
         url: Externí video
@@ -604,6 +616,12 @@ cs:
         document_number: Číslo dokladu
         date_of_birth: Datum narození
         postal_code: PSČ
+      votation_type:
+        max_votes: Maximální počet hlasů
+        vote_type: Typ hlasování
+      votation_type/vote_type:
+        unique: Jedinečná odpověď
+        multiple: Více odpovědí
     errors:
       models:
         user:
@@ -618,6 +636,10 @@ cs:
           attributes:
             max_per_day:
               invalid: "Dosáhli jste maximálního počtu soukromých zpráv za den"
+        geozone:
+          attributes:
+            geojson:
+              invalid: "Poskytnutý soubor GeoJSON nemá správný formát. Musí dodržovat formát typu \"Polygon\" nebo \"MultiPolygon\"."
         image:
           attributes:
             attachment:

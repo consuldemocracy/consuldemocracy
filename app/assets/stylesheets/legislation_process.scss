@@ -459,6 +459,10 @@
         padding: rem-calc(32) rem-calc(32) rem-calc(32) rem-calc(48);
       }
 
+      table {
+        @include table-scroll;
+      }
+
       h2 {
         font-weight: 400;
         margin-bottom: rem-calc(32);

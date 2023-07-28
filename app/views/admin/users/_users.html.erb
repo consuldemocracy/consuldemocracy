@@ -15,6 +15,7 @@
           <th scope="col"><%= t("admin.users.columns.document_number") %></th>
           <th scope="col"><%= t("admin.users.columns.roles") %></th>
           <th scope="col"><%= t("admin.users.columns.verification_level") %></th>
+          <th scope="col"><%= t("admin.users.columns.activation_status") %></th>
         <% end %>
       </tr>
     </thead>
@@ -30,6 +31,7 @@
             <td><%= user.document_number %></td>
             <td><%= display_user_roles(user) %></td>
             <td><%= user.user_type %></td>
+            <td><%= user.confirmed_at? ? t("admin.users.account.active_status") : t("admin.users.account.inactive_status") %></td>
           <% end %>
         </tr>
       <% end %>

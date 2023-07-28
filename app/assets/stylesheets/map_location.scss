@@ -1,0 +1,39 @@
+.map-location-remove-marker {
+  border-bottom: 1px dotted #cf2a0e;
+  border-radius: 0;
+  color: $delete;
+  cursor: pointer;
+  margin-bottom: $line-height;
+  margin-top: $line-height / 2;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-bottom-style: solid;
+    color: #cf2a0e;
+  }
+}
+
+.leaflet-bar a {
+
+  &.leaflet-disabled {
+    color: #525252;
+  }
+}
+
+.leaflet-container {
+
+  .leaflet-control-attribution {
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  a {
+    @include link;
+  }
+}
+
+.leaflet-bottom,
+.leaflet-pane,
+.leaflet-top {
+  z-index: 4;
+}

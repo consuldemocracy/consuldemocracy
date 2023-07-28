@@ -114,5 +114,7 @@ val:
       debate_phase: "Fase prèvia"
       proposals_phase: "Fase de propostes"
       allegations_phase: "Fase de comentaris"
+      debates:
+        zero: "No hi ha debats"
       top_comments:
         zero: "Sense comentaris"

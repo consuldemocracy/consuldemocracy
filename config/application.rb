@@ -31,7 +31,7 @@ module Consul
     config.action_view.form_with_generates_remote_forms = false
 
     # Keep using AES-256-CBC for message encryption in case it's used
-    # in any CONSUL installations
+    # in any CONSUL DEMOCRACY installations
     config.active_support.use_authenticated_message_encryption = false
 
     # Keep using the classic autoloader until we decide how custom classes
@@ -81,6 +81,7 @@ module Consul
       "id",
       "it",
       "ka",
+      "ne",
       "nl",
       "oc",
       "pl",
@@ -125,10 +126,10 @@ module Consul
     config.time_zone = "Madrid"
     config.active_job.queue_adapter = :delayed_job
 
-    # CONSUL specific custom overrides
+    # CONSUL DEMOCRACY specific custom overrides
     # Read more on documentation:
-    # * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md
-    # * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md
+    # * English: https://github.com/consuldemocracy/consuldemocracy/blob/master/CUSTOMIZE_EN.md
+    # * Spanish: https://github.com/consuldemocracy/consuldemocracy/blob/master/CUSTOMIZE_ES.md
     #
     config.autoload_paths << "#{Rails.root}/app/components/custom"
     config.autoload_paths << "#{Rails.root}/app/controllers/custom"

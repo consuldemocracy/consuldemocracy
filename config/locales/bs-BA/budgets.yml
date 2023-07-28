@@ -18,7 +18,6 @@ bs:
         tags_placeholder: "Unesite tagove koje želite koristiti, razdvojene zarezima (,)"
         map_location: "Lokacija mape"
         map_location_instructions: "Idite mapom do lokacije i stavite marker."
-        map_remove_marker: "Uklonite marker na mapi"
       index:
         title: Participativno budžetiranje
         unfeasible: Neizvodivi investicioni projekti
