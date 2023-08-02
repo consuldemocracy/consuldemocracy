@@ -179,6 +179,19 @@ describe "Home" do
     end
   end
 
+  scenario "Cards are ordered by creation date" do
+    create(:widget_card, title: "Card one", link_text: "Link one", link_url: "consul.dev")
+    create(:widget_card, title: "Card two", link_text: "Link two", link_url: "consul.dev")
+    create(:widget_card, title: "Card three", link_text: "Link three", link_url: "consul.dev")
+
+    visit root_path
+
+    within("#welcome_cards") do
+      expect("Card three").to appear_before("Card two")
+      expect("Card two").to appear_before("Card one")
+    end
+  end
+
   describe "Header Card" do
     scenario "if there is header card with link, the link content is rendered" do
       create(:widget_card, :header, link_text: "Link text", link_url: "consul.dev")
