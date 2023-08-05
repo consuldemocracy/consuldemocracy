@@ -1,3 +1,5 @@
+<% include_javascript_in_layout "map_loader" %>
+
 <div class="row">
   <div class="small-12 column">
     <%= form_for map_location, url: admin_update_map_path, method: :put, html: { id: "map-form" } do |f| %>

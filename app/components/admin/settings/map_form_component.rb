@@ -1,6 +1,6 @@
 class Admin::Settings::MapFormComponent < ApplicationComponent
   attr_reader :tab
-  delegate :render_map, to: :helpers
+  delegate :include_javascript_in_layout, :render_map, to: :helpers
 
   def initialize(tab: nil)
     @tab = tab
