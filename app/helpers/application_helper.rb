@@ -19,9 +19,7 @@ module ApplicationHelper
   end
 
   def include_stat_graphs_javascript
-    content_for :head do
-      javascript_include_tag "stat_graphs", "data-turbolinks-track" => "reload"
-    end
+    include_javascript_in_layout "stat_graphs"
   end
 
   def include_html_editor
