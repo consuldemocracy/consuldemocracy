@@ -18,6 +18,16 @@ module ApplicationHelper
     WYSIWYGSanitizer.new.sanitize(text)
   end
 
+  def include_html_editor
+    unless @html_editor_already_included
+      content_for :head do
+        javascript_include_tag "html_editor_loader", "data-turbolinks-track" => "reload"
+      end
+
+      @html_editor_already_included = true
+    end
+  end
+
   def author_of?(authorable, user)
     return false if authorable.blank? || user.blank?
 
