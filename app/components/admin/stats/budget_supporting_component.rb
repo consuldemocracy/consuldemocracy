@@ -1,5 +1,6 @@
 class Admin::Stats::BudgetSupportingComponent < ApplicationComponent
   attr_reader :budget
+  use_helpers :include_javascript_in_layout
 
   def initialize(budget)
     @budget = budget
