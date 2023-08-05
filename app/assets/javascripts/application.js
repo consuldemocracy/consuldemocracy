@@ -98,9 +98,6 @@
 //= require imageable
 //= require tree_navigator
 //= require tag_autocomplete
-//= require leaflet/dist/leaflet
-//= require leaflet.markercluster/dist/leaflet.markercluster
-//= require map
 //= require polls
 //= require sortable
 //= require table_sortable
@@ -153,7 +150,6 @@ var initialize_modules = function() {
   App.Documentable.initialize();
   App.Imageable.initialize();
   App.TagAutocomplete.initialize();
-  App.Map.initialize();
   App.Polls.initialize();
   App.Sortable.initialize();
   App.TableSortable.initialize();
@@ -185,7 +181,6 @@ var destroy_non_idempotent_modules = function() {
   App.ColumnsSelector.destroy();
   App.Datepicker.destroy();
   App.LegislationAnnotatable.destroy();
-  App.Map.destroy();
   App.SocialShare.destroy();
 };
 
