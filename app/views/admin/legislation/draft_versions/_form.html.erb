@@ -1,3 +1,4 @@
+<% include_javascript_in_layout "markdown_editor_loader" %>
 <%= render "shared/globalize_locales", resource: @draft_version %>
 
 <%= translatable_form_for [:admin, @process, @draft_version], url: url,
