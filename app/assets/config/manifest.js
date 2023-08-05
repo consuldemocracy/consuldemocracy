@@ -10,6 +10,7 @@
 //= link vendored-rtl.css
 //= link application.js
 //= link html_editor_loader.js
+//= link legislation_annotatable_loader.js
 //= link map_loader.js
 //= link markdown_editor_loader.js
 //
