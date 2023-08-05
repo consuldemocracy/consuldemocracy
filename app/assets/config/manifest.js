@@ -7,6 +7,7 @@
 //= link application.js
 //= link html_editor_loader.js
 //= link map_loader.js
+//= link markdown_editor_loader.js
 //
 //= link ckeditor/config.js
 //= link stat_graphs.js
