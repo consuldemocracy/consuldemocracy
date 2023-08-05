@@ -82,8 +82,6 @@
 //= require banners
 //= require social_share
 //= require checkbox_toggle
-//= require markdown-it/dist/markdown-it
-//= require markdown_editor
 //= require cocoon
 //= require options
 //= require questions
@@ -140,7 +138,6 @@ var initialize_modules = function() {
   App.Banners.initialize();
   App.SocialShare.initialize();
   App.CheckboxToggle.initialize();
-  App.MarkdownEditor.initialize();
   App.LegislationAdmin.initialize();
   App.Legislation.initialize();
   if ($(".legislation-annotatable").length) {
