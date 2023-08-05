@@ -46,7 +46,7 @@
       }
     },
     resetEditor: function(element) {
-      if (CKEDITOR.instances[$(element).attr("id")]) {
+      if (typeof CKEDITOR !== "undefined" && CKEDITOR.instances[$(element).attr("id")]) {
         CKEDITOR.instances[$(element).attr("id")].setData("");
       }
     },
