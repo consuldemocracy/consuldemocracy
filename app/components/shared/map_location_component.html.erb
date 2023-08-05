@@ -1,3 +1,5 @@
+<% include_javascript_in_layout("map_loader") %>
+
 <%= tag.div(id: dom_id(map_location), class: "map-location map", data: data) %>
 
 <% if editable? %>
