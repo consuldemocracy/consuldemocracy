@@ -43,8 +43,6 @@
 //= require foundation
 //= require turbolinks
 //= require turbolinks_anchors
-//= require ckeditor/loader
-//= require_directory ./ckeditor
 //= require social-share-button
 //= require initial
 //= require ahoy
@@ -78,7 +76,6 @@
 //= require checkbox_toggle
 //= require markdown-it
 //= require markdown_editor
-//= require html_editor
 //= require cocoon
 //= require answers
 //= require questions
@@ -141,7 +138,6 @@ var initialize_modules = function() {
   App.SocialShare.initialize();
   App.CheckboxToggle.initialize();
   App.MarkdownEditor.initialize();
-  App.HTMLEditor.initialize();
   App.LegislationAdmin.initialize();
   App.Legislation.initialize();
   if ($(".legislation-annotatable").length) {
@@ -181,7 +177,6 @@ var destroy_non_idempotent_modules = function() {
 
   App.ColumnsSelector.destroy();
   App.Datepicker.destroy();
-  App.HTMLEditor.destroy();
   App.LegislationAnnotatable.destroy();
   App.Map.destroy();
   App.SocialShare.destroy();
