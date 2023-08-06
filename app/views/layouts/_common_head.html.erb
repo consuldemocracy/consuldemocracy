@@ -8,6 +8,6 @@
 <% else %>
   <%= stylesheet_link_tag "application" %>
 <% end %>
-<%= javascript_include_tag "application", "data-turbolinks-track" => "reload" %>
+<%= javascript_include_tag "application", "data-turbolinks-track": "reload", defer: true %>
 <%= csrf_meta_tags %>
 <%= favicon_link_tag image_path_for("favicon.ico") %>
