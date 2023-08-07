@@ -20,7 +20,7 @@ module Attachable
       },
       file_size: {
         less_than_or_equal_to: ->(record) { record.max_file_size.megabytes },
-        if: -> { association_class && attachment.attached? },
+        if: -> { association_class && attachment.attached? && attachment.new_record? },
         message: ->(record, *) do
           I18n.t("#{record.model_name.plural}.errors.messages.in_between",
                  min: "0 Bytes",
