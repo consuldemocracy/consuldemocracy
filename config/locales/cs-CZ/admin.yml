@@ -1393,7 +1393,7 @@ cs:
       show_results_and_stats: "Zobrazit výsledky a statistiky"
       results_and_stats_reminder: "Zaškrtnutím těchto políček budou výsledky a statistiky tohoto průzkumu veřejně dostupné a kterýkoliv uživatel je uvidí."
       close_modal: Zavřít modální okno
-      example_url: "Například https://consulproject.org nebo /help"
+      example_url: "https://consulproject.org"
     geozones:
       index:
         title: Geozóna
