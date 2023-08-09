@@ -5,8 +5,8 @@ tr:
         title: "Katılımcı bütçeyi kapatıyoruz!"
         body: "Acele edin ve birkaç gün içinde başvuru süresi bitmeden önce bir önerge oluşturun!"
       help:
-        title: "Consul uygulamasını dilinize çevirmemize yardımcı olun"
-        body: "Bir dili iyi biliyorsanız, Consul uygulamasını çevirmemize yardımcı olun!"
+        title: "Consul Democracy uygulamasını dilinize çevirmemize yardımcı olun"
+        body: "Bir dili iyi biliyorsanız, Consul Democracy uygulamasını çevirmemize yardımcı olun!"
       map:
         title: "Artık önerge ve yatırımların coğrafi konumunu belirtebilirsiniz"
         body: "Oluşturacağınız önerge veya yatırımlar için harita üzerinde bir nokta belirtebilirsiniz."
@@ -39,7 +39,7 @@ tr:
         link_text: "Tartışmalar hakkında ayrıntılı bilgi"
         label: "Tartışmalar"
       header:
-        title: "CONSUL"
+        title: "CONSUL DEMOCRACY"
         description: "Yurttaş katılımı için ücretsiz yazılım."
         link_text: "Ayrıntılı bilgi"
         label: "Hoş geldiniz"
