@@ -267,7 +267,7 @@ nl:
         retired_explanation: "Toelichting"
       user:
         login: "Email of gebruikersnaam"
-        email: "Email"
+        email: "E-mail"
         username: "Gebruikersnaam"
         password_confirmation: "Wachtwoord bevestiging"
         password: "Wachtwoord"
@@ -327,7 +327,7 @@ nl:
         body: "Bericht"
         title: "Title"
       signature_sheet:
-        title: "Title"
+        title: "Titel"
         signable_type: "Geschikt voor tekenen"
         signable_id: "Geschikt voor identificatie"
         document_numbers: "Documentnummers"
@@ -372,7 +372,7 @@ nl:
       site_customization/content_block:
         name: Naam
         locale: taal
-        body: Platte tekst
+        body: Hoofdtekst
       tag:
         name: "Type de naam van het onderwerp"
       tenant:
@@ -390,7 +390,7 @@ nl:
         post_started_at: "Bijdrage start op"
         target_url: "Link"
       banner/translation:
-        title: "Title"
+        title: "Titel"
         description: "Beschrijving"
       legislation/process:
         title: Titel
@@ -464,7 +464,7 @@ nl:
         segment_recipient: Ontvangers
         subject: Onderwerp
         from: "Van"
-        body: Email inhoud
+        body: E-mail inhoud
       admin_notification:
         segment_recipient: Ontvangers
         title: Titel

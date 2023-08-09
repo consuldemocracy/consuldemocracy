@@ -213,7 +213,7 @@ cs:
       accessibility: Přístupnost
       conditions: Podmínky používání
       consul: aplikace CONSUL
-      consul_url: https://github.com/consul/consul
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: CONSUL, %{year}
       description: Tento portál software %{consul}, což je %{open_source}.
       open_source: open source software
@@ -507,6 +507,11 @@ cs:
       see_complete_course: Prohlédněte si celý kurz
       hide_course: Skrýt kurz
     goal:
+      target_supports:
+        one: Získejte %{count} podporu pro svůj návrh
+        few: Získejte %{count} podpory pro svůj návrh
+        many: Získejte %{count} podpor pro svůj návrh
+        other: Získejte %{count} podpor pro svůj návrh
       days:
         one: "%{count} den"
         few: "%{count} dny"
