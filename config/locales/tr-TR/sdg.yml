@@ -38,7 +38,7 @@ tr:
             long_title: "2030 yılına kadar, açlığın sona erdirilmesi ve özellikle bebekleri de düşünerek, yoksul ve savunmasız durumda olan herkesin tüm yıl boyunca güvenli, besleyici ve yeterli besine erişimini güvence altına almak."
             short_title: "Güvenli ve Besleyici Gıdaya Her Yerden Erişimin Sağlanması"
           target_2_2:
-            long_title: "2025’e kadar, 5 yaş altı çocukların büyümelerini engelleyen unsurlar konusunda üzerinde anlaşmaya varılan uluslararası hedeflerin gerçekleştirilmesi de dahil olmak üzere 2030’a kadar, kötü ve yetersiz beslenmenin tüm biçimlerinin ortadan kaldırılması; genç kızlar, hamile ve emziren kadınlar ile yaşlı insanların beslenmeyle ilgili ihtiyaçlarının ele alınması."
+            long_title: "2025 yılına kadar, 5 yaş altı çocukların büyümelerini engelleyen unsurlar konusunda üzerinde anlaşmaya varılan uluslararası hedeflerin gerçekleştirilmesi ile birlikte 2030 yılına kadar, kötü ve yetersiz beslenmenin tüm biçimlerinin ortadan kaldırılması; genç kızlar, hamile ve emziren kadınlar ile yaşlı insanların beslenmeyle ilgili gereksinimlerinin ele alınması."
             short_title: "Her Türlü Yetersiz Beslenmenin Sonlandırılması"
           target_2_3:
             long_title: "2030’a kadar, tarımsal verimliliğin ve özellikle kadınlar, yerli halklar, çiftçi aileler, çobanlar ve balıkçılar olmak üzere küçük ölçekli gıda üreticilerinin toprağa, diğer verimli kaynaklara ve girdilere, bilgiye, finansal hizmetlere, piyasalara ve değer temini ve tarım dışı istihdam olanaklarına güvenli ve eşit erişiminin sağlanması aracılığıyla gelirlerinin iki katına çıkarılması."
@@ -57,11 +57,11 @@ tr:
             short_title: "Tarımsal Ticaret Kısıtlamalarının, Piyasa Bozulmalarının ve İhracat Sübvansiyonlarının Önlenmesi"
           target_2_C:
             long_title: "Gıda mamulleri piyasalarının ve türevlerinin uygun biçimde işleyişini sağlamak için önlemler alınması ve gıda fiyatlarındaki aşırı değişkenliği sınırlandırmaya yardımcı olmak için gıda rezervleri de dahil olmak üzere piyasa bilgilerine zamanında erişimin kolaylaştırılması."
-            short_title: "İstikrarlı Gıda Emtia Piyasaları ve Bilgiye Zamanında Erişimin Sağlanması"
+            short_title: "Kararlı Gıda Emtia Piyasalarının ve Bilgiye Zamanında Erişimin Sağlanması"
       goal_3:
-        title: "Sağlık ve Kaliteli Yaşam"
-        title_in_two_lines: "Sağlık ve Kaliteli Yaşam"
-        description: "Sağlıklı yaşamların güvence altına alınması ve her yaştan herkes için kaliteli yaşamın teşvik edilmesi."
+        title: "Sağlıklı ve Kaliteli Yaşam"
+        title_in_two_lines: "Sağlıklı ve Kaliteli Yaşam"
+        description: "Sağlıklı yaşamın güvence altına alınması ve her yaştan kişilerin kaliteli yaşamasının desteklenmesi."
         long_description: '<p>Sağlıklı yaşamların sağlanması ve her yaşta refahın desteklenmesi sürdürülebilir kalkınma için gereklidir. Mevcut durumda, dünya diğerlerinden farklı bir <a href="https://www.un.org/coronavirus">küresel sağlık kriziyle</a> karşı karşıya kalmış durumda – COVID-19 insanlara acı yaymakta, küresel ekonomiyi istikrarsızlaştırmakta ve dünya çapında milyarlarca insanın hayatını altüst etmektedir.&nbsp;</p> <p>Salgın öncesinde, <a href="https://unstats.un.org/sdgs/report/2019/goal-03/">milyonlarca insanın sağlığıyla ilgili önemli gelişmeler kaydedilmiştir.</a> Ortalama yaşam süresi artırılması ve çocuk ve anne ölüm oranında yaygın ölüm nedenlerinden bazılarının azaltılmasına ilişkin önemli adımlar atılmıştır. Ancak, yakın zamanda ortaya çıkmış ve kalıcı olan birçok farklı sağlık sorununun ele alınması ve çok geniş bir yelpazedeki hastalıkların tamamen ortadan kaldırılması için daha fazla çaba sarf edilmesi gerekmektedir. Sıhhi tesisat ve hijyen koşullarının iyileştirmesi ve doktorlara erişim imkanının artırılması ve sağlık sistemlerinin daha etkin finanse edilmesine odaklanarak milyonlarca insanın hayatının kurtarılmasında önemli ilerlemeler kaydedilebilir.</p> <p> COVID-19 gibi olağanüstü sağlık durumları küresel bir risk teşkil etmekte ve hazırlıklı olmaya duyulan kritik ihtiyacı göstermektedir. Birleşmiş Milletler Kalkınma Programı, <a href="https://www.undp.org/content/undp/en/home/news-centre/news/2020/COVID19_UNDP_data_dashboards_reveal_disparities_among_countries_to_cope_and_recover.html">ülkelerin COVID-19 kriziyle başa çıkma ve krizi atlatmasındaki yeterliliklerinde</a> büyük eşitsizler olduğunu vurgulamıştır. Salgın, sağlık acil durum hazırlığı ve 21. yüzyılın en önemli kamu hizmetlerine yatırım için bir dönüm noktası sağlamaktadır.&nbsp;</p>'
         targets:
           target_3_1:
