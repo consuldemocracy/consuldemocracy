@@ -62,11 +62,11 @@ tr:
         sdg: "Sürdürülebilir Kalkınma Amaçları yardım"
       how_to_use:
         text: |-
-          Bunu yerel idarenizde kullanın ya da geliştirmemize yardım edin, bu özgür bir yazılımdır.
+          Yerel yönetiminizde kullanın ve geliştirmemize yardım edin. Bu yazılım ücretsizdir.
 
-          Bu Açık Hükümet Portalı, [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ) ile ücretsiz bir yazılım olan [CONSUL uygulaması](https://github.com/consul/consul 'consul github') kullanır, bu basit bir deyişle, herkesin kodu serbestçe kullanabileceği, kopyalayabileceği, detaylı olarak görebileceği, değiştirebileceği ve istediği değişikliklerle dünyaya yeniden dağıtabileceği (başkalarının da aynı şeyi yapmasına izin veren) anlamına gelir. Çünkü biz kültürün, serbest bırakıldığında daha iyi ve zengin olduğunu düşünüyoruz.
+          Bu Açık Hükümet sitesi, [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ) koşulları altında dağıtılan ve ücretsiz bir yazılım olan [CONSUL DEMOCRACY uygulaması](https://github.com/consuldemocracy/consuldemocracy 'consul democracy github') ile çalışıyor. Basit bir anlatımla, isteyen herkes kodu özgürce kullanabilir, kopyalayabilir, ayrıntılı olarak inceleyebilir, değiştirebilir ve yaptığı değişikliklerle dünyaya yeniden dağıtabilir (başkalarının da aynı şeyi yapmasına izin vererek). Biz kültürün, serbest bırakıldığında daha iyi ve zengin olacağını düşünüyoruz.
 
-          Eğer bir programcıysanız, kodu görebilir ve [CONSUL uygulaması] 'nda (https://github.com/consul/consul 'consul github') geliştirmemize yardımcı olabilirsiniz.
+          Yazılım geliştirebilen bir kişiyseniz kodu görebilir ve [CONSUL DEMOCRACY uygulaması](https://github.com/consuldemocracy/consuldemocracy 'consul democracy github') için geliştirme çalışmalarımıza yardımcı olabilirsiniz.
       titles:
         how_to_use: Yerel yönetimde kullanın
     privacy:
