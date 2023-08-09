@@ -21,43 +21,43 @@ tr:
     menu: Menü
   comments:
     actions:
-      confirm_delete: "Emin misiniz? Bu eylem yorumu silecektir ve geri alınamaz."
+      confirm_delete: "Emin misiniz? Bu işlem yorumu geri alınamayacak şekilde siler."
       delete: "Yorumu sil"
-    comments_closed: Yorumlar kapalıdır
+    comments_closed: Yorumlar kapalı
     verified_only: Katılmak için %{verify_account}
     comment:
       admin: Yönetici
-      author: Sahip
+      author: Sahibi
       deleted: Bu yorum silindi
       moderator: Sorumlu
       responses:
-        zero: Hiç yanıt yok
+        zero: Herhangi bir yanıt yok
         one: 1 yanıt
-        other: "%{count} yanıtlar"
+        other: "%{count} yanıt"
       responses_show:
-        zero: Hiç yanıt yok
+        zero: Herhangi bir yanıt yok
         one: "1 yanıt (göster)"
         other: "%{count} yanıt (göster)"
       responses_collapse:
-        zero: Hiç yanıt yok
+        zero: Herhangi bir yanıt yok
         one: "1 yanıt (daralt)"
         other: "%{count} yanıt (daralt)"
       user_deleted: Kullanıcı silindi
       votes:
-        zero: Hiç oy yok
+        zero: Herhangi bir oy yok
         one: 1 oy
-        other: "%{count} oylar"
+        other: "%{count} oy"
     form:
       comment_as_admin: Yönetici olarak yorum yap
       comment_as_moderator: Sorumlu olarak yorum yap
-      leave_comment: Yorumunuzu bırakın
+      leave_comment: Yorum yapın
     orders:
       most_voted: En çok oylanan
-      newest: Önce en yeniler
-      oldest: Önce en eskiler
-      most_commented: En çok yorumlanan
+      newest: Yeniden eskiye
+      oldest: Eskiden yeniye
+      most_commented: En çok yorum yapılan
     show:
-      return_to_commentable: "Şuna geri dön "
+      return_to_commentable: "Şuraya dön "
   comments_helper:
     comment_button: Yorumu yayınla
     comment_link: Yorum
@@ -70,9 +70,9 @@ tr:
         submit_button: Bir tartışma başlat
     debate:
       votes:
-        zero: Hiç oy yok
+        zero: Herhangi bir oy yok
         one: 1 oy
-        other: "%{count} oylar"
+        other: "%{count} oy"
     edit:
       editing: Tartışmayı düzenle
       form:
@@ -80,23 +80,23 @@ tr:
       show_link: Tartışmayı göster
     form:
       tags_instructions: Bu tartışmayı etiketle.
-      tags_placeholder: "Kullanmak istediğiniz etiketleri virgülle ayırarak girin (',')"
+      tags_placeholder: "Kullanmak istediğiniz etiketleri virgül (',') ile ayırarak yazın"
     index:
-      featured_debates: Öne Çıkan
+      featured_debates: Öne çıkarılmış
       orders:
         confidence_score: en yüksek puanlı
         created_at: en yeni
         hot_score: en etkin
-        most_commented: en çok yorumlanan
-        relevance: alakalı
-        recommendations: tavsiyeler
+        most_commented: en çok yorum yapılan
+        relevance: ilgili
+        recommendations: öneriler
       recommendations:
-        without_results: İlgilendikleriniz ile alakalı tartışmalar yok
-        without_interests: Önerileri takip edin böylece size tavsiyeler verebiliriz
-        disable: "Tartışma tavsiyeleri, görmezden gelirseniz gösterilmez. Onları 'Hesabım' sayfasında tekrar etkinleştirebilirsiniz"
+        without_results: İlgili alanlarınıza yönelik bir tartışma yok
+        without_interests: Önergeleri takip edin. Böylece size öneriler sunabiliriz
+        disable: "Yok saydığınızda tartışma önerileri artık görüntülenmez. Bunları 'Hesabım' bölümünden yeniden açabilirsiniz"
         actions:
-          success: "Bu hesap için tartışma önerileri artık devre dışı bırakıldı"
-          error: "Bir hata oluştu. Lütfen tartışma tavsiyelerini manuel olarak devre dışı bırakmak için 'Hesabım' sayfasına gidin"
+          success: "Bu hesap için tartışma önerileri kapatıldı"
+          error: "Bir sorun çıktı. Lütfen sunulacak tartışma önerilerini el ile kapatmak için 'Hesabım' bölümüne gidin"
       search_form:
         button: Ara
         placeholder: Tartışmalarda ara...
@@ -109,68 +109,68 @@ tr:
         help: Tartışmalar hakkında yardım
       section_footer:
         title: Tartışmalar hakkında yardım
-        description: Endişelendiğiniz konular hakkında görüşlerinizi başkalarıyla paylaşmak için bir tartışma başlatın.
-        help_text_1: "Vatandaş tartışmaları alanı, endişelerini herkese gösterebilecek ve görüşlerini diğer insanlarla paylaşmak isteyenleri hedef alır."
-        help_text_2: 'Bir tartışma açmak için %{org} ''da kaydolmanız gerekir. Kullanıcılar ayrıca açık tartışmalar hakkında yorum yapabilir ve her birinde bulunan "katılıyorum" veya "katılmıyorum" düğmeleriyle değerlendirebilirler.'
+        description: İlgi duyduğunuz konular hakkında görüşlerinizi başkalarıyla paylaşmak için bir tartışma başlatın.
+        help_text_1: "Yurttaş tartışmaları bölümü, görüşlerini ve endişelerini başkalarıyla paylaşmak isteyen kişiler için güvenli bir alan sağlar."
+        help_text_2: 'Bir tartışma açmak için %{org} üzerinde hesap açmanız gerekir. Kullanıcılar açık tartışmalar hakkında yorum yapabilir ve her birinde bulunan "Katılıyorum" veya "Katılmıyorum" düğmelerini kullanarak değerlendirme yapabilir.'
     new:
       form:
         submit_button: Bir tartışma başlat
-      more_info: Daha fazla bilgi
-      recommendation_four: Bu alanın ve onu dolduran seslerin tadını çıkarın. O size de ait.
+      more_info: Tartışmalar nasıl işler?
+      recommendation_four: Bu alanın tadını çıkarın. Burayı dolduran sesler arasında sizinki de var.
       recommendation_one: Tartışma başlığını veya tüm cümleleri büyük harflerle yazmayın. İnternet üzerinde bu yazım şekli bağırmak olarak algılanır ve kimse bağrılmasından hoşlanmaz.
-      recommendation_three: Acımasız eleştiri hoş karşılanır. Bu kusur bulma için bir alandır. Fakat inceliğe ve anlayışa sadık kalmanızı öneriyoruz. Dünya bu erdemlerle daha iyi bir yerdir.
-      recommendation_two: Yasadışı eylemi öneren herhangi bir tartışma veya yorum silinecektir, bunun yanı sıra tartışma alanlarını sabote etmek isteyenler de silinecek. Bunların dışında her şeye izin verilir.
+      recommendation_three: Acımasız eleştiriler hoş karşılanır. Bunlar kusurları bulmak için yararlı olabilir. Fakat inceliğe ve anlayışa sadık kalmanızı öneriyoruz. Dünya bu erdemlerle daha iyi bir yerdir.
+      recommendation_two: Yasadışı eylemler öneren tartışmalar veya yorumlar silinir. Bunun yanında tartışma alanlarını sabote etmek isteyenler de silinir. Bunların dışında her şeye izin verilir.
       recommendations_title: Bir tartışma oluşturmak için öneriler
       start_new: Bir tartışma başlat
     show:
       author_deleted: Kullanıcı silindi
       comments_title: Yorumlar
       edit_debate_link: Düzenle
-      flag: Bu tartışma birkaç kullanıcı tarafından uygunsuz olarak işaretlendi.
+      flag: Bu tartışma birkaç kullanıcı tarafından uygunsuz olarak işaretlenmiş.
       share: Paylaş
-      author: Sahip
+      author: Sahibi
     update:
       form:
         submit_button: Değişiklikleri kaydet
   errors:
     messages:
-      allowed_file_content_types: "içerik türü %{types} seçeneklerinden biri olmalıdır"
+      allowed_file_content_types: "içerik %{types} türlerinden birinde olmalıdır"
       user_not_found: Kullanıcı bulunamadı
-      invalid_date_range: "Geçersiz tarih aralığı"
+      invalid_date_range: "Tarih aralığı geçersiz"
       past_date: "Tarih geçmişte olamaz"
       cannot_change_date:
         poll_started: "Oylama başlatıldıktan sonra değiştirilemez"
         poll_ended: "Oylama bitirildikten sonra değiştirilemez"
   form:
-    accept_terms: Ben %{policy} ve %{conditions} 'ı kabul ediyorum
-    accept_terms_title: Gizlilik Politikasını ve Kullanım Şartlarını ve koşullarını kabul ediyorum
-    conditions: Kullanım şartları ve koşulları
+    accept_terms: '%{policy} ve %{conditions} metinlerini kabul ediyorum'
+    accept_terms_title: Gizlilik ileksi ve kullanım hüküm ve koşullarını kabul ediyorum
+    conditions: Kullanım hüküm ve koşulları
     debate: Tartışma
-    direct_message: özel mesaj
+    direct_message: özel ileti
     error: hata
-    errors: hatalar
-    not_saved: "bu %{resource} 'un kaydedilmesini engelledi. <br> Nasıl düzelteceğinizi öğrenmek için lütfen işaretli alanları kontrol edin:"
-    policy: Gizlilik Politikası
-    banner: bannerlar
-    proposal: Öneri
+    errors: hata
+    not_saved: "bu %{resource} kaynağının kaydedilmesini engelledi. <br>Lütfen nasıl düzeltileceğini öğrenmek için işaretli alanları kontrol edin:"
+    policy: Gizlilik ilkesi
+    banner: afiş
+    proposal: Önerge
     proposal_notification: "Bildirim"
     budget/investment: Yatırım
-    budget/group: Bütçe Grubu
-    budget/heading: Bütçe Başlığı
+    budget/group: Bütçe grubu
+    budget/heading: Bütçe başlığı
     geozone: coğrafi bölge
     legislation/draft_version: taslak
     legislation/process: süreç
     legislation/question: soru
     poll/shift: Vardiya
-    poll/question/answer: Cevap
+    poll/question/answer: Yanıt
     user: Hesap
     verification/sms: telefon
     signature_sheet: İmza sayfası
     document: Belge
     topic: Konu
-    image: Resim
-    local_census_record: Yerel Vatandaş Listesi Kaydı
-    local_census_records/import: Yerel Vatandaş Listesini İçe Aktar
+    image: Görsel
+    local_census_record: Yerel seçmen bilgi sistemi kaydı
+    local_census_records/import: Yerel seçmen bilgi sistemi kayıtlarını içe aktar
     site_customization/content_block: içerik bloğu
     site_customization/page: sayfa
     sdg/local_target: yerel hedef
@@ -180,26 +180,26 @@ tr:
     application:
       chrome: Google Chrome
       firefox: Firefox
-      ie: Internet Explorer ile taradığınızı fark ettik. Gelişmiş bir deneyim için, %{firefox} veya %{chrome} kullanmanızı öneririz.
-      ie_title: Bu web sitesi tarayıcınız için optimize edilmemiştir
+      ie: Internet Explorer kullandığınızı fark ettik. Gelişmiş bir deneyim için, %{firefox} ya da %{chrome} kullanmanızı öneririz.
+      ie_title: Bu site tarayıcınıza uygun olarak ayarlanmamış
     dashboard:
       proposal_header:
-        published: Yayınlandı
+        published: Yayınlanmış
         draft: Taslak
         retired: Geri çekilmiş
       proposal_totals:
-        active_resources: Aktif kaynaklar
+        active_resources: Etkin kaynaklar
         community: Topluluğunuzdaki katılımcılar
-        show_proposal: Öneriyi göster
-        preview_proposal: Öneri ön izlemesi
-        current_goal: Geçerli hedef
+        show_proposal: Önergeyi göster
+        preview_proposal: Önerge ön izlemesi
+        current_goal: Geçerli amaç
         supports:
-          zero: Destek almamış
+          zero: Henüz destek almamış
           one: 1 destek
           other: "destek"
     footer:
       accessibility: Erişilebilirlik
-      conditions: Kullanım şartları ve koşulları
+      conditions: Kullanım hüküm ve koşulları
       consul: CONSUL uygulaması
       consul_url: https://github.com/consul/consul
       copyright: CONSUL, %{year}
@@ -208,290 +208,290 @@ tr:
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Yaşamak istediğiniz şehri nasıl şekillendireceğinize karar verin.
       participation_title: Katılım
-      privacy: Gizlilik Politikası
+      privacy: Gizlilik ilkesi
     header:
-      administration_menu: Yönetici
+      administration_menu: Menü
       administration: Yönetim
       collaborative_legislation: Katılımcı mevzuat
       debates: Tartışmalar
       locale: "Dil:"
       management: Yönetim
-      moderation: Moderasyon
+      moderation: Değerlendirme
       valuation: Değerlendirme
-      officing: Seçim görevlilileri
+      officing: Oylama görevlilileri
       help: Yardım
       my_account_link: Hesabım
       my_activity_link: İçeriklerim
       open_gov: Açık hükümet
-      proposals: Öneriler
+      proposals: Önergeler
       poll_questions: Oylama
       budgets: Katılımcı bütçeleme
       notification_item:
         new_notifications:
           zero: "Yeni bildiriminiz yok"
           one: Bir yeni bildiriminiz var
-          other: '%{count} yeni bildirimleriniz var'
+          other: '%{count} yeni bildiriminiz var'
         notifications: Bildirimler
-      sdg: "SGH"
+      sdg: "SKA"
   notifications:
     index:
       empty_notifications: Yeni bildiriminiz yok.
       mark_all_as_read: Tümünü okundu olarak işaretle
-      read: Oku
+      read: Okunmuş
       title: Bildirimler
       unread: Okunmamış
     notification:
       action:
         comments_on:
           one: Biri şuna yorum yaptı
-          other: '%{count} şuna yorumlar yaptı'
+          other: Şuna %{count} yorum yapıldı
         proposal_notification:
-          one: Şunda bir yeni bildirim var
-          other: Şunda %{count} bildirimler var
+          one: Şurada bir yeni bildirim var
+          other: Şurada %{count} bildirim var
         replies_to:
-          one: Biri şundaki yorumunuza cevap verdi
-          other: Şundaki yorumunuza %{count} cevaplar bulunuyor
+          one: Biri şuradaki yorumunuzu yanıtladı
+          other: Şundaki yorumunuza %{count} yanıt verildi
       mark_as_read: Okundu olarak işaretle
       mark_as_unread: Okunmadı olarak işaretle
       notifiable_hidden: Bu kaynak artık kullanılabilir değil.
   map:
     title: "Bölgeler"
-    proposal_for_district: "Bölgeniz için bir öneri başlatın"
-    start_proposal: Bir öneri oluştur
+    proposal_for_district: "Bölgeniz için bir önerge verin"
+    start_proposal: Bir önerge oluştur
   omniauth:
     facebook:
-      sign_in: Facebook ile oturum aç
-      sign_up: Facebook ile kaydol
+      sign_in: Facebook ile oturum açın
+      sign_up: Facebook ile hesap açın
       name: Facebook
     finish_signup:
-      title: "Ek detaylar"
-      username_warning: "Sosyal ağlarla etkileşim biçimimizdeki bir değişiklik nedeniyle, kullanıcı adınızın şimdi 'zaten kullanımda' olarak görünmesi mümkündür. Bu durumdaysanız, lütfen farklı bir kullanıcı adı seçin."
+      title: "Ek bilgiler"
+      username_warning: "Sosyal ağlarla etkileşim biçimimizdeki bir değişiklik nedeniyle, kullanıcı adınız 'zaten kullanımda' olarak görünebilir. Bu durumu yaşıyorsanız, lütfen farklı bir kullanıcı adı seçin."
     google_oauth2:
-      sign_in: Google ile oturum aç
-      sign_up: Google ile kaydol
+      sign_in: Google ile oturum açın
+      sign_up: Google ile hesap açın
       name: Google
     wordpress_oauth2:
-      sign_in: Wordpress ile oturum aç
-      sign_up: Wordpress ile hesap aç
+      sign_in: Wordpress ile oturum açın
+      sign_up: Wordpress ile hesap açın
       name: Wordpress
     twitter:
-      sign_in: Twitter ile oturum aç
-      sign_up: Twitter ile kaydol
+      sign_in: Twitter ile oturum açın
+      sign_up: Twitter ile hesap açın
       name: Twitter
     info:
-      sign_in: "Bununla oturum aç:"
-      sign_up: "Şununla hesap aç:"
-    or_fill: "Veya aşağıdaki formu doldur:"
+      sign_in: "Şununla oturum açın:"
+      sign_up: "Şununla hesap açın:"
+    or_fill: "Ya da aşağıdaki formu doldurun:"
   proposals:
     create:
       form:
-        submit_button: Öneri oluştur
+        submit_button: Önerge oluştur
     created:
       title: Tebrikler! İlk adımı attınız.
-      motivation: "Önerinizin başarılı olması için bir başlatma kampanyası hazırlamak önemlidir. İlk birkaç gün belirleyicidir."
-      motivation_2: "<strong>Yayınlamak istediğiniz içerikle ilgili öneriler almak istiyorsanız, önerinizi taslak olarak kaydedin ve size yardımcı olalım.</strong>"
-      publish: Hayır, öneriyi yayınlamak istiyorum
+      motivation: "Önergenizin başarılı olması için bir başlangıç kampanyası hazırlamak önemlidir. İlk birkaç gün belirleyicidir."
+      motivation_2: "<strong>Duyurmak istediğiniz içerikle ilgili öneriler almak istiyorsanız, önergenizi taslak olarak kaydedin ve size yardımcı olalım.</strong>"
+      publish: Hayır, önergeyi yayınlamak istiyorum
       dashboard: Evet, yardım istiyorum ve daha sonra yayınlayacağım
-      preview_title: Öneriniz yayınlandığında bu şekilde görünecek
+      preview_title: Önergeniz yayınlandığında bu şekilde görünecek
     share:
       improve_it: Kampanyanızı geliştirin ve daha fazla destek alın.
-      dashboard: Daha fazla bilgi görüntüle
-      message: "Ben %{handle} içindeki %{title} önerisini destekledim. İlgileniyorsanız, siz de destekleyin!"
+      dashboard: Daha fazla bilgi göster
+      message: "Ben %{handle} içindeki %{title} önergesini destekledim. İlgileniyorsanız, siz de destekleyin!"
     edit:
-      editing: Öneriyi düzenle
+      editing: Önergeyi düzenle
       form:
         submit_button: Değişiklikleri kaydet
-      show_link: Öneriyi göster
+      show_link: Önergeyi göster
     retire_form:
-      title: Öneriyi geri çek
-      warning: "Öneriyi geri çeksenizde desteklerin alınması sürdürülür. Ancak ana listeden kaldırılır ve tüm kullanıcılara yazarın önerinin artık desteklenmemesi gerektiğini düşündüğünü belirten iletisi görüntülenir"
+      title: Önergeyi geri çek
+      warning: "Önergeyi geri çeksenizde desteklerin alınması sürdürülür. Ancak önerge ana listeden kaldırılır ve tüm kullanıcılara önerge sahibinin önergenin artık neden desteklenmemesi gerektiğini düşündüğünü belirten ileti görüntülenir"
       retired_reason_blank: Bir seçenek seçin
-      retired_explanation_placeholder: Neden artık bu önerinin desteklenmemesi gerektiğini düşündüğünüzü kısaca açıklayın
-      submit_button: Öneriyi geri çek
+      retired_explanation_placeholder: Neden artık bu önergenin desteklenmemesi gerektiğini düşündüğünüzü kısaca açıklayın
+      submit_button: Önergeyi geri çek
     retire_options:
       duplicated: Çoğaltılmış
-      started: Zaten yapım aşamasında
+      started: Zaten hazırlanıyor
       unfeasible: Uygulanabilir bulunmamış
       done: Tamam
       other: Diğer
     form:
-      proposal_responsible_name_note: "(bireysel olarak veya bir topluluğun temsilcisi olarak; genel olarak gösterilmeyecek)"
-      proposal_summary_note: "(maksimum 200 karakter)"
-      proposal_video_url_note: YouTube veya Vimeo'ya bir bağlantı ekleyebilirsiniz
+      proposal_responsible_name_note: "(bireysel olarak veya bir topluluğun temsilcisi olarak; herkese açık olarak görüntülenmeyecek)"
+      proposal_summary_note: "(en fazla 200 karakter)"
+      proposal_video_url_note: YouTube veya Vimeo bağlantısı ekleyebilirsiniz
       tag_category_label: "Kategoriler"
-      tags_instructions: "Bu öneriyi etiketleyin. Öneri kategorileri arasından seçim yapabilir veya yeni bir kategori ekleyebilirsiniz"
+      tags_instructions: "Bu önergeyi etiketleyin. Önerge kategorileri arasından seçim yapabilir ya da yeni bir kategori ekleyebilirsiniz"
       tags_label: Etiketler
-      tags_placeholder: "Kullanmak istediğiniz etiketleri virgülle ayırarak girin (',')"
+      tags_placeholder: "Kullanmak istediğiniz etiketleri virgül (',') ile ayırarak yazın"
       map_location: "Harita konumu"
-      map_location_instructions: "Harita ile konuma gidin ve işaretçiyi yerleştirin."
-      map_remove_marker: "Harita işaretçisini kaldır"
+      map_location_instructions: "Harita ile konuma gidin ve işareti yerleştirin."
+      map_remove_marker: "Harita işaretini kaldır"
     index:
-      featured_proposals: Öne Çıkan
+      featured_proposals: Öne çıkarılmış
       orders:
         confidence_score: en yüksek puanlı
         created_at: en yeni
         hot_score: en etkin
-        most_commented: en çok yorumlanan
-        relevance: alakalı
-        archival_date: arşivlendi
-        recommendations: tavsiyeler
+        most_commented: en çok yorum yapılan
+        relevance: ilgili
+        archival_date: arşivlenmiş
+        recommendations: öneriler
       recommendations:
-        without_results: İlgi alanlarınız ile ilgili bir öneri yok
-        without_interests: Önerileri izleyin. Böylece size öneriler sunabiliriz
-        disable: "Öneri sunumlarını yok saydığınızda bunlar artık görüntülenmez. Bunları 'Hesabım' bölümünden yeniden etkinleştirebilirsiniz"
+        without_results: İlgi alanlarınıza yönelik bir önerge yok
+        without_interests: Önergeleri takip edin. Böylece size öneriler sunabiliriz
+        disable: "Önerge sunumlarını yok saydığınızda bunlar artık görüntülenmez. Bunları 'Hesabım' bölümünden yeniden açabilirsiniz"
         actions:
-          success: "Bu hesap için artık öneriler sunulmayacak"
-          error: "Bir sorun çıktı. Lütfen sunulacak önerileri el ile devre dışı bırakmak için 'Hesabım' bölümüne gidin"
-      retired_proposals: Geri çekilmiş öneriler
-      retired_proposals_link: "Yazar tarafından geri çekilmiş öneriler"
-      selected_proposals: Seçilmiş öneriler
-      selected_proposals_link: Seçilmiş önerileri görüntüle
-      archived_proposals: Arşivlenmiş öneriler
-      proposals_lists: Öneri listeleri
+          success: "Bu hesap için önerge önerileri kapatıldı"
+          error: "Bir sorun çıktı. Lütfen sunulacak önerge önerilerini el ile kapatmak için 'Hesabım' bölümüne gidin"
+      retired_proposals: Geri çekilmiş önergeler
+      retired_proposals_link: "Sahibi tarafından geri çekilmiş önergeler"
+      selected_proposals: Seçilmiş önergeler
+      selected_proposals_link: Seçilmiş önergeleri göster
+      archived_proposals: Arşivlenmiş önergeler
+      proposals_lists: Önerge listeleri
       retired_links:
-        all: Tüm
+        all: Tümü
         duplicated: Çoğaltılmış
-        started: Yapım aşamasında
+        started: Hazırlanıyor
         unfeasible: Uygulanabilir bulunmamış
         done: Tamam
         other: Diğer
       search_form:
         button: Ara
-        placeholder: Önerileri ara...
+        placeholder: Önergeleri ara...
         title: Ara
       search_results:
-        one: " <strong>'%{search_term}'</strong>terimini içeren"
-        other: " <strong>'%{search_term}'</strong>terimini içeren"
-      select_order_long: "Şuna göre önerileri görüntülüyorsunuz:"
-      start_proposal: Bir öneri oluştur
-      title: Öneriler
-      top_link_proposals: Kategoriye göre en çok desteklenen öneriler
+        one: " <strong>'%{search_term}'</strong> terimi geçen"
+        other: " <strong>'%{search_term}'</strong> terimi geçen"
+      select_order_long: "Şuna uygun önergeleri görüyorsunuz:"
+      start_proposal: Bir önerge oluştur
+      title: Önergeler
+      top_link_proposals: Kategoriye göre en çok desteklenen önergeler
       section_header:
-        icon_alt: Öneriler simgesi
-        title: Öneriler
-        help: Öneriler ile ilgili yardım
+        icon_alt: Önergeler simgesi
+        title: Önergeler
+        help: Önergeler ile ilgili yardım
       section_footer:
-        title: Öneriler ile ilgili yardım
-        description: Yurttaş önerileri, yeterli desteği almış ve yurttaşların oylamasından geçmiş öneriler yoluyla, komşuların ve toplulukların bölgelerinin nasıl olmasını istediklerine doğrudan karar vermelerini sağlar.
+        title: Önergeler ile ilgili yardım
+        description: Yurttaş önergeleri, yeterli desteği alıp yurttaşların oylamasından geçerek, komşuların ve toplulukların, bölgelerinin nasıl olmasını istedikleri hakkında doğrudan karar vermelerini sağlar.
     new:
       form:
-        submit_button: Öneri oluştur
-      more_info: Yurttaş önerilerinin işleyişi nasıldır?
-      recommendation_one: Öneri başlığını veya tüm cümleleri büyük harflerle yazmayın. İnternet üzerinde bu yazım şekli bağırmak olarak algılanır ve kimse bağrılmasından hoşlanmaz.
-      recommendation_three: Bu alanın ve onu dolduran seslerin tadını çıkarın. O size de ait.
-      recommendation_two: Yasadışı eylemi öneren herhangi bir öneri veya yorum silinecektir, bunun yanı sıra tartışma alanlarını sabote etmek isteyenler de silinecek. Bunların dışında her şeye izin verilir.
-      recommendations_title: Nasıl bir öneri oluşturabilirsiniz
-      start_new: Yeni öneri oluştur
+        submit_button: Önerge oluştur
+      more_info: Yurttaş önergeleri nasıl işler?
+      recommendation_one: Önerge başlığını veya tüm cümleleri büyük harflerle yazmayın. İnternet üzerinde bu yazım şekli bağırmak olarak algılanır ve kimse bağrılmasından hoşlanmaz.
+      recommendation_three: Bu alanın tadını çıkarın. Burayı dolduran sesler arasında sizinki de var.
+      recommendation_two: Yasadışı eylemler öneren önergeler veya yorumlar silinir. Bunun yanında tartışma alanlarını sabote etmek isteyenler de silinir. Bunların dışında her şeye izin verilir.
+      recommendations_title: Önerge oluşturma önerileri
+      start_new: Yeni önerge oluştur
     notice:
-      retired: Öneri geri çekildi
-      published: Öneri yayınlandı
+      retired: Önerge geri çekildi
+      published: Önerge yayınlandı
     proposal:
-      created: "Bir öneri oluşturdunuz!"
+      created: "Bir önerge oluşturdunuz!"
       share:
-        guide: "Şimdi bunu paylaşabilirsiniz, böylece insanlar desteklemeye başlayabilir."
+        guide: "Artık önergenizi paylaşabilirsiniz, böylece insanlar desteklemeye başlayabilir."
         edit: "Paylaşılmadan önce, metni istediğiniz gibi değiştirebilirsiniz."
-        view_proposal: Şimdi değil, önerime git
-      already_supported: Bu öneriyi zaten desteklemişsiniz. Paylaşın!
+        view_proposal: Şimdi değil, önergeme git
+      already_supported: Bu önergeyi zaten desteklemişsiniz. Paylaşın!
       support: Destek
-      support_label: "%{proposal} destekle"
-      support_title: Bu öneriyi destekle
+      support_label: "%{proposal} önergesini destekle"
+      support_title: Bu önergeyi destekle
       supports:
-        zero: Destek yok
+        zero: Henüz destek almamış
         one: 1 destek
-        other: "%{count} destekler"
+        other: "%{count} destek"
       votes:
-        zero: Hiç oy yok
+        zero: Herhangi bir oy yok
         one: 1 oy
-        other: "%{count} oylar"
+        other: "%{count} oy"
       supports_necessary: "%{number} destek gerekli"
       total_percent: '%100'
-      archived: "Bu öneri arşivlenmiş olduğundan destek alamaz."
-      successful: "Bu öneri gerekli desteği aldı."
-      selected: "Seçilmiş öneri"
+      archived: "Bu önerge arşivlenmiş olduğundan destek alamaz."
+      successful: "Bu önerge gerekli desteği aldı."
+      selected: "Seçilmiş önerge"
     show:
       author_deleted: Kullanıcı silindi
-      code: "Öneri kodu:"
+      code: "Önerge kodu:"
       comments_tab: Yorumlar
-      dashboard_proposal_link: Gösterge paneli
-      flag: Bu öneri birkaç kullanıcı tarafından uygunsuz olarak işaretlendi.
+      dashboard_proposal_link: Pano
+      flag: Bu önerge birkaç kullanıcı tarafından uygunsuz olarak işaretlenmiş.
       notifications_tab: Bildirimler
       milestones_tab: Aşamalar
-      retired_warning: "Sahibi bu önerinin daha fazla desteklenmemesi gerektiğini düşünüyor."
+      retired_warning: "Sahibi bu önergenin daha fazla desteklenmemesi gerektiğini düşünüyor."
       retired_warning_link_to_explanation: Bunun için oy vermeden önce açıklamayı okuyun.
-      retired: Öneri sahibi tarafından geri çekildi
+      retired: Önerge sahibi tarafından geri çekildi
       share: Paylaş
-      no_notifications: "Bu öneride bildirim yok."
+      no_notifications: "Bu önergede herhangi bir bildirim yok."
       embed_video_title: "%{proposal} ile ilgili video"
-      title_video_url: "Dış görüntü"
-      author: Sahip
-      draft: Öneri taslak aşamasında. Henüz destek alamıyor ve öneri listesinde görüntülenmiyor.
+      title_video_url: "Dış video"
+      author: Sahibi
+      draft: Önerge taslak aşamasında. Henüz destek alamaz ve önerge listesinde görüntülenmez.
     update:
       form:
         submit_button: Değişiklikleri kaydet
   dashboard:
     menu:
-      my_proposal: Önerimi düzenle
+      my_proposal: Önergemi düzenle
       progress: İlerleme
       resources: Kaynaklar
       community: Topluluk
-      polls: Anketler
+      polls: Oylamalar
       mailing: E-posta
-      poster: Görsel
-      recommended_actions: Önerilen eylemler
-      messages: Kullanıcılara mesaj
+      poster: Poster
+      recommended_actions: Önerilen işlemler
+      messages: Kullanıcılara ileti gönder
       related_content: İlgili içerik
     form:
-      request: Talep
+      request: İste
     create_request:
-      success: İstek başarıyla gönderildi. Size bilgi vermek için en kısa sürede sizinle iletişim kuracağız.
-      archived: Bu öneri arşivlenmiş olduğundan kaynak isteğinde bulunamaz.
+      success: İstek gönderildi. Size bilgi vermek için en kısa sürede sizinle iletişim kuracağız.
+      archived: Bu önerge arşivlenmiş olduğundan kaynak isteğinde bulunulamaz.
     progress:
       title: Grafik
       group_by_month: Aylık
       group_by_week: Haftalık
       group_by_date: Günlük
-      progress: Mevcut ilerleme
+      progress: Birikimli ilerleme
       supports: Destekler
       success: İdeal ilerleme
       new_action: Yeni
     index:
-      title: Düzenleme
-      edit_proposal_link: Öneriyi düzenle
-      publish: Öneriyi yayınla
-      retire: Öneriyi geri çek
+      title: Sürüm
+      edit_proposal_link: Önergeyi düzenle
+      publish: Önergeyi yayınla
+      retire: Önergeyi geri çek
     new_request:
       links: Bağlantılar
     resources:
-      available_resources: Mevcut kaynaklar
+      available_resources: Kullanılabilecek kaynaklar
     resource:
       required_days: "%{days} gün gerekli"
       required_supports: "%{supports} destek gerekli"
       and: ve
-      view_resource: Kaynağa bak
-      resource_requested: Kaynak zaten talep edildi
-      request_resource: Kaynak talep et
+      view_resource: Kaynağı göster
+      resource_requested: Kaynak zaten istenmiş
+      request_resource: Kaynak iste
       resource_locked: Kaynak kilitli
     recommended_actions:
-      title: Önerilen eylemler
+      title: Önerilen işlemler
       goto_proposed_actions: Önerilen işlemlere git
       see_proposed_actions: Önerilen işlemleri gözden geçir
       hide_proposed_actions: Önerilen işlemleri gizle
-      pending_title: Beklemede
+      pending_title: Bekliyor
       show_description: Açıklamayı göster
-      without_pending_actions: Beklemede tavsiye edilen eylem yok
+      without_pending_actions: Bekleyen bir önerilen işlem yok
       done_title: Tamam
-      without_done_actions: Herhangi bir önerilen eylem gerçekleşmedi
+      without_done_actions: Herhangi bir önerilen işlem yapılmamış
     next_goal:
-      title: Hedef
-      see_complete_course: Tüm süreci görüntüle
-      hide_course: Tüm süreci gizle
+      title: Amaç
+      see_complete_course: Tüm akışı görüntüle
+      hide_course: Akışı gizle
     goal:
       target_supports:
-        one: Öneriniz için %{count} destek alın
-        other: Öneriniz için %{count} destekler alın
+        one: Önergeniz için %{count} destek alın
+        other: Önergeniz için %{count} destek alın
       days:
         one: "%{count} gün"
-        other: "%{count} günler"
+        other: "%{count} gün"
       locked_resource: Kaynak kilitli
       ideal_time: İdeal zaman
     community:
@@ -500,156 +500,156 @@ tr:
       participants: Katılımcılar
       debates: Tartışmalar
       comments: Yorumlar
-      latest_comments: Son mesajlar
+      latest_comments: Son iletiler
     messages:
-      send_notification: Öneri destekçilerine mesaj gönder
-      previous_notifications: Önceki bildirimlere bak
+      send_notification: Önerge takipçilerine bildirim gönder
+      previous_notifications: Önceki bildirimleri göster
     polls:
       index:
-        title: Anketler
-        create: Anket oluştur
+        title: Oylamalar
+        create: Oylama oluştur
         count:
-          one: '%{count} anket oluşturdunuz.'
-          other: '%{count} anketler oluşturdunuz.'
+          one: '%{count} oylama oluşturdunuz.'
+          other: '%{count} oylama oluşturdunuz.'
         links: Bağlantılar
-        additiontal_information: Ek bilgi
+        additiontal_information: Ek bilgiler
       new:
-        title: Yeni anket
-        submit: Anket oluştur
+        title: Yeni oylama
+        submit: Oylama oluştur
       edit:
-        submit: Anketi güncelle
+        submit: Oylamayı güncelle
       poll:
         responses:
           one: "%{count} yanıt"
-          other: "%{count} yanıtlar"
-        view_results: Sonuçları görüntüle
-        edit_poll: Anketi düzenle
-        show_results_help: Bu kutuyu işaretlerseniz sonuçlar herkese açık olacak ve tüm kullanıcılar bunları görebilecek
-        delete: Anketi sil
-        alert_notice: Bu işlem anketi ve onunla ilişkili tüm soruları silecektir.
-        success_notice: Anket başarıyla silindi
-        unable_notice: Yanıtlanmış olan bir anketi silemezsiniz
+          other: "%{count} yanıt"
+        view_results: Sonuçları göster
+        edit_poll: Oylamayı düzenle
+        show_results_help: Bu seçeneği işaretlerseniz sonuçlar herkese açık olur ve tüm kullanıcılar tarafından görülebilir
+        delete: Oylamayı sil
+        alert_notice: Bu işlem oylamayı ve onunla ilişkili tüm soruları siler.
+        success_notice: Oylama silindi
+        unable_notice: Yanıtları olan bir oylamayı silemezsiniz
       form:
-        name: Anket başlığı
+        name: Oylama başlığı
         add_question: Soru ekle
       question_fields:
         remove_question: Soruyu çıkar
-        add_answer: Cevap ekle
+        add_answer: Yanıt ekle
       question_answer_fields:
-        remove_answer: Cevabı kaldır
+        remove_answer: Yanıtı kaldır
     poster:
       index:
-        title: Görsel ön izlemesi
-        poster_title: "Bakmaya devam etmeyiniz,"
-        poster_subtitle: "bana destek verin! ;)"
-        intro_text: "<strong>Kendi vatandaşlık önerim ile%{org}</strong> 'a katılıyorum ve sadece sizin desteğinizle hayalini kurduğumuz şehri inşa edebiliriz"
-        proposal_code: "Öneri kodu: %{code}"
-        support: Benim önerimi destekle
-        footer: "<strong>%{link} bağlantısını ziyaret edip bu öneriyi destekleyin</strong> Desteğinle çoğalacağız. Üzerimize düşeni yapalım. Teşekkürler!"
+        title: Poster ön izlemesi
+        poster_title: "Bakmayı bırakın,"
+        poster_subtitle: "bana destek olun! ;)"
+        intro_text: "<strong>%{org}</strong> platformuna katılarak kendi yurttaş önergemi verdim. Hayalini kurduğumuz şehri yalnızca sizin desteğinizle kurabiliriz"
+        proposal_code: "Önerge kodu: %{code}"
+        support: Önergemi destekle
+        footer: "<strong>%{link} bağlantısını ziyaret ederek bu önergeyi destekleyin</strong>. Desteğinizle çoğalacağız. Üzerimize düşeni yapalım. Teşekkürler!"
       new:
-        title: Önerinizin görseli
+        title: Önergenizin posteri
       options:
         preview: Ön izleme
         download: İndir
     mailing:
       index:
-        title: E-posta ön izleme
+        title: E-posta ön izlemesi
       new:
         title: Paylaşılacak e-posta örneği
       mailing_options:
-        send: '%{address}''e gönder'
+        send: '%{address} adresine gönder'
         preview: Ön izleme
       create:
         sent: E-posta gönderildi
     mailer:
       forward:
         subtitle: "Desteklersen, <br>başarırız."
-        support_button: Bu öneriyi destekle
-        share_in: Paylaş
+        support_button: Bu önergeyi destekle
+        share_in: Şurada paylaş
         hi: "Merhaba!"
-        introduction: Nasıl bir şehirde yaşamak istediğimize karar verebileceğimiz %{org} platformuna katıldığımı bildirmek için yazıyorum. Kendi yurttaş önerimi oluşturdum ve şimdi desteğiniz gerekiyor! Endişelenmeyin destek olmak çok kolay.
-        support: "'Bu öneriyi destekle' seçeneğinin altında göreceğiniz düğmeyi tıklamanız yeterli. Öneri hakkında bilgi sahibi olduktan sonra duyurmaya da yardımcı olabilirsiniz. Yönetim yalnızca en çok desteklenen önerileri gerçekleştirecek ve bunu başarmamıza yardım edeceğinden eminim!"
-        share: "Bana bir iyilik yaparak önerimi arkadaşlarınla, ailenle ve yakınlarınla paylaşırsan, mükemmel olacak!"
+        introduction: Nasıl bir şehirde yaşamak istediğimize karar verebileceğimiz %{org} platformuna katıldığımı bildirmek için yazıyorum. Kendi yurttaş önergemi verdim ve şimdi desteğinizi istiyorum! Merak etmeyin destek olmak çok kolay.
+        support: "'Bu önergeyi destekle' seçeneğinin altında göreceğiniz düğmeye tıklamanız yeterli. Önerge hakkında bilgi sahibi olduktan sonra duyurulmasına da yardımcı olabilirsiniz. Yönetim yalnızca en çok destek alan önergeleri gerçekleştirecek ve bunu başarmamıza yardım edeceğinizden eminim!"
+        share: "Bana bir iyilik yaparak önergemi arkadaşlarınla, ailenle ve yakınlarınla paylaşırsan, harika olur!"
   polls:
-    all: "Tüm"
-    no_dates: "tarih atanmamış"
-    dates: "%{open_at} 'ten %{closed_at} 'e"
+    all: "Tümü"
+    no_dates: "tarih belirtilmemiş"
+    dates: "%{open_at} ile %{closed_at} arasında"
     final_date: "Son yeniden sayımlar/Sonuçlar"
     index:
       filters:
         current: "Açık"
-        expired: "Süresi doldu"
-      title: "Anketler"
-      participate_button: "Bu ankete katıl"
-      participate_button_expired: "Anket sona erdi"
+        expired: "Süresi dolmuş"
+      title: "Oylamalar"
+      participate_button: "Bu oylamaya katıl"
+      participate_button_expired: "Oylama sona erdi"
       no_geozone_restricted: "Tüm şehir"
-      geozone_restricted: "İlçeler"
-      geozone_info: "Census'taki kişiler katılabilir: "
-      already_answer: "Siz zaten bu ankete zaten katıldınız"
-      not_logged_in: "Katılmak için giriş yapmalı veya kayıt olmalısınız"
-      unverified: "Katılmak için hesabınızı doğrulamanız gerekir"
-      cant_answer: "Bu anket sizin coğrafi bölgenizde(geozone) mevcut değil"
+      geozone_restricted: "Bölgeler"
+      geozone_info: "Seçmen bilgi sistemi üzerindeki kişiler katılabilir: "
+      already_answer: "Bu oylamaya zaten katılmışsınız"
+      not_logged_in: "Katılmak için oturum ya da hesap açmalısınız"
+      unverified: "Katılmak için hesabınızı doğrulamalısınız"
+      cant_answer: "Bu oylamaya bulunduğunuz coğrafi bölgeden katılamazsınız"
       section_header:
         icon_alt: Oylama simgesi
         title: Oylama
         help: Oylama ile ilgili yardım
       section_footer:
         title: Oylama ile ilgili yardım
-        description: Vatandaş' anketleri oy kullanma hakkı olan vatandaşların doğrudan karar verebilecekleri katılımcı bir mekanizmadır
-      no_polls: "Hiç açık oy yok."
+        description: Yurttaş oylamaları, oy kullanma hakkı olan yurttaşların doğrudan karar verebilecekleri bir katılım yöntemidir
+      no_polls: "Herhangi bir açık oylama yok."
     show:
-      already_voted_in_booth: "Siz zaten fiziksel bir kabine katıldınız. Tekrar katılamazsınız."
-      already_voted_in_web: "Siz zaten bu ankete katıldınız. Yine oy verirseniz, üzerine yazılacaktır."
-      back: Oylamaya geri dön
-      cant_answer_not_logged_in: "Katılmak için %{signin} veya %{signup} yapmalısınız."
+      already_voted_in_booth: "Zaten fiziksel bir kabinde ıy vermişsiniz. Yeniden oy veremezsiniz."
+      already_voted_in_web: "Bu oylamaya zaten katılmışsınız. Yeniden oy verirseniz, önceki oyunuz değiştirilir."
+      back: Oylamaya dön
+      cant_answer_not_logged_in: "Katılmak için %{signin}ın ya da %{signup}ın."
       comments_tab: Yorumlar
-      cant_answer_verify: "Yanıtlamak için %{verify_link} gerekmektedir."
+      cant_answer_verify: "Yanıtlamak için %{verify_link}."
       verify_link: "hesabınızı doğrulayın"
-      cant_answer_expired: "Bu anket bitti."
-      cant_answer_wrong_geozone: "Bu soru sizin coğrafi bölgenizde(geozone) mevcut değil."
-      more_info_title: "Daha fazla bilgi"
+      cant_answer_expired: "Bu oylama tamamlanmış."
+      cant_answer_wrong_geozone: "Bu soruyu bulunduğunuz coğrafi bölgeden yanıtlayamazsınız."
+      more_info_title: "Ayrıntılı bilgi alın"
       documents: Belgeler
-      zoom_plus: Resmi genişlet
-      read_more: "%{answer} ile ilgili daha fazlasını oku"
-      read_less: "%{answer} ile ilgili daha azını oku"
-      videos: "Harici video"
-      info_menu: "Bilgi"
+      zoom_plus: Görseli genişlet
+      read_more: "%{answer} ile ilgili ayrıntıları göster"
+      read_less: "%{answer} ile ilgili ayrıntıları gizle"
+      videos: "Dış video"
+      info_menu: "Bilgiler"
       stats_menu: "Katılma istatistikleri"
-      results_menu: "Anket sonuçları"
+      results_menu: "Oylama sonuçları"
       stats:
-        total_votes: "Verilen oyların toplam miktarı"
+        total_votes: "Verilen oy sayısı"
         votes: "OYLAR"
-        web: "WEB"
+        web: "İNTERNET"
         mail: "POSTA"
         booth: "KABİN"
         total: "TOPLAM"
         valid: "Geçerli"
-        white: "Beyaz oylar"
+        white: "Boş oy"
         null_votes: "Geçersiz"
       results:
         title: "Sorular"
-        most_voted_answer: "En çok oy alan cevap: "
+        most_voted_answer: "En çok oy alan yanıt: "
     poll_header:
-      back_to_proposal: Öneriye geri dön
+      back_to_proposal: Önergeye dön
   poll_questions:
     show:
-      vote_answer: "Oy %{answer}"
-      voted: "%{answer} 'a oy verdiniz"
+      vote_answer: "%{answer} için oy ver"
+      voted: "%{answer} için oy verdiniz"
     description:
       unique: "En fazla 1 yanıt seçebilirsiniz."
       multiple: "En fazla %{maximum} yanıt seçebilirsiniz."
     read_more_about: "Ayrıntılı bilgi alın:"
   proposal_notifications:
     new:
-      title: "Mesaj gönder"
-      submit_button: "Mesaj gönder"
-      info_about_receivers: "Bu ileti <strong>%{count} kişiye</strong> gönderilecek ve %{proposal_page} üzerinde görülecek.<br>İletiler anlık olarak gönderilmez. Kullanıcılara belirli aralıklarla tüm öneri bildirimlerinin olduğu bir e-posta gönderilir."
-      proposal_page: "öneri'ler sayfası"
+      title: "Bildirim gönderilsin"
+      submit_button: "Bildirim gönderilsin"
+      info_about_receivers: "Bu ileti <strong>%{count} kişiye</strong> gönderilecek ve %{proposal_page} üzerinde görülecek.<br>İletiler anlık olarak gönderilmez. Kullanıcılara belirli aralıklarla tüm önerge bildirimlerinin olduğu bir e-posta gönderilir."
+      proposal_page: "önergenin sayfası"
     show:
-      back: "Faaliyetime geri dön"
+      back: "İçeriğime dön"
   shared:
     edit: "Düzenle"
-    filter: "Filtre"
+    filter: "Süz"
     save: "Kaydet"
     delete: "Sil"
     "yes": "Evet"
@@ -658,44 +658,44 @@ tr:
     advanced_search:
       date: "Tarihe göre"
       date_placeholder: "GG/AA/YYYY"
-      date_range_blank: "Bir tarih seç"
+      date_range_blank: "Bir tarih seçin"
       date_1: "Son 24 saat"
       date_2: "Geçen hafta"
       date_3: "Geçen ay"
       date_4: "Geçen yıl"
       date_5: "Özelleştirilmiş"
-      from: "Kaynak"
+      from: "Başlangıç"
       general: "Metin ile"
-      goal: "SGH'ne göre"
-      goal_blank: "Hedef seç"
-      search: "Filtre"
+      goal: "SKA göre"
+      goal_blank: "Amaç seçin"
+      search: "Süz"
       target: "Hedefe göre"
-      target_blank: "Hedef seç"
+      target_blank: "Hedef seçin"
       title: "Gelişmiş arama"
-      to: "Şuna"
+      to: "Bitiş"
     author_info:
       author_deleted: Kullanıcı silindi
       email_deleted: E-posta silindi
-    back: Geri git
-    check: Seç
-    check_all: Tüm
+    back: Geri dön
+    check: Seçin
+    check_all: Tümü
     check_none: Yok
     collective: Topluluk
     flag: Uygunsuz olarak işaretle
     follow: "Takip et"
     following: "Takip ediliyor"
-    follow_entity: "Takip et %{entity}"
+    follow_entity: "%{entity} ögesini takip et"
     followable:
       budget_investment:
         create:
-          notice: "Bu yatırım projesini takip etmeye başladınız! <br> Gelişmelerden haberdar olmanız için yapılan değişiklikleri size bildireceğiz."
+          notice: "Bu yatırım projesini takip etmeye başladınız!<br>Gelişmeleri öğrenmeniz için yapılan değişiklikleri size bildireceğiz."
         destroy:
-          notice: "Bu yatırım projesini takip etmeyi bıraktınız! <br> Artık bu projeyle ilgili bildirim almayacaksınız."
+          notice: "Bu yatırım projesini takip etmeyi bıraktınız!<br>Artık bu projeyle ilgili bir bildirim almayacaksınız."
       proposal:
         create:
-          notice: "Vatandaş önerisini takip etmeye başladınız.! <br> Gelişmelerden haberdar olmanız için değişiklikleri size bildireceğiz."
+          notice: "Yurttaş önergesini takip etmeye başladınız.!<br>Gelişmeleri öğrenmeniz için değişiklikleri size bildireceğiz."
         destroy:
-          notice: "Bu vatandaş önerisini takip etmeyi bıraktınız! <br> Artık bu öneriyle ilgili bildirimleri almayacaksınız."
+          notice: "Bu yurttaş önergesini takip etmeyi bıraktınız!<br>Artık bu önergeyle ilgili bildirimleri almayacaksınız."
     print:
       print_button: Bu bilgiyi yazdır
     search: Ara
@@ -703,77 +703,77 @@ tr:
     suggest:
       debate:
         found:
-          one: "'%{query}' terimi ile ilgili bir tartışma var, yeni bir tane açmak yerine buna katılabilirsiniz."
-          other: "'%{query}' terimi ile ilgili bir tartışmalar var, yeni bir tane açmak yerine bunlara katılabilirsiniz."
-        message: "'%{query}' terimini içeren %{count} tartışmaların %{limit} 'ini görüyorsunuz"
-        see_all: "Hepsini gör"
+          one: "'%{query}' terimi ile ilgili bir tartışma var. Yeni bir tartışma başlatmak yerine bu tartışmaya katılabilirsiniz."
+          other: "'%{query}' terimi ile ilgili tartışmalar var. Yeni bir tartışma başlatmak yerine bu tartışmalara katılabilirsiniz."
+        message: "'%{query}' terimini içeren %{count} tartışmanın %{limit} tanesini görüyorsunuz"
+        see_all: "Tümünü göster"
       budget_investment:
         found:
-          one: "'%{query}' terimi ile ilgili bir yatırım var, yeni bir tane açmak yerine buna katılabilirsiniz."
-          other: "'%{query}' terimi ile ilgili bir yatırımlar var, yeni bir tane açmak yerine bunlara katılabilirsiniz."
-        message: "'%{query}' terimini içeren %{count} yatırımların %{limit} 'ini görüyorsunuz"
-        see_all: "Hepsini gör"
+          one: "'%{query}' terimi ile ilgili bir yatırım var. Yeni bir yatırım başlatmak yerine bu yatırıma katılabilirsiniz."
+          other: "'%{query}' terimi ile ilgili yatırımlar var. Yeni bir yatırım başlatmak yerine bu yatırımlara katılabilirsiniz."
+        message: "'%{query}' terimini içeren %{count} yatırımın %{limit} tanesini görüyorsunuz"
+        see_all: "Tümünü göster"
       proposal:
         found:
-          one: "'%{query}' terimi ile ilgili bir öneri var, yeni bir tane açmak yerine buna katılabilirsiniz"
-          other: "'%{query}' terimi ile ilgili bir öneriler var, yeni bir tane açmak yerine bunlara katılabilirsiniz"
-        message: "'%{query}' terimini içeren %{count} önerilerin %{limit} 'ini görüyorsunuz"
-        see_all: "Hepsini gör"
+          one: "'%{query}' terimiyle bir önerge var. Yeni bir önerge oluşturmak yerine buna katılabilirsiniz"
+          other: "'%{query}' terimiyle önergeler var. Yeni bir önerge oluşturmak yerine bunlara katılabilirsiniz"
+        message: "'%{query}' terimini içeren %{count} önergeden %{limit} tanesini görüyorsunuz"
+        see_all: "Tümünü göster"
     tags_cloud:
-      tags: Trend
-      districts: "İlçeler"
-      districts_list: "İlçeler listesi"
+      tags: Yükselen
+      districts: "Bölgeler"
+      districts_list: "Bölgeler listesi"
       categories: "Kategoriler"
-    target_blank: " (bağlantı yeni pencerede açılacak)"
+    target_blank: " (bağlantı yeni pencerede açılır)"
     you_are_in: "Şuradasınız"
-    unflag: İşaretini Kaldır
-    unfollow_entity: "Takibi bırak %{entity}"
+    unflag: İşareti kaldır
+    unfollow_entity: "%{entity} takibini bırak"
     outline:
       searcher: Araştırmacı
-    go_to_page: "Sayfasına git "
+    go_to_page: "Şu sayfaya git "
     share: Paylaş
     orbit:
-      previous_slide: Önceki Slayt
-      next_slide: Sonraki Slayt
-    documentation: Ek belge
+      previous_slide: Önceki slayt
+      next_slide: Sonraki slayt
+    documentation: Ek belgeler
     view_mode:
-      title: Görünüm modu
+      title: Görünüm kipi
       cards: Kartlar
       list: Liste
     recommended_index:
-      title: Tavsiyeler
-      see_more: Daha fazla tavsiyeye bakın
-      hide: Tavsiyeleri gizle
+      title: Öneriler
+      see_more: Diğer önerilere bakın
+      hide: Önerileri gizle
     translations:
-      select_language_prompt: Dil seç
+      select_language_prompt: Dil seçin
       remove_language: Dili kaldır
       add_language: Dil ekle
       languages_in_use:
-        zero: "0 dil kullanımda"
-        one: "1 dil kullanımda"
-        other: "%{count} dil kullanımda"
+        zero: "0 dil kullanılıyor"
+        one: "1 dil kullanılıyor"
+        other: "%{count} dil kullanılıyor"
     optional: "İsteğe bağlı alanlar"
-    required: "Gerekli"
+    required: "Zorunlu alanlar"
     comments:
-      zero: "Yorum yok"
+      zero: "Herhangi bir yorum yok"
       one: "1 yorum"
       other: "%{count} yorum"
   social:
-    facebook: "Facebook %{org}"
-    twitter: "Twitter %{org}"
-    youtube: "YouTube %{org}"
-    telegram: "Telegram %{org}"
-    instagram: "Instagram %{org}"
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
+    telegram: "%{org} Telegram"
+    instagram: "%{org} Instagram"
   stats:
     index:
       visits: Ziyaretler
       debates: Tartışmalar
-      proposals: Öneriler
+      proposals: Önergeler
       comments: Yorumlar
-      proposal_votes: Önerilerdeki oylar
-      debate_votes: Tartışmalardaki oylar
-      comment_votes: Yorumlardaki oylar
-      votes: Toplam oylar
+      proposal_votes: Önergelere verilen oylar
+      debate_votes: Tartışma oyları
+      comment_votes: Yorum oyları
+      votes: Toplam oy
       verified_users: Doğrulanmış kullanıcılar
       unverified_users: Doğrulanmamış kullanıcılar
   unauthorized:
@@ -782,129 +782,129 @@ tr:
       all: "%{subject} üzerinde %{action} işlemini yapma izniniz yok."
   users:
     login_to_comment: "Yorum yapmak için %{signin}malı ya da %{signup}malısınız."
-    login_to_continue: "Devam etmek için %{signin}malı ya da %{signup}malısınız."
+    login_to_continue: "İlerlemek için %{signin}malı ya da %{signup}malısınız."
     signin: "oturum aç"
     signup: "hesap aç"
     verify_account: "hesabınızı doğrulayın"
     direct_messages:
       new:
-        direct_messages_bloqued: "Bu kullanıcı doğrudan mesaj almamaya karar verdi"
-        submit_button: Mesaj gönder
-        title: '%{receiver} ''a özel mesaj gönder'
-        verified_only: Bir özel mesaj göndermek için %{verify_account}
+        direct_messages_bloqued: "Bu kullanıcı doğrudan iletileri almamayı seçmiş"
+        submit_button: İleti gönder
+        title: '%{receiver} için özel ileti gönder'
+        verified_only: Bir özel ileti göndermek için %{verify_account}
       show:
-        receiver: Mesaj %{receiver} 'a gönderildi
+        receiver: İleti %{receiver} alıcısına gönderildi
     show:
       deleted: Silindi
       deleted_debate: Bu tartışma silindi
-      deleted_proposal: Bu öneri silindi
+      deleted_proposal: Bu önerge silindi
       deleted_budget_investment: Bu yatırım projesi silindi
-      proposals: Öneriler
+      proposals: Önergeler
       proposals_status: Durum
       debates: Tartışmalar
       budget_investments: Bütçe yatırımları
       comments: Yorumlar
-      actions: Aksiyon
+      actions: İşlemler
       filters:
         comments:
-          one: 1 Yorum
-          other: "%{count} Yorumlar"
+          one: 1 yorum
+          other: "%{count} yorum"
         debates:
-          one: 1 Tartışma
-          other: "%{count} Tartışmalar"
+          one: 1 tartışma
+          other: "%{count} tartışma"
         proposals:
-          one: 1 Öneri
-          other: "%{count} Öneriler"
+          one: 1 önerge
+          other: "%{count} önerge"
         budget_investments:
-          one: 1 Yatırım
-          other: "%{count} Yatırımlar"
+          one: 1 yatırım
+          other: "%{count} yatırım"
         follows:
-          one: 1 Takip Etme
-          other: "%{count} Takip Etme"
+          one: 1 takip
+          other: "%{count} takip"
       no_activity: Kullanıcının herkese açık bir işlemi yok
-      no_private_messages: "Bu kullanıcı özel mesajları kabul etmiyor."
+      no_private_messages: "Bu kullanıcı özel iletileri kabul etmiyor."
       private_activity: Bu kullanıcı işlem listesini gizli tutmaya karar vermiş.
-      send_private_message: "Özel mesaj gönder"
+      send_private_message: "Özel ileti gönder"
       delete_alert: "Yatırım projenizi silmek istediğinize emin misiniz? Bu işlem geri alınamaz"
     proposals:
-      retired: "Çekilen öneri"
+      retired: "Geri çekilmiş önerge"
       draft: Taslak
       published: Yayınlanmış
-      see: "Öneriyi gör"
+      see: "Önergeyi gör"
       actions: İşlemler
-      retired_help_text: Geri çekilen öneriler için gösterge panosu mevcut değil
+      retired_help_text: Geri çekilmiş önergelerin panosu yoktur
   votes:
     agree: Kabul ediyorum
     agree_label: "%{title} için düşüncem olumlu"
-    anonymous: Oy kullanmak için çok fazla isimsiz oy kullanıldı %{verify_account}.
+    anonymous: Oylamanın kabul edilmesi için çok fazla anonim oy kullanıldı. %{verify_account}.
     disagree: Kabul etmiyorum
     disagree_label: "%{title} için düşüncem olumsuz"
-    organizations: Organizasyonların oy kullanmalarına izin verilmez
+    organizations: Kuruluşların oy kullanmalarına izin verilmez
     supports: Destekler
-    verified_only: Yalnızca doğrulanan kullanıcılar önerilere oy verebilir; %{verify_account}.
+    verified_only: Önergelere yalnızca doğrulanmış kullanıcılar oy verebilir; %{verify_account}.
     budget_investments:
-      not_verified: Yalnızca doğrulanan kullanıcılar yatırım projelerine oy verebilir; %{verify_account}.
+      not_verified: Yalnızca doğrulanmış kullanıcılar yatırım projelerine oy verebilir; %{verify_account}.
       unfeasible: Uygulanabilir bulunmamış yatırım projeleri desteklenemez
-      not_voting_allowed: Oy kullanma aşaması kapanmıştır
+      not_voting_allowed: Oy kullanma aşaması kapanmış
       different_heading_assigned:
-        one: "Yatırım projelerini yalnızca %{count} bölgesinde destekleyebilirsiniz. Siz zaten %{supported_headings} 'teki yatırımları desteklediniz."
-        other: "Yatırım projelerini yalnızca %{count} bölgelerinde destekleyebilirsiniz. Siz zaten %{supported_headings} 'teki yatırımları desteklediniz."
+        one: "Yatırım projelerini yalnızca %{count} bölgede destekleyebilirsiniz. Siz zaten %{supported_headings} yatırımı desteklediniz."
+        other: "Yatırım projelerini yalnızca %{count} bölgede destekleyebilirsiniz. Siz zaten %{supported_headings} yatırımı desteklediniz."
   welcome:
     feed:
       most_active:
         debates: "En etkin tartışmalar"
-        proposals: "En etkin öneriler"
+        proposals: "En etkin önergeler"
         processes: "Açık süreçler"
       see_all:
         debates: Tüm tartışmaları göster
-        proposals: Tüm önerileri göster
-        processes: Tüm işlemleri göster
+        proposals: Tüm önergeleri göster
+        processes: Tüm süreçleri göster
       no_items:
-        debates: Şu anda bir tartışma bulunmamaktadır
-        proposals: Şu anda bir tasarı bulunmamaktadır
-        processes: Şu anda işleyen bir süreç bulunmamaktadır
-      process_label: İşlem
-      see_process: İşlemi gör
+        debates: Şu anda bir tartışma yok
+        proposals: Henüz bir önerge yok
+        processes: Şu anda açık bir süreç yok
+      process_label: Süreç
+      see_process: Süreci göster
     cards:
-      title: Öne Çıkan
+      title: Öne çıkarılmış
     recommended:
-      title: İlginizi çekebilecek tavsiyeler
-      help: "Bu tavsiyeler, sizin takip ettiğiniz tartışmaların ve önerilerin etiketleri ile oluşturulur."
+      title: İlginizi çekebilecek öneriler
+      help: "Bu öneriler, takip ettiğiniz tartışmaların ve önergelerin etiketleri ile oluşturulur."
       debates:
-        title: Tavsiye edilen tartışmalar
-        btn_text_link: Tavsiye edilen tüm tartışmalar
+        title: Önerilen tartışmalar
+        btn_text_link: Önerilen tüm tartışmalar
       proposals:
-        title: Tavsiye edilen öneriler
-        btn_text_link: Tavsiye edilen tüm öneriler
+        title: Önerilen önergeler
+        btn_text_link: Tüm önerilen önergeler
       budget_investments:
-        title: Tavsiye edilen yatırımlar
-      slide: "Bak %{title}"
+        title: Önerilen yatırımlar
+      slide: "%{title} göster"
     welcome:
-      go_to_index: Önerileri ve tartışmaları gör
+      go_to_index: Şimdi değil. Girişe git
       start_using_consul: Dizin sayfasına git
       title: Katıl
       user_permission_info: Hesabınızla şunları yapabilirsiniz...
-      user_permission_verify: "Tüm eylemleri gerçekleştirmek için hesabınızı doğrulayın."
+      user_permission_verify: "Tüm işlemleri yapabilmek için hesabınızı doğrulayın."
       user_permission_verify_my_account: Hesabımı doğrula
   invisible_captcha:
-    sentence_for_humans: "Eğer insansanız, bu alanı görmezden gelin"
-    timestamp_error_message: "Üzgünüm, bu çok hızlı oldu! Lütfen tekrar gönderin."
+    sentence_for_humans: "İnsansanız, bu alanı görmezden gelin"
+    timestamp_error_message: "Çok hızlı davrandınız! Lütfen yeniden gönderin."
   related_content:
     title: "İlgili içerik"
     add: "İlgili içerik ekle"
-    label: "İlgili içeriğe bağlantı"
+    label: "İlgili içerik bağlantısı"
     placeholder: "%{url}"
     help: "Siz %{org} içinden %{models} bağlantıları ekleyebilirsiniz."
     submit: "Ekle"
     error: "Bağlantı geçerli değil. %{url} ile başlamayı unutmayın."
-    error_duplicate: "Eklemekte olduğunuz içerik zaten mevcut."
+    error_duplicate: "Eklemekte olduğunuz içerik zaten var."
     error_itself: "Bağlantı geçerli değil. Bir içeriği kendisiyle ilişkilendiremezsiniz."
     success: "Yeni bir ilgili içerik eklediniz"
-    is_related: "Bu ilgili içerik mi?"
+    is_related: "Bu içerik ilgili mi?"
     score_positive: "Evet"
     score_negative: "Hayır"
     content_title:
-      proposal: "Öneri"
+      proposal: "Önerge"
       debate: "Tartışma"
       budget_investment: "Bütçe yatırımı"
   admin/widget:
@@ -912,9 +912,9 @@ tr:
       title: Yönetim
   annotator:
     help:
-      alt: Yorum yapmak istediğiniz metni seçin ve kalemle düğmeye basın.
-      text: Bu belgeye yorum yapmak için %{sign_in} veya %{sign_up} yapmalısınız. Ardından yorumlamak istediğiniz metni seçin ve kalemle düğmeye basın.
-      title: Ben bu belgeye nasıl yorum yapabilirim?
+      alt: Yorum yapmak istediğiniz metni seçin ve kalem simgesi olan düğmeye basın.
+      text: Bu belgeye yorum yapmak için %{sign_in}malı ya da %{sign_up}malısınız. Ardından yorumlamak istediğiniz metni seçin ve kalem simgesi olan düğmeye basın.
+      title: Bu belgeye nasıl yorum yapabilirim?
   links:
     form:
       delete_button: Sil
@@ -930,13 +930,13 @@ tr:
     subnav:
       surveys: Anketler
     poll:
-      take_part: '%{from}''dan %{to}''ya kadar yer alın'
+      take_part: '%{from} ile %{to} arasında katılın'
   remote_translations:
-    text: Bu sayfanın içeriği sizin dilinizde mevcut değil
-    all_remote_translations_enqueued_text: Sayfayı yeniledikten kısa bir süre sonra dilinizde tüm içeriği görebileceksiniz.
+    text: Bu sayfanın içeriği sizin dilinizde hazırlanmamış
+    all_remote_translations_enqueued_text: Sayfayı yeniledikten kısa bir süre sonra tüm içeriği dilinizde görebileceksiniz.
     create:
-      enqueue_remote_translation: Tercümeler doğru bir şekilde talep edildi.
-    button: Sayfayı çevir
+      enqueue_remote_translation: Çeviriler doğru şekilde istendi.
+    button: Sayfanın dilini çevir
   tags:
     list:
       filter:
@@ -944,5 +944,5 @@ tr:
           one: "Bir etiket daha"
           other: "%{count} etiket daha"
   machine_learning:
-    comments_summary: "Yorumlar özeti"
+    comments_summary: "Yorumların özeti"
     info_text: "İçerik Yapay Zeka / Makine Öğrenmesi tarafından oluşturulmuş"
