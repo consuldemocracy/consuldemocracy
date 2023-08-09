@@ -3,39 +3,39 @@ en-GB:
     abbr_day_names:
       - Sun
       - Mon
-      - Tue
-      - Wed
-      - Thu
-      - Fri
-      - Sat
+      -
+      -
+      -
+      -
+      -
     abbr_month_names:
       -
-      - Jan
-      - Feb
-      - Mar
-      - Apr
+      -
+      -
+      -
+      -
       - Травень
-      - Jun
-      - Jul
-      - Aug
-      - Sep
-      - Oct
-      - Nov
-      - Dec
+      -
+      -
+      -
+      -
+      -
+      -
+      -
     month_names:
       -
-      - January
-      - February
-      - March
-      - April
+      -
+      -
+      -
+      -
       - Трав.
-      - June
-      - July
-      - August
-      - September
-      - October
-      - November
-      - December
+      -
+      -
+      -
+      -
+      -
+      -
+      -
   errors:
     messages:
       model_invalid: "Помилка перевірки: %{errors}"
