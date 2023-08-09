@@ -35,7 +35,7 @@ tr:
     document_verifications:
       already_verified: Bu kullanıcı hesabı zaten doğrulanmış.
       has_no_account: Hesap açmak için, %{link} bölümüne gidin ve ekranın sol üstündeki <b> "Hesap aç"</b> üzerine tıklayın.
-      link: CONSUL
+      link: CONSUL DEMOCRACY
       in_census_has_following_permissions: "Bu kullanıcı siteye şu izinlerle katılabilir:"
       not_in_census: Bu belge kaydedilmemişl.
       not_in_census_info: "Seçmen bilgi sistemi üzerinde bulunmayan yurttaşlar siteye şu izinlerle katılabilir:"
