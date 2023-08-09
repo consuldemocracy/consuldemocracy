@@ -73,13 +73,13 @@ tr:
       share: "Oy almaya başlayın, yatırım projenizi sosyal ağlarda paylaşın. Amacınızı gerçekleştirmek için paylaşım şarttır."
       share_button: "Yatırım projenizi paylaşın"
       thanks: "Katkıda bulunduğunuz için tekrar teşekkür ederiz."
-      sincerely: "İçtenlikle"
+      sincerely: "Saygılarımızla"
     budget_investment_unselected:
       subject: "'%{code}' yatırım projeniz seçilmedi"
       title: "Yatırım projeniz seçilmedi"
       hi: "Değerli kullanıcı,"
       thanks: "Katkıda bulunduğunuz için tekrar teşekkür ederiz."
-      sincerely: "İçtenlikle"
+      sincerely: "Saygılarımızla"
     evaluation_comment:
       subject: "Yeni değerlendirme yorumu"
       title: '%{investment} için yeni değerlendirme yorumu'
