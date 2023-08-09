@@ -200,9 +200,9 @@ tr:
     footer:
       accessibility: Erişilebilirlik
       conditions: Kullanım hüküm ve koşulları
-      consul: CONSUL uygulaması
-      consul_url: https://github.com/consul/consul
-      copyright: CONSUL, %{year}
+      consul: CONSUL DEMOCRACY uygulaması
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Bu site %{open_source} olan %{consul} ile sunuluyor.
       open_source: açık kaynaklı yazılım
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
