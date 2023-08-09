@@ -212,7 +212,7 @@ gd:
     footer:
       accessibility: So-ruigsinneachd
       conditions: Teirmichean is cumhaichean cleachdaidh
-      consul: Aplacaid CONSUL
+      consul: aplacaid CONSUL
       consul_url: https://github.com/consul/consul
       copyright: CONSUL, %{year}
       description: Cleachdaidh am portal seo an %{consul} a tha na ghoireas %{open_source}.
