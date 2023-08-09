@@ -1386,7 +1386,7 @@ tr:
       show_results_and_stats: "Sonuçları ve istatistikleri göster"
       results_and_stats_reminder: "Bu kutular işaretlendiğinde, sonuçlar ve/veya istatistikler herkese açık olur ve her kullanıcı bunları görebilir."
       close_modal: Pencereyi kapat
-      example_url: "https://consulproject.org"
+      example_url: "Örneğin https://consuldemocracy.org ya da /help"
     geozones:
       index:
         title: Coğrafi bölge
@@ -1625,7 +1625,7 @@ tr:
           see_page: Göster
         new:
           title: Yeni özel sayfa oluştur
-          slug_help: "URL'de bu sayfayı tanımlayan metin, örneğin <code>https://consulproject.org/page-slug</code>"
+          slug_help: "Adreste bu sayfayı belirten metin. Örneğin <code>https://consuldemocracy.org/page-slug</code>"
         page:
           created_at: Oluşturulma
           status: Durum
@@ -1746,10 +1746,10 @@ tr:
       help:
         title_1: "Yapay Zeka / Makine Öğrenmesi nedir?"
         description_1: "Geleneksel olarak bilgisayar programları, programın her durumda ne yapması gerektiği ve her an var olan bilgilerin nasıl işleneceği hakkında kesin kurallar belirlenerek tasarlanır. Yaygın olarak Yapay Zeka /Makine Öğrenmesi olarak bilinen şey, gerçekleştirilecek görevin tam olarak belirlendiği ve görevin nasıl daha iyi ya da daha kötü gerçekleştirildiğinin değerlendirildiği bir program türüdür. Ancak öncekinden farklı olarak sistem, görevi gerçekleştirmek için en uygun yöntemin ne olacağını keşfeder veya öğrenir."
-        title_2: "CONSUL üzerinde Yapay Zeka / Makine Öğrenmesi modülü ne yapar?"
-        description_2: "Bu modül, CONSUL üzerinde her türlü Yapay Zeka / Makine Öğrenmesi programının uygulanmasını sağlar. Programlar CONSUL üzerinde bulunan bilgileri işleyebilir ve hem kullanıcıların hem de yöneticilerin daha etkili ve akıllı vatandaş katılımı gerçekleştirmesine yardımcı olan sonuçlar üretebilir. Modül, genel CONSUL kodunu ve bu yeni programların kodunu birbirinden bağımsız tutarak, yeni programların uygulanmasını ve çalıştırılmasını kolaylaştırmak için geliştirilmiştir."
+        title_2: "CONSUL DEMOCRACY üzerinde Yapay Zeka / Makine Öğrenmesi modülü ne yapar?"
+        description_2: "Bu modül, CONSUL DEMOCRACY üzerinde her türlü Yapay Zeka / Makine Öğrenmesi programının uygulanmasını sağlar. Programlar CONSUL DEMOCRACY üzerinde bulunan bilgileri işleyebilir ve hem kullanıcıların hem de yöneticilerin daha etkili ve akıllı yurttaş katılımı sağlamasına yardımcı olan sonuçlar üretebilir. Modül, genel CONSUL DEMOCRACY kodunu ve bu yeni programların kodunu birbirinden bağımsız tutarak, yeni programların uygulanmasını ve çalıştırılmasını kolaylaştırmak için geliştirilmiştir."
         title_3: "Bu modül nasıl kullanılır"
-        description_3: "İlk kez kullanırken, bu modülü uygun şekilde etkinleştirmek için CONSUL belgelerinde bulunan yönergelerin izlenmesi gerekir. Modül doğru şekilde etkinleştirildiğinde, programlar \"Betik dosyalarını çalıştır\" sekmesinden yürütülür. Yürütmeden önce, aynı sekmede yürütme süresi öngörüsünü ve diğer ilgili bilgileri görebiliriz. Yürütmenin sonunda, \"Ayarlar\" sekmesinden CONSUL üzerinde gösterilecek içeriği etkinleştirebilir ve bizim için yararlı olabilecek diğer üretilmiş dosyaları indirebiliriz."
+        description_3: "İlk kez kullanırken, bu modülü uygun şekilde etkinleştirmek için CONSUL DEMOCRACY belgelerinde bulunan yönergelerin izlenmesi gerekir. Modül doğru şekilde etkinleştirildiğinde, programlar \"Betikleri çalıştır\" sekmesinden yürütülür. Yürütmeden önce, aynı sekmede yürütme süresi öngörüsünü ve diğer ilgili bilgileri görebiliriz. Yürütmenin sonunda, \"Ayarlar\" sekmesinden CONSUL DEMOCRACY üzerinde gösterilecek içeriği etkinleştirebilir ve bizim için yararlı olabilecek diğer üretilmiş dosyaları indirebiliriz."
         title_4: "Yeni Yapay Zeka / Makine Öğrenmesi betikleri nasıl uygulanır"
         description_4: "Lütfen örnek olarak önceki betikleri kullanın."
         description_4b: "Yeni betikler <code>public/machine_learning/scripts</code> klasöründe bulunmalıdır"
