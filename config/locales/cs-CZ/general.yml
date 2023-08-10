@@ -507,6 +507,11 @@ cs:
       see_complete_course: Prohlédněte si celý kurz
       hide_course: Skrýt kurz
     goal:
+      target_supports:
+        one: Získejte %{count} podporu pro svůj návrh
+        few: Získejte %{count} podpory pro svůj návrh
+        many: Získejte %{count} podpor pro svůj návrh
+        other: Získejte %{count} podpor pro svůj návrh
       days:
         one: "%{count} den"
         few: "%{count} dny"
