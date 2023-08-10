@@ -1446,6 +1446,16 @@ cs:
         author: Autor
         users: Uživatelé
         signature_count: "Počet podpisů:"
+        verified:
+          one: "Je tu %{count} platný podpis"
+          few: "Jsou tu %{count} platné podpisy"
+          many: "Je tu %{count} platných podpisů"
+          other: "Je tu %{count} platných podpisů"
+        unverified:
+          one: "Je tu %{count} neplatný podpis"
+          few: "Jsou tu %{count} neplatné podpisy"
+          many: "Je tu %{count} neplatných podpisů"
+          other: "Je tu %{count} neplatných podpisů"
         unverified_error: (Není ověřeno statistickým úřadem)
         voted:
           zero: "Z ověřených podpisů se nevytvářejí žádné hlasy."
