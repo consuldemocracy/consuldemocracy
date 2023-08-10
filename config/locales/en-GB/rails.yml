@@ -8,34 +8,6 @@ en-GB:
       -
       -
       -
-    abbr_month_names:
-      -
-      -
-      -
-      -
-      -
-      - Травень
-      -
-      -
-      -
-      -
-      -
-      -
-      -
-    month_names:
-      -
-      -
-      -
-      -
-      -
-      - Трав.
-      -
-      -
-      -
-      -
-      -
-      -
-      -
   errors:
     messages:
       model_invalid: "Помилка перевірки: %{errors}"
