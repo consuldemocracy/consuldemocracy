@@ -14,6 +14,12 @@ describe "Results" do
     Budget::Result.new(budget, heading).calculate_winners
   end
 
+  scenario "Back link redirects to budget page" do
+    visit budget_results_path(budget)
+
+    expect(page).to have_link("Go back", href: budget_path(budget))
+  end
+
   scenario "No links to budget results with results disabled" do
     budget.update!(results_enabled: false)
 
