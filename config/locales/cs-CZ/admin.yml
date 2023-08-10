@@ -1393,7 +1393,7 @@ cs:
       show_results_and_stats: "Zobrazit výsledky a statistiky"
       results_and_stats_reminder: "Zaškrtnutím těchto políček budou výsledky a statistiky tohoto průzkumu veřejně dostupné a kterýkoliv uživatel je uvidí."
       close_modal: Zavřít modální okno
-      example_url: "https://consulproject.org"
+      example_url: "Například https://consuldemocracy.org nebo /help"
     geozones:
       index:
         title: Geozóna
@@ -1628,7 +1628,7 @@ cs:
           see_page: Zobrazit stránku
         new:
           title: Vytvořit novou vlastní stránku
-          slug_help: "Text pro identifikaci této stránky na URL, například <code>https://consulproject.org/page-slug</code>"
+          slug_help: "Text pro identifikaci této stránky na URL, například <code>https://consuldemocracy.org/page-slug</code>"
         page:
           created_at: Vytvořeno v
           status: Status
