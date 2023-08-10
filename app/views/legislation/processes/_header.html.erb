@@ -36,23 +36,23 @@
             <%= auto_link_already_sanitized_html AdminWYSIWYGSanitizer.new.sanitize(@process.description) %>
           <% end %>
 
-          <div id="legislation_info" class="hide" data-toggler="hide">
-            <% if @process.additional_info.present? %>
+          <% if @process.additional_info.present? %>
+            <div id="legislation_info" class="hide" data-toggler="hide">
               <hr>
               <p class="title"><%= t("legislation.processes.header.additional_info") %></p>
               <%= auto_link_already_sanitized_html AdminWYSIWYGSanitizer.new.sanitize(@process.additional_info) %>
-            <% end %>
-          </div>
+            </div>
 
-          <button type="button" id="read_more" class="button" data-toggler="hide"
-                  data-toggle="legislation_info read_more read_less">
-            <%= t("legislation.processes.header.more_info") %>
-          </button>
+            <button type="button" id="read_more" class="button" data-toggler="hide"
+                    data-toggle="legislation_info read_more read_less">
+              <%= t("legislation.processes.header.more_info") %>
+            </button>
 
-          <button type="button" id="read_less" class="button hide" data-toggler="hide"
-                  data-toggle="legislation_info read_more read_less">
-            <%= t("legislation.processes.header.less_info") %>
-          </button>
+            <button type="button" id="read_less" class="button hide" data-toggler="hide"
+                    data-toggle="legislation_info read_more read_less">
+              <%= t("legislation.processes.header.less_info") %>
+            </button>
+          <% end %>
         <% else %>
           <%= render "legislation/processes/header_full", process: @process %>
         <% end %>
