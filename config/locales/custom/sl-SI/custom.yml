@@ -73,20 +73,29 @@ sl-SI:
         amount_available:
           knapsack: "Na voljo vam je še <span>%{count}</span>."
           approval:
-            zero: "You can still cast <span>%{count}</span> votes."
-            one: "You can still cast <span>%{count}</span> vote."
-            other: "You can still cast <span>%{count}</span> votes."
+            zero: "Oddali ste vse razpoložljive glasove (<span>%{count}</span>)."
+            one: "Oddate lahko še <span>%{count}</span> glas."
+            two: "Oddate lahko še <span>%{count}</span> glasova."
+            three: "Oddate lahko še <span>%{count}</span> glasove."
+            four: "Oddate lahko še <span>%{count}</span> glasove."
+            other: "Oddate lahko še <span>%{count}</span> glasov."
         amount_spent:
           knapsack: "Porabljeno: <span>%{count}</span>"
           approval:
-            zero: "Votes cast: <span>%{count}</span>"
-            one: "Votes cast: <span>%{count}</span>"
-            other: "Votes cast: <span>%{count}</span>"
+            zero: "Oddanih glasov: <span>%{count}</span>"
+            one: "Oddan glas: <span>%{count}</span>"
+            two: "Oddana glasova: <span>%{count}</span>"
+            three: "Oddani glasovi: <span>%{count}</span>"
+            four: "Oddani glasovi: <span>%{count}</span>"
+            other: "Oddanih glasov: <span>%{count}</span>"
         amount_limit:
           knapsack: "Vaš proračun: <span>%{count}</span>"
           approval:
-            one: "You can vote <span>1</span> project"
-            other: "You can vote up to <span>%{count}</span> projects"
+            one: "Lahko glasujete za <span>1</span> predlog"
+            two: "Lahko glasujete za <span>2</span> predloga"
+            three: "Lahko glasujete za <span>3</span> predloge"
+            four: "Lahko glasujete za <span>4</span> predloge"
+            other: "Lahko glasujete za <span>%{count}</span> predlogov"
       reasons_for_not_balloting:
         not_logged_in: "<strong>Za nadaljevanje se moraš vpisati ali registrirati.</strong>"
         not_verified: Le verificirani uporabniki lahko glasujejo o naložbah; %{verify_account}.
