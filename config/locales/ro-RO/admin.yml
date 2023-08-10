@@ -1555,7 +1555,7 @@ ro:
           see_page: Vezi pagina
         new:
           title: Creați o nouă pagină personalizată
-          slug_help: "Text pentru a identifica această pagină pe URL, de exemplu <code>https://consulproject.org/page-slug </code>"
+          slug_help: "Text pentru a identifica această pagină pe URL, de exemplu <code>https://consuldemocracy.org/page-slug </code>"
         page:
           created_at: Creat la
           status: Status
