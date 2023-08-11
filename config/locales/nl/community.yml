@@ -41,7 +41,7 @@ nl:
           submit_button: Werk onderwerp bij
       show:
         tab:
-          comments_tab: Comments
+          comments_tab: Reacties
       sidebar:
         recommendations_title: Advies bij het starten van een onderwerp
         recommendation_one: Gebruik geen hoofdletters voor de titel, of voor hele zinnen. Dit is equivalent aan schreeuwen op het internet, en niemand houdt ervan toegeschreeuwd te worden.
