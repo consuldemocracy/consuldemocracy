@@ -31,8 +31,8 @@ nl:
       moderator: Moderator
       responses:
         zero: Geen reacties
-        one: 1 reactie
-        other: "%{count} reacties"
+        one: 1 antwoord
+        other: "%{count} antwoorden"
       responses_show:
         zero: Geen reacties
         one: "1 reactie (toon)"
@@ -162,6 +162,7 @@ nl:
     document: Document
     topic: Onderwerp
     image: Afbeelding
+    site_customization/content_block: inhoudsblok
     site_customization/page: pagina
   geozones:
     none: Hele stad
@@ -384,7 +385,7 @@ nl:
     show:
       author_deleted: Gebruiker verwijderd
       code: "Voorstel code:"
-      comments_tab: Comments
+      comments_tab: Reacties
       dashboard_proposal_link: Dashboard
       flag: Dit voorstel is door verschillende deelnemers aangemerkt als ongepast.
       notifications_tab: Notificaties
@@ -396,7 +397,7 @@ nl:
       no_notifications: "Dit voorstel heeft geen meldingen."
       embed_video_title: "Video voor %{proposal}"
       title_video_url: "Externe video"
-      author: Author
+      author: Auteur
     update:
       form:
         submit_button: Bewaar wijzigingen
@@ -436,7 +437,7 @@ nl:
       access_community: Naar de community
       participants: deelnemers
       debates: Discussie
-      comments: Comments
+      comments: Reacties
     polls:
       index:
         title: Polls
@@ -519,7 +520,7 @@ nl:
       already_voted_in_web: "Je hebt al deelgenomen in deze stemronde. Als je nogmaals stemt, wordt je eerdere stemming overschreven."
       back: Terug naar stemmen
       cant_answer_not_logged_in: "Je moet %{signin} of %{signup} om deel te nemen."
-      comments_tab: Comments
+      comments_tab: Reacties
       cant_answer_verify: "Je moet %{verify_link} om te kunnen antwoorden."
       verify_link: "verifieer uw account"
       cant_answer_expired: "Deze stemronde is voorbij."
@@ -653,6 +654,10 @@ nl:
         other: "%{count} talen in gebruik"
     optional: "Optionele velden"
     required: "Verplichte velden"
+    comments:
+      zero: "Geen reacties"
+      one: "1 reactie"
+      other: "%{count} reacties"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -664,7 +669,7 @@ nl:
       visits: Visits
       debates: Debatten
       proposals: Voorstellen
-      comments: Comments
+      comments: Reacties
       proposal_votes: Stemmen op voorstellen
       debate_votes: Stemmen op debatten
       comment_votes: Stemmen op reacties
@@ -698,7 +703,7 @@ nl:
       proposals_status: Status
       debates: Debatten
       budget_investments: Begrotingsvoorstellen
-      comments: Comments
+      comments: Reacties
       actions: Activiteiten
       filters:
         comments:
@@ -790,7 +795,7 @@ nl:
     score_positive: "Ja"
     score_negative: "Nee"
     content_title:
-      proposal: "Proposal"
+      proposal: "Voorstel"
       debate: "Discussie"
       budget_investment: "Begrotingsvoorstel"
   admin/widget:
