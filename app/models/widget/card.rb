@@ -16,6 +16,6 @@ class Widget::Card < ApplicationRecord
   end
 
   def self.body
-    where(header: false, cardable_id: nil).order(:created_at)
+    where(header: false, cardable_id: nil).order(created_at: :desc)
   end
 end
