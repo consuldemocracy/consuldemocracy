@@ -47,7 +47,7 @@ nl:
         title: "Plannen"
         description: "In het %{link} onderdeel kun je deelnemen in het opstellen en aanpassen van formele stukken. Je kunt hier ook je mening geven over beleid en plannen ontstaan uit eerdere debatten."
         link: "plannen"
-        feature: "Om te participeren bij de processen moet je %{link} en je account verifiëren."
+        feature: "Om deel te nemen aan de processen moet je %{link} en je account verifiëren."
         feature_link: "registreren in %{org_name}"
       faq:
         title: "Technische problemen?"
@@ -62,11 +62,11 @@ nl:
         sdg: "Hulp bij Sustainable Development Goals"
       how_to_use:
         text: |-
-          Gebruik het in je gemeente of help ons het te verbeteren, het is open source software.
+          Gebruik het binnen je gemeente of help ons het te verbeteren, het is gratis.
 
-          Dit platform gebruikt de [CONSUL app](https://github.com/consul/consul 'consul github') wat open source software is [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), wat betekent dat iedereen vrij is om de code te gebruiken, te kopieren, in detail te bekijken aan te passen en opnieuw de wereld in te sturen met de aanpassingen die men maakt (en daarmee anderen toe te staan dit ook te doen). Omdat wij denken dat cultuur beter en rijker wordt als het wordt opengesteld.
+          Dit platform gebruikt de [CONSUL app](https://github.com/consul/consul 'consul github'), een programma met een [open source licentie](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu'). Dit betekent dat iedereen de code mag gebruiken, kopiëren, bekijken, aanpassen en opnieuw publiceren met alle aanpassingen die je maar wil (waardoor anderen dit ook weer kunnen doen). Omdat wij geloven dat cultuur beter en rijker wordt als het wordt opengesteld.
 
-          Als je programmeur bent kun je de code bekijken en ons helpen deze te verbeteren via [CONSUL app](https://github.com/consul/consul 'consul github').
+          Als je ontwikkelaar bent kun je de code bekijken én ons helpen deze te verbeteren via [CONSUL app](https://github.com/consul/consul 'consul github').
       titles:
         how_to_use: Gebruik het in uw gemeente
     privacy:
