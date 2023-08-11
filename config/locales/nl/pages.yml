@@ -14,7 +14,7 @@ nl:
         debates: "Debatten"
         proposals: "Voorstellen"
         budgets: "Burgerbegrotingen"
-        polls: "Polls"
+        polls: "Peilingen"
         other: "Verdere informatie"
         processes: "Proces"
       debates:
@@ -102,7 +102,7 @@ nl:
               page_column: Voorstellen
             - 
               key_column: 3
-              page_column: Votes
+              page_column: Stemmen
             - 
               key_column: 4
               page_column: Burgerbegrotingen
