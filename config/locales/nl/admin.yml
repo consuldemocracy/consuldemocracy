@@ -56,11 +56,11 @@ nl:
           hide: Hidden
           restore: Restored
         by: Moderated by
-        content: Content
+        content: Inhoud
         filter: Show
         filters:
           all: All
-          on_comments: Comments
+          on_comments: Reacties
           on_debates: Discussie
           on_proposals: Voorstellen
           on_users: Deelnemer
@@ -250,7 +250,7 @@ nl:
           author_username: Gebruikersnaam van de auteur
           incompatible: Onverenigbaar
           price: Bedrag
-          author: Author
+          author: Auteur
         see_results: "Bekijk resultaten"
         milestone_tags_filter_all: "Alle mijlpaaltags"
       show:
@@ -378,10 +378,10 @@ nl:
     comments:
       index:
         id: "ID"
-        content: "Content"
-        author: "Author"
+        content: "Inhoud"
+        author: "Auteur"
         commentable_type: "Type"
-        title: Comments
+        title: Reacties
         table_link: "Link"
     hidden_comments:
       index:
@@ -436,7 +436,7 @@ nl:
     debates:
       index:
         id: ID
-        author: Author
+        author: Auteur
         title: Discussie
     hidden_debates:
       index:
@@ -527,7 +527,7 @@ nl:
             supports: "Steunt"
         process:
           title: Proces
-          comments: Comments
+          comments: Reacties
           status: Status
           start_date: Begindatum
           end_date: Einddatum
@@ -590,7 +590,7 @@ nl:
         table:
           title: Title
           created_at: Aanmaakdatum
-          comments: Comments
+          comments: Reacties
           final_version: Eindversie
           status: Status
       questions:
@@ -682,7 +682,7 @@ nl:
         homepage: Homepage
         pages: Aangepaste pagina's
         images: Aangepaste afbeeldingen
-        content_blocks: Custom content blocks
+        content_blocks: Aangepaste inhoudsblokken
         information_texts: Aangepaste informatie teksten
         information_texts_menu:
           debates: "Discussie"
@@ -697,15 +697,15 @@ nl:
           save: "Save"
           content_block:
             update: "Blok bijwerken"
-      title_moderated_content: Moderated content
+      title_moderated_content: Gemodereerde inhoud
       title_profiles: Profiles
       title_settings: Instellingen
-      title_site_customization: Aanpassing Site
+      title_site_customization: Site-inhoud
       title_booths: Stemhokjes
       legislation: Plannen
       users: Deelnemer
       debates: "Discussie"
-      comments: "Comments"
+      comments: "Reacties"
       multitenancy: Multitenancy
     administrators:
       index:
@@ -765,7 +765,7 @@ nl:
         subject: Onderwerp
         segment_recipient: Ontvangers
         from: E-mailadres dat wordt weergegeven als het verzenden van de nieuwsbrief
-        body: Email inhoud
+        body: E-mail inhoud
         body_help_text: Dit is hoe de deelnemers de e-mail zullen zien
         send_alert: Weet u zeker dat u deze nieuwsbrief naar %{n} deelnemer wilt sturen?
     admin_notifications:
@@ -1044,7 +1044,7 @@ nl:
           save_image: "Sla afbeelding op"
       show:
         proposal: Original proposal
-        author: Author
+        author: Auteur
         question: Question
         edit_question: Bewerk vraag
         valid_answers: Valid answers
@@ -1176,7 +1176,7 @@ nl:
       index:
         title: Voorstellen
         id: ID
-        author: Author
+        author: Auteur
         select: Select
         selected: Geselecteerd
         milestones: Mijlpalen
@@ -1254,8 +1254,8 @@ nl:
       moderated_content: "Controleer de inhoud die door de moderators is aangemaakt en bevestig wanneer dit correct is gedaan."
       view: Weergave
       proposal: Proposal
-      author: Author
-      content: Content
+      author: Auteur
+      content: Inhoud
       created_at: Created at
       color_help: Hexadecimale notatie
       show_results_and_stats: "Toon resultaten en statistieken"
@@ -1282,7 +1282,7 @@ nl:
         success: Geozone successfully deleted
         error: This geozone can't be deleted since there are elements attached to it
     signature_sheets:
-      author: Author
+      author: Auteur
       created_at: Aanmaakdatum
       name: Name
       no_signature_sheets: "There are not signature_sheets"
@@ -1297,7 +1297,7 @@ nl:
           example_text: "Voorbeeld: "
       show:
         created_at: Aangemaakt
-        author: Author
+        author: Auteur
         users: Deelnemer
         verified:
           one: "There is %{count} valid signature"
@@ -1312,7 +1312,7 @@ nl:
         stats_title: Stats
         summary:
           comment_votes: Comment votes
-          comments: Comments
+          comments: Reacties
           debate_votes: Debate votes
           debates: Discussie
           proposal_votes: Proposal votes
@@ -1417,8 +1417,8 @@ nl:
           title: Editing content block
         index:
           create: Create new content block
-          delete: Delete block
-          title: Content blocks
+          delete: Blok verwijderen
+          title: Inhoudsblokken
         new:
           title: Nieuwe content paragraaf
         content_block:
