@@ -124,7 +124,7 @@ nl:
     show:
       author_deleted: Gebruiker verwijderd
       comments_title: Reacties
-      edit_debate_link: Wijzig
+      edit_debate_link: Bewerk
       flag: Verschillende mensen vinden de inhoud ongepast.
       share: Deel
       author: Auteur
@@ -158,7 +158,7 @@ nl:
     poll/question/answer: Antwoord
     user: Deelnemer
     verification/sms: telefoon
-    signature_sheet: Handtekeningenvel
+    signature_sheet: Handtekeningenlijst
     document: Document
     topic: Onderwerp
     image: Afbeelding
@@ -288,7 +288,7 @@ nl:
       duplicated: Dubbele
       started: Is al gestart
       unfeasible: Unfeasible
-      done: Gerealiseerde
+      done: Klaar
       other: Anders
     form:
       proposal_responsible_name_note: "(individueel of als vertegenwoordiger van een collectief; niet publiek zichtbaar)"
@@ -296,7 +296,7 @@ nl:
       proposal_video_url_note: U kunt een link naar YouTube of Vimeo toevoegen
       tag_category_label: "Categories"
       tags_instructions: "Label dit voorstel. U kunt uw eigen categorie kiezen of één van de bestaande."
-      tags_label: Tags
+      tags_label: Labels
       tags_placeholder: "Voer de labels in die je wilt gebruiken, gescheiden door kommas (',')"
       map_location: "Locatie"
       map_location_instructions: "Beweeg de kaart en wijs de locatie aan."
@@ -325,16 +325,16 @@ nl:
       archived_proposals: Gearchiveerde voorstellen
       proposals_lists: Lijsten met voorstellen
       retired_links:
-        all: All
+        all: Alle
         duplicated: Dubbele
         started: Gestartte
         unfeasible: Unfeasible
         done: Is al gereed
         other: Anders
       search_form:
-        button: Search
+        button: Zoek
         placeholder: Zoek voorstellen..
-        title: Search
+        title: Zoek
       search_results:
         one: " bevat de term <strong>'%{search_term}'</strong>"
         other: " bevat de term <strong>'%{search_term}'</strong>"
@@ -438,6 +438,7 @@ nl:
       participants: deelnemers
       debates: Discussie
       comments: Reacties
+      latest_comments: Nieuwste berichten
     polls:
       index:
         title: Polls
@@ -489,7 +490,7 @@ nl:
         support_button: Steun dit voorstel
         hi: "Hallo!"
   polls:
-    all: "All"
+    all: "Alle"
     no_dates: "geen datum toegewezen"
     dates: "Van %{open_at} tot %{closed_at}"
     final_date: "Definitieve hertelling/resultaten"
@@ -497,7 +498,7 @@ nl:
       filters:
         current: "Open"
         expired: "Verlopen"
-      title: "Polls"
+      title: "Peilingen"
       participate_button: "Neem aan deze stemronde deel"
       participate_button_expired: "Stemronde is voorbij"
       no_geozone_restricted: "Hele stad"
@@ -560,10 +561,10 @@ nl:
     show:
       back: "Terug naar mijn bijdragen"
   shared:
-    edit: "Edit"
+    edit: "Wijzig"
     filter: "Filter"
-    save: "Sla op"
-    delete: "Delete"
+    save: "Opslaan"
+    delete: "Verwijder"
     "yes": "Ja"
     "no": "Nee"
     search_results: "Zoek resultaten"
@@ -589,7 +590,7 @@ nl:
       email_deleted: E-mail verwijderd
     back: Ga terug
     check: Select
-    check_all: All
+    check_all: Alle
     check_none: Geen
     collective: Collectief
     flag: Markeer als ongepast
@@ -598,8 +599,8 @@ nl:
     follow_entity: "Volg %{entity}"
     print:
       print_button: Print this info
-    search: Search
-    show: Show
+    search: Zoek
+    show: Toon
     suggest:
       debate:
         found:
@@ -666,7 +667,7 @@ nl:
     instagram: "%{org} Instagram"
   stats:
     index:
-      visits: Visits
+      visits: Bezoeken
       debates: Debatten
       proposals: Voorstellen
       comments: Reacties
