@@ -99,6 +99,7 @@ sl-SI:
       reasons_for_not_balloting:
         not_logged_in: "<strong>Za nadaljevanje se moraš vpisati ali registrirati.</strong>"
         not_verified: Le verificirani uporabniki lahko glasujejo o naložbah; %{verify_account}.
+        not_enough_available_votes: Na voljo nimaš več nobenega glasu. Če želiš glasovati za ta predlog, odstrani svoj glas z drugega predloga.
         organization: Organizacijam ni dovoljeno glasovati
         not_selected: Neizbranih investicij ni mogoče podpreti
         not_enough_money: "Žal na voljo nimaš več dovolj proračuna."
