@@ -464,7 +464,7 @@ nl:
         segment_recipient: Ontvangers
         subject: Onderwerp
         from: "Van"
-        body: Email inhoud
+        body: E-mail inhoud
       admin_notification:
         segment_recipient: Ontvangers
         title: Titel
