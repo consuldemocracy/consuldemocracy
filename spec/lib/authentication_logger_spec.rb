@@ -38,4 +38,12 @@ describe AuthenticationLogger do
       end
     end
   end
+
+  describe "log" do
+    it "includes current time in each log entry", :with_frozen_time do
+      expect_any_instance_of(ActiveSupport::TaggedLogging).to receive(:tagged).with(Time.current)
+
+      AuthenticationLogger.log("Just logging something!")
+    end
+  end
 end

@@ -3,7 +3,9 @@ class AuthenticationLogger
 
   class << self
     def log(message)
-      logger.info(message)
+      logger.tagged(Time.current) do
+        logger.info(message)
+      end
     end
 
     def path
