@@ -62,11 +62,11 @@ da:
         sdg: "Verdensmål hjælp"
       how_to_use:
         text: |-
-          Použijte tento program ve své lokalitě, nebo nám ho pomozte zlepšit, je to svobodný software.
+          Anvend portalen i din kommune eller hjælp os med at forbedre den. Det er en gratis software.
 
-          Tento otevřený portál používá [CONSUL app] (https://github.com/consuldemocracy/consuldemocracy 'consul democracy github'), který je svobodným softwarem, s licencí AGPLv3 (http://www.gnu.org/licenses/ agpl-3.0.html 'AGPLv3 gnu'), to znamená prostým slovem, že někdo může tento kód volně použít, zkopírovat jej, podrobně ji prohlédnout, upravit a přenést s modifikacemi, které jsou žádané). Myslíme si, že programy jsou lepší a bohatší, když jsou otevřené.
+          Denne Open Government Portal anvender [CONSUL app](https://github.com/consuldemocracy/consuldemocracy 'consul democracy github'), som er en gratis software med [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ). Det betyder kort sagt, at alle kan anvende koden gratis, kopiere den, se detaljer om den, modificere den og redistribuere den til verdenen med de ændringer, man ønsker (og samtidig tillader man andre at gøre det samme). Fordi vi mener, at kultur er bedre og rigere, når den er fri.
 
-          Pokud jste programátor, můžete tento kód nalézt a pomoci nám jej vylepšit v aplikaci [CONSUL] (https://github.com/consuldemocracy/consuldemocracy 'consul democracy github').
+          Hvis du er programmør, kan du se koden og hjælpe os med at forbedre den på [CONSUL app](https://github.com/consuldemocracy/consuldemocracy 'consul democracy github').
       titles:
         how_to_use: Brug det i din kommune
     privacy:
