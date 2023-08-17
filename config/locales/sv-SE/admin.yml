@@ -1386,7 +1386,7 @@ sv:
       show_results_and_stats: "Visa resultat och statistik"
       results_and_stats_reminder: "Genom att markera dessa rutor kommer omröstningens resultat och/eller statistik att visas för alla användare."
       close_modal: Stäng läget
-      example_url: "https://consulproject.org"
+      example_url: "https://consuldemocracy.org"
     geozones:
       index:
         title: Geografiska områden
@@ -1625,7 +1625,7 @@ sv:
           see_page: Visa
         new:
           title: Skapa ny anpassad sida
-          slug_help: "Text som identifierar denna sida i en URL, till exempel <code>https://consulproject.org/page-slug</code>"
+          slug_help: "Text som identifierar denna sida i en URL, till exempel <code>https://consuldemocracy.org/page-slug</code>"
         page:
           created_at: Skapad den
           status: Status
