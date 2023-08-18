@@ -197,7 +197,7 @@ fr:
       accessibility: Accessibilité
       conditions: Conditions légales
       consul: Application Consul
-      consul_url: https://github.com/consul/consul
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: Consul, %{year}
       description: Ce portail utiliser %{consul} qui est %{open_source}. De Madrid ouvert sur le monde.
       open_source: logiciel libre
