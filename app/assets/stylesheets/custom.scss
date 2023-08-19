@@ -2,3 +2,13 @@
 //
 // You can also create SCSS files in the app/assets/stylesheets/custom/
 // folder and they will be loaded automatically.
+  @if $global-text-direction ==rtl {
+.proposal-new header::before {
+    left: 100%;
+    right: auto;
+}
+
+.proposal-form>fieldset>legend {
+    float: none;
+}
+  }
