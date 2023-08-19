@@ -31,8 +31,8 @@ nl:
       moderator: Moderator
       responses:
         zero: Geen reacties
-        one: 1 antwoord
-        other: "%{count} antwoorden"
+        one: 1 reactie
+        other: "%{count} reacties"
       responses_show:
         zero: Geen reacties
         one: "1 reactie (toon)"
@@ -124,7 +124,7 @@ nl:
     show:
       author_deleted: Gebruiker verwijderd
       comments_title: Reacties
-      edit_debate_link: Bewerk
+      edit_debate_link: Wijzig
       flag: Verschillende mensen vinden de inhoud ongepast.
       share: Deel
       author: Auteur
@@ -158,11 +158,10 @@ nl:
     poll/question/answer: Antwoord
     user: Deelnemer
     verification/sms: telefoon
-    signature_sheet: Handtekeningenlijst
+    signature_sheet: Handtekeningenvel
     document: Document
     topic: Onderwerp
     image: Afbeelding
-    site_customization/content_block: inhoudsblok
     site_customization/page: pagina
   geozones:
     none: Hele stad
@@ -186,7 +185,7 @@ nl:
       accessibility: Toegankelijkheid
       conditions: Gebruiksvoorwaarden
       consul: Consul
-      consul_url: https://github.com/consuldemocracy/consuldemocracy
+      consul_url: https://github.com/consul/consul
       copyright: Consul, %{year}
       description: Deze site gebruikt %{consul}, wat %{open_source} is.
       open_source: open-source software
@@ -288,7 +287,7 @@ nl:
       duplicated: Dubbele
       started: Is al gestart
       unfeasible: Unfeasible
-      done: Klaar
+      done: Gerealiseerde
       other: Anders
     form:
       proposal_responsible_name_note: "(individueel of als vertegenwoordiger van een collectief; niet publiek zichtbaar)"
@@ -296,7 +295,7 @@ nl:
       proposal_video_url_note: U kunt een link naar YouTube of Vimeo toevoegen
       tag_category_label: "Categories"
       tags_instructions: "Label dit voorstel. U kunt uw eigen categorie kiezen of één van de bestaande."
-      tags_label: Labels
+      tags_label: Tags
       tags_placeholder: "Voer de labels in die je wilt gebruiken, gescheiden door kommas (',')"
       map_location: "Locatie"
       map_location_instructions: "Beweeg de kaart en wijs de locatie aan."
@@ -325,16 +324,16 @@ nl:
       archived_proposals: Gearchiveerde voorstellen
       proposals_lists: Lijsten met voorstellen
       retired_links:
-        all: Alle
+        all: All
         duplicated: Dubbele
         started: Gestartte
         unfeasible: Unfeasible
         done: Is al gereed
         other: Anders
       search_form:
-        button: Zoek
+        button: Search
         placeholder: Zoek voorstellen..
-        title: Zoek
+        title: Search
       search_results:
         one: " bevat de term <strong>'%{search_term}'</strong>"
         other: " bevat de term <strong>'%{search_term}'</strong>"
@@ -385,7 +384,7 @@ nl:
     show:
       author_deleted: Gebruiker verwijderd
       code: "Voorstel code:"
-      comments_tab: Reacties
+      comments_tab: Comments
       dashboard_proposal_link: Dashboard
       flag: Dit voorstel is door verschillende deelnemers aangemerkt als ongepast.
       notifications_tab: Notificaties
@@ -397,7 +396,7 @@ nl:
       no_notifications: "Dit voorstel heeft geen meldingen."
       embed_video_title: "Video voor %{proposal}"
       title_video_url: "Externe video"
-      author: Auteur
+      author: Author
     update:
       form:
         submit_button: Bewaar wijzigingen
@@ -437,8 +436,7 @@ nl:
       access_community: Naar de community
       participants: deelnemers
       debates: Discussie
-      comments: Reacties
-      latest_comments: Nieuwste berichten
+      comments: Comments
     polls:
       index:
         title: Polls
@@ -490,7 +488,7 @@ nl:
         support_button: Steun dit voorstel
         hi: "Hallo!"
   polls:
-    all: "Alle"
+    all: "All"
     no_dates: "geen datum toegewezen"
     dates: "Van %{open_at} tot %{closed_at}"
     final_date: "Definitieve hertelling/resultaten"
@@ -498,7 +496,7 @@ nl:
       filters:
         current: "Open"
         expired: "Verlopen"
-      title: "Peilingen"
+      title: "Polls"
       participate_button: "Neem aan deze stemronde deel"
       participate_button_expired: "Stemronde is voorbij"
       no_geozone_restricted: "Hele stad"
@@ -521,7 +519,7 @@ nl:
       already_voted_in_web: "Je hebt al deelgenomen in deze stemronde. Als je nogmaals stemt, wordt je eerdere stemming overschreven."
       back: Terug naar stemmen
       cant_answer_not_logged_in: "Je moet %{signin} of %{signup} om deel te nemen."
-      comments_tab: Reacties
+      comments_tab: Comments
       cant_answer_verify: "Je moet %{verify_link} om te kunnen antwoorden."
       verify_link: "verifieer uw account"
       cant_answer_expired: "Deze stemronde is voorbij."
@@ -561,10 +559,10 @@ nl:
     show:
       back: "Terug naar mijn bijdragen"
   shared:
-    edit: "Wijzig"
+    edit: "Edit"
     filter: "Filter"
-    save: "Opslaan"
-    delete: "Verwijder"
+    save: "Sla op"
+    delete: "Delete"
     "yes": "Ja"
     "no": "Nee"
     search_results: "Zoek resultaten"
@@ -590,7 +588,7 @@ nl:
       email_deleted: E-mail verwijderd
     back: Ga terug
     check: Select
-    check_all: Alle
+    check_all: All
     check_none: Geen
     collective: Collectief
     flag: Markeer als ongepast
@@ -599,8 +597,8 @@ nl:
     follow_entity: "Volg %{entity}"
     print:
       print_button: Print this info
-    search: Zoek
-    show: Toon
+    search: Search
+    show: Show
     suggest:
       debate:
         found:
@@ -655,10 +653,6 @@ nl:
         other: "%{count} talen in gebruik"
     optional: "Optionele velden"
     required: "Verplichte velden"
-    comments:
-      zero: "Geen reacties"
-      one: "1 reactie"
-      other: "%{count} reacties"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -667,10 +661,10 @@ nl:
     instagram: "%{org} Instagram"
   stats:
     index:
-      visits: Bezoeken
+      visits: Visits
       debates: Debatten
       proposals: Voorstellen
-      comments: Reacties
+      comments: Comments
       proposal_votes: Stemmen op voorstellen
       debate_votes: Stemmen op debatten
       comment_votes: Stemmen op reacties
@@ -704,7 +698,7 @@ nl:
       proposals_status: Status
       debates: Debatten
       budget_investments: Begrotingsvoorstellen
-      comments: Reacties
+      comments: Comments
       actions: Activiteiten
       filters:
         comments:
@@ -796,7 +790,7 @@ nl:
     score_positive: "Ja"
     score_negative: "Nee"
     content_title:
-      proposal: "Voorstel"
+      proposal: "Proposal"
       debate: "Discussie"
       budget_investment: "Begrotingsvoorstel"
   admin/widget:

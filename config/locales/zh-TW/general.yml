@@ -168,7 +168,7 @@ zh-TW:
       accessibility: 無障礙功能
       conditions: 使用條款及條件
       consul: CONSUL 應用程式
-      consul_url: https://github.com/consuldemocracy/consuldemocracy
+      consul_url: https://github.com/consul/consul
       copyright: CONSUL, %{year}
       description: 此入口網頁使用%{consul}，即是%{open_source}。
       open_source: 開源軟件

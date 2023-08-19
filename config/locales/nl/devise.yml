@@ -9,7 +9,7 @@ nl:
       updated: "Wachtwoord is aangepast"
     confirmations:
       confirmed: "Uw account is bevestigd."
-      send_instructions: "Binnen enkele minuten ontvang je een e-mail met instructies hoe je je e-mailadres kan bevestigen."
+      send_instructions: "U ontvangt via e-mail instructies om uw account te bevestigen."
       send_paranoid_instructions: "Als uw e-mailadres bestaat in de database, ontvangt u via e-mail instructies hoe u uw account kunt bevestigen."
     failure:
       already_authenticated: "U bent al ingelogd."

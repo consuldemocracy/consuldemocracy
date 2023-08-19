@@ -1461,7 +1461,7 @@ ka:
           see_page: გვერდის ნახვა
         new:
           title: ახალი ინდივიდუალური გვერდის შექმნა
-          slug_help: "ტექსტი, რომელიც ამ გვერდის ბმულის (URL) იდენტიფიკაციისთვის გამოიყენება, მაგალითად <code>https://consuldemocracy.org/page-slug</code>"
+          slug_help: "ტექსტი, რომელიც ამ გვერდის ბმულის (URL) იდენტიფიკაციისთვის გამოიყენება, მაგალითად <code>https://consulproject.org/page-slug</code>"
         page:
           created_at: შექმნის თარიღი
           status: სტატუსი

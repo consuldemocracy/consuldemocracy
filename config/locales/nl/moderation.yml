@@ -11,7 +11,7 @@ nl:
           pending_flag_review: In afwachting
           with_ignored_flag: Markeer als gelezen
         headers:
-          comment: Reactie
+          comment: Commentaar
           moderate: Modereer
         hide: Verberg reacties
         ignore_flags: Markeer als gelezen
@@ -31,7 +31,7 @@ nl:
           pending_flag_review: In afwachting
           with_ignored_flag: Markeer als gelezen
         headers:
-          debate: Discussie
+          debate: Debat
           moderate: Modereer
         hide: Debatten verbergen
         ignore_flags: Markeer als gelezen
@@ -104,7 +104,7 @@ nl:
         block: Blokkeer
         confirm_block: "Weet je het zeker? Hierdoor is gebruiker \"%{name}\" en al hun inhoud niet meer zichtbaar."
         confirm_hide: "Weet je het zeker? Hierdoor wordt gebruiker \"%{name}\" niet meer zichtbaar, maar de inhoud wel."
-        hide: Verberg
+        hide: Blokkeer
         search_placeholder: email of naam van gebruiker
         title: Blokkeer deelnemers
       notice_block: De gebruiker is geblokkeerd. Alle inhoud die door deze gebruiker is gemaakt, is niet meer zichtbaar.

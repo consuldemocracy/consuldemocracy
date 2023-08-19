@@ -1,1 +1,10 @@
 en-GB:
+  images:
+    remove_image: Видалити зображення
+    form:
+      delete_button: Видалити зображення
+      add_new_image: Додати зображення
+    errors:
+      messages:
+        in_between: має знаходитися в межах від %{min} до %{max}
+        wrong_content_type: тип вмісту %{content_type} не відповідає жодному із прийнятих %{accepted_content_types}

@@ -1382,7 +1382,7 @@ it:
       show_results_and_stats: "Visualizza risultati e statistiche"
       results_and_stats_reminder: "Contrassegnando queste caselle di controllo, i risultati e/o le statistiche saranno pubblicamente disponibili e ogni utente potrà vederli."
       close_modal: Chiudi modale
-      example_url: "Ad esempio, https://consuldemocracy.org o /help"
+      example_url: "Ad esempio, https://consulproject.org o /help"
     geozones:
       index:
         title: Geozona
@@ -1621,7 +1621,7 @@ it:
           see_page: Vedere la pagina
         new:
           title: Creare la nuova pagina personalizzata
-          slug_help: "Testo per identificare questa pagina sull'URL, ad esempio <code>https://consuldemocracy.org/page-slug</code>"
+          slug_help: "Testo per identificare questa pagina sull'URL, ad esempio <code>https://consulproject.org/page-slug</code>"
         page:
           created_at: Creato al
           status: Stato

@@ -1470,7 +1470,7 @@ sr:
           see_page: Видите страну
         new:
           title: Креирајте нову прилагођену страну
-          slug_help: "Текст за идентификовање ове странице на УРЛ адреси, на пример <code>https://consuldemocracy.org/page-slug</code>"
+          slug_help: "Текст за идентификовање ове странице на УРЛ адреси, на пример <code>https://consulproject.org/page-slug</code>"
         page:
           created_at: Креирано у
           status: Статус

@@ -33,7 +33,7 @@ nl:
     formats:
       default: "%d-%m-%Y"
       long: "%e %B %Y"
-      short: "%b %d"
+      short: "%e %b"
     month_names:
       -
       - januari
@@ -41,8 +41,8 @@ nl:
       - maart
       - april
       - mei
-      - Juni
-      - Juli
+      - juni
+      - juli
       - augustus
       - september
       - oktober
@@ -82,18 +82,18 @@ nl:
         one: 1 maand
         other: "%{count} maanden"
       x_years:
-        one: 1 jaar
+        one: '%{count} jaar'
         other: "%{count} jaar"
       x_seconds:
         one: 1 seconde
         other: "%{count} seconden"
     prompts:
       day: dag
-      hour: Uur
+      hour: uur
       minute: minuut
-      month: Maand
+      month: maand
       second: seconde
-      year: Jaar
+      year: jaar
   errors:
     format: "%{attribute} %{message}"
     messages:
@@ -143,7 +143,7 @@ nl:
     currency:
       format:
         delimiter: "."
-        format: "%u%n"
+        format: "%u %n"
         precision: 2
         separator: ","
         significant: false
@@ -172,8 +172,8 @@ nl:
         format: "%n %u"
         units:
           byte:
-            one: Byte
-            other: Bytes
+            one: byte
+            other: bytes
           gb: GB
           kb: KB
           mb: MB

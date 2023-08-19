@@ -136,7 +136,7 @@ ast:
     footer:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
-      consul_url: https://github.com/consuldemocracy/consuldemocracy
+      consul_url: https://github.com/consul/consul
       description: Este portal usa la %{consul} que es %{open_source}.
       open_source: software libre
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html

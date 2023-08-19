@@ -1381,7 +1381,7 @@ ne:
       show_results_and_stats: "परिणाम र तथ्याङ्क देखाउनुहोस्"
       results_and_stats_reminder: "यी चेकबक्सहरू चिन्ह लगाउँदा परिणामहरू र/वा तथ्याङ्कहरू सार्वजनिक रूपमा उपलब्ध हुनेछन् र प्रत्येक प्रयोगकर्ताले तिनीहरूलाई देख्नेछन्।"
       close_modal: मोडल बन्द गर्नुहोस्
-      example_url: "उदाहरणका लागि, https://consuldemocracy.org वा /help"
+      example_url: "उदाहरणका लागि, https://consulproject.org वा /help"
     geozones:
       index:
         title: भौगोलिक क्षेत्र
@@ -1609,7 +1609,7 @@ ne:
           see_page: हेर्नुहोस्
         new:
           title: नयाँ अनुकूलन पृष्ठ सिर्जना गर्नुहोस्
-          slug_help: "URL मा यो पृष्ठ पहिचान गर्न पाठ, उदाहरणका लागि <code>https://consuldemocracy.org/page-slug</code>"
+          slug_help: "URL मा यो पृष्ठ पहिचान गर्न पाठ, उदाहरणका लागि <code>https://consulproject.org/page-slug</code>"
         page:
           created_at: मा बनाइयो
           status: अवस्था

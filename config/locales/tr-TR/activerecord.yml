@@ -68,14 +68,14 @@ tr:
         one: "kabin"
         other: "kabin"
       poll/officer:
-        one: "görevli"
-        other: "görevli"
+        one: "memur"
+        other: "memur"
       poll/ballot_sheet:
-        one: Oy pusulası
-        other: Oy pusulaları
+        one: Oy verme formu
+        other: Oy verme formları
       proposal:
-        one: "Yurttaş önergesi"
-        other: "Yurttaş önergeleri"
+        one: "Yurttaş önerisi"
+        other: "Yurttaş önerileri"
       sdg/goal:
         one: "amaç"
         other: "amaç"
@@ -101,11 +101,11 @@ tr:
         one: Belge
         other: Belgeler
       legislation/process:
-        one: "Süreç"
-        other: "Süreçler"
+        one: "İşlem"
+        other: "İşlemler"
       legislation/proposal:
-        one: "Önerge"
-        other: "Önergeler"
+        one: "Öneri"
+        other: "Öneriler"
       legislation/draft_versions:
         one: "Taslak sürüm"
         other: "Taslak sürümler"
@@ -131,14 +131,14 @@ tr:
         one: "Konu"
         other: "Konular"
       poll:
-        one: "Oylama"
-        other: "Oylamalar"
+        one: "Anket"
+        other: "Anketler"
       proposal_notification:
-        one: "Önerge bildirimi"
-        other: "Önerge bildirimleri"
+        one: "Öneri bildirimi"
+        other: "Öneri bildirimleri"
       dashboard/action:
-        one: Önerge panosu işlemi
-        other: Önerge panosu işlemleri
+        one: Öneri panosu - Yapılması gereken
+        other: Öneri panosu işlemleri
       dashboard/administrator_task:
         one: Görev
         other: Görevler
@@ -146,8 +146,8 @@ tr:
         one: Bağlantı
         other: Bağlantılar
       local_census_record:
-        one: Yerel seçmen bilgi sistemi kaydı
-        other: Yerel seçmen bilgi sistemi kayıtları
+        one: Yerel nüfus sayımı kaydı
+        other: Yerel nüfus sayımı kayıtları
       votation_type:
         one: Oylama türü
         other: Oylama türleri
@@ -172,14 +172,14 @@ tr:
         main_link_url: "Bağlantı sizi şuraya götürür (bağlantı ekle)"
         name: "Ad"
       budget/investment:
-        heading_id: "Bütçe kalemi"
+        heading_id: "Ana başlık"
         title: "Başlık"
         description: "Açıklama"
         external_url: "Ek belgeler bağlantısı"
         administrator_id: "Yönetici"
         location: "Ek konum bilgileri"
-        organization_name: "Bir topluluk ya da kuruluş adına veya birden fazla kişi adına önerge sunuyorsanız, adınızı yazın"
-        image: "Önergenin açıklayıcı görseli"
+        organization_name: "Bir topluluk ya da kuruluş adına veya birden fazla kişi adına öneride bulunuyorsanız, adınızı yazın"
+        image: "Önerinin açıklayıcı görseli"
         image_title: "Görsel adı"
         duration: "Zaman aralığı"
         feasibility_feasible: "Uygulanabilir bulunmuş"
@@ -202,7 +202,7 @@ tr:
         name: Ad
         external_code: "Dış kod (isteğe bağlı)"
         color: "Renk (isteğe bağlı)"
-        census_code: "Seçmen bilgi sistemi kodu (isteğe bağlı)"
+        census_code: "Nüfus sayımı kodu (isteğe bağlı)"
         geojson: "GeoJSON verileri (isteğe bağlı)"
         html_map_coordinates: "HTML <map> koordinatları (isteğe bağlı)"
       milestone:
@@ -223,21 +223,21 @@ tr:
         primary: "Birincil"
         secondary: "İkincil"
       budget/group:
-        max_votable_headings: "Bir kullanıcının projeleri seçebileceği en fazla bütçe kalemi sayısı"
+        max_votable_headings: "Bir kullanıcının projeleri seçebileceği en fazla ana başlık sayısı"
       budget/group/translation:
         name: "Grup adı"
       budget/heading:
         allow_custom_content: "İçerik bloğu kullanılabilsin"
         latitude: "Enlem (isteğe bağlı)"
         longitude: "Boylam (isteğe bağlı)"
-        name: "Bütçe kalemi adı"
+        name: "Başlık adı"
         price: "Bütçe"
         population: "Nüfus (isteğe bağlı)"
         max_ballot_lines: "İzin verilen oy sayısı"
       budget/heading/translation:
-        name: "Bütçe kalemi adı"
+        name: "Ana başlık adı"
       budget/phase:
-        enabled: "Aşama açıldı"
+        enabled: "Aşama etkinleştirildi"
         ends_at: "Bitiş tarihi"
         starts_at: "Başlangıç tarihi"
       budget/phase/translation:
@@ -250,7 +250,7 @@ tr:
         body: "Yorum"
         user: "Kullanıcı"
       debate:
-        author: "Sahibi"
+        author: "Sahip"
         description: "Görüş"
         tag_list: "Konular"
         terms_of_service: "Hizmet şartları"
@@ -259,19 +259,19 @@ tr:
         title: "Tartışma başlığı"
         description: "İlk tartışma metni"
       proposal:
-        author: "Sahibi"
+        author: "Yazar"
         title: "Başlık"
         question: "Soru"
         description: "Açıklama"
-        responsible_name: "Önergeyi sunan kişinin tam adı"
-        retired_reason: "Önergenin geri çekilme nedeni"
+        responsible_name: "Öneriyi sunan kişinin tam adı"
+        retired_reason: "Önerinin geri çekilme nedeni"
         selected: "Seçilmiş olarak işaretle"
-        terms_of_service: "Hizmet koşulları"
-        video_url: "Dış video adresi"
+        terms_of_service: "Hizmet şartları"
+        video_url: "Dış görüntü adresi"
       proposal/translation:
-        title: "Önerge başlığı"
-        description: "Önerge metni"
-        summary: "Önerge özeti"
+        title: "Öneri başlığı"
+        description: "Öneri metni"
+        summary: "Öneri özeti"
         retired_explanation: "Açıklama"
       user:
         login: "E-posta ya da kullanıcı adı"
@@ -280,10 +280,10 @@ tr:
         password_confirmation: "Parola onayı"
         password: "Parola"
         current_password: "Geçerli parola"
-        email_digest: "Önerge bildirimlerinin özeti bana e-posta ile bildirilsin"
-        email_on_comment: "Önergelerime ya da tartışmalarıma yapılan yorumlar bana e-posta ile bildirilsin"
+        email_digest: "Öneri bildirimlerinin özeti bana e-posta ile bildirilsin"
+        email_on_comment: "Önerilerime ya da tartışmalarıma yapılan yorumlar bana e-posta ile bildirilsin"
         email_on_comment_reply: "Yorumlarıma verilen yanıtlar bana e-posta ile bildirilsin"
-        email_on_direct_message: "Doğrudan iletiler e-posta ile bildirilsin"
+        email_on_direct_message: "Doğrudan iletiler bana e-posta ile bildirilsin"
         newsletter: "İlgili bilgiler bana e-posta ile bildirilsin"
         official_position: "Resmi görev"
         official_position_badge: "Resmi görev unvanı görüntülensin"
@@ -291,8 +291,8 @@ tr:
         phone_number: "Telefon numarası"
         public_activity: "İşlem listem herkese açık olsun"
         public_interests: "İzlediğim bileşenler herkese açık olsun"
-        recommended_debates: "Bana tartışmalar önerilsin"
-        recommended_proposals: "Bana önergeler önerilsin"
+        recommended_debates: "Bana tartışmalar sunulsun"
+        recommended_proposals: "Bana öneriler sunulsun"
         redeemable_code: "Doğrulama kodu e-posta ile alındı"
       direct_message:
         title: "Başlık"
@@ -328,7 +328,7 @@ tr:
       poll/ballot_sheet:
         data: CSV verileri
         poll_id: Oylama
-        officer_assignment_id: Görevli görevlendirme
+        officer_assignment_id: Görevli ataması
       poll/shift:
         task: "Görev"
       proposal_notification:
@@ -419,7 +419,7 @@ tr:
         result_publication_date: Son sonucun yayınlanma tarihi
         background_color: Arka plan rengi
         font_color: Yazı rengi
-        homepage_enabled: "Giriş açıldı"
+        homepage_enabled: "Giriş etkinleştirildi"
       legislation/process/translation:
         title: Süreç başlığı
         summary: Özet
@@ -428,10 +428,10 @@ tr:
         homepage: "Açıklama"
         milestones_summary: Özet
       legislation/proposal:
-        description: "Önerge metni"
-        summary: "Önerge özeti"
-        title: "Önerge başlığı"
-        video_url: "Dış video bağlantısı"
+        description: "Öneri metni"
+        summary: "Öneri özeti"
+        title: "Öneri başlığı"
+        video_url: "Dış görüntü bağlantısı"
       legislation/draft_version:
         title: Sürüm başlığı
         body: Metin
@@ -467,7 +467,7 @@ tr:
         description: "Açıklama (isteğe bağlı)"
       poll/question/answer/video:
         title: Başlık
-        url: Dış video
+        url: Dış görüntü
       newsletter:
         segment_recipient: Alıcılar
         subject: Konu
@@ -501,14 +501,14 @@ tr:
         description: Açıklama
         link: Dış bağlantı
         request_to_administrators: Kaynağa, yöneticilerden kaynak isteme düğmesi ekleyin
-        day_offset: Önergenin oluşturulmasından kaç gün sonra etkinleştirilmesini istersiniz?
-        required_supports: Önergenin etkinleştirilmesi için ne kadar destek alması gerekir?
+        day_offset: Önerinin oluşturulmasından kaç gün sonra etkinleştirilmesini istersiniz?
+        required_supports: Önerinin etkinleştirilmesi için ne kadar destek alması gerekir?
         order: Bu işlemin kullanıcıya işlemler listesinde görüntüleneceği konumu yazabilirsiniz
-        active: Etkin
+        active: Aktif
         action_type: Tür
         action_type_proposed_action: "Önerilen işlem"
         action_type_resource: "Kaynak"
-        published_proposal: "Yayınlanmış önergeler için mi?"
+        published_proposal: "Yayınlanmış öneriler için mi?"
       dashboard/administrator_task:
         source: Kaynak
         user: Yürüten
@@ -567,7 +567,7 @@ tr:
         poll/voter:
           attributes:
             document_number:
-              not_in_census: "Belge seçmen bilgi sistemi üzerinde yok"
+              not_in_census: "Belge Census üzerinde yok"
             user_id:
               has_voted: "Kullanıcı zaten oy kullanmış"
         legislation/process:
@@ -595,12 +595,12 @@ tr:
         proposal_notification:
           attributes:
             minimum_interval:
-              invalid: "Bildirimler arasında en az %{interval} gün beklemelisiniz"
+              invalid: "Bildirimler arasında en az %{interval} gün beklemeniz gerekir"
         signature:
           attributes:
             document_number:
-              not_in_census: "Seçmen bilgi sistemi tarafından doğrulanmadı"
-              already_voted: "Bu önergeye zaten oy vermişsiniz"
+              not_in_census: "Census tarafından doğrulanmadı"
+              already_voted: "Bu öneriye zaten oy verilmiş"
         site_customization/page:
           attributes:
             slug:

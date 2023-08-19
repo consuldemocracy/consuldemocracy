@@ -22,7 +22,7 @@ nl:
         notice: "%{resource_name} is bijgewerkt."
         debate: "Discussie is bijgewerkt."
         poll: "Stemronde is bijgewerkt."
-        poll_booth: "Stemhokje is bijgewerkt."
+        poll_booth: "Booth is bijgewerkt."
         active_poll: "De omschrijving van de peiling is bijgewerkt."
         proposal: "Voorstel is bijgewerkt."
         budget_investment: "Budgetinvestering is bijgewerkt."

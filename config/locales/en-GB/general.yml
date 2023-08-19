@@ -1,1 +1,398 @@
 en-GB:
+  account:
+    show:
+      erase_account_link: Видалити мій обліковий запис
+      notifications: Сповіщення
+      save_changes_submit: Зберегти зміни
+      recommendations: Рекомендації
+      title: Мій обліковий запис
+      user_permission_info: З вашим обліковим записом ви маєте можливість...
+      user_permission_title: Участь
+      verify_my_account: Підтвердити мій обліковий запис
+  application:
+    menu: Меню
+  comments:
+    comment:
+      admin: Адміністратор
+      author: Автор
+      moderator: Модератор
+      responses:
+        zero: Відповіді відсутні
+      responses_show:
+        zero: Відповіді відсутні
+      responses_collapse:
+        zero: Відповіді відсутні
+      user_deleted: Користувач видалений
+      votes:
+        zero: Голоси відсутні
+        one: 1 голос
+        other: "%{count} голосів"
+  comments_helper:
+    comment_link: Коментар
+    comments_title: Коментарі
+    reply_link: Відповідь
+  debates:
+    create:
+      form:
+        submit_button: Розпочати обговорення
+    debate:
+      votes:
+        zero: Голоси відсутні
+        one: 1 голос
+        other: "%{count} голосів"
+    edit:
+      form:
+        submit_button: Зберегти зміни
+    form:
+      tags_placeholder: "Введіть теги, які хочете використовувати, розділивши їх комами (,)"
+    index:
+      featured_debates: Рекомендовані
+      orders:
+        confidence_score: з найвищим рейтингом
+        created_at: найновіші
+        hot_score: найактивніші
+        most_commented: з найбільшою кількістю коментарів
+        relevance: актуальність
+        recommendations: рекомендації
+      recommendations:
+        without_interests: Слідкуйте за пропозиціями, щоб ми могли надавати вам рекомендації
+      search_form:
+        button: Пошук
+        title: Пошук
+      start_debate: Розпочати обговорення
+      title: Обговорення
+      section_header:
+        title: Обговорення
+        help: Допомога щодо обговорень
+      section_footer:
+        title: Допомога щодо обговорень
+    new:
+      form:
+        submit_button: Розпочати обговорення
+      recommendation_four: Отримуйте задоволення від користування цим простором та голосами, які його наповнюють. Все це належить в тому числі вам.
+      start_new: Розпочати обговорення
+    show:
+      author_deleted: Користувача видалено
+      comments_title: Коментарі
+      edit_debate_link: Редагувати
+      share: Поділитися
+      author: Автор
+    update:
+      form:
+        submit_button: Зберегти зміни
+  errors:
+    messages:
+      user_not_found: Користувача не знайдено
+  form:
+    conditions: Правила та умови користування
+    debate: Обговорення
+    policy: Політика конфіденційності
+    proposal: Пропозиція
+    budget/investment: Інвестиція
+    poll/shift: Зміна
+    poll/question/answer: Відповідь
+    document: Документ
+    topic: Тема
+    image: Зображення
+  geozones:
+    none: Все місто
+  layouts:
+    application:
+      firefox: Firefox
+    dashboard:
+      proposal_header:
+        published: Опубліковано
+        draft: Чернетка
+      proposal_totals:
+        supports:
+          zero: Немає підтримки
+    footer:
+      accessibility: Доступність
+      conditions: Правила та умови користування
+      participation_title: Участь
+      privacy: Політика конфіденційності
+    header:
+      administration_menu: Меню
+      administration: Адміністрування
+      collaborative_legislation: Спільна законотворчість
+      debates: Обговорення
+      management: Управління
+      moderation: Модерування
+      valuation: Оцінка
+      help: Допомога
+      my_account_link: Мій обліковий запис
+      proposals: Пропозиції
+      poll_questions: Голосування
+      budgets: Бюджетування участі
+      notification_item:
+        notifications: Сповіщення
+  notifications:
+    index:
+      title: Сповіщення
+  map:
+    title: "Дільниці"
+    start_proposal: Подати пропозицію
+  omniauth:
+    facebook:
+      name: Facebook
+    twitter:
+      name: Twitter
+  proposals:
+    create:
+      form:
+        submit_button: Подати пропозицію
+    edit:
+      editing: Редагувати пропозицію
+      form:
+        submit_button: Зберегти зміни
+    retire_form:
+      title: Вилучити пропозицію
+      submit_button: Відкликати пропозицію
+    retire_options:
+      duplicated: Дублювання
+      unfeasible: Недоцільні
+      done: Виконані
+      other: Інші
+    form:
+      tag_category_label: "Категорії"
+      tags_instructions: "Відмітьте цю пропозицію. Ви можете вибрати із запропонованих або створити власну"
+      tags_label: Теги
+      tags_placeholder: "Введіть теги, які хочете використовувати, розділивши їх комами (,)"
+      map_location: "Розташування мапи"
+      map_location_instructions: "Знайдіть місце на мапі та розташуйте на ньому маркер."
+      map_remove_marker: "Вилучити маркер"
+    index:
+      featured_proposals: Рекомендовані
+      orders:
+        confidence_score: з найвищим рейтингом
+        created_at: найновіші
+        hot_score: найактивніші
+        most_commented: найбільш коментовані
+        relevance: актуальність
+        recommendations: рекомендації
+      recommendations:
+        without_interests: Слідкуйте за пропозиціями, щоб ми могли надавати вам рекомендації
+      retired_links:
+        all: Усі
+        duplicated: Дублювання
+        unfeasible: Недоцільно
+        done: Виконано
+        other: Інше
+      search_form:
+        button: Пошук
+        title: Пошук
+      search_results:
+        one: " містить термін <strong>'%{search_term}'</strong>"
+        other: " містить термін <strong>'%{search_term}'</strong>"
+      start_proposal: Подати пропозицію
+      title: Пропозиції
+      section_header:
+        title: Пропозиції
+        help: Допомога щодо пропозицій
+      section_footer:
+        title: Допомога щодо пропозицій
+    new:
+      form:
+        submit_button: Подати пропозицію
+      recommendation_three: Отримуйте задоволення від користування цим простором та голосами, які його наповнюють. Все це належить в тому числі вам.
+    proposal:
+      support: Підтримка
+      support_title: Підтримати цю пропозицію
+      supports:
+        zero: Немає підтримок
+        one: 1 підтримка
+        other: "%{count} підтримок"
+      votes:
+        zero: Голоси відсутні
+        one: 1 голос
+        other: "%{count} голосів"
+    show:
+      author_deleted: Користувача видалено
+      comments_tab: Коментарі
+      notifications_tab: Сповіщення
+      milestones_tab: Віхи
+      share: Поділитися
+      title_video_url: "Зовнішнє відео"
+      author: Автор
+    update:
+      form:
+        submit_button: Зберегти зміни
+  dashboard:
+    menu:
+      progress: Прогрес
+      community: Спільнота
+      polls: Голосування
+      poster: Афіша
+      recommended_actions: Рекомендовані дії
+      related_content: Пов'язаний контент
+    progress:
+      supports: Підтримання
+    index:
+      edit_proposal_link: Редагувати пропозицію
+      retire: Відкликати пропозицію
+    new_request:
+      links: Посилання
+    resource:
+      resource_locked: Ресурс заблоковано
+    recommended_actions:
+      title: Рекомендовані дії
+      pending_title: В очікуванні
+      done_title: Виконано
+    goal:
+      locked_resource: Ресурс заблоковано
+    community:
+      access_community: Отримати доступ до спільноти
+      participants: Учасники
+      debates: Обговорення
+      comments: Коментарі
+    polls:
+      index:
+        title: Голосування
+        create: Створити голосування
+        links: Посилання
+        additiontal_information: Додаткова інформація
+      new:
+        title: Нове голосування
+        submit: Створити голосування
+      edit:
+        submit: Оновити голосування
+      form:
+        add_question: Додати запитання
+      question_fields:
+        add_answer: Додати відповідь
+    poster:
+      options:
+        preview: Попередній перегляд
+    mailing:
+      mailing_options:
+        preview: Попередній перегляд
+    mailer:
+      forward:
+        support_button: Підтримати цю пропозицію
+  polls:
+    all: "Усі"
+    index:
+      filters:
+        current: "Відкрити"
+      title: "Опитування"
+      no_geozone_restricted: "Все місто"
+      geozone_restricted: "Дільниці"
+      section_header:
+        title: Голосування
+        help: Допомога з голосуванням
+      section_footer:
+        title: Допомога з голосуванням
+        description: Голосування громадян - це механізм залучення, завдяки якому громадяни з правом голосу можуть приймати безпосередні рішення
+    show:
+      cant_answer_not_logged_in: "Щоб взяти участь, необхідно %{signin} або %{signup}."
+      comments_tab: Коментарі
+      verify_link: "підтвердіть свій обліковий запис"
+      more_info_title: "Більше інформації"
+      documents: Документи
+      videos: "Зовнішнє відео"
+      info_menu: "Інформація"
+      results:
+        title: "Запитання"
+  proposal_notifications:
+    new:
+      title: "Надіслати сповіщення"
+      submit_button: "Надіслати сповіщення"
+  shared:
+    edit: "Редагувати"
+    filter: "Фільтр"
+    save: "Зберегти"
+    delete: "Видалити"
+    "yes": "Так"
+    "no": "Ні"
+    search_results: "Результати пошуку"
+    advanced_search:
+      search: "Фільтр"
+    author_info:
+      author_deleted: Користувача видалено
+    back: Повернутися
+    check: Обрати
+    check_all: Усі
+    following: "Відслідковувані"
+    print:
+      print_button: Роздрукувати цю інформацію
+    search: Пошук
+    show: Показати
+    suggest:
+      debate:
+        see_all: "Переглянути все"
+      budget_investment:
+        see_all: "Переглянути все"
+      proposal:
+        see_all: "Переглянути все"
+    tags_cloud:
+      districts: "Дільниці"
+      categories: "Категорії"
+    share: Поділитися
+    documentation: Додаткова документація
+    view_mode:
+      cards: Картки
+    recommended_index:
+      title: Рекомендації
+  stats:
+    index:
+      visits: Відвідування
+      debates: Обговорення
+      proposals: Пропозиції
+      comments: Коментарі
+      votes: Загалом голосів
+      verified_users: Перевірені користувачі
+      unverified_users: Неперевірені користувачі
+  users:
+    login_to_continue: "Щоб продовжити, %{signin} або %{signup}."
+    verify_account: "підтвердіть свій обліковий запис"
+    direct_messages:
+      new:
+        submit_button: Надіслати повідомлення
+    show:
+      proposals: Пропозиції
+      proposals_status: Статус
+      debates: Обговорення
+      budget_investments: Бюджетні інвестиції
+      comments: Коментарі
+      actions: Дії
+    proposals:
+      draft: Чернетка
+      published: Опубліковано
+      actions: Дії
+  votes:
+    organizations: Організації не допускаються до голосування
+    supports: Підтримки
+  welcome:
+    feed:
+      most_active:
+        processes: "Відкриті процеси"
+      process_label: Процес
+    cards:
+      title: Рекомендовані
+    welcome:
+      title: Взяти участь
+      user_permission_info: З вашим обліковим записом можна...
+      user_permission_verify_my_account: Підтвердити мій обліковий запис
+  related_content:
+    title: "Пов'язаний вміст"
+    submit: "Додати"
+    score_positive: "Так"
+    score_negative: "Ні"
+    content_title:
+      proposal: "Пропозиція"
+      debate: "Обговорення"
+      budget_investment: "Бюджетна інвестиція"
+  admin/widget:
+    header:
+      title: Адміністрування
+  links:
+    form:
+      delete_button: Видалити
+      cancel_button: Скасувати
+    nested_links:
+      title: Посилання
+  communities:
+    show:
+      surveys: Опитування
+    subnav:
+      surveys: Опитування

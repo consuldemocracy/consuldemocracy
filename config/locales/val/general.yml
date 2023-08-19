@@ -173,7 +173,7 @@ val:
       accessibility: Accessibilitat
       conditions: Termes i condicions d'us
       consul: Aplicació CONSUL
-      consul_url: https://github.com/consuldemocracy/consuldemocracy
+      consul_url: https://github.com/consul/consul
       copyright: CONSUL, %{year}
       description: Este portal utilitza la %{consul} que es %{open_source}.
       open_source: software de codi obert

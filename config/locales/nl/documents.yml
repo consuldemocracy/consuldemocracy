@@ -7,7 +7,7 @@ nl:
       title: Bestanden
       title_placeholder: Voeg een omschrijving toe voor het bestand
       delete_button: Verwijder bestand
-      cancel_button: Annuleren
+      cancel_button: Cancel
       note: "Je kunt maximaal %{max_documents_allowed} bestanden uploaden met de volgende typen: %{accepted_content_types}, tot maximum van %{max_file_size} MB per bestand."
       add_new_document: Nieuw bestand toevoegen
     actions:

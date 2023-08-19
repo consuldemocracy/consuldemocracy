@@ -1360,7 +1360,7 @@ fr:
       show_results_and_stats: "Afficher les résultats et statistiques"
       results_and_stats_reminder: "Si vous cochez ces cases, les résultats et/ou les statistiques seront publics et visibles par tous les utilisateurs."
       close_modal: fermer la fenêtre contextuelle
-      example_url: "Par exemple, https://consuldemocracy.org ou /help"
+      example_url: "Par exemple, https://consulproject.org ou /help"
     geozones:
       index:
         title: District
@@ -1588,7 +1588,7 @@ fr:
           see_page: Voir la page
         new:
           title: Créer une nouvelle page personnalisée
-          slug_help: "Texte qui identifie cette page dans l'URL, par exemple <code>https://consuldemocracy.org/slug-de-pagina</code>"
+          slug_help: "Texte qui identifie cette page dans l'URL, par exemple <code>https://consulproject.org/slug-de-pagina</code>"
         page:
           created_at: Créé le
           status: Statut

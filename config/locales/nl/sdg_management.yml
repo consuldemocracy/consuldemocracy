@@ -1,7 +1,5 @@
 nl:
   sdg_management:
-    header:
-      title: "SDG-inhoud"
     homepage:
       header:
         create: "Koptekst maken"
@@ -12,7 +10,6 @@ nl:
       legislation_processes: "Plannen"
       polls: "Polls"
       proposals: "Proposals"
-      sdg_content: "Doelen"
     relations:
       index:
         filter: "Filter"

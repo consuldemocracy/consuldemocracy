@@ -192,7 +192,7 @@ ka:
       accessibility: ხელმისაწვდომობა
       conditions: გამოყენების წესები და პირობები
       consul: CONSUL-ის აპლიკაცია
-      consul_url: https://github.com/consuldemocracy/consuldemocracy
+      consul_url: https://github.com/consul/consul
       copyright: CONSUL, %{year}
       description: აღნიშნული პორტალი იყენებს %{consul}, რომელიც არის %{open_source}.
       open_source: ღია წყაროების პროგრამული უზრუნველყოფა

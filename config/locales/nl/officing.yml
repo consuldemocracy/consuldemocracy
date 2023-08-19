@@ -59,7 +59,7 @@ nl:
         no_results: "Geen resultaten"
         results: Resultaten
         table_answer: Antwoord
-        table_votes: Stemmen
+        table_votes: Votes
         table_whites: "Blanco stemmen"
         table_nulls: "Invalid ballots"
         table_total: "Totaal stemmen"
@@ -74,13 +74,13 @@ nl:
         form_errors: voorkwam de verificatie van dit document
     voters:
       new:
-        title: Peilingen
-        table_poll: Peiling
+        title: Polls
+        table_poll: Poll
         table_status: Polls status
         table_actions: Activiteiten
         not_to_vote: De persoon heeft besloten niet te stemmen op dit moment
       show:
-        can_vote: Mag stemmen
+        can_vote: Can vote
         cannot_vote: De persoon kan niet stemmen omdat hij/zij niet geregistreerd staat in de wijk(en) waar de stemming plaatsvindt.
         error_already_voted: Has already participated in this poll
         submit: Confirm vote

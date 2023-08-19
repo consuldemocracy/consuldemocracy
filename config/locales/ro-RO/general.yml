@@ -202,7 +202,7 @@ ro:
       accessibility: Accesibilitate
       conditions: Termeni și condiții de utilizare
       consul: Cerere CONSUL
-      consul_url: https://github.com/consuldemocracy/consuldemocracy
+      consul_url: https://github.com/consul/consul
       copyright: CONSUL, %{year}
       description: Acest portal folosește %{consul} care este %{open_source}.
       open_source: software open-source

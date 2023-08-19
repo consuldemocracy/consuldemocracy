@@ -19,7 +19,7 @@ tr:
         no_budgets: "Herhangi bir bütçe yok"
     budget_investments:
       index:
-        headings_filter_all: Tüm bütçe kalemleri
+        headings_filter_all: Tüm başlıklar
         filters:
           valuation_open: Açık
           valuating: Değerlendiriliyor
@@ -29,7 +29,7 @@ tr:
         edit: Dosyayı düzenle
         table_id: Kimlik
         table_title: Başlık
-        table_heading_name: Bütçe kalemi adı
+        table_heading_name: Başlık adı
         table_actions: Yapılacaklar
         no_investments: "Herhangi bir yatırım projesi yok."
       show:
@@ -38,7 +38,7 @@ tr:
         info: Sahip bilgileri
         by: Gönderen
         sent: Gönderilme zamanı
-        heading: Bütçe kalemi
+        heading: Başlık
         dossier: Dosya
         edit_dossier: Dosyayı düzenle
         price: Maliyet

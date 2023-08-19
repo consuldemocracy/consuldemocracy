@@ -204,7 +204,7 @@ uk-UA:
       accessibility: Доступність
       conditions: Правила та умови користування
       consul: Додаток CONSUL
-      consul_url: https://github.com/consuldemocracy/consuldemocracy
+      consul_url: https://github.com/consul/consul
       copyright: CONSUL, %{year}
       description: Цей портал використовує %{consul} який знаходиться %{open_source}.
       open_source: відкрите програмне забезпечення

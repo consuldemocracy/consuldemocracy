@@ -18,7 +18,7 @@ nl:
           phone: "Telefoon"
           confirmation_code: "Bevestigingscode"
         email:
-          recipient: "E-mail"
+          recipient: "Email"
       verification/letter:
         email: "E-mail"
         password: "Wachtwoord"

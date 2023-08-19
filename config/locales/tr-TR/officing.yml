@@ -1,89 +1,89 @@
 tr:
   officing:
     header:
-      title: Oylanıyor
+      title: Seçim
     dashboard:
       index:
-        title: Oylama görevi
+        title: Anket memuru
         info: Burada kullanıcı belgelerini doğrulayabilir ve oylama sonuçlarını saklayabilirsiniz
-        no_shifts: Bugün görev vardiyanız yok.
+        no_shifts: Bugün memur vardiyanız yok.
     menu:
       voters: Belgeyi doğrula
-      total_recounts: Yeniden sayımlar toplamı ve sonuçlar
+      total_recounts: Toplam yeniden sayımlar ve sonuçlar
     polls:
       final:
-        title: Son yeniden sayıma hazır oylamalar
-        no_polls: Herhangi bir etkin oylamada son sayım göreviniz yok
-        select_poll: Oylama seçin
+        title: Anketler son yeniden sayıma hazır
+        no_polls: Herhangi bir aktif ankette son sayımlarda memurluk yapmıyorsunuz
+        select_poll: Anket seç
         add_results: Sonuçları ekle
     poll_budgets:
-      see_ballot_sheets: Oy pusulası listesini göster
+      see_ballot_sheets: Oy pusulası listesini gör
       index:
         title: "%{poll_budget} - Oy pusulası listesi"
-        ballot_sheet: "%{id} oy pusulası"
-        ballot_sheet_name: Ad
-        ballot_sheet_author: Sahibi
-        ballot_sheet_creation_date: Oluşturulma tarihi
-        empty_results: Bu oylamanın henüz bir oy pusulası yok
+        ballot_sheet: "Oy pusulası %{id}"
+        ballot_sheet_name: İsim
+        ballot_sheet_author: Sahip
+        ballot_sheet_creation_date: Oluşturma tarihi
+        empty_results: Bu anket için henüz bir oy pusulası bulunmamaktadır
       new:
         title: "%{poll_budget} - Yeni oy pusulası"
         booth: Kabin
-        select_booth: Kabin seçin
-        csv_data: CSV verileri
+        select_booth: Kabin seç
+        csv_data: CSV verisi
         submit: Kaydet
       show:
-        created_at: Oluşturulma tarihi
-        author: Sahibi
-        data: CSV verileri
+        created_at: Oluşturma tarihi
+        author: Sahip
+        data: CSV verisi
     booth:
       new:
-        title: "Kabininizi seçin"
+        title: "Kabininizi seçiniz"
     results:
       flash:
         create: "Sonuçlar kaydedildi"
-        error_create: "Sonuçlar KAYDEDİLMEDİ. Veriler hatalı."
-        error_wrong_booth: "Kabin doğru değil. Sonuçlar KAYDEDİLMEDİ."
+        error_create: "Sonuçlar KAYDEDİLMEDİ. Veri hatası."
+        error_wrong_booth: "Yanlış kabin. Sonuçlar KAYDEDİLMEDİ."
       new:
         title: "%{poll} - Sonuçları ekle"
-        not_allowed: "Bu oylama için sonuç ekleme izniniz yok"
+        not_allowed: "Bu anket için sonuçlar eklemeye yetkiniz yok"
         booth: "Kabin"
         date: "Tarih"
-        select_booth: "Kabin seçin"
-        ballots_white: "Boş oy"
-        ballots_null: "Geçersiz oy"
-        ballots_total: "Toplam oy"
+        select_booth: "Kabin seç"
+        ballots_white: "Tamamen boş oylar"
+        ballots_null: "Geçersiz oylar"
+        ballots_total: "Toplam oylar"
         submit: "Kaydet"
         results_list: "Sonuçlarınız"
-        see_results: "Sonuçları göster"
+        see_results: "Sonuçları gör"
       index:
-        no_results: "Henüz bir sonuç yok"
+        no_results: "Sonuç yok"
         results: Sonuçlar
-        table_answer: Yanıt
+        table_answer: Cevap
         table_votes: Oylar
-        table_whites: "Boş oy"
-        table_nulls: "Geçersiz oy"
-        table_total: "Toplam oy"
+        table_whites: "Tamamen boş oylar"
+        table_nulls: "Geçersiz oylar"
+        table_total: "Toplam oylar"
     residence:
       flash:
-        create: "Seçmen bilgi sistemi belgeyi doğruladı"
-        not_allowed: "Bugün görev vardiyanız yok"
+        create: "Census ile doğrulanan belge"
+        not_allowed: "Bugün memur vardiyanız yok"
       new:
         title: Belgeyi doğrula
         submit: Belgeyi doğrula
-        error_verifying_census: "Seçmen bilgi sistemi bu belgeyi doğrulayamadı."
+        error_verifying_census: "Census bu belgeyi doğrulayamadı."
         form_errors: bu belgenin doğrulanmasını engelledi
     voters:
       new:
-        title: Oylamalar
-        table_poll: Oylama
-        table_status: Oylama durumu
-        table_actions: İşlemler
-        not_to_vote: Kişi şimdi oy kullanmamaya karar verdi
+        title: Anketler
+        table_poll: Anket
+        table_status: Anket durumu
+        table_actions: Eylemler
+        not_to_vote: Kişi şu anda oy kullanmamaya karar verdi
       show:
         can_vote: Oy verebilir
-        cannot_vote: Kişi oylamanın yapılacağı bölgelerde kayıtlı olmadığından oy kullanamaz.
-        error_already_voted: Bu oylamaya zaten katılmış
+        cannot_vote: Kişi oylamanın yapılacağı bölge(lerde)de kayıtlı olmadığı için oy kullanamaz.
+        error_already_voted: Bu ankete zaten katıldı
         submit: Oyu onayla
         success: "Oy verildi!"
       can_vote:
-        submit_disable_with: "Oy onaylanırken bekleyin..."
+        submit_disable_with: "Bekleyin, oy onaylanıyor..."

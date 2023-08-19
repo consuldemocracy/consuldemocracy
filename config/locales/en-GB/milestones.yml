@@ -1,1 +1,5 @@
 en-GB:
+  milestones:
+    index:
+      no_milestones: Немає визначених віх
+      progress: Прогрес

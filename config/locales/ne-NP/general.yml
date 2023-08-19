@@ -201,7 +201,7 @@ ne:
       accessibility: पहुँचयोग्यता
       conditions: प्रयोगका सर्तहरू र सर्तहरू
       consul: कन्सुल सफ्टवेयर
-      consul_url: https://github.com/consuldemocracy/consuldemocracy
+      consul_url: https://github.com/consul/consul
       copyright: कन्सुल, %{year}
       description: यो पोर्टलले %{consul} प्रयोग गर्दछ जुन %{open_source} हो।
       open_source: खुला स्रोत सफ्टवेयर

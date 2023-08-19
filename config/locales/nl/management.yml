@@ -73,15 +73,15 @@ nl:
         unverified_user: User is not verified
       create_proposal: Maak voorstel
       print:
-        print_button: Printen
+        print_button: Print
       index:
         title: Support proposals
     budgets:
       create_new_investment: Maak budgetinvestering
       print_investments: Druk begrotinginvestering af
       support_investments: Steun budgetinvestering
-      table_name: Naam
-      table_phase: Fase
+      table_name: Name
+      table_phase: Phase
       table_actions: Activiteiten
       no_budgets: Er zijn geen actieve participatieve budgetten.
     budget_investments:
@@ -92,14 +92,14 @@ nl:
         heading: Concept
         unfeasible: Unfeasible investment
       print:
-        print_button: Printen
+        print_button: Afdrukken
       search_results:
         one: " bevat de term'%{search_term}'"
         other: " bevat de term'%{search_term}'"
     sessions:
       signed_out: Signed out successfully.
       signed_out_managed_user: User session signed out successfully.
-    username_label: Gebruikersnaam
+    username_label: Username
     users:
       create_user: Create a new account
       create_user_info: We zullen een account aanmaken met de volgende gegevens
@@ -115,7 +115,7 @@ nl:
       erase_submit: Delete account
     user_invites:
       new:
-        label: E-mails
+        label: Emails
         info: "Enter the emails separated by commas (',')"
         submit: Verstuur uitnodigingen
         title: Verstuur uitnodigingen

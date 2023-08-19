@@ -198,7 +198,7 @@ sr:
       accessibility: Доступност
       conditions: Услови коришћења
       consul: КОНСУЛ пријава
-      consul_url: https://github.com/consuldemocracy/consuldemocracy
+      consul_url: https://github.com/consul/consul
       copyright: КОНСУЛ, %{year}
       description: Овај портал користи %{consul} који је %{open_source}.
       open_source: отворени-извор софтвер

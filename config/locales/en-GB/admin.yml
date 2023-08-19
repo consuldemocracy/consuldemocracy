@@ -1,1 +1,806 @@
 en-GB:
+  admin:
+    header:
+      title: Адміністрування
+    actions:
+      actions: Дії
+      delete: "Видалити"
+      mark_featured: Рекомендовані
+      edit: Редагувати
+    banners:
+      index:
+        create: Створити постер
+        filters:
+          all: Усі
+          with_active: Активні
+        preview: Попередній перегляд
+      banner:
+        sections:
+          homepage: Домашня сторінка
+          debates: Обговорення
+          proposals: Пропозиції
+          budgets: Бюджетування участі
+          help_page: Довідка
+      edit:
+        editing: Редагувати постер
+        form:
+          submit_button: Зберегти зміни
+      new:
+        creating: Створити постер
+    activity:
+      show:
+        actions:
+          block: Заблоковані
+        content: Вміст
+        filter: Показати
+        filters:
+          all: Усі
+          on_comments: Коментарі
+          on_debates: Обговорення
+          on_proposals: Пропозиції
+          on_users: Користувачі
+        title: Посередницька діяльність
+        type: Тип
+    budgets:
+      actions:
+        preview: "Попередній перегляд"
+      index:
+        title: Бюджети участі
+        filter: Фільтр
+        filters:
+          all: Усі
+          open: Відкрити
+          finished: Завершені
+        budget_investments: Інвестиційні проєкти
+        table_budget_type: "Тип"
+        table_draft: "Чернетка"
+        table_name: Назва
+        table_phase: Етап
+        admin_ballots: Бюлетені
+        no_budgets: "Бюджетів немає."
+      edit:
+        phase: Етап
+        enabled: Дозволено
+        actions: Дії
+        active: Активні
+    budget_groups:
+      name: "Назва"
+      headings_name: "Рубрики"
+      headings_manage: "Рубрики"
+    budget_phases:
+      edit:
+        save_changes: Зберегти зміни
+    budget_investments:
+      index:
+        heading_filter_all: Всі розділи
+        filters:
+          all: Усі
+          under_valuation: В процесі оцінювання
+          valuation_finished: Оцінку завершено
+          feasible: Доцільно
+          selected: Вибрано
+          undecided: Не вирішено
+          unfeasible: Недоцільно
+        buttons:
+          filter: Фільтр
+        no_budget_investments: "Інвестиційні проєкти відсутні."
+        title: Інвестиційні проєкти
+        assigned_admin: Призначений адміністратор
+        feasibility:
+          feasible: "Доцільно"
+          unfeasible: "Недоцільно"
+          undecided: "Не вирішено"
+        selected: "Вибрано"
+        select: "Обрати"
+        list:
+          id: ID
+          title: Заголовок
+          supports: Підтримання
+          admin: Адміністратор
+          valuator: Оцінювач
+          geozone: Сфера діяльності
+          feasibility: Доцільність
+          selected: Вибрано
+          incompatible: Несумісно
+          price: Ціна
+          author: Автор
+        see_results: "Переглянути результати"
+      show:
+        assigned_admin: Призначений адміністратор
+        assigned_valuators: Призначені оцінювачі
+        classification: Класифікація
+        edit: Редагувати
+        sent: Надіслані
+        group: Група
+        heading: Розділ
+        dossier: Досьє
+        edit_dossier: Редагувати досьє
+        tags: Теги
+        undefined: Не визначено
+        compatibility:
+          title: Сумісність
+          "true": Несумісно
+        selection:
+          title: Відбір
+        winner:
+          "true": "Так"
+          "false": "Ні"
+        valuator_groups: "Групи оцінювачів"
+        preview: Попередній перегляд інвестиції
+      edit:
+        classification: Класифікація
+        compatibility: Сумісність
+        selection: Відбір
+        assigned_valuators: Оцінювачі
+        submit_button: Оновити
+        undefined: Не визначено
+    budgets_wizard:
+      creation_timeline:
+        budget: Бюджет
+        groups: Групи
+        headings: Рубрики
+    milestones:
+      index:
+        table_id: "ID"
+        table_title: "Заголовок"
+        table_description: "Опис"
+        table_status: Статус
+        table_actions: "Дії"
+        no_milestones: "Не мають визначених етапів"
+        image: "Зображення"
+        show_image: "Показати зображення"
+        documents: "Документи"
+    statuses:
+      index:
+        table_name: Назва
+        table_description: Опис
+        table_actions: Дії
+    progress_bars:
+      index:
+        title: "Індикатори виконання"
+        table_id: "ID"
+        table_kind: "Тип"
+        table_title: "Заголовок"
+        table_percentage: "Поточний прогрес"
+    comments:
+      index:
+        id: "ID"
+        content: "Вміст"
+        author: "Автор"
+        commentable_type: "Тип"
+        title: Коментарі
+        table_link: "Посилання"
+    hidden_comments:
+      index:
+        filter: Фільтр
+        filters:
+          all: Усі
+          with_confirmed_hide: Підтверджені
+          without_confirmed_hide: В очікуванні
+        title: Приховані коментарі
+    dashboard:
+      index:
+        title: Адміністрування
+      actions:
+        index:
+          active: 'Так'
+          inactive: 'Ні'
+          title: Ресурси та дії
+          action_title: Заголовок
+          action_type: Тип
+          action_active: Активні
+          order: Порядок
+          default:
+            email: Електронна адреса
+            polls: Голосування
+            poster: Афіша
+        new:
+          back: Назад до списку
+        edit:
+          back: Назад до списку
+        form:
+          submit_button: Зберегти
+      administrator_tasks:
+        index:
+          title: Запитувані ресурси
+          source: Джерело
+          resource: Запитуваний ресурс
+          filter: Фільтр
+          filters:
+            pending: В очікуванні
+        form:
+          proposal: Пропозиція
+          request: Запитуваний ресурс
+    debates:
+      index:
+        id: ID
+        author: Автор
+        title: Обговорення
+    hidden_debates:
+      index:
+        filter: Фільтр
+        filters:
+          all: Усі
+          with_confirmed_hide: Підтверджені
+          without_confirmed_hide: В очікуванні
+        title: Приховані обговорення
+    documents:
+      index:
+        new_link: "Додати новий документ"
+        title: "Документи"
+    hidden_users:
+      index:
+        filter: Фільтр
+        filters:
+          all: Усі
+          with_confirmed_hide: Підтверджені
+          without_confirmed_hide: В очікуванні
+        title: Приховані користувачі
+        user: Користувач
+      show:
+        email: "Електронна адреса:"
+    hidden_budget_investments:
+      index:
+        filter: Фільтр
+        filters:
+          all: Усі
+          with_confirmed_hide: Підтверджені
+          without_confirmed_hide: В очікуванні
+    legislation:
+      processes:
+        edit:
+          back: Назад
+          submit_button: Зберегти зміни
+        form:
+          enabled: Дозволено
+          process: Процес
+          debate_phase: Етап обговорення
+          allegations_phase: Етап коментування
+          proposals_phase: Етап подання пропозицій
+          use_markdown: Використовуйте Markdown, щоб відформатувати текст
+        index:
+          title: Спільна законотворчість
+          filters:
+            active: Активні
+            all: Усі
+        new:
+          back: Назад
+        process:
+          title: Процес
+          comments: Коментарі
+          status: Статус
+          start_date: Дата початку
+          end_date: Дата закінчення
+          status_open: Відкрити
+        subnav:
+          info: Інформація
+          homepage: Домашня сторінка
+          questions: Обговорення
+          proposals: Пропозиції
+          milestones: Відслідковувані
+      proposals:
+        index:
+          title: Заголовок
+          back: Назад
+          id: Id
+          supports: Загальна підтримка
+        form:
+          custom_categories: Категорії
+      draft_versions:
+        edit:
+          back: Назад
+          submit_button: Зберегти зміни
+        form:
+          use_markdown: Використовуйте Markdown, щоб відформатувати текст
+        index:
+          title: Чорнові версії
+          create: Створити версію
+          delete: Видалити
+          preview: Попередній перегляд
+        new:
+          back: Назад
+          submit_button: Створити версію
+        table:
+          title: Заголовок
+          created_at: Створено о
+          comments: Коментарі
+          final_version: Остаточна версія
+          status: Статус
+      questions:
+        edit:
+          back: Назад
+          submit_button: Зберегти зміни
+        index:
+          back: Назад
+          create: Створити запитання
+          delete: Видалити
+        new:
+          back: Назад
+          submit_button: Створити запитання
+        table:
+          title: Заголовок
+          question_options: Варіанти запитань
+      milestones:
+        index:
+          title: Відслідковувані
+    managers:
+      index:
+        title: Керівники
+      manager:
+        add: Додати
+    sdg_managers:
+      index:
+        no_sdg_managers: Користувачів немає.
+    sdg/managers:
+      sdg/manager:
+        add: Додати
+    menu:
+      activity: Посередницька діяльність
+      proposals: Пропозиції
+      budgets: Бюджети участі
+      hidden_comments: Приховані коментарі
+      hidden_debates: Приховані обговорення
+      hidden_proposals: Приховані пропозиції
+      hidden_users: Приховані користувачі
+      administrators: Адміністратори
+      managers: Керівники
+      moderators: Модератори
+      newsletters: Інформаційні розсилки
+      admin_notifications: Сповіщення
+      emails_download: Завантаження електронних листів
+      valuators: Оцінювачі
+      poll_officers: Посадові особи опитувань
+      polls: Голосування
+      poll_shifts: Керувати змінами
+      officials: Службовці
+      organizations: Організації
+      site_customization:
+        homepage: Домашня сторінка
+        pages: Сторінки користувачів
+        images: Особисті зображення
+        content_blocks: Блоки контенту користувача
+        information_texts_menu:
+          debates: "Обговорення"
+          community: "Спільнота"
+          proposals: "Пропозиції"
+          polls: "Голосування"
+          mailers: "Електронні адреси"
+          management: "Управління"
+          welcome: "Ласкаво просимо"
+        buttons:
+          save: "Зберегти"
+      title_settings: Налаштування
+      legislation: Спільна законотворчість
+      users: Користувачі
+      dashboard: Панель управління пропозиціями
+      administrator_tasks: Запитувані ресурси
+      dashboard_actions: Ресурси та дії
+      debates: "Обговорення"
+      comments: "Коментарі"
+      local_census_records: Керувати місцевим переписом населення
+    administrators:
+      index:
+        title: Адміністратори
+      administrator:
+        add: Додати
+    moderators:
+      index:
+        title: Модератори
+      moderator:
+        add: Додати
+    segment_recipient:
+      administrators: Адміністратори
+    newsletters:
+      index:
+        title: Інформаційні розсилки
+        new_newsletter: Нова інформаційна розсилка
+        subject: Предмет
+        segment_recipient: Отримувачі
+        sent: Надіслані
+        actions: Дії
+        draft: Чернетка
+        preview: Попередній перегляд
+      new:
+        title: Нова інформаційна розсилка
+      show:
+        send: Надіслати
+        sent_at: Відправлено в
+        subject: Предмет
+        segment_recipient: Отримувачі
+        from: Електронна адреса, що відображатиметься як відправник інформаційного бюлетеня
+        body: Вміст листа
+    admin_notifications:
+      index:
+        section_title: Сповіщення
+        new_notification: Нове сповіщення
+        title: Заголовок
+        segment_recipient: Отримувачі
+        sent: Надіслані
+        actions: Дії
+        draft: Чернетка
+        preview: Попередній перегляд
+        view: Переглянути
+      new:
+        section_title: Нове сповіщення
+      show:
+        sent_at: Відправлено в
+        title: Заголовок
+        body: Текст
+        link: Посилання
+        segment_recipient: Отримувачі
+    system_emails:
+      comment:
+        title: "Коментар"
+      reply:
+        title: "Відповідь"
+      evaluation_comment:
+        title: "Новий оціночний коментар"
+    emails_download:
+      index:
+        title: Завантаження електронних листів
+    valuators:
+      index:
+        title: Оцінювачі
+        name: Назва
+        email: Електронна адреса
+        description: Опис
+        no_description: Опис відсутній
+        valuator_groups: "Групи оцінювачів"
+        group: "Група"
+        abilities: "Можливості"
+      show:
+        description: "Опис"
+        email: "Електронна адреса"
+        group: "Група"
+        abilities: "Можливості"
+    valuator_groups:
+      index:
+        title: "Групи оцінювачів"
+        new: "Створити групу оцінювачів"
+        name: "Назва"
+      form:
+        new: "Створити групи оцінювачів"
+    poll_officers:
+      index:
+        title: Інспектори опитувань
+      officer:
+        add: Додати
+        name: Назва
+        email: Електронна адреса
+        entry_name: інспектор
+      search:
+        user_not_found: Користувача не знайдено
+    poll_officer_assignments:
+      index:
+        table_name: "Назва"
+        table_email: "Електронна адреса"
+      by_officer:
+        date: "Дата"
+        booth: "Кабінка"
+    poll_shifts:
+      new:
+        shift: "Призначення"
+        date: "Дата"
+        search_officer_button: Пошук
+        table_shift: "Зміна"
+        table_email: "Електронна адреса"
+        table_name: "Назва"
+    booth_assignments:
+      manage:
+        status:
+          assign_status: Завдання
+    poll_booth_assignments:
+      show:
+        location: "Розташування"
+        officers: "Інспектори"
+        recounts: "Перерахунок"
+        results: "Результати"
+        date: "Дата"
+        count_by_system: "Голоси (автоматично)"
+      index:
+        table_name: "Назва"
+        table_location: "Розташування"
+    active_polls:
+      edit:
+        title: "Опис опитувань"
+    polls:
+      index:
+        create: "Створити голосування"
+        name: "Назва"
+        dates: "Дати"
+        start_date: "Дата початку"
+        closing_date: "Дата завершення"
+      new:
+        title: "Нове голосування"
+        submit_button: "Створити голосування"
+      edit:
+        submit_button: "Оновити голосування"
+      show:
+        questions_tab: Запитання
+        officers_tab: Інспектори
+        results_tab: Результати
+        table_title: "Заголовок"
+    questions:
+      index:
+        title: "Запитання"
+        create: "Створити запитання"
+        questions_tab: "Запитання"
+        create_question: "Створити запитання"
+        table_proposal: "Пропозиція"
+        table_question: "Запитання"
+        table_poll: "Опитування"
+      new:
+        title_proposal: "Створити запитання"
+      answers:
+        images:
+          add_image: "Додати зображення"
+      show:
+        author: Автор
+        question: Запитання
+        add_answer: Додати відповідь
+        video_url: Зовнішнє відео
+        answers:
+          title: Відповідь
+          description: Опис
+          videos: Відео
+          images: Зображення
+          images_list: Список зображень
+          documents: Документи
+          document_title: Заголовок
+          document_actions: Дії
+    answers:
+      edit:
+        title: Додати відповідь
+      videos:
+        index:
+          title: Відео
+          video_title: Заголовок
+          video_url: Зовнішнє відео
+    recounts:
+      index:
+        title: "Перерахунок"
+        total_system: "Голоси (автоматично)"
+        table_booth_name: "Кабінка"
+        table_system_count: "Голоси (автоматично)"
+    results:
+      index:
+        title: "Результати"
+      result:
+        table_whites: "Порожні бюлетені"
+        table_nulls: "Недійсні бюлетені"
+        table_total: "Дійсні бюлетені"
+        table_answer: Відповідь
+        table_votes: Голоси
+      results_by_booth:
+        booth: Кабінка
+        results: Результати
+        see_results: Переглянути результати
+    booths:
+      index:
+        name: "Назва"
+        location: "Розташування"
+      edit:
+        title: "Редагувати кабінку"
+      show:
+        location: "Розташування"
+      booth:
+        shifts: "Керувати змінами"
+    officials:
+      index:
+        title: Інспектори
+        name: Назва
+        official_position: Офіційна посада
+    organizations:
+      index:
+        filter: Фільтр
+        filters:
+          all: Усі
+          pending: В очікуванні
+          rejected: Відхилено
+          verified: Перевірені
+        name: Назва
+        email: Електронна адреса
+        status: Статус
+        rejected: Відхилені
+        title: Організації
+        verified: Перевірені
+        verify: Підтвердити
+        pending: В очікуванні
+    proposals:
+      index:
+        title: Пропозиції
+        id: ID
+        author: Автор
+        select: Обрати
+        selected: Вибрано
+        milestones: Віхи
+    hidden_proposals:
+      index:
+        filter: Фільтр
+        filters:
+          all: Усі
+          with_confirmed_hide: Підтверджені
+          without_confirmed_hide: В очікуванні
+        title: Приховані пропозиції
+    hidden_proposal_notifications:
+      index:
+        filter: Фільтр
+        filters:
+          all: Усі
+          with_confirmed_hide: Підтверджені
+          without_confirmed_hide: В очікуванні
+    settings:
+      index:
+        title: Налаштування
+        update_setting: Оновити
+        features:
+          enabled: "Дозволено"
+        map:
+          form:
+            submit: Оновити
+        dashboard:
+          title: Інформаційна панель пропозицій
+      setting_value: Важливість
+      no_description: "Опис відсутній"
+    shared:
+      search:
+        search: "Пошук"
+      search_results: "Результати пошуку"
+      actions: Дії
+      title: Заголовок
+      description: Опис
+      image: Зображення
+      show_image: Показати зображення
+      view: Переглянути
+      proposal: Пропозиція
+      author: Автор
+      content: Вміст
+      created_at: Створено о
+    geozones:
+      geozone:
+        name: Назва
+      edit:
+        form:
+          submit_button: Зберегти зміни
+        back: Повернутися
+      new:
+        back: Повернутися
+    signature_sheets:
+      author: Автор
+      created_at: Дата створення
+      name: Назва
+      index:
+        title: Підписні листи
+        new: Нові підписні листи
+      new:
+        title: Нові підписні листи
+      show:
+        author: Автор
+        users: Користувачі
+    stats:
+      show:
+        stats_title: Статистика
+        summary:
+          comments: Коментарі
+          debates: Обговорення
+          proposals: Пропозиції
+          budget_investments: Інвестиційні проєкти
+          unverified_users: Неперевірені користувачі
+          verified_users: Перевірені користувачі
+          visits: Відвідування
+          votes: Усі голоси
+        budgets_title: Бюджетування участі
+        participatory_budgets: Партисипативні бюджети
+        direct_messages: Особисті повідомлення
+        proposal_notifications: Сповіщення щодо пропозицій
+        incomplete_verifications: Незавершені перевірки
+        polls: Голосування
+      graph:
+        debate_created: Обговорення
+        visit: Відвідування
+        proposal_created: Пропозиції громадянина
+      budget_balloting:
+        vote_count: Голоси
+        participant_count: Учасники
+      budget_supporting:
+        headings: Рубрики
+        users: Користувачі
+        vote_count: Голоси
+        participant_count: Учасники
+      direct_messages:
+        title: Особисті повідомлення
+        total: Загалом
+      proposal_notifications:
+        title: Сповіщення щодо пропозицій
+        total: Загалом
+      polls:
+        all: Голосування
+        web_participants: Учасники в мережі
+        table:
+          poll_name: Опитування
+          question_name: Запитання
+          origin_web: Учасники в мережі
+          origin_total: Загалом учасників
+      sdg:
+        debates: "Обговорення"
+        polls: "Голосування"
+        proposals: "Пропозиції"
+    tags:
+      create: Створити тему
+      index:
+        topic: Тема
+    users:
+      columns:
+        id: ID
+        name: Назва
+        email: Електронна адреса
+        document_number: Номер документа
+      index:
+        title: Користувач
+        filter: Фільтр
+        filters:
+          active: Активні
+    verifications:
+      index:
+        title: Незавершені перевірки
+    site_customization:
+      content_blocks:
+        index:
+          create: Створити новий блок контенту
+        new:
+          title: Створити новий блок контенту
+        content_block:
+          body: Орган
+          name: Назва
+      images:
+        index:
+          title: Зображення користувача
+          update: Оновити
+          delete: Видалити
+          image: Зображення
+      pages:
+        form:
+          options: Опції
+        index:
+          see_page: Переглянути
+        page:
+          created_at: Створено о
+          status: Статус
+          updated_at: Оновлено о
+          title: Заголовок
+          slug: Блок
+        cards:
+          create_card: Створити картку
+          no_cards: Карток немає.
+    homepage:
+      title: Домашня сторінка
+      create_header: Створити заголовок
+      cards_title: Картки
+      create_card: Створити картку
+      no_cards: Картки відсутні.
+      feeds:
+        proposals: Пропозиції
+        debates: Обговорення
+        processes: Процеси
+      new:
+        submit_header: Створити заголовок
+        submit_card: Створити картку
+    audits:
+      id: "ID"
+      actions: "Дії"
+    local_census_records:
+      index:
+        title: Керувати місцевим переписом населення
+        document_type: Тип документа
+        document_number: Номер документа
+        date_of_birth: Дата народження
+        postal_code: Поштовий індекс
+      imports:
+        new:
+          title: Місцеві дані Цензусу
+        show:
+          title: Керувати місцевим переписом населення
+    machine_learning:
+      related_content: "Пов'язаний контент"
+      tab_help: "Допомога"
+      tags: "Теги"

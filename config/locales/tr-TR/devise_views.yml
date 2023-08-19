@@ -2,115 +2,115 @@ tr:
   devise_views:
     confirmations:
       new:
-        submit: Yönergeleri yeniden gönder
-        title: Onay yönergelerini yeniden gönder
+        submit: Tekrar-gönder talimatları
+        title: Tekrar-gönder onay talimatları
       show:
-        instructions: Hesap %{email} adresiyle doğrulanıyor
-        new_password_confirmation_label: Erişim parolasını onayla
-        new_password_label: Yeni erişim parolası
-        please_set_password: Lütfen yeni parolanızı yazın (yukarıdaki e-posta adresi ile oturum açmanızı sağlar)
+        instructions: '%{email} adresli hesap doğrulanıyor'
+        new_password_confirmation_label: Erişim şifresini tekrarla
+        new_password_label: Yeni erişim şifresi
+        please_set_password: Lütfen yeni şifrenizi seçin (yukarıdaki e-posta ile giriş yapmanızı sağlar)
         submit: Onayla
         title: Hesabımı onayla
     mailer:
       confirmation_instructions:
         confirm_link: Hesabımı onayla
-        text: "E-posta hesabınızı şu bağlantıyla onaylayabilirsiniz:"
+        text: "E-posta hesabınızı aşağıdaki bağlantıdan onaylayabilirsiniz:"
         title: Hoş geldiniz
         welcome: Hoş geldiniz
       reset_password_instructions:
-        change_link: Parolamı değiştir
+        change_link: Şifremi değiştir
         hello: Merhaba
-        ignore_text: Parola değişikliği isteğinde bulunmadıysanız bu e-postayı dikkate almayın.
-        info_text: Bağlantıya erişip düzenlemedikçe parolanız değiştirilmez.
-        text: "Parolanızı değiştirmeniz için bir istek aldık. Bunu şu bağlantıyla yapabilirsiniz:"
-        title: Parolanızı değiştirin
+        ignore_text: Eğer bir şifre değişikliği istemediyseniz, bu e-postayı dikkate almayın.
+        info_text: Bağlantıya erişir ve düzenlemezseniz şifreniz değişmez.
+        text: "Şifrenizi değiştirmeniz için bir talep aldık. Bunu aşağıdaki bağlantıdan yapabilirsiniz:"
+        title: Şifrenizi değiştirin
       unlock_instructions:
         hello: Merhaba
-        info_text: Çok fazla sayıda başarısız oturum açma girişimi nedeniyle hesabınız engellendi.
-        instructions_text: "Hesabınızın kilidini açmak için lütfen bu bağlantıya tıklayın:"
-        title: Hesabınız kilitlenmiş
+        info_text: Fazla sayıda başarısız oturum açma denemesi nedeniyle hesabınız engellendi.
+        instructions_text: "Hesabınızın kilidini kaldırmak için lütfen bu bağlantıya tıklayın:"
+        title: Hesabınız kilitlenmiştir
         unlock_link: Hesabımın kilidini aç
     menu:
       login_items:
         login: Oturum aç
         logout: Oturumu kapat
-        signup: Hesap aç
+        signup: Kayıt ol
     organizations:
       registrations:
         new:
-          password_confirmation_label: Parola onayı
-          responsible_name_note: Adına önerge sunduğu dernek ya da topluluğu temsil eden kişi
-          submit: Hesap aç
-          title: Bir kuruluş ya da topluluk olarak hesap aç
+          password_confirmation_label: Şifreyi onayla
+          responsible_name_note: Adına öneri sunduğu dernek ya da topluluğu temsil eden kişi
+          submit: Kayıt Ol
+          title: Bir kurum veya topluluk olarak kaydol
         success:
-          back_to_index: Anladım; girişe dön
-          instructions_1: "Bu topluluğu temsil ettiğinizi doğrulamak için <strong>yakında sizinle iletişim kuracağız</strong>."
+          back_to_index: Anladım; ana sayfaya geri dön
+          instructions_1: "Bu topluluğu temsil ettiğinizi doğrulamak için <strong>Yakında sizinle iletişime geçeceğiz</strong>."
           instructions_2: <strong>E-postanız incelenirken</strong>, <strong>hesabınızı doğrulamanız için size bir bağlantı</strong> gönderdik.
-          instructions_3: Onaylandıktan sonra, doğrulanmamış grup olarak katkıda bulunmaya başlayabilirsiniz.
-          thank_you: Sitede topluluğunuza bir hesap açtığınız teşekkür ederiz. <strong>Hesbaınızın doğrulanması bekleniyor</strong>.
-          title: Kuruluş / topluluk hesabı
+          instructions_3: Onaylandıktan sonra, doğrulanmamış grup olarak katılım sağlayabilirsiniz.
+          thank_you: Topluluğunuzu web sitesine kaydettiğiniz için teşekkür ederiz. <strong>Doğrulama bekleniyor</strong>.
+          title: Organizasyonun / topluluğun kaydı
     passwords:
       edit:
-        change_submit: Parolamı değiştir
-        password_confirmation_label: Yeni parola onayı
-        password_label: Yeni parola
-        title: Parolanızı değiştirin
+        change_submit: Şifremi değiştir
+        password_confirmation_label: Yeni şifreyi onayla
+        password_label: Yeni şifre
+        title: Şifrenizi değiştirin
       new:
-        send_submit: Yönergeleri gönder
-        title: Parolayı unuttum
+        send_submit: Talimatları gönder
+        title: Şifrenizi mi unuttunuz?
     sessions:
       new:
         remember_me: Beni hatırla
-        submit: Gönder
+        submit: Giriş
         title: Oturum aç
     shared:
       links:
-        login: Gönder
+        login: Giriş
         new_confirmation: Hesabınızı etkinleştirme yönergelerini almadınız mı?
-        new_password: Parolamı unuttum
-        new_unlock: Kilit açma yönergelerini almadınız mı?
+        new_password: Şifrenizi mi unuttunuz?
+        new_unlock: Kilit kaldırma talimatlarını almadınız mı?
         signin_with_provider: '%{provider} ile oturum aç'
         signup: Bir hesabınız yok mu? %{signup_link}
-        signup_link: Hesap açın
+        signup_link: Kaydol
     unlocks:
       new:
         email_label: E-posta
-        submit: Kilit açma yönergelerini yeniden gönder
-        title: Kilit açma yönergeleri yeniden gönderildi
+        submit: Kilit açma talimatlarını tekrar gönder
+        title: Kilit açma talimatları tekrar gönderildi
     users:
       registrations:
         delete_form:
-          erase_reason_label: Nedeni
-          info: Bu işlem geri alınamaz. Lütfen bu işlemi yapmak istediğinizden emin olun.
-          info_reason: İsterseniz, bize bir neden söyleyebilirsiniz (isteğe bağlı)
+          erase_reason_label: Sebep
+          info: Bu eylem geri alınamaz. Lütfen istediğin şeyin bu olduğundan emin ol.
+          info_reason: Eğer isterseniz, bize bir neden söyleyin (isteğe bağlı)
           submit: Hesabımı sil
-          title: Hesabı sil
+          title: Hesap silme
         edit:
-          current_password_label: Geçerli parola
+          current_password_label: Mevcut şifre
           edit: Düzenle
           email_label: E-posta
           leave_blank: Değiştirmek istemiyorsanız boş bırakın
-          need_current: Değişiklikleri onaylamak için geçerli parolanızı yazmalısınız
-          password_confirmation_label: Yeni parola onayı
-          password_label: Yeni parola
-          update_submit: Güncelle
+          need_current: Değişiklikleri onaylamak için mevcut şifrenize ihtiyacımız var
+          password_confirmation_label: Yeni şifreyi onayla
+          password_label: Yeni şifre
+          update_submit: Güncelleme
           waiting_for: "Şunun onayı bekleniyor:"
         new:
-          cancel: Oturum açmayı iptal et
-          organization_signup: Bir kuruluşu ya da topluluğu mu temsil ediyorsunuz? %{signup_link}
-          organization_signup_link: Buradan hesap açın
-          password_confirmation_label: Parola onayı
-          submit: Hesap aç
-          terms: Hesap açarak %{terms} metnini kabul etmiş olursunuz
-          terms_link: kullanım hüküm ve koşulları
-          terms_title: Hesap açarak kullanım hüküm ve koşullarını kabul etmiş olursunuz
-          title: Hesap aç
+          cancel: Giriş iptali
+          organization_signup: Bir organizasyonu ya da topluluğu mu temsil ediyorsunuz? %{signup_link}
+          organization_signup_link: Buradan kaydolun
+          password_confirmation_label: Şifreyi onayla
+          submit: Kayıt Ol
+          terms: Kayıt yaparak %{terms} kabul etmiş sayılırsınız
+          terms_link: şartlar ve kullanım koşulları
+          terms_title: Kayıt yaparak şartları ve kullanım koşullarını kabul etmiş sayılırsınız
+          title: Kayıt Ol
           username_is_available: Kullanıcı adı kullanılabilir
           username_is_not_available: Kullanıcı adı zaten kullanılıyor
-          username_note: Gönderilerinizin yanında görüntülenecek ad
+          username_note: Gönderilerinizin yanında görünen isim
         success:
-          back_to_index: Anladım. Girişe dön
-          instructions_1: Lütfen <b>e-postanıza bakın</b> - <b>Hesabınızı doğrulamak için bir bağlantı</b> gönderdik.
-          instructions_2: Onaylandıktan sonra katılmaya başlayabilirsiniz.
-          thank_you: Sitede hesap açtığınız için teşekkür ederiz. Şimdi <b>e-posta adresinizi doğrulamalısınız</b>.
+          back_to_index: Anladım; ana sayfaya geri dön
+          instructions_1: Lütfen <b>e-posta adresinizi kontrol edin</b> - <b>hesabınızı doğrulamak için bir bağlantı</b> gönderdik.
+          instructions_2: Onaylandıktan sonra, katılım sağlayabilirsiniz.
+          thank_you: Web sitesine kayıt olduğunuz için teşekkür ederiz. Şimdi <b>e-posta adresinizi doğrulamalısınız</b>.
           title: E-posta adresinizi onaylayın

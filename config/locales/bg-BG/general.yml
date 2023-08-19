@@ -196,7 +196,7 @@ bg:
       accessibility: Достъпност
       conditions: Условия за ползване
       consul: приложението CONSUL
-      consul_url: https://github.com/consuldemocracy/consuldemocracy
+      consul_url: https://github.com/consul/consul
       copyright: CONSUL, %{year}
       description: Този портал използва %{consul}, който е %{open_source}.
       open_source: софтуер с отворен код

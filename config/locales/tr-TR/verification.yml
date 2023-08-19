@@ -21,13 +21,13 @@ tr:
         flash:
           success: Kendi <b>en yüksek güvenlik kodunuzu (yalnızca son oylar için gerekir)</b> istediğiniz için teşekkür ederiz. Kodunuzu birkaç gün içinde sistemde belirtilen adrese göndereceğiz. İsterseniz kodunuzu yurttaş destek ofislerinden de teslim alabilirsiniz.
       edit:
-        see_all: Önergeleri göster
+        see_all: Önerileri görüntüle
         title: Mektup istendi
       errors:
         incorrect_code: Doğrulama kodu yanlış
       new:
         explanation: "Bütçe projelerini oylamak için şunu yapabilirsiniz:"
-        go_to_index: Önergeleri göster
+        go_to_index: Önerileri görüntüle
         office: Herhangi bir yurttaş destek ofisinden doğrulama
         send_letter: Bana kodun olduğu bir mektup gönderilsin
         title: Tebrikler!
@@ -45,8 +45,8 @@ tr:
         flash:
           success: İkamet doğrulandı
       new:
-        accept_terms_text: Seçmen bilgi sistemi %{terms_url} metnini kabul ediyorum
-        accept_terms_text_title: Seçmen bilgi sistemi erişim hüküm ve koşullarını kabul ediyorum
+        accept_terms_text: Census %{terms_url} metnini kabul ediyorum
+        accept_terms_text_title: Census erişim hüküm ve koşullarını kabul ediyorum
         document_number: Belge numarası
         document_number_help_title: Yardım
         document_number_help_text: "<strong>Kimlik kartı</strong>: 12345678A<br> <strong>Pasaport</strong>: AAA000001<br> <strong>İkamet belgesi</strong>: X1234567P"
@@ -56,7 +56,7 @@ tr:
           spanish_id: Kimlik kartı
         error_not_allowed_age: Katılabilecek yaşta değilsiniz
         error_not_allowed_postal_code: Bu posta kodundaki yurttaşlar katılamaz
-        error_verifying_census: Seçmen bilgi sistemi bilgilerinizi doğrulayamadı. Lütfen, seçmen bilgi sistemi bilgilerinizin doğru olduğunu e-devlet, NVİ ya da YSK gibi kanallardan onaylayın.
+        error_verifying_census: Census, bilgilerinizi doğrulayamadı. Lütfen, Census bilgilerinizin doğru olduğunu yönetimi arayarak ya da bir yurttaş destek ofisini ziyaret ederek onaylayın.
         form_errors: ikametinizin doğrulanmasını engelledi
         postal_code_note: Hesabınızı doğrulamak için bir hesabınız olmalı
         terms: erişim hüküm ve koşulları
@@ -89,8 +89,8 @@ tr:
     step_3: Son doğrulama
     user_permission_debates: Tartışmalara katılın
     user_permission_info: Bilgileriniz doğrulandıktan sonra yapabilecekleriniz...
-    user_permission_proposal: Yeni önergeler oluşturmak
-    user_permission_support_proposal: Önergeleri desteklemek
+    user_permission_proposal: Yeni öneriler oluşturmak
+    user_permission_support_proposal: Önerileri desteklemek
     user_permission_votes: Bütçe projelerine oy vermek
     verification_needed: Ek doğrulama gerekli
     verified_user:

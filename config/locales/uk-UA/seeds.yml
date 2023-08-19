@@ -14,9 +14,6 @@ uk-UA:
     organizations:
       human_rights: Права людини
       neighborhood_association: Комітет мешканців
-    cards:
-      header:
-        label: "Ласкаво просимо до"
     categories:
       associations: Об'єднання
       culture: Культура

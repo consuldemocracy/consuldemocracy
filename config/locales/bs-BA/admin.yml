@@ -1406,7 +1406,7 @@ bs:
           see_page: Vidi stranicu
         new:
           title: Napravi novu prilagođenu stranicu
-          slug_help: "Tekst za identifikaciju ove strane na URL, npr. <code>https://consuldemocracy.org/page-slug</code>"
+          slug_help: "Tekst za identifikaciju ove strane na URL, npr. <code>https://consulproject.org/page-slug</code>"
         page:
           created_at: Napravljeno
           status: Status

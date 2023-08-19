@@ -11,8 +11,8 @@ nl:
         filters:
           current: Open
           finished: Afgelopen
-        table_name: Naam
-        table_phase: Fase
+        table_name: Name
+        table_phase: Phase
         table_assigned_investments_valuation_open: Investeringsprojecten zonder evaluatie
         table_actions: Activiteiten
         evaluate: Evalueer

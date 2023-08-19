@@ -1520,7 +1520,7 @@ bg:
           see_page: Вижте страница
         new:
           title: Създайте нова персонализирана страница
-          slug_help: "Текст за идентифициране на тази страница в URL, например <code>https://consuldemocracy.org/page-slug</code>"
+          slug_help: "Текст за идентифициране на тази страница в URL, например <code>https://consulproject.org/page-slug</code>"
         page:
           created_at: Създадено в
           status: Състояние

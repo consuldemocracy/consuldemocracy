@@ -35,7 +35,7 @@ nl:
         see_comments: Bekijk alle reacties
         text_toc: Inhoudsopgave
         text_body: Tekst
-        text_comments: Reacties
+        text_comments: Comments
     processes:
       header:
         additional_info: Aanvullende informatie
