@@ -25,12 +25,6 @@ uk-UA:
       topic:
         edit: Редагувати тему
         destroy: Видалити тему
-        comments:
-          zero: Коментарі відсутні
-          one: 1 коментар
-          few: "%{count} коментарі"
-          many: "%{count} коментарів"
-          other: "%{count} коментарів"
       author: Автор
       back: Повернутися до %{community} %{proposal}
     topic:

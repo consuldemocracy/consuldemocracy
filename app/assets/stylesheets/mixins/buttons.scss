@@ -1,6 +1,7 @@
 @import "mixins/colors";
 
 @mixin base-button {
+  @include button-base;
   font-size: $base-font-size;
 
   &:focus,
@@ -13,31 +14,70 @@
   }
 }
 
-%button {
-  @include base-button;
-}
-
 @mixin regular-button($color: $brand) {
-  @include button($background: $color);
-  @include inverted-selection;
   @include base-button;
+
+  @if $color == $brand {
+    @include brand-background;
+  } @else {
+    @include background-with-text-contrast($color);
+  }
+
+  &:hover,
+  &:focus {
+    @include background-with-text-contrast($button-background-hover, button-background-hover);
+  }
 }
 
-@mixin hollow-button($color: $link) {
-  @include button($style: hollow, $background: $color);
+%button {
+  @include regular-button;
+}
+
+@mixin hollow-button($color: $anchor-color) {
   @include normal-selection;
   @include base-button;
+  border-color: currentcolor;
+  color: $color;
   margin-bottom: 0;
+
+  @if $color == $anchor-color {
+    @include anchor-color;
+  } @else if $color == $brand {
+    @include brand-color;
+  }
+
+  &:hover,
+  &:focus {
+    $hover-color: scale-color($color, $lightness: $button-hollow-hover-lightness);
+    color: $hover-color;
+
+    @if $color == $anchor-color {
+      color: var(--anchor-color-hover, $hover-color);
+    }
+  }
 }
 
 @mixin link {
-  color: $link;
+  @include anchor-color;
   cursor: pointer;
 
   &:hover,
+  &:active,
+  &:focus {
+    @include anchor-color-hover;
+  }
+
+  &:hover,
   &:active {
-    color: $link-hover;
     text-decoration: underline;
+  }
+}
+
+@mixin text-colored-link {
+  color: inherit;
+
+  &:hover {
+    @include anchor-color;
   }
 }
 
@@ -49,7 +89,7 @@
   position: relative;
 
   &::after {
-    background: $white;
+    background: color-pick-contrast($primary-color);
     border-radius: 100%;
     content: "";
     display: block;

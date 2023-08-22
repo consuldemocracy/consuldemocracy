@@ -40,8 +40,6 @@ fr:
     telegram_handle_description: "S’il est rempli, il apparaîtra dans le pied de page"
     instagram_handle: "Nom d'utilisateur Instagram"
     instagram_handle_description: "S’il est rempli, il apparaîtra dans le pied de page"
-    url: "URL principale"
-    url_description: "L'URL principale de votre site web"
     org_name: "Nom de l'organisation"
     org_name_description: "Ce nom apparaîtra sur le sujet des expéditeurs du mail, des pages d'aides..."
     related_content_score_threshold: "Seuil de score pour le contenu associé"
@@ -60,10 +58,25 @@ fr:
     meta_keywords_description: 'Mots-clés <meta name="keywords">, utilisés pour améliorer le SEO'
     min_age_to_participate: Âge minimum de participation
     min_age_to_participate_description: "Les utilisateurs au dessus de cet âge peuvent participer à tous les opérations où un compte d'utilisateur vérifié est nécéssaire"
+    postal_codes: "Codes postaux"
+    postal_codes_description: "Une liste de codes postaux valides séparés par des virgules, vous pouvez également utiliser des plages en utilisant \":\" le AB3 45FG, et les codes postaux entre 00031 et 00035. Si vous laissez cette option vide, n'importe quel code postal sera valide."
     proposals:
+      successful_proposal_id: proposition réussie
+      successful_proposal_id_description: cette proposition est utilisée comme référence d'une proposition réussie en nombre de soutiens et sera affichée dans le graphique du panneau de contrôle
       poll_short_title: Votes
+      poll_short_title_description: brève description de la fonctionnalité d'interrogation. Permet aux utilisateurs de créer des sondages sur une proposition.
+      poll_description: description du sondage
+      poll_description_description: description détaillée de la fonctionnalité d'interrogation
+      poll_link: lien d'informations supplémentaires
+      poll_link_description: ajoute un lien d'informations supplémentaires à la fonctionnalité d'interrogation du tableau de bord
       email_short_title: Email
+      email_short_title_description: 'Brève description de la fonctionnalité de messagerie. Permet aux utilisateurs d''envoyer un e-mail pour diffuser leur proposition. Vous pouvez retrouver tout le contenu de cet email dans "/app/views/dashboard/mailer/forward.html.erb"'
+      email_description: description de l'e-mail
+      email_description_description: description détaillée de la fonctionnalité de messagerie
       poster_short_title: Affiche
+      poster_short_title_description: 'Brève description de la fonctionnalité de l''affiche. Il permet aux utilisateurs de télécharger une affiche au format PDF pour diffuser leur proposition. Vous pouvez trouver tout le contenu de cette affiche à "/app/views/dashboard/poster/index.pdf.erb"'
+      poster_description: description de l'affiche
+      poster_description_description: description détaillée de la fonctionnalité de l'affiche
     analytics_url: "URL d'Analyse"
     proposal_notification_minimum_interval_in_days: "Intervalle minimal (en jours) pour les auteurs de propositions visant à envoyer de nouvelles notifications de proposition"
     proposal_notification_minimum_interval_in_days_description: "Le nombre de jours où utilisateur peut envoyer une notification pour tous les supporters de leur proposition"
@@ -76,6 +89,8 @@ fr:
       facebook_login_description: "Autoriser les utilisateurs à s'inscrire avec leur compte Facebook"
       google_login: "Se connecter avec Google"
       google_login_description: "Autoriser les utilisateurs à s’inscrire avec leur compte Google"
+      wordpress_login: "Se connecter avec Wordpress"
+      wordpress_login_description: "Autoriser les utilisateurs à se connecter avec leur compte Wordpress"
       featured_proposals: "Propositions en vedette"
       featured_proposals_description: "Affiche les propositions en vedette sur la page d'index des propositions"
       signature_sheets: "Feuilles de signature"
@@ -92,6 +107,7 @@ fr:
       community: "Communauté sur les propositions et les investissements"
       community_description: "Autorise à la section communauté l'accès aux propositions et aux projets d'investissement des budgets participatifs"
       machine_learning: "IA / Apprentissage automatique"
+      machine_learning_description: "Activer la section IA/Machine Learning pour exécuter des scripts python et enrichir le contenu automatiquement."
       map: "Localisation des propositions et des projets d'investissement"
       map_description: "Permet la géolocalisation des propositions et des projets d’investissement"
       allow_images: "Permettre d'importer et d'afficher des images"
@@ -104,7 +120,53 @@ fr:
       public_stats_description: "Afficher les stats publiques dans le panneau d’Administration"
       help_page: "Page d'aide"
       help_page_description: 'Affiche un menu d’aide qui contient une page avec une section d’informations sur chaque fonctionnalité activée. Des menus et des pages personnalisées peuvent également être créées dans les sections de « Blocs de contenu personnalisé » et de « Pages personnalisées »'
+      remote_translations: "Traductions à distance"
+      remote_translations_description: "Affiche un bouton qui permet aux utilisateurs de demander la traduction d'une page non traduite dans leur langue."
+      translation_interface: "Interface de traduction"
+      translation_interface_description: "Affiche l'interface de traduction manuelle permettant aux utilisateurs de saisir leur contenu dans toutes les langues disponibles de l'application s'ils le souhaitent. Cette option n'affecte que les vues utilisateur de l'application, dans le panneau d'administration, elle est toujours active."
+      remote_census: "Configurer la connexion au recensement à distance (SOAP)"
+      remote_census_description: "Permet de configurer la connexion au recensement à distance de chaque établissement"
+      valuation_comment_notification: "Notifier les commentaires d'évaluation"
+      valuation_comment_notification_description: "Envoie un e-mail à tous les utilisateurs sauf le commentateur associé à un budget participatif lorsqu'un nouveau commentaire d'évaluation est créé"
+      graphql_api: "API GraphQL"
+      dashboard:
+        notification_emails: "E-mails du tableau de bord de progression"
+        notification_emails_description: "Activer l'envoi d'e-mails de notification aux auteurs de la proposition dans la section du tableau de bord de progression"
+      remove_investments_supports: "Autoriser la suppression des supports sur les projets de dépenses"
+      remove_investments_supports_description: "Permet aux utilisateurs de retirer leur soutien aux projets de dépenses de budgétisation participative pendant la phase de soutien."
       sdg: ODD
+      sdg_description: active les sections liées aux objectifs de développement durable dans le menu d'administration et dans la section Paramètres généraux.
+    remote_census:
+      general:
+        endpoint_description: "Nom de l'hôte où se trouve le service de recensement (wsdl)"
+      request:
+        method_name: "Demander le nom de la méthode"
+        method_name_description: "Nom de la méthode qui accepte le service Web du recensement de la mairie."
+        structure: "Structure de la requête"
+        structure_description: 'Structure de la requête à envoyer au WebService Recensement de la Mairie. Les valeurs "fixes" de cette requête DOIVENT être signalées. Les valeurs liées au type de document, au numéro de document, à la date de naissance et au code postal doivent être laissées avec une valeur nulle. Exemple de format valide : { "request": { "institution_code": 1, "portal_code": 1, "user_code": 1, "documento": null, "documento_type": null, "language_code": 102, "level" : 3 } }'
+        document_type: "Chemin du type de document"
+        document_type_description: "Chemin où se trouve le champ dans la structure de requête qui envoie le type de document. NE PAS REMPLIR si le WebService n'a pas besoin du type de document pour vérifier un utilisateur."
+        document_number: "Chemin d'accès au numéro de document"
+        document_number_description: "Chemin où se trouve le champ dans la structure de requête qui envoie le numéro de document. NE PAS REMPLIR si le WebService n'a pas besoin du numéro de document pour vérifier un utilisateur."
+        date_of_birth: "Chemin pour la date de naissance"
+        date_of_birth_description: "Chemin où se trouve le champ de la structure de requête qui envoie la date de naissance. NE PAS REMPLIR si le WebService n'a pas besoin de la date de naissance pour vérifier un utilisateur."
+        postal_code: "Chemin du code postal."
+        postal_code_description: "Route où se trouve le champ de la structure de requête qui envoie le code postal. NE PAS REMPLIR si le WebService n'exige pas le code postal pour vérifier un utilisateur."
+      response:
+        date_of_birth: "Chemin pour la date de naissance"
+        date_of_birth_description: "Dans quel chemin de la réponse se trouve la date de naissance"
+        postal_code: "Chemin du code postal"
+        postal_code_description: "Dans quel chemin de réponse se trouve le code postal"
+        district: "Chemin pour le quartier"
+        district_description: "Sur quel chemin de réponse se trouve le district"
+        gender: "Chemin pour le genre"
+        gender_description: "Dans quel chemin de la réponse se trouve le sexe"
+        name: "Chemin pour le nom"
+        name_description: "Dans quel chemin de réponse correspond le nom"
+        surname: "Chemin du nom de famille"
+        surname_description: "Dans quel chemin de la réponse se trouve le nom de famille"
+        valid: "Condition pour détecter une réponse valide"
+        valid_description: "Quel chemin de la réponse doit être renseigné pour être considéré comme une réponse valide"
     map:
       latitude: "Latitude"
       latitude_description: "Latitude pour afficher la position de la carte"
@@ -116,12 +178,49 @@ fr:
       debates: "Débats"
       debates_description: "L'espace de débat des citoyens s’adresse à tous ceux qui peuvent présenter des problèmes qui les concernent et sur lesquels ils veulent partager leurs points de vue avec les d’autres"
       proposals: "Propositions"
+      proposals_description: "Les propositions citoyennes sont une opportunité pour les résidents et les groupes de décider directement de ce qu'ils veulent que soit leur société, après avoir obtenu suffisamment de soutien et soumis à un vote citoyen"
       polls: "Votes"
       polls_description: "Les sondages des citoyens sont un mécanisme participatif par lequel les citoyens ayant le droit de vote peuvent prendre des décisions directes"
       budgets: "Budget participatif"
+      budgets_description: "Avec les budgets participatifs, les citoyens décident à quels projets présentés par les voisins une partie du budget est allouée"
       legislation: "Législation"
+      legislation_description: "Dans les processus participatifs, les citoyens ont la possibilité de participer à l'élaboration et à la modification des réglementations qui affectent la société et de donner leur avis sur certaines actions qu'il est prévu de réaliser"
     html:
       per_page_code_head: "Code à inclure dans chaque page (<head>)"
       per_page_code_head_description: "Ce code apparaitra à l'intérieur de l'étiquette <head>. Utile pour les scripts personalisés, analytiques..."
       per_page_code_body: "Code à inclure dans chaque page (<body>)"
       per_page_code_body_description: "Ce code apparaitra à l'intérieur de l'étiquette <body>. Utile pour les scripts personalisés, analytiques..."
+    uploads:
+      images:
+        min_width: "Largeur minimale de l'image"
+        min_width_description: "Largeur minimale autorisée lors du téléchargement d'une image (en pixels)"
+        min_height: "Hauteur minimale de l'image"
+        min_height_description: "Hauteur minimale autorisée lors du téléchargement d'une image (en pixels)"
+        max_size: "Taille maximale de l'image"
+        max_size_description: "Taille maximale autorisée lors du téléchargement d'une image (en mégaoctets/Mo)"
+        content_types: "Types d'images autorisés"
+        content_types_description: "Sélectionnez tous les types autorisés pour les images téléchargées"
+        title:
+          min_length: "Longueur minimale du titre de l'image"
+          min_length_description: "Le titre est fourni par l'utilisateur lors du téléchargement d'une image (utilisé comme attribut HTML alt)"
+          max_length: "Longueur maximale de la légende de l'image"
+          max_length_description: "Le titre est fourni par l'utilisateur lors du téléchargement d'une image (utilisé comme attribut HTML alt)"
+      documents:
+        max_amount: "Nombre maximum de documents"
+        max_amount_description: "Nombre maximum de documents pouvant être ajoutés à une proposition, un projet de dépenses..."
+        max_size: "Taille maximale du document"
+        max_size_description: "Taille maximale autorisée lors du téléchargement d'un document (en mégaoctets/Mo)"
+        content_types: "Types de documents autorisés"
+        content_types_description: "Sélectionnez tous les types autorisés pour les documents téléchargés"
+    sdg:
+      process:
+        debates: l'alignement des ODD dans les débats
+        debates_description: Permettre l'alignement des objectifs de développement durable dans les débats
+        proposals: alignement des ODD dans les propositions
+        proposals_description: permettre l'alignement des objectifs de développement durable dans les propositions
+        polls: alignement des ODD dans le vote
+        polls_description: Autoriser l'alignement des objectifs de développement durable lors du vote
+        budgets: alignement des ODD dans les budgets participatifs
+        budgets_description: Permettre l'alignement des objectifs de développement durable dans les budgets participatifs
+        legislation: alignement des ODD dans la législation collaborative
+        legislation_description: permettre l'alignement des objectifs de développement durable dans une législation collaborative

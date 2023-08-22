@@ -72,30 +72,6 @@ gl:
       hi: Ola
       new_comment_by: Hai unha nova avaliación do comentario de <strong>%{commenter}</strong> para a partida de investimento %{investment}
       commenter_info: "%{commenter}, %{time}:"
-    new_actions_notification_rake_created:
-      subject: "Máis novas sobre a túa proposta cidadá"
-      hi: "Ola %{name},"
-      new_resource: "NOVO RECURSO DESBLOQUEADO"
-      introduction: "Como ben sabes, o día %{created_at_day} de %{created_at_month} creaches a proposta %{title} en modo borrador."
-      text_1: "Cando o desexes, podes publicar nesta ligazón: %{link_to_published}. Se aínda non estás seguro..."
-      text_2: "Aproveita este momento! Aprende, engade a outras persoas cos mesmos intereses e prepara a difusión que necesitarás cando publiques a túa proposta definitivamente."
-      text_3: "E para acompañarte neste desafío, aquí tes as noticias..."
-      text_4: "Bota unha ollada a esta NOVA ACCIÓN recomendada:"
-      text_5: "A seguinte acción que recomendamos é:"
-      footer_text: "Coma sempre, entra no Panel de Propostas e contarémosche detalladamente como usar estes recursos e como sacarlle o máximo partido."
-      dashboard_button: "Adiante, descóbreos!"
-    new_actions_notification_rake_published:
-      subject: "Máis novas sobre a túa proposta cidadá"
-      hi: "Ola %{name},"
-      new_resource: "NOVO RECURSO DESBLOQUEADO"
-      introduction: "Como ben sabes, o día %{published_at_day} de %{published_at_month} publicaches a proposta %{title}."
-      text_1: "Tes o apoio de %{votes_count} votos ata o momento. Felicidades!"
-      text_2: "Xa tes un novo recurso dispoñible para axudarche a seguir adiante."
-      text_3: "Estás a %{days_count} días antes de que a túa proposta obteña os %{max_votes_count} votos necesarios, e vaia a referendo. Ánimo e segue así. Algunha outra idea?"
-      text_4: "NOVA ACCIÓN DE DIFUSIÓN RECOMENDADA"
-      text_5: "Aínda hai máis, olla a seguinte acción:"
-      footer_text: "Coma sempre, entra no Panel de Propostas e contarémosche detalladamente como usar estes recursos e como sacarlle o máximo partido."
-      dashboard_button: "Adiante, descóbreos!"
     new_actions_notification_on_create:
       subject: "Foi creada o borrador de proposta cidadá"
       hi: "Ola %{name}!"

@@ -1,1 +1,26 @@
 gd:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: Inntridhean
+        one: Inntreadh
+        two: Inntridhean
+        few: Innteartan
+        other: Innteartan
+      more_pages:
+        display_entries: A' sealltainn <strong>%{first}&nbsp;-&nbsp;%{last}</strong> de <strong>%{total} %{entry_name}</strong>
+      one_page:
+        display_entries:
+          zero: "%{entry_name} - cha ghabh seo a lorg"
+          one: Tha <strong>1 %{entry_name}</strong> ann
+          two: Tha <strong>%{count} %{entry_name}</strong> ann
+          few: Tha <strong>%{count} %{entry_name}</strong> ann
+          other: Tha <strong>%{count} %{entry_name}</strong> ann
+  views:
+    pagination:
+      current: Tha thu air taobh-duilleig
+      first: A’ chiad duilleag
+      last: An duilleag mu dheireadh
+      next: Air adhart
+      previous: Air ais
+      truncate: "&hellip;"

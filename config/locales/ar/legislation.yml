@@ -4,13 +4,6 @@ ar:
       comments:
         see_all: اظهار الكل
         see_complete: رؤية الكلّ
-        comments_count:
-          zero: "%{count} تعليقات"
-          one: "تعليق %{count}"
-          two: "%{count} تعليقات"
-          few: "%{count} تعليقات"
-          many: "%{count} تعليقات"
-          other: "%{count} تعليقات"
         replies_count:
           zero: "%{count} ردود"
           one: "ردّ %{count}"
@@ -26,13 +19,6 @@ ar:
         title: تعليقات
         comments_about: تعليقات حول
         see_in_context: رؤيتها في السياق
-        comments_count:
-          zero: "%{count} تعليقات"
-          one: "%{count} تعليقات"
-          two: "%{count} تعليقات"
-          few: "%{count} تعليقات"
-          many: "%{count} تعليقات"
-          other: "%{count} تعليقات"
       show:
         title: التعليق
       version_chooser:
@@ -104,13 +90,6 @@ ar:
         form:
           leave_comment: اترك إجابتك
       question:
-        comments:
-          zero: لا توجد تعليقات
-          one: "تعليق %{count}"
-          two: "%{count} تعليقات"
-          few: "%{count} تعليقات"
-          many: "%{count} تعليقات"
-          other: "%{count} تعليقات"
         debate: الحوارات
       show:
         answer_question: سلم الاجابة
@@ -136,29 +115,32 @@ ar:
       title: "ملخص"
       votes:
         zero: "%{count} أصوات"
+        one: "%{count} تصويت"
+        two: "%{count} أصوات"
+        few: "%{count} أصوات"
+        many: "%{count} أصوات"
+        other: "%{count} أصوات"
       debate_phase: "مرحلة النقاش"
       proposals_phase: "مرحلة الاقتراحات"
       allegations_phase: "مرحلة التعليقات"
       debates:
-        zero: "لا توجد مناقشات"
+        zero: "مناقشتان %{count}"
         one: "مناقشة %{count}"
         two: "مناقشتان %{count}"
         few: "مناقشتان %{count}"
         many: "مناقشتان %{count}"
         other: "مناقشتان %{count}"
       proposals:
-        zero: "لا توجد مقترحات"
+        zero: "%{count} مقترحات"
         one: "مقترح %{count}"
         two: "%{count} مقترحات"
         few: "%{count} مقترحات"
         many: "%{count} مقترحات"
         other: "%{count} مقترحات"
-      comments:
-        zero: "لا توجد تعليقات"
-        one: "تعليق %{count}"
-        two: "%{count} تعليقات"
-        few: "%{count} تعليقات"
-        many: "%{count} تعليقات"
-        other: "%{count} تعليقات"
       top_comments:
         zero: "لا توجد تعليقات"
+        one: "تعليق %{count}"
+        two: "أعلى تعليقات"
+        few: "أعلى تعليقات"
+        many: "أعلى تعليقات"
+        other: "أعلى تعليقات"

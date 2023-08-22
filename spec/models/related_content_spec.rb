@@ -79,11 +79,11 @@ describe RelatedContent do
       create(:related_content, parent_relationable: parent_relationable, child_relationable: child_relationable, author: build(:user))
 
       2.times do
-        related_content.send("score_positive", build(:user))
+        related_content.send(:score_positive, build(:user))
       end
 
       6.times do
-        related_content.send("score_negative", build(:user))
+        related_content.send(:score_negative, build(:user))
       end
     end
 

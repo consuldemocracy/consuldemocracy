@@ -24,12 +24,7 @@
     <div class="user-permissions small-12">
       <p><%= t("verification.user_permission_info") %></p>
 
-      <ul>
-        <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_debates") %></li>
-        <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_proposal") %></li>
-        <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_support_proposal") %></li>
-        <li><span class="icon-x"></span>&nbsp;<%= t("verification.user_permission_votes") %></li>
-      </ul>
+      <%= render Account::PermissionsListComponent.new(User.new(level_two_verified_at: Time.current)) %>
     </div>
 
     <%= form_for @residence, as: "residence", url: residence_path do |f| %>

@@ -4,11 +4,6 @@ uk-UA:
       comments:
         see_all: Переглянути все
         see_complete: Переглянути повністю
-        comments_count:
-          one: "%{count} коментар"
-          few: "%{count} коментарі"
-          many: "%{count} коментарів"
-          other: "%{count} коментарів"
         replies_count:
           one: "%{count} відповідь"
           few: "%{count} відповіді"
@@ -22,11 +17,6 @@ uk-UA:
         title: Коментарі
         comments_about: Коментарі щодо
         see_in_context: Переглянути в контексті
-        comments_count:
-          one: "%{count} коментар"
-          few: "%{count} коментарі"
-          many: "%{count} коментарів"
-          other: "%{count} коментарів"
       show:
         title: Коментар
       version_chooser:
@@ -98,12 +88,6 @@ uk-UA:
         form:
           leave_comment: Залиште відповідь
       question:
-        comments:
-          zero: Коментарів немає
-          one: "%{count} коментар"
-          few: "%{count} коментарі"
-          many: "%{count} коментарів"
-          other: "%{count} коментарів"
         debate: Обговорення
       show:
         answer_question: Надіслати відповідь
@@ -148,12 +132,6 @@ uk-UA:
         few: "%{count} пропозиції"
         many: "%{count} пропозицій"
         other: "%{count} пропозицій"
-      comments:
-        zero: "Коментарів немає"
-        one: "%{count} коментар"
-        few: "%{count} коментарі"
-        many: "%{count} коментарів"
-        other: "%{count} коментарів"
       download: "Завантажити підсумки"
       top_comments:
         zero: "Коментарів немає"

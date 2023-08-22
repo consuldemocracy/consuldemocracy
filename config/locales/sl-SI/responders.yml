@@ -29,7 +29,6 @@ sl:
         valuator_group: "Cenilska skupina uspešno posodobljena"
       destroy:
         budget_investment: "Naložbeni projekt uspešno izbrisan."
-        error: "Izbris ni mogoč"
         topic: "Tema uspešno izbrisana."
         poll_question_answer_video: "Video odgovora uspešno izbrisan."
         valuator_group: "Cenilska skupina uspešno izbrisana"

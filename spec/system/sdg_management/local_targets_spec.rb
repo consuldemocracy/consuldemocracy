@@ -90,7 +90,7 @@ describe "Local Targets" do
       visit sdg_management_local_targets_path
 
       confirmation = "Are you sure? This action will delete "\
-        "\"#{sdg_local_target.title}\" and can't be undone."
+                     "\"#{sdg_local_target.title}\" and can't be undone."
 
       accept_confirm(confirmation) { click_button "Delete" }
 

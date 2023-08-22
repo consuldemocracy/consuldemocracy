@@ -25,10 +25,6 @@ bg:
       topic:
         edit: Редактирайте тема
         destroy: Изтрийте тема
-        comments:
-          zero: Без коментари
-          one: 1 коментар
-          other: "%{count} коментари"
       author: Автор
       back: Обратно към %{community} %{proposal}
     topic:

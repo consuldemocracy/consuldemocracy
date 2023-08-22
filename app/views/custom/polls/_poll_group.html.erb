@@ -74,9 +74,9 @@
             </p>
           <% end %>
           <% if poll.expired? %>
-            <%= link_to_poll t("polls.index.participate_button_expired"), poll, "button expanded" %>
+            <%= link_to_poll t("polls.index.participate_button_expired"), poll, class: "button expanded" %>
           <% else %>
-            <%= link_to_poll t("polls.index.participate_button"), poll, "button expanded" %>
+            <%= link_to_poll t("polls.index.participate_button"), poll, class: "button expanded" %>
           <% end %>
         </div>
       </div>

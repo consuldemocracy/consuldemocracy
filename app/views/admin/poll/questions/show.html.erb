@@ -1,7 +1,9 @@
-<%= back_link_to %>
+<%= back_link_to admin_poll_path(@question.poll) %>
 
-<%= link_to t("admin.questions.show.edit_question"), edit_admin_question_path(@question),
-            class: "button hollow float-right" %>
+<% if can?(:update, @question) %>
+  <%= link_to t("admin.questions.show.edit_question"), edit_admin_question_path(@question),
+              class: "button hollow float-right" %>
+<% end %>
 
 <div class="clear"></div>
 
@@ -26,33 +28,52 @@
         <%= link_to @question.proposal.title, proposal_path(@question.proposal) %>
       </p>
     <% end %>
+
+    <% if @question.votation_type.present? %>
+      <p>
+        <strong><%= t("admin.polls.votation_type.title") %></strong>
+        <br>
+        <%= VotationType.human_attribute_name("vote_type.#{@question.vote_type}") %>
+      </p>
+      <% if @question.max_votes.present? %>
+        <p>
+          <strong><%= VotationType.human_attribute_name("max_votes") %></strong>
+          <br>
+          <%= @question.max_votes %>
+        </p>
+      <% end %>
+    <% end %>
   </div>
 </div>
 
 <div class="clear">
-  <%= link_to t("admin.questions.show.add_answer"), new_admin_question_answer_path(@question),
-              class: "button float-right" %>
+  <% if can?(:create, Poll::Question::Answer.new(question: @question)) %>
+    <%= link_to t("admin.questions.show.add_answer"), new_admin_question_answer_path(@question),
+                class: "button float-right" %>
+  <% else %>
+    <div class="callout warning">
+      <strong><%= t("admin.questions.no_edit") %></strong>
+    </div>
+  <% end %>
 </div>
 
 <table class="margin-top">
-  <tr>
-    <th colspan="5" scope="col" class="with-button">
-      <%= t("admin.questions.show.valid_answers") %>
-    </th>
-  </tr>
-
-  <tr>
-    <th><%= t("admin.questions.show.answers.title") %></th>
-    <th scope="col" class="medium-7"><%= t("admin.questions.show.answers.description") %></th>
-    <th scope="col" class="text-center"><%= t("admin.questions.show.answers.images") %></th>
-    <th scope="col" class="text-center"><%= t("admin.questions.show.answers.documents") %></th>
-    <th scope="col" class="text-center"><%= t("admin.questions.show.answers.videos") %></th>
-  </tr>
+  <caption><%= t("admin.questions.show.valid_answers") %></caption>
+  <thead>
+    <tr>
+      <th><%= t("admin.questions.show.answers.title") %></th>
+      <th scope="col" class="medium-7"><%= t("admin.questions.show.answers.description") %></th>
+      <th scope="col" class="text-center"><%= t("admin.questions.show.answers.images") %></th>
+      <th scope="col" class="text-center"><%= t("admin.questions.show.answers.documents") %></th>
+      <th scope="col" class="text-center"><%= t("admin.questions.show.answers.videos") %></th>
+      <th><%= t("admin.actions.actions") %></th>
+    </tr>
+  </thead>
 
   <tbody class="sortable" data-js-url="<%= admin_question_answers_order_answers_path(@question.id) %>">
     <% @question.question_answers.each do |answer| %>
       <tr id="<%= dom_id(answer) %>" class="poll_question_answer" data-answer-id="<%= answer.id %>">
-        <td class="align-top"><%= link_to answer.title, admin_answer_path(answer) %></td>
+        <td class="align-top"><%= answer.title %></td>
         <td class="align-top break"><%= wysiwyg(answer.description) %></td>
         <td class="align-top text-center">
           (<%= answer.images.count %>)
@@ -71,6 +92,9 @@
           <br>
           <%= link_to t("admin.questions.show.answers.video_list"),
                       admin_answer_videos_path(answer) %>
+        </td>
+        <td>
+          <%= render Admin::Poll::Questions::Answers::TableActionsComponent.new(answer) %>
         </td>
       </tr>
     <% end %>

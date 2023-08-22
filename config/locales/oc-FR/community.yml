@@ -25,10 +25,6 @@ oc:
       topic:
         edit: Edita lo tèma
         destroy: Suprimís lo tèma
-        comments:
-          zero: Sens comentaris
-          one: 1 Comentari
-          other: "%{count} de comentaris"
       author: Autor
       back: Tornar %{community} %{proposal}
     topic:

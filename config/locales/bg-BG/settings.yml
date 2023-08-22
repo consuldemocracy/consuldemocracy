@@ -40,8 +40,6 @@ bg:
     telegram_handle_description: "Ако се попълни, ще се появи в долния колонтитул"
     instagram_handle: "Instagram поддръжка"
     instagram_handle_description: "Ако се попълни, ще се появи в долния колонтитул"
-    url: "Основен URL адрес"
-    url_description: "Основен адрес на уеб сайта"
     org_name: "Име на уеб сайт"
     org_name_description: "Това име ще се появи на тематични и помощни страници на имейлите..."
     related_content_score_threshold: "Праг за оценка на свързано съдържание"

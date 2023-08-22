@@ -64,11 +64,6 @@ bs:
       form:
         submit_button: Pokreni debatu
     debate:
-      comments:
-        zero: Nema komentara
-        one: 1 komentar
-        few: "%{count} komentara"
-        other: "%{count} komentara"
       votes:
         zero: Nema glasova
         one: 1 glas
@@ -125,11 +120,6 @@ bs:
       start_new: Pokreni debatu
     show:
       author_deleted: Korisnik obrisan
-      comments:
-        zero: Nema komentara
-        one: 1 komentar
-        few: "%{count} komentara"
-        other: "%{count} komentara"
       comments_title: Komentari
       edit_debate_link: Edituj
       flag: Nekoliko korisnika je označilo debatu neprikladnom.
@@ -193,7 +183,7 @@ bs:
       accessibility: Pristupačnost
       conditions: Uvjeti korištenja
       consul: Aplikacija CONSUL
-      consul_url: https://github.com/consul/consul
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: CONSUL, (godina) %{year}
       description: Ovaj portal koristi %{consul}, koji je %{open_source} aplikacija.
       open_source: softver otvorenog koda
@@ -380,11 +370,6 @@ bs:
         edit: "Prije nego ga podijelite, možete izmjeniti tekst kako želite."
         view_proposal: Ne sada, idi na moj prijedlog
       already_supported: Već ste podržali ovaj prijedlog. Podijelite ga!
-      comments:
-        zero: Nema komentara
-        one: 1 komentar
-        few: "%{count} komentara"
-        other: "%{count} komentara"
       support: Podrška
       support_title: Podrži prijedlog
       supports:
@@ -404,11 +389,6 @@ bs:
     show:
       author_deleted: Korisnik obrisan
       code: "Šifra prijedloga:"
-      comments:
-        zero: Nema komentara
-        one: 1 komentar
-        few: "%{count} komentara"
-        other: "%{count} komentara"
       comments_tab: Komentari
       dashboard_proposal_link: Kontrolna ploča
       flag: Nekoliko korisnika je označilo prijedlog neprikladnim.

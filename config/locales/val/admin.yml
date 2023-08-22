@@ -81,6 +81,7 @@ val:
         title: Edita campanya de pressupostos participatius
         delete: Eliminar presupost
         phase: Fase
+        duration: "Duració"
         enabled: Activa
         actions: Accions
         active: Actius
@@ -165,6 +166,7 @@ val:
         download_current_selection: "Baixar la selecció actual"
         no_budget_investments: "No hi ha projectes d'inversió."
         title: Propostes d'inversió
+        columns: Columnes
         assigned_admin: Administrador asignat
         no_admin_assigned: Sense admin assignat
         no_valuators_assigned: Sense avaluador asignat
@@ -233,6 +235,7 @@ val:
         budget: Pressupost
         groups: Grups
         headings: Partides pressupostàries
+        phases: Fases
     milestones:
       index:
         table_id: "ID"
@@ -345,6 +348,11 @@ val:
       index:
         new_link: "Afegeix un nou document"
         title: "Documents"
+        format: "Format"
+        size: "Mida"
+        url: "URL"
+      create:
+        unable_notice: "Document invàlid"
     hidden_users:
       index:
         filter: Filtre
@@ -542,6 +550,7 @@ val:
       hidden_users: Usuaris bloquejats
       administrators: Administradors
       managers: Gestors
+      sdg_managers: Gestors SDG
       moderators: Moderadors
       messaging_users: Missatges als usuaris
       newsletters: Enviament de Newsletters
@@ -847,9 +856,6 @@ val:
         no_questions: "No hi ha preguntes asignades a esta votació."
         questions_title: "Listat de preguntes assignades"
         table_title: "Títol"
-      flash:
-        question_added: "Pregunta afegida a esta votació"
-        error_on_question_added: "No es va poder asignar la pregunta"
     questions:
       index:
         title: "Preguntes"
@@ -894,12 +900,6 @@ val:
     answers:
       new:
         title: Nova resposta
-      show:
-        title: Títol
-        description: Descripció
-        images: Imatges
-        images_list: Lista d'imatges
-        edit: Editar resposta
       edit:
         title: Editar resposta
       videos:

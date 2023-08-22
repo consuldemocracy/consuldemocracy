@@ -14,7 +14,7 @@ module Abilities
       can [:read, :welcome], Budget
       can [:read], Budget
       can [:read], Budget::Group
-      can [:read, :print, :json_data], Budget::Investment
+      can [:read, :print], Budget::Investment
       can :read_results, Budget, id: Budget.finished.results_enabled.ids
       can :read_stats, Budget, id: Budget.valuating_or_later.stats_enabled.ids
       can :read_executions, Budget, phase: "finished"
@@ -25,7 +25,7 @@ module Abilities
           id: Legislation::Process.past.published.where(result_publication_enabled: true).ids
       can [:read, :changes, :go_to_version], Legislation::DraftVersion
       can [:read], Legislation::Question
-      can [:read, :map, :share], Legislation::Proposal
+      can [:read, :share], Legislation::Proposal
       can [:search, :comments, :read, :create, :new_comment], Legislation::Annotation
 
       can [:read, :help], ::SDG::Goal

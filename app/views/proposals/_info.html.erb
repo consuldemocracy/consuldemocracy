@@ -6,8 +6,7 @@
 
   <% unless @proposal.selected? %>
     <span class="bullet">&nbsp;&bull;&nbsp;</span>
-    <span class="icon-comments"></span>&nbsp;
-    <%= link_to t("proposals.show.comments", count: @proposal.comments_count), "#comments" %>
+    <%= render Shared::CommentsCountComponent.new(@proposal.comments_count, url: "#comments") %>
   <% end %>
 
   <% if current_user %>
@@ -45,7 +44,7 @@
 
 <% if feature?(:map) && map_location_available?(@proposal.map_location) %>
   <div class="margin">
-    <%= render_map(@proposal.map_location, "proposal", false, nil) %>
+    <%= render_map(@proposal.map_location) %>
   </div>
 <% end %>
 

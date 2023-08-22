@@ -27,6 +27,5 @@ id:
         topic: "Topik berhasil diperbarui."
       destroy:
         budget_investment: "Proyek investasi berhasil dihapus."
-        error: "Tidak bisa menghapus"
         topic: "Tema berhasil dihapus."
         poll_question_answer_video: "Jawaban video dengan berhasil dihapus."

@@ -127,6 +127,15 @@ FactoryBot.define do
     trait :final_version do
       final_version { true }
     end
+
+    trait :with_table do
+      body { <<~BODY_MARKDOWN }
+        | id | name    | age | gender |
+        |----|---------|-----|--------|
+        | 1  | Roberta | 39  | M      |
+        | 2  | Oliver  | 25  | F      |
+        BODY_MARKDOWN
+    end
   end
 
   factory :legislation_annotation, class: "Legislation::Annotation" do

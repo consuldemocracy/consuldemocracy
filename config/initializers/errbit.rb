@@ -24,6 +24,7 @@ Airbrake.add_filter do |notice|
     "ActionDispatch::Cookies::CookieOverflow",
     "ActionView::Template::Error",
     "ActiveRecord::RecordNotFound",
+    "Apartment::TenantNotFound",
     "ArgumentError",
     "FeatureFlags::FeatureDisabled",
     "SignalException"

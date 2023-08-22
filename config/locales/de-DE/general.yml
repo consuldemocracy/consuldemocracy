@@ -69,10 +69,6 @@ de:
       form:
         submit_button: Starten Sie eine Diskussion
     debate:
-      comments:
-        zero: Keine Kommentare
-        one: 1 Kommentar
-        other: "%{count} Kommentare"
       votes:
         zero: Keine Bewertung
         one: 1 Stimme
@@ -128,10 +124,6 @@ de:
       start_new: Eine Diskussion starten
     show:
       author_deleted: Benutzer*in gelöscht
-      comments:
-        zero: Keine Kommentare
-        one: 1 Kommentar
-        other: "%{count} Kommentare"
       comments_title: Kommentare
       edit_debate_link: Bearbeiten
       flag: Diese Diskussion wurde von verschiedenen Benutzern als unangebracht gemeldet.
@@ -142,8 +134,13 @@ de:
         submit_button: Änderungen speichern
   errors:
     messages:
+      allowed_file_content_types: "Inhaltstyp muss einer von %{types} sein."
       user_not_found: Benutzer*in wurde nicht gefunden
       invalid_date_range: "Ungültiger Datenbereich"
+      past_date: "Darf kein vergangenes Datum sein."
+      cannot_change_date:
+        poll_started: "Kann nicht geändert werden, wenn die Abstimmung bereits begonnen hat."
+        poll_ended: "Kann nicht geändert werden, wenn die Abstimmung bereits beendet ist."
   form:
     accept_terms: Ich stimme der %{policy} und den %{conditions} zu
     accept_terms_title: Ich stimme den Datenschutzrichtlinien und den Nutzungsbedingungen zu
@@ -204,7 +201,7 @@ de:
       accessibility: Barrierefreiheit
       conditions: Allgemeine Nutzungsbedingungen
       consul: CONSUL Anwendung
-      consul_url: https://github.com/consul/consul
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: CONSUL, %{year}
       description: Die Plattform basiert auf %{consul}, einer %{open_source}.
       open_source: Open-Source Software
@@ -395,11 +392,8 @@ de:
         edit: "Bevor Sie ihren Text teilen, können Sie ihn beliebig bearbeiten. "
         view_proposal: Nicht jetzt. Gehe zu meinem Vorschlag
       already_supported: Sie haben diesen Vorschlag bereits unterstützt. Teilen Sie ihn!
-      comments:
-        zero: Keine Kommentare
-        one: 1 Kommentar
-        other: "%{count} Kommentare"
       support: Unterstützung
+      support_label: "Unterstützung %{proposal}"
       support_title: Vorschlag unterstützen
       supports:
         zero: Keine Unterstützer*innen
@@ -417,10 +411,6 @@ de:
     show:
       author_deleted: Benutzer*in gelöscht
       code: "Antrags-Code:"
-      comments:
-        zero: Keine Kommentare
-        one: 1 Kommentar
-        other: "%{count} Kommentare"
       comments_tab: Kommentare
       dashboard_proposal_link: Dashboard
       flag: Dieser Vorschlag wurde von verschiedenen Benutzern als unangebracht gemeldet.
@@ -645,6 +635,10 @@ de:
     show:
       vote_answer: "Für %{answer} abstimmen"
       voted: "Sie haben für %{answer} abgestimmt"
+    description:
+      unique: "Sie können maximal 1 Antwort auswählen."
+      multiple: "Sie können maximal %{maximum} Antworten auswählen."
+    read_more_about: "Lesen Sie mehr über:"
   proposal_notifications:
     new:
       title: "Nachricht senden"
@@ -758,6 +752,10 @@ de:
         zero: "O verwendete Sprachen "
         one: "1 verwendete Sprachen"
         other: "%{count} verwendete Sprachen"
+    optional: "Optionale Felder"
+    required: "Erforderliche Felder"
+    comments:
+      zero: "Keine Kommentare"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -835,8 +833,10 @@ de:
       retired_help_text: Dashboard nicht verfügbar für zurückgezogene Vorschläge
   votes:
     agree: Ich stimme zu
+    agree_label: "Ich stimme %{title} zu."
     anonymous: Zu viele anonyme Stimmen, um die Wahl anzuerkennen %{verify_account}.
     disagree: Ich stimme nicht zu
+    disagree_label: "Ich stimme %{title} nicht zu."
     organizations: Organisationen ist es nicht erlaubt abzustimmen
     supports: Unterstützer*innen
     verified_only: 'Nur verifizierte Benutzer können Vorschläge bewerten: %{verify_account}.'
@@ -895,6 +895,7 @@ de:
     help: "Sie können Links von %{models} innerhalb des %{org} hinzufügen."
     submit: "Hinzufügen"
     error: "Ungültiger Link. Starten Sie mit %{url}."
+    error_duplicate: "Der verwandte Inhalt, den Sie hinzufügen, existiert bereits."
     error_itself: "Ungültiger Link. Sie können einen Inhalt nicht auf sich selbst beziehen."
     success: "Sie haben einen neuen verwandten Inhalt hinzugefügt"
     is_related: "Ist der Inhalt verknüpft?"
@@ -940,3 +941,6 @@ de:
         more:
           one: "Einen Tag mehr"
           other: "%{count} mehr Tags"
+  machine_learning:
+    comments_summary: "Zusammenfassung der Kommentare"
+    info_text: "Durch KI/Maschinelles Lernen generierte Inhalte"

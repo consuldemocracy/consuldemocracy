@@ -1,1 +1,24 @@
 gd:
+  documents:
+    title: Sgrìobhainnean
+    max_documents_allowed_reached: Tha thu air an àireamh as motha de sgrìobhainnean a tha ceadaichte a ruighinn! <strong>Feumaidh tu tè a sguabadh às mus urrainn dhut tè eile a luchdachadh suas.</strong>
+    additional: Sgrìobhainnean a bharrachd
+    form:
+      title: Sgrìobhainnean
+      title_placeholder: Cuir tiotal tuairisgeulach air an sgrìobhainn
+      delete_button: Thoir an sgrìobhainn air falbh
+      cancel_button: Sguir
+      note: "’S urrainn dhut suas ri %{max_documents_allowed} sgrìobhainnean a luchdachadh suas de na seòrsaichean susbaint a leanas: %{accepted_content_types}, suas ri %{max_file_size} MB gach faidhle."
+      add_new_document: Cuir sgrìobhainn ùr ris
+    actions:
+      destroy:
+        notice: Chaidh an sgrìobhainn a sguabadh às.
+        alert: Cha ghabh an sgrìobhainn a sguabadh às.
+        confirm: A bheil thu cinnteach gu bheil thu airson an sgrìobhainn seo a sguabadh às? Cha ghabh seo a neo-dhèanamh!
+    buttons:
+      download_document: Luchdaich a-nuas am faidhle
+      destroy_document: Sguab às an sgrìobhainn
+    errors:
+      messages:
+        in_between: feumaidh e a bhith eadar %{min} agus %{max}
+        wrong_content_type: chan eil an t-seòrsa susbaint %{content_type} am measg nan seòrsaichean susbaint a tha ceadaichte %{accepted_content_types}

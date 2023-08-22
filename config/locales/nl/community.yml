@@ -15,37 +15,33 @@ nl:
         investment: Participeer in de community van dit investeringsbudget. Een actieve community helpt de inhoud van het investeringsbudget te verbeteren en draagt bij aan het verkrijgen van meer steun voor deze investering.
       create_first_community_topic:
         first_theme_not_logged_in: Er is nog niets geplaatst, wees de eerste die een onderwerp plaatst!
-        first_theme: Creeer het eerste community onderwerp.
-        sub_first_theme: "Om een thema of onderwerp te creeeren moet je %{sign_in} of %{sign_up}."
+        first_theme: Maak het eerste community onderwerp aan
+        sub_first_theme: "Om een thema of onderwerp aan te maken moet je %{sign_in} of %{sign_up}."
       tab:
         participants: deelnemers
       sidebar:
         participate: Deelnemen
-        new_topic: Nieuw Onderwerp
+        new_topic: Onderwerp aanmaken
       topic:
         edit: Pas onderwerp aan
         destroy: Verwijder Onderwerp
-        comments:
-          zero: Geen reacties
-          one: 1 opmerking
-          other: "%{count} opmerkingen"
-      author: Author
+      author: Auteur
       back: Terug naar %{community} %{proposal}
     topic:
-      create: Creeer onderwerp
+      create: Onderwerp aanmaken
       edit: Pas onderwerp aan
       form:
         new:
-          submit_button: Creeer onderwerp
+          submit_button: Onderwerp aanmaken
         edit:
           submit_button: Pas onderwerp aan
         create:
-          submit_button: Creeer onderwerp
+          submit_button: Onderwerp aanmaken
         update:
           submit_button: Werk onderwerp bij
       show:
         tab:
-          comments_tab: Comments
+          comments_tab: Reacties
       sidebar:
         recommendations_title: Advies bij het starten van een onderwerp
         recommendation_one: Gebruik geen hoofdletters voor de titel, of voor hele zinnen. Dit is equivalent aan schreeuwen op het internet, en niemand houdt ervan toegeschreeuwd te worden.

@@ -25,11 +25,6 @@ bs:
       topic:
         edit: Edituj temu
         destroy: Ukloni temu
-        comments:
-          zero: Nema komentara
-          one: 1 komentar
-          few: "%{count} komentara"
-          other: "%{count} komentara"
       author: Autor
       back: Vrati se na (grupu) %{community} (prijedlog) %{proposal}
     topic:

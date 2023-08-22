@@ -22,7 +22,7 @@ class DirectUpload
       # Refactor
       @relation = if @resource.respond_to?(:images) &&
                      ((@attachment.present? && !@attachment.content_type.match(/pdf/)) || @cached_attachment.present?)
-                    @resource.images.send("build", relation_attributtes)
+                    @resource.images.send(:build, relation_attributtes)
                   elsif @resource.class.reflections[@resource_relation].macro == :has_one
                     @resource.send("build_#{resource_relation}", relation_attributtes)
                   else
@@ -35,6 +35,7 @@ class DirectUpload
 
   def save_attachment
     @relation.attachment.blob.save!
+    @relation.attachment_changes["attachment"].upload
   end
 
   def persisted?

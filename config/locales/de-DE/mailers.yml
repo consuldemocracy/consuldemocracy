@@ -2,11 +2,18 @@ de:
   mailers:
     title: "Open Government"
     no_reply: "Diese Nachricht wurde von einer E-Mail-Adresse gesendet, die keine Antworten akzeptiert."
+    already_confirmed:
+      info: "Wir haben eine Anfrage erhalten, Ihnen Anweisungen zur Bestätigung Ihres Kontos zu senden. Ihr Konto ist jedoch bereits bestätigt, sodass Sie dies nicht erneut tun müssen."
+      new_password: "Wenn Sie Ihr Passwort vergessen haben, können Sie es unter dem folgenden Link zurücksetzen:"
+      subject: Ihr Konto ist bereits bestätigt.
     comment:
       hi: Hallo
       new_comment_by: Es gibt einen neuen Kommentar von <strong>%{commenter}</strong>
       subject: Jemand hat Ihre %{commentable} kommentiert.
       title: Neuer Kommentar
+    config:
+      notifications_link: Benachrichtigung
+      unsubscribe_text: 'Um sich von diesen E-Mails abzumelden, besuchen Sie %{notifications} und deaktivieren Sie "%{notification}".'
     email_verification:
       click_here_to_verify: diesen Link
       instructions_2: Diese E-Mail dient dazu Ihr Konto mit <b>%{document_type} %{document_number}</b>zu verifizieren. Wenn es sich hierbei nicht um Ihre Daten handelt, klicken Sie bitte nicht auf den vorherigen Link und ignorieren Sie diese E-Mail.
@@ -14,6 +21,7 @@ de:
       subject: Bestätigen Sie Ihre E-Mail-Adresse
       thanks: Vielen Dank.
       title: "Bestätigen Sie Ihr Konto über den folgenden Link"
+      text: "Bestätigen Sie Ihr Konto über den folgenden Link."
     reply:
       hi: Hallo
       new_reply_by: Es gibt eine neue Antwort von <strong>%{commenter}</strong> auf Ihren Kommentar
@@ -24,10 +32,12 @@ de:
       title: "Antrags-Benachrichtigungen von %{org_name}"
       share: Vorschlag teilen
       comment: Vorschlag kommentieren
+      unsubscribe_text: "Wenn Sie keine Vorschlagsbenachrichtigungen erhalten möchten, besuchen Sie %{notifications} und deaktivieren Sie die Option \"Receive a summary of proposal notifications\"."
       unfollow: "Rufen Sie diesen Vorschlag auf und entflogen Sie ihn um keine weiteren Benachrichtigungen zu erhalten."
     direct_message_for_receiver:
       subject: "Sie haben eine neue persönliche Nachricht erhalten"
       reply: Auf %{sender} antworten
+      unsubscribe_text: "Wenn Sie keine Direktnachrichten erhalten möchten, gehen Sie zu %{notifications} und deaktivieren Sie die Option \"E-Mails über Direktnachrichten erhalten\"."
     direct_message_for_sender:
       subject: "Sie haben eine neue persönliche Nachricht gesendet"
       title: "Sie haben eine neue persönliche Nachricht gesendet"
@@ -49,6 +59,7 @@ de:
       sincerely: "Mit freundlichen Grüßen,"
       share: "Teilen Sie Ihr Projekt"
     budget_investment_unfeasible:
+      title: "Ihr Investitionsprojekt wurde als nicht durchführbar eingestuft."
       hi: "Liebe*r Benutzer*in,"
       new: "Hierfür laden wir Sie ein, eine <strong>neue Investition</strong> auszuarbeiten, die an die Konditionen dieses Prozesses angepasst sind. Sie können dies über folgenden Link tun: %{url}."
       new_href: "neuer Ausgabenvorschlag"
@@ -57,6 +68,7 @@ de:
       subject: "Ihr Ausgabenvorschlag '%{code}' wurde als undurchführbar markiert"
     budget_investment_selected:
       subject: "Ihr Investitionsprojekt %{code} wurde ausgewählt"
+      title: "Ihr Investitionsprojekt wurde ausgewählt."
       hi: "Liebe*r Benutzer*in,"
       share: "Fangen Sie an Stimmen zu bekommen, indem sie Ihr Investitionsprojekt auf sozialen Netzwerken teilen. Teilen ist wichtig, um Ihr Projekt zu verwirklichen."
       share_button: "Teilen Sie Ihr Investitionsprojekt"
@@ -64,6 +76,7 @@ de:
       sincerely: "Mit freundlichen Grüßen"
     budget_investment_unselected:
       subject: "Ihr Investitionsprojekt %{code} wurde nicht ausgewählt"
+      title: "Ihr Investitionsprojekt wurde nicht ausgewählt."
       hi: "Liebe*r Benutzer*in,"
       thanks: "Vielen Dank für Ihre Teilnahme."
       sincerely: "Mit freundlichen Grüßen"
@@ -73,30 +86,16 @@ de:
       hi: Hallo
       new_comment_by: Es gibt einen neuen Bewertungs-Kommentar <strong>%{commenter}</strong> für den Bürgerhaushalt %{investment}
       commenter_info: "%{commenter}, %{time}:"
-    new_actions_notification_rake_created:
-      subject: "Mehr Neuigkeiten zu Ihrem Bürger-Vorschlag"
-      hi: "Hallo %{name},"
-      new_resource: "NEUE FREIGESCHALTETE RESSOURCE"
-      introduction: "Nicht vergessen: Sie haben am Tag %{created_at_day} des %{created_at_month} den Vorschlag im Entwurfsmodus %{title} erstellt."
-      text_1: "Wann immer Sie möchten, können Sie es über folgenden Link veröffentlichen: %{link_to_published}. Wenn Sie noch unsicher sind..."
-      text_2: "Nutzen Sie diesen Moment! Fügen Sie andere Personen mit den gleichen Interessen hinzu und bereiten Sie die Verbreitung vor, die Sie benötigen, wenn Sie Ihren Vorschlag endgültig veröffentlichen."
-      text_3: "Und um Sie bei dieser Herausforderung zu begleiten, hier sind die Neuigkeiten..."
-      text_4: "Werfen Sie einen Blick auf diese NEUE empfohlene AKTION:"
-      text_5: "Die nächste Aktion, die wir empfehlen:"
-      footer_text: "Wie immer, kommen Sie auf das Vorschlagspanel und wir werden Ihnen im Detail erklären, wie Sie diese Ressourcen nutzen und wie Sie das Beste daraus machen können."
-      dashboard_button: "Nur zu, es gibt viel zu entdecken!"
-    new_actions_notification_rake_published:
-      subject: "Mehr Neuigkeiten zu Ihrem Bürger-Vorschlag"
-      hi: "Hallo %{name},"
-      new_resource: "NEUE FREIGESCHALTETE RESSOURCE"
-      introduction: "Nicht vergessen: Sie haben am %{published_at_day} Tag des %{published_at_month} den Vorschlag %{title} veröffentlicht."
-      text_1: "Sie haben bisher %{votes_count} Unterstützung erhalten: Herzlichen Glückwunsch!"
-      text_2: "Sie haben eine neue Ressource zur Verfügung, die Ihnen hilft, weiter voranzukommen."
-      text_3: "Es sind noch %{days_count} Tage, bis dein Vorschlag die %{max_votes_count} Unterstützung erhalten muss und es zur Abstimmung kommt. Kopf hoch und weitermachen. Fehlen Ihnen die Ideen?"
-      text_4: "NEUE EMPFOHLENE AKTIONEN"
-      text_5: "Es gibt noch mehr, siehe folgende Aktion:"
-      footer_text: "Wie immer, kommen Sie auf das Vorschlagspanel und wir werden Ihnen im Detail erklären, wie Sie diese Ressourcen nutzen und wie Sie das Beste daraus machen können."
-      dashboard_button: "Nur zu, es gibt viel zu entdecken!"
+    machine_learning_error:
+      link: "Panel Maschinelles Lernen besuchen."
+      subject: "Maschinelles Lernen - Bei der Ausführung des Skripts ist ein Fehler aufgetreten."
+      text: "Bei der Ausführung des Skripts für maschinelles Lernen ist ein Fehler aufgetreten."
+      title: "Skript für maschinelles Lernen."
+    machine_learning_success:
+      link: "Panel Maschinelles Lernen besuchen."
+      subject: "Maschinelles Lernen - Inhalt wurde erfolgreich generiert."
+      text: "Der Inhalt wurde erfolgreich erstellt."
+      title: "Skript für maschinelles Lernen"
     new_actions_notification_on_create:
       subject: "Ihr Entwurf eines Bürger-Vorschlags ist erstellt"
       hi: "Hallo %{name}!"

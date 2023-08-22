@@ -1,0 +1,134 @@
+ne:
+  legislation:
+    annotations:
+      comments:
+        see_all: सबै हेर
+        see_complete: पूरा हेर्नुहोस्
+        replies_count:
+          one: "%{count} जवाफ"
+          other: "%{count} जवाफहरू"
+        cancel: रद्द
+        publish_comment: टिप्पणी प्रकाशित गर्नुहोस्
+      form:
+        phase_not_open: यो चरण खुला छैन
+      index:
+        title: टिप्पणीहरू
+        comments_about: टिप्पणीहरू बारेमा
+        see_in_context: सन्दर्भमा हेर्नुहोस्
+      show:
+        title: टिप्पणी
+      version_chooser:
+        seeing_version: संस्करणको लागि टिप्पणीहरू
+        see_text: पाठकाे मस्यौदा हेर्नुहोस्
+    draft_versions:
+      changes:
+        title: परिवर्तनहरू
+        seeing_changelog_version: संशोधन परिवर्तन सारांश
+        see_text: पाठकाे मस्यौदा हेर्नुहोस्
+      show:
+        loading_comments: टिप्पणीहरू लोड गर्दै
+        seeing_version: तपाईं मस्यौदा संस्करण देख्दै हुनुहुन्छ
+        select_draft_version: मस्यौदा चयन गर्नुहोस्
+        select_version_submit: हेर्नुहोस्
+        updated_at: '%{date} मा अद्यावधिक गरियो'
+        see_changes: परिवर्तन सारांश हेर्नुहोस्
+        see_comments: सबै टिप्पणीहरू हेर्नुहोस्
+        text_toc: सामग्री तालिका
+        text_body: पाठ
+        text_comments: टिप्पणीहरू
+    processes:
+      header:
+        additional_info: थप जानकारी
+        description: विवरण
+        more_info: थप जानकारी र सन्दर्भ
+      proposals:
+        empty_proposals: कुनै प्रस्तावहरू छैनन्।
+        filters:
+          random: अनियमित
+          winners: चयन गरियो
+      debate:
+        empty_questions: त्यहाँ कुनै प्रश्नहरू छैनन्
+      index:
+        filter: फिल्टर
+        filters:
+          open: प्रक्रियाहरू खोल्नुहोस्
+          past: विगत
+        no_open_processes: त्यहाँ खुला प्रक्रियाहरू छैनन्
+        no_past_processes: त्यहाँ विगतका प्रक्रियाहरू छैनन्
+        section_header:
+          icon_alt: सहयोगात्मक कानून आइकन
+          title: सहयोगात्मक कानून
+          help: सहयोगात्मक कानूनको साथ सहयोग गर्नुहोस्
+        section_footer:
+          title: सहयोगात्मक कानूनको साथ सहयोग गर्नुहोस्
+          description: नयाँ नियम वा रणनीतिहरूको अनुमोदन गर्नु अघि बहस र प्रक्रियाहरूमा भाग लिनुहोस्। तपाईको विचारलाई विचार गरिनेछ।
+      phase_not_open:
+        not_open: यो चरण अझै खुलेको छैन
+      phase_empty:
+        empty: अहिलेसम्म केही प्रकाशित भएको छैन
+      process:
+        see_latest_comments: नवीनतम टिप्पणीहरू हेर्नुहोस्
+        see_latest_comments_title: यस प्रक्रियामा टिप्पणी गर्नुहोस्
+      shared:
+        key_dates: सहभागिता चरणहरू
+        homepage: गृहपृष्ठ
+        debate_dates: बहस
+        draft_publication_date: मस्यौदा प्रकाशन
+        allegations_dates: टिप्पणीहरू
+        result_publication_date: अन्तिम नतिजा प्रकाशन
+        milestones_date: पछ्याउँदै
+        proposals_dates: प्रस्तावहरू
+    questions:
+      comments:
+        comment_button: जवाफ प्रकाशित गर्नुहोस्
+        comments_title: जवाफहरू खोल्नुहोस्
+        comments_closed: बन्द चरण
+        form:
+          leave_comment: आफ्नो जवाफ छोड्नुहोस्
+      question:
+        debate: बहस
+      show:
+        answer_question: जवाफ पेश गर्नुहोस्
+        next_question: अर्को प्रश्न
+        first_question: पहिलो प्रश्न
+        share: साझेदारी गर्नुहोस्
+        title: सहयोगात्मक कानून प्रक्रिया
+      participation:
+        phase_not_open: यो चरण खुला छैन
+        organizations: संगठनहरूलाई बहसमा भाग लिन अनुमति छैन
+        unauthenticated: सहभागी हुनको लागि तपाईंले %{signin} वा %{signup} गर्नुपर्छ।
+        verified_only: प्रमाणित प्रयोगकर्ताहरूले मात्र भाग लिन सक्छन्, %{verify_account}।
+        debate_phase_not_open: बहसको चरण समाप्त भयो र अब उत्तरहरू स्वीकार गरिने छैन
+    shared:
+      share: साझेदारी गर्नुहोस्
+      share_comment: प्रक्रिया मस्यौदा %{process_name} बाट %{version_name} मा टिप्पणी
+    proposals:
+      form:
+        tags_label: "वर्गहरू"
+      not_verified: "मत प्रस्तावहरूको लागि %{verify_account}।"
+      process_title: सहयोगात्मक कानून प्रक्रिया
+    summary:
+      title: "सारांश"
+      votes:
+        zero: "%{count} मतहरू"
+        one: "%{count} मत"
+        other: "%{count} मतहरू"
+      debate_phase: "बहस चरण"
+      proposals_phase: "प्रस्ताव चरण"
+      allegations_phase: "टिप्पणी चरण"
+      debates:
+        zero: "कुनै बहस छैन"
+        one: "%{count} बहस"
+        other: "%{count} बहसहरू"
+      proposals:
+        zero: "कुनै प्रस्ताव छैन"
+        one: "%{count} प्रस्ताव"
+        other: "%{count} प्रस्तावहरू"
+      download: "डाउनलोड सारांश"
+      top_comments:
+        zero: "प्रत्रिक्रिया छैन"
+        one: "%{count} टिप्पणी"
+        other: "शीर्ष टिप्पणीहरू"
+      most_voted_comments: "धेरै मत दिएका टिप्पणीहरू"
+      no_allegation: "त्यहाँ कुनै टिप्पणीहरू छैनन्।"
+      process_empty: "यो प्रक्रियामा कुनै पनि सहभागिता चरणहरू थिएनन्"

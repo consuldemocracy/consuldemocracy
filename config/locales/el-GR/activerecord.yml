@@ -446,7 +446,7 @@ el:
         description: Περιγραφή
       poll/question/answer/translation:
         title: Απάντηση
-        description: Περιγραφή
+        description: "Περιγραφή"
       poll/question/answer/video:
         title: Τίτλος
         url: Εξωτερικό βίντεο
@@ -549,7 +549,7 @@ el:
             debate_end_date:
               invalid_date_range: πρέπει να είναι κατά ή μετά την ενδεικτική ημερομηνία έναρξης
             draft_end_date:
-              invalid_date_range: πρέπει να είναι κατά ή μετά την ενδεικτική ημερομηνία έναρξης 
+              invalid_date_range: πρέπει να είναι κατά ή μετά την ενδεικτική ημερομηνία έναρξης
             allegations_end_date:
               invalid_date_range: πρέπει να είναι κατά ή μετά την ημερομηνία έναρξης των σχολίων
         local_census_record:

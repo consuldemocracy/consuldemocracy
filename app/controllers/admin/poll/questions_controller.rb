@@ -3,7 +3,8 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
   include Translatable
 
   load_and_authorize_resource :poll
-  load_and_authorize_resource :question, class: "Poll::Question"
+  load_resource class: "Poll::Question"
+  authorize_resource except: [:new, :index]
 
   def index
     @polls = Poll.not_budget
@@ -13,9 +14,12 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
   end
 
   def new
-    @polls = Poll.all
     proposal = Proposal.find(params[:proposal_id]) if params[:proposal_id].present?
     @question.copy_attributes_from_proposal(proposal)
+    @question.poll = @poll
+    @question.votation_type = VotationType.new
+
+    authorize! :create, @question
   end
 
   def create
@@ -43,12 +47,8 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
   end
 
   def destroy
-    if @question.destroy
-      notice = t("admin.questions.flash.destroy")
-    else
-      notice = t("flash.actions.destroy.error")
-    end
-    redirect_to admin_poll_path(@question.poll), notice: notice
+    @question.destroy!
+    redirect_to admin_poll_path(@question.poll), notice: t("admin.questions.destroy.notice")
   end
 
   private
@@ -58,16 +58,11 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
     end
 
     def allowed_params
-      attributes = [:poll_id, :question, :proposal_id]
-
+      attributes = [:poll_id, :question, :proposal_id, votation_type_attributes: [:vote_type, :max_votes]]
       [*attributes, translation_params(Poll::Question)]
     end
 
     def search_params
       params.permit(:poll_id, :search)
-    end
-
-    def resource
-      @poll_question ||= Poll::Question.find(params[:id])
     end
 end

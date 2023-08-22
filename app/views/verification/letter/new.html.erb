@@ -24,15 +24,9 @@
       <h1><%= t("verification.letter.new.title") %></h1>
 
       <div class="user-permissions">
-
         <p><%= t("verification.letter.new.user_permission_info") %></p>
 
-        <ul>
-          <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_debates") %></li>
-          <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_proposal") %></li>
-          <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_support_proposal") %></li>
-          <li><span class="icon-x"></span>&nbsp;<%= t("verification.user_permission_votes") %></li>
-        </ul>
+        <%= render Account::PermissionsListComponent.new(current_user) %>
       </div>
 
       <%= link_to t("verification.letter.new.go_to_index"), root_path, class: "button warning" %>

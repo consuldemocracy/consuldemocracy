@@ -5,7 +5,7 @@
     <div class="small-12 medium-9 column">
       <div class="quiz-title">
         <p class="quiz-header-title"><%= t("legislation.questions.show.title") %></p>
-        <h4><%= link_to @process.title, @process %></h4>
+        <strong><%= link_to @process.title, @process %></strong>
       </div>
     </div>
     <% if @process.questions.count > 1 %>
@@ -30,7 +30,8 @@
   </div>
   <div class="row">
     <div class="small-12 medium-9 column">
-      <h3 class="quiz-question"><%= @question.title %></h3>
+      <h1 class="quiz-question"><%= @question.title %></h1>
+      <%= AdminWYSIWYGSanitizer.new.sanitize(@question.description) %>
       <div class="debate-questions" id="legislation-answer-form">
         <%= render "answer_form", process: @process, question: @question, answer: @answer %>
       </div>
@@ -38,7 +39,7 @@
 
     <aside class="small-12 medium-3 column">
       <div id="social-share" class="sidebar-divider"></div>
-      <h3><%= t("legislation.questions.show.share") %></h3>
+      <h2><%= t("legislation.questions.show.share") %></h2>
       <%= render "/shared/social_share", title: @question.title, url: legislation_process_question_url(@question.process, @question) %>
     </aside>
   </div>

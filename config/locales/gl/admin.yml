@@ -886,9 +886,6 @@ gl:
         no_questions: "Non hai preguntas asignadas a esta votación."
         questions_title: "Listaxe de preguntas"
         table_title: "Título"
-      flash:
-        question_added: "Pregunta engadida a esta votación"
-        error_on_question_added: "Non se puido asignar a pregunta"
     questions:
       index:
         title: "Preguntas"
@@ -934,12 +931,6 @@ gl:
     answers:
       new:
         title: Nova resposta
-      show:
-        title: Título
-        description: Descrición
-        images: Imaxes
-        images_list: Listaxe de imaxes
-        edit: Editar resposta
       edit:
         title: Editar resposta
       videos:

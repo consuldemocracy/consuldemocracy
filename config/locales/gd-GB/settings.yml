@@ -1,1 +1,227 @@
 gd:
+  settings:
+    comments_body_max_length: "Faid as motha aig beachdan"
+    comments_body_max_length_description: "A rèir àireamh nan caractaran"
+    official_level_1_name: "Oifigear poblach Ìre 1"
+    official_level_1_name_description: "Taga a nochdas airson cleachdaichean a chaidh a chomharrachadh mar oifigear aig Ìre 1"
+    official_level_2_name: "Oifigear poblach Ìre 2"
+    official_level_2_name_description: "Taga a nochdas airson cleachdaichean a chaidh a chomharrachadh mar oifigear aig Ìre 2"
+    official_level_3_name: "Oifigear poblach Ìre 3"
+    official_level_3_name_description: "Taga a nochdas airson cleachdaichean a chaidh a chomharrachadh mar oifigear aig Ìre 3"
+    official_level_4_name: "Oifigear poblach Ìre 4"
+    official_level_4_name_description: "Taga a nochdas airson cleachdaichean a chaidh a chomharrachadh mar oifigear aig Ìre 4"
+    official_level_5_name: "Oifigear poblach Ìre 5"
+    official_level_5_name_description: "Taga a nochdas airson cleachdaichean a chaidh a chomharrachadh mar oifigear aig Ìre 5"
+    max_ratio_anon_votes_on_debates: "Co-mheas as àirde de bhòtaichean gun urra airson gach Deasbad"
+    max_ratio_anon_votes_on_debates_description: "Tha bhòtaichean gun urra le cleachdaichean clàraichte le cunntas nach eil dearbhte"
+    max_votes_for_proposal_edit: "An àireamh de chomharran taic bho nach urrainnear Moladh a dheasachadh tuilleadh"
+    max_votes_for_proposal_edit_description: "Bhon àireamh seo de chomharran taic chan urrainn dhan ùghdar Moladh a dheasachadh tuilleadh"
+    max_votes_for_debate_edit: "An àireamh de bhòtaichean bho nach urrainnear Deasbad a dheasachadh tuilleadh"
+    max_votes_for_debate_edit_description: "Bhon àireamh seo de bhòtaichean chan urrainn dhan ùghdar aig Deasbai a dheasachadh tuilleadh"
+    proposal_code_prefix: "Ro-leasachan airson còdan Molaidh"
+    proposal_code_prefix_description: "Nochdaidh an ro-leasachan seo anns na Molaidhean ron cheann-latha cruthachaidh agus ron an ID aige"
+    featured_proposals_number: "An àireamh de mholaidhean a tha gan sealtainn"
+    featured_proposals_number_description: "An àireamh de mholaidhean brosnaichte a thèid a thaisbeanadh ma tha molaidhean brosnaichte an sàs."
+    votes_for_proposal_success: "An àireamh de chomharran taic a tha dhìth mus tèid am Moladh aontachadh"
+    votes_for_proposal_success_description: "Nuair a ruigeas moladh an àireamh seo de chomharran taic chan fhaod e barrachd taic fhaighinn agus thathar a’ meas gu bheil e soirbheachail"
+    months_to_archive_proposals: "Mìosan gus Molaidhean a thasgadh"
+    months_to_archive_proposals_description: "Às deidh an àireamh seo de mhìosan seo thèid na Molaidhean a thasgadh agus cha bhi e comasach dhaibh taic fhaighinn tuilleadh"
+    email_domain_for_officials: "Àrainn puist-d airson oifigearan poblach"
+    email_domain_for_officials_description: "Thèid an cunntas aig a h-uile cleachdaiche a tha clàraichte leis an àrainn seo a dhearbhadh seo aig àm clàraidh"
+    twitter_handle: "Ainm Twitter"
+    twitter_handle_description: "Ma thèid a lìonadh, nochdaidh e sa bhann-coise"
+    twitter_hashtag: "Taga-hais Twitter"
+    twitter_hashtag_description: "Taga-hais a nochdas nuair a bhios tu a’ co-roinn susbaint air Twitter"
+    facebook_handle: "Ainm Facebook"
+    facebook_handle_description: "Ma thèid a lìonadh, nochdaidh e sa bhann-coise"
+    youtube_handle: "Ainm Youtube"
+    youtube_handle_description: "Ma thèid a lìonadh, nochdaidh e sa bhann-coise"
+    telegram_handle: "Ainm Telegram"
+    telegram_handle_description: "Ma thèid a lìonadh, nochdaidh e sa bhann-coise"
+    instagram_handle: "Ainm Instagram"
+    instagram_handle_description: "Ma thèid a lìonadh, nochdaidh e sa bhann-coise"
+    org_name: "Ainm na làraich"
+    org_name_description: "Nochdaidh an t-ainm seo air puist-d, duilleagan cuideachaidh..."
+    related_content_score_threshold: "Ìre sgòr susbaint co-cheangailte"
+    related_content_score_threshold_description: "A rèir an rangachadh de bhòtaichean ann an susbaint cho-cheangailte, a’ falach susbaint a tha cleachdaichean a’ comharrachadh mar neo-cheangailte"
+    hot_score_period_in_days: "Ùine (làithean) air a chleachdadh leis a’ chriathrag ‘as gnìomhaiche’"
+    hot_score_period_in_days_description: "Bidh an criathar ‘as gnìomhaiche’ a tha ga chleachdadh ann an grunn earrannan stèidhichte air na bhòtaichean anns na X làithean mu dheireadh"
+    mailer_from_name: "Ainm post-d an neach-cuir"
+    mailer_from_name_description: "Nochdaidh an t-ainm seo mar ainm neach-cuir ann am puist-d a chuirear bhon aplacaid"
+    mailer_from_address: "Seòladh puist-d an neach-cuir"
+    mailer_from_address_description: "Nochdaidh an seòladh puist-d seo ann am puist-d a chuirear bhon tagradh"
+    meta_title: "Tiotal na làraich (SEO)"
+    meta_title_description: "Tiotal airson na làraich-lìn<title> , air a chleachdadh gus cuideachadh le SEO</html>"
+    meta_description: "Tuairisgeul na làraich (SEO)"
+    meta_description_description: 'Tuairisgeul na làraich <meta name="description">, gan cleachdadh gus cuideachadh le SEO'
+    meta_keywords: "Prìomh fhaclan (SEO)"
+    meta_keywords_description: 'Prìomh fhaclan <meta name="keywords">, gan cleachdadh air adhbharan SEO'
+    min_age_to_participate: An aois a dh’fheumas tu a bhith gus pàirt a ghabhail
+    min_age_to_participate_description: "Faodaidh cleachdaichean a tha na sine nas seo pàirt a ghabhail anns a h-uile pròiseas far a bheil feum air cunntas dearbhte le cleachdaiche"
+    postal_codes: "Còdaichean-puist"
+    postal_codes_description: "Liosta de chòdan puist dligheach air a sgaradh le cromag; faodaidh tu cuideachd raointean a thoirt a-steach air an sgaradh le coloin. Eisimpleir: 00001:00010,00024,AB3 45FG,00031:00035 ceadaichidh e còdan-puist eadar 00001 agus 00010, an còd-puist 00024, an còd-puist AB3 45FG, agus còdan-puist eadar 00031 agus 00035. Ma dh’fhàgas tu bàn e, bidh a h-uile còd-puist dligheach."
+    proposals:
+      successful_proposal_id: Moladh soirbheachail
+      successful_proposal_id_description: Tha am moladh seo air a chleachdadh mar mhodal airson moladh soirbheachail ann an àireamh comharraidhean taic agus thèid a thaisbeanadh ann an graf an deas-bhòrd.
+      poll_short_title: Cunntasan-bheachd
+      poll_short_title_description: Tuairisgeul goirid air an fheart sgrùdaidh. A’ leigeil le cleachdaichean suirbhidhean a chruthachadh air moladh
+      poll_description: Tuairisgeul air na cunntas-bheachd
+      poll_description_description: Tuairisgeul mionaideach air an fheart sgrùdaidh
+      poll_link: Ceangal airson barrachd fiosrachaidh
+      poll_link_description: Cuiuridh seo ceangal fiosrachaidh a bharrachd ris an fheart sgrùdaidh
+      email_short_title: Post-d
+      email_short_title_description: 'Tuairisgeul goirid air an fheart puist-d. Tha seo a’ leigeil le cleachdaichean post-d a chuir gus am moladh aca a bhrosnachadh. Gheibh thu susbaint uile a’ phuist-d seo ann an "/app/views/dashboard/mailer/forward.html.erb"'
+      email_description: Tuairisgeul puist-d
+      email_description_description: Tuairisgeul mionaideach air an fheart puist-d
+      poster_short_title: Postair
+      poster_short_title_description: 'Tuairisgeul goirid air feart nam postairean. Tha seo a’ leigeil le cleachdaichean postair a luchdachadh sìos ann an cruth PDF gus am moladh aca a bhrosnachadh. Gheibh thu a susbaint uile a’ phostair seo ann an "/app/views/dashboard/poster/index.pdf.erb"'
+      poster_description: Tuairisgeul air a’ phostair
+      poster_description_description: Tuairisgeul mionaideach air feart nam postairean
+    analytics_url: "URL airson anailiseachd"
+    proposal_notification_minimum_interval_in_days: "Àm as ìsle (ann an làithean) aig ùghdaran mholaidhean gus brathan mholaidhean ùra a chur"
+    proposal_notification_minimum_interval_in_days_description: "An àireamh de làithean as urrainn chleachdaiche fios a chur chun a h-uile neach-leantainn mun mholadh aca"
+    direct_message_max_per_day: "An àireamh as motha san latha de theachdaireachdan dìreach"
+    direct_message_max_per_day_description: "An àireamh as motha de theachdaireachdan dìreach as urrainn do chleachdaich a chur gach latha"
+    feature:
+      twitter_login: "Clàradh a-steach le Twitter"
+      twitter_login_description: "Leig le cleachdaichean clàradh leis a’ chunntas Twitter aca"
+      facebook_login: "Clàradh a-steach le Facebook"
+      facebook_login_description: "Leig le cleachdaichean clàradh leis a’ chunntas Facebook aca"
+      google_login: "Clàradh a-steach le Google"
+      google_login_description: "Leig le cleachdaichean clàradh leis a’ chunntas Google aca"
+      wordpress_login: "Clàradh a-steach le Wordpress"
+      wordpress_login_description: "Leig le cleachdaichean clàradh leis a’ chunntas Google aca"
+      featured_proposals: "Moalaidhean brosnaichte"
+      featured_proposals_description: "Seallaidh seo molaidhean air duilleag clàr-amais nam molaidhean"
+      signature_sheets: "Duilleagan nan ainmean-sgrìobhte"
+      signature_sheets_description: "Tha e a’ ceadachadh ainmean-sgrìobhte a chaidh a chruinneachadh air an làrach a chur ri Molaidhean agus pròiseactan tasgaidh nam Buidseit Com-pàirteachail bhon bhon phannal Rianachd."
+      user:
+        recommendations: "Molaidhean"
+        recommendations_description: "Sealltaidh seo molaidhean chleachdaichean air an duilleag-dhachaigh stèidhichte air tagaichean de na nithean a leanas"
+        skip_verification: "Leum thairis air dearbhadh cleachdaiche"
+        skip_verification_description: "Cuiridh seo dearbhadh nan cleachdaichean à comas agus bidh cothrom aig a h-uile cleachdaiche a tha clàraichte pàirt a ghabhail anns a h-uile pròiseas"
+        recommendations_on_debates: "Molaidhean air deasbadan"
+        recommendations_on_debates_description: "Seallaidh seo molaidhean bho chleachdaichean do chleachdaichean air duilleag nan deasbadan, stèidhichte air tagaichean nan nithean a lean iad"
+        recommendations_on_proposals: "Molaidhean air molaidhean"
+        recommendations_on_proposals_description: "Seolaidh seo mholaidhean do chleachdaichean air duilleag nam molaidhean stèidhichte air tagaichean nan nithean a lean iad"
+      community: "Coimhearsnachd mu mholaidhean agus tasgaidhean"
+      community_description: "Cuiridh seo roinn na coimhearsnachd an comas ann am molaidhean agus pròiseactan tasgaidh nam Buidseatan Com-pàirteachail"
+      machine_learning: "AI / Ionnsachadh Inneil"
+      machine_learning_description: "Cuir an earrann AI / Ionnsachadh Inneil an comas gus sgriobtaichean python a ruith agus gus susbaint a neartachadh gu fèin-obrachail."
+      map: "Geò-lorgadh mholaidhean agus tasgaidhean buidseit"
+      map_description: "Tha seo a’ cur an comas geò-lorgadh de mholaidhean agus de pròiseactan tasgaidh"
+      allow_images: "Ceadaich luachdadh suas agus seall dealbhan"
+      allow_images_description: "Tha seo a’ leigeil le cleachdaichean ìomhaighean a luchdachadh suas nuair a bhios iad a’ cruthachadh mholaidhean agus pròiseactan tasgaidh bho Bhuidseatan Com-pàirteachail"
+      allow_attached_documents: "Ceadaich a bhith a’ luchdachadh suas agus a’ taisbeanadh sgrìobhainnean ceangailte"
+      allow_attached_documents_description: "A’ leigeil le luchd-cleachdaidh sgrìobhainnean a luchdachadh suas nuair a bhios iad a’ cruthachadh mholaidhean agus pròiseactan tasgaidh bho Bhuidseatan Com-pàirteachail"
+      guides: "Stiùireadh gus molaidhean no pròiseactan tasgaidh a chruthachadh"
+      guides_description: "Bidih seeo a’ taisbeanadh stiùireadh air eadar-dhealachaidhean eadar molaidhean agus pròiseactan tasgaidh ma tha buidseat com-pàirteachail gnìomhach ann"
+      public_stats: "Staitistig phoblach"
+      public_stats_description: "Seall staitistig phoblach anns a’ phannal Rianachd"
+      help_page: "Duilleag cuideachaidh"
+      help_page_description: 'Taisbeanaidh seo clàr-taice Cobhair anns a bheil duilleag le earrann fiosrachaidh mu gach feart a tha an comas. Cuideachd faodar duilleagan gnàthaichte agus clàran-taice a chruthachadh anns na h-earrannan “Duilleagan gnàthaichte” agus “blocaichean susbaint gnàthaichte”.'
+      remote_translations: "Iarr eadar-theangachadh"
+      remote_translations_description: "Seallaidh seo putan a leigeas le cleachdaichean eadar-theangachadh iarraidh nuair nach eil susbaint ann sa chànan aca."
+      translation_interface: "Eadar-aghaidh eadar-theangachaidh"
+      translation_interface_description: "Taisbeanaidh seo an t-eadar-aghaidh eadar-theangachaidh a leigeas le cleachdaiche an t-susbaint a chur a-steach anns a h-uile cànan a tha ri fhaighinn san applacaid. Chan eil buaidh aig an roghainn seo ach air foirmean tagraidh cleachdaichean agus bidh e an-còmhnaidh gnìomhach gu neo-eisimeileach sa phannal rianachd."
+      remote_census: "Rèitich ceangal ri cunntas-sluaigh iomallach (SOAP)"
+      remote_census_description: "Ceadaichidh seo a bhith a’ rèiteachadh a’ cheangal ri cunntas-sluaigh gach institiud"
+      valuation_comment_notification: "Brath mu bheachd luachaidh"
+      valuation_comment_notification_description: "Cuir post-d chun a h-uile cleachdaiche co-cheangailte ri seo ach a-mhàin neach-luachaidh air tasgadh buidseit nuair a thèid beachd luachaidh ùr a chruthachadh"
+      graphql_api: "GraphQL API"
+      dashboard:
+        notification_emails: "Brathan puist-d an deas-bhùird "
+        notification_emails_description: "Cuir an comas a bhith a’ cur brathan puist-d deas-bhòrd gu ùghdaran a’ mholaidh"
+      remove_investments_supports: "Ceudaich a bhith a’ toirt air falbh comharran taic air tasgaidhean buidseit"
+      remove_investments_supports_description: "Leig le cleachdaichean comharran taic a thoirt air falbh bho thasgaidhean buidseit com-pàirteachail aig ìre taghaidh nam pròiseactan."
+      sdg: Amas Leasachaidh Seasmhach
+      sdg_description: Cur earrannan Amasan Leasachaidh Seasmhach an comas sa chlàr rianachd agus anns na Roghainnean Cruinneil.
+    remote_census:
+      general:
+        endpoint: "Puing-dheiridh"
+        endpoint_description: "Ainm an òstair far a bheil an t-seirbheis cunntas-sluaigh ri fhaighinn (wsdl)"
+      request:
+        method_name: "Iarr ainm a’ mhodh"
+        method_name_description: "Iarr ainm a’ mhodh ris an gabh Seirbheis Lìn Cunntas-sluaigh a’ Bhaile."
+        structure: "Iarr Structar"
+        structure_description: 'Structar an Iarrtais airson a chur gu Seirbheis Lìn Cunntas Comhairle a’ Bhaile. Bu chòir luachan “stadaigeach” an iarrtais seo a lìonadh. Bu chòir luachan co-cheangailte ri Seòrsa Sgrìobhainn, Àireamh Sgrìobhainn, Ceann-latha-breith agus Còd Puist a bhith neo-eisimeileach. Eisimpleir de dh’fhòrmat dligheach: { "request": { "codigo_institucion": 1, "codigo_portal": 1, "codigo_usuario": 1, "documento": null, "tipo_documento": null, "codigo_idioma": 102, "nivel": 3 } }'
+        document_type: "Slighe airson Seòrsa Sgrìobhainnean"
+        document_type_description: "Slighe anns an t-structar iarrtais a chuireas an Seòrsa Sgrìobhainn. NA LÌON SEO mura feum an t-Seirbheis Lìn an t-Seòrsa Sgrìobhainn gus cleachdaiche a dhearbhadh."
+        document_number: "Slighe airson Àireamh Sgrìobhainnean"
+        document_number_description: "Slighe anns an t-structar iarrtais a chuireas an Àireamh Sgrìobhainn. NA LÌON SEO mura h-eil feum aig an t-Seirbheis Lìn air an Àireamh Sgrìobhainn gus cleachdaiche a dhearbhadh."
+        date_of_birth: "Slighe airson Latha-breith"
+        date_of_birth_description: "Slighe anns an t-structar iarrtais a chuireas an Ceann-latha breith. NA LÌON SEO mura h-eil feum aig an t-Seirbheis Lìn air Ceann-latha breith gus cleachdaiche a dhearbhadh."
+        postal_code: "Slighe airson Còd-puist"
+        postal_code_description: "Slighe anns an t-structar iarrtais a chuireas an Còd-puist. NA LÌON SEO mura feum an t-Seirbheis Lìn an còd-phuist gus cleachdaiche a dhearbhadh."
+      response:
+        date_of_birth: "Slighe airson Latha-breith"
+        date_of_birth_description: "Dè an t-slighe freagairt anns a bheil ceann-latha breith a’ chleachdaiche?"
+        postal_code: "Slighe airson Còd-puist"
+        postal_code_description: "Dè an t-slighe freagairt anns a bheil Còd-puist a’ chleachdaiche?"
+        district: "Slighe airson Sgìre"
+        district_description: "Dè an t-slighe freagairt anns a bheil Sgìre a’ chleachdaiche?"
+        gender: "Slighe airson Gnè"
+        gender_description: "Dè an t-slighe freagairt anns a bheil Gnè a’ chleachdaiche?"
+        name: "Slighe airson Ainm"
+        name_description: "Dè an t-slighe freagairt anns a bheil Ainm a’ chleachdaiche?"
+        surname: "Slighe airson Sloinneadh"
+        surname_description: "Dè an t-slighe freagairt anns a bheil Sloinneadh a’ chleachdaiche?"
+        valid: "An suidheachadh san tèid freagairt dhligheach a lorg"
+        valid_description: "Dè an t-slighe freagairt a dh’fheumas a bhith ann gus an tèid a mheas gur e freagairt dligheach a th’ ann agus gus an tèid an cleachdaiche a dhearbhadh"
+    map:
+      latitude: "Domhan-leud"
+      latitude_description: "Domhan-leud gus an t-àite air a’ mhapa a shealltainn"
+      longitude: "Domhan-fhad"
+      longitude_description: "Domhanf=had gus an t-àite air a’ mhapa a shealltainn"
+      zoom: "Sùm"
+      zoom_description: "Sùm gus an t-àite air a’ mhapa a shealltainn"
+    process:
+      debates: "Deasbadan"
+      debates_description: "Tha àite deasbaid nan saoranach ag amas air neach sam bith a tha airson cùisean a chur air adhart a tha a’ toirt buaidh orra agus a tha airson am beachdan a cho-roinn le daoine eile"
+      proposals: "Molaidhean"
+      proposals_description: "Tha molaidhean shaoranaich nan cothrom do nàbaidhean agus co-chomainn a bhith a’ co-dhùnadh gu dìreach cò ris a bu chòir dhan t-sòisealta aca a bhith coltach, às dèidh dhaibh taic gu leòr fhaighinn agus a chur a-steach do bhòt shaoranaich."
+      polls: "Cunntasan-bheachd"
+      polls_description: "Tha cunntasan-bheachd shaoranaich nan dòigh com-pàirteachail san urrainn do shaoranaich aig a bheil còir bhòtaidh co-dhùnaidhean dìreach a dhèanamh"
+      budgets: "Buidseatan Com-pàirteachail"
+      budgets_description: "Le buidseatan com-pàirteachail, bidh saoranaich a’ co-dhùnadh dè na pròiseactan chuireas an nàbaidhean air adhart a gheibh pàirt den bhuidseit"
+      legislation: "Reachdas Co-obrachail"
+      legislation_description: "Ann am pròiseasan com-pàirteachail, bithear a’ toirt cothrom do shaoranaich pàirt a ghabhail ann an dreachdadh agus atharrachadh riaghailtean a bheir buaidh air a’ chomann-shòisealta agus gus am beachd a thoirt seachad air gnìomhan sònraichte a thathar an dùil a dhèanamh."
+    html:
+      per_page_code_head: "Còd ri thoirt a-steach air gach duilleig (<head> )"
+      per_page_code_head_description: "Nochdaidh an còd seo taobh a-staigh an leubail<head>. Tha seo feumail airson a bhith a’ cur a-steach sgriobtaichean gnàthaichte, mion-sgrùdaidhean ..."
+      per_page_code_body: "Còd ri thoirt a-steach air gach duilleag (<body> )"
+      per_page_code_body_description: "Nochdaidh an còd seo taobh a-staigh an leubail <body>. Tha seoF fumail airson a bhith a’ cur a-steach sgriobtaichean gnàthaichte, mion-sgrùdaidhean ..."
+    uploads:
+      images:
+        min_width: "Leud as lugha de dhealbh"
+        min_width_description: "An leud as ìsle a tha ceadaichte airson ìomhaigh a chaidh a luchdachadh suas (ann am piogsailean)"
+        min_height: "Àirde as lugha de dheilbh"
+        min_height_description: "An àirde as ìsle a tha ceadaichte airson ìomhaigh a chaidh a luchdachadh suas (ann am piogsailean)"
+        max_size: "Mead as motha airson dealbh"
+        max_size_description: "Meud as motha airson dealbh air a luchdachadh suas (ann am Megabytes / MB)"
+        content_types: "Seòrsaichean susbaint airson dealbhan ris an gabhar"
+        content_types_description: "Tagh a h-uile seòrsa susbaint a tha ceadaichte airson dealbh a tha gan luchdachadh suas"
+        title:
+          min_length: "Tiotal ìomhaigh as lugha"
+          min_length_description: "Chaidh an Tiotal a thoirt seachad leis a’ chleachdaiche nuair a bha iad a’ luchdadh suas dealbh (air a chleachdadh mar fheart alt HTML)"
+          max_length: "Tiotal ìomhaigh as motha"
+          max_length_description: "Chaidh an Tiotal a thoirt seachad leis a’ chleachdaiche nuair a bha iad a’ luchdadh suas dealbh (air a chleachdadh mar fheart alt HTML)"
+      documents:
+        max_amount: "An àireamh as motha de sgrìobhainnean"
+        max_amount_description: "An àireamh as motha de sgrìobhainnean as urrainnear ceangal ri moladh, tasgadh ..."
+        max_size: "Mead as motha a tha ceadiachte airson sgrìobhainn"
+        max_size_description: "Meud as motha a tha ceadaichte airson sgrìobhainn air a luchdachadh suas (ann am Megabytes / MB)"
+        content_types: "Seòrsaichean susbaint ann an sgrìobhainnean ris an gabhar"
+        content_types_description: "Tagh a h-uile seòrsa susbaint a tha ceadaichte airson sgrìobhainnean a chaidh a luchdachadh suas"
+    sdg:
+      process:
+        debates: Amas Leasachaidh Seasmhach co-cheangailte ann an deasbadan
+        debates_description: Leig le deasbadan a bhith ceangailte ri Amasan Leasachadh Seasmhach
+        proposals: Amas Leasachaidh Seasmhach co-cheangailte ann am molaidhean
+        proposals_description: Leig le molaidhean a bhith ceangailte ri Amasan Leasachadh Seasmhach
+        polls: Amas Leasachaidh Seasmhach co-cheangailte ann am bhòtaichean
+        polls_description: Leig le bhòtaichean a bhith ceangailte ri Amasan Leasachadh Seasmhach
+        budgets: Amas Leasachaidh Seasmhach co-cheangailte ann am buidseatan com-pàirteachail
+        budgets_description: Leig le buidseatan com-pàirteachail a bhith ceangailte ri Amasan Leasachadh Seasmhach
+        legislation: Amas Leasachaidh Seasmhach co-cheangailte ann an reachdas co-obrachail
+        legislation_description: Leig le reachdas co-obrachail a bhith ceangailte ri Amasan Leasachadh Seasmhach

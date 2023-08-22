@@ -11,7 +11,7 @@ describe "Budgets wizard, phases step", :admin do
       visit admin_budgets_wizard_budget_budget_phases_path(budget)
 
       within "#side_menu" do
-        expect(page).to have_css ".is-active", exact_text: "Participatory budgets"
+        expect(page).to have_css "[aria-current]", exact_text: "Participatory budgets"
       end
 
       click_link "Go back to headings"

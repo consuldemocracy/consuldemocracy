@@ -31,91 +31,14 @@
         <% end %>
       <% end %>
 
-      <% @questions.each_with_index do |question, index| %>
-        <%= render "polls/questions/question", question: question, index: index, token: @token %>
-      <% end %>
+      <%= render Polls::Questions::QuestionComponent.with_collection(@questions) %>
     </div>
   </div>
 
   <div id="poll_more_info_answers" class="expanded poll-more-info-answers">
-    <% @poll.questions_with_answer_content.each do |question| %>
-      <div class="poll-more-info-answers-divider"></div>
-      <div class="row">
-        <div class="small-12 column padding answer-question">
-          <span class="label-title"><%= t("polls.show.more_info_title") %></span>
-          <h2 id="answer_<%= question.answers_with_content.first.id %>">
-            <%= question.title %>
-          </h2>
-        </div>
-      </div>
-      <div class="row padding">
-        <% question.answers_with_content.each do |answer| %>
-          <div class="small-12 medium-6 column end answer <%= cycle("first", "float-right") %>">
-            <h3><%= answer.title %></h3>
-
-            <% if answer.images.any? %>
-              <%= render "gallery", answer: answer %>
-            <% end %>
-
-            <% if answer.description.present? %>
-              <div class="margin-top">
-                <div id="answer_description_<%= answer.id %>" class="answer-description short" data-toggler="short">
-                  <%= wysiwyg(answer.description) %>
-                </div>
-                <% if answer.description.length > 600 %>
-                  <div class="read-more">
-                    <button type="button" id="read_more_<%= answer.id %>"
-                            data-toggler="hide"
-                            data-toggle="answer_description_<%= answer.id %> read_more_<%= answer.id %> read_less_<%= answer.id %>"
-                            class="button primary">
-                      <%= t("polls.show.read_more", answer: answer.title) %>
-                    </button>
-                    <button type="button" id="read_less_<%= answer.id %>"
-                            data-toggler="hide"
-                            data-toggle="answer_description_<%= answer.id %> read_more_<%= answer.id %> read_less_<%= answer.id %>"
-                            class="hide button primary">
-                      <%= t("polls.show.read_less", answer: answer.title) %>
-                    </button>
-                  </div>
-                <% end %>
-              </div>
-            <% end %>
-
-            <% if answer.documents.present? %>
-              <div class="document-link">
-                <p>
-                  <span class="icon-document"></span>&nbsp;
-                  <strong><%= t("polls.show.documents") %></strong>
-                </p>
-
-                <% answer.documents.each do |document| %>
-                    <%= link_to document.title,
-                                document.attachment,
-                                target: "_blank",
-                                rel: "nofollow" %><br>
-                <% end %>
-              </div>
-            <% end %>
-
-            <% if answer.videos.present? %>
-              <div class="video-link">
-                <p>
-                  <span class="icon-video"></span>&nbsp;
-                  <strong><%= t("polls.show.videos") %></strong>
-                </p>
-
-                <% answer.videos.each do |video| %>
-                    <%= link_to video.title,
-                                video.url,
-                                target: "_blank",
-                                rel: "nofollow" %><br>
-                <% end %>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
+    <div class="row padding">
+      <%= render Polls::Questions::ReadMoreComponent.with_collection(@questions) %>
+    </div>
   </div>
 
   <div class="tabs-content" data-tabs-content="polls_tabs">

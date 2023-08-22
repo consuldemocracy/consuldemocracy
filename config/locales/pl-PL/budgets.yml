@@ -41,6 +41,9 @@ pl:
         title: Budżety partycypacyjne
         help: Pomoc z budżetem partycypacyjnym
       all_phases: Fazy inwestycji budżetowych
+      next_phase: Następny etap
+      prev_phase: Poprzedni etap
+      current_phase: Aktualny etap
       map: Propozycje inwestycji budżetowych zlokalizowane geograficznie
       finished_budgets: Ukończone budżety partycypacyjne
       see_results: Zobacz wyniki
@@ -57,7 +60,6 @@ pl:
         tags_placeholder: "Wprowadź oznaczenia, których chciałbyś użyć, rozdzielone przecinkami (',')"
         map_location: "Lokalizacja na mapie"
         map_location_instructions: "Przejdź na mapie do lokalizacji i umieść znacznik."
-        map_remove_marker: "Usuń znacznik mapy"
       index:
         title: Budżetowanie partycypacyjne
         unfeasible: Niewykonalne projekty inwestycyjne
@@ -83,7 +85,9 @@ pl:
           verified_only: "By stworzyć nową inwestycję budżetową %{verify}."
           create: "Utwórz inwestycję budżetową"
           not_logged_in: "By stworzyć nową inwestycję budżetową musisz %{sign_in} lub %{sign_up}."
+        filter: "Filtrowanie projektów po"
         filters:
+          not_unfeasible: "Aktywny"
           selected: "Wybrany"
           unfeasible: "Niewykonalne"
           winners: "Zwycięzcy"
@@ -141,6 +145,7 @@ pl:
     investments_list:
       investment:
         price: "Koszt"
+        read_more: "Czytaj więcej"
         supports: "Wsparcie"
     show:
       see_results: Zobacz wyniki
@@ -157,6 +162,7 @@ pl:
       accepted: "Przyjęty wniosek wydatków: "
       discarded: "Odrzucony wniosek wydatków: "
       incompatibles: Niekompatybilne
+      investment_title: Tytuł projektu
       investment_proyects: Lista wszystkich projektów inwestycyjnych
       unfeasible_investment_proyects: Lista wszystkich niewykonalnych projektów inwestycyjnych
       not_selected_investment_proyects: Lista wszystkich projektów inwestycyjnych nie wybranych do głosowania

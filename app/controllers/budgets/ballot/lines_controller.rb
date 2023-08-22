@@ -15,7 +15,6 @@ module Budgets
       def create
         load_investment
         load_heading
-        load_map
 
         @ballot.add_investment(@investment)
       end
@@ -23,7 +22,6 @@ module Budgets
       def destroy
         @investment = @line.investment
         load_heading
-        load_map
 
         @line.destroy!
         load_investments
@@ -68,12 +66,6 @@ module Budgets
 
         def load_categories
           @categories = Tag.category.order(:name)
-        end
-
-        def load_map
-          @investments ||= []
-          @investments_map_coordinates = MapLocation.where(investment: @investments).map(&:json_data)
-          @map_location = MapLocation.load_from_heading(@heading)
         end
     end
   end

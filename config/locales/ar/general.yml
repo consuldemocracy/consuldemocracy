@@ -28,21 +28,21 @@ ar:
       deleted: تم حذف هذا التعليق
       moderator: المشرف
       responses:
-        zero: لا توجد ردود
+        zero: "%{count} ردود"
         one: ردّ واحد
         two: "ردّان %{count}"
         few: "%{count} ردود"
         many: "%{count} ردود"
         other: "%{count} ردود"
       responses_show:
-        zero: لا توجد ردود
+        zero: "%{count} ردود (عرض)"
         one: "رد ّ 1 (عرض)"
         two: "%{count} ردود (عرض)"
         few: "%{count} ردود (عرض)"
         many: "%{count} ردود (عرض)"
         other: "%{count} ردود (عرض)"
       responses_collapse:
-        zero: لا توجد ردود
+        zero: "%{count} إجابة (إخفاء)"
         one: "إجابة واحدة (إخفاء)"
         two: "%{count} إجابة (إخفاء)"
         few: "%{count} إجابة (إخفاء)"
@@ -50,7 +50,7 @@ ar:
         other: "%{count} إجابة (إخفاء)"
       user_deleted: حذف المستخدم
       votes:
-        zero: لا توجد أصوات
+        zero: "%{count} أصوات"
         one: صوت واحد
         two: "صوتان %{count}"
         few: "%{count} أصوات"
@@ -78,15 +78,8 @@ ar:
       form:
         submit_button: بدء مناقشة
     debate:
-      comments:
-        zero: لا توجد تعليقات
-        one: 1 تعليق
-        two: "%{count} تعليقات"
-        few: "%{count} تعليقات"
-        many: "%{count} تعليقات"
-        other: "%{count} تعليقات"
       votes:
-        zero: لا توجد أصوات
+        zero: "%{count} أصوات"
         one: صوت واحد
         two: "%{count} أصوات"
         few: "%{count} أصوات"
@@ -143,13 +136,6 @@ ar:
       start_new: بدء مناقشة
     show:
       author_deleted: تم حذف المستخدم
-      comments:
-        zero: لا توجد تعليقات
-        one: تعليق واحد
-        two: "%{count} تعليق"
-        few: "%{count} تعليق"
-        many: "%{count} تعليق"
-        other: "%{count} تعليق"
       comments_title: تعليقات
       edit_debate_link: تعديل
       flag: تم التبليغ على أنّ هذا النقاش غير لائق من قبل العديد من المستخدمين.
@@ -205,7 +191,7 @@ ar:
         preview_proposal: معاينة المقترح
         current_goal: الهدف الحالي
         supports:
-          zero: لا يوجد دعم
+          zero: "دعم"
           one: 1 دعم
           two: "دعم"
           few: "دعم"
@@ -215,7 +201,7 @@ ar:
       accessibility: إمكانية الوصول
       conditions: قوانين وشروط الاستخدام
       consul: تطبيق CONSUL
-      consul_url: https://github.com/consul/consul
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: CONSUL, %{year}
       description: تستخدم هذه البوابة %{consul} والذي هو%{open_source}.
       open_source: برنامج مفتوح المصدر
@@ -242,7 +228,7 @@ ar:
       budgets: الميزانية التشاركية
       notification_item:
         new_notifications:
-          zero: "لا يوجد إشعارات جديدة"
+          zero: لديك %{count} إشعارات الجديدة
           one: لديك إشعار جديد
           two: لديك %{count} إشعارات الجديدة
           few: لديك %{count} إشعارات الجديدة
@@ -420,24 +406,17 @@ ar:
         edit: "ستتمكن من تغيير النص كما تريد قبل أن يتم مشاركته."
         view_proposal: ليس الآن، انتقل إلى مقترحي
       already_supported: لقد قمت بالفعل بدعم هذا المقترح. شاركه!
-      comments:
-        zero: لا توجد تعليقات
-        one: تعليق واحد
-        two: "%{count} تعليق"
-        few: "%{count} تعليق"
-        many: "%{count} تعليق"
-        other: "%{count} تعليق"
       support: دعم
       support_title: دعم هذا المقترح
       supports:
-        zero: لا يوجد دعم
+        zero: "%{count} يدعم"
         one: 1 دعم
         two: "%{count} يدعم"
         few: "%{count} يدعم"
         many: "%{count} يدعم"
         other: "%{count} يدعم"
       votes:
-        zero: لا توجد أصوات
+        zero: "%{count} أصوات"
         one: صوت واحد
         two: "%{count} أصوات"
         few: "%{count} أصوات"
@@ -451,13 +430,6 @@ ar:
     show:
       author_deleted: تم حذف المستخدم
       code: "رمز المقترح:"
-      comments:
-        zero: لا توجد تعليقات
-        one: تعليق واحد
-        two: "%{count} تعليق"
-        few: "%{count} تعليق"
-        many: "%{count} تعليق"
-        other: "%{count} تعليق"
       comments_tab: تعليقات
       dashboard_proposal_link: لوحة القيادة
       flag: تم التبليغ على أنّ هذا المقترح غير لائق من قبل العديد من المستخدمين.

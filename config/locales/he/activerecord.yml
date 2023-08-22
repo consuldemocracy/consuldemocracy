@@ -494,7 +494,7 @@ he:
         description: תיאור
       poll/question/answer/translation:
         title: תשובה
-        description: תיאור
+        description: "תיאור"
       poll/question/answer/video:
         title: כותרת
         url: מקור וידאו חיצוני

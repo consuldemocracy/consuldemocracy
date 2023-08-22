@@ -704,9 +704,6 @@ sl:
         no_questions: "Ni vprašanj, dodeljenih temu glasovanju."
         questions_title: "Seznam vprašanj"
         table_title: "Naslov"
-      flash:
-        question_added: "Vprašanje dodano glasovanju"
-        error_on_question_added: "Vprašanja ni bilo mogoče dodeliti temu glasovanju"
     questions:
       index:
         title: "Vprašanja"
@@ -751,12 +748,6 @@ sl:
     answers:
       new:
         title: Nov odgovor
-      show:
-        title: Naslov
-        description: Opis
-        images: Slike
-        images_list: Seznam slik
-        edit: Uredi odgovor
       edit:
         title: Uredi odgovor
       videos:

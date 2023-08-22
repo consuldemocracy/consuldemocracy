@@ -38,8 +38,6 @@ zh-TW:
     telegram_handle_description: "如果填寫了，它將出現在頁尾中"
     instagram_handle: "Instagram 設置"
     instagram_handle_description: "如果填寫了，它將出現在頁尾中"
-    url: "主要 URL"
-    url_description: "您網站的主要 URL"
     org_name: "組織"
     org_name_description: "您的組織的名稱"
     related_content_score_threshold: "相關內容評分閾值"

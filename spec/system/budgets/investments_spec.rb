@@ -62,7 +62,11 @@ describe "Budget Investments" do
     investments.each do |investment|
       within("#budget-investments") do
         expect(page).to have_content investment.title
-        expect(page).to have_css("a[href='#{budget_investment_path(budget, id: investment.id)}']", text: investment.title)
+        expect(page).to have_content investment.comments_count
+        expect(page).to have_link "No comments", href: budget_investment_path(budget, id: investment.id,
+                                                                                      anchor: "comments")
+        expect(page).to have_link investment.title, href: budget_investment_path(budget, id: investment.id)
+
         expect(page).not_to have_content(unfeasible_investment.title)
       end
     end
@@ -131,7 +135,7 @@ describe "Budget Investments" do
     create(:budget_investment, heading: heading)
     visit budget_investments_path(budget, heading_id: heading.id)
     within("#sidebar") do
-      expect(page).to have_css(".map_location")
+      expect(page).to have_css(".map-location")
     end
 
     unlocated_heading = create(:budget_heading, name: "No Map", price: 500, group: group,
@@ -139,7 +143,7 @@ describe "Budget Investments" do
     create(:budget_investment, heading: unlocated_heading)
     visit budget_investments_path(budget, heading_id: unlocated_heading.id)
     within("#sidebar") do
-      expect(page).not_to have_css(".map_location")
+      expect(page).not_to have_css(".map-location")
     end
   end
 
@@ -595,7 +599,7 @@ describe "Budget Investments" do
       expect(page).to have_content "T.I.A."
       expect(page).to have_content "Towers"
 
-      visit user_url(author, filter: :budget_investments)
+      visit user_path(author, filter: :budget_investments)
       expect(page).to have_content "1 Investment"
       expect(page).to have_content "Build a skyscraper"
     end
@@ -698,7 +702,7 @@ describe "Budget Investments" do
       fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
       fill_in "Information about the location", with: "City center"
       fill_in "If you are proposing in the name of a collective/organization, "\
-        "or on behalf of more people, write its name", with: "T.I.A."
+              "or on behalf of more people, write its name", with: "T.I.A."
       fill_in "Tags", with: "Towers"
 
       click_button "Create Investment"
@@ -730,7 +734,7 @@ describe "Budget Investments" do
 
       click_button "Update Investment"
 
-      expect(page).to have_content "Investment project updated succesfully"
+      expect(page).to have_content "Investment project updated successfully"
       expect(page).to have_content "Park improvements"
     end
 
@@ -881,6 +885,7 @@ describe "Budget Investments" do
     expect(page).to have_content(investment.title)
     expect(page).to have_content(investment.description)
     expect(page).to have_content(investment.author.name)
+    expect(page).to have_content(investment.comments_count)
     expect(page).to have_content(investment.heading.name)
     # Remove investment code
     # within("#investment_code") do
@@ -1179,7 +1184,7 @@ describe "Budget Investments" do
                   "new_budget_investment_path",
                   "",
                   "budget_investment_path",
-                  { budget_id: "budget_id" }
+                  mappable_path_arguments: { budget_id: "budget_id" }
 
   context "Destroy" do
     scenario "Admin cannot destroy budget investments", :admin do
@@ -1206,7 +1211,7 @@ describe "Budget Investments" do
         accept_confirm { click_link("Delete") }
       end
 
-      expect(page).to have_content "Investment project deleted succesfully"
+      expect(page).to have_content "Investment project deleted successfully"
 
       visit user_path(user, tab: :budget_investments)
 
@@ -1551,40 +1556,26 @@ describe "Budget Investments" do
       end
     end
 
-    scenario "Do not show progress bar money or price with hidden money" do
-      budget_hide_money = create(:budget, :hide_money, phase: "balloting", voting_style: "approval")
-      group = create(:budget_group, budget: budget_hide_money)
-      heading = create(:budget_heading, name: "Heading without money", group: group)
-      user = create(:user, :level_two)
-      investment = create(:budget_investment, :feasible, :selected, budget: budget_hide_money,
-                                               heading: heading, price: 100)
-
-      visit budget_investments_path(budget_hide_money, heading: heading)
-
-      expect(page).not_to have_content budget.formatted_heading_price(heading).to_s
-      expect(page).not_to have_content "€"
-      expect(page).not_to have_css(".tagline")
-
-      within "#budget_investment_#{investment.id}" do
-        expect(page).not_to have_content "100"
-        expect(page).not_to have_content "€"
+    describe "total amount" do
+      before do
+        budget.update!(voting_style: "approval")
+        heading.update!(price: 2000)
       end
 
-      login_as(user)
+      scenario "Do not show total budget amount for budget with hidden money" do
+        budget.update!(hide_money: true)
 
-      visit budget_investments_path(budget_hide_money, heading: heading)
+        visit budget_investments_path(budget, heading_id: heading)
 
-      expect(page).to have_content "VOTES CAST: 0 / YOU CAN VOTE 1 PROJECT"
-      expect(page).to have_content "YOU CAN STILL CAST 1 VOTE."
-      expect(page).not_to have_content "Available budget"
+        expect(page).not_to have_content "Total budget"
+        expect(page).not_to have_content "€2,000"
+      end
 
-      expect(page).to have_css("#progress_bar")
-      expect(page).to have_css("#amount_available")
-      expect(page).not_to have_css("#amount_spent")
+      scenario "Show total budget amount for budget without hidden money" do
+        visit budget_investments_path(budget, heading_id: heading)
 
-      within "#budget_investment_#{investment.id}" do
-        expect(page).not_to have_content "100"
-        expect(page).not_to have_content "€"
+        expect(page).to have_content "Total budget"
+        expect(page).to have_content "€2,000"
       end
     end
 
@@ -1704,7 +1695,7 @@ describe "Budget Investments" do
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
-      within ".map_location" do
+      within ".map-location" do
         expect(page).to have_css(".map-icon", count: 6, visible: :all)
       end
     end
@@ -1718,7 +1709,7 @@ describe "Budget Investments" do
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
-      within ".map_location" do
+      within ".map-location" do
         expect(page).to have_css(".map-icon", count: 2, visible: :all)
       end
     end
@@ -1742,7 +1733,7 @@ describe "Budget Investments" do
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
-      within ".map_location" do
+      within ".map-location" do
         expect(page).to have_css(".map-icon", count: 4, visible: :all)
       end
     end
@@ -1760,9 +1751,30 @@ describe "Budget Investments" do
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
-      within ".map_location" do
+      within ".map-location" do
         expect(page).to have_css(".map-icon", count: 0, visible: :all)
       end
+    end
+
+    scenario "Shows the polygon associated to the current heading" do
+      triangle = '{ "geometry": { "type": "Polygon", "coordinates": [[-0.1,51.5],[-0.2,51.4],[-0.3,51.6]] } }'
+      rectangle = '{ "geometry": { "type": "Polygon", "coordinates": [[-0.1,51.5],[-0.2,51.5],[-0.2,51.6],[-0.1,51.6]] } }'
+
+      park = create(:geozone, geojson: triangle, color: "#03ee03")
+      square = create(:geozone, geojson: rectangle, color: "#ff04ff")
+
+      group = create(:budget_group)
+      green_areas = create(:budget_heading, group: group, geozone: park, latitude: 51.5, longitude: -0.2)
+      create(:budget_heading, group: group, geozone: square, latitude: 51.5, longitude: -0.2)
+
+      visit budget_investments_path(group.budget, heading_id: green_areas)
+
+      expect(page).to have_css ".map-polygon[fill='#03ee03']"
+      expect(page).not_to have_css ".map-polygon[fill='#ff04ff']"
+
+      find(".map-polygon").click
+
+      expect(page).not_to have_css ".leaflet-popup"
     end
 
     scenario "Shows all investments and not only the ones on the current page" do
@@ -1778,7 +1790,7 @@ describe "Budget Investments" do
         expect(page).to have_css(".budget-investment", count: 2)
       end
 
-      within(".map_location") do
+      within(".map-location") do
         expect(page).to have_css(".map-icon", count: 3, visible: :all)
       end
     end

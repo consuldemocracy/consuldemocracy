@@ -1,1 +1,244 @@
 gd:
+  budgets:
+    ballots:
+      show:
+        title: Do bhaileat
+        amount_progress: "%{amount_spent} / %{amount_limit}"
+        amount_available:
+          knapsack: "Ri fhaighinnn dhut fhathast <span>%{count}</span>"
+          approval:
+            zero: "Faodaidh tu <span>%{count}</san> bhòtaichean a chur fhathast."
+            one: "Faodaidh tu <span>%{count}</span> bhòt a chur fhathast."
+            two: "Faodaidh tu <span>%{count}</span> bhòt a chur fhathast."
+            few: "Faodaidh tu <span>%{count}</span> bhòtaichean a chur fhathast."
+            other: "Faodaidh tu <span>%{count}</span> bhòtaichean a chur fhathast."
+        amount_spent:
+          knapsack: "An t-suim a chaidh a chosg <span>%{count}</span>"
+          approval:
+            zero: "Bhòtaichean air an cur: <span>%{count}</span>"
+            one: "Bhòtaichean air an cur: <span>%{count}</span>"
+            two: "Bhòtaichean air an cur: <span>%{count}</span>"
+            few: "Bhòtaichean air an cur: <span>%{count}</span>"
+            other: "Bhòtaichean air an cur: <span>%{count}</span>"
+        amount_limit:
+          knapsack: "Buidseat iomlan <span>%{count}</span>"
+          approval:
+            one: "Faodaidh tu bhòtadh air <span>1</span> pròiseact"
+            two: "Faodaidh tu bhòtadh air suas ri <span>%{count}/span> phròiseact"
+            few: "Faodaidh tu bhòtadh air suas ri <span>%{count}/span> pròiseactan"
+            other: "Faodaidh tu bhòtadh air suas ri <span>%{count}/span> pròiseactan"
+        no_balloted_group_yet: "Chan eil thu air bhòtadh air a’ bhuidhinn seo fhathast, dèan cinnteach gum bhòt thu!"
+        remove: Thoir air falbh bhòt
+        remove_label: "Thoir air falbh do bhòt airson %{investment}"
+        voted:
+          one: "Tha thu air bhòtadh air <span>1</span> tasgadh."
+          two: "Tha thu air bhòtadh ann an <span>%{count}/span> thasgadh."
+          few: "Tha thu air bhòtadh ann an <span>%{count}/span> tasgaidhean."
+          other: "Tha thu air bhòtadh ann an <span>%{count}/span> tasgaidhean."
+        voted_info: "Chaidh do bhòt a dhearbhadh"
+        voted_info_2: "Ach faodaidh tu do bhòt atharrachadh uair sam bith gus an dùin an ìre seo."
+        zero: Cha do bhòt thu ann am pròiseact tasgaidh sam bith.
+      reasons_for_not_balloting:
+        not_verified: Chan fhaod ach cleachdaichean dearbhte bhòtadh air tasgaidhean; %{verify_account}.
+        not_selected: Chan urrainnear taic a thoirt do phròiseactan tasgaidh nach deach a thaghadh
+        not_enough_money: "Tha thu air am buidseat uile a tha ri fhaighinn a shònrachadh mar-thà.<br> <small>Cuimhnich gun urrainn dhut %{change_ballot} uair sam bith</small>"
+        no_ballots_allowed: Tha an ìre taghaidh dùinte
+        different_heading_assigned: "Tha thu air bhòtadh fo cheann-sgrìobhaidh eile mar-thà: %{heading_link}"
+        not_enough_available_votes: "Ràinig thu an àireamh as motha de bhòtaichean a tha ceadaichte"
+        change_ballot: atharraich do bhòtaichean
+        casted_offline: Tha thu air pàirt a ghabhail far loidhne mar-thà
+    groups:
+      show:
+        title: Tagh ceann-sgrìobhaidh
+    phase:
+      drafting: Dreach (Chan fhaic am poball seo)
+      informing: Fiosrachadh
+      accepting: A’ gabhail ri pròiseactan
+      reviewing: A’ dèanamh ath-sgrùdadh phròiseactan
+      selecting: A’ taghadh phròiseactan
+      valuating: A’ luachadh phròiseactan
+      publishing_prices: A’ foillseachadh prìsean a’ phròiseict
+      balloting: Pròiseactan bhòtaidh
+      reviewing_ballots: Ag ath-sgrùdadh air bhòtadh
+      finished: Buidseat crìochnaichte
+    index:
+      title: Buidseatan com-pàirteachail
+      empty_budgets: Chan eil buidseatan ann.
+      section_header:
+        icon_alt: Ìomhaigh nam buidseatan com-pàirteachail
+        title: Buidseatan Com-pàirteachail
+        help: Cuideachadh le buidseatan com-pàirteachail
+      all_phases: Ìrean nam buidseatan com-pàirteachail
+      next_phase: An ath ìre
+      prev_phase: An ìre mu dheireadh
+      current_phase: An ìre làithreach
+      map: Molaidhean tasgaidhean buidseit a rèir sgìre
+      finished_budgets: Buidseatan com-pàirteachail crìochnaichte
+      see_results: Faic na toraidhean
+      section_footer:
+        title: Cuideachadh le buidseatan com-pàirteachail
+        description: Leis na buidseatan com-pàirteachail bidh na saoranaich a’ co-dhùnadh dè na pròiseactan a tha gu bhith a’ faighinn pàirt den bhuidseit.
+      milestones: Clachan-mìle
+    investments:
+      form:
+        title: "Cruthaich tasgadh buidseit"
+        subtitle: "%{heading} (%{price})"
+        subtitle_without_price: "%{heading}"
+        tag_category_label: "Roinnean-seòrsa"
+        tags_instructions: "Tagaich am moladh seo. Faodaidh tu taghadh bho na roinnean a tha air am moladh no do thagaichean fhèin a chur ris"
+        tags_label: Tagaichean
+        tags_placeholder: "Cuir a-steach na tagaichean a bu toil leat cleachdadh, air an sgaradh le cromagan (',')"
+        map_location: "An t-àite air a’ mhapa"
+        map_location_instructions: "Rach dhan àite cheart air a’ mhapa agus cuir an comharra ann."
+      index:
+        title: Buidseatan com-pàirteachail
+        unfeasible: Pròiseactan tasgaidh nach eil comasach
+        unfeasible_text: "Feumaidh na tasgaidhean a bhith a rèir grunn shlatan-tomhais (dligheachd, a bhith practaigeach, gun a bhith a’ cosg barrachd na am buidseat ceadaichte) gus an tèid ainmeachadh gu bheil iad comasach dèanamh airson a dhol air adhart dhan bhòt dheireannach. Tha a h-uile tasgadh nach eil a’ coileanadh nan slatan-tomhais sin air an comharrachadh neo-chomasach dèanamh agus air fhoillseachadh san liosta a leanas, còmhla ri aithisg air carson a tha e neo-chomasach dèanamh."
+        by_heading: "Pròiseactan tasgaidh le sgòp: %{heading}"
+        search_form:
+          button: Lorg
+          placeholder: Lorg ann an pròiseactan tasgaidh.
+          title: Lorg
+        sidebar:
+          my_ballot: Mo bhaileat
+          voted_info:
+            knapsack:
+              one: "<strong>Bhòt thu airson aon mholadh a tha a’ cosg %{amount_spent}</strong>"
+              two: "<strong>Bhòt thu airson %{count} mholadh a tha a’ cosg %{amount_spent}</strong>"
+              few: "<strong>Bhòt thu airson %{count} molaidhean a tha a’ cosg %{amount_spent}</strong>"
+              other: "<strong>Bhòt thu airson %{count} molaidhean a tha a’ cosg %{amount_spent}</strong>"
+            approval:
+              one: "<strong>Bhòt thu air aon mholadh</strong>"
+              two: "<strong>Bhòt thu air %{count} mholadh</strong>"
+              few: "<strong>Bhòt thu air %{count} molaidhean</strong>"
+              other: "<strong>Bhòt thu air %{count} molaidhean</strong>"
+          change_vote_info:
+            knapsack: "Faodaidh tu %{link} aig àm sam bith gus %{phase_end_date}. Chan fheum thu an t-airgead air fad a tha ri fhaighinn a chosg."
+            approval: "Faodaidh tu %{link} aig àm sam bith gus %{phase_end_date}."
+          change_vote_link: "atharraich do bhòt"
+          different_heading_assigned: "Tha bhòtaichean gnìomhach agad fo cheann-sgrìobhaidh eile: %{heading_link}"
+          change_ballot: "Ma dh’atharraicheas tu do bheachd, faodaidh do do bhòtaichean a thoirt air falbh ann an %{check_ballot} agus tòiseachadh a-rithist."
+          check_ballot_link: "cuir a-steach mo bhaileat"
+          zero: Cha do bhòt thu ann am pròiseact tasgaidh sam bith sa bhuidhinn seo.
+          verified_only: "Gus tasgadh buidseit ùr a chruthachadh %{verify}."
+          create: "Cruthaich tasgadh buidseit"
+          not_logged_in: "Feumaidh tu %{sign_in} no %{sign_up} gus tasgadh buidseit ùr a chruthachadh."
+        filter: "A’ criathrachadh phròiseactan a rèir"
+        filters:
+          not_unfeasible: "Gnìomhach"
+          selected: "Gnìomhach"
+          unfeasible: "Nach eil comasach dèanamh"
+          unselected: "Cha deach a thaghadh airson a’ bhòt mu dheireadh"
+          winners: "Buannaichean"
+        orders:
+          random: air thuaiream
+          confidence_score: leis an rangachaidh as àirde
+          price: prìs
+      share:
+        message: "Chruthaich mi am pròiseact tasgaidh %{title} ann an %{handle}. Cruthaich pròiseact tasgaidh cuideachd!"
+      show:
+        author_deleted: Cleachdaiche air a sguabadh às
+        price_explanation: Mìneachadh air a’ phrìs
+        unfeasibility_explanation: Mìneachadh air carson nach eil e comasach
+        code: "Còd a’ phròiseact tasgaidh: <strong>%{code}</strong>"
+        location: "Àite: <strong>%{location}</strong>"
+        organization_name: "Air a mholadh às leth: <strong>%{name}</strong>"
+        share: Co-roinn
+        title: Pròiseactan tasgaidh
+        supports: Taic
+        votes: Bhòtan
+        price: Prìs
+        comments_tab: Beachdan
+        milestones_tab: Clachan-mìle
+        author: Ùghdar
+        project_unfeasible: "Chaidh comharrachadh nach eil am pròiseact tasgaidh seo <strong>comasach dèanamh</strong> agus cha tèid e dhan ìre bhòtaidh."
+        project_selected: "Chaidh am pròiseact tasgaidh seo <strong>a thaghadh</strong> airson ìre a’ bhaileit."
+        project_winner: "Am pròiseact a bhuannaich"
+        project_not_selected: "Cha deach am pròiseact tasgaidh seo <strong>a thaghadh</strong> airson ìre a’ bhaileit."
+        see_price_explanation: Faic mìneachadh air a’ phrìs
+      wrong_price_format: Aireamhan integer a-mhàin
+      investment:
+        add: Bhòt
+        add_label: "Bhòt %{investment}"
+        already_added: Chuir thu am pròiseact tasgaidh seo ris mar-thà
+        support_title: Thoir taic dhan phròiseact seo
+        supports:
+          zero: Gun luchd-taic
+          one: 1 chomharra taic
+          two: "%{count} chomharra taic"
+          few: "%{count} comharraidhean taic"
+          other: "%{count} comharraidhean taic"
+      header:
+        check_ballot: "Cuir a-steach mo bhaileat"
+        different_heading_assigned: "Tha bhòtaichean gnìomhach agad fo cheann eile: %{heading_link}"
+        change_ballot: "Ma dh’atharraicheas tu do bheachd, faodaidh tu do bhòtaichean a thoirt air falbh ann an %{check_ballot} agus tòiseachadh a-rithist."
+        check_ballot_link: "cuir a-steach mo bhaileat"
+        price: "Buidseat iomlan"
+      votes:
+        already_supported: "Tha thu air taic a thoirt dhan phròiseact seo mar-thà. Co-roinn e!"
+        confirm_group:
+          one: "Chan urrainn dhut taic a thoirt do thasgaidhean ach a-mhàin ann an %{count} sgìre. Ma leanas tu air adhart chan urrainn dhut buaidh a thoirt air an taghadh san sgìre agad. A bheil thu cinnteach?"
+          two: "Chan urrainn dhut taic a thoirt do thasgaidhean ach a-mhàin ann an %{count} sgìre. Ma leanas tu air adhart chan urrainn dhut buaidh a thoirt air an taghadh san sgìre agad. A bheil thu cinnteach?"
+          few: "Chan urrainn dhut taic a thoirt do thasgaidhean ach a-mhàin ann an %{count} sgìrean. Ma leanas tu air adhart chan urrainn dhut buaidh a thoirt air an taghadh san sgìre agad. A bheil thu cinnteach?"
+          other: "Chan urrainn dhut taic a thoirt do thasgaidhean ach a-mhàin ann an %{count} sgìrean. Ma leanas tu air adhart chan urrainn dhut buaidh a thoirt air an taghadh san sgìre agad. A bheil thu cinnteach?"
+        remove_support: "Thoirt air falbh do thaic"
+        remove_support_label: "Thoir air falbh do taic bho %{investment}"
+        support: "Taic"
+        support_label: "Taic %{investment}"
+    investments_list:
+      investment:
+        price: "Prìs"
+        read_more: "Leugh barrachd"
+        supports: "Taic"
+      see_all: "Faic a h-uile tasgadh"
+      title: "Liosta de na tasgaidhean"
+    show:
+      see_results: Faic na toraidhean
+    supports_info:
+      different: "Faodaidh tu taic a thoirt dhan uimhir de dhiofar phròiseactan ’s a thogras tu."
+      next: "Thoir taic ris na pròiseactan a bu toil leat a bhith a’ gluasad air adhart chun na h-ath ìre."
+      scrolling: "Cùm ort a’ sgroladh gus na beachdan uile fhaicinn"
+      share: "Faodaidh tu fios a sgaoileadh mu na pròiseactan dhan tug thu taic tro na meadhanan sòisealta agus barrachd aire agus taic a tharraing thuca!"
+      supported:
+        one: "Tha thu air taic a chumail ri <strong> 1 phròiseact</strong> gu ruige seo."
+        two: "Tha thu air taic a chumail ri <strong>%{count} phròiseact</strong> gu ruige seo."
+        few: "Tha thu air taic a chumail ri <strong>%{count} pròiseactan</strong> gu ruige seo."
+        other: "Tha thu air taic a chumail ri <strong>%{count} pròiseactan</strong> gu ruige seo."
+      supported_not_logged_in: "Clàraich gus tòiseachadh air <strong>taic a thoirt do phròiseactan</strong>."
+      time: "Tha ùine ann fhathast gus %{phase_end_date} gus taic a chumail ri pròiseactan."
+      title: "Tha an t­àm ann <strong>taic</strong>  a thoirt do phròiseactan!"
+    results:
+      link: Toraidhean
+      page_title: "%{budget} - Toraidhean"
+      heading: "Toraidhean buidseatan com-pàirteachail"
+      heading_selection_title: "A rèir sgìre"
+      ballot_lines_count: Bhòtan
+      hide_discarded_link: Falaich na chaidh a thilgeil air falbh
+      show_all_link: Seall na h-uile
+      price: Prìs
+      amount_available: Buidseit ri fhaighinn
+      accepted: "Tasgadh a chaidh a ghabhail ris: "
+      discarded: "Tasgadh nach deach a ghabhail ris: "
+      incompatibles: Nithean nach eil co-chòrdail
+      investment_title: Tiotal a’ phròiseict
+      investment_proyects: Liosta de na pròiseactan tasgaidh uile
+      unfeasible_investment_proyects: Liosta de na pròiseactan nach eil comasach
+      not_selected_investment_proyects: Liosta de na pròiseactan tasgaidh nach deach a thaghadh airson baileat
+    executions:
+      link: "Clachan-mìle"
+      page_title: "%{buidseat} - Clachan-mhìle"
+      heading: "Chlachan-mìle buidseatadh com-pàirteachail"
+      heading_selection_title: "A rèir sgìre"
+      no_winner_investments: "Cha do bhuannaich tasgadh sam bith san stàit seo."
+      filters:
+        status:
+          label: "Inbhe làithreach a’ phròiseict"
+          all: "Uile (%{count})"
+        milestone_tag:
+          label: "Taga clach-mhìle"
+          all: "Uile (%{count})"
+    phases:
+      errors:
+        dates_range_invalid: "Chan fhaod an latha tòiseachaidh a bhith co-ionann ri, no às dèidh an latha crìochnachaidh"
+        prev_phase_dates_invalid: "Feumaidh an ceann-latha tòiseachaidh a bhith às dèidh a’ chinn-latha tòiseachaidh airson na h-ìre a chaidh a chur an comas roimhe (%{phase_name})"
+        next_phase_dates_invalid: "Feumaidh an ceann-latha crìochnachaidh a bhith ron cheann-latha crìochnachaidh den ath cheum a tha an comas (%{phase_name})"

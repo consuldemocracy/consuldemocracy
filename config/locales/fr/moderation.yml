@@ -1,5 +1,7 @@
 fr:
   moderation:
+    actions:
+      confirm_action: "Etes vous sur? %{action}"
     comments:
       index:
         block_authors: Bloquer un auteur
@@ -99,7 +101,11 @@ fr:
         title: Notifications des propositions
     users:
       index:
-        hide: Bloquer
+        block: Bloqué
+        confirm_block: "Êtes-vous sûr ? Cela masquera \"%{name}\" ainsi que tout son contenu."
+        confirm_hide: "Êtes-vous sûr ? Cela masquera \"%{name}\" sans masquer son contenu."
+        hide: masquer
         search_placeholder: courriel ou nom de l'utilisateur
         title: Bloquer les utilisateurs
+      notice_block: utilisateur bloqué. Tout son contenu et ses commentaires ont été masqués.
       notice_hide: Utilisateur bloqué. Tous les débats et les propositions de cet utilisateur ont été masqués.

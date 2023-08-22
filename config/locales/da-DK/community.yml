@@ -25,10 +25,6 @@ da:
       topic:
         edit: Rediger emne
         destroy: Fjern emne
-        comments:
-          zero: Ingen kommentarer
-          one: 1 kommentar
-          other: "%{count} kommentarer"
       author: Oprettet af
       back: Tilbage til %{community} %{proposal}
     topic:

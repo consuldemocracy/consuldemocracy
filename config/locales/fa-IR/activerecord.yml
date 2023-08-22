@@ -72,8 +72,8 @@ fa:
         one: صفحات سفارشی
         other: صفحات سفارشی
       site_customization/content_block:
-        one: محتوای بلوک سفارشی 
-        other: محتوای بلوکهای سفارشی 
+        one: محتوای بلوک سفارشی
+        other: محتوای بلوکهای سفارشی
       document:
         one: سند
         other: اسناد
@@ -274,7 +274,7 @@ fa:
         title: عنوان
         updated_at: "ایجاد شده در\n"
         more_info_flag: نمایش در صفحه راهنما
-        print_content_flag: چاپ محتوا 
+        print_content_flag: چاپ محتوا
         locale: زبان
       site_customization/page/translation:
         title: عنوان
@@ -357,7 +357,7 @@ fa:
         description: توضیحات
       poll/question/answer/translation:
         title: پاسخ
-        description: توضیحات
+        description: "توضیحات"
       poll/question/answer/video:
         title: عنوان
         url: ویدیوهای خارجی

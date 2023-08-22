@@ -1,0 +1,111 @@
+ne:
+  moderation:
+    actions:
+      confirm_action: "के तपाईँ निश्चित हुनु हुन्छ? %{action}"
+    comments:
+      index:
+        block_authors: लेखकहरूलाई ब्लक गर्नुहोस्
+        filter: फिल्टर
+        filters:
+          all: सबै
+          pending_flag_review: विचाराधीन
+          with_ignored_flag: हेरिएको भनी चिन्ह लगाइयो
+        headers:
+          comment: टिप्पणी
+          moderate: मध्यस्थकर्ता
+        hide: लुकाइएका टिप्पणीहरू
+        ignore_flags: हेरिएको रूपमा चिन्ह लगाउनुहोस्
+        orders:
+          flags: सबैभन्दा बढी झण्डा लगाइयो
+          newest: नवीनतम
+        title: टिप्पणीहरू
+    dashboard:
+      index:
+        title: मध्यस्थता
+    debates:
+      index:
+        block_authors: लेखकहरूलाई ब्लक गर्नुहोस्
+        filter: फिल्टर
+        filters:
+          all: सबै
+          pending_flag_review: विचाराधीन
+          with_ignored_flag: हेरिएको भनी चिन्ह लगाइयो
+        headers:
+          debate: बहस
+          moderate: मध्यस्थकर्ता
+        hide: लुकेका बहसहरू
+        ignore_flags: हेरिएको रूपमा चिन्ह लगाउनुहोस्
+        orders:
+          created_at: नवीनतम
+          flags: सबैभन्दा बढी झण्डा लगाइयो
+        title: बहसहरू
+    header:
+      title: मध्यस्थता
+    menu:
+      flagged_comments: टिप्पणीहरू
+      flagged_debates: बहसहरू
+      flagged_investments: बजेट लगानी
+      proposals: प्रस्तावहरू
+      proposal_notifications: प्रस्ताव सूचनाहरू
+      users: प्रयोगकर्ताहरूलाई रोक्नुहोस्
+    proposals:
+      index:
+        block_authors: लेखकहरूलाई ब्लक गर्नुहोस्
+        filter: फिल्टर
+        filters:
+          all: सबै
+          pending_flag_review: विचाराधीन समीक्षा
+          with_ignored_flag: हेरिएको रूपमा चिन्ह लगाउनुहोस्
+        headers:
+          moderate: मध्यस्थता
+          proposal: प्रस्ताव
+        hide: लुकाइएका प्रस्तावहरू
+        ignore_flags: हेरिएको रूपमा चिन्ह लगाउनुहोस्
+        orders:
+          created_at: भर्खरको
+          flags: सबैभन्दा बढी झण्डा लगाइयो
+        title: प्रस्तावहरू
+    budget_investments:
+      index:
+        block_authors: लेखकहरूलाई ब्लक गर्नुहोस्
+        filter: फिल्टर
+        filters:
+          all: सबै
+          pending_flag_review: विचाराधीन
+          with_ignored_flag: हेरिएको भनी चिन्ह लगाइयो
+        headers:
+          moderate: मध्यस्थता
+          budget_investment: बजेट लगानी
+        hide: लुकाइएको बजेट लगानीहरू
+        ignore_flags: हेरिएको रूपमा चिन्ह लगाउनुहोस्
+        orders:
+          created_at: भर्खरको
+          flags: सबैभन्दा बढी झण्डा लगाइयो
+        title: बजेट लगानी
+    proposal_notifications:
+      index:
+        block_authors: लेखकहरूलाई ब्लक गर्नुहोस्
+        filter: फिल्टर
+        filters:
+          all: सबै
+          pending_review: विचाराधीन समीक्षा
+          ignored: हेरिएको रूपमा चिन्ह लगाउनुहोस्
+        headers:
+          moderate: मध्यस्थता
+          proposal_notification: प्रस्ताव सूचना
+        hide: लुकाइएका प्रस्तावहरू
+        ignore_flags: हेरिएको रूपमा चिन्ह लगाउनुहोस्
+        orders:
+          created_at: भर्खरको
+          moderated: मध्यस्थ
+        title: प्रस्तावका सूचनाहरू
+    users:
+      index:
+        block: अवरुद्ध गरियो
+        confirm_block: "के तपाईँ निश्चित हुनुहुन्छ? यसले प्रयोगकर्ता \"%{name}\" र तिनीहरूका सबै सामग्रीहरू लुकाउनेछ।"
+        confirm_hide: "के तपाईँ निश्चित हुनुहुन्छ? यसले प्रयोगकर्ता \"%{name}\" लाई तिनीहरूको सामग्री लुकाउन नदिई लुकाउनेछ।"
+        hide: लुकाउनुहोस्
+        search_placeholder: इमेल वा प्रयोगकर्ताको नाम
+        title: प्रयोगकर्ताहरूलाई रोक्नुहोस्
+      notice_block: प्रयोगकर्तालाई रोक लगाइएको छ। यस प्रयोगकर्ताद्वारा लेखिएका सबै सामग्रीहरू लुकाइएको छ।
+      notice_hide: प्रयोगकर्ता लुकाइएको छ। यस प्रयोगकर्ताद्वारा लेखिएका सामग्रीहरू अझै उपलब्ध छन्।

@@ -95,7 +95,7 @@ module Statisticable
   end
 
   def participants_by_age
-    age_groups.map do |start, finish|
+    age_groups.to_h do |start, finish|
       count = participants.between_ages(start, finish).count
 
       [
@@ -106,11 +106,11 @@ module Statisticable
           percentage: calculate_percentage(count, total_participants)
         }
       ]
-    end.to_h
+    end
   end
 
   def participants_by_geozone
-    geozone_stats.map do |stats|
+    geozone_stats.to_h do |stats|
       [
         stats.name,
         {
@@ -118,7 +118,7 @@ module Statisticable
           percentage: stats.percentage
         }
       ]
-    end.to_h
+    end
   end
 
   def calculate_percentage(fraction, total)

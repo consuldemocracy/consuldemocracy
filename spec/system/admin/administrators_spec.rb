@@ -36,7 +36,7 @@ describe "Admin administrators" do
     visit admin_administrators_path
 
     confirmation = "Are you sure? This action will delete "\
-      "\"#{user_administrator.name}\" and can't be undone."
+                   "\"#{user_administrator.name}\" and can't be undone."
 
     within "#administrator_#{user_administrator.id}" do
       accept_confirm(confirmation) { click_button "Delete" }

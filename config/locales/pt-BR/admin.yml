@@ -1002,9 +1002,6 @@ pt-BR:
         table_title: "Título"
         edit_answers: Editar respostas
         see_proposal: "(Ver proposta)"
-      flash:
-        question_added: "Perguntas adicionadas a essa votação"
-        error_on_question_added: "Pergunta não pode ser atribuída a essa votação"
       destroy:
         alert: "Esta ação excluirá a votação e todas as perguntas associadas a ela."
         success_notice: "Votação excluída com sucesso"
@@ -1054,12 +1051,6 @@ pt-BR:
     answers:
       new:
         title: Nova resposta
-      show:
-        title: Título
-        description: Descrição
-        images: Imagens
-        images_list: Lista de imagens
-        edit: Editar resposta
       edit:
         title: Editar resposta
       videos:
@@ -1498,7 +1489,7 @@ pt-BR:
           see_page: Exibir página
         new:
           title: Criar nova página personalizada
-          slug_help: "Texto que identifica esta página no URL, por exemplo <code>https://consulproject.org/page-slug</code>"
+          slug_help: "Texto que identifica esta página no URL, por exemplo <code>https://consuldemocracy.org/page-slug</code>"
         page:
           created_at: Criado em
           status: Status

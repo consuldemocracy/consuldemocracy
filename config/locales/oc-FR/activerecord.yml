@@ -421,7 +421,7 @@ oc:
         description: Descripcion detalhada
       poll/question/answer/translation:
         title: Responsa
-        description: Descripcion detalhada
+        description: "Descripcion detalhada"
       poll/question/answer/video:
         title: Títol
         url: Vidèo extèrne

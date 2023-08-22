@@ -56,6 +56,7 @@ de:
           spanish_id: Personalausweis
         error_not_allowed_age: Sie erfüllen nicht das erforderliche Alter um teilnehmenzu können
         error_not_allowed_postal_code: Für die Verifizierung müssen Sie registriert sein.
+        error_verifying_census: Die Volkszählung konnte Ihre Angaben nicht verifizieren. Bitte vergewissern Sie sich, dass Ihre Zensusdaten korrekt sind, indem Sie bei der Stadtverwaltung anrufen oder ein Bürgerbüro aufsuchen.
         form_errors: haben die Überprüfung Ihres Wohnsitzes verhindert
         postal_code_note: Um Ihr Benutzerkonto zu verifizieren, müssen Sie registriert sein
         terms: Allgemeine Nutzungsbedingungen
@@ -91,6 +92,7 @@ de:
     user_permission_proposal: Neue Vorschläge erstellen
     user_permission_support_proposal: Vorschläge unterstützen*
     user_permission_votes: An finaler Abstimmung teilnehmen*
+    verification_needed: Zusätzliche Überprüfung erforderlich.
     verified_user:
       form:
         submit_button: Code senden

@@ -9,19 +9,19 @@ sl:
       - Pet
       - Sob
     abbr_month_names:
-      - 
-      - Jan
-      - Feb
-      - Mar
-      - Apr
+      -
+      -
+      -
+      -
+      -
       - Maj
-      - Jun
-      - Jul
+      -
+      -
       - Avg
-      - Sep
+      -
       - Okt
-      - Nov
-      - Dec
+      -
+      -
     day_names:
       - Nedelja
       - Ponedeljek
@@ -31,19 +31,19 @@ sl:
       - Petek
       - Sobota
     month_names:
-      - 
+      -
       - Januar
       - Februar
       - Marec
-      - April
+      -
       - Maj
       - Junij
       - Julij
       - Avgust
-      - September
+      -
       - Oktober
-      - November
-      - December
+      -
+      -
   datetime:
     distance_in_words:
       half_a_minute: pol minute
@@ -87,6 +87,13 @@ sl:
       submit: Shrani %{model}
       update: Posodobi %{model}
   number:
+    currency:
+      format:
+        significant: false
+        strip_insignificant_zeros: false
+    format:
+      significant: false
+      strip_insignificant_zeros: false
     human:
       decimal_units:
         units:

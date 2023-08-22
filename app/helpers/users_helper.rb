@@ -35,34 +35,10 @@ module UsersHelper
     end
   end
 
-  def current_administrator?
-    current_user&.administrator?
-  end
-
-  def current_moderator?
-    current_user&.moderator?
-  end
-
-  def current_valuator?
-    current_user&.valuator?
-  end
-
-  def current_manager?
-    current_user&.manager?
-  end
-
-  def current_sdg_manager?
-    current_user&.sdg_manager?
-  end
-
-  def current_poll_officer?
-    current_user&.poll_officer?
-  end
-
-  def show_admin_menu?(user = nil)
+  def show_admin_menu?(user)
     unless namespace == "officing"
-      current_administrator? || current_moderator? || current_valuator? || current_manager? ||
-        user&.administrator? || current_poll_officer? || current_sdg_manager?
+      user&.administrator? || user&.moderator? || user&.valuator? ||
+        (user&.manager? && namespace != "management") || user&.poll_officer? || user&.sdg_manager?
     end
   end
 

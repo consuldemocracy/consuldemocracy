@@ -23,6 +23,16 @@
       });
       $(".js-calendar-full").datepicker();
 
+      if (!App.Datepicker.browser_supports_datetime_local_field()) {
+        if (App.Datepicker.browser_supports_date_field()) {
+          $("input[type='datetime-local']").prop("type", "text")
+            .val(App.Datepicker.datetime_to_date)
+            .prop("type", "date");
+        } else {
+          $("input[type='datetime-local']").val(App.Datepicker.datetime_to_date).datepicker();
+        }
+      }
+
       if (!App.Datepicker.browser_supports_date_field()) {
         $("input[type='date']").datepicker();
       }
@@ -39,11 +49,20 @@
       });
     },
     browser_supports_date_field: function() {
-      var datefield;
+      return App.Datepicker.browser_supports_field_with_type("date");
+    },
+    browser_supports_datetime_local_field: function() {
+      return App.Datepicker.browser_supports_field_with_type("datetime-local");
+    },
+    browser_supports_field_with_type: function(field_type) {
+      var field;
 
-      datefield = document.createElement("input");
-      datefield.setAttribute("type", "date");
-      return datefield.type === "date";
+      field = document.createElement("input");
+      field.setAttribute("type", field_type);
+      return field.type === field_type;
+    },
+    datetime_to_date: function(index, value) {
+      return value.split("T")[0];
     }
   };
 

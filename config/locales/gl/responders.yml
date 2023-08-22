@@ -31,7 +31,6 @@ gl:
         translation: "A traducción actualizouse correctamente"
       destroy:
         budget_investment: "O proxecto de investimento actualizouse correctamente."
-        error: "Non se puido eliminar"
         topic: "O tema borrouse correctamente."
         poll_question_answer_video: "O vídeo borrouse correctamente."
         valuator_group: "O grupo de avaliadores eliminouse correctamente"

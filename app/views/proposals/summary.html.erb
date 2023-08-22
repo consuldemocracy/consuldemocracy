@@ -46,7 +46,7 @@
         <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: "button radius expand" %>
         <%= render "shared/tag_cloud", taggable: "Proposal" %>
         <%= render "categories" %>
-        <%= render "geozones" %>
+        <%= render Proposals::GeozonesComponent.new %>
       </aside>
     </div>
   </div>

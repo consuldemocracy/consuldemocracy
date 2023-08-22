@@ -25,12 +25,6 @@ pl:
       topic:
         edit: Edytuj temat
         destroy: Zniszcz temat
-        comments:
-          zero: Brak komentarzy
-          one: 1 komentarz
-          few: "%{count} komentarzy"
-          many: "%{count} komentarzy"
-          other: "%{count} komentarzy"
       author: Autor
       back: Powrót do %{community} %{proposal}
     topic:

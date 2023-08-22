@@ -25,9 +25,6 @@ zh-TW:
       topic:
         edit: 編輯主題
         destroy: 銷毀主題
-        comments:
-          zero: 沒有評論
-          other: "%{count} 個評論"
       author: 作者
       back: 返回 %{community} %{proposal}
     topic:

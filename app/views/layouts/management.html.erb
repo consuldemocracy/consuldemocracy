@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html <%= "dir=rtl" if rtl? %> lang="<%= I18n.locale %>">
-
+<html <%= common_html_attributes %>>
   <head>
     <%= render "layouts/common_head", default_title: "Management" %>
     <%= stylesheet_link_tag "print", media: "print" %>
@@ -8,7 +7,7 @@
   </head>
 
   <body class="admin">
-    <%= render "layouts/admin_header", current_user: manager_logged_in %>
+    <%= render Layout::AdminHeaderComponent.new(manager_logged_in) %>
 
     <div class="menu-and-content">
       <%= check_box_tag :show_menu, nil, false, role: "switch" %>

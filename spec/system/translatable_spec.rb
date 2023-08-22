@@ -178,9 +178,9 @@ describe "Public area translatable records" do
     before { translatable.update(attributes.merge(author: user)) }
 
     let(:attributes) do
-      translatable.translated_attribute_names.product(%i[en es]).map do |field, locale|
+      translatable.translated_attribute_names.product(%i[en es]).to_h do |field, locale|
         [:"#{field}_#{locale}", text_for(field, locale)]
-      end.to_h
+      end
     end
 
     context "Update a translation" do

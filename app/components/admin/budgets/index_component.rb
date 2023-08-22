@@ -37,11 +37,11 @@ class Admin::Budgets::IndexComponent < ApplicationComponent
     end
 
     def dates(budget)
-      Admin::Budgets::DurationComponent.new(budget).dates
+      render Admin::DurationComponent.new(budget)
     end
 
     def duration(budget)
-      Admin::Budgets::DurationComponent.new(budget).duration
+      render Admin::Budgets::DurationInWordsComponent.new(budget)
     end
 
     def status_html_class(budget)

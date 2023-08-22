@@ -369,13 +369,13 @@ describe "Admin budgets", :admin do
       expect(page).to have_content("Main call to action (optional)")
 
       fill_in "Text on the link", with: "Participate now"
-      fill_in "The link takes you to (add a link)", with: "https://consulproject.org"
+      fill_in "The link takes you to (add a link)", with: "https://consuldemocracy.org"
       click_button "Update Budget"
 
       expect(page).to have_content "Participatory budget updated successfully"
 
       visit budgets_path
-      expect(page).to have_link("Participate now", href: "https://consulproject.org")
+      expect(page).to have_link("Participate now", href: "https://consuldemocracy.org")
     end
 
     scenario "Changing name for current locale will update the slug if budget is in draft phase" do

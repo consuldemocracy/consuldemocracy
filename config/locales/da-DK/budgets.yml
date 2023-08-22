@@ -82,7 +82,6 @@ da:
         tags_placeholder: "Tilføj de tags du gerne vil anvende og adskil dem med komma (',')"
         map_location: "Lokation"
         map_location_instructions: "Naviger kortet til den rette lokation og placer markøren."
-        map_remove_marker: "Fjern markøren"
       index:
         title: Deltagerbudgetter
         unfeasible: Projekter, der ikke er mulige at gennemføre
@@ -205,7 +204,7 @@ da:
       incompatibles: Uforeneligede
       investment_title: Titel på forslag
       investment_proyects: Alle forslag
-      unfeasible_investment_proyects: Projekter, der ikke kan gennemføres 
+      unfeasible_investment_proyects: Projekter, der ikke kan gennemføres
       not_selected_investment_proyects: Projekter, der ikke er udvalgt til afstemning
     executions:
       link: "Følg projekterne"
