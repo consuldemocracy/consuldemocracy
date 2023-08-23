@@ -35,7 +35,7 @@ cs:
     document_verifications:
       already_verified: Tento uživatelský účet je již ověřen.
       has_no_account: Chcete-li si vytvořit účet, přejděte na %{link} a klikněte na <b>"Registovat"</b> v levé horní části obrazovky.
-      link: CONSUL
+      link: CONSUL DEMOCRACY
       in_census_has_following_permissions: "Tento uživatel se může zapojovat s následujícími oprávněními:"
       not_in_census: Tento doklad není registrován.
       not_in_census_info: "Občané neověření v základních registrech se mohou zapojovat s následujícími oprávněními:"

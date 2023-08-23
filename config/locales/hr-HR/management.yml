@@ -35,7 +35,7 @@ hr:
     document_verifications:
       already_verified: Ovaj korisnički račun je već potvrđen.
       has_no_account: Da biste otvorili račun, idite na %{link} i kliknite na <b>"Registracija"</b> u gornjem lijevom uglu ekrana.
-      link: CONSUL
+      link: CONSUL DEMOCRACY
       in_census_has_following_permissions: "Korisnik može sudjelovati na web sjedištu sa sljedećim dozvolama:"
       not_in_census: Dokument nije registriran.
       not_in_census_info: "Građani koji nisu u Cenzusu mogu sudjelovati na web sjedištu sa sljedećim dozvolama:"

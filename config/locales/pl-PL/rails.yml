@@ -227,5 +227,6 @@ pl:
       default: "%a, %d %b %Y %H:%M:%S %Z"
       long: "%d %B %Y %H:%M"
       short: "%d %b %H:%M"
+      short_datetime: "%Y-%m-%d %H:%M"
       api: "%d-%m-%Y %H"
     pm: po południu

@@ -35,7 +35,7 @@ it:
     document_verifications:
       already_verified: Questo account utente è già verificato.
       has_no_account: Per poter creare un profilo, vai su %{link} e clicca su <b>"Registrati"</b> nella parte superiore sinistra dello schermo.
-      link: CONSUL
+      link: CONSUL DEMOCRACY
       in_census_has_following_permissions: "Questo utente può partecipare con le seguenti autorizzazioni:"
       not_in_census: Questo documento non è registrato.
       not_in_census_info: "I cittadini non residenti possono partecipare con le seguenti autorizzazioni:"

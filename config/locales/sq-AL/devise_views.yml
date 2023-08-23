@@ -103,7 +103,6 @@ sq:
           submit: Rregjistrohu
           terms: Duke u regjistruar ju pranoni %{terms}
           terms_link: termat dhe kushtet e përdorimit
-          terms_title: Duke regjistruar ju pranoni afatet dhe kushtet e përdorimit
           title: Rregjistrohu
           username_is_available: Emri  përdoruesit në dispozicion
           username_is_not_available: Emri i përdoruesit është i zënë

@@ -153,7 +153,6 @@ gd:
         poll_ended: "Cha ghabh seo atharrachadh ma tha bhòtadh air tighinn gu crìch mar-thà"
   form:
     accept_terms: Tha mi ag aontachadh ri %{policy} is ris na %{conditions}
-    accept_terms_title: Tha mi ag aontachadh ris a’ Phoileasaidh Prìobhaideachd agus ris na Teirmichean is cumhaichean cleachdaidh
     conditions: Teirmichean is cumhaichean cleachdaidh
     debate: Deasbad
     direct_message: teachdaireachd phrìobhaideach
@@ -187,11 +186,6 @@ gd:
   geozones:
     none: Am baile air fad
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Tha sinn a’ faicinn gu bheil thu a’ cleachdadh Internet Explorer. Mholamaid gun cleachd thu %{firefox} no %{chrome}.
-      ie_title: Chan eil an làrach-lìn seo air a phiseachadh airson do bhrabhsair
     dashboard:
       proposal_header:
         published: Foillsichte
@@ -212,9 +206,9 @@ gd:
     footer:
       accessibility: So-ruigsinneachd
       conditions: Teirmichean is cumhaichean cleachdaidh
-      consul: aplacaid CONSUL
+      consul: aplacaid CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Cleachdaidh am portal seo an %{consul} a tha na ghoireas %{open_source}.
       open_source: bathar-bog le còd fosgailte
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html

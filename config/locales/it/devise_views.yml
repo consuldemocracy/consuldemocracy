@@ -103,7 +103,6 @@ it:
           submit: Registrarsi
           terms: Registrandoti accetti %{terms}
           terms_link: termini e condizioni d'uso
-          terms_title: Registrandoti accetti i termini e le condizioni d'uso
           title: Registrarsi
           username_is_available: Nome utente disponibile
           username_is_not_available: Nome utente già in uso

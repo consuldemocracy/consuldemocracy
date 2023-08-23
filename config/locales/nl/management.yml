@@ -34,7 +34,7 @@ nl:
         info: Hier kunt u gebruikers beheren via alle acties die in het linkermenu zijn vermeld.
     document_verifications:
       already_verified: Dit gebruikersaccount is al geverifieerd.
-      link: Consul
+      link: CONSUL DEMOCRACY
       in_census_has_following_permissions: "Deze gebruiker kan deelnemen aan de website met de volgende permissies:"
       not_in_census: This document is not registered.
       not_in_census_info: "Burgers niet in de volkstelling kunnen deelnemen aan de website met de volgende permissies:"

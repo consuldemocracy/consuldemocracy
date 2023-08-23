@@ -430,7 +430,6 @@ he:
         title: "מסמכים"
         format: "תצורה"
         size: "גודל"
-        url: "קישור"
       create:
         success_notice: "המסמך הועלה בהצלחה"
         unable_notice: "מסמך לא תקין"

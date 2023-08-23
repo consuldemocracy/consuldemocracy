@@ -84,7 +84,7 @@ nl:
         map_location_instructions: "Beweeg de kaart en wijs de locatie aan"
       index:
         title: Burgerbegrotingen
-        unfeasible: Unfeasible investment projects
+        unfeasible: Onhaalbare voorstellen
         unfeasible_text: "De voorstellen moeten aan een aantal criteria (leesbaarheid, concreetheid, de gemeente is er op aanspreekbaar, binnen het budget) voldoen om 'haalbaar' te worden geacht en in stemming te kunnen worden gebracht. Voorstellen die hierbuiten vallen worden als 'onhaalbaar' aangemerkt en in de volgende lijst gepubliceerd, met de reden van onhaalbaarheid."
         by_heading: "Begrotingsvoorstellen in de context van: %{heading}"
         search_form:
@@ -106,7 +106,7 @@ nl:
           change_vote_link: "je stem wijzigen"
           different_heading_assigned: "Je steunt al in een ander onderdeel van het voorstel: %{heading_link}"
           change_ballot: "Als u zich bedenkt kunt uw uw stemmen in %{check_ballot} verwijderen opnieuw beginnen."
-          check_ballot_link: "verstuur mijn stemmen"
+          check_ballot_link: "check mijn stemming"
           zero: U hebt op geen enkel begrotingsvoorstel gestemd.
           verified_only: "%{verify} je account om een nieuw begrotingsvoorstel te doen."
           create: "Nieuw begrotingsvoorstel maken"

@@ -633,7 +633,7 @@ gd:
       help:
         title: "Dè na h-Amasan Leasachaidh Seasmhach agus de na targaidean a tha co-shìnte ris an %{record} agam?"
         text: "Duilleag cobhair mu na h-Amasan Leasachaidh Seasmhach"
-      hint: Faodaidh tu còd a chur ann airson amas/targaid sònraichte no teacsa gus an lorg. Tadhail air %{ link} airson barrachd fiosrachaidh.
+      hint: Faodaidh tu còd a chur ann airson amas/targaid sònraichte no teacsa gus an lorg. Tadhail air %{link} airson barrachd fiosrachaidh.
       remove_tag: "Thoir air falbh"
       title: "Amasan agus Targaidean Leasachaidh Seasmhach"
     targets:

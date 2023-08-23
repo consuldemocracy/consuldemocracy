@@ -46,7 +46,6 @@ ka:
           success: საცხოვრებელი ადგილი დადასტურებულია
       new:
         accept_terms_text: მე ვეთანხმები აღწერის %{terms_url}
-        accept_terms_text_title: მე ვეთანხმები აღწერის წვდომის წესებსა და პირობებს
         document_number: დოკუმენტის ნომერი
         document_number_help_title: დახმარება
         document_number_help_text: "<strong>DNI</strong>: 12345678A<br> <strong>პასპორტი</strong>: AAA000001<br> <strong>ბინადრობის მოწმობა</strong>: X1234567P"

@@ -103,7 +103,6 @@ pt-BR:
           submit: Registre-se
           terms: Ao registrar-se você aceita os%{terms}
           terms_link: termos e condições de uso
-          terms_title: Ao se registrar você aceita os termos e condições de uso
           title: Registre-se
           username_is_available: Nome de usuário disponível
           username_is_not_available: Nome de usuário já está em uso

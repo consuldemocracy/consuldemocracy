@@ -7,7 +7,7 @@ nl:
       new_password: "Als je je wachtwoord vergeten bent, kan je het opnieuw instellen met de volgende link:"
       subject: Je account is al bevestigd
     comment:
-      hi: Hoi
+      hi: Hi
       new_comment_by: There is a new comment from <strong>%{commenter}</strong>
       subject: Iemand heeft een reactie achtergelaten op %{commentable}
       title: Nieuwe reactie
@@ -18,9 +18,9 @@ nl:
       click_here_to_verify: deze link
       instructions_2: Deze e-mail verifieert uw account met %{document_type} %{document_number}. Als deze email niet voor u bestemd is, klik dan niet op de link en negeer deze e-mail.
       instructions: Om de verificatie van uw account te voltooien klikt u %{verification_link}.
-      subject: Bevestig je emailadres
+      subject: Bevestig je e-mailadres
       thanks: Heel erg bedankt.
-      title: "Bevestig je emailadres"
+      title: "Bevestig je e-mailadres"
       text: "Bevestig je account met de volgende link."
     reply:
       hi: Hoi
@@ -67,15 +67,15 @@ nl:
       sorry: "Sorry voor het ongemak en nogmaals hartelijk dank voor uw waardevolle deelname."
       subject: "Uw investeringsproject '%{code}' is als onhaalbaar gemarkeerd"
     budget_investment_selected:
-      subject: "Uw budget voorstel '%{code}' is geselecteerd"
-      title: "Je investeringsproject is geselecteerd"
+      subject: "Je voorstel '%{code}' is geselecteerd"
+      title: "Je voorstel is geselecteerd"
       hi: "Beste deelnemer,"
       share: "Begin met het verwerven van stemmen; deel uw project op sociale netwerken, bijvoorbeeld. Delen en communicatie is essentieel om het verder te brengen."
       share_button: "Deel uw project"
       thanks: "Nogmaals dank voor uw deelname."
       sincerely: "Met vriendelijke groet"
     budget_investment_unselected:
-      subject: "Uw project '%{code}' is niet geselecteerd"
+      subject: "Je project '%{code}' is niet geselecteerd"
       title: "Je investeringsproject is niet geselecteerd"
       hi: "Beste deelnemer,"
       thanks: "Dank u nogmaals voor uw deelname."

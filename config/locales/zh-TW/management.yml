@@ -34,7 +34,7 @@ zh-TW:
         info: 您可以在此處通過左側菜單中列出的所有操作來管理用戶。
     document_verifications:
       already_verified: 此用戶帳戶已被核實。
-      link: CONSUL
+      link: CONSUL DEMOCRACY
       in_census_has_following_permissions: "此用戶可以使用以下權限參與網站："
       not_in_census: 此文檔尚未註冊。
       not_in_census_info: "不在人口普查中的公民可以使用以下權限參與網站："

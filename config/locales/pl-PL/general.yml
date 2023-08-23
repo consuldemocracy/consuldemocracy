@@ -137,7 +137,6 @@ pl:
       invalid_date_range: "Nieprawidłowy zakres dat"
   form:
     accept_terms: Zgadzam się z %{policy} i %{conditions}
-    accept_terms_title: Wyrażam zgodę na Politykę Prywatności i Warunki użytkowania
     conditions: Regulamin
     debate: Debata
     direct_message: prywatna wiadomość
@@ -145,11 +144,13 @@ pl:
     errors: błędy
     not_saved: "uniemożliwił zapisanie tego %{resource}. <br>Sprawdź zaznaczone pola, aby dowiedzieć się, jak je poprawić:"
     policy: Polityka prywatności
+    banner: baner
     proposal: Wniosek
     proposal_notification: "Powiadomienie"
     budget/investment: Inwestycja
     budget/group: Grupa budżetowa
     budget/heading: Nagłówek budżetu
+    legislation/draft_version: szkic
     poll/shift: Zmiana
     poll/question/answer: Odpowiedź
     user: Konto
@@ -158,14 +159,10 @@ pl:
     document: Dokument
     topic: Temat
     image: Obraz
+    site_customization/page: strona
   geozones:
     none: Cała dzielnica
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Wykryliśmy, że przeglądasz za pomocą Internet Explorera. Aby uzyskać lepsze wrażenia, zalecamy użycie% %{firefox} lub %{chrome}.
-      ie_title: Ta strona internetowa nie jest zoptymalizowana pod kątem Twojej przeglądarki
     dashboard:
       proposal_header:
         published: Opublikowany
@@ -176,9 +173,9 @@ pl:
     footer:
       accessibility: Ułatwienia dostępu
       conditions: Regulamin
-      consul: Aplikacja CONSUL
+      consul: Aplikacja CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Ten portal używa %{consul}, który jest %{open_source}.
       open_source: oprogramowanie open-source
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
@@ -210,6 +207,7 @@ pl:
           many: Masz %{count} nowe powiadomienia
           other: Masz %{count} nowe powiadomienia
         notifications: Powiadomienia
+      sdg: "SDG"
   notifications:
     index:
       empty_notifications: Nie masz nowych powiadomień.
@@ -401,15 +399,25 @@ pl:
       progress: Postęp
       community: Społeczność
       polls: Ankiety
+      mailing: E-mail
       related_content: Powiązana zawartość
     progress:
+      group_by_week: Tygodniowo
+      group_by_date: Dziennie
       supports: Wsparcie
+      new_action: Nowe
     index:
       edit_proposal_link: Edytuj wniosek
       retire: Wycofaj wniosek
+    new_request:
+      links: Linki
+    resource:
+      and: i
     recommended_actions:
       pending_title: Oczekujące
       done_title: Gotowe
+    next_goal:
+      title: Cel
     community:
       access_community: Uzyskaj dostęp do społeczności
       participants: Uczestnicy
@@ -419,6 +427,7 @@ pl:
       index:
         title: Ankiety
         create: Utwórz sondaż
+        links: Linki
         additiontal_information: Dodatkowe informacje
       new:
         title: Nowy sondaż
@@ -438,6 +447,7 @@ pl:
     mailer:
       forward:
         support_button: Poprzyj ten wniosek
+        hi: "Witaj!"
   polls:
     all: "Wszystkie"
     no_dates: "brak przypisanej daty"
@@ -757,3 +767,5 @@ pl:
     form:
       delete_button: Usuń
       cancel_button: Anuluj
+    nested_links:
+      title: Linki

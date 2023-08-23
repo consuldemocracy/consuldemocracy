@@ -99,9 +99,6 @@ fi:
     topic: Aihe
     image: Kuva
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
     dashboard:
       proposal_totals:
         supports:
@@ -109,7 +106,7 @@ fi:
     footer:
       conditions: Ehdot ja käyttöehdot
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       open_source: avoimen lähdekoodin ohjelmisto
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       privacy: Tietosuojakäytäntö

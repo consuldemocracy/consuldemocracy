@@ -103,7 +103,6 @@ ar:
           submit: سجل
           terms: من خلال التسجبل فانك توافق على%{terms}
           terms_link: شروط واستراطات الاستخدام
-          terms_title: من خلال التسجيل فانك تقبل شروط واحكام الاستخدام
           title: سجل
           username_is_available: اسم المستخدم متاح
           username_is_not_available: اسم المستخدم غير متاح

@@ -131,7 +131,6 @@ val:
       invalid_date_range: "El rang de dates no es vàlid"
   form:
     accept_terms: Accepte la %{policy} i les %{conditions}
-    accept_terms_title: Accepte la Política de privacitat i les Condicions d'us
     conditions: Termes i condicions d'us
     debate: Debat
     direct_message: el missatge privat
@@ -156,11 +155,6 @@ val:
   geozones:
     none: Tota la ciutat
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Hem detectat que estàs navegant desde Internet Explorer. Per a una millor experiència et recomanem utilitzar %{firefox} o %{chrome}.
-      ie_title: Esta web no està optimitzada per al teu navegador
     dashboard:
       proposal_header:
         published: Publicada
@@ -172,9 +166,9 @@ val:
     footer:
       accessibility: Accessibilitat
       conditions: Termes i condicions d'us
-      consul: Aplicació CONSUL
+      consul: Aplicació CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Este portal utilitza la %{consul} que es %{open_source}.
       open_source: software de codi obert
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html

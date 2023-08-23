@@ -43,7 +43,6 @@ pt-BR:
           success: Residência verificada
       new:
         accept_terms_text: Eu aceito %{terms_url} do Censo
-        accept_terms_text_title: Eu aceito os termos e as condições de acesso ao Censo
         document_number: Número do documento
         document_number_help_title: Ajuda
         document_number_help_text: "<strong>RG</strong>: 1234567890<br> <strong>Passaporte</strong>: XX123456<br> <strong>RNE</strong>: V565371-S"

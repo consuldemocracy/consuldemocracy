@@ -140,7 +140,6 @@ sr:
       invalid_date_range: "Неважећи опсег датума"
   form:
     accept_terms: Слажем се са %{policy} и са%{conditions}
-    accept_terms_title: Слажем се са политиком приватности и условима коришћења
     conditions: Услови коришћења
     debate: Расправа
     direct_message: приватне поруке
@@ -173,11 +172,6 @@ sr:
   geozones:
     none: Цео град
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Открили смо да пртражујете путем Интернет Еxплорера. За побољшано искуство препоручујемо да користите %{firefox} или %{chrome}.
-      ie_title: Овај Wеб сајт није оптимизован за ваш прегледач
     dashboard:
       proposal_header:
         published: Објављено

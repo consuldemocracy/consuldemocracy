@@ -448,6 +448,16 @@ de:
         back: Zurück zu %{org}
         title: Verwaltung
         description: Willkommen auf dem Admin-Panel für %{org}.
+        info: |-
+          <p>Hier können Sie als Administrator den Bürgerbeteiligungsprozess in Ihrer Stadt oder Region umsetzen und überwachen.</p>
+
+          <p>Sie gehören nun zu den Hunderten von Regierungen und Gemeinden weltweit, die die CONSUL DEMOCRACY Plattform nutzen, um Bürgerbeteiligung in die Praxis umzusetzen. Herzlichen Glückwunsch!</p>
+
+          <p>Die CONSUL DEMOCRACY Stiftung steht im Zentrum der globalen Nutzergemeinschaft. Wir möchten Sie bitten, sich mit uns in Verbindung zu setzen, damit wir uns ein Bild davon machen können, wer die Software nutzt und wie wir bei der Einführung oder Nutzung helfen können. Wir können es kaum erwarten, Sie in der Gemeinschaft willkommen zu heißen.</p>
+
+          <p>Viel Spaß beim Mitmachen!</p>
+
+          <p>Viele Grüße vom Team der CONSUL DEMOCRACY Stiftung.</p>
       actions:
         index:
           description: "Wenn Benutzer Vorschläge erstellen, können sie auf ein Dashboard ihres Vorschlags zugreifen, in dem Sie Ressourcen und Empfehlungen vorschlagen können, um Unterstützung für ihre Idee zu erhalten."
@@ -526,7 +536,6 @@ de:
         title: "Dokumente"
         format: "Format"
         size: "Größe"
-        url: "URL"
       create:
         success_notice: "Dokument erfolgreich hochgeladen"
         unable_notice: "Ungültiges Dokument"
@@ -1730,10 +1739,10 @@ de:
       help:
         title_1: "Was ist KI / Maschinelles Lernen?"
         description_1: "Traditionell werden Computerprogramme entwickelt, indem genaue Regeln dafür aufgestellt werden, was das Programm in jeder Situation tun soll und wie es die verfügbaren Informationen zu jedem Zeitpunkt verarbeiten soll. Bei dem, was gemeinhin als KI/Maschinenlernen bekannt ist, handelt es sich um eine Art von Programmen, bei denen genau festgelegt wird, welche Aufgabe zu erfüllen ist und wie zu beurteilen ist, ob die Aufgabe besser oder schlechter erfüllt wird. Im Gegensatz zu den erstgenannten Programmen entdeckt oder lernt das System jedoch, welche Methode am besten geeignet ist, um die Aufgabe zu erfüllen."
-        title_2: "Was leistet das AI / Machine Learning Modul in CONSUL?"
-        description_2: "Mit diesem Modul können beliebige KI/Machine Learning Programme in CONSUL implementiert werden. Die Programme können die in CONSUL verfügbaren Informationen verarbeiten und Ergebnisse erzeugen, die sowohl den Nutzern als auch den Verwaltern helfen, eine effektivere und intelligentere Bürgerbeteiligung durchzuführen. Das Modul wurde entwickelt, um die Implementierung und Ausführung neuer Programme zu erleichtern, wobei der allgemeine Code von CONSUL und der Code dieser neuen Programme unabhängig voneinander bleiben."
+        title_2: "Was leistet das AI / Machine Learning Modul in CONSUL DEMOCRACY?"
+        description_2: "Mit diesem Modul können beliebige KI/Machine Learning Programme in CONSUL DEMOCRACY implementiert werden. Die Programme können die in CONSUL DEMOCRACY verfügbaren Informationen verarbeiten und Ergebnisse erzeugen, die sowohl den Nutzern als auch den Verwaltern helfen, eine effektivere und intelligentere Bürgerbeteiligung durchzuführen. Das Modul wurde entwickelt, um die Implementierung und Ausführung neuer Programme zu erleichtern, wobei der allgemeine Code von CONSUL DEMOCRACY und der Code dieser neuen Programme unabhängig voneinander bleiben."
         title_3: "Wie man dieses Modul benutzt"
-        description_3: "Um das Modul zum ersten Mal zu verwenden, müssen Sie die Anweisungen in der CONSUL-Dokumentation befolgen, um es ordnungsgemäß zu aktivieren. Sobald das Modul korrekt aktiviert ist, werden die Programme auf der Registerkarte \"Skripte ausführen\" ausgeführt. Vor der Ausführung werden auf der gleichen Registerkarte eine Schätzung der Ausführungszeit und andere relevante Informationen angezeigt. Am Ende der Ausführung können wir auf der Registerkarte \"Einstellungen\" die Inhalte aktivieren, die in CONSUL angezeigt werden, sowie weitere generierte Dateien herunterladen, die für uns nützlich sein könnten."
+        description_3: "Um das Modul zum ersten Mal zu verwenden, müssen Sie die Anweisungen in der CONSUL DEMOCRACY-Dokumentation befolgen, um es ordnungsgemäß zu aktivieren. Sobald das Modul korrekt aktiviert ist, werden die Programme auf der Registerkarte \"Skripte ausführen\" ausgeführt. Vor der Ausführung werden auf der gleichen Registerkarte eine Schätzung der Ausführungszeit und andere relevante Informationen angezeigt. Am Ende der Ausführung können wir auf der Registerkarte \"Einstellungen\" die Inhalte aktivieren, die in CONSUL DEMOCRACY angezeigt werden, sowie weitere generierte Dateien herunterladen, die für uns nützlich sein könnten."
         title_4: "Wie implementiert man neue AI / Machine Learning Skripte?"
         description_4: "Bitte verwenden Sie frühere Skripte als Beispiele."
         description_4b: "Die neuen Skripte sollten sich in dem Ordner <code>public/machine_learning/scripts</code> befinden."

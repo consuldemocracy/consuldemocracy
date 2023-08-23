@@ -143,7 +143,6 @@ it:
         poll_ended: "Impossibile modificare se il voto è già terminato"
   form:
     accept_terms: Acconsento alle %{policy} e alle %{conditions}
-    accept_terms_title: Acconsento all’Informativa sulla Privacy e ai Termini e condizioni d’uso
     conditions: Termini e condizioni d'uso
     debate: Dibattito
     direct_message: messaggio privato
@@ -177,11 +176,6 @@ it:
   geozones:
     none: Tutta la città
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Abbiamo rilevato che stai navigando con Internet Explorer. Per una migliore esperienza, raccomandiamo di usare %{firefox} o %{chrome}.
-      ie_title: Questo sito non è ottimizzato per il tuo browser
     dashboard:
       proposal_header:
         published: Pubblicato
@@ -200,9 +194,9 @@ it:
     footer:
       accessibility: Accessibilità
       conditions: Termini e condizioni d'uso
-      consul: app CONSUL
+      consul: app CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSOLE, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Questo portale utilizza %{consul} che è %{open_source}.
       open_source: software open-source
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html

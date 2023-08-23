@@ -169,6 +169,9 @@ sv:
         valid: "Villkor för ett giltigt svar"
         valid_description: "Vilka sökvägar i svaret som krävs för att det ska vara ett giltigt svar som verifierar användaren"
     map:
+      feature:
+        marker_clustering: "Markörklustring"
+        marker_clustering_description: "Aktiverar kartmarkörsklustring. Användbart när det finns många markörer som ska visas."
       latitude: "Latitud"
       latitude_description: "Latitud för kartpositionen"
       longitude: "Longitud"
