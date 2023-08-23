@@ -207,8 +207,6 @@ en:
         index:
           help: "Groups are meant to organize headings. After a group is created and it contais headings, it's possible to determine in how many headings a user can vote per group."
     budget_headings:
-      population: "Population"
-      allow_custom_content: "Allow custom content"
       no_headings: "There are no headings in the <strong>%{group}</strong> group."
       yes: "Yes"
       no: "No"
@@ -1353,14 +1351,6 @@ en:
         feature_flags: Features
         features:
           enabled: "Enabled"
-        map:
-          title: Map configuration
-          help: Here you can customize the way the map is displayed to users. Drag map marker or click anywhere over the map, set desired zoom and click button "Update".
-          flash:
-            update: Map configuration updated successfully.
-          form:
-            submit: Update
-          how_to_enable: 'To show the map to users you must enable "Proposals and budget investments geolocation" on "Features" tab.'
         dashboard:
           title: Proposals dashboard
         remote_census:

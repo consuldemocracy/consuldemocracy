@@ -237,8 +237,6 @@ es:
     budget_headings:
       name: Nombre de la partida
       price: Cantidad de dinero
-      population: Población
-      allow_custom_content: Permitir bloque de contenidos
       no_headings: "El grupo <strong>%{group}</strong> no tiene ninguna partida."
       yes:  "Sí"
       no: "No"
