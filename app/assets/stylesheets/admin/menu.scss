@@ -10,7 +10,7 @@
     padding: 0;
   }
 
-  > ul > li a {
+  > ul > li > a {
     display: flex;
     font-weight: bold;
 
@@ -108,6 +108,14 @@
 
     &.ml-link {
       @include icon(brain, solid);
+    }
+
+    &.administrators-link {
+      @include icon(user, solid);
+    }
+
+    &.tenants-link {
+      @include icon(building, regular);
     }
   }
 

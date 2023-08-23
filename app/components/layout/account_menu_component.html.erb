@@ -1,5 +1,7 @@
 <ul class="account-menu menu" data-responsive-menu="medium-dropdown">
-  <%= render Layout::AdminLoginItemsComponent.new(user) %>
-  <%= render Layout::NotificationItemComponent.new(user) %>
+  <% unless Rails.application.multitenancy_management_mode? %>
+    <%= render Layout::AdminLoginItemsComponent.new(user) %>
+    <%= render Layout::NotificationItemComponent.new(user) %>
+  <% end %>
   <%= render Layout::LoginItemsComponent.new(user) %>
 </ul>
