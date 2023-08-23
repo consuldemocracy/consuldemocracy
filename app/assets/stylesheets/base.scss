@@ -600,6 +600,17 @@ body > header,
   .menu {
     padding-left: $line-height / 2;
   }
+
+  .avatar {
+    margin-right: $line-height * 1.5;
+    position: relative;
+
+    .avatar-image {
+      position: absolute;
+      right: -48px;
+      top: -10px;
+    }
+  }
 }
 
 .menu-icon {
