@@ -24,7 +24,7 @@
                   <div>
                     <%= f.text_field :username, maxlength: User.username_max_length %>
                   </div>
-                  <div>
+                  <div class="hide">
                     <%= f.text_field :address, label: t("custom.form.address") %>
                   </div>
                 <% end %>
@@ -39,7 +39,7 @@
               </div>
 
               <% if @account.email.present? %>
-                <h2 class="margin-top"><%= t("account.show.notifications") %></h2>
+                <h2 class="margin-top hide"><%= t("account.show.notifications") %></h2>
 
                 <div class="hide">
                   <%= f.check_box :email_on_comment %>
@@ -49,7 +49,7 @@
                   <%= f.check_box :email_on_comment_reply %>
                 </div>
 
-                <div>
+                <div class="hide">
                   <%= f.check_box :newsletter %>
                 </div>
 
