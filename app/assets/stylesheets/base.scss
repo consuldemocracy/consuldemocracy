@@ -2927,11 +2927,6 @@ a {
 
 .poll-more-info-answers {
 
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
   .column:nth-child(odd),
   .columns:nth-child(odd) {
     border-right: 0;

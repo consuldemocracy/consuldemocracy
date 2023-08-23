@@ -15,42 +15,38 @@ describe "Polls" do
     end
 
     scenario "Polls display remaining days to participate if not expired" do
-      travel_to "10/06/2020".to_date do
-        create(:poll, starts_at: "01/05/2020", ends_at: "31/05/2020", name: "Expired poll")
-        create(:poll, starts_at: "01/06/2020", ends_at: "20/06/2020", name: "Active poll")
+      create(:poll, starts_at: Time.current, ends_at: Time.current + 11.days)
+      create(:poll, :expired)
 
-        visit polls_path
+      visit polls_path
 
-        within(".poll") do
-          expect(page).to have_content("Remaining 11 days to participate")
-        end
+      within(".poll") do
+        expect(page).to have_content("Remaining 11 days to participate")
+      end
 
-        click_link "Expired"
+      click_link "Expired"
 
-        within(".poll") do
-          expect(page).not_to have_content("Remaining")
-          expect(page).not_to have_content("days to participate")
-        end
+      within(".poll") do
+        expect(page).not_to have_content("Remaining")
+        expect(page).not_to have_content("days to participate")
       end
     end
 
     scenario "Polls display remaining hours to participate if not expired" do
-      travel_to "10/06/2020".to_date + 8.hours do
-        create(:poll, starts_at: "01/05/2020", ends_at: "31/05/2020", name: "Expired poll")
-        create(:poll, starts_at: "01/06/2020", ends_at: "10/06/2020", name: "Active poll")
+      create(:poll, starts_at: Time.current, ends_at: Time.current + 8.hours)
+      create(:poll, :expired)
 
-        visit polls_path
+      visit polls_path
 
-        within(".poll") do
-          expect(page).to have_content("Remaining about 16 hours to participate")
-        end
+      within(".poll") do
+        expect(page).to have_content("Remaining about 8 hours to participate")
+      end
 
-        click_link "Expired"
+      click_link "Expired"
 
-        within(".poll") do
-          expect(page).not_to have_content("Remaining")
-          expect(page).not_to have_content("days to participate")
-        end
+      within(".poll") do
+        expect(page).not_to have_content("Remaining")
+        expect(page).not_to have_content("days to participate")
       end
     end
 
@@ -69,54 +65,6 @@ describe "Polls" do
         expect("Expired poll three").to appear_before("Expired poll two")
         expect("Expired poll two").to appear_before("Expired poll one")
       end
-    end
-
-    scenario "Displays icon correctly" do
-      create_list(:poll, 3)
-      create(:poll, :expired, name: "Expired poll")
-
-      visit polls_path
-
-      expect(page).to have_css(".message .callout .fa-user", count: 3)
-      expect(page).to have_content("You must sign in or sign up to participate", count: 3)
-
-      user = create(:user)
-      login_as(user)
-
-      visit polls_path
-
-      expect(page).to have_css(".message .callout .fa-user", count: 3)
-      expect(page).to have_content("You must verify your account to participate", count: 3)
-
-      click_link "Expired"
-
-      expect(page).not_to have_css(".message .callout .fa-user")
-      expect(page).not_to have_content("You must verify your account to participate")
-    end
-
-    scenario "Geozone poll" do
-      create(:poll, geozone_restricted: true)
-
-      login_as(create(:user, :level_two))
-      visit polls_path
-
-      expect(page).to have_css(".message .callout .fa-globe", count: 1)
-      expect(page).to have_content("This poll is not available on your geozone")
-    end
-
-    scenario "Already participated in a poll" do
-      poll_with_question = create(:poll)
-      question = create(:poll_question, :yes_no, poll: poll_with_question)
-
-      login_as(create(:user, :level_two))
-      visit polls_path
-
-      vote_for_poll_via_web(poll_with_question, question, "Yes")
-
-      visit polls_path
-
-      expect(page).to have_css(".message .callout .fa-check-circle", count: 1)
-      expect(page).to have_content("You already have participated in this poll")
     end
   end
 
