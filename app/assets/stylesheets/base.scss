@@ -1277,19 +1277,8 @@ footer {
 .budget-ballot-show {
 
   > header {
-
-    &::before {
-      left: 0;
-      right: 0;
-    }
-  }
-}
-
-.budget-header {
-
-  &::before {
-    left: 0;
-    right: 0;
+    margin-top: -$line-height;
+    padding-top: $line-height;
   }
 }
 
