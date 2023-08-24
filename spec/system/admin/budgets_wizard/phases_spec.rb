@@ -20,7 +20,7 @@ describe "Budgets wizard, phases step", :admin do
       expect(page).to have_css ".creation-timeline"
     end
 
-    scenario "Enable and disable phases" do
+    scenario "Enable and disable phases", :consul do
       visit admin_budgets_wizard_budget_budget_phases_path(budget)
 
       within "tr", text: "Information" do
@@ -43,7 +43,7 @@ describe "Budgets wizard, phases step", :admin do
 
       click_link "Finish"
 
-      expect(page).to have_css "section h3", exact_text: "PHASES"
+      expect(page).to have_css "section h3", exact_text: "Phases"
 
       within "tr", text: "Information" do
         expect(page).to have_content "No"
@@ -64,13 +64,13 @@ describe "Budgets wizard, phases step", :admin do
   end
 
   describe "Edit" do
-    scenario "update phase" do
+    scenario "update phase", :consul do
       visit admin_budgets_wizard_budget_budget_phases_path(budget)
 
       expect(page).to have_css ".creation-timeline"
 
       within("tr", text: "Selecting projects") { click_link "Edit" }
-      fill_in "Phase's Name", with: "Choosing projects"
+      fill_in "Name", with: "Choosing projects"
       click_button "Save changes"
 
       expect(page).to have_content "Changes saved"
@@ -78,17 +78,17 @@ describe "Budgets wizard, phases step", :admin do
       within_table("Phases") { expect(page).to have_content "Choosing projects" }
     end
 
-    scenario "submit the form with errors and then without errors" do
+    scenario "submit the form with errors and then without errors", :consul do
       phase = budget.phases.accepting
 
       visit edit_admin_budgets_wizard_budget_budget_phase_path(budget, phase)
-      fill_in "Phase's Name", with: ""
+      fill_in "Name", with: ""
       click_button "Save changes"
 
       expect(page).to have_css "#error_explanation"
       expect(page).to have_css ".creation-timeline"
 
-      fill_in "Phase's Name", with: "Welcoming projects"
+      fill_in "Name", with: "Welcoming projects"
       click_button "Save changes"
 
       expect(page).to have_content "Changes saved"
@@ -96,11 +96,11 @@ describe "Budgets wizard, phases step", :admin do
       within_table("Phases") { expect(page).to have_content "Welcoming projects" }
     end
 
-    scenario "update phase in single heading budget" do
+    scenario "update phase in single heading budget", :consul do
       visit admin_budgets_wizard_budget_budget_phases_path(budget, mode: "single")
 
       within("tr", text: "Selecting projects") { click_link "Edit" }
-      fill_in "Phase's Name", with: "Choosing projects"
+      fill_in "Name", with: "Choosing projects"
       click_button "Save changes"
 
       expect(page).to have_content "Changes saved"

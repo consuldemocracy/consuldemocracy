@@ -4,17 +4,12 @@ describe Admin::Budgets::TableActionsComponent, controller: Admin::BaseControlle
   let(:budget) { create(:budget) }
   let(:component) { Admin::Budgets::TableActionsComponent.new(budget) }
 
-  before do
-    allow(ViewComponent::Base).to receive(:test_controller).and_return("Admin::BaseController")
-  end
-
-  it "renders links to edit budget, manage investments and preview budget" do
+  it "renders actions to edit budget and manage investments", :consul do
     render_inline component
 
-    expect(page).to have_link count: 3
+    expect(page).to have_link count: 2
     expect(page).to have_link "Investment projects", href: /investments/
     expect(page).to have_link "Edit", href: /#{budget.id}\Z/
-    expect(page).to have_link "Preview", href: /budgets/
 
     expect(page).not_to have_button
   end

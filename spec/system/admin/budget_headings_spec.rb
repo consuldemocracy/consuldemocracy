@@ -18,24 +18,24 @@ describe "Admin budget headings", :admin do
   end
 
   context "List of headings in the budget page" do
-    scenario "Displaying no headings for group" do
+    scenario "Displaying no headings for group", :consul do
       group.update!(name: "Universities")
 
       visit admin_budget_path(budget)
 
-      within "section", text: "HEADING GROUPS" do
+      within "section", text: "Heading groups" do
         expect(page).to have_content "There are no headings in the Universities group."
       end
     end
 
-    scenario "Displaying headings" do
+    scenario "Displaying headings", :consul do
       create(:budget_heading, name: "Laptops", group: group, price: 1000)
       create(:budget_heading, name: "Tablets", group: group, price: 2000)
       create(:budget_heading, name: "Phones", group: group, price: 3000)
 
       visit admin_budget_path(budget)
 
-      within "section", text: "HEADING GROUPS" do
+      within "section", text: "Heading groups" do
         within "tbody" do
           expect(page).to have_selector "tr", count: 3
 
@@ -79,10 +79,10 @@ describe "Admin budget headings", :admin do
   end
 
   context "New" do
-    scenario "Create heading" do
+    scenario "Create heading", :consul do
       visit admin_budget_path(budget)
 
-      within "section", text: "HEADING GROUPS" do
+      within "section", text: "Heading groups" do
         within("section", text: group.name) { click_link "Add heading" }
       end
 
@@ -114,7 +114,7 @@ describe "Admin budget headings", :admin do
       expect(page).to have_content "can't be blank"
     end
 
-    scenario "Heading money amount is mandatory" do
+    scenario "Heading amount is mandatory" do
       visit new_admin_budget_group_heading_path(budget, group)
       click_button "Create new heading"
 

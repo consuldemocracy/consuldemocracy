@@ -257,8 +257,6 @@ describe "Budgets" do
   end
 
   context "Show" do
-    let!(:budget) { create(:budget, :selecting) }
-
     scenario "Show supports info on selecting phase" do
       budget = create(:budget, :selecting)
       group = create(:budget_group, budget: budget)
@@ -299,6 +297,24 @@ describe "Budgets" do
     end
 
     scenario "Show investments list" do
+      budget = create(:budget, phase: "balloting")
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group)
+
+      create_list(:budget_investment, 3, :selected, heading: heading, price: 999)
+
+      visit budget_path(budget)
+
+      within(".investments-list") do
+        expect(page).to have_content "List of investments"
+        expect(page).to have_content "PRICE", count: 3
+      end
+
+      expect(page).to have_link "See all investments",
+                                href: budget_investments_path(budget, params: { heading_id: heading.id })
+    end
+
+    scenario "Show investments list in each phase" do
       budget = create(:budget)
       group = create(:budget_group, budget: budget)
       heading = create(:budget_heading, group: group)

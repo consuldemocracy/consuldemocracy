@@ -27,15 +27,6 @@ describe "Admin administrator tasks", :admin do
       scenario "has a link that allows solving the request" do
         expect(page).to have_link("Solve")
       end
-
-      scenario "shows a message if proposal has been deleted" do
-        proposal = task.source.proposal
-        proposal.update!(hidden_at: Time.current)
-
-        visit admin_dashboard_administrator_tasks_path
-
-        expect(page).to have_content("This proposal has been deleted")
-      end
     end
   end
 
