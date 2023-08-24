@@ -31,7 +31,9 @@
         <% end %>
       <% end %>
 
-      <%= render Polls::Questions::QuestionComponent.with_collection(@questions) %>
+      <% @questions.each_with_index do |question, index| %>
+        <%= render Polls::Questions::QuestionComponent.new(@questions, question, index) %>
+      <% end %>
     </div>
   </div>
 

@@ -1,7 +1,7 @@
 <div id="<%= dom_id(question) %>" class="poll-question">
-  <#% if @questions.count > 1 %>
-    <span class="question-list-label"><#%= t("polls.question") %> <#%= index + 1 %></span>
-  <#% end %>
+  <% if questions.count > 1 %>
+    <span class="question-list-label"><%= t("polls.question") %> <%= index + 1 %></span>
+  <% end %>
 
   <h3 class="inline-block">
     <%= question.title %>
