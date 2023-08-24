@@ -66,6 +66,54 @@ describe "Polls" do
         expect("Expired poll two").to appear_before("Expired poll one")
       end
     end
+
+    scenario "Displays icon correctly" do
+      create_list(:poll, 3)
+      create(:poll, :expired, name: "Expired poll")
+
+      visit polls_path
+
+      expect(page).to have_css(".message .callout .fa-user", count: 3)
+      expect(page).to have_content("You must sign in or sign up to participate", count: 3)
+
+      user = create(:user)
+      login_as(user)
+
+      visit polls_path
+
+      expect(page).to have_css(".message .callout .fa-user", count: 3)
+      expect(page).to have_content("You must verify your account to participate", count: 3)
+
+      click_link "Expired"
+
+      expect(page).not_to have_css(".message .callout .fa-user")
+      expect(page).not_to have_content("You must verify your account to participate")
+    end
+
+    scenario "Geozone poll" do
+      create(:poll, geozone_restricted: true)
+
+      login_as(create(:user, :level_two))
+      visit polls_path
+
+      expect(page).to have_css(".message .callout .fa-globe", count: 1)
+      expect(page).to have_content("This poll is not available on your geozone")
+    end
+
+    scenario "Already participated in a poll" do
+      poll_with_question = create(:poll)
+      question = create(:poll_question, :yes_no, poll: poll_with_question)
+
+      login_as(create(:user, :level_two))
+      visit polls_path
+
+      vote_for_poll_via_web(poll_with_question, question, "Yes")
+
+      visit polls_path
+
+      expect(page).to have_css(".message .callout .fa-check-circle", count: 1)
+      expect(page).to have_content("You already have participated in this poll")
+    end
   end
 
   context "Show" do

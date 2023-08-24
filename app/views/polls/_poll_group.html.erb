@@ -38,7 +38,8 @@
         </ul>
         <%= render SDG::TagListComponent.new(poll, limit: 5, linkable: false) %>
       </div>
-      <div class="small-12 medium-3 column table" data-equalizer-watch>
+      <div class="small-12 medium-3 column table relative" data-equalizer-watch>
+        <%= render "polls/custom_user_message", poll: poll %>
         <div class="table-cell align-bottom">
           <% if poll.expired? %>
             <%= link_to_poll t("polls.index.participate_button_expired"), poll, class: "button hollow expanded" %>
