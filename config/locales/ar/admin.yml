@@ -1471,7 +1471,7 @@ ar:
           see_page: رؤية الصفحة
         new:
           title: إنشاء صفحة مخصصة جديدة
-          slug_help: "نص لتعريف هذه الصفحة على عنوان URL ، على سبيل المثال <code> https://consulproject.org/page-slug</code>>"
+          slug_help: "نص لتعريف هذه الصفحة على عنوان URL ، على سبيل المثال <code> https://consuldemocracy.org/page-slug</code>>"
         page:
           created_at: أنشئت في
           status: حالة

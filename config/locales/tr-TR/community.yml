@@ -3,15 +3,15 @@ tr:
     sidebar:
       title: Topluluk
       description:
-        proposal: Bu önerinin kullanıcı topluluğuna katıl.
+        proposal: Bu önergenin kullanıcı topluluğuna katılın.
         investment: Bu yatırımın kullanıcı topluluğuna katıl.
       button_to_access: Topluluğa erişim
     show:
       title:
-        proposal: Öneri topluluğu
+        proposal: Önerge topluluğu
         investment: Yatırım bütçesi topluluğu
       description:
-        proposal: Bu önerinin topluluğuna katılın. Etkin bir topluluk, önerinin içeriğini geliştirmeye ve daha fazla destek alması için duyulmasına yardımcı olabilir.
+        proposal: Bu önergenin topluluğuna katılın. Etkin bir topluluk, önergenin içeriğinin geliştirilmesine ve daha fazla destek alması için duyulmasına yardımcı olabilir.
         investment: Bu bütçe yatırımının topluluğuna katılın. Etkin bir topluluk, bütçe yatırımının içeriğini geliştirmeye ve daha fazla destek alması için duyulmasına yardımcı olabilir.
       create_first_community_topic:
         first_theme_not_logged_in: Herhangi bir konu yok. İlk konuyu oluşturmaya katılın.
@@ -25,8 +25,8 @@ tr:
       topic:
         edit: Konuyu düzenle
         destroy: Konuyu sil
-      author: Sahip
-      back: '%{community} %{proposal} önerisine dön'
+      author: Sahibi
+      back: '%{community} %{proposal} önergesine dön'
     topic:
       create: Bir konu oluştur
       edit: Konuyu düzenle

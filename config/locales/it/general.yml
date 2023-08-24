@@ -201,7 +201,7 @@ it:
       accessibility: Accessibilità
       conditions: Termini e condizioni d'uso
       consul: app CONSUL
-      consul_url: https://github.com/consul/consul
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: CONSOLE, %{year}
       description: Questo portale utilizza %{consul} che è %{open_source}.
       open_source: software open-source

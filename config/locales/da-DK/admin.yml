@@ -1454,7 +1454,7 @@ da:
           see_page: Vis side
         new:
           title: Opret ny brugerdefineret side
-          slug_help: "Tekst til at identificere siden på URL, for eksempel <code>https://consulproject.org/page-slug</code>"
+          slug_help: "Tekst til at identificere siden på URL, for eksempel <code>https://consuldemocracy.org/page-slug</code>"
         page:
           created_at: Oprettet den
           status: Status

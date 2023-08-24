@@ -5,8 +5,8 @@ tr:
         residence: "İkamet"
         sms: "SMS"
       local_census_records/import:
-        one: Yerel nüfus sayımı kaydını içe aktarma
-        other: Yerel nüfus sayımı kayıtlarını içe aktarma
+        one: Yerel seçmen bilgi sistemi kaydını içe aktarma
+        other: Yerel seçmen bilgi sistemi kaydını içe aktarma
     attributes:
       verification:
         residence:
@@ -44,4 +44,4 @@ tr:
           attributes:
             file:
               extension: "Verilen dosyanın biçimi yanlış. Kullanılabilecek dosya biçimi:%{valid_extensions}."
-              headers: "Verilen dosyanın başlıkları yanlış. Dosya başlığında şu adlar bulunmalıdır:%{required_headers}."
+              headers: "Verilen dosyanın başlıkları yanlış. Dosya başlıklarında şu adlar bulunmalıdır:%{required_headers}."

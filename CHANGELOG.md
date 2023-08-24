@@ -2,6 +2,24 @@
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
+## [2.0.1](https://github.com/consuldemocracy/consuldemocracy/tree/2.0.1) (2023-08-18)
+
+[Full Changelog](https://github.com/consuldemocracy/consuldemocracy/compare/2.0.0...2.0.1)
+
+### Added
+
+- **Translations:** Update translations from Crowdin [\#5176](https://github.com/consuldemocracy/consuldemocracy/pull/5176)
+
+### Changed
+
+- **Maintenance-Gems:** Bump selenium-webdriver from 4.0.0 to 4.11.0 [\#5162](https://github.com/consuldemocracy/consuldemocracy/pull/5162)
+
+### Fixed
+
+- **Maintenance-Rubocop:** Fix Rubocop convention offenses [\#5156](https://github.com/consuldemocracy/consuldemocracy/pull/5156)
+- **SEO:** Fix syntax in robots.txt [\#5169](https://github.com/consuldemocracy/consuldemocracy/pull/5169)
+- **Translations:** Use custom translations in components [\#5165](https://github.com/consuldemocracy/consuldemocracy/pull/5165)
+
 ## [2.0.0](https://github.com/consuldemocracy/consuldemocracy/tree/2.0.0) (2023-07-17)
 
 [Full Changelog](https://github.com/consuldemocracy/consuldemocracy/compare/1.5.0...2.0.0)

@@ -7,20 +7,20 @@ tr:
     homepage:
       title: "Giriş yapılandırması"
       header:
-        create: "Başlık oluştur"
-        no_cards: "Herhangi bir başlık yok"
-        title: "Başlık"
+        create: "Üst bilgi oluştur"
+        no_cards: "Herhangi bir üst bilgi yok"
+        title: "Üst bilgi"
       create_card: "%{phase} kartı oluştur"
       no_cards: "Bu aşama için kart yok"
     menu:
       budget_investments: "Katılımcı bütçeler"
       debates: "Tartışmalar"
       legislation_processes: "Mevzuat süreçleri"
-      legislation_proposals: "Mevzuat önerileri"
-      polls: "Anketler"
-      proposals: "Öneriler"
+      legislation_proposals: "Mevzuat önergeleri"
+      polls: "Oylamalar"
+      proposals: "Önergeler"
       sdg_content: "Amaçlar ve Hedefler"
-      sdg_homepage: "SGA giriş sayfası"
+      sdg_homepage: "SKA giriş sayfası"
     local_targets:
       create:
         notice: "Yerel hedef oluşturuldu"

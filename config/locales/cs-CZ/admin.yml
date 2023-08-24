@@ -1393,7 +1393,7 @@ cs:
       show_results_and_stats: "Zobrazit výsledky a statistiky"
       results_and_stats_reminder: "Zaškrtnutím těchto políček budou výsledky a statistiky tohoto průzkumu veřejně dostupné a kterýkoliv uživatel je uvidí."
       close_modal: Zavřít modální okno
-      example_url: "Například https://consulproject.org nebo /help"
+      example_url: "Například https://consuldemocracy.org nebo /help"
     geozones:
       index:
         title: Geozóna
@@ -1446,6 +1446,16 @@ cs:
         author: Autor
         users: Uživatelé
         signature_count: "Počet podpisů:"
+        verified:
+          one: "Je tu %{count} platný podpis"
+          few: "Jsou tu %{count} platné podpisy"
+          many: "Je tu %{count} platných podpisů"
+          other: "Je tu %{count} platných podpisů"
+        unverified:
+          one: "Je tu %{count} neplatný podpis"
+          few: "Jsou tu %{count} neplatné podpisy"
+          many: "Je tu %{count} neplatných podpisů"
+          other: "Je tu %{count} neplatných podpisů"
         unverified_error: (Není ověřeno statistickým úřadem)
         voted:
           zero: "Z ověřených podpisů se nevytvářejí žádné hlasy."
@@ -1628,7 +1638,7 @@ cs:
           see_page: Zobrazit stránku
         new:
           title: Vytvořit novou vlastní stránku
-          slug_help: "Text pro identifikaci této stránky na URL, například <code>https://consulproject.org/page-slug</code>"
+          slug_help: "Text pro identifikaci této stránky na URL, například <code>https://consuldemocracy.org/page-slug</code>"
         page:
           created_at: Vytvořeno v
           status: Status

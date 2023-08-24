@@ -35,13 +35,13 @@ tr:
         not_selected: Seçilmemiş yatırım projeleri desteklenemez
         not_enough_money: "Kullanılabilecek bütçeyi zaten atamışsınız. <br> <small>İstediğiniz zaman %{change_ballot} yapabileceğinizi unutmayın</small>"
         no_ballots_allowed: Seçim aşaması tamamlandı
-        different_heading_assigned: "Başka bir başlığa zaten oy vermişsiniz:%{heading_link}"
+        different_heading_assigned: "Başka bir bütçe kalemine zaten oy vermişsiniz:%{heading_link}"
         not_enough_available_votes: "Kullanabileceğiniz en fazla oy sayısına ulaştınız"
         change_ballot: oy değişikliği
         casted_offline: Zaten çevrim dışı olarak katılmışsınız
     groups:
       show:
-        title: Bir başlık seçin
+        title: Bütçe kalemi seçin
     phase:
       drafting: Taslak (halka açık değil)
       informing: Bilgiler
@@ -64,7 +64,7 @@ tr:
       next_phase: Sonraki aşama
       prev_phase: Önceki aşama
       current_phase: Geçerli aşama
-      map: Coğrafi konuma göre yatırım bütçesi önerileri
+      map: Coğrafi konuma göre yatırım bütçesi önergeleri
       finished_budgets: Tamamlanmış katılımcı bütçeler
       see_results: Sonuçları göster
       section_footer:
@@ -77,7 +77,7 @@ tr:
         subtitle: "%{heading} (%{price})"
         subtitle_without_price: "%{heading}"
         tag_category_label: "Kategoriler"
-        tags_instructions: "Bu öneriyi etiketleyin. Öneri kategorileri arasından seçim yapabilir veya yeni bir kategori ekleyebilirsiniz"
+        tags_instructions: "Bu önergeyi etiketleyin. Önerge kategorileri arasından seçim yapabilir ya da yeni bir kategori ekleyebilirsiniz"
         tags_label: Etiketler
         tags_placeholder: "Kullanmak istediğiniz etiketleri virgül (',') ile ayırarak yazın"
         map_location: "Harita konumu"
@@ -95,16 +95,16 @@ tr:
           my_ballot: Oyum
           voted_info:
             knapsack:
-              one: "<strong>%{amount_spent} maliyetli bir öneri için oy kullandınız</strong>"
-              other: "<strong>%{amount_spent} maliyetli %{count} öneri için oy kullandınız</strong>"
+              one: "<strong>%{amount_spent} maliyetli bir önerge için oy kullandınız</strong>"
+              other: "<strong>%{amount_spent} maliyetli %{count} önerge için oy kullandınız</strong>"
             approval:
-              one: "<strong>Bir öneri için oy kullandınız</strong>"
-              other: "<strong>%{count} öneri için oy kullandınız</strong>"
+              one: "<strong>Bir önerge için oy kullandınız</strong>"
+              other: "<strong>%{count} önerge için oy kullandınız</strong>"
           change_vote_info:
             knapsack: "%{phase_end_date} tarihine kadar istediğiniz zaman %{link} yapabilirsiniz. Kullanılabilecek tüm parayı harcamanız gerekmez."
             approval: "%{phase_end_date} tarihine kadar istediğiniz zaman %{link} yapabilirsiniz."
           change_vote_link: "oy değişikliği"
-          different_heading_assigned: "Başka bir başlıkta aktif oylarınız var: %{heading_link}"
+          different_heading_assigned: "Başka bir bütçe kaleminde etkin oylarınız var: %{heading_link}"
           change_ballot: "Fikrinizi değiştirirseniz %{check_ballot} oyunuzu kaldırıp baştan başlayabilirsiniz."
           check_ballot_link: "oyumu gönder"
           zero: Bu gruptaki herhangi bir yatırım projesine oy vermediniz.
@@ -113,8 +113,8 @@ tr:
           not_logged_in: "Yeni bir bütçe yatırımı oluşturmak istiyorsanız %{sign_in}ın ya da %{sign_up}ın."
         filter: "Projelere göre süzme"
         filters:
-          not_unfeasible: "Aktif"
-          selected: "Aktif"
+          not_unfeasible: "Etkin"
+          selected: "Etkin"
           unfeasible: "Uygulanabilir bulunmamış"
           unselected: "Son oylama için seçilmemiş"
           winners: "Kazananlar"
@@ -130,7 +130,7 @@ tr:
         unfeasibility_explanation: Uygulanabilir bulunmama açıklaması
         code: "Yatırım projesi kodu: <strong>%{code}</strong>"
         location: "Konum: <strong>%{location}</strong>"
-        organization_name: "Adına öneri sunulan: <strong>%{name}</strong>"
+        organization_name: "Adına önerge sunulan: <strong>%{name}</strong>"
         share: Paylaş
         title: Yatırım projesi
         supports: Destekler
@@ -138,12 +138,12 @@ tr:
         price: Maliyet
         comments_tab: Yorumlar
         milestones_tab: Aşamalar
-        author: Sahip
+        author: Sahibi
         project_unfeasible: "Bu yatırım projesi <strong>uygulanabilir bulunmamış olarak işaretlenmiş</strong> ve oylama aşamasına geçemeyecek."
         project_selected: "Bu yatırım projesi oylama aşaması için <strong>seçilmiş</strong>."
         project_winner: "Kazanan yatırım projesi"
         project_not_selected: "Bu yatırım projesi oylama aşaması için <strong>seçilmemiş</strong>."
-        see_price_explanation: Maliyet açıklamasını görüntüle
+        see_price_explanation: Maliyet açıklamasını göster
       wrong_price_format: Yalnızca tam sayılar
       investment:
         add: Oy ver
@@ -156,7 +156,7 @@ tr:
           other: "%{count} destek"
       header:
         check_ballot: "Oyumu gönder"
-        different_heading_assigned: "Başka bir başlıkta aktif oylarınız var: %{heading_link}"
+        different_heading_assigned: "Başka bir bütçe kaleminde etkin oylarınız var: %{heading_link}"
         change_ballot: "Fikrinizi değiştirirseniz %{check_ballot} oyunuzu kaldırıp baştan başlayabilirsiniz."
         check_ballot_link: "oyumu gönder"
         price: "Toplam bütçe"
@@ -222,5 +222,5 @@ tr:
     phases:
       errors:
         dates_range_invalid: "Başlangıç tarihi bitiş tarihiyle aynı ya da sonra olamaz"
-        prev_phase_dates_invalid: "Başlangıç tarihi, önceki etkin aşamanın (%{phase_name}) başlangıç tarihinden sonra olmalıdır"
-        next_phase_dates_invalid: "Bitiş tarihi, sonraki etkin aşamanın (%{phase_name}) bitiş tarihinden önce olmalıdır"
+        prev_phase_dates_invalid: "Başlangıç tarihi, önceki açılmış aşamanın (%{phase_name}) başlangıç tarihinden sonra olmalıdır"
+        next_phase_dates_invalid: "Bitiş tarihi, sonraki açılmış aşamanın (%{phase_name}) bitiş tarihinden önce olmalıdır"

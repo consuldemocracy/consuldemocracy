@@ -84,14 +84,13 @@ group :development, :test do
 end
 
 group :test do
-  gem "capybara", "~> 3.37.1"
+  gem "capybara", "~> 3.39.2"
   gem "capybara-webmock", "~> 0.7.0"
   gem "email_spec", "~> 2.2.0"
   gem "rspec-rails", "~> 5.1.2"
-  gem "selenium-webdriver", "~> 4.0.0"
+  gem "selenium-webdriver", "~> 4.11.0"
   gem "simplecov", "~> 0.21.2", require: false
   gem "simplecov-lcov", "~> 0.8.0", require: false
-  gem "webdrivers", "~> 4.7.0"
 end
 
 group :development do
