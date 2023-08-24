@@ -84,11 +84,6 @@ describe "Budgets" do
 
   describe "Index" do
     describe "Normal index" do
-      let!(:group1)   { create(:budget_group, budget: budget) }
-      let!(:group2)   { create(:budget_group, budget: budget) }
-      let!(:heading1) { create(:budget_heading, group: group1) }
-      let!(:heading2) { create(:budget_heading, group: group2) }
-
       scenario "Show normal index with links in informing phase" do
         budget.update!(phase: "informing")
 

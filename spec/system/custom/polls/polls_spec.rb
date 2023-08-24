@@ -15,7 +15,7 @@ describe "Polls" do
     end
 
     scenario "Polls display remaining days to participate if not expired" do
-      create(:poll, starts_at: Time.current, ends_at: Time.current + 11.days)
+      create(:poll, starts_at: Time.current, ends_at: 11.days.from_now)
       create(:poll, :expired)
 
       visit polls_path
@@ -33,7 +33,7 @@ describe "Polls" do
     end
 
     scenario "Polls display remaining hours to participate if not expired" do
-      create(:poll, starts_at: Time.current, ends_at: Time.current + 8.hours)
+      create(:poll, starts_at: Time.current, ends_at: 8.hours.from_now)
       create(:poll, :expired)
 
       visit polls_path
