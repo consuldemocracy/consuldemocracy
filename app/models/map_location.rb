@@ -43,6 +43,7 @@ class MapLocation < ApplicationRecord
         long: values[3]
       }
     end
+  end
 
   def self.default_latitude
     51.48
