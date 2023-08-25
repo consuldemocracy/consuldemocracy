@@ -3,6 +3,7 @@ uk-UA:
     homepage:
       header:
         create: "Створити заголовок"
+        no_cards: "Заголовка немає"
         title: "Заголовок"
     menu:
       budget_investments: "Бюджети участі"

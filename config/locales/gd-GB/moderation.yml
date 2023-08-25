@@ -1,1 +1,111 @@
 gd:
+  moderation:
+    actions:
+      confirm_action: "A bheil thu cinnteach? %{action}"
+    comments:
+      index:
+        block_authors: Bac ùghdaran
+        filter: Criathraich
+        filters:
+          all: Uile
+          pending_flag_review: Ri choileanadh
+          with_ignored_flag: Comharraich gun deach a leughadh
+        headers:
+          comment: Beachd
+          moderate: Dèan modaratadh
+        hide: Falaich beachdan
+        ignore_flags: Comharraich gun deach a leughadh
+        orders:
+          flags: Leis an àireamh bhrataichean as motha
+          newest: As ùire
+        title: Beachdan
+    dashboard:
+      index:
+        title: Modaratadh
+    debates:
+      index:
+        block_authors: Bac ùghdaran
+        filter: Criathraich
+        filters:
+          all: Uile
+          pending_flag_review: Ri choileanadh
+          with_ignored_flag: Comharraich gun deach a leughadh
+        headers:
+          debate: Deasbad
+          moderate: Dèan modaratadh
+        hide: Falaich deasbadan
+        ignore_flags: Comharraich gun deach a leughadh
+        orders:
+          created_at: As ùire
+          flags: Leis an àireamh bhrathaichean as motha
+        title: Deasbadan
+    header:
+      title: Modaratadh
+    menu:
+      flagged_comments: Beachdan
+      flagged_debates: Deasbadan
+      flagged_investments: Tasgaidhean buidseit
+      proposals: Molaidhean
+      proposal_notifications: Brathan mu mholaidhean
+      users: Bac cleachdaichean
+    proposals:
+      index:
+        block_authors: Bac ùghdaran
+        filter: Criathraich
+        filters:
+          all: Uile
+          pending_flag_review: A’ feitheamh ri ath-sgrùdadh
+          with_ignored_flag: Comharraich gun deach a leughadh
+        headers:
+          moderate: Dèan modaratadh
+          proposal: Moladh
+        hide: Falaich molaidhean
+        ignore_flags: Comharraich gun deach a leughadh
+        orders:
+          created_at: As ùire
+          flags: Leis an àireamh bhrataichean as motha
+        title: Molaidhean
+    budget_investments:
+      index:
+        block_authors: Bac ùghdaran
+        filter: Criathraich
+        filters:
+          all: Uile
+          pending_flag_review: Ri choileanadh
+          with_ignored_flag: Comharraich gun deach a leughadh
+        headers:
+          moderate: Dèan modaratadh
+          budget_investment: Tasgadh buidseit
+        hide: Falaich tasgaidhean buidseit
+        ignore_flags: Comharraich gun deach a leughadh
+        orders:
+          created_at: As ùire
+          flags: Leis an àireamh bhrataichean as motha
+        title: Tasgaidhean buidseit
+    proposal_notifications:
+      index:
+        block_authors: Bac ùghdaran
+        filter: Criathraich
+        filters:
+          all: Uile
+          pending_review: A’ feitheamh ri ath-sgrùdadh
+          ignored: Comharraich gun deach a leughadh
+        headers:
+          moderate: Dèan modaratadh
+          proposal_notification: Brathan mu mholaidhean
+        hide: Falaich molaidhean
+        ignore_flags: Comharraich gun deach a leughadh
+        orders:
+          created_at: As ùire
+          moderated: Fo stiùir modarator
+        title: Brathan mu mholaidhean
+    users:
+      index:
+        block: Bac
+        confirm_block: "A bheil thu cinnteach? Falaichidh seo an cleachdaiche \"%{name}\" agus an t-susbaint gu lèir aca."
+        confirm_hide: "A bheil thu cinnteach? Falaichidh seo an cleachdaiche \"%{name}\" gun a bhith a’ falach na susbaint aca."
+        hide: Falaich
+        search_placeholder: post-d no ainm cleachdaiche
+        title: Bac cleachdaichean
+      notice_block: Chaidh an cleachdaiche a bhacadh. Chaidh an t-susbaint uile a sgrìobh an cleachdaiche seo fhalach.
+      notice_hide: Chaidh an cleachdaiche seo fhalach. Tha susbaint a sgrìobh an cleachdaiche seo fhathast ri fhaicinn.

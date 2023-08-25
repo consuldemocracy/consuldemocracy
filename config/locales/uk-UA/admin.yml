@@ -4,6 +4,7 @@ uk-UA:
       title: Адміністрування
     actions:
       actions: Дії
+      confirm_action: "Ви впевнені? %{action} \"%{name}\""
       confirm_hide: Підтвердити модерацію
       delete: "Видалити"
       hide: Приховати
@@ -31,12 +32,18 @@ uk-UA:
           proposals: Пропозиції
           budgets: Бюджетування за участі громадськості
           help_page: Довідка
+      create:
+        notice: "Банер успішно зроблено"
+      destroy:
+        notice: "Банер успішно видалено"
       edit:
         editing: Редагувати постер
         form:
           submit_button: Зберегти зміни
       new:
         creating: Створити постер
+      update:
+        notice: "Банер успішно оновлено"
     activity:
       show:
         action: Дія
@@ -71,6 +78,7 @@ uk-UA:
           finished: Завершено
         budget_investments: Управляти проектами
         table_budget_type: "Тип"
+        table_completed: Завершено
         table_draft: "Чернетка"
         table_name: Назва
         table_phase: Етап
@@ -84,6 +92,8 @@ uk-UA:
         title: Редагувати бюджет участі
         delete: Видалити бюджет
         phase: Етап
+        phases_caption: "Фази"
+        duration: "Тривалість"
         enabled: Дозволено
         actions: Дії
         active: Активні
@@ -102,10 +112,14 @@ uk-UA:
           other: "Вибрано %{count} оцінювачів"
         empty_administrators: "Адміністратори відсутні"
         empty_valuators: "Оцінювачі відсутні"
+        hide_money: "Сховати гроші"
       destroy:
         success_notice: Бюджет видалений
         unable_notice: Ви не можете видалити бюджет, який має пов'язані інвестиції
         unable_notice_polls: Ви не можете видалити бюджет, який має пов'язане опитування
+      show:
+        add_group: "Додати групу"
+        add_heading: "Додати заголовок"
       winners:
         calculate: Вирахувати переможні інвестиції
         calculated: Переможці вираховуються, це може зайняти деякий час.
@@ -132,6 +146,8 @@ uk-UA:
         edit: "Редагувати групу"
         max_votable_headings_info: "Стосується лише етапу відбору проєктів. На етапі голосування за проєкти користувачі можуть проголосувати лише за одну рубрику в групі."
         submit: "Зберегти групу"
+      index:
+        new_button: "Додати нову групу"
     budget_headings:
       create:
         notice: "Рубрику створено!"
@@ -255,6 +271,13 @@ uk-UA:
         budget: Бюджет
         groups: Групи
         headings: Рубрики
+      groups:
+        back: "Повернутися до редагування бюджету"
+      headings:
+        single:
+          back: "Повернутися до редагування групи"
+      phases:
+        continue: "Завершено"
     milestones:
       index:
         table_id: "ID"
@@ -661,6 +684,7 @@ uk-UA:
           community: "Спільнота"
           proposals: "Пропозиції"
           polls: "Опитування"
+          budgets: "Бюджети"
           layouts: "Макети"
           mailers: "Електронні адреси"
           management: "Управління"
@@ -1002,9 +1026,6 @@ uk-UA:
         table_title: "Назва"
         edit_answers: Редагувати відповіді
         see_proposal: "(Переглянути пропозицію)"
-      flash:
-        question_added: "Запитання додано до голосування"
-        error_on_question_added: "Не вдалося призначити запитання для цього опитування"
       destroy:
         alert: "Ця дія видалить голосування і всі пов'язані запитання."
         success_notice: "Голосування видалено"
@@ -1025,9 +1046,13 @@ uk-UA:
         poll_not_assigned: "Голосування не призначено"
       edit:
         title: "Редагувати запитання"
+      form:
+        poll_help: "Ви можете обрати лише опитування, які не почалися"
       new:
         title: "Створити запитання в голосуванні %{poll}"
         title_proposal: "Створити запитання"
+      destroy:
+        notice: "Запитання видалено успішно"
       answers:
         images:
           add_image: "Додати зображення"
@@ -1054,14 +1079,13 @@ uk-UA:
     answers:
       new:
         title: Нова відповідь
-      show:
-        title: Назва
-        description: Опис
-        images: Зображення
-        images_list: Список зображень
-        edit: Додати відповідь
       edit:
         title: Редагувати відповідь
+      destroy:
+        success_notice: "Відповідь видалена успішно"
+      images:
+        index:
+          title: Зображення
       videos:
         index:
           title: Відео
@@ -1234,6 +1258,9 @@ uk-UA:
       no_description: "Опис відсутній"
     shared:
       search:
+        advanced_filters:
+          sdg_goals:
+            all: "Всі цілі"
         label:
           booths: "Шукати кабінку за назвою або розташуванням"
           debates: "Шукати обговорення за назвою або описом"
@@ -1260,6 +1287,7 @@ uk-UA:
       color_help: Шістнадцятковий формат
       show_results_and_stats: "Показати результати і статистику"
       results_and_stats_reminder: "Поставивши прапорець, можна зробити результати та/або статистику публічно доступними і видимими для кожного користувача."
+      example_url: "Наприклад, https://consuldemocracy.org або /help"
     geozones:
       index:
         title: Геозона
@@ -1487,7 +1515,7 @@ uk-UA:
           see_page: Переглянути сторінку
         new:
           title: Створити нову особисту сторінку
-          slug_help: "Текст для ідентифікації цієї сторінки через URL-адресу, наприклад <code>https://consulproject.org/page-slug</code>"
+          slug_help: "Текст для ідентифікації цієї сторінки через URL-адресу, наприклад <code>https://consuldemocracy.org/page-slug</code>"
         page:
           created_at: Створено о
           status: Статус
@@ -1575,6 +1603,8 @@ uk-UA:
         local_census_records:
           no_records_found: Записів не знайдено.
     machine_learning:
+      help:
+        title_3: "Як використовувати цей модуль"
       related_content: "Пов'язаний контент"
       tab_help: "Допомога"
       tags: "Теги"

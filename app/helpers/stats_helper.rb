@@ -2,7 +2,7 @@ module StatsHelper
   def chart_tag(opt = {})
     opt[:data] ||= {}
     opt[:data][:graph] = admin_api_stats_path(chart_data(opt))
-    tag.div opt
+    tag.div(**opt)
   end
 
   def chart_data(opt = {})
@@ -26,7 +26,7 @@ module StatsHelper
   def budget_investments_chart_tag(opt = {})
     opt[:data] ||= {}
     opt[:data][:graph] = admin_api_stats_path(budget_investments: true)
-    tag.div opt
+    tag.div(**opt)
   end
 
   def number_to_stats_percentage(number, options = {})

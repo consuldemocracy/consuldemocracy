@@ -111,20 +111,16 @@ describe "Budgets creation wizard", :admin do
 
     click_link "Finish"
 
-    within "section", text: "HEADING GROUPS" do
-      within "section", text: "All city" do
-        within_table "Headings in All city" do
-          expect(page).to have_css "tbody tr", count: 1
-          expect(page).to have_content "All city"
-        end
+    within "section", text: "Heading groups" do
+      within_table "Headings in All city" do
+        expect(page).to have_css "tbody tr", count: 1
+        expect(page).to have_content "All city"
       end
 
-      within "section", text: "Districts" do
-        within_table "Headings in Districts" do
-          expect(page).to have_css "tbody tr", count: 2
-          expect(page).to have_content "North"
-          expect(page).to have_content "South"
-        end
+      within_table "Headings in Districts" do
+        expect(page).to have_css "tbody tr", count: 2
+        expect(page).to have_content "North"
+        expect(page).to have_content "South"
       end
     end
   end

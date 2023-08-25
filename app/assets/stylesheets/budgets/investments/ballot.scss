@@ -2,8 +2,8 @@
 
   .button-remove-support {
     @include has-fa-icon(times, solid);
+    @include brand-secondary-color;
     background: #e7eaec;
-    color: $brand-secondary;
     font-weight: bold;
     margin-top: $line-height;
 

@@ -8,11 +8,6 @@ nn:
         participants: Deltakere
       sidebar:
         participate: Delta
-      topic:
-        comments:
-          zero: Ingen kommentarer
-          one: 1 kommentar
-          other: "%{count} kommentarer"
       author: Forfatter
     topic:
       show:

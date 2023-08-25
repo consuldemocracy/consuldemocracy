@@ -21,7 +21,6 @@ namespace :legislation do
         put :unflag
       end
       collection do
-        get :map
         get :suggest
       end
     end

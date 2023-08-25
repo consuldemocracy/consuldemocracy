@@ -32,7 +32,6 @@ ro:
         translation: "Traducere actualizată cu succes"
       destroy:
         budget_investment: "Proiect de investiție șters cu succes."
-        error: "Nu s-a putut șterge"
         topic: "Topic șters cu succes."
         poll_question_answer_video: "Răspunsul videoclipului șters cu succes."
         valuator_group: "Grup de evaluare șters cu succes"

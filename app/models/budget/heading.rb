@@ -22,6 +22,7 @@ class Budget
     end
 
     belongs_to :group
+    belongs_to :geozone
 
     has_many :investments
     has_many :content_blocks, dependent: :destroy

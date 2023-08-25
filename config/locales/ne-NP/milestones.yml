@@ -1,0 +1,8 @@
+ne:
+  milestones:
+    index:
+      no_milestones: परिभाषित माइलस्टोनहरू छैन
+      progress: प्रगति
+    show:
+      publication_date: "प्रकाशित %{publication_date}"
+      status_changed: स्थितिमा परिवर्तन भयो

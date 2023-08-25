@@ -24,6 +24,10 @@ module MailerHelper
     "font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;"
   end
 
+  def mailer_footer_spacing
+    "margin: 0;padding: 0;line-height: 1.5em;"
+  end
+
   def css_for_mailer_heading
     mailer_font_family + "font-size: 48px;"
   end
@@ -34,6 +38,14 @@ module MailerHelper
 
   def css_for_mailer_text
     mailer_font_family + "font-size: 14px;font-weight: normal;line-height: 24px;"
+  end
+
+  def css_for_mailer_org
+    mailer_font_family + mailer_footer_spacing + "color: #797f7f; font-size: 12px;"
+  end
+
+  def css_for_mailer_footer
+    mailer_font_family + mailer_footer_spacing + "color: #222; font-size: 10px; margin-top: 12px;"
   end
 
   def css_for_mailer_button

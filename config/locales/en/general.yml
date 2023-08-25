@@ -145,6 +145,10 @@ en:
       allowed_file_content_types: "content type must be one of %{types}"
       user_not_found: User not found
       invalid_date_range: "Invalid date range"
+      past_date: "Must not be a past date"
+      cannot_change_date:
+        poll_started: "Cannot be changed if voting has already started"
+        poll_ended: "Cannot be changed if voting has already ended"
   form:
     accept_terms: I agree to the %{policy} and the %{conditions}
     accept_terms_title: I agree to the Privacy Policy and the Terms and conditions of use
@@ -206,12 +210,14 @@ en:
     footer:
       accessibility: Accessibility
       conditions: Terms and conditions of use
-      consul: CONSUL application
-      consul_url: https://github.com/consul/consul
-      copyright: "CONSUL version %{version}, %{year}"
+      consul: CONSUL DEMOCRACY application
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
+      copyright: CONSUL DEMOCRACY, %{year}
       description: This portal uses the %{consul} which is %{open_source}.
       open_source: open-source software
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: Decide how to shape the city you want to live in.
+      participation_title: Participation
       privacy: Privacy Policy
     header:
       administration_menu: Menu
@@ -226,6 +232,7 @@ en:
       help: Help
       my_account_link: My account
       my_activity_link: My content
+      open_gov: Open government
       proposals: Proposals
       poll_questions: Voting
       budgets: Participatory budgeting
@@ -395,10 +402,6 @@ en:
         edit: "Before it gets shared you'll be able to change the text as you like."
         view_proposal: Not now, go to my proposal
       already_supported: You have already supported this proposal. Share it!
-      comments:
-        one: 1 comment
-        other: "%{count} comments"
-        zero: No comments
       support: Support
       support_label: "Support %{proposal}"
       support_title: Support this proposal
@@ -419,10 +422,6 @@ en:
     show:
       author_deleted: User deleted
       code: "Proposal code:"
-      comments:
-        one: 1 comment
-        other: "%{count} comments"
-        zero: No comments
       comments_tab: Comments
       dashboard_proposal_link: Dashboard
       flag: This proposal has been flagged as inappropriate by several users.
@@ -650,6 +649,10 @@ en:
     show:
       vote_answer: "Vote %{answer}"
       voted: "You have voted %{answer}"
+    description:
+      unique: "You can select a maximum of 1 answer."
+      multiple: "You can select a maximum of %{maximum} answers."
+    read_more_about: "Read more about:"
   proposal_notifications:
     new:
       title: "Send notification"
@@ -766,6 +769,10 @@ en:
     optional: "Optional fields"
     required: "Required fields"
     required_fields: "All fields marked with a (*) are required"
+    comments:
+      one: "1 comment"
+      other: "%{count} comments"
+      zero: "No comments"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"

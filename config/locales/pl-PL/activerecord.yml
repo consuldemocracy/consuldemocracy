@@ -466,7 +466,7 @@ pl:
         description: Opis
       poll/question/answer/translation:
         title: Odpowiedź
-        description: Opis
+        description: "Opis"
       poll/question/answer/video:
         title: Tytuł
         url: Zewnętrzne video

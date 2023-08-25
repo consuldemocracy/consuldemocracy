@@ -51,4 +51,59 @@ describe Mailer do
       expect(user.subscriptions_token).to eq "subscriptions_token_value"
     end
   end
+
+  describe "multitenancy" do
+    it "uses the current tenant when using delayed jobs", :delay_jobs do
+      allow(ActionMailer::Base).to receive(:default_url_options).and_return({ host: "consul.dev" })
+      create(:tenant, schema: "delay")
+
+      Tenant.switch("delay") do
+        Setting["org_name"] = "Delayed tenant"
+
+        Mailer.delay.user_invite("test@consul.dev")
+      end
+
+      Delayed::Worker.new.work_off
+      body = ActionMailer::Base.deliveries.last.body.to_s
+      expect(body).to match "Delayed tenant"
+      expect(body).to match "href=\"http://delay.consul.dev/"
+      expect(body).to match "src=\"http://delay.consul.dev/"
+    end
+
+    describe "SMTP settings" do
+      let(:default_settings) { { address: "mail.consul.dev", username: "main" } }
+      let(:super_settings) { { address: "super.consul.dev", username: "super" } }
+
+      before do
+        allow(Rails.application).to receive(:secrets).and_return(ActiveSupport::OrderedOptions.new.merge(
+          smtp_settings: default_settings,
+          tenants: {
+            supermailer: { smtp_settings: super_settings }
+          }
+        ))
+      end
+
+      it "does not overwrite the settings for the default tenant" do
+        Mailer.user_invite("test@consul.dev").deliver_now
+
+        expect(ActionMailer::Base.deliveries.last.delivery_method.settings).to eq({})
+      end
+
+      it "uses specific secret settings for tenants overwriting them" do
+        allow(Tenant).to receive(:current_schema).and_return("supermailer")
+
+        Mailer.user_invite("test@consul.dev").deliver_now
+
+        expect(ActionMailer::Base.deliveries.last.delivery_method.settings).to eq super_settings
+      end
+
+      it "uses the default secret settings for other tenants" do
+        allow(Tenant).to receive(:current_schema).and_return("ultramailer")
+
+        Mailer.user_invite("test@consul.dev").deliver_now
+
+        expect(ActionMailer::Base.deliveries.last.delivery_method.settings).to eq default_settings
+      end
+    end
+  end
 end

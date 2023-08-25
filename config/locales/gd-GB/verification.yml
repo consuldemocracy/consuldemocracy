@@ -1,1 +1,104 @@
 gd:
+  verification:
+    alert:
+      lock: Tha thu air an àireamh as motha de dh’oidhirpean a tha ceadaichte a ruigsinn. Feuch ris a-rithist an ceann greis.
+    back: Air ais dhan chunntas agam
+    email:
+      create:
+        alert:
+          failure: Bha duilgheadas le bhith a’ cur post-d dhan chunntas agad
+        flash:
+          success: "Chuir sinn post-d dearbhaidh dhan chunntas agad: %{email}"
+      show:
+        alert:
+          failure: Tha an còd dearbhaidh ceàrr
+        flash:
+          success: Tha thu nad chleachdaidh dearbhte
+    letter:
+      alert:
+        unconfirmed_code: Cha do chuir thu an còd dearbhaidh a-steach fhathast
+      create:
+        flash:
+          success: Tapadh leibh airson <b>an còd tèarainte agad iarraidh (tha seo dìreach a dhìth airson nam bhòtaichean deireannach)</b>. An ceann beagan làithean cuiridh sinn e chun t-seòlaidh a tha a’ nochdadh san dàta a tha sinn air clàradh dhut. Cuimhnichibh, mas fheàrr leibh, gun urrainn dhut do chòd fhaighinn bho Oifis Taic nan Saoranach sam bith.
+      edit:
+        see_all: Faic na molaidhean
+        title: Litir air iarraidh
+      errors:
+        incorrect_code: Tha an còd dearbhaidh ceàrr
+      new:
+        explanation: "Gus bhòtadh airson pròiseactan buidseit faodaidh tu:"
+        go_to_index: Faic na molaidhean
+        office: Dearbhaich ann oifis taic saoranach sam bith.
+        send_letter: Cuir litir thugam leis a’ chòd
+        title: Meal do naidheachd!
+        user_permission_info: Leis a’ chunntas agad, is urrainn dhut,,,
+      update:
+        flash:
+          success: Tha an còd ceart. Tha do chunntas dearbhte a-nis
+    redirect_notices:
+      already_verified: Chaidh an cunntas agad a dearbhadh mar-thà
+      email_already_sent: Tha sinn air post-d a chur le ceangal dearbhaidh mar-thà. Mura tèid agad air a’ phost-d a lorg, faodaidh tu fear eile iarraidh an seo
+    residence:
+      alert:
+        unconfirmed_residency: Chan eil thu air dearbhadh far a bheil thu a’ fuireach fhathast
+      create:
+        flash:
+          success: Àite-fuirich air a dhearbhadh
+      new:
+        accept_terms_text: Tha mi a’ gabhail ri %{terms_url} a’ Chunntas-sluaigh
+        accept_terms_text_title: Gabhaidh mi ri teirmichean is cumhaichean ruigsinneachd a’ Chunntais-sluaigh
+        document_number: Àireamh na sgrìobhainne
+        document_number_help_title: Cobhair
+        document_number_help_text: "<strong>DNI</strong>: 12345678A<br> <strong>Cead=siubhail</strong>: AAA000001<br> <strong>Cairt còmhnaidh</strong>: X1234567P"
+        document_type:
+          passport: Cead-siubhail
+          residence_card: Cairt còmhnaidh
+          spanish_id: DNI
+        error_not_allowed_age: Tha thu ro òg gus pàirt a ghabhail
+        error_not_allowed_postal_code: Chan fhaod saoranaich bhon chòd-puist seo pàirt a ghabhail
+        error_verifying_census: Cha b’ urrainn dhan Chunntas-sluaigh d’ fhiosrachadh a dhearbhadh. Dèan cinnteach gu bheil fiosrachadh a’ Chunntais-sluaigh agad ceart le bhith a’ fònadh dhan Chomhairle no a’ tadhal air Oifis Taic nan Saoranach.
+        form_errors: ': cha ghabhadh an t-àite còmhnaidh agad a dhearbhadh mar thoradh air seo'
+        postal_code_note: Gus do chunntas a dhearbhadh feumaidh tu a bhith clàraichte
+        terms: teirmichean is cumhaichean ruigsinneachd
+        title: Dearbhaich an t-àite-fuirich agad
+        verify_residence: Dearbhaich an t-àite-fuirich agad
+    sms:
+      create:
+        flash:
+          success: Cuir a-steach an còd dearbhaidh a chaidh a chur thugad ann an teachdaireachd teacsa
+      edit:
+        resend_sms_link: Briog an seo gus a chur a-rithist.
+        resend_sms_text: Nach d’fhuair thu teacsa leis a’ chòd dearbhaidh agad?
+        submit_button: Cuir
+        title: A’ dearbhadh fiosrachadh tèarainteachd
+      new:
+        phone: Cuir a-steach an àireamh fòn-làimhe agad gus an còd fhaighinn
+        phone_format: "<strong><em>(Eisimpleir: 612345678 no +34612345678)</em></strong>"
+        phone_note: Cha chleachd sinn an àireamh fòn agad ach a-mhàin gus còd a chur thugad, cha chur sinn fios thugad air a’ fòn uair sam bith.
+        submit_button: Cuir
+        title: Cuir còd dearbhaidh eile
+      update:
+        error: Còd dearbhaidh ceàrr
+        flash:
+          level_three:
+            success: Tha an còd ceart. Tha do chunntas dearbhte a-nis
+          level_two:
+            success: Tha an còd ceart
+    step_1: Àite-còmhnaidh
+    step_2: Còd dearbhaidh
+    step_3: Dearbhadh deireannach
+    user_permission_debates: Gabh pàirt ann an deasbadan
+    user_permission_info: 'Ma dhearbhas tu do chuid fiosrachaidh, bidh e comasach dhut:'
+    user_permission_proposal: Molaidhean ùra a chruthachadh
+    user_permission_support_proposal: Taic a chur ri molaidhean
+    user_permission_votes: Bhòtadh airson pròiseactan buidseit
+    verification_needed: Tha dearbhadh a bharrachd a dhìth
+    verified_user:
+      form:
+        submit_button: Cuir còd
+      show:
+        email_title: Puist-d
+        explanation: Tha am fiosrachadh a leanas againn air a’ Chlàr an-dràsta; tagh dòigh gus an còd dearbhaidh fhaighinn.
+        phone_title: Àireamhan fòn
+        title: Fiosrachadh ri fhaighinn
+        use_another_phone: Cleachd fòn eile

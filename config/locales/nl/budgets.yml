@@ -23,6 +23,7 @@ nl:
             other: "Je kan op maximaal <span>%{count}</span> projecten stemmen"
         no_balloted_group_yet: "U hebt nog niet gestemd op deze groep, stem nu!"
         remove: Verwijder keuze
+        remove_label: "Je stem voor %{investment} intrekken"
         voted:
           one: "U heeft op <span>één</span> voorstel gestemd."
           other: "U heeft op <span>%{count}</span> voorstellen gestemd."
@@ -40,7 +41,7 @@ nl:
         casted_offline: Je hebt al offline deelgenomen
     groups:
       show:
-        title: Kies een mogelijkheid
+        title: Selecteer een optie
     phase:
       drafting: Concept (niet publiekelijk zichtbaar)
       informing: Informatie
@@ -53,43 +54,32 @@ nl:
       reviewing_ballots: Evaluatie van stemmen
       finished: Afronden budgetvoorstel
     index:
-      title: Participatory budgets
+      title: Burgerbegrotingen
       empty_budgets: Er zijn geen budgetten.
       section_header:
         icon_alt: Budgetafbeelding
-        title: Participatory budgets
+        title: Burgerbegrotingen
         help: "Hulp bij ideeën"
       all_phases: Investeringsfases
       next_phase: Volgende fase
       prev_phase: Vorige fase
       current_phase: Huidige fase
-      map: Investeringen geografisch weergegeven
+      map: Investeringen op de kaart
       finished_budgets: "Afgeronde ideeën"
       see_results: Bekijk resultaten
       section_footer:
         title: Hulp bij budget
         description: Met de participatieve budgetten beslissen de burgers aan welke projecten zij een deel van de begroting toekennen.
       milestones: Mijlpalen
-    supports_info:
-      different: "Maar... je kunt ieder idee slechts één keer steunen. En je steun is definitief."
-      next: "Steun de ideeën die jij graag uitgevoerd wil zien."
-      scrolling: "Blijf scrollen om alle ideeën te zien"
-      share: "Je kunt ideeën die je hebt gesteund delen op social media. Zo krijgen de ideeën meer aandacht én wellicht meer steun!"
-      supported:
-        one: "Tot nu toe heb je <strong>1 idee</strong> gesteund."
-        other: "Tot nu toe heb je <strong>%{count} ideeën</strong> gesteund."
-      supported_not_logged_in: "Log in om <strong>projecten te steunen</strong>."
-      remember: "Je mag zoveel verschillende ideeën steunen als je wilt."
-      time: "Je kunt nog tot %{phase_end_date} ideeën steunen."
-      title: "Je kunt nu ideeën <strong>steunen</strong>!"
     investments:
       form:
         title: "Nieuw begrotingsvoorstel maken"
-        subtitle: "%{heading}(%{price})"
-        tag_category_label: "Categorieen"
+        subtitle: "%{heading} (%{price})"
+        subtitle_without_price: "%{heading}"
+        tag_category_label: "Categorieën"
         tags_instructions: "Voeg termen toe aan dit voorstel. Je kunt kiezen uit voorgestelde termen of je eigen term kiezen"
-        tags_label: Tags
-        tags_placeholder: "Voer de termen in die je wilt gebruiken, gescheiden door komma's (',')"
+        tags_label: Labels
+        tags_placeholder: "Voer de labels in die je wilt gebruiken, gescheiden door kommas (',')"
         map_location: "Locatie"
         map_location_instructions: "Beweeg de kaart en wijs de locatie aan"
         map_remove_marker: "Locatie verwijderen"
@@ -99,9 +89,9 @@ nl:
         unfeasible_text: "De voorstellen moeten aan een aantal criteria (leesbaarheid, concreetheid, de gemeente is er op aanspreekbaar, binnen het budget) voldoen om 'haalbaar' te worden geacht en in stemming te kunnen worden gebracht. Voorstellen die hierbuiten vallen worden als 'onhaalbaar' aangemerkt en in de volgende lijst gepubliceerd, met de reden van onhaalbaarheid."
         by_heading: "Begrotingsvoorstellen in de context van: %{heading}"
         search_form:
-          button: Search
+          button: Zoek
           placeholder: Zoek begrotingsvoorstellen...
-          title: Search
+          title: Zoek
         sidebar:
           my_ballot: Mijn stemmen
           voted_info:
@@ -143,13 +133,13 @@ nl:
         location: "Locatie: <strong>%{location}</strong>"
         organization_name: "Voorgesteld namens: <strong>%{name}</strong>"
         share: Deel
-        title: Investment project
-        supports: Steunt
-        votes: Votes
+        title: Begrotingsvoorstel
+        supports: Steun
+        votes: Stemmen
         price: Prijs
-        comments_tab: Comments
+        comments_tab: Reacties
         milestones_tab: Mijlpalen
-        author: Author
+        author: Auteur
         project_unfeasible: "Dit investeringsproject <strong> is gemarkeerd als niet haalbaar </strong> en gaat niet naar de beslissingsfase."
         project_selected: "Dit investeringsproject <strong> is geselecteerd </strong> voor beslissingsfase."
         project_winner: "Winnend investeringsproject"
@@ -157,7 +147,8 @@ nl:
         see_price_explanation: Toelichting op de kosten
       wrong_price_format: Alleen hele cijfers
       investment:
-        add: Voeg toe
+        add: Stem
+        add_label: "Stem voor %{investment}"
         already_added: U heeft dit voorstel al toegevoegd
         support_title: Steun dit voorstel
         supports:
@@ -167,7 +158,7 @@ nl:
       header:
         check_ballot: "Check mijn stemmen"
         different_heading_assigned: "Je steunt al in een ander onderdeel van het voorstel: %{heading_link}"
-        change_ballot: "ALs je je bedenkt kun je je stemmen in %{check_ballot} verwijderen en opnieuw beginnen."
+        change_ballot: "Als je je bedenkt kan je je stemmen in %{check_ballot} verwijderen en opnieuw beginnen."
         check_ballot_link: "bekijk mijn stemmen"
         price: "Deze rubriek heeft een budget van"
       votes:
@@ -175,14 +166,13 @@ nl:
         confirm_group:
           one: "Je kunt maar in %{count} wijk voorstellen steunen. Als je verder gaat is dat definitief. Weet je het zeker?"
           other: "Je kunt maar in %{count} wijk voorstellen steunen. Als je verder gaat is dat definitief. Weet je het zeker?"
-        remove_support: "Steun verwijderen"
-        remove_support_label: "Steun verwijderen %{investment}"
-        support: "Steunen"
-        support_label: "Steunen %{investment}"
+        remove_support: "Steun intrekken"
+        remove_support_label: "Steun voor %{investment} intrekken"
+        support: "Steun"
+        support_label: "Steun %{investment}"
     investments_list:
       investment:
         price: "Prijs"
-        read_more: "Lees meer"
         supports: "Steunt"
         read_more: "Bekijk idee"
       see_all: "Bekijk alle ideeën"
@@ -205,7 +195,7 @@ nl:
       page_title: "%{budget} - resultaten"
       heading: "Resultaten ideeën"
       heading_selection_title: "Per wijk"
-      ballot_lines_count: Votes
+      ballot_lines_count: Stemmen
       hide_discarded_link: Verberg verworpen voorstellen
       show_all_link: Toon alle
       price: Prijs

@@ -66,6 +66,9 @@ Layout/IndentationWidth:
 Layout/LeadingEmptyLines:
   Enabled: true
 
+Layout/LineEndStringConcatenationIndentation:
+  Enabled: true
+
 Layout/LineLength:
   Max: 110
   Severity: refactor
@@ -161,6 +164,9 @@ Lint/BooleanSymbol:
 Lint/ConstantDefinitionInBlock:
   Enabled: true
 
+Lint/DeprecatedClassMethods:
+  Enabled: true
+
 Lint/DuplicateBranch:
   Enabled: true
 
@@ -174,6 +180,9 @@ Lint/EmptyFile:
   Enabled: true
 
 Lint/LiteralAsCondition:
+  Enabled: true
+
+Lint/NonAtomicFileOperation:
   Enabled: true
 
 Lint/ParenthesesAsGroupedExpression:
@@ -218,6 +227,9 @@ Performance/EndWith:
 Performance/StartWith:
   Enabled: true
 
+Performance/StringIdentifierArgument:
+  Enabled: true
+
 Performance/Sum:
   Enabled: true
 
@@ -236,9 +248,13 @@ Rails/CreateTableWithTimestamps:
 Rails/Date:
   Enabled: true
 
+Rails/DurationArithmetic:
+  Enabled: true
+
 Rails/DynamicFindBy:
   Enabled: true
   Whitelist:
+    - find_by_domain
     - find_by_slug_or_id
     - find_by_slug_or_id!
     - find_by_manager_login
@@ -288,6 +304,9 @@ Rails/OutputSafety:
   Exclude:
     - app/helpers/text_with_links_helper.rb
 
+Rails/Pick:
+  Enabled: true
+
 Rails/PluckId:
   Enabled: true
 
@@ -295,6 +314,9 @@ Rails/PluralizationGrammar:
   Enabled: true
 
 Rails/Presence:
+  Enabled: true
+
+Rails/RedundantTravelBack:
   Enabled: true
 
 Rails/RelativeDateConstant:
@@ -319,6 +341,7 @@ Rails/SkipsModelValidations:
   ForbiddenMethods:
     - update_attribute
   Exclude:
+    - app/models/tenant.rb
     - lib/acts_as_paranoid_aliases.rb
 
 Rails/TimeZone:
@@ -473,7 +496,16 @@ Style/ClassVars:
 Style/CollectionMethods:
   Enabled: true
 
+Style/FileRead:
+  Enabled: true
+
+Style/FileWrite:
+  Enabled: true
+
 Style/HashConversion:
+  Enabled: true
+
+Style/HashExcept:
   Enabled: true
 
 Style/HashSyntax:
@@ -489,6 +521,9 @@ Style/IdenticalConditionalBranches:
   Enabled: true
 
 Style/IfWithBooleanLiteralBranches:
+  Enabled: true
+
+Style/MapToHash:
   Enabled: true
 
 Style/MethodDefParentheses:
@@ -559,6 +594,8 @@ Style/StringLiteralsInInterpolation:
 
 Style/SymbolProc:
   Enabled: true
+  AllowedMethods:
+    - respond_to
 
 Style/TrailingCommaInArrayLiteral:
   Enabled: true

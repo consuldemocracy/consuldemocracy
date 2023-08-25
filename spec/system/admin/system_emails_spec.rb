@@ -356,7 +356,7 @@ describe "System Emails" do
       expect(email).to deliver_to(voter)
       expect(email).to have_body_text(proposal_notification.body)
 
-      expect(page).to have_content("Pending notifications sent succesfully")
+      expect(page).to have_content("Pending notifications sent successfully")
     end
   end
 end

@@ -40,8 +40,6 @@ sr:
     telegram_handle_description: "Ако је попуњено, појавиће се у подножју"
     instagram_handle: "Ручица за Инстаграм"
     instagram_handle_description: "Ако је попуњено, појавиће се у подножју"
-    url: "Главни УРЛ"
-    url_description: "Главни УРЛ Вашег сајта"
     org_name: "Име сајта"
     org_name_description: "Ово име ће се појавити у наслову мејлова, страницама за помоћ..."
     related_content_score_threshold: "Граница вредновања повезаног садржаја"

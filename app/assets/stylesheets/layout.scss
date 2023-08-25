@@ -11,7 +11,6 @@
 // 10. Official levels
 // 11. Tables
 // 12. Social
-// 13. Pages
 // 14. Verification
 // 15. Comments
 // 16. Flags
@@ -20,7 +19,6 @@
 // 20. Documents
 // 21. Related content
 // 22. Images
-// 23. Maps
 // 24. Homepage
 // 25. LocalCensusRecords
 //
@@ -96,17 +94,7 @@ p {
 }
 
 a {
-  color: $link;
-
-  &:hover,
-  &:active {
-    color: $link-hover;
-    text-decoration: underline;
-  }
-
-  &:focus {
-    color: $link-hover;
-  }
+  @include link;
 }
 
 a,
@@ -133,13 +121,6 @@ button,
 
 .button {
   @extend %button;
-  @include inverted-selection;
-  background: $brand;
-
-  &.warning,
-  &.warning:hover {
-    color: #000;
-  }
 
   &.medium {
     font-size: $small-font-size;
@@ -161,8 +142,15 @@ button,
 
 .button.hollow {
   @include normal-selection;
+  @include anchor-color;
   border: 1px solid;
-  color: $link;
+
+  &:hover,
+  &:focus {
+    $hover-color: scale-color($anchor-color, $lightness: $button-hollow-hover-lightness);
+    color: $hover-color;
+    color: var(--anchor-color-hover, $hover-color);
+  }
 }
 
 .button.hollow.error {
@@ -298,15 +286,11 @@ button,
     }
 
     a {
-      color: inherit;
+      @include text-colored-link;
       display: inline-block;
       font-weight: bold;
       position: relative;
       text-align: left;
-
-      &:hover {
-        color: $link;
-      }
     }
 
     + li {
@@ -314,7 +298,7 @@ button,
     }
 
     &.is-active {
-      @include brand-text;
+      @include brand-color;
       border-bottom: 2px solid;
       padding-bottom: rem-calc(1);
     }
@@ -341,7 +325,7 @@ button,
       padding: 0;
 
       &.is-active {
-        @include brand-text;
+        @include brand-color;
         font-weight: bold;
       }
     }
@@ -351,7 +335,7 @@ button,
     }
 
     &.is-active {
-      @include brand-text;
+      @include brand-color;
       border-bottom: 2px solid;
     }
   }
@@ -413,14 +397,14 @@ button,
     position: relative;
 
     &:hover {
-      @include brand-text;
+      @include brand-color;
       background: none;
       text-decoration: none;
     }
 
     &[aria-selected="true"],
     &.is-active {
-      @include brand-text;
+      @include brand-color;
       border-bottom: 0;
       font-weight: bold;
 
@@ -570,26 +554,6 @@ body > header,
     border-bottom: 1px solid #fff;
   }
 
-  .remote-translations-button {
-
-    &.callout {
-      margin: 0;
-      padding: rem-calc(6);
-
-      [type="submit"] {
-        @include brand-text;
-        background: none;
-        border: 0;
-        cursor: pointer;
-        font-weight: bold;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-
   .external-links {
     padding: rem-calc(6) 0;
     text-align: center;
@@ -605,7 +569,7 @@ body > header,
   }
 
   .top-bar {
-    @extend %brand-background;
+    @include background-with-text-contrast($main-header, [main-header, brand]);
   }
 }
 
@@ -618,91 +582,32 @@ body > header,
 }
 
 .top-bar {
-  background-color: inherit;
-  padding: 0;
+  align-items: center;
+  display: flex;
+  padding-bottom: $topbar-padding;
+  padding-top: $topbar-padding;
 
-  @include breakpoint(medium) {
-    justify-content: flex-start;
+  @include breakpoint(small only) {
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
 
-    .top-bar-title {
-      flex-grow: 1;
-    }
-  }
+    .responsive-menu {
+      width: 100%;
 
-  ul {
-    background: none;
-  }
-
-  .menu > li {
-    display: block;
-    width: 100%;
-
-    @include breakpoint(medium) {
-      width: auto;
-    }
-
-    a {
-      color: inherit;
-      line-height: inherit;
-      padding-left: 0;
-
-      @include breakpoint(medium) {
-        font-size: $small-font-size;
-        padding: rem-calc(8) rem-calc(16);
+      a {
+        display: inline-block;
       }
     }
 
-    .button {
-      background: none;
-      text-align: left;
-
-      @include breakpoint(medium) {
-        @include brand-text;
-        background: $body-background;
-        text-align: center;
-      }
+    [data-responsive-toggle] {
+      flex-grow: 1000;
     }
   }
 
-  .has-submenu {
-
-    &.is-active a {
-      font-weight: bold;
-    }
-  }
-
-  .menu {
-
-    @include breakpoint(small only) {
-      border-bottom: 1px solid $border;
-      margin-bottom: $line-height;
-      margin-top: $line-height / 2;
-      padding-bottom: $line-height;
-
-      .submenu {
-        margin-top: 0;
-      }
-    }
-
-    &.is-dropdown-submenu {
-      background: $body-background;
-      color: $text;
-      margin: 0;
-      margin-top: rem-calc(-12);
-      padding: 0;
-      z-index: 9;
-    }
-
-    .is-submenu-item {
-      display: block;
-      height: auto;
-      margin-bottom: 0;
-    }
-  }
-
-  .top-bar-title {
+  h1 {
+    flex-grow: 1;
     line-height: $line-height;
-    margin-right: 0;
+    margin-bottom: 0;
 
     a img {
       height: rem-calc(48);
@@ -728,11 +633,6 @@ body > header,
   cursor: inherit;
 }
 
-.title-bar {
-  background: none;
-  float: right;
-}
-
 .dropdown.menu > li {
 
   a {
@@ -749,8 +649,7 @@ body > header,
 }
 
 .top-links {
-  background: $dark;
-  color: $white;
+  @include background-with-text-contrast($top-links, [top-links, brand-secondary]);
   display: flex;
   flex-wrap: wrap;
   font-size: $small-font-size;
@@ -789,117 +688,13 @@ body > header,
   }
 }
 
-.subnavigation {
-  display: flex;
-  flex-direction: column;
-
-  @include breakpoint(medium) {
-    background: $body-background;
-    color: $text;
-    flex-direction: row;
-    padding-bottom: 0;
-
-    > :first-child {
-      flex-grow: 1;
-    }
-  }
-
-  ul {
-    list-style-type: none;
-    margin: 0;
-
-    li {
-      @include breakpoint(medium) {
-        display: inline-block;
-        margin-right: rem-calc(20);
-      }
-    }
-  }
-
-  a {
-    color: inherit;
-    display: inline-block;
-    padding-bottom: $line-height / 2;
-    padding-top: $line-height / 2;
-    position: relative;
-    text-align: left;
-    width: 100%;
-
-    @include breakpoint(medium) {
-      display: block;
-      font-weight: bold;
-      width: auto;
-
-      &:hover {
-        color: $link;
-      }
-    }
-
-    &:focus {
-      z-index: 1;
-    }
-
-    &.is-active {
-      color: #fff;
-
-      @include breakpoint(medium) {
-        @include brand-text;
-        border-bottom: 2px solid;
-        margin-bottom: 1px;
-      }
-    }
-  }
-
-  .input-group {
-    padding-top: $line-height / 4;
-
-    @include breakpoint(medium) {
-      margin-bottom: 0;
-    }
-  }
-
-  .input-group-field {
-    margin-bottom: 0 !important;
-  }
-
-  .input-group-button {
-    line-height: $line-height * 1.5;
-    padding-bottom: 0;
-
-    button {
-      background: $border;
-      border: 1px solid #ccc;
-      border-left: 0;
-      color: $text;
-      height: $line-height * 1.5;
-      line-height: $line-height * 1.5;
-      padding-top: 0;
-    }
-  }
-
-  input {
-    height: $line-height * 1.5 !important;
-    margin-bottom: 0;
-    margin-right: 0;
-    width: 100%;
-  }
-}
-
-.top-bar-right {
-
-  .is-active {
-    font-weight: bold;
-    text-decoration: underline;
-  }
-}
-
 .submenu {
   border-bottom: 1px solid $border;
   clear: both;
   margin-bottom: $line-height / 2;
 
   a {
-    color: inherit;
+    @include text-colored-link;
     display: inline-block;
     font-weight: bold;
     margin-right: $line-height / 2;
@@ -909,14 +704,10 @@ body > header,
     @include breakpoint(medium) {
       margin-right: $line-height;
     }
-
-    &:hover {
-      color: $link;
-    }
   }
 
   .is-active {
-    @include brand-text;
+    @include brand-color;
     border-bottom: 2px solid;
 
     &:hover {
@@ -980,7 +771,7 @@ footer {
 }
 
 .footer {
-  background: #f1f1f1;
+  @include background-with-text-contrast($footer, footer);
   clear: both;
   margin-top: $line-height * 2;
   padding-bottom: $line-height;
@@ -1009,8 +800,8 @@ footer {
 
 .categories a,
 .geozone a {
+  @include anchor-color;
   background: $highlight;
-  color: $link;
 
   &:hover,
   &.is-active {
@@ -1019,7 +810,7 @@ footer {
 }
 
 .sidebar-title {
-  border-top: 2px solid $brand;
+  @include brand-border(top, 2px);
   display: inline-block;
   font-size: rem-calc(16);
   font-weight: bold;
@@ -1039,10 +830,9 @@ footer {
 }
 
 .auth-image {
-  background: $brand image-url("auth_bg.jpg");
+  @include brand-background;
   background-repeat: no-repeat;
   background-size: cover;
-  color: $white;
 
   @include breakpoint(medium) {
     min-height: $line-height * 42;
@@ -1313,13 +1103,7 @@ form {
   }
 
   &.primary {
-    background-color: $info-bg;
-    border-color: $info-border;
-    color: $color-info;
-
-    a {
-      color: $link !important;
-    }
+    @include info-colors;
   }
 
   &.warning {
@@ -1378,10 +1162,6 @@ form {
     margin-right: $line-height / 2;
   }
 
-  .verify-account {
-    padding-right: $line-height / 2;
-  }
-
   .final-votes-info {
     background: $warning-bg;
     border: 1px solid $warning-border;
@@ -1418,40 +1198,6 @@ form {
   line-height: rem-calc(32);
   height: rem-calc(32);
   vertical-align: top;
-}
-
-.user-permissions {
-
-  p {
-    span {
-      color: $text-medium;
-      font-size: rem-calc(12);
-    }
-  }
-
-  ul {
-    list-style-type: none;
-    margin-bottom: 0;
-    margin-left: 0;
-  }
-
-  li {
-    font-size: $small-font-size;
-    margin-bottom: $line-height / 2;
-
-    span {
-      color: $text-medium;
-      font-size: rem-calc(12);
-    }
-
-    .icon-check {
-      color: $check;
-    }
-
-    .icon-x {
-      color: $delete;
-    }
-  }
 }
 
 .notifications-list {
@@ -1494,14 +1240,14 @@ form {
     }
   }
 
+  .notification-link {
+    @include text-colored-link;
+  }
+
   &:hover {
 
     a {
       text-decoration: none;
-    }
-
-    p:not(.time) {
-      color: $link;
     }
 
     &::before {
@@ -1510,8 +1256,8 @@ form {
   }
 
   &::before {
+    @include brand-color;
     background: $body-background;
-    color: $brand;
     content: "\4d";
     font-family: "icons" !important;
     font-size: $small-font-size;
@@ -1524,7 +1270,6 @@ form {
   }
 
   p {
-    color: $text;
     margin-bottom: 0;
     max-width: 80%;
   }
@@ -1622,7 +1367,7 @@ table {
 .button.button-facebook,
 .button.button-google,
 .button.button-wordpress {
-  color: $text;
+  color: inherit;
   font-weight: bold;
 
   &::before {
@@ -1746,51 +1491,6 @@ table {
   }
 }
 
-// 13. Pages
-// ---------
-
-.help {
-
-  li {
-    border-bottom: 1px solid $border;
-    font-weight: bold;
-    margin-left: rem-calc(-12);
-    position: relative;
-
-    span {
-      color: $text;
-      display: inline-block;
-      font-weight: normal;
-    }
-
-    &::after {
-      content: none;
-      color: $text-medium;
-      font-family: "icons" !important;
-      position: absolute;
-      right: 0;
-      top: 24px;
-
-      @include breakpoint(medium) {
-        content: "c";
-      }
-    }
-  }
-
-  a {
-    display: block;
-    padding: $line-height / 2;
-  }
-
-  a:hover {
-    background: $highlight;
-
-    span {
-      text-decoration: none;
-    }
-  }
-}
-
 // 14. Verification
 // ----------------
 
@@ -1860,15 +1560,6 @@ table {
     }
   }
 
-  .send-letter {
-    background: none;
-    color: $link;
-
-    &:hover {
-      color: $link-hover;
-    }
-  }
-
   .button + form {
     display: inline-block;
     margin-left: $line-height / 2;
@@ -1892,21 +1583,6 @@ table {
 
   .number {
     opacity: 0.5;
-  }
-}
-
-.verify-account {
-  padding-right: $line-height / 2;
-
-  .already-verified {
-    color: $check;
-    line-height: $line-height * 2;
-
-    .icon-check {
-      font-size: rem-calc(24);
-      line-height: rem-calc(45);
-      vertical-align: middle;
-    }
   }
 }
 
@@ -1946,8 +1622,6 @@ table {
 // ------------
 
 .comments {
-  background: $body-background;
-  background-repeat: repeat-x;
   padding-bottom: $line-height * 4;
 
   h2 {
@@ -2045,11 +1719,9 @@ table {
 
   .delete-comment {
     @include has-fa-icon(trash-alt, regular);
-    color: $delete;
 
-    &:hover,
-    &:active {
-      color: $link-hover;
+    &:not(:hover):not(:active) {
+      color: $delete;
     }
 
     &::before {
@@ -2112,13 +1784,11 @@ table {
 }
 
 .comment-info {
-  color: $text-medium;
   display: inline-block;
   font-size: $small-font-size;
   line-height: rem-calc(32); // Same as avatar height
 
   .user-name {
-    color: $text;
     font-weight: bold;
   }
 }
@@ -2532,8 +2202,7 @@ table {
 }
 
 .add-related-content {
-  color: $link;
-  cursor: pointer;
+  @include link;
   display: block;
   margin-bottom: $line-height;
 
@@ -2600,48 +2269,6 @@ table {
   }
 }
 
-// 23. Maps
-// -----------------
-
-.location-map-remove-marker {
-  border-bottom: 1px dotted #cf2a0e;
-  color: $delete;
-  display: inline-block;
-  margin-top: $line-height / 2;
-
-  &:hover,
-  &:active,
-  &:focus {
-    border-bottom-style: solid;
-    color: #cf2a0e;
-    text-decoration: none;
-  }
-}
-
-.leaflet-bar a {
-
-  &.leaflet-disabled {
-    color: #525252;
-  }
-}
-
-.leaflet-container {
-
-  .leaflet-control-attribution {
-    background: rgba(255, 255, 255, 0.9);
-  }
-
-  a {
-    color: $link;
-  }
-}
-
-.leaflet-bottom,
-.leaflet-pane,
-.leaflet-top {
-  z-index: 4;
-}
-
 // 24. Homepage
 // ------------
 
@@ -2655,7 +2282,7 @@ table {
     p {
 
       &.description {
-        color: $text;
+        color: $body-font-color;
         word-wrap: break-word;
       }
     }
@@ -2719,8 +2346,8 @@ table {
   h3 {
 
     &.title {
+      @include brand-border(top, 4px);
       display: inline-block;
-      border-top: 4px solid $brand;
       margin-bottom: 0;
       padding: $line-height / 2 0;
     }
@@ -2807,9 +2434,8 @@ table {
     }
 
     span {
-      background: $body-background;
+      @extend %body-colors;
       border-radius: rem-calc(4);
-      color: $text;
       display: inline-block;
       font-size: $small-font-size;
       font-weight: bold;

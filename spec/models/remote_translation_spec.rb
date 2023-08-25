@@ -49,6 +49,16 @@ describe RemoteTranslation, :remote_translations do
     expect(remote_translation).to be_valid
   end
 
+  it "is valid with a locale that uses a different name in the remote service" do
+    allow(RemoteTranslations::Microsoft::AvailableLocales).to receive(:available_locales).and_call_original
+    allow(RemoteTranslations::Microsoft::AvailableLocales).to receive(:remote_available_locales)
+                                                          .and_return(["pt"])
+
+    remote_translation.locale = :"pt-BR"
+
+    expect(remote_translation).to be_valid
+  end
+
   describe "#enqueue_remote_translation", :delay_jobs do
     it "after create enqueue Delayed Job" do
       expect { remote_translation.save }.to change { Delayed::Job.count }.by(1)

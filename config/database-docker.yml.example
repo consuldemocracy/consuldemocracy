@@ -5,6 +5,7 @@ default: &default
   host: database #<--the name of the db in the docker-compose
   pool: 5
   port: 5432
+  schema_search_path: "public,shared_extensions"
   username: postgres
   password: <%= ENV["POSTGRES_PASSWORD"] %>
 

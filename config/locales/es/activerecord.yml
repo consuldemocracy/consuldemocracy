@@ -124,6 +124,9 @@ es:
       images:
         one: "Imagen"
         other: "Imágenes"
+      tenant:
+        one: "entidad"
+        other: "entidades"
       topic:
         one: "Tema"
         other: "Temas"
@@ -145,6 +148,9 @@ es:
       local_census_record:
         one: Registro del censo local
         other: Registros del censo local
+      votation_type:
+        one: Tipo de votación
+        other: Tipos de votación
     attributes:
       budget:
         name: "Nombre"
@@ -195,8 +201,10 @@ es:
         description: "Descripción"
       geozone:
         name: Nombre
+        color: "Color (opcional)"
         external_code: "Código externo (opcional)"
         census_code: "Código del censo (opcional)"
+        geojson: "Datos GeoJSON (opcional)"
         html_map_coordinates: "Coordenadas HTML <map> (opcional)"
       milestone:
         status_id: "Estado actual (opcional)"
@@ -378,6 +386,11 @@ es:
         body: Contenido
       tag:
         name: "Escribe el nombre del tema"
+      tenant:
+        domain: "Dominio"
+        schema: "Dominio / Subdominio"
+        subdomain: "Subdominio"
+        url: "URL"
       topic:
         title: "Título"
         description: "Texto inicial"
@@ -454,7 +467,7 @@ es:
         description: Descripción
       poll/question/answer/translation:
         title: Respuesta
-        description: Descripción
+        description: "Descripción (opcional)"
       poll/question/answer/video:
         title: Título
         url: Vídeo externo
@@ -518,6 +531,12 @@ es:
         document_number: Número de documento
         date_of_birth: Fecha de nacimiento
         postal_code: Código postal
+      votation_type:
+        max_votes: Número máximo de votos
+        vote_type: Tipo de votación
+      votation_type/vote_type:
+        unique: Respuesta única
+        multiple: Respuesta múltiple
     errors:
       models:
         user:
@@ -532,6 +551,10 @@ es:
           attributes:
             max_per_day:
               invalid: "Has llegado al número máximo de mensajes privados por día"
+        geozone:
+          attributes:
+            geojson:
+              invalid: "Los datos GeoJSON proporcionados no tienen el formato correcto. Deben tener un tipo del formato \"Polygon\" o \"MultiPolygon\"."
         image:
           attributes:
             attachment:

@@ -998,9 +998,6 @@ sr:
         table_title: "Наслов"
         edit_answers: Уредити одговор
         see_proposal: "(Погледајте предлоге)"
-      flash:
-        question_added: "Питање додато овој анкети"
-        error_on_question_added: "Питање не може бити додељено овој анкети"
       destroy:
         alert: "Ова радња ће уклонити изборе и сва повезана питања."
         success_notice: "Анкета је успешно избрисана"
@@ -1050,12 +1047,6 @@ sr:
     answers:
       new:
         title: Нови одговор
-      show:
-        title: Наслов
-        description: Опис
-        images: Слике
-        images_list: Листа слика
-        edit: Уредити одговор
       edit:
         title: Уредити одговор
       videos:
@@ -1479,7 +1470,7 @@ sr:
           see_page: Видите страну
         new:
           title: Креирајте нову прилагођену страну
-          slug_help: "Текст за идентификовање ове странице на УРЛ адреси, на пример <code>https://consulproject.org/page-slug</code>"
+          slug_help: "Текст за идентификовање ове странице на УРЛ адреси, на пример <code>https://consuldemocracy.org/page-slug</code>"
         page:
           created_at: Креирано у
           status: Статус

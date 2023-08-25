@@ -166,6 +166,8 @@ var initialize_modules = function() {
   }
   App.AdminBudgetsWizardCreationStep.initialize();
   App.AdminMachineLearningScripts.initialize();
+  App.AdminTenantsForm.initialize();
+  App.AdminVotationTypesFields.initialize();
   App.BudgetEditAssociations.initialize();
   App.BudgetHideMoney.initialize();
   App.Datepicker.initialize();

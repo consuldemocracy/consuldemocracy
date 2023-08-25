@@ -66,10 +66,6 @@ gl:
       form:
         submit_button: Comezar un debate
     debate:
-      comments:
-        zero: Sen comentarios
-        one: 1 comentario
-        other: "%{count} comentarios"
       votes:
         zero: Ningún voto
         one: 1 voto
@@ -125,10 +121,6 @@ gl:
       start_new: Comezar un debate
     show:
       author_deleted: Usuario/a borrado/a
-      comments:
-        zero: Ningún comentario
-        one: 1 comentario
-        other: "%{count} comentarios"
       comments_title: Comentarios
       edit_debate_link: Editar proposta
       flag: Este debate foi marcado como inapropiado por varias persoas usuarias.
@@ -193,7 +185,7 @@ gl:
       accessibility: Accesibilidade
       conditions: Condicións de uso
       consul: aplicación CONSUL
-      consul_url: https://github.com/consul/consul
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: CONSUL, %{year}
       description: Este portal usa a %{consul} que é %{open_source}. De Madrid, para o mundo enteiro.
       open_source: software libre
@@ -379,10 +371,6 @@ gl:
         edit: "Antes de que se publique, poderás modificar o texto como queiras."
         view_proposal: Agora non, ir á miña proposta
       already_supported: Xa apoiaches esta proposta, compártea!
-      comments:
-        zero: Ningún comentario
-        one: 1 comentario
-        other: "%{count} comentarios"
       support: Apoiar
       support_title: Apoiar esta proposta
       supports:
@@ -401,10 +389,6 @@ gl:
     show:
       author_deleted: Usuario/a borrado/a
       code: "Código da proposta:"
-      comments:
-        zero: Ningún comentario
-        one: 1 comentario
-        other: "%{count} comentarios"
       comments_tab: Comentarios
       dashboard_proposal_link: Panel de control
       flag: Esta proposta foi marcada como inapropiada por varios usuarios.

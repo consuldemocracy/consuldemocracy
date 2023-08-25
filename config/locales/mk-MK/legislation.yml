@@ -4,9 +4,6 @@ mk:
       comments:
         see_all: Види ги сите
         see_complete: Види комплетно
-        comments_count:
-          one: "%{count} коментари"
-          other: "%{count} коментари"
         replies_count:
           one: "%{count} одговори"
           other: "%{count} одговори"
@@ -18,9 +15,6 @@ mk:
         title: Коментари
         comments_about: Коментари за
         see_in_context: Види контекст
-        comments_count:
-          one: "%{count} коментари"
-          other: "%{count} коментари"
       show:
         title: Коментар
       version_chooser:
@@ -92,10 +86,6 @@ mk:
         form:
           leave_comment: Остави одговор
       question:
-        comments:
-          zero: Нема коментари
-          one: "%{count} коментари"
-          other: "%{count} коментари"
         debate: Дебата
       show:
         answer_question: Објави одговор
@@ -121,9 +111,5 @@ mk:
       title: "Краток опис"
       votes:
         zero: "%{count} гласови"
-      comments:
-        zero: "Нема коментари"
-        one: "%{count} коментари"
-        other: "%{count} коментари"
       top_comments:
         zero: "Нема коментари"

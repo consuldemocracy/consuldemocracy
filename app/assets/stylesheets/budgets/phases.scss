@@ -87,8 +87,7 @@
 
       &[aria-selected="true"],
       &.is-active {
-        background: $dark;
-        color: $white;
+        @include brand-secondary-background;
         font-weight: normal;
       }
 
@@ -99,13 +98,8 @@
     }
 
     &.current-phase-tab a {
-      background: $brand-secondary;
-      color: $white;
+      @include brand-secondary-background;
       padding-top: $line-height / 2;
-
-      &:hover {
-        background: $dark;
-      }
     }
   }
 

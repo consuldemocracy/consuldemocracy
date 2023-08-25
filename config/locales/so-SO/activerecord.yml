@@ -364,7 +364,7 @@ so:
         description: Sharaxaad
       poll/question/answer/translation:
         title: Jawaab
-        description: Sharaxaad
+        description: "Sharaxaad"
       poll/question/answer/video:
         title: Ciwaan
         url: Fidyoowga dibada

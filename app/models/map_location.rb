@@ -18,12 +18,31 @@ class MapLocation < ApplicationRecord
     }
   end
 
-  def from_map(map)
-    self.latitude = map.map_location.latitude
-    self.longitude = map.map_location.longitude
-    self.zoom = map.map_location.zoom
-    self
+  def self.from_heading(heading)
+    new(
+      zoom: Budget::Heading::OSM_DISTRICT_LEVEL_ZOOM,
+      latitude: (heading.latitude.to_f if heading.latitude.present?),
+      longitude: (heading.longitude.to_f if heading.longitude.present?)
+    )
   end
+
+  def self.investments_json_data(investments)
+    return [] unless investments.any?
+
+    budget_id = investments.first.budget_id
+
+    data = investments.joins(:map_location)
+                      .with_fallback_translation
+                      .pluck(:id, :title, :latitude, :longitude)
+
+    data.map do |values|
+      {
+        title: values[1],
+        link: "/budgets/#{budget_id}/investments/#{values[0]}",
+        lat: values[2],
+        long: values[3]
+      }
+    end
 
   def self.default_latitude
     51.48
@@ -35,13 +54,5 @@ class MapLocation < ApplicationRecord
 
   def self.default_zoom
     10
-  end
-
-  def self.load_from_heading(heading)
-    map = new
-    map.zoom = Budget::Heading::OSM_DISTRICT_LEVEL_ZOOM
-    map.latitude = heading.latitude.to_f if heading.latitude.present?
-    map.longitude = heading.longitude.to_f if heading.longitude.present?
-    map
   end
 end

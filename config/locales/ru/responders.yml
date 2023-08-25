@@ -31,7 +31,6 @@ ru:
         translation: "Перевод успешно обновлен"
       destroy:
         budget_investment: "Проект инвестирования успешно удален."
-        error: "Не удалось удалить"
         topic: "Тема успешно удалена."
         poll_question_answer_video: "Видео с ответом успешно удалено."
         valuator_group: "Группа оценщиков успешно удалена"

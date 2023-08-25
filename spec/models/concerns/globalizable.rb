@@ -15,10 +15,7 @@ shared_examples_for "globalizable" do |factory_name|
   before do
     record.update!(attribute => "In English")
 
-    I18n.with_locale(:es) do
-      record.update!(required_fields.map { |field| [field, "En español"] }.to_h)
-      record.update!(attribute => "En español")
-    end
+    add_translation(record, :es, "En español")
 
     record.reload
   end
@@ -26,7 +23,7 @@ shared_examples_for "globalizable" do |factory_name|
   describe "Add a translation" do
     it "Maintains existing translations" do
       record.update!(translations_attributes: [
-        { locale: :fr }.merge(fields.map { |field| [field, "En Français"] }.to_h)
+        { locale: :fr }.merge(fields.index_with("En Français"))
       ])
       record.reload
 
@@ -37,7 +34,7 @@ shared_examples_for "globalizable" do |factory_name|
 
     it "Works with non-underscored locale name" do
       record.update!(translations_attributes: [
-        { locale: :"pt-BR" }.merge(fields.map { |field| [field, "Português"] }.to_h)
+        { locale: :"pt-BR" }.merge(fields.index_with("Português"))
       ])
       record.reload
 
@@ -63,7 +60,7 @@ shared_examples_for "globalizable" do |factory_name|
       record.reload
 
       record.update!(translations_attributes: [
-        { locale: :de }.merge(fields.map { |field| [field, "Deutsche Sprache"] }.to_h)
+        { locale: :de }.merge(fields.index_with("Deutsche Sprache"))
       ])
 
       record.reload
@@ -98,11 +95,11 @@ shared_examples_for "globalizable" do |factory_name|
     end
 
     it "Does not automatically add a translation for the current locale" do
-      record.translations.find_by(locale: :en).destroy!
+      destroy_translation(record, :en)
       record.reload
 
       record.update!(translations_attributes: [
-        { id: record.translations.first.id }.merge(fields.map { |field| [field, "Actualizado"] }.to_h)
+        { id: record.translations.first.id }.merge(fields.index_with("Actualizado"))
       ])
 
       record.reload
@@ -155,7 +152,7 @@ shared_examples_for "globalizable" do |factory_name|
   describe "Fallbacks" do
     before do
       I18n.with_locale(:de) do
-        record.update!(required_fields.map { |field| [field, "Deutsche Sprache"] }.to_h)
+        record.update!(required_fields.index_with("Deutsche Sprache"))
         record.update!(attribute => "Deutsche Sprache")
       end
     end
@@ -188,4 +185,62 @@ shared_examples_for "globalizable" do |factory_name|
       expect(record.send(attribute)).to eq "Deutsche Sprache"
     end
   end
+
+  describe ".with_fallback_translation" do
+    before do
+      fallbacks = { fr: %i[fr en es], es: %i[es fr en], en: %i[en es fr] }
+      allow(I18n).to receive(:fallbacks).and_return(I18n.fallbacks.merge(fallbacks))
+      Globalize.set_fallbacks_to_all_available_locales
+    end
+
+    it "returns records with the best fallback translation available for the current locale" do
+      record.update!(attribute => "Content in English")
+      add_translation(record, :es, "Contenido en español")
+      add_translation(record, :fr, "Contenu en français")
+
+      I18n.with_locale(:es) do
+        expect(attribute_with_fallback_translation(record, attribute)).to eq "Contenido en español"
+
+        destroy_translation(record, :es)
+
+        expect(attribute_with_fallback_translation(record, attribute)).to eq "Contenu en français"
+
+        destroy_translation(record, :fr)
+
+        expect(attribute_with_fallback_translation(record, attribute)).to eq "Content in English"
+      end
+
+      record.reload
+
+      add_translation(record, :es, "Contenido en español")
+      add_translation(record, :fr, "Contenu en français")
+
+      I18n.with_locale(:fr) do
+        expect(attribute_with_fallback_translation(record, attribute)).to eq "Contenu en français"
+
+        destroy_translation(record, :fr)
+
+        expect(attribute_with_fallback_translation(record, attribute)).to eq "Content in English"
+
+        destroy_translation(record, :en)
+
+        expect(attribute_with_fallback_translation(record, attribute)).to eq "Contenido en español"
+      end
+    end
+  end
+end
+
+def add_translation(record, locale, text)
+  I18n.with_locale(locale) do
+    record.update!(required_fields.index_with(text))
+    record.update!(attribute => text)
+  end
+end
+
+def destroy_translation(record, locale)
+  record.translations.find_by(locale: locale).destroy!
+end
+
+def attribute_with_fallback_translation(record, attribute)
+  record.class.with_fallback_translation.where(id: record.id).pick(attribute)
 end

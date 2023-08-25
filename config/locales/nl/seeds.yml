@@ -14,6 +14,19 @@ nl:
     organizations:
       human_rights: Mensenrechten
       neighborhood_association: Buurtvereniging
+    cards:
+      budget:
+        link_text: "Meer over burgerbegrotingen"
+      debate:
+        link_text: "Meer over debatten"
+        label: "Debatten"
+      header:
+        title: "CONSUL"
+        description: "Gratis software voor burgerparticipatie."
+        link_text: "Meer informatie"
+        label: "Welkom in"
+      proposal:
+        link_text: "Meer over voorstellen"
     categories:
       associations: Verenigingen
       culture: Cultuur

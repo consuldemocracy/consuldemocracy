@@ -20,13 +20,6 @@ describe "Valuation budget investments" do
     end
   end
 
-  scenario "Display link to valuation section" do
-    visit root_path
-    click_link "Menu"
-
-    expect(page).to have_link "Valuation", href: valuation_root_path
-  end
-
   describe "Index" do
     scenario "Index shows budget investments assigned to current valuator" do
       investment1 = create(:budget_investment, :visible_to_valuators, budget: budget, valuators: [valuator])
@@ -519,6 +512,17 @@ describe "Valuation budget investments" do
     scenario "not visible to valuators when budget is not valuating" do
       budget.update!(phase: "publishing_prices")
 
+      investment = create(:budget_investment, budget: budget, valuators: [valuator])
+
+      login_as(valuator.user)
+      visit edit_valuation_budget_budget_investment_path(budget, investment)
+
+      expect(page).to have_content("Investments can only be valuated when Budget is in valuating phase")
+    end
+
+    scenario "restric access to the budget given by params when is not in valuating phase" do
+      budget.update!(phase: "publishing_prices")
+      create(:budget, :valuating)
       investment = create(:budget_investment, budget: budget, valuators: [valuator])
 
       login_as(valuator.user)

@@ -64,7 +64,7 @@ fa:
     proposals:
       alert:
         unverified_user: کاربر تأیید نشده است
-      create_proposal: ایجاد طرح 
+      create_proposal: ایجاد طرح
       print:
         print_button: چاپ
       index:
@@ -97,7 +97,7 @@ fa:
       email_optional_label: ایمیل (اختیاری)
       erased_notice: حذف حساب کاربری.
       erased_by_manager: "حذف شده توسط مدیر: %{manager}"
-      erase_account_link: حذف کاربر 
+      erase_account_link: حذف کاربر
       erase_account_confirm: آیا مطمئن هستید که می خواهید حسابتان را  حذف کنید؟ این دستور قابل بازگشت نیست!
       erase_warning: این عمل قابل لغو نیست لطفا مطمئن شوید که می خواهید این حساب را پاک کنید.
       erase_submit: حذف حساب

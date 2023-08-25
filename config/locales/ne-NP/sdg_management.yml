@@ -1,0 +1,50 @@
+ne:
+  sdg_management:
+    actions:
+      edit: "लक्ष्य र लक्ष्यहरू प्रबन्ध गर्नुहोस्"
+    header:
+      title: "एसडीजी सामग्री"
+    homepage:
+      title: "गृहपृष्ठ कन्फिगरेसन"
+      header:
+        create: "हेडर सिर्जना गर्नुहोस्"
+        no_cards: "कुनै हेडरहरू छैन।"
+        title: "शीर्षक"
+      create_card: "%{phase} कार्ड बनाउनुहोस्"
+      no_cards: "यस चरणको लागि कुनै कार्डहरू छैनन्"
+    menu:
+      budget_investments: "सहभागितामूलक बजेट"
+      debates: "बहसहरू"
+      legislation_processes: "कानुनी प्रक्रियाहरू"
+      legislation_proposals: "कानुनी प्रस्तावहरू"
+      polls: "मतदानहरू"
+      proposals: "प्रस्तावहरू"
+      sdg_content: "लक्ष्यहरू र उद्देश्यहरू"
+      sdg_homepage: "एसडीजी होमपेज"
+    local_targets:
+      create:
+        notice: "स्थानीय उद्देश्य सफलतापूर्वक सिर्जना गरियो"
+      destroy:
+        notice: "स्थानीय उद्देश्य सफलतापूर्वक मेटाइयाे"
+      edit:
+        title: "स्थानीय लक्ष्य सम्पादन गर्नुहोस्"
+      form:
+        code: "कोड एक डट पछि चयन गरिएको उद्देश्य कोड संग सुरु हुनुपर्छ"
+        description: "यो विवरण प्रयोगकर्ताहरूलाई मद्दतको रूपमा देखाइनेछ।"
+      index:
+        new: "स्थानीय उद्देश्य सृजना गर्नुहाेस"
+      new:
+        title: "नयाँ स्थानीय उद्देश्य"
+      update:
+        notice: "स्थानीय उद्देश्य सफलतापूर्वक अद्यावधिक गरियो"
+    relations:
+      index:
+        filter: "फिल्टर"
+        filters:
+          all: "सबै"
+          pending_sdg_review: "विचाराधीन"
+          sdg_reviewed: "समीक्षा गरियो भनी चिन्ह लगाइयो"
+      update:
+        notice: "%{relatable} सफलतापूर्वक अद्यावधिक गरियो"
+      update_and_review:
+        notice: "%{relatable} सफलतापूर्वक अद्यावधिक गरियो र समीक्षा गरिएको भनी चिन्ह लगाइयो"

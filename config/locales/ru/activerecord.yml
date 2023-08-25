@@ -493,7 +493,7 @@ ru:
         description: Описание
       poll/question/answer/translation:
         title: Ответ
-        description: Описание
+        description: "Описание"
       poll/question/answer/video:
         title: Название
         url: Внешнее видео

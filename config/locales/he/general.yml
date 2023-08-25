@@ -74,12 +74,6 @@ he:
       form:
         submit_button: פתיחת דיון
     debate:
-      comments:
-        zero: אין תגובות
-        one: תגובה אחת
-        two: "%{count} תגובות"
-        many: "%{count} תגובות"
-        other: "%{count} תגובות"
       votes:
         zero: אין הצבעות
         one: הצבעה אחת
@@ -137,12 +131,6 @@ he:
       start_new: פתיחת דיון חדש
     show:
       author_deleted: משתמש/ת זה/ו נמחק/ה
-      comments:
-        zero: אין תגובות
-        one: תגובה אחת
-        two: "%{count} תגובות"
-        many: "%{count} תגובות"
-        other: "%{count} תגובות"
       comments_title: הערות
       edit_debate_link: ערוך
       flag: דיון זה סומן כבלתי-ראוי על ידי מספר משתמשים
@@ -206,8 +194,8 @@ he:
     footer:
       accessibility: נגישות
       conditions: כללים ותנאי שימוש
-      consul: מערכת ההצבעות לשיתוף תושבים
-      consul_url: https://github.com/consul/consul
+      consul: מערכת ההצבעות של קול העם
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: Consul, %{year}
       description: פורטל זה משתמש בפלטפורמת %{consul} שהיא %{open_source}.
       open_source: תוכנת קוד פתוח
@@ -403,12 +391,6 @@ he:
         edit: "לפני שאתה משתף תוכל לשנות את הטקסט כרצונך."
         view_proposal: לא עכשיו, גש אל ההצעה שלי
       already_supported: כבר תמכת בהצעה זו. שתף אותה!
-      comments:
-        zero: אין תגובות
-        one: תגובה אחת
-        two: "%{count} תגובות"
-        many: "%{count} תגובות"
-        other: "%{count} תגובות"
       support: בעד
       support_title: לתמיכה בהצעה זו
       supports:
@@ -431,12 +413,6 @@ he:
     show:
       author_deleted: משתמש/ת זה/ו נמחק/ה
       code: "קוד ההצעה:"
-      comments:
-        zero: אין תגובות
-        one: תגובה אחת
-        two: "%{count} תגובות"
-        many: "%{count} תגובות"
-        other: "%{count} תגובות"
       comments_tab: הערות
       dashboard_proposal_link: לוח ניהול
       flag: הצעה זו סומנה כבלתי-ראויה בידי מספר משתמשים

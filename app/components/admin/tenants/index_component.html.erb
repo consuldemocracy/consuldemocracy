@@ -1,0 +1,21 @@
+<%= header do %>
+  <%= link_to t("admin.tenants.index.create"), new_admin_tenant_path %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= attribute_name(:name) %></th>
+      <th><%= attribute_name(:schema) %></th>
+      <th><%= attribute_name(:url) %></th>
+      <th><%= t("admin.tenants.index.enabled") %></th>
+      <th><%= t("admin.shared.actions") %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tenants.each do |tenant| %>
+      <%= render Admin::Tenants::RowComponent.new(tenant) %>
+    <% end %>
+  </tbody>
+</table>

@@ -810,9 +810,6 @@ sq:
         no_questions: "Nuk ka pyetje për këtë sondazh."
         questions_title: "Lista e pyetjeve"
         table_title: "Titull"
-      flash:
-        question_added: "Pyetje shtuar në këtë sondazh"
-        error_on_question_added: "Pyetja nuk mund të caktohet në këtë sondazh"
     questions:
       index:
         title: "Pyetjet"
@@ -856,12 +853,6 @@ sq:
     answers:
       new:
         title: Përgjigje e re
-      show:
-        title: Titull
-        description: Përshkrimi
-        images: Imazh
-        images_list: Lista e imazheve
-        edit: Ndrysho përgjigjet
       edit:
         title: Ndrysho përgjigjet
       videos:

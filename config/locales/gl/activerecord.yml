@@ -416,7 +416,7 @@ gl:
         description: Descrición
       poll/question/answer/translation:
         title: Resposta
-        description: Descrición
+        description: "Descrición"
       poll/question/answer/video:
         title: Título
         url: Vídeo externo

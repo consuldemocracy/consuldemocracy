@@ -86,24 +86,21 @@ describe "Ballots" do
         end
 
         visit budget_path(budget)
-        click_link "See all investments"
-        click_link "Above the city €1,000,000"
+        click_link "Above the city"
 
         expect(page).to have_css(".budget-investment", count: 2)
         expect(page).to have_content "Solar panels"
         expect(page).to have_content "Observatory"
 
         visit budget_path(budget)
-        click_link "See all investments"
-        click_link "District 1 €1,000,000"
+        click_link "District 1"
 
         expect(page).to have_css(".budget-investment", count: 2)
         expect(page).to have_content "New park"
         expect(page).to have_content "Zero-emission zone"
 
         visit budget_path(budget)
-        click_link "See all investments"
-        click_link "District 2 €1,000,000"
+        click_link "District 2"
 
         expect(page).to have_css(".budget-investment", count: 1)
         expect(page).to have_content "Climbing wall"
@@ -115,13 +112,10 @@ describe "Ballots" do
         create(:budget_investment, :selected, heading: new_york, price: 10000, title: "Bring back King Kong")
         create(:budget_investment, :selected, heading: new_york, price: 20000, title: "Paint cabs black")
 
-        visit budget_path(budget)
-        click_link "See all investments"
-        click_link "New York €1,000,000"
-
+        visit budget_investments_path(budget, heading_id: new_york)
         add_to_ballot("Bring back King Kong")
 
-        expect(page).to have_css("#amount_spent", text: "€10,000")
+        expect(page).to have_css("#total_amount", text: "€10,000")
         expect(page).to have_css("#amount_available", text: "€990,000")
 
         within("#sidebar") do
@@ -132,7 +126,7 @@ describe "Ballots" do
 
         add_to_ballot("Paint cabs black")
 
-        expect(page).to have_css("#amount_spent", text: "€30,000")
+        expect(page).to have_css("#total_amount", text: "€30,000")
         expect(page).to have_css("#amount_available", text: "€970,000")
 
         within("#sidebar") do
@@ -145,12 +139,10 @@ describe "Ballots" do
       scenario "Removing a investment" do
         investment = create(:budget_investment, :selected, heading: new_york, price: 10000, balloters: [user])
 
-        visit budget_path(budget)
-        click_link "See all investments"
-        click_link "New York €1,000,000"
+        visit budget_investments_path(budget, heading_id: new_york)
 
         expect(page).to have_content investment.title
-        expect(page).to have_css("#amount_spent", text: "€10,000")
+        expect(page).to have_css("#total_amount", text: "€10,000")
         expect(page).to have_css("#amount_available", text: "€990,000")
 
         within("#sidebar") do
@@ -163,7 +155,7 @@ describe "Ballots" do
           click_button "Remove vote"
         end
 
-        expect(page).to have_css("#amount_spent", text: "€0")
+        expect(page).to have_css("#total_amount", text: "€0")
         expect(page).to have_css("#amount_available", text: "€1,000,000")
 
         within("#sidebar") do
@@ -173,15 +165,29 @@ describe "Ballots" do
         end
       end
 
-      scenario "the Map shoud be visible before and after" do
-        create(:budget_investment, :selected, heading: new_york, price: 10000, title: "More bridges")
+      scenario "map and content block shoud be visible before and after" do
+        stub_const("#{Budgets::InvestmentsController}::PER_PAGE", 1)
 
-        visit budget_path(budget)
-        click_link "See all investments"
-        click_link "New York €1,000,000"
+        create(:budget_investment, :selected, :with_map_location,
+          heading: new_york,
+          price: 10000,
+          title: "More bridges",
+        )
+        create(:budget_investment, :selected, :with_map_location,
+          heading: new_york,
+          price: 5000,
+          title: "Less bridges"
+        )
+
+        create(:heading_content_block, heading: new_york, body: "<li>New Block</li>")
+        new_york.update!(allow_custom_content: true)
+
+        visit budget_investments_path(budget, heading_id: new_york, order: :price)
 
         within("#sidebar") do
           expect(page).to have_content "OpenStreetMap"
+          expect(page).to have_content "New Block"
+          expect(page).to have_css ".map-icon", visible: :all, count: 2
         end
 
         add_to_ballot("More bridges")
@@ -189,6 +195,8 @@ describe "Ballots" do
         within("#sidebar") do
           expect(page).to have_content "More bridges"
           expect(page).to have_content "OpenStreetMap"
+          expect(page).to have_content "New Block"
+          expect(page).to have_css ".map-icon", visible: :all, count: 2
         end
 
         within(".budget-investment", text: "More bridges") do
@@ -198,6 +206,8 @@ describe "Ballots" do
         within("#sidebar") do
           expect(page).not_to have_content "More bridges"
           expect(page).to have_content "OpenStreetMap"
+          expect(page).to have_content "New Block"
+          expect(page).to have_css ".map-icon", visible: :all, count: 2
         end
       end
     end
@@ -213,13 +223,11 @@ describe "Ballots" do
         create(:budget_investment, :selected, heading: district_heading1, price: 20000, title: "Average")
         create(:budget_investment, :selected, heading: district_heading2, price: 30000, title: "Expensive")
 
-        visit budget_path(budget)
-        click_link "See all investments"
-        click_link "All city €10,000,000"
+        visit budget_investments_path(budget, heading_id: city_heading)
 
         add_to_ballot("Cheap")
 
-        expect(page).to have_css("#amount_spent", text: "€10,000")
+        expect(page).to have_css("#total_amount",     text: "€10,000")
         expect(page).to have_css("#amount_available", text: "€9,990,000")
 
         within("#sidebar") do
@@ -227,16 +235,14 @@ describe "Ballots" do
           expect(page).to have_content "€10,000"
         end
 
-        visit budget_path(budget)
-        click_link "See all investments"
-        click_link "District 1 €1,000,000"
+        visit budget_investments_path(budget, heading_id: district_heading1)
 
-        expect(page).to have_css("#amount_spent", text: "€0")
+        expect(page).to have_css("#total_amount", text: "€0")
         expect(page).to have_css("#amount_available", text: "€1,000,000")
 
         add_to_ballot("Average")
 
-        expect(page).to have_css("#amount_spent",     text: "€20,000")
+        expect(page).to have_css("#total_amount",     text: "€20,000")
         expect(page).to have_css("#amount_available", text: "€980,000")
 
         within("#sidebar") do
@@ -247,11 +253,9 @@ describe "Ballots" do
           expect(page).not_to have_content "€10,000"
         end
 
-        visit budget_path(budget)
-        click_link "See all investments"
-        click_link "All city €10,000,000"
+        visit budget_investments_path(budget, heading_id: city_heading)
 
-        expect(page).to have_css("#amount_spent",     text: "€10,000")
+        expect(page).to have_css("#total_amount",     text: "€10,000")
         expect(page).to have_css("#amount_available", text: "€9,990,000")
 
         within("#sidebar") do
@@ -262,9 +266,7 @@ describe "Ballots" do
           expect(page).not_to have_content "€20,000"
         end
 
-        visit budget_path(budget)
-        click_link "See all investments"
-        click_link "District 2 €2,000,000"
+        visit budget_investments_path(budget, heading_id: district_heading2)
 
         expect(page).to have_content("You have active votes in another heading: District 1")
       end
@@ -278,7 +280,7 @@ describe "Ballots" do
       add_to_ballot("Park expansion")
 
       within("#progress_bar") do
-        expect(page).to have_css("#amount_spent", text: "€10,000")
+        expect(page).to have_css("#total_amount", text: "€10,000")
       end
     end
   end
@@ -289,9 +291,7 @@ describe "Ballots" do
     scenario "Select my heading" do
       create(:budget_investment, :selected, heading: california, title: "Green beach")
 
-      visit budget_path(budget)
-      click_link "See all investments"
-      click_link "California €1,000"
+      visit budget_investments_path(budget, heading_id: california)
 
       add_to_ballot("Green beach")
 
@@ -396,7 +396,7 @@ describe "Ballots" do
     login_as(user)
     visit budget_investments_path(budget, heading_id: new_york.id)
 
-    expect(page).to have_css("#amount_spent", text: "€30,000")
+    expect(page).to have_css("#total_amount", text: "€30,000")
     expect(page).to have_css("#amount_available", text: "€970,000")
 
     within("#sidebar") do
@@ -411,7 +411,7 @@ describe "Ballots" do
       click_link "Remove vote"
     end
 
-    expect(page).to have_css("#amount_spent", text: "€20,000")
+    expect(page).to have_css("#total_amount", text: "€20,000")
     expect(page).to have_css("#amount_available", text: "€980,000")
 
     within("#sidebar") do
@@ -456,9 +456,11 @@ describe "Ballots" do
         click_link "Submit my ballot"
       end
 
+      expect(page).to have_content("You have voted 0 investments")
+
       click_link "Go back"
 
-      expect(page).to have_current_path(budget_path(budget))
+      expect(page).to have_current_path(budget_investments_path(budget, heading_id: new_york.id))
     end
   end
 

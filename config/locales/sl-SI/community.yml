@@ -6,8 +6,6 @@ sl:
         new_topic: Ustvari temo
       topic:
         destroy: Uniči temo
-        comments:
-          zero: Brez komentarjev
       author: Avtor
     topic:
       form:

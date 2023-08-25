@@ -1,3 +1,5 @@
+require "sessions_helper"
+
 shared_examples "remotely_translatable" do |factory_name, path_name, path_arguments|
   let(:arguments) do
     path_arguments.transform_values { |path_to_value| resource.send(path_to_value) }
@@ -191,6 +193,32 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
         expect(page).not_to have_button "Traducir página"
         expect(RemoteTranslation.count).to eq(0)
         expect(resource.translations.count).to eq(2)
+      end
+
+      scenario "request a translation of an already translated text" do
+        microsoft_translate_client_response = generate_response(resource)
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(microsoft_translate_client_response)
+
+        in_browser(:one) do
+          visit path
+          select "Español", from: "Language:"
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path
+          select "Español", from: "Language:"
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
       end
     end
   end

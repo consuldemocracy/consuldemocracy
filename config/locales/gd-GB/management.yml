@@ -1,1 +1,129 @@
 gd:
+  management:
+    account:
+      menu:
+        reset_password_email: Ath-shuidhich facal-faire tro phost-d
+        reset_password_manually: Ath-shuidhich facal-faire thu fhèin
+      alert:
+        unverified_user: Chan eil cleachdaiche dearbhte air clàradh a-steach fhathast
+      show:
+        title: Cunntas cleachdaiche
+      edit:
+        title: "Deasaich cunntas cleachdaiche: Ath-shuidhich facal-faire"
+        back: Air ais
+        password:
+          password: Facal-faire
+          send_email: Cuir post-d gus am facal-faire ath-shuidheachadh
+          reset_email_send: Chaidh am post-d a chur.
+          reseted: Chaidh am facal-faire ath-shuidheachadh
+          random: Cruthaich facal-faire air thuaiream
+          save: Sàbhail facal-faire
+          print: Clò-bhuail facal-faire
+          print_help: Bidh e comasach dhut am facal-faire a chlò-bhualadh nuair a thèid a shàbhaladh.
+    account_info:
+      change_user: Atharraich cleachdaiche
+      document_number_label: "Àireamh na sgrìobhainne:"
+      document_type_label: "Seòrsa sgrìobhainn:"
+      email_label: "Post-d:"
+      identified_label: "Aithnichte mar:"
+      username_label: "Ainm-cleachdaiche:"
+    check: Sgrùd sgrìobhainn
+    dashboard:
+      index:
+        title: Stiùireadh
+        info: An seo faodaidh tu cleachdaichean a stiùireadh tro na gnìomhan gu lèir a tha air an liostadh sa chlàr air an taobh chlì.
+    document_verifications:
+      already_verified: Tha an cunntas cleachdaiche seo dearbhte mar-thà.
+      has_no_account: Gus cunntas a chruthachadh, rach gu %{link} is briog air <b>"Clàraich"</b> gu h-àrd air taobh chlì na sgrìn.
+      link: CONSUL
+      in_census_has_following_permissions: "Faodaidh an cleachdaiche seo pàirt a ghabhail air an làraich-lìn leis na ceadan a leanas:"
+      not_in_census: Chan eil an sgrìobhainn seo clàraichte.
+      not_in_census_info: "Faodaidh saoranaich nach eil sa Chunntas-sluaigh pàirt a ghabhail air an làraich-lìn leis na ceadan a leanas:"
+      please_check_account_data: Dèan cinnteach gu bheil an dàta airson a’ chunntais gu h-àrd ceart.
+      title: Stiùireadh nan cleachdaichean
+      under_age: "Chan eil thu air aois iomchaidh a ruighinn gus do chunntas a dhearbhadh."
+      verify: Dearbhaich
+    date_of_birth: Latha-breith
+    email_verifications:
+      already_verified: Tha an cunntas cleachdaiche seo dearbhte mar-thà.
+      choose_options: "Tagh tè de na roghainnean a leanas:"
+      document_found_in_census: Chaidh an sgrìobhainn seo a lorg sa chunntas-sluaigh, ach chan eil cunntas cleachdaiche sam bith co-cheangailte ris.
+      document_mismatch: "Buinidh am post-d seo do chleachdaiche aig a bheil id co-cheangailte mar-thà: %{document_number}(%{document_type})"
+      email_sent_instructions: Gus an cleachdaiche seo a dhearbhadh, feumaidh an cleachdaiche briogadh air ceangal a chur sinn chun t-seòladh puist-d gu h-àrd. Feumar an ceum seo a dhèanamh gus dearbhadh gur ann leis an neach sin a tha an seòladh.
+      if_existing_account: Ma tha cunntas cleachdaiche aig an neach seo mar-thà a chaidh a chruthachadh air an làraich-lìn,
+      if_no_existing_account: Mura h-eil an neach seo air cunntas a chruthachadh fhathast
+      introduce_email: "Thoir dhuinn am post-d a chaidh a chleachdadh air a’ chunntas:"
+      send_email: Cuir teachdaireachd dearbhaidh
+    menu:
+      create_proposal: Cruthaich moladh
+      print_proposals: Clò-bhuail molaidhean
+      support_proposals: Cuir taic ri molaidhean
+      create_budget_investment: Cruthaich tasgadh buidseit
+      print_budget_investments: Clò-bhuail tasgaidhean buidseit
+      support_budget_investments: Thoir taic do thasgaidhean buidseit
+      users: Stiùireadh nan cleachdaichean
+      user_invites: Cuir cuiridhean
+      select_user: Tagh cleachdaiche
+    print:
+      proposals_info: Cruthaich do mholadh air http://url.consul
+      proposals_title: "Molaidhean:"
+      budget_investments_info: Gabh pàirt aig http://url.consul
+    print_info: Clò-bhuail am fiosrachadh seo
+    proposals:
+      alert:
+        unverified_user: Chan eil an cleachdaiche seo dearbhte
+      create_proposal: Cruthaich moladh
+      print:
+        print_button: Clò-bhuail
+      index:
+        title: Cuir taic ri molaidhean
+    budgets:
+      create_new_investment: Cruthaich tasgadh buidseit
+      print_investments: Clò-bhuail tasgaidhean buidseit
+      support_investments: Thoir taic do thasgaidhean buidseit
+      table_name: Ainm
+      table_phase: Ceum
+      table_actions: Gnìomhan
+      no_budgets: Chan eil buidseatan com-pàirteachail gnìomhach ann.
+    budget_investments:
+      alert:
+        unverified_user: Chan eil an cleachdaiche seo dearbhte
+      create: Cruthaich tasgadh buidseit
+      edit: Deasachadh tasgadh buidseit
+      filters:
+        heading: Bun-bheachd
+        unfeasible: Tasgadh nach eil comasach dèanamh
+      print:
+        print_button: Clò-bhuail
+      search_results:
+        one: "anns a bheil am facal '%{search_term}'"
+        two: "anns a bheil am facal '%{search_term}'"
+        few: "anns a bheil am facal '%{search_term}'"
+        other: "anns a bheil am facal '%{search_term}'"
+    sessions:
+      need_managed_user: Gus an gnìomh seo a choileanadh feumaidh tu cleachdaiche a thaghadh
+      signed_out: Chlàraich thu a-mach.
+      signed_out_managed_user: Chaidh clàradh a-mach bhon t-seisean cleachdaiche.
+    username_label: Ainm-cleachdaiche
+    users:
+      create_user: Cruthaich cunntas ùr
+      create_user_info: Cruthaichidh sinn cunntas leis an dàta a leanas
+      create_user_submit: Cruthaich cleachdaiche
+      create_user_success: Chuir sinn post-d chun an t-seòlaidh puist-d <b>%{email}</b> gus dearbhadh gur ann leis a’ chleachdaiche seo a tha e. Tha ceangal ann a dh’fheumas iad briogadh. An uair sin feumaidh iad am facal-faire aca a shuidheachadh mus urrainn dhaibh logadh a-steach dhan làrach-lìn
+      autogenerated_password: "’S e <b>%{password}</b> am facal-faire agad a chaidh a chruthachadh gu fèin-obrachail, ’s urrainn dhut atharrachadh san earrainn 'Mo chunntas’ air an lìon"
+      email_optional_label: Post-d (roghainneil)
+      erased_notice: Chaidh cunntas a’ chleachdaiche a sguabadh às.
+      erased_by_manager: "Air a sguabadh às leis an stiùiriche: %{manager}"
+      erase_account_link: Sguab às an cleachdaiche
+      erase_account_confirm: A bheil thu cinnteach gu bheil thu airson an cunntas seo a sguabadh às? Cha ghabh seo a neo-dhèanamh
+      erase_warning: Cha ghabh an gnìomh seo a neo-dhèanamh. Dèan cinnteach gu bheil thu airson an cunntas seo a sguabadh às.
+      erase_submit: Sguab às an cunntas
+    user_invites:
+      new:
+        label: Puist-d
+        info: "Cuir a-steach na puist-d air an sgaradh le cromagan (',')"
+        submit: Cuir cuiridhean
+        title: Cuir cuiridhean
+      create:
+        success: Chaidh <strong>%{count} cuiridhean </strong> a chur.
+        title: Cuir cuiridhean

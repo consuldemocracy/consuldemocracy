@@ -1,0 +1,226 @@
+ne:
+  budgets:
+    ballots:
+      show:
+        title: तपाईको मतपत्र
+        amount_progress: "%{amount_spent} / %{amount_limit}"
+        amount_available:
+          knapsack: "तपाईंका लागि अझै उपलब्ध छ <span>%{count}</span>"
+          approval:
+            zero: "You can still cast <span>%{count}</span> votes."
+            one: "तपाईंले अझै पनि <span>%{count}</span> मत हाल्न सक्नुहुन्छ।"
+            other: "तपाईंले अझै पनि <span>%{count}</span> मतहरू हाल्न सक्नुहुन्छ।"
+        amount_spent:
+          knapsack: "खर्च गरिएको रकम <span>%{count}</span>"
+          approval:
+            zero: "Votes cast: <span>%{count}</span>"
+            one: "खसेका मत: <span>%{count}</span>"
+            other: "खसेका मत: <span>%{count}</span>"
+        amount_limit:
+          knapsack: "कुल बजेट <span>%{count}</span>"
+          approval:
+            one: "तपाईंले <span>१</span> परियोजनालाई मतदान गर्न सक्नुहुन्छ"
+            other: "तपाईंले <span>%{count}</span> परियोजनाहरूमा मतदान गर्न सक्नुहुन्छ"
+        no_balloted_group_yet: "तपाईंले अहिलेसम्म यो समूहमा मतदान गर्नुभएको छैन, भोट गर्न जानुहोस्!"
+        remove: मत हटाउनुहोस्
+        remove_label: "%{investment} बाट आफ्नो मत हटाउनुहोस्"
+        voted:
+          one: "तपाईंले <span>एक</span> लगानीलाई मतदान गर्नुभएको छ।"
+          other: "तपाईंले <span>%{count}</span> लगानीमा मतदान गर्नुभएको छ।"
+        voted_info: "तपाईंको मतपत्र पुष्टि भयो!"
+        voted_info_2: "तर यो चरण बन्द नभएसम्म तपाईंले कुनै पनि समयमा आफ्नो मत परिवर्तन गर्न सक्नुहुन्छ।"
+        zero: तपाईंले कुनै पनि लगानी परियोजनालाई मतदान गर्नुभएको छैन।
+      reasons_for_not_balloting:
+        not_verified: प्रमाणित प्रयोगकर्ताहरूले मात्र लगानीमा मतदान गर्न सक्छन्; %{verify_account}।
+        not_selected: अचयनित लगानी परियोजनाहरूलाई समर्थन गर्न सकिँदैन
+        not_enough_money: "तपाईंले पहिले नै उपलब्ध बजेट तोक्नुभएको छ।<br><small>तपाईंले कुनै पनि समयमा %{change_ballot} गर्न सक्नुहुन्छ याद गर्नुहोस्</small>"
+        no_ballots_allowed: चयन चरण बन्द छ
+        different_heading_assigned: "तपाईंले पहिले नै फरक शीर्षकमा मतदान गर्नुभएको छ: %{heading_link}"
+        not_enough_available_votes: "तपाईंले अनुमति दिएको अधिकतम संख्यामा पुग्नुभएको छ"
+        change_ballot: आफ्नो मत परिवर्तन गर्नुहोस्
+        casted_offline: तपाईंले पहिले नै अफलाइन भाग लिनुभएको छ
+    groups:
+      show:
+        title: शीर्षक चयन गर्नुहोस्
+    phase:
+      drafting: मस्यौदा (जनताले देख्न नसक्ने)
+      informing: जानकारी
+      accepting: परियोजनाहरू स्वीकार गर्दै
+      reviewing: परियोजनाहरूको समीक्षा गर्दै
+      selecting: परियोजनाहरू चयन गर्दै
+      valuating: परियोजनाहरू मूल्याङ्कन गर्दै
+      publishing_prices: प्रकाशन परियोजना मूल्यहरू
+      balloting: परियोजनाहरूमा मतदान
+      reviewing_ballots: मतदानको समीक्षा गर्दै
+      finished: बजेट सकियो
+    index:
+      title: सहभागितामूलक बजेट
+      empty_budgets: बजेटहरू छैनन्
+      section_header:
+        icon_alt: सहभागी बजेट आइकन
+        title: सहभागितामूलक बजेट
+        help: सहभागितामूलक बजेटमा मद्दत गर्नुहोस्
+      all_phases: सहभागी बजेट चरणहरू
+      next_phase: अर्को चरण
+      prev_phase: अघिल्लो चरण
+      current_phase: वर्तमान चरण
+      map: बजेट लगानी प्रस्तावहरू भौगोलिक रूपमा अवस्थित छन्
+      finished_budgets: सहभागितामूलक बजेट सकियो
+      see_results: परिणामहरू हेर्नुहोस्
+      section_footer:
+        title: सहभागितामूलक बजेटमा मद्दत गर्नुहोस्
+        description: सहभागितामूलक बजेटबाट जनताले बजेटको एक हिस्सा कुन-कुन आयोजनालाई दिने भन्ने निर्णय गर्छन्।
+      milestones: माइलस्टोनहरू
+    investments:
+      form:
+        title: "एउटा बजेट लगानी सिर्जना गर्नुहोस्"
+        subtitle: "%{heading} (%{price})"
+        subtitle_without_price: "%{heading}"
+        tag_category_label: "वर्गहरू"
+        tags_instructions: "यो प्रस्ताव ट्याग गर्नुहोस्। तपाईं प्रस्तावित कोटीहरूबाट छनौट गर्न सक्नुहुन्छ वा आफ्नै थप्न सक्नुहुन्छ"
+        tags_label: ट्यागहरू
+        tags_placeholder: "अल्पविराम (',') द्वारा छुट्याएर तपाईंले प्रयोग गर्न चाहनुभएको ट्यागहरू प्रविष्ट गर्नुहोस्।"
+        map_location: "नक्साकाे स्थान"
+        map_location_instructions: "स्थानमा नक्सा नेभिगेट गर्नुहोस् र मार्कर राख्नुहोस्।"
+      index:
+        title: सहभागितामूलक बजेट
+        unfeasible: अव्यवहारिक लगानी परियाेजनाहरू
+        unfeasible_text: "लगानीलाई व्यवहार्य घोषित गर्न र अन्तिम मतदानको चरणमा पुग्नका लागि धेरै मापदण्डहरू (वैधानिकता, ठोसता, बजेटको सीमाभन्दा बढी नहुने) पूरा गर्नुपर्छ। यी मापदण्डहरू पूरा नगर्ने सबै लगानीहरूलाई असम्भवको रूपमा चिन्ह लगाइएको छ र निम्न सूचीमा यसको असक्षमताको रिपोर्ट सहित प्रकाशित गरिएको छ।"
+        by_heading: "दायरा सहितको लगानी परियोजनाहरू: %{heading}"
+        search_form:
+          button: खोज्नुहोस्
+          placeholder: लगानी परियोजनाहरू खोज्नुहोस्...
+          title: खोज्नुहोस्
+        sidebar:
+          my_ballot: मेरो मतपत्र
+          voted_info:
+            knapsack:
+              one: "<strong>तपाईंले %{amount_spent}</strong> को लागतको साथ एउटा प्रस्तावलाई मतदान गर्नुभयो"
+              other: "<strong>तपाईंले %{count} %{amount_spent} को लागतको प्रस्तावलाई मतदान गर्नुभयो</strong>"
+            approval:
+              one: "<strong>तपाईंले एउटा प्रस्तावलाई मतदान गर्नुभयो</strong>"
+              other: "<strong>तपाईंले %{count} प्रस्तावहरूलाई मतदान गर्नुभयो</strong>"
+          change_vote_info:
+            knapsack: "तपाईं %{link} कुनै पनि समय %{phase_end_date} सम्म गर्न सक्नुहुन्छ। उपलब्ध सबै पैसा खर्च गर्न आवश्यक छैन।"
+            approval: "तपाईं %{link} कुनै पनि समय %{phase_end_date} सम्म गर्न सक्नुहुन्छ।"
+          change_vote_link: "आफ्नो मत परिवर्तन गर्नुहोस्"
+          different_heading_assigned: "तपाईंसँग अर्को शीर्षकमा सक्रिय मतहरू छन्: %{heading_link}"
+          change_ballot: "यदि तपाईंले आफ्नो मन परिवर्तन गर्नुभयो भने तपाईंले %{check_ballot} मा आफ्नो भोटहरू हटाउन सक्नुहुन्छ र फेरि सुरु गर्न सक्नुहुन्छ।"
+          check_ballot_link: "मेरो मतपत्र पेश गर्नुहोस्"
+          zero: तपाईंले यस समूहमा कुनै पनि लगानी परियोजनालाई मतदान गर्नुभएको छैन।
+          verified_only: "नयाँ बजेट लगानी %{verify} सिर्जना गर्न।"
+          create: "एउटा बजेट लगानी सिर्जना गर्नुहोस्"
+          not_logged_in: "नयाँ बजेट लगानी सिर्जना गर्न तपाईंले %{sign_in} वा %{sign_up} गर्नुपर्छ।"
+        filter: "द्वारा परियोजनाहरू फिल्टर गर्दै"
+        filters:
+          not_unfeasible: "सक्रिय"
+          selected: "सक्रिय"
+          unfeasible: "असम्भाव्य"
+          unselected: "अन्तिम मतदानका लागि चयन गरिएको छैन"
+          winners: "विजेताहरू"
+        orders:
+          random: अनियमित
+          confidence_score: उच्चतम मूल्याङ्कन
+          price: मूल्य द्वारा
+      share:
+        message: "मैले लगानी परियोजना %{title} %{handle} मा सिर्जना गरें। लगानी परियोजना पनि सिर्जना गर्नुहोस्!"
+      show:
+        author_deleted: प्रयोगकर्ता मेटाइयो
+        price_explanation: मूल्य व्याख्या
+        unfeasibility_explanation: असम्भाव्यता स्पष्टीकरण
+        code: "लगानी परियोजना कोड: <strong>%{code}</strong>"
+        location: "स्थान: <strong>%{location}</strong>"
+        organization_name: "को तर्फबाट प्रस्तावित: <strong>%{name}</strong>"
+        share: साझेदारी गर्नुहोस्
+        title: लगानी परियोजना
+        supports: समर्थनहरू
+        votes: मतहरू
+        price: मूल्य
+        comments_tab: टिप्पणीहरू
+        milestones_tab: माइलस्टोनहरू
+        author: लेखक
+        project_unfeasible: "यो लगानी परियोजना <strong>सम्भव छैन भनी चिन्ह लगाइएको छ</strong> र मतदान चरणमा जानेछैन।"
+        project_selected: "यो लगानी परियोजना मतदान चरणको लागि <strong>छनोट गरिएको छ</strong>।"
+        project_winner: "लगानी परियोजना विजेता"
+        project_not_selected: "यो लगानी परियोजना मतदान चरणको लागि <strong>छनोट गरिएको छैन</strong>।"
+        see_price_explanation: मूल्य व्याख्या हेर्नुहोस्
+      wrong_price_format: केवल पूर्णांक संख्याहरू
+      investment:
+        add: मत
+        add_label: "%{investment} मा मत दिन्नुस्"
+        already_added: तपाईंले पहिले नै यो लगानी परियोजना थपिसक्नुभएको छ
+        support_title: यस परियोजनालाई समर्थन गर्नुहोस्
+        supports:
+          zero: No supports
+          one: १ समर्थन
+          other: "%{count} समर्थनहरू"
+      header:
+        check_ballot: "मेरो मतपत्र बुझाउनुहोस्"
+        different_heading_assigned: "तपाईंसँग अर्को शीर्षकमा सक्रिय मतहरू छन्: %{heading_link}"
+        change_ballot: "यदि तपाईंले आफ्नो मन परिवर्तन गर्नुभयो भने तपाईंले %{check_ballot} मा आफ्नो भोटहरू हटाउन सक्नुहुन्छ र फेरि सुरु गर्न सक्नुहुन्छ।"
+        check_ballot_link: "मेरो मतपत्र बुझाउनुहोस्"
+        price: "कुल बजेट"
+      votes:
+        already_supported: "तपाईंले यस लगानी परियोजनालाई पहिले नै समर्थन गरिसक्नु भएको छ। यसलाई साझेदारी गर्नुहोस्!"
+        confirm_group:
+          one: "तपाईंले %{count} जिल्लामा मात्र लगानी समर्थन गर्न सक्नुहुन्छ। यदि तपाइँ जारी राख्नुहुन्छ भने तपाइँ तपाइँको जिल्लाको चुनाव परिवर्तन गर्न सक्नुहुन्न। के तपाईँ निश्चित हुनुहुन्छ?"
+          other: "तपाईंले %{count} जिल्लाहरूमा मात्र लगानी समर्थन गर्न सक्नुहुन्छ। यदि तपाइँ जारी राख्नुहुन्छ भने तपाइँ तपाइँको जिल्लाको चुनाव परिवर्तन गर्न सक्नुहुन्न। के तपाईँ निश्चित हुनुहुन्छ?"
+        remove_support: "आफ्नो समर्थन हटाउनुहोस्"
+        remove_support_label: "%{investment} लाई आफ्नो समर्थन हटाउनुहोस्"
+        support: "समर्थन"
+        support_label: "समर्थन %{investment}"
+    investments_list:
+      investment:
+        price: "मूल्य"
+        read_more: "थप पढ्नुहोस्"
+        supports: "समर्थनहरू"
+      see_all: "सबै लगानी हेर्नुहोस्"
+      title: "लगानीको सूची"
+    show:
+      see_results: परिणामहरू हेर्नुहोस्
+    supports_info:
+      different: "तपाईले चाहानु भएको धेरै फरक परियोजनाहरूमा समर्थन गर्न सक्नुहुन्छ।"
+      next: "तपाईंले अर्को चरणमा जान चाहनुभएको परियोजनाहरूलाई समर्थन गर्नुहोस्।"
+      scrolling: "सबै विचारहरू हेर्न स्क्रोल गरिरहनुहोस्"
+      share: "तपाईंले सामाजिक सञ्जाल मार्फत समर्थन गर्नुभएको परियोजनाहरू साझेदारी गर्न सक्नुहुन्छ र तिनीहरूलाई थप ध्यान र समर्थन आकर्षित गर्न सक्नुहुन्छ!"
+      supported:
+        one: "अहिलेसम्म तपाईंले <strong>१ परियोजना</strong> लाई समर्थन गर्नुभएको छ।"
+        other: "अहिलेसम्म तपाईंले <strong>%{count} परियोजनाहरू</strong> समर्थन गर्नुभएको छ।"
+      supported_not_logged_in: "<strong>सपोर्टिङ प्रोजेक्टहरू</strong> सुरु गर्न लग इन गर्नुहोस्।"
+      time: "परियोजनाहरूलाई समर्थन गर्न %{phase_end_date} सम्म अझै समय छ।"
+      title: "यो परियोजनाहरूलाई <strong>समर्थन</strong> गर्ने समय हो!"
+    results:
+      link: परिणामहरू
+      page_title: "%{budget}} - परिणामहरू"
+      heading: "सहभागितामूलक बजेटको नतिजा"
+      heading_selection_title: "जिल्ला अनुसार"
+      ballot_lines_count: मतहरू
+      hide_discarded_link: खारेज गरिएका लुकाउनुहोस्
+      show_all_link: सबै देखाऊ
+      price: मूल्य
+      amount_available: उपलब्ध बजेट
+      accepted: "स्वीकृत लगानी: "
+      discarded: "खारेज गरिएको लगानी: "
+      incompatibles: असंगतहरू
+      investment_title: परियोजना शीर्षक
+      investment_proyects: सबै लगानी परियोजनाहरूको सूची
+      unfeasible_investment_proyects: सबै असम्भव लगानी परियोजनाहरूको सूची
+      not_selected_investment_proyects: मतदानका लागि चयन नगरिएका सबै लगानी परियोजनाहरूको सूची
+    executions:
+      link: "माइलस्टोनहरू"
+      page_title: "%{budget} - माइलस्टोनहरू"
+      heading: "सहभागितामूलक बजेट माइलस्टोन"
+      heading_selection_title: "जिल्ला अनुसार"
+      no_winner_investments: "यस राज्यमा कुनै विजेता लगानी छैन"
+      filters:
+        status:
+          label: "परियोजनाको हालको अवस्था"
+          all: "सबै (%{count})"
+        milestone_tag:
+          label: "माइलस्टोन ट्याग"
+          all: "सबै (%{count})"
+    phases:
+      errors:
+        dates_range_invalid: "सुरु मिति बराबर वा अन्त्य मिति भन्दा पछि हुन सक्दैन"
+        prev_phase_dates_invalid: "सुरु मिति अघिल्लो सक्षम चरण (%{phase_name}) को सुरु मिति भन्दा पछि हुनुपर्छ।"
+        next_phase_dates_invalid: "अन्तिम मिति अर्को सक्षम गरिएको चरण (%{phase_name}) को अन्त्य मिति भन्दा अघिको हुनुपर्छ।"

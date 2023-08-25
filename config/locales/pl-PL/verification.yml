@@ -51,7 +51,7 @@ pl:
           residence_card: Karta pobytu
           spanish_id: DNI
         error_not_allowed_age: Nie masz wymaganego wieku, aby wziąć udział
-        error_not_allowed_postal_code: Aby zostać zweryfikowanym, użytkownik musi być zarejestrowany.
+        error_not_allowed_postal_code: Aby zostać zweryfikowanym, użytkownik musi być zarejestrowany
         form_errors: uniemożliwił weryfikację twojego miejsca zamieszkania
         postal_code_note: Aby zweryfikować swoje konto, musisz być zarejestrowany
         terms: regulamin dostępu
@@ -82,11 +82,11 @@ pl:
     step_1: Adres
     step_2: Kod weryfikacyjny
     step_3: Ostateczna weryfikacja
-    user_permission_debates: ' '
+    user_permission_debates: Uczestnicz w debatach
     user_permission_info: Weryfikując swoje dane, będziesz w stanie...
     user_permission_proposal: Twórz i dołączaj do pomysłów
     user_permission_support_proposal: Popieraj propozycje*
-    user_permission_votes: ' '
+    user_permission_votes: Uczestniczyć w głosowaniu końcowym*
     verified_user:
       form:
         submit_button: Wyślij kod

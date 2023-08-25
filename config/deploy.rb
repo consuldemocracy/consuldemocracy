@@ -1,17 +1,26 @@
 # config valid only for current version of Capistrano
-lock "~> 3.16.0"
+lock "~> 3.17.1"
 
-def deploysecret(key)
+def deploysecret(key, default: "")
   @deploy_secrets_yml ||= YAML.load_file("config/deploy-secrets.yml")[fetch(:stage).to_s]
-  @deploy_secrets_yml.fetch(key.to_s, "undefined")
+  @deploy_secrets_yml.fetch(key.to_s, default)
+end
+
+def main_deploy_server
+  if deploysecret(:server1) && !deploysecret(:server1).empty?
+    deploysecret(:server1)
+  else
+    deploysecret(:server)
+  end
 end
 
 set :rails_env, fetch(:stage)
 set :rvm1_map_bins, -> { fetch(:rvm_map_bins).to_a.concat(%w[rake gem bundle ruby]).uniq }
 
-set :application, "consul"
+set :application, deploysecret(:app_name, default: "consul")
 set :deploy_to, deploysecret(:deploy_to)
 set :ssh_options, port: deploysecret(:ssh_port)
+
 set :repo_url, ENV["repo"]
 
 set :revision, `git rev-parse --short #{fetch(:branch)}`.strip
@@ -31,6 +40,7 @@ set :puma_conf, "#{release_path}/config/puma/#{fetch(:rails_env)}.rb"
 
 set :delayed_job_workers, 2
 set :delayed_job_roles, :background
+set :delayed_job_monitor, true
 
 set :whenever_roles, -> { :app }
 

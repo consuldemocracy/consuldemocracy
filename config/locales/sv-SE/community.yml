@@ -25,10 +25,6 @@ sv:
       topic:
         edit: Redigera inlägg
         destroy: Ta bort ämne
-        comments:
-          zero: Inga kommentarer
-          one: 1 kommentar
-          other: "%{count} kommentarer"
       author: Skribent
       back: Tillbaka till %{community} %{proposal}
     topic:

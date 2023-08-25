@@ -1,7 +1,14 @@
 ENV["RAILS_ENV"] ||= "test"
-if ENV["COVERALLS_REPO_TOKEN"]
-  require "coveralls"
-  Coveralls.wear!("rails")
+if ENV["TEST_COVERAGE"] && !ENV["TEST_COVERAGE"].empty?
+  require "simplecov"
+  require "simplecov-lcov"
+  SimpleCov::Formatter::LcovFormatter.config.report_with_single_file = true
+  SimpleCov::Formatter::LcovFormatter.config do |config|
+    config.output_directory = "coverage"
+    config.lcov_file_name = "lcov.info"
+  end
+  SimpleCov.formatter = SimpleCov::Formatter::LcovFormatter
+  SimpleCov.start("rails")
 end
 require File.expand_path("../../config/environment", __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
@@ -47,17 +54,14 @@ end
 FactoryBot.use_parent_strategy = false
 
 Capybara.register_driver :headless_chrome do |app|
-  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
-    "goog:chromeOptions" => {
-      args: %W[headless no-sandbox window-size=1200,1200 proxy-server=#{Capybara.app_host}:#{Capybara::Webmock.port_number}]
-    }
-  )
+  options = Selenium::WebDriver::Chrome::Options.new.tap do |opts|
+    opts.add_argument "--headless"
+    opts.add_argument "--no-sandbox"
+    opts.add_argument "--window-size=1200,800"
+    opts.add_argument "--proxy-server=#{Capybara.app_host}:#{Capybara::Webmock.port_number}"
+  end
 
-  Capybara::Selenium::Driver.new(
-    app,
-    browser: :chrome,
-    desired_capabilities: capabilities
-  )
+  Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
 end
 
 Capybara.exact = true
@@ -66,3 +70,14 @@ Capybara.disable_animation = true
 Capybara.default_max_wait_time = 5
 
 OmniAuth.config.test_mode = true
+
+def with_subdomain(subdomain, &block)
+  app_host = Capybara.app_host
+
+  begin
+    Capybara.app_host = "http://#{subdomain}.lvh.me"
+    block.call
+  ensure
+    Capybara.app_host = app_host
+  end
+end

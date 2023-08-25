@@ -25,10 +25,6 @@ ka:
       topic:
         edit: თემის რედაქტირება
         destroy: თემის წაშლა
-        comments:
-          zero: კომენტარები არ მოიძებნა
-          one: 1 კომენტარი
-          other: "%{count} კომენტარი"
       author: ავტორი
       back: '%{community} %{proposal}-ში დაბრუნება'
     topic:

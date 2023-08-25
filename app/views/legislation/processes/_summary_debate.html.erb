@@ -10,10 +10,10 @@
         <div class="debate-summary">
           <div class="question-title">
             <h4><%= link_to question.title, polymorphic_path(question) %></h4>
-            <span class="comments-count">
-              <%= link_to t("legislation.summary.comments", count: question.comments.count),
-                          polymorphic_path(question, anchor: "comments") %>
-            </span>
+            <%= render Shared::CommentsCountComponent.new(
+              question.comments.count,
+              url: polymorphic_path(question, anchor: "comments")
+            ) %>
           </div>
 
           <%= render "summary_comments", comments: question.best_comments %>

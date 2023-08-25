@@ -4,9 +4,6 @@ de:
       comments:
         see_all: Alle anzeigen
         see_complete: Vollständig anzeigen
-        comments_count:
-          one: "%{count} Kommentar"
-          other: "%{count} Kommentare"
         replies_count:
           one: "%{count} Antwort"
           other: "%{count} Antworten"
@@ -18,9 +15,6 @@ de:
         title: Kommentare
         comments_about: Kommentare über
         see_in_context: Im Kontext zeigen
-        comments_count:
-          one: "%{count} Kommentar"
-          other: "%{count} Kommentare"
       show:
         title: Kommentar
       version_chooser:
@@ -92,10 +86,6 @@ de:
         form:
           leave_comment: Antwort hinterlassen
       question:
-        comments:
-          zero: Keine Kommentare
-          one: "%{count} Kommentar"
-          other: "%{count} Kommentare"
         debate: Diskussion
       show:
         answer_question: Antwort einreichen
@@ -134,10 +124,6 @@ de:
         zero: "Keine Vorschläge"
         one: "%{count} Vorschlag"
         other: "%{count} Vorschläge"
-      comments:
-        zero: "Keine Kommentare"
-        one: "%{count} Kommentar"
-        other: "%{count} Kommentare"
       download: "Download Zusammenfassung"
       top_comments:
         zero: "Keine Kommentare"

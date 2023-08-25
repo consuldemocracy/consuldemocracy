@@ -13,7 +13,7 @@ module SettingsHelper
   end
 
   def setting
-    @all_settings ||= Setting.all.map { |s| [s.key, s.value.presence] }.to_h
+    @all_settings ||= Setting.all.to_h { |s| [s.key, s.value.presence] }
   end
 
   def display_setting_name(setting_name)

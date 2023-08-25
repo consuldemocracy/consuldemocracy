@@ -1,27 +1,20 @@
-INVESTMENT_IMAGE_FILES = %w[
-  brennan-ehrhardt-25066-unsplash_713x513.jpg
-  carl-nenzen-loven-381554-unsplash_713x475.jpg
-  carlos-zurita-215387-unsplash_713x475.jpg
-  hector-arguello-canals-79584-unsplash_713x475.jpg
-  olesya-grichina-218176-unsplash_713x475.jpg
-  sole-d-alessandro-340443-unsplash_713x475.jpg
-].map do |filename|
-  Rails.root.join("db",
-                  "dev_seeds",
-                  "images",
-                  "budget",
-                  "investments", filename)
-end
+def add_image_to_investment(investment)
+  image_files = %w[
+    brennan-ehrhardt-25066-unsplash_713x513.jpg
+    carl-nenzen-loven-381554-unsplash_713x475.jpg
+    carlos-zurita-215387-unsplash_713x475.jpg
+    hector-arguello-canals-79584-unsplash_713x475.jpg
+    olesya-grichina-218176-unsplash_713x475.jpg
+    sole-d-alessandro-340443-unsplash_713x475.jpg
+  ].map do |filename|
+    Rails.root.join("db",
+                    "dev_seeds",
+                    "images",
+                    "budget",
+                    "investments", filename)
+  end
 
-def add_image_to(imageable)
-  # imageable should respond to #title & #author
-  imageable.image = Image.create!({
-    imageable: imageable,
-    title: imageable.title,
-    attachment: Rack::Test::UploadedFile.new(INVESTMENT_IMAGE_FILES.sample),
-    user: imageable.author
-  })
-  imageable.save!
+  add_image_to(investment, image_files)
 end
 
 section "Creating Budgets" do
@@ -113,7 +106,7 @@ section "Creating Investments" do
       heading: heading,
       group: heading.group,
       budget: heading.group.budget,
-      created_at: rand((Time.current - 1.week)..Time.current),
+      created_at: rand((1.week.ago)..Time.current),
       feasibility: %w[undecided unfeasible feasible feasible feasible feasible].sample,
       unfeasibility_explanation: Faker::Lorem.paragraph,
       valuation_finished: [false, true].sample,
@@ -122,7 +115,7 @@ section "Creating Investments" do
       terms_of_service: "1"
     }.merge(translation_attributes))
 
-    add_image_to(investment) if Random.rand > 0.5
+    add_image_to_investment(investment) if Random.rand > 0.5
   end
 end
 
@@ -161,14 +154,14 @@ section "Winner Investments" do
       budget: heading.group.budget,
       title: Faker::Lorem.sentence(word_count: 3).truncate(60),
       description: "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>",
-      created_at: rand((Time.current - 1.week)..Time.current),
+      created_at: rand((1.week.ago)..Time.current),
       feasibility: "feasible",
       valuation_finished: true,
       selected: true,
       price: rand(10000..heading.price),
       terms_of_service: "1"
     )
-    add_image_to(investment) if Random.rand > 0.3
+    add_image_to_investment(investment) if Random.rand > 0.3
   end
   budget.headings.each do |heading|
     Budget::Result.new(budget, heading).calculate_winners

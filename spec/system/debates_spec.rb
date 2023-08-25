@@ -412,8 +412,8 @@ describe "Debates" do
 
     scenario "Debates are ordered by newest" do
       best_debate = create(:debate, title: "Best", created_at: Time.current)
-      medium_debate = create(:debate, title: "Medium", created_at: Time.current - 1.hour)
-      worst_debate = create(:debate, title: "Worst", created_at: Time.current - 1.day)
+      medium_debate = create(:debate, title: "Medium", created_at: 1.hour.ago)
+      worst_debate = create(:debate, title: "Worst", created_at: 1.day.ago)
 
       visit debates_path
       click_link "Newest"

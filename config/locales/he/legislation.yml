@@ -4,11 +4,6 @@ he:
       comments:
         see_all: הצג הכל
         see_complete: ראה כולל
-        comments_count:
-          one: "%{count} תגובה"
-          two: "%{count} תגובות"
-          many: "%{count} תגובות"
-          other: "%{count} תגובות"
         replies_count:
           one: "%{count} תגובה"
           two: "%{count} תגובות"
@@ -22,11 +17,6 @@ he:
         title: הערות
         comments_about: תגובות לגבי
         see_in_context: ראה בהקשר של
-        comments_count:
-          one: "%{count} תגובה"
-          two: "%{count} תגובות"
-          many: "%{count} תגובות"
-          other: "%{count} תגובות"
       show:
         title: תגובה
       version_chooser:
@@ -98,12 +88,6 @@ he:
         form:
           leave_comment: השאר את תשובתך
       question:
-        comments:
-          zero: אין תגובות
-          one: "%{count} תגובה"
-          two: "%{count} תגובות"
-          many: "%{count} תגובות"
-          other: "%{count} תגובות"
         debate: דיון
       show:
         answer_question: פרסם תשובה
@@ -144,11 +128,5 @@ he:
         two: "%{count} הצעות"
         many: "%{count} הצעות"
         other: "%{count} הצעות"
-      comments:
-        zero: "אין תגובות"
-        one: "%{count} תגובה"
-        two: "%{count} תגובות"
-        many: "%{count} תגובות"
-        other: "%{count} תגובות"
       top_comments:
         zero: "אין תגובות"

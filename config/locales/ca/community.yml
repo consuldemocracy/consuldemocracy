@@ -25,10 +25,6 @@ ca:
       topic:
         edit: Edita el tema
         destroy: Suprimeix el tema
-        comments:
-          zero: Sense comentaris
-          one: 1 Comentari
-          other: "%{count} comentaris"
       author: Autor
       back: Tornar %{community} %{proposal}
     topic:

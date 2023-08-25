@@ -40,6 +40,7 @@ describe "Admin custom images", :admin do
   end
 
   scenario "Image is replaced on front views" do
+    create(:geozone)
     budget = create(:budget)
     group = create(:budget_group, budget: budget)
 

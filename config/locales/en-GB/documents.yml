@@ -1,12 +1,1 @@
 en-GB:
-  documents:
-    title: Документи
-    additional: Додаткова документація
-    form:
-      title: Документи
-      cancel_button: Скасувати
-      add_new_document: Додати новий документ
-    errors:
-      messages:
-        in_between: має знаходитися в межах від %{min} до %{max}
-        wrong_content_type: тип вмісту %{content_type} не спідпадає з жодним із прийнятих %{accepted_content_types}

@@ -19,7 +19,7 @@ class CommentTree
   end
 
   def base_comments
-    if @valuations && commentable.respond_to?("valuations")
+    if @valuations && commentable.respond_to?(:valuations)
       commentable.valuations
     else
       commentable.comments

@@ -29,6 +29,15 @@ describe Legislation::DraftVersion do
     expect(legislation_draft_version.toc_html).to eq(toc_html)
   end
 
+  it "renders the tables from the markdown body field" do
+    legislation_draft_version.body = body_with_table_markdown
+
+    legislation_draft_version.save!
+
+    expect(legislation_draft_version.body_html).to eq(body_with_table_html)
+    expect(legislation_draft_version.toc_html).to eq(toc_html)
+  end
+
   def body_markdown
     <<~BODY_MARKDOWN
       # Title 1
@@ -58,6 +67,32 @@ describe Legislation::DraftVersion do
       | ----------- | ----------- |
       | Header | Title |
       | Paragraph | Text |
+    BODY_MARKDOWN
+  end
+
+  def body_with_table_markdown
+    <<~BODY_MARKDOWN
+      # Title 1
+
+      Some paragraph.
+
+      A list:
+
+      - item 1
+      - item 2
+
+      ## Subtitle
+
+      Another paragraph.
+
+      # Title 2
+
+      Something about this.
+
+      | id | name    | age | gender |
+      |----|---------|-----|--------|
+      | 1  | Roberta | 39  | M      |
+      | 2  | Oliver  | 25  | F      |
     BODY_MARKDOWN
   end
 
@@ -105,6 +140,54 @@ describe Legislation::DraftVersion do
       <td>Text</td>
       </tr>
       </tbody></table>
+    BODY_HTML
+  end
+
+  def body_with_table_html
+    <<~BODY_HTML
+      <h1 id="title-1">Title 1</h1>
+
+      <p>Some paragraph.</p>
+
+      <p>A list:</p>
+
+      <ul>
+      <li>item 1</li>
+      <li>item 2</li>
+      </ul>
+
+      <h2 id="subtitle">Subtitle</h2>
+
+      <p>Another paragraph.</p>
+
+      <h1 id="title-2">Title 2</h1>
+
+      <p>Something about this.</p>
+
+      <table>
+      <thead>
+      <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>age</th>
+      <th>gender</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>1</td>
+      <td>Roberta</td>
+      <td>39</td>
+      <td>M</td>
+      </tr>
+      <tr>
+      <td>2</td>
+      <td>Oliver</td>
+      <td>25</td>
+      <td>F</td>
+      </tr>
+      </tbody>
+      </table>
     BODY_HTML
   end
 

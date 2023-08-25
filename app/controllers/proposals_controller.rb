@@ -10,7 +10,6 @@ class ProposalsController < ApplicationController
   before_action :load_categories, only: [:index, :map, :summary]
   before_action :load_geozones, only: [:edit, :map, :summary]
   before_action :authenticate_user!, except: [:index, :show, :map, :summary]
-  before_action :destroy_map_location_association, only: :update
   before_action :set_view, only: :index
   before_action :proposals_recommendations, only: :index, if: :current_user
 
@@ -22,6 +21,8 @@ class ProposalsController < ApplicationController
   has_orders %w[most_voted newest oldest], only: :show
 
   load_and_authorize_resource
+  before_action :destroy_map_location_association, only: :update
+
   helper_method :resource_model, :resource_name
   respond_to :html, :js
 
@@ -73,6 +74,11 @@ class ProposalsController < ApplicationController
 
   def summary
     @proposals = Proposal.for_summary
+    @tag_cloud = tag_cloud
+  end
+
+  def map
+    @proposal = Proposal.new
     @tag_cloud = tag_cloud
   end
 
@@ -166,9 +172,10 @@ class ProposalsController < ApplicationController
     end
 
     def destroy_map_location_association
-      map_location = params[:proposal][:map_location_attributes]
-      if map_location && (map_location[:longitude] && map_location[:latitude]).blank? && !map_location[:id].blank?
-        MapLocation.destroy(map_location[:id])
+      map_location_params = proposal_params[:map_location_attributes]
+
+      if map_location_params.blank? || map_location_params.values.all?(&:blank?)
+        @proposal.map_location = nil
       end
     end
 

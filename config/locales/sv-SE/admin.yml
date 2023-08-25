@@ -166,6 +166,8 @@ sv:
         calculate: Beräkna vinnande budgetförslag
         calculated: Vinnare beräknas, det kan ta en stund.
         recalculate: Räkna om vinnande budgetförslag
+      ballots:
+        feature_disabled: 'Funktionen <strong>Omröstningar</strong> måste ha aktiverats för att kunna skapa röstbås. Du kan aktivera den från sidan <a href="%{link}">Inställningskonfigurering</a>.'
     budget_groups:
       name: "Namn"
       headings_name: "Områden"
@@ -198,6 +200,7 @@ sv:
         success_notice: "Området har raderats"
         unable_notice: "Du kan inte radera ett område som har kopplade investeringar"
       form:
+        geozone_info: "När ett område är förknippat med en geozon visas geozonen på den här budgetens karta om geozonen omfattar GeoJSON-data."
         max_ballot_lines_info: 'Maximalt antal projekt som en användare kan rösta om i det här området under fasen "Omröstning". Bara för budgetar som använder omröstning med godkännande.'
         population_info: "Fältet för folkmängd inom ett budgetområde används för att i slutet av budgeten föra statistik för varje område över hur stor del av befolkningen där som deltagit i omröstningen. Fältet är valfritt, så du kan lämna det tomt om det inte är tillämpligt."
         coordinates_info: "Om latitud och longitud anges kommer budgetsidan för detta område att innehålla en karta. Kartan centreras kring dessa koordinater."
@@ -219,8 +222,8 @@ sv:
         dates_help_text: "Endast i informationssyfte"
         description_help_text: Den här texten visas i sidhuvudet när fasen är aktiv
         duration: "Fasens varaktighet"
-        duration_description: "Den tidsperiod som den här fasen blir aktiv."
-        enabled_help_text: Den här fasen kommer att visas offentligt i budgetens tidslinje och vara aktiv för andra ändamål
+        duration_description: "Dessa fält används endast i informationssyfte och <strong>utlöser inte en automatisk uppdatering av den aktiva fasen.</strong> Uppdatera den genom att redigera budgeten och välja den aktiva fasen."
+        enabled_help_text: Den här fasen kommer att visas offentligt i budgetens tidslinje och vara aktiv för andra ändamål.
         image_description: "Om det laddas upp en bild visas den bredvid beskrivningen av fasen."
         main_call_to_action: "Huvudsaklig uppmaning (valfritt)"
         main_call_to_action_description: "Länken kommer att visas på huvudbannern för den här medborgarbudgeten när denna fas aktiveras och uppmuntrar din användare att utföra en specifik åtgärd som t.ex. att skapa ett nytt förslag, rösta på befintliga eller lära sig mer om processen."
@@ -761,6 +764,8 @@ sv:
           community: "Gemenskap"
           proposals: "Förslag"
           polls: "Omröstningar"
+          legislation: "Medborgardialoger"
+          budgets: "Budgetar"
           layouts: "Layouter"
           machine_learning: "AI/maskininlärning"
           mailers: "E-postadresser"
@@ -784,6 +789,7 @@ sv:
       comments: "Kommentarer"
       local_census_records: Hantera lokalt adressregister
       machine_learning: "AI/maskininlärning"
+      multitenancy: Flera hyresgäster
     administrators:
       index:
         title: Administratörer
@@ -1102,13 +1108,14 @@ sv:
         table_title: "Titel"
         edit_answers: Redigera svar
         see_proposal: "(Visa förslag)"
-      flash:
-        question_added: "Frågan har lagts till i omröstningen"
-        error_on_question_added: "Frågan kunde inte tilldelas den här omröstningen"
       destroy:
         alert: "Denna åtgärd tar bort omröstningen och alla dess frågor."
         success_notice: "Omröstningen har raderats"
         unable_notice: "Det går inte att radera en omröstning som har röster"
+      votation_type:
+        title: "Omröstningstyp"
+        unique_description: "Det går bara att svara på frågan en gång."
+        multiple_description: "Gör det möjligt att välja flera svar. Det går att ställa in maximalt antal svar."
     questions:
       index:
         title: "Frågor"
@@ -1125,9 +1132,13 @@ sv:
         poll_not_assigned: "Omröstningen har inte tilldelats"
       edit:
         title: "Redigera fråga"
+      form:
+        poll_help: "Du kan bara välja omröstningar som inte har inletts än"
       new:
         title: "Skapa fråga för omröstningen %{poll}"
         title_proposal: "Skapa fråga"
+      destroy:
+        notice: "Frågan raderades"
       answers:
         images:
           add_image: "Lägg till bild"
@@ -1151,17 +1162,17 @@ sv:
           documents_list: Lista med dokument
           document_title: Titel
           document_actions: Åtgärder
+      no_edit: "När omröstningen har inletts går det inte längre att skapa, redigera eller radera frågor, svar eller annat innehåll som kopplats till omröstningen."
     answers:
       new:
         title: Nytt svar
-      show:
-        title: Titel
-        description: Beskrivning
-        images: Bilder
-        images_list: Lista med bilder
-        edit: Redigera svar
       edit:
         title: Redigera svar
+      destroy:
+        success_notice: "Svaret har raderats"
+      images:
+        index:
+          title: Bilder
       videos:
         index:
           title: Videor
@@ -1345,6 +1356,7 @@ sv:
         label:
           booths: "Sök röstbås efter namn eller plats"
           budget_investments: "Sök investeringar efter titel, beskrivning eller område"
+          comments: "Sök kommentarer"
           debates: "Sök debatter efter titel eller beskrivning"
           legislation_processes: "Sök processer efter titel eller beskrivning"
           legislation_proposals: "Sök förslag efter titel eller beskrivning"
@@ -1354,6 +1366,7 @@ sv:
           poll_questions: "Sök omröstningsfrågor"
           polls: "Sök omröstningar efter namn eller beskrivning"
           proposals: "Sök förslag efter titel, kod, beskrivning eller fråga"
+          proposal_notifications: "Sök aviseringar efter titel eller beskrivning"
           users: "Sök användare efter namn eller e-postadress"
         search: "Sök"
       search_results: "Sökresultat"
@@ -1373,7 +1386,7 @@ sv:
       show_results_and_stats: "Visa resultat och statistik"
       results_and_stats_reminder: "Genom att markera dessa rutor kommer omröstningens resultat och/eller statistik att visas för alla användare."
       close_modal: Stäng läget
-      example_url: "https://consulproject.org"
+      example_url: "https://consuldemocracy.org"
     geozones:
       index:
         title: Geografiska områden
@@ -1383,8 +1396,13 @@ sv:
         external_code: Extern kod
         census_code: Adressregisterkod
         code_help: Svarskod för denna geozon i adressregister-API:t
+        color_help: "Zonens färg i en budgets karta. %{format_help}"
         coordinates: Koordinater
         coordinates_help: Koordinater som skapar ett klickbart område på en HTML-bildkarta
+        geojson: GeoJSON tillgänglig
+        geojson_help: "Måste följa format av typen \"Polygon\" eller \"MultiPolygon\". På en budgets karta visas det en polygon baserad på denna data när ett område är förknippat med denna geozon"
+      create:
+        notice: "Geozon har skapats"
       edit:
         form:
           submit_button: Spara ändringar
@@ -1396,6 +1414,8 @@ sv:
       delete:
         success: Det geografiska området har tagits bort
         error: Det här geografiska området kan inte raderas eftersom det finns förslag kopplade till det
+      update:
+        notice: "Geozon har uppdaterats"
     signature_sheets:
       author: Skribent
       created_at: Datum för skapande
@@ -1525,6 +1545,10 @@ sv:
         document_number: Identitetshandlingens nummer
         roles: Roller
         verification_level: Rättighetsnivå
+        activation_status: Aktivationsstatus
+      account:
+        active_status: Konto aktiverat
+        inactive_status: Konto ej aktiverat
       index:
         title: Användare
         no_users: Det finns inga användare.
@@ -1601,7 +1625,7 @@ sv:
           see_page: Visa
         new:
           title: Skapa ny anpassad sida
-          slug_help: "Text som identifierar denna sida i en URL, till exempel <code>https://consulproject.org/page-slug</code>"
+          slug_help: "Text som identifierar denna sida i en URL, till exempel <code>https://consuldemocracy.org/page-slug</code>"
         page:
           created_at: Skapad den
           status: Status
@@ -1620,6 +1644,25 @@ sv:
             notice: "Kortet har uppdaterats"
           destroy:
             notice: "Kortet har tagits bort"
+    tenants:
+      create:
+        notice: Hyresgäst har skapats
+      form:
+        use_subdomain: "Använd en underdomän i domänen %{domain} för att gå till den här hyresgästen"
+        use_domain: "Använd en annan domän för att gå till den här hyresgästen"
+      hide:
+        notice: Hyresgäst har inaktiverats
+      index:
+        create: Skapa hyresgäst
+        enable: "Aktivera hyresgäst %{tenant}"
+        enabled: Aktiverad
+      new:
+        admin_information: "När du skapar en hyresgäst kommer din nuvarande användare <strong>\"%{username}\"</strong> med e-postadressen <strong>\"%{email}\"</strong> och ditt lösenord att kopieras till databasen och automatiskt tilldelas administrationsbehörighet. Notera att dessa användarkonton lagras i helt separata databaser, så om du byter din användares lösenord i en hyresgäst förblir dina konton i andra hyresgäster intakta."
+        title: Ny hyresgäst
+      restore:
+        notice: Hyresgäst har aktiverats
+      update:
+        notice: Hyresgäst har uppdaterats
     homepage:
       title: Startsida
       description: De aktiva modulerna visas på startsidan i samma ordning som här.

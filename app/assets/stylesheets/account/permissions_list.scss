@@ -1,0 +1,31 @@
+.permissions-list {
+  list-style-type: none;
+  margin-bottom: 0;
+  margin-left: 0;
+
+  li {
+    font-size: $small-font-size;
+    margin-bottom: $line-height / 2;
+
+    &::before {
+      font-size: 0.9em;
+      margin-#{$global-right}: 0.2em;
+    }
+
+    &.permission-allowed {
+      @include has-fa-icon(check, solid);
+
+      &::before {
+        color: $check;
+      }
+    }
+
+    &.permission-denied {
+      @include has-fa-icon(times, solid);
+
+      &::before {
+        color: $delete;
+      }
+    }
+  }
+}

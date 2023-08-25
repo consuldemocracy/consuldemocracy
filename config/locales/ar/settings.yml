@@ -40,8 +40,6 @@ ar:
     telegram_handle_description: "إذا تم ملؤها ، فستظهر في تذييل الصفحة"
     instagram_handle: "مقبض Instagram"
     instagram_handle_description: "إذا تم ملؤها ، فستظهر في تذييل الصفحة"
-    url: "الصّفحة الرئيسية"
-    url_description: "الصّفحة الرئيسية لموقعك الالكتروني"
     org_name: "المنظمة"
     org_name_description: "هذا الاسم سيظهر في موضوع البريد الالكتروني, صفحات المساعدة..."
     related_content_score_threshold: "محتوى النتيجة ذات الصلة بالبداية"

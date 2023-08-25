@@ -3,9 +3,11 @@ val:
     geozone_id: "Ámbit d'actuació"
     results_enabled: "Mostrar resultats"
     stats_enabled: "Mostrar estadístiques"
+    advanced_stats_enabled: "Mostrar estadístiques avançades"
     name: Nom
     email: Correu electrònic
     description: Descripció
+    related_sdg_list: Objectius i Metes
   activerecord:
     models:
       activity:
@@ -192,6 +194,7 @@ val:
         name: "Nom"
         description: "Descripció"
         summary: "Resumen"
+        main_link_text: "Text en l'enllaç"
       comment:
         body: "Comentari"
         user: "Usuari"
@@ -282,13 +285,19 @@ val:
         signable_id: "ID Proposta ciutadana/Proposada inversió"
         document_numbers: "Números de documents"
       sdg/goal:
+        code: "Codi"
         title: "Títol"
         description: "Descripció"
       sdg/local_target:
+        code: "Codi"
+        target_id: "Objectiu"
         title: "Títol"
       sdg/local_target/translation:
         title: "Títol"
         description: "Descripció"
+      sdg/phase/kind:
+        sensitization: "Sensibilització"
+        planning: "Planificació"
       sdg/target:
         title: "Títol"
       site_customization/page:
@@ -393,7 +402,7 @@ val:
         description: Descripció
       poll/question/answer/translation:
         title: Resposta
-        description: Descripció
+        description: "Descripció (opcional)"
       poll/question/answer/video:
         title: Títol
         url: Video extern
@@ -429,8 +438,11 @@ val:
         description: Descripció
         active: Actius
         action_type: Tipus
+      dashboard/administrator_task:
+        user: Executat per
       link:
         label: Títol
+        url: Enllaç
       valuator:
         description: Descripció
         valuator_group_id: Grup d'Avaluadors
@@ -440,6 +452,9 @@ val:
         document_type: Tipus de document
         document_number: Número de document
         date_of_birth: Data de naixement
+      votation_type/vote_type:
+        unique: Una resposta
+        multiple: Varies respostes
     errors:
       models:
         user:

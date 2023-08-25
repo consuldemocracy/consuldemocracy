@@ -12,7 +12,7 @@
   <div class="inline-block">
     <strong><%= t("admin.polls.index.dates") %></strong>
     <br>
-    <%= l @poll.starts_at.to_date %> - <%= l @poll.ends_at.to_date %>
+    <%= render Admin::DurationComponent.new(@poll) %>
   </div>
 
   <% if @poll.geozone_restricted %>
@@ -22,4 +22,8 @@
         <%= @poll.geozones.pluck(:name).to_sentence %>
       </div>
   <% end %>
+</div>
+
+<div class="callout warning">
+  <strong><%= t("admin.questions.no_edit") %></strong>
 </div>

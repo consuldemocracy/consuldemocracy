@@ -62,35 +62,16 @@ describe "Admin" do
   end
 
   scenario "Access as administrator is authorized", :admin do
-    visit admin_root_path
-
-    expect(page).to have_current_path(admin_root_path)
-    expect(page).not_to have_content "You do not have permission to access this page"
-  end
-
-  scenario "Admin access links", :admin do
-    Setting["feature.sdg"] = true
-
-    visit root_path
-    click_link "Menu"
-
-    expect(page).to have_link("Administration")
-    expect(page).to have_link("Moderation")
-    expect(page).to have_link("Valuation")
-    expect(page).to have_link("Management")
-    expect(page).to have_link("SDG content")
-  end
-
-  scenario "Admin dashboard", :admin do
     visit root_path
 
     click_link "Menu"
     click_link "Administration"
 
     expect(page).to have_current_path(admin_root_path)
-    expect(page).to have_css("#admin_menu")
-    expect(page).not_to have_css("#moderation_menu")
-    expect(page).not_to have_css("#valuation_menu")
+    expect(page).to have_css "#admin_menu"
+    expect(page).not_to have_css "#moderation_menu"
+    expect(page).not_to have_css "#valuation_menu"
+    expect(page).not_to have_content "You do not have permission to access this page"
   end
 
   scenario "Admin menu does not hide active elements", :admin do

@@ -19,22 +19,19 @@ describe "Poll Results" do
     login_as user1
     vote_for_poll_via_web(poll, question1, "Yes")
     vote_for_poll_via_web(poll, question2, "Blue")
-    expect(Poll::Voter.count).to eq(1)
     logout
 
     login_as user2
     vote_for_poll_via_web(poll, question1, "Yes")
     vote_for_poll_via_web(poll, question2, "Green")
-    expect(Poll::Voter.count).to eq(2)
     logout
 
     login_as user3
     vote_for_poll_via_web(poll, question1, "No")
     vote_for_poll_via_web(poll, question2, "Yellow")
-    expect(Poll::Voter.count).to eq(3)
     logout
 
-    poll.update!(ends_at: 1.day.ago)
+    travel_to(poll.ends_at + 1.day)
 
     visit results_poll_path(poll)
 

@@ -107,15 +107,20 @@ describe "Account" do
     expect(find("#account_email_on_comment_reply")).to be_checked
   end
 
-  scenario "Email digest checkbox only appears if proposals are enabled" do
-    visit account_path
+  describe "Email digest checkbox" do
+    scenario "Appears when the proposals process is enabled" do
+      visit account_path
 
-    expect(page).to have_field "Receive a summary of proposal notifications", checked: true
+      expect(page).to have_field "Receive a summary of proposal notifications", checked: true
+    end
 
-    Setting["process.proposals"] = false
-    visit account_path
+    scenario "Does not appear when the proposals process is disabled" do
+      Setting["process.proposals"] = false
 
-    expect(page).not_to have_field "Receive a summary of proposal notifications"
+      visit account_path
+
+      expect(page).not_to have_field "Receive a summary of proposal notifications"
+    end
   end
 
   context "Option to display badge for official position" do

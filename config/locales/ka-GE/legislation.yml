@@ -4,9 +4,6 @@ ka:
       comments:
         see_all: ყველას ნახვა
         see_complete: ბოლომდე ნახვა
-        comments_count:
-          one: "%{count} კომენტარი"
-          other: "%{count} კომენტარი"
         replies_count:
           one: "%{count} პასუხი"
           other: "%{count} პასუხი"
@@ -18,9 +15,6 @@ ka:
         title: კომენტარები
         comments_about: კომენტარები
         see_in_context: კონტექსტის ნახვა
-        comments_count:
-          one: "%{count} კომენტარი"
-          other: "%{count} კომენტარი"
       show:
         title: კომენტარი
       version_chooser:
@@ -92,10 +86,6 @@ ka:
         form:
           leave_comment: დატოვეთ პასუხი
       question:
-        comments:
-          zero: კომენტარები არ მოიძებნა
-          one: "%{count} კომენტარი"
-          other: "%{count} კომენტარი"
         debate: დებატები
       show:
         answer_question: პასუხის გაგზავნა
@@ -111,7 +101,7 @@ ka:
         debate_phase_not_open: დებატების ფაზა დამთავრდა და პასუხები აღარ მიიღება
     shared:
       share: გაზიარება
-      share_comment: დატოვეთ კომენტარი %{version_name}-ზე საპროცესო პროექტიდან - %{process_name} 
+      share_comment: დატოვეთ კომენტარი %{version_name}-ზე საპროცესო პროექტიდან - %{process_name}
     proposals:
       form:
         tags_label: "კატეგორიები"
@@ -130,10 +120,6 @@ ka:
         zero: "დებატები არ მოიძებნა"
       proposals:
         zero: "ინიციატივა არ მოიძებნა"
-      comments:
-        zero: "კომენტარები არ მოიძებნა"
-        one: "%{count} კომენტარი"
-        other: "%{count} კომენტარი"
       download: "შეჯამების ჩამოტვირთვა"
       top_comments:
         zero: "კომენტარები არ მოიძებნა"

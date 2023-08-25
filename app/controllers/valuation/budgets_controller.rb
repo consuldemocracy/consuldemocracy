@@ -6,7 +6,7 @@ class Valuation::BudgetsController < Valuation::BaseController
 
   def index
     @investments_count = {}
-    @budgets = Budget.open.published.valuating
+    @budgets = @budgets.open.published.valuating
     @budgets.each do |budget|
       @investments_count[budget.id] = budget.investments
                                             .by_valuator(current_user.valuator)

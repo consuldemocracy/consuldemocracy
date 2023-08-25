@@ -22,4 +22,3 @@ ast:
         budget_investment: "Propuesta de inversión actualizada correctamente."
       destroy:
         budget_investment: "Propuesta de inversión eliminada."
-        error: "No se pudo borrar"

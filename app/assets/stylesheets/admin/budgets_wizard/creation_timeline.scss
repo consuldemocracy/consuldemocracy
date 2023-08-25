@@ -5,7 +5,7 @@
   position: relative;
 
   li {
-    border-top: 4px solid $brand;
+    @include brand-border(top, 4px);
     display: inline-block;
     font-size: $small-font-size;
     font-weight: bold;
@@ -13,7 +13,7 @@
     text-transform: uppercase;
 
     &::before {
-      background: $brand;
+      @include brand-background;
       border-radius: 50%;
       content: "";
       height: 20px;

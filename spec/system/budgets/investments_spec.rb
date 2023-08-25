@@ -62,7 +62,11 @@ describe "Budget Investments" do
     investments.each do |investment|
       within("#budget-investments") do
         expect(page).to have_content investment.title
-        expect(page).to have_css("a[href='#{budget_investment_path(budget, id: investment.id)}']", text: investment.title)
+        expect(page).to have_content investment.comments_count
+        expect(page).to have_link "No comments", href: budget_investment_path(budget, id: investment.id,
+                                                                                      anchor: "comments")
+        expect(page).to have_link investment.title, href: budget_investment_path(budget, id: investment.id)
+
         expect(page).not_to have_content(unfeasible_investment.title)
       end
     end
@@ -1551,40 +1555,26 @@ describe "Budget Investments" do
       end
     end
 
-    scenario "Do not show progress bar money or price with hidden money" do
-      budget_hide_money = create(:budget, :hide_money, phase: "balloting", voting_style: "approval")
-      group = create(:budget_group, budget: budget_hide_money)
-      heading = create(:budget_heading, name: "Heading without money", group: group)
-      user = create(:user, :level_two)
-      investment = create(:budget_investment, :feasible, :selected, budget: budget_hide_money,
-                                               heading: heading, price: 100)
-
-      visit budget_investments_path(budget_hide_money, heading: heading)
-
-      expect(page).not_to have_content budget.formatted_heading_price(heading).to_s
-      expect(page).not_to have_content "€"
-      expect(page).not_to have_css(".tagline")
-
-      within "#budget_investment_#{investment.id}" do
-        expect(page).not_to have_content "100"
-        expect(page).not_to have_content "€"
+    describe "total amount" do
+      before do
+        budget.update!(voting_style: "approval")
+        heading.update!(price: 2000)
       end
 
-      login_as(user)
+      scenario "Do not show total budget amount for budget with hidden money" do
+        budget.update!(hide_money: true)
 
-      visit budget_investments_path(budget_hide_money, heading: heading)
+        visit budget_investments_path(budget, heading_id: heading)
 
-      expect(page).to have_content "VOTES CAST: 0 / YOU CAN VOTE 1 PROJECT"
-      expect(page).to have_content "YOU CAN STILL CAST 1 VOTE."
-      expect(page).not_to have_content "Available budget"
+        expect(page).not_to have_content "Total budget"
+        expect(page).not_to have_content "€2,000"
+      end
 
-      expect(page).to have_css("#progress_bar")
-      expect(page).to have_css("#amount_available")
-      expect(page).not_to have_css("#amount_spent")
+      scenario "Show total budget amount for budget without hidden money" do
+        visit budget_investments_path(budget, heading_id: heading)
 
-      within "#budget_investment_#{investment.id}" do
-        expect(page).not_to have_content "100"
-        expect(page).not_to have_content "€"
+        expect(page).to have_content "Total budget"
+        expect(page).to have_content "€2,000"
       end
     end
 

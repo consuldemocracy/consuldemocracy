@@ -4,6 +4,9 @@ nl:
       verification:
         residence: "Adres"
         sms: "SMS"
+      local_census_records/import:
+        one: Lokaal volkstellingsregister importeren
+        other: Lokale volkstellingsregisters importeren
     attributes:
       verification:
         residence:
@@ -15,7 +18,7 @@ nl:
           phone: "Telefoon"
           confirmation_code: "Bevestigingscode"
         email:
-          recipient: "Email"
+          recipient: "E-mail"
       verification/letter:
         email: "E-mail"
         password: "Wachtwoord"
@@ -41,4 +44,4 @@ nl:
           attributes:
             file:
               extension: "Het opgegeven bestandsformaat is onjuist. Toegestane bestandsformaat: %{valid_extensions}."
-              headers: "De opgegeven headers van het bestand zijn fout. De volgende namen zijn toegestaan voor de bestanden: %{required_headers}."
+              headers: "De opgegeven headers van het bestand zijn fout. De bestandsheaders moeten de volgende namen bevatten: %{required_headers}."

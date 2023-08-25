@@ -3,9 +3,9 @@ class Image < ApplicationRecord
 
   def self.styles
     {
-      large: { resize: "x475" },
-      medium: { combine_options: { gravity: "center", resize: "300x300^", crop: "300x300+0+0" }},
-      thumb: { combine_options: { gravity: "center", resize: "140x245^", crop: "140x245+0+0" }}
+      large: { resize: "x#{Setting["uploads.images.min_height"]}" },
+      medium: { gravity: "center", resize: "300x300^", crop: "300x300+0+0" },
+      thumb: { gravity: "center", resize: "140x245^", crop: "140x245+0+0" },
     }
   end
 
@@ -41,9 +41,9 @@ class Image < ApplicationRecord
 
   def variant(style)
     if style
-      attachment.variant(self.class.styles[style])
+      attachment.variant(self.class.styles[style].merge(strip: true))
     else
-      attachment
+      attachment.variant(strip: true)
     end
   end
 
@@ -61,7 +61,10 @@ class Image < ApplicationRecord
       if accepted_content_types.include?(attachment_content_type)
         return true if imageable_class == Widget::Card
 
-        attachment.analyze unless attachment.analyzed?
+        unless attachment.analyzed?
+          attachment_changes["attachment"].upload
+          attachment.analyze
+        end
 
         width = attachment.metadata[:width]
         height = attachment.metadata[:height]

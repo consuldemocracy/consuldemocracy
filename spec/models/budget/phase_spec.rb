@@ -87,7 +87,7 @@ describe Budget::Phase do
       end
 
       it "is valid if main_link_text and main_link_url are both provided" do
-        budget = build(:budget, main_link_text: "link text", main_link_url: "https://consulproject.org")
+        budget = build(:budget, main_link_text: "link text", main_link_url: "https://consuldemocracy.org")
 
         expect(budget).to be_valid
       end

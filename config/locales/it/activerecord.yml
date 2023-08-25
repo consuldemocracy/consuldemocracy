@@ -124,6 +124,9 @@ it:
       images:
         one: "Immagine"
         other: "Immagini"
+      tenant:
+        one: "locatario"
+        other: "locatari"
       topic:
         one: "Argomento"
         other: "Argomenti"
@@ -145,6 +148,9 @@ it:
       local_census_record:
         one: Registro censo locale
         other: Registri censo locale
+      votation_type:
+        one: Tipo di votazione
+        other: Tipi di votazione
     attributes:
       budget:
         name: "Nominativo"
@@ -160,6 +166,7 @@ it:
         voting_style: "Stile finale di votazione"
         voting_style_knapsack: "Zaino"
         voting_style_approval: "Approvazione"
+        hide_money: "Nascondi l'importo di denaro per questo bilancio"
       budget/translation:
         main_link_text: "Testo sul link"
         main_link_url: "Il link ti porta a (aggiungi un link)"
@@ -194,7 +201,9 @@ it:
       geozone:
         name: Nome
         external_code: "Codice esterno (opzionale)"
+        color: "Colore (facoltativo)"
         census_code: "Codice censo (opzionale)"
+        geojson: "Dati GeoJSON (facoltativi)"
         html_map_coordinates: "HTML <map> Coordinate (opzionale)"
       milestone:
         status_id: "Stato attuale dell’investimento (facoltativo)"
@@ -374,6 +383,11 @@ it:
         body: Corpo
       tag:
         name: "Digita il nome dell'argomento"
+      tenant:
+        domain: "Dominio"
+        schema: "Dominio / Sottodominio"
+        subdomain: "Sottodominio"
+        url: "URL"
       topic:
         title: "Titolo"
         description: "Testo iniziale"
@@ -450,7 +464,7 @@ it:
         description: Descrizione
       poll/question/answer/translation:
         title: Risposta
-        description: Descrizione
+        description: "Descrizione (facoltativa)"
       poll/question/answer/video:
         title: Titolo
         url: Video esterno
@@ -513,6 +527,12 @@ it:
         document_number: Numero documento
         date_of_birth: Data di nascita
         postal_code: Codice Postale
+      votation_type:
+        max_votes: Numero massimo di voti
+        vote_type: Tipo di votazione
+      votation_type/vote_type:
+        unique: Risposta unica
+        multiple: Risposte multiple
     errors:
       models:
         user:
@@ -527,6 +547,10 @@ it:
           attributes:
             max_per_day:
               invalid: "Hai raggiunto il numero massimo di messaggi privati giornalieri"
+        geozone:
+          attributes:
+            geojson:
+              invalid: "Il GeoJSON fornito non segue il formato corretto. Deve seguire il tipo di formato \"Polygon\" o \"MultiPolygon\"."
         image:
           attributes:
             attachment:

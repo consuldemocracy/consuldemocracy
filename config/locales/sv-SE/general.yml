@@ -69,10 +69,6 @@ sv:
       form:
         submit_button: Starta en debatt
     debate:
-      comments:
-        zero: Inga kommentarer
-        one: 1 kommentar
-        other: "%{count} kommentarer"
       votes:
         zero: Inga röster
         one: 1 röst
@@ -128,10 +124,6 @@ sv:
       start_new: Starta en debatt
     show:
       author_deleted: Användaren är borttagen
-      comments:
-        zero: Inga kommentarer
-        one: 1 kommentar
-        other: "%{count} kommentarer"
       comments_title: Kommentarer
       edit_debate_link: Redigera
       flag: Denna debatt har flaggats som olämplig av flera användare.
@@ -145,6 +137,10 @@ sv:
       allowed_file_content_types: "innehållstypen måste vara en av %{types}"
       user_not_found: Användaren hittades inte
       invalid_date_range: "Felaktig datumföljd"
+      past_date: "Får inte vara ett tidigare datum"
+      cannot_change_date:
+        poll_started: "Kan inte ändras om omröstningen redan har inletts"
+        poll_ended: "Kan inte ändras om omröstningen redan har avslutats"
   form:
     accept_terms: Jag godkänner %{policy} och %{conditions}
     accept_terms_title: Jag godkänner integritetspolicyn och användarvillkoren
@@ -205,7 +201,7 @@ sv:
       accessibility: Tillgänglighet
       conditions: användarvillkoren
       consul: Programvaran CONSUL
-      consul_url: https://github.com/consul/consul
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: CONSUL, %{year}
       description: Den här webbplatsen använder %{consul} som är %{open_source}.
       open_source: en plattform med öppen källkod
@@ -396,10 +392,6 @@ sv:
         edit: "Du kan ändra texten fram tills att förslaget har delats."
         view_proposal: Inte nu, gå till mitt förslag
       already_supported: Du stöder redan det här förslaget. Dela det!
-      comments:
-        zero: Inga kommentarer
-        one: 1 kommentar
-        other: "%{count} kommentarer"
       support: Stöd
       support_label: "Stöd %{proposal}"
       support_title: Stöd förslaget
@@ -419,10 +411,6 @@ sv:
     show:
       author_deleted: Användaren är borttagen
       code: "Förslagskod:"
-      comments:
-        zero: Inga kommentarer
-        one: 1 kommentar
-        other: "%{count} kommentarer"
       comments_tab: Kommentarer
       dashboard_proposal_link: Dashboard
       flag: Förslaget har markerats som olämpligt av flera användare.
@@ -647,6 +635,10 @@ sv:
     show:
       vote_answer: "Rösta på %{answer}"
       voted: "Du har röstat på %{answer}"
+    description:
+      unique: "Du kan välja maximalt 1 svar."
+      multiple: "Du kan välja maximalt %{maximum} svar."
+    read_more_about: "Läs mer om:"
   proposal_notifications:
     new:
       title: "Skicka meddelande"
@@ -762,6 +754,10 @@ sv:
         other: "%{count} språk används"
     optional: "Valfritt"
     required: "Obligatoriskt"
+    comments:
+      zero: "Inga kommentarer"
+      one: "1 kommentar"
+      other: "%{count} kommentarer"
   social:
     facebook: "%{org} på Facebook"
     twitter: "%{org} på Twitter"
@@ -836,7 +832,7 @@ sv:
       published: Publicerat
       see: "Visa förslag"
       actions: Åtgärder
-      retired_help_text: Dashboard är inte tillgängligt för tillbakadragna förslag
+      retired_help_text: Dashboard är inte tillgänglig för tillbakadragna förslag
   votes:
     agree: Jag håller med
     agree_label: "Jag säger ja till %{title}"
