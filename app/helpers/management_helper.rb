@@ -25,17 +25,17 @@ module ManagementHelper
 
   def menu_create_investments?
     (controller_name == "budget_investments" && action_name == "new") ||
-    (controller_name == "budgets" && action_name == "create_investments")
+      (controller_name == "budgets" && action_name == "create_investments")
   end
 
   def menu_support_investments?
     (controller_name == "budget_investments" && action_name == "index") ||
-    (controller_name == "budgets" && action_name == "support_investments")
+      (controller_name == "budgets" && action_name == "support_investments")
   end
 
   def menu_print_investments?
     (controller_name == "budget_investments" && action_name == "print") ||
-    (controller_name == "budgets" && action_name == "print_investments")
+      (controller_name == "budgets" && action_name == "print_investments")
   end
 
   def menu_user_invites?

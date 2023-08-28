@@ -108,9 +108,10 @@ class Dashboard::Action < ApplicationRecord
     end
 
     def self.calculate_actions(proposal_votes, day_offset, proposal)
-      Dashboard::Action.active.where("required_supports <= ?", proposal_votes)
-                              .where("day_offset <= ?", day_offset)
-                              .by_published_proposal(proposal.published?)
+      Dashboard::Action.active
+                       .where("required_supports <= ?", proposal_votes)
+                       .where("day_offset <= ?", day_offset)
+                       .by_published_proposal(proposal.published?)
     end
 
     def self.calculate_votes(proposal, date)

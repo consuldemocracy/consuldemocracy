@@ -51,9 +51,9 @@ class Budget
     has_many :comments, -> { where(valuation: false) }, as: :commentable, inverse_of: :commentable
     has_one :summary_comment, as: :commentable, class_name: "MlSummaryComment", dependent: :destroy
     has_many :valuations, -> { where(valuation: true) },
-      as:         :commentable,
-      inverse_of: :commentable,
-      class_name: "Comment"
+             as: :commentable,
+             inverse_of: :commentable,
+             class_name: "Comment"
 
     validates_translation :title, presence: true, length: { in: 4..Budget::Investment.title_max_length }
     validates_translation :description, presence: true, length: { maximum: Budget::Investment.description_max_length }
@@ -109,8 +109,8 @@ class Budget
     end
 
     def self.by_valuator_group(valuator_group_id)
-      joins(:valuator_group_assignments).
-        where(budget_valuator_group_assignments: { valuator_group_id: valuator_group_id })
+      joins(:valuator_group_assignments)
+        .where(budget_valuator_group_assignments: { valuator_group_id: valuator_group_id })
     end
 
     before_validation :set_responsible_name
@@ -198,13 +198,14 @@ class Budget
     def self.search_by_title_or_id(title_or_id)
       with_joins = with_translations(Globalize.fallbacks(I18n.locale))
 
-      with_joins.where(id: title_or_id).
-        or(with_joins.where("budget_investment_translations.title ILIKE ?", "%#{title_or_id}%"))
+      with_joins.where(id: title_or_id)
+                .or(with_joins.where("budget_investment_translations.title ILIKE ?", "%#{title_or_id}%"))
     end
 
     def searchable_values
-      { author.username    => "B",
-        heading.name       => "B",
+      {
+        author.username => "B",
+        heading.name => "B",
         tag_list.join(" ") => "B"
       }.merge(searchable_globalized_values)
     end
@@ -394,7 +395,7 @@ class Budget
       end
 
       def searchable_translations_definitions
-        { title       => "A",
+        { title => "A",
           description => "D" }
       end
   end

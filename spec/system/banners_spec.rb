@@ -6,7 +6,7 @@ describe "Banner" do
            web_sections: [WebSection.find_by!(name: "homepage")],
            description: "Banner description",
            post_started_at: (Date.current - 4.days),
-           post_ended_at:   (Date.current + 10.days))
+           post_ended_at: (Date.current + 10.days))
 
     visit root_path
 

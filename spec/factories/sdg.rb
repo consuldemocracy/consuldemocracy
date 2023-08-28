@@ -22,7 +22,7 @@ FactoryBot.define do
 
   factory :sdg_review, class: "SDG::Review" do
     SDG::Related::RELATABLE_TYPES.map { |relatable_type| relatable_type.downcase.gsub("::", "_") }
-    .each do |relatable|
+                                 .each do |relatable|
       trait :"#{relatable}_review" do
         association :relatable, factory: relatable
       end

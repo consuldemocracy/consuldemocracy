@@ -29,7 +29,7 @@ section "Creating investment milestones" do
 
       rand(0..3).times do
         progress_bar = record.progress_bars.build(
-          kind:       :secondary,
+          kind: :secondary,
           percentage: rand(ProgressBar::RANGE)
         )
 

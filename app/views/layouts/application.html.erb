@@ -5,9 +5,9 @@
     <%= render "layouts/meta_tags" %>
     <%= content_for :canonical %>
     <%= favicon_link_tag image_path_for("apple-touch-icon-200.png"),
-                     rel: "icon apple-touch-icon",
-                     sizes: "200x200",
-                     type: "image/png" %>
+                         rel: "icon apple-touch-icon",
+                         sizes: "200x200",
+                         type: "image/png" %>
     <%= content_for :social_media_meta_tags %>
 
     <%= raw setting["html.per_page_code_head"] %>
@@ -28,11 +28,14 @@
           <h2><%= t("layouts.application.ie_title") %></h2>
           <p>
             <%= sanitize(t("layouts.application.ie",
-            chrome: link_to(
-                    t("layouts.application.chrome"), "https://www.google.com/chrome/browser/desktop/", title: t("shared.target_blank"), target: "_blank"),
-            firefox: link_to(
-                     t("layouts.application.firefox"), "https://www.mozilla.org/firefox", title: t("shared.target_blank"), target: "_blank")
-            )) %>
+                           chrome: link_to(t("layouts.application.chrome"),
+                                           "https://www.google.com/chrome/browser/desktop/",
+                                           title: t("shared.target_blank"),
+                                           target: "_blank"),
+                           firefox: link_to(t("layouts.application.firefox"),
+                                            "https://www.mozilla.org/firefox",
+                                            title: t("shared.target_blank"),
+                                            target: "_blank"))) %>
           </p>
         </div>
       <![endif]-->

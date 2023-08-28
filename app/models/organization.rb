@@ -52,14 +52,16 @@ class Organization < ApplicationRecord
     def validate_name_length
       validator = ActiveModel::Validations::LengthValidator.new(
         attributes: :name,
-        maximum: Organization.name_max_length)
+        maximum: Organization.name_max_length
+      )
       validator.validate(self)
     end
 
     def validate_responsible_name_length
       validator = ActiveModel::Validations::LengthValidator.new(
         attributes: :responsible_name,
-        maximum: Organization.responsible_name_max_length)
+        maximum: Organization.responsible_name_max_length
+      )
       validator.validate(self)
     end
 end

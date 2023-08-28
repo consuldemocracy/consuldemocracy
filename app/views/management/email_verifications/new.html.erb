@@ -7,8 +7,8 @@
     <strong><%= t("management.email_verifications.if_existing_account") %></strong>
 
     <%= form_for @email_verification,
-        as: :email_verification,
-        url: management_email_verifications_path do |f| %>
+                 as: :email_verification,
+                 url: management_email_verifications_path do |f| %>
       <%= f.hidden_field :document_type %>
       <%= f.hidden_field :document_number %>
       <%= f.text_field :email, label: t("management.email_verifications.introduce_email") %>
@@ -23,8 +23,9 @@
     <p class="margin-top">
       <%= link_to t("management.users.create_user"),
                   new_management_user_path(user: {
-                      document_number: @email_verification.document_number,
-                      document_type:   @email_verification.document_type }),
+                    document_number: @email_verification.document_number,
+                    document_type: @email_verification.document_type
+                  }),
                   class: "button success" %>
     </p>
   </li>

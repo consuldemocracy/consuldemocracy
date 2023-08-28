@@ -155,8 +155,10 @@ class ProposalsController < ApplicationController
       return unless !@advanced_search_terms && @search_terms.blank? && params[:retired].blank? && @current_order != "recommendations"
 
       if Setting["feature.featured_proposals"]
-        @featured_proposals = Proposal.not_archived.unsuccessful
-                              .sort_by_confidence_score.limit(Setting["featured_proposals_number"])
+        @featured_proposals = Proposal.not_archived
+                                      .unsuccessful
+                                      .sort_by_confidence_score
+                                      .limit(Setting["featured_proposals_number"])
         if @featured_proposals.present?
           @resources = @resources.where.not(id: @featured_proposals)
         end

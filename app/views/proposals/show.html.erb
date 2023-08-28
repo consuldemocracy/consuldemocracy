@@ -3,11 +3,11 @@
 <% content_for :meta_description do %><%= @proposal.summary %><% end %>
 <% provide :social_media_meta_tags do %>
   <%= render "shared/social_media_meta_tags",
-              social_url: proposal_url(@proposal),
-              social_title: @proposal.title,
-              social_description: @proposal.summary,
-              twitter_image_url: (@proposal.image.present? ? polymorphic_path(@proposal.image.variant(:thumb)) : nil),
-              og_image_url: (@proposal.image.present? ? polymorphic_path(@proposal.image.variant(:thumb)) : nil) %>
+             social_url: proposal_url(@proposal),
+             social_title: @proposal.title,
+             social_description: @proposal.summary,
+             twitter_image_url: (@proposal.image.present? ? polymorphic_path(@proposal.image.variant(:thumb)) : nil),
+             og_image_url: (@proposal.image.present? ? polymorphic_path(@proposal.image.variant(:thumb)) : nil) %>
 <% end %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: proposal_url(@proposal) %>

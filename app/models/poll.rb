@@ -62,9 +62,11 @@ class Poll < ApplicationRecord
   end
 
   def self.overlaping_with(poll)
-    where("? < ends_at and ? >= starts_at", poll.starts_at.beginning_of_day,
-                                            poll.ends_at.end_of_day).where.not(id: poll.id)
-                                            .where(related: poll.related)
+    where("? < ends_at and ? >= starts_at",
+          poll.starts_at.beginning_of_day,
+          poll.ends_at.end_of_day)
+      .where.not(id: poll.id)
+      .where(related: poll.related)
   end
 
   def title
@@ -102,7 +104,7 @@ class Poll < ApplicationRecord
     return none if user.nil? || user.unverified?
 
     current.left_joins(:geozones)
-      .where("geozone_restricted = ? OR geozones.id = ?", false, user.geozone_id)
+           .where("geozone_restricted = ? OR geozones.id = ?", false, user.geozone_id)
   end
 
   def self.votable_by(user)
@@ -205,8 +207,8 @@ class Poll < ApplicationRecord
 
   def searchable_translations_definitions
     {
-      name        => "A",
-      summary     => "C",
+      name => "A",
+      summary => "C",
       description => "D"
     }
   end

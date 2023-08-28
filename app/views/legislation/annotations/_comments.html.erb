@@ -1,5 +1,8 @@
-<% annotation.comments.roots.sort_by_most_voted.
-   limit(Legislation::Annotation::COMMENTS_PAGE_SIZE).each do |comment| %>
+<% annotation.comments
+             .roots
+             .sort_by_most_voted
+             .limit(Legislation::Annotation::COMMENTS_PAGE_SIZE)
+             .each do |comment| %>
   <div class="comment">
     <div class="comment-text">
       <p><%= truncate comment.body, length: 250 %></p>

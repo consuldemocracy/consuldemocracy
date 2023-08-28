@@ -19,7 +19,9 @@ describe Poll::Stats do
     it "supports every channel" do
       3.times { create(:poll_voter, :from_web, poll: poll) }
       create(:poll_recount, :from_booth, poll: poll,
-             total_amount: 8, white_amount: 4, null_amount: 1)
+                                         total_amount: 8,
+                                         white_amount: 4,
+                                         null_amount: 1)
 
       expect(stats.total_participants_web).to eq(3)
       expect(stats.total_participants_booth).to eq(13)
@@ -153,7 +155,9 @@ describe Poll::Stats do
     it "is relative to the total amount of votes" do
       3.times { create(:poll_voter, :from_web, poll: poll) }
       create(:poll_recount, :from_booth, poll: poll,
-             total_amount: 8, white_amount: 5, null_amount: 4)
+                                         total_amount: 8,
+                                         white_amount: 5,
+                                         null_amount: 4)
 
       expect(stats.total_valid_percentage).to eq(50)
       expect(stats.total_white_percentage).to eq(30)

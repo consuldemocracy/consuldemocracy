@@ -12,10 +12,10 @@
   <% if current_user&.voted_as_when_voted_for(proposal) && setting["twitter_handle"] %>
     <div class="share-supported">
       <%= render "shared/social_share",
-          title: proposal.title,
-          url: proposal_url(proposal),
-          description: proposal.summary,
-          mobile: proposal.title %>
+                 title: proposal.title,
+                 url: proposal_url(proposal),
+                 description: proposal.summary,
+                 mobile: proposal.title %>
     </div>
   <% end %>
 </div>

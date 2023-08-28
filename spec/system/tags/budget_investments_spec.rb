@@ -6,7 +6,7 @@ describe "Tags" do
   let(:group)   { create(:budget_group, name: "Health", budget: budget) }
   let!(:heading) do
     create(:budget_heading, name: "More hospitals",
-           group: group, latitude: "40.416775", longitude: "-3.703790")
+                            group: group, latitude: "40.416775", longitude: "-3.703790")
   end
   let!(:tag_medio_ambiente) { create(:tag, :category, name: "Medio Ambiente") }
   let!(:tag_economia) { create(:tag, :category, name: "Economía") }

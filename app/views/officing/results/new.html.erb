@@ -6,8 +6,8 @@
       <div class="small-12 medium-6 column">
         <label><%= t("officing.results.new.booth") %></label>
         <%= select_tag :officer_assignment_id,
-                        booths_for_officer_select_options(@officer_assignments),
-                        { prompt: t("officing.results.new.select_booth") } %>
+                       booths_for_officer_select_options(@officer_assignments),
+                       { prompt: t("officing.results.new.select_booth") } %>
       </div>
     </div>
 

@@ -5,8 +5,9 @@
     <%= f.label :action_type %>
     <% ::Dashboard::Action.action_types.keys.each do |action_type_value| %>
       <span class="margin-right">
-        <%= f.radio_button :action_type, action_type_value,
-          data: { toggle: "request_to_administrators short_description" } %>
+        <%= f.radio_button :action_type,
+                           action_type_value,
+                           data: { toggle: "request_to_administrators short_description" } %>
       </span>
     <% end %>
   </div>
@@ -44,18 +45,21 @@
 
 <div class="row expanded margin-top">
   <div class="small-12 medium-4 column">
-    <%= f.number_field :day_offset, step: 1, min: 0,
-      hint: t("admin.dashboard.actions.form.help_text") %>
+    <%= f.number_field :day_offset, step: 1,
+                                    min: 0,
+                                    hint: t("admin.dashboard.actions.form.help_text") %>
   </div>
 
   <div class="small-12 medium-4 column">
-    <%= f.number_field :required_supports, step: 1, min: 0,
-      hint: t("admin.dashboard.actions.form.help_text") %>
+    <%= f.number_field :required_supports, step: 1,
+                                           min: 0,
+                                           hint: t("admin.dashboard.actions.form.help_text") %>
   </div>
 
   <div class="small-12 medium-4 column">
-    <%= f.number_field :order, step: 1, min: 0,
-      hint: t("admin.dashboard.actions.form.help_text") %>
+    <%= f.number_field :order, step: 1,
+                               min: 0,
+                               hint: t("admin.dashboard.actions.form.help_text") %>
   </div>
 </div>
 

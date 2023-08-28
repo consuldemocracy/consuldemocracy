@@ -129,8 +129,8 @@ class Budget::Stats
     def balloters_by_heading(heading_id)
       stats_cache("balloters_by_heading_#{heading_id}") do
         budget.ballots.joins(:lines)
-                      .where(budget_ballot_lines: { heading_id: heading_id })
-                      .distinct.pluck(:user_id)
+              .where(budget_ballot_lines: { heading_id: heading_id })
+              .distinct.pluck(:user_id)
       end
     end
 

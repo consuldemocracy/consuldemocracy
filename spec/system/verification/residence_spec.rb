@@ -48,9 +48,9 @@ describe "Residence" do
     click_link "Verify my account"
 
     expect(page).to have_select("residence_date_of_birth_1i",
-                                 with_options: [min_age.years.ago.year])
+                                with_options: [min_age.years.ago.year])
     expect(page).not_to have_select("residence_date_of_birth_1i",
-                                     with_options: [underage.years.ago.year])
+                                    with_options: [underage.years.ago.year])
   end
 
   scenario "When trying to verify a deregistered account old votes are reassigned" do

@@ -47,9 +47,9 @@
             <% if milestone.documents.present? %>
               <% milestone.documents.each do |document| %>
                 <%= link_to document.title,
-                              document.attachment,
-                              target: "_blank",
-                              rel: "nofollow" %><br>
+                            document.attachment,
+                            target: "_blank",
+                            rel: "nofollow" %><br>
               <% end %>
             <% end %>
           </td>

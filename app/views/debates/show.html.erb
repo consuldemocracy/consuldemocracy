@@ -60,11 +60,11 @@
           <%= render "debates/votes", debate: @debate %>
         </div>
         <%= render "shared/social_share",
-          share_title: t("debates.show.share"),
-          title: @debate.title,
-          url: debate_url(@debate),
-          description: @debate.title,
-          mobile: @debate.title %>
+                   share_title: t("debates.show.share"),
+                   title: @debate.title,
+                   url: debate_url(@debate),
+                   description: @debate.title,
+                   mobile: @debate.title %>
       </aside>
     </div>
   </div>

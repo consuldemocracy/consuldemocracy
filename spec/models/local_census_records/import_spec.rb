@@ -72,7 +72,7 @@ describe LocalCensusRecords::Import do
       invalid_records_document_types = [nil, "1", "2", "3", "DNI"]
       invalid_records_document_numbers = ["44556678T", nil, "22556678T", "X11556678", "Z11556678"]
       invalid_records_date_of_births = [Date.parse("07/08/1984"), Date.parse("07/08/1985"), nil,
-        Date.parse("07/08/1987"), Date.parse("07/08/1987")]
+                                        Date.parse("07/08/1987"), Date.parse("07/08/1987")]
       invalid_records_postal_codes = ["7008", "7009", "7010", nil, "7011"]
       expect(import.invalid_records.map(&:document_type))
         .to eq(invalid_records_document_types)
@@ -81,7 +81,7 @@ describe LocalCensusRecords::Import do
       expect(import.invalid_records.map(&:date_of_birth))
         .to eq(invalid_records_date_of_births)
       expect(import.invalid_records.map(&:postal_code))
-      .to eq(invalid_records_postal_codes)
+        .to eq(invalid_records_postal_codes)
     end
   end
 end

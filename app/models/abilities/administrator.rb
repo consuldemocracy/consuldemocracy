@@ -73,7 +73,7 @@ module Abilities
       can [:hide, :admin_update, :toggle_selection], Budget::Investment
       can [:valuate, :comment_valuation], Budget::Investment
       cannot [:admin_update, :toggle_selection, :valuate, :comment_valuation],
-        Budget::Investment, budget: { phase: "finished" }
+             Budget::Investment, budget: { phase: "finished" }
 
       can :create, Budget::ValuatorAssignment
 

@@ -25,8 +25,8 @@ describe Verification::Residence do
 
     it "validates user has allowed age" do
       residence = Verification::Residence.new("date_of_birth(3i)" => "1",
-                                      "date_of_birth(2i)" => "1",
-                                      "date_of_birth(1i)" => 5.years.ago.year.to_s)
+                                              "date_of_birth(2i)" => "1",
+                                              "date_of_birth(1i)" => 5.years.ago.year.to_s)
       expect(residence).not_to be_valid
       expect(residence.errors[:date_of_birth]).to include("You don't have the required age to participate")
     end
@@ -266,11 +266,11 @@ describe Verification::Residence do
 
       expect(FailedCensusCall.count).to eq(1)
       expect(FailedCensusCall.first).to have_attributes(
-        user_id:         residence.user.id,
+        user_id: residence.user.id,
         document_number: "12345678Z",
-        document_type:   "1",
-        date_of_birth:   Date.new(1980, 12, 31),
-        postal_code:     "28001"
+        document_type: "1",
+        date_of_birth: Date.new(1980, 12, 31),
+        postal_code: "28001"
       )
     end
   end

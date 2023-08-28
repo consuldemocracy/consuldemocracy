@@ -27,8 +27,8 @@ class Budget::VotingStyles::Base
 
   def voted_info(heading)
     I18n.t("budgets.investments.index.sidebar.voted_info.#{name}",
-      count: investments(heading).count,
-      amount_spent: budget.formatted_amount(investments_price(heading)))
+           count: investments(heading).count,
+           amount_spent: budget.formatted_amount(investments_price(heading)))
   end
 
   def amount_available_info(heading)

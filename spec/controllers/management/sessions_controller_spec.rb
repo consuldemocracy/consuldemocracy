@@ -16,10 +16,10 @@ describe Management::SessionsController do
       allow_any_instance_of(ManagerAuthenticator).to receive(:auth).and_return(manager)
 
       get :create, params: {
-                     login: "JJB033",
-                     clave_usuario: "31415926",
-                     fecha_conexion: "20151031135905"
-                   }
+        login: "JJB033",
+        clave_usuario: "31415926",
+        fecha_conexion: "20151031135905"
+      }
       expect(response).to be_redirect
       expect(session[:manager][:login]).to eq "JJB033"
     end

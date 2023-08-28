@@ -348,9 +348,9 @@ describe "Legislation Draft Versions" do
 
       before do
         create(:legislation_annotation, draft_version: original, quote: "quote for version 1",
-               ranges: [{ "start" => "/p[1]", "startOffset" => 11, "end" => "/p[1]", "endOffset" => 30 }])
+                                        ranges: [{ "start" => "/p[1]", "startOffset" => 11, "end" => "/p[1]", "endOffset" => 30 }])
         create(:legislation_annotation, draft_version: current, quote: "quote for version 2",
-               ranges: [{ "start" => "/p[1]", "startOffset" => 11, "end" => "/p[1]", "endOffset" => 30 }])
+                                        ranges: [{ "start" => "/p[1]", "startOffset" => 11, "end" => "/p[1]", "endOffset" => 30 }])
       end
 
       scenario "without js", :no_js do
@@ -386,7 +386,7 @@ describe "Legislation Draft Versions" do
 
     scenario "See one annotation with replies for a draft version" do
       annotation = create(:legislation_annotation, draft_version: draft_version, text: "my other annotation", quote: "audiam",
-                          ranges: [{ "start" => "/p[3]", "startOffset" => 6, "end" => "/p[3]", "endOffset" => 11 }])
+                                                   ranges: [{ "start" => "/p[3]", "startOffset" => 6, "end" => "/p[3]", "endOffset" => 11 }])
 
       visit legislation_process_draft_version_annotation_path(draft_version.process, draft_version, annotation)
 

@@ -3,8 +3,7 @@ require "rails_helper"
 describe SDG::Targets::TagListComponent do
   let(:debate) do
     create(:debate,
-           sdg_targets: [SDG::Target[1.1], SDG::Target[3.2], create(:sdg_local_target, code: "3.2.1")]
-          )
+           sdg_targets: [SDG::Target[1.1], SDG::Target[3.2], create(:sdg_local_target, code: "3.2.1")])
   end
   let(:component) { SDG::Targets::TagListComponent.new(debate) }
 
@@ -40,14 +39,14 @@ describe SDG::Targets::TagListComponent do
 
     expect(page).to have_css "li", count: 3
     expect(page).to have_link "target 1.1",
-      title: "See all Debates related to target 1.1",
-      href: "/debates?advanced_search#{CGI.escape("[target]")}=1.1"
+                              title: "See all Debates related to target 1.1",
+                              href: "/debates?advanced_search#{CGI.escape("[target]")}=1.1"
     expect(page).to have_link "target 3.2",
-      title: "See all Debates related to target 3.2",
-      href: "/debates?advanced_search#{CGI.escape("[target]")}=3.2"
+                              title: "See all Debates related to target 3.2",
+                              href: "/debates?advanced_search#{CGI.escape("[target]")}=3.2"
     expect(page).to have_link "target 3.2.1",
-      title: "See all Debates related to target 3.2.1",
-      href: "/debates?advanced_search#{CGI.escape("[target]")}=3.2.1"
+                              title: "See all Debates related to target 3.2.1",
+                              href: "/debates?advanced_search#{CGI.escape("[target]")}=3.2.1"
   end
 
   it "orders targets by code" do
@@ -64,7 +63,7 @@ describe SDG::Targets::TagListComponent do
     expect(page).to have_selector "a", count: 2
     expect(page).to have_link "target 1.1"
     expect(page).to have_link "2+",
-      title: "2 more targets",
-      href: "/debates/#{debate.to_param}"
+                              title: "2 more targets",
+                              href: "/debates/#{debate.to_param}"
   end
 end

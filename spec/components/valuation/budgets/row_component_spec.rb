@@ -30,9 +30,9 @@ describe Valuation::Budgets::RowComponent do
     it "does not count investments with valuation finished" do
       budget = create(:budget, :valuating)
       create(:budget_investment, :visible_to_valuators,
-                                 budget: budget,
-                                 valuators: [valuator],
-                                 valuation_finished: true)
+             budget: budget,
+             valuators: [valuator],
+             valuation_finished: true)
 
       render_inline Valuation::Budgets::RowComponent.new(budget: budget)
 
@@ -81,9 +81,9 @@ describe Valuation::Budgets::RowComponent do
     it "is shown when the assigned investments have finished valuation" do
       budget = create(:budget, :valuating)
       create(:budget_investment, :visible_to_valuators,
-                                 budget: budget,
-                                 valuators: [valuator],
-                                 valuation_finished: true)
+             budget: budget,
+             valuators: [valuator],
+             valuation_finished: true)
 
       render_inline Valuation::Budgets::RowComponent.new(budget: budget)
 

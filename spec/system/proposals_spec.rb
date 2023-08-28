@@ -1000,7 +1000,7 @@ describe "Proposals" do
       Setting["feature.featured_proposals"] = true
       featured_proposal = create(:proposal, :with_confidence_score, cached_votes_up: 100)
       archived_proposal = create(:proposal, :archived, :with_confidence_score,
-                                                        cached_votes_up: 10000)
+                                 cached_votes_up: 10000)
 
       visit proposals_path
 

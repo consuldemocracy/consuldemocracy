@@ -4,7 +4,8 @@ describe "Custom Pages" do
   context "New custom page" do
     context "Published" do
       scenario "See page" do
-        custom_page = create(:site_customization_page, :published,
+        custom_page = create(
+          :site_customization_page, :published,
           slug: "other-slug",
           title_en: "Custom page",
           content_en: "Text for new custom page",
@@ -20,7 +21,8 @@ describe "Custom Pages" do
       end
 
       scenario "Show all fields and text with links" do
-        custom_page = create(:site_customization_page, :published,
+        custom_page = create(
+          :site_customization_page, :published,
           slug: "slug-with-all-fields-filled",
           title_en: "Custom page",
           subtitle_en: "This is my new custom page",
@@ -39,7 +41,8 @@ describe "Custom Pages" do
       end
 
       scenario "Don't show subtitle if its blank" do
-        custom_page = create(:site_customization_page, :published,
+        custom_page = create(
+          :site_customization_page, :published,
           slug: "slug-without-subtitle",
           title_en: "Custom page",
           subtitle_en: "",
@@ -57,7 +60,8 @@ describe "Custom Pages" do
       end
 
       scenario "Listed in more information page" do
-        create(:site_customization_page, :published,
+        create(
+          :site_customization_page, :published,
           slug: "another-slug",
           title_en: "Another custom page",
           subtitle_en: "Subtitle for custom page",
@@ -70,7 +74,8 @@ describe "Custom Pages" do
       end
 
       scenario "Not listed in more information page" do
-        custom_page = create(:site_customization_page, :published,
+        custom_page = create(
+          :site_customization_page, :published,
           slug: "another-slug", title_en: "Another custom page",
           subtitle_en: "Subtitle for custom page",
           more_info_flag: false

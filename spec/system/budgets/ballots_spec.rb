@@ -163,12 +163,14 @@ describe "Ballots" do
       scenario "map and content block shoud be visible before and after" do
         stub_const("#{Budgets::InvestmentsController}::PER_PAGE", 1)
 
-        create(:budget_investment, :selected, :with_map_location,
+        create(
+          :budget_investment, :selected, :with_map_location,
           heading: new_york,
           price: 10000,
           title: "More bridges",
         )
-        create(:budget_investment, :selected, :with_map_location,
+        create(
+          :budget_investment, :selected, :with_map_location,
           heading: new_york,
           price: 5000,
           title: "Less bridges"

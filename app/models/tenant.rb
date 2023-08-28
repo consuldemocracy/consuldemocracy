@@ -2,10 +2,10 @@ class Tenant < ApplicationRecord
   enum schema_type: %w[subdomain domain]
 
   validates :schema,
-    presence: true,
-    uniqueness: true,
-    exclusion: { in: ->(*) { excluded_subdomains }},
-    format: { with: URI::DEFAULT_PARSER.regexp[:HOST] }
+            presence: true,
+            uniqueness: true,
+            exclusion: { in: ->(*) { excluded_subdomains }},
+            format: { with: URI::DEFAULT_PARSER.regexp[:HOST] }
   validates :name, presence: true, uniqueness: true
 
   after_create :create_schema

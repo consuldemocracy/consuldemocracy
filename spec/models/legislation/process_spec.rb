@@ -181,7 +181,7 @@ describe Legislation::Process do
                                             debate_end_date: Date.current - 1.day)
       expect(process).to be_invalid
       expect(process.errors.messages[:debate_end_date])
-      .to include("must be on or after the debate start date")
+        .to include("must be on or after the debate start date")
     end
 
     it "is valid if draft_end_date is the same as draft_start_date" do
@@ -195,7 +195,7 @@ describe Legislation::Process do
                                             draft_end_date: Date.current - 1.day)
       expect(process).to be_invalid
       expect(process.errors.messages[:draft_end_date])
-      .to include("must be on or after the draft start date")
+        .to include("must be on or after the draft start date")
     end
 
     it "is invalid if allegations_end_date is before allegations_start_date" do
@@ -203,12 +203,12 @@ describe Legislation::Process do
                                             allegations_end_date: Date.current - 1.day)
       expect(process).to be_invalid
       expect(process.errors.messages[:allegations_end_date])
-      .to include("must be on or after the comments start date")
+        .to include("must be on or after the comments start date")
     end
 
     it "is valid if allegations_end_date is the same as allegations_start_date" do
       process = build(:legislation_process, allegations_start_date: Date.current - 1.day,
-                                              allegations_end_date: Date.current - 1.day)
+                                            allegations_end_date: Date.current - 1.day)
       expect(process).to be_valid
     end
   end

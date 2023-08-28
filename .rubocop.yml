@@ -18,7 +18,39 @@ Bundler/OrderedGems:
   Enabled: true
   ConsiderPunctuation: true
 
+Layout/ArgumentAlignment:
+  Enabled: true
+
+Layout/ArrayAlignment:
+  Enabled: true
+
 Layout/AssignmentIndentation:
+  Enabled: true
+
+Layout/BeginEndAlignment:
+  Enabled: true
+  EnforcedStyleAlignWith: begin
+
+Layout/BlockAlignment:
+  Enabled: true
+
+Layout/BlockEndNewline:
+  Enabled: true
+
+Layout/ClosingHeredocIndentation:
+  Enabled: true
+
+Layout/ClosingParenthesisIndentation:
+  Enabled: true
+
+Layout/DefEndAlignment:
+  Enabled: true
+  EnforcedStyleAlignWith: def
+
+Layout/DotPosition:
+  Enabled: true
+
+Layout/ElseAlignment:
   Enabled: true
 
 Layout/EmptyLineAfterGuardClause:
@@ -45,10 +77,24 @@ Layout/EmptyLinesAroundMethodBody:
 Layout/EmptyLinesAroundModuleBody:
   Enabled: true
 
+Layout/EndAlignment:
+  Enabled: true
+
 Layout/EndOfLine:
   EnforcedStyle: lf
 
 Layout/ExtraSpacing:
+  Enabled: true
+
+Layout/FirstArrayElementIndentation:
+  Enabled: true
+  EnforcedStyle: consistent
+
+Layout/FirstHashElementIndentation:
+  Enabled: true
+  EnforcedStyle: consistent
+
+Layout/HashAlignment:
   Enabled: true
 
 Layout/HeredocIndentation:
@@ -66,6 +112,9 @@ Layout/IndentationWidth:
 Layout/LeadingEmptyLines:
   Enabled: true
 
+Layout/LineContinuationSpacing:
+  Enabled: true
+
 Layout/LineEndStringConcatenationIndentation:
   Enabled: true
 
@@ -73,7 +122,31 @@ Layout/LineLength:
   Max: 110
   Severity: refactor
 
+Layout/MultilineArrayBraceLayout:
+  Enabled: true
+
 Layout/MultilineBlockLayout:
+  Enabled: true
+
+Layout/MultilineHashBraceLayout:
+  Enabled: true
+
+Layout/MultilineHashKeyLineBreaks:
+  Enabled: true
+
+Layout/MultilineMethodCallBraceLayout:
+  Enabled: true
+
+Layout/MultilineMethodCallIndentation:
+  Enabled: true
+
+Layout/MultilineOperationIndentation:
+  Enabled: true
+
+Layout/ParameterAlignment:
+  Enabled: true
+
+Layout/RescueEnsureAlignment:
   Enabled: true
 
 Layout/SpaceAfterColon:
@@ -521,6 +594,9 @@ Style/IdenticalConditionalBranches:
   Enabled: true
 
 Style/IfWithBooleanLiteralBranches:
+  Enabled: true
+
+Style/LineEndConcatenation:
   Enabled: true
 
 Style/MapToHash:

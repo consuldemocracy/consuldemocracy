@@ -175,8 +175,8 @@ describe Budget::Phase do
     describe "when being enabled" do
       before do
         accepting_phase.update!(enabled: false,
-                             starts_at: Date.current,
-                             ends_at:  Date.current + 2.days)
+                                starts_at: Date.current,
+                                ends_at: Date.current + 2.days)
       end
 
       it "adjusts previous enabled phase end date to its own start date" do
@@ -211,16 +211,16 @@ describe Budget::Phase do
       it "doesn't adjust previous enabled phase end date to its own start date" do
         expect do
           accepting_phase.update(enabled: false,
-                              starts_at: Date.current,
-                              ends_at:  Date.current + 2.days)
+                                 starts_at: Date.current,
+                                 ends_at: Date.current + 2.days)
         end.not_to change { prev_enabled_phase.ends_at }
       end
 
       it "adjusts next enabled phase start date to its own start date" do
         expect do
           accepting_phase.update(enabled: false,
-                              starts_at: Date.current,
-                              ends_at:  Date.current + 2.days)
+                                 starts_at: Date.current,
+                                 ends_at: Date.current + 2.days)
         end.to change { next_enabled_phase.starts_at.to_date }.to(Date.current)
       end
     end

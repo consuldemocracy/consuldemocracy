@@ -12,10 +12,10 @@ class ProgressBar < ApplicationRecord
 
   validates :progressable, presence: true
   validates :kind, presence: true,
-            uniqueness: {
-              scope: [:progressable_type, :progressable_id],
-              conditions: -> { primary }
-            }
+                   uniqueness: {
+                     scope: [:progressable_type, :progressable_id],
+                     conditions: -> { primary }
+                   }
   validates :percentage, presence: true, inclusion: { in: ->(*) { RANGE }}, numericality: { only_integer: true }
 
   validates_translation :title, presence: true, unless: :primary?

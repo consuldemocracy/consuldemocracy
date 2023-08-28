@@ -18,15 +18,15 @@
     <%= f.translatable_fields do |translations_form| %>
       <div>
         <%= translations_form.text_field :title,
-              maxlength: Budget::Investment.title_max_length,
-              data: suggest_data(investment) %>
+                                         maxlength: Budget::Investment.title_max_length,
+                                         data: suggest_data(investment) %>
       </div>
       <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
 
       <div>
         <%= translations_form.text_area :description,
-              maxlength: Budget::Investment.description_max_length,
-              class: "html-area" %>
+                                        maxlength: Budget::Investment.description_max_length,
+                                        class: "html-area" %>
       </div>
     <% end %>
   </fieldset>
@@ -51,10 +51,10 @@
     <% if feature?(:map) %>
       <div>
         <%= render "map_locations/form_fields",
-                   form:     f,
+                   form: f,
                    map_location: investment.map_location || MapLocation.new,
-                   label:    t("budgets.investments.form.map_location"),
-                   help:     t("budgets.investments.form.map_location_instructions"),
+                   label: t("budgets.investments.form.map_location"),
+                   help: t("budgets.investments.form.map_location_instructions"),
                    i18n_namespace: "budgets.investments" %>
       </div>
     <% end %>
@@ -80,11 +80,11 @@
 
       <br>
       <%= f.text_field :tag_list, value: investment.tag_list.to_s,
-                        label: false,
-                        placeholder: t("budgets.investments.form.tags_placeholder"),
-                        aria: { describedby: "tags-list-help-text" },
-                        class: "js-tag-list tag-autocomplete",
-                        data: { js_url: suggest_tags_path } %>
+                                  label: false,
+                                  placeholder: t("budgets.investments.form.tags_placeholder"),
+                                  aria: { describedby: "tags-list-help-text" },
+                                  class: "js-tag-list tag-autocomplete",
+                                  data: { js_url: suggest_tags_path } %>
     </div>
 
     <%= render SDG::RelatedListSelectorComponent.new(f) %>
@@ -94,11 +94,10 @@
     <% unless current_user.manager? || investment.persisted? %>
       <div>
         <%= f.check_box :terms_of_service,
-          title: t("form.accept_terms_title"),
-          label: t("form.accept_terms",
-                   policy: link_to(t("form.policy"), "/privacy", target: "blank"),
-                   conditions: link_to(t("form.conditions"), "/conditions", target: "blank")
-                  ) %>
+                        title: t("form.accept_terms_title"),
+                        label: t("form.accept_terms",
+                                 policy: link_to(t("form.policy"), "/privacy", target: "blank"),
+                                 conditions: link_to(t("form.conditions"), "/conditions", target: "blank")) %>
       </div>
     <% end %>
 

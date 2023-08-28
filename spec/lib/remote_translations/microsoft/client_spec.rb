@@ -62,13 +62,13 @@ describe RemoteTranslations::Microsoft::Client do
         response_end_text = [end_translated_text_es]
 
         expect_any_instance_of(BingTranslator).to receive(:translate_array).with([start_text_en], to: :es)
-                                                                             .exactly(1)
-                                                                             .times
-                                                                             .and_return(response_start_text)
+                                                                           .exactly(1)
+                                                                           .times
+                                                                           .and_return(response_start_text)
         expect_any_instance_of(BingTranslator).to receive(:translate_array).with([end_text_en], to: :es)
-                                                                             .exactly(1)
-                                                                             .times
-                                                                             .and_return(response_end_text)
+                                                                           .exactly(1)
+                                                                           .times
+                                                                           .and_return(response_end_text)
 
         start_another_text_en = Faker::Lorem.characters(number: 12) + "."
         end_another_text_en = Faker::Lorem.characters(number: 12)
@@ -81,13 +81,13 @@ describe RemoteTranslations::Microsoft::Client do
         response_another_end_text = [another_end_translated_text_es]
 
         expect_any_instance_of(BingTranslator).to receive(:translate_array).with([start_another_text_en], to: :es)
-                                                                             .exactly(1)
-                                                                             .times
-                                                                             .and_return(response_another_start_text)
+                                                                           .exactly(1)
+                                                                           .times
+                                                                           .and_return(response_another_start_text)
         expect_any_instance_of(BingTranslator).to receive(:translate_array).with([end_another_text_en], to: :es)
-                                                                             .exactly(1)
-                                                                             .times
-                                                                             .and_return(response_another_end_text)
+                                                                           .exactly(1)
+                                                                           .times
+                                                                           .and_return(response_another_end_text)
 
         result = client.call([text_en, another_text_en], :es)
 

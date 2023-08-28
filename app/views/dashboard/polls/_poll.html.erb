@@ -24,8 +24,9 @@
       <% end %>
     </div>
 
-    <%= form_for poll, remote: true, data: { type: :json },
-      url: proposal_dashboard_poll_path(proposal, poll) do |f| %>
+    <%= form_for poll, remote: true,
+                       data: { type: :json },
+                       url: proposal_dashboard_poll_path(proposal, poll) do |f| %>
       <%= f.check_box :results_enabled, class: "js-submit-on-change" %>
     <% end %>
     <p class="help-text"><%= t("dashboard.polls.poll.show_results_help") %></p>

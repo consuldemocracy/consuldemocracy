@@ -435,15 +435,15 @@ describe "Admin polls", :admin do
 
         [booth_assignment_1, booth_assignment_2, booth_assignment_3].each do |ba|
           create(:poll_partial_result,
-                  booth_assignment: ba,
-                  question: question_1,
-                  answer: "Yes",
-                  amount: 11)
+                 booth_assignment: ba,
+                 question: question_1,
+                 answer: "Yes",
+                 amount: 11)
           create(:poll_partial_result,
-                  booth_assignment: ba,
-                  question: question_2,
-                  answer: "Tomorrow",
-                  amount: 5)
+                 booth_assignment: ba,
+                 question: question_2,
+                 answer: "Tomorrow",
+                 amount: 5)
         end
         create(:poll_recount,
                booth_assignment: booth_assignment_1,

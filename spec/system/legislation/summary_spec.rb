@@ -21,9 +21,8 @@ describe "Legislation" do
 
   scenario "empty process" do
     process = create(:legislation_process, :empty,
-      result_publication_enabled: true,
-      end_date: Date.current - 1.day
-    )
+                     result_publication_enabled: true,
+                     end_date: Date.current - 1.day)
 
     visit summary_legislation_process_path(process)
 
@@ -90,13 +89,13 @@ describe "Legislation" do
 
     before do
       create(:legislation_proposal, legislation_process_id: process.id,
-             title: "Legislation proposal 1", selected: true)
+                                    title: "Legislation proposal 1", selected: true)
       create(:legislation_proposal, legislation_process_id: process.id,
-             title: "Legislation proposal 2", selected: false)
+                                    title: "Legislation proposal 2", selected: false)
       create(:legislation_proposal, legislation_process_id: process.id,
-             title: "Legislation proposal 3", selected: true)
+                                    title: "Legislation proposal 3", selected: true)
       create(:legislation_proposal, legislation_process_id: process.id,
-             title: "Legislation proposal 4", selected: false)
+                                    title: "Legislation proposal 4", selected: false)
     end
 
     scenario "shows proposals list" do
@@ -125,11 +124,11 @@ describe "Legislation" do
     before do
       user = create(:user, :level_two)
       draft_version_1 = create(:legislation_draft_version, process: process,
-                               title: "Version 1", body: "Body of the first version",
-                               status: "published")
+                                                           title: "Version 1", body: "Body of the first version",
+                                                           status: "published")
       draft_version_2 = create(:legislation_draft_version, process: process,
-                               title: "Version 2", body: "Body of the second version and that's it all of it",
-                               status: "published")
+                                                           title: "Version 2", body: "Body of the second version and that's it all of it",
+                                                           status: "published")
       annotation0 = create(:legislation_annotation,
                            draft_version: draft_version_1, text: "my annotation123",
                            ranges: annotation_ranges(5, 10))

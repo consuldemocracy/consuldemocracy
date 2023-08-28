@@ -187,30 +187,30 @@ describe "Budgets" do
                              name: "Custom name for informing phase")
 
     phases.accepting.update!(starts_at: "01-01-2018", ends_at: "10-01-2018", enabled: true,
-                            description: "Description of accepting phase",
-                            name: "Custom name for accepting phase")
+                             description: "Description of accepting phase",
+                             name: "Custom name for accepting phase")
 
     phases.reviewing.update!(starts_at: "11-01-2018", ends_at: "20-01-2018", enabled: false,
-                            description: "Description of reviewing phase")
+                             description: "Description of reviewing phase")
 
     phases.selecting.update!(starts_at: "21-01-2018", ends_at: "01-02-2018", enabled: true,
-                            description: "Description of selecting phase",
-                            name: "Custom name for selecting phase")
+                             description: "Description of selecting phase",
+                             name: "Custom name for selecting phase")
 
     phases.valuating.update!(starts_at: "10-02-2018", ends_at: "20-02-2018", enabled: false,
-                            description: "Description of valuating phase")
+                             description: "Description of valuating phase")
 
     phases.publishing_prices.update!(starts_at: "21-02-2018", ends_at: "01-03-2018", enabled: false,
-                                    description: "Description of publishing prices phase")
+                                     description: "Description of publishing prices phase")
 
     phases.balloting.update!(starts_at: "02-03-2018", ends_at: "10-03-2018", enabled: true,
-                            description: "Description of balloting phase")
+                             description: "Description of balloting phase")
 
     phases.reviewing_ballots.update!(starts_at: "11-03-2018", ends_at: "20-03-2018", enabled: false,
-                                    description: "Description of reviewing ballots phase")
+                                     description: "Description of reviewing ballots phase")
 
     phases.finished.update!(starts_at: "21-03-2018", ends_at: "30-03-2018", enabled: true,
-                           description: "Description of finished phase")
+                            description: "Description of finished phase")
 
     visit budgets_path
 

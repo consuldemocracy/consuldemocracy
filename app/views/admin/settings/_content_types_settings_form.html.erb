@@ -6,8 +6,8 @@
     <% Setting.mime_types[group].each do |content_type, mime_type_value| %>
       <span class="content-type">
         <%= check_box_tag content_type,
-            setting.value.split.include?(mime_type_value),
-            setting.value.split.include?(mime_type_value) %>
+                          setting.value.split.include?(mime_type_value),
+                          setting.value.split.include?(mime_type_value) %>
         <%= label_tag content_type, content_type.upcase %>
       </span>
     <% end %>

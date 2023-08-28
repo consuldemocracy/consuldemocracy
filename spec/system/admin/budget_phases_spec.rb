@@ -7,8 +7,8 @@ describe "Admin budget phases" do
     scenario "Update phase" do
       visit edit_admin_budget_budget_phase_path(budget, budget.current_phase)
 
-      expect(page).to have_content "These fields are used for information purposes only and do not trigger "\
-                                   "an automatic update of the active phase. In order to update it, edit "\
+      expect(page).to have_content "These fields are used for information purposes only and do not trigger " \
+                                   "an automatic update of the active phase. In order to update it, edit " \
                                    "the budget and select the active phase."
       expect(page).to have_content "For information purposes only"
 
