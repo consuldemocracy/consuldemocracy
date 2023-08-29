@@ -250,7 +250,7 @@ describe Proposal do
     describe "from anonymous users" do
       it "does not register vote" do
         user = create(:user)
-        expect { proposal.register_vote(user, "yes") }.to change { proposal.reload.votes_for.size }.by(0)
+        expect { proposal.register_vote(user, "yes") }.not_to change { proposal.reload.votes_for.size }
       end
     end
 
@@ -258,9 +258,7 @@ describe Proposal do
       user = create(:user, verified_at: Time.current)
       archived_proposal = create(:proposal, :archived)
 
-      expect do
-        archived_proposal.register_vote(user, "yes")
-      end.to change { proposal.reload.votes_for.size }.by(0)
+      expect { archived_proposal.register_vote(user, "yes") }.not_to change { proposal.reload.votes_for.size }
     end
   end
 
