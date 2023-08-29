@@ -184,7 +184,7 @@ describe Signature do
 
         user = User.last
         expect(user.document_number).to eq("12345678Z")
-        expect(user.created_from_signature).to eq(true)
+        expect(user.created_from_signature).to be true
         expect(user.verified_at).to be
         expect(user.erased_at).to be
         expect(user.geozone).to be

@@ -290,7 +290,7 @@ describe Poll do
 
       create(:poll_voter, user: user, poll: poll)
 
-      expect(poll.votable_by?(user)).to eq(false)
+      expect(poll.votable_by?(user)).to be false
     end
 
     it "returns false if the poll is not answerable by the user" do
@@ -299,7 +299,7 @@ describe Poll do
 
       allow_any_instance_of(Poll).to receive(:answerable_by?).and_return(false)
 
-      expect(poll.votable_by?(user)).to eq(false)
+      expect(poll.votable_by?(user)).to be false
     end
 
     it "return true if a poll is answerable and has not been voted by the user" do
@@ -308,7 +308,7 @@ describe Poll do
 
       allow_any_instance_of(Poll).to receive(:answerable_by?).and_return(true)
 
-      expect(poll.votable_by?(user)).to eq(true)
+      expect(poll.votable_by?(user)).to be true
     end
   end
 
@@ -317,7 +317,7 @@ describe Poll do
       user = create(:user, :level_two)
       poll = create(:poll)
 
-      expect(poll.voted_by?(user)).to eq(false)
+      expect(poll.voted_by?(user)).to be false
     end
 
     it "returns true if the user has voted for this poll" do
@@ -326,7 +326,7 @@ describe Poll do
 
       create(:poll_voter, user: user, poll: poll)
 
-      expect(poll.voted_by?(user)).to eq(true)
+      expect(poll.voted_by?(user)).to be true
     end
   end
 

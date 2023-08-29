@@ -32,8 +32,8 @@ RSpec.describe I18nContent, type: :model do
     it "returns nil if translations are not available" do
       expect(i18n_content.value_en).to eq("Text in english")
       expect(i18n_content.value_es).to eq("Texto en español")
-      expect(i18n_content.value_nl).to be(nil)
-      expect(i18n_content.value_fr).to be(nil)
+      expect(i18n_content.value_nl).to be nil
+      expect(i18n_content.value_fr).to be nil
     end
 
     it "responds accordingly to the current locale" do

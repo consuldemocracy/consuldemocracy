@@ -108,18 +108,18 @@ describe SignatureSheet do
 
       expect(Signature.count).to eq(2)
       expect(Signature.first.document_number).to eq("123A")
-      expect(Signature.first.date_of_birth).to eq(nil)
-      expect(Signature.first.postal_code).to eq(nil)
+      expect(Signature.first.date_of_birth).to be nil
+      expect(Signature.first.postal_code).to be nil
       expect(Signature.last.document_number).to eq("456B")
-      expect(Signature.last.date_of_birth).to eq(nil)
-      expect(Signature.last.postal_code).to eq(nil)
+      expect(Signature.last.date_of_birth).to be nil
+      expect(Signature.last.postal_code).to be nil
     end
 
     it "marks signature sheet as processed" do
       signature_sheet = create(:signature_sheet)
       signature_sheet.verify_signatures
 
-      expect(signature_sheet.processed).to eq(true)
+      expect(signature_sheet.processed).to be true
     end
 
     context "with remote census active", :remote_census do
@@ -135,11 +135,11 @@ describe SignatureSheet do
 
         expect(Signature.count).to eq(2)
         expect(Signature.first.document_number).to eq("123A")
-        expect(Signature.first.date_of_birth).to eq(nil)
-        expect(Signature.first.postal_code).to eq(nil)
+        expect(Signature.first.date_of_birth).to be nil
+        expect(Signature.first.postal_code).to be nil
         expect(Signature.last.document_number).to eq("456B")
-        expect(Signature.last.date_of_birth).to eq(nil)
-        expect(Signature.last.postal_code).to eq(nil)
+        expect(Signature.last.date_of_birth).to be nil
+        expect(Signature.last.postal_code).to be nil
       end
 
       it "creates signatures for each group with document_number and date_of_birth" do
@@ -154,10 +154,10 @@ describe SignatureSheet do
         expect(Signature.count).to eq(2)
         expect(Signature.first.document_number).to eq("123A")
         expect(Signature.first.date_of_birth).to eq(Date.parse("01/01/1980"))
-        expect(Signature.first.postal_code).to eq(nil)
+        expect(Signature.first.postal_code).to be nil
         expect(Signature.last.document_number).to eq("456B")
         expect(Signature.last.date_of_birth).to eq(Date.parse("01/02/1980"))
-        expect(Signature.last.postal_code).to eq(nil)
+        expect(Signature.last.postal_code).to be nil
       end
 
       it "creates signatures for each group with document_number and postal_code" do
@@ -171,10 +171,10 @@ describe SignatureSheet do
 
         expect(Signature.count).to eq(2)
         expect(Signature.first.document_number).to eq("123A")
-        expect(Signature.first.date_of_birth).to eq(nil)
+        expect(Signature.first.date_of_birth).to be nil
         expect(Signature.first.postal_code).to eq("28001")
         expect(Signature.last.document_number).to eq("456B")
-        expect(Signature.last.date_of_birth).to eq(nil)
+        expect(Signature.last.date_of_birth).to be nil
         expect(Signature.last.postal_code).to eq("28002")
       end
 

@@ -464,6 +464,9 @@ Rails/WhereNotWithMultipleConditions:
 RSpec/AroundBlock:
   Enabled: true
 
+RSpec/BeEq:
+  Enabled: true
+
 RSpec/BeforeAfterAll:
   Enabled: true
 

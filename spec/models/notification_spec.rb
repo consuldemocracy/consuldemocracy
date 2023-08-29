@@ -103,7 +103,7 @@ describe Notification do
 
       create(:notification, user: user, notifiable: comment1)
 
-      expect(Notification.existent(user, comment2)).to eq(nil)
+      expect(Notification.existent(user, comment2)).to be nil
     end
 
     it "returns nil when there are notifications of a notifiable for another user" do
@@ -113,7 +113,7 @@ describe Notification do
 
       create(:notification, user: user1, notifiable: comment)
 
-      expect(Notification.existent(user2, comment)).to eq(nil)
+      expect(Notification.existent(user2, comment)).to be nil
     end
   end
 

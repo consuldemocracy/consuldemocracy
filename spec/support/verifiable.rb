@@ -77,99 +77,99 @@ shared_examples_for "verifiable" do
   describe "#methods" do
     it "residence_verified? is true only if residence_verified_at" do
       user = create(:user, residence_verified_at: Time.current)
-      expect(user.residence_verified?).to eq(true)
+      expect(user.residence_verified?).to be true
 
       user = create(:user, residence_verified_at: nil)
-      expect(user.residence_verified?).to eq(false)
+      expect(user.residence_verified?).to be false
     end
   end
 
   describe "#sms_verified?" do
     it "is true only if confirmed_phone" do
       user = create(:user, confirmed_phone: "123456789")
-      expect(user.sms_verified?).to eq(true)
+      expect(user.sms_verified?).to be true
 
       user = create(:user, confirmed_phone: nil)
-      expect(user.sms_verified?).to eq(false)
+      expect(user.sms_verified?).to be false
     end
   end
 
   describe "#level_two_verified?" do
     it "is true if manually set, or if residence_verified_at and confirmed_phone" do
       user = create(:user, level_two_verified_at: Time.current)
-      expect(user.level_two_verified?).to eq(true)
+      expect(user.level_two_verified?).to be true
 
       user = create(:user, confirmed_phone: "123456789", residence_verified_at: Time.current)
-      expect(user.level_two_verified?).to eq(true)
+      expect(user.level_two_verified?).to be true
 
       user = create(:user, confirmed_phone: nil, residence_verified_at: Time.current)
-      expect(user.level_two_verified?).to eq(false)
+      expect(user.level_two_verified?).to be false
 
       user = create(:user, confirmed_phone: "123456789", residence_verified_at: nil)
-      expect(user.level_two_verified?).to eq(false)
+      expect(user.level_two_verified?).to be false
     end
   end
 
   describe "#level_three_verified?" do
     it "is true only if verified_at" do
       user = create(:user, verified_at: Time.current)
-      expect(user.level_three_verified?).to eq(true)
+      expect(user.level_three_verified?).to be true
 
       user = create(:user, verified_at: nil)
-      expect(user.level_three_verified?).to eq(false)
+      expect(user.level_three_verified?).to be false
     end
   end
 
   describe "#unverified?" do
     it "is true only if not level_three_verified and not level_two_verified" do
       user = create(:user, verified_at: nil, confirmed_phone: nil)
-      expect(user.unverified?).to eq(true)
+      expect(user.unverified?).to be true
 
       user = create(:user, verified_at: Time.current, confirmed_phone: "123456789",
                            residence_verified_at: Time.current)
-      expect(user.unverified?).to eq(false)
+      expect(user.unverified?).to be false
     end
   end
 
   describe "#verification_email_sent?" do
     it "is true only if user has email_verification_token" do
       user = create(:user, email_verification_token: "xxxxxxx")
-      expect(user.verification_email_sent?).to eq(true)
+      expect(user.verification_email_sent?).to be true
 
       user = create(:user, email_verification_token: nil)
-      expect(user.verification_email_sent?).to eq(false)
+      expect(user.verification_email_sent?).to be false
     end
   end
 
   describe "#verification_sms_sent?" do
     it "is true if user has unconfirmed_phone & sms_confirmation_code" do
       user = create(:user, unconfirmed_phone: "666666666", sms_confirmation_code: "666")
-      expect(user.verification_sms_sent?).to eq(true)
+      expect(user.verification_sms_sent?).to be true
 
       user = create(:user, unconfirmed_phone: nil, sms_confirmation_code: "666")
-      expect(user.verification_sms_sent?).to eq(false)
+      expect(user.verification_sms_sent?).to be false
 
       user = create(:user, unconfirmed_phone: "666666666", sms_confirmation_code: nil)
-      expect(user.verification_sms_sent?).to eq(false)
+      expect(user.verification_sms_sent?).to be false
 
       user = create(:user, unconfirmed_phone: nil, sms_confirmation_code: nil)
-      expect(user.verification_sms_sent?).to eq(false)
+      expect(user.verification_sms_sent?).to be false
     end
   end
 
   describe "#verification_letter_sent?" do
     it "is true if user has letter_requested_at & letter_verification_code" do
       user = create(:user, letter_requested_at: Time.current, letter_verification_code: "666")
-      expect(user.verification_letter_sent?).to eq(true)
+      expect(user.verification_letter_sent?).to be true
 
       user = create(:user, letter_requested_at: nil, letter_verification_code: "666")
-      expect(user.verification_letter_sent?).to eq(false)
+      expect(user.verification_letter_sent?).to be false
 
       user = create(:user, letter_requested_at: Time.current, letter_verification_code: nil)
-      expect(user.verification_letter_sent?).to eq(false)
+      expect(user.verification_letter_sent?).to be false
 
       user = create(:user, letter_requested_at: nil, letter_verification_code: nil)
-      expect(user.verification_letter_sent?).to eq(false)
+      expect(user.verification_letter_sent?).to be false
     end
   end
 
@@ -182,63 +182,63 @@ shared_examples_for "verifiable" do
 
     describe "#residence_verified?" do
       it "is true if skipped" do
-        expect(user.residence_verified?).to eq(true)
+        expect(user.residence_verified?).to be true
       end
     end
 
     describe "#sms_verified?" do
       it "is true if skipped" do
-        expect(user.sms_verified?).to eq(true)
+        expect(user.sms_verified?).to be true
       end
     end
 
     describe "#level_two_verified?" do
       it "is true if skipped" do
-        expect(user.level_two_verified?).to eq(true)
+        expect(user.level_two_verified?).to be true
 
         user.update!(residence_verified_at: Time.current)
-        expect(user.level_two_verified?).to eq(true)
+        expect(user.level_two_verified?).to be true
 
         user.update!(confirmed_phone: "123456789", residence_verified_at: false)
-        expect(user.level_two_verified?).to eq(true)
+        expect(user.level_two_verified?).to be true
       end
     end
 
     describe "#level_three_verified?" do
       it "is true if skipped" do
-        expect(user.level_three_verified?).to eq(true)
+        expect(user.level_three_verified?).to be true
       end
     end
 
     describe "#verification_email_sent?" do
       it "is true if skipped" do
-        expect(user.verification_email_sent?).to eq(true)
+        expect(user.verification_email_sent?).to be true
       end
     end
 
     describe "#verification_sms_sent?" do
       it "is true if skipped" do
         user.update!(unconfirmed_phone: nil, sms_confirmation_code: "666")
-        expect(user.verification_sms_sent?).to eq(true)
+        expect(user.verification_sms_sent?).to be true
 
         user.update!(unconfirmed_phone: "666666666", sms_confirmation_code: nil)
-        expect(user.verification_sms_sent?).to eq(true)
+        expect(user.verification_sms_sent?).to be true
 
         user.update!(unconfirmed_phone: nil, sms_confirmation_code: nil)
-        expect(user.verification_sms_sent?).to eq(true)
+        expect(user.verification_sms_sent?).to be true
       end
     end
 
     describe "#verification_letter_sent?" do
       it "is true if skipped" do
         user.update!(letter_requested_at: nil, letter_verification_code: "666")
-        expect(user.verification_letter_sent?).to eq(true)
+        expect(user.verification_letter_sent?).to be true
 
         user.update!(letter_requested_at: Time.current, letter_verification_code: nil)
-        expect(user.verification_letter_sent?).to eq(true)
+        expect(user.verification_letter_sent?).to be true
 
         user.update!(letter_requested_at: nil, letter_verification_code: nil)
-        expect(user.verification_letter_sent?).to eq(true)
+        expect(user.verification_letter_sent?).to be true
       end
     end
   end

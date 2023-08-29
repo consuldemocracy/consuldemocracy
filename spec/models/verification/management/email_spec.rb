@@ -44,7 +44,7 @@ describe Verification::Management::Email do
                                                   document_number: "1234",
                                                   email: "inexisting@gmail.com")
 
-      expect(email.save).to eq(false)
+      expect(email.save).to be false
     end
 
     it "updates the user and sends an email" do

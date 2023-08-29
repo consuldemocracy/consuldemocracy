@@ -270,8 +270,8 @@ describe Budget::Heading do
 
       create(:budget_investment, heading: heading1)
 
-      expect(heading1.can_be_deleted?).to eq false
-      expect(heading2.can_be_deleted?).to eq true
+      expect(heading1.can_be_deleted?).to be false
+      expect(heading2.can_be_deleted?).to be true
     end
   end
 

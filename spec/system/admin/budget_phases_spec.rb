@@ -24,7 +24,7 @@ describe "Admin budget phases" do
       expect(budget.current_phase.starts_at.to_date).to eq((Date.current + 1.day).to_date)
       expect(budget.current_phase.ends_at.to_date).to eq((Date.current + 12.days).to_date)
       expect(budget.current_phase.description).to include("New description of the phase.")
-      expect(budget.current_phase.enabled).to be(false)
+      expect(budget.current_phase.enabled).to be false
     end
 
     scenario "Show default phase name or custom if present" do

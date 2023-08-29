@@ -129,7 +129,7 @@ describe EmailDigest do
       user = create(:user, email: "invalid_email@email..com")
 
       email_digest = EmailDigest.new(user)
-      expect(email_digest.valid_email?).to be(nil)
+      expect(email_digest.valid_email?).to be nil
     end
 
     it "returns false if email does not exist" do
@@ -137,7 +137,7 @@ describe EmailDigest do
       user.email = nil
 
       email_digest = EmailDigest.new(user)
-      expect(email_digest.valid_email?).to be(false)
+      expect(email_digest.valid_email?).to be false
     end
   end
 end
