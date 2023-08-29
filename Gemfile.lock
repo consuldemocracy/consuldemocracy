@@ -63,7 +63,7 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     acts-as-taggable-on (9.0.1)
       activerecord (>= 6.0, < 7.1)
-    acts_as_votable (0.13.2)
+    acts_as_votable (0.14.0)
     addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
     ahoy_matey (4.1.0)
@@ -671,7 +671,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on (~> 9.0.1)
-  acts_as_votable (~> 0.13.2)
+  acts_as_votable (~> 0.14.0)
   ahoy_matey (~> 4.1.0)
   airbrake (~> 13.0.2)
   ancestry (~> 4.2.0)
