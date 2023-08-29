@@ -10,9 +10,9 @@ The prefered way to report any bug is [opening an issue in the project's repo](h
 
 * Try to use a descriptive and to-the-point title
 * It's a good idea to include some of these sections:
-  * Steps to reproduce the bug
-  * Expected behaviour/response
-  * Actual response
+   * Steps to reproduce the bug
+   * Expected behaviour/response
+   * Actual response
 * Sometimes it is also helpful if you mention your operating system, browser version and installed plugins.
 
 Thanks! :heart: :heart: :heart:
