@@ -544,6 +544,9 @@ RSpec/NotToNot:
 RSpec/OverwritingSetup:
   Enabled: true
 
+RSpec/Rails/HaveHttpStatus:
+  Enabled: true
+
 RSpec/RepeatedExample:
   Enabled: true
 

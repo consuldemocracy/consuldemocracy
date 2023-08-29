@@ -7,7 +7,7 @@ describe Admin::Api::StatsController, :admin do
         get :show
 
         expect(response).not_to be_ok
-        expect(response.status).to eq 400
+        expect(response).to have_http_status 400
       end
     end
 
