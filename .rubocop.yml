@@ -483,6 +483,9 @@ RSpec/Capybara/FeatureMethods:
     - scenario
     - xscenario
 
+RSpec/Capybara/NegationMatcher:
+  Enabled: true
+
 RSpec/Capybara/VisibilityMatcher:
   Enabled: true
 
