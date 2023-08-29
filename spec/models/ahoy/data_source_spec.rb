@@ -7,12 +7,12 @@ describe Ahoy::DataSource do
       time_2 = Time.zone.local(2015, 01, 02)
       time_3 = Time.zone.local(2015, 01, 03)
 
-      create :ahoy_event, name: "foo", time: time_1
-      create :ahoy_event, name: "foo", time: time_1
-      create :ahoy_event, name: "foo", time: time_2
-      create :ahoy_event, name: "bar", time: time_1
-      create :ahoy_event, name: "bar", time: time_3
-      create :ahoy_event, name: "bar", time: time_3
+      create(:ahoy_event, name: "foo", time: time_1)
+      create(:ahoy_event, name: "foo", time: time_1)
+      create(:ahoy_event, name: "foo", time: time_2)
+      create(:ahoy_event, name: "bar", time: time_1)
+      create(:ahoy_event, name: "bar", time: time_3)
+      create(:ahoy_event, name: "bar", time: time_3)
     end
 
     it "works without data sources" do

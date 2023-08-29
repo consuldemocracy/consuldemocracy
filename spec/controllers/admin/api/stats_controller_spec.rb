@@ -17,12 +17,12 @@ describe Admin::Api::StatsController, :admin do
         time_2 = Time.zone.local(2015, 01, 02)
         time_3 = Time.zone.local(2015, 01, 03)
 
-        create :ahoy_event, name: "foo", time: time_1
-        create :ahoy_event, name: "foo", time: time_1
-        create :ahoy_event, name: "foo", time: time_2
-        create :ahoy_event, name: "bar", time: time_1
-        create :ahoy_event, name: "bar", time: time_3
-        create :ahoy_event, name: "bar", time: time_3
+        create(:ahoy_event, name: "foo", time: time_1)
+        create(:ahoy_event, name: "foo", time: time_1)
+        create(:ahoy_event, name: "foo", time: time_2)
+        create(:ahoy_event, name: "bar", time: time_1)
+        create(:ahoy_event, name: "bar", time: time_3)
+        create(:ahoy_event, name: "bar", time: time_3)
       end
 
       it "returns single events formated for working with c3.js" do
@@ -38,9 +38,9 @@ describe Admin::Api::StatsController, :admin do
         time_1 = Time.zone.local(2015, 01, 01)
         time_2 = Time.zone.local(2015, 01, 02)
 
-        create :visit, started_at: time_1
-        create :visit, started_at: time_1
-        create :visit, started_at: time_2
+        create(:visit, started_at: time_1)
+        create(:visit, started_at: time_1)
+        create(:visit, started_at: time_2)
 
         get :show, params: { visits: true }
 

@@ -518,6 +518,9 @@ RSpec/ExampleWording:
 RSpec/ExcessiveDocstringSpacing:
   Enabled: true
 
+RSpec/FactoryBot/ConsistentParenthesesStyle:
+  Enabled: true
+
 RSpec/FactoryBot/FactoryClassName:
   Enabled: true
 

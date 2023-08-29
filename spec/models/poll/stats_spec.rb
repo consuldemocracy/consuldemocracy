@@ -176,8 +176,8 @@ describe Poll::Stats do
       hobbiton = create(:geozone, name: "Hobbiton")
       rivendel = create(:geozone, name: "Rivendel")
 
-      3.times { create :poll_voter, poll: poll, user: create(:user, :level_two, geozone: hobbiton) }
-      2.times { create :poll_voter, poll: poll, user: create(:user, :level_two, geozone: rivendel) }
+      3.times { create(:poll_voter, poll: poll, user: create(:user, :level_two, geozone: hobbiton)) }
+      2.times { create(:poll_voter, poll: poll, user: create(:user, :level_two, geozone: rivendel)) }
 
       expect(stats.participants_by_geozone["Hobbiton"][:count]).to eq 3
       expect(stats.participants_by_geozone["Hobbiton"][:percentage]).to eq 60.0

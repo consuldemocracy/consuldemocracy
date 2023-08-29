@@ -358,8 +358,8 @@ describe Poll do
   end
 
   describe ".overlaping_with" do
-    let(:proposal) { create :proposal }
-    let(:other_proposal) { create :proposal }
+    let(:proposal) { create(:proposal) }
+    let(:other_proposal) { create(:proposal) }
     let(:poll) { create(:poll, related: proposal) }
     let(:overlaping_poll) do
       build(:poll, related: proposal, starts_at: poll.starts_at + 1.day, ends_at: poll.ends_at - 1.day)

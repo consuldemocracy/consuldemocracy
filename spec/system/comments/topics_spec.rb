@@ -1,8 +1,8 @@
 require "rails_helper"
 
 describe "Commenting topics from proposals" do
-  let(:user)     { create :user }
-  let(:proposal) { create :proposal }
+  let(:user)     { create(:user) }
+  let(:proposal) { create(:proposal) }
 
   it_behaves_like "flaggable", :topic_with_community_comment
 
@@ -153,7 +153,7 @@ describe "Commenting topics from proposals" do
   scenario "Turns links into html links" do
     community = proposal.community
     topic = create(:topic, community: community)
-    create :comment, commentable: topic, body: "Built with http://rubyonrails.org/"
+    create(:comment, commentable: topic, body: "Built with http://rubyonrails.org/")
 
     visit community_topic_path(community, topic)
 
@@ -168,10 +168,10 @@ describe "Commenting topics from proposals" do
   scenario "Sanitizes comment body for security" do
     community = proposal.community
     topic = create(:topic, community: community)
-    create :comment, commentable: topic,
+    create(:comment, commentable: topic,
                      body: "<script>alert('hola')</script> " \
                            "<a href=\"javascript:alert('sorpresa!')\">click me<a/> " \
-                           "http://www.url.com"
+                           "http://www.url.com")
 
     visit community_topic_path(community, topic)
 
@@ -574,8 +574,8 @@ describe "Commenting topics from proposals" do
 end
 
 describe "Commenting topics from budget investments" do
-  let(:user)       { create :user }
-  let(:investment) { create :budget_investment }
+  let(:user)       { create(:user) }
+  let(:investment) { create(:budget_investment) }
 
   scenario "Index" do
     community = investment.community
@@ -702,7 +702,7 @@ describe "Commenting topics from budget investments" do
   scenario "Turns links into html links" do
     community = investment.community
     topic = create(:topic, community: community)
-    create :comment, commentable: topic, body: "Built with http://rubyonrails.org/"
+    create(:comment, commentable: topic, body: "Built with http://rubyonrails.org/")
 
     visit community_topic_path(community, topic)
 
@@ -717,10 +717,10 @@ describe "Commenting topics from budget investments" do
   scenario "Sanitizes comment body for security" do
     community = investment.community
     topic = create(:topic, community: community)
-    create :comment, commentable: topic,
+    create(:comment, commentable: topic,
                      body: "<script>alert('hola')</script> " \
                            "<a href=\"javascript:alert('sorpresa!')\">click me<a/> " \
-                           "http://www.url.com"
+                           "http://www.url.com")
 
     visit community_topic_path(community, topic)
 

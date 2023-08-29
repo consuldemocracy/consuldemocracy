@@ -1,9 +1,9 @@
 require "rails_helper"
 
 describe "Commenting legislation questions" do
-  let(:user) { create :user, :level_two }
-  let(:process) { create :legislation_process, :in_debate_phase }
-  let(:question) { create :legislation_question, process: process }
+  let(:user) { create(:user, :level_two) }
+  let(:process) { create(:legislation_process, :in_debate_phase) }
+  let(:question) { create(:legislation_question, process: process) }
 
   context "Concerns" do
     it_behaves_like "notifiable in-app", :legislation_question
@@ -151,7 +151,7 @@ describe "Commenting legislation questions" do
   end
 
   scenario "Turns links into html links" do
-    create :comment, commentable: question, body: "Built with http://rubyonrails.org/"
+    create(:comment, commentable: question, body: "Built with http://rubyonrails.org/")
 
     visit legislation_process_question_path(question.process, question)
 
@@ -164,10 +164,10 @@ describe "Commenting legislation questions" do
   end
 
   scenario "Sanitizes comment body for security" do
-    create :comment, commentable: question,
+    create(:comment, commentable: question,
                      body: "<script>alert('hola')</script> " \
                            "<a href=\"javascript:alert('sorpresa!')\">click me<a/> " \
-                           "http://www.url.com"
+                           "http://www.url.com")
 
     visit legislation_process_question_path(question.process, question)
 
@@ -232,7 +232,7 @@ describe "Commenting legislation questions" do
   end
 
   scenario "Unverified user can't create comments" do
-    unverified_user = create :user
+    unverified_user = create(:user)
     login_as(unverified_user)
 
     visit legislation_process_question_path(question.process, question)

@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Commenting polls" do
-  let(:user) { create :user }
+  let(:user) { create(:user) }
   let(:poll) { create(:poll, author: create(:user)) }
 
   scenario "Index" do
@@ -140,7 +140,7 @@ describe "Commenting polls" do
   end
 
   scenario "Turns links into html links" do
-    create :comment, commentable: poll, body: "Built with http://rubyonrails.org/"
+    create(:comment, commentable: poll, body: "Built with http://rubyonrails.org/")
 
     visit poll_path(poll)
 
@@ -153,10 +153,10 @@ describe "Commenting polls" do
   end
 
   scenario "Sanitizes comment body for security" do
-    create :comment, commentable: poll,
+    create(:comment, commentable: poll,
                      body: "<script>alert('hola')</script> " \
                            "<a href=\"javascript:alert('sorpresa!')\">click me<a/> " \
-                           "http://www.url.com"
+                           "http://www.url.com")
 
     visit poll_path(poll)
 

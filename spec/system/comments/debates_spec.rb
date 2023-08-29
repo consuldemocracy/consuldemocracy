@@ -1,8 +1,8 @@
 require "rails_helper"
 
 describe "Commenting debates" do
-  let(:user)   { create :user }
-  let(:debate) { create :debate }
+  let(:user)   { create(:user) }
+  let(:debate) { create(:debate) }
 
   it_behaves_like "flaggable", :debate_comment
 
@@ -162,7 +162,7 @@ describe "Commenting debates" do
   end
 
   scenario "Turns links into html links" do
-    create :comment, commentable: debate, body: "Built with http://rubyonrails.org/"
+    create(:comment, commentable: debate, body: "Built with http://rubyonrails.org/")
 
     visit debate_path(debate)
 
@@ -175,10 +175,10 @@ describe "Commenting debates" do
   end
 
   scenario "Sanitizes comment body for security" do
-    create :comment, commentable: debate,
+    create(:comment, commentable: debate,
                      body: "<script>alert('hola')</script> " \
                            "<a href=\"javascript:alert('sorpresa!')\">click me<a/> " \
-                           "http://www.url.com"
+                           "http://www.url.com")
 
     visit debate_path(debate)
 
