@@ -9,7 +9,7 @@ describe Verification::Management::Email do
     end
 
     it "returns nil/false when the user does not exist" do
-      expect(subject.user).to be_nil
+      expect(subject.user).to be nil
       expect(subject.user?).not_to be
     end
   end

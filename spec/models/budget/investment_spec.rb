@@ -956,7 +956,7 @@ describe Budget::Investment do
 
       it "accepts valid selections when selecting is allowed" do
         budget.phase = "selecting"
-        expect(district_sp.reason_for_not_being_selectable_by(user)).to be_nil
+        expect(district_sp.reason_for_not_being_selectable_by(user)).to be nil
       end
 
       it "rejects votes in two headings of the same group" do
@@ -1174,12 +1174,12 @@ describe Budget::Investment do
 
         it "accepts valid ballots when voting is allowed" do
           budget.phase = "balloting"
-          expect(investment.reason_for_not_being_ballotable_by(user, ballot)).to be_nil
+          expect(investment.reason_for_not_being_ballotable_by(user, ballot)).to be nil
         end
 
         it "accepts valid selections" do
           budget.phase = "selecting"
-          expect(investment.reason_for_not_being_selectable_by(user)).to be_nil
+          expect(investment.reason_for_not_being_selectable_by(user)).to be nil
         end
 
         it "rejects users with different headings" do

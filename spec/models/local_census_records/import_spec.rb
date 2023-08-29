@@ -48,7 +48,7 @@ describe LocalCensusRecords::Import do
       import.save!
       local_census_record = LocalCensusRecord.find_by(document_number: "X11556678")
 
-      expect(local_census_record).not_to be_nil
+      expect(local_census_record).not_to be nil
       expect(local_census_record.document_type).to eq("2")
       expect(local_census_record.document_number).to eq("X11556678")
       expect(local_census_record.date_of_birth).to eq(Date.parse("07/08/1987"))

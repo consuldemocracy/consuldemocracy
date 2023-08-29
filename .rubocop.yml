@@ -467,6 +467,10 @@ RSpec/AroundBlock:
 RSpec/BeforeAfterAll:
   Enabled: true
 
+RSpec/BeNil:
+  Enabled: true
+  EnforcedStyle: be
+
 RSpec/Capybara/CurrentPathExpectation:
   Enabled: true
 

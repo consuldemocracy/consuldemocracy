@@ -116,7 +116,7 @@ describe "Home" do
 
       visit root_path
       expect(page).to have_xpath(ie_alert_box_xpath)
-      expect(page.driver.request.cookies["ie_alert_closed"]).to be_nil
+      expect(page.driver.request.cookies["ie_alert_closed"]).to be nil
 
       # faking close button, since a normal find and click
       # will not work as the element is inside a HTML conditional comment
@@ -130,7 +130,7 @@ describe "Home" do
     scenario "non-IE visitors are not bothered with IE alerts", :page_driver do
       visit root_path
       expect(page).not_to have_xpath(ie_alert_box_xpath)
-      expect(page.driver.request.cookies["ie_alert_closed"]).to be_nil
+      expect(page.driver.request.cookies["ie_alert_closed"]).to be nil
     end
 
     def ie_alert_box_xpath

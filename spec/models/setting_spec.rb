@@ -250,7 +250,7 @@ describe Setting do
 
         Setting.add_new_settings
 
-        expect(Setting.find_by(key: :stub).value).to be_nil
+        expect(Setting.find_by(key: :stub).value).to be nil
       end
     end
 
@@ -265,7 +265,7 @@ describe Setting do
         Setting.add_new_settings
 
         expect(Setting.where(key: :stub)).not_to be_empty
-        expect(Setting.find_by(key: :stub).value).to be_nil
+        expect(Setting.find_by(key: :stub).value).to be nil
       end
 
       it "doesn't modify custom values" do

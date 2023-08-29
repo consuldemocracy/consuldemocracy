@@ -286,7 +286,7 @@ describe User do
       subject.remove_official_position!
 
       expect(subject).not_to be_official
-      expect(subject.official_position).to be_nil
+      expect(subject.official_position).to be nil
       expect(subject.official_level).to eq(0)
     end
   end
@@ -508,16 +508,16 @@ describe User do
       expect(user.erase_reason).to eq("a test")
       expect(user.erased_at).to    be
 
-      expect(user.username).to be_nil
-      expect(user.email).to be_nil
-      expect(user.unconfirmed_email).to be_nil
-      expect(user.phone_number).to be_nil
-      expect(user.confirmed_phone).to be_nil
-      expect(user.unconfirmed_phone).to be_nil
+      expect(user.username).to be nil
+      expect(user.email).to be nil
+      expect(user.unconfirmed_email).to be nil
+      expect(user.phone_number).to be nil
+      expect(user.confirmed_phone).to be nil
+      expect(user.unconfirmed_phone).to be nil
       expect(user.encrypted_password).to be_empty
-      expect(user.confirmation_token).to be_nil
-      expect(user.reset_password_token).to be_nil
-      expect(user.email_verification_token).to be_nil
+      expect(user.confirmation_token).to be nil
+      expect(user.reset_password_token).to be nil
+      expect(user.email_verification_token).to be nil
     end
 
     it "maintains associated identification document" do
