@@ -217,7 +217,7 @@ shared_examples_for "verifiable" do
     end
 
     describe "#verification_sms_sent?" do
-      it "is true  if skipped" do
+      it "is true if skipped" do
         user.update!(unconfirmed_phone: nil, sms_confirmation_code: "666")
         expect(user.verification_sms_sent?).to eq(true)
 

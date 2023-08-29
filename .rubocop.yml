@@ -505,6 +505,9 @@ RSpec/EmptyLineAfterExampleGroup:
 RSpec/ExampleWording:
   Enabled: true
 
+RSpec/ExcessiveDocstringSpacing:
+  Enabled: true
+
 RSpec/FactoryBot/FactoryClassName:
   Enabled: true
 
