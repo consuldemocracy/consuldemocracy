@@ -200,7 +200,7 @@ describe "Proposals" do
       click_link "Print proposals"
 
       expect(page).to have_css(".proposal", count: 5)
-      expect(page).to have_css("a[href='javascript:window.print();']", text: "Print")
+      expect(page).to have_link "Print", href: "javascript:window.print();"
     end
 
     scenario "Filtering proposals to be printed" do

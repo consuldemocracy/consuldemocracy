@@ -443,7 +443,7 @@ describe "Legislation Draft Versions" do
     scenario "See table as a user" do
       visit legislation_process_draft_version_path(draft_version.process, draft_version)
 
-      expect(page).to have_css("table")
+      expect(page).to have_table
       expect(page).to have_content "Roberta"
       expect(page).to have_content "25"
     end
@@ -454,7 +454,7 @@ describe "Legislation Draft Versions" do
       visit path
       click_link "Launch text editor"
 
-      expect(page).to have_css("table")
+      expect(page).to have_table
       expect(page).to have_content "Roberta"
       expect(page).to have_content "25"
     end
