@@ -36,7 +36,8 @@ describe "Commenting Budget::Investments" do
     expect(page).to have_content "First subcomment"
     expect(page).to have_content "Last subcomment"
 
-    expect(page).to have_link "Go back to #{investment.title}", href: budget_investment_path(investment.budget, investment)
+    expect(page).to have_link "Go back to #{investment.title}",
+                              href: budget_investment_path(investment.budget, investment)
 
     within ".comment", text: "Parent" do
       expect(page).to have_selector(".comment", count: 2)
@@ -60,8 +61,14 @@ describe "Commenting Budget::Investments" do
 
   scenario "Collapsable comments" do
     parent_comment = create(:comment, body: "Main comment", commentable: investment)
-    child_comment  = create(:comment, body: "First subcomment", commentable: investment, parent: parent_comment)
-    grandchild_comment = create(:comment, body: "Last subcomment", commentable: investment, parent: child_comment)
+    child_comment  = create(:comment,
+                            body: "First subcomment",
+                            commentable: investment,
+                            parent: parent_comment)
+    grandchild_comment = create(:comment,
+                                body: "Last subcomment",
+                                commentable: investment,
+                                parent: child_comment)
 
     visit budget_investment_path(investment.budget, investment)
 
@@ -123,11 +130,17 @@ describe "Commenting Budget::Investments" do
     expect(c2.body).to appear_before(c3.body)
   end
 
-  scenario "Creation date works differently in roots and in child comments, when sorting by confidence_score" do
+  scenario "Creation date works differently in roots and child comments when sorting by confidence_score" do
     old_root = create(:comment, commentable: investment, created_at: Time.current - 10)
     new_root = create(:comment, commentable: investment, created_at: Time.current)
-    old_child = create(:comment, commentable: investment, parent_id: new_root.id, created_at: Time.current - 10)
-    new_child = create(:comment, commentable: investment, parent_id: new_root.id, created_at: Time.current)
+    old_child = create(:comment,
+                       commentable: investment,
+                       parent_id: new_root.id,
+                       created_at: Time.current - 10)
+    new_child = create(:comment,
+                       commentable: investment,
+                       parent_id: new_root.id,
+                       created_at: Time.current)
 
     visit budget_investment_path(investment.budget, investment, order: :most_voted)
 
@@ -160,7 +173,9 @@ describe "Commenting Budget::Investments" do
 
   scenario "Sanitizes comment body for security" do
     create :comment, commentable: investment,
-                     body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
+                     body: "<script>alert('hola')</script> " \
+                           "<a href=\"javascript:alert('sorpresa!')\">click me<a/> " \
+                           "http://www.url.com"
 
     visit budget_investment_path(investment.budget, investment)
 

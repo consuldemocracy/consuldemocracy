@@ -14,6 +14,9 @@ class InstallationController < ApplicationController
     end
 
     def settings_feature_flags
-      Setting.where("key LIKE 'process.%'").each_with_object({}) { |x, n| n[x.key.remove("process.")] = x.value }
+      Setting.where("key LIKE 'process.%'")
+             .pluck(:key, :value)
+             .to_h
+             .transform_keys { |key| key.remove("process.") }
     end
 end

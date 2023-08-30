@@ -20,8 +20,7 @@ section "Creating polls" do
                slug: I18n.t("seeds.polls.current_poll_geozone_restricted").parameterize,
                starts_at: 5.days.ago,
                ends_at: 5.days.from_now,
-               geozone_restricted: true,
-               geozones: Geozone.sample(3))
+               geozone_restricted_to: Geozone.sample(3))
 
   create_poll!(name: I18n.t("seeds.polls.recounting_poll"),
                slug: I18n.t("seeds.polls.recounting_poll").parameterize,

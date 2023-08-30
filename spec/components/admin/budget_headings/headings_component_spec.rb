@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Admin::BudgetHeadings::HeadingsComponent, controller: Admin::BaseController do
+describe Admin::BudgetHeadings::HeadingsComponent, :admin do
   it "includes group name in the message when there are no headings" do
     group = create(:budget_group, name: "Whole planet")
 

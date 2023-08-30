@@ -1,7 +1,6 @@
 require "rails_helper"
 
-describe Admin::Poll::Questions::Answers::Documents::TableActionsComponent, controller: Admin::BaseController do
-  before { sign_in(create(:administrator).user) }
+describe Admin::Poll::Questions::Answers::Documents::TableActionsComponent, :admin do
   let(:future_answer) { create(:poll_question_answer, poll: create(:poll, :future)) }
   let(:current_answer) { create(:poll_question_answer, poll: create(:poll)) }
 

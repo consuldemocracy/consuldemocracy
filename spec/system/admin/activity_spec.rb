@@ -212,12 +212,12 @@ describe "Admin activity" do
 
   context "User" do
     scenario "Shows moderation activity on users" do
-      proposal = create(:proposal)
+      proposal = create(:proposal, author: create(:user, username: "Sam"))
 
       visit proposal_path(proposal)
 
       within("#proposal_#{proposal.id}") do
-        accept_confirm("Are you sure? This will hide the user \"#{proposal.author.name}\" and all their contents.") do
+        accept_confirm("Are you sure? This will hide the user \"Sam\" and all their contents.") do
           click_button "Block author"
         end
 

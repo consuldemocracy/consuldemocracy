@@ -195,10 +195,8 @@ describe Poll do
     let!(:current_poll) { create(:poll) }
     let!(:expired_poll) { create(:poll, :expired) }
 
-    let!(:current_restricted_poll) { create(:poll, geozone_restricted: true, geozones: [geozone]) }
-    let!(:expired_restricted_poll) do
-      create(:poll, :expired, geozone_restricted: true, geozones: [geozone])
-    end
+    let!(:current_restricted_poll) { create(:poll, geozone_restricted_to: [geozone]) }
+    let!(:expired_restricted_poll) { create(:poll, :expired, geozone_restricted_to: [geozone]) }
 
     let!(:all_polls) { [current_poll, expired_poll, current_poll, expired_restricted_poll] }
     let(:non_current_polls) { [expired_poll, expired_restricted_poll] }
@@ -490,8 +488,8 @@ describe Poll do
       poll1 = create(:poll, geozone_restricted: true)
       poll2 = create(:poll, geozone_restricted: true)
       poll3 = create(:poll)
-      poll_geozone_1 = create(:poll, geozone_restricted: true, geozones: [geozone])
-      poll_geozone_2 = create(:poll, geozone_restricted: true, geozones: [geozone])
+      poll_geozone_1 = create(:poll, geozone_restricted_to: [geozone])
+      poll_geozone_2 = create(:poll, geozone_restricted_to: [geozone])
       geozone_user = create(:user, :level_two, geozone: geozone)
 
       expect(Poll.sort_for_list).to eq [poll3, poll1, poll2, poll_geozone_1, poll_geozone_2]

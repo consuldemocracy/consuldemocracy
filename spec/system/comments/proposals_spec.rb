@@ -57,7 +57,10 @@ describe "Commenting proposals" do
   scenario "Collapsable comments" do
     parent_comment = create(:comment, body: "Main comment", commentable: proposal)
     child_comment  = create(:comment, body: "First subcomment", commentable: proposal, parent: parent_comment)
-    grandchild_comment = create(:comment, body: "Last subcomment", commentable: proposal, parent: child_comment)
+    grandchild_comment = create(:comment,
+                                body: "Last subcomment",
+                                commentable: proposal,
+                                parent: child_comment)
 
     visit proposal_path(proposal)
 
@@ -119,7 +122,7 @@ describe "Commenting proposals" do
     expect(c2.body).to appear_before(c3.body)
   end
 
-  scenario "Creation date works differently in roots and in child comments, when sorting by confidence_score" do
+  scenario "Creation date works differently in roots and child comments when sorting by confidence_score" do
     old_root = create(:comment, commentable: proposal, created_at: Time.current - 10)
     new_root = create(:comment, commentable: proposal, created_at: Time.current)
     old_child = create(:comment, commentable: proposal, parent_id: new_root.id, created_at: Time.current - 10)
@@ -156,7 +159,9 @@ describe "Commenting proposals" do
 
   scenario "Sanitizes comment body for security" do
     create :comment, commentable: proposal,
-                     body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
+                     body: "<script>alert('hola')</script> " \
+                           "<a href=\"javascript:alert('sorpresa!')\">click me<a/> " \
+                           "http://www.url.com"
 
     visit proposal_path(proposal)
 

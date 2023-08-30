@@ -53,7 +53,9 @@ describe "Tags" do
   end
 
   scenario "Show" do
-    investment = create(:budget_investment, heading: heading, tag_list: "#{tag_medio_ambiente.name}, #{tag_economia.name}")
+    investment = create(:budget_investment,
+                        heading: heading,
+                        tag_list: "#{tag_medio_ambiente.name}, #{tag_economia.name}")
 
     visit budget_investment_path(budget, investment)
 
@@ -157,7 +159,8 @@ describe "Tags" do
     fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
     check   "budget_investment_terms_of_service"
 
-    fill_in "budget_investment_tag_list", with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
+    fill_in "budget_investment_tag_list",
+            with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
 
     click_button "Create Investment"
 

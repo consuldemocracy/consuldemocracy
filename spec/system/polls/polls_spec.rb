@@ -215,8 +215,7 @@ describe "Polls" do
       visit polls_path
       expect(page).not_to have_selector(".already-answer")
 
-      poll.update!(geozone_restricted: true)
-      poll.geozones << geozone
+      poll.update!(geozone_restricted_to: [geozone])
 
       create(:poll_question, :yes_no, poll: poll)
 
@@ -238,8 +237,7 @@ describe "Polls" do
     end
 
     scenario "Level 2 users answering" do
-      poll.update!(geozone_restricted: true)
-      poll.geozones << geozone
+      poll.update!(geozone_restricted_to: [geozone])
 
       question = create(:poll_question, :yes_no, poll: poll)
       user = create(:user, :level_two, geozone: geozone)
@@ -256,8 +254,7 @@ describe "Polls" do
     end
 
     scenario "Level 2 users changing answer" do
-      poll.update!(geozone_restricted: true)
-      poll.geozones << geozone
+      poll.update!(geozone_restricted_to: [geozone])
 
       question = create(:poll_question, :yes_no, poll: poll)
       user = create(:user, :level_two, geozone: geozone)
@@ -293,7 +290,7 @@ describe "Polls" do
     scenario "Polls with users same-geozone listed first" do
       create(:poll, geozone_restricted: true, name: "A Poll")
       create(:poll, name: "Not restricted")
-      create(:poll, geozone_restricted: true, geozones: [geozone], name: "Geozone Poll")
+      create(:poll, geozone_restricted_to: [geozone], name: "Geozone Poll")
 
       login_as(create(:user, :level_two, geozone: geozone))
       visit polls_path(poll)
@@ -340,7 +337,8 @@ describe "Polls" do
       login_as user
       visit poll_path(poll)
 
-      expect(page).to have_content "You have already participated in a physical booth. You can not participate again."
+      expect(page).to have_content "You have already participated in a physical booth. " \
+                                   "You can not participate again."
 
       within("#poll_question_#{question.id}_answers") do
         expect(page).to have_content("Yes")

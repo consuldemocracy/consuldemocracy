@@ -1,9 +1,14 @@
-shared_examples "mappable" do |mappable_factory_name, mappable_association_name, mappable_new_path, mappable_edit_path, mappable_show_path, mappable_path_arguments: {}, management: false|
+shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
+                               mappable_new_path, mappable_edit_path, mappable_show_path,
+                               mappable_path_arguments: {},
+                               management: false|
   let!(:user)         { create(:user, :level_two) }
   let!(:arguments)    { {} }
   let!(:mappable)     { create(mappable_factory_name.to_s.to_sym) }
-  let!(:map_location) { create(:map_location, "#{mappable_factory_name}_map_location".to_sym, "#{mappable_association_name}": mappable) }
   let(:management)    { management }
+  let!(:map_location) do
+    create(:map_location, :"#{mappable_factory_name}_map_location", "#{mappable_association_name}": mappable)
+  end
 
   before do
     Setting["feature.map"] = true
@@ -181,8 +186,10 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       visit send(mappable_edit_path, id: mappable.id)
 
       expect(page).to have_content "Navigate the map to the location and place the marker."
-      expect(page).to have_field "#{mappable_factory_name}_map_location_attributes_latitude", type: :hidden, with: "51.48"
-      expect(page).to have_field "#{mappable_factory_name}_map_location_attributes_longitude", type: :hidden, with: "0.0"
+      expect(page).to have_field "#{mappable_factory_name}_map_location_attributes_latitude", type: :hidden,
+                                                                                              with: "51.48"
+      expect(page).to have_field "#{mappable_factory_name}_map_location_attributes_longitude", type: :hidden,
+                                                                                               with: "0.0"
     end
 
     scenario "Should edit default values from map on #{mappable_factory_name} edit page" do

@@ -22,7 +22,8 @@ class Admin::Api::StatsController < Admin::Api::BaseController
     end
 
     if params[:user_supported_budgets].present?
-      ds.add "User supported budgets", Vote.where(votable_type: "Budget::Investment").group_by_day(:updated_at).count
+      ds.add "User supported budgets",
+             Vote.where(votable_type: "Budget::Investment").group_by_day(:updated_at).count
     end
     render json: ds.build
   end

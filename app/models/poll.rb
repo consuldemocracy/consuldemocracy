@@ -57,7 +57,8 @@ class Poll < ApplicationRecord
 
   def self.sort_for_list(user = nil)
     all.sort do |poll, another_poll|
-      [poll.weight(user), poll.starts_at, poll.name] <=> [another_poll.weight(user), another_poll.starts_at, another_poll.name]
+      [poll.weight(user), poll.starts_at, poll.name] <=>
+        [another_poll.weight(user), another_poll.starts_at, another_poll.name]
     end
   end
 
@@ -179,6 +180,11 @@ class Poll < ApplicationRecord
     if will_save_change_to_ends_at? && ends_at_in_database < Time.current
       errors.add(:ends_at, I18n.t("errors.messages.cannot_change_date.poll_ended"))
     end
+  end
+
+  def geozone_restricted_to=(geozones)
+    self.geozone_restricted = true
+    self.geozones = geozones
   end
 
   def generate_slug?

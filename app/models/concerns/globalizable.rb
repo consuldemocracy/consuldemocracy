@@ -83,9 +83,10 @@ module Globalizable
     def validates_translation(method, options = {})
       validates(method, options.merge(if: lambda { |resource| resource.translations.blank? }))
       if options.include?(:length)
-        lenght_validate = { length: options[:length] }
         translation_class.instance_eval do
-          validates method, lenght_validate.merge(if: lambda { |translation| translation.locale == I18n.default_locale })
+          validates method,
+                    length: options[:length],
+                    if: lambda { |translation| translation.locale == I18n.default_locale }
         end
         if options.count > 1
           translation_class.instance_eval do
@@ -112,7 +113,9 @@ module Globalizable
       translations_ids = translation_class
                          .select("DISTINCT ON (#{translations_foreign_key}) id")
                          .where(locale: fallbacks)
-                         .joins("LEFT JOIN (VALUES #{fallbacks_with_order}) AS locales(name, ordering) ON locale = locales.name")
+                         .joins("LEFT JOIN (VALUES #{fallbacks_with_order}) " \
+                                "AS locales(name, ordering) " \
+                                "ON locale = locales.name")
                          .order(translations_foreign_key, "locales.ordering")
 
       with_translations(fallbacks).where("#{translations_table_name}.id": translations_ids)

@@ -6,10 +6,24 @@ describe "Results" do
   let(:heading) { create(:budget_heading, group: group, price: 1000) }
 
   before do
-    create(:budget_investment, :selected, title: "First selected", heading: heading, price: 200, ballot_lines_count: 900)
-    create(:budget_investment, :selected, title: "Second selected", heading: heading, price: 300, ballot_lines_count: 800)
-    create(:budget_investment, :incompatible, title: "Incompatible investment", heading: heading, price: 500, ballot_lines_count: 700)
-    create(:budget_investment, :selected, title: "Exceeding price", heading: heading, price: 600, ballot_lines_count: 600)
+    create(:budget_investment, :selected, title: "First selected",
+                                          heading: heading,
+                                          price: 200,
+                                          ballot_lines_count: 900)
+
+    create(:budget_investment, :selected, title: "Second selected",
+                                          heading: heading, price: 300,
+                                          ballot_lines_count: 800)
+
+    create(:budget_investment, :incompatible, title: "Incompatible investment",
+                                              heading: heading,
+                                              price: 500,
+                                              ballot_lines_count: 700)
+
+    create(:budget_investment, :selected, title: "Exceeding price",
+                                          heading: heading,
+                                          price: 600,
+                                          ballot_lines_count: 600)
 
     Budget::Result.new(budget, heading).calculate_winners
   end

@@ -2,7 +2,9 @@ require "rails_helper"
 
 describe "Official positions" do
   context "Badge" do
-    let(:user1) { create(:user, official_level: 1, official_position: "Employee", official_position_badge: true) }
+    let(:user1) do
+      create(:user, official_level: 1, official_position: "Employee", official_position_badge: true)
+    end
     let(:user2) { create(:user, official_level: 0, official_position: "") }
 
     scenario "Comments" do

@@ -217,7 +217,9 @@ describe "Machine learning" do
              updated_at: 2.minutes.from_now)
       comments_file = MachineLearning.data_folder.join(MachineLearning.comments_filename)
       File.write(comments_file, [].to_json)
-      proposals_comments_summary_file = MachineLearning.data_folder.join(MachineLearning.proposals_comments_summary_filename)
+      proposals_comments_summary_file = MachineLearning
+                                        .data_folder
+                                        .join(MachineLearning.proposals_comments_summary_filename)
       File.write(proposals_comments_summary_file, [].to_json)
     end
 

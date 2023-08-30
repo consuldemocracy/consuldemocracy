@@ -19,7 +19,7 @@ class Officing::VotersController < Officing::BaseController
                              poll: @poll,
                              origin: "booth",
                              officer: current_user.poll_officer,
-                             booth_assignment: Poll::BoothAssignment.find_by(poll: @poll, booth: current_booth),
+                             booth_assignment: current_booth.booth_assignments.find_by(poll: @poll),
                              officer_assignment: officer_assignment(@poll))
     @voter.save!
   end

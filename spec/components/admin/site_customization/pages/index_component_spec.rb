@@ -1,6 +1,7 @@
 require "rails_helper"
 
-describe Admin::SiteCustomization::Pages::IndexComponent, controller: Admin::SiteCustomization::PagesController do
+describe Admin::SiteCustomization::Pages::IndexComponent,
+         controller: Admin::SiteCustomization::PagesController do
   before { SiteCustomization::Page.delete_all }
 
   it "shows date in created_at and updated_at fields" do

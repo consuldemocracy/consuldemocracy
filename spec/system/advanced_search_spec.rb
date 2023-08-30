@@ -197,9 +197,13 @@ describe "Advanced search" do
       Setting["feature.sdg"] = true
       Setting["sdg.process.budgets"] = true
 
-      create(:budget_investment, heading: heading, title: "Get Schwifty", sdg_goals: [SDG::Goal[7]], created_at: 1.minute.ago)
-      create(:budget_investment, heading: heading, title: "Hello Schwifty", sdg_goals: [SDG::Goal[7]], created_at: 2.days.ago)
-      create(:budget_investment, heading: heading, title: "Save the forest")
+      [
+        { title: "Get Schwifty", sdg_goals: [SDG::Goal[7]], created_at: 1.minute.ago },
+        { title: "Hello Schwifty", sdg_goals: [SDG::Goal[7]], created_at: 2.days.ago },
+        { title: "Save the forest" }
+      ].each do |attributes|
+        create(:budget_investment, attributes.merge(heading: heading))
+      end
 
       visit budget_investments_path(budget)
 
@@ -250,9 +254,11 @@ describe "Advanced search" do
       expect(page).to have_content("citizen proposals cannot be found")
 
       within ".advanced-search-form" do
-        expect(page).to have_select("advanced_search[date_min]", selected: "Customized")
-        expect(page).to have_selector("input[name='advanced_search[date_min]'][value*='#{7.days.ago.strftime("%d/%m/%Y")}']")
-        expect(page).to have_selector("input[name='advanced_search[date_max]'][value*='#{1.day.ago.strftime("%d/%m/%Y")}']")
+        expect(page).to have_select "advanced_search[date_min]", selected: "Customized"
+        expect(page).to have_selector "input[name='advanced_search[date_min]']" \
+                                      "[value*='#{7.days.ago.strftime("%d/%m/%Y")}']"
+        expect(page).to have_selector "input[name='advanced_search[date_max]']" \
+                                      "[value*='#{1.day.ago.strftime("%d/%m/%Y")}']"
       end
     end
   end

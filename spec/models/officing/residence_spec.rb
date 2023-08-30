@@ -130,13 +130,15 @@ describe Officing::Residence do
 
     describe "allowed age" do
       it "is not valid if user is under allowed age" do
-        allow_any_instance_of(Officing::Residence).to receive(:response_date_of_birth).and_return(15.years.ago)
+        allow(residence).to receive(:response_date_of_birth).and_return(15.years.ago)
+
         expect(residence).not_to be_valid
         expect(residence.errors[:year_of_birth]).to include("You don't have the required age to participate")
       end
 
       it "is valid if user is above allowed age" do
-        allow_any_instance_of(Officing::Residence).to receive(:response_date_of_birth).and_return(16.years.ago)
+        allow(residence).to receive(:response_date_of_birth).and_return(16.years.ago)
+
         expect(residence).to be_valid
         expect(residence.errors[:year_of_birth]).to be_empty
       end
@@ -194,7 +196,11 @@ describe Officing::Residence do
     end
 
     it "makes half-verified users fully verified" do
-      user = create(:user, residence_verified_at: Time.current, document_type: "1", document_number: "12345678Z")
+      user = create(:user,
+                    residence_verified_at: Time.current,
+                    document_type: "1",
+                    document_number: "12345678Z")
+
       expect(user).to be_unverified
       residence = build(:officing_residence, document_number: "12345678Z", year_of_birth: 1980)
       expect(residence).to be_valid

@@ -24,7 +24,10 @@ class Management::UsersController < Management::BaseController
   end
 
   def erase
-    managed_user.erase(t("management.users.erased_by_manager", manager: current_manager["login"])) if current_manager.present?
+    if current_manager.present?
+      managed_user.erase(t("management.users.erased_by_manager", manager: current_manager["login"]))
+    end
+
     destroy_session
     redirect_to management_document_verifications_path, notice: t("management.users.erased_notice")
   end

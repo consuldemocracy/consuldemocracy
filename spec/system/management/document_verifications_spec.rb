@@ -44,7 +44,7 @@ describe "DocumentVerifications" do
         expect(page).to have_content "This document is not registered"
       end
 
-      scenario "Verifying a user which does exists in the census but not in the db redirects allows sending an email" do
+      scenario "Verifying a user who exists in the census but not in the db allows sending an email" do
         login_as_manager
         visit management_document_verifications_path
         fill_in "document_verification_document_number", with: "12345678Z"

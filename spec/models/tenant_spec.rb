@@ -135,7 +135,7 @@ describe Tenant do
       expect { Tenant.resolve_host("www.consul.dev") }.to raise_exception(Apartment::TenantNotFound)
     end
 
-    it "raises an exception when accessing a hidden tenant with a domain and another tenant resolves to the same domain" do
+    it "raises an exception with a hidden tenant's domain when another tenant resolves to the same domain" do
       insert(:tenant, :domain, schema: "saturn.consul.dev", hidden_at: Time.current)
       insert(:tenant, schema: "saturn")
 

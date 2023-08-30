@@ -46,7 +46,9 @@ describe Legislation::Question do
 
   describe "#next_question_id" do
     let!(:question1) { create(:legislation_question) }
-    let!(:question2) { create(:legislation_question, legislation_process_id: question1.legislation_process_id) }
+    let!(:question2) do
+      create(:legislation_question, legislation_process_id: question1.legislation_process_id)
+    end
 
     it "returns the next question" do
       expect(question1.next_question_id).to eq(question2.id)
@@ -59,7 +61,9 @@ describe Legislation::Question do
 
   describe "#first_question_id" do
     let!(:question1) { create(:legislation_question) }
-    let!(:question2) { create(:legislation_question, legislation_process_id: question1.legislation_process_id) }
+    let!(:question2) do
+      create(:legislation_question, legislation_process_id: question1.legislation_process_id)
+    end
 
     it "returns the first question" do
       expect(question1.first_question_id).to eq(question1.id)

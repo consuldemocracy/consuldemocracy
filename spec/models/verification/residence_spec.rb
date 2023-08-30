@@ -11,13 +11,17 @@ describe Verification::Residence do
 
     describe "dates" do
       it "is valid with a valid date of birth" do
-        residence = Verification::Residence.new("date_of_birth(3i)" => "1", "date_of_birth(2i)" => "1", "date_of_birth(1i)" => "1980")
+        residence = Verification::Residence.new("date_of_birth(3i)" => "1",
+                                                "date_of_birth(2i)" => "1",
+                                                "date_of_birth(1i)" => "1980")
 
         expect(residence.errors[:date_of_birth]).to be_empty
       end
 
       it "is not valid without a date of birth" do
-        residence = Verification::Residence.new("date_of_birth(3i)" => "", "date_of_birth(2i)" => "", "date_of_birth(1i)" => "")
+        residence = Verification::Residence.new("date_of_birth(3i)" => "",
+                                                "date_of_birth(2i)" => "",
+                                                "date_of_birth(1i)" => "")
         expect(residence).not_to be_valid
         expect(residence.errors[:date_of_birth]).to include("can't be blank")
       end

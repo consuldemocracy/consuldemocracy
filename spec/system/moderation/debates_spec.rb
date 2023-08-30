@@ -180,8 +180,14 @@ describe "Moderate debates" do
     end
 
     scenario "sorting debates" do
-      flagged_debate = create(:debate, title: "Flagged debate", created_at: 1.day.ago, flags_count: 5)
-      flagged_new_debate = create(:debate, title: "Flagged new debate", created_at: 12.hours.ago, flags_count: 3)
+      flagged_debate = create(:debate,
+                              title: "Flagged debate",
+                              created_at: 1.day.ago,
+                              flags_count: 5)
+      flagged_new_debate = create(:debate,
+                                  title: "Flagged new debate",
+                                  created_at: 12.hours.ago,
+                                  flags_count: 3)
       newer_debate = create(:debate, title: "Newer debate", created_at: Time.current)
 
       visit moderation_debates_path(order: "created_at")

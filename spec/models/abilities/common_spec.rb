@@ -25,29 +25,41 @@ describe Abilities::Common do
   let(:investment_in_reviewing_budget) { create(:budget_investment, budget: reviewing_budget) }
   let(:investment_in_selecting_budget) { create(:budget_investment, budget: selecting_budget) }
   let(:investment_in_balloting_budget) { create(:budget_investment, budget: balloting_budget) }
-  let(:own_investment_in_accepting_budget) { create(:budget_investment, budget: accepting_budget, author: user) }
-  let(:own_investment_in_reviewing_budget) { create(:budget_investment, budget: reviewing_budget, author: user) }
-  let(:own_investment_in_selecting_budget) { create(:budget_investment, budget: selecting_budget, author: user) }
-  let(:own_investment_in_balloting_budget) { create(:budget_investment, budget: balloting_budget, author: user) }
+  let(:own_investment_in_accepting_budget) do
+    create(:budget_investment, budget: accepting_budget, author: user)
+  end
+  let(:own_investment_in_reviewing_budget) do
+    create(:budget_investment, budget: reviewing_budget, author: user)
+  end
+  let(:own_investment_in_selecting_budget) do
+    create(:budget_investment, budget: selecting_budget, author: user)
+  end
+  let(:own_investment_in_balloting_budget) do
+    create(:budget_investment, budget: balloting_budget, author: user)
+  end
   let(:ballot_in_accepting_budget) { create(:budget_ballot, budget: accepting_budget) }
   let(:ballot_in_selecting_budget) { create(:budget_ballot, budget: selecting_budget) }
   let(:ballot_in_balloting_budget) { create(:budget_ballot, budget: balloting_budget) }
 
   let(:current_poll) { create(:poll) }
   let(:expired_poll) { create(:poll, :expired) }
-  let(:expired_poll_from_own_geozone) { create(:poll, :expired, geozone_restricted: true, geozones: [geozone]) }
-  let(:expired_poll_from_other_geozone) { create(:poll, :expired, geozone_restricted: true, geozones: [create(:geozone)]) }
+  let(:expired_poll_from_own_geozone) { create(:poll, :expired, geozone_restricted_to: [geozone]) }
+  let(:expired_poll_from_other_geozone) { create(:poll, :expired, geozone_restricted_to: [create(:geozone)]) }
   let(:poll) { create(:poll, geozone_restricted: false) }
-  let(:poll_from_own_geozone) { create(:poll, geozone_restricted: true, geozones: [geozone]) }
-  let(:poll_from_other_geozone) { create(:poll, geozone_restricted: true, geozones: [create(:geozone)]) }
+  let(:poll_from_own_geozone) { create(:poll, geozone_restricted_to: [geozone]) }
+  let(:poll_from_other_geozone) { create(:poll, geozone_restricted_to: [create(:geozone)]) }
 
   let(:poll_question_from_own_geozone)   { create(:poll_question, poll: poll_from_own_geozone) }
   let(:poll_question_from_other_geozone) { create(:poll_question, poll: poll_from_other_geozone) }
   let(:poll_question_from_all_geozones)  { create(:poll_question, poll: poll) }
 
-  let(:expired_poll_question_from_own_geozone)   { create(:poll_question, poll: expired_poll_from_own_geozone) }
-  let(:expired_poll_question_from_other_geozone) { create(:poll_question, poll: expired_poll_from_other_geozone) }
-  let(:expired_poll_question_from_all_geozones)  { create(:poll_question, poll: expired_poll) }
+  let(:expired_poll_question_from_own_geozone) do
+    create(:poll_question, poll: expired_poll_from_own_geozone)
+  end
+  let(:expired_poll_question_from_other_geozone) do
+    create(:poll_question, poll: expired_poll_from_other_geozone)
+  end
+  let(:expired_poll_question_from_all_geozones) { create(:poll_question, poll: expired_poll) }
 
   let(:own_proposal_document)          { build(:document, documentable: own_proposal) }
   let(:proposal_document)              { build(:document, documentable: proposal) }
@@ -265,9 +277,9 @@ describe Abilities::Common do
       it { should be_able_to(:create, user.votes.build(votable: investment_in_selecting_budget)) }
       it { should_not be_able_to(:create, user.votes.build(votable: investment_in_accepting_budget)) }
       it { should_not be_able_to(:create, user.votes.build(votable: investment_in_balloting_budget)) }
-      it { should be_able_to(:destroy, create(:vote, voter: user, votable: investment_in_selecting_budget)) }
-      it { should_not be_able_to(:destroy, create(:vote, voter: user, votable: investment_in_accepting_budget)) }
-      it { should_not be_able_to(:destroy, create(:vote, voter: user, votable: investment_in_balloting_budget)) }
+      it { should be_able_to(:destroy, user.votes.create!(votable: investment_in_selecting_budget)) }
+      it { should_not be_able_to(:destroy, user.votes.create!(votable: investment_in_accepting_budget)) }
+      it { should_not be_able_to(:destroy, user.votes.create!(votable: investment_in_balloting_budget)) }
 
       it { should_not be_able_to(:destroy, investment_in_accepting_budget) }
       it { should_not be_able_to(:destroy, investment_in_reviewing_budget) }

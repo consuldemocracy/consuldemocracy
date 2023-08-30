@@ -22,13 +22,15 @@ class MachineLearning
 
       return unless run_machine_learning_scripts
 
-      if updated_file?(MachineLearning.proposals_taggings_filename) && updated_file?(MachineLearning.proposals_tags_filename)
+      if updated_file?(MachineLearning.proposals_taggings_filename) &&
+         updated_file?(MachineLearning.proposals_tags_filename)
         cleanup_proposals_tags!
         import_ml_proposals_tags
         update_machine_learning_info_for("tags")
       end
 
-      if updated_file?(MachineLearning.investments_taggings_filename) && updated_file?(MachineLearning.investments_tags_filename)
+      if updated_file?(MachineLearning.investments_taggings_filename) &&
+         updated_file?(MachineLearning.investments_tags_filename)
         cleanup_investments_tags!
         import_ml_investments_tags
         update_machine_learning_info_for("tags")
@@ -95,14 +97,32 @@ class MachineLearning
     def data_output_files
       files = { tags: [], related_content: [], comments_summary: [] }
 
-      files[:tags] << proposals_tags_filename if File.exist?(data_folder.join(proposals_tags_filename))
-      files[:tags] << proposals_taggings_filename if File.exist?(data_folder.join(proposals_taggings_filename))
-      files[:tags] << investments_tags_filename if File.exist?(data_folder.join(investments_tags_filename))
-      files[:tags] << investments_taggings_filename if File.exist?(data_folder.join(investments_taggings_filename))
-      files[:related_content] << proposals_related_filename if File.exist?(data_folder.join(proposals_related_filename))
-      files[:related_content] << investments_related_filename if File.exist?(data_folder.join(investments_related_filename))
-      files[:comments_summary] << proposals_comments_summary_filename if File.exist?(data_folder.join(proposals_comments_summary_filename))
-      files[:comments_summary] << investments_comments_summary_filename if File.exist?(data_folder.join(investments_comments_summary_filename))
+      if File.exist?(data_folder.join(proposals_tags_filename))
+        files[:tags] << proposals_tags_filename
+      end
+      if File.exist?(data_folder.join(proposals_taggings_filename))
+        files[:tags] << proposals_taggings_filename
+      end
+      if File.exist?(data_folder.join(investments_tags_filename))
+        files[:tags] << investments_tags_filename
+      end
+      if File.exist?(data_folder.join(investments_taggings_filename))
+        files[:tags] << investments_taggings_filename
+      end
+
+      if File.exist?(data_folder.join(proposals_related_filename))
+        files[:related_content] << proposals_related_filename
+      end
+      if File.exist?(data_folder.join(investments_related_filename))
+        files[:related_content] << investments_related_filename
+      end
+
+      if File.exist?(data_folder.join(proposals_comments_summary_filename))
+        files[:comments_summary] << proposals_comments_summary_filename
+      end
+      if File.exist?(data_folder.join(investments_comments_summary_filename))
+        files[:comments_summary] << investments_comments_summary_filename
+      end
 
       files
     end

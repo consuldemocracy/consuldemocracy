@@ -661,7 +661,10 @@ describe "Budget Investments" do
 
       expect(page).not_to have_content("#{heading.name} (#{budget.formatted_heading_price(heading)})")
       expect(page).to have_select "Heading",
-                                  options: ["", "Health: More hospitals", "Health: Medical supplies", "Education: Schools"]
+                                  options: ["",
+                                            "Health: More hospitals",
+                                            "Health: Medical supplies",
+                                            "Education: Schools"]
 
       select "Health: Medical supplies", from: "Heading"
 
@@ -691,7 +694,11 @@ describe "Budget Investments" do
     scenario "Edit" do
       daniel = create(:user, :level_two)
 
-      create(:budget_investment, heading: heading, title: "Get Schwifty", author: daniel, created_at: 1.day.ago)
+      create(:budget_investment,
+             heading: heading,
+             title: "Get Schwifty",
+             author: daniel,
+             created_at: 1.day.ago)
 
       login_as(daniel)
 
@@ -1101,9 +1108,15 @@ describe "Budget Investments" do
     expect(page).not_to have_content("Local government is not competent in this matter")
   end
 
-  it_behaves_like "followable", "budget_investment", "budget_investment_path", { budget_id: "budget_id", id: "id" }
+  it_behaves_like "followable",
+                  "budget_investment",
+                  "budget_investment_path",
+                  { budget_id: "budget_id", id: "id" }
 
-  it_behaves_like "imageable", "budget_investment", "budget_investment_path", { budget_id: "budget_id", id: "id" }
+  it_behaves_like "imageable",
+                  "budget_investment",
+                  "budget_investment_path",
+                  { budget_id: "budget_id", id: "id" }
 
   it_behaves_like "nested imageable",
                   "budget_investment",
@@ -1113,7 +1126,10 @@ describe "Budget Investments" do
                   "Create Investment",
                   "Budget Investment created successfully."
 
-  it_behaves_like "documentable", "budget_investment", "budget_investment_path", { budget_id: "budget_id", id: "id" }
+  it_behaves_like "documentable",
+                  "budget_investment",
+                  "budget_investment_path",
+                  { budget_id: "budget_id", id: "id" }
 
   it_behaves_like "nested documentable",
                   "user",
@@ -1383,11 +1399,17 @@ describe "Budget Investments" do
     end
 
     scenario "Order by cost (only when balloting)" do
-      mid_investment = create(:budget_investment, :selected, heading: heading, title: "Build a nice house", price: 1000)
+      mid_investment = create(:budget_investment, :selected, heading: heading,
+                                                             title: "Build a nice house",
+                                                             price: 1000)
       mid_investment.update_column(:confidence_score, 10)
-      low_investment = create(:budget_investment, :selected, heading: heading, title: "Build an ugly house", price: 1000)
+      low_investment = create(:budget_investment, :selected, heading: heading,
+                                                             title: "Build an ugly house",
+                                                             price: 1000)
       low_investment.update_column(:confidence_score, 5)
-      high_investment = create(:budget_investment, :selected, heading: heading, title: "Build a skyscraper", price: 20000)
+      high_investment = create(:budget_investment, :selected, heading: heading,
+                                                              title: "Build a skyscraper",
+                                                              price: 20000)
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
@@ -1699,8 +1721,23 @@ describe "Budget Investments" do
     end
 
     scenario "Shows the polygon associated to the current heading" do
-      triangle = '{ "geometry": { "type": "Polygon", "coordinates": [[-0.1,51.5],[-0.2,51.4],[-0.3,51.6]] } }'
-      rectangle = '{ "geometry": { "type": "Polygon", "coordinates": [[-0.1,51.5],[-0.2,51.5],[-0.2,51.6],[-0.1,51.6]] } }'
+      triangle = <<~JSON
+        {
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [[-0.1,51.5],[-0.2,51.4],[-0.3,51.6]]
+          }
+        }
+      JSON
+
+      rectangle = <<~JSON
+        {
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [[-0.1,51.5],[-0.2,51.5],[-0.2,51.6],[-0.1,51.6]]
+          }
+        }
+      JSON
 
       park = create(:geozone, geojson: triangle, color: "#03ee03")
       square = create(:geozone, geojson: rectangle, color: "#ff04ff")

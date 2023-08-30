@@ -94,6 +94,14 @@ RSpec.configure do |config|
     sign_in(nil)
   end
 
+  config.before(:each, :admin, type: :component) do
+    sign_in(create(:administrator).user)
+  end
+
+  config.around(:each, :admin, type: :component) do |example|
+    with_controller_class(Admin::BaseController) { example.run }
+  end
+
   config.around(:each, :controller, type: :component) do |example|
     with_controller_class(example.metadata[:controller]) { example.run }
   end
@@ -137,7 +145,7 @@ RSpec.configure do |config|
 
   config.before(:each, :remote_translations) do
     allow(RemoteTranslations::Microsoft::AvailableLocales)
-      .to receive(:available_locales).and_return(I18n.available_locales.map(&:to_s))
+      .to receive(:locales).and_return(I18n.available_locales.map(&:to_s))
   end
 
   config.around(:each, :with_frozen_time) do |example|

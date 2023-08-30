@@ -714,7 +714,8 @@ describe Budget::Investment do
         unselected_undecided_investment = create(:budget_investment, :unselected, :undecided)
         unselected_feasible_investment = create(:budget_investment, :unselected, :feasible)
 
-        expect(Budget::Investment.unselected).to match_array [unselected_undecided_investment, unselected_feasible_investment]
+        expect(Budget::Investment.unselected).to match_array [unselected_undecided_investment,
+                                                              unselected_feasible_investment]
       end
 
       it "does not return selected investments" do
@@ -732,8 +733,17 @@ describe Budget::Investment do
 
     describe "sort_by_title" do
       it "sorts using the title in the current locale" do
-        create(:budget_investment, title_en: "CCCC", title_es: "BBBB", description_en: "CCCC", description_es: "BBBB")
-        create(:budget_investment, title_en: "DDDD", title_es: "AAAA", description_en: "DDDD", description_es: "AAAA")
+        create(:budget_investment,
+               title_en: "CCCC",
+               title_es: "BBBB",
+               description_en: "CCCC",
+               description_es: "BBBB")
+
+        create(:budget_investment,
+               title_en: "DDDD",
+               title_es: "AAAA",
+               description_en: "DDDD",
+               description_es: "AAAA")
 
         expect(Budget::Investment.sort_by_title.map(&:title)).to eq %w[CCCC DDDD]
       end
@@ -1311,7 +1321,7 @@ describe Budget::Investment do
     end
 
     describe "check_for_reclassification" do
-      it "stores reclassfied votes and removes actual votes if an investment has been reclassified" do
+      it "removes votes and stores reclassfied votes if an investment has been reclassified" do
         investment = create(:budget_investment, :selected, heading: heading1)
 
         3.times { create(:user, ballot_lines: [investment]) }
@@ -1326,7 +1336,7 @@ describe Budget::Investment do
         expect(Budget::ReclassifiedVote.count).to eq(3)
       end
 
-      it "does not store reclassified votes nor remove actual votes if the investment has not been reclassifed" do
+      it "does not remove votes nor store reclassified votes if the investment has not been reclassifed" do
         investment = create(:budget_investment, :selected, heading: heading1)
 
         3.times { create(:user, ballot_lines: [investment]) }

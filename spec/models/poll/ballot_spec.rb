@@ -7,7 +7,9 @@ describe Poll::Ballot do
   let(:investment) { create(:budget_investment, :selected, price: 5000000, heading: heading) }
   let(:poll) { create(:poll, budget: budget) }
   let(:poll_ballot_sheet) { create(:poll_ballot_sheet, poll: poll) }
-  let(:poll_ballot) { create(:poll_ballot, ballot_sheet: poll_ballot_sheet, external_id: 1, data: investment.id) }
+  let(:poll_ballot) do
+    create(:poll_ballot, ballot_sheet: poll_ballot_sheet, external_id: 1, data: investment.id)
+  end
   before { create(:budget_ballot, budget: budget, physical: true, poll_ballot: poll_ballot) }
 
   describe "#verify" do
@@ -19,7 +21,7 @@ describe Poll::Ballot do
       poll_ballot.update!(data: [investment.id, investment2.id, investment3.id, investment4.id].join(","))
       poll_ballot.verify
 
-      expect(poll_ballot.ballot.lines.pluck(:investment_id)).to match_array [investment.id, investment2.id, investment3.id]
+      expect(poll_ballot.ballot.investment_ids).to match_array [investment.id, investment2.id, investment3.id]
     end
 
     it "adds ballot lines if they are from valid headings" do
@@ -32,7 +34,7 @@ describe Poll::Ballot do
       poll_ballot.update!(data: [investment.id, investment2.id, investment3.id, investment4.id].join(","))
       poll_ballot.verify
 
-      expect(poll_ballot.ballot.lines.pluck(:investment_id)).to match_array [investment.id, investment2.id, investment3.id]
+      expect(poll_ballot.ballot.investment_ids).to match_array [investment.id, investment2.id, investment3.id]
     end
 
     it "adds ballot lines if they are from selectable" do
@@ -43,7 +45,7 @@ describe Poll::Ballot do
       poll_ballot.update!(data: [investment.id, investment2.id, investment3.id, investment4.id].join(","))
       poll_ballot.verify
 
-      expect(poll_ballot.ballot.lines.pluck(:investment_id)).to match_array [investment.id, investment2.id, investment3.id]
+      expect(poll_ballot.ballot.investment_ids).to match_array [investment.id, investment2.id, investment3.id]
     end
   end
 

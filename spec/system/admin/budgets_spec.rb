@@ -198,7 +198,9 @@ describe "Admin budgets", :admin do
     scenario "Destroy a budget without investments" do
       visit admin_budget_path(budget)
 
-      message = "Are you sure? This will delete the budget and all its associated groups and headings. This action cannot be undone."
+      message = "Are you sure? " \
+                "This will delete the budget and all its associated groups and headings. " \
+                "This action cannot be undone."
 
       accept_confirm(message) { click_button "Delete budget" }
 
