@@ -388,7 +388,7 @@ GEM
       rack
     orm_adapter (0.5.0)
     parallel (1.22.1)
-    paranoia (2.6.0)
+    paranoia (2.6.2)
       activerecord (>= 5.1, < 7.1)
     parser (3.2.2.3)
       ast (~> 2.4.1)
@@ -709,7 +709,7 @@ DEPENDENCIES
   omniauth-google-oauth2 (~> 1.0.1)
   omniauth-rails_csrf_protection (~> 1.0.1)
   omniauth-twitter (~> 1.4.0)
-  paranoia (~> 2.6.0)
+  paranoia (~> 2.6.2)
   pg (~> 1.4.3)
   pg_search (~> 2.3.6)
   pronto (~> 0.11.0)
