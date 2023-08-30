@@ -1497,8 +1497,24 @@ nl:
           destroy:
             notice: "Tegel verwijderd"
     tenants:
+      create:
+        notice: Tenant aangemaakt
+      form:
+        use_subdomain: "Gebruik een subdomein van het %{domain} domein voor deze tenant"
+        use_domain: "Gebruik een andere domeinnaam voor deze tenant"
+      hide:
+        notice: Tenant uitgeschakeld
       index:
+        create: Tenant aanmaken
+        enable: "Schakel tenant %{tenant} in"
         enabled: Ingeschakeld
+      new:
+        admin_information: "Bij het aanmaken van een tenant, wordt de huidige gebruiker <strong>\"%{username}\"</strong> met het e-mailadres <strong>\"%{email}\"</strong> en het wachtwoord gekopieerd naar de nieuwe tenant waar deze automatisch administrator wordt."
+        title: Nieuwe tenant
+      restore:
+        notice: Tenant ingeschakeld
+      update:
+        notice: Tenant bijgewerkt
     homepage:
       title: Homepage
       description: De actieve modules worden weergegeven op de homepage in dezelfde volgorde als hier.
