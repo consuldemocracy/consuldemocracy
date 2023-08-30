@@ -17,7 +17,7 @@
     <% end %>
 
     <div class="small-12 medium-8 column">
-      <%= t("layouts.footer.copyright", version: "1.5.0", year: Time.current.year) %>
+      <%= t("layouts.footer.copyright", year: Time.current.year) %>&nbsp;|
       <ul class="no-bullet inline-block">
         <li class="inline-block"><%= link_to t("layouts.footer.privacy"), page_path("privacy") %>&nbsp;|</li>
         <li class="inline-block"><%= link_to t("layouts.footer.conditions"), page_path("conditions") %>&nbsp;|</li>
@@ -28,13 +28,13 @@
     <%= render Layout::SocialComponent.new %>
   </div>
 
-  <div class="row">
-    <div class="small-12 column">
-      <p class="info">
-        <%= sanitize(t("layouts.footer.description",
+  <!--  <div class="row">-->
+  <!--    <div class="small-12 column">-->
+  <!--      <p class="info">-->
+  <%# sanitize(t("layouts.footer.description",
             open_source: link_to(t("layouts.footer.open_source"), t("layouts.footer.open_source_url"), target: "blank", rel: "nofollow"),
             consul:  link_to(t("layouts.footer.consul"), t("layouts.footer.consul_url"), target: "blank", rel: "nofollow"))) %>
-      </p>
-    </div>
-  </div>
+  <!--      </p>-->
+  <!--    </div>-->
+  <!--  </div>-->
 </footer>

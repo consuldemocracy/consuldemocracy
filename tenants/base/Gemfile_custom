@@ -2,9 +2,10 @@
 
 ###### Application monitoring services ######
 #
-# By default Consul supports the Errbit self-hosted error monitoring service,
-# through the Airbrake gem. That means Consul also supports using Airbrake as
-# an external service to monitor errors and application performance.
+# By default Consul Democracy supports the Errbit self-hosted error monitoring
+# service, through the Airbrake gem. That means Consul Democracy also supports
+# using Airbrake as an external service to monitor errors and application
+# performance.
 #
 # Here are some other services which can be used to monitor application errors
 # and performance.

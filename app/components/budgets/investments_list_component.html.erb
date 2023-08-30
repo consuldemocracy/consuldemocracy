@@ -10,6 +10,16 @@
   </section>
 <% end %>
 
+<%# if budget.single_heading? && !budget.informing? || investments.any? %>
+<%#= render "budgets/all_investments_link", budget: budget %>
+<%# end %>
+
 <% if budget.single_heading? && !budget.informing? || investments.any? %>
-  <%= render "budgets/all_investments_link", budget: budget %>
+  <div class="row margin-top">
+    <div class="small-12 medium-6 large-4 small-centered column margin-top">
+      <%= link_to t("budgets.investments_list.see_all"),
+                  see_all_path,
+                  class: "button expanded" %>
+    </div>
+  </div>
 <% end %>

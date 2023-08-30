@@ -1,29 +1,17 @@
 require "rails_helper"
 
 describe Budget::Phase do
-  let(:budget)          { create(:budget) }
+  let(:budget) { create(:budget) }
   let(:informing_phase) { budget.phases.informing }
   let(:accepting_phase) { budget.phases.accepting }
   let(:reviewing_phase) { budget.phases.reviewing }
-  let(:finished_phase)  { budget.phases.finished }
+  let(:finished_phase) { budget.phases.finished }
 
   it_behaves_like "globalizable", :budget_phase
 
   describe "validates" do
     it "is not valid without a budget" do
       expect(build(:budget_phase, budget: nil)).not_to be_valid
-    end
-
-    it "is not valid without a start date" do
-      phase = budget.phases.first
-      phase.starts_at = nil
-      expect(phase).not_to be_valid
-    end
-
-    it "is not valid without an end date" do
-      phase = budget.phases.first
-      phase.ends_at = nil
-      expect(phase).not_to be_valid
     end
 
     describe "kind validations" do

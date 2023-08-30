@@ -22,13 +22,15 @@ class Budget
     validates_translation :description, length: { maximum: ->(*) { DESCRIPTION_MAX_LENGTH }}
     validates_translation :main_link_url, presence: true, unless: -> { main_link_text.blank? }
     validates :budget, presence: true
-    validates :kind, presence: true, uniqueness: { scope: :budget }, inclusion: { in: PHASE_KINDS }
-    validates :starts_at, presence: true
-    validates :ends_at, presence: true
+    validates :kind, presence: true, uniqueness: { scope: :budget }, inclusion: { in: ->(*) { PHASE_KINDS }}
     validate :invalid_dates_range?
+    validate :prev_phase_dates_valid?
+    validate :next_phase_dates_valid?
 
-    scope :enabled,           -> { where(enabled: true) }
-    scope :published,         -> { enabled.where.not(kind: "drafting") }
+    after_save :adjust_date_ranges
+
+    scope :enabled, -> { where(enabled: true) }
+    scope :published, -> { enabled.where.not(kind: "drafting") }
 
     PHASE_KINDS.each do |phase|
       define_singleton_method(phase) { find_by(kind: phase) }
@@ -69,6 +71,37 @@ class Budget
     end
 
     private
+
+      def adjust_date_ranges
+        if enabled?
+          next_enabled_phase&.update_column(:starts_at, ends_at)
+          prev_enabled_phase&.update_column(:ends_at, starts_at)
+        elsif saved_change_to_enabled?
+          next_enabled_phase&.update_column(:starts_at, starts_at)
+        end
+      end
+
+      def prev_phase_dates_valid?
+        if enabled? && starts_at.present? && prev_enabled_phase.present?
+          prev_enabled_phase.assign_attributes(ends_at: starts_at)
+          if prev_enabled_phase.invalid_dates_range?
+            phase_name = prev_enabled_phase.name
+            error = I18n.t("budgets.phases.errors.prev_phase_dates_invalid", phase_name: phase_name)
+            errors.add(:starts_at, error)
+          end
+        end
+      end
+
+      def next_phase_dates_valid?
+        if enabled? && ends_at.present? && next_enabled_phase.present?
+          next_enabled_phase.assign_attributes(starts_at: ends_at)
+          if next_enabled_phase.invalid_dates_range?
+            phase_name = next_enabled_phase.name
+            error = I18n.t("budgets.phases.errors.next_phase_dates_invalid", phase_name: phase_name)
+            errors.add(:ends_at, error)
+          end
+        end
+      end
 
       def in_phase_or_later?(phase)
         self.class.kind_or_later(phase).include?(kind)

@@ -282,14 +282,14 @@ aside {
   }
 
   .author a {
-    color: $link-dark !important;
+    color: $anchor-color-dark !important;
   }
 }
 
 .draft-panels {
 
   .draft-allegation .draft-text a {
-    color: $link;
+    color: $anchor-color;
   }
 
   .draft-allegation .draft-text h2 {
@@ -1245,7 +1245,7 @@ footer {
   .callout {
 
     &.primary a {
-      color: $link;
+      color: $anchor-color;
     }
   }
 
@@ -2196,7 +2196,7 @@ a {
   .user-name {
 
     a {
-      color: $link-dark;
+      color: $anchor-color-dark;
     }
   }
 }
@@ -2218,7 +2218,7 @@ a {
       }
 
       &.toggle-children {
-        color: $link-dark;
+        color: $anchor-color-dark;
       }
     }
 
@@ -2322,7 +2322,7 @@ a {
 }
 
 .flag-disable {
-  color: $link-soft;
+  color: $anchor-color-soft;
 }
 
 // 7. Admin
@@ -2638,11 +2638,11 @@ a {
   }
 
   .add-related-content {
-    color: $link;
+    color: $anchor-color;
     font-size: $small-font-size;
 
     &:hover {
-      color: $link-hover;
+      color: $anchor-color-hover;
       cursor: pointer;
       text-decoration: underline;
     }
@@ -2662,7 +2662,7 @@ a {
 
     &:not(.button) {
       display: block;
-      color: $link;
+      color: $anchor-color;
       position: relative;
 
       &::after {

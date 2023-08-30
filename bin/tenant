@@ -82,7 +82,8 @@ end
 # The apply_deploy method applies a deploy to the project.
 # It copies the deploy config files to the project config files
 def apply_tenant(tenant_name)
-  illegal_deploys = ["base"]
+  # illegal_deploys = ["base"]
+  illegal_deploys = []
 
   current_tenant_illegal = illegal_deploys.include? tenant_name
 

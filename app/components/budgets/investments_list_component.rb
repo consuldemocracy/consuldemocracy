@@ -13,10 +13,16 @@ class Budgets::InvestmentsListComponent < ApplicationComponent
       budget.investments.feasible.sample(limit)
     when "balloting", "reviewing_ballots"
       budget.investments.selected.sample(limit)
-    when "finished"
-      budget.investments.winners.sample(limit)
     else
       budget.investments.none
+    end
+  end
+
+  def see_all_path
+    if budget.single_heading?
+      budget_investments_path(budget)
+    else
+      budget_groups_path(budget)
     end
   end
 end

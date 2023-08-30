@@ -125,12 +125,14 @@ describe Legislation::DraftVersion do
 
       <p><code>code</code></p>
 
-      <table><thead>
+      <table>
+      <thead>
       <tr>
       <th>Syntax</th>
       <th>Description</th>
       </tr>
-      </thead><tbody>
+      </thead>
+      <tbody>
       <tr>
       <td>Header</td>
       <td>Title</td>
@@ -139,7 +141,8 @@ describe Legislation::DraftVersion do
       <td>Paragraph</td>
       <td>Text</td>
       </tr>
-      </tbody></table>
+      </tbody>
+      </table>
     BODY_HTML
   end
 
