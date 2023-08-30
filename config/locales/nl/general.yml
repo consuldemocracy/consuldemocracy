@@ -190,7 +190,7 @@ nl:
       copyright: Consul, %{year}
       description: Deze site gebruikt %{consul}, wat %{open_source} is.
       open_source: open-source software
-      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      open_source_url: https://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Beslis mee over de vormgeving van beleid in uw gemeente.
       participation_title: Participatie
       privacy: Privacy Verklaring
