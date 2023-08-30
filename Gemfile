@@ -89,7 +89,7 @@ group :test do
   gem "email_spec", "~> 2.2.0"
   gem "rspec-rails", "~> 5.1.2"
   gem "selenium-webdriver", "~> 4.11.0"
-  gem "simplecov", "~> 0.21.2", require: false
+  gem "simplecov", "~> 0.22.0", require: false
   gem "simplecov-lcov", "~> 0.8.0", require: false
 end
 
