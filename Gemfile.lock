@@ -653,7 +653,7 @@ GEM
     websocket-extensions (0.1.5)
     whenever (1.0.0)
       chronic (>= 0.6.3)
-    wicked_pdf (2.6.3)
+    wicked_pdf (2.7.0)
       activesupport
     wkhtmltopdf-binary (0.12.6.6)
     xpath (3.2.0)
@@ -763,7 +763,7 @@ DEPENDENCIES
   view_component (~> 2.78.0)
   web-console (~> 4.2.0)
   whenever (~> 1.0.0)
-  wicked_pdf (~> 2.6.3)
+  wicked_pdf (~> 2.7.0)
   wkhtmltopdf-binary (~> 0.12.6)
 
 BUNDLED WITH
