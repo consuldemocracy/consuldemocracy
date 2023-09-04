@@ -111,12 +111,12 @@ main {
   }
 
   &.hollow {
-    border-color: $brand;
-    color: $brand;
+    border-color: var(--brand);
+    color: var(--brand);
   }
 
   &.primary {
-    background: $brand-secondary;
+    background: var(--brand-secondary);
 
     &:hover {
       background: $hover-secondary;
@@ -129,7 +129,7 @@ aside {
   .button {
 
     &.hollow {
-      background: $brand;
+      background: var(--brand);
       border: 0;
       color: #fff !important;
 
@@ -147,7 +147,7 @@ aside {
   padding-top: $line-height * 2;
 
   a {
-    color: $brand;
+    color: var(--brand);
     font-weight: bold;
   }
 
@@ -179,7 +179,7 @@ aside {
         position: relative;
 
         &::after {
-          border-bottom: 4px solid $brand;
+          border-bottom: 4px solid var(--brand);
           bottom: -4px;
           content: "";
           position: absolute;
@@ -210,7 +210,7 @@ aside {
         position: relative;
 
         &::after {
-          border-bottom: 4px solid $brand;
+          border-bottom: 4px solid var(--brand);
           bottom: -4px;
           content: "";
           position: absolute;
@@ -241,7 +241,7 @@ aside {
   }
 
   a {
-    color: $brand;
+    color: var(--brand);
     font-weight: bold;
   }
 }
@@ -391,12 +391,12 @@ aside {
   }
 
   a {
-    color: $brand;
+    color: var(--brand);
     font-weight: bold;
   }
 
   .icon-document::before {
-    color: $brand;
+    color: var(--brand);
     content: "\f2b6" !important;
     font-family: "Font Awesome 5 Free";
   }
@@ -424,7 +424,7 @@ aside {
 
       &[aria-selected="true"]::after,
       .is-active::after {
-        border-bottom: 4px solid $brand;
+        border-bottom: 4px solid var(--brand);
         bottom: -4px;
       }
     }
@@ -470,7 +470,7 @@ aside {
 }
 
 .delete-comment {
-  color: $brand;
+  color: var(--brand);
 }
 
 .callout a {
@@ -547,7 +547,7 @@ body > header,
 }
 
 .top-bar-title {
-  background: $brand;
+  background: var(--brand);
   margin: 0;
   position: relative;
 
@@ -556,7 +556,7 @@ body > header,
     padding-top: $line-height;
 
     &::before {
-      background: $brand;
+      background: var(--brand);
       content: "";
       height: 100%;
       left: -999%;
@@ -616,26 +616,26 @@ body > header,
 }
 
 .menu-icon {
-  @include hamburger($color: $brand, $color-hover: $brand);
+  @include hamburger($color: var(--brand), $color-hover: var(--brand));
 
   &.dark {
 
     &::after,
     &:hover::after {
-      background: $brand;
-      box-shadow: 0 7px 0 $brand, 0 14px 0 $brand;
+      background: var(--brand);
+      box-shadow: 0 7px 0 var(--brand), 0 14px 0 var(--brand);
     }
   }
 }
 
 .menu-icon.dark::after,
 .menu-icon.dark:hover::after {
-  background: $brand;
-  box-shadow: 0 7px 0 $brand, 0 14px 0 $brand;
+  background: var(--brand);
+  box-shadow: 0 7px 0 var(--brand), 0 14px 0 var(--brand);
 }
 
 .menu-button {
-  color: $brand;
+  color: var(--brand);
   margin-left: $line-height / 4;
 }
 
@@ -661,7 +661,7 @@ body > header,
     }
 
     &.is-active::after {
-      background: $brand;
+      background: var(--brand);
       bottom: -12px;
       content: "";
       height: 4px;
@@ -673,7 +673,7 @@ body > header,
 
   &:hover,
   &.is-active {
-    color: $brand;
+    color: var(--brand);
   }
 }
 
@@ -728,7 +728,7 @@ body > header,
       > a::before {
         border: inset 6px;
         border-bottom-width: 0;
-        border-color: $brand transparent transparent;
+        border-color: var(--brand) transparent transparent;
         border-top-style: solid;
         content: "";
         display: block;
@@ -744,7 +744,7 @@ body > header,
     }
 
     &.is-active > a {
-      color: $brand;
+      color: var(--brand);
     }
 
     > a {
@@ -892,7 +892,7 @@ body > header,
 
     &:last-child {
       bottom: 0;
-      color: $brand;
+      color: var(--brand);
       text-align: right;
     }
   }
@@ -930,7 +930,7 @@ body > header,
   }
 
   .phase {
-    color: $brand;
+    color: var(--brand);
     font-size: $tiny-font-size;
     font-weight: bold;
     margin-bottom: 0;
@@ -1025,7 +1025,7 @@ body > header,
   .feed-description {
 
     a {
-      color: $brand;
+      color: var(--brand);
       display: inline-block;
       margin-bottom: $line-height / 2;
     }
@@ -1057,7 +1057,7 @@ body > header,
   padding: $line-height * 2;
 
   .number {
-    color: $brand;
+    color: var(--brand);
     display: block;
     font-weight: bold;
     font-size: rem-calc(34);
@@ -1080,7 +1080,7 @@ body > header,
   }
 
   a {
-    color: $brand;
+    color: var(--brand);
     display: block;
     font-weight: bold;
     margin: 0 auto;
@@ -1194,7 +1194,7 @@ footer {
 // --------------------
 
 .budget-header {
-  background: $brand;
+  background: var(--brand);
   min-height: $line-height * 25;
   padding-top: $line-height * 4;
 
@@ -1320,11 +1320,11 @@ footer {
   .tabs-title > a {
 
     &.current-phase {
-      background: $brand-secondary;
+      background: var(--brand-secondary);
       color: #fff;
 
       &::after {
-        border-left-color: $brand-secondary;
+        border-left-color: var(--brand-secondary);
       }
 
       &:hover {
@@ -1352,11 +1352,11 @@ footer {
     &.current-phase-tab {
 
       [aria-selected="true"] {
-        background: $brand-secondary;
+        background: var(--brand-secondary);
         color: $white;
 
         &::after {
-          border-left-color: $brand-secondary;
+          border-left-color: var(--brand-secondary);
         }
       }
     }
@@ -1366,7 +1366,7 @@ footer {
   .budget-next-phase {
 
     &::before {
-      background: $brand;
+      background: var(--brand);
     }
   }
 
@@ -1403,7 +1403,7 @@ footer {
     &.current-phase-tab a {
 
       &::after {
-        border-left-color: $brand-secondary;
+        border-left-color: var(--brand-secondary);
       }
 
       &:hover {
@@ -1513,7 +1513,7 @@ footer {
   }
 
   .button {
-    background: $brand;
+    background: var(--brand);
     color: #fff;
   }
 }
@@ -1522,18 +1522,18 @@ footer {
 .investment-project-show .supports .total-supports,
 .budget-investment .supports .total-supports,
 .budget-investment-show .supports .total-supports {
-  color: $brand;
+  color: var(--brand);
 }
 
 .investment-project .supports .button-support,
 .investment-project-show .supports .button-support,
 .budget-investment .supports .button-support,
 .budget-investment-show .supports .button-support {
-  background: $brand;
+  background: var(--brand);
   box-shadow: none;
 
   &:hover {
-    background: $brand-secondary;
+    background: var(--brand-secondary);
   }
 }
 
@@ -1545,7 +1545,7 @@ footer {
 .budget-investment .supports .budget-investment-amount,
 .budget-investment-show .supports .investment-project-amount,
 .budget-investment-show .supports .budget-investment-amount {
-  color: $brand;
+  color: var(--brand);
 }
 
 .remove {
@@ -1579,7 +1579,7 @@ footer {
   }
 
   .progress-meter {
-    background: $brand;
+    background: var(--brand);
   }
 
   .spent-amount-text,
@@ -1588,7 +1588,7 @@ footer {
   }
 
   .spent-amount-text::before {
-    color: $brand;
+    color: var(--brand);
   }
 
   .spent-amount-text {
@@ -1601,7 +1601,7 @@ footer {
     white-space: nowrap;
 
     &::before {
-      color: $brand;
+      color: var(--brand);
       content: "\57";
       font-family: "icons";
       font-size: $small-font-size;
@@ -1621,7 +1621,7 @@ footer {
     }
 
     .amount-spent {
-      color: $brand;
+      color: var(--brand);
     }
 
     .amount-spent,
@@ -1631,16 +1631,16 @@ footer {
   }
 
   .amount-available span {
-    color: $brand;
+    color: var(--brand);
     font-size: $base-font-size;
   }
 }
 
 .supported .button.button-remove-support {
   background: none;
-  border: 1px solid $brand;
+  border: 1px solid var(--brand);
   box-shadow: none;
-  color: $brand-secondary;
+  color: var(--brand-secondary);
 
   &::before {
     left: 20px;
@@ -1679,22 +1679,22 @@ footer {
 }
 
 .ballot .subtitle {
-  border-left: 2px solid $brand;
+  border-left: 2px solid var(--brand);
 }
 
 .ballot-list li {
 
   &:hover {
-    background: $brand;
+    background: var(--brand);
   }
 
   .ballot-list-price {
-    color: $brand;
+    color: var(--brand);
   }
 }
 
 .budget-investment.index .read-more {
-  color: $brand;
+  color: var(--brand);
 }
 
 .budget-info,
@@ -1728,16 +1728,16 @@ footer {
 }
 
 .budget-investment-new .header {
-  background: $brand-secondary;
+  background: var(--brand-secondary);
 
   &::before {
-    background: $brand-secondary;
+    background: var(--brand-secondary);
   }
 
   &::before,
   &::after {
-    border-color: $brand-secondary;
-    color: $brand-secondary;
+    border-color: var(--brand-secondary);
+    color: var(--brand-secondary);
   }
 }
 
@@ -1773,7 +1773,7 @@ footer {
   padding: $line-height 0 $line-height / 2;
 
   a {
-    color: $brand;
+    color: var(--brand);
     font-weight: bold;
   }
 }
@@ -1804,7 +1804,7 @@ footer {
     color: $text;
 
     span {
-      color: $brand;
+      color: var(--brand);
     }
   }
 
@@ -1845,7 +1845,7 @@ a {
     display: block;
 
     &:hover {
-      background: $brand;
+      background: var(--brand);
       text-decoration: none;
 
       h4,
@@ -1882,14 +1882,14 @@ a {
   }
 
   &.active {
-    background: $brand;
+    background: var(--brand);
     color: #fff;
     display: table;
     padding: $line-height / 4 $line-height / 2;
   }
 
   &.published {
-    color: $brand;
+    color: var(--brand);
   }
 }
 
@@ -1967,7 +1967,7 @@ a {
       color: $text;
 
       span {
-        color: $brand;
+        color: var(--brand);
       }
     }
   }
@@ -1996,7 +1996,7 @@ a {
     }
 
     .debate-type {
-      color: $brand-secondary;
+      color: var(--brand-secondary);
     }
   }
 }
@@ -2104,7 +2104,7 @@ a {
   }
 
   .cancel-comment {
-    color: $brand !important;
+    color: var(--brand) !important;
     font-size: $small-font-size;
     text-decoration: none !important;
   }
@@ -2124,7 +2124,7 @@ a {
       }
 
       .comment-replies a {
-        color: $brand !important;
+        color: var(--brand) !important;
       }
     }
 
@@ -2172,8 +2172,8 @@ a {
 .comments {
 
   h3 {
-    border-bottom: 4px solid $brand;
-    color: $brand;
+    border-bottom: 4px solid var(--brand);
+    color: var(--brand);
     display: table;
     font-size: $base-font-size;
     padding: $line-height / 2 $line-height;
@@ -2214,7 +2214,7 @@ a {
       font-weight: bold;
 
       &.add-comment {
-        color: $brand;
+        color: var(--brand);
       }
 
       &.toggle-children {
@@ -2358,7 +2358,7 @@ a {
 
   .is-active {
     border-bottom: 0;
-    color: $brand;
+    color: var(--brand);
   }
 }
 
@@ -2453,16 +2453,16 @@ a {
 // --------------------
 
 .debate-new .header {
-  background: $brand-secondary;
+  background: var(--brand-secondary);
 
   &::before {
-    background: $brand-secondary;
+    background: var(--brand-secondary);
   }
 
   &::before,
   &::after {
-    border-color: $brand-secondary;
-    color: $brand-secondary;
+    border-color: var(--brand-secondary);
+    color: var(--brand-secondary);
   }
 }
 
@@ -2699,7 +2699,7 @@ a {
   }
 
   .button-support {
-    background: $brand;
+    background: var(--brand);
     color: #fff;
     font-weight: bold;
     line-height: $line-height * 2;
@@ -2717,14 +2717,14 @@ a {
     border: 1px solid $highlight-soft;
 
     .meter {
-      background: $brand-secondary;
+      background: var(--brand-secondary);
       border-bottom-right-radius: 0;
       border-top-right-radius: 0;
     }
   }
 
   .percentage {
-    color: $brand-secondary;
+    color: var(--brand-secondary);
     font-size: $small-font-size;
     font-weight: bold;
     top: -24px;
@@ -2871,7 +2871,7 @@ a {
 
 .section-title-divider {
   border-bottom: 4px solid $light;
-  color: $brand;
+  color: var(--brand);
 
   span {
     border-bottom: 0;
@@ -2879,7 +2879,7 @@ a {
     position: relative;
 
     &::after {
-      border-bottom: 4px solid $brand;
+      border-bottom: 4px solid var(--brand);
       bottom: -4px;
       content: "";
       left: 0;
@@ -2923,12 +2923,12 @@ a {
     }
 
     &.answered {
-      background: $brand;
-      border: 2px solid $brand;
+      background: var(--brand);
+      border: 2px solid var(--brand);
       color: #fff;
 
       &::after {
-        background: $brand;
+        background: var(--brand);
         border: 2px solid #fff;
         color: #fff;
         right: -8px;
@@ -3060,7 +3060,7 @@ a {
 .budget-investment-new {
 
   .header {
-    background: $brand-secondary;
+    background: var(--brand-secondary);
     border-bottom-right-radius: rem-calc(12);
     border-top-right-radius: rem-calc(12);
     color: #fff;
@@ -3077,8 +3077,8 @@ a {
     }
 
     &::before {
-      background: $brand-secondary;
-      border: 4px solid $brand-secondary;
+      background: var(--brand-secondary);
+      border: 4px solid var(--brand-secondary);
       content: "";
       height: 100%;
       position: absolute;
@@ -3090,11 +3090,11 @@ a {
 
     &::after {
       background: #fff;
-      border: 4px solid $brand-secondary;
+      border: 4px solid var(--brand-secondary);
       border-bottom-right-radius: rem-calc(12);
       border-top-right-radius: rem-calc(12);
       clip-path: polygon(20% 0, 100% 1%, 100% 100%, 20% 100%, 5% 50%);
-      color: $brand-secondary;
+      color: var(--brand-secondary);
       content: "\f1ad";
       display: none;
       font-family: "Font Awesome 5 Free";
@@ -3243,7 +3243,7 @@ a {
 
     .read-more {
       bottom: 0;
-      color: $brand;
+      color: var(--brand);
       display: block;
       left: 0;
       margin-top: 0;
@@ -3468,11 +3468,11 @@ a {
     }
 
     &.current-phase {
-      background: $brand-secondary;
+      background: var(--brand-secondary);
       color: #fff;
 
       &::after {
-        border-left-color: $brand-secondary;
+        border-left-color: var(--brand-secondary);
       }
 
       &:hover {
@@ -3500,11 +3500,11 @@ a {
       }
 
       &.current-phase {
-        background: $brand-secondary;
+        background: var(--brand-secondary);
         color: #fff;
 
         &::after {
-          border-left-color: $brand-secondary;
+          border-left-color: var(--brand-secondary);
         }
       }
     }
@@ -3544,7 +3544,7 @@ a {
     position: relative;
 
     &::before {
-      background: $brand;
+      background: var(--brand);
       border-radius: rem-calc(3);
       color: #fff;
       font-family: "Font Awesome 5 Free";
@@ -3611,7 +3611,7 @@ a {
   position: relative;
 
   &::after {
-    background: $brand;
+    background: var(--brand);
     bottom: 0;
     content: "";
     height: rem-calc(6);
@@ -3665,7 +3665,7 @@ a {
   }
 
   .fa-thumbs-up {
-    color: $brand;
+    color: var(--brand);
     font-size: rem-calc(100);
     padding: $line-height * 2 0;
   }
@@ -3677,7 +3677,7 @@ a {
   a {
 
     &.keep-scrolling {
-      color: $brand;
+      color: var(--brand);
       position: relative;
       text-decoration: none;
       text-transform: uppercase;
@@ -3693,7 +3693,7 @@ a {
     width: $line-height / 2;
 
     &.is-active {
-      background-color: $brand;
+      background-color: var(--brand);
     }
   }
 
@@ -3747,7 +3747,7 @@ a {
 .budget-investment-new {
 
   .header {
-    background: $brand-secondary;
+    background: var(--brand-secondary);
     border-bottom-right-radius: rem-calc(12);
     border-top-right-radius: rem-calc(12);
     color: #fff;
@@ -3768,8 +3768,8 @@ a {
     }
 
     &::before {
-      background: $brand-secondary;
-      border: 4px solid $brand-secondary;
+      background: var(--brand-secondary);
+      border: 4px solid var(--brand-secondary);
       content: "";
       height: 100%;
       position: absolute;
@@ -3781,11 +3781,11 @@ a {
 
     &::after {
       background: #fff;
-      border: 4px solid $brand-secondary;
+      border: 4px solid var(--brand-secondary);
       border-bottom-right-radius: rem-calc(12);
       border-top-right-radius: rem-calc(12);
       clip-path: polygon(20% 0, 100% 1%, 100% 100%, 20% 100%, 5% 50%);
-      color: $brand-secondary;
+      color: var(--brand-secondary);
       content: "\f1ad";
       display: none;
       font-family: "Font Awesome 5 Free";
