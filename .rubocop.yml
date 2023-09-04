@@ -691,6 +691,9 @@ Style/RedundantReturn:
 Style/RedundantSelf:
   Enabled: true
 
+Style/RedundantStringEscape:
+  Enabled: true
+
 Style/SafeNavigation:
   Enabled: true
 
