@@ -646,6 +646,9 @@ Style/MapToHash:
 Style/MethodDefParentheses:
   Enabled: true
 
+Style/MinMaxComparison:
+  Enabled: true
+
 Style/MutableConstant:
   Enabled: true
 
