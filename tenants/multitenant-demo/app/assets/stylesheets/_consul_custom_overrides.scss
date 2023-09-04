@@ -27,17 +27,15 @@
   font-style: normal;
 }
 
-html {
-  $base-font-size: 18px;
-  $body-font-family: 'Formata', sans-serif;
-  $header-font-weight: 700;
+$base-font-size: 18px;
+$body-font-family: 'Formata', sans-serif;
+$header-font-weight: 700;
 
-  --brand: #2272b7;
-  --brand-secondary: #0054ad;
-  $footer: #7796ac;
+$brand: #2272b7;
+$brand-secondary: #0054ad;
+$footer: #7796ac;
 
-  $hover: scale-color(var(--brand), $lightness: -20%);
-  $hover-secondary: scale-color(var(--brand-secondary), $lightness: -20%);
+$hover: scale-color($brand, $lightness: -20%);
+$hover-secondary: scale-color($brand-secondary, $lightness: -20%);
 
-  $text: #231F20;
-}
+$text: #231F20;
