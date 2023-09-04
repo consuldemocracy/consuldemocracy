@@ -270,7 +270,7 @@ class Budget
       return permission_problem(user) if permission_problem?(user)
       return :different_heading_assigned unless valid_heading?(user)
 
-      return :no_selecting_allowed unless budget.selecting?
+      :no_selecting_allowed unless budget.selecting?
     end
 
     def reason_for_not_being_ballotable_by(user, ballot)

@@ -5,7 +5,7 @@ FactoryBot.define do
     sequence(:name) { |n| "Event #{n} type" }
   end
 
-  factory :visit  do
+  factory :visit do
     id { SecureRandom.uuid }
     started_at { DateTime.current }
   end

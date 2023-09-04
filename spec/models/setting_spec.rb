@@ -171,7 +171,7 @@ describe Setting do
 
   describe ".accepted_content_types_for" do
     it "returns the formats accepted according to the setting value" do
-      Setting["uploads.images.content_types"] =    "image/jpeg image/gif"
+      Setting["uploads.images.content_types"] = "image/jpeg image/gif"
       Setting["uploads.documents.content_types"] = "application/pdf application/msword"
 
       expect(Setting.accepted_content_types_for("images")).to    eq ["jpg", "gif"]
