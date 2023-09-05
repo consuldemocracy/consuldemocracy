@@ -300,7 +300,7 @@ GEM
       activerecord
       kaminari-core (= 1.2.2)
     kaminari-core (1.2.2)
-    knapsack_pro (3.3.1)
+    knapsack_pro (5.6.0)
       rake
     kramdown (2.4.0)
       rexml
@@ -715,7 +715,7 @@ DEPENDENCIES
   jquery-rails (~> 4.6.0)
   jquery-ui-rails (~> 6.0.1)
   kaminari (~> 1.2.2)
-  knapsack_pro (~> 3.3.1)
+  knapsack_pro (~> 5.6.0)
   launchy (~> 2.5.2)
   leaflet-rails (~> 1.9.3)
   letter_opener_web (~> 2.0.0)
