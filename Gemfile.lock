@@ -66,7 +66,7 @@ GEM
     acts_as_votable (0.14.0)
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
-    ahoy_matey (4.1.0)
+    ahoy_matey (4.2.1)
       activesupport (>= 5.2)
       device_detector
       safely_block (>= 0.2.1)
@@ -174,7 +174,7 @@ GEM
     delayed_job_active_record (4.1.7)
       activerecord (>= 3.0, < 8.0)
       delayed_job (>= 3.0, < 5)
-    device_detector (1.0.7)
+    device_detector (1.1.1)
     devise (4.9.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -196,7 +196,6 @@ GEM
       rainbow
       rubocop
       smart_properties
-    errbase (0.2.2)
     erubi (1.12.0)
     eslintrb (2.1.0)
       execjs
@@ -545,8 +544,7 @@ GEM
     rvm1-capistrano3 (1.4.0)
       capistrano (~> 3.0)
       sshkit (>= 1.2)
-    safely_block (0.3.0)
-      errbase (>= 0.1.1)
+    safely_block (0.4.0)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -671,7 +669,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on (~> 9.0.1)
   acts_as_votable (~> 0.14.0)
-  ahoy_matey (~> 4.1.0)
+  ahoy_matey (~> 4.2.1)
   airbrake (~> 13.0.2)
   ancestry (~> 4.3.3)
   audited (~> 5.3.3)
