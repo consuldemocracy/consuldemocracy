@@ -4,7 +4,7 @@ describe Admin::SearchComponent do
   describe "#hidden_current_filter_tag" do
     context "controller responds to current_filter", controller: ApplicationController do
       it "is present when the controller has a current filter" do
-        allow(controller).to receive(:current_filter).and_return("all")
+        allow(vc_test_controller).to receive(:current_filter).and_return("all")
 
         render_inline Admin::SearchComponent.new(label: "Search")
 

@@ -2,8 +2,8 @@ require "rails_helper"
 
 describe Admin::Budgets::IndexComponent, controller: Admin::BudgetsController do
   before do
-    allow_any_instance_of(Admin::BudgetsController).to receive(:valid_filters).and_return(["all"])
-    allow_any_instance_of(Admin::BudgetsController).to receive(:current_filter).and_return("all")
+    allow(vc_test_controller).to receive(:valid_filters).and_return(["all"])
+    allow(vc_test_controller).to receive(:current_filter).and_return("all")
   end
 
   describe "#phase_progress_text" do
