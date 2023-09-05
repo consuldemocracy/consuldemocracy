@@ -11,7 +11,7 @@ describe Budgets::Investments::FormComponent do
   end
 
   describe "accept terms of services field" do
-    it "is not shown for new investments" do
+    it "is shown for new investments", :consul do
       investment = build(:budget_investment, budget: budget)
 
       render_inline Budgets::Investments::FormComponent.new(
@@ -19,7 +19,7 @@ describe Budgets::Investments::FormComponent do
         url: budget_investments_path(budget)
       )
 
-      expect(page).not_to have_field "I agree to the Privacy Policy and the Terms and conditions of use"
+      expect(page).to have_field "I agree to the Privacy Policy and the Terms and conditions of use"
     end
 
     it "is not shown for existing investments" do

@@ -2,16 +2,16 @@ require "rails_helper"
 
 describe "Admin edit translatable records", :admin do
   before do
-    translatable.main_link_url = "https://consulproject.org" if translatable.is_a?(Budget::Phase)
+    translatable.main_link_url = "https://consuldemocracy.org" if translatable.is_a?(Budget::Phase)
     translatable.update!(attributes)
   end
 
   let(:fields) { translatable.translated_attribute_names }
 
   let(:attributes) do
-    fields.product(%i[en es]).map do |field, locale|
+    fields.product(%i[en es]).to_h do |field, locale|
       [:"#{field}_#{locale}", text_for(field, locale)]
-    end.to_h
+    end
   end
 
   context "Add a translation" do
@@ -123,7 +123,7 @@ describe "Admin edit translatable records", :admin do
     let(:translatable) { create(:budget_investment) }
 
     context "Input field" do
-      let(:translatable) { create(:budget, main_link_url: "https://consulproject.org") }
+      let(:translatable) { create(:budget, main_link_url: "https://consuldemocracy.org") }
 
       scenario "Shows validation erros" do
         visit edit_admin_budget_path(translatable)
@@ -215,8 +215,8 @@ describe "Admin edit translatable records", :admin do
     end
 
     context "CKEditor fields" do
-      let(:translatable) { create(:poll_question_answer) }
-      let(:path) { edit_admin_answer_path(translatable) }
+      let(:translatable) { create(:poll_question_answer, poll: create(:poll, :future)) }
+      let(:path) { edit_admin_question_answer_path(translatable.question, translatable) }
 
       scenario "Changes the existing translation" do
         visit path
@@ -242,20 +242,20 @@ describe "Admin edit translatable records", :admin do
     end
 
     context "Change value of a translated field to blank" do
-      let(:translatable) { create(:poll) }
+      let(:translatable) { create(:poll, :future) }
       let(:path) { edit_admin_poll_path(translatable) }
 
-      scenario "Updates the field to a blank value" do
+      scenario "Updates the field to a blank value", :consul do
         visit path
 
-        expect(page).to have_ckeditor "Summary", with: "Summary in English"
+        expect(page).to have_field "Summary", with: "Summary in English"
 
-        fill_in_ckeditor "Summary", with: " "
+        fill_in "Summary", with: ""
         click_button "Update poll"
 
         visit path
 
-        expect(page).to have_ckeditor "Summary", with: ""
+        expect(page).to have_field "Summary", with: ""
       end
     end
   end
@@ -383,7 +383,7 @@ describe "Admin edit translatable records", :admin do
   end
 
   context "Remove a translation with invalid data" do
-    let(:translatable) { create(:poll_question) }
+    let(:translatable) { create(:poll_question, poll: create(:poll, :future)) }
     let(:path) { edit_admin_question_path(translatable) }
 
     scenario "Doesn't remove the translation" do

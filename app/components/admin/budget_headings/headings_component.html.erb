@@ -5,13 +5,12 @@
       <tr>
         <th><%= Budget::Heading.human_attribute_name(:name) %></th>
         <% if budget.show_money? %>
-          <th class="text-center"><%= Budget::Heading.human_attribute_name(:price) %></th>
+          <th><%= Budget::Heading.human_attribute_name(:price) %></th>
         <% end %>
         <% if budget.approval_voting? %>
           <th><%= Budget::Heading.human_attribute_name(:max_ballot_lines) %></th>
         <% end %>
-        <th class="text-center"><%= t("admin.budget_headings.population") %></th>
-        <th class="text-center"><%= t("admin.budget_headings.allow_custom_content") %></th>
+        <th><%= Budget::Heading.human_attribute_name(:geozone_id) %></th>
         <th><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
@@ -32,6 +31,9 @@
             <% else %>
               <%= t("admin.budget_headings.false") %>
             <% end %>
+          </td>
+          <td>
+            <%= geozone_for(heading) %>
           </td>
           <td>
             <%= render Admin::TableActionsComponent.new(heading) %>

@@ -31,7 +31,6 @@ pl:
         translation: "Tłumaczenie zaktualizowane pomyślnie"
       destroy:
         budget_investment: "Projekt inwestycyjny został pomyślnie usunięty."
-        error: "Nie można usunąć"
         topic: "Temat został usunięty."
         poll_question_answer_video: "Odpowiedź wideo została pomyślnie usunięta."
         valuator_group: "Grupa wyceniając została pomyślnie usunięta"

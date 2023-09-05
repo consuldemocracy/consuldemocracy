@@ -13,7 +13,7 @@
 
     a:not(.more-targets),
     span {
-      color: $white;
+      color: $sdg-text;
     }
 
     @each $code, $color in $sdg-colors {

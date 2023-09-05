@@ -207,19 +207,18 @@ describe "Machine learning" do
   end
 
   scenario "Show output files info on settins page" do
-    require "fileutils"
-    FileUtils.mkdir_p Rails.root.join("public", "machine_learning", "data")
+    FileUtils.mkdir_p MachineLearning.data_folder
 
     allow_any_instance_of(MachineLearning).to receive(:run) do
-      MachineLearningJob.first.update!(finished_at: Time.current + 2.minutes)
+      MachineLearningJob.first.update!(finished_at: 2.minutes.from_now)
       create(:machine_learning_info,
              script: "proposals_summary_comments_textrank.py",
              kind: "comments_summary",
-             updated_at: Time.current + 2.minutes)
-      comments_file = MachineLearning::DATA_FOLDER.join(MachineLearning.comments_filename)
-      File.open(comments_file, "w") { |file| file.write([].to_json) }
-      proposals_comments_summary_file = MachineLearning::DATA_FOLDER.join(MachineLearning.proposals_comments_summary_filename)
-      File.open(proposals_comments_summary_file, "w") { |file| file.write([].to_json) }
+             updated_at: 2.minutes.from_now)
+      comments_file = MachineLearning.data_folder.join(MachineLearning.comments_filename)
+      File.write(comments_file, [].to_json)
+      proposals_comments_summary_file = MachineLearning.data_folder.join(MachineLearning.proposals_comments_summary_filename)
+      File.write(proposals_comments_summary_file, [].to_json)
     end
 
     visit admin_machine_learning_path

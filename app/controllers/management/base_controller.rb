@@ -1,4 +1,5 @@
 class Management::BaseController < ActionController::Base
+  include TenantVariants
   include GlobalizeFallbacks
   layout "management"
   default_form_builder ConsulFormBuilder
@@ -46,10 +47,6 @@ class Management::BaseController < ActionController::Base
       session[:locale] ||= I18n.default_locale
 
       I18n.with_locale(session[:locale], &action)
-    end
-
-    def current_budget
-      Budget.current
     end
 
     def clear_password

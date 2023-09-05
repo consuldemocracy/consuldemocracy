@@ -9,7 +9,7 @@ so:
       - Jimce
       - Sabti
     abbr_month_names:
-      - 
+      -
       - Janaayo
       - Febarayo
       - Marso
@@ -35,7 +35,7 @@ so:
       long: "%B %d, %Y"
       short: "%d%d"
     month_names:
-      - 
+      -
       - Janaayo
       - Fabaraayo
       - Marso

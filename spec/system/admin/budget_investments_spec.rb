@@ -953,17 +953,6 @@ describe "Admin budget investments", :admin do
       end
     end
 
-    scenario "Show feasible explanation" do
-      budget_investment = create(:budget_investment, :feasible, feasibility_explanation: "This is awesome!")
-
-      visit admin_budget_budget_investments_path(budget_investment.budget)
-
-      within_window(window_opened_by { click_link budget_investment.title }) do
-        expect(page).to have_content("Feasible")
-        expect(page).to have_content("This is awesome!")
-      end
-    end
-
     scenario "Show image and documents on investment details" do
       budget_investment = create(:budget_investment,
                                   :with_image,
@@ -1080,7 +1069,7 @@ describe "Admin budget investments", :admin do
       select "Marta desc (marta@admins.org)", from: "budget_investment[administrator_id]"
       click_button "Update"
 
-      expect(page).to have_content "Investment project updated succesfully."
+      expect(page).to have_content "Investment project updated successfully."
       expect(page).to have_content "Assigned administrator: Marta"
     end
 
@@ -1113,7 +1102,7 @@ describe "Admin budget investments", :admin do
 
       click_button "Update"
 
-      expect(page).to have_content "Investment project updated succesfully."
+      expect(page).to have_content "Investment project updated successfully."
 
       within("#assigned_valuators") do
         expect(page).to have_content("Valentina (v1@valuators.org)")
@@ -1138,7 +1127,7 @@ describe "Admin budget investments", :admin do
 
       click_button "Update"
 
-      expect(page).to have_content "Investment project updated succesfully."
+      expect(page).to have_content "Investment project updated successfully."
 
       within("#assigned_valuator_groups") do
         expect(page).to have_content("Health")
@@ -1162,7 +1151,7 @@ describe "Admin budget investments", :admin do
 
       click_button "Update"
 
-      expect(page).to have_content "Investment project updated succesfully."
+      expect(page).to have_content "Investment project updated successfully."
 
       within("#assigned_valuator_groups") { expect(page).to have_content("Health") }
       within("#assigned_valuators") do
@@ -1184,7 +1173,7 @@ describe "Admin budget investments", :admin do
 
       click_button "Update"
 
-      expect(page).to have_content "Investment project updated succesfully."
+      expect(page).to have_content "Investment project updated successfully."
 
       within "#tags" do
         expect(page).to have_content "Education"
@@ -1201,7 +1190,7 @@ describe "Admin budget investments", :admin do
       fill_in "budget_investment_valuation_tag_list", with: "Refugees, Solidarity"
       click_button "Update"
 
-      expect(page).to have_content "Investment project updated succesfully."
+      expect(page).to have_content "Investment project updated successfully."
 
       within "#tags" do
         expect(page).to have_content "Refugees"
@@ -1227,7 +1216,7 @@ describe "Admin budget investments", :admin do
       fill_in "budget_investment_valuation_tag_list", with: "Education, Environment"
       click_button "Update"
 
-      expect(page).to have_content "Investment project updated succesfully"
+      expect(page).to have_content "Investment project updated successfully"
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
 
@@ -1255,7 +1244,7 @@ describe "Admin budget investments", :admin do
       fill_in "budget_investment_valuation_tag_list", with: "Refugees, Solidarity"
       click_button "Update"
 
-      expect(page).to have_content "Investment project updated succesfully."
+      expect(page).to have_content "Investment project updated successfully."
 
       visit budget_investment_path(budget_investment.budget, budget_investment)
       expect(page).to have_content "Park"
@@ -1325,7 +1314,7 @@ describe "Admin budget investments", :admin do
 
       click_button "Update"
 
-      expect(page).to have_content "Investment project updated succesfully."
+      expect(page).to have_content "Investment project updated successfully."
       expect(page).to have_content("Milestone Tags: tag1, tag2")
     end
   end
@@ -1578,8 +1567,7 @@ describe "Admin budget investments", :admin do
     end
 
     scenario "Shows the correct investments to valuators" do
-      budget.update!(phase: "valuating")
-
+      budget.update!(phase: :valuating)
       investment1.update!(visible_to_valuators: true)
       investment2.update!(visible_to_valuators: false)
 
@@ -1722,7 +1710,7 @@ describe "Admin budget investments", :admin do
 
       header = page.response_headers["Content-Disposition"]
       expect(header).to match(/^attachment/)
-      expect(header).to match(/filename="budget_investments.csv"$/)
+      expect(header).to match(/filename="budget_investments.csv"/)
 
       csv_contents = "ID,Title,Supports,Administrator,Valuator,Valuation Group,Scope of operation,"\
                      "Feasibility,Val. Fin.,Selected,Show to valuators,Author username\n"\

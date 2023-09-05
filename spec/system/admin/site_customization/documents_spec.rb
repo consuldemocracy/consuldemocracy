@@ -57,7 +57,7 @@ describe "Documents", :admin do
     attach_file("document_attachment", file_fixture("logo.pdf"))
     click_button "Upload"
 
-    expect(page).to have_content "Document uploaded succesfully"
+    expect(page).to have_content "Document uploaded successfully"
     expect(page).to have_link "logo.pdf"
   end
 
@@ -80,7 +80,7 @@ describe "Documents", :admin do
       end
     end
 
-    expect(page).to have_content "Document deleted succesfully"
+    expect(page).to have_content "Document deleted successfully"
     expect(page).not_to have_content document.title
   end
 end

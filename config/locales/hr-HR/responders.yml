@@ -31,7 +31,6 @@ hr:
         translation: "Prijevod uspješno ažuriran"
       destroy:
         budget_investment: "Investicijski projekti uspješno obrisani."
-        error: "Ne mogu biti obrisani"
         topic: "Tema je uspješno obrisana."
         poll_question_answer_video: "Video odgovora uspješno obrisan."
         valuator_group: "Grupa evaluatora uspješno obrisana"

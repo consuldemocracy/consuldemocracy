@@ -1,7 +1,5 @@
 <div class="poll-question-form">
-  <%= form_for(@answer,
-               url: admin_answer_images_path(@answer),
-               method: :post) do |f| %>
+  <%= form_for(@answer, url: admin_answer_images_path(@answer), method: :post) do |f| %>
     <%= render "shared/errors", resource: @answer %>
 
     <div class="images">

@@ -22,11 +22,15 @@
           <% cache [locale_and_user_status(proposal), "index", proposal, proposal.author] do %>
             <h3><%= link_to proposal.title, legislation_process_proposal_path(proposal.legislation_process_id, proposal) %></h3>
             <p class="proposal-info">
-              <span class="icon-comments"></span>&nbsp;
-              <%= link_to t("proposals.proposal.comments", count: proposal.comments_count), legislation_process_proposal_path(proposal.legislation_process_id, proposal, anchor: "comments") %>
-
-              <span class="bullet">&nbsp;&bull;&nbsp;</span>
               <%= l proposal.created_at.to_date %>
+              <span class="bullet">&nbsp;&bull;&nbsp;</span>
+              <%= render Shared::CommentsCountComponent.new(
+                proposal.comments_count,
+                url: legislation_process_proposal_path(
+                       proposal.legislation_process_id,
+                       proposal,
+                       anchor: "comments")
+              ) %>
 
               <% if proposal.author.hidden? || proposal.author.erased? %>
                 <span class="bullet">&nbsp;&bull;&nbsp;</span>
@@ -52,6 +56,13 @@
                   <%= t("shared.collective") %>
                 </span>
               <% end %>
+
+              <% if Geozone.any? %>
+                <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                <span class="geozone">
+                  <%= link_to geozone_name(proposal), legislation_process_proposals_path(proposal.legislation_process_id, search: geozone_name(proposal)) %>
+                </span>
+              <% end %>
             </p>
             <div class="proposal-description">
               <p><%= proposal.summary %></p>
@@ -63,8 +74,7 @@
       </div>
 
       <div id="<%= dom_id(proposal) %>_votes" class="small-12 medium-3 column">
-        <%= render "legislation/proposals/votes",
-                  { proposal: proposal, vote_url: vote_legislation_process_proposal_path(proposal.legislation_process_id, proposal, value: "yes") } %>
+        <%= render Legislation::Proposals::VotesComponent.new(proposal) %>
       </div>
     </div>
   </div>

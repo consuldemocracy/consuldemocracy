@@ -3,7 +3,7 @@ begin
   set :monit_config_files, %w[nginx postgres puma delayed_job]
 
   def upload_erb(from, to)
-    if File.exists?(from)
+    if File.exist?(from)
       from_erb = StringIO.new(ERB.new(File.read(from)).result(binding))
       upload! from_erb, to
       info "copied: #{from} to: #{to}"

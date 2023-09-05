@@ -69,7 +69,7 @@ describe "Organizations" do
     expect(page).to have_content error_message
   end
 
-  scenario "Shared links" do
+  scenario "Shared links", :consul do
     # visit new_user_registration_path
     # expect(page).to have_link "Sign up as an organization / collective"
 
@@ -78,7 +78,7 @@ describe "Organizations" do
 
     visit new_user_session_path
 
-    expect(page).to have_link "Register a new account"
+    expect(page).to have_link "Sign up"
     expect(page).not_to have_link "Sign up as an organization"
   end
 end

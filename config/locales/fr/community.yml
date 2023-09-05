@@ -25,10 +25,6 @@ fr:
       topic:
         edit: Modifier le sujet
         destroy: Supprimer un sujet
-        comments:
-          zero: Aucun commentaires
-          one: 1 commentaire
-          other: "%{count} commentaires"
       author: Auteur
       back: Retour à %{community} %{proposal}
     topic:

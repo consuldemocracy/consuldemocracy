@@ -73,30 +73,6 @@ pt-BR:
       hi: Oi
       new_comment_by: Há um novo comentário de avaliação de <strong>%{commenter}</strong> no orçamento participativo %{investment}
       commenter_info: "%{commenter}, %{time}:"
-    new_actions_notification_rake_created:
-      subject: "Mais novidades da sua proposta cidadã"
-      hi: "Olá %{name},"
-      new_resource: "NOVO RECURSO DESBLOQUEADO"
-      introduction: "Como já sabe, no dia %{created_at_day} de %{created_at_month} você criou a proposta no modo rascunho %{title}."
-      text_1: "Sempre que quiser, você pode publicar neste link: %{link_to_published}. Caso ainda não saiba..."
-      text_2: "Aproveite a oportunidade! Aprenda, adicione outras pessoas com os mesmos interesses e prepare como difundir o que precisar para publicar definitivamente a sua proposta."
-      text_3: "E para acompanhar você neste desafio, temos novidades..."
-      text_4: "Dê uma olhada nesta NOVA AÇÃO recomendada:"
-      text_5: "A próxima ação recomendada é:"
-      footer_text: "Como sempre, entre no Painel de Propostas, e lhe diremos detalhadamente como utilizar esses recursos da melhor maneira."
-      dashboard_button: "Vá em frente. Descubra!"
-    new_actions_notification_rake_published:
-      subject: "Mais novidades sobre sua proposta cidadã"
-      hi: "Olá %{name},"
-      new_resource: "NOVO RECURSO DESBLOQUEADO"
-      introduction: "Como já sabe, no dia %{published_at_day} de %{published_at_month} você publicou a sua proposta %{title}."
-      text_1: "Você conseguiu %{votes_count} apoios até este momento Parabéns!"
-      text_2: "E agora você tem um novo recurso disponível para ir em frente."
-      text_3: "Faltam %{days_count} dias para que a sua proposta consiga os %{max_votes_count} apoios e vá à votação. Anime-se y continue anunciando. Ainda faltam ideias?"
-      text_4: "NOVA AÇÃO RECOMENDADA"
-      text_5: "Pois há mais. Veja a seguinte ação:"
-      footer_text: "Como sempre, entre no Painel de Propostas, e lhe diremos detalhadamente como utilizar esses recursos da melhor maneira."
-      dashboard_button: "Vá em frente. Descubra!"
     new_actions_notification_on_create:
       subject: "O rascunho da sua proposta cidadã foi criado"
       hi: "Oi %{name}!"

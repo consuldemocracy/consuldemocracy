@@ -32,6 +32,7 @@ describe "Admin legislation questions", :admin do
       click_link "Create question"
 
       fill_in "Question", with: "Question 3"
+      fill_in_ckeditor "Description", with: "A little description about question 3"
       click_button "Create question"
 
       expect(page).to have_content "Question 3"
@@ -40,7 +41,7 @@ describe "Admin legislation questions", :admin do
 
   context "Update" do
     scenario "Valid legislation question" do
-      create(:legislation_question, title: "Question 2", process: process)
+      create(:legislation_question, title: "Question 2", description: "Description 2", process: process)
 
       visit admin_root_path
 
@@ -57,9 +58,11 @@ describe "Admin legislation questions", :admin do
       click_link "Question 2"
 
       fill_in "Question", with: "Question 2b"
+      fill_in_ckeditor "Description", with: "Description 2b"
       click_button "Save changes"
 
       expect(page).to have_content "Question 2b"
+      expect(page).to have_ckeditor "Description", with: "Description 2b"
     end
   end
 

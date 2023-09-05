@@ -66,10 +66,6 @@ ka:
       form:
         submit_button: დებატის დაწყება
     debate:
-      comments:
-        zero: კომენტარები არ მოიძებნა
-        one: 1 კომენტარი
-        other: "%{count} კომენტარი"
       votes:
         zero: ხმები არ მოიძებნა
         one: 1 ხმა
@@ -125,10 +121,6 @@ ka:
       start_new: დებატების დაწყება
     show:
       author_deleted: მომხმარებელი წაშლილია
-      comments:
-        zero: კომენტარები არ მოიძებნა
-        one: 1 კომენტარი
-        other: "%{count} კომენტარი"
       comments_title: კომენტარები
       edit_debate_link: რედაქტირება
       flag: მომხმარებელთა გარკვეულმა ნაწილმა ეს დებატები გაასაჩივრა.
@@ -200,7 +192,7 @@ ka:
       accessibility: ხელმისაწვდომობა
       conditions: გამოყენების წესები და პირობები
       consul: CONSUL-ის აპლიკაცია
-      consul_url: https://github.com/consul/consul
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: CONSUL, %{year}
       description: აღნიშნული პორტალი იყენებს %{consul}, რომელიც არის %{open_source}.
       open_source: ღია წყაროების პროგრამული უზრუნველყოფა
@@ -390,10 +382,6 @@ ka:
         edit: "გაზიარებამდე ტექსტის შეცვლა შესაძლებელია."
         view_proposal: ახლა არა, გადავიდეთ ჩემს ინიციატივაზე
       already_supported: თქვენ უკვე მიეცით ხმა ამ ინიციატივას. შეგიძლიათ მისი გაზიარება!
-      comments:
-        zero: კომენტარები არ მოიძებნა
-        one: 1 კომენტარი
-        other: "%{count} კომენტარი"
       support: ხმის მიცემა
       support_title: ინიციატივაზე ხმის მიცემა
       supports:
@@ -412,10 +400,6 @@ ka:
     show:
       author_deleted: მომხმარებელი წაშლილია
       code: "ინიციატივის კოდი:"
-      comments:
-        zero: კომენტარები არ მოიძებნა
-        one: 1 კომენტარი
-        other: "%{count} კომენტარი"
       comments_tab: კომენტარები
       dashboard_proposal_link: მოქმედებათა დაფა
       flag: მომხმარებელთა გარკვეულმა ნაწილმა ეს ინიციატივა გაასაჩივრა.
@@ -897,7 +881,7 @@ ka:
   annotator:
     help:
       alt: შეარჩიეთ ტექსტი, რომელზეც გსურთ კომენტარის გაკეთება და დააჭირეთ ღილაკს ფანქრის ნიშნით.
-      text: კომენტარის გასაკეთებლად გაიარეთ %{sign_in} ან %{sign_up}. შემდეგ მონიშნეთ ტექსტი, რომლის კომენტირებაც გსურთ და დააწექით ღილაკს ფანქრის გამოსახულებით. 
+      text: კომენტარის გასაკეთებლად გაიარეთ %{sign_in} ან %{sign_up}. შემდეგ მონიშნეთ ტექსტი, რომლის კომენტირებაც გსურთ და დააწექით ღილაკს ფანქრის გამოსახულებით.
       title: როგორ გავაკეთო კომენტარი ამ დოკუმენტზე?
   links:
     form:

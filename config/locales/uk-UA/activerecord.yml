@@ -507,7 +507,7 @@ uk-UA:
         description: Опис
       poll/question/answer/translation:
         title: Відповідь
-        description: Опис
+        description: "Опис"
       poll/question/answer/video:
         title: Заголовок
         url: Зовнішнє відео

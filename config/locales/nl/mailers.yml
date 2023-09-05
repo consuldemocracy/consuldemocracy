@@ -1,66 +1,70 @@
 nl:
   mailers:
     title: "Open overheid"
-    no_reply: "This message was sent from an email address that does not accept replies."
-    unsubscribe: "Wanneer je dit soort e-mails niet meer wilt ontvangen, verander dan de instellingen op de \"%{link}\" pagina."
-    unsubscribe_link: "Mijn Profiel"
+    no_reply: "Dit bericht is verzonden vanaf een e-mailadres dat geen reacties accepteert."
+    already_confirmed:
+      info: "We hebben een verzoek voor instructies om je account te bevestigen ontvangen. Je account is alleen al bevestigd, dus dit hoef je niet meer te doen."
+      new_password: "Als je je wachtwoord vergeten bent, kan je het opnieuw instellen met de volgende link:"
+      subject: Je account is al bevestigd
     comment:
-      hi: Hi
+      hi: Hoi
       new_comment_by: There is a new comment from <strong>%{commenter}</strong>
-      subject: Someone has commented on your %{commentable}
-      title: New comment
+      subject: Iemand heeft een reactie achtergelaten op %{commentable}
+      title: Nieuwe reactie
     config:
       notifications_link: Notificaties
       unsubscribe_text: 'Bezoek %{notifications} en vink "%{notification}" af om je af te melden voor deze e-mails.'
     email_verification:
-      click_here_to_verify: this link
+      click_here_to_verify: deze link
       instructions_2: Deze e-mail verifieert uw account met %{document_type} %{document_number}. Als deze email niet voor u bestemd is, klik dan niet op de link en negeer deze e-mail.
       instructions: Om de verificatie van uw account te voltooien klikt u %{verification_link}.
-      subject: Confirm your email
-      thanks: Thank you very much.
-      title: "Confirm your email"
-      text: "Confirm your account using the following link."
+      subject: Bevestig je emailadres
+      thanks: Heel erg bedankt.
+      title: "Bevestig je emailadres"
+      text: "Bevestig je account met de volgende link."
     reply:
       hi: Hoi
       new_reply_by: There is a new response from <strong>%{commenter}</strong> to your comment on
-      subject: Someone has responded to your comment
-      title: New response to your comment
+      subject: Iemand heeft gereageerd op je reactie
+      title: Nieuwe reactie op je reactie
     proposal_notification_digest:
       info: "Dit zijn nieuwe notificaties gerelateerd aan voorstellen die je hebt gesteund in %{org_name}."
-      title: "Notifications in %{org_name}"
+      title: "Voorstelmeldingen in %{org_name}"
       share: Voorstel delen
       comment: Reageren op het voorstel
+      unsubscribe_text: "Als je geen notificaties van voorstellen wilt ontvangen, ga je naar %{notifications} en verwijder je het vinkje bij 'Een samenvatting van notificaties ontvangen'."
       unfollow: "Ga naar dit voorstel en stop met volgen om geen meldingen meer te ontvangen."
     direct_message_for_receiver:
-      subject: "You have received a new private message"
-      reply: Reply to %{sender}
+      subject: "U hebt een nieuw prive-bericht ontvangen"
+      reply: Antwoord op %{sender}
+      unsubscribe_text: "Als je geen directe berichten wil ontvangen, ga dan naar %{notifications} en haal het vinkje weg bij 'Email ontvangen wanneer er privéberichten zijn'."
     direct_message_for_sender:
       subject: "U heeft een nieuw prive bericht verstuurd"
       title: "U heeft een nieuw prive bericht verstuurd"
       text: "Je hebt een nieuw privébericht gestuurd naar <strong>%{receiver}</strong> met de inhoud:"
     user_invite:
-      ignore: "If you have not requested this invitation don't worry, you can ignore this email."
+      ignore: "Als je deze uitnodiging niet hebt aangevraagd hoef je je geen zorgen te maken en kan je deze e-mail negeren."
       text: "Dank u voor uw interesse om toe te treden tot %{org}! In een paar seconden kunt u deelnemen, vul het onderstaande formulier in:"
       thanks: "Heel erg bedankt."
-      title: "Welcome to %{org}"
-      button: Complete registration
-      subject: "Invitation to %{org_name}"
+      title: "Welkom bij %{org}"
+      button: Inschrijving voltooien
+      subject: "Uitnodiging voor %{org_name}"
     budget_investment_created:
-      subject: "Thank you for creating an investment!"
+      subject: "Dank u voor het maken van een investering!"
       title: "Dank u voor het maken van een investering!"
       intro: "Hallo <strong>%{author}</strong>,"
       text: "Dank u voor het maken van uw investering <strong>%{investment}</strong> voor participatieve budgetten <strong>%{budget}</strong>."
       follow: "Wij zullen u informeren over hoe het proces vordert, dit kun je ook volgen op <strong>%{link}<div class=\"notranslate\"> 2 volgen kun</div>."
-      follow_link: "Participatory Budgets"
-      sincerely: "Sincerely,"
-      share: "Comparte tu proyecto"
+      follow_link: "Burgerbegrotingen"
+      sincerely: "Met vriendelijke groet,"
+      share: "Deel uw project"
     budget_investment_unfeasible:
       title: "Uw investeringsproject is als onhaalbaar gemarkeerd"
       hi: "Beste deelnemer,"
       new: "Voor al deze vragen nodigen we u uit een <strong>nieuw voorstel</ strong> uit te werken dat zich aanpast aan de voorwaarden van dit proces. U kunt dit doen door deze link te volgen: %{url}."
       new_href: "nieuw investeringsproject"
-      sincerely: "Oprecht"
-      sorry: "Sorry for the inconvenience and we again thank you for your invaluable participation."
+      sincerely: "Met vriendelijke groet"
+      sorry: "Sorry voor het ongemak en nogmaals hartelijk dank voor uw waardevolle deelname."
       subject: "Uw investeringsproject '%{code}' is als onhaalbaar gemarkeerd"
     budget_investment_selected:
       subject: "Uw budget voorstel '%{code}' is geselecteerd"
@@ -68,14 +72,14 @@ nl:
       hi: "Beste deelnemer,"
       share: "Begin met het verwerven van stemmen; deel uw project op sociale netwerken, bijvoorbeeld. Delen en communicatie is essentieel om het verder te brengen."
       share_button: "Deel uw project"
-      thanks: "Thank you again for participating."
-      sincerely: "Sincererly"
+      thanks: "Nogmaals dank voor uw deelname."
+      sincerely: "Met vriendelijke groet"
     budget_investment_unselected:
       subject: "Uw project '%{code}' is niet geselecteerd"
       title: "Uw project is niet geselecteerd"
       hi: "Beste deelnemer,"
       thanks: "Dank u nogmaals voor uw deelname."
-      sincerely: "Hoogachtend"
+      sincerely: "Met vriendelijke groet"
     evaluation_comment:
       subject: "Nieuw evaluatiecommentaar"
       title: Nieuw evaluatiecommentaar voor %{investment}
@@ -92,10 +96,12 @@ nl:
       subject: "Machine Learning - Content werd succesvol gegenereerd"
       text: "Content werd succesvol gegenereerd."
       title: "Machine Learning script"
-    new_actions_notification_rake_created:
-      subject: "Meer nieuws over je voorstel"
-      hi: "Hallo %{name},"
-      introduction: "Zoals je weet, heb je op %{created_at_day} van %{created_at_month} een conceptvoorstel %{title} gemaakt."
-      text_1: "Je kan hem publiceren wanneer je wilt door op deze link te klikken: %{link_to_published}. Als je het nog niet weet..."
-      text_2: "Gebruik dit moment! Leer van anderen door mensen met dezelfde interesses toe te voegen en bereid je samen voor op het launchen van je voorstel."
-      text_3: "Om je te ondersteunen bij deze uitdagingen, is hier het nieuws..."
+    new_actions_notification_on_create:
+      subject: "Je conceptvoorstel is aangemaakt"
+      hi: "Hoi %{name}!"
+      introduction: "Je %{title} voorstel is succesvol aangemaakt."
+      text_1: "Doe er je voordeel mee dat je voorstel nog niet openbaar is en maak je klaar om een hoop mensen te benaderen."
+      text_2: "Als je klaar bent publiceer je je voorstel via <a href='%{link}'>deze link</a>."
+    new_actions_notification_on_published:
+      text_1: "En nu, ga voor je eerste 100 ondersteuningen!"
+      text_2: "Waarom 100?"

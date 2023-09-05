@@ -1,1 +1,50 @@
 gd:
+  sdg_management:
+    actions:
+      edit: "Stiùirich amasan agus targaidean"
+    header:
+      title: "Susbaint mu na h-Amasan Leasachaidh Seasmhach"
+    homepage:
+      title: "Rèiteachadh na duilleige-dachaigh"
+      header:
+        create: "Cruthaich bann-cinn"
+        no_cards: "Chan eil bann-cinn ann"
+        title: "Bann-cinn"
+      create_card: "Cruthaich cairt %{phase}"
+      no_cards: "Chan eil cairtean ann airson na h-ìre seo"
+    menu:
+      budget_investments: "Buidseatan Com-pàirteachail"
+      debates: "Deasbadan"
+      legislation_processes: "Pròiseasan reachdais"
+      legislation_proposals: "Molaidhean reachdais"
+      polls: "Cunntasan-bheachd"
+      proposals: "Molaidhean"
+      sdg_content: "Amasan agus Targaidean"
+      sdg_homepage: "Duilleag-dachaigh nan Amasan Leasachaidh Seasmhach"
+    local_targets:
+      create:
+        notice: "Targaid ionadail air a cruthachadh"
+      destroy:
+        notice: "Targaid ionadail air sguabadh às"
+      edit:
+        title: "Deasaich an targaid ionadail"
+      form:
+        code: "Feumaidh an còd tòiseachadh leis a’ chòd targaid a thagh thu, air a leantainn le dotag"
+        description: "Thèid an tuairisgeul seo a shealltainn gus cleachdaichean a chuideachadh."
+      index:
+        new: "Cruthaichidh targaid ionadail"
+      new:
+        title: "Targaid ionadail ùr"
+      update:
+        notice: "Targaid ionadail air ùrachadh"
+    relations:
+      index:
+        filter: "Criathraich"
+        filters:
+          all: "Uile"
+          pending_sdg_review: "Ri choileanadh"
+          sdg_reviewed: "Chaidh comharrachadh gun deach ath-sgrùdadh"
+      update:
+        notice: "%{relatable} air ùrachadh"
+      update_and_review:
+        notice: "%{relatable} air ùrachadh agus chaidh comharrachadh gun deach ath-sgrùdadh"

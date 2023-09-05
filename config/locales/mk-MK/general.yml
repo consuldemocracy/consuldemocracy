@@ -61,10 +61,6 @@ mk:
     comments_title: Коментари
   debates:
     debate:
-      comments:
-        zero: Нема коментари
-        one: 1 коментар
-        other: "%{count} коментари"
       votes:
         zero: Нема гласови
         one: 1 глас
@@ -80,10 +76,6 @@ mk:
         title: Дебати
     show:
       author_deleted: Избришан корисник
-      comments:
-        zero: Нема коментари
-        one: 1 коментар
-        other: "%{count} коментари"
       comments_title: Коментари
       edit_debate_link: Измени
       flag: Оваа дебата беше посочена како несоодветна од повеќе корисници.
@@ -192,20 +184,12 @@ mk:
       created: "Направи нов предлог!"
       share:
         view_proposal: Не сега, однеси ме до мојот предлог
-      comments:
-        zero: Нема коментари
-        one: 1 коментар
-        other: "%{count} коментари"
       votes:
         zero: Нема гласови
         one: 1 глас
         other: "%{count} гласови"
     show:
       author_deleted: Избришан корисник
-      comments:
-        zero: Нема коментари
-        one: 1 коментар
-        other: "%{count} коментари"
       comments_tab: Коментари
       notifications_tab: Нотификации
       share: Сподели

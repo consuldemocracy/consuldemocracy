@@ -40,8 +40,6 @@ en:
     telegram_handle_description: "If filled in it will appear in the footer"
     instagram_handle: "Instagram handle"
     instagram_handle_description: "If filled in it will appear in the footer"
-    url: "Main URL"
-    url_description: "Main URL of your website"
     org_name: "Site name"
     org_name_description: "This name will appear on mailers subject, help pages..."
     related_content_score_threshold: "Related content score threshold"

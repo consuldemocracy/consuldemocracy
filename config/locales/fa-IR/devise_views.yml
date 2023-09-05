@@ -2,8 +2,8 @@ fa:
   devise_views:
     confirmations:
       new:
-        submit: ارسال مجدد دستورالعمل 
-        title: ارسال دوباره دستورالعمل تایید 
+        submit: ارسال مجدد دستورالعمل
+        title: ارسال دوباره دستورالعمل تایید
       show:
         instructions: تایید حساب با ایمیل %{email}
         new_password_confirmation_label: تکرار رمز عبور دسترسی
@@ -15,8 +15,8 @@ fa:
       confirmation_instructions:
         confirm_link: تایید حساب
         text: "شما می توانید حساب ایمیل خود را در لینک زیر تأیید کنید:"
-        title: خوش آمدید 
-        welcome: خوش آمدید 
+        title: خوش آمدید
+        welcome: خوش آمدید
       reset_password_instructions:
         change_link: تغییر کلمه عبور
         hello: سلام

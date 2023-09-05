@@ -67,9 +67,9 @@ en:
         text: |-
           Use it in your local government or help us to improve it, it is free software.
 
-          This Open Government Portal use the [CONSUL app](https://github.com/consul/consul 'consul github') that is free software, with [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), that means in simple words that anyone can use the code freely, copy it, see it in detail, modify it and redistribute it to the world with the modifications they want (allowing others to do the same). Because we think culture is better and richer when it is released.
+          This Open Government Portal uses the [CONSUL DEMOCRACY app](https://github.com/consuldemocracy/consuldemocracy 'consul democracy github') that is free software, with [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), that means in simple words that anyone can use the code freely, copy it, see it in detail, modify it and redistribute it to the world with the modifications they want (allowing others to do the same). Because we think culture is better and richer when it is released.
 
-          If you are a programmer, you can see the code and help us to improve it at [CONSUL app](https://github.com/consul/consul 'consul github').
+          If you are a programmer, you can see the code and help us to improve it at [CONSUL DEMOCRACY app](https://github.com/consuldemocracy/consuldemocracy 'consul democracy github').
       titles:
         how_to_use: Use it in your local government
     privacy:

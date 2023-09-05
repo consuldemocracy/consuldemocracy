@@ -11,7 +11,7 @@
     </thead>
     <tbody>
       <% cards.each do |card| %>
-        <%= render Admin::Widget::Cards::RowComponent.new(card, options) %>
+        <%= render Admin::Widget::Cards::RowComponent.new(card, **options) %>
       <% end %>
     </tbody>
   </table>

@@ -71,30 +71,6 @@ he:
       hi: שלום
       new_comment_by: יש הערת הערכה חדשה מ- <strong>%{commenter}</strong> לתקציב ההשקעה %{investment}
       commenter_info: "%{commenter}, %{time}:"
-    new_actions_notification_rake_created:
-      subject: "עוד חדשות על הצעת התושב שלך"
-      hi: "שלום %{name},"
-      new_resource: "משאב פתוח חדש"
-      introduction: "כידוע לך, ביום %{created_at_day} %{created_at_month} יצרת את ההצעה במצב טיוטה %{title}."
-      text_1: "מתי שתרצה תוכל לפרסם עם הקישור הזה: %{link_to_published}. אם אתה עדיין לא בטוח..."
-      text_2: "תפוס את הרגע הזה! למד, הוסף עוד אנשים עם אינטרסים דומים והיערך לכך בעת פרסום הצעתך באופן סופי."
-      text_3: "ללוות אותך באתגר הזה, להלן החדשות..."
-      text_4: "העף מבט על הפעולה החדשה המומלצת:"
-      text_5: "הפעולה הבאה שאנו ממליצים עליה היא:"
-      footer_text: "כמו תמיד, היכנס ללוח הצעות, נדווח לך בפירוט כיצד להשתמש במשאבים אלו וכיצד להפיק מהם את המירב."
-      dashboard_button: "המשך, וגלה אותם!"
-    new_actions_notification_rake_published:
-      subject: "עוד חדשות על הצעת התושב שלך"
-      hi: "שלום %{name},"
-      new_resource: "משאב פתוח חדש"
-      introduction: "כידוע לך, ביום %{published_at_day} %{published_at_month} פרסמת את ההצעתך %{title}."
-      text_1: ". ובכן, יש לך תמיכה %{votes_count} עד כה ברכות!"
-      text_2: "אז, יש לך משאב חדש זמין שיעזור לך להמשיך הלאה."
-      text_3: "חסרים לך %{days_count} ימים לפני שההצעה שלך תקבל את %{max_votes_count} התמיכות ותעבור לשלב המשאל. התעודד והמשך את הפצתה. האם חסר לך רעיונות?"
-      text_4: "פעולת דיפוזיה מומלצת חדשה"
-      text_5: "יש עוד עדיין, ראה את הפעולה הבאה:"
-      footer_text: "כמו תמיד, היכנס ללוח הצעות, נדווח לך בפירוט כיצד להשתמש במשאבים אלו וכיצד להפיק מהם את המירב."
-      dashboard_button: "המשך, וגלה אותם!"
     new_actions_notification_on_create:
       subject: "טיוטה הצעת התושב שלך נוצרה"
       hi: "היי %{name}!"

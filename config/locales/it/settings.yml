@@ -40,8 +40,6 @@ it:
     telegram_handle_description: "Se compilato apparirà nel piè di pagina"
     instagram_handle: "Utente Instagram"
     instagram_handle_description: "Se compilato apparirà nel piè di pagina"
-    url: "URL principale"
-    url_description: "URL principale del tuo sito web"
     org_name: "Organizzazione"
     org_name_description: "Questo nome apparirà sull'oggetto dei mittenti, pagine di supporto..."
     related_content_score_threshold: "Soglia del punteggio del contenuto correlato"

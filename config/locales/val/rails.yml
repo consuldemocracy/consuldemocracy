@@ -9,7 +9,7 @@ val:
       - Dv
       - Ds
     abbr_month_names:
-      - 
+      -
       - Gen
       - Feb
       - Mar
@@ -35,7 +35,7 @@ val:
       long: "%d de %B de %Y"
       short: "%d de %b"
     month_names:
-      - 
+      -
       - Gener
       - Febrer
       - Març

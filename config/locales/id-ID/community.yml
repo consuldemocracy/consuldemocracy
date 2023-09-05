@@ -25,9 +25,6 @@ id:
       topic:
         edit: Sunting topik
         destroy: Menghancurkan topik
-        comments:
-          zero: Tidak ada komentar
-          other: "%{count} komentar"
       author: Penulis
       back: Kembali ke %{community} %{proposal}
     topic:

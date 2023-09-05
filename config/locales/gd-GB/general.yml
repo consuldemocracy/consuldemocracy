@@ -1,1 +1,1006 @@
 gd:
+  account:
+    show:
+      change_credentials_link: Atharraich am fiosrachadh clàraidh agam
+      erase_account_link: Sguab às an cunntas agam
+      finish_verification: Coilean dearbhadh
+      notifications: Brathan
+      personal: Fiosrachadh pearsanta
+      public_interests_my_title_list: Tagaichean mu nithean a tha thu a’ leantainn
+      public_interests_user_title_list: Tagaichean mu nithean a tha an cleachdaiche seo a leantainn
+      save_changes_submit: Sàbhail na dh’atharraich thu
+      recommendations: Molaidhean
+      title: An cunntas agam
+      user_permission_info: Leis a’ chunntas agad, is urrainn dhut...
+      user_permission_title: Com-pàirteachas
+      user_permission_verify: Gus na gnìomhan uile a dhèanamh, dearbhaich do chunntas.
+      verified_account: Cunntas air a dhearbhadh
+      verify_my_account: Dearbhaich mo chunntas
+  application:
+    close: Dùin
+    menu: Clàr-taice
+  comments:
+    actions:
+      confirm_delete: "A bheil thu cinnteach? Sguabaidh seo am beachd seo às. Chan urrainn dhut an gnìomh seo a neo-dhèanamh."
+      delete: "Sguab às beachd"
+    comments_closed: Tha beachdan dùinte
+    verified_only: Gus pàirt a ghabhail %{verify_account}
+    comment:
+      admin: Rianaire
+      author: Ùghdar
+      deleted: Chaidh am beachd seo a sguabadh às
+      moderator: Modarator
+      responses:
+        zero: Chan eil freagairt sam bith ann
+        one: 1 fhreagairt
+        two: "%{count} fhreagairt"
+        few: "%{count} freagairtean"
+        other: "%{count} freagairtean"
+      responses_show:
+        zero: Chan eil freagairt sam bith ann
+        one: "1 fhreagairt (seall)"
+        two: "%{count} fhreagairt (seall)"
+        few: "%{count} fhreagairtean (seall)"
+        other: "%{count} fhreagairtean (seall)"
+      responses_collapse:
+        zero: Chan eil freagairt sam bith ann
+        one: "1 fhreagairt (co-theannaich)"
+        two: "%{count} fhreagairt (co-theannaich)"
+        few: "%{count} fhreagairt (co-theannaich)"
+        other: "%{count} fhreagairt (co-theannaich)"
+      user_deleted: Cleachdaiche air a sguabadh às
+      votes:
+        zero: Chan eil bhòt sam bith ann
+        one: 1 bhòt
+        two: "%{count} bhòt"
+        few: "%{count} bhòtaichean"
+        other: "%{count} bhòtaichean"
+    form:
+      comment_as_admin: Thoir seachad beachd mar rianaire
+      comment_as_moderator: Thoir seachad beachd mar mhodarator
+      leave_comment: Fàg do bheachd
+    orders:
+      most_voted: Leis an àireamh as motha de bhòtaichean
+      newest: As ùire an toiseach
+      oldest: As sine an toiseach
+      most_commented: Leis an àireamh as motha de bheachdan
+    show:
+      return_to_commentable: "Air ais gu "
+  comments_helper:
+    comment_button: Foillsich beachd
+    comment_link: Beachd
+    comments_title: Beachdan
+    reply_button: Foillsich freagairt
+    reply_link: Freagair
+  debates:
+    create:
+      form:
+        submit_button: Tòisich deasbad
+    debate:
+      votes:
+        zero: Chan eil bhòt sam bith ann
+        one: 1 bhòt
+        two: "%{count} bhòtaichean"
+        few: "%{count} bhòtaichean"
+        other: "%{count} bhòtaichean"
+    edit:
+      editing: Deasaich deasbad
+      form:
+        submit_button: Sàbhail na dh’atharraich thu
+      show_link: Faic an deasbad
+    form:
+      tags_instructions: Tagaich an deasbad seo.
+      tags_placeholder: "Cuir a-steach am facal-faire a bu toigh leat cleachdadh, air an dealachadh le cromagan (',')"
+    index:
+      featured_debates: Ga bhrosnachadh
+      orders:
+        confidence_score: rangaichte as àirde
+        created_at: as ùire
+        hot_score: leis a’ ghnìomhachd as motha
+        most_commented: leis an àireamh as motha de bheachdan
+        relevance: buntainneas
+        recommendations: molaidhean
+      recommendations:
+        without_results: Chan eil deasbad sam bith co-cheangailte ris na h-ùidhean agad
+        without_interests: Lean cuspairean gus an urrainn dhuinn molaidhean a thoirt dhut
+        disable: "Chan fhaic thu molaidhean airson deasbadan tuilleadh ma leigeas tu seachad iad. Faodaidh tu an cur an comas a-rithist air an duilleig 'Mo chunntas’"
+        actions:
+          success: "Tha molaidhean airson deasbadan a-nis air an cur à comas airson a’ chunntais seo"
+          error: "Tha mearachd air tachairt. Rach gu duilleag ‘Mo chunntas’ gus molaidhean airson deasbadan a chur à comas le làimh"
+      search_form:
+        button: Lorg
+        placeholder: Lorg anns na deasbadan...
+        title: Lorg
+      start_debate: Tòisich deasbad
+      title: Deasbadan
+      section_header:
+        icon_alt: Ìomhaigh nan deasbadan
+        title: Deasbadan
+        help: Cuideachadh le deasbadan
+      section_footer:
+        title: Cuideachadh le deasbadan
+        description: Tòisich deasbad gus beachdan a thoirt do dhaoine eile mu na cuspairean a tha cudromach dhut.
+        help_text_1: "Tha an t-àite seo airson deasbadan saoranach ag amas air neach sam bith gus an urrainn dhaibh cùisean a thogail a tha cudromach, agus a tha airson am beachdan a cho-roinn le daoine eile."
+        help_text_2: 'Feumaidh tu clàradh air %{org} gus deasbad fhosgladh. Faodaidh cleachdaichean cuideachd beachdan a thoirt seachad air deasbadan fosgailte agus an rangachadh leis na putanan “Tha mi ag aontachadh” no “Chan eil mi ag aontachadh” a lorgar anns gach fear dhiubh.'
+    new:
+      form:
+        submit_button: Tòisich deasbad
+      more_info: Ciamar a tha deasbadan ag obrachadh?
+      recommendation_four: Faigh tlachd às an àite seo agus às na guthan a chluinnear ann. Is ann leatsa a tha e cuideachd.
+      recommendation_one: Na sgrìobh tiotal an deasbaid no seantansan slàn ann an litrichean mòra. Air an eadar-lìon thathar a’ meas seo mar èigheach. Agus chan eil e a’ còrdadh ri duine sam bith ma thathar ag èigheach.
+      recommendation_three: Thathar a’ cur fàilte air càineadh. ’S e àite airson meòrachadh a tha seo. Ach tha sinn a’ moladh gum bi thu ealanta, cruthachail agus glic. Tha na buadhan sin a’ toirt deagh bhuaidh air an t-saoghal air fad.
+      recommendation_two: Thèid cuir às do dheasbad no beachd sam bith a tha a’ moladh gnìomh mì-laghail, no a tha an dùil sgrios a dhèanamh air àite deasbaid a’ chuspair, ach tha a h-uile càil eile ceadaichte.
+      recommendations_title: Molaidhean airson deasbad a chruthachadh
+      start_new: Tòisich deasbad
+    show:
+      author_deleted: Cleachdaiche air a sguabadh às
+      comments_title: Beachdan
+      edit_debate_link: Deasaich
+      flag: Tha grunn chleachdaichean air comharrachadh gu bheil an deasbad seo neo-iomchaidh.
+      share: Co-roinn
+      author: Ùghdar
+    update:
+      form:
+        submit_button: Sàbhail na dh’atharraich thu
+  errors:
+    messages:
+      allowed_file_content_types: "feumaidh an t-susbaint a bhith air aon de na seòrsaichean seo %{types}"
+      user_not_found: Cha deach an cleachdaiche a lorg
+      invalid_date_range: "Rainse cinn-latha mì-dhligheach"
+      past_date: "Chan fhaod ceann-latha san àm a dh’fhalbh a bhith ann."
+      cannot_change_date:
+        poll_started: "Cha ghabh seo atharrachadh ma tha bhòtadh air tòiseachadh mar-thà"
+        poll_ended: "Cha ghabh seo atharrachadh ma tha bhòtadh air tighinn gu crìch mar-thà"
+  form:
+    accept_terms: Tha mi ag aontachadh ri %{policy} is ris na %{conditions}
+    accept_terms_title: Tha mi ag aontachadh ris a’ Phoileasaidh Prìobhaideachd agus ris na Teirmichean is cumhaichean cleachdaidh
+    conditions: Teirmichean is cumhaichean cleachdaidh
+    debate: Deasbad
+    direct_message: teachdaireachd phrìobhaideach
+    error: mearachd
+    errors: mearachdan
+    not_saved: ": chuir seo stad air %{resource} bho bhith air a shàbhaladh.<br> Feuch an toir thu sùil air na raointean comharraichte gus faighinn a-mach mar a cheartaicheas tu iad:"
+    policy: Poileasaidh prìobhaideachd
+    banner: bratach
+    proposal: Moladh
+    proposal_notification: "Brath"
+    budget/investment: Tasgadh
+    budget/group: Buidheann buidseit
+    budget/heading: Bann-cinn Buidseit
+    geozone: sgìre
+    legislation/draft_version: dreachd
+    legislation/process: pròiseas
+    legislation/question: ceist
+    poll/shift: Sioft
+    poll/question/answer: Freagair
+    user: Cunntas
+    verification/sms: fòn
+    signature_sheet: Duilleag nan ainmean-sgrìobhte
+    document: Sgrìobhainn
+    topic: Cuspair
+    image: Ìomhaigh
+    local_census_record: Clàr cunntas-sluaigh ionadail
+    local_census_records/import: Ion-phortaich clàran cunntas-sluaigh ionadail
+    site_customization/content_block: bacadh susbaint
+    site_customization/page: taobh-duilleig
+    sdg/local_target: targaid ionadail
+  geozones:
+    none: Am baile air fad
+  layouts:
+    application:
+      chrome: Google Chrome
+      firefox: Firefox
+      ie: Tha sinn a’ faicinn gu bheil thu a’ cleachdadh Internet Explorer. Mholamaid gun cleachd thu %{firefox} no %{chrome}.
+      ie_title: Chan eil an làrach-lìn seo air a phiseachadh airson do bhrabhsair
+    dashboard:
+      proposal_header:
+        published: Foillsichte
+        draft: Dreachd
+        retired: Air a tharraing às
+      proposal_totals:
+        active_resources: Goireasan gnìomhach
+        community: Com-pàirtichean sa choimhearsnachd agad
+        show_proposal: Seall moladh
+        preview_proposal: Ro-shealladh air a’ mholadh
+        current_goal: Amas làithreach
+        supports:
+          zero: Gun taic sam bith
+          one: 1 Comharra taic
+          two: "Chomharra taic"
+          few: "Comharran taic"
+          other: "Comharran taic"
+    footer:
+      accessibility: So-ruigsinneachd
+      conditions: Teirmichean is cumhaichean cleachdaidh
+      consul: aplacaid CONSUL
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
+      copyright: CONSUL, %{year}
+      description: Cleachdaidh am portal seo an %{consul} a tha na ghoireas %{open_source}.
+      open_source: bathar-bog le còd fosgailte
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: Co-dhùin cò ris a bu chòir dhan bhaile agad a bhith coltach.
+      participation_title: Com-pàirteachas
+      privacy: Poileasaidh prìobhaideachd
+    header:
+      administration_menu: Clàr-taice
+      administration: Rianachd
+      collaborative_legislation: Reachdas co-obrachail
+      debates: Deasbadan
+      locale: "Cànan:"
+      management: Stiùireadh
+      moderation: Modaratadh
+      valuation: Luachadh
+      officing: Oifigearan bhòtaidh
+      help: Cobhair
+      my_account_link: Mo chunntas
+      my_activity_link: Mo chuid susbaint
+      open_gov: Riaghladh Fosgailte
+      proposals: Molaidhean
+      poll_questions: Bhòtadh
+      budgets: Buidseatan com-pàirteachail
+      notification_item:
+        new_notifications:
+          zero: "Chan eil brath ùr sam bith agad"
+          one: Tha brath ùr agad
+          two: Tha %{count} bhrath ùra agad
+          few: Tha %{count} brathan ùra agad
+          other: Tha %{count} brathan ùra agad
+        notifications: Brathan
+      sdg: "Amasan Leasachaidh Seasmhach"
+  notifications:
+    index:
+      empty_notifications: Chan eil brath ùr sam bith agad.
+      mark_all_as_read: Comharraich gun deach iad uile a leughadh
+      read: Leughte
+      title: Brathan
+      unread: Neo-leughte
+    notification:
+      action:
+        comments_on:
+          one: Thug cuideigin beachd seachad air
+          two: Tha %{count} bheachd ùra ann air
+          few: Tha %{count} beachdan ùra ann air
+          other: Tha %{count} beachdan ùra ann air
+        proposal_notification:
+          one: Tha aon bhrath ùr ann air
+          two: Tha %{count} bhrath ùr agad
+          few: Tha %{count} brathan ùra agad
+          other: Tha %{count} brathan ùra agad
+        replies_to:
+          one: Fhreagair chuideigin do bheachd air
+          two: Tha %{count} bheachd ann mun bheachd agad air
+          few: Tha %{count} beachdan ùra ann mun bheachd agad air
+          other: Tha %{count} beachdan ùra ann mun bheachd agad air
+      mark_as_read: Comharraich gun deach a leughadh
+      mark_as_unread: Comharraich nach deach a leughadh
+      notifiable_hidden: Chan eil an goireas seo ri fhaighinn tuilleadh.
+  map:
+    title: "Sgìrean"
+    proposal_for_district: "Tòisich moladh airson na sgìre agad"
+    start_proposal: Cruthaich moladh
+  omniauth:
+    facebook:
+      sign_in: Clàraich a-steach le Facebook
+      sign_up: Clàraich leinn le Facebook
+      name: Facebook
+    finish_signup:
+      title: "Barrachd fiosrachaidh"
+      username_warning: "Mar thoradh air atharrachadh san dòigh sa bheil sinn ag eadar-obrachadh le lìonraidhean sòisealta, dh’fhaodadh gum bi coltas ann gu bheil d’ ainm-cleachdaidh ‘air a chleachdadh mar-thà’. Mas e is gun tachair sin dhut, tagh ainm-cleachdaidh eile."
+    google_oauth2:
+      sign_in: Clàraich a-steach le Google
+      sign_up: Clàraich leinn le Google
+      name: Google
+    wordpress_oauth2:
+      sign_in: Clàraich a-steach le WordPress
+      sign_up: Clàraich leinn le WordPress
+      name: WordPress
+    twitter:
+      sign_in: Clàraich a-steach le Twitter
+      sign_up: Clàraich leinn le Twitter
+      name: Twitter
+    info:
+      sign_in: "Clàraich a-steach le:"
+      sign_up: "Clàraich leinn le:"
+    or_fill: "No lìon am foirm a leanas:"
+  proposals:
+    create:
+      form:
+        submit_button: Cruthaich moladh
+    created:
+      title: Meal do naidheachd! Tha thu air a’ chiad cheum a ghabhail.
+      motivation: "Tha e cudromach an iomairt tòiseachaidh ullachadh gus am bi do mholadh soirbheachail. Tha a’ chiad beagan làithean ro-chudromach."
+      motivation_2: "<strong>Ma tha thu ag iarraidh molaidhean airson do chuideachadh le bhith ga fhoillseachadh, fàg do mholadh mar dhreachd agus bheir sinn stiùireadh dhut.</strong>"
+      publish: Chan eil mi ag iarraidh cuideachadh, tha mi airson am moladh fhoillseachadh
+      dashboard: Tha mi ag iarraidh cuideachadh agus foillsichidh mi e nas fhaide air adhart
+      preview_title: Seo an coltas a bhios air do mholadh nuair a dh’fhoillsicheas tu e
+    share:
+      improve_it: Thoir piseach air an iomairt agad agus faigh barrachd taic.
+      dashboard: Faic barrachd fiosrachaidh
+      message: "Chuir mi taic ris a’ mholadh %{title} ann an %{handle}. Ma tha ùidh agad ann, cuir taic ris cuideachd!"
+    edit:
+      editing: Deasaich moladh
+      form:
+        submit_button: Sàbhail na dh’atharraich thu
+      show_link: Seall air moladh
+    retire_form:
+      title: Tarraing moladh às
+      warning: "Ma tharraingeas tu am moladh seo às, gabhaidh e ri comharraidhean taic fhathast, ach thèid a thoirt air falbh bhon phrìomh liosta agus bidh teachdaireachd ri fhaicinn dhan a h-uile cleachdaiche ag innse gu bheil an t-ùghdar den bheachd nach bu chòir taic a thoirt dhan mholadh tuilleadh"
+      retired_reason_blank: Tagh roghainn
+      retired_explanation_placeholder: Mìnich gu goirid carson a tha thu den bheachd nach bu chòir don mholadh seo barrachd taic fhaighinn
+      submit_button: Tarraing às am moladh
+    retire_options:
+      duplicated: Dùblachadh
+      started: A’ dol air adhart mar-thà
+      unfeasible: Neo-chomasach dèanamh
+      done: Deiseil
+      other: Eile
+    form:
+      proposal_responsible_name_note: "(nad aonar no mar riochdaire buidheann; cha tèid seo a thaisbeanadh gu poblach)"
+      proposal_summary_note: "(200 litir air a’ char as motha)"
+      proposal_video_url_note: Faodaidh tu ceangal a chur ri YouTube no Vimeo
+      tag_category_label: "Roinnean-seòrsa"
+      tags_instructions: "Tagaich am moladh seo. Faodaidh tu taghadh bho na roinnean a tha air am moladh no do thagaichean fhèin a chur ris"
+      tags_label: Tagaichean
+      tags_placeholder: "Cuir a-steach am facal-faire a bu toigh leat cleachdadh, air an dealachadh le cromagan (',')"
+      map_location: "Àite air a’ mhapa"
+      map_location_instructions: "Rach dhan àite cheart air a’ mhapa agus cuir an comharra ann."
+      map_remove_marker: "Thoir air falbh an comharra air a’ mhapa"
+    index:
+      featured_proposals: Ga bhrosnachadh
+      orders:
+        confidence_score: rangachaidh as àirde
+        created_at: as ùire
+        hot_score: leis a’ ghnìomhachd as motha
+        most_commented: leis an àireamh as motha de bheachdan
+        relevance: buntainneas
+        archival_date: san tasglann
+        recommendations: molaidhean
+      recommendations:
+        without_results: Chan eil moladh sam bith ann co-cheangailte ris na h-ùidhean agad
+        without_interests: Lean cuspairean gus an urrainn dhuinn molaidhean a thoirt dhut
+        disable: "Chan fhaic thu molaidhean a bharrachd air a mholadh dhut tuilleadh ma leigeas tu seachad iad. Faodaidh tu an cur an comas a-rithist san duilleig 'Mo Chunntas’"
+        actions:
+          success: "Tha molaidhean a bharrachd a-nis à comas airson a’ chunntais seo"
+          error: "Tha mearachd air tachairt. Rach gu duilleag ‘Mo chunntas’ gus molaidhean airson molaidhean a bharrachd a chur à comas thu fhèin"
+      retired_proposals: Molaidhean air an tarraing às
+      retired_proposals_link: "Molaidhean a chaidh an tarraing às leis an ùghdar"
+      selected_proposals: Molaidhean taghte
+      selected_proposals_link: Thoir sùil air molaidhean taghte
+      archived_proposals: Molaidhean san tasglann
+      proposals_lists: Liostaichean de mholaidhean
+      retired_links:
+        all: Na h-uile
+        duplicated: Dùblaichte
+        started: A’ dol air adhart
+        unfeasible: Neo-chomasach dèanamh
+        done: Deiseil
+        other: Eile
+      search_form:
+        button: Lorg
+        placeholder: Dèan lorg sna molaidhean...
+        title: Lorg
+      search_results:
+        one: " anns a bheil am facal <strong>'%{search_term}'</strong>"
+        two: "anns a bheil am facal <strong>'%{search_term}'</strong>"
+        few: "anns a bheil am facal <strong>'%{search_term}'</strong>"
+        other: "anns a bheil am facal <strong>'%{search_term}'</strong>"
+      select_order_long: "Tha thu a’ faicinn molaidhean a rèir:"
+      start_proposal: Cruthaich moladh
+      title: Molaidhean
+      top_link_proposals: Na molaidhean leis an ìre taic as motha a rèir roinn-seòrsa
+      section_header:
+        icon_alt: Ìomhaigh nam molaidhean
+        title: Molaidhean
+        help: Cuideachadh le molaidhean
+      section_footer:
+        title: Cuideachadh le molaidhean
+        description: Tha molaidhean shaoranaich nan cothrom do nàbaidhean agus co-chomainn a bhith a’ co-dhùnadh gu dìreach cò ris a bu chòir dhan chathair-bhaile aca a bhith coltach, às dèidh dhaibh taic gu leòr fhaighinn agus a chur a-steach do bhòt shaoranaich.
+    new:
+      form:
+        submit_button: Cruthaich moladh
+      more_info: Ciamar a tha molaidhean saoranach ag obair?
+      recommendation_one: Na sgrìobh tiotal a’ mholaidh no seantansan slàn ann an litrichean mòra. Air an eadar-lìon thathar a’ meas seo mar èigheach. Agus chan eil e a’ còrdadh ri duine sam bith ma thathar ag èigheach.
+      recommendation_three: Faigh tlachd às an àite seo agus às na guthan a chluinnear ann, is ann leatsa a tha e cuideachd.
+      recommendation_two: Thèid cuir às do mholadh no beachd sam bith a tha a’ moladh gnìomh mì-laghail, no a tha an dùil sgrios a dhèanamh air àite deasbaid a’ chuspair, ach tha a h-uile càil eile ceadaichte.
+      recommendations_title: Molaidhean airson a bhith a’ cruthachadh moladh
+      start_new: Cruthaich moladh ùr
+    notice:
+      retired: Chaidh am moladh a tharraing às
+      published: Chaidh am moladh fhoillseachadh
+    proposal:
+      created: "Tha thu air moladh a chruthachadh!"
+      share:
+        guide: "Faodaidh tu a cho-roinn a-nis gus an urrainn do dhaoine taic a thoirt dha."
+        edit: "Mus tèid a cho-roinn bidh e comasach dhut an teacsa atharrachadh mar a thogras tu."
+        view_proposal: Chan ann an-dràsta, rach dhan mholadh agam
+      already_supported: Tha thu air taic a thoirt dhan mholadh seo mar-thà. Co-roinn e!
+      support: Taic
+      support_label: "Cuir taic ri %{proposal}"
+      support_title: Cuir taic ris a’ mholadh seo
+      supports:
+        zero: Gun taic sam bith
+        one: 1 comharra taic
+        two: "%{count} chomharra taic"
+        few: "%{count} comharraidhean taic"
+        other: "%{count} comharraidhean taic"
+      votes:
+        zero: Chan eil bhòt sam bith ann
+        one: 1 bhòt
+        two: "%{count} bhòt"
+        few: "%{count} bhòtaichean"
+        other: "%{count} bhòtaichean"
+      supports_necessary: "%{number} de chomharran taic a dhìth"
+      total_percent: 100%
+      archived: "Chaidh am moladh seo a chur dhan tasglann agus chan urrainn dha comharran taic a chruinneachadh tuilleadh."
+      successful: "Fhuair am moladh seo an ìre de thaic a tha a dhìth."
+      selected: "Moladh taghte"
+    show:
+      author_deleted: Cleachdaiche air a sguabadh às
+      code: "Còd a’ mholaidh:"
+      comments_tab: Beachdan
+      dashboard_proposal_link: Deas-bhòrd
+      flag: Tha grunn chleachdaichean air comharrachadh gu bheil am moladh seo neo-iomchaidh.
+      notifications_tab: Brathan
+      milestones_tab: Clachan-mìle
+      retired_warning: "Tha an t-ùghdar den bheachd nach bu chòir dhan mholadh seo barrachd taic fhaighinn."
+      retired_warning_link_to_explanation: Leugh am mìneachadh mus bhòt thu air a shon.
+      retired: Chaidh am moladh a tharraing às leis an ùghdar
+      share: Co-roinn
+      no_notifications: "Chan eil brath sam bith aig a’ mholadh seo."
+      embed_video_title: "Bhidio air %{proposal}"
+      title_video_url: "Bhidio air an taobh a-muigh"
+      author: Ùghdar
+      draft: Tha am moladh na dhreachd. Chan urrainn dha taic fhaighinn fhathast, agus chan eil e a’ nochdadh anns an liosta mholaidhean.
+    update:
+      form:
+        submit_button: Sàbhail na dh’atharraich thu
+  dashboard:
+    menu:
+      my_proposal: Deasaich mo mholadh
+      progress: Adhartas
+      resources: Goireasan
+      community: Coimhearsnachd
+      polls: Cunntasan-bheachd
+      mailing: Post-d
+      poster: Postair
+      recommended_actions: Gnìomhan a mholar
+      messages: Teachdaireachd do chleachdaichean
+      related_content: Susbaint cho-cheangailte
+    form:
+      request: Iarrtas
+    create_request:
+      success: Chaidh an t-iarrtas a chur. Cuiridh sinn fios thugad cho luath ’s a ghabhas gus innse dhut mu dheidhinn.
+      archived: Tha am moladh seo air a thasgadh agus chan urrainn dha goireasan iarraidh.
+    progress:
+      title: Grafaig
+      group_by_month: Gach mìos
+      group_by_week: Gach seachdain
+      group_by_date: Gach latha
+      progress: Adhartas cruinnichte
+      supports: Taic
+      success: Adhartas miannaichte
+      new_action: Ùr
+    index:
+      title: Deasachadh
+      edit_proposal_link: Deasaich am moladh
+      publish: Foillsich moladh
+      retire: Tarraing às am moladh
+    new_request:
+      links: Ceanglaichean
+    resources:
+      available_resources: Goireasan rim faighinn
+    resource:
+      required_days: "%{days} latha a dhìth"
+      required_supports: "%{supports} comharran taic a dhìth"
+      and: agus
+      view_resource: Faic goireas
+      resource_requested: Chaidh an goireas iarraidh mar-thà
+      request_resource: Iarr goireas
+      resource_locked: Tha an goireas glaiste
+    recommended_actions:
+      title: Gnìomhan a mholar
+      goto_proposed_actions: Rach gu gnìomhan a mholar
+      see_proposed_actions: Thoir sùil air gnìomhan a mholar
+      hide_proposed_actions: Falaich gnìomhan a mholar
+      pending_title: Ri choileanadh
+      show_description: Seall tuairisgeul
+      without_pending_actions: Chan eil gnìomh sam bith a mholar a’ feitheamh
+      done_title: Deiseil
+      without_done_actions: Cha deach gnìomh sam bith a mholar a dhèanamh
+    next_goal:
+      title: Amas
+      see_complete_course: Thoir sùil air a’ chùrsa shlàn
+      hide_course: Falaich cùrsa
+    goal:
+      target_supports:
+        one: Faigh %{count} comharra taic airson do mholaidh
+        two: Faigh %{count} chomharra taic airson do mholaidh
+        few: Faigh %{count} comharran taic airson do mholaidh
+        other: Faigh %{count} comharran taic airson do mholaidh
+      days:
+        one: "%{count} latha"
+        two: "%{count} latha"
+        few: "%{count} latha"
+        other: "%{count} latha"
+      locked_resource: Tha an goireas glaiste
+      ideal_time: Àm miannaichte
+    community:
+      access_community: Faigh a-steach dhan choimhearsnachd
+      latest_activity: "A’ ghnìomhachd as ùire aig a’ choimhearsnachd: %{at}"
+      participants: Com-pàirtichean
+      debates: Deasbadan
+      comments: Beachdan
+      latest_comments: Teachdaireachdan as ùire
+    messages:
+      send_notification: Cuir fios gu luchd-leantainn a’ mholaidh
+      previous_notifications: Faic na brathan a fhuaras roimhe
+    polls:
+      index:
+        title: Cunntasan-bheachd
+        create: Cruthaich cunntas-bheachd
+        count:
+          one: Chruthaich thu %{count} chunntas-bheachd.
+          two: Chruthaich thu %{count} chunntas-bheachd.
+          few: Chruthaich thu %{count} cunntasan-bheachd.
+          other: Chruthaich thu %{count} cunntasan-bheachd.
+        links: Ceanglaichean
+        additiontal_information: Fiosrachadh a bharrachd
+      new:
+        title: Cunntas-bheachd ùr
+        submit: Cruthaich cunntas-bheachd
+      edit:
+        submit: Ùraich an cunntas-beachd
+      poll:
+        responses:
+          one: "%{count} freagairt"
+          two: "%{count} fhreagairt"
+          few: "%{count} freagairtean"
+          other: "%{count} freagairtean"
+        view_results: Faic toraidhean
+        edit_poll: Deasaich suirbhidh
+        show_results_help: Ma chuireas tu cromag sa bhogsa seo bidh na toraidhean poblach agus bidh cothrom aig a h-uile cleachdaiche am faicinn
+        delete: Sguab an suirbhidh às
+        alert_notice: Bheir an gnìomh seo air falbh an suirbhidh agus na ceistean co-cheangailte ris.
+        success_notice: Chaidh am suirbhidh a sguabadh às
+        unable_notice: Chan urrainn cur às do shuirbhidh aig a bheil freagairtean
+      form:
+        name: Tiotal an t-suirbhidh
+        add_question: Cuir ceist ris
+      question_fields:
+        remove_question: Thoir air falbh ceist
+        add_answer: Cuir freagairt ris
+      question_answer_fields:
+        remove_answer: Thoir air falbh freagairt
+    poster:
+      index:
+        title: Ro-shealladh air a’ phostair
+        poster_title: "Na bi dìreach a’ coimhead,"
+        poster_subtitle: "thoir taic dhomh! ;)"
+        intro_text: "<strong>Tha mi a’ gabhail pàirt ann an %{org}</strong> leis a’ mholadh saoranach agam fhìn agus feumaidh mi do thaic gus am faigh sinn a’ chathair-bhaile a tha sinn uile ag iarraidh"
+        proposal_code: "Còd a’ mholaidh: %{code}"
+        support: Cuir taic ri mo mholadh
+        footer: "<strong>Tadhail air %{link} agus thoir taic dhan mholadh seo.</strong> Mar as motha, is ann as fheàrr. Dèanamaid ar dìcheall. Tapadh leat!"
+      new:
+        title: Postair den mholadh agad
+      options:
+        preview: Ro-sheall
+        download: Luchdaich a-nuas
+    mailing:
+      index:
+        title: Seòladh puist-d
+      new:
+        title: Dreach phost-d airson co-roinneadh
+      mailing_options:
+        send: Cuir gu %{address}
+        preview: Ro-sheall
+      create:
+        sent: Chaidh an post-d a chur
+    mailer:
+      forward:
+        subtitle: "Ma bheir thu taic dhomh,<br> nì sinn a’ chùis."
+        support_button: Cuir taic ris a’ mholadh seo
+        share_in: Co-roinn ann an
+        hi: "Halò!"
+        introduction: Tha mi a’ sgrìobhadh a dh’innse dhut gu bheil mi a’ gabhail pàirt ann an %{org}, an t-àrd-ùrlar as urrainn dhuinn co-dhùnadh dè seòrsa baile a tha sinn ag iarraidh. Air an adhbhar sin, chruthaich mi moladh saoranach agus a-nis, tha feum agam air do thaic! Na gabh dragh ge-tà oir a h-uile rud gu math sìmplidh.
+        support: "Chan eil agad ri dhèanamh ach briogadh air a’ phutan a chì thu gu h-ìosal ‘Cuir taic ris a’ mholadh seo’ agus gheibh thu cothrom ionnsachadh mu dheidhinn mus cuir thu air adhart e. Is e dìreach na molaidhean a gheibh an taic as motha a thèid a chur an gnìomh le Comhairle a’ Bhaile, agus bha mi a’ smaoineachadh gun cuidicheadh tu mi gus seo a choileanadh!"
+        share: "Agus ma nì thu fàbhar mòr dhomh cuideachd is ma sgaoileas tu mo mholadh ri do charaidean, do theaghlach agus na daoine as aithne dhut, bhiodh e sgoinneil!"
+  polls:
+    all: "A h-uile"
+    no_dates: "chan eil ceann-latha air a shònrachadh"
+    dates: "Bho %{open_at} gu %{closed_at}"
+    final_date: "Cunntasan /Toraidhean deireannach"
+    index:
+      filters:
+        current: "Fosgailte"
+        expired: "Dh’fhalbh an ùine air"
+      title: "Cunntasan-bheachd"
+      participate_button: "Gabh pàirt sa chunntas-bheachd seo"
+      participate_button_expired: "Thàinig an cunntas-bheachd seo gu crìch"
+      no_geozone_restricted: "Am baile air fad"
+      geozone_restricted: "Sgìrean"
+      geozone_info: "Faodaidh daoine pàirt a ghabhail anns a’ Chunntas-sluaigh de:"
+      already_answer: "Tha thu air pàirt a ghabhail sa chunntas-bheachd seo mar-thà"
+      not_logged_in: "Feumaidh tu clàradh a-steach no clàradh airson pàirt a ghabhail"
+      unverified: "Feumaidh tu do chunntas a dhearbhadh gus pàirt a ghabhail"
+      cant_answer: "Chan eil an cunntas-bheachd seo ri fhaighinn san sgìre agad"
+      section_header:
+        icon_alt: Ìomhaigh bhòtaidh
+        title: Bhòtadh
+        help: Cuideachadh le bhòtadh
+      section_footer:
+        title: Cuideachadh le bhòtadh
+        description: Tha cunntasan-bheachd shaoranaich nan dòigh com-pàirteachail san urrainn do shaoranaich aig a bheil còir bhòtaidh co-dhùnaidhean dìreach a dhèanamh
+      no_polls: "Chan eil bhòt fosgailte sam bith ann."
+    show:
+      already_voted_in_booth: "Tha thu air pàirt a ghabhail mar-thà gu fiosaigeach. Chan urrainn dhut pàirt a ghabhail a-rithist."
+      already_voted_in_web: "Tha thu air pàirt a ghabhail sa chunntas-bheachd seo mar-thà. Ma bhòtas tu a-rithist thèid sgrìobhadh thairis air."
+      back: Air ais gu bhòtadh
+      cant_answer_not_logged_in: "Feumaidh tu %{signin} no %{signup} gus pàirt a ghabhail."
+      comments_tab: Beachdan
+      cant_answer_verify: "Feumaidh tu %{verify_link} mus tèid agad air freagairt."
+      verify_link: "dearbhaich do chunntas"
+      cant_answer_expired: "Tha an cunntas-bheachd seo air tighinn gu crìch."
+      cant_answer_wrong_geozone: "Chan eil a’ cheist seo ri fhaighinn san sgìre agad"
+      more_info_title: "Barrachd fiosrachaidh"
+      documents: Sgrìobhainnean
+      zoom_plus: Leudaich an ìomhaigh
+      read_more: "Leugh barrachd mu dheidhinn %{answer}"
+      read_less: "Falaich an còrr mu dhèidhinn %{answer}"
+      videos: "Bhidio air an taobh a-muigh"
+      info_menu: "Fiosrachadh"
+      stats_menu: "Staitistigean com-pàirteachaidh"
+      results_menu: "Toraidhean a’ chunntais-bheachd"
+      stats:
+        total_votes: "Àireamh iomlan de na bhòtaichean a chaidh a thoirt seachad"
+        votes: "BHÒTAICHEAN"
+        web: "AIR-LOIDHNE"
+        mail: "POST"
+        booth: "BOTHAN"
+        total: "IOMLAN"
+        valid: "Dligheach"
+        white: "Gu tur bàn"
+        null_votes: "Mì-dhligheach"
+      results:
+        title: "Ceistean"
+        most_voted_answer: "An fhreagairt leis an àireamh bhòtaichean as motha: "
+    poll_header:
+      back_to_proposal: Air ais dhan mholadh
+  poll_questions:
+    show:
+      vote_answer: "Bhòt %{answer}"
+      voted: "Tha thu air bhòtadh %{answer}"
+    description:
+      unique: "Faodaidh tu suas ri 1 freagairt a thaghadh."
+      multiple: "Faodaidh tu suas ri %{maximum} freagairtean a thaghadh."
+    read_more_about: "Leugh barrachd mu dhèidhinn:"
+  proposal_notifications:
+    new:
+      title: "Cuir brath"
+      submit_button: "Cuir brath"
+      info_about_receivers: "Thèid am brath seo a chur gu <strong>%{count} duine/daoine</strong> is bidh e ri fhaicinn air %{proposal_page}.<br> Cha tèid brathan a chur sa bhad, gheibh luchd-cleachdaidh post-d bho àm gu àm leis a h-uile brath mu mholaidhean."
+      proposal_page: "duilleag a’ mholaidh"
+    show:
+      back: "Rach air ais dhan t-susbaint agam"
+  shared:
+    edit: "Deasaich"
+    filter: "Criathraich"
+    save: "Sàbhail"
+    delete: "Sguab às"
+    "yes": "Seadh"
+    "no": "Chan eadh"
+    search_results: "Toraidhean luirg"
+    advanced_search:
+      date: "A-rèir ceann-là"
+      date_placeholder: "LL/MM/BBBB"
+      date_range_blank: "Tagh ceann-là"
+      date_1: "An 24 uair a thìde seo chaidh"
+      date_2: "An t-seachdain seo chaidh"
+      date_3: "Am mìos seo chaidh"
+      date_4: "A’ Bhliadhna mu Dheireadh"
+      date_5: "Gnàthaichte"
+      from: "Bho"
+      general: "Leis an teacsa"
+      goal: "A rèir Amasan Seasmhachd Cruinneil"
+      goal_blank: "Tagh amas"
+      search: "Criathraich"
+      target: "A rèir targaid"
+      target_blank: "Tagh targaid"
+      title: "Lorg adhartach"
+      to: "Gu"
+    author_info:
+      author_deleted: Cleachdaiche air a sguabadh às
+      email_deleted: Post-d air a sguabadh às
+    back: Air ais
+    check: Tagh
+    check_all: Na h-uile
+    check_none: Chan eil gin
+    collective: Co-chomann
+    flag: Comharraich gu bheil e mì-iomchaidh
+    follow: "Lean"
+    following: "A' leantainn"
+    follow_entity: "Lean %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice: "Tha thu a’ leantainn a’ phròiseict tasgaidh seo a-nis!<br> Cuiridh sinn fios thugad mu atharrachaidhean nuair a thachras iad gus am bi am fiosrachadh as ùire agad."
+        destroy:
+          notice: "Chan eil thu a leantainn a’ phròiseact tasgaidh seo tuilleadh!<br> Chan fhaigh thu fios co-cheangailte ris a’ phròiseact seo tuilleadh."
+      proposal:
+        create:
+          notice: "Tha thu a’ leantainn a’ mholaidh saoranach seo a-nis!<br> Cuiridh sinn fios thugad mu atharrachaidhean nuair a thachras iad gus am bi am fiosrachadh as ùire agad."
+        destroy:
+          notice: "Chan eil thu a leantainn a’ mholaidh saoranach seo tuilleadh!<br> Chan fhaigh thu fios co-cheangailte ris a’ mholadh seo tuilleadh."
+    print:
+      print_button: Clò-bhuail am fiosrachadh seo
+    search: Lorg
+    show: Seall
+    suggest:
+      debate:
+        found:
+          one: "Tha deasbad ann leis an teirm '%{query}', is urrainn dhut pàirt a ghabhail ann an àite a bhith a’ fosgladh deasbad ùr."
+          two: "Tha deasbadan ann leis an teirm '%{query}', is urrainn dhut pàirt a ghabhail annta an àite a bhith a’ fosgladh deasbad ùr."
+          few: "Tha deasbadan ann leis an teirm '%{query}', is urrainn dhut pàirt a ghabhail annta an àite a bhith a’ fosgladh deasbad ùr."
+          other: "Tha deasbadan ann leis an teirm '%{query}', is urrainn dhut pàirt a ghabhail annta an àite a bhith a’ fosgladh deasbad ùr."
+        message: "Tha thu a’ faicinn %{limit} de %{count} deasbadan anns a bheil an teirm '%{query}'"
+        see_all: "Seall na h-uile"
+      budget_investment:
+        found:
+          one: "Tha tasgadh ann leis an teirm '%{query}', is urrainn dhut pàirt a ghabhail ann an àite a bhith a’ fosgladh tasgadh ùr."
+          two: "Tha tasgaidhean ann leis an teirm '%{query}', is urrainn dhut pàirt a ghabhail annta an àite a bhith a’ fosgladh tasgadh ùr."
+          few: "Tha tasgaidhean ann leis an teirm '%{query}', is urrainn dhut pàirt a ghabhail annta an àite a bhith a’ fosgladh tasgadh ùr."
+          other: "Tha tasgaidhean ann leis an teirm '%{query}', is urrainn dhut pàirt a ghabhail annta an àite a bhith a’ fosgladh tasgadh ùr."
+        message: "Tha thu a’ faicinn %{limit} de %{count} tasgaidhean anns a bheil an teirm '%{query}'"
+        see_all: "Seall na h-uile"
+      proposal:
+        found:
+          one: "Tha moladh ann leis an teirm '%{query}', is urrainn dhut pàirt a ghabhail ann an àite a bhith a’ cruthachadh moladh ùr."
+          two: "Tha molaidhean ann leis an teirm '%{query}', is urrainn dhut pàirt a ghabhail annta an àite a bhith a’ cruthachadh moladh ùr."
+          few: "Tha molaidhean ann leis an teirm '%{query}', is urrainn dhut pàirt a ghabhail annta an àite a bhith a’ cruthachadh moladh ùr."
+          other: "Tha molaidhean ann leis an teirm '%{query}', is urrainn dhut pàirt a ghabhail annta an àite a bhith a’ cruthachadh moladh ùr."
+        message: "Tha thu a’ faicinn %{limit} de %{count} molaidhean anns a bheil an teirm '%{query}'"
+        see_all: "Seall na h-uile"
+    tags_cloud:
+      tags: A’ treandadh
+      districts: "Sgìrean"
+      districts_list: "Liosta nan sgìrean"
+      categories: "Roinnean-seòrsa"
+    target_blank: " (fosglaidh an ceangal ann an uinneag ùr)"
+    you_are_in: "Tha thu ann an"
+    unflag: Thoir air falbh a’ chomharra
+    unfollow_entity: "Sgur a bhith a’ leantainn %{entity}"
+    outline:
+      searcher: Einnsein luirg
+    go_to_page: "Rach gu duilleig "
+    share: Co-roinn
+    orbit:
+      previous_slide: An t-sleamhnag roimhe
+      next_slide: An ath-shleamhnag
+    documentation: Sgrìobhainnean a bharrachd
+    view_mode:
+      title: Modh-sealltainn
+      cards: Cairtean
+      list: Liosta
+    recommended_index:
+      title: Molaidhean
+      see_more: Faic barrachd mholaidhean
+      hide: Falaich molaidhean
+    translations:
+      select_language_prompt: Tagh cànan
+      remove_language: Thoir cànan air falbh
+      add_language: Cuir cànan ris
+      languages_in_use:
+        zero: "Tha 0 cànanan gan cleachdadh"
+        one: "Tha 1 chànan ga chleachdadh."
+        two: "%{count} chànan gan cleachdadh"
+        few: "%{count} cànanan gan cleachdadh"
+        other: "%{count} cànanan gan cleachdadh"
+    optional: "Raointean roghainneil"
+    required: "Raointean riatanach"
+    comments:
+      zero: "Chan eil beachd sam bith ann"
+      one: "1 bheachd"
+      two: "%{count} beachd"
+      few: "%{count} bheachd"
+      other: "%{count} beachd"
+  social:
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
+    telegram: "%{org} Telegram"
+    instagram: "%{org} Instagram"
+  stats:
+    index:
+      visits: Tadhalan
+      debates: Deasbadan
+      proposals: Molaidhean
+      comments: Beachdan
+      proposal_votes: Bhòtaichean air molaidhean
+      debate_votes: Bhòtaichean air deasbadan
+      comment_votes: Bhòtaichean air beachdan
+      votes: Bhòtaichean iomlan
+      verified_users: Cleachdaichean dearbhte
+      unverified_users: Cleachdaichean gun dearbhadh
+  unauthorized:
+    default: Chan eil cead agad an duilleag seo inntrigeadh.
+    manage:
+      all: "Chan eil cead agad an gnìomh '%{action}' a dhèanamh air %{subject}."
+  users:
+    login_to_comment: "Feumaidh tu %{signin} no %{signup} gus beachd a thoirt seachad."
+    login_to_continue: "Feumaidh tu %{signin} no %{signup} gus leantainn ort."
+    signin: "clàraich a-steach"
+    signup: "clàraich"
+    verify_account: "dearbhaich an cunntas agad"
+    direct_messages:
+      new:
+        direct_messages_bloqued: "Tha an cleachdaiche seo air cur romhpa gun a bhith a’ faighinn teachdaireachdan dìreach"
+        submit_button: Cuir teachdaireachd
+        title: Cuir teachdaireachd prìobhaideach gu %{receiver}
+        verified_only: Gus teachdaireachd phrìobhaideach a chur %{verify_account}
+      show:
+        receiver: Teachdaireachd air a chur gu %{receiver}
+    show:
+      deleted: Air sguabadh às
+      deleted_debate: Chaidh an deasbad a sguabadh às
+      deleted_proposal: Chaidh am moladh a sguabadh às
+      deleted_budget_investment: Chaidh am pròiseact tasgaidh a sguabadh às
+      proposals: Molaidhean
+      proposals_status: Inbhe
+      debates: Deasbadan
+      budget_investments: Tasgaidhean buidseit
+      comments: Beachdan
+      actions: Gnìomhan
+      filters:
+        comments:
+          one: 1 Bheachd
+          two: "%{count} bheachd"
+          few: "%{count} beachdan"
+          other: "%{count} beachdan"
+        debates:
+          one: 1 Deasbad
+          two: "%{count} Dheasbad"
+          few: "%{count} Deasbadan"
+          other: "%{count} Deasbadan"
+        proposals:
+          one: 1 Mholadh
+          two: "%{count} Mholadh"
+          few: "%{count} Molaidhean"
+          other: "%{count} Molaidhean"
+        budget_investments:
+          one: 1 tasgadh
+          two: "%{count} thasgadh"
+          few: "%{count} tasgaidhean"
+          other: "%{count} tasgaidhean"
+        follows:
+          one: 1 a’ leantainn
+          two: "%{count} a’ leantainn"
+          few: "%{count} a’ leantainn"
+          other: "%{count} a’ leantainn"
+      no_activity: Chan eil gnìomhachd phoblach aig a’ chleachdaiche
+      no_private_messages: "Cha ghabh an cleachdaiche seo ri teachdaireachdan prìobhaideach."
+      private_activity: Cho-dhùin an cleachdaiche seo an liosta ghnìomhan a chumail prìobhaideach.
+      send_private_message: "Cuir teachdaireachd prìobhaideach"
+      delete_alert: "A bheil thu cinnteach gu bheil thu airson am pròiseact tasgaidh agad a sguabadh às? Cha ghabh seo a neo-dhèanamh"
+    proposals:
+      retired: "Moladh air a tharraing às"
+      draft: Dreachd
+      published: Foillsichte
+      see: "Faic am molaidh"
+      actions: Gnìomhan
+      retired_help_text: Chan eil an deas-bhòrd ri fhaighinn airson molaidhean a chaidh a tharraing às
+  votes:
+    agree: Tha mi ag aontachadh
+    agree_label: "Tha mi ag aontachadh ri %{title}"
+    anonymous: Cus bhòtaichean gun urra airson a’ bhòt seo a cheadachadh %{verify_account}.
+    disagree: Chan eil mi ag aontachadh
+    disagree_label: "Chan eil mi ag aontachadh ri %{title}"
+    organizations: Chan fhaod buidhnean bhòtadh
+    supports: Taic
+    verified_only: Chan fhaod ach cleachdaichean dearbhte bhòtadh air molaidhean; %{verify_account}.
+    budget_investments:
+      not_verified: Chan fhaod ach cleachdaichean dearbhte bhòtadh air pròiseactan tasgaidh; %{verify_account}.
+      unfeasible: Chan urrainnear taic a thoirt do phròiseactan a tha neo-chomasach dèanamh
+      not_voting_allowed: Tha an ìre bhòtaidh dùinte
+      different_heading_assigned:
+        one: "Chan urrainn dhut taic a thoirt do phròiseactan tasgaidh ach a-mhàin ann an %{count} sgìre. Chuir thu taic ri tasgaidhean ann an %{supported_headings} mar-thà."
+        two: "Chan urrainn dhut taic a thoirt do phròiseactan tasgaidh ach a-mhàin ann an %{count} sgìrean. Chuir thu taic ri tasgaidhean ann an %{supported_headings} mar-thà."
+        few: "Chan urrainn dhut taic a thoirt do phròiseactan tasgaidh ach a-mhàin ann an %{count} sgìrean. Chuir thu taic ri tasgaidhean ann an %{supported_headings} mar-thà."
+        other: "Chan urrainn dhut taic a thoirt do phròiseactan tasgaidh ach a-mhàin ann an %{count} sgìrean. Chuir thu taic ri tasgaidhean ann an %{supported_headings} mar-thà."
+  welcome:
+    feed:
+      most_active:
+        debates: "Na deasbadan as gnìomhaiche"
+        proposals: "Na molaidhean as gnìomhaiche"
+        processes: "Pròiseasan fosgailte"
+      see_all:
+        debates: Faic a h-uile deasbad
+        proposals: Faic a h-uile moladh
+        processes: Faic a h-uile pròiseas
+      no_items:
+        debates: Chan eil deasbad sam bith ri shealltainn aig an àm seo
+        proposals: Chan eil moladh sam bith ri shealltainn aig an àm seo
+        processes: Chan eil pròiseas fosgailte sam bith ann aig an àm seo
+      process_label: Pròiseas
+      see_process: Faic pròiseas
+    cards:
+      title: Ga bhrosnachadh
+    recommended:
+      title: Dh’fhaodte gum bi ùidh agad sna molaidhean seo
+      help: "Tha na molaidhean seo air an cruthachadh a rèir tagaichean nan deasbadan agus nam molaidhean a tha thu a’ leantainn."
+      debates:
+        title: Deasbadan air am moladh
+        btn_text_link: A h-uile deasbad air a mholadh
+      proposals:
+        title: Molaidhean air am moladh
+        btn_text_link: A h-uile moladh a thathar a’ mholadh
+      budget_investments:
+        title: Tasgaidhean a thathar a’ moladh
+      slide: "Faic %{title}"
+    welcome:
+      go_to_index: Chan ann an-dràsta, rach gu duilleig a’ chlàr-amais
+      start_using_consul: Tadhail air duilleag a’ chlàr-amais
+      title: Gabh pàirt
+      user_permission_info: Leis a’ chunntas agad, is urrainn dhut,,,...
+      user_permission_verify: "Gus na gnìomhan a leanas a dhèanamh, dearbhaich do chunntas."
+      user_permission_verify_my_account: Dearbhaich mo chunntas
+  invisible_captcha:
+    sentence_for_humans: "Ma tha thu nad neach, leig seachad an raon seo"
+    timestamp_error_message: "Duilich, bha sin ro luath! Cuir a-steach a-rithist e."
+  related_content:
+    title: "Susbaint cho-cheangailte"
+    add: "Cuir susbaint cho-cheangailte ris"
+    label: "Ceangal ri susbaint cho-cheangailte"
+    placeholder: "%{url}"
+    help: "’S urrainn dhut ceanglaichean de %{models} a chur ris am broinn %{org}."
+    submit: "Cuir ris"
+    error: "Chan eil an ceangal dligheach. Cuimhnich a bhith a’ tòiseachadh le %{url}."
+    error_duplicate: "Tha an t-susbaint cho-cheangailte a tha thu a’ cur ris ann mar-thà."
+    error_itself: "Chan eil an ceangal dligheach. Chan urrainn dhut susbaint a cheangal ris fhèin."
+    success: "Chuir thu susbaint cho-cheangailte ùr ris"
+    is_related: "An e susbaint cho-cheangailte a th’ ann?"
+    score_positive: "’S e"
+    score_negative: "Chan e"
+    content_title:
+      proposal: "Moladh"
+      debate: "Deasbad"
+      budget_investment: "Tasgadh buidseit"
+  admin/widget:
+    header:
+      title: Rianachd
+  annotator:
+    help:
+      alt: Tagh an teacsa air a bheil thu airson beachd a thoirt seachad agus brùth air a’ phutan leis a’ pheansail.
+      text: Feumaidh tu %{sign_in} no %{sign_up} airson beachd a thoirt seachad air an sgrìobhainn seo. An uair sin tagh an teacsa air a bheil thu airson beachd a thoirt seachad agus brùth air a’ phutan leis a’ pheansail.
+      title: Ciamar a bheir mi beachd seachad air an sgrìobhainn seo?
+  links:
+    form:
+      delete_button: Sguab às
+      cancel_button: Sguir
+    nested_links:
+      title: Ceanglaichean
+      note: Cuir ceanglaichean ris anns a bheil ùidh agad
+      add_new_link: Cuir ceangal ùr ris
+  communities:
+    show:
+      surveys: Suirbhidhean
+      complete_survey: Lìon an suirbhidh
+    subnav:
+      surveys: Suirbhidhean
+    poll:
+      take_part: Gabh pàirt bho %{from} gu %{to}
+  remote_translations:
+    text: Chan eil susbaint na duilleige seo ri fhaighinn sa chànan agad
+    all_remote_translations_enqueued_text: Ann an ùine ghoirid às dèidh dhut an duilleag ùrachadh, chì thu an t-susbaint uile a tha ri faighinn sa chànan agad.
+    create:
+      enqueue_remote_translation: Chaidh eadar-theangachaidhean iarraidh.
+    button: Eadar-theangaich an duilleag
+  tags:
+    list:
+      filter:
+        more:
+          one: "Taga a bharrachd"
+          two: "%{count} thaga a bharrachd"
+          few: "%{count} thagaichean a bharrachd"
+          other: "%{count} thagaichean a bharrachd"
+  machine_learning:
+    comments_summary: "Geàrr-chunntas de bheachdan"
+    info_text: "Susbaint air a chruthachadh le AI / Ionnsachadh Inneil"

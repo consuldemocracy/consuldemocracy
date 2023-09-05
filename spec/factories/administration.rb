@@ -8,9 +8,18 @@ FactoryBot.define do
     sequence(:name) { |n| "District #{n}" }
     sequence(:external_code, &:to_s)
     sequence(:census_code, &:to_s)
+    color { "#0081aa" }
 
     trait :in_census do
       census_code { "01" }
+    end
+
+    trait :with_html_coordinates do
+      html_map_coordinates { "30,139,45,153,77,148,107,165" }
+    end
+
+    trait :with_geojson do
+      geojson { '{ "geometry": { "type": "Polygon", "coordinates": [[-0.117,51.513],[-0.118,51.512],[-0.119,51.514]] } }' }
     end
   end
 
@@ -62,10 +71,6 @@ FactoryBot.define do
     name { "logo_header" }
   end
 
-  factory :map do
-    association :budget, factory: :budget
-  end
-
   factory :map_location do
     latitude { 51.48 }
     longitude { 0.0 }
@@ -101,5 +106,14 @@ FactoryBot.define do
     key { "debates.index.section_footer.description" }
     value_es { "Texto en español" }
     value_en { "Text in english" }
+  end
+
+  factory :tenant do
+    sequence(:name) { |n| "Tenant #{n}" }
+    sequence(:schema) { |n| "subdomain#{n}" }
+
+    trait :domain do
+      schema_type { :domain }
+    end
   end
 end

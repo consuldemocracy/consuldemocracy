@@ -4,9 +4,6 @@ fr:
       comments:
         see_all: Voir tous
         see_complete: Voir l'intégralité
-        comments_count:
-          one: "%{count} commentaire"
-          other: "%{count} commentaires"
         replies_count:
           one: "%{count} réponse"
           other: "%{count} réponses"
@@ -18,9 +15,6 @@ fr:
         title: Commentaires
         comments_about: Commentaires au sujet de
         see_in_context: Voir dans le contexte
-        comments_count:
-          one: "%{count} commentaire"
-          other: "%{count} commentaires"
       show:
         title: Commentaire
       version_chooser:
@@ -92,10 +86,6 @@ fr:
         form:
           leave_comment: Laisser une réponse
       question:
-        comments:
-          zero: Aucun commentaires
-          one: "%{count} commentaire"
-          other: "%{count} commentaires"
         debate: Débat
       show:
         answer_question: Soumettre une réponse
@@ -134,10 +124,6 @@ fr:
         zero: "Aucune proposition"
         one: "%{count} proposition"
         other: "%{count} propositions"
-      comments:
-        zero: "Aucun commentaires"
-        one: "%{count} commentaire"
-        other: "%{count} commentaires"
       download: "Télécharger le résumé"
       top_comments:
         zero: "Aucun commentaires"

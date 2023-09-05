@@ -1,0 +1,37 @@
+<div class="poll-question-answers">
+  <% if can?(:answer, question) && !question.poll.voted_in_booth?(current_user) %>
+    <% question_answers.each do |question_answer| %>
+      <% if already_answered?(question_answer) %>
+        <%= button_to question_answer_path(question, user_answer(question_answer)),
+                      method: :delete,
+                      remote: true,
+                      title: t("poll_questions.show.voted", answer: question_answer.title),
+                      class: "button answered",
+                      "aria-pressed": true do %>
+          <%= question_answer.title %>
+        <% end %>
+      <% else %>
+        <%= button_to answer_question_path(question, answer: question_answer.title),
+                      remote: true,
+                      title: t("poll_questions.show.vote_answer", answer: question_answer.title),
+                      class: "button secondary hollow",
+                      "aria-pressed": false,
+                      disabled: disable_answer?(question_answer) do %>
+          <%= question_answer.title %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% elsif !user_signed_in? %>
+    <% question_answers.each do |question_answer| %>
+      <%= link_to question_answer.title, new_user_session_path, class: "button secondary hollow" %>
+    <% end %>
+  <% elsif !current_user.level_two_or_three_verified? %>
+    <% question_answers.each do |question_answer| %>
+      <%= link_to question_answer.title, verification_path, class: "button secondary hollow" %>
+    <% end %>
+  <% else %>
+    <% question_answers.each do |question_answer| %>
+      <span class="button secondary hollow disabled"><%= question_answer.title %></span>
+    <% end %>
+  <% end %>
+</div>

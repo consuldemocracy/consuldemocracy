@@ -3,6 +3,7 @@ default: &default
   encoding: unicode
   host: postgres
   pool: 5
+  schema_search_path: "public,shared_extensions"
   username: consul
   password:
 

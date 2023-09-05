@@ -34,4 +34,30 @@ describe Poll::Question::Answer do
       expect(Poll::Question::Answer.with_content).to be_empty
     end
   end
+
+  describe "#with_read_more?" do
+    it "returns false when the answer does not have description, images, videos nor documents" do
+      poll_question_answer = build(:poll_question_answer, description: nil)
+
+      expect(poll_question_answer.with_read_more?).to be_falsy
+    end
+
+    it "returns true when the answer has description, images, videos or documents" do
+      poll_question_answer = build(:poll_question_answer, description: "Answer description")
+
+      expect(poll_question_answer.with_read_more?).to be_truthy
+
+      poll_question_answer = build(:poll_question_answer, :with_image)
+
+      expect(poll_question_answer.with_read_more?).to be_truthy
+
+      poll_question_answer = build(:poll_question_answer, :with_document)
+
+      expect(poll_question_answer.with_read_more?).to be_truthy
+
+      poll_question_answer = build(:poll_question_answer, :with_video)
+
+      expect(poll_question_answer.with_read_more?).to be_truthy
+    end
+  end
 end

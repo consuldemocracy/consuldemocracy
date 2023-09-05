@@ -69,6 +69,10 @@ FactoryBot.define do
       published_at { Time.current }
     end
 
+    trait :with_map_location do
+      map_location
+    end
+
     trait :with_milestone_tags do
       after(:create) { |proposal| proposal.milestone_tags << create(:tag, :milestone) }
     end

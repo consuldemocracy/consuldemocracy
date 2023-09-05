@@ -2,6 +2,10 @@ it:
   mailers:
     title: "Governo Aperto"
     no_reply: "Questo messaggio è stato inviato da un indirizzo di posta elettronica che non accetta risposte."
+    already_confirmed:
+      info: "Abbiamo ricevuto una richiesta per inviarti le istruzioni per confermare il tuo profilo. Tuttavia, il tuo profilo è già confermato, quindi non è necessario farlo nuovamente."
+      new_password: "Se hai dimenticato la tua password, puoi ripristinarla al link seguente:"
+      subject: Il tuo profilo è già confermato
     comment:
       hi: Salve
       new_comment_by: C'è un nuovo commento da <strong>%{commenter}</strong>
@@ -16,7 +20,8 @@ it:
       instructions: Per completare la verifica dell'account utente, è necessario cliccare su %{verification_link}.
       subject: Conferma il tuo indirizzo email
       thanks: Grazie.
-      title: "Conferma il tuo account utilizzando il seguente link"
+      title: "Conferma la tua email"
+      text: "Conferma il tuo profilo utilizzando il seguente link."
     reply:
       hi: Ciao
       new_reply_by: C'è una nuova risposta da <strong>%{commenter}</strong> per il tuo commento su
@@ -54,6 +59,7 @@ it:
       sincerely: "Cordiali saluti"
       share: "Condividi il tuo progetto"
     budget_investment_unfeasible:
+      title: "Il tuo progetto d'investimento è stato contrassegnato come irrealizzabile"
       hi: "Gentile utente,"
       new: "Pertanto, ti invitiamo a elaborare un <strong>nuovo investimento</strong> in linea con i requisiti di questo procedimento. Puoi farlo seguendo questo link: %{url}."
       new_href: "nuovo progetto di investimento"
@@ -62,6 +68,7 @@ it:
       subject: "Il tuo progetto di investimento '%{code}' è stato contrassegnato come irrealizzabile"
     budget_investment_selected:
       subject: "Il tuo progetto di investimento '%{code}' è stato selezionato"
+      title: "Il tuo progetto d'investimento è stato selezionato"
       hi: "Gentile utente,"
       share: "Per iniziare a ottenere voti, condividi il tuo progetto di investimento sui social network. Solo così potrai vederlo realizzato!"
       share_button: "Condividi il tuo progetto di investimento"
@@ -69,6 +76,7 @@ it:
       sincerely: "Cordiali saluti"
     budget_investment_unselected:
       subject: "Il tuo progetto di investimento '%{code}' è stato selezionato"
+      title: "Il tuo progetto d'investimento non è stato selezionato"
       hi: "Gentile utente,"
       thanks: "Grazie ancora per aver partecipato."
       sincerely: "Cordiali saluti"
@@ -88,30 +96,6 @@ it:
       subject: "Apprendimento Automatico - Contenuto generato correttamente"
       text: "Il contenuto è stato generato correttamente."
       title: "Script d'Apprendimento Automatico"
-    new_actions_notification_rake_created:
-      subject: "Altre notizie sulla tua proposta cittadina"
-      hi: "Ciao %{name},"
-      new_resource: "NUOVA RISORSA SBLOCCATA"
-      introduction: "Come sai, il giorno %{created_at_day} del %{created_at_month} creato la proposta in modalità bozza %{title}."
-      text_1: "Quando vuoi, puoi pubblicare a questo link: %{link_to_published}. Se non sei ancora sicuro..."
-      text_2: "Cogli l'attimo! Impara, aggiungi altre persone con gli stessi interessi e prepara la diffusione di cui avrai bisogno pubblicando definitivamente la tua proposta."
-      text_3: "E per accompagnarti in questa sfida, ecco le novità..."
-      text_4: "Dà un'occhiata a questa NUOVA AZIONE consigliata:"
-      text_5: "La prossima azione consigliata è:"
-      footer_text: "Come sempre, accedi al Pannello delle Proposte e ti diremo nel dettaglio come usare queste risorse e come ottenere il massimo da esse."
-      dashboard_button: "Va avanti, scoprile!"
-    new_actions_notification_rake_published:
-      subject: "Altre notizie sulla tua proposta cittadina"
-      hi: "Ciao %{name},"
-      new_resource: "NUOVA RISORSA SBLOCCATA"
-      introduction: "Come sai, il giorno %{published_at_day} del %{published_at_month} hai pubblicato la proposta in modalità bozza %{title}."
-      text_1: "Bene, hai il supporto di %{votes_count}, finora. Congratulazioni!"
-      text_2: "E quindi, hai una nuova risorsa disponibile per aiutarti ad andare avanti."
-      text_3: "Ti mancano %{days_count} giorni prima che la tua proposta ottenga %{max_votes_count} supporti e vada al referendum. Rallegrati e continua a diffonderla. Sei a corto d'idee?"
-      text_4: "NUOVA AZIONE DI DIFFUSIONE CONSIGLIATA"
-      text_5: "E c'è dell'altro, guarda l'azione seguente:"
-      footer_text: "Come sempre, accedi al Pannello delle Proposte e ti diremo nel dettaglio come usare queste risorse e come ottenere il massimo da esse."
-      dashboard_button: "Va avanti, scoprile!"
     new_actions_notification_on_create:
       subject: "La bozza della tua proposta cittadina è stata creata"
       hi: "Salve %{name}!"

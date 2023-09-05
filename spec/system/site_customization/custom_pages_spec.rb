@@ -49,13 +49,11 @@ describe "Custom Pages" do
 
         visit custom_page.url
 
-        within("#custom_page") do
-          expect(page).to have_title("Custom page")
-          expect(page).to have_selector("h1", text: "Custom page")
-          expect(page).to have_content("Text for new custom page")
-          expect(page).not_to have_selector("h2")
-          expect(page).not_to have_content("Print this info")
-        end
+        expect(page).to have_title("Custom page")
+        expect(page).to have_selector("h1", text: "Custom page")
+        expect(page).to have_content("Text for new custom page")
+        expect(page).not_to have_selector("h2")
+        expect(page).not_to have_content("Print this info")
       end
 
       scenario "Listed in more information page" do
@@ -89,13 +87,13 @@ describe "Custom Pages" do
         expect(page).to have_content("Subtitle for custom page")
       end
 
-      scenario "Show widget cards for that page" do
+      scenario "Show widget cards for that page", :consul do
         custom_page = create(:site_customization_page, :published)
         create(:widget_card, cardable: custom_page, title: "Card Highlights")
 
         visit custom_page.url
 
-        expect(page).to have_content "Card Highlights"
+        expect(page).to have_content "CARD HIGHLIGHTS"
       end
     end
   end

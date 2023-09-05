@@ -26,12 +26,12 @@ describe SiteCustomization::Image do
       expect(image).to be_valid
     end
 
-    it "is valid with a 400x80 image" do
+    it "is not valid with a 400x80 image", :consul do
       image = build(:site_customization_image,
                     name: "logo_header",
                     image: fixture_file_upload("logo_email_custom.png"))
 
-      expect(image).to be_valid
+      expect(image).not_to be_valid
     end
 
     it "dynamically validates the valid images" do
@@ -43,5 +43,19 @@ describe SiteCustomization::Image do
       map = build(:site_customization_image, name: "map", image: fixture_file_upload("custom_map.jpg"))
       expect(map).not_to be_valid
     end
+  end
+
+  it "dynamically validates the valid mime types" do
+    stub_const("#{SiteCustomization::Image}::VALID_MIME_TYPES", ["image/gif"])
+
+    gif = build(:site_customization_image,
+                name: "logo_header",
+                image: fixture_file_upload("logo_header.gif"))
+    expect(gif).to be_valid
+
+    png = build(:site_customization_image,
+                name: "logo_header",
+                image: fixture_file_upload("logo_header.png"))
+    expect(png).not_to be_valid
   end
 end

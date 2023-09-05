@@ -450,7 +450,7 @@ bg:
         description: Описание
       poll/question/answer/translation:
         title: Отговор
-        description: Описание
+        description: "Описание"
       poll/question/answer/video:
         title: Заглавие
         url: Външно видео

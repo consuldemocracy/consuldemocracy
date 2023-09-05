@@ -466,7 +466,7 @@ hr:
         description: Opis
       poll/question/answer/translation:
         title: Odgovor
-        description: Opis
+        description: "Opis"
       poll/question/answer/video:
         title: Naziv
         url: Eksterni video

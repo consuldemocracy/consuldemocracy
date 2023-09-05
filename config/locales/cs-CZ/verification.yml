@@ -55,7 +55,7 @@ cs:
           residence_card: Občanský průkaz
           spanish_id: Číslo OP
         error_not_allowed_age: Nemáte požadovaný věk pro účast
-        error_not_allowed_postal_code: Abyste mohli být ověřeni, musíte se zaregistrovat.
+        error_not_allowed_postal_code: Abyste mohli být ověřeni, musíte se zaregistrovat
         error_verifying_census: Nepodařilo se ověřit vaše údaje. Ověřte si prosím správnost svých údajů telefonicky na městském úřadě, nebo navštivte jednu z kanceláří pro podporu občanů.
         form_errors: zabránil ověření vašeho bydliště
         postal_code_note: Chcete-li ověřit svůj účet, že musíte se registrovat
@@ -92,6 +92,7 @@ cs:
     user_permission_proposal: Vytvořit nové návrhy
     user_permission_support_proposal: Podpořit návrhy *
     user_permission_votes: Účast na závěrečném hlasování *
+    verification_needed: Potřebné další ověření
     verified_user:
       form:
         submit_button: Odeslat kód

@@ -223,11 +223,10 @@ describe "Users" do
     end
 
     context "Twitter" do
-      let(:twitter_hash) { { provider: "twitter", uid: "12345", info: { name: "manuela" }} }
-      let(:twitter_hash_with_email) { { provider: "twitter", uid: "12345", info: { name: "manuela", email: "manuelacarmena@example.com" }} }
+      let(:twitter_hash) { { uid: "12345", info: { name: "manuela" }} }
+      let(:twitter_hash_with_email) { { uid: "12345", info: { name: "manuela", email: "manuelacarmena@example.com" }} }
       let(:twitter_hash_with_verified_email) do
         {
-          provider: "twitter",
           uid: "12345",
           info: {
             name: "manuela",
@@ -393,6 +392,9 @@ describe "Users" do
 
         fill_in "Username", with: "manuela2"
         click_button "Register"
+
+        expect(page).to have_content "To continue, please click on the confirmation link that we have sent you via email"
+
         confirm_email
 
         expect(page).to have_content "Your account has been confirmed"
@@ -480,13 +482,40 @@ describe "Users" do
       end
     end
 
-    context "Wordpress" do
-      let(:wordpress_hash) do
-        { provider: "wordpress",
+    context "Google" do
+      let(:google_hash) do
+        {
           uid: "12345",
           info: {
             name: "manuela",
-            email: "manuelacarmena@example.com" }}
+            email: "manuelacarmena@example.com",
+            email_verified: "1"
+          }
+        }
+      end
+
+      before { Setting["feature.google_login"] = true }
+
+      scenario "Sign in with an already registered user using a verified google account" do
+        OmniAuth.config.add_mock(:google_oauth2, google_hash)
+        create(:user, username: "manuela", email: "manuelacarmena@example.com")
+
+        visit new_user_session_path
+        click_link "Sign in with Google"
+
+        expect_to_be_signed_in
+      end
+    end
+
+    context "Wordpress" do
+      let(:wordpress_hash) do
+        {
+          uid: "12345",
+          info: {
+            name: "manuela",
+            email: "manuelacarmena@example.com"
+          }
+        }
       end
 
       before { Setting["feature.wordpress_login"] = true }
@@ -660,7 +689,7 @@ describe "Users" do
 
   scenario "Sign in, admin with password expired" do
     user = create(:administrator).user
-    user.update!(password_changed_at: Time.current - 1.year)
+    user.update!(password_changed_at: 1.year.ago)
 
     visit new_user_session_path
     fill_in "Email or username", with: user.email
@@ -679,7 +708,7 @@ describe "Users" do
   end
 
   scenario "Sign in, admin without password expired" do
-    user = create(:user, password_changed_at: Time.current - 360.days)
+    user = create(:user, password_changed_at: 360.days.ago)
     admin = create(:administrator, user: user)
 
     login_as(admin.user)
@@ -689,7 +718,7 @@ describe "Users" do
   end
 
   scenario "Sign in, user with password expired" do
-    user = create(:user, password_changed_at: Time.current - 1.year)
+    user = create(:user, password_changed_at: 1.year.ago)
 
     login_as(user)
     visit root_path
@@ -699,7 +728,7 @@ describe "Users" do
 
   scenario "Admin with password expired trying to use same password" do
     user = create(:administrator).user
-    user.update!(password_changed_at: Time.current - 1.year, password: "123456789")
+    user.update!(password_changed_at: 1.year.ago, password: "123456789")
 
     visit new_user_session_path
     fill_in "Email or username", with: user.email
@@ -708,7 +737,7 @@ describe "Users" do
 
     expect(page).to have_content "Your password is expired"
 
-    fill_in "Current password", with: "judgmentday"
+    fill_in "Current password", with: "123456789"
     fill_in "New password", with: "123456789"
     fill_in "Password confirmation", with: "123456789"
     click_button "Change your password"

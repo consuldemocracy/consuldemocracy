@@ -51,10 +51,6 @@ fi:
     reply_link: Vastaa
   debates:
     debate:
-      comments:
-        zero: Ei kommentteja
-        one: 1 kommentti
-        other: "%{count} kommenttia"
       votes:
         zero: Ei ääniä
         one: 1 ääni
@@ -77,10 +73,6 @@ fi:
       more_info: Lisää tietoa
     show:
       author_deleted: Käyttäjä poistettu
-      comments:
-        zero: Ei kommentteja
-        one: 1 kommentti
-        other: "%{count} kommenttia"
       comments_title: Kommentit
       edit_debate_link: Muokkaa
       share: Jaa
@@ -116,7 +108,7 @@ fi:
           zero: Ei tukijoita
     footer:
       conditions: Ehdot ja käyttöehdot
-      consul_url: https://github.com/consul/consul
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: CONSUL, %{year}
       open_source: avoimen lähdekoodin ohjelmisto
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
@@ -201,10 +193,6 @@ fi:
         submit_button: Luo ehdotus
       start_new: Luo uusi ehdotus
     proposal:
-      comments:
-        zero: Ei kommentteja
-        one: 1 kommentti
-        other: "%{count} kommenttia"
       support: Tue
       supports:
         zero: Ei tukijoita
@@ -217,10 +205,6 @@ fi:
       total_percent: 100%
     show:
       author_deleted: Käyttäjä poistettu
-      comments:
-        zero: Ei kommentteja
-        one: 1 kommentti
-        other: "%{count} kommenttia"
       comments_tab: Kommentit
       notifications_tab: Ilmoitukset
       milestones_tab: Tavoitteet

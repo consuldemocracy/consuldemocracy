@@ -1003,9 +1003,6 @@ he:
         table_title: "כותרת"
         edit_answers: ערוך תשובה
         see_proposal: "ראה/י הצעות"
-      flash:
-        question_added: "שאלות שנוספו לסקר זה"
-        error_on_question_added: "לא ניתן לשייך שאלות לסקר זה"
       destroy:
         alert: "פעולה זו תסיר את הסקר ואת כל השאלות הקשורות אליו."
         success_notice: "הסקר נמחק בהצלחה"
@@ -1055,12 +1052,6 @@ he:
     answers:
       new:
         title: תשובה חדשה
-      show:
-        title: כותרת
-        description: תיאור
-        images: תמונות
-        images_list: רשימת תמונות
-        edit: ערוך תשובה
       edit:
         title: ערוך תשובה
       videos:
@@ -1472,7 +1463,7 @@ he:
           see_page: תצוגה מקדימה של הדף
         new:
           title: יצירת דף מותאם אישית חדש
-          slug_help: "טקסט כדי לזהות את הדף הזה בכתובת האתר, לדוגמה <code>https://consulproject.org/page-slug</code>"
+          slug_help: "טקסט כדי לזהות את הדף הזה בכתובת האתר, לדוגמה <code>https://consuldemocracy.org/page-slug</code>"
         page:
           created_at: נוצר ב
           status: סטטוס

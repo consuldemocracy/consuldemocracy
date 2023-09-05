@@ -18,8 +18,11 @@
           <small><%= poll_dates(poll) %></small>
 
           <ul class="margin-top">
-            <% poll.questions.sort_for_list.each do |question| %>
-              <li><%= question.title %></li>
+            <% poll.questions.sort_for_list.each_with_index do |question, index| %>
+              <li>
+                <span><%= t("polls.question") %> <%= index + 1 %></span>
+                <%= question.title %>
+              </li>
             <% end %>
           </ul>
         <% end %>
@@ -36,40 +39,16 @@
         <%= render SDG::TagListComponent.new(poll, limit: 5, linkable: false) %>
       </div>
       <div class="small-12 medium-3 column table relative" data-equalizer-watch>
-        <div class="small-12 column message">
-          <% if !user_signed_in? %>
-            <div class="callout primary">
-              <span class="fas fa-user"></span>
-              <%= t("polls.index.not_logged_in") %>
-            </div>
-          <% elsif user_signed_in? %>
-            <% if current_user.unverified? %>
-              <div class="callout warning">
-                <span class="fas fa-user"></span>
-                <%= t("polls.index.unverified") %>
-              </div>
-            <% elsif cannot?(:answer, poll) %>
-              <div class="callout warning">
-                <span class="fas fa-globe"></span>
-                <%= t("polls.index.cant_answer") %>
-              </div>
-            <% elsif !poll.votable_by?(current_user) %>
-              <div class="callout success">
-                <span class="far fa-check-circle"></span>
-                <%= t("polls.index.already_answer") %>
-              </div>
-            <% end %>
-          <% end %>
-        </div>
+        <%= render "polls/custom_user_message", poll: poll %>
         <div class="table-cell align-bottom">
-          <p class="small text-right">
-            <%= sanitize(t("polls.index.remaining",
-                            days: distance_of_time_in_words(Time.current, poll.ends_at))) %>
-          </p>
           <% if poll.expired? %>
-            <%= link_to_poll t("polls.index.participate_button_expired"), poll, "button expanded" %>
+            <%= link_to_poll t("polls.index.participate_button_expired"), poll, class: "button hollow expanded" %>
           <% else %>
-            <%= link_to_poll t("polls.index.participate_button"), poll, "button expanded" %>
+            <p class="small text-right">
+              <%= sanitize(t("polls.index.remaining",
+                              days: distance_of_time_in_words(Time.current, poll.ends_at))) %>
+            </p>
+            <%= link_to_poll t("polls.index.participate_button"), poll, class: "button hollow expanded" %>
           <% end %>
         </div>
       </div>

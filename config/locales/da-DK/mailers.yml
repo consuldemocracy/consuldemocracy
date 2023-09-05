@@ -73,30 +73,6 @@ da:
       hi: Hej
       new_comment_by: Der er en ny kommentar på din evaluering fra <strong>%{commenter}</strong> til dit budget forslag %{investment}
       commenter_info: "%{commenter}, %{time}:"
-    new_actions_notification_rake_created:
-      subject: "Flere nyheder vedrørende dit borgerforslag"
-      hi: "Hej %{name},"
-      new_resource: "NY ULÅST FUNKTION"
-      introduction: "Som du ved, oprettede du den %{created_at_day} %{created_at_month} udkastet til et borgerforslag %{title}."
-      text_1: "Du kan altid offentliggøre det ved at følge dette link: %{link_to_published}. Hvis du stadig ikke er sikker..."
-      text_2: "Grib øjeblikket! Lær, tilføj andre mennesker med de samme interesser og forbered dig på udbredelsen af din idé, når du definitivt vælger at offentliggøre dit forslag."
-      text_3: "For at ledsage dig i udfordringen, får du her nyhederne..."
-      text_4: "Tag et kig på denne NYE anbefalede HANDLING:"
-      text_5: "Det næste vi anbefaler dig at gøre er:"
-      footer_text: "Som altid kan du gå til Forslagspanelet, hvor vi vil fortælle dig i detaljer, hvordan du kan bruge disse funktioner, og hvordan du får mest ud af dem."
-      dashboard_button: "Værsgo, opdag dem!"
-    new_actions_notification_rake_published:
-      subject: "Flere nyheder vedrørende dit borgerforslag"
-      hi: "Hej %{name},"
-      new_resource: "NY ULÅST FUNKTION"
-      introduction: "Som du ved, offentliggjorde du den %{published_at_day} %{published_at_month} borgerforslaget %{title}."
-      text_1: "Tillykke, du har indtil videre fået %{votes_count}, der støtte op om dit forslag!"
-      text_2: "Og nu har du en ny funktion til rådighed, der kan hjælpe dig med de næste skridt."
-      text_3: "Der mangler %{days_count} dage, før dit forslag har modtaget %{max_votes_count}, støtte og går videre til afstemning. Frisk mod og bliv ved med at dele! Er du løbet tør for idéer?"
-      text_4: "NY ANBEFALET DELEFUNKTION"
-      text_5: "Se også følgende funktioner:"
-      footer_text: "Som altid kan du gå til Forslagspanelet, hvor vi vil fortælle dig i detaljer, hvordan du kan bruge disse funktioner, og hvordan du får mest ud af dem."
-      dashboard_button: "Værsgo, opdag dem!"
     new_actions_notification_on_create:
       subject: "Udkastet til dit borgerforslag blev oprettet"
       hi: "Hej %{name}!"

@@ -55,25 +55,6 @@ describe "Commenting debates" do
     expect(page).to have_current_path(comment_path(comment))
   end
 
-  scenario "Show order links only if there are comments" do
-    visit debate_path(debate)
-
-    within "#comments" do
-      expect(page).not_to have_link "Most voted"
-      expect(page).not_to have_link "Newest first"
-      expect(page).not_to have_link "Oldest first"
-    end
-
-    create(:comment, commentable: debate, user: user)
-    visit debate_path(debate)
-
-    within "#comments" do
-      expect(page).to have_link "Most voted"
-      expect(page).to have_link "Newest first"
-      expect(page).to have_link "Oldest first"
-    end
-  end
-
   scenario "Collapsable comments" do
     parent_comment = create(:comment, body: "Main comment", commentable: debate)
     child_comment  = create(:comment, body: "First subcomment", commentable: debate, parent: parent_comment)

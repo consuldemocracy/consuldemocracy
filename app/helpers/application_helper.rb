@@ -10,26 +10,8 @@ module ApplicationHelper
     %i[ar fa he].include?(locale)
   end
 
-  def markdown(text)
-    return text if text.blank?
-
-    # See https://github.com/vmg/redcarpet for options
-    render_options = {
-      filter_html:     false,
-      hard_wrap:       true,
-      link_attributes: {  target: "_blank" }
-    }
-    renderer = Redcarpet::Render::HTML.new(render_options)
-    extensions = {
-      autolink:           true,
-      fenced_code_blocks: true,
-      lax_spacing:        true,
-      no_intra_emphasis:  true,
-      strikethrough:      true,
-      superscript:        true
-    }
-
-    AdminLegislationSanitizer.new.sanitize(Redcarpet::Markdown.new(renderer, extensions).render(text))
+  def markdown(text, **render_options)
+    MarkdownConverter.new(text, **render_options).render
   end
 
   def wysiwyg(text)
@@ -53,6 +35,8 @@ module ApplicationHelper
 
     if image
       polymorphic_path(image)
+    elsif AssetFinder.find_asset(File.join(Tenant.subfolder_path, filename))
+      File.join(Tenant.subfolder_path, filename)
     else
       filename
     end

@@ -19,7 +19,11 @@ module CommonActions
   include Verifications
 
   def app_host
-    "#{Capybara.app_host}:#{Capybara::Server.ports.values.last}"
+    "#{Capybara.app_host}:#{app_port}"
+  end
+
+  def app_port
+    Capybara::Server.ports.values.last
   end
 
   def fill_in_signup_form(email = "manuela@consul.dev", password = "judgementday")
@@ -41,8 +45,6 @@ module CommonActions
     fill_in_ckeditor "Proposal text", with: "This is very important because..."
     fill_in "External video URL", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
     fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
-    # Check terms of service by default
-    # check "I agree to the Privacy Policy and the Terms and conditions of use"
   end
 
   def fill_in_new_proposal_title(with:)

@@ -4,6 +4,7 @@ fr:
       title: Administration
     actions:
       actions: Statut des votes
+      block_author: "Bloquer l'auteur"
       confirm_action: "Êtes-vous sûr? %{action} \"%{name}\""
       confirm_delete: "Êtes-vous sûr? Cette action supprimera \"%{name}\" et ne peut pas être annulée."
       confirm_hide: Confirmer
@@ -37,6 +38,8 @@ fr:
           sdg: ODD
       create:
         notice: "Bannière créée avec succès"
+      destroy:
+        notice: "La bannière a été supprimée avec succès"
       edit:
         editing: Modifier la bannière
         form:
@@ -67,8 +70,17 @@ fr:
         no_activity: Il n’y a aucune activité de modérateurs.
     budgets:
       actions:
+        ballots: "Créer une urne"
+        confirm:
+          ballots: "Êtes-vous sûr ? Cette action n'est nécessaire que si vous allez utiliser des urnes physiques lors du vote final. Les citoyens pourront voter via le web avec ou sans bulletins physiques."
+          destroy: "Êtes-vous sûr ? Cette action supprimera le budget et tous ses groupes et éléments. Cette action ne peut pas être annulée."
+        descriptions:
+          ballots: "Cette action vous permettra de gérer les urnes. N'utilisez cette option que si vous comptez utiliser des urnes physiques pour recueillir des votes lors du vote final."
+          calculate_winners: 'Après avoir calculé les résultats, seuls les administrateurs y auront accès. Ils seront rendus publics lorsque le budget atteindra la %{phase} <strong>si l''option "Afficher les résultats" est activée</strong> lors de la modification du budget.'
+          destroy: "Cette action supprimera le budget et tous ses groupes et éléments. Cette action ne peut pas être annulée."
         edit: "Modifier le budget"
         preview: "Aperçu"
+        preview_results: "Prévisualiser les résultats"
       index:
         title: Budgets participatifs
         new_link: Créer un nouveau budget
@@ -103,6 +115,7 @@ fr:
         delete: Supprimer le budget
         phase: Phase
         phases_caption: "Phase"
+        phases_table_help_text: "La configuration de ces phases est utilisée à titre informatif uniquement. Sa fonction est de définir les informations des phases qui sont affichées sur la page publique du budget participatif."
         duration: "Durée"
         enabled: Activé
         actions: Actions
@@ -126,6 +139,8 @@ fr:
         info:
           budget_settings: "Paramètres généraux du budget participatif"
           staff_settings: "Administrateurs et évaluateurs affectés au budget"
+        hide_money: "Masquer l'argent"
+        hide_money_help_text: "Si cette option est cochée, tous les champs qui affichent le montant d'argent seront masqués tout au long du processus."
       destroy:
         success_notice: Le budget a été supprimé avec succès
         unable_notice: Vous ne pouvez pas détruire un budget qui a des investissements associés
@@ -143,7 +158,10 @@ fr:
           single: "Les rubriques sont destinées à répartir l'argent du budget participatif. Puisque ce budget ne contiendra qu'une seule rubrique, c'est ici que vous établissez l'argent qui sera dépensé dans ce budget participatif."
         phases: "Les budgets participatifs ont différentes phases. Ici, vous pouvez activer ou désactiver des phases et également personnaliser chaque phase individuelle."
       show:
+        add_group: "Ajouter un groupe"
         add_heading: "Ajouter une rubrique"
+        groups_and_headings: "rubriques de Groupe"
+        headings_caption: "rubriques de groupe %{group}"
       winners:
         calculate: Calculer les investissements gagnant
         calculated: Le calcul des gagnants peut prendre quelques minutes.
@@ -171,6 +189,7 @@ fr:
       index:
         new_button: "Ajouter un nouveau groupe"
     budget_headings:
+      no_headings: "Le groupe <strong>%{group}</strong> n'a pas d'en-tête."
       create:
         notice: "Rubrique créée avec succès !"
       update:
@@ -189,15 +208,26 @@ fr:
       group_switcher:
         currently_showing: "Affichage les en-têtes du groupe %{group}."
         different_group: "Gérer les en-têtes d'un groupe différent"
+        the_other_group: "Aller aux elements du %{group}."
       index:
         back: "Retourner aux groupes"
+        new_button: "Ajouter un nouvel element"
+        title: "rubrique %{budget} / %{group}"
     budget_phases:
       edit:
         title: "Modifier la phase"
+        dates_help_text: "À titre informatif uniquement"
         description_help_text: Ce texte s’affiche dans l’en-tête lors de la phase est active
+        duration: "Durée de la phase"
+        duration_description: "Ces champs sont à titre informatif uniquement et <strong>ne provoquent pas une mise à jour automatique de la phase active.</strong> Pour le mettre à jour, modifiez le budget et sélectionnez la phase active."
         enabled_help_text: Cette phase sera publique dans la chronologie des phases du budget, mais aussi active pour tout autre usage
+        image_description: "Si une image est fournie, elle sera affichée à côté de la description de cette phase."
         main_call_to_action: "Appel à l'action principal (facultatif)"
+        main_call_to_action_description: "Ce lien apparaîtra dans l'en-tête de ce budget participatif lorsque cette phase sera active et permettra à l'utilisateur d'exécuter une action spécifique telle que créer une nouvelle proposition, voter sur des propositions existantes ou en savoir plus sur le fonctionnement des budgets participatifs."
+        name_help_text: "C'est le titre de la phase que les utilisateurs liront dans l'en-tête lorsque la phase sera active."
         save_changes: Sauvegarder des changements
+      index:
+        title: "phases de %{budget}"
     budget_investments:
       index:
         heading_filter_all: Tous les titres
@@ -226,6 +256,7 @@ fr:
         download_current_selection: "Télécharger la sélection"
         no_budget_investments: "Il n’y a pas de projet d’investissement."
         title: Propositions d'investissement
+        columns: Columnes
         assigned_admin: Administrateur affecté
         no_admin_assigned: Aucun administrateur affecté
         no_valuators_assigned: Aucun évaluateur affecté
@@ -251,7 +282,9 @@ fr:
           incompatible: Incompatibles
           price: Prix
           author: Auteur
+        cannot_calculate_winners: Le budget doit être dans la phase "%{phase}" pour pouvoir calculer les propositions gagnantes.
         see_results: "Voir les résultats"
+        milestone_tags_filter_all: "Toutes les tags de suivi"
       show:
         assigned_admin: Administrateur affecté
         assigned_valuators: Évaluateurs assignés
@@ -296,6 +329,31 @@ fr:
         groups: Groupes
         headings: Titres
         phases: Phase
+      budgets:
+        continue: "Continuer vers les groupes"
+      groups:
+        back: "Rééditer le budget"
+        continue: "Continuer vers les parties"
+      headings:
+        continue: "Continuer vers les phases"
+        single:
+          back: "Retour au groupe d'édition"
+      heading_mode:
+        multiple:
+          description: "Créez un processus avec plusieurs groupes, districts ou problèmes. Vous avez quelque chose comme plusieurs sacs d'argent. Par exemple, 25 000 € pour le \"District Nord\", 30 000 € pour le \"District central\", 28 000 € pour \"Quartier Sud\" et toute la ville. Ou pour des sujets divers comme le sport, la culture ou la santé."
+          link: "Créer un budget à partir de plusieurs éléments"
+          title: "Budget <strong>plusieurs éléments de campagne</strong>"
+        single:
+          description: "Créez une démarche avec un groupe, un quartier ou un sujet. Vous avez quelque chose comme un sac d'argent. Par exemple, 25 000 € pour un quartier, ou 10 000 € pour la culture."
+          link: "Créer un budget pour un seul article"
+          title: "<strong>Budget pour un seul article</strong>"
+        title: "Type de budget participatif"
+      phases:
+        continue: "Terminer"
+        multiple:
+          back: "Retour aux parties"
+        single:
+          back: "Rééditer l'element"
     milestones:
       index:
         table_id: "ID"
@@ -310,6 +368,7 @@ fr:
         documents: "Documents"
         milestone: Jalon
         new_milestone: Créer nouveau jalon
+        milestone_tags: tags de suivi
       form:
         admin_statuses: Administrer les statuts d'investissement
         no_statuses_defined: Il n'y a pas encore de statuts d'investissement définis
@@ -371,6 +430,7 @@ fr:
         author: "Auteur"
         commentable_type: "Type"
         title: Commentaires masqués
+        no_comments: il n'y a pas de commentaires.
         table_link: "Lien"
     hidden_comments:
       index:
@@ -382,6 +442,7 @@ fr:
         hidden_debate: Débat masqué
         hidden_proposal: Proposition masquée
         title: Commentaires masqués
+        no_hidden_comments: il n'y a pas de commentaires masqués.
     dashboard:
       index:
         back: Retourner au %{org}
@@ -723,6 +784,7 @@ fr:
       comments: "Commentaires"
       local_census_records: Gérer le recensement local
       machine_learning: "IA / Apprentissage automatique"
+      multitenancy: Multitenance
     administrators:
       index:
         title: Administrateurs
@@ -735,6 +797,7 @@ fr:
         title: "Administrateurs : Recherche d'utilisateur"
       form:
         edit_title: "Modifier l'administrateur"
+        updated: "Administrateur mis à jour avec succès"
     moderators:
       index:
         title: Modérateurs
@@ -770,12 +833,17 @@ fr:
         empty_newsletters: Aucun bulletin d'information à afficher
       new:
         title: Nouveau bulletin d'information
+        header_footer_help_text: "L'en-tête et le pied de page sont les mêmes dans tous les e-mails, vous pouvez les modifier dans <code>app/views/layouts/mailer_header</code> et <code>app/views/layouts/mailer_footer</code>.< br >Vous pouvez remplacer l'image d'en-tête dans %{link}."
+        image_link: "personnaliser les images"
       edit:
         title: Modifier le bulletin d'information
       show:
         title: Aperçu du bulletin d'information
         send: Envoyer
         affected_users: (%{n} utilisateurs concernés)
+        sent_emails:
+          one: 1 email envoyé
+          other: "%{count} e-mails envoyés"
         sent_at: Envoyé à
         subject: Objet
         segment_recipient: Destinataires
@@ -838,14 +906,39 @@ fr:
         description: "Envoyé à l'auteur lorque son investissement budgétaire a été selectionné."
       budget_investment_unfeasible:
         title: "Investissement budgétaire irréalisable"
+        description: "Envoyé à l'auteur d'un projet de budget participatif marqué comme irréalisable."
+      budget_investment_unselected:
+        title: "Projet de dépense non sélectionné"
+        description: "Envoyé à l'auteur d'un projet de budget participatif qui n'a pas été sélectionné pour la phase de vote."
       comment:
         title: "Commentaire"
+        description: "Envoyé à l'auteur lorsqu'un commentaire est reçu."
       reply:
         title: "Répondre"
+        description: "Envoyé à l'auteur du commentaire lorsqu'une réponse est reçue."
+      direct_message_for_receiver:
+        title: "Message privé reçu"
+        description: "Envoyé au destinataire d'un message privé."
+      direct_message_for_sender:
+        title: "Message privé envoyé"
+        description: "Envoyé à l'expéditeur d'un message privé."
+      email_verification:
+        title: "Vérification des e-mails"
+        description: "Envoyé à l'utilisateur nouvellement enregistré pour vérifier son compte."
       user_invite:
         title: "Invitation d'utilisateur"
+        description: "Envoyé à la personne qui a été invitée à créer un compte."
       evaluation_comment:
         title: "Nouveau commentaire d'évaluation"
+        description: "Envoyé aux gestionnaires de budget et aux évaluateurs."
+      edit_info: "Vous pouvez modifier cet e-mail dans"
+      message_title: "Titre du message"
+      message_body: "Ceci est un exemple du contenu d'un message."
+      alert:
+        no_investments: "Aucun projet d'investissement n'a été créé. Un exemple est nécessaire pour pouvoir prévisualiser l'e-mail."
+        no_comments: "Aucun commentaire n'a été créé. Un exemple est nécessaire pour pouvoir prévisualiser l'e-mail."
+        no_replies: "Aucune réponse n'a été créée. Quelques exemples sont nécessaires pour pouvoir prévisualiser l'e-mail."
+        no_evaluation_comments: "Aucun commentaire d'évaluation n'a été créé. Quelques exemples sont nécessaires pour pouvoir prévisualiser l'e-mail."
     emails_download:
       index:
         title: Téléchargement des courriels
@@ -864,6 +957,8 @@ fr:
         group: "Groupe"
         no_group: "Aucun groupe"
         abilities: "Pouvoirs"
+        can_comment: "Peut commenter"
+        can_edit_dossier: "Peut modifier les rapports"
       valuator:
         add: Ajouter un évaluateur
       search:
@@ -904,6 +999,7 @@ fr:
       search:
         email_placeholder: Rechercher un utilisateur par courriel
         user_not_found: Utilisateur introuvable
+        help: "Pour ajouter ou supprimer des présidents de table, utilisez le moteur de recherche ci-dessous."
     poll_officer_assignments:
       index:
         officers_title: "Liste des présidents"
@@ -938,6 +1034,7 @@ fr:
       flash:
         create: "Période de travail ajoutée"
         destroy: "Période de travail supprimée"
+        unable_to_destroy: "Impossible de supprimer les virages qui ont des résultats ou des décomptes associés"
         date_missing: "Vous devez sélectionner une date"
       vote_collection: Collecter les votes
       recount_scrutiny: Recomptage et contrôle
@@ -972,6 +1069,12 @@ fr:
         no_booths: "Il n'y a pas de bureaux de vote affectés à ce vote."
         table_name: "Nom"
         table_location: "Lieu"
+    active_polls:
+      edit:
+        title: "Aperçu du vote"
+      form:
+        description:
+          help_text: "Ce texte apparaîtra dans l'en-tête de la page de vote. Vous pouvez l'utiliser pour ajouter du contexte au vote ouvert"
     polls:
       index:
         title: "Liste des votes"
@@ -997,9 +1100,8 @@ fr:
         no_questions: "Il n'y a pas de questions affectées à ce vote."
         questions_title: "Liste des questions"
         table_title: "Titre"
-      flash:
-        question_added: "La question a été ajoutée à ce vote"
-        error_on_question_added: "La question n'a pas pu être ajoutée à ce vote."
+        edit_answers: Modifier les réponses
+        see_proposal: "(Voir la proposition)"
     questions:
       index:
         title: "Questions"
@@ -1013,6 +1115,7 @@ fr:
         table_proposal: "Proposition"
         table_question: "Question"
         table_poll: "Vote"
+        poll_not_assigned: "Sondage non attribué"
       edit:
         title: "Modifier la question"
       new:
@@ -1044,12 +1147,6 @@ fr:
     answers:
       new:
         title: Nouvelle réponse
-      show:
-        title: Titre
-        description: Description
-        images: Images
-        images_list: Liste des images
-        edit: Modifier réponse
       edit:
         title: Modifier la réponse
       videos:
@@ -1066,6 +1163,7 @@ fr:
       index:
         title: "Dépouillements"
         no_recounts: "Il n'y a rien à dépouiller"
+        all_booths_total: "Cumulées sur tous les stands :"
         total_final: "Dépouillement final"
         total_system: "Votes (automatique)"
         table_booth_name: "Urne"
@@ -1113,6 +1211,7 @@ fr:
         official_updated: Informations du fonctionnaire sauvegardées
       index:
         title: Fonctionnaires
+        help: Les comptes utilisateurs marqués comme agents publics verront leurs interventions sur la plateforme mises en évidence. Vous pouvez définir l'étiquette qui apparaît à côté des noms d'utilisateur de ces comptes de la plus haute importance (niveau 1) à la plus faible (niveau 5).
         no_officials: Il n’y a aucun fonctionnaire.
         name: Nom
         official_position: Position officielle
@@ -1161,6 +1260,13 @@ fr:
         select: Sélecter
         selected: Sélecté
         milestones: Jalons
+        no_proposals: il n'y a aucune proposition.
+      show:
+        create_question: ajoutez cette proposition à un sondage pour voter
+      form:
+        update: mise à jour de la proposition citoyenne
+      update:
+        notice: proposition mise à jour avec succès
     hidden_proposals:
       index:
         filter: Filtre
@@ -1186,6 +1292,8 @@ fr:
         title: Paramètres
         general: Paramètres
         update_setting: Mettre-à-jour
+        participation_processes: "Processus de participation"
+        images_and_documents: "Images et documents"
         feature_flags: Fonctionnalités
         features:
           enabled: "Fonctionnalité activée"
@@ -1196,8 +1304,17 @@ fr:
             update: Configuration de la carte mise à jour avec succès.
           form:
             submit: Mettre-à-jour
+          how_to_enable: 'Pour montrer la carte aux utilisateurs, "Géolocalisation des propositions de dépenses et des projets" doit être activé dans l''onglet "Fonctionnalités".'
         dashboard:
           title: Tableau de bord des propositions
+        remote_census:
+          title: Configuration du recensement à distance
+          how_to_enable: 'Pour configurer la connexion avec le Recensement à distance (SOAP) vous devez activer "Configurer la connexion au Recensement à distance (SOAP)" dans l''onglet  "Fonctionnalités".'
+        sdg:
+          title: Configuration ODD
+          how_to_enable: 'Pour afficher les options de configuration des objectifs de développement durable, "ODD" doit être activé dans l''onglet "Fonctionnalités".'
+      remote_census_general_name: données générales
+      remote_census_request_name: demande de données
       remote_census_response_name: Données de Réponse
       setting: Fonctionnalité
       setting_name: Paramètres
@@ -1206,15 +1323,23 @@ fr:
     shared:
       search:
         advanced_filters:
+          sdg_goals:
+            all: "Tous les objectifs"
+            label: "Par objectif"
           sdg_targets:
+            all: "Toutes les cibles"
             label: "Par cible"
         label:
           booths: "Rechercher le bureau de vote par nom"
+          budget_investments: "Rechercher des projets par titre, description ou élément de campagne"
           debates: "Rechercher des débats par titre ou description"
+          legislation_processes: "Recherche de processus par titre ou description"
+          legislation_proposals: "Rechercher des propositions par titre ou description"
           local_census_records: "Recherche par numéro de document"
           organizations: "Nom, courriel ou téléphone"
           poll_officers: "Rechercher le président d'un vote"
           poll_questions: "Rechercher les questions d'un vote"
+          polls: "Rechercher des sondages par nom ou description"
           proposals: "Rechercher des propositions par titre, code, description ou question"
           users: "Rechercher un utilisateur par nom ou courriel"
         search: "Chercher"
@@ -1231,7 +1356,11 @@ fr:
       author: Auteur
       content: Contenu
       created_at: Créé le
+      color_help: format hexadécimal
       show_results_and_stats: "Afficher les résultats et statistiques"
+      results_and_stats_reminder: "Si vous cochez ces cases, les résultats et/ou les statistiques seront publics et visibles par tous les utilisateurs."
+      close_modal: fermer la fenêtre contextuelle
+      example_url: "Par exemple, https://consuldemocracy.org ou /help"
     geozones:
       index:
         title: District
@@ -1240,7 +1369,9 @@ fr:
         name: Nom
         external_code: Code externe
         census_code: Code du bureau de recensement
+        code_help: code de réponse pour cette zone dans l'API de recensement
         coordinates: Coordonnées
+        coordinates_help: Coordonnées qui généreront une zone cliquable dans une carte d'image HTML
       edit:
         form:
           submit_button: Sauvegarder des changements
@@ -1265,11 +1396,16 @@ fr:
         document_numbers_note: "Saisir les numéros séparés par des points-virgules (;)"
         submit: Créer la feuille de signature
         text_help:
+          required_fields_note: "Pour vérifier un utilisateur, votre application a besoin : du numéro de document"
+          date_of_birth_note: ", Jour de naissance (jj/mm/aaaa)"
+          postal_code_note: "et code postal"
+          required_fields_structure_note: "Les champs obligatoires pour chaque utilisateur doivent être séparés par des virgules et chaque utilisateur doit être séparé par des points-virgules."
           example_text: "Exemple: "
       show:
         created_at: Créé le
         author: Auteur
         users: Utilisateurs
+        signature_count: "Nombre de signatures :"
         verified:
           one: "Il y a %{count} signature valide"
           other: "Il y a %{count} signatures valides"
@@ -1277,6 +1413,10 @@ fr:
           one: "Il y a %{count} signature invalide"
           other: "Il y a %{count} signatures invalides"
         unverified_error: (Non vérifié par le bureau du recensement)
+        voted:
+          zero: "Aucun vote n'est associé à des signatures vérifiées."
+          one: "Il y a %{count} votes associés aux signatures vérifiées."
+          other: "Il y a %{count} votes associés aux signatures vérifiées."
         loading: "Certaines signatures sont en cours de vérification par le bureau du recensement, veuillez rafraîchir la page dans quelques instants"
     stats:
       show:
@@ -1311,6 +1451,7 @@ fr:
         level_2_user: Utilisateurs de niveau 2
         proposal_created: Propositions citoyennes
       budgets:
+        no_data_before_balloting_phase: "Il n'y a aucune donnée à afficher tant que la phase de vote n'est pas ouverte."
         title: "Budget participatifs - Stats de participation"
         supporting_phase: Phase de soutien
         balloting_phase: Vote final
@@ -1318,6 +1459,8 @@ fr:
         title: "Stats de vote final"
         vote_count: Votes
         participant_count: Participants
+        votes_per_heading: Votes par element
+        participants_per_district: participants par district
       budget_supporting:
         title: "Stats de la phase de soutien"
         headings: Titres
@@ -1345,9 +1488,14 @@ fr:
           origin_web: Participants en ligne
           origin_total: Nombre total de participants
       sdg:
+        budget_investments:
+          amount: "Budget approuvé"
+          winners: "Projets d'investissement gagnants"
+          sent: "Projets d'investissement envoyés"
         debates: "Débats"
         polls: "Votes"
         proposals: "Propositions"
+        title: "Objectifs de développement durable - Statistiques"
     tags:
       create: Créer un sujet
       index:
@@ -1358,6 +1506,7 @@ fr:
     users:
       columns:
         id: ID
+        erase_reason: Raison de la suppression
         name: Nom
         email: Email
         document_number: Numéro de document
@@ -1369,6 +1518,7 @@ fr:
         filter: Filtre
         filters:
           active: Actif
+          erased: Effacé
       search:
         placeholder: Rechercher un utilisateur par email, nom ou numéro de document
     verifications:
@@ -1438,6 +1588,7 @@ fr:
           see_page: Voir la page
         new:
           title: Créer une nouvelle page personnalisée
+          slug_help: "Texte qui identifie cette page dans l'URL, par exemple <code>https://consuldemocracy.org/slug-de-pagina</code>"
         page:
           created_at: Créé le
           status: Statut
@@ -1449,6 +1600,13 @@ fr:
           cards_title: cartes
           create_card: Créer un encart
           no_cards: Il n'y a pas d'encarts.
+          columns_help: "Largeur de la carte en nombre de colonnes. Sur les écrans mobiles, c'est toujours 100 % de largeur."
+          create:
+            notice: "Carte créée avec succès !"
+          update:
+            notice: "Carte mise à jour avec succès"
+          destroy:
+            notice: "Carte supprimée avec succès"
     homepage:
       title: Page d’accueil
       description: Les modules actifs apparaissent dans la page d’accueil dans le même ordre, comme en l’espèce.
@@ -1473,25 +1631,95 @@ fr:
         card_title: Modifier l'encart
         submit_card: Sauvegarder l'encart
     audits:
+      title: "Historique"
       changes: "Liste de changements"
       id: "ID"
+      field: "Champ"
       new_value: "Valeur nouveau"
       old_value: "Vieux Valeur"
+      edited_at: "Modifié à"
+      edited_by: "Modifié par"
       actions: "Actions"
+      empty: "Aucune modification enregistrée"
     local_census_records:
       index:
         title: Gérer le recensement local
+        create: Créer un nouvel enregistrement dans le recensement local
+        no_local_census_records: aucun enregistrement de recensement local
         document_type: Type de document
         document_number: Numéro de document
         date_of_birth: Date de naissance
         postal_code: Code postal
+        import: Importer CSV
+      create:
+        notice: Nouvel enregistrement de recensement local créé avec succès !
+      edit:
+        editing: édition de l'enregistrement de recensement local
+      update:
+        notice: Enregistrement du recensement local mis à jour avec succès !
+      destroy:
+        notice: Enregistrement du recensement local supprimé avec succès !
       imports:
         new:
           title: Données du recensement local
+          subtitle: Importer un fichier CSV
+        create:
+          notice: Le processus d'importation des enregistrements de recensement locaux a réussi !
         show:
           title: Gérer le recensement local
+          subtitle: Résultats du processus d'importation
+          import: Importer un autre fichier
+          errored: lignes erronées
+          created: Enregistrements créés
+        local_census_records:
+          no_records_found: aucun enregistrement trouvé.
     machine_learning:
+      cancel: "Annuler l'opération"
+      cancel_alert: "Cette action annulera le script en cours et il sera nécessaire d'exécuter à nouveau le script."
+      comments_summary: "Résumé des commentaires"
+      comments_summary_description: "Affiche un résumé généré automatiquement des commentaires sur tous les éléments qui peuvent être commentés."
+      data_folder_content: "contenu du dossier de données"
+      error: "Erreur:"
+      execute_script: "Exécuter le script"
+      executed_by: "Exécuté par :"
+      executed_script: "Script exécuté :"
+      feature_disabled: "Cette fonctionnalité est désactivée. Pour utiliser l'apprentissage automatique, vous pouvez l'activer à partir du %{link}."
+      feature_disabled_link: "page des paramètres"
+      help:
+        title_1: "Qu'est-ce que l'IA/l'apprentissage automatique ?"
+        description_1: "Traditionnellement, les programmes informatiques sont conçus en établissant des règles précises sur ce que le programme doit faire dans chaque situation, et comment traiter les informations disponibles à chaque instant. Ce que l'on appelle communément l'IA / Machine Learning est un type de programmes pour lequel ce qui est établi précisément, c'est la tâche à réaliser et comment la tâche est mieux ou moins bien réalisée, mais contrairement aux autres, le système découvre ou apprend quelle serait la méthode la plus appropriée pour réaliser ladite tâche."
+        title_2: "Que fait le module IA/Machine Learning dans CONSUL ?"
+        description_2: "Ce module permet d'implémenter tout type de programmes d'IA / Machine Learning dans CONSUL. Les programmes peuvent traiter les informations disponibles dans CONSUL et produire des résultats qui aident à la fois les utilisateurs et les administrateurs à mener une participation citoyenne plus efficace et intelligente. Le module a été développé pour faciliter la mise en œuvre et l'exécution de nouveaux programmes, en séparant le code CONSUL général et le code de ces nouveaux programmes."
+        title_3: "Comment utiliser le module"
+        description_3: "Pour l'utiliser pour la première fois, il est nécessaire de suivre les instructions disponibles dans la documentation CONSUL pour activer correctement ce module. Une fois le module correctement activé, les programmes sont exécutés depuis l'onglet \"Exécuter les scripts\". Avant de l'exécuter, nous pouvons voir dans ce même onglet une estimation du temps d'exécution et d'autres informations pertinentes. À la fin de l'exécution, nous pouvons activer le contenu qui sera affiché dans CONSUL à partir de l'onglet \"Configuration\", ainsi que télécharger d'autres fichiers générés qui pourraient nous être utiles."
+        title_4: "Comment implémenter de nouveaux scripts d'IA/apprentissage automatique."
+        description_4: "Utilisez des scripts existants comme exemple."
+        description_4b: "Les nouveaux scripts doivent se trouver dans le dossier <code>public/machine_learning/scripts</code>"
+        description_4c: "Les données d'entrée à utiliser par le script seront créées sous forme de fichiers JSON dans le dossier <code>../data</code>"
+        description_4d: "Toute sortie générée doit être créée dans le dossier <code>../data</code>"
+        description_4e: "Il est recommandé de créer un fichier texte <code>.ini</code> séparé avec les paramètres de configuration du script, portant le même nom que le script et lisible par configparser. Ce fichier facilitera les modifications de configuration par les administrateurs ."
+        description_4f: "Il est recommandé d'inclure comme première ligne du script une chaîne initiale de guillemets triples avec de brèves informations sur le script et des liens vers toute information pertinente. Cette chaîne sera automatiquement affichée dans l'interface d'administration."
+        description_4g: "Il est recommandé de créer un journal avec les informations pertinentes du script dans un fichier texte <code>.log</code>, avec le même nom que le script."
+        title_5: "Pour utiliser les scripts AI/Machine Learning, vous devez avoir installé Python sur votre serveur"
+        description_5: "Vous pouvez voir ici les instructions d'exemple pour un serveur Ubuntu 18.04 :"
+      help_text: "Cette fonctionnalité est expérimentale."
+      last_execution: "Dernière exécution"
+      no_content: "Aucun contenu n'a encore été généré."
+      notice:
+        success: "Le dernier script a été exécuté avec succès."
+        error: "Une erreur s'est produite. Plus d'informations sur l'erreur ci-dessous."
+        working: "Le script est en cours d'exécution. L'administrateur qui l'a exécuté recevra un e-mail lorsqu'il sera terminé."
+        delete_generated_content: "Le contenu généré a été supprimé avec succès."
+      output_files: "Fichiers de sortie :"
       related_content: "Contenu lié"
+      related_content_description: "Ajoute du contenu associé généré automatiquement aux propositions et projets de budgétisation participative."
+      script_info: "Vous recevrez un e-mail à %{email} lorsque le script aura fini de s'exécuter."
+      script_name: "Nom du script :"
+      select_script: "Sélectionnez le script python à exécuter"
+      started_at: "A commencé à :"
       tab_help: "Aide"
+      tab_scripts: "Exécuter le script"
+      tab_settings: "Paramètres / Contenu généré"
       tags: "Sujets"
+      tags_description: "Génère des tags automatiques pour tous les éléments qui peuvent être tagués."
       title: "IA / Apprentissage automatique"

@@ -8,7 +8,7 @@ describe "Budgets wizard, groups step", :admin do
       visit admin_budgets_wizard_budget_groups_path(budget)
 
       within "#side_menu" do
-        expect(page).to have_css ".is-active", exact_text: "Participatory budgets"
+        expect(page).to have_css "[aria-current]", exact_text: "Participatory budgets"
       end
 
       expect(page).to have_content "Continue to headings"
@@ -98,7 +98,7 @@ describe "Budgets wizard, groups step", :admin do
       expect(page).to have_css "td", exact_text: "Group without typos"
     end
 
-    scenario "update group in single heading budget" do
+    scenario "update group in single heading budget", :consul do
       visit admin_budgets_wizard_budget_groups_path(budget, mode: "single")
       fill_in "Group name", with: "Group wiht typo"
       click_button "Continue to headings"
@@ -114,7 +114,7 @@ describe "Budgets wizard, groups step", :admin do
 
       visit admin_budget_path(budget)
 
-      within "section", text: "HEADING GROUPS" do
+      within "section", text: "Heading groups" do
         expect(page).to have_css "h4", exact_text: "Group without typos"
       end
     end

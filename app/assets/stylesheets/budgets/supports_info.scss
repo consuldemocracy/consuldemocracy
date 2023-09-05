@@ -48,7 +48,7 @@
 
   .keep-scrolling {
     @include has-fa-icon(angle-double-down, solid, after);
-    color: $brand;
+    @include brand-color;
     font-weight: bold;
     text-decoration: none;
     text-transform: uppercase;

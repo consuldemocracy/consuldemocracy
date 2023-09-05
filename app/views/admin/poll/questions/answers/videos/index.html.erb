@@ -1,4 +1,4 @@
-<%= back_link_to admin_question_path(@answer.question_id) %>
+<%= back_link_to admin_question_path(@answer.question) %>
 
 <div class="clear"></div>
 
@@ -6,9 +6,15 @@
   <%= t("admin.answers.videos.index.title") %>
 </h2>
 
-<%= link_to t("admin.answers.videos.index.add_video"),
-            new_admin_answer_video_path,
-            class: "button success float-right" %>
+<% if can?(:create, Poll::Question::Answer.new(question: @answer.question)) %>
+  <%= link_to t("admin.answers.videos.index.add_video"),
+              new_admin_answer_video_path(@answer),
+              class: "button success float-right" %>
+<% else %>
+  <div class="callout warning">
+    <strong><%= t("admin.questions.no_edit") %></strong>
+  </div>
+<% end %>
 
 <div>
 
@@ -22,12 +28,12 @@
     </thead>
 
     <tbody>
-      <% @answer.videos.each do |video| %>
+      <% @videos.each do |video| %>
         <tr id="<%= dom_id(video) %>" class="poll_question_answer_video">
           <td><%= video.title %></td>
           <td><%= link_to video.url, video.url %></td>
           <td>
-            <%= render Admin::TableActionsComponent.new(video) %>
+            <%= render Admin::Poll::Questions::Answers::Videos::TableActionsComponent.new(video) %>
           </td>
         </tr>
       <% end %>

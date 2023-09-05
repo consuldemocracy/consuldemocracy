@@ -17,7 +17,7 @@ class Admin::GeozonesController < Admin::BaseController
     @geozone = Geozone.new(geozone_params)
 
     if @geozone.save
-      redirect_to admin_geozones_path
+      redirect_to admin_geozones_path, notice: t("admin.geozones.create.notice")
     else
       render :new
     end
@@ -25,7 +25,7 @@ class Admin::GeozonesController < Admin::BaseController
 
   def update
     if @geozone.update(geozone_params)
-      redirect_to admin_geozones_path
+      redirect_to admin_geozones_path, notice: t("admin.geozones.update.notice")
     else
       render :edit
     end
@@ -47,6 +47,6 @@ class Admin::GeozonesController < Admin::BaseController
     end
 
     def allowed_params
-      [:name, :external_code, :census_code, :html_map_coordinates]
+      [:name, :external_code, :census_code, :html_map_coordinates, :geojson, :color]
     end
 end

@@ -59,9 +59,6 @@ id:
       form:
         submit_button: Memulai perdebatan
     debate:
-      comments:
-        zero: Tidak ada komentar
-        other: "1 Komentar\n%{count} komentar"
       votes:
         zero: Tidak ada suara
         other: "1 bulan\n\n%{count} bulan"
@@ -112,9 +109,6 @@ id:
       start_new: Memulai debat
     show:
       author_deleted: Pengguna dihapus
-      comments:
-        zero: Tidak ada komentar
-        other: "%{count} komentar"
       comments_title: Komentar
       edit_debate_link: Sunting
       flag: Perdebatan ini telah ditandai sebagai tidak pantas oleh beberapa pengguna.
@@ -169,7 +163,7 @@ id:
       accessibility: Aksesibilitas
       conditions: Syarat dan ketentuan penggunaan
       consul: Konsul aplikasi
-      consul_url: https://github.com/consul/consul
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: KONSUL, %{year}
       description: Portal ini menggunakan %{consul} Itulah %{open_source}.
       open_source: perangkat lunak open-source
@@ -327,9 +321,6 @@ id:
         edit: "Sebelum itu mendapat bersama, Anda akan dapat mengubah teks yang Anda inginkan."
         view_proposal: Tidak sekarang, pergi ke proposal saya
       already_supported: Anda telah mendukung proyek investasi ini. Bagikan!
-      comments:
-        zero: Tidak ada komentar
-        other: "%{count} komentar"
       support: Mendukung
       support_title: Mendukung proyek ini
       supports:
@@ -344,9 +335,6 @@ id:
     show:
       author_deleted: Pengguna dihapus
       code: "Proposal kode:"
-      comments:
-        zero: Tidak ada komentar
-        other: "%{count} komentar"
       comments_tab: Komentar
       flag: Perdebatan ini telah ditandai sebagai tidak pantas oleh beberapa pengguna.
       notifications_tab: Pemberitahuan

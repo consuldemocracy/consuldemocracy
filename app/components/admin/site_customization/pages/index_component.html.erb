@@ -1,0 +1,51 @@
+<%= header do %>
+  <%= link_to t("admin.site_customization.pages.index.create"), new_admin_site_customization_page_path %>
+<% end %>
+
+<% if pages.any? %>
+  <h3><%= page_entries_info pages %></h3>
+
+  <table class="cms-page-list">
+    <thead>
+      <tr>
+        <th><%= t("admin.site_customization.pages.page.title") %></th>
+        <th><%= t("admin.site_customization.pages.page.slug") %></th>
+        <th><%= t("admin.site_customization.pages.page.created_at") %></th>
+        <th><%= t("admin.site_customization.pages.page.updated_at") %></th>
+        <th><%= t("admin.site_customization.pages.page.status") %></th>
+        <th><%= t("admin.actions.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% pages.each do |page| %>
+      <tr id="<%= dom_id(page) %>">
+        <td><%= page.title %></td>
+        <td><%= page.slug %></td>
+        <td><%= I18n.l page.created_at, format: :long %></td>
+        <td><%= I18n.l page.updated_at, format: :long %></td>
+        <td><%= t("admin.site_customization.pages.page.status_#{page.status}") %></td>
+        <td>
+          <%= render Admin::TableActionsComponent.new(page) do |actions| %>
+            <%= actions.action(:cards,
+                               text: t("admin.site_customization.pages.page.see_cards"),
+                               path: admin_site_customization_page_widget_cards_path(page)) %>
+
+            <% if page.status == "published" %>
+              <%= actions.action(:show,
+                                 text: t("admin.site_customization.pages.index.see_page"),
+                                 path: page.url,
+                                 options: { target: "_blank" }) %>
+            <% end %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate pages %>
+<% else %>
+  <div class="callout primary">
+    <%= page_entries_info pages %>
+  </div>
+<% end %>

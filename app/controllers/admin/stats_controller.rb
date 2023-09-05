@@ -56,33 +56,12 @@ class Admin::StatsController < Admin::BaseController
 
   def budget_supporting
     @budget = Budget.find(params[:budget_id])
-    heading_ids = @budget.heading_ids
-
-    votes = Vote.where(votable_type: "Budget::Investment", vote_flag: true).
-            includes(:budget_investment).
-            where(budget_investments: { heading_id: heading_ids })
-
-    @vote_count = votes.count
-    @user_count = votes.select(:voter_id).distinct.count
-
-    @voters_in_heading = {}
-    @budget.headings.each do |heading|
-      @voters_in_heading[heading] = voters_in_heading(heading)
-    end
   end
 
   def budget_balloting
     @budget = Budget.find(params[:budget_id])
 
     authorize! :read_admin_stats, @budget, message: t("admin.stats.budgets.no_data_before_balloting_phase")
-
-    @user_count = @budget.ballots.select { |ballot| ballot.lines.any? }.count
-
-    @vote_count = @budget.lines.count
-
-    @vote_count_by_heading = @budget.lines.group(:heading_id).count.map { |k, v| [Budget::Heading.find(k).name, v] }.sort
-
-    @user_count_by_district = @budget.headings.map { |heading| [heading.name, balots_with_votes_for_heading(heading)] }.sort
   end
 
   def polls
@@ -93,17 +72,4 @@ class Admin::StatsController < Admin::BaseController
   def sdg
     @goals = SDG::Goal.order(:code)
   end
-
-  private
-
-    def voters_in_heading(heading)
-      Vote.where(votable_type: "Budget::Investment").
-      includes(:budget_investment).
-      where(budget_investments: { heading_id: heading.id }).
-      select("votes.voter_id").distinct.count
-    end
-
-    def balots_with_votes_for_heading(heading)
-      Budget::Ballot::Line.where(heading: heading).group(:ballot_id).count.keys.size
-    end
 end

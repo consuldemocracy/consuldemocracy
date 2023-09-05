@@ -27,7 +27,7 @@ describe "Admin shifts", :admin do
 
   scenario "Create Vote Collection Shift and Recount & Scrutiny Shift on same date" do
     create(:poll)
-    poll = create(:poll, :current)
+    poll = create(:poll)
     booth = create(:poll_booth, polls: [poll, create(:poll, :expired)])
     officer = create(:poll_officer)
     vote_collection_dates = (Date.current..poll.ends_at.to_date).to_a.map { |date| I18n.l(date, format: :long) }
@@ -89,18 +89,16 @@ describe "Admin shifts", :admin do
   end
 
   scenario "Vote Collection Shift and Recount & Scrutiny Shift don't include already assigned dates to officer" do
-    poll = create(:poll, :current)
+    poll = create(:poll)
     booth = create(:poll_booth, polls: [poll])
     officer = create(:poll_officer)
 
     create(:poll_shift, :vote_collection_task, officer: officer, booth: booth, date: Date.current)
     create(:poll_shift, :recount_scrutiny_task, officer: officer, booth: booth, date: Time.zone.tomorrow)
 
-    vote_collection_dates = (Date.current..poll.ends_at.to_date).to_a
-                                                                .reject { |date| date == Date.current }
+    vote_collection_dates = (Date.current..poll.ends_at.to_date).excluding(Date.current)
                                                                 .map { |date| I18n.l(date, format: :long) }
-    recount_scrutiny_dates = (poll.ends_at.to_date..poll.ends_at.to_date + 1.week).to_a
-                                                                                  .reject { |date| date == Time.zone.tomorrow }
+    recount_scrutiny_dates = (poll.ends_at.to_date..poll.ends_at.to_date + 1.week).excluding(Time.zone.tomorrow)
                                                                                   .map { |date| I18n.l(date, format: :long) }
 
     visit available_admin_booths_path
@@ -139,7 +137,7 @@ describe "Admin shifts", :admin do
   end
 
   scenario "Error on create" do
-    poll = create(:poll, :current)
+    poll = create(:poll)
     booth = create(:poll_booth, polls: [poll])
     officer = create(:poll_officer)
 
@@ -160,7 +158,7 @@ describe "Admin shifts", :admin do
   end
 
   scenario "Destroy" do
-    poll = create(:poll, :current)
+    poll = create(:poll)
     booth = create(:poll_booth, polls: [poll])
     officer = create(:poll_officer)
 

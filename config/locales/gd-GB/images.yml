@@ -1,1 +1,17 @@
 gd:
+  images:
+    remove_image: Thoir an dealbh air falbh
+    form:
+      title: Dealbh tuairisgeulach
+      title_placeholder: Cuir tiotal tuairisgeulach air an dealbh
+      delete_button: Thoir an dealbh air falbh
+      note: "’S urrainn dhut aon dealbh a luchdachadh suas de na seòrsaichean susbaint a leanas: %{accepted_content_types}, suas ri %{max_file_size} MB."
+      add_new_image: Cuir dealbh ris
+    actions:
+      destroy:
+        notice: Chaidh an dealbh a sguabadh às.
+        alert: Cha ghabh an dealbh a sguabadh às.
+    errors:
+      messages:
+        in_between: feumaidh seo a bhith eadar %{min} agus %{max}
+        wrong_content_type: chan eil an t-seòrsa susbaint %{content_type} am measg nan seòrsaichean susbaint a tha ceadaichte %{accepted_content_types}

@@ -346,7 +346,7 @@ zh-CN:
         description: 说明
       poll/question/answer/translation:
         title: 回答
-        description: 说明
+        description: "说明"
       poll/question/answer/video:
         title: 标题
         url: 外部视频

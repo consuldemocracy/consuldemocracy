@@ -453,9 +453,6 @@ fi:
           documents: Asiakirjat
           document_actions: Toiminnot
     answers:
-      show:
-        description: Kuvaus
-        images: Kuvat
       videos:
         index:
           title: Videot

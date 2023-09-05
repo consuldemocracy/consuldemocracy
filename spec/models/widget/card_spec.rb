@@ -44,7 +44,7 @@ describe Widget::Card do
 
       it "is valid if link_text and link_url are both provided" do
         header = build(:widget_card, :header, link_text: "Text link",
-                                              link_url: "https://consulproject.org")
+                                              link_url: "https://consuldemocracy.org")
 
         expect(header).to be_valid
       end

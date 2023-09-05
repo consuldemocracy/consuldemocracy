@@ -1,35 +1,232 @@
 gd:
   date:
+    abbr_day_names:
+      - Didòmhnaich
+      - Diluain
+      - Dimàirt
+      - Dic
+      - Diar
+      - Dih
+      - Dis
     abbr_month_names:
-      - 
-      - Jan
-      - Feb
-      - Mar
-      - Apr
-      - May
-      - Jun
-      - Jul
-      - Aug
-      - Sep
-      - Oct
-      - Nov
-      - Dec
+      -
+      - Faoi
+      - Gearr
+      - Màrt
+      - Gibl
+      - Cèit
+      - Ògmh
+      - Iuch
+      - Lùna
+      - Sult
+      - Dàmh
+      - Samh
+      - Dùbh
+    day_names:
+      - Didòmhnaich
+      - Diluain
+      - Dimàirt
+      - Diciadain
+      - Diardaoin
+      - Dihaoine
+      - Disathairne
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
     month_names:
-      - 
-      - January
-      - February
-      - March
-      - April
-      - May
-      - June
-      - July
-      - August
-      - September
-      - October
-      - November
-      - December
+      -
+      - Am Faoilleach
+      - An Gearran
+      - Am Màrt
+      - An Giblean
+      - An Cèitean
+      - An t-Ògmhios
+      - An t-Iuchar
+      - An Lùnastal
+      - An t-Sultain
+      - An Dàmhair
+      - An t-Samhain
+      - An Dùbhlachd
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: Mu uair a thìde
+        two: mu %{count} uair a thìde
+        few: mu %{count} uairean a thìde
+        other: mu %{count} uairean a thìde
+      about_x_months:
+        one: mu 1 mhìos
+        two: mu %{count} mhìos
+        few: mu %{count} mìosan
+        other: mu %{count} mìosan
+      about_x_years:
+        one: mu bhliadhna
+        two: mu %{count} bhliadhna
+        few: mu %{count} bliadhna
+        other: mu %{count} bliadhna
+      almost_x_years:
+        one: cha mhòr bliadhna
+        two: cha mhòr %{count} bhliadhna
+        few: cha mhòr %{count} bliadhna
+        other: cha mhòr %{count} bliadhna
+      half_a_minute: leth mhionaid
+      less_than_x_minutes:
+        one: nas lugha na mionaid
+        two: nas lugha na %{count} mhionaid
+        few: nas lugha na %{count} mionaidean
+        other: nas lugha na %{count} mionaidean
+      less_than_x_seconds:
+        one: nas lugha na diog
+        two: nas lugha na %{count} dhiog
+        few: nas lugha na%{count} diogan
+        other: nas lugha na%{count} diogan
+      over_x_years:
+        one: còrr is bliadhna
+        two: còrr is %{count} bhliadhna
+        few: còrr is %{count} bliadhna
+        other: còrr is %{count} bliadhna
+      x_days:
+        one: 1 latha
+        two: "%{count} latha"
+        few: "%{count} latha"
+        other: "%{count} latha"
+      x_minutes:
+        one: 1 mhionaid
+        two: "%{count} mhionaid"
+        few: "%{count} mionaidean"
+        other: "%{count} mionaidean"
+      x_months:
+        one: 1 mhìos
+        two: "%{count} mhìos"
+        few: "%{count} mìosan"
+        other: "%{count} mìosan"
+      x_years:
+        one: 1 bhliadhna
+        two: "%{count} bhliadhna"
+        few: "%{count} bliadhna"
+        other: "%{count} bliadhna"
+      x_seconds:
+        one: 1 diog
+        two: "%{count} dhiog"
+        few: "%{count} diogan"
+        other: "%{count} diogan"
+    prompts:
+      day: Latha
+      hour: Uair
+      minute: Mionaid
+      month: Mìos
+      second: Diogan
+      year: Bliadhna
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: ': feumar gabhail ri seo'
+      blank: chan fhaod seo a bhith bàn
+      present: feumaidh seo a bhith bàn
+      confirmation: chan eil seo co-ionann ri %{attribute}
+      empty: chan fhaod seo a bhith falamh
+      equal_to: feumaidh seo a bhith co-ionann ri %{count}
+      even: feumaidh seo a bhith cothromach
+      exclusion: tha seo air a ghlèidheadh
+      greater_than: feumaidh seo a bhith nas motha na %{count}
+      greater_than_or_equal_to: feumaidh seo a bhith nas motha no co-ionann ri %{count}
+      inclusion: chan eil seo air an liosta
+      invalid: tha seo mì-dhligheach
+      less_than: feumaidh seo a bhith nas lugha na %{count}
+      less_than_or_equal_to: feumaidh seo a bhith nas lugha no co-ionann ri %{count}
+      model_invalid: "Dh’fhàillig leis an dearbhadh: %{errors}"
+      not_a_number: chan eil seo na àireamh
+      not_an_integer: feumaidh seo a bhith na iontaidsear
+      odd: feumaidh seo a bhith na àireamh chorra
+      required: feumaidh seo a bhith ann
+      taken: chaidh seo a chleachdadh mar-thà
+      too_long:
+        one: tha seo ro fhada (1 charactar aig a’ char as motha)
+        two: tha seo ro fhada (%{count} charactar aig a’ char as motha)
+        few: tha seo ro fhada (%{count} caractaran aig a’ char as motha)
+        other: tha seo ro fhada (%{count} caractaran aig a’ char as motha)
+      too_short:
+        one: tha seo ro ghoirid (1 charactar aig a’ char as lugha)
+        two: tha seo ro ghoirid (%{count} charactar aig a’ char as lugha)
+        few: tha seo ro ghoirid (%{count} caractaran aig a’ char as lugha)
+        other: tha seo ro ghoirid (%{count} caractaran aig a’ char as lugha)
+      wrong_length:
+        one: tha seo den mheud cheàrr (bu chòir 1 charactar a bhith ann)
+        two: tha seo den mheud cheàrr (bu chòir %{count} charactar a bhith ann)
+        few: tha seo den mheud cheàrr (bu chòir %{count} caractaran a bhith ann)
+        other: tha seo den mheud cheàrr (bu chòir %{count} caractaran a bhith ann)
+      other_than: feumaidh seo a bhith eadar-dhealaichte ri %{count}
+    template:
+      body: "Bha duilgheadasan ann leis na raointean a leanas:"
+      header:
+        one: Cha ghabhadh %{model} a shàbhaladh mar thoradh air 1 mhearachd
+        two: "Cha ghabhadh %{model} a shàbhaladh mar thoradh air %{count} mhearachd"
+        few: "Cha ghabhadh %{model} a shàbhaladh mar thoradh air %{count} mearachdan"
+        other: "Cha ghabhadh %{model} a shàbhaladh mar thoradh air %{count} mearachdan"
+  helpers:
+    select:
+      prompt: Dèan taghadh
+    submit:
+      create: Cruthaich %{model}
+      submit: Sabhail %{model}
+      update: Ùraich %{model}
   number:
-    human:
+    currency:
       format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Billean
+          million: Millean
+          quadrillion: Cuadraillean
+          thousand: Mìle
+          trillion: Trillean
+      format:
+        precision: 3
         significant: true
         strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Baidht
+            two: Bhaidht
+            few: Baidhtichean
+            other: Baidhtichean
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
+  support:
+    array:
+      last_word_connector: ", agus"
+      two_words_connector: " agus"
+      words_connector: ","
+  time:
+    am: m
+    formats:
+      datetime: "%Y-%m-%d %H:%M:%S"
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+      short_datetime: "%Y-%m-%d %H:%M"
+      api: "%Y-%m-%d %H"
+    pm: f

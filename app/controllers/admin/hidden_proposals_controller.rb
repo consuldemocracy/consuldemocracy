@@ -1,15 +1,13 @@
 class Admin::HiddenProposalsController < Admin::BaseController
   include FeatureFlags
-
-  has_filters %w[without_confirmed_hide all with_confirmed_hide], only: :index
+  include Admin::HiddenContent
 
   feature_flag :proposals
 
   before_action :load_proposal, only: [:confirm_hide, :restore]
 
   def index
-    @proposals = Proposal.only_hidden.send(@current_filter).order(hidden_at: :desc)
-                         .page(params[:page])
+    @proposals = hidden_content(Proposal.all)
   end
 
   def confirm_hide

@@ -9,7 +9,7 @@ sr-CS:
       - Pet
       - Sub
     abbr_month_names:
-      - 
+      -
       - Jan
       - Feb
       - Mar
@@ -35,7 +35,7 @@ sr-CS:
       long: "%B %d, %Y"
       short: "%b %d"
     month_names:
-      - 
+      -
       - Januar
       - Februar
       - Mart
@@ -52,6 +52,13 @@ sr-CS:
     distance_in_words:
       half_a_minute: pola minute
   number:
+    currency:
+      format:
+        significant: false
+        strip_insignificant_zeros: false
+    format:
+      significant: false
+      strip_insignificant_zeros: false
     human:
       format:
         significant: true

@@ -1,6 +1,27 @@
 require "rails_helper"
 
 describe Legislation::AnnotationsController do
+  describe "GET show" do
+    it "finds the annotation when it belongs to the draft version" do
+      version = create(:legislation_draft_version)
+      annotation = create(:legislation_annotation, draft_version: version)
+
+      get :show, params: { process_id: version.process, draft_version_id: version, id: annotation }
+
+      expect(response).to be_ok
+    end
+
+    it "returns a 404 when the annotation belongs to a different draft version" do
+      version = create(:legislation_draft_version)
+      annotation = create(:legislation_annotation, draft_version: version)
+      other_version = create(:legislation_draft_version, process: version.process)
+
+      expect do
+        get :show, params: { process_id: version.process, draft_version_id: other_version, id: annotation }
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+  end
+
   describe "POST create" do
     let(:legal_process) do
       create(:legislation_process, allegations_start_date: Date.current - 3.days,

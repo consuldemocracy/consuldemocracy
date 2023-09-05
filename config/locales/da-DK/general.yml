@@ -69,10 +69,6 @@ da:
       form:
         submit_button: Start en debat
     debate:
-      comments:
-        zero: Ingen kommentarer
-        one: 1 kommentar
-        other: "%{count} kommentarer"
       votes:
         zero: Ingen stemmer
         one: 1 stemme
@@ -128,10 +124,6 @@ da:
       start_new: Start en debat
     show:
       author_deleted: Bruger slettet
-      comments:
-        zero: Ingen kommentarer
-        one: 1 kommentar
-        other: "%{count} kommentarer"
       comments_title: Kommentarer
       edit_debate_link: Rediger
       flag: Denne debat er blevet markeret som upassende af flere brugere.
@@ -145,6 +137,10 @@ da:
       allowed_file_content_types: "indholdstype skal være af %{types}"
       user_not_found: Brugeren blev ikke fundet
       invalid_date_range: "Ugyldigt datointerval"
+      past_date: "Må ikke være en udløbet dato"
+      cannot_change_date:
+        poll_started: "Kan ikke ændres, hvis afstemning er startet"
+        poll_ended: "Kan ikke ændres, hvis afstemning er slut"
   form:
     accept_terms: Jeg accepterer %{policy} og %{conditions}
     accept_terms_title: Jeg accepterer Persondatapolitikken og Brugervilkår
@@ -205,7 +201,7 @@ da:
       accessibility: Tilgængelighed
       conditions: Brugervilkår og betingelser
       consul: Consul programmet
-      consul_url: https://github.com/consul/consul
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: CONSUL, %{year}
       description: Denne portal anvender %{consul}, som er en %{open_source}.
       open_source: open-source software
@@ -396,10 +392,6 @@ da:
         edit: "Før forslaget deles har du mulighed for at ændre i teksten."
         view_proposal: Ikke nu, gå til mit forslag
       already_supported: Du har allerede støttet dette forslag. Del det!
-      comments:
-        zero: Ingen kommentarer
-        one: 1 kommentar
-        other: "%{count} kommentarer"
       support: Støt
       support_label: "Støt %{proposal}"
       support_title: Støt dette forslag
@@ -419,10 +411,6 @@ da:
     show:
       author_deleted: Bruger slettet
       code: "Forslagskode:"
-      comments:
-        zero: Ingen kommentarer
-        one: 1 kommentar
-        other: "%{count} kommentarer"
       comments_tab: Kommentarer
       dashboard_proposal_link: Dashboard
       flag: Dette forslag er blevet markeret som upassende af flere brugere.
@@ -647,6 +635,10 @@ da:
     show:
       vote_answer: "Stem %{answer}"
       voted: "Du har stemt %{answer}"
+    description:
+      unique: "Du kan maksimalt vælge et svar."
+      multiple: "Du kan maksimalt vælge %{maximum} svar."
+    read_more_about: "Læs mere om:"
   proposal_notifications:
     new:
       title: "Send besked"
@@ -762,6 +754,10 @@ da:
         other: "%{count} sprog i brug"
     optional: "Valgfrit"
     required: "Påkrævet"
+    comments:
+      zero: "Ingen kommentarer"
+      one: "1 kommentar"
+      other: "%{count} kommentarer"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"

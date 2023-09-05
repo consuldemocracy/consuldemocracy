@@ -8,20 +8,19 @@
 
 .ui-datepicker-calendar {
 
-  .ui-state-default {
-    background: $highlight;
-    color: $text;
-  }
-
   .ui-state-hover,
   .ui-state-active {
     @extend %brand-background;
+
+    .ui-state-default:not(&) {
+      background: $highlight;
+    }
   }
 
   thead {
 
     tr th {
-      border: 1px solid $brand;
+      @include brand-border;
     }
   }
 }

@@ -52,9 +52,6 @@ ast:
       form:
         submit_button: Empezar un debate
     debate:
-      comments:
-        one: 1 Comentario
-        other: "%{count} comentarios"
       votes:
         one: 1 voto
         other: "%{count} votos"
@@ -94,9 +91,6 @@ ast:
       start_new: Empezar un debate
     show:
       author_deleted: Usuariu esaniciáu
-      comments:
-        one: 1 Comentario
-        other: "%{count} comentarios"
       comments_title: Comentarios
       edit_debate_link: Editar propuesta
       flag: Este debate ha sido marcado como inapropiado por varios usuarios.
@@ -142,7 +136,7 @@ ast:
     footer:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
-      consul_url: https://github.com/consul/consul
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
       description: Este portal usa la %{consul} que es %{open_source}.
       open_source: software libre
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
@@ -291,9 +285,6 @@ ast:
         edit: "Antes de que se publique podrás modificar el texto a tu gusto."
         view_proposal: Ahora no, ir a mi propuesta
       already_supported: '¡Ya has apoyado esta propuesta, compártela!'
-      comments:
-        one: 1 Comentario
-        other: "%{count} comentarios"
       support: Sofitar
       support_title: Apoyar esta propuesta
       supports:
@@ -308,9 +299,6 @@ ast:
     show:
       author_deleted: Usuariu esaniciáu
       code: "Código de la propuesta:"
-      comments:
-        one: 1 Comentario
-        other: "%{count} comentarios"
       comments_tab: Comentarios
       flag: Esta propuesta ha sido marcada como inapropiada por varios usuarios.
       notifications_tab: Notificaciones

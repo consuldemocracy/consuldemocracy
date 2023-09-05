@@ -6,9 +6,9 @@ describe RemoteTranslations::Microsoft::Client do
   describe "#call" do
     context "when characters from request are less than the characters limit" do
       it "response has the expected result" do
-        response = create_response("Nuevo título", "Nueva descripción")
+        response = ["Nuevo título", "Nueva descripción"]
 
-        expect_any_instance_of(TranslatorText::Client).to receive(:translate).and_return(response)
+        expect_any_instance_of(BingTranslator).to receive(:translate_array).and_return(response)
 
         result = client.call(["New title", "New description"], :es)
 
@@ -16,9 +16,9 @@ describe RemoteTranslations::Microsoft::Client do
       end
 
       it "response nil has the expected result when request has nil value" do
-        response = create_response("Notranslate", "Nueva descripción")
+        response = ["Notranslate", "Nueva descripción"]
 
-        expect_any_instance_of(TranslatorText::Client).to receive(:translate).and_return(response)
+        expect_any_instance_of(BingTranslator).to receive(:translate_array).and_return(response)
 
         result = client.call([nil, "New description"], :es)
 
@@ -34,15 +34,15 @@ describe RemoteTranslations::Microsoft::Client do
 
         translated_text_es = Faker::Lorem.characters(number: 11)
         another_translated_text_es = Faker::Lorem.characters(number: 11)
-        response_text = create_response(translated_text_es)
-        response_another_text = create_response(another_translated_text_es)
+        response_text = [translated_text_es]
+        response_another_text = [another_translated_text_es]
 
-        expect_any_instance_of(TranslatorText::Client).to receive(:translate).exactly(1)
-                                                                             .times
-                                                                             .and_return(response_text)
-        expect_any_instance_of(TranslatorText::Client).to receive(:translate).exactly(1)
-                                                                             .times
-                                                                             .and_return(response_another_text)
+        expect_any_instance_of(BingTranslator).to receive(:translate_array).exactly(1)
+                                                                           .times
+                                                                           .and_return(response_text)
+        expect_any_instance_of(BingTranslator).to receive(:translate_array).exactly(1)
+                                                                           .times
+                                                                           .and_return(response_another_text)
 
         result = client.call([text_en, another_text_en], :es)
 
@@ -58,14 +58,14 @@ describe RemoteTranslations::Microsoft::Client do
         start_translated_text_es = Faker::Lorem.characters(number: 10) + " "
         end_translated_text_es = Faker::Lorem.characters(number: 10)
         translated_text_es = start_translated_text_es + end_translated_text_es
-        response_start_text = create_response(start_translated_text_es)
-        response_end_text = create_response(end_translated_text_es)
+        response_start_text = [start_translated_text_es]
+        response_end_text = [end_translated_text_es]
 
-        expect_any_instance_of(TranslatorText::Client).to receive(:translate).with([start_text_en], to: :es)
+        expect_any_instance_of(BingTranslator).to receive(:translate_array).with([start_text_en], to: :es)
                                                                              .exactly(1)
                                                                              .times
                                                                              .and_return(response_start_text)
-        expect_any_instance_of(TranslatorText::Client).to receive(:translate).with([end_text_en], to: :es)
+        expect_any_instance_of(BingTranslator).to receive(:translate_array).with([end_text_en], to: :es)
                                                                              .exactly(1)
                                                                              .times
                                                                              .and_return(response_end_text)
@@ -77,14 +77,14 @@ describe RemoteTranslations::Microsoft::Client do
         another_start_translated_text_es = Faker::Lorem.characters(number: 12) + "."
         another_end_translated_text_es = Faker::Lorem.characters(number: 12)
         another_translated_text_es = another_start_translated_text_es + another_end_translated_text_es
-        response_another_start_text = create_response(another_start_translated_text_es)
-        response_another_end_text = create_response(another_end_translated_text_es)
+        response_another_start_text = [another_start_translated_text_es]
+        response_another_end_text = [another_end_translated_text_es]
 
-        expect_any_instance_of(TranslatorText::Client).to receive(:translate).with([start_another_text_en], to: :es)
+        expect_any_instance_of(BingTranslator).to receive(:translate_array).with([start_another_text_en], to: :es)
                                                                              .exactly(1)
                                                                              .times
                                                                              .and_return(response_another_start_text)
-        expect_any_instance_of(TranslatorText::Client).to receive(:translate).with([end_another_text_en], to: :es)
+        expect_any_instance_of(BingTranslator).to receive(:translate_array).with([end_another_text_en], to: :es)
                                                                              .exactly(1)
                                                                              .times
                                                                              .and_return(response_another_end_text)
@@ -145,17 +145,4 @@ describe RemoteTranslations::Microsoft::Client do
       end
     end
   end
-end
-
-def create_response(*args)
-  # response = [#<TranslatorText::Types::TranslationResult translations=[#<TranslatorText::Types::Translation text="Nuevo título" to=:es>] detectedLanguage={"language"=>"en", "score"=>1.0}>, #<TranslatorText::Types::TranslationResult translations=[#<TranslatorText::Types::Translation text="Nueva descripción" to=:es>] detectedLanguage={"language"=>"en", "score"=>1.0}>]
-  translations = Struct.new(:translations)
-  text = Struct.new(:text)
-  response = []
-
-  args.each do |text_to_response|
-    response << translations.new([text.new(text_to_response)])
-  end
-
-  response
 end

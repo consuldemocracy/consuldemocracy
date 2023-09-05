@@ -44,10 +44,10 @@ pl:
           title: Zarejestruj się jako organizacja lub kolektyw
         success:
           back_to_index: Rozumiem, zabierz mnie do strony głównej
-          instructions_1: "<b>Wkrótce skontaktujemy się z Tobą</b>, aby zweryfikować, czy rzeczywiście reprezentujesz ten kolektyw."
-          instructions_2: Podczas gdy Twój <b>e-mail jest przeglądany</b>, wysłaliśmy Ci <b>link do potwierdzenia Twojego konta</b>.
+          instructions_1: "<strong>Wkrótce skontaktujemy się z Tobą</strong>, aby zweryfikować, czy rzeczywiście reprezentujesz ten kolektyw."
+          instructions_2: Podczas gdy Twój <strong>e-mail jest przeglądany</strong>, wysłaliśmy Ci <strong>link do potwierdzenia Twojego konta</strong>.
           instructions_3: Po potwierdzeniu możesz zacząć uczestniczyć jako niezweryfikowany kolektyw.
-          thank_you: Dziękujemy za zarejestrowanie Twojego kolektywu na stronie. W tym momencie <b>oczekuje weryfikacji</b>.
+          thank_you: Dziękujemy za zarejestrowanie Twojego kolektywu na stronie. W tym momencie <strong>oczekuje weryfikacji</strong>.
           title: Rejestracja organizacji / kolektywu
     passwords:
       edit:

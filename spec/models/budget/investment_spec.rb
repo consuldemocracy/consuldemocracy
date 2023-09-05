@@ -79,20 +79,6 @@ describe Budget::Investment do
     expect(investment.original_heading_id).to eq investment.heading_id
   end
 
-  describe "#feasibility_explanation blank" do
-    it "is valid if valuation not finished" do
-      investment.feasibility_explanation = ""
-      investment.valuation_finished = false
-      expect(investment).to be_valid
-    end
-
-    it "is valid if valuation finished and feasible" do
-      investment.feasibility_explanation = ""
-      investment.valuation_finished = true
-      expect(investment).to be_valid
-    end
-  end
-
   describe "#unfeasibility_explanation blank" do
     it "is valid if valuation not finished" do
       investment.unfeasibility_explanation = ""
@@ -174,7 +160,7 @@ describe Budget::Investment do
     end
 
     it "returns false in any other phase" do
-      Budget::Phase::PHASE_KINDS.reject { |phase| phase == "selecting" }.each do |phase|
+      Budget::Phase::PHASE_KINDS.excluding("selecting").each do |phase|
         budget = create(:budget, phase: phase)
         investment = create(:budget_investment, budget: budget)
 
@@ -192,7 +178,7 @@ describe Budget::Investment do
     end
 
     it "returns false in any other phase" do
-      Budget::Phase::PHASE_KINDS.reject { |phase| phase == "valuating" }.each do |phase|
+      Budget::Phase::PHASE_KINDS.excluding("valuating").each do |phase|
         budget = create(:budget, phase: phase)
         investment = create(:budget_investment, budget: budget)
 
@@ -217,7 +203,7 @@ describe Budget::Investment do
     end
 
     it "returns false in any other phase" do
-      Budget::Phase::PHASE_KINDS.reject { |phase| phase == "balloting" }.each do |phase|
+      Budget::Phase::PHASE_KINDS.excluding("balloting").each do |phase|
         budget = create(:budget, phase: phase)
         investment = create(:budget_investment, :selected, budget: budget)
 
@@ -344,48 +330,6 @@ describe Budget::Investment do
     end
   end
 
-  describe "#should_show_feasibility_explanation?" do
-    let(:budget) { create(:budget) }
-    let(:investment) do
-      create(:budget_investment, :feasible, :finished, budget: budget)
-    end
-
-    it "returns true for feasible investments with feasibility explanation and valuation finished" do
-      Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
-        budget.update!(phase: phase)
-
-        expect(investment.should_show_feasibility_explanation?).to eq(true)
-      end
-    end
-
-    it "returns false in valuation has not finished" do
-      investment.update!(valuation_finished: false)
-      Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
-        budget.update!(phase: phase)
-
-        expect(investment.should_show_feasibility_explanation?).to eq(false)
-      end
-    end
-
-    it "returns false if not feasible" do
-      investment.update!(feasibility: "undecided")
-      Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
-        budget.update!(phase: phase)
-
-        expect(investment.should_show_feasibility_explanation?).to eq(false)
-      end
-    end
-
-    it "returns false if feasibility explanation blank" do
-      investment.feasibility_explanation = ""
-      Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
-        budget.update!(phase: phase)
-
-        expect(investment.should_show_feasibility_explanation?).to eq(false)
-      end
-    end
-  end
-
   describe "#by_budget" do
     it "returns investments scoped by budget" do
       budget1 = create(:budget)
@@ -467,6 +411,55 @@ describe Budget::Investment do
       create(:budget_investment, valuators: [aquaman], valuator_groups: [create(:valuator_group)])
 
       expect(Budget::Investment.by_valuator_group(justice_league)).to be_empty
+    end
+  end
+
+  describe ".visible_to_valuator" do
+    let(:valuator) { create(:valuator) }
+
+    it "returns investments assigned to the valuator" do
+      investment = create(:budget_investment, :visible_to_valuators, valuators: [valuator])
+
+      expect(Budget::Investment.visible_to_valuator(valuator)).to eq [investment]
+    end
+
+    it "does not return investments assigned to other valuators" do
+      create(:budget_investment, :visible_to_valuators, valuators: [create(:valuator)])
+
+      expect(Budget::Investment.visible_to_valuator(valuator)).to be_empty
+    end
+
+    it "does not return duplicate investments when they're assigned more than once" do
+      investment = create(:budget_investment, :visible_to_valuators)
+      2.times { Budget::ValuatorAssignment.create!(valuator: valuator, investment: investment) }
+
+      expect(Budget::Investment.visible_to_valuator(valuator)).to eq [investment]
+    end
+
+    it "does not return duplicate investments when assigned to both a valuator and their group" do
+      valuator_group = create(:valuator_group, valuators: [valuator])
+      investment = create(:budget_investment, :visible_to_valuators, valuators: [valuator],
+                                                                     valuator_groups: [valuator_group])
+
+      expect(Budget::Investment.visible_to_valuator(valuator)).to eq [investment]
+    end
+
+    it "returns investments assigned to the valuator's group" do
+      valuator_group = create(:valuator_group, valuators: [valuator])
+      investment = create(:budget_investment, :visible_to_valuators, valuator_groups: [valuator_group])
+
+      expect(Budget::Investment.visible_to_valuator(valuator)).to eq [investment]
+    end
+
+    it "does not return investments assigned to other valuator groups" do
+      valuator_group = create(:valuator_group, valuators: [create(:valuator)])
+      create(:budget_investment, :visible_to_valuators, valuator_groups: [valuator_group])
+
+      expect(Budget::Investment.visible_to_valuator(valuator)).to be_empty
+    end
+
+    it "returns an empty relation when valuator is nil" do
+      expect(Budget::Investment.visible_to_valuator(nil)).to be_empty
     end
   end
 
@@ -1254,7 +1247,7 @@ describe Budget::Investment do
       end
 
       it "returns false if budget is not balloting phase" do
-        Budget::Phase::PHASE_KINDS.reject { |phase| phase == "balloting" }.each do |phase|
+        Budget::Phase::PHASE_KINDS.excluding("balloting").each do |phase|
           budget.update!(phase: phase)
           investment = create(:budget_investment, heading: heading1)
 

@@ -91,14 +91,14 @@ ar:
         active: نشِط
         blank_dates: التواريخ فارغة
         administrators:
-          zero: "حدّد المدراء"
+          zero: "%{count} مدراء محدّدين"
           one: "مدير 1 محدّد"
           two: "%{count} مدراء محدّدين"
           few: "%{count} مدراء محدّدين"
           many: "%{count} مدراء محدّدين"
           other: "%{count} مدراء محدّدين"
         valuators:
-          zero: "حدّد المقيمين"
+          zero: "%{count} مقيّمين محدّدين"
           one: "مقيّم 1 محدّد"
           two: "%{count} مقيّمين محدّدين"
           few: "%{count} مقيّمين محدّدين"
@@ -1005,9 +1005,6 @@ ar:
         table_title: "عنوان"
         edit_answers: تعديل الإجابات
         see_proposal: "(الإطلاع على المقترح)"
-      flash:
-        question_added: "تمت إضافة السؤال إلى هذا الاستطلاع"
-        error_on_question_added: "لا يمكن إضافة السؤال إلى هذا الاستطلاع"
       destroy:
         alert: "سيؤدي هذا الإجراء إلى إزالة الاستطلاع وجميع الأسئلة المرتبطة به."
         success_notice: "تم حذف الاستطلاع بنجاح"
@@ -1056,12 +1053,6 @@ ar:
     answers:
       new:
         title: إجابة جديدة
-      show:
-        title: عنوان
-        description: الوصف
-        images: صور
-        images_list: قائمة الصور
-        edit: تعديل الإجابة
       edit:
         title: تعديل الإجابة
       videos:
@@ -1311,7 +1302,7 @@ ar:
           other: "هناك %{count} توقيعات غير صالحة"
         unverified_error: (لم يتم التحقق من قبل التعداد)
         voted:
-          zero: "لا يتم إنشاء أصوات من التوقيعات التي تم التحقق منها."
+          zero: "هناك %{count} من الأصوات المنشأة من التواقيع التي تم التحقق منها."
           one: "هناك%{count} من الأصوات المنشاة من التواقيع التي تم التحقق منها."
           two: "هناك%{count} من الأصوات المنشأة من التواقيع التي تم التحقق منها."
           few: "هناك%{count} من الأصوات المنشأة من التواقيع التي تم التحقق منها."
@@ -1480,7 +1471,7 @@ ar:
           see_page: رؤية الصفحة
         new:
           title: إنشاء صفحة مخصصة جديدة
-          slug_help: "نص لتعريف هذه الصفحة على عنوان URL ، على سبيل المثال <code> https://consulproject.org/page-slug</code>>"
+          slug_help: "نص لتعريف هذه الصفحة على عنوان URL ، على سبيل المثال <code> https://consuldemocracy.org/page-slug</code>>"
         page:
           created_at: أنشئت في
           status: حالة

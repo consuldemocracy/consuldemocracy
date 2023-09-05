@@ -29,7 +29,6 @@ eu:
         valuator_group: "Ebaluatzaile taldea ondo eguneratuta"
       destroy:
         budget_investment: "Gastu proiektua ezabatuta."
-        error: "Ezin izan da ezabatu."
         topic: "Gaia ezabatuta."
         poll_question_answer_video: "Erantzun bideoa ezabatuta."
         valuator_group: "Ebaluatzaile taldea ondo ezabatuta"

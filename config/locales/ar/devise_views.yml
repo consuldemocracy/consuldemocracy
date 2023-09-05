@@ -40,7 +40,7 @@ ar:
         new:
           password_confirmation_label: تأكيد كلمة المرور
           responsible_name_note: وسيكون هذا الشخص الذي يمثل الرابطة/الوحدة التي باسمها يتم عرض المقترحات
-          submit: سجل 
+          submit: سجل
           title: التسجيل كمنظمة أو وحدة
         success:
           back_to_index: العودة إلى الصفحة الرئيسية

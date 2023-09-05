@@ -36,6 +36,8 @@ fr:
         other: "%{count} réponses"
       responses_show:
         zero: Aucune réponse
+        one: "1 réponse (afficher)"
+        other: "%{count} réponses (afficher)"
       responses_collapse:
         zero: Aucune réponse
         one: "1 réponse (masquer)"
@@ -67,10 +69,6 @@ fr:
       form:
         submit_button: Commencer un débat
     debate:
-      comments:
-        zero: Aucun commentaire
-        one: 1 commentaire
-        other: "%{count} commentaires"
       votes:
         zero: Aucun votes
         one: 1 vote
@@ -126,10 +124,6 @@ fr:
       start_new: Commencer un débat
     show:
       author_deleted: Utilisateur effacé
-      comments:
-        zero: Aucun commentaires
-        one: 1 commentaire
-        other: "%{count} commentaires"
       comments_title: Commentaires
       edit_debate_link: Éditer
       flag: Ce débat a été étiquetté comme inapproprié par plusieurs utilisateurs
@@ -140,6 +134,7 @@ fr:
         submit_button: Sauvegarder des changements
   errors:
     messages:
+      allowed_file_content_types: "le type de contenu doit être l'un des suivants : %{types}"
       user_not_found: Utilisateur introuvable
       invalid_date_range: "Intervalle de dates invalide"
   form:
@@ -202,7 +197,7 @@ fr:
       accessibility: Accessibilité
       conditions: Conditions légales
       consul: Application Consul
-      consul_url: https://github.com/consul/consul
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: Consul, %{year}
       description: Ce portail utiliser %{consul} qui est %{open_source}. De Madrid ouvert sur le monde.
       open_source: logiciel libre
@@ -393,11 +388,8 @@ fr:
         edit: "Avant qu'elle soit partagée, vous pouvez changer le texte autant que vous le désirez."
         view_proposal: Pas maintenant, revenir à la proposition
       already_supported: Vous avez déjà soutenu cette proposition. Partagez-la !
-      comments:
-        zero: Aucun commentaires
-        one: 1 commentaire
-        other: "%{count} commentaires"
       support: Soutenir
+      support_label: "Soutenir %{proposal}"
       support_title: Soutenir cette proposition
       supports:
         zero: Pas de soutiens
@@ -415,10 +407,6 @@ fr:
     show:
       author_deleted: Utilisateur effacé
       code: "Code de la proposition"
-      comments:
-        zero: Aucun commentaires
-        one: 1 commentaire
-        other: "%{count} commentaires"
       comments_tab: Commentaires
       dashboard_proposal_link: Tableau de bord
       flag: Cette proposition a été signalée comme inappropriée par plusieurs utilisateurs
@@ -485,18 +473,40 @@ fr:
       see_proposed_actions: Consultez les actions recommandées
       hide_proposed_actions: Masquer les actions recommandées
       pending_title: En attente
+      show_description: Afficher la description
+      without_pending_actions: aucune action recommandée en attente
       done_title: Fini
+      without_done_actions: aucune action recommandée n'a été prise
+    next_goal:
+      title: Objectif
+      see_complete_course: voir le cours complet
+      hide_course: Masquer le cours
     goal:
+      target_supports:
+        one: obtenez %{count} supports pour votre proposition
+        other: obtenez %{count} assistance pour votre proposition
+      days:
+        one: "%{count} jour"
+        other: "%{count} jours"
       locked_resource: Ressource bloquée
+      ideal_time: heure idéale
     community:
       access_community: Accéder à la communauté
+      latest_activity: "Dernière activité de la communauté : %{at}"
       participants: Participants
       debates: Débats
       comments: Commentaires
+      latest_comments: derniers messages
+    messages:
+      send_notification: envoie une notification à ceux qui suivent la proposition
+      previous_notifications: afficher les notifications précédentes
     polls:
       index:
         title: Votes
         create: Créer le vote
+        count:
+          one: vous avez créé %{count} enquête.
+          other: vous avez créé %{count} enquêtes.
         links: Liens
         additiontal_information: Information supplémentaire
       new:
@@ -505,18 +515,48 @@ fr:
       edit:
         submit: Mettre à jour le vote
       poll:
+        responses:
+          one: "%{count} réponse"
+          other: "%{count} réponses"
         view_results: Inspecter les résultats
+        edit_poll: Modifier le sondage
+        show_results_help: si vous cochez cette case, les résultats seront publics et tous les utilisateurs pourront les voir
+        delete: Supprimer l'enquête
+        alert_notice: cette action supprimera l'enquête et toutes ses questions associées.
+        success_notice: enquête supprimée avec succès
+        unable_notice: impossible de supprimer les sondages avec des réponses
       form:
+        name: titre de l'enquête
         add_question: Ajouter une question
       question_fields:
+        remove_question: Supprimer la question
         add_answer: Ajouter une réponse
+      question_answer_fields:
+        remove_answer: Supprimer la réponse
     poster:
+      index:
+        title: Aperçu de l'affiche
+        poster_title: "Ne regarde pas,"
+        poster_subtitle: "Soutenez-moi ! ;)"
+        intro_text: "<strong>Je participe à %{org}</strong> avec ma propre proposition citoyenne et ce n'est que si vous participez également que je pourrai obtenir le soutien nécessaire pour créer la ville que nous voulons tous."
+        proposal_code: "Code de la proposition : %{code}"
+        support: Soutenir ma proposition
+        footer: "<strong>Entrez %{link} et soutenez cette proposition.</strong> Nous devons être nombreux. Vous décidez aussi. Merci !"
+      new:
+        title: Affiche de votre proposition
       options:
         preview: Aperçu
         download: Télécharger
     mailing:
+      index:
+        title: Aperçu de l'e-mail
+      new:
+        title: Modèle d'e-mail à partager
       mailing_options:
+        send: envoyer à %{address}
         preview: Aperçu
+      create:
+        sent: l'e-mail a été envoyé
     mailer:
       forward:
         subtitle: "Si vous me soutenez, <br>nous y parviendrons."
@@ -643,6 +683,11 @@ fr:
           notice: "Vous suivez à présent cette proposition d'investissement ! <br>Nous vous tiendrons informé des changements au fur et à mesure."
         destroy:
           notice: "Vous ne suivez plus ce projet d'investissement ! <br> Vous ne recevrez plus de notifications liées à ce projet."
+      proposal:
+        create:
+          notice: "Vous suivez maintenant cette proposition citoyenne ! <br> Nous vous informerons des changements au fur et à mesure qu'ils se produisent afin que vous restiez à jour."
+        destroy:
+          notice: "Vous vous êtes désabonné de cette proposition citoyenne ! <br> Vous ne recevrez plus de notifications liées à cette proposition."
     print:
       print_button: Imprimer cette info
     search: Chercher
@@ -697,6 +742,10 @@ fr:
       add_language: Ajouter la langue
       languages_in_use:
         zero: "0 langues en service"
+        one: "1 langue utilisée"
+        other: "%{count} langues utilisées"
+    optional: "Champs facultatifs"
+    required: "Champs obligatoires"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -771,10 +820,13 @@ fr:
       published: Publié
       see: "Voir la proposition"
       actions: Actions
+      retired_help_text: tableau de bord non disponible pour les propositions retirées
   votes:
     agree: Je suis d'accord
+    agree_label: "Je suis d'accord avec %{title}"
     anonymous: Trop de votes anonymes pour accepter le vote %{verify_account}.
     disagree: Je ne suis pas d'accord
+    disagree_label: "Je ne suis pas d'accord avec %{title}"
     organizations: Les organisations ne sont pas autorisées à voter
     supports: Soutiens
     verified_only: Seuls les utilisateurs vérifiés peuvent voter sur les propositions; %{verify_account}.
@@ -782,6 +834,9 @@ fr:
       not_verified: Seuls les utilisateurs vérifiés peuvent voter pour les propositions d'investissement, %{verify_account}.
       unfeasible: Les propositions d'investissement jugées irréalisables ne peuvent être soutenues
       not_voting_allowed: La phase de vote est terminée
+      different_heading_assigned:
+        one: "Vous ne pouvez soutenir que %{count} projets de dépenses de district. Vous avez déjà soutenu %{supported_headings}."
+        other: "Vous ne pouvez soutenir que les projets de dépenses de %{count} districts. Vous avez déjà soutenu %{supported_headings}."
   welcome:
     feed:
       most_active:
@@ -792,6 +847,10 @@ fr:
         debates: Voir toutes les discussions
         proposals: Voir toutes les propositions
         processes: Voir tous les processus
+      no_items:
+        debates: pour le moment, il n'y a pas de discussions
+        proposals: Il n'y a actuellement aucune proposition
+        processes: pour le moment, aucun processus n'est ouvert
       process_label: Processus
       see_process: Voir processus
     cards:
@@ -810,6 +869,7 @@ fr:
       slide: "Voir %{title}"
     welcome:
       go_to_index: Voir les propositions et les débats
+      start_using_consul: Aller à la page de démarrage
       title: Participer
       user_permission_info: Avec votre compte, vous pouvez...
       user_permission_verify: "Pour effectuer toutes les actions, vérifiez votre compte."
@@ -825,6 +885,7 @@ fr:
     help: "Vous pouvez ajouter des liens vers %{models} à l'intérieur de %{org}."
     submit: "Ajouter en tant que président"
     error: "Lien non valide. N'oubliez pas de commencer avec %{url}."
+    error_duplicate: "Le contenu associé que vous ajoutez existe déjà."
     error_itself: "Lien non valide. Vous ne pouvez pas lié un contenu à lui-même."
     success: "Vous avec ajouté un nouveau contenu lié"
     is_related: "S'agit-il de contenu lié ?"
@@ -848,3 +909,28 @@ fr:
       cancel_button: Annuler
     nested_links:
       title: Liens
+      note: Ajoutez les liens qui vous intéressent.
+      add_new_link: Ajouter un nouveau lien
+  communities:
+    show:
+      surveys: sondages
+      complete_survey: Répondez au sondage
+    subnav:
+      surveys: sondages
+    poll:
+      take_part: Participez du %{from} au %{to}
+  remote_translations:
+    text: Le contenu de cette page n'est pas disponible dans votre langue
+    all_remote_translations_enqueued_text: Dans un court laps de temps, en actualisant la page, vous pourrez voir tout le contenu dans votre langue
+    create:
+      enqueue_remote_translation: les traductions ont été demandées avec succès.
+    button: Traduire la page
+  tags:
+    list:
+      filter:
+        more:
+          one: "Un tag de plus"
+          other: "%{count} tags supplémentaires"
+  machine_learning:
+    comments_summary: "Résumé des commentaires"
+    info_text: "Contenu généré par l'IA/le machine learning"

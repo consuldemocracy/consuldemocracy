@@ -7,30 +7,26 @@ describe "Account" do
     login_as(user)
   end
 
-  scenario "Show" do
+  scenario "Show", :consul do
     visit root_path
 
     click_link "My account"
 
     expect(page).to have_current_path(account_path, ignore_query: true)
 
-    within(".account") do
-      expect(page).to have_selector("input[value='Manuela Colau']")
-      expect(page).to have_selector(avatar("Manuela Colau"), count: 1)
-    end
+    expect(page).to have_selector("input[value='Manuela Colau']")
+    expect(page).to have_selector(avatar("Manuela Colau"), count: 1)
   end
 
-  scenario "Show organization" do
+  scenario "Show organization", :consul do
     create(:organization, user: user, name: "Manuela Corp")
 
     visit account_path
 
-    within(".account") do
-      expect(page).to have_selector("input[value='Manuela Corp']")
-      expect(page).not_to have_selector("input[value='Manuela Colau']")
+    expect(page).to have_selector("input[value='Manuela Corp']")
+    expect(page).not_to have_selector("input[value='Manuela Colau']")
 
-      expect(page).to have_selector(avatar("Manuela Corp"), count: 1)
-    end
+    expect(page).to have_selector(avatar("Manuela Corp"), count: 1)
   end
 
   scenario "Edit" do
@@ -107,15 +103,20 @@ describe "Account" do
     expect(find("#account_email_on_comment_reply")).to be_checked
   end
 
-  scenario "Email digest checkbox only appears if proposals are enabled" do
-    visit account_path
+  describe "Email digest checkbox" do
+    scenario "Appears when the proposals process is enabled" do
+      visit account_path
 
-    expect(page).to have_field "Receive a summary of proposal notifications", checked: true
+      expect(page).to have_field "Receive a summary of proposal notifications", checked: true
+    end
 
-    Setting["process.proposals"] = false
-    visit account_path
+    scenario "Does not appear when the proposals process is disabled" do
+      Setting["process.proposals"] = false
 
-    expect(page).not_to have_field "Receive a summary of proposal notifications"
+      visit account_path
+
+      expect(page).not_to have_field "Receive a summary of proposal notifications"
+    end
   end
 
   context "Option to display badge for official position" do

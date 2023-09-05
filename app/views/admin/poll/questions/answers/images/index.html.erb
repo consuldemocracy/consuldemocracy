@@ -1,8 +1,20 @@
 <%= back_link_to admin_question_path(@answer.question) %>
 
-<%= link_to t("admin.questions.answers.images.add_image"),
-            new_admin_answer_image_path(@answer),
-            class: "button hollow float-right" %>
+<div class="clear"></div>
+
+<h2 class="inline-block">
+  <%= t("admin.answers.images.index.title") %>
+</h2>
+
+<% if can?(:update, @answer) %>
+  <%= link_to t("admin.questions.answers.images.add_image"),
+              new_admin_answer_image_path(@answer),
+              class: "button hollow float-right" %>
+<% else %>
+  <div class="callout warning">
+    <strong><%= t("admin.questions.no_edit") %></strong>
+  </div>
+<% end %>
 
 <ul class="breadcrumbs margin-top">
   <li><%= @answer.question.title %></li>
@@ -13,11 +25,13 @@
   <div class="small-12 medium-4 column end">
     <%= render_image(image, :large, true) if image.present? %>
 
-    <%= link_to t("images.remove_image"),
-                admin_image_path(image),
-                class: "delete float-right",
-                method: :delete,
-                remote: true,
-                data: { confirm: t("admin.actions.confirm_action", action: t("images.remove_image"), name: image.title) } %>
+    <% if can?(:destroy, image) %>
+      <%= link_to t("images.remove_image"),
+                  admin_image_path(image),
+                  class: "delete float-right",
+                  method: :delete,
+                  remote: true,
+                  data: { confirm: t("admin.actions.confirm_action", action: t("images.remove_image"), name: image.title) } %>
+    <% end %>
   </div>
 <% end %>

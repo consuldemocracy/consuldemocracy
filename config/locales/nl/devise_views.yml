@@ -9,7 +9,7 @@ nl:
         new_password_confirmation_label: Herhaal wachtwoord
         new_password_label: Nieuw wachtwoord
         please_set_password: Kies een nieuw wachtwoord (voor login met email hierboven)
-        submit: Confirm
+        submit: Bevestig
         title: Bevestig mijn account
     mailer:
       confirmation_instructions:
@@ -87,16 +87,16 @@ nl:
           title: Verwijder account
         edit:
           current_password_label: Huidig wachtwoord
-          edit: Edit
+          edit: Bewerk
           email_label: E-mail
           leave_blank: Laat leeg als u het niet wilt aanpassen
           need_current: Uw huidige wachtwoord ter bevestiging van de veranderingen
           password_confirmation_label: Bevestig nieuw wachtwoord
           password_label: Nieuw wachtwoord
-          update_submit: Update
+          update_submit: Bijwerken
           waiting_for: "In afwachting van bevestiging:"
         new:
-          cancel: Annuleren inloggen
+          cancel: Inloggen annuleren
           organization_signup: Vertegenwoordigd u een organisatie of collectief? %{signup_link}
           organization_signup_link: Hier aanmelden
           password_note: "Deze dient minimaal uit 8 tekens te bestaan"
@@ -114,4 +114,4 @@ nl:
           instructions_1: <b>Check uw email</b> - we hebben u een <b>link ter bevestiging</b> gestuurd.
           instructions_2: Na bevestiging kunt u deelnemen.
           thank_you: Dank voor uw aanmelding. Uw email moet nu worden <b>bevestigd</b>.
-          title: Pas email adres aan
+          title: Pas emailadres aan

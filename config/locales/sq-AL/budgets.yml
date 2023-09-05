@@ -54,7 +54,6 @@ sq:
         tags_placeholder: "Futni etiketimet që dëshironi të përdorni, të ndara me presje (',')"
         map_location: "Vendndodhja në hartë"
         map_location_instructions: "Lundroni në hartë në vendndodhje dhe vendosni shënuesin."
-        map_remove_marker: "Hiq shënuesin e hartës"
       index:
         title: Buxhetet  pjesëmarrës
         unfeasible: Investimet e papranueshme
@@ -147,7 +146,7 @@ sq:
       accepted: "Propozimi i pranuar i shpenzimeve:"
       discarded: "Propozimi i hedhur poshtë i shpenzimeve:"
       incompatibles: I papajtueshëm
-      investment_proyects: Lista e të gjitha projekteve të investimeve 
+      investment_proyects: Lista e të gjitha projekteve të investimeve
       unfeasible_investment_proyects: Lista e të gjitha projekteve të investimeve të papranueshme
       not_selected_investment_proyects: Lista e të gjitha projekteve të investimeve të pa zgjedhur për votim
     executions:

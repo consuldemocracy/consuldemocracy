@@ -32,7 +32,7 @@ describe "Admin booths", :admin do
   end
 
   scenario "Available" do
-    booth_for_current_poll = create(:poll_booth, polls: [create(:poll, :current)])
+    booth_for_current_poll = create(:poll_booth, polls: [create(:poll)])
     booth_for_expired_poll = create(:poll_booth, polls: [create(:poll, :expired)])
 
     visit admin_root_path
@@ -74,7 +74,7 @@ describe "Admin booths", :admin do
   end
 
   scenario "Edit" do
-    poll = create(:poll, :current)
+    poll = create(:poll)
     booth = create(:poll_booth, polls: [poll])
 
     visit admin_booths_path
@@ -99,7 +99,7 @@ describe "Admin booths", :admin do
   end
 
   scenario "Back link go back to available list when manage shifts" do
-    poll = create(:poll, :current)
+    poll = create(:poll)
     booth = create(:poll_booth, polls: [poll])
 
     visit available_admin_booths_path

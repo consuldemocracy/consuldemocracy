@@ -1,1 +1,8 @@
 gd:
+  milestones:
+    index:
+      no_milestones: Na cuir clachan-mìle comharraichte ann
+      progress: Adhartas
+    show:
+      publication_date: "Air fhoillseachadh %{publication_date}"
+      status_changed: Inbhe air atharrachadh gu

@@ -160,6 +160,7 @@ de:
         voting_style: "Finaler Abstimmungsstil"
         voting_style_knapsack: "Rucksack"
         voting_style_approval: "Freigabe"
+        hide_money: "Geldbetrag für diesen Haushalt ausblenden"
       budget/translation:
         main_link_text: "Linktext"
         main_link_url: "Der Link führt zu (Link hinzufügen)"
@@ -374,6 +375,11 @@ de:
         body: Inhalt
       tag:
         name: "Geben Sie den Namen des Themas ein"
+      tenant:
+        domain: "Webseitenlink"
+        schema: "Domain / Subdomain"
+        subdomain: "Subdomain"
+        url: "Webseitenlink"
       topic:
         title: "Titel"
         description: "Anfangstext"
@@ -450,7 +456,7 @@ de:
         description: Beschreibung
       poll/question/answer/translation:
         title: Antwort
-        description: Beschreibung
+        description: "Beschreibung"
       poll/question/answer/video:
         title: Titel
         url: Externes Video
@@ -513,6 +519,12 @@ de:
         document_number: Dokumentennummer
         date_of_birth: Geburtsdatum
         postal_code: Postleitzahl
+      votation_type:
+        max_votes: Maximale Anzahl der Stimmen
+        vote_type: Abstimmungsart
+      votation_type/vote_type:
+        unique: "Eindeutige Antwort\n"
+        multiple: Mehrere Antworten
     errors:
       models:
         user:

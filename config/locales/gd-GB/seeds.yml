@@ -1,1 +1,90 @@
 gd:
+  seeds:
+    admin_notifications:
+      budget:
+        title: "Tha sinn a’ dùnadh a’ Bhuidseit Com-pàirteachail!"
+        body: "Greas ort agus cruthaich moladh mus tig e gu crìch ann am beagan làithean!"
+      help:
+        title: "Cuidich sinn gus consul eadar-theangachadh"
+        body: "Ma tha thu fileanta ann an cànan, feuch an cuidich thu sinn le bhith ag eadar-theangachadh consul!"
+      map:
+        title: "Faodaidh tu a-nis geo-lorgadh a chur air molaidhean agus tasgaidhean"
+        body: "Nuair a chruthaicheas tu moladh no tasgadh faodaidh tu a-nis àite a shònrachadh air mapa."
+      proposal:
+        title: "A bheil moladh agad?"
+        body: "Cuimhnich gun urrainn dhut moladh a chruthachadh le do bheachdan agus gum bruidhinn daoine mu dheidhinn agus gun toir iad taic dha."
+    settings:
+      official_level_1_name: Seasamh oifigeil 1
+      official_level_2_name: Seasamh oifigeil 2
+      official_level_3_name: Seasamh oifigeil 3
+      official_level_4_name: Seasamh oifigeil 4
+      official_level_5_name: Seasamh oifigeil 5
+    geozones:
+      north_district: Sgìre a Tuath
+      west_district: Sgìre an Iar
+      east_district: Sgìre an Ear
+      central_district: Sgìre a’ Mheadhain
+    organizations:
+      human_rights: Còraichean Daonna
+      neighborhood_association: Comann Coimhearsnachd
+    cards:
+      budget:
+        title: "Ciamar a tha buidseatan com-pàirteachail ag obrachadh?"
+        description: "Tha buidseatan com-pàirteachail a’ toirt cothrom do shaoranaich a bhith a' moladh agus a’ co-dhùnadh gu dìreach mar a thèid cuid den bhuidseat a chosg, le sgrùdadh agus measadh làidir air molaidhean leis a’ bhuidhinn. An ìre èifeachdais agus an ìre smachd as motha a riaraicheas a h-uile duine."
+        link_text: "Barrachd mu bhuidseatan com-pàirteachail"
+        label: "Buidseatan Com-pàirteachail"
+      debate:
+        title: "Ciamar a dh’obraicheas na deasbadan?"
+        description: "Faodaidh duine sam bith snàithleanan fhosgladh air cuspair sam bith, a’ cruthachadh àiteachan fa leth far am faod daoine beachdachadh air a’ chuspair a tha san amharc. Tha a h-uile duine a’ cur luach ann an deasbadan, gus na cùisean as cudromaiche a chomharrachadh."
+        link_text: "Barrachd mu dheasbadan"
+        label: "Deasbadan"
+      header:
+        title: "CONSUL"
+        description: "Bathar-bog an-asgaidh airson com-pàirteachadh nan saoranach."
+        link_text: "Barrachd fiosrachaidh"
+        label: "Fàilte gu"
+      proposal:
+        title: "Ciamar a tha molaidhean saoranach ag obair?"
+        description: "Àite far am faod a h-uile duine moladh saoranach a chruthachadh agus taic a shireadh. Thèid bhòtadh air molaidhean a gheibh taic gu leòr agus mar sin, còmhla ’s urrainn dhuinn a bhith a' co-dhùnadh dè cùisean a tha cudromach dhuinn."
+        link_text: "Barrachd mu mholaidhean"
+        label: "Molaidhean saoranach"
+    categories:
+      associations: Comainn
+      culture: Cultar
+      sports: Spòrs
+      social_rights: Còraichean Sòisealta
+      economy: Eaconamaidh
+      employment: Fastadh
+      equity: Cothromas
+      sustainability: So-sheasmhachd
+      participation: Com-pàirteachas
+      mobility: So-ghluasadachd
+      media: Meadhanan
+      health: Slàinte
+      transparency: Soilleireachd
+      security_emergencies: Tèarainteachd agus suidheachaidhean èiginn
+      environment: Àrainneachd
+    budgets:
+      budget: Buidseat Com-pàirteachail
+      currency: '€'
+      groups:
+        all_city: Am baile air fad
+        districts: Sgìrean
+      phases:
+        description: "Tuairisgeul ann an %{language}"
+        summary: "Geàrr-chunntas ann an %{language}"
+      statuses:
+        studying_project: A’ sgrùdadh a' phròiseict
+        bidding: A’ tairgsinn
+        executing_project: A’ cur a’ phròiseict an gnìomh
+        executed: Air a chur an gnìomh
+    legislation:
+      draft_versions:
+        title: "Tionndadh %{number}"
+        body: "Dreach tionndadh ann an %{language}"
+    polls:
+      current_poll: "Cunntas-beachd làithreach"
+      current_poll_geozone_restricted: "Tha bacadh geo-lorgaidh air a’ chunntas-bheachd làithreach"
+      recounting_poll: "Ag ath-chunntadh a' chunntais-bheachd"
+      expired_poll_without_stats: "Cunntas-bheachd crìochnaichte gun Staitistigean agus Toraidhean"
+      expired_poll_with_stats: "Cunntas-bheachd crìochnaichte le Staitistigean agus Toraidhean"

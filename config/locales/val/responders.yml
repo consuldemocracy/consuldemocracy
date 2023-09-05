@@ -30,7 +30,6 @@ val:
         translation: "Traducció actualitzada amb èxit"
       destroy:
         budget_investment: "Proposta d'inversió eliminada correctament."
-        error: "No es va poder eliminar"
         topic: "Tema eliminat."
         poll_question_answer_video: "Vídeo de resposta eliminat."
         valuator_group: "Grup d'avaluadors esborrat correctament"

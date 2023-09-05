@@ -9,7 +9,7 @@ ru:
       - Пт
       - Сб
     abbr_month_names:
-      - 
+      -
       - Янв
       - Фев
       - Мар
@@ -34,7 +34,7 @@ ru:
       default: "%Y-%m-%d"
       short: "%b %d"
     month_names:
-      - 
+      -
       - Январь
       - Февраль
       - Март

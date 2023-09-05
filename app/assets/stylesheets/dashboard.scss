@@ -306,7 +306,6 @@
   border-right: 1px solid $border;
 
   [class^="icon-"] {
-    color: $text;
     display: inline-block;
     font-size: rem-calc(24);
     line-height: $line-height;
@@ -333,7 +332,7 @@
   }
 
   .is-active {
-    @include brand-text;
+    @include brand-color;
     position: relative;
 
     &::before {
@@ -348,17 +347,16 @@
     }
 
     a {
-      @include brand-text;
+      @include brand-color;
     }
 
     [class^="icon-"] {
-      @include brand-text;
+      @include brand-color;
     }
   }
 
   .has-tip {
     border-bottom: 0;
-    color: $text;
     cursor: auto;
     font-weight: normal;
   }
@@ -367,7 +365,7 @@
     border-bottom: 2px solid;
 
     .has-tip {
-      @include brand-text;
+      @include brand-color;
       font-weight: bold;
     }
   }
@@ -441,26 +439,6 @@
   position: relative;
   text-align: center;
 
-  .clipboard {
-    border: 1px solid $brand;
-    border-radius: rem-calc(20);
-    cursor: pointer;
-    display: inline-block;
-    margin-bottom: $line-height;
-    padding: $line-height / 4 $line-height / 2;
-    padding-left: rem-calc(30);
-    position: relative;
-    text-decoration: none;
-
-    &::before {
-      color: $brand;
-      content: "\6d";
-      font-family: "icons";
-      left: 6px;
-      position: absolute;
-    }
-  }
-
   .button {
     font-weight: bold;
   }
@@ -480,8 +458,7 @@
   max-width: rem-calc(600);
 
   .mail-header {
-    background: $pdf-primary;
-    color: #fff;
+    @include background-with-text-contrast($pdf-primary);
     padding: $line-height * 2;
 
     img {
@@ -535,11 +512,9 @@
 .dashboard-poster-preview,
 .dashboard-poster-pdf {
   .poster-header {
-    background: $pdf-primary;
-    color: #fff;
+    @include background-with-text-contrast($pdf-primary);
 
     h1 {
-      color: #fff;
       text-align: left;
     }
   }
@@ -700,7 +675,6 @@
     }
 
     p {
-      color: #fff;
       font-size: rem-calc(80);
       line-height: rem-calc(100);
 

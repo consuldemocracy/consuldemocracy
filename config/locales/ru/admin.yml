@@ -975,9 +975,6 @@ ru:
         table_title: "Название"
         edit_answers: Редактировать ответы
         see_proposal: "(См. предложение)"
-      flash:
-        question_added: "Вопрос добавлен в это голосование"
-        error_on_question_added: "Не удалось назначить вопрос для этого голосования"
       destroy:
         alert: "Это действие удалит голосование и все связанные вопросы."
         success_notice: "Голосование успешно удалено"
@@ -1027,12 +1024,6 @@ ru:
     answers:
       new:
         title: Новый ответ
-      show:
-        title: Название
-        description: Описание
-        images: Изображения
-        images_list: Список изображений
-        edit: Редактировать ответ
       edit:
         title: Редактировать ответ
       videos:
@@ -1438,7 +1429,7 @@ ru:
           see_page: Смотреть страницу
         new:
           title: Создать новую настраиваемую страницу
-          slug_help: "Текст для идентификации этой страницы в адресе URL, к примеру <code>https://consulproject.org/страница-заголовок</code>"
+          slug_help: "Текст для идентификации этой страницы в адресе URL, к примеру <code>https://consuldemocracy.org/page-slug</code>"
         page:
           created_at: Создано в
           status: Статус

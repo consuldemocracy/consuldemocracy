@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <%= "dir=rtl" if rtl? %> lang="<%= I18n.locale %>" data-current-user-id="<%= current_user&.id %>">
+<html <%= common_html_attributes %> data-current-user-id="<%= current_user&.id %>">
   <head>
     <%= render "layouts/common_head", default_title: setting["org_name"] %>
     <%= render "layouts/meta_tags" %>
@@ -49,7 +49,7 @@
       <div class="push"></div>
     </div>
     <div class="footer">
-      <%= render "layouts/footer" %>
+      <%= render Layout::FooterComponent.new %>
     </div>
   </body>
 </html>

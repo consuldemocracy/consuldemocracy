@@ -15,7 +15,7 @@ fa:
         not_enough_money: "شما قبلا بودجه موجود را تعیین کرده اید. <br> <small> به یاد داشته باشید که می توانید هر%{change_ballot} را در هر زمان </small> تغییر دهید"
         no_ballots_allowed: فازانتخاب  بسته است
         different_heading_assigned: "شما قبلا یک عنوان متفاوت را رأی داده اید: %{heading_link}"
-        change_ballot: تغییر رای خود 
+        change_ballot: تغییر رای خود
     groups:
       show:
         title: یک گزینه را انتخاب کنید
@@ -51,7 +51,6 @@ fa:
         tags_placeholder: "برچسبهایی را که میخواهید از آن استفاده کنید، با کاما ('،') جدا کنید"
         map_location: "نقشه محل"
         map_location_instructions: "نقشه محل حرکت و نشانگر محل."
-        map_remove_marker: "حذف  نشانگر نقشه"
       index:
         title: بودجه مشارکتی
         unfeasible: سرمایه گذاری غیر قابل پیش بینی
@@ -86,7 +85,7 @@ fa:
       show:
         author_deleted: کاربر حذف شد
         price_explanation: توضیح قیمت
-        unfeasibility_explanation: توضیح امکان سنجی 
+        unfeasibility_explanation: توضیح امکان سنجی
         code: "کد پروژه سرمایه گذاری:<strong>%{code}</strong>"
         location: "محل:\n%{location}</strong>"
         organization_name: "پیشنهاد از طرف:<strong>%{name}</strong>"
@@ -100,13 +99,13 @@ fa:
         author: نویسنده
         project_unfeasible: "این پروژه سرمایه گذاری <strong> به عنوان غیرقابل توصیف مشخص شده است </ strong> و به مرحله رای گیری نرسیده است"
         project_not_selected: "این پروژه سرمایه گذاری <strong> انتخاب نشده است </ strong> برای مرحله رای گیری ."
-      wrong_price_format: فقط اعداد صحیح 
+      wrong_price_format: فقط اعداد صحیح
       investment:
         add: رای
         already_added: شما قبلا این پروژه سرمایه گذاری را اضافه کرده اید
         support_title: پشتیبانی از این پروژه
         supports:
-          zero: بدون پشتیبانی 
+          zero: بدون پشتیبانی
           one: 1 پشتیبانی
           other: "%{count}پشتیبانی"
       header:
@@ -133,7 +132,7 @@ fa:
       heading: "نتایج بودجه مشارکتی"
       heading_selection_title: "توسط منطقه"
       ballot_lines_count: آرا
-      hide_discarded_link: پنهان کردن 
+      hide_discarded_link: پنهان کردن
       show_all_link: نمایش همه
       price: قیمت
       amount_available: بودجه موجود

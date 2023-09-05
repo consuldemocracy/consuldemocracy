@@ -31,7 +31,6 @@ uk-UA:
         translation: "Переклад успішно оновлений"
       destroy:
         budget_investment: "Інвестиційний проект успішно видалено."
-        error: "Не вдалося видалити"
         topic: "Тему видалено."
         poll_question_answer_video: "Відеовідповідь видалено."
         valuator_group: "Групу оцінювачів видалено"

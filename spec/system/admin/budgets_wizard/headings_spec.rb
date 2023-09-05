@@ -9,7 +9,7 @@ describe "Budgets wizard, headings step", :admin do
       visit admin_budgets_wizard_budget_group_headings_path(budget, group)
 
       within "#side_menu" do
-        expect(page).to have_css ".is-active", exact_text: "Participatory budgets"
+        expect(page).to have_css "[aria-current]", exact_text: "Participatory budgets"
       end
 
       click_link "Go back to groups"
@@ -124,7 +124,7 @@ describe "Budgets wizard, headings step", :admin do
       expect(page).to have_css "td", exact_text: "Heading without typos"
     end
 
-    scenario "update heading in single heading budget" do
+    scenario "update heading in single heading budget", :consul do
       visit admin_budgets_wizard_budget_group_headings_path(budget, group, mode: "single")
       fill_in "Heading name", with: "Heading wiht typo"
       fill_in "Money amount", with: "300000"
@@ -143,7 +143,7 @@ describe "Budgets wizard, headings step", :admin do
 
       visit admin_budget_path(budget)
 
-      within "section", text: "HEADING GROUPS" do
+      within "section", text: "Heading groups" do
         within("tbody tr") { expect(page).to have_content "Heading without typos" }
       end
     end
