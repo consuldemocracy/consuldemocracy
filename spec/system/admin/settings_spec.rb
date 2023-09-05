@@ -203,6 +203,27 @@ describe "Admin settings", :admin do
       expect(page).to have_css("div#tab-configuration.is-active")
     end
 
+    context "map configuration" do
+      before do
+        Setting["feature.map"] = true
+      end
+
+      scenario "On #tab-map-configuration", :consul do
+        Setting.create!(key: "map.whatever")
+
+        visit admin_settings_path
+        click_link "Map configuration"
+
+        within "tr", text: "Whatever" do
+          fill_in "Whatever", with: "New value"
+          click_button "Update"
+        end
+
+        expect(page).to have_current_path(admin_settings_path)
+        expect(page).to have_css("div#tab-map-configuration.is-active")
+      end
+    end
+
     scenario "On #tab-proposals" do
       Setting.create!(key: "proposals.whatever")
 

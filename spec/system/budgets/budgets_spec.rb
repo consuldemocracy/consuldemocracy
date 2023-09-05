@@ -376,7 +376,7 @@ describe "Budgets" do
       expect(page).to have_link "See results"
     end
 
-    scenario "Show investments list" do
+    scenario "Show investments list", :consul do
       budget = create(:budget, phase: "balloting")
       group = create(:budget_group, budget: budget)
       heading = create(:budget_heading, group: group)
@@ -391,7 +391,7 @@ describe "Budgets" do
       end
 
       expect(page).to have_link "See all investments",
-                                href: budget_investments_path(budget, params: { heading_id: heading.id })
+                                href: budget_investments_path(budget)
     end
 
     scenario "Show investments list when budget has multiple headings" do

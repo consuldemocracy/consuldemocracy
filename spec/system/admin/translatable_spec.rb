@@ -245,17 +245,17 @@ describe "Admin edit translatable records", :admin do
       let(:translatable) { create(:poll, :future) }
       let(:path) { edit_admin_poll_path(translatable) }
 
-      scenario "Updates the field to a blank value" do
+      scenario "Updates the field to a blank value", :consul do
         visit path
 
-        expect(page).to have_ckeditor "Summary", with: "Summary in English"
+        expect(page).to have_field "Summary", with: "Summary in English"
 
-        fill_in_ckeditor "Summary", with: " "
+        fill_in "Summary", with: ""
         click_button "Update poll"
 
         visit path
 
-        expect(page).to have_ckeditor "Summary", with: ""
+        expect(page).to have_field "Summary", with: ""
       end
     end
   end

@@ -48,7 +48,7 @@ describe "Admin collaborative legislation", :admin do
   end
 
   context "Create" do
-    scenario "Valid legislation process" do
+    scenario "Valid legislation process", :consul do
       visit admin_root_path
 
       within("#side_menu") do
@@ -60,8 +60,8 @@ describe "Admin collaborative legislation", :admin do
       click_link "New process"
 
       fill_in "Process Title", with: "An example legislation process"
-      fill_in_ckeditor "Summary", with: "Summary of the process"
-      fill_in_ckeditor "Description", with: "Describing the process"
+      fill_in "Summary", with: "Summary of the process"
+      fill_in "Description", with: "Describing the process"
 
       base_date = Date.current
 
@@ -117,7 +117,7 @@ describe "Admin collaborative legislation", :admin do
       expect(page).not_to have_content "Describing the process"
     end
 
-    scenario "Legislation process in draft phase" do
+    scenario "Legislation process in draft phase", :consul do
       visit admin_root_path
 
       within("#side_menu") do
@@ -129,8 +129,8 @@ describe "Admin collaborative legislation", :admin do
       click_link "New process"
 
       fill_in "Process Title", with: "An example legislation process in draft phase"
-      fill_in_ckeditor "Summary", with: "Summary of the process"
-      fill_in_ckeditor "Description", with: "Describing the process"
+      fill_in "Summary", with: "Summary of the process"
+      fill_in "Description", with: "Describing the process"
 
       base_date = Date.current - 2.days
 
@@ -163,13 +163,10 @@ describe "Admin collaborative legislation", :admin do
       expect(page).not_to have_content "Describing the process"
     end
 
-    scenario "Create a legislation process with an image" do
-      original_window_size = Capybara.current_window.size
-      Capybara.current_window.resize_to(1600, 1200)
-
+    scenario "Create a legislation process with an image", :consul do
       visit new_admin_legislation_process_path
       fill_in "Process Title", with: "An example legislation process"
-      fill_in_ckeditor "Summary", with: "Summary of the process"
+      fill_in "Summary", with: "Summary of the process"
 
       base_date = Date.current
 
@@ -190,8 +187,6 @@ describe "Admin collaborative legislation", :admin do
       expect(page).to have_content "An example legislation process"
       expect(page).not_to have_content "Summary of the process"
       expect(page).to have_css("img[alt='An example legislation process']")
-
-      Capybara.current_window.resize_to(*original_window_size)
     end
 
     scenario "Default colors are present" do
@@ -210,7 +205,7 @@ describe "Admin collaborative legislation", :admin do
              description: "Description of the process")
     end
 
-    scenario "Remove summary text" do
+    scenario "Remove summary text", :consul do
       visit admin_root_path
 
       within("#side_menu") do
@@ -223,7 +218,7 @@ describe "Admin collaborative legislation", :admin do
       expect(find("#legislation_process_debate_phase_enabled")).to be_checked
       expect(find("#legislation_process_published")).to be_checked
 
-      fill_in_ckeditor "Summary", with: " "
+      fill_in "Summary", with: ""
       click_button "Save changes"
 
       expect(page).to have_content "Process updated successfully"
@@ -312,7 +307,7 @@ describe "Admin collaborative legislation", :admin do
       end
     end
 
-    scenario "Change proposal categories" do
+    scenario "Change proposal categories", :consul do
       visit edit_admin_legislation_process_path(process)
       within(".admin-content") { click_link "Proposals" }
 
@@ -324,7 +319,7 @@ describe "Admin collaborative legislation", :admin do
       expect(page).to have_field("Categories", with: "bicycles, pollution, recycling")
 
       within(".admin-content") { click_link "Information" }
-      fill_in_ckeditor "Summary", with: "Summarizing the process"
+      fill_in "Summary", with: "Summarizing the process"
       click_button "Save changes"
 
       visit admin_legislation_process_proposals_path(process)
