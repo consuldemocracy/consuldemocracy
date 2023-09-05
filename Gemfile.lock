@@ -240,7 +240,7 @@ GEM
       request_store (~> 1.0)
     globalize-accessors (0.3.0)
       globalize (>= 5.0.0)
-    graphiql-rails (1.8.0)
+    graphiql-rails (1.9.0)
       railties
       sprockets-rails
     graphql (1.12.14)
@@ -604,9 +604,9 @@ GEM
       babel-source (>= 5.8.11)
       babel-transpiler
       sprockets (>= 3.0.0)
-    sprockets-rails (3.2.2)
-      actionpack (>= 4.0)
-      activesupport (>= 4.0)
+    sprockets-rails (3.4.2)
+      actionpack (>= 5.2)
+      activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sshkit (1.21.5)
       net-scp (>= 1.1.2)
@@ -706,7 +706,7 @@ DEPENDENCIES
   foundation_rails_helper (~> 4.0.1)
   globalize (~> 6.2.1)
   globalize-accessors (~> 0.3.0)
-  graphiql-rails (~> 1.8.0)
+  graphiql-rails (~> 1.9.0)
   graphql (~> 1.12.14)
   groupdate (~> 6.2.1)
   i18n-tasks (~> 0.9.37)
