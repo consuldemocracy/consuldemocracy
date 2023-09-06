@@ -313,6 +313,9 @@ Performance/StringIdentifierArgument:
 Performance/Sum:
   Enabled: true
 
+Rails/ActionControllerFlashBeforeRender:
+  Enabled: true
+
 Rails/ActiveRecordCallbacksOrder:
   Enabled: true
 
