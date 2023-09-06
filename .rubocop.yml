@@ -627,6 +627,9 @@ Style/AndOr:
 Style/ArrayCoercion:
   Enabled: true
 
+Style/ArrayIntersect:
+  Enabled: true
+
 Style/BlockDelimiters:
   Enabled: true
 
