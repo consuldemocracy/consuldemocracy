@@ -408,6 +408,9 @@ Rails/RelativeDateConstant:
 Rails/RequestReferer:
   Enabled: true
 
+Rails/ResponseParsedBody:
+  Enabled: true
+
 Rails/ReversibleMigration:
   Enabled: true
 
