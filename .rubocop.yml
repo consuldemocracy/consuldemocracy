@@ -455,6 +455,9 @@ Rails/WhereEquals:
 Rails/WhereNot:
   Enabled: true
 
+Rails/WhereNotWithMultipleConditions:
+  Enabled: true
+
 RSpec/AroundBlock:
   Enabled: true
 
