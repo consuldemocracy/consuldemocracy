@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe Legislation::Process::Publication, type: :model do
+RSpec.describe Legislation::Process::Publication do
   let(:process) { create(:legislation_process) }
 
   describe "#enabled?" do

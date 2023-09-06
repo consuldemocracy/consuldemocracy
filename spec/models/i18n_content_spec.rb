@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe I18nContent, type: :model do
+RSpec.describe I18nContent do
   let(:i18n_content) { build(:i18n_content, key: "awe.so.me") }
 
   it "is valid" do

@@ -553,6 +553,9 @@ RSpec/OverwritingSetup:
 RSpec/Rails/HaveHttpStatus:
   Enabled: true
 
+RSpec/Rails/InferredSpecType:
+  Enabled: true
+
 RSpec/RepeatedExample:
   Enabled: true
 

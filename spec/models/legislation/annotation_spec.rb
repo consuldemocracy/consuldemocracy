@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe Legislation::Annotation, type: :model do
+RSpec.describe Legislation::Annotation do
   let(:draft_version) { create(:legislation_draft_version) }
   let(:annotation) { create(:legislation_annotation, draft_version: draft_version) }
 
