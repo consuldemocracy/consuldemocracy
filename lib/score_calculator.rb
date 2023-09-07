@@ -13,7 +13,7 @@ module ScoreCalculator
   end
 
   def self.confidence_score(votes_total, votes_up)
-    return 1 unless votes_total > 0
+    return 1 if votes_total.zero?
 
     votes_total = votes_total.to_f
     votes_up    = votes_up.to_f

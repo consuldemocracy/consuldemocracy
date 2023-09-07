@@ -155,8 +155,8 @@ class ProposalsController < ApplicationController
     end
 
     def load_featured
-      return unless !@advanced_search_terms && @search_terms.blank? &&
-                    params[:retired].blank? && @current_order != "recommendations"
+      return if @advanced_search_terms || @search_terms.present? ||
+                params[:retired].present? || @current_order == "recommendations"
 
       if Setting["feature.featured_proposals"]
         @featured_proposals = Proposal.not_archived

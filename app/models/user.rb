@@ -419,7 +419,7 @@ class User < ApplicationRecord
   private
 
     def clean_document_number
-      return unless document_number.present?
+      return if document_number.blank?
 
       self.document_number = document_number.gsub(/[^a-z0-9]+/i, "").upcase
     end

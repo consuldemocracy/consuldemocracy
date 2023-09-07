@@ -21,7 +21,7 @@ class CensusApi
     def date_of_birth
       str = data[:datos_habitante][:item][:fecha_nacimiento_string]
       day, month, year = str.match(/(\d\d?)\D(\d\d?)\D(\d\d\d?\d?)/)[1..3]
-      return nil unless day.present? && month.present? && year.present?
+      return nil if day.blank? || month.blank? || year.blank?
 
       Time.zone.local(year.to_i, month.to_i, day.to_i).to_date
     end

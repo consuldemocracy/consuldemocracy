@@ -19,7 +19,7 @@ class Tenant < ApplicationRecord
   end
 
   def self.resolve_host(host)
-    return nil unless Rails.application.config.multitenancy.present?
+    return nil if Rails.application.config.multitenancy.blank?
     return nil if host.blank? || host.match?(Resolv::AddressRegex)
 
     schema = schema_for(host)

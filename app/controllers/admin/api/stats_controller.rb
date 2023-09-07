@@ -1,9 +1,9 @@
 class Admin::Api::StatsController < Admin::Api::BaseController
   def show
-    unless params[:event].present? ||
-           params[:visits].present? ||
-           params[:budget_investments].present? ||
-           params[:user_supported_budgets].present?
+    if params[:event].blank? &&
+       params[:visits].blank? &&
+       params[:budget_investments].blank? &&
+       params[:user_supported_budgets].blank?
       return render json: {}, status: :bad_request
     end
 

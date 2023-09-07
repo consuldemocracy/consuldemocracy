@@ -637,6 +637,16 @@ Style/IdenticalConditionalBranches:
 Style/IfWithBooleanLiteralBranches:
   Enabled: true
 
+Style/InverseMethods:
+  Enabled: true
+
+Style/InvertibleUnlessCondition:
+  Enabled: true
+  InverseMethods:
+    :blank?: :present?
+    :present?: :blank?
+    :zero?: ~
+
 Style/LineEndConcatenation:
   Enabled: true
 

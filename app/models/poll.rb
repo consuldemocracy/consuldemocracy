@@ -149,7 +149,7 @@ class Poll < ApplicationRecord
   end
 
   def date_range
-    unless starts_at.present? && ends_at.present? && starts_at <= ends_at
+    if starts_at.blank? || ends_at.blank? || starts_at > ends_at
       errors.add(:starts_at, I18n.t("errors.messages.invalid_date_range"))
     end
   end
@@ -192,9 +192,9 @@ class Poll < ApplicationRecord
   end
 
   def only_one_active
-    return unless starts_at.present?
-    return unless ends_at.present?
-    return unless Poll.overlaping_with(self).any?
+    return if starts_at.blank?
+    return if ends_at.blank?
+    return if Poll.overlaping_with(self).none?
 
     errors.add(:starts_at, I18n.t("activerecord.errors.messages.another_poll_active"))
   end
