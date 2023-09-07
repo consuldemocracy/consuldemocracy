@@ -73,7 +73,7 @@ describe Budgets::BudgetComponent do
 
       expect(page).to have_css ".budget-header.with-background-image"
       expect(page).to have_css ".budget-header[style*='background-image:']" \
-                               "[style*='url(\\''][style*='clippy_with_\\\\\'quotes\\\\\'.jpg']"
+                               "[style*='url(\\''][style*='clippy_with_\\\\'quotes\\\\'.jpg']"
     end
   end
 end

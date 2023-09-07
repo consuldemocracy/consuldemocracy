@@ -68,7 +68,7 @@ class SiteCustomization::Image < ApplicationRecord
       height = image.metadata[:height]
 
       if name == "logo_header"
-        errors.add(:image, :image_width, required_width: required_width) unless width <= required_width
+        errors.add(:image, :image_width, required_width: required_width) if width > required_width
       else
         errors.add(:image, :image_width, required_width: required_width) unless width == required_width
       end

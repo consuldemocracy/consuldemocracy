@@ -465,7 +465,7 @@ class MachineLearning
 
     def updated_file?(filename)
       return false unless File.exist? data_folder.join(filename)
-      return true unless previous_modified_date[filename].present?
+      return true if previous_modified_date[filename].blank?
 
       last_modified_date_for(filename) > previous_modified_date[filename]
     end
