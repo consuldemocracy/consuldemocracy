@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe Legislation::Answer, type: :model do
+RSpec.describe Legislation::Answer do
   let(:legislation_answer) { build(:legislation_answer) }
 
   it "is valid" do

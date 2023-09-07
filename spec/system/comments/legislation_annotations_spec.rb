@@ -1,8 +1,8 @@
 require "rails_helper"
 
 describe "Commenting legislation questions" do
-  let(:user) { create :user }
-  let(:annotation) { create :legislation_annotation, author: user }
+  let(:user) { create(:user) }
+  let(:annotation) { create(:legislation_annotation, author: user) }
 
   it_behaves_like "flaggable", :legislation_annotation_comment
 
@@ -155,7 +155,7 @@ describe "Commenting legislation questions" do
   end
 
   scenario "Turns links into html links" do
-    annotation = create :legislation_annotation, author: user
+    annotation = create(:legislation_annotation, author: user)
     annotation.comments << create(:comment, body: "Built with http://rubyonrails.org/")
 
     visit polymorphic_path(annotation)
@@ -169,10 +169,10 @@ describe "Commenting legislation questions" do
   end
 
   scenario "Sanitizes comment body for security" do
-    create :comment, commentable: annotation,
+    create(:comment, commentable: annotation,
                      body: "<script>alert('hola')</script> " \
                            "<a href=\"javascript:alert('sorpresa!')\">click me<a/> " \
-                           "http://www.url.com"
+                           "http://www.url.com")
 
     visit polymorphic_path(annotation)
 

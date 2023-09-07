@@ -464,8 +464,15 @@ Rails/WhereNotWithMultipleConditions:
 RSpec/AroundBlock:
   Enabled: true
 
+RSpec/BeEq:
+  Enabled: true
+
 RSpec/BeforeAfterAll:
   Enabled: true
+
+RSpec/BeNil:
+  Enabled: true
+  EnforcedStyle: be
 
 RSpec/Capybara/CurrentPathExpectation:
   Enabled: true
@@ -475,6 +482,12 @@ RSpec/Capybara/FeatureMethods:
   EnabledMethods:
     - scenario
     - xscenario
+
+RSpec/Capybara/NegationMatcher:
+  Enabled: true
+
+RSpec/Capybara/SpecificActions:
+  Enabled: true
 
 RSpec/Capybara/VisibilityMatcher:
   Enabled: true
@@ -505,6 +518,12 @@ RSpec/EmptyLineAfterExampleGroup:
 RSpec/ExampleWording:
   Enabled: true
 
+RSpec/ExcessiveDocstringSpacing:
+  Enabled: true
+
+RSpec/FactoryBot/ConsistentParenthesesStyle:
+  Enabled: true
+
 RSpec/FactoryBot/FactoryClassName:
   Enabled: true
 
@@ -532,6 +551,12 @@ RSpec/NotToNot:
   Enabled: true
 
 RSpec/OverwritingSetup:
+  Enabled: true
+
+RSpec/Rails/HaveHttpStatus:
+  Enabled: true
+
+RSpec/Rails/InferredSpecType:
   Enabled: true
 
 RSpec/RepeatedExample:

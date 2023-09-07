@@ -13,7 +13,7 @@ describe "Admin administrator tasks", :admin do
     end
 
     context "and actions defined" do
-      let!(:task) { create :dashboard_administrator_task, :pending }
+      let!(:task) { create(:dashboard_administrator_task, :pending) }
 
       before do
         visit admin_dashboard_administrator_tasks_path
@@ -31,7 +31,7 @@ describe "Admin administrator tasks", :admin do
   end
 
   context "when solving a task" do
-    let!(:task) { create :dashboard_administrator_task, :pending }
+    let!(:task) { create(:dashboard_administrator_task, :pending) }
 
     before do
       visit admin_dashboard_administrator_tasks_path

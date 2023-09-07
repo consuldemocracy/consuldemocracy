@@ -14,10 +14,10 @@ describe Vote do
   describe "#value" do
     it "returns vote flag" do
       vote = create(:vote, vote_flag: true)
-      expect(vote.value).to eq(true)
+      expect(vote.value).to be true
 
       vote = create(:vote, vote_flag: false)
-      expect(vote.value).to eq(false)
+      expect(vote.value).to be false
     end
   end
 

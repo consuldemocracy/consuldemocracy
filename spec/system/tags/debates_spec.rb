@@ -18,7 +18,7 @@ describe "Tags" do
 
   scenario "Index shows up to 5 tags per proposal" do
     tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
-    create :debate, tag_list: tag_list
+    create(:debate, tag_list: tag_list)
 
     visit debates_path
 
@@ -29,7 +29,7 @@ describe "Tags" do
 
   scenario "Index shows 3 tags with no plus link" do
     tag_list = ["Medio Ambiente", "Corrupción", "Fiestas populares"]
-    create :debate, tag_list: tag_list
+    create(:debate, tag_list: tag_list)
 
     visit debates_path
 

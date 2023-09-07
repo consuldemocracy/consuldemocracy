@@ -55,7 +55,7 @@ describe Legislation::Question do
     end
 
     it "returns nil" do
-      expect(question2.next_question_id).to be_nil
+      expect(question2.next_question_id).to be nil
     end
   end
 

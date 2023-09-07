@@ -1,8 +1,8 @@
 require "rails_helper"
 
 describe "Commenting Budget::Investments" do
-  let(:user) { create :user }
-  let(:investment) { create :budget_investment }
+  let(:user) { create(:user) }
+  let(:investment) { create(:budget_investment) }
 
   it_behaves_like "flaggable", :budget_investment_comment
 
@@ -159,7 +159,7 @@ describe "Commenting Budget::Investments" do
   end
 
   scenario "Turns links into html links" do
-    create :comment, commentable: investment, body: "Built with http://rubyonrails.org/"
+    create(:comment, commentable: investment, body: "Built with http://rubyonrails.org/")
 
     visit budget_investment_path(investment.budget, investment)
 
@@ -172,10 +172,10 @@ describe "Commenting Budget::Investments" do
   end
 
   scenario "Sanitizes comment body for security" do
-    create :comment, commentable: investment,
+    create(:comment, commentable: investment,
                      body: "<script>alert('hola')</script> " \
                            "<a href=\"javascript:alert('sorpresa!')\">click me<a/> " \
-                           "http://www.url.com"
+                           "http://www.url.com")
 
     visit budget_investment_path(investment.budget, investment)
 

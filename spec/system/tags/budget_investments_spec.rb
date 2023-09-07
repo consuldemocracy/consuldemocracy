@@ -29,7 +29,7 @@ describe "Tags" do
 
   scenario "Index shows 3 tags with no plus link" do
     tag_list = ["Medio Ambiente", "Corrupción", "Fiestas populares"]
-    create :budget_investment, heading: heading, tag_list: tag_list
+    create(:budget_investment, heading: heading, tag_list: tag_list)
 
     visit budget_investments_path(budget, heading_id: heading.id)
 
@@ -43,7 +43,7 @@ describe "Tags" do
 
   scenario "Index shows up to 5 tags per investment" do
     tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
-    create :budget_investment, heading: heading, tag_list: tag_list
+    create(:budget_investment, heading: heading, tag_list: tag_list)
 
     visit budget_investments_path(budget, heading_id: heading.id)
 

@@ -35,6 +35,6 @@ describe Admin::Poll::Officers::OfficersComponent, :admin do
   it "accepts table options" do
     render_inline Admin::Poll::Officers::OfficersComponent.new(officers, class: "my-officers-table")
 
-    expect(page).to have_css "table.my-officers-table"
+    expect(page).to have_table class: "my-officers-table"
   end
 end

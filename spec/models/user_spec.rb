@@ -84,37 +84,37 @@ describe User do
   describe "preferences" do
     describe "email_on_comment" do
       it "is false by default" do
-        expect(subject.email_on_comment).to eq(false)
+        expect(subject.email_on_comment).to be false
       end
     end
 
     describe "email_on_comment_reply" do
       it "is false by default" do
-        expect(subject.email_on_comment_reply).to eq(false)
+        expect(subject.email_on_comment_reply).to be false
       end
     end
 
     describe "subscription_to_website_newsletter" do
       it "is true by default" do
-        expect(subject.newsletter).to eq(true)
+        expect(subject.newsletter).to be true
       end
     end
 
     describe "email_digest" do
       it "is true by default" do
-        expect(subject.email_digest).to eq(true)
+        expect(subject.email_digest).to be true
       end
     end
 
     describe "email_on_direct_message" do
       it "is true by default" do
-        expect(subject.email_on_direct_message).to eq(true)
+        expect(subject.email_on_direct_message).to be true
       end
     end
 
     describe "official_position_badge" do
       it "is false by default" do
-        expect(subject.official_position_badge).to eq(false)
+        expect(subject.official_position_badge).to be false
       end
     end
   end
@@ -286,7 +286,7 @@ describe User do
       subject.remove_official_position!
 
       expect(subject).not_to be_official
-      expect(subject.official_position).to be_nil
+      expect(subject.official_position).to be nil
       expect(subject.official_level).to eq(0)
     end
   end
@@ -319,10 +319,10 @@ describe User do
       user3 = create(:user, email: "john@unofficials.madrid.es", confirmed_at: Time.current)
       user4 = create(:user, email: "john@example.org", confirmed_at: Time.current)
 
-      expect(user1.has_official_email?).to eq(true)
-      expect(user2.has_official_email?).to eq(true)
-      expect(user3.has_official_email?).to eq(false)
-      expect(user4.has_official_email?).to eq(false)
+      expect(user1.has_official_email?).to be true
+      expect(user2.has_official_email?).to be true
+      expect(user3.has_official_email?).to be false
+      expect(user4.has_official_email?).to be false
 
       # We reset the officials' domain setting
       Setting.find_by(key: "email_domain_for_officials").update!(value: "")
@@ -334,13 +334,13 @@ describe User do
       it "displays the badge if set in preferences" do
         user = create(:user, official_level: 1, official_position_badge: true)
 
-        expect(user.display_official_position_badge?).to eq true
+        expect(user.display_official_position_badge?).to be true
       end
 
       it "does not display the badge if set in preferences" do
         user = create(:user, official_level: 1, official_position_badge: false)
 
-        expect(user.display_official_position_badge?).to eq false
+        expect(user.display_official_position_badge?).to be false
       end
     end
 
@@ -351,10 +351,10 @@ describe User do
         user3 = create(:user, official_level: 4, official_position_badge: false)
         user4 = create(:user, official_level: 5, official_position_badge: false)
 
-        expect(user1.display_official_position_badge?).to eq true
-        expect(user2.display_official_position_badge?).to eq true
-        expect(user3.display_official_position_badge?).to eq true
-        expect(user4.display_official_position_badge?).to eq true
+        expect(user1.display_official_position_badge?).to be true
+        expect(user2.display_official_position_badge?).to be true
+        expect(user3.display_official_position_badge?).to be true
+        expect(user4.display_official_position_badge?).to be true
       end
     end
   end
@@ -508,16 +508,16 @@ describe User do
       expect(user.erase_reason).to eq("a test")
       expect(user.erased_at).to    be
 
-      expect(user.username).to be_nil
-      expect(user.email).to be_nil
-      expect(user.unconfirmed_email).to be_nil
-      expect(user.phone_number).to be_nil
-      expect(user.confirmed_phone).to be_nil
-      expect(user.unconfirmed_phone).to be_nil
+      expect(user.username).to be nil
+      expect(user.email).to be nil
+      expect(user.unconfirmed_email).to be nil
+      expect(user.phone_number).to be nil
+      expect(user.confirmed_phone).to be nil
+      expect(user.unconfirmed_phone).to be nil
       expect(user.encrypted_password).to be_empty
-      expect(user.confirmation_token).to be_nil
-      expect(user.reset_password_token).to be_nil
-      expect(user.email_verification_token).to be_nil
+      expect(user.confirmation_token).to be nil
+      expect(user.reset_password_token).to be nil
+      expect(user.email_verification_token).to be nil
     end
 
     it "maintains associated identification document" do
@@ -684,8 +684,8 @@ describe User do
 
   describe "email_required?" do
     it "is true for regular users" do
-      expect(subject.email_required?).to eq(true)
-      expect(create(:user, :hidden).email_required?).to eq(true)
+      expect(subject.email_required?).to be true
+      expect(create(:user, :hidden).email_required?).to be true
     end
 
     it "is false for erased users" do
@@ -693,14 +693,14 @@ describe User do
       user.erase
       user.reload
 
-      expect(user.email_required?).to eq(false)
+      expect(user.email_required?).to be false
     end
 
     it "is false for verified users with no email" do
       user = create(:user, username: "Lois", email: "", verified_at: Time.current)
 
       expect(user).to be_valid
-      expect(user.email_required?).to eq(false)
+      expect(user.email_required?).to be false
     end
   end
 

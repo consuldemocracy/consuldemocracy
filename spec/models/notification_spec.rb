@@ -39,8 +39,8 @@ describe Notification do
 
     describe "#recent" do
       it "returns notifications sorted by id descendant" do
-        old_notification = create :notification
-        new_notification = create :notification
+        old_notification = create(:notification)
+        new_notification = create(:notification)
 
         expect(Notification.recent).to eq [new_notification, old_notification]
       end
@@ -80,8 +80,8 @@ describe Notification do
 
   describe "#timestamp" do
     it "returns the timestamp of the trackable object" do
-      comment = create :comment
-      notification = create :notification, notifiable: comment
+      comment = create(:comment)
+      notification = create(:notification, notifiable: comment)
 
       expect(notification.timestamp).to eq comment.created_at
     end
@@ -103,7 +103,7 @@ describe Notification do
 
       create(:notification, user: user, notifiable: comment1)
 
-      expect(Notification.existent(user, comment2)).to eq(nil)
+      expect(Notification.existent(user, comment2)).to be nil
     end
 
     it "returns nil when there are notifications of a notifiable for another user" do
@@ -113,7 +113,7 @@ describe Notification do
 
       create(:notification, user: user1, notifiable: comment)
 
-      expect(Notification.existent(user2, comment)).to eq(nil)
+      expect(Notification.existent(user2, comment)).to be nil
     end
   end
 

@@ -53,43 +53,43 @@ describe Poll::Ballot do
     describe "Money" do
       it "is not valid if insufficient funds" do
         investment.update!(price: heading.price + 1)
-        expect(poll_ballot.add_investment(investment.id)).to be(false)
+        expect(poll_ballot.add_investment(investment.id)).to be false
       end
 
       it "is valid if sufficient funds" do
         investment.update!(price: heading.price - 1)
-        expect(poll_ballot.add_investment(investment.id)).to be(true)
+        expect(poll_ballot.add_investment(investment.id)).to be true
       end
     end
 
     describe "Heading" do
       it "is not valid if investment heading is not valid" do
-        expect(poll_ballot.add_investment(investment.id)).to be(true)
+        expect(poll_ballot.add_investment(investment.id)).to be true
 
         other_heading = create(:budget_heading, group: group, price: 10000000)
         other_investment = create(:budget_investment, :selected, price: 1000000, heading: other_heading)
 
-        expect(poll_ballot.add_investment(other_investment.id)).to be(false)
+        expect(poll_ballot.add_investment(other_investment.id)).to be false
       end
 
       it "is valid if investment heading is valid" do
-        expect(poll_ballot.add_investment(investment.id)).to be(true)
+        expect(poll_ballot.add_investment(investment.id)).to be true
 
         other_investment = create(:budget_investment, :selected, price: 1000000, heading: heading)
 
-        expect(poll_ballot.add_investment(other_investment.id)).to be(true)
+        expect(poll_ballot.add_investment(other_investment.id)).to be true
       end
     end
 
     describe "Selectibility" do
       it "is not valid if investment is unselected" do
         investment.update!(selected: false)
-        expect(poll_ballot.add_investment(investment.id)).to be(false)
+        expect(poll_ballot.add_investment(investment.id)).to be false
       end
 
       it "is valid if investment is selected" do
         investment.update!(selected: true, price: 20000)
-        expect(poll_ballot.add_investment(investment.id)).to be(true)
+        expect(poll_ballot.add_investment(investment.id)).to be true
       end
     end
 
@@ -97,22 +97,22 @@ describe Poll::Ballot do
       it "is not valid if investment belongs to a different budget" do
         other_budget = create(:budget)
         investment.update!(budget: other_budget)
-        expect(poll_ballot.add_investment(investment.id)).to be(nil)
+        expect(poll_ballot.add_investment(investment.id)).to be nil
       end
 
       it "is valid if investment belongs to the poll's budget" do
-        expect(poll_ballot.add_investment(investment.id)).to be(true)
+        expect(poll_ballot.add_investment(investment.id)).to be true
       end
     end
 
     describe "Already added" do
       it "is not valid if already exists" do
         poll_ballot.add_investment(investment.id)
-        expect(poll_ballot.add_investment(investment.id)).to be(nil)
+        expect(poll_ballot.add_investment(investment.id)).to be nil
       end
 
       it "is valid if does not already exist" do
-        expect(poll_ballot.add_investment(investment.id)).to be(true)
+        expect(poll_ballot.add_investment(investment.id)).to be true
       end
     end
   end

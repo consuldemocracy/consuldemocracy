@@ -170,7 +170,7 @@ describe Debate do
         expect { debate.register_vote(user, "yes") }.to change { debate.reload.votes_for.size }.by(1)
       end
 
-      it "does not increase anonymous votes counter " do
+      it "does not increase anonymous votes counter" do
         user = create(:user, residence_verified_at: Time.current, confirmed_phone: "666333111")
         expect { debate.register_vote(user, "yes") }.not_to change { debate.reload.total_anonymous_votes }
       end
@@ -182,7 +182,7 @@ describe Debate do
         expect { debate.register_vote(user, "yes") }.to change { debate.reload.votes_for.size }.by(1)
       end
 
-      it "does not increase anonymous votes counter " do
+      it "does not increase anonymous votes counter" do
         user = create(:user, verified_at: Time.current)
         expect { debate.register_vote(user, "yes") }.not_to change { debate.reload.total_anonymous_votes }
       end
@@ -205,12 +205,12 @@ describe Debate do
     describe "from anonymous users when there are too many anonymous votes" do
       before { debate.update(cached_anonymous_votes_total: 520, cached_votes_total: 1000) }
 
-      it "does not register vote " do
+      it "does not register vote" do
         user = create(:user)
         expect { debate.register_vote(user, "yes") }.not_to change { debate.reload.votes_for.size }
       end
 
-      it "does not increase anonymous votes counter " do
+      it "does not increase anonymous votes counter" do
         user = create(:user)
         expect { debate.register_vote(user, "yes") }.not_to change { debate.reload.total_anonymous_votes }
       end

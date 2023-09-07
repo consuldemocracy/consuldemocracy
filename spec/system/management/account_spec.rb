@@ -80,7 +80,7 @@ describe "Account" do
     click_button "Save password"
 
     expect(page).to have_content "Password reseted successfully"
-    expect(page).to have_css("a[href='javascript:window.print();']", text: "Print password")
+    expect(page).to have_link "Print password", href: "javascript:window.print();"
     expect(page).to have_css("div.for-print-only", text: "another_new_password", visible: :hidden)
   end
 

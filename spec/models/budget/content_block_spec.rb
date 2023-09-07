@@ -30,7 +30,7 @@ describe Budget::ContentBlock do
     it "returns nil on new records without heading" do
       block = Budget::ContentBlock.new
 
-      expect(block.name).to be_nil
+      expect(block.name).to be nil
     end
   end
 end

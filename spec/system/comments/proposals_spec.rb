@@ -1,8 +1,8 @@
 require "rails_helper"
 
 describe "Commenting proposals" do
-  let(:user) { create :user }
-  let(:proposal) { create :proposal }
+  let(:user) { create(:user) }
+  let(:proposal) { create(:proposal) }
 
   it_behaves_like "flaggable", :proposal_comment
 
@@ -145,7 +145,7 @@ describe "Commenting proposals" do
   end
 
   scenario "Turns links into html links" do
-    create :comment, commentable: proposal, body: "Built with http://rubyonrails.org/"
+    create(:comment, commentable: proposal, body: "Built with http://rubyonrails.org/")
 
     visit proposal_path(proposal)
 
@@ -158,10 +158,10 @@ describe "Commenting proposals" do
   end
 
   scenario "Sanitizes comment body for security" do
-    create :comment, commentable: proposal,
+    create(:comment, commentable: proposal,
                      body: "<script>alert('hola')</script> " \
                            "<a href=\"javascript:alert('sorpresa!')\">click me<a/> " \
-                           "http://www.url.com"
+                           "http://www.url.com")
 
     visit proposal_path(proposal)
 

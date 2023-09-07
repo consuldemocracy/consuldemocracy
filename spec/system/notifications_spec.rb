@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Notifications" do
-  let(:user) { create :user }
+  let(:user) { create(:user) }
   before { login_as(user) }
 
   scenario "View all" do

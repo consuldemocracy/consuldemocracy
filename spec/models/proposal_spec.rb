@@ -250,7 +250,7 @@ describe Proposal do
     describe "from anonymous users" do
       it "does not register vote" do
         user = create(:user)
-        expect { proposal.register_vote(user, "yes") }.to change { proposal.reload.votes_for.size }.by(0)
+        expect { proposal.register_vote(user, "yes") }.not_to change { proposal.reload.votes_for.size }
       end
     end
 
@@ -258,9 +258,7 @@ describe Proposal do
       user = create(:user, verified_at: Time.current)
       archived_proposal = create(:proposal, :archived)
 
-      expect do
-        archived_proposal.register_vote(user, "yes")
-      end.to change { proposal.reload.votes_for.size }.by(0)
+      expect { archived_proposal.register_vote(user, "yes") }.not_to change { proposal.reload.votes_for.size }
     end
   end
 
@@ -272,7 +270,7 @@ describe Proposal do
         tag_list = ["tag1", "tag2", "tag3", "tag4", "tag5", "tag6", "tag7"]
         proposal.update!(tag_list: tag_list)
 
-        expect(proposal.update_cached_votes).to eq(true)
+        expect(proposal.update_cached_votes).to be true
       end
     end
   end
@@ -846,8 +844,8 @@ describe Proposal do
     let!(:proposal2) { create(:proposal, :retired) }
 
     it "retired? is true" do
-      expect(proposal1.retired?).to eq false
-      expect(proposal2.retired?).to eq true
+      expect(proposal1.retired?).to be false
+      expect(proposal2.retired?).to be true
     end
 
     it "scope retired" do
@@ -864,8 +862,8 @@ describe Proposal do
     let!(:archived_proposal) { create(:proposal, :archived) }
 
     it "archived? is true only for proposals created more than n (configured months) ago" do
-      expect(new_proposal.archived?).to eq false
-      expect(archived_proposal.archived?).to eq true
+      expect(new_proposal.archived?).to be false
+      expect(archived_proposal.archived?).to be true
     end
 
     it "scope archived" do

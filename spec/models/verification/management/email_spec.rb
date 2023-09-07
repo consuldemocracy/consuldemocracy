@@ -9,7 +9,7 @@ describe Verification::Management::Email do
     end
 
     it "returns nil/false when the user does not exist" do
-      expect(subject.user).to be_nil
+      expect(subject.user).to be nil
       expect(subject.user?).not_to be
     end
   end
@@ -44,7 +44,7 @@ describe Verification::Management::Email do
                                                   document_number: "1234",
                                                   email: "inexisting@gmail.com")
 
-      expect(email.save).to eq(false)
+      expect(email.save).to be false
     end
 
     it "updates the user and sends an email" do

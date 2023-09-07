@@ -205,7 +205,7 @@ describe "Admin::Organizations" do
     expect(page).not_to have_content("Verified Organization")
   end
 
-  scenario "Verifying organization links remembers parameters " do
+  scenario "Verifying organization links remembers parameters" do
     allow(Organization).to receive(:default_per_page).and_return(2)
     4.times { create(:organization) }
 

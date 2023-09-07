@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe SettingsHelper, type: :helper do
+RSpec.describe SettingsHelper do
   describe "#setting" do
     it "returns a hash with all settings values" do
       Setting["key1"] = "value1"
@@ -8,7 +8,7 @@ RSpec.describe SettingsHelper, type: :helper do
 
       expect(setting["key1"]).to eq("value1")
       expect(setting["key2"]).to eq("value2")
-      expect(setting["key3"]).to eq(nil)
+      expect(setting["key3"]).to be nil
     end
   end
 
@@ -19,9 +19,9 @@ RSpec.describe SettingsHelper, type: :helper do
       Setting["feature.f3"] = nil
 
       expect(feature?("f1")).to eq("active")
-      expect(feature?("f2")).to eq(nil)
-      expect(feature?("f3")).to eq(nil)
-      expect(feature?("f4")).to eq(nil)
+      expect(feature?("f2")).to be nil
+      expect(feature?("f3")).to be nil
+      expect(feature?("f4")).to be nil
     end
   end
 

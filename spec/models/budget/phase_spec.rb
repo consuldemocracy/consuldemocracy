@@ -238,13 +238,13 @@ describe Budget::Phase do
       it "returns the right next enabled phase" do
         expect(informing_phase.reload.next_enabled_phase).to eq(reviewing_phase)
         expect(reviewing_phase.reload.next_enabled_phase).to eq(finished_phase)
-        expect(finished_phase.reload.next_enabled_phase).to eq(nil)
+        expect(finished_phase.reload.next_enabled_phase).to be nil
       end
     end
 
     describe "#prev_enabled_phase" do
       it "returns the right previous enabled phase" do
-        expect(informing_phase.reload.prev_enabled_phase).to eq(nil)
+        expect(informing_phase.reload.prev_enabled_phase).to be nil
         expect(reviewing_phase.reload.prev_enabled_phase).to eq(informing_phase)
         expect(finished_phase.reload.prev_enabled_phase).to eq(reviewing_phase)
       end

@@ -273,9 +273,9 @@ describe "Internal valuation comments on Budget::Investments" do
       visit valuation_budget_budget_investment_path(budget, investment)
       expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
 
-      expect(page).to have_no_css(".comment-votes")
-      expect(page).to have_no_css(".js-flag-actions")
-      expect(page).to have_no_css(".moderation-actions")
+      expect(page).not_to have_css(".comment-votes")
+      expect(page).not_to have_css(".js-flag-actions")
+      expect(page).not_to have_css(".moderation-actions")
     end
   end
 
