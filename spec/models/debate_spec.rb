@@ -452,9 +452,14 @@ describe Debate do
       expect(debate).not_to be_conflictive
     end
 
-    it "returns false when it has not votes up" do
-      debate.update!(cached_votes_up: 0)
+    it "returns false when it has no flags and no votes up" do
+      debate.update!(flags_count: 0, cached_votes_up: 0)
       expect(debate).not_to be_conflictive
+    end
+
+    it "returns true when it has flags and no votes up" do
+      debate.update!(cached_votes_up: 0, flags_count: 10)
+      expect(debate).to be_conflictive
     end
   end
 
