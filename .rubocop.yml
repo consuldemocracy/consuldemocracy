@@ -313,6 +313,9 @@ Performance/StringIdentifierArgument:
 Performance/Sum:
   Enabled: true
 
+Rails/ActionControllerFlashBeforeRender:
+  Enabled: true
+
 Rails/ActiveRecordCallbacksOrder:
   Enabled: true
 
@@ -405,6 +408,9 @@ Rails/RelativeDateConstant:
 Rails/RequestReferer:
   Enabled: true
 
+Rails/ResponseParsedBody:
+  Enabled: true
+
 Rails/ReversibleMigration:
   Enabled: true
 
@@ -450,6 +456,9 @@ Rails/WhereEquals:
   Enabled: true
 
 Rails/WhereNot:
+  Enabled: true
+
+Rails/WhereNotWithMultipleConditions:
   Enabled: true
 
 RSpec/AroundBlock:

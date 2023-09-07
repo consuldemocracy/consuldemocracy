@@ -22,8 +22,8 @@ describe InstallationController, type: :request do
       get "/consul.json"
 
       expect(response).to have_http_status(:ok)
-      expect(JSON.parse(response.body)["release"]).not_to be_empty
-      expect(JSON.parse(response.body)["features"]).to eq(test_process_settings)
+      expect(response.parsed_body["release"]).not_to be_empty
+      expect(response.parsed_body["features"]).to eq(test_process_settings)
     end
   end
 end

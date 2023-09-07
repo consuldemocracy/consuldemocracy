@@ -29,9 +29,7 @@ describe Admin::Api::StatsController, :admin do
         get :show, params: { event: "foo" }
 
         expect(response).to be_ok
-
-        data = JSON.parse(response.body)
-        expect(data).to eq "x" => ["2015-01-01", "2015-01-02"], "Foo" => [2, 1]
+        expect(response.parsed_body).to eq "x" => ["2015-01-01", "2015-01-02"], "Foo" => [2, 1]
       end
     end
 
@@ -47,9 +45,7 @@ describe Admin::Api::StatsController, :admin do
         get :show, params: { visits: true }
 
         expect(response).to be_ok
-
-        data = JSON.parse(response.body)
-        expect(data).to eq "x" => ["2015-01-01", "2015-01-02"], "Visits" => [2, 1]
+        expect(response.parsed_body).to eq "x" => ["2015-01-01", "2015-01-02"], "Visits" => [2, 1]
       end
     end
 
@@ -65,9 +61,7 @@ describe Admin::Api::StatsController, :admin do
         get :show, params: { budget_investments: true }
 
         expect(response).to be_ok
-
-        data = JSON.parse(response.body)
-        expect(data).to eq "x" => ["2017-04-01", "2017-04-02"], "Budget Investments" => [1, 2]
+        expect(response.parsed_body).to eq "x" => ["2017-04-01", "2017-04-02"], "Budget Investments" => [1, 2]
       end
     end
   end
