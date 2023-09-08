@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :machine_learning_job do
-    association :user
+    user
     script { "script.py" }
     started_at { Time.current }
     finished_at { nil }
