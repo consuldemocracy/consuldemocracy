@@ -561,6 +561,9 @@ RSpec/Rails/HaveHttpStatus:
 RSpec/Rails/InferredSpecType:
   Enabled: true
 
+RSpec/Rails/NegationBeValid:
+  Enabled: true
+
 RSpec/Rails/TravelAround:
   Enabled: true
 
