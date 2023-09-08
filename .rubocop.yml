@@ -35,6 +35,9 @@ Capybara/VisibilityMatcher:
 FactoryBot/ConsistentParenthesesStyle:
   Enabled: true
 
+FactoryBot/FactoryAssociationWithStrategy:
+  Enabled: true
+
 FactoryBot/FactoryClassName:
   Enabled: true
 
