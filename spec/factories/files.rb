@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :image do
     attachment { Rack::Test::UploadedFile.new("spec/fixtures/files/clippy.jpg") }
     title { "Lorem ipsum dolor sit amet" }
-    association :user, factory: :user
+    association :user
 
     trait :proposal_image do
       association :imageable, factory: :proposal
@@ -19,7 +19,7 @@ FactoryBot.define do
 
   factory :document do
     sequence(:title) { |n| "Document title #{n}" }
-    association :user, factory: :user
+    association :user
     attachment { Rack::Test::UploadedFile.new("spec/fixtures/files/empty.pdf") }
 
     trait :proposal_document do

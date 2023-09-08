@@ -41,6 +41,9 @@ FactoryBot/FactoryAssociationWithStrategy:
 FactoryBot/FactoryClassName:
   Enabled: true
 
+FactoryBot/RedundantFactoryOption:
+  Enabled: true
+
 Layout/ArgumentAlignment:
   Enabled: true
 

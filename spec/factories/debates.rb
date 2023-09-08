@@ -47,6 +47,6 @@ FactoryBot.define do
 
   factory :flag do
     association :flaggable, factory: :debate
-    association :user, factory: :user
+    association :user
   end
 end

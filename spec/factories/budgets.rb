@@ -251,7 +251,7 @@ FactoryBot.define do
   end
 
   factory :budget_ballot, class: "Budget::Ballot" do
-    association :user, factory: :user
+    association :user
     budget
 
     transient { investments { [] } }

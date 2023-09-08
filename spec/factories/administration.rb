@@ -41,7 +41,7 @@ FactoryBot.define do
 
   factory :banner_section, class: "Banner::Section" do
     association :banner_id, factory: :banner
-    association :web_section, factory: :web_section
+    association :web_section
   end
 
   factory :site_customization_page, class: "SiteCustomization::Page" do

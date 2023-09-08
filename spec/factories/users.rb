@@ -126,7 +126,7 @@ FactoryBot.define do
   end
 
   factory :follow do
-    association :user, factory: :user
+    association :user
 
     trait :followed_proposal do
       association :followable, factory: :proposal
