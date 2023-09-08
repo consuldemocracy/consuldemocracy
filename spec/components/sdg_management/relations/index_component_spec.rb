@@ -2,10 +2,10 @@ require "rails_helper"
 
 describe SDGManagement::Relations::IndexComponent, controller: SDGManagement::RelationsController do
   before do
-    allow(vc_test_controller).to receive(:valid_filters)
-      .and_return(SDGManagement::RelationsController::FILTERS)
-    allow(vc_test_controller).to receive(:current_filter)
-      .and_return(SDGManagement::RelationsController::FILTERS.first)
+    allow(vc_test_controller).to receive_messages(
+      valid_filters: SDGManagement::RelationsController::FILTERS,
+      current_filter: SDGManagement::RelationsController::FILTERS.first
+    )
   end
 
   it "renders the search form" do

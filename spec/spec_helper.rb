@@ -153,12 +153,9 @@ RSpec.configure do |config|
   config.before(:each, :application_zone_west_of_system_zone) do
     application_zone = ActiveSupport::TimeZone.new("Quito")
     system_zone = ActiveSupport::TimeZone.new("Madrid")
-
-    allow(Time).to receive(:zone).and_return(application_zone)
-
     system_time_at_application_end_of_day = Date.current.end_of_day.in_time_zone(system_zone)
 
-    allow(Time).to receive(:now).and_return(system_time_at_application_end_of_day)
+    allow(Time).to receive_messages(zone: application_zone, now: system_time_at_application_end_of_day)
     allow(Date).to receive(:today).and_return(system_time_at_application_end_of_day.to_date)
   end
 

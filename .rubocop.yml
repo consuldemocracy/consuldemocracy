@@ -567,6 +567,9 @@ RSpec/Rails/NegationBeValid:
 RSpec/Rails/TravelAround:
   Enabled: true
 
+RSpec/ReceiveMessages:
+  Enabled: true
+
 RSpec/RepeatedExample:
   Enabled: true
 
