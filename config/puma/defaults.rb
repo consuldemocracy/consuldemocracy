@@ -18,7 +18,6 @@ threads 0, 16
 workers 2
 preload_app!
 
-restart_command "bundle exec --keep-file-descriptors puma"
 plugin :tmp_restart
 
 on_restart do
