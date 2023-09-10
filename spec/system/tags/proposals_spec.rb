@@ -166,8 +166,8 @@ describe "Tags" do
 
     expect(page).to have_content "Proposal updated successfully."
     within(".tags") do
-      expect(page).to have_css("a", text: "Economía")
-      expect(page).to have_css("a", text: "Hacienda")
+      expect(page).to have_link "Economía"
+      expect(page).to have_link "Hacienda"
     end
   end
 

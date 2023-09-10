@@ -19,7 +19,7 @@ describe "Debates" do
       within("#debates") do
         expect(page).to have_content debate.title
         expect(page).to have_content debate.description
-        expect(page).to have_css("a[href='#{debate_path(debate)}']", text: debate.title)
+        expect(page).to have_link debate.title, href: debate_path(debate)
       end
     end
   end

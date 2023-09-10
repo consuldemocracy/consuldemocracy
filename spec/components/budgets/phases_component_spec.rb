@@ -11,7 +11,6 @@ describe Budgets::PhasesComponent do
     budget.current_phase.update!(main_link_text: "Phase link!", main_link_url: "https://consuldemocracy.org")
     render_inline Budgets::PhasesComponent.new(budget)
 
-    expect(page).to have_css(".main-link")
-    expect(page).to have_link("Phase link!", href: "https://consuldemocracy.org")
+    expect(page).to have_link "Phase link!", href: "https://consuldemocracy.org", class: "main-link"
   end
 end

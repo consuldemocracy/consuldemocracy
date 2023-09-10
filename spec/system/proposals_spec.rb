@@ -27,7 +27,7 @@ describe "Proposals" do
       featured_proposals.each do |featured_proposal|
         within("#featured-proposals") do
           expect(page).to have_content featured_proposal.title
-          expect(page).to have_css("a[href='#{proposal_path(featured_proposal)}']")
+          expect(page).to have_link href: proposal_path(featured_proposal)
         end
       end
 
@@ -36,7 +36,7 @@ describe "Proposals" do
         within("#proposals") do
           expect(page).to have_content proposal.title
           expect(page).to have_content proposal.summary
-          expect(page).to have_css("a[href='#{proposal_path(proposal)}']", text: proposal.title)
+          expect(page).to have_link proposal.title, href: proposal_path(proposal)
         end
       end
     end
