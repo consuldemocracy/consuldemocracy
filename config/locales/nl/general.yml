@@ -167,11 +167,6 @@ nl:
   geozones:
     none: Hele stad
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: U gebruikt Internet Explorer. We raden %{firefox} of %{chrome} aan voor de beste resultaten.
-      ie_title: Deze site is niet geoptimaliseert voor uw browser
     dashboard:
       proposal_header:
         published: Gepubliceerd
