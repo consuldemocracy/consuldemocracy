@@ -177,11 +177,6 @@ da:
   geozones:
     none: Hele byen
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Vi har opdaget, at du anvender Internet Explorer. For en bedre oplevelse anbefaler vi, at du anvender %{firefox} eller %{chrome}.
-      ie_title: Hjemmesiden fungerer ikke optimal sammen med din valgte browser
     dashboard:
       proposal_header:
         published: Offentliggjort
