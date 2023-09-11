@@ -173,11 +173,6 @@ hr:
   geozones:
     none: Cijeli grad
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Primjetili smo da koristite preglednik Internet Explorer. Za poboljšano iskustvo preporučujemo korištenje %{firefox} ili %{chrome}.
-      ie_title: Webstranica nije optimizirana za vaš preglednik
     dashboard:
       proposal_header:
         published: Objavljeno
