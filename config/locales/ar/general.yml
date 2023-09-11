@@ -174,11 +174,6 @@ ar:
   geozones:
     none: جميع المدن
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: فايرفوكس
-      ie: لقد اكتشفنا أنك تتصفح باستخدام Internet Explorer. للحصول على أفضل تجربة، ننصحك بإستخدام %{firefox} أو %{chrome}.
-      ie_title: هذا الموقع لا يتناسب مع متصفحك
     dashboard:
       proposal_header:
         published: منشورة
