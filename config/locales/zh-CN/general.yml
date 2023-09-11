@@ -151,11 +151,6 @@ zh-CN:
   geozones:
     none: 所有城市
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: 我们检测到您正在用Internet Explorer浏览。为了加强体验，我们建议使用%{firefox} 或者%{chrome}。
-      ie_title: 此网站没有对您的浏览器优化
     dashboard:
       proposal_header:
         published: 已发表
