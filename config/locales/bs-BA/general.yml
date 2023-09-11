@@ -158,11 +158,6 @@ bs:
   geozones:
     none: Cijelo mjesto
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Pretražujete sa Internet Explorer-om. Zbog kvalitetnijeg korištenja, preporučujemo upotrebu %{firefox} ili %{chrome}.
-      ie_title: Web-stranica nije optimizirana za vaš preglednik
     dashboard:
       proposal_header:
         published: Objavljeno
