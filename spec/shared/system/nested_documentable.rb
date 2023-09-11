@@ -25,7 +25,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       do_login_for user_to_login, management: management
       visit send(path, arguments)
 
-      expect(page).to have_css "#new_document_link"
+      expect(page).to have_link id: "new_document_link"
     end
 
     scenario "Should not show new document link when
@@ -219,7 +219,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
 
       # Review
       # Doble check why the file is stored with a name different to empty.pdf
-      expect(page).to have_css("a[href$='.pdf']")
+      expect(page).to have_link href: /.pdf\Z/
     end
 
     scenario "Should show resource with new document after successful creation with
@@ -269,7 +269,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
           click_on "Remove document"
         end
 
-        expect(page).to have_css "#new_document_link"
+        expect(page).to have_link id: "new_document_link"
       end
 
       scenario "Should remove nested field after remove document" do

@@ -243,8 +243,7 @@ describe Budget::Stats do
   describe "#all_phases" do
     context "no phases are finished" do
       before do
-        allow(stats).to receive(:support_phase_finished?).and_return(false)
-        allow(stats).to receive(:vote_phase_finished?).and_return(false)
+        allow(stats).to receive_messages(support_phase_finished?: false, vote_phase_finished?: false)
       end
 
       it "returns an empty array" do
@@ -254,8 +253,7 @@ describe Budget::Stats do
 
     context "one phase is finished" do
       before do
-        allow(stats).to receive(:support_phase_finished?).and_return(true)
-        allow(stats).to receive(:vote_phase_finished?).and_return(false)
+        allow(stats).to receive_messages(support_phase_finished?: true, vote_phase_finished?: false)
       end
 
       it "returns the finished phase" do
@@ -265,8 +263,7 @@ describe Budget::Stats do
 
     context "all phases are finished" do
       before do
-        allow(stats).to receive(:support_phase_finished?).and_return(true)
-        allow(stats).to receive(:vote_phase_finished?).and_return(true)
+        allow(stats).to receive_messages(support_phase_finished?: true, vote_phase_finished?: true)
       end
 
       it "returns the finished phases and a total phase" do

@@ -39,22 +39,19 @@ describe ManagerAuthenticator do
 
   describe "#auth" do
     it "returns false if not manager_exists" do
-      allow(authenticator).to receive(:manager_exists?).and_return(false)
-      allow(authenticator).to receive(:application_authorized?).and_return(true)
+      allow(authenticator).to receive_messages(manager_exists?: false, application_authorized?: true)
 
       expect(authenticator.auth).to be false
     end
 
     it "returns false if not application_authorized" do
-      allow(authenticator).to receive(:manager_exists?).and_return(true)
-      allow(authenticator).to receive(:application_authorized?).and_return(false)
+      allow(authenticator).to receive_messages(manager_exists?: true, application_authorized?: false)
 
       expect(authenticator.auth).to be false
     end
 
     it "returns ok if manager_exists and application_authorized" do
-      allow(authenticator).to receive(:manager_exists?).and_return(true)
-      allow(authenticator).to receive(:application_authorized?).and_return(true)
+      allow(authenticator).to receive_messages(manager_exists?: true, application_authorized?: true)
 
       expect(authenticator.auth).to be_truthy
     end

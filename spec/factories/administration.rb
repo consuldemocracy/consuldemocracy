@@ -40,8 +40,8 @@ FactoryBot.define do
   end
 
   factory :banner_section, class: "Banner::Section" do
-    association :banner_id, factory: :banner
-    association :web_section, factory: :web_section
+    banner_id factory: :banner
+    web_section
   end
 
   factory :site_customization_page, class: "SiteCustomization::Page" do
@@ -83,7 +83,7 @@ FactoryBot.define do
     end
 
     trait :budget_investment_map_location do
-      association :investment, factory: :budget_investment
+      investment factory: :budget_investment
     end
   end
 

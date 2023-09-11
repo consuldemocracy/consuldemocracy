@@ -213,9 +213,11 @@ describe "Notifications" do
     end
 
     it "sends batches in time intervals" do
-      allow(Notification).to receive(:batch_size).and_return(1)
-      allow(Notification).to receive(:batch_interval).and_return(1.second)
-      allow(Notification).to receive(:first_batch_run_at).and_return(Time.current)
+      allow(Notification).to receive_messages(
+        batch_size: 1,
+        batch_interval: 1.second,
+        first_batch_run_at: Time.current
+      )
 
       remove_users_without_pending_notifications
 

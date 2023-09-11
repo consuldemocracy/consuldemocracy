@@ -228,7 +228,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
         click_link "Remove image"
 
         expect(page).not_to have_css ".image"
-        expect(page).to have_css "a#new_image_link"
+        expect(page).to have_link id: "new_image_link"
       end
 
       scenario "don't duplicate fields after removing and adding an image" do

@@ -28,42 +28,42 @@ describe Legislation::Process do
     it "is invalid if draft is enabled but draft_start_date is not present" do
       process = build(:legislation_process, draft_phase_enabled: true, draft_start_date: nil)
 
-      expect(process).to be_invalid
+      expect(process).not_to be_valid
       expect(process.errors.messages[:draft_start_date]).to include("can't be blank")
     end
 
     it "is invalid if draft is enabled but draft_end_date is not present" do
       process = build(:legislation_process, draft_phase_enabled: true, draft_end_date: "")
 
-      expect(process).to be_invalid
+      expect(process).not_to be_valid
       expect(process.errors.messages[:draft_end_date]).to include("can't be blank")
     end
 
     it "is invalid if debate phase is enabled but debate_start_date is not present" do
       process = build(:legislation_process, debate_phase_enabled: true, debate_start_date: nil)
 
-      expect(process).to be_invalid
+      expect(process).not_to be_valid
       expect(process.errors.messages[:debate_start_date]).to include("can't be blank")
     end
 
     it "is invalid if debate phase is enabled but debate_end_date is not present" do
       process = build(:legislation_process, debate_phase_enabled: true, debate_end_date: "")
 
-      expect(process).to be_invalid
+      expect(process).not_to be_valid
       expect(process.errors.messages[:debate_end_date]).to include("can't be blank")
     end
 
     it "is invalid if proposals phase is enabled but proposals_phase_start_date is not present" do
       process = build(:legislation_process, proposals_phase_enabled: true, proposals_phase_start_date: nil)
 
-      expect(process).to be_invalid
+      expect(process).not_to be_valid
       expect(process.errors.messages[:proposals_phase_start_date]).to include("can't be blank")
     end
 
     it "is invalid if proposals phase is enabled but proposals_phase_end_date is not present" do
       process = build(:legislation_process, proposals_phase_enabled: true, proposals_phase_end_date: "")
 
-      expect(process).to be_invalid
+      expect(process).not_to be_valid
       expect(process.errors.messages[:proposals_phase_end_date]).to include("can't be blank")
     end
 
@@ -71,14 +71,14 @@ describe Legislation::Process do
       process = build(:legislation_process, allegations_phase_enabled: true,
                                             allegations_start_date: nil,)
 
-      expect(process).to be_invalid
+      expect(process).not_to be_valid
       expect(process.errors.messages[:allegations_start_date]).to include("can't be blank")
     end
 
     it "is invalid if allegations phase is enabled but allegations_end_date is not present" do
       process = build(:legislation_process, allegations_phase_enabled: true, allegations_end_date: "")
 
-      expect(process).to be_invalid
+      expect(process).not_to be_valid
       expect(process.errors.messages[:allegations_end_date]).to include("can't be blank")
     end
 
@@ -160,7 +160,7 @@ describe Legislation::Process do
     it "is invalid if end_date is before start_date" do
       process = build(:legislation_process, start_date: Date.current,
                                             end_date: Date.current - 1.day)
-      expect(process).to be_invalid
+      expect(process).not_to be_valid
       expect(process.errors.messages[:end_date]).to include("must be on or after the start date")
     end
 
@@ -179,7 +179,7 @@ describe Legislation::Process do
     it "is invalid if debate_end_date is before debate_start_date" do
       process = build(:legislation_process, debate_start_date: Date.current,
                                             debate_end_date: Date.current - 1.day)
-      expect(process).to be_invalid
+      expect(process).not_to be_valid
       expect(process.errors.messages[:debate_end_date])
         .to include("must be on or after the debate start date")
     end
@@ -193,7 +193,7 @@ describe Legislation::Process do
     it "is invalid if draft_end_date is before draft_start_date" do
       process = build(:legislation_process, draft_start_date: Date.current,
                                             draft_end_date: Date.current - 1.day)
-      expect(process).to be_invalid
+      expect(process).not_to be_valid
       expect(process.errors.messages[:draft_end_date])
         .to include("must be on or after the draft start date")
     end
@@ -201,7 +201,7 @@ describe Legislation::Process do
     it "is invalid if allegations_end_date is before allegations_start_date" do
       process = build(:legislation_process, allegations_start_date: Date.current,
                                             allegations_end_date: Date.current - 1.day)
-      expect(process).to be_invalid
+      expect(process).not_to be_valid
       expect(process.errors.messages[:allegations_end_date])
         .to include("must be on or after the comments start date")
     end

@@ -155,7 +155,7 @@ describe "Polls" do
     within ".js-questions" do
       expect(page).to have_css ".nested-fields", count: 2
       within first(".nested-fields") do
-        find("a.delete").click
+        click_link class: "delete"
       end
       expect(page).to have_css ".nested-fields", count: 1
     end
@@ -177,7 +177,7 @@ describe "Polls" do
     within ".js-questions .js-answers" do
       expect(page).to have_css ".nested-fields", count: 2
       within first(".nested-fields") do
-        find("a.delete").click
+        click_link class: "delete"
       end
       expect(page).to have_css ".nested-fields", count: 1
     end

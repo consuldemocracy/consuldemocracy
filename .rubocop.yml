@@ -1,4 +1,6 @@
 require:
+  - rubocop-capybara
+  - rubocop-factory_bot
   - rubocop-performance
   - rubocop-rails
   - rubocop-rspec
@@ -17,6 +19,33 @@ Bundler/DuplicatedGem:
 Bundler/OrderedGems:
   Enabled: true
   ConsiderPunctuation: true
+
+Capybara/CurrentPathExpectation:
+  Enabled: true
+
+Capybara/NegationMatcher:
+  Enabled: true
+
+Capybara/SpecificActions:
+  Enabled: true
+
+Capybara/VisibilityMatcher:
+  Enabled: true
+
+FactoryBot/AssociationStyle:
+  Enabled: true
+
+FactoryBot/ConsistentParenthesesStyle:
+  Enabled: true
+
+FactoryBot/FactoryAssociationWithStrategy:
+  Enabled: true
+
+FactoryBot/FactoryClassName:
+  Enabled: true
+
+FactoryBot/RedundantFactoryOption:
+  Enabled: true
 
 Layout/ArgumentAlignment:
   Enabled: true
@@ -474,23 +503,11 @@ RSpec/BeNil:
   Enabled: true
   EnforcedStyle: be
 
-RSpec/Capybara/CurrentPathExpectation:
-  Enabled: true
-
 RSpec/Capybara/FeatureMethods:
   Enabled: true
   EnabledMethods:
     - scenario
     - xscenario
-
-RSpec/Capybara/NegationMatcher:
-  Enabled: true
-
-RSpec/Capybara/SpecificActions:
-  Enabled: true
-
-RSpec/Capybara/VisibilityMatcher:
-  Enabled: true
 
 RSpec/ContextMethod:
   Enabled: true
@@ -519,12 +536,6 @@ RSpec/ExampleWording:
   Enabled: true
 
 RSpec/ExcessiveDocstringSpacing:
-  Enabled: true
-
-RSpec/FactoryBot/ConsistentParenthesesStyle:
-  Enabled: true
-
-RSpec/FactoryBot/FactoryClassName:
   Enabled: true
 
 RSpec/FilePath:
@@ -557,6 +568,15 @@ RSpec/Rails/HaveHttpStatus:
   Enabled: true
 
 RSpec/Rails/InferredSpecType:
+  Enabled: true
+
+RSpec/Rails/NegationBeValid:
+  Enabled: true
+
+RSpec/Rails/TravelAround:
+  Enabled: true
+
+RSpec/ReceiveMessages:
   Enabled: true
 
 RSpec/RepeatedExample:
