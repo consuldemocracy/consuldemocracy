@@ -169,11 +169,6 @@ he:
   geozones:
     none: בכל העיר
   layouts:
-    application:
-      chrome: גוגל כרום
-      firefox: פיירפוקס
-      ie: שמנו לב שהדפדפן שלך הוא אינטרנט אקפלורר. למען חוויה טובה יותר, אנו ממליצים להשתמש בגוגל כרום -%{chrome} או בפיירפוקס %{firefox}
-      ie_title: אתר זה אינו מותאם לדפדפן שלך
     dashboard:
       proposal_header:
         published: פורסם
