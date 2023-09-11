@@ -173,11 +173,6 @@ fr:
   geozones:
     none: Toute la ville
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Vous utilisez Internet Explorer. Pour une navigation plus sûre, %{chrome} ou %{firefox} sont recommandés.
-      ie_title: Ce site internet n'est pas affiché de manière optimale par votre navigateur.
     dashboard:
       proposal_header:
         published: Publié
