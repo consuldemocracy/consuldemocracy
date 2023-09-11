@@ -177,11 +177,6 @@ en:
   geozones:
     none: All city
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: We have detected that you are browsing with Internet Explorer. For an enhanced experience, we recommend using %{firefox} or %{chrome}.
-      ie_title: This website is not optimised for your browser
     dashboard:
       proposal_header:
         published: Published
