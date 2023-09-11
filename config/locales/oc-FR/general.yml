@@ -168,11 +168,6 @@ oc:
   geozones:
     none: Tota la vila
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Avèm detectat qu'ès navigaire dempuèi Internet Explorer. Per una melhora experiéncia te recomandam utilizar %{firefox} o %{chrome}.
-      ie_title: Aquela web es pas optimitzada per lo tieu navigador
     dashboard:
       proposal_header:
         published: Publicat
