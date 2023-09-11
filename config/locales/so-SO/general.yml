@@ -154,11 +154,6 @@ so:
   geozones:
     none: Dhaman magaloyinka
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Dab-demiska
-      ie: Waxaanu ogaanay inaad adigu internetka kula socoto. Wixii khibrad dheeraad ah, waxaan ku talineynaa isticmaalka% %{firefox} ama%{chrome}.
-      ie_title: Websaydaan laguma soo koobi karo barta internetka
     dashboard:
       proposal_header:
         published: Sobandhigaay
