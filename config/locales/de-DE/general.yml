@@ -177,11 +177,6 @@ de:
   geozones:
     none: Ganze Stadt
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Wir haben festgestellt, dass Sie Internet Explorer verwenden. Für eine verbesserte Anwendung empfehlen wir %{firefox} oder %{chrome}.
-      ie_title: Diese Website ist für Ihren Browser nicht optimiert
     dashboard:
       proposal_header:
         published: Veröffentlicht
