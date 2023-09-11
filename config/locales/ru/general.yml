@@ -165,11 +165,6 @@ ru:
   geozones:
     none: Весь город
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Мы обнаружили, что вы используете Internet Explorer. Для лучшей работы с сайтом, мы рекомендуем вам использовать %{firefox} или %{chrome}.
-      ie_title: Этот сайт не оптимизирован для вашего браузера
     dashboard:
       proposal_header:
         published: Опубликовано
