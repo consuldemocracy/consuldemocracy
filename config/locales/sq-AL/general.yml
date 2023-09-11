@@ -154,11 +154,6 @@ sq:
   geozones:
     none: I gjithë qyteti
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Ne kemi zbuluar se po shfletoni me Internet Explorer. Për një eksperiencë të zgjeruar, ne rekomandojmë përdorimin %{firefox} ose %{chrome}.
-      ie_title: Kjo faqe interneti nuk është optimizuar për shfletuesin tuaj
     dashboard:
       proposal_header:
         published: Publikuar
