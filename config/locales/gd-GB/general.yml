@@ -187,11 +187,6 @@ gd:
   geozones:
     none: Am baile air fad
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Tha sinn a’ faicinn gu bheil thu a’ cleachdadh Internet Explorer. Mholamaid gun cleachd thu %{firefox} no %{chrome}.
-      ie_title: Chan eil an làrach-lìn seo air a phiseachadh airson do bhrabhsair
     dashboard:
       proposal_header:
         published: Foillsichte
