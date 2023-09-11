@@ -156,11 +156,6 @@ val:
   geozones:
     none: Tota la ciutat
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Hem detectat que estàs navegant desde Internet Explorer. Per a una millor experiència et recomanem utilitzar %{firefox} o %{chrome}.
-      ie_title: Esta web no està optimitzada per al teu navegador
     dashboard:
       proposal_header:
         published: Publicada
