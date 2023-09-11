@@ -114,7 +114,7 @@ group :development do
   gem "rubocop-rspec", "~> 2.23.2", require: false
   gem "rvm1-capistrano3", "~> 1.4.0", require: false
   gem "scss_lint", "~> 0.60.0", require: false
-  gem "web-console", "~> 4.2.0"
+  gem "web-console", "~> 4.2.1"
 end
 
 eval_gemfile "./Gemfile_custom"
