@@ -177,11 +177,6 @@ ro:
   geozones:
     none: Tot orașul
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Am detectat că utilizați Internet Explorer. Pentru o experiență îmbunătățită, vă recomandăm să folosiți %{firefox} sau %{chrome}.
-      ie_title: Acest site web nu este optimizat pentru browserul dumnevoastră
     dashboard:
       proposal_header:
         published: Publicat
