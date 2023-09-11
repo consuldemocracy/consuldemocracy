@@ -173,11 +173,6 @@ sr:
   geozones:
     none: Цео град
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Открили смо да пртражујете путем Интернет Еxплорера. За побољшано искуство препоручујемо да користите %{firefox} или %{chrome}.
-      ie_title: Овај Wеб сајт није оптимизован за ваш прегледач
     dashboard:
       proposal_header:
         published: Објављено
