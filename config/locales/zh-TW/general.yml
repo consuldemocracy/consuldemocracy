@@ -151,11 +151,6 @@ zh-TW:
   geozones:
     none: 所有城市
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: 我們檢測到您正在使用Internet Explorer來瀏覽。 為了增強體驗，我們建議您使用%{firefox} 或%{chrome}。
-      ie_title: 此網站沒有為您的瀏覽器優化
     dashboard:
       proposal_header:
         published: 發表
