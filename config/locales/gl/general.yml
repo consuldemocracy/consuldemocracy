@@ -161,11 +161,6 @@ gl:
   geozones:
     none: Toda a cidade
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Detectamos que estás navegando dende Internet Explorer. Para unha mellor experiencia recomendámosche empregar %{chrome} ou %{firefox}.
-      ie_title: Esta web non está optimizada para o teu navegador
     dashboard:
       proposal_header:
         published: Publicada
