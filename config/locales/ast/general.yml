@@ -123,11 +123,6 @@ ast:
   geozones:
     none: Toda la ciudad
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Hemos detectado que estás navegando desde Internet Explorer. Para una mejor experiencia te recomendamos utilizar %{firefox} o %{chrome}.
-      ie_title: Esta web no está optimizada para tu navegador
     dashboard:
       proposal_header:
         published: Publicáu
