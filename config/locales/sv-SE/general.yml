@@ -177,11 +177,6 @@ sv:
   geozones:
     none: Hela staden
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Vi har upptäckt att du använder Internet Explorer. För en förbättrad upplevelse rekommenderar vi %{firefox} eller %{chrome}.
-      ie_title: Webbplatsen är inte optimerad för din webbläsare
     dashboard:
       proposal_header:
         published: Publicerad
