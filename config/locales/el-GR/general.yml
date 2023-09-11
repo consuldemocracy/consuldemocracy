@@ -160,11 +160,6 @@ el:
   geozones:
     none: Σε όλη την πόλη
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Διαπιστώσαμε ότι χρησιμοποιείτε το πρόγραμα περιήγησης Internet Explorer. Για βελτιωμένη εμπειρία, συνιστούμε τη χρήση %{firefox} ή %{chrome}.
-      ie_title: Αυτή η ιστοσελίδα δεν έχει βελτιστοποιηθεί για το πρόγραμμα περιήγησής σας
     dashboard:
       proposal_header:
         published: Δημοσιεύθηκε
