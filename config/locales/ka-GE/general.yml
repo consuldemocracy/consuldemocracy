@@ -168,11 +168,6 @@ ka:
   geozones:
     none: მთელი ქალაქი
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: როგორც ჩანს თქვენ Internet Explorer-ს იყენებთ. გაცილებით სწრაფი გამოცდილების მისაღებად გამოიყენეთ %{firefox} ან %{chrome}.
-      ie_title: ეს ვებ–გვერდი არ არის ოპტიმიზებული თქვენი ბრაუზერისთვის
     dashboard:
       proposal_header:
         published: გამოქვეყნებული
