@@ -99,9 +99,6 @@ fi:
     topic: Aihe
     image: Kuva
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
     dashboard:
       proposal_totals:
         supports:
