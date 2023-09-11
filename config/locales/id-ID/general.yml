@@ -146,11 +146,6 @@ id:
   geozones:
     none: Semua kota
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Kami telah mendeteksi bahwa Anda browsing dengan Internet Explorer. Untuk pengalaman yang disempurnakan, sebaiknya gunakan %{firefox} atau %{chrome}.
-      ie_title: Situs ini tidak dioptimalkan untuk peramban
     dashboard:
       proposal_header:
         published: Dipublikasikan
