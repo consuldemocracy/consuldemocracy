@@ -172,11 +172,6 @@ bg:
   geozones:
     none: Целият град
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Установихме, че търсите с Internet Explorer. За подобряване на опита, препоръчваме да използвате %{firefox} или %{chrome}.
-      ie_title: Този уеб сайт не е оптимизиран за вашия браузър
     dashboard:
       proposal_header:
         published: Публикувано
