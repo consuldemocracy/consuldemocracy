@@ -169,11 +169,6 @@ pt-BR:
   geozones:
     none: Toda a cidade
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Nós detectamos que você está navegando com o Internet Explorer. Para uma melhor experiência, nós recomendamos o uso do %{chrome} ou %{firefox}.
-      ie_title: Este website não está otimizado para o seu navegador
     dashboard:
       proposal_header:
         published: Publicado
