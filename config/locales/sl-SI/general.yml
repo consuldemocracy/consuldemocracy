@@ -142,9 +142,6 @@ sl:
   geozones:
     none: Celo mesto/občina
   layouts:
-    application:
-      ie: Zaznali smo, da za brskanje po internetu uporabljaš Internet Explorer. Za boljšo izkušno te spletne strani, ti predlagamo preklop na %{firefox} ali %{chrome}.
-      ie_title: Ta spletna stran ni optimizirana za tvoj brskalnik
     dashboard:
       proposal_header:
         published: Objavljena
