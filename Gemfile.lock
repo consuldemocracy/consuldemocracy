@@ -342,7 +342,7 @@ GEM
     mini_magick (4.12.0)
     mini_mime (1.1.5)
     mini_portile2 (2.8.4)
-    minitest (5.19.0)
+    minitest (5.20.0)
     mixlib-cli (2.1.8)
     mixlib-config (3.0.27)
       tomlrb
@@ -653,7 +653,7 @@ GEM
       addressable
       httpi (~> 2.0)
       nokogiri (>= 1.4.2)
-    web-console (4.2.0)
+    web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
@@ -775,7 +775,7 @@ DEPENDENCIES
   uglifier (~> 4.2.0)
   uuidtools (~> 2.2.0)
   view_component (~> 3.5.0)
-  web-console (~> 4.2.0)
+  web-console (~> 4.2.1)
   whenever (~> 1.0.0)
   wicked_pdf (~> 2.7.0)
   wkhtmltopdf-binary (~> 0.12.6)
