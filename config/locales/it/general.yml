@@ -177,11 +177,6 @@ it:
   geozones:
     none: Tutta la città
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Abbiamo rilevato che stai navigando con Internet Explorer. Per una migliore esperienza, raccomandiamo di usare %{firefox} o %{chrome}.
-      ie_title: Questo sito non è ottimizzato per il tuo browser
     dashboard:
       proposal_header:
         published: Pubblicato
