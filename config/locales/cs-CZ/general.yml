@@ -187,11 +187,6 @@ cs:
   geozones:
     none: Celé město
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Zjistili jsme, že prohlížíte aplikaci Internet Explorer. Pro rozšířené zkušenosti doporučujeme použít %{firefox} nebo %{chrome}.
-      ie_title: Tato webová stránka není optimalizována pro váš prohlížeč
     dashboard:
       proposal_header:
         published: Publikováno
