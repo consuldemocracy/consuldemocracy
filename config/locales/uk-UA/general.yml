@@ -178,11 +178,6 @@ uk-UA:
   geozones:
     none: Все місто
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Ми виявили, що ви користуєтесь браузером Internet Explorer. Для кращого результату ми рекомендуємо користуватися %{firefox} або %{chrome}.
-      ie_title: Цей вебсайт не пристосований для вашого браузера
     dashboard:
       proposal_header:
         published: Опубліковано
