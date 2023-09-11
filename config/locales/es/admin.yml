@@ -8,9 +8,8 @@ es:
       confirm_action: "¿Estás seguro? %{action} \"%{name}\""
       confirm_delete: "¿Estás seguro? Esta acción borrará \"%{name}\" y no se puede deshacer."
       confirm_hide: Confirmar moderación
-      delete: Borrar
+      delete: "Borrar"
       hide: Ocultar
-      label: "%{action} %{name}"
       restore: Volver a mostrar
       mark_featured: Destacar
       unmark_featured: Quitar destacado
@@ -26,7 +25,7 @@ es:
           all: Todos
           with_active: Activos
           with_inactive: Inactivos
-        preview: Vista previa de presupuesto
+        preview: Vista previa
       banner:
         sections_label: Secciones en las que aparece
         sections:
@@ -89,18 +88,17 @@ es:
           all: Todos
           open: Abiertos
           finished: Terminados
-        budget_investments: Proyectos de gasto
+        budget_investments: Gestionar proyectos de gasto
         table_budget_type: "Tipo"
         table_completed: Completado
         table_draft: "Borrador"
         table_duration: "Duración"
         table_name: Nombre
         table_phase: Fase
-        table_phase_progress: "(%{current_phase_number}/%{total_phases})"
         type_multiple: "Múltiples partidas"
         type_pending: "Pendiente: Aún no hay partidas"
         type_single: "Partida única"
-        admin_ballots: Urnas
+        admin_ballots: Gestionar urnas
         no_budgets: "No hay presupuestos participativos."
       create:
         notice: '¡Presupuestos participativos creados con éxito!'
@@ -171,7 +169,7 @@ es:
     budget_groups:
       name: "Nombre"
       headings_name: "Partidas"
-      headings_manage: "Partidas"
+      headings_manage: "Gestionar partidas"
       no_groups: "No hay grupos."
       amount:
         one: "Hay 1 grupo de partidas presupuestarias"
@@ -191,7 +189,7 @@ es:
       index:
         new_button: "Añadir un grupo nuevo"
     budget_headings:
-      no_headings: "El grupo <strong>%{group}</strong> no tiene ninguna partida."
+      no_headings: "No hay partidas."
       create:
         notice: "¡Partida presupuestaria creada con éxito!"
       update:
@@ -218,6 +216,7 @@ es:
         title: "Partidas de %{budget} / %{group}"
     budget_phases:
       edit:
+        title: "Editar fase"
         dates_help_text: "Solo con fines informativos"
         description_help_text: Este texto aparecerá en la cabecera cuando la fase esté activa
         duration: "Duración de la fase"
@@ -228,7 +227,6 @@ es:
         main_call_to_action_description: "Este enlace aparecerá en la cabecera de este presupuesto participativo cuando esta fase esté activa y permite al usuario ejecutar una acción específica como crear una nueva propuesta, votar las existentes, o leer más sobre el funcionamiento de los presupuestos participativos."
         name_help_text: "Este es el título de la fase que los usuarios leerán en el encabezado cuando la fase esté activa."
         save_changes: Guardar cambios
-        title: "Editar fase"
       index:
         title: "Fases de %{budget}"
     budget_investments:
@@ -285,7 +283,7 @@ es:
           incompatible: Incompatible
           price: Precio
           author: Autor
-        cannot_calculate_winners: El presupuesto debe estar en la fase "%{phase}" para poder calcular las propuestas ganadoras
+        cannot_calculate_winners: El presupuesto debe estar en las fases "Votación final", "Votación finalizada" o "Resultados" para poder calcular las propuestas ganadoras
         see_results: "Ver resultados"
         milestone_tags_filter_all: "Todas las etiquetas de seguimiento"
       show:
@@ -311,7 +309,7 @@ es:
           title: Selección
         winner:
           title: Ganador
-          "true": "Sí"
+          "true": "Si"
           "false": "No"
         valuator_groups: "Grupos de evaluadores"
         preview: Vista previa
@@ -350,7 +348,7 @@ es:
           description: "Crea un proceso con un grupo, distrito o tema. Tienes algo como una bolsa de dinero. Por ejemplo, 25.000€ para un distrito, o 10.000€ para cultura."
           link: "Crear presupuesto de partida única"
           title: "Presupuesto de <strong>partida única</strong>"
-        title: Tipo de presupuesto participativo
+        title: "Tipo de presupuesto participativo"
       phases:
         continue: "Finalizar"
         multiple:
@@ -380,7 +378,7 @@ es:
       edit:
         title: Editar hito
       create:
-        notice: "¡Nuevo hito creado con éxito!"
+        notice: '¡Nuevo hito creado con éxito!'
       update:
         notice: Hito actualizado
       delete:
@@ -434,7 +432,7 @@ es:
         commentable_type: "Tipo"
         title: Comentarios
         no_comments: No hay comentarios.
-        table_link: "Link"
+        table_link: "Enlace"
     hidden_comments:
       index:
         filter: Filtro
@@ -595,9 +593,9 @@ es:
           submit_button: Crear proceso
         proposals:
           orders:
-            id: "Ordenar por ID"
-            title: "Ordenar por título"
-            supports: "Ordenar por apoyos totales"
+            id: "Id"
+            title: "Título"
+            supports: "Apoyos totales"
         process:
           title: Proceso
           comments: Comentarios
@@ -1281,9 +1279,9 @@ es:
         title: Propuestas
         id: ID
         author: Autor
-        milestones: Hitos
         select: Seleccionar
         selected: Seleccionada
+        milestones: Hitos
         no_proposals: No hay propuestas.
       show:
         create_question: Añadir esta propuesta a una votación para ser votada
@@ -1320,7 +1318,7 @@ es:
         images_and_documents: "Imágenes y documentos"
         feature_flags: Funcionalidades
         features:
-          enabled: "Activada"
+          enabled: "Funcionalidad activada"
         map:
           title: Configuración del mapa
           help: Aquí puedes personalizar la manera en la que se muestra el mapa a los usuarios. Arrastra el marcador o pulsa sobre cualquier parte del mapa, ajusta el zoom y pulsa el botón 'Actualizar'.
@@ -1622,7 +1620,7 @@ es:
           create: Crear nueva página
           delete: Borrar página
           title: Páginas
-          see_page: Ver
+          see_page: Ver página
         new:
           title: Página nueva
           slug_help: "Texto que identifica esta página en la URL, por ejemplo <code>https://consuldemocracy.org/slug-de-pagina</code>"
@@ -1632,7 +1630,7 @@ es:
           updated_at: Última actualización
           title: Título
           slug: Slug
-          see_cards: Tarjetas
+          see_cards: Ver tarjetas
         cards:
           cards_title: tarjetas
           create_card: Crear tarjeta
@@ -1657,7 +1655,7 @@ es:
         enable: "Habilitar entidad %{tenant}"
         enabled: Habilitada
       new:
-        admin_information: 'Al crear una entidad se copiará tu usuario actual <strong>"%{username}"</strong> con el email <strong>"%{email}"</strong> y tu actual contraseña en la base de datos de la nueva entidad y se te otorgarán permisos de administración en la nueva entidad automáticamente. Nótese que serán cuentas de usuarios que están en bases de datos completamente independientes por lo que si cambias la contraseña de tu usuario en una entidad, las cuentas que tengas en otras entidades permanecerán intactas.'
+        admin_information: "Al crear una entidad se copiará tu usuario actual <strong>\"%{username}\"</strong> con el email <strong>\"%{email}\"</strong> y tu actual contraseña en la base de datos de la nueva entidad y se te otorgarán permisos de administración en la nueva entidad automáticamente. Nótese que serán cuentas de usuarios que están en bases de datos completamente independientes por lo que si cambias la contraseña de tu usuario en una entidad, las cuentas que tengas en otras entidades permanecerán intactas."
         title: Nueva entidad
       restore:
         notice: Entidad habilitada correctamente
@@ -1693,7 +1691,7 @@ es:
       field: "Campo"
       new_value: "Valor nuevo"
       old_value: "Valor anterior"
-      edited_at: "Editado el"
+      edited_at: "Editado en"
       edited_by: "Editado por"
       actions: "Acciones"
       empty: "No hay cambios registrados"
@@ -1710,19 +1708,19 @@ es:
       new:
         creating: Creando nuevo registro de censo local
       create:
-        notice: ¡Nuevo registro de censo local creado correctamente!
+        notice: '¡Nuevo registro de censo local creado correctamente!'
       edit:
         editing: Editando registro del censo local
       update:
-        notice: ¡Registro del censo local actualizado correctamente!
+        notice: '¡Registro del censo local actualizado correctamente!'
       destroy:
-        notice: ¡Registro del censo local eliminado correctamente!
+        notice: '¡Registro del censo local eliminado correctamente!'
       imports:
         new:
           title: Registros del censo local
           subtitle: Importar archivo CSV
         create:
-          notice: ¡Proceso de import de registros del censo local ejecutado correctamente!
+          notice: '¡Proceso de importación de registros del censo local ejecutado correctamente!'
         show:
           title: Gestionar censo local
           subtitle: Resultados del proceso de importación
@@ -1737,7 +1735,6 @@ es:
       comments_summary: "Resumen de comentarios"
       comments_summary_description: "Muestra un resumen de comentarios generado automáticamente en todos los elementos que pueden ser comentados."
       data_folder_content: "Contenido carpeta data"
-      error: "Error:"
       execute_script: "Ejecutar script"
       executed_by: "Ejecutado por:"
       executed_script: "Script ejecutado:"
@@ -1776,8 +1773,8 @@ es:
       select_script: "Seleccione el script pyhton a ejecutar"
       started_at: "Empezado a las:"
       tab_help: "Ayuda"
-      tab_settings: "Configuración / Contenido generado"
       tab_scripts: "Ejecutar script"
+      tab_settings: "Configuración / Contenido generado"
       tags: "Etiquetas"
       tags_description: "Genera etiquetas automáticas para todos los elementos que pueden ser etiquetados."
       title: "IA / Machine learning"
