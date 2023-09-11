@@ -161,11 +161,6 @@ pl:
   geozones:
     none: Cała dzielnica
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Wykryliśmy, że przeglądasz za pomocą Internet Explorera. Aby uzyskać lepsze wrażenia, zalecamy użycie% %{firefox} lub %{chrome}.
-      ie_title: Ta strona internetowa nie jest zoptymalizowana pod kątem Twojej przeglądarki
     dashboard:
       proposal_header:
         published: Opublikowany
