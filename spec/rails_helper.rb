@@ -67,6 +67,7 @@ end
 Capybara.exact = true
 Capybara.enable_aria_label = true
 Capybara.disable_animation = true
+Capybara.app_host ||= "http://127.0.0.1"
 
 OmniAuth.config.test_mode = true
 

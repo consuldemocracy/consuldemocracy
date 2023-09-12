@@ -11,7 +11,7 @@ class PagesController < ApplicationController
       @cards = @custom_page.cards
       render action: :custom_page
     else
-      render action: params[:id]
+      render action: params[:id].split(".").first
     end
   rescue ActionView::MissingTemplate
     head :not_found, content_type: "text/html"

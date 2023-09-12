@@ -21,14 +21,11 @@ Bundler.require(*Rails.groups)
 
 module Consul
   class Application < Rails::Application
-    config.load_defaults 6.0
+    config.load_defaults 6.1
 
     # Keep belongs_to fields optional by default, because that's the way
     # Rails 4 models worked
     config.active_record.belongs_to_required_by_default = false
-
-    # Use local forms with `form_with`, so it works like `form_for`
-    config.action_view.form_with_generates_remote_forms = false
 
     # Keep using AES-256-CBC for message encryption in case it's used
     # in any CONSUL DEMOCRACY installations
@@ -38,10 +35,9 @@ module Consul
     # should work with zeitwerk
     config.autoloader = :classic
 
-    # Use the default queue for ActiveStorage like we were doing with Rails 5.2
-    # because it will also be the default in Rails 6.1.
-    config.active_storage.queues.analysis = nil
-    config.active_storage.queues.purge    = nil
+    # Don't enable has_many_inversing because it doesn't seem to currently
+    # work with the _count database columns we use for caching purposes
+    config.active_record.has_many_inversing = false
 
     # Keep reading existing data in the legislation_annotations ranges column
     config.active_record.yaml_column_permitted_classes = [ActiveSupport::HashWithIndifferentAccess, Symbol]
@@ -55,7 +51,7 @@ module Consul
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
-    # config.time_zone = 'Central Time (US & Canada)'
+    config.time_zone = "Madrid"
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
@@ -124,7 +120,6 @@ module Consul
 
     # Add lib to the autoload path
     config.autoload_paths << Rails.root.join("lib")
-    config.time_zone = "Madrid"
     config.active_job.queue_adapter = :delayed_job
 
     # CONSUL DEMOCRACY specific custom overrides

@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "6.0.6.1"
+gem "rails", "6.1.7.4"
 
 gem "acts-as-taggable-on", "~> 9.0.1"
 gem "acts_as_votable", "~> 0.14.0"
