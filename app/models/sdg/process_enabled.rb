@@ -43,6 +43,6 @@ class SDG::ProcessEnabled
     def relatable?
       return true if controller_path_name?
 
-      (SDG::Related::RELATABLE_TYPES & [record_or_name.class.name, record_or_name]).any?
+      SDG::Related::RELATABLE_TYPES.intersect?([record_or_name.class.name, record_or_name])
     end
 end

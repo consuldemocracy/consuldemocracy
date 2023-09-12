@@ -180,7 +180,7 @@ class Budget::Stats
 
     stats_cache(*stats_methods)
 
-    def stats_cache(key, &block)
-      Rails.cache.fetch("budgets_stats/#{budget.id}/#{phases.join}/#{key}/#{version}", &block)
+    def stats_cache(key, &)
+      Rails.cache.fetch("budgets_stats/#{budget.id}/#{phases.join}/#{key}/#{version}", &)
     end
 end

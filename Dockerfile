@@ -1,4 +1,4 @@
-FROM ruby:3.0.6-buster
+FROM ruby:3.1.4-buster
 
 ENV DEBIAN_FRONTEND noninteractive
 

@@ -319,6 +319,13 @@ Lint/UselessAssignment:
 Lint/Void:
   Enabled: true
 
+Naming/BlockForwarding:
+  Enabled: true
+  Exclude:
+    - "app/controllers/application_controller.rb"
+    - "app/controllers/management/base_controller.rb"
+    - "app/controllers/subscriptions_controller.rb"
+
 Naming/VariableName:
   Enabled: true
 
@@ -620,6 +627,9 @@ Style/AndOr:
 Style/ArrayCoercion:
   Enabled: true
 
+Style/ArrayIntersect:
+  Enabled: true
+
 Style/BlockDelimiters:
   Enabled: true
 
@@ -646,6 +656,7 @@ Style/HashExcept:
 
 Style/HashSyntax:
   Enabled: true
+  EnforcedShorthandSyntax: either
 
 Style/HashTransformKeys:
   Enabled: true
