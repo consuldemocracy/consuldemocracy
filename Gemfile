@@ -87,7 +87,7 @@ group :test do
   gem "capybara", "~> 3.39.2"
   gem "capybara-webmock", "~> 0.7.0"
   gem "email_spec", "~> 2.2.2"
-  gem "rspec-rails", "~> 5.1.2"
+  gem "rspec-rails", "~> 6.0.3"
   gem "selenium-webdriver", "~> 4.12.0"
   gem "simplecov", "~> 0.22.0", require: false
   gem "simplecov-lcov", "~> 0.8.0", require: false
