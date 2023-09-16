@@ -30,6 +30,7 @@ pl:
           proposals: Wnioski
           budgets: Budżetowanie partycypacyjne
           help_page: Pomoc
+          sdg: SDG
       edit:
         editing: Edytuj baner
         form:
@@ -364,6 +365,7 @@ pl:
       index:
         new_link: "Dodaj nowy dolument"
         title: "Dokumenty"
+        url: "URL"
     hidden_users:
       index:
         filter: Filtruj
@@ -1199,6 +1201,7 @@ pl:
         proposal_notifications: Powiadomienie o wnioskach
         incomplete_verifications: Niekompletne weryfikacje
         polls: Ankiety
+        sdg: SDG
       graph:
         debate_created: Debaty
         visit: Odwiedziny
