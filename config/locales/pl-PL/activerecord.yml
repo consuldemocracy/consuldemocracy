@@ -390,6 +390,8 @@ pl:
         body: Zawartość
       tag:
         name: "Wpisz nazwę tematu"
+      tenant:
+        url: "URL"
       topic:
         title: "Tytuł"
         description: "Tekst początkowy"
@@ -504,6 +506,7 @@ pl:
         action_type: Typ
       link:
         label: Tytuł
+        url: URL
       valuator:
         description: Opis
         valuator_group_id: Grupa weryfikująca
