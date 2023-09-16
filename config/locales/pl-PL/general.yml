@@ -205,6 +205,7 @@ pl:
           many: Masz %{count} nowe powiadomienia
           other: Masz %{count} nowe powiadomienia
         notifications: Powiadomienia
+      sdg: "SDG"
   notifications:
     index:
       empty_notifications: Nie masz nowych powiadomień.
@@ -399,9 +400,12 @@ pl:
       related_content: Powiązana zawartość
     progress:
       supports: Wsparcie
+      new_action: Nowe
     index:
       edit_proposal_link: Edytuj wniosek
       retire: Wycofaj wniosek
+    resource:
+      and: i
     recommended_actions:
       pending_title: Oczekujące
       done_title: Gotowe
