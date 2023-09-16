@@ -145,11 +145,13 @@ pl:
     errors: błędy
     not_saved: "uniemożliwił zapisanie tego %{resource}. <br>Sprawdź zaznaczone pola, aby dowiedzieć się, jak je poprawić:"
     policy: Polityka prywatności
+    banner: baner
     proposal: Wniosek
     proposal_notification: "Powiadomienie"
     budget/investment: Inwestycja
     budget/group: Grupa budżetowa
     budget/heading: Nagłówek budżetu
+    legislation/draft_version: szkic
     poll/shift: Zmiana
     poll/question/answer: Odpowiedź
     user: Konto
@@ -158,6 +160,7 @@ pl:
     document: Dokument
     topic: Temat
     image: Obraz
+    site_customization/page: strona
   geozones:
     none: Cała dzielnica
   layouts:
@@ -397,18 +400,25 @@ pl:
       progress: Postęp
       community: Społeczność
       polls: Ankiety
+      mailing: E-mail
       related_content: Powiązana zawartość
     progress:
+      group_by_week: Tygodniowo
+      group_by_date: Dziennie
       supports: Wsparcie
       new_action: Nowe
     index:
       edit_proposal_link: Edytuj wniosek
       retire: Wycofaj wniosek
+    new_request:
+      links: Linki
     resource:
       and: i
     recommended_actions:
       pending_title: Oczekujące
       done_title: Gotowe
+    next_goal:
+      title: Cel
     community:
       access_community: Uzyskaj dostęp do społeczności
       participants: Uczestnicy
@@ -418,6 +428,7 @@ pl:
       index:
         title: Ankiety
         create: Utwórz sondaż
+        links: Linki
         additiontal_information: Dodatkowe informacje
       new:
         title: Nowy sondaż
@@ -437,6 +448,7 @@ pl:
     mailer:
       forward:
         support_button: Poprzyj ten wniosek
+        hi: "Witaj!"
   polls:
     all: "Wszystkie"
     no_dates: "brak przypisanej daty"
@@ -756,3 +768,5 @@ pl:
     form:
       delete_button: Usuń
       cancel_button: Anuluj
+    nested_links:
+      title: Linki
