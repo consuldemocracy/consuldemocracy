@@ -132,6 +132,8 @@ module Consul
     config.autoload_paths << "#{Rails.root}/app/graphql/custom"
     config.autoload_paths << "#{Rails.root}/app/mailers/custom"
     config.autoload_paths << "#{Rails.root}/app/models/custom"
+    config.autoload_paths << "#{Rails.root}/app/models/custom/concerns"
+
     config.paths["app/views"].unshift(Rails.root.join("app", "views", "custom"))
 
     # Set to true to enable managing different tenants using the same application
