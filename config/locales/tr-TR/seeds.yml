@@ -2,52 +2,52 @@ tr:
   seeds:
     admin_notifications:
       budget:
-        title: "Katılımcı Bütçe'yi kapatıyoruz!"
-        body: "Acele edin ve birkaç gün içinde bitmeden önce bir öneri oluşturun!"
+        title: "Katılımcı bütçeyi kapatıyoruz!"
+        body: "Acele edin ve birkaç gün içinde başvuru süresi bitmeden önce bir önerge oluşturun!"
       help:
-        title: "Consul uygulamasını dilinize çevirmemize yardımcı olun"
-        body: "Bir dili iyi biliyorsanız, Consul uygulamasını çevirmemize yardımcı olun!"
+        title: "Consul Democracy uygulamasını dilinize çevirmemize yardımcı olun"
+        body: "Bir dili iyi biliyorsanız, Consul Democracy uygulamasını çevirmemize yardımcı olun!"
       map:
-        title: "Artık öneri ve yatırımlar için coğrafi konum belirtebilirsiniz"
-        body: "Oluşturacağınız öneri veya yatırımlar için harita üzerinde bir nokta belirtebilirsiniz."
+        title: "Artık önerge ve yatırımların coğrafi konumunu belirtebilirsiniz"
+        body: "Oluşturacağınız önerge veya yatırımlar için harita üzerinde bir nokta belirtebilirsiniz."
       proposal:
-        title: "Bir öneriniz mi var?"
-        body: "Fikirlerinizle bir öneri oluşturabileceğinizi ve insanların bunu tartışıp destekleyebileceğini unutmayın."
+        title: "Bir önergeniz mi var?"
+        body: "Fikirlerinizle bir önerge oluşturabileceğinizi ve insanların bunu tartışıp destekleyebileceğini unutmayın."
     settings:
-      official_level_1_name: Resmi pozisyon 1
-      official_level_2_name: Resmi pozisyon 2
-      official_level_3_name: Resmi pozisyon 3
-      official_level_4_name: Resmi pozisyon 4
-      official_level_5_name: Resmi pozisyon 5
+      official_level_1_name: 1. resmi konum
+      official_level_2_name: 2. resmi konum
+      official_level_3_name: 3. resmi konum
+      official_level_4_name: 4. resmi konum
+      official_level_5_name: 5. resmi konum
     geozones:
       north_district: Kuzey Bölgesi
       west_district: Batı Bölgesi
       east_district: Doğu Bölgesi
-      central_district: Merkez İlçe
+      central_district: Merkez Bölge
     organizations:
       human_rights: İnsan Hakları
-      neighborhood_association: Mahalle Derneği
+      neighborhood_association: Mahalle Meclisi
     cards:
       budget:
-        title: "Katılımcı bütçe nasıl çalışır?"
-        description: "Katılımcı bütçeler, vatandaşların bütçenin bir kısmının nasıl harcanacağına doğrudan karar vermelerini, kurumun yurttaş önerilerini titiz bir şekilde izlemesini ve değerlendirmesini sağlar. Herkes için en iyi etki ve kontrol hoşnutluğu sağlanır."
-        link_text: "Katılımcı bütçeler hakkında daha fazlası"
-        label: "Katılımcı bütçeleri"
+        title: "Katılımcı bütçe nasıl işler?"
+        description: "Katılımcı bütçeler, yurttaşların bütçenin bir kısmının nasıl harcanacağına doğrudan karar vermesini, kurumun yurttaş önergelerini titiz bir şekilde izlemesini ve değerlendirmesini sağlar. Herkes için en iyi etki ve kontrol etkinliği sağlanır."
+        link_text: "Katılımcı bütçeler hakkında bilgi alın"
+        label: "Katılımcı bütçeler"
       debate:
-        title: "Münazaralar nasıl gerçekleşir?"
-        description: "Herkes herhangi bir konuda başlık açarak insanların önerilen konuyu tartışabileceği ayrı alanlar yaratabilir. Tartışmalar, herkes için önem arz eden konulara değinmek için değerlidir."
-        link_text: "Münazaralar hakkında daha fazlası"
-        label: "Münazaralar"
+        title: "Tartışmalar nasıl işler?"
+        description: "İsteyen herkes herhangi bir konu açarak insanların önerge konusunu tartışabileceği alanlar oluşturabilir. Tartışmalar, herkes için önemli konulara değinilmesini sağladığından değerlidir."
+        link_text: "Tartışmalar hakkında ayrıntılı bilgi"
+        label: "Tartışmalar"
       header:
-        title: "CONSUL"
-        description: "Vatandaş katılımı için ücretsiz yazılım."
-        link_text: "Daha fazla bilgi"
+        title: "CONSUL DEMOCRACY"
+        description: "Yurttaş katılımı için ücretsiz yazılım."
+        link_text: "Ayrıntılı bilgi"
         label: "Hoş geldiniz"
       proposal:
-        title: "Yurttaş önerileri nasıl işler?"
-        description: "Herkesin, bir yurttaş önerisi oluşturup destek alabileceği bir platform. Yeterli desteği alan öneriler oylanır ve böylece hepimiz için önemli olan sorunlara birlikte karar verebiliriz."
-        link_text: "Öneriler hakkında ayrıntılı bilgi"
-        label: "Yurttaş önerileri"
+        title: "Yurttaş önergeleri nasıl işler?"
+        description: "Herkesin, bir yurttaş önergesi oluşturup destek alabileceği bir platform. Yeterli desteği alan önergeler oylanır ve böylece hepimiz için önemli olan sorunlara birlikte karar verebiliriz."
+        link_text: "Önergeler hakkında ayrıntılı bilgi"
+        label: "Yurttaş önergeleri"
     categories:
       associations: Dernekler
       culture: Kültür
@@ -69,22 +69,22 @@ tr:
       currency: '€'
       groups:
         all_city: Tüm şehir
-        districts: İlçeler
+        districts: Bölgeler
       phases:
         description: "%{language} açıklama"
         summary: "%{language} özet"
       statuses:
-        studying_project: Projenin incelenmesi
-        bidding: Teklif verme
-        executing_project: Projeyi yürütmek
-        executed: Gerçekleştirilen
+        studying_project: Proje üzerinde çalışılıyor
+        bidding: Teklifler alınıyor
+        executing_project: Proje yürütülüyor
+        executed: Gerçekleştirildi
     legislation:
       draft_versions:
-        title: "Versiyon %{number}"
-        body: "%{language} versiyon taslağı"
+        title: "%{number}. sürüm"
+        body: "%{language} taslak sürümü"
     polls:
-      current_poll: "Geçerli Anket"
-      current_poll_geozone_restricted: "Geçerli Anket Geozone sınırlı"
-      recounting_poll: "Anket Yeniden Sayımı"
-      expired_poll_without_stats: "İstatistikler ve Sonuçlar Olmadan Süresi Dolmuş Anket"
-      expired_poll_with_stats: "İstatistikleri ve Sonuçları ile Süresi Dolmuş Anket"
+      current_poll: "Geçerli oylama"
+      current_poll_geozone_restricted: "Geçerli oylamanın coğrafi bölge sınırı var"
+      recounting_poll: "Oylama yeniden sayılıyor"
+      expired_poll_without_stats: "İstatistikleri ve sonuçları olmayan süresi dolmuş oylama"
+      expired_poll_with_stats: "İstatistikleri ve sonuçları olan süresi dolmuş oylama"

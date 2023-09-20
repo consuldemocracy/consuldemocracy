@@ -163,7 +163,7 @@ id:
       accessibility: Aksesibilitas
       conditions: Syarat dan ketentuan penggunaan
       consul: Konsul aplikasi
-      consul_url: https://github.com/consul/consul
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: KONSUL, %{year}
       description: Portal ini menggunakan %{consul} Itulah %{open_source}.
       open_source: perangkat lunak open-source

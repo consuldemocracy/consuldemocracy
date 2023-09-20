@@ -1391,7 +1391,7 @@ gd:
       show_results_and_stats: "Seall toraidhean agus stadastaireachd"
       results_and_stats_reminder: "Le bhith a’ comharrachadh nam bogsaichean-cromaige sin bidh na toraidhean agus/no na stadastaireachd rim faighinn gu poblach agus chì gach cleachdaiche iad."
       close_modal: Dùin an uinneag mhòdach
-      example_url: "Mar eisimpleir, https://consulproject.org no /help"
+      example_url: "Mar eisimpleir, https://consuldemocracy.org no /help"
     geozones:
       index:
         title: Geo-sgìre
@@ -1625,7 +1625,7 @@ gd:
           see_page: Seall
         new:
           title: Cruthaich duilleag ghnàthaichte ùr
-          slug_help: "Teacs gus an duilleag seo a chomharrachadh air URL, mar eisimpleir <code>https://consulproject.org/page-slug</code>"
+          slug_help: "Teacs gus an duilleag seo a chomharrachadh air URL, mar eisimpleir <code>https://consuldemocracy.org/page-slug</code>"
         page:
           created_at: Chaidh a chruthachadh aig
           status: Inbhe

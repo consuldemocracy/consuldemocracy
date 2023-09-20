@@ -184,7 +184,7 @@ el:
       accessibility: Προσβασιμότητα
       conditions: Όροι και προϋποθέσεις χρήσης
       consul: Εφαρμογή CONSUL
-      consul_url: https://github.com/consul/consul
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: CONSUL, %{year}
       description: Αυτή η πύλη χρησιμοποιεί το %{consul}, το οποίο είναι %{open_source}.
       open_source: λογισμικό ανοικτού κώδικα

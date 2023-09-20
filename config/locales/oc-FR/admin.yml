@@ -1455,7 +1455,7 @@ oc:
           see_page: Veire pagina
         new:
           title: Nòva pagina
-          slug_help: "Text per identificar aquesta pàgina a l’URL, per exemple <code>https://consulproject.org/page-slug</code>"
+          slug_help: "Text per identificar aquesta pàgina a l’URL, per exemple <code>https://consuldemocracy.org/page-slug</code>"
         page:
           created_at: creat
           status: Estat

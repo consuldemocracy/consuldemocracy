@@ -193,7 +193,7 @@ pt-BR:
       accessibility: Acessibilidade
       conditions: Termos e condições de uso
       consul: Aplicativo Consul
-      consul_url: https://github.com/consul/consul
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: Consul, %{year}
       description: Este portal usa o %{consul} que é %{open_source}. De Madrid para o mundo.
       open_source: programa de código aberto
