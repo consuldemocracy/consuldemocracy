@@ -16,4 +16,8 @@ class Comments::VotesComponent < ApplicationComponent
       false
     end
   end
+
+  def vote_in_favor_against_path(value)
+    comment_votes_path(comment, value: value)
+  end
 end

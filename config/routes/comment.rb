@@ -1,8 +1,9 @@
 resources :comments, only: [:create, :show] do
   member do
-    post :vote
     put :flag
     put :unflag
     put :hide
   end
+
+  resources :votes, controller: "comments/votes", only: :create
 end

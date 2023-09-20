@@ -8,6 +8,7 @@ describe "Abilities::Organization" do
   let(:organization) { create(:organization) }
   let(:debate) { create(:debate) }
   let(:proposal) { create(:proposal) }
+  let(:comment) { create(:comment) }
 
   it { should be_able_to(:show, user) }
   it { should be_able_to(:edit, user) }
@@ -22,7 +23,7 @@ describe "Abilities::Organization" do
   it { should_not be_able_to(:vote, Proposal) }
 
   it { should be_able_to(:create, Comment) }
-  it { should_not be_able_to(:vote, Comment) }
+  it { should_not be_able_to(:create, user.votes.build(votable: comment)) }
 
   it { should_not be_able_to(:read, SDG::Target) }
 

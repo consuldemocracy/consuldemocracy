@@ -3,9 +3,9 @@
   &nbsp;|&nbsp;
 
   <span class="in-favor">
-    <%= button_to vote_comment_path(comment, value: "yes"),
+    <%= button_to vote_in_favor_against_path("yes"),
                   method: "post",
-                  remote: can?(:vote, comment),
+                  remote: can?(:create, comment.votes_for.new(voter: current_user)),
                   "aria-pressed": pressed?("yes"),
                   title: t("votes.agree") do %>
       <span class="show-for-sr"><%= t("votes.agree") %></span>
@@ -14,9 +14,9 @@
   </span>
 
   <span class="against">
-    <%= button_to vote_comment_path(comment, value: "no"),
+    <%= button_to vote_in_favor_against_path("no"),
                   method: "post",
-                  remote: can?(:vote, comment),
+                  remote: can?(:create, comment.votes_for.new(voter: current_user)),
                   "aria-pressed": pressed?("no"),
                   title: t("votes.disagree") do %>
       <span class="show-for-sr"><%= t("votes.disagree") %></span>
