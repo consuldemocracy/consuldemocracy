@@ -24,6 +24,7 @@ describe "Abilities::Organization" do
 
   it { should be_able_to(:create, Comment) }
   it { should_not be_able_to(:create, user.votes.build(votable: comment)) }
+  it { should_not be_able_to(:destroy, user.votes.build(votable: comment)) }
 
   it { should_not be_able_to(:read, SDG::Target) }
 

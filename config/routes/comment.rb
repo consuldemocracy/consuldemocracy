@@ -5,5 +5,5 @@ resources :comments, only: [:create, :show] do
     put :hide
   end
 
-  resources :votes, controller: "comments/votes", only: :create
+  resources :votes, controller: "comments/votes", only: [:create, :destroy]
 end
