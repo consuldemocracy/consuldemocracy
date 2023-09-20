@@ -77,6 +77,8 @@ describe Abilities::Common do
   it { should be_able_to(:show, debate)  }
   it { should be_able_to(:create, user.votes.build(votable: debate)) }
   it { should_not be_able_to(:create, another_user.votes.build(votable: debate)) }
+  it { should be_able_to(:destroy, user.votes.build(votable: debate)) }
+  it { should_not be_able_to(:destroy, another_user.votes.build(votable: debate)) }
 
   it { should be_able_to(:show, user) }
   it { should be_able_to(:edit, user) }
@@ -184,12 +186,15 @@ describe Abilities::Common do
   describe "vote legislation proposal" do
     context "when user is not level_two_or_three_verified" do
       it { should_not be_able_to(:create, user.votes.build(votable: legislation_proposal)) }
+      it { should_not be_able_to(:destroy, user.votes.build(votable: legislation_proposal)) }
     end
 
     context "when user is level_two_or_three_verified" do
       before { user.update(level_two_verified_at: Date.current) }
       it { should be_able_to(:create, user.votes.build(votable: legislation_proposal)) }
       it { should_not be_able_to(:create, another_user.votes.build(votable: legislation_proposal)) }
+      it { should be_able_to(:destroy, user.votes.build(votable: legislation_proposal)) }
+      it { should_not be_able_to(:destroy, another_user.votes.build(votable: legislation_proposal)) }
     end
   end
 

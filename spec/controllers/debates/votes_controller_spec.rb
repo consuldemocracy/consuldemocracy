@@ -40,4 +40,17 @@ describe Debates::VotesController do
       end
     end
   end
+
+  describe "DELETE destroy" do
+    let(:user) { create(:user) }
+    let(:debate) { create(:debate) }
+    let!(:vote) { create(:vote, votable: debate, voter: user) }
+    before { sign_in user }
+
+    it "allows undoing a vote if user is allowed" do
+      expect do
+        delete :destroy, xhr: true, params: { debate_id: debate.id, id: vote }
+      end.to change { debate.reload.votes_for.size }.by(-1)
+    end
+  end
 end

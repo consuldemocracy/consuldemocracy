@@ -100,20 +100,27 @@ describe "Votes" do
         expect(page).to have_content "1 vote"
       end
 
-      scenario "Trying to vote multiple times" do
+      scenario "Allow undoing votes" do
         visit debate_path(create(:debate))
 
         click_button "I agree"
+
         expect(page).to have_content "1 vote"
+        expect(page).not_to have_content "No votes"
+
         click_button "I agree"
+
+        expect(page).to have_content "No votes"
         expect(page).not_to have_content "2 votes"
 
         within(".in-favor") do
-          expect(page).to have_content "100%"
+          expect(page).to have_content "0%"
+          expect(page).to have_css "button[aria-pressed='false']"
         end
 
         within(".against") do
           expect(page).to have_content "0%"
+          expect(page).to have_css "button[aria-pressed='false']"
         end
       end
 
@@ -335,6 +342,33 @@ describe "Votes" do
 
       expect(page).to have_content "Only verified users can vote on proposals"
       expect(page).not_to have_button "Support", disabled: :all
+    end
+  end
+
+  describe "Legislation Proposals" do
+    let(:proposal) { create(:legislation_proposal) }
+
+    scenario "Allow undoing votes" do
+      login_as verified
+      visit legislation_process_proposal_path(proposal.process, proposal)
+
+      click_button "I agree"
+
+      expect(page).to have_content "1 vote"
+      expect(page).not_to have_content "No votes"
+
+      click_button "I agree"
+
+      expect(page).to have_content "No votes"
+      expect(page).not_to have_content "2 votes"
+
+      within(".in-favor") do
+        expect(page).to have_content "0%"
+      end
+
+      within(".against") do
+        expect(page).to have_content "0%"
+      end
     end
   end
 end

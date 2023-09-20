@@ -4,7 +4,7 @@
                   title: t("votes.agree"),
                   "aria-label": agree_aria_label,
                   "aria-pressed": pressed?("yes"),
-                  method: "post",
+                  method: user_already_voted_with("yes") ? "delete" : "post",
                   remote: true do %>
       <span class="show-for-sr"><%= t("votes.agree") %></span>
     <% end %>
@@ -16,7 +16,7 @@
                   title: t("votes.disagree"),
                   "aria-label": disagree_aria_label,
                   "aria-pressed": pressed?("no"),
-                  method: "post",
+                  method: user_already_voted_with("no") ? "delete" : "post",
                   remote: true do %>
       <span class="show-for-sr"><%= t("votes.disagree") %></span>
     <% end %>

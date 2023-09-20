@@ -11,5 +11,5 @@ resources :debates do
     put "recommendations/disable", only: :index, controller: "debates", action: :disable_recommendations
   end
 
-  resources :votes, controller: "debates/votes", only: :create
+  resources :votes, controller: "debates/votes", only: [:create, :destroy]
 end

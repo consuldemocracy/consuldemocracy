@@ -23,7 +23,7 @@ namespace :legislation do
         get :suggest
       end
 
-      resources :votes, controller: "proposals/votes", only: :create
+      resources :votes, controller: "proposals/votes", only: [:create, :destroy]
     end
 
     resources :draft_versions, only: [:show] do
