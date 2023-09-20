@@ -26,4 +26,12 @@ class Shared::InFavorAgainstComponent < ApplicationComponent
         false
       end
     end
+
+    def vote_in_favor_against_path(value)
+      if votable.class.name == "Debate"
+        debate_votes_path(votable, value: value)
+      else
+        legislation_process_proposal_votes_path(votable.process, votable, value: value)
+      end
+    end
 end

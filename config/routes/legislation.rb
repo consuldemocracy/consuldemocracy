@@ -16,13 +16,14 @@ namespace :legislation do
 
     resources :proposals, except: [:index] do
       member do
-        post :vote
         put :flag
         put :unflag
       end
       collection do
         get :suggest
       end
+
+      resources :votes, controller: "proposals/votes", only: :create
     end
 
     resources :draft_versions, only: [:show] do
