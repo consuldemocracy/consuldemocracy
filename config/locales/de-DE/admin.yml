@@ -1381,7 +1381,7 @@ de:
       show_results_and_stats: "Ergebnisse und Statistiken anzeigen"
       results_and_stats_reminder: "Durch das Markieren dieses Kontrollkästchens werden die Resultate und/oder Statistiken dieser Abstimmung öffentlich abrufbar und für alle Benutzer*innen sichtbar."
       close_modal: Fenster schließen
-      example_url: "https://consulproject.org"
+      example_url: "https://consuldemocracy.org"
     geozones:
       index:
         title: Bezirke
@@ -1609,7 +1609,7 @@ de:
           see_page: Seite anzeigen
         new:
           title: Neue benutzer*definierte Seite erstellen
-          slug_help: "Text zur Identifizierung dieser Seite auf der URL, z.B. <code>https://consulproject.org/page-slug</code>"
+          slug_help: "Text zur Identifizierung dieser Seite auf der URL, z.B. <code>https://consuldemocracy.org/page-slug</code>"
         page:
           created_at: Erstellt am
           status: Status

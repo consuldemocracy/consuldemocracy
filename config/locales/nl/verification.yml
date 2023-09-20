@@ -97,7 +97,7 @@ nl:
       form:
         submit_button: Verzend code
       show:
-        email_title: Emails
+        email_title: E-mails
         explanation: Wij houden momenteel de volgende gegevens over het register bij; Selecteer een methode voor uw bevestigingscode te ontvangen.
         phone_title: Telefoonnummers
         title: Beschikbare informatie

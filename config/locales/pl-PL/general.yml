@@ -177,7 +177,7 @@ pl:
       accessibility: Ułatwienia dostępu
       conditions: Regulamin
       consul: Aplikacja CONSUL
-      consul_url: https://github.com/consul/consul
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: CONSUL, %{year}
       description: Ten portal używa %{consul}, który jest %{open_source}.
       open_source: oprogramowanie open-source

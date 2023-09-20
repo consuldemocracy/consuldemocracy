@@ -170,7 +170,7 @@ sq:
       accessibility: Dispnueshmësia
       conditions: Termat dhe kushtet e përdorimit
       consul: Consul Tirana
-      consul_url: https://github.com/consul/consul
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: Bashkia Tiranë, %{year}
       description: Ky portal përdor %{consul} i cili është %{open_source}.
       open_source: programet open-source

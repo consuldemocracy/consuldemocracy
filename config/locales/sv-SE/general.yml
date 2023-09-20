@@ -201,7 +201,7 @@ sv:
       accessibility: Tillgänglighet
       conditions: användarvillkoren
       consul: Programvaran CONSUL
-      consul_url: https://github.com/consul/consul
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: CONSUL, %{year}
       description: Den här webbplatsen använder %{consul} som är %{open_source}.
       open_source: en plattform med öppen källkod

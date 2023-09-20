@@ -1489,7 +1489,7 @@ pt-BR:
           see_page: Exibir página
         new:
           title: Criar nova página personalizada
-          slug_help: "Texto que identifica esta página no URL, por exemplo <code>https://consulproject.org/page-slug</code>"
+          slug_help: "Texto que identifica esta página no URL, por exemplo <code>https://consuldemocracy.org/page-slug</code>"
         page:
           created_at: Criado em
           status: Status
