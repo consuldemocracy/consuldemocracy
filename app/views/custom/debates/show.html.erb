@@ -1,0 +1,75 @@
+<% provide :title do %><%= @debate.title %><% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: debate_url(@debate) %>
+<% end %>
+
+<% cache [locale_and_user_status(@debate),
+          @debate,
+          @debate.author,
+          Flag.flagged?(current_user, @debate),
+          current_user&.voted_as_when_voted_for(@debate)] do %>
+  <div class="debate-show">
+    <div id="<%= dom_id(@debate) %>" class="row">
+      <div class="small-12 medium-9 column">
+        <%= back_link_to %>
+
+        <h1><%= @debate.title %></h1>
+        <% if @debate.conflictive? %>
+          <div data-alert class="callout alert margin-top">
+            <strong><%= t("debates.show.flag") %></strong>
+          </div>
+        <% end %>
+
+        <div class="debate-info">
+          <%= render "/shared/author_info", resource: @debate %>
+
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
+          <%= l @debate.created_at.to_date %>
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
+          <%= render Shared::CommentsCountComponent.new(@debate.comments_count, url: "#comments") %>
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
+          <span class="js-flag-actions">
+            <%= render "shared/flag_actions", flaggable: @debate %>
+          </span>
+        </div>
+
+        <%= auto_link_already_sanitized_html wysiwyg(@debate.description) %>
+
+        <!-- 
+        <%= render "shared/tags", taggable: @debate %>
+
+        <%= render "relationable/related_content", relationable: @debate %>
+        -->
+        <div class="js-moderator-debate-actions margin">
+          <%= render "actions", debate: @debate %>
+        </div>
+      </div>
+
+      <aside class="small-12 medium-3 column">
+        <% if current_user && @debate.editable_by?(current_user) %>
+          <div class="sidebar-divider"></div>
+          <h2><%= t("debates.show.author") %></h2>
+          <%= link_to edit_debate_path(@debate), class: "button hollow expanded" do %>
+            <span class="icon-edit"></span>
+            <%= t("debates.show.edit_debate_link") %>
+          <% end %>
+        <% end %>
+
+        <!--
+        <div class="sidebar-divider"></div>
+        <h2><%= t("votes.supports") %></h2>
+        <div id="<%= dom_id(@debate) %>_votes">
+          <%= render "debates/votes", debate: @debate %>
+        </div>
+        <%= render "shared/social_share",
+                   share_title: t("debates.show.share"),
+                   title: @debate.title,
+                   url: debate_url(@debate),
+                   description: @debate.title,
+                   mobile: @debate.title %> -->
+      </aside>
+    </div>
+  </div>
+<% end %>
+
+<%= render "comments" %>

@@ -40,9 +40,9 @@
         </div>
       </div>
 
-      <%= render Shared::AdvancedSearchComponent.new %>
+      <!-- <%= render Shared::AdvancedSearchComponent.new %> -->
 
-      <%= render "shared/order_links", i18n_namespace: "debates.index" %>
+      <!-- <%= render "shared/order_links", i18n_namespace: "debates.index" %> -->
 
       <div class="show-for-small-only">
         <%= link_to t("debates.index.start_debate"), new_debate_path, class: "button expanded" %>
@@ -77,11 +77,12 @@
 
     <div class="small-12 medium-3 column">
       
+      <% if is_admin? %>
       <aside class="margin-bottom">
         <%= link_to t("debates.index.start_debate"), new_debate_path, class: "button expanded" %>
        <!-- <%= render "shared/tag_cloud", taggable: "Debate" %> -->
       </aside>
-
+      <% end %>
     </div>
 
   </div>
