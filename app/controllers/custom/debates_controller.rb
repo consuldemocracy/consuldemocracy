@@ -7,6 +7,7 @@ class DebatesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_view, only: :index
   before_action :debates_recommendations, only: :index, if: :current_user
+  before_action :authorize_admin!, only: [:new, :create, :edit, :update]
 
   feature_flag :debates
 
@@ -27,18 +28,25 @@ class DebatesController < ApplicationController
     current_user&.administrator?
   end
 
-  def new
-    if is_admin?
-      # Allow admin to access the debate creation page
-      @debate = Debate.new
-    else
+  def authorize_admin!
+    unless is_admin?
       redirect_to debates_path, alert: t("unauthorized.default")
     end
   end
+
+  # def new
+  #   if is_admin?
+  #     # Allow admin to access the debate creation page
+  #     @debate = Debate.new
+  #   else
+  #     redirect_to debates_path, alert: t("unauthorized.default")
+  #   end
+  # end
   
   def show
     super
     redirect_to debate_path(@debate), status: :moved_permanently if request.path != debate_path(@debate)
+    
   end
 
   def vote

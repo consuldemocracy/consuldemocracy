@@ -1,0 +1,35 @@
+<div class="expanded no-margin-top polls-show-header">
+  <div class="row">
+    <div class="small-12 medium-9 column padding">
+      <% if @poll.related.nil? %>
+        <%= back_link_to polls_path, t("polls.show.back") %>
+      <% else %>
+        <%= link_to t("polls.poll_header.back_to_proposal"), [@poll.related] %>
+      <% end %>
+
+      <h1><%= @poll.name %></h1>
+
+      <%= auto_link_already_sanitized_html simple_format(@poll.summary) %>
+
+      <% if @poll.geozones.any? %>
+        <ul class="margin-top tags">
+          <% @poll.geozones.each do |g| %>
+            <li><span><%= g.name %></span></li>
+          <% end %>
+        </ul>
+      <% end %>
+     <!-- <%= render SDG::TagListComponent.new(@poll, linkable: false) %> -->
+    </div>
+
+    <!-- 
+    <aside class="small-12 medium-3 column margin-top">
+      <%= render "shared/social_share",
+                 share_title: t("shared.share"),
+                 title: @poll.name,
+                 url: poll_url(@poll),
+                 description: @poll.name,
+                 mobile: @poll.name %>
+    </aside>
+    -->
+  </div>
+</div>
