@@ -1,0 +1,24 @@
+<header class="header">
+  <div class="top-links">
+    <!-- <%= render Layout::LocaleSwitcherComponent.new %> -->
+
+    <%= link_to root_path do %>
+      <%= t("admin.dashboard.index.back", org: setting["org_name"]) %>
+    <% end %>
+  </div>
+
+  <div class="top-bar">
+    <h1>
+      <%= link_to namespace_path do %>
+        <%= setting["org_name"] %>
+        <br><small><%= namespaced_header_title %></small>
+      <% end %>
+    </h1>
+
+    <% if show_account_menu? %>
+      <%= render Layout::ResponsiveMenuComponent.new do %>
+        <%= render Layout::AccountMenuComponent.new(user) %>
+      <% end %>
+    <% end %>
+  </div>
+</header>

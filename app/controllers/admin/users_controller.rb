@@ -12,4 +12,7 @@ class Admin::UsersController < Admin::BaseController
       format.js
     end
   end
+
+  
+  
 end
