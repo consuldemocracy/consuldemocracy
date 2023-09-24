@@ -463,6 +463,7 @@ class Admin::MenuComponent < ApplicationComponent
           images_link,
           content_blocks_link,
           local_census_records_link,
+          maps_link,
           class: ("is-active" if settings?)
         )
     end
@@ -522,6 +523,14 @@ class Admin::MenuComponent < ApplicationComponent
         t("admin.menu.local_census_records"),
         admin_local_census_records_path,
         local_census_records?
+      ]
+    end
+
+    def maps_link
+      [
+        t("admin.menu.maps"),
+        admin_maps_path,
+        maps?
       ]
     end
 
