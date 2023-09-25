@@ -1,0 +1,27 @@
+@mixin card {
+  position: relative;
+
+  &:focus-within {
+    outline: $outline-focus;
+
+    a:focus {
+      outline: none;
+    }
+  }
+
+  a {
+    &::after,
+    &::before {
+      bottom: 0;
+      content: "";
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
