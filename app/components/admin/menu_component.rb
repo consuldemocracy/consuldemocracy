@@ -55,8 +55,7 @@ class Admin::MenuComponent < ApplicationComponent
 
     def settings?
       controllers_names = ["settings", "tenants", "tags", "geozones", "local_census_records", "imports"]
-      controllers_names.include?(controller_name) &&
-        controller.class.module_parent != Admin::Poll::Questions::Answers
+      controllers_names.include?(controller_name)
     end
 
     def customization?
