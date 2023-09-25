@@ -83,11 +83,11 @@ tr:
             long_title: "2020 yılına kadar, trafik kazalarından kaynaklanan toplam yaralanma ve ölüm sayısının yarıya indirilmesi."
             short_title: "Trafik kazalarında yaralanma ve ölümlerin azaltılması"
           target_3_7:
-            long_title: "2030 yılına kadar, aile planlaması, bilgilendirme ve eğitim ile birlikte cinsel sağlık ve üreme sağlığı hizmetlerine evrensel erişimin sağlanması ve üreme sağlığının ulusal strateji ve programlarıyla bütünleştirilmesi."
-            short_title: "Cinsel sağlık ve üreme sağlığı ile ilgili bakım, aile planlaması ve eğitime evrensel erişim sağlanması"
+            long_title: "2030 yılına kadar, herkesin aile planlaması, bilgilendirme ve eğitim ile birlikte cinsel sağlık ve üreme sağlığı hizmetlerine erişmesinin sağlanması ve üreme sağlığının ulusal strateji ve programlarıyla bütünleştirilmesi."
+            short_title: "Herkesin cinsel sağlık ve üreme sağlığı ile ilgili bakım, aile planlaması ve eğitime erişmesinin sağlanması"
           target_3_8:
-            long_title: "Finansal risk koruması, kaliteli temel sağlık hizmetlerine erişim ile herkesin güvenli, etkili, kaliteli ve kabul edilebilir fiyatlı zorunlu ilaçlara ve aşılara erişimini de kapsayan evrensel bir sağlık güvencesi sisteminin sağlanması."
-            short_title: "Evrensel kapsamda sağlık hizmetlerine ulaşımın sağlanması"
+            long_title: "Finansal risk koruması, kaliteli temel sağlık hizmetlerine erişim ile herkesin güvenli, etkili, kaliteli ve kabul edilebilir fiyatlı zorunlu ilaçlara ve aşılara erişimini de kapsayan genel sağlık güvencesi sisteminin sağlanması."
+            short_title: "Herkese genel sağlık güvencesi sağlanması"
           target_3_9:
             long_title: "2030 yılına kadar, zararlı kimyasallar ile hava, su ve toprak kirliliğinden kaynaklanan hastalıkların ve ölümlerin sayısının büyük ölçüde azaltılması."
             short_title: "Tehlikeli kimyasallar ve kirlilik nedeniyle hastalıkların ve ölümlerin azaltılması"
@@ -96,7 +96,7 @@ tr:
             short_title: "DSÖ Tütün Denetimi Çerçeve Sözleşmesi'nin uygulanması"
           target_3_B:
             long_title: "Öncelikli olarak, gelişmekte olan ülkeleri etkileyen bulaşıcı olan ve bulaşıcı olmayan hastalıklar için aşı ve ilaçların geliştirilmesinin desteklenmesi. Gelişmekte olan ülkelerin kamu sağlığının korunmasına yönelik esnekliklere ilişkin Fikri Mülkiyet Haklarının Ticari Niteliklerine İlişkin Anlaşma hükümlerini tamamıyla uygulayabilme hakkını onaylayan TRIPS Anlaşması ve Doha Bildirgesi gereğince, uygun fiyatlı temel ilaçlara ve aşılara erişimin sağlanması ve özellikle her kesimden bireylerin ilaçlara erişiminin sağlanması."
-            short_title: "Uygun fiyatlı aşılar ve ilaçlar için araştırma, geliştirme ve evrensel erişimin desteklenmesi"
+            short_title: "Aşı ve ilaçlara herkesin uygun fiyatlarla erişmesinin sağlanması için araştırma ve geliştirme çalışmalarının desteklenmesi"
           target_3_C:
             long_title: "Az gelişmiş ülkeler ve gelişmekte olan küçük ada devletleri başta olmak üzere gelişmekte olan ülkelerde sağlık hizmeti finansmanının ve sağlık iş gücü istihdamının, geliştirilmesinin, eğitilmesinin ve sürekliliğinin önemli ölçüde artırılması."
             short_title: "Gelişmekte olan ülkelerde sağlık finansmanının artırılması ve sağlık iş gücünün desteklenmesi"
@@ -126,7 +126,7 @@ tr:
             short_title: "Eğitimde ayrımcılığın tümüyle ortadan kaldırılması"
           target_4_6:
             long_title: "2030 yılına kadar bütün gençlerin ve hem erkek hem de kadın yetişkinlerin büyük bir kısmının okuryazar olması ve matematiksel beceriler kazanmasının garanti edilmesi."
-            short_title: "Evrensel okuryazarlık ve matematik eğitiminin sağlanması"
+            short_title: "Herkese okuryazarlık ve matematik eğitimi verilmesi"
           target_4_7:
             long_title: "2030 yılına kadar, diğerleri arasında sürdürülebilir kalkınma ve sürdürülebilir yaşam tarzları için eğitim, insan hakları, toplumsal cinsiyet eşitliği, barış ve şiddetsizlik kültürünün teşviki, dünya vatandaşlığı ve kültürel çeşitliliğin ve kültürün sürdürülebilir kalkınmaya katkısının değerlendirilmesi ile birlikte bütün öğrencilerin sürdürülebilir kalkınmanın geliştirilmesi için gereken bilgi ve becerileri edinmesinin sağlanması."
             short_title: "Sürdürülebilir kalkınma ve küresel yurttaşlık eğitimi"
@@ -161,8 +161,8 @@ tr:
             long_title: "Kadınların siyasi, ekonomik ve sosyal yaşamın her düzeyinde karar alma süreçlerine tam ve etkin biçimde katılmasının ve liderlik etmeleri için eşit fırsatlar tanınmasının garanti altına alınması."
             short_title: "Liderlik ve karar alma süreçlerinde tam katılımın sağlanması"
           target_5_6:
-            long_title: "Uluslararası Nüfus ve Kalkınma Konferansı Eylem Programı ve Pekin Eylem Platformu ile bunların gözden geçirme konferanslarının sonuç belgelerine uygun olarak üzerinde anlaşılmış cinsel sağlık, üreme sağlığı ve üreme haklarına evrensel erişimin sağlanması."
-            short_title: "Üreme sağlığına ve haklarına evrensel erişimin sağlanması"
+            long_title: "Uluslararası Nüfus ve Kalkınma Konferansı Eylem Programı ve Pekin Eylem Platformu ile bunların gözden geçirme konferanslarının sonuç belgelerine uygun olarak üzerinde anlaşılmış cinsel sağlık, üreme sağlığı ve üreme haklarına herkesin erişmesinin sağlanması."
+            short_title: "Herkesin üreme sağlığına ve haklarına erişmesinin sağlanması"
           target_5_A:
             long_title: "Ulusal yasalara uygun olarak, kadınların ekonomik kaynaklara eşit ulaşımının, toprak, finansal hizmetler, miras ve doğal kaynaklar üzerinde mülkiyet ve kontrole erişim hakkının verilmesine yönelik reformların gerçekleştirilmesi."
             short_title: "Ekonomik kaynaklar, mülk sahipliği ve finansal hizmetlerde hak eşitliğinin sağlanması"
@@ -179,7 +179,7 @@ tr:
         long_description: '<p>Temiz içme suyuna ve hijyene ulaşım konusunda büyük bir ilerleme kaydedilmiş olsa bile, milyarlarca insan, özellikle kırsal kesimdekiler, temel hizmetlere ulaşma konusunda hala sorun yaşıyor. Dünya çapında, <a href="https://www.who.int/news-room/detail/18-06-2019-1-in-3-people-globally-do-not-have-access-to-safe-drinking-water-unicef-who">üç kişiden biri güvenli içme suyuna erişemiyor</a>, <a href="https://www.unwater.org/water-facts/water-sanitation-and-hygiene/">beş kişiden ikisi su ve sabunla el yıkayamıyor</a> ve <a href="https://news.un.org/en/story/2019/11/1051561">673 milyondan fazla kişi tuvalet gereksinimini açık alanlarda gideriyor</a>.</p> <p>COVID-19 salgını, hastalıkların önlenmesi ve kontrol altında tutulması için sıhhi tesisatın, hijyenin ve temiz suya yeterli erişimin ne kadar büyük önemli olduğunu göstermiş oldu. <a href="https://www.unwater.org/water-facts/handhygiene/">El temizliği hayat kurtarır</a>. Dünya Sağlık Örgütü’ne göre, COVID-19 ile birlikte patojenlerin yayılmasını azaltmak ve enfeksiyonları engellemek için, <a href="https://www.who.int/news-room/events/detail/2020/05/05/default-calendar/hand-hygiene-day">en etkili yöntemlerden biri el yıkamaktır</a>. Buna rağmen milyarlarca insan hala güvenli hijyenik suya ulaşmakta sorun yaşıyor ve bu konuya ayrılan mali kaynaklar yetersiz kalıyor.</p>'
         targets:
           target_6_1:
-            long_title: "2030 yılına kadar, herkesin güvenilir ve uygun fiyatlı içme suyuna evrensel ve eşit erişiminin sağlanması."
+            long_title: "2030 yılına kadar, herkesin, heryerde güvenilir ve uygun fiyatlı içme suyuna eşit erişiminin sağlanması."
             short_title: "Güvenli ve uygun maliyetli içme suyunun sağlanması"
           target_6_2:
             long_title: "2030 yılına kadar, herkesin uygun temizlik ve hijyen koşullarına eşit biçimde erişmesinin sağlanması ve kadınlarla kız çocuklarının ve savunmasız durumda olanların gereksinimlerine özel önem gösterilerek kamuya açık alanlarda dışkılamanın sona erdirilmesi."
@@ -206,11 +206,11 @@ tr:
         title: "Erişilebilir ve temiz enerji sağlanması"
         title_in_two_lines: "Erişilebilir ve temiz enerji sağlanması"
         description: "Uygun fiyatlı, güvenilir, sürdürülebilir ve modern enerjiye erişiminin sağlanması."
-        long_description: '<p>Dünya, enerjinin daha sürdürülebilir ve yaygın olarak kullanılabilir hale geldiğine dair umut verici işaretlerle <a href="https://unstats.un.org/sdgs/report/2019/goal-07/">Hedef 7’ye doğru ilerleme</a> kaydetmektedir. Yoksul ülkelerdeki elektriğe ulaşım hız kazanmaya başlamakta, enerji verimliliği iyileşmeye devam etmekte ve yenilenebilir enerji, elektrik üretim sektöründe etkileyici kazanımlar elde etmektedir.&nbsp;</p> <p>Buna rağmen, 3 milyar insan için temiz ve güvenli yemek pişirme yakıtlarına ve teknolojilerine ulaşımı iyileştirmek, yenilenebilir enerji kullanımını elektrik üretim sektörü dışına genişletmek ve Sahara altı Afrika bölgesinde elektriğe ulaşımı artırmak adına odağımızı kuvvetlendirmemiz gerekmektedir.</p> <p><a href="https://trackingsdg7.esmap.org/">Enerji İlerleme Raporu</a>, enerjiye ulaşımdaki, enerji verimliliğindeki ve yenilenebilir enerjideki ilerlemenin kaydedilebileceği küresel bir gösterge paneli sağlamaktadır. Her bir ülke tarafından bu üç maddede katedilen ilerlemenin değerlendirmesi yapılmakta ve 2030 Sürdürülebilir Kalkınma Hedeflerine ulaşmak için daha ne kadar mesafemiz olduğunun anlık görüntüsü sağlanmaktadır.</p>'
+        long_description: '<p>Dünya, enerjinin daha sürdürülebilir ve yaygın olarak kullanılabilir olduğu ile ilgili umut verici işaretlerle <a href="https://unstats.un.org/sdgs/report/2019/goal-07/">Hedef 7’ye doğru ilerleme</a> kaydediyor. Yoksul ülkelerde elektriğe ulaşım hız kazanıyor, enerji verimliliği iyileşiyor ve yenilenebilir enerji, elektrik üretim sektöründe etkileyici kazanımlar elde ediyor.&nbsp;</p> <p>Buna rağmen, 3 milyar insanın temiz ve güvenli yemek pişirmesi için yakıtlara ve teknolojilere erişimini kolaylaştırmak, yenilenebilir enerji kullanımını elektrik üretim sektörü dışına genişletmek ve Sahra Altı Afrika bölgesinde elektriğe erişimi artırmak için odağın kuvvetlendirilmesi gerekiyor.</p> <p><a href="https://trackingsdg7.esmap.org/">Enerji İlerleme Raporu</a>, enerjiye ulaşmakta, enerji verimliliğinde ve yenilenebilir enerji kullanımında ilerleme kaydedilebilecek küresel bir görünüm sunuyor. Her ülke tarafından bu üç maddede kaydedilen ilerlemenin değerlendirmesi yapılıyor ve 2030 Sürdürülebilir Kalkınma Hedeflerine ulaşmak için ne kadar yol kaldığının anlık görüntüsü sağlanıyor.</p>'
         targets:
           target_7_1:
-            long_title: "2030’a kadar, uygun fiyatlı, güvenilir ve modern enerji hizmetlerine evrensel erişimin garanti altına alınması."
-            short_title: "Modern Enerjiye Evrensel Erişimin Sağlanması"
+            long_title: "2030 yılına kadar, herkesin uygun fiyatlı, güvenilir ve modern enerji hizmetlerine erişmesinin sağlanması."
+            short_title: "Herkesin modern enerjiye erişmesinin sağlanması"
           target_7_2:
             long_title: "2030’a kadar, küresel enerji kaynakları çeşitliliği içerisinde yenilenebilir enerjinin payının büyük ölçüde artırılması."
             short_title: "Yenilenebilir Enerjinin Küresel Yüzdesinin Artırılması"
@@ -258,7 +258,7 @@ tr:
             short_title: "Faydalı ve Sürdürülebilir Turizmin Teşvik Edilmesi"
           target_8_10:
             long_title: "Herkesin bankacılık, sigorta ve finansal hizmetlere erişiminin genişletilmesi ve bu hizmetlerin teşvik edilmesi için yurt için finansal kurumların kapasitesinin güçlendirilmesi."
-            short_title: "Bankacılık, Sigorta ve Finansal Hizmetlere Evrensel Erişim Sağlanması"
+            short_title: "Herkesin bankacılık, sigorta ve finansal hizmetlere erişmesinin sağlanması"
           target_8_A:
             long_title: "Özellikle en az gelişmiş ülkeler dahil olmak üzere gelişmekte olan ülkeler için, En Az Gelişmiş Ülkelere Ticaretle Bağlantılı Teknik Destek İçin Entegre Edilmiş Çerçeve Dayanışma Fonu aracılığıyla ticaret yardımının artırılması."
             short_title: "Ticaret Desteği için Yardımın Artırılması"
@@ -293,8 +293,8 @@ tr:
             long_title: "Sanayi çeşitliliği ve sanayi ürünlerinde değer artırımının yanı sıra, elverişli bir politika ortamı sağlamak için, gelişmekte olan ülkelerde yurt içi teknoloji gelişiminin, araştırma ve yenilikçiliğin desteklenmesi."
             short_title: "Yerli Teknoloji Geliştirilmesi ve Endüstriyel Çeşitliliğin Desteklenmesi"
           target_9_C:
-            long_title: "Bilgi ve iletişim teknolojisine erişimin önemli ölçüde artırılması ve en az gelişmiş ülkelerde 2020'ye kadar evrensel ve ekonomik internet hizmetlerine erişimin sağlanması için çaba gösterilmesi."
-            short_title: "Bilgi ve İletişim Teknolojisine Evrensel Erişimin Sağlanması"
+            long_title: "Bilgi ve iletişim teknolojisine erişimin önemli ölçüde artırılması ve 2020 yılına kadar en az gelişmiş ülkelerde herkesin ekonomik internet hizmetlerine erişimin sağlanması için çaba gösterilmesi."
+            short_title: "Herkesin bilgi ve iletişim teknolojilerine erişmesinin sağlanması"
       goal_10:
         title: "Eşitsizliklerin Azaltılması"
         title_in_two_lines: "Eşitsizliklerin Azaltılması"
@@ -306,7 +306,7 @@ tr:
             short_title: "Gelir Eşitsizliklerinin Azaltılması"
           target_10_2:
             long_title: "2030'a kadar, yaşa, cinsiyete, engelliliğe, ırka, etnik kökene, soya, dine veya ekonomik ya da diğer rollere bakılmaksızın herkesin sosyal, ekonomik ve politik katılımının güçlendirilmesi ve teşvik edilmesi."
-            short_title: "Evrensel Sosyal, Ekonomik ve Politik Katılımın Teşvik Edilmesi"
+            short_title: "Herkesin sosyal, ekonomik ve politik katılımda bulunmaya özendirilmesi"
           target_10_3:
             long_title: "Ayrımcı yasaların, politikaların ve uygulamaların sona erdirilmesi ve bu bağlamda uygun mevzuat, politikalar ve eylemlerin teşvik edilmesi ile sonuç eşitsizliklerinin azaltılması ve fırsat eşitliğinin garanti altına alınması."
             short_title: "Fırsat Eşitliğinin Sağlanması ve Ayrımcılığın Sona Erdirilmesi"
@@ -356,7 +356,7 @@ tr:
             long_title: "2030’a kadar, hava kalitesine ve belediye ve diğer atık yönetimlerine özel önem gösterilerek şehirlerin kişi başına düşen olumsuz çevresel etkilerinin azaltılması."
             short_title: "Şehirlerin Çevresel Etkisinin Azaltılması"
           target_11_7:
-            long_title: "2030'a kadar, özellikle kadınlar ve çocuklar, yaşlılar ve engelli bireylerin güvenli, her kesimi kapsayan ve ulaşılabilir, yeşil ve açık alanlara evrensel erişimlerinin sağlanması."
+            long_title: "2030 yılına kadar, özellikle kadınlar, çocuklar, yaşlılar ve engelli bireylerin güvenli, her kesimi kapsayan ve ulaşılabilir şekilde yeşil ve açık alanlara erişmesinin sağlanması."
             short_title: "Güvenli ve Kapsayıcı Yeşil ve Kamusal Alanlara Erişimin Sağlanması"
           target_11_A:
             long_title: "Ulusal ve bölgesel kalkınma planının güçlendirilmesi aracılığıyla kentsel, kent çevresi ve kırsal alanlar arasındaki pozitif ekonomik, sosyal ve çevresel bağlantıların desteklenmesi."
@@ -396,7 +396,7 @@ tr:
             short_title: "Sürdürülebilir Kamu Alımları Uygulamalarının Teşvik Edilmesi "
           target_12_8:
             long_title: "2030'a kadar, dünyanın her yerindeki insanların doğa ile uyumlu, sürdürülebilir kalkınma ve yaşam tarzları için ilgili bilgilere ve farkındalığa sahip olmalarını sağlamak."
-            short_title: "Sürdürülebilir Yaşam Tarzlarının Evrensel Olarak Anlaşılmasının Teşvik Edilmesi"
+            short_title: "Sürdürülebilir yaşam tarzlarının genel olarak anlaşılmasının özendirilmesi"
           target_12_A:
             long_title: "Gelişmekte olan ülkelerin daha sürdürülebilir tüketim ve üretim modellerine doğru ilerlemeleri için bilimsel ve teknolojik kapasitelerini güçlendirme konusunda desteklenmesi."
             short_title: "Gelişmekte Olan Ülkelerin Sürdürülebilir Tüketim ve Üretim İçin Bilimsel ve Teknolojik Kapasitesinin Desteklenmesi"
@@ -537,7 +537,7 @@ tr:
             short_title: "Küresel Yönetişime Katılımın Güçlendirilmesi"
           target_16_9:
             long_title: "2030'a kadar, doğum kaydı dahil herkes için yasal kimlik sağlamak."
-            short_title: "Evrensel Yasal Tanınmanın Sağlanması"
+            short_title: "Herkes için yasal tanınmanın sağlanması"
           target_16_10:
             long_title: "Ulusal mevzuata ve uluslararası anlaşmalara uygun olarak halkın bilgiye erişiminin sağlanması ve temel özgürlüklerin korunması."
             short_title: "Halkın Bilgiye Erişiminin Sağlanması ve Temel Özgürlüklerin Korunması"
@@ -581,8 +581,8 @@ tr:
             long_title: "Kuzey-Güney, Güney-Güney ve üçlü işbirliği dahil olmak üzere tüm Sürdürülebilir Kalkınma Hedeflerinin uygulanabilmesi adına ulusal planları desteklemek amacıyla gelişmekte olan ülkelerdeki etkili ve hedeflenen kapasite geliştirme uygulamaları için uluslararası destek sağlanması."
             short_title: "Gelişmekte Olan Ülkelerde SGA Kapasitesinin Artırılması "
           target_17_10:
-            long_title: "Doha Kalkınma Gündemi çerçevesinde yürütülen müzakerelerin sonuçlandırılması da dahil olmak üzere, Dünya Ticaret Örgütü bünyesinde evrensel, kurallara dayanan, açık, ayrımcı olmayan ve eşitlikçi, çok taraflı bir ticaret sisteminin desteklenmesi."
-            short_title: "DTÖ Gözetiminde bir Evrensel Ticaret Sisteminin Teşvik Edilmesi"
+            long_title: "Doha Kalkınma Gündemi çerçevesinde yürütülen görüşmelerin sonuçlandırılması ile birlikte, Dünya Ticaret Örgütü bünyesinde herkes için geçerli, kurallara dayanan, açık, ayrımcı olmayan ve eşitlikçi, çok taraflı bir ticaret sisteminin desteklenmesi."
+            short_title: "DTÖ gözetiminde herkes için geçerli bir ticaret sisteminin özendirilmesi"
           target_17_11:
             long_title: "Gelişmekte olan ülkelerin ihracatlarının, özellikle en az gelişmiş ülkelerin küresel ihracat payının, 2020’ye kadar iki katına çıkarılması amacıyla önemli ölçüde artırılması."
             short_title: "Gelişmekte Olan Ülkelerin İhracatının Artırılması"
