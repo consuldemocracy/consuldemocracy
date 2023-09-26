@@ -1,0 +1,19 @@
+<%= render Shared::ModerationActionsComponent.new(debate) %>
+
+<% if can? :mark_featured, debate %>
+  &nbsp;|&nbsp;
+  <% if debate.featured? %>
+    <%= link_to t("admin.actions.unmark_featured").capitalize, unmark_featured_debate_path(debate),
+                method: :put,
+                data: {
+                  confirm: t("admin.actions.confirm_action",
+                             action: t("admin.actions.unmark_featured"),
+                             name: debate.title) } %>
+  <% else %>
+    <%= link_to t("admin.actions.mark_featured").capitalize, mark_featured_debate_path(debate),
+                method: :put,
+                data: { confirm: t("admin.actions.confirm_action",
+                                   action: t("admin.actions.mark_featured"),
+                                   name: debate.title) } %>
+  <% end %>
+<% end %>

@@ -1,0 +1,132 @@
+<% provide :title do %><%= t("proposals.index.title") %><% end %>
+<% content_for :header_addon do %>
+  <%= render "shared/search_form",
+             search_path: proposals_path(page: 1),
+             i18n_namespace: "proposals.index.search_form" %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: proposals_url %>
+<% end %>
+
+<main>
+  <% if [
+          @search_terms,
+          @advanced_search_terms,
+          params[:retired].present?,
+          params[:selected].present?
+        ].any? %>
+    <%= render Shared::SearchResultsSummaryComponent.new(
+      results: @proposals,
+      search_terms: @search_terms,
+      advanced_search_terms: @advanced_search_terms
+    ) do %>
+      <% if params[:retired].present? %>
+        <h2><%= t("proposals.index.retired_proposals") %></h2>
+      <% elsif params[:selected].present? %>
+        <h2><%= t("proposals.index.selected_proposals") %></h2>
+      <% end %>
+    <% end %>
+  <% else %>
+    <%= render "shared/section_header", i18n_namespace: "proposals.index.section_header", image: "proposals" %>
+  <% end %>
+
+  <% if show_recommended_proposals? %>
+    <%= render "shared/recommended_index", recommended: @recommended_proposals,
+                                           disable_recommendations_path: recommendations_disable_proposals_path,
+                                           namespace: "proposals" %>
+  <% end %>
+
+  <div class="row">
+    <div id="proposals" class="proposals-list small-12 medium-9 column">
+
+      <%= render Shared::BannerComponent.new("proposals") %>
+
+      <!-- <% if show_featured_proposals? %>
+        <div id="featured-proposals" class="row featured-proposals">
+          <div class="small-12 column">
+            <h2>
+              <%= t("proposals.index.featured_proposals") %>
+            </h2>
+          </div>
+          <% @featured_proposals.each do |featured_proposal| %>
+            <%= render "featured_proposal", proposal: featured_proposal %>
+          <% end %>
+          
+        </div>
+      <% end %> -->
+
+      <% unless params[:selected].present? %>
+        <div class="row">
+          <div class="small-12 column">
+            <%= render "view_mode" %>
+          </div>
+        </div>
+      <% end %>
+
+     <!--> <% unless params[:retired].present? || params[:selected].present? %>
+        <%= render Shared::AdvancedSearchComponent.new %>
+      <% end %> -->
+
+      <% unless params[:selected].present? %>
+        <%= render "shared/order_links", i18n_namespace: "proposals.index" %>
+      <% end %>
+
+      <% if @proposals.any? %>
+        <div class="show-for-small-only">
+          <%= link_to t("proposals.index.start_proposal"),
+                      new_proposal_path,
+                      class: "button expanded" %>
+        </div>
+      <% end %>
+
+      <div id="proposals-list">
+        <% if @proposals.any? || current_user.blank? %>
+          <% if proposals_default_view? %>
+            <%= render partial: "proposals/proposal", collection: @proposals %>
+          <% else %>
+            <% @proposals.each do |proposal| %>
+              <%= render "/proposals/proposal_minimal", proposal: proposal %>
+            <% end %>
+          <% end %>
+        <% else %>
+          <%= empty_recommended_proposals_message_text(current_user) %>
+        <% end %>
+        <%= paginate @proposals %>
+
+        <% unless @search_terms || @advanced_search_terms %>
+          <div id="section_help" class="margin" data-magellan-target="section_help">
+            <p class="lead">
+              <strong><%= t("proposals.index.section_footer.title") %></strong>
+            </p>
+            <p><%= t("proposals.index.section_footer.description") %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="small-12 medium-3 column">
+      <aside class="margin-bottom">
+        <%= link_to t("proposals.index.start_proposal"),
+                    new_proposal_path,
+                    class: "button expanded" %>
+
+        <div class="sidebar-divider"></div>
+        <h2 class="sidebar-title"><%= t("proposals.index.selected_proposals") %></h2>
+        <br>
+        <p class="small">
+          <%= link_to t("proposals.index.selected_proposals_link"), proposals_path(selected: "all") %>
+        </p>
+
+        <% if params[:retired].blank? %>
+        <!--  <%= render "categories" %>
+          <%= render "shared/tag_cloud", taggable: "Proposal" %> -->
+          <%= render Proposals::GeozonesComponent.new %>
+        <% end %>
+        <!-- <%= render "retired" %>
+        <%= render "proposals_lists" %> -->
+        
+      </aside>
+    </div>
+
+  </div>
+</main>

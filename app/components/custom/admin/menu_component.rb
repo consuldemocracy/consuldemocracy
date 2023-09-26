@@ -15,7 +15,7 @@ class Admin::MenuComponent < ApplicationComponent
         # (signature_sheets_link if feature?(:signature_sheets)),
         messages_links,
         site_customization_links,
-        # moderated_content_links,
+        moderated_content_links,
         profiles_links,
         users_management_links,
         stats_link,

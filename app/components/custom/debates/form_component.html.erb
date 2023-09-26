@@ -6,6 +6,19 @@
 
     <%= render "shared/globalize_locales", resource: debate %>
 
+    
+    <div class="row">
+      <div class="clear">
+        <div class="small-12 medium-6 column">
+          <%= f.datetime_field :starts_at %>
+        </div>
+
+        <div class="small-12 medium-6 column">
+          <%= f.datetime_field :ends_at %>
+        </div>
+      </div>
+    </div>
+
     <%= f.translatable_fields do |translations_form| %>
       <div>
         <%= translations_form.text_field :title,

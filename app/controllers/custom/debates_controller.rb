@@ -7,7 +7,7 @@ class DebatesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_view, only: :index
   before_action :debates_recommendations, only: :index, if: :current_user
-  before_action :authorize_admin!, only: [:new, :create, :edit, :update]
+  before_action :authorize_admin!, only: [:new, :create, :edit, :update, :destroy]
 
   feature_flag :debates
 
