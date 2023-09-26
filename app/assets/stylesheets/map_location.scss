@@ -1,5 +1,5 @@
 .map-location-remove-marker {
-  border-bottom: 1px dotted #cf2a0e;
+  border-bottom: 1px dotted;
   border-radius: 0;
   color: $delete;
   cursor: pointer;
@@ -10,7 +10,7 @@
   &:active,
   &:focus {
     border-bottom-style: solid;
-    color: #cf2a0e;
+    color: darken($delete, 10%);
   }
 }
 

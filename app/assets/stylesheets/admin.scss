@@ -347,7 +347,7 @@ code {
 // -----------------
 
 .delete {
-  border-bottom: 1px dotted #cf2a0e;
+  border-bottom: 1px dotted;
   color: $delete;
   font-size: $small-font-size;
 
@@ -355,7 +355,7 @@ code {
   &:active,
   &:focus {
     border-bottom-color: transparent;
-    color: #cf2a0e;
+    color: darken($delete, 10%);
   }
 }
 
