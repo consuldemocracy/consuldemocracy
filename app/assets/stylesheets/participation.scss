@@ -1284,6 +1284,7 @@
 }
 
 .budget-execution {
+  @include card;
   border: 1px solid $border;
   overflow: hidden;
   position: relative;
