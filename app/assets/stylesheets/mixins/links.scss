@@ -1,3 +1,43 @@
+@mixin focus-outline-on-img {
+  &:focus {
+    outline: none;
+
+    img {
+      outline: $outline-focus;
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+
+    img {
+      outline: $outline-focus;
+    }
+  }
+
+  &:focus:not(:focus-visible) {
+    img {
+      outline: none;
+    }
+  }
+
+  &:active {
+    outline: none;
+
+    img {
+      outline: $outline-focus;
+    }
+  }
+
+  &:focus:active {
+    outline: none;
+
+    img {
+      outline: $outline-focus;
+    }
+  }
+}
+
 @mixin card {
   position: relative;
 
