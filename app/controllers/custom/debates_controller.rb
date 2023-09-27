@@ -13,6 +13,7 @@ class DebatesController < ApplicationController
 
   invisible_captcha only: [:create, :update], honeypot: :subtitle
 
+  has_filters %w[current expired]
   has_orders ->(c) { Debate.debates_orders(c.current_user) }, only: :index
   has_orders %w[newest most_voted oldest], only: :show
 
@@ -42,11 +43,14 @@ class DebatesController < ApplicationController
   #     redirect_to debates_path, alert: t("unauthorized.default")
   #   end
   # end
-  
+  def index
+    @debates = Kaminari.paginate_array(
+      Debate.send(@current_filter).sort_by_created_at
+    ).page(params[:page])
+  end
   def show
     super
     redirect_to debate_path(@debate), status: :moved_permanently if request.path != debate_path(@debate)
-    
   end
 
   def vote
@@ -78,7 +82,7 @@ class DebatesController < ApplicationController
     end
 
     def allowed_params
-      [:tag_list, :terms_of_service, :related_sdg_list, translation_params(Debate)]
+      [:tag_list, :terms_of_service, :related_sdg_list, :starts_at, :ends_at, translation_params(Debate)]
     end
 
     def resource_model

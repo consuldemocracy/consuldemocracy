@@ -13,6 +13,12 @@
       <div class="small-12 medium-9 column">
         <%= back_link_to %>
 
+        <% if @debate.expired? %>
+        <div class="callout alert">
+          <%= "this debate has finished"%>
+        </div>
+        <%end %>
+
         <h1><%= @debate.title %></h1>
         <% if @debate.conflictive? %>
           <div data-alert class="callout alert margin-top">
@@ -35,11 +41,12 @@
 
         <%= auto_link_already_sanitized_html wysiwyg(@debate.description) %>
 
-        <!-- 
+        <!--
         <%= render "shared/tags", taggable: @debate %>
 
         <%= render "relationable/related_content", relationable: @debate %>
         -->
+
         <div class="js-moderator-debate-actions margin">
           <%= render "actions", debate: @debate %>
         </div>

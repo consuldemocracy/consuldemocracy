@@ -36,6 +36,12 @@ class Debate < ApplicationRecord
 
   before_save :calculate_hot_score, :calculate_confidence_score
 
+  scope :current, -> { where("starts_at <= :time and ends_at >= :time", time: Time.current) }
+  scope :expired, -> {
+    where("ends_at < :time", time: Time.current)
+      .or(where("starts_at IS NULL OR ends_at IS NULL"))
+  }
+
   scope :for_render,               -> { includes(:tags) }
   scope :sort_by_hot_score,        -> { reorder(hot_score: :desc) }
   scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc) }
@@ -51,6 +57,11 @@ class Debate < ApplicationRecord
   visitable class_name: "Visit"
 
   attr_accessor :link_required
+
+
+  def expired?(timestamp = Time.current)
+    ends_at.nil? || ends_at < timestamp
+  end
 
   def self.recommendations(user)
     tagged_with(user.interests, any: true).where.not(author_id: user.id)
