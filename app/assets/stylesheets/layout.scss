@@ -102,20 +102,20 @@ button,
 [type="button"],
 [type="submit"] {
   &:focus {
-    outline: $outline-focus;
+    @include focus-outline;
   }
 
   &:focus-visible {
-    outline: $outline-focus;
+    @include focus-outline;
   }
 
   &:focus:not(:focus-visible) {
-    outline: none;
+    @include no-outline;
   }
 
   &:active,
   &:focus:active {
-    outline: $outline-focus;
+    @include focus-outline;
   }
 }
 
@@ -1135,6 +1135,7 @@ form {
 
   .notification-link {
     @include text-colored-link;
+    display: inline-block;
   }
 
   &:hover {
@@ -1994,7 +1995,7 @@ table {
     padding: $line-height / 2;
     z-index: 1;
 
-    &:hover {
+    &:hover:not(:focus-within) {
       box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.15);
     }
   }
@@ -2219,7 +2220,7 @@ table {
       }
     }
 
-    a:hover {
+    a:hover:not(:focus) {
       box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
       text-decoration: none;
 

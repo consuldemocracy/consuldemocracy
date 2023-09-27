@@ -1,39 +1,52 @@
+@mixin focus-outline {
+  $total-width: $focus-inner-width + $focus-middle-width + $focus-outer-width;
+
+  box-shadow: 0 0 0 $total-width $focus-outer;
+  outline: $focus-middle-width solid $focus-middle;
+  outline-offset: $focus-inner-width;
+}
+
+@mixin no-outline {
+  box-shadow: none;
+  outline: none;
+}
+
 @mixin focus-outline-on-img {
   &:focus {
-    outline: none;
+    @include no-outline;
 
     img {
-      outline: $outline-focus;
+      @include focus-outline;
     }
   }
 
   &:focus-visible {
-    outline: none;
+    @include no-outline;
 
     img {
-      outline: $outline-focus;
+      @include focus-outline;
     }
   }
 
   &:focus:not(:focus-visible) {
     img {
-      outline: none;
+      @include no-outline;
     }
   }
 
   &:active {
-    outline: none;
+    @include no-outline;
 
     img {
-      outline: $outline-focus;
+      @include focus-outline;
     }
   }
 
   &:focus:active {
-    outline: none;
+    @include no-outline;
 
     img {
-      outline: $outline-focus;
+      @include focus-outline;
     }
   }
 }
@@ -42,10 +55,10 @@
   position: relative;
 
   &:focus-within {
-    outline: $outline-focus;
+    @include focus-outline;
 
     a:focus {
-      outline: none;
+      @include no-outline;
     }
   }
 

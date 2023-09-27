@@ -464,6 +464,7 @@
 
     a {
       color: inherit;
+      display: inline-block;
     }
   }
 
@@ -1333,7 +1334,7 @@
     font-size: rem-calc(24);
   }
 
-  &:hover {
+  &:hover:not(:focus-within) {
     box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
   }
 }
@@ -1596,6 +1597,7 @@
 
     a {
       color: inherit;
+      display: inline-block;
     }
   }
 }
