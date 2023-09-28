@@ -25,6 +25,9 @@ class Debate < ApplicationRecord
 
   belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :debates
   belongs_to :geozone
+
+  has_many :geozones_debates
+  has_many :geozones, through: :geozones_debates
   has_many :comments, as: :commentable, inverse_of: :commentable
 
   validates_translation :title, presence: true, length: { in: 4..Debate.title_max_length }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_09_28_133340) do
+ActiveRecord::Schema.define(version: 2023_09_28_150253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -649,6 +649,13 @@ ActiveRecord::Schema.define(version: 2023_09_28_133340) do
     t.string "census_code"
     t.text "geojson"
     t.string "color"
+  end
+
+  create_table "geozones_debates", id: :serial, force: :cascade do |t|
+    t.integer "geozone_id"
+    t.integer "debate_id"
+    t.index ["debate_id"], name: "index_geozones_debates_on_debate_id"
+    t.index ["geozone_id"], name: "index_geozones_debates_on_geozone_id"
   end
 
   create_table "geozones_polls", id: :serial, force: :cascade do |t|

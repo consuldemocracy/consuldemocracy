@@ -8,6 +8,7 @@ class DebatesController < ApplicationController
   before_action :set_view, only: :index
   before_action :debates_recommendations, only: :index, if: :current_user
   before_action :authorize_admin!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :load_geozones, only: [:new, :create, :edit, :update]
 
   feature_flag :debates
 
@@ -76,13 +77,15 @@ class DebatesController < ApplicationController
   end
 
   private
-
+    def load_geozones
+      @geozones = Geozone.all.order(:name)
+    end
     def debate_params
       params.require(:debate).permit(allowed_params)
     end
 
     def allowed_params
-      [:tag_list, :terms_of_service, :related_sdg_list, :starts_at, :ends_at, translation_params(Debate)]
+      [:tag_list, :terms_of_service, :related_sdg_list,  :geozone_restricted, :starts_at, :ends_at, translation_params(Debate)]
     end
 
     def resource_model
