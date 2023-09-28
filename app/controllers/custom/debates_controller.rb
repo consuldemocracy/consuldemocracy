@@ -36,14 +36,6 @@ class DebatesController < ApplicationController
     end
   end
 
-  # def new
-  #   if is_admin?
-  #     # Allow admin to access the debate creation page
-  #     @debate = Debate.new
-  #   else
-  #     redirect_to debates_path, alert: t("unauthorized.default")
-  #   end
-  # end
   def index
     @debates = Kaminari.paginate_array(
       Debate.send(@current_filter).sort_by_created_at
@@ -85,7 +77,8 @@ class DebatesController < ApplicationController
     end
 
     def allowed_params
-      [:tag_list, :terms_of_service, :related_sdg_list,  :geozone_restricted, :starts_at, :ends_at, translation_params(Debate)]
+      [:tag_list, :terms_of_service, :related_sdg_list, :geozone_restricted, :starts_at,
+       :ends_at,  translation_params(Debate), geozone_ids: []]
     end
 
     def resource_model

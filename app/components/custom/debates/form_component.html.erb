@@ -32,6 +32,27 @@
                                         maxlength: Debate.description_max_length,
                                         class: "html-area" %>
       </div>
+
+      <div class="row">
+        <div class="clear">
+          <div class="small-6 medium-6 column">
+            <%= f.check_box :geozone_restricted, data: { checkbox_toggle: "#geozones" } %>
+          </div>
+        </div>
+      </div>
+
+      <div id="geozones" style="<%= @debate.geozone_restricted? ? "" : "display:none" %>">
+        <div class="row">
+          <%= f.collection_check_boxes(:geozone_ids, @geozones, :id, :name) do |b| %>
+            <div class="small-6 medium-3 column">
+              <%= b.label do %>
+                <%= b.check_box + b.text %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
     <% end %>
   </fieldset>
 
@@ -51,18 +72,6 @@
     <%= render SDG::RelatedListSelectorComponent.new(f) %>
   </fieldset> -->
 
-
-  <div id="geozones" style="<%= @debate.geozone_restricted? ? "" : "display:none" %>">
-    <div class="row">
-      <%= f.collection_check_boxes(:geozone_ids, @geozones, :id, :name) do |b| %>
-        <div class="small-6 medium-3 column">
-          <%= b.label do %>
-            <%= b.check_box + b.text %>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-  </div>
 
   <div class="actions">
     <% if debate.new_record? %>

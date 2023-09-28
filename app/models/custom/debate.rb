@@ -44,6 +44,7 @@ class Debate < ApplicationRecord
     where("ends_at < :time", time: Time.current)
       .or(where("starts_at IS NULL OR ends_at IS NULL"))
   }
+  scope :by_geozone_id, ->(geozone_id) { where(geozones: { id: geozone_id }.joins(:geozones)) }
 
   scope :for_render,               -> { includes(:tags) }
   scope :sort_by_hot_score,        -> { reorder(hot_score: :desc) }

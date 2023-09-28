@@ -13,13 +13,13 @@ module Budgets
 
     private
 
-      def load_budget
-        @budget = Budget.find_by_slug_or_id! params[:budget_id]
-      end
+    def load_budget
+      @budget = Budget.find_by_slug_or_id! params[:budget_id]
+    end
 
-      def load_ballot
-        query = Budget::Ballot.where(user: current_user, budget: @budget)
-        @ballot = @budget.balloting? ? query.first_or_create! : query.first_or_initialize
-      end
+    def load_ballot
+      query = Budget::Ballot.where(user: current_user, budget: @budget)
+      @ballot = @budget.balloting? ? query.first_or_create! : query.first_or_initialize
+    end
   end
 end
