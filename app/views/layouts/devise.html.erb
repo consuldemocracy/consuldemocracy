@@ -21,11 +21,11 @@
       <div class="small-12 medium-9 column">
         <div class="row">
           <div class="small-12 medium-9 large-7 small-centered column">
-            <div class="auth-form margin">
+            <main class="auth-form margin <%= yield(:main_class) %>">
               <%= render "layouts/flash" %>
 
               <%= yield %>
-            </div>
+            </main>
           </div>
         </div>
       </div>

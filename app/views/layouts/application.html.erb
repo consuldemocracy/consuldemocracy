@@ -17,9 +17,11 @@
 
     <div class="wrapper <%= yield(:wrapper_class) %>">
       <%= render "layouts/header", with_subnavigation: true %>
-      <%= render "layouts/flash" %>
 
-      <%= yield %>
+      <main class="public-content <%= yield(:main_class) %>">
+        <%= render "layouts/flash" %>
+        <%= yield %>
+      </main>
     </div>
 
     <div class="footer">

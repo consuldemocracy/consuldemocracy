@@ -1,20 +1,20 @@
-<main class="debate-new">
-  <%= back_link_to debates_path, t("debates.index.section_header.title") %>
+<% provide :main_class, "debate-new" %>
 
-  <%= header do %>
-    <%= new_window_link_to t("debates.new.more_info"), help_path(anchor: "debates") %>
-  <% end %>
+<%= back_link_to debates_path, t("debates.index.section_header.title") %>
 
-  <aside>
-    <h2><%= t("debates.new.recommendations_title") %></h2>
+<%= header do %>
+  <%= new_window_link_to t("debates.new.more_info"), help_path(anchor: "debates") %>
+<% end %>
 
-    <ul class="recommendations">
-      <li><%= t("debates.new.recommendation_one") %></li>
-      <li><%= t("debates.new.recommendation_two") %></li>
-      <li><%= t("debates.new.recommendation_three") %></li>
-      <li><%= t("debates.new.recommendation_four") %></li>
-    </ul>
-  </aside>
+<aside>
+  <h2><%= t("debates.new.recommendations_title") %></h2>
 
-  <%= render Debates::FormComponent.new(debate) %>
-</main>
+  <ul class="recommendations">
+    <li><%= t("debates.new.recommendation_one") %></li>
+    <li><%= t("debates.new.recommendation_two") %></li>
+    <li><%= t("debates.new.recommendation_three") %></li>
+    <li><%= t("debates.new.recommendation_four") %></li>
+  </ul>
+</aside>
+
+<%= render Debates::FormComponent.new(debate) %>
