@@ -1353,8 +1353,8 @@ describe "Proposals" do
 
   context "Filter" do
     context "By geozone" do
-      let(:california) { Geozone.create(name: "California") }
-      let(:new_york)   { Geozone.create(name: "New York") }
+      let(:california) { create(:geozone, :with_html_coordinates, name: "California") }
+      let(:new_york)   { create(:geozone, name: "New York") }
 
       before do
         create(:proposal, geozone: california, title: "Bigger sequoias")
@@ -1362,14 +1362,11 @@ describe "Proposals" do
         create(:proposal, geozone: new_york, title: "Sully monument")
       end
 
-      scenario "From map", :no_js do
+      scenario "From map" do
         visit proposals_path
 
         click_link "map"
-        within("#html_map") do
-          url = find("area[title='California']")[:href]
-          visit url
-        end
+        within("#html_map") { find("area[title='California']").click }
 
         within("#proposals") do
           expect(page).to have_css(".proposal", count: 2)

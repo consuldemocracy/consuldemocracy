@@ -15,7 +15,7 @@ FactoryBot.define do
     end
 
     trait :with_html_coordinates do
-      html_map_coordinates { "30,139,45,153,77,148,107,165" }
+      html_map_coordinates { "30,139,45,153,77,148,107,125" }
     end
 
     trait :with_geojson do
