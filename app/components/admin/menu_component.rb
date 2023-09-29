@@ -54,15 +54,13 @@ class Admin::MenuComponent < ApplicationComponent
     end
 
     def settings?
-      controllers_names = ["settings", "tenants", "tags", "geozones", "images",
-                           "content_blocks", "local_census_records", "imports"]
-      controllers_names.include?(controller_name) &&
-        controller.class.module_parent != Admin::Poll::Questions::Answers
+      controllers_names = ["settings", "tenants", "tags", "geozones", "local_census_records", "imports"]
+      controllers_names.include?(controller_name)
     end
 
     def customization?
-      ["pages", "banners", "information_texts", "documents"].include?(controller_name) ||
-        homepage? || pages?
+      controllers_names = ["pages", "banners", "information_texts", "documents", "images", "content_blocks"]
+      controllers_names.include?(controller_name) || homepage? || pages?
     end
 
     def homepage?
@@ -256,6 +254,8 @@ class Admin::MenuComponent < ApplicationComponent
           banners_link,
           information_texts_link,
           documents_link,
+          images_link,
+          content_blocks_link,
           class: ("is-active" if customization? &&
                                  controller.class.module_parent != Admin::Poll::Questions::Answers)
         )
@@ -458,8 +458,6 @@ class Admin::MenuComponent < ApplicationComponent
           tenants_link,
           tags_link,
           geozones_link,
-          images_link,
-          content_blocks_link,
           local_census_records_link,
           class: ("is-active" if settings?)
         )
