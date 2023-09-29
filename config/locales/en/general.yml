@@ -228,6 +228,7 @@ en:
           zero: "You don't have new notifications"
         notifications: Notifications
       sdg: "SDG"
+    skip_to_main_content: "Skip to main content"
   notifications:
     index:
       empty_notifications: You don't have new notifications.

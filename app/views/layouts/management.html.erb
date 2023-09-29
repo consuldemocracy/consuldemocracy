@@ -7,6 +7,7 @@
   </head>
 
   <body class="admin">
+    <%= render Layout::SkipToMainContentComponent.new %>
     <%= render Layout::AdminHeaderComponent.new(manager_logged_in) %>
 
     <div class="menu-and-content">
@@ -16,7 +17,7 @@
         <%= render "/management/menu" %>
       </nav>
 
-      <main class="admin-content">
+      <main id="main" class="admin-content <%= yield(:main_class) %>">
         <%= label_tag :show_menu, t("admin.menu.admin"),
                       "aria-hidden": true, class: "button hollow expanded" %>
 
