@@ -48,7 +48,7 @@ section "Creating Budgets" do
     end
   end
 
-  Budget.all.each do |budget|
+  Budget.all.find_each do |budget|
     city_group = budget.groups.create!(
       random_locales_attributes(name: -> { I18n.t("seeds.budgets.groups.all_city") })
     )

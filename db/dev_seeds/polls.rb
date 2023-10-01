@@ -102,7 +102,7 @@ end
 
 section "Creating Poll Shifts for Poll Officers" do
   Poll.find_each do |poll|
-    Poll::BoothAssignment.where(poll: poll).each do |booth_assignment|
+    Poll::BoothAssignment.where(poll: poll).find_each do |booth_assignment|
       scrutiny = (poll.ends_at.to_datetime..poll.ends_at.to_datetime + Poll::RECOUNT_DURATION)
       Poll::Officer.find_each do |poll_officer|
         {
