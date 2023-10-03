@@ -1590,7 +1590,8 @@ es:
           name: Nombre
           names:
             top_links: Enlaces superiores
-            footer: Pie de página
+            footer: Pie de página (redes sociales)
+            footer_legal: Pie de página (términos legales)
             subnavigation_left: Navegación principal izquierda
             subnavigation_right: Navegación principal derecha
       images:

@@ -734,6 +734,28 @@ footer {
   border-top: 1px solid $text-light;
   font-size: $small-font-size;
   padding-top: $line-height / 2;
+
+  .legal {
+    display: inline-block;
+    margin-#{$global-left}: 0;
+
+    &::before {
+      content: "|";
+    }
+
+    li {
+      display: inline-block;
+
+      &::after {
+        content: "|";
+        margin-left: 4px;
+      }
+
+      &:last-child::after {
+        content: none;
+      }
+    }
+  }
 }
 
 // 04. Tags
