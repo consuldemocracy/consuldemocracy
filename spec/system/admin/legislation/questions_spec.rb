@@ -143,7 +143,7 @@ describe "Admin legislation questions", :admin do
       scenario "Add translation for question option" do
         visit edit_question_url
 
-        click_on "Add option"
+        click_link "Add option"
 
         find("#nested_question_options input").set("Option 1")
 
@@ -166,7 +166,7 @@ describe "Admin legislation questions", :admin do
 
         select "Español", from: :select_language
 
-        click_on "Add option"
+        click_link "Add option"
 
         find("#nested_question_options input").set("Opción 1")
 

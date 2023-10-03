@@ -28,7 +28,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       do_login_for user, management: management
       visit send(path, arguments)
 
-      click_on "Add image"
+      click_link "Add image"
 
       expect(page).not_to have_css "#new_image_link"
     end
@@ -117,7 +117,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       visit send(path, arguments)
 
       click_link "Add image"
-      click_on submit_button
+      click_button submit_button
 
       within "#nested-image .image-fields" do
         expect(page).to have_content("can't be blank", count: 2)
@@ -131,7 +131,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
       imageable_attach_new_file(file_fixture("clippy.jpg"))
       within_fieldset("Descriptive image") { fill_in "Title", with: "" }
-      click_on submit_button
+      click_button submit_button
 
       expect(page).to have_content "can't be blank"
       expect(page).to have_css "img[src$='clippy.jpg']"
@@ -156,7 +156,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       visit send(path, arguments)
 
       send(fill_resource_method_name) if fill_resource_method_name
-      click_on submit_button
+      click_button submit_button
       expect(page).to have_content imageable_success_notice
     end
 
@@ -169,7 +169,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
       expect(page).to have_css ".loading-bar.complete"
 
-      click_on submit_button
+      click_button submit_button
 
       expect(page).to have_content imageable_success_notice
     end
@@ -183,7 +183,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
       expect(page).to have_css ".loading-bar.complete"
 
-      click_on submit_button
+      click_button submit_button
 
       expect(page).to have_content imageable_success_notice
 

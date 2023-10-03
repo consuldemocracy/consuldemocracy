@@ -20,6 +20,9 @@ Bundler/OrderedGems:
   Enabled: true
   ConsiderPunctuation: true
 
+Capybara/ClickLinkOrButtonStyle:
+  Enabled: true
+
 Capybara/CurrentPathExpectation:
   Enabled: true
 

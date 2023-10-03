@@ -197,7 +197,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
       visit send(mappable_edit_path, id: mappable.id)
       find(".map-location").click
-      click_on("Save changes")
+      click_button "Save changes"
       mappable.reload
 
       expect(page).to have_css(".map-location")
@@ -210,7 +210,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
       visit send(mappable_edit_path, id: mappable.id)
       fill_in "#{mappable_factory_name.camelize} title", with: "New title"
-      click_on("Save changes")
+      click_button "Save changes"
       mappable.reload
 
       expect(page).to have_css(".map-location")
@@ -223,7 +223,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
       visit send(mappable_edit_path, id: mappable.id)
       click_button "Remove map marker"
-      click_on "Save changes"
+      click_button "Save changes"
 
       expect(page).not_to have_css(".map-location")
     end
@@ -234,7 +234,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
       visit send(mappable_edit_path, id: mappable.id)
       fill_in "#{mappable_factory_name.camelize} title", with: "New title"
-      click_on("Save changes")
+      click_button "Save changes"
 
       expect(page).not_to have_css(".map-location")
     end
@@ -244,7 +244,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
       visit send(mappable_edit_path, id: mappable.id)
       click_button "Remove map marker"
-      click_on "Save changes"
+      click_button "Save changes"
 
       expect(page).not_to have_content "Map location can't be blank"
     end

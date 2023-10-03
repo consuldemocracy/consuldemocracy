@@ -129,11 +129,11 @@ describe "Moderate comments" do
 
         visit moderation_comments_path
 
-        within(".js-check") { click_on "All" }
+        within(".js-check") { click_link "All" }
 
         expect(all("input[type=checkbox]")).to all(be_checked)
 
-        within(".js-check") { click_on "None" }
+        within(".js-check") { click_link "None" }
 
         all("input[type=checkbox]").each do |checkbox|
           expect(checkbox).not_to be_checked
