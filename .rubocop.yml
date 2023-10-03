@@ -460,6 +460,9 @@ Rails/SaveBang:
   Enabled: true
   Severity: refactor
 
+Rails/SelectMap:
+  Enabled: true
+
 Rails/SkipsModelValidations:
   Enabled: true
   ForbiddenMethods:
