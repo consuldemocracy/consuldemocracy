@@ -564,6 +564,9 @@ RSpec/LetBeforeExamples:
 RSpec/LetSetup:
   Enabled: true
 
+RSpec/MetadataStyle:
+  Enabled: true
+
 RSpec/NotToNot:
   Enabled: true
 
