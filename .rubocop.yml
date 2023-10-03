@@ -547,9 +547,6 @@ RSpec/ExampleWording:
 RSpec/ExcessiveDocstringSpacing:
   Enabled: true
 
-RSpec/FilePath:
-  Enabled: true
-
 RSpec/Focus:
   Enabled: true
 
@@ -601,6 +598,12 @@ RSpec/ScatteredLet:
   Enabled: true
 
 RSpec/ScatteredSetup:
+  Enabled: true
+
+RSpec/SpecFilePathFormat:
+  Enabled: true
+
+RSpec/SpecFilePathSuffix:
   Enabled: true
 
 RSpec/VoidExpect:
