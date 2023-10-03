@@ -166,6 +166,8 @@ it:
         calculate: Calcolare gli investimenti del vincitore
         calculated: Stiamo calcolando i vincitori, ciò potrebbe richiedere alcuni minuti.
         recalculate: Ricalcolare Investimenti Vincitori
+      ballots:
+        feature_disabled: 'La funzionalità <strong>Sondaggi</strong> dev''essere abilitata per creare i seggi. Puoi abilitarla dalla pagina <a href="%{link}">configurazione delle impostazioni</a>.'
     budget_groups:
       name: "Nominativo"
       headings_name: "Intestazione"
@@ -762,6 +764,8 @@ it:
           community: "Community"
           proposals: "Proposte"
           polls: "Votazioni"
+          legislation: "Legislazione collaborativa"
+          budgets: "Budget"
           layouts: "Impaginazione"
           machine_learning: "IA / Apprendimento Automatico"
           mailers: "Email"
@@ -1587,6 +1591,7 @@ it:
           names:
             top_links: Collegamenti Migliori
             footer: Piè di Pagina
+            footer_legal: Pié di pagin (termini legali)
             subnavigation_left: Navigazione Principale Sinistra
             subnavigation_right: Navigazione Principale Destra
       images:
