@@ -1590,7 +1590,7 @@ tr:
           name: Ad
           names:
             top_links: Sık kullanılan bağlantılar
-            footer: Alt bilgi
+            footer: Altbilgi
             subnavigation_left: Ana gezinme sol
             subnavigation_right: Ana gezinme sağ
       images:
