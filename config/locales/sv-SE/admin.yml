@@ -1591,6 +1591,7 @@ sv:
           names:
             top_links: Topplänkar
             footer: Sidfot
+            footer_legal: Sidfot (rättsliga villkor)
             subnavigation_left: Huvudnavigering vänster
             subnavigation_right: Huvudnavigering höger
       images:
