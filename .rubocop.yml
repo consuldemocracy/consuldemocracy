@@ -26,6 +26,9 @@ Capybara/CurrentPathExpectation:
 Capybara/NegationMatcher:
   Enabled: true
 
+Capybara/RSpec/HaveSelector:
+  Enabled: true
+
 Capybara/SpecificActions:
   Enabled: true
 

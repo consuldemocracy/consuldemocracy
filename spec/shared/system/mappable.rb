@@ -201,8 +201,8 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       mappable.reload
 
       expect(page).to have_css(".map-location")
-      expect(page).not_to have_selector(".map-location[data-marker-latitude='#{map_location.latitude}']")
-      expect(page).to have_selector(".map-location[data-marker-latitude='#{mappable.map_location.latitude}']")
+      expect(page).not_to have_css ".map-location[data-marker-latitude='#{map_location.latitude}']"
+      expect(page).to have_css ".map-location[data-marker-latitude='#{mappable.map_location.latitude}']"
     end
 
     scenario "Should edit mappable on #{mappable_factory_name} without change map" do
@@ -214,8 +214,8 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       mappable.reload
 
       expect(page).to have_css(".map-location")
-      expect(page).to have_selector(".map-location[data-marker-latitude='#{map_location.latitude}']")
-      expect(page).to have_selector(".map-location[data-marker-latitude='#{mappable.map_location.latitude}']")
+      expect(page).to have_css ".map-location[data-marker-latitude='#{map_location.latitude}']"
+      expect(page).to have_css ".map-location[data-marker-latitude='#{mappable.map_location.latitude}']"
     end
 
     scenario "Can not display map on #{mappable_factory_name} edit when remove map marker" do

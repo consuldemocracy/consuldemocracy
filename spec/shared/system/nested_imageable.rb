@@ -21,7 +21,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       do_login_for user, management: management
       visit send(path, arguments)
 
-      expect(page).to have_selector "#new_image_link"
+      expect(page).to have_css "#new_image_link"
     end
 
     scenario "Should hide new image link after adding one image" do
@@ -30,7 +30,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
       click_on "Add image"
 
-      expect(page).not_to have_selector "#new_image_link"
+      expect(page).not_to have_css "#new_image_link"
     end
 
     scenario "Should update image file name after choosing any file" do
@@ -40,7 +40,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       click_link "Add image"
       attach_file "Choose image", file_fixture("clippy.jpg")
 
-      expect(page).to have_selector ".file-name", text: "clippy.jpg"
+      expect(page).to have_css ".file-name", text: "clippy.jpg"
     end
 
     scenario "Should update image file title after choosing a file when no title is defined" do
@@ -74,7 +74,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
       imageable_attach_new_file(file_fixture("clippy.jpg"))
 
-      expect(page).to have_selector ".loading-bar.complete"
+      expect(page).to have_css ".loading-bar.complete"
     end
 
     scenario "Should update loading bar style after invalid file upload" do
@@ -83,7 +83,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
       imageable_attach_new_file(file_fixture("logo_header.png"), false)
 
-      expect(page).to have_selector ".loading-bar.errors"
+      expect(page).to have_css ".loading-bar.errors"
     end
 
     scenario "Should update image cached_attachment field after valid file upload" do
@@ -147,7 +147,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
         click_link "Remove image"
       end
 
-      expect(page).not_to have_selector("#nested-image .image-fields")
+      expect(page).not_to have_css "#nested-image .image-fields"
     end
 
     scenario "Should show successful notice when resource filled correctly without any nested images",
@@ -167,7 +167,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
       imageable_attach_new_file(file_fixture("clippy.jpg"))
 
-      expect(page).to have_selector ".loading-bar.complete"
+      expect(page).to have_css ".loading-bar.complete"
 
       click_on submit_button
 
@@ -181,7 +181,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
       imageable_attach_new_file(file_fixture("clippy.jpg"))
 
-      expect(page).to have_selector ".loading-bar.complete"
+      expect(page).to have_css ".loading-bar.complete"
 
       click_on submit_button
 
@@ -189,8 +189,8 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
       imageable_redirected_to_resource_show_or_navigate_to(imageable)
 
-      expect(page).to have_selector "figure img"
-      expect(page).to have_selector "figure figcaption" if show_caption_for?(imageable_factory_name)
+      expect(page).to have_css "figure img"
+      expect(page).to have_css "figure figcaption" if show_caption_for?(imageable_factory_name)
     end
 
     scenario "Different URLs for different images" do

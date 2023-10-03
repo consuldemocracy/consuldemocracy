@@ -211,7 +211,7 @@ describe "Internal valuation comments on Budget::Investments" do
         expect(page).to have_content "It will be done next week."
       end
 
-      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
+      expect(page).not_to have_css "#js-comment-form-comment_#{comment.id}"
 
       visit budget_investment_path(investment.budget, investment)
       expect(page).not_to have_content("It will be done next week.")
@@ -329,7 +329,7 @@ describe "Internal valuation comments on Budget::Investments" do
         expect(page).to have_css "img.admin-avatar"
       end
 
-      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
+      expect(page).not_to have_css "#js-comment-form-comment_#{comment.id}"
     end
   end
 

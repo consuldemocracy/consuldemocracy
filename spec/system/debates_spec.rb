@@ -14,7 +14,7 @@ describe "Debates" do
 
     visit debates_path
 
-    expect(page).to have_selector("#debates .debate", count: 3)
+    expect(page).to have_css "#debates .debate", count: 3
     debates.each do |debate|
       within("#debates") do
         expect(page).to have_content debate.title
@@ -31,7 +31,7 @@ describe "Debates" do
 
     visit debates_path
 
-    expect(page).to have_selector("#debates .debate", count: per_page)
+    expect(page).to have_css "#debates .debate", count: per_page
 
     within("ul.pagination") do
       expect(page).to have_content("1")
@@ -40,7 +40,7 @@ describe "Debates" do
       click_link "Next", exact: false
     end
 
-    expect(page).to have_selector("#debates .debate", count: 2)
+    expect(page).to have_css "#debates .debate", count: 2
   end
 
   scenario "Index view mode" do
@@ -80,7 +80,7 @@ describe "Debates" do
     expect(page).to have_content "Debate description"
     expect(page).to have_content debate.author.name
     expect(page).to have_content I18n.l(debate.created_at.to_date)
-    expect(page).to have_selector(avatar(debate.author.name))
+    expect(page).to have_css avatar(debate.author.name)
     expect(page.html).to include "<title>#{debate.title}</title>"
   end
 
@@ -400,7 +400,7 @@ describe "Debates" do
       visit debates_path
       click_link "highest rated"
 
-      expect(page).to have_selector("a.is-active", text: "highest rated")
+      expect(page).to have_css "a.is-active", text: "highest rated"
 
       within "#debates" do
         expect(best_debate.title).to appear_before(medium_debate.title)
@@ -419,7 +419,7 @@ describe "Debates" do
       visit debates_path
       click_link "newest"
 
-      expect(page).to have_selector("a.is-active", text: "newest")
+      expect(page).to have_css "a.is-active", text: "newest"
 
       within "#debates" do
         expect(best_debate.title).to appear_before(medium_debate.title)
@@ -437,7 +437,7 @@ describe "Debates" do
 
       scenario "can't be sorted if there's no logged user" do
         visit debates_path
-        expect(page).not_to have_selector("a", text: "recommendations")
+        expect(page).not_to have_css "a", text: "recommendations"
       end
 
       scenario "are shown on index header when account setting is enabled" do
@@ -486,7 +486,7 @@ describe "Debates" do
 
         click_link "recommendations"
 
-        expect(page).to have_selector("a.is-active", text: "recommendations")
+        expect(page).to have_css "a.is-active", text: "recommendations"
 
         within "#debates" do
           expect(best_debate.title).to appear_before(medium_debate.title)
@@ -566,7 +566,7 @@ describe "Debates" do
           click_button "Search"
         end
 
-        expect(page).to have_selector("input[name='search'][value='Schwifty']")
+        expect(page).to have_css "input[name='search'][value='Schwifty']"
       end
     end
 
@@ -579,7 +579,7 @@ describe "Debates" do
       fill_in "search", with: "Show you got"
       click_button "Search"
 
-      expect(page).to have_selector("a.is-active", text: "relevance")
+      expect(page).to have_css "a.is-active", text: "relevance"
 
       within("#debates") do
         expect(all(".debate")[0].text).to match "Show you got"
@@ -598,7 +598,7 @@ describe "Debates" do
       fill_in "search", with: "Show you got"
       click_button "Search"
       click_link "newest"
-      expect(page).to have_selector("a.is-active", text: "newest")
+      expect(page).to have_css "a.is-active", text: "newest"
 
       within("#debates") do
         expect(all(".debate")[0].text).to match "Show you got"
@@ -622,7 +622,7 @@ describe "Debates" do
       fill_in "search", with: "Show you got"
       click_button "Search"
       click_link "recommendations"
-      expect(page).to have_selector("a.is-active", text: "recommendations")
+      expect(page).to have_css "a.is-active", text: "recommendations"
 
       within("#debates") do
         expect(all(".debate")[0].text).to match "Show you got"
@@ -642,8 +642,8 @@ describe "Debates" do
         click_button "Search"
       end
 
-      expect(page).not_to have_selector("#debates .debate-featured")
-      expect(page).not_to have_selector("#featured-debates")
+      expect(page).not_to have_css "#debates .debate-featured"
+      expect(page).not_to have_css "#featured-debates"
     end
   end
 

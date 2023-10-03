@@ -58,7 +58,7 @@ describe "Budget Investments" do
     visit budget_path(budget)
     click_link "See all investments"
 
-    expect(page).to have_selector("#budget-investments .budget-investment", count: 3)
+    expect(page).to have_css "#budget-investments .budget-investment", count: 3
     investments.each do |investment|
       within("#budget-investments") do
         expect(page).to have_content investment.title
@@ -424,7 +424,7 @@ describe "Budget Investments" do
 
       visit budget_investments_path(budget, heading_id: heading.id)
       click_link "highest rated"
-      expect(page).to have_selector("a.is-active", text: "highest rated")
+      expect(page).to have_css "a.is-active", text: "highest rated"
 
       within "#budget-investments" do
         expect(best_proposal.title).to appear_before(medium_proposal.title)
@@ -950,7 +950,7 @@ describe "Budget Investments" do
 
     visit budget_investment_path(budget, id: investment.id)
 
-    expect(page).not_to have_selector ".js-follow"
+    expect(page).not_to have_css ".js-follow"
   end
 
   scenario "Show back link contains heading id" do
@@ -1414,7 +1414,7 @@ describe "Budget Investments" do
       visit budget_investments_path(budget, heading_id: heading.id)
 
       click_link "by price"
-      expect(page).to have_selector("a.is-active", text: "by price")
+      expect(page).to have_css "a.is-active", text: "by price"
 
       within "#budget-investments" do
         expect(high_investment.title).to appear_before(mid_investment.title)
@@ -1448,9 +1448,9 @@ describe "Budget Investments" do
       login_as(user)
       visit budget_investment_path(budget, investment2)
 
-      expect(page).to have_selector(".participation-not-allowed",
-                                    text: "You have already voted a different heading: Heading 1",
-                                    visible: :hidden)
+      expect(page).to have_css ".participation-not-allowed",
+                               text: "You have already voted a different heading: Heading 1",
+                               visible: :hidden
     end
 
     scenario "Sidebar in show should display vote text" do

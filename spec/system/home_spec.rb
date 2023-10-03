@@ -81,9 +81,9 @@ describe "Home" do
 
         visit root_path
 
-        expect(page).to have_selector("li[data-slide='0']")
-        expect(page).to have_selector("li[data-slide='1']", visible: :hidden)
-        expect(page).to have_selector("li[data-slide='2']", visible: :hidden)
+        expect(page).to have_css "li[data-slide='0']"
+        expect(page).to have_css "li[data-slide='1']", visible: :hidden
+        expect(page).to have_css "li[data-slide='2']", visible: :hidden
       end
 
       scenario "Display recommended show when click on carousel" do
