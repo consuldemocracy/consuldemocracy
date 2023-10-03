@@ -167,7 +167,7 @@ describe ProposalNotification do
 
       it "removes all notifications related to the proposal notification" do
         proposal_notification.moderate_system_email(admin.user)
-        expect(Notification.all.count).to be(0)
+        expect(Notification.count).to be 0
       end
 
       it "records the moderation action in the Activity table" do

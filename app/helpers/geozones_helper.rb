@@ -4,6 +4,6 @@ module GeozonesHelper
   end
 
   def geozone_select_options
-    Geozone.all.order(name: :asc).map { |g| [g.name, g.id] }
+    Geozone.order(name: :asc).map { |g| [g.name, g.id] }
   end
 end
