@@ -1605,6 +1605,7 @@ cs:
           names:
             top_links: Hlavní odkazy
             footer: Zápatí
+            footer_legal: Zápatí (právní podmínky)
             subnavigation_left: Hlavní navigace vlevo
             subnavigation_right: Hlavní navigace vpravo
       images:
