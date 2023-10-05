@@ -423,9 +423,9 @@ describe "Proposals" do
     click_link "Dashboard"
     click_link "Edit my proposal"
 
-    within_window(window_opened_by { click_link "Edit proposal" }) do
-      expect(page).to have_field "Full name of the person submitting the proposal", with: "Isabel Garcia"
-    end
+    click_link "Edit proposal"
+
+    expect(page).to have_field "Full name of the person submitting the proposal", with: "Isabel Garcia"
   end
 
   scenario "Responsible name field is not shown for verified users" do
@@ -628,15 +628,15 @@ describe "Proposals" do
         click_link "Edit my proposal"
       end
 
-      within_window(window_opened_by { click_link "Withdraw proposal" }) do
-        expect(page).to have_current_path(retire_form_proposal_path(proposal))
+      click_link "Withdraw proposal"
 
-        select "Duplicated", from: "proposal_retired_reason"
-        fill_in "Explanation", with: "There are three other better proposals with the same subject"
-        click_button "Withdraw proposal"
+      expect(page).to have_current_path(retire_form_proposal_path(proposal))
 
-        expect(page).to have_content "The proposal has been withdrawn"
-      end
+      select "Duplicated", from: "proposal_retired_reason"
+      fill_in "Explanation", with: "There are three other better proposals with the same subject"
+      click_button "Withdraw proposal"
+
+      expect(page).to have_content "The proposal has been withdrawn"
 
       visit proposal_path(proposal)
 
