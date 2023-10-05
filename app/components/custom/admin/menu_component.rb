@@ -2,9 +2,10 @@ require_dependency Rails.root.join("app", "components", "admin", "menu_component
 class Admin::MenuComponent < ApplicationComponent
     include LinkListHelper
     delegate :can?, to: :helpers
-  
+
     def links
       [
+        comments_link,
         (proposals_link if feature?(:proposals)),
         (debates_link if feature?(:debates)),
         # comments_link,
@@ -17,90 +18,90 @@ class Admin::MenuComponent < ApplicationComponent
         site_customization_links,
         moderated_content_links,
         profiles_links,
-        users_management_links,
+        # users_management_links,
         stats_link,
         settings_links,
         dashboard_links,
         # (machine_learning_link if ::MachineLearning.enabled?)
       ]
     end
-  
+
     private
-  
+
       def moderated_content?
         moderated_sections.include?(controller_name) && controller.class.module_parent != Admin::Legislation
       end
-  
+
       def moderated_sections
         ["hidden_proposals", "hidden_debates", "hidden_comments", "hidden_users", "activity",
          "hidden_budget_investments", "hidden_proposal_notifications"]
       end
-  
+
       def budgets?
         controller_name.starts_with?("budget") || controller_path =~ /budgets_wizard/
       end
-  
+
       def polls?
         controller.class.module_parent == Admin::Poll::Questions::Answers ||
           %w[polls active_polls recounts results questions answers].include?(controller_name) &&
             action_name != "booth_assignments"
       end
-  
+
       def booths?
         %w[officers booths shifts booth_assignments officer_assignments].include?(controller_name) ||
           controller_name == "polls" && action_name == "booth_assignments"
       end
-  
+
       def profiles?
         %w[administrators organizations officials moderators valuators managers users].include?(controller_name)
 
       end
-  
+
       def settings?
         controllers_names = ["settings", "tenants", "tags", "geozones", "images",
                              "content_blocks", "local_census_records", "imports"]
         controllers_names.include?(controller_name) &&
           controller.class.module_parent != Admin::Poll::Questions::Answers
       end
-  
+
       def customization?
         ["pages", "banners", "information_texts", "documents"].include?(controller_name) ||
           homepage? || pages?
       end
-  
+
       def homepage?
         ["homepage", "cards"].include?(controller_name) && params[:page_id].nil?
       end
-  
+
       def pages?
         ["pages", "cards"].include?(controller_name) && params[:page_id].present?
       end
-  
+
       def dashboard?
         ["actions", "administrator_tasks"].include?(controller_name)
       end
-  
+
       def local_census_records?
         controller_name == "local_census_records" ||
           (controller_name == "imports" && controller.class.module_parent == Admin::LocalCensusRecords)
       end
-  
+
       def messages_menu_active?
         messages_sections.include?(controller_name)
       end
-  
+
       def messages_sections
         %w[newsletters emails_download admin_notifications system_emails]
       end
-  
+
       def sdg_managers?
         controller_name == "managers" && controller.class.module_parent == Admin::SDG
       end
-  
+
       def managers?
         controller_name == "managers" && controller.class.module_parent == Admin
       end
-  
+
       def proposals_link
         [
           t("admin.menu.proposals"),
@@ -109,7 +110,7 @@ class Admin::MenuComponent < ApplicationComponent
           class: "proposals-link"
         ]
       end
-  
+
       def debates_link
         [
           t("admin.menu.debates"),
@@ -118,7 +119,7 @@ class Admin::MenuComponent < ApplicationComponent
           class: "debates-link"
         ]
       end
-  
+
       def polls_link
         [
           t("admin.menu.polls"),
@@ -127,7 +128,7 @@ class Admin::MenuComponent < ApplicationComponent
           class: "polls-link"
         ]
       end
-  
+
       def comments_link
         [
           t("admin.menu.comments"),
@@ -136,7 +137,7 @@ class Admin::MenuComponent < ApplicationComponent
           class: "comments-link"
         ]
       end
-  
+
       def legislation_link
         [
           t("admin.menu.legislation"),
@@ -145,7 +146,7 @@ class Admin::MenuComponent < ApplicationComponent
           class: "legislation-link"
         ]
       end
-  
+
       def budgets_link
         [
           t("admin.menu.budgets"),
@@ -154,7 +155,7 @@ class Admin::MenuComponent < ApplicationComponent
           class: "budgets-link"
         ]
       end
-  
+
       def booths_links
         link_to(t("admin.menu.title_booths"), "#", class: "booths-link") +
           link_list(
@@ -165,7 +166,7 @@ class Admin::MenuComponent < ApplicationComponent
             id: "booths_menu", class: ("is-active" if booths?)
           )
       end
-  
+
       def officers_link
         [
           t("admin.menu.poll_officers"),
@@ -173,7 +174,7 @@ class Admin::MenuComponent < ApplicationComponent
           %w[officers officer_assignments].include?(controller_name)
         ]
       end
-  
+
       def booths_link
         [
           t("admin.menu.poll_booths"),
@@ -181,7 +182,7 @@ class Admin::MenuComponent < ApplicationComponent
           controller_name == "booths" && action_name != "available"
         ]
       end
-  
+
       def booth_assignments_link
         [
           t("admin.menu.poll_booth_assignments"),
@@ -190,7 +191,7 @@ class Admin::MenuComponent < ApplicationComponent
             controller_name == "booth_assignments" && action_name == "manage"
         ]
       end
-  
+
       def shifts_link
         [
           t("admin.menu.poll_shifts"),
@@ -198,7 +199,7 @@ class Admin::MenuComponent < ApplicationComponent
           %w[shifts booths].include?(controller_name) && %w[available new].include?(action_name)
         ]
       end
-  
+
       def signature_sheets_link
         [
           t("admin.menu.signature_sheets"),
@@ -207,7 +208,7 @@ class Admin::MenuComponent < ApplicationComponent
           class: "signature-sheets-link"
         ]
       end
-  
+
       def messages_links
         link_to(t("admin.menu.messaging_users"), "#", class: "messages-link") +
           link_list(
@@ -218,7 +219,7 @@ class Admin::MenuComponent < ApplicationComponent
             id: "messaging_users_menu", class: ("is-active" if messages_menu_active?)
           )
       end
-  
+
       def newsletters_link
         [
           t("admin.menu.newsletters"),
@@ -226,7 +227,7 @@ class Admin::MenuComponent < ApplicationComponent
           controller_name == "newsletters"
         ]
       end
-  
+
       def admin_notifications_link
         [
           t("admin.menu.admin_notifications"),
@@ -234,7 +235,7 @@ class Admin::MenuComponent < ApplicationComponent
           controller_name == "admin_notifications"
         ]
       end
-  
+
       def system_emails_link
         [
           t("admin.menu.system_emails"),
@@ -242,7 +243,7 @@ class Admin::MenuComponent < ApplicationComponent
           controller_name == "system_emails"
         ]
       end
-  
+
       def emails_download_link
         [
           t("admin.menu.emails_download"),
@@ -250,17 +251,17 @@ class Admin::MenuComponent < ApplicationComponent
           controller_name == "emails_download"
         ]
       end
-  
+
 
       #####################################################################
        def menu_users?
          ["users", "email_verifications", "document_verifications"].include?(controller_name)
        end
-  
+
       def menu_edit_password_email?
         controller_name == "account" && action_name == "edit_password_email"
        end
-      
+
       def menu_edit_password_manually?
         controller_name == "account" && action_name == "edit_password_manually"
        end
@@ -291,14 +292,14 @@ class Admin::MenuComponent < ApplicationComponent
         ]
       end
 
-      def users_management_links
-        link_to(t("management.menu.users"), "#", class: "users-link") +
-        link_list(
-          select_user,
-          reset_password_via_email,
-          reset_password_manually
-        )
-      end
+      # def users_management_links
+      #   link_to(t("management.menu.users"), "#", class: "users-link") +
+      #   link_list(
+      #     select_user,
+      #     reset_password_via_email,
+      #     reset_password_manually
+      #   )
+      # end
       ###############################################################
 
 
@@ -314,7 +315,7 @@ class Admin::MenuComponent < ApplicationComponent
                                    controller.class.module_parent != Admin::Poll::Questions::Answers)
           )
       end
-  
+
       def homepage_link
         [
           t("admin.menu.site_customization.homepage"),
@@ -322,7 +323,7 @@ class Admin::MenuComponent < ApplicationComponent
           homepage?
         ]
       end
-  
+
       def pages_link
         [
           t("admin.menu.site_customization.pages"),
@@ -330,7 +331,7 @@ class Admin::MenuComponent < ApplicationComponent
           pages? || controller_name == "pages"
         ]
       end
-  
+
       def banners_link
         [
           t("admin.menu.banner"),
@@ -338,7 +339,7 @@ class Admin::MenuComponent < ApplicationComponent
           controller_name == "banners"
         ]
       end
-  
+
       def information_texts_link
         [
           t("admin.menu.site_customization.information_texts"),
@@ -346,7 +347,7 @@ class Admin::MenuComponent < ApplicationComponent
           controller_name == "information_texts"
         ]
       end
-  
+
       def documents_link
         [
           t("admin.menu.site_customization.documents"),
@@ -354,7 +355,7 @@ class Admin::MenuComponent < ApplicationComponent
           controller_name == "documents"
         ]
       end
-  
+
       def moderated_content_links
         link_to(t("admin.menu.title_moderated_content"), "#", class: "moderated-content-link") +
           link_list(
@@ -368,7 +369,7 @@ class Admin::MenuComponent < ApplicationComponent
             class: ("is-active" if moderated_content?)
           )
       end
-  
+
       def hidden_proposals_link
         [
           t("admin.menu.hidden_proposals"),
@@ -376,7 +377,7 @@ class Admin::MenuComponent < ApplicationComponent
           controller_name == "hidden_proposals"
         ]
       end
-  
+
       def hidden_debates_link
         [
           t("admin.menu.hidden_debates"),
@@ -384,7 +385,7 @@ class Admin::MenuComponent < ApplicationComponent
           controller_name == "hidden_debates"
         ]
       end
-  
+
       def hidden_budget_investments_link
         [
           t("admin.menu.hidden_budget_investments"),
@@ -392,7 +393,7 @@ class Admin::MenuComponent < ApplicationComponent
           controller_name == "hidden_budget_investments"
         ]
       end
-  
+
       def hidden_comments_link
         [
           t("admin.menu.hidden_comments"),
@@ -400,7 +401,7 @@ class Admin::MenuComponent < ApplicationComponent
           controller_name == "hidden_comments"
         ]
       end
-  
+
       def hidden_proposal_notifications_link
         [
           t("admin.menu.hidden_proposal_notifications"),
@@ -408,7 +409,7 @@ class Admin::MenuComponent < ApplicationComponent
           controller_name == "hidden_proposal_notifications"
         ]
       end
-  
+
       def hidden_users_link
         [
           t("admin.menu.hidden_users"),
@@ -416,7 +417,7 @@ class Admin::MenuComponent < ApplicationComponent
           controller_name == "hidden_users"
         ]
       end
-  
+
       def activity_link
         [
           t("admin.menu.activity"),
@@ -424,7 +425,7 @@ class Admin::MenuComponent < ApplicationComponent
           controller_name == "activity"
         ]
       end
-  
+
       def profiles_links
         link_to(t("admin.menu.title_profiles"), "#", class: "profiles-link") +
           link_list(
@@ -439,7 +440,7 @@ class Admin::MenuComponent < ApplicationComponent
             class: ("is-active" if profiles?)
           )
       end
-  
+
       def administrators_link
         [
           t("admin.menu.administrators"),
@@ -447,7 +448,7 @@ class Admin::MenuComponent < ApplicationComponent
           controller_name == "administrators"
         ]
       end
-  
+
       def organizations_link
         [
           t("admin.menu.organizations"),
@@ -455,7 +456,7 @@ class Admin::MenuComponent < ApplicationComponent
           controller_name == "organizations"
         ]
       end
-  
+
       def officials_link
         [
           t("admin.menu.officials"),
@@ -463,7 +464,7 @@ class Admin::MenuComponent < ApplicationComponent
           controller_name == "officials"
         ]
       end
-  
+
       def moderators_link
         [
           t("admin.menu.moderators"),
@@ -471,7 +472,7 @@ class Admin::MenuComponent < ApplicationComponent
           controller_name == "moderators"
         ]
       end
-  
+
       def valuators_link
         [
           t("admin.menu.valuators"),
@@ -479,7 +480,7 @@ class Admin::MenuComponent < ApplicationComponent
           controller_name == "valuators"
         ]
       end
-  
+
       def managers_link
         [
           t("admin.menu.managers"),
@@ -487,7 +488,7 @@ class Admin::MenuComponent < ApplicationComponent
           managers?
         ]
       end
-  
+
       def users_link
         [
           t("admin.menu.users"),
@@ -495,7 +496,7 @@ class Admin::MenuComponent < ApplicationComponent
           controller_name == "users"
         ]
       end
-  
+
       def stats_link
         [
           t("admin.menu.stats"),
@@ -504,7 +505,7 @@ class Admin::MenuComponent < ApplicationComponent
           class: "stats-link"
         ]
       end
-  
+
       def settings_links
         link_to(t("admin.menu.title_settings"), "#", class: "settings-link") +
           link_list(
@@ -518,7 +519,7 @@ class Admin::MenuComponent < ApplicationComponent
             class: ("is-active" if settings?)
           )
       end
-  
+
       def settings_link
         [
           t("admin.menu.settings"),
@@ -526,7 +527,7 @@ class Admin::MenuComponent < ApplicationComponent
           controller_name == "settings"
         ]
       end
-  
+
       def tenants_link
         if can?(:read, Tenant)
           [
@@ -536,7 +537,7 @@ class Admin::MenuComponent < ApplicationComponent
           ]
         end
       end
-  
+
       def tags_link
         [
           t("admin.menu.proposals_topics"),
@@ -544,7 +545,7 @@ class Admin::MenuComponent < ApplicationComponent
           controller_name == "tags"
         ]
       end
-  
+
       def geozones_link
         [
           t("admin.menu.geozones"),
@@ -552,7 +553,7 @@ class Admin::MenuComponent < ApplicationComponent
           controller_name == "geozones"
         ]
       end
-  
+
       def images_link
         [
           t("admin.menu.site_customization.images"),
@@ -560,7 +561,7 @@ class Admin::MenuComponent < ApplicationComponent
           controller_name == "images" && controller.class.module_parent != Admin::Poll::Questions::Answers
         ]
       end
-  
+
       def content_blocks_link
         [
           t("admin.menu.site_customization.content_blocks"),
@@ -568,7 +569,7 @@ class Admin::MenuComponent < ApplicationComponent
           controller_name == "content_blocks"
         ]
       end
-  
+
       def local_census_records_link
         [
           t("admin.menu.local_census_records"),
@@ -576,7 +577,7 @@ class Admin::MenuComponent < ApplicationComponent
           local_census_records?
         ]
       end
-  
+
       def dashboard_links
         link_to(t("admin.menu.dashboard"), "#", class: "dashboard-link") +
           link_list(
@@ -585,7 +586,7 @@ class Admin::MenuComponent < ApplicationComponent
             class: ("is-active" if dashboard?)
           )
       end
-  
+
       def machine_learning_link
         [
           t("admin.menu.machine_learning"),
@@ -594,7 +595,7 @@ class Admin::MenuComponent < ApplicationComponent
           class: "ml-link"
         ]
       end
-  
+
       def administrator_tasks_link
         [
           t("admin.menu.administrator_tasks"),
@@ -602,7 +603,7 @@ class Admin::MenuComponent < ApplicationComponent
           controller_name == "administrator_tasks"
         ]
       end
-  
+
       def dashboard_actions_link
         [
           t("admin.menu.dashboard_actions"),
@@ -610,7 +611,7 @@ class Admin::MenuComponent < ApplicationComponent
           controller_name == "actions"
         ]
       end
-  
+
       def sdg_managers_link
         [
           t("admin.menu.sdg_managers"),
@@ -619,4 +620,3 @@ class Admin::MenuComponent < ApplicationComponent
         ]
       end
   end
-  
