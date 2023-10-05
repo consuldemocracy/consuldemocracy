@@ -1,0 +1,24 @@
+<main class="admin-budgets-show">
+  <%= back_link_to admin_budgets_path %>
+
+  <%= header %>
+
+  <%= render Admin::Budgets::DraftingComponent.new(budget) %>
+  <%= render Admin::Budgets::LinksComponent.new(budget) %>
+
+  <section class="groups-and-headings" aria-labelledby="groups_and_headings_header">
+    <h3 id="groups_and_headings_header"><%= t("admin.budgets.show.groups_and_headings") %></h3>
+    <%= render Admin::Budgets::GroupsAndHeadingsComponent.new(budget) %>
+  </section>
+
+  <section class="phases" aria-labelledby="phases_header">
+    <h3 id="phases_header"><%= t("admin.budgets.edit.phases_caption") %></h3>
+    <span class="help-text"><%= t("admin.budgets.edit.phases_table_help_text") %></span>
+    <%= render Admin::BudgetPhases::PhasesComponent.new(budget) %>
+  </section>
+
+  <section aria-labelledby="actions_header">
+    <h3 id="actions_header"><%= t("admin.budgets.edit.actions") %></h3>
+    <%= render Admin::Budgets::ActionsComponent.new(budget) %>
+  </section>
+</main>

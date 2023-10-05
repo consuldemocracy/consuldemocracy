@@ -4,20 +4,20 @@
 <% else %>
   <div class="budget-header">
 <% end %>
-  <div class="row">
-    <div class="small-12 column text-center">
-      <span class="budget-title"><%= t("budgets.index.title") %></span>
-      <h1><%= budget.name %></h1>
+<div class="row">
+  <div class="small-12 column text-center">
+    <span class="budget-title"><%= t("budgets.index.title") %></span>
+    <h1><%= budget.name %></h1>
 
-      <% if budget.main_link_text.present? && budget.main_link_url.present? %>
-        <%= link_to budget.main_link_text, budget.main_link_url, class: "main-link" %>
-      <% end %>
+    <% if budget.main_link_text.present? && budget.main_link_url.present? %>
+      <%= link_to budget.main_link_text, budget.main_link_url, class: "main-link" %>
+    <% end %>
 
-      <p>
-        <%= link_to t("budgets.index.section_header.help"), "#section_help" %>
-      </p>
-    </div>
+    <p>
+      <%= link_to t("budgets.index.section_header.help"), "#section_help" %>
+    </p>
   </div>
+</div>
 </div>
 
 <%= render Budgets::SubheaderComponent.new(budget) %>
