@@ -12,8 +12,7 @@
   <!-- remove conditional once specs have image validations -->
   <td>
     <% if card.image.present? %>
-      <%= link_to t("admin.shared.show_image"), card.image.variant(:large),
-                  title: card.image.title, target: "_blank" %>
+      <%= link_to t("admin.shared.show_image"), card.image.variant(:large), title: card.image.title %>
     <% end %>
   </td>
   <td>
