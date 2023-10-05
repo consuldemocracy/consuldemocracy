@@ -87,6 +87,7 @@ pl:
     user_permission_proposal: Twórz i dołączaj do pomysłów
     user_permission_support_proposal: Popieraj propozycje*
     user_permission_votes: Uczestniczyć w głosowaniu końcowym*
+    verification_needed: Potrzebna jest dodatkowa weryfikacja
     verified_user:
       form:
         submit_button: Wyślij kod
