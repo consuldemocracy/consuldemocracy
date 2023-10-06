@@ -1,4 +1,4 @@
-resources :comments, only: [:create, :show], shallow: true do
+resources :comments, only: [:create, :show] do
   member do
     post :vote
     put :flag
