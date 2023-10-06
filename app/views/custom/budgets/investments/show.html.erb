@@ -1,0 +1,26 @@
+<% provide :title do %><%= @investment.title %><% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: budget_investment_url %>
+<% end %>
+
+<%= render "/budgets/investments/investment_show",
+           investment: @investment,
+           investment_ids: @investment_ids,
+           ballot: @ballot %>
+
+<div class="row">
+  <div class="small-12 column">
+    <%= render "budgets/investments/filter_subnav" %>
+  </div>
+</div>
+
+<div class="tabs-content" data-tabs-content="investments_tabs">
+  <div class="tabs-panel is-active" id="tab-comments">
+    <%= render MachineLearning::CommentsSummaryComponent.new(@investment) %>
+
+    <%= render "/comments/comment_tree", comment_tree: @comment_tree,
+                                         display_comments_count: false %>
+  </div>
+
+  <%= render "milestones/milestones", milestoneable: @investment %>
+</div>

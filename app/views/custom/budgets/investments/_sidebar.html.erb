@@ -1,0 +1,29 @@
+<div class="clear"></div>
+
+<% if can?(:create, Budget::Investment.new(budget: @budget)) %>
+  <% if current_user && current_user.level_two_or_three_verified? %>
+    <%= link_to t("budgets.investments.index.sidebar.create"),
+                new_budget_investment_path(budget_id: @budget.id),
+                class: "button budget expanded" %>
+  <% else %>
+    <div class="callout warning">
+      <%= sanitize(t("budgets.investments.index.sidebar.verified_only",
+                     verify: link_to_verify_account)) %>
+    </div>
+  <% end %>
+<% end %>
+
+<div id="my_ballot">
+  <%= render Budgets::Investments::MyBallotComponent.new(
+    ballot: @ballot,
+    heading: @heading,
+    investment_ids: @investment_ids,
+    assigned_heading: @assigned_heading
+  ) %>
+</div>
+
+<%= render Budgets::Investments::ContentBlocksComponent.new(@heading) %>
+<%= render Budgets::Investments::MapComponent.new(@investments_in_map, heading: @heading) %>
+<%= render "shared/tag_cloud", taggable: "Budget::Investment" %>
+<%#= render "budgets/investments/categories" %>
+<%= render Budgets::Investments::FiltersComponent.new %>
