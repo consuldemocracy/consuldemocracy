@@ -575,10 +575,10 @@ tr:
             long_title: "Gelişmekte olan ülkelerde, çevreye duyarlı teknolojilerin karşılıklı olarak anlaşma sağlandığı üzere, ayrıcalıklı ve öncelikli koşullar ile birlikte uygun koşullarda gelişmesinin, aktarılmasının ve yayılmasının özendirilmesi."
             short_title: "Gelişmekte olan ülkelerde sürdürülebilir teknolojilerin özendirilmesi"
           target_17_8:
-            long_title: "2017 yılına kadar, en az gelişmiş ülkeler için teknoloji bankasının ve bilim, teknoloji ve yenilikçi kapasite geliştirme sisteminin tümden faaliyete geçirilmesi ve özellikle bilgi ve iletişim teknolojileri olmak üzere etkinleştirme teknolojileri kullanımının artırılması."
-            short_title: "Az Gelişmiş Ülkelerin Bilim, Teknoloji ve Yenilik Kapasitesinin Güçlendirilmesi"
+            long_title: "2017 yılına kadar, en az gelişmiş ülkeler için teknoloji bankasının ve bilim, teknoloji ve yenilikçi kapasite geliştirme sisteminin tümüyle kullanıma alınması ile başta bilgi ve iletişim teknolojileri olmak üzere teknoloji kullanımının artırılması."
+            short_title: "Az gelişmiş ülkelerin bilim, teknoloji ve yenilik kapasitesinin güçlendirilmesi"
           target_17_9:
-            long_title: "Kuzey-Güney, Güney-Güney ve üçlü işbirliği dahil olmak üzere tüm Sürdürülebilir Kalkınma Hedeflerinin uygulanabilmesi adına ulusal planları desteklemek amacıyla gelişmekte olan ülkelerdeki etkili ve hedeflenen kapasite geliştirme uygulamaları için uluslararası destek sağlanması."
+            long_title: "Kuzey-Güney, Güney-Güney ve üçlü iş birliği ile birlikte tüm Sürdürülebilir Kalkınma Hedeflerinin uygulanabilmesi adına ulusal planları desteklemek amacıyla, gelişmekte olan ülkelerdeki etkili ve hedeflenen kapasite geliştirme uygulamaları için uluslararası destek sağlanması."
             short_title: "Gelişmekte olan ülkelerdeki SKA kapasitesinin artırılması "
           target_17_10:
             long_title: "Doha Kalkınma Gündemi çerçevesinde yürütülen görüşmelerin sonuçlandırılması ile birlikte, Dünya Ticaret Örgütü bünyesinde herkes için geçerli, kurallara dayanan, açık, ayrımcı olmayan ve eşitlikçi, çok taraflı bir ticaret sisteminin desteklenmesi."
@@ -587,50 +587,50 @@ tr:
             long_title: "Gelişmekte olan ülkelerin ihracatlarının, özellikle en az gelişmiş ülkelerin küresel ihracat payının, 2020 yılına kadar iki katına çıkarılması amacıyla önemli ölçüde artırılması."
             short_title: "Gelişmekte olan ülkelerin ihracatının artırılması"
           target_17_12:
-            long_title: "Dünya Ticaret Örgütü kararlarına uygun olarak, en az gelişmiş ülkelerden yapılan ithalata uygulanan tercihli menşe kurallarının şeffaf ve basit olmasını sağlamak da dahil olmak üzere, tüm en az gelişmiş ülkeler için kalıcı bir temelde gümrüksüz ve kotasız pazar erişiminin zamanında uygulanmasını gerçekleştirmek, ve pazara erişimin kolaylaştırılmasına katkıda bulunmak."
-            short_title: "Az Gelişmiş Ülkelerin Ticaret Engellerinin Kaldırılması"
+            long_title: "Dünya Ticaret Örgütü kararlarına uygun olarak, en az gelişmiş ülkelerden yapılan ithalata uygulanan tercihli menşe kurallarının şeffaf ve basit olmasını sağlamakla birlikte, en az gelişmiş ülkelerin tümü için kalıcı bir temelde gümrüksüz ve kotasız pazar erişiminin zamanında uygulanmasını sağlamak ve pazara erişimin kolaylaştırılmasına katkıda bulunmak."
+            short_title: "Az gelişmiş ülkelerin ticaret engellerinin kaldırılması"
           target_17_13:
-            long_title: "Politika koordinasyonu ve tutarlılığına dayanan küresel makroekonomik istikrarın geliştirilmesi."
-            short_title: "Küresel Makro Ekonomik İstikrarın Geliştirilmesi"
+            long_title: "Politika koordinasyonu ve tutarlılığı ile küresel makroekonomik istikrarın geliştirilmesi."
+            short_title: "Küresel makroekonomik istikrarın geliştirilmesi"
           target_17_14:
             long_title: "Sürdürülebilir kalkınma için politik tutarlılığın arttırılması."
-            short_title: "Sürdürülebilir Kalkınma için Politik Tutarlılığının Artırılması"
+            short_title: "Sürdürülebilir kalkınma için politik tutarlılığının artırılması"
           target_17_15:
             long_title: "Yoksulluğun ortadan kaldırılması ve sürdürülebilir kalkınma için politikalar oluşturulması ve uygulanması amacıyla her bir ülkenin politik alanına ve liderliğine saygı duyulması."
-            short_title: "Sürdürülebilir Kalkınma Hedeflerine Yönelik Politikaları Uygulamak İçin Ulusal Liderliğe Saygı Duyulması"
+            short_title: "Sürdürülebilir kalkınma hedeflerine yönelik politikaları uygulamak için ulusal liderliklere saygı duyulması"
           target_17_16:
-            long_title: "Gelişmekte olan ülkeler başta olmak üzere, tüm ülkelerde Sürdürülebilir Kalkınma Hedeflerine ulaşılmasının desteklenmesi için bilgi, uzmanlık, teknoloji ve finansal kaynakları seferber eden ve paylaşan çok paydaşlı ortaklıklar ile tamamlanan sürdürülebilir kalkınma için küresel ortaklıkların iyileştirilmesi."
-            short_title: "Sürdürülebilir Kalkınma için Küresel İş Birliğinin Geliştirilmesi"
+            long_title: "Gelişmekte olan ülkeler başta olmak üzere, tüm ülkelerde Sürdürülebilir Kalkınma Hedeflerine ulaşılmasının desteklenmesi için bilgi, uzmanlık, teknoloji ve finansal kaynakları harekete geçiren ve paylaşan çok paydaşlı iş birlikleri ile bütünlenen sürdürülebilir kalkınma için küresel iş birliklerinin geliştirilmesi."
+            short_title: "Sürdürülebilir kalkınma için küresel iş birliklerinin geliştirilmesi"
           target_17_17:
-            long_title: "Ortaklıkların deneyim ve kaynak sağlama stratejilerine dayanan kamu, kamu-özel ve sivil toplum ortaklıklarının teşvik edilmesi ve desteklenmesi."
-            short_title: "Etkili Ortaklıkların Teşvik Edilmesi"
+            long_title: "Ortakların deneyim ve kaynak sağlama stratejilerine dayanan kamu, kamu-özel ve sivil toplum iş birliklerinin özendirilmesi ve desteklenmesi."
+            short_title: "Etkili iş birliklerinin özendirilmesi"
           target_17_18:
-            long_title: "2020’ye kadar, gelir, cinsiyet, yaş, ırk, etnik köken, göçmen statüsü, engellilik, coğrafi konum ve ulusal bağlamlardaki ilgili diğer niteliklere göre ayrılan kaliteli, güncel ve güvenilir verilerin elde edilebilirliğini büyük ölçüde artırmak için en az gelişmiş ülkeleri ve gelişmekte olan küçük ada devletleri de dahil olmak üzere gelişmekte olan ülkelere verilen kapasite geliştirme desteğinin artırılması."
-            short_title: "Güvenilir Verilerin Kullanılabilirliğinin Artırılması"
+            long_title: "2020 yılına kadar, gelir, cinsiyet, yaş, ırk, etnik köken, göçmen statüsü, engellilik, coğrafi konum ve ulusal bağlamlardaki ilgili diğer niteliklere göre ayrılan kaliteli, güncel ve güvenilir verilerin elde edilebilirliğini büyük ölçüde artırmak için en az gelişmiş ülkeleri ve gelişmekte olan küçük ada devletleri ile birlikte gelişmekte olan ülkelere verilen kapasite geliştirme desteğinin artırılması."
+            short_title: "Güvenilir verilerin kullanılabilirliğinin artırılması"
           target_17_19:
-            long_title: "2030’a kadar, gayri safi yurt içi hasılayı tamamlayan sürdürülebilir kalkınmanın ilerletilmesine yönelik ölçümleri geliştirmek için mevcut girişimlerin yapılandırılması ve gelişmekte olan ülkelerde istatistiksel kapasite geliştirmenin desteklenmesi."
-            short_title: "İlerleme Ölçümlerinin Daha Fazla Geliştirilmesi"
+            long_title: "2030 yılına kadar, gayri safi yurt içi hasılayı tamamlayan sürdürülebilir kalkınmanın ilerletilmesine yönelik ölçümleri geliştirmek için var olan girişimlerin yapılandırılması ve gelişmekte olan ülkelerde istatistiksel kapasite geliştirmelerinin desteklenmesi."
+            short_title: "İlerleme ölçümlerinin daha fazla geliştirilmesi"
       help:
         title: "Sürdürülebilir Kalkınma Amaçları yardım"
-        description: "Topluma olan katkılarınızı (tartışmalar, vatandaş önerileri ve yatırım projeleri) Sürdürülebilir Kalkınma Hedefleri 2030 Ajandası ile uyumlu hale getirebilirsiniz, bu, Sürdürülebilir Kalkınma Hedeflerinin her birine olan katkımızın genel bakışına sahip olmamızı sağlayacaktır. Aşağıda tüm amaçlar, hedefler ve yerelleştirilmiş hedefler hakkında bilgi bulabilirsiniz."
+        description: "Topluma olan katkılarınızı (tartışmalar, yurttaş önergeleri ve yatırım projeleri) 2030 Sürdürülebilir Kalkınma Amaçları Ajandası ile uyumlu hale getirebilirsiniz. Böylece Sürdürülebilir Kalkınma Amaçlarının her birine yapılan katkı özetini görebilirsiniz. Aşağıda tüm amaçlar, hedefler ve yerelleştirilmiş hedefler ile ilgili bilgileri bulabilirsiniz."
       show:
-        read_more: "%{goal} ayrıntılarını görüntüle"
+        read_more: "%{goal} ayrıntılarını göster"
         read_less: "%{goal} ayrıntılarını gizle"
         targets:
-          no_local_targets: Bu amacın yerel hedefleri yok
-      title: "Sürdürülebilir Gelişme Amaçları"
+          no_local_targets: Bu amacın herhangi bir yerel hedefi yok
+      title: "Sürdürülebilir Kalkınma Amaçları"
       filter:
-        heading: "SGA süzgeçleri"
-        link: "Amaçla bağlantılı tüm %{resources} görüntüle %{code}"
+        heading: "SKA süzgeçleri"
+        link: "%{code} amacıyla bağlantılı tüm %{resources}"
         more:
           one: "Bir amaç daha"
           other: "%{count} amaç daha"
     related_list_selector:
-      goal_identifier: "SGA%{code}"
-      goal_list: "%{record} kaydınız ile uyumlu bir ya da birkaç SGA seçebilirsiniz"
+      goal_identifier: "SKA%{code}"
+      goal_list: "%{record} kaydınız ile uyumlu bir ya da birkaç SKA seçebilirsiniz"
       help:
-        title: "Hangi SGA %{record} ile uyumlu?"
-        text: "SGA yardım sayfası"
+        title: "Hangi SKA %{record} ile uyumlu?"
+        text: "SKA yardım sayfası"
       hint: Bulmak istediğiniz özel bir amacın/hedefin kodunu okutabilir ya da metnini yazarak arayabilirsiniz. Ayrıntılı bilgi almak için %{link} adresine bakabilirsiniz.
       remove_tag: "Kaldır"
       title: "Sürdürülebilir Kalkınma Amaçları ve Hedefleri"
