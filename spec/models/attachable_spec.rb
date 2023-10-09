@@ -58,4 +58,48 @@ describe Attachable do
       expect(document.valid?).to be(false)
     end
   end
+
+  context "file content types validation" do
+    it "is not applied when the image attachment has not changed" do
+      image = create(:image, :proposal_image)
+
+      expect(image.valid?).to be(true)
+
+      Setting["uploads.images.content_types"] = "image/gif"
+
+      expect(image.valid?).to be(true)
+    end
+
+    it "is applied when the image attachment changes" do
+      image = create(:image, :proposal_image)
+
+      expect(image.valid?).to be(true)
+
+      Setting["uploads.images.content_types"] = "image/gif"
+      image.attachment = Rack::Test::UploadedFile.new("spec/fixtures/files/clippy.png")
+
+      expect(image.valid?).to be(false)
+    end
+
+    it "is not applied when the document attachment has not changed" do
+      document = create(:document, :proposal_document)
+
+      expect(document.valid?).to be(true)
+
+      Setting["uploads.documents.content_types"] = "text/csv"
+
+      expect(document.valid?).to be(true)
+    end
+
+    it "is applied when the document attachment changes" do
+      document = create(:document, :proposal_document)
+
+      expect(document.valid?).to be(true)
+
+      Setting["uploads.documents.content_types"] = "text/csv"
+      document.attachment = Rack::Test::UploadedFile.new("spec/fixtures/files/clippy.pdf")
+
+      expect(document.valid?).to be(false)
+    end
+  end
 end

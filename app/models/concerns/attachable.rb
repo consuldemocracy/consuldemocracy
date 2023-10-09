@@ -9,7 +9,7 @@ module Attachable
               presence: true,
               file_content_type: {
                 allow: ->(record) { record.accepted_content_types },
-                if: -> { association_class && attachment.attached? },
+                if: -> { association_class && attachment.attached? && attachment.new_record? },
                 message: ->(record, *) do
                   I18n.t("#{record.model_name.plural}.errors.messages.wrong_content_type",
                          content_type: record.attachment_content_type,
