@@ -8,7 +8,7 @@ Devise.setup do |config|
   # Need 1 char each of: A-Z, a-z, 0-9, and a punctuation mark or symbol
   # You may use "digits" in place of "digit" and "symbols" in place of
   # "symbol" based on your preference
-  config.password_complexity = { digit: 0, lower: 0, symbol: 0, upper: 0 }
+  config.password_complexity = { digit: 0, lower: 0, symbol: 0, upper: 0 } # Overwritten in User model
 
   # How many passwords to keep in archive
   # config.password_archiving_count = 5
