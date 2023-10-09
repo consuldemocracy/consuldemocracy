@@ -22,6 +22,10 @@ class Poll
       where(polls: { id: Poll.current_or_recounting }).joins(:polls)
     end
 
+    def self.available_for_admin
+      where(polls: { id: Poll.current_or_recounting.or(Poll.future_event?) }).joins(:polls)
+    end
+
     def assignment_on_poll(poll)
       booth_assignments.find_by(poll: poll)
     end

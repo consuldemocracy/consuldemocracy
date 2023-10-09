@@ -86,6 +86,10 @@ class Poll < ApplicationRecord
     ends_at < timestamp
   end
 
+  def future_event?(timestamp = Time.current)
+    starts_at > timestamp
+  end
+
   def recounts_confirmed?
     ends_at < 1.month.ago
   end
