@@ -10,6 +10,8 @@
 
     <h1 class="inline-block"><%= t("account.show.title") %></h1>
 
+    <%= render Account::SignInInfoComponent.new(@account) %>
+
     <%= form_for @account, as: :account, url: account_path do |f| %>
       <%= render "shared/errors", resource: @account %>
 

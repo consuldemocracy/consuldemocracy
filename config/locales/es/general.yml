@@ -1,6 +1,7 @@
 es:
   account:
     show:
+      last_sign_in: "Último acceso efectuado: %{last_sign_in_at} desde la IP %{last_sign_in_ip}"
       change_credentials_link: Cambiar mis datos de acceso
       erase_account_link: Darme de baja
       finish_verification: Finalizar verificación
