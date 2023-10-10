@@ -1695,7 +1695,7 @@ table {
 
   button,
   form {
-    color: $text-light;
+    color: $dark-gray;
     display: inline-block;
   }
 
@@ -1708,10 +1708,11 @@ table {
   }
 
   @mixin like-unlike-icon($icon, $pressed-color) {
-    @include has-fa-icon($icon, solid);
+    @include has-fa-icon($icon, regular);
 
     &:hover,
     &[aria-pressed=true] {
+      @include has-fa-icon($icon, solid);
       color: $pressed-color;
     }
   }

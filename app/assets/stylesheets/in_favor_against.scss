@@ -16,7 +16,7 @@
     background: #fff;
     border: 2px solid;
     border-radius: rem-calc(3);
-    color: $text-light;
+    color: $dark-gray;
     display: inline-block;
     font-size: rem-calc(30);
     line-height: rem-calc(30);
@@ -25,7 +25,7 @@
   }
 
   @mixin like-unlike-icon($icon, $pressed-color) {
-    @include has-fa-icon($icon, solid);
+    @include has-fa-icon($icon, regular);
 
     &:not([disabled]) {
       cursor: pointer;
@@ -33,6 +33,7 @@
       &:hover,
       &:active,
       &[aria-pressed=true] {
+        @include has-fa-icon($icon, solid);
         background: $pressed-color;
         border-color: $pressed-color;
         color: #fff;
