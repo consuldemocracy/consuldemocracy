@@ -184,10 +184,16 @@ Rails.logger.info("oauth_user #{oauth_user}")
     oauth_lacode_ref          = "9079"
     oauth_lacode_confirmed    = oauth_lacode == oauth_lacode_ref
     oauth_user            = User.find_by(email: oauth_email) if oauth_email_confirmed
-    oauth_username = oauth_full_name ||  oauth_email.split("@").first || auth.info.name || auth.uid
-    if oauth_username == oauth_full_name
-         oauth_username = "#{oauth_full_name}_#{rand(100..999)}"
-      end
+  #  oauth_username = oauth_full_name ||  oauth_email.split("@").first || auth.info.name || auth.uid
+   # if oauth_username == oauth_full_name
+   #      oauth_username = "#{oauth_full_name}_#{rand(100..999)}"
+   #   end
+  if oauth_username.present? && oauth_username != oauth_email && oauth_username != oauth_full_name
+      oauth_username = oauth_username
+   else
+   # If the original value of oauth_username is the same as oauth_email or oauth_full_name, add a random numbe
+      oauth_username = "#{oauth_full_name}_#{rand(100..999)}"
+   end
     oauth_user || User.new(
       username:  oauth_username,
       email: oauth_email,
