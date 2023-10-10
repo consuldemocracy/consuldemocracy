@@ -30,10 +30,13 @@
     &:not([disabled]) {
       cursor: pointer;
 
-      &:hover,
-      &:active,
-      &[aria-pressed=true] {
+      &[aria-pressed=false]:hover,
+      &[aria-pressed=false]:active,
+      &[aria-pressed=true]:not(:hover, :active) {
         @include has-fa-icon($icon, solid);
+      }
+
+      &[aria-pressed=true] {
         background: $pressed-color;
         border-color: $pressed-color;
         color: #fff;

@@ -1710,9 +1710,12 @@ table {
   @mixin like-unlike-icon($icon, $pressed-color) {
     @include has-fa-icon($icon, regular);
 
-    &:hover,
-    &[aria-pressed=true] {
+    &[aria-pressed=false]:hover,
+    &[aria-pressed=true]:not(:hover) {
       @include has-fa-icon($icon, solid);
+    }
+
+    &[aria-pressed=true] {
       color: $pressed-color;
     }
   }
