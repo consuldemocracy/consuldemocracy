@@ -506,6 +506,10 @@ body > header,
     padding: rem-calc(6) 0;
     text-align: center;
   }
+
+  h1 a {
+    color: inherit;
+  }
 }
 
 .public > .wrapper > header,

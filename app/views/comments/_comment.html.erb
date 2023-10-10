@@ -19,7 +19,7 @@
           <% elsif comment.user.organization? %>
             <%= image_tag("avatar_collective.png", size: 32, class: "avatar float-left") %>
           <% else %>
-            <%= avatar_image(comment.user, seed: comment.user_id, size: 32, class: "float-left") %>
+            <%= render Shared::AvatarComponent.new(comment.user, size: 32, class: "float-left") %>
           <% end %>
         <% end %>
 
