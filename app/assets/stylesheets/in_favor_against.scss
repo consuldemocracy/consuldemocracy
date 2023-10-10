@@ -41,7 +41,7 @@
       &:active,
       &[aria-pressed=true] {
         background: $like;
-        border: 2px solid $like;
+        border-color: $like;
       }
     }
   }
@@ -54,7 +54,7 @@
       &:active,
       &[aria-pressed=true] {
         background: $unlike;
-        border: 2px solid $unlike;
+        border-color: $unlike;
       }
     }
   }
