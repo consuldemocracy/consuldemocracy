@@ -10,6 +10,7 @@ class Widget::Card < ApplicationRecord
 
   validates_translation :title, presence: true
   validates :link_url, presence: true, if: -> { !header? || link_text.present? }
+  validates :order, numericality: { greater_than_or_equal_to: 1 }
 
   def self.header
     where(header: true)
