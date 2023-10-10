@@ -22,41 +22,30 @@
     line-height: rem-calc(30);
     padding: rem-calc(3) rem-calc(6) rem-calc(6);
     position: relative;
+  }
+
+  @mixin like-unlike-icon($icon, $pressed-color) {
+    @include has-fa-icon($icon, solid);
 
     &:not([disabled]) {
+      cursor: pointer;
+
       &:hover,
       &:active,
       &[aria-pressed=true] {
+        background: $pressed-color;
+        border-color: $pressed-color;
         color: #fff;
-        cursor: pointer;
       }
     }
   }
 
   .in-favor button {
-    @include has-fa-icon(thumbs-up, solid);
-
-    &:not([disabled]) {
-      &:hover,
-      &:active,
-      &[aria-pressed=true] {
-        background: $like;
-        border-color: $like;
-      }
-    }
+    @include like-unlike-icon(thumbs-up, $like);
   }
 
   .against button {
-    @include has-fa-icon(thumbs-down, solid);
-
-    &:not([disabled]) {
-      &:hover,
-      &:active,
-      &[aria-pressed=true] {
-        background: $unlike;
-        border-color: $unlike;
-      }
-    }
+    @include like-unlike-icon(thumbs-down, $unlike);
   }
 
   .percentage {
