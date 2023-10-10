@@ -22,7 +22,7 @@
       }
 
       &:focus-within label {
-        outline: $outline-focus;
+        @include focus-outline;
       }
     }
 
