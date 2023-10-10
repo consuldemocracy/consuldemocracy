@@ -172,7 +172,7 @@ Rails.logger.info("oauth_user #{oauth_user}")
   Rails.logger.info( auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.4", 0).to_s)
   Rails.logger.info( auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.5", 0).to_s)
    Rails.logger.info( auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.6", 0).to_s)
-    
+    oauth_username           = auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.1", 0).to_s
     oauth_email           = auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.22", 0).to_s
     oauth_email_confirmed = oauth_email.present?
    # oauth_email_confirmed = oauth_email.present? && (auth.info.verified || auth.info.verified_email)
