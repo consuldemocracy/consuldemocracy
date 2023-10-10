@@ -25,10 +25,10 @@
 
     &:not([disabled]) {
       &:hover,
-      &:active {
+      &:active,
+      &[aria-pressed=true] {
         color: #fff;
         cursor: pointer;
-        opacity: 1 !important;
       }
     }
   }
@@ -38,7 +38,8 @@
 
     &:not([disabled]) {
       &:hover,
-      &:active {
+      &:active,
+      &[aria-pressed=true] {
         background: $like;
         border: 2px solid $like;
       }
@@ -50,17 +51,12 @@
 
     &:not([disabled]) {
       &:hover,
-      &:active {
+      &:active,
+      &[aria-pressed=true] {
         background: $unlike;
         border: 2px solid $unlike;
       }
     }
-  }
-
-  .like,
-  .unlike {
-    vertical-align: super;
-    text-decoration: none;
   }
 
   .percentage {
@@ -75,23 +71,5 @@
       line-height: $line-height;
       padding-right: 0;
     }
-  }
-
-  .voted {
-    color: #fff;
-  }
-
-  .in-favor .voted {
-    background: $like;
-    border: 2px solid $like;
-  }
-
-  .against .voted {
-    background: $unlike;
-    border: 2px solid $unlike;
-  }
-
-  .no-voted {
-    opacity: 0.3;
   }
 }

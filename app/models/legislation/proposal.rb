@@ -108,14 +108,6 @@ class Legislation::Proposal < ApplicationRecord
     author_id == user.id && editable?
   end
 
-  def votable_by?(user)
-    user&.level_two_or_three_verified?
-  end
-
-  def register_vote(user, vote_value)
-    vote_by(voter: user, vote: vote_value) if votable_by?(user)
-  end
-
   def code
     "#{Setting["proposal_code_prefix"]}-#{created_at.strftime("%Y-%m")}-#{id}"
   end

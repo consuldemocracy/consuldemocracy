@@ -286,7 +286,7 @@ class Budget
     def permission_problem(user)
       return :not_logged_in unless user
       return :organization  if user.organization?
-      return :not_verified  unless user.can?(:create, ActsAsVotable::Vote)
+      return :not_verified  unless user.level_two_or_three_verified?
 
       nil
     end

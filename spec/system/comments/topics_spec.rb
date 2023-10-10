@@ -547,7 +547,7 @@ describe "Commenting topics from proposals" do
       end
     end
 
-    scenario "Trying to vote multiple times" do
+    scenario "Allow undoing votes" do
       visit community_topic_path(proposal.community, topic)
 
       within("#comment_#{comment.id}_votes") do
@@ -560,14 +560,14 @@ describe "Commenting topics from proposals" do
         click_button "I agree"
 
         within(".in-favor") do
-          expect(page).to have_content "1"
+          expect(page).to have_content "0"
         end
 
         within(".against") do
           expect(page).to have_content "0"
         end
 
-        expect(page).to have_content "1 vote"
+        expect(page).to have_content "No votes"
       end
     end
   end
@@ -1060,7 +1060,7 @@ describe "Commenting topics from budget investments" do
       end
     end
 
-    scenario "Trying to vote multiple times" do
+    scenario "Allow undoing votes" do
       visit community_topic_path(investment.community, topic)
 
       within("#comment_#{comment.id}_votes") do
@@ -1073,14 +1073,14 @@ describe "Commenting topics from budget investments" do
         click_button "I agree"
 
         within(".in-favor") do
-          expect(page).to have_content "1"
+          expect(page).to have_content "0"
         end
 
         within(".against") do
           expect(page).to have_content "0"
         end
 
-        expect(page).to have_content "1 vote"
+        expect(page).to have_content "No votes"
       end
     end
   end

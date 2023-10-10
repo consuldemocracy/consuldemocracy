@@ -1,25 +1,17 @@
 <div class="in-favor-against">
   <div class="in-favor">
-    <%= button_to polymorphic_path(votable, action: :vote, value: "yes"),
-                  class: "like #{voted_classes[:in_favor]}",
-                  title: t("votes.agree"),
-                  "aria-label": agree_aria_label,
-                  method: "post",
-                  remote: true do %>
-      <span class="show-for-sr"><%= t("votes.agree") %></span>
-    <% end %>
+    <%= render Shared::VoteButtonComponent.new(votable,
+                                               value: "yes",
+                                               "aria-label": agree_aria_label,
+                                               title: t("votes.agree")) %>
     <span class="percentage"><%= votes_percentage("likes", votable) %></span>
   </div>
 
   <div class="against">
-    <%= button_to polymorphic_path(votable, action: :vote, value: "no"),
-                  class: "unlike #{voted_classes[:against]}",
-                  title: t("votes.disagree"),
-                  "aria-label": disagree_aria_label,
-                  method: "post",
-                  remote: true do %>
-      <span class="show-for-sr"><%= t("votes.disagree") %></span>
-    <% end %>
+    <%= render Shared::VoteButtonComponent.new(votable,
+                                               value: "no",
+                                               "aria-label": disagree_aria_label,
+                                               title: t("votes.disagree")) %>
     <span class="percentage"><%= votes_percentage("dislikes", votable) %></span>
   </div>
 </div>

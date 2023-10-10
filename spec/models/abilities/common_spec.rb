@@ -7,6 +7,7 @@ describe Abilities::Common do
   let(:geozone)     { create(:geozone)  }
 
   let(:user) { create(:user, geozone: geozone) }
+  let(:another_user) { create(:user) }
 
   let(:debate)       { create(:debate)   }
   let(:comment)      { create(:comment)  }
@@ -15,6 +16,7 @@ describe Abilities::Common do
   let(:own_comment)  { create(:comment,  author: user) }
   let(:own_proposal) { create(:proposal, author: user) }
   let(:own_legislation_proposal) { create(:legislation_proposal, author: user) }
+  let(:legislation_proposal) { create(:legislation_proposal) }
 
   let(:accepting_budget) { create(:budget, :accepting) }
   let(:reviewing_budget) { create(:budget, :reviewing) }
@@ -73,7 +75,10 @@ describe Abilities::Common do
 
   it { should be_able_to(:index, Debate) }
   it { should be_able_to(:show, debate)  }
-  it { should be_able_to(:vote, debate)  }
+  it { should be_able_to(:create, user.votes.build(votable: debate)) }
+  it { should_not be_able_to(:create, another_user.votes.build(votable: debate)) }
+  it { should be_able_to(:destroy, user.votes.build(votable: debate)) }
+  it { should_not be_able_to(:destroy, another_user.votes.build(votable: debate)) }
 
   it { should be_able_to(:show, user) }
   it { should be_able_to(:edit, user) }
@@ -108,7 +113,10 @@ describe Abilities::Common do
 
   describe "Comment" do
     it { should be_able_to(:create, Comment) }
-    it { should be_able_to(:vote, Comment) }
+    it { should be_able_to(:create, user.votes.build(votable: comment)) }
+    it { should_not be_able_to(:create, another_user.votes.build(votable: comment)) }
+    it { should be_able_to(:destroy, user.votes.build(votable: comment)) }
+    it { should_not be_able_to(:destroy, another_user.votes.build(votable: comment)) }
 
     it { should be_able_to(:hide, own_comment) }
     it { should_not be_able_to(:hide, comment) }
@@ -137,20 +145,16 @@ describe Abilities::Common do
   end
 
   describe "follows" do
-    let(:other_user) { create(:user) }
-
     it { should be_able_to(:create, build(:follow, :followed_proposal, user: user)) }
-    it { should_not be_able_to(:create, build(:follow, :followed_proposal, user: other_user)) }
+    it { should_not be_able_to(:create, build(:follow, :followed_proposal, user: another_user)) }
 
     it { should be_able_to(:destroy, create(:follow, :followed_proposal, user: user)) }
-    it { should_not be_able_to(:destroy, create(:follow, :followed_proposal, user: other_user)) }
+    it { should_not be_able_to(:destroy, create(:follow, :followed_proposal, user: another_user)) }
   end
 
   describe "other users" do
-    let(:other_user) { create(:user) }
-
-    it { should     be_able_to(:show, other_user) }
-    it { should_not be_able_to(:edit, other_user) }
+    it { should     be_able_to(:show, another_user) }
+    it { should_not be_able_to(:edit, another_user) }
   end
 
   describe "editing debates" do
@@ -181,6 +185,21 @@ describe Abilities::Common do
 
   it { should_not be_able_to(:edit, own_legislation_proposal) }
   it { should_not be_able_to(:update, own_legislation_proposal) }
+
+  describe "vote legislation proposal" do
+    context "when user is not level_two_or_three_verified" do
+      it { should_not be_able_to(:create, user.votes.build(votable: legislation_proposal)) }
+      it { should_not be_able_to(:destroy, user.votes.build(votable: legislation_proposal)) }
+    end
+
+    context "when user is level_two_or_three_verified" do
+      before { user.update(level_two_verified_at: Date.current) }
+      it { should be_able_to(:create, user.votes.build(votable: legislation_proposal)) }
+      it { should_not be_able_to(:create, another_user.votes.build(votable: legislation_proposal)) }
+      it { should be_able_to(:destroy, user.votes.build(votable: legislation_proposal)) }
+      it { should_not be_able_to(:destroy, another_user.votes.build(votable: legislation_proposal)) }
+    end
+  end
 
   describe "proposals dashboard" do
     it { should be_able_to(:dashboard, own_proposal) }

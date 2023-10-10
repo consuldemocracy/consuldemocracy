@@ -24,7 +24,7 @@
       </div>
       <div class="comment-votes">
         <div id="<%= dom_id(comment) %>_votes" class="comment-votes float-right">
-          <%= render "comments/votes", comment: comment %>
+          <%= render Comments::VotesComponent.new(comment) %>
         </div>
       </div>
     </div>
