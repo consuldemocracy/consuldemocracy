@@ -36,6 +36,18 @@ describe Legislation::Proposals::VotesController do
         post :create, xhr: true, params: vote_params
       end.not_to change { proposal.reload.votes_for.size }
     end
+
+    it "redirects authenticated users without JavaScript to the same page" do
+      request.env["HTTP_REFERER"] = legislation_process_proposal_path(legislation_process, proposal)
+      sign_in create(:user, :level_two)
+
+      expect do
+        post :create, params: vote_params
+      end.to change { proposal.reload.votes_for.size }.by(1)
+
+      expect(response).to redirect_to legislation_process_proposal_path(legislation_process, proposal)
+      expect(flash[:notice]).to eq "Vote created successfully"
+    end
   end
 
   describe "DELETE destroy" do
@@ -51,6 +63,18 @@ describe Legislation::Proposals::VotesController do
       expect do
         delete :destroy, xhr: true, params: vote_params
       end.to change { proposal.reload.votes_for.size }.by(-1)
+    end
+
+    it "redirects authenticated users without JavaScript to the same page" do
+      request.env["HTTP_REFERER"] = legislation_process_proposals_path(legislation_process)
+      sign_in user
+
+      expect do
+        delete :destroy, params: vote_params
+      end.to change { proposal.reload.votes_for.size }.by(-1)
+
+      expect(response).to redirect_to legislation_process_proposals_path(legislation_process)
+      expect(flash[:notice]).to eq "Vote deleted successfully"
     end
   end
 end

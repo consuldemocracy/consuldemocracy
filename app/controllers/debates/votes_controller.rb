@@ -9,6 +9,7 @@ module Debates
       @debate.register_vote(current_user, params[:value])
 
       respond_to do |format|
+        format.html { redirect_to request.referer, notice: I18n.t("flash.actions.create.vote") }
         format.js { render :show }
       end
     end
@@ -17,6 +18,7 @@ module Debates
       @debate.unvote_by(current_user)
 
       respond_to do |format|
+        format.html { redirect_to request.referer, notice: I18n.t("flash.actions.destroy.vote") }
         format.js { render :show }
       end
     end
