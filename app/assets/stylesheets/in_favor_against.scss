@@ -14,7 +14,6 @@
 
   button {
     background: #fff;
-    border: 2px solid;
     border-radius: rem-calc(3);
     color: $dark-gray;
     display: inline-block;
@@ -22,6 +21,26 @@
     line-height: rem-calc(30);
     padding: rem-calc(3) rem-calc(6) rem-calc(6);
     position: relative;
+
+    &[aria-pressed=true] {
+      border-style: inset;
+      border-width: 3px 2px 2px 3px;
+
+      &:active {
+        border-style: outset;
+        border-width: 2px 3px 3px 2px;
+      }
+    }
+
+    &[aria-pressed=false] {
+      border-style: outset;
+      border-width: 2px 3px 3px 2px;
+
+      &:active {
+        border-style: inset;
+        border-width: 3px 2px 2px 3px;
+      }
+    }
   }
 
   @mixin like-unlike-icon($icon, $pressed-color) {
