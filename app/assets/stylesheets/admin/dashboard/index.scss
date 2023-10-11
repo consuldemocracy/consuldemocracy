@@ -3,4 +3,29 @@
     text-transform: uppercase;
     border-bottom: 1px solid $border;
   }
+
+  address {
+    > :not(:last-child) {
+      &::after {
+        content: "";
+        display: block;
+        margin-bottom: $line-height / 3;
+      }
+    }
+
+    a {
+      &[href^="mailto:"] {
+        @include has-fa-icon(envelope, regular);
+      }
+
+      &[href^="http"] {
+        @include has-fa-icon(globe, solid);
+      }
+
+      &::before {
+        margin-#{$global-right}: 0.2em;
+        transform: translateY(-0.2em);
+      }
+    }
+  }
 }
