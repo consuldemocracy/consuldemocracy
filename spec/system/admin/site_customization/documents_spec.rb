@@ -23,7 +23,7 @@ describe "Documents", :admin do
     visit admin_site_customization_documents_path
 
     expect(page).to have_content "There are 3 documents"
-    expect(page).to have_link document.title, href: url
+    expect(page).to have_link "Download file", href: url
   end
 
   scenario "Index (empty)" do
@@ -58,7 +58,8 @@ describe "Documents", :admin do
     click_button "Upload"
 
     expect(page).to have_content "Document uploaded successfully"
-    expect(page).to have_link "logo.pdf"
+
+    within("tr", text: "logo.pdf") { expect(page).to have_link "Download file" }
   end
 
   scenario "Errors on create" do

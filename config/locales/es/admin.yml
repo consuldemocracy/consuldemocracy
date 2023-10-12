@@ -529,7 +529,6 @@ es:
         title: "Documentos"
         format: "Formato"
         size: "Tamaño"
-        url: "URL"
       create:
         success_notice: "Documento creado correctamente"
         unable_notice: "Documento inválido"

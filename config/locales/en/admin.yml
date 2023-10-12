@@ -529,7 +529,6 @@ en:
         title: "Documents"
         format: "Format"
         size: "Size"
-        url: "URL"
       create:
         success_notice: "Document uploaded successfully"
         unable_notice: "Invalid document"
