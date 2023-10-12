@@ -36,7 +36,7 @@
       <% documents.each do |document| %>
         <tr>
           <td>
-            <%= link_to document.title, document.attachment %>
+            <%= document.title %>
           </td>
           <td>
             <%= render Admin::Poll::Questions::Answers::Documents::TableActionsComponent.new(document) %>
