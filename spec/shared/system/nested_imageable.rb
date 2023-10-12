@@ -57,7 +57,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       visit send(path, arguments)
 
       click_link "Add image"
-      input_title = find(".image input[name$='[title]']")
+      input_title = find(".image-fields input[name$='[title]']")
       fill_in input_title[:id], with: "Title"
       attach_file "Choose image", file_fixture("clippy.jpg")
 
@@ -119,7 +119,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       click_link "Add image"
       click_on submit_button
 
-      within "#nested-image .image" do
+      within "#nested-image .image-fields" do
         expect(page).to have_content("can't be blank", count: 2)
       end
     end
@@ -143,11 +143,11 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
       imageable_attach_new_file(file_fixture("clippy.jpg"))
 
-      within "#nested-image .image" do
+      within "#nested-image .image-fields" do
         click_link "Remove image"
       end
 
-      expect(page).not_to have_selector("#nested-image .image")
+      expect(page).not_to have_selector("#nested-image .image-fields")
     end
 
     scenario "Should show successful notice when resource filled correctly without any nested images",
@@ -216,7 +216,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
         visit send(path, arguments)
 
-        expect(page).to have_css ".image", count: 1
+        expect(page).to have_css ".image-fields", count: 1
         expect(page).not_to have_css "a#new_image_link"
       end
 
@@ -227,7 +227,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
         visit send(path, arguments)
         click_link "Remove image"
 
-        expect(page).not_to have_css ".image"
+        expect(page).not_to have_css ".image-fields"
         expect(page).to have_link id: "new_image_link"
       end
 
@@ -239,7 +239,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
         click_link "Remove image"
         click_link "Add image"
 
-        expect(page).to have_css ".image", count: 1, visible: :all
+        expect(page).to have_css ".image-fields", count: 1, visible: :all
       end
     end
   end
