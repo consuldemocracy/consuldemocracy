@@ -12,9 +12,7 @@
     <%= form_for(Poll::Question::Answer.new, url: admin_answer_documents_path(answer)) do |f| %>
       <%= render "shared/errors", resource: answer %>
 
-      <div class="documents">
-        <%= render "documents/nested_documents", f: f %>
-      </div>
+      <%= render Documents::NestedComponent.new(f) %>
 
       <div class="small-12 medium-6 large-2">
         <%= f.submit(class: "button expanded", value: t("shared.save")) %>

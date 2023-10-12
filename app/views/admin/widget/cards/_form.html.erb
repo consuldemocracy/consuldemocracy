@@ -45,7 +45,7 @@
   <div class="row">
     <div class="image-form">
       <div class="image small-12 column">
-        <%= render "images/nested_image", f: f %>
+        <%= render Images::NestedComponent.new(f) %>
       </div>
     </div>
     <div class="column">

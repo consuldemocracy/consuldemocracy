@@ -109,12 +109,12 @@
   </fieldset>
 
   <div class="row">
-    <div class="documents small-12 column">
-      <%= render "documents/nested_documents", f: f %>
+    <div class="small-12 column">
+      <%= render Documents::NestedComponent.new(f) %>
     </div>
 
-    <div class="images small-12 column">
-      <%= render "images/nested_image", f: f %>
+    <div class="small-12 column">
+      <%= render Images::NestedComponent.new(f) %>
     </div>
 
     <div class="small-12 column">
