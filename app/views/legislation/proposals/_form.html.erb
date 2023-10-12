@@ -32,7 +32,7 @@
       </div>
     <% end %>
 
-    <div class="documents small-12 column" data-max-documents="<%= Legislation::Proposal.max_documents_allowed %>">
+    <div class="documents small-12 column">
       <%= render "documents/nested_documents", f: f %>
     </div>
 
