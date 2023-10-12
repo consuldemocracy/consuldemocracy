@@ -67,9 +67,10 @@ class Admin::BudgetsController < Admin::BaseController
         :currency_symbol,
         :voting_style,
         :hide_money,
+        :show_investments,
         administrator_ids: [],
         valuator_ids: [],
-        image_attributes: image_attributes
+        image_attributes: image_attributes,
       ] + descriptions
 
       [*valid_attributes, *report_attributes, translation_params(Budget)]

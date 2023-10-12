@@ -77,6 +77,13 @@
     <%= render "/admin/budgets/association", assignable_type: "valuators", assignables: valuators, form: f %>
   </fieldset>
 
+  <fieldset>
+    <legend><%= t("admin.budgets.edit.show_investments") %></legend>
+    <p class="form-label"></p>
+    <%= f.check_box :show_investments, checked: @budget.show_investments %>
+  </fieldset>
+
+
   <% unless wizard? %>
     <%= render "admin/shared/show_results_fields", form: f %>
   <% end %>
