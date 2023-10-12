@@ -53,6 +53,7 @@ class Admin::BudgetsController < Admin::BaseController
     end
   end
 
+
   private
 
     def budget_params

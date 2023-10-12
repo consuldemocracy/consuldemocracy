@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_09_28_150253) do
+ActiveRecord::Schema.define(version: 2023_10_12_114024) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -404,6 +404,7 @@ ActiveRecord::Schema.define(version: 2023_09_28_150253) do
     t.string "voting_style", default: "knapsack"
     t.boolean "published"
     t.boolean "hide_money", default: false
+    t.boolean "show_investments", default: false
   end
 
   create_table "campaigns", id: :serial, force: :cascade do |t|
