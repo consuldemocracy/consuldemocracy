@@ -87,9 +87,7 @@
         <% end %>
 
         <% if feature?(:allow_attached_documents) %>
-          <%= render "documents/documents",
-                     documents: @proposal.documents,
-                     max_documents_allowed: Proposal.max_documents_allowed %>
+          <%= render "documents/documents", documents: @proposal.documents %>
         <% end %>
 
         <%= render "shared/tags", taggable: @proposal %>

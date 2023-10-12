@@ -45,9 +45,7 @@
 <% end %>
 
 <% if feature?(:allow_attached_documents) %>
-  <%= render "documents/documents",
-             documents: investment.documents,
-             max_documents_allowed: Budget::Investment.max_documents_allowed %>
+  <%= render "documents/documents", documents: investment.documents %>
 <% end %>
 
 <%= render "shared/tags", taggable: investment %>
