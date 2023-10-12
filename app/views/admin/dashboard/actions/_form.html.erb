@@ -65,15 +65,12 @@
 
 <% if feature?(:allow_attached_documents) %>
   <div class="documents small-12 column">
-    <hr>
     <%= render "documents/nested_documents", f: f %>
-    <hr>
   </div>
 <% end %>
 
 <div class="links small-12 column">
   <%= render "links/nested_links", linkable: dashboard_action, f: f %>
-  <hr>
 </div>
 
 <div class="row expanded">
