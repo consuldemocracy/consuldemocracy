@@ -11,13 +11,13 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
   end
 
   context "Show documents" do
-    scenario "Download action should be availabe to anyone and open in a new window" do
+    scenario "Download action should be availabe to anyone and open in the same tab" do
       visit send(documentable_path, arguments)
 
       within "#documents" do
         expect(page).to have_link text: document.title
-        expect(page).to have_selector "a[target=_blank]", text: document.title
         expect(page).to have_selector "a[rel=nofollow]", text: document.title
+        expect(page).not_to have_selector "a[target=_blank]"
       end
     end
 

@@ -1,5 +1,5 @@
 <div id="<%= dom_id(document) %>" class="document">
-  <%= link_to document.attachment, target: "_blank", rel: "nofollow" do %>
+  <%= link_to document.attachment, rel: "nofollow" do %>
     <strong class="document-title"><%= document.title %></strong>
     <small class="document-metadata">
       <span class="document-content-type"><%= document.humanized_content_type %></span>

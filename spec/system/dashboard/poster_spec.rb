@@ -31,9 +31,9 @@ describe "Poster" do
   end
 
   scenario "PDF contains the proposal details" do
-    within_window(window_opened_by { click_link "Download" }) do
-      expect(page).to have_content(proposal.title)
-      expect(page).to have_content(proposal.code)
-    end
+    click_link "Download"
+
+    expect(page).to have_content(proposal.title)
+    expect(page).to have_content(proposal.code)
   end
 end
