@@ -6,7 +6,9 @@
           <p>
             <strong><%= t("documents.additional") %></strong>
           </p>
-          <%= render partial: "documents/additional_document", collection: documents, as: :document %>
+          <% documents.each do |document| %>
+            <%= render Documents::DocumentComponent.new(document) %>
+          <% end %>
         </div>
       </div>
     </div>

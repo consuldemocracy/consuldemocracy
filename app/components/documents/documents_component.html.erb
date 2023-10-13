@@ -3,7 +3,9 @@
 
   <ul class="no-bullet document-link">
     <% documents.each do |document| %>
-      <%= render Documents::DocumentComponent.new(document) %>
+      <li>
+        <%= render Documents::DocumentComponent.new(document, show_destroy_link: true) %>
+      </li>
     <% end %>
   </ul>
 </div>

@@ -1442,8 +1442,19 @@
     }
   }
 
-  .document-link a {
-    word-wrap: break-word;
+  .document-link {
+    > :first-child {
+      @include has-fa-icon(file, regular);
+
+      &::before {
+        position: relative;
+        top: -0.1rem;
+      }
+    }
+
+    a {
+      word-wrap: break-word;
+    }
   }
 }
 

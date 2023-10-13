@@ -2028,12 +2028,8 @@ table {
     word-wrap: break-word;
   }
 
-  .icon-document {
-    color: #007bb7;
-    display: inline-block;
-    font-size: rem-calc(24);
-    line-height: $line-height;
-    vertical-align: middle;
+  > :first-child {
+    @include has-fa-icon(file, regular);
   }
 }
 

@@ -18,7 +18,7 @@
     </thead>
     <tbody id="documents">
       <% @documents.each do |document| %>
-        <tr id="<%= dom_id(document) %>" class="document">
+        <tr id="<%= dom_id(document) %>" class="document-row">
           <td><%= document.title %></td>
           <td><%= document.attachment.content_type %></td>
           <td><%= number_to_human_size(document.attachment.byte_size) %></td>

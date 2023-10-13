@@ -14,9 +14,11 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
     scenario "Download action should be availabe to anyone and open in a new window" do
       visit send(documentable_path, arguments)
 
-      expect(page).to have_link "Download file"
-      expect(page).to have_selector "a[target=_blank]", text: "Download file"
-      expect(page).to have_selector "a[rel=nofollow]", text: "Download file"
+      within "#documents" do
+        expect(page).to have_link text: document.title
+        expect(page).to have_selector "a[target=_blank]", text: document.title
+        expect(page).to have_selector "a[rel=nofollow]", text: document.title
+      end
     end
 
     describe "Destroy action" do

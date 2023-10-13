@@ -291,14 +291,14 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
 
         expect(page).to have_content documentable_success_notice
 
-        original_url = find_link("Download file")[:href]
+        original_url = find_link(text: "Original")[:href]
 
         visit send(path, arguments)
         within_fieldset("Documents") { fill_in "Title", with: "Updated" }
         click_button submit_button
 
         expect(page).to have_content documentable_success_notice
-        expect(find_link("Download file")[:href]).to eq original_url
+        expect(find_link(text: "Updated")[:href]).to eq original_url
       end
     end
 
