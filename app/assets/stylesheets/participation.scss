@@ -699,6 +699,10 @@
       margin-top: rem-calc(10);
     }
   }
+
+  .investment-external-link a {
+    word-wrap: break-word;
+  }
 }
 
 .budget-investment-show .supports {
@@ -1436,6 +1440,10 @@
       height: rem-calc(300);
       overflow: hidden;
     }
+  }
+
+  .document-link a {
+    word-wrap: break-word;
   }
 }
 
