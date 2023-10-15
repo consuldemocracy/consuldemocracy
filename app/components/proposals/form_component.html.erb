@@ -96,10 +96,7 @@
   <div class="actions">
     <% if proposal.new_record? %>
       <div>
-        <%= f.check_box :terms_of_service,
-                        label: t("form.accept_terms",
-                                 policy: link_to(t("form.policy"), "/privacy", target: "_blank"),
-                                 conditions: link_to(t("form.conditions"), "/conditions", target: "_blank")) %>
+        <%= render Shared::AgreeWithTermsOfServiceFieldComponent.new(f) %>
       </div>
     <% end %>
 
