@@ -2,9 +2,7 @@
   <%= back_link_to debates_path, t("debates.index.section_header.title") %>
 
   <%= header do %>
-    <%= link_to help_path(anchor: "debates"), title: t("shared.target_blank"), target: "_blank" do %>
-      <%= t("debates.new.more_info") %>
-    <% end %>
+    <%= link_to t("debates.new.more_info"), help_path(anchor: "debates"), title: t("shared.target_blank"), target: "_blank" %>
   <% end %>
 
   <aside>
