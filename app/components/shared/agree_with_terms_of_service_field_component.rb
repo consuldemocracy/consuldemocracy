@@ -9,7 +9,8 @@ class Shared::AgreeWithTermsOfServiceFieldComponent < ApplicationComponent
 
     def label
       t("form.accept_terms",
-        policy: link_to(t("form.policy"), "/privacy", target: "_blank"),
-        conditions: link_to(t("form.conditions"), "/conditions", target: "_blank"))
+        policy: link_to(t("form.policy"), "/privacy", target: "_blank", title: t("shared.target_blank")),
+        conditions: link_to(t("form.conditions"), "/conditions", target: "_blank",
+                                                                 title: t("shared.target_blank")))
     end
 end
