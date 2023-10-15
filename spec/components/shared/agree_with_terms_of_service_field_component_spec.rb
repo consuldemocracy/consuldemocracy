@@ -25,6 +25,6 @@ describe Shared::AgreeWithTermsOfServiceFieldComponent do
     expect(page).to have_link count: 2
     expect(page).to have_link "Privacy Policy"
     expect(page).to have_link "Terms and conditions of use"
-    expect(page).to have_link " (link opens in new window)", count: 2
+    expect(page).to have_link "Link opens in new window", count: 2
   end
 end

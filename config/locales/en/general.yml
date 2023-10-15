@@ -719,7 +719,7 @@ en:
       districts: "Districts"
       districts_list: "Districts list"
       categories: "Categories"
-    target_blank: " (link opens in new window)"
+    target_blank: "Link opens in new window"
     you_are_in: "You are in"
     unflag: Unflag
     unfollow_entity: "Unfollow %{entity}"
