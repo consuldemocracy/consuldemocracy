@@ -8,7 +8,8 @@
       <p class="info">
         <%= sanitize(t("layouts.footer.description",
                        open_source: open_source_link,
-                       consul: repository_link)) %>
+                       consul: repository_link),
+                     attributes: allowed_link_attributes) %>
       </p>
     </div>
 

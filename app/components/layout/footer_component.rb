@@ -14,4 +14,8 @@ class Layout::FooterComponent < ApplicationComponent
     def repository_link
       link_to(t("layouts.footer.consul"), t("layouts.footer.consul_url"), rel: "nofollow")
     end
+
+    def allowed_link_attributes
+      self.class.sanitized_allowed_attributes + ["rel"]
+    end
 end
