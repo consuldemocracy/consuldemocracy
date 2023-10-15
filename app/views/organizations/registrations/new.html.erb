@@ -26,10 +26,8 @@
 
       <%= f.check_box :terms_of_service,
                       label: t("devise_views.users.registrations.new.terms",
-                               terms: link_to(t("devise_views.users.registrations.new.terms_link"),
-                                              "/conditions",
-                                              title: t("shared.target_blank"),
-                                              target: "_blank")) %>
+                               terms: new_window_link_to(t("devise_views.users.registrations.new.terms_link"),
+                                                         "/conditions")) %>
 
       <div class="small-12 medium-6 small-centered">
         <%= f.submit t("devise_views.organizations.registrations.new.submit"), class: "button expanded" %>

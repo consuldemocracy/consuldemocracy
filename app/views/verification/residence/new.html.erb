@@ -70,10 +70,8 @@
       <div class="small-12">
         <%= f.check_box :terms_of_service,
                         label: t("verification.residence.new.accept_terms_text",
-                                 terms_url: link_to(t("verification.residence.new.terms"),
-                                                    page_path("census_terms"),
-                                                    title: t("shared.target_blank"),
-                                                    target: "_blank")) %>
+                                 terms_url: new_window_link_to(t("verification.residence.new.terms"),
+                                                               page_path("census_terms"))) %>
       </div>
 
       <div class="small-12 medium-3 clear">
