@@ -21,7 +21,7 @@
         <% end %>
       </nav>
 
-      <div class="admin-content">
+      <div class="admin-content <%= yield(:main_class) %>">
         <%= label_tag :show_menu, t("admin.menu.admin"),
                       "aria-hidden": true, class: "button hollow expanded" %>
 
