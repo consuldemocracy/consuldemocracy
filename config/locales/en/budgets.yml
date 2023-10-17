@@ -73,15 +73,23 @@ en:
       milestones: Milestones
     investments:
       form:
-        title: "Create a budget investment"
+        title: "Submit a project proposal"
+        heading_note: "Select the area this proposal applies to"
         subtitle: "%{heading} (%{price})"
+        subtitle_note: "What is your project or application called?"
         subtitle_without_price: "%{heading}"
+        subtitle_without_price_note: "subtitle help text"
         tag_category_label: "Categories"
         tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
         tags_label: Tags
         tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
         map_location: "Map location"
         map_location_instructions: "Navigate the map to the location and place the marker."
+        location_note: "Tell us which place this proposal affects"
+        organization_name_note: "Tell us about your organization and any partners involved in this project"
+        description_note: "Describe your project clearly. See the Application Guidance for information on what to include"
+        estimated_price: "Estimated Cost"
+        estimated_price_note: "How much will this project cost?"
       index:
         title: Participatory budgeting
         unfeasible: Unfeasible investment projects
