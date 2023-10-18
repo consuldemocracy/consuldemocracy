@@ -238,8 +238,8 @@ GEM
     gitlab (4.19.0)
       httparty (~> 0.20)
       terminal-table (>= 1.5.1)
-    globalid (1.1.0)
-      activesupport (>= 5.0)
+    globalid (1.2.1)
+      activesupport (>= 6.1)
     globalize (6.2.1)
       activemodel (>= 4.2, < 7.1)
       activerecord (>= 4.2, < 7.1)
@@ -310,8 +310,9 @@ GEM
     language_server-protocol (3.17.0.3)
     launchy (2.5.2)
       addressable (~> 2.8)
-    leaflet-rails (1.9.3)
-      rails (>= 4.2.0)
+    leaflet-rails (1.9.4)
+      actionpack (>= 4.2.0)
+      railties (>= 4.2.0)
     letter_opener (1.8.1)
       launchy (>= 2.2, < 3)
     letter_opener_web (2.0.0)
@@ -319,7 +320,7 @@ GEM
       letter_opener (~> 1.7)
       railties (>= 5.2)
       rexml
-    loofah (2.21.3)
+    loofah (2.21.4)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
     mail (2.8.1)
@@ -350,7 +351,7 @@ GEM
       chef-utils
     multi_json (1.15.0)
     multi_xml (0.6.0)
-    net-imap (0.3.7)
+    net-imap (0.4.1)
       date
       net-protocol
     net-pop (0.1.2)
@@ -359,7 +360,7 @@ GEM
       timeout
     net-scp (4.0.0)
       net-ssh (>= 2.6.5, < 8.0.0)
-    net-smtp (0.3.3)
+    net-smtp (0.4.0)
       net-protocol
     net-ssh (7.2.0)
     nio4r (2.5.9)
@@ -611,9 +612,9 @@ GEM
       babel-source (>= 5.8.11)
       babel-transpiler
       sprockets (>= 3.0.0)
-    sprockets-rails (3.2.2)
-      actionpack (>= 4.0)
-      activesupport (>= 4.0)
+    sprockets-rails (3.4.2)
+      actionpack (>= 5.2)
+      activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sshkit (1.21.5)
       net-scp (>= 1.1.2)
@@ -724,7 +725,7 @@ DEPENDENCIES
   kaminari (~> 1.2.2)
   knapsack_pro (~> 5.7.0)
   launchy (~> 2.5.2)
-  leaflet-rails (~> 1.9.3)
+  leaflet-rails (~> 1.9.4)
   letter_opener_web (~> 2.0.0)
   mdl (~> 0.12.0)
   mini_magick (~> 4.12.0)
