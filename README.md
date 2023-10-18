@@ -38,7 +38,7 @@ You can access the main website of the project at [http://consuldemocracy.org](h
 
 **NOTE**: For more detailed instructions check the [docs](https://docs.consuldemocracy.org)
 
-Prerequisites: install git, Ruby 3.1.4, CMake, pkg-config, shared-mime-info, Node.js 18.18.0 and PostgreSQL (>=9.5).
+Prerequisites: install git, Ruby 3.1.4, CMake, pkg-config, shared-mime-info, Node.js 18.18.2 and PostgreSQL (>=9.5).
 
 ```bash
 git clone https://github.com/consuldemocracy/consuldemocracy.git
