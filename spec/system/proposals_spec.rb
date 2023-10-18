@@ -214,9 +214,9 @@ describe "Proposals" do
       Setting["org_name"] = "CONSUL"
       proposal = create(:proposal)
       visit proposal_path(proposal)
-      click_link "Help"
+      click_link "CONSUL"
 
-      expect(page).to have_content "CONSUL is a platform for citizen participation"
+      expect(page).to have_content "Most active proposals"
 
       go_back
 

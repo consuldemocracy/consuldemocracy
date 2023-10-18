@@ -3,22 +3,16 @@
   &nbsp;|&nbsp;
 
   <span class="in-favor">
-    <%= button_to vote_comment_path(comment, value: "yes"),
-                  method: "post",
-                  remote: can?(:vote, comment),
-                  title: t("votes.agree") do %>
-      <span class="show-for-sr"><%= t("votes.agree") %></span>
-    <% end %>
+    <%= render Shared::VoteButtonComponent.new(comment,
+                                               value: "yes",
+                                               title: t("votes.agree")) %>
     <%= comment.total_likes %>
   </span>
 
   <span class="against">
-    <%= button_to vote_comment_path(comment, value: "no"),
-                  method: "post",
-                  remote: can?(:vote, comment),
-                  title: t("votes.disagree") do %>
-      <span class="show-for-sr"><%= t("votes.disagree") %></span>
-    <% end %>
+    <%= render Shared::VoteButtonComponent.new(comment,
+                                               value: "no",
+                                               title: t("votes.disagree")) %>
     <%= comment.total_dislikes %>
   </span>
 </div>

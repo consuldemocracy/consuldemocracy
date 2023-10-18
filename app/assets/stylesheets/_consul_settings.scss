@@ -76,7 +76,7 @@ $debates:           $brand !default;
 $like:              #7bd2a8 !default;
 $unlike:            #ef8585 !default;
 
-$delete:            #f04124 !default;
+$delete:            #db2e0f !default;
 $check:             #46db91 !default;
 
 $proposals:         #ffa42d !default;
@@ -115,7 +115,11 @@ $color-alert:       #a94442 !default;
 $pdf-primary:       #0300ff !default;
 $pdf-secondary:     #ff9e00 !default;
 
-$outline-focus:     3px solid #ffbf47 !default;
+$focus-middle:       #ffbf47 !default;
+$focus-outer:        $brand !default;
+$focus-inner-width:  1px !default;
+$focus-middle-width: 3px !default;
+$focus-outer-width:  2px !default;
 
 $input-height:      $line-height * 2 !default;
 

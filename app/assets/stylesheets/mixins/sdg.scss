@@ -24,6 +24,10 @@
   a:hover .sdg-goal-icon {
     filter: brightness(90%);
   }
+
+  a {
+    @include focus-outline-on-img;
+  }
 }
 
 %sdg-goal-list {
@@ -47,12 +51,8 @@
       width: 100%;
     }
 
-    a:focus {
-      outline: none;
-
-      img {
-        outline: $outline-focus;
-      }
+    a {
+      @include focus-outline-on-img;
     }
   }
 }

@@ -19,7 +19,7 @@
           <% elsif comment.user.organization? %>
             <%= image_tag("avatar_collective.png", size: 32, class: "avatar float-left") %>
           <% else %>
-            <%= avatar_image(comment.user, seed: comment.user_id, size: 32, class: "float-left") %>
+            <%= render Shared::AvatarComponent.new(comment.user, size: 32, class: "float-left") %>
           <% end %>
         <% end %>
 
@@ -81,7 +81,7 @@
         <div id="<%= dom_id(comment) %>_reply" class="reply">
           <% unless valuation %>
             <div id="<%= dom_id(comment) %>_votes" class="comment-votes float-right">
-              <%= render "comments/votes", comment: comment %>
+              <%= render Comments::VotesComponent.new(comment) %>
             </div>
           <% end %>
 

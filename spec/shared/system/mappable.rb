@@ -88,9 +88,9 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
           expect(page).to have_content "User management"
         else
-          click_link "Help"
+          click_link "CONSUL"
 
-          expect(page).to have_content "CONSUL is a platform for citizen participation"
+          expect(page).to have_content "Most active proposals"
         end
 
         go_back
@@ -121,9 +121,9 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
           expect(page).to have_content "User management"
         else
-          click_link "Help"
+          click_link "CONSUL"
 
-          expect(page).to have_content "CONSUL is a platform for citizen participation"
+          expect(page).to have_content "Most active proposals"
         end
 
         go_back
@@ -154,9 +154,9 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
           expect(page).to have_content "User management"
         else
-          click_link "Help"
+          click_link "CONSUL"
 
-          expect(page).to have_content "CONSUL is a platform for citizen participation"
+          expect(page).to have_content "Most active proposals"
         end
 
         go_back

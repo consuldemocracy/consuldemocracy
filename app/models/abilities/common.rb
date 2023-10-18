@@ -81,14 +81,15 @@ module Abilities
       can [:create, :destroy], DirectUpload
 
       unless user.organization?
-        can :vote, Debate
-        can :vote, Comment
+        can [:create, :destroy], ActsAsVotable::Vote, voter_id: user.id, votable_type: "Debate"
+        can [:create, :destroy], ActsAsVotable::Vote, voter_id: user.id, votable_type: "Comment"
       end
 
       if user.level_two_or_three_verified?
         can :vote, Proposal, &:published?
 
-        can :vote, Legislation::Proposal
+        can [:create, :destroy], ActsAsVotable::Vote, voter_id: user.id, votable_type: "Legislation::Proposal"
+
         can :create, Legislation::Answer
 
         can :create, Budget::Investment,  budget: { phase: "accepting" }

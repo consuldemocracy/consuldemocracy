@@ -102,20 +102,20 @@ button,
 [type="button"],
 [type="submit"] {
   &:focus {
-    outline: $outline-focus;
+    @include focus-outline;
   }
 
   &:focus-visible {
-    outline: $outline-focus;
+    @include focus-outline;
   }
 
   &:focus:not(:focus-visible) {
-    outline: none;
+    @include no-outline;
   }
 
   &:active,
   &:focus:active {
-    outline: $outline-focus;
+    @include focus-outline;
   }
 }
 
@@ -506,6 +506,10 @@ body > header,
     padding: rem-calc(6) 0;
     text-align: center;
   }
+
+  h1 a {
+    color: inherit;
+  }
 }
 
 .public > .wrapper > header,
@@ -734,6 +738,28 @@ footer {
   border-top: 1px solid $text-light;
   font-size: $small-font-size;
   padding-top: $line-height / 2;
+
+  .legal {
+    display: inline-block;
+    margin-#{$global-left}: 0;
+
+    &::before {
+      content: "|";
+    }
+
+    li {
+      display: inline-block;
+
+      &::after {
+        content: "|";
+        margin-left: 4px;
+      }
+
+      &:last-child::after {
+        content: none;
+      }
+    }
+  }
 }
 
 // 04. Tags
@@ -1113,6 +1139,7 @@ form {
 
   .notification-link {
     @include text-colored-link;
+    display: inline-block;
   }
 
   &:hover {
@@ -1683,7 +1710,8 @@ table {
   .in-favor button {
     @include has-fa-icon(thumbs-up, solid);
 
-    &:hover {
+    &:hover,
+    &[aria-pressed=true] {
       color: $like;
     }
   }
@@ -1691,7 +1719,8 @@ table {
   .against button {
     @include has-fa-icon(thumbs-down, solid);
 
-    &:hover {
+    &:hover,
+    &[aria-pressed=true] {
       color: $unlike;
     }
   }
@@ -1962,13 +1991,15 @@ table {
   }
 
   .recommendation {
+    @include card;
     background: $body-background;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
     display: block;
     margin-bottom: $line-height / 4;
     padding: $line-height / 2;
+    z-index: 1;
 
-    &:hover {
+    &:hover:not(:focus-within) {
       box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.15);
     }
   }
@@ -1979,6 +2010,7 @@ table {
   position: absolute;
   right: 12px;
   top: -18px;
+  z-index: 2;
 }
 
 // 20. Documents
@@ -2192,7 +2224,7 @@ table {
       }
     }
 
-    a:hover {
+    a:hover:not(:focus) {
       box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
       text-decoration: none;
 

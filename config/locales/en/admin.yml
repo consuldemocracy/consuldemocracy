@@ -1590,7 +1590,8 @@ en:
           name: Name
           names:
             top_links: Top Links
-            footer: Footer
+            footer: Footer (social media)
+            footer_legal: Footer (legal terms)
             subnavigation_left: Main Navigation Left
             subnavigation_right: Main Navigation Right
       images:

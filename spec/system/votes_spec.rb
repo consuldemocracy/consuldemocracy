@@ -19,37 +19,31 @@ describe "Votes" do
       within("#debates") do
         within("#debate_#{debate1.id}_votes") do
           within(".in-favor") do
-            expect(page).to have_button class: "voted"
-            expect(page).not_to have_button class: "no-voted"
+            expect(page).to have_css "button[aria-pressed='true']"
           end
 
           within(".against") do
-            expect(page).to have_button class: "no-voted"
-            expect(page).not_to have_button class: "voted"
+            expect(page).to have_css "button[aria-pressed='false']"
           end
         end
 
         within("#debate_#{debate2.id}_votes") do
           within(".in-favor") do
-            expect(page).not_to have_button class: "voted"
-            expect(page).not_to have_button class: "no-voted"
+            expect(page).to have_css "button[aria-pressed='false']"
           end
 
           within(".against") do
-            expect(page).not_to have_button class: "no-voted"
-            expect(page).not_to have_button class: "voted"
+            expect(page).to have_css "button[aria-pressed='false']"
           end
         end
 
         within("#debate_#{debate3.id}_votes") do
           within(".in-favor") do
-            expect(page).to have_button class: "no-voted"
-            expect(page).not_to have_button class: "voted"
+            expect(page).to have_css "button[aria-pressed='false']"
           end
 
           within(".against") do
-            expect(page).to have_button class: "voted"
-            expect(page).not_to have_button class: "no-voted"
+            expect(page).to have_css "button[aria-pressed='true']"
           end
         end
       end
@@ -63,56 +57,70 @@ describe "Votes" do
 
         within(".in-favor") do
           expect(page).to have_content "0%"
-          expect(page).not_to have_button class: "voted"
-          expect(page).not_to have_button class: "no-voted"
+          expect(page).to have_css "button[aria-pressed='false']"
         end
 
         within(".against") do
           expect(page).to have_content "0%"
-          expect(page).not_to have_button class: "voted"
-          expect(page).not_to have_button class: "no-voted"
+          expect(page).to have_css "button[aria-pressed='false']"
         end
       end
 
-      scenario "Update" do
+      scenario "Create and update from debate show" do
         visit debate_path(create(:debate))
+
+        expect(page).to have_content "No votes"
 
         click_button "I agree"
 
         within(".in-favor") do
           expect(page).to have_content "100%"
-          expect(page).to have_button class: "voted"
+          expect(page).to have_css "button[aria-pressed='true']"
         end
+
+        within(".against") do
+          expect(page).to have_content "0%"
+          expect(page).to have_css "button[aria-pressed='false']"
+        end
+
+        expect(page).to have_content "1 vote"
 
         click_button "I disagree"
 
         within(".in-favor") do
           expect(page).to have_content "0%"
-          expect(page).to have_button class: "no-voted"
+          expect(page).to have_css "button[aria-pressed='false']"
         end
 
         within(".against") do
           expect(page).to have_content "100%"
-          expect(page).to have_button class: "voted"
+          expect(page).to have_css "button[aria-pressed='true']"
         end
 
         expect(page).to have_content "1 vote"
       end
 
-      scenario "Trying to vote multiple times" do
+      scenario "Allow undoing votes" do
         visit debate_path(create(:debate))
 
         click_button "I agree"
+
         expect(page).to have_content "1 vote"
+        expect(page).not_to have_content "No votes"
+
         click_button "I agree"
+
+        expect(page).to have_content "No votes"
         expect(page).not_to have_content "2 votes"
 
         within(".in-favor") do
-          expect(page).to have_content "100%"
+          expect(page).to have_content "0%"
+          expect(page).to have_css "button[aria-pressed='false']"
         end
 
         within(".against") do
           expect(page).to have_content "0%"
+          expect(page).to have_css "button[aria-pressed='false']"
         end
       end
 
@@ -127,31 +135,13 @@ describe "Votes" do
 
         within(".in-favor") do
           expect(page).to have_content "50%"
-          expect(page).to have_button class: "voted"
+          expect(page).to have_css "button[aria-pressed='true']"
         end
 
         within(".against") do
           expect(page).to have_content "50%"
-          expect(page).to have_button class: "no-voted"
+          expect(page).to have_css "button[aria-pressed='false']"
         end
-      end
-
-      scenario "Create from debate show" do
-        visit debate_path(create(:debate))
-
-        click_button "I agree"
-
-        within(".in-favor") do
-          expect(page).to have_content "100%"
-          expect(page).to have_button class: "voted"
-        end
-
-        within(".against") do
-          expect(page).to have_content "0%"
-          expect(page).to have_button class: "no-voted"
-        end
-
-        expect(page).to have_content "1 vote"
       end
 
       scenario "Create in index" do
@@ -163,12 +153,12 @@ describe "Votes" do
 
           within(".in-favor") do
             expect(page).to have_content "100%"
-            expect(page).to have_button class: "voted"
+            expect(page).to have_css "button[aria-pressed='true']"
           end
 
           within(".against") do
             expect(page).to have_content "0%"
-            expect(page).to have_button class: "no-voted"
+            expect(page).to have_css "button[aria-pressed='false']"
           end
 
           expect(page).to have_content "1 vote"
@@ -352,6 +342,33 @@ describe "Votes" do
 
       expect(page).to have_content "Only verified users can vote on proposals"
       expect(page).not_to have_button "Support", disabled: :all
+    end
+  end
+
+  describe "Legislation Proposals" do
+    let(:proposal) { create(:legislation_proposal) }
+
+    scenario "Allow undoing votes" do
+      login_as verified
+      visit legislation_process_proposal_path(proposal.process, proposal)
+
+      click_button "I agree"
+
+      expect(page).to have_content "1 vote"
+      expect(page).not_to have_content "No votes"
+
+      click_button "I agree"
+
+      expect(page).to have_content "No votes"
+      expect(page).not_to have_content "2 votes"
+
+      within(".in-favor") do
+        expect(page).to have_content "0%"
+      end
+
+      within(".against") do
+        expect(page).to have_content "0%"
+      end
     end
   end
 end

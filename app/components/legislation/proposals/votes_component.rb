@@ -1,6 +1,6 @@
 class Legislation::Proposals::VotesComponent < ApplicationComponent
   attr_reader :proposal
-  delegate :current_user, :link_to_verify_account, to: :helpers
+  delegate :current_user, :link_to_verify_account, :can?, to: :helpers
 
   def initialize(proposal)
     @proposal = proposal
@@ -9,7 +9,7 @@ class Legislation::Proposals::VotesComponent < ApplicationComponent
   private
 
     def can_vote?
-      proposal.votable_by?(current_user)
+      can?(:create, proposal.votes_for.new(voter: current_user))
     end
 
     def cannot_vote_text

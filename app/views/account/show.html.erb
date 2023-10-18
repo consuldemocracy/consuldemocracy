@@ -6,7 +6,7 @@
       <%= link_to t("account.show.erase_account_link"), users_registrations_delete_form_path, class: "delete" %>
     </div>
 
-    <%= avatar_image(@account, seed: @account.id, size: 100, class: "margin-bottom") %>
+    <%= render Shared::AvatarComponent.new(@account, size: 100, class: "margin-bottom") %>
 
     <h1 class="inline-block"><%= t("account.show.title") %></h1>
 
