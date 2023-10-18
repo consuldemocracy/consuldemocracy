@@ -33,8 +33,6 @@ gem "image_processing", "~> 1.12.2"
 gem "initialjs-rails", "~> 0.2.0.9"
 gem "invisible_captcha", "~> 2.1.0"
 gem "jquery-fileupload-rails"
-gem "jquery-rails", "~> 4.6.0"
-gem "jquery-ui-rails", "~> 6.0.1"
 gem "kaminari", "~> 1.2.2"
 gem "leaflet-rails", "~> 1.9.3"
 gem "mini_magick", "~> 4.12.0"
@@ -96,6 +94,7 @@ end
 group :development do
   gem "capistrano", "~> 3.17.3", require: false
   gem "capistrano-bundler", "~> 2.1.0", require: false
+  gem "capistrano-npm", "~> 1.0.3", require: false
   gem "capistrano-rails", "~> 1.6.3", require: false
   gem "capistrano3-delayed-job", "~> 1.7.6"
   gem "capistrano3-puma", "~> 5.2.0"

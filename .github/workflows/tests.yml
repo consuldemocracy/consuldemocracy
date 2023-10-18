@@ -42,7 +42,10 @@ jobs:
       - name: Setup NPM
         uses: actions/setup-node@v3
         with:
+          cache: "npm"
           node-version-file: ".node-version"
+      - name: Install node packages
+        run: npm clean-install
       - name: Copy secrets and database files
         run: for i in config/*.example; do cp "$i" "${i/.example}"; done
       - name: Setup database

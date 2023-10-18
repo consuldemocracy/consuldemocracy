@@ -51,6 +51,9 @@ RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz
 COPY Gemfile* ./
 RUN bundle install
 
+COPY package* ./
+RUN npm install
+
 # Copy the Rails application into place
 COPY . .
 

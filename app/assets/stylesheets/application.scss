@@ -7,9 +7,10 @@
 @import "font-awesome/path";
 @import "font-awesome/mixins";
 @import "font-awesome/core";
-@import "jquery-ui/autocomplete";
-@import "jquery-ui/datepicker";
-@import "jquery-ui/sortable";
+@import "jquery-ui/themes/base/theme";
+@import "jquery-ui/themes/base/autocomplete";
+@import "jquery-ui/themes/base/datepicker";
+@import "jquery-ui/themes/base/sortable";
 @import "leaflet";
 
 @import "foundation_and_overrides";
