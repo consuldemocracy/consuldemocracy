@@ -1,7 +1,7 @@
 {
   "name": "consuldemocracy",
   "dependencies": {
-    "jquery": "^3.6.0",
+    "jquery": "^3.7.1",
     "jquery-ui": "^1.13.2",
     "jquery-ujs": "^1.2.3"
   }
