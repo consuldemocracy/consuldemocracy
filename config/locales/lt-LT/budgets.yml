@@ -1,1 +1,226 @@
 lt:
+  budgets:
+    ballots:
+      show:
+        title: Tavo balsas
+        amount_progress: "%{amount_spent} / %{amount_limit}"
+        amount_available:
+          knapsack: "Dar turite <span>%{count}</span> leidžiamų lėšų"
+          approval:
+            zero: "Galite balsuoti už <span>%{count}</span> projektus."
+            one: "Galite balsuoti už <span>%{count}</span> projektą."
+            other: "Galite balsuoti už <span>%{count}</span> projektus."
+        amount_spent:
+          knapsack: "Išleista suma <span>%{count}</span>"
+          approval:
+            zero: "Balsų skaičius: <span>%{count}</span>"
+            one: "Balsų skaičius: <span>%{count}</span>"
+            other: "Balsų skaičius: <span>%{count}</span>"
+        amount_limit:
+          knapsack: "Iš viso biudžetas <span>%{count}</span>"
+          approval:
+            one: "Galite balsuoti už <span>1</span> projektą."
+            other: "Galite balsuoti už iki <span>%{count}</span> projektų."
+        no_balloted_group_yet: "Dar nėra balsuota už šią grupę, balsuokite!"
+        remove: Pašalinti balsą
+        remove_label: "Pašalinti savo balsą iš %{investment}"
+        voted:
+          one: "Balsavote už <span>vieną</span> investiciją."
+          other: "Balsavote už <span>%{count}</span> investicijas."
+        voted_info: "Jūsų balsas patvirtintas!"
+        voted_info_2: "Tačiau galite pakeisti savo balsą bet kuriuo metu iki šios fazės uždarymo."
+        zero: Jūs neprisidėjote prie jokių investicinių projektų.
+      reasons_for_not_balloting:
+        not_verified: Tik patvirtinti vartotojai gali balsuoti už investicijas; %{verify_account}.
+        not_selected: Neišrinkti investiciniai projektai negali būti palaikomi
+        not_enough_money: "Jūs jau priskyrėte prieinamas lėšas.<br><small>Prisiminkite, kad galite %{change_ballot} bet kuriuo metu</small>"
+        no_ballots_allowed: Pasirinkimo etapas uždarytas
+        different_heading_assigned: "Jūs jau balsavote už kitą antraštę: %{heading_link}"
+        not_enough_available_votes: "Pasiekėte leidžiamą balsų skaičių"
+        change_ballot: pakeiskite savo balsus
+        casted_offline: Jūs jau dalyvavote neprisijungę
+    groups:
+      show:
+        title: Pasirinkite antraštę
+    phase:
+      drafting: Projektas (Nematoma viešumui)
+      informing: Informacija
+      accepting: Priimami projektai
+      reviewing: Projektų vertinimas
+      selecting: Projektų parinkimas
+      valuating: Projektų vertinimas
+      publishing_prices: Projektų kainų skelbimas
+      balloting: Projektų balsavimas
+      reviewing_ballots: Balsavimo peržiūra
+      finished: Baigta biudžetavimo procedūra
+    index:
+      title: Dalyvaujamieji biudžetai
+      empty_budgets: Nėra biudžetų.
+      section_header:
+        icon_alt: Dalyvaujamieji biudžetai piktograma
+        title: Dalyvaujamieji biudžetai
+        help: Pagalba dalyvaujant biudžetavime
+      all_phases: Dalyvaujamieji biudžetai etapai
+      next_phase: Kitas etapas
+      prev_phase: Ankstesnis etapas
+      current_phase: Esamas etapas
+      map: Investicijų projektų geografinis išdėstymas biudžete
+      finished_budgets: Baigti dalyvaujamieji biudžetai
+      see_results: Rodyti rezultatus
+      section_footer:
+        title: Pagalba dalyvaujant biudžetavime
+        description: Dalyvaujamieji biudžetai leidžia piliečiams nuspręsti, kuriems projektams skiriamas dalis biudžeto.
+      milestones: Etapai
+    investments:
+      form:
+        title: "Kurti biudžeto investiciją"
+        subtitle: "%{heading} (%{price})"
+        subtitle_without_price: "%{heading}"
+        tag_category_label: "Kategorijos"
+        tags_instructions: "Pažymėkite šį pasiūlymą. Galite pasirinkti iš pasiūlytų kategorijų arba pridėti savo."
+        tags_label: Žymos
+        tags_placeholder: "Įveskite žymas, kurias norite naudoti, atskirtas kableliu (',')"
+        map_location: "Žemėlapio vieta"
+        map_location_instructions: "Naviguokite žemėlapyje iki vietos ir pažymėkite ją žymekliu."
+      index:
+        title: Dalyvaujamoji biudžetavimo procedūra
+        unfeasible: Neįgyvendinami investiciniai projektai
+        unfeasible_text: "Investicijos turi atitikti tam tikras sąlygas (teisėtumą, konkretumą, neviršyti biudžeto ribų), kad būtų laikomos įgyvendinamomis ir galėtų pereiti į galutinio balsavimo etapą. Visos investicijos, nesilaikančios šių kriterijų, pažymėtos kaip neįgyvendinamos ir paskelbiamos toliau sąraše kartu su jų neįgyvendinamumo ataskaita."
+        by_heading: "Investiciniai projektai su apimtimi: %{heading}"
+        search_form:
+          button: Ieškoti
+          placeholder: Ieškoti investicinių projektų...
+          title: Paieška
+        sidebar:
+          my_ballot: Mano balsai
+          voted_info:
+            knapsack:
+              one: "<strong>Balsavote už vieną pasiūlymą, kainuojantį %{amount_spent}</strong>"
+              other: "<strong>Balsavote už %{count} pasiūlymus, kainuojančius %{amount_spent}</strong>"
+            approval:
+              one: "<strong>Balsavote už vieną pasiūlymą</strong>"
+              other: "<strong>Balsavote už %{count} pasiūlymus</strong>"
+          change_vote_info:
+            knapsack: "Galite %{link} bet kuriuo metu iki %{phase_end_date}. Nereikia išleisti visų turimų lėšų."
+            approval: "Galite %{link} bet kuriuo metu iki %{phase_end_date}."
+          change_vote_link: "pakeisti savo balsą"
+          different_heading_assigned: "Turite aktyvių balsų kitame skyriuje: %{heading_link}"
+          change_ballot: "Jei pakeisite nuomonę, galite pašalinti savo balsus iš %{check_ballot} ir pradėti iš naujo."
+          check_ballot_link: "pateikti savo balsavimą"
+          zero: Jūs nepridėjote jokios investicinės veiklos šioje grupėje.
+          verified_only: "Norėdami sukurti naują biudžeto investiciją, %{verify}."
+          create: "Kurti biudžeto investiciją"
+          not_logged_in: "Norėdami sukurti naują biudžeto investiciją, %{sign_in} arba %{sign_up}."
+        filter: "Filtruojama pagal projektus"
+        filters:
+          not_unfeasible: "Aktyvus"
+          selected: "Aktyvus"
+          unfeasible: "Neįgyvendinamas"
+          unselected: "Nepasirinktas galutiniam balsavimui"
+          winners: "Nugalėtojai"
+        orders:
+          random: atsitiktinis
+          confidence_score: aukščiausio įvertinimo
+          price: pagal kainą
+      share:
+        message: "Aš sukūriau investicinį projektą %{title} biudžete %{handle}. Sukurkite ir jūs investicinį projektą!"
+      show:
+        author_deleted: Vartotojas ištrynęs
+        price_explanation: Kainos paaiškinimas
+        unfeasibility_explanation: Neįgyvendinamumo paaiškinimas
+        code: "Investicijos projekto kodas: <strong>%{code}</strong>"
+        location: "Vieta: <strong>%{location}</strong>"
+        organization_name: "Siūlėjas: <strong>%{name}</strong>"
+        share: Bendrinti
+        title: Investicinis projektas
+        supports: Palaikymai
+        votes: Balsai
+        price: Kaina
+        comments_tab: Komentarai
+        milestones_tab: Etapai
+        author: Autorius
+        project_unfeasible: "Šis investicinis projektas <strong>pažymėtas kaip neįgyvendinamas</strong> ir nekeliauja į balsavimo etapą."
+        project_selected: "Šis investicinis projektas <strong>pasirinktas</strong> balsavimo etapui."
+        project_winner: "Laimėjęs investicinis projektas"
+        project_not_selected: "Šis investicinis projektas <strong>nebuvo pasirinktas</strong> balsavimo etapui."
+        see_price_explanation: Rodyti kainos paaiškinimą
+      wrong_price_format: Tik sveikieji skaičiai
+      investment:
+        add: Balsuoti
+        add_label: "Balsuoti už %{investment}"
+        already_added: Jūs jau pridėjote šį investicinį projektą
+        support_title: Palaikyti šį projektą
+        supports:
+          one: 1 palaikymas
+          other: "%{count} palaikymų"
+          zero: Nėra palaikymų
+      header:
+        check_ballot: "Pateikti savo balsavimą"
+        different_heading_assigned: "Jūs turite aktyvių balsų kitame skyriuje: %{heading_link}"
+        change_ballot: "Jei pakeisite nuomonę, galite pašalinti savo balsus iš %{check_ballot} ir pradėti iš naujo."
+        check_ballot_link: "pateikti savo balsavimą"
+        price: "Visas biudžetas"
+      votes:
+        already_supported: "Jūs jau palaikėte šį investicinį projektą. Pasidalinkite juo!"
+        confirm_group:
+          one: "Galite palaikyti investicijas tik %{count} rajone. Tęsdami negalėsite pakeisti savo rajono pasirinkimo. Ar tikrai?"
+          other: "Galite palaikyti investicijas tik %{count} rajonuose. Tęsdami negalėsite pakeisti savo rajono pasirinkimo. Ar tikrai?"
+        remove_support: "Pašalinti palaikymą"
+        remove_support_label: "Pašalinti palaikymą iš %{investment}"
+        support: "Palaikyti"
+        support_label: "Palaikyti %{investment}"
+    investments_list:
+      investment:
+        price: "Kaina"
+        read_more: "Plačiau"
+        supports: "Palaikymai"
+      see_all: "Peržiūrėti visus investicinius projektus"
+      title: "Investicinių projektų sąrašas"
+    show:
+      see_results: Rodyti rezultatus
+    supports_info:
+      different: "Jūs galite palaikyti tiek skirtingus projektus, kiek norite."
+      next: "Palaikykite projektus, kuriuos norite matyti tęsiant."
+      scrolling: "Tęskite slinkdami, kad pamatytumėte visus projektus"
+      share: "Galite dalintis projektais, kuriuos palaikėte, per socialinius tinklus ir pritraukti daugiau dėmesio bei palaikymo."
+      supported:
+        one: "Iki šiol palaikote <strong>1 projektą</strong>."
+        other: "Iki šiol palaikote <strong>%{count} projektus</strong>."
+      supported_not_logged_in: "Prisijunkite, kad pradėtumėte <strong>palaikyti projektus</strong>."
+      time: "Iki %{phase_end_date} dar yra laiko palaikyti projektus."
+      title: "Laikas <strong>palaikyti</strong> projektus!"
+    results:
+      link: Rezultatai
+      page_title: "%{budget} - Rezultatai"
+      heading: "Dalyvaujamųjų biudžetų rezultatai"
+      heading_selection_title: "Pagal rajoną"
+      ballot_lines_count: Balsų skaičius
+      hide_discarded_link: Slėpti atmestus
+      show_all_link: Rodyti visus
+      price: Kaina
+      amount_available: Prieinamos lėšos
+      accepted: "Priimtas projektas: "
+      discarded: "Atmestas projektas: "
+      incompatibles: Nesuderinami
+      investment_title: Projekto pavadinimas
+      investment_proyects: Visų investicinių projektų sąrašas
+      unfeasible_investment_proyects: Visų neįgyvendinamų investicinių projektų sąrašas
+      not_selected_investment_proyects: Visų investicinių projektų, kurie nepasirinkti galutiniam balsavimui, sąrašas
+    executions:
+      link: Etapai
+      page_title: "%{budget} - Etapai"
+      heading: "Dalyvaujamųjų biudžetų etapai"
+      heading_selection_title: "Pagal rajoną"
+      no_winner_investments: "Šiame etape nėra laimėtojų investicijų"
+      filters:
+        status:
+          label: "Projekto dabartinė būsena"
+          all: "Visi (%{count})"
+        milestone_tag:
+          label: "Etapo žymė"
+          all: "Visi (%{count})"
+    phases:
+      errors:
+        dates_range_invalid: "Pradžios data negali būti lygi arba vėlesnė nei pabaigos data"
+        prev_phase_dates_invalid: "Pradžios data turi būti vėlesnė nei ankstesniojo įjungto etapo (%{phase_name}) pradžios data"
+        next_phase_dates_invalid: "Pabaigos data turi būti ankstesnė nei sekančiojo įjungto etapo (%{phase_name}) pabaigos data"

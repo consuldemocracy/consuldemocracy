@@ -1,1 +1,1784 @@
 lt:
+  admin:
+    header:
+      title: Administravimas
+    actions:
+      actions: Veiksmai
+      block_author: "Blokuoti autorių"
+      confirm_action: "Ar tikrai? %{action} „%{name}\""
+      confirm_delete: "Ar tikrai? Šis veiksmas ištrins „%{name}\" ir jo nebus galima atšaukti."
+      confirm_hide: Patvirtinti moderavimą
+      delete: "Ištrinti"
+      hide: Slėpti
+      label: "%{action} %{name}"
+      restore: Atkurti
+      mark_featured: Paryškinti
+      unmark_featured: Atšaukti paryškinimą
+      edit: Redaguoti
+      configure: Konfigūruoti
+    officing_booth:
+      title: "Jūs naudojatės kabina, esančia prie %{booth}. Jei tai neteisinga, nedelsdami susisiekite su pagalbos telefono numeriu. Ačiū."
+    banners:
+      index:
+        title: Plakatai
+        create: Sukurti plakatą
+        filters:
+          all: Visi
+          with_active: Aktyvūs
+          with_inactive: Neaktyvūs
+        preview: Peržiūra
+      banner:
+        sections_label: Skiltys, kuriose bus rodomas
+        sections:
+          homepage: Pagrindinis puslapis
+          diskusijos: Diskusijos
+          pasiūlymai: Pasiūlymai
+          biudžetai: Dalyvaujantis biudžetas
+          pagalbos_puslapis: Pagalbos puslapis
+          sdg: Tvaraus vystymosi tikslai
+      create:
+        notice: "Plakatas sėkmingai sukurtas"
+      destroy:
+        notice: "Plakatas sėkmingai ištrintas"
+      edit:
+        editing: Redaguoti plakatą
+        form:
+          submit_button: Išsaugoti pakeitimus
+      new:
+        creating: Kūrimas plakatui
+      update:
+        notice: "Plakatas sėkmingai atnaujintas"
+    activity:
+      show:
+        action: Veiksmas
+        actions:
+          block: Užblokuotas
+          hide: Paslėptas
+          restore: Atkurtas
+        by: Moderavo
+        content: Turinys
+        filter: Rodyti
+        filters:
+          all: Visi
+          on_comments: Komentarai
+          on_debates: Diskusijos
+          on_proposals: Pasiūlymai
+          on_users: Vartotojai
+          on_system_emails: Sisteminiai laiškai
+        title: Moderatoriaus veikla
+        type: Tipas
+        no_activity: Nėra moderatoriaus veiklos.
+    budgets:
+      actions:
+        ballots: "Sukurti balsavimo kabinas"
+        confirm:
+          ballots: "Ar tikrai? Šis veiksmas reikalingas tik tuomet, jei galutinės balsavimo fazės metu norite naudoti fizines balsavimo kabinas. Piliečiai vis tiek galės balsuoti internetu, arba su ar be fizinių balsavimo kabinų."
+          destroy: "Ar tikrai? Tai ištrins biudžetą ir visus su juo susijusius grupes ir pavadinimus. Šio veiksmo negalima atšaukti."
+        descriptions:
+          ballots: "Tai leis jums valdyti fizinius balsavimo lapus. Šią parinktį naudokite tik tuomet, jei galutinės balsavimo fazės metu norite naudoti fizines balsavimo kabinas."
+          calculate_winners: 'Apskaičiavus rezultatus, prieiga prie jų bus galima tik administratoriams. Kai projektas pasieks "%{phase}" fazę, rezultatai bus vieši <strong>jei parinktis "Rodyti rezultatus" bus įjungta</strong> biudžeto redagavimo metu.'
+          destroy: "Tai ištrins biudžetą ir visus su juo susijusius grupes ir pavadinimus. Šio veiksmo negalima atšaukti."
+        edit: "Redaguoti biudžetą"
+        preview: "Peržiūra"
+        preview_results: "Rezultatų peržiūra"
+      index:
+        title: Dalyvaujantys biudžetai
+        new_link: Sukurti naują biudžetą
+        filter: Filtruoti
+        filters:
+          all: Visi
+          open: Atviros
+          finished: Baigtos
+        budget_investments: Investiciniai projektai
+        table_budget_type: "Tipas"
+        table_completed: Baigta
+        table_draft: "Juodraštis"
+        table_duration: "Trukmė"
+        table_name: Pavadinimas
+        table_phase: Fazė
+        table_phase_progress: "(%{current_phase_number}/%{total_phases})"
+        type_multiple: "Kelios grupės"
+        type_pending: "Laukiama: Nėra pavadinimų"
+        type_single: "Vienas pavadinimas"
+        admin_ballots: Balsai
+        no_budgets: "Nėra biudžetų."
+      create:
+        notice: Naujas dalyvaujantis biudžetas sėkmingai sukurtas!
+      update:
+        notice: Dalyvaujantis biudžetas sėkmingai atnaujintas
+      publish:
+        notice: "Dalyvaujantis biudžetas sėkmingai paskelbtas"
+      edit:
+        title: Redaguoti dalyvaujantį biudžetą
+        drafting: "Šis dalyvaujantis biudžetas yra juodraščio režime, jį gali matyti tik administratoriai viešoje svetainėje. Jį paskelbus, jis negali būti pakeistas juodraščio režime."
+        publish: "Paskelbti biudžetą"
+        delete: Ištrinti biudžetą
+        phase: Fazė
+        phases_caption: "Fazės"
+        phases_table_help_text: "Šių fazės konfigūracija naudojama tik informaciniams tikslams. Jos funkcija yra apibrėžti fazės informaciją, rodomą dalyvaujančio biudžeto viešoje pusėje."
+        duration: Trukmė
+        enabled: Įjungta
+        actions: Veiksmai
+        enable_phase: "Įjungti %{phase} fazę"
+        active: Aktyvuota
+        blank_dates: Datos nenurodytos
+        administrators:
+          zero: "Pasirinkite administratorius"
+          one: "Pasirinktas 1 administratorius"
+          other: "Pasirinkti %{count} administratorius"
+        valuators:
+          zero: "Pasirinkite vertintojus"
+          one: "Pasirinktas 1 vertintojas"
+          other: "Pasirinkti %{count} vertintojus"
+        empty_administrators: "Nėra administratorių"
+        empty_valuators: "Nėra vertintojų"
+        name_description: "Tai yra dalyvaujančio biudžeto pavadinimas, naudojamas antraštinėje dalyvaujančio biudžeto dalyje ir kortelėse, kai jis yra aktyvus."
+        image_description: "Įkėlus nuotrauką, ji bus naudojama viršuje esančioje dalyvaujančio biudžeto juostoje. Kitu atveju bus naudojama biudžeto numatytasis spalvinis fonas."
+        main_call_to_action: "Pagrindinis veiksmas (neprivaloma)"
+        main_call_to_action_description: "Šis nuorodos tekstas bus rodomas šio dalyvaujančio biudžeto viršutinėje juostoje ir skatins vartotoją atlikti konkretų veiksmą, pvz., sukurti pasiūlymą, balsuoti už esamus ar sužinoti daugiau apie procesą."
+        info:
+          budget_settings: "Bendrieji dalyvaujančio biudžeto nustatymai"
+          staff_settings: "Administratoriai ir vertintojai priskirti biudžetui"
+        hide_money: "Slėpti pinigus"
+        hide_money_help_text: "Jei ši parinktis pažymėta, visi laukai, rodydami pinigų sumas, bus paslėpti visame procese."
+      destroy:
+        success_notice: Biudžetas sėkmingai ištrintas
+        unable_notice: Negalite ištrinti biudžeto, kuriam priskirti investiciniai projektai
+        unable_notice_polls: Negalite ištrinti biudžeto, kuriam priskirta apklausa
+      new:
+        title_multiple: Naujas kelios grupės biudžetas
+        title_single: Naujas vienos grupės biudžetas
+      help:
+        budgets: "Dalyvaujantys biudžetai leidžia piliečiams pasiūlyti ir tiesiogiai nuspręsti, kaip panaudoti dalį biudžeto, atidžiai vertinant ir stebint institucijos siūlomus projektus."
+        groups:
+          multiple: "Grupės skirtos pavadinimams organizuoti. Sukūrus grupę ir ją užpildžius pavadinimais, galima nustatyti, kiek pavadinimų galima balsuoti per grupę."
+          single: "Grupės skirtos pavadinimams organizuoti. Kadangi šis biudžetas turės tik vieną pavadinimą, galima naudoti tą patį pavadinimą, nes jis niekur neparodys. Galima tęsti su kitu žingsniu."
+        headings:
+          multiple: "Pavadinimai skirti dalyvaujančio biudžeto pinigų padalijimui. Čia galima pridėti pavadinimus šiai grupei ir priskirti kiekvienam pavadinimui naudojamą pinigų sumą."
+          single: "Pavadinimai skirti dalyvaujančio biudžeto pinigų padalijimui. Kadangi šis biudžetas turės tik vieną pavadinimą, čia nurodoma, kiek pinigų bus išleista šio dalyvaujančio biudžeto poreikiams."
+        phases: "Dalyvaujančiuose biudžetuose yra skirtingos fazės. Čia galima įjungti ar išjungti fazes ir pritaikyti kiekvieną fazę individualiai. Šių fazės konfigūracija naudojama tik informaciniams tikslams ir bus rodoma dalyvaujančio biudžeto viešoje pusėje."
+      show:
+        add_group: "Pridėti grupę"
+        add_heading: "Pridėti pavadinimą"
+        groups_and_headings: "Grupės ir pavadinimai"
+        headings_caption: "Pavadinimai grupėje %{group}"
+      winners:
+        calculate: Skaičiuoti laimėtojų investicijas
+        calculated: Laimėtojai skaičiuojami, tai gali užtrukti minutę.
+        recalculate: Perskaičiuoti laimėtojų investicijas
+      ballots:
+        feature_disabled: 'Savybė <strong>Balsavimas</strong> turi būti įjungta, norint kurti balsavimo kabinas. Ją galite įjungti nuorodoje <a href="%{link}">nustatymų konfigūracijoje</a>.'
+    budget_groups:
+      name: "Pavadinimas"
+      headings_name: "Pavadinimai"
+      headings_manage: "Pavadinimų valdymas"
+      no_groups: "Grupių nėra."
+      amount:
+        one: "Yra 1 grupė"
+        other: "Yra %{count} grupių"
+      create:
+        notice: "Grupė sėkmingai sukurta!"
+      update:
+        notice: "Grupė sėkmingai atnaujinta"
+      destroy:
+        success_notice: "Grupė sėkmingai ištrinta"
+        unable_notice: "Negalite ištrinti grupės, kuri turi susijusių pavadinimų"
+      form:
+        create: "Sukurti naują grupę"
+        edit: "Redaguoti grupę"
+        max_votable_headings_info: "Taikoma tik pasirinkimo projektų fazėje. Balsuojant dėl projektų fazėje, vartotojai gali balsuoti tik už vieną pavadinimą iš grupės."
+        submit: "Išsaugoti grupę"
+      index:
+        new_button: "Pridėti naują grupę"
+    budget_headings:
+      no_headings: "Grupėje <strong>%{group}</strong> pavadinimų nėra."
+      create:
+        notice: "Pavadinimas sėkmingai sukurtas!"
+      update:
+        notice: "Pavadinimas sėkmingai atnaujintas"
+      destroy:
+        success_notice: "Pavadinimas sėkmingai ištrintas"
+        unable_notice: "Negalite ištrinti pavadinimo, kuriam priskirti susiję investiciniai projektai"
+      form:
+        geozone_info: "Kai pavadinimui priskiriama geo zona, ši geo zona bus matoma šio biudžeto žemėlapyje, jei geo zonoje yra GeoJSON duomenys."
+        max_ballot_lines_info: 'Maksimalus projektų skaičius, kurį vartotojas gali balsuoti šiame pavadinime per "Projektų balsavimo" fazę. Tik biudžetai, naudojantys patvirtinimo balsavimą.'
+        population_info: "Biudžeto pavadinimo gyventojų laukas naudojamas statistiniams tikslams biudžeto pabaigoje, kad būtų parodyta, kiek procentų balsavo už kiekvieną pavadinimą, kuris atstovauja gyventojams. Laukas neprivalomas, todėl galite jį palikti tuščią, jei tai netaikoma."
+        coordinates_info: "Jeigu pateikiami platumos ir ilgumos duomenys, šio pavadinimo investicijų puslapis įtrauks žemėlapį. Šis žemėlapis bus centrizuotas, naudojant tuos koordinates."
+        content_blocks_info: "Jei patvirtinta turinio bloko parinktis, galėsite kurti tinklo puslapio turinį, susijusį su šiuo pavadinimu, skiltyje Nustatymai > Tinklo turinio blokai. Šis turinys bus rodomas investicijų puslapyje šiam pavadinimui."
+        create: "Sukurti naują pavadinimą"
+        edit: "Redaguoti pavadinimą"
+        submit: "Išsaugoti pavadinimą"
+      group_switcher:
+        currently_showing: "Rodyti pavadinimus iš grupės <strong>%{group}</strong>."
+        different_group: "Valdyti pavadinimus iš skirtingos grupės"
+        the_other_group: "Valdyti pavadinimus iš grupės %{group}."
+      index:
+        back: "Grįžti į grupes"
+        new_button: "Pridėti naują pavadinimą"
+        title: "%{budget} / %{group} pavadinimai"
+    budget_phases:
+      edit:
+        title: "Redaguoti fazę"
+        dates_help_text: "Tik informaciniams tikslams"
+        description_help_text: Šis tekstas bus rodomas antraštėje, kai fazė yra aktyvi
+        duration: "Fazės trukmė"
+        duration_description: "Šie laukai naudojami tik informaciniams tikslams ir <strong>neaktyvina fazės automatinio atnaujinimo.</strong> Norint atnaujinti, redaguokite biudžetą ir pasirinkite aktyvią fazę."
+        enabled_help_text: Ši fazė bus vieša biudžeto fazės laiko juostoje.
+        image_description: "Įkelus nuotrauką, ji bus rodoma šios fazės aprašymo šalia."
+        main_call_to_action: "Pagrindinis veiksmas (neprivaloma)"
+        main_call_to_action_description: "Ši nuoroda bus rodoma dalyvaujančio biudžeto pagrindinėje juostoje, kai ši fazė yra įjungta, ir skatins vartotoją atlikti konkretų veiksmą, tokią kaip pasiūlymo kūrimas, balsavimas už esamus ar sužinoti daugiau apie procesą."
+        name_help_text: "Tai yra pavadinimo, kurį vartotojai skaitys antraštėje, kai ši fazė yra aktyvi."
+        save_changes: Išsaugoti pakeitimus
+      index:
+        title: "%{budget} fazės"
+    budget_investments:
+      index:
+        heading_filter_all: Visi pavadinimai
+        administrator_filter_all: Visi administratoriai
+        valuator_filter_all: Visi vertintojai
+        tags_filter_all: Visos žymės
+        advanced_filters: Išplėstiniai filtra
+        placeholder: Paieška projektų
+        filters:
+          all: Visi
+          without_admin: Be priskirto administratoriaus
+          without_valuator: Be priskirto vertintojo
+          under_valuation: Vertinamas
+          valuation_finished: Vertinimas baigtas
+          feasible: Įmanoma
+          selected: Pasirinkta
+          undecided: Nepasirinkta
+          unfeasible: Neįmanoma
+          min_total_supports: Minimalus palaikymų skaičius
+          max_total_supports: Maksimalus palaikymų skaičius
+          winners: Laimėtojai
+          one_filter: "Taikomi dabartiniai filtrai: <b><em>%{filter}</em></b>"
+          two_filters: "Taikomi dabartiniai filtrai: <b><em>%{filter}, %{advanced_filters}</em></b>"
+        buttons:
+          filter: Filtruoti
+        download_current_selection: "Atsisiųsti dabartinį pasirinkimą"
+        no_budget_investments: "Investicinių projektų nėra."
+        title: Investiciniai projektai
+        columns: Stulpeliai
+        assigned_admin: Priskirtas administratorius
+        no_admin_assigned: Administratorius nepaskirtas
+        no_valuators_assigned: Vertintojas nepaskirtas
+        feasibility:
+          feasible: "Įmanoma"
+          unfeasible: "Neįmanoma"
+          undecided: "Nepasirinkta"
+        selected: "Pasirinkta"
+        select: "Pasirinkti"
+        list:
+          id: ID
+          title: Pavadinimas
+          supports: Palaikymai
+          admin: Administratorius
+          valuator: Vertintojas
+          valuation_group: Vertinimo grupė
+          geozone: Veiklos sritis
+          feasibility: Įgyvendinamumas
+          valuation_finished: Vertinimas baigtas
+          selected: Pasirinkta
+          visible_to_valuators: Rodyti vertintojams
+          author_username: Autoriaus vartotojo vardas
+          incompatible: Nesuderinamas
+          price: Kaina
+          author: Autorius
+        cannot_calculate_winners: Biudžetui turi būti palikta "%{phase}" fazė, kad būtų galima apskaičiuoti laimėtojų projektus
+        see_results: "Žiūrėti rezultatus"
+        milestone_tags_filter_all: "Visos etapo žymės"
+      show:
+        assigned_admin: Priskirtas administratorius
+        assigned_valuators: Priskirti vertintojai
+        classification: Klasifikacija
+        info: "%{budget_name} - Grupė: %{group_name} - Investicinis projektas %{id}"
+        edit: Redaguoti
+        edit_classification: Redaguoti klasifikaciją
+        by: Pagal
+        sent: Išsiųsta
+        group: Grupė
+        heading: Pavadinimas
+        dossier: Dossier
+        edit_dossier: Redaguoti dossier
+        tags: Žymės
+        undefined: Neapibrėžta
+        compatibility:
+          title: Suderinamumas
+          "true": Nesuderinamas
+          "false": Suderinamas
+        selection:
+          title: Pasirinkimas
+        winner:
+          title: Laimėtojas
+          "true": "Taip"
+          "false": "Ne"
+        valuator_groups: "Vertintojų grupės"
+        preview: Investicijų peržiūra
+      edit:
+        classification: Klasifikacija
+        compatibility: Suderinamumas
+        selection: Pasirinkimas
+        assigned_valuators: Vertintojai
+        select_heading: Pasirinkti pavadinimą
+        submit_button: Atnaujinti
+        user_tags: Vartotojo priskirtos žymės
+        tags_placeholder: "Rašykite žymes, kurias norite atskirti kableliais (,)"
+        undefined: Neapibrėžta
+      search_unfeasible: Ieškoti neįmanomų
+    budgets_wizard:
+      creation_timeline:
+        budget: Biudžetas
+        groups: Grupės
+        headings: Antraštės
+        phases: Etapai
+      budgets:
+        continue: "Tęsti su grupėmis"
+      groups:
+        back: "Grįžti ir redaguoti biudžetą"
+        continue: "Tęsti su antraštėmis"
+      headings:
+        continue: "Tęsti su etapais"
+        single:
+          back: "Grįžti ir redaguoti grupę"
+      heading_mode:
+        multiple:
+          description: "Kurti procesą su keliomis grupėmis, apygardomis ar temomis. Pavyzdžiui, turite keletą pinigų maišų, pvz., 25 000 € „Šiaurės apygardai“, 30 000 € „Centro apygardai“, 28 000 € „Pietų apygardai“ ir visam miestui. Arba kelios temos, tokios kaip sportas, kultūra ar sveikata."
+          link: "Kurti biudžetą su keliais etapais"
+          title: "<strong>Kelių etapų</strong> biudžetas"
+        single:
+          description: "Kurti procesą su grupe, apygarda ar tema. Pavyzdžiui, turite vieną pinigų maišą, pvz., 25 000 € apygardai arba 10 000 € kultūrai."
+          link: "Kurti vieno etapo biudžetą"
+          title: "<strong>Vieno etapo</strong> biudžetas"
+        title: "Dalykinio biudžeto tipas"
+      phases:
+        continue: "Baigti"
+        multiple:
+          back: "Grįžti ir redaguoti antraštę"
+        single:
+          back: "Grįžti ir redaguoti etapą"
+    milestones:
+      index:
+        table_id: "ID"
+        table_title: "Pavadinimas"
+        table_description: "Aprašymas"
+        table_publication_date: "Skelbimo data"
+        table_status: Būsena
+        table_actions: "Veiksmai"
+        no_milestones: "Nėra nustatytų ženklų"
+        image: "Nuotrauka"
+        show_image: "Rodyti nuotrauką"
+        documents: "Dokumentai"
+        milestone: Ženklas
+        new_milestone: Kurti naują ženklą
+        milestone_tags: Ženklo žymos
+      form:
+        admin_statuses: Tvarkyti būsenas
+        no_statuses_defined: Dar nėra apibrėžtų būsenų
+      new:
+        creating: Kurti ženklą
+      edit:
+        title: Redaguoti ženklą
+      create:
+        notice: Naujas ženklas sėkmingai sukurtas!
+      update:
+        notice: Ženklas sėkmingai atnaujintas!
+      delete:
+        notice: Ženklas sėkmingai ištrintas!
+    statuses:
+      index:
+        title: Ženklo būsenos
+        empty_statuses: Nėra sukurtų ženklo būsenų
+        new_status: Sukurti naują ženklo būseną
+        table_name: Pavadinimas
+        table_description: Aprašymas
+        table_actions: Veiksmai
+      edit:
+        title: Redaguoti ženklo būseną
+      update:
+        notice: Ženklo būsena sėkmingai atnaujinta!
+      new:
+        title: Sukurti ženklo būseną
+      create:
+        notice: Ženklo būsena sėkmingai sukurta!
+      delete:
+        notice: Ženklo būsena sėkmingai ištrinta!
+    progress_bars:
+      manage: "Tvarkyti pažangos juostas"
+      index:
+        title: "Pažangos juostos"
+        no_progress_bars: "Nėra pažangos juostų"
+        new_progress_bar: "Kurti naują pažangos juostą"
+        primary: "Pagrindinė pažangos juosta"
+        table_id: "ID"
+        table_kind: "Tipas"
+        table_title: "Pavadinimas"
+        table_percentage: "Esama pažanga"
+      new:
+        creating: "Kurti pažangos juostą"
+      edit:
+        title:
+          primary: "Redaguoti pagrindinę pažangos juostą"
+          secondary: "Redaguoti pažangos juostą %{title}"
+      create:
+        notice: "Pažangos juosta sėkmingai sukurta!"
+      update:
+        notice: "Pažangos juosta sėkmingai atnaujinta!"
+      delete:
+        notice: "Pažangos juosta sėkmingai ištrinta!"
+    comments:
+      index:
+        id: "ID"
+        content: "Turinys"
+        author: "Autorius"
+        commentable_type: "Tipas"
+        title: Komentarai
+        no_comments: "Nėra komentarų"
+        table_link: "Nuoroda"
+    hidden_comments:
+      index:
+        filter: Filtruoti
+        filters:
+          all: Visi
+          with_confirmed_hide: Patvirtinti
+          without_confirmed_hide: Laukiantys
+        hidden_debate: Paslėptos diskusijos
+        hidden_proposal: Paslėptos pasiūlymai
+        title: Paslėpti komentarai
+        no_hidden_comments: "Nėra paslėptų komentarų"
+    dashboard:
+      index:
+        back: Grįžti į %{org}
+        title: Administravimas
+        description: Sveiki atvykę į %{org} administravimo skydelį.
+      actions:
+        index:
+          description: "Kai vartotojai kuria pasiūlymus, jie gali pasiekti savo pasiūlymų skydelį, kur galite pasiūlyti išteklius ir rekomendacijas gauti paramą savo idėjai."
+          create: Kurti išteklius ar veiksmą
+          active: 'Taip'
+          inactive: 'Ne'
+          title: Ištekliai ir veiksmai
+          action_title: Pavadinimas
+          action_type: Tipas
+          required_supports: Reikalinga parama
+          day_offset: Reikalingi dienos
+          action_active: Aktyvus
+          order: Eiliškumas
+          published_proposal: Paskelbtas pasiūlymas
+          default:
+            email: El. paštas
+            polls: Apklausos
+            poster: Plakatas
+        new:
+          creating: Naujas veiksmas pasiūlymų skydelyje
+          back: Grįžti į sąrašą
+        create:
+          notice: Veiksmas sėkmingai sukurtas
+        edit:
+          editing: Veiksmo redagavimas pasiūlymų skydelyje
+          back: Grįžti į sąrašą
+        delete:
+          success: Veiksmas sėkmingai ištrintas
+        form:
+          submit_button: Išsaugoti
+          help_text: Įveskite 0, kad ši vertė nebūtų atsižvelgiama
+          published_proposal_help_text: Pažymėkite šį žymiklį, kad veiksmas būtų sukurtas tik paskelbtams pasiūlymams
+      administrator_tasks:
+        index:
+          description: "Pasiūlymų skydelyje paskelbti ištekliai gali apimti mygtuką, kurį prašoma administratoriams. Vartotojų užklausos matomos žemiau."
+          title: Reikalingi ištekliai
+          solve: Išspręsti
+          no_records: "Nėra užklausų dėl išteklių"
+          source: Šaltinis
+          resource: Reikalingas išteklius
+          filter: Filtruoti
+          filters:
+            pending: Laukiantys
+            done: Išspręsti
+        edit:
+          back: Grįžti į laukiančių užduočių sąrašą
+          solving: Išspręsti laukiančią užduotį
+        form:
+          solve: Pažymėti kaip išspręsta
+          proposal: Pasiūlymas
+          request: Reikalingas išteklius
+        update:
+          success: Užduotis pažymėta kaip išspręsta.
+    debates:
+      index:
+        id: ID
+        author: Autorius
+        title: Diskusijos
+        no_debates: "Nėra diskusijų"
+    hidden_debates:
+      index:
+        filter: Filtruoti
+        filters:
+          all: Visi
+          with_confirmed_hide: Patvirtinti
+          without_confirmed_hide: Laukiantys
+        title: Paslėptos diskusijos
+        no_hidden_debates: "Nėra paslėptų diskusijų"
+    documents:
+      new:
+        title: "Įkelti dokumentą"
+        submit_button: "Įkelti"
+      index:
+        new_link: "Pridėti naują dokumentą"
+        no_documents: "Dokumentų nėra."
+        title: "Dokumentai"
+        format: "Formatas"
+        size: "Dydis"
+        url: "URL"
+      create:
+        success_notice: "Dokumentas sėkmingai įkeltas"
+        unable_notice: "Netinkamas dokumentas"
+      destroy:
+        success_notice: "Dokumentas sėkmingai ištrintas"
+    hidden_users:
+      index:
+        filter: Filtruoti
+        filters:
+          all: Visi
+          with_confirmed_hide: Patvirtinti
+          without_confirmed_hide: Laukiantys
+        title: Paslėpti vartotojai
+        user: Vartotojas
+        no_hidden_users: "Paslėptų vartotojų nėra."
+      show:
+        email: "El. paštas:"
+        hidden_at: "Paslėpta:"
+        registered_at: "Registruota:"
+        title: Vartotojo (%{user}) veikla
+    hidden_budget_investments:
+      index:
+        filter: Filtruoti
+        filters:
+          all: Visi
+          with_confirmed_hide: Patvirtinti
+          without_confirmed_hide: Laukiantys
+        title: Paslėptos biudžeto investicijos
+        no_hidden_budget_investments: "Paslėptų biudžeto investicijų nėra"
+    legislation:
+      processes:
+        create:
+          notice: 'Procesas sėkmingai sukurtas. <a href="%{link}">Spustelėkite čia, kad pamatytumėte</a>'
+          error: Proceso sukurti nepavyko
+        update:
+          notice: 'Procesas sėkmingai atnaujintas. <a href="%{link}">Spustelėkite čia, kad pamatytumėte</a>'
+          error: Proceso atnaujinti nepavyko
+        destroy:
+          notice: Procesas sėkmingai ištrintas
+        edit:
+          back: Atgal
+          submit_button: Išsaugoti pakeitimus
+        form:
+          enabled: Įjungtas
+          process: Procesas
+          debate_phase: Diskusijos etapas
+          draft_phase: Juodraščio etapas
+          draft_phase_description: Jei šis etapas aktyvus, procesas nebus rodomas procesų sąraše. Leidžiama peržiūrėti procesą ir kurti turinį prieš pradžią.
+          allegations_phase: Komentarų etapas
+          proposals_phase: Pasiūlymų etapas
+          use_markdown: Naudoti „Markdown“ teksto formatavimui
+          homepage_description: Čia galite paaiškinti proceso turinį
+          banner_title: Antraštės spalvos
+        index:
+          create: Naujas procesas
+          title: Bendradarbiavimo teisėkūra
+          filters:
+            active: Aktyvus
+            all: Visi
+        new:
+          back: Atgal
+          title: Kūrė naują bendradarbiavimo teisėkūros procesą
+          submit_button: Kūrimo procesas
+        proposals:
+          orders:
+            id: "Rūšiuoti pagal ID"
+            title: "Rūšiuoti pagal pavadinimą"
+            supports: "Rūšiuoti pagal visą paramą"
+        process:
+          title: Procesas
+          comments: Komentarai
+          status: Būsena
+          start_date: Pradžios data
+          end_date: Pabaigos data
+          status_open: Atidarytas
+          status_closed: Uždarytas
+          status_planned: Planuojamas
+        subnav:
+          info: Informacija
+          homepage: Pagrindinis puslapis
+          draft_versions: Juodraščiai
+          questions: Diskusija
+          proposals: Pasiūlymai
+          milestones: Sekimas
+      homepage:
+        edit:
+          title: Konfigūruokite savo proceso pagrindinį puslapį
+      proposals:
+        index:
+          title: Pasiūlymai
+          back: Atgal
+          id: ID
+          supports: Visos paramos
+        form:
+          custom_categories: Kategorijos
+          custom_categories_description: Kategorijos, kurias vartotojai gali pasirinkti kuriant pasiūlymą. Maks. 160 simbolių.
+          custom_categories_placeholder: Įveskite žymes, kurias norite naudoti, atskirtas kableliais (,) ir tarp kabučių ("")
+      draft_versions:
+        create:
+          notice: 'Juodraštis sėkmingai sukurtas. <a href="%{link}">Spustelėkite čia, kad pamatytumėte</a>'
+          error: Juodraščio sukurti nepavyko
+        update:
+          notice: 'Juodraštis sėkmingai atnaujintas. <a href="%{link}">Spustelėkite čia, kad pamatytumėte</a>'
+          error: Juodraščio atnaujinti nepavyko
+        destroy:
+          notice: Juodraštis sėkmingai ištrintas
+        edit:
+          back: Atgal
+          submit_button: Išsaugoti pakeitimus
+          warning: Jūs redagavote tekstą, neužmirškite paspausti „Išsaugoti“, kad pakeitimai būtų galutinai išsaugoti.
+          markdown_changes_message: "Jūs redagavote tekstą ir jo neišsaugojote. Ar tikrai norite palikti šį puslapį?"
+        form:
+          title: 'Redaguojama <span class="strong">%{draft_version_title}</span> iš proceso <span class="strong">%{process_title}</span>'
+          launch_text_editor: Paleisti teksto redaktorių
+          close_text_editor: Uždaryti teksto redaktorių
+          use_markdown: Naudoti „Markdown“ teksto formatavimui
+          hints:
+            final_version: Ši versija bus paskelbta kaip galutinis rezultatas šiam procesui. Komentarai šioje versijoje nebus leidžiami.
+            status:
+              draft: Jūs galite peržiūrėti kaip administratorius, niekas kitas jo nemato
+              published: Matomas visiems
+          changelog_placeholder: Pridėkite pagrindinius pakeitimus nuo ankstesnės versijos
+        index:
+          title: Juodraščių versijos
+          create: Sukurti versiją
+          delete: Ištrinti
+          preview: Peržiūra
+        new:
+          back: Atgal
+          title: Sukurti naują versiją
+          submit_button: Sukurti versiją
+        table:
+          title: Pavadinimas
+          created_at: Sukurta
+          comments: Komentarai
+          final_version: Galutinė versija
+          status: Būsena
+      questions:
+        create:
+          notice: 'Klausimas sėkmingai sukurtas. <a href="%{link}">Spustelėkite čia, kad pamatytumėte</a>'
+          error: Klausimo sukurti nepavyko
+        update:
+          notice: 'Klausimas sėkmingai atnaujintas. <a href="%{link}">Spustelėkite čia, kad pamatytumėte</a>'
+          error: Klausimo atnaujinti nepavyko
+        destroy:
+          notice: Klausimas sėkmingai ištrintas
+        edit:
+          back: Atgal
+          title: "Redaguoti „%{question_title}“"
+          submit_button: Išsaugoti pakeitimus
+        form:
+          add_option: Pridėti variantą
+          value_placeholder: Pridėti uždarą atsakymą
+          question_options: "Galimi atsakymai (neprivaloma, pagal numatytuosius nustatymus atviri atsakymai)"
+        index:
+          back: Atgal
+          title: Klausimai, susiję su šiuo procesu
+          create: Sukurti klausimą
+          delete: Ištrinti
+        new:
+          back: Atgal
+          title: Sukurti naują klausimą
+          submit_button: Sukurti klausimą
+        table:
+          title: Pavadinimas
+          question_options: Klausimo variantai
+          answers_count: Atsakymų skaičius
+          comments_count: Komentarų skaičius
+        question_option_fields:
+          remove_option: Pašalinti variantą
+      milestones:
+        index:
+          title: Sekimo
+    managers:
+      index:
+        title: Vadovai
+        no_managers: Vadovų nėra.
+      manager:
+        add: Pridėti
+      search:
+        title: "Vadovai: Vartotojų paieška"
+    sdg_managers:
+      index:
+        no_sdg_managers: Vartotojų nėra.
+    sdg/manager:
+      sdg/manager:
+        add: Pridėti
+    menu:
+      activity: Veikla moderatorių
+      admin: Administravimo meniu
+      banner: Valdyti stendus
+      proposals: Siūlymai
+      proposals_topics: Siūlymų temos
+      budgets: Dalyvaujamos biudžetai
+      geozones: Valdyti geozonas
+      hidden_comments: Slėpti komentarai
+      hidden_debates: Slėptos diskusijos
+      hidden_proposals: Slėpti pasiūlymai
+      hidden_budget_investments: Slėptos biudžeto investicijos
+      hidden_proposal_notifications: Slėptos pasiūlymų pranešimai
+      hidden_users: Slėpti vartotojai
+      administrators: Administratoriai
+      managers: Vadovai
+      sdg_managers: SDG Vadovai
+      moderators: Moderatoriai
+      messaging_users: Žinutės vartotojams
+      newsletters: Naujienlaiškiai
+      admin_notifications: Pranešimai
+      system_emails: Sisteminiai laiškai
+      emails_download: Parsisiųsti el. paštus
+      valuators: Vertintojai
+      poll_officers: Apklausos pareigūnai
+      polls: Apklausos
+      poll_booths: Balsavimo kabinos
+      poll_booth_assignments: Kabinų priskyrimas
+      poll_shifts: Valdyti pamainas
+      officials: Pareigūnai
+      organizations: Organizacijos
+      settings: Bendri nustatymai
+      stats: Statistika
+      signature_sheets: Parašų sąrašai
+      site_customization:
+        documents: Pasirinktiniai dokumentai
+        homepage: Titulinis puslapis
+        pages: Pasirinktiniai puslapiai
+        images: Pasirinktiniai vaizdai
+        content_blocks: Pasirinktiniai turinio blokai
+        information_texts: Pasirinktiniai informaciniai tekstai
+        information_texts_menu:
+          basic: "Pagrindinis pasirinkimas"
+          debates: "Diskusijos"
+          community: "Bendruomenė"
+          proposals: "Siūlymai"
+          polls: "Apklausos"
+          legislation: "Bendradarbiavimo teisėkūra"
+          budgets: "Biudžetai"
+          layouts: "Maketai"
+          machine_learning: "AI / Mašininis mokymas"
+          mailers: "El. laiškai"
+          management: "Valdymas"
+          welcome: "Sveiki atvykę"
+        buttons:
+          save: "Išsaugoti"
+          content_block:
+            update: "Atnaujinti bloką"
+      title_moderated_content: Moderuotas turinys
+      title_profiles: Profiliai
+      title_settings: Nustatymai
+      title_site_customization: Svetainės turinys
+      title_booths: Balsavimo kabinos
+      legislation: Bendradarbiavimo teisėkūra
+      users: Vartotojai
+      dashboard: Siūlymų valdymo skydelis
+      administrator_tasks: Reikalingi ištekliai
+      dashboard_actions: Ištekliai ir veiksmai
+      debates: "Diskusijos"
+      comments: "Komentarai"
+      local_census_records: Valdyti vietos surinkimus
+      machine_learning: "AI / Mašininis mokymas"
+      multitenancy: Daugiainė naudotojų sistema
+    administrators:
+      index:
+        title: Administratoriai
+        id: Administratoriaus ID
+        no_administrators: Administratorių nėra.
+      administrator:
+        add: Pridėti
+        restricted_removal: "Atsiprašome, negalite pašalinti savęs iš administratorių"
+      search:
+        title: "Administratoriai: Vartotojų paieška"
+      form:
+        edit_title: "Redaguoti administratorių"
+        updated: "Administratorius sėkmingai atnaujintas"
+    moderators:
+      index:
+        title: Moderatoriai
+        no_moderators: Moderatorių nėra.
+      moderator:
+        add: Pridėti
+      search:
+        title: "Moderatoriai: Vartotojų paieška"
+    segment_recipient:
+      all_users: Visi vartotojai
+      administrators: Administratoriai
+      all_proposal_authors: Siūlymų autoriai (įskaitant archyvuotus ir atšauktus)
+      proposal_authors: Siūlymų autoriai
+      investment_authors: Investicijų autoriai dabartiniame biudžete
+      feasible_and_undecided_investment_authors: "Autoriai, kurių dabartinis biudžeto investicijos dalis nesutinka su: [vertinimas baigtas neišpildomas]"
+      selected_investment_authors: Nugalėtojų investicijų autoriai dabartiniame biudžete
+      winner_investment_authors: Nugalėtojų investicijų autoriai dabartiniame biudžete
+      not_supported_on_current_budget: Vartotojai, kurie nepalaiko investicijų dabartiniame biudžete
+      invalid_recipients_segment: "Gavėjų vartotojų segmentas yra netinkamas"
+    newsletters:
+      create_success: Naujienlaiškis sėkmingai sukurtas
+      update_success: Naujienlaiškis sėkmingai atnaujintas
+      send_success: Naujienlaiškis sėkmingai išsiųstas
+      delete_success: Naujienlaiškis sėkmingai ištrintas
+      index:
+        title: Naujienlaiškiai
+        new_newsletter: Naujas naujienlaiškis
+        subject: Tema
+        segment_recipient: Gavėjai
+        sent: Išsiųsta
+        actions: Veiksmai
+        draft: Juodraštis
+        preview: Peržiūra
+        empty_newsletters: Nėra naujienlaiškių rodyti
+      new:
+        title: Naujas naujienlaiškis
+        header_footer_help_text: "Antraštė ir poraščio tekstas yra vienodi visiems el. laiškams, juos galite redaguoti <code>app/views/layouts/mailer_header</code> ir <code>app/views/layouts/mailer_footer</code>.<br>Gali pakeisti antraštės vaizdą %{link}."
+        image_link: "pasirinktinių vaizdų"
+      edit:
+        title: Redaguoti naujienlaiškį
+      show:
+        title: Naujienlaiškio peržiūra
+        send: Siųsti
+        affected_users: (įtakoti %{n} vartotojai)
+        sent_emails:
+          one: 1 el. laiškas išsiųstas
+          other: "%{count} el. laiškai išsiųsti"
+        sent_at: Išsiųsta
+        subject: Tema
+        segment_recipient: Gavėjai
+        from: El. pašto adresas, kuris bus rodomas kaip siunčiantis naujienlaiškį
+        body: El. laiško turinys
+        body_help_text: Taip vartotojai matys laišką.
+        send_alert: Ar tikrai norite išsiųsti šį naujienlaiškį %{n} vartotojams?
+    admin_notifications:
+      create_success: Pranešimas sėkmingai sukurtas
+      update_success: Pranešimas sėkmingai atnaujintas
+      send_success: Pranešimas sėkmingai išsiųstas
+      delete_success: Pranešimas sėkmingai ištrintas
+      index:
+        section_title: Pranešimai
+        new_notification: Naujas pranešimas
+        title: Pavadinimas
+        segment_recipient: Gavėjai
+        sent: Išsiųsta
+        actions: Veiksmai
+        draft: Juodraštis
+        preview: Peržiūra
+        view: Rodyti
+        empty_notifications: Nėra pranešimų rodyti
+      new:
+        section_title: Naujas pranešimas
+        submit_button: Sukurti pranešimą
+      edit:
+        section_title: Redaguoti pranešimą
+        submit_button: Atnaujinti pranešimą
+      show:
+        section_title: Pranešimo peržiūra
+        send: Siųsti pranešimą
+        will_get_notified: (įtakoti %{n} vartotojai)
+        got_notified: (įtakoti %{n} vartotojai)
+        sent_at: Išsiųsta
+        title: Pavadinimas
+        body: Tekstas
+        link: Nuoroda
+        segment_recipient: Gavėjai
+        preview_guide: "Taip vartotojai matys pranešimą:"
+        sent_guide: "Taip vartotojai mato pranešimą:"
+        send_alert: Ar tikrai norite išsiųsti šį pranešimą %{n} vartotojams?
+    system_emails:
+      preview_pending:
+        action: Laikinai peržiūrėti
+        preview_of: Peržiūra %{name}
+        pending_to_be_sent: Tai yra laikinai peržiūrimas turinys
+        moderate_pending: Persvarstyti išsiuntimo laukiant
+        send_pending: Išsiųsti laukiant
+        send_pending_notification: Laukiantys pranešimai išsiųsti sėkmingai
+      proposal_notification_digest:
+        title: "Siūlymų pranešimų santrauka"
+        description: "Surinkta visi siūlymų pranešimai viename pranešime, kad būtų išvengta pernelyg daug el. laiškų."
+        preview_detail: "Vartotojai gaus pranešimus tik iš tų siūlymų, kuriuos jie seka"
+      budget_investment_created:
+        title: "Sukurta biudžeto investicija"
+        description: "Išsiunčiamas, kai vartotojas sukūrė biudžeto investiciją."
+      budget_investment_selected:
+        title: "Pasirinkta biudžeto investicija"
+        description: "Išsiunčiama autoriams, kai jų biudžeto investicija yra pasirinkta."
+      budget_investment_unfeasible:
+        title: "Biudžeto investicija neįvykdoma"
+        description: "Išsiunčiama autoriams, kai jų biudžeto investicija pažymima kaip neįvykdoma."
+      budget_investment_unselected:
+        title: "Biudžeto investicija nepasirinkta"
+        description: "Išsiunčiama autoriams, kai jų biudžeto investicija nepasirinkta balsavimo etapui."
+      comment:
+        title: "Komentaras"
+        description: "Išsiunčiama autoriams, kai jie gauna komentarą."
+      reply:
+        title: "Atsakymas"
+        description: "Išsiunčiama komentaro autoriams, kai jie gauna atsakymą."
+      direct_message_for_receiver:
+        title: "Privatus pranešimas gavėjui"
+        description: "Išsiunčiama privataus pranešimo gavėjui."
+      direct_message_for_sender:
+        title: "Privatus pranešimas siuntėjui"
+        description: "Išsiunčiama privataus pranešimo siuntėjui."
+      email_verification:
+        title: "El. pašto patvirtinimas"
+        description: "Išsiunčiamas naujam vartotojui jo paskyros patvirtinimui."
+      user_invite:
+        title: "Vartotojo pakvietimas"
+        description: "Išsiunčiamas asmeniui, kuris buvo pakviestas užsiregistruoti paskyrą."
+      evaluation_comment:
+        title: "Naujas vertinimo komentaras"
+        description: "Išsiunčiama administratoriams ir vertintojams, susijusiems su komentuota investicija"
+      edit_info: "Šį laišką galite redaguoti"
+      message_title: "Pranešimo pavadinimas"
+      message_body: "Tai yra pranešimo turinio pavyzdys."
+      alert:
+        no_investments: "Nėra sukurtų biudžeto investicijų. Norint peržiūrėti el. laiško turinį, reikia įvesti pavyzdinę informaciją."
+        no_comments: "Nėra sukurtų komentarų. Norint peržiūrėti el. laiško turinį, reikia įvesti pavyzdinę informaciją."
+        no_replies: "Nėra sukurtų atsakymų. Norint peržiūrėti el. laiško turinį, reikia įvesti pavyzdinę informaciją."
+        no_evaluation_comments: "Nėra sukurtų vertinimo komentarų. Norint peržiūrėti el. laiško turinį, reikia įvesti pavyzdinę informaciją."
+    emails_download:
+      index:
+        title: Parsisiųsti el. paštus
+        download_segment: Parsisiųsti el. paštų adresus
+        download_segment_help_text: Parsisiųskite CSV formatu
+        download_emails_button: Parsisiųsti el. paštų sąrašą
+    valuators:
+      index:
+        title: Vertintojai
+        name: Vardas
+        email: El. paštas
+        description: Aprašymas
+        no_description: Aprašymo nėra
+        no_valuators: Vertintojų nėra.
+        valuator_groups: "Vertintojų grupės"
+        group: "Grupė"
+        no_group: "Be grupės"
+        abilities: "Galiai"
+        can_comment: "Gali komentuoti"
+        can_edit_dossier: "Gali redaguoti bylą"
+      valuator:
+        add: Pridėti prie vertintojų
+      search:
+        title: "Vertintojai: Vartotojų paieška"
+      form:
+        edit_title: "Vertintojai: Redaguoti vertintoją"
+        updated: "Vertintojas sėkmingai atnaujintas"
+      show:
+        description: "Aprašymas"
+        email: "El. paštas"
+        group: "Grupė"
+        abilities: "Galiai"
+        no_description: "Be aprašymo"
+        no_group: "Be grupės"
+        no_abilities: "Be galios"
+    valuator_groups:
+      index:
+        title: "Vertintojų grupės"
+        new: "Sukurti vertintojų grupę"
+        name: "Pavadinimas"
+        members: "Nariai"
+        no_groups: "Vertintojų grupių nėra"
+      show:
+        title: "Vertintojų grupė: %{group}"
+        no_valuators: "Šiai grupei priskirtų vertintojų nėra"
+      form:
+        new: "Sukurti vertintojų grupę"
+        edit: "Išsaugoti vertintojų grupę"
+    poll_officers:
+      index:
+        title: Balsavimo pareigūnai
+      officer:
+        add: Pridėti
+        delete: Ištrinti poziciją
+        name: Vardas
+        email: El. paštas
+        entry_name: pareigūnas
+      search:
+        email_placeholder: Paieška pagal el. paštą
+        user_not_found: Vartotojas nerastas
+        help: "Norint pridėti ar pašalinti balsavimo pareigūnus, naudokite paieškos formą žemiau."
+    poll_officer_assignments:
+      index:
+        officers_title: "Pareigūnų sąrašas"
+        no_officers: "Šiam balsavimui pareigūnų nepaskirta."
+        table_name: "Vardas"
+        table_email: "El. paštas"
+      by_officer:
+        date: "Data"
+        booth: "Būstinė"
+        assignments: "Šioje balsavimo vietoje dirbantys pareigūnai"
+        no_assignments: "Šis vartotojas šioje balsavimo vietoje nebeturi darbo laikų."
+    poll_shifts:
+      new:
+        add_shift: "Pridėti darbo laiką"
+        shift: "Darbo laikas"
+        shifts: "Šios būstinės darbo laikai"
+        date: "Data"
+        edit_shifts: Redaguoti darbo laikus
+        new_shift: "Naujas darbo laikas"
+        no_shifts: "Ši būstinė neturi darbo laikų"
+        officer: "Pareigūnas"
+        remove_shift: "Pašalinti"
+        search_officer_button: Paieška
+        search_officer_placeholder: Paieška pareigūno
+        search_officer_text: Ieškokite pareigūno, kuriam priskirti naują darbo laiką.
+        select_date: "Pasirinkite dieną"
+        no_voting_days: "Balsavimo dienos pasibaigė"
+        select_task: "Pasirinkite užduotį"
+        table_shift: "Darbo laikas"
+        table_email: "El. paštas"
+        table_name: "Vardas"
+      flash:
+        create: "Darbo laikas pridėtas"
+        destroy: "Darbo laikas pašalintas"
+        unable_to_destroy: "Darbo laikai su susijusiais rezultatais ar perkauntimais negali būti ištrinti"
+        date_missing: "Data turi būti pasirinkta"
+      vote_collection: Rinkti balsus
+      recount_scrutiny: Perkaupti ir tikrinti
+    booth_assignments:
+      manage_assignments: Valdyti priskyrimus
+      manage:
+        assignments_list: "Priskyrimai balsavimui „%{poll}“"
+        status:
+          assign_status: Priskyrimas
+          assigned: Priskirta
+          unassigned: Nepaskirta
+        actions:
+          assign: Priskirti būstinę
+          unassign: Atšaukti būstinės priskyrimą
+    poll_booth_assignments:
+      alert:
+        shifts: "Šiai būstinei priskirti darbo laikai. Jei pašalinsite būstinės priskyrimą, bus ištrinti ir darbo laikai. Tęsti?"
+      show:
+        location: "Vieta"
+        officers: "Pareigūnai"
+        officers_list: "Pareigūnų sąrašas šiai būstinei"
+        no_officers: "Šiai būstinei pareigūnų nėra"
+        recounts: "Perkaupta"
+        recounts_list: "Perkauptų sąrašas šiai būstinei"
+        results: "Rezultatai"
+        date: "Data"
+        count_final: "Galutinė perkaupimo (pagal pareigūną)"
+        count_by_system: "Balsai (automatinis)"
+        total_system: Viso balsų (automatinis)
+      index:
+        booths_title: "Būstinių sąrašas"
+        no_booths: "Šiam balsavimui nėra priskirtų būstinių."
+        table_name: "Pavadinimas"
+        table_location: "Vieta"
+    active_polls:
+      edit:
+        title: "Balsavimų aprašymas"
+      form:
+        description:
+          help_text: "Šis tekstas bus rodomas balsavimų puslapio antraštėje. Jis gali būti naudojamas pridėti kontekstą atvirų balsavimų atveju."
+    polls:
+      index:
+        title: "Balsavimų sąrašas"
+        no_polls: "Balsavimų nėra."
+        create: "Sukurti balsavimą"
+        name: "Pavadinimas"
+        dates: "Datos"
+        start_date: "Pradžios data"
+        closing_date: "Uždarymo data"
+        geozone_restricted: "Ribota apylinkėms"
+      new:
+        title: "Naujas balsavimas"
+        submit_button: "Sukurti balsavimą"
+      edit:
+        title: "Redaguoti balsavimą"
+        submit_button: "Atnaujinti balsavimą"
+      show:
+        questions_tab: Klausimai
+        booths_tab: Būstinės
+        officers_tab: Pareigūnai
+        recounts_tab: Perkaupti
+        results_tab: Rezultatai
+        no_questions: "Šiam balsavimui nėra priskirtų klausimų."
+        questions_title: "Klausimų sąrašas"
+        table_title: "Pavadinimas"
+        edit_answers: Redaguoti atsakymus
+        see_proposal: "(Peržiūrėti pasiūlymą)"
+      destroy:
+        alert: "Šis veiksmas pašalins balsavimą ir visus su juo susijusius klausimus."
+        success_notice: "Balsavimas sėkmingai ištrintas"
+        unable_notice: "Negalite ištrinti balsavimo, kuriame yra balsų"
+      votation_type:
+        title: "Balsavimo tipas"
+        unique_description: "Į klausimą galima atsakyti tik vieną kartą."
+        multiple_description: "Leidžiama pasirinkti kelis atsakymus. Galima nurodyti maksimalų atsakymų skaičių."
+    questions:
+      index:
+        title: "Klausimai"
+        create: "Sukurti klausimą"
+        no_questions: "Klausimų nėra."
+        filter_poll: Filtruoti pagal balsavimą
+        select_poll: Pasirinkite balsavimą
+        questions_tab: "Klausimai"
+        successful_proposals_tab: "Sėkmingi pasiūlymai"
+        create_question: "Sukurti klausimą"
+        table_proposal: "Pasiūlymas"
+        table_question: "Klausimas"
+        table_poll: "Balsavimas"
+        poll_not_assigned: "Balsavimas nepaskirtas"
+      edit:
+        title: "Redaguoti klausimą"
+      form:
+        poll_help: "Galite pasirinkti tik tuos balsavimus, kurie dar neprasidėjo"
+      new:
+        title: "Sukurti klausimą balsavimui %{poll}"
+        title_proposal: "Sukurti klausimą"
+      destroy:
+        notice: "Klausimas sėkmingai ištrintas"
+      answers:
+        images:
+          add_image: "Pridėti nuotrauką"
+          save_image: "Išsaugoti nuotrauką"
+      show:
+        proposal: Originalus pasiūlymas
+        author: Autorius
+        question: Klausimas
+        edit_question: Redaguoti klausimą
+        valid_answers: Galimi atsakymai
+        add_answer: Pridėti atsakymą
+        video_url: Išorinis vaizdo įrašas
+        answers:
+          title: Atsakymas
+          description: Aprašymas
+          videos: Vaizdo įrašai
+          video_list: Vaizdo įrašų sąrašas
+          images: Nuotraukos
+          images_list: Nuotraukų sąrašas
+          documents: Dokumentai
+          documents_list: Dokumentų sąrašas
+          document_title: Pavadinimas
+          document_actions: Veiksmai
+      no_edit: "Kai balsavimas prasidės, nebus galima kurti, redaguoti ar trinti klausimų, atsakymų ar kitos su balsavimu susijusios informacijos."
+    answers:
+      new:
+        title: "Naujas atsakymas"
+      edit:
+        title: "Redaguoti atsakymą"
+      destroy:
+        success_notice: "Atsakymas sėkmingai ištrintas"
+      images:
+        index:
+          title: "Nuotraukos"
+      videos:
+        index:
+          title: "Vaizdo įrašai"
+          add_video: "Pridėti vaizdo įrašą"
+          video_title: "Pavadinimas"
+          video_url: "Išorinis vaizdo įrašas"
+        new:
+          title: "Naujas vaizdo įrašas"
+        edit:
+          title: "Redaguoti vaizdo įrašą"
+    recounts:
+      index:
+        title: "Perkaupti balsai"
+        no_recounts: "Nėra ko perkaupti"
+        all_booths_total: "Bendras visų būstinių skaičius:"
+        total_final: "Galutiniai perkaupti"
+        total_system: "Balsai (automatiniai)"
+        table_booth_name: "Būstinė"
+        table_total_recount: "Bendras perkauptas (pagal pareigūną)"
+        table_system_count: "Balsai (automatiniai)"
+    results:
+      index:
+        title: "Rezultatai"
+        no_results: "Nėra rezultatų"
+      result:
+        table_whites: "Visiškai tušti balsai"
+        table_nulls: "Netinkami balsai"
+        table_total: "Galimi balsai"
+        table_answer: "Atsakymas"
+        table_votes: "Balsai"
+      results_by_booth:
+        booth: "Būstinė"
+        results: "Rezultatai"
+        see_results: "Žiūrėti rezultatus"
+        title: "Rezultatai pagal būstinę"
+    booths:
+      index:
+        title: "Aktyvių būstinių sąrašas"
+        no_booths: "Nėra aktyvių būstinių jokiam artimiausiam balsavimui."
+        add_booth: "Pridėti būstinę"
+        name: "Pavadinimas"
+        location: "Vieta"
+        no_location: "Nėra vietos"
+      new:
+        title: "Nauja būstinė"
+        submit_button: "Sukurti būstinę"
+      edit:
+        title: "Redaguoti būstinę"
+        submit_button: "Atnaujinti būstinę"
+      show:
+        location: "Vieta"
+      booth:
+        shifts: "Tvarkyti darbo laikus"
+    officials:
+      edit:
+        destroy: "Pašalinti „Pareigūno“ statusą"
+        title: "Pareigūnai: Redaguoti vartotoją"
+      flash:
+        official_destroyed: "Išsaugota: vartotojas nebėra pareigūnas"
+        official_updated: "Išsaugota: pareigūno informacija"
+      index:
+        title: "Pareigūnai"
+        help: "Vartotojai, žymimi kaip pareigūnai, bus išryškinti platformoje. Galite nurodyti etiketę, kuri matysis šių vartotojų varduose, pradedant svarbiausia (1 lygis) ir baigiant mažiausia (5 lygis)."
+        no_officials: "Nėra pareigūnų."
+        name: "Vardas"
+        official_position: "Pareigų pavadinimas"
+        official_level: "Lygis"
+      level_0: "Ne pareigūnas"
+      level_1: "1 lygis"
+      level_2: "2 lygis"
+      level_3: "3 lygis"
+      level_4: "4 lygis"
+      level_5: "5 lygis"
+      search:
+        make_official: "Pažymėti pareigūnu"
+        title: "Pareigūnų pareigybės: Vartotojo paieška"
+        no_results: "Pareigūnų pareigybės nerastos."
+    organizations:
+      index:
+        filter: "Filtruoti"
+        filters:
+          all: "Visos"
+          pending: "Laukiantys"
+          rejected: "Atmesti"
+          verified: "Patvirtinti"
+        hidden_count:
+          one: "Yra ir <strong>vienu organizaciju</strong>, neturinčių vartotojų arba su paslėptu vartotoju."
+          other: "Yra <strong>%{count} organizacijos</strong>, neturinčios vartotojų arba su paslėptu vartotoju."
+        name: "Pavadinimas"
+        email: "El. paštas"
+        phone_number: "Telefono numeris"
+        responsible_name: "Atsakingas asmuo"
+        status: "Būsena"
+        no_organizations: "Nėra organizacijų."
+        reject: "Atmesti"
+        rejected: "Atmestos"
+        title: "Organizacijos"
+        verified: "Patvirtintos"
+        verify: "Patvirtinti"
+        pending: "Laukiantys"
+      search:
+        title: "Ieškoti organizacijų"
+        no_results: "Organizacijų nerasta."
+    proposals:
+      index:
+        title: "Pasiūlymai"
+        id: "ID"
+        author: "Autorius"
+        select: "Pasirinkti"
+        selected: "Pasirinkti"
+        milestones: "Etapai"
+        no_proposals: "Nėra pasiūlymų."
+      show:
+        create_question: "Pridėkite šį pasiūlymą balsavimui"
+      form:
+        update: "Atnaujinti pasiūlymą"
+      update:
+        notice: "Pasiūlymas sėkmingai atnaujintas"
+    hidden_proposals:
+      index:
+        filter: "Filtruoti"
+        filters:
+          all: "Visi"
+          with_confirmed_hide: "Patvirtinti"
+          without_confirmed_hide: "Laukiantys"
+        title: "Paslėpti pasiūlymai"
+        no_hidden_proposals: "Nėra paslėptų pasiūlymų."
+    hidden_proposal_notifications:
+      index:
+        filter: "Filtruoti"
+        filters:
+          all: "Visi"
+          with_confirmed_hide: "Patvirtinti"
+          without_confirmed_hide: "Laukiantys"
+        title: "Paslėpti pranešimai"
+        no_hidden_proposals: "Nėra paslėptų pranešimų."
+    settings:
+      flash:
+        updated: "Reikšmė atnaujinta"
+      index:
+        title: "Nustatymai"
+        general: "Konfigūraciniai nustatymai"
+        update_setting: "Atnaujinti"
+        participation_processes: "Dalyvavimo procesai"
+        images_and_documents: "Vaizdai ir dokumentai"
+        feature_flags: "Funkcijos"
+        features:
+          enabled: "Įjungta"
+        map:
+          title: "Žemėlapio konfigūracija"
+          help: "Čia galite pritaikyti būstinių rodymą vartotojams. Tempkite žemėlapio žymeklį arba spustelėkite bet kur žemėlapyje, nustatykite norimą mastelį ir spustelėkite mygtuką „Atnaujinti“."
+          flash:
+            update: "Žemėlapio konfigūracija sėkmingai atnaujinta."
+          form:
+            submit: "Atnaujinti"
+          how_to_enable: 'Norint rodyti vartotojams žemėlapį, jums reikia įjungti „Pasiūlymų ir biudžeto investicijų geografinę vietovę“ skiltyje „Funkcijos“.'
+        dashboard:
+          title: "Pasiūlymų informacinis skydelis"
+        remote_census:
+          title: "Nuotolinio susitarimo konfigūracija"
+          how_to_enable: 'Norėdami konfigūruoti nuotolinį susitarimą (SOAP), turite įjungti „Konfigūruoti ryšį su nuotoliniu susitarimu (SOAP)“ skiltyje „Funkcijos“.'
+        sdg:
+          title: "Taikomosios tvaraus vystymosi tikslų (TVT) konfigūracija"
+          how_to_enable: 'Norint rodyti tvaraus vystymosi tikslų konfigūracijos parinktis, turite įjungti „TVT“ skiltyje „Funkcijos“.'
+      remote_census_general_name: "Bendrosios informacijos"
+      remote_census_request_name: "Užklausos duomenys"
+      remote_census_response_name: "Atsakymo duomenys"
+      setting: "Funkcija"
+      setting_name: "Pareigos"
+      setting_value: "Reikšmė"
+      no_description: "Jokių aprašymų"
+    shared:
+      search:
+        advanced_filters:
+          sdg_goals:
+            all: "Visi tikslai"
+            label: "Pagal tikslą"
+          sdg_targets:
+            all: "Visi uždaviniai"
+            label: "Pagal uždavinį"
+        label:
+          booths: "Ieškoti būstinės pagal pavadinimą ar vietą"
+          budget_investments: "Ieškoti investicijų pagal pavadinimą, aprašymą ar antraštę"
+          comments: "Ieškoti komentarų"
+          debates: "Ieškoti debatų pagal pavadinimą ar aprašymą"
+          legislation_processes: "Ieškoti procesų pagal pavadinimą ar aprašymą"
+          legislation_proposals: "Ieškoti pasiūlymų pagal pavadinimą ar aprašymą"
+          local_census_records: "Ieškoti pagal dokumento numerį"
+          organizations: "Pavadinimas, el. paštas ar telefono numeris"
+          poll_officers: "Ieškoti rinkimų pareigūnų"
+          poll_questions: "Ieškoti rinkimų klausimų"
+          polls: "Ieškoti rinkimų pagal pavadinimą ar aprašymą"
+          proposals: "Ieškoti pasiūlymų pagal pavadinimą, kodą, aprašymą ar klausimą"
+          proposal_notifications: "Ieškoti pranešimų pagal pavadinimą ar aprašymą"
+          users: "Ieškoti vartotojo pagal vardą ar el. paštą"
+        search: "Ieškoti"
+      search_results: "Paieškos rezultatai"
+      no_search_results: "Rezultatų nerasta."
+      actions: Veiksmai
+      title: Pavadinimas
+      description: Aprašymas
+      image: Nuotrauka
+      show_image: Rodyti nuotrauką
+      moderated_content: "Patikrinkite moderatorių prižiūrimą turinį ir patvirtinkite, ar moderavimas buvo atliktas teisingai."
+      view: Peržiūrėti
+      proposal: Pasiūlymas
+      author: Autorius
+      content: Turinys
+      created_at: Sukurta
+      color_help: Šešioliktainis formatas
+      show_results_and_stats: "Rodyti rezultatus ir statistiką"
+      results_and_stats_reminder: "Pažymėdami šias žymėsnes, rezultatai ir/arba statistika bus viešai prieinama ir kiekvienas vartotojas juos matys."
+      close_modal: Uždaryti modulį
+      example_url: "Pavyzdžiui, https://consuldemocracy.org arba /help"
+    geozones:
+      index:
+        title: Geozona
+        create: Sukurti geozoną
+      geozone:
+        name: Pavadinimas
+        external_code: Išorinis kodas
+        census_code: Surinkimo kodas
+        code_help: Atsakymo kodas šiai geozonai surinkimo API
+        color_help: "Zonos spalva biudžeto žemėlapyje. %{format_help}"
+        coordinates: Prieinamos koordinatės
+        coordinates_help: Koordinatės, kurios sukurs paspaudžiamą plotą HTML paveikslėlio žemėlapyje
+        geojson: Prieinamas GeoJSON
+        geojson_help: "Turi būti formato „Polygon“ arba „MultiPolygon“; biudžeto žemėlapyje, susijusiame su šia geozona, atsiras poligonas, pagrįstas šiomis duomenų
+        create:
+          notice: "Geozona sėkmingai sukurta"
+        edit:
+          form:
+            submit_button: "Išsaugoti pakeitimus"
+          editing: Geozonos redagavimas
+          back: Grįžti atgal
+        new:
+          back: Grįžti atgal
+          creating: Sukurti rajoną
+        delete:
+          success: Geozona sėkmingai ištrinta
+          error: Šios geozonos negalima ištrinti, nes prie jos prijungti elementai
+        update:
+          notice: "Geozona sėkmingai atnaujinta"
+    signature_sheets:
+      author: Autorius
+      created_at: Sukūrimo data
+      name: Pavadinimas
+      no_signature_sheets: "Nėra parašų lapų"
+      index:
+        title: Parašų lapai
+        new: Nauji parašų lapai
+      new:
+        title: Nauji parašų lapai
+        document_numbers_note: "Parašykite numerius atskirtus kabliataškiu (;)"
+        submit: Sukurti parašų lapą
+        text_help:
+          required_fields_note: "Norint patikrinti vartotoją, jūsų programai reikia: Dokumento numerio"
+          date_of_birth_note: ", Gimimo dienos (dd/mm/yyyy)"
+          postal_code_note: " ir Pašto kodo"
+          required_fields_structure_note: "Kiekvienam vartotojui privalomų laukų reikia atskirti kableliu, o kiekvieną vartotoją - kabliataškiu."
+          example_text: "Pavyzdys: "
+      show:
+        created_at: Sukurta
+        author: Autorius
+        users: Vartotojai
+        signature_count: "Parašų skaičius:"
+        verified:
+          one: "Yra %{count} galiojantis parašas"
+          other: "Yra %{count} galiojantys parašai"
+        unverified:
+          one: "Yra %{count} negaliojantis parašas"
+          other: "Yra %{count} negaliojantys parašai"
+        unverified_error: (Nepatikrinta pagal Surinkimą)
+        voted:
+          zero: "Nėra balsų, kurie būtų sukurti iš patikrintų parašų."
+          one: "Yra %{count} balsas, sukurtas iš patikrintų parašų."
+          other: "Yra %{count} balsai, sukurti iš patikrintų parašų."
+        loading: "Vis dar yra parašų, kuriuos patikrina Surinkimas, prašome per kelias minutes atnaujinti puslapį"
+    stats:
+      show:
+        stats_title: Statistika
+        summary:
+          comment_votes: Komentarų balsai
+          comments: Komentarai
+          debate_votes: Debatų balsai
+          debates: Debatai
+          proposal_votes: Pasiūlymų balsai
+          proposals: Pasiūlymai
+          budgets: Atviros biudžetai
+          budget_investments: Investicijų projektai
+          unverified_users: Nepatikrinti vartotojai
+          user_level_three: Trečio lygio vartotojai
+          user_level_two: Antro lygio vartotojai
+          users: Viso vartotojų
+          verified_users: Patikrinti vartotojai
+          verified_users_who_didnt_vote_proposals: Patikrinti vartotojai, kurie nebalsavo dėl pasiūlymų
+          visits: Aplankymai
+          votes: Viso balsų
+        budgets_title: Dalyvaujamojo biudžetavimo
+        participatory_budgets: Dalyvaujamojo Biudžetavimo
+        direct_messages: Asmeniniai pranešimai
+        proposal_notifications: Pasiūlymų pranešimai
+        incomplete_verifications: Nepilnos patikrinimai
+        polls: Rinkimai
+        sdg: Tvaraus vystymosi tikslai
+      graph:
+        debate_created: Debatų
+        visit: Aplankymai
+        level_2_user: Antro lygio vartotojai
+        proposal_created: Piliečių pasiūlymai
+      budgets:
+        no_data_before_balloting_phase: "Prieš balsavimo etapą nėra jokių duomenų rodyti."
+        title: "Dalyvaujamojo Biudžetavimo - Dalyvavimo statistika"
+        supporting_phase: Remiantis etapas
+        balloting_phase: Galutinis balsavimas
+      budget_balloting:
+        title: "Galutinio balsavimo statistika"
+        vote_count: Balsai
+        participant_count: Dalyviai
+        votes_per_heading: Balsai vienam poskyriui
+        participants_per_district: Dalyviai pagal rajoną
+      budget_supporting:
+        title: "Remiantis etapo statistika"
+        headings: Poskyriai
+        users: Vartotojai
+        vote_count: Balsai
+        participant_count: Dalyviai
+      direct_messages:
+        title: Asmeniniai pranešimai
+        total: Viso
+        users_who_have_sent_message: Vartotojai, kurie siuntė asmeninius pranešimus
+      proposal_notifications:
+        title: Pasiūlymų pranešimai
+        total: Viso
+        proposals_with_notifications: Pasiūlymai su pranešimais
+        not_available: "Pasiūlymas nepasiekiamas"
+      polls:
+        title: Rinkimų statistika
+        all: Rinkimai
+        web_participants: Internetiniai dalyviai
+        total_participants: Viso dalyvių
+        poll_questions: "Klausimai iš rinkimo: %{poll}"
+        table:
+          poll_name: Rinkimas
+          question_name: Klausimas
+          origin_web: Internetiniai dalyviai
+          origin_total: Viso dalyvių
+      sdg:
+        budget_investments:
+          amount: "Patvirtinta suma"
+          winners: "Laimėtojo investiciniai projektai"
+          sent: "Išsiųsti investiciniai projektai"
+        debates: "Debatai"
+        polls: "Rinkimai"
+        proposals: "Pasiūlymai"
+        title: "Tvaraus vystymosi tikslų - Statistika"
+    tags:
+      create: Sukurti temą
+      index:
+        add_tag: Pridėti naują pasiūlymo temą
+        title: Pasiūlymų temos
+        topic: Tema
+        help: "Kai vartotojas kuria pasiūlymą, toliau pateikiamos šios temos kaip numatytosios žymės."
+    users:
+      columns:
+        id: ID
+        erase_reason: Panaikinimo priežastis
+        name: Vardas
+        email: El. paštas
+        document_number: Dokumento numeris
+        roles: Vaidmenys
+        verification_level: Patikrinimo lygis
+        activation_status: Aktyvavimo būsena
+      account:
+        active_status: Paskyra aktyvuota
+        inactive_status: Paskyra neaktyvuota
+      index:
+        title: Vartotojas
+        no_users: Nėra vartotojų.
+        filter: Filtruoti
+        filters:
+          active: Aktyvūs
+          erased: Panaikinti
+      search:
+        placeholder: Ieškoti vartotojo pagal el. paštą, vardą arba dokumento numerį
+    verifications:
+      index:
+        phone_not_given: Telefonas neįvestas
+        sms_code_not_confirmed: Neįvestas SMS kodas
+        title: Nepilni patikrinimai
+    site_customization:
+      content_blocks:
+        information: Informacija apie turinio blokus
+        about: "Galite kurti HTML turinio blokus, kurie gali būti įterpiami į jūsų svetainės skirtingus puslapius."
+        html_format: "Turinio blokas yra nuorodų grupė, ir jis turi turėti šį formatą:"
+        no_blocks: "Nėra turinio blokų."
+        create:
+          notice: Turinio blokas sėkmingai sukurtas
+          error: Turinio bloko sukurti nepavyko
+        update:
+          notice: Turinio blokas sėkmingai atnaujintas
+          error: Turinio bloko atnaujinti nepavyko
+        destroy:
+          notice: Turinio blokas sėkmingai ištrintas
+        edit:
+          title: Redaguoti turinio bloką
+        index:
+          create: Sukurti naują turinio bloką
+          delete: Ištrinti bloką
+          title: Turinio blokai
+        new:
+          title: Sukurti naują turinio bloką
+        content_block:
+          body: Turinys
+          name: Pavadinimas
+          names:
+            top_links: Viršutinės nuorodos
+            footer: Poraštė (socialiniai tinklai)
+            footer_legal: Poraštė (teisiniai terminai)
+            subnavigation_left: Pagrindinis meniu kairėje
+            subnavigation_right: Pagrindinis meniu dešinėje
+      images:
+        index:
+          title: Pritaikytos nuotraukos
+          update: Atnaujinti
+          delete: Ištrinti
+          image: Nuotrauka
+        update:
+          notice: Nuotrauka sėkmingai atnaujinta
+          error: Nuotraukos atnaujinti nepavyko
+        destroy:
+          notice: Nuotrauka sėkmingai ištrinta
+          error: Nuotraukos ištrinti nepavyko
+      pages:
+        create:
+          notice: Puslapis sėkmingai sukurtas
+          error: Puslapio sukurti nepavyko
+        update:
+          notice: Puslapis sėkmingai atnaujintas
+          error: Puslapio atnaujinti nepavyko
+        destroy:
+          notice: Puslapis sėkmingai ištrintas
+        edit:
+          title: Redaguoti %{page_title}
+        form:
+          options: Parinktys
+        index:
+          create: Sukurti naują puslapį
+          delete: Ištrinti puslapį
+          title: Pritaikyti puslapiai
+          see_page: Peržiūrėti
+        new:
+          title: Sukurti naują pritaikytą puslapį
+          slug_help: "Tekstas, skirtas identifikuoti šį puslapį URL, pvz., <code>https://consuldemocracy.org/puslapio-kodas</code>"
+        page:
+          created_at: Sukurta
+          status: Būsena
+          updated_at: Atnaujinta
+          title: Pavadinimas
+          slug: Kodas
+          see_cards: Tvarkyti korteles
+        cards:
+          cards_title: Kortelės
+          create_card: Sukurti kortelę
+          no_cards: Nėra kortelių.
+          columns_help: Kortelės plotis stulpelių skaičiumi. Mobiliems ekranams ji visada yra 100% pločio.
+          create:
+            notice: "Kortelė sėkmingai sukurta!"
+          update:
+            notice: "Kortelė sėkmingai atnaujinta"
+          destroy:
+            notice: "Kortelė sėkmingai pašalinta"
+    tenants:
+      create:
+        notice: Tenantas sėkmingai sukurtas
+      form:
+        use_subdomain: "Naudoti subdomeną %{domain} domenui pasiekti šį tenantą"
+        use_domain: "Naudoti kitą domeną šiam tenantui pasiekti"
+      hide:
+        notice: Tenantas sėkmingai išjungtas
+      index:
+        create: Sukurti tenantą
+        enable: "Įjungti tenantą %{tenant}"
+        enabled: Įjungtas
+      new:
+        admin_information: "Kai sukuriate tenantą, jūsų esamas naudotojas <strong>\"%{username}\"</strong> su el. paštu <strong>\"%{email}\"</strong> ir jūsų slaptažodis bus nukopijuotas į naujo tenanto duomenų bazę ir jam automatiškai suteikiamos administracijos teisės. Atkreipkite dėmesį, kad šie naudotojų paskyros yra saugomos visiškai atskirose duomenų bazėse, todėl jei pakeisite savo naudotojo slaptažodį viename tenante, jūsų paskyros kituose tenantuose liks nepakitę."
+        title: Naujas tenantas
+      restore:
+        notice: Tenantas sėkmingai įjungtas
+      update:
+        notice: Tenantas sėkmingai atnaujintas
+    homepage:
+      title: Pradinis puslapis
+      description: Aktyvūs moduliai atsiranda pradinio puslapio eilės tvarka, kaip čia nurodyta.
+      header_title: Antraštė
+      no_header: Nėra antraščių.
+      create_header: Sukurti antraštę
+      cards_title: Kortelės
+      create_card: Sukurti kortelę
+      no_cards: Nėra kortelių.
+      feeds:
+        proposals: Siūlymai
+        debates: Debatai
+        processes: Procesai
+      new:
+        header_title: Nauja antraštė
+        submit_header: Sukurti antraštę
+        card_title: Nauja kortelė
+        submit_card: Sukurti kortelę
+      edit:
+        header_title: Redaguoti antraštę
+        submit_header: Išsaugoti antraštę
+        card_title: Redaguoti kortelę
+        submit_card: Išsaugoti kortelę
+    audits:
+      title: "Keitimų žurnalas"
+      changes: "Keitimų sąrašas"
+      id: "ID"
+      field: "Laukas"
+      new_value: "Nauja vertė"
+      old_value: "Senoji vertė"
+      edited_at: "Redaguota"
+      edited_by: "Redagavo"
+      actions: "Veiksmai"
+      empty: Nėra užsiregistravusių pakeitimų
+    local_census_records:
+      index:
+        title: Valdyti vietinio surašymo įrašus
+        create: Sukurti naują vietinio surašymo įrašą
+        no_local_census_records: Vietinio surašymo įrašų nėra.
+        document_type: Dokumento tipas
+        document_number: Dokumento numeris
+        date_of_birth: Gimimo data
+        postal_code: Pašto kodas
+        import: Importuoti CSV
+      new:
+        creating: Kuriamas naujas vietinio surašymo įrašas
+      create:
+        notice: Naujas vietinio surašymo įrašas sėkmingai sukurtas!
+      edit:
+        editing: Redaguojamas vietinio surašymo įrašas
+      update:
+        notice: Vietinio surašymo įrašas sėkmingai atnaujintas!
+      destroy:
+        notice: Vietinio surašymo įrašas sėkmingai pašalintas!
+      imports:
+        new:
+          title: Vietinio surašymo įrašai
+          subtitle: Importuoti CSV failą
+        create:
+          notice: Vietinio surašymo įrašų importavimo procesas įvykdytas sėkmingai!
+        show:
+          title: Valdyti vietinio surašymo įrašus
+          subtitle: Importavimo proceso rezultatai
+          import: Importuoti dar kartą
+          errored: Klaidos eilutės
+          created: Sukurti įrašai
+          local_census_records:
+            no_records_found: Įrašų nerasta.
+    machine_learning:
+      cancel: "Atšaukti operaciją"
+      cancel_alert: "Šis veiksmas atšauks dabartinį scenarijų, ir jį reikės vykdyti iš naujo."
+      comments_summary: "Komentarų santrauka"
+      comments_summary_description: "Rodo automatiškai sugeneruotą komentarų santrauką visuose elementuose, prie kurių galima rašyti komentarus."
+      data_folder_content: "Duomenų aplanko turinys"
+      error: "Klaida:"
+      execute_script: "Vykdyti scenarijų"
+      executed_by: "Įvykdė:"
+      executed_script: "Įvykdytas scenarijus:"
+      feature_disabled: "Ši funkcija išjungta. Norėdami naudoti dirbtinio intelekto / mašininio mokymo funkcionalumą, galite jį įjungti iš %{link}."
+      feature_disabled_link: "nustatymų puslapio"
+      help:
+        title_1: "Kas yra dirbtinis intelektas / mašininis mokymas?"
+        description_1: "Tradiciniuose kompiuteriniuose programuose tiksliai nustatomos taisyklės, kaip programa turi elgtis kiekviename situacijoje ir kaip tvarkyti turimą informaciją kiekvienu metu. Tai, kas dažnai žinoma kaip dirbtinis intelektas / mašininis mokymas, yra programų tipas, kuriame tiksliai nustatoma, kokia užduotis turi būti atlikta ir kaip vertinama, ar ji atlikta geriau ar blogiau. Bet skirtingai nei ankstesnėje, ši sistema atranda arba išmoksta, kokia būtų tinkamiausia būdas atlikti užduotį."
+        title_2: "Kas yra AI / Mašininio mokymo modulis CONSUL DEMOCRACY?"
+        description_2: "Šis modulis leidžia įgyvendinti bet kokio tipo AI / Mašininio mokymo programas CONSUL DEMOCRACY. Šios programos gali apdoroti informaciją, prieinamą CONSUL DEMOCRACY ir generuoti rezultatus, kurie padeda naudotojams ir administratoriams veiksmingai ir protingai dalyvauti piliečių veikloje. Šis modulis buvo sukurtas taip, kad būtų lengva įgyvendinti ir vykdyti naujas programas, išlaikant bendrą CONSUL DEMOCRACY kodo ir naujų programų kodo nepriklausomybę vieną nuo kito."
+        title_3: "Kaip naudoti šį modulį"
+        description_3: "Norint jį naudoti pirmą kartą, būtina laikytis CONSUL DEMOCRACY dokumentacijoje pateiktų nurodymų, kad šis modulis būtų tinkamai aktyvuotas. Kai modulis bus tinkamai aktyvuotas, programos vykdomos iš skirtuko \"Vykdyti scenarijus\". Prieš vykdant jį, toje pačioje dalyje galime pamatyti įvykdymo trukmės įvertinimą ir kitą svarbią informaciją. Įvykdymo pabaigoje galime aktyvuoti turinį, kuris bus rodomas CONSUL DEMOCRACY iš skirtuko \"Nustatymai\", taip pat galime atsisiųsti kitus sugeneruotus failus, kurie gali būti mums naudingi."
+        title_4: "Kaip įgyvendinti naujus AI / Mašininio mokymo scenarijus"
+        description_4: "Naudojant ankstesnius scenarijus kaip pavyzdžius."
+        description_4b: "Nauji scenarijai turi būti įrašyti aplankale <code>public/machine_learning/scripts</code>."
+        description_4c: "Skripto naudojamiems įvesties duomenims sukurti bus naudojami JSON failai aplankale <code>../data</code>."
+        description_4d: "Visi sugeneruoti rezultatai turi būti dedami aplankale <code>../data</code>."
+        description_4e: "Rekomenduojama sukurti nepriklausomą <code>.ini</code> tekstinį failą su skripto nustatymais, turinčiu tą patį skripto pavadinimą ir kurį galima nuskaityti konfigūracijos programa. Šis failas palengvins nustatymų pakeitimą administratoriams."
+        description_4f: "Rekomenduojama įtraukti kaip pirmą scenarijaus eilutę pradinį trijų kabučių tekstą su trumpu informacijos aprašymu ir nuorodomis į svarbią informaciją. Šis tekstas bus automatiškai rodomas Administravimo sąsajoje."
+        description_4g: "Rekomenduojama registruoti skripto svarbią informaciją <code>.log</code> tekstinio faile, turinčiame tą patį skripto pavadinimą."
+        title_5: "Norint naudoti AI / Mašininio mokymo scenarijus, jums reikia turėti įdiegtą Python programą savo serveryje."
+        description_5: "Čia galite pamatyti pavyzdines instrukcijas Ubuntu 18.04 serveriui:"
+      help_text: "Ši funkcija yra eksperimentinė."
+      last_execution: Paskutinis vykdymas
+      no_content: Kol kas nėra sukurtos jokios turinio dalys.
+      notice:
+        success: "Paskutinis scenarijus buvo sėkmingai įvykdytas."
+        error: "Įvyko klaida. Išsamią informaciją rasite žemiau."
+        working: "Scenarijus vyksta. Administratorius, kuris jį įvykdo, gaus pranešimą elektroniniu paštu, kai jis bus baigtas."
+        delete_generated_content: "Sugeneruotas turinys sėkmingai ištrintas."
+      output_files: Išvesties failai
+      related_content: Susiję turinys
+      related_content_description: Prie pasiūlymų ir dalyvaujančių biudžeto projektų prideda automatiškai sugeneruotą susijusį turinį.
+      script_info: Gausite el. laišką į %{email}, kai scenarijus bus baigtas.
+      script_name: Scenarijaus pavadinimas
+      select_script: Pasirinkite vykdyti Python scenarijų
+      started_at: Pradėta
+      tab_help: Pagalba
+      tab_scripts: Vykdyti scenarijų
+      tab_settings: Nustatymai / Sukurtas turinys
+      tags: Žymos
+      tags_description: Generuoja automatiškas žymas visuose elementuose, kuriuose galima žymėti.
+      title: AI / Mašininis mokymas

@@ -1,1 +1,104 @@
 lt:
+  verification:
+    alert:
+      lock: Pasiektas maksimalus bandymų skaičius. Bandykite dar kartą vėliau.
+    back: Grįžti į mano paskyrą
+    email:
+      create:
+        alert:
+          failure: Buvo problema siunčiant el. laišką į jūsų paskyrą.
+        flash:
+          success: "Mes išsiuntėme patvirtinimo el. laišką į jūsų paskyrą: %{email}"
+      show:
+        alert:
+          failure: Patvirtinimo kodas neteisingas.
+        flash:
+          success: Jūs esate patvirtintas naudotojas.
+    letter:
+      alert:
+        unconfirmed_code: Jūs dar neįvedėte patvirtinimo kodo.
+      create:
+        flash:
+          success: Dėkojame už jūsų užklausą dėl <b>didžiausios apsaugos kodo (būtinas tik galutiniam balsavimui)</b>. Po kelių dienų jį išsiųsime į jūsų registruotoje adresą. Prisiminkite, kad jei norite, galite gauti kodą bet kurioje Piliečių paramos biure.
+      edit:
+        see_all: Peržiūrėti pasiūlymus
+        title: Užklausta laiškas
+      errors:
+        incorrect_code: Patvirtinimo kodas neteisingas.
+      new:
+        explanation: "Norėdami balsuoti už biudžeto projektus, galite:"
+        go_to_index: Peržiūrėti pasiūlymus
+        office: Patikrinkite bet kurioje Piliečių paramos biuro padalinyje
+        send_letter: Išsiųsti man laišką su kodu
+        title: Sveikiname!
+        user_permission_info: Su jūsų paskyra galite...
+      update:
+        flash:
+          success: Kodas teisingas. Jūsų paskyra dabar patvirtinta.
+    redirect_notices:
+      already_verified: Jūsų paskyra jau patvirtinta.
+      email_already_sent: Mes jau išsiuntėme el. laišką su patvirtinimo nuoroda. Jei negalite rasti laiško, galite paprašyti išsiųsti jį iš naujo čia.
+    residence:
+      alert:
+        unconfirmed_residency: Jūs dar neįsitikinote savo gyvenamosios vietos.
+      create:
+        flash:
+          success: Gyvenamosios vietos patvirtinimas
+      new:
+        accept_terms_text: Priimu %{terms_url} Seniūnijos sutartį
+        accept_terms_text_title: Priimu Seniūnijos prieigos sąlygas ir taisykles
+        document_number: Dokumento numeris
+        document_number_help_title: Pagalba
+        document_number_help_text: "<strong>Asmens tapatybės kortelė</strong>: 12345678A<br> <strong>Pasas</strong>: AAA000001<br> <strong>Leidimas gyventi</strong>: X1234567P"
+        document_type:
+          passport: Pasas
+          residence_card: Leidimas gyventi
+          spanish_id: Asmens tapatybės kortelė
+        error_not_allowed_age: Jums nėra reikiamų metų dalyvauti
+        error_not_allowed_postal_code: Šio pašto kodo gyventojai negali dalyvauti
+        error_verifying_census: Seniūnija negalėjo patvirtinti jūsų informacijos. Patvirtinkite, kad jūsų seniūnijos duomenys yra teisingi, skambindami Savivaldybės tarnybai arba apsilankydami viename iš Piliečių paramos biurų.
+        form_errors: neleido patikrinti jūsų gyvenamosios vietos
+        postal_code_note: Norėdami patikrinti savo paskyrą, turite būti registruotas
+        terms: Seniūnijos prieigos sąlygas ir taisykles
+        title: Patikrinkite gyvenamosios vietos patvirtinimą
+        verify_residence: Patikrinkite gyvenamosios vietos patvirtinimą
+    sms:
+      create:
+        flash:
+          success: Įveskite jums išsiųstą patvirtinimo kodą tekstu
+      edit:
+        resend_sms_link: Spustelėkite čia, kad išsiųstumėte dar kartą
+        resend_sms_text: Ne gavote teksto su patvirtinimo kodu?
+        submit_button: Siųsti
+        title: Saugumo kodo patvirtinimas
+      new:
+        phone: Įveskite savo mobiliojo telefono numerį, kad gautumėte kodą
+        phone_format: "<strong><em>(Pavyzdys: 612345678 arba +34612345678)</em></strong>"
+        phone_note: Mes jūsų telefoną naudojame tik kodo siuntimui, niekada nekontaktuosime jūsų.
+        submit_button: Siųsti
+        title: Siųsti patvirtinimo kodą
+      update:
+        error: Neteisingas patvirtinimo kodas
+        flash:
+          level_three:
+            success: Kodas teisingas. Jūsų paskyra dabar patvirtinta
+          level_two:
+            success: Kodas teisingas
+    step_1: Gyvenamoji vieta
+    step_2: Patvirtinimo kodas
+    step_3: Galutinis patvirtinimas
+    user_permission_debates: Dalyvauti diskusijose
+    user_permission_info: Patvirtinus savo informaciją, galėsite...
+    user_permission_proposal: Kurti naujus pasiūlymus
+    user_permission_support_proposal: Palaikyti pasiūlymus
+    user_permission_votes: Balsuoti už biudžeto projektus
+    verification_needed: Reikia papildomo patvirtinimo
+    verified_user:
+      form:
+        submit_button: Siųsti kodą
+      show:
+        email_title: El. paštas
+        explanation: Šiuo metu registre saugome šią informaciją; prašome pasirinkti būdą, kaip norite gauti patvirtinimo kodą.
+        phone_title: Telefonų numeriai
+        title: Prieinama informacija
+        use_another_phone: Naudokite kitą telefoną

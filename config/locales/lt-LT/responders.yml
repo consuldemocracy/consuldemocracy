@@ -1,1 +1,37 @@
 lt:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} sėkmingai sukurtas."
+        debate: "Diskusija sėkmingai sukurta."
+        direct_message: "Jūsų žinutė sėkmingai išsiųsta."
+        poll: "Apklausa sėkmingai sukurta."
+        poll_booth: "Balsavimo punktas sėkmingai sukurtas."
+        poll_question_answer: "Atsakymas sėkmingai sukurtas."
+        poll_question_answer_video: "Vaizdo įrašas sėkmingai sukurtas."
+        poll_question_answer_image: "Nuotrauka sėkmingai įkelta."
+        proposal: "Pasirinkimas sėkmingai sukurtas."
+        proposal_notification: "Jūsų žinutė buvo sėkmingai išsiųsta."
+        budget_investment: "Biudžeto investicija sėkmingai sukurta."
+        signature_sheet: "Parašų rinkiniai sėkmingai sukurti."
+        support: "Investicija sėkmingai paremta."
+        topic: "Tema sėkmingai sukurta."
+        valuator_group: "Vertintojų grupė sėkmingai sukurta."
+      save_changes:
+        notice: Pakeitimai išsaugoti
+      update:
+        notice: "%{resource_name} sėkmingai atnaujintas."
+        debate: "Diskusija sėkmingai atnaujinta."
+        poll: "Apklausa sėkmingai atnaujinta."
+        poll_booth: "Balsavimo punktas sėkmingai atnaujintas."
+        active_poll: "Apklausos aprašymas sėkmingai atnaujintas."
+        proposal: "Pasirinkimas sėkmingai atnaujintas."
+        budget_investment: "Investicinis projektas sėkmingai atnaujintas."
+        topic: "Tema sėkmingai atnaujinta."
+        valuator_group: "Vertintojų grupė sėkmingai atnaujinta."
+        translation: "Vertimas sėkmingai atnaujintas."
+      destroy:
+        budget_investment: "Investicinis projektas sėkmingai ištrintas."
+        topic: "Tema sėkmingai ištrinta."
+        poll_question_answer_video: "Atsakymo vaizdo įrašas sėkmingai ištrintas."
+        valuator_group: "Vertintojų grupė sėkmingai ištrinta."

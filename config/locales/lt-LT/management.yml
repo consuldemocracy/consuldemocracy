@@ -1,1 +1,127 @@
 lt:
+  management:
+    account:
+      menu:
+        reset_password_email: "Naujo slaptažodžio išsiuntimas el. paštu"
+        reset_password_manually: "Naujo slaptažodžio nustatymas rankiniu būdu"
+      alert:
+        unverified_user: "Dar nėra patvirtinto vartotojo"
+      show:
+        title: "Vartotojo paskyra"
+      edit:
+        title: "Redaguoti vartotojo paskyrą: Naujo slaptažodžio nustatymas"
+        back: "Atgal"
+        password:
+          password: "Slaptažodis"
+          send_email: "Išsiųsti naujo slaptažodžio laišką"
+          reset_email_send: "El. laiškas sėkmingai išsiųstas."
+          reseted: "Slaptažodis sėkmingai nustatytas"
+          random: "Generuoti atsitiktinį slaptažodį"
+          save: "Išsaugoti slaptažodį"
+          print: "Spausdinti slaptažodį"
+          print_help: "Slaptažodį galėsite atspausdinti, kai jis bus išsaugotas."
+    account_info:
+      change_user: "Pakeisti vartotoją"
+      document_number_label: "Dokumento numeris:"
+      document_type_label: "Dokumento tipas:"
+      email_label: "El. paštas:"
+      identified_label: "Identifikuotas kaip:"
+      username_label: "Vartotojo vardas:"
+    check: "Patikrinti dokumentą"
+    dashboard:
+      index:
+        title: "Valdymas"
+        info: "Čia galite valdyti vartotojus naudodamiesi meniu kairėje."
+    document_verifications:
+      already_verified: "Ši vartotojo paskyra jau patvirtinta."
+      has_no_account: "Norėdami sukurti paskyrą, eikite į %{link} ir viršuje kairėje pasirinkite <b>„Registruotis“</b>."
+      link: "CONSUL DEMOCRACY"
+      in_census_has_following_permissions: "Šis vartotojas gali dalyvauti svetainėje su šiomis teisėmis:"
+      not_in_census: "Šio dokumento nėra registruota."
+      not_in_census_info: "Piliečiai, neesantys Sąraše, gali dalyvauti svetainėje su šiomis teisėmis:"
+      please_check_account_data: "Prašome patikrinti, ar aukščiau pateikti paskyros duomenys teisingi."
+      title: "Vartotojų valdymas"
+      under_age: "Jūs neturite reikalingo amžiaus, kad galėtumėte patvirtinti savo paskyrą."
+      verify: "Patvirtinti"
+    date_of_birth: "Gimimo data"
+    email_verifications:
+      already_verified: "Ši vartotojo paskyra jau patvirtinta."
+      choose_options: "Prašome pasirinkti vieną iš šių parinkčių:"
+      document_found_in_census: "Šis dokumentas buvo rastas Sąraše, bet jam nėra susietos vartotojo paskyros."
+      document_mismatch: "Šis el. paštas priklauso vartotojui, kuriam jau priskirtas ID: %{document_number}(%{document_type})"
+      email_sent_instructions: "Norėdami visiškai patvirtinti šį vartotoją, būtina, kad vartotojas paspaustų nuorodą, kurią mes išsiuntėme į aukščiau nurodytą el. pašto adresą. Šis žingsnis būtinas norint patvirtinti, kad adresas jam priklauso."
+      if_existing_account: "Jeigu asmuo jau sukūrė vartotojo paskyrą svetainėje,"
+      if_no_existing_account: "Jeigu šis asmuo dar nebuvo sukūręs paskyros"
+      introduce_email: "Prašome įvesti el. paštą, naudotą paskyroje:"
+      send_email: "Išsiųsti patvirtinimo el. laišką"
+    menu:
+      create_proposal: "Sukurti pasiūlymą"
+      print_proposals: "Spausdinti pasiūlymus"
+      support_proposals: "Remti pasiūlymus"
+      create_budget_investment: "Sukurti biudžeto investiciją"
+      print_budget_investments: "Spausdinti biudžeto investicijas"
+      support_budget_investments: "Remti biudžeto investicijas"
+      users: "Vartotojų valdymas"
+      user_invites: "Siųsti kvietimus"
+      select_user: "Pasirinkti vartotoją"
+    print:
+      proposals_info: "Sukurkite savo pasiūlymą svetainėje http://url.consul"
+      proposals_title: "Pasiūlymai:"
+      budget_investments_info: "Dalyvaukite svetainėje http://url.consul"
+    print_info: "Spausdinti šią informaciją"
+    proposals:
+      alert:
+        unverified_user: "Vartotojas nepatvirtintas"
+      create_proposal: "Sukurti pasiūlymą"
+      print:
+        print_button: "Spausdinti"
+      index:
+        title: "Remti pasiūlymus"
+    budgets:
+      create_new_investment: "Sukurti biudžeto investiciją"
+      print_investments: "Spausdinti biudžeto investicijas"
+      support_investments: "Remti biudžeto investicijas"
+      table_name: "Pavadinimas"
+      table_phase: "Etapas"
+      table_actions: "Veiksmai"
+      no_budgets: "Aktyvių dalyvaujamų biudžetų nėra."
+    budget_investments:
+      alert:
+        unverified_user: "Vartotojas nepatvirtintas"
+      create: "Sukurti biudžeto investiciją"
+      edit: "Redaguoti biudžeto investiciją"
+      filters:
+        heading: "Koncepcija"
+        unfeasible: "Neįgyvendinama investicija"
+      print:
+        print_button: "Spausdinti"
+      search_results:
+        one: " turintis terminą '%{search_term}'"
+        other: " turintis terminą '%{search_term}'"
+    sessions:
+      need_managed_user: "Norėdami atlikti šį veiksmą, turite pasirinkti vartotoją."
+      signed_out: "Sėkmingai atsijungėte."
+      signed_out_managed_user: "Vartotojo seansą sėkmingai atsijungėte."
+    username_label: "Vartotojo vardas"
+    users:
+      create_user: "Sukurti naują paskyrą"
+      create_user_info: "Mes sukursime paskyrą su šiomis duomenų"
+      create_user_submit: "Sukurti vartotoją"
+      create_user_success: "Mes išsiuntėme el. laišką į el. pašto adresą <b>%{email}</b>, kad patvirtintume, jog jis priklauso šiam vartotojui. Jame yra nuoroda, kuria vartotojui reikės paspausti. Tada jie turės nustatyti slaptažodį, prieš galėdami prisijungti prie svetainės."
+      autogenerated_password: "Automatiškai sugeneruotas slaptažodis yra <b>%{password}</b>, jį galite pakeisti skiltyje „Mano paskyra“ svetainėje"
+      email_optional_label: "El. paštas (neprivaloma)"
+      erased_notice: "Vartotojo paskyra ištrinta."
+      erased_by_manager: "Ištrinta valdytojo: %{manager}"
+      erase_account_link: "Ištrinti vartotoją"
+      erase_account_confirm: "Ar tikrai norite ištrinti šią paskyrą? Šis veiksmas negali būti atšauktas."
+      erase_warning: "Šis veiksmas negali būti atšauktas. Įsitikinkite, kad norite ištrinti šią paskyrą."
+      erase_submit: "Ištrinti paskyrą"
+    user_invites:
+      new:
+        label: "El. pašto adresai"
+        info: "Įveskite el. pašto adresus, juos atskirdami kableliais (',')"
+        submit: "Siųsti kvietimus"
+        title: "Siųsti kvietimus"
+      create:
+        success: "<strong>Išsiųsti %{count} kvietimai</strong>."
+        title: "Siųsti kvietimus"

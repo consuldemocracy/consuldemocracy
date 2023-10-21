@@ -1,1 +1,17 @@
 lt:
+  images:
+    remove_image: "Pašalinti nuotrauką"
+    form:
+      title: "Aprašomoji nuotrauka"
+      title_placeholder: "Pridėkite aprašomą pavadinimą nuotraukai"
+      delete_button: "Pašalinti nuotrauką"
+      note: "Galite įkelti vieną nuotrauką, turintį šiuos turinio tipus: %{accepted_content_types}, iki %{max_file_size} MB dydžio."
+      add_new_image: "Pridėti nuotrauką"
+    actions:
+      destroy:
+        notice: "Nuotrauka buvo sėkmingai ištrinta."
+        alert: "Nepavyko ištrinti nuotraukos."
+    errors:
+      messages:
+        in_between: "turi būti tarp %{min} ir %{max}"
+        wrong_content_type: "turinio tipas %{content_type} neatitinka priimtų turinio tipų %{accepted_content_types}"

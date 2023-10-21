@@ -1,1 +1,631 @@
 lt:
+  attributes:
+    geozone_id: "Veiklos apimtis"
+    results_enabled: "Rodyti rezultatus"
+    stats_enabled: "Rodyti statistiką"
+    advanced_stats_enabled: "Rodyti išsamesnę statistiką"
+    name: "Vardas"
+    email: "El. paštas"
+    description: "Aprašymas"
+    related_sdg_list: "Tikslai ir uždaviniai"
+  activerecord:
+    models:
+      activity:
+        one: "veikla"
+        other: "veiklos"
+      budget:
+        one: "Biudžetas"
+        other: "Biudžetai"
+      budget/investment:
+        one: "Investicija"
+        other: "Investicijos"
+      milestone:
+        one: "etapas"
+        other: "etapai"
+      milestone/status:
+        one: "Etapo būklė"
+        other: "Etapų būklės"
+      progress_bar:
+        one: "Pažangos juosta"
+        other: "Pažangos juostos"
+      comment:
+        one: "Komentaras"
+        other: "Komentarai"
+      debate:
+        one: "Debatai"
+        other: "Debatai"
+      tag:
+        one: "Žymė"
+        other: "Žymės"
+      user:
+        one: "Naudotojas"
+        other: "Naudotojai"
+      moderator:
+        one: "Moderatorius"
+        other: "Moderatoriai"
+      administrator:
+        one: "Administratorius"
+        other: "Administratoriai"
+      valuator:
+        one: "Vertintojas"
+        other: "Vertintojai"
+      valuator_group:
+        one: "Vertintojų grupė"
+        other: "Vertintojų grupės"
+      manager:
+        one: "Vadovas"
+        other: "Vadovai"
+      newsletter:
+        one: "Naujienlaiškis"
+        other: "Naujienlaiškiai"
+      vote:
+        one: "Balsas"
+        other: "Balsai"
+      organization:
+        one: "Organizacija"
+        other: "Organizacijos"
+      poll/booth:
+        one: "Būda"
+        other: "Būdos"
+      poll/officer:
+        one: "Atstovas"
+        other: "Atstovai"
+      poll/ballot_sheet:
+        one: "Balsavimo lapas"
+        other: "Balsavimo lapai"
+      proposal:
+        one: "Piliečių pasiūlymas"
+        other: "Piliečių pasiūlymai"
+      sdg/goal:
+        one: "tikslas"
+        other: "tikslai"
+      sdg/local_target:
+        one: "vietinis tikslas"
+        other: "vietiniai tikslai"
+      sdg/manager:
+        one: "SDG vadovas"
+        other: "SDG vadovai"
+      sdg/target:
+        one: "užduotis"
+        other: "užduotys"
+      site_customization/page:
+        one: "Tinklapio tinkinimas"
+        other: "Tinklapio tinkinimai"
+      site_customization/image:
+        one: "Tinklapio nuotrauka"
+        other: "Tinklapio nuotraukos"
+      site_customization/content_block:
+        one: "Tinklapio turinio blokas"
+        other: "Tinklapio turinio blokai"
+      document:
+        one: "Dokumentas"
+        other: "Dokumentai"
+      legislation/process:
+        one: "Procesas"
+        other: "Procesai"
+      legislation/proposal:
+        one: "Pasiūlymas"
+        other: "Pasiūlymai"
+      legislation/draft_versions:
+        one: "Juodraštis"
+        other: "Juodraščiai"
+      legislation/questions:
+        one: "Klausimas"
+        other: "Klausimai"
+      legislation/question_options:
+        one: "Klausimo parinktis"
+        other: "Klausimo parinktys"
+      legislation/answers:
+        one: "Atsakymas"
+        other: "Atsakymai"
+      documents:
+        one: "Dokumentas"
+        other: "Dokumentai"
+      images:
+        one: "Nuotrauka"
+        other: "Nuotraukos"
+      tenant:
+        one: "Nuomininkas"
+        other: "Nuomininkai"
+      topic:
+        one: "Tema"
+        other: "Temos"
+      poll:
+        one: "Apklausa"
+        other: "Apklausos"
+      proposal_notification:
+        one: "Pasiūlymo pranešimas"
+        other: "Pasiūlymo pranešimai"
+      dashboard/action:
+        one: "Pasiūlymo informacinė lentelė"
+        other: "Pasiūlymo informacinės lentelės"
+      dashboard/administrator_task:
+        one: "Užduotis"
+        other: "Užduotys"
+      link:
+        one: "Nuoroda"
+        other: "Nuorodos"
+      local_census_record:
+        one: "Vietinis surašymo įrašas"
+        other: "Vietiniai surašymo įrašai"
+      votation_type:
+        one: "Balsavimo tipas"
+        other: "Balsavimo tipai"
+    attributes:
+      budget:
+        name: "Pavadinimas"
+        description_accepting: "Aprašymas priėmimo etape"
+        description_reviewing: "Aprašymas peržiūros etape"
+        description_selecting: "Aprašymas pasirinkimo etape"
+        description_valuating: "Aprašymas vertinimo etape"
+        description_balloting: "Aprašymas balsavimo etape"
+        description_reviewing_ballots: "Aprašymas peržiūrint balsus etape"
+        description_finished: "Aprašymas, kai biudžetas baigtas"
+        phase: "Aktyvus etapas"
+        currency_symbol: "Valiutos simbolis"
+        voting_style: "Galutinis balsavimo stilius"
+        voting_style_knapsack: "Kuprinė"
+        voting_style_approval: "Patvirtinimas"
+        hide_money: "Slėpti pinigų sumą šiam biudžetui"
+      budget/translation:
+        main_link_text: "Tekstas nuorodoje"
+        main_link_url: "Nuoroda veda į (pridėti nuorodą)"
+        name: "Pavadinimas"
+      budget/investment:
+        heading_id: "Antraštė"
+        title: "Pavadinimas"
+        description: "Aprašymas"
+        external_url: "Nuoroda į papildomus dokumentus"
+        administrator_id: "Administratorius"
+        location: "Papildoma informacija apie vietą"
+        organization_name: "Jei pasiūlymas pateikiamas kolektyvo/organizacijos vardu ar daugiau žmonių vardu, įrašykite jo pavadinimą"
+        image: "Pasiūlymo aprašomoji nuotrauka"
+        image_title: "Nuotraukos pavadinimas"
+        duration: "Laiko trukmė"
+        feasibility_feasible: "Įmanoma"
+        feasibility_undecided: "Neapibrėžta"
+        feasibility_unfeasible: "Neįmanoma"
+        incompatible: "Pažymėti kaip nesuderinamą"
+        milestone_tag_list: "Meilštone žymės"
+        price_explanation: "Kainos paaiškinimas"
+        selected: "Pažymėti kaip pasirinktą"
+        selected_true: "Pasirinktas"
+        selected_false: "Nepasirinktas"
+        unfeasibility_explanation: "Įmanomumo paaiškinimas"
+        valuation_finished: "Vertinimas baigtas"
+        valuator_ids: "Grupės"
+        valuation_tag_list: "Žymės"
+      budget/investment/translation:
+        title: "Pavadinimas"
+        description: "Aprašymas"
+      geozone:
+        name: "Pavadinimas"
+        external_code: "Išorinis kodas (neprivaloma)"
+        color: "Spalva (neprivaloma)"
+        census_code: "Surašymo kodas (neprivaloma)"
+        geojson: "GeoJSON duomenys (neprivaloma)"
+        html_map_coordinates: "HTML <map> Koordinatės (neprivaloma)"
+      milestone:
+        status_id: "Dabartinė būklė (neprivaloma)"
+        title: "Pavadinimas"
+        description: "Aprašymas (neprivaloma jei priskirta būklė)"
+        publication_date: "Data"
+      milestone/translation:
+        description: "Aprašymas"
+      milestone/status:
+        name: "Pavadinimas"
+        description: "Aprašymas (neprivaloma)"
+      progress_bar:
+        kind: "Tipas"
+        title: "Pavadinimas"
+        percentage: "Dabartinis progresas"
+      progress_bar/kind:
+        primary: "Pagrindinis"
+        secondary: "Antrinis"
+      budget/group:
+        max_votable_headings: "Didžiausias galimas skyrių skaičius, kurį vartotojas gali pasirinkti projektams"
+      budget/group/translation:
+        name: "Grupės pavadinimas"
+      budget/heading:
+        allow_custom_content: "Leisti turinio bloką"
+        latitude: "Platuma (neprivaloma)"
+        longitude: "Ilguma (neprivaloma)"
+        name: "Skyriaus pavadinimas"
+        price: "Pinigų suma"
+        population: "Gyventojų skaičius (neprivaloma)"
+        max_ballot_lines: "Leidžiamų balsų skaičius"
+      budget/heading/translation:
+        name: "Skyriaus pavadinimas"
+      budget/phase:
+        enabled: "Fazė įgalinta"
+        ends_at: "Pabaigos data"
+        starts_at: "Pradžios data"
+      budget/phase/translation:
+        name: "Pavadinimas"
+        description: "Aprašymas"
+        summary: "Santrauka"
+        main_link_text: "Tekstas nuorodoje"
+        main_link_url: "Nuoroda veda į (pridėti nuorodą)"
+      comment:
+        body: "Komentaras"
+        user: "Vartotojas"
+      debate:
+        author: "Autorius"
+        description: "Nuomonė"
+        tag_list: "Temos"
+        terms_of_service: "Paslaugų teikimo sąlygos"
+        title: "Pavadinimas"
+      debate/translation:
+        title: "Debatų pavadinimas"
+        description: "Pradinis debatų tekstas"
+      proposal:
+        author: "Autorius"
+        title: "Pavadinimas"
+        question: "Klausimas"
+        description: "Aprašymas"
+        responsible_name: "Asmens, pateikusio pasiūlymą, vardas ir pavardė"
+        retired_reason: "Priežastis atšaukti pasiūlymą"
+        selected: "Pažymėti kaip pasirinktą"
+        terms_of_service: "Paslaugų teikimo sąlygos"
+        video_url: "Išorinės vaizdo medžiagos nuoroda"
+      proposal/translation:
+        title: "Pasiūlymo pavadinimas"
+        description: "Pasiūlymo tekstas"
+        summary: "Pasiūlymo santrauka"
+        retired_explanation: "Paaiškinimas"
+      user:
+        login: "El. paštas arba naudotojo vardas"
+        email: "El. paštas"
+        username: "Naudotojo vardas"
+        password_confirmation: "Slaptažodžio patvirtinimas"
+        password: "Slaptažodis"
+        current_password: "Dabartinis slaptažodis"
+        email_digest: "Gauti pasiūlymų pranešimų santrauką"
+        email_on_comment: "Pranešti el. paštu, kai kas nors komentuoja mano turinį"
+        email_on_comment_reply: "Pranešti el. paštu, kai kas nors atsako į mano komentarą"
+        email_on_direct_message: "Gauti el. laiškus apie tiesioginius pranešimus"
+        newsletter: "Gauti aktualią informaciją el. paštu"
+        official_position: "Pareigos"
+        official_position_badge: "Rodyti pareigas simboliu"
+        official_level: "Pareigų lygis"
+        phone_number: "Telefono numeris"
+        public_activity: "Visuomenei prieinama mano veiklos sąrašą"
+        public_interests: "Visuomenei prieinami elementai, kuriuos stebiu"
+        recommended_debates: "Man rekomenduoti debatai"
+        recommended_proposals: "Man rekomenduoti pasiūlymai"
+        redeemable_code: "El. paštu gautas verifikacijos kodas"
+      direct_message:
+        title: "Pavadinimas"
+        body: "Žinutė"
+      organization:
+        name: "Organizacijos pavadinimas"
+        responsible_name: "Asmuo, atsakingas už grupę"
+      poll:
+        name: "Pavadinimas"
+        title: "Pavadinimas"
+        starts_at: "Pradžios data"
+        ends_at: "Uždarymo data"
+        geozone_restricted: "Ribota pagal geo zoną"
+        summary: "Santrauka"
+        description: "Aprašymas"
+      active_poll/translation:
+        description: "Aprašymas"
+      poll/booth:
+        name: "Pavadinimas"
+        location: "Vieta"
+      poll/translation:
+        name: "Pavadinimas"
+        summary: "Santrauka"
+        description: "Aprašymas"
+      poll/question:
+        poll_id: "Apklausa"
+        title: "Klausimas"
+        summary: "Santrauka"
+        description: "Aprašymas"
+        external_url: "Nuoroda į papildomą dokumentaciją"
+      poll/question/translation:
+        title: "Klausimas"
+      poll/ballot_sheet:
+        data: "CSV duomenys"
+        poll_id: "Apklausa"
+        officer_assignment_id: "Paskyrimo pareigūnui ID"
+      poll/shift:
+        task: "Užduotis"
+      proposal_notification:
+        body: "Žinutė"
+        title: "Pavadinimas"
+      signature_sheet:
+        title: "Pavadinimas"
+        signable_type: "Pasirašymo tipas"
+        signable_id: "Pasirašomo ID"
+        document_numbers: "Dokumentų numeriai"
+      sdg/goal:
+        code: "Kodas"
+        title: "Pavadinimas"
+        description: "Aprašymas"
+      sdg/local_target:
+        code: "Kodas"
+        target_id: "Tikslas"
+        title: "Pavadinimas"
+      sdg/local_target/translation:
+        title: "Pavadinimas"
+        description: "Aprašymas"
+      sdg/phase/kind:
+        sensitization: "Sensibilizacija"
+        planning: "Planavimas"
+        monitoring: "Stebėjimas"
+      sdg/target:
+        code: "Kodas"
+        title: "Pavadinimas"
+      site_customization/page:
+        content: "Turinys"
+        created_at: "Sukurta"
+        subtitle: "Antraštė"
+        slug: "Nuoroda"
+        status: "Būsena"
+        status_draft: "Juodraštis"
+        status_published: "Paskelbta"
+        title: "Pavadinimas"
+        updated_at: "Atnaujinta"
+        more_info_flag: "Rodyti pagalbos puslapyje"
+        print_content_flag: "Spausdinti turinį mygtukas"
+        locale: "Kalba"
+      site_customization/page/translation:
+        title: "Pavadinimas"
+        subtitle: "Antraštė"
+        content: "Turinys"
+      site_customization/image:
+        name: "Pavadinimas"
+        image: "Nuotrauka"
+      site_customization/content_block:
+        name: "Pavadinimas"
+        locale: "Lokalė"
+        body: "Turinys"
+      tag:
+        name: "Įveskite temos pavadinimą"
+      tenant:
+        domain: "Domenas"
+        schema: "Domenas / Subdomenas"
+        subdomain: "Subdomenas"
+        url: "URL"
+      topic:
+        title: "Pavadinimas"
+        description: "Pradinis tekstas"
+      banner:
+        background_color: "Fono spalva"
+        font_color: "Šrifto spalva"
+        post_ended_at: "Įrašas baigėsi"
+        post_started_at: "Įrašas prasidėjo"
+        target_url: "Nuoroda"
+      banner/translation:
+        title: "Pavadinimas"
+        description: "Aprašymas"
+      legislation/process:
+        title: Proceso Pavadinimas
+        summary: Santrauka
+        description: Aprašymas
+        additional_info: Papildoma informacija
+        start_date: Pradžia
+        end_date: Pabaiga
+        debate_start_date: Pradžia
+        debate_end_date: Pabaiga
+        draft_start_date: Pradžia
+        draft_end_date: Pabaiga
+        draft_publication_date: Projekto rašymo publikavimo data
+        allegations_start_date: Pradžia
+        allegations_end_date: Pabaiga
+        proposals_phase_start_date: Pradžia
+        proposals_phase_end_date: Pabaiga
+        result_publication_date: Galutinių Rezultatų Publikavimo Data
+        background_color: Fono Spalva
+        font_color: Šrifto Spalva
+        homepage_enabled: "Pradinis Puslapis Įjungtas"
+      legislation/process/translation:
+        title: Proceso Pavadinimas
+        summary: Santrauka
+        description: Aprašymas
+        additional_info: Papildoma informacija
+        homepage: "Aprašymas"
+        milestones_summary: Santrauka
+      legislation/proposal:
+        description: "Pasiūlymo Tekstas"
+        summary: "Pasiūlymo Santrauka"
+        title: "Pasiūlymo Pavadinimas"
+        video_url: "Nuoroda į Išorinį Vaizdo Įrašą"
+      legislation/draft_version:
+        title: Versijos Pavadinimas
+        body: Tekstas
+        changelog: Pakeitimai
+        status: Būsena
+        status_draft: "Juodraštis"
+        status_published: "Paskelbta"
+        final_version: Galutinė Versija
+      legislation/draft_version/translation:
+        title: Versijos Pavadinimas
+        body: Tekstas
+        changelog: Pakeitimai
+      legislation/question:
+        title: Pavadinimas
+        question_options: Variantai
+      legislation/question/translation:
+        title: Klausimas
+      legislation/question_option:
+        value: Reikšmė
+      legislation/annotation:
+        text: Komentaras
+      document:
+        title: Pavadinimas
+        attachment: "Pasirinkite Dokumentą"
+      image:
+        title: Pavadinimas
+        attachment: "Pasirinkite Nuotrauką"
+      poll/question/answer:
+        title: Atsakymas
+        description: Aprašymas
+      poll/question/answer/translation:
+        title: Atsakymas
+        description: "Aprašymas (neprivaloma)"
+      poll/question/answer/video:
+        title: Pavadinimas
+        url: Išorinė Vaizdo Nuoroda
+      newsletter:
+        segment_recipient: Gavėjai
+        subject: Tema
+        from: "El. Pašto Adresas, Kuris Bus Rodomas Kaip Siunčiantis Naujienlaiškį"
+        body: El. Pašto Turinys
+      admin_notification:
+        segment_recipient: Gavėjai
+        title: Pavadinimas
+        link: Nuoroda
+        body: Tekstas
+      admin_notification/translation:
+        title: Pavadinimas
+        body: Tekstas
+      widget/card:
+        label: Etiketė (neprivaloma)
+        title: Pavadinimas
+        description: Aprašymas
+        link_text: Nuorodos Tekstas
+        link_url: Nuorodos URL
+        columns: Stulpelių Skaičius
+      widget/card/translation:
+        label: Etiketė (neprivaloma)
+        title: Pavadinimas
+        description: Aprašymas
+        link_text: Nuorodos Tekstas
+      widget/feed:
+        limit: Elementų Skaičius
+      dashboard/action:
+        title: Pavadinimas
+        short_description: Trumpas Aprašymas
+        description: Aprašymas
+        link: Išorinė Nuoroda
+        request_to_administrators: Įtraukti Mygtuką Leidžiantį Prašyti Iš Administratorių Šaltinio
+        day_offset: Kiek Dienu Po Pasiūlymo Sukūrimo Norite, Kad Jis Būtų Aktyvuotas?
+        required_supports: Kiek Palaikymų Turi Gauti Pasiūlymas, Kad Būtų Aktyvuotas?
+        order: Įveskite Poziciją, Kurioje Ši Veiksmo Sritis Bus Rodyma Vartotojui Veiksmų Sąraše
+        active: Aktyvuotas
+        action_type: Tipas
+        action_type_proposed_action: "Pasiūlytas Veiksmas"
+        action_type_resource: "Resursas"
+        published_proposal: "Publikuoti Pasiūlymai?"
+      dashboard/administrator_task:
+        source: Šaltinis
+        user: Vykdytojas
+      link:
+        label: Pavadinimas
+        url: URL
+      valuator:
+        description: Aprašymas
+        valuator_group_id: Vertintojų Grupė
+        can_comment: Gali Kurti Komentarus
+        can_edit_dossier: Gali Redaguoti Dokumentų Rinkinį
+      valuator_group:
+        name: "Grupės Pavadinimas"
+      local_census_record:
+        document_type: Dokumento Tipas
+        document_number: Dokumento Numeris
+        date_of_birth: Gimimo Data
+        postal_code: Pašto Kodas
+      votation_type:
+        max_votes: Maksimalus Balsų Skaičius
+        vote_type: Balsavimo Tipas
+      votation_type/vote_type:
+        unique: Unikalus Atsakymas
+        multiple: Keli Atsakymai
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Šis Vartotojas Jau Turi Slaptažodį"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "Žymės Turi Būti Mažiau Arba Lygu %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Pasiekėte Maksimalų Asmeninių Žinučių Skaičių Per Dieną"
+        geozone:
+          attributes:
+            geojson:
+              invalid: "Pateiktas GeoJSON Neatitinka Teisingo Formato. Jis Turi Būti Tipo „Polygon“ Arba „MultiPolygon“."
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Paveikslėlio Plotis Turi Būti Bent %{required_min_width}px"
+              min_image_height: "Paveikslėlio Aukštis Turi Būti Bent %{required_min_height}px"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "Naudotojų Gavėjų Segmentas Yra Netinkamas"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "Naudotojų Gavėjų Segmentas Yra Netinkamas"
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Dokumentas Nėra Surašytas"
+            user_id:
+              has_voted: "Vartotojas Jau Balsavo"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: "Turi Būti Arba Pradžios Diena, Arba Po Jos"
+            debate_end_date:
+              invalid_date_range: "Turi Būti Arba Debatų Pradžios Diena, Arba Po Jos"
+            draft_end_date:
+              invalid_date_range: "Turi Būti Arba Projekto Rašymo Pradžia, Arba Po Jos"
+            allegations_end_date:
+              invalid_date_range: "Turi Būti Arba Galimų Pažeidimų Pareiškimo Pradžia, Arba Po Jos"
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: "Nėra Įtrauktas Į Sąrašą, Leidžiamos Reikšmės Yra 1 DNI, 2 Pasas Ir 3 Gyventojų Kortelė."
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "Žymės Turi Būti Mažiau Arba Lygu %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "Žymės Turi Būti Mažiau Arba Lygu %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Turite Palaukti Bent %{interval} Dienų Tarp Pranešimų"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: "Nesurinkta Duomenų"
+              already_voted: "Jau Balsuota Dėl Šio Pasiūlymo"
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "Turi Būti Raidės, Skaičiai, _ Ir -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Plotis Turi Būti %{required_width}px"
+              image_height: "Aukštis Turi Būti %{required_height}px"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: "Negalite Komentuoti Vertinimo"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: "Jau Išversta"
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "Turi Prasidėti Tokiu Pačiu Kodu Kaip Ir Jo Tikslas, Turi Baigtis Skaičiumi"
+    messages:
+      translations_too_short: "Būtina Pateikti Bent Vieną Vertimą"
+      record_invalid: "Validacija Nepavyko: %{errors}"
+      another_poll_active: "Šiam Laikotarpiui Yra Kitas Balsavimas Aktyvus"
+      restrict_dependent_destroy:
+        has_one: "Negalima Ištrinti Įrašo, Nes Yra Priklausomas %{record}"
+        has_many: "Negalima Ištrinti Įrašo, Nes Yra Priklausomi %{record}"

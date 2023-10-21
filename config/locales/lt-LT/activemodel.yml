@@ -1,1 +1,47 @@
 lt:
+  activemodel:
+    models:
+      verification:
+        residence: "Gyvenamoji vieta"
+        sms: "SMS"
+      local_census_records/import:
+        one: Vietos gyventojų surinkimo įrašas
+        other: Vietos gyventojų surinkimo įrašai
+    attributes:
+      verification:
+        residence:
+          document_type: "Dokumento tipas"
+          document_number: "Dokumento numeris (įskaitant raides)"
+          date_of_birth: "Gimimo data"
+          postal_code: "Pašto kodas"
+        sms:
+          phone: "Telefonas"
+          confirmation_code: "Patvirtinimo kodas"
+        email:
+          recipient: "El. paštas"
+      verification/letter:
+        email: "El. paštas"
+        password: "Slaptažodis"
+        verification_code: "Jums išsiųstas kodas laiške"
+      verification/management/document:
+        document_type: "Dokumento tipas:"
+        document_number: "Dokumento numeris"
+      verification/residence:
+        date_of_birth: "Gimimo data"
+        document_type: "Dokumento tipas"
+        postal_code: "Pašto kodas"
+      verification/sms:
+        confirmation_code: "Įveskite kodą, kurį gavote į savo mobilųjį telefoną"
+      officing/residence:
+        document_type: "Dokumento tipas"
+        document_number: "Dokumento numeris (įskaitant raides)"
+        year_of_birth: "Gimimo metai"
+      local_census_records/import:
+        file: Failas
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "Pateiktas failo formatas yra neteisingas. Leidžiamas failo formatas: %{valid_extensions}."
+              headers: "Pateiktos neteisingos failo antraštės. Failo antraštės turi būti šios: %{required_headers}."

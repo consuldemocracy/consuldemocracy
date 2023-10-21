@@ -1,1 +1,116 @@
 lt:
+  devise_views:
+    confirmations:
+      new:
+        submit: "Iš naujo siųsti instrukcijas"
+        title: "Iš naujo siųsti patvirtinimo instrukcijas"
+      show:
+        instructions: "Paskyros patvirtinimas el. paštu: %{email}"
+        new_password_confirmation_label: "Pakartokite prisijungimo slaptažodį"
+        new_password_label: "Naujas prisijungimo slaptažodis"
+        please_set_password: "Prašome pasirinkti naują slaptažodį (juo galėsite prisijungti su pateiktu el. paštu)"
+        submit: "Patvirtinti"
+        title: "Patvirtinti mano paskyrą"
+    mailer:
+      confirmation_instructions:
+        confirm_link: "Patvirtinti mano paskyrą"
+        text: "El. pašto paskyros patvirtinimui, naudokite nuorodą:"
+        title: "Sveiki atvykę"
+        welcome: "Sveiki atvykę"
+      reset_password_instructions:
+        change_link: "Pakeisti slaptažodį"
+        hello: "Sveiki"
+        ignore_text: "Jei nepareikalavote slaptažodžio keitimo, šį laišką galite ignoruoti."
+        info_text: "Jūsų slaptažodis nebus pakeistas, jei nepaspausite nuorodos ir nepakeisite jo."
+        text: "Gavome slaptažodžio keitimo užklausą. Tai galite padaryti naudodami nuorodą:"
+        title: "Pakeisti slaptažodį"
+      unlock_instructions:
+        hello: "Sveiki"
+        info_text: "Jūsų paskyra užblokuota dėl per didelio neteisingų prisijungimo bandymų skaičiaus."
+        instructions_text: "Norėdami atrakinti paskyrą, paspauskite nuorodą:"
+        title: "Jūsų paskyra užblokuota"
+        unlock_link: "Atrakinti mano paskyrą"
+    menu:
+      login_items:
+        login: "Prisijungti"
+        logout: "Atsijungti"
+        signup: "Registruotis"
+    organizations:
+      registrations:
+        new:
+          password_confirmation_label: "Patvirtinti slaptažodį"
+          responsible_name_note: "Tai bus asmuo, atstovaujantis asociacijai/kolektyvui, kurio vardu pateikiamos pasiūlymų."
+          submit: "Registruotis"
+          title: "Registruotis kaip organizacija ar kolektyvas"
+        success:
+          back_to_index: "Aš suprantu, grįžti į pagrindinį puslapį"
+          instructions_1: "<strong>Mes su jumis susisieksime artimiausiu metu</strong>, kad patvirtintume, jog iš tikrųjų atstovaujate šiam kolektyvui."
+          instructions_2: "Kol jūsų <strong>el. laiškas tikrinamas</strong>, mes jums išsiuntėme <strong>nuorodą patvirtinti paskyrą</strong>."
+          instructions_3: "Patvirtinus, galėsite pradėti dalyvauti kaip nepatvirtintas kolektyvas."
+          thank_you: "Dėkojame, kad registruojatės svetainėje. Ji dabar <strong>laukia patvirtinimo</strong>."
+          title: "Organizacijos / kolektyvo registracija"
+    passwords:
+      edit:
+        change_submit: "Pakeisti mano slaptažodį"
+        password_confirmation_label: "Patvirtinti naują slaptažodį"
+        password_label: "Naujas slaptažodis"
+        title: "Pakeisti savo slaptažodį"
+      new:
+        send_submit: "Siųsti instrukcijas"
+        title: "Pamiršote slaptažodį?"
+    sessions:
+      new:
+        remember_me: "Prisiminti mane"
+        submit: "Įeiti"
+        title: "Prisijungti"
+    shared:
+      links:
+        login: "Prisijungti"
+        new_confirmation: "Nepatekote instrukcijų, kaip aktyvuoti paskyrą?"
+        new_password: "Pamiršote slaptažodį?"
+        new_unlock: "Nepatekote atrakinimo instrukcijų?"
+        signin_with_provider: "Prisijungti su %{provider}"
+        signup: "Neturite paskyros? %{signup_link}"
+        signup_link: "Registruotis"
+    unlocks:
+      new:
+        email_label: "El. paštas"
+        submit: "Iš naujo siųsti atrakinimo instrukcijas"
+        title: "Iš naujo siųsti atrakinimo instrukcijas"
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: "Priežastis"
+          info: "Šis veiksmas negali būti atšauktas. Įsitikinkite, kad tai norite padaryti."
+          info_reason: "Jeigu norite, palikite mums priežastį (neprivaloma)"
+          submit: "Ištrinti mano paskyrą"
+          title: "Ištrinti paskyrą"
+        edit:
+          current_password_label: "Dabartinis slaptažodis"
+          edit: "Redaguoti"
+          email_label: "El. paštas"
+          leave_blank: "Palikite tuščią, jei nenorite keisti"
+          need_current: "Norėdami patvirtinti pakeitimus, mums reikia jūsų dabartinio slaptažodžio"
+          password_confirmation_label: "Patvirtinti naują slaptažodį"
+          password_label: "Naujas slaptažodis"
+          update_submit: "Atnaujinti"
+          waiting_for: "Laukiama patvirtinimo nuo:"
+        new:
+          cancel: "Atšaukti prisijungimą"
+          organization_signup: "Ar atstovaujate organizaciją ar kolektyvą? %{signup_link}"
+          organization_signup_link: "Registruokitės čia"
+          password_confirmation_label: "Patvirtinti slaptažodį"
+          submit: "Registruotis"
+          terms: "Registruodamiesi, sutinkate su %{terms}"
+          terms_link: "naudojimo sąlygomis"
+          terms_title: "Registruodamiesi, sutinkate su naudojimo sąlygomis"
+          title: "Registruotis"
+          username_is_available: "Vartotojo vardas laisvas"
+          username_is_not_available: "Vartotojo vardas jau naudojamas"
+          username_note: "Vardas, kuris bus rodomas šalia jūsų įrašų"
+        success:
+          back_to_index: "Aš suprantu, grįžti į pagrindinį puslapį"
+          instructions_1: "Prašome <b>tikrinti savo el. paštą</b> - mes jums išsiuntėme <b>nuorodą patvirtinti paskyrą</b>."
+          instructions_2: "Patvirtinus, galėsite pradėti dalyvauti."
+          thank_you: "Ačiū už registraciją svetainėje. Dabar privalote <b>patvirtinti savo el. pašto adresą</b>."
+          title: "Patvirtinkite savo el. pašto adresą"

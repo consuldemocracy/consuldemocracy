@@ -1,1 +1,89 @@
 lt:
+  officing:
+    header:
+      title: "Balsavimas"
+    dashboard:
+      index:
+        title: "Balsavimo ofisavimas"
+        info: "Čia galite patikrinti vartotojo dokumentus ir saugoti balsavimo rezultatus"
+        no_shifts: "Šiandien jūs neturite darbo pakeitimų."
+    menu:
+      voters: "Tikrinti dokumentą"
+      total_recounts: "Visi perskaičiavimai ir rezultatai"
+    polls:
+      final:
+        title: "Pasiruošę galutiniam perskaičiavimui"
+        no_polls: "Jūs neofisuojate galutinių perskaičiavimų jokioje aktyvioje apklausoje"
+        select_poll: "Pasirinkite apklausą"
+        add_results: "Pridėti rezultatus"
+    poll_budgets:
+      see_ballot_sheets: "Peržiūrėti balsų biuletenių sąrašą"
+      index:
+        title: "%{poll_budget} - Balsų biuletenių sąrašas"
+        ballot_sheet: "Balsų biuletenis %{id}"
+        ballot_sheet_name: "Pavadinimas"
+        ballot_sheet_author: "Autorius"
+        ballot_sheet_creation_date: "Sukūrimo data"
+        empty_results: "Šioje apklausoje dar nėra balsų biuletenių"
+      new:
+        title: "%{poll_budget} - Naujas balsų biuletenis"
+        booth: "Būda"
+        select_booth: "Pasirinkite būdą"
+        csv_data: "CSV duomenys"
+        submit: "Išsaugoti"
+      show:
+        created_at: "Sukūrimo data"
+        author: "Autorius"
+        data: "CSV duomenys"
+    booth:
+      new:
+        title: "Pasirinkite savo būdą"
+    results:
+      flash:
+        create: "Rezultatai išsaugoti"
+        error_create: "Rezultatų NEišsaugota. Klaida duomenyse."
+        error_wrong_booth: "Neteisingas būdas. Rezultatų NEišsaugota."
+      new:
+        title: "%{poll} - Pridėti rezultatus"
+        not_allowed: "Jums draudžiama pridėti rezultatus šiai apklausai"
+        booth: "Būdas"
+        date: "Data"
+        select_booth: "Pasirinkite būdą"
+        ballots_white: "Visiškai tušti biuleteniai"
+        ballots_null: "Netinkami biuleteniai"
+        ballots_total: "Galiojantys biuleteniai"
+        submit: "Išsaugoti"
+        results_list: "Jūsų rezultatai"
+        see_results: "Peržiūrėti rezultatus"
+      index:
+        no_results: "Nėra rezultatų"
+        results: "Rezultatai"
+        table_answer: "Atsakymas"
+        table_votes: "Balsai"
+        table_whites: "Visiškai tušti biuleteniai"
+        table_nulls: "Netinkami biuleteniai"
+        table_total: "Galiojantys biuleteniai"
+    residence:
+      flash:
+        create: "Dokumentas patikrintas su Survejimu"
+        not_allowed: "Šiandien jūs neturite darbo pakeitimų"
+      new:
+        title: "Tikrinti dokumentą"
+        submit: "Tikrinti dokumentą"
+        error_verifying_census: "Survejimas negalėjo patvirtinti šio dokumento."
+        form_errors: "Trūksta informacijos dokumento patikrinimui"
+    voters:
+      new:
+        title: "Apklausos"
+        table_poll: "Apklausa"
+        table_status: "Apklausos statusas"
+        table_actions: "Veiksmai"
+        not_to_vote: "Asmuo nusprendė šiuo metu nebalsuoti"
+      show:
+        can_vote: "Gali balsuoti"
+        cannot_vote: "Šis asmuo negali balsuoti, nes nėra registruotas rajonuose, kuriuose vyksta balsavimas."
+        error_already_voted: "Šis asmuo jau dalyvavo šioje apklausoje"
+        submit: "Patvirtinti balsą"
+        success: "Balsas įrašytas!"
+      can_vote:
+        submit_disable_with: "Palaukite, patvirtinamas balsas..."

@@ -1,1 +1,22 @@
 lt:
+  helpers:
+    page_entries_info:
+      entry:
+        one: Įrašas
+        other: Įrašai
+        zero: Įrašų nėra
+      more_pages:
+        display_entries: Rodo <strong>%{first}&nbsp;-&nbsp;%{last}</strong> iš <strong>%{total} %{entry_name}</strong>
+      one_page:
+        display_entries:
+          one: Yra <strong>1 %{entry_name}</strong>
+          other: Yra <strong>%{count} %{entry_name}</strong>
+          zero: "%{entry_name} nerasta"
+  views:
+    pagination:
+      current: Jūs esate puslapyje
+      first: Pirmas
+      last: Paskutinis
+      next: Kitas
+      previous: Ankstesnis
+      truncate: "&hellip;"

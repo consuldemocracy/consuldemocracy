@@ -1,1 +1,68 @@
 lt:
+  valuation:
+    header:
+      title: Vertinimas
+    menu:
+      title: Vertinimas
+      budgets: Dalyvaujamieji biudžetai
+    budgets:
+      index:
+        title: Dalyvaujamieji biudžetai
+        filters:
+          current: Atidaryti
+          finished: Baigti
+        table_name: Pavadinimas
+        table_phase: Etapas
+        table_assigned_investments_valuation_open: Investiciniai projektai su atvira vertinimu
+        table_actions: Veiksmai
+        evaluate: Vertinti
+        no_budgets: "Nėra biudžetų"
+    budget_investments:
+      index:
+        headings_filter_all: Visi skyriai
+        filters:
+          valuation_open: Atvira
+          valuating: Vertinama
+          valuation_finished: Vertinimas baigtas
+        assigned_to: "Priskirta vertintojui %{valuator}"
+        title: Investiciniai projektai
+        edit: Redaguoti dokumentų rinkinį
+        table_id: ID
+        table_title: Pavadinimas
+        table_heading_name: Skyriaus pavadinimas
+        table_actions: Veiksmai
+        no_investments: "Nėra investicinių projektų."
+      show:
+        back: Atgal
+        title: Investicinis projektas
+        info: Autoriaus informacija
+        by: Išsiuntė
+        sent: Išsiųsta
+        heading: Skyrius
+        dossier: Dokumentų rinkinys
+        edit_dossier: Redaguoti dokumentų rinkinį
+        price: Kaina
+        price_first_year: Išlaidos pirmuosius metus
+        currency: "€"
+        feasibility: Įgyvendinamumas
+        feasible: Įmanoma įgyvendinti
+        unfeasible: Neįmanoma įgyvendinti
+        undefined: Neapibrėžta
+        valuation_finished: Vertinimas baigtas
+        duration: Laikotarpis
+        responsibles: Atsakingieji
+        assigned_admin: Priskirtas administratorius
+        assigned_valuators: Priskirti vertintojai
+        preview: Investicijų peržiūra
+      edit:
+        dossier: Dokumentų rinkinys
+        price: "Kaina (%{currency})"
+        price_first_year: "Išlaidos pirmuosius metus (%{currency}) <small>(neprivaloma, duomenys nėra vieši)</small>"
+        feasibility: Įgyvendinamumas
+        valuation_finished_alert: "Ar tikrai norite pažymėti šį pranešimą kaip baigtą? Tai padarius jo nebegalėsite keisti."
+        not_feasible_alert: "Autoriui, pateikusiam projektą, nedelsiant bus išsiųstas neįmanomumo ataskaitos pranešimas."
+        save: Išsaugoti pakeitimus
+      notice:
+        valuate: "Dokumentų rinkinys atnaujintas"
+      valuation_comments: Vertinimo komentarai
+      not_in_valuating_phase: Investiciniai projektai gali būti vertinami tik tada, kai biudžetas yra vertinimo etape

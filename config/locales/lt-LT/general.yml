@@ -1,1 +1,944 @@
 lt:
+  account:
+    show:
+      change_credentials_link: Pakeisti prisijungimo duomenis
+      erase_account_link: Ištrinti mano paskyrą
+      finish_verification: Baigti patvirtinimą
+      notifications: Pranešimai
+      personal: Asmeniniai duomenys
+      public_interests_my_title_list: Elementų žymės, kurių jūs sekate
+      public_interests_user_title_list: Elementų žymės, kurias seka šis vartotojas
+      save_changes_submit: Įrašyti pakeitimus
+      recommendations: Rekomendacijos
+      title: Mano paskyra
+      user_permission_info: Su jūsų paskyra jūs galite...
+      user_permission_title: Dalyvavimas
+      user_permission_verify: Norėdami atlikti visas veiksmus, patvirtinkite savo paskyrą.
+      verified_account: Paskyra patvirtinta
+      verify_my_account: Patvirtinti mano paskyrą
+  application:
+    close: Uždaryti
+    menu: Meniu
+  comments:
+    actions:
+      confirm_delete: "Ar tikrai? Šis veiksmas ištrins šį komentarą. Šio veiksmo negalėsite atšaukti."
+      delete: "Ištrinti komentarą"
+    comments_closed: Komentarai uždaryti
+    verified_only: Norint dalyvauti, %{verify_account}
+    comment:
+      admin: Administratorius
+      author: Autorius
+      deleted: Šis komentaras buvo ištrintas
+      moderator: Moderatorius
+      responses:
+        one: 1 atsakymas
+        other: "%{count} atsakymai"
+        zero: Nėra atsakymų
+      responses_show:
+        one: "1 atsakymas (rodyti)"
+        other: "%{count} atsakymai (rodyti)"
+        zero: Nėra atsakymų
+      responses_collapse:
+        one: "1 atsakymas (suskleisti)"
+        other: "%{count} atsakymai (suskleisti)"
+        zero: Nėra atsakymų
+      user_deleted: Vartotojas ištrintas
+      votes:
+        one: 1 balsas
+        other: "%{count} balsai"
+        zero: Nėra balsų
+    form:
+      comment_as_admin: Komentuoti kaip administratorius
+      comment_as_moderator: Komentuoti kaip moderatorius
+      leave_comment: Palikite savo komentarą
+    orders:
+      most_voted: Daugiausiai balsų
+      newest: Naujausi pirmi
+      oldest: Seniausi pirmi
+      most_commented: Daugiausiai komentarų
+    show:
+      return_to_commentable: "Grįžti į "
+  comments_helper:
+    comment_button: Paskelbti komentarą
+    comment_link: Komentuoti
+    comments_title: Komentarai
+    reply_button: Paskelbti atsakymą
+    reply_link: Atsakyti
+  debates:
+    create:
+      form:
+        submit_button: Pradėti debatą
+    debate:
+      votes:
+        one: 1 balsas
+        other: "%{count} balsai"
+        zero: Nėra balsų
+    edit:
+      editing: Redaguoti debatą
+      form:
+        submit_button: Įrašyti pakeitimus
+      show_link: Peržiūrėti debatą
+    form:
+      tags_instructions: Pažymėkite šį debatą žymomis.
+      tags_placeholder: "Įveskite žymes, kurias norite naudoti, atskirtas kableliu (',')"
+    index:
+      featured_debates: Pateikti
+      orders:
+        confidence_score: Aukščiausiai įvertinti
+        created_at: Naujausi
+        hot_score: Aktyviausi
+        most_commented: Daugiausiai komentarų
+        relevance: Relevancija
+        recommendations: Rekomendacijos
+      recommendations:
+        without_results: Nėra debatų, susijusių su jūsų interesais
+        without_interests: Sekite pasiūlymus, kad galėtume jums suteikti rekomendacijas
+        disable: "Jei atmesite rekomendacijas debatams, jos daugiau nebus rodomos. Jūs galėsite įjungti jas vėl puslapio „Mano paskyra“ skiltyje"
+        actions:
+          success: "Rekomendacijos debatams šiai paskyrai dabar išjungtos"
+          error: "Įvyko klaida. Prašome eiti į puslapį „Mano paskyra“, kad rankiniu būdu išjungtumėte rekomendacijas debatams"
+      search_form:
+        button: Ieškoti
+        placeholder: Ieškoti debatų...
+        title: Paieška
+      start_debate: Pradėti debatą
+      title: Debatai
+      section_header:
+        icon_alt: Debatų piktograma
+        title: Debatai
+        help: Pagalba su debatais
+      section_footer:
+        title: Pagalba su debatais
+        description: Pradėkite debatą, kad galėtumėte dalintis nuomonėmis su kitais, kuriuos domina jūsų rūpimų temų klausimai.
+        help_text_1: „Piliečių debatų erdvė skirta tiems, kurie gali pateikti savo rūpesčių klausimus ir tiems, kurie nori dalintis nuomonėmis su kitais žmonėmis.“
+        help_text_2: „Norėdami atidaryti debatą, jums reikia prisiregistruoti %{org}. Vartotojai taip pat gali komentuoti atvirus debatus ir jų vertinimui naudoti „Sutinku“ arba „Nesutinku“ mygtukus.“
+    new:
+      form:
+        submit_button: Pradėti debatą
+      more_info: Kaip veikia debatai?
+      recommendation_four: Mėgaukitės šia erdve ir balsais, kurie ją užpildo. Ji priklauso ir jums.
+      recommendation_one: Debatų pavadinimui ar visoms sakinio dalims naudoti didžiąsias raides nerekomenduojama. Internetuose tai laikoma šaukimu. Ir niekas nemėgsta būti šaukiamas.
+      recommendation_three: Beširdžios kritikos labai laukiama. Tai erdvė refleksijai. Tačiau rekomenduojame laikytis elegancijos ir intelekto. Pasaulyje šios dorybės padaro jį geresnį.
+      recommendation_two: Bet koks debatas ar komentaras, siūlantis nelegalią veiklą, bus ištrintas, taip pat ir tie, kurie ketina sabotažuoti debatų erdves. Kitkas leidžiama.
+      recommendations_title: Rekomendacijos debatų kūrimui
+      start_new: Pradėti debatą
+    show:
+      author_deleted: Vartotojas ištrintas
+      comments_title: Komentarai
+      edit_debate_link: Redaguoti
+      flag: Šis debatas yra praneštas kaip netinkamas kelių vartotojų.
+      share: Bendrinti
+      author: Autorius
+    update:
+      form:
+        submit_button: Įrašyti pakeitimus
+  errors:
+    messages:
+      allowed_file_content_types: "turinio tipas turi būti vienas iš %{types}"
+      user_not_found: Vartotojas nerastas
+      invalid_date_range: "Netinkamas datos intervalas"
+      past_date: "Negali būti praeities data"
+      cannot_change_date:
+        poll_started: "Negalima pakeisti, jei balsavimas jau prasidėjo"
+        poll_ended: "Negalima pakeisti, jei balsavimas jau baigtas"
+  form:
+    accept_terms: Sutinku su %{policy} ir %{conditions}
+    accept_terms_title: Sutinku su Privatumo politika ir naudojimo sąlygomis
+    conditions: Naudojimo sąlygos
+    debate: Debatas
+    direct_message: privatus pranešimas
+    error: klaida
+    errors: klaidos
+    not_saved: "sulaikė šį %{resource} nuo įrašymo. <br>Prašome patikrinti pažymėtas laukus, kaip ištaisyti juos:"
+    policy: Privatumo politika
+    banner: baneris
+    proposal: Pasiūlymas
+    proposal_notification: Pranešimas
+    budget/investment: Investicija
+    budget/group: Biudžeto grupė
+    budget/heading: Biudžeto antraštė
+    geozone: geo zona
+    legislation/draft_version: juodraštis
+    legislation/process: procesas
+    legislation/question: klausimas
+    poll/shift: Sisteminis poslinkis
+    poll/question/answer: Atsakymas
+    user: Paskyra
+    verification/sms: telefonas
+    signature_sheet: Parašų sąrašas
+    document: Dokumentas
+    topic: Tema
+    image: Nuotrauka
+    local_census_record: Vietinis surašymo įrašas
+    local_census_records/import: Vietinio surašymo įrašų importas
+    site_customization/content_block: turinio blokas
+    site_customization/page: puslapis
+    sdg/local_target: vietinė taikinio reikšmė
+  geozones:
+    none: Visos miesto
+  layouts:
+    dashboard:
+      proposal_header:
+        published: Paskelbta
+        draft: Juodraštis
+        retired: Atsiimta
+      proposal_totals:
+        active_resources: Aktyvūs ištekliai
+        community: Dalyviai jūsų bendruomenėje
+        show_proposal: Rodyti pasiūlymą
+        preview_proposal: Peržiūrėti pasiūlymą
+        current_goal: Dabartinis tikslas
+        supports:
+          zero: Nėra palaikymų
+          one: 1 Palaikymas
+          other: "Palaikymų"
+    footer:
+      accessibility: Prieinamumas
+      conditions: Naudojimosi sąlygos
+      consul: PROGRAMOS CONSUL DEMOKRATIJA
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
+      copyright: CONSUL DEMOKRATIJA, %{year}
+      description: Ši svetainė naudoja %{consul}, kuris yra %{open_source}.
+      open_source: atvirojo kodo programinė įranga
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: Nuspręskite, kaip norite formuoti miestą, kuriame norite gyventi.
+      participation_title: Dalyvavimas
+      privacy: Privatumo politika
+    header:
+      administration_menu: Meniu
+      administration: Administravimas
+      collaborative_legislation: Bendradarbiavimo teisėkūra
+      debates: Debatai
+      locale: "Kalba:"
+      management: Valdymas
+      moderation: Moderacija
+      valuation: Vertinimas
+      officing: Balsavimo pareigūnai
+      help: Pagalba
+      my_account_link: Mano paskyra
+      my_activity_link: Mano turinys
+      open_gov: Atvira valdžia
+      proposals: Pasiūlymai
+      poll_questions: Balsavimas
+      budgets: Dalyvaujanti biudžetavimas
+      notification_item:
+        new_notifications:
+          one: Jūs turite naują pranešimą
+          other: Jūs turite %{count} naujų pranešimų
+          zero: "Jūs neturite naujų pranešimų"
+        notifications: Pranešimai
+      sdg: "Tvaraus vystymosi tikslai"
+  notifications:
+    index:
+      empty_notifications: Naujų pranešimų neturite.
+      mark_all_as_read: Pažymėti visus kaip perskaitytus
+      read: Perskaityti
+      title: Pranešimai
+      unread: Neperskaityti
+    notification:
+      action:
+        comments_on:
+          one: Kažkas komentavo
+          other: Yra %{count} nauji komentarai
+        proposal_notification:
+          one: Yra vienas naujas pranešimas
+          other: Yra %{count} naujų pranešimų
+        replies_to:
+          one: Kažkas atsakė į jūsų komentarą
+          other: Yra %{count} nauji atsakymai į jūsų komentarą
+      mark_as_read: Pažymėti kaip perskaitytus
+      mark_as_unread: Pažymėti kaip neperskaitytus
+      notifiable_hidden: Šis išteklius daugiau neprieinamas.
+  map:
+    title: "Rajonai"
+    proposal_for_district: "Pateikti pasiūlymą savo rajonui"
+    start_proposal: Sukurti pasiūlymą
+  omniauth:
+    facebook:
+      sign_in: Prisijungti su Facebook
+      sign_up: Užsiregistruoti su Facebook
+      name: Facebook
+    finish_signup:
+      title: "Papildoma informacija"
+      username_warning: "Dėl bendravimo su socialiniais tinklais sąsajos pokyčių, gali atsitikti, kad jūsų naudotojo vardas dabar rodomas kaip „jau naudojamas“. Jei taip yra, prašome pasirinkti kitą naudotojo vardą."
+    google_oauth2:
+      sign_in: Prisijungti su Google
+      sign_up: Užsiregistruoti su Google
+      name: Google
+    wordpress_oauth2:
+      sign_in: Prisijungti su Wordpress
+      sign_up: Užsiregistruoti su Wordpress
+      name: Wordpress
+    twitter:
+      sign_in: Prisijungti su Twitter
+      sign_up: Užsiregistruoti su Twitter
+      name: Twitter
+    info:
+      sign_in: "Prisijungti su:"
+      sign_up: "Užsiregistruoti su:"
+    or_fill: "Arba užpildykite šią formą:"
+  proposals:
+    create:
+      form:
+        submit_button: Sukurti pasiūlymą
+    created:
+      title: Sveikiname! Tu žengiai pirmą žingsnį.
+      motivation: "Svarbu tinkamai parengti kampaniją, kad tavo pasiūlymas būtų sėkmingas. Pirmosios kelios dienos yra lemiamos."
+      motivation_2: "<strong>Jeigu norite rekomendacijų dėl pasiruošimo paskelbimui, palikite pasiūlymą kaip juodraštį, ir mes jums padėsime.</strong>"
+      publish: Ne, noriu iškart paskelbti pasiūlymą
+      dashboard: Taip, noriu pagalbos ir paskelbsiu vėliau
+      preview_title: Taip atrodys jūsų pasiūlymas, kai jį paskelbsite
+    share:
+      improve_it: Gerinkite savo kampaniją ir gaukite daugiau palaikymo.
+      dashboard: Rodyti daugiau informacijos
+      message: "Aš paremiau pasiūlymą „%{title}“ skiltyje „%{handle}“. Jei jūsų tai domina, paremkite ir jūs!"
+    edit:
+      editing: Redaguoti pasiūlymą
+      form:
+        submit_button: Įrašyti pakeitimus
+      show_link: Peržiūrėti pasiūlymą
+    retire_form:
+      title: Atšaukti pasiūlymą
+      warning: "Jeigu atšauksite pasiūlymą, jis vis dar priims palaikymus, bet bus pašalintas iš pagrindinio sąrašo, o visiems vartotojams bus matomas pranešimas, kad autoriai nemanė, jog pasiūlymą reikėtų toliau remti."
+      retired_reason_blank: Pasirinkite variantą
+      retired_explanation_placeholder: Paaiškinkite trumpai, kodėl manote, kad šis pasiūlymas neturėtų gauti daugiau palaikymų
+      submit_button: Atšaukti pasiūlymą
+    retire_options:
+      duplicated: Pasikartojantis
+      started: Jau pradėtas
+      unfeasible: Neįgyvendinamas
+      done: Atlikta
+      other: Kita
+    form:
+      proposal_responsible_name_note: "(individualiai arba kaip kolektyvo atstovas; viešai nebus rodomas)"
+      proposal_summary_note: "(maksimaliai 200 simbolių)"
+      proposal_video_url_note: Galite įterpti nuorodą į „YouTube“ ar „Vimeo“
+      tag_category_label: "Kategorijos"
+      tags_instructions: "Pridėkite žymas šiam pasiūlymui. Galite pasirinkti iš siūlomų kategorijų arba pridėti savo."
+      tags_label: Žymos
+      tags_placeholder: "Įveskite žymas, atskirtas kableliais (',')"
+      map_location: "Žemėlapio vieta"
+      map_location_instructions: "Naršykite žemėlapį, kad surastumėte vietą ir pažymėtumėte ją."
+      map_remove_marker: "Pašalinti žymeklį iš žemėlapio"
+    index:
+      featured_proposals: Išskirtiniai
+      orders:
+        confidence_score: aukščiausio įvertinimo
+        created_at: naujausi
+        hot_score: aktyviausi
+        most_commented: daugiausiai komentarų
+        relevance: tinkamiausi
+        archival_date: archyvuoti
+        recommendations: rekomenduojami
+      recommendations:
+        without_results: Jūsų interesams nėra susijusių pasiūlymų
+        without_interests: Sekite pasiūlymus, kad galėtume jums rekomenduoti
+        disable: "Rekomendacijos pasiūlymams nebeliks, jei jas atmesite. Galėsite vėl įjungti „Mano paskyros“ puslapyje."
+        actions:
+          success: "Rekomendacijos pasiūlymams šiai paskyrai dabar išjungtos"
+          error: "Įvyko klaida. Prašome eiti į „Mano paskyros“ puslapį ir rankiniu būdu išjungti rekomendacijas pasiūlymams"
+      retired_proposals: Atsiimti pasiūlymai
+      retired_proposals_link: "Autoriaus atsiimti pasiūlymai"
+      selected_proposals: Pasirinkti pasiūlymai
+      selected_proposals_link: Peržiūrėti pasirinktus pasiūlymus
+      archived_proposals: Archyvuoti pasiūlymai
+      proposals_lists: Pasiūlymų sąrašai
+      retired_links:
+        all: Visi
+        duplicated: Pasikartojantys
+        started: Pradėti
+        unfeasible: Neįgyvendinami
+        done: Atlikti
+        other: Kiti
+      search_form:
+        button: Paieška
+        placeholder: Paieška pasiūlymuose...
+        title: Paieška
+      search_results:
+        one: "turinti terminą <strong>'%{search_term}'</strong>"
+        other: "turinčios terminą <strong>'%{search_term}'</strong>"
+      select_order_long: "Matote pasiūlymus pagal:"
+      start_proposal: Sukurti pasiūlymą
+      title: Pasiūlymai
+      top_link_proposals: Daugiausiai remiami pasiūlymai pagal kategorijas
+      section_header:
+        icon_alt: Pasiūlymų piktograma
+        title: Pasiūlymai
+        help: Pagalba su pasiūlymais
+      section_footer:
+        title: Pagalba su pasiūlymais
+        description: Piliečių pasiūlymai yra galimybė kaimynams ir kolektyvams tiesiogiai nuspręsti, kaip nori, kad būtų jų miestas, gavę pakankamai palaikymo ir pateikę balsavimui piliečių.
+    new:
+      form:
+        submit_button: Sukurti pasiūlymą
+      more_info: Kaip veikia piliečių pasiūlymai?
+      recommendation_one: Pasiūlymo pavadinimui ar visoms sakinio dalims naudoti didžiąsias raides nerekomenduojama. Internete tai laikoma šaukimu. Ir niekas nemėgsta būti šaukiamas.
+      recommendation_three: Mėgaukitės šia erdve ir garsais, kurie ją užpildo. Ji priklauso ir jums.
+      recommendation_two: Bet koks pasiūlymas ar komentaras, siūlantis nelegalią veiklą, bus ištrintas, taip pat ir tie, kurie ketina sabotažuoti debatų erdves. Kitkas leidžiama.
+      recommendations_title: Rekomendacijos kuriant pasiūlymą
+      start_new: Sukurti naują pasiūlymą
+    notice:
+      retired: Pasiūlymas atšauktas
+      published: Pasiūlymas paskelbtas
+    proposal:
+      created: "Sukūrėte pasiūlymą!"
+      share:
+        guide: "Dabar galite jį dalintis, kad žmonės galėtų pradėti jį remti."
+        edit: "Kol jis dar nėra bendrinamas, galėsite pakeisti tekstą kaip norite."
+        view_proposal: "Ne dabar, eikite į mano pasiūlymą"
+      already_supported: "Jūs jau remėte šį pasiūlymą. Pasidalinkite juo!"
+      support: Remti
+      support_label: "Remti %{proposal}"
+      support_title: Remti šį pasiūlymą
+      supports:
+        one: 1 remimas
+        other: "%{count} remimai"
+        zero: Nėra remimų
+      votes:
+        one: 1 balsas
+        other: "%{count} balsai"
+        zero: Nėra balsų
+      supports_necessary: "Reikalingi %{number} remimai"
+      reason_for_supports_necessary: ""
+      total_percent: 100%
+      archived: "Šis pasiūlymas archyvuotas ir negali rinkti remimų."
+      successful: "Šis pasiūlymas pasiekė reikiamus remimus."
+      selected: "Pasirinktas pasiūlymas"
+    show:
+      author_deleted: Vartotojas ištrintas
+      code: "Pasiūlymo kodas:"
+      comments_tab: Komentarai
+      dashboard_proposal_link: Valdymo skydas
+      flag: Šis pasiūlymas buvo žymimas kaip netinkamas kelių vartotojų.
+      notifications_tab: Pranešimai
+      milestones_tab: Etapai
+      retired_warning: "Autorius mano, kad šis pasiūlymas neturėtų gauti daugiau remimų."
+      retired_warning_link_to_explanation: Prieš balsuojant, perskaitykite paaiškinimą.
+      retired: Pasitraukęs pasiūlymas
+      share: Bendrinti
+      no_notifications: "Šis pasiūlymas neturi pranešimų."
+      embed_video_title: "Vaizdo įrašas apie %{proposal}"
+      title_video_url: "Išorinis vaizdo įrašas"
+      author: Autorius
+      draft: Pasiūlymas juodraštyje. Kol kas negali gauti remimų ir nepasirodo pasiūlymų sąraše.
+    update:
+      form:
+        submit_button: Išsaugoti pakeitimus
+  dashboard:
+    menu:
+      my_proposal: Redaguoti mano pasiūlymą
+      progress: Progresas
+      resources: Ištekliai
+      community: Bendruomenė
+      polls: Balsavimai
+      mailing: El. paštas
+      poster: Plakatas
+      recommended_actions: Rekomenduojami veiksmai
+      messages: Pranešimai vartotojams
+      related_content: Susiję turinio vienetai
+    form:
+      request: Užklausa
+    create_request:
+      success: Užklausa sėkmingai išsiųsta. Su Jumis susisieksime kuo skubiau, kad informuotume apie tai.
+      archived: Šis pasiūlymas yra archyvuotas ir negali užklausyti išteklių.
+    progress:
+      title: Grafikas
+      group_by_month: Mėnesio
+      group_by_week: Savaitės
+      group_by_date: Dienos
+      progress: Kaupiamas progresas
+      supports: Remimai
+      success: Ideali pažanga
+      new_action: Naujas
+    index:
+      title: Redagavimas
+      edit_proposal_link: Redaguoti pasiūlymą
+      publish: Skelbti pasiūlymą
+      retire: Atšaukti pasiūlymą
+    new_request:
+      links: Nuorodos
+    resources:
+      available_resources: Prieinami ištekliai
+    resource:
+      required_days: "Reikia %{days} dienų"
+      required_supports: "Reikia %{supports} remimų"
+      and: ir
+      view_resource: Žiūrėti išteklius
+      resource_requested: Išteklius jau užklaustas
+      request_resource: Užklausti išteklius
+      resource_locked: Išteklius užrakintas
+    recommended_actions:
+      title: Rekomenduojami veiksmai
+      goto_proposed_actions: Eikite į rekomenduojamus veiksmus
+      see_proposed_actions: Tikrinti rekomenduojamus veiksmus
+      hide_proposed_actions: Slėpti rekomenduojamus veiksmus
+      pending_title: Laukiami
+      show_description: Rodyti aprašymą
+      without_pending_actions: Nėra laukiamų rekomenduojamų veiksmų
+      done_title: Atlikta
+      without_done_actions: Nėra atliktų rekomenduojamų veiksmų
+    next_goal:
+      title: Tikslas
+      see_complete_course: Patikrinkite visą kursą
+      hide_course: Slėpti kursą
+    goal:
+      target_supports:
+        one: Gauti %{count} palaikymą savo pasiūlymui
+        other: Gauti %{count} palaikymus savo pasiūlymui
+      days:
+        one: "%{count} diena"
+        other: "%{count} dienos"
+      locked_resource: Užrakintas išteklius
+      ideal_time: Idealus laikas
+    community:
+      access_community: Prieiga prie bendruomenės
+      latest_activity: "Bendruomenės naujausi įvykiai: %{at}"
+      participants: Dalyviai
+      debates: Diskusijos
+      comments: Komentarai
+      latest_comments: Naujausi pranešimai
+    messages:
+      send_notification: Siųsti pranešimą pasiūlymo sekėjams
+      previous_notifications: Rodyti ankstesnius pranešimus
+    polls:
+      index:
+        title: Balsavimai
+        create: Sukurti balsavimą
+        count:
+          one: Sukūrei %{count} apklausą.
+          other: Sukūrei %{count} apklausas.
+        links: Nuorodos
+        additiontal_information: Papildoma informacija
+      new:
+        title: Naujas balsavimas
+        submit: Sukurti balsavimą
+      edit:
+        submit: Atnaujinti balsavimą
+      poll:
+        responses:
+          one: "%{count} atsakymas"
+          other: "%{count} atsakymai"
+        view_results: Žiūrėti rezultatus
+        edit_poll: Redaguoti apklausą
+        show_results_help: Jei pažymėsite šį langelį, rezultatai bus vieši, ir visi vartotojai galės juos pamatyti
+        delete: Ištrinti apklausą
+        alert_notice: Šis veiksmas pašalins apklausą ir visus su ja susijusius klausimus.
+        success_notice: Apklausa sėkmingai ištrinta
+        unable_notice: Negalite sunaikinti apklausos, turinčios atsakymų
+      form:
+        name: Apklausos pavadinimas
+        add_question: Pridėti klausimą
+      question_fields:
+        remove_question: Pašalinti klausimą
+        add_answer: Pridėti atsakymą
+      question_answer_fields:
+        remove_answer: Pašalinti atsakymą
+    poster:
+      index:
+        title: Plakato peržiūra
+        poster_title: "Nebekreipk dėmesio,"
+        poster_subtitle: "padėk man! ;)"
+        intro_text: "<strong>Aš dalyvauju %{org}</strong> su savo asmeniniu piliečių pasiūlymu, ir tik su Jūsų pagalba galime sukurti miestą, kurį visi norime."
+        proposal_code: "Pasiūlymo kodas: %{code}"
+        support: Palaikykite mano pasiūlymą
+        footer: "<strong>Apsilankykite tinklalapyje %{link} ir palaikykite šį pasiūlymą.</strong> Kuo daugiau, tuo geriau. Atlikime savo dalį. Ačiū!"
+      new:
+        title: Jūsų pasiūlymo plakatas
+      options:
+        preview: Peržiūra
+        download: Atsisiųsti
+    mailing:
+      index:
+        title: El. pašto peržiūra
+      new:
+        title: Bendrinimo el. paštas
+      mailing_options:
+        send: Siųsti adresu %{address}
+        preview: Peržiūra
+      create:
+        sent: El. laiškas išsiųstas
+    mailer:
+      forward:
+        subtitle: "Jei palaikysite mane, <br>mes pasieksime tai."
+        support_button: Palaikykite šį pasiūlymą
+        share_in: Pasidalinkite
+        hi: "Sveiki!"
+        introduction: Rašau, kad praneščiau, jog dalyvauju %{org}, platformoje, kurioje galime nuspręsti, kokią miestą norime. Ir tam aš sukūriau savo asmeninį piliečių pasiūlymą ir dabar man reikia Jūsų palaikymo! Bet nesijaudinkite, nes tai labai paprasta.
+        support: "Jums tereikia paspausti žemiau esantį mygtuką 'Palaikyti šį pasiūlymą', ir galėsite jį išnagrinėti, prieš jį skleisdami. Tik tie pasiūlymai, kurie surinks maksimalų palaikymą, bus įgyvendinti Miesto Tarybos."
+        share: "O jei dar padarysite man didelį malonumą ir pasidalinsite savo pasiūlymu su draugais, šeima ir kontaktų sąrašu, tai būtų puiku!"
+  polls:
+    all: "Visi"
+    no_dates: "datos nenurodytos"
+    dates: "Nuo %{open_at} iki %{closed_at}"
+    final_date: "Galutiniai apskaitos/Rezultatai"
+    index:
+      filters:
+        current: "Atidaryti"
+        expired: "Baigėsi"
+      title: "Balsavimai"
+      participate_button: "Dalyvauti šiame balsavime"
+      participate_button_expired: "Balsavimas baigtas"
+      no_geozone_restricted: "Visas miestas"
+      geozone_restricted: "Rajonai"
+      geozone_info: "Gali dalyvauti žmonės, registruoti cenzuose: "
+      already_answer: "Jūs jau dalyvavote šiame balsavime"
+      not_logged_in: "Norėdami dalyvauti, turite prisijungti arba užsiregistruoti"
+      unverified: "Norėdami dalyvauti, turite patvirtinti paskyrą"
+      cant_answer: "Šis balsavimas jūsų rajone neprieinamas"
+      section_header:
+        icon_alt: Balsavimo piktograma
+        title: Balsavimas
+        help: Pagalba balsavime
+      section_footer:
+        title: Pagalba balsavime
+        description: Piliečių balsavimai - tai dalyvaujamoji priemonė, leidžianti piliečiams su balsavimo teisėmis priimti tiesioginius sprendimus
+      no_polls: "Atvirų balsavimų nėra."
+    show:
+      already_voted_in_booth: "Jūs jau dalyvavote fizinėje būdelėje. Dėl kelių balsavimų dalyvauti nebegalite."
+      already_voted_in_web: "Jūs jau dalyvavote šiame balsavime. Jei balsuosite dar kartą, tai perrašys jūsų ankstesnį balsą."
+      back: Grįžti balsavimą
+      cant_answer_not_logged_in: "Norėdami dalyvauti, turite %{signin} arba %{signup}."
+      comments_tab: Komentarai
+      cant_answer_verify: "Norėdami atsakyti, turite %{verify_link}."
+      verify_link: "patvirtinti savo paskyrą"
+      cant_answer_expired: "Šis balsavimas baigėsi."
+      cant_answer_wrong_geozone: "Šis klausimas jūsų rajone neprieinamas."
+      more_info_title: "Papildoma informacija"
+      documents: Dokumentai
+      zoom_plus: Padidinti vaizdą
+      read_more: "Skaityti daugiau apie %{answer}"
+      read_less: "Skaityti mažiau apie %{answer}"
+      videos: "Išorinis vaizdo įrašas"
+      info_menu: "Informacija"
+      stats_menu: "Dalyvavimo statistika"
+      results_menu: "Balsavimo rezultatai"
+      stats:
+        total_votes: "Viso balsų"
+        votes: "BALSAI"
+        web: "INTERNETE"
+        mail: "ELEKTRONINIU PASTU"
+        booth: "BŪDELYJE"
+        total: "IŠ VISO"
+        valid: "Galiojantys"
+        white: "Visiškai tušti"
+        null_votes: "Netinkami"
+      results:
+        title: "Klausimai"
+        most_voted_answer: "Daugiausiai balsų surinktas atsakymas: "
+    poll_header:
+      back_to_proposal: Grįžti į pasiūlymą
+  poll_questions:
+    show:
+      vote_answer: "Balsuoti už %{answer}"
+      voted: "Jūs balsavote už %{answer}"
+    description:
+      unique: "Galite pasirinkti ne daugiau kaip 1 atsakymą."
+      multiple: "Galite pasirinkti ne daugiau kaip %{maximum} atsakymus."
+    read_more_about: "Skaityti daugiau apie:"
+  proposal_notifications:
+    new:
+      title: "Siųsti pranešimą"
+      submit_button: "Siųsti pranešimą"
+      info_about_receivers: "Šis pranešimas bus išsiųstas <strong>%{count} žmonėms</strong> ir bus matomas %{proposal_page}.<br> Pranešimai nėra siunčiami nedelsiant, vartotojai periodiškai gauna el. laiškus su visais pasiūlymo pranešimais."
+      proposal_page: "pasiūlymo puslapyje"
+    show:
+      back: "Grįžti į mano turinį"
+  shared:
+    edit: "Redaguoti"
+    filter: "Filtruoti"
+    save: "Išsaugoti"
+    delete: "Ištrinti"
+    "yes": "Taip"
+    "no": "Ne"
+    search_results: "Paieškos rezultatai"
+    advanced_search:
+      date: "Pagal datą"
+      date_placeholder: "DD/MM/RRRR"
+      date_range_blank: "Pasirinkite datą"
+      date_1: "Paskutinę parą"
+      date_2: "Paskutinę savaitę"
+      date_3: "Paskutinį mėnesį"
+      date_4: "Paskutinį metus"
+      date_5: "Pasirinktinai"
+      from: "Nuo"
+      general: "Pagal tekstą"
+      goal: "Pagal Tvariojo vystymosi tikslą"
+      goal_blank: "Pasirinkite tikslą"
+      search: "Filtruoti"
+      target: "Pagal tikslinę paskirtį"
+      target_blank: "Pasirinkite tikslinę paskirtį"
+      title: "Išplėstinė paieška"
+      to: "Iki"
+    author_info:
+      author_deleted: Naudotojas ištrintas
+      email_deleted: El. paštas ištrintas
+    back: Grįžti
+    check: Pažymėti
+    check_all: Visus
+    check_none: Niekus
+    collective: Bendras
+    flag: Žymėti kaip netinkamą
+    follow: "Sekti"
+    following: "Sekama"
+    follow_entity: "Sekti %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice: "Dabar sekate šį investicinį projektą! <br> Mes jus pranešime apie pasikeitimus, kad būtumėte visada informuoti."
+        destroy:
+          notice: "Sustabdėte sekimą šiam investiciniam projektui! <br> Nebegausite pranešimų, susijusių su šiuo projektu."
+      proposal:
+        create:
+          notice: "Dabar sekate šį piliečių pasiūlymą! <br> Mes jus pranešime apie pasikeitimus, kad būtumėte visada informuoti."
+        destroy:
+          notice: "Sustabdėte sekimą šiam piliečių pasiūlymui! <br> Nebegausite pranešimų, susijusių su šiuo pasiūlymu."
+    print:
+      print_button: Spausti šią informaciją
+    search: Ieškoti
+    show: Rodyti
+    suggest:
+      debate:
+        found:
+          one: "Yra diskusija su terminu '%{query}', galite dalyvauti joje vietoj naujos."
+          other: "Yra diskusijų su terminu '%{query}', galite dalyvauti jomis vietoj naujų kūrimo."
+        message: "Matote %{limit} iš %{count} diskusijų, kuriuose yra terminas '%{query}'"
+        see_all: "Rodyti visus"
+      budget_investment:
+        found:
+          one: "Yra investicija su terminu '%{query}', galite dalyvauti ja vietoj naujos."
+          other: "Yra investicijų su terminu '%{query}', galite dalyvauti jomis vietoj naujų kūrimo."
+        message: "Matote %{limit} iš %{count} investicijų, kuriuose yra terminas '%{query}'"
+        see_all: "Rodyti visus"
+      proposal:
+        found:
+          one: "Yra pasiūlymas su terminu '%{query}', galite dalyvauti jame vietoj naujo kūrimo"
+          other: "Yra pasiūlymų su terminu '%{query}', galite dalyvauti jais vietoj naujų kūrimo"
+        message: "Matote %{limit} iš %{count} pasiūlymų, kuriuose yra terminas '%{query}'"
+        see_all: "Rodyti visus"
+    tags_cloud:
+      tags: Populiarūs žymos
+      districts: "Rajonai"
+      districts_list: "Rajonų sąrašas"
+      categories: "Kategorijos"
+    target_blank: " (nuoroda atsidaro naujame lange)"
+    you_are_in: "Jūs esate"
+    unflag: Panaikinti žymėjimą
+    unfollow_entity: "Nebesekti %{entity}"
+    outline:
+      searcher: Paieškotojas
+    go_to_page: "Pereiti prie "
+    share: Bendrinti
+    orbit:
+      previous_slide: Ankstesnis skaidrė
+      next_slide: Kita skaidrė
+    documentation: Papildoma dokumentacija
+    view_mode:
+      title: Peržiūros režimas
+      cards: Kortelės
+      list: Sąrašas
+    recommended_index:
+      title: Rekomendacijos
+      see_more: Rodyti daugiau rekomendacijų
+      hide: Slėpti rekomendacijas
+    translations:
+      select_language_prompt: Pasirinkite kalbą
+      remove_language: Pašalinti kalbą
+      add_language: Pridėti kalbą
+      languages_in_use:
+        zero: "Naudotinos 0 kalbos"
+        one: "Naudotina 1 kalba"
+        other: "Naudotinos %{count} kalbos"
+    optional: "Neprivalomi laukai"
+    required: "Privalomi laukai"
+    comments:
+      one: "1 komentaras"
+      other: "%{count} komentarų"
+      zero: "Komentarų nėra"
+  social:
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
+    telegram: "%{org} Telegram"
+    instagram: "%{org} Instagram"
+  stats:
+    index:
+      visits: Aplankymai
+      debates: Diskusijos
+      proposals: Pasiūlymai
+      comments: Komentarai
+      proposal_votes: Balsai už pasiūlymus
+      debate_votes: Balsai už diskusijas
+      comment_votes: Komentarų balsai
+      votes: Iš viso balsų
+      verified_users: Patvirtinti vartotojai
+      unverified_users: Nepatvirtinti vartotojai
+  unauthorized:
+    default: Neturite teisės pasiekti šios puslapio dalies.
+    manage:
+      all: "Neturite teisės vykdyti veiksmo „%{action}“ dėl %{subject}."
+  users:
+    login_to_comment: "Norėdami palikti komentarą, turite %{signin} arba %{signup}."
+    login_to_continue: "Norėdami tęsti, turite %{signin} arba %{signup}."
+    signin: "prisijungti"
+    signup: "registruotis"
+    verify_account: "patvirtinti savo paskyrą"
+    direct_messages:
+      new:
+        direct_messages_bloqued: "Šis vartotojas nusprendė negauti tiesioginių žinučių."
+        submit_button: Siųsti žinutę
+        title: Siųsti privačią žinutę vartotojui %{receiver}
+        verified_only: Norint siųsti privačią žinutę, %{verify_account}
+      show:
+        receiver: Žinutė išsiųsta vartotojui %{receiver}
+    show:
+      deleted: Ištrinta
+      deleted_debate: Ši diskusija ištrinta
+      deleted_proposal: Šis pasiūlymas ištrintas
+      deleted_budget_investment: Šis investicinis projektas ištrintas
+      proposals: Pasiūlymai
+      proposals_status: Būsena
+      debates: Diskusijos
+      budget_investments: Biudžeto investicijos
+      comments: Komentarai
+      actions: Veiksmai
+      filters:
+        comments:
+          one: 1 komentaras
+          other: "%{count} komentarai"
+        debates:
+          one: 1 diskusija
+          other: "%{count} diskusijos"
+        proposals:
+          one: 1 pasiūlymas
+          other: "%{count} pasiūlymai"
+        budget_investments:
+          one: 1 investicija
+          other: "%{count} investicijos"
+        follows:
+          one: 1 sekamasis
+          other: "%{count} sekami"
+      no_activity: Vartotojas neturi viešosios veiklos
+      no_private_messages: "Šis vartotojas nepriima privačių žinučių."
+      private_activity: Šis vartotojas nusprendė, kad veiklos sąrašas bus privatus.
+      send_private_message: "Siųsti privačią žinutę"
+      delete_alert: "Ar tikrai norite ištrinti savo investicinį projektą? Šis veiksmas negali būti atšauktas"
+    proposals:
+      retired: "Pasiūlymas atsiimtas"
+      draft: Juodraštis
+      published: Paskelbtas
+      see: "Peržiūrėti pasiūlymą"
+      actions: Veiksmai
+      retired_help_text: Atsiimtiems pasiūlymams skydas nepasiekiamas
+  votes:
+    agree: Sutinku
+    agree_label: "Sutinku su %{title}"
+    anonymous: Per daug anoniminių balsų, kad būtų galima patikrinti balsą %{verify_account}.
+    disagree: Nesutinku
+    disagree_label: "Nesutinku su %{title}"
+    organizations: Organizacijoms balsuoti draudžiama
+    supports: Palaiko
+    verified_only: Tik patvirtinti vartotojai gali balsuoti už pasiūlymus; %{verify_account}.
+    budget_investments:
+      not_verified: Tik patvirtinti vartotojai gali balsuoti už investicinius projektus; %{verify_account}.
+      unfeasible: Nesvarbu, kad investicinis projektas yra nereali, jį galima palaikyti
+      not_voting_allowed: Balsavimo etapas uždarytas
+      different_heading_assigned:
+        one: "Galite remti investicinius projektus tik %{count} rajone. Jūs jau remėte investicijas skirtose srityse: %{supported_headings}."
+        other: "Galite remti investicinius projektus tik %{count} rajonuose. Jūs jau remėte investicijas skirtose srityse: %{supported_headings}."
+  welcome:
+    feed:
+      most_active:
+        debates: "Aktyviausios diskusijos"
+        proposals: "Aktyviausi pasiūlymai"
+        processes: "Atviri procesai"
+      see_all:
+        debates: Peržiūrėti visas diskusijas
+        proposals: Peržiūrėti visus pasiūlymus
+        processes: Peržiūrėti visus procesus
+      no_items:
+        debates: Šiuo metu nėra jokių diskusijų
+        proposals: Šiuo metu nėra jokių pasiūlymų
+        processes: Šiuo metu nėra atvirų procesų
+      process_label: Procesas
+      see_process: Peržiūrėti procesą
+    cards:
+      title: Pateikta
+    recommended:
+      title: Jums gali patikti rekomendacijos
+      help: "Šios rekomendacijos generuojamos iš debatų ir pasiūlymų žymių, kuriomis jūs sekate."
+      debates:
+        title: Rekomenduojamos diskusijos
+        btn_text_link: Visos rekomenduojamos diskusijos
+      proposals:
+        title: Rekomenduojami pasiūlymai
+        btn_text_link: Visi rekomenduojami pasiūlymai
+      budget_investments:
+        title: Rekomenduojamos investicijos
+      slide: "Peržiūrėti %{title}"
+    welcome:
+      go_to_index: Dabar ne, eiti į indekso puslapį
+      start_using_consul: Eiti į indekso puslapį
+      title: Dalyvauti
+      user_permission_info: Su savo paskyra galite...
+      user_permission_verify: "Norėdami atlikti šiuos veiksmus, patvirtinkite savo paskyrą."
+      user_permission_verify_my_account: Patvirtinti mano paskyrą
+  invisible_captcha:
+    sentence_for_humans: "Jei esate žmogus, ignoruokite šį lauką"
+    timestamp_error_message: "Atsiprašome, tai buvo per greita! Prašome pateikti dar kartą."
+  related_content:
+    title: "Susiję turinys"
+    add: "Pridėti susijusį turinį"
+    label: "Nuoroda į susijusį turinį"
+    placeholder: "%{url}"
+    help: "Galite pridėti %{models} nuorodas į %{org}."
+    submit: "Pridėti"
+    error: "Netinkama nuoroda. Atminkite, kad pradėti nuoroda turi būti %{url}."
+    error_duplicate: "Pridedamas susijęs turinys jau egzistuoja."
+    error_itself: "Netinkama nuoroda. Negalite susieti turinio su juo pačiu."
+    success: "Pridėjote naują susijusį turinį"
+    is_related: "Ar tai susijęs turinys?"
+    score_positive: "Taip"
+    score_negative: "Ne"
+    content_title:
+      proposal: "Pasiūlymas"
+      debate: "Diskusija"
+      budget_investment: "Biudžeto investicija"
+  admin/widget:
+    header:
+      title: Administravimas
+  annotator:
+    help:
+      alt: Pasirinkite tekstą, kurį norite pateikti komentarui, ir spustelėkite pieštuko mygtuką.
+      text: Norėdami komentuoti šį dokumentą, turite %{sign_in} arba %{sign_up}. Tada pasirinkite tekstą, kurį norite pateikti komentarui, ir spustelėkite pieštuko mygtuką.
+      title: Kaip galiu komentuoti šį dokumentą?
+  links:
+    form:
+      delete_button: Ištrinti
+      cancel_button: Atšaukti
+    nested_links:
+      title: Nuorodos
+      note: Pridėkite nuorodas, kurios jus domina
+      add_new_link: Pridėti naują nuorodą
+  communities:
+    show:
+      surveys: Apklausos
+      complete_survey: Užpildykite apklausą
+    subnav:
+      surveys: Apklausos
+    poll:
+      take_part: Dalyvauti nuo %{from} iki %{to}
+  remote_translations:
+    text: Šio puslapio turinys jūsų kalba nepasiekiamas
+    all_remote_translations_enqueued_text: Per trumpą laiką atnaujindami puslapį galėsite pamatyti visą turinį jūsų kalba.
+    create:
+      enqueue_remote_translation: Vertimai sėkmingai užklausiami.
+    button: Versti puslapį
+  tags:
+    list:
+      filter:
+        more:
+          one: "Viena daugiau žyma"
+          other: "%{count} daugiau žymos"
+  machine_learning:
+    comments_summary: "Komentarų santrauka"
+    info_text: "Turinys sugeneruotas dirbtiniu intelektu / mašininio mokymosi būdu"

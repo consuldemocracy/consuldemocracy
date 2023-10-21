@@ -1,1 +1,155 @@
 lt:
+  pages:
+    census_terms:
+      title: "Survejimo prieigos sąlygos"
+      description: "Informacinė puslapio apie Survejimo prieigos sąlygas dalis."
+    conditions:
+      title: "Naudojimo sąlygos"
+      subtitle: "TEISINĖ PASTABA DĖL NAUDOJIMO SĄLYGŲ, PRIVATUMO IR ASMENINIŲ DUOMENŲ APSAUGOS ATVIRO GOVERNO PORTALO"
+      description: "Informacinė puslapio apie naudojimo sąlygas, privatumą ir asm. duomenų apsaugą dalis."
+    help:
+      title: "%{org} yra piliečių dalyvavimo platforma"
+      guide: "Šis vadovas paaiškina, kam skirti %{org} skirsniai ir kaip jie veikia."
+      menu:
+        debates: "Diskusijos"
+        proposals: "Pasiūlymai"
+        budgets: "Dalyvaujamieji biudžetai"
+        polls: "Apklausos"
+        other: "Kita įdomi informacija"
+        processes: "Procesai"
+      debates:
+        title: "Diskusijos"
+        description: "Dalies jūsų nuomonę su kitais žmonėmis dėl jūsų miestui rūpimų klausimų galite pateikti ir pasidalinti %{link} skiltyje. Tai taip pat vieta, kur generuoti idėjas, kurios per kitus %{org} skirsnius sukuria konkrečias priemones miesto tarybos veiksmams."
+        link: "piliečių diskusijos"
+        feature: "Galite atverti diskusijas, komentuoti ir vertinti jas pasirinkę <strong>Sutinku</strong> arba <strong>Ne sutinku</strong>. Tam turite %{link}."
+        feature_link: "užsiregistruoti %{org}"
+        image_alt: "Mygtukai vertinti diskusijas"
+        figcaption: '"Sutinku" ir "Nesutinku" mygtukai, skirti vertinti diskusijas.'
+      proposals:
+        title: "Pasiūlymai"
+        description: "Pasiūlymų dėl jų įvykdymo miesto tarybos galite pateikti %{link} skiltyje. Pasiūlymai reikalauja palaikymo, ir jei jie surinko pakankamą paramą, juos pateikiamos viešam balsavimui. Piliečių balsais patvirtinti pasiūlymai miesto tarybos priimami ir įgyvendinami."
+        link: "piliečių pasiūlymai"
+        image_alt: "Mygtukas palaikyti pasiūlymą"
+        figcaption: 'Mygtukas "Palaikyti" pasiūlymą.'
+      budgets:
+        title: "Dalyvaujamas biudžetavimas"
+        description: "Padeda žmonėms tiesiogiai nuspręsti, kokią dalį miesto biudžeto išleisti."
+        link: "dalyvaujamieji biudžetai"
+        image_alt: "Skirtingi dalyvaujamo biudžetavimo etapai"
+        figcaption: 'Dalyvaujamo biudžetavimo "Palaikyti" ir "Balsavimo" etapai.'
+      polls:
+        title: "Apklausos"
+        description: "Ši skiltis aktyvuojama, kai pasiūlymas pasiekia 1% paramą ir pateikiamas balsavimui, arba kai miesto taryba žmones ragina spręsti klausimą."
+        link: "apklausos"
+        feature_1: "Dalyvauti balsavime turite %{link} ir patvirtinti savo paskyrą."
+        feature_1_link: "užsiregistruoti %{org_name}"
+      processes:
+        title: "Procesai"
+        description: "Šioje skiltyje piliečiai dalyvauja ruošiant ir keičiant taisykles, turinčias įtakos miestui, taip pat gali reikšti savo nuomonę apie miesto politiką ankstesnėse diskusijose."
+        link: "procesai"
+        feature: "Dalyvauti procesuose turite %{link} ir patvirtinti savo paskyrą."
+        feature_link: "užsiregistruoti %{org_name}"
+      faq:
+        title: "Techninės problemos?"
+        description: "Perskaitykite DUK ir išsiaiškinkite savo klausimus."
+        button: "Žiūrėti dažniausiai užduodamus klausimus"
+        page:
+          title: "Dažnai užduodami klausimai"
+          description: "Naudokite šį puslapį, kad atsakytumėte į bendrus klausimus, kylančius naudotojams naudojantis svetaine."
+      other:
+        title: "Kita įdomi informacija"
+        how_to_use: "Naudokite %{org_name} savo mieste"
+        sdg: "Tvaraus vystymosi tikslai padeda"
+      how_to_use:
+        text: |-
+          Naudokite ją savo savivaldybėje ar padėkite mums ją pagerinti, tai yra nemokama programinė įranga.
+
+          Ši Atviro Governo Portalo programinė įranga naudoja [CONSUL DEMOKRATIJOS programėlę](https://github.com/consuldemocracy/consuldemocracy 'consul democracy github'), kuri yra nemokama programinė įranga, su [AGPLv3 licencija](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), tai reiškia paprastais žodžiais, kad bet kas gali laisvai naudoti kodą, jį kopijuoti, išnagrinėti išsamiai, modifikuoti ir platinti visame pasaulyje su norimais pakeitimais (leisdami kitiems tai paties daryti). Nes manome, kad kultūra yra geresnė ir turtingesnė, kai ji yra atvira.
+
+          Jei esate programuotojas, galite peržiūrėti kodą ir padėti jį pagerinti [CONSUL DEMOKRATIJOS programėlėje](https://github.com/consuldemocracy/consuldemocracy 'consul democracy github').
+      titles:
+        how_to_use: Naudokite ją savo savivaldybėje
+    privacy:
+      title: "Privatumo politika"
+      subtitle: "Informacinė puslapio apie privatumą dalis"
+    accessibility:
+      title: "Prieinamumas"
+      description: |-
+        Tinklalapio prieinamumas reiškia galimybę visiems žmonėms, nepaisant negalių (fizinės, intelektualinės ar techninės), atsirandančių ar išplaukiančių iš naudojimo konteksto (technologinio ar aplinkos).
+
+        Projektuojant tinklalapius su prieinamumu omenyje, visi vartotojai gali pasiekti turinį lygiomis sąlygomis, pvz.:
+      examples:
+        - "Suteikiant alternatyvų tekstą paveikslėliams, aklieji ar silpnaregiai gali naudoti specialius skaitytuvus, kad pasiektų informaciją."
+        - "Kai vaizdo įrašuose yra subtitrai, klausos problemų turintys vartotojai gali juos visiškai suprasti."
+        - "Jei turinys parašytas paprastu ir iliustruotu stiliumi, mokymosi problemų turintys vartotojai lengviau gali jį suprasti."
+        - "Jei vartotojui yra sunku naudotis pelės pele, alternatyvos klaviatūra padeda navigacijoje."
+      keyboard_shortcuts:
+        title: "Klavišų sparčiuosius klavišus"
+        navigation_table:
+          description: "Norint galėti naudotis šiuo tinklalapiu prieinamu būdu, sukurti grupę greitųjų prieigos klavišų, kurie renka pagrindinius visiems įdomius skyrius, į kuriuos suskirstytas svetainė."
+          caption: "Klavišų sparčieji klavišai navigacijos meniu"
+          key_header: "Klavišas"
+          page_header: "Puslapis"
+          rows:
+            - key_column: 0
+              page_column: "Pradžia"
+            - key_column: 1
+              page_column: "Diskusijos"
+            - key_column: 2
+              page_column: "Pasiūlymai"
+            - key_column: 3
+              page_column: "Balsai"
+            - key_column: 4
+              page_column: "Dalyvaujamieji biudžetai"
+            - key_column: 5
+              page_column: "Teisėkūros procesai"
+        browser_table:
+          description: "Priklausomai nuo naudojamos operacinės sistemos ir naršyklės, klavišų derinys bus toks:"
+          caption: "Klavišų derinys priklausomai nuo naudojamos operacinės sistemos ir naršyklės"
+          browser_header: "Naršyklė"
+          key_header: "Klavišų derinys"
+          rows:
+            - browser_column: "Internet Explorer"
+              key_column: "ALT + sparčiuoju klavišu tada ENTER"
+            - browser_column: "Firefox"
+              key_column: "ALT + CAPS + sparčiuoju klavišu"
+            - browser_column: "Chrome"
+              key_column: "ALT + sparčiuoju klavišu (CTRL + ALT + sparčiuosius klavišus naudojant MAC)"
+            - browser_column: "Safari"
+              key_column: "ALT + sparčiuoju klavišu (CMD + sparčiuosius klavišus naudojant MAC)"
+            - browser_column: "Opera"
+              key_column: "CAPS + ESC + sparčiuoju klavišu"
+      textsize:
+        title: "Teksto dydis"
+        browser_settings_table:
+          description: "The accessible design of this website allows the user to choose the size of the text that suits him. This action can be carried out in different ways depending on the browser used."
+          browser_header: Browser
+          action_header: Action to be taken
+          rows:
+            - browser_column: Explorer
+              action_column: "View > Text size"
+            - browser_column: Firefox
+              action_column: "View > Size"
+            - browser_column: Chrome
+              action_column: "Settings (icon) > Options > Advanced > Web Content > Text size"
+            - browser_column: Safari
+              action_column: "View > Zoom In/Zoom out"
+            - browser_column: Opera
+              action_column: "View > scale"
+        browser_shortcuts_table:
+          description: "Another way to modify the text size is to use the keyboard shortcuts defined in browsers, in particular the key combination:"
+          rows:
+            - shortcut_column: "CTRL and + (CMD and + on MAC)"
+              description_column: "Increases text size"
+            - shortcut_column: "CTRL and - (CMD and - on MAC)"
+              description_column: "Decreases text size"
+      compatibility:
+        title: "Suderinamumas su standartais ir vizualiniu dizainu"
+        description: 'Visi šio tinklalapio puslapiai atitinka <strong>Prieinamumo gaires</strong> arba bendruosius prieinamų dizaino principus, nustatytus dirbančios grupės <abbr title="Tinklalapių prieinamumo iniciatyva" lang="en">WAI</abbr>, priklausančios W3C.'
+    titles:
+      help: "Kas yra %{org}? - Piliečių dalyvavimas"
+    verify:
+      info: "Norėdami patvirtinti savo paskyrą, įveskite savo prisijungimo duomenis:"
+      info_code: "Dabar įveskite kodą, kurį gavote laiške:"
+      submit: "Patvirtinti mano paskyrą"
+      title: "Patvirtinkite savo paskyrą"

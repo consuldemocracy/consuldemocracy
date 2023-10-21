@@ -1,1 +1,65 @@
 lt:
+  devise:
+    password_expired:
+      expire_password: "Slaptažodis pasibaigė"
+      change_required: "Jūsų slaptažodis yra pasibaigęs"
+      change_password: "Pakeiskite savo slaptažodį"
+      new_password: "Naujas slaptažodis"
+      updated: "Slaptažodis sėkmingai atnaujintas"
+    confirmations:
+      confirmed: "Jūsų paskyra patvirtinta."
+      send_instructions: "Po kelių minučių gausite el. laišką su instrukcijomis, kaip patvirtinti savo el. pašto adresą."
+      send_paranoid_instructions: "Jei jūsų el. pašto adresas yra mūsų duomenų bazėje, po kelių minučių gausite el. laišką su instrukcijomis, kaip patvirtinti savo el. pašto adresą."
+    failure:
+      already_authenticated: "Jūs jau prisijungęs."
+      inactive: "Jūsų paskyra dar neaktyvuota."
+      invalid: "Neteisingas %{authentication_keys} ar slaptažodis."
+      locked: "Jūsų paskyra užrakinta."
+      last_attempt: "Jums liko vienas bandymas prieš užrakinant jūsų paskyrą."
+      not_found_in_database: "Neteisingas %{authentication_keys} ar slaptažodis."
+      timeout: "Jūsų sesija pasibaigė. Prašome prisijungti iš naujo."
+      unauthenticated: "Norėdami tęsti, turite prisijungti ar užsiregistruoti."
+      unconfirmed: "Norėdami tęsti, prašome paspausti patvirtinimo nuorodą, kurią jums išsiuntėme el. paštu."
+    mailer:
+      confirmation_instructions:
+        subject: "Patvirtinimo instrukcijos"
+      reset_password_instructions:
+        subject: "Slaptažodžio atkūrimo instrukcijos"
+      unlock_instructions:
+        subject: "Atrakinti instrukcijos"
+    omniauth_callbacks:
+      failure: "Nepavyko autentifikuoti jūsų kaip %{kind}, nes „%{reason}\"."
+      success: "Sėkmingai nustatytas kaip %{kind}."
+    passwords:
+      no_token: "Šioje puslapyje negalite patekti, išskyrus per slaptažodžio atkūrimo nuorodą. Jei į ją patekote per slaptažodžio atkūrimo nuorodą, patikrinkite, ar URL yra teisingas."
+      send_instructions: "Po kelių minučių gausite el. laišką su slaptažodžio atkūrimo instrukcijomis."
+      send_paranoid_instructions: "Jei jūsų el. pašto adresas yra mūsų duomenų bazėje, po kelių minučių gausite nuorodą, kuria naudosite slaptažodžio atkūrimui."
+      updated: "Jūsų slaptažodis sėkmingai pakeistas. Autentifikacija sėkminga."
+      updated_not_active: "Jūsų slaptažodis sėkmingai pakeistas."
+    registrations:
+      destroyed: "Viso gero! Jūsų paskyra atšaukta. Tikimės greito sugrįžimo."
+      signed_up: "Sveiki atvykę! Jūs esate autentifikuotas."
+      signed_up_but_inactive: "Jūsų registracija buvo sėkminga, tačiau jūs negalite prisijungti, nes jūsų paskyra dar neaktyvuota."
+      signed_up_but_locked: "Jūsų registracija buvo sėkminga, tačiau jūs negalite prisijungti, nes jūsų paskyra užrakinta."
+      signed_up_but_unconfirmed: "Jums išsiųstas pranešimas su patvirtinimo nuoroda. Prašome paspausti šią nuorodą, kad aktyvuotumėte savo paskyrą."
+      update_needs_confirmation: "Jūsų paskyra sėkmingai atnaujinta; tačiau mums reikia patvirtinti jūsų naują el. pašto adresą. Prašome patikrinti savo el. paštą ir paspausti nuorodą, kad patvirtintumėte naują el. pašto adresą."
+      updated: "Jūsų paskyra sėkmingai atnaujinta."
+    sessions:
+      signed_in: "Jūs sėkmingai prisijungėte."
+      signed_out: "Jūs sėkmingai atsijungėte."
+      already_signed_out: "Jūs jau sėkmingai atsijungėte."
+    unlocks:
+      send_instructions: "Po kelių minučių gausite el. laišką su paskyros atrakinimo instrukcijomis."
+      send_paranoid_instructions: "Jei turite paskyrą, po kelių minučių gausite el. laišką su paskyros atrakinimo instrukcijomis."
+      unlocked: "Jūsų paskyra buvo atrakinta. Prašome prisijungti, kad tęstumėte."
+  errors:
+    messages:
+      already_confirmed: "Jūs jau patvirtintas; prašome bandyti prisijungti."
+      confirmation_period_expired: "Jums reikia patvirtinti per %{period}; prašome pakartoti užklausą."
+      expired: "pasibaigė; prašome pakartoti užklausą."
+      not_found: "nerastas."
+      not_locked: "nebuvo užrakintas."
+      not_saved:
+        one: "1 klaida neleido išsaugoti šio %{resource}. Prašome patikrinti pažymėtas laukus, kad žinotumėte, kaip jas pataisyti:"
+        other: "%{count} klaidos neleido išsaugoti šio %{resource}. Prašome patikrinti pažymėtas laukus, kad žinotumėte, kaip jas pataisyti:"
+      equal_to_current_password: "turi skirtis nuo dabartinio slaptažodžio."

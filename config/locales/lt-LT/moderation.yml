@@ -1,1 +1,111 @@
 lt:
+  moderation:
+    actions:
+      confirm_action: "Ar tikrai? %{action}"
+    comments:
+      index:
+        block_authors: "Užblokuoti autoriai"
+        filter: "Filtruoti"
+        filters:
+          all: "Visi"
+          pending_flag_review: "Laukia peržiūros"
+          with_ignored_flag: "Pažymėta kaip peržiūrėta"
+        headers:
+          comment: "Komentaras"
+          moderate: "Moderuoti"
+        hide: "Slėpti komentarus"
+        ignore_flags: "Pažymėti kaip peržiūrėtus"
+        orders:
+          flags: "Daugiausiai pažymėta"
+          newest: "Naujausi"
+        title: "Komentarai"
+    dashboard:
+      index:
+        title: "Moderavimas"
+    debates:
+      index:
+        block_authors: "Užblokuoti autoriai"
+        filter: "Filtruoti"
+        filters:
+          all: "Visi"
+          pending_flag_review: "Laukia peržiūros"
+          with_ignored_flag: "Pažymėta kaip peržiūrėta"
+        headers:
+          debate: "Diskusija"
+          moderate: "Moderuoti"
+        hide: "Slėpti diskusijas"
+        ignore_flags: "Pažymėti kaip peržiūrėtas"
+        orders:
+          created_at: "Naujausi"
+          flags: "Daugiausiai pažymėta"
+        title: "Diskusijos"
+    header:
+      title: "Moderavimas"
+    menu:
+      flagged_comments: "Komentarai"
+      flagged_debates: "Diskusijos"
+      flagged_investments: "Biudžeto investicijos"
+      proposals: "Pasiūlymai"
+      proposal_notifications: "Pasiūlymų pranešimai"
+      users: "Užblokuoti vartotojai"
+    proposals:
+      index:
+        block_authors: "Užblokuoti autoriai"
+        filter: "Filtruoti"
+        filters:
+          all: "Visi"
+          pending_flag_review: "Laukia peržiūros"
+          with_ignored_flag: "Pažymėta kaip peržiūrėta"
+        headers:
+          moderate: "Moderuoti"
+          proposal: "Pasiūlymas"
+        hide: "Slėpti pasiūlymus"
+        ignore_flags: "Pažymėti kaip peržiūrėtus"
+        orders:
+          created_at: "Naujausi"
+          flags: "Daugiausiai pažymėta"
+        title: "Pasiūlymai"
+    budget_investments:
+      index:
+        block_authors: "Užblokuoti autoriai"
+        filter: "Filtruoti"
+        filters:
+          all: "Visi"
+          pending_flag_review: "Laukia peržiūros"
+          with_ignored_flag: "Pažymėta kaip peržiūrėta"
+        headers:
+          moderate: "Moderuoti"
+          budget_investment: "Biudžeto investicija"
+        hide: "Slėpti biudžeto investicijas"
+        ignore_flags: "Pažymėti kaip peržiūrėtas"
+        orders:
+          created_at: "Naujausi"
+          flags: "Daugiausiai pažymėta"
+        title: "Biudžeto investicijos"
+    proposal_notifications:
+      index:
+        block_authors: "Užblokuoti autoriai"
+        filter: "Filtruoti"
+        filters:
+          all: "Visi"
+          pending_review: "Laukia peržiūros"
+          ignored: "Pažymėta kaip peržiūrėta"
+        headers:
+          moderate: "Moderuoti"
+          proposal_notification: "Pasiūlymo pranešimas"
+        hide: "Slėpti pasiūlymus"
+        ignore_flags: "Pažymėti kaip peržiūrėtus"
+        orders:
+          created_at: "Naujausi"
+          moderated: "Moderuota"
+        title: "Pasiūlymo pranešimai"
+    users:
+      index:
+        block: "Blokuoti"
+        confirm_block: "Ar tikrai? Tai paslėps vartotoją „%{name}“ ir visus jo turinio elementus."
+        confirm_hide: "Ar tikrai? Tai paslėps vartotoją „%{name}“, palikdamas jo turinį matomą."
+        hide: "Slėpti"
+        search_placeholder: "Vartotojo el. paštas arba vardas"
+        title: "Blokuoti vartotojai"
+      notice_block: "Vartotojas užblokuotas. Visas šio vartotojo sukurtas turinys yra paslėptas."
+      notice_hide: "Vartotojas paslėptas. Vartotojo sukurtas turinys vis dar yra prieinamas."

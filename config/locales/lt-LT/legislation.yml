@@ -1,1 +1,134 @@
 lt:
+  legislation:
+    annotations:
+      comments:
+        see_all: "Rodyti visus"
+        see_complete: "Rodyti visą"
+        replies_count:
+          one: "%{count} atsakymas"
+          other: "%{count} atsakymai"
+        cancel: "Atšaukti"
+        publish_comment: "Paskelbti komentarą"
+      form:
+        phase_not_open: "Ši stadija dar nėra atvira"
+      index:
+        title: "Komentarai"
+        comments_about: "Komentarai apie"
+        see_in_context: "Rodyti kontekste"
+      show:
+        title: "Komentaras"
+      version_chooser:
+        seeing_version: "Komentarai versijai"
+        see_text: "Rodyti teksto projektą"
+    draft_versions:
+      changes:
+        title: "Pakeitimai"
+        seeing_changelog_version: "Peržiūrimi pakeitimai"
+        see_text: "Rodyti teksto projektą"
+      show:
+        loading_comments: "Komentarai kraunami"
+        seeing_version: "Šiuo metu žiūrite projekto versiją"
+        select_draft_version: "Pasirinkite projektą"
+        select_version_submit: "žiūrėti"
+        updated_at: "atnaujinta %{date}"
+        see_changes: "žiūrėti pakeitimų santrauką"
+        see_comments: "Rodyti visus komentarus"
+        text_toc: "Turinys"
+        text_body: "Tekstas"
+        text_comments: "Komentarai"
+    processes:
+      header:
+        additional_info: "Papildoma informacija"
+        description: "Aprašymas"
+        more_info: "Daugiau informacijos ir konteksto"
+      proposals:
+        empty_proposals: "Nėra pasiūlymų"
+        filters:
+          random: "Atsitiktiniai"
+          winners: "Pasirinkti"
+      debate:
+        empty_questions: "Nėra klausimų"
+      index:
+        filter: "Filtruoti"
+        filters:
+          open: "Atviri procesai"
+          past: "Praėję"
+        no_open_processes: "Nėra atvirų procesų"
+        no_past_processes: "Nėra praėjusių procesų"
+        section_header:
+          icon_alt: "Bendradarbiavimo įstatymų leidyba piktograma"
+          title: "Bendradarbiavimo įstatymų leidyba"
+          help: "Pagalba su bendradarbiavimo įstatymų leidyba"
+        section_footer:
+          title: "Pagalba su bendradarbiavimo įstatymų leidyba"
+          description: "Dalyvaukite debatuose ir procesuose iki naujų teisės aktų ar strategijų patvirtinimo. Jūsų nuomonė bus įvertinta."
+      phase_not_open:
+        not_open: "Ši stadija dar nėra atvira"
+      phase_empty:
+        empty: "Dar nieko nepublikuota"
+      process:
+        see_latest_comments: "Rodyti naujausius komentarus"
+        see_latest_comments_title: "Komentuoti šį procesą"
+      shared:
+        key_dates: "Dalyvavimo etapai"
+        homepage: "Pagrindinis puslapis"
+        debate_dates: "Debatas"
+        draft_publication_date: "Projekto publikavimas"
+        allegations_dates: "Komentarai"
+        result_publication_date: "Galutinio rezultato publikavimas"
+        milestones_date: "Sekantis"
+        proposals_dates: "Pasiūlymai"
+    questions:
+      comments:
+        comment_button: "Paskelbti atsakymą"
+        comments_title: "Atviri atsakymai"
+        comments_closed: "Uždaros stadijos"
+        form:
+          leave_comment: "Palikti savo atsakymą"
+      question:
+        debate: "Debatas"
+      show:
+        answer_question: "Pateikti atsakymą"
+        next_question: "Kitas klausimas"
+        first_question: "Pirmas klausimas"
+        share: "Dalintis"
+        title: "Bendradarbiavimo įstatymų leidybos procesas"
+      participation:
+        phase_not_open: "Ši stadija dar nėra atvira"
+        organizations: "Organizacijos neturi teisės dalyvauti debatuose"
+        unauthenticated: "Jums reikia %{signin} arba %{signup}, norint dalyvauti."
+        verified_only: "Tik patvirtinti vartotojai gali dalyvauti, %{verify_account}."
+        debate_phase_not_open: "Debato stadija baigėsi, atsakymai daugiau nebegalimi"
+    shared:
+      share: "Dalintis"
+      share_comment: "Komentuoti %{version_name} iš proceso projekto %{process_name}"
+    proposals:
+      form:
+        tags_label: "Kategorijos"
+      not_verified: "Norint balsuoti už pasiūlymus, būtina %{verify_account}."
+      process_title: "Bendradarbiavimo įstatymų leidybos procesas"
+    summary:
+      title: "Santrauka"
+      votes:
+        zero: "%{count} balsų"
+        one: "%{count} balsas"
+        other: "%{count} balsai"
+      debate_phase: "Debato stadija"
+      proposals_phase: "Pasiūlymų stadija"
+      allegations_phase: "Komentarų stadija"
+      debates:
+        zero: "Nėra debatų"
+        one: "%{count} debatas"
+        other: "%{count} debatai"
+      proposals:
+        zero: "Nėra pasiūlymų"
+        one: "%{count} pasiūlymas"
+        other: "%{count} pasiūlymai"
+      download: "Atsisiųsti santrauką"
+      top_comments:
+        zero: "Nėra komentarų"
+        one: "%{count} komentaras"
+        other: "Top komentarai"
+      most_voted_comments: "Labiausiai balsuoti komentarai"
+      no_allegation: "Nėra komentarų"
+      process_empty: "Šis procesas neturėjo dalyvavimo etapų"

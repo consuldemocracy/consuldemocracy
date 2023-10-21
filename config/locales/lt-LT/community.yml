@@ -1,1 +1,49 @@
 lt:
+  community:
+    sidebar:
+      title: "Bendruomenė"
+      description:
+        proposal: "Dalyvaukite šio pasiūlymo vartotojų bendruomenėje."
+        investment: "Dalyvaukite šios investicijos vartotojų bendruomenėje."
+      button_to_access: "Prieiti prie bendruomenės"
+    show:
+      title:
+        proposal: "Pasiūlymo bendruomenė"
+        investment: "Biudžeto Investicijų bendruomenė"
+      description:
+        proposal: "Dalyvaukite šio pasiūlymo bendruomenėje. Aktyvi bendruomenė gali padėti pagerinti pasiūlymo turinį ir padidinti jo sklaidą, siekiant gauti daugiau palaikymo."
+        investment: "Dalyvaukite šios biudžeto investicijos bendruomenėje. Aktyvi bendruomenė gali padėti pagerinti biudžeto investicijos turinį ir padidinti jo sklaidą, siekiant gauti daugiau palaikymo."
+      create_first_community_topic:
+        first_theme_not_logged_in: "Jokių problemų nėra, dalyvaukite kuriant pirmąją."
+        first_theme: "Sukurkite pirmą bendruomenės temą"
+        sub_first_theme: "Norėdami sukurti temą, turite %{sign_in} arba %{sign_up}."
+      tab:
+        participants: "Dalyviai"
+      sidebar:
+        participate: "Dalyvauti"
+        new_topic: "Kurti temą"
+      topic:
+        edit: "Redaguoti temą"
+        destroy: "Ištrinti temą"
+      author: "Autorius"
+      back: "Grįžti į %{community} %{proposal}"
+    topic:
+      create: "Sukurti temą"
+      edit: "Redaguoti temą"
+      form:
+        new:
+          submit_button: "Sukurti temą"
+        edit:
+          submit_button: "Redaguoti temą"
+        create:
+          submit_button: "Sukurti temą"
+        update:
+          submit_button: "Atnaujinti temą"
+      show:
+        tab:
+          comments_tab: "Komentarai"
+      sidebar:
+        recommendations_title: "Rekomendacijos temos kūrimui"
+        recommendation_one: "Ne rašykite temos pavadinimo ar visų sakinio didžiosiomis raidėmis. Interneto erdvėje tai laikoma šauksmu. Ir niekas nemėgsta, kai į juos šaukiama."
+        recommendation_two: "Bet koki tema ar komentaras, kuris įtakoja nelegalią veiklą, bus pašalintas, taip pat tie, kurie siekia sabotažuoti temos erdvę; viskas kita yra leidžiama."
+        recommendation_three: "Mėgaukitės šia erdve, balsai, kurie ją užpildo, yra ir jūsų."

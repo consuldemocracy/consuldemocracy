@@ -1,1 +1,8 @@
 lt:
+  milestones:
+    index:
+      no_milestones: "Nėra apibrėžtų etapų"
+      progress: "Progresas"
+    show:
+      publication_date: "Paskelbta %{publication_date}"
+      status_changed: "Būsena pakeista į"

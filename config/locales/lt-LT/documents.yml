@@ -1,1 +1,24 @@
 lt:
+  documents:
+    title: "Dokumentai"
+    max_documents_allowed_reached: "Pasiekei maksimalų leidžiamų dokumentų skaičių! <strong>Turite ištrinti vieną dokumentą, prieš įkeliant kitą.</strong>"
+    additional: "Papildoma dokumentacija"
+    form:
+      title: "Dokumentai"
+      title_placeholder: "Įveskite aprašomą dokumento pavadinimą"
+      delete_button: "Pašalinti dokumentą"
+      cancel_button: "Atšaukti"
+      note: "Galite įkelti iki maksimalaus leidžiamo dokumentų skaičiaus: %{max_documents_allowed}, turinčių šiuos turinio tipus: %{accepted_content_types}, iki %{max_file_size} MB vieno failo dydžio."
+      add_new_document: "Pridėti naują dokumentą"
+    actions:
+      destroy:
+        notice: "Dokumentas buvo sėkmingai ištrintas."
+        alert: "Nepavyko ištrinti dokumento."
+        confirm: "Ar tikrai norite ištrinti šį dokumentą? Šis veiksmas negali būti atšauktas!"
+    buttons:
+      download_document: "Atsisiųsti failą"
+      destroy_document: "Ištrinti dokumentą"
+    errors:
+      messages:
+        in_between: "turi būti tarp %{min} ir %{max}"
+        wrong_content_type: "turinio tipas %{content_type} neatitinka priimtų turinio tipų %{accepted_content_types}"
