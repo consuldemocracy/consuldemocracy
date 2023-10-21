@@ -1,6 +1,6 @@
 <header class="header">
   <div class="top-links">
-    <!-- <%= render Layout::LocaleSwitcherComponent.new %> -->
+  <%= render Layout::LocaleSwitcherComponent.new %>
 
     <%= link_to root_path do %>
       <%= t("admin.dashboard.index.back", org: setting["org_name"]) %>
