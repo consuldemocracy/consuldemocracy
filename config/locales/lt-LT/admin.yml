@@ -1400,7 +1400,7 @@ lt:
         coordinates: Prieinamos koordinatės
         coordinates_help: Koordinatės, kurios sukurs paspaudžiamą plotą HTML paveikslėlio žemėlapyje
         geojson: Prieinamas GeoJSON
-        geojson_help: "Turi būti formato „Polygon“ arba „MultiPolygon“; biudžeto žemėlapyje, susijusiame su šia geozona, atsiras poligonas, pagrįstas šiomis duomenų
+        geojson_help: "Turi būti formato „Polygon“ arba „MultiPolygon“; biudžeto žemėlapyje, susijusiame su šia geozona, atsiras poligonas, pagrįstas šiomis duomenų"
         create:
           notice: "Geozona sėkmingai sukurta"
         edit:
