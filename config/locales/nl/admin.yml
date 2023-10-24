@@ -471,7 +471,6 @@ nl:
         title: "Documenten"
         format: "Type"
         size: "Formaat"
-        url: "URL"
       create:
         success_notice: "Bestand is geupload"
         unable_notice: "Ongeldig document"
