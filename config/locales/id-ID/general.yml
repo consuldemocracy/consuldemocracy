@@ -123,7 +123,6 @@ id:
       invalid_date_range: "Rentang tanggal tidak valid"
   form:
     accept_terms: Saya setuju untuk %{policy} dan %{conditions}
-    accept_terms_title: Saya setuju dengan kebijakan privasi dan syarat dan ketentuan penggunaan
     conditions: Syarat dan ketentuan penggunaan
     debate: Perdebatan
     direct_message: pesan pribadi
