@@ -140,7 +140,6 @@ sr:
       invalid_date_range: "Неважећи опсег датума"
   form:
     accept_terms: Слажем се са %{policy} и са%{conditions}
-    accept_terms_title: Слажем се са политиком приватности и условима коришћења
     conditions: Услови коришћења
     debate: Расправа
     direct_message: приватне поруке
