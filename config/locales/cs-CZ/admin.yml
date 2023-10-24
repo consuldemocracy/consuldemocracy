@@ -533,7 +533,6 @@ cs:
         title: "Dokumenty"
         format: "Formát"
         size: "Velikost"
-        url: "URL"
       create:
         success_notice: "Dokument byl úspěšně nahrán"
         unable_notice: "Neplatný dokument"
