@@ -103,7 +103,6 @@ gd:
           submit: Clàraich
           terms: Le bhith a’ clàradh, tha thu a’ gabhail ris na %{terms}
           terms_link: teirmichean is cumhaichean cleachdaidh
-          terms_title: Le bhith a’ clàradh, tha thu a’ gabhail ris na teirmichean is cumhaichean cleachdaidh
           title: Clàraich
           username_is_available: Tha an t-ainm cleachdaiche ri fhaighinn
           username_is_not_available: Tha an t-ainm-cleachdaiche seo ga chleachdadh mar-thà.
