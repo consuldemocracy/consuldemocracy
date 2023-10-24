@@ -137,7 +137,6 @@ nl:
       invalid_date_range: "Ongeldige periode"
   form:
     accept_terms: Ik accepteer het %{policy} en de %{conditions}
-    accept_terms_title: Ik ga akkoord met het privacybeleid en de gebruiksvoorwaarden
     conditions: Gebruiksvoorwaarden
     debate: Debat
     direct_message: privébericht
