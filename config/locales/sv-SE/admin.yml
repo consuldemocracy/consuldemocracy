@@ -451,6 +451,16 @@ sv:
         back: Gå tillbaka till %{org}
         title: Administration
         description: Välkommen till administrationspanelen för %{org}.
+        info: |-
+          <p>Här kan du som administratör implementera och övervaka processen för medborgardeltagande i din stad eller region.</p>
+
+          <p>Du är nu en av hundratals regeringar och kommuner i hela världen som använder sig av plattformen CONSUL DEMOCRACY för att omsätta medborgardeltagande i praktiken. Grattis!</p>
+
+          <p>CONSUL DEMOCRACY-stiftelsen är hjärtat av den globala användargemenskapen. Vi ber dig kontakta oss så vi vet vem som använder programvaran och hur vi kan hjälpa till med implementering eller användning. Vi ser fram emot att välkomna dig till gemenskapen!</p>
+
+          <p>Lycka till med administrerandet!</p>
+
+          <p>Hälsningar från CONSUL DEMOCRACY-stiftelsens team.</p>
       actions:
         index:
           description: "När användare skapar förslag kan de använda förslagets dashboard, där du kan föreslå resurser och rekommendationer för att få stöd för deras idé."
@@ -529,7 +539,6 @@ sv:
         title: "Dokument"
         format: "Format"
         size: "Storlek"
-        url: "URL"
       create:
         success_notice: "Dokumentet har skickats in"
         unable_notice: "Ogiltigt dokument"
