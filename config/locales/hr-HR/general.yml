@@ -140,7 +140,6 @@ hr:
       invalid_date_range: "Nevažeč raspon podataka"
   form:
     accept_terms: Slažem se s %{policy} i %{conditions}
-    accept_terms_title: Slažem se s Politikom Privatnosti i Uvjetima korištenja
     conditions: Odredbe i uvjeti korištenja
     debate: Rasprave
     direct_message: privatna poruka
