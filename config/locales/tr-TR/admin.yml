@@ -529,7 +529,6 @@ tr:
         title: "Belgeler"
         format: "Biçim"
         size: "Boyut"
-        url: "Adres"
       create:
         success_notice: "Belge yüklendi"
         unable_notice: "Belge geçersiz"
