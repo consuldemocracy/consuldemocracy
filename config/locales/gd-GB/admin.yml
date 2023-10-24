@@ -532,7 +532,6 @@ gd:
         title: "Sgrìobhainnean"
         format: "Fòrmat"
         size: "Meud"
-        url: "URL"
       create:
         success_notice: "Chaidh an sgrìobhainn a luchdadh suas"
         unable_notice: "Sgrìobhainn mhì-dhligheach"
