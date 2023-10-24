@@ -407,7 +407,6 @@ ru:
         title: "Документы"
         format: "Формат"
         size: "Размер"
-        url: "Ссылка"
       create:
         success_notice: "Документ успешно загружен"
         unable_notice: "Неверный документ"
