@@ -135,7 +135,6 @@ ka:
       invalid_date_range: "თარიღთა დიაპაზონი არასწორია"
   form:
     accept_terms: ვეთანხმები %{policy} და %{conditions}
-    accept_terms_title: ვეთანხმები კონფიდენციალურობის პოლიტიკას და გამოყენების წესებსა და პირობებს
     conditions: გამოყენების წესები და პირობები
     debate: დებატები
     direct_message: პირადი შეტყობინება
