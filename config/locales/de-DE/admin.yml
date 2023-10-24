@@ -526,7 +526,6 @@ de:
         title: "Dokumente"
         format: "Format"
         size: "Größe"
-        url: "URL"
       create:
         success_notice: "Dokument erfolgreich hochgeladen"
         unable_notice: "Ungültiges Dokument"
