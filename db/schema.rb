@@ -1644,6 +1644,9 @@ ActiveRecord::Schema.define(version: 2023_10_12_141318) do
     t.boolean "recommended_debates", default: true
     t.boolean "recommended_proposals", default: true
     t.string "subscriptions_token"
+    t.integer "failed_attempts", default: 0, null: false
+    t.datetime "locked_at"
+    t.string "unlock_token"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["date_of_birth"], name: "index_users_on_date_of_birth"
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -1652,6 +1655,7 @@ ActiveRecord::Schema.define(version: 2023_10_12_141318) do
     t.index ["hidden_at"], name: "index_users_on_hidden_at"
     t.index ["password_changed_at"], name: "index_users_on_password_changed_at"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
     t.index ["username"], name: "index_users_on_username"
   end
 
