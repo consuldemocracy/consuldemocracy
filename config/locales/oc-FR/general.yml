@@ -135,7 +135,6 @@ oc:
       invalid_date_range: "Lo reng de datas es pas valid"
   form:
     accept_terms: Accèpti la %{policy} e las %{conditions}
-    accept_terms_title: Accèpti la Politica de privadança e las Condicions d'usatge
     conditions: Condicions d'usatge
     debate: debat prealable
     direct_message: lo messatge privat
