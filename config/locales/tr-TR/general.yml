@@ -143,7 +143,6 @@ tr:
         poll_ended: "Oylama bitirildikten sonra değiştirilemez"
   form:
     accept_terms: '%{policy} ve %{conditions} metinlerini kabul ediyorum'
-    accept_terms_title: Gizlilik ileksi ve kullanım hüküm ve koşullarını kabul ediyorum
     conditions: Kullanım hüküm ve koşulları
     debate: Tartışma
     direct_message: özel ileti
@@ -719,7 +718,7 @@ tr:
       districts: "Bölgeler"
       districts_list: "Bölgeler listesi"
       categories: "Kategoriler"
-    target_blank: " (bağlantı yeni pencerede açılır)"
+    target_blank: " (bağlantı yeni pencerede açılacak)"
     you_are_in: "Şuradasınız"
     unflag: İşareti kaldır
     unfollow_entity: "%{entity} takibini bırak"
