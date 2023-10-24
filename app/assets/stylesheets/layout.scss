@@ -1695,7 +1695,7 @@ table {
 
   button,
   form {
-    color: $text-light;
+    color: $dark-gray;
     display: inline-block;
   }
 
@@ -1707,22 +1707,25 @@ table {
     }
   }
 
-  .in-favor button {
-    @include has-fa-icon(thumbs-up, solid);
+  @mixin like-unlike-icon($icon, $pressed-color) {
+    @include has-fa-icon($icon, regular);
 
-    &:hover,
+    &[aria-pressed=false]:hover,
+    &[aria-pressed=true]:not(:hover) {
+      @include has-fa-icon($icon, solid);
+    }
+
     &[aria-pressed=true] {
-      color: $like;
+      color: $pressed-color;
     }
   }
 
-  .against button {
-    @include has-fa-icon(thumbs-down, solid);
+  .in-favor button {
+    @include like-unlike-icon(thumbs-up, $like);
+  }
 
-    &:hover,
-    &[aria-pressed=true] {
-      color: $unlike;
-    }
+  .against button {
+    @include like-unlike-icon(thumbs-down, $unlike);
   }
 }
 
