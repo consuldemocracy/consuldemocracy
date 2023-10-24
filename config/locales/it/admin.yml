@@ -529,7 +529,6 @@ it:
         title: "Documenti"
         format: "Formato"
         size: "Dimensioni"
-        url: "URL"
       create:
         success_notice: "Documento caricato con successo"
         unable_notice: "Documento non valido"
