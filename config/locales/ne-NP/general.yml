@@ -143,7 +143,6 @@ ne:
         poll_ended: "मतदान सकिएको खण्डमा परिवर्तन गर्न सकिँदैन"
   form:
     accept_terms: म %{policy} र %{conditions} मा सहमत छु
-    accept_terms_title: म गोपनीयता नीति र प्रयोगका नियम र सर्तहरूमा सहमत छु
     conditions: प्रयोगका सर्तहरू र सर्तहरू
     debate: बहस
     direct_message: निजी सन्देश
