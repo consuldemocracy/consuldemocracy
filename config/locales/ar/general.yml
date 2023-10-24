@@ -150,7 +150,6 @@ ar:
       invalid_date_range: "نطاق التاريخ غير صالح"
   form:
     accept_terms: أوافق على %{policy} و%{conditions}
-    accept_terms_title: أوافق على سياسة الخصوصية وشروط وأحكام الاستخدام
     conditions: قوانين وشروط الاستخدام
     debate: الحوارات
     direct_message: رسالة خاصة
