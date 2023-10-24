@@ -526,7 +526,6 @@ ne:
         title: "कागजातहरू"
         format: "ढाँचा"
         size: "आकार"
-        url: "URL"
       create:
         success_notice: "कागजात सफलतापूर्वक अपलोड गरियो"
         unable_notice: "अवैध कागजात"
