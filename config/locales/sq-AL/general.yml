@@ -131,7 +131,6 @@ sq:
       invalid_date_range: "Rangu i të dhënave është jo korrekt"
   form:
     accept_terms: Unë pajtohem me%{policy} dhe me %{conditions}
-    accept_terms_title: Pajtohem me Politikën e Privatësisë dhe me Termat dhe kushtet e përdorimit
     conditions: Termat dhe kushtet e përdorimit
     debate: Debate
     direct_message: mesazh privat
