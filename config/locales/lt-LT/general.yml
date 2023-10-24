@@ -220,7 +220,7 @@ lt:
       open_gov: Atvira valdžia
       proposals: Pasiūlymai
       poll_questions: Balsavimas
-      budgets: Dalyvaujanti biudžetavimas
+      budgets: Dalyvaujamasis biudžetas
       notification_item:
         new_notifications:
           one: Jūs turite naują pranešimą
@@ -573,8 +573,8 @@ lt:
     final_date: "Galutiniai apskaitos/Rezultatai"
     index:
       filters:
-        current: "Atidaryti"
-        expired: "Baigėsi"
+        current: "Aktyvūs"
+        expired: "Pasibaigę"
       title: "Balsavimai"
       participate_button: "Dalyvauti šiame balsavime"
       participate_button_expired: "Balsavimas baigtas"
