@@ -137,7 +137,6 @@ pl:
       invalid_date_range: "Nieprawidłowy zakres dat"
   form:
     accept_terms: Zgadzam się z %{policy} i %{conditions}
-    accept_terms_title: Wyrażam zgodę na Politykę Prywatności i Warunki użytkowania
     conditions: Regulamin
     debate: Debata
     direct_message: prywatna wiadomość
