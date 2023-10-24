@@ -46,7 +46,6 @@ oc:
           success: Residéncia verificada
       new:
         accept_terms_text: Accèpti %{terms_url} al Padró
-        accept_terms_text_title: Accèpti los tèrmes d'accès al Padró
         document_number: Numèro de document
         document_number_help_title: Ajuda
         document_number_help_text: "<strong>DNI</strong>: 12345678A<br> <strong>Passapòrt</strong>: AAA000001<br> <strong>Carta de residéncia</strong>: X1234567P"
