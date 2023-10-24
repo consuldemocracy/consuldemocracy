@@ -135,7 +135,6 @@ pt-BR:
       invalid_date_range: "Intervalo de datas inválido"
   form:
     accept_terms: Eu concordo com a %{policy} e as %{conditions}
-    accept_terms_title: Concordo com a Política de Privacidade e os Termos e condições de uso
     conditions: Termos e condições de uso
     debate: Debate
     direct_message: mensagem privada
