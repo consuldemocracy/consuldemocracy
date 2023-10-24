@@ -46,7 +46,6 @@ mk:
           success: Потврдено живеалиште
       new:
         accept_terms_text: Ги прифаќам %{terms_url} на Цензусот
-        accept_terms_text_title: Ги прифаќам правилата и условите за пристап во Цензусот
         document_number: Број на документ
         document_number_help_title: Помош
         document_type:
