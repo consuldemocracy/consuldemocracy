@@ -143,7 +143,6 @@ sv:
         poll_ended: "Kan inte ändras om omröstningen redan har avslutats"
   form:
     accept_terms: Jag godkänner %{policy} och %{conditions}
-    accept_terms_title: Jag godkänner integritetspolicyn och användarvillkoren
     conditions: Användarvillkor
     debate: Diskussion
     direct_message: privat meddelande
