@@ -126,7 +126,6 @@ es-PE:
       invalid_date_range: "El rango de fechas no es válido"
   form:
     accept_terms: Eu concordo com a %{policy} e as %{conditions}
-    accept_terms_title: Acepto la Política de privacidad y las Condiciones de uso
     conditions: Condiciones de uso
     debate: Debate previo
     direct_message: el mensaje privado
