@@ -103,7 +103,6 @@ fa:
           submit: ثبت
           terms: با ثبت نام شما قبول می کندکه %{terms}
           terms_link: شرایط و ضوابط مورد استفاده
-          terms_title: با ثبت نام شما  شرایط و ضوابط مورد استفاده را قبول میکنید
           title: ثبت
           username_is_available: نام کاربری موجود
           username_is_not_available: نام کاربری در حال حاضر در حال استفاده است
