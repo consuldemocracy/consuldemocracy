@@ -143,7 +143,6 @@ es:
         poll_ended: "No puede ser cambiada si la votación ha acabado"
   form:
     accept_terms: Acepto la %{policy} y las %{conditions}
-    accept_terms_title: Acepto la Política de privacidad y las Condiciones de uso
     conditions: Condiciones de uso
     debate: el debate
     direct_message: el mensaje privado

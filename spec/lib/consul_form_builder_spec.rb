@@ -13,6 +13,17 @@ describe ConsulFormBuilder do
 
   let(:builder) { ConsulFormBuilder.new(:dummy, DummyModel.new, ApplicationController.new.view_context, {}) }
 
+  describe "label" do
+    it "accepts links that open in a new window in its content" do
+      render builder.text_field(:title, label: 'My <a href="/" target="_blank" title="New tab">title</a>')
+
+      expect(page).to have_link count: 1
+      expect(page).to have_link "title"
+      expect(page).to have_link "New tab"
+      expect(page).to have_css "a[target=_blank]"
+    end
+  end
+
   describe "hints" do
     it "does not generate hints by default" do
       render builder.text_field(:title)
