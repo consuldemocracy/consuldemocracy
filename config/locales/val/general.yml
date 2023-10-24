@@ -131,7 +131,6 @@ val:
       invalid_date_range: "El rang de dates no es vàlid"
   form:
     accept_terms: Accepte la %{policy} i les %{conditions}
-    accept_terms_title: Accepte la Política de privacitat i les Condicions d'us
     conditions: Termes i condicions d'us
     debate: Debat
     direct_message: el missatge privat
