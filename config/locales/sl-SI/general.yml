@@ -119,7 +119,6 @@ sl:
       invalid_date_range: "Neveljavno časovno obdobje"
   form:
     accept_terms: Strinjam se s %{policy} in s %{conditions}
-    accept_terms_title: Strinjam se s politko zasebnosti in pogoji uporabe
     conditions: Pogoji uporabe
     debate: Razprava
     direct_message: Zasebno sporočilo
