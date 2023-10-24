@@ -15,7 +15,7 @@
           <%= render "comments/form", { commentable: record, parent_id: nil } %>
         <% else %>
           <div class="alert">
-            <%= "Comments are not allowed for this #{record.class.name.downcase}, because it expired." %>
+            <%= t("comments.comment.expired") %>
           </div>
         <% end %>
       <% else %>

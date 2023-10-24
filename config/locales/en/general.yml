@@ -29,6 +29,7 @@ en:
       admin: Administrator
       author: Author
       deleted: This comment has been deleted
+      expired: New comments are not accepted
       moderator: Moderator
       responses:
         one: 1 response
@@ -127,6 +128,7 @@ en:
       comments_title: Comments
       edit_debate_link: Edit
       flag: This debate has been flagged as inappropriate by several users.
+      is_finished: This debate is finished
       share: Share
       author: Author
     update:

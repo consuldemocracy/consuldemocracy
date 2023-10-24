@@ -182,8 +182,8 @@ lt:
         proposals_description: "Piliečių pasiūlymai yra galimybė kaimynams ir bendruomenėms tiesiogiai nuspręsti, kaip jie nori, kad būtų jų visuomenė, surinkus pakankamą paramą ir pateikus piliečių balsavimui"
         polls: "Apklausos"
         polls_description: "Piliečių apklausos yra dalyvaujamasis mechanizmas, leidžiantis piliečiams su balsavimo teise priimti tiesioginius sprendimus"
-        budgets: "Dalyvaujantys biudžetai"
-        budgets_description: "Dalyvaujantys biudžetai leidžia piliečiams nuspręsti, kurie kaimynų pateikti projektai gaus dalį biudžeto"
+        budgets: "Dalyvaujamieji biudžetai"
+        budgets_description: "Dalyvaujamieji biudžetai leidžia piliečiams nuspręsti, kurie kaimynų pateikti projektai gaus dalį biudžeto"
         legislation: "Bendradarbiavimo teisės aktai"
         legislation_description: "Dalyvaujant procesuose piliečiams siūloma galimybė dalyvauti rengiant ir keičiant nuostatus, kurie veikia visuomenę, ir išreikšti savo nuomonę dėl tam tikrų numatytų veiksmų"
       html:

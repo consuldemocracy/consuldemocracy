@@ -29,6 +29,7 @@ lt:
       admin: Administratorius
       author: Autorius
       deleted: Šis komentaras buvo ištrintas
+      expired: Nauji komentarai nebepriėmami
       moderator: Moderatorius
       responses:
         one: 1 atsakymas
@@ -67,7 +68,7 @@ lt:
   debates:
     create:
       form:
-        submit_button: Pradėti debatą
+        submit_button: Pradėti debatus
     debate:
       votes:
         one: 1 balsas
@@ -101,7 +102,7 @@ lt:
         button: Ieškoti
         placeholder: Ieškoti debatų...
         title: Paieška
-      start_debate: Pradėti debatą
+      start_debate: Pradėti debatus
       title: Debatai
       section_header:
         icon_alt: Debatų piktograma
@@ -114,19 +115,20 @@ lt:
         help_text_2: „Norėdami atidaryti debatą, jums reikia prisiregistruoti %{org}. Vartotojai taip pat gali komentuoti atvirus debatus ir jų vertinimui naudoti „Sutinku“ arba „Nesutinku“ mygtukus.“
     new:
       form:
-        submit_button: Pradėti debatą
+        submit_button: Pradėti debatus
       more_info: Kaip veikia debatai?
       recommendation_four: Mėgaukitės šia erdve ir balsais, kurie ją užpildo. Ji priklauso ir jums.
       recommendation_one: Debatų pavadinimui ar visoms sakinio dalims naudoti didžiąsias raides nerekomenduojama. Internetuose tai laikoma šaukimu. Ir niekas nemėgsta būti šaukiamas.
       recommendation_three: Beširdžios kritikos labai laukiama. Tai erdvė refleksijai. Tačiau rekomenduojame laikytis elegancijos ir intelekto. Pasaulyje šios dorybės padaro jį geresnį.
       recommendation_two: Bet koks debatas ar komentaras, siūlantis nelegalią veiklą, bus ištrintas, taip pat ir tie, kurie ketina sabotažuoti debatų erdves. Kitkas leidžiama.
       recommendations_title: Rekomendacijos debatų kūrimui
-      start_new: Pradėti debatą
+      start_new: Pradėti debatus
     show:
       author_deleted: Vartotojas ištrintas
       comments_title: Komentarai
       edit_debate_link: Redaguoti
       flag: Šis debatas yra praneštas kaip netinkamas kelių vartotojų.
+      is_finished: Šie debatai yra pasibagę
       share: Bendrinti
       author: Autorius
     update:

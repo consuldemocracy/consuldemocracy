@@ -15,7 +15,7 @@
 
         <% if @debate.expired? %>
         <div class="callout alert">
-          <%= "this debate has finished"%>
+          <strong><%= t("debates.show.is_finished")%></strong>
         </div>
         <%end %>
 

@@ -82,13 +82,13 @@ lt:
         preview: "Peržiūra"
         preview_results: "Rezultatų peržiūra"
       index:
-        title: Dalyvaujantys biudžetai
+        title: Dalyvaujamieji biudžetai
         new_link: Sukurti naują biudžetą
         filter: Filtruoti
         filters:
           all: Visi
-          open: Atviros
-          finished: Baigtos
+          open: Atviri
+          finished: Baigti
         budget_investments: Investiciniai projektai
         table_budget_type: "Tipas"
         table_completed: Baigta
@@ -149,7 +149,7 @@ lt:
         title_multiple: Naujas kelios grupės biudžetas
         title_single: Naujas vienos grupės biudžetas
       help:
-        budgets: "Dalyvaujantys biudžetai leidžia piliečiams pasiūlyti ir tiesiogiai nuspręsti, kaip panaudoti dalį biudžeto, atidžiai vertinant ir stebint institucijos siūlomus projektus."
+        budgets: "Dalyvaujamieji biudžetai leidžia piliečiams pasiūlyti ir tiesiogiai nuspręsti, kaip panaudoti dalį biudžeto, atidžiai vertinant ir stebint institucijos siūlomus projektus."
         groups:
           multiple: "Grupės skirtos pavadinimams organizuoti. Sukūrus grupę ir ją užpildžius pavadinimais, galima nustatyti, kiek pavadinimų galima balsuoti per grupę."
           single: "Grupės skirtos pavadinimams organizuoti. Kadangi šis biudžetas turės tik vieną pavadinimą, galima naudoti tą patį pavadinimą, nes jis niekur neparodys. Galima tęsti su kitu žingsniu."
@@ -723,7 +723,7 @@ lt:
       banner: Valdyti stendus
       proposals: Siūlymai
       proposals_topics: Siūlymų temos
-      budgets: Dalyvaujamos biudžetai
+      budgets: Dalyvaujamieji biudžetai
       geozones: Valdyti geozonas
       hidden_comments: Paslėpti komentarai
       hidden_debates: Paslėptos diskusijos
