@@ -135,7 +135,6 @@ el:
       invalid_date_range: "Μη έγκυρο εύρος ημερομηνίας"
   form:
     accept_terms: Συμφωνώ στην %{policy} και στις %{conditions}
-    accept_terms_title: Συμφωνώ με την Πολιτική Απορρήτου και τους Όρους και Προϋποθέσεις Χρήσης
     conditions: Όροι και προϋποθέσεις χρήσης
     debate: Συζήτηση
     direct_message: προσωπικό μήνυμα
