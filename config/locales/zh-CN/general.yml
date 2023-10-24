@@ -128,7 +128,6 @@ zh-CN:
       invalid_date_range: "无效日期范围"
   form:
     accept_terms: 我同意%{policy} 和%{conditions}。
-    accept_terms_title: 我同意隐私政策和使用条款及条件
     conditions: 使用条款及条件
     debate: 辩论
     direct_message: 私人信息
