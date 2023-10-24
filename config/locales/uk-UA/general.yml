@@ -145,7 +145,6 @@ uk-UA:
       invalid_date_range: "Недійсний діапазон даних"
   form:
     accept_terms: Я погоджуюся з %{policy} та %{conditions}
-    accept_terms_title: Я погоджуюся з Політикою конфіденційності і Правилами та умовами користування
     conditions: Правила та умови користування
     debate: Обговорення
     direct_message: особисте повідомлення
