@@ -135,7 +135,6 @@ nn:
       invalid_date_range: "Ugyldig dato"
   form:
     accept_terms: Jeg er enig i %{policy} og %{conditions}
-    accept_terms_title: Jeg er enig i personvern- og brukervilkår
     conditions: Brukervilkår
     debate: Debatt
     direct_message: private meldinger
