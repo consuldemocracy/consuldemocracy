@@ -60,7 +60,7 @@ namespace :deploy do
   Rake::Task["delayed_job:default"].clear_actions
   Rake::Task["puma:smart_restart"].clear_actions
 
-  after "git:create_release", "map_node_bins"
+  after "rvm1:hook", "map_node_bins"
 
   after :updating, "install_node"
   after :updating, "install_ruby"
@@ -127,7 +127,7 @@ task :map_node_bins do
   on roles(:app) do
     within release_path do
       with rails_env: fetch(:rails_env) do
-        prefix = "#{fetch(:fnm_setup_command)} && fnm exec"
+        prefix = -> { "#{fetch(:fnm_setup_command)} && fnm exec" }
 
         fetch(:fnm_map_bins).each do |command|
           SSHKit.config.command_map.prefix[command.to_sym].unshift(prefix)
