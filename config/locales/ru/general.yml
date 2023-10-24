@@ -137,7 +137,6 @@ ru:
       invalid_date_range: "Неверный диапазон дат"
   form:
     accept_terms: Я согласен с %{policy} и %{conditions}
-    accept_terms_title: Я согласен с Политикой конфиденциальности и Положениями и условиями пользования
     conditions: Положения и условия пользования
     debate: Обсуждение
     direct_message: личное сообщение
