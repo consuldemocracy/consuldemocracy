@@ -153,7 +153,6 @@ cs:
         poll_ended: "Nelze změnit, pokud hlasování již skončilo"
   form:
     accept_terms: Souhlasím s podmínkami %{policy} a %{conditions}
-    accept_terms_title: Souhlasím s Pravidly ochrany soukromí a Podmínkami používání
     conditions: Podmínky používání
     debate: Debata
     direct_message: soukromá zpráva
