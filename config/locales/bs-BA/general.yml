@@ -134,7 +134,6 @@ bs:
       invalid_date_range: "Neispravan raspon datuma"
   form:
     accept_terms: Prihvatam %{policy} i %{conditions}
-    accept_terms_title: Prihvatam politiku privatnosti i uvjete korištenja
     conditions: Uvjeti korištenja
     debate: Debata
     direct_message: privatna poruka
