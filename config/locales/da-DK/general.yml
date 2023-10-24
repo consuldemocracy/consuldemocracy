@@ -143,7 +143,6 @@ da:
         poll_ended: "Kan ikke ændres, hvis afstemning er slut"
   form:
     accept_terms: Jeg accepterer %{policy} og %{conditions}
-    accept_terms_title: Jeg accepterer Persondatapolitikken og Brugervilkår
     conditions: Brugervilkår og betingelser
     debate: Debat
     direct_message: privat besked
