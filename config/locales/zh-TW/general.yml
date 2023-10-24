@@ -128,7 +128,6 @@ zh-TW:
       invalid_date_range: "日期範圍無效"
   form:
     accept_terms: 我同意%{policy} 和%{conditions}
-    accept_terms_title: 我同意隱私政策和使用條款及條件
     conditions: 使用條款及條件
     debate: 辯論
     direct_message: 私人信息
