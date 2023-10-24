@@ -135,7 +135,6 @@ gl:
       invalid_date_range: "O rango de datas non é correcto"
   form:
     accept_terms: Acepto a %{policy} e as %{conditions}
-    accept_terms_title: Acepto a política de privacidade e as condicións de uso
     conditions: Condicións de uso
     debate: o debate
     direct_message: a mensaxe privada
