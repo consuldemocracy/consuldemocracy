@@ -42,7 +42,6 @@ sq:
           success: Vendbanimi është verifikuar
       new:
         accept_terms_text: Unë pranoj %{terms_url} e regjistrimit
-        accept_terms_text_title: Unë pranoj afatet dhe kushtet e qasjes së regjistrimit
         document_number: Numri i dokumentit
         document_number_help_title: Ndihmë
         document_number_help_text: "<strong>Dni</strong>: 12345678A<br><strong>Pashaport</strong>: AAA000001<br><strong>Residence card</strong>: X1234567P"
