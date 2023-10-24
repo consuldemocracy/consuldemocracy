@@ -139,7 +139,6 @@ fr:
       invalid_date_range: "Intervalle de dates invalide"
   form:
     accept_terms: J'accepte le %{policy} et les %{conditions}
-    accept_terms_title: J’accepte la politique de confidentialité et les conditions d’utilisation
     conditions: Conditions légales
     debate: Débat
     direct_message: message privé
