@@ -145,7 +145,6 @@ he:
       invalid_date_range: "טווח תאריכים לא חוקי"
   form:
     accept_terms: אני מאשר/ת את %{policy} ואת %{conditions}
-    accept_terms_title: אני מאשר/ת שקראתי והסכמתי למדיניות הפרטיות, לכללים ותנאי השימוש
     conditions: כללים ותנאי שימוש
     debate: דיון
     direct_message: פנייה פרטית
