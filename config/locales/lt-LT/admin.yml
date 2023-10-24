@@ -718,19 +718,19 @@ lt:
       sdg/manager:
         add: Pridėti
     menu:
-      activity: Veikla moderatorių
+      activity: Moderatorių veikla
       admin: Administravimo meniu
       banner: Valdyti stendus
       proposals: Siūlymai
       proposals_topics: Siūlymų temos
       budgets: Dalyvaujamos biudžetai
       geozones: Valdyti geozonas
-      hidden_comments: Slėpti komentarai
-      hidden_debates: Slėptos diskusijos
-      hidden_proposals: Slėpti pasiūlymai
-      hidden_budget_investments: Slėptos biudžeto investicijos
-      hidden_proposal_notifications: Slėptos pasiūlymų pranešimai
-      hidden_users: Slėpti vartotojai
+      hidden_comments: Paslėpti komentarai
+      hidden_debates: Paslėptos diskusijos
+      hidden_proposals: Paslėpti pasiūlymai
+      hidden_budget_investments: Paslėptos biudžeto investicijos
+      hidden_proposal_notifications: Paslėpti pasiūlymų pranešimai
+      hidden_users: Paslėpti vartotojai
       administrators: Administratoriai
       managers: Vadovai
       sdg_managers: SDG Vadovai
