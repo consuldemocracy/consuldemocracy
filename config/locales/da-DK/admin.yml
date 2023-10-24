@@ -437,7 +437,6 @@ da:
         title: "Dokumenter"
         format: "Format"
         size: "Størrelse"
-        url: "URL"
       create:
         success_notice: "Dokumentet blev uploadet"
         unable_notice: "Ugyldigt dokument"
