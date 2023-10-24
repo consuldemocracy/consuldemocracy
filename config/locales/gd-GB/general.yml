@@ -153,7 +153,6 @@ gd:
         poll_ended: "Cha ghabh seo atharrachadh ma tha bhòtadh air tighinn gu crìch mar-thà"
   form:
     accept_terms: Tha mi ag aontachadh ri %{policy} is ris na %{conditions}
-    accept_terms_title: Tha mi ag aontachadh ris a’ Phoileasaidh Prìobhaideachd agus ris na Teirmichean is cumhaichean cleachdaidh
     conditions: Teirmichean is cumhaichean cleachdaidh
     debate: Deasbad
     direct_message: teachdaireachd phrìobhaideach
