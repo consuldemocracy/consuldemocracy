@@ -1,4 +1,4 @@
-FROM ruby:3.1.4-buster
+FROM ruby:3.1.4-bullseye
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -9,7 +9,6 @@ RUN apt-get update -qq \
     cmake \
     imagemagick \
     libappindicator1 \
-    libindicator7 \
     libpq-dev \
     libxss1 \
     memcached \
