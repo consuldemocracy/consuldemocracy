@@ -1,6 +1,7 @@
 sv:
   account:
     show:
+      last_sign_in: "Senaste inloggningen: %{last_sign_in_at} från IP %{last_sign_in_ip}"
       change_credentials_link: Ändra mina inloggningsuppgifter
       erase_account_link: Radera mitt konto
       finish_verification: Slutför verifiering
