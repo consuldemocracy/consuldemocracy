@@ -138,7 +138,6 @@ bg:
       invalid_date_range: "Невалиден диапазон от дати"
   form:
     accept_terms: Съгласявам се с %{policy} и %{conditions}
-    accept_terms_title: Приемам Политиката за поверителност и Общите условия за ползване
     conditions: Условия за ползване
     debate: Дебат
     direct_message: лично съобщение
