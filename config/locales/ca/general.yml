@@ -135,7 +135,6 @@ ca:
       invalid_date_range: "El rango de fechas no es válido"
   form:
     accept_terms: Accepte la %{policy} i les %{conditions}
-    accept_terms_title: Accepte la Política de privacitat i les Condicions d'ús
     conditions: Condicions d'ús
     debate: debat previ
     direct_message: el missatge privat
