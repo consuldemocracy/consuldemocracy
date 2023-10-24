@@ -131,7 +131,6 @@ eu:
       invalid_date_range: "Data tartea ez da baliagarria"
   form:
     accept_terms: '%{policy} eta %{conditions} onartzen ditut'
-    accept_terms_title: Pribatutasun politika eta erabilera baldintzak onartzen ditut
     conditions: Erabilera baldintzak
     debate: Eztabaida
     direct_message: Mezu pribatua
