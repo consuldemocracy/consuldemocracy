@@ -33,8 +33,7 @@
             <% if page.status == "published" %>
               <%= actions.action(:show,
                                  text: t("admin.site_customization.pages.index.see_page"),
-                                 path: page.url,
-                                 target: "_blank") %>
+                                 path: page.url) %>
             <% end %>
           <% end %>
         </td>

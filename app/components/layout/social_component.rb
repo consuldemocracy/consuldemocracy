@@ -18,7 +18,7 @@ class Layout::SocialComponent < ApplicationComponent
     end
 
     def link_title(site_name)
-      t("shared.go_to_page") + link_text(site_name) + t("shared.target_blank")
+      t("shared.go_to_page") + link_text(site_name)
     end
 
     def link_text(site_name)

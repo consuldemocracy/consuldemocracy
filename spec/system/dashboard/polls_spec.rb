@@ -256,9 +256,9 @@ describe "Polls" do
 
     visit proposal_dashboard_polls_path(proposal)
 
-    within_window(window_opened_by { click_link "View results" }) do
-      expect(page).to have_current_path(results_proposal_poll_path(proposal, poll))
-    end
+    click_link "View results"
+
+    expect(page).to have_current_path(results_proposal_poll_path(proposal, poll))
   end
 
   scenario "Enable and disable results" do

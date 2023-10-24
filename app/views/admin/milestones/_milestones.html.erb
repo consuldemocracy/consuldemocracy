@@ -40,8 +40,7 @@
           </td>
           <td class="small">
             <%= link_to t("admin.milestones.index.show_image"),
-                        milestone.image.variant(:large),
-                        target: :_blank if milestone.image.present? %>
+                        milestone.image.variant(:large) if milestone.image.present? %>
           </td>
           <td class="small">
             <% if milestone.documents.present? %>

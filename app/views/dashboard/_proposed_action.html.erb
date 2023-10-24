@@ -46,7 +46,7 @@
       <% end %>
 
       <% proposed_action.links.each do |link| %>
-        <p><%= link_to link.label, link.url, target: "_blank" %></p>
+        <p><%= link_to link.label, link.url %></p>
       <% end %>
 
       <% proposed_action.documents.each do |document| %>

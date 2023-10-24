@@ -30,7 +30,7 @@ class MarkdownConverter
       {
         filter_html: false,
         hard_wrap: true,
-        link_attributes: { target: "_blank" }
+        link_attributes: {}
       }
     end
 
