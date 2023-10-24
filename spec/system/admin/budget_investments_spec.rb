@@ -981,8 +981,7 @@ describe "Admin budget investments", :admin do
         expect(page).to have_content("Investment preview")
         expect(page).to have_content(budget_investment.image.title)
         expect(page).to have_content("Documents (1)")
-        expect(page).to have_content(document.title)
-        expect(page).to have_content("Download file")
+        expect(page).to have_link text: document.title
         expect(page).to have_content("1234")
         expect(page).to have_content("1000")
         expect(page).to have_content("Unfeasible")

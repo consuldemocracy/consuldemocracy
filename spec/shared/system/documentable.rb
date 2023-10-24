@@ -11,22 +11,14 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
   end
 
   context "Show documents" do
-    scenario "Download action should be able to anyone" do
+    scenario "Download action should be availabe to anyone and open in the same tab" do
       visit send(documentable_path, arguments)
 
-      expect(page).to have_link("Download file")
-    end
-
-    scenario "Download file link should have blank target attribute" do
-      visit send(documentable_path, arguments)
-
-      expect(page).to have_selector("a[target=_blank]", text: "Download file")
-    end
-
-    scenario "Download file links should have rel attribute setted to no follow" do
-      visit send(documentable_path, arguments)
-
-      expect(page).to have_selector("a[rel=nofollow]", text: "Download file")
+      within "#documents" do
+        expect(page).to have_link text: document.title
+        expect(page).to have_selector "a[rel=nofollow]", text: document.title
+        expect(page).not_to have_selector "a[target=_blank]"
+      end
     end
 
     describe "Destroy action" do

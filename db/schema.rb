@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_23_090028) do
+ActiveRecord::Schema.define(version: 2023_10_12_141318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -585,10 +585,6 @@ ActiveRecord::Schema.define(version: 2023_05_23_090028) do
 
   create_table "documents", id: :serial, force: :cascade do |t|
     t.string "title"
-    t.string "attachment_file_name"
-    t.string "attachment_content_type"
-    t.bigint "attachment_file_size"
-    t.datetime "attachment_updated_at"
     t.integer "user_id"
     t.string "documentable_type"
     t.integer "documentable_id"
@@ -684,10 +680,6 @@ ActiveRecord::Schema.define(version: 2023_05_23_090028) do
     t.string "title", limit: 80
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "attachment_file_name"
-    t.string "attachment_content_type"
-    t.bigint "attachment_file_size"
-    t.datetime "attachment_updated_at"
     t.integer "user_id"
     t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id"
     t.index ["user_id"], name: "index_images_on_user_id"

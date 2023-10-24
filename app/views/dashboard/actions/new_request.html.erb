@@ -7,7 +7,7 @@
   </div>
 
   <div class="small-12 medium-4 column">
-    <%= render "documents/documents", documents: dashboard_action.documents %>
+    <%= render Documents::DocumentsComponent.new(dashboard_action.documents) %>
 
     <% if dashboard_action.links.any? %>
       <div class="margin-top">

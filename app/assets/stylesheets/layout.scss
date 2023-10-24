@@ -2016,52 +2016,6 @@ table {
 // 20. Documents
 // -------------
 
-.documents {
-
-  h2 {
-    font-size: rem-calc(24);
-
-    span {
-      color: #4f4f4f;
-      font-weight: normal;
-    }
-  }
-
-  ul li {
-    padding-top: $line-height / 2;
-
-    &:not(:first-child) {
-      border-top: 1px solid $highlight;
-    }
-  }
-
-  .document-link {
-    background: $highlight-soft;
-    border: 2px solid $highlight;
-    border-radius: rem-calc(5);
-    display: block;
-    margin: $line-height / 2 0;
-    padding: $line-height / 2;
-    position: relative;
-
-    .icon-document {
-      color: #007bb7;
-      display: inline-block;
-      font-size: rem-calc(24);
-      line-height: $line-height;
-      vertical-align: middle;
-    }
-
-    p {
-      margin-bottom: 0;
-    }
-  }
-}
-
-.document-link a {
-  word-wrap: break-word;
-}
-
 .additional-document-link {
   background: $highlight-soft;
   border: 1px solid $highlight;
@@ -2074,12 +2028,8 @@ table {
     word-wrap: break-word;
   }
 
-  .icon-document {
-    color: #007bb7;
-    display: inline-block;
-    font-size: rem-calc(24);
-    line-height: $line-height;
-    vertical-align: middle;
+  > :first-child {
+    @include has-fa-icon(file, regular);
   }
 }
 

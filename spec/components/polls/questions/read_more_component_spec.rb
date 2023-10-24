@@ -52,6 +52,6 @@ describe Polls::Questions::ReadMoreComponent do
 
     render_inline Polls::Questions::ReadMoreComponent.new(question: question)
 
-    expect(page).to have_link("The yes movement")
+    expect(page).to have_link text: "The yes movement"
   end
 end
