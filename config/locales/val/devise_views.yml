@@ -103,7 +103,6 @@ val:
           submit: Registrarse
           terms: Al registrarte acceptes les %{terms}
           terms_link: termes i condicions d'us
-          terms_title: Al registrar-te acceptes les condicions d'us
           title: Registrarse
           username_is_available: Nom d'usuari disponible
           username_is_not_available: Nom d'usuari ya existeix
