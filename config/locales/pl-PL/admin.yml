@@ -377,7 +377,6 @@ pl:
         title: "Dokumenty"
         format: "Format"
         size: "Rozmiar"
-        url: "URL"
     hidden_users:
       index:
         filter: Filtruj
