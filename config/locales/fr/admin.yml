@@ -526,7 +526,6 @@ fr:
         title: "Documents"
         format: "Format"
         size: "Taille"
-        url: "URL"
       create:
         success_notice: "Document téléchargé avec succès"
         unable_notice: "Document invalide"
