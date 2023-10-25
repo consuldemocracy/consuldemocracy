@@ -1,6 +1,7 @@
 tr:
   account:
     show:
+      last_sign_in: "Son oturum açma: %{last_sign_in_at} IP adresi: %{last_sign_in_ip}"
       change_credentials_link: Oturum açma bilgilerimi değiştir
       erase_account_link: Hesabımı sil
       finish_verification: Doğrulamayı tamamla
@@ -718,7 +719,7 @@ tr:
       districts: "Bölgeler"
       districts_list: "Bölgeler listesi"
       categories: "Kategoriler"
-    target_blank: " (bağlantı yeni pencerede açılacak)"
+    target_blank: "Bağlantı yeni pencerede açılır"
     you_are_in: "Şuradasınız"
     unflag: İşareti kaldır
     unfollow_entity: "%{entity} takibini bırak"
