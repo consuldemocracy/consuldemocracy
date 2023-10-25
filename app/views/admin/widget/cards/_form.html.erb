@@ -30,7 +30,7 @@
   </div>
 
   <div class="row">
-    <% unless card.header? %>
+    <% unless card.header_or_sdg_header? %>
       <div class="column">
         <%= f.label :columns %>
         <p class="help-text"><%= t("admin.site_customization.pages.cards.columns_help") %></p>
@@ -50,7 +50,7 @@
     </div>
     <div class="column">
       <%= f.submit(
-        t("admin.homepage.#{admin_submit_action(card)}.#{card.header? ? "submit_header" : "submit_card"}"),
+        t("admin.homepage.#{admin_submit_action(card)}.#{card.header_or_sdg_header? ? "submit_header" : "submit_card"}"),
         class: "button success"
       ) %>
     </div>

@@ -21,6 +21,8 @@ describe "SDG homepage configuration" do
       visit sdg_management_homepage_path
       click_link "Create planning card"
 
+      expect(page).to have_field "Number of columns"
+
       within(".translatable-fields") { fill_in "Title", with: "My planning card" }
       fill_in "Link URL", with: "/any_path"
       click_button "Create card"
@@ -54,9 +56,11 @@ describe "SDG homepage configuration" do
       visit sdg_management_homepage_path
       click_link "Create header"
 
+      expect(page).not_to have_field "Number of columns"
+
       within(".translatable-fields") { fill_in "Title", with: "My header" }
       fill_in "Link URL", with: "/any_path"
-      click_button "Create card"
+      click_button "Create header"
 
       within(".sdg-header") do
         expect(page).to have_content "My header"
@@ -72,7 +76,7 @@ describe "SDG homepage configuration" do
       end
 
       within(".translatable-fields") { fill_in "Title", with: "My header update" }
-      click_button "Save card"
+      click_button "Save header"
 
       expect(page).to have_content "My header update"
     end

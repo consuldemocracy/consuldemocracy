@@ -18,4 +18,12 @@ class Widget::Card < ApplicationRecord
   def self.body
     where(header: false, cardable_id: nil).order(:created_at)
   end
+
+  def header_or_sdg_header?
+    header? || sdg_header?
+  end
+
+  def sdg_header?
+    cardable == WebSection.find_by!(name: "sdg")
+  end
 end
