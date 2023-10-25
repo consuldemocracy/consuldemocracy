@@ -11,7 +11,7 @@ module Images
   def imageable_attach_new_file(path, success = true)
     click_link "Add image"
     within "#nested-image" do
-      image = find(".image")
+      image = find(".image-fields")
       attach_file "Choose image", path
       within image do
         if success
@@ -40,7 +40,7 @@ module Images
   end
 
   def expect_image_has_title(title)
-    image = find(".image")
+    image = find(".image-fields")
 
     within image do
       expect(find("input[name$='[title]']").value).to eq title

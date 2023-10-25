@@ -1,10 +1,10 @@
 module Header
   extend ActiveSupport::Concern
 
-  def header(before: nil, &block)
+  def header(before: nil, skip_section_title: false, &block)
     provide(:title) do
       [
-        t("#{namespace}.header.title", default: ""),
+        (t("#{namespace}.header.title", default: "") unless skip_section_title),
         strip_tags(title),
         setting["org_name"]
       ].reject(&:blank?).join(" - ")

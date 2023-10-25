@@ -164,8 +164,9 @@ describe "Residence" do
     login_as(create(:user))
 
     visit new_residence_path
-    click_link "the terms and conditions of access"
 
-    expect(page).to have_content "Terms and conditions of access of the Census"
+    within_window(window_opened_by { click_link "the terms and conditions of access" }) do
+      expect(page).to have_content "Terms and conditions of access of the Census"
+    end
   end
 end

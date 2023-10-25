@@ -416,6 +416,14 @@ class User < ApplicationRecord
     update!(subscriptions_token: SecureRandom.base58(32)) if subscriptions_token.blank?
   end
 
+  def self.password_complexity
+    if Tenant.current_secrets.dig(:security, :password_complexity)
+      { digit: 1, lower: 1, symbol: 0, upper: 1 }
+    else
+      { digit: 0, lower: 0, symbol: 0, upper: 0 }
+    end
+  end
+
   private
 
     def clean_document_number

@@ -2,9 +2,7 @@
   <%= form_for(@answer, url: admin_answer_images_path(@answer), method: :post) do |f| %>
     <%= render "shared/errors", resource: @answer %>
 
-    <div class="images">
-      <%= render Images::NestedComponent.new(f, image_fields: :images) %>
-    </div>
+    <%= render Images::NestedComponent.new(f, image_fields: :images) %>
 
     <%= f.submit t("admin.questions.answers.images.save_image"), class: "button success" %>
   <% end %>

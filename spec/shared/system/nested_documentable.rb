@@ -163,7 +163,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       click_link "Add new document"
       click_on submit_button
 
-      within "#nested-documents .document" do
+      within "#nested-documents .document-fields" do
         expect(page).to have_content("can't be blank", count: 2)
       end
     end
@@ -175,7 +175,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       documentable_attach_new_file(file_fixture("empty.pdf"))
       click_link "Remove document"
 
-      expect(page).not_to have_css("#nested-documents .document")
+      expect(page).not_to have_css("#nested-documents .document-fields")
     end
 
     scenario "Should show successful notice when
@@ -248,7 +248,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
         do_login_for user_to_login, management: management
         visit send(path, arguments)
 
-        expect(page).to have_css ".document", count: 1
+        expect(page).to have_css ".document-fields", count: 1
       end
 
       scenario "Should not show add document button when
@@ -264,7 +264,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
         create_list(:document, documentable.class.max_documents_allowed, documentable: documentable)
         do_login_for user_to_login, management: management
         visit send(path, arguments)
-        last_document = all("#nested-documents .document").last
+        last_document = all("#nested-documents .document-fields").last
         within last_document do
           click_on "Remove document"
         end
@@ -278,7 +278,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
         visit send(path, arguments)
         click_on "Remove document"
 
-        expect(page).not_to have_css ".document"
+        expect(page).not_to have_css ".document-fields"
       end
 
       scenario "Same attachment URL after editing the title" do
@@ -291,14 +291,14 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
 
         expect(page).to have_content documentable_success_notice
 
-        original_url = find_link("Download file")[:href]
+        original_url = find_link(text: "Original")[:href]
 
         visit send(path, arguments)
         within_fieldset("Documents") { fill_in "Title", with: "Updated" }
         click_button submit_button
 
         expect(page).to have_content documentable_success_notice
-        expect(find_link("Download file")[:href]).to eq original_url
+        expect(find_link(text: "Updated")[:href]).to eq original_url
       end
     end
 

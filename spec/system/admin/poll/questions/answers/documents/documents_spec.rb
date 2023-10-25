@@ -30,11 +30,16 @@ describe "Documents", :admin do
 
       visit admin_answer_documents_path(answer)
 
+      expect(page).not_to have_link "Download file"
+
       documentable_attach_new_file(Rails.root.join("spec/fixtures/files/clippy.pdf"))
       click_button "Save"
 
       expect(page).to have_content "Document uploaded successfully"
-      expect(page).to have_link "clippy.pdf"
+
+      within("tr", text: "clippy.pdf") do
+        expect(page).to have_link "Download file"
+      end
     end
 
     scenario "with invalid data" do

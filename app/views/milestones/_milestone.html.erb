@@ -36,15 +36,7 @@
           </p>
 
           <% milestone.documents.each do |document| %>
-              <%= link_to document.title,
-                          document.attachment,
-                          target: "_blank",
-                          rel: "nofollow" %><br>
-              <small>
-                <%= document.humanized_content_type %>&nbsp;|&nbsp;
-                <%= number_to_human_size(document.attachment_file_size, precision: 2) %>
-              </small>
-              <br>
+            <%= render Documents::DocumentComponent.new(document) %>
           <% end %>
         </div>
       </div>

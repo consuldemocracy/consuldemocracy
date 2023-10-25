@@ -37,15 +37,11 @@
     <legend><%= t("shared.optional") %></legend>
 
     <% if feature?(:allow_images) %>
-      <div class="images">
-        <%= render "images/nested_image", f: f %>
-      </div>
+      <%= render Images::NestedComponent.new(f) %>
     <% end %>
 
     <% if feature?(:allow_attached_documents) %>
-      <div class="documents">
-        <%= render "documents/nested_documents", f: f %>
-      </div>
+      <%= render Documents::NestedComponent.new(f) %>
     <% end %>
 
     <% if feature?(:map) %>
@@ -93,11 +89,7 @@
   <div class="actions">
     <% unless current_user.manager? || investment.persisted? %>
       <div>
-        <%= f.check_box :terms_of_service,
-                        title: t("form.accept_terms_title"),
-                        label: t("form.accept_terms",
-                                 policy: link_to(t("form.policy"), "/privacy", target: "blank"),
-                                 conditions: link_to(t("form.conditions"), "/conditions", target: "blank")) %>
+        <%= render Shared::AgreeWithTermsOfServiceFieldComponent.new(f) %>
       </div>
     <% end %>
 

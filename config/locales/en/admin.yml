@@ -451,6 +451,16 @@ en:
         back: Go back to %{org}
         title: Administration
         description: Welcome to the %{org} admin panel.
+        info: |-
+          <p>This is the place where you, as an administrator, implement and oversee the citizen participation process in your city or region.</p>
+
+          <p>You are now one of hundreds of governments and municipalities worldwide that are using the CONSUL DEMOCRACY platform to put citizen participation into practice. Congratulations!</p>
+
+          <p>The CONSUL DEMOCRACY Foundation is at the heart of the global user community. We'd like to ask you to get in touch so we get a grasp of who's using the software and see how we might assist with implementation or use. We can't wait to welcome you to the community.</p>
+
+          <p>Happy administrating!</p>
+
+          <p>Greetings from the CONSUL DEMOCRACY Foundation team.</p>
       actions:
         index:
           description: "When users create proposals they can access a dashboard of their proposal, where you can propose resources and recommendations to get support for their idea."
@@ -529,7 +539,6 @@ en:
         title: "Documents"
         format: "Format"
         size: "Size"
-        url: "URL"
       create:
         success_notice: "Document uploaded successfully"
         unable_notice: "Invalid document"

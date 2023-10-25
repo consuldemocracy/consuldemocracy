@@ -30,6 +30,10 @@ module ApplicationHelper
     end
   end
 
+  def new_window_link_to(text, path, **options)
+    link_to text, path, { target: "_blank", title: t("shared.target_blank") }.merge(options)
+  end
+
   def image_path_for(filename)
     image = SiteCustomization::Image.image_for(filename)
 

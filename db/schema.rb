@@ -589,10 +589,6 @@ ActiveRecord::Schema.define(version: 2023_10_12_141318) do
 
   create_table "documents", id: :serial, force: :cascade do |t|
     t.string "title"
-    t.string "attachment_file_name"
-    t.string "attachment_content_type"
-    t.bigint "attachment_file_size"
-    t.datetime "attachment_updated_at"
     t.integer "user_id"
     t.string "documentable_type"
     t.integer "documentable_id"
@@ -695,10 +691,6 @@ ActiveRecord::Schema.define(version: 2023_10_12_141318) do
     t.string "title", limit: 80
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "attachment_file_name"
-    t.string "attachment_content_type"
-    t.bigint "attachment_file_size"
-    t.datetime "attachment_updated_at"
     t.integer "user_id"
     t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id"
     t.index ["user_id"], name: "index_images_on_user_id"

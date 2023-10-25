@@ -451,6 +451,16 @@ es:
         back: Volver a %{org}
         title: Administración
         description: Bienvenido al panel de administración de %{org}.
+        info: |-
+          <p>Este es el lugar donde tú, como administrador, implementas y supervisas el proceso de participación ciudadana en tu ciudad o región.</p>
+
+          <p>Ahora eres uno de los cientos de gobiernos y municipios de todo el mundo que están utilizando la plataforma CONSUL DEMOCRACY para poner en práctica la participación ciudadana. ¡Enhorabuena!</p>
+
+          <p>La Fundación CONSUL DEMOCRACY está en el centro de la comunidad mundial de usuarios. Nos gustaría pedirte que te pongas en contacto con nosotros para saber quién utiliza el software y ver cómo podemos ayudar en su implantación o uso. Estamos deseando darte la bienvenida a la comunidad.</p>
+
+          <p>¡Feliz administración!</p>
+
+          <p>Saludos del equipo de la Fundación CONSUL DEMOCRACY.</p>
       actions:
         index:
           description: "Cuando los usuarios crean propuestas pueden acceder a un panel de progreso de su propuesta, donde se le puede proponer recursos y recomendaciones para conseguir apoyos a su idea."
@@ -529,7 +539,6 @@ es:
         title: "Documentos"
         format: "Formato"
         size: "Tamaño"
-        url: "URL"
       create:
         success_notice: "Documento creado correctamente"
         unable_notice: "Documento inválido"

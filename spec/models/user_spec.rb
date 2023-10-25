@@ -849,4 +849,37 @@ describe User do
       expect(user.subscriptions_token).to eq "already_set"
     end
   end
+
+  describe ".password_complexity" do
+    it "returns no complexity when the secrets aren't configured" do
+      expect(User.password_complexity).to eq({ digit: 0, lower: 0, symbol: 0, upper: 0 })
+    end
+
+    context "when secrets are configured" do
+      before do
+        allow(Rails.application).to receive(:secrets).and_return(ActiveSupport::OrderedOptions.new.merge(
+          security: {
+            password_complexity: true
+          },
+          tenants: {
+            tolerant: {
+              security: {
+                password_complexity: false
+              }
+            }
+          }
+        ))
+      end
+
+      it "uses the general secrets for the main tenant" do
+        expect(User.password_complexity).to eq({ digit: 1, lower: 1, symbol: 0, upper: 1 })
+      end
+
+      it "uses the tenant secrets for a tenant" do
+        allow(Tenant).to receive(:current_schema).and_return("tolerant")
+
+        expect(User.password_complexity).to eq({ digit: 0, lower: 0, symbol: 0, upper: 0 })
+      end
+    end
+  end
 end
