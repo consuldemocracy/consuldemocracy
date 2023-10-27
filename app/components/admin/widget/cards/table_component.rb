@@ -12,4 +12,8 @@ class Admin::Widget::Cards::TableComponent < ApplicationComponent
     def attribute_name(attribute)
       ::Widget::Card.human_attribute_name(attribute)
     end
+
+    def header_section?
+      cards.first.header_or_sdg_header?
+    end
 end

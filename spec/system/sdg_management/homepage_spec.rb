@@ -70,6 +70,7 @@ describe "SDG homepage configuration" do
       within(".sdg-header") do
         expect(page).to have_content "My header"
         expect(page).not_to have_content "Create header"
+        expect(page).not_to have_css "th", exact_text: "Position"
       end
     end
 

@@ -142,6 +142,7 @@ describe "Cards", :admin do
 
       within("#header") do
         expect(page).to have_css(".homepage-card", count: 1)
+        expect(page).not_to have_css "th", exact_text: "Position"
         expect(page).to have_content "Header label"
         expect(page).to have_content "Header text"
         expect(page).to have_content "Header description"
