@@ -11,7 +11,8 @@ describe "Cards", :admin do
     fill_in "Title", with: "Card text"
     fill_in "Description", with: "Card description"
     fill_in "Link text", with: "Link text"
-    fill_in "widget_card_link_url", with: "consul.dev"
+    fill_in "Link URL", with: "consul.dev"
+    fill_in "Position", with: "12"
     attach_image_to_card
     click_button "Create card"
 
@@ -25,6 +26,7 @@ describe "Cards", :admin do
         expect(page).to have_content "Card description"
         expect(page).to have_content "Link text"
         expect(page).to have_content "consul.dev"
+        expect(page).to have_css "td", exact_text: "12"
         expect(page).to have_link "Show image", title: "clippy.jpg"
       end
     end
@@ -87,7 +89,8 @@ describe "Cards", :admin do
       fill_in "Link text", with: "Link text updated"
     end
 
-    fill_in "widget_card_link_url", with: "consul.dev updated"
+    fill_in "Link URL", with: "consul.dev updated"
+    fill_in "Position", with: "2"
     click_button "Save card"
 
     expect(page).to have_content "Card updated successfully"
@@ -101,6 +104,7 @@ describe "Cards", :admin do
         expect(page).to have_content "Card description updated"
         expect(page).to have_content "Link text updated"
         expect(page).to have_content "consul.dev updated"
+        expect(page).to have_css "td", exact_text: "2"
       end
     end
   end
@@ -124,6 +128,8 @@ describe "Cards", :admin do
     scenario "Create" do
       visit admin_homepage_path
       click_link "Create header"
+
+      expect(page).not_to have_field "Position"
 
       fill_in "Label (optional)", with: "Header label"
       fill_in "Title", with: "Header text"
@@ -174,10 +180,13 @@ describe "Cards", :admin do
 
         fill_in "Title", with: "Card for a custom page"
         fill_in "Link URL", with: "/any_path"
+        fill_in "Position", with: "12"
         click_button "Create card"
 
         expect(page).to have_current_path admin_site_customization_page_widget_cards_path(custom_page)
         expect(page).to have_content "Card for a custom page"
+        expect(page).to have_content "12"
+        expect(page).to have_css "th", exact_text: "Position"
       end
 
       scenario "Show" do
@@ -239,12 +248,14 @@ describe "Cards", :admin do
         within(".translatable-fields") do
           fill_in "Title", with: "Updated title"
         end
+        fill_in "Position", with: "2"
 
         click_button "Save card"
 
         expect(page).to have_current_path admin_site_customization_page_widget_cards_path(custom_page)
         expect(page).to have_content "Updated title"
         expect(page).not_to have_content "Original title"
+        expect(page).to have_css "td", exact_text: "2"
       end
 
       scenario "Destroy" do
