@@ -143,6 +143,21 @@ describe "Home" do
     expect(page).not_to have_css(".title", text: "Featured")
   end
 
+  scenario "cards are first sorted by 'order' field, then by 'created_at' when order is equal" do
+    create(:widget_card, title: "Card one", order: 1)
+    create(:widget_card, title: "Card two", order: 3)
+    create(:widget_card, title: "Card three", order: 2)
+    create(:widget_card, title: "Card four", order: 3)
+
+    visit root_path
+
+    within(".cards-container") do
+      expect("CARD ONE").to appear_before("CARD THREE")
+      expect("CARD THREE").to appear_before("CARD TWO")
+      expect("CARD TWO").to appear_before("CARD FOUR")
+    end
+  end
+
   describe "Header Card" do
     scenario "if there is header card with link, the link content is rendered" do
       create(:widget_card, :header, link_text: "Link text", link_url: "consul.dev")

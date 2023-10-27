@@ -86,5 +86,14 @@ describe Widget::Card do
       expect(Widget::Card.body).not_to include(header)
       expect(Widget::Card.body).not_to include(page_card)
     end
+
+    it "returns cards sorted by defined order, then by 'created_at' when order is equal" do
+      card1 = create(:widget_card, order: 1)
+      card2 = create(:widget_card, order: 3)
+      card3 = create(:widget_card, order: 2)
+      card4 = create(:widget_card, order: 3)
+
+      expect(Widget::Card.body).to eq [card1, card3, card2, card4]
+    end
   end
 end
