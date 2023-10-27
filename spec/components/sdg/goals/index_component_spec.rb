@@ -35,4 +35,28 @@ describe SDG::Goals::IndexComponent do
     expect(page).to have_content "Planning"
     expect(page).to have_content "Monitoring"
   end
+
+  describe "Cards are ordered" do
+    scenario "by order field" do
+      create(:widget_card, cardable: SDG::Phase["planning"], title: "Card One", order: 3)
+      create(:widget_card, cardable: SDG::Phase["planning"], title: "Card Two", order: 2)
+      create(:widget_card, cardable: SDG::Phase["planning"], title: "Card Three", order: 1)
+
+      render_inline component
+
+      expect("Card Three").to appear_before("Card Two")
+      expect("Card Two").to appear_before("Card One")
+    end
+
+    scenario "by created_at with cards have same order" do
+      create(:widget_card, cardable: SDG::Phase["planning"], title: "Card One", order: 1)
+      create(:widget_card, cardable: SDG::Phase["planning"], title: "Card Two", order: 1)
+      create(:widget_card, cardable: SDG::Phase["planning"], title: "Card Three", order: 1)
+
+      render_inline component
+
+      expect("Card One").to appear_before("Card Two")
+      expect("Card Two").to appear_before("Card Three")
+    end
+  end
 end

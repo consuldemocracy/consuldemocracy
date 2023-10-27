@@ -19,7 +19,7 @@
         <h2 class="title"><%= phase.title %></h2>
       </header>
 
-      <%= render "shared/cards", cards: phase.cards %>
+      <%= render "shared/cards", cards: phase.cards.sort_by_order %>
     </section>
   <% end %>
 </main>
