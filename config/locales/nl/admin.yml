@@ -413,6 +413,16 @@ nl:
         back: Terug naar %{org}
         title: Beheer
         description: Welkom op de %{org} beheerpagina.
+        info: |-
+          <p>Dit is de plek waar jij, als administrator, het burgerparticipatieproces in jouw stad of regio implementeert en overziet.</p>
+
+          <p>Je bent nu één van de honderden overheden en gemeenten wereldwijd die het CONSUL DEMOCRACY platform gebruiken om burgerparticipatie in de praktijk te brengen. Gefeliciteerd!</p>
+
+          <p>De CONSUL DEMOCRACY Foundation staat midden in de wereldwijde gebruikersgemeenschap. We willen je vragen om contact op te nemen zodat we een idee krijgen wie de software gebruikt en hoe we kunnen helpen bij implementatie of gebruik. We kunnen niet wachten om je in de gemeenschap te verwelkomen.</p>
+
+          <p>Veel participatieplezier!</p>
+
+          <p>Groeten van het CONSUL DEMOCRACY Foundation team.</p>
       actions:
         index:
           active: 'Ja'
