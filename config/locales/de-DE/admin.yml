@@ -448,6 +448,16 @@ de:
         back: Zurück zu %{org}
         title: Verwaltung
         description: Willkommen auf dem Admin-Panel für %{org}.
+        info: |-
+          <p>Hier können Sie als Administrator den Bürgerbeteiligungsprozess in Ihrer Stadt oder Region umsetzen und überwachen.</p>
+
+          <p>Sie gehören nun zu den Hunderten von Regierungen und Gemeinden weltweit, die die CONSUL DEMOCRACY Plattform nutzen, um Bürgerbeteiligung in die Praxis umzusetzen. Herzlichen Glückwunsch!</p>
+
+          <p>Die CONSUL DEMOCRACY Stiftung steht im Zentrum der globalen Nutzergemeinschaft. Wir möchten Sie bitten, sich mit uns in Verbindung zu setzen, damit wir uns ein Bild davon machen können, wer die Software nutzt und wie wir bei der Einführung oder Nutzung helfen können. Wir können es kaum erwarten, Sie in der Gemeinschaft willkommen zu heißen.</p>
+
+          <p>Viel Spaß beim Mitmachen!</p>
+
+          <p>Viele Grüße vom Team der CONSUL DEMOCRACY Stiftung.</p>
       actions:
         index:
           description: "Wenn Benutzer Vorschläge erstellen, können sie auf ein Dashboard ihres Vorschlags zugreifen, in dem Sie Ressourcen und Empfehlungen vorschlagen können, um Unterstützung für ihre Idee zu erhalten."
