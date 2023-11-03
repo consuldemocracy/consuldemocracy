@@ -30,5 +30,11 @@ describe "Stats" do
         expect(page).not_to have_content "Advanced statistics"
       end
     end
+
+    scenario "Back link redirects to budget page" do
+      visit budget_stats_path(budget)
+
+      expect(page).to have_link("Go back", href: budget_path(budget))
+    end
   end
 end
