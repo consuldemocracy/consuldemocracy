@@ -63,7 +63,7 @@ RSpec.configure do |config|
     Capybara.default_set_options = { clear: :backspace }
   end
 
-  config.before(:each, type: :system, no_js: true) do
+  config.before(:each, :no_js, type: :system) do
     driven_by :rack_test
     Capybara.default_set_options = {}
   end
