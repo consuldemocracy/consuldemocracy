@@ -94,7 +94,7 @@ end
 section "Creating Investments" do
   tags = Faker::Lorem.words(number: 10)
   100.times do
-    heading = Budget::Heading.all.sample
+    heading = Budget::Heading.sample
 
     translation_attributes = random_locales.each_with_object({}) do |locale, attributes|
       attributes["title_#{locale.to_s.underscore}"] = "Title for locale #{locale}"
@@ -102,7 +102,7 @@ section "Creating Investments" do
     end
 
     investment = Budget::Investment.create!({
-      author: User.all.sample,
+      author: User.sample,
       heading: heading,
       group: heading.group,
       budget: heading.group.budget,
@@ -145,9 +145,9 @@ end
 section "Winner Investments" do
   budget = Budget.finished.first
   50.times do
-    heading = budget.headings.all.sample
+    heading = budget.headings.sample
     investment = Budget::Investment.create!(
-      author: User.all.sample,
+      author: User.sample,
       heading: heading,
       group: heading.group,
       budget: heading.group.budget,
@@ -169,6 +169,6 @@ end
 
 section "Creating Valuation Assignments" do
   (1..50).to_a.sample.times do
-    Budget::Investment.all.sample.valuators << Valuator.first
+    Budget::Investment.sample.valuators << Valuator.first
   end
 end
