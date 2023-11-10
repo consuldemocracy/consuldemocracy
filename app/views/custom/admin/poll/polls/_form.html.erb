@@ -1,4 +1,4 @@
-<!-- <%= render "shared/globalize_locales", resource: @poll %> -->
+<%= render "shared/globalize_locales", resource: @poll %>
 
 <%= translatable_form_for [:admin, @poll] do |f| %>
   <%= render "shared/errors", resource: @poll %>
@@ -33,7 +33,7 @@
 
   <div class="row">
     <div class="images small-12 column">
-      <%= render "images/nested_image", f: f %>
+      <%= render Images::NestedComponent.new(f) %>
     </div>
 
     <div class="clear">
