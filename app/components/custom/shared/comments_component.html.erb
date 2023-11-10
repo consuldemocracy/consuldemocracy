@@ -11,7 +11,7 @@
       <%# end %>
 
       <% if current_user %>
-        <% if !record.expired? %>
+        <% if record.respond_to?(:expired?) && !record.expired? %>
           <%= render "comments/form", { commentable: record, parent_id: nil } %>
         <% else %>
           <div class="alert">
