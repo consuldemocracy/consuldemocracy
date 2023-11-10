@@ -1,4 +1,5 @@
-<% provide :title do %><%= t("proposals.index.title") %><% end %>
+<% provide :title do %><%= t("proposals.index.title") %>
+<% end %>
 <% content_for :header_addon do %>
   <%= render "shared/search_form",
              search_path: proposals_path(page: 1),
@@ -10,11 +11,11 @@
 
 <main>
   <% if [
-          @search_terms,
-          @advanced_search_terms,
-          params[:retired].present?,
-          params[:selected].present?
-        ].any? %>
+    @search_terms,
+    @advanced_search_terms,
+    params[:retired].present?,
+    params[:selected].present?
+  ].any? %>
     <%= render Shared::SearchResultsSummaryComponent.new(
       results: @proposals,
       search_terms: @search_terms,
@@ -32,8 +33,8 @@
 
   <% if show_recommended_proposals? %>
     <%= render "shared/recommended_index", recommended: @recommended_proposals,
-                                           disable_recommendations_path: recommendations_disable_proposals_path,
-                                           namespace: "proposals" %>
+               disable_recommendations_path: recommendations_disable_proposals_path,
+               namespace: "proposals" %>
   <% end %>
 
   <div class="row">
@@ -41,19 +42,19 @@
 
       <%= render Shared::BannerComponent.new("proposals") %>
 
-      <!-- <% if show_featured_proposals? %>
-        <div id="featured-proposals" class="row featured-proposals">
-          <div class="small-12 column">
-            <h2>
-              <%= t("proposals.index.featured_proposals") %>
-            </h2>
-          </div>
-          <% @featured_proposals.each do |featured_proposal| %>
-            <%= render "featured_proposal", proposal: featured_proposal %>
-          <% end %>
-          
-        </div>
-      <% end %> -->
+
+      <%# if show_featured_proposals? %>
+<!--        <div id="featured-proposals" class="row featured-proposals">-->
+<!--          <div class="small-12 column">-->
+<!--            <h2>-->
+              <%#= t("proposals.index.featured_proposals") %>
+<!--            </h2>-->
+<!--          </div>-->
+          <%# @featured_proposals.each do |featured_proposal| %>
+            <%#= render "featured_proposal", proposal: featured_proposal %>
+          <%# end %>
+<!--        </div>-->
+      <%# end %>
 
       <% unless params[:selected].present? %>
         <div class="row">
@@ -63,9 +64,9 @@
         </div>
       <% end %>
 
-     <!--> <% unless params[:retired].present? || params[:selected].present? %>
+      <% unless params[:retired].present? || params[:selected].present? %>
         <%= render Shared::AdvancedSearchComponent.new %>
-      <% end %> -->
+      <% end %>
 
       <% unless params[:selected].present? %>
         <%= render "shared/order_links", i18n_namespace: "proposals.index" %>
@@ -118,13 +119,13 @@
         </p>
 
         <% if params[:retired].blank? %>
-        <!--  <%= render "categories" %>
-          <%= render "shared/tag_cloud", taggable: "Proposal" %> -->
+          <%#= render "categories" %>
+          <%#= render "shared/tag_cloud", taggable: "Proposal" %>
           <%= render Proposals::GeozonesComponent.new %>
         <% end %>
-        <!-- <%= render "retired" %>
-        <%= render "proposals_lists" %> -->
-        
+        <%#= render "retired" %>
+        <%#= render "proposals_lists" %>
+
       </aside>
     </div>
 
