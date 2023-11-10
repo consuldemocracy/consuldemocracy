@@ -11,12 +11,12 @@
       <%# end %>
 
       <% if current_user %>
-        <% if record.respond_to?(:expired?) && !record.expired? %>
-          <%= render "comments/form", { commentable: record, parent_id: nil } %>
-        <% else %>
+        <% if record.respond_to?(:expired?) && record.expired? %>
           <div class="alert">
-            <%= t("comments.comment.expired") %>
+          <%= t("comments.comment.expired") %>
           </div>
+        <% else %>
+          <%= render "comments/form", { commentable: record, parent_id: nil } %>
         <% end %>
       <% else %>
         <%= render "shared/login_to_comment" %>
