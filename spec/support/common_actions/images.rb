@@ -4,7 +4,7 @@ module Images
     when "Budget"
       visit edit_admin_budget_path(Budget.last)
     when "Proposal"
-      click_on "Not now, go to my proposal" rescue Capybara::ElementNotFound
+      click_link "Not now, go to my proposal" rescue Capybara::ElementNotFound
     end
   end
 

@@ -145,8 +145,8 @@ describe "Admin banners magement", :admin do
     page.find("body").click
 
     within(".banner") do
-      expect(page).to have_selector("h2", text: "Modified title")
-      expect(page).to have_selector("h3", text: "Edited text")
+      expect(page).to have_css "h2", text: "Modified title"
+      expect(page).to have_css "h3", text: "Edited text"
     end
 
     click_button "Save changes"

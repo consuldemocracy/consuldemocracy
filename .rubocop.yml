@@ -20,10 +20,16 @@ Bundler/OrderedGems:
   Enabled: true
   ConsiderPunctuation: true
 
+Capybara/ClickLinkOrButtonStyle:
+  Enabled: true
+
 Capybara/CurrentPathExpectation:
   Enabled: true
 
 Capybara/NegationMatcher:
+  Enabled: true
+
+Capybara/RSpec/HaveSelector:
   Enabled: true
 
 Capybara/SpecificActions:

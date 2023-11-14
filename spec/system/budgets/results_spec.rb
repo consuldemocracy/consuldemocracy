@@ -56,7 +56,7 @@ describe "Results" do
     visit budget_path(budget)
     click_link "See results"
 
-    expect(page).to have_selector("a.is-active", text: heading.name)
+    expect(page).to have_css "a.is-active", text: heading.name
 
     within("#budget-investments-compatible") do
       expect(page).to have_content "First selected"
@@ -116,7 +116,7 @@ describe "Results" do
   scenario "Loads budget and heading by slug" do
     visit budget_results_path(budget.slug, heading_id: heading.slug)
 
-    expect(page).to have_selector("a.is-active", text: heading.name)
+    expect(page).to have_css "a.is-active", text: heading.name
 
     within("#budget-investments-compatible") do
       expect(page).to have_content "First selected"

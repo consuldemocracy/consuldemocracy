@@ -60,7 +60,7 @@ describe SDG::Targets::TagListComponent do
 
     render_inline component
 
-    expect(page).to have_selector "a", count: 2
+    expect(page).to have_css "a", count: 2
     expect(page).to have_link "target 1.1"
     expect(page).to have_link "2+",
                               title: "2 more targets",

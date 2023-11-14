@@ -29,15 +29,15 @@ describe Pages::Help::SectionComponent do
     it "renders an image on sections with an image" do
       render_inline Pages::Help::SectionComponent.new("debates")
 
-      expect(page).to have_selector "img"
-      expect(page).to have_selector "figure"
+      expect(page).to have_css "img"
+      expect(page).to have_css "figure"
     end
 
     it "does not render an image tag when there is no image" do
       render_inline Pages::Help::SectionComponent.new("processes")
 
-      expect(page).not_to have_selector "img"
-      expect(page).not_to have_selector "figure"
+      expect(page).not_to have_css "img"
+      expect(page).not_to have_css "figure"
     end
   end
 end

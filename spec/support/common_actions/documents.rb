@@ -1,7 +1,7 @@
 module Documents
   def documentable_redirected_to_resource_show_or_navigate_to
     find("a", text: "Not now, go to my proposal")
-    click_on "Not now, go to my proposal"
+    click_link "Not now, go to my proposal"
   rescue
     nil
   end

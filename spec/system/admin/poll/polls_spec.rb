@@ -327,11 +327,11 @@ describe "Admin polls", :admin do
             expect(page).to have_content("10")
           end
 
-          expect(page).not_to have_selector "#total_system"
+          expect(page).not_to have_css "#total_system"
         end
 
-        expect(page).to have_selector "#poll_booth_assignment_#{booth_assignment.id}_recounts"
-        expect(page).not_to have_selector "#poll_booth_assignment_#{booth_assignment.id}_system"
+        expect(page).to have_css "#poll_booth_assignment_#{booth_assignment.id}_recounts"
+        expect(page).not_to have_css "#poll_booth_assignment_#{booth_assignment.id}_system"
       end
     end
   end

@@ -78,7 +78,7 @@ describe "Admin settings", :admin do
       click_link "Map configuration"
 
       within "#map-form" do
-        click_on "Update"
+        click_button "Update"
       end
 
       expect(page).to have_content "Map configuration updated successfully"
@@ -100,7 +100,7 @@ describe "Admin settings", :admin do
       click_link "Map configuration"
       find("#admin-map").click
       within "#map-form" do
-        click_on "Update"
+        click_button "Update"
       end
 
       expect(find("#latitude", visible: :hidden).value).not_to eq "51.48"

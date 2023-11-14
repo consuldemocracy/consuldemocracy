@@ -32,8 +32,8 @@ describe "SDGManagement" do
       login_as(user)
       visit root_path
 
-      click_on "Menu"
-      click_on "SDG content"
+      click_link "Menu"
+      click_link "SDG content"
 
       expect(page).to have_current_path(sdg_management_root_path)
       expect(page).to have_css ".sdg-content-menu"

@@ -14,7 +14,7 @@ describe Valuation::Budgets::RowComponent do
 
       render_inline Valuation::Budgets::RowComponent.new(budget: budget)
 
-      expect(page).to have_selector ".investments-count", text: "1"
+      expect(page).to have_css ".investments-count", text: "1"
     end
 
     it "counts investments assigned to the valuator group" do
@@ -24,7 +24,7 @@ describe Valuation::Budgets::RowComponent do
 
       render_inline Valuation::Budgets::RowComponent.new(budget: budget)
 
-      expect(page).to have_selector ".investments-count", text: "1"
+      expect(page).to have_css ".investments-count", text: "1"
     end
 
     it "does not count investments with valuation finished" do
@@ -36,7 +36,7 @@ describe Valuation::Budgets::RowComponent do
 
       render_inline Valuation::Budgets::RowComponent.new(budget: budget)
 
-      expect(page).to have_selector ".investments-count", text: "0"
+      expect(page).to have_css ".investments-count", text: "0"
     end
 
     it "displays zero when the budget hasn't reached the valuating phase" do
@@ -45,7 +45,7 @@ describe Valuation::Budgets::RowComponent do
 
       render_inline Valuation::Budgets::RowComponent.new(budget: budget)
 
-      expect(page).to have_selector ".investments-count", text: "0"
+      expect(page).to have_css ".investments-count", text: "0"
     end
 
     it "displays zero when the valuating phase is over" do
@@ -54,7 +54,7 @@ describe Valuation::Budgets::RowComponent do
 
       render_inline Valuation::Budgets::RowComponent.new(budget: budget)
 
-      expect(page).to have_selector ".investments-count", text: "0"
+      expect(page).to have_css ".investments-count", text: "0"
     end
   end
 
