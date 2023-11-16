@@ -123,7 +123,7 @@ task :map_node_bins do
   on roles(:app) do
     within release_path do
       with rails_env: fetch(:rails_env) do
-        prefix = -> { "#{fetch(:fnm_setup_command)} && fnm exec" }
+        prefix = -> { "#{fetch(:fnm_path)}/fnm exec" }
 
         fetch(:fnm_map_bins).each do |command|
           SSHKit.config.command_map.prefix[command.to_sym].unshift(prefix)
