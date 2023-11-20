@@ -75,7 +75,7 @@ describe Shared::BannerComponent do
     end
 
     it "does not render anything with no active banners" do
-      Banner.all.each { |banner| banner.update!(post_ended_at: Date.current - 1.day) }
+      Banner.find_each { |banner| banner.update!(post_ended_at: Date.current - 1.day) }
 
       render_inline Shared::BannerComponent.new("debates")
 

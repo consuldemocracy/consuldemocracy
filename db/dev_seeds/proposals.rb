@@ -19,7 +19,7 @@ section "Creating Proposals" do
   30.times do
     title = Faker::Lorem.sentence(word_count: 3).truncate(60)
     summary = Faker::Lorem.sentence(word_count: 3)
-    author = User.all.sample
+    author = User.sample
     description = "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>"
 
     proposal = Proposal.create!(author: author,
@@ -29,7 +29,7 @@ section "Creating Proposals" do
                                 description: description,
                                 created_at: rand((1.week.ago)..Time.current),
                                 tag_list: tags.sample(3).join(","),
-                                geozone: Geozone.all.sample,
+                                geozone: Geozone.sample,
                                 terms_of_service: "1",
                                 published_at: Time.current)
     random_locales.map do |locale|
@@ -47,7 +47,7 @@ end
 section "Creating Archived Proposals" do
   tags = Faker::Lorem.words(number: 25)
   5.times do
-    author = User.all.sample
+    author = User.sample
     description = "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>"
     proposal = Proposal.create!(author: author,
                                 title: Faker::Lorem.sentence(word_count: 3).truncate(60),
@@ -55,7 +55,7 @@ section "Creating Archived Proposals" do
                                 responsible_name: Faker::Name.name,
                                 description: description,
                                 tag_list: tags.sample(3).join(","),
-                                geozone: Geozone.all.sample,
+                                geozone: Geozone.sample,
                                 terms_of_service: "1",
                                 created_at: Setting.archived_proposals_date_limit,
                                 published_at: Setting.archived_proposals_date_limit)
@@ -74,7 +74,7 @@ end
 section "Creating Successful Proposals" do
   tags = Faker::Lorem.words(number: 25)
   10.times do
-    author = User.all.sample
+    author = User.sample
     description = "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>"
     proposal = Proposal.create!(author: author,
                                 title: Faker::Lorem.sentence(word_count: 3).truncate(60),
@@ -83,7 +83,7 @@ section "Creating Successful Proposals" do
                                 description: description,
                                 created_at: rand((1.week.ago)..Time.current),
                                 tag_list: tags.sample(3).join(","),
-                                geozone: Geozone.all.sample,
+                                geozone: Geozone.sample,
                                 terms_of_service: "1",
                                 cached_votes_up: Setting["votes_for_proposal_success"],
                                 published_at: Time.current)
@@ -100,7 +100,7 @@ section "Creating Successful Proposals" do
 
   tags = Tag.where(kind: "category")
   30.times do
-    author = User.all.sample
+    author = User.sample
     description = "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>"
     proposal = Proposal.create!(author: author,
                                 title: Faker::Lorem.sentence(word_count: 4).truncate(60),
@@ -109,7 +109,7 @@ section "Creating Successful Proposals" do
                                 description: description,
                                 created_at: rand((1.week.ago)..Time.current),
                                 tag_list: tags.sample(3).join(","),
-                                geozone: Geozone.all.sample,
+                                geozone: Geozone.sample,
                                 terms_of_service: "1",
                                 published_at: Time.current)
     random_locales.map do |locale|
@@ -128,7 +128,7 @@ section "Creating proposal notifications" do
   100.times do |i|
     ProposalNotification.create!(title: "Proposal notification title #{i}",
                                  body: "Proposal notification body #{i}",
-                                 author: User.all.sample,
-                                 proposal: Proposal.all.sample)
+                                 author: User.sample,
+                                 proposal: Proposal.sample)
   end
 end

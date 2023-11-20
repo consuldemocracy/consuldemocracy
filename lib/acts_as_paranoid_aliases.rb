@@ -63,7 +63,7 @@ module ActsAsParanoidAliases
     def restore_all(ids)
       return if ids.blank?
 
-      only_hidden.where(id: ids).each(&:restore)
+      only_hidden.where(id: ids).find_each(&:restore)
     end
   end
 end
