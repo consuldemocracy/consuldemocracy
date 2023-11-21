@@ -24,13 +24,4 @@ RSpec.describe SettingsHelper do
       expect(feature?("f4")).to be nil
     end
   end
-
-  describe "#display_setting_name" do
-    it "returns correct setting_name" do
-      expect(display_setting_name("setting")).to eq("Setting")
-      expect(display_setting_name("remote_census_general_name")).to eq("General Information")
-      expect(display_setting_name("remote_census_request_name")).to eq("Request Data")
-      expect(display_setting_name("remote_census_response_name")).to eq("Response Data")
-    end
-  end
 end
