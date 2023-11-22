@@ -722,6 +722,10 @@ body > header,
         }
       }
 
+      > a::after {
+        border: 0;
+      }
+
       > a::before {
         border: inset 6px;
         border-bottom-width: 0;
