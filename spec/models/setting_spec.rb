@@ -27,56 +27,12 @@ describe Setting do
     end
   end
 
-  describe "#type" do
-    it "returns the key prefix for 'process' settings" do
-      process_setting = Setting.create!(key: "process.whatever")
-      expect(process_setting.type).to eq "process"
-    end
-
-    it "returns the key prefix for 'feature' settings" do
-      feature_setting = Setting.create!(key: "feature.whatever")
-      expect(feature_setting.type).to eq "feature"
-    end
-
-    it "returns the key prefix for 'map' settings" do
-      map_setting = Setting.create!(key: "map.whatever")
-      expect(map_setting.type).to eq "map"
-    end
-
-    it "returns the key prefix for 'html' settings" do
-      html_setting = Setting.create!(key: "html.whatever")
-      expect(html_setting.type).to eq "html"
-    end
-
-    it "returns the key prefix for 'homepage' settings" do
-      homepage_setting = Setting.create!(key: "homepage.whatever")
-      expect(homepage_setting.type).to eq "homepage"
-    end
-
-    it "returns the key prefix for 'sdg' settings" do
-      sdg_setting = Setting.create!(key: "sdg.whatever")
-
-      expect(sdg_setting.type).to eq "sdg"
-    end
-
-    it "returns the key prefix for 'remote_census.general' settings" do
-      remote_census_general_setting = Setting.create!(key: "remote_census.general.whatever")
-      expect(remote_census_general_setting.type).to eq "remote_census.general"
-    end
-
-    it "returns the key prefix for 'remote_census_request' settings" do
-      remote_census_request_setting = Setting.create!(key: "remote_census.request.whatever")
-      expect(remote_census_request_setting.type).to eq "remote_census.request"
-    end
-
-    it "returns the key prefix for 'remote_census_response' settings" do
-      remote_census_response_setting = Setting.create!(key: "remote_census.response.whatever")
-      expect(remote_census_response_setting.type).to eq "remote_census.response"
-    end
-
-    it "returns 'configuration' for the rest of the settings" do
-      configuration_setting = Setting.create!(key: "whatever")
-      expect(configuration_setting.type).to eq "configuration"
+  describe "#feature?" do
+    it "returns true if the key prefix is process, feature or sdg" do
+      expect(Setting.find_by!(key: "process.debates").feature?).to be true
+      expect(Setting.find_by!(key: "feature.map").feature?).to be true
+      expect(Setting.find_by!(key: "sdg.process.debates").feature?).to be true
+      expect(Setting.find_by!(key: "uploads.documents.max_size").feature?).to be false
     end
   end
 

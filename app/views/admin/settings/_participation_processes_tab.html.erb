@@ -1,3 +1,3 @@
 <h2><%= t("admin.settings.index.participation_processes") %></h2>
 
-<%= render "featured_settings_table", features: @participation_processes_settings, tab: "#tab-participation-processes" %>
+<%= render Admin::Settings::TableComponent.new(settings: @participation_processes_settings, setting_name: "feature", tab: "#tab-participation-processes") %>
