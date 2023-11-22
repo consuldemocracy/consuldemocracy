@@ -9,6 +9,8 @@ class Document < ApplicationRecord
   validates :documentable_id, presence: true,         if: -> { persisted? }
   validates :documentable_type, presence: true,       if: -> { persisted? }
 
+  before_save :remove_metadata
+
   scope :admin, -> { where(admin: true) }
 
   def self.humanized_accepted_content_types
@@ -35,5 +37,14 @@ class Document < ApplicationRecord
 
     def documentable_class
       association_class
+    end
+
+    def remove_metadata
+      return unless attachment.attached?
+
+      attachment_path = ActiveStorage::Blob.service.path_for(attachment.key)
+      Exiftool.new(attachment_path, "-all:all=")
+    rescue Exiftool::ExiftoolNotInstalled, Exiftool::NoSuchFile
+      nil
     end
 end
