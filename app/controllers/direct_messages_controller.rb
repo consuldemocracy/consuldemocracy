@@ -1,8 +1,12 @@
 class DirectMessagesController < ApplicationController
+  before_action :authenticate_user!
   load_and_authorize_resource :user, instance_name: :receiver
-  load_and_authorize_resource through: :receiver, through_association: :direct_messages_received
+  load_resource through: :receiver, through_association: :direct_messages_received
+  authorize_resource except: :new
 
   def new
+    authorize! :new, @direct_message, message: t("users.direct_messages.new.verified_only",
+                                                 verify_account: helpers.link_to_verify_account)
   end
 
   def create

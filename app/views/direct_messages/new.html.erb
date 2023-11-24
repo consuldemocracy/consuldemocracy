@@ -6,21 +6,7 @@
       <%= t("users.direct_messages.new.title", receiver: @receiver.name) %>
     </h1>
 
-    <% if not current_user %>
-      <div class="callout primary">
-        <p>
-          <%= sanitize(t("users.login_to_continue",
-                         signin: link_to_signin,
-                         signup: link_to_signup)) %>
-        </p>
-      </div>
-    <% elsif not @receiver.email_on_direct_message? %>
-      <div class="callout primary">
-        <p>
-          <%= t("users.direct_messages.new.direct_messages_bloqued") %>
-        </p>
-      </div>
-    <% elsif can? :create, @direct_message %>
+    <% if @receiver.email_on_direct_message? %>
       <%= form_for [@receiver, @direct_message] do |f| %>
         <%= render "shared/errors", resource: @direct_message %>
 
@@ -32,10 +18,9 @@
         </div>
       <% end %>
     <% else %>
-      <div class="callout warning">
+      <div class="callout primary">
         <p>
-          <%= sanitize(t("users.direct_messages.new.verified_only",
-                         verify_account: link_to_verify_account)) %>
+          <%= t("users.direct_messages.new.direct_messages_bloqued") %>
         </p>
       </div>
     <% end %>
