@@ -1,16 +1,13 @@
 class DirectMessagesController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource :user, instance_name: :receiver
+  load_and_authorize_resource through: :receiver, through_association: :direct_messages_received
 
   def new
-    @receiver = User.find(params[:user_id])
-    @direct_message = DirectMessage.new(receiver: @receiver)
   end
 
   def create
-    @sender = current_user
-    @receiver = User.find(params[:user_id])
+    @direct_message.sender = current_user
 
-    @direct_message = DirectMessage.new(parsed_params)
     if @direct_message.save
       Mailer.direct_message_for_receiver(@direct_message).deliver_later
       Mailer.direct_message_for_sender(@direct_message).deliver_later
@@ -23,7 +20,6 @@ class DirectMessagesController < ApplicationController
   end
 
   def show
-    @direct_message = DirectMessage.find(params[:id])
   end
 
   private
@@ -34,9 +30,5 @@ class DirectMessagesController < ApplicationController
 
     def allowed_params
       [:title, :body]
-    end
-
-    def parsed_params
-      direct_message_params.merge(sender: @sender, receiver: @receiver)
     end
 end
