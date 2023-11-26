@@ -3,7 +3,7 @@ require "rails_helper"
 describe "Custom Pages" do
   context "New custom page" do
     context "Published" do
-      scenario "See page" do
+      scenario "See page", :consul do
         custom_page = create(:site_customization_page, :published,
           slug: "other-slug",
           title_en: "Custom page",
@@ -19,7 +19,7 @@ describe "Custom Pages" do
         expect(page).not_to have_content("Print this info")
       end
 
-      scenario "Show all fields and text with links" do
+      scenario "Show all fields and text with links", :consul do
         custom_page = create(:site_customization_page, :published,
           slug: "slug-with-all-fields-filled",
           title_en: "Custom page",
@@ -38,7 +38,7 @@ describe "Custom Pages" do
         expect(page).to have_content("Print this info")
       end
 
-      scenario "Don't show subtitle if its blank" do
+      scenario "Don't show subtitle if its blank", :consul do
         custom_page = create(:site_customization_page, :published,
           slug: "slug-without-subtitle",
           title_en: "Custom page",
@@ -69,7 +69,7 @@ describe "Custom Pages" do
         expect(page).to have_content("Another custom page")
       end
 
-      scenario "Not listed in more information page" do
+      scenario "Not listed in more information page", :consul do
         custom_page = create(:site_customization_page, :published,
           slug: "another-slug", title_en: "Another custom page",
           subtitle_en: "Subtitle for custom page",
