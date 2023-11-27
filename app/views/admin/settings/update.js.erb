@@ -1,6 +1,6 @@
 var form = $("<%= j render Admin::Settings::FeaturedSettingsFormComponent.new(
   @setting,
-  tab: params[:setting][:tab],
+  tab: params[:tab],
   describedby: params[:setting][:describedby]
 ) %>");
 
