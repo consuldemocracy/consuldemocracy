@@ -17,7 +17,7 @@
         </td>
         <td class="small-6">
           <% if setting.content_type? %>
-            <%= render "admin/settings/content_types_settings_form", setting: setting %>
+            <%= render Admin::Settings::ContentTypesFormComponent.new(setting) %>
           <% else %>
             <% if defined?(tab) %>
               <%= render "admin/settings/settings_form", setting: setting, tab: tab %>
