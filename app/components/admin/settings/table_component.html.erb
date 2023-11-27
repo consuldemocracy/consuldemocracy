@@ -19,11 +19,7 @@
           <% if setting.content_type? %>
             <%= render Admin::Settings::ContentTypesFormComponent.new(setting) %>
           <% else %>
-            <% if defined?(tab) %>
-              <%= render "admin/settings/settings_form", setting: setting, tab: tab %>
-            <% else %>
-              <%= render "admin/settings/settings_form", setting: setting %>
-            <% end %>
+            <%= render Admin::Settings::TextFormComponent.new(setting, tab: tab) %>
           <% end %>
         </td>
       </tr>
