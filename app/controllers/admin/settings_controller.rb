@@ -27,7 +27,7 @@ class Admin::SettingsController < Admin::BaseController
     Setting["map.latitude"] = params[:latitude].to_f
     Setting["map.longitude"] = params[:longitude].to_f
     Setting["map.zoom"] = params[:zoom].to_i
-    redirect_to admin_settings_path, notice: t("admin.settings.index.map.flash.update")
+    redirect_to request_referer, notice: t("admin.settings.index.map.flash.update")
   end
 
   def update_content_types

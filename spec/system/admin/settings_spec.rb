@@ -222,6 +222,17 @@ describe "Admin settings", :admin do
         expect(page).to have_current_path(admin_settings_path)
         expect(page).to have_css("div#tab-map-configuration.is-active")
       end
+
+      scenario "On #tab-map-configuration when using the interactive map" do
+        visit admin_settings_path(anchor: "tab-map-configuration")
+        within "#map-form" do
+          click_button "Update"
+        end
+
+        expect(page).to have_content("Map configuration updated successfully.")
+        expect(page).to have_current_path(admin_settings_path)
+        expect(page).to have_css("div#tab-map-configuration.is-active")
+      end
     end
 
     scenario "On #tab-proposals" do
