@@ -5,7 +5,7 @@
 
   <p><%= t("admin.settings.index.map.help") %></p>
 
-  <%= render "map_form" %>
+  <%= render Admin::Settings::MapFormComponent.new %>
 <% else %>
   <div class="callout primary">
     <%= t("admin.settings.index.map.how_to_enable") %>
