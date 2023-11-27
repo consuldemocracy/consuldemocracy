@@ -277,6 +277,18 @@ describe "Admin settings", :admin do
       expect(page).to have_current_path(admin_settings_path)
       expect(page).to have_css("h2", exact_text: "SDG configuration")
     end
+
+    scenario "On #tab-images-and-documents" do
+      Setting["feature.sdg"] = true
+      visit admin_settings_path(anchor: "tab-images-and-documents")
+      within("tr", text: "Maximum number of documents") do
+        fill_in "Maximum number of documents", with: 5
+        click_button "Update"
+      end
+
+      expect(page).to have_current_path(admin_settings_path)
+      expect(page).to have_field("Maximum number of documents", with: 5)
+    end
   end
 
   describe "Skip verification" do

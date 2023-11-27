@@ -17,7 +17,7 @@
         </td>
         <td>
           <% if setting.content_type? %>
-            <%= render Admin::Settings::ContentTypesFormComponent.new(setting) %>
+            <%= render Admin::Settings::ContentTypesFormComponent.new(setting, tab: tab) %>
           <% elsif setting.feature? %>
             <%= render Admin::Settings::FeaturedSettingsFormComponent.new(setting, tab: tab) %>
           <% else %>

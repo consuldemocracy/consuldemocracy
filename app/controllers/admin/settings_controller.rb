@@ -37,7 +37,7 @@ class Admin::SettingsController < Admin::BaseController
       Setting.mime_types[group][content_type]
     end
     setting.update! value: mime_type_values.join(" ")
-    redirect_to admin_settings_path, notice: t("admin.settings.flash.updated")
+    redirect_to request_referer, notice: t("admin.settings.flash.updated")
   end
 
   private
