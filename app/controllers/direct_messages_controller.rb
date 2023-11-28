@@ -1,6 +1,7 @@
 class DirectMessagesController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource :user, instance_name: :receiver
+  before_action :check_slug
   load_resource through: :receiver, through_association: :direct_messages_received
   authorize_resource except: :new
 
@@ -27,6 +28,12 @@ class DirectMessagesController < ApplicationController
   end
 
   private
+
+    def check_slug
+      slug = params[:user_id].split("-", 2)[1]
+
+      raise ActiveRecord::RecordNotFound unless @receiver.slug == slug.to_s
+    end
 
     def direct_message_params
       params.require(:direct_message).permit(allowed_params)
