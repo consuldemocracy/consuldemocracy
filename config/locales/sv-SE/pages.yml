@@ -64,9 +64,9 @@ sv:
         text: |-
           Använd plattformen i din stad eller hjälp oss att förbättra den, den är fri programvara.
 
-          Den här plattformen för Open Government använder [CONSUL](https://github.com/consuldemocracy/consuldemocracy 'CONSUL Democracy på GitHub'), som är fri programvara licensierad under [AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), vilket kortfattat betyder att vem som helst kan använda, kopiera, granska eller ändra i koden och dela den vidare under samma licens. Vi tycker att bra tjänster ska vara tillgängliga för fler.
+          Den här plattformen för Open Government använder [CONSUL DEMOCRACY](https://github.com/consuldemocracy/consuldemocracy 'consul democracy på GitHub'), som är fri programvara licensierad under [AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), vilket kortfattat betyder att vem som helst kan använda, kopiera, granska eller ändra i koden och dela den vidare under samma licens. Vi tycker att bra tjänster ska vara tillgängliga för fler.
 
-          Om du är programmerare får du gärna hjälpa oss att förbättra koden på [CONSUL](https://github.com/consul/consul 'CONSUL på GitHub'), eller den svenska implementeringen på [Digidem Lab/CONSUL](https://github.com/digidemlab/consul 'CONSUL Democracy Sweden på GitHub').
+          Om du är programmerare får du gärna hjälpa oss att förbättra koden på [CONSUL DEMOCRACY](https://github.com/consuldemocracy/consuldemocracy 'CONSUL Democracy på GitHub'), eller den svenska implementeringen på [Digidem Lab/CONSUL](https://github.com/digidemlab/consul 'CONSUL Democracy Sweden på GitHub').
       titles:
         how_to_use: Använd det i din kommun
     privacy:
