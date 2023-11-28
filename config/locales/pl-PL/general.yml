@@ -173,9 +173,9 @@ pl:
     footer:
       accessibility: Ułatwienia dostępu
       conditions: Regulamin
-      consul: Aplikacja CONSUL
+      consul: Aplikacja CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Ten portal używa %{consul}, który jest %{open_source}.
       open_source: oprogramowanie open-source
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
