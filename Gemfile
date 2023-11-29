@@ -68,6 +68,7 @@ gem "wicked_pdf", "~> 2.6.3"
 gem "wkhtmltopdf-binary", "~> 0.12.6"
 gem  "ed25519" 
 gem  "bcrypt_pbkdf"
+gem "faker", "~> 2.22.0"
 source "https://rails-assets.org" do
   gem "rails-assets-markdown-it", "~> 9.0.1"
 end
@@ -76,7 +77,6 @@ group :development, :test do
   gem "bullet", "~> 7.0.3"
   gem "byebug", "~> 11.1.3"
   gem "factory_bot_rails", "~> 6.2.0"
-  gem "faker", "~> 2.22.0"
   gem "i18n-tasks", "~> 0.9.37"
   gem "knapsack_pro", "~> 3.3.1"
   gem "launchy", "~> 2.5.0"
