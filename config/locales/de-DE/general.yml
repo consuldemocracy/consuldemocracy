@@ -194,9 +194,9 @@ de:
     footer:
       accessibility: Barrierefreiheit
       conditions: Allgemeine Nutzungsbedingungen
-      consul: CONSUL Anwendung
+      consul: CONSUL DEMOCRACY Anwendung
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Die Plattform basiert auf %{consul}, einer %{open_source}.
       open_source: Open-Source Software
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
