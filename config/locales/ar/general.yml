@@ -194,9 +194,9 @@ ar:
     footer:
       accessibility: إمكانية الوصول
       conditions: قوانين وشروط الاستخدام
-      consul: تطبيق CONSUL
+      consul: تطبيق CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: تستخدم هذه البوابة %{consul} والذي هو%{open_source}.
       open_source: برنامج مفتوح المصدر
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
