@@ -184,9 +184,9 @@ ru:
     footer:
       accessibility: Доступность
       conditions: Положения и условия пользования
-      consul: Приложение CONSUL
+      consul: Приложение CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Этот портал использует %{consul}, являющийся %{open_source}.
       open_source: открытым программным обеспечением
       participation_text: Решайте каким сделать город, в котором вы хотите жить.
