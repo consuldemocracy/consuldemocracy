@@ -60,9 +60,9 @@ ka:
         text: |-
           გამოიყენეთ CONSUL თქვენს თვითმმართველობაში ან დაგვეხმარეთ მის გაუმჯობესებაში.
 
-          ღია მმართველობის პორტალი იყენებს [CONSUL-ს] (https://github.com/consuldemocracy/consuldemocracy 'consul democracy github'), რომელიც უფასო პროგრამაა, [ლიცენზია AGPLv3](http://www.gnu.org/licenses/ agpl-3.0.html 'AGPLv3 gnu'), რაც იმას ნიშნავს, რომ ყველას შეუძლია მისი გამოყენება, ასლის შექმნა და მოდიფიცირება.
+          ღია მმართველობის პორტალი იყენებს [CONSUL DEMOCRACY-ს] (https://github.com/consuldemocracy/consuldemocracy 'consul democracy github'), რომელიც უფასო პროგრამაა, [ლიცენზია AGPLv3](http://www.gnu.org/licenses/ agpl-3.0.html 'AGPLv3 gnu'), რაც იმას ნიშნავს, რომ ყველას შეუძლია მისი გამოყენება, ასლის შექმნა და მოდიფიცირება.
 
-          თუ ხარ პროგრამისტი, შეგიძლია დაგვეხმარო [CONSUL app](https://github.com/consuldemocracy/consuldemocracy 'consul democracy github') გაუმჯობესებაში.
+          თუ ხარ პროგრამისტი, შეგიძლია დაგვეხმარო [CONSUL DEMOCRACY app](https://github.com/consuldemocracy/consuldemocracy 'consul democracy github') გაუმჯობესებაში.
       titles:
         how_to_use: გამოიყენეთ CONSUL თქვენს ქალაქში
     privacy:
