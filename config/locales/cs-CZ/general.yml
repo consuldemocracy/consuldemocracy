@@ -206,7 +206,7 @@ cs:
     footer:
       accessibility: Přístupnost
       conditions: Podmínky používání
-      consul: aplikace CONSUL
+      consul: aplikace CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: CONSUL DEMOCRACY, %{year}
       description: Tento portál software %{consul}, což je %{open_source}.
