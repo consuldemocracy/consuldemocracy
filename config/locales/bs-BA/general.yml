@@ -176,9 +176,9 @@ bs:
     footer:
       accessibility: Pristupačnost
       conditions: Uvjeti korištenja
-      consul: Aplikacija CONSUL
+      consul: Aplikacija CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, (godina) %{year}
+      copyright: CONSUL DEMOCRACY, (godina) %{year}
       description: Ovaj portal koristi %{consul}, koji je %{open_source} aplikacija.
       open_source: softver otvorenog koda
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
