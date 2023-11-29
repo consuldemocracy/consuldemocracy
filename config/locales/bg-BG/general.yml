@@ -189,9 +189,9 @@ bg:
     footer:
       accessibility: Достъпност
       conditions: Условия за ползване
-      consul: приложението CONSUL
+      consul: приложението CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Този портал използва %{consul}, който е %{open_source}.
       open_source: софтуер с отворен код
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
