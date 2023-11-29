@@ -35,7 +35,7 @@ bg:
     document_verifications:
       already_verified: Този потребителски профил вече е потвърден.
       has_no_account: За да създадете профил, отидете на %{link} и кликнете в <b> "Регистрация" </b> в горната лява част на екрана.
-      link: CONSUL
+      link: CONSUL DEMOCRACY
       in_census_has_following_permissions: "Този потребител може да участва в уеб сайта със следните права:"
       not_in_census: Този документ не е регистриран.
       not_in_census_info: "Гражданите, които не са в регистър ГРАО, могат да участват в уеб сайта със следните права:"
