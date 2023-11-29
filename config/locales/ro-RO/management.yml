@@ -35,7 +35,7 @@ ro:
     document_verifications:
       already_verified: Acest cont este deja verificat.
       has_no_account: Pentru a crea un cont, mergeți la %{link} și faceți click în <b>"Înregistrare"</b> în partea stânga-sus a ecranului.
-      link: CONSUL
+      link: CONSUL DEMOCRACY
       in_census_has_following_permissions: "Acest utilizator poate participa pe site-ul web cu următoarele permisiuni:"
       not_in_census: Acest document nu este înregistrat.
       not_in_census_info: "Cetățenii care nu sunt în recensământ pot participa pe site-ul web cu următoarele permisiuni:"
