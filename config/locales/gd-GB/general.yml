@@ -206,9 +206,9 @@ gd:
     footer:
       accessibility: So-ruigsinneachd
       conditions: Teirmichean is cumhaichean cleachdaidh
-      consul: aplacaid CONSUL
+      consul: aplacaid CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Cleachdaidh am portal seo an %{consul} a tha na ghoireas %{open_source}.
       open_source: bathar-bog le còd fosgailte
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
