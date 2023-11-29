@@ -156,9 +156,9 @@ id:
     footer:
       accessibility: Aksesibilitas
       conditions: Syarat dan ketentuan penggunaan
-      consul: Konsul aplikasi
+      consul: CONSUL DEMOCRACY aplikasi
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: KONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Portal ini menggunakan %{consul} Itulah %{open_source}.
       open_source: perangkat lunak open-source
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
