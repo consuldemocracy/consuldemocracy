@@ -190,7 +190,7 @@ he:
       conditions: כללים ותנאי שימוש
       consul: מערכת ההצבעות של קול העם
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: Consul, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: פורטל זה משתמש בפלטפורמת %{consul} שהיא %{open_source}.
       open_source: תוכנת קוד פתוח
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
