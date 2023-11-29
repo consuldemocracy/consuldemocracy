@@ -197,9 +197,9 @@ uk-UA:
     footer:
       accessibility: Доступність
       conditions: Правила та умови користування
-      consul: Додаток CONSUL
+      consul: Додаток CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Цей портал використовує %{consul} який знаходиться %{open_source}.
       open_source: відкрите програмне забезпечення
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
