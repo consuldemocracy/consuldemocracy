@@ -35,7 +35,7 @@ sv:
     document_verifications:
       already_verified: Användarkontot är redan verifierat.
       has_no_account: För att skapa ett konto, gå till %{link} och klicka <b>'Registrera'</b> i övre vänstra hörnet.
-      link: CONSUL
+      link: CONSUL DEMOCRACY
       in_census_has_following_permissions: "Den här användaren har följande rättigheter på webbplatsen:"
       not_in_census: Identitetshandlingen är inte registrerad.
       not_in_census_info: "De som inte är invånare i staden kan ändå göra det här på webbplatsen:"
