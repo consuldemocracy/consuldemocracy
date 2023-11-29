@@ -185,9 +185,9 @@ ka:
     footer:
       accessibility: ხელმისაწვდომობა
       conditions: გამოყენების წესები და პირობები
-      consul: CONSUL-ის აპლიკაცია
+      consul: CONSUL DEMOCRACY-ის აპლიკაცია
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: აღნიშნული პორტალი იყენებს %{consul}, რომელიც არის %{open_source}.
       open_source: ღია წყაროების პროგრამული უზრუნველყოფა
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
