@@ -185,9 +185,9 @@ oc:
     footer:
       accessibility: Accessibilitat
       conditions: De condicions d'usatge
-      consul: Sollicitud CONSUL
+      consul: CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Aquel portal es una adaptacion de la plataforma de %{open_source} %{consul} desvolopada per la Comuna de Madrid e adaptada per la Deputacion de Valéncia.
       open_source: logicial liure
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
