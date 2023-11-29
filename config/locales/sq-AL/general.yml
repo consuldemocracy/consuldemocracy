@@ -163,9 +163,9 @@ sq:
     footer:
       accessibility: Dispnueshmësia
       conditions: Termat dhe kushtet e përdorimit
-      consul: Consul Tirana
+      consul: Aplikacioni CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: Bashkia Tiranë, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Ky portal përdor %{consul} i cili është %{open_source}.
       open_source: programet open-source
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
