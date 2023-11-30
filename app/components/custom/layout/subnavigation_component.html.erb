@@ -26,7 +26,8 @@
                                 accesskey: "3" %>
       </li>
     <% end %>
-    <!--<% if feature?(:legislation) %>
+    <!--
+    <% if feature?(:legislation) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.collaborative_legislation"),
                                 legislation_processes_path,
@@ -42,14 +43,18 @@
                                 accesskey: "5" %>
       </li>
     <% end %>
-    <!-- <% if feature?(:sdg) %>
-      <li>
-        <%= layout_menu_link_to t("layouts.header.sdg"),
-                                sdg_goals_path,
-                                controller_path == "sdg/goals" && action_name != "help",
-                                accesskey: "6" %>
-      </li>
-    <% end %> -->
+
+    <% if false %>
+      <% if feature?(:sdg) %>
+        <li>
+          <%= layout_menu_link_to t("layouts.header.sdg"),
+                                  sdg_goals_path,
+                                  controller_path == "sdg/goals" && action_name != "help",
+                                  accesskey: "6" %>
+        </li>
+      <% end %>
+    <% end %>
+
     <% if feature?(:help_page) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.help"),
