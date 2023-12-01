@@ -121,6 +121,7 @@
 //= require budget_edit_associations
 //= require budget_hide_money
 //= require datepicker
+//= require authenticity_token_refresh
 //= require_tree ./admin
 //= require_tree ./sdg
 //= require_tree ./sdg_management
@@ -183,6 +184,7 @@ var initialize_modules = function() {
   App.Datepicker.initialize();
   App.SDGRelatedListSelector.initialize();
   App.SDGManagementRelationSearch.initialize();
+  App.AuthenticityTokenRefresh.initialize();
 };
 
 var destroy_non_idempotent_modules = function() {
