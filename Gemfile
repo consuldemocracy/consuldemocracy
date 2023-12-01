@@ -73,7 +73,7 @@ group :development, :test do
   gem "bullet", "~> 7.0.7"
   gem "byebug", "~> 11.1.3"
   gem "factory_bot_rails", "~> 6.2.0"
-  gem "faker", "~> 3.2.1"
+  gem "faker", "~> 3.2.2"
   gem "i18n-tasks", "~> 0.9.37"
   gem "knapsack_pro", "~> 5.7.0"
   gem "launchy", "~> 2.5.2"
