@@ -30,7 +30,7 @@
             ) do |actions| %>
               <%= actions.action(:download,
                                  text: t("documents.buttons.download_document"),
-                                 path: document.attachment,
+                                 path: rails_blob_path(document.attachment, disposition: "attachment"),
                                  rel: "nofollow") %>
             <% end %>
           </td>

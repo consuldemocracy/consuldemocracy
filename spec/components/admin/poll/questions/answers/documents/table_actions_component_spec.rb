@@ -1,8 +1,19 @@
 require "rails_helper"
 
 describe Admin::Poll::Questions::Answers::Documents::TableActionsComponent, :admin do
+  include Rails.application.routes.url_helpers
+
   let(:future_answer) { create(:poll_question_answer, poll: create(:poll, :future)) }
   let(:current_answer) { create(:poll_question_answer, poll: create(:poll)) }
+
+  it "displays the download action using `attachment` disposition" do
+    document = create(:document, documentable: future_answer)
+
+    render_inline Admin::Poll::Questions::Answers::Documents::TableActionsComponent.new(document)
+
+    url = rails_blob_path(document.attachment, disposition: "attachment", only_path: true)
+    expect(page).to have_link "Download file", href: url
+  end
 
   it "displays the destroy action when the poll has not started" do
     document = create(:document, documentable: future_answer)
