@@ -26,6 +26,27 @@ describe "Documents", :admin do
     expect(page).to have_link "Download file", href: url
   end
 
+  scenario "Index shows a link that opens a modal dialog with the document permanent link" do
+    document_1 = create(:document, :admin)
+    document_2 = create(:document, :admin)
+    document_1_url = polymorphic_url(document_1.attachment, host: app_host)
+    document_2_url = polymorphic_url(document_2.attachment, host: app_host)
+
+    visit admin_site_customization_documents_path
+    within "#document_#{document_1.id}" do
+      click_link "Show link"
+    end
+
+    expect(page).to have_content(document_1_url)
+
+    click_button "Close modal"
+    within "#document_#{document_2.id}" do
+      click_link "Show link"
+    end
+
+    expect(page).to have_content(document_2_url)
+  end
+
   scenario "Index (empty)" do
     visit admin_site_customization_documents_path
 

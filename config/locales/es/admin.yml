@@ -1603,6 +1603,10 @@ es:
             footer_legal: Pie de página (términos legales)
             subnavigation_left: Navegación principal izquierda
             subnavigation_right: Navegación principal derecha
+      documents:
+        copy_link_dialog:
+          title: "Enlace al documento"
+          description: "Puedes usar el enlace a continuación si quieres compartir o enlazar este documento en una página personalizada."
       images:
         index:
           title: Personalizar imágenes

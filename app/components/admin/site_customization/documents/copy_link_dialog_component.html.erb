@@ -1,0 +1,8 @@
+<section id="<%= dialog_id %>" class="small reveal" data-reveal aria-labelledby="<%= dialog_label_id %>">
+  <h2 id="<%= dialog_label_id %>"><%= t("admin.site_customization.documents.copy_link_dialog.title") %></h2>
+  <button class="close-button" aria-label="<%= t("admin.shared.close_modal") %>" type="button" data-close>
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <p><%= t("admin.site_customization.documents.copy_link_dialog.description") %></p>
+  <code><%= polymorphic_url(document.attachment) %></code>
+</section>

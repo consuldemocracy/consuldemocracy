@@ -18,6 +18,7 @@ es:
     buttons:
       download_document: Descargar archivo
       destroy_document: Eliminar documento
+      show_link: Ver enlace
     errors:
       messages:
         in_between: debe estar entre %{min} y %{max}

@@ -28,6 +28,11 @@
               actions: [:destroy],
               destroy_path: admin_site_customization_document_path(document)
             ) do |actions| %>
+              <%= actions.action(:show,
+                                 text: t("documents.buttons.show_link"),
+                                 path: "#",
+                                 rel: "nofollow",
+                                 data: { open: "#{dom_id(document)}-dialog" }) %>
               <%= actions.action(:download,
                                  text: t("documents.buttons.download_document"),
                                  path: rails_blob_path(document.attachment, disposition: "attachment"),
@@ -38,6 +43,8 @@
       <% end %>
     </tbody>
   <table>
+
+  <%= render Admin::SiteCustomization::Documents::CopyLinkDialogComponent.with_collection(@documents) %>
 <% else %>
   <div class="callout primary">
     <%= t("admin.documents.index.no_documents") %>

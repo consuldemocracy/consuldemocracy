@@ -1603,6 +1603,10 @@ en:
             footer_legal: Footer (legal terms)
             subnavigation_left: Main Navigation Left
             subnavigation_right: Main Navigation Right
+      documents:
+        copy_link_dialog:
+          title: "Document link"
+          description: "You can use the link below if you need to include this document in a custom page or want to share it."
       images:
         index:
           title: Custom images
