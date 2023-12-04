@@ -22,6 +22,7 @@ Airbrake.add_filter do |notice|
     "ActionController::UnknownFormat",
     "ActionController::BadRequest",
     "ActionDispatch::Cookies::CookieOverflow",
+    "ActionDispatch::Http::MimeNegotiation::InvalidType",
     "ActionView::Template::Error",
     "ActiveRecord::RecordNotFound",
     "Apartment::TenantNotFound",
