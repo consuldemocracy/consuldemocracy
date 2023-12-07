@@ -433,6 +433,14 @@ class User < ApplicationRecord
     (Tenant.current_secrets.dig(:security, :lockable, :unlock_in) || 1).to_f.hours
   end
 
+  def to_param
+    "#{id}-#{slug}"
+  end
+
+  def slug
+    username.to_s.parameterize
+  end
+
   private
 
     def clean_document_number
