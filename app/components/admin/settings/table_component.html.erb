@@ -6,25 +6,6 @@
     </tr>
   </thead>
   <tbody>
-    <% settings.each do |setting| %>
-      <tr>
-        <td>
-          <strong id="<%= dom_id(setting, :title) %>"><%= t("settings.#{setting.key}") %></strong>
-          <br>
-          <span id="<%= dom_id(setting, :description) %>" class="small">
-            <%= t("settings.#{setting.key}_description", default: t("admin.settings.no_description")) %>
-          </span>
-        </td>
-        <td>
-          <% if setting.content_type? %>
-            <%= render Admin::Settings::ContentTypesFormComponent.new(setting, tab: tab) %>
-          <% elsif setting.feature? %>
-            <%= render Admin::Settings::FeaturedSettingsFormComponent.new(setting, tab: tab) %>
-          <% else %>
-            <%= render Admin::Settings::TextFormComponent.new(setting, tab: tab) %>
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
+    <%= content %>
   </tbody>
 </table>

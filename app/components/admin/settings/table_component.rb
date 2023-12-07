@@ -1,11 +1,9 @@
 class Admin::Settings::TableComponent < ApplicationComponent
-  attr_reader :settings, :setting_name, :tab
-  delegate :dom_id, to: :helpers
+  attr_reader :setting_name, :table_class
 
-  def initialize(settings:, setting_name:, tab: nil)
-    @settings = settings
+  def initialize(setting_name:, table_class: "mixed-settings-table")
     @setting_name = setting_name
-    @tab = tab
+    @table_class = table_class
   end
 
   def key_header
@@ -23,14 +21,6 @@ class Admin::Settings::TableComponent < ApplicationComponent
       t("admin.settings.index.features.enabled")
     else
       t("admin.settings.setting_value")
-    end
-  end
-
-  def table_class
-    if settings.all?(&:feature?)
-      "featured-settings-table"
-    else
-      "mixed-settings-table"
     end
   end
 end

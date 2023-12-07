@@ -27,15 +27,6 @@ describe Setting do
     end
   end
 
-  describe "#feature?" do
-    it "returns true if the key prefix is process, feature or sdg" do
-      expect(Setting.find_by!(key: "process.debates").feature?).to be true
-      expect(Setting.find_by!(key: "feature.map").feature?).to be true
-      expect(Setting.find_by!(key: "sdg.process.debates").feature?).to be true
-      expect(Setting.find_by!(key: "uploads.documents.max_size").feature?).to be false
-    end
-  end
-
   describe "#enabled?" do
     it "is true if value is present" do
       setting = Setting.create!(key: "feature.whatever", value: 1)
@@ -54,16 +45,6 @@ describe Setting do
 
       setting.value = ""
       expect(setting.enabled?).to be false
-    end
-  end
-
-  describe "#content_type?" do
-    it "returns true if the last part of the key is content_types" do
-      expect(Setting.create!(key: "key_name.content_types").content_type?).to be true
-    end
-
-    it "returns false if the last part of the key is not content_types" do
-      expect(Setting.create!(key: "key_name.whatever").content_type?).to be false
     end
   end
 

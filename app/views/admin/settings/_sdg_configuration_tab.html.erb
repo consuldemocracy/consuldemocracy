@@ -1,7 +1,11 @@
 <% if feature?(:sdg) %>
   <h2><%= t("admin.settings.index.sdg.title") %></h2>
 
-  <%= render Admin::Settings::TableComponent.new(settings: @sdg_settings, setting_name: "feature", tab: "#tab-sdg-configuration") %>
+  <%= render Admin::Settings::TableComponent.new(setting_name: "feature", table_class: "featured-settings-table") do %>
+    <% %w[sdg.process.debates sdg.process.proposals sdg.process.polls sdg.process.budgets sdg.process.legislation].each do |key| %>
+      <%= render Admin::Settings::RowComponent.new(key, type: :feature, tab: "#tab-sdg-configuration") %>
+    <% end %>
+  <% end %>
 <% else %>
   <div class="callout primary">
     <%= t("admin.settings.index.sdg.how_to_enable") %>

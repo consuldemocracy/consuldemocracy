@@ -1,3 +1,14 @@
 <h2><%= t("admin.settings.index.images_and_documents") %></h2>
 
-<%= render Admin::Settings::TableComponent.new(settings: @uploads_settings, setting_name: "setting", tab: "#tab-images-and-documents") %>
+<% tab = "#tab-images-and-documents" %>
+<%= render Admin::Settings::TableComponent.new(setting_name: "setting") do %>
+  <%= render Admin::Settings::RowComponent.new("uploads.images.title.min_length", tab: tab) %>
+  <%= render Admin::Settings::RowComponent.new("uploads.images.title.max_length", tab: tab) %>
+  <%= render Admin::Settings::RowComponent.new("uploads.images.min_width", tab: tab) %>
+  <%= render Admin::Settings::RowComponent.new("uploads.images.min_height", tab: tab) %>
+  <%= render Admin::Settings::RowComponent.new("uploads.images.max_size", tab: tab) %>
+  <%= render Admin::Settings::RowComponent.new("uploads.images.content_types", type: :content_type, tab: tab) %>
+  <%= render Admin::Settings::RowComponent.new("uploads.documents.max_amount", tab: tab) %>
+  <%= render Admin::Settings::RowComponent.new("uploads.documents.max_size", tab: tab) %>
+  <%= render Admin::Settings::RowComponent.new("uploads.documents.content_types", type: :content_type, tab: tab) %>
+<% end %>

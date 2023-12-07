@@ -1,3 +1,7 @@
 <h2><%= t("admin.settings.index.participation_processes") %></h2>
 
-<%= render Admin::Settings::TableComponent.new(settings: @participation_processes_settings, setting_name: "feature", tab: "#tab-participation-processes") %>
+<%= render Admin::Settings::TableComponent.new(setting_name: "feature", table_class: "featured-settings-table") do %>
+  <% %w[process.debates process.proposals process.polls process.budgets process.legislation].each do |key| %>
+    <%= render Admin::Settings::RowComponent.new(key, type: :feature, tab: "#tab-participation-processes") %>
+  <% end %>
+<% end %>
