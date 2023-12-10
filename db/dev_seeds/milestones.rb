@@ -11,7 +11,7 @@ section "Creating investment milestones" do
       rand(1..5).times do
         milestone = record.milestones.build(
           publication_date: Date.tomorrow,
-          status_id: Milestone::Status.all.sample
+          status_id: Milestone::Status.sample
         )
 
         random_locales.map do |locale|

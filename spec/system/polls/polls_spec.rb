@@ -135,7 +135,7 @@ describe "Polls" do
 
       visit polls_path
 
-      expect(page).to have_selector "img[alt='1. No Poverty']"
+      expect(page).to have_css "img[alt='1. No Poverty']"
       expect(page).to have_content "target 1.1"
     end
   end
@@ -213,7 +213,7 @@ describe "Polls" do
 
     scenario "Level 1 users" do
       visit polls_path
-      expect(page).not_to have_selector(".already-answer")
+      expect(page).not_to have_css ".already-answer"
 
       poll.update!(geozone_restricted_to: [geozone])
 
@@ -283,7 +283,7 @@ describe "Polls" do
 
       visit poll_path(poll)
 
-      expect(page).to have_selector "img[alt='1. No Poverty']"
+      expect(page).to have_css "img[alt='1. No Poverty']"
       expect(page).to have_content "target 1.1"
     end
 

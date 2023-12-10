@@ -12,7 +12,7 @@
   <div class="expanded no-margin-top padding header">
     <div class="row">
       <div class="small-12 column">
-        <%= back_link_to budgets_path %>
+        <%= back_link_to budget_path(@budget) %>
         <h2 class="margin-top">
           <%= t("stats.title") %><br>
           <span><%= @budget.name %></span>

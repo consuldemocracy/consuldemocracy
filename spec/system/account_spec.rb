@@ -14,8 +14,8 @@ describe "Account" do
 
     expect(page).to have_current_path(account_path, ignore_query: true)
 
-    expect(page).to have_selector("input[value='Manuela Colau']")
-    expect(page).to have_selector(avatar("Manuela Colau"), count: 1)
+    expect(page).to have_css "input[value='Manuela Colau']"
+    expect(page).to have_css avatar("Manuela Colau"), count: 1
   end
 
   scenario "Show organization" do
@@ -23,10 +23,10 @@ describe "Account" do
 
     visit account_path
 
-    expect(page).to have_selector("input[value='Manuela Corp']")
-    expect(page).not_to have_selector("input[value='Manuela Colau']")
+    expect(page).to have_css "input[value='Manuela Corp']"
+    expect(page).not_to have_css "input[value='Manuela Colau']"
 
-    expect(page).to have_selector(avatar("Manuela Corp"), count: 1)
+    expect(page).to have_css avatar("Manuela Corp"), count: 1
   end
 
   scenario "Edit" do
@@ -43,7 +43,7 @@ describe "Account" do
 
     visit account_path
 
-    expect(page).to have_selector("input[value='Larry Bird']")
+    expect(page).to have_css "input[value='Larry Bird']"
     expect(find("#account_email_on_comment")).to be_checked
     expect(find("#account_email_on_comment_reply")).to be_checked
     expect(find("#account_email_digest")).not_to be_checked
@@ -81,7 +81,7 @@ describe "Account" do
 
     visit account_path
     click_link "Change my login details"
-    expect(page).to have_selector("input[value='new_user_email@example.com']")
+    expect(page).to have_css "input[value='new_user_email@example.com']"
   end
 
   scenario "Edit Organization" do
@@ -98,7 +98,7 @@ describe "Account" do
 
     visit account_path
 
-    expect(page).to have_selector("input[value='Google']")
+    expect(page).to have_css "input[value='Google']"
     expect(find("#account_email_on_comment")).to be_checked
     expect(find("#account_email_on_comment_reply")).to be_checked
   end

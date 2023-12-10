@@ -161,7 +161,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       visit send(path, arguments)
 
       click_link "Add new document"
-      click_on submit_button
+      click_button submit_button
 
       within "#nested-documents .document-fields" do
         expect(page).to have_content("can't be blank", count: 2)
@@ -184,7 +184,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       visit send(path, arguments)
 
       send(fill_resource_method_name) if fill_resource_method_name
-      click_on submit_button
+      click_button submit_button
 
       expect(page).to have_content documentable_success_notice
     end
@@ -196,7 +196,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       send(fill_resource_method_name) if fill_resource_method_name
 
       documentable_attach_new_file(file_fixture("empty.pdf"))
-      click_on submit_button
+      click_button submit_button
 
       expect(page).to have_content documentable_success_notice
     end
@@ -208,7 +208,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       send(fill_resource_method_name) if fill_resource_method_name
 
       documentable_attach_new_file(file_fixture("empty.pdf"))
-      click_on submit_button
+      click_button submit_button
 
       expect(page).to have_content documentable_success_notice
 
@@ -233,7 +233,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
         documentable_attach_new_file(file_fixture("#{filename}.pdf"))
       end
 
-      click_on submit_button
+      click_button submit_button
 
       expect(page).to have_content documentable_success_notice
 
@@ -266,7 +266,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
         visit send(path, arguments)
         last_document = all("#nested-documents .document-fields").last
         within last_document do
-          click_on "Remove document"
+          click_link "Remove document"
         end
 
         expect(page).to have_link id: "new_document_link"
@@ -276,7 +276,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
         create(:document, documentable: documentable)
         do_login_for user_to_login, management: management
         visit send(path, arguments)
-        click_on "Remove document"
+        click_link "Remove document"
 
         expect(page).not_to have_css ".document-fields"
       end

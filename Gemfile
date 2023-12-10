@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "6.1.7.4"
+gem "rails", "6.1.7.6"
 
 gem "acts-as-taggable-on", "~> 9.0.1"
 gem "acts_as_votable", "~> 0.14.0"
@@ -20,6 +20,7 @@ gem "dalli", "~> 3.2.6"
 gem "delayed_job_active_record", "~> 4.1.7"
 gem "devise", "~> 4.9.2"
 gem "devise-security", "~> 0.18.0"
+gem "exiftool_vendored", "~> 12.60.0"
 gem "file_validators", "~> 3.0.0"
 gem "font-awesome-sass", "~> 5.15.1" # Remember to update vendor/assets/images/fontawesome when updating this gem
 gem "foundation-rails", "~> 6.6.2.0"
@@ -44,7 +45,7 @@ gem "omniauth-twitter", "~> 1.4.0"
 gem "paranoia", "~> 2.6.2"
 gem "pg", "~> 1.4.3"
 gem "pg_search", "~> 2.3.6"
-gem "puma", "~> 4.3.12"
+gem "puma", "~> 5.6.7"
 gem "recipient_interceptor", "~> 0.3.1"
 gem "redcarpet", "~> 3.6.0"
 gem "responders", "~> 3.1.0"
@@ -85,8 +86,9 @@ group :test do
   gem "capybara", "~> 3.39.2"
   gem "capybara-webmock", "~> 0.7.0"
   gem "email_spec", "~> 2.2.2"
+  gem "pdf-reader"
   gem "rspec-rails", "~> 5.1.2"
-  gem "selenium-webdriver", "~> 4.13.1"
+  gem "selenium-webdriver", "~> 4.16.0"
   gem "simplecov", "~> 0.22.0", require: false
   gem "simplecov-lcov", "~> 0.8.0", require: false
 end
@@ -106,11 +108,11 @@ group :development do
   gem "pronto-rubocop", "~> 0.11.5", require: false
   gem "pronto-scss", "~> 0.11.0", require: false
   gem "rubocop", "~> 1.56.4", require: false
-  gem "rubocop-capybara", "~> 2.18.0", require: false
+  gem "rubocop-capybara", "~> 2.19.0", require: false
   gem "rubocop-factory_bot", "~> 2.24.0", require: false
   gem "rubocop-performance", "~> 1.19.1", require: false
-  gem "rubocop-rails", "~> 2.20.2", require: false
-  gem "rubocop-rspec", "~> 2.23.2", require: false
+  gem "rubocop-rails", "~> 2.21.2", require: false
+  gem "rubocop-rspec", "~> 2.24.1", require: false
   gem "rvm1-capistrano3", "~> 1.4.0", require: false
   gem "scss_lint", "~> 0.60.0", require: false
   gem "web-console", "~> 4.2.1"

@@ -67,7 +67,7 @@ describe "Proposal's dashboard" do
 
     expect(page).to have_content(action.description)
     expect(page).to have_content("This is a really very long description for a proposed")
-    expect(page).to have_selector("#truncated_description_dashboard_action_#{action_long.id}")
+    expect(page).to have_css "#truncated_description_dashboard_action_#{action_long.id}"
     expect(page).to have_button("Show description")
   end
 
@@ -127,7 +127,7 @@ describe "Proposal's dashboard" do
     expect(page).to have_content(action.title)
 
     find(:css, "#dashboard_action_#{action.id}_execute").click
-    expect(page).not_to have_selector(:css, "#dashboard_action_#{action.id}_execute")
+    expect(page).not_to have_css "#dashboard_action_#{action.id}_execute"
   end
 
   scenario "Dashboard progress can unexecute proposed action" do
@@ -138,7 +138,7 @@ describe "Proposal's dashboard" do
     expect(page).to have_content(action.title)
 
     find(:css, "#dashboard_action_#{action.id}_unexecute").click
-    expect(page).to have_selector(:css, "#dashboard_action_#{action.id}_execute")
+    expect(page).to have_css "#dashboard_action_#{action.id}_execute"
   end
 
   scenario "Dashboard progress dont show proposed actions with published_proposal: true" do
@@ -346,7 +346,7 @@ describe "Proposal's dashboard" do
     visit recommended_actions_proposal_dashboard_path(proposal.to_param)
 
     expect(page).to have_link("Recommended actions")
-    expect(page).to have_selector("h2", text: "Recommended actions")
+    expect(page).to have_css "h2", text: "Recommended actions"
     expect(page).to have_content("Pending")
     expect(page).to have_content("Done")
   end
@@ -404,9 +404,9 @@ describe "Proposal's dashboard" do
 
     within(".dashboard-related-content") do
       expect(page).to have_content("Related content (2)")
-      expect(page).to have_selector(".related-content-title", text: "PROPOSAL")
+      expect(page).to have_css ".related-content-title", text: "PROPOSAL"
       expect(page).to have_link related_proposal.title
-      expect(page).to have_selector(".related-content-title", text: "DEBATE")
+      expect(page).to have_css ".related-content-title", text: "DEBATE"
       expect(page).to have_link related_debate.title
     end
   end

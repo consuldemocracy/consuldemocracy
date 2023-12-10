@@ -54,7 +54,7 @@ describe "Direct messages" do
       visit new_user_direct_message_path(receiver)
 
       expect(page).to have_content "To send a private message verify your account"
-      expect(page).not_to have_link "Send private message"
+      expect(page).to have_current_path root_path
     end
 
     scenario "User not logged in" do
@@ -62,8 +62,8 @@ describe "Direct messages" do
 
       visit new_user_direct_message_path(receiver)
 
-      expect(page).to have_content "You must sign in or sign up to continue."
-      expect(page).not_to have_link "Send private message"
+      expect(page).to have_content "You must sign in or register to continue."
+      expect(page).to have_current_path new_user_session_path
     end
 
     scenario "Accessing form directly" do

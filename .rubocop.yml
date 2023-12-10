@@ -20,10 +20,16 @@ Bundler/OrderedGems:
   Enabled: true
   ConsiderPunctuation: true
 
+Capybara/ClickLinkOrButtonStyle:
+  Enabled: true
+
 Capybara/CurrentPathExpectation:
   Enabled: true
 
 Capybara/NegationMatcher:
+  Enabled: true
+
+Capybara/RSpec/HaveSelector:
   Enabled: true
 
 Capybara/SpecificActions:
@@ -437,6 +443,9 @@ Rails/PluralizationGrammar:
 Rails/Presence:
   Enabled: true
 
+Rails/RedundantActiveRecordAllMethod:
+  Enabled: true
+
 Rails/RedundantTravelBack:
   Enabled: true
 
@@ -459,6 +468,9 @@ Rails/SafeNavigation:
 Rails/SaveBang:
   Enabled: true
   Severity: refactor
+
+Rails/SelectMap:
+  Enabled: true
 
 Rails/SkipsModelValidations:
   Enabled: true
@@ -547,9 +559,6 @@ RSpec/ExampleWording:
 RSpec/ExcessiveDocstringSpacing:
   Enabled: true
 
-RSpec/FilePath:
-  Enabled: true
-
 RSpec/Focus:
   Enabled: true
 
@@ -565,6 +574,9 @@ RSpec/LetBeforeExamples:
   Enabled: true
 
 RSpec/LetSetup:
+  Enabled: true
+
+RSpec/MetadataStyle:
   Enabled: true
 
 RSpec/NotToNot:
@@ -601,6 +613,12 @@ RSpec/ScatteredLet:
   Enabled: true
 
 RSpec/ScatteredSetup:
+  Enabled: true
+
+RSpec/SpecFilePathFormat:
+  Enabled: true
+
+RSpec/SpecFilePathSuffix:
   Enabled: true
 
 RSpec/VoidExpect:
@@ -677,6 +695,7 @@ Style/InvertibleUnlessCondition:
   Enabled: true
   InverseMethods:
     :blank?: :present?
+    :include?: ~
     :present?: :blank?
     :zero?: ~
 

@@ -222,10 +222,10 @@ describe "Admin booths assignments", :admin do
           expect(page).to have_content "10"
         end
 
-        expect(page).not_to have_selector "#total_system"
+        expect(page).not_to have_css "#total_system"
       end
 
-      expect(page).not_to have_selector "#recounts_list"
+      expect(page).not_to have_css "#recounts_list"
     end
 
     scenario "Results for a booth assignment" do

@@ -15,7 +15,7 @@ describe "Custom Pages" do
         visit custom_page.url
 
         expect(page).to have_title("Custom page")
-        expect(page).to have_selector("h1", text: "Custom page")
+        expect(page).to have_css "h1", text: "Custom page"
         expect(page).to have_content("Text for new custom page")
         expect(page).not_to have_content("Print this info")
       end
@@ -33,8 +33,8 @@ describe "Custom Pages" do
         visit custom_page.url
 
         expect(page).to have_title("Custom page")
-        expect(page).to have_selector("h1", text: "Custom page")
-        expect(page).to have_selector("h2", text: "This is my new custom page")
+        expect(page).to have_css "h1", text: "Custom page"
+        expect(page).to have_css "h2", text: "This is my new custom page"
         expect(page).to have_content("Text for new custom page with a link to https://consul.dev")
         expect(page).to have_link("https://consul.dev")
         expect(page).to have_content("Print this info")
@@ -53,9 +53,9 @@ describe "Custom Pages" do
         visit custom_page.url
 
         expect(page).to have_title("Custom page")
-        expect(page).to have_selector("h1", text: "Custom page")
+        expect(page).to have_css "h1", text: "Custom page"
         expect(page).to have_content("Text for new custom page")
-        expect(page).not_to have_selector("h2")
+        expect(page).not_to have_css "h2"
         expect(page).not_to have_content("Print this info")
       end
 
@@ -88,7 +88,7 @@ describe "Custom Pages" do
         visit custom_page.url
 
         expect(page).to have_title("Another custom page")
-        expect(page).to have_selector("h1", text: "Another custom page")
+        expect(page).to have_css "h1", text: "Another custom page"
         expect(page).to have_content("Subtitle for custom page")
       end
 

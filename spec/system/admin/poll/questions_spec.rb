@@ -51,8 +51,8 @@ describe "Admin poll questions", :admin do
       click_link "Create question"
 
       expect(page).to have_content("Create question to poll Movies")
-      expect(page).to have_selector("input[id='poll_question_poll_id'][value='#{poll.id}']",
-                                    visible: :hidden)
+      expect(page).to have_css "input[id='poll_question_poll_id'][value='#{poll.id}']",
+                               visible: :hidden
 
       fill_in "Question", with: "Star Wars: Episode IV - A New Hope"
       click_button "Save"

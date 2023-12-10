@@ -36,7 +36,7 @@ describe "Commenting debates" do
     expect(page).to have_link "Go back to #{debate.title}", href: debate_path(debate)
 
     within ".comment", text: "Parent" do
-      expect(page).to have_selector(".comment", count: 2)
+      expect(page).to have_css ".comment", count: 2
     end
   end
 
@@ -313,7 +313,7 @@ describe "Commenting debates" do
       expect(page).to have_content "It will be done next week."
     end
 
-    expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
+    expect(page).not_to have_css "#js-comment-form-comment_#{comment.id}"
   end
 
   scenario "Reply to reply" do
@@ -477,7 +477,7 @@ describe "Commenting debates" do
         expect(page).to have_css "img.moderator-avatar"
       end
 
-      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
+      expect(page).not_to have_css "#js-comment-form-comment_#{comment.id}"
     end
 
     scenario "can not comment as an administrator" do
@@ -533,7 +533,7 @@ describe "Commenting debates" do
         expect(page).to have_css "img.admin-avatar"
       end
 
-      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
+      expect(page).not_to have_css "#js-comment-form-comment_#{comment.id}"
     end
 
     scenario "can not comment as a moderator", :admin do

@@ -16,8 +16,8 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
 
       within "#documents" do
         expect(page).to have_link text: document.title
-        expect(page).to have_selector "a[rel=nofollow]", text: document.title
-        expect(page).not_to have_selector "a[target=_blank]"
+        expect(page).to have_css "a[rel=nofollow]", text: document.title
+        expect(page).not_to have_css "a[target=_blank]"
       end
     end
 
@@ -121,7 +121,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       end
 
       within "##{ActionView::RecordIdentifier.dom_id(documentable)}" do
-        expect(page).to have_selector "h1", text: documentable.title
+        expect(page).to have_css "h1", text: documentable.title
       end
     end
   end
