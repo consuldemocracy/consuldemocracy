@@ -1,4 +1,4 @@
-<%= form_for([:admin, feature], remote: remote?, html: { class: "featured-settings-form" }) do |f| %>
+<%= form_for([:admin, feature], remote: remote?, authenticity_token: true, html: { class: "featured-settings-form" }) do |f| %>
   <%= hidden_field_tag :tab, tab if tab %>
   <%= f.hidden_field :describedby, id: dom_id(feature, :describedby), value: describedby if describedby %>
   <%= f.hidden_field :value, id: dom_id(feature, :value), value: (enabled? ? "" : "active") %>
