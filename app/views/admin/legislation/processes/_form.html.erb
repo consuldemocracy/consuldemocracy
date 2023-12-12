@@ -92,6 +92,15 @@
 
   <fieldset>
     <div class="small-12 medium-3 column end">
+      <%= f.date_field :summary_publication_date, id: "summary_publication_date" %>
+    </div>
+    <div class="small-12 medium-2 column margin-top">
+      <%= f.check_box :summary_publication_enabled, checked: @process.summary_publication.enabled?, label: t("admin.legislation.processes.form.enabled") %>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <div class="small-12 medium-3 column end">
       <%= f.date_field :draft_publication_date, id: "draft_publication_date" %>
     </div>
     <div class="small-12 medium-2 column margin-top">
