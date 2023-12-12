@@ -172,7 +172,19 @@ class Tenant < ApplicationRecord
         ActiveRecord::Base.connection.execute(
           "ALTER SCHEMA \"#{schema_before_last_save}\" RENAME TO \"#{schema}\";"
         )
+
+        rename_storage
       end
+    end
+
+    def rename_storage
+      return unless ActiveStorage::Blob.service.is_a?(ActiveStorage::Service::TenantDiskService)
+
+      old_storage = File.join(ActiveStorage::Blob.service.root, "tenants", schema_before_last_save)
+      return unless File.directory?(old_storage)
+
+      new_storage = File.join(ActiveStorage::Blob.service.root, "tenants", schema)
+      File.rename(old_storage, new_storage)
     end
 
     def destroy_schema
