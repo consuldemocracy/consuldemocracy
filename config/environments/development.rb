@@ -34,7 +34,7 @@ Rails.application.configure do
   # Allow accessing the application through a domain so subdomains can be used
   config.hosts << "lvh.me"
   config.hosts << /.*\.lvh\.me/
-  config.web_console.permissions = '85.206.20.91'
+  #config.web_console.permissions = '85.206.20.91'
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
