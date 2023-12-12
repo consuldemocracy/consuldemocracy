@@ -1,4 +1,3 @@
-<% valuation = local_assigns.fetch(:valuation, false) %>
 <% cache [locale_and_user_status, parent_id, commentable_cache_key(commentable), valuation] do %>
   <% if comments_closed_for_commentable?(commentable) %>
     <br>
@@ -10,7 +9,7 @@
     <div data-alert class="callout primary">
       <%= sanitize(t("comments.verified_only", verify_account: link_to_verify_account)) %>
     </div>
-  <% else %>
+  <% elsif !valuation || can?(:comment_valuation, commentable) %>
     <% css_id = parent_or_commentable_dom_id(parent_id, commentable) %>
     <div id="js-comment-form-<%= css_id %>" class="comment-form">
       <%= form_for Comment.new, remote: true, html: { id: "new_comment_#{css_id}" } do |f| %>

@@ -4,13 +4,13 @@
 
     <% cache cache_key do %>
       <% if current_user %>
-        <%= render "comments/form", { commentable: record, parent_id: nil } %>
+        <%= render "comments/form", { commentable: record, parent_id: nil, valuation: valuation } %>
       <% else %>
         <%= render "shared/login_to_comment" %>
       <% end %>
 
       <%= render Shared::OrderLinksComponent.new("comments", anchor: "comments") %>
-      <%= render "comments/comment_list", comments: comment_tree.root_comments %>
+      <%= render "comments/comment_list", comments: comment_tree.root_comments, valuation: valuation %>
       <%= paginate comment_tree.root_comments, params: { anchor: "comments" } %>
     <% end %>
   </div>
