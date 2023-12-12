@@ -41,7 +41,10 @@
       <%= render "/shared/social_share", title: @question.title, url: legislation_process_question_url(@question.process, @question) %>
     </aside>
   </div>
-
-  <%= render "/comments/comment_tree", comment_tree: @comment_tree,
-                                       display_comments_count: true %>
+  <%= render Shared::CommentsComponent.new(@question, @comment_tree) do %>
+    <h2>
+      <%= t("legislation.questions.comments.comments_title") %>
+      <span class="js-comments-count">(<%= @question.comments_count %>)</span>
+    </h2>
+  <% end %>
 </section>

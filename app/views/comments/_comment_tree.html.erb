@@ -4,25 +4,8 @@
   <section class="expanded comments">
     <div class="row">
       <div id="comments" class="small-12 column">
-        <% if display_comments_count %>
-          <h2>
-            <%= comment_tree_title_text(commentable) %>
-            <span class="js-comments-count">(<%= commentable.comments_count %>)</span>
-          </h2>
-        <% end %>
-
         <% if user_signed_in? %>
-          <% if comments_closed_for_commentable?(commentable) %>
-            <br>
-            <div data-alert class="callout primary">
-              <%= comments_closed_text(commentable) %>
-            </div>
-          <% elsif require_verified_resident_for_commentable?(commentable, current_user) %>
-            <br>
-            <div data-alert class="callout primary">
-              <%= sanitize(t("comments.verified_only", verify_account: link_to_verify_account)) %>
-            </div>
-          <% elsif !valuation || can?(:comment_valuation, commentable) %>
+          <% if !valuation || can?(:comment_valuation, commentable) %>
             <%= render "comments/form", { commentable: commentable,
                                           parent_id: nil,
                                           valuation: valuation } %>
