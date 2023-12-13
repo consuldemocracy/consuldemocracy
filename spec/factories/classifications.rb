@@ -34,7 +34,12 @@ FactoryBot.define do
       community { create(:proposal).community }
     end
 
+    trait :with_investment_community do
+      community { create(:budget_investment).community }
+    end
+
     factory :topic_with_community, traits: [:with_community]
+    factory :topic_with_investment_community, traits: [:with_investment_community]
   end
 
   factory :related_content do

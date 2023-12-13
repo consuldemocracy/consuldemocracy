@@ -185,19 +185,6 @@ describe "Commenting polls" do
     expect(page).to have_current_path(/#comments/, url: true)
   end
 
-  describe "Not logged user" do
-    scenario "can not see comments forms" do
-      create(:comment, commentable: poll)
-      visit poll_path(poll)
-
-      expect(page).to have_content "You must sign in or sign up to leave a comment"
-      within("#comments") do
-        expect(page).not_to have_content "Write a comment"
-        expect(page).not_to have_content "Reply"
-      end
-    end
-  end
-
   scenario "Create" do
     login_as(user)
     visit poll_path(poll)

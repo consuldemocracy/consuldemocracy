@@ -202,22 +202,6 @@ describe "Commenting topics from proposals" do
     expect(page).to have_current_path(/#comments/, url: true)
   end
 
-  describe "Not logged user" do
-    scenario "can not see comments forms" do
-      community = proposal.community
-      topic = create(:topic, community: community)
-      create(:comment, commentable: topic)
-
-      visit community_topic_path(community, topic)
-
-      expect(page).to have_content "You must sign in or sign up to leave a comment"
-      within("#comments") do
-        expect(page).not_to have_content "Write a comment"
-        expect(page).not_to have_content "Reply"
-      end
-    end
-  end
-
   scenario "Create" do
     community = proposal.community
     topic = create(:topic, community: community)
@@ -749,22 +733,6 @@ describe "Commenting topics from budget investments" do
 
     expect(page).to have_css(".comment", count: 2)
     expect(page).to have_current_path(/#comments/, url: true)
-  end
-
-  describe "Not logged user" do
-    scenario "can not see comments forms" do
-      community = investment.community
-      topic = create(:topic, community: community)
-      create(:comment, commentable: topic)
-
-      visit community_topic_path(community, topic)
-
-      expect(page).to have_content "You must sign in or sign up to leave a comment"
-      within("#comments") do
-        expect(page).not_to have_content "Write a comment"
-        expect(page).not_to have_content "Reply"
-      end
-    end
   end
 
   scenario "Create" do
