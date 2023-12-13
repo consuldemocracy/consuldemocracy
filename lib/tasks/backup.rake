@@ -88,8 +88,7 @@ namespace :backup do
 
       if File.exist?(backup_folder)
         print "Uploading backup to Mega - "
-        folder = storage.root.folders.find { |f| f.name == backup_folder_name }
-        folder.delete if folder.present?
+        storage.root.folders.each { |f| f.delete if f.name == backup_folder_name }
 
         folder = storage.root.create_folder(backup_folder_name)
         Dir["#{backup_folder}/*"].each do |file|
