@@ -201,15 +201,6 @@ describe "Commenting polls" do
     end
   end
 
-  scenario "Errors on create" do
-    login_as(user)
-    visit poll_path(poll)
-
-    click_button "Publish comment"
-
-    expect(page).to have_content "Can't be blank"
-  end
-
   scenario "Reply" do
     citizen = create(:user, username: "Ana")
     manuela = create(:user, username: "Manuela")

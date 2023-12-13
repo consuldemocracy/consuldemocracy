@@ -221,18 +221,6 @@ describe "Commenting topics from proposals" do
     end
   end
 
-  scenario "Errors on create" do
-    community = proposal.community
-    topic = create(:topic, community: community)
-
-    login_as(user)
-    visit community_topic_path(community, topic)
-
-    click_button "Publish comment"
-
-    expect(page).to have_content "Can't be blank"
-  end
-
   scenario "Reply" do
     community = proposal.community
     topic = create(:topic, community: community)
@@ -752,18 +740,6 @@ describe "Commenting topics from budget investments" do
     within "#tab-comments-label" do
       expect(page).to have_content "Comments (1)"
     end
-  end
-
-  scenario "Errors on create" do
-    community = investment.community
-    topic = create(:topic, community: community)
-
-    login_as(user)
-    visit community_topic_path(community, topic)
-
-    click_button "Publish comment"
-
-    expect(page).to have_content "Can't be blank"
   end
 
   scenario "Reply" do

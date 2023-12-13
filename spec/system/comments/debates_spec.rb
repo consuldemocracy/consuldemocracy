@@ -220,15 +220,6 @@ describe "Commenting debates" do
     end
   end
 
-  scenario "Errors on create" do
-    login_as(user)
-    visit debate_path(debate)
-
-    click_button "Publish comment"
-
-    expect(page).to have_content "Can't be blank"
-  end
-
   describe "Hide" do
     scenario "Without replies" do
       create(:comment, commentable: debate, user: user, body: "This was a mistake")

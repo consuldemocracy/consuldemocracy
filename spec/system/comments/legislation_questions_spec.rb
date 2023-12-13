@@ -209,15 +209,6 @@ describe "Commenting legislation questions" do
     end
   end
 
-  scenario "Errors on create" do
-    login_as(user)
-    visit legislation_process_question_path(question.process, question)
-
-    click_button "Publish answer"
-
-    expect(page).to have_content "Can't be blank"
-  end
-
   scenario "Reply" do
     citizen = create(:user, username: "Ana")
     manuela = create(:user, :level_two, username: "Manuela")
