@@ -1,8 +1,8 @@
-<% cache [locale_and_user_status, parent_id, commentable_cache_key(commentable), valuation] do %>
+<% cache cache_key do %>
   <% if comments_closed_for_commentable?(commentable) %>
     <br>
     <div data-alert class="callout primary">
-      <%= comments_closed_text(commentable) %>
+      <%= comments_closed_text %>
     </div>
   <% elsif require_verified_resident_for_commentable?(commentable, current_user) %>
     <br>

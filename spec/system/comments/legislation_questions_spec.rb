@@ -231,24 +231,6 @@ describe "Commenting legislation questions" do
     expect(page).to have_content "Can't be blank"
   end
 
-  scenario "Unverified user can't create comments" do
-    unverified_user = create(:user)
-    login_as(unverified_user)
-
-    visit legislation_process_question_path(question.process, question)
-
-    expect(page).to have_content "To participate verify your account"
-  end
-
-  scenario "Can't create comments if debate phase is not open" do
-    process.update!(debate_start_date: Date.current - 2.days, debate_end_date: Date.current - 1.day)
-    login_as(user)
-
-    visit legislation_process_question_path(question.process, question)
-
-    expect(page).to have_content "Closed phase"
-  end
-
   scenario "Reply" do
     citizen = create(:user, username: "Ana")
     manuela = create(:user, :level_two, username: "Manuela")

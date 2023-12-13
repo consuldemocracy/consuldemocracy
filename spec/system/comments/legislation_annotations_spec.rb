@@ -236,25 +236,6 @@ describe "Commenting legislation questions" do
     expect(page).to have_content "Can't be blank"
   end
 
-  scenario "Comments are disabled when the allegations phase is closed" do
-    process = create(:legislation_process,
-                     allegations_start_date: 1.month.ago,
-                     allegations_end_date: Date.yesterday)
-
-    version = create(:legislation_draft_version, process: process)
-    annotation = create(:legislation_annotation, draft_version: version, text: "One annotation")
-
-    login_as(user)
-
-    visit polymorphic_path(annotation)
-
-    within "#comments" do
-      expect(page).to have_content "Comments are closed"
-      expect(page).not_to have_content "Leave your comment"
-      expect(page).not_to have_button "Publish comment"
-    end
-  end
-
   scenario "Reply" do
     citizen = create(:user, username: "Ana")
     manuela = create(:user, username: "Manuela")

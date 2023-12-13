@@ -4,7 +4,7 @@
 
     <% cache cache_key do %>
       <% if current_user %>
-        <%= render "comments/form", { commentable: record, parent_id: nil, valuation: valuation } %>
+        <%= render Comments::FormComponent.new(record, valuation: valuation) %>
       <% else %>
         <%= render "shared/login_to_comment" %>
       <% end %>

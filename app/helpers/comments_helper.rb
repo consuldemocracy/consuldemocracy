@@ -74,12 +74,4 @@ module CommentsHelper
   def comments_closed_for_commentable?(commentable)
     commentable.respond_to?(:comments_closed?) && commentable.comments_closed?
   end
-
-  def comments_closed_text(commentable)
-    if commentable.class == Legislation::Question
-      t("legislation.questions.comments.comments_closed")
-    else
-      t("comments.comments_closed")
-    end
-  end
 end
