@@ -6,25 +6,6 @@ describe "Commenting debates" do
 
   it_behaves_like "flaggable", :debate_comment
 
-  scenario "Show" do
-    parent_comment = create(:comment, commentable: debate, body: "Parent")
-    create(:comment, commentable: debate, parent: parent_comment, body: "First subcomment")
-    create(:comment, commentable: debate, parent: parent_comment, body: "Last subcomment")
-
-    visit comment_path(parent_comment)
-
-    expect(page).to have_css(".comment", count: 3)
-    expect(page).to have_content "Parent"
-    expect(page).to have_content "First subcomment"
-    expect(page).to have_content "Last subcomment"
-
-    expect(page).to have_link "Go back to #{debate.title}", href: debate_path(debate)
-
-    within ".comment", text: "Parent" do
-      expect(page).to have_css ".comment", count: 2
-    end
-  end
-
   scenario "Link to comment show" do
     comment = create(:comment, commentable: debate, user: user)
 

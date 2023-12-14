@@ -6,23 +6,6 @@ describe "Commenting topics from proposals" do
 
   it_behaves_like "flaggable", :topic_with_community_comment
 
-  scenario "Show" do
-    community = proposal.community
-    topic = create(:topic, community: community)
-    parent_comment = create(:comment, commentable: topic)
-    first_child    = create(:comment, commentable: topic, parent: parent_comment)
-    second_child   = create(:comment, commentable: topic, parent: parent_comment)
-
-    visit comment_path(parent_comment)
-
-    expect(page).to have_css(".comment", count: 3)
-    expect(page).to have_content parent_comment.body
-    expect(page).to have_content first_child.body
-    expect(page).to have_content second_child.body
-
-    expect(page).to have_link "Go back to #{topic.title}", href: community_topic_path(community, topic)
-  end
-
   scenario "Link to comment show" do
     community = proposal.community
     topic = create(:topic, community: community)
@@ -531,23 +514,6 @@ end
 describe "Commenting topics from budget investments" do
   let(:user)       { create(:user) }
   let(:investment) { create(:budget_investment) }
-
-  scenario "Show" do
-    community = investment.community
-    topic = create(:topic, community: community)
-    parent_comment = create(:comment, commentable: topic)
-    first_child    = create(:comment, commentable: topic, parent: parent_comment)
-    second_child   = create(:comment, commentable: topic, parent: parent_comment)
-
-    visit comment_path(parent_comment)
-
-    expect(page).to have_css(".comment", count: 3)
-    expect(page).to have_content parent_comment.body
-    expect(page).to have_content first_child.body
-    expect(page).to have_content second_child.body
-
-    expect(page).to have_link "Go back to #{topic.title}", href: community_topic_path(community, topic)
-  end
 
   scenario "Collapsable comments" do
     community = investment.community

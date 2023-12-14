@@ -4,24 +4,6 @@ describe "Commenting polls" do
   let(:user) { create(:user) }
   let(:poll) { create(:poll, author: create(:user)) }
 
-  scenario "Show" do
-    parent_comment = create(:comment, commentable: poll, body: "Parent")
-    create(:comment, commentable: poll, parent: parent_comment, body: "First subcomment")
-    create(:comment, commentable: poll, parent: parent_comment, body: "Last subcomment")
-
-    visit comment_path(parent_comment)
-
-    expect(page).to have_css ".comment", count: 3
-    expect(page).to have_content "Parent"
-    expect(page).to have_content "First subcomment"
-    expect(page).to have_content "Last subcomment"
-    expect(page).to have_link "Go back to #{poll.name}", href: poll_path(poll)
-
-    within ".comment", text: "Parent" do
-      expect(page).to have_css ".comment", count: 2
-    end
-  end
-
   scenario "Link to comment show" do
     comment = create(:comment, commentable: poll, user: user)
 

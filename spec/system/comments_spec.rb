@@ -83,6 +83,26 @@ describe "Comments" do
     end
   end
 
+  scenario "Show" do
+    parent_comment = create(:comment, commentable: resource, body: "Parent")
+    create(:comment, commentable: resource, parent: parent_comment, body: "First subcomment")
+    create(:comment, commentable: resource, parent: parent_comment, body: "Last subcomment")
+
+    visit comment_path(parent_comment)
+
+    expect(page).to have_css(".comment", count: 3)
+    expect(page).to have_content "Parent"
+    expect(page).to have_content "First subcomment"
+    expect(page).to have_content "Last subcomment"
+
+    expect(page).to have_link "Go back to #{resource.title}",
+                              href: polymorphic_path(resource)
+
+    within ".comment", text: "Parent" do
+      expect(page).to have_css ".comment", count: 2
+    end
+  end
+
   describe "Not logged user" do
     scenario "can not see comments forms" do
       create(:comment, commentable: resource)

@@ -6,26 +6,6 @@ describe "Commenting legislation questions" do
 
   it_behaves_like "flaggable", :legislation_annotation_comment
 
-  scenario "Show" do
-    href           = polymorphic_path(annotation)
-    parent_comment = create(:comment, commentable: annotation, body: "Parent")
-    create(:comment, commentable: annotation, parent: parent_comment, body: "First subcomment")
-    create(:comment, commentable: annotation, parent: parent_comment, body: "Last subcomment")
-
-    visit comment_path(parent_comment)
-
-    expect(page).to have_css(".comment", count: 3)
-    expect(page).to have_content "Parent"
-    expect(page).to have_content "First subcomment"
-    expect(page).to have_content "Last subcomment"
-
-    expect(page).to have_link "Go back to #{annotation.title}", href: href
-
-    within ".comment", text: "Parent" do
-      expect(page).to have_css ".comment", count: 2
-    end
-  end
-
   scenario "Link to comment show" do
     comment = create(:comment, commentable: annotation, user: user)
 

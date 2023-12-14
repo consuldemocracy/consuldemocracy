@@ -6,26 +6,6 @@ describe "Commenting Budget::Investments" do
 
   it_behaves_like "flaggable", :budget_investment_comment
 
-  scenario "Show" do
-    parent_comment = create(:comment, commentable: investment, body: "Parent")
-    create(:comment, commentable: investment, parent: parent_comment, body: "First subcomment")
-    create(:comment, commentable: investment, parent: parent_comment, body: "Last subcomment")
-
-    visit comment_path(parent_comment)
-
-    expect(page).to have_css(".comment", count: 3)
-    expect(page).to have_content "Parent"
-    expect(page).to have_content "First subcomment"
-    expect(page).to have_content "Last subcomment"
-
-    expect(page).to have_link "Go back to #{investment.title}",
-                              href: budget_investment_path(investment.budget, investment)
-
-    within ".comment", text: "Parent" do
-      expect(page).to have_css ".comment", count: 2
-    end
-  end
-
   scenario "Link to comment show" do
     comment = create(:comment, commentable: investment, user: user)
 
