@@ -17,14 +17,14 @@
 # end
 
 Rails.application.config.content_security_policy do |policy|
- #   policy.default_src :none
+    policy.default_src :self, :https
     policy.connect_src :self, :https
     policy.font_src    :self, :https, :data
-    policy.img_src     :self, :https, :data
+    policy.img_src     :self, :data, :unsafe_inline, "*.openstreetmap.org"
     policy.object_src  :none
-    policy.script_src  :unsafe_inline, :https
+    policy.script_src  :self, :unsafe_inline, :https
  #   policy.script_src :self, :https
-    policy.style_src   :unsafe_inline, :https
+    policy.style_src   :self, :unsafe_inline, :https
  #   policy.form_action :self
     policy.base_uri    :self
     policy.frame_ancestors :none
