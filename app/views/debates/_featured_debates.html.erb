@@ -4,7 +4,7 @@
     <h2><%= t("debates.index.featured_debates") %></h2>
   </div>
 
-  <% @featured_debates.each do |debate| %>
+<% @featured_debates.try(:each) do |debate| %>
     <div class="small-12 medium-6 column end">
       <h3><%= link_to debate.title, debate %></h3>
       <%= link_to debate.author.name, user_path(debate.author) %>
