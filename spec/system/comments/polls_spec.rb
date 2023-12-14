@@ -4,21 +4,6 @@ describe "Commenting polls" do
   let(:user) { create(:user) }
   let(:poll) { create(:poll, author: create(:user)) }
 
-  scenario "Index" do
-    3.times { create(:comment, commentable: poll) }
-    comment = Comment.includes(:user).last
-
-    visit poll_path(poll)
-
-    expect(page).to have_css(".comment", count: 3)
-
-    within first(".comment") do
-      expect(page).to have_content comment.user.name
-      expect(page).to have_content I18n.l(comment.created_at, format: :datetime)
-      expect(page).to have_content comment.body
-    end
-  end
-
   scenario "Show" do
     parent_comment = create(:comment, commentable: poll, body: "Parent")
     create(:comment, commentable: poll, parent: parent_comment, body: "First subcomment")

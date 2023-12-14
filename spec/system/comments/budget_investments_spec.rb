@@ -6,24 +6,6 @@ describe "Commenting Budget::Investments" do
 
   it_behaves_like "flaggable", :budget_investment_comment
 
-  scenario "Index" do
-    not_valuations = 3.times.map { create(:comment, commentable: investment) }
-    create(:comment, :valuation, commentable: investment, subject: "Not viable")
-
-    visit budget_investment_path(investment.budget, investment)
-
-    expect(page).to have_css(".comment", count: 3)
-    expect(page).not_to have_content("Not viable")
-
-    within("#comments") do
-      not_valuations.each do |comment|
-        expect(page).to have_content comment.user.name
-        expect(page).to have_content I18n.l(comment.created_at, format: :datetime)
-        expect(page).to have_content comment.body
-      end
-    end
-  end
-
   scenario "Show" do
     parent_comment = create(:comment, commentable: investment, body: "Parent")
     create(:comment, commentable: investment, parent: parent_comment, body: "First subcomment")

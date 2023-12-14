@@ -10,21 +10,6 @@ describe "Commenting legislation questions" do
     it_behaves_like "flaggable", :legislation_question_comment
   end
 
-  scenario "Index" do
-    3.times { create(:comment, commentable: question) }
-    comment = Comment.includes(:user).last
-
-    visit legislation_process_question_path(question.process, question)
-
-    expect(page).to have_css(".comment", count: 3)
-
-    within first(".comment") do
-      expect(page).to have_content comment.user.name
-      expect(page).to have_content I18n.l(comment.created_at, format: :datetime)
-      expect(page).to have_content comment.body
-    end
-  end
-
   scenario "Show" do
     href           = legislation_process_question_path(question.process, question)
     parent_comment = create(:comment, commentable: question, body: "Parent")

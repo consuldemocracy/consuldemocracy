@@ -6,21 +6,6 @@ describe "Commenting proposals" do
 
   it_behaves_like "flaggable", :proposal_comment
 
-  scenario "Index" do
-    3.times { create(:comment, commentable: proposal) }
-    comment = Comment.includes(:user).last
-
-    visit proposal_path(proposal)
-
-    expect(page).to have_css(".comment", count: 3)
-
-    within first(".comment") do
-      expect(page).to have_content comment.user.name
-      expect(page).to have_content I18n.l(comment.created_at, format: :datetime)
-      expect(page).to have_content comment.body
-    end
-  end
-
   scenario "Show" do
     parent_comment = create(:comment, commentable: proposal, body: "Parent")
     create(:comment, commentable: proposal, parent: parent_comment, body: "First subcomment")

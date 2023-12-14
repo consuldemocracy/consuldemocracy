@@ -6,21 +6,6 @@ describe "Commenting debates" do
 
   it_behaves_like "flaggable", :debate_comment
 
-  scenario "Index" do
-    3.times { create(:comment, commentable: debate) }
-    comment = Comment.includes(:user).last
-
-    visit debate_path(debate)
-
-    expect(page).to have_css(".comment", count: 3)
-
-    within first(".comment") do
-      expect(page).to have_content comment.user.name
-      expect(page).to have_content I18n.l(comment.created_at, format: :datetime)
-      expect(page).to have_content comment.body
-    end
-  end
-
   scenario "Show" do
     parent_comment = create(:comment, commentable: debate, body: "Parent")
     create(:comment, commentable: debate, parent: parent_comment, body: "First subcomment")

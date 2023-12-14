@@ -6,23 +6,6 @@ describe "Commenting topics from proposals" do
 
   it_behaves_like "flaggable", :topic_with_community_comment
 
-  scenario "Index" do
-    community = proposal.community
-    topic = create(:topic, community: community)
-    create_list(:comment, 3, commentable: topic)
-    comment = Comment.includes(:user).last
-
-    visit community_topic_path(community, topic)
-
-    expect(page).to have_css(".comment", count: 3)
-
-    within first(".comment") do
-      expect(page).to have_content comment.user.name
-      expect(page).to have_content I18n.l(comment.created_at, format: :datetime)
-      expect(page).to have_content comment.body
-    end
-  end
-
   scenario "Show" do
     community = proposal.community
     topic = create(:topic, community: community)
@@ -548,23 +531,6 @@ end
 describe "Commenting topics from budget investments" do
   let(:user)       { create(:user) }
   let(:investment) { create(:budget_investment) }
-
-  scenario "Index" do
-    community = investment.community
-    topic = create(:topic, community: community)
-    create_list(:comment, 3, commentable: topic)
-    comment = Comment.includes(:user).last
-
-    visit community_topic_path(community, topic)
-
-    expect(page).to have_css(".comment", count: 3)
-
-    within first(".comment") do
-      expect(page).to have_content comment.user.name
-      expect(page).to have_content I18n.l(comment.created_at, format: :datetime)
-      expect(page).to have_content comment.body
-    end
-  end
 
   scenario "Show" do
     community = investment.community

@@ -6,21 +6,6 @@ describe "Commenting legislation questions" do
 
   it_behaves_like "flaggable", :legislation_annotation_comment
 
-  scenario "Index" do
-    3.times { create(:comment, commentable: annotation) }
-    comment = Comment.includes(:user).last
-
-    visit polymorphic_path(annotation)
-
-    expect(page).to have_css(".comment", count: 4)
-
-    within first(".comment") do
-      expect(page).to have_content comment.user.name
-      expect(page).to have_content I18n.l(comment.created_at, format: :datetime)
-      expect(page).to have_content comment.body
-    end
-  end
-
   scenario "Show" do
     href           = polymorphic_path(annotation)
     parent_comment = create(:comment, commentable: annotation, body: "Parent")

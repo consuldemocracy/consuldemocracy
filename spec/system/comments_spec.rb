@@ -36,6 +36,53 @@ describe "Comments" do
     end
   end
 
+  describe "Index" do
+    context "Budget Investments" do
+      let(:investment) { create(:budget_investment) }
+
+      scenario "render comments" do
+        not_valuations = 3.times.map { create(:comment, commentable: investment) }
+        create(:comment, :valuation, commentable: investment, subject: "Not viable")
+
+        visit budget_investment_path(investment.budget, investment)
+
+        expect(page).to have_css(".comment", count: 3)
+        expect(page).not_to have_content("Not viable")
+
+        within("#comments") do
+          not_valuations.each do |comment|
+            expect(page).to have_content comment.user.name
+            expect(page).to have_content I18n.l(comment.created_at, format: :datetime)
+            expect(page).to have_content comment.body
+          end
+        end
+      end
+    end
+
+    context "Debates, annotations, question, Polls, Proposals and Topics" do
+      let(:factory) { (factories - [:budget_investment]).sample }
+
+      scenario "render comments" do
+        3.times { create(:comment, commentable: resource) }
+        comment = Comment.includes(:user).last
+
+        visit polymorphic_path(resource)
+
+        if factory == :legislation_annotation
+          expect(page).to have_css(".comment", count: 4)
+        else
+          expect(page).to have_css(".comment", count: 3)
+        end
+
+        within first(".comment") do
+          expect(page).to have_content comment.user.name
+          expect(page).to have_content I18n.l(comment.created_at, format: :datetime)
+          expect(page).to have_content comment.body
+        end
+      end
+    end
+  end
+
   describe "Not logged user" do
     scenario "can not see comments forms" do
       create(:comment, commentable: resource)
