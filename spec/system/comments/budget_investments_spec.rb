@@ -6,21 +6,6 @@ describe "Commenting Budget::Investments" do
 
   it_behaves_like "flaggable", :budget_investment_comment
 
-  scenario "Link to comment show" do
-    comment = create(:comment, commentable: investment, user: user)
-
-    visit budget_investment_path(investment.budget, investment)
-
-    within "#comment_#{comment.id}" do
-      expect(page).to have_link comment.created_at.strftime("%Y-%m-%d %T")
-    end
-
-    click_link comment.created_at.strftime("%Y-%m-%d %T")
-
-    expect(page).to have_link "Go back to #{investment.title}"
-    expect(page).to have_current_path(comment_path(comment))
-  end
-
   scenario "Collapsable comments" do
     parent_comment = create(:comment, body: "Main comment", commentable: investment)
     child_comment  = create(:comment,

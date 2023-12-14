@@ -103,6 +103,19 @@ describe "Comments" do
     end
   end
 
+  scenario "Link to comment show" do
+    comment = create(:comment, commentable: resource, user: user)
+
+    visit polymorphic_path(resource)
+
+    within "#comment_#{comment.id}" do
+      click_link comment.created_at.strftime("%Y-%m-%d %T")
+    end
+
+    expect(page).to have_link "Go back to #{resource.title}"
+    expect(page).to have_current_path(comment_path(comment))
+  end
+
   describe "Not logged user" do
     scenario "can not see comments forms" do
       create(:comment, commentable: resource)

@@ -4,21 +4,6 @@ describe "Commenting polls" do
   let(:user) { create(:user) }
   let(:poll) { create(:poll, author: create(:user)) }
 
-  scenario "Link to comment show" do
-    comment = create(:comment, commentable: poll, user: user)
-
-    visit poll_path(poll)
-
-    within "#comment_#{comment.id}" do
-      expect(page).to have_link comment.created_at.strftime("%Y-%m-%d %T")
-    end
-
-    click_link comment.created_at.strftime("%Y-%m-%d %T")
-
-    expect(page).to have_link "Go back to #{poll.title}"
-    expect(page).to have_current_path(comment_path(comment))
-  end
-
   scenario "Collapsable comments" do
     parent_comment = create(:comment, body: "Main comment", commentable: poll)
     child_comment  = create(:comment, body: "First subcomment", commentable: poll, parent: parent_comment)

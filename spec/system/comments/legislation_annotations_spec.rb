@@ -6,20 +6,6 @@ describe "Commenting legislation questions" do
 
   it_behaves_like "flaggable", :legislation_annotation_comment
 
-  scenario "Link to comment show" do
-    comment = create(:comment, commentable: annotation, user: user)
-
-    visit polymorphic_path(annotation)
-
-    within "#comment_#{comment.id}" do
-      expect(page).to have_link comment.created_at.strftime("%Y-%m-%d %T")
-      click_link comment.created_at.strftime("%Y-%m-%d %T")
-    end
-
-    expect(page).to have_link "Go back to #{annotation.title}"
-    expect(page).to have_current_path(comment_path(comment))
-  end
-
   scenario "Collapsable comments" do
     parent_comment = annotation.comments.first
     child_comment  = create(:comment,

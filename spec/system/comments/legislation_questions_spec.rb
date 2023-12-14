@@ -10,21 +10,6 @@ describe "Commenting legislation questions" do
     it_behaves_like "flaggable", :legislation_question_comment
   end
 
-  scenario "Link to comment show" do
-    comment = create(:comment, commentable: question, user: user)
-
-    visit legislation_process_question_path(question.process, question)
-
-    within "#comment_#{comment.id}" do
-      expect(page).to have_link comment.created_at.strftime("%Y-%m-%d %T")
-    end
-
-    click_link comment.created_at.strftime("%Y-%m-%d %T")
-
-    expect(page).to have_link "Go back to #{question.title}"
-    expect(page).to have_current_path(comment_path(comment))
-  end
-
   scenario "Collapsable comments" do
     parent_comment = create(:comment, body: "Main comment", commentable: question)
     child_comment  = create(:comment, body: "First subcomment", commentable: question, parent: parent_comment)
