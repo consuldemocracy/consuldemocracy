@@ -486,6 +486,11 @@ aside {
   }
 }
 
+.ssb-twitter,
+.ssb-facebook {
+  color: #fff !important;
+}
+
 // 1. Header
 // --------------------
 header,
@@ -2050,6 +2055,11 @@ a {
   .comment-box .comment-input {
     border-bottom: 0;
     padding-bottom: 0;
+  }
+
+  .comments-box-container {
+    top: rem-calc(180) !important;
+    z-index: 1;
   }
 }
 
