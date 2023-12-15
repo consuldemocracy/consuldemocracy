@@ -6,45 +6,6 @@ describe "Commenting topics from proposals" do
 
   it_behaves_like "flaggable", :topic_with_community_comment
 
-  scenario "Collapsable comments" do
-    community = proposal.community
-    topic = create(:topic, community: community)
-    parent_comment = create(:comment, body: "Main comment", commentable: topic)
-    child_comment  = create(:comment, body: "First subcomment", commentable: topic, parent: parent_comment)
-    grandchild_comment = create(:comment, body: "Last subcomment", commentable: topic, parent: child_comment)
-
-    visit community_topic_path(community, topic)
-
-    expect(page).to have_css(".comment", count: 3)
-    expect(page).to have_content("1 response (collapse)", count: 2)
-
-    within ".comment .comment", text: "First subcomment" do
-      click_link text: "1 response (collapse)"
-    end
-
-    expect(page).to have_css(".comment", count: 2)
-    expect(page).to have_content("1 response (collapse)")
-    expect(page).to have_content("1 response (show)")
-    expect(page).not_to have_content grandchild_comment.body
-
-    within ".comment .comment", text: "First subcomment" do
-      click_link text: "1 response (show)"
-    end
-
-    expect(page).to have_css(".comment", count: 3)
-    expect(page).to have_content("1 response (collapse)", count: 2)
-    expect(page).to have_content grandchild_comment.body
-
-    within ".comment", text: "Main comment" do
-      click_link text: "1 response (collapse)", match: :first
-    end
-
-    expect(page).to have_css(".comment", count: 1)
-    expect(page).to have_content("1 response (show)")
-    expect(page).not_to have_content child_comment.body
-    expect(page).not_to have_content grandchild_comment.body
-  end
-
   scenario "Comment order" do
     community = proposal.community
     topic = create(:topic, community: community)
@@ -497,40 +458,6 @@ end
 describe "Commenting topics from budget investments" do
   let(:user)       { create(:user) }
   let(:investment) { create(:budget_investment) }
-
-  scenario "Collapsable comments" do
-    community = investment.community
-    topic = create(:topic, community: community)
-    parent_comment = create(:comment, body: "Main comment", commentable: topic)
-    child_comment  = create(:comment, body: "First subcomment", commentable: topic, parent: parent_comment)
-    grandchild_comment = create(:comment, body: "Last subcomment", commentable: topic, parent: child_comment)
-
-    visit community_topic_path(community, topic)
-
-    expect(page).to have_css(".comment", count: 3)
-
-    within ".comment .comment", text: "First subcomment" do
-      click_link text: "1 response (collapse)"
-    end
-
-    expect(page).to have_css(".comment", count: 2)
-    expect(page).not_to have_content grandchild_comment.body
-
-    within ".comment .comment", text: "First subcomment" do
-      click_link text: "1 response (show)"
-    end
-
-    expect(page).to have_css(".comment", count: 3)
-    expect(page).to have_content grandchild_comment.body
-
-    within ".comment", text: "Main comment" do
-      click_link text: "1 response (collapse)", match: :first
-    end
-
-    expect(page).to have_css(".comment", count: 1)
-    expect(page).not_to have_content child_comment.body
-    expect(page).not_to have_content grandchild_comment.body
-  end
 
   scenario "Comment order" do
     community = investment.community

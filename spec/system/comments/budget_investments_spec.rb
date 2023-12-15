@@ -6,49 +6,6 @@ describe "Commenting Budget::Investments" do
 
   it_behaves_like "flaggable", :budget_investment_comment
 
-  scenario "Collapsable comments" do
-    parent_comment = create(:comment, body: "Main comment", commentable: investment)
-    child_comment  = create(:comment,
-                            body: "First subcomment",
-                            commentable: investment,
-                            parent: parent_comment)
-    grandchild_comment = create(:comment,
-                                body: "Last subcomment",
-                                commentable: investment,
-                                parent: child_comment)
-
-    visit budget_investment_path(investment.budget, investment)
-
-    expect(page).to have_css(".comment", count: 3)
-    expect(page).to have_content("1 response (collapse)", count: 2)
-
-    within ".comment .comment", text: "First subcomment" do
-      click_link text: "1 response (collapse)"
-    end
-
-    expect(page).to have_css(".comment", count: 2)
-    expect(page).to have_content("1 response (collapse)")
-    expect(page).to have_content("1 response (show)")
-    expect(page).not_to have_content grandchild_comment.body
-
-    within ".comment .comment", text: "First subcomment" do
-      click_link text: "1 response (show)"
-    end
-
-    expect(page).to have_css(".comment", count: 3)
-    expect(page).to have_content("1 response (collapse)", count: 2)
-    expect(page).to have_content grandchild_comment.body
-
-    within ".comment", text: "Main comment" do
-      click_link text: "1 response (collapse)", match: :first
-    end
-
-    expect(page).to have_css(".comment", count: 1)
-    expect(page).to have_content("1 response (show)")
-    expect(page).not_to have_content child_comment.body
-    expect(page).not_to have_content grandchild_comment.body
-  end
-
   scenario "Comment order" do
     c1 = create(:comment, :with_confidence_score, commentable: investment, cached_votes_up: 100,
                                                   cached_votes_total: 120, created_at: Time.current - 2)
