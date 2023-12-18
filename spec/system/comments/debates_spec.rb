@@ -25,24 +25,6 @@ describe "Commenting debates" do
     end
   end
 
-  scenario "Paginated comments" do
-    per_page = 10
-    (per_page + 2).times { create(:comment, commentable: debate) }
-
-    visit debate_path(debate)
-
-    expect(page).to have_css(".comment", count: per_page)
-    within("ul.pagination") do
-      expect(page).to have_content("1")
-      expect(page).to have_content("2")
-      expect(page).not_to have_content("3")
-      click_link "Next", exact: false
-    end
-
-    expect(page).to have_css(".comment", count: 2)
-    expect(page).to have_current_path(/#comments/, url: true)
-  end
-
   scenario "Create" do
     login_as(user)
     visit debate_path(debate)

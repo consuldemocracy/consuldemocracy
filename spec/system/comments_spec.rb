@@ -258,6 +258,28 @@ describe "Comments" do
     end
   end
 
+  scenario "Paginated comments" do
+    per_page = 10
+    (per_page + 2).times { create(:comment, commentable: resource) }
+
+    visit polymorphic_path(resource)
+
+    expect(page).to have_css(".comment", count: per_page)
+    within("ul.pagination") do
+      expect(page).to have_content("1")
+      expect(page).to have_content("2")
+      expect(page).not_to have_content("3")
+      click_link "Next", exact: false
+    end
+
+    if factory == :legislation_annotation
+      expect(page).to have_css(".comment", count: 3)
+    else
+      expect(page).to have_css(".comment", count: 2)
+    end
+    expect(page).to have_current_path(/#comments/, url: true)
+  end
+
   scenario "Errors on create" do
     login_as(user)
     visit polymorphic_path(resource)

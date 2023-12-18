@@ -6,26 +6,6 @@ describe "Commenting topics from proposals" do
 
   it_behaves_like "flaggable", :topic_with_community_comment
 
-  scenario "Paginated comments" do
-    community = proposal.community
-    topic = create(:topic, community: community)
-    per_page = 10
-    (per_page + 2).times { create(:comment, commentable: topic) }
-
-    visit community_topic_path(community, topic)
-
-    expect(page).to have_css(".comment", count: per_page)
-    within("ul.pagination") do
-      expect(page).to have_content("1")
-      expect(page).to have_content("2")
-      expect(page).not_to have_content("3")
-      click_link "Next", exact: false
-    end
-
-    expect(page).to have_css(".comment", count: 2)
-    expect(page).to have_current_path(/#comments/, url: true)
-  end
-
   scenario "Create" do
     community = proposal.community
     topic = create(:topic, community: community)
@@ -372,26 +352,6 @@ end
 describe "Commenting topics from budget investments" do
   let(:user)       { create(:user) }
   let(:investment) { create(:budget_investment) }
-
-  scenario "Paginated comments" do
-    community = investment.community
-    topic = create(:topic, community: community)
-    per_page = 10
-    (per_page + 2).times { create(:comment, commentable: topic) }
-
-    visit community_topic_path(community, topic)
-
-    expect(page).to have_css(".comment", count: per_page)
-    within("ul.pagination") do
-      expect(page).to have_content("1")
-      expect(page).to have_content("2")
-      expect(page).not_to have_content("3")
-      click_link "Next", exact: false
-    end
-
-    expect(page).to have_css(".comment", count: 2)
-    expect(page).to have_current_path(/#comments/, url: true)
-  end
 
   scenario "Create" do
     community = investment.community
