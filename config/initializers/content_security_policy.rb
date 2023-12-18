@@ -24,7 +24,7 @@ Rails.application.config.content_security_policy do |policy|
     policy.object_src  :none
     policy.script_src  :self, :unsafe_inline, :https
     policy.style_src   :self, :unsafe_inline, :https
-    policy.form_action :self, unsafe_inline, :https
+    policy.form_action :self, :unsafe_inline, :https
     policy.base_uri    :self
     policy.frame_ancestors :none
  #   # Specify URI for violation reports
