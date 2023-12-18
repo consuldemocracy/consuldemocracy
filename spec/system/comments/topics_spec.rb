@@ -6,30 +6,6 @@ describe "Commenting topics from proposals" do
 
   it_behaves_like "flaggable", :topic_with_community_comment
 
-  scenario "Creation date works differently in roots and child comments when sorting by confidence_score" do
-    community = proposal.community
-    topic = create(:topic, community: community)
-    old_root = create(:comment, commentable: topic, created_at: Time.current - 10)
-    new_root = create(:comment, commentable: topic, created_at: Time.current)
-    old_child = create(:comment, commentable: topic, parent_id: new_root.id, created_at: Time.current - 10)
-    new_child = create(:comment, commentable: topic, parent_id: new_root.id, created_at: Time.current)
-
-    visit community_topic_path(community, topic, order: :most_voted)
-
-    expect(new_root.body).to appear_before(old_root.body)
-    expect(old_child.body).to appear_before(new_child.body)
-
-    visit community_topic_path(community, topic, order: :newest)
-
-    expect(new_root.body).to appear_before(old_root.body)
-    expect(new_child.body).to appear_before(old_child.body)
-
-    visit community_topic_path(community, topic, order: :oldest)
-
-    expect(old_root.body).to appear_before(new_root.body)
-    expect(old_child.body).to appear_before(new_child.body)
-  end
-
   scenario "Turns links into html links" do
     community = proposal.community
     topic = create(:topic, community: community)
@@ -428,30 +404,6 @@ end
 describe "Commenting topics from budget investments" do
   let(:user)       { create(:user) }
   let(:investment) { create(:budget_investment) }
-
-  scenario "Creation date works differently in roots and child comments when sorting by confidence_score" do
-    community = investment.community
-    topic = create(:topic, community: community)
-    old_root = create(:comment, commentable: topic, created_at: Time.current - 10)
-    new_root = create(:comment, commentable: topic, created_at: Time.current)
-    old_child = create(:comment, commentable: topic, parent_id: new_root.id, created_at: Time.current - 10)
-    new_child = create(:comment, commentable: topic, parent_id: new_root.id, created_at: Time.current)
-
-    visit community_topic_path(community, topic, order: :most_voted)
-
-    expect(new_root.body).to appear_before(old_root.body)
-    expect(old_child.body).to appear_before(new_child.body)
-
-    visit community_topic_path(community, topic, order: :newest)
-
-    expect(new_root.body).to appear_before(old_root.body)
-    expect(new_child.body).to appear_before(old_child.body)
-
-    visit community_topic_path(community, topic, order: :oldest)
-
-    expect(old_root.body).to appear_before(new_root.body)
-    expect(old_child.body).to appear_before(new_child.body)
-  end
 
   scenario "Turns links into html links" do
     community = investment.community

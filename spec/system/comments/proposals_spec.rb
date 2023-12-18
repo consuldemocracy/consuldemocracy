@@ -6,28 +6,6 @@ describe "Commenting proposals" do
 
   it_behaves_like "flaggable", :proposal_comment
 
-  scenario "Creation date works differently in roots and child comments when sorting by confidence_score" do
-    old_root = create(:comment, commentable: proposal, created_at: Time.current - 10)
-    new_root = create(:comment, commentable: proposal, created_at: Time.current)
-    old_child = create(:comment, commentable: proposal, parent_id: new_root.id, created_at: Time.current - 10)
-    new_child = create(:comment, commentable: proposal, parent_id: new_root.id, created_at: Time.current)
-
-    visit proposal_path(proposal, order: :most_voted)
-
-    expect(new_root.body).to appear_before(old_root.body)
-    expect(old_child.body).to appear_before(new_child.body)
-
-    visit proposal_path(proposal, order: :newest)
-
-    expect(new_root.body).to appear_before(old_root.body)
-    expect(new_child.body).to appear_before(old_child.body)
-
-    visit proposal_path(proposal, order: :oldest)
-
-    expect(old_root.body).to appear_before(new_root.body)
-    expect(old_child.body).to appear_before(new_child.body)
-  end
-
   scenario "Turns links into html links" do
     create(:comment, commentable: proposal, body: "Built with http://rubyonrails.org/")
 

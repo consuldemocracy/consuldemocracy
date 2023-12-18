@@ -10,28 +10,6 @@ describe "Commenting legislation questions" do
     it_behaves_like "flaggable", :legislation_question_comment
   end
 
-  scenario "Creation date works differently in roots and child comments when sorting by confidence_score" do
-    old_root = create(:comment, commentable: question, created_at: Time.current - 10)
-    new_root = create(:comment, commentable: question, created_at: Time.current)
-    old_child = create(:comment, commentable: question, parent_id: new_root.id, created_at: Time.current - 10)
-    new_child = create(:comment, commentable: question, parent_id: new_root.id, created_at: Time.current)
-
-    visit legislation_process_question_path(question.process, question, order: :most_voted)
-
-    expect(new_root.body).to appear_before(old_root.body)
-    expect(old_child.body).to appear_before(new_child.body)
-
-    visit legislation_process_question_path(question.process, question, order: :newest)
-
-    expect(new_root.body).to appear_before(old_root.body)
-    expect(new_child.body).to appear_before(old_child.body)
-
-    visit legislation_process_question_path(question.process, question, order: :oldest)
-
-    expect(old_root.body).to appear_before(new_root.body)
-    expect(old_child.body).to appear_before(new_child.body)
-  end
-
   scenario "Turns links into html links" do
     create(:comment, commentable: question, body: "Built with http://rubyonrails.org/")
 

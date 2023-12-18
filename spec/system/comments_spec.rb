@@ -205,6 +205,31 @@ describe "Comments" do
     expect(c2.body).to appear_before(c3.body)
   end
 
+  scenario "Creation date works differently in roots and child comments when sorting by confidence_score" do
+    old_root = create(:comment, commentable: resource, created_at: Time.current - 10)
+    new_root = create(:comment, commentable: resource, created_at: Time.current)
+    old_child = create(:comment,
+                       commentable: resource,
+                       parent_id: new_root.id,
+                       created_at: Time.current - 10)
+    new_child = create(:comment, commentable: resource, parent_id: new_root.id, created_at: Time.current)
+
+    visit polymorphic_path(resource, order: :most_voted)
+
+    expect(new_root.body).to appear_before(old_root.body)
+    expect(old_child.body).to appear_before(new_child.body)
+
+    visit polymorphic_path(resource, order: :newest)
+
+    expect(new_root.body).to appear_before(old_root.body)
+    expect(new_child.body).to appear_before(old_child.body)
+
+    visit polymorphic_path(resource, order: :oldest)
+
+    expect(old_root.body).to appear_before(new_root.body)
+    expect(old_child.body).to appear_before(new_child.body)
+  end
+
   scenario "Errors on create" do
     login_as(user)
     visit polymorphic_path(resource)
