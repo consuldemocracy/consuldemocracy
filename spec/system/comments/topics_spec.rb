@@ -6,23 +6,6 @@ describe "Commenting topics from proposals" do
 
   it_behaves_like "flaggable", :topic_with_community_comment
 
-  scenario "Sanitizes comment body for security" do
-    community = proposal.community
-    topic = create(:topic, community: community)
-    create(:comment, commentable: topic,
-                     body: "<script>alert('hola')</script> " \
-                           "<a href=\"javascript:alert('sorpresa!')\">click me<a/> " \
-                           "http://www.url.com")
-
-    visit community_topic_path(community, topic)
-
-    within first(".comment") do
-      expect(page).to have_content "click me http://www.url.com"
-      expect(page).to have_link("http://www.url.com", href: "http://www.url.com")
-      expect(page).not_to have_link("click me")
-    end
-  end
-
   scenario "Paginated comments" do
     community = proposal.community
     topic = create(:topic, community: community)
@@ -389,23 +372,6 @@ end
 describe "Commenting topics from budget investments" do
   let(:user)       { create(:user) }
   let(:investment) { create(:budget_investment) }
-
-  scenario "Sanitizes comment body for security" do
-    community = investment.community
-    topic = create(:topic, community: community)
-    create(:comment, commentable: topic,
-                     body: "<script>alert('hola')</script> " \
-                           "<a href=\"javascript:alert('sorpresa!')\">click me<a/> " \
-                           "http://www.url.com")
-
-    visit community_topic_path(community, topic)
-
-    within first(".comment") do
-      expect(page).to have_content "click me http://www.url.com"
-      expect(page).to have_link("http://www.url.com", href: "http://www.url.com")
-      expect(page).not_to have_link("click me")
-    end
-  end
 
   scenario "Paginated comments" do
     community = investment.community

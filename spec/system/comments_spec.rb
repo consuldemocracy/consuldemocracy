@@ -243,6 +243,21 @@ describe "Comments" do
     end
   end
 
+  scenario "Sanitizes comment body for security" do
+    create(:comment, commentable: resource,
+                     body: "<script>alert('hola')</script> " \
+                           "<a href=\"javascript:alert('sorpresa!')\">click me<a/> " \
+                           "http://www.url.com")
+
+    visit polymorphic_path(resource)
+
+    within first(".comment") do
+      expect(page).to have_content "click me http://www.url.com"
+      expect(page).to have_link("http://www.url.com", href: "http://www.url.com")
+      expect(page).not_to have_link("click me")
+    end
+  end
+
   scenario "Errors on create" do
     login_as(user)
     visit polymorphic_path(resource)

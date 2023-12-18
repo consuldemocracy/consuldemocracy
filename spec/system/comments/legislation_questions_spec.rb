@@ -10,21 +10,6 @@ describe "Commenting legislation questions" do
     it_behaves_like "flaggable", :legislation_question_comment
   end
 
-  scenario "Sanitizes comment body for security" do
-    create(:comment, commentable: question,
-                     body: "<script>alert('hola')</script> " \
-                           "<a href=\"javascript:alert('sorpresa!')\">click me<a/> " \
-                           "http://www.url.com")
-
-    visit legislation_process_question_path(question.process, question)
-
-    within first(".comment") do
-      expect(page).to have_content "click me http://www.url.com"
-      expect(page).to have_link("http://www.url.com", href: "http://www.url.com")
-      expect(page).not_to have_link("click me")
-    end
-  end
-
   scenario "Paginated comments" do
     per_page = 10
     (per_page + 2).times { create(:comment, commentable: question) }
