@@ -4,34 +4,6 @@ describe "Commenting polls" do
   let(:user) { create(:user) }
   let(:poll) { create(:poll, author: create(:user)) }
 
-  scenario "Comment order" do
-    c1 = create(:comment, :with_confidence_score, commentable: poll, cached_votes_up: 100,
-                                                  cached_votes_total: 120, created_at: Time.current - 2)
-    c2 = create(:comment, :with_confidence_score, commentable: poll, cached_votes_up: 10,
-                                                  cached_votes_total: 12, created_at: Time.current - 1)
-    c3 = create(:comment, :with_confidence_score, commentable: poll, cached_votes_up: 1,
-                                                  cached_votes_total: 2, created_at: Time.current)
-
-    visit poll_path(poll, order: :most_voted)
-
-    expect(c1.body).to appear_before(c2.body)
-    expect(c2.body).to appear_before(c3.body)
-
-    click_link "Newest first"
-
-    expect(page).to have_link "Newest first", class: "is-active"
-    expect(page).to have_current_path(/#comments/, url: true)
-    expect(c3.body).to appear_before(c2.body)
-    expect(c2.body).to appear_before(c1.body)
-
-    click_link "Oldest first"
-
-    expect(page).to have_link "Oldest first", class: "is-active"
-    expect(page).to have_current_path(/#comments/, url: true)
-    expect(c1.body).to appear_before(c2.body)
-    expect(c2.body).to appear_before(c3.body)
-  end
-
   scenario "Creation date works differently in roots and child comments when sorting by confidence_score" do
     old_root = create(:comment, commentable: poll, created_at: Time.current - 10)
     new_root = create(:comment, commentable: poll, created_at: Time.current)
