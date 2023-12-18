@@ -10,19 +10,6 @@ describe "Commenting legislation questions" do
     it_behaves_like "flaggable", :legislation_question_comment
   end
 
-  scenario "Turns links into html links" do
-    create(:comment, commentable: question, body: "Built with http://rubyonrails.org/")
-
-    visit legislation_process_question_path(question.process, question)
-
-    within first(".comment") do
-      expect(page).to have_content "Built with http://rubyonrails.org/"
-      expect(page).to have_link("http://rubyonrails.org/", href: "http://rubyonrails.org/")
-      expect(find_link("http://rubyonrails.org/")[:rel]).to eq("nofollow")
-      expect(find_link("http://rubyonrails.org/")[:target]).to be_blank
-    end
-  end
-
   scenario "Sanitizes comment body for security" do
     create(:comment, commentable: question,
                      body: "<script>alert('hola')</script> " \

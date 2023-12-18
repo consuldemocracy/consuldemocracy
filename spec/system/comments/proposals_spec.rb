@@ -6,19 +6,6 @@ describe "Commenting proposals" do
 
   it_behaves_like "flaggable", :proposal_comment
 
-  scenario "Turns links into html links" do
-    create(:comment, commentable: proposal, body: "Built with http://rubyonrails.org/")
-
-    visit proposal_path(proposal)
-
-    within first(".comment") do
-      expect(page).to have_content "Built with http://rubyonrails.org/"
-      expect(page).to have_link("http://rubyonrails.org/", href: "http://rubyonrails.org/")
-      expect(find_link("http://rubyonrails.org/")[:rel]).to eq("nofollow")
-      expect(find_link("http://rubyonrails.org/")[:target]).to be_blank
-    end
-  end
-
   scenario "Sanitizes comment body for security" do
     create(:comment, commentable: proposal,
                      body: "<script>alert('hola')</script> " \

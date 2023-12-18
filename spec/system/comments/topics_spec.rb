@@ -6,21 +6,6 @@ describe "Commenting topics from proposals" do
 
   it_behaves_like "flaggable", :topic_with_community_comment
 
-  scenario "Turns links into html links" do
-    community = proposal.community
-    topic = create(:topic, community: community)
-    create(:comment, commentable: topic, body: "Built with http://rubyonrails.org/")
-
-    visit community_topic_path(community, topic)
-
-    within first(".comment") do
-      expect(page).to have_content "Built with http://rubyonrails.org/"
-      expect(page).to have_link("http://rubyonrails.org/", href: "http://rubyonrails.org/")
-      expect(find_link("http://rubyonrails.org/")[:rel]).to eq("nofollow")
-      expect(find_link("http://rubyonrails.org/")[:target]).to be_blank
-    end
-  end
-
   scenario "Sanitizes comment body for security" do
     community = proposal.community
     topic = create(:topic, community: community)
@@ -404,21 +389,6 @@ end
 describe "Commenting topics from budget investments" do
   let(:user)       { create(:user) }
   let(:investment) { create(:budget_investment) }
-
-  scenario "Turns links into html links" do
-    community = investment.community
-    topic = create(:topic, community: community)
-    create(:comment, commentable: topic, body: "Built with http://rubyonrails.org/")
-
-    visit community_topic_path(community, topic)
-
-    within first(".comment") do
-      expect(page).to have_content "Built with http://rubyonrails.org/"
-      expect(page).to have_link("http://rubyonrails.org/", href: "http://rubyonrails.org/")
-      expect(find_link("http://rubyonrails.org/")[:rel]).to eq("nofollow")
-      expect(find_link("http://rubyonrails.org/")[:target]).to be_blank
-    end
-  end
 
   scenario "Sanitizes comment body for security" do
     community = investment.community

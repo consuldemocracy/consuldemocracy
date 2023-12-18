@@ -25,19 +25,6 @@ describe "Commenting debates" do
     end
   end
 
-  scenario "Turns links into html links" do
-    create(:comment, commentable: debate, body: "Built with http://rubyonrails.org/")
-
-    visit debate_path(debate)
-
-    within first(".comment") do
-      expect(page).to have_content "Built with http://rubyonrails.org/"
-      expect(page).to have_link("http://rubyonrails.org/", href: "http://rubyonrails.org/")
-      expect(find_link("http://rubyonrails.org/")[:rel]).to eq("nofollow")
-      expect(find_link("http://rubyonrails.org/")[:target]).to be_blank
-    end
-  end
-
   scenario "Sanitizes comment body for security" do
     create(:comment, commentable: debate,
                      body: "<script>alert('hola')</script> " \

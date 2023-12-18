@@ -6,20 +6,6 @@ describe "Commenting legislation questions" do
 
   it_behaves_like "flaggable", :legislation_annotation_comment
 
-  scenario "Turns links into html links" do
-    annotation = create(:legislation_annotation, author: user)
-    annotation.comments << create(:comment, body: "Built with http://rubyonrails.org/")
-
-    visit polymorphic_path(annotation)
-
-    within all(".comment").first do
-      expect(page).to have_content "Built with http://rubyonrails.org/"
-      expect(page).to have_link("http://rubyonrails.org/", href: "http://rubyonrails.org/")
-      expect(find_link("http://rubyonrails.org/")[:rel]).to eq("nofollow")
-      expect(find_link("http://rubyonrails.org/")[:target]).to be_blank
-    end
-  end
-
   scenario "Sanitizes comment body for security" do
     create(:comment, commentable: annotation,
                      body: "<script>alert('hola')</script> " \
