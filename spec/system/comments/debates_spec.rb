@@ -25,19 +25,6 @@ describe "Commenting debates" do
     end
   end
 
-  scenario "Create" do
-    login_as(user)
-    visit debate_path(debate)
-
-    fill_in "Leave your comment", with: "Have you thought about...?"
-    click_button "Publish comment"
-
-    within "#comments" do
-      expect(page).to have_content "Have you thought about...?"
-      expect(page).to have_content "(1)"
-    end
-  end
-
   describe "Hide" do
     scenario "Without replies" do
       create(:comment, commentable: debate, user: user, body: "This was a mistake")

@@ -6,25 +6,6 @@ describe "Commenting topics from proposals" do
 
   it_behaves_like "flaggable", :topic_with_community_comment
 
-  scenario "Create" do
-    community = proposal.community
-    topic = create(:topic, community: community)
-
-    login_as(user)
-    visit community_topic_path(community, topic)
-
-    fill_in "Leave your comment", with: "Have you thought about...?"
-    click_button "Publish comment"
-
-    within "#comments" do
-      expect(page).to have_content "Have you thought about...?"
-    end
-
-    within "#tab-comments-label" do
-      expect(page).to have_content "Comments (1)"
-    end
-  end
-
   scenario "Reply" do
     community = proposal.community
     topic = create(:topic, community: community)
@@ -352,25 +333,6 @@ end
 describe "Commenting topics from budget investments" do
   let(:user)       { create(:user) }
   let(:investment) { create(:budget_investment) }
-
-  scenario "Create" do
-    community = investment.community
-    topic = create(:topic, community: community)
-
-    login_as(user)
-    visit community_topic_path(community, topic)
-
-    fill_in "Leave your comment", with: "Have you thought about...?"
-    click_button "Publish comment"
-
-    within "#comments" do
-      expect(page).to have_content "Have you thought about...?"
-    end
-
-    within "#tab-comments-label" do
-      expect(page).to have_content "Comments (1)"
-    end
-  end
 
   scenario "Reply" do
     community = investment.community

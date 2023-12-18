@@ -6,22 +6,6 @@ describe "Commenting proposals" do
 
   it_behaves_like "flaggable", :proposal_comment
 
-  scenario "Create" do
-    login_as(user)
-    visit proposal_path(proposal)
-
-    fill_in "Leave your comment", with: "Have you thought about...?"
-    click_button "Publish comment"
-
-    within "#comments" do
-      expect(page).to have_content "Have you thought about...?"
-    end
-
-    within "#tab-comments-label" do
-      expect(page).to have_content "Comments (1)"
-    end
-  end
-
   scenario "Reply" do
     citizen = create(:user, username: "Ana")
     manuela = create(:user, username: "Manuela")

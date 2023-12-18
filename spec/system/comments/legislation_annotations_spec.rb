@@ -6,19 +6,6 @@ describe "Commenting legislation questions" do
 
   it_behaves_like "flaggable", :legislation_annotation_comment
 
-  scenario "Create" do
-    login_as(user)
-    visit polymorphic_path(annotation)
-
-    fill_in "Leave your comment", with: "Have you thought about...?"
-    click_button "Publish comment"
-
-    within "#comments" do
-      expect(page).to have_content "Have you thought about...?"
-      expect(page).to have_content "(2)"
-    end
-  end
-
   scenario "Reply" do
     citizen = create(:user, username: "Ana")
     manuela = create(:user, username: "Manuela")

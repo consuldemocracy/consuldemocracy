@@ -4,22 +4,6 @@ describe "Commenting polls" do
   let(:user) { create(:user) }
   let(:poll) { create(:poll, author: create(:user)) }
 
-  scenario "Create" do
-    login_as(user)
-    visit poll_path(poll)
-
-    fill_in "Leave your comment", with: "Have you thought about...?"
-    click_button "Publish comment"
-
-    within "#comments" do
-      expect(page).to have_content "Have you thought about...?"
-    end
-
-    within "#tab-comments-label" do
-      expect(page).to have_content "Comments (1)"
-    end
-  end
-
   scenario "Reply" do
     citizen = create(:user, username: "Ana")
     manuela = create(:user, username: "Manuela")

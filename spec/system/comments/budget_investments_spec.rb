@@ -6,22 +6,6 @@ describe "Commenting Budget::Investments" do
 
   it_behaves_like "flaggable", :budget_investment_comment
 
-  scenario "Create" do
-    login_as(user)
-    visit budget_investment_path(investment.budget, investment)
-
-    fill_in "Leave your comment", with: "Have you thought about...?"
-    click_button "Publish comment"
-
-    within "#tab-comments-label" do
-      expect(page).to have_content "Comments (1)"
-    end
-
-    within "#comments" do
-      expect(page).to have_content "Have you thought about...?"
-    end
-  end
-
   scenario "Reply" do
     citizen = create(:user, username: "Ana")
     manuela = create(:user, username: "Manuela")

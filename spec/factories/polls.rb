@@ -38,6 +38,10 @@ FactoryBot.define do
       after(:create) { |poll| create(:image, imageable: poll) }
     end
 
+    trait :with_author do
+      author factory: :user
+    end
+
     transient { officers { [] } }
 
     after(:create) do |poll, evaluator|
@@ -45,6 +49,8 @@ FactoryBot.define do
         create(:poll_officer_assignment, poll: poll, officer: officer)
       end
     end
+
+    factory :poll_with_author, traits: [:with_author]
   end
 
   factory :poll_question, class: "Poll::Question" do

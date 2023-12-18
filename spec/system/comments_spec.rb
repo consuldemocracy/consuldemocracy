@@ -7,7 +7,7 @@ describe "Comments" do
                       :debate,
                       :legislation_annotation,
                       :legislation_question,
-                      :poll,
+                      :poll_with_author,
                       :proposal,
                       :topic_with_community,
                       :topic_with_investment_community
@@ -278,6 +278,32 @@ describe "Comments" do
       expect(page).to have_css(".comment", count: 2)
     end
     expect(page).to have_current_path(/#comments/, url: true)
+  end
+
+  scenario "Create" do
+    login_as(user)
+    visit polymorphic_path(resource)
+
+    fill_in fill_text, with: "Have you thought about...?"
+    click_button button_text
+
+    if [:debate, :legislation_question].include?(factory)
+      within "#comments" do
+        expect(page).to have_content "(1)"
+      end
+    elsif factory == :legislation_annotation
+      within "#comments" do
+        expect(page).to have_content "Comments (2)"
+      end
+    else
+      within "#tab-comments-label" do
+        expect(page).to have_content "Comments (1)"
+      end
+    end
+
+    within "#comments" do
+      expect(page).to have_content "Have you thought about...?"
+    end
   end
 
   scenario "Errors on create" do
