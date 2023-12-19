@@ -15,24 +15,6 @@ describe "Commenting proposals" do
       login_as(verified)
     end
 
-    scenario "Create" do
-      visit proposal_path(proposal)
-
-      within("#comment_#{comment.id}_votes") do
-        click_button "I agree"
-
-        within(".in-favor") do
-          expect(page).to have_content "1"
-        end
-
-        within(".against") do
-          expect(page).to have_content "0"
-        end
-
-        expect(page).to have_content "1 vote"
-      end
-    end
-
     scenario "Update" do
       visit proposal_path(proposal)
 

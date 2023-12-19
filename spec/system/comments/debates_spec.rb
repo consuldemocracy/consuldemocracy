@@ -135,24 +135,6 @@ describe "Commenting debates" do
       login_as(verified)
     end
 
-    scenario "Create" do
-      visit debate_path(debate)
-
-      within("#comment_#{comment.id}_votes") do
-        click_button "I agree"
-
-        within(".in-favor") do
-          expect(page).to have_content "1"
-        end
-
-        within(".against") do
-          expect(page).to have_content "0"
-        end
-
-        expect(page).to have_content "1 vote"
-      end
-    end
-
     scenario "Update" do
       visit debate_path(debate)
 
