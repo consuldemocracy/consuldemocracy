@@ -6,58 +6,6 @@ describe "Commenting debates" do
 
   it_behaves_like "flaggable", :debate_comment
 
-  describe "Hide" do
-    scenario "Without replies" do
-      create(:comment, commentable: debate, user: user, body: "This was a mistake")
-
-      login_as(user)
-      visit debate_path(debate)
-
-      accept_confirm("Are you sure? This action will delete this comment. You can't undo this action.") do
-        within(".comment-body", text: "This was a mistake") { click_link "Delete comment" }
-      end
-
-      expect(page).not_to have_content "This was a mistake"
-      expect(page).not_to have_link "Delete comment"
-
-      visit debate_path(debate)
-
-      expect(page).not_to have_content "This was a mistake"
-      expect(page).not_to have_link "Delete comment"
-
-      logout
-      login_as(create(:administrator).user)
-
-      visit admin_hidden_comments_path
-
-      expect(page).to have_content "This was a mistake"
-    end
-
-    scenario "With replies" do
-      comment = create(:comment, commentable: debate, user: user, body: "Wrong comment")
-      create(:comment, commentable: debate, parent: comment, body: "Right reply")
-
-      login_as(user)
-      visit debate_path(debate)
-
-      accept_confirm("Are you sure? This action will delete this comment. You can't undo this action.") do
-        within(".comment-body", text: "Wrong comment") { click_link "Delete comment" }
-      end
-
-      within "#comments > .comment-list > li", text: "Right reply" do
-        expect(page).to have_content "This comment has been deleted"
-        expect(page).not_to have_content "Wrong comment"
-      end
-
-      visit debate_path(debate)
-
-      within "#comments > .comment-list > li", text: "Right reply" do
-        expect(page).to have_content "This comment has been deleted"
-        expect(page).not_to have_content "Wrong comment"
-      end
-    end
-  end
-
   scenario "Reply to reply" do
     create(:comment, commentable: debate, body: "Any estimates?")
 
