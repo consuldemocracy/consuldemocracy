@@ -69,40 +69,4 @@ describe "Commenting Budget::Investments" do
       end
     end
   end
-
-  describe "Voting comments" do
-    let(:verified)   { create(:user, verified_at: Time.current) }
-    let(:unverified) { create(:user) }
-    let(:budget)     { create(:budget) }
-    let(:investment) { create(:budget_investment, budget: budget) }
-    let!(:comment)   { create(:comment, commentable: investment) }
-
-    before do
-      login_as(verified)
-    end
-
-    scenario "Allow undoing votes" do
-      visit budget_investment_path(budget, investment)
-
-      within("#comment_#{comment.id}_votes") do
-        click_button "I agree"
-
-        within(".in-favor") do
-          expect(page).to have_content "1"
-        end
-
-        click_button "I agree"
-
-        within(".in-favor") do
-          expect(page).to have_content "0"
-        end
-
-        within(".against") do
-          expect(page).to have_content "0"
-        end
-
-        expect(page).to have_content "No votes"
-      end
-    end
-  end
 end

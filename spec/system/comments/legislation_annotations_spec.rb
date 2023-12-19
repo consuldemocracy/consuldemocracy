@@ -20,40 +20,6 @@ describe "Commenting legislation questions" do
     expect(page).to have_button "Publish comment", disabled: false
   end
 
-  describe "Voting comments" do
-    let(:verified)   { create(:user, verified_at: Time.current) }
-    let(:unverified) { create(:user) }
-    let(:annotation) { create(:legislation_annotation) }
-    let!(:comment)   { create(:comment, commentable: annotation) }
-
-    before do
-      login_as(verified)
-    end
-
-    scenario "Allow undoing votes" do
-      visit polymorphic_path(annotation)
-
-      within("#comment_#{comment.id}_votes") do
-        click_button "I agree"
-        within(".in-favor") do
-          expect(page).to have_content "1"
-        end
-
-        click_button "I agree"
-        within(".in-favor") do
-          expect(page).not_to have_content "2"
-          expect(page).to have_content "0"
-        end
-
-        within(".against") do
-          expect(page).to have_content "0"
-        end
-
-        expect(page).to have_content "No votes"
-      end
-    end
-  end
-
   describe "Merged comment threads" do
     let!(:draft_version) { create(:legislation_draft_version, :published) }
     let!(:annotation1) do

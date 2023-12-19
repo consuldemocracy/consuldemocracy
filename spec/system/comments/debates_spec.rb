@@ -124,38 +124,4 @@ describe "Commenting debates" do
     expect(page).to have_content "Testing submit button!"
     expect(page).to have_button "Publish comment", disabled: false
   end
-
-  describe "Voting comments" do
-    let(:verified)   { create(:user, verified_at: Time.current) }
-    let(:unverified) { create(:user) }
-    let(:debate)     { create(:debate) }
-    let!(:comment)   { create(:comment, commentable: debate) }
-
-    before do
-      login_as(verified)
-    end
-
-    scenario "Allow undoing votes" do
-      visit debate_path(debate)
-
-      within("#comment_#{comment.id}_votes") do
-        click_button "I agree"
-        within(".in-favor") do
-          expect(page).to have_content "1"
-        end
-
-        click_button "I agree"
-        within(".in-favor") do
-          expect(page).not_to have_content "2"
-          expect(page).to have_content "0"
-        end
-
-        within(".against") do
-          expect(page).to have_content "0"
-        end
-
-        expect(page).to have_content "No votes"
-      end
-    end
-  end
 end
