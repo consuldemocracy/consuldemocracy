@@ -6,20 +6,6 @@ describe "Commenting legislation questions" do
 
   it_behaves_like "flaggable", :legislation_annotation_comment
 
-  scenario "Submit button is disabled after clicking" do
-    annotation = create(:legislation_annotation)
-    login_as(user)
-
-    visit polymorphic_path(annotation)
-
-    fill_in "Leave your comment", with: "Testing submit button!"
-    click_button "Publish comment"
-
-    expect(page).to have_button "Publish comment", disabled: true
-    expect(page).to have_content "Testing submit button!"
-    expect(page).to have_button "Publish comment", disabled: false
-  end
-
   describe "Merged comment threads" do
     let!(:draft_version) { create(:legislation_draft_version, :published) }
     let!(:annotation1) do

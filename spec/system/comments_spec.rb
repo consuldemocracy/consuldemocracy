@@ -507,6 +507,18 @@ describe "Comments" do
     end
   end
 
+  scenario "Submit button is disabled after clicking" do
+    login_as(user)
+    visit polymorphic_path(resource)
+
+    fill_in fill_text, with: "Testing submit button!"
+    click_button button_text
+
+    expect(page).to have_button button_text, disabled: true
+    expect(page).to have_content "Testing submit button!"
+    expect(page).to have_button button_text, disabled: false
+  end
+
   describe "Moderators" do
     let(:moderator) { create(:moderator) }
     before { login_as(moderator.user) }
