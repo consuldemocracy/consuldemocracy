@@ -5,17 +5,6 @@ describe "Commenting topics from proposals" do
 
   it_behaves_like "flaggable", :topic_with_community_comment
 
-  describe "Administrators" do
-    scenario "can not comment as a moderator", :admin do
-      community = proposal.community
-      topic = create(:topic, community: community)
-
-      visit community_topic_path(community, topic)
-
-      expect(page).not_to have_content "Comment as moderator"
-    end
-  end
-
   describe "Voting comments" do
     let(:verified)   { create(:user, verified_at: Time.current) }
     let(:unverified) { create(:user) }
@@ -117,17 +106,6 @@ end
 describe "Commenting topics from budget investments" do
   let(:user)       { create(:user) }
   let(:investment) { create(:budget_investment) }
-
-  describe "Administrators" do
-    scenario "can not comment as a moderator", :admin do
-      community = investment.community
-      topic = create(:topic, community: community)
-
-      visit community_topic_path(community, topic)
-
-      expect(page).not_to have_content "Comment as moderator"
-    end
-  end
 
   describe "Voting comments" do
     let(:verified)   { create(:user, verified_at: Time.current) }

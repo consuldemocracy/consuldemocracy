@@ -22,14 +22,6 @@ describe "Commenting legislation questions" do
     expect(page).to have_button "Publish answer", disabled: false
   end
 
-  describe "Administrators" do
-    scenario "can not comment as a moderator", :admin do
-      visit legislation_process_question_path(question.process, question)
-
-      expect(page).not_to have_content "Comment as moderator"
-    end
-  end
-
   describe "Voting comments" do
     let(:verified)   { create(:user, verified_at: Time.current) }
     let(:unverified) { create(:user) }

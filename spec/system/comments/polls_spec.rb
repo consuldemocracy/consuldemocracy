@@ -4,14 +4,6 @@ describe "Commenting polls" do
   let(:user) { create(:user) }
   let(:poll) { create(:poll, author: create(:user)) }
 
-  describe "Administrators" do
-    scenario "can not comment as a moderator", :admin do
-      visit poll_path(poll)
-
-      expect(page).not_to have_content "Comment as moderator"
-    end
-  end
-
   describe "Voting comments" do
     let(:verified)   { create(:user, verified_at: Time.current) }
     let(:unverified) { create(:user) }

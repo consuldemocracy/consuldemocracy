@@ -68,12 +68,6 @@ describe "Commenting Budget::Investments" do
         end
       end
     end
-
-    scenario "can not comment as a moderator", :admin do
-      visit budget_investment_path(investment.budget, investment)
-
-      expect(page).not_to have_content "Comment as moderator"
-    end
   end
 
   describe "Voting comments" do

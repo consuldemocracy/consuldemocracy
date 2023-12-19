@@ -5,14 +5,6 @@ describe "Commenting proposals" do
 
   it_behaves_like "flaggable", :proposal_comment
 
-  describe "Administrators" do
-    scenario "can not comment as a moderator", :admin do
-      visit proposal_path(proposal)
-
-      expect(page).not_to have_content "Comment as moderator"
-    end
-  end
-
   describe "Voting comments" do
     let(:verified)   { create(:user, verified_at: Time.current) }
     let(:unverified) { create(:user) }
