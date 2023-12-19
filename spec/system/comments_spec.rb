@@ -497,6 +497,16 @@ describe "Comments" do
     end
   end
 
+  scenario "Show comment when the author is hidden" do
+    create(:comment, body: "This is pointless", commentable: resource, author: create(:user, :hidden))
+
+    visit polymorphic_path(resource)
+
+    within ".comment", text: "This is pointless" do
+      expect(page).to have_content "User deleted"
+    end
+  end
+
   describe "Moderators" do
     let(:moderator) { create(:moderator) }
     before { login_as(moderator.user) }

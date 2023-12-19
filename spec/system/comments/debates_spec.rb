@@ -6,16 +6,6 @@ describe "Commenting debates" do
 
   it_behaves_like "flaggable", :debate_comment
 
-  scenario "Show comment when the author is hidden" do
-    create(:comment, body: "This is pointless", commentable: debate, author: create(:user, :hidden))
-
-    visit debate_path(debate)
-
-    within ".comment", text: "This is pointless" do
-      expect(page).to have_content "User deleted"
-    end
-  end
-
   scenario "Submit button is disabled after clicking" do
     debate = create(:debate)
     login_as(user)
