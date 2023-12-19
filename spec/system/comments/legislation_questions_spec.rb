@@ -10,18 +10,6 @@ describe "Commenting legislation questions" do
     it_behaves_like "flaggable", :legislation_question_comment
   end
 
-  scenario "N replies" do
-    parent = create(:comment, commentable: question)
-
-    7.times do
-      create(:comment, commentable: question, parent: parent)
-      parent = parent.children.first
-    end
-
-    visit legislation_process_question_path(question.process, question)
-    expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
-  end
-
   scenario "Erasing a comment's author" do
     comment = create(:comment, commentable: question, body: "this should be visible")
     comment.user.erase

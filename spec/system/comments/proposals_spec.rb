@@ -5,18 +5,6 @@ describe "Commenting proposals" do
 
   it_behaves_like "flaggable", :proposal_comment
 
-  scenario "N replies" do
-    parent = create(:comment, commentable: proposal)
-
-    7.times do
-      create(:comment, commentable: proposal, parent: parent)
-      parent = parent.children.first
-    end
-
-    visit proposal_path(proposal)
-    expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
-  end
-
   scenario "Erasing a comment's author" do
     proposal = create(:proposal)
     comment = create(:comment, commentable: proposal, body: "this should be visible")

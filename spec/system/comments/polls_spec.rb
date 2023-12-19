@@ -4,18 +4,6 @@ describe "Commenting polls" do
   let(:user) { create(:user) }
   let(:poll) { create(:poll, author: create(:user)) }
 
-  scenario "N replies" do
-    parent = create(:comment, commentable: poll)
-
-    7.times do
-      create(:comment, commentable: poll, parent: parent)
-      parent = parent.children.first
-    end
-
-    visit poll_path(poll)
-    expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
-  end
-
   scenario "Erasing a comment's author" do
     poll = create(:poll)
     comment = create(:comment, commentable: poll, body: "this should be visible")

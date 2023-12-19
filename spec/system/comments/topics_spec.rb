@@ -5,20 +5,6 @@ describe "Commenting topics from proposals" do
 
   it_behaves_like "flaggable", :topic_with_community_comment
 
-  scenario "N replies" do
-    community = proposal.community
-    topic = create(:topic, community: community)
-    parent = create(:comment, commentable: topic)
-
-    7.times do
-      create(:comment, commentable: topic, parent: parent)
-      parent = parent.children.first
-    end
-
-    visit community_topic_path(community, topic)
-    expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
-  end
-
   scenario "Erasing a comment's author" do
     community = proposal.community
     topic = create(:topic, community: community)
@@ -256,20 +242,6 @@ end
 describe "Commenting topics from budget investments" do
   let(:user)       { create(:user) }
   let(:investment) { create(:budget_investment) }
-
-  scenario "N replies" do
-    community = investment.community
-    topic = create(:topic, community: community)
-    parent = create(:comment, commentable: topic)
-
-    7.times do
-      create(:comment, commentable: topic, parent: parent)
-      parent = parent.children.first
-    end
-
-    visit community_topic_path(community, topic)
-    expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
-  end
 
   scenario "Erasing a comment's author" do
     community = investment.community

@@ -377,6 +377,18 @@ describe "Comments" do
     end
   end
 
+  scenario "N replies" do
+    parent = create(:comment, commentable: resource)
+
+    7.times do
+      create(:comment, commentable: resource, parent: parent)
+      parent = parent.children.first
+    end
+
+    visit polymorphic_path(resource)
+    expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
+  end
+
   scenario "Errors on create" do
     login_as(user)
     visit polymorphic_path(resource)

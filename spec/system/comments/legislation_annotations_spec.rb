@@ -6,19 +6,6 @@ describe "Commenting legislation questions" do
 
   it_behaves_like "flaggable", :legislation_annotation_comment
 
-  scenario "N replies" do
-    parent = create(:comment, commentable: annotation)
-
-    7.times do
-      create(:comment, commentable: annotation, parent: parent)
-      parent = parent.children.first
-    end
-
-    visit polymorphic_path(annotation)
-
-    expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
-  end
-
   scenario "Erasing a comment's author" do
     annotation = create(:legislation_annotation)
     comment = create(:comment, commentable: annotation, body: "this should be visible")

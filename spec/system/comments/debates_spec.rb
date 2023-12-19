@@ -112,18 +112,6 @@ describe "Commenting debates" do
     end
   end
 
-  scenario "N replies" do
-    parent = create(:comment, commentable: debate)
-
-    7.times do
-      create(:comment, commentable: debate, parent: parent)
-      parent = parent.children.first
-    end
-
-    visit debate_path(debate)
-    expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
-  end
-
   scenario "Erasing a comment's author" do
     debate = create(:debate)
     comment = create(:comment, commentable: debate, body: "this should be visible")

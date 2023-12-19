@@ -5,18 +5,6 @@ describe "Commenting Budget::Investments" do
 
   it_behaves_like "flaggable", :budget_investment_comment
 
-  scenario "N replies" do
-    parent = create(:comment, commentable: investment)
-
-    7.times do
-      create(:comment, commentable: investment, parent: parent)
-      parent = parent.children.first
-    end
-
-    visit budget_investment_path(investment.budget, investment)
-    expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
-  end
-
   scenario "Erasing a comment's author" do
     investment = create(:budget_investment)
     comment = create(:comment, commentable: investment, body: "this should be visible")
