@@ -6,25 +6,6 @@ describe "Commenting legislation questions" do
 
   it_behaves_like "flaggable", :legislation_annotation_comment
 
-  scenario "Reply show parent comments responses when hidden" do
-    manuela = create(:user, :level_two, username: "Manuela")
-    annotation = create(:legislation_annotation)
-    comment = annotation.comments.first
-    create(:comment, commentable: annotation, parent: comment)
-
-    login_as(manuela)
-    visit polymorphic_path(annotation)
-
-    within ".comment", text: comment.body do
-      click_link text: "1 response (collapse)"
-      click_link "Reply"
-      fill_in "Leave your comment", with: "It will be done next week."
-      click_button "Publish reply"
-
-      expect(page).to have_content("It will be done next week.")
-    end
-  end
-
   scenario "Errors on reply" do
     comment = annotation.comments.first
 

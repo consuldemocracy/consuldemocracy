@@ -10,24 +10,6 @@ describe "Commenting legislation questions" do
     it_behaves_like "flaggable", :legislation_question_comment
   end
 
-  scenario "Reply show parent comments responses when hidden" do
-    manuela = create(:user, :level_two, username: "Manuela")
-    comment = create(:comment, commentable: question)
-    create(:comment, commentable: question, parent: comment)
-
-    login_as(manuela)
-    visit legislation_process_question_path(question.process, question)
-
-    within ".comment", text: comment.body do
-      click_link text: "1 response (collapse)"
-      click_link "Reply"
-      fill_in "Leave your answer", with: "It will be done next week."
-      click_button "Publish reply"
-
-      expect(page).to have_content("It will be done next week.")
-    end
-  end
-
   scenario "Errors on reply" do
     comment = create(:comment, commentable: question, user: user)
 
