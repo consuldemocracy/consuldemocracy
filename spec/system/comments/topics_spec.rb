@@ -6,35 +6,6 @@ describe "Commenting topics from proposals" do
   it_behaves_like "flaggable", :topic_with_community_comment
 
   describe "Administrators" do
-    scenario "can create reply as an administrator" do
-      community = proposal.community
-      topic = create(:topic, community: community)
-      citizen = create(:user, username: "Ana")
-      manuela = create(:user, username: "Manuela")
-      admin   = create(:administrator, user: manuela)
-      comment = create(:comment, commentable: topic, user: citizen)
-
-      login_as(manuela)
-      visit community_topic_path(community, topic)
-
-      click_link "Reply"
-
-      within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "Leave your comment", with: "Top of the world!"
-        check "comment-as-administrator-comment_#{comment.id}"
-        click_button "Publish reply"
-      end
-
-      within "#comment_#{comment.id}" do
-        expect(page).to have_content "Top of the world!"
-        expect(page).to have_content "Administrator ##{admin.id}"
-        expect(page).to have_css "div.is-admin"
-        expect(page).to have_css "img.admin-avatar"
-      end
-
-      expect(page).not_to have_css "#js-comment-form-comment_#{comment.id}"
-    end
-
     scenario "can not comment as a moderator", :admin do
       community = proposal.community
       topic = create(:topic, community: community)
@@ -148,35 +119,6 @@ describe "Commenting topics from budget investments" do
   let(:investment) { create(:budget_investment) }
 
   describe "Administrators" do
-    scenario "can create reply as an administrator" do
-      community = investment.community
-      topic = create(:topic, community: community)
-      citizen = create(:user, username: "Ana")
-      manuela = create(:user, username: "Manuela")
-      admin   = create(:administrator, user: manuela)
-      comment = create(:comment, commentable: topic, user: citizen)
-
-      login_as(manuela)
-      visit community_topic_path(community, topic)
-
-      click_link "Reply"
-
-      within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "Leave your comment", with: "Top of the world!"
-        check "comment-as-administrator-comment_#{comment.id}"
-        click_button "Publish reply"
-      end
-
-      within "#comment_#{comment.id}" do
-        expect(page).to have_content "Top of the world!"
-        expect(page).to have_content "Administrator ##{admin.id}"
-        expect(page).to have_css "div.is-admin"
-        expect(page).to have_css "img.admin-avatar"
-      end
-
-      expect(page).not_to have_css "#js-comment-form-comment_#{comment.id}"
-    end
-
     scenario "can not comment as a moderator", :admin do
       community = investment.community
       topic = create(:topic, community: community)

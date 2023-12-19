@@ -5,33 +5,6 @@ describe "Commenting polls" do
   let(:poll) { create(:poll, author: create(:user)) }
 
   describe "Administrators" do
-    scenario "can create reply as an administrator" do
-      citizen = create(:user, username: "Ana")
-      manuela = create(:user, username: "Manuela")
-      admin   = create(:administrator, user: manuela)
-      comment = create(:comment, commentable: poll, user: citizen)
-
-      login_as(manuela)
-      visit poll_path(poll)
-
-      click_link "Reply"
-
-      within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "Leave your comment", with: "Top of the world!"
-        check "comment-as-administrator-comment_#{comment.id}"
-        click_button "Publish reply"
-      end
-
-      within "#comment_#{comment.id}" do
-        expect(page).to have_content "Top of the world!"
-        expect(page).to have_content "Administrator ##{admin.id}"
-        expect(page).to have_css "div.is-admin"
-        expect(page).to have_css "img.admin-avatar"
-      end
-
-      expect(page).not_to have_css "#js-comment-form-comment_#{comment.id}"
-    end
-
     scenario "can not comment as a moderator", :admin do
       visit poll_path(poll)
 

@@ -50,33 +50,6 @@ describe "Commenting Budget::Investments" do
         end
       end
 
-      scenario "can create reply as an administrator" do
-        citizen = create(:user, username: "Ana")
-        manuela = create(:user, username: "Manuela")
-        admin   = create(:administrator, user: manuela)
-        comment = create(:comment, commentable: investment, user: citizen)
-
-        login_as(manuela)
-        visit budget_investment_path(investment.budget, investment)
-
-        click_link "Reply"
-
-        within "#js-comment-form-comment_#{comment.id}" do
-          fill_in "Leave your comment", with: "Top of the world!"
-          check "comment-as-administrator-comment_#{comment.id}"
-          click_button "Publish reply"
-        end
-
-        within "#comment_#{comment.id}" do
-          expect(page).to have_content "Top of the world!"
-          expect(page).to have_content "Administrator ##{admin.id}"
-          expect(page).to have_css "img.admin-avatar"
-        end
-
-        expect(page).not_to have_css "#js-comment-form-comment_#{comment.id}"
-        expect(page).to have_css "div.is-admin"
-      end
-
       scenario "public users not see admin description" do
         manuela = create(:user, username: "Manuela")
         admin   = create(:administrator, user: manuela)

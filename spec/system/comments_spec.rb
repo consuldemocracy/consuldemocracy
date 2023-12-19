@@ -466,6 +466,33 @@ describe "Comments" do
           expect(page).to have_css "img.admin-avatar"
         end
       end
+
+      scenario "can create reply as an administrator" do
+        admin   = create(:administrator)
+        comment = create(:comment, commentable: resource)
+
+        login_as(admin.user)
+        visit polymorphic_path(resource)
+
+        within "#comment_#{comment.id}" do
+          click_link "Reply"
+        end
+
+        within "#js-comment-form-comment_#{comment.id}" do
+          fill_in fill_text, with: "Top of the world!"
+          check "Comment as admin"
+          click_button "Publish reply"
+        end
+
+        within "#comment_#{comment.id}" do
+          expect(page).to have_content "Top of the world!"
+          expect(page).to have_content "Administrator ##{admin.id}"
+          expect(page).to have_css "div.is-admin"
+          expect(page).to have_css "img.admin-avatar"
+        end
+
+        expect(page).not_to have_css "#js-comment-form-comment_#{comment.id}"
+      end
     end
   end
 
