@@ -1,24 +1,9 @@
 require "rails_helper"
 
 describe "Commenting Budget::Investments" do
-  let(:user) { create(:user) }
   let(:investment) { create(:budget_investment) }
 
   it_behaves_like "flaggable", :budget_investment_comment
-
-  scenario "Errors on reply" do
-    comment = create(:comment, commentable: investment, user: user)
-
-    login_as(user)
-    visit budget_investment_path(investment.budget, investment)
-
-    click_link "Reply"
-
-    within "#js-comment-form-comment_#{comment.id}" do
-      click_button "Publish reply"
-      expect(page).to have_content "Can't be blank"
-    end
-  end
 
   scenario "N replies" do
     parent = create(:comment, commentable: investment)

@@ -1,26 +1,9 @@
 require "rails_helper"
 
 describe "Commenting topics from proposals" do
-  let(:user)     { create(:user) }
   let(:proposal) { create(:proposal) }
 
   it_behaves_like "flaggable", :topic_with_community_comment
-
-  scenario "Errors on reply" do
-    community = proposal.community
-    topic = create(:topic, community: community)
-    comment = create(:comment, commentable: topic, user: user)
-
-    login_as(user)
-    visit community_topic_path(community, topic)
-
-    click_link "Reply"
-
-    within "#js-comment-form-comment_#{comment.id}" do
-      click_button "Publish reply"
-      expect(page).to have_content "Can't be blank"
-    end
-  end
 
   scenario "N replies" do
     community = proposal.community
@@ -273,22 +256,6 @@ end
 describe "Commenting topics from budget investments" do
   let(:user)       { create(:user) }
   let(:investment) { create(:budget_investment) }
-
-  scenario "Errors on reply" do
-    community = investment.community
-    topic = create(:topic, community: community)
-    comment = create(:comment, commentable: topic, user: user)
-
-    login_as(user)
-    visit community_topic_path(community, topic)
-
-    click_link "Reply"
-
-    within "#js-comment-form-comment_#{comment.id}" do
-      click_button "Publish reply"
-      expect(page).to have_content "Can't be blank"
-    end
-  end
 
   scenario "N replies" do
     community = investment.community

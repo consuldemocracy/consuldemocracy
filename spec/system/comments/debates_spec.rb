@@ -112,20 +112,6 @@ describe "Commenting debates" do
     end
   end
 
-  scenario "Errors on reply" do
-    comment = create(:comment, commentable: debate, user: user)
-
-    login_as(user)
-    visit debate_path(debate)
-
-    click_link "Reply"
-
-    within "#js-comment-form-comment_#{comment.id}" do
-      click_button "Publish reply"
-      expect(page).to have_content "Can't be blank"
-    end
-  end
-
   scenario "N replies" do
     parent = create(:comment, commentable: debate)
 

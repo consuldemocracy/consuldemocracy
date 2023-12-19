@@ -6,20 +6,6 @@ describe "Commenting legislation questions" do
 
   it_behaves_like "flaggable", :legislation_annotation_comment
 
-  scenario "Errors on reply" do
-    comment = annotation.comments.first
-
-    login_as(user)
-    visit polymorphic_path(annotation)
-
-    click_link "Reply"
-
-    within "#js-comment-form-comment_#{comment.id}" do
-      click_button "Publish reply"
-      expect(page).to have_content "Can't be blank"
-    end
-  end
-
   scenario "N replies" do
     parent = create(:comment, commentable: annotation)
 

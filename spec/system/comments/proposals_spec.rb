@@ -1,24 +1,9 @@
 require "rails_helper"
 
 describe "Commenting proposals" do
-  let(:user) { create(:user) }
   let(:proposal) { create(:proposal) }
 
   it_behaves_like "flaggable", :proposal_comment
-
-  scenario "Errors on reply" do
-    comment = create(:comment, commentable: proposal, user: user)
-
-    login_as(user)
-    visit proposal_path(proposal)
-
-    click_link "Reply"
-
-    within "#js-comment-form-comment_#{comment.id}" do
-      click_button "Publish reply"
-      expect(page).to have_content "Can't be blank"
-    end
-  end
 
   scenario "N replies" do
     parent = create(:comment, commentable: proposal)

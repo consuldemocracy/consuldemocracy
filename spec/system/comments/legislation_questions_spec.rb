@@ -10,20 +10,6 @@ describe "Commenting legislation questions" do
     it_behaves_like "flaggable", :legislation_question_comment
   end
 
-  scenario "Errors on reply" do
-    comment = create(:comment, commentable: question, user: user)
-
-    login_as(user)
-    visit legislation_process_question_path(question.process, question)
-
-    click_link "Reply"
-
-    within "#js-comment-form-comment_#{comment.id}" do
-      click_button "Publish reply"
-      expect(page).to have_content "Can't be blank"
-    end
-  end
-
   scenario "N replies" do
     parent = create(:comment, commentable: question)
 

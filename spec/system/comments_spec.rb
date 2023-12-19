@@ -361,6 +361,22 @@ describe "Comments" do
     end
   end
 
+  scenario "Errors on reply" do
+    comment = create(:comment, commentable: resource, user: user)
+
+    login_as(user)
+    visit polymorphic_path(resource)
+
+    within "#comment_#{comment.id}" do
+      click_link "Reply"
+    end
+
+    within "#js-comment-form-comment_#{comment.id}" do
+      click_button "Publish reply"
+      expect(page).to have_content "Can't be blank"
+    end
+  end
+
   scenario "Errors on create" do
     login_as(user)
     visit polymorphic_path(resource)

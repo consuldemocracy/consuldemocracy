@@ -4,20 +4,6 @@ describe "Commenting polls" do
   let(:user) { create(:user) }
   let(:poll) { create(:poll, author: create(:user)) }
 
-  scenario "Errors on reply" do
-    comment = create(:comment, commentable: poll, user: user)
-
-    login_as(user)
-    visit poll_path(poll)
-
-    click_link "Reply"
-
-    within "#js-comment-form-comment_#{comment.id}" do
-      click_button "Publish reply"
-      expect(page).to have_content "Can't be blank"
-    end
-  end
-
   scenario "N replies" do
     parent = create(:comment, commentable: poll)
 
