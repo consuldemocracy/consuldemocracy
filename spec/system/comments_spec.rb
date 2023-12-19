@@ -400,6 +400,31 @@ describe "Comments" do
     expect(page).not_to have_css "#js-comment-form-comment_#{comment.id}"
   end
 
+  scenario "Reply to reply" do
+    create(:comment, commentable: resource, body: "Any estimates?")
+
+    login_as(user)
+    visit polymorphic_path(resource)
+
+    within ".comment", text: "Any estimates?" do
+      click_link "Reply"
+      fill_in fill_text, with: "It will be done next week."
+      click_button "Publish reply"
+    end
+
+    within ".comment .comment", text: "It will be done next week" do
+      click_link "Reply"
+      fill_in fill_text, with: "Probably if government approves."
+      click_button "Publish reply"
+
+      expect(page).not_to have_css ".comment-form"
+
+      within ".comment" do
+        expect(page).to have_content "Probably if government approves."
+      end
+    end
+  end
+
   scenario "Reply update parent comment responses count" do
     comment = create(:comment, commentable: resource)
 
