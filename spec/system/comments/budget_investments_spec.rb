@@ -6,24 +6,6 @@ describe "Commenting Budget::Investments" do
   it_behaves_like "flaggable", :budget_investment_comment
 
   describe "Moderators" do
-    scenario "can create comment as a moderator" do
-      moderator = create(:moderator)
-
-      login_as(moderator.user)
-      visit budget_investment_path(investment.budget, investment)
-
-      fill_in "Leave your comment", with: "I am moderating!"
-      check "comment-as-moderator-budget_investment_#{investment.id}"
-      click_button "Publish comment"
-
-      within "#comments" do
-        expect(page).to have_content "I am moderating!"
-        expect(page).to have_content "Moderator ##{moderator.id}"
-        expect(page).to have_css "div.is-moderator"
-        expect(page).to have_css "img.moderator-avatar"
-      end
-    end
-
     scenario "can create reply as a moderator" do
       citizen = create(:user, username: "Ana")
       manuela = create(:user, username: "Manuela")

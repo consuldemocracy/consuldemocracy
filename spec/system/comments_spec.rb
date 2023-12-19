@@ -400,6 +400,26 @@ describe "Comments" do
     end
   end
 
+  describe "Moderators" do
+    scenario "can create comment as a moderator" do
+      moderator = create(:moderator)
+
+      login_as(moderator.user)
+      visit polymorphic_path(resource)
+
+      fill_in fill_text, with: "I am moderating!"
+      check "Comment as moderator"
+      click_button button_text
+
+      within "#comments" do
+        expect(page).to have_content "I am moderating!"
+        expect(page).to have_content "Moderator ##{moderator.id}"
+        expect(page).to have_css "div.is-moderator"
+        expect(page).to have_css "img.moderator-avatar"
+      end
+    end
+  end
+
   scenario "Errors on create" do
     login_as(user)
     visit polymorphic_path(resource)

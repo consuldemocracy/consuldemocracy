@@ -23,24 +23,6 @@ describe "Commenting legislation questions" do
   end
 
   describe "Moderators" do
-    scenario "can create comment as a moderator" do
-      moderator = create(:moderator)
-
-      login_as(moderator.user)
-      visit legislation_process_question_path(question.process, question)
-
-      fill_in "Leave your answer", with: "I am moderating!"
-      check "comment-as-moderator-legislation_question_#{question.id}"
-      click_button "Publish answer"
-
-      within "#comments" do
-        expect(page).to have_content "I am moderating!"
-        expect(page).to have_content "Moderator ##{moderator.id}"
-        expect(page).to have_css "div.is-moderator"
-        expect(page).to have_css "img.moderator-avatar"
-      end
-    end
-
     scenario "can create reply as a moderator" do
       citizen = create(:user, username: "Ana")
       manuela = create(:user, username: "Manuela")

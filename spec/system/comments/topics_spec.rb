@@ -6,26 +6,6 @@ describe "Commenting topics from proposals" do
   it_behaves_like "flaggable", :topic_with_community_comment
 
   describe "Moderators" do
-    scenario "can create comment as a moderator" do
-      community = proposal.community
-      topic = create(:topic, community: community)
-      moderator = create(:moderator)
-
-      login_as(moderator.user)
-      visit community_topic_path(community, topic)
-
-      fill_in "Leave your comment", with: "I am moderating!"
-      check "comment-as-moderator-topic_#{topic.id}"
-      click_button "Publish comment"
-
-      within "#comments" do
-        expect(page).to have_content "I am moderating!"
-        expect(page).to have_content "Moderator ##{moderator.id}"
-        expect(page).to have_css "div.is-moderator"
-        expect(page).to have_css "img.moderator-avatar"
-      end
-    end
-
     scenario "can create reply as a moderator" do
       community = proposal.community
       topic = create(:topic, community: community)
@@ -230,26 +210,6 @@ describe "Commenting topics from budget investments" do
   let(:investment) { create(:budget_investment) }
 
   describe "Moderators" do
-    scenario "can create comment as a moderator" do
-      community = investment.community
-      topic = create(:topic, community: community)
-      moderator = create(:moderator)
-
-      login_as(moderator.user)
-      visit community_topic_path(community, topic)
-
-      fill_in "Leave your comment", with: "I am moderating!"
-      check "comment-as-moderator-topic_#{topic.id}"
-      click_button "Publish comment"
-
-      within "#comments" do
-        expect(page).to have_content "I am moderating!"
-        expect(page).to have_content "Moderator ##{moderator.id}"
-        expect(page).to have_css "div.is-moderator"
-        expect(page).to have_css "img.moderator-avatar"
-      end
-    end
-
     scenario "can create reply as a moderator" do
       community = investment.community
       topic = create(:topic, community: community)
