@@ -126,33 +126,6 @@ describe "Commenting debates" do
   end
 
   describe "Moderators" do
-    scenario "can create reply as a moderator" do
-      citizen = create(:user, username: "Ana")
-      manuela = create(:user, username: "Manuela")
-      moderator = create(:moderator, user: manuela)
-      comment = create(:comment, commentable: debate, user: citizen)
-
-      login_as(manuela)
-      visit debate_path(debate)
-
-      click_link "Reply"
-
-      within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "Leave your comment", with: "I am moderating!"
-        check "comment-as-moderator-comment_#{comment.id}"
-        click_button "Publish reply"
-      end
-
-      within "#comment_#{comment.id}" do
-        expect(page).to have_content "I am moderating!"
-        expect(page).to have_content "Moderator ##{moderator.id}"
-        expect(page).to have_css "div.is-moderator"
-        expect(page).to have_css "img.moderator-avatar"
-      end
-
-      expect(page).not_to have_css "#js-comment-form-comment_#{comment.id}"
-    end
-
     scenario "can not comment as an administrator" do
       moderator = create(:moderator)
 

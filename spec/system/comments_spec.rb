@@ -418,6 +418,35 @@ describe "Comments" do
         expect(page).to have_css "img.moderator-avatar"
       end
     end
+
+    scenario "can create reply as a moderator" do
+      citizen = create(:user, username: "Ana")
+      manuela = create(:user, username: "Manuela")
+      moderator = create(:moderator, user: manuela)
+      comment = create(:comment, commentable: resource, user: citizen)
+
+      login_as(manuela)
+      visit polymorphic_path(resource)
+
+      within "#comment_#{comment.id}" do
+        click_link "Reply"
+      end
+
+      within "#js-comment-form-comment_#{comment.id}" do
+        fill_in fill_text, with: "I am moderating!"
+        check "Comment as moderator"
+        click_button "Publish reply"
+      end
+
+      within "#comment_#{comment.id}" do
+        expect(page).to have_content "I am moderating!"
+        expect(page).to have_content "Moderator ##{moderator.id}"
+        expect(page).to have_css "div.is-moderator"
+        expect(page).to have_css "img.moderator-avatar"
+      end
+
+      expect(page).not_to have_css "#js-comment-form-comment_#{comment.id}"
+    end
   end
 
   scenario "Errors on create" do
