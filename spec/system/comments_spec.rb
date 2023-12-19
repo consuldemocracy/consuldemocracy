@@ -163,6 +163,25 @@ describe "Comments" do
     expect(page).not_to have_content grandchild_comment.body
   end
 
+  scenario "can collapse comments after adding a reply" do
+    create(:comment, body: "Main comment", commentable: resource)
+
+    login_as(user)
+    visit polymorphic_path(resource)
+
+    within ".comment", text: "Main comment" do
+      first(:link, "Reply").click
+      fill_in fill_text, with: "It will be done next week."
+      click_button "Publish reply"
+
+      expect(page).to have_content("It will be done next week.")
+
+      click_link text: "1 response (collapse)"
+
+      expect(page).not_to have_content("It will be done next week.")
+    end
+  end
+
   describe "Not logged user" do
     scenario "can not see comments forms" do
       create(:comment, commentable: resource)

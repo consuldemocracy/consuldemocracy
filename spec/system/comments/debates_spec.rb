@@ -6,25 +6,6 @@ describe "Commenting debates" do
 
   it_behaves_like "flaggable", :debate_comment
 
-  scenario "can collapse comments after adding a reply" do
-    create(:comment, body: "Main comment", commentable: debate)
-
-    login_as(user)
-    visit debate_path(debate)
-
-    within ".comment", text: "Main comment" do
-      first(:link, "Reply").click
-      fill_in "Leave your comment", with: "It will be done next week."
-      click_button "Publish reply"
-
-      expect(page).to have_content("It will be done next week.")
-
-      click_link text: "1 response (collapse)"
-
-      expect(page).not_to have_content("It will be done next week.")
-    end
-  end
-
   describe "Hide" do
     scenario "Without replies" do
       create(:comment, commentable: debate, user: user, body: "This was a mistake")
