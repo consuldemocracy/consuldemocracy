@@ -77,28 +77,6 @@ describe "Commenting debates" do
     end
   end
 
-  scenario "Reply" do
-    citizen = create(:user, username: "Ana")
-    manuela = create(:user, username: "Manuela")
-    comment = create(:comment, commentable: debate, user: citizen)
-
-    login_as(manuela)
-    visit debate_path(debate)
-
-    click_link "Reply"
-
-    within "#js-comment-form-comment_#{comment.id}" do
-      fill_in "Leave your comment", with: "It will be done next week."
-      click_button "Publish reply"
-    end
-
-    within "#comment_#{comment.id}" do
-      expect(page).to have_content "It will be done next week."
-    end
-
-    expect(page).not_to have_css "#js-comment-form-comment_#{comment.id}"
-  end
-
   scenario "Reply to reply" do
     create(:comment, commentable: debate, body: "Any estimates?")
 

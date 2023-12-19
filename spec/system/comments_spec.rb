@@ -306,6 +306,28 @@ describe "Comments" do
     end
   end
 
+  scenario "Reply" do
+    comment = create(:comment, commentable: resource)
+
+    login_as(user)
+    visit polymorphic_path(resource)
+
+    within "#comment_#{comment.id}" do
+      click_link "Reply"
+    end
+
+    within "#js-comment-form-comment_#{comment.id}" do
+      fill_in fill_text, with: "It will be done next week."
+      click_button "Publish reply"
+    end
+
+    within "#comment_#{comment.id}" do
+      expect(page).to have_content "It will be done next week."
+    end
+
+    expect(page).not_to have_css "#js-comment-form-comment_#{comment.id}"
+  end
+
   scenario "Errors on create" do
     login_as(user)
     visit polymorphic_path(resource)

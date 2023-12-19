@@ -4,28 +4,6 @@ describe "Commenting polls" do
   let(:user) { create(:user) }
   let(:poll) { create(:poll, author: create(:user)) }
 
-  scenario "Reply" do
-    citizen = create(:user, username: "Ana")
-    manuela = create(:user, username: "Manuela")
-    comment = create(:comment, commentable: poll, user: citizen)
-
-    login_as(manuela)
-    visit poll_path(poll)
-
-    click_link "Reply"
-
-    within "#js-comment-form-comment_#{comment.id}" do
-      fill_in "Leave your comment", with: "It will be done next week."
-      click_button "Publish reply"
-    end
-
-    within "#comment_#{comment.id}" do
-      expect(page).to have_content "It will be done next week."
-    end
-
-    expect(page).not_to have_css "#js-comment-form-comment_#{comment.id}"
-  end
-
   scenario "Reply update parent comment responses count" do
     comment = create(:comment, commentable: poll)
 

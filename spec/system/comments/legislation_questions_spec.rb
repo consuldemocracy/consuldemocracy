@@ -10,28 +10,6 @@ describe "Commenting legislation questions" do
     it_behaves_like "flaggable", :legislation_question_comment
   end
 
-  scenario "Reply" do
-    citizen = create(:user, username: "Ana")
-    manuela = create(:user, :level_two, username: "Manuela")
-    comment = create(:comment, commentable: question, user: citizen)
-
-    login_as(manuela)
-    visit legislation_process_question_path(question.process, question)
-
-    click_link "Reply"
-
-    within "#js-comment-form-comment_#{comment.id}" do
-      fill_in "Leave your answer", with: "It will be done next week."
-      click_button "Publish reply"
-    end
-
-    within "#comment_#{comment.id}" do
-      expect(page).to have_content "It will be done next week."
-    end
-
-    expect(page).not_to have_css "#js-comment-form-comment_#{comment.id}"
-  end
-
   scenario "Reply update parent comment responses count" do
     manuela = create(:user, :level_two, username: "Manuela")
     comment = create(:comment, commentable: question)

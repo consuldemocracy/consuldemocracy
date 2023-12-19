@@ -6,28 +6,6 @@ describe "Commenting proposals" do
 
   it_behaves_like "flaggable", :proposal_comment
 
-  scenario "Reply" do
-    citizen = create(:user, username: "Ana")
-    manuela = create(:user, username: "Manuela")
-    comment = create(:comment, commentable: proposal, user: citizen)
-
-    login_as(manuela)
-    visit proposal_path(proposal)
-
-    click_link "Reply"
-
-    within "#js-comment-form-comment_#{comment.id}" do
-      fill_in "Leave your comment", with: "It will be done next week."
-      click_button "Publish reply"
-    end
-
-    within "#comment_#{comment.id}" do
-      expect(page).to have_content "It will be done next week."
-    end
-
-    expect(page).not_to have_css "#js-comment-form-comment_#{comment.id}"
-  end
-
   scenario "Reply update parent comment responses count" do
     comment = create(:comment, commentable: proposal)
 
