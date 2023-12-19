@@ -4,17 +4,6 @@ describe "Commenting polls" do
   let(:user) { create(:user) }
   let(:poll) { create(:poll, author: create(:user)) }
 
-  describe "Moderators" do
-    scenario "can not comment as an administrator" do
-      moderator = create(:moderator)
-
-      login_as(moderator.user)
-      visit poll_path(poll)
-
-      expect(page).not_to have_content "Comment as administrator"
-    end
-  end
-
   describe "Administrators" do
     scenario "can create comment as an administrator" do
       admin = create(:administrator)

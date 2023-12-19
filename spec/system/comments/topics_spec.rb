@@ -5,19 +5,6 @@ describe "Commenting topics from proposals" do
 
   it_behaves_like "flaggable", :topic_with_community_comment
 
-  describe "Moderators" do
-    scenario "can not comment as an administrator" do
-      community = proposal.community
-      topic = create(:topic, community: community)
-      moderator = create(:moderator)
-
-      login_as(moderator.user)
-      visit community_topic_path(community, topic)
-
-      expect(page).not_to have_content "Comment as administrator"
-    end
-  end
-
   describe "Administrators" do
     scenario "can create comment as an administrator" do
       community = proposal.community
@@ -179,19 +166,6 @@ end
 describe "Commenting topics from budget investments" do
   let(:user)       { create(:user) }
   let(:investment) { create(:budget_investment) }
-
-  describe "Moderators" do
-    scenario "can not comment as an administrator" do
-      community = investment.community
-      topic = create(:topic, community: community)
-      moderator = create(:moderator)
-
-      login_as(moderator.user)
-      visit community_topic_path(community, topic)
-
-      expect(page).not_to have_content "Comment as administrator"
-    end
-  end
 
   describe "Administrators" do
     scenario "can create comment as an administrator" do

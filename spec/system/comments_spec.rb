@@ -447,6 +447,15 @@ describe "Comments" do
 
       expect(page).not_to have_css "#js-comment-form-comment_#{comment.id}"
     end
+
+    scenario "cannot comment as an administrator" do
+      moderator = create(:moderator)
+
+      login_as(moderator.user)
+      visit polymorphic_path(resource)
+
+      expect(page).not_to have_content "Comment as administrator"
+    end
   end
 
   scenario "Errors on create" do

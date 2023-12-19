@@ -5,17 +5,6 @@ describe "Commenting Budget::Investments" do
 
   it_behaves_like "flaggable", :budget_investment_comment
 
-  describe "Moderators" do
-    scenario "can not comment as an administrator" do
-      moderator = create(:moderator)
-
-      login_as(moderator.user)
-      visit budget_investment_path(investment.budget, investment)
-
-      expect(page).not_to have_content "Comment as administrator"
-    end
-  end
-
   describe "Administrators" do
     context "comment as administrator" do
       scenario "can create comment" do

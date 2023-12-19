@@ -20,17 +20,6 @@ describe "Commenting legislation questions" do
     expect(page).to have_button "Publish comment", disabled: false
   end
 
-  describe "Moderators" do
-    scenario "can not comment as an administrator" do
-      moderator = create(:moderator)
-
-      login_as(moderator.user)
-      visit polymorphic_path(annotation)
-
-      expect(page).not_to have_content "Comment as administrator"
-    end
-  end
-
   describe "Administrators" do
     scenario "can create comment as an administrator" do
       admin = create(:administrator)
