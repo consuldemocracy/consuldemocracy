@@ -16,25 +16,6 @@ describe "Commenting topics from proposals" do
       login_as(verified)
     end
 
-    scenario "Show" do
-      create(:vote, voter: verified, votable: comment, vote_flag: true)
-      create(:vote, voter: unverified, votable: comment, vote_flag: false)
-
-      visit community_topic_path(proposal.community, topic)
-
-      within("#comment_#{comment.id}_votes") do
-        within(".in-favor") do
-          expect(page).to have_content "1"
-        end
-
-        within(".against") do
-          expect(page).to have_content "1"
-        end
-
-        expect(page).to have_content "2 votes"
-      end
-    end
-
     scenario "Create" do
       visit community_topic_path(proposal.community, topic)
 
@@ -116,25 +97,6 @@ describe "Commenting topics from budget investments" do
 
     before do
       login_as(verified)
-    end
-
-    scenario "Show" do
-      create(:vote, voter: verified, votable: comment, vote_flag: true)
-      create(:vote, voter: unverified, votable: comment, vote_flag: false)
-
-      visit community_topic_path(investment.community, topic)
-
-      within("#comment_#{comment.id}_votes") do
-        within(".in-favor") do
-          expect(page).to have_content "1"
-        end
-
-        within(".against") do
-          expect(page).to have_content "1"
-        end
-
-        expect(page).to have_content "2 votes"
-      end
     end
 
     scenario "Create" do

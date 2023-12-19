@@ -496,6 +496,35 @@ describe "Comments" do
     end
   end
 
+  describe "Voting comments" do
+    let(:verified)   { create(:user, verified_at: Time.current) }
+    let(:unverified) { create(:user) }
+    let!(:comment)   { create(:comment, commentable: resource) }
+
+    before do
+      login_as(verified)
+    end
+
+    scenario "Show" do
+      create(:vote, voter: verified, votable: comment, vote_flag: true)
+      create(:vote, voter: unverified, votable: comment, vote_flag: false)
+
+      visit polymorphic_path(resource)
+
+      within("#comment_#{comment.id}_votes") do
+        within(".in-favor") do
+          expect(page).to have_content "1"
+        end
+
+        within(".against") do
+          expect(page).to have_content "1"
+        end
+
+        expect(page).to have_content "2 votes"
+      end
+    end
+  end
+
   scenario "Errors on create" do
     login_as(user)
     visit polymorphic_path(resource)
