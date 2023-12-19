@@ -10,17 +10,6 @@ describe "Commenting legislation questions" do
     it_behaves_like "flaggable", :legislation_question_comment
   end
 
-  scenario "Erasing a comment's author" do
-    comment = create(:comment, commentable: question, body: "this should be visible")
-    comment.user.erase
-
-    visit legislation_process_question_path(question.process, question)
-    within "#comment_#{comment.id}" do
-      expect(page).to have_content("User deleted")
-      expect(page).to have_content("this should be visible")
-    end
-  end
-
   scenario "Submit button is disabled after clicking" do
     login_as(user)
     visit legislation_process_question_path(question.process, question)

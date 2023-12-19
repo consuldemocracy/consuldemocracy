@@ -389,6 +389,17 @@ describe "Comments" do
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
   end
 
+  scenario "Erasing a comment's author" do
+    comment = create(:comment, commentable: resource, body: "this should be visible")
+    comment.user.erase
+
+    visit polymorphic_path(resource)
+
+    within ".comment", text: "this should be visible" do
+      expect(page).to have_content("User deleted")
+    end
+  end
+
   scenario "Errors on create" do
     login_as(user)
     visit polymorphic_path(resource)

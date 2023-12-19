@@ -6,19 +6,6 @@ describe "Commenting legislation questions" do
 
   it_behaves_like "flaggable", :legislation_annotation_comment
 
-  scenario "Erasing a comment's author" do
-    annotation = create(:legislation_annotation)
-    comment = create(:comment, commentable: annotation, body: "this should be visible")
-    comment.user.erase
-
-    visit polymorphic_path(annotation)
-
-    within "#comment_#{comment.id}" do
-      expect(page).to have_content("User deleted")
-      expect(page).to have_content("this should be visible")
-    end
-  end
-
   scenario "Submit button is disabled after clicking" do
     annotation = create(:legislation_annotation)
     login_as(user)

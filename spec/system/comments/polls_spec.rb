@@ -4,18 +4,6 @@ describe "Commenting polls" do
   let(:user) { create(:user) }
   let(:poll) { create(:poll, author: create(:user)) }
 
-  scenario "Erasing a comment's author" do
-    poll = create(:poll)
-    comment = create(:comment, commentable: poll, body: "this should be visible")
-    comment.user.erase
-
-    visit poll_path(poll)
-    within "#comment_#{comment.id}" do
-      expect(page).to have_content("User deleted")
-      expect(page).to have_content("this should be visible")
-    end
-  end
-
   describe "Moderators" do
     scenario "can create comment as a moderator" do
       moderator = create(:moderator)

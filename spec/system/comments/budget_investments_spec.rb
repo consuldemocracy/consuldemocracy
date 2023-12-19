@@ -5,18 +5,6 @@ describe "Commenting Budget::Investments" do
 
   it_behaves_like "flaggable", :budget_investment_comment
 
-  scenario "Erasing a comment's author" do
-    investment = create(:budget_investment)
-    comment = create(:comment, commentable: investment, body: "this should be visible")
-    comment.user.erase
-
-    visit budget_investment_path(investment.budget, investment)
-    within "#comment_#{comment.id}" do
-      expect(page).to have_content("User deleted")
-      expect(page).to have_content("this should be visible")
-    end
-  end
-
   describe "Moderators" do
     scenario "can create comment as a moderator" do
       moderator = create(:moderator)

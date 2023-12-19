@@ -5,20 +5,6 @@ describe "Commenting topics from proposals" do
 
   it_behaves_like "flaggable", :topic_with_community_comment
 
-  scenario "Erasing a comment's author" do
-    community = proposal.community
-    topic = create(:topic, community: community)
-    comment = create(:comment, commentable: topic, body: "this should be visible")
-    comment.user.erase
-
-    visit community_topic_path(community, topic)
-
-    within "#comment_#{comment.id}" do
-      expect(page).to have_content("User deleted")
-      expect(page).to have_content("this should be visible")
-    end
-  end
-
   describe "Moderators" do
     scenario "can create comment as a moderator" do
       community = proposal.community
@@ -242,20 +228,6 @@ end
 describe "Commenting topics from budget investments" do
   let(:user)       { create(:user) }
   let(:investment) { create(:budget_investment) }
-
-  scenario "Erasing a comment's author" do
-    community = investment.community
-    topic = create(:topic, community: community)
-    comment = create(:comment, commentable: topic, body: "this should be visible")
-    comment.user.erase
-
-    visit community_topic_path(community, topic)
-
-    within "#comment_#{comment.id}" do
-      expect(page).to have_content("User deleted")
-      expect(page).to have_content("this should be visible")
-    end
-  end
 
   describe "Moderators" do
     scenario "can create comment as a moderator" do

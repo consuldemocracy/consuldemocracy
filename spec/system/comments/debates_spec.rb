@@ -112,18 +112,6 @@ describe "Commenting debates" do
     end
   end
 
-  scenario "Erasing a comment's author" do
-    debate = create(:debate)
-    comment = create(:comment, commentable: debate, body: "this should be visible")
-    comment.user.erase
-
-    visit debate_path(debate)
-    within "#comment_#{comment.id}" do
-      expect(page).to have_content("User deleted")
-      expect(page).to have_content("this should be visible")
-    end
-  end
-
   scenario "Submit button is disabled after clicking" do
     debate = create(:debate)
     login_as(user)

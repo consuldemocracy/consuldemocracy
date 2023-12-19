@@ -5,18 +5,6 @@ describe "Commenting proposals" do
 
   it_behaves_like "flaggable", :proposal_comment
 
-  scenario "Erasing a comment's author" do
-    proposal = create(:proposal)
-    comment = create(:comment, commentable: proposal, body: "this should be visible")
-    comment.user.erase
-
-    visit proposal_path(proposal)
-    within "#comment_#{comment.id}" do
-      expect(page).to have_content("User deleted")
-      expect(page).to have_content("this should be visible")
-    end
-  end
-
   describe "Moderators" do
     scenario "can create comment as a moderator" do
       moderator = create(:moderator)
