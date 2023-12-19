@@ -401,11 +401,13 @@ describe "Comments" do
   end
 
   describe "Moderators" do
-    scenario "can create comment as a moderator" do
-      moderator = create(:moderator)
+    let(:moderator) { create(:moderator) }
+    before { login_as(moderator.user) }
 
-      login_as(moderator.user)
+    scenario "can create comment as a moderator" do
       visit polymorphic_path(resource)
+
+      expect(page).not_to have_content "Comment as administrator"
 
       fill_in fill_text, with: "I am moderating!"
       check "Comment as moderator"
@@ -420,12 +422,8 @@ describe "Comments" do
     end
 
     scenario "can create reply as a moderator" do
-      citizen = create(:user, username: "Ana")
-      manuela = create(:user, username: "Manuela")
-      moderator = create(:moderator, user: manuela)
-      comment = create(:comment, commentable: resource, user: citizen)
+      comment = create(:comment, commentable: resource)
 
-      login_as(manuela)
       visit polymorphic_path(resource)
 
       within "#comment_#{comment.id}" do
@@ -446,15 +444,6 @@ describe "Comments" do
       end
 
       expect(page).not_to have_css "#js-comment-form-comment_#{comment.id}"
-    end
-
-    scenario "cannot comment as an administrator" do
-      moderator = create(:moderator)
-
-      login_as(moderator.user)
-      visit polymorphic_path(resource)
-
-      expect(page).not_to have_content "Comment as administrator"
     end
   end
 
