@@ -6,23 +6,6 @@ describe "Commenting topics from proposals" do
 
   it_behaves_like "flaggable", :topic_with_community_comment
 
-  scenario "Reply update parent comment responses count" do
-    community = proposal.community
-    topic = create(:topic, community: community)
-    comment = create(:comment, commentable: topic)
-
-    login_as(create(:user))
-    visit community_topic_path(community, topic)
-
-    within ".comment", text: comment.body do
-      click_link "Reply"
-      fill_in "Leave your comment", with: "It will be done next week."
-      click_button "Publish reply"
-
-      expect(page).to have_content("1 response (collapse)")
-    end
-  end
-
   scenario "Reply show parent comments responses when hidden" do
     community = proposal.community
     topic = create(:topic, community: community)

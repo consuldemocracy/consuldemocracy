@@ -6,21 +6,6 @@ describe "Commenting Budget::Investments" do
 
   it_behaves_like "flaggable", :budget_investment_comment
 
-  scenario "Reply update parent comment responses count" do
-    comment = create(:comment, commentable: investment)
-
-    login_as(create(:user))
-    visit budget_investment_path(investment.budget, investment)
-
-    within ".comment", text: comment.body do
-      click_link "Reply"
-      fill_in "Leave your comment", with: "It will be done next week."
-      click_button "Publish reply"
-
-      expect(page).to have_content("1 response (collapse)")
-    end
-  end
-
   scenario "Reply show parent comments responses when hidden" do
     comment = create(:comment, commentable: investment)
     create(:comment, commentable: investment, parent: comment)

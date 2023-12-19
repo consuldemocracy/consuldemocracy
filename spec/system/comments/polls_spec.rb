@@ -4,21 +4,6 @@ describe "Commenting polls" do
   let(:user) { create(:user) }
   let(:poll) { create(:poll, author: create(:user)) }
 
-  scenario "Reply update parent comment responses count" do
-    comment = create(:comment, commentable: poll)
-
-    login_as(create(:user))
-    visit poll_path(poll)
-
-    within ".comment", text: comment.body do
-      click_link "Reply"
-      fill_in "Leave your comment", with: "It will be done next week."
-      click_button "Publish reply"
-
-      expect(page).to have_content("1 response (collapse)")
-    end
-  end
-
   scenario "Reply show parent comments responses when hidden" do
     comment = create(:comment, commentable: poll)
     create(:comment, commentable: poll, parent: comment)

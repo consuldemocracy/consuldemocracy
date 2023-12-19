@@ -10,22 +10,6 @@ describe "Commenting legislation questions" do
     it_behaves_like "flaggable", :legislation_question_comment
   end
 
-  scenario "Reply update parent comment responses count" do
-    manuela = create(:user, :level_two, username: "Manuela")
-    comment = create(:comment, commentable: question)
-
-    login_as(manuela)
-    visit legislation_process_question_path(question.process, question)
-
-    within ".comment", text: comment.body do
-      click_link "Reply"
-      fill_in "Leave your answer", with: "It will be done next week."
-      click_button "Publish reply"
-
-      expect(page).to have_content("1 response (collapse)")
-    end
-  end
-
   scenario "Reply show parent comments responses when hidden" do
     manuela = create(:user, :level_two, username: "Manuela")
     comment = create(:comment, commentable: question)

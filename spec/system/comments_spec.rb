@@ -328,6 +328,21 @@ describe "Comments" do
     expect(page).not_to have_css "#js-comment-form-comment_#{comment.id}"
   end
 
+  scenario "Reply update parent comment responses count" do
+    comment = create(:comment, commentable: resource)
+
+    login_as(user)
+    visit polymorphic_path(resource)
+
+    within ".comment", text: comment.body do
+      click_link "Reply"
+      fill_in fill_text, with: "It will be done next week."
+      click_button "Publish reply"
+
+      expect(page).to have_content("1 response (collapse)")
+    end
+  end
+
   scenario "Errors on create" do
     login_as(user)
     visit polymorphic_path(resource)
