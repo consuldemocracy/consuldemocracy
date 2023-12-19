@@ -541,6 +541,30 @@ describe "Comments" do
         expect(page).to have_content "1 vote"
       end
     end
+
+    scenario "Update" do
+      visit polymorphic_path(resource)
+
+      within("#comment_#{comment.id}_votes") do
+        click_button "I agree"
+
+        within(".in-favor") do
+          expect(page).to have_content "1"
+        end
+
+        click_button "I disagree"
+
+        within(".in-favor") do
+          expect(page).to have_content "0"
+        end
+
+        within(".against") do
+          expect(page).to have_content "1"
+        end
+
+        expect(page).to have_content "1 vote"
+      end
+    end
   end
 
   scenario "Errors on create" do
