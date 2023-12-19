@@ -126,24 +126,6 @@ describe "Commenting debates" do
   end
 
   describe "Administrators" do
-    scenario "can create comment as an administrator" do
-      admin = create(:administrator)
-
-      login_as(admin.user)
-      visit debate_path(debate)
-
-      fill_in "Leave your comment", with: "I am your Admin!"
-      check "comment-as-administrator-debate_#{debate.id}"
-      click_button "Publish comment"
-
-      within "#comments" do
-        expect(page).to have_content "I am your Admin!"
-        expect(page).to have_content "Administrator ##{admin.id}"
-        expect(page).to have_css "div.is-admin"
-        expect(page).to have_css "img.admin-avatar"
-      end
-    end
-
     scenario "can create reply as an administrator" do
       citizen = create(:user, username: "Ana")
       manuela = create(:user, username: "Manuela")

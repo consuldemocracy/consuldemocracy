@@ -23,24 +23,6 @@ describe "Commenting legislation questions" do
   end
 
   describe "Administrators" do
-    scenario "can create comment as an administrator" do
-      admin = create(:administrator)
-
-      login_as(admin.user)
-      visit legislation_process_question_path(question.process, question)
-
-      fill_in "Leave your answer", with: "I am your Admin!"
-      check "comment-as-administrator-legislation_question_#{question.id}"
-      click_button "Publish answer"
-
-      within "#comments" do
-        expect(page).to have_content "I am your Admin!"
-        expect(page).to have_content "Administrator ##{admin.id}"
-        expect(page).to have_css "div.is-admin"
-        expect(page).to have_css "img.admin-avatar"
-      end
-    end
-
     scenario "can create reply as an administrator" do
       citizen = create(:user, username: "Ana")
       manuela = create(:user, username: "Manuela")

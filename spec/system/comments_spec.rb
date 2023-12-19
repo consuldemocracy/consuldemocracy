@@ -447,6 +447,28 @@ describe "Comments" do
     end
   end
 
+  describe "Administrators" do
+    context "comment as administrator" do
+      scenario "can create comment" do
+        admin = create(:administrator)
+
+        login_as(admin.user)
+        visit polymorphic_path(resource)
+
+        fill_in fill_text, with: "I am your Admin!"
+        check "Comment as admin"
+        click_button button_text
+
+        within "#comments" do
+          expect(page).to have_content "I am your Admin!"
+          expect(page).to have_content "Administrator ##{admin.id}"
+          expect(page).to have_css "div.is-admin"
+          expect(page).to have_css "img.admin-avatar"
+        end
+      end
+    end
+  end
+
   scenario "Errors on create" do
     login_as(user)
     visit polymorphic_path(resource)
