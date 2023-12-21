@@ -570,7 +570,7 @@ describe "Comments" do
 
   describe "Administrators" do
     scenario "can create comment" do
-      admin = create(:administrator)
+      admin = create(:administrator, description: "admin user")
 
       login_as(admin.user)
       visit polymorphic_path(resource)
@@ -584,6 +584,7 @@ describe "Comments" do
       within "#comments" do
         expect(page).to have_content "I am your Admin!"
         expect(page).to have_content "Administrator ##{admin.id}"
+        expect(page).not_to have_content "Administrator admin user"
         expect(page).to have_css "div.is-admin"
         expect(page).to have_css "img.admin-avatar"
       end
