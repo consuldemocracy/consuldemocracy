@@ -1,18 +1,18 @@
 require "rails_helper"
 
 describe "Comments" do
-  let(:factory) {
-                    [
-                      :budget_investment,
-                      :debate,
-                      :legislation_annotation,
-                      :legislation_question,
-                      :poll_with_author,
-                      :proposal,
-                      :topic_with_community,
-                      :topic_with_investment_community
-                    ].sample
-                  }
+  factories = [
+    :budget_investment,
+    :debate,
+    :legislation_annotation,
+    :legislation_question,
+    :poll_with_author,
+    :proposal,
+    :topic_with_community,
+    :topic_with_investment_community
+  ]
+
+  let(:factory) { factories.sample }
   let(:resource) { create(factory) }
   let(:user) do
     if factory == :legislation_question
@@ -35,6 +35,8 @@ describe "Comments" do
       "Publish comment"
     end
   end
+
+  it_behaves_like "flaggable", :"#{(factories - [:poll_with_author]).sample}_comment"
 
   describe "Index" do
     context "Budget Investments" do

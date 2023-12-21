@@ -4,8 +4,6 @@ describe "Commenting legislation questions" do
   let(:user) { create(:user) }
   let(:annotation) { create(:legislation_annotation, author: user) }
 
-  it_behaves_like "flaggable", :legislation_annotation_comment
-
   describe "Merged comment threads" do
     let!(:draft_version) { create(:legislation_draft_version, :published) }
     let!(:annotation1) do

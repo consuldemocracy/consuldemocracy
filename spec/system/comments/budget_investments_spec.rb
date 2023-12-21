@@ -3,8 +3,6 @@ require "rails_helper"
 describe "Commenting Budget::Investments" do
   let(:investment) { create(:budget_investment) }
 
-  it_behaves_like "flaggable", :budget_investment_comment
-
   describe "Administrators" do
     context "comment as administrator" do
       scenario "display administrator description on admin views" do
