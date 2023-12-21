@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Commenting legislation questions" do
+describe "Commenting legislation annotations" do
   let(:user) { create(:user) }
   let(:annotation) { create(:legislation_annotation, author: user) }
 
