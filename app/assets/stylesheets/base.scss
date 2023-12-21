@@ -2140,6 +2140,10 @@ a {
   .calc-comments .comment-box {
     overflow: auto;
   }
+
+  details:not([open]) .draft-panel .panel-title {
+    margin-top: rem-calc(120);
+  }
 }
 
 .draft-panels .comments-on .calc-index .draft-index-rotated {
