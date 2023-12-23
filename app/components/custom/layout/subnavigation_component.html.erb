@@ -2,20 +2,20 @@
   <ul>
     <%= raw content_block("subnavigation_left") %>
 
+    <% if feature?(:budgets) %>
+      <li>
+        <%= layout_menu_link_to t("layouts.header.budgets"),
+                                budgets_path,
+                                controller_name == "budgets" || controller_name == "investments",
+                                accesskey: "5" %>
+      </li>
+    <% end %>
     <% if feature?(:debates) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.debates"),
                                 debates_path,
                                 controller_name == "debates",
                                 accesskey: "1" %>
-      </li>
-    <% end %>
-    <% if feature?(:proposals) %>
-      <li>
-        <%= layout_menu_link_to t("layouts.header.proposals"),
-                                proposals_path,
-                                controller.class == ProposalsController,
-                                accesskey: "2" %>
       </li>
     <% end %>
     <% if feature?(:polls) %>
@@ -26,7 +26,15 @@
                                 accesskey: "3" %>
       </li>
     <% end %>
-    <!--
+    <% if feature?(:proposals) %>
+      <li>
+        <%= layout_menu_link_to t("layouts.header.proposals"),
+                                proposals_path,
+                                controller.class == ProposalsController,
+                                accesskey: "2" %>
+      </li>
+    <% end %>
+
     <% if feature?(:legislation) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.collaborative_legislation"),
@@ -34,17 +42,7 @@
                                 controller.class.module_parent == Legislation,
                                 accesskey: "4" %>
       </li>
-    <% end %> -->
-    <% if feature?(:budgets) %>
-      <li>
-        <%= layout_menu_link_to t("layouts.header.budgets"),
-                                budgets_path,
-                                controller_name == "budgets" || controller_name == "investments",
-                                accesskey: "5" %>
-      </li>
     <% end %>
-
-    
       <% if feature?(:sdg) %>
         <li>
           <%= layout_menu_link_to t("layouts.header.sdg"),
@@ -53,8 +51,6 @@
                                   accesskey: "6" %>
         </li>
       <% end %>
-    
-
     <% if feature?(:help_page) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.help"),

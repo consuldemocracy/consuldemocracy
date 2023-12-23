@@ -29,7 +29,7 @@ lt:
       admin: Administratorius
       author: Autorius
       deleted: Šis komentaras buvo ištrintas
-      expired: Nauji komentarai nebepriėmami
+      expired: Nauji komentarai nebepriimami
       moderator: Moderatorius
       responses:
         one: 1 atsakymas
@@ -107,9 +107,9 @@ lt:
       section_header:
         icon_alt: Debatų piktograma
         title: Debatai
-        help: Pagalba su debatais
+        help: Apie diskusijas
       section_footer:
-        title: Pagalba su debatais
+        title: Apie diskusijas
         description: Pradėkite debatą, kad galėtumėte dalintis nuomonėmis su kitais, kuriuos domina jūsų rūpimų temų klausimai.
         help_text_1: „Piliečių debatų erdvė skirta tiems, kurie gali pateikti savo rūpesčių klausimus ir tiems, kurie nori dalintis nuomonėmis su kitais žmonėmis.“
         help_text_2: „Norėdami atidaryti debatą, jums reikia prisiregistruoti %{org}. Vartotojai taip pat gali komentuoti atvirus debatus ir jų vertinimui naudoti „Sutinku“ arba „Nesutinku“ mygtukus.“
@@ -128,7 +128,7 @@ lt:
       comments_title: Komentarai
       edit_debate_link: Redaguoti
       flag: Šis debatas yra praneštas kaip netinkamas kelių vartotojų.
-      is_finished: Šie debatai yra pasibagę
+      is_finished: DISKUSIJA NEAKTYVI
       share: Bendrinti
       author: Autorius
     update:
