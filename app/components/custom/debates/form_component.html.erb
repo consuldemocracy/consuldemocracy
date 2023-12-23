@@ -10,11 +10,11 @@
     <div class="row">
       <div class="clear">
         <div class="small-12 medium-6 column">
-          <%= f.datetime_field :starts_at %>
+          <%= f.datetime_field :starts_at, label: "Pradžia" %>
         </div>
 
         <div class="small-12 medium-6 column">
-          <%= f.datetime_field :ends_at %>
+          <%= f.datetime_field :ends_at, label: "Pabaiga" %>
         </div>
       </div>
     </div>
@@ -33,13 +33,13 @@
                                         class: "html-area" %>
       </div>
 
-      <div class="row">
-        <div class="clear">
-          <div class="small-6 medium-6 column">
-            <%= f.check_box :geozone_restricted, data: { checkbox_toggle: "#geozones" } %>
-          </div>
-        </div>
-      </div>
+<!--      <div class="row">-->
+<!--        <div class="clear">-->
+<!--          <div class="small-6 medium-6 column">-->
+            <%#= f.check_box :geozone_restricted, data: { checkbox_toggle: "#geozones" } %>
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
 
       <div id="geozones" style="<%= @debate.geozone_restricted? ? "" : "display:none" %>">
         <div class="row">

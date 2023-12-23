@@ -1,22 +1,22 @@
 <main class="debate-new">
   <%= back_link_to debates_path, t("debates.index.section_header.title") %>
 
-  <!-- <%= header do %>
-    <%= link_to help_path(anchor: "debates"), title: t("shared.target_blank"), target: "_blank" do %>
-      <%= t("debates.new.more_info") %>
-    <% end %>
-  <% end %> -->
+  <%#= header do %>
+    <%#= link_to help_path(anchor: "debates"), title: t("shared.target_blank"), target: "_blank" do %>
+      <%#= t("debates.new.more_info") %>
+    <%# end %>
+  <%# end %>
 
-  <aside>
-    <h2><%= t("debates.new.recommendations_title") %></h2>
+<!--  <aside>-->
+<!--    <h2><%#= t("debates.new.recommendations_title") %></h2>-->
 
-    <ul class="recommendations">
-      <li><%= t("debates.new.recommendation_one") %></li>
-      <li><%= t("debates.new.recommendation_two") %></li>
-      <li><%= t("debates.new.recommendation_three") %></li>
-      <li><%= t("debates.new.recommendation_four") %></li>
-    </ul>
-  </aside>
+<!--    <ul class="recommendations">-->
+<!--      <li><%#= t("debates.new.recommendation_one") %></li>-->
+<!--      <li><%#= t("debates.new.recommendation_two") %></li>-->
+<!--      <li><%#= t("debates.new.recommendation_three") %></li>-->
+<!--      <li><%#= t("debates.new.recommendation_four") %></li>-->
+<!--    </ul>-->
+<!--  </aside>-->
 
   <%= render Debates::FormComponent.new(debate, geozones) %>
 </main>

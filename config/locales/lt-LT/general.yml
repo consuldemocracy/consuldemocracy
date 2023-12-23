@@ -92,42 +92,42 @@ lt:
         relevance: Relevancija
         recommendations: Rekomendacijos
       recommendations:
-        without_results: Nėra debatų, susijusių su jūsų interesais
+        without_results: Nėra diskusijų, susijusių su jūsų interesais
         without_interests: Sekite pasiūlymus, kad galėtume jums suteikti rekomendacijas
-        disable: "Jei atmesite rekomendacijas debatams, jos daugiau nebus rodomos. Jūs galėsite įjungti jas vėl puslapio „Mano paskyra“ skiltyje"
+        disable: "Jei atmesite rekomendacijas diskusijoms, jos daugiau nebus rodomos. Jūs galėsite įjungti jas vėl puslapio „Mano paskyra“ skiltyje"
         actions:
-          success: "Rekomendacijos debatams šiai paskyrai dabar išjungtos"
-          error: "Įvyko klaida. Prašome eiti į puslapį „Mano paskyra“, kad rankiniu būdu išjungtumėte rekomendacijas debatams"
+          success: "Rekomendacijos diskusijoms šiai paskyrai dabar išjungtos"
+          error: "Įvyko klaida. Prašome eiti į puslapį „Mano paskyra“, kad rankiniu būdu išjungtumėte rekomendacijas diskusijoms"
       search_form:
         button: Ieškoti
-        placeholder: Ieškoti debatų...
+        placeholder: Ieškoti diskusijos...
         title: Paieška
       start_debate: Pradėti diskusiją
       title: Diskusijos
       section_header:
-        icon_alt: Debatų piktograma
+        icon_alt: Diskusijų piktograma
         title: Diskusijos
         help: Apie diskusijas
       section_footer:
         title: Apie diskusijas
         description: Pradėkite diskusijas, kad galėtumėte dalintis nuomonėmis su kitais, kuriuos domina jūsų rūpimų temų klausimai.
-        help_text_1: „Piliečių debatų erdvė skirta tiems, kurie gali pateikti savo rūpesčių klausimus ir tiems, kurie nori dalintis nuomonėmis su kitais žmonėmis.“
+        help_text_1: „Piliečių diskusijų erdvė skirta tiems, kurie gali pateikti savo rūpesčių klausimus ir tiems, kurie nori dalintis nuomonėmis su kitais žmonėmis.“
         help_text_2: „Norėdami atidaryti diskusijas, jums reikia prisiregistruoti %{org}. Vartotojai taip pat gali komentuoti atviras diskusijas ir jų vertinimui naudoti „Sutinku“ arba „Nesutinku“ mygtukus.“
     new:
       form:
         submit_button: Pradėti diskusiją
       more_info: Kaip veikia diskusijos?
       recommendation_four: Mėgaukitės šia erdve ir balsais, kurie ją užpildo. Ji priklauso ir jums.
-      recommendation_one: Debatų pavadinimui ar visoms sakinio dalims naudoti didžiąsias raides nerekomenduojama. Internetuose tai laikoma šaukimu. Ir niekas nemėgsta būti šaukiamas.
+      recommendation_one: Diskusijų pavadinimui ar visoms sakinio dalims naudoti didžiąsias raides nerekomenduojama. Internetuose tai laikoma šaukimu. Ir niekas nemėgsta būti šaukiamas.
       recommendation_three: Beširdžios kritikos labai laukiama. Tai erdvė refleksijai. Tačiau rekomenduojame laikytis elegancijos ir intelekto. Pasaulyje šios dorybės padaro jį geresnį.
-      recommendation_two: Bet koks debatas ar komentaras, siūlantis nelegalią veiklą, bus ištrintas, taip pat ir tie, kurie ketina sabotažuoti debatų erdves. Kitkas leidžiama.
-      recommendations_title: Rekomendacijos debatų kūrimui
+      recommendation_two: Bet kokia diskusija ar komentaras, siūlantis nelegalią veiklą, bus ištrintas, taip pat ir tie, kurie ketina sabotažuoti diskusijų erdves. Kitkas leidžiama.
+      recommendations_title: Rekomendacijos diskusijų kūrimui
       start_new: Pradėti diskusiją
     show:
       author_deleted: Vartotojas ištrintas
       comments_title: Komentarai
       edit_debate_link: Redaguoti
-      flag: Šis debatas yra praneštas kaip netinkamas kelių vartotojų.
+      flag: Ši diskusija yra pranešta kaip netinkama.
       is_finished: DISKUSIJA NEAKTYVI
       share: Bendrinti
       author: Autorius
@@ -147,7 +147,7 @@ lt:
     accept_terms: Sutinku su %{policy} ir %{conditions}
     accept_terms_title: Sutinku su Privatumo politika ir naudojimo sąlygomis
     conditions: Naudojimo sąlygos
-    debate: Debatas
+    debate: Diskusija
     direct_message: privatus pranešimas
     error: klaida
     errors: klaidos
@@ -376,7 +376,7 @@ lt:
       more_info: Kaip veikia piliečių pasiūlymai?
       recommendation_one: Pasiūlymo pavadinimui ar visoms sakinio dalims naudoti didžiąsias raides nerekomenduojama. Internete tai laikoma šaukimu. Ir niekas nemėgsta būti šaukiamas.
       recommendation_three: Mėgaukitės šia erdve ir garsais, kurie ją užpildo. Ji priklauso ir jums.
-      recommendation_two: Bet koks pasiūlymas ar komentaras, siūlantis nelegalią veiklą, bus ištrintas, taip pat ir tie, kurie ketina sabotažuoti debatų erdves. Kitkas leidžiama.
+      recommendation_two: Bet koks pasiūlymas ar komentaras, siūlantis nelegalią veiklą, bus ištrintas, taip pat ir tie, kurie ketina sabotažuoti diskusiją erdves. Kitkas leidžiama.
       recommendations_title: Rekomendacijos kuriant pasiūlymą
       start_new: Sukurti naują pasiūlymą
     notice:
@@ -867,7 +867,7 @@ lt:
       title: Pateikta
     recommended:
       title: Jums gali patikti rekomendacijos
-      help: "Šios rekomendacijos generuojamos iš debatų ir pasiūlymų žymių, kuriomis jūs sekate."
+      help: "Šios rekomendacijos generuojamos iš diskusijų ir pasiūlymų žymių, kuriomis jūs sekate."
       debates:
         title: Rekomenduojamos diskusijos
         btn_text_link: Visos rekomenduojamos diskusijos

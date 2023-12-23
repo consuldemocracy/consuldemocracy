@@ -32,7 +32,7 @@ lt:
         one: "Komentaras"
         other: "Komentarai"
       debate:
-        one: "Diskusijos"
+        one: "Diskusiją"
         other: "Diskusijos"
       tag:
         one: "Žymė"
@@ -257,7 +257,7 @@ lt:
         title: "Pavadinimas"
       debate/translation:
         title: "Diskusijos pavadinimas"
-        description: "Pradinis diskusijos tekstas"
+        description: "Aprašymas"
       proposal:
         author: "Autorius"
         title: "Pavadinimas"
