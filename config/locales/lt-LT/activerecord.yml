@@ -32,7 +32,7 @@ lt:
         one: "Komentaras"
         other: "Komentarai"
       debate:
-        one: "Diskusiją"
+        one: "Diskusija"
         other: "Diskusijos"
       tag:
         one: "Žymė"

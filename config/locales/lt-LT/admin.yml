@@ -167,7 +167,7 @@ lt:
         calculated: Laimėtojai skaičiuojami, tai gali užtrukti minutę.
         recalculate: Perskaičiuoti laimėtojų investicijas
       ballots:
-        feature_disabled: 'Savybė <strong>Balsavimas</strong> turi būti įjungta, norint kurti balsavimo kabinas. Ją galite įjungti nuorodoje <a href="%{link}">nustatymų konfigūracijoje</a>.'
+        feature_disabled: 'Savybė <strong>Apklausa</strong> turi būti įjungta, norint kurti balsavimo kabinas. Ją galite įjungti nuorodoje <a href="%{link}">nustatymų konfigūracijoje</a>.'
     budget_groups:
       name: "Pavadinimas"
       headings_name: "Pavadinimai"
@@ -721,8 +721,8 @@ lt:
       activity: Moderatorių veikla
       admin: Administravimo meniu
       banner: Valdyti stendus
-      proposals: Siūlymai
-      proposals_topics: Siūlymų temos
+      proposals: Idėjų bankas
+      proposals_topics: idėjų temos
       budgets: Dalyvaujamieji biudžetai
       geozones: Valdyti geozonas
       hidden_comments: Paslėpti komentarai
@@ -762,7 +762,7 @@ lt:
           basic: "Pagrindinis pasirinkimas"
           debates: "Diskusijos"
           community: "Bendruomenė"
-          proposals: "Siūlymai"
+          proposals: "Idėjų bankas"
           polls: "Apklausos"
           legislation: "Bendradarbiavimo teisėkūra"
           budgets: "Biudžetai"
@@ -1077,43 +1077,43 @@ lt:
         table_location: "Vieta"
     active_polls:
       edit:
-        title: "Balsavimų aprašymas"
+        title: "Apklausų aprašymas"
       form:
         description:
           help_text: "Šis tekstas bus rodomas balsavimų puslapio antraštėje. Jis gali būti naudojamas pridėti kontekstą atvirų balsavimų atveju."
     polls:
       index:
-        title: "Balsavimų sąrašas"
-        no_polls: "Balsavimų nėra."
-        create: "Sukurti balsavimą"
+        title: "Apklausų sąrašas"
+        no_polls: "Apklausų nėra."
+        create: "Sukurti apklausą"
         name: "Pavadinimas"
         dates: "Datos"
         start_date: "Pradžios data"
         closing_date: "Uždarymo data"
         geozone_restricted: "Ribota apylinkėms"
       new:
-        title: "Naujas balsavimas"
-        submit_button: "Sukurti balsavimą"
+        title: "Nauja apklausa"
+        submit_button: "Sukurti"
       edit:
-        title: "Redaguoti balsavimą"
-        submit_button: "Atnaujinti balsavimą"
+        title: "Redaguoti apklausą"
+        submit_button: "Atnaujinti"
       show:
         questions_tab: Klausimai
         booths_tab: Būstinės
         officers_tab: Pareigūnai
         recounts_tab: Perkaupti
         results_tab: Rezultatai
-        no_questions: "Šiam balsavimui nėra priskirtų klausimų."
+        no_questions: "Šiai apklausai nėra priskirtų klausimų."
         questions_title: "Klausimų sąrašas"
         table_title: "Pavadinimas"
         edit_answers: Redaguoti atsakymus
         see_proposal: "(Peržiūrėti pasiūlymą)"
       destroy:
         alert: "Šis veiksmas pašalins balsavimą ir visus su juo susijusius klausimus."
-        success_notice: "Balsavimas sėkmingai ištrintas"
-        unable_notice: "Negalite ištrinti balsavimo, kuriame yra balsų"
+        success_notice: "Apklausa sėkmingai ištrintas"
+        unable_notice: "Negalite ištrinti apklausos, kuriame yra balsų"
       votation_type:
-        title: "Balsavimo tipas"
+        title: "Apklausos tipas"
         unique_description: "Į klausimą galima atsakyti tik vieną kartą."
         multiple_description: "Leidžiama pasirinkti kelis atsakymus. Galima nurodyti maksimalų atsakymų skaičių."
     questions:
@@ -1121,21 +1121,21 @@ lt:
         title: "Klausimai"
         create: "Sukurti klausimą"
         no_questions: "Klausimų nėra."
-        filter_poll: Filtruoti pagal balsavimą
-        select_poll: Pasirinkite balsavimą
+        filter_poll: Filtruoti pagal apklausą
+        select_poll: Pasirinkite apklausą
         questions_tab: "Klausimai"
         successful_proposals_tab: "Sėkmingos idėjos"
         create_question: "Sukurti klausimą"
         table_proposal: "Pasiūlymas"
         table_question: "Klausimas"
-        table_poll: "Balsavimas"
-        poll_not_assigned: "Balsavimas nepaskirtas"
+        table_poll: "Apklausa"
+        poll_not_assigned: "Apklausa nepaskirta"
       edit:
         title: "Redaguoti klausimą"
       form:
-        poll_help: "Galite pasirinkti tik tuos balsavimus, kurie dar neprasidėjo"
+        poll_help: "Galite pasirinkti tik tas apklausas, kurios dar neprasidėjo"
       new:
-        title: "Sukurti klausimą balsavimui %{poll}"
+        title: "Sukurti klausimą apklausai %{poll}"
         title_proposal: "Sukurti klausimą"
       destroy:
         notice: "Klausimas sėkmingai ištrintas"
@@ -1162,7 +1162,7 @@ lt:
           documents_list: Dokumentų sąrašas
           document_title: Pavadinimas
           document_actions: Veiksmai
-      no_edit: "Kai balsavimas prasidės, nebus galima kurti, redaguoti ar trinti klausimų, atsakymų ar kitos su balsavimu susijusios informacijos."
+      no_edit: "Kai apklausa prasidės, nebus galima kurti, redaguoti ar trinti klausimų, atsakymų ar kitos su apklausa susijusios informacijos."
     answers:
       new:
         title: "Naujas atsakymas"
@@ -1674,7 +1674,7 @@ lt:
       create_card: Sukurti kortelę
       no_cards: Nėra kortelių.
       feeds:
-        proposals: Siūlymai
+        proposals: Idėjų bankas
         debates: Diskusijos
         processes: Procesai
       new:

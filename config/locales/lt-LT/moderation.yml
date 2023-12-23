@@ -45,7 +45,7 @@ lt:
       flagged_comments: "Komentarai"
       flagged_debates: "Diskusijos"
       flagged_investments: "Biudžeto investicijos"
-      proposals: "Pasiūlymai"
+      proposals: "Idėjos"
       proposal_notifications: "Pasiūlymų pranešimai"
       users: "Užblokuoti vartotojai"
     proposals:
@@ -64,7 +64,7 @@ lt:
         orders:
           created_at: "Naujausi"
           flags: "Daugiausiai pažymėta"
-        title: "Pasiūlymai"
+        title: "Idėjos"
     budget_investments:
       index:
         block_authors: "Užblokuoti autoriai"

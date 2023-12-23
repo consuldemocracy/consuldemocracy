@@ -221,7 +221,7 @@ lt:
       my_activity_link: Mano turinys
       open_gov: Atvira valdžia
       proposals: Idėjų bankas
-      poll_questions: Balsavimas
+      poll_questions: Apklausos
       budgets: Dalyvaujamasis biudžetas
       notification_item:
         new_notifications:
@@ -432,7 +432,7 @@ lt:
       progress: Progresas
       resources: Ištekliai
       community: Bendruomenė
-      polls: Balsavimai
+      polls: Apklausos
       mailing: El. paštas
       poster: Plakatas
       recommended_actions: Rekomenduojami veiksmai
@@ -504,18 +504,18 @@ lt:
       previous_notifications: Rodyti ankstesnius pranešimus
     polls:
       index:
-        title: Balsavimai
-        create: Sukurti balsavimą
+        title: Apklausos
+        create: Sukurti apklausą
         count:
           one: Sukūrei %{count} apklausą.
           other: Sukūrei %{count} apklausas.
         links: Nuorodos
         additiontal_information: Papildoma informacija
       new:
-        title: Naujas balsavimas
-        submit: Sukurti balsavimą
+        title: Nauja apklausa
+        submit: Sukurti
       edit:
-        submit: Atnaujinti balsavimą
+        submit: Atnaujinti
       poll:
         responses:
           one: "%{count} atsakymas"
@@ -575,35 +575,35 @@ lt:
     final_date: "Galutiniai apskaitos/Rezultatai"
     index:
       filters:
-        current: "Aktyvūs"
-        expired: "Pasibaigę"
-      title: "Balsavimai"
-      participate_button: "Dalyvauti šiame balsavime"
-      participate_button_expired: "Balsavimas baigtas"
+        current: "Aktyvios"
+        expired: "Pasibaigusios"
+      title: "Apklausos"
+      participate_button: "Dalyvauti šioje apklausoje"
+      participate_button_expired: "Apklausa baigta"
       no_geozone_restricted: "Visas miestas"
       geozone_restricted: "Rajonai"
       geozone_info: "Gali dalyvauti žmonės, registruoti cenzuose: "
-      already_answer: "Jūs jau dalyvavote šiame balsavime"
+      already_answer: "Jūs jau dalyvavote šioje apklausoje"
       not_logged_in: "Norėdami dalyvauti, turite prisijungti arba užsiregistruoti"
       unverified: "Norėdami dalyvauti, turite patvirtinti paskyrą"
-      cant_answer: "Šis balsavimas jūsų rajone neprieinamas"
+      cant_answer: "Ši apklausa jūsų rajone neprieinamas"
       section_header:
-        icon_alt: Balsavimo piktograma
-        title: Balsavimas
-        help: Pagalba balsavime
+        icon_alt: Apklausos piktograma
+        title: Apklausa
+        help: Pagalba apklausoje
       section_footer:
-        title: Pagalba balsavime
-        description: Piliečių balsavimai - tai dalyvaujamoji priemonė, leidžianti piliečiams su balsavimo teisėmis priimti tiesioginius sprendimus
-      no_polls: "Atvirų balsavimų nėra."
+        title: Pagalba apklausoje
+        description: Piliečių apklausos - tai dalyvaujamoji priemonė, leidžianti piliečiams su balsavimo teisėmis priimti tiesioginius sprendimus
+      no_polls: "Atvirų apklausų nėra."
     show:
       already_voted_in_booth: "Jūs jau dalyvavote fizinėje būdelėje. Dėl kelių balsavimų dalyvauti nebegalite."
       already_voted_in_web: "Jūs jau dalyvavote šiame balsavime. Jei balsuosite dar kartą, tai perrašys jūsų ankstesnį balsą."
-      back: Grįžti balsavimą
+      back: Grįžti į apklausą
       cant_answer_not_logged_in: "Norėdami dalyvauti, turite %{signin} arba %{signup}."
       comments_tab: Komentarai
       cant_answer_verify: "Norėdami atsakyti, turite %{verify_link}."
       verify_link: "patvirtinti savo paskyrą"
-      cant_answer_expired: "Šis balsavimas baigėsi."
+      cant_answer_expired: "Ši apklausa baigėsi."
       cant_answer_wrong_geozone: "Šis klausimas jūsų rajone neprieinamas."
       more_info_title: "Papildoma informacija"
       documents: Dokumentai
@@ -613,7 +613,7 @@ lt:
       videos: "Išorinis vaizdo įrašas"
       info_menu: "Informacija"
       stats_menu: "Dalyvavimo statistika"
-      results_menu: "Balsavimo rezultatai"
+      results_menu: "Apklausos rezultatai"
       stats:
         total_votes: "Viso balsų"
         votes: "BALSAI"
@@ -628,7 +628,7 @@ lt:
         title: "Klausimai"
         most_voted_answer: "Daugiausiai balsų surinktas atsakymas: "
     poll_header:
-      back_to_proposal: Grįžti į pasiūlymą
+      back_to_proposal: Grįžti į idėją
   poll_questions:
     show:
       vote_answer: "Balsuoti už %{answer}"

@@ -10,6 +10,13 @@
 
 <%= render "shared/section_header", i18n_namespace: "polls.index.section_header", image: "polls" %>
 
+<p class="lead" style="padding-left: 16px; padding-right: 16px;">
+  <strong><%= t("polls.index.section_footer.title") %></strong>
+</p>
+<p style="padding-left: 16px; padding-right: 16px;">
+  <%= t("polls.index.section_footer.description") %>
+</p>
+
 <div class="row">
   <div class="small-12 column">
     <% if show_polls_description? %>
@@ -45,10 +52,6 @@
     <% end %>
 
     <div id="section_help" class="margin" data-magellan-target="section_help">
-      <p class="lead">
-        <strong><%= t("polls.index.section_footer.title") %></strong>
-      </p>
-      <p><%= t("polls.index.section_footer.description") %></p>
       <%= render_custom_partial "footer" %>
     </div>
   </div>

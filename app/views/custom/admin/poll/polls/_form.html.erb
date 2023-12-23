@@ -3,8 +3,11 @@
 <%= translatable_form_for [:admin, @poll] do |f| %>
   <%= render "shared/errors", resource: @poll %>
 
+
+
   <div class="row">
-    <div class="clear">
+    <%= f.translatable_fields do |translations_form| %>
+
       <div class="small-12 medium-6 column">
         <%= f.datetime_field :starts_at %>
       </div>
@@ -12,11 +15,7 @@
       <div class="small-12 medium-6 column">
         <%= f.datetime_field :ends_at %>
       </div>
-    </div>
-  </div>
 
-  <div class="row">
-    <%= f.translatable_fields do |translations_form| %>
       <div class="small-12 medium-6 column">
         <%= translations_form.text_field :name %>
       </div>
@@ -36,29 +35,29 @@
       <%= render Images::NestedComponent.new(f) %>
     </div>
 
-    <div class="clear">
-      <div class="small-6 medium-6 column">
-        <%= f.check_box :geozone_restricted, data: { checkbox_toggle: "#geozones" } %>
-      </div>
-    </div>
+    <!--    <div class="clear">-->
+    <!--      <div class="small-6 medium-6 column">-->
+    <%#= f.check_box :geozone_restricted, data: { checkbox_toggle: "#geozones" } %>
+    <!--      </div>-->
+    <!--    </div>-->
   </div>
 
-  <div id="geozones" style="<%= @poll.geozone_restricted? ? "" : "display:none" %>">
-    <div class="row">
-      <%= f.collection_check_boxes(:geozone_ids, @geozones, :id, :name) do |b| %>
-        <div class="small-6 medium-3 column">
-          <%= b.label do %>
-            <%= b.check_box + b.text %>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-  </div>
+  <!--  <div id="geozones" style="<%#= @poll.geozone_restricted? ? "" : "display:none" %>">-->
+  <!--    <div class="row">-->
+  <%#= f.collection_check_boxes(:geozone_ids, @geozones, :id, :name) do |b| %>
+  <!--        <div class="small-6 medium-3 column">-->
+  <%#= b.label do %>
+  <%#= b.check_box + b.text %>
+  <%# end %>
+  <!--        </div>-->
+  <%# end %>
+  <!--    </div>-->
+  <!--  </div>-->
 
-<!--
+  <!--
   <div class="row">
     <div class="small-12 column">
-      <%= render SDG::RelatedListSelectorComponent.new(f) %>
+      <%#= render SDG::RelatedListSelectorComponent.new(f) %>
     </div>
   </div>
   -->
