@@ -117,9 +117,9 @@ lt:
       proposals_phase: "Pasiūlymų stadija"
       allegations_phase: "Komentarų stadija"
       debates:
-        zero: "Nėra debatų"
-        one: "%{count} debatas"
-        other: "%{count} debatai"
+        zero: "Nėra diskusijų"
+        one: "%{count} dsikusija"
+        other: "%{count} diskusijos"
       proposals:
         zero: "Nėra pasiūlymų"
         one: "%{count} pasiūlymas"

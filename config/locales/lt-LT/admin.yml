@@ -1457,8 +1457,8 @@ lt:
         summary:
           comment_votes: Komentarų balsai
           comments: Komentarai
-          debate_votes: Debatų balsai
-          debates: Debatai
+          debate_votes: Diskusijų balsai
+          debates: Diskusijos
           proposal_votes: Pasiūlymų balsai
           proposals: Pasiūlymai
           budgets: Atviros biudžetai
@@ -1525,7 +1525,7 @@ lt:
           amount: "Patvirtinta suma"
           winners: "Laimėtojo investiciniai projektai"
           sent: "Išsiųsti investiciniai projektai"
-        debates: "Debatai"
+        debates: "Diskusijos"
         polls: "Rinkimai"
         proposals: "Pasiūlymai"
         title: "Tvaraus vystymosi tikslų - Statistika"
@@ -1675,7 +1675,7 @@ lt:
       no_cards: Nėra kortelių.
       feeds:
         proposals: Siūlymai
-        debates: Debatai
+        debates: Diskusijos
         processes: Procesai
       new:
         header_title: Nauja antraštė

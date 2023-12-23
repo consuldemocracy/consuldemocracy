@@ -32,8 +32,8 @@ lt:
         one: "Komentaras"
         other: "Komentarai"
       debate:
-        one: "Debatai"
-        other: "Debatai"
+        one: "Diskusijos"
+        other: "Diskusijos"
       tag:
         one: "Žymė"
         other: "Žymės"
@@ -256,8 +256,8 @@ lt:
         terms_of_service: "Paslaugų teikimo sąlygos"
         title: "Pavadinimas"
       debate/translation:
-        title: "Debatų pavadinimas"
-        description: "Pradinis debatų tekstas"
+        title: "Diskusijos pavadinimas"
+        description: "Pradinis diskusijos tekstas"
       proposal:
         author: "Autorius"
         title: "Pavadinimas"
@@ -291,7 +291,7 @@ lt:
         phone_number: "Telefono numeris"
         public_activity: "Visuomenei prieinama mano veiklos sąrašą"
         public_interests: "Visuomenei prieinami elementai, kuriuos stebiu"
-        recommended_debates: "Man rekomenduoti debatai"
+        recommended_debates: "Man rekomenduotos diskusijos"
         recommended_proposals: "Man rekomenduoti pasiūlymai"
         redeemable_code: "El. paštu gautas verifikacijos kodas"
       direct_message:
@@ -575,7 +575,7 @@ lt:
             end_date:
               invalid_date_range: "Turi Būti Arba Pradžios Diena, Arba Po Jos"
             debate_end_date:
-              invalid_date_range: "Turi Būti Arba Debatų Pradžios Diena, Arba Po Jos"
+              invalid_date_range: "Turi Būti Arba Diskusijos Pradžios Diena, Arba Po Jos"
             draft_end_date:
               invalid_date_range: "Turi Būti Arba Projekto Rašymo Pradžia, Arba Po Jos"
             allegations_end_date:

@@ -4,7 +4,7 @@ lt:
       entry:
         one: Įrašas
         other: Įrašai
-        zero: Įrašų nėra
+        zero: Įrašų
       more_pages:
         display_entries: Rodo <strong>%{first}&nbsp;-&nbsp;%{last}</strong> iš <strong>%{total} %{entry_name}</strong>
       one_page:

@@ -68,19 +68,19 @@ lt:
   debates:
     create:
       form:
-        submit_button: Pradėti debatus
+        submit_button: Pradėti diskusiją
     debate:
       votes:
         one: 1 balsas
         other: "%{count} balsai"
         zero: Nėra balsų
     edit:
-      editing: Redaguoti debatą
+      editing: Redaguoti diskusiją
       form:
         submit_button: Įrašyti pakeitimus
-      show_link: Peržiūrėti debatą
+      show_link: Peržiūrėti diskusiją
     form:
-      tags_instructions: Pažymėkite šį debatą žymomis.
+      tags_instructions: Pažymėkite šįą diskusiją žymomis.
       tags_placeholder: "Įveskite žymes, kurias norite naudoti, atskirtas kableliu (',')"
     index:
       featured_debates: Pateikti
@@ -102,27 +102,27 @@ lt:
         button: Ieškoti
         placeholder: Ieškoti debatų...
         title: Paieška
-      start_debate: Pradėti debatus
-      title: Debatai
+      start_debate: Pradėti diskusiją
+      title: Diskusijos
       section_header:
         icon_alt: Debatų piktograma
-        title: Debatai
+        title: Diskusijos
         help: Apie diskusijas
       section_footer:
         title: Apie diskusijas
-        description: Pradėkite debatą, kad galėtumėte dalintis nuomonėmis su kitais, kuriuos domina jūsų rūpimų temų klausimai.
+        description: Pradėkite diskusijas, kad galėtumėte dalintis nuomonėmis su kitais, kuriuos domina jūsų rūpimų temų klausimai.
         help_text_1: „Piliečių debatų erdvė skirta tiems, kurie gali pateikti savo rūpesčių klausimus ir tiems, kurie nori dalintis nuomonėmis su kitais žmonėmis.“
-        help_text_2: „Norėdami atidaryti debatą, jums reikia prisiregistruoti %{org}. Vartotojai taip pat gali komentuoti atvirus debatus ir jų vertinimui naudoti „Sutinku“ arba „Nesutinku“ mygtukus.“
+        help_text_2: „Norėdami atidaryti diskusijas, jums reikia prisiregistruoti %{org}. Vartotojai taip pat gali komentuoti atviras diskusijas ir jų vertinimui naudoti „Sutinku“ arba „Nesutinku“ mygtukus.“
     new:
       form:
-        submit_button: Pradėti debatus
-      more_info: Kaip veikia debatai?
+        submit_button: Pradėti diskusiją
+      more_info: Kaip veikia diskusijos?
       recommendation_four: Mėgaukitės šia erdve ir balsais, kurie ją užpildo. Ji priklauso ir jums.
       recommendation_one: Debatų pavadinimui ar visoms sakinio dalims naudoti didžiąsias raides nerekomenduojama. Internetuose tai laikoma šaukimu. Ir niekas nemėgsta būti šaukiamas.
       recommendation_three: Beširdžios kritikos labai laukiama. Tai erdvė refleksijai. Tačiau rekomenduojame laikytis elegancijos ir intelekto. Pasaulyje šios dorybės padaro jį geresnį.
       recommendation_two: Bet koks debatas ar komentaras, siūlantis nelegalią veiklą, bus ištrintas, taip pat ir tie, kurie ketina sabotažuoti debatų erdves. Kitkas leidžiama.
       recommendations_title: Rekomendacijos debatų kūrimui
-      start_new: Pradėti debatus
+      start_new: Pradėti diskusiją
     show:
       author_deleted: Vartotojas ištrintas
       comments_title: Komentarai
@@ -210,7 +210,7 @@ lt:
       administration_menu: Meniu
       administration: Administravimas
       collaborative_legislation: Bendradarbiavimo teisėkūra
-      debates: Debatai
+      debates: Diskusijos
       locale: "Kalba:"
       management: Valdymas
       moderation: Moderacija
