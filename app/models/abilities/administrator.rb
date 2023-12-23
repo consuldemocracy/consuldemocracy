@@ -48,6 +48,7 @@ module Abilities
 
       can :mark_featured, Debate
       can :unmark_featured, Debate
+      can :manage, Debate
 
       can :comment_as_administrator, [Debate, Comment, Proposal, Poll, Poll::Question,
                                       Budget::Investment, Legislation::Question,

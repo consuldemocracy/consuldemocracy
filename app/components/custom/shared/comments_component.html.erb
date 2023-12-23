@@ -12,8 +12,8 @@
 
       <% if current_user %>
         <% if record.respond_to?(:expired?) && record.expired? %>
-          <div class="alert">
-          <%= t("comments.comment.expired") %>
+          <div class="alert" style="color: red;">
+            <%= t("comments.comment.expired") %>
           </div>
         <% else %>
           <%= render "comments/form", { commentable: record, parent_id: nil } %>

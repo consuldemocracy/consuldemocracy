@@ -596,7 +596,7 @@ lt:
         description: Piliečių apklausos - tai dalyvaujamoji priemonė, leidžianti piliečiams su balsavimo teisėmis priimti tiesioginius sprendimus
       no_polls: "Atvirų apklausų nėra."
     show:
-      already_voted_in_booth: "Jūs jau dalyvavote fizinėje būdelėje. Dėl kelių balsavimų dalyvauti nebegalite."
+      already_voted_in_booth: "Jūs jau dalyvavote šiame balsavime."
       already_voted_in_web: "Jūs jau dalyvavote šiame balsavime. Jei balsuosite dar kartą, tai perrašys jūsų ankstesnį balsą."
       back: Grįžti į apklausą
       cant_answer_not_logged_in: "Norėdami dalyvauti, turite %{signin} arba %{signup}."
