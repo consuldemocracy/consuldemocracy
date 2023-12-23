@@ -53,12 +53,12 @@
                 </span>
               <% end %>
 
-              <% if Geozone.any? %>
-                <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                <span class="geozone">
-                  <%= link_to geozone_name(proposal), proposals_path(search: geozone_name(proposal)) %>
-                </span>
-              <% end %>
+              <%# if Geozone.any? %>
+<!--                <span class="bullet">&nbsp;&bull;&nbsp;</span>-->
+<!--                <span class="geozone">-->
+                  <%#= link_to geozone_name(proposal), proposals_path(search: geozone_name(proposal)) %>
+<!--                </span>-->
+              <%# end %>
             </p>
             <div class="proposal-description">
               <p><%= proposal.summary %></p>
@@ -88,7 +88,6 @@
           <% end %>
         </div>
       <% end %>
-
     </div>
   </div>
 </div>

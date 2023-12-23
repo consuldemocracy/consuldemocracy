@@ -77,7 +77,7 @@ lt:
         allegations_dates: "Komentarai"
         result_publication_date: "Galutinio rezultato publikavimas"
         milestones_date: "Sekantis"
-        proposals_dates: "Pasiūlymai"
+        proposals_dates: "Idėjos"
     questions:
       comments:
         comment_button: "Paskelbti atsakymą"

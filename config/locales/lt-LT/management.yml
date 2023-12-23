@@ -55,7 +55,7 @@ lt:
       introduce_email: "Prašome įvesti el. paštą, naudotą paskyroje:"
       send_email: "Išsiųsti patvirtinimo el. laišką"
     menu:
-      create_proposal: "Sukurti pasiūlymą"
+      create_proposal: "Dovanoti idėją"
       print_proposals: "Spausdinti pasiūlymus"
       support_proposals: "Remti pasiūlymus"
       create_budget_investment: "Sukurti biudžeto investiciją"
@@ -72,7 +72,7 @@ lt:
     proposals:
       alert:
         unverified_user: "Vartotojas nepatvirtintas"
-      create_proposal: "Sukurti pasiūlymą"
+      create_proposal: "Dovanoti idėją"
       print:
         print_button: "Spausdinti"
       index:

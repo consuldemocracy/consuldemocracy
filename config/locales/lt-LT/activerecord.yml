@@ -74,8 +74,8 @@ lt:
         one: "Balsavimo lapas"
         other: "Balsavimo lapai"
       proposal:
-        one: "Piliečių pasiūlymas"
-        other: "Piliečių pasiūlymai"
+        one: "idėją"
+        other: "Piliečių idėjos"
       sdg/goal:
         one: "tikslas"
         other: "tikslai"
@@ -104,8 +104,8 @@ lt:
         one: "Procesas"
         other: "Procesai"
       legislation/proposal:
-        one: "Pasiūlymas"
-        other: "Pasiūlymai"
+        one: "Idėja"
+        other: "Idėjos"
       legislation/draft_versions:
         one: "Juodraštis"
         other: "Juodraščiai"
@@ -292,7 +292,7 @@ lt:
         public_activity: "Visuomenei prieinama mano veiklos sąrašą"
         public_interests: "Visuomenei prieinami elementai, kuriuos stebiu"
         recommended_debates: "Man rekomenduotos diskusijos"
-        recommended_proposals: "Man rekomenduoti pasiūlymai"
+        recommended_proposals: "Man rekomenduotos idėjos"
         redeemable_code: "El. paštu gautas verifikacijos kodas"
       direct_message:
         title: "Pavadinimas"
@@ -508,7 +508,7 @@ lt:
         action_type: Tipas
         action_type_proposed_action: "Pasiūlytas Veiksmas"
         action_type_resource: "Resursas"
-        published_proposal: "Publikuoti Pasiūlymai?"
+        published_proposal: "Publikuoti Idėją?"
       dashboard/administrator_task:
         source: Šaltinis
         user: Vykdytojas

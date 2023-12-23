@@ -220,7 +220,7 @@ lt:
       my_account_link: Mano paskyra
       my_activity_link: Mano turinys
       open_gov: Atvira valdžia
-      proposals: Pasiūlymai
+      proposals: Idėjų bankas
       poll_questions: Balsavimas
       budgets: Dalyvaujamasis biudžetas
       notification_item:
@@ -254,7 +254,7 @@ lt:
   map:
     title: "Rajonai"
     proposal_for_district: "Pateikti pasiūlymą savo rajonui"
-    start_proposal: Sukurti pasiūlymą
+    start_proposal: Dovanoti idėją
   omniauth:
     facebook:
       sign_in: Prisijungti su Facebook
@@ -282,7 +282,7 @@ lt:
   proposals:
     create:
       form:
-        submit_button: Sukurti pasiūlymą
+        submit_button: Dovanoti idėją
     created:
       title: Sveikiname! Tu žengiai pirmą žingsnį.
       motivation: "Svarbu tinkamai parengti kampaniją, kad tavo pasiūlymas būtų sėkmingas. Pirmosios kelios dienos yra lemiamos."
@@ -339,12 +339,12 @@ lt:
         actions:
           success: "Rekomendacijos pasiūlymams šiai paskyrai dabar išjungtos"
           error: "Įvyko klaida. Prašome eiti į „Mano paskyros“ puslapį ir rankiniu būdu išjungti rekomendacijas pasiūlymams"
-      retired_proposals: Atsiimti pasiūlymai
-      retired_proposals_link: "Autoriaus atsiimti pasiūlymai"
-      selected_proposals: Pasirinkti pasiūlymai
-      selected_proposals_link: Peržiūrėti pasirinktus pasiūlymus
-      archived_proposals: Archyvuoti pasiūlymai
-      proposals_lists: Pasiūlymų sąrašai
+      retired_proposals: Atsiimti Idėjas
+      retired_proposals_link: "Autoriaus atsiimtos idėjos"
+      selected_proposals: Pasirinktos idėjos
+      selected_proposals_link: Peržiūrėti pasirinktas idėjas
+      archived_proposals: Archyvuotos idėjos
+      proposals_lists: Idėjų sąrašai
       retired_links:
         all: Visi
         duplicated: Pasikartojantys
@@ -359,43 +359,43 @@ lt:
       search_results:
         one: "turinti terminą <strong>'%{search_term}'</strong>"
         other: "turinčios terminą <strong>'%{search_term}'</strong>"
-      select_order_long: "Matote pasiūlymus pagal:"
-      start_proposal: Sukurti pasiūlymą
-      title: Pasiūlymai
-      top_link_proposals: Daugiausiai remiami pasiūlymai pagal kategorijas
+      select_order_long: "Matote idėjas pagal:"
+      start_proposal: Dovanoti idėją
+      title: Idėjų bankas
+      top_link_proposals: Daugiausiai remiamos idėjos pagal kategorijas
       section_header:
-        icon_alt: Pasiūlymų piktograma
-        title: Pasiūlymai
-        help: Pagalba su pasiūlymais
+        icon_alt: Idėjų piktograma
+        title: Idėjų bankas
+        help: Pagalba su idėjomis
       section_footer:
-        title: Pagalba su pasiūlymais
-        description: Piliečių pasiūlymai yra galimybė kaimynams ir kolektyvams tiesiogiai nuspręsti, kaip nori, kad būtų jų miestas, gavę pakankamai palaikymo ir pateikę balsavimui piliečių.
+        title: Pagalba su idėjomis
+        description: Esi kūrybingas, įžvalgus ir turi TIEK idėjų, kad bijai, jog visų panaudoti nespėsi? Siūlome sprendimą – dovanok savo idėjas Kauno rajono gyventojams, kurie jas galėtų įgyvendinti gražindami savo miestų ir miestelių viešąsias erdves. Viskas labai paprasta – idėjos teikiamos užpildant internetinę anketą. Anketa anoniminė, tavo asmeniniai duomenys nebus viešinami. Surinktos idėjos bus paskelbtos internetiniame puslapyje https://dalyvauk.krs.lt/, todėl jos taps pasiekiamos visiems. Idėjomis galės pasinaudoti visi planuojantys teikti idėjas Kauno rajono dalyvaujamojo biudžeto priemonės finansavimui gauti. Kūrybai nėra ribų – jokių amžiaus ar gyvenamosios vietos apribojimų. Vienas asmuo gali teikti neribotą skaičių idėjų.
     new:
       form:
-        submit_button: Sukurti pasiūlymą
-      more_info: Kaip veikia piliečių pasiūlymai?
-      recommendation_one: Pasiūlymo pavadinimui ar visoms sakinio dalims naudoti didžiąsias raides nerekomenduojama. Internete tai laikoma šaukimu. Ir niekas nemėgsta būti šaukiamas.
-      recommendation_three: Mėgaukitės šia erdve ir garsais, kurie ją užpildo. Ji priklauso ir jums.
-      recommendation_two: Bet koks pasiūlymas ar komentaras, siūlantis nelegalią veiklą, bus ištrintas, taip pat ir tie, kurie ketina sabotažuoti diskusiją erdves. Kitkas leidžiama.
-      recommendations_title: Rekomendacijos kuriant pasiūlymą
-      start_new: Sukurti naują pasiūlymą
+        submit_button: Dovanoti idėją
+      more_info: Kaip veikia idėjų bankas?
+      recommendation_one: Pasiūlymus idėjų bankui gali teikti Lietuvoje ir užsienyje gyvenantys Lietuvos piliečiai ir Lietuvoje gyvenantys užsienio piliečiai. Idėjų autorių amžius nėra ribojamas.
+      recommendation_three: Idėjos teikiamos neatlygintinai. Teikdamas idėją asmuo atsisako bet kokių teisių į idėją ir sutinka, kad ji būtų viešai skelbiama bei prieinama kitiems asmenims (neviešinant asmeninių duomenų apie idėjos autorių).
+      recommendation_two: Teikiama idėja turi būti realiai pritaikoma ir įgyvendinama Kauno rajone; nekomercinė, skirta viešajai infrastruktūrai gerinti (išskyrus gatvių / kelių apšvietimo įrengimą, rekonstrukciją ir remontą, gatvių / kelių, šaligatvių, pėsčiųjų, dviračių takų įrengimą, rekonstrukciją ir remontą); etiška, neskatinti smurto, socialinės nelygybės, diskriminacijos tautinėms mažumoms ir pan.
+      recommendations_title: Reikalavimai
+      start_new: Dovanoti idėją
     notice:
-      retired: Pasiūlymas atšauktas
-      published: Pasiūlymas paskelbtas
+      retired: Idėją atšaukta
+      published: Idėja paskelbta
     proposal:
-      created: "Sukūrėte pasiūlymą!"
+      created: "Sukūrėte idėją!"
       share:
-        guide: "Dabar galite jį dalintis, kad žmonės galėtų pradėti jį remti."
-        edit: "Kol jis dar nėra bendrinamas, galėsite pakeisti tekstą kaip norite."
-        view_proposal: "Ne dabar, eikite į mano pasiūlymą"
-      already_supported: "Jūs jau remėte šį pasiūlymą. Pasidalinkite juo!"
+        guide: "Dabar galite ja dalintis, kad žmonės galėtų pradėti ją remti."
+        edit: "Kol ji dar nėra bendrinamas, galėsite pakeisti tekstą kaip norite."
+        view_proposal: "Ne dabar, eiti į mano idėją"
+      already_supported: "Jūs išreiškėte palaikymą šiai idėjai."
       support: Remti
       support_label: "Remti %{proposal}"
-      support_title: Remti šį pasiūlymą
+      support_title: Remti šią idėją
       supports:
-        one: 1 remimas
-        other: "%{count} remimai"
-        zero: Nėra remimų
+        one: 1 parėmimas
+        other: "%{count} parėmimai"
+        zero: Nėra parėmimų
       votes:
         one: 1 balsas
         other: "%{count} balsai"
@@ -403,32 +403,32 @@ lt:
       supports_necessary: "Reikalingi %{number} remimai"
       reason_for_supports_necessary: ""
       total_percent: 100%
-      archived: "Šis pasiūlymas archyvuotas ir negali rinkti remimų."
-      successful: "Šis pasiūlymas pasiekė reikiamus remimus."
-      selected: "Pasirinktas pasiūlymas"
+      archived: "Ši idėja archyvuota ir negali rinkti rėmimų."
+      successful: "Ši idėja pasiekė reikiamą parėmimų skaičių."
+      selected: "Pasirinkta idėja"
     show:
       author_deleted: Vartotojas ištrintas
       code: "Pasiūlymo kodas:"
       comments_tab: Komentarai
       dashboard_proposal_link: Valdymo skydas
-      flag: Šis pasiūlymas buvo žymimas kaip netinkamas kelių vartotojų.
+      flag: Ši idėja buvo pažymėta kaip netinkama kelių vartotojų.
       notifications_tab: Pranešimai
       milestones_tab: Etapai
-      retired_warning: "Autorius mano, kad šis pasiūlymas neturėtų gauti daugiau remimų."
+      retired_warning: "Autorius mano, kad ši idėja neturėtų gauti daugiau remimų."
       retired_warning_link_to_explanation: Prieš balsuojant, perskaitykite paaiškinimą.
       retired: Pasitraukęs pasiūlymas
       share: Bendrinti
-      no_notifications: "Šis pasiūlymas neturi pranešimų."
+      no_notifications: "Ši idėja neturi pranešimų."
       embed_video_title: "Vaizdo įrašas apie %{proposal}"
       title_video_url: "Išorinis vaizdo įrašas"
       author: Autorius
-      draft: Pasiūlymas juodraštyje. Kol kas negali gauti remimų ir nepasirodo pasiūlymų sąraše.
+      draft: Idėja juodraštyje. Kol kas negali gauti rėmimų ir nepasirodo idėjų sąraše.
     update:
       form:
         submit_button: Išsaugoti pakeitimus
   dashboard:
     menu:
-      my_proposal: Redaguoti mano pasiūlymą
+      my_proposal: Redaguoti mano idėją
       progress: Progresas
       resources: Ištekliai
       community: Bendruomenė
@@ -691,9 +691,9 @@ lt:
           notice: "Sustabdėte sekimą šiam investiciniam projektui! <br> Nebegausite pranešimų, susijusių su šiuo projektu."
       proposal:
         create:
-          notice: "Dabar sekate šį piliečių pasiūlymą! <br> Mes jus pranešime apie pasikeitimus, kad būtumėte visada informuoti."
+          notice: "Dabar sekate šią įdėja! <br> Mes jus pranešime apie pasikeitimus, kad būtumėte visada informuoti."
         destroy:
-          notice: "Sustabdėte sekimą šiam piliečių pasiūlymui! <br> Nebegausite pranešimų, susijusių su šiuo pasiūlymu."
+          notice: "Sustabdėte sekimą šiai idėjai! <br> Nebegausite pranešimų, susijusių su šia idėja."
     print:
       print_button: Spausti šią informaciją
     search: Ieškoti
@@ -713,8 +713,8 @@ lt:
         see_all: "Rodyti visus"
       proposal:
         found:
-          one: "Yra pasiūlymas su terminu '%{query}', galite dalyvauti jame vietoj naujo kūrimo"
-          other: "Yra pasiūlymų su terminu '%{query}', galite dalyvauti jais vietoj naujų kūrimo"
+          one: "Pasiūlymas su terminu '%{query}' jau yra."
+          other: "Pasiūlymų su terminu '%{query}' jau yra."
         message: "Matote %{limit} iš %{count} pasiūlymų, kuriuose yra terminas '%{query}'"
         see_all: "Rodyti visus"
     tags_cloud:
@@ -766,7 +766,7 @@ lt:
     index:
       visits: Aplankymai
       debates: Diskusijos
-      proposals: Pasiūlymai
+      proposals: Idėjos
       comments: Komentarai
       proposal_votes: Balsai už pasiūlymus
       debate_votes: Balsai už diskusijas
@@ -797,7 +797,7 @@ lt:
       deleted_debate: Ši diskusija ištrinta
       deleted_proposal: Šis pasiūlymas ištrintas
       deleted_budget_investment: Šis investicinis projektas ištrintas
-      proposals: Pasiūlymai
+      proposals: Idėjos
       proposals_status: Būsena
       debates: Diskusijos
       budget_investments: Biudžeto investicijos
@@ -811,8 +811,8 @@ lt:
           one: 1 diskusija
           other: "%{count} diskusijos"
         proposals:
-          one: 1 pasiūlymas
-          other: "%{count} pasiūlymai"
+          one: 1 idėja
+          other: "%{count} idėjos"
         budget_investments:
           one: 1 investicija
           other: "%{count} investicijos"
@@ -851,7 +851,7 @@ lt:
     feed:
       most_active:
         debates: "Aktyviausios diskusijos"
-        proposals: "Aktyviausi pasiūlymai"
+        proposals: "Aktyviausios idėjos"
         processes: "Atviri procesai"
       see_all:
         debates: Peržiūrėti visas diskusijas
@@ -872,8 +872,8 @@ lt:
         title: Rekomenduojamos diskusijos
         btn_text_link: Visos rekomenduojamos diskusijos
       proposals:
-        title: Rekomenduojami pasiūlymai
-        btn_text_link: Visi rekomenduojami pasiūlymai
+        title: Rekomenduojamos idėjos
+        btn_text_link: Visi rekomenduojamos idėjos
       budget_investments:
         title: Rekomenduojamos investicijos
       slide: "Peržiūrėti %{title}"

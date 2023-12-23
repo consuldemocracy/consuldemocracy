@@ -5,7 +5,7 @@
       <h1 class="inline-block"><%= t("#{i18n_namespace}.title") %></h1>
       <div class="float-right-medium">
 
-        <% if image != "debates" %>
+        <% if  image != "proposals" && image != "debates" %>
           <%= link_to t("#{i18n_namespace}.help"), "#section_help" %>
         <% end %>
       </div>

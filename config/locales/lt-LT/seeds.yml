@@ -11,8 +11,8 @@ lt:
         title: "Dabar galite geografiškai nustatyti pasiūlymus ir investicijas"
         body: "Kurdami pasiūlymą ar investiciją, dabar galite nurodyti tašką žemėlapyje."
       proposal:
-        title: "Turite pasiūlymą?"
-        body: "Atminkite, kad galite sukurti pasiūlymą su savo idėjomis ir žmonės jį aptars ir parems."
+        title: "Turite idėją?"
+        body: "Atminkite, kad galite dovanoti idėją ir žmonės ją aptars ir parems."
     settings:
       official_level_1_name: Oficiali pozicija 1
       official_level_2_name: Oficiali pozicija 2
@@ -44,10 +44,10 @@ lt:
         link_text: "Daugiau informacijos"
         label: "Sveiki atvykę į"
       proposal:
-        title: "Kaip veikia piliečių pasiūlymai?"
-        description: "Erdvė, kur kiekvienas gali sukurti piliečių pasiūlymą ir ieškoti palaikymo. Pasiekę tam tikrą palaikymo skaičių, pasiūlymai bus balsuojami, ir taip kartu galėsime nuspręsti, kas mums svarbu."
+        title: "Kaip veikia idėjų bankas?"
+        description: "Erdvė, kur kiekvienas gali sukurti piliečių pasiūlymą ir ieškoti palaikymo. Pasiekę tam tikrą palaikymo skaičių, idėjos bus balsuojamos, ir taip kartu galėsime nuspręsti, kas mums svarbu."
         link_text: "Daugiau apie pasiūlymus"
-        label: "Piliečių pasiūlymai"
+        label: "Piliečių idėjos"
     categories:
       associations: Asociacijos
       culture: Kultūra

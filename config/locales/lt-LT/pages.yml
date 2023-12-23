@@ -12,7 +12,7 @@ lt:
       guide: "Šis vadovas paaiškina, kam skirti %{org} skirsniai ir kaip jie veikia."
       menu:
         debates: "Diskusijos"
-        proposals: "Pasiūlymai"
+        proposals: "Idėjų bankas"
         budgets: "Dalyvaujamieji biudžetai"
         polls: "Apklausos"
         other: "Kita įdomi informacija"
@@ -26,9 +26,9 @@ lt:
         image_alt: "Mygtukai vertinti diskusijas"
         figcaption: '"Sutinku" ir "Nesutinku" mygtukai, skirti vertinti diskusijas.'
       proposals:
-        title: "Pasiūlymai"
+        title: "Idėjų bankas"
         description: "Pasiūlymų dėl jų įvykdymo miesto tarybos galite pateikti %{link} skiltyje. Pasiūlymai reikalauja palaikymo, ir jei jie surinko pakankamą paramą, juos pateikiamos viešam balsavimui. Piliečių balsais patvirtinti pasiūlymai miesto tarybos priimami ir įgyvendinami."
-        link: "piliečių pasiūlymai"
+        link: "piliečių idėjos"
         image_alt: "Mygtukas palaikyti pasiūlymą"
         figcaption: 'Mygtukas "Palaikyti" pasiūlymą.'
       budgets:
@@ -96,7 +96,7 @@ lt:
             - key_column: 1
               page_column: "Diskusijos"
             - key_column: 2
-              page_column: "Pasiūlymai"
+              page_column: "Idėjos"
             - key_column: 3
               page_column: "Balsai"
             - key_column: 4

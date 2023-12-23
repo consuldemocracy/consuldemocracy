@@ -32,7 +32,7 @@ lt:
         sections:
           homepage: Pagrindinis puslapis
           diskusijos: Diskusijos
-          pasiūlymai: Pasiūlymai
+          pasiūlymai: Idėjų bankas
           biudžetai: Dalyvaujantis biudžetas
           pagalbos_puslapis: Pagalbos puslapis
           sdg: Tvaraus vystymosi tikslai
@@ -62,7 +62,7 @@ lt:
           all: Visi
           on_comments: Komentarai
           on_debates: Diskusijos
-          on_proposals: Pasiūlymai
+          on_proposals: Idėjų bankas
           on_users: Vartotojai
           on_system_emails: Sisteminiai laiškai
         title: Moderatoriaus veikla
@@ -135,7 +135,7 @@ lt:
         name_description: "Tai yra dalyvaujančio biudžeto pavadinimas, naudojamas antraštinėje dalyvaujančio biudžeto dalyje ir kortelėse, kai jis yra aktyvus."
         image_description: "Įkėlus nuotrauką, ji bus naudojama viršuje esančioje dalyvaujančio biudžeto juostoje. Kitu atveju bus naudojama biudžeto numatytasis spalvinis fonas."
         main_call_to_action: "Pagrindinis veiksmas (neprivaloma)"
-        main_call_to_action_description: "Šis nuorodos tekstas bus rodomas šio dalyvaujančio biudžeto viršutinėje juostoje ir skatins vartotoją atlikti konkretų veiksmą, pvz., sukurti pasiūlymą, balsuoti už esamus ar sužinoti daugiau apie procesą."
+        main_call_to_action_description: "Šis nuorodos tekstas bus rodomas šio dalyvaujančio biudžeto viršutinėje juostoje ir skatins vartotoją atlikti konkretų veiksmą, pvz., dovanoti idėją, balsuoti už esamus ar sužinoti daugiau apie procesą."
         info:
           budget_settings: "Bendrieji dalyvaujančio biudžeto nustatymai"
           staff_settings: "Administratoriai ir vertintojai priskirti biudžetui"
@@ -443,7 +443,7 @@ lt:
           with_confirmed_hide: Patvirtinti
           without_confirmed_hide: Laukiantys
         hidden_debate: Paslėptos diskusijos
-        hidden_proposal: Paslėptos pasiūlymai
+        hidden_proposal: Paslėptos idėjos
         title: Paslėpti komentarai
         no_hidden_comments: "Nėra paslėptų komentarų"
     dashboard:
@@ -612,14 +612,14 @@ lt:
           homepage: Pagrindinis puslapis
           draft_versions: Juodraščiai
           questions: Diskusija
-          proposals: Pasiūlymai
+          proposals: Idėjų bankas
           milestones: Sekimas
       homepage:
         edit:
           title: Konfigūruokite savo proceso pagrindinį puslapį
       proposals:
         index:
-          title: Pasiūlymai
+          title: Idėjų bankas
           back: Atgal
           id: ID
           supports: Visos paramos
@@ -727,7 +727,7 @@ lt:
       geozones: Valdyti geozonas
       hidden_comments: Paslėpti komentarai
       hidden_debates: Paslėptos diskusijos
-      hidden_proposals: Paslėpti pasiūlymai
+      hidden_proposals: Paslėptos idėjos
       hidden_budget_investments: Paslėptos biudžeto investicijos
       hidden_proposal_notifications: Paslėpti pasiūlymų pranešimai
       hidden_users: Paslėpti vartotojai
@@ -1124,7 +1124,7 @@ lt:
         filter_poll: Filtruoti pagal balsavimą
         select_poll: Pasirinkite balsavimą
         questions_tab: "Klausimai"
-        successful_proposals_tab: "Sėkmingi pasiūlymai"
+        successful_proposals_tab: "Sėkmingos idėjos"
         create_question: "Sukurti klausimą"
         table_proposal: "Pasiūlymas"
         table_question: "Klausimas"
@@ -1278,7 +1278,7 @@ lt:
         no_results: "Organizacijų nerasta."
     proposals:
       index:
-        title: "Pasiūlymai"
+        title: "Idėjų bankas"
         id: "ID"
         author: "Autorius"
         select: "Pasirinkti"
@@ -1298,7 +1298,7 @@ lt:
           all: "Visi"
           with_confirmed_hide: "Patvirtinti"
           without_confirmed_hide: "Laukiantys"
-        title: "Paslėpti pasiūlymai"
+        title: "Paslėptos idėjos"
         no_hidden_proposals: "Nėra paslėptų pasiūlymų."
     hidden_proposal_notifications:
       index:
@@ -1460,8 +1460,8 @@ lt:
           debate_votes: Diskusijų balsai
           debates: Diskusijos
           proposal_votes: Pasiūlymų balsai
-          proposals: Pasiūlymai
-          budgets: Atviros biudžetai
+          proposals: Idėjų bankas
+          budgets: Atviri biudžetai
           budget_investments: Investicijų projektai
           unverified_users: Nepatikrinti vartotojai
           user_level_three: Trečio lygio vartotojai
@@ -1482,7 +1482,7 @@ lt:
         debate_created: Debatų
         visit: Aplankymai
         level_2_user: Antro lygio vartotojai
-        proposal_created: Piliečių pasiūlymai
+        proposal_created: Piliečių idėjos
       budgets:
         no_data_before_balloting_phase: "Prieš balsavimo etapą nėra jokių duomenų rodyti."
         title: "Dalyvaujamojo Biudžetavimo - Dalyvavimo statistika"
@@ -1507,7 +1507,7 @@ lt:
       proposal_notifications:
         title: Pasiūlymų pranešimai
         total: Viso
-        proposals_with_notifications: Pasiūlymai su pranešimais
+        proposals_with_notifications: Idėjos su pranešimais
         not_available: "Pasiūlymas nepasiekiamas"
       polls:
         title: Rinkimų statistika
@@ -1527,7 +1527,7 @@ lt:
           sent: "Išsiųsti investiciniai projektai"
         debates: "Diskusijos"
         polls: "Rinkimai"
-        proposals: "Pasiūlymai"
+        proposals: "Idėjų bankas"
         title: "Tvaraus vystymosi tikslų - Statistika"
     tags:
       create: Sukurti temą
