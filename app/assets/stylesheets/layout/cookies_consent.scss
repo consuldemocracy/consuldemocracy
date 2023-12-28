@@ -1,0 +1,24 @@
+.cookies-consent-banner {
+  z-index: 9;
+  position: fixed;
+  left: $line-height / 3;
+  right: $line-height / 3;
+  bottom: $line-height / 3;
+  padding: 2rem;
+  border: 1px solid $brand;
+  background: $white;
+
+  button {
+    font-weight: bold;
+
+    @include breakpoint(small only) {
+      display: block;
+      width: 100%;
+    }
+
+    &.accept-cookies {
+      @include regular-button;
+      margin-bottom: 0;
+    }
+  }
+}

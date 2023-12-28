@@ -89,6 +89,7 @@ class Setting < ApplicationRecord
         "feature.sdg": true,
         "feature.machine_learning": false,
         "feature.remove_investments_supports": true,
+        "feature.cookies_consent": false,
         "homepage.widgets.feeds.debates": true,
         "homepage.widgets.feeds.processes": true,
         "homepage.widgets.feeds.proposals": true,
