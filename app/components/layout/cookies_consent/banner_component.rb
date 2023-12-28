@@ -5,6 +5,10 @@ class Layout::CookiesConsent::BannerComponent < ApplicationComponent
     feature?(:cookies_consent) && missing_cookies_setup?
   end
 
+  def more_info_link
+    Setting["cookies_consent.more_info_link"]
+  end
+
   private
 
     def missing_cookies_setup?
