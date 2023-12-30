@@ -222,7 +222,8 @@ GEM
       railties (>= 5.0.0)
     faker (3.2.1)
       i18n (>= 1.8.11, < 2)
-    faraday (2.7.10)
+    faraday (2.8.1)
+      base64
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
@@ -661,6 +662,10 @@ GEM
       activesupport (>= 5.2.0, < 8.0)
       concurrent-ruby (~> 1.0)
       method_source (~> 1.0)
+    viisp-auth-custom (0.1.0)
+      faraday
+      nokogiri
+      xmldsig (~> 0.6)
     warden (1.2.9)
       rack (>= 2.0.9)
     wasabi (3.7.0)
@@ -682,6 +687,8 @@ GEM
     wicked_pdf (2.7.0)
       activesupport
     wkhtmltopdf-binary (0.12.6.6)
+    xmldsig (0.7.0)
+      nokogiri (>= 1.6.8, < 2.0.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.6.12)
@@ -790,6 +797,7 @@ DEPENDENCIES
   uglifier (~> 4.2.0)
   uuidtools (~> 2.2.0)
   view_component (~> 3.6.0)
+  viisp-auth-custom (~> 0.1.0)
   web-console (~> 4.2.1)
   whenever (~> 1.0.0)
   wicked_pdf (~> 2.7.0)

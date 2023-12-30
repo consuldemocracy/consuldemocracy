@@ -1,4 +1,6 @@
 class Users::SessionsController < Devise::SessionsController
+
+
   def destroy
     @stored_location = stored_location_for(:user)
     super
@@ -7,6 +9,7 @@ class Users::SessionsController < Devise::SessionsController
   private
 
     def after_sign_in_path_for(resource)
+
       if !verifying_via_email? && resource.show_welcome_screen?
         welcome_path
       else

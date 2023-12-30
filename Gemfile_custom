@@ -24,3 +24,5 @@
 ###### Other gems ######
 #
 # Add your custom gem dependencies here
+
+gem 'viisp-auth-custom', '~> 0.1.0'

@@ -1,0 +1,22 @@
+<% if oauth_logins.any? %>
+  <div class="row">
+    <div class="small-12 column">
+      <div class="margin-bottom">
+        <strong><%= t("omniauth.info.#{action}") %></strong>
+      </div>
+    </div>
+
+    <% oauth_logins.each do |login| %>
+      <div class="small-12 medium-6 large-4 column end">
+        <%= link_to t("omniauth.#{login}.name"), send("user_#{login}_omniauth_authorize_path"),
+                    title: t("omniauth.#{login}.#{action}"),
+                    class: "button-#{login.to_s.delete_suffix("_oauth2")} button expanded",
+                    method: :post %>
+      </div>
+    <% end %>
+
+    <div class="small-12 column auth-divider">
+      <span><%= t("omniauth.or_fill") %></span>
+    </div>
+  </div>
+<% end %>
