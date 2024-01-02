@@ -6,4 +6,9 @@
   <% end%>
 
   <button type="button" class="accept-cookies"><%= t("cookies_consent.accept") %></button>
+
+  <% if feature?("cookies_consent.setup_page") %>
+    <button type="button" class="reject-cookies"><%= t("cookies_consent.reject") %></button>
+    <button type="button" data-open="cookies_consent_setup" class="setup"><%= t("cookies_consent.setup") %></button>
+  <% end %>
 </div>

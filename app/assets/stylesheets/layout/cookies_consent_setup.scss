@@ -1,0 +1,46 @@
+.cookies-consent-setup {
+  border-radius: 0.75rem;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  ul {
+    font-size: $base-font-size;
+  }
+
+  .close-button {
+    @include close-button;
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+  }
+
+  button {
+    font-weight: bold;
+
+    @include breakpoint(small only) {
+      display: block;
+      width: 100%;
+    }
+
+    &.accept-cookies,
+    &.reject-cookies {
+      @include regular-button;
+      margin-bottom: 0;
+    }
+
+    &.accept-cookies {
+      @include breakpoint(small only) {
+        margin-bottom: $line-height / 3;
+      }
+    }
+  }
+}
+
+.is-reveal-open {
+  overflow: unset !important;
+}

@@ -1,8 +1,8 @@
-class Layout::CookiesConsent::BannerComponent < ApplicationComponent
+class Layout::CookiesConsent::BannerComponent < Layout::CookiesConsent::BaseComponent
   delegate :cookies, to: :helpers
 
   def render?
-    feature?(:cookies_consent) && missing_cookies_setup?
+    super && missing_cookies_setup?
   end
 
   def more_info_link
@@ -12,6 +12,10 @@ class Layout::CookiesConsent::BannerComponent < ApplicationComponent
   private
 
     def missing_cookies_setup?
-      cookies["cookies_consent"].blank?
+      current_value.blank?
+    end
+
+    def current_value
+      cookies["cookies_consent"]
     end
 end

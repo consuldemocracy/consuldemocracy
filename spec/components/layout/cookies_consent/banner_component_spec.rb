@@ -10,8 +10,15 @@ describe Layout::CookiesConsent::BannerComponent do
   end
 
   it "does not render the banner when cookies were accepted" do
-    allow_any_instance_of(Layout::CookiesConsent::BannerComponent)
-      .to receive(:missing_cookies_setup?).and_return(false)
+    allow_any_instance_of(Layout::CookiesConsent::BannerComponent).to receive(:current_value).and_return("all")
+
+    render_inline Layout::CookiesConsent::BannerComponent.new
+
+    expect(page).not_to have_css(".cookies-consent-banner")
+  end
+
+  it "does not render the banner when third party cookies were rejected" do
+    allow_any_instance_of(Layout::CookiesConsent::BannerComponent).to receive(:current_value).and_return("essential")
 
     render_inline Layout::CookiesConsent::BannerComponent.new
 
@@ -40,5 +47,19 @@ describe Layout::CookiesConsent::BannerComponent do
     render_inline Layout::CookiesConsent::BannerComponent.new
 
     expect(page).not_to have_link("More information")
+  end
+
+  it "renders the cookies consent rejection link when the setup page is enabled" do
+    Setting["cookies_consent.setup_page"] = true
+
+    render_inline Layout::CookiesConsent::BannerComponent.new
+
+    expect(page).to have_button("Reject")
+
+    Setting["cookies_consent.setup_page"] = false
+
+    render_inline Layout::CookiesConsent::BannerComponent.new
+
+    expect(page).not_to have_button("Reject")
   end
 end
