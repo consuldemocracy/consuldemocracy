@@ -235,3 +235,5 @@ es:
       more_info_link_description: Enlace que se muestra en el banner de consentimiento a la página de política de cookies
       setup_page: Activar la página de configuración de consentimiento de cookies de terceros
       setup_page_description: Permite a los usuarios configurar (aceptar o rechazar) el seguimiento de cookies de terceros.
+      version_name: Nombre de la versión
+      version_name_description: Cambia el nombre de la versión para obligar a todos los usuarios a realizar el proceso de consentimiento de cookies de nuevo. Esto puede ser particularmente útil cuando se introducen cambios drásticos en la política de cookies que requieren de un nuevo consentimiento explícito por parte de los usuarios.

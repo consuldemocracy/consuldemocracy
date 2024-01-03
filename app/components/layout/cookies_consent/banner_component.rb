@@ -16,6 +16,6 @@ class Layout::CookiesConsent::BannerComponent < Layout::CookiesConsent::BaseComp
     end
 
     def current_value
-      cookies["cookies_consent"]
+      cookies["cookies_consent#{version_name}"]
     end
 end

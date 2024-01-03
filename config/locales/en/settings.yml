@@ -235,3 +235,5 @@ en:
       more_info_link_description: Link shown in the consent banner to the cookie policy page.
       setup_page: Enable third party cookies setup page
       setup_page_description: Allow users to configure (accept or reject) the tracking of third party cookies.
+      version_name: Version name
+      version_name_description: Change the version name to force all users to go through the cookie consent process again. This feature can be handy when introducing drastic cookie policy changes requiring a new user acknowledgement.
