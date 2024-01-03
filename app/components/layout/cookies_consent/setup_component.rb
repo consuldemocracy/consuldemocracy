@@ -2,4 +2,9 @@ class Layout::CookiesConsent::SetupComponent < Layout::CookiesConsent::BaseCompo
   def render?
     super && feature?("cookies_consent.setup_page")
   end
+
+  def notice
+    CGI::escapeHTML(render Layout::CalloutComponent.new(id: "cookies-settings-callout",
+                                                        message: t("cookies_consent.notice")))
+  end
 end

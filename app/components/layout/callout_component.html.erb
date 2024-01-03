@@ -1,0 +1,10 @@
+<div id="<%= id %>" data-alert class="notice-container callout-slide" data-closable>
+  <div class="callout notice <%= type %>">
+    <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <div class="notice-text">
+      <%= sanitize(message) %>
+    </div>
+  </div>
+</div>

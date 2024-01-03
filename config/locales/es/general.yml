@@ -197,6 +197,7 @@ es:
       conditions: Condiciones de uso
       consul: aplicación CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
+      cookies_consent_setup: Configuración de cookies
       copyright: CONSUL DEMOCRACY, %{year}
       description: Este portal usa la %{consul} que es %{open_source}.
       open_source: software de código abierto
@@ -949,6 +950,7 @@ es:
     reject: "Rechazar"
     setup: "Ajustes"
     more_info_link: "Más información"
+    notice: "Tus preferencias de cookies se han guardado. Puedes cambiarlas en cualquier momento desde el enlace \"Configuración de cookies\" en el pie de página."
   cookies_setup:
     title: Configuración de cookies
     description: Esta web utiliza cookies propias y de terceros para su correcto funcionamiento. Al hacer click en el botón Aceptar, acepta el uso de estas tecnologías y el procesamiento de tus datos para estos propósitos.

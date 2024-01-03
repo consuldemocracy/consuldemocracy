@@ -198,6 +198,7 @@ en:
       consul: CONSUL DEMOCRACY application
       consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: CONSUL DEMOCRACY, %{year}
+      cookies_consent_setup: Cookies setup
       description: This portal uses the %{consul} which is %{open_source}.
       open_source: open-source software
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
@@ -949,6 +950,7 @@ en:
     reject: "Reject"
     setup: "Setup"
     more_info_link: "More information"
+    notice: "Your cookies preferences were saved! You can change them anytime from the \"Cookies setup\" link in the page footer."
   cookies_setup:
     title: Cookies setup
     description: This website uses own and third party cookies for its proper functioning. By clicking the Accept button, you agree to the use of these technologies and the processing of your data for these purposes.

@@ -60,6 +60,7 @@
 //= require initial
 //= require ahoy
 //= require app
+//= require callout
 //= require check_all_none
 //= require comments
 //= require foundation_extras
