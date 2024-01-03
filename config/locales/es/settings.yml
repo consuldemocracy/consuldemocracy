@@ -136,6 +136,8 @@ es:
       remove_investments_supports_description: "Permite que los usuarios retiren su apoyo en los proyectos de gasto de los presupuestos participativos durante la fase de apoyos."
       sdg: ODS
       sdg_description: Habilitar secciones relacionadas con Objetivos de Desarrollo Sostenible en el menú de administración y en la sección de Configuración Global.
+      cookies_consent: Banner de consentimiento de cookies
+      cookies_consent_description: Activa el banner de consentimiento de cookies para informar a los usuarios sobre las cookies que utiliza la aplicación.
     remote_census:
       general:
         endpoint: "Endpoint"
@@ -228,3 +230,8 @@ es:
         budgets_description: Permitir alineamiento de los Objetivos de Desarrollo Sostenible en presupuestos participativos
         legislation: Alineamiento ODS en legislación colaborativa
         legislation_description: Permitir alineamiento de los Objetivos de Desarrollo Sostenible en legislación colaborativa
+    cookies_consent:
+      more_info_link: Enlace a la política de cookies
+      more_info_link_description: Enlace que se muestra en el banner de consentimiento a la página de política de cookies
+      setup_page: Activar la página de configuración de consentimiento de cookies de terceros
+      setup_page_description: Permite a los usuarios configurar (aceptar o rechazar) el seguimiento de cookies de terceros.
