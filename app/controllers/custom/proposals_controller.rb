@@ -63,6 +63,7 @@ class ProposalsController < ApplicationController
 
   def un_vote
     @follow = Follow.find_or_create_by!(user: current_user, followable: @proposal)
+    @follow&.destroy
     @proposal.register_vote(current_user, "no")
   end
 

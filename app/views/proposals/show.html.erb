@@ -18,7 +18,8 @@
           @proposal.author,
           Flag.flagged?(current_user, @proposal),
           @proposal.followed_by?(current_user),
-          current_user&.voted_for?(@proposal)] do %>
+          current_user&.voted_for?(@proposal),
+          proposal.voted_yes_by_current_user(current_user)] do %>
   <div class="proposal-show">
     <div id="<%= dom_id(@proposal) %>" class="row">
       <div class="small-12 medium-9 column">

@@ -19,6 +19,8 @@ class Proposals::VotesComponent < ApplicationComponent
   private
 
   def voted?
+    # current_user&.voted_for?(proposal)
+
     proposal.voted_yes_by_current_user(current_user)
   end
 
