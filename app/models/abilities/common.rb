@@ -13,6 +13,7 @@ module Abilities
       end
 
       can :read, Proposal
+
       can :update, Proposal do |proposal|
         proposal.editable_by?(user)
       end
@@ -87,6 +88,8 @@ module Abilities
 
       if user.level_two_or_three_verified?
         can :vote, Proposal, &:published?
+        can :un_vote, Proposal, &:published?
+
 
         can [:create, :destroy], ActsAsVotable::Vote, voter_id: user.id, votable_type: "Legislation::Proposal"
 

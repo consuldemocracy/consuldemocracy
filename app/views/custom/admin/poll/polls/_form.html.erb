@@ -4,10 +4,8 @@
   <%= render "shared/errors", resource: @poll %>
 
 
-
   <div class="row">
-    <%= f.translatable_fields do |translations_form| %>
-
+    <div class="clear">
       <div class="small-12 medium-6 column">
         <%= f.datetime_field :starts_at %>
       </div>
@@ -15,6 +13,12 @@
       <div class="small-12 medium-6 column">
         <%= f.datetime_field :ends_at %>
       </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <%= f.translatable_fields do |translations_form| %>
+
 
       <div class="small-12 medium-6 column">
         <%= translations_form.text_field :name %>

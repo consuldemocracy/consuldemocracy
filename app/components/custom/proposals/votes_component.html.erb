@@ -6,6 +6,14 @@
       <div class="supported callout success">
         <%= t("proposals.proposal.already_supported") %>
       </div>
+      <%= button_to un_vote_url,
+                    class: "button button-support small expanded",
+                    title: t("proposals.proposal.support_title"),
+                    method: "post",
+                    remote: true,
+                    "aria-label": support_aria_label do %>
+        <%= t("proposals.proposal.undo_support") %>
+      <% end %>
     <% else %>
       <%= button_to vote_url,
                     class: "button button-support small expanded",

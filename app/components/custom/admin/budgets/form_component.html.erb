@@ -34,7 +34,7 @@
         <%= f.select :voting_style, voting_styles_select_options %>
       </div>
 
-      <div class="small-12 medium-2 column end">
+      <div class="small-12 medium-3 column end">
         <%= f.select :currency_symbol, currency_symbol_select_options %>
       </div>
     </div>
@@ -54,8 +54,8 @@
     <% end %>
 
     <% if feature?(:allow_images) %>
-      <div class="images small-12 column">
-        <%= render "/images/nested_image", f: f %>
+      <div class="small-12 column">
+        <%= render Images::NestedComponent.new(f) %>
         <p class="help-text"><%= t("admin.budgets.edit.image_description") %></p>
       </div>
     <% end %>
@@ -78,11 +78,10 @@
   </fieldset>
 
   <fieldset>
-    <legend><%= t("admin.budgets.edit.show_investments") %></legend>
+    <legend><%= "Rodyti investicijas" %></legend>
     <p class="form-label"></p>
-    <%= f.check_box :show_investments, checked: @budget.show_investments %>
+    <%= f.check_box :show_investments, checked: @budget.show_investments, label: "Rodyti investicijas vartotojams" %>
   </fieldset>
-
 
   <% unless wizard? %>
     <%= render "admin/shared/show_results_fields", form: f %>

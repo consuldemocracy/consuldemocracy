@@ -390,12 +390,13 @@ lt:
         view_proposal: "Ne dabar, eiti į mano idėją"
       already_supported: "Jūs išreiškėte palaikymą šiai idėjai."
       support: Remti
+      undo_support: Neberemti
       support_label: "Remti %{proposal}"
       support_title: Remti šią idėją
       supports:
-        one: 1 parėmimas
-        other: "%{count} parėmimai"
-        zero: Nėra parėmimų
+        one: 1 patinka
+        other: "%{count} patinka"
+        zero: 0 patinka
       votes:
         one: 1 balsas
         other: "%{count} balsai"
@@ -404,7 +405,7 @@ lt:
       reason_for_supports_necessary: ""
       total_percent: 100%
       archived: "Ši idėja archyvuota ir negali rinkti rėmimų."
-      successful: "Ši idėja pasiekė reikiamą parėmimų skaičių."
+      successful: "Ši idėja pasiekė reikiamą patikimų skaičių."
       selected: "Pasirinkta idėja"
     show:
       author_deleted: Vartotojas ištrintas
@@ -777,7 +778,7 @@ lt:
   unauthorized:
     default: Neturite teisės pasiekti šios puslapio dalies.
     manage:
-      all: "Neturite teisės vykdyti veiksmo „%{action}“ dėl %{subject}."
+      all: "Neturite teisės vykdyti šio veiksmo"
   users:
     login_to_comment: "Norėdami palikti komentarą, turite %{signin} arba %{signup}."
     login_to_continue: "Norėdami tęsti, turite %{signin} arba %{signup}."
