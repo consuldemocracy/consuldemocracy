@@ -38,6 +38,10 @@
         margin-bottom: $line-height / 3;
       }
     }
+
+    &.save-cookies-preferences {
+      @include hollow-button;
+    }
   }
 }
 
