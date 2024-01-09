@@ -96,6 +96,7 @@ $global-prototype-breakpoints: false !default;
 $global-button-cursor: auto !default;
 $global-color-pick-contrast-tolerance: 0 !default;
 $print-transparent-backgrounds: true !default;
+$switch-background: darken($dark-gray, 10%);
 
 @include add-foundation-colors;
 
