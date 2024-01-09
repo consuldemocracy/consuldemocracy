@@ -293,6 +293,10 @@ namespace :admin do
       put :restore
     end
   end
+
+  namespace :cookies do
+    resources :vendors, except: [:index]
+  end
 end
 
 resolve "Milestone" do |milestone|

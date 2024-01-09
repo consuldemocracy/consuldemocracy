@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_10_12_141318) do
+ActiveRecord::Schema.define(version: 2024_01_08_110154) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -473,6 +473,16 @@ ActiveRecord::Schema.define(version: 2023_10_12_141318) do
   create_table "communities", id: :serial, force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "cookies_vendors", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "cookie"
+    t.text "script"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cookie"], name: "index_cookies_vendors_on_cookie", unique: true
   end
 
   create_table "dashboard_actions", id: :serial, force: :cascade do |t|
