@@ -40,8 +40,6 @@ zh-CN:
     telegram_handle_description: "如果填写了，它将出现在页脚中"
     instagram_handle: "Instagram设置"
     instagram_handle_description: "如果填写了，它将出现在页脚中"
-    url: "主URL"
-    url_description: "您网站的主URL"
     org_name: "组织"
     org_name_description: "您的组织名称"
     related_content_score_threshold: "相关内容评分阙值"

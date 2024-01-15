@@ -7,6 +7,7 @@ class Poll::Answer < ApplicationRecord
   validates :question, presence: true
   validates :author, presence: true
   validates :answer, presence: true
+  validate :max_votes
 
   validates :answer, inclusion: { in: ->(a) { a.question.possible_answers }},
                      unless: ->(a) { a.question.blank? }
@@ -14,11 +15,33 @@ class Poll::Answer < ApplicationRecord
   scope :by_author, ->(author_id) { where(author_id: author_id) }
   scope :by_question, ->(question_id) { where(question_id: question_id) }
 
-  def save_and_record_voter_participation(token)
+  def save_and_record_voter_participation
     transaction do
       touch if persisted?
       save!
-      Poll::Voter.find_or_create_by!(user: author, poll: poll, origin: "web", token: token)
+      Poll::Voter.find_or_create_by!(user: author, poll: poll, origin: "web")
     end
   end
+
+  def destroy_and_remove_voter_participation
+    transaction do
+      destroy!
+
+      if author.poll_answers.where(question_id: poll.question_ids).none?
+        Poll::Voter.find_by(user: author, poll: poll, origin: "web").destroy!
+      end
+    end
+  end
+
+  private
+
+    def max_votes
+      return if !question || question&.unique? || persisted?
+
+      author.lock!
+
+      if question.answers.by_author(author).count >= question.max_votes
+        errors.add(:answer, "Maximum number of votes per user exceeded")
+      end
+    end
 end

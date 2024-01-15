@@ -2,7 +2,7 @@ sq:
   devise_views:
     confirmations:
       new:
-        submit: Ridergo instruksionet 
+        submit: Ridergo instruksionet
         title: Ridërgo udhëzimet e konfirmimit
       show:
         instructions: Konfirmimi i llogarisë me email %{email}
@@ -56,7 +56,7 @@ sq:
         password_label: Fjalëkalim i ri
         title: Ndrysho fjalëkalimin tënd
       new:
-        send_submit: Dërgo instruksionet 
+        send_submit: Dërgo instruksionet
         title: Harrruat fjalëkalimin?
     sessions:
       new:
@@ -84,7 +84,7 @@ sq:
           info: Ky veprim nuk mund të zhbëhet. Ju lutemi sigurohuni që kjo është ajo që ju dëshironi.
           info_reason: Nëse dëshironi, na lini një arsye (opsionale)
           submit: Fshi llogarinë time
-          title: Fshi llogarinë 
+          title: Fshi llogarinë
         edit:
           current_password_label: Fjalëkalimi aktual
           edit: Ndrysho

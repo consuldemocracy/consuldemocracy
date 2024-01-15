@@ -4,9 +4,11 @@
       <span class="icon-check-circle"
             title="<%= t("budgets.investments.investment.already_added") %>">
       </span>
-      <p class="investment-project-amount">
-        <%= investment.formatted_price %>
-      </p>
+      <% if investment.should_show_price? %>
+        <p class="investment-project-amount">
+          <%= investment.formatted_price %>
+        </p>
+      <% end %>
       <% if investment.should_show_ballots? %>
         <%= button_to budget_ballot_line_path(id: investment.id,
                                               budget_id: investment.budget_id,
@@ -21,9 +23,11 @@
     </div>
   <% else %>
     <div class="add in-favor">
-      <p class="investment-project-amount">
-        <%= investment.formatted_price %>
-      </p>
+      <% if investment.should_show_price? %>
+        <p class="investment-project-amount">
+          <%= investment.formatted_price %>
+        </p>
+      <% end %>
       <% if investment.should_show_ballots? %>
         <%= button_to budget_ballot_lines_path(investment_id: investment.id,
                                                budget_id: investment.budget_id,

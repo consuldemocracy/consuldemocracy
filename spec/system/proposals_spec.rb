@@ -538,7 +538,16 @@ describe "Proposals" do
   end
 
   context "Geozones" do
-    scenario "Default whole city is not possible" do
+    scenario "When there are not gezones defined it does not show the geozone link" do
+      visit proposal_path(create(:proposal))
+
+      expect(page).not_to have_selector "#geozone"
+      expect(page).not_to have_link "All city"
+    end
+
+    scenario "Default whole city" do
+      create(:geozone)
+      author = create(:user)
       login_as(author)
 
       visit new_proposal_path
@@ -548,6 +557,25 @@ describe "Proposals" do
       click_button "Create proposal"
 
       expect(page).to have_content "You do not have permission to carry out the action 'create' on Citizen proposal"
+    end
+
+    scenario "form shows the geozone selector when there are geozones defined" do
+      create(:geozone)
+      author = create(:user)
+      login_as(author)
+
+      visit new_proposal_path
+
+      expect(page).to have_field("Scope of operation")
+    end
+
+    scenario "form do not show geozone selector when there are no geozones defined" do
+      author = create(:user)
+      login_as(author)
+
+      visit new_proposal_path
+
+      expect(page).not_to have_field("Scope of operation")
     end
 
     scenario "Specific geozone" do
@@ -784,8 +812,8 @@ describe "Proposals" do
 
     scenario "Proposals are ordered by newest" do
       best_proposal = create(:proposal, title: "Best proposal", created_at: Time.current)
-      medium_proposal = create(:proposal, title: "Medium proposal", created_at: Time.current - 1.hour)
-      worst_proposal = create(:proposal, title: "Worst proposal", created_at: Time.current - 1.day)
+      medium_proposal = create(:proposal, title: "Medium proposal", created_at: 1.hour.ago)
+      worst_proposal = create(:proposal, title: "Worst proposal", created_at: 1.day.ago)
 
       visit proposals_path
       click_link "newest"
@@ -1286,8 +1314,7 @@ describe "Proposals" do
                   "proposal",
                   "new_proposal_path",
                   "edit_proposal_path",
-                  "proposal_path",
-                  {}
+                  "proposal_path"
 
   scenario "Erased author" do
     user = create(:user)

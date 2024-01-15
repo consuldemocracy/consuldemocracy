@@ -1,5 +1,8 @@
 nl:
   pages:
+    census_terms:
+      title: "Algemene voorwaarden voor toegang tot de telling"
+      description: "Informatiepagina over de algemene voorwaarden voor toegang tot de telling."
     conditions:
       title: Gebruiksvoorwaarden
       subtitle: JURIDISCHE KENNISGEVING OP DE GEBRUIKSVOORWAARDEN, PRIVACY EN BESCHERMING VAN GEGEVENS VAN DE OPEN OVERHEID PORTAL
@@ -10,8 +13,8 @@ nl:
       menu:
         debates: "Debatten"
         proposals: "Voorstellen"
-        budgets: "Participatory budgets"
-        polls: "Polls"
+        budgets: "Burgerbegrotingen"
+        polls: "Peilingen"
         other: "Verdere informatie"
         processes: "Proces"
       debates:
@@ -35,16 +38,16 @@ nl:
         image_alt: "Verschillende fasen in de burgerbegroting"
         figcaption: '"Steun" fase en "Stem" fase in de burgerbegroting.'
       polls:
-        title: "Polls"
+        title: "Peilingen"
         description: "Het %{link} onderdeel wordt geactiveerd elke keer wanneer een voorstel 1% steun krijgt en tot stemming over gaat, of als de gemeente een vraagstuk en besluit aan de inwoners wil voorleggen."
         link: "peilingen"
         feature_1: "Om te participeren bij de peilingen moet je %{link} en je account verifiëren."
         feature_1_link: "registreren in %{org_name}"
       processes:
-        title: "Proces"
+        title: "Plannen"
         description: "In het %{link} onderdeel kun je deelnemen in het opstellen en aanpassen van formele stukken. Je kunt hier ook je mening geven over beleid en plannen ontstaan uit eerdere debatten."
         link: "plannen"
-        feature: "Om te participeren bij de processen moet je %{link} en je account verifiëren."
+        feature: "Om deel te nemen aan de processen moet je %{link} en je account verifiëren."
         feature_link: "registreren in %{org_name}"
       faq:
         title: "Technische problemen?"
@@ -56,18 +59,18 @@ nl:
       other:
         title: "Verdere informatie"
         how_to_use: "Gebruik %{org_name} in uw gemeente"
-        sdg: "hulp bij Sustainable Development Goals"
+        sdg: "Hulp bij Sustainable Development Goals"
       how_to_use:
         text: |-
-          Gebruik het in je gemeente of help ons het te verbeteren, het is open source software.
+          Gebruik het binnen je gemeente of help ons het te verbeteren, het is gratis.
 
-          Dit platform gebruikt de [CONSUL app](https://github.com/consul/consul 'consul github') wat open source software is [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), wat betekent dat iedereen vrij is om de code te gebruiken, te kopieren, in detail te bekijken aan te passen en opnieuw de wereld in te sturen met de aanpassingen die men maakt (en daarmee anderen toe te staan dit ook te doen). Omdat wij denken dat cultuur beter en rijker wordt als het wordt opengesteld.
+          Dit platform gebruikt de [CONSUL app](https://github.com/consuldemocracy/consuldemocracy 'consul democracy github'), een programma met een [open source licentie](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu'). Dit betekent dat iedereen de code mag gebruiken, kopiëren, bekijken, aanpassen en opnieuw publiceren met alle aanpassingen die je maar wil (waardoor anderen dit ook weer kunnen doen). Omdat wij geloven dat cultuur beter en rijker wordt als het wordt opengesteld.
 
-          Als je programmeur bent kun je de code bekijken en ons helpen deze te verbeteren via [CONSUL app](https://github.com/consul/consul 'consul github').
+          Als je ontwikkelaar bent kun je de code bekijken én ons helpen deze te verbeteren via [CONSUL app](https://github.com/consuldemocracy/consuldemocracy 'consul democracy github').
       titles:
         how_to_use: Gebruik het in uw gemeente
     privacy:
-      title: Privacy Verklaring
+      title: Privacyverklaring
       subtitle: "INFORMATIE OVER GEGEVENSBESCHERMING"
     accessibility:
       title: Toegankelijkheid
@@ -99,10 +102,10 @@ nl:
               page_column: Voorstellen
             - 
               key_column: 3
-              page_column: Votes
+              page_column: Stemmen
             - 
               key_column: 4
-              page_column: Participatory budgets
+              page_column: Burgerbegrotingen
             - 
               key_column: 5
               page_column: Plannen
@@ -157,7 +160,7 @@ nl:
               description_column: Vergroot de tekstgrootte
             - 
               shortcut_column: CTRL en - (CMD  en - bij MAC)
-              description_column: Vermindert de tekstgrootte
+              description_column: Tekst verkleinen
       compatibility:
         title: Compatibiliteit met standaarden en visuele vormgeving
         description: 'Alle pagina''s van deze website voldoen aan <strong> Toegankelijkheidsrichtlijnen </strong> of generieke principes van toegankelijk ontwerp zoals opgesteld door de werkgroep <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> behorend bij W3C.'
@@ -165,6 +168,6 @@ nl:
       help: "Wat is %{org}? - Burgerparticipatie"
     verify:
       info: "Geef hier je contactgegevens op om je account te verifieren:"
-      info_code: "en de code die u heeft ontvangen:"
+      info_code: "Geef hier de code in die je hebt ontvangen:"
       submit: Verifieer mijn account
       title: Verifieer uw account

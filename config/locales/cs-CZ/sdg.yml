@@ -41,7 +41,7 @@ cs:
             long_title: "Do roku 2030 odstranit všechny formy podvýživy a do roku 2025 dosáhnout mezinárodně dohodnutých cílů ohledně zakrnění a hubnutí dětí mladších pěti let a vyřešit výživové potřeby dospívajících dívek, těhotných a kojících žen a starších osob."
             short_title: "Ukončení všech forem podvýživy"
           target_2_3:
-            long_title: "Do roku 2030 zdvojnásobit zemědělskou produktivitu a příjmy malých zemědělců – zejména žen, původních obyvatel, rodinných farmářů, pastevců a rybářů – pomocí zajištění bezpečného a rovného přístupu k půdě, dalším výrobním zdrojům (a vstupům), znalostem, finančním službám, trhům a vytvářením příležitostí k vytváření přidané hodnoty a přístupu k zaměstnání v nezemědělském sektoru."
+            long_title: "Do roku 2030 zdvojnásobit zemědělskou produktivitu a příjmy malých zemědělců – zejména žen, původních obyvatel, rodinných farmářů, pastevců a rybářů – pomocí zajištění bezpečného a rovného přístupu k půdě, dalším výrobním zdrojům a vstupům, znalostem, finančním službám, trhům a vytvářením příležitostí k vytváření přidané hodnoty a přístupu k zaměstnání v nezemědělském sektoru."
             short_title: "Zdvojnásobení produktivity a příjmů drobných výrobců potravin"
           target_2_4:
             long_title: "Do roku 2030 zajistit/zavést systémy udržitelné výroby potravin a zavést odolné zemědělské postupy, které zvýší produktivitu a výrobu a pomohou zachovat ekosystémy posilující schopnosti půdy přizpůsobit se klimatické změně, extrémnímu počasí, suchu, záplavám a dalším pohromám, a které postupně zlepší kvalitu půdy."
@@ -95,7 +95,7 @@ cs:
             long_title: "Posílit provádění Rámcové úmluvy Světové zdravotnické organizace o kontrole tabáku ve všech zemích, je-li to vhodné."
             short_title: "Provádění Rámcové úmluvy WHO o kontrole tabáku"
           target_3_B:
-            long_title: "Podporovat výzkum a vývoj vakcín a léků na přenosné i nepřesné choroby, které primárně postihují především rozvojové země, poskytnout přístup k cenově dostupným základním lékům a vakcínám v souladu s Deklarací z Dohá o Dohodě TRIPS a veřejném zdraví, která potvrzuje právo rozvojových zemí plně využít ujednání v Dohodě o obchodních aspektech práv k duševnímu vlastnictví, pokud jde o flexibilitu v ochraně veřejného zdraví a zejména v přístupu k lékům pro všechny."
+            long_title: "Podporovat výzkum a vývoj vakcín a léků na přenosné i nepřesné choroby, které primárně postihují především rozvojové země, poskytnout přístup k cenově dostupným základním lékům a vakcínám v souladu s Deklarací z Dauhá o Dohodě TRIPS a veřejném zdraví, která potvrzuje právo rozvojových zemí plně využít ujednání v Dohodě o obchodních aspektech práv k duševnímu vlastnictví, pokud jde o flexibilitu v ochraně veřejného zdraví a zejména v přístupu k lékům pro všechny."
             short_title: "Podpora výzkumu, vývoje a všeobecného přístupu k cenově dostupným vakcínám a lékům"
           target_3_C:
             long_title: "Podstatně zvýšit financování zdravotnictví a nábor, rozvoj, školení a retence pracovníků ve zdravotnictví v rozvojových zemích, zejména v těch nejméně rozvinutých a v malých ostrovních rozvojových státech."
@@ -230,7 +230,7 @@ cs:
         long_description: '<p>Udržitelný hospodářský růst podporující začlenění může být hnací silou pokroku, vytvářet důstojná pracovní místa pro všechny a zlepšovat životní úroveň.</p> <p>COVID-19 <a href="https://www.un.org/sites/un2.un.org/files/sg_report_socio-economic_impact_of_covid19.pdf">zničil životy miliard lidí</a> a ohrozil globální ekonomiku. Mezinárodní měnový fond (MMF) očekává <a href="https://blogs.imf.org/2020/04/14/the-great-lockdown-worst-economic-downturn-since-the-great-depression/">globální recesi</a> stejně silnou nebo horší než v roce 2009. Ztráta pracovních míst se stupňuje a Mezinárodní organizace práce odhaduje, že <a href="https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_743036/lang--en/index.htm">téměř polovině celosvětové pracovní síly</a> hrozí ztráta živobytí.</p> <p><a href="https://developmentfinance.un.org/press-release-financing-sustainable-development-report-2020">Ještě před vypuknutím COVID-19</a> se v roce 2020 v každé páté zemi, kde žijí miliardy lidí žijících v chudobě, pravděpodobně projeví stagnace nebo pokles příjmů na obyvatele. Nyní<a href="https://developmentfinance.un.org/press-release-financing-sustainable-development-report-2020">ekonomické a finanční šoky</a> spojené s COVID-19 - jako je narušení průmyslové výroby, pokles cen komodit, volatilita finančních trhů a rostoucí nejistota - vykolejují již tak vlažný hospodářský růst a zvyšují rizika plynoucí z dalších faktorů.&nbsp;&nbsp;</p>'
         targets:
           target_8_1:
-            long_title: "Udržovat ekonomický růst na hlavu v závislosti na podmínkách jednotlivých zemí, zejména minimálně 7procentní růst Hdp ročně v nejméně rozvinutých zemích."
+            long_title: "Udržovat ekonomický růst na hlavu v závislosti na podmínkách jednotlivých zemí, zejména minimálně 7procentní růst HDP ročně v nejméně rozvinutých zemích."
             short_title: "Udržitelný hospodářský růst"
           target_8_2:
             long_title: "Dosáhnout vyšší úrovně ekonomické produktivity pomocí diverzifikace, technologického rozvoje a inovací, mimo jiné také zaměřením se na odvětví s vysokou přidanou hodnotou a s vysokým podílem lidské práce."
@@ -260,7 +260,7 @@ cs:
             long_title: "Posílit kapacitu domácích finančních institucí na podporu a rozšíření přístupu k bankovnictví, pojišťovnictví a finančním službám pro všechny."
             short_title: "Všeobecný přístup k bankovním, pojišťovacím a finančním službám"
           target_8_A:
-            long_title: "Zvýšit podporu konceptu „Pomoc na podporu obchodu“ (Aid for Trade) pro rozvojové země, zejména těch nejméně rozvinutých, mimo jiné prostřednictvím programu „Prohloubený integrovaný rámec obchodní technické asistsence pro nejméně rozvinuté státy (Enhanced Integrated Framework for Trade-Related Technical Assistance to Least Developed Countries, Eif)."
+            long_title: "Zvýšit podporu konceptu „Pomoc na podporu obchodu“  pro rozvojové země, zejména těch nejméně rozvinutých, mimo jiné prostřednictvím programu „Prohloubený integrovaný rámec obchodní technické asistsence pro nejméně rozvinuté státy."
             short_title: "Zvýšit podporu obchodu"
           target_8_B:
             long_title: "Do roku 2020 rozvinout a uvést v život globální strategii pro zaměstnávání mladých a realizovat Globální pakt pro pracovní místa Mezinárodní organizace práce."
@@ -410,7 +410,7 @@ cs:
         title: "Klimatická opatření"
         title_in_two_lines: "Klimatická \nopatření"
         description: "Přijmout bezodkladná opatření na boj se změnou klimatu a zvládání jejích dopadů."
-        long_description: '<p>Rok 2019 byl <a href="https://news.un.org/en/story/2020/03/1059061">druhým nejteplejším rokem v historii</a> a koncem nejteplejšího desetiletí (2010- 2019), jaké kdy bylo zaznamenáno.&nbsp;&nbsp;</p> <p>Hladiny oxidu uhličitého (CO2) a dalších <a href="https://news.un.org/en/story/2020/04/1062332">skleníkových plynů v atmosféře</a> v roce 2019 vzrostly na nové rekordy.&nbsp;</p> <p>Změna klimatu ovlivňuje všechny země na všech kontinentech. Narušuje národní hospodářství a ovlivňuje životy lidí. Mění se charakter počasí, stoupá hladina moří a povětrnostní jevy jsou stále extrémnější.</p> <p>Ačkoli se předpokládá, že emise skleníkových plynů v roce 2020 klesnou asi o 6 % v důsledku zákazu cestování a zpomalení ekonomiky v důsledku pandemie COVID-19, toto zlepšení je pouze dočasné. <a href="https://news.un.org/en/story/2020/04/1062332">Změna klimatu není v pauze</a>. Jakmile se světová ekonomika začne zotavovat z pandemie, očekává se, že emise se vrátí na vyšší úroveň.</p> <p>Záchrana životů a zdrojů obživy vyžaduje naléhavá opatření k řešení jak pandemie, tak klimatické nouze.</p> <p>Pařížská dohoda <a href="https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement">přijatá v roce 2015 si klade za cíl posílit globální reakci na hrozbu změny klimatu tím, že udrží nárůst globální teploty v tomto století výrazně pod 2 stupni Celsia nad předindustriální úrovní. Cílem dohody je také posílit schopnost zemí vypořádat se s dopady změny klimatu, a to prostřednictvím vhodných finančních toků, nového technologického rámce a posíleného rámce pro budování kapacit.</p>'
+        long_description: '<p>Rok 2019 byl <a href="https://news.un.org/en/story/2020/03/1059061">druhým nejteplejším rokem v historii</a> a koncem nejteplejšího desetiletí (2010- 2019), jaké kdy bylo zaznamenáno.&nbsp;&nbsp;</p> <p>Hladiny oxidu uhličitého (CO2) a dalších <a href="https://news.un.org/en/story/2020/04/1062332">skleníkových plynů v atmosféře</a> v roce 2019 vzrostly na nové rekordy.&nbsp;</p> <p>Změna klimatu ovlivňuje všechny země na všech kontinentech. Narušuje národní hospodářství a ovlivňuje životy lidí. Mění se charakter počasí, stoupá hladina moří a povětrnostní jevy jsou stále extrémnější.</p> <p>Ačkoli se předpokládá, že emise skleníkových plynů v roce 2020 klesnou asi o 6 % v důsledku zákazu cestování a zpomalení ekonomiky v důsledku pandemie COVID-19, toto zlepšení je pouze dočasné. <a href="https://news.un.org/en/story/2020/04/1062332">Změna klimatu není v pauze</a>. Jakmile se světová ekonomika začne zotavovat z pandemie, očekává se, že emise se vrátí na vyšší úroveň.</p> <p>Záchrana životů a zdrojů obživy vyžaduje naléhavá opatření k řešení jak pandemie, tak klimatické nouze.</p> <p> <a href="https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement">Pařížská dohoda</a> přijatá v roce 2015 si klade za cíl posílit globální reakci na hrozbu změny klimatu tím, že udrží nárůst globální teploty v tomto století výrazně pod 2 stupni Celsia nad předindustriální úrovní. Cílem dohody je také posílit schopnost zemí vypořádat se s dopady změny klimatu, a to prostřednictvím vhodných finančních toků, nového technologického rámce a posíleného rámce pro budování kapacit.</p>'
         targets:
           target_13_1:
             long_title: "Ve všech zemích zvýšit odolnost a schopnost adaptace na nebezpečí související s klimatem a přírodními pohromami."
@@ -449,7 +449,7 @@ cs:
             long_title: "Do roku 2020 zakonzervovat alespoň 10 procent pobřežních a mořských oblastí v souladu s vnitrostátním i mezinárodním právem a na základě nejlepších dostupných vědeckých informací."
             short_title: "Ochrana pobřežních a mořských oblastí"
           target_14_6:
-            long_title: "Do roku 2020 zakázat některé formy dotací na rybolov, které přispívají k nadměrnému rybolovu, odstranit dotace, které přispívají k nezákonnému, nehlášenému a neregulovanému rybolovu a upustit od zavádění obdobných nových dotací s vědomím , že odpovídající a efektivní zvláštní a diferencovaný přístup k rozvojovým a nejméně rozvinutým zemím by se měl stát nedílnou součástí vyjednávání Světové obchodní organizace o dotacích na rybolov*\n\n* S ohledem na probíhající vyjednávání Světové obchodní organizace, Rozvojovou agendu a Dauhá a Hongkongským ministerským mandátem."
+            long_title: "Do roku 2020 zakázat některé formy dotací na rybolov, které přispívají k nadměrnému rybolovu, odstranit dotace, které přispívají k nezákonnému, nehlášenému a neregulovanému rybolovu a upustit od zavádění obdobných nových dotací s vědomím, že odpovídající a efektivní zvláštní a diferencovaný přístup k rozvojovým a nejméně rozvinutým zemím by se měl stát nedílnou součástí vyjednávání Světové obchodní organizace o dotacích na rybolov*\n\n* S ohledem na probíhající vyjednávání Světové obchodní organizace, Rozvojovou agendu a Dauhá a Hongkongským ministerským mandátem."
             short_title: "Ukončení dotací přispívajících k nadměrnému rybolovu"
           target_14_7:
             long_title: "Do roku 2030 zvýšit ekonomický přínos z udržitelného využívání mořských zdrojů, mimo jiné prostřednictvím řízeného rybolovu, akvakultury a cestovního ruchu pro malé ostrovní rozvojové a nejméně rozvinuté státy."
@@ -461,7 +461,7 @@ cs:
             long_title: "Zajistit malým rybářům přístup k mořským zdrojům a trhům."
             short_title: "Support Small Scale Fishers"
           target_14_C:
-            long_title: "Posílit ochranu a udržitelné využívání oceánů a jejich zdrojů prostřednictvím mezinárodního práva, jak je zapsáno v Úmluvě o mořském právu, která stanovuje právní rámec pro zachování a udržitelné využívání oceánů a jejich zdrojů, s odvoláním na článek 158 dokumentu Budoucnost, jakou chceme (The Future We Want)."
+            long_title: "Posílit ochranu a udržitelné využívání oceánů a jejich zdrojů prostřednictvím mezinárodního práva, jak je zapsáno v Úmluvě o mořském právu, která stanovuje právní rámec pro zachování a udržitelné využívání oceánů a jejich zdrojů, s odvoláním na článek 158 dokumentu Budoucnost, jakou chceme."
             short_title: "Provádění a prosazování mezinárodního námořního práva"
       goal_15:
         title: "Život na souši"
@@ -557,7 +557,7 @@ cs:
             long_title: "Posílit mobilizaci domácích zdrojů, mimo jiné prostřednictvím mezinárodní podpory rozvojovým zemím, ke zlepšení domácích kapacit pro výběr daní a dalších příjmů."
             short_title: "Mobilizace zdrojů pro zlepšení výběru domácích příjmů "
           target_17_2:
-            long_title: "Plně realizovat závazky rozvinutých zemí v rámci Oficiální rozvojové pomoci (ODA), včetně závazku mnoha vyspělých zemích poskytnout 0,7 procenta ODA/HND rozvojovým zemím a 0,15 až 0,20 procenta ODA/HND nejméně rozvinutým zemím; poskytovatelé ODA by měli zvážit stanovení cíle poskytnout alespoň 0,20 procenta ODA/HND nejméně rozvinutým zemím."
+            long_title: "Plně realizovat závazky rozvinutých zemí v rámci Oficiální rozvojové pomoci, včetně závazku mnoha vyspělých zemích poskytnout 0,7 procenta ODA/HND rozvojovým zemím a 0,15 až 0,20 procenta ODA/HND nejméně rozvinutým zemím; poskytovatelé ODA by měli zvážit stanovení cíle poskytnout alespoň 0,20 procenta ODA/HND nejméně rozvinutým zemím."
             short_title: "Provádění všech závazků rozvojové pomoci"
           target_17_3:
             long_title: "Mobilizovat dodatečné finanční prostředky z různých zdrojů pro rozvojové státy."
@@ -581,7 +581,7 @@ cs:
             long_title: "Posílit mezinárodní podporu pro realizaci efektivního a cíleného budování kapacit v rozvojových zemích na podporu národních plánů naplňování všech cílů udržitelného rozvoje, a to i prostřednictvím spolupráce sever-jih, jih-jih a trojstranné spolupráce."
             short_title: "Posílení kapacit SDG v rozvojových zemích "
           target_17_10:
-            long_title: "Podporovat univerzální, standardizovaný, otevřený, nediskriminační a spravedlivý multilaterální obchodní systém pod dohledem Světové obchodní organizace (WTO), a to i prostřednictvím závěrů vyjednávání v Rozvojové agendě WTO z Dauhá."
+            long_title: "Podporovat univerzální, standardizovaný, otevřený, nediskriminační a spravedlivý multilaterální obchodní systém pod dohledem Světové obchodní organizace, a to i prostřednictvím závěrů vyjednávání v Rozvojové agendě WTO z Dauhá."
             short_title: "Podpora univerzálního obchodního systému v rámci WTO"
           target_17_11:
             long_title: "Výrazně zvýšit vývoz rozvojových zemí, zejména s cílem zdvojnásobit podíl nejméně rozvinutých států na světovém vývozu do roku 2020."

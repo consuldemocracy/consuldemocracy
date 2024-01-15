@@ -1,5 +1,8 @@
 fr:
   pages:
+    census_terms:
+      title: "Modalités et conditions d'accès au Registre"
+      description: "Page d'information sur les modalités d'accès au Registre."
     conditions:
       title: Termes et conditions d'utilisation
       subtitle: AVIS JURIDIQUE SUR LES CONDITIONS D’UTILISATION, CONFIDENTIALITÉ ET PROTECTION DES DONNÉES PERSONNELLES DU PORTAIL
@@ -61,9 +64,9 @@ fr:
         text: |-
           Utilisez-le pour votre administration locale ou aidez-nous à l'améliorer, il s'agit d'un logiciel libre.
 
-          Ce Portail Gouvernement Ouvert est basé sur l'application [CONSUL](https://github.com/consul/consul 'consul github'), un logiciel libre publié sous [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), ce qui signifie que n'importe qui peut utiliser le code librement, le copier, le parcourir, le modifier et le redistribuer (pour permettre à d'autres d'en faire autant). Parce que nous croyons en une culture qui s'enrichit et se renforce quand elle est ouverte à tous.
+          Ce Portail Gouvernement Ouvert est basé sur l'application [CONSUL](https://github.com/consuldemocracy/consuldemocracy 'consul democracy github'), un logiciel libre publié sous [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), ce qui signifie que n'importe qui peut utiliser le code librement, le copier, le parcourir, le modifier et le redistribuer (pour permettre à d'autres d'en faire autant). Parce que nous croyons en une culture qui s'enrichit et se renforce quand elle est ouverte à tous.
 
-          Si vous êtes un développeur, vous pouvez accéder au code et nous aider à l'améliorer à [CONSUL](https://github.com/consul/consul 'consul github').
+          Si vous êtes un développeur, vous pouvez accéder au code et nous aider à l'améliorer à [CONSUL](https://github.com/consuldemocracy/consuldemocracy 'consul democracy github').
       titles:
         how_to_use: Utilisez-le pour votre gouvernement
     privacy:
@@ -72,7 +75,7 @@ fr:
     accessibility:
       title: Accessibilité
       description: |-
-        L'accessibilité du Web se réfère à la possibilité d'accès au Web et à ses contenus par toutes les personnes, indépendamment des handicaps (physiques, intellectuels ou techniques) qui peuvent survenir ou de ceux qui découlent du contexte d'utilisation (technologique ou environnemental). 
+        L'accessibilité du Web se réfère à la possibilité d'accès au Web et à ses contenus par toutes les personnes, indépendamment des handicaps (physiques, intellectuels ou techniques) qui peuvent survenir ou de ceux qui découlent du contexte d'utilisation (technologique ou environnemental).
 
         Lorsque les sites Web sont conçus en tenant compte de l'accessibilité, tous les utilisateurs peuvent accéder au contenu dans les mêmes conditions, par exemple :
       examples:

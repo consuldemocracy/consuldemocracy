@@ -4,10 +4,6 @@ ro:
       comments:
         see_all: Vezi tot
         see_complete: Vizualizare completă
-        comments_count:
-          one: "%{count} comentariu"
-          few: "%{count} comentarii"
-          other: "%{count} comentarii"
         replies_count:
           one: "%{count} răspuns"
           few: "%{count} răspunsuri"
@@ -20,10 +16,6 @@ ro:
         title: Comentarii
         comments_about: Comentarii despre
         see_in_context: Vezi în context
-        comments_count:
-          one: "%{count} comentariu"
-          few: "%{count} comentarii"
-          other: "%{count} comentarii"
       show:
         title: Comentariu
       version_chooser:
@@ -95,11 +87,6 @@ ro:
         form:
           leave_comment: Lasă-ți răspunsul
       question:
-        comments:
-          zero: Nu există comentarii
-          one: "%{count} comentariu"
-          few: "%{count} comentarii"
-          other: "%{count} comentarii"
         debate: Dezbate
       show:
         answer_question: Publicați răspunsul
@@ -141,11 +128,6 @@ ro:
         one: "%{count} propunere"
         few: "%{count} propuneri"
         other: "%{count} propuneri"
-      comments:
-        zero: "Nu există comentarii"
-        one: "%{count} comentariu"
-        few: "%{count} comentarii"
-        other: "%{count} comentarii"
       download: "Descarcă sumar"
       top_comments:
         zero: "Nu există comentarii"

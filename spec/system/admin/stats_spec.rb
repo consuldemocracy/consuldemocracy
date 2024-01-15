@@ -89,27 +89,10 @@ describe "Stats", :admin do
 
   describe "Budget investments" do
     context "Supporting phase" do
-      let(:budget) { create(:budget) }
-      let(:group_all_city) { create(:budget_group, budget: budget) }
-      let!(:heading_all_city) { create(:budget_heading, group: group_all_city) }
+      let!(:budget) { create(:budget) }
+      let(:heading_all_city) { create(:budget_heading, budget: budget) }
 
-      scenario "Number of supports in investment projects" do
-        group_2 = create(:budget_group, budget: budget)
-
-        create(:budget_investment, heading: create(:budget_heading, group: group_2), voters: [create(:user)])
-        create(:budget_investment, heading: heading_all_city, voters: [create(:user), create(:user)])
-
-        visit admin_stats_path
-        click_link "Participatory Budgets"
-        within("#budget_#{budget.id}") do
-          click_link "Supporting phase"
-        end
-
-        expect(page).to have_content "VOTES\n3"
-        expect(page).to have_link "Go back", count: 1
-      end
-
-      scenario "Number of users that have supported an investment project" do
+      scenario "Number of users and supports in investment projects" do
         group_2 = create(:budget_group, budget: budget)
         investment1 = create(:budget_investment, heading: create(:budget_heading, group: group_2))
         investment2 = create(:budget_investment, heading: heading_all_city)
@@ -124,43 +107,9 @@ describe "Stats", :admin do
           click_link "Supporting phase"
         end
 
+        expect(page).to have_content "VOTES\n3"
         expect(page).to have_content "PARTICIPANTS\n2"
-      end
-
-      scenario "Number of users that have supported investments projects per geozone" do
-        budget = create(:budget)
-
-        group_all_city  = create(:budget_group, budget: budget)
-        group_districts = create(:budget_group, budget: budget)
-
-        all_city    = create(:budget_heading, group: group_all_city)
-        carabanchel = create(:budget_heading, group: group_districts)
-        barajas     = create(:budget_heading, group: group_districts)
-
-        create(:budget_investment, heading: all_city, voters: [create(:user)])
-        create(:budget_investment, heading: carabanchel, voters: [create(:user)])
-        create(:budget_investment, heading: carabanchel, voters: [create(:user)])
-
-        visit admin_stats_path
-        click_link "Participatory Budgets"
-        within("#budget_#{budget.id}") do
-          click_link "Supporting phase"
-        end
-
-        within("#budget_heading_#{all_city.id}") do
-          expect(page).to have_content all_city.name
-          expect(page).to have_content 1
-        end
-
-        within("#budget_heading_#{carabanchel.id}") do
-          expect(page).to have_content carabanchel.name
-          expect(page).to have_content 2
-        end
-
-        within("#budget_heading_#{barajas.id}") do
-          expect(page).to have_content barajas.name
-          expect(page).to have_content 0
-        end
+        expect(page).to have_link "Go back", count: 1
       end
 
       scenario "hide final voting link" do
@@ -181,8 +130,7 @@ describe "Stats", :admin do
 
     context "Balloting phase" do
       let(:budget) { create(:budget, :balloting) }
-      let(:group) { create(:budget_group, budget: budget) }
-      let(:heading) { create(:budget_heading, group: group) }
+      let(:heading) { create(:budget_heading, budget: budget) }
       let(:investment) { create(:budget_investment, :feasible, :selected, heading: heading) }
 
       scenario "Number of votes in investment projects" do
@@ -198,19 +146,6 @@ describe "Stats", :admin do
         end
 
         expect(page).to have_content "VOTES\n3"
-      end
-
-      scenario "Number of users that have voted a investment project" do
-        create(:user, ballot_lines: [investment])
-        create(:user, ballot_lines: [investment])
-        create(:user)
-
-        visit admin_stats_path
-        click_link "Participatory Budgets"
-        within("#budget_#{budget.id}") do
-          click_link "Final voting"
-        end
-
         expect(page).to have_content "PARTICIPANTS\n2"
       end
 

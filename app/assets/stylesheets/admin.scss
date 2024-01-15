@@ -21,7 +21,7 @@ $admin-border:   2px solid $admin-border-color;
 $admin-color:    #245b80;
 $admin-text:     #434d54;
 
-$sidebar:        #245b80;
+$sidebar:        $admin-color;
 $sidebar-hover:  #25597c;
 $sidebar-active: #f4fcd0;
 
@@ -30,14 +30,6 @@ $table-header:   #ecf1f6;
 
 .admin {
   @include admin-layout;
-
-  > header {
-    border-bottom: 1px solid #eee;
-
-    > * {
-      @include full-width-background($adjust-margin: false, $adjust-padding: true);
-    }
-  }
 
   h2 {
     font-weight: 100;
@@ -58,88 +50,6 @@ $table-header:   #ecf1f6;
 
   .back {
     float: none;
-  }
-
-  .top-links {
-    background: #000;
-    color: $white;
-
-    a {
-      line-height: rem-calc($line-height * 1.5);
-    }
-  }
-
-  .top-bar {
-    height: auto;
-    padding-top: $line-height / 2;
-
-    @include breakpoint(small only) {
-
-      .top-bar-left ul {
-        display: inline-block;
-      }
-
-      .top-bar-right {
-
-        > ul {
-          border-bottom: 0;
-          padding-bottom: 0;
-          margin-bottom: 0;
-        }
-
-        .submenu {
-          position: initial;
-        }
-
-        a {
-          font-weight: normal;
-        }
-      }
-
-      [class^="icon-"] {
-        display: none;
-      }
-    }
-
-    [class^="icon-"] {
-      font-size: $base-font-size;
-    }
-
-    h1 {
-      margin-top: $line-height / 2;
-      margin-bottom: 0;
-
-      @include breakpoint(medium) {
-        margin-top: 0;
-      }
-
-      small {
-        color: inherit;
-        text-transform: uppercase;
-      }
-
-      a {
-        color: inherit;
-        display: inline-block;
-        font-family: "Lato" !important;
-        font-size: rem-calc(24);
-        font-weight: lighter;
-        line-height: 1;
-      }
-    }
-  }
-
-  .top-bar .menu > li {
-
-    @include breakpoint(medium) {
-      height: auto !important;
-    }
-  }
-
-  .title-bar {
-    color: #000;
-    position: absolute;
-    right: 12px;
   }
 
   .notifications.unread-notifications::after {
@@ -205,10 +115,6 @@ $table-header:   #ecf1f6;
       background: $table-header;
       color: $admin-text;
       padding: $line-height / 2;
-
-      label {
-        color: $white;
-      }
 
       a {
         color: inherit;
@@ -521,7 +427,7 @@ code {
     }
 
     .number {
-      color: $text;
+      color: $body-font-color;
       font-size: rem-calc(30);
       font-weight: bold;
     }
@@ -530,32 +436,6 @@ code {
 
 // 05. Management
 // --------------
-
-.user-permissions {
-
-  ul {
-    list-style-type: none;
-    margin-left: 0;
-  }
-
-  li {
-    font-size: rem-calc(14);
-    margin-bottom: rem-calc(12);
-
-    span {
-      color: $text-medium;
-      font-size: rem-calc(12);
-    }
-
-    .icon-check {
-      color: $check;
-    }
-
-    .icon-x {
-      color: $delete;
-    }
-  }
-}
 
 .account-info,
 .login-as {
@@ -632,7 +512,6 @@ code {
   }
 }
 
-.admin-content .select-geozone,
 .admin-content .select-heading {
 
   a {
@@ -640,7 +519,7 @@ code {
     display: block;
 
     &.is-active {
-      @include brand-text;
+      @include brand-color;
       font-weight: bold;
       text-decoration: underline;
     }
@@ -651,24 +530,6 @@ code {
 
   .total-price {
     white-space: nowrap;
-  }
-}
-
-.admin {
-
-  .geozone {
-    background: #ececec;
-    border-radius: rem-calc(6);
-    color: $text;
-    display: inline-block;
-    font-size: $small-font-size;
-    margin-bottom: $line-height / 3;
-    padding: $line-height / 4 $line-height / 3;
-    text-decoration: none;
-
-    &:hover {
-      background: #e0e0e0;
-    }
   }
 }
 
@@ -865,6 +726,7 @@ table {
 .fullscreen {
 
   .fullscreen-container {
+    color: color-pick-contrast($admin-color);
 
     a {
       line-height: 3rem;
@@ -877,7 +739,6 @@ table {
     .markdown-editor-header {
       vertical-align: top;
       display: inline-block;
-      color: $white;
 
       @include breakpoint(medium) {
         line-height: 3rem;
@@ -916,7 +777,7 @@ table {
     }
 
     a {
-      color: $white;
+      color: inherit;
     }
   }
 }

@@ -11,11 +11,26 @@ describe Budgets::InvestmentComponent do
     expect(page).to have_css "img[alt='#{investment.image.title}']"
   end
 
-  it "shows the default image when investment has not an image defined" do
-    investment = create(:budget_investment)
-    render_inline Budgets::InvestmentComponent.new(investment)
+  context "investment without an image" do
+    let(:component) { Budgets::InvestmentComponent.new(create(:budget_investment)) }
 
-    expect(page).to have_css "img[src*='budget_investment_no_image']"
+    it "shows the default image" do
+      render_inline component
+
+      expect(page).to have_css "img[src*='budget_investment_no_image']"
+    end
+
+    it "shows a custom default image when available" do
+      stub_const("#{SiteCustomization::Image}::VALID_IMAGES", { "budget_investment_no_image" => [260, 80] })
+      create(:site_customization_image,
+             name: "budget_investment_no_image",
+             image: fixture_file_upload("logo_header-260x80.png"))
+
+      render_inline component
+
+      expect(page).to have_css "img[src$='logo_header-260x80.png']"
+      expect(page).not_to have_css "img[src*='budget_investment_no_image']"
+    end
   end
 
   it "shows supports count when budget is valuating" do

@@ -8,6 +8,7 @@ val:
         voted:
           one: "Has votat <span>una</span> proposta."
           other: "Has votat <span>%{count}</span> propostes."
+        voted_info: "El teu vot està confirmat!"
         zero: Encara no has votat cap proposta d'inversió.
       reasons_for_not_balloting:
         not_verified: Les propostes d'inversió només poden ser avalades per usuaris verificats, %{verify_account}.
@@ -38,6 +39,9 @@ val:
         title: Pressupostos participatius
         help: Ajuda amb els pressupostos participatius
       all_phases: Fases de pressupostos participatius
+      next_phase: Fase següent
+      prev_phase: Fase anterior
+      current_phase: Fase actual
       map: Propostes de pressupostos ubicades geogràficament
       finished_budgets: Pressupostos participatius finalitzats
       see_results: Vore resultats
@@ -48,13 +52,14 @@ val:
     investments:
       form:
         title: "Crear nou projecte"
+        subtitle: "%{heading} (%{price})"
+        subtitle_without_price: "%{heading}"
         tag_category_label: "Categoríes"
         tags_instructions: "Etiqueta esta proposta. Pots elegir entre les categories propostes o introduir les que desitges"
         tags_label: Temes
         tags_placeholder: "Escriu les etiquetes que desitges separades per coma (',')"
         map_location: "Ubicació en el mapa"
         map_location_instructions: "Navega per el mapa fins la ubicació i deixa el marcador."
-        map_remove_marker: "Eliminar marcador"
       index:
         title: Pressupostos participatius
         unfeasible: Propostes d'inversió no viables
@@ -81,7 +86,9 @@ val:
           verified_only: "Per a crear una nova proposta d'inversió %{verify}."
           create: "Crear nou projecte"
           not_logged_in: "Per a crear una nova proposta d'inversió has de %{sign_in} o %{sign_up}."
+        filter: "Filtrant projectes per"
         filters:
+          not_unfeasible: "Actiu"
           selected: "Seleccionades"
           unfeasible: "Inviable"
           winners: "Guanyadores"
@@ -151,6 +158,7 @@ val:
       accepted: "Proposta d'inversió acceptada: "
       discarded: "Proposta d'inversió descartada: "
       incompatibles: Incompatibles
+      investment_title: Títol del Projecte
       investment_proyects: Llista de totes les propostes d'inversió
       unfeasible_investment_proyects: Llista de projectes d'inversió inviables
       not_selected_investment_proyects: Llista de tots els projectes d'inversió no seleccionats per a votació
@@ -165,6 +173,7 @@ val:
           label: "Estat actual del projecte"
           all: "Tots (%{count})"
         milestone_tag:
+          label: "Etiquetes de seguiment"
           all: "Tots (%{count})"
     phases:
       errors:

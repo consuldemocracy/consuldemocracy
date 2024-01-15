@@ -6,6 +6,6 @@
 
 <%= render "management/user_permissions",
       message: t("management.document_verifications.in_census_has_following_permissions"),
-      permissions: [:debates, :proposal, :support_proposal, :votes] %>
+      user: @user %>
 
 <a href="javascript:window.print();" class="button warning radius"><%= t("management.print_info") %></a>

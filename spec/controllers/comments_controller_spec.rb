@@ -41,6 +41,28 @@ describe CommentsController do
       end.not_to change { question.reload.comments_count }
     end
 
+    it "does not create an annotation comment if the allegations phase is closed" do
+      process = create(:legislation_process,
+                       allegations_start_date: 2.days.from_now,
+                       allegations_end_date: 1.month.from_now)
+
+      version = create(:legislation_draft_version, process: process)
+      annotation = create(:legislation_annotation, draft_version: version, text: "One annotation")
+
+      sign_in user
+
+      expect do
+        post :create, xhr: true,
+          params: {
+            comment: {
+              commentable_id: annotation.id,
+              commentable_type: "Legislation::Annotation",
+              body: "a comment"
+            }
+          }
+      end.not_to change { annotation.reload.comments_count }
+    end
+
     it "does not create a comment for unverified users when the commentable requires it" do
       sign_in unverified_user
 

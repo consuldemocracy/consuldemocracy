@@ -187,6 +187,41 @@ describe Setting do
     end
   end
 
+  describe ".default_org_name" do
+    it "returns the main org name for the default tenant" do
+      expect(Setting.default_org_name).to eq "CONSUL DEMOCRACY"
+    end
+
+    it "returns the tenant name for other tenants" do
+      insert(:tenant, schema: "new", name: "New Institution")
+      allow(Tenant).to receive(:current_schema).and_return("new")
+
+      expect(Setting.default_org_name).to eq "New Institution"
+    end
+  end
+
+  describe ".default_mailer_from_address" do
+    before { allow(Tenant).to receive(:default_host).and_return("consuldemocracy.org") }
+
+    it "uses the default host for the default tenant" do
+      expect(Setting.default_mailer_from_address).to eq "noreply@consuldemocracy.org"
+    end
+
+    it "uses the tenant host for other tenants" do
+      allow(Tenant).to receive(:current_schema).and_return("new")
+
+      expect(Setting.default_mailer_from_address).to eq "noreply@new.consuldemocracy.org"
+    end
+
+    context "empty default host" do
+      before { allow(Tenant).to receive(:default_host).and_return("") }
+
+      it "uses consuldemocracy.dev as host" do
+        expect(Setting.default_mailer_from_address).to eq "noreply@consuldemocracy.dev"
+      end
+    end
+  end
+
   describe ".add_new_settings" do
     context "default settings with strings" do
       before do

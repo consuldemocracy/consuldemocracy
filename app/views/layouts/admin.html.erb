@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html <%= "dir=rtl" if rtl? %> lang="<%= I18n.locale %>">
-
+<html <%= common_html_attributes %>>
   <head>
     <%= render "layouts/common_head", default_title: "Admin" %>
     <%= content_for :head %>
   </head>
 
   <body class="admin">
-    <%= render "layouts/admin_header" %>
+    <%= render Layout::AdminHeaderComponent.new(current_user) %>
 
     <div class="menu-and-content">
       <%= check_box_tag :show_menu, nil, false, role: "switch" %>
@@ -27,7 +26,7 @@
                       "aria-hidden": true, class: "button hollow expanded" %>
 
         <%= render "layouts/flash" %>
-        <%= render "layouts/officing_booth" if controller.class.parent == Officing && session[:booth_id].present? %>
+        <%= render "layouts/officing_booth" if controller.class.module_parent == Officing && session[:booth_id].present? %>
         <%= yield %>
       </div>
     </div>

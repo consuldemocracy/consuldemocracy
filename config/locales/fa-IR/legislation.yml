@@ -4,9 +4,6 @@ fa:
       comments:
         see_all: "همه را ببین\n"
         see_complete: مشاهده کامل
-        comments_count:
-          one: "%{count} نظر"
-          other: "%{count} نظرات"
         replies_count:
           one: "%{count} پاسخ"
           other: "%{count} پاسخ ها"
@@ -18,9 +15,6 @@ fa:
         title: توضیحات
         comments_about: تعداد نظرات
         see_in_context: در چهار چوب ببینید
-        comments_count:
-          one: "%{count} نظر"
-          other: "%{count} نظرات"
       show:
         title: توضیح
       version_chooser:
@@ -61,7 +55,7 @@ fa:
         no_open_processes: فرایندهای باز وجود ندارد
         no_past_processes: فرآیندهای گذشته وجود ندارد
         section_header:
-          icon_alt: آیکون قوانین پردازش 
+          icon_alt: آیکون قوانین پردازش
           title: فرآیندهای قانونی
           help: کمک در مورد فرآیندهای قانونی
         section_footer:
@@ -90,10 +84,6 @@ fa:
         form:
           leave_comment: ' پاسخ شما'
       question:
-        comments:
-          zero: بدون نظر
-          one: "%{count} نظر"
-          other: "%{count} نظرات"
         debate: بحث
       show:
         answer_question: ارسال پاسخ
@@ -121,9 +111,5 @@ fa:
         zero: "%{count} رای"
       debate_phase: "فاز بحث"
       proposals_phase: " فاز طرحها"
-      comments:
-        zero: "بدون نظر"
-        one: "%{count} نظر"
-        other: "%{count} نظرات"
       top_comments:
         zero: "بدون نظر"

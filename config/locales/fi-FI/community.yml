@@ -9,10 +9,6 @@ fi:
       topic:
         edit: Muokkaa aihetta
         destroy: Tuhoa aihe
-        comments:
-          zero: Ei kommentteja
-          one: 1 kommentti
-          other: "%{count} kommenttia"
       author: Tekijä
     topic:
       create: Luo aihe

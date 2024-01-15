@@ -9,7 +9,7 @@ eu:
       - Osti
       - Lar
     abbr_month_names:
-      - 
+      -
       - Iga
       - Ots
       - Mar
@@ -23,7 +23,7 @@ eu:
       - Nov
       - Dec
     month_names:
-      - 
+      -
       - January
       - February
       - March
@@ -40,6 +40,13 @@ eu:
     messages:
       model_invalid: "Egiaztapenaren errorea: %{errors}"
   number:
+    currency:
+      format:
+        significant: false
+        strip_insignificant_zeros: false
+    format:
+      significant: false
+      strip_insignificant_zeros: false
     human:
       format:
         significant: true

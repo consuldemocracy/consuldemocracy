@@ -82,8 +82,6 @@ sl:
         form:
           leave_comment: Prispevaj svoj komentar
       question:
-        comments:
-          zero: Ni komentarjev
         debate: Razprava
       show:
         answer_question: Dodaj odgovor
@@ -110,7 +108,5 @@ sl:
       debate_phase: "Faza debate"
       proposals_phase: "Faza predlogov"
       allegations_phase: "Faza obtožb"
-      comments:
-        zero: "Brez komentarjev"
       top_comments:
         zero: "Brez komentarjev"

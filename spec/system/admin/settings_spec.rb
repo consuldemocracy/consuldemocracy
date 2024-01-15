@@ -81,7 +81,7 @@ describe "Admin settings", :admin do
         click_on "Update"
       end
 
-      expect(page).to have_content "Map configuration updated succesfully"
+      expect(page).to have_content "Map configuration updated successfully"
     end
 
     scenario "Should display marker by default" do
@@ -104,7 +104,7 @@ describe "Admin settings", :admin do
       end
 
       expect(find("#latitude", visible: :hidden).value).not_to eq "51.48"
-      expect(page).to have_content "Map configuration updated succesfully"
+      expect(page).to have_content "Map configuration updated successfully"
     end
   end
 

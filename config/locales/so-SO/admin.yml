@@ -808,9 +808,6 @@ so:
         no_questions: "Ma jiraan wax su'aalo ah oo loo xilsaaray ra'yiururintan."
         questions_title: "Liiska sualaha"
         table_title: "Ciwaan"
-      flash:
-        question_added: "Su'aasha lagu darey ra'yiururintan"
-        error_on_question_added: "Su'aashu laguma dari karin ra'yiururintan"
     questions:
       index:
         title: "Sualo"
@@ -854,12 +851,6 @@ so:
     answers:
       new:
         title: Jawaab cusub
-      show:
-        title: Ciwaan
-        description: Sharaxaad
-        images: Sawiiro
-        images_list: Liska Sawirada
-        edit: Tafatiir Suasha
       edit:
         title: Tafatiir Suasha
       videos:

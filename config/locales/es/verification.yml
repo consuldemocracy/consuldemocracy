@@ -92,6 +92,7 @@ es:
     user_permission_proposal: Crear nuevas propuestas
     user_permission_support_proposal: Apoyar propuestas
     user_permission_votes: Votar proyectos en los presupuestos participativos
+    verification_needed: Verificación adicional necesaria
     verified_user:
       form:
         submit_button: Enviar código

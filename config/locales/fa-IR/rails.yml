@@ -9,7 +9,7 @@ fa:
       - جمعه
       - شنبه
     abbr_month_names:
-      - 
+      -
       - ژانویه
       - فوریه
       - مارس
@@ -35,7 +35,7 @@ fa:
       long: "%B%d%Y"
       short: "%b%d"
     month_names:
-      - 
+      -
       - ژانویه
       - فوریه
       - مارس
@@ -109,12 +109,12 @@ fa:
       greater_than_or_equal_to: باید بزرگتر یا مساوی باشند با %{count}
       inclusion: در لیست گنجانده نشده است
       invalid: نامعتبر است
-      less_than: باید کمتر از %{count} باشند 
+      less_than: باید کمتر از %{count} باشند
       less_than_or_equal_to: باید کمتر یا برابر با %{count} باشد
       model_invalid: "تأیید اعتبار ناموفق بود:%{errors}"
       not_a_number: شماره نیست
-      not_an_integer: باید یک عدد صحیح باشد 
-      odd: باید فرد باشد 
+      not_an_integer: باید یک عدد صحیح باشد
+      odd: باید فرد باشد
       required: باید وجود داشته باشد
       taken: "قبلا گرفته شده\nVer"
       too_long:

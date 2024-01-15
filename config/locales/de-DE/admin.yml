@@ -4,10 +4,13 @@ de:
       title: Verwaltung
     actions:
       actions: Aktionen
+      block_author: "Autor blockieren"
+      confirm_action: "Sind Sie sicher? %{action},\"%{name}\""
       confirm_delete: "Sind Sie sicher? Diese Aktion wird \"%{name}\" löschen und kann nicht rückgängig gemacht werden."
       confirm_hide: Moderation bestätigen
       delete: "Löschen"
       hide: Ausblenden
+      label: "%{action} %{name}"
       restore: Wiederherstellen
       mark_featured: Hervorgehoben
       unmark_featured: Markierung aufheben
@@ -35,6 +38,8 @@ de:
           sdg: SDG
       create:
         notice: "Banner erfolgreich erstellt"
+      destroy:
+        notice: "Banner erfolgreich gelöscht"
       edit:
         editing: Banner bearbeiten
         form:
@@ -65,8 +70,17 @@ de:
         no_activity: Hier sind keine Moderator*innen aktiv.
     budgets:
       actions:
+        ballots: "Stände erstellen"
+        confirm:
+          ballots: "Sind Sie sicher? Diese Maßnahme ist nur erforderlich, wenn Sie in der Endphase der Wahl physische Wahlkabinen einsetzen wollen. Die Bürgerinnen und Bürger können weiterhin über das Internet wählen, mit oder ohne Wahlkabinen."
+          destroy: "Sind Sie sicher? Dadurch werden das Budget und alle zugehörigen Gruppen und Rubriken gelöscht. Diese Aktion kann nicht rückgängig gemacht werden."
+        descriptions:
+          ballots: "Damit können Sie physische Stimmzettel verwalten. Verwenden Sie diese Option nur, wenn Sie in der letzten Abstimmungsphase physische Wahlkabinen zum Einsammeln der Stimmzettel verwenden."
+          calculate_winners: 'Nach der Berechnung der Ergebnisse können nur Administratoren auf sie zugreifen. Sie werden öffentlich, wenn das Projekt die "%{phase}" Phase erreicht, in der die  <strong> Option "Ergebnisse anzeigen" bei der Bearbeitung des Budgets aktiviert ist </strong>.'
+          destroy: "Dadurch werden das Budget und alle zugehörigen Gruppen und Rubriken gelöscht. Diese Aktion kann nicht rückgängig gemacht werden."
         edit: "Bürgerhaushalt bearbeiten"
         preview: "Vorschau Bürgerhaushalt"
+        preview_results: "Vorschauergebnisse"
       index:
         title: Bürgerhaushalte
         new_link: Neuen Bürgerhaushalt erstellen
@@ -101,6 +115,7 @@ de:
         delete: Bürgerhaushalt löschen
         phase: Phase
         phases_caption: "Phasen"
+        phases_table_help_text: "Die Konfiguration dieser Phasen wird nur zu Informationszwecken verwendet. Sie dient dazu, die Informationen zu den Phasen festzulegen, die auf der öffentlichen Seite des Bürgerhaushalts angezeigt werden."
         duration: "Laufzeit"
         enabled: Aktiviert
         actions: Aktionen
@@ -118,20 +133,35 @@ de:
         empty_administrators: "Keine Administrator*innen vorhanden"
         empty_valuators: "Keine Begutachter*innen vorhanden"
         name_description: "Dies ist der Name des Bürgerhaushalts, der in der Kopfzeile und auf den Kacheln verwendet wird, wenn er aktiv ist"
+        image_description: "Wenn ein Bild hochgeladen wird, wird es als Banner über diesem Bürgerhaushalt verwendet, ansonsten wird die Standardfarbe für Budgets verwendet."
+        main_call_to_action: "Hauptaufforderung zum Handeln (optional)"
+        main_call_to_action_description: "Dieser Link erscheint auf dem Hauptbanner des Bürgerhaushalts und ermutigt Ihre Nutzer, eine bestimmte Aktion durchzuführen, z. B. einen Vorschlag zu erstellen, für einen bestehenden Vorschlag abzustimmen oder mehr über den Prozess zu erfahren."
         info:
           budget_settings: "Allgemeine Einstellungen Bürgerhaushalt"
           staff_settings: "Administratoren und Bewerter, die dem Bürgerhaushalt zugeordnet sind"
+        hide_money: "Geld verstecken"
+        hide_money_help_text: "Wenn diese Option aktiviert ist, werden alle Felder, die den Geldbetrag anzeigen, während des gesamten Prozesses ausgeblendet."
       destroy:
         success_notice: Bürgerhaushalt erfolgreich gelöscht
         unable_notice: Ein Bürgerhaushalt mit zugehörigen Ausgabenvorschlägen kann nicht gelöscht werden
         unable_notice_polls: Sie können kein Budget löschen, das eine zugehörige Abstimmung hat
+      new:
+        title_multiple: Neuer Haushalt für mehrere Rubriken
+        title_single: Neuer Haushalt für eine einzige Rubrik
       help:
         budgets: "Bürgerhaushalte ermöglichen es den Bürger: innen, Vorschläge einzubringen und zu entscheiden, wie ein Teil des Haushalts ausgegeben werden soll, wobei die Vorschläge von der Verwaltung kontrolliert und bewertet werden."
         groups:
           multiple: "Gruppen sind dazu gedacht, Rubriken zu organisieren. Nachdem eine Gruppe erstellt wurde und sie Rubriken enthält, kann festgelegt werden, in wie vielen Rubriken ein Benutzer pro Gruppe abstimmen kann."
+          single: "Da dieser Haushalt nur eine Überschrift enthält, kann derselbe Name verwendet werden, da er nirgendwo erscheint. Sie können einfach mit dem nächsten Schritt fortfahren."
+        headings:
+          multiple: "Die Rubriken dienen dazu, das Geld des Bürgerhaushalts aufzuteilen. Hier können Sie Rubriken für diese Gruppe hinzufügen und den Geldbetrag zuweisen, der für jede Rubrik verwendet werden soll."
+          single: "Die Rubriken dienen dazu, das Geld des Bürgerhaushalts aufzuteilen. Da dieser Haushalt nur eine einzige Rubrik enthält, legen Sie hier das Geld fest, das in diesem Bürgerhaushalt ausgegeben werden soll."
         phases: "Bürgerhaushalte haben verschiedene Phasen. Hier können Sie Phasen aktivieren oder deaktivieren und auch jede einzelne Phase individuell anpassen."
       show:
+        add_group: "Gruppe hinzufügen"
         add_heading: "Rubrik hinzufügen"
+        groups_and_headings: "Überschriftengruppen"
+        headings_caption: "Rubriken in %{group}"
       winners:
         calculate: Bestbewertete Vorschläge ermitteln
         calculated: Die bestbewerteten Vorschläge werden ermittelt. Dies kann einen Moment dauern.
@@ -159,6 +189,7 @@ de:
       index:
         new_button: "Neue Gruppe hinzufügen"
     budget_headings:
+      no_headings: "Es gibt keine Überschriften in der Gruppe <strong>%{group}</strong>."
       create:
         notice: "Rubrik erfolgreich erstellt!"
       update:
@@ -185,10 +216,14 @@ de:
     budget_phases:
       edit:
         title: "Phase bearbeiten"
+        dates_help_text: "Nur zu Informationszwecken"
         description_help_text: Dieser Text erscheint in der Kopfzeile, wenn die Phase aktiv ist
         duration: "Laufzeit dieser Phase"
         duration_description: "Der Zeitraum, in dem diese Phase aktiv sein wird."
         enabled_help_text: Diese Phase wird öffentlich in der Zeitleiste der Phasen des Bürgerhaushalts angezeigt und ist auch für andere Zwecke aktiv
+        image_description: "Wenn ein Bild hochgeladen wurde, wird es neben der Beschreibung dieser Phase angezeigt."
+        main_call_to_action: "Hauptaufforderung zum Handeln (optional)"
+        main_call_to_action_description: "Dieser Link erscheint auf dem Hauptbanner des Bürgerhaushalts, wenn diese Phase aktiviert ist, und ermutigt Ihre Nutzer, eine bestimmte Aktion durchzuführen, z. B. einen Vorschlag zu erstellen, für einen bestehenden Vorschlag abzustimmen oder mehr über den Prozess zu erfahren."
         name_help_text: "Dies ist der Titel der Phase, den die Benutzer in der Kopfzeile lesen, wenn diese Phase aktiv ist."
         save_changes: Änderungen speichern
       index:
@@ -247,6 +282,7 @@ de:
           incompatible: Inkompatibel
           price: Preis
           author: Autor
+        cannot_calculate_winners: Das Budget muss in der Phase "%{phase}" verbleiben, um die Gewinnerprojekte zu berechnen
         see_results: "Ergebnisse anzeigen"
         milestone_tags_filter_all: "Status aller Ausgabenvorschläge"
       show:
@@ -300,7 +336,17 @@ de:
         continue: "Weiter zu Rubriken"
       headings:
         continue: "Weiter zu Phasen"
+        single:
+          back: "Zurück zu Gruppe bearbeiten"
       heading_mode:
+        multiple:
+          description: "Erstellen Sie einen Prozess mit mehreren Gruppen, Bezirken oder Themen. Sie haben so etwas wie mehrere Taschen voller Geld. Zum Beispiel 25.000€ für den \"Nordbezirk\", 30.000€ für den \"Bezirk Mitte\", 28.000€ für den \"Südbezirk\" und die ganze Stadt. Oder für mehrere Themen wie Sport, Kultur oder Gesundheit."
+          link: "Budget für mehrere Überschriften erstellen"
+          title: "<strong>Mehrere Rubriken</strong> Haushalt"
+        single:
+          description: "Erstellen Sie einen Prozess mit einer Gruppe, einem Bezirk oder einem Thema. Sie haben so etwas wie einen Beutel mit Geld. Zum Beispiel 25.000 € für den Bezirk oder 10.000 € für die Kultur."
+          link: "Budget für eine einzige Rubrik erstellen"
+          title: "<strong>Einzelposten</strong> Haushalt"
         title: "Bürgerhaushaltstyp"
       phases:
         continue: "Abschließen"
@@ -716,6 +762,7 @@ de:
           proposals: "Vorschläge"
           polls: "Umfragen"
           layouts: "Layouts"
+          machine_learning: "KI / Maschinelles Lernen"
           mailers: "E-Mails"
           management: "Management"
           welcome: "Willkommen"
@@ -736,6 +783,8 @@ de:
       debates: "Debatten"
       comments: "Kommentare"
       local_census_records: Verwaltung des lokalen Registers
+      machine_learning: "KI / Maschinelles Lernen"
+      multitenancy: Mehrmandantenfähigkeit
     administrators:
       index:
         title: Administrator*innen
@@ -1054,13 +1103,14 @@ de:
         table_title: "Titel"
         edit_answers: Antworten bearbeiten
         see_proposal: "(Vorschlag anzeigen)"
-      flash:
-        question_added: "Die Frage wurde zu dieser Abstimmung hinzugefügt"
-        error_on_question_added: "Die Frage konnte dieser Abstimmung nicht zugeordnet werden"
       destroy:
         alert: "Diese Aktion entfernt die Umfrage und alle damit verbundenen Fragen."
         success_notice: "Umfrage erfolgreich gelöscht"
         unable_notice: "Sie können keine Umfrage löschen, für die schon abgestimmt wurde"
+      votation_type:
+        title: "Art der Votierung"
+        unique_description: "Es ist nur möglich, die Frage einmal zu beantworten."
+        multiple_description: "Erlaubt die Auswahl mehrerer Antworten. Es ist möglich, die maximale Anzahl von Antworten festzulegen."
     questions:
       index:
         title: "Fragen"
@@ -1077,9 +1127,13 @@ de:
         poll_not_assigned: "Abstimmung nicht zugeordnet"
       edit:
         title: "Frage bearbeiten"
+      form:
+        poll_help: "Sie können nur Umfragen auswählen, die noch nicht begonnen haben."
       new:
         title: "Frage zur Umfrage erstellen %{poll}"
         title_proposal: "Frage erstellen"
+      destroy:
+        notice: "Frage erfolgreich gelöscht"
       answers:
         images:
           add_image: "Bild hinzufügen"
@@ -1103,17 +1157,17 @@ de:
           documents_list: Liste der Dokumente
           document_title: Titel
           document_actions: Aktionen
+      no_edit: "Sobald die Umfrage gestartet wurde, ist es nicht mehr möglich, Fragen, Antworten oder andere mit der Umfrage verbundene Inhalte zu erstellen, zu bearbeiten oder zu löschen."
     answers:
       new:
         title: Neue Antwort
-      show:
-        title: Titel
-        description: Beschreibung
-        images: Bilder
-        images_list: Liste der Bilder
-        edit: Antwort bearbeiten
       edit:
         title: Antwort bearbeiten
+      destroy:
+        success_notice: "Antwort erfolgreich gelöscht"
+      images:
+        index:
+          title: Bilder
       videos:
         index:
           title: Videos
@@ -1297,6 +1351,7 @@ de:
         label:
           booths: "Suche Wahlkabine nach Name"
           budget_investments: "Investitionen nach Titel, Beschreibung oder Überschrift suchen"
+          comments: "Kommentare suchen"
           debates: "Suche Debatten per Titel oder Beschreibung"
           legislation_processes: "Suche Prozesse nach Titel oder Beschreibung"
           legislation_proposals: "Suche Vorschläge nach Titel oder Beschreibung"
@@ -1306,6 +1361,7 @@ de:
           poll_questions: "Suche Fragen"
           polls: "Suche Umfragen nach Titel oder Beschreibung"
           proposals: "Suche Vorschläge nach Titel, Code, Beschreibung oder Frage"
+          proposal_notifications: "Suche nach Meldungen nach Titel oder Beschreibung"
           users: "Suche Benutzer*in nach Name oder E-Mail"
         search: "Suche"
       search_results: "Ergebnisse anzeigen"
@@ -1325,7 +1381,7 @@ de:
       show_results_and_stats: "Ergebnisse und Statistiken anzeigen"
       results_and_stats_reminder: "Durch das Markieren dieses Kontrollkästchens werden die Resultate und/oder Statistiken dieser Abstimmung öffentlich abrufbar und für alle Benutzer*innen sichtbar."
       close_modal: Fenster schließen
-      example_url: "https://consulproject.org"
+      example_url: "https://consuldemocracy.org"
     geozones:
       index:
         title: Bezirke
@@ -1553,7 +1609,7 @@ de:
           see_page: Seite anzeigen
         new:
           title: Neue benutzer*definierte Seite erstellen
-          slug_help: "Text zur Identifizierung dieser Seite auf der URL, z.B. <code>https://consulproject.org/page-slug</code>"
+          slug_help: "Text zur Identifizierung dieser Seite auf der URL, z.B. <code>https://consuldemocracy.org/page-slug</code>"
         page:
           created_at: Erstellt am
           status: Status
@@ -1572,6 +1628,25 @@ de:
             notice: "Aktualisiert"
           destroy:
             notice: "Entfernt"
+    tenants:
+      create:
+        notice: Mieter erfolgreich angelegt
+      form:
+        use_subdomain: "Verwenden Sie eine Subdomäne in der %{domain}-Domäne für den Zugriff auf diesen Mandanten"
+        use_domain: "Verwenden Sie eine andere Domäne für den Zugriff auf diesen Mieter"
+      hide:
+        notice: Mieter erfolgreich deaktiviert
+      index:
+        create: Mieter anlegen
+        enable: "Mieter freischalten %{tenant}"
+        enabled: Aktiviert
+      new:
+        admin_information: "Wenn Sie einen Tenant erstellen, wird Ihr aktueller Benutzer <strong>\"%{username}\"</strong> mit der E-Mail <strong>\"%{email}\"</strong> und Ihrem Passwort in die Datenbank des neuen Tenants kopiert und erhält automatisch Administrationsrechte. Beachten Sie, dass diese Benutzerkonten in völlig getrennten Datenbanken gespeichert werden. Wenn Sie also das Passwort Ihres Benutzers in einem Tenant ändern, bleiben Ihre Konten in den anderen Tenants erhalten."
+        title: Neuer Mieter*in
+      restore:
+        notice: Mieter*in erfolgreich aktiviert
+      update:
+        notice: Mieter*in erfolgreich aktualisiert
     homepage:
       title: Homepage
       description: Die aktiven Module erscheinen auf der Startseite in derselben Reihenfolge wie hier.
@@ -1641,6 +1716,52 @@ de:
         local_census_records:
           no_records_found: Keine Datensätze gefunden.
     machine_learning:
+      cancel: "Vorgang abbrechen"
+      cancel_alert: "Diese Aktion bricht das aktuelle Skript ab und es ist erforderlich, das Skript erneut auszuführen."
+      comments_summary: "Zusammenfassung der Kommentare"
+      comments_summary_description: "Zeigt eine automatisch generierte Zusammenfassung der Kommentare zu allen Elementen an, die kommentiert werden können."
+      data_folder_content: "Inhalt des Datenordners"
+      error: "Fehler:"
+      execute_script: "Skript ausführen"
+      executed_by: "Ausgeführt von:"
+      executed_script: "Ausgeführtes Skript:"
+      feature_disabled: "Diese Funktion ist deaktiviert. Um das maschinelle Lernen zu nutzen, können Sie es über den %{link} aktivieren."
+      feature_disabled_link: "Einstellungen"
+      help:
+        title_1: "Was ist KI / Maschinelles Lernen?"
+        description_1: "Traditionell werden Computerprogramme entwickelt, indem genaue Regeln dafür aufgestellt werden, was das Programm in jeder Situation tun soll und wie es die verfügbaren Informationen zu jedem Zeitpunkt verarbeiten soll. Bei dem, was gemeinhin als KI/Maschinenlernen bekannt ist, handelt es sich um eine Art von Programmen, bei denen genau festgelegt wird, welche Aufgabe zu erfüllen ist und wie zu beurteilen ist, ob die Aufgabe besser oder schlechter erfüllt wird. Im Gegensatz zu den erstgenannten Programmen entdeckt oder lernt das System jedoch, welche Methode am besten geeignet ist, um die Aufgabe zu erfüllen."
+        title_2: "Was leistet das AI / Machine Learning Modul in CONSUL?"
+        description_2: "Mit diesem Modul können beliebige KI/Machine Learning Programme in CONSUL implementiert werden. Die Programme können die in CONSUL verfügbaren Informationen verarbeiten und Ergebnisse erzeugen, die sowohl den Nutzern als auch den Verwaltern helfen, eine effektivere und intelligentere Bürgerbeteiligung durchzuführen. Das Modul wurde entwickelt, um die Implementierung und Ausführung neuer Programme zu erleichtern, wobei der allgemeine Code von CONSUL und der Code dieser neuen Programme unabhängig voneinander bleiben."
+        title_3: "Wie man dieses Modul benutzt"
+        description_3: "Um das Modul zum ersten Mal zu verwenden, müssen Sie die Anweisungen in der CONSUL-Dokumentation befolgen, um es ordnungsgemäß zu aktivieren. Sobald das Modul korrekt aktiviert ist, werden die Programme auf der Registerkarte \"Skripte ausführen\" ausgeführt. Vor der Ausführung werden auf der gleichen Registerkarte eine Schätzung der Ausführungszeit und andere relevante Informationen angezeigt. Am Ende der Ausführung können wir auf der Registerkarte \"Einstellungen\" die Inhalte aktivieren, die in CONSUL angezeigt werden, sowie weitere generierte Dateien herunterladen, die für uns nützlich sein könnten."
+        title_4: "Wie implementiert man neue AI / Machine Learning Skripte?"
+        description_4: "Bitte verwenden Sie frühere Skripte als Beispiele."
+        description_4b: "Die neuen Skripte sollten sich in dem Ordner <code>public/machine_learning/scripts</code> befinden."
+        description_4c: "Die Eingabedaten, die das Skript verwenden soll, werden als JSON-Dateien im Ordner <code>../data</code> erstellt."
+        description_4d: "Alle erzeugten Ausgaben sollten im Ordner <code>../data</code> abgelegt werden."
+        description_4e: "Es wird empfohlen, eine unabhängige <code>.ini</code> Textdatei mit den Einstellungen des Skripts zu erstellen, die den gleichen Namen wie das Skript trägt und von configparser gelesen werden kann. Diese Datei erleichtert die Änderung der Einstellungen durch die Administratoren."
+        description_4f: "Es wird empfohlen, in die erste Zeile des Skripts eine Zeichenfolge in dreifachen Anführungszeichen aufzunehmen, die einige kurze Informationen über das Skript und Links zu allen relevanten Informationen enthält. Diese Zeichenfolge wird automatisch in der Verwaltungsschnittstelle angezeigt."
+        description_4g: "Es wird empfohlen, die relevanten Informationen des Skripts in einer <code>.log</code> Textdatei mit demselben Namen wie das Skript zu protokollieren."
+        title_5: "Um AI / Machine Learning Skripte zu verwenden, müssen Sie Python auf Ihrem Server installiert haben."
+        description_5: "Hier sehen Sie die Beispielanleitung für einen Ubuntu 18.04 Server:"
+      help_text: "Diese Funktionalität ist experimentell."
+      last_execution: "Letzte Ausführung\n"
+      no_content: "Es wurde noch kein Inhalt generiert."
+      notice:
+        success: "Das letzte Skript wurde erfolgreich ausgeführt."
+        error: "Es ist ein Fehler aufgetreten. Sie können die Details unten sehen."
+        working: "Das Skript wird ausgeführt. Der Administrator, der es ausgeführt hat, erhält eine E-Mail, wenn es beendet ist."
+        delete_generated_content: "Der generierte Inhalt wurde erfolgreich gelöscht."
+      output_files: "Ausgabedateien:"
       related_content: "Verwandte Inhalte"
+      related_content_description: "Fügt automatisch generierte Inhalte zu Vorschlägen und Bürgerhaushaltsprojekten hinzu."
+      script_info: "Sie erhalten eine E-Mail in %{email}, wenn das Skript beendet ist."
+      script_name: "Name des Skripts:"
+      select_script: "Python-Skript zur Ausführung auswählen"
+      started_at: "Gestartet bei:"
       tab_help: "Hilfe"
+      tab_scripts: "Skript ausführen"
+      tab_settings: "Einstellungen / Generierte Inhalte"
       tags: "Tags"
+      tags_description: "Erzeugt automatische Tags für alle Artikel, die mit Tags versehen werden können."
+      title: "KI / Maschinelles Lernen"

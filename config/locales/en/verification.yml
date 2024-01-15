@@ -92,6 +92,7 @@ en:
     user_permission_proposal: Create new proposals
     user_permission_support_proposal: Support proposals
     user_permission_votes: Vote for budget projects
+    verification_needed: Additional verification needed
     verified_user:
       form:
         submit_button: Send code

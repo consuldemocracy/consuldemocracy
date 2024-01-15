@@ -3,9 +3,9 @@ module Polymorphic
 
     def resource
       if resource_model.to_s == "Budget::Investment"
-        @resource ||= instance_variable_get("@investment")
+        @resource ||= instance_variable_get(:@investment)
       elsif resource_model.to_s == "Legislation::Proposal"
-        @resource ||= instance_variable_get("@proposal")
+        @resource ||= instance_variable_get(:@proposal)
       else
         @resource ||= instance_variable_get("@#{resource_name}")
       end

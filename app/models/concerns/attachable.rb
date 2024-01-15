@@ -1,14 +1,12 @@
 module Attachable
-  include HasAttachment
   extend ActiveSupport::Concern
 
   included do
-    has_attachment :attachment
+    has_one_attached :attachment
     attr_accessor :cached_attachment
 
-    validate :attachment_presence
-
     validates :attachment,
+      presence: true,
       file_content_type: {
         allow: ->(record) { record.accepted_content_types },
         if: -> { association_class && attachment.attached? },
@@ -64,12 +62,4 @@ module Attachable
   def file_path
     ActiveStorage::Blob.service.path_for(attachment.blob.key)
   end
-
-  private
-
-    def attachment_presence
-      unless attachment.attached?
-        errors.add(:attachment, I18n.t("errors.messages.blank"))
-      end
-    end
 end

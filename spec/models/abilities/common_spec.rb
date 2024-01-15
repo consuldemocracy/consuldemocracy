@@ -232,6 +232,18 @@ describe Abilities::Common do
       it { should_not be_able_to(:answer, expired_poll_question_from_all_geozones)  }
       it { should_not be_able_to(:answer, expired_poll_question_from_other_geozone) }
 
+      context "Poll::Answer" do
+        let(:own_answer) { create(:poll_answer, author: user) }
+        let(:other_user_answer) { create(:poll_answer) }
+        let(:expired_poll) { create(:poll, :expired) }
+        let(:question) { create(:poll_question, :yes_no, poll: expired_poll) }
+        let(:expired_poll_answer) { create(:poll_answer, author: user, question: question, answer: "Yes") }
+
+        it { should be_able_to(:destroy, own_answer) }
+        it { should_not be_able_to(:destroy, other_user_answer) }
+        it { should_not be_able_to(:destroy, expired_poll_answer) }
+      end
+
       context "without geozone" do
         before { user.geozone = nil }
 

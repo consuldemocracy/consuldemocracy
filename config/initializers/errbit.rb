@@ -13,6 +13,9 @@ Airbrake.configure do |config|
   end
 
   config.performance_stats = false
+  config.job_stats = false
+  config.query_stats = false
+  config.remote_config = false
 end
 
 Airbrake.add_filter do |notice|
@@ -27,7 +30,8 @@ Airbrake.add_filter do |notice|
     "ActiveRecord::RecordNotFound",
     "ArgumentError",
     "FeatureFlags::FeatureDisabled",
-    "SignalException"
+    "SignalException",
+    "Apartment::TenantNotFound"
   ]
   notice.ignore! if ignorables.include? notice[:errors].first[:type]
 end

@@ -48,7 +48,7 @@
         <% end %>
         <%= render "shared/tag_cloud", taggable: "Proposal" %>
         <%= render "categories" %>
-        <%= render "geozones" %>
+        <%= render Proposals::GeozonesComponent.new %>
       </aside>
     </div>
   </div>

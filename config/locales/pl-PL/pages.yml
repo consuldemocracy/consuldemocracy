@@ -59,9 +59,9 @@ pl:
         text: |-
           Użyj tego w swoim lokalnym rządzie lub pomóż nam się rozwijać, to darmowe oprogramowanie.
 
-          Ten Open Government Portal używa [CONSUL app](https://github.com/consul/consul 'consul github') będącego darmowym oprogramowaniem, z [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), co w prostych słowach oznacza, że ktokolwiek może za darmo używać kodu swobodnie, kopiować go, oglądać w szczegółach, modyfikować i ponownie udostępniać światu wraz z dowolnymi modyfikacjami, których sobie życzy (pozwalając innym robić to samo). Ponieważ uważamy, że kultura jest lepsza i bogatsza, gdy jest wolna.
+          Ten Open Government Portal używa [CONSUL app](https://github.com/consuldemocracy/consuldemocracy 'consul democracy github') będącego darmowym oprogramowaniem, z [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), co w prostych słowach oznacza, że ktokolwiek może za darmo używać kodu swobodnie, kopiować go, oglądać w szczegółach, modyfikować i ponownie udostępniać światu wraz z dowolnymi modyfikacjami, których sobie życzy (pozwalając innym robić to samo). Ponieważ uważamy, że kultura jest lepsza i bogatsza, gdy jest wolna.
 
-          Jeśli jesteś programistą, możesz przejrzeć kod i pomóc nam go poprawiać na [CONSUL app](https://github.com/consul/consul 'consul github').
+          Jeśli jesteś programistą, możesz przejrzeć kod i pomóc nam go poprawiać na [CONSUL app](https://github.com/consuldemocracy/consuldemocracy 'consul democracy github').
       titles:
         how_to_use: Użyj go w swoim lokalnym rządzie
     privacy:
@@ -156,7 +156,7 @@ pl:
               description_column: Zmniejsza rozmiar tekstu
       compatibility:
         title: Zgodność z normami i projektowaniem wizualnym
-        description: 'Wszystkie strony witryny są zgodne z <strong> Wskazówki dotyczące dostępności </strong> lub ogólne zasady projektowania ustanowione przez Grupę Roboczą <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> należącą do W3C.'
+        description: 'Wszystkie strony witryny są zgodne z <strong>Wskazówki dotyczące dostępności</strong> lub ogólne zasady projektowania ustanowione przez Grupę Roboczą <abbr title = "Web Accessibility Initiative" lang = "en">WAI</abbr> należącą do W3C.'
     titles:
       help: "Czym jest %{org}? - Uczestnictwem obywatelskim"
     verify:

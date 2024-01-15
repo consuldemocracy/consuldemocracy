@@ -9,7 +9,7 @@ hr:
       - Pet
       - Sub
     abbr_month_names:
-      - 
+      -
       - Siječanj
       - Veljača
       - Ožuj
@@ -35,7 +35,7 @@ hr:
       long: "%B%d%Y"
       short: "%b%d"
     month_names:
-      - 
+      -
       - Siječanj
       - Veljača
       - Ožujak

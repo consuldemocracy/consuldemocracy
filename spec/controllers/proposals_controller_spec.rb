@@ -9,37 +9,26 @@ describe ProposalsController do
     end
   end
 
-  describe "PUT update" do
-    let(:file) { Rails.root.join("spec/hacked") }
-
-    before do
-      File.delete(file) if File.exist?(file)
-      InvisibleCaptcha.timestamp_enabled = false
-    end
-
+  describe "PATCH update" do
+    before { InvisibleCaptcha.timestamp_enabled = false }
     after { InvisibleCaptcha.timestamp_enabled = true }
 
-    it "ignores malicious cached attachments with remote storages" do
-      allow_any_instance_of(Image).to receive(:filesystem_storage?).and_return(false)
-      user = create(:user)
-      proposal = create(:proposal, author: user)
-      sign_in user
+    it "does not delete other proposal's map location" do
+      proposal = create(:proposal)
+      other_proposal = create(:proposal, :with_map_location)
 
-      begin
-        put :update, params: {
-          id: proposal,
-          proposal: {
-            image_attributes: {
-              title: "Hacked!",
-              user_id: user.id,
-              cached_attachment: "| touch #{file}"
-            }
-          }
-        }
-      rescue StandardError
-      ensure
-        expect(file).not_to exist
-      end
+      sign_in(proposal.author)
+
+      patch :update, params: {
+        proposal: {
+          map_location_attributes: { id: other_proposal.map_location.id },
+          responsible_name: "Skinny Fingers"
+        },
+        id: proposal.id
+      }
+
+      expect(proposal.reload.responsible_name).to eq "Skinny Fingers"
+      expect(other_proposal.reload.map_location).not_to be nil
     end
   end
 end

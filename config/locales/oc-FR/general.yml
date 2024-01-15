@@ -66,10 +66,6 @@ oc:
       form:
         submit_button: Comença un nòu debat
     debate:
-      comments:
-        zero: Sens comentaris
-        one: 1 Comentari
-        other: "%{count} comentaris"
       votes:
         zero: Sens vòts
         one: 1 vòt
@@ -125,10 +121,6 @@ oc:
       start_new: Comença un nòu debat
     show:
       author_deleted: Usatgièr eliminat
-      comments:
-        zero: Sens comentaris
-        one: 1 Comentari
-        other: "%{count} comentaris"
       comments_title: Comentaris
       edit_debate_link: Editar proposicion
       flag: Aquel debat es estat marcat coma inadequat per divèrses usatgièrs.
@@ -200,7 +192,7 @@ oc:
       accessibility: Accessibilitat
       conditions: De condicions d'usatge
       consul: Sollicitud CONSUL
-      consul_url: https://github.com/consul/consul
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: CONSUL, %{year}
       description: Aquel portal es una adaptacion de la plataforma de %{open_source} %{consul} desvolopada per la Comuna de Madrid e adaptada per la Deputacion de Valéncia.
       open_source: logicial liure
@@ -390,10 +382,6 @@ oc:
         edit: "Abans que se partege, poiretz cambiar lo tèxt que volgatz."
         view_proposal: Ara pas, veire la miá proposicion
       already_supported: As ja avalat aquela proposicion.
-      comments:
-        zero: Sens comentaris
-        one: 1 Comentari
-        other: "%{count} comentaris"
       support: Avalar
       support_title: Avalar aquela proposicion
       supports:
@@ -412,10 +400,6 @@ oc:
     show:
       author_deleted: Usatgièr eliminat
       code: "Còdi de la proposicion:"
-      comments:
-        zero: Sens comentaris
-        one: 1 Comentari
-        other: "%{count} comentaris"
       comments_tab: Comentaris
       dashboard_proposal_link: panèl
       flag: Aquela proposicion es estada marcada coma inadequada per divèrses usatgièrs.

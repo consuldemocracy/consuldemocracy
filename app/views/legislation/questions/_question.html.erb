@@ -6,9 +6,10 @@
     <h4><%= link_to question.title, legislation_process_question_path(question.process, question) %></h4>
   </div>
   <div class="debate-meta">
-    <span class="icon-comments" aria-hidden="true"></span> <span class="debate-comments">
-      <%= link_to t("legislation.questions.question.comments", count: question.comments.count),
-                  legislation_process_question_path(question.process, question) %>
-    </span> · <span class="debate-date"><%= format_date question.created_at %></span>
+    <%= render Shared::CommentsCountComponent.new(
+      question.comments.count,
+      url: legislation_process_question_path(question.process, question, anchor: "comments")
+    ) %>
+    · <span class="debate-date"><%= l question.created_at.to_date %></span>
   </div>
 </div>

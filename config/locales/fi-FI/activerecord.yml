@@ -230,7 +230,7 @@ fi:
         description: Kuvaus
       poll/question/answer/translation:
         title: Vastaus
-        description: Kuvaus
+        description: "Kuvaus"
       poll/question/answer/video:
         url: Ulkoinen video
       newsletter:

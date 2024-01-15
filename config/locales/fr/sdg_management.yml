@@ -1,19 +1,50 @@
 fr:
   sdg_management:
+    actions:
+      edit: "Attribuer des cibles et des objectifs"
+    header:
+      title: "Contenu ODD"
     homepage:
+      title: "Paramètres de la page d'accueil"
       header:
         create: "Créer un entête"
+        no_cards: "Pas d'en-tête"
         title: "Entête"
+      create_card: "Créer la carte %{phase}"
+      no_cards: "Il n'y a pas de cartes pour cette phase"
     menu:
       budget_investments: "Budgets participatifs"
       debates: "Débats"
       legislation_processes: "Processus législatifs"
+      legislation_proposals: "Propositions législatives"
       polls: "Votes"
       proposals: "Propositions"
       sdg_content: "Buts et Objectifs"
+      sdg_homepage: "Page d'accueil du ODD"
+    local_targets:
+      create:
+        notice: "Objectif localisé créée avec succès"
+      destroy:
+        notice: "Objectif localisé supprimé avec succès"
+      edit:
+        title: "Modifier l'objectif localisé"
+      form:
+        code: "Le code doit commencer par le méta-code sélectionné suivi d'un '."
+        description: "Ce texte sera affiché comme aide pour les utilisateurs."
+      index:
+        new: "Créer un objectif localisé"
+      new:
+        title: "Nouvel objectif localisé"
+      update:
+        notice: "Objectif localisé mis à jour avec succès"
     relations:
       index:
         filter: "Filtre"
         filters:
           all: "Toutes"
           pending_sdg_review: "Indécis"
+          sdg_reviewed: "Marqué comme révisé"
+      update:
+        notice: "%{relatable} mis à jour avec succès"
+      update_and_review:
+        notice: "%{relatable} a été mis à jour avec succès et marqué comme révisé"

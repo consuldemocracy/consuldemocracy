@@ -55,7 +55,6 @@ id:
         tags_placeholder: "Masukkan tag anda ingin gunakan, dipisahkan dengan koma (',')"
         map_location: "Peta lokasi"
         map_location_instructions: "Menavigasi peta lokasi dan tempat penanda."
-        map_remove_marker: "Menghapus penanda peta"
       index:
         title: Penganggaran partisipatif
         unfeasible: Proyek-proyek investasi tidak layak

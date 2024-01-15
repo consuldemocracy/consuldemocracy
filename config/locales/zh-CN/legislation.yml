@@ -4,8 +4,6 @@ zh-CN:
       comments:
         see_all: 查看所有
         see_complete: 查看完成
-        comments_count:
-          other: "%{count} 个评论"
         replies_count:
           other: "%{count} 个回复"
         cancel: 取消
@@ -16,8 +14,6 @@ zh-CN:
         title: 评论
         comments_about: 评论关于
         see_in_context: 在上下文中查看
-        comments_count:
-          other: "%{count} 个评论"
       show:
         title: 评论
       version_chooser:
@@ -89,9 +85,6 @@ zh-CN:
         form:
           leave_comment: 留下您的答案
       question:
-        comments:
-          zero: 没有评论
-          other: "%{count} 个评论"
         debate: 辩论
       show:
         answer_question: 提交答案
@@ -121,8 +114,5 @@ zh-CN:
       debate_phase: "辩论阶段"
       proposals_phase: "提议阶段"
       allegations_phase: "评论阶段"
-      comments:
-        zero: "没有评论"
-        other: "%{count} 个评论"
       top_comments:
         zero: "没有评论"

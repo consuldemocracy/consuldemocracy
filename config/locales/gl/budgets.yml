@@ -58,7 +58,6 @@ gl:
         tags_placeholder: "Escribe as etiquetas que desexes separadas por unha coma (',')"
         map_location: "Localización no mapa"
         map_location_instructions: "Navega polo mapa até a localización e coloca o marcador."
-        map_remove_marker: "Borrar o marcador do mapa"
       index:
         title: Orzamentos participativos
         unfeasible: Propostas de investimento non viables

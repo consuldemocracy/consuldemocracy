@@ -1,9 +1,0 @@
-<% milestone = first_milestone_with_image(investment) %>
-
-<% if milestone&.image.present? %>
-  <%= image_tag milestone.image.variant(:large), alt: milestone.image.title %>
-<% elsif investment.image.present? %>
-  <%= image_tag investment.image.variant(:large), alt: investment.image.title %>
-<% else %>
-  <%= image_tag "budget_execution_no_image.jpg", alt: investment.title %>
-<% end %>

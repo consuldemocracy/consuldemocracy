@@ -188,10 +188,10 @@ describe "Moderate proposal notifications" do
     end
 
     scenario "sorting proposal notifications" do
-      moderated_notification = create(:proposal_notification, :moderated, title: "Moderated notification", created_at: Time.current - 1.day)
-      moderated_new_notification = create(:proposal_notification, :moderated, title: "Moderated new notification", created_at: Time.current - 12.hours)
+      moderated_notification = create(:proposal_notification, :moderated, title: "Moderated notification", created_at: 1.day.ago)
+      moderated_new_notification = create(:proposal_notification, :moderated, title: "Moderated new notification", created_at: 12.hours.ago)
       newer_notification = create(:proposal_notification, title: "Newer notification", created_at: Time.current)
-      old_moderated_notification = create(:proposal_notification, :moderated, title: "Older notification", created_at: Time.current - 2.days)
+      old_moderated_notification = create(:proposal_notification, :moderated, title: "Older notification", created_at: 2.days.ago)
 
       visit moderation_proposal_notifications_path(filter: "all", order: "created_at")
 

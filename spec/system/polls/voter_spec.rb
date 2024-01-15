@@ -2,13 +2,11 @@ require "rails_helper"
 
 describe "Voter" do
   context "Origin", :with_frozen_time do
-    let(:poll) { create(:poll, :current) }
-    let(:question) { create(:poll_question, poll: poll) }
+    let(:poll) { create(:poll) }
+    let!(:question) { create(:poll_question, :yes_no, poll: poll) }
     let(:booth) { create(:poll_booth) }
     let(:officer) { create(:poll_officer) }
     let(:admin) { create(:administrator) }
-    let!(:answer_yes) { create(:poll_question_answer, question: question, title: "Yes") }
-    let!(:answer_no) { create(:poll_question_answer, question: question, title: "No") }
 
     before do
       create(:geozone, :in_census)
@@ -23,12 +21,40 @@ describe "Voter" do
       visit poll_path(poll)
 
       within("#poll_question_#{question.id}_answers") do
-        click_link answer_yes.title
-        expect(page).not_to have_link(answer_yes.title)
+        click_button "Vote Yes"
+
+        expect(page).to have_button("You have voted Yes")
+        expect(page).not_to have_button("Vote Yes")
       end
 
-      expect(Poll::Voter.count).to eq(1)
-      expect(Poll::Voter.first.origin).to eq("web")
+      visit poll_path(poll)
+
+      expect(page).to have_content("You have already participated in this poll.")
+      expect(page).to have_content("If you vote again it will be overwritten")
+    end
+
+    scenario "Remove vote via web - Standard" do
+      user = create(:user, :level_two)
+      create(:poll_answer, question: question, author: user, answer: "Yes")
+      create(:poll_voter, poll: poll, user: user)
+
+      login_as user
+      visit poll_path(poll)
+
+      expect(page).to have_content("You have already participated in this poll.")
+      expect(page).to have_content("If you vote again it will be overwritten")
+
+      within("#poll_question_#{question.id}_answers") do
+        click_button "You have voted Yes"
+
+        expect(page).to have_button("Vote Yes")
+        expect(page).to have_button("Vote No")
+      end
+
+      visit poll_path(poll)
+
+      expect(page).not_to have_content("You have already participated in this poll.")
+      expect(page).not_to have_content("If you vote again it will be overwritten")
     end
 
     scenario "Voting via web as unverified user" do
@@ -38,8 +64,8 @@ describe "Voter" do
       visit poll_path(poll)
 
       within("#poll_question_#{question.id}_answers") do
-        expect(page).not_to have_link(answer_yes.title, href: "/questions/#{question.id}/answer?answer=#{answer_yes.title}&token=")
-        expect(page).not_to have_link(answer_no.title, href: "/questions/#{question.id}/answer?answer=#{answer_no.title}&token=")
+        expect(page).to have_link("Yes", href: verification_path)
+        expect(page).to have_link("No", href: verification_path)
       end
 
       expect(page).to have_content("You must verify your account in order to answer")
@@ -123,7 +149,7 @@ describe "Voter" do
       scenario "Trying to vote in web and then in booth" do
         skip "Disabled by the client"
         login_as user
-        vote_for_poll_via_web(poll, question, answer_yes.title)
+        vote_for_poll_via_web(poll, question, "Yes")
         expect(Poll::Voter.count).to eq(1)
 
         click_link "Sign out"
@@ -151,7 +177,7 @@ describe "Voter" do
         visit poll_path(poll)
 
         within("#poll_question_#{question.id}_answers") do
-          expect(page).not_to have_link(answer_yes.title)
+          expect(page).not_to have_button("Yes")
         end
         expect(page).to have_content "You have already participated in a physical booth. You can not participate again."
         expect(Poll::Voter.count).to eq(1)
@@ -167,31 +193,6 @@ describe "Voter" do
 
         within "tr", text: booth.name do
           expect(page).to have_content "1"
-        end
-      end
-
-      scenario "Trying to vote in web again" do
-        login_as user
-        vote_for_poll_via_web(poll, question, answer_yes.title)
-        expect(Poll::Voter.count).to eq(1)
-
-        visit poll_path(poll)
-
-        expect(page).to have_content "You have already participated in this poll. If you vote again it will be overwritten."
-        within("#poll_question_#{question.id}_answers") do
-          expect(page).not_to have_link(answer_yes.title)
-        end
-
-        travel_back
-
-        click_link "Sign out"
-
-        login_as user
-        visit poll_path(poll)
-
-        within("#poll_question_#{question.id}_answers") do
-          expect(page).to have_link(answer_yes.title)
-          expect(page).to have_link(answer_no.title)
         end
       end
     end
@@ -216,7 +217,7 @@ describe "Voter" do
       visit poll_path(poll)
 
       within("#poll_question_#{question.id}_answers") do
-        expect(page).not_to have_link(answer_yes.title)
+        expect(page).not_to have_button("Yes")
       end
 
       expect(page).to have_content "You have already participated in a physical booth. You can not participate again."

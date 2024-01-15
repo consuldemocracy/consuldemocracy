@@ -73,30 +73,6 @@ oc:
       hi: Adieu
       new_comment_by: I a un nòu comentari d'avaloracion de <strong>%{commenter}</strong> a l'inversion budgetària %{investment}
       commenter_info: "%{commenter}, %{time}:"
-    new_actions_notification_rake_created:
-      subject: "Mai de notícias sus la vòstra proposicion ciutadana"
-      hi: "Adieu %{name},"
-      new_resource: "NÒU RECORS SENS BLÒC"
-      introduction: "Cossí sabètz ja, a la web %{created_at_day} jorn de detla %{created_at_month} avètz creat la proposicion en faiçon de borrolhon %{title}."
-      text_1: "Cada còp que volgatz, podètz publicar en aquel ligam: %{link_to_published}. Se sètz pas encara segur ..."
-      text_2: "Aprofechatz aquel moment! Aprenètz, apondètz d'autras personas amb los meteisses interèsses e preparatz la difusion qu'auretz de besonh quand publicatz definitivament la vòstra proposicion."
-      text_3: "E per vos acompanhar en aquel rèpte, avètz aicí las novetats ..."
-      text_4: "Donatz un còp d'uèlh a aquela NÒVA ACCION recomandada:"
-      text_5: "La seguenta accion que recomandam es:"
-      footer_text: "Cossí totjorn, dintra al panèl de proposicions e t’explicarem amb detalh coma utilizar aqueles recorses e coma traire’n lo maximal partit.."
-      dashboard_button: "Endavant, descobrís-los!"
-    new_actions_notification_rake_published:
-      subject: "Mai de notícias sus la vòstra proposicion ciutadana"
-      hi: "Adieu %{name},"
-      new_resource: "NÒU RECORS SENS BLÒC"
-      introduction: "Cossí sabètz ja, a la web %{published_at_day} jorn de detla %{published_at_month} publiquès la proposicion %{title}."
-      text_1: "Plan, tibat %{votes_count} supòrt fins ara Felicitat!"
-      text_2: "Aital doncas, avètz disponible un nòu recors que vos ajudarà a seguir endavant."
-      text_3: "Te tròbas de manca %{days_count} de jorns abans de la proposicion %{max_votes_count} apieja e va a referendum. S'animar e seguir en estendent. Te mancan d'idèas?"
-      text_4: "NÒVA ACCION DE DIFUSION RECOMANDADA"
-      text_5: "Encara n’i a mai, consultatz l’accion seguenta:"
-      footer_text: "Cossí totjorn, dintra al panèl de proposicions e t’explicarem amb detalh coma utilizar aqueles recorses e coma traire’n lo maximal partit.."
-      dashboard_button: "Endavant, descobrís-los!"
     new_actions_notification_on_create:
       subject: "La proposicion de ciutadan del projècte se crèa"
       hi: "Adieu %{name}!"

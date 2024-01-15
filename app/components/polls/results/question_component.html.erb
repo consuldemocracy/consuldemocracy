@@ -1,0 +1,25 @@
+<h3 id="<%= question.title.parameterize %>"><%= question.title %></h3>
+<table id="question_<%= question.id %>_results_table">
+  <thead>
+    <tr>
+      <%- question.question_answers.each do |answer| %>
+        <th scope="col" class="<%= answer_styles(answer) %>">
+          <% if most_voted_answer?(answer) %>
+            <span class="show-for-sr"><%= t("polls.show.results.most_voted_answer") %></span>
+          <% end %>
+          <%= answer.title %>
+        </th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <%- question.question_answers.each do |answer| %>
+        <td id="answer_<%= answer.id %>_result" class="<%= answer_styles(answer) %>">
+          <%= answer.total_votes %>
+          (<%= answer.total_votes_percentage.round(2) %>%)
+        </td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>

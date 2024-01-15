@@ -71,10 +71,12 @@ module Abilities
       can [:create, :destroy], Follow, user_id: user.id
 
       can [:destroy], Document do |document|
-        document.documentable&.author_id == user.id
+        document.documentable_type != "Poll::Question::Answer" && document.documentable&.author_id == user.id
       end
 
-      can [:destroy], Image, imageable: { author_id: user.id }
+      can [:destroy], Image do |image|
+        image.imageable_type != "Poll::Question::Answer" && image.imageable&.author_id == user.id
+      end
 
       can [:create, :destroy], DirectUpload
 
@@ -109,6 +111,9 @@ module Abilities
         end
         can :answer, Poll::Question do |question|
           question.answerable_by?(user)
+        end
+        can :destroy, Poll::Answer do |answer|
+          answer.author == user && answer.question.answerable_by?(user)
         end
       end
 

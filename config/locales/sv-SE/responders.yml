@@ -32,7 +32,6 @@ sv:
         translation: "Översättningen har uppdaterats"
       destroy:
         budget_investment: "Budgetförslaget har raderats."
-        error: "Kunde inte radera"
         topic: "Ämnet har raderats."
         poll_question_answer_video: "Videosvaret har raderats."
         valuator_group: "Bedömargruppen har tagits bort"

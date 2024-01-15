@@ -19,7 +19,6 @@ eu:
     youtube_handle: "Youtube erabiltzailea"
     telegram_handle: "Telegram erabiltzailea"
     instagram_handle: "Instagram erabiltzailea"
-    url: "WEB orokorraren URL-a"
     org_name: "Antolakuntzaren izena"
     related_content_score_threshold: "Erlazionatutako edukiaren puntuazio muga"
     mailer_from_name: "Bidaltzaile email izena"

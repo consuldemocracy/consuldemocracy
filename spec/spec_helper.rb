@@ -3,6 +3,7 @@ require "email_spec"
 require "devise"
 require "knapsack_pro"
 
+Dir["./spec/factory_bot/**/*.rb"].sort.each { |f| require f }
 Dir["./spec/models/concerns/*.rb"].each { |f| require f }
 Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
 Dir["./spec/shared/**/*.rb"].sort.each  { |f| require f }
@@ -45,7 +46,7 @@ RSpec.configure do |config|
     example.run
     self.use_transactional_tests = true
 
-    DatabaseCleaner.clean_with(:truncation)
+    ActiveRecord::Tasks::DatabaseTasks.truncate_all
     Rails.application.load_seed
   end
 
@@ -115,6 +116,14 @@ RSpec.configure do |config|
 
   config.after(:each, :delay_jobs) do
     Delayed::Worker.delay_jobs = false
+  end
+
+  config.before(:each, :seed_tenants) do
+    Apartment.seed_after_create = true
+  end
+
+  config.after(:each, :seed_tenants) do
+    Apartment.seed_after_create = false
   end
 
   config.before(:each, :small_window) do

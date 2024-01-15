@@ -32,7 +32,7 @@ describe "Budget Investments" do
                   "new_management_budget_investment_path",
                   "",
                   "management_budget_investment_path",
-                  { budget_id: "budget_id" },
+                  mappable_path_arguments: { budget_id: "budget_id" },
                   management: true
 
   context "Load" do
@@ -314,6 +314,8 @@ describe "Budget Investments" do
     end
 
     scenario "Support investments on behalf of someone else when there are more headings" do
+      Setting["org_name"] = "CONSUL"
+
       create(:budget_investment, heading: heading, title: "Default heading investment")
       create(:budget_investment, heading: create(:budget_heading, group: group))
 
@@ -407,6 +409,51 @@ describe "Budget Investments" do
   end
 
   context "Printing" do
+    scenario "Shows all published budgets, last created first" do
+      finished_budget = create(:budget, :finished)
+      accepting_budget = create(:budget)
+      draft_budget = create(:budget, published: false)
+      login_as_manager(manager)
+
+      click_link "Print budget investments"
+
+      within "#budget_#{accepting_budget.id}" do
+        expect(page).to have_link("Print budget investments")
+      end
+      within "#budget_#{finished_budget.id}" do
+        expect(page).to have_link("Print budget investments")
+      end
+      expect(page).not_to have_content draft_budget.name
+      expect(accepting_budget.name).to appear_before(finished_budget.name)
+    end
+
+    scenario "Shows a message when there are no budgets to show" do
+      login_as_manager(manager)
+
+      click_link "Print budget investments"
+
+      expect(page).to have_content("There are no active participatory budgets.")
+    end
+
+    scenario "Show pagination when needed" do
+      allow(Budget).to receive(:default_per_page).and_return(1)
+      create(:budget, name: "Children")
+      create(:budget, name: "Sports")
+      login_as_manager(manager)
+      click_link "Print budget investments"
+
+      expect(page).to have_content("Sports")
+
+      within("ul.pagination") do
+        expect(page).to have_content("1")
+        expect(page).to have_link("2", href: print_investments_management_budgets_path(page: "2"))
+        expect(page).not_to have_content("3")
+        click_link "Next", exact: false
+      end
+
+      expect(page).to have_content("Children")
+    end
+
     scenario "Printing budget investments" do
       16.times { create(:budget_investment, heading: heading) }
 

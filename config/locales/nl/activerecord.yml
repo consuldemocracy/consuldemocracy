@@ -14,8 +14,8 @@ nl:
         one: "activiteit"
         other: "activiteiten"
       budget:
-        one: "Budget"
-        other: "Budgetten"
+        one: "Burgerbegroting"
+        other: "Burgerbegrotingen"
       budget/investment:
         one: "Investering"
         other: "Investeringen"
@@ -35,8 +35,8 @@ nl:
         one: "Discussie"
         other: "Discussies"
       tag:
-        one: "Term"
-        other: "Termen"
+        one: "Label"
+        other: "Labels"
       user:
         one: "Gebruiker"
         other: "Gebruikers"
@@ -107,14 +107,14 @@ nl:
         one: "Voorstel"
         other: "Voorstellen"
       legislation/draft_versions:
-        one: "Concept"
-        other: "Conceptem"
+        one: "Conceptversie"
+        other: "Conceptversies"
       legislation/questions:
         one: "Vraag"
         other: "Vragen"
       legislation/question_options:
         one: "Vraag optie"
-        other: "Vraag keuzen"
+        other: "Vraag opties"
       legislation/answers:
         one: "Antwoord"
         other: "Antwoorden"
@@ -155,9 +155,12 @@ nl:
         description_balloting: "Omschrijving in de stemfase"
         description_reviewing_ballots: "Omschrijving gedurende de evaluatie van stemmen"
         description_finished: "Omschrijving wanneer het budget is afgerond"
-        phase: "Fase"
+        phase: "Huidige fase"
         currency_symbol: "Valuta"
+        voting_style: "Definitieve stemwijze"
+        voting_style_knapsack: "Knapzak"
         voting_style_approval: "Goedkeuring"
+        hide_money: "Verberg geldbedrag voor dit budget"
       budget/translation:
         main_link_text: "Linktekst"
         main_link_url: "De link verwijst naar (voeg een link toe)"
@@ -211,6 +214,8 @@ nl:
       progress_bar/kind:
         primary: "Primair"
         secondary: "Secundair"
+      budget/group:
+        max_votable_headings: "Maximum aantal rubrieken waarin een gebruiker projecten kan selecteren"
       budget/group/translation:
         name: "Groepsnaam"
       budget/heading:
@@ -262,7 +267,7 @@ nl:
         retired_explanation: "Toelichting"
       user:
         login: "Email of gebruikersnaam"
-        email: "Email"
+        email: "E-mail"
         username: "Gebruikersnaam"
         password_confirmation: "Wachtwoord bevestiging"
         password: "Wachtwoord"
@@ -289,7 +294,7 @@ nl:
         responsible_name: "Verantwoordelijke"
       poll:
         name: "Naam"
-        title: "Name"
+        title: "Naam"
         starts_at: "Begindatum"
         ends_at: "Einddatum"
         geozone_restricted: "Beperkt tot gebied"
@@ -298,7 +303,7 @@ nl:
       active_poll/translation:
         description: "Beschrijving"
       poll/booth:
-        name: "Name"
+        name: "Naam"
         location: "Location"
       poll/translation:
         name: "Naam"
@@ -322,7 +327,7 @@ nl:
         body: "Bericht"
         title: "Title"
       signature_sheet:
-        title: "Title"
+        title: "Titel"
         signable_type: "Geschikt voor tekenen"
         signable_id: "Geschikt voor identificatie"
         document_numbers: "Documentnummers"
@@ -338,7 +343,7 @@ nl:
         title: "Title"
         description: "Beschrijving"
       sdg/phase/kind:
-        sensitization: "Bewustmaking"
+        sensitization: "Bewustwording"
         planning: "Planning"
         monitoring: "Controle"
       sdg/target:
@@ -367,9 +372,14 @@ nl:
       site_customization/content_block:
         name: Naam
         locale: taal
-        body: Platte tekst
+        body: Hoofdtekst
       tag:
-        name: "Type the naam van het onderwerp"
+        name: "Type de naam van het onderwerp"
+      tenant:
+        domain: "Domein"
+        schema: "Domein / Subdomein"
+        subdomain: "Subdomein"
+        url: "URL"
       topic:
         title: "Title"
         description: "Tekst"
@@ -380,7 +390,7 @@ nl:
         post_started_at: "Bijdrage start op"
         target_url: "Link"
       banner/translation:
-        title: "Title"
+        title: "Titel"
         description: "Beschrijving"
       legislation/process:
         title: Titel
@@ -437,16 +447,16 @@ nl:
         text: Reactie
       document:
         title: Titel
-        attachment: "Bijlage"
+        attachment: "Document kiezen"
       image:
         title: Titel
-        attachment: "Bijlage"
+        attachment: "Afbeelding kiezen"
       poll/question/answer:
         title: Antwoord
         description: Omschrijving
       poll/question/answer/translation:
         title: Antwoord
-        description: Omschrijving
+        description: "Omschrijving"
       poll/question/answer/video:
         title: Titel
         url: Externe video
@@ -454,7 +464,7 @@ nl:
         segment_recipient: Ontvangers
         subject: Onderwerp
         from: "Van"
-        body: Email inhoud
+        body: E-mail inhoud
       admin_notification:
         segment_recipient: Ontvangers
         title: Titel
@@ -482,22 +492,39 @@ nl:
         short_description: Korte beschrijving
         description: Beschrijving
         link: Externe link
+        request_to_administrators: Voeg in de bron een knop toe om de bron op te vragen bij de beheerders
+        day_offset: Hoeveel dagen na het aanmaken van het voorstel wil je dat het wordt geactiveerd?
+        required_supports: Hoeveel stemmen moet het voorstel krijgen om geactiveerd te worden?
+        order: Je kan de plek waar deze actie aan de gebruiker wordt getoond instellen in de lijst met acties
         active: Actief
         action_type: Type
+        action_type_proposed_action: "Voorgestelde actie"
+        action_type_resource: "Bron"
+        published_proposal: "Voor gepubliceerde voorstellen?"
       dashboard/administrator_task:
         source: Bron
+        user: Uitgevoerd door
       link:
         label: Titel
         url: Link
       valuator:
         description: Beschrijving
         valuator_group_id: Beoordelaarsgroep
+        can_comment: Kan reacties plaatsen
+        can_edit_dossier: Kan dossiers bewerken
       valuator_group:
         name: "Groepsnaam"
       local_census_record:
         document_type: Documentsoort
         document_number: Document nummer
         date_of_birth: Date of birth
+        postal_code: Postcode
+      votation_type:
+        max_votes: Maximumaantal stemmen
+        vote_type: Stemvorm
+      votation_type/vote_type:
+        unique: Uniek antwoord
+        multiple: Meerdere antwoorden
     errors:
       models:
         user:
@@ -571,8 +598,17 @@ nl:
           attributes:
             valuation:
               cannot_comment_valuation: "Je kunt niet reageren op een beoordeling"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Reeds vertaalde bron
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "moet starten met dezelfde code als het doel gevolgd met een put en eindigen op een nummer"
       messages:
         record_invalid: "Validatie mislukt: %{errors}"
+        another_poll_active: Er is een andere verkiezing actief in de gekozen periode
         restrict_dependent_destroy:
           has_one: "Kan onderdeel niet verwijderen omdat een afhankelijk %{record} bestaat"
           has_many: "Kan onderdeel niet verwijderen omdat een afhankelijk %{record} bestaat"

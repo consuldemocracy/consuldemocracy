@@ -425,7 +425,7 @@ ka:
         description: აღწერა
       poll/question/answer/translation:
         title: პასუხი
-        description: აღწერა
+        description: "აღწერა"
       poll/question/answer/video:
         title: სათაური
         url: სხვა სერვერზე განთავსებული ვიდეოს ბმული

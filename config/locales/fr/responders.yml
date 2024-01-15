@@ -32,7 +32,6 @@ fr:
         translation: "Traduction mise à jour avec succès"
       destroy:
         budget_investment: "Budget d'investissement supprimé avec succès."
-        error: "Suppression impossible"
         topic: "Sujet supprimé avec succès."
         poll_question_answer_video: "Réponse vidéo supprimée avec succès."
         valuator_group: "Groupe d’évaluation supprimé avec succès"

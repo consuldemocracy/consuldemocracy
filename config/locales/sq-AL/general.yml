@@ -62,10 +62,6 @@ sq:
       form:
         submit_button: Filloni një debat
     debate:
-      comments:
-        zero: Nuk ka komente
-        one: 1 koment
-        other: "%{count} komente"
       votes:
         zero: Asnjë votë
         one: 1 Votë
@@ -121,10 +117,6 @@ sq:
       start_new: Filloni një debat
     show:
       author_deleted: Përdoruesi u fshi
-      comments:
-        zero: Nuk ka komente
-        one: 1 koment
-        other: "%{count} komente"
       comments_title: Komentet
       edit_debate_link: Ndrysho
       flag: Ky debat është shënuar si i papërshtatshëm nga disa përdorues.
@@ -178,7 +170,7 @@ sq:
       accessibility: Dispnueshmësia
       conditions: Termat dhe kushtet e përdorimit
       consul: Consul Tirana
-      consul_url: https://github.com/consul/consul
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: Bashkia Tiranë, %{year}
       description: Ky portal përdor %{consul} i cili është %{open_source}.
       open_source: programet open-source
@@ -351,10 +343,6 @@ sq:
         edit: "Para se të shpërndahet, do të jeni në gjendje ta ndryshoni tekstin si ju pëlqen."
         view_proposal: Jo tani, shko tek propozimi im
       already_supported: Ju e keni mbështetur tashmë këtë propozim. Shperndaje!
-      comments:
-        zero: Nuk ka komente
-        one: 1 koment
-        other: "%{count} komente"
       support: Suporti
       support_title: Mbështetni këtë projekt
       supports:
@@ -372,10 +360,6 @@ sq:
     show:
       author_deleted: Përdoruesi u fshi
       code: "Kodi Propozimit"
-      comments:
-        zero: Nuk ka komente
-        one: 1 koment
-        other: "%{count} komente"
       comments_tab: Komentet
       flag: Ky propozim është shënuar si i papërshtatshëm nga disa përdorues.
       notifications_tab: Njoftimet

@@ -1,47 +1,64 @@
 require "rails_helper"
 
 describe "Answers", :admin do
-  scenario "Create" do
-    question = create(:poll_question)
+  let(:future_poll) { create(:poll, :future) }
+  let(:current_poll) { create(:poll) }
 
-    visit admin_question_path(question)
-    click_link "Add answer"
+  describe "Create" do
+    scenario "Is possible for a not started poll" do
+      question = create(:poll_question, poll: future_poll)
 
-    fill_in "Answer", with: "The answer is always 42"
-    fill_in_ckeditor "Description", with: "The Hitchhiker's Guide To The Universe"
+      visit admin_question_path(question)
+      click_link "Add answer"
 
-    click_button "Save"
+      expect(page).to have_link "Go back", href: admin_question_path(question)
 
-    expect(page).to have_content "The answer is always 42"
-    expect(page).to have_content "The Hitchhiker's Guide To The Universe"
-  end
+      fill_in "Answer", with: "The answer is always 42"
+      fill_in_ckeditor "Description", with: "The Hitchhiker's Guide To The Universe"
 
-  scenario "Create second answer and place after the first one" do
-    question = create(:poll_question)
-    create(:poll_question_answer, title: "First", question: question, given_order: 1)
+      click_button "Save"
 
-    visit admin_question_path(question)
-    click_link "Add answer"
+      expect(page).to have_content "Answer created successfully"
+      expect(page).to have_content "The answer is always 42"
+      expect(page).to have_content "The Hitchhiker's Guide To The Universe"
+    end
 
-    fill_in "Answer", with: "Second"
-    fill_in_ckeditor "Description", with: "Description"
+    scenario "Is not possible for an already started poll" do
+      question = create(:poll_question, poll: current_poll)
 
-    click_button "Save"
+      visit admin_question_path(question)
 
-    expect("First").to appear_before("Second")
+      expect(page).not_to have_link "Add answer"
+      expect(page).to have_content "Once the poll has started it will not be possible to create, edit or"
+    end
+
+    scenario "Create second answer and place after the first one" do
+      question = create(:poll_question, poll: future_poll)
+      create(:poll_question_answer, title: "First", question: question, given_order: 1)
+
+      visit admin_question_path(question)
+      click_link "Add answer"
+
+      fill_in "Answer", with: "Second"
+      fill_in_ckeditor "Description", with: "Description"
+
+      click_button "Save"
+
+      expect("First").to appear_before("Second")
+    end
   end
 
   scenario "Update" do
-    question = create(:poll_question)
-    answer = create(:poll_question_answer, question: question, title: "Answer title", given_order: 2)
+    question = create(:poll_question, poll: future_poll)
+    create(:poll_question_answer, question: question, title: "Answer title", given_order: 2)
     create(:poll_question_answer, question: question, title: "Another title", given_order: 1)
 
-    visit admin_answer_path(answer)
+    visit admin_question_path(question)
+    within("tr", text: "Answer title") { click_link "Edit" }
 
-    click_link "Edit answer"
+    expect(page).to have_link "Go back", href: admin_question_path(question)
 
     fill_in "Answer", with: "New title"
-
     click_button "Save"
 
     expect(page).to have_content "Changes saved"
@@ -52,6 +69,21 @@ describe "Answers", :admin do
     expect(page).not_to have_content "Answer title"
 
     expect("Another title").to appear_before("New title")
+  end
+
+  scenario "Destroy" do
+    answer = create(:poll_question_answer, poll: future_poll, title: "I'm not useful")
+
+    visit admin_question_path(answer.question)
+
+    within("tr", text: "I'm not useful") do
+      accept_confirm("Are you sure? This action will delete \"I'm not useful\" and can't be undone.") do
+        click_button "Delete"
+      end
+    end
+
+    expect(page).to have_content "Answer deleted successfully"
+    expect(page).not_to have_content "I'm not useful"
   end
 
   scenario "Reorder" do

@@ -25,9 +25,6 @@ zh-CN:
       topic:
         edit: 编辑主题
         destroy: 销毁主题
-        comments:
-          zero: 没有评论
-          other: "%{count} 个评论"
       author: 作者
       back: 返回 %{community} %{proposal}
     topic:

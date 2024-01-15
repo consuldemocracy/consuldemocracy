@@ -54,10 +54,6 @@ fa:
       form:
         submit_button: شروع بحث
     debate:
-      comments:
-        zero: بدون نظر
-        one: 1 نظر
-        other: "%{count} نظرات"
       votes:
         zero: بدون رای
         one: 1 رای
@@ -94,10 +90,6 @@ fa:
       start_new: شروع بحث
     show:
       author_deleted: کاربر حذف شد
-      comments:
-        zero: بدون نظر
-        one: 1 نظر
-        other: "%{count} نظرات"
       comments_title: توضیحات
       edit_debate_link: ویرایش
       share: "اشتراک گذاری\n"
@@ -204,10 +196,6 @@ fa:
       form:
         submit_button: ایجاد طرح
     proposal:
-      comments:
-        zero: بدون نظر
-        one: 1 نظر
-        other: "%{count} نظرات"
       support: پشتیبانی
       supports:
         zero: بدون پشتیبانی
@@ -220,10 +208,6 @@ fa:
     show:
       author_deleted: کاربر حذف شد
       code: "کد طرح:"
-      comments:
-        zero: بدون نظر
-        one: 1 نظر
-        other: "%{count} نظرات"
       comments_tab: توضیحات
       notifications_tab: اطلاعیه ها
       milestones_tab: نقطه عطف

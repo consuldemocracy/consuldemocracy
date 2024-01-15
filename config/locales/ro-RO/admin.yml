@@ -1062,9 +1062,6 @@ ro:
         table_title: "Titlu"
         edit_answers: Editează răspunsuri
         see_proposal: "(Vezi propunere)"
-      flash:
-        question_added: "Întrebare adăugată la acest sondaj"
-        error_on_question_added: "Întrebarea nu a putut fi atribuită acestui sondaj"
       destroy:
         alert: "Această acțiune va elimina chestionarul și întrebările asociate acestuia."
         success_notice: "Chestionar șters cu succes"
@@ -1114,12 +1111,6 @@ ro:
     answers:
       new:
         title: Răspuns nou
-      show:
-        title: Titlu
-        description: Descriere
-        images: Imagini
-        images_list: Listă de imagini
-        edit: Editează răspuns
       edit:
         title: Editează răspuns
       videos:
@@ -1333,7 +1324,7 @@ ro:
       color_help: Format hexadecimal
       show_results_and_stats: "Afișează rezultate și statistici"
       results_and_stats_reminder: "Marcarea acestor căsuțe de selectare a rezultatelor și / sau statisticilor va fi disponibilă publicului și fiecare utilizator le va vedea."
-      example_url: "https://consulproject.org"
+      example_url: "https://consuldemocracy.org"
     geozones:
       index:
         title: Geozonă
@@ -1564,7 +1555,7 @@ ro:
           see_page: Vezi pagina
         new:
           title: Creați o nouă pagină personalizată
-          slug_help: "Text pentru a identifica această pagină pe URL, de exemplu <code>https://consulproject.org/page-slug </code>"
+          slug_help: "Text pentru a identifica această pagină pe URL, de exemplu <code>https://consuldemocracy.org/page-slug </code>"
         page:
           created_at: Creat la
           status: Status

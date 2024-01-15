@@ -267,7 +267,7 @@ describe Poll::Stats do
 
         expect(stats.version).to eq "v#{time.to_i}"
 
-        travel_back
+        unfreeze_time
 
         travel_to 2.seconds.from_now do
           expect(stats.version).to eq "v#{time.to_i}"

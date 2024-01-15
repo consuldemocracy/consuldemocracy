@@ -5,7 +5,7 @@
       <tr>
         <th><%= Budget::Heading.human_attribute_name(:name) %></th>
         <% if budget.show_money? %>
-          <th class="text-center"><%= Budget::Heading.human_attribute_name(:price) %></th>
+          <th><%= Budget::Heading.human_attribute_name(:price) %></th>
         <% end %>
         <th><%= Budget::Heading.human_attribute_name(:geozone_id) %></th>
         <th><%= Budget::Heading.human_attribute_name(:population) %></th>
@@ -13,6 +13,7 @@
         <% if budget.approval_voting? %>
           <th><%= Budget::Heading.human_attribute_name(:max_ballot_lines) %></th>
         <% end %>
+        <th><%= Budget::Heading.human_attribute_name(:geozone_id) %></th>
         <th><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
@@ -26,11 +27,14 @@
           <td><%= heading.geozone&.name %></td>
           <td><%= heading.population %></td>
           <td>
-            <%= heading.allow_custom_content ? t("admin.shared.true_value") : t("admin.shared.false_value") %>
+            <%= heading.allow_custom_content ? t("shared.yes") : t("shared.no") %>
           </td>
           <% if budget.approval_voting? %>
             <td><%= heading.max_ballot_lines %></td>
           <% end %>
+          <td>
+            <%= geozone_for(heading) %>
+          </td>
           <td>
             <%= render Admin::TableActionsComponent.new(heading) %>
           </td>

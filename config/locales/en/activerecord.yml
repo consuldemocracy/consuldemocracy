@@ -124,6 +124,9 @@ en:
       images:
         one: "Image"
         other: "Images"
+      tenant:
+        one: "tenant"
+        other: "tenants"
       topic:
         one: "Topic"
         other: "Topics"
@@ -145,6 +148,9 @@ en:
       local_census_record:
         one: Local census record
         other: Local census records
+      votation_type:
+        one: Votation type
+        other: Votation types
     attributes:
       budget:
         name: "Name"
@@ -195,7 +201,9 @@ en:
       geozone:
         name: Name
         external_code: "External code (optional)"
+        color: "Color (optional)"
         census_code: "Census code (optional)"
+        geojson: "GeoJSON data (optional)"
         html_map_coordinates: "HTML <map> Coordinates (optional)"
       milestone:
         status_id: "Current status (optional)"
@@ -375,6 +383,11 @@ en:
         body: Body
       tag:
         name: "Type the name of the topic"
+      tenant:
+        domain: "Domain"
+        schema: "Domain / Subdomain"
+        subdomain: "Subdomain"
+        url: "URL"
       topic:
         title: "Title"
         description: "Initial text"
@@ -451,7 +464,7 @@ en:
         description: Description
       poll/question/answer/translation:
         title: Answer
-        description: Description
+        description: "Description (optional)"
       poll/question/answer/video:
         title: Title
         url: External video
@@ -514,6 +527,12 @@ en:
         document_number: Document number
         date_of_birth: Date of birth
         postal_code: Postal code
+      votation_type:
+        max_votes: Maximum number of votes
+        vote_type: Votation type
+      votation_type/vote_type:
+        unique: Unique answer
+        multiple: Multiple answers
     errors:
       models:
         user:
@@ -528,6 +547,10 @@ en:
           attributes:
             max_per_day:
               invalid: "You have reached the maximum number of private messages per day"
+        geozone:
+          attributes:
+            geojson:
+              invalid: "The GeoJSON provided does not follow the correct format. It must follow the \"Polygon\" or \"MultiPolygon\" type format."
         image:
           attributes:
             attachment:

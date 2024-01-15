@@ -1,6 +1,6 @@
 class Management::UsersController < Management::BaseController
   def new
-    @user = User.new(user_params)
+    @user = User.new(user_params.merge(verified_at: Time.current))
   end
 
   def create
@@ -59,7 +59,6 @@ class Management::UsersController < Management::BaseController
       @user.confirmed_at = Time.current
 
       @user.newsletter = false
-      @user.email_on_proposal_notification = false
       @user.email_digest = false
       @user.email_on_direct_message = false
       @user.email_on_comment = false

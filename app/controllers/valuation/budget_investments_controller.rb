@@ -4,9 +4,9 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
 
   feature_flag :budgets
 
+  before_action :load_budget
   before_action :restrict_access_to_assigned_items, only: [:show, :edit, :valuate]
   before_action :restrict_access, only: [:edit, :valuate]
-  before_action :load_budget
   before_action :load_investment, only: [:show, :edit, :valuate]
 
   has_orders %w[oldest], only: [:show, :edit]
@@ -16,8 +16,9 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
 
   def index
     @heading_filters = heading_filters
-    @investments = if current_user.valuator? && @budget.present?
-                     @budget.investments.visible_to_valuators.scoped_filter(params_for_current_valuator, @current_filter)
+    @investments = if current_user.valuator?
+                     @budget.investments.visible_to_valuator(current_user.valuator)
+                            .scoped_filter(params.permit(:budget_id, :heading_id), @current_filter)
                             .order(cached_votes_up: :desc)
                             .page(params[:page])
                    else
@@ -68,7 +69,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     end
 
     def heading_filters
-      investments = @budget.investments.by_valuator(current_user.valuator&.id).visible_to_valuators.distinct
+      investments = @budget.investments.visible_to_valuator(current_user.valuator)
       investment_headings = Budget::Heading.where(id: investments.pluck(:heading_id)).sort_by(&:name)
 
       all_headings_filter = [
@@ -88,11 +89,6 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
       end
     end
 
-    def params_for_current_valuator
-      Budget::Investment.filter_params(params).to_h.merge({ valuator_id: current_user.valuator.id,
-                                                            budget_id: @budget.id })
-    end
-
     def valuation_params
       params.require(:budget_investment).permit(allowed_params)
     end
@@ -106,7 +102,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     end
 
     def restrict_access
-      unless current_user.administrator? || current_budget.valuating?
+      unless current_user.administrator? || @budget.valuating?
         raise CanCan::AccessDenied, I18n.t("valuation.budget_investments.not_in_valuating_phase")
       end
     end

@@ -124,7 +124,7 @@ describe "Polls" do
   end
 
   scenario "Edit poll is not allowed for current polls" do
-    poll = create(:poll, :current, related: proposal)
+    poll = create(:poll, related: proposal)
 
     visit proposal_dashboard_polls_path(proposal)
 
@@ -232,7 +232,7 @@ describe "Polls" do
   end
 
   scenario "View results available for current polls" do
-    poll = create(:poll, :current, related: proposal)
+    poll = create(:poll, related: proposal)
 
     visit proposal_dashboard_polls_path(proposal)
 

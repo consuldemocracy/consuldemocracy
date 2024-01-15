@@ -42,6 +42,26 @@ describe ProposalNotification do
     end
   end
 
+  describe ".search" do
+    it "searches by title" do
+      notification = create(:proposal_notification, title: "Check this!", body: "It's awesome!")
+
+      expect(ProposalNotification.search("Check")).to eq([notification])
+    end
+
+    it "searches by body" do
+      notification = create(:proposal_notification, title: "Check this!", body: "It's awesome!")
+
+      expect(ProposalNotification.search("awesome")).to eq([notification])
+    end
+
+    it "does not return non-matching records" do
+      create(:proposal_notification, title: "Check this!", body: "It's awesome!")
+
+      expect(ProposalNotification.search("terrible")).to be_empty
+    end
+  end
+
   describe "minimum interval between notifications" do
     before do
       Setting[:proposal_notification_minimum_interval_in_days] = 3

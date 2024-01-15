@@ -62,10 +62,6 @@ val:
       form:
         submit_button: Iniciar un debat
     debate:
-      comments:
-        zero: Sense comentaris
-        one: 1 Comentari
-        other: "%{count} comentaris"
       votes:
         zero: Sense vots
         one: 1 vot
@@ -121,10 +117,6 @@ val:
       start_new: Iniciar un debat
     show:
       author_deleted: Usuari eliminat
-      comments:
-        zero: Sense comentaris
-        one: 1 Comentari
-        other: "%{count} Comentaris"
       comments_title: Comentaris
       edit_debate_link: Editar
       flag: Este debat ha sigut marcat com a inapropiat per alguns usuaris.
@@ -159,6 +151,8 @@ val:
     document: Document
     topic: Tema
     image: Imatge
+    site_customization/page: pàgina
+    sdg/local_target: objectiu local
   geozones:
     none: Tota la ciutat
   layouts:
@@ -171,6 +165,7 @@ val:
       proposal_header:
         published: Publicada
         draft: Esborrany
+        retired: Retras
       proposal_totals:
         supports:
           zero: Sense avals
@@ -178,7 +173,7 @@ val:
       accessibility: Accessibilitat
       conditions: Termes i condicions d'us
       consul: Aplicació CONSUL
-      consul_url: https://github.com/consul/consul
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: CONSUL, %{year}
       description: Este portal utilitza la %{consul} que es %{open_source}.
       open_source: software de codi obert
@@ -246,6 +241,8 @@ val:
       sign_in: Entra amb Google
       sign_up: Regístrat amb Google
       name: Google
+    wordpress_oauth2:
+      name: Wordpress
     twitter:
       sign_in: Entra amb Twitter
       sign_up: Regístrat amb Twitter
@@ -351,10 +348,6 @@ val:
         edit: "Abans de publicar-se podràs modificar el text al teu gust."
         view_proposal: Ara no, anar a la meua proposta
       already_supported: Ja has avalat aquesta proposta. Comparteixla!
-      comments:
-        zero: Sense comentaris
-        one: 1 Comentari
-        other: "%{count} Comentaris"
       support: Avalar
       support_title: Avalar aquesta proposta
       supports:
@@ -372,11 +365,8 @@ val:
     show:
       author_deleted: Usuari eliminat
       code: "Codi de la proposta:"
-      comments:
-        zero: Sense comentaris
-        one: 1 Comentari
-        other: "%{count} Comentaris"
       comments_tab: Comentaris
+      dashboard_proposal_link: Panell
       flag: Esta proposta ha sigut marcada com inapropiada per diversos usuaris.
       notifications_tab: Notificacions
       milestones_tab: Seguiments
@@ -395,6 +385,8 @@ val:
     menu:
       community: Comunitat
       polls: Votacions
+      mailing: Correu electrònic
+      poster: Pòster
       related_content: Contingut relacionat
     progress:
       supports: Avals
@@ -404,6 +396,8 @@ val:
     recommended_actions:
       pending_title: Pendents
       done_title: Realitzada
+    next_goal:
+      title: Objectiu
     community:
       access_community: Accedir a la comunitat
       participants: Participants
@@ -422,10 +416,12 @@ val:
       form:
         add_question: Escriu un títol a la pregunta
       question_fields:
+        remove_question: Eliminar pregunta
         add_answer: Afegir resposta
     poster:
       options:
         preview: Vista previa
+        download: Descarrega
     mailing:
       mailing_options:
         preview: Vista previa
@@ -520,6 +516,7 @@ val:
       date_5: "Personalitzada"
       from: "De"
       general: "Amb el text"
+      goal: "Per SDG"
       search: "Filtre"
       title: "Cerca avançada"
       to: "Fins"
@@ -585,6 +582,9 @@ val:
     translations:
       remove_language: Eliminar idioma
       add_language: Afegir idioma
+    required: "Camps obligatoris"
+    comments:
+      zero: "Sense comentaris"
   social:
     facebook: "Facebook de %{org}"
     twitter: "Twitter de %{org}"
@@ -734,3 +734,13 @@ val:
     form:
       delete_button: Eliminar
       cancel_button: Cancel·lar
+    nested_links:
+      title: Enllaços
+      note: Afegeix els enllaços d'interes
+  communities:
+    show:
+      surveys: Enquestes
+    subnav:
+      surveys: Enquestes
+  remote_translations:
+    button: Traduir pàgina

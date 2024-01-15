@@ -29,7 +29,6 @@ fa:
         valuator_group: " ارزیابی  با موفقیت به روز رسانی شده"
       destroy:
         budget_investment: "پروژه سرمایه گذاری با موفقیت حذف شد."
-        error: "حذف نشد."
         topic: "موضوع با موفقیت حذف شد."
         poll_question_answer_video: " ویدئو پاسخ با موفقیت حذف شد."
         valuator_group: "گروه ارزیابی با موفقیت حذف شده"

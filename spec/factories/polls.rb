@@ -6,11 +6,7 @@ FactoryBot.define do
 
     starts_at { 1.month.ago }
     ends_at { 1.month.from_now }
-
-    trait :current do
-      starts_at { 2.days.ago }
-      ends_at { 2.days.from_now }
-    end
+    to_create { |poll| poll.save(validate: false) }
 
     trait :expired do
       starts_at { 1.month.ago }
@@ -22,9 +18,8 @@ FactoryBot.define do
       ends_at { 2.months.ago }
     end
 
-    trait :recounting do
-      starts_at { 1.month.ago }
-      ends_at { Date.current }
+    trait :future do
+      starts_at { 1.day.from_now }
     end
 
     trait :published do
@@ -63,6 +58,28 @@ FactoryBot.define do
         create(:poll_question_answer, question: question, title: "No")
       end
     end
+
+    trait :abc do
+      after(:create) do |question, evaluator|
+        %w[A B C].each do |letter|
+          create(:poll_question_answer, question: question, title: "Answer #{letter}")
+        end
+      end
+    end
+
+    factory :poll_question_unique do
+      after(:create) do |question|
+        create(:votation_type_unique, questionable: question)
+      end
+    end
+
+    factory :poll_question_multiple do
+      transient { max_votes { 3 } }
+
+      after(:create) do |question, evaluator|
+        create(:votation_type_multiple, questionable: question, max_votes: evaluator.max_votes)
+      end
+    end
   end
 
   factory :poll_question_answer, class: "Poll::Question::Answer" do
@@ -84,6 +101,10 @@ FactoryBot.define do
 
     trait :with_video do
       after(:create) { |answer| create(:poll_answer_video, answer: answer) }
+    end
+
+    factory :future_poll_question_answer do
+      poll { association(:poll, :future) }
     end
   end
 
@@ -145,7 +166,6 @@ FactoryBot.define do
     poll { budget&.poll || association(:poll, budget: budget) }
     trait :from_web do
       origin { "web" }
-      token { SecureRandom.hex(32) }
     end
 
     trait :from_booth do

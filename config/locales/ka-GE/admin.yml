@@ -993,9 +993,6 @@ ka:
         table_title: "სათაური"
         edit_answers: პასუხების რედაქტირება
         see_proposal: "(ინიციატივის ნახვა)"
-      flash:
-        question_added: "შეკითხვა დაემატა კენჭისყრას"
-        error_on_question_added: "შეკითხვის დამატება მოცემულ კენჭისყრაზე ვერ მოხერხდა"
       destroy:
         alert: "ამ მოქმედებით წაიშლება კენჭისყრა და მასთან დაკავშირებული შეკითხვები."
         success_notice: "კენჭისყრა წარმატებით წაიშალა"
@@ -1045,12 +1042,6 @@ ka:
     answers:
       new:
         title: ახალი პასუხი
-      show:
-        title: სათაური
-        description: აღწერა
-        images: ფოტოსურათები
-        images_list: ფოტოსურათების სია
-        edit: პასუხის რედაქტირება
       edit:
         title: პასუხის რედაქტირება
       videos:
@@ -1470,7 +1461,7 @@ ka:
           see_page: გვერდის ნახვა
         new:
           title: ახალი ინდივიდუალური გვერდის შექმნა
-          slug_help: "ტექსტი, რომელიც ამ გვერდის ბმულის (URL) იდენტიფიკაციისთვის გამოიყენება, მაგალითად <code>https://consulproject.org/page-slug</code>"
+          slug_help: "ტექსტი, რომელიც ამ გვერდის ბმულის (URL) იდენტიფიკაციისთვის გამოიყენება, მაგალითად <code>https://consuldemocracy.org/page-slug</code>"
         page:
           created_at: შექმნის თარიღი
           status: სტატუსი
