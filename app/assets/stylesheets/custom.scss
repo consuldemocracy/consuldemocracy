@@ -17,7 +17,7 @@ fieldset {
 }
 
 .menu-button {
-  color: $text;
+  color: $black;
   margin-left: $line-height / 2;
 }
 
@@ -109,7 +109,7 @@ a {
 }
 
 .more-info-content h3 {
-  color: $text;
+  color: $black;
 }
 
 // 3. Navigation and footer
@@ -148,7 +148,7 @@ a {
     margin-bottom: 0;
 
     > li a {
-      color: $text;
+      color: $black;
 
       @include breakpoint(medium) {
         margin-left: $line-height / 4;
@@ -181,7 +181,7 @@ a {
 .dropdown.menu > li {
 
   &.is-active > a {
-    color: $text;
+    color: $black;
   }
 }
 

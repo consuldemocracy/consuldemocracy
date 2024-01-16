@@ -51,7 +51,7 @@
       <li>
         <%= layout_menu_link_to t("layouts.header.collaborative_legislation"),
                                 legislation_processes_path,
-                                controller.class.parent == Legislation,
+                                controller.class.module_parent == Legislation,
                                 accesskey: "4" %>
       </li>
     <% end %>
