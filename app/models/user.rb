@@ -137,7 +137,7 @@ class User < ApplicationRecord
 
     oauth_email           = auth.info.email
     oauth_verified        = auth.info.verified || auth.info.verified_email || auth.info.email_verified || auth.extra.raw_info.email_verified
-    oauth_email_confirmed = oauth_email.present? && oauth_verified
+    oauth_email_confirmed = oauth_email.present? # && oauth_verified
     oauth_user            = User.find_by(email: oauth_email) if oauth_email_confirmed
 #Rails.logger.info("auth verified #{auth.info.verified}")
 #Rails.logger.info("google email verified #{auth.info.extra.raw_info.email_verified}")
