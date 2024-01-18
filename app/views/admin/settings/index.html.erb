@@ -3,7 +3,7 @@
   <%= render "filter_subnav" %>
 
   <div class="tabs-panel is-active" id="tab-configuration">
-    <%= render "configuration_settings_tab" %>
+    <%= render Admin::Settings::ConfigurationTabComponent.new %>
   </div>
 
   <div class="tabs-panel" id="tab-participation-processes">
