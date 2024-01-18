@@ -1,9 +1,8 @@
 <% if feature?(:map) %>
   <h2><%= t("admin.settings.index.map.title") %></h2>
 
-  <% tab = "#tab-map-configuration" %>
   <%= render Admin::Settings::TableComponent.new(setting_name: "setting") do %>
-    <% %w[map.latitude map.longitude map.zoom].each do |key| %>
+    <% settings.each do |key| %>
       <%= render Admin::Settings::RowComponent.new(key, tab: tab) %>
     <% end %>
   <% end %>
