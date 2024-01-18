@@ -1,21 +1,18 @@
 <% if feature?(:remote_census) %>
   <h2><%= t("admin.settings.index.remote_census.title") %></h2>
 
-  <% tab = "#tab-remote-census-configuration" %>
   <%= render Admin::Settings::TableComponent.new(setting_name: "remote_census_general_name") do %>
-    <%= render Admin::Settings::RowComponent.new("remote_census.general.endpoint", tab: tab) %>
+    <% general_settings.each do |key| %>
+      <%= render Admin::Settings::RowComponent.new(key, tab: tab) %>
+    <% end %>
   <% end %>
   <%= render Admin::Settings::TableComponent.new(setting_name: "remote_census_request_name") do %>
-    <% %w[remote_census.request.method_name remote_census.request.structure
-          remote_census.request.document_type remote_census.request.document_number
-          remote_census.request.date_of_birth remote_census.request.postal_code].each do |key| %>
+    <% request_settings.each do |key| %>
       <%= render Admin::Settings::RowComponent.new(key, tab: tab) %>
     <% end %>
   <% end %>
   <%= render Admin::Settings::TableComponent.new(setting_name: "remote_census_response_name") do %>
-    <% %w[remote_census.response.date_of_birth remote_census.response.postal_code
-          remote_census.response.district remote_census.response.gender remote_census.response.name
-          remote_census.response.surname remote_census.response.valid].each do |key| %>
+    <% response_settings.each do |key| %>
       <%= render Admin::Settings::RowComponent.new(key, tab: tab) %>
     <% end %>
   <% end %>
