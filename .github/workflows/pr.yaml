@@ -43,6 +43,14 @@ jobs:
           pr_title: "Pulling ${{ github.ref }} into trebnje-k8s"
 
       -
+        name: pull-request-novo-mesto
+        uses: repo-sync/pull-request@v2
+        with:
+          destination_branch: "novo-mesto-k8s"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          pr_title: "Pulling ${{ github.ref }} into novo-mesto-k8s"
+
+       -
         name: pull-request-staging
         uses: repo-sync/pull-request@v2
         with:
