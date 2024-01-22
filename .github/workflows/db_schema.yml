@@ -33,6 +33,8 @@ jobs:
         run: for i in config/*.example; do cp "$i" "${i/.example}"; done
       - name: Backup schema file
         run: cp db/schema.rb db/commited_schema.rb
+      - name: Generate custom config files
+        run: touch config/{census_geozones.csv,entidades_censo.csv,entities_geozones_dict.json,geozones_mapping.json,padrones.csv}
       - name: Setup database
         run: bundle exec rake db:create db:migrate
       - name: Check the commited schema is correct
