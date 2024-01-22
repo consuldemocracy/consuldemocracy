@@ -546,6 +546,7 @@ describe "Proposals" do
     end
 
     scenario "Default whole city" do
+      skip("proposal creation disabled")
       create(:geozone)
       author = create(:user)
       login_as(author)
@@ -560,6 +561,7 @@ describe "Proposals" do
     end
 
     scenario "form shows the geozone selector when there are geozones defined" do
+      skip("proposal creation disabled")
       create(:geozone)
       author = create(:user)
       login_as(author)

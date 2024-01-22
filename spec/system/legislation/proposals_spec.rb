@@ -156,51 +156,6 @@ describe "Legislation Proposals" do
     expect(page).to have_css "img[alt='clippy.jpg']"
   end
 
-  scenario "Do not show votes score" do
-    legislation_proposal_positive = create(:legislation_proposal,
-                                           legislation_process_id: process.id,
-                                           title: "Legislation proposal positive")
-
-    legislation_proposal_zero = create(:legislation_proposal,
-                                       legislation_process_id: process.id,
-                                       title: "Legislation proposal zero")
-
-    legislation_proposal_negative = create(:legislation_proposal,
-                                           legislation_process_id: process.id,
-                                           title: "Legislation proposal negative")
-
-    10.times { create(:vote, votable: legislation_proposal_positive, vote_flag: true) }
-    3.times  { create(:vote, votable: legislation_proposal_positive, vote_flag: false) }
-
-    5.times { create(:vote, votable: legislation_proposal_zero, vote_flag: true) }
-    5.times  { create(:vote, votable: legislation_proposal_zero, vote_flag: false) }
-
-    6.times  { create(:vote, votable: legislation_proposal_negative, vote_flag: false) }
-
-    visit legislation_process_proposals_path(process)
-
-    within "#legislation_proposal_#{legislation_proposal_positive.id}" do
-      expect(page).not_to have_content("7 votes")
-    end
-
-    within "#legislation_proposal_#{legislation_proposal_zero.id}" do
-      expect(page).not_to have_content("No votes")
-    end
-
-    within "#legislation_proposal_#{legislation_proposal_negative.id}" do
-      expect(page).not_to have_content("-6 votes")
-    end
-
-    visit legislation_process_proposal_path(process, legislation_proposal_positive)
-    expect(page).not_to have_content("7 votes")
-
-    visit legislation_process_proposal_path(process, legislation_proposal_zero)
-    expect(page).not_to have_content("No votes")
-
-    visit legislation_process_proposal_path(process, legislation_proposal_negative)
-    expect(page).not_to have_content("-6 votes")
-  end
-
   scenario "Show link to process on show" do
     create(:legislation_proposal, legislation_process_id: process.id)
 

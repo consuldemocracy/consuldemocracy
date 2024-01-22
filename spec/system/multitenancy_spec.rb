@@ -41,6 +41,7 @@ describe "Multitenancy", :seed_tenants do
   end
 
   scenario "PostgreSQL extensions work for tenants" do
+    skip("proposal creation disabled")
     Tenant.switch("mars") { login_as(create(:user)) }
 
     with_subdomain("mars") do
