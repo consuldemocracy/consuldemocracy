@@ -15,7 +15,7 @@
       App.Map.maps = [];
     },
     initializeMap: function(element) {
-      var createMarker, editable, investmentsMarkers, markerData, map, marker,
+      var createMarker, editable, investmentsMarkers, map, marker, markerData,
         markerIcon, moveOrPlaceMarker, removeMarker, removeMarkerSelector;
       App.Map.cleanInvestmentCoordinates(element);
       removeMarkerSelector = $(element).data("marker-remove-selector");
