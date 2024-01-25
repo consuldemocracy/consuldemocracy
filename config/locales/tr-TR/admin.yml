@@ -204,7 +204,7 @@ tr:
         max_ballot_lines_info: 'Bir kullanıcının "Proje oylanıyor" aşamasında bu bütçe kalemi için oy kullanabileceği en fazla proje sayısı. Yalnızca onay oylaması yapılan bütçeler için.'
         population_info: "Bütçe kalemi nüfus alanı, istatistiksel amaçlarla, bütçenin sonunda, nüfus ile birlikte bir alanı temsil eden her bir bütçe kaleminin oy yüzdesini göstermek için kullanılır. Bu alanın kullanılması isteğe bağlıdır, bu nedenle anlamlı değilse boş bırakabilirsiniz."
         coordinates_info: "Enlem ve boylam belirtilmişse, bu bütçe kalemi için yatırımlar sayfasında bir harita görüntülenir. Bu harita bu koordinatlara göre ortalanır."
-        content_blocks_info: "İçerik bloğu kullanılsın seçeneği işaretlenmişse, bu bütçe kalemi ile ilgili özel içeriği Ayarlar > Özel içerik blokları bölümünden oluşturabilirsiniz. Bu içerik bu bütçe kalemi için yatırımlar sayfasında görüntülenir."
+        content_blocks_info: "Eğer içerik bloğuna izin ver seçeneği işaretliyse, bu başlıkla ilgili özel içeriği Ayarlar > Özel içerik blokları bölümünden oluşturabilirsiniz."
         create: "Yeni bütçe kalemi oluştur"
         edit: "Bütçe kalemini düzenle"
         submit: "Bütçe kalemini kaydet"
