@@ -466,42 +466,46 @@ describe Poll do
   end
 
   describe ".sort_for_list" do
-    it "returns polls sorted by name ASC" do
-      starts_at = 1.day.from_now
-      poll1 = create(:poll, geozone_restricted: true, starts_at: starts_at, name: "Zzz...")
-      poll2 = create(:poll, geozone_restricted: true, starts_at: starts_at, name: "Mmmm...")
-      poll3 = create(:poll, geozone_restricted: true, starts_at: starts_at, name: "Aaaaah!")
+    context "sort polls by weight" do
+      it "returns poll not restricted by geozone first" do
+        poll_with_geozone_restricted = create(:poll, geozone_restricted: true)
+        poll_not_restricted_by_geozone = create(:poll, geozone_restricted: false)
 
-      expect(Poll.sort_for_list).to eq [poll3, poll2, poll1]
+        expect(Poll.sort_for_list).to eq [poll_not_restricted_by_geozone, poll_with_geozone_restricted]
+      end
+
+      it "returns poll with geozone restricted by user geozone" do
+        geozone = create(:geozone)
+        geozone_user = create(:user, :level_two, geozone: geozone)
+        poll_not_answerable_by_user = create(:poll, geozone_restricted: true)
+        poll_anserable_by_user = create(:poll, geozone_restricted: true, geozone_restricted_to: [geozone])
+
+        expect(Poll.sort_for_list(geozone_user)).to eq [poll_anserable_by_user, poll_not_answerable_by_user]
+      end
     end
 
-    it "returns not geozone restricted polls first" do
-      starts_at = 1.day.from_now
-      poll1 = create(:poll, geozone_restricted: false, starts_at: starts_at, name: "Zzz...")
-      poll2 = create(:poll, geozone_restricted: true, starts_at: starts_at, name: "Aaaaaah!")
+    context "sort polls by time when weight comparison is zero" do
+      it "when polls are expired returns the most recently finished first" do
+        poll_ends_first = create(:poll, ends_at: 1.day.ago - 1.hour)
+        poll_ends_last = create(:poll, ends_at: 1.day.ago)
 
-      expect(Poll.sort_for_list).to eq [poll1, poll2]
+        expect(Poll.sort_for_list).to eq [poll_ends_last, poll_ends_first]
+      end
+
+      it "when polls are current returns the most recently started first" do
+        ends_at = 1.day.from_now
+        poll_starts_first = create(:poll, starts_at: 1.day.ago - 1.hour, ends_at: ends_at)
+        poll_starts_last = create(:poll, starts_at: 1.day.ago, ends_at: ends_at)
+
+        expect(Poll.sort_for_list).to eq [poll_starts_first, poll_starts_last]
+      end
     end
 
-    it "returns polls for the user's geozone first" do
-      geozone = create(:geozone)
-      poll1 = create(:poll, geozone_restricted: true)
-      poll2 = create(:poll, geozone_restricted: true)
-      poll3 = create(:poll)
-      poll_geozone_1 = create(:poll, geozone_restricted_to: [geozone])
-      poll_geozone_2 = create(:poll, geozone_restricted_to: [geozone])
-      geozone_user = create(:user, :level_two, geozone: geozone)
+    it "sort polls by name ASC when weight and time comparison are zero", :with_frozen_time do
+      poll1 = create(:poll, name: "Zzz...")
+      poll2 = create(:poll, name: "Aaaaah!")
 
-      expect(Poll.sort_for_list).to eq [poll3, poll1, poll2, poll_geozone_1, poll_geozone_2]
-      expect(Poll.sort_for_list(geozone_user)).to eq [poll3, poll_geozone_1, poll_geozone_2, poll1, poll2]
-    end
-
-    it "returns polls earlier to start first" do
-      starts_at = 1.day.from_now
-      poll1 = create(:poll, geozone_restricted: false, starts_at: starts_at - 1.hour, name: "Zzz...")
-      poll2 = create(:poll, geozone_restricted: false, starts_at: starts_at, name: "Aaaaah!")
-
-      expect(Poll.sort_for_list).to eq [poll1, poll2]
+      expect(Poll.sort_for_list).to eq [poll2, poll1]
     end
 
     it "returns polls with multiple translations only once" do
