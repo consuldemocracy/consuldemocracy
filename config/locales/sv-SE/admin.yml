@@ -454,9 +454,9 @@ sv:
         info: |-
           <p>Här kan du som administratör implementera och övervaka processen för medborgardeltagande i din stad eller region.</p>
 
-          <p>Du är nu en av hundratals regeringar och kommuner i hela världen som använder sig av plattformen CONSUL DEMOCRACY för att omsätta medborgardeltagande i praktiken. Grattis!</p>
+          <p>Din styrelse är nu en av hundratals i hela världen som använder sig av plattformen CONSUL DEMOCRACY för att omsätta medborgardeltagande i praktiken. Grattis!</p>
 
-          <p>CONSUL DEMOCRACY-stiftelsen är hjärtat av den globala användargemenskapen. Vi ber dig kontakta oss så vi vet vem som använder programvaran och hur vi kan hjälpa till med implementering eller användning. Vi ser fram emot att välkomna dig till gemenskapen!</p>
+          <p>CONSUL DEMOCRACY-stiftelsen är hjärtat av den globala användargemenskapen. Vi ber dig kontakta oss så vi vet vem som använder programvaran och hur vi kan hjälpa till med implementeringen eller användningen. Vi ser fram emot att välkomna dig till gemenskapen!</p>
 
           <p>Lycka till med administrerandet!</p>
 
@@ -1395,7 +1395,7 @@ sv:
       show_results_and_stats: "Visa resultat och statistik"
       results_and_stats_reminder: "Genom att markera dessa rutor kommer omröstningens resultat och/eller statistik att visas för alla användare."
       close_modal: Stäng läget
-      example_url: "https://consuldemocracy.org"
+      example_url: "Till exempel https://consuldemocracy.org eller /hjälp"
     geozones:
       index:
         title: Geografiska områden
@@ -1599,7 +1599,7 @@ sv:
           name: Namn
           names:
             top_links: Topplänkar
-            footer: Sidfot
+            footer: Sidfot (sociala medier)
             footer_legal: Sidfot (rättsliga villkor)
             subnavigation_left: Huvudnavigering vänster
             subnavigation_right: Huvudnavigering höger
