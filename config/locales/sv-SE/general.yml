@@ -719,7 +719,7 @@ sv:
       districts: "Distrikt"
       districts_list: "Lista över distrikt"
       categories: "Kategorier"
-    target_blank: " (länken öppnas i ett nytt fönster)"
+    target_blank: "Länken öppnas i ett nytt fönster"
     you_are_in: "Du är på"
     unflag: Ta bort flagga
     unfollow_entity: "Sluta följa %{entity}"
