@@ -99,6 +99,7 @@ class Setting < ApplicationRecord
         "map.latitude": 51.48,
         "map.longitude": 0.0,
         "map.zoom": 10,
+        "map.feature.marker_clustering": false,
         "process.debates": true,
         "process.proposals": true,
         "process.polls": true,

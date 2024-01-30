@@ -260,13 +260,7 @@ describe "Budgets" do
     end
 
     scenario "Display investment's map location markers" do
-      investment1 = create(:budget_investment, heading: heading)
-      investment2 = create(:budget_investment, heading: heading)
-      investment3 = create(:budget_investment, heading: heading)
-
-      create(:map_location, longitude: 40.1234, latitude: -3.634, investment: investment1)
-      create(:map_location, longitude: 40.1235, latitude: -3.635, investment: investment2)
-      create(:map_location, longitude: 40.1236, latitude: -3.636, investment: investment3)
+      create_list(:budget_investment, 3, :with_map_location, heading: heading)
 
       visit budgets_path
 
@@ -277,16 +271,7 @@ describe "Budgets" do
 
     scenario "Display all investment's map location if there are no selected" do
       budget.update!(phase: :publishing_prices)
-
-      investment1 = create(:budget_investment, heading: heading)
-      investment2 = create(:budget_investment, heading: heading)
-      investment3 = create(:budget_investment, heading: heading)
-      investment4 = create(:budget_investment, heading: heading)
-
-      investment1.create_map_location(longitude: 40.1234, latitude: 3.1234, zoom: 10)
-      investment2.create_map_location(longitude: 40.1235, latitude: 3.1235, zoom: 10)
-      investment3.create_map_location(longitude: 40.1236, latitude: 3.1236, zoom: 10)
-      investment4.create_map_location(longitude: 40.1240, latitude: 3.1240, zoom: 10)
+      create_list(:budget_investment, 4, :with_map_location, heading: heading)
 
       visit budgets_path
 
@@ -297,16 +282,8 @@ describe "Budgets" do
 
     scenario "Display only selected investment's map location from publishing prices phase" do
       budget.update!(phase: :publishing_prices)
-
-      investment1 = create(:budget_investment, :selected, heading: heading)
-      investment2 = create(:budget_investment, :selected, heading: heading)
-      investment3 = create(:budget_investment, heading: heading)
-      investment4 = create(:budget_investment, heading: heading)
-
-      investment1.create_map_location(longitude: 40.1234, latitude: 3.1234, zoom: 10)
-      investment2.create_map_location(longitude: 40.1235, latitude: 3.1235, zoom: 10)
-      investment3.create_map_location(longitude: 40.1236, latitude: 3.1236, zoom: 10)
-      investment4.create_map_location(longitude: 40.1240, latitude: 3.1240, zoom: 10)
+      create_list(:budget_investment, 2, :selected, :with_map_location, heading: heading)
+      create_list(:budget_investment, 2, :with_map_location, heading: heading)
 
       visit budgets_path
 
@@ -320,9 +297,9 @@ describe "Budgets" do
 
       investment = create(:budget_investment, heading: heading)
 
-      map_locations << { longitude: 40.123456789, latitude: 3.12345678 }
-      map_locations << { longitude: 40.123456789, latitude: "********" }
-      map_locations << { longitude: "**********", latitude: 3.12345678 }
+      map_locations << { longitude: -3.703790, latitude: 40.416775 }
+      map_locations << { longitude: -3.703791, latitude: "********" }
+      map_locations << { longitude: "**********", latitude: 40.416776 }
 
       coordinates = map_locations.map do |map_location|
         {
@@ -340,6 +317,22 @@ describe "Budgets" do
 
       within ".map-location" do
         expect(page).to have_css(".map-icon", count: 1, visible: :all)
+      end
+    end
+
+    scenario "when the marker clustering feature is enabled the map shows clusters instead of markers" do
+      Setting["map.feature.marker_clustering"] = true
+      create_list(:budget_investment, 3, :selected, :with_map_location, heading: heading)
+
+      visit budgets_path
+
+      within ".map-location" do
+        expect(page).to have_css ".marker-cluster div span", text: "3"
+        expect(page).not_to have_css ".map-icon"
+
+        find(".marker-cluster").click
+
+        expect(page).to have_css ".map-icon", count: 3
       end
     end
   end

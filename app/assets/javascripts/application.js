@@ -104,7 +104,8 @@
 //= require tree_navigator
 //= require tag_autocomplete
 //= require polls_admin
-//= require leaflet
+//= require leaflet/dist/leaflet
+//= require leaflet.markercluster/dist/leaflet.markercluster
 //= require map
 //= require polls
 //= require sortable
