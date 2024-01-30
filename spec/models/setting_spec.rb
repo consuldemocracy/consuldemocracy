@@ -27,59 +27,6 @@ describe Setting do
     end
   end
 
-  describe "#type" do
-    it "returns the key prefix for 'process' settings" do
-      process_setting = Setting.create!(key: "process.whatever")
-      expect(process_setting.type).to eq "process"
-    end
-
-    it "returns the key prefix for 'feature' settings" do
-      feature_setting = Setting.create!(key: "feature.whatever")
-      expect(feature_setting.type).to eq "feature"
-    end
-
-    it "returns the key prefix for 'map' settings" do
-      map_setting = Setting.create!(key: "map.whatever")
-      expect(map_setting.type).to eq "map"
-    end
-
-    it "returns the key prefix for 'html' settings" do
-      html_setting = Setting.create!(key: "html.whatever")
-      expect(html_setting.type).to eq "html"
-    end
-
-    it "returns the key prefix for 'homepage' settings" do
-      homepage_setting = Setting.create!(key: "homepage.whatever")
-      expect(homepage_setting.type).to eq "homepage"
-    end
-
-    it "returns the key prefix for 'sdg' settings" do
-      sdg_setting = Setting.create!(key: "sdg.whatever")
-
-      expect(sdg_setting.type).to eq "sdg"
-    end
-
-    it "returns the key prefix for 'remote_census.general' settings" do
-      remote_census_general_setting = Setting.create!(key: "remote_census.general.whatever")
-      expect(remote_census_general_setting.type).to eq "remote_census.general"
-    end
-
-    it "returns the key prefix for 'remote_census_request' settings" do
-      remote_census_request_setting = Setting.create!(key: "remote_census.request.whatever")
-      expect(remote_census_request_setting.type).to eq "remote_census.request"
-    end
-
-    it "returns the key prefix for 'remote_census_response' settings" do
-      remote_census_response_setting = Setting.create!(key: "remote_census.response.whatever")
-      expect(remote_census_response_setting.type).to eq "remote_census.response"
-    end
-
-    it "returns 'configuration' for the rest of the settings" do
-      configuration_setting = Setting.create!(key: "whatever")
-      expect(configuration_setting.type).to eq "configuration"
-    end
-  end
-
   describe "#enabled?" do
     it "is true if value is present" do
       setting = Setting.create!(key: "feature.whatever", value: 1)
@@ -98,16 +45,6 @@ describe Setting do
 
       setting.value = ""
       expect(setting.enabled?).to be false
-    end
-  end
-
-  describe "#content_type?" do
-    it "returns true if the last part of the key is content_types" do
-      expect(Setting.create!(key: "key_name.content_types").content_type?).to be true
-    end
-
-    it "returns false if the last part of the key is not content_types" do
-      expect(Setting.create!(key: "key_name.whatever").content_type?).to be false
     end
   end
 

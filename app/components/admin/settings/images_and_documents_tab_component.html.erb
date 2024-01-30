@@ -1,0 +1,12 @@
+<h2><%= t("admin.settings.index.images_and_documents") %></h2>
+
+<%= render Admin::Settings::TableComponent.new(setting_name: "setting") do %>
+  <% images_settings.each do |key| %>
+    <%= render Admin::Settings::RowComponent.new(key, tab: tab) %>
+  <% end %>
+  <%= render Admin::Settings::RowComponent.new("uploads.images.content_types", type: :content_type, tab: tab) %>
+  <% documents_settings.each do |key| %>
+    <%= render Admin::Settings::RowComponent.new(key, tab: tab) %>
+  <% end %>
+  <%= render Admin::Settings::RowComponent.new("uploads.documents.content_types", type: :content_type, tab: tab) %>
+<% end %>

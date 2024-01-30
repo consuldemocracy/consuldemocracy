@@ -7,22 +7,8 @@ class Setting < ApplicationRecord
     key.split(".").first
   end
 
-  def type
-    if %w[feature process proposals map html homepage uploads sdg machine_learning].include? prefix
-      prefix
-    elsif %w[remote_census].include? prefix
-      key.rpartition(".").first
-    else
-      "configuration"
-    end
-  end
-
   def enabled?
     value.present?
-  end
-
-  def content_type?
-    key.split(".").last == "content_types"
   end
 
   def content_type_group

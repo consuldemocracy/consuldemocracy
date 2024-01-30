@@ -1,0 +1,17 @@
+<% if feature?(:map) %>
+  <h2><%= t("admin.settings.index.map.title") %></h2>
+
+  <%= render Admin::Settings::TableComponent.new(setting_name: "setting") do %>
+    <% settings.each do |key| %>
+      <%= render Admin::Settings::RowComponent.new(key, tab: tab) %>
+    <% end %>
+  <% end %>
+
+  <p><%= t("admin.settings.index.map.help") %></p>
+
+  <%= render Admin::Settings::MapFormComponent.new(tab: tab) %>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.settings.index.map.how_to_enable") %>
+  </div>
+<% end %>
