@@ -1340,6 +1340,8 @@ en:
           how_to_enable: 'To show the map to users you must enable "Proposals and budget investments geolocation" on "Features" tab.'
         dashboard:
           title: Proposals dashboard
+        email:
+          title: Email configuration
         remote_census:
           title: Remote Census configuration
           how_to_enable: 'To configure remote census (SOAP) you must enable "Configure connection to remote census (SOAP)" on "Features" tab.'

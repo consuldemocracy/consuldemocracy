@@ -26,8 +26,6 @@ class Admin::Settings::ConfigurationTabComponent < ApplicationComponent
       meta_keywords
       proposal_notification_minimum_interval_in_days
       direct_message_max_per_day
-      mailer_from_name
-      mailer_from_address
       min_age_to_participate
       hot_score_period_in_days
       related_content_score_threshold
