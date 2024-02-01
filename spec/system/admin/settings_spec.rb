@@ -279,6 +279,20 @@ describe "Admin settings", :admin do
       expect(page).to have_current_path(admin_settings_path)
       expect(page).to have_field("Maximum number of documents", with: 5)
     end
+
+    scenario "On #tab-email-configuration" do
+      visit admin_settings_path
+      click_link "Email configuration"
+
+      within "tr", text: "Sender email name" do
+        fill_in "Sender email name", with: "New email name"
+        click_button "Update"
+      end
+
+      expect(page).to have_current_path admin_settings_path
+      expect(page).to have_css "h2", exact_text: "Email configuration"
+      expect(page).to have_css "div#tab-email-configuration.is-active"
+    end
   end
 
   describe "Skip verification" do
