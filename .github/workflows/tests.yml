@@ -1,11 +1,5 @@
 name: tests
-on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches-ignore:
-      - i18n_master
+on: push
 
 permissions:
   contents: read
