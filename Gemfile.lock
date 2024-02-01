@@ -255,7 +255,7 @@ GEM
     graphiql-rails (1.8.0)
       railties
       sprockets-rails
-    graphql (1.12.14)
+    graphql (2.2.7)
     groupdate (6.4.0)
       activesupport (>= 6.1)
     gyoku (1.4.0)
@@ -728,7 +728,7 @@ DEPENDENCIES
   globalize (~> 6.2.1)
   globalize-accessors (~> 0.3.0)
   graphiql-rails (~> 1.8.0)
-  graphql (~> 1.12.14)
+  graphql (~> 2.2.7)
   groupdate (~> 6.4.0)
   i18n-tasks (~> 0.9.37)
   image_processing (~> 1.12.2)
