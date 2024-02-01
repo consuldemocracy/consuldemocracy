@@ -51,6 +51,7 @@ set :fnm_map_bins, %w[node npm rake yarn]
 
 set :puma_conf, "#{release_path}/config/puma/#{fetch(:rails_env)}.rb"
 set :puma_systemctl_user, :user
+set :puma_enable_socket_service, true
 set :puma_service_unit_env_vars, ["EXECJS_RUNTIME=Disabled"]
 
 set :delayed_job_workers, 2
