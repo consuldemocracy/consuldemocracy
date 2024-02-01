@@ -176,7 +176,8 @@ GEM
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     daemons (1.4.1)
-    dalli (3.2.6)
+    dalli (3.2.7)
+      base64
     date (3.3.4)
     delayed_job (4.1.10)
       activesupport (>= 3.0, < 8.0)
@@ -712,7 +713,7 @@ DEPENDENCIES
   ckeditor (~> 4.3.0)
   cocoon (~> 1.2.15)
   daemons (~> 1.4.1)
-  dalli (~> 3.2.6)
+  dalli (~> 3.2.7)
   delayed_job_active_record (~> 4.1.7)
   devise (~> 4.9.2)
   devise-security (~> 0.18.0)
