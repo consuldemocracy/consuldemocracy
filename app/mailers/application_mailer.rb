@@ -19,8 +19,28 @@ class ApplicationMailer < ActionMailer::Base
   end
 
   def set_smtp_settings
-    unless Tenant.default?
-      mail.delivery_method.settings.merge!(Tenant.current_secrets.smtp_settings.to_h)
-    end
+    smtp_settings = if Setting["feature.smtp"]
+                      smtp_settings_from_db
+                    else
+                      smtp_settings_from_secrets
+                    end
+
+    mail.delivery_method.settings.merge!(smtp_settings)
+  end
+
+  def smtp_settings_from_db
+    {
+      address: Setting["smtp.address"],
+      port: Setting["smtp.port"].to_i,
+      domain: Setting["smtp.domain"],
+      user_name: Setting["smtp.user_name"],
+      password: Setting["smtp.password"],
+      authentication: Setting["smtp.authentication"],
+      enable_starttls_auto: Setting["smtp.feature.enable_starttls_auto"] == "active" ? true : false
+    }
+  end
+
+  def smtp_settings_from_secrets
+    Tenant.current_secrets.smtp_settings.to_h
   end
 end
