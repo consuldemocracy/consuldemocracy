@@ -87,7 +87,7 @@ class Setting < ApplicationRecord
         "feature.valuation_comment_notification": true,
         "feature.graphql_api": true,
         "feature.sdg": true,
-        "feature.smtp": true,
+        "feature.smtp": nil,
         "feature.machine_learning": false,
         "feature.remove_investments_supports": true,
         "homepage.widgets.feeds.debates": true,
