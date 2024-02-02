@@ -29,6 +29,6 @@ class Admin::Settings::FeaturedSettingsFormComponent < ApplicationComponent
     end
 
     def remote?
-      !%w[feature.map feature.remote_census feature.sdg].include?(feature.key)
+      !%w[feature.map feature.remote_census feature.sdg feature.smtp].include?(feature.key)
     end
 end

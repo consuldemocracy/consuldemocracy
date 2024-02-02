@@ -1348,12 +1348,16 @@ es:
         sdg:
           title: Configuración ODS
           how_to_enable: 'Para mostrar las opciones de configuración de los Objetivos de Desarrollo Sostenible se debe activar "ODS" en la pestaña "Funcionalidades".'
+        smtp_settings:
+          how_to_enable: 'Para mostrar las opciones de configuración de la Configuración SMTP se debe activar "SMTP" en la pestaña "Funcionalidades".'
+          title: Configuración SMTP
       remote_census_general_name: Datos Generales
       remote_census_request_name: Datos Petición
       remote_census_response_name: Datos Respuesta
       setting: Funcionalidad
       setting_name: Configuración
       setting_value: Valor
+      smtp_name: Configuración SMTP
       no_description: "Sin descripción"
     shared:
       search:

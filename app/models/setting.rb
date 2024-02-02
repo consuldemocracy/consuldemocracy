@@ -87,6 +87,7 @@ class Setting < ApplicationRecord
         "feature.valuation_comment_notification": true,
         "feature.graphql_api": true,
         "feature.sdg": true,
+        "feature.smtp": true,
         "feature.machine_learning": false,
         "feature.remove_investments_supports": true,
         "homepage.widgets.feeds.debates": true,
@@ -181,7 +182,14 @@ class Setting < ApplicationRecord
         "sdg.process.proposals": true,
         "sdg.process.polls": true,
         "sdg.process.budgets": true,
-        "sdg.process.legislation": true
+        "sdg.process.legislation": true,
+        "smtp.address": "smtp.example.com",
+        "smtp.port": 25,
+        "smtp.domain": "your_domain.com",
+        "smtp.user_name": "<username>",
+        "smtp.password": "<password>",
+        "smtp.authentication": "plain",
+        "smtp.feature.enable_starttls_auto": true
       }
     end
 

@@ -23,6 +23,7 @@ class Admin::Settings::FeaturesTabComponent < ApplicationComponent
       feature.valuation_comment_notification
       feature.graphql_api
       feature.sdg
+      feature.smtp
       feature.machine_learning
       feature.remove_investments_supports
       feature.dashboard.notification_emails

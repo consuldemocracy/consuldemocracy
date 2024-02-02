@@ -2,6 +2,20 @@
 
 <%= render Admin::Settings::TableComponent.new(setting_name: "setting") do %>
   <% settings.each do |key| %>
-    <%= render Admin::Settings::RowComponent.new(key, tab: "#tab-email-configuration") %>
+    <%= render Admin::Settings::RowComponent.new(key, tab: tab) %>
   <% end %>
+<% end %>
+
+<h2><%= t("admin.settings.index.smtp_settings.title") %></h2>
+<% if feature?("feature.smtp") %>
+  <%= render Admin::Settings::TableComponent.new(setting_name: "smtp_name") do %>
+    <% smtp_settings.each do |key| %>
+      <%= render Admin::Settings::RowComponent.new(key, tab: tab) %>
+    <% end %>
+    <%= render Admin::Settings::RowComponent.new("smtp.feature.enable_starttls_auto", type: :feature, tab: tab) %>
+  <% end %>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.settings.index.smtp_settings.how_to_enable") %>
+  </div>
 <% end %>

@@ -136,6 +136,8 @@ es:
       remove_investments_supports_description: "Permite que los usuarios retiren su apoyo en los proyectos de gasto de los presupuestos participativos durante la fase de apoyos."
       sdg: ODS
       sdg_description: Habilitar secciones relacionadas con Objetivos de Desarrollo Sostenible en el menú de administración y en la sección de Configuración Global.
+      smtp: SMTP
+      smtp_description: Habilitar seccion relacionada con la configuración SMTP en la sección de Configuración Global > Configuración del Email.
     remote_census:
       general:
         endpoint: "Endpoint"
@@ -228,3 +230,19 @@ es:
         budgets_description: Permitir alineamiento de los Objetivos de Desarrollo Sostenible en presupuestos participativos
         legislation: Alineamiento ODS en legislación colaborativa
         legislation_description: Permitir alineamiento de los Objetivos de Desarrollo Sostenible en legislación colaborativa
+    smtp:
+      address: Dirección
+      address_description: Este campo sobrescribirá el valor de la clave "address" definida en la sección smtp_settings en el fichero secrets.yml.
+      port: Puerto
+      port_description: Este campo sobrescribirá el valor de la clave "port" definida en la sección smtp_settings en el fichero secrets.yml.
+      domain: Dominio
+      domain_description: Este campo sobrescribirá el valor de la clave "domain" definida en la sección smtp_settings en el fichero secrets.yml.
+      user_name: Nombre de usuario
+      user_name_description: Este campo sobrescribirá el valor de la clave "user_name" definida en la sección smtp_settings en el fichero secrets.yml.
+      password: Contraseña
+      password_description: Este campo sobrescribirá el valor de la clave "password" definida en la sección smtp_settings en el fichero secrets.yml.
+      authentication: Autenticación
+      authentication_description: Este campo sobrescribirá el valor de la clave "authentication" definida en la sección smtp_settings en el fichero secrets.yml.
+      feature:
+        enable_starttls_auto: Activar TTLS
+        enable_starttls_auto_description: Este campo sobrescribirá el valor de la clave "enable_starttls_auto" definida en la sección smtp_settings en el fichero secrets.yml.

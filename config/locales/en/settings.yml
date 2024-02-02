@@ -136,6 +136,8 @@ en:
       remove_investments_supports_description: "Allow users to remove supports on participatory budgets investments during the selecting projects phase."
       sdg: SDG
       sdg_description: Enable Sustainable Development Goals sections in the administration menu and in the Global Settings.
+      smtp: SMTP
+      smtp_description: Enable SMTP configuration section in the Global Settings > Email configuration.
     remote_census:
       general:
         endpoint: "Endpoint"
@@ -228,3 +230,19 @@ en:
         budgets_description: Allow participatory budgets to be linked to Sustainable Development Goals
         legislation: Related SDG in collaborative legislation
         legislation_description: Allow collaborative legislation to be linked to Sustainable Development Goals
+    smtp:
+      address: Address
+      address_description: This field overwrite the value of the key "address" defined in the smtp_settins section in the secrets.yml file.
+      port: Port
+      port_description: This field overwrite the value of the key "port" defined in the smtp_settins section in the secrets.yml file.
+      domain: Domain
+      domain_description: This field overwrite the value of the key "domain" defined in the smtp_settins section in the secrets.yml file.
+      user_name: User name
+      user_name_description: This field overwrite the value of the key "user_name" defined in the smtp_settins section in the secrets.yml file.
+      password: Password
+      password_description: This field overwrite the value of the key "password" defined in the smtp_settins section in the secrets.yml file.
+      authentication: Authentication
+      authentication_description: This field overwrite the value of the key "authentication" defined in the smtp_settins section in the secrets.yml file.
+      feature:
+        enable_starttls_auto: Enable TTLS Auto
+        enable_starttls_auto_description: This field overwrite the value of the key "enable_starttls_auto" defined in the smtp_settins section in the secrets.yml file.

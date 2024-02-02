@@ -1348,12 +1348,16 @@ en:
         sdg:
           title: SDG configuration
           how_to_enable: 'To show the configuration options from Sustainable Development Goals you must enable "SDG" on "Features" tab.'
+        smtp_settings:
+          how_to_enable: 'To show the configuration options from SMTP you must enable "SMTP" on "Features" tab.'
+          title: SMTP configuration
       remote_census_general_name: General Information
       remote_census_request_name: Request Data
       remote_census_response_name: Response Data
       setting: Feature
       setting_name: Setting
       setting_value: Value
+      smtp_name: SMPT Setting
       no_description: "No description"
     shared:
       search:
