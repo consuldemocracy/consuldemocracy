@@ -66,13 +66,13 @@ bin/rspec
 
 You can use the default admin user from the seeds file:
 
- **user:** admin@consul.dev
- **pass:** 12345678
+**user:** admin@consul.dev
+**pass:** 12345678
 
 But for some actions like voting, you will need a verified user, the seeds file also includes one:
 
- **user:** verified@consul.dev
- **pass:** 12345678
+**user:** verified@consul.dev
+**pass:** 12345678
 
 ## Configuration for production environments
 
@@ -89,3 +89,9 @@ Code published under AFFERO GPL v3 (see [LICENSE-AGPLv3.txt](LICENSE-AGPLv3.txt)
 ## Contributions
 
 See [CONTRIBUTING.md](CONTRIBUTING.md)
+
+## Applying a tenant
+
+```bash
+bin/tenant -a {tenant_name}
+```
