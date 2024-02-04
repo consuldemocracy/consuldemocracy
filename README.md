@@ -95,3 +95,9 @@ See [CONTRIBUTING.md](CONTRIBUTING.md)
 ```bash
 bin/tenant -a {tenant_name}
 ```
+
+## Before deploy
+
+```bash
+rake settings:add_new_settings
+```
