@@ -48,7 +48,9 @@ def apply_to_sibling_directory(template_directory, sibling_directory, opts = {})
       FileUtils.rm_rf(sibling_child)
     end
 
-    puts "Cleared child: #{File.expand_path(sibling_child)}"
+    if opts[:verbose]
+      puts "Cleared child: #{File.expand_path(sibling_child)}"
+    end
 
     if opts[:copy]
       if File.directory?(child)
@@ -62,7 +64,9 @@ def apply_to_sibling_directory(template_directory, sibling_directory, opts = {})
       end
     end
 
-    puts "Copied: [#{child}] -> [#{sibling_child}]"
+    if opts[:verbose]
+      puts "Copied: [#{child}] -> [#{sibling_child}]"
+    end
   end
 
   subdirectories = Dir.glob(File.join(template_directory, "*")).select do |file|
@@ -82,7 +86,6 @@ end
 # The apply_deploy method applies a deploy to the project.
 # It copies the deploy config files to the project config files
 def apply_tenant(tenant_name)
-  # illegal_deploys = ["base"]
   illegal_deploys = []
 
   current_tenant_illegal = illegal_deploys.include? tenant_name
@@ -108,10 +111,10 @@ def apply_tenant(tenant_name)
 
   # Apply the base
   apply_to_sibling_directory(File.join(dir, "../tenants/base"), File.join(dir, ".."),
-                             { clear: true, copy: true })
+                             { clear: true, copy: true, verbose: false })
 
   apply_to_sibling_directory(File.join(dir, "../tenants/#{tenant_name}"), File.join(dir, ".."),
-                             { clear: false, copy: true })
+                             { clear: false, copy: true, verbose: false })
 end
 
 ##
@@ -129,7 +132,7 @@ def process_argv(option, tenant_name = nil)
     end
 
     apply_to_sibling_directory(File.join(dir, "../tenants/base"), File.join(dir, ".."),
-                               { clear: true, copy: true, dry: false })
+                               { clear: true, copy: true, dry: false, verbose: false })
   when "-a", "--apply"
     apply_tenant(tenant_name)
   else
