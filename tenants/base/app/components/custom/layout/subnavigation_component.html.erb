@@ -1,0 +1,67 @@
+<nav>
+  <ul class="dropdown menu" data-dropdown-menu>
+    <%= raw content_block("subnavigation_left") %>
+
+    <% if feature?(:debates) && Setting["show_navbar.debates"] %>
+      <li>
+        <%= layout_menu_link_to t("layouts.header.debates"),
+                                debates_path,
+                                controller_name == "debates",
+                                accesskey: "1" %>
+      </li>
+    <% end %>
+    <% if feature?(:proposals) && Setting["show_navbar.proposals"] %>
+      <li>
+        <%= layout_menu_link_to t("layouts.header.proposals"),
+                                proposals_path,
+                                controller.class == ProposalsController,
+                                accesskey: "2" %>
+      </li>
+    <% end %>
+    <% if feature?(:polls) && Setting["show_navbar.polls"] %>
+      <li>
+        <%= layout_menu_link_to t("layouts.header.poll_questions"),
+                                polls_path,
+                                controller_name == "polls" || (controller_name == "questions" && controller.class.parent == Polls),
+                                accesskey: "3" %>
+      </li>
+    <% end %>
+    <% if feature?(:legislation) && Setting["show_navbar.legislation"] %>
+      <li>
+        <%= layout_menu_link_to t("layouts.header.collaborative_legislation"),
+                                legislation_processes_path,
+                                controller.class.parent == Legislation,
+                                accesskey: "4" %>
+      </li>
+    <% end %>
+    <% if feature?(:budgets) && Setting["show_navbar.budgets"] %>
+      <%= render "shared/budgets_links" %>
+    <% end %>
+    <% if feature?(:sdg) && Setting["show_navbar.sdg"] %>
+      <li>
+        <%= layout_menu_link_to t("layouts.header.sdg"),
+                                sdg_goals_path,
+                                controller_path == "sdg/goals" && action_name != "help",
+                                accesskey: "6" %>
+      </li>
+    <% end %>
+    <% if feature?(:help_page) && Setting["show_navbar.help"] %>
+      <li>
+        <%= layout_menu_link_to t("layouts.header.help"),
+                                help_path,
+                                current_page?(help_path),
+                                accesskey: "7" %>
+      </li>
+    <% end %>
+    <% if Setting["feature.raad"] && Setting["show_navbar.raad"] %>
+      <li>
+        <%= layout_menu_link_to t("layouts.header.raad"),
+                                raad_path,
+                                current_page?(raad_path),
+                                accesskey: "8" %>
+      </li>
+    <% end %>
+
+    <%= raw content_block("subnavigation_right") %>
+  </ul>
+</nav>
