@@ -1,0 +1,25 @@
+.home-page,
+.custom-page,
+.sdg-goal-show,
+.sdg-goals-index {
+  .cards-container {
+    align-items: stretch;
+
+    .card {
+      .description {
+        height: 100%;
+      }
+
+      a {
+        display: flex;
+        flex-direction: column;
+
+        .figure-card {
+          img {
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}
