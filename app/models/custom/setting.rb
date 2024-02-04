@@ -4,8 +4,8 @@ class Setting
   alias_method :consul_type, :type
 
   def type
-    if prefix == "process_navbar"
-      current_type = "process_navbar"
+    if prefix == "show_navbar"
+      current_type = "show_navbar"
     end
 
     current_type || consul_type
@@ -35,12 +35,14 @@ class Setting
         consul_defaults.merge({
           # Overwrite default CONSUL settings or add new settings here
           "feature.raad": true,
-          "process_navbar.debates": true,
-          "process_navbar.proposals": true,
-          "process_navbar.polls": true,
-          "process_navbar.budgets": true,
-          "process_navbar.legislation": true,
-          "process_navbar.raad": true
+          "show_navbar.debates": true,
+          "show_navbar.proposals": true,
+          "show_navbar.polls": true,
+          "show_navbar.budgets": true,
+          "show_navbar.legislation": true,
+          "show_navbar.raad": true,
+          "show_navbar.sdg": true,
+          "show_navbar.help": true
         })
       end
     end
