@@ -47,3 +47,4 @@ class Setting
   end
 end
 
+

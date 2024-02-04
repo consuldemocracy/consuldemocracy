@@ -8,9 +8,5 @@ class Admin::SettingsController
 
     all_settings = Setting.all.group_by(&:type)
     @participation_processes_navbar_settings = all_settings["process_navbar"]
-
-    # See if this code gets executed
-    puts "This is the new index method"
-    puts all_settings
   end
 end
