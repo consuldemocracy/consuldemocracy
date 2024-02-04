@@ -28,7 +28,6 @@
 gem "rmega"
 gem "rubyzip"
 
-
 group :development do
   gem "ruby-lsp-rails"
 end
