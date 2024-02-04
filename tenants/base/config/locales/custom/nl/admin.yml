@@ -12,7 +12,7 @@ nl:
       edit: "Bewerk"
       configure: "Configureren"
       delete: "Verwijder"
-      confirm_delete: "Weet je zeker dat je \"%{name}\" wilt verwijderen? Dit kan niet ongedaan worden gemaakt."
+      confirm_delete: 'Weet je zeker dat je "%{name}" wilt verwijderen? Dit kan niet ongedaan worden gemaakt.'
       confirm_hide_content: "Weet je dit zeker? Deze actie verbergt deze content. Je kunt deze actie niet ongedaan maken."
       confirm_hide_author: "Weet je dit zeker? Deze actie verbergt alle content van deze auteur. Ook zal de auteur geblokkeerd worden en niet meer kunnen inloggen. Je kan deze actie niet ongedaan maken."
       confirm_mark_featured: "Weet je dit zeker? Deze actie markeert deze discussie als uitgelicht. Hierdoor wordt het vastgepind aan de bovenkant van de discussie-pagina."
@@ -96,10 +96,10 @@ nl:
         title_budget_type: "Type burgerbegroting"
         new_button: "Creëer nieuwe begroting"
         new_single_title_html: "<strong>Enkelvoudig</strong> budget"
-        new_single_description: "Hier creëer je een proces met één groep, wijk of thema. Je hebt als het ware één zak geld. Bijvoorbeeld 25.000 euro voor de \"Oosterparkwijk\", of 10.000 voor cultuur."
+        new_single_description: 'Hier creëer je een proces met één groep, wijk of thema. Je hebt als het ware één zak geld. Bijvoorbeeld 25.000 euro voor de "Oosterparkwijk", of 10.000 voor cultuur.'
         new_single_button: "Creëer enkelvoudig budget"
         new_multiple_title_html: "<strong>Meervoudig</strong> budget"
-        new_multiple_description: "Hier creëer je een proces met meerdere groepen, wijken of thema's. Je hebt als het ware meerdere zakken geld. Bijvoorbeeld 25.000 voor \"Oosterparkwijk\", 30.000 voor het \"Centrum\", 28.000 voor de \"Westerparkwijk\" en de hele stad. Of voor verschillende thema's zoals sport, cultuur of gezondheid."
+        new_multiple_description: 'Hier creëer je een proces met meerdere groepen, wijken of thema''s. Je hebt als het ware meerdere zakken geld. Bijvoorbeeld 25.000 voor "Oosterparkwijk", 30.000 voor het "Centrum", 28.000 voor de "Westerparkwijk" en de hele stad. Of voor verschillende thema''s zoals sport, cultuur of gezondheid.'
         new_multiple_button: "Creeër meervoudig budget"
         table_name: "Titel"
         table_phase: "Fase"
@@ -123,7 +123,7 @@ nl:
         title_multiple: "Nieuw meervoudig budget"
       edit:
         title: "Bewerk begroting"
-        drafting: "Deze burgerbegroting is in concept. Alleen admins kunnen het bekijken. Wanneer het proces is gepubliceerd, is het zichtbaar voor alle gebruikers. Het is dan niet mogelijk het weer terug te zetten naar concept. Klik op \"Publiceer\" rechtsboven om de begroting te publiceren."
+        drafting: 'Deze burgerbegroting is in concept. Alleen admins kunnen het bekijken. Wanneer het proces is gepubliceerd, is het zichtbaar voor alle gebruikers. Het is dan niet mogelijk het weer terug te zetten naar concept. Klik op "Publiceer" rechtsboven om de begroting te publiceren.'
         preview: "Preview"
         publish: "Publiceer"
         active: "Actief"
@@ -481,6 +481,7 @@ nl:
         general: "Algemene instellingen"
         update_setting: "Bewerk"
         participation_processes: "Modules"
+        show_navbar: "Toon in de navigatiebalk"
         images_and_documents: "Afbeeldingen en documenten"
         feature_flags: "Opties"
         features:
@@ -634,8 +635,8 @@ nl:
     maps:
       index:
         title: "Kaart instellen"
-        help: "Hier kun je aanpassen hoe de kaart wordt weergegeven aan gebruikers. Versleep de markering op de kaart of klik ergens op de kaart om een locatie te selecteren. Stel de gewenste zoom in. Om op te slaan klik op de knop \"Kaart opslaan\"."
-        how_to_enable: "Om gebruikers de kaart te laten zien, moet je de geolocatie van initiatieven en ideeèn inschakelen op het tabblad \"functies\"."
+        help: 'Hier kun je aanpassen hoe de kaart wordt weergegeven aan gebruikers. Versleep de markering op de kaart of klik ergens op de kaart om een locatie te selecteren. Stel de gewenste zoom in. Om op te slaan klik op de knop "Kaart opslaan".'
+        how_to_enable: 'Om gebruikers de kaart te laten zien, moet je de geolocatie van initiatieven en ideeèn inschakelen op het tabblad "functies".'
         budget: "Ideeën"
         default_map: "Standaard kaart"
         new_button: "Creëer nieuwe kaart"

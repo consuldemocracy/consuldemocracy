@@ -7,6 +7,6 @@ class Admin::SettingsController
     old_index
 
     all_settings = Setting.all.group_by(&:type)
-    @participation_processes_navbar_settings = all_settings["process_navbar"]
+    @show_navbar_settings = all_settings["show_navbar"]
   end
 end
