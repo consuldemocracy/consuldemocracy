@@ -636,7 +636,7 @@ nl:
       index:
         title: "Kaart instellen"
         help: 'Hier kun je aanpassen hoe de kaart wordt weergegeven aan gebruikers. Versleep de markering op de kaart of klik ergens op de kaart om een locatie te selecteren. Stel de gewenste zoom in. Om op te slaan klik op de knop "Kaart opslaan".'
-        how_to_enable: 'Om gebruikers de kaart te laten zien, moet je de geolocatie van initiatieven en ideeèn inschakelen op het tabblad "functies".'
+        how_to_enable: 'Om gebruikers de kaart te laten zien, moet je de geolocatie van initiatieven en ideeën inschakelen op het tabblad "functies".'
         budget: "Ideeën"
         default_map: "Standaard kaart"
         new_button: "Creëer nieuwe kaart"
