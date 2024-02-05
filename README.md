@@ -101,3 +101,7 @@ bin/tenant -a {tenant_name}
 ```bash
 rake settings:add_new_settings
 ```
+
+## Deploy
+
+Use the deploy.sh script, in the root of the consul project.
