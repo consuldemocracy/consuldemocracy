@@ -1,7 +1,7 @@
 class Postcode < ApplicationRecord
   include Graphqlable
 
-  has_many :geozones
+  belongs_to :geozone
   validates :postcode, presence: true
   scope :public_for_api, -> { all }
 

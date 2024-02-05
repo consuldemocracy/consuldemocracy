@@ -4,6 +4,7 @@ class Geozone < ApplicationRecord
   has_many :proposals
   has_many :debates
   has_many :users
+  has_many :postcodes
   has_many :headings, class_name: "Budget::Heading", dependent: :nullify
   validates :name, presence: true
   validates :geojson, geojson_format: true

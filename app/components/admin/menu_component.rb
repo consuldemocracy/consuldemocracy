@@ -458,6 +458,7 @@ class Admin::MenuComponent < ApplicationComponent
           tenants_link,
           tags_link,
           geozones_link,
+          postcodes_link,
           local_census_records_link,
           class: ("is-active" if settings?)
         )
@@ -494,6 +495,14 @@ class Admin::MenuComponent < ApplicationComponent
         t("admin.menu.geozones"),
         admin_geozones_path,
         controller_name == "geozones"
+      ]
+    end
+    
+    def postcodes_link
+      [
+        t("admin.menu.postcodes"),
+        admin_postcodes_path,
+        controller_name == "postcodes"
       ]
     end
 
