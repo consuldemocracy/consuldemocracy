@@ -324,7 +324,6 @@ GEM
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
-    language_server-protocol (3.17.0.3)
     launchy (2.5.0)
       addressable (~> 2.7)
     leaflet-rails (1.9.3)
@@ -418,7 +417,6 @@ GEM
     pg_search (2.3.6)
       activerecord (>= 5.2)
       activesupport (>= 5.2)
-    prism (0.19.0)
     pronto (0.11.0)
       gitlab (~> 4.4, >= 4.4.0)
       httparty (>= 0.13.7)
@@ -544,16 +542,6 @@ GEM
     rubocop-rspec (2.4.0)
       rubocop (~> 1.0)
       rubocop-ast (>= 1.1.0)
-    ruby-lsp (0.13.4)
-      language_server-protocol (~> 3.17.0)
-      prism (>= 0.19.0, < 0.20)
-      sorbet-runtime (>= 0.5.10782)
-    ruby-lsp-rails (0.2.9)
-      actionpack (>= 6.0)
-      activerecord (>= 6.0)
-      railties (>= 6.0)
-      ruby-lsp (>= 0.13.0, < 0.14.0)
-      sorbet-runtime (>= 0.5.9897)
     ruby-progressbar (1.11.0)
     ruby-vips (2.1.4)
       ffi (~> 1.12)
@@ -609,7 +597,6 @@ GEM
     social-share-button (1.2.4)
       coffee-rails
     socksify (1.7.1)
-    sorbet-runtime (0.5.11226)
     spring (2.1.1)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
@@ -764,7 +751,6 @@ DEPENDENCIES
   rubocop-performance (~> 1.14.3)
   rubocop-rails (~> 2.15.2)
   rubocop-rspec (~> 2.4.0)
-  ruby-lsp-rails
   rubyzip
   rvm1-capistrano3 (~> 1.4.0)
   sassc-rails (~> 2.1.2)
