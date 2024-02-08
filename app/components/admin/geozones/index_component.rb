@@ -19,4 +19,13 @@ class Admin::Geozones::IndexComponent < ApplicationComponent
         t("shared.no")
       end
     end
+    def geozones_data
+       geozones.map do |geozone|
+        {
+          outline_points: geozone.outline_points,
+          color: geozone.color,
+        }
+       end
+    end
+
 end
