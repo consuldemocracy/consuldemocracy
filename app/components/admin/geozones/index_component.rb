@@ -22,8 +22,12 @@ class Admin::Geozones::IndexComponent < ApplicationComponent
     def geozones_data
        geozones.map do |geozone|
         {
+         
           outline_points: geozone.outline_points,
           color: geozone.color,
+          headings: geozones.where(id: geozone).map do | geozone|
+             link_to(geozone.name, edit_admin_geozone_path(geozone.id))
+          end
         }
        end
     end
