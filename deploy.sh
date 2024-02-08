@@ -12,10 +12,17 @@ else
 fi
 
 unamestr=$(uname)
+
+if [ "$production" = true ]; then
+  envfile=".env.production.${arg}"
+else
+  envfile=".env.${arg}"
+fi
+
 if [ "$unamestr" = 'Linux' ]; then
-  export $(grep -v '^#' .env.${arg} | xargs -d '\n')
+  export $(grep -v '^#' ${envfile} | xargs -d '\n')
 elif [ "$unamestr" = 'FreeBSD' ] || [ "$unamestr" = 'Darwin' ]; then
-  export $(grep -v '^#' .env.${arg} | xargs -0)
+  export $(grep -v '^#' ${envfile} | xargs -0)
 fi
 
 bin/tenant -a ${arg}
