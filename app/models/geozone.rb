@@ -28,9 +28,10 @@ class Geozone < ApplicationRecord
 
     def normalized_coordinates
       if geojson.present?
-        if geojson.match(/"coordinates"\s*:\s*\[{4}/)
+        if geojson.match(/"coordinates"\s*:\s*\[\s*\[\s*\[\s*\[/)
           coordinates.reduce([], :concat).reduce([], :concat)
-        elsif geojson.match(/"coordinates"\s*:\s*\[{3}/)
+         elsif geojson.match(/"coordinates"\s*:\s*\[\s*\[\s*\[/)
+  
           coordinates.reduce([], :concat)
         else
           coordinates

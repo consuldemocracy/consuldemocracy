@@ -29,3 +29,6 @@
     <% end %>
   </tbody>
 </table>
+<div class="budgets-map">
+  <%= render Shared::MapLocationComponent.new(nil, investments_coordinates: nil, geozones_data: geozones_data) %>
+</div>
