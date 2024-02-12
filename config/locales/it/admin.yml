@@ -166,6 +166,8 @@ it:
         calculate: Calcolare gli investimenti del vincitore
         calculated: Stiamo calcolando i vincitori, ciò potrebbe richiedere alcuni minuti.
         recalculate: Ricalcolare Investimenti Vincitori
+      ballots:
+        feature_disabled: 'La funzionalità <strong>Sondaggi</strong> dev''essere abilitata per creare i seggi. Puoi abilitarla dalla pagina <a href="%{link}">configurazione delle impostazioni</a>.'
     budget_groups:
       name: "Nominativo"
       headings_name: "Intestazione"
@@ -527,7 +529,6 @@ it:
         title: "Documenti"
         format: "Formato"
         size: "Dimensioni"
-        url: "URL"
       create:
         success_notice: "Documento caricato con successo"
         unable_notice: "Documento non valido"
@@ -762,6 +763,8 @@ it:
           community: "Community"
           proposals: "Proposte"
           polls: "Votazioni"
+          legislation: "Legislazione collaborativa"
+          budgets: "Budget"
           layouts: "Impaginazione"
           machine_learning: "IA / Apprendimento Automatico"
           mailers: "Email"
@@ -1587,6 +1590,7 @@ it:
           names:
             top_links: Collegamenti Migliori
             footer: Piè di Pagina
+            footer_legal: Pié di pagin (termini legali)
             subnavigation_left: Navigazione Principale Sinistra
             subnavigation_right: Navigazione Principale Destra
       images:
@@ -1742,10 +1746,10 @@ it:
       help:
         title_1: "Cos'è l'IA/Apprendimento Automatico?"
         description_1: "Tradizionalmente, i programmi informatici sono progettati stabilendo regole precise su cosa il programma dovrebbe fare in ogni situazione e come elaborare le informazioni disponibili in qualsiasi momento. Ciò che è comunemente noto come IA/Apprendimento Automatico è un tipo di programmi per cui ciò che è precisamente stabilito è quale attività eseguire e come valutare se questa sia eseguita meglio o peggio. Ma, a differenza di quanto detto sopra, il sistema scopre o impara quale sarebbe il metodo più adatto per eseguire l'attività."
-        title_2: "A cosa serve il modulo IA / Apprendimento Automatico su CONSUL?"
-        description_2: "Questo modulo consente a ogni tipo di programma di IA/Apprendimento Automatico di esser implementato su CONSUL. I programmi possono elaborare le informazioni disponibili su CONSUL e produrre risultati che aiutino sia gli utenti che gli amministratori a coinvolgere in modo più efficiente e intelligente la partecipazione cittadina. Il modulo è stato sviluppato per rendere facile l'implementazione ed esecuzione di nuovi programmi, mantenendo il codice generale di CONSUL e il codice di questi nuovi programmi indipendenti tra loro."
+        title_2: "A cosa serve il modulo IA / Apprendimento Automatico su CONSUL DEMOCRACY?"
+        description_2: "Questo modulo consente a ogni tipo di programma di IA/Apprendimento Automatico di esser implementato su CONSUL DEMOCRACY. I programmi possono elaborare le informazioni disponibili su CONSUL DEMOCRACY e produrre risultati che aiutino sia gli utenti che gli amministratori a coinvolgere in modo più efficiente e intelligente la partecipazione cittadina. Il modulo è stato sviluppato per rendere facile l'implementazione ed esecuzione di nuovi programmi, mantenendo il codice generale di CONSUL DEMOCRACY e il codice di questi nuovi programmi indipendenti tra loro."
         title_3: "Come usare questo modulo"
-        description_3: "Per usarlo per la prima volta, è necessario seguire le istruzioni disponibili nella documentazione di CONSUL per attivare propriamente questo modulo. Una volta attivato correttamente, i programmi sono eseguiti dalla scheda \"Esegui script\". Prima di eseguirli, possiamo vedere nella stessa scheda una stima del tempo d'esecuzione e altre informazioni rilevanti. Alla fine dell'esecuzione, possiamo attivare i contenuti che saranno mostrati su CONSUL dalla scheda delle \"Impostazioni\", nonché scaricare altri file generati che potrebbero esserci utili."
+        description_3: "Per usarlo per la prima volta, è necessario seguire le istruzioni disponibili nella documentazione di CONSUL DEMOCRACY per attivare propriamente questo modulo. Una volta attivato correttamente, i programmi sono eseguiti dalla scheda \"Esegui script\". Prima di eseguirli, possiamo vedere nella stessa scheda una stima del tempo d'esecuzione e altre informazioni rilevanti. Alla fine dell'esecuzione, possiamo attivare i contenuti che saranno mostrati su CONSUL DEMOCRACY dalla scheda delle \"Impostazioni\", nonché scaricare altri file generati che potrebbero esserci utili."
         title_4: "Come implementare nuovi script di IA / Apprendimento Automatico"
         description_4: "Sei pregato di usare gli script precedenti come esempi."
         description_4b: "I nuovi script dovrebbero trovarsi nella cartella\n<code>public/machine_learning/scripts</code>"

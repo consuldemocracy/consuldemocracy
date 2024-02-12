@@ -103,7 +103,6 @@ hr:
           submit: Registriraj se
           terms: Registracijom se prihvaćaju %{terms}
           terms_link: uvjeti korištenja
-          terms_title: Registracijom prihvaćate uvjete korištenja
           title: Registriraj se
           username_is_available: Korisničko ime dostupno
           username_is_not_available: Korisničko ime nije dostupno

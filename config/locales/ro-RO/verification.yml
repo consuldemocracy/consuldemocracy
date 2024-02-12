@@ -46,7 +46,6 @@ ro:
           success: Adresă verificată
       new:
         accept_terms_text: Accept %{terms_url}
-        accept_terms_text_title: Accept termenii și condițiile de acces al Recensământ-ului
         document_number: Numărul documentului
         document_number_help_title: Ajutor
         document_number_help_text: "<strong>DNI</strong>: 12345678A<br> <strong>Pașaport</strong>: AAA000001<br> <strong>Card de reședință</strong>: X1234567P"

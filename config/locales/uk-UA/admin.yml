@@ -450,7 +450,6 @@ uk-UA:
         title: "Документи"
         format: "Формат"
         size: "Розмір"
-        url: "URL-адреса"
       create:
         success_notice: "Документ завантажено"
         unable_notice: "Недійсний документ"

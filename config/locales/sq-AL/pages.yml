@@ -57,9 +57,9 @@ sq:
         how_to_use: "Përdorni %{org_name} në qytetin tuaj"
       how_to_use:
         text: |-
-          Ky Portal i hapur i  Qeverisë  përdor [aplikacionin CONSUL] (https://github.com/consuldemocracy/consuldemocracy 'consul democracy github') që është softuer i lirë, me [licencë AGPLv3] (http://www.gnu.org/licenses/ agpl-3.0.html 'AGPLv3 gnu'), që do të thotë me fjalë të thjeshta se kushdo mund ta përdorë kodin lirisht, ta kopjojë atë, ta shohë atë në detaje, ta modifikojë atë dhe ta rishpërndajë atë  me modifikimet që dëshiron (duke lejuar të tjerët të bëjnë të njëjtën gjë). Sepse ne mendojmë se kultura është më e mirë dhe më e pasur kur lirohet.
+          Ky Portal i hapur i Qeverisë përdor [aplikacionin CONSUL DEMOCRACY] (https://github.com/consuldemocracy/consuldemocracy 'consul democracy github') që është softuer i lirë, me [licencë AGPLv3] (http://www.gnu.org/licenses/ agpl-3.0.html 'AGPLv3 gnu'), që do të thotë me fjalë të thjeshta se kushdo mund ta përdorë kodin lirisht, ta kopjojë atë, ta shohë atë në detaje, ta modifikojë atë dhe ta rishpërndajë atë me modifikimet që dëshiron (duke lejuar të tjerët të bëjnë të njëjtën gjë). Sepse ne mendojmë se kultura është më e mirë dhe më e pasur kur lirohet.
 
-          Nëse jeni programues, mund të shihni kodin dhe të na ndihmoni për ta përmirësuar atë në [aplikacionin CONSUL] (https://github.com/consuldemocracy/consuldemocracy 'consul democracy github').
+          Nëse jeni programues, mund të shihni kodin dhe të na ndihmoni për ta përmirësuar atë në [aplikacionin CONSUL DEMOCRACY] (https://github.com/consuldemocracy/consuldemocracy 'consul democracy github').
       titles:
         how_to_use: Përdoreni atë në qeverinë tuaj lokale
     privacy:

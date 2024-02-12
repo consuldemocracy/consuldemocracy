@@ -430,7 +430,6 @@ ar:
         title: "الوثائق"
         format: "الشكل"
         size: "حجم"
-        url: "URL"
       create:
         success_notice: "تم رفع الوثيقة بنجاح"
         unable_notice: "وثيقة غير صالحة"

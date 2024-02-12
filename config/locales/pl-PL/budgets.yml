@@ -54,6 +54,8 @@ pl:
     investments:
       form:
         title: "Utwórz inwestycję budżetową"
+        subtitle: "%{heading} (%{price})"
+        subtitle_without_price: "%{heading}"
         tag_category_label: "Kategorie"
         tags_instructions: "Otaguj ten wniosek. Możesz wybrać spośród proponowanych kategorii lub dodać własną"
         tags_label: Tagi
@@ -120,6 +122,7 @@ pl:
       wrong_price_format: Tylko liczby całkowite
       investment:
         add: Głos
+        add_label: "Zagłosuj za %{investment}"
         already_added: Dodałeś już ten projekt inwestycyjny
         support_title: Wesprzyj ten projekt
         supports:
@@ -141,7 +144,10 @@ pl:
           few: "Możesz wspierać tylko inwestycje w dzielnicy %{count}  Jeśli będziesz kontynuować, nie będziesz mógł/a zmienić dzielnicy. Jesteś pewny/a?  "
           many: "Możesz wspierać tylko inwestycje w dzielnicy %{count}  Jeśli będziesz kontynuować, nie będziesz mógł/a zmienić dzielnicy. Jesteś pewny/a?  "
           other: "Możesz wspierać jedynie inwestycje w %{count} dzielnicy. Jeśli postanowisz kontynuować, nie będzie możliwości zmiany wyboru Twojej dzielnicy. Czy jesteś pewny/a?"
+        remove_support: "Cofnij swoje wsparcie"
+        remove_support_label: "Cofnij swoje wsparcie dla %{investment}"
         support: "Poparcie"
+        support_label: "Wesprzyj %{investment}"
     investments_list:
       investment:
         price: "Koszt"

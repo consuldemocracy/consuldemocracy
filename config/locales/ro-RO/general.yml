@@ -143,7 +143,6 @@ ro:
       invalid_date_range: "Interval de timp invalid"
   form:
     accept_terms: Sunt de acord cu %{policy} și cu %{conditions}
-    accept_terms_title: Sunt de acord cu Politica de confidențialitate și cu Termenii și condițiile de utilizare
     conditions: Termeni și condiții de utilizare
     debate: Dezbate
     direct_message: mesaj privat
@@ -177,11 +176,6 @@ ro:
   geozones:
     none: Tot orașul
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Am detectat că utilizați Internet Explorer. Pentru o experiență îmbunătățită, vă recomandăm să folosiți %{firefox} sau %{chrome}.
-      ie_title: Acest site web nu este optimizat pentru browserul dumnevoastră
     dashboard:
       proposal_header:
         published: Publicat
@@ -201,9 +195,9 @@ ro:
     footer:
       accessibility: Accesibilitate
       conditions: Termeni și condiții de utilizare
-      consul: Cerere CONSUL
+      consul: Cerere CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Acest portal folosește %{consul} care este %{open_source}.
       open_source: software open-source
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html

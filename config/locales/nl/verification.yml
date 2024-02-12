@@ -46,7 +46,6 @@ nl:
           success: Je woonplaats is bevestigd
       new:
         accept_terms_text: Ik accepteer %{terms_url} van de telling
-        accept_terms_text_title: Ik accepteer de algemene voorwaarden voor toegang tot de telling
         document_number: Documentnummer
         document_number_help_title: Help
         document_number_help_text: "<strong>DNI</strong>: 12345678A<br> <strong>Paspoort</strong>: AAA000001<br> <strong>Verblijfsvergunning</strong>: X1234567P"

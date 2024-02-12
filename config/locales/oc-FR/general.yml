@@ -135,7 +135,6 @@ oc:
       invalid_date_range: "Lo reng de datas es pas valid"
   form:
     accept_terms: Accèpti la %{policy} e las %{conditions}
-    accept_terms_title: Accèpti la Politica de privadança e las Condicions d'usatge
     conditions: Condicions d'usatge
     debate: debat prealable
     direct_message: lo messatge privat
@@ -168,11 +167,6 @@ oc:
   geozones:
     none: Tota la vila
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Avèm detectat qu'ès navigaire dempuèi Internet Explorer. Per una melhora experiéncia te recomandam utilizar %{firefox} o %{chrome}.
-      ie_title: Aquela web es pas optimitzada per lo tieu navigador
     dashboard:
       proposal_header:
         published: Publicat
@@ -191,9 +185,9 @@ oc:
     footer:
       accessibility: Accessibilitat
       conditions: De condicions d'usatge
-      consul: Sollicitud CONSUL
+      consul: CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Aquel portal es una adaptacion de la plataforma de %{open_source} %{consul} desvolopada per la Comuna de Madrid e adaptada per la Deputacion de Valéncia.
       open_source: logicial liure
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html

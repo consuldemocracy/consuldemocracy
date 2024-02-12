@@ -135,7 +135,6 @@ nn:
       invalid_date_range: "Ugyldig dato"
   form:
     accept_terms: Jeg er enig i %{policy} og %{conditions}
-    accept_terms_title: Jeg er enig i personvern- og brukervilkår
     conditions: Brukervilkår
     debate: Debatt
     direct_message: private meldinger
@@ -159,11 +158,6 @@ nn:
   geozones:
     none: Hele byen
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Vi har oppdaget at du bruker Internet Explorer. For en bedre opplevelse anbefaler vi %{firefox} eller %{chrome}.
-      ie_title: Denne siden er ikke optimalisert for din nettleser
     dashboard:
       proposal_header:
         published: Publisert
@@ -182,9 +176,9 @@ nn:
     footer:
       accessibility: Tilgjengelighet
       conditions: Brukervilkår
-      consul: CONSUL
+      consul: CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Denne portalen bruker %{consul} som er %{open_source}.
       open_source: open-source software
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html

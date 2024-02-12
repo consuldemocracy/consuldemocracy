@@ -135,7 +135,6 @@ ca:
       invalid_date_range: "El rango de fechas no es válido"
   form:
     accept_terms: Accepte la %{policy} i les %{conditions}
-    accept_terms_title: Accepte la Política de privacitat i les Condicions d'ús
     conditions: Condicions d'ús
     debate: debat previ
     direct_message: el missatge privat
@@ -168,11 +167,6 @@ ca:
   geozones:
     none: Tota la ciutat
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Hem detectat que estàs navegant des d'Internet Explorer. Per a una millor experiència et recomanem utilitzar %{firefox} o %{chrome}.
-      ie_title: Aquesta web no està optimitzada per al teu navegador
     dashboard:
       proposal_header:
         published: Publicat
@@ -191,9 +185,9 @@ ca:
     footer:
       accessibility: Accessibilitat
       conditions: Condicions d'ús
-      consul: Sol·licitud CONSUL
+      consul: Aplicació CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Aquest portal és una adaptació de la plataforma de %{open_source} %{consul} desenvolupada per l'Ajuntament de Madrid i adaptada per la Diputació de València.
       open_source: programari lliure
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
