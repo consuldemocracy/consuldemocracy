@@ -97,7 +97,7 @@ gd:
           waiting_for: "A’ feitheamh ri dearbhadh air:"
         new:
           cancel: Sguir a bhith a’ clàradh a-steach
-          organization_signup: A bheil thu a’ riochdachadh buidheann no comann? %{ signup_link}
+          organization_signup: A bheil thu a’ riochdachadh buidheann no comann? %{signup_link}
           organization_signup_link: Clàraich an-seo
           password_confirmation_label: Dearbh am facal-faire
           submit: Clàraich
