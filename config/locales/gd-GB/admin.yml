@@ -1049,7 +1049,7 @@ gd:
     booth_assignments:
       manage_assignments: Stiùirich na dreuchdan
       manage:
-        assignments_list: "Sònrachaidhean airson bhòt '%{ poll}'"
+        assignments_list: "Sònrachaidhean airson bhòt '%{poll}'"
         status:
           assign_status: Dreuchd
           assigned: Air a shònrachadh
