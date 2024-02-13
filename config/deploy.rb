@@ -15,6 +15,7 @@ def main_deploy_server
 end
 
 set :rails_env, fetch(:stage)
+set :default_env, { EXECJS_RUNTIME: "Disabled" }
 set :rvm1_map_bins, -> { fetch(:rvm_map_bins).to_a.concat(%w[rake gem bundle ruby]).uniq }
 
 set :application, deploysecret(:app_name, default: "consul")
@@ -46,10 +47,12 @@ set :fnm_setup_command, -> do
                             "cd #{release_path} && fnm env > /dev/null && eval \"$(fnm env)\""
                         end
 set :fnm_install_node_command, -> { "#{fetch(:fnm_setup_command)} && fnm use --install-if-missing" }
-set :fnm_map_bins, %w[bundle node npm puma pumactl rake yarn]
+set :fnm_map_bins, %w[node npm rake yarn]
 
 set :puma_conf, "#{release_path}/config/puma/#{fetch(:rails_env)}.rb"
 set :puma_systemctl_user, :user
+set :puma_enable_socket_service, true
+set :puma_service_unit_env_vars, ["EXECJS_RUNTIME=Disabled"]
 
 set :delayed_job_workers, 2
 set :delayed_job_roles, :background
@@ -123,7 +126,7 @@ task :map_node_bins do
   on roles(:app) do
     within release_path do
       with rails_env: fetch(:rails_env) do
-        prefix = -> { "#{fetch(:fnm_path)}/fnm exec" }
+        prefix = -> { "EXECJS_RUNTIME='' #{fetch(:fnm_path)}/fnm exec" }
 
         fetch(:fnm_map_bins).each do |command|
           SSHKit.config.command_map.prefix[command.to_sym].unshift(prefix)
