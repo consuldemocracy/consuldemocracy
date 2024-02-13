@@ -368,7 +368,7 @@ GEM
       net-protocol
     net-ssh (7.2.0)
     nio4r (2.6.0)
-    nokogiri (1.15.4)
+    nokogiri (1.16.2)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     nori (2.6.0)
