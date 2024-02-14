@@ -230,4 +230,28 @@ describe "Cookies consent" do
       end
     end
   end
+
+  describe "when admin test mode is enabled" do
+    before { Setting["cookies_consent.admin_test_mode"] = true }
+
+    scenario "shows the cookie banner when an administrator user is logged in" do
+      login_as(create(:administrator).user)
+
+      visit root_path
+
+      expect(page).to have_css(".cookies-consent-banner")
+    end
+
+    scenario "does not show the cookie banner for when the user is not an administrator" do
+      visit root_path
+
+      expect(page).not_to have_css(".cookies-consent-banner")
+
+      login_as(create(:user))
+
+      visit root_path
+
+      expect(page).not_to have_css(".cookies-consent-banner")
+    end
+  end
 end

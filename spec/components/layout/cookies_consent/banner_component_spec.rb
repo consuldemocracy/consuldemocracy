@@ -62,4 +62,30 @@ describe Layout::CookiesConsent::BannerComponent do
 
     expect(page).not_to have_button("Reject")
   end
+
+  context "when admin testing mode is enabled" do
+    before { Setting["cookies_consent.admin_test_mode"] = true }
+
+    it "shows the cookie banner to administrators" do
+      sign_in(create(:administrator).user)
+
+      render_inline Layout::CookiesConsent::BannerComponent.new
+
+      expect(page).to have_css(".cookies-consent-banner")
+    end
+
+    it "does not show the cookie banner to common users" do
+      sign_in(create(:user))
+
+      render_inline Layout::CookiesConsent::BannerComponent.new
+
+      expect(page).not_to have_css(".cookies-consent-banner")
+    end
+
+    it "does not show the cookie banner to anonymous users" do
+      render_inline Layout::CookiesConsent::BannerComponent.new
+
+      expect(page).not_to have_css(".cookies-consent-banner")
+    end
+  end
 end

@@ -1,5 +1,6 @@
 class Layout::CookiesConsent::BannerComponent < Layout::CookiesConsent::BaseComponent
   delegate :cookies, to: :helpers
+  delegate :current_user, to: :helpers
 
   def render?
     super && missing_cookies_setup?

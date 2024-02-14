@@ -231,6 +231,8 @@ en:
         legislation: Related SDG in collaborative legislation
         legislation_description: Allow collaborative legislation to be linked to Sustainable Development Goals
     cookies_consent:
+      admin_test_mode: Enable testing mode
+      admin_test_mode_description: This feature will hide the cookie consent interface for all users except administrators when enabled. It allows you to test your settings before publishing. Turn off this feature once you have successfully tested it.
       more_info_link: Link to cookies policy
       more_info_link_description: Link shown in the consent banner to the cookie policy page.
       setup_page: Enable third party cookies setup page

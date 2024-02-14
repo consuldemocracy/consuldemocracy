@@ -231,6 +231,8 @@ es:
         legislation: Alineamiento ODS en legislación colaborativa
         legislation_description: Permitir alineamiento de los Objetivos de Desarrollo Sostenible en legislación colaborativa
     cookies_consent:
+      admin_test_mode: Activar el modo de pruebas
+      admin_test_mode_description: Esta función ocultará la interfaz de consentimiento de cookies para todos los usuarios excepto los administradores cuando esté activada. Le permite probar su configuración antes de publicarla. Desactive esta función una vez que la haya probado correctamente.
       more_info_link: Enlace a la política de cookies
       more_info_link_description: Enlace que se muestra en el banner de consentimiento a la página de política de cookies
       setup_page: Activar la página de configuración de consentimiento de cookies de terceros
