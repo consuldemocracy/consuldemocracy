@@ -110,4 +110,8 @@ module ProposalsHelper
   def show_recommended_proposals?
     params[:selected].blank? && feature?("user.recommendations") && @recommended_proposals.present?
   end
+
+  def proposals_any?(kind)
+    Proposal.send("#{kind}").any?
+  end
 end

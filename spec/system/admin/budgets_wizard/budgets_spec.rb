@@ -94,6 +94,60 @@ describe "Budgets wizard, first step", :admin do
       expect(page).to have_link "Preview"
       expect(page).to have_button "Publish budget"
     end
+
+    scenario "Create budget - Approval voting with hide money" do
+      visit admin_budgets_path
+      click_button "Create new budget"
+      click_link "Create multiple headings budget"
+
+      expect(page).to have_select("Final voting style", selected: "Knapsack")
+      expect(page).not_to have_selector("#budget_hide_money")
+
+      fill_in "Name", with: "Budget hide money"
+      select "Approval", from: "Final voting style"
+      check "Hide money amount for this budget"
+      click_button "Continue to groups"
+
+      expect(page).to have_content "New participatory budget created successfully!"
+      expect(page).to have_content "Budget hide money"
+      expect(Budget.last.voting_style).to eq "approval"
+      expect(Budget.last.hide_money?).to be true
+    end
+
+    scenario "Creation a budget with hide money by steps" do
+      visit admin_budgets_path
+      click_button "Create new budget"
+      click_link "Create multiple headings budget"
+
+      fill_in "Name", with: "Multiple headings budget with hide money"
+      select "Approval", from: "Final voting style"
+      check "Hide money amount for this budget"
+      click_button "Continue to groups"
+
+      expect(page).to have_content "New participatory budget created successfully!"
+      expect(page).to have_content "There are no groups."
+
+      click_button "Add new group"
+      fill_in "Group name", with: "All city"
+      click_button "Create new group"
+      expect(page).to have_content "Group created successfully!"
+      within("table") { expect(page).to have_content "All city" }
+      expect(page).not_to have_content "There are no groups."
+
+      click_link "Continue to headings"
+      expect(page).to have_content "Multiple headings budget with hide money / All city headings"
+      expect(page).to have_content "There are no headings in the All city group."
+
+      click_button "Add new heading"
+      fill_in "Heading name", with: "All city"
+      click_button "Create new heading"
+      expect(page).to have_content "Heading created successfully!"
+      expect(page).to have_content "All city"
+      expect(page).to have_link "Continue to phases"
+      expect(page).not_to have_content "There are no headings."
+      expect(page).not_to have_content "Money amount"
+      expect(page).not_to have_content "€"
+    end
   end
 
   describe "Edit" do

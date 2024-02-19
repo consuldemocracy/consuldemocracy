@@ -156,7 +156,7 @@ class User < ApplicationRecord
   end
 
   def voted_in_group?(group)
-    votes.where(votable: Budget::Investment.where(group: group)).exists?
+    votes.up.where(votable: Budget::Investment.where(group: group)).exists?
   end
 
   def headings_voted_within_group(group)
@@ -164,7 +164,7 @@ class User < ApplicationRecord
   end
 
   def voted_investments
-    Budget::Investment.where(id: votes.where(votable: Budget::Investment.all).pluck(:votable_id))
+    Budget::Investment.where(id: votes.up.where(votable: Budget::Investment.all).pluck(:votable_id))
   end
 
   def administrator?

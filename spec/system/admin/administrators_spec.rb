@@ -60,6 +60,20 @@ describe "Admin administrators" do
     end
   end
 
+  scenario "Delete Administrator when it is assigned to a budget" do
+    create(:budget, administrators: [user_administrator])
+
+    visit admin_administrators_path
+
+    within "#administrator_#{user_administrator.id}" do
+      accept_confirm { click_button "Delete" }
+    end
+
+    within("#administrators") do
+      expect(page).not_to have_content user_administrator.name
+    end
+  end
+
   context "Search" do
     let!(:administrator1) do
       create(:administrator, user: create(:user, username: "Bernard Sumner", email: "bernard@sumner.com"))

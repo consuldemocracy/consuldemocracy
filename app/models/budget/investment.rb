@@ -357,6 +357,10 @@ class Budget
       unfeasible? && valuation_finished? && unfeasibility_explanation.present?
     end
 
+    def should_show_feasibility_explanation?
+      feasible? && valuation_finished? && feasibility_explanation.present?
+    end
+
     def formatted_price
       budget.formatted_amount(price)
     end

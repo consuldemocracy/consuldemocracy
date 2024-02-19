@@ -18,10 +18,12 @@
 
     <p><%= t("budgets.supports_info.share") %></p>
 
-    <p>
-      <a href="#investments_list" class="keep-scrolling" data-smooth-scroll>
-        <%= t("budgets.supports_info.scrolling") %><br>
-      </a>
-    </p>
+    <% if budget.investments.any? %>
+      <p>
+        <a href="#investments_list" class="keep-scrolling" data-smooth-scroll>
+          <%= t("budgets.supports_info.scrolling") %><br>
+        </a>
+      </p>
+    <% end %>
   </section>
 </aside>

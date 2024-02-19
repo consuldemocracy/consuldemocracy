@@ -4,6 +4,7 @@ class Budget < ApplicationRecord
   include StatsVersionable
   include Reportable
   include Imageable
+  include SDG::Relatable
 
   translates :name, :main_link_text, :main_link_url, touch: true
   include Globalizable
@@ -64,7 +65,7 @@ class Budget < ApplicationRecord
   scope :open, -> { where.not(phase: "finished") }
 
   def self.current
-    published.order(:created_at).last
+    published.open.order(:created_at).last || published.order(:created_at).last
   end
 
   def current_phase
@@ -159,6 +160,24 @@ class Budget < ApplicationRecord
     current_phase&.balloting_or_later?
   end
 
+
+  def enabled_phases_amount
+    phases.enabled.count
+  end
+
+  def current_enabled_phase_number
+    first_enabled_phase_position = phases.enabled.order(:id).find_index { |phase| phase.kind == self.phase }
+    first_enabled_phase_position.present? ? first_enabled_phase_position + 1 : 0
+  end
+
+  def start_date
+    phases.enabled.first.starts_at
+  end
+
+  def end_date
+    phases.enabled.last.ends_at
+  end
+
   def balloting_finished?
     balloting_or_later? && !balloting?
   end
@@ -175,11 +194,19 @@ class Budget < ApplicationRecord
     heading_ids.include?(heading.id) ? heading.price : -1
   end
 
+  def total_headings_price
+    headings.map(&:price).reduce(:+)
+  end
+
   def formatted_amount(amount)
     ActionController::Base.helpers.number_to_currency(amount,
                                                       precision: 0,
                                                       locale: I18n.locale,
                                                       unit: currency_symbol)
+  end
+
+  def formatted_total_headings_price
+    formatted_amount(total_headings_price)
   end
 
   def formatted_heading_price(heading)
@@ -229,6 +256,27 @@ class Budget < ApplicationRecord
 
   def approval_voting?
     voting_style == "approval"
+  end
+
+  def investments_preview_list(limit = 9)
+    case phase
+    when "accepting", "reviewing"
+      investments.sample(limit)
+    when "selecting", "valuating", "publishing_prices"
+      investments.feasible.sample(limit)
+    when "balloting", "reviewing_ballots"
+      investments.selected.sample(limit)
+    else
+      []
+    end
+  end
+
+  def self.open_budgets_for(user = nil)
+    if user&.administrator?
+      open.order(:created_at)
+    else
+      open.published.order(:created_at)
+    end
   end
 
   def show_money?

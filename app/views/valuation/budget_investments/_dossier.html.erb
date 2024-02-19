@@ -41,6 +41,8 @@
   <%= t("valuation.budget_investments.show.#{@investment.feasibility}") %>
 </p>
 
+<%= explanation_field @investment.feasibility_explanation %>
+
 <%= explanation_field @investment.unfeasibility_explanation %>
 
 <% if @investment.valuation_finished %>

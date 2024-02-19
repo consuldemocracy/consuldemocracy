@@ -9,7 +9,7 @@ class Budget::VotingStyles::Base
     self.class.name.split("::").last.underscore
   end
 
-  def change_vote_info(link:)
+  def change_vote_info(link:, phase_end_date:)
     I18n.t(
       "budgets.investments.index.sidebar.change_vote_info.#{name}",
       link: link,

@@ -4,13 +4,13 @@
   <%= f.hidden_field(:legislation_process_id, value: params[:process_id]) %>
 
   <div class="row">
-    <div class="small-12 column">
+    <div class="small-12 column required">
       <%= f.text_field :title, maxlength: Legislation::Proposal.title_max_length %>
     </div>
 
     <%= f.invisible_captcha :subtitle %>
 
-    <div class="small-12 column">
+    <div class="small-12 column required">
       <%= f.text_area :summary, rows: 4, maxlength: 200,
                                 hint: t("proposals.form.proposal_summary_note") %>
     </div>
@@ -67,6 +67,7 @@
     </div>
 
     <div class="actions small-12 column">
+      <p class="form-label"><%= t("shared.required_fields") %></p>
       <%= f.submit(class: "button", value: t("proposals.#{action_name}.form.submit_button")) %>
     </div>
   </div>

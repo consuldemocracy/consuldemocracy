@@ -1,0 +1,23 @@
+#!/bin/sh
+
+export rvm_path=/home/deploy/.rvm
+
+case $1 in
+  start)
+    cd /home/deploy/consul/current
+    /home/deploy/consul/rvm1scripts/rvm-auto.sh . bundle exec puma -C /home/deploy/consul/current/config/puma/<%= fetch(:rails_env) %>.rb --daemon
+    echo "Puma Started"
+    exit 0
+    ;;
+  stop)
+    cd /home/deploy/consul/current
+    /home/deploy/consul/rvm1scripts/rvm-auto.sh . bundle exec pumactl -S /home/deploy/consul/shared/tmp/pids/puma.state -F /home/deploy/consul/current/config/puma/<%= fetch(:rails_env) %>.rb stop
+    echo "Puma Stopped"
+    exit 0
+    ;;
+  *)
+    echo >&2 "Usage: $0 <start|stop>"
+    exit 1
+    ;;
+esac
+exit 0

@@ -26,7 +26,6 @@ module Images
   def imageable_fill_new_valid_proposal
     fill_in_new_proposal_title with: "Proposal title"
     fill_in "Proposal summary", with: "Proposal summary"
-    check :proposal_terms_of_service
   end
 
   def imageable_fill_new_valid_budget
@@ -36,7 +35,6 @@ module Images
   def imageable_fill_new_valid_budget_investment
     fill_in_new_investment_title with: "Budget investment title"
     fill_in_ckeditor "Description", with: "Budget investment description"
-    check :budget_investment_terms_of_service
   end
 
   def expect_image_has_title(title)
@@ -48,6 +46,6 @@ module Images
   end
 
   def show_caption_for?(imageable_factory_name)
-    imageable_factory_name != "budget"
+    %w[budget proposal budget_investment].include?(imageable_factory_name) == false
   end
 end

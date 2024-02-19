@@ -5,4 +5,8 @@ class Budgets::SubheaderComponent < ApplicationComponent
   def initialize(budget)
     @budget = budget
   end
+
+  def budget_phase_name(phase)
+    phase.name.presence || t("budgets.phase.#{phase.kind}")
+  end
 end

@@ -116,20 +116,20 @@
 //= require i18n
 //= require globalize
 //= require send_admin_notification_alert
-//= require settings
 //= require cookies
 //= require columns_selector
 //= require budget_edit_associations
 //= require budget_hide_money
 //= require datepicker
 //= require authenticity_token_refresh
+//= require link_to_top
 //= require_tree ./admin
 //= require_tree ./sdg
 //= require_tree ./sdg_management
 //= require custom
 //= require_tree ./custom
 
-var initialize_modules = function() {
+var initialize_modules = function () {
   "use strict";
 
   App.Answers.initialize();
@@ -172,7 +172,6 @@ var initialize_modules = function() {
   App.Managers.initialize();
   App.Globalize.initialize();
   App.SendAdminNotificationAlert.initialize();
-  App.Settings.initialize();
   if ($("#js-columns-selector").length) {
     App.ColumnsSelector.initialize();
   }
@@ -183,12 +182,13 @@ var initialize_modules = function() {
   App.BudgetEditAssociations.initialize();
   App.BudgetHideMoney.initialize();
   App.Datepicker.initialize();
+  App.LinkToTop.initialize();
   App.SDGRelatedListSelector.initialize();
   App.SDGManagementRelationSearch.initialize();
   App.AuthenticityTokenRefresh.initialize();
 };
 
-var destroy_non_idempotent_modules = function() {
+var destroy_non_idempotent_modules = function () {
   "use strict";
 
   App.ColumnsSelector.destroy();

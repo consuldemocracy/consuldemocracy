@@ -1,0 +1,25 @@
+// Base variables
+// --------------
+
+$base-font-size: rem-calc(16) !default;
+$border: #cbc7c7 !default;
+$brand: #004a83 !default;
+$brand-secondary: #0054ad !default;
+$dark: #2d313b !default;
+$footer: #c9d8ff !default;
+$highlight-soft: #f0f3f6 !default;
+$highlight-text: #8a9999 !default;
+$hover: darken($brand, 20%) !default;
+$hover-secondary: darken($brand-secondary, 20%) !default;
+$info: #4ab4f9 !default;
+$label: #00469f !default;
+$light: #f2f5f7 !default;
+$like: #21a562 !default;
+$anchor-color-dark: #493d57 !default;
+$anchor-color-hover: $brand !default;
+$anchor-color-soft: #a099a8 !default;
+$text: #000 !default;
+$unlike: #da262b !default;
+$header-font-weight: 700 !default;
+$button-font-weight: $header-font-weight !default;
+$topbar-padding: 0;

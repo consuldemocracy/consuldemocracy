@@ -7,20 +7,20 @@
     <%= render "shared/globalize_locales", resource: proposal %>
 
     <%= f.translatable_fields do |translations_form| %>
-      <div>
+      <div class="required">
         <%= translations_form.text_field :title,
                                          maxlength: Proposal.title_max_length,
                                          data: suggest_data(proposal) %>
       </div>
       <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
 
-      <div>
+      <div class="required">
         <%= translations_form.text_area :summary,
                                         rows: 4, maxlength: 200,
                                         hint: t("proposals.form.proposal_summary_note") %>
       </div>
 
-      <div>
+      <div class="required">
         <%= translations_form.text_area :description,
                                         maxlength: Proposal.description_max_length,
                                         class: "html-area" %>
@@ -84,7 +84,7 @@
     </div>
 
     <% if current_user.unverified? %>
-      <div>
+      <div class="required">
         <%= f.text_field :responsible_name,
                          hint: t("proposals.form.proposal_responsible_name_note") %>
       </div>
@@ -100,6 +100,6 @@
       </div>
     <% end %>
 
-    <%= f.submit(class: "button", value: t("proposals.#{action_name}.form.submit_button")) %>
+    <%= f.submit(class: "button large margin-top", value: t("proposals.#{action_name}.form.submit_button")) %>
   </div>
 <% end %>

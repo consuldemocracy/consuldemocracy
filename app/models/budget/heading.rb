@@ -25,7 +25,7 @@ class Budget
     belongs_to :geozone
 
     has_many :investments
-    has_many :content_blocks
+    has_many :content_blocks, dependent: :destroy
 
     validates_translation :name, presence: true
     validates :group_id, presence: true
@@ -59,7 +59,7 @@ class Budget
     private
 
       def generate_slug?
-        slug.nil? || budget.drafting?
+        slug.nil? || budget&.drafting?
       end
   end
 end

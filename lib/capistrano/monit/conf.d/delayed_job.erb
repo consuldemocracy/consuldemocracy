@@ -1,0 +1,6 @@
+<% fetch(:delayed_job_workers).times do |n| %>
+check process delayed_job_worker_<%= n %> with pidfile <%= shared_path %>/tmp/pids/delayed_job.<%= n %>.pid
+  start program = "/etc/init.d/delayed_job start" as uid deploy
+  stop program = "/etc/init.d/delayed_job stop" as uid deploy
+  if 5 restarts within 5 cycles then timeout
+<% end %>

@@ -14,7 +14,7 @@ class Admin::Budgets::IndexComponent < ApplicationComponent
 
     def phase_progress_text(budget)
       t("admin.budgets.index.table_phase_progress",
-        current_phase_number: current_enabled_phase_number(budget),
+        current_phase_number: budget.current_enabled_phase_number,
         total_phases: budget.phases.enabled.count)
     end
 

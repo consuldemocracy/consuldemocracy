@@ -1,16 +1,33 @@
 <section id="feed_<%= kind %>" class="widget-feed feed-<%= kind %>">
   <header>
     <h2 class="title"><%= t("welcome.feed.most_active.#{kind}") %></h2>
+
+    <% if feed_proposals? %>
+      <div class="row">
+        <div class="small-12 medium-9 column">
+          <p><%= t("welcome.feed.description.proposals") %></p>
+        </div>
+        <div class="small-12 medium-3 column">
+          <%= link_to t("welcome.feed.see_all.proposals"), see_all_path, class: "button expanded" %>
+        </div>
+      </div>
+    <% end %>
+
+    <% if feed_budgets? %>
+      <p><%= t("welcome.feed.description.budgets") %></p>
+    <% end %>
   </header>
 
   <% if feed.items.any? %>
-    <div class="feed-content">
+    <div class="feed-content" data-equalizer="feed_budget" data-equalize-on="medium">
       <% feed.items.each do |item| %>
         <%= render item_component_class.new(item) %>
       <% end %>
     </div>
 
-    <%= link_to t("welcome.feed.see_all.#{kind}"), see_all_path, class: "see-all" %>
+    <% unless feed_proposals? || feed_budgets? %>
+      <%= link_to t("welcome.feed.see_all.#{kind}"), see_all_path, class: "clear see-all" %>
+    <% end %>
   <% else %>
     <div class="no-items callout primary"><%= t("welcome.feed.no_items.#{kind}") %></div>
   <% end %>

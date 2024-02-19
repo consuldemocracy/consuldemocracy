@@ -143,7 +143,7 @@ describe "Budgets wizard, headings step", :admin do
 
       visit admin_budget_path(budget)
 
-      within "section", text: "Heading groups" do
+      within "section", text: "HEADING GROUPS" do
         within("tbody tr") { expect(page).to have_content "Heading without typos" }
       end
     end

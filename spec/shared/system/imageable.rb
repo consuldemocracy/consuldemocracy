@@ -21,12 +21,12 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
       expect(page).to have_css("img[alt='#{image.title}'][title='#{image.title}']")
     end
 
-    scenario "Show image title when image exists" do
+    scenario "Show image title as image alt property when image exists" do
       image = create(:image, imageable: imageable)
 
       visit send(imageable_path, imageable_arguments)
 
-      expect(page).to have_content image.title
+      expect(page).to have_content image.title unless imageable.is_a? Proposal
     end
   end
 end

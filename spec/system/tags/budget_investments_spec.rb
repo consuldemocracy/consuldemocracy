@@ -70,7 +70,6 @@ describe "Tags" do
 
     fill_in_new_investment_title with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
-    check   "budget_investment_terms_of_service"
 
     fill_in "budget_investment_tag_list", with: "#{tag_medio_ambiente.name}, #{tag_economia.name}"
 
@@ -88,7 +87,6 @@ describe "Tags" do
 
     fill_in_new_investment_title with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
-    check "budget_investment_terms_of_service"
 
     find(".js-add-tag-link", text: tag_economia.name).click
     click_button "Create Investment"
@@ -112,7 +110,6 @@ describe "Tags" do
 
     fill_in_new_investment_title with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
-    check "budget_investment_terms_of_service"
 
     find(".js-add-tag-link", text: "Education").click
     click_button "Create Investment"
@@ -136,7 +133,6 @@ describe "Tags" do
 
     fill_in_new_investment_title with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
-    check "budget_investment_terms_of_service"
 
     find(".js-add-tag-link", text: "Education").click
     click_button "Create Investment"
@@ -157,7 +153,6 @@ describe "Tags" do
 
     fill_in_new_investment_title with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
-    check   "budget_investment_terms_of_service"
 
     fill_in "budget_investment_tag_list",
             with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
@@ -175,7 +170,6 @@ describe "Tags" do
 
     fill_in_new_investment_title with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
-    check   "budget_investment_terms_of_service"
 
     fill_in "budget_investment_tag_list", with: "user_id=1, &a=3, <script>alert('hey');</script>"
 
@@ -252,7 +246,13 @@ describe "Tags" do
         end
       end
 
-      visit budget_investments_path(budget, heading: heading.id)
+      login_as(admin) if budget.drafting?
+      visit budget_path(budget)
+      if budget.informing?
+        visit budget_investments_path(budget, heading: heading.id)
+      else
+        click_link "See all investments"
+      end
 
       within "#tag-cloud" do
         click_link new_tag
@@ -295,7 +295,13 @@ describe "Tags" do
         end
       end
 
-      visit budget_investments_path(budget, heading: heading.id)
+      login_as(admin) if budget.drafting?
+      visit budget_path(budget)
+      if budget.informing?
+        visit budget_investments_path(budget, heading: heading.id)
+      else
+        click_link "See all investments"
+      end
 
       within "#categories" do
         click_link tag_medio_ambiente.name

@@ -1,0 +1,34 @@
+<div class="budget card small-12 medium-6 large-4 column margin-bottom end">
+  <%= link_to url_for(budget), data: { equalizer_watch: "feed_budget" } do %>
+    <figure class="figure-card">
+      <div class="gradient"></div>
+      <% if budget.image.present? %>
+        <%= image_tag budget.image.variant(:medium), alt: budget.name %>
+      <% else %>
+        <%= image_tag(image_path_for("budget_no_image.jpg"), alt: "") %>
+      <% end %>
+
+      <figcaption>
+        <% if budget.show_money? %>
+          <span><%= budget.formatted_total_headings_price %></span>
+        <% end %>
+        <br>
+        <h3><%= budget.name %></h3>
+      </figcaption>
+    </figure>
+
+    <% if budget.finished? %>
+      <h4 class="completed"><%= t("admin.budgets.index.table_budget_completed") %></h4>
+    <% else %>
+      <p class="phase"><%= t("budgets.index.current_phase") %>:
+      <%= budget.current_enabled_phase_number %>/<%= budget.enabled_phases_amount %></p>
+      <h4><%= budget.current_phase.name %></h4>
+    <% end %>
+
+    <p class="dates">
+      <%= budget.current_phase.starts_at.to_date %> / <%= budget.current_phase.ends_at.to_date - 1.day %>
+    </p>
+    <div class="description"><%= sanitize(strip_links(budget.description)) %></div>
+    <p><%= t("welcome.feed.see_budget") %></p>
+  <% end %>
+</div>

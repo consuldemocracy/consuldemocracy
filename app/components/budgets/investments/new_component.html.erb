@@ -1,7 +1,9 @@
-<main class="budget-investment-new">
-  <%= back_link_to budgets_path %>
+<main class="budget-investment-new no-margin-top">
+  <div class="small-12 column light expand padding-top">
+    <%= back_link_to budgets_path %>
 
-  <%= header %>
+    <%= header %>
+  </div>
 
   <%= render "/budgets/investments/form", form_url: budget_investments_path(budget) %>
 </main>

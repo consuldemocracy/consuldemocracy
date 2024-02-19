@@ -191,7 +191,8 @@ en:
         selected: "Mark as selected"
         selected_true: "Selected"
         selected_false: "Not selected"
-        unfeasibility_explanation: "Feasibility explanation"
+        feasibility_explanation: "Feasibility explanation (optional)"
+        unfeasibility_explanation: "Unfeasibility explanation"
         valuation_finished: "Valuation finished"
         valuator_ids: "Groups"
         valuation_tag_list: "Tags"
@@ -240,8 +241,10 @@ en:
         enabled: "Phase enabled"
         ends_at: "End date"
         starts_at: "Start date"
+        main_button_text: "Text on the button"
+        main_button_url: "The button takes you to (add a link)"
       budget/phase/translation:
-        name: "Name"
+        name: "Phase's Name"
         description: "Description"
         summary: "Summary"
         main_link_text: "Text on the link"
@@ -488,6 +491,7 @@ en:
         link_text: Link text
         link_url: Link URL
         columns: Number of columns
+        background_image: "Use image as background"
       widget/card/translation:
         label: Label (optional)
         title: Title

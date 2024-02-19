@@ -1,16 +1,18 @@
 <div id="groups_and_headings" class="groups-and-headings">
   <% budget.groups.each do |group| %>
     <h2 id="<%= group.name.parameterize %>"><%= group.name %></h2>
-    <ul class="headings-list">
+    <ul class="no-bullet headings-list" data-equalizer data-equalizer-on="medium">
       <% group.headings.sort_by_name.each do |heading| %>
-        <li class="heading">
-          <%= link_to_unless(
-            (budget.informing? || budget.finished?),
-            heading.name,
-            budget_investments_path(budget.id, heading_id: heading.id)
-          ) %>
-
-          <%= price(heading) %>
+        <li class="heading small-12 medium-4 large-2" data-equalizer-watch>
+          <% unless budget.informing? %>
+            <%= link_to budget_investments_path(budget.id, heading_id: heading.id) do %>
+              <%= heading_name_and_price_html(heading, budget) %>
+            <% end %>
+          <% else %>
+            <div class="heading-name">
+              <%= heading_name_and_price_html(heading, budget) %>
+            </div>
+          <% end %>
         </li>
       <% end %>
     </ul>

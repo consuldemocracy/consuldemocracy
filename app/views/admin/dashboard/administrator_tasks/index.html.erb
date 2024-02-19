@@ -18,13 +18,17 @@
       <% @administrator_tasks.each do |task| %>
         <tr id="<%= dom_id(task) %>">
           <td>
-            <%= task.source.proposal.title %>
+            <% if task.source.proposal.present? %>
+              <%= task.source.proposal.title %>
+            <% else %>
+              <em><%= t("admin.dashboard.administrator_tasks.index.deleted_proposal") %></em>
+            <% end %>
           </td>
           <td>
             <%= task.source.action.title %>
           </td>
           <td>
-            <% unless task.executed_at? %>
+            <% unless task.executed_at? || task.source.proposal.nil?  %>
               <%= render Admin::TableActionsComponent.new(
                 task,
                 actions: [:edit],

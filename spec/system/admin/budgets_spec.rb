@@ -50,7 +50,7 @@ describe "Admin budgets", :admin do
       expect(page).to have_content "Balloting budget"
 
       within "tr", text: "Unpublished budget" do
-        expect(page).to have_content "Draft"
+        expect(page).to have_content "DRAFT"
       end
 
       within "tr", text: "Finished budget" do
@@ -151,7 +151,8 @@ describe "Admin budgets", :admin do
       click_link "Continue to headings"
 
       expect(page).to have_content "Showing headings from the All city group."
-      expect(page).to have_link "Manage headings from the District A group."
+      expect(page).to have_button "Manage headings from a different group"
+      within(".budget-group-switcher") { expect(page).to have_link("District A", visible: :hidden) }
 
       click_button "Add new heading"
       fill_in "Heading name", with: "All city"
@@ -188,6 +189,72 @@ describe "Admin budgets", :admin do
       click_link "View"
 
       expect(page).to have_current_path budget_path(budget)
+    end
+
+    scenario "Hide money active" do
+      budget_hide_money = create(:budget, :approval, :hide_money)
+      group = create(:budget_group, budget: budget_hide_money)
+      heading = create(:budget_heading, group: group)
+      heading_2 = create(:budget_heading, group: group)
+
+      visit admin_budget_path(budget_hide_money)
+
+      within("#budget_group_#{group.id}") do
+        expect(page).to have_content heading.name
+        expect(page).to have_content heading_2.name
+        expect(page).not_to have_content "Money amount"
+      end
+
+      visit edit_admin_budget_path(budget_hide_money)
+
+      expect(find("#budget_hide_money")).to be_checked
+      expect(budget_hide_money.voting_style).to eq "approval"
+    end
+
+    scenario "Change voting style uncheck hide money" do
+      budget_hide_money = create(:budget, :approval, :hide_money)
+      hide_money_help_text = "If this option is checked, all fields showing the amount of money "\
+                             "will be hidden throughout the process."
+
+      visit edit_admin_budget_path(budget_hide_money)
+      expect(find("#budget_hide_money")).to be_checked
+      expect(page).to have_content hide_money_help_text
+
+      select "Knapsack", from: "Final voting style"
+      expect(page).not_to have_selector("#budget_hide_money")
+      expect(page).not_to have_content hide_money_help_text
+
+      select "Approval", from: "Final voting style"
+      expect(find("#budget_hide_money")).not_to be_checked
+      expect(page).to have_content hide_money_help_text
+    end
+
+    scenario "Edit knapsack budget do not show hide money info" do
+      budget = create(:budget, :knapsack)
+      hide_money_help_text = "If this option is checked, all fields showing the amount of money "\
+                             "will be hidden throughout the process."
+
+      visit edit_admin_budget_path(budget)
+      expect(page).not_to have_selector("#budget_hide_money")
+      expect(page).not_to have_content hide_money_help_text
+
+      select "Approval", from: "Final voting style"
+      expect(find("#budget_hide_money")).not_to be_checked
+      expect(page).to have_content hide_money_help_text
+    end
+
+    scenario "Edit approval budget show hide money info" do
+      budget = create(:budget, :approval)
+      hide_money_help_text = "If this option is checked, all fields showing the amount of money "\
+                             "will be hidden throughout the process."
+
+      visit edit_admin_budget_path(budget)
+      expect(find("#budget_hide_money")).not_to be_checked
+      expect(page).to have_content hide_money_help_text
+
+      select "Knapsack", from: "Final voting style"
+      expect(page).not_to have_selector("#budget_hide_money")
+      expect(page).not_to have_content hide_money_help_text
     end
   end
 
@@ -242,14 +309,15 @@ describe "Admin budgets", :admin do
                                      "on the public page of the participatory budget."
         expect(page).to have_table "Phases", with_cols: [
           [
-            "Information",
-            "Accepting projects",
-            "Reviewing projects",
-            "Selecting projects Active",
-            "Valuating projects",
-            "Publishing projects prices",
-            "Voting projects",
-            "Reviewing voting"
+            "Information (Information)",
+            "Accepting projects (Accepting projects)",
+            "Reviewing projects (Reviewing projects)",
+            "Selecting projects (Selecting projects) Active",
+            "Valuating projects (Valuating projects)",
+            "Publishing projects prices (Publishing projects prices)",
+            "Voting projects (Voting projects)",
+            "Reviewing voting (Reviewing voting)",
+            "Finished budget (Finished budget)"
           ],
           [
             "2015-07-15 00:00 - 2015-08-14 23:59",
@@ -257,9 +325,10 @@ describe "Admin budgets", :admin do
             "2015-09-15 00:00 - 2015-10-14 23:59",
             "2015-10-15 00:00 - 2015-11-14 23:59",
             "2015-11-15 00:00 - 2015-12-14 23:59",
-            "2015-11-15 00:00 - 2016-01-14 23:59",
+            "2015-12-15 00:00 - 2016-01-14 23:59",
             "2016-01-15 00:00 - 2016-02-14 23:59",
-            "2016-02-15 00:00 - 2016-03-14 23:59"
+            "2016-02-15 00:00 - 2016-03-14 23:59",
+            "2016-03-15 00:00 - 2016-04-14 23:59"
           ],
           [
             "Yes",
@@ -267,6 +336,7 @@ describe "Admin budgets", :admin do
             "Yes",
             "Yes",
             "No",
+            "Yes",
             "Yes",
             "Yes",
             "Yes"

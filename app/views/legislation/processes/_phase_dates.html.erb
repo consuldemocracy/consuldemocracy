@@ -1,0 +1,7 @@
+<% if phase_dates?(process, phase) %>
+  <% phase = "proposals_phase" if phase == "proposals" %>
+  <span>
+    <%= format_date(process.send("#{phase}_start_date")) %> -
+    <%= format_date(process.send("#{phase}_end_date")) %>
+  </span>
+<% end %>

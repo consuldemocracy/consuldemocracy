@@ -114,12 +114,27 @@ describe "Results" do
   end
 
   scenario "Loads budget and heading by slug" do
+    other_heading = create(:budget_heading, group: group, price: 1000)
+    create(:budget_investment, :selected, heading: other_heading, price: 600, ballot_lines_count: 600)
+
     visit budget_results_path(budget.slug, heading_id: heading.slug)
 
+    expect(page).to have_content("By district")
     expect(page).to have_css "a.is-active", text: heading.name
 
     within("#budget-investments-compatible") do
       expect(page).to have_content "First selected"
+    end
+  end
+
+  scenario "Do not show headings sidebar on single heading budgets" do
+    visit budget_results_path(budget.slug, heading_id: heading.slug)
+
+    expect(page).not_to have_content("By district")
+    expect(page).not_to have_selector("a.is-active", text: heading.name)
+
+    within("#budget-investments-compatible") do
+      expect(page).to have_content investment1.title
     end
   end
 

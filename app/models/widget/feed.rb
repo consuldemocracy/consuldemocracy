@@ -1,5 +1,5 @@
 class Widget::Feed < ApplicationRecord
-  KINDS = %w[proposals debates processes].freeze
+  KINDS = %w[proposals debates processes budgets].freeze
 
   def active?
     setting.value.present?
@@ -30,5 +30,9 @@ class Widget::Feed < ApplicationRecord
 
   def processes
     Legislation::Process.open.published.order("created_at DESC").limit(limit)
+  end
+
+  def budgets
+    Budget.published.order("created_at DESC").limit(limit)
   end
 end

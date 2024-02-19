@@ -1,0 +1,515 @@
+nl:
+  account:
+    show:
+      change_credentials_link: "Inloggegevens aanpassen"
+      save_changes_submit: "Opslaan"
+      title: "Mijn profiel"
+      user_permission_info: "Met dit profiel kun je..."
+      user_permission_debates: "Deelnemen aan discussies"
+      user_permission_votes: "Stemmen op ideeën"
+      email_on_comment_label: "Stuur me een email als iemand op mijn voorstel of discussie reageert"
+      email_on_comment_reply_label: "Stuur me een email wanneer iemand op mijn voorstel reageert"
+      email_digest_label: "Stuur me een samenvatting van meldingen met betrekking tot voorstellen"
+      email_on_direct_message_label: "Stuur me een mail als ik een privébericht krijg"
+      subscription_to_website_newsletter_label: "Stuur me een email met relevante informatie over de website"
+      public_activity_label: "Mijn activiteit is publiek"
+      user_permission_proposal: "Initiatieven indienen"
+      user_permission_support_proposal: "Reageren op peilingen"
+      username_label: "Gebruikersnaam"
+      organization_responsible_name_placeholder: "Vertegenwoordiger van de organisatie of groep"
+  debates:
+    create:
+      form:
+        submit_button: "Discussie starten"
+    form:
+      tags_instructions: "Voeg steekwoorden toe"
+      tags_label: "Steekwoorden"
+      tags_placeholder: "Voeg de gewenste termen toe, gescheiden door een komma (,)"
+    index:
+      featured_debates: "Uitgelicht"
+      start_debate: "Discussie starten"
+      recommendations:
+        without_interests: "Volg initiatieven zodat wij"
+        disable: "Aanbevelingen voor discussies worden niet meer weergegeven als u ze negeert. U kunt ze weer inschakelen op de pagina 'Mijn account'"
+        without_results: "Er zijn geen discussies die aansluiten bij jouw interesses"
+        actions:
+          success: "Aanbevelingen voor discussies zijn nu uitgeschakeld voor dit account"
+      search_results:
+        one: " met de tekst <strong>'%{search_term}'</strong>"
+        other: " met de tekst <strong>'%{search_term}'</strong>"
+      orders:
+        confidence_score: "Best beoordeeld"
+        created_at: "Nieuwste"
+        hot_score: "Meest actief"
+      section_header:
+        title: "Discussies"
+        description: "Start een discussie en deel je mening met anderen over onderwerpen die jij belangrijk vindt."
+        help: "Hulp bij discussies"
+      section_footer:
+        title: "Hulp bij discussies"
+        description: "Start een discussie om je mening met anderen te delen over onderwerpen die jij belangrijk vindt."
+        help_text_1: "Deel je mening over allerlei onderwerpen, kansen of knelpunten die jij belangrijk vindt."
+        help_text_2: "Om een discussie te starten of om deel te nemen aan een discussie moet je je registreren op %{org}."
+        help_text_link: "aanmelden"
+      title: "Discussies"
+      search_form:
+        title: "Zoek"
+        placeholder: "Zoek in discussies..."
+    new:
+      recommendations_title: "Advies bij het starten van een discussie"
+      form:
+        submit_button: "Discussie starten"
+      start_new: "Discussie starten"
+    show:
+      author: "Auteur"
+      comments_title: "Reacties"
+      edit_debate_link: "Bewerk"
+    edit:
+      editing: "Discussie bewerken"
+      show_link: "Discussie bekijken"
+  form:
+    debate: "discussie"
+    proposal: "initiatief"
+    not_saved: "zorgden ervoor dat je %{resource} niet geplaatst kan worden. <br>Bekijk de rode tekst om te zien wat aangepast moet worden."
+    budget/investment: "idee"
+    accept_terms: "Ik begrijp dat ik een idee indien voor de Oosterparkwijk"
+  proposals:
+    proposal:
+      reason_for_supports_necessary: ""
+      already_supported: "Je hebt al op dit voorstel gestemd."
+      archived: "Dit voorstel is gearchiveerd."
+      share:
+        guide: "Nu kun je jouw voorstel delen zodat mensen hun steun kunnen betuigen."
+        view_proposal: "Bekijk mijn idee"
+        edit: "Deel het hieronder op social media"
+      successful: "Dit voorstel heeft de benodigde steunbetuigingen."
+      support: "Steun"
+      support_title: "Steun op dit voorstel"
+      supports:
+        one: "1 steunbetuiging"
+        other: "%{count} steunbetuigingen"
+        zero: "nog geen steun"
+      supports_necessary: "%{number} steunbetuigingen nodig"
+      retire_form:
+        retired_explanation_label: "Reden"
+        retired_explanation_placeholder: "Geef een reden waarom dit voorstel kan worden ingetrokken"
+        retired_reason_blank: "Kies één van de redenen"
+        retired_reason_label: "Reden om het voorstel in te trekken"
+        submit_button: "Voorstel intrekken"
+        title: "Voorstel intrekken"
+        warning: "Als een voorstel is ingetrokken kan het nog wel gesteund worden, maar het wordt niet meer getoond in de overzichten en er wordt een melding getoond waarin wordt aangegeven dat het voorstel is ingetrokken met een verwijzing naar de reden."
+      retire_options:
+        duplicated: "Dubbel"
+        unfeasible: "Niet haalbaar"
+      show:
+        retired: "Voorstel ingetrokken"
+        retired_warning: "Dit voorstel is ingetrokken."
+        retired_warning_link_to_explanation: "Lees waarom."
+      improve_info: "Verbeter je campagne en krijg meer steunbetuigingen"
+      created: "Bedankt voor je idee!"
+    form:
+      proposal_summary_note: "(maximaal 200 karakters)"
+      proposal_video_url: "Video toevoegen"
+      proposal_video_url_note: "Je kunt een link van een Youtube of Vimeo  video toevoegen"
+      tags_label: "Onderwerpen/labels"
+      tags_instructions: "Je kunt dit voorstel een label geven. Je kunt je eigen categorie kiezen, of één van de bestaande"
+      map_location_instructions: "Klik op de kaart om de locatie aan te geven. Je kunt de kaart bewegen"
+      tags_placeholder: "Voeg de gewenste termen toe, gescheiden door een komma (,)"
+      proposal_responsible_name: "Volledige naam van persoon die het idee indient"
+      proposal_text: "Uitgebreide omschrijving"
+    index:
+      featured_proposals: "Uitgelicht"
+      start_proposal: "Nieuw initiatief indienen"
+      proposals_lists: "Initiatieven"
+      top_link_proposals: "Meest gesteunde initiatieven"
+      archived_proposals: "Initiatief archief"
+      retired_proposals: "Teruggetrokken initiatieven"
+      retired_proposals_link: "Teruggetrokken initiatieven"
+      selected_proposals: "Geselecteerde initiatieven"
+      selected_proposals_link: "Bekijk de geselecteerde initiatieven"
+      section_header:
+        title: "Initiatieven"
+        description: "Steun de initiatieven die jouw enthousiast maken. Bij voldoende steun wordt een referendum gehouden."
+        help: "Hulp bij initiatieven"
+      section_footer:
+        title: "Hulp bij initiatieven"
+        description: "Steun lokale of regionale initiatieven. BIj voldoende steun, wordt een referendum gehouden."
+      recommendations:
+        without_interests: "Volg een initiatief om op de hoogte te blijven"
+        without_results: "Er zijn geen ideeën die aan je interesses voldoen"
+        disable: "Aanbevelingen van ideeën worden niet meer weergegeven als u ze negeert. U kunt ze weer inschakelen op de pagina 'Mijn account'"
+        actions:
+          success: "Aanbevelingen voor ideeën zijn nu uitgeschakeld voor dit account"
+      orders:
+        confidence_score: "best beoordeeld"
+        created_at: "nieuw"
+        hot_score: "actief"
+        recommendations: "aanbevolen"
+      search_results:
+        one: " met de tekst <strong>'%{search_term}'</strong>"
+        other: " met de tekst <strong>'%{search_term}'</strong>"
+      search_form:
+        placeholder: "Zoek ideeën..."
+      title: "Initiatieven"
+      filter_topic:
+        one: " met onderwerp '%{topic}'"
+        other: " met onderwerp '%{topic}'"
+    new:
+      form:
+        submit_button: "Idee indienen"
+      more_info: "Hoe werken initiatieven?"
+      start_new: "Voorstel indienen"
+      recommendations_title: "Advies bij het indienen  van een initiatief"
+      recommendation_one: "Vul alle informatie in die je wil vertellen over je idee"
+      recommendation_two: "Waarom is dit een goed idee?Wat wil je met dit idee?Is het eenmalig of voor een lange periode? Hoeveel geld is er voor nodig? Wie doet er mee? Wie organiseert het? Wie zijn fan van het idee? Wat is het? Met wat voor regels krijg je te maken? Wat kan er wel en wat kan er niet? Wat zijn de belangen? Wat heb je nodig?"
+      recommendation_three: "Ben je al wat verder met je idee? Een plan van aanpak en een begroting zijn belangrijke stappen in het maken van een plan. Ook een video, website of een plaatje of foto doen het altijd goed voor de steunbetuigingen! Bezoekers kunnen namelijk reageren op je idee. Ook kan je likes verzamelen. Let op: dit zijn nog geen stemmen."
+    create:
+      form:
+        submit_button: "Idee indienen"
+    edit:
+      editing: "Idee bewerken"
+      show_link: "Bekijk idee"
+    show:
+      author: "Auteur"
+      comments_tab: "Reacties"
+      dashboard_proposal_link: "Campagnepagina"
+      no_notifications: "Dit initiatief heeft geen meldingen."
+      retired_warning: "De auteur heeft dit initiatief teruggetrokken."
+      retired_warning_link_to_explanation: "Lees de uitleg voordat je het initiatief alsnog steunt."
+    created:
+      title: "Gefeliciteerd! Je hebt de eerste stap gezet"
+      motivation: "Voordat je je initiatief publiceert op de website, is het slim om een campagne op te zetten. Dit helpt je om voldoende steun voor je initiatief te krijgen."
+      motivation_2: "<strong>Wanneer je niet zo goed weet hoe je die campagne op moet zetten, kunnen wij je begeleiden. Je kunt er nu voor kiezen om eerst met onze hulp een campagne op te zetten en het concept van je initiatief op te slaan. Je kunt nu ook je initiatief direct publiceren op de website.</strong>"
+      publish: "Nee, ik wil mijn initiatief direct publiceren"
+      dashboard: "Ja, ik wil hulp en ik publiceer mijn initiatief later"
+      preview_title: "Dit is hoe je initiatief eruit ziet wanneer je het nu publiceert"
+    notice:
+      published: "Initiatief gepubliceerd"
+    retire_form:
+      warning: "Als je het initiatief terugtrekt, kan het nog steeds gesteund worden. Het initiatief verdwijnt uit de lijst met initiatieven en alle gebruikers zullen een bericht zien waarin staat dat je het initiatief terug hebt getrokken."
+    retire_options:
+      started: "In uitvoering"
+      unfeasible: "Onhaalbaar"
+      done: "Gerealiseerd"
+    share:
+      improve_it: "Voer campagne om meer steun te krijgen."
+      dashboard: "Naar campagnepagina"
+  polls:
+    question: "Vraag"
+    index:
+      no_polls: "Geen peilingen"
+      filters:
+        expired: "Afgerond"
+      participate_button: "Deelnemen"
+      no_geozone_restricted: "Hele gemeente"
+      geozone_restricted: "Per gebied"
+      cant_answer: "Deze stemronde is niet beschikbaar in jouw gebied"
+      section_header:
+        description: "Geef je mening en voorkeuren voor specifieke onderwerpen."
+        help: "Hulp bij peilingen"
+      section_footer:
+        description: "Geef je mening over specifieke onderwerpen"
+      remaining: "Je kunt nog <strong>%{days}</strong> meedoen"
+    show:
+      cant_answer_not_logged_in: "Je moet %{signin} of je %{signup} om verder te gaan"
+      cant_answer_wrong_geozone: "Deze peiling is niet actief voor jouw gebied"
+      comments_tab: "Reacties"
+      more_info_options: "Meer informatie over de antwoordmogelijkheden"
+      info_menu: "Vragen?"
+  comments:
+    comment:
+      author: "Auteur"
+      responses_show:
+        one: "1 reactie (tonen)"
+        other: "%{count} reacties (tonen)"
+        zero: "Geen reacties"
+      responses_collapse:
+        one: "1 reactie (verbergen)"
+        other: "%{count} reacties (verbergen)"
+        zero: "Geen reacties"
+      user_deleted: "Deelnemer verwijderd"
+    actions:
+      delete: "Verwijder reactie"
+      confirm_delete: "Weet u het zeker? Hiermee wordt uw reactie verwijderd. Dit kan niet ongedaan worden gemaakt."
+  comments_helper:
+    comments_title: "Reacties"
+  users:
+    login_to_comment: "Je moet %{signin} of je %{signup} om te kunnen reageren."
+    login_to_continue: "Je moet %{signin} of je %{signup} om verder te gaan."
+    signin: "inloggen"
+    signup: "aanmelden"
+    show:
+      proposals: "Initiatieven"
+      budget_investments: "Ideeën"
+      actions: "Acties"
+      filters:
+        follows:
+          one: "1 Volgend"
+          other: "%{count} Volgend"
+        proposals:
+          one: "1 Initiatief"
+          other: "%{count} Initiatieven"
+        budget_investments:
+          one: "1 Idee"
+          other: "%{count} Ideeën"
+      delete_alert: "Weet je zeker dat je jouw idee wilt verwijderen? Dit kan niet ongedaan gemaakt worden."
+      deleted_budget_investment: "Het idee is verwijderd"
+    proposals:
+      draft: "Concept"
+      published: "Gepubliceerd"
+      retired: "Teruggetrokken"
+      actions: "Acties"
+      retired_help_text: "Campagnepagina is niet beschikbaar voor teruggetrokken initiatieven"
+    direct_messages:
+      new:
+        signin: "Inloggen"
+        authenticate: "Je moet %{signin} of %{signup} om verder te gaan."
+        submit_button: "Stuur melding"
+  layouts:
+    header:
+      collaborative_legislation: "Inspraak"
+      budgets: "Ideeën"
+      proposals: "Initiatieven"
+      debates: "Discussies"
+      poll_questions: "Peilingen"
+      my_account_link: "Mijn profiel"
+      administration_menu: "Menu"
+      administration: "Admin"
+      moderation: "Modereren"
+      valuation: "Evalueren"
+      open_gov: "Open Overheid"
+      notification_item:
+        new_notifications:
+          one: "Je hebt een nieuwe melding"
+          other: "Je hebt %{count} nieuwe meldingen"
+        notifications: "Meldingen"
+        no_notifications: "Je hebt geen nieuwe meldingen"
+    admin:
+      watch_form_message: "Je hebt niet-opgeslagen wijzigingen. Verlaat de pagina?"
+    footer:
+      org_name: "CONSUL"
+      contact_title: "Neem contact met ons op"
+      privacy: "Privacyverklaring"
+      contact_email: "noreply@consul.dev"
+      contact: "noreply@consul.dev"
+      facebook: "facebook/consul"
+      facebook_url: "https://facebook.com/consul"
+    dashboard:
+      proposal_header:
+        published: "Gepubliceerd"
+        draft: "Concept"
+        retired: "Teruggetrokken"
+      proposal_totals:
+        active_resources: "Actieve promotiemiddelen"
+        community: "Deelnemers in community"
+        preview_proposal: "Preview"
+        show_proposal: "Bekijk  initiatief"
+        current_goal: "Huidige doel"
+        supports:
+          zero: "Geen steun"
+          one: "1 steunbetuiging"
+          other: "%{count} steunbetuigingen"
+    link_to_top:
+      title: "Go back to the top of the page"
+  votes:
+    supports: "Steun"
+    budget_investments:
+      not_verified: "Alleen geverifieerde gebruikers mogen stemmen op ideeën; %{verify_account}."
+      different_heading_assigned:
+        one: "Je kan ideeën in %{count} groep steunen. Je hebt al ideeën gesteund in de groep %{supported_headings}."
+        other: "Je kan ideeën in %{count} groep steunen. Je hebt al ideeën gesteund in de groep %{supported_headings}."
+    organizations: "Collectieven en verenigingen kunnen niet stemmen."
+  welcome:
+    feed:
+      description:
+        proposals: "Voorstellen die genoeg steun ontvangen gaan door naar de stemfase. Zo kunnen alle inwoners van stad bepalen hoe de gemeente eruit komt te zien."
+        budgets: "Geef aan wat volgens jou de belangrijkste ideeën zijn."
+      most_active:
+        debates: "Actieve discussies"
+        proposals: "Initiatieven"
+        budgets: "Ideeën"
+      see_budget: "Bekijk ideeën"
+      see_all_proposals: "Alle initiatieven"
+      process_label: "Plan"
+      see_process: "Plan bekijken"
+      no_items:
+        debates: Er zijn op dit moment geen discussies
+        proposals: Er zijn op dit moment geen voorstellen
+        processes: Er zijn op dit moment geen plannen
+        budgets: Er zijn op dit moment geen ideeën
+    cards:
+      title: "Uitgelicht"
+  shared:
+    edit: "Bewerken"
+    save: "Opslaan"
+    delete: "Verwijderen"
+    optional: "Optioneel"
+    required: "Verplicht"
+    required_fields: "Alle velden gemarkeerd met een (*) zijn verplicht"
+    back: "Ga terug"
+    search_results: "Zoekresultaten"
+    advanced_search:
+      author_type: "Type indiener"
+      date: "Periode"
+      date_range_blank: "Selecteer een periode"
+      general: "Tekst"
+      general_placeholder: "Filter op tekst"
+    suggest:
+      debate:
+        found:
+          one: "Er bestaat al een discussie met de term '%{query}'. Je kunt deelnemen aan die discussie in plaats van een nieuwe discussie te starten."
+          other: "Er bestaan al discussies met de term '%{query}'. Je kunt deelnemen aan die discussies in plaats van een nieuwe discussie te starten."
+      budget_investment:
+        found:
+          one: "Er bestaat al een idee met de term '%{query}'. Je kunt meedoen met dat idee in plaats van een nieuw idee delen."
+          other: "Er bestaan al ideeën met de term '%{query}'. Je kunt meedoen met die ideeën in plaats van een nieuw idee delen."
+      proposal:
+        found:
+          one: "Er bestaat al een initiatief met de term '%{query}'. Je kunt meedoen met dat initiatief  in plaats van een nieuw initiatief te delen."
+          other: "Er bestaan al initiatieven met de term '%{query}'. Je kunt meedoen met die initiatieven  in plaats van een nieuw initiatief te delen."
+    tags_cloud:
+      districts: "Gebied"
+      categories: "Onderwerpen/Labels"
+    translations:
+      select_language_prompt: "Taal kiezen"
+      add_language: "Taal toevoegen"
+      remove_language: "Taal verwijderen"
+      languages_in_use:
+        zero: "0 Taalinstelling"
+        one: "1 Taalinstelling"
+        other: "%{count} Taalinstelling"
+    print:
+      print_button: "Afdrukken"
+    followable:
+      budget_investment:
+        create:
+          notice: "Je volgt nu dit idee!<br>We houden je via meldingen op de hoogte van alle ontwikkelingen."
+        destroy:
+          notice: "Je volgt dit idee niet meer.<br>Je zult geen meldingen meer ontvangen van dit idee."
+      proposal:
+        create:
+          notice: "Je volgt nu dit initiatieven!<br>We houden je via notificaties op de hoogte van alle wijzigingen."
+        destroy:
+          notice: "Je volgt dit initiatieven niet meer.<br>Je zult geen updates over dit initiatieven meer ontvangen."
+    expired: "Alleen aan te passen in de fase 'ideeën delen'"
+  links:
+    form:
+      cancel_button: "Annuleren"
+    nested_links:
+      note: "Voeg relevante links toe"
+      add_new_link: "Link toevoegen"
+  dashboard:
+    menu:
+      my_proposal: "Initiatief aanpassen"
+      progress: "Voortgang"
+      polls: "Peilingen"
+      messages: "Meldingen sturen naar gebruikers"
+      related_content: "Gerelateerde inhoud"
+      resources: "Campagnemiddelen"
+    progress:
+      title: "Grafiek"
+      group_by_month: "Maandelijks"
+      group_by_week: "Wekelijks"
+      group_by_date: "Dagelijks"
+      progress: "Voortgang (opgeteld)"
+      supports: "Steunbetuigingen"
+      success: "Ideale vooruitgang"
+    index:
+      title: "Initiatief bewerken"
+      edit_proposal_link: "Bewerken"
+      publish: "Publiceren"
+      retire: "Terugtrekken"
+    resources:
+      available_resources: "Beschikbare promotiemiddelen"
+    resource:
+      view_resource: "Bekijk"
+    community:
+      access_community: "Naar community pagina"
+      latest_activity: "Latest activity of the community: %{at}"
+      participants: "Deelnemers"
+      debates: "Discussies"
+      comments: "Reacties"
+    messages:
+      send_notification: "Stuur meldingen naar volgers van mijn initiatief"
+      previous_notifications: "Bekijk eerdere meldingen"
+    polls:
+      index:
+        title: "Peilingen"
+        create: "Peiling maken"
+        count:
+          zero: "Je hebt 0 peilingen gecreëerd"
+          one: "Je hebt 1 peiling gecreëerd"
+          other: "Je hebt %{count} peiling gecreëerd"
+      new:
+        title: "Nieuwe peiling"
+        submit: "Poll creëren"
+      poll:
+        responses:
+          one: "%{count} reactie"
+          other: "%{count} reacties"
+        edit_poll: "Bewerk"
+        show_results_help: "Als je dit vak aanvinkt worden de resultaten openbaar gemaakt en kunnen alle gebruikers deze zien"
+        delete: "Peiling verwijderen"
+      form:
+        name: "Titel"
+        add_question: "Vraag toevoegen"
+      question_fields:
+        remove_question: "Verwijderen"
+        add_answer: "Antwoordmogelijkheid toevoegen"
+      question_answer_fields:
+        remove_answer: "Antwoordmogelijkheid verwijderen"
+    poster:
+      new:
+        title: "Poster van jouw initiatief"
+    mailing:
+      mailing_options:
+        send: "Verzenden naar %{address}"
+      create:
+        sent: "Mail verzonden"
+      new:
+        title: "E-mail om te delen"
+  omniauth:
+    facebook:
+      sign_in: "Inloggen via Facebook"
+      sign_up: "Aanmelden via Facebook"
+      name: "Facebook"
+    finish_signup:
+      title: "Verdere details"
+      username_warning: "Door een verandering in de manier waarop we met sociale netwerken communiceren, is het mogelijk dat uw gebruikersnaam nu als 'al in gebruik' verschijnt. Kiest u dan een andere gebruikersnaam, aub."
+    google_oauth2:
+      sign_in: "Inloggen via Google"
+      sign_up: "Aanmelden met Google"
+      name: "Google"
+    info_sign_in: "Inloggen via sociale media"
+    info_sign_up: "Aanmelden via sociale media"
+    or_fill: "Of vul het formulier in"
+    info:
+      sign_in: "Aanmelden met:"
+      sign_up: "Registreer met:"
+  stats:
+    index:
+      comments: "Reacties"
+  communities:
+    show:
+      surveys: "Peilingen"
+    subnav:
+      surveys: "Peilingen"
+  related_content:
+    content_title:
+      proposal: "Initiatieven"
+      budget_investment: "Idee"
+    help: "Voeg hier gerelateerde discussies, initiatieven of ideeën toe door de URL hieronder te plakken."
+  unauthorized:
+    default: "Je hebt geen toestemming deze pagina te bezoeken."
+    manage:
+      all: "Je hebt geen toestemming '%{action}' op %{subject} uit te voeren."
+  poll_questions:
+    show:
+      voted: "Je hebt %{answer} gestemd"
+      vote_registered: "Je stem is opgeslagen."
+  proposal_notifications:
+    new:
+      title: "Stuur melding"
+      submit_button: "Stuur melding"
+      info_about_receivers: "Deze melding stuur je naar <strong>%{count} mensen</strong> en is te zien op %{proposal_page}.<br> Meldingen worden niet direct gestuurd, maar de gebruikers ontvangen periodiek een email met alle meldingen omtrent jouw initiatief."
+      proposal_page: "de pagina van het initiatief"

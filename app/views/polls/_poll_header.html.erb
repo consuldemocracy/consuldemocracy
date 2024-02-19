@@ -9,7 +9,9 @@
 
       <h1><%= @poll.name %></h1>
 
-      <%= auto_link_already_sanitized_html simple_format(@poll.summary) %>
+      <div class="margin-bottom">
+        <%= auto_link_already_sanitized_html AdminWYSIWYGSanitizer.new.sanitize(@poll.summary) %>
+      </div>
 
       <% if @poll.geozones.any? %>
         <ul class="margin-top tags">
@@ -18,6 +20,24 @@
           <% end %>
         </ul>
       <% end %>
+
+      <% if @poll.description.present? %>
+        <div id="poll_description_text" class="hide" data-toggler="hide">
+          <h3><%= t("polls.show.more_info_title") %></h3>
+          <%= auto_link_already_sanitized_html AdminWYSIWYGSanitizer.new.sanitize(@poll.description) %>
+        </div>
+
+        <button type="button" id="read_more" class="button primary" data-toggler="hide"
+                data-toggle="poll_description_text read_more read_less">
+          <%= t("polls.show.more_info_title") %>
+        </button>
+
+        <button type="button" id="read_less" class="button primary hide" data-toggler="hide"
+                data-toggle="poll_description_text read_more read_less">
+          <%= t("polls.show.less_info_title") %>
+        </button>
+      <% end %>
+
       <%= render SDG::TagListComponent.new(@poll, linkable: false) %>
     </div>
 

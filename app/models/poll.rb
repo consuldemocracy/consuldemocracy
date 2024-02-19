@@ -228,6 +228,10 @@ class Poll < ApplicationRecord
     budget.present?
   end
 
+  def questions_with_answer_content
+    questions.select { |question| question.answers_with_content.any? }
+  end
+
   def searchable_translations_definitions
     {
       name => "A",

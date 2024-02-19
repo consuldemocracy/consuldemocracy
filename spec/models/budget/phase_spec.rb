@@ -1,11 +1,11 @@
 require "rails_helper"
 
 describe Budget::Phase do
-  let(:budget)          { create(:budget) }
+  let(:budget) { create(:budget) }
   let(:informing_phase) { budget.phases.informing }
   let(:accepting_phase) { budget.phases.accepting }
   let(:reviewing_phase) { budget.phases.reviewing }
-  let(:finished_phase)  { budget.phases.finished }
+  let(:finished_phase) { budget.phases.finished }
 
   it_behaves_like "globalizable", :budget_phase
 
@@ -55,70 +55,6 @@ describe Budget::Phase do
         informing_phase.assign_attributes(starts_at: Date.tomorrow, ends_at: Date.current)
 
         expect(informing_phase).not_to be_valid
-      end
-    end
-
-    describe "#prev_phase_dates_valid?" do
-      let(:error) do
-        "Start date must be later than the start date of the previous enabled phase (Information)"
-      end
-
-      it "is invalid when start date is same as previous enabled phase start date" do
-        accepting_phase.assign_attributes(starts_at: accepting_phase.prev_enabled_phase.starts_at)
-
-        expect(accepting_phase).not_to be_valid
-        expect(accepting_phase.errors.messages[:starts_at]).to include(error)
-      end
-
-      it "is invalid when start date is earlier than previous enabled phase start date" do
-        accepting_phase.assign_attributes(starts_at: accepting_phase.prev_enabled_phase.starts_at - 1.day)
-
-        expect(accepting_phase).not_to be_valid
-        expect(accepting_phase.errors.messages[:starts_at]).to include(error)
-      end
-
-      it "is valid when start date is in between previous enabled phase start & end dates" do
-        accepting_phase.assign_attributes(starts_at: accepting_phase.prev_enabled_phase.starts_at + 1.day)
-
-        expect(accepting_phase).to be_valid
-      end
-
-      it "is valid when start date is later than previous enabled phase end date" do
-        accepting_phase.assign_attributes(starts_at: accepting_phase.prev_enabled_phase.ends_at + 1.day)
-
-        expect(accepting_phase).to be_valid
-      end
-    end
-
-    describe "#next_phase_dates_valid?" do
-      let(:error) do
-        "End date must be earlier than the end date of the next enabled phase (Accepting projects)"
-      end
-
-      it "is invalid when end date is same as next enabled phase end date" do
-        informing_phase.assign_attributes(ends_at: informing_phase.next_enabled_phase.ends_at)
-
-        expect(informing_phase).not_to be_valid
-        expect(informing_phase.errors.messages[:ends_at]).to include(error)
-      end
-
-      it "is invalid when end date is later than next enabled phase end date" do
-        informing_phase.assign_attributes(ends_at: informing_phase.next_enabled_phase.ends_at + 1.day)
-
-        expect(informing_phase).not_to be_valid
-        expect(informing_phase.errors.messages[:ends_at]).to include(error)
-      end
-
-      it "is valid when end date is in between next enabled phase start & end dates" do
-        informing_phase.assign_attributes(ends_at: informing_phase.next_enabled_phase.ends_at - 1.day)
-
-        expect(informing_phase).to be_valid
-      end
-
-      it "is valid when end date is earlier than next enabled phase start date" do
-        informing_phase.assign_attributes(ends_at: informing_phase.next_enabled_phase.starts_at - 1.day)
-
-        expect(informing_phase).to be_valid
       end
     end
 

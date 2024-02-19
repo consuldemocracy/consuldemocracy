@@ -49,8 +49,4 @@ module BudgetInvestmentsHelper
   def investments_secondary_view
     investments_current_view == "default" ? "minimal" : "default"
   end
-
-  def show_author_actions?(investment)
-    can?(:edit, investment) || can_destroy_image?(investment)
-  end
 end

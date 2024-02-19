@@ -12,6 +12,10 @@ ActsAsVotable::Vote.class_eval do
     where(votable_type: votable_type).count
   end
 
+  def self.for_comments(comments)
+    where(votable_type: "Comment", votable_id: comments)
+  end
+
   def value
     vote_flag
   end

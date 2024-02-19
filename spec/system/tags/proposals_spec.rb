@@ -69,7 +69,6 @@ describe "Tags" do
     fill_in_ckeditor "Proposal text", with: "This is very important because..."
     fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
     fill_in "Tags", with: "Economía, Hacienda"
-    check "I agree to the Privacy Policy and the Terms and conditions of use"
 
     click_button "Create proposal"
 
@@ -93,7 +92,6 @@ describe "Tags" do
     fill_in_ckeditor "Proposal text", with: "A description with enough characters"
     fill_in "External video URL", with: "https://www.youtube.com/watch?v=Ae6gQmhaMn4"
     fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
-    check "I agree to the Privacy Policy and the Terms and conditions of use"
 
     find(".js-add-tag-link", text: "Education").click
     click_button "Create proposal"
@@ -117,7 +115,6 @@ describe "Tags" do
     visit new_proposal_path
     fill_in_new_proposal_title with: "Title"
     fill_in_ckeditor "Proposal text", with: "Description"
-    check "I agree to the Privacy Policy and the Terms and conditions of use"
 
     fill_in "Tags", with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
 
@@ -137,7 +134,6 @@ describe "Tags" do
     fill_in "Proposal summary", with: "In summary, what we want is..."
     fill_in_ckeditor "Proposal text", with: "A description suitable for this test"
     fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
-    check "I agree to the Privacy Policy and the Terms and conditions of use"
 
     fill_in "Tags", with: "user_id=1, &a=3, <script>alert('hey');</script>"
 

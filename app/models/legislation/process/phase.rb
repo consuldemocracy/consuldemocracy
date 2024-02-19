@@ -10,10 +10,10 @@ class Legislation::Process::Phase
   end
 
   def started?
-    enabled? && Date.current >= @start_date
+    @start_date.nil? || enabled? && Date.current >= @start_date
   end
 
   def open?
-    started? && Date.current <= @end_date
+    @end_date.nil? || started? && Date.current <= @end_date
   end
 end

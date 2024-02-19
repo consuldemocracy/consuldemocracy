@@ -6,6 +6,8 @@
     <% if can? :update, budget_investment %>
       <%= link_to t("shared.edit"), edit_budget_investment_path(budget_investment.budget, budget_investment),
                   class: "button hollow" %>
+    <% else %>
+      <%= t("shared.expired") %>
     <% end %>
     <% if can? :destroy, budget_investment %>
       <%= link_to t("shared.delete"), budget_investment_path(budget_investment.budget, budget_investment),

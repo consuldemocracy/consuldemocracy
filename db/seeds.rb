@@ -7,6 +7,8 @@ if Administrator.count == 0 && (!Rails.env.test? || !Tenant.default?)
 end
 
 Setting.reset_defaults
+Map.default
+
 load Rails.root.join("db", "web_sections.rb")
 
 # Default custom pages

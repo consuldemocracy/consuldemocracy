@@ -2,23 +2,25 @@
 
 <h2><%= t("admin.stats.budgets.title") %></h2>
 
-<% @budgets.each do |budget| %>
-  <table>
-    <tr id="<%= dom_id(budget) %>">
-      <td>
-        <strong><%= budget.name %></strong>
-      </td>
-      <td>
-        <%= link_to t("admin.stats.budgets.supporting_phase"),
-                    budget_supporting_admin_stats_path(budget_id: budget.id),
-                    class: "button hollow" %>
-
-        <% if can? :read_admin_stats, budget %>
-          <%= link_to t("admin.stats.budgets.balloting_phase"),
-                      budget_balloting_admin_stats_path(budget_id: budget.id),
+<table>
+  <tbody>
+    <% @budgets.each do |budget| %>
+      <tr id="<%= dom_id(budget) %>">
+        <td>
+          <strong><%= budget.name %></strong>
+        </td>
+        <td class="text-right">
+          <%= link_to t("admin.stats.budgets.supporting_phase"),
+                      budget_supporting_admin_stats_path(budget_id: budget.id),
                       class: "button hollow" %>
-        <% end %>
-      </td>
-    </tr>
-  </table>
-<% end %>
+
+          <% if can? :read_admin_stats, budget %>
+            <%= link_to t("admin.stats.budgets.balloting_phase"),
+                        budget_balloting_admin_stats_path(budget_id: budget.id),
+                        class: "button hollow" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -95,13 +95,15 @@ en:
         table_draft: "Draft"
         table_duration: "Duration"
         table_name: Name
-        table_phase: Phase
+        table_phase: Current phase
+        table_budget_completed: Completed
         table_phase_progress: "(%{current_phase_number}/%{total_phases})"
         type_multiple: "Multiple headings"
         type_pending: "Pending: No headings yet"
         type_single: "Single heading"
-        admin_ballots: Ballots
+        admin_ballots: "Ballots"
         no_budgets: "There are no budgets."
+        help_block: "Participatory budgets allow citizens to propose and decide directly how to spend part of the budget, with monitoring and rigorous evaluation of proposals by the institution."
       create:
         notice: New participatory budget created successfully!
       update:
@@ -109,16 +111,19 @@ en:
       publish:
         notice: "Participatory budget published successfully"
       edit:
-        title: Edit Participatory budget
+        title: "Edit Participatory budget"
         drafting: "This participatory budget is in draft mode, only administrators can see it in the public site. Once it's published it cannot be changed to draft mode again."
+        preview: "Preview budget"
         publish: "Publish budget"
-        delete: Delete budget
-        phase: Phase
+        delete: "Delete budget"
+        phase: "Phase"
         phases_caption: "Phases"
         phases_table_help_text: "The configuration of these phases is used for information purposes only. Its function is to define the phases information displayed on the public page of the participatory budget."
         duration: "Duration"
-        enabled: Enabled
-        actions: Actions
+        phase_content: "Edit content"
+        edit_phase: "Edit phase"
+        enabled: "Enabled"
+        actions: "Actions"
         enable_phase: "Enable %{phase} phase"
         active: Active
         blank_dates: Dates are blank
@@ -138,6 +143,7 @@ en:
         main_call_to_action_description: "This link will appear on main banner of this participatory budget and encourages your user to perform a specific action like creating a proposal, voting for existing ones, or learn more about the process."
         info:
           budget_settings: "General participatory budget settings"
+          heading_settings: "Heading settings"
           staff_settings: "Administrators and Valuators assigned to the budget"
         hide_money: "Hide money"
         hide_money_help_text: "If this option is checked, all fields showing the amount of money will be hidden throughout the process."
@@ -190,8 +196,18 @@ en:
         submit: "Save group"
       index:
         new_button: "Add new group"
+      single:
+        index:
+          help: "Groups are meant to organize headings, since this budget will only contain one heading, the same name can be used because it will not appear anywhere. You can just continue with the next step."
+      multiple:
+        index:
+          help: "Groups are meant to organize headings. After a group is created and it contais headings, it's possible to determine in how many headings a user can vote per group."
     budget_headings:
+      population: "Population"
+      allow_custom_content: "Allow custom content"
       no_headings: "There are no headings in the <strong>%{group}</strong> group."
+      yes: "Yes"
+      no: "No"
       create:
         notice: "Heading created successfully!"
       update:
@@ -215,6 +231,12 @@ en:
       index:
         back: "Go back to groups"
         new_button: "Add new heading"
+        single:
+          index:
+            help: "Headings are meant to divide the money of the participatory budget. Since this budget will only contain one heading, this is the place where you stablish the money that will be spent in this participaroty budget."
+        multiple:
+          index:
+            help: "Headings are meant to divide the money of the participatory budget. Here you can add headings for this group and assign the amount of money that will be used for each heading."
         title: "%{budget} / %{group} headings"
     budget_phases:
       edit:
@@ -505,6 +527,7 @@ en:
           filters:
             pending: Pending
             done: Solved
+          deleted_proposal: "This proposal has been deleted"
         edit:
           back: Back to pending tasks list
           solving: Solve pending task
@@ -798,6 +821,7 @@ en:
       comments: "Comments"
       local_census_records: Manage local census
       machine_learning: "AI / Machine learning"
+      maps: "Maps"
       multitenancy: Multitenancy
     administrators:
       index:
@@ -826,6 +850,7 @@ en:
       all_proposal_authors: Proposal authors (including archived and withdrawn)
       proposal_authors: Proposal authors
       investment_authors: Investment authors in the current budget
+      investment_followers: "Users following any investment in the current budget"
       feasible_and_undecided_investment_authors: "Authors of some investment in the current budget that does not comply with: [valuation finished unfesasible]"
       selected_investment_authors: Authors of selected investments in the current budget
       winner_investment_authors: Authors of winner investments in the current budget
@@ -1077,7 +1102,7 @@ en:
         results: "Results"
         date: "Date"
         count_final: "Final recount (by officer)"
-        count_by_system:  "Votes (automatic)"
+        count_by_system: "Votes (automatic)"
         total_system: Total votes (automatic)
       index:
         booths_title: "List of booths"
@@ -1172,6 +1197,8 @@ en:
           document_title: Title
           document_actions: Actions
       no_edit: "Once the poll has started it will not be possible to create, edit or delete questions, answers or any content associated with the poll."
+      flash:
+        destroy: "Question destroyed succesfully"
     answers:
       new:
         title: New answer
@@ -1396,6 +1423,8 @@ en:
       results_and_stats_reminder: "Marking these checkboxes the results and/or stats will be publicly available and every user will see them."
       close_modal: Close modal
       example_url: "For example, https://consuldemocracy.org or /help"
+      learn_more: "Learn more"
+      back: "Go back"
     geozones:
       index:
         title: Geozone
@@ -1425,6 +1454,23 @@ en:
         error: This geozone can't be deleted since there are elements attached to it
       update:
         notice: "Geozone updated successfully"
+    maps:
+      index:
+        title: "Map configuration"
+        help: "Here you can customize the way the map is displayed to users. Drag map marker or click anywhere over the map, set desired zoom and click button \"Save map\"."
+        how_to_enable: "To show the map to users you must enable \"Proposals and budget investments geolocation\" on \"Features\" tab."
+        budget: "Participatory Budget"
+        default_map: "Default map"
+        new_button: "Create new map"
+      edit:
+        submit: "Save map"
+      flash:
+        create: "Map created successfully."
+        destroy: "Map deleted successfully."
+        update: "Map updated successfully."
+      form:
+        continue: "Continue"
+        submit: "Save coordinates"
     signature_sheets:
       author: Author
       created_at: Creation date

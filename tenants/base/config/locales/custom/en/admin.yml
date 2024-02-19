@@ -1,0 +1,10 @@
+en:
+  admin:
+    homepage:
+      feeds:
+        budgets: "Budgets"
+    actions:
+      confirm_hide_content: "Are you sure? This action will hide this content. You can undo this action from the moderation panel."
+      confirm_hide_author: "Are you sure? This action will hide all content created by the author and the author will be blocked and not be able to sign in. You can undo this action from the moderation panel."
+      confirm_mark_featured: "Are you sure? This action will mark this debate as featured and will be displayed on the main debates page."
+      confirm_unmark_featured: "Are you sure? This action will unmark this debate as featured and will be hidden from the main debates page."

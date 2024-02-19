@@ -83,12 +83,14 @@
     </li>
   <% end %>
 
-  <li class="section-title <%= "is-active" if community_menu_active? %>">
-    <span class="icon-organizations"></span>
-    <%= link_to community_proposal_dashboard_path(proposal) do %>
-      <strong><%= t("dashboard.menu.community") %></strong>
-    <% end %>
-  </li>
+  <% if feature?("community") %>
+    <li class="section-title <%= "is-active" if community_menu_active? %>">
+      <span class="icon-organizations"></span>
+      <%= link_to community_proposal_dashboard_path(proposal) do %>
+        <strong><%= t("dashboard.menu.community") %></strong>
+      <% end %>
+    </li>
+  <% end %>
 
   <li class="section-title <%= "is-active" if messages_menu_active? %>">
     <span class="icon-letter"></span>

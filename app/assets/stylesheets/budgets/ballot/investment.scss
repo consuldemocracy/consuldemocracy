@@ -16,6 +16,7 @@
 
   .ballot-list-title {
     display: block;
+    max-width: 90%;
     padding-right: calc(#{$close-icon-size} + #{$close-icon-margin} - #{$side-padding});
   }
 
@@ -23,7 +24,7 @@
     @include brand-color;
     display: block;
     font-weight: bold;
-    margin-top: $line-height / 2;
+    margin-top: $line-height;
     text-align: right;
   }
 

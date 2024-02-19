@@ -36,6 +36,14 @@ class Management::Budgets::InvestmentsController < Management::BaseController
   def show
   end
 
+  def vote
+    @investment.register_selection(managed_user, vote_value)
+    respond_to do |format|
+      format.html { redirect_to management_budget_investments_path(heading_id: @investment.heading.id) }
+      format.js
+    end
+  end
+
   def print
     @investments = @investments.apply_filters_and_search(@budget, params)
                                .order(cached_votes_up: :desc)
@@ -64,5 +72,13 @@ class Management::Budgets::InvestmentsController < Management::BaseController
 
     def load_budget
       @budget = Budget.find_by_slug_or_id! params[:budget_id]
+    end
+
+    def load_categories
+      @categories = Tag.category.order(:name)
+    end
+
+    def vote_value
+      params[:value] || "yes"
     end
 end

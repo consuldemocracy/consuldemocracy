@@ -1,0 +1,97 @@
+nl:
+  legislation:
+    processes:
+      header:
+        active: "Actief"
+        locked: "Gesloten"
+        coming_soon: "Binnenkort"
+        published: "Gepubliceerd"
+        less_info: "Minder informatie"
+      proposals:
+        empty_proposals: "Er zijn geen initiatieven"
+        less_info: "Minder informatie"
+      debate:
+        participate: "Actief"
+        icon_alt: "Plannen icoon"
+        help: "Help"
+        section_footer:
+          title: "Over plannen"
+          description: "Help mee met het beoordelen en schrijven van plannen voorafgaand aan de totstandkoming van verordeningen, beleid en uitvoering. Jouw mening telt en heeft invloed."
+        empty_questions: "Er zijn geen discussies"
+      index:
+        filters:
+          open: "Inspraak"
+          past: "Afgerond"
+        section_header:
+          icon_alt: "Inspraak icoon"
+          title: "Inspraak"
+          help: "Hulp bij inspraak"
+          description: "Dit zijn de huidige plannen van de gemeente. Afhankelijk van het soort plan kan je opmerkingen maken op het document, discussies starten of voorstellen indienen."
+        section_footer:
+          title: "Hulp bij inspraak"
+      process:
+        see_latest_comments: "Bekijk plan"
+      shared:
+        key_dates: "Activiteiten"
+        debate_dates: "Discussies"
+        allegations_dates: "Reacties"
+        proposals_dates: "Initiatieven"
+      phase_empty:
+        empty: "Nog niets gepubliceerd"
+    annotations:
+      index:
+        title: "Reacties"
+        comments_count:
+          one: "%{count} reactie"
+          other: "%{count} reacties"
+      comments:
+        cancel: "Annuleren"
+        publish_comment: "Publiceer reactie"
+        comments_count:
+          one: "%{count} reactie"
+          other: "%{count} reacties"
+    draft_versions:
+      show:
+        seeing_version: "Je bekijkt nu"
+        text_comments: "Reacties"
+    questions:
+      question:
+        debate: "Discussie"
+    proposals:
+      form:
+        tags_label: "Onderwerpen/labels"
+      process_title: "Inspraakproces"
+      not_verified: Voor stemvoorstellen %{verify_account}.
+      participation:
+        debate_phase_not_open: "De discussie is gesloten en opmerkingen worden niet meer geaccepteerd."
+        organizations: "Deelname van organisaties in discussies is niet toegestaan"
+        unauthenticated: "Je dient %{signin} of %{signup} om deel te nemen."
+    summary:
+      title: "Samenvatting"
+      votes:
+        zero: "%{count} stemmen"
+        one: "%{count} stem"
+        other: "%{count} stemmen"
+      debate_phase: "Discussie fase"
+      proposals_phase: "Initiatief fase"
+      allegations_phase: "Reactie fase"
+      debates:
+        zero: "Geen discussies"
+        one: "%{count} discussie"
+        other: "%{count} discussies"
+      proposals:
+        zero: "Geen initiatieven"
+        one: "%{count} initiatief"
+        other: "%{count} initiatieven"
+      comments:
+        zero: "Geen reacties"
+        one: "%{count} reactie"
+        other: "%{count} reacties"
+      download: "Download samenvatting"
+      top_comments:
+        zero: "Geen reacties"
+        one: "%{count} reactie"
+        other: "Top reacties"
+      most_voted_comments: "Reacties met meeste stemmen"
+      no_allegation: "There are no comments"
+      process_empty: "This process didn't have any participation phases"

@@ -1,0 +1,7 @@
+<div class="single-heading">
+  <% heading = budget.headings.first %>
+  <h2><%= heading.name %></h2>
+  <% if @budget.show_money? %>
+    <p class="heading-amount"><%= budget.formatted_heading_price(heading) %></p>
+  <% end %>
+</div>

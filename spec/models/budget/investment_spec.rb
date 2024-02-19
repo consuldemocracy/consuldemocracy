@@ -79,6 +79,20 @@ describe Budget::Investment do
     expect(investment.original_heading_id).to eq investment.heading_id
   end
 
+  describe "#feasibility_explanation blank" do
+    it "is valid if valuation not finished" do
+      investment.feasibility_explanation = ""
+      investment.valuation_finished = false
+      expect(investment).to be_valid
+    end
+
+    it "is valid if valuation finished and feasible" do
+      investment.feasibility_explanation = ""
+      investment.valuation_finished = true
+      expect(investment).to be_valid
+    end
+  end
+
   describe "#unfeasibility_explanation blank" do
     it "is valid if valuation not finished" do
       investment.unfeasibility_explanation = ""
@@ -326,6 +340,48 @@ describe Budget::Investment do
         budget.update!(phase: phase)
 
         expect(investment.should_show_unfeasibility_explanation?).to be false
+      end
+    end
+  end
+
+  describe "#should_show_feasibility_explanation?" do
+    let(:budget) { create(:budget) }
+    let(:investment) do
+      create(:budget_investment, :feasible, :finished, budget: budget)
+    end
+
+    it "returns true for feasible investments with feasibility explanation and valuation finished" do
+      Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
+        budget.update!(phase: phase)
+
+        expect(investment.should_show_feasibility_explanation?).to eq(true)
+      end
+    end
+
+    it "returns false in valuation has not finished" do
+      investment.update!(valuation_finished: false)
+      Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
+        budget.update!(phase: phase)
+
+        expect(investment.should_show_feasibility_explanation?).to eq(false)
+      end
+    end
+
+    it "returns false if not feasible" do
+      investment.update!(feasibility: "undecided")
+      Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
+        budget.update!(phase: phase)
+
+        expect(investment.should_show_feasibility_explanation?).to eq(false)
+      end
+    end
+
+    it "returns false if feasibility explanation blank" do
+      investment.feasibility_explanation = ""
+      Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
+        budget.update!(phase: phase)
+
+        expect(investment.should_show_feasibility_explanation?).to eq(false)
       end
     end
   end

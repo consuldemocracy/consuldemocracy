@@ -1,13 +1,15 @@
 nl:
   mailers:
     title: "Open overheid"
+    unsubscribe: "Wanneer je dit soort e-mails niet meer wilt ontvangen, verander dan de instellingen op de \"%{link}\" pagina."
+    unsubscribe_link: "Mijn Profiel"
     no_reply: "Dit bericht is verzonden vanaf een e-mailadres dat geen reacties accepteert."
     already_confirmed:
       info: "We hebben een verzoek voor instructies om je account te bevestigen ontvangen. Je account is alleen al bevestigd, dus dit hoef je niet meer te doen."
       new_password: "Als je je wachtwoord vergeten bent, kan je het opnieuw instellen met de volgende link:"
       subject: Je account is al bevestigd
     comment:
-      hi: Hoi
+      hi: Hi
       new_comment_by: There is a new comment from <strong>%{commenter}</strong>
       subject: Iemand heeft een reactie achtergelaten op %{commentable}
       title: Nieuwe reactie
@@ -68,7 +70,7 @@ nl:
       subject: "Uw investeringsproject '%{code}' is als onhaalbaar gemarkeerd"
     budget_investment_selected:
       subject: "Uw budget voorstel '%{code}' is geselecteerd"
-      title: "Je investeringsproject is geselecteerd"
+      title: "Uw budget voorstel is geselecteerd"
       hi: "Beste deelnemer,"
       share: "Begin met het verwerven van stemmen; deel uw project op sociale netwerken, bijvoorbeeld. Delen en communicatie is essentieel om het verder te brengen."
       share_button: "Deel uw project"
@@ -76,7 +78,7 @@ nl:
       sincerely: "Met vriendelijke groet"
     budget_investment_unselected:
       subject: "Uw project '%{code}' is niet geselecteerd"
-      title: "Je investeringsproject is niet geselecteerd"
+      title: "Uw project is niet geselecteerd"
       hi: "Beste deelnemer,"
       thanks: "Dank u nogmaals voor uw deelname."
       sincerely: "Met vriendelijke groet"

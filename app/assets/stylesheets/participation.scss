@@ -468,6 +468,10 @@
     }
   }
 
+  img {
+    height: 100%;
+  }
+
   &.past-budgets {
     display: flex;
     flex-wrap: wrap;
@@ -493,6 +497,14 @@
 
   .panel {
     @extend %panel;
+
+    .button {
+      margin-right: $line-height / 2;
+
+      ~ .button {
+        margin-right: $line-height / 2;
+      }
+    }
   }
 
   .debate-content,
@@ -1045,6 +1057,8 @@
   @include full-width-border(bottom, 2px solid $border);
 
   &.budget-heading {
+    background: $white;
+    border-bottom: 2px solid $border;
     min-height: $line-height * 10;
 
     .check-ballot {
@@ -1102,12 +1116,21 @@
     overflow: hidden;
   }
 
+  .progress-bar-indicator {
+    overflow: hidden;
+  }
+
   .progress-meter {
     @include brand-background;
     border-radius: rem-calc(12);
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
     transition: width 2s;
+  }
+
+  .spent-amount-text,
+  .total-amount {
+    color: $text;
   }
 
   .total-amount,
@@ -1136,6 +1159,7 @@
     margin-top: $line-height / 8;
     position: relative;
     text-align: right;
+    text-transform: uppercase;
     white-space: nowrap;
 
     &::before {
@@ -1237,6 +1261,7 @@
 }
 
 .progress-bar-nav {
+  background: $white;
   position: relative;
   z-index: 3;
 
@@ -1256,6 +1281,7 @@
 
       h2 {
         font-size: rem-calc(24);
+        margin-top: 0;
         transition: font-size 0.3s;
       }
     }

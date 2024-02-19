@@ -2,4 +2,10 @@
   <%= actions.action(:investments,
                      text: t("admin.budgets.index.budget_investments"),
                      path: admin_budget_budget_investments_path(budget)) %>
+
+  <%= actions.action(:preview,
+                     text: t("admin.budgets.actions.preview"),
+                     path: budget_path(budget),
+                     target: "_blank",
+                     class: "preview-link") %>
 <% end %>

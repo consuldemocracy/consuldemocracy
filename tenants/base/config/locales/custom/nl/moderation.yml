@@ -1,0 +1,15 @@
+nl:
+  moderation:
+    comments:
+      index:
+        block_authors: "Blokkeer deelnemers"
+        hide_comments: "Commentaar verbergen"
+        ignore_flags: "Markeer als gelezen"
+        title: "Commentaar"
+        filters:
+          with_ignored_flag: "Markeer als gelezen"
+    proposals:
+      index:
+        block_authors: "Blokkeer auteurs"
+    menu:
+      flagged_comments: "Commentaar"

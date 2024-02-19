@@ -20,7 +20,7 @@
         <% if current_user&.administrator? %>
           <small><%= @user.email %></small>
         <% end %>
-      </h2>
+      </h2><br>
 
       <%= render Users::PublicActivityComponent.new(@user) %>
     </div>

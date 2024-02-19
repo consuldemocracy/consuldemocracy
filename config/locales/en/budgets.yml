@@ -71,6 +71,17 @@ en:
         title: Help with participatory budgets
         description: With the participatory budgets the citizens decide to which projects is destined a part of the budget.
       milestones: Milestones
+      supports_info:
+        title: "It's time to <strong>support</strong> projects!"
+        next: "Support the projects you would like to see move on to the next phase."
+        remember: "<strong>Remember!</strong> You can only cast your support <strong>once</strong> for each project and each support is <strong>irreversible</strong>."
+        different: "You may support on as many different projects as you would like."
+        supported: "So far you supported <strong>%{count} projects</strong>."
+        supported_one: "So far you supported <strong>1 project</strong>."
+        supported_not_logged_in: "Log in to start <strong>supporting projects</strong>."
+        time: "There's still time until %{phase_end_date} to support projects."
+        share: "You can share the projects you have supported on through social media and attract more attention and support to them!"
+        scrolling: "Keep scrolling to see all ideas"
     investments:
       form:
         title: "Create a budget investment"
@@ -95,11 +106,11 @@ en:
           my_ballot: My ballot
           voted_info:
             knapsack:
-              one: "<strong>You voted one proposal with a cost of %{amount_spent}</strong>"
-              other: "<strong>You voted %{count} proposals with a cost of %{amount_spent}</strong>"
+              one: "<strong>You voted one investment with a cost of %{amount_spent}</strong>"
+              other: "<strong>You voted %{count} investments with a cost of %{amount_spent}</strong>"
             approval:
-              one: "<strong>You voted one proposal</strong>"
-              other: "<strong>You voted %{count} proposals</strong>"
+              one: "<strong>You voted one investment</strong>"
+              other: "<strong>You voted %{count} investments</strong>"
           change_vote_info:
             knapsack: "You can %{link} at any time until %{phase_end_date}. No need to spend all the money available."
             approval: "You can %{link} at any time until %{phase_end_date}."
@@ -122,11 +133,13 @@ en:
           random: random
           confidence_score: highest rated
           price: by price
+        read_more: "Read more"
       share:
         message: "I created the investment project %{title} in %{handle}. Create an investment project too!"
       show:
         author_deleted: User deleted
         price_explanation: Price explanation
+        feasibility_explanation: "Feasibility explanation (optional)"
         unfeasibility_explanation: Unfeasibility explanation
         code: "Investment project code: <strong>%{code}</strong>"
         location: "Location: <strong>%{location}</strong>"
@@ -149,6 +162,7 @@ en:
         add: Vote
         add_label: "Vote %{investment}"
         already_added: You have already added this investment project
+        price_title: "Price"
         support_title: Support this project
         supports:
           one: 1 support
@@ -157,7 +171,7 @@ en:
       header:
         check_ballot: "Submit my ballot"
         different_heading_assigned: "You have active votes in another heading: %{heading_link}"
-        change_ballot: "If you change your mind you can remove your votes in %{check_ballot} and start again."
+        change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
         check_ballot_link: "submit my ballot"
         price: "Total budget"
       votes:
@@ -169,6 +183,9 @@ en:
         remove_support_label: "Remove your support to %{investment}"
         support: "Support"
         support_label: "Support %{investment}"
+    progress_bar:
+      assigned: "You have assigned: "
+      available: "Available budget: "
     investments_list:
       investment:
         price: "Price"
@@ -203,9 +220,6 @@ en:
       discarded: "Discarded investment: "
       incompatibles: Incompatibles
       investment_title: Project title
-      investment_proyects: List of all investment projects
-      unfeasible_investment_proyects: List of all unfeasible investment projects
-      not_selected_investment_proyects: List of all investment projects not selected for balloting
     executions:
       link: "Milestones"
       page_title: "%{budget} - Milestones"
@@ -222,5 +236,3 @@ en:
     phases:
       errors:
         dates_range_invalid: "Start date can't be equal or later than End date"
-        prev_phase_dates_invalid: "Start date must be later than the start date of the previous enabled phase (%{phase_name})"
-        next_phase_dates_invalid: "End date must be earlier than the end date of the next enabled phase (%{phase_name})"

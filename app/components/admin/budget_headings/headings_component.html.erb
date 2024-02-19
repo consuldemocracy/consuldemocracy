@@ -24,6 +24,14 @@
           <% if budget.approval_voting? %>
             <td><%= heading.max_ballot_lines %></td>
           <% end %>
+          <td class="text-center"><%= heading.population %></td>
+          <td class="text-center">
+            <% if heading.allow_custom_content? %>
+              <%= t("admin.budget_headings.true") %>
+            <% else %>
+              <%= t("admin.budget_headings.false") %>
+            <% end %>
+          </td>
           <td>
             <%= geozone_for(heading) %>
           </td>

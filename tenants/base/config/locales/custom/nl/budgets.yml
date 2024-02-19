@@ -1,0 +1,222 @@
+nl:
+  budgets:
+    ballots:
+      show:
+        title: "Jouw keuze"
+        no_balloted_group_yet: "Je hebt nog niet gestemd"
+        voted:
+          one: "Je hebt op <span>1</span> idee gestemd"
+          other: "Je hebt op <span>%{count}</span> ideeën gestemd"
+        voted_info: "Je stem is bevestigd"
+        voted_info_2: "Je kunt je stem altijd aanpassen tot deze fase wordt gesloten"
+        back: "Ga terug naar ideeën"
+        amount_spent: "Uitgegeven"
+        amount_spent:
+          knapsack: "Uitgegeven <span>%{count}</span>"
+          approval:
+            zero: "Stemmen uitgebracht: <span>%{count}</span>"
+            one: "Stemmen uitgebracht: <span>%{count}</span>"
+            other: "Stemmen uitgebracht: <span>%{count}</span>"
+        remaining: "Je kunt nog <span>%{amount}</span> spenderen"
+        remove: "Verwijder keuze"
+        zero: "Je hebt op geen enkel idee gestemd."
+        amount_limit:
+          knapsack: "%{count}"
+          approval:
+            one: "Je kan op <span>1</span> idee stemmen"
+            other: "Je kan op <span>%{count}</span> ideeën stemmen"
+        amount_available:
+          knapsack: "Je kan nog <span>%{count}</span> uitgeven."
+          approval:
+            zero: "Je kan nog <span>%{count}</span> stemmen uitbrengen."
+            one: "Je kan nog <span>%{count}</span> stem uitbrengen."
+            other: "Je kan nog <span>%{count}</span> stemmen uitbrengen."
+      reasons_for_not_balloting:
+        not_selected: "Op niet-geselecteerde ideeën kan niet worden gestemd"
+        not_enough_money: "Je kunt dit geld nu niet meer besteden. Als je wilt kun je je stem altijd aanpassen tijdens de stemfase."
+        not_verified: "Alleen geverifieerde gebruikers kunnen op ideeën stemmen; %{verify_account}."
+        change_ballot: "Wijzig je stem"
+        no_ballots_allowed: "De selectieronde is voorbij"
+        different_heading_assigned: "Je hebt al gestemd in een andere groep: %{heading_link}"
+        not_enough_available_votes: "Je hebt je maximaal aantal uit te brengen stemmen al bereikt"
+    groups:
+      show:
+        unfeasible_title: "Niet stembare ideeën"
+        unfeasible: "Bekijk niet stembare ideeën"
+        unselected_title: ""
+        unselected: "Zie ideeën niet geselecteerd voor de stemronde"
+    phase:
+      drafting: "Concept (niet publiekelijk zichtbaar)"
+      informing: "Informatie"
+      accepting: "Ideeën delen"
+      reviewing: "Ideeën beoordelen"
+      selecting: "Steun de ideeën"
+      valuating: "Haalbaarheidscheck en inschatting kosten"
+      publishing_prices: "Publiceren beoordeling"
+      balloting: "Stemmen op ideeën"
+      reviewing_ballots: "Stemmen tellen"
+      finished: "De uitslag"
+    index:
+      title: "Ideeën"
+      map: "Alle ideeën op de kaart"
+      current_phase: "Huidige fase"
+      section_header:
+        help: "Toelichting"
+      section_footer:
+        title: "Over dit proces"
+        description: "Beslis mee over de verdeling van geld tussen verschillende ideeën en projecten."
+      supports_info:
+        title: "Je kunt nu ideeën <strong>steunen</strong>!"
+        next: "Steun de ideeën die jij graag uitgevoerd wil zien."
+        remember: "Je mag zoveel verschillende ideeën steunen als je wilt."
+        different: "Maar... je kunt ieder idee slechts één keer steunen. En je steun is definitief."
+        supported: "Tot nu toe heb je <strong>%{count} ideeën</strong> gesteund."
+        supported_one: "Tot nu toe heb je <strong>1 idee</strong> gesteund."
+        supported_not_logged_in: "Log in om <strong>projecten te steunen</strong>."
+        time: "Je kunt nog tot %{phase_end_date} ideeën steunen."
+        share: "Je kunt ideeën die je hebt gesteund delen op social media. Zo krijgen de ideeën meer aandacht én wellicht meer steun!"
+        scrolling: "Blijf scrollen om alle ideeën te zien"
+      unfeasible_investment_proyects: "Ideeën waar niet op gestemd kan worden"
+      investment_proyects: "Lijst van alle gekozen ideeën"
+      not_selected_investment_proyects: "Niet voor stemmen geselecteerde ideeën bekijken"
+      see_results: "Bekijk de uitslag"
+      finished_budgets: "Afgeronde processen"
+      all_phases: "Fases"
+      next_phase: "Volgende fase"
+      prev_phase: "Vorige fase"
+      empty_budgets: "Er zijn geen budgetten"
+    investments:
+      index:
+        by_heading: "Ideeën voor %{heading}"
+        sidebar:
+          voted:
+            one: "Je hebt op <strong>1 idee</strong> gestemd die in totaal %{amount_spent} kosten."
+            other: "Je hebt op <strong>%{count} ideeën</strong> gestemd die in totaal %{amount_spent} kosten."
+          voted_info:
+            knapsack:
+              one: "Je hebt op <strong>1 idee</strong> gestemd die in totaal %{amount_spent} kosten."
+              other: "Je hebt op <strong>%{count} ideeën</strong> gestemd die in totaal %{amount_spent} kosten."
+            approval:
+              one: "<strong>Je hebt op 1 idee gestemd</strong>"
+              other: "<strong>Je hebt op %{count} ideeën gestemd</strong>"
+          voted_info_link: "je stem wijzigen"
+          create: "Nieuw idee delen"
+          zero: "Je hebt nog niet op een idee gestemd"
+          change_ballot: "Als je je bedenkt kun je je stemmen in %{check_ballot} verwijderen en opnieuw beginnen."
+          check_ballot_link: "Bekijk mijn stemmen"
+          different_heading_assigned: "Je hebt al gestemd in een andere groep: %{heading_link}"
+          my_ballot: "Mijn stemmen"
+          not_logged_in: "Om een idee in te dienen moet je %{sign_in} of %{sign_up}."
+          sign_in: "inloggen"
+          sign_up: "registreren"
+          verified_only: "%{verify} je account om een idee in te dienen."
+          verify_account: "je account verifieren"
+          change_vote_info:
+            knapsack: "Je kunt %{link} tot %{phase_end_date}. Het is niet verplicht al het budget te besteden."
+            approval: "Je kunt %{link} tot %{phase_end_date}."
+          change_vote_link: "je stem wijzigen"
+        search_results:
+          one: " met de tekst <strong>'%{search_term}'</strong>"
+          other: " met de tekst <strong>'%{search_term}'</strong>"
+        filter: "Filter ideeën op"
+        filters:
+          not_unfeasible: "Nog te beoordelen"
+          feasible: "Haalbaar"
+          unfeasible: "Niet haalbaar"
+          unselected: "Niet geselecteerd"
+          selected: "Geselecteerd"
+          winners: "Winnende"
+        orders:
+          confidence_score: "best beoordeeld"
+        read_more: "Bekijk idee"
+        search_form:
+          placeholder: "Zoek ideeën..."
+        unfeasible: "Niet stembare ideeën"
+        unfeasible_text: "De Coöperatieve Wijkraad heeft alle ideeën bekeken die de afgelopen weken zijn verzameld. We hebben nagekeken of ze écht voor de wijk zijn en hebben onderzocht hoeveel geld het zou kosten om dit idee uit te voeren. Hieronder vind je alle ideeën waar niet op gestemd kan worden. We hebben uitgelegd aan de indiener van het idee waarom wij dat vinden. Sommige ideeën zijn gecombineerd met een ander idee, andere ideeën waren een suggestie. Sommige ideeën worden al uitgevoerd en met sommige indieners van ideeën hebben we helaas geen contact kunnen krijgen."
+        title: "Ideeën"
+      show:
+        title: "Idee"
+        supports: "Steun"
+        location: "Locatie: <strong>%{location}</strong>"
+        organization_name: "Idee ingediend door: <strong>%{name}</strong>"
+        author: "Auteur"
+        comments_tab: "Reacties"
+        project_selected: "Dit idee <strong>is geselecteerd</strong> voor de stemfase."
+        project_not_selected: "Dit idee is niet geselecteerd voor de stemfase."
+        price_explanation: "Uitleg van de prijs van het idee"
+        see_price_explanation: "Uitleg van de prijs van het idee"
+        project_unfeasible: "Dit idee is gemarkeerd als niet stembaar en gaat niet naar de stemronde"
+        project_winner: "Gekozen idee"
+        feasibility_explanation: "Uitleg over geschiktheid idee"
+        unfeasibility_explanation: "Uitleg over geschiktheid idee"
+        price_explanation: "Toelichting kosten"
+        votes: "Stemmen"
+      form:
+        title: "Deel een idee"
+        map_location_instructions: "Klik op de kaart om de locatie aan te geven. Je kunt de kaart bewegen"
+        map_skip_checkbox: "Dit idee heeft geen eigen locatie of ik ken de locatie niet"
+        tags_instructions: "Je kunt aangeven waar jouw idee over gaat door deze een onderwerp of label te geven. Je kunt eigen toevoegen, of de bestaande gebruiken"
+        tags_label: "Onderwerpen/labels"
+        edit_permission: "Je moet zelf het idee hebben ingediend om het te kunnen bewerken."
+        updated_notice: "Je idee is aangepast."
+        tag_category_label: "Categorieën"
+        tags_placeholder: "Voer de categorie in die je wilt gebruiken, gescheiden door kommas (',')"
+      investment:
+        price_title: "Prijs"
+        support_title: "Stemmen"
+        give_support: "Steun"
+        remove_support: "Steun verwijderen"
+        supports:
+          zero: "nog geen steun"
+          one: "1 steunbetuiging"
+          other: "%{count} steunbetuigingen"
+        already_added: "Je hebt dit idee al toegevoegd"
+        already_supported: "Je hebt dit idee al gesteund. Deel het!"
+        confirm_group:
+          one: "Je kunt ideeën in %{count} groep steunen. Als je verder gaat is dat definitief. Je kan dan niet meer in andere groepen steunen. Weet je dat zeker?"
+          other: "Je kunt ideeën in %{count} groep steunen. Als je verder gaat is dat definitief. Je kan dan niet meer in andere groepen steunen. Weet je dat zeker?"
+      header:
+        check_ballot: "Bekijk mijn stemmen"
+        check_ballot_link: "Bekijk mijn stemmen"
+        price: "Dit proces heeft een budget van"
+        change_ballot: "Als je je bedenkt kun je je stemmen in %{check_ballot} verwijderen en opnieuw beginnen."
+        different_heading_assigned: "Je hebt al gestemd in een andere groep: %{heading_link}"
+      share:
+        message: "Dit is een goed idee voor de Oosterparkwijk! Vanaf 18 november kan je stemmen op dit idee"
+    show:
+      see_all_investments: "Bekijk alle ideeën"
+      investments_list: "Ideeën"
+      see_results: "Bekijk de uitslag"
+      unfeasible: "Bekijk de niet stembare ideeën"
+      unfeasible_title: "Niet stembare ideeën"
+      unselected: "Bekijk de ideeën die niet geselecteerd zijn voor de stemronde"
+      unselected_title: "Ideeën die niet geselecteerd zijn voor de stemronde"
+    executions:
+      heading: "Mijlpalen ideeën"
+      heading_selection_title: "Per gebied"
+      no_winner_investments: "Er zijn geen geaccepteerde ideeën"
+      filters:
+        status:
+          label: "Projectstatus"
+        milestone_tag:
+          label: "Label mijlpaal"
+          all: "Alle (%{count})"
+    progress_bar:
+      you_have_assigned: "Je hebt"
+      assigned: "Uitgegeven"
+      available: "Beschikbare bedrag:"
+    results:
+      link: "De uitslag"
+      investment_title: "Idee"
+      ballot_lines_count: "Stemmen"
+      investment_proyects: "Lijst van alle gekozen ideeën"
+      unfeasible_investment_proyects: "Lijst van alle gekozen ideeën"
+      not_selected_investment_proyects: "Lijst van alle ideeën niet geselecteerd voor stemming"
+      accepted: "Bevestig je stem:"
+      amount_available: "Beschikbare bedrag:"
+      heading: "De uitslag"
+      page_title: "De uitslag"
+      show_all_link: "Toon alle ideeën"
+      hide_discarded_link: "Verberg niet gekozen ideeën"
+      heading_selection_title: "Per gebied"
+    no_image_alt: "Groene omgeving in Haren"

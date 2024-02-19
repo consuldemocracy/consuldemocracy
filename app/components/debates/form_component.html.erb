@@ -7,14 +7,14 @@
     <%= render "shared/globalize_locales", resource: debate %>
 
     <%= f.translatable_fields do |translations_form| %>
-      <div>
+      <div class="required">
         <%= translations_form.text_field :title,
                                          maxlength: Debate.title_max_length,
                                          data: suggest_data(debate) %>
       </div>
       <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
 
-      <div>
+      <div class="required">
         <%= translations_form.text_area :description,
                                         maxlength: Debate.description_max_length,
                                         class: "html-area" %>
@@ -41,10 +41,11 @@
   <div class="actions">
     <% if debate.new_record? %>
       <div>
+        <p class="form-label"><%= t("shared.required_fields") %></p>
         <%= render Shared::AgreeWithTermsOfServiceFieldComponent.new(f) %>
       </div>
     <% end %>
 
-    <%= f.submit(class: "button", value: t("debates.#{action_name}.form.submit_button")) %>
+    <%= f.submit(class: "button large margin-top", value: t("debates.#{action_name}.form.submit_button")) %>
   </div>
 <% end %>

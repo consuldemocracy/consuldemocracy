@@ -10,6 +10,10 @@ class Budgets::MapComponent < ApplicationComponent
     feature?(:map) && !budget.informing?
   end
 
+  def map_location
+    Map.find_by(budget: budget)&.map_location
+  end
+
   private
 
     def coordinates

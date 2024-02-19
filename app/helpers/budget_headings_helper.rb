@@ -5,6 +5,12 @@ module BudgetHeadingsHelper
     end
   end
 
+  def budget_group_select_options(budget)
+    budget.groups.sort_by_name.map do |group|
+      [group.name, group.id]
+    end
+  end
+
   def heading_link(assigned_heading = nil, budget = nil)
     return nil unless assigned_heading && budget
 

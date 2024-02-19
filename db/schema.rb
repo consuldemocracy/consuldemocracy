@@ -305,9 +305,14 @@ ActiveRecord::Schema.define(version: 2023_10_12_141318) do
     t.datetime "ignored_flag_at"
     t.integer "flags_count", default: 0
     t.integer "original_heading_id"
+    t.integer "cached_votes_down", default: 0
+    t.integer "cached_votes_total", default: 0
+    t.text "feasibility_explanation"
     t.index ["administrator_id"], name: "index_budget_investments_on_administrator_id"
     t.index ["author_id"], name: "index_budget_investments_on_author_id"
     t.index ["budget_id"], name: "index_budget_investments_on_budget_id"
+    t.index ["cached_votes_down"], name: "index_budget_investments_on_cached_votes_down"
+    t.index ["cached_votes_total"], name: "index_budget_investments_on_cached_votes_total"
     t.index ["community_id"], name: "index_budget_investments_on_community_id"
     t.index ["group_id"], name: "index_budget_investments_on_group_id"
     t.index ["heading_id"], name: "index_budget_investments_on_heading_id"
@@ -337,6 +342,7 @@ ActiveRecord::Schema.define(version: 2023_10_12_141318) do
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.boolean "enabled", default: true
+    t.string "main_link_url"
     t.index ["ends_at"], name: "index_budget_phases_on_ends_at"
     t.index ["kind"], name: "index_budget_phases_on_kind"
     t.index ["next_phase_id"], name: "index_budget_phases_on_next_phase_id"
@@ -404,6 +410,7 @@ ActiveRecord::Schema.define(version: 2023_10_12_141318) do
     t.string "voting_style", default: "knapsack"
     t.boolean "published"
     t.boolean "hide_money", default: false
+    t.string "main_link_url"
   end
 
   create_table "campaigns", id: :serial, force: :cascade do |t|
@@ -943,8 +950,16 @@ ActiveRecord::Schema.define(version: 2023_10_12_141318) do
     t.integer "zoom"
     t.integer "proposal_id"
     t.integer "investment_id"
+    t.integer "map_id"
     t.index ["investment_id"], name: "index_map_locations_on_investment_id"
     t.index ["proposal_id"], name: "index_map_locations_on_proposal_id"
+  end
+
+  create_table "maps", id: :serial, force: :cascade do |t|
+    t.integer "budget_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["budget_id"], name: "index_maps_on_budget_id"
   end
 
   create_table "milestone_statuses", id: :serial, force: :cascade do |t|
@@ -1768,6 +1783,7 @@ ActiveRecord::Schema.define(version: 2023_10_12_141318) do
     t.integer "cardable_id"
     t.integer "columns", default: 4
     t.string "cardable_type", default: "SiteCustomization::Page"
+    t.boolean "background_image", default: false
     t.index ["cardable_id"], name: "index_widget_cards_on_cardable_id"
   end
 

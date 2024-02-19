@@ -7,7 +7,7 @@
   <table id="budget-investments-<%= results_type %>" class="table-for-mobile">
     <thead>
       <tr>
-        <th scope="col">
+        <th scope="col" class="small-12 medium-6">
           <%= t("budgets.results.investment_title") %>
         </th>
         <th scope="col" class="text-center">
@@ -17,6 +17,14 @@
           <th scope="col" class="text-center">
             <%= t("budgets.results.price") %>
           </th>
+          <% if results_type == :compatible %>
+            <th scope="col" class="text-right">
+              <small><%= t("budgets.results.amount_available") %></small><br>
+              <%= @budget.formatted_amount(heading_price) %><br>
+            </th>
+          <% end %>
+        <% end %>
+        <% if @budget.show_money? %>
           <% if results_type == :compatible %>
             <th scope="col" class="text-right">
               <small><%= t("budgets.results.amount_available") %></small><br>

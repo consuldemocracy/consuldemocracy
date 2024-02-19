@@ -16,6 +16,7 @@ describe "Admin activity" do
       within("#proposal_#{proposal.id}") do
         accept_confirm("Are you sure? Hide \"#{proposal.title}\"") { click_button "Hide" }
       end
+
       expect(page).to have_css("#proposal_#{proposal.id}.faded")
 
       visit admin_activity_path
@@ -84,6 +85,7 @@ describe "Admin activity" do
       within("#debate_#{debate.id}") do
         accept_confirm("Are you sure? Hide \"#{debate.title}\"") { click_button "Hide" }
       end
+
       expect(page).to have_css("#debate_#{debate.id}.faded")
 
       visit admin_activity_path

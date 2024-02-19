@@ -1,0 +1,54 @@
+nl:
+  devise_views:
+    menu:
+      login_items:
+        login: "Inloggen"
+        logout: "Uitloggen"
+        signup: "Aanmelden"
+    shared:
+      sign_in: "Inloggen bestaand account"
+      sign_up: "Aanmelden nieuw account"
+      not_organization: "Vertegenwoordig je geen organisatie of collectief? Meld je dan %{link} aan."
+      not_organization_link: "hier"
+      links:
+        new_confirmation: "Geen activeringsinstructies voor je account ontvangen?"
+        login: "Inloggen"
+    organizations:
+      registrations:
+        new:
+          organization_name_label: "Naam van organisatie of collectief"
+          responsible_name_note: "Dit is de persoon die namens de vereniging of het collectief initiatieven indient"
+          title: "Als organisatie of collectief registreren."
+          submit: "Registreren"
+        success:
+          instructions_1: "Wij nemen zo snel mogelijk contact met je op om het collectief of de vereniging te verifiëren."
+          instructions_2: "We hebben een mail met een bevestigingslink gestuurd naar het opgegeven e-mailadres."
+          instructions_3: "Klik op de link om het account te bevestigen. Hierna kun je als collectief of vereniging meedoen."
+          thank_you: "Bedankt voor het registreren als collectief of vereniging op de website."
+    sessions:
+      new:
+        submit: "Inloggen"
+        title: "Inloggen"
+    users:
+      registrations:
+        new:
+          title: "Aanmelden"
+          organization_signup: "Vertegenwoordig je een organisatie of collectief? Meld je dan %{signup_link} aan."
+          organization_signup_link: "hier"
+          username_note: "De opgegeven naam zal zichtbaar zijn voor andere gebruikers"
+          terms: "Ik ben een inwoner van de gemeente en ik accepteer de %{terms}."
+          terms_link: "gebruiksvoorwaarden"
+          terms_title: "Ik ben een inwoner van de gemeente en ik accepteer de gebruiksvoorwaarden"
+          submit: "Aanmelden"
+          username_label: "Gebruikersnaam"
+          username_note: "De opgegeven naam zal zichtbaar zijn voor andere gebruikers"
+        success:
+          title: "Verifieer je e-mailadres"
+          instructions_1: "Bekijk je mailbox - we hebben een mail gestuurd met een link om je e-mailadres te verifiëren."
+          instructions_2: "Wanneer je dit hebt geverifieerd, kun je beginnen met participeren."
+          thank_you: "Bedankt voor het invullen van je gegevens. Om je aanmelding te voltooien moet je je e-mailadres verifiëren. "
+    confirmations:
+      new:
+        title: "Stuur verificatie instructies opnieuw"
+      show:
+        submit: "Bevestig"

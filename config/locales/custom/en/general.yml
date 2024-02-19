@@ -1,0 +1,60 @@
+en:
+  welcome:
+    steps:
+      title: "Participate in 3 steps"
+      subtitle: "Optional secondary text."
+      step_1:
+        number: "1"
+        title: "Sign-up"
+        description: "Short text describing some of the data that is expected to be asked when making an account."
+        link: "Make an account in 5 minutes"
+      step_2:
+        number: "2"
+        title: "Decide"
+        description: "Share your ideas and vote on the changes you want to see in the city."
+        link: "See what's happening around the city right now"
+      step_3:
+        number: "3"
+        title: "Share"
+        description: "Keep up with the ideas that matter to you the most, and share them through social media."
+        link: "Another optional call to action"
+    feed:
+      most_active:
+        proposals: "Featured proposals"
+        budgets: "Participatory budgets"
+      see_budget: "See this budget"
+  debates:
+    index:
+      section_header:
+        description: "Start a debate to share your views on topics you consider important."
+      orders:
+        confidence_score: "Highest rated"
+        created_at: "Newest"
+        hot_score: "Most active"
+        most_commented: "Most commented"
+        relevance: "Relevance"
+        recommendations: "Recommendations"
+  proposals:
+    index:
+      section_header:
+        description: "Support ideas and if they get enough support they will be voted."
+      orders:
+        confidence_score: "Highest rated"
+        created_at: "Newest"
+        hot_score: "Most active"
+        most_commented: "Most commented"
+        relevance: "Relevance"
+        archival_date: "Archived"
+        recommendations: "Recommendations"
+    form:
+      tags_label: "Tags"
+  polls:
+    index:
+      section_header:
+        description: "Give your opinion on specific topics"
+      remaining: "Remaining <strong>%{days}</strong> to participate"
+  poll_questions:
+    show:
+      vote_registered: "Your vote has been registered correctly."
+  shared:
+    expired: "Expired"

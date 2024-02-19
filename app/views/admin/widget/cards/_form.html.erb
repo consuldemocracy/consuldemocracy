@@ -14,7 +14,8 @@
       </div>
 
       <div class="column">
-        <%= translations_form.text_area :description, rows: 5 %>
+        <% css_class = "html-area admin" if card.header? %>
+        <%= translations_form.text_area :description, rows: 5, class: css_class %>
       </div>
 
       <div class="small-12 medium-6 column end">
@@ -48,6 +49,11 @@
         <%= render Images::NestedComponent.new(f) %>
       </div>
     </div>
+    <% if card.header? %>
+      <div class="column margin-bottom">
+        <%= f.check_box :background_image %>
+      </div>
+    <% end %>
     <div class="column">
       <%= f.submit(
         t("admin.homepage.#{admin_submit_action(card)}.#{card.header? ? "submit_header" : "submit_card"}"),

@@ -54,8 +54,10 @@ class Admin::MenuComponent < ApplicationComponent
     end
 
     def settings?
-      controllers_names = ["settings", "tenants", "tags", "geozones", "local_census_records", "imports"]
-      controllers_names.include?(controller_name)
+      controllers_names = ["settings", "tenants", "tags", "geozones", "images",
+                           "content_blocks", "local_census_records", "imports", "maps"]
+      controllers_names.include?(controller_name) &&
+        controller.class.module_parent != Admin::Poll::Questions::Answers
     end
 
     def customization?
@@ -536,6 +538,14 @@ class Admin::MenuComponent < ApplicationComponent
         admin_machine_learning_path,
         controller_name == "machine_learning",
         class: "ml-link"
+      ]
+    end
+
+    def maps_link
+      [
+        t("admin.menu.maps"),
+        admin_maps_path,
+        maps?
       ]
     end
 

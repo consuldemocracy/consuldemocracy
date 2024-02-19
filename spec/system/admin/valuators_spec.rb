@@ -52,15 +52,29 @@ describe "Admin valuators", :admin do
     expect(page).not_to have_content "Can edit dossier"
   end
 
-  scenario "Destroy" do
-    visit admin_valuators_path
+  context "Destroy" do
+    scenario "Valuator not assigned to a budget" do
+      visit admin_valuators_path
 
-    accept_confirm("Are you sure? This action will delete \"#{valuator.name}\" and can't be undone.") do
-      click_button "Delete"
+      accept_confirm("Are you sure? This action will delete \"#{valuator.name}\" and can't be undone.") do
+        click_button "Delete"
+      end
+
+      within("#valuators") do
+        expect(page).not_to have_content(valuator.name)
+      end
     end
 
-    within("#valuators") do
-      expect(page).not_to have_content(valuator.name)
+    scenario "Valuator assigned to a budget" do
+      create(:budget, valuators: [valuator])
+
+      visit admin_valuators_path
+
+      accept_confirm { click_button "Delete" }
+
+      within("#valuators") do
+        expect(page).not_to have_content(valuator.name)
+      end
     end
   end
 

@@ -57,18 +57,14 @@
 
         <%= render_image(@proposal.image, :large, true) if @proposal.image.present? %>
 
-        <br>
-        <p>
-          <%= t("proposals.show.code") %>
-          <strong><%= @proposal.code %></strong>
-        </p>
-
         <blockquote><%= @proposal.summary %></blockquote>
 
         <% if @proposal.video_url.present? %>
-          <div class="small-12 medium-7 small-centered">
-            <div class="flex-video">
-              <div id="js-embedded-video" data-video-code="<%= embedded_video_code(@proposal) %>"></div>
+          <div class="small-12 light">
+            <div class="small-12 medium-7 small-centered">
+              <div class="flex-video">
+                <div id="js-embedded-video" data-video-code="<%= embedded_video_code(@proposal) %>"></div>
+              </div>
             </div>
           </div>
         <% end %>

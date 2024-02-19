@@ -1,0 +1,70 @@
+<% raadsleden = [
+  {
+    img: "pvda.png",
+    name: "Antolovic-Tipuric, M.",
+    title: "Fractievoorzitter PvdA"
+  },
+  {
+    img: "groenlinks.png",
+    name: "Spoelman, W.H.F.",
+    title: "Fractievoorzitter Groenlinks"
+  },
+  {
+    img: "fp.png",
+    name: "Tuininga, J.W.",
+    title: "Fractievoorzitter FNP"
+  },
+  {
+    img: "gemeentebelangen.png",
+    name: "Klaver, S.",
+    title: "Fractievoorzitter Gemeentebelangen"
+  },
+  {
+    img: "cda.png",
+    name: "Goudzwaard Wiersma, W.",
+    title: "Fractievoorzitter CDA"
+  },
+  {
+    img: "vvd.png",
+    name: "Visser, M.",
+    title: "Fractievoorzitter VVD"
+  },
+  {
+    img: "lijst058.png",
+    name: "Galiën, O.A. van der",
+    title: "Fractievoorzitter Lijst058"
+  },
+  {
+    img: "d66.png",
+    name: "Bruijnincx, J.M.M.",
+    title: "Fractievoorzitter D66"
+  },
+  {
+    img: "cu.png",
+    name: "Niesink, C.C.M.",
+    title: "Fractievoorzitter ChristenUnie"
+  },
+  {
+    img: "fvd.png",
+    name: "Oudhuis, K.",
+    title: "Fractievoorzitter Forum voor Democratie"
+  },
+] %>
+
+<div id="raad_page" class="raad_page row margin-top">
+  <%= render "shared/section_header",
+             i18n_namespace: "raad.section_header",
+             image: "far fa-handshake"
+  %>
+
+  <ul class="raadsleden">
+    <% raadsleden.each do |raadslid| %>
+      <li class="raadslid">
+        <%= image_tag(image_path_for('raadsleden/' + raadslid[:img])) %>
+        <h2 class="name"><%= raadslid[:name] %></h2>
+        <span class="function-title"><%= raadslid[:title] %></span>
+      </li>
+    <% end %>
+  </ul>
+</div>
+

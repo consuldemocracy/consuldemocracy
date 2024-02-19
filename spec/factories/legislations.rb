@@ -177,5 +177,9 @@ FactoryBot.define do
     trait :hidden do
       hidden_at { Time.current }
     end
+
+    trait :with_image do
+      after(:create) { |legislation_proposal| create(:image, imageable: legislation_proposal) }
+    end
   end
 end

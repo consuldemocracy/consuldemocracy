@@ -20,10 +20,6 @@
 
 <%= render_image(investment.image, :large, true) if investment.image.present? %>
 
-<p id="investment_code">
-  <%= sanitize(t("budgets.investments.show.code", code: investment.id)) %>
-</p>
-
 <%= auto_link_already_sanitized_html wysiwyg(investment.description) %>
 
 <% if feature?(:map) && map_location_available?(@investment.map_location) %>
@@ -54,6 +50,11 @@
   <div class="investment-external-link">
     <%= sanitize_and_auto_link investment.external_url %>
   </div>
+<% end %>
+
+<% if investment.should_show_feasibility_explanation? %>
+  <h2><%= t("budgets.investments.show.feasibility_explanation") %></h2>
+  <p><%= investment.feasibility_explanation %></p>
 <% end %>
 
 <% if investment.should_show_unfeasibility_explanation? %>

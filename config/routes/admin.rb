@@ -116,7 +116,6 @@ namespace :admin do
   end
 
   resources :settings, only: [:index, :update]
-  put :update_map, to: "settings#update_map"
   put :update_content_types, to: "settings#update_content_types"
 
   resources :moderators, only: [:index, :create, :destroy] do
@@ -246,6 +245,12 @@ namespace :admin do
   end
 
   resources :geozones, only: [:index, :new, :create, :edit, :update, :destroy]
+
+  resources :maps, except: [:show, :update] do
+    resources :map_locations, except: [:new, :create, :show] do
+      put :update_from_map
+    end
+  end
 
   namespace :site_customization do
     resources :pages, except: [:show] do

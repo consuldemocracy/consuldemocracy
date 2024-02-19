@@ -5,6 +5,7 @@ class SitemapGenerator::FileAdapter
     stream.close
   end
 end
+
 SitemapGenerator::Sitemap.namer = SitemapGenerator::SimpleNamer.new(:sitemap, extension: ".xml")
 SitemapGenerator::Sitemap.verbose = false if Rails.env.test?
 
@@ -13,6 +14,10 @@ Tenant.run_on_each do
   SitemapGenerator::Sitemap.sitemaps_path = Tenant.subfolder_path
 
   SitemapGenerator::Sitemap.create do
+    if Setting["feature.raad"]
+      add raad_path
+    end
+
     add help_path
     add how_to_use_path
     add faq_path

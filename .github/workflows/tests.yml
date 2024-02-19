@@ -20,7 +20,7 @@ jobs:
     services:
       postgres:
         image: postgres:10.10
-        ports: ["5432:5432"]
+        ports: [ "5432:5432" ]
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
         env:
           POSTGRES_USER: consul
@@ -32,8 +32,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ci_node_total: [5]
-        ci_node_index: [0, 1, 2, 3, 4]
+        ci_node_total: [ 5 ]
+        ci_node_index: [ 0, 1, 2, 3, 4 ]
     steps:
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
@@ -54,12 +54,9 @@ jobs:
         run: bundle exec rake assets:precompile > /dev/null 2>&1
       - name: Run test suite
         env:
-          KNAPSACK_PRO_TEST_SUITE_TOKEN_RSPEC: ${{ secrets.KNAPSACK_PRO_TEST_SUITE_TOKEN_RSPEC }}
-          KNAPSACK_PRO_CI_NODE_TOTAL: ${{ matrix.ci_node_total }}
-          KNAPSACK_PRO_CI_NODE_INDEX: ${{ matrix.ci_node_index }}
-          KNAPSACK_PRO_FIXED_QUEUE_SPLIT: true
-          KNAPSACK_PRO_LOG_LEVEL: info
-        run: bin/knapsack_pro_rspec
+          CI_NODE_TOTAL: ${{ matrix.ci_node_total }}
+          CI_NODE_INDEX: ${{ matrix.ci_node_index }}
+        run: bundle exec rake knapsack:rspec
       - name: Coveralls Parallel
         if: ${{ env.TEST_COVERAGE == 1 }}
         uses: coverallsapp/github-action@master

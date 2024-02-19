@@ -47,6 +47,13 @@ describe "Ballots" do
     let!(:districts) { create(:budget_group, budget: budget, name: "Districts") }
 
     context "Group and Heading Navigation" do
+      scenario "Groups" do
+        visit budget_path(budget)
+
+        expect(page).to have_content "City"
+        expect(page).to have_content "Districts"
+      end
+
       scenario "Headings" do
         create(:budget_heading, group: city,      name: "Investments Type1")
         create(:budget_heading, group: city,      name: "Investments Type2")
@@ -55,12 +62,10 @@ describe "Ballots" do
 
         visit budget_path(budget)
 
-        within("#groups_and_headings") do
-          expect(page).to have_link "Investments Type1"
-          expect(page).to have_link "Investments Type2"
-          expect(page).to have_link "District 1"
-          expect(page).to have_link "District 2"
-        end
+        expect(page).to have_content "Investments Type1"
+        expect(page).to have_content "Investments Type2"
+        expect(page).to have_link "District 1 €1,000,000"
+        expect(page).to have_link "District 2 €1,000,000"
       end
 
       scenario "Investments" do

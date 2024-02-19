@@ -164,8 +164,8 @@ es:
         phase: "Fase activa"
         currency_symbol: "Divisa"
         voting_style: "Estilo de la votación final"
-        voting_style_knapsack: Bolsa de dinero
-        voting_style_approval: Por aprobación
+        voting_style_knapsack: "Bolsa de dinero"
+        voting_style_approval: "Por aprobación"
         hide_money: "Ocultar la cantidad de dinero para este presupuesto"
       budget/translation:
         main_link_text: "Texto del enlace"
@@ -191,6 +191,7 @@ es:
         selected: "Marcar como seleccionado"
         selected_true: "Seleccionado"
         selected_false: "No seleccionado"
+        feasibility_explanation: "Informe de viabilidad <small>(opcional, dato público)</small>"
         unfeasibility_explanation: "Informe de inviabilidad <small>(en caso de que lo sea, dato público)</small>"
         valuation_finished: "Informe finalizado"
         valuator_ids: "Grupos"
@@ -240,6 +241,8 @@ es:
         enabled: "Fase habilitada"
         ends_at: "Fecha de fin"
         starts_at: "Fecha de inicio"
+        main_button_text: "Texto del botón"
+        main_button_url: "El botón te lleva a (añade un enlace)"
       budget/phase/translation:
         name: "Nombre"
         description: "Descripción"
@@ -488,6 +491,7 @@ es:
         link_text: Texto del enlace
         link_url: URL del enlace
         columns: Número de columnas
+        background_image: "Utilizar la imagen como fondo"
       widget/card/translation:
         label: Etiqueta (opcional)
         title: Título

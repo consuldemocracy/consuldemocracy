@@ -3,6 +3,7 @@
   <head>
     <%= render "layouts/common_head", default_title: setting["org_name"] %>
     <%= render "layouts/meta_tags" %>
+    <title><%= content_for?(:title) ? yield(:title) : setting["org_name"] %></title>
     <%= content_for :canonical %>
     <%= favicon_link_tag image_path_for("apple-touch-icon-200.png"),
                          rel: "icon apple-touch-icon",

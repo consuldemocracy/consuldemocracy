@@ -70,6 +70,10 @@ en:
       form:
         submit_button: Start a debate
     debate:
+      comments:
+        one: 1 comment
+        other: "%{count} comments"
+        zero: No comments
       votes:
         one: 1 vote
         other: "%{count} votes"
@@ -125,6 +129,10 @@ en:
       start_new: Start a debate
     show:
       author_deleted: User deleted
+      comments:
+        one: 1 comment
+        other: "%{count} comments"
+        zero: No comments
       comments_title: Comments
       edit_debate_link: Edit
       flag: This debate has been flagged as inappropriate by several users.
@@ -192,6 +200,8 @@ en:
           zero: No supports
           one: 1 Support
           other: "Supports"
+    link_to_top:
+      title: "Go back to the top of the page"
     footer:
       accessibility: Accessibility
       conditions: Terms and conditions of use
@@ -571,6 +581,7 @@ en:
     no_dates: "no date assigned"
     dates: "From %{open_at} to %{closed_at}"
     final_date: "Final recounts/Results"
+    question: "Question"
     index:
       filters:
         current: "Open"
@@ -604,6 +615,8 @@ en:
       cant_answer_expired: "This poll has finished."
       cant_answer_wrong_geozone: "This question is not available on your geozone."
       more_info_title: "More information"
+      less_info_title: "Less information"
+      more_info_options: "More information about the options"
       documents: Documents
       zoom_plus: Expand image
       read_more: "Read more about %{answer}"
@@ -688,10 +701,10 @@ en:
         destroy:
           notice: "You have stopped following this investment project! <br> You will no longer receive notifications related to this project."
       proposal:
-          create:
-            notice: "Now you are following this citizen proposal! <br> We will notify you of changes as they occur so that you are up-to-date."
-          destroy:
-            notice: "You have stopped following this citizen proposal! <br> You will no longer receive notifications related to this proposal."
+        create:
+          notice: "Now you are following this citizen proposal! <br> We will notify you of changes as they occur so that you are up-to-date."
+        destroy:
+          notice: "You have stopped following this citizen proposal! <br> You will no longer receive notifications related to this proposal."
     print:
       print_button: Print this info
     search: Search
@@ -737,9 +750,9 @@ en:
       cards: Cards
       list: List
     recommended_index:
-        title: Recommendations
-        see_more: See more recommendations
-        hide: Hide recommendations
+      title: Recommendations
+      see_more: See more recommendations
+      hide: Hide recommendations
     translations:
       select_language_prompt: Choose language
       remove_language: Remove language
@@ -750,6 +763,7 @@ en:
         other: "%{count} languages in use"
     optional: "Optional fields"
     required: "Required fields"
+    required_fields: "All fields marked with a (*) are required"
     comments:
       one: "1 comment"
       other: "%{count} comments"
@@ -859,6 +873,10 @@ en:
         debates: There are no debates right now
         proposals: There are no proposals right now
         processes: There are no open processes right now
+        budgets: "There are no budgets right now"
+      description:
+        proposals: "Citizen proposals that gather enough support will go to a voting phase, so you can get all the citizens to decide how they want their city to be."
+        budgets: "Participatory budgets are processes in which citizens decide directly on what is spent part of the municipal budget. The most supported projects are evaluated and passed to a final vote in which they decide the actions to be carried out by the City Council."
       process_label: Process
       see_process: See process
     cards:

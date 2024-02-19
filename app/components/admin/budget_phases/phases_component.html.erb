@@ -13,7 +13,12 @@
     <% phases.each do |phase| %>
       <tr id="<%= dom_id(phase) %>" class="phase">
         <td>
-          <%= phase.name %>
+          <% if phase.name.present? %>
+            <strong><%= phase.name %></strong><br>
+            <small>(<%= t("budgets.phase.#{phase.kind}") %>)</small>
+          <% else %>
+            <%= t("budgets.phase.#{phase.kind}") %>
+          <% end %>
           <% if phase.current? %>
             <span class="label success"><strong><%= t("admin.budgets.edit.active") %></strong></span>
           <% end %>

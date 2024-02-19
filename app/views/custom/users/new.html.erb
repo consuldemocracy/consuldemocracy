@@ -1,0 +1,67 @@
+<% provide :title do %><%= t("devise_views.users.registrations.new.title") %><% end %>
+
+<ul class="no-bullet submenu">
+  <li class="inline-block">
+    <%= link_to t("devise_views.shared.sign_in"), new_session_path(resource_name) %>
+  </li>
+  <li class="inline-block">
+    <%= link_to new_user_registration_path, class: "is-active" do %>
+      <h2><%= t("devise_views.shared.sign_up") %></h2>
+    <% end %>
+  </li>
+</ul>
+
+<div class="auth-title">
+  <h2><%= t("devise_views.users.registrations.new.title") %></h2>
+  <p>
+    <%= sanitize(t("devise_views.users.registrations.new.organization_signup",
+        signup_link: link_to(t("devise_views.users.registrations.new.organization_signup_link"), new_organization_registration_path,
+        title: t("shared.target_blank"),
+        target: "_blank"))) %>
+  </p>
+</div>
+
+<%= render "devise/omniauth_form", action: "sign_up" %>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "shared/errors", resource: resource %>
+
+  <div class="row">
+    <div class="small-12 column">
+
+      <%= f.hidden_field :use_redeemable_code %>
+      <%= f.hidden_field :locale, value: I18n.locale %>
+
+      <%= f.text_field :username,  autofocus: true, maxlength: User.username_max_length,
+                                   hint: t("devise_views.users.registrations.new.username_note") %>
+
+      <%= f.invisible_captcha :address %>
+
+      <%= f.email_field :email %>
+
+      <%= f.password_field :password, autocomplete: "off",
+                           hint: t("devise_views.users.registrations.new.password_note") %>
+
+      <%= f.password_field :password_confirmation, autocomplete: "off",
+                           label: t("devise_views.users.registrations.new.password_confirmation_label") %>
+
+      <% if resource.use_redeemable_code %>
+        <%= f.text_field :redeemable_code %>
+      <% end %>
+
+      <%= f.check_box :terms_of_service,
+        title: t("devise_views.users.registrations.new.terms_title"),
+        label: t("devise_views.users.registrations.new.terms",
+                 terms: link_to(t("devise_views.users.registrations.new.terms_link"),
+                                "/conditions",
+                                title: t("shared.target_blank"),
+                                target: "_blank")) %>
+
+      <div class="small-12">
+        <%= f.submit t("devise_views.users.registrations.new.submit"), class: "button expanded large" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

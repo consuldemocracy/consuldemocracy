@@ -1,5 +1,5 @@
 <% content_for :canonical do %>
-  <%= render "shared/canonical", href: budget_groups_url %>
+  <%= render "shared/canonical", href: budget_groups_url(filter: @current_filter) %>
 <% end %>
 
 <main class="budget-groups-index">

@@ -31,6 +31,30 @@ module BudgetsHelper
     budget.published? || current_user&.administrator?
   end
 
+  def budget_map_locations(budget)
+    return unless budget.present?
+
+    if budget.publishing_prices_or_later? && budget.investments.selected.any?
+      investments = budget.investments.selected
+    else
+      investments = budget.investments
+    end
+
+    MapLocation.where(investment_id: investments).map(&:json_data)
+  end
+
+  def display_calculate_winners_button?(budget)
+    budget.balloting_or_later?
+  end
+
+  def calculate_winner_button_text(budget)
+    if budget.investments.winners.empty?
+      t("admin.budgets.winners.calculate")
+    else
+      t("admin.budgets.winners.recalculate")
+    end
+  end
+
   def budget_subnav_items_for(budget)
     {
       results: t("budgets.results.link"),
@@ -43,5 +67,38 @@ module BudgetsHelper
         active: controller_name == section.to_s
       }
     end
+  end
+
+  def budget_phase_name(phase)
+    phase.name.presence || t("budgets.phase.#{phase.kind}")
+  end
+
+  def budget_new_step_phases?(step)
+    step == "phases"
+  end
+
+  def budget_new_step_group?(step)
+    step == "groups" || step == "headings" || step == "phases"
+  end
+
+  def budget_new_step_headings?(step)
+    step == "headings" || step == "phases"
+  end
+
+  def budget_single?(budget)
+    budget.groups.headings.count == 1
+  end
+
+  def class_for_form(resource)
+    unless @mode == "single" || resource.errors.any?
+      "hide"
+    end
+  end
+
+  def budget_investments_total_supports(user, budget)
+    Vote.where(votable_type: "Budget::Investment",
+               votable_id: budget.investments.map(&:id),
+               vote_flag: true,
+               voter_id: user.id).count
   end
 end

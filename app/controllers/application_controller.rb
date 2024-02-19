@@ -106,6 +106,14 @@ class ApplicationController < ActionController::Base
       end
     end
 
+    def set_default_budget_filter
+      if @budget&.finished?
+        params[:filter] ||= "winners"
+      elsif @budget&.publishing_prices_or_later?
+        params[:filter] ||= "selected"
+      end
+    end
+
     def current_budget
       Budget.current
     end

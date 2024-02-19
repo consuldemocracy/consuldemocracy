@@ -1,11 +1,14 @@
 <div id="<%= dom_id(investment) %>" class="budget-investment clear">
-  <div class="panel <%= ("with-image" if feature?(:allow_images) && investment.image.present?) %>">
-
+  <div class="panel
+              <%= "with-image" if feature?(:allow_images) && investment.image.present? %>
+              <%= "supported" if current_user&.voted_for?(investment) %>">
     <% if feature?(:allow_images) && investment.image.present? %>
     <div class="row">
 
       <div class="small-12 medium-3 large-2 column text-center">
-        <%= image_tag investment.image.variant(:thumb), alt: investment.image.title.unicode_normalize %>
+        <%= link_to namespaced_budget_investment_path(investment), id: "image" do %>
+          <%= image_tag investment.image.variant(:thumb), alt: investment.image.title.unicode_normalize %>
+        <% end %>
       </div>
 
       <div class="small-12 medium-6 large-7 column">
@@ -33,7 +36,8 @@
 
         <% if investment.should_show_votes? %>
           <div id="<%= dom_id(investment) %>_votes"
-               class="small-12 medium-3 column text-center">
+               class="small-12 medium-3 column text-center"
+               <%= "data-equalizer-watch" if feature?(:allow_images) && investment.image.present? %>>
                <%= render Budgets::Investments::VotesComponent.new(investment) %>
           </div>
         <% elsif investment.should_show_vote_count? %>

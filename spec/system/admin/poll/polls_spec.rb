@@ -55,8 +55,8 @@ describe "Admin polls", :admin do
     fill_in "Name", with: "Upcoming poll"
     fill_in "Start Date", with: 1.week.from_now
     fill_in "Closing Date", with: 2.weeks.from_now
-    fill_in "Summary", with: "Upcoming poll's summary. This poll..."
-    fill_in "Description", with: "Upcomming poll's description. This poll..."
+    fill_in_ckeditor "Summary", with: "Upcoming poll's summary. This poll..."
+    fill_in_ckeditor "Description", with: "Upcomming poll's description. This poll..."
 
     expect(page).not_to have_css("#poll_results_enabled")
     expect(page).not_to have_css("#poll_stats_enabled")

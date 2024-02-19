@@ -1,3 +1,5 @@
+<p class="form-section-divider"><span><%= t("admin.budgets.edit.info.heading_settings") %></span></p>
+
 <%= translatable_form_for heading, url: path, html: { class: "budget-headings-form" } do |f| %>
   <%= render "shared/globalize_locales", resource: heading %>
 

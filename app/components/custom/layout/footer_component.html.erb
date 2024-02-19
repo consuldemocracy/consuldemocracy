@@ -1,0 +1,30 @@
+<footer>
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <% if feature?(:logo_image_footer) %>
+        <h1 id="logo_footer" class="logo">
+          <%= image_tag(image_path_for("logo_footer.png"), alt: "") %>
+        </h1>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="subfooter row">
+    <% if feature?(:background_image_footer) %>
+      <div id="bg_footer" class="margin-bottom">
+        <%= image_tag(image_path_for("bg_footer.png"), alt: "") %>
+      </div>
+    <% end %>
+
+    <div class="small-12 medium-8 column">
+      <%= t("layouts.footer.copyright", year: Time.current.year) %>&nbsp;|
+      <ul class="no-bullet inline-block">
+        <li class="inline-block"><%= link_to t("layouts.footer.privacy"), page_path("privacy") %>&nbsp;|</li>
+        <li class="inline-block"><%= link_to t("layouts.footer.conditions"), page_path("conditions") %>&nbsp;|</li>
+        <li class="inline-block"><%= link_to t("layouts.footer.accessibility"), page_path("accessibility") %></li>
+      </ul>
+    </div>
+
+    <%= render Layout::SocialComponent.new %>
+  </div>
+</footer>

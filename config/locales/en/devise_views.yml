@@ -99,6 +99,7 @@ en:
           cancel: Cancel login
           organization_signup: Do you represent an organisation or collective? %{signup_link}
           organization_signup_link: Sign up here
+          password_note: "It should contain at least 8 characters"
           password_confirmation_label: Confirm password
           submit: Register
           terms: By registering you accept the %{terms}

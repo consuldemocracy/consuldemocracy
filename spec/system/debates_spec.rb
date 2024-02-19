@@ -148,41 +148,48 @@ describe "Debates" do
     end
   end
 
-  scenario "Show votes score on index and show" do
-    debate_positive = create(:debate, title: "Debate positive")
-    debate_zero = create(:debate, title: "Debate zero")
-    debate_negative = create(:debate, title: "Debate negative")
+  scenario "Show total votes on index and show" do
+    debate_with_postive_votes = create(:debate, title: "Liked Debate")
+    2.times { create(:vote, votable: debate_with_postive_votes, vote_flag: true) }
 
-    10.times { create(:vote, votable: debate_positive, vote_flag: true) }
-    3.times  { create(:vote, votable: debate_positive, vote_flag: false) }
+    debate_with_negative_votes = create(:debate, title: "Unliked Debate")
+    3.times { create(:vote, votable: debate_with_negative_votes, vote_flag: false) }
 
-    5.times { create(:vote, votable: debate_zero, vote_flag: true) }
-    5.times  { create(:vote, votable: debate_zero, vote_flag: false) }
+    debate_with_both_votes = create(:debate, title: "Voted Debate")
+    3.times { create(:vote, votable: debate_with_both_votes, vote_flag: true) }
+    2.times { create(:vote, votable: debate_with_both_votes, vote_flag: false) }
 
-    6.times  { create(:vote, votable: debate_negative, vote_flag: false) }
+    debate_without_votes = create(:debate, title: "Unvoted Debate")
 
     visit debates_path
 
-    within "#debate_#{debate_positive.id}" do
-      expect(page).to have_content("7 votes")
+    within "#debate_#{debate_with_postive_votes.id}" do
+      expect(page).to have_content("2 votes")
     end
 
-    within "#debate_#{debate_zero.id}" do
+    within "#debate_#{debate_with_negative_votes.id}" do
+      expect(page).to have_content("3 votes")
+    end
+
+    within "#debate_#{debate_with_both_votes.id}" do
+      expect(page).to have_content("5 votes")
+    end
+
+    within "#debate_#{debate_without_votes.id}" do
       expect(page).to have_content("No votes")
     end
 
-    within "#debate_#{debate_negative.id}" do
-      expect(page).to have_content("-6 votes")
-    end
+    visit debate_path(debate_with_postive_votes)
+    expect(page).to have_content("2 votes")
 
-    visit debate_path(debate_positive)
-    expect(page).to have_content("7 votes")
+    visit debate_path(debate_with_negative_votes)
+    expect(page).to have_content("3 votes")
 
-    visit debate_path(debate_zero)
+    visit debate_path(debate_with_both_votes)
+    expect(page).to have_content("5 votes")
+
+    visit debate_path(debate_without_votes)
     expect(page).to have_content("No votes")
-
-    visit debate_path(debate_negative)
-    expect(page).to have_content("-6 votes")
   end
 
   scenario "Create", :with_frozen_time do
@@ -192,7 +199,6 @@ describe "Debates" do
     visit new_debate_path
     fill_in_new_debate_title with: "A title for a debate"
     fill_in_ckeditor "Initial debate text", with: "This is very important because..."
-    check "debate_terms_of_service"
 
     click_button "Start a debate"
 
@@ -211,7 +217,6 @@ describe "Debates" do
     fill_in "Debate title", with: "I am a bot"
     fill_in "debate_subtitle", with: "This is a honeypot field"
     fill_in "Initial debate text", with: "This is the description"
-    check "debate_terms_of_service"
 
     click_button "Start a debate"
 
@@ -229,7 +234,6 @@ describe "Debates" do
     visit new_debate_path
     fill_in_new_debate_title with: "I am a bot"
     fill_in_ckeditor "Initial debate text", with: "This is the description"
-    check "debate_terms_of_service"
 
     click_button "Start a debate"
 
@@ -266,7 +270,6 @@ describe "Debates" do
     visit new_debate_path
     fill_in "Debate title", with: "Testing an attack"
     fill_in "Initial debate text", with: "<p>This is a JS <script>alert('an attack');</script></p>"
-    check "debate_terms_of_service"
 
     click_button "Start a debate"
 
@@ -284,7 +287,6 @@ describe "Debates" do
     visit new_debate_path
     fill_in_new_debate_title with: "Testing auto link"
     fill_in_ckeditor "Initial debate text", with: "This is a link www.example.org"
-    check "debate_terms_of_service"
 
     click_button "Start a debate"
 
@@ -303,7 +305,6 @@ describe "Debates" do
     visit new_debate_path
     fill_in "Debate title", with: "Testing auto link"
     fill_in "Initial debate text", with: js_injection_string
-    check "debate_terms_of_service"
 
     click_button "Start a debate"
 
@@ -398,9 +399,9 @@ describe "Debates" do
       medium_debate.update_column(:confidence_score, 5)
 
       visit debates_path
-      click_link "highest rated"
+      click_link "Highest rated"
 
-      expect(page).to have_css "a.is-active", text: "highest rated"
+      expect(page).to have_css "a.is-active", text: "Highest rated"
 
       within "#debates" do
         expect(best_debate.title).to appear_before(medium_debate.title)
@@ -417,9 +418,9 @@ describe "Debates" do
       worst_debate = create(:debate, title: "Worst", created_at: 1.day.ago)
 
       visit debates_path
-      click_link "newest"
+      click_link "Newest"
 
-      expect(page).to have_css "a.is-active", text: "newest"
+      expect(page).to have_css "a.is-active", text: "Newest"
 
       within "#debates" do
         expect(best_debate.title).to appear_before(medium_debate.title)
@@ -461,7 +462,7 @@ describe "Debates" do
         login_as(user)
         visit debates_path
 
-        click_link "recommendations"
+        click_link "Recommendations"
 
         expect(page).to have_content "There are no debates related to your interests"
       end
@@ -472,7 +473,7 @@ describe "Debates" do
         login_as(user)
         visit debates_path
 
-        click_link "recommendations"
+        click_link "Recommendations"
 
         expect(page).to have_content "Follow proposals so we can give you recommendations"
       end
@@ -484,9 +485,9 @@ describe "Debates" do
         login_as(user)
         visit debates_path
 
-        click_link "recommendations"
+        click_link "Recommendations"
 
-        expect(page).to have_css "a.is-active", text: "recommendations"
+        expect(page).to have_css "a.is-active", text: "Recommendations"
 
         within "#debates" do
           expect(best_debate.title).to appear_before(medium_debate.title)
@@ -579,7 +580,7 @@ describe "Debates" do
       fill_in "search", with: "Show you got"
       click_button "Search"
 
-      expect(page).to have_css "a.is-active", text: "relevance"
+      expect(page).to have_css "a.is-active", text: "Relevance"
 
       within("#debates") do
         expect(all(".debate")[0].text).to match "Show you got"
@@ -597,8 +598,8 @@ describe "Debates" do
       visit debates_path
       fill_in "search", with: "Show you got"
       click_button "Search"
-      click_link "newest"
-      expect(page).to have_css "a.is-active", text: "newest"
+      click_link "Newest"
+      expect(page).to have_css "a.is-active", text: "Newest"
 
       within("#debates") do
         expect(all(".debate")[0].text).to match "Show you got"
@@ -621,8 +622,8 @@ describe "Debates" do
       visit debates_path
       fill_in "search", with: "Show you got"
       click_button "Search"
-      click_link "recommendations"
-      expect(page).to have_css "a.is-active", text: "recommendations"
+      click_link "Recommendations"
+      expect(page).to have_css "a.is-active", text: "Recommendations"
 
       within("#debates") do
         expect(all(".debate")[0].text).to match "Show you got"
@@ -692,7 +693,6 @@ describe "Debates" do
       login_as(create(:user))
       visit new_debate_path
       fill_in "Debate title", with: "debate"
-      check "debate_terms_of_service"
 
       within("div.js-suggest") do
         expect(page).to have_content "You are seeing 5 of 6 debates containing the term 'debate'"
@@ -706,7 +706,6 @@ describe "Debates" do
       login_as(create(:user))
       visit new_debate_path
       fill_in "Debate title", with: "proposal"
-      check "debate_terms_of_service"
 
       within("div.js-suggest") do
         expect(page).not_to have_content "You are seeing"
@@ -788,6 +787,49 @@ describe "Debates" do
     end
   end
 
+  scenario "Mark and unmark as featured" do
+    debate = create(:debate, title: "Featured debate")
+    admin = create(:administrator)
+
+    login_as(admin.user)
+    visit debate_path(debate)
+
+    within("#debate_#{debate.id}") do
+      click_link "Featured"
+    end
+
+    page.driver.browser.switch_to.alert do
+      expect(page).to have_content "Are you sure? This action will mark this debate as featured and "\
+                                   "will be displayed on the main debates page."
+    end
+
+    accept_confirm
+    expect(page).to have_current_path(debates_path)
+    expect(debate.reload.featured?).to be true
+
+    within("#featured-debates") do
+      expect(page).to have_content("Featured debate")
+    end
+
+    visit debate_path(debate)
+
+    within("#debate_#{debate.id}") do
+      expect(page).not_to have_link("Featured")
+      click_link "Unmark featured"
+    end
+
+    page.driver.browser.switch_to.alert do
+      expect(page).to have_content "Are you sure? This action will unmark this debate as featured and "\
+                                   "will be hidden from the main debates page."
+    end
+
+    accept_confirm
+    expect(page).to have_current_path(debates_path)
+    expect(debate.reload.featured?).to be false
+
+    expect(page).not_to have_selector("#featured-debates")
+  end
+
   describe "SDG related list" do
     let(:user) { create(:user) }
 
@@ -802,7 +844,6 @@ describe "Debates" do
       fill_in_new_debate_title with: "A title for a debate related with SDG related content"
       fill_in_ckeditor "Initial debate text", with: "This is very important because..."
       click_sdg_goal(1)
-      check "debate_terms_of_service"
 
       click_button "Start a debate"
 

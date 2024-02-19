@@ -99,6 +99,7 @@ nl:
           cancel: Inloggen annuleren
           organization_signup: Vertegenwoordigd u een organisatie of collectief? %{signup_link}
           organization_signup_link: Hier aanmelden
+          password_note: "Deze dient minimaal uit 8 tekens te bestaan"
           password_confirmation_label: Bevestig wachtwoord
           submit: Aanmelden
           terms: Met aanmelding accepteerd u de %{terms}

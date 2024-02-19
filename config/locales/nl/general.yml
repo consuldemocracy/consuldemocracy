@@ -187,10 +187,11 @@ nl:
       conditions: Gebruiksvoorwaarden
       consul: Consul
       consul_url: https://github.com/consuldemocracy/consuldemocracy
+      contact_us: Voor tech support klik
       copyright: Consul, %{year}
       description: Deze site gebruikt %{consul}, wat %{open_source} is.
       open_source: open-source software
-      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      open_source_url: https://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Beslis mee over de vormgeving van beleid in uw gemeente.
       participation_title: Participatie
       privacy: Privacy Verklaring
@@ -527,6 +528,7 @@ nl:
       cant_answer_expired: "Deze stemronde is voorbij."
       cant_answer_wrong_geozone: "Deze vraag wordt niet behandeld in uw regio"
       more_info_title: "Meer informatie"
+      less_info_title: "Minder informatie"
       documents: Documenten
       zoom_plus: Afbeelding vergroten
       read_more: "Lees meer over %{answer}"
@@ -745,6 +747,24 @@ nl:
       unfeasible: Onhaalbare voorstellen kunnen niet gesteund worden.
       not_voting_allowed: Stemronde is gesloten.
   welcome:
+    steps:
+      title: "Doe mee in drie stappen"
+      subtitle: ""
+      step_1:
+        number: "1"
+        title: "Registreren"
+        description: "Gebruik Google, of jouw mailadres om in te loggen."
+        link: "Meld je binnen drie minuten aan"
+      step_2:
+        number: "2"
+        title: "Stem"
+        description: "Stem op ideeën die jij belangrijk vindt."
+        link: "Bekijk wat er in de gemeente gebeurt"
+      step_3:
+        number: "3"
+        title: "Deel"
+        description: "Blijf betrokken bij ideeën die jij belangrijk vindt en deel ze via social media."
+        link: ""
     feed:
       most_active:
         debates: "Actieve debatten"

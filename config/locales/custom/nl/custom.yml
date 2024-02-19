@@ -1,0 +1,7 @@
+nl:
+  layouts:
+    header:
+      raad: "De Raad"
+  raad:
+    section_header:
+      title: "De Raad"

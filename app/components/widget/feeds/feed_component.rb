@@ -20,7 +20,17 @@ class Widget::Feeds::FeedComponent < ApplicationComponent
         Widget::Feeds::DebateComponent
       when "processes"
         Widget::Feeds::ProcessComponent
+      when "budgets"
+        Widget::Feeds::BudgetComponent
       end
+    end
+
+    def feed_proposals?
+      kind == "proposals"
+    end
+
+    def feed_budgets?
+      kind == "budgets"
     end
 
     def filters

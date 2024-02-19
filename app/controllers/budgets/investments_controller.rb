@@ -129,6 +129,10 @@ module Budgets
         end
       end
 
+      def load_assigned_heading
+        @assigned_heading = @ballot&.heading_for_group(@investment.heading.group)
+      end
+
       def load_categories
         @categories = Tag.category.order(:name)
       end

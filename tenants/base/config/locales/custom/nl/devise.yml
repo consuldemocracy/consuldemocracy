@@ -1,0 +1,50 @@
+nl:
+  devise:
+    mailer:
+      confirmation_instructions:
+        subject: "Bevestig je email"
+      reset_password_instructions:
+        subject: "Wachtwoord opnieuw instellen"
+      unlock_instructions:
+        subject: "Instructies voor ontgrendelen account"
+    sessions:
+      signed_in: "Je bent ingelogd."
+      signed_out: "Je bent uitgelogd."
+      already_signed_out: "Je bent afgemeld"
+    passwords:
+      send_instructions: "Je ontvangt via e-mail instructies hoe je jouw account kunt ontgrendelen."
+      send_paranoid_instructions: "Als je e-mailadres bij ons bekend is, ontvang je instructies over hoe je weer met jouw account kan inloggen"
+      no_token: "Je kunt deze pagina niet benaderen zonder een \"wachtwoord reset e-mail\"."
+      updated: "Je wachtwoord is gewijzigd. Je bent aangemeld!"
+      updated_not_active: "Je wachtwoord is gewijzigd"
+    password_expired:
+      change_required: "Dit wachtwoord is helaas verlopen"
+      expire_password: "Dit wachtwoord is helaas verlopen"
+    confirmations:
+      confirmed: "Je account is geactiveerd"
+      send_instructions: "Je ontvangt via e-mail instructies om jouw account te activeren"
+      send_paranoid_instructions: "Als je e-mailadres bij ons bekend is, ontvangt je hierop instructies hoe je jouw account kunt activeren"
+      user:
+        already_confirmed: "Je mailadres is al geverifieerd. Je kunt hiermee nu inloggen."
+    failure:
+      already_authenticated: "Je bent al aangemeld"
+      inactive: "Je account is nog niet geactiveerd"
+      locked: "Je account is vergrendeld"
+      last_attempt: "Je hebt nog één poging over voordat jouw account wordt geblokkeerd."
+      timeout: "Oeps! Je sessie is verlopen. Meld je opnieuw aan om verder te gaan"
+      unauthenticated: "Log in om verder te gaan. Nog geen account? Maak deze eenvoudig aan via 'aanmelden’"
+      unconfirmed: "Je account is nog niet geactiveerd. Klik op de link in je e-mail om jouw account te activeren "
+    registrations:
+      destroyed: "Jammer dat je gaat! Je account is succesvol verwijderd. Wij hopen je nog een keer terug te zien"
+      signed_up: "Je bent inschreven"
+      signed_up_but_inactive: "Je bent geregistreerd. Je kon alleen niet automatisch aangemeld worden omdat jouw account nog niet geactiveerd is. Klik hiervoor op de link die naar jouw e-mailadres is verstuurd. Geen mail ontvangen? Neem dan contact op met noreply@consul.dev\r\n"
+      signed_up_but_locked: "Je bent geregistreerd. Je kon alleen niet automatisch aangemeld worden omdat jouw account geblokkeerd is. Neem hiervoor contact op met noreply@consul.dev"
+      signed_up_but_unconfirmed: "Je ontvangt via de e-mail instructies hoe je jouw account kunt activeren. Geen mail ontvangen? Neem dan contact op met noreply@consul.dev"
+      update_needs_confirmation: "U hebt uw e-mailadres succesvol gewijzigd, maar we moeten uw nieuwe mailadres nog verifiëren. Controleer uw e-mail en klik op de link in de mail om uw mailadres te verifiëren"
+      updated: "Jouw accountgegevens zijn opgeslagen"
+    unlocks:
+      send_instructions: "Je ontvangt via de e-mail instructies hoe je jouw uw account kunt ontgrendelen. Geen mail ontvangen? Neem dan contact op met noreply@consul.dev"
+      send_paranoid_instructions: "Als jouw e-mailadres bij ons bekend is, ontvangt je via de e-mail instructies hoe je jouw account kan ontgrendelen. Kom je niet verder? Neem dan contact op met noreply@consul.dev"
+      unlocked: "Je account is succesvol ontgrendeld. Je kunt jezelf weer aanmelden!"
+    omniauth_callbacks:
+      success: "Successvol aangemeld via %{kind}."

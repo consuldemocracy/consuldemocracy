@@ -116,6 +116,7 @@ FactoryBot.define do
     author factory: :user
     description          { "Spend money on this" }
     price                { 10 }
+    feasibility_explanation { "" }
     unfeasibility_explanation { "" }
     terms_of_service     { "1" }
     incompatible         { false }
@@ -126,6 +127,7 @@ FactoryBot.define do
 
     trait :feasible do
       feasibility { "feasible" }
+      feasibility_explanation { "set to feasible on creation" }
     end
 
     trait :unfeasible do

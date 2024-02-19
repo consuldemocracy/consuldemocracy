@@ -1,14 +1,25 @@
-<p id="total_amount" class="total-amount">
-  <%= sanitize(ballot.amount_progress(heading)) %>
-</p>
+<span class="total-amount">
+  <% if @budget.approval_voting? %>
+    <%= sanitize(ballot.amount_progress(heading)) %>
+  <% elsif @budget.show_money? %>
+    <%= t("budgets.progress_bar.assigned") %>
+    <span id="amount_spent"><%= @ballot.formatted_amount_spent(@heading) %></span> /
+    <%= t("budgets.investments.header.price") %> <%= @budget.formatted_heading_price(@heading) %>
+  <% end %>
+</span>
 
-<div class="progress" role="progressbar" tabindex="0"
+<div class="progress progress-bar-indicator" role="progressbar" tabindex="0"
      aria-valuenow="<%= ballot.percentage_spent(heading) %>" aria-valuemin="0" aria-valuemax="100">
   <div class="progress-meter"
        style="width: <%= ballot.percentage_spent(heading) %>%">
   </div>
 </div>
 
-<p id="amount_available" class="amount-available" style="width: <%= ballot.percentage_spent(heading) %>%">
-  <%= sanitize(ballot.amount_available_info(heading)) %>
+<p class="progress-meter-text spent-amount-text" style="width: <%= ballot.percentage_spent(heading) %>%">
+  <span id="amount_available" class="amount-available">
+    <% if @budget.show_money? %>
+      <small><%= t("budgets.progress_bar.available") %></small>
+    <% end %>
+    <span><%= sanitize(ballot.amount_available_info(heading)) %></span>
+  </span>
 </p>

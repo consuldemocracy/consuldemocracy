@@ -1,0 +1,4 @@
+<% if phase_dates?(process, phase) %>
+  <% phase_status = phase_status(process, phase) %>
+  <span class="date-status <%= phase_status %>"><%= phase_status %></span>
+<% end %>

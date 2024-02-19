@@ -39,6 +39,14 @@ every 1.day, at: "3:00 am", roles: [:cron] do
   rake "votes:reset_hot_score"
 end
 
+every 1.day, at: "4:00 am", roles: [:cron] do
+  rake "backup:perform"
+end
+
+every :sunday, at: "11pm" do
+  command "truncate -s 0 /home/deploy/consul/shared/log/#{@environment}.log"
+end
+
 every :reboot do
   # Number of workers must be kept in sync with capistrano's delayed_job_workers
   command "cd #{@path} && RAILS_ENV=#{@environment} bin/delayed_job -m -n 2 restart"

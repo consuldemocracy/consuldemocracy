@@ -1,0 +1,9 @@
+<%= form_for [:admin, @map] do |f| %>
+  <%= render "shared/errors", resource: @map %>
+
+  <div class="small-12 medium-4 column end">
+    <%= f.select :budget_id, options_for_select(budget_select_options, params[:budget_id]) %>
+
+    <%= f.submit(value: t("admin.maps.form.continue"), class: "button success") %>
+  </div>
+<% end %>

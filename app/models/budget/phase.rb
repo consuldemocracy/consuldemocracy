@@ -29,8 +29,8 @@ class Budget
 
     after_save :adjust_date_ranges
 
-    scope :enabled,           -> { where(enabled: true) }
-    scope :published,         -> { enabled.where.not(kind: "drafting") }
+    scope :enabled, -> { where(enabled: true) }
+    scope :published, -> { enabled.where.not(kind: "drafting") }
 
     PHASE_KINDS.each do |phase|
       define_singleton_method(phase) { find_by(kind: phase) }

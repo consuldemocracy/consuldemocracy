@@ -300,6 +300,60 @@ describe "Valuation budget investments" do
       expect(page).not_to have_content("Valuation finished")
     end
 
+    scenario "Dossier hide price on hide money budgets" do
+      budget = create(:budget, :valuating, :hide_money)
+      investment = create(:budget_investment, budget: budget, administrator: admin, valuators: [valuator])
+      investment.update!(visible_to_valuators: true)
+
+      visit valuation_budget_budget_investments_path(budget)
+      within("#budget_investment_#{investment.id}") do
+        click_link "Edit dossier"
+      end
+
+      expect(page).not_to have_content "Price (€)"
+      expect(page).not_to have_content "Cost during the first year (€)"
+      expect(page).not_to have_content "Price explanation"
+
+      choose  "budget_investment_feasibility_feasible"
+      fill_in "budget_investment_duration", with: "12 months"
+      click_button "Save changes"
+
+      expect(page).to have_content "Dossier updated"
+
+      visit valuation_budget_budget_investments_path(budget)
+      click_link investment.title
+
+      within("#duration") { expect(page).to have_content("12 months") }
+      within("#feasibility") { expect(page).to have_content("Feasible") }
+      expect(page).not_to have_selector "#price"
+      expect(page).not_to have_selector "#price_first_year"
+    end
+
+    scenario "Can valuate investments for more than one active budgets" do
+      budget_1 = create(:budget, :valuating)
+      budget_2 = create(:budget, :valuating)
+      investment_1 = create(:budget_investment, :visible_to_valuators, budget: budget_1, valuators: [valuator])
+      investment_2 = create(:budget_investment, :visible_to_valuators, budget: budget_2, valuators: [valuator])
+
+      visit valuation_budgets_path
+      within "#budget_#{budget_1.id}" do
+        click_link "Evaluate"
+      end
+
+      click_link "Edit dossier"
+      expect(page).to have_content "Dossier"
+      expect(page).to have_content investment_1.title
+
+      visit valuation_budgets_path
+      within "#budget_#{budget_2.id}" do
+        click_link "Evaluate"
+      end
+
+      click_link "Edit dossier"
+      expect(page).to have_content "Dossier"
+      expect(page).to have_content investment_2.title
+    end
+
     scenario "Feasibility can be marked as pending" do
       visit valuation_budget_budget_investment_path(budget, investment)
       click_link "Edit dossier"
@@ -322,10 +376,10 @@ describe "Valuation budget investments" do
 
     scenario "Feasibility selection makes proper fields visible" do
       feasible_fields = ["Price (€)", "Cost during the first year (€)", "Price explanation",
-                         "Time scope"]
-      unfeasible_fields = ["Feasibility explanation"]
+                         "Feasibility explanation", "Time scope"]
+      unfeasible_fields = ["Unfeasibility explanation"]
       any_feasibility_fields = ["Valuation finished"]
-      undecided_fields = feasible_fields + unfeasible_fields + any_feasibility_fields
+      undecided_fields = feasible_fields - unfeasible_fields + any_feasibility_fields
 
       visit edit_valuation_budget_budget_investment_path(budget, investment)
 
@@ -449,7 +503,7 @@ describe "Valuation budget investments" do
           choose "Unfeasible"
         end
 
-        expect(page).to have_field "Feasibility explanation", type: :textarea
+        expect(page).to have_field "Unfeasibility explanation", type: :textarea
         expect(page).to have_field "Valuation finished", type: :checkbox
         expect(page).to have_button "Save changes"
       end
@@ -462,7 +516,8 @@ describe "Valuation budget investments" do
         expect(page).not_to have_css "input[name='budget_investment[valuation_finished]']"
         expect(page).to have_content("Valuation finished")
         expect(page).to have_content("Feasibility: Feasible")
-        expect(page).to have_content("Feasibility explanation: Explanation is explanatory")
+        expect(page).to have_content("Feasibility explanation")
+        expect(page).to have_content("Unfeasibility explanation: Explanation is explanatory")
         expect(page).to have_content("Price (€): 999")
         expect(page).to have_content("Cost during the first year: 666")
         expect(page).to have_content("Price explanation: Democracy is not cheap")

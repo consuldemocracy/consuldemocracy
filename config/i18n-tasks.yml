@@ -124,7 +124,12 @@ ignore_missing:
   - "errors.messages.too_long"
   - "devise.failure.invalid"
   - "devise.registrations.destroyed"
+  - "devise.confirmations.user.already_confirmed"
   - "devise.password_expired.*"
+  - "seeds.settings.*"
+  - "budgets.progress_bar.you_have_assigned"
+  - "admin.officials.index.help_link"
+  - "debates.index.section_footer.help_text_link"
 
 ## Consider these keys used:
 ignore_unused:
@@ -148,6 +153,7 @@ ignore_unused:
   - "admin.hidden_proposals.index.filter*"
   - "admin.hidden_proposal_notifications.index.filter*"
   - "admin.budgets.index.filter*"
+  - "admin.budgets.index.help_block"
   - "admin.budgets.edit.(administrators|valuators).*"
   - "admin.budgets.help.*"
   - "admin.budget_investments.index.filter*"
@@ -219,6 +225,13 @@ ignore_unused:
   - "stats.polls.*_percentage"
   - landings.cambia_tu_ciudad.*
   - "dashboard.polls.*.submit"
+  - "admin.budget_groups.*.index.help"
+  - "admin.budget_headings.*.index.help"
+  - "admin.budget_phases.index.help_block"
+  - "devise_views.shared.links.login"
+  - "devise_views.shared.links.signup"
+  - "devise_views.shared.links.signup_link"
+  - "budgets.investments.show.code"
   - "related_content.content_title.*"
   - "sdg.goals.goal_*"
   - "sdg.*.filter.more.*"

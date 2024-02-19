@@ -125,6 +125,19 @@ button,
   &.medium {
     font-size: $small-font-size;
   }
+
+  &.add {
+    font-weight: bold;
+    padding-left: $line-height * 1.5;
+    position: relative;
+
+    &::before {
+      content: "\f0fe";
+      font-family: "Font Awesome 5 Free";
+      left: 10px;
+      position: absolute;
+    }
+  }
 }
 
 .button.hollow {
@@ -213,6 +226,30 @@ button,
 
 .light {
   background: $light;
+
+  &.expand {
+    background: $light;
+    clear: both;
+    position: relative;
+
+    &::before,
+    &::after {
+      background: $light;
+      content: "";
+      height: 100%;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    &::before {
+      right: 100%;
+    }
+
+    &::after {
+      left: 100%;
+    }
+  }
 }
 
 .highlight {
@@ -377,7 +414,7 @@ button,
   }
 }
 
-.button.float-right ~ .button.float-right {
+.button.float-right + .button.float-right {
   margin: 0 $line-height / 2;
 }
 
@@ -483,6 +520,10 @@ button,
   [name="show_menu"] {
     display: none;
   }
+}
+
+.bold {
+  font-weight: bold;
 }
 
 // 02. Header
@@ -862,6 +903,7 @@ footer {
 form {
 
   label {
+    color: $label;
     font-size: $base-font-size;
     font-weight: bold;
     line-height: $line-height;
@@ -873,6 +915,19 @@ form {
 
   fieldset legend {
     font-weight: bold;
+  }
+
+  select {
+    border: 2px solid #d2d7dc;
+    border-radius: rem-calc(4);
+
+    &:not(.locale-switcher) {
+      min-height: $line-height * 2;
+    }
+
+    &:focus {
+      border: 2px solid #d2d7dc;
+    }
   }
 
   [type="radio"] {
@@ -888,10 +943,17 @@ form {
     }
   }
 
-  [type]:not([type="button"], [type=checkbox], [type=file], [type=radio], [type=submit]) {
-    background: #f8f8f8;
+  [type]:not([type="button"], [type=checkbox], [type=file], [type=radio], [type=submit]):not(.close-button) {
+    background: #fff;
+    border: 2px solid #d2d7dc;
+    border-radius: rem-calc(4);
+    box-shadow: none;
     height: $input-height;
-    margin-bottom: rem-calc(16);
+    margin-bottom: $line-height * 1.5;
+
+    ~ .form-section-divider {
+      margin-bottom: $line-height / 2;
+    }
 
     &.error {
       margin-bottom: rem-calc(1);
@@ -930,6 +992,16 @@ form {
     line-height: $line-height;
     vertical-align: middle;
   }
+
+  .required {
+
+    label {
+
+      &::after {
+        content: "*";
+      }
+    }
+  }
 }
 
 .translatable-fields {
@@ -943,6 +1015,52 @@ form {
 
 .translation-locale {
   padding-top: $line-height;
+}
+
+.form-label {
+  color: $label;
+  font-weight: bold;
+}
+
+.subtitle-form {
+  color: #000;
+  font-size: rem-calc(36);
+  font-weight: bold;
+  margin-bottom: $line-height * 2;
+  padding-top: $line-height * 3;
+  text-transform: uppercase;
+}
+
+.submit-form-container {
+  position: relative;
+
+  &::before,
+  &::after {
+    background: $light;
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 48px;
+    width: 150%;
+    z-index: -1;
+  }
+
+  &::before {
+    left: -100%;
+  }
+
+  &::after {
+    right: -100%;
+  }
+}
+
+.submit-form-box {
+  background: #fff;
+  border: 6px solid $border;
+  border-radius: rem-calc(12);
+  margin-top: $line-height * 2;
+  padding: $line-height * 2 $line-height;
+  text-align: center;
 }
 
 // 07. Callout

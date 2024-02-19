@@ -48,7 +48,7 @@
       <div>
         <%= render "map_locations/form_fields",
                    form: f,
-                   map_location: investment.map_location || MapLocation.new,
+                   map_location: investment.map_location || budget_map&.map_location || MapLocation.new,
                    label: t("budgets.investments.form.map_location"),
                    help: t("budgets.investments.form.map_location_instructions"),
                    i18n_namespace: "budgets.investments" %>
@@ -89,10 +89,11 @@
   <div class="actions">
     <% unless current_user.manager? || investment.persisted? %>
       <div>
+        <p class="form-label"><%= t("shared.required_fields") %></p>
         <%= render Shared::AgreeWithTermsOfServiceFieldComponent.new(f) %>
       </div>
     <% end %>
 
-    <%= f.submit %>
+    <%= f.submit(nil, class: "button large margin-top") %>
   </div>
 <% end %>

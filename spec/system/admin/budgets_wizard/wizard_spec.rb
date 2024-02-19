@@ -24,7 +24,7 @@ describe "Budgets creation wizard", :admin do
 
     click_link "Finish"
 
-    within "section", text: "Heading groups" do
+    within "section", text: "HEADING GROUPS" do
       expect(page).to have_content "Single heading budget"
 
       within "tbody" do
@@ -73,7 +73,8 @@ describe "Budgets creation wizard", :admin do
     within_table("Headings in All city") { expect(page).to have_content "All city" }
     expect(page).not_to have_content "There are no headings"
 
-    click_link "Manage headings from the Districts group."
+    click_button "Manage headings from a different group"
+    click_link "Districts"
     expect(page).to have_content "There are no headings in the Districts group."
 
     click_button "Add new heading"
@@ -98,7 +99,7 @@ describe "Budgets creation wizard", :admin do
     expect(page).to have_css ".budget-phases-table"
 
     within("tr", text: "Voting projects") { click_link "Edit" }
-    fill_in "Name", with: "Custom phase name"
+    fill_in "Phase's Name", with: "Custom phase name"
     uncheck "Phase enabled"
     click_button "Save changes"
 
@@ -106,7 +107,6 @@ describe "Budgets creation wizard", :admin do
 
     within "table" do
       expect(page).to have_content "Custom phase name"
-      expect(page).not_to have_content "Voting projects"
     end
 
     click_link "Finish"

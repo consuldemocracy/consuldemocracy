@@ -132,10 +132,18 @@ es:
       dashboard:
         notification_emails: "Emails del panel de progreso"
         notification_emails_description: "Activar el envío de emails de notificaciones a los autores de las propuestas en la sección de panel de progreso"
+      link_to_top: "Enlace al inicio"
+      link_to_top_description: "Muestra una enlace para volver a la parte superior de la página después de desplazarse"
       remove_investments_supports: "Permitir retirar los apoyos en los proyectos de gasto"
       remove_investments_supports_description: "Permite que los usuarios retiren su apoyo en los proyectos de gasto de los presupuestos participativos durante la fase de apoyos."
       sdg: ODS
       sdg_description: Habilitar secciones relacionadas con Objetivos de Desarrollo Sostenible en el menú de administración y en la sección de Configuración Global.
+      welcome_steps: "Sección pasos en página principal"
+      welcome_steps_description: "Muestra una sección de tres pasos a modo de resumen en la página principal."
+      logo_image_footer: "Imagen de logotipo en el pie de página"
+      logo_image_footer_description: "Muestra una imagen de logotipo en el pie de página."
+      background_image_footer: "Imagen de fondo en el pie de página"
+      background_image_footer_description: "Muestra una imagen de fondo decorativa en el pie de página."
     remote_census:
       general:
         endpoint: "Endpoint"

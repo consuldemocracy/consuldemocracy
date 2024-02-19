@@ -27,26 +27,33 @@
 <%= render "budgets/subnav", budget: @budget %>
 
 <div class="row">
-  <div class="small-12 medium-3 large-2 column">
-    <h3 class="margin-bottom">
-      <%= t("budgets.results.heading_selection_title") %>
-    </h3>
-    <ul id="headings" class="menu vertical no-margin-top no-padding-top">
-      <% @headings.each do |heading| %>
-        <li>
-          <%= link_to heading.name,
-                      budget_results_path(@budget, heading_id: heading.to_param),
-                      class: heading.to_param == @heading.to_param ? "is-active" : "" %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
+  <% if @budget.single_heading? %>
+    <div class="small-12 column">
+  <% else %>
+    <div class="small-12 medium-3 column">
+      <h3 class="margin-bottom">
+        <%= t("budgets.results.heading_selection_title") %>
+      </h3>
+      <ul id="headings" class="menu vertical no-margin-top no-padding-top">
+        <% @headings.each do |heading| %>
+          <li>
+            <%= link_to heading.name,
+                        budget_results_path(@budget, heading_id: heading.to_param),
+                        class: heading.to_param == @heading.to_param ? "is-active" : "" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
 
-  <div class="small-12 medium-9 large-10 column">
-    <%= link_to t("budgets.results.show_all_link"), "#",
-                class: "js-toggle-link button hollow margin-bottom float-right-medium",
-                data: { "toggle-selector" => ".js-discarded",
-                        "toggle-text" => t("budgets.results.hide_discarded_link") } %>
+    <div class="small-12 medium-9 column">
+  <% end %>
+
+    <% if @investments.not_winners.any? %>
+      <%= link_to t("budgets.results.show_all_link"), "#",
+                  class: "js-toggle-link button hollow margin-bottom float-right-medium",
+                  data: { "toggle-selector" => ".js-discarded",
+                          "toggle-text" => t("budgets.results.hide_discarded_link") } %>
+    <% end %>
 
     <%= render "results_table", results_type: :compatible,
                                 title: @heading.name,
@@ -59,17 +66,7 @@
                                   heading_price: @heading.price,
                                   investments: @investments.incompatible %>
     <% end %>
-
-    <p>
-      <%= link_to budget_investments_path(@budget, heading_id: @heading) do %>
-        <small><%= t("budgets.results.investment_proyects") %></small>
-      <% end %><br>
-      <%= link_to budget_investments_path(@budget, heading_id: @heading, filter: "unfeasible") do %>
-        <small><%= t("budgets.results.unfeasible_investment_proyects") %></small>
-      <% end %><br>
-      <%= link_to budget_investments_path(@budget, heading_id: @heading, filter: "unselected") do %>
-        <small><%= t("budgets.results.not_selected_investment_proyects") %></small>
-      <% end %>
-    </p>
   </div>
+
+  <%= render "budgets/all_investments_link", budget: @budget %>
 </div>

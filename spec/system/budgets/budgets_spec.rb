@@ -1,8 +1,8 @@
 require "rails_helper"
 
 describe "Budgets" do
-  let(:budget)             { create(:budget) }
-  let(:level_two_user)     { create(:user, :level_two) }
+  let(:budget) { create(:budget) }
+  let(:level_two_user) { create(:user, :level_two) }
   let(:allowed_phase_list) { ["balloting", "reviewing_ballots", "finished"] }
 
   context "Load" do
@@ -17,8 +17,8 @@ describe "Budgets" do
 
   describe "Index" do
     describe "Normal index" do
-      let!(:group1)   { create(:budget_group, budget: budget) }
-      let!(:group2)   { create(:budget_group, budget: budget) }
+      let!(:group1) { create(:budget_group, budget: budget) }
+      let!(:group2) { create(:budget_group, budget: budget) }
       let!(:heading1) { create(:budget_heading, group: group1) }
       let!(:heading2) { create(:budget_heading, group: group2) }
 
@@ -51,8 +51,8 @@ describe "Budgets" do
       visit budgets_path
 
       within("#finished_budgets") do
-        expect(page).to     have_content(finished_budget_1.name)
-        expect(page).to     have_content(finished_budget_2.name)
+        expect(page).to have_content(finished_budget_1.name)
+        expect(page).to have_content(finished_budget_2.name)
         expect(page).not_to have_content(budget.name)
         expect(page).not_to have_content(drafting_budget.name)
       end
@@ -374,13 +374,13 @@ describe "Budgets" do
       group = create(:budget_group, budget: budget)
       heading = create(:budget_heading, group: group)
 
-      create_list(:budget_investment, 3, :selected, heading: heading, price: 999)
+      create_list(:budget_investment, 10, :selected, heading: heading, price: 999)
 
       visit budget_path(budget)
 
       within(".investments-list") do
         expect(page).to have_content "List of investments"
-        expect(page).to have_content "PRICE", count: 3
+        expect(page).to have_content "PRICE", count: 9
       end
 
       expect(page).to have_link "See all investments",

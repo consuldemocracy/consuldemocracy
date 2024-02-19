@@ -308,7 +308,7 @@ GEM
       activerecord
       kaminari-core (= 1.2.2)
     kaminari-core (1.2.2)
-    knapsack_pro (5.7.0)
+    knapsack (1.22.0)
       rake
     kramdown (2.4.0)
       rexml
@@ -736,7 +736,7 @@ DEPENDENCIES
   invisible_captcha (~> 2.1.0)
   jquery-fileupload-rails
   kaminari (~> 1.2.2)
-  knapsack_pro (~> 5.7.0)
+  knapsack (~> 1.22)
   launchy (~> 2.5.2)
   letter_opener_web (~> 2.0.0)
   mdl (~> 0.12.0)
@@ -762,6 +762,7 @@ DEPENDENCIES
   redcarpet (~> 3.6.0)
   responders (~> 3.1.0)
   rinku (~> 2.0.6)
+  rmega
   ros-apartment (~> 2.11.0)
   rspec-rails (~> 5.1.2)
   rubocop (~> 1.56.4)
@@ -770,6 +771,7 @@ DEPENDENCIES
   rubocop-performance (~> 1.19.1)
   rubocop-rails (~> 2.21.2)
   rubocop-rspec (~> 2.24.1)
+  rubyzip
   rvm1-capistrano3 (~> 1.4.0)
   sassc-rails (~> 2.1.2)
   savon (~> 2.14.0)

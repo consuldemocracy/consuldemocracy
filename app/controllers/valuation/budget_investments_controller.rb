@@ -101,7 +101,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
       [
         :price, :price_first_year, :price_explanation,
         :feasibility, :unfeasibility_explanation,
-        :duration, :valuation_finished
+        :duration, :valuation_finished, :feasibility_explanation
       ]
     end
 

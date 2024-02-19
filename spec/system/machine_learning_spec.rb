@@ -36,7 +36,7 @@ describe "Machine learning" do
     end
 
     within ".related-content" do
-      expect(page).to have_content "Related content (1)"
+      expect(page).to have_content "RELATED CONTENT (1)"
       expect(page).to have_css ".related-content-title"
       expect(page).to have_content related_proposal.title
     end
@@ -62,7 +62,7 @@ describe "Machine learning" do
     end
 
     within ".related-content" do
-      expect(page).to have_content "Related content (1)"
+      expect(page).to have_content "RELATED CONTENT (1)"
       expect(page).to have_css ".related-content-title", count: 1
       expect(page).to have_content related_investment.title
     end

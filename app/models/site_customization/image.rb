@@ -4,13 +4,19 @@ class SiteCustomization::Image < ApplicationRecord
     "social_media_icon" => [470, 246],
     "social_media_icon_twitter" => [246, 246],
     "apple-touch-icon-200" => [200, 200],
-    "auth_bg" => [1280, 1500],
+    "auth_bg" => [934, 1398],
     "budget_execution_no_image" => [800, 600],
     "budget_investment_no_image" => [800, 600],
+    "budget_no_image" => [400, 300],
     "favicon" => [16, 16],
     "map" => [420, 500],
     "logo_email" => [400, 80],
-    "welcome_process" => [370, 185]
+    "welcome/step_1" => [270, 240],
+    "welcome/step_2" => [270, 240],
+    "welcome/step_3" => [270, 240],
+    "welcome_process" => [370, 185],
+    "bg_footer" => [1200, 300],
+    "logo_footer" => [260, 80],
   }.freeze
 
   VALID_MIME_TYPES = %w[
@@ -39,11 +45,11 @@ class SiteCustomization::Image < ApplicationRecord
   end
 
   def required_width
-    VALID_IMAGES[name]&.first
+    VALID_IMAGES[name]&.first || 0
   end
 
   def required_height
-    VALID_IMAGES[name]&.second
+    VALID_IMAGES[name]&.second || 0
   end
 
   def persisted_image
@@ -70,9 +76,9 @@ class SiteCustomization::Image < ApplicationRecord
       if name == "logo_header"
         errors.add(:image, :image_width, required_width: required_width) if width > required_width
       else
-        errors.add(:image, :image_width, required_width: required_width) unless width == required_width
+        errors.add(:image, :image_width, required_width: required_width) unless width >= required_width
       end
 
-      errors.add(:image, :image_height, required_height: required_height) unless height == required_height
+      errors.add(:image, :image_height, required_height: required_height) unless height <= required_height
     end
 end

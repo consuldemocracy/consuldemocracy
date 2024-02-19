@@ -1,0 +1,47 @@
+#raad_page {
+  .help-header {
+    .row.collapse {
+      display: none;
+    }
+  }
+}
+
+.raadsleden {
+  margin-left: 0;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  @include breakpoint(small) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include breakpoint(medium) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include breakpoint(large) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .raadslid {
+    img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .name {
+      font-size: 1.5rem;
+      color: var(--brand);
+      margin-bottom: 0;
+    }
+
+    .function-title {
+      font-style: italic;
+      font-size: 1rem;
+    }
+  }
+}

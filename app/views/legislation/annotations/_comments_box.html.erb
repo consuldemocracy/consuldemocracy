@@ -27,6 +27,9 @@
                             maxlength: Comment.body_max_length,
                             label: leave_comment_text(annotation),
                             rows: 8 %>
+            <a class="cancel-comment" href="#" data-cancel-annotation>
+              <%= t("legislation.annotations.comments.cancel") %>
+            </a>
             <%= f.submit comment_button_text(nil, annotation), class: "button" %>
           <% end %>
         </div>

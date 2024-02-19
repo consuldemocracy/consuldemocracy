@@ -59,13 +59,13 @@ nl:
       section_header:
         icon_alt: Budgetafbeelding
         title: Burgerbegrotingen
-        help: Hulp bij burgerbegrotingen
+        help: "Hulp bij ideeën"
       all_phases: Investeringsfases
       next_phase: Volgende fase
       prev_phase: Vorige fase
       current_phase: Huidige fase
       map: Investeringen op de kaart
-      finished_budgets: Afgeronde burgerbegrotingen
+      finished_budgets: "Afgeronde ideeën"
       see_results: Bekijk resultaten
       section_footer:
         title: Hulp bij budget
@@ -82,8 +82,9 @@ nl:
         tags_placeholder: "Voer de labels in die je wilt gebruiken, gescheiden door kommas (',')"
         map_location: "Locatie"
         map_location_instructions: "Beweeg de kaart en wijs de locatie aan"
+        map_remove_marker: "Locatie verwijderen"
       index:
-        title: Burgerbegrotingen
+        title: "Ideeën"
         unfeasible: Unfeasible investment projects
         unfeasible_text: "De voorstellen moeten aan een aantal criteria (leesbaarheid, concreetheid, de gemeente is er op aanspreekbaar, binnen het budget) voldoen om 'haalbaar' te worden geacht en in stemming te kunnen worden gebracht. Voorstellen die hierbuiten vallen worden als 'onhaalbaar' aangemerkt en in de volgende lijst gepubliceerd, met de reden van onhaalbaarheid."
         by_heading: "Begrotingsvoorstellen in de context van: %{heading}"
@@ -106,7 +107,7 @@ nl:
           change_vote_link: "je stem wijzigen"
           different_heading_assigned: "Je steunt al in een ander onderdeel van het voorstel: %{heading_link}"
           change_ballot: "Als u zich bedenkt kunt uw uw stemmen in %{check_ballot} verwijderen opnieuw beginnen."
-          check_ballot_link: "verstuur mijn stemmen"
+          check_ballot_link: "check mijn stemming"
           zero: U hebt op geen enkel begrotingsvoorstel gestemd.
           verified_only: "%{verify} je account om een nieuw begrotingsvoorstel te doen."
           create: "Nieuw begrotingsvoorstel maken"
@@ -172,10 +173,10 @@ nl:
     investments_list:
       investment:
         price: "Prijs"
-        read_more: "Lees meer"
         supports: "Steunt"
-      see_all: "Alle investeringen bekijken"
-      title: "Investeringen"
+        read_more: "Bekijk idee"
+      see_all: "Bekijk alle ideeën"
+      title: "Ideeën"
     show:
       see_results: Bekijk resultaten
     supports_info:
@@ -192,7 +193,7 @@ nl:
     results:
       link: Resultaten
       page_title: "%{budget} - resultaten"
-      heading: "Resultaten burgerbegroting"
+      heading: "Resultaten ideeën"
       heading_selection_title: "Per wijk"
       ballot_lines_count: Stemmen
       hide_discarded_link: Verberg verworpen voorstellen

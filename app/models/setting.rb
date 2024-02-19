@@ -86,12 +86,17 @@ class Setting < ApplicationRecord
         "feature.remote_census": nil,
         "feature.valuation_comment_notification": true,
         "feature.graphql_api": true,
+        "feature.link_to_top": true,
         "feature.sdg": true,
         "feature.machine_learning": false,
         "feature.remove_investments_supports": true,
+        "feature.welcome_steps": false,
+        "feature.logo_image_footer": true,
+        "feature.background_image_footer": false,
         "homepage.widgets.feeds.debates": true,
         "homepage.widgets.feeds.processes": true,
         "homepage.widgets.feeds.proposals": true,
+        "homepage.widgets.feeds.budgets": true,
         # Code to be included at the top (inside <body>) of every page
         "html.per_page_code_body": "",
         # Code to be included at the top (inside <head>) of every page (useful for tracking)

@@ -103,6 +103,46 @@ describe "Votes" do
       end
     end
 
+    scenario "Supporting in different heading if support was removed" do
+      other_heading = create(:budget_heading, group: group)
+
+      investment = create(:budget_investment, heading: heading)
+      other_investment = create(:budget_investment, heading: other_heading)
+
+      visit budget_investment_path(budget, investment)
+      within("#budget_investment_#{investment.id}") do
+        accept_confirm { click_button "Support" }
+
+        expect(page).to have_content "1 support"
+        expect(page).to have_content "You have already supported this investment project. "\
+                                     "Share it!"
+      end
+
+      visit budget_investment_path(budget, other_investment)
+      within("#budget_investment_#{other_investment.id}") do
+        find_button("Support").click
+
+        expect(page).to have_content "You can only support investment projects in 1 district. "\
+                                     "You have already supported investments in"
+      end
+
+      visit budget_investment_path(budget, investment)
+      within("#budget_investment_#{investment.id}") do
+        click_button "Remove your support"
+
+        expect(page).to have_content "No supports"
+      end
+
+      visit budget_investment_path(budget, other_investment)
+      within("#budget_investment_#{other_investment.id}") do
+        accept_confirm { click_button "Support" }
+
+        expect(page).to have_content "1 support"
+        expect(page).to have_content "You have already supported this investment project. "\
+                                     "Share it!"
+      end
+    end
+
     context "Voting in multiple headings of a single group" do
       let(:new_york) { heading }
       let(:san_francisco) { create(:budget_heading, group: group) }
@@ -217,12 +257,15 @@ describe "Votes" do
     before { login_as(manuela) }
 
     scenario "Budget limit is ignored" do
+      budget.phases.balloting.update!(starts_at: "01-10-2020", ends_at: "31-12-2020")
       group = create(:budget_group, budget: budget)
       heading = create(:budget_heading, group: group, max_ballot_lines: 2)
       investment1 = create(:budget_investment, :selected, heading: heading, price: heading.price)
       investment2 = create(:budget_investment, :selected, heading: heading, price: heading.price)
 
       visit budget_investments_path(budget, heading_id: heading.id)
+
+      expect(page).to have_content "You can change your vote at any time until December 31, 2020."
 
       add_to_ballot(investment1.title)
 

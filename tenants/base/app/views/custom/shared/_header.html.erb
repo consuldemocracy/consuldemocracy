@@ -1,0 +1,27 @@
+<% if header.present? %>
+  <% if header.image.present? && header.background_image? %>
+    <div id="header_background_image" class="jumbo highlight"
+         style="background-image: url(<%= polymorphic_path(header.image.attachment) %>)">
+
+      <%= render "shared/header_content", header: header %>
+    </div>
+  <% elsif header.image.present? %>
+    <div class="header-card jumbo highlight">
+      <div class="row">
+        <%= render "shared/header_content", header: header %>
+
+        <div id="header_image" class="small-12 medium-6 column">
+          <%= image_tag(header.image.variant(:large),
+                        class: "margin",
+                        alt: header.image.title) %>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <div class="header-card jumbo highlight">
+      <div class="row">
+        <%= render "shared/header_content", header: header %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

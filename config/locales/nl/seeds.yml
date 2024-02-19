@@ -44,7 +44,7 @@ nl:
       security_emergencies: Veiligheid en noodgevallen
       environment: Omgeving
     budgets:
-      budget: Burgerbegroting
+      budget: "Ideeën"
       currency: '€'
       groups:
         all_city: Hele gemeente

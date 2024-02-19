@@ -20,4 +20,6 @@ section "Creating Settings" do
   }.each do |name, value|
     Setting[name] = value
   end
+
+  Map.default
 end
