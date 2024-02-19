@@ -83,6 +83,8 @@ Rails.application.configure do
   config.multitenancy = true
 
   config.devise_lockable = true
+
+  config.assets.check_precompiled_asset = false
 end
 
 require Rails.root.join("config", "environments", "custom", "test")

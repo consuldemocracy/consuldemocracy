@@ -138,13 +138,13 @@ describe Budgets::InvestmentsListComponent do
     end
 
     it "is shown in all other phases" do
-      (Budget::Phase::PHASE_KINDS - %w[informing finished]).each do |phase_name|
+      (Budget::Phase::PHASE_KINDS - ["informing"]).each do |phase_name|
         budget.phase = phase_name
 
         render_inline Budgets::InvestmentsListComponent.new(budget)
 
         expect(page).to have_link "See all investments",
-                                  href: budget_investments_path(budget, heading_id: heading.id)
+                                  href: budget_investments_path(budget)
       end
     end
 
