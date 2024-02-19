@@ -477,6 +477,7 @@ nl:
       flash:
         updated: "Waarde succesvol aangepast"
       index:
+        show_navbar: "Toon feature in de navigatiebalk"
         title: "Instellingen"
         general: "Algemene instellingen"
         update_setting: "Bewerk"
