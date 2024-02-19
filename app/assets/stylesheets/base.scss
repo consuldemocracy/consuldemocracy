@@ -487,8 +487,6 @@ body > header,
 .wrapper > header {
   background: none;
   border-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
 }
 
 .top-bar {
@@ -783,7 +781,8 @@ body > header,
 
 .admin > .header > *,
 .public > .wrapper > header > * {
-  @include full-width-background($adjust-padding: false);
+  left: 0 !important;
+  right: 0 !important;
 }
 
 .public > .wrapper > header::after {
