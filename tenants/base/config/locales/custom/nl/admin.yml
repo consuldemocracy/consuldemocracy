@@ -532,7 +532,9 @@ nl:
     dashboard:
       index:
         title: "Admin"
-        description: 'Welkom op het beheerder gedeelte van %{org}<br>Kom je er niet uit? Aarzel niet om je vraag te stellen op de Slack omgeving (<a href="https://consul.slack.com">https://consul.slack.com</a>) van CONSUL of om de admin guide te lezen (<a href="https://consulproject.org/docs/consul_administration_guide_en.pdf">https://consulproject.org/docs/consul_administration_guide_en.pdf</a>)'
+        description: Welkom op de beheeromgeving van %{org}.
+        info: |-
+          <p>Kom je er niet uit? Aarzel niet om je vraag te stellen op de Slack omgeving (<a href="https://consul.slack.com">https://consul.slack.com</a>) van CONSUL of om de admin guide te lezen (<a href="https://consulproject.org/docs/consul_administration_guide_en.pdf">https://consulproject.org/docs/consul_administration_guide_en.pdf</a>)'</p>
       actions:
         index:
           description: "Wanneer een gebruiker een initiatief of idee indient, kan hij op een aparte pagina verschillende middelen  krijgen waarmee hij campagne kan voeren voor zijn initiatief of idee."
