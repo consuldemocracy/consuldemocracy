@@ -734,6 +734,7 @@ en:
       proposals_topics: Proposals topics
       budgets: Participatory budgets
       geozones: Manage geozones
+      postcodes: Manage Postcodes
       hidden_comments: Hidden comments
       hidden_debates: Hidden debates
       hidden_proposals: Hidden proposals
@@ -1425,6 +1426,31 @@ en:
         error: This geozone can't be deleted since there are elements attached to it
       update:
         notice: "Geozone updated successfully"
+    postcodes:
+      index:
+        title: Postcode
+        create: Create postcode
+        csv_title: Postcode - Import CSV file
+        csv_button: Import CSV
+        csv_import: Import again
+        no_record: No records found.
+      postcode:
+        postcode: Postcode
+        ward: Ward
+        ward_help: Postcode's correspoding ward
+        geozone_id: Geozone
+        geozone_help: Postcode's correspoding geozone
+      edit:
+        form:
+          submit_button: Save changes
+        editing: Editing postcode
+        back: Go back
+      new:
+        back: Go back
+        creating: Create district
+      delete:
+        success: Postcode successfully deleted
+        error: "This postcode can't be deleted since there are elements attached to it"
     signature_sheets:
       author: Author
       created_at: Creation date
