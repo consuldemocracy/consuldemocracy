@@ -53,5 +53,8 @@ en:
       section_header:
         description: "Give your opinion on specific topics"
       remaining: "Remaining <strong>%{days}</strong> to participate"
+  poll_questions:
+    show:
+      vote_registered: "Your vote has been registered correctly."
   shared:
     expired: "Expired"
