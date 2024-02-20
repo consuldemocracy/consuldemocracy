@@ -8,7 +8,7 @@ module SiteCustomizationHelper
   end
 
   def information_texts_tabs
-    [:basic, :budgets, :debates, :community, :proposals, :polls, :legislation, :budgets, :layouts, :mailers,
+    [:basic, :debates, :community, :proposals, :polls, :legislation, :budgets, :layouts, :mailers,
      :management, :welcome, :machine_learning]
   end
 end

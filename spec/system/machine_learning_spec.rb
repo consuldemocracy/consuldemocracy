@@ -21,7 +21,7 @@ describe "Machine learning" do
     investment.update!(ml_tag_list: [ml_investment_tag])
   end
 
-  scenario "proposal view" do
+  scenario "proposal view", :consul do
     create(:ml_summary_comment, commentable: proposal, body: "Life is wonderful")
     create(:related_content, parent_relationable: proposal,
                              child_relationable: related_proposal,
@@ -36,7 +36,7 @@ describe "Machine learning" do
     end
 
     within ".related-content" do
-      expect(page).to have_content "RELATED CONTENT (1)"
+      expect(page).to have_content "Related content (1)"
       expect(page).to have_css ".related-content-title"
       expect(page).to have_content related_proposal.title
     end
@@ -47,7 +47,7 @@ describe "Machine learning" do
     end
   end
 
-  scenario "investment view" do
+  scenario "investment view", :consul do
     create(:ml_summary_comment, commentable: investment, body: "Build in the main square")
     create(:related_content, parent_relationable: investment,
                              child_relationable: related_investment,
@@ -62,7 +62,7 @@ describe "Machine learning" do
     end
 
     within ".related-content" do
-      expect(page).to have_content "RELATED CONTENT (1)"
+      expect(page).to have_content "Related content (1)"
       expect(page).to have_css ".related-content-title", count: 1
       expect(page).to have_content related_investment.title
     end

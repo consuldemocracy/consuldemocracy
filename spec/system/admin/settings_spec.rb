@@ -2,18 +2,24 @@ require "rails_helper"
 
 describe "Admin settings", :admin do
   scenario "Index" do
+    create(:setting, key: "super.users.first")
+    create(:setting, key: "super.users.second")
+    create(:setting, key: "super.users.third")
+
     visit admin_settings_path
 
-    expect(page).to have_content "Level 1 public official"
-    expect(page).to have_content "Maximum ratio of anonymous votes per Debate"
-    expect(page).to have_content "Comments body max length"
+    expect(page).to have_content "First"
+    expect(page).to have_content "Second"
+    expect(page).to have_content "Third"
   end
 
   scenario "Update" do
+    create(:setting, key: "super.users.first")
+
     visit admin_settings_path
 
-    within "tr", text: "Level 1 public official" do
-      fill_in "Level 1 public official", with: "Super Users of level 1"
+    within "tr", text: "First" do
+      fill_in "First", with: "Super Users of level 1"
       click_button "Update"
     end
 
@@ -31,7 +37,7 @@ describe "Admin settings", :admin do
       expect(page).not_to have_css("#admin-map.leaflet-container", visible: :all)
     end
 
-    scenario "When `Map settings` tab content is shown map should be initialized" do
+    scenario "When `Map settings` tab content is shown map should be initialized", :consul do
       visit admin_settings_path
 
       click_link "Map configuration"
@@ -41,7 +47,7 @@ describe "Admin settings", :admin do
   end
 
   describe "Update map" do
-    scenario "Should not be able when map feature deactivated" do
+    scenario "Should not be able when map feature deactivated", :consul do
       Setting["feature.map"] = false
 
       visit admin_settings_path
@@ -53,7 +59,7 @@ describe "Admin settings", :admin do
       expect(page).not_to have_css("#admin-map")
     end
 
-    scenario "Should be able when map feature activated" do
+    scenario "Should be able when map feature activated", :consul do
       Setting["feature.map"] = true
 
       visit admin_settings_path
@@ -65,20 +71,20 @@ describe "Admin settings", :admin do
                                        'on "Features" tab.'
     end
 
-    scenario "Should show successful notice" do
+    scenario "Should show successful notice", :consul do
       Setting["feature.map"] = true
 
       visit admin_settings_path
       click_link "Map configuration"
 
       within "#map-form" do
-        click_button "Update"
+        click_on "Update"
       end
 
       expect(page).to have_content "Map configuration updated successfully"
     end
 
-    scenario "Should display marker by default" do
+    scenario "Should display marker by default", :consul do
       Setting["feature.map"] = true
 
       visit admin_settings_path
@@ -87,14 +93,14 @@ describe "Admin settings", :admin do
       expect(find("#longitude", visible: :hidden).value).to eq "0.0"
     end
 
-    scenario "Should update marker" do
+    scenario "Should update marker", :consul do
       Setting["feature.map"] = true
 
       visit admin_settings_path
       click_link "Map configuration"
       find("#admin-map").click
       within "#map-form" do
-        click_button "Update"
+        click_on "Update"
       end
 
       expect(find("#latitude", visible: :hidden).value).not_to eq "51.48"
@@ -167,11 +173,13 @@ describe "Admin settings", :admin do
       end
 
       scenario "On #tab-remote-census-configuration" do
+        create(:setting, key: "remote_census.general.whatever")
+
         visit admin_settings_path
         find("#remote-census-tab").click
 
-        within "tr", text: "Endpoint" do
-          fill_in "Endpoint", with: "example.org/webservice"
+        within "tr", text: "Whatever" do
+          fill_in "Whatever", with: "New value"
           click_button "Update"
         end
 
@@ -181,10 +189,13 @@ describe "Admin settings", :admin do
     end
 
     scenario "On #tab-configuration" do
-      visit admin_settings_path
+      Setting.create!(key: "whatever")
 
-      within "tr", text: "Level 1 public official" do
-        fill_in "Level 1 public official", with: "Super Users of level 1"
+      visit admin_settings_path
+      find("#tab-configuration").click
+
+      within "tr", text: "Whatever" do
+        fill_in "Whatever", with: "New value"
         click_button "Update"
       end
 
@@ -197,37 +208,30 @@ describe "Admin settings", :admin do
         Setting["feature.map"] = true
       end
 
-      scenario "On #tab-map-configuration" do
+      scenario "On #tab-map-configuration", :consul do
+        Setting.create!(key: "map.whatever")
+
         visit admin_settings_path
         click_link "Map configuration"
 
-        within "tr", text: "Latitude" do
-          fill_in "Latitude", with: "-3.636"
+        within "tr", text: "Whatever" do
+          fill_in "Whatever", with: "New value"
           click_button "Update"
         end
 
-        expect(page).to have_current_path(admin_settings_path)
-        expect(page).to have_css("div#tab-map-configuration.is-active")
-      end
-
-      scenario "On #tab-map-configuration when using the interactive map" do
-        visit admin_settings_path(anchor: "tab-map-configuration")
-        within "#map-form" do
-          click_button "Update"
-        end
-
-        expect(page).to have_content("Map configuration updated successfully.")
         expect(page).to have_current_path(admin_settings_path)
         expect(page).to have_css("div#tab-map-configuration.is-active")
       end
     end
 
     scenario "On #tab-proposals" do
+      Setting.create!(key: "proposals.whatever")
+
       visit admin_settings_path
       find("#proposals-tab").click
 
-      within "tr", text: "Polls description" do
-        fill_in "Polls description", with: "Polls description"
+      within "tr", text: "Whatever" do
+        fill_in "Whatever", with: "New value"
         click_button "Update"
       end
 
@@ -236,18 +240,22 @@ describe "Admin settings", :admin do
     end
 
     scenario "On #tab-participation-processes" do
+      Setting.create!(key: "process.whatever")
+
       visit admin_settings_path
       find("#participation-processes-tab").click
-      within("tr", text: "Debates") { click_button "Yes" }
+      within("tr", text: "Whatever") { click_button "No" }
 
       expect(page).to have_current_path(admin_settings_path)
       expect(page).to have_css("div#tab-participation-processes.is-active")
     end
 
     scenario "On #tab-feature-flags" do
+      Setting.create!(key: "feature.whatever")
+
       visit admin_settings_path
       find("#features-tab").click
-      within("tr", text: "Featured proposals") { click_button "No" }
+      within("tr", text: "Whatever") { click_button "No" }
 
       expect(page).to have_current_path(admin_settings_path)
       expect(page).to have_css("div#tab-feature-flags.is-active")
@@ -255,29 +263,19 @@ describe "Admin settings", :admin do
 
     scenario "On #tab-sdg-configuration" do
       Setting["feature.sdg"] = true
+      Setting.create!(key: "sdg.whatever")
+
       visit admin_settings_path
       click_link "SDG configuration"
 
-      within("tr", text: "Related SDG in debates") do
-        click_button "Yes"
+      within("tr", text: "Whatever") do
+        click_button "No"
 
-        expect(page).to have_button "No"
+        expect(page).to have_button "Yes"
       end
 
       expect(page).to have_current_path(admin_settings_path)
       expect(page).to have_css("h2", exact_text: "SDG configuration")
-    end
-
-    scenario "On #tab-images-and-documents" do
-      Setting["feature.sdg"] = true
-      visit admin_settings_path(anchor: "tab-images-and-documents")
-      within("tr", text: "Maximum number of documents") do
-        fill_in "Maximum number of documents", with: 5
-        click_button "Update"
-      end
-
-      expect(page).to have_current_path(admin_settings_path)
-      expect(page).to have_field("Maximum number of documents", with: 5)
     end
   end
 

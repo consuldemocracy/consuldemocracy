@@ -6,7 +6,7 @@ case "$1" in
   start)
     echo -n "Starting delayed_job: "
     cd /home/deploy/consul/current
-    RAILS_ENV=<%= fetch(:rails_env) %> /home/deploy/consul/rvm1scripts/rvm-auto.sh . bundle exec bin/delayed_job -n 2 start
+    RAILS_ENV=<%= fetch(:rails_env) %> /home/deploy/consul/rvm1scripts/rvm-auto.sh . bundle exec bin/delayed_job -m -n 2 start
     echo "done."
     ;;
   stop)

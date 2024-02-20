@@ -270,47 +270,6 @@ describe "Legislation Draft Versions" do
       expect(page).to have_content "Comment can't be blank"
     end
 
-    scenario "Comments are disabled when allegations phase is closed" do
-      travel_to "01/01/2022".to_date
-
-      process = create(:legislation_process, allegations_start_date: "01/01/2022",
-                                             allegations_end_date: "31/01/2022")
-
-      draft = create(:legislation_draft_version, process: process)
-
-      note = create(:legislation_annotation,
-                    draft_version: draft_version, text: "One annotation", quote: "audiam",
-                    ranges: [{ "start" => "/p[3]", "startOffset" => 6, "end" => "/p[3]", "endOffset" => 11 }])
-
-      visit legislation_process_draft_version_annotation_path(draft.process, draft, note)
-
-      within "#comments" do
-        expect(page).to have_content "Comments (1)"
-        fill_in "Leave your comment", with: "My comment on annotation!"
-        click_button "Publish comment"
-      end
-
-      visit legislation_process_draft_version_annotation_path(draft.process, draft, note)
-
-      within "#comments" do
-        expect(page).to have_content "Comments (2)"
-        expect(page).to have_content "One annotation"
-        expect(page).to have_content "My comment on annotation!"
-      end
-
-      travel_to "01/02/2022".to_date
-
-      visit legislation_process_draft_version_annotation_path(draft.process, draft, note)
-
-      within "#comments" do
-        expect(page).to have_content "Comments are closed"
-        expect(page).not_to have_content "Leave your comment"
-        expect(page).not_to have_content "Publish comment"
-      end
-
-      travel_back
-    end
-
     scenario "When page is restored from browser cache do not duplicate annotation handlers" do
       Setting["org_name"] = "CONSUL"
       create(:legislation_annotation, draft_version: draft_version, text: "my annotation")

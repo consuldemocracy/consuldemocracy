@@ -1,7 +1,6 @@
 en:
   account:
     show:
-      last_sign_in: "Last login: %{last_sign_in_at} from IP %{last_sign_in_ip}"
       change_credentials_link: Change my login details
       erase_account_link: Erase my account
       finish_verification: Complete verification
@@ -70,10 +69,6 @@ en:
       form:
         submit_button: Start a debate
     debate:
-      comments:
-        one: 1 comment
-        other: "%{count} comments"
-        zero: No comments
       votes:
         one: 1 vote
         other: "%{count} votes"
@@ -129,10 +124,6 @@ en:
       start_new: Start a debate
     show:
       author_deleted: User deleted
-      comments:
-        one: 1 comment
-        other: "%{count} comments"
-        zero: No comments
       comments_title: Comments
       edit_debate_link: Edit
       flag: This debate has been flagged as inappropriate by several users.
@@ -152,6 +143,7 @@ en:
         poll_ended: "Cannot be changed if voting has already ended"
   form:
     accept_terms: I agree to the %{policy} and the %{conditions}
+    accept_terms_title: I agree to the Privacy Policy and the Terms and conditions of use
     conditions: Terms and conditions of use
     debate: Debate
     direct_message: private message
@@ -185,6 +177,11 @@ en:
   geozones:
     none: All city
   layouts:
+    application:
+      chrome: Google Chrome
+      firefox: Firefox
+      ie: We have detected that you are browsing with Internet Explorer. For an enhanced experience, we recommend using %{firefox} or %{chrome}.
+      ie_title: This website is not optimised for your browser
     dashboard:
       proposal_header:
         published: Published
@@ -207,12 +204,10 @@ en:
       conditions: Terms and conditions of use
       consul: CONSUL DEMOCRACY application
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL DEMOCRACY, %{year}
+      copyright: "CONSUL DEMOCRACY version %{version}, %{year}"
       description: This portal uses the %{consul} which is %{open_source}.
       open_source: open-source software
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
-      participation_text: Decide how to shape the city you want to live in.
-      participation_title: Participation
       privacy: Privacy Policy
     header:
       administration_menu: Menu
@@ -227,7 +222,6 @@ en:
       help: Help
       my_account_link: My account
       my_activity_link: My content
-      open_gov: Open government
       proposals: Proposals
       poll_questions: Voting
       budgets: Participatory budgeting
@@ -616,7 +610,6 @@ en:
       cant_answer_wrong_geozone: "This question is not available on your geozone."
       more_info_title: "More information"
       less_info_title: "Less information"
-      more_info_options: "More information about the options"
       documents: Documents
       zoom_plus: Expand image
       read_more: "Read more about %{answer}"
@@ -701,10 +694,10 @@ en:
         destroy:
           notice: "You have stopped following this investment project! <br> You will no longer receive notifications related to this project."
       proposal:
-        create:
-          notice: "Now you are following this citizen proposal! <br> We will notify you of changes as they occur so that you are up-to-date."
-        destroy:
-          notice: "You have stopped following this citizen proposal! <br> You will no longer receive notifications related to this proposal."
+          create:
+            notice: "Now you are following this citizen proposal! <br> We will notify you of changes as they occur so that you are up-to-date."
+          destroy:
+            notice: "You have stopped following this citizen proposal! <br> You will no longer receive notifications related to this proposal."
     print:
       print_button: Print this info
     search: Search
@@ -733,7 +726,7 @@ en:
       districts: "Districts"
       districts_list: "Districts list"
       categories: "Categories"
-    target_blank: "Link opens in new window"
+    target_blank: " (link opens in new window)"
     you_are_in: "You are in"
     unflag: Unflag
     unfollow_entity: "Unfollow %{entity}"
@@ -750,9 +743,9 @@ en:
       cards: Cards
       list: List
     recommended_index:
-      title: Recommendations
-      see_more: See more recommendations
-      hide: Hide recommendations
+        title: Recommendations
+        see_more: See more recommendations
+        hide: Hide recommendations
     translations:
       select_language_prompt: Choose language
       remove_language: Remove language
@@ -875,7 +868,7 @@ en:
         processes: There are no open processes right now
         budgets: "There are no budgets right now"
       description:
-        proposals: "Citizen proposals that gather enough support will go to a voting phase, so you can get all the citizens to decide how they want their city to be."
+        proposals: "Citizen proposals that gather enough suppport will go to a voting phase, so you can get all the citizens to decide how they want their city to be."
         budgets: "Participatory budgets are processes in which citizens decide directly on what is spent part of the municipal budget. The most supported projects are evaluated and passed to a final vote in which they decide the actions to be carried out by the City Council."
       process_label: Process
       see_process: See process

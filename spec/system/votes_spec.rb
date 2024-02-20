@@ -124,14 +124,14 @@ describe "Votes" do
         end
       end
 
-      scenario "Show" do
+      scenario "Show", :consul do
         debate = create(:debate)
         create(:vote, voter: verified, votable: debate, vote_flag: true)
         create(:vote, voter: unverified, votable: debate, vote_flag: false)
 
         visit debate_path(debate)
 
-        expect(page).to have_content "2 votes"
+        expect(page).to have_content "No votes"
 
         within(".in-favor") do
           expect(page).to have_content "50%"

@@ -73,10 +73,6 @@ FactoryBot.define do
     name { "logo_header" }
   end
 
-  factory :map do
-    association :budget, factory: :budget
-  end
-
   factory :map_location do
     latitude { Setting["map.latitude"] }
     longitude { Setting["map.longitude"] }

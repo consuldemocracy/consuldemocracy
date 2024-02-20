@@ -460,6 +460,7 @@ class Admin::MenuComponent < ApplicationComponent
           tags_link,
           geozones_link,
           local_census_records_link,
+          maps_link,
           class: ("is-active" if settings?)
         )
     end
@@ -522,6 +523,14 @@ class Admin::MenuComponent < ApplicationComponent
       ]
     end
 
+    def maps_link
+      [
+        t("admin.menu.maps"),
+        admin_maps_path,
+        maps?
+      ]
+    end
+
     def dashboard_links
       link_to(t("admin.menu.dashboard"), "#", class: "dashboard-link") +
         link_list(
@@ -537,14 +546,6 @@ class Admin::MenuComponent < ApplicationComponent
         admin_machine_learning_path,
         controller_name == "machine_learning",
         class: "ml-link"
-      ]
-    end
-
-    def maps_link
-      [
-        t("admin.menu.maps"),
-        admin_maps_path,
-        maps?
       ]
     end
 

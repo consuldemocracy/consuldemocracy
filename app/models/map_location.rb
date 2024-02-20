@@ -18,13 +18,6 @@ class MapLocation < ApplicationRecord
     }
   end
 
-  def from_map(map)
-    self.latitude = map.map_location.latitude
-    self.longitude = map.map_location.longitude
-    self.zoom = map.map_location.zoom
-    self
-  end
-
   def self.from_heading(heading)
     new(
       zoom: Budget::Heading::OSM_DISTRICT_LEVEL_ZOOM,
@@ -50,17 +43,5 @@ class MapLocation < ApplicationRecord
         long: values[3]
       }
     end
-  end
-
-  def self.default_latitude
-    51.48
-  end
-
-  def self.default_longitude
-    0.0
-  end
-
-  def self.default_zoom
-    10
   end
 end

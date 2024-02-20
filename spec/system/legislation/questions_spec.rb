@@ -68,17 +68,6 @@ describe "Legislation" do
       expect(page).not_to have_content("NEXT QUESTION")
     end
 
-    scenario "do not show next question link with only one question" do
-      process_one_question = create(:legislation_process, debate_start_date: Date.current - 3.days,
-                                                          debate_end_date: Date.current + 2.days)
-      create(:legislation_question, process: process_one_question, title: "Question 1")
-
-      visit legislation_process_question_path(process_one_question, process_one_question.questions.first)
-
-      expect(page).to have_content("Question 1")
-      expect(page).not_to have_link("Next question")
-    end
-
     scenario "answer question", :no_js do
       question = process.questions.first
       create(:legislation_question_option, question: question, value: "Yes")

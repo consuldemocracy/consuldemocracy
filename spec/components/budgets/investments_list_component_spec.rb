@@ -137,7 +137,7 @@ describe Budgets::InvestmentsListComponent do
       expect(page).not_to have_link "See all investments"
     end
 
-    it "is shown in all other phases" do
+    it "is shown in all other phases", :consul do
       (Budget::Phase::PHASE_KINDS - ["informing"]).each do |phase_name|
         budget.phase = phase_name
 

@@ -46,7 +46,7 @@
           <div class="budget-phase-content">
             <h3><%= phase.name %></h3>
             <p><%= start_date(phase) %> - <%= end_date(phase) %></p>
-            <%= auto_link_already_sanitized_html(wysiwyg(phase.description)) %>
+            <%= auto_link_already_sanitized_html AdminWYSIWYGSanitizer.new.sanitize(phase.description) %>
 
             <% if phase.main_link_text.present? && phase.main_link_url.present? %>
               <%= link_to phase.main_link_text, phase.main_link_url, class: "main-link" %>

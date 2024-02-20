@@ -53,13 +53,14 @@ describe "Tags" do
     expect(page).to have_content "Hacienda"
   end
 
-  scenario "Create" do
+  scenario "Create", :consul do
     user = create(:user)
     login_as(user)
 
     visit new_debate_path
     fill_in_new_debate_title with: "Title"
     fill_in_ckeditor "Initial debate text", with: "Description"
+    check "debate_terms_of_service"
 
     fill_in "debate_tag_list", with: "Impuestos, Economía, Hacienda"
 
@@ -71,13 +72,14 @@ describe "Tags" do
     expect(page).to have_content "Impuestos"
   end
 
-  scenario "Create with too many tags" do
+  scenario "Create with too many tags", :consul do
     user = create(:user)
     login_as(user)
 
     visit new_debate_path
     fill_in_new_debate_title with: "Title"
     fill_in_ckeditor "Initial debate text", with: "Description"
+    check "debate_terms_of_service"
 
     fill_in "debate_tag_list", with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
 

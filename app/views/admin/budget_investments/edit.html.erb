@@ -29,6 +29,20 @@
       <% end %>
 
       <div class="small-12 column">
+        <% if feature?(:allow_images) %>
+          <div class="images">
+            <%= render "images/nested_image", f: f %>
+          </div>
+        <% end %>
+
+        <% if feature?(:allow_attached_documents) %>
+          <div class="documents">
+            <%= render "documents/nested_documents", f: f %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="small-12 column">
         <%= f.text_field :tag_list,
                          value: @investment.tag_list.sort.join(","),
                          label: t("admin.budget_investments.edit.user_tags") %>

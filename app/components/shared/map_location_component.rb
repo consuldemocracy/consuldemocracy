@@ -19,15 +19,15 @@ class Shared::MapLocationComponent < ApplicationComponent
     end
 
     def latitude
-      map_location.latitude.presence || Setting["map.latitude"]
+      map_location.latitude.presence || Map.default.map_location.latitude
     end
 
     def longitude
-      map_location.longitude.presence || Setting["map.longitude"]
+      map_location.longitude.presence || Map.default.map_location.longitude
     end
 
     def zoom
-      map_location.zoom.presence || Setting["map.zoom"]
+      map_location.zoom.presence || Map.default.map_location.zoom
     end
 
     def remove_marker_label

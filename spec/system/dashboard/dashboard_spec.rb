@@ -384,7 +384,7 @@ describe "Proposal's dashboard" do
                                                                                 anchor: "tab-notifications"))
   end
 
-  scenario "Dashboard has a related content section" do
+  scenario "Dashboard has a related content section", :consul do
     related_debate = create(:debate)
     related_proposal = create(:proposal)
 

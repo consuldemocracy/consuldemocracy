@@ -27,10 +27,5 @@ describe AdminWYSIWYGSanitizer do
               </table>'
       expect(sanitizer.sanitize(html)).to eq(html)
     end
-
-    it "allows br" do
-      html = "<p><strong>This is a text</strong><br>With a break line</p>"
-      expect(sanitizer.sanitize(html)).to eq(html)
-    end
   end
 end

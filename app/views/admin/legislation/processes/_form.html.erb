@@ -155,21 +155,15 @@
       </div>
 
       <div class="small-12 medium-9 column">
-        <%= translations_form.text_area :summary,
-                                        rows: 2,
-                                        hint: t("admin.legislation.processes.form.use_markdown") %>
+        <%= translations_form.text_area :summary, class: "html-area admin" %>
       </div>
 
       <div class="small-12 medium-9 column">
-        <%= translations_form.text_area :description,
-                                        rows: 5,
-                                        hint: t("admin.legislation.processes.form.use_markdown") %>
+        <%= translations_form.text_area :description, class: "html-area admin" %>
       </div>
 
       <div class="small-12 medium-9 column end">
-        <%= translations_form.text_area :additional_info,
-                                        rows: 10,
-                                        hint: t("admin.legislation.processes.form.use_markdown") %>
+        <%= translations_form.text_area :additional_info, class: "html-area admin" %>
       </div>
     <% end %>
   </div>

@@ -1,6 +1,6 @@
 <% if @process.description.present? %>
   <p class="title"><%= t("legislation.processes.header.description") %></p>
-  <%= markdown @process.description %>
+  <%= auto_link_already_sanitized_html AdminWYSIWYGSanitizer.new.sanitize(@process.description) %>
 <% end %>
 
 <%= render SDG::TagListComponent.new(@process, linkable: false) %>
@@ -9,7 +9,7 @@
   <div id="legislation_info" class="hide" data-toggler="hide">
     <hr>
     <p class="title"><%= t("legislation.processes.header.additional_info") %></p>
-    <%= markdown @process.additional_info %>
+    <%= auto_link_already_sanitized_html AdminWYSIWYGSanitizer.new.sanitize(@process.additional_info) %>
   </div>
 
   <button type="button" id="read_more" class="button" data-toggler="hide"

@@ -12,14 +12,6 @@ module PollsHelper
     booth.name + location
   end
 
-  def poll_voter_token(poll, user)
-    Poll::Voter.find_by(poll: poll, user: user, origin: "web")&.token || ""
-  end
-
-  def voted_before_sign_in(question)
-    question.answers.where(author: current_user).any? { |vote| current_user.current_sign_in_at > vote.updated_at }
-  end
-
   def link_to_poll(text, poll, options = {})
     if can?(:results, poll)
       link_to text, results_poll_path(id: poll.slug || poll.id), options

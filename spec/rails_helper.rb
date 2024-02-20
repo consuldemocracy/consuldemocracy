@@ -57,7 +57,7 @@ Capybara.register_driver :headless_chrome do |app|
   options = Selenium::WebDriver::Chrome::Options.new.tap do |opts|
     opts.add_argument "--headless"
     opts.add_argument "--no-sandbox"
-    opts.add_argument "--window-size=1200,800"
+    opts.add_argument "--window-size=1200,1200"
     opts.add_argument "--proxy-server=#{Capybara.app_host}:#{Capybara::Webmock.port_number}"
   end
 

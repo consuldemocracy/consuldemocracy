@@ -59,7 +59,7 @@ describe "Tags" do
     expect(page).to have_content "Hacienda"
   end
 
-  scenario "Create with custom tags" do
+  scenario "Create with custom tags", :consul do
     user = create(:user)
     login_as(user)
 
@@ -69,6 +69,7 @@ describe "Tags" do
     fill_in_ckeditor "Proposal text", with: "This is very important because..."
     fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
     fill_in "Tags", with: "Economía, Hacienda"
+    check "I agree to the Privacy Policy and the Terms and conditions of use"
 
     click_button "Create proposal"
 
@@ -80,7 +81,7 @@ describe "Tags" do
     expect(page).to have_content "Hacienda"
   end
 
-  scenario "Category with category tags" do
+  scenario "Category with category tags", :consul do
     create(:tag, :category, name: "Education")
     create(:tag, :category, name: "Health")
 
@@ -92,6 +93,7 @@ describe "Tags" do
     fill_in_ckeditor "Proposal text", with: "A description with enough characters"
     fill_in "External video URL", with: "https://www.youtube.com/watch?v=Ae6gQmhaMn4"
     fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
+    check "I agree to the Privacy Policy and the Terms and conditions of use"
 
     find(".js-add-tag-link", text: "Education").click
     click_button "Create proposal"
@@ -108,13 +110,14 @@ describe "Tags" do
     end
   end
 
-  scenario "Create with too many tags" do
+  scenario "Create with too many tags", :consul do
     user = create(:user)
     login_as(user)
 
     visit new_proposal_path
     fill_in_new_proposal_title with: "Title"
     fill_in_ckeditor "Proposal text", with: "Description"
+    check "I agree to the Privacy Policy and the Terms and conditions of use"
 
     fill_in "Tags", with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
 
@@ -124,7 +127,7 @@ describe "Tags" do
     expect(page).to have_content "tags must be less than or equal to 6"
   end
 
-  scenario "Create with dangerous strings" do
+  scenario "Create with dangerous strings", :consul do
     author = create(:user)
     login_as(author)
 
@@ -134,6 +137,7 @@ describe "Tags" do
     fill_in "Proposal summary", with: "In summary, what we want is..."
     fill_in_ckeditor "Proposal text", with: "A description suitable for this test"
     fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
+    check "I agree to the Privacy Policy and the Terms and conditions of use"
 
     fill_in "Tags", with: "user_id=1, &a=3, <script>alert('hey');</script>"
 

@@ -40,7 +40,7 @@ describe "Multitenancy", :seed_tenants do
     end
   end
 
-  scenario "PostgreSQL extensions work for tenants" do
+  scenario "PostgreSQL extensions work for tenants", :consul do
     Tenant.switch("mars") { login_as(create(:user)) }
 
     with_subdomain("mars") do
@@ -67,7 +67,7 @@ describe "Multitenancy", :seed_tenants do
     end
   end
 
-  scenario "Creating content in one tenant doesn't affect other tenants" do
+  scenario "Creating content in one tenant doesn't affect other tenants", :consul do
     create(:tenant, schema: "venus")
     Tenant.switch("mars") { login_as(create(:user)) }
 

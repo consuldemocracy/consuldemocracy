@@ -336,6 +336,7 @@ describe "Budget Investments" do
     end
 
     scenario "Remove support on behalf of someone else in index view" do
+      Setting["feature.remove_investments_supports"] = true
       create(:budget_investment, heading: heading)
 
       login_managed_user(user)
@@ -356,6 +357,7 @@ describe "Budget Investments" do
     end
 
     scenario "Remove support on behalf of someone else in show view" do
+      Setting["feature.remove_investments_supports"] = true
       create(:budget_investment, heading: heading, title: "Don't support me!")
 
       login_managed_user(user)

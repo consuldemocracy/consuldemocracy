@@ -84,7 +84,7 @@ describe "Polls" do
       expect(page).not_to have_link("Expired")
     end
 
-    scenario "Displays icon correctly" do
+    scenario "Displays icon correctly", :consul do
       create_list(:poll, 3)
 
       visit polls_path
@@ -101,7 +101,7 @@ describe "Polls" do
       expect(page).to have_content("You must verify your account to participate")
     end
 
-    scenario "Geozone poll" do
+    scenario "Geozone poll", :consul do
       create(:poll, geozone_restricted: true)
 
       login_as(create(:user, :level_two))
@@ -111,7 +111,7 @@ describe "Polls" do
       expect(page).to have_content("This poll is not available on your geozone")
     end
 
-    scenario "Already participated in a poll" do
+    scenario "Already participated in a poll", :consul do
       poll_with_question = create(:poll)
       question = create(:poll_question, :yes_no, poll: poll_with_question)
 
@@ -171,7 +171,7 @@ describe "Polls" do
       expect(page).to have_current_path(poll_path(poll.slug))
     end
 
-    scenario "Lists questions from proposals as well as regular ones" do
+    scenario "Lists questions from proposals as well as regular ones", :consul do
       normal_question = create(:poll_question, poll: poll)
       proposal_question = create(:poll_question, poll: poll, proposal: create(:proposal))
 

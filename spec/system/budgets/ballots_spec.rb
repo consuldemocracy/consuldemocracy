@@ -47,14 +47,7 @@ describe "Ballots" do
     let!(:districts) { create(:budget_group, budget: budget, name: "Districts") }
 
     context "Group and Heading Navigation" do
-      scenario "Groups" do
-        visit budget_path(budget)
-
-        expect(page).to have_content "City"
-        expect(page).to have_content "Districts"
-      end
-
-      scenario "Headings" do
+      scenario "Headings", :consul do
         create(:budget_heading, group: city,      name: "Investments Type1")
         create(:budget_heading, group: city,      name: "Investments Type2")
         create(:budget_heading, group: districts, name: "District 1")
@@ -62,13 +55,15 @@ describe "Ballots" do
 
         visit budget_path(budget)
 
-        expect(page).to have_content "Investments Type1"
-        expect(page).to have_content "Investments Type2"
-        expect(page).to have_link "District 1 €1,000,000"
-        expect(page).to have_link "District 2 €1,000,000"
+        within("#groups_and_headings") do
+          expect(page).to have_link "Investments Type1"
+          expect(page).to have_link "Investments Type2"
+          expect(page).to have_link "District 1"
+          expect(page).to have_link "District 2"
+        end
       end
 
-      scenario "Investments" do
+      scenario "Investments", :consul do
         create(:budget_heading, group: city, name: "Under the city")
 
         create(:budget_heading, group: city, name: "Above the city") do |heading|
@@ -108,7 +103,7 @@ describe "Ballots" do
     end
 
     context "Adding and Removing Investments" do
-      scenario "Add a investment" do
+      scenario "Add a investment", :consul do
         create(:budget_investment, :selected, heading: new_york, price: 10000, title: "Bring back King Kong")
         create(:budget_investment, :selected, heading: new_york, price: 20000, title: "Paint cabs black")
 
@@ -136,7 +131,7 @@ describe "Ballots" do
         end
       end
 
-      scenario "Removing a investment" do
+      scenario "Removing a investment", :consul do
         investment = create(:budget_investment, :selected, heading: new_york, price: 10000, balloters: [user])
 
         visit budget_investments_path(budget, heading_id: new_york)
@@ -168,8 +163,7 @@ describe "Ballots" do
       scenario "map and content block shoud be visible before and after" do
         stub_const("#{Budgets::InvestmentsController}::PER_PAGE", 1)
 
-        create(
-          :budget_investment, :selected, :with_map_location,
+        create(:budget_investment, :selected, :with_map_location,
           heading: new_york,
           price: 10000,
           title: "More bridges",
@@ -216,7 +210,7 @@ describe "Ballots" do
 
     #Break up or simplify with helpers
     context "Balloting in multiple headings" do
-      scenario "Independent progress bar for headings" do
+      scenario "Independent progress bar for headings", :consul do
         city_heading      = create(:budget_heading, group: city,      name: "All city",   price: 10000000)
         district_heading1 = create(:budget_heading, group: districts, name: "District 1", price: 1000000)
         district_heading2 = create(:budget_heading, group: districts, name: "District 2", price: 2000000)
@@ -274,7 +268,7 @@ describe "Ballots" do
       end
     end
 
-    scenario "Display progress bar after first vote" do
+    scenario "Display progress bar after first vote", :consul do
       create(:budget_investment, :selected, heading: new_york, price: 10000, title: "Park expansion")
 
       visit budget_investments_path(budget, heading_id: new_york.id)
@@ -391,7 +385,7 @@ describe "Ballots" do
     expect(page).to have_content("You have voted 0 investments")
   end
 
-  scenario "Removing investments from ballot (sidebar)" do
+  scenario "Removing investments from ballot (sidebar)", :consul do
     investment1 = create(:budget_investment, :selected, price: 10000, heading: new_york)
     investment2 = create(:budget_investment, :selected, price: 20000, heading: new_york)
     user = create(:user, :level_two, ballot_lines: [investment1, investment2])

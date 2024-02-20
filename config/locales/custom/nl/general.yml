@@ -214,7 +214,6 @@ nl:
       cant_answer_not_logged_in: "Je moet %{signin} of je %{signup} om verder te gaan"
       cant_answer_wrong_geozone: "Deze peiling is niet actief voor jouw gebied"
       comments_tab: "Reacties"
-      more_info_options: "Meer informatie over de antwoordmogelijkheden"
       info_menu: "Vragen?"
   comments:
     comment:
@@ -506,7 +505,6 @@ nl:
   poll_questions:
     show:
       voted: "Je hebt %{answer} gestemd"
-      vote_registered: "Je stem is opgeslagen."
   proposal_notifications:
     new:
       title: "Stuur melding"

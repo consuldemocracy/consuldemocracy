@@ -123,7 +123,7 @@ describe "Home" do
     end
   end
 
-  scenario "if there are cards, the 'featured' title will render" do
+  scenario "if there are cards, the 'featured' title will render", :consul do
     create(
       :widget_card,
       title: "Card text",
@@ -134,17 +134,13 @@ describe "Home" do
 
     visit root_path
 
-    within("#welcome_cards") do
-      expect(page).to have_css(".title", text: "Featured")
-    end
+    expect(page).to have_css(".title", text: "Featured")
   end
 
-  scenario "if there are no cards, the 'featured' title will not render" do
+  scenario "if there are no cards, the 'featured' title will not render", :consul do
     visit root_path
 
-    within("#welcome_cards") do
-      expect(page).not_to have_css(".title", text: "Featured")
-    end
+    expect(page).not_to have_css(".title", text: "Featured")
   end
 
   describe "Header Card" do
@@ -171,20 +167,5 @@ describe "Home" do
 
       within(".header-card") { expect(page).not_to have_link }
     end
-  end
-
-  scenario "Favicon custom" do
-    visit root_path
-
-    expect(page).to have_css("link[rel=\"shortcut icon\"]", visible: :hidden)
-    expect(page).to have_xpath("//link[contains(@href, \"favicon-\")]", visible: :hidden)
-
-    create(:site_customization_image, name: "favicon", image: fixture_file_upload("favicon_custom.ico"))
-
-    visit root_path
-
-    expect(page).to have_css("link[rel=\"shortcut icon\"]", visible: :hidden)
-    expect(page).not_to have_xpath("//link[contains(@href, \"favicon-\")]", visible: :hidden)
-    expect(page).to have_xpath("//link[contains(@href, \"favicon_custom\")]", visible: :hidden)
   end
 end

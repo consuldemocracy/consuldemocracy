@@ -201,7 +201,6 @@ nl:
       name: "Naam kop"
       price: "Budget"
       population: "Populatie"
-      allow_custom_content: "Contentblokken toestaan"
       form:
         population_info: "Het veld rubriek wordt gebruikt voor statistische doeleinden. Na afloop van de begroting kan worden weergegeven door welk percentage is gestemd. Het veld is optioneel, dus je kunt het leeg laten als het niet van toepassing is."
         content_blocks_info: "Als dit is aangevinkt, kun je op maat gemaakte content toevoegen. Via Instellingen Costum content blocks. Deze content zal dan verschijnen bij de ideeën pagina."

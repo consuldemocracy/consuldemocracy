@@ -124,7 +124,7 @@ describe "Budgets wizard, headings step", :admin do
       expect(page).to have_css "td", exact_text: "Heading without typos"
     end
 
-    scenario "update heading in single heading budget" do
+    scenario "update heading in single heading budget", :consul do
       visit admin_budgets_wizard_budget_group_headings_path(budget, group, mode: "single")
       fill_in "Heading name", with: "Heading wiht typo"
       fill_in "Money amount", with: "300000"

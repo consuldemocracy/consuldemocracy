@@ -1,0 +1,53 @@
+<%= provide :title, t("social_share.polls_show.title_#{@poll.id}", default: @poll.title) %>
+<%= provide :meta_description, t("social_share.polls_show.description_#{@poll.id}", default: @poll.title) %>
+<%= provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags",
+              social_url: poll_url,
+              social_title: t("social_share.polls_show.title_#{@poll.id}", default: @poll.title),
+              social_description: t("social_share.polls_show.facebook_#{@poll.id}", default: @poll.title),
+              twitter_image_url:  "social_media_polls_twitter.jpg",
+              og_image_url: "social_media_polls.jpg" %>
+<% end %>
+
+<div class="polls-show">
+  <%= render "poll_header" %>
+
+  <%= render "poll_subnav" %>
+
+  <div class="row margin">
+    <div class="small-12 medium-9 column">
+      <%= render "callout" %>
+
+      <% if @poll.voted_in_booth?(current_user) %>
+        <div class="callout warning">
+          <%= t("polls.show.already_voted_in_booth") %>
+        </div>
+      <% else %>
+
+        <% if current_user && @poll.voted_in_web?(current_user) && !@poll.expired? %>
+          <div class="callout warning">
+            <%= t("polls.show.already_voted_in_web") %>
+          </div>
+        <% end %>
+      <% end %>
+
+      <% @questions.each_with_index do |question, index| %>
+        <%= render Polls::Questions::QuestionComponent.new(@questions, question, index) %>
+      <% end %>
+    </div>
+  </div>
+
+  <div id="poll_more_info_answers" class="expanded poll-more-info-answers">
+    <div class="row padding">
+      <%= render Polls::Questions::ReadMoreComponent.with_collection(@questions) %>
+    </div>
+  </div>
+
+  <div class="tabs-content" data-tabs-content="polls_tabs">
+    <%= render "filter_subnav" %>
+
+    <div class="tabs-panel is-active" id="tab-comments">
+      <%= render "comments" %>
+    </div>
+  </div>
+</div>

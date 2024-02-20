@@ -48,7 +48,7 @@ describe "Admin collaborative legislation", :admin do
   end
 
   context "Create" do
-    scenario "Valid legislation process" do
+    scenario "Valid legislation process", :consul do
       visit admin_root_path
 
       within("#side_menu") do
@@ -117,7 +117,7 @@ describe "Admin collaborative legislation", :admin do
       expect(page).not_to have_content "Describing the process"
     end
 
-    scenario "Legislation process in draft phase" do
+    scenario "Legislation process in draft phase", :consul do
       visit admin_root_path
 
       within("#side_menu") do
@@ -163,10 +163,7 @@ describe "Admin collaborative legislation", :admin do
       expect(page).not_to have_content "Describing the process"
     end
 
-    scenario "Create a legislation process with an image" do
-      original_window_size = Capybara.current_window.size
-      Capybara.current_window.resize_to(1600, 1200)
-
+    scenario "Create a legislation process with an image", :consul do
       visit new_admin_legislation_process_path
       fill_in "Process Title", with: "An example legislation process"
       fill_in "Summary", with: "Summary of the process"
@@ -190,8 +187,6 @@ describe "Admin collaborative legislation", :admin do
       expect(page).to have_content "An example legislation process"
       expect(page).not_to have_content "Summary of the process"
       expect(page).to have_css("img[alt='An example legislation process']")
-
-      Capybara.current_window.resize_to(*original_window_size)
     end
 
     scenario "Default colors are present" do
@@ -210,7 +205,7 @@ describe "Admin collaborative legislation", :admin do
              description: "Description of the process")
     end
 
-    scenario "Remove summary text" do
+    scenario "Remove summary text", :consul do
       visit admin_root_path
 
       within("#side_menu") do
@@ -312,7 +307,7 @@ describe "Admin collaborative legislation", :admin do
       end
     end
 
-    scenario "Change proposal categories" do
+    scenario "Change proposal categories", :consul do
       visit edit_admin_legislation_process_path(process)
       within(".admin-content") { click_link "Proposals" }
 

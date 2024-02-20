@@ -46,7 +46,7 @@ describe "Admin polls", :admin do
     expect(page).to have_content poll.name
   end
 
-  scenario "Create" do
+  scenario "Create", :consul do
     travel_to(Time.zone.local(2015, 7, 15, 13, 32, 13))
 
     visit admin_polls_path
@@ -55,8 +55,8 @@ describe "Admin polls", :admin do
     fill_in "Name", with: "Upcoming poll"
     fill_in "Start Date", with: 1.week.from_now
     fill_in "Closing Date", with: 2.weeks.from_now
-    fill_in_ckeditor "Summary", with: "Upcoming poll's summary. This poll..."
-    fill_in_ckeditor "Description", with: "Upcomming poll's description. This poll..."
+    fill_in "Summary", with: "Upcoming poll's summary. This poll..."
+    fill_in "Description", with: "Upcomming poll's description. This poll..."
 
     expect(page).not_to have_css("#poll_results_enabled")
     expect(page).not_to have_css("#poll_stats_enabled")
@@ -327,11 +327,11 @@ describe "Admin polls", :admin do
             expect(page).to have_content("10")
           end
 
-          expect(page).not_to have_css "#total_system"
+          expect(page).not_to have_selector "#total_system"
         end
 
-        expect(page).to have_css "#poll_booth_assignment_#{booth_assignment.id}_recounts"
-        expect(page).not_to have_css "#poll_booth_assignment_#{booth_assignment.id}_system"
+        expect(page).to have_selector "#poll_booth_assignment_#{booth_assignment.id}_recounts"
+        expect(page).not_to have_selector "#poll_booth_assignment_#{booth_assignment.id}_system"
       end
     end
   end
@@ -435,15 +435,15 @@ describe "Admin polls", :admin do
 
         [booth_assignment_1, booth_assignment_2, booth_assignment_3].each do |ba|
           create(:poll_partial_result,
-                 booth_assignment: ba,
-                 question: question_1,
-                 answer: "Yes",
-                 amount: 11)
+                  booth_assignment: ba,
+                  question: question_1,
+                  answer: "Yes",
+                  amount: 11)
           create(:poll_partial_result,
-                 booth_assignment: ba,
-                 question: question_2,
-                 answer: "Tomorrow",
-                 amount: 5)
+                  booth_assignment: ba,
+                  question: question_2,
+                  answer: "Tomorrow",
+                  amount: 5)
         end
         create(:poll_recount,
                booth_assignment: booth_assignment_1,
@@ -535,7 +535,7 @@ describe "Admin polls", :admin do
       end
     end
 
-    scenario "create poll with sdg related list" do
+    scenario "create poll with sdg related list", :consul do
       visit new_admin_poll_path
       fill_in "Name", with: "Upcoming poll with SDG related content"
       fill_in "Start Date", with: 1.week.from_now

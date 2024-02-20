@@ -25,6 +25,5 @@
 #
 # Add your custom gem dependencies here
 
-gem "rmega"
-gem "rubyzip"
-
+gem "rmega", "~> 0.2.7"
+gem "rubyzip", "~> 2.3.2"

@@ -16,6 +16,7 @@ $white: #fdfdfd !default;
 
 $body-background: $white;
 $body-font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif !important !default;
+$body-background: #fff;
 
 $closebutton-color: $black !default;
 
@@ -68,15 +69,16 @@ $brand-secondary:   darken($brand, 10%) !default;
 
 $text-medium:       #515151 !default;
 $text-light:        #bfbfbf !default;
+$label:             #2f82b4;
 
 $border:            #dee0e3 !default;
 
 $debates:           $brand !default;
 
-$like:              #38a36f !default;
-$unlike:            #ea6666 !default;
+$like:              #7bd2a8 !default;
+$unlike:            #ef8585 !default;
 
-$delete:            #db2e0f !default;
+$delete:            #f04124 !default;
 $check:             #46db91 !default;
 
 $proposals:         #ffa42d !default;
@@ -115,11 +117,7 @@ $color-alert:       #a94442 !default;
 $pdf-primary:       #0300ff !default;
 $pdf-secondary:     #ff9e00 !default;
 
-$focus-middle:       #ffbf47 !default;
-$focus-outer:        $brand !default;
-$focus-inner-width:  1px !default;
-$focus-middle-width: 3px !default;
-$focus-outer-width:  2px !default;
+$outline-focus:     3px solid #ffbf47 !default;
 
 $input-height:      $line-height * 2 !default;
 
@@ -164,12 +162,6 @@ $tab-item-padding: $line-height / 2  0 !default;
 $tab-content-border: $border !default;
 
 $tooltip-background-color: $brand !default;
-
-// Custom styles (might be redundant/not necessary)
-$closebutton-color: $text !default;
-$has-tip-cursor: cursor;
-$has-tip-border-bottom: 0;
-$label:             #2f82b4;
 
 // 4. Foundation fixes
 // -------------------

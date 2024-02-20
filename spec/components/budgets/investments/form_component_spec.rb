@@ -11,7 +11,7 @@ describe Budgets::Investments::FormComponent do
   end
 
   describe "accept terms of services field" do
-    it "is shown for new investments" do
+    it "is shown for new investments", :consul do
       investment = build(:budget_investment, budget: budget)
 
       render_inline Budgets::Investments::FormComponent.new(

@@ -21,7 +21,22 @@ Airbrake.configure do |config|
 end
 
 Airbrake.add_filter do |notice|
-  ignorables = %w[AbstractController::ActionNotFound ActionController::RoutingError ActionController::InvalidAuthenticityToken ActionController::UnknownFormat ActionController::BadRequest ActionDispatch::Cookies::CookieOverflow ActionView::Template::Error ActiveRecord::RecordNotFound ArgumentError FeatureFlags::FeatureDisabled SignalException Apartment::TenantNotFound]
+  ignorables = [
+    "AbstractController::ActionNotFound",
+    "ActionController::RoutingError",
+    "ActionController::InvalidAuthenticityToken",
+    "ActionController::UnknownFormat",
+    "ActionController::BadRequest",
+    "ActionDispatch::Cookies::CookieOverflow",
+    "ActionDispatch::Http::MimeNegotiation::InvalidType",
+    "ActionView::Template::Error",
+    "ActiveRecord::RecordNotFound",
+    "Apartment::TenantNotFound",
+    "ArgumentError",
+    "FeatureFlags::FeatureDisabled",
+    "SignalException"
+  ]
+
   notice.ignore! if ignorables.include? notice[:errors].first[:type]
 end
 

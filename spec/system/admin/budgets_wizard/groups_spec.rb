@@ -98,7 +98,7 @@ describe "Budgets wizard, groups step", :admin do
       expect(page).to have_css "td", exact_text: "Group without typos"
     end
 
-    scenario "update group in single heading budget" do
+    scenario "update group in single heading budget", :consul do
       visit admin_budgets_wizard_budget_groups_path(budget, mode: "single")
       fill_in "Group name", with: "Group wiht typo"
       click_button "Continue to headings"

@@ -22,6 +22,7 @@ class Legislation::DraftVersion < ApplicationRecord
   scope :published, -> { where(status: "published").order("id DESC") }
 
   def body_html
+    # tables: true is custom
     MarkdownConverter.new(body, tables: true, with_toc_data: true).render
   end
 

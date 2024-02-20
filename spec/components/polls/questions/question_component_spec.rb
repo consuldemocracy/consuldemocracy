@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe Polls::Questions::QuestionComponent do
-  it "renders more information links when any question answer has additional information" do
+  it "renders more information links when any question answer has additional information", :consul do
     question = create(:poll_question)
     answer_a = create(:poll_question_answer, question: question, title: "Answer A")
     answer_b = create(:poll_question_answer, question: question, title: "Answer B")

@@ -978,11 +978,11 @@ form {
   }
 
   .html-area:not(.form-error) {
-    height: 272px;
+    height: $line-height * 12;
     margin-bottom: $line-height;
 
     &.admin {
-      height: 572px;
+      height: $line-height * 20;
     }
   }
 

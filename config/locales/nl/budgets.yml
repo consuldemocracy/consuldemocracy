@@ -59,18 +59,30 @@ nl:
       section_header:
         icon_alt: Budgetafbeelding
         title: Burgerbegrotingen
-        help: "Hulp bij ideeën"
+        help: Hulp bij burgerbegrotingen
       all_phases: Investeringsfases
       next_phase: Volgende fase
       prev_phase: Vorige fase
       current_phase: Huidige fase
       map: Investeringen op de kaart
-      finished_budgets: "Afgeronde ideeën"
+      finished_budgets: Afgeronde burgerbegrotingen
       see_results: Bekijk resultaten
       section_footer:
         title: Hulp bij budget
         description: Met de participatieve budgetten beslissen de burgers aan welke projecten zij een deel van de begroting toekennen.
       milestones: Mijlpalen
+    supports_info:
+      different: "Maar... je kunt ieder idee slechts één keer steunen. En je steun is definitief."
+      next: "Steun de ideeën die jij graag uitgevoerd wil zien."
+      scrolling: "Blijf scrollen om alle ideeën te zien"
+      share: "Je kunt ideeën die je hebt gesteund delen op social media. Zo krijgen de ideeën meer aandacht én wellicht meer steun!"
+      supported:
+        one: "Tot nu toe heb je <strong>1 idee</strong> gesteund."
+        other: "Tot nu toe heb je <strong>%{count} ideeën</strong> gesteund."
+      supported_not_logged_in: "Log in om <strong>projecten te steunen</strong>."
+      remember: "Je mag zoveel verschillende ideeën steunen als je wilt."
+      time: "Je kunt nog tot %{phase_end_date} ideeën steunen."
+      title: "Je kunt nu ideeën <strong>steunen</strong>!"
     investments:
       form:
         title: "Nieuw begrotingsvoorstel maken"
@@ -82,7 +94,6 @@ nl:
         tags_placeholder: "Voer de labels in die je wilt gebruiken, gescheiden door kommas (',')"
         map_location: "Locatie"
         map_location_instructions: "Beweeg de kaart en wijs de locatie aan"
-        map_remove_marker: "Locatie verwijderen"
       index:
         title: "Ideeën"
         unfeasible: Unfeasible investment projects
@@ -107,7 +118,7 @@ nl:
           change_vote_link: "je stem wijzigen"
           different_heading_assigned: "Je steunt al in een ander onderdeel van het voorstel: %{heading_link}"
           change_ballot: "Als u zich bedenkt kunt uw uw stemmen in %{check_ballot} verwijderen opnieuw beginnen."
-          check_ballot_link: "check mijn stemming"
+          check_ballot_link: "verstuur mijn stemmen"
           zero: U hebt op geen enkel begrotingsvoorstel gestemd.
           verified_only: "%{verify} je account om een nieuw begrotingsvoorstel te doen."
           create: "Nieuw begrotingsvoorstel maken"
@@ -173,10 +184,10 @@ nl:
     investments_list:
       investment:
         price: "Prijs"
+        read_more: "Lees meer"
         supports: "Steunt"
-        read_more: "Bekijk idee"
-      see_all: "Bekijk alle ideeën"
-      title: "Ideeën"
+      see_all: "Alle investeringen bekijken"
+      title: "Investeringen"
     show:
       see_results: Bekijk resultaten
     supports_info:
