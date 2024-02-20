@@ -2288,6 +2288,8 @@ a {
 
     a {
       flex-grow: unset;
+      display: flex;
+      align-items: center;
     }
   }
 

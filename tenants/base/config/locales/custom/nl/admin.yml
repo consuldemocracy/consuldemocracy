@@ -79,6 +79,7 @@ nl:
         verify: "Accepteren"
     proposals:
       index:
+        select: "Selecteer"
         title: "Initiatieven"
     hidden_proposals:
       index:
@@ -527,6 +528,7 @@ nl:
       example_url: "https://consulproject.org"
       back: "Go back"
       search:
+        search: "Zoek"
         label:
           local_census_records: "Zoeken op documentnummer"
     dashboard:

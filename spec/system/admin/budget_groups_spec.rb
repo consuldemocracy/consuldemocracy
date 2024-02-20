@@ -18,8 +18,8 @@ describe "Admin budget groups", :admin do
     scenario "Displaying no groups for budget" do
       visit admin_budget_path(budget)
 
-      within "section", text: "HEADING GROUPS" do
-        expect(page.text).to eq "HEADING GROUPS\nAdd group"
+      within "section", text: "Heading groups" do
+        expect(page.text).to eq "Heading groups\nAdd group"
       end
     end
 
@@ -32,7 +32,7 @@ describe "Admin budget groups", :admin do
 
       visit admin_budget_path(budget)
 
-      within "section", text: "HEADING GROUPS" do
+      within "section", text: "Heading groups" do
         within "section", text: "Above ground" do
           expect(page).to have_css "h4", exact_text: "Above ground"
           expect(page).not_to have_content "Maximum number of headings"
@@ -84,7 +84,7 @@ describe "Admin budget groups", :admin do
 
       expect(page).to have_content "Group created successfully!"
 
-      within "section", text: "HEADING GROUPS" do
+      within "section", text: "Heading groups" do
         expect(page).to have_css "h4", exact_text: "All City"
       end
     end

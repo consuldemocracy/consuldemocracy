@@ -24,7 +24,7 @@ describe "Budgets creation wizard", :admin do
 
     click_link "Finish"
 
-    within "section", text: "HEADING GROUPS" do
+    within "section", text: "Heading groups" do
       expect(page).to have_content "Single heading budget"
 
       within "tbody" do
@@ -111,7 +111,7 @@ describe "Budgets creation wizard", :admin do
 
     click_link "Finish"
 
-    within "section", text: "HEADING GROUPS" do
+    within "section", text: "Heading groups" do
       within_table "Headings in All city" do
         expect(page).to have_css "tbody tr", count: 1
         expect(page).to have_content "All city"

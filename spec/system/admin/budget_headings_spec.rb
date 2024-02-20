@@ -23,7 +23,7 @@ describe "Admin budget headings", :admin do
 
       visit admin_budget_path(budget)
 
-      within "section", text: "HEADING GROUPS" do
+      within "section", text: "Heading groups" do
         expect(page).to have_content "There are no headings in the Universities group."
       end
     end
@@ -35,7 +35,7 @@ describe "Admin budget headings", :admin do
 
       visit admin_budget_path(budget)
 
-      within "section", text: "HEADING GROUPS" do
+      within "section", text: "Heading groups" do
         within "tbody" do
           expect(page).to have_css "tr", count: 3
 
@@ -82,7 +82,7 @@ describe "Admin budget headings", :admin do
     scenario "Create heading" do
       visit admin_budget_path(budget)
 
-      within "section", text: "HEADING GROUPS" do
+      within "section", text: "Heading groups" do
         within("section", text: group.name) { click_link "Add heading" }
       end
 

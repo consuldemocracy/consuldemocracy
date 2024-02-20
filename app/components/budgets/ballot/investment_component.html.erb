@@ -1,7 +1,11 @@
 <li id="<%= list_item_id %>">
-  <span class="ballot-list-title"><%= investment_title %></span>
+  <span class="ballot-list-title">
+    <%= investment_title %>
+  </span>
   <% if budget.show_money? %>
-    <span class="ballot-list-price"><%= investment_price %></span>
+    <span class="ballot-list-price">
+      <%= investment_price %>
+    </span>
   <% end %>
 
   <% if budget.balloting? %>

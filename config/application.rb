@@ -71,6 +71,7 @@ module Consul
       "eu",
       "fa",
       "fr",
+      "gd",
       "gl",
       "he",
       "hr",

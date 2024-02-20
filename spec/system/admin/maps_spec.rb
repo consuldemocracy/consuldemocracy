@@ -80,7 +80,7 @@ describe "Admin maps" do
         click_link("Delete")
       end
 
-      expect(page).to have_content("Map deleted succesfully.")
+      expect(page).to have_content("Map deleted successfully.")
       expect(page).not_to have_content budget_2.name
     end
   end

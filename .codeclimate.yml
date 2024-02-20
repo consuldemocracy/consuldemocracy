@@ -22,15 +22,15 @@ engines:
     enabled: true
 ratings:
   paths:
-  - app/**/*
-  - lib/**/*
+    - app/**/*
+    - lib/**/*
 exclude_paths:
-- app/assets/fonts/
-- app/assets/images/
-- bin/rails
-- bin/rake
-- db/
-- files/
-- public/
-- tmp/
-- vendor/
+  - app/assets/fonts/
+  - app/assets/images/
+  - bin/rails
+  - bin/rake
+  - db/
+  - files/
+  - public/
+  - tmp/
+  - vendor/
