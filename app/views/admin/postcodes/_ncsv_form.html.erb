@@ -1,0 +1,9 @@
+<%= form_for :ncsv, url: process_csv_admin_postcodes_path, method: :post, multipart: true do |f| %>
+    <%= f.file_field :file, name: "file", accept: ".csv" %>
+    <div id="error-msg" style="color: red; <%= @error_msg.present? ? "" : "display: none;" %>"><%= @error_msg %></div>
+
+  <div class="small-12 medium-4 large-2 margin-top">
+    <%= f.submit(class: "button success expanded", value: t("admin.postcodes.edit.form.submit_button")) %>
+  </div>
+
+<% end %>
