@@ -2,12 +2,8 @@ namespace :consul do
   desc "Runs tasks needed to upgrade to the latest version"
   task execute_release_tasks: ["settings:rename_setting_keys",
                                "settings:add_new_settings",
-                               "execute_release_2.0.0_tasks"]
+                               "execute_release_2.1.0_tasks"]
 
-  desc "Runs tasks needed to upgrade from 1.5.0 to 2.0.0"
-  task "execute_release_2.0.0_tasks": [
-    "db:calculate_tsv",
-    "polls:set_ends_at_to_end_of_day",
-    "db:add_schema_search_path"
-  ]
+  desc "Runs tasks needed to upgrade from 2.0.1 to 2.1.0"
+  task "execute_release_2.1.0_tasks": []
 end
