@@ -34,7 +34,7 @@ class Setting
       else
         consul_defaults.merge({
           # Overwrite default CONSUL settings or add new settings here
-          "feature.raad": true,
+          "feature.raad": false,
           "show_navbar.debates": true,
           "show_navbar.proposals": true,
           "show_navbar.polls": true,

@@ -22,7 +22,7 @@ class Admin::Budgets::FormComponent < ApplicationComponent
   end
 
   def phases_select_options
-    Budget::Phase::PHASES_KINDS.map { |ph| [t("budgets.phase.#{ph}"), ph] }
+    Budget::Phase::PHASE_KINDS.map { |ph| [t("budgets.phase.#{ph}"), ph] }
   end
 
   private

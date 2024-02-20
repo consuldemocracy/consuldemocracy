@@ -81,6 +81,10 @@ class Admin::MenuComponent < ApplicationComponent
         (controller_name == "imports" && controller.class.module_parent == Admin::LocalCensusRecords)
     end
 
+    def maps?
+      controller_name == "maps"
+    end
+
     def messages_menu_active?
       messages_sections.include?(controller_name)
     end
