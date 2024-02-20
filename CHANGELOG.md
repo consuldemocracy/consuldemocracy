@@ -135,7 +135,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 - **Maintenance-Refactoring:** Add helpers for mailer footer styles [\#4864](https://github.com/consuldemocracy/consuldemocracy/pull/4864)
 - **Management:** Allow printing investments from any budget in the management interface [\#5064](https://github.com/consuldemocracy/consuldemocracy/pull/5064)
 - **Security:** Remove metadata from images [\#5122](https://github.com/consuldemocracy/consuldemocracy/pull/5122)
-- **UX:**Add comments count on budget investments [\#4839](https://github.com/consuldemocracy/consuldemocracy/pull/4839) and [\#4963](https://github.com/consuldemocracy/consuldemocracy/pull/4963)
+- **UX:** Add comments count on budget investments [\#4839](https://github.com/consuldemocracy/consuldemocracy/pull/4839) and [\#4963](https://github.com/consuldemocracy/consuldemocracy/pull/4963)
 - **Valuation:** Show published budgets in the valuation panel [\#5061](https://github.com/consuldemocracy/consuldemocracy/pull/5061)
 
 ### Fixed
