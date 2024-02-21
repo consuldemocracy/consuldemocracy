@@ -267,15 +267,30 @@ Devise.setup do |config|
                   strategy_class: OmniAuth::Strategies::Wordpress,
                   client_options: { site: Rails.application.secrets.wordpress_oauth2_site },
                   setup: OmniauthTenantSetup.wordpress_oauth2
+  config.omniauth :saml, saml_settings
   saml_settings = {}
   if Rails.application.secrets.saml_idp_metadata_url.present?
     idp_metadata_parser = OneLogin::RubySaml::IdpMetadataParser.new
     saml_settings = idp_metadata_parser.parse_remote_to_hash(Rails.application.secrets.saml_idp_metadata_url)
     saml_settings[:idp_sso_service_url] = Rails.application.secrets.saml_idp_sso_service_url
     saml_settings[:sp_entity_id] = Rails.application.secrets.saml_sp_entity_id
-    saml_settings[:allowed_clock_drift] = 1.minute
+    saml_settings[:allowed_clock_drift] = 1.hour
+    saml_settings[:certificate] = Rails.application.secrets.saml_certificate
+    saml_settings[:private_key] = Rails.application.secrets.saml_private_key
+    saml_settings[:issuer] = Rails.application.secrets.saml_issuer
+    saml_settings[:name_identifier_format] = "urn:oasis:names:tc:SAML:2.0:nameid-format:transient"
+    saml_settings[:security] = { authn_requests_signed: false,
+                    want_assertions_signed: false,
+                    want_assertions_encrypted: true,
+                    metadata_signed: false,
+                    embed_sign: false,
+                    digest_method: XMLSecurity::Document::SHA1,
+                    signature_method: XMLSecurity::Document::RSA_SHA1 }
+
   end
   config.omniauth :saml, saml_settings
+
+
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
