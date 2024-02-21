@@ -267,7 +267,6 @@ Devise.setup do |config|
                   strategy_class: OmniAuth::Strategies::Wordpress,
                   client_options: { site: Rails.application.secrets.wordpress_oauth2_site },
                   setup: OmniauthTenantSetup.wordpress_oauth2
-  config.omniauth :saml, saml_settings
   saml_settings = {}
   if Rails.application.secrets.saml_idp_metadata_url.present?
     idp_metadata_parser = OneLogin::RubySaml::IdpMetadataParser.new
