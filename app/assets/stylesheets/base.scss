@@ -540,7 +540,7 @@ body > header,
     padding-top: $line-height;
 
     &::before {
-      background: var(--brand);
+      background: none;
       content: "";
       height: 100%;
       left: -999%;
