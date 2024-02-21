@@ -1,7 +1,7 @@
 nl:
   mailers:
     title: "Open overheid"
-    unsubscribe: "Wanneer je dit soort e-mails niet meer wilt ontvangen, verander dan de instellingen op de \"%{link}\" pagina."
+    unsubscribe: 'Wanneer je dit soort e-mails niet meer wilt ontvangen, verander dan de instellingen op de "%{link}" pagina.'
     unsubscribe_link: "Mijn Profiel"
     no_reply: "Dit bericht is verzonden vanaf een e-mailadres dat geen reacties accepteert."
     already_confirmed:
@@ -20,9 +20,9 @@ nl:
       click_here_to_verify: deze link
       instructions_2: Deze e-mail verifieert uw account met %{document_type} %{document_number}. Als deze email niet voor u bestemd is, klik dan niet op de link en negeer deze e-mail.
       instructions: Om de verificatie van uw account te voltooien klikt u %{verification_link}.
-      subject: Bevestig je emailadres
+      subject: Bevestig je e-mailadres
       thanks: Heel erg bedankt.
-      title: "Bevestig je emailadres"
+      title: "Bevestig je e-mailadres"
       text: "Bevestig je account met de volgende link."
     reply:
       hi: Hoi
@@ -56,7 +56,7 @@ nl:
       title: "Dank u voor het maken van een investering!"
       intro: "Hallo <strong>%{author}</strong>,"
       text: "Dank u voor het maken van uw investering <strong>%{investment}</strong> voor participatieve budgetten <strong>%{budget}</strong>."
-      follow: "Wij zullen u informeren over hoe het proces vordert, dit kun je ook volgen op <strong>%{link}<div class=\"notranslate\"> 2 volgen kun</div>."
+      follow: 'Wij zullen u informeren over hoe het proces vordert, dit kun je ook volgen op <strong>%{link}<div class="notranslate"> 2 volgen kun</div>.'
       follow_link: "Burgerbegrotingen"
       sincerely: "Met vriendelijke groet,"
       share: "Deel uw project"
@@ -69,16 +69,16 @@ nl:
       sorry: "Sorry voor het ongemak en nogmaals hartelijk dank voor uw waardevolle deelname."
       subject: "Uw investeringsproject '%{code}' is als onhaalbaar gemarkeerd"
     budget_investment_selected:
-      subject: "Uw budget voorstel '%{code}' is geselecteerd"
-      title: "Uw budget voorstel is geselecteerd"
+      subject: "Je voorstel '%{code}' is geselecteerd"
+      title: "Je voorstel is geselecteerd"
       hi: "Beste deelnemer,"
       share: "Begin met het verwerven van stemmen; deel uw project op sociale netwerken, bijvoorbeeld. Delen en communicatie is essentieel om het verder te brengen."
       share_button: "Deel uw project"
       thanks: "Nogmaals dank voor uw deelname."
       sincerely: "Met vriendelijke groet"
     budget_investment_unselected:
-      subject: "Uw project '%{code}' is niet geselecteerd"
-      title: "Uw project is niet geselecteerd"
+      subject: "Je project '%{code}' is niet geselecteerd"
+      title: "Je investeringsproject is niet geselecteerd"
       hi: "Beste deelnemer,"
       thanks: "Dank u nogmaals voor uw deelname."
       sincerely: "Met vriendelijke groet"

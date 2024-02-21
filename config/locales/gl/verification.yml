@@ -43,7 +43,6 @@ gl:
           success: Residencia verificada
       new:
         accept_terms_text: Acepto %{terms_url} ao Padrón
-        accept_terms_text_title: Acepto os termos de acceso ao Padrón
         document_number: Número de documento
         document_number_help_title: Axuda
         document_number_help_text: "<strong>DNI</strong>: 12345678A<br> <strong>Pasaporte</strong>: AAA000001<br> <strong>Tarxeta de residencia</strong>: X1234567P"

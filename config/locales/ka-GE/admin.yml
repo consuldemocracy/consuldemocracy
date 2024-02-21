@@ -421,7 +421,6 @@ ka:
         title: "დოკუმენტები"
         format: "ფორმატი"
         size: "ზომა"
-        url: "ბმული (URL)"
       create:
         success_notice: "დოკუმენტი წარმატებით აიტვირთა"
         unable_notice: "შეცდომა დოკუმენტის ატვირთვისას"

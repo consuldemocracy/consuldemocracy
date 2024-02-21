@@ -23,7 +23,7 @@ nl:
     actions:
       delete: "Reactie verwijderen"
     comments_closed: Reageren is niet langer mogelijk
-    verified_only: ' %{verify_account} om deel te nemen'
+    verified_only: " %{verify_account} om deel te nemen"
     comment:
       admin: Beheerder
       author: Auteur
@@ -110,7 +110,7 @@ nl:
         title: Hulp bij debatten
         description: Start een debat om je mening met anderen te delen over onderwerpen die jij belangrijk vindt.
         help_text_1: "De ruimte voor debatten is bedoeld voor het uiten en delen van meningen over alle onderwerpen, kansen of knelpunten die je belangrijk vindt."
-        help_text_2: '''Om een debat te starten moet je aanmelden op %{org}. Deelnemers kunnen reageren op bestaande debatten en deze waarderen met de knoppen ''Eens'' of ''Oneens''.'
+        help_text_2: "'Om een debat te starten moet je aanmelden op %{org}. Deelnemers kunnen reageren op bestaande debatten en deze waarderen met de knoppen 'Eens' of 'Oneens'."
     new:
       form:
         submit_button: Debat starten
@@ -137,7 +137,6 @@ nl:
       invalid_date_range: "Ongeldige periode"
   form:
     accept_terms: Ik accepteer het %{policy} en de %{conditions}
-    accept_terms_title: Ik ga akkoord met het privacybeleid en de gebruiksvoorwaarden
     conditions: Gebruiksvoorwaarden
     debate: Debat
     direct_message: privébericht
@@ -167,11 +166,6 @@ nl:
   geozones:
     none: Hele stad
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: U gebruikt Internet Explorer. We raden %{firefox} of %{chrome} aan voor de beste resultaten.
-      ie_title: Deze site is niet geoptimaliseert voor uw browser
     dashboard:
       proposal_header:
         published: Gepubliceerd
@@ -185,13 +179,13 @@ nl:
     footer:
       accessibility: Toegankelijkheid
       conditions: Gebruiksvoorwaarden
-      consul: Consul
+      consul: CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
       contact_us: Voor tech support klik
       copyright: "Consul Democracy versie %{version}, %{year}"
       description: Deze site gebruikt %{consul}; een %{open_source} toepassing.
       open_source: open-source software
-      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      open_source_url: https://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Beslis mee over de vormgeving van beleid in uw gemeente.
       participation_title: Participatie
       privacy: Privacy Verklaring

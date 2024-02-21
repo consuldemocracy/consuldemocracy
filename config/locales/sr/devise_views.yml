@@ -103,7 +103,6 @@ sr:
           submit: Регистрација
           terms: Регистрацијом прихватате %{terms}
           terms_link: услови коришћења
-          terms_title: Регистровањем прихватате услове коришћења
           title: Регистрација
           username_is_available: Корисничко име доступно
           username_is_not_available: Корисничко име је већ у употреби

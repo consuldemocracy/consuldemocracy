@@ -229,7 +229,6 @@ fi:
     documents:
       index:
         title: "Asiakirjat"
-        url: "URL"
     hidden_users:
       index:
         filter: Suodatin

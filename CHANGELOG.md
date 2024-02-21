@@ -2,7 +2,7 @@
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
-## [2.1.0](https://github.com/consuldemocracy/consuldemocracy/tree/2.1.0) (2023-12-12)
+## [2.1.0](https://github.com/consuldemocracy/consuldemocracy/tree/2.1.0) (2024-02-20)
 
 [Full Changelog](https://github.com/consuldemocracy/consuldemocracy/compare/2.0.1...2.1.0)
 
@@ -18,7 +18,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 - **Security:** Optionally render last sign in info in my account [\#5274](https://github.com/consuldemocracy/consuldemocracy/pull/5274)
 - **Security:** Enable lockable devise module [\#5273](https://github.com/consuldemocracy/consuldemocracy/pull/5273)
 - **Security:** Enable password complexity [\#5163](https://github.com/consuldemocracy/consuldemocracy/pull/5163)
-- **UX:**Add Allow undoing "like/unlike" votes [\#5118](https://github.com/consuldemocracy/consuldemocracy/pull/5118) and [\#5278](https://github.com/consuldemocracy/consuldemocracy/pull/5278)
+- **Translations:** Update translations from Crowdin [\#5328](https://github.com/consuldemocracy/consuldemocracy/pull/5328)
+- **UX:** Add Allow undoing "like/unlike" votes [\#5118](https://github.com/consuldemocracy/consuldemocracy/pull/5118) and [\#5278](https://github.com/consuldemocracy/consuldemocracy/pull/5278)
 
 ### Changed
 
@@ -31,6 +32,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 - **Maintenance:** Rotate logs on production [\#5105](https://github.com/consuldemocracy/consuldemocracy/pull/5105)
 - **Maintenance-Deployment:** Upgrade Ruby to version 3.1.4 [\#5157](https://github.com/consuldemocracy/consuldemocracy/pull/5157)
 - **Maintenance-Docker:** Use Debian Bullseye instead of Buster on Docker [\#5284](https://github.com/consuldemocracy/consuldemocracy/pull/5284)
+- **Maintenance-Gems:** \[Security\] Bump nokogiri from 1.15.4 to 1.16.2 [\#5387](https://github.com/consuldemocracy/consuldemocracy/pull/5387)
 - **Maintenance-Gems:** Bump rubocop-factory_bot from 2.23.1 to 2.24.0 [\#5269](https://github.com/consuldemocracy/consuldemocracy/pull/5269)
 - **Maintenance-Gems:** Bump audited from 5.3.3 to 5.4.0 [\#5265](https://github.com/consuldemocracy/consuldemocracy/pull/5265)
 - **Maintenance-Gems:** Bump rubocop-capybara from 2.18.0 to 2.19.0 [\#5259](https://github.com/consuldemocracy/consuldemocracy/pull/5259)
@@ -238,7 +240,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 - **Maintenance-Refactoring:** Add helpers for mailer footer styles [\#4864](https://github.com/consuldemocracy/consuldemocracy/pull/4864)
 - **Management:** Allow printing investments from any budget in the management interface [\#5064](https://github.com/consuldemocracy/consuldemocracy/pull/5064)
 - **Security:** Remove metadata from images [\#5122](https://github.com/consuldemocracy/consuldemocracy/pull/5122)
-- **UX:**Add comments count on budget investments [\#4839](https://github.com/consuldemocracy/consuldemocracy/pull/4839) and [\#4963](https://github.com/consuldemocracy/consuldemocracy/pull/4963)
+- **UX:** Add comments count on budget investments [\#4839](https://github.com/consuldemocracy/consuldemocracy/pull/4839) and [\#4963](https://github.com/consuldemocracy/consuldemocracy/pull/4963)
 - **Valuation:** Show published budgets in the valuation panel [\#5061](https://github.com/consuldemocracy/consuldemocracy/pull/5061)
 
 ### Fixed

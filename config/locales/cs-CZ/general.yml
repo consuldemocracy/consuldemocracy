@@ -153,7 +153,6 @@ cs:
         poll_ended: "Nelze změnit, pokud hlasování již skončilo"
   form:
     accept_terms: Souhlasím s podmínkami %{policy} a %{conditions}
-    accept_terms_title: Souhlasím s Pravidly ochrany soukromí a Podmínkami používání
     conditions: Podmínky používání
     debate: Debata
     direct_message: soukromá zpráva
@@ -187,11 +186,6 @@ cs:
   geozones:
     none: Celé město
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Zjistili jsme, že prohlížíte aplikaci Internet Explorer. Pro rozšířené zkušenosti doporučujeme použít %{firefox} nebo %{chrome}.
-      ie_title: Tato webová stránka není optimalizována pro váš prohlížeč
     dashboard:
       proposal_header:
         published: Publikováno
@@ -212,9 +206,9 @@ cs:
     footer:
       accessibility: Přístupnost
       conditions: Podmínky používání
-      consul: aplikace CONSUL
+      consul: aplikace CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Tento portál software %{consul}, což je %{open_source}.
       open_source: open source software
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html

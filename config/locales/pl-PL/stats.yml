@@ -2,6 +2,7 @@ pl:
   stats:
     title: "Dane uczestnictwa"
     total_participants: "Uczestnicy"
+    age: "Wiek"
     total: "Łączny"
     budgets:
       link: "Statystyki"

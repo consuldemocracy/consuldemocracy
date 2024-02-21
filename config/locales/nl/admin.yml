@@ -5,8 +5,8 @@ nl:
     actions:
       actions: Acties
       block_author: "Auteur blokkeren"
-      confirm_action: "Weet je het zeker? %{action} \"%{name}\""
-      confirm_delete: "Weet je het zeker? Deze handeling verwijderd \"%{name}\" en kan niet ongedaan gemaakt worden."
+      confirm_action: 'Weet je het zeker? %{action} "%{name}"'
+      confirm_delete: 'Weet je het zeker? Deze handeling verwijderd "%{name}" en kan niet ongedaan gemaakt worden.'
       confirm_hide: Bevestig
       delete: "Verwijder"
       hide: Verberg
@@ -73,43 +73,43 @@ nl:
         edit: "Bewerk begroting"
         preview: "Preview"
         preview_results: "Preview resultaten"
-        ballots: "Maak stemhok"
+        ballots: "Stemhokjes aanmaken"
         confirm:
           ballots: "Weet je het zeker? Dit is alleen relevant wanneer je fysieke (papieren) stemmen gaat inzamelen, in de stemfase. Inwoners kunnen altijd online hun stem uitbrengen, ook mét de aanwezigheid van een fysiek stemhokje."
           destroy: "Weet je het zeker? Je verwijdert dan de begroting en alle bijbehorende groepen en rubrieken. Deze actie kan je niet ongedaan maken."
         descriptions:
           ballots: "Hiermee kan je fysieke stemmen beheren. Activeer deze optie alleen als je fysieke stemhokjes gebruikt om fysieke (papieren) te verzamelen in de stemfase."
-          calculate_winners: "Nadat de uitslag is berekend kunnen alleen admins de uitslag zien. De uitslag is openbaar zodra de \"%{phase}\" fase actief is en de optie  \"Show results\" is aangezet bij het bewerken van de beroting."
+          calculate_winners: 'Nadat de uitslag is berekend kunnen alleen admins de uitslag zien. De uitslag is openbaar zodra de "%{phase}" fase actief is en de optie  "Show results" is aangezet bij het bewerken van de beroting.'
           destroy: "Je verwijdert de begroting en alle bijbehorende groepen en rubrieken. Deze actie kan je niet ongedaan maken."
       index:
-        title: "Ideeën"
-        new_link: "Nieuwe begroting aanmaken"
+        title: Burgerbegrotingen
+        new_link: Nieuwe begroting aanmaken
         filter: Filter
         filters:
-          all: "Alle"
-          open: "Actief"
-          finished: "Afgesloten"
+          all: Alle
+          open: Actief
+          finished: Afgesloten
         budget_investments: Zie begrotingsvoorstellen
         table_budget_type: "Type"
         table_completed: Voltooid
         table_draft: "Concept"
-        table_name: "Titel"
-        table_phase: "Fase"
-        admin_ballots: "Papieren stemmen"
         table_duration: "Duur"
+        table_name: Titel
+        table_phase: Fase
         table_phase_progress: "(%{current_phase_number}/%{total_phases})"
         type_multiple: "Meerdere rubrieken"
         type_pending: "In afwachting: Nog geen rubrieken"
         type_single: "Enkele rubriek"
+        admin_ballots: Papieren stemmen
         no_budgets: "Er zijn geen budgetten."
       create:
         notice: Nieuwe burgerbegroting aangemaakt!
       update:
-        notice: "Burgerbegroting is bewerkt!"
+        notice: Burgerbegroting is bewerkt!
       publish:
         notice: "Burgerbegroting succesvol gepubliceerd!"
       edit:
-        title: "Bewerk begroting"
+        title: Bewerk begroting
         publish: "Budget publiceren"
         delete: Verwijder begroting
         phase: Fase
@@ -302,10 +302,10 @@ nl:
       search_unfeasible: Search unfeasible
     budgets_wizard:
       creation_timeline:
-        budget: "Budget"
-        groups: "Groepen"
-        headings: "Rubrieken"
-        phases: "Fases"
+        budget: Budget
+        groups: Groepen
+        headings: Rubrieken
+        phases: Fases
       budgets:
         continue: "Door naar groepen"
       groups:
@@ -317,11 +317,11 @@ nl:
           back: "Ga terug"
       heading_mode:
         multiple:
-          description: "Hier creëer je een proces met meerdere groepen, wijken of thema's. Je hebt als het ware meerdere zakken geld. Bijvoorbeeld 25.000 voor \"Oosterparkwijk\", 30.000 voor het \"Centrum\", 28.000 voor de \"Westerparkwijk\" en de hele stad. Of voor verschillende thema's zoals sport, cultuur of gezondheid."
+          description: 'Hier creëer je een proces met meerdere groepen, wijken of thema''s. Je hebt als het ware meerdere zakken geld. Bijvoorbeeld 25.000 voor "Oosterwijk", 30.000 voor het "Centrum", 28.000 voor de "Westerwijk" en de hele stad. Of voor verschillende thema''s zoals sport, cultuur of gezondheid.'
           link: "Creeër meervoudig budget"
           title: "<strong>Meervoudig</strong> budget"
         single:
-          description: "Hier creëer je een proces met één groep, wijk of thema. Je hebt als het ware één zak geld. Bijvoorbeeld 25.000 euro voor de \"Oosterparkwijk\", of 10.000 voor cultuur."
+          description: 'Hier creëer je een proces met één groep, wijk of thema. Je hebt als het ware één zak geld. Bijvoorbeeld 25.000 euro voor de "Oosterwijk", of 10.000 voor cultuur.'
           link: "Creëer enkelvoudig budget"
           title: "<strong>Enkelvoudig</strong> budget"
         title: "Type burgerbegroting"
@@ -422,10 +422,20 @@ nl:
         back: Terug naar %{org}
         title: Beheer
         description: Welkom op de %{org} beheerpagina.
+        info: |-
+          <p>Dit is de plek waar jij, als administrator, het burgerparticipatieproces in jouw stad of regio implementeert en overziet.</p>
+
+          <p>Je bent nu één van de honderden overheden en gemeenten wereldwijd die het CONSUL DEMOCRACY platform gebruiken om burgerparticipatie in de praktijk te brengen. Gefeliciteerd!</p>
+
+          <p>De CONSUL DEMOCRACY Foundation staat midden in de wereldwijde gebruikersgemeenschap. We willen je vragen om contact op te nemen zodat we een idee krijgen wie de software gebruikt en hoe we kunnen helpen bij implementatie of gebruik. We kunnen niet wachten om je in de gemeenschap te verwelkomen.</p>
+
+          <p>Veel participatieplezier!</p>
+
+          <p>Groeten van het CONSUL DEMOCRACY Foundation team.</p>
       actions:
         index:
-          active: 'Ja'
-          inactive: 'Nee'
+          active: "Ja"
+          inactive: "Nee"
           action_title: Title
           action_type: Type
           action_active: Actieve
@@ -480,7 +490,6 @@ nl:
         title: "Documenten"
         format: "Type"
         size: "Formaat"
-        url: "URL"
       create:
         success_notice: "Bestand is geupload"
         unable_notice: "Ongeldig document"
@@ -843,7 +852,7 @@ nl:
         title: "Budget investering aangemaakt"
         description: "Verzonden wanneer een gebruiker een budget investering maakt."
       budget_investment_selected:
-        title: "Budget investering geselecteerd"
+        title: "Voorstel geselecteerd"
         description: "Verzonden aan de auteur wanneer een budget investering is geselecteerd."
       budget_investment_unfeasible:
         title: "Onhaalbare budget investering"
@@ -1294,266 +1303,4 @@ nl:
         census_code: Census code
         code_help: Responscode voor het gebied van de census API
         coordinates: Coördinaten beschikbaar
-        coordinates_help: Coördinaten die een klikbaar gebied op een HTML-afbeelding met hyperlinks genereert
-      edit:
-        form:
-          submit_button: Bewaar wijzigingen
-        editing: Editing geozone
-        back: Ga terug
-      new:
-        back: Ga terug
-        creating: Create district
-      delete:
-        success: Geozone successfully deleted
-        error: This geozone can't be deleted since there are elements attached to it
-    signature_sheets:
-      author: Auteur
-      created_at: Aanmaakdatum
-      name: Naam
-      no_signature_sheets: "Er zijn geen handtekeningenlijsten"
-      index:
-        title: Handtekeningenlijsten
-        new: Nieuwe handtekeningenlijsten
-      new:
-        title: Niewe handtekeningenlijst
-        document_numbers_note: "Voeg nummers toe, gescheiden door komma's (,)"
-        submit: Niewe handtekeningenlijst
-        text_help:
-          example_text: "Voorbeeld: "
-      show:
-        created_at: Aangemaakt
-        author: Auteur
-        users: Deelnemer
-        signature_count: "Aantal handtekeningen:"
-        verified:
-          one: "Er is %{count} geldige handtekening"
-          other: "Er zijn %{count} geldige handtekeningen"
-        unverified:
-          one: "Er is %{count} ongeldige handtekening"
-          other: "Er zijn %{count} ongeldige handtekeningen"
-        unverified_error: (Niet geverifieerd door de telling)
-        loading: "Handtekeningen worden nog geverifieerd; ververs de pagina over enkele ogenblikken"
-    stats:
-      show:
-        stats_title: Statistieken
-        summary:
-          comment_votes: Comment votes
-          comments: Reacties
-          debate_votes: Debate votes
-          debates: Discussie
-          proposal_votes: Proposal votes
-          proposals: Proposals
-          budgets: Open budgetten
-          budget_investments: Budget bestemmingen
-          unverified_users: Ongeverifieerde gebruikers
-          user_level_three: Level three users
-          user_level_two: Level two users
-          users: Total users
-          verified_users: Geverifieerde gebruikers
-          verified_users_who_didnt_vote_proposals: Verified users who didn't votes proposals
-          visits: Bezoeken
-          votes: Total votes
-        budgets_title: Burgerbegrotingen
-        participatory_budgets: Burgerbegrotingen
-        direct_messages: Direct messages
-        proposal_notifications: Proposal notifications
-        incomplete_verifications: Incomplete verifications
-        polls: Peilingen
-        sdg: SDG
-      graph:
-        debate_created: Discussie
-        visit: Visits
-        proposal_created: Voorstellen
-      budget_balloting:
-        vote_count: Votes
-        participant_count: deelnemers
-      budget_supporting:
-        headings: Rubrieken
-        users: Deelnemer
-        vote_count: Votes
-        participant_count: deelnemers
-      direct_messages:
-        title: Privéberichten
-        total: Totaal
-        users_who_have_sent_message: Users that have sent a private message
-      proposal_notifications:
-        title: Voorstel notificaties
-        total: Totaal
-        proposals_with_notifications: Proposals with notifications
-        not_available: "Voorstel niet beschikbaar"
-      polls:
-        title: Peiling Stats
-        all: Peilingen
-        web_participants: Web deelnemers
-        total_participants: Aantal deelnemers
-        poll_questions: "Vragen van de peiling: %{poll}"
-        table:
-          poll_name: Peiling
-          question_name: Question
-          origin_web: Web deelnemers
-          origin_total: Aantal deelnemers
-      sdg:
-        debates: "Discussie"
-        polls: "Polls"
-        proposals: "Proposals"
-    tags:
-      create: Onderwerp aanmaken
-      index:
-        add_tag: Add a new proposal topic
-        title: Proposal topics
-        topic: Onderwerp
-        help: "Wanneer een gebruiker een voorstel maakt, worden de volgende onderwerpen voorgesteld als standaard tags."
-    users:
-      columns:
-        id: ID
-        name: Naam
-        email: E-mail
-        document_number: Document nummer
-        roles: Rollen
-        verification_level: Verificatieniveau
-      index:
-        title: Verborgen gebruikers
-        no_users: Er zijn geen deelnemers.
-        filter: Filter
-        filters:
-          active: Actieve
-          erased: Verwijderd
-      search:
-        placeholder: Zoek deelnemer per e-mail, naam of documentnummer
-    verifications:
-      index:
-        phone_not_given: Phone not given
-        sms_code_not_confirmed: Has not confirmed the sms code
-        title: Onvolledige verificaties
-    site_customization:
-      content_blocks:
-        information: Information about content blocks
-        about: "You can create HTML content blocks to be inserted in the header or the footer of your Consul."
-        html_format: "Een inhoudsblok is een groep van snelkoppelingen in het volgende formaat:"
-        no_blocks: "Er zijn geen inhoudsblokken."
-        create:
-          notice: Content block created successfully
-          error: Content block couldn't be created
-        update:
-          notice: Inhoudsblok aangepast
-          error: Inhoudsblok kon niet worden aangepast
-        destroy:
-          notice: Content block deleted successfully
-        edit:
-          title: Editing content block
-        index:
-          create: Create new content block
-          delete: Blok verwijderen
-          title: Inhoudsblokken
-        new:
-          title: Nieuwe content paragraaf
-        content_block:
-          body: Hoofdtekst
-          name: Naam
-          names:
-            top_links: Top links
-            footer: Voettekst
-            subnavigation_left: Hoofd navigatie links
-            subnavigation_right: Hoofd navigatie rechts
-      images:
-        index:
-          title: Aangepaste afbeeldingen
-          update: Sla op
-          delete: Verwijder
-          image: Afbeelding
-        update:
-          notice: Afbeelding aangepast
-          error: Afbeelding kon niet worden aangepast
-        destroy:
-          notice: Image deleted successfully
-          error: Image couldn't be deleted
-      pages:
-        create:
-          notice: Page created successfully
-          error: Page couldn't be created
-        update:
-          notice: Pagina aangepast
-          error: Pagina kon niet worden aangepast
-        destroy:
-          notice: Page deleted successfully
-        edit:
-          title: Editing %{page_title}
-        form:
-          options: Opties
-        index:
-          create: Create new page
-          delete: Delete page
-          title: Aangepaste pagina's
-          see_page: Bekijken
-        new:
-          title: Create new custom page
-        page:
-          created_at: Aanmaakdatum
-          status: Status
-          updated_at: Bijgewerkt op
-          title: Titel
-          slug: Slug
-          see_cards: Tegels bekijken
-        cards:
-          cards_title: tegels
-          create_card: Kaart aanmaken
-          no_cards: Er zijn geen tegels.
-          columns_help: "Breedte van de tegel in aantal kolommen. Op mobiele schermen worden tegels altijd op 100% breedte getoond."
-          create:
-            notice: "Tegel aangemaakt"
-          update:
-            notice: "Tegel bijgewerkt"
-          destroy:
-            notice: "Tegel verwijderd"
-    tenants:
-      index:
-        enabled: Ingeschakeld
-    homepage:
-      title: Homepage
-      description: De actieve modules worden weergegeven op de homepage in dezelfde volgorde als hier.
-      header_title: Koptekst
-      no_header: Er is geen header.
-      create_header: Koptekst maken
-      cards_title: Tegels
-      create_card: Kaart aanmaken
-      no_cards: Er zijn geen tegels.
-      feeds:
-        proposals: Proposals
-        debates: Discussie
-        processes: Proces
-      new:
-        header_title: Nieuwe header
-        submit_header: Koptekst maken
-        card_title: Nieuwe kaart
-        submit_card: Kaart aanmaken
-      edit:
-        header_title: Header bewerken
-        submit_header: Bewaar koptekst
-        card_title: Kaart bewerken
-        submit_card: Kaart opslaan
-    audits:
-      id: "ID"
-      field: "Veld"
-      new_value: "Nieuwe Waarde"
-      old_value: "Oude Waarde"
-      edited_at: "Bewerkt op"
-      edited_by: "Bewerkt door"
-      actions: "Activiteiten"
-    local_census_records:
-      index:
-        document_type: Documentsoort
-        document_number: Document nummer
-        date_of_birth: Date of birth
-        postal_code: Postcode
-        import: Importeer CSV
-      imports:
-        show:
-          import: Opnieuw importeren
-          errored: Rijen met fouten
-    machine_learning:
-      error: "Fout:"
-      executed_by: "Uitgevoerd door:"
-      related_content: "Gerelateerde inhoud"
-      started_at: "Gestart op:"
-      tab_help: "Help"
-      tags: "Tags"
+        coordinates_help: Coördinaten die een klikbaar gebied op een HTML-afbeeldi

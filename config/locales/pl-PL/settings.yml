@@ -62,6 +62,7 @@ pl:
       poll_short_title: Ankiety
       poll_description: Opis sondy
       email_short_title: E-mail
+      poster_short_title: Plakat
     analytics_url: "Analityki adresu URL"
     proposal_notification_minimum_interval_in_days: "Minimalna liczba dni jaka musi upłynąć, zanim autor/ka wniosku może przesłać nowe powiadomienie o wniosku"
     proposal_notification_minimum_interval_in_days_description: "Minimalna liczba dni jaka musi upłynąć, zanim autor/ka wniosku wyśle powiadomienie wszystkim popierającym"
@@ -101,6 +102,7 @@ pl:
       public_stats_description: "Wyświetl publiczne statystyki w panelu administracyjnym"
       help_page: "Pomoc"
       help_page_description: 'Wyświetlaj menu "help", które zawiera strony z informacjami o każdej włączonej funkcji. Zamiera także niestandardowe strony i menu, które można utworzyć w "Ustawienia" > "Zawartość witryny" > "Niestandardowych stron"'
+      sdg: SDG
     map:
       latitude: "Szerokość geograficzna"
       latitude_description: "Szerokość geograficzna, aby wyświetlić położenie na mapie"

@@ -103,7 +103,6 @@ ro:
           submit: Înregistrare
           terms: Înregistrându-vă acceptați %{terms}
           terms_link: termeni și condiții de utilizare
-          terms_title: Înregistrându-vă acceptați termenii și condițiile de utilizare
           title: Înregistrare
           username_is_available: Nume de utilizator valabil
           username_is_not_available: Nume de utilizator deja în uz

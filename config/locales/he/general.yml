@@ -145,7 +145,6 @@ he:
       invalid_date_range: "טווח תאריכים לא חוקי"
   form:
     accept_terms: אני מאשר/ת את %{policy} ואת %{conditions}
-    accept_terms_title: אני מאשר/ת שקראתי והסכמתי למדיניות הפרטיות, לכללים ותנאי השימוש
     conditions: כללים ותנאי שימוש
     debate: דיון
     direct_message: פנייה פרטית
@@ -169,11 +168,6 @@ he:
   geozones:
     none: בכל העיר
   layouts:
-    application:
-      chrome: גוגל כרום
-      firefox: פיירפוקס
-      ie: שמנו לב שהדפדפן שלך הוא אינטרנט אקפלורר. למען חוויה טובה יותר, אנו ממליצים להשתמש בגוגל כרום -%{chrome} או בפיירפוקס %{firefox}
-      ie_title: אתר זה אינו מותאם לדפדפן שלך
     dashboard:
       proposal_header:
         published: פורסם
@@ -196,7 +190,7 @@ he:
       conditions: כללים ותנאי שימוש
       consul: מערכת ההצבעות של קול העם
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: Consul, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: פורטל זה משתמש בפלטפורמת %{consul} שהיא %{open_source}.
       open_source: תוכנת קוד פתוח
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html

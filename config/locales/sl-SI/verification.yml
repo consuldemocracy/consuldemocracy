@@ -43,7 +43,6 @@ sl:
           success: Prebivališče potrjeno
       new:
         accept_terms_text: Sprejmem %{terms_url} popisa
-        accept_terms_text_title: Sprejmem pogoje uporabe dostopa do popisa
         document_number: Številka dokumenta
         document_number_help_title: Pomoč
         document_number_help_text: "<strong>DNI</strong>: 12345678A<br> <strong>Potni list</strong>: AAA000001<br> <strong>Potrdilo o prebivališču</strong>: X1234567P"
