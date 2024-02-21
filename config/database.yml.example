@@ -1,14 +1,15 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: localhost
+  host: database
   pool: 5
-  username:
-  password:
+  port: 5432
+  username: postgres
+  password: postgres
 
 development: &development
   <<: *default
-  database: consul_development
+  database: consul
 
 # The staging, preproduction and production dbs are only needed
 # for running rake assets:precompile locally before deploying
@@ -23,4 +24,4 @@ production:
 
 test:
   <<: *default
-  database: consul_test
+  database: consuldatabase_test
