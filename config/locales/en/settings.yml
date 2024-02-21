@@ -91,6 +91,8 @@ en:
       google_login_description: "Allow users to sign up with their Google Account"
       wordpress_login: "Wordpress login"
       wordpress_login_description: "Allow users to sign up with their Wordpress Account"
+      saml_login: "Saml login"
+      saml_login_description: "Allow users to sign up with their Saml Account"
       featured_proposals: "Featured proposals"
       featured_proposals_description: "Shows featured proposals on index proposals page"
       signature_sheets: "Signature sheets"

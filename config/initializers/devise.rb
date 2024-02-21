@@ -242,6 +242,8 @@ Devise.setup do |config|
   config.sign_out_via = :delete
 
   # ==> OmniAuth
+
+
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
@@ -265,7 +267,15 @@ Devise.setup do |config|
                   strategy_class: OmniAuth::Strategies::Wordpress,
                   client_options: { site: Rails.application.secrets.wordpress_oauth2_site },
                   setup: OmniauthTenantSetup.wordpress_oauth2
-
+  saml_settings = {}
+  if Rails.application.secrets.saml_idp_metadata_url.present?
+    idp_metadata_parser = OneLogin::RubySaml::IdpMetadataParser.new
+    saml_settings = idp_metadata_parser.parse_remote_to_hash(Rails.application.secrets.saml_idp_metadata_url)
+    saml_settings[:idp_sso_service_url] = Rails.application.secrets.saml_idp_sso_service_url
+    saml_settings[:sp_entity_id] = Rails.application.secrets.saml_sp_entity_id
+    saml_settings[:allowed_clock_drift] = 1.minute
+  end
+  config.omniauth :saml, saml_settings
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

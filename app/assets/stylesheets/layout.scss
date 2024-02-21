@@ -1264,6 +1264,7 @@ table {
 .button.button-twitter,
 .button.button-facebook,
 .button.button-google,
+.button.button-saml,
 .button.button-wordpress {
   color: inherit;
   font-weight: bold;
@@ -1271,6 +1272,16 @@ table {
   &::before {
     font-size: rem-calc(24);
     margin-right: $font-icon-margin;
+  }
+}
+
+.button.button-saml {
+  background: #dcdde3;
+  border-left: 3px solid #2f2f33;
+
+  &::before {
+    color: #2f2f33;
+    content: "8";
   }
 }
 
