@@ -11,6 +11,12 @@ else
   arg=$optOrArg
 fi
 
+# If arg is not set
+if [ -z "$arg" ]; then
+  echo "Please provide the environment to deploy"
+  exit 1
+fi
+
 unamestr=$(uname)
 
 if [ "$production" = true ]; then
@@ -30,6 +36,8 @@ bin/tenant -a ${arg}
 cd ./config
 sed -e "s/xxx.xxx.xxx.xxx/$HOST/" -e "s/user: "deploy"/user: "$ANSIBLE_USER"/" deploy-secrets.yml.example > deploy-secrets.yml
 
+
 echo "$REPO"
+echo "$branch"
 
 cap production deploy --trace
