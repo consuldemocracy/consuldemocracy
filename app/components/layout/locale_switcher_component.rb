@@ -1,5 +1,5 @@
 class Layout::LocaleSwitcherComponent < ApplicationComponent
-  delegate :name_for_locale, :link_list, :current_path_with_query_params, :rtl?, to: :helpers
+  use_helpers :name_for_locale, :link_list, :current_path_with_query_params, :rtl?
 
   def render?
     locales.size > 1

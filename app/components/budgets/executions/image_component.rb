@@ -1,6 +1,6 @@
 class Budgets::Executions::ImageComponent < ApplicationComponent
   attr_reader :investment
-  delegate :image_path_for, to: :helpers
+  use_helpers :image_path_for
 
   def initialize(investment)
     @investment = investment

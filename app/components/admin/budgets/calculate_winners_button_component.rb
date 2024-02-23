@@ -1,6 +1,6 @@
 class Admin::Budgets::CalculateWinnersButtonComponent < ApplicationComponent
   attr_reader :budget, :from_investments
-  delegate :can?, to: :helpers
+  use_helpers :can?
 
   def initialize(budget, from_investments: false)
     @budget = budget

@@ -1,5 +1,5 @@
 class Layout::TopLinksComponent < ApplicationComponent
-  delegate :content_block, to: :helpers
+  use_helpers :content_block
 
   def render?
     top_links_content_block.present?

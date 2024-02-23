@@ -1,5 +1,5 @@
 class Budgets::MapComponent < ApplicationComponent
-  delegate :render_map, to: :helpers
+  use_helpers :render_map
   attr_reader :budget
 
   def initialize(budget)

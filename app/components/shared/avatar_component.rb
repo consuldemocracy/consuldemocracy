@@ -1,6 +1,6 @@
 class Shared::AvatarComponent < ApplicationComponent
   attr_reader :record, :given_options
-  delegate :avatar_image, to: :helpers
+  use_helpers :avatar_image
 
   def initialize(record, **given_options)
     @record = record

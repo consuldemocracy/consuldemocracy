@@ -2,7 +2,7 @@ class Proposals::FormComponent < ApplicationComponent
   include TranslatableFormHelper
   include GlobalizeHelper
   attr_reader :proposal, :url
-  delegate :current_user, :suggest_data, :geozone_select_options, to: :helpers
+  use_helpers :current_user, :suggest_data, :geozone_select_options
 
   def initialize(proposal, url:)
     @proposal = proposal

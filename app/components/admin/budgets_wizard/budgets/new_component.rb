@@ -1,7 +1,7 @@
 class Admin::BudgetsWizard::Budgets::NewComponent < ApplicationComponent
   include Header
   attr_reader :budget
-  delegate :single_heading?, to: :helpers
+  use_helpers :single_heading?
 
   def initialize(budget)
     @budget = budget

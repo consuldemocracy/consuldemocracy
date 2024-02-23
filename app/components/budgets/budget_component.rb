@@ -1,6 +1,6 @@
 class Budgets::BudgetComponent < ApplicationComponent
   attr_reader :budget
-  delegate :attached_background_css, to: :helpers
+  use_helpers :attached_background_css
 
   def initialize(budget)
     @budget = budget

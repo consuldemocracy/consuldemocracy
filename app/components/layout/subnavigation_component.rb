@@ -1,3 +1,3 @@
 class Layout::SubnavigationComponent < ApplicationComponent
-  delegate :content_block, :layout_menu_link_to, to: :helpers
+  use_helpers :content_block, :layout_menu_link_to
 end
