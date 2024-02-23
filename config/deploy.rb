@@ -70,10 +70,6 @@ namespace :deploy do
 
   after :publishing, "setup_puma"
   before "puma:smart_restart", "stop_puma_daemon"
-
-  after :published, "deploy:restart"
-  before "deploy:restart", "puma:start"
-
   after :finished, "refresh_sitemap"
 
   desc "Deploys and runs the tasks needed to upgrade to a new release"
