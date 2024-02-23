@@ -1103,16 +1103,16 @@ body > header,
 // --------------------
 
 footer {
-  color: #fff;
+  color: $footer-color;
 
   a,
   a:active,
   a:focus {
-    color: #fff;
+    color: $footer-color;
     text-decoration: none;
 
     &:hover {
-      color: #fff;
+      color: $footer-color;
     }
   }
 
@@ -1124,7 +1124,6 @@ footer {
 }
 
 .footer {
-  background: #2d313b;
   padding-top: $line-height * 2;
 
   .footer-title {
@@ -1141,14 +1140,12 @@ footer {
     width: auto;
 
     [class^="fa"] {
-      color: $footer;
       font-size: rem-calc(40);
       text-align: center;
       width: rem-calc(60);
     }
 
     a {
-      color: $footer;
       display: inline-block;
       font-size: rem-calc(20);
       line-height: rem-calc(40);
