@@ -4,7 +4,7 @@ describe Legislation::AnswersController do
   describe "POST create" do
     let(:legal_process) do
       create(:legislation_process, debate_start_date: Date.current - 3.days,
-             debate_end_date: Date.current + 2.days)
+                                   debate_end_date: Date.current + 2.days)
     end
     let(:question) { create(:legislation_question, process: legal_process, title: "Question 1") }
     let(:question_option) { create(:legislation_question_option, question: question, value: "Yes") }
@@ -14,12 +14,12 @@ describe Legislation::AnswersController do
       sign_in user
 
       post :create, params: {
-                      process_id: legal_process.id,
-                      question_id: question.id,
-                      legislation_answer: {
-                        legislation_question_option_id: question_option.id
-                      }
-                    }
+        process_id: legal_process.id,
+        question_id: question.id,
+        legislation_answer: {
+          legislation_question_option_id: question_option.id
+        }
+      }
       expect(Ahoy::Event.where(name: :legislation_answer_created).count).to eq 1
       expect(Ahoy::Event.last.properties["legislation_answer_id"]).to eq Legislation::Answer.last.id
     end

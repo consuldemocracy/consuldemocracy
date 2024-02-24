@@ -1,8 +1,8 @@
 require "rails_helper"
 
 describe "Commenting Budget::Investments" do
-  let(:user) { create :user }
-  let(:investment) { create :budget_investment }
+  let(:user) { create(:user) }
+  let(:investment) { create(:budget_investment) }
 
   it_behaves_like "flaggable", :budget_investment_comment
 
@@ -36,10 +36,11 @@ describe "Commenting Budget::Investments" do
     expect(page).to have_content "First subcomment"
     expect(page).to have_content "Last subcomment"
 
-    expect(page).to have_link "Go back to #{investment.title}", href: budget_investment_path(investment.budget, investment)
+    expect(page).to have_link "Go back to #{investment.title}",
+                              href: budget_investment_path(investment.budget, investment)
 
     within ".comment", text: "Parent" do
-      expect(page).to have_selector(".comment", count: 2)
+      expect(page).to have_css ".comment", count: 2
     end
   end
 
@@ -60,8 +61,14 @@ describe "Commenting Budget::Investments" do
 
   scenario "Collapsable comments" do
     parent_comment = create(:comment, body: "Main comment", commentable: investment)
-    child_comment  = create(:comment, body: "First subcomment", commentable: investment, parent: parent_comment)
-    grandchild_comment = create(:comment, body: "Last subcomment", commentable: investment, parent: child_comment)
+    child_comment  = create(:comment,
+                            body: "First subcomment",
+                            commentable: investment,
+                            parent: parent_comment)
+    grandchild_comment = create(:comment,
+                                body: "Last subcomment",
+                                commentable: investment,
+                                parent: child_comment)
 
     visit budget_investment_path(investment.budget, investment)
 
@@ -123,11 +130,17 @@ describe "Commenting Budget::Investments" do
     expect(c2.body).to appear_before(c3.body)
   end
 
-  scenario "Creation date works differently in roots and in child comments, when sorting by confidence_score" do
+  scenario "Creation date works differently in roots and child comments when sorting by confidence_score" do
     old_root = create(:comment, commentable: investment, created_at: Time.current - 10)
     new_root = create(:comment, commentable: investment, created_at: Time.current)
-    old_child = create(:comment, commentable: investment, parent_id: new_root.id, created_at: Time.current - 10)
-    new_child = create(:comment, commentable: investment, parent_id: new_root.id, created_at: Time.current)
+    old_child = create(:comment,
+                       commentable: investment,
+                       parent_id: new_root.id,
+                       created_at: Time.current - 10)
+    new_child = create(:comment,
+                       commentable: investment,
+                       parent_id: new_root.id,
+                       created_at: Time.current)
 
     visit budget_investment_path(investment.budget, investment, order: :most_voted)
 
@@ -146,7 +159,7 @@ describe "Commenting Budget::Investments" do
   end
 
   scenario "Turns links into html links" do
-    create :comment, commentable: investment, body: "Built with http://rubyonrails.org/"
+    create(:comment, commentable: investment, body: "Built with http://rubyonrails.org/")
 
     visit budget_investment_path(investment.budget, investment)
 
@@ -154,13 +167,15 @@ describe "Commenting Budget::Investments" do
       expect(page).to have_content "Built with http://rubyonrails.org/"
       expect(page).to have_link("http://rubyonrails.org/", href: "http://rubyonrails.org/")
       expect(find_link("http://rubyonrails.org/")[:rel]).to eq("nofollow")
-      expect(find_link("http://rubyonrails.org/")[:target]).to eq("_blank")
+      expect(find_link("http://rubyonrails.org/")[:target]).to be_blank
     end
   end
 
   scenario "Sanitizes comment body for security" do
-    create :comment, commentable: investment,
-                     body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
+    create(:comment, commentable: investment,
+                     body: "<script>alert('hola')</script> " \
+                           "<a href=\"javascript:alert('sorpresa!')\">click me<a/> " \
+                           "http://www.url.com")
 
     visit budget_investment_path(investment.budget, investment)
 
@@ -246,7 +261,7 @@ describe "Commenting Budget::Investments" do
       expect(page).to have_content "It will be done next week."
     end
 
-    expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
+    expect(page).not_to have_css "#js-comment-form-comment_#{comment.id}"
   end
 
   scenario "Reply update parent comment responses count" do
@@ -362,7 +377,7 @@ describe "Commenting Budget::Investments" do
         expect(page).to have_css "img.moderator-avatar"
       end
 
-      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
+      expect(page).not_to have_css "#js-comment-form-comment_#{comment.id}"
     end
 
     scenario "can not comment as an administrator" do
@@ -461,7 +476,7 @@ describe "Commenting Budget::Investments" do
           expect(page).to have_css "img.admin-avatar"
         end
 
-        expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
+        expect(page).not_to have_css "#js-comment-form-comment_#{comment.id}"
         expect(page).to have_css "div.is-admin"
       end
 
@@ -469,9 +484,9 @@ describe "Commenting Budget::Investments" do
         manuela = create(:user, username: "Manuela")
         admin   = create(:administrator, user: manuela)
         comment = create(:comment,
-                          commentable: investment,
-                          user: manuela,
-                          administrator_id: admin.id)
+                         commentable: investment,
+                         user: manuela,
+                         administrator_id: admin.id)
 
         visit budget_investment_path(investment.budget, investment)
 
@@ -563,7 +578,7 @@ describe "Commenting Budget::Investments" do
       end
     end
 
-    scenario "Trying to vote multiple times" do
+    scenario "Allow undoing votes" do
       visit budget_investment_path(budget, investment)
 
       within("#comment_#{comment.id}_votes") do
@@ -576,14 +591,14 @@ describe "Commenting Budget::Investments" do
         click_button "I agree"
 
         within(".in-favor") do
-          expect(page).to have_content "1"
+          expect(page).to have_content "0"
         end
 
         within(".against") do
           expect(page).to have_content "0"
         end
 
-        expect(page).to have_content "1 vote"
+        expect(page).to have_content "No votes"
       end
     end
   end

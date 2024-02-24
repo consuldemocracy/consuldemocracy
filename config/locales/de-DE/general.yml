@@ -143,7 +143,6 @@ de:
         poll_ended: "Kann nicht geändert werden, wenn die Abstimmung bereits beendet ist."
   form:
     accept_terms: Ich stimme der %{policy} und den %{conditions} zu
-    accept_terms_title: Ich stimme den Datenschutzrichtlinien und den Nutzungsbedingungen zu
     conditions: Allgemeine Nutzungsbedingungen
     debate: Diskussion
     direct_message: Private Nachricht
@@ -177,11 +176,6 @@ de:
   geozones:
     none: Ganze Stadt
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Wir haben festgestellt, dass Sie Internet Explorer verwenden. Für eine verbesserte Anwendung empfehlen wir %{firefox} oder %{chrome}.
-      ie_title: Diese Website ist für Ihren Browser nicht optimiert
     dashboard:
       proposal_header:
         published: Veröffentlicht
@@ -200,9 +194,9 @@ de:
     footer:
       accessibility: Barrierefreiheit
       conditions: Allgemeine Nutzungsbedingungen
-      consul: CONSUL Anwendung
+      consul: CONSUL DEMOCRACY Anwendung
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Die Plattform basiert auf %{consul}, einer %{open_source}.
       open_source: Open-Source Software
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html

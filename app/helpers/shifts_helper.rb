@@ -9,7 +9,7 @@ module ShiftsHelper
     return [] if polls.blank?
 
     dates = polls.map(&:ends_at).map(&:to_date).sort.reduce([]) do |total, date|
-      initial_date = date < Date.current ? Date.current : date
+      initial_date = [date, Date.current].max
       total << (initial_date..date + Poll::RECOUNT_DURATION).to_a
     end
     date_options(dates.flatten.uniq, Poll::Shift.tasks[:recount_scrutiny], booth)
@@ -25,7 +25,7 @@ module ShiftsHelper
 
   def start_date(polls)
     start_date = polls.map(&:starts_at).min.to_date
-    start_date < Date.current ? Date.current : start_date
+    [start_date, Date.current].max
   end
 
   def end_date(polls)

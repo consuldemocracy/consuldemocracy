@@ -140,7 +140,6 @@ hr:
       invalid_date_range: "Nevažeč raspon podataka"
   form:
     accept_terms: Slažem se s %{policy} i %{conditions}
-    accept_terms_title: Slažem se s Politikom Privatnosti i Uvjetima korištenja
     conditions: Odredbe i uvjeti korištenja
     debate: Rasprave
     direct_message: privatna poruka
@@ -173,11 +172,6 @@ hr:
   geozones:
     none: Cijeli grad
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Primjetili smo da koristite preglednik Internet Explorer. Za poboljšano iskustvo preporučujemo korištenje %{firefox} ili %{chrome}.
-      ie_title: Webstranica nije optimizirana za vaš preglednik
     dashboard:
       proposal_header:
         published: Objavljeno
@@ -197,9 +191,9 @@ hr:
     footer:
       accessibility: Pristupačnost
       conditions: Odredbe i uvjeti korištenja
-      consul: CONSUL aplikacija
+      consul: CONSUL DEMOCRACY aplikacija
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Ovaj portal koristi %{consul} koji je %{open_source}.
       open_source: open-source softver
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html

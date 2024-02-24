@@ -14,7 +14,7 @@
     <% if Setting["proposals.poll_link"].present? %>
       <h4><%= t("dashboard.polls.index.links") %></h4>
       <%= link_to t("dashboard.polls.index.additiontal_information"),
-                  Setting["proposals.poll_link"], target: "_blank" %>
+                  Setting["proposals.poll_link"] %>
     <% end %>
 
     <p><strong><%= t("dashboard.polls.index.count", count: @polls.count) %></strong></p>

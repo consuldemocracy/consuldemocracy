@@ -135,7 +135,6 @@ pt-BR:
       invalid_date_range: "Intervalo de datas inválido"
   form:
     accept_terms: Eu concordo com a %{policy} e as %{conditions}
-    accept_terms_title: Concordo com a Política de Privacidade e os Termos e condições de uso
     conditions: Termos e condições de uso
     debate: Debate
     direct_message: mensagem privada
@@ -169,11 +168,6 @@ pt-BR:
   geozones:
     none: Toda a cidade
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Nós detectamos que você está navegando com o Internet Explorer. Para uma melhor experiência, nós recomendamos o uso do %{chrome} ou %{firefox}.
-      ie_title: Este website não está otimizado para o seu navegador
     dashboard:
       proposal_header:
         published: Publicado
@@ -192,9 +186,9 @@ pt-BR:
     footer:
       accessibility: Acessibilidade
       conditions: Termos e condições de uso
-      consul: Aplicativo Consul
+      consul: Aplicativo CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: Consul, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Este portal usa o %{consul} que é %{open_source}. De Madrid para o mundo.
       open_source: programa de código aberto
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html

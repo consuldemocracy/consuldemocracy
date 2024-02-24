@@ -8,7 +8,7 @@ describe Management::SessionsController do
 
       expect(response).to redirect_to "/"
       expect(flash[:alert]).to eq "You do not have permission to access this page."
-      expect(session[:manager]).to be_nil
+      expect(session[:manager]).to be nil
     end
 
     it "redirects to management root path if authorized manager with right credentials" do
@@ -16,10 +16,10 @@ describe Management::SessionsController do
       allow_any_instance_of(ManagerAuthenticator).to receive(:auth).and_return(manager)
 
       get :create, params: {
-                     login: "JJB033",
-                     clave_usuario: "31415926",
-                     fecha_conexion: "20151031135905"
-                   }
+        login: "JJB033",
+        clave_usuario: "31415926",
+        fecha_conexion: "20151031135905"
+      }
       expect(response).to be_redirect
       expect(session[:manager][:login]).to eq "JJB033"
     end
@@ -46,7 +46,7 @@ describe Management::SessionsController do
 
       expect(response).to redirect_to "/"
       expect(flash[:alert]).to eq "You do not have permission to access this page."
-      expect(session[:manager]).to be_nil
+      expect(session[:manager]).to be nil
     end
   end
 
@@ -58,9 +58,9 @@ describe Management::SessionsController do
 
       delete :destroy
 
-      expect(session[:manager]).to be_nil
-      expect(session[:document_type]).to be_nil
-      expect(session[:document_number]).to be_nil
+      expect(session[:manager]).to be nil
+      expect(session[:document_type]).to be nil
+      expect(session[:document_number]).to be nil
       expect(response).to be_redirect
     end
   end

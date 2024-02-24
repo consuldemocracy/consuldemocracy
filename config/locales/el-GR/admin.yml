@@ -436,7 +436,6 @@ el:
         title: "Έγγραφα"
         format: "Μορφή"
         size: "Μέγεθος"
-        url: "URL"
       create:
         success_notice: "Το έγγραφο φορτώθηκε με επιτυχία"
         unable_notice: "Μη έγκυρο έγγραφο"

@@ -100,7 +100,6 @@ ast:
           submit: Rexistrase
           terms: Al registrarte aceptas las %{terms}
           terms_link: condiciones de uso
-          terms_title: Al registrarte aceptas las condiciones de uso
           title: Rexistrase
           username_is_available: Nombre de usuario disponible
           username_is_not_available: Nombre de usuario ya existente

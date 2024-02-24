@@ -150,7 +150,6 @@ ar:
       invalid_date_range: "نطاق التاريخ غير صالح"
   form:
     accept_terms: أوافق على %{policy} و%{conditions}
-    accept_terms_title: أوافق على سياسة الخصوصية وشروط وأحكام الاستخدام
     conditions: قوانين وشروط الاستخدام
     debate: الحوارات
     direct_message: رسالة خاصة
@@ -174,11 +173,6 @@ ar:
   geozones:
     none: جميع المدن
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: فايرفوكس
-      ie: لقد اكتشفنا أنك تتصفح باستخدام Internet Explorer. للحصول على أفضل تجربة، ننصحك بإستخدام %{firefox} أو %{chrome}.
-      ie_title: هذا الموقع لا يتناسب مع متصفحك
     dashboard:
       proposal_header:
         published: منشورة
@@ -200,9 +194,9 @@ ar:
     footer:
       accessibility: إمكانية الوصول
       conditions: قوانين وشروط الاستخدام
-      consul: تطبيق CONSUL
+      consul: تطبيق CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: تستخدم هذه البوابة %{consul} والذي هو%{open_source}.
       open_source: برنامج مفتوح المصدر
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html

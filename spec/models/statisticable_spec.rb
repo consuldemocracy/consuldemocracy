@@ -169,9 +169,7 @@ describe Statisticable do
 
     context "all gender, age and geozone stats" do
       before do
-        allow(stats).to receive(:gender?).and_return(true)
-        allow(stats).to receive(:age?).and_return(true)
-        allow(stats).to receive(:geozone?).and_return(true)
+        allow(stats).to receive_messages(gender?: true, age?: true, geozone?: true)
       end
 
       it "includes all stats methods" do

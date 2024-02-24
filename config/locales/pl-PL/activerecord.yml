@@ -184,6 +184,16 @@ pl:
         few: "Powiadomienie o wnioskach"
         many: "Powiadomienie o wnioskach"
         other: "Powiadomienie o wnioskach"
+      dashboard/administrator_task:
+        one: Zadanie
+        few: Zadania
+        many: Zadań
+        other: Zadań
+      link:
+        one: Link
+        few: Linki
+        many: Linków
+        other: Linków
     attributes:
       budget:
         name: "Nazwa"
@@ -355,14 +365,17 @@ pl:
         signable_id: "Podpisywalny identyfikator"
         document_numbers: "Numery dokumentów"
       sdg/goal:
+        code: "Kod"
         title: "Tytuł"
         description: "Opis"
       sdg/local_target:
+        code: "Kod"
         title: "Tytuł"
       sdg/local_target/translation:
         title: "Tytuł"
         description: "Opis"
       sdg/target:
+        code: "Kod"
         title: "Tytuł"
       site_customization/page:
         content: Zawartość
@@ -390,6 +403,8 @@ pl:
         body: Zawartość
       tag:
         name: "Wpisz nazwę tematu"
+      tenant:
+        url: "URL"
       topic:
         title: "Tytuł"
         description: "Tekst początkowy"
@@ -502,8 +517,11 @@ pl:
         description: Opis
         active: Aktywny
         action_type: Typ
+      dashboard/administrator_task:
+        source: Źródło
       link:
         label: Tytuł
+        url: URL
       valuator:
         description: Opis
         valuator_group_id: Grupa weryfikująca

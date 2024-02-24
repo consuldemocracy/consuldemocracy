@@ -17,7 +17,7 @@ describe "Admin custom content blocks", :admin do
       visit admin_root_path
 
       within("#side_menu") do
-        click_link "Settings"
+        click_link "Site content"
         click_link "Custom content blocks"
       end
 
@@ -26,7 +26,7 @@ describe "Admin custom content blocks", :admin do
       click_link "Create new content block"
 
       select I18n.t("admin.site_customization.content_blocks.content_block.names.footer"),
-                   from: "site_customization_content_block_name"
+             from: "site_customization_content_block_name"
       select "es", from: "site_customization_content_block_locale"
       fill_in "site_customization_content_block_body", with: "Some custom content"
 
@@ -42,7 +42,7 @@ describe "Admin custom content blocks", :admin do
       visit admin_root_path
 
       within("#side_menu") do
-        click_link "Settings"
+        click_link "Site content"
         click_link "Custom content blocks"
       end
 
@@ -51,7 +51,7 @@ describe "Admin custom content blocks", :admin do
       click_link "Create new content block"
 
       select I18n.t("admin.site_customization.content_blocks.content_block.names.top_links"),
-                   from: "site_customization_content_block_name"
+             from: "site_customization_content_block_name"
       select "en", from: "site_customization_content_block_locale"
       fill_in "site_customization_content_block_body", with: "Some custom content"
 
@@ -69,7 +69,7 @@ describe "Admin custom content blocks", :admin do
       visit admin_root_path
 
       within("#side_menu") do
-        click_link "Settings"
+        click_link "Site content"
         click_link "Custom content blocks"
       end
 

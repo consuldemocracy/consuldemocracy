@@ -35,7 +35,7 @@ gd:
     document_verifications:
       already_verified: Tha an cunntas cleachdaiche seo dearbhte mar-thà.
       has_no_account: Gus cunntas a chruthachadh, rach gu %{link} is briog air <b>"Clàraich"</b> gu h-àrd air taobh chlì na sgrìn.
-      link: CONSUL
+      link: CONSUL DEMOCRACY
       in_census_has_following_permissions: "Faodaidh an cleachdaiche seo pàirt a ghabhail air an làraich-lìn leis na ceadan a leanas:"
       not_in_census: Chan eil an sgrìobhainn seo clàraichte.
       not_in_census_info: "Faodaidh saoranaich nach eil sa Chunntas-sluaigh pàirt a ghabhail air an làraich-lìn leis na ceadan a leanas:"

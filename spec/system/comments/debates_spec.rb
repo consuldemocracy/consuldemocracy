@@ -1,8 +1,8 @@
 require "rails_helper"
 
 describe "Commenting debates" do
-  let(:user)   { create :user }
-  let(:debate) { create :debate }
+  let(:user)   { create(:user) }
+  let(:debate) { create(:debate) }
 
   it_behaves_like "flaggable", :debate_comment
 
@@ -36,7 +36,7 @@ describe "Commenting debates" do
     expect(page).to have_link "Go back to #{debate.title}", href: debate_path(debate)
 
     within ".comment", text: "Parent" do
-      expect(page).to have_selector(".comment", count: 2)
+      expect(page).to have_css ".comment", count: 2
     end
   end
 
@@ -139,7 +139,7 @@ describe "Commenting debates" do
     expect(c2.body).to appear_before(c3.body)
   end
 
-  scenario "Creation date works differently in roots and in child comments, even when sorting by confidence_score" do
+  scenario "Creation date works differently in roots and child comments when sorting by confidence_score" do
     old_root = create(:comment, commentable: debate, created_at: Time.current - 10)
     new_root = create(:comment, commentable: debate, created_at: Time.current)
     old_child = create(:comment, commentable: debate, parent_id: new_root.id, created_at: Time.current - 10)
@@ -162,7 +162,7 @@ describe "Commenting debates" do
   end
 
   scenario "Turns links into html links" do
-    create :comment, commentable: debate, body: "Built with http://rubyonrails.org/"
+    create(:comment, commentable: debate, body: "Built with http://rubyonrails.org/")
 
     visit debate_path(debate)
 
@@ -170,13 +170,15 @@ describe "Commenting debates" do
       expect(page).to have_content "Built with http://rubyonrails.org/"
       expect(page).to have_link("http://rubyonrails.org/", href: "http://rubyonrails.org/")
       expect(find_link("http://rubyonrails.org/")[:rel]).to eq("nofollow")
-      expect(find_link("http://rubyonrails.org/")[:target]).to eq("_blank")
+      expect(find_link("http://rubyonrails.org/")[:target]).to be_blank
     end
   end
 
   scenario "Sanitizes comment body for security" do
-    create :comment, commentable: debate,
-                     body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
+    create(:comment, commentable: debate,
+                     body: "<script>alert('hola')</script> " \
+                           "<a href=\"javascript:alert('sorpresa!')\">click me<a/> " \
+                           "http://www.url.com")
 
     visit debate_path(debate)
 
@@ -311,7 +313,7 @@ describe "Commenting debates" do
       expect(page).to have_content "It will be done next week."
     end
 
-    expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
+    expect(page).not_to have_css "#js-comment-form-comment_#{comment.id}"
   end
 
   scenario "Reply to reply" do
@@ -475,7 +477,7 @@ describe "Commenting debates" do
         expect(page).to have_css "img.moderator-avatar"
       end
 
-      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
+      expect(page).not_to have_css "#js-comment-form-comment_#{comment.id}"
     end
 
     scenario "can not comment as an administrator" do
@@ -531,7 +533,7 @@ describe "Commenting debates" do
         expect(page).to have_css "img.admin-avatar"
       end
 
-      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
+      expect(page).not_to have_css "#js-comment-form-comment_#{comment.id}"
     end
 
     scenario "can not comment as a moderator", :admin do
@@ -612,7 +614,7 @@ describe "Commenting debates" do
       end
     end
 
-    scenario "Trying to vote multiple times" do
+    scenario "Allow undoing votes" do
       visit debate_path(debate)
 
       within("#comment_#{comment.id}_votes") do
@@ -624,14 +626,14 @@ describe "Commenting debates" do
         click_button "I agree"
         within(".in-favor") do
           expect(page).not_to have_content "2"
-          expect(page).to have_content "1"
+          expect(page).to have_content "0"
         end
 
         within(".against") do
           expect(page).to have_content "0"
         end
 
-        expect(page).to have_content "1 vote"
+        expect(page).to have_content "No votes"
       end
     end
   end

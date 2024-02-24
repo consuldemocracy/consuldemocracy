@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe Budgets::Investments::FiltersComponent do
   let(:budget) { create(:budget) }
-  before { allow(controller).to receive(:valid_filters) { budget.investments_filters } }
+  before { allow(vc_test_controller).to receive(:valid_filters) { budget.investments_filters } }
 
   around do |example|
     with_request_url(Rails.application.routes.url_helpers.budget_investments_path(budget)) do

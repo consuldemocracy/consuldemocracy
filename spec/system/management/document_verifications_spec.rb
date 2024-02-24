@@ -32,8 +32,9 @@ describe "DocumentVerifications" do
   describe "Verifying througth Census" do
     context "Census API" do
       scenario "Verifying a user which does not exist and is not in the census shows an error" do
-        expect_any_instance_of(Verification::Management::Document).to receive(:in_census?).
-                                                                      and_return(false)
+        expect_any_instance_of(Verification::Management::Document)
+          .to receive(:in_census?)
+          .and_return(false)
 
         login_as_manager
         visit management_document_verifications_path
@@ -43,7 +44,7 @@ describe "DocumentVerifications" do
         expect(page).to have_content "This document is not registered"
       end
 
-      scenario "Verifying a user which does exists in the census but not in the db redirects allows sending an email" do
+      scenario "Verifying a user who exists in the census but not in the db allows sending an email" do
         skip "Disabled for development and test"
         login_as_manager
         visit management_document_verifications_path
@@ -56,8 +57,9 @@ describe "DocumentVerifications" do
 
     context "Remote Census API", :remote_census do
       scenario "Verifying a user which does not exist and is not in the census shows an error" do
-        expect_any_instance_of(Verification::Management::Document).to receive(:in_census?).
-                                                                      and_return(false)
+        expect_any_instance_of(Verification::Management::Document)
+          .to receive(:in_census?)
+          .and_return(false)
 
         login_as_manager
         visit management_document_verifications_path

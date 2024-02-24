@@ -10,9 +10,9 @@ shared_examples "admin_progressable" do |factory_name, path_name|
 
     context "Index" do
       scenario "Link to index path" do
-        create(:progress_bar, :secondary, progressable:  progressable,
-               title:      "Reading documents",
-               percentage: 20)
+        create(:progress_bar, :secondary, progressable: progressable,
+                                          title: "Reading documents",
+                                          percentage: 20)
 
         visit progressable_path
         click_link "Manage progress bars"

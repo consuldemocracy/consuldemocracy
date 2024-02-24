@@ -14,7 +14,7 @@
             <%= link_to investment.title, admin_budget_budget_investment_path(
                                             budget_id: investment.budget_id,
                                             id: investment.id
-                                          ), target: "_blank" %>
+                                          ) %>
             <br>
             <span class="date"><%= l investment.updated_at.to_date %></span>
             <span class="bullet">&nbsp;&bull;&nbsp;</span>

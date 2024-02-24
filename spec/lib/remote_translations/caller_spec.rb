@@ -34,9 +34,9 @@ describe RemoteTranslations::Caller, :remote_translations do
 
         caller.call
 
-        expect(remote_translation.error_message).to eq nil
+        expect(remote_translation.error_message).to be nil
         expect(debate.translations.count).to eq(2)
-        expect(debate.valid?).to eq true
+        expect(debate.valid?).to be true
       end
 
       it "when new translation locale is distinct to default_locale not skip presence validations" do
@@ -47,7 +47,7 @@ describe RemoteTranslations::Caller, :remote_translations do
 
         expect(remote_translation.error_message).to include("can't be blank")
         expect(debate.translations.count).to eq(1)
-        expect(debate.valid?).to eq false
+        expect(debate.valid?).to be false
       end
 
       it "destroy remote translation instance" do
@@ -83,9 +83,9 @@ describe RemoteTranslations::Caller, :remote_translations do
 
         caller.call
 
-        expect(remote_translation.error_message).to eq nil
+        expect(remote_translation.error_message).to be nil
         expect(proposal.translations.count).to eq(2)
-        expect(proposal.valid?).to eq true
+        expect(proposal.valid?).to be true
       end
 
       it "when new translation locale is distinct to default_locale do not skip presence validations" do
@@ -96,7 +96,7 @@ describe RemoteTranslations::Caller, :remote_translations do
 
         expect(remote_translation.error_message).to include("can't be blank")
         expect(proposal.translations.count).to eq(1)
-        expect(proposal.valid?).to eq false
+        expect(proposal.valid?).to be false
       end
 
       it "destroy remote translation instance" do
@@ -132,9 +132,9 @@ describe RemoteTranslations::Caller, :remote_translations do
 
         caller.call
 
-        expect(remote_translation.error_message).to eq nil
+        expect(remote_translation.error_message).to be nil
         expect(budget_investment.translations.count).to eq(2)
-        expect(budget_investment.valid?).to eq true
+        expect(budget_investment.valid?).to be true
       end
 
       it "when new translation locale is distinct to default_locale not skip presence validations" do
@@ -145,7 +145,7 @@ describe RemoteTranslations::Caller, :remote_translations do
 
         expect(remote_translation.error_message).to include("can't be blank")
         expect(budget_investment.translations.count).to eq(1)
-        expect(budget_investment.valid?).to eq false
+        expect(budget_investment.valid?).to be false
       end
 
       it "destroy remote translation instance" do
@@ -180,9 +180,9 @@ describe RemoteTranslations::Caller, :remote_translations do
 
         caller.call
 
-        expect(remote_translation.error_message).to eq nil
+        expect(remote_translation.error_message).to be nil
         expect(comment.translations.count).to eq(2)
-        expect(comment.valid?).to eq true
+        expect(comment.valid?).to be true
       end
 
       it "when new translation locale is distinct to default_locale not skip presence validations" do
@@ -193,7 +193,7 @@ describe RemoteTranslations::Caller, :remote_translations do
 
         expect(remote_translation.error_message).to include("can't be blank")
         expect(comment.translations.count).to eq(1)
-        expect(comment.valid?).to eq false
+        expect(comment.valid?).to be false
       end
 
       it "destroy remote translation instance" do
@@ -220,8 +220,8 @@ describe RemoteTranslations::Caller, :remote_translations do
       locale = remote_translation.locale
       fake_response = ["translated title", "translated description", "translated summary", nil]
 
-      expect_any_instance_of(client).to receive(:call).with(field_values_sanitized, locale).
-                                                       and_return(fake_response)
+      expect_any_instance_of(client).to receive(:call).with(field_values_sanitized, locale)
+                                                      .and_return(fake_response)
 
       caller.call
     end

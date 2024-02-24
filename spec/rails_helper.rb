@@ -24,7 +24,7 @@ require "view_component/test_helpers"
 module ViewComponent
   module TestHelpers
     def sign_in(user)
-      allow(controller).to receive(:current_user).and_return(user)
+      allow(vc_test_controller).to receive(:current_user).and_return(user)
     end
 
     def within(...)
@@ -68,6 +68,7 @@ Capybara.exact = true
 Capybara.enable_aria_label = true
 Capybara.disable_animation = true
 Capybara.default_max_wait_time = 5
+Capybara.app_host ||= "http://127.0.0.1"
 
 OmniAuth.config.test_mode = true
 

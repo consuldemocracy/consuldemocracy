@@ -424,7 +424,6 @@ ca:
         title: "Documents"
         format: "Format"
         size: "Mida"
-        url: "URL"
       create:
         success_notice: "S'ha carregat document correctament"
         unable_notice: "Document no vàlid"

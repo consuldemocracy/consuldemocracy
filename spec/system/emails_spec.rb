@@ -371,6 +371,28 @@ describe "Emails" do
       expect(email).to have_body_text(budget_path(budget))
     end
 
+    scenario "Unfeasible investment" do
+      budget.update!(phase: "valuating")
+      valuator = create(:valuator)
+      investment = create(:budget_investment, author: author, budget: budget, valuators: [valuator])
+
+      login_as(valuator.user)
+      visit edit_valuation_budget_budget_investment_path(budget, investment)
+
+      within_fieldset("Feasibility") { choose "Unfeasible" }
+      fill_in "Feasibility explanation", with: "This is not legal as stated in Article 34.9"
+      accept_confirm { check "Valuation finished" }
+      click_button "Save changes"
+
+      expect(page).to have_content "Dossier updated"
+
+      email = open_last_email
+      expect(email).to have_subject "Your investment project '#{investment.code}' " \
+                                    "has been marked as unfeasible"
+      expect(email).to deliver_to investment.author.email
+      expect(email).to have_body_text "This is not legal as stated in Article 34.9"
+    end
+
     scenario "Selected investment" do
       author1 = create(:user)
       author2 = create(:user)
@@ -499,7 +521,8 @@ describe "Emails" do
       expect(email.body.encoded).to include("This is a different body")
       expect(email).to have_body_text("To unsubscribe from these emails, visit")
       expect(email).to have_body_text(
-                        edit_subscriptions_path(token: user_with_newsletter_in_segment_2.subscriptions_token))
+                        edit_subscriptions_path(token: user_with_newsletter_in_segment_2.subscriptions_token)
+                      )
       expect(email).to have_body_text('and uncheck "Receive relevant information by email"')
     end
   end

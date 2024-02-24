@@ -533,7 +533,6 @@ cs:
         title: "Dokumenty"
         format: "Formát"
         size: "Velikost"
-        url: "URL"
       create:
         success_notice: "Dokument byl úspěšně nahrán"
         unable_notice: "Neplatný dokument"
@@ -768,6 +767,7 @@ cs:
           community: "Připojte se ke komunitě"
           proposals: "Návrhy"
           polls: "Průzkum"
+          legislation: "Participativní legislativa"
           budgets: "Rozpočty"
           layouts: "Rozložení"
           machine_learning: "AI / strojové učení"
@@ -1604,6 +1604,7 @@ cs:
           names:
             top_links: Hlavní odkazy
             footer: Zápatí
+            footer_legal: Zápatí (právní podmínky)
             subnavigation_left: Hlavní navigace vlevo
             subnavigation_right: Hlavní navigace vpravo
       images:
@@ -1753,10 +1754,10 @@ cs:
       help:
         title_1: "Co je AI / strojové učení?"
         description_1: "Počítačové programy se tradičně navrhují tak, že se stanoví přesná pravidla, co má program v každé situaci dělat a jak má v každém okamžiku zpracovávat dostupné informace. To, co se běžně označuje jako umělá inteligence/strojové učení, je typ programů, u nichž je přesně stanoveno, jaký úkol má být proveden a jak se vyhodnocuje, zda je úkol proveden lépe nebo hůře. Na rozdíl od prvně jmenovaného však systém objevuje nebo se učí, jaká by byla nejvhodnější metoda k provedení úkolu."
-        title_2: "Co dělá modul AI / strojového učení v systému CONSUL?"
-        description_2: "Tento modul umožňuje implementovat v CONSULu libovolný typ programů AI/Machine Learning. Tyto programy mohou zpracovávat informace dostupné v systému CONSUL a vytvářet výsledky, které pomáhají uživatelům i správcům provádět efektivnější a inteligentnější zapojení občanů. Modul byl vyvinut tak, aby bylo možné snadno implementovat a spouštět nové programy, přičemž obecný kód CONSULu a kód těchto nových programů jsou na sobě nezávislé."
+        title_2: "Co dělá modul AI / strojového učení v systému CONSUL DEMOCRACY?"
+        description_2: "Tento modul umožňuje implementovat v CONSULu libovolný typ programů AI/Machine Learning. Tyto programy mohou zpracovávat informace dostupné v systému CONSUL DEMOCRACY a vytvářet výsledky, které pomáhají uživatelům i správcům provádět efektivnější a inteligentnější zapojení občanů. Modul byl vyvinut tak, aby bylo možné snadno implementovat a spouštět nové programy, přičemž obecný kód CONSULu a kód těchto nových programů jsou na sobě nezávislé."
         title_3: "Jak používat tento modul"
-        description_3: "Při prvním použití je nutné postupovat podle pokynů uvedených v dokumentaci CONSUL a modul správně aktivovat. Po správné aktivaci modulu se programy spouštějí na kartě \"Spustit skripty\". Před spuštěním se nám na téže kartě zobrazí odhad doby spuštění a další důležité informace. Na konci provádění můžeme na kartě \"Nastavení\" aktivovat obsah, který se bude v CONSUL zobrazovat, a také stáhnout další vygenerované soubory, které se nám mohou hodit."
+        description_3: "Při prvním použití je nutné postupovat podle pokynů uvedených v dokumentaci CONSUL DEMOCRACY a modul správně aktivovat. Po správné aktivaci modulu se programy spouštějí na kartě \"Spustit skripty\". Před spuštěním se nám na téže kartě zobrazí odhad doby spuštění a další důležité informace. Na konci provádění můžeme na kartě \"Nastavení\" aktivovat obsah, který se bude v CONSUL DEMOCRACY zobrazovat, a také stáhnout další vygenerované soubory, které se nám mohou hodit."
         title_4: "Jak implementovat nové skripty AI / strojového učení"
         description_4: "Jako příklady použijte předchozí skripty."
         description_4b: "Nové skripty by měly být umístěny ve složce <code>public/machine_learning/scripts</code>"

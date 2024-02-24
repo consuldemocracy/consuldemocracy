@@ -4,14 +4,14 @@ module Images
     when "Budget"
       visit edit_admin_budget_path(Budget.last)
     when "Proposal"
-      click_on "Not now, go to my proposal" rescue Capybara::ElementNotFound
+      click_link "Not now, go to my proposal" rescue Capybara::ElementNotFound
     end
   end
 
   def imageable_attach_new_file(path, success = true)
     click_link "Add image"
     within "#nested-image" do
-      image = find(".image")
+      image = find(".image-fields")
       attach_file "Choose image", path
       within image do
         if success
@@ -41,7 +41,7 @@ module Images
   end
 
   def expect_image_has_title(title)
-    image = find(".image")
+    image = find(".image-fields")
 
     within image do
       expect(find("input[name$='[title]']").value).to eq title

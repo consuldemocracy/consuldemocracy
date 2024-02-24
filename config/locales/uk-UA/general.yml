@@ -145,7 +145,6 @@ uk-UA:
       invalid_date_range: "Недійсний діапазон даних"
   form:
     accept_terms: Я погоджуюся з %{policy} та %{conditions}
-    accept_terms_title: Я погоджуюся з Політикою конфіденційності і Правилами та умовами користування
     conditions: Правила та умови користування
     debate: Обговорення
     direct_message: особисте повідомлення
@@ -178,11 +177,6 @@ uk-UA:
   geozones:
     none: Все місто
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Ми виявили, що ви користуєтесь браузером Internet Explorer. Для кращого результату ми рекомендуємо користуватися %{firefox} або %{chrome}.
-      ie_title: Цей вебсайт не пристосований для вашого браузера
     dashboard:
       proposal_header:
         published: Опубліковано
@@ -203,9 +197,9 @@ uk-UA:
     footer:
       accessibility: Доступність
       conditions: Правила та умови користування
-      consul: Додаток CONSUL
+      consul: Додаток CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Цей портал використовує %{consul} який знаходиться %{open_source}.
       open_source: відкрите програмне забезпечення
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html

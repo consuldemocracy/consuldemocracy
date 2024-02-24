@@ -18,11 +18,9 @@
 
       <% recommended.each_with_index do |recommended, index| %>
         <div class="small-12 medium-6 large-4 column end">
-          <%= link_to recommended_path(recommended) do %>
-            <div class="recommendation" data-equalizer-watch>
-              <h3><%= recommended.title %></h3>
-            </div>
-          <% end %>
+          <div class="recommendation" data-equalizer-watch>
+            <h3><%= link_to recommended.title, recommended_path(recommended) %></h3>
+          </div>
         </div>
       <% end %>
 

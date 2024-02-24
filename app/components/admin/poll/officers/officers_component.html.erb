@@ -17,7 +17,8 @@
         </td>
         <td>
           <% if officer.persisted? %>
-            <%= render Admin::TableActionsComponent.new(officer,
+            <%= render Admin::TableActionsComponent.new(
+              officer,
               actions: [:destroy],
               destroy_text: t("admin.poll_officers.officer.delete"),
               destroy_options: { class: "destroy-officer-link" }

@@ -8,7 +8,7 @@ module FollowablesHelper
   end
 
   def render_follow(follow)
-    return unless follow.followable.present?
+    return if follow.followable.blank?
 
     followable = follow.followable
     partial = "#{followable_class_name(followable)}_follow"

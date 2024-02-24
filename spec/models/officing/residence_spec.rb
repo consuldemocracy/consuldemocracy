@@ -87,8 +87,8 @@ describe Officing::Residence do
       describe "dates" do
         it "is not valid but not because date of birth" do
           custom_residence = Officing::Residence.new("date_of_birth(3i)" => "1",
-                                                 "date_of_birth(2i)" => "1",
-                                                 "date_of_birth(1i)" => "1980")
+                                                     "date_of_birth(2i)" => "1",
+                                                     "date_of_birth(1i)" => "1980")
 
           expect(custom_residence).not_to be_valid
           expect(custom_residence.errors[:date_of_birth]).to be_empty
@@ -96,8 +96,8 @@ describe Officing::Residence do
 
         it "is not valid without a date of birth" do
           custom_residence = Officing::Residence.new("date_of_birth(3i)" => "",
-                                                 "date_of_birth(2i)" => "",
-                                                 "date_of_birth(1i)" => "")
+                                                     "date_of_birth(2i)" => "",
+                                                     "date_of_birth(1i)" => "")
           expect(custom_residence).not_to be_valid
           expect(custom_residence.errors[:date_of_birth]).to include("can't be blank")
         end
@@ -119,10 +119,10 @@ describe Officing::Residence do
 
         expect(FailedCensusCall.count).to eq(1)
         expect(FailedCensusCall.first).to have_attributes(
-          user_id:         residence.user.id,
+          user_id: residence.user.id,
           poll_officer_id: residence.officer.id,
           document_number: "12345678Z",
-          document_type:   "1",
+          document_type: "1",
           date_of_birth: nil,
           postal_code: "00001",
           year_of_birth: Time.current.year
@@ -132,13 +132,15 @@ describe Officing::Residence do
 
     describe "allowed age" do
       it "is not valid if user is under allowed age" do
-        allow_any_instance_of(Officing::Residence).to receive(:response_date_of_birth).and_return(15.years.ago)
+        allow(residence).to receive(:response_date_of_birth).and_return(15.years.ago)
+
         expect(residence).not_to be_valid
         expect(residence.errors[:year_of_birth]).to include("You don't have the required age to participate")
       end
 
       it "is valid if user is above allowed age" do
-        allow_any_instance_of(Officing::Residence).to receive(:response_date_of_birth).and_return(16.years.ago)
+        allow(residence).to receive(:response_date_of_birth).and_return(16.years.ago)
+
         expect(residence).to be_valid
         expect(residence.errors[:year_of_birth]).to be_empty
       end
@@ -196,7 +198,11 @@ describe Officing::Residence do
     end
 
     it "makes half-verified users fully verified" do
-      user = create(:user, residence_verified_at: Time.current, document_type: "1", document_number: "12345678Z")
+      user = create(:user,
+                    residence_verified_at: Time.current,
+                    document_type: "1",
+                    document_number: "12345678Z")
+
       expect(user).to be_unverified
       residence = build(:officing_residence, document_number: "12345678Z", year_of_birth: 1980)
       expect(residence).to be_valid
@@ -211,13 +217,13 @@ describe Officing::Residence do
 
       expect(FailedCensusCall.count).to eq(1)
       expect(FailedCensusCall.first).to have_attributes(
-        user_id:         residence.user.id,
+        user_id: residence.user.id,
         poll_officer_id: residence.officer.id,
         document_number: "12345678Z",
-        document_type:   "1",
+        document_type: "1",
         date_of_birth: nil,
         postal_code: nil,
-        year_of_birth:   Time.current.year
+        year_of_birth: Time.current.year
       )
     end
   end

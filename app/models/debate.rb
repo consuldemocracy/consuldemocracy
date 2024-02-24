@@ -57,15 +57,15 @@ class Debate < ApplicationRecord
   end
 
   def searchable_translations_definitions
-    { title       => "A",
+    { title => "A",
       description => "D" }
   end
 
   def searchable_values
     {
-      author.username    => "B",
+      author.username => "B",
       tag_list.join(" ") => "B",
-      geozone&.name      => "B"
+      geozone&.name => "B"
     }.merge!(searchable_globalized_values)
   end
 
@@ -107,8 +107,13 @@ class Debate < ApplicationRecord
 
   def register_vote(user, vote_value)
     if votable_by?(user)
-      Debate.increment_counter(:cached_anonymous_votes_total, id) if user.unverified? && !user.voted_for?(self)
-      vote_by(voter: user, vote: vote_value)
+      transaction do
+        if user.unverified? && !user.voted_for?(self)
+          Debate.increment_counter(:cached_anonymous_votes_total, id)
+        end
+
+        vote_by(voter: user, vote: vote_value)
+      end
     end
   end
 
@@ -155,7 +160,11 @@ class Debate < ApplicationRecord
 
   def self.debates_orders(user)
     orders = %w[hot_score confidence_score created_at relevance]
-    orders << "recommendations" if Setting["feature.user.recommendations_on_debates"] && user&.recommended_debates
+
+    if Setting["feature.user.recommendations_on_debates"] && user&.recommended_debates
+      orders << "recommendations"
+    end
+
     orders
   end
 

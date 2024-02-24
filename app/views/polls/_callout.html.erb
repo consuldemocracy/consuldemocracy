@@ -2,13 +2,13 @@
   <% if current_user.nil? %>
     <div class="callout primary">
       <%= sanitize(t("polls.show.cant_answer_not_logged_in",
-            signin: link_to_signin(class: "probe-message"),
-            signup: link_to_signup(class: "probe-message"))) %>
+                     signin: link_to_signin(class: "probe-message"),
+                     signup: link_to_signup(class: "probe-message"))) %>
     </div>
   <% elsif current_user.unverified? %>
     <div class="callout warning">
       <%= sanitize(t("polls.show.cant_answer_verify",
-            verify_link: link_to(t("polls.show.verify_link"), verification_path))) %>
+                     verify_link: link_to(t("polls.show.verify_link"), verification_path))) %>
     </div>
   <% elsif @poll.expired? %>
     <div class="callout alert">

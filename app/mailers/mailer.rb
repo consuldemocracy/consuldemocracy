@@ -11,7 +11,10 @@ class Mailer < ApplicationMailer
     manage_subscriptions_token(@commentable.author)
 
     with_user(@commentable.author) do
-      subject = t("mailers.comment.subject", commentable: t("activerecord.models.#{@commentable.class.name.underscore}", count: 1).downcase)
+      subject = t(
+        "mailers.comment.subject",
+        commentable: t("activerecord.models.#{@commentable.class.name.underscore}", count: 1).downcase
+      )
       mail(to: @email_to, subject: subject) if @commentable.present? && @commentable.author.present?
     end
   end
@@ -65,7 +68,8 @@ class Mailer < ApplicationMailer
     manage_subscriptions_token(user)
 
     with_user(user) do
-      mail(to: @email_to, subject: t("mailers.proposal_notification_digest.title", org_name: Setting["org_name"]))
+      mail(to: @email_to,
+           subject: t("mailers.proposal_notification_digest.title", org_name: Setting["org_name"]))
     end
   end
 
@@ -154,8 +158,8 @@ class Mailer < ApplicationMailer
 
   private
 
-    def with_user(user, &block)
-      I18n.with_locale(user.locale, &block)
+    def with_user(user, &)
+      I18n.with_locale(user.locale, &)
     end
 
     def prevent_delivery_to_users_without_email

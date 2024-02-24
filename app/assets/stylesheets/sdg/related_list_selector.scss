@@ -34,7 +34,7 @@
       @include element-invisible;
 
       &:focus + label {
-        outline: $outline-focus;
+        @include focus-outline;
       }
 
       &:checked + label img {

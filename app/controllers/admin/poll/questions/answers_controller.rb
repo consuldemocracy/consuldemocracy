@@ -12,7 +12,7 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
   def create
     if @answer.save
       redirect_to admin_question_path(@question),
-               notice: t("flash.actions.create.poll_question_answer")
+                  notice: t("flash.actions.create.poll_question_answer")
     else
       render :new
     end
@@ -24,7 +24,7 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
   def update
     if @answer.update(answer_params)
       redirect_to admin_question_path(@question),
-               notice: t("flash.actions.save_changes.notice")
+                  notice: t("flash.actions.save_changes.notice")
     else
       render :edit
     end

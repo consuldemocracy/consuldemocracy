@@ -33,9 +33,9 @@ class Budget
     validates :slug, presence: true, format: /\A[a-z0-9\-_]+\z/
     validates :population, numericality: { greater_than: 0 }, allow_nil: true
     validates :latitude, length: { maximum: 22 }, allow_blank: true, \
-              format: /\A(-|\+)?([1-8]?\d(?:\.\d{1,})?|90(?:\.0{1,6})?)\z/
+                         format: /\A(-|\+)?([1-8]?\d(?:\.\d{1,})?|90(?:\.0{1,6})?)\z/
     validates :longitude, length: { maximum: 22 }, allow_blank: true, \
-              format: /\A(-|\+)?((?:1[0-7]|[1-9])?\d(?:\.\d{1,})?|180(?:\.0{1,})?)\z/
+                          format: /\A(-|\+)?((?:1[0-7]|[1-9])?\d(?:\.\d{1,})?|180(?:\.0{1,})?)\z/
     validates :max_ballot_lines, numericality: { greater_than_or_equal_to: 1 }
 
     delegate :budget, :budget_id, to: :group, allow_nil: true

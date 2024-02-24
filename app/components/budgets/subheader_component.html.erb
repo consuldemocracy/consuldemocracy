@@ -16,13 +16,13 @@
         <% else %>
           <div class="callout warning">
             <%= sanitize(t("budgets.investments.index.sidebar.verified_only",
-                  verify: link_to_verify_account)) %>
+                           verify: link_to_verify_account)) %>
           </div>
         <% end %>
       <% else %>
         <div class="callout primary">
           <%= sanitize(t("budgets.investments.index.sidebar.not_logged_in",
-                sign_in: link_to_signin, sign_up: link_to_signup)) %>
+                         sign_in: link_to_signin, sign_up: link_to_signup)) %>
         </div>
       <% end %>
     <% end %>

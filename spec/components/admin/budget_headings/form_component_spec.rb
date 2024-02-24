@@ -26,7 +26,8 @@ describe Admin::BudgetHeadings::FormComponent do
 
       render_inline component
 
-      expect(page).to have_select "Scope of operation", options: ["All city", "Under the sea", "Above the skies"]
+      expect(page).to have_select "Scope of operation",
+                                  options: ["All city", "Under the sea", "Above the skies"]
     end
   end
 end

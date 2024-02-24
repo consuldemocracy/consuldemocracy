@@ -38,5 +38,9 @@ linters:
         Enabled: false
       Lint/UselessAssignment:
         Enabled: false
+      Rails/HttpStatus:
+        Enabled: true
+        Exclude:
+          - app/views/dashboard/*
       Rails/OutputSafety:
         Enabled: false

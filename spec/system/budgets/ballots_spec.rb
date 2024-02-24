@@ -169,12 +169,14 @@ describe "Ballots" do
       scenario "map and content block shoud be visible before and after" do
         stub_const("#{Budgets::InvestmentsController}::PER_PAGE", 1)
 
-        create(:budget_investment, :selected, :with_map_location,
+        create(
+          :budget_investment, :selected, :with_map_location,
           heading: new_york,
           price: 10000,
           title: "More bridges",
         )
-        create(:budget_investment, :selected, :with_map_location,
+        create(
+          :budget_investment, :selected, :with_map_location,
           heading: new_york,
           price: 5000,
           title: "Less bridges"
@@ -330,7 +332,8 @@ describe "Ballots" do
 
       expect(page).not_to have_css "#progressbar"
       expect(page).to have_content "You have active votes in another heading: California"
-      expect(page).to have_link california.name, href: budget_investments_path(budget, heading_id: california.id)
+      expect(page).to have_link california.name,
+                                href: budget_investments_path(budget, heading_id: california.id)
     end
   end
 

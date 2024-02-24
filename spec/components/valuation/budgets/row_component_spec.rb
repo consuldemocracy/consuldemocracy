@@ -14,7 +14,7 @@ describe Valuation::Budgets::RowComponent do
 
       render_inline Valuation::Budgets::RowComponent.new(budget: budget)
 
-      expect(page).to have_selector ".investments-count", text: "1"
+      expect(page).to have_css ".investments-count", text: "1"
     end
 
     it "counts investments assigned to the valuator group" do
@@ -24,19 +24,19 @@ describe Valuation::Budgets::RowComponent do
 
       render_inline Valuation::Budgets::RowComponent.new(budget: budget)
 
-      expect(page).to have_selector ".investments-count", text: "1"
+      expect(page).to have_css ".investments-count", text: "1"
     end
 
     it "does not count investments with valuation finished" do
       budget = create(:budget, :valuating)
       create(:budget_investment, :visible_to_valuators,
-                                 budget: budget,
-                                 valuators: [valuator],
-                                 valuation_finished: true)
+             budget: budget,
+             valuators: [valuator],
+             valuation_finished: true)
 
       render_inline Valuation::Budgets::RowComponent.new(budget: budget)
 
-      expect(page).to have_selector ".investments-count", text: "0"
+      expect(page).to have_css ".investments-count", text: "0"
     end
 
     it "displays zero when the budget hasn't reached the valuating phase" do
@@ -45,7 +45,7 @@ describe Valuation::Budgets::RowComponent do
 
       render_inline Valuation::Budgets::RowComponent.new(budget: budget)
 
-      expect(page).to have_selector ".investments-count", text: "0"
+      expect(page).to have_css ".investments-count", text: "0"
     end
 
     it "displays zero when the valuating phase is over" do
@@ -54,7 +54,7 @@ describe Valuation::Budgets::RowComponent do
 
       render_inline Valuation::Budgets::RowComponent.new(budget: budget)
 
-      expect(page).to have_selector ".investments-count", text: "0"
+      expect(page).to have_css ".investments-count", text: "0"
     end
   end
 
@@ -81,9 +81,9 @@ describe Valuation::Budgets::RowComponent do
     it "is shown when the assigned investments have finished valuation" do
       budget = create(:budget, :valuating)
       create(:budget_investment, :visible_to_valuators,
-                                 budget: budget,
-                                 valuators: [valuator],
-                                 valuation_finished: true)
+             budget: budget,
+             valuators: [valuator],
+             valuation_finished: true)
 
       render_inline Valuation::Budgets::RowComponent.new(budget: budget)
 

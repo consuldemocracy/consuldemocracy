@@ -1,13 +1,13 @@
 <%= render Pages::Help::SectionComponent.new("polls") do %>
   <p>
     <%= sanitize(t("pages.help.polls.description",
-          link: link_to(t("pages.help.polls.link"), polls_path))) %>
+                   link: link_to(t("pages.help.polls.link"), polls_path))) %>
   </p>
   <ul class="features">
     <li>
       <%= sanitize(t("pages.help.polls.feature_1",
-            link: link_to(t("pages.help.polls.feature_1_link", org_name: setting["org_name"]),
-                             new_user_registration_path))) %>
+                     link: link_to(t("pages.help.polls.feature_1_link", org_name: setting["org_name"]),
+                                   new_user_registration_path))) %>
     </li>
     <li><%= t("pages.help.polls.help_text_1") %></li>
     <li><%= t("pages.help.polls.help_text_2") %></li>

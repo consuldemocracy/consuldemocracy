@@ -1,6 +1,7 @@
 tr:
   account:
     show:
+      last_sign_in: "Son oturum açma: %{last_sign_in_at} IP adresi: %{last_sign_in_ip}"
       change_credentials_link: Oturum açma bilgilerimi değiştir
       erase_account_link: Hesabımı sil
       finish_verification: Doğrulamayı tamamla
@@ -143,7 +144,6 @@ tr:
         poll_ended: "Oylama bitirildikten sonra değiştirilemez"
   form:
     accept_terms: '%{policy} ve %{conditions} metinlerini kabul ediyorum'
-    accept_terms_title: Gizlilik ileksi ve kullanım hüküm ve koşullarını kabul ediyorum
     conditions: Kullanım hüküm ve koşulları
     debate: Tartışma
     direct_message: özel ileti
@@ -177,11 +177,6 @@ tr:
   geozones:
     none: Tüm şehir
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Internet Explorer kullandığınızı fark ettik. Gelişmiş bir deneyim için, %{firefox} ya da %{chrome} kullanmanızı öneririz.
-      ie_title: Bu site tarayıcınıza uygun olarak ayarlanmamış
     dashboard:
       proposal_header:
         published: Yayınlanmış
@@ -724,7 +719,7 @@ tr:
       districts: "Bölgeler"
       districts_list: "Bölgeler listesi"
       categories: "Kategoriler"
-    target_blank: " (bağlantı yeni pencerede açılır)"
+    target_blank: "Bağlantı yeni pencerede açılır"
     you_are_in: "Şuradasınız"
     unflag: İşareti kaldır
     unfollow_entity: "%{entity} takibini bırak"

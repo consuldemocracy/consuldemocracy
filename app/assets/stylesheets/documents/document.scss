@@ -1,0 +1,21 @@
+.document {
+  + .document {
+    margin-top: $line-height / 3;
+  }
+
+  a:first-of-type {
+    word-wrap: break-word;
+
+    .document-metadata {
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+      }
+
+      * + *::before {
+        @include vertical-separator;
+      }
+    }
+  }
+}

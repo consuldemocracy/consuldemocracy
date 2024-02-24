@@ -7,9 +7,9 @@
 <% content_for :canonical do %>
   <% if @heading.present? %>
     <%= render "shared/canonical",
-                href: budget_investments_url(@budget,
-                                             heading_id: @heading.id,
-                                             filter: @current_filter) %>
+               href: budget_investments_url(@budget,
+                                            heading_id: @heading.id,
+                                            filter: @current_filter) %>
   <% else %>
     <%= render "shared/canonical", href: budget_investments_url(@budget) %>
   <% end %>

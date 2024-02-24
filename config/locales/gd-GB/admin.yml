@@ -532,7 +532,6 @@ gd:
         title: "Sgrìobhainnean"
         format: "Fòrmat"
         size: "Meud"
-        url: "URL"
       create:
         success_notice: "Chaidh an sgrìobhainn a luchdadh suas"
         unable_notice: "Sgrìobhainn mhì-dhligheach"
@@ -1050,7 +1049,7 @@ gd:
     booth_assignments:
       manage_assignments: Stiùirich na dreuchdan
       manage:
-        assignments_list: "Sònrachaidhean airson bhòt '%{ poll}'"
+        assignments_list: "Sònrachaidhean airson bhòt '%{poll}'"
         status:
           assign_status: Dreuchd
           assigned: Air a shònrachadh
@@ -1746,10 +1745,10 @@ gd:
       help:
         title_1: "Dè th’ann an AI / Ionnsachadh Inneil"
         description_1: "Gu traidiseanta, tha prògraman coimpiutair air an dealbhadh le bhith a’ stèidheachadh riaghailtean mionaideach mu na bu chòir dhan phrògram dèanamh anns gach suidheachadh, agus mar a làimhsicheas e am fiosrachadh a tha ri fhaighinn aig gach àm. Leis an rud ris an canar AI /Ionnsachadh Inneil seòrsa de phrògraman airson a bhith a’ stèidheachadh gu dìreach dè an obair a tha ri coileanadh, mar a thathar ga mheasadh agus a bheil an gnìomh air a choileanadh gu math no gu dona. Ach eu-coltach ris a’ prògraman traidiseanta, gheibh an siostam a-mach no ionnsaichidh e dè an dòigh as fhreagarraiche airson a’ ghnìomh a choileanadh."
-        title_2: "Dè nì am modal AI / Machine Learning ann an CONSUL?"
+        title_2: "Dè nì am modal AI / Machine Learning ann an CONSUL DEMOCRACY?"
         description_2: "Tha am modal seo a’ ceadachadh gun gabh seòrsa sam bith de phrògraman AI/Ionnsachadh Inneal a chleachdadh ann an CONSUL. Faodaidh na prògraman am fiosrachadh a tha ri fhaighinn ann an CONSUL a phròiseasadh agus toraidhean a chruthachadh a chuidicheas an dà chuid cleachdaichean agus rianairean gus com-pàirteachadh shaoranaich nas èifeachdaiche agus nas tuigsiche a dhèanamh. Chaidh am modal a chruthachadh gus a dhèanamh furasta prògraman ùra a chur an gnìomh agus a ruith, a’ cumail còd coitcheann CONSUL agus còd nam prògraman ùra sin neo-eisimeileach bho chèile."
         title_3: "Mar a chleachdar an stiùireadh seo"
-        description_3: "Gus a chleachdadh airson a’ chiad uair feumaidh tu an stiùireadh a tha ri fhaighinn ann an sgrìobhainnean CONSUL a leantainn gus am modal seo a chuir an gnìomh gu ceart. Aon uair ‘s gu bheil am modal air a ghnìomhachadh gu ceart, thèid na prògraman a chur an gnìomh bhon taba “Cuir an gnìomh sgriobtaichean”. Mus tèid a chur an gnìomh, chì sinn tuairmse air an ùine a bheir e gus a chur an gnìomh agus fiosrachadh buntainneach eile. Aig deireadh a’ ghnìomhachaidh, is urrainn dhuinn an t-susbaint a thèid a shealltainn ann an CONSUL a chur an gnìomh bhon taba “Roghainnean”, a bharrachd air a bhith a’ luchdachadh a-nuas faidhlichean eile a chaidh a chruthachadh a dh’fhaodadh a bhith feumail dhuinn."
+        description_3: "Gus a chleachdadh airson a’ chiad uair feumaidh tu an stiùireadh a tha ri fhaighinn ann an sgrìobhainnean CONSUL DEMOCRACY a leantainn gus am modal seo a chuir an gnìomh gu ceart. Aon uair ‘s gu bheil am modal air a ghnìomhachadh gu ceart, thèid na prògraman a chur an gnìomh bhon taba “Cuir an gnìomh sgriobtaichean”. Mus tèid a chur an gnìomh, chì sinn tuairmse air an ùine a bheir e gus a chur an gnìomh agus fiosrachadh buntainneach eile. Aig deireadh a’ ghnìomhachaidh, is urrainn dhuinn an t-susbaint a thèid a shealltainn ann an CONSUL DEMOCRACY a chur an gnìomh bhon taba “Roghainnean”, a bharrachd air a bhith a’ luchdachadh a-nuas faidhlichean eile a chaidh a chruthachadh a dh’fhaodadh a bhith feumail dhuinn."
         title_4: "Mar a chuireas tu sgriobtaichean AI / Ionnsachadh Inneal ùr an gnìomh"
         description_4: "Cleachd sgriobtaichean a chleachdar roimhe mar eisimpleirean."
         description_4b: "Bu chòir na sgriobtaichean ùra a bhith suidhichte sa phasgan <code>public/machine_learning/scripts</code>"

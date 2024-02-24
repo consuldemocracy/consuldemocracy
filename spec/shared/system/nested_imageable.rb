@@ -22,29 +22,29 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       do_login_for user, management: management
       visit send(path, arguments)
 
-      expect(page).to have_selector "#new_image_link"
+      expect(page).to have_css "#new_image_link"
     end
 
     scenario "Should hide new image link after adding one image" do
       do_login_for user, management: management
       visit send(path, arguments)
 
-      click_on "Add image"
+      click_link "Add image"
 
-      expect(page).not_to have_selector "#new_image_link"
+      expect(page).not_to have_css "#new_image_link"
     end
 
-    scenario "Should update nested image file name after choosing any file" do
+    scenario "Should update image file name after choosing any file" do
       do_login_for user, management: management
       visit send(path, arguments)
 
       click_link "Add image"
       attach_file "Choose image", file_fixture("clippy.jpg")
 
-      expect(page).to have_selector ".file-name", text: "clippy.jpg"
+      expect(page).to have_css ".file-name", text: "clippy.jpg"
     end
 
-    scenario "Should update nested image file title with file name after choosing a file when no title defined" do
+    scenario "Should update image file title after choosing a file when no title is defined" do
       do_login_for user, management: management
       visit send(path, arguments)
 
@@ -53,12 +53,12 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       expect_image_has_title("clippy.jpg")
     end
 
-    scenario "Should not update nested image file title with file name after choosing a file when title already defined" do
+    scenario "Should not update image file title after choosing a file when a title is already defined" do
       do_login_for user, management: management
       visit send(path, arguments)
 
       click_link "Add image"
-      input_title = find(".image input[name$='[title]']")
+      input_title = find(".image-fields input[name$='[title]']")
       fill_in input_title[:id], with: "Title"
       attach_file "Choose image", file_fixture("clippy.jpg")
 
@@ -75,7 +75,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
       imageable_attach_new_file(file_fixture("clippy.jpg"))
 
-      expect(page).to have_selector ".loading-bar.complete"
+      expect(page).to have_css ".loading-bar.complete"
     end
 
     scenario "Should update loading bar style after invalid file upload" do
@@ -84,7 +84,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
       imageable_attach_new_file(file_fixture("logo_header.png"), false)
 
-      expect(page).to have_selector ".loading-bar.errors"
+      expect(page).to have_css ".loading-bar.errors"
     end
 
     scenario "Should update image cached_attachment field after valid file upload" do
@@ -113,15 +113,15 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       expect(cached_attachment_field.value).to be_empty
     end
 
-    scenario "Should show nested image errors after invalid form submit" do
+    scenario "Should show image errors after invalid form submit" do
       do_login_for user, management: management
       visit send(path, arguments)
 
       send(fill_resource_method_name, user) if fill_resource_method_name == "imageable_fill_new_valid_proposal"
       click_link "Add image"
-      click_on submit_button
+      click_button submit_button
 
-      within "#nested-image .image" do
+      within "#nested-image .image-fields" do
         expect(page).to have_content("can't be blank", count: 2)
       end
     end
@@ -134,23 +134,23 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       select user.geozone.name, from: "Scope of operation" rescue nil
       imageable_attach_new_file(file_fixture("clippy.jpg"))
       within_fieldset("Descriptive image") { fill_in "Title", with: "" }
-      click_on submit_button
+      click_button submit_button
 
       expect(page).to have_content "can't be blank"
       expect(page).to have_css "img[src$='clippy.jpg']"
     end
 
-    scenario "Should remove nested image after valid file upload and click on remove button" do
+    scenario "Should remove image after valid file upload and click on remove button" do
       do_login_for user, management: management
       visit send(path, arguments)
 
       imageable_attach_new_file(file_fixture("clippy.jpg"))
 
-      within "#nested-image .image" do
+      within "#nested-image .image-fields" do
         click_link "Remove image"
       end
 
-      expect(page).not_to have_selector("#nested-image .image")
+      expect(page).not_to have_css "#nested-image .image-fields"
     end
 
     scenario "Should show successful notice when resource filled correctly without any nested images",
@@ -158,8 +158,8 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       do_login_for user, management: management
       visit send(path, arguments)
 
-      send(fill_resource_method_name, user) if fill_resource_method_name
-      click_on submit_button
+      send(fill_resource_method_name) if fill_resource_method_name
+      click_button submit_button
       expect(page).to have_content imageable_success_notice
     end
 
@@ -170,9 +170,9 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
       imageable_attach_new_file(file_fixture("clippy.jpg"))
 
-      expect(page).to have_selector ".loading-bar.complete"
+      expect(page).to have_css ".loading-bar.complete"
 
-      click_on submit_button
+      click_button submit_button
 
       expect(page).to have_content imageable_success_notice
     end
@@ -184,16 +184,16 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
       imageable_attach_new_file(file_fixture("clippy.jpg"))
 
-      expect(page).to have_selector ".loading-bar.complete"
+      expect(page).to have_css ".loading-bar.complete"
 
-      click_on submit_button
+      click_button submit_button
 
       expect(page).to have_content imageable_success_notice
 
       imageable_redirected_to_resource_show_or_navigate_to(imageable)
 
-      expect(page).to have_selector "figure img"
-      expect(page).to have_selector "figure figcaption" if show_caption_for?(imageable_factory_name)
+      expect(page).to have_css "figure img"
+      expect(page).to have_css "figure figcaption" if show_caption_for?(imageable_factory_name)
     end
 
     scenario "Different URLs for different images" do
@@ -219,7 +219,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
         visit send(path, arguments)
 
-        expect(page).to have_css ".image", count: 1
+        expect(page).to have_css ".image-fields", count: 1
         expect(page).not_to have_css "a#new_image_link"
       end
 
@@ -230,8 +230,8 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
         visit send(path, arguments)
         click_link "Remove image"
 
-        expect(page).not_to have_css ".image"
-        expect(page).to have_css "a#new_image_link"
+        expect(page).not_to have_css ".image-fields"
+        expect(page).to have_link id: "new_image_link"
       end
 
       scenario "don't duplicate fields after removing and adding an image" do
@@ -242,7 +242,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
         click_link "Remove image"
         click_link "Add image"
 
-        expect(page).to have_css ".image", count: 1, visible: :all
+        expect(page).to have_css ".image-fields", count: 1, visible: :all
       end
     end
   end

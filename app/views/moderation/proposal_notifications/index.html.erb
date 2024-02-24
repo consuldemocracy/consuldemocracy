@@ -11,7 +11,7 @@
       <% @proposal_notifications.each do |proposal_notification| %>
         <tr id="proposal_notification_<%= proposal_notification.id %>">
           <td>
-            <%= link_to proposal_notification.title, proposal_notification, target: "_blank" %>
+            <%= link_to proposal_notification.title, proposal_notification %>
             <br>
             <span class="date"><%= l proposal_notification.updated_at.to_date %></span>
             <br>

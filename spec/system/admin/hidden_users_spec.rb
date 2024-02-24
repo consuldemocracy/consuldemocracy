@@ -6,7 +6,9 @@ describe "Admin hidden users", :admin do
 
     debate1 = create(:debate, :hidden, author: user)
     debate2 = create(:debate, author: user)
-    comment1 = create(:comment, :hidden, user: user, commentable: debate2, body: "You have the manners of a beggar")
+    comment1 = create(:comment, :hidden, user: user,
+                                         commentable: debate2,
+                                         body: "You have the manners of a beggar")
     comment2 = create(:comment, user: user, commentable: debate2, body: "Not Spam")
 
     visit admin_hidden_user_path(user)

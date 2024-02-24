@@ -3,7 +3,7 @@ stages:
   - lint
 
 tests:
-  image: "ruby:3.0.6"
+  image: "ruby:3.1.4"
   stage: test
   services:
     - postgres:10.10
@@ -23,6 +23,7 @@ tests:
     - bundle --without development
     - bundle exec rake db:setup
     - bundle exec rake assets:precompile > /dev/null 2>&1
+    - npm clean-install
     - bin/knapsack_pro_rspec
   artifacts:
     when: on_failure
@@ -34,7 +35,7 @@ tests:
 # PRONTO_GITLAB_API_PRIVATE_TOKEN to your repository CI/CD settings
 # giving it the value of the Personal Access Token
 linters:
-  image: "ruby:3.0.6"
+  image: "ruby:3.1.4"
   stage: lint
   cache:
     key: consul

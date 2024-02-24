@@ -1,6 +1,7 @@
 <h2 class="inline-block"><%= t("admin.newsletters.index.title") %></h2>
-<%= link_to t("admin.newsletters.index.new_newsletter"), new_admin_newsletter_path,
-                                                         class: "button float-right" %>
+<%= link_to t("admin.newsletters.index.new_newsletter"),
+            new_admin_newsletter_path,
+            class: "button float-right" %>
 
 <% if @newsletters.any? %>
   <table id="newsletters">

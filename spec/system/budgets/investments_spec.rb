@@ -59,7 +59,7 @@ describe "Budget Investments" do
     visit budget_path(budget)
     click_link "See all investments"
 
-    expect(page).to have_selector("#budget-investments .budget-investment", count: 3)
+    expect(page).to have_css "#budget-investments .budget-investment", count: 3
     investments.each do |investment|
       within("#budget-investments") do
         expect(page).to have_content investment.title
@@ -127,7 +127,7 @@ describe "Budget Investments" do
     end
 
     unlocated_heading = create(:budget_heading, name: "No Map", price: 500, group: group,
-                               longitude: nil, latitude: nil)
+                                                longitude: nil, latitude: nil)
     create(:budget_investment, heading: unlocated_heading)
     visit budget_investments_path(budget, heading_id: unlocated_heading.id)
     within("#sidebar") do
@@ -425,7 +425,7 @@ describe "Budget Investments" do
 
       visit budget_investments_path(budget, heading_id: heading.id)
       click_link "highest rated"
-      expect(page).to have_selector("a.is-active", text: "highest rated")
+      expect(page).to have_css "a.is-active", text: "highest rated"
 
       within "#budget-investments" do
         expect(best_proposal.title).to appear_before(medium_proposal.title)
@@ -604,7 +604,7 @@ describe "Budget Investments" do
       fill_in_new_investment_title with: "Build a skyscraper"
       fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
       fill_in "Location additional info", with: "City center"
-      fill_in "If you are proposing in the name of a collective/organization, "\
+      fill_in "If you are proposing in the name of a collective/organization, " \
               "or on behalf of more people, write its name", with: "T.I.A."
       fill_in "Tags", with: "Towers"
       check "I agree to the Privacy Policy and the Terms and conditions of use"
@@ -646,7 +646,7 @@ describe "Budget Investments" do
       visit new_budget_investment_path(budget)
 
       expect(page).to have_select "Heading",
-        options: ["", "More hospitals", "Medical supplies", "Even more hospitals"]
+                                  options: ["", "More hospitals", "Medical supplies", "Even more hospitals"]
       expect(page).not_to have_content "Health"
     end
 
@@ -662,14 +662,17 @@ describe "Budget Investments" do
 
       expect(page).not_to have_content("#{heading.name} (#{budget.formatted_heading_price(heading)})")
       expect(page).to have_select "Heading",
-        options: ["", "Health: More hospitals", "Health: Medical supplies", "Education: Schools"]
+                                  options: ["",
+                                            "Health: More hospitals",
+                                            "Health: Medical supplies",
+                                            "Education: Schools"]
 
       select "Health: Medical supplies", from: "Heading"
 
       fill_in_new_investment_title with: "Build a skyscraper"
       fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
       fill_in "Location additional info", with: "City center"
-      fill_in "If you are proposing in the name of a collective/organization, "\
+      fill_in "If you are proposing in the name of a collective/organization, " \
               "or on behalf of more people, write its name", with: "T.I.A."
       fill_in "Tags", with: "Towers"
       check "I agree to the Privacy Policy and the Terms and conditions of use"
@@ -692,7 +695,11 @@ describe "Budget Investments" do
     scenario "Edit" do
       daniel = create(:user, :level_two)
 
-      create(:budget_investment, heading: heading, title: "Get Schwifty", author: daniel, created_at: 1.day.ago)
+      create(:budget_investment,
+             heading: heading,
+             title: "Get Schwifty",
+             author: daniel,
+             created_at: 1.day.ago)
 
       login_as(daniel)
 
@@ -944,7 +951,7 @@ describe "Budget Investments" do
 
     visit budget_investment_path(budget, id: investment.id)
 
-    expect(page).not_to have_selector ".js-follow"
+    expect(page).not_to have_css ".js-follow"
   end
 
   scenario "Show back link contains heading id" do
@@ -988,11 +995,11 @@ describe "Budget Investments" do
                         unfeasibility_explanation: "Local government is not competent in this")
 
     investment_2 = create(:budget_investment,
-                        :unfeasible,
-                        :finished,
-                        budget: budget,
-                        heading: heading,
-                        unfeasibility_explanation: "The unfeasible explanation")
+                          :unfeasible,
+                          :finished,
+                          budget: budget,
+                          heading: heading,
+                          unfeasibility_explanation: "The unfeasible explanation")
 
     user = create(:user)
     login_as(user)
@@ -1001,14 +1008,14 @@ describe "Budget Investments" do
 
     expect(page).not_to have_content("Unfeasibility explanation")
     expect(page).not_to have_content("Local government is not competent in this")
-    expect(page).not_to have_content("This investment project has been marked as not feasible "\
+    expect(page).not_to have_content("This investment project has been marked as not feasible " \
                                      "and will not go to balloting phase")
 
     visit budget_investment_path(budget, id: investment_2.id)
 
     expect(page).to have_content("Unfeasibility explanation")
     expect(page).to have_content("The unfeasible explanation")
-    expect(page).to have_content("This investment project has been marked as not feasible "\
+    expect(page).to have_content("This investment project has been marked as not feasible " \
                                  "and will not go to balloting phase")
   end
 
@@ -1102,9 +1109,15 @@ describe "Budget Investments" do
     expect(page).not_to have_content("Local government is not competent in this matter")
   end
 
-  it_behaves_like "followable", "budget_investment", "budget_investment_path", { budget_id: "budget_id", id: "id" }
+  it_behaves_like "followable",
+                  "budget_investment",
+                  "budget_investment_path",
+                  { budget_id: "budget_id", id: "id" }
 
-  it_behaves_like "imageable", "budget_investment", "budget_investment_path", { budget_id: "budget_id", id: "id" }
+  it_behaves_like "imageable",
+                  "budget_investment",
+                  "budget_investment_path",
+                  { budget_id: "budget_id", id: "id" }
 
   it_behaves_like "nested imageable",
                   "budget_investment",
@@ -1114,7 +1127,10 @@ describe "Budget Investments" do
                   "Create Investment",
                   "Budget Investment created successfully."
 
-  it_behaves_like "documentable", "budget_investment", "budget_investment_path", { budget_id: "budget_id", id: "id" }
+  it_behaves_like "documentable",
+                  "budget_investment",
+                  "budget_investment_path",
+                  { budget_id: "budget_id", id: "id" }
 
   it_behaves_like "nested documentable",
                   "user",
@@ -1384,16 +1400,22 @@ describe "Budget Investments" do
     end
 
     scenario "Order by cost (only when balloting)" do
-      mid_investment = create(:budget_investment, :selected, heading: heading, title: "Build a nice house", price: 1000)
+      mid_investment = create(:budget_investment, :selected, heading: heading,
+                                                             title: "Build a nice house",
+                                                             price: 1000)
       mid_investment.update_column(:confidence_score, 10)
-      low_investment = create(:budget_investment, :selected, heading: heading, title: "Build an ugly house", price: 1000)
+      low_investment = create(:budget_investment, :selected, heading: heading,
+                                                             title: "Build an ugly house",
+                                                             price: 1000)
       low_investment.update_column(:confidence_score, 5)
-      high_investment = create(:budget_investment, :selected, heading: heading, title: "Build a skyscraper", price: 20000)
+      high_investment = create(:budget_investment, :selected, heading: heading,
+                                                              title: "Build a skyscraper",
+                                                              price: 20000)
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
       click_link "by price"
-      expect(page).to have_selector("a.is-active", text: "by price")
+      expect(page).to have_css "a.is-active", text: "by price"
 
       within "#budget-investments" do
         expect(high_investment.title).to appear_before(mid_investment.title)
@@ -1427,9 +1449,9 @@ describe "Budget Investments" do
       login_as(user)
       visit budget_investment_path(budget, investment2)
 
-      expect(page).to have_selector(".participation-not-allowed",
-                                    text: "You have already voted a different heading: Heading 1",
-                                    visible: :hidden)
+      expect(page).to have_css ".participation-not-allowed",
+                               text: "You have already voted a different heading: Heading 1",
+                               visible: :hidden
     end
 
     scenario "Sidebar in show should display vote text" do
@@ -1447,11 +1469,11 @@ describe "Budget Investments" do
 
       global_group   = create(:budget_group, budget: budget, name: "Global Group")
       global_heading = create(:budget_heading, group: global_group, name: "Global Heading",
-                              latitude: -43.145412, longitude: 12.009423)
+                                               latitude: -43.145412, longitude: 12.009423)
 
       carabanchel_heading = create(:budget_heading, group: group, name: "Carabanchel")
       new_york_heading    = create(:budget_heading, group: group, name: "New York",
-                                   latitude: -43.223412, longitude: 12.009423)
+                                                    latitude: -43.223412, longitude: 12.009423)
 
       create(:budget_investment, :selected, price: 1, heading: global_heading, title: "World T-Shirt")
       create(:budget_investment, :selected, price: 10, heading: global_heading, title: "Eco pens")
@@ -1473,7 +1495,7 @@ describe "Budget Investments" do
 
       visit budget_ballot_path(budget)
 
-      expect(page).to have_content "But you can change your vote at any time "\
+      expect(page).to have_content "But you can change your vote at any time " \
                                    "until this phase is closed."
 
       within("#budget_group_#{global_group.id}") do
@@ -1622,20 +1644,7 @@ describe "Budget Investments" do
 
   context "sidebar map" do
     scenario "Display 6 investment's markers on sidebar map" do
-      investment1 = create(:budget_investment, heading: heading)
-      investment2 = create(:budget_investment, heading: heading)
-      investment3 = create(:budget_investment, heading: heading)
-      investment4 = create(:budget_investment, heading: heading)
-      investment5 = create(:budget_investment, heading: heading)
-      investment6 = create(:budget_investment, heading: heading)
-
-      create(:map_location, longitude: 40.1231, latitude: -3.636, investment: investment1)
-      create(:map_location, longitude: 40.1232, latitude: -3.635, investment: investment2)
-      create(:map_location, longitude: 40.1233, latitude: -3.634, investment: investment3)
-      create(:map_location, longitude: 40.1234, latitude: -3.633, investment: investment4)
-      create(:map_location, longitude: 40.1235, latitude: -3.632, investment: investment5)
-      create(:map_location, longitude: 40.1236, latitude: -3.631, investment: investment6)
-
+      create_list(:budget_investment, 6, :with_map_location, heading: heading)
       visit budget_investments_path(budget, heading_id: heading.id)
 
       within ".map-location" do
@@ -1643,36 +1652,10 @@ describe "Budget Investments" do
       end
     end
 
-    scenario "Display 2 investment's markers on sidebar map" do
-      investment1 = create(:budget_investment, heading: heading)
-      investment2 = create(:budget_investment, heading: heading)
-
-      create(:map_location, longitude: 40.1281, latitude: -3.656, investment: investment1)
-      create(:map_location, longitude: 40.1292, latitude: -3.665, investment: investment2)
-
-      visit budget_investments_path(budget, heading_id: heading.id)
-
-      within ".map-location" do
-        expect(page).to have_css(".map-icon", count: 2, visible: :all)
-      end
-    end
-
     scenario "Display only investment's related to the current heading" do
       heading_2 = create(:budget_heading, name: "Madrid", group: group)
-
-      investment1 = create(:budget_investment, heading: heading)
-      investment2 = create(:budget_investment, heading: heading)
-      investment3 = create(:budget_investment, heading: heading)
-      investment4 = create(:budget_investment, heading: heading)
-      investment5 = create(:budget_investment, heading: heading_2)
-      investment6 = create(:budget_investment, heading: heading_2)
-
-      create(:map_location, longitude: 40.1231, latitude: -3.636, investment: investment1)
-      create(:map_location, longitude: 40.1232, latitude: -3.685, investment: investment2)
-      create(:map_location, longitude: 40.1233, latitude: -3.664, investment: investment3)
-      create(:map_location, longitude: 40.1234, latitude: -3.673, investment: investment4)
-      create(:map_location, longitude: 40.1235, latitude: -3.672, investment: investment5)
-      create(:map_location, longitude: 40.1236, latitude: -3.621, investment: investment6)
+      create_list(:budget_investment, 4, :with_map_location, heading: heading)
+      create_list(:budget_investment, 2, :with_map_location, heading: heading_2)
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
@@ -1683,14 +1666,7 @@ describe "Budget Investments" do
 
     scenario "Do not display investment's, since they're all related to other heading" do
       heading_2 = create(:budget_heading, name: "Madrid", group: group)
-
-      investment1 = create(:budget_investment, heading: heading_2)
-      investment2 = create(:budget_investment, heading: heading_2)
-      investment3 = create(:budget_investment, heading: heading_2)
-
-      create(:map_location, longitude: 40.1255, latitude: -3.644, investment: investment1)
-      create(:map_location, longitude: 40.1258, latitude: -3.637, investment: investment2)
-      create(:map_location, longitude: 40.1251, latitude: -3.649, investment: investment3)
+      create_list(:budget_investment, 3, :with_map_location, heading: heading_2)
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
@@ -1700,8 +1676,23 @@ describe "Budget Investments" do
     end
 
     scenario "Shows the polygon associated to the current heading" do
-      triangle = '{ "geometry": { "type": "Polygon", "coordinates": [[-0.1,51.5],[-0.2,51.4],[-0.3,51.6]] } }'
-      rectangle = '{ "geometry": { "type": "Polygon", "coordinates": [[-0.1,51.5],[-0.2,51.5],[-0.2,51.6],[-0.1,51.6]] } }'
+      triangle = <<~JSON
+        {
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [[-0.1,51.5],[-0.2,51.4],[-0.3,51.6]]
+          }
+        }
+      JSON
+
+      rectangle = <<~JSON
+        {
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [[-0.1,51.5],[-0.2,51.5],[-0.2,51.6],[-0.1,51.6]]
+          }
+        }
+      JSON
 
       park = create(:geozone, geojson: triangle, color: "#03ee03")
       square = create(:geozone, geojson: rectangle, color: "#ff04ff")

@@ -103,7 +103,6 @@ sv:
           submit: Registrera dig
           terms: Genom att registrera dig godkänner du %{terms}
           terms_link: användarvillkoren
-          terms_title: Genom att registrera dig godkänner du användarvillkoren
           title: Registrera dig
           username_is_available: Användarnamnet är tillgängligt
           username_is_not_available: Användarnamnet är upptaget

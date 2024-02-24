@@ -8,7 +8,7 @@
 
 <% provide :social_media_meta_tags do %>
   <%= render "shared/social_media_meta_tags",
-              social_url: root_url %>
+             social_url: root_url %>
 <% end %>
 
 <%= render "shared/header", header: @header %>
@@ -34,8 +34,8 @@
 
   <% if feature?("user.recommendations") && (@recommended_debates.present? || @recommended_proposals.present?) %>
     <%= render "recommended",
-                recommended_debates: @recommended_debates,
-                recommended_proposals: @recommended_proposals %>
+               recommended_debates: @recommended_debates,
+               recommended_proposals: @recommended_proposals %>
   <% end %>
 
   <%= render "custom_actions" %>

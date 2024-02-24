@@ -3,8 +3,8 @@
 <h2><%= t("devise_views.users.registrations.delete_form.title") %></h2>
 
 <%= form_for(resource, as: resource_name,
-             url: users_registrations_path,
-             html: { method: :delete }) do |f| %>
+                       url: users_registrations_path,
+                       html: { method: :delete }) do |f| %>
   <%= render "shared/errors", resource: resource %>
 
   <div data-alert class="callout alert">
@@ -15,8 +15,8 @@
   </p>
 
   <%= f.text_field :erase_reason,
-        autofocus: true,
-        label: t("devise_views.users.registrations.delete_form.erase_reason_label") %>
+                   autofocus: true,
+                   label: t("devise_views.users.registrations.delete_form.erase_reason_label") %>
 
   <%= f.submit t("devise_views.users.registrations.delete_form.submit"), class: "button alert expanded" %>
 <% end %>

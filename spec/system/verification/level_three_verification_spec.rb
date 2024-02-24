@@ -9,8 +9,8 @@ describe "Level three verification" do
 
     verified_user = create(:verified_user,
                            document_number: "12345678Z",
-                           document_type:   "1",
-                           phone:           "611111111")
+                           document_type: "1",
+                           phone: "611111111")
 
     login_as(user)
 
@@ -41,8 +41,8 @@ describe "Level three verification" do
 
     verified_user = create(:verified_user,
                            document_number: "12345678Z",
-                           document_type:   "1",
-                           email:           "rock@example.com")
+                           document_type: "1",
+                           email: "rock@example.com")
 
     login_as(user)
 
@@ -89,7 +89,9 @@ describe "Level three verification" do
 
     click_link "Send me a letter with the code"
 
-    expect(page).to have_content "Thank you for requesting your maximum security code (only required for the final votes)."\
-                                 " In a few days we will send it to the address featuring in the data we have on file."
+    expect(page).to have_content "Thank you for requesting your maximum security code " \
+                                 "(only required for the final votes). In a few days " \
+                                 "we will send it to the address featuring in the data " \
+                                 "we have on file."
   end
 end

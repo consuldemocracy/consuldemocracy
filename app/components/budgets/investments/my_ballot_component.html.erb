@@ -10,13 +10,12 @@
   <% elsif assigned_heading.present? %>
     <p>
       <%= sanitize(t("budgets.investments.index.sidebar.different_heading_assigned",
-              heading_link: heading_link(assigned_heading, budget)
-            )) %>
+                     heading_link: heading_link(assigned_heading, budget))) %>
       <br>
       <small>
         <%= sanitize(t("budgets.investments.index.sidebar.change_ballot",
-            check_ballot: link_to(t("budgets.investments.index.sidebar.check_ballot_link"),
-                          budget_ballot_path(budget)))) %>
+                       check_ballot: link_to(t("budgets.investments.index.sidebar.check_ballot_link"),
+                                             budget_ballot_path(budget)))) %>
       </small>
     </p>
   <% else %>
@@ -26,7 +25,8 @@
   <p>
     <%= sanitize(ballot.change_vote_info(
         link: link_to(t("budgets.investments.index.sidebar.change_vote_link"),
-            budget_ballot_path(budget)))) %>
+                      budget_ballot_path(budget))
+      )) %>
   </p>
 
   <ul class="ballot-list">
@@ -39,6 +39,6 @@
   </ul>
 
   <%= link_to t("budgets.investments.header.check_ballot"),
-                budget_ballot_path(budget),
-                class: "button hollow expanded" %>
+              budget_ballot_path(budget),
+              class: "button hollow expanded" %>
 </div>

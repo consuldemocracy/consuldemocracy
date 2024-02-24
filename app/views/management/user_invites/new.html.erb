@@ -4,7 +4,7 @@
   <label><%= t("management.user_invites.new.label") %></label>
   <p class="help-text" id="emails-help-text"><%= t("management.user_invites.new.info") %></p>
   <%= text_area_tag "emails", nil, rows: 5,
-                    aria: { describedby: "emails-help-text" } %>
+                                   aria: { describedby: "emails-help-text" } %>
   <div class="small-12 medium-6 large-3">
     <input type="submit" name="" value="<%= t("management.user_invites.new.submit") %>" class="button expanded">
   </div>

@@ -464,6 +464,7 @@
 
     a {
       color: inherit;
+      display: inline-block;
     }
   }
 
@@ -701,6 +702,10 @@
       font-size: $small-font-size;
       margin-top: rem-calc(10);
     }
+  }
+
+  .investment-external-link a {
+    word-wrap: break-word;
   }
 }
 
@@ -1297,6 +1302,7 @@
 }
 
 .budget-execution {
+  @include card;
   border: 1px solid $border;
   overflow: hidden;
   position: relative;
@@ -1345,7 +1351,7 @@
     font-size: rem-calc(24);
   }
 
-  &:hover {
+  &:hover:not(:focus-within) {
     box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
   }
 }
@@ -1446,6 +1452,21 @@
     &.short {
       height: rem-calc(300);
       overflow: hidden;
+    }
+  }
+
+  .document-link {
+    > :first-child {
+      @include has-fa-icon(file, regular);
+
+      &::before {
+        position: relative;
+        top: -0.1rem;
+      }
+    }
+
+    a {
+      word-wrap: break-word;
     }
   }
 }
@@ -1608,6 +1629,7 @@
 
     a {
       color: inherit;
+      display: inline-block;
     }
   }
 }

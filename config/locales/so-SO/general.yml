@@ -131,7 +131,6 @@ so:
       invalid_date_range: "Taariikhda ku-meel-gaadhka ah"
   form:
     accept_terms: Wan ogolahay%{policy} iyo%{conditions}
-    accept_terms_title: Waxaan ku raacsanahay Siyaasadda Khaaska ah iyo shuruudaha isticmaalka
     conditions: Shuruudaha iyo xaaladaha isticmaalka
     debate: Dood
     direct_message: fariin Garaa
@@ -154,11 +153,6 @@ so:
   geozones:
     none: Dhaman magaloyinka
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Dab-demiska
-      ie: Waxaanu ogaanay inaad adigu internetka kula socoto. Wixii khibrad dheeraad ah, waxaan ku talineynaa isticmaalka% %{firefox} ama%{chrome}.
-      ie_title: Websaydaan laguma soo koobi karo barta internetka
     dashboard:
       proposal_header:
         published: Sobandhigaay

@@ -101,7 +101,7 @@ describe "Admin budgets", :admin do
       click_link "Create multiple headings budget"
 
       expect(page).to have_select("Final voting style", selected: "Knapsack")
-      expect(page).not_to have_selector("#budget_hide_money")
+      expect(page).not_to have_css "#budget_hide_money"
 
       fill_in "Name", with: "Budget hide money"
       select "Approval", from: "Final voting style"
@@ -198,7 +198,9 @@ describe "Admin budgets", :admin do
     scenario "Destroy a budget without investments" do
       visit admin_budget_path(budget)
 
-      message = "Are you sure? This will delete the budget and all its associated groups and headings. This action cannot be undone."
+      message = "Are you sure? " \
+                "This will delete the budget and all its associated groups and headings. " \
+                "This action cannot be undone."
 
       accept_confirm(message) { click_button "Delete budget" }
 
@@ -235,8 +237,8 @@ describe "Admin budgets", :admin do
 
         visit admin_budget_path(budget)
 
-        expect(page).to have_content "The configuration of these phases is used for information purposes "\
-                                     "only. Its function is to define the phases information displayed "\
+        expect(page).to have_content "The configuration of these phases is used for information purposes " \
+                                     "only. Its function is to define the phases information displayed " \
                                      "on the public page of the participatory budget."
         expect(page).to have_table "Phases", with_cols: [
           [
@@ -357,7 +359,7 @@ describe "Admin budgets", :admin do
 
     scenario "Change voting style uncheck hide money" do
       budget_hide_money = create(:budget, :approval, :hide_money)
-      hide_money_help_text = "If this option is checked, all fields showing the amount of money "\
+      hide_money_help_text = "If this option is checked, all fields showing the amount of money " \
                              "will be hidden throughout the process."
 
       visit edit_admin_budget_path(budget_hide_money)
@@ -378,7 +380,7 @@ describe "Admin budgets", :admin do
 
     scenario "Edit knapsack budget do not show hide money info" do
       budget = create(:budget, :knapsack)
-      hide_money_help_text = "If this option is checked, all fields showing the amount of money "\
+      hide_money_help_text = "If this option is checked, all fields showing the amount of money " \
                              "will be hidden throughout the process."
 
       visit edit_admin_budget_path(budget)
@@ -394,7 +396,7 @@ describe "Admin budgets", :admin do
 
     scenario "Edit approval budget show hide money info" do
       budget = create(:budget, :approval)
-      hide_money_help_text = "If this option is checked, all fields showing the amount of money "\
+      hide_money_help_text = "If this option is checked, all fields showing the amount of money " \
                              "will be hidden throughout the process."
 
       visit edit_admin_budget_path(budget)
@@ -452,10 +454,11 @@ describe "Admin budgets", :admin do
     scenario "For a Budget in reviewing balloting" do
       budget = create(:budget, :reviewing_ballots)
       heading = create(:budget_heading, budget: budget, price: 4)
-      unselected = create(:budget_investment, :unselected, heading: heading, price: 1,
+      unselected = create(:budget_investment, :unselected, heading: heading,
+                                                           price: 1,
                                                            ballot_lines_count: 3)
       winner = create(:budget_investment, :selected, heading: heading, price: 3,
-                                                   ballot_lines_count: 2)
+                                                     ballot_lines_count: 2)
       selected = create(:budget_investment, :selected, heading: heading, price: 2, ballot_lines_count: 1)
 
       visit admin_budget_path(budget)

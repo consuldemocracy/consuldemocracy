@@ -13,17 +13,17 @@
     <% if feature?(:polls) && Rails.env.test? %>
       <li>
         <%= layout_menu_link_to t("layouts.header.poll_questions"),
-                                  polls_path,
-                                  controller_name == "polls" || (controller_name == "questions" && controller.class.module_parent == Polls),
-                                  accesskey: "3" %>
+                                polls_path,
+                                controller_name == "polls" || (controller_name == "questions" && controller.class.module_parent == Polls),
+                                accesskey: "3" %>
       </li>
     <% end %>
     <% if feature?(:budgets) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.budgets"),
-                                  budgets_path,
-                                  controller_name == "budgets" || controller_name == "investments",
-                                  accesskey: "5" %>
+                                budgets_path,
+                                controller_name == "budgets" || controller_name == "investments",
+                                accesskey: "5" %>
       </li>
       <li>
         <%= layout_menu_link_to t("layouts.header.budgets_faq"),

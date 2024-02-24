@@ -17,6 +17,7 @@ tr:
         support: "Yatırım desteklendi"
         topic: "Konu oluşturuldu."
         valuator_group: "Bilirkişi grubu oluşturuldu"
+        vote: "Oy eklendi"
       save_changes:
         notice: Değişiklikler kaydedildi
       update:
@@ -35,3 +36,4 @@ tr:
         topic: "Konu silindi."
         poll_question_answer_video: "Yanıt videosu silindi."
         valuator_group: "Bilirkişi grubu silindi"
+        vote: "Oy silindi"

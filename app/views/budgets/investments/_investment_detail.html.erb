@@ -45,15 +45,13 @@
 <% end %>
 
 <% if feature?(:allow_attached_documents) %>
-  <%= render "documents/documents",
-              documents: investment.documents,
-              max_documents_allowed: Budget::Investment.max_documents_allowed %>
+  <%= render Documents::DocumentsComponent.new(investment.documents) %>
 <% end %>
 
 <%= render "shared/tags", taggable: investment %>
 
 <% if investment.external_url.present? %>
-  <div class="document-link">
+  <div class="investment-external-link">
     <%= sanitize_and_auto_link investment.external_url %>
   </div>
 <% end %>

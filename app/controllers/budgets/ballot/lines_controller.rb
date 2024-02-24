@@ -10,7 +10,9 @@ module Budgets
 
       authorize_resource :budget
       authorize_resource :ballot
-      load_and_authorize_resource :line, through: :ballot, find_by: :investment_id, class: "Budget::Ballot::Line"
+      load_and_authorize_resource :line, through: :ballot,
+                                         find_by: :investment_id,
+                                         class: "Budget::Ballot::Line"
 
       def create
         load_investment

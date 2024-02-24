@@ -68,7 +68,8 @@ describe SDG::RelatedListSelectorComponent do
       expect(page.find_field("Goals and Targets")["data-suggestions-list"]).to eq([{
         tag: "1.1. Eradicate Extreme Poverty",
         display_text: "1.1",
-        title: "By 2030, eradicate extreme poverty for all people everywhere, currently measured as people living on less than $1.25 a day",
+        title: "By 2030, eradicate extreme poverty for all people everywhere, " \
+               "currently measured as people living on less than $1.25 a day",
         value: "1.1"
       }].to_json)
     end

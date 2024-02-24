@@ -9,13 +9,13 @@
 
   .heading {
     @include brand-color;
+    @include card;
     border: 2px solid $border;
     border-radius: rem-calc(6);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     margin-bottom: $line-height / 2;
     margin-top: $line-height / 4;
     padding: $line-height / 2;
-    position: relative;
     width: 100%;
 
     @include breakpoint(medium) {
@@ -26,30 +26,8 @@
       width: calc(100% / 6 - #{$spacing});
     }
 
-    &:focus-within {
-      outline: $outline-focus;
-
-      a:focus {
-        outline: none;
-      }
-    }
-
     a {
       font-weight: bold;
-
-      &::after,
-      &::before {
-        bottom: 0;
-        content: "";
-        left: 0;
-        position: absolute;
-        right: 0;
-        top: 0;
-      }
-
-      &:hover {
-        text-decoration: none;
-      }
 
       &:hover::before {
         background: $light;

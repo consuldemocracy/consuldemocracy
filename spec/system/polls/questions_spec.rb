@@ -20,7 +20,7 @@ describe "Poll Questions" do
 
     within "#poll_more_info_answers" do
       expect(page).to have_content "Pedestrian road"
-      expect(page).to have_selector "img[alt='Trees on both sides of the road']"
+      expect(page).to have_css "img[alt='Trees on both sides of the road']"
     end
   end
 end

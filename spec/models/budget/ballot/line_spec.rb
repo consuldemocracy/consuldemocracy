@@ -52,7 +52,7 @@ describe Budget::Ballot::Line do
 
       it "is not valid if there are no votes left" do
         create(:budget_ballot_line, ballot: ballot,
-               investment: create(:budget_investment, :selected, heading: heading))
+                                    investment: create(:budget_investment, :selected, heading: heading))
 
         expect(ballot_line).not_to be_valid
       end

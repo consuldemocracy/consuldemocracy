@@ -204,7 +204,7 @@ es:
         max_ballot_lines_info: 'Máximo número de proyectos que un usuario puede votar en esta partida durante la fase "Votación final". Solamente se aplica a presupuestos con votación por aprobación.'
         population_info: "El campo población de las partidas presupuestarias se usa con fines estadísticos únicamente, con el objetivo de mostrar el porcentaje de votos habidos en cada partida que represente un área con población. Es un campo opcional, así que puedes dejarlo en blanco si no aplica."
         coordinates_info: "Si se añaden los campos latitud y longitud, en la página de proyectos de esta partida aparecerá un mapa, que estará centrado en esas coordenadas."
-        content_blocks_info: "Si se permite el bloque de contenidos, se tendrá la oportunidad de crear bloques de contenido relativos a esta partida desde la sección Configuración > Personalizar bloques. Este contenido aparecerá en la página de proyectos de esta partida."
+        content_blocks_info: "Si se permite el bloque de contenidos, se tendrá la oportunidad de crear bloques de contenido relativos a esta partida desde la sección Contenido del sitio > Personalizar bloques. Este contenido aparecerá en la página de proyectos de esta partida."
         create: "Crear nueva partida"
         edit: "Editar partida"
         submit: "Guardar partida"
@@ -453,6 +453,16 @@ es:
         back: Volver a %{org}
         title: Administración
         description: Bienvenido al panel de administración de %{org}.
+        info: |-
+          <p>Este es el lugar donde tú, como administrador, implementas y supervisas el proceso de participación ciudadana en tu ciudad o región.</p>
+
+          <p>Ahora eres uno de los cientos de gobiernos y municipios de todo el mundo que están utilizando la plataforma CONSUL DEMOCRACY para poner en práctica la participación ciudadana. ¡Enhorabuena!</p>
+
+          <p>La Fundación CONSUL DEMOCRACY está en el centro de la comunidad mundial de usuarios. Nos gustaría pedirte que te pongas en contacto con nosotros para saber quién utiliza el software y ver cómo podemos ayudar en su implantación o uso. Estamos deseando darte la bienvenida a la comunidad.</p>
+
+          <p>¡Feliz administración!</p>
+
+          <p>Saludos del equipo de la Fundación CONSUL DEMOCRACY.</p>
       actions:
         index:
           description: "Cuando los usuarios crean propuestas pueden acceder a un panel de progreso de su propuesta, donde se le puede proponer recursos y recomendaciones para conseguir apoyos a su idea."
@@ -531,7 +541,6 @@ es:
         title: "Documentos"
         format: "Formato"
         size: "Tamaño"
-        url: "URL"
       create:
         success_notice: "Documento creado correctamente"
         unable_notice: "Documento inválido"
@@ -1592,7 +1601,8 @@ es:
           name: Nombre
           names:
             top_links: Enlaces superiores
-            footer: Pie de página
+            footer: Pie de página (redes sociales)
+            footer_legal: Pie de página (términos legales)
             subnavigation_left: Navegación principal izquierda
             subnavigation_right: Navegación principal derecha
       images:

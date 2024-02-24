@@ -5,13 +5,13 @@ describe Admin::ActionComponent do
     it "includes an HTML class for the action by default" do
       render_inline Admin::ActionComponent.new(:edit, double, path: "/")
 
-      expect(page).to have_css "a.edit-link.admin-action"
+      expect(page).to have_link class: %w[edit-link admin-action]
     end
 
     it "keeps the admin-action class when the class is overwritten" do
       render_inline Admin::ActionComponent.new(:edit, double, path: "/", class: "modify-link")
 
-      expect(page).to have_css "a.modify-link.admin-action"
+      expect(page).to have_link class: %w[modify-link admin-action]
       expect(page).not_to have_css ".edit-link"
     end
   end
@@ -28,7 +28,7 @@ describe Admin::ActionComponent do
 
       render_inline Admin::ActionComponent.new(:edit, record, path: "/")
 
-      expect(page).to have_css "a.edit-link#edit_computer_1"
+      expect(page).to have_link class: "edit-link", id: "edit_computer_1"
     end
 
     it "can be overwritten" do
@@ -36,7 +36,7 @@ describe Admin::ActionComponent do
 
       render_inline Admin::ActionComponent.new(:edit, record, path: "/", id: "my_id")
 
-      expect(page).to have_css "a.edit-link#my_id"
+      expect(page).to have_link class: "edit-link", id: "my_id"
       expect(page).not_to have_css "#edit_computer_1"
     end
   end

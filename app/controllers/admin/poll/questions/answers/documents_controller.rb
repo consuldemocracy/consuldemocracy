@@ -12,7 +12,7 @@ class Admin::Poll::Questions::Answers::DocumentsController < Admin::Poll::BaseCo
 
     if @answer.save
       redirect_to admin_answer_documents_path(@answer),
-        notice: t("admin.documents.create.success_notice")
+                  notice: t("admin.documents.create.success_notice")
     else
       render :index
     end

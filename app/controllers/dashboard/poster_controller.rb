@@ -10,7 +10,7 @@ class Dashboard::PosterController < Dashboard::BaseController
                dpi: 300,
                zoom: 0.32,
                show_as_html: Rails.env.test? || params.key?("debug"),
-               margin:  { top: 0 }
+               margin: { top: 0 }
       end
     end
   end

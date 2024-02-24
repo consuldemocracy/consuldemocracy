@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe Poll::Question, type: :model do
+RSpec.describe Poll::Question do
   let(:poll_question) { build(:poll_question) }
 
   describe "Concerns" do

@@ -17,7 +17,15 @@
   </p>
 
   <p style="<%= css_for_mailer_text %>">
-    <%= t("mailers.budget_investment_unfeasible.reconsider_html", code: @investment.code) %>
+    <%= sanitize(
+      t(
+        "mailers.budget_investment_unfeasible.new",
+        url: link_to(t("mailers.budget_investment_unfeasible.new_href"),
+                     new_budget_investment_url(@investment.budget),
+                     style: css_for_mailer_link)
+      ),
+      attributes: %w[href style]
+    ) %>
   </p>
 
   <p style="<%= css_for_mailer_text %>">

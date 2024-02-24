@@ -16,7 +16,7 @@ class RemoteCensusApi
 
     def extract_value(path_value)
       path = parse_response_path(path_value)
-      return nil unless path.present?
+      return nil if path.blank?
 
       @body.dig(*path)
     end
@@ -29,10 +29,10 @@ class RemoteCensusApi
     def date_of_birth
       path_value = Setting["remote_census.response.date_of_birth"]
       str = extract_value(path_value)
-      return nil unless str.present?
+      return nil if str.blank?
 
       day, month, year = str.match(/(\d\d?)\D(\d\d?)\D(\d\d\d?\d?)/)[1..3]
-      return nil unless day.present? && month.present? && year.present?
+      return nil if day.blank? || month.blank? || year.blank?
 
       Time.zone.local(year.to_i, month.to_i, day.to_i).to_date
     end

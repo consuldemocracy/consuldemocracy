@@ -143,7 +143,7 @@ describe Budget::Ballot do
 
       2.times { create(:budget_heading, group: group) }
 
-      expect(ballot.heading_for_group(group)).to eq nil
+      expect(ballot.heading_for_group(group)).to be nil
     end
   end
 end

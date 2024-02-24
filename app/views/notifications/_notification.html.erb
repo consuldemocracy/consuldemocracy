@@ -16,13 +16,15 @@
 
   <% if notification.unread? %>
     <%= link_to t("notifications.notification.mark_as_read"),
-              mark_as_read_notification_path(notification),
-              method: :put, remote: true,
-              class: "mark-notification small" %>
+                mark_as_read_notification_path(notification),
+                method: :put,
+                remote: true,
+                class: "mark-notification small" %>
   <% else %>
     <%= link_to t("notifications.notification.mark_as_unread"),
-              mark_as_unread_notification_path(notification),
-              method: :put, remote: true,
-              class: "mark-notification small" %>
+                mark_as_unread_notification_path(notification),
+                method: :put,
+                remote: true,
+                class: "mark-notification small" %>
   <% end %>
 </li>

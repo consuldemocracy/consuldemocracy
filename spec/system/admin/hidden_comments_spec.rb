@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Admin hidden comments", :admin do
   scenario "Do not show comments from blocked users" do
-    comment = create(:comment, :hidden, body: "SPAM from SPAMMER")
+    comment = create(:comment, :hidden, body: "SPAM from SPAMMER", author: create(:user, username: "Evil"))
     proposal = create(:proposal, author: comment.author)
     create(:comment, commentable: proposal, user: comment.author, body: "Good Proposal!")
 
@@ -13,7 +13,7 @@ describe "Admin hidden comments", :admin do
     visit proposal_path(proposal)
 
     within("#proposal_#{proposal.id}") do
-      accept_confirm("Are you sure? This will hide the user \"#{proposal.author.name}\" and all their contents.") do
+      accept_confirm("Are you sure? This will hide the user \"Evil\" and all their contents.") do
         click_button "Block author"
       end
     end

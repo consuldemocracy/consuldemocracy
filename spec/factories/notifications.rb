@@ -1,22 +1,22 @@
 FactoryBot.define do
   factory :notification do
     user
-    association :notifiable, factory: :proposal
+    notifiable factory: :proposal
 
     trait :read do
       read_at { Time.current }
     end
 
     trait :for_proposal_notification do
-      association :notifiable, factory: :proposal_notification
+      notifiable factory: :proposal_notification
     end
 
     trait :for_comment do
-      association :notifiable, factory: :comment
+      notifiable factory: :comment
     end
 
     trait :for_poll_question do
-      association :notifiable, factory: :poll_question
+      notifiable factory: :poll_question
     end
   end
 

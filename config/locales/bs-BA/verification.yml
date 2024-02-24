@@ -46,7 +46,6 @@ bs:
           success: Prebivalište potvrđeno
       new:
         accept_terms_text: Prihvatam %{terms_url} popisa
-        accept_terms_text_title: Prihvatam uvjete za pristup popisu
         document_number: Broj isprave
         document_number_help_title: Pomoć
         document_number_help_text: "<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>Residence card</strong>: X1234567P"

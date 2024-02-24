@@ -3,9 +3,10 @@
     <div class="small-12 medium-9 column">
 
       <% if banner_color? %>
-        <%= link_to t("shared.back"), legislation_processes_path,
-                                      class: "icon-angle-left",
-                                      style: "color:#{process.font_color};" %>
+        <%= link_to t("shared.back"),
+                    legislation_processes_path,
+                    class: "icon-angle-left",
+                    style: "color:#{process.font_color};" %>
       <% else %>
         <%= back_link_to legislation_processes_path %>
       <% end %>

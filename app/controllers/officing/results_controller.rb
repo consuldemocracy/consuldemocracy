@@ -21,12 +21,12 @@ class Officing::ResultsController < Officing::BaseController
 
   def index
     @booth_assignment = ::Poll::BoothAssignment.includes(:booth).find(index_params[:booth_assignment_id])
-    if current_user.poll_officer.officer_assignments.final.
-                    where(booth_assignment_id: @booth_assignment.id).exists?
+    if current_user.poll_officer.officer_assignments.final
+                   .where(booth_assignment_id: @booth_assignment.id).exists?
 
-      @partial_results = ::Poll::PartialResult.includes(:question).
-                                            where(booth_assignment_id: index_params[:booth_assignment_id]).
-                                            where(date: index_params[:date])
+      @partial_results = ::Poll::PartialResult.includes(:question)
+                                              .where(booth_assignment_id: index_params[:booth_assignment_id])
+                                              .where(date: index_params[:date])
       @recounts = ::Poll::Recount.where(booth_assignment_id: @booth_assignment.id, date: index_params[:date])
     end
   end
@@ -46,10 +46,12 @@ class Officing::ResultsController < Officing::BaseController
           answer = question.question_answers.find_by(given_order: answer_index.to_i + 1).title
           go_back_to_new if question.blank?
 
-          partial_result = ::Poll::PartialResult.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id,
-                                                                       date: Date.current,
-                                                                       question_id: question_id,
-                                                                       answer: answer)
+          partial_result = ::Poll::PartialResult.find_or_initialize_by(
+            booth_assignment_id: @officer_assignment.booth_assignment_id,
+            date: Date.current,
+            question_id: question_id,
+            answer: answer
+          )
           partial_result.officer_assignment_id = @officer_assignment.id
           partial_result.amount = count.to_i
           partial_result.author = current_user
@@ -62,8 +64,10 @@ class Officing::ResultsController < Officing::BaseController
     end
 
     def build_recounts
-      recount = ::Poll::Recount.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id,
-                                                      date: Date.current)
+      recount = ::Poll::Recount.find_or_initialize_by(
+        booth_assignment_id: @officer_assignment.booth_assignment_id,
+        date: Date.current
+      )
       recount.officer_assignment_id = @officer_assignment.id
       recount.author = current_user
       recount.origin = "booth"
@@ -89,18 +93,20 @@ class Officing::ResultsController < Officing::BaseController
     end
 
     def load_officer_assignment
-      @officer_assignment = current_user.poll_officer.
-                            officer_assignments.final.find_by(id: results_params[:officer_assignment_id])
+      @officer_assignment = current_user.poll_officer
+                                        .officer_assignments
+                                        .final
+                                        .find_by(id: results_params[:officer_assignment_id])
     end
 
     def load_officer_assignments
-      @officer_assignments = ::Poll::OfficerAssignment.
-                  includes(booth_assignment: [:booth]).
-                  joins(:booth_assignment).
-                  final.
-                  where(id: current_user.poll_officer.officer_assignment_ids).
-                  where(poll_booth_assignments: { poll_id: @poll.id }).
-                  where(date: Date.current)
+      @officer_assignments = ::Poll::OfficerAssignment
+                             .includes(booth_assignment: [:booth])
+                             .joins(:booth_assignment)
+                             .final
+                             .where(id: current_user.poll_officer.officer_assignment_ids)
+                             .where(poll_booth_assignments: { poll_id: @poll.id })
+                             .where(date: Date.current)
     end
 
     def load_partial_results

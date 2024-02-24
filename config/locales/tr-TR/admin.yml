@@ -451,6 +451,16 @@ tr:
         back: '%{org} üzerine dön'
         title: Yönetim
         description: '%{org} yönetim panosuna hoş geldiniz.'
+        info: |-
+          <p>Yönetici olarak ilinizde veya bölgenizde yurttaş katılımı süreçlerini buradan uygulayayıp ve denetleyebilirsiniz.</p>
+
+          <p>Yurttaş katılımını sağlamak için dünya çapında CONSUL DEMOCRACY platformunu kullanan yüzlerce hükümet ve belediye arasına katıldınız. Tebrikler!</p>
+
+          <p>CONSUL DEMOCRACY Vakfı küresel kullanıcı topluluğunun merkezinde yer alıyor. Yazılımı kimlerin kullandığını anlamak ve uygulanması ile kullanımı konusunda nasıl yardımcı olabileceğimizi görmek için bizimle iletişim kurmanızı rica ediyoruz. Sizi topluluğumuza davet etmek için sabırsızlanıyoruz.</p>
+
+          <p>Yönetiminiz kutlu olsun!</p>
+
+          <p>CONSUL DEMOCRACY Vakfı ekibinden selamlar.</p>
       actions:
         index:
           description: "Kullanıcılar önergeler oluşturduktan sonra önerge panosundan, fikirlerine destek olacak kaynakları ve önerileri öğrenebilir."
@@ -529,7 +539,6 @@ tr:
         title: "Belgeler"
         format: "Biçim"
         size: "Boyut"
-        url: "Adres"
       create:
         success_notice: "Belge yüklendi"
         unable_notice: "Belge geçersiz"
@@ -1590,7 +1599,8 @@ tr:
           name: Ad
           names:
             top_links: Sık kullanılan bağlantılar
-            footer: Alt bilgi
+            footer: Alt bilgi (sosyal ağlar)
+            footer_legal: Alt bilgi (yasal hükümler)
             subnavigation_left: Ana gezinme sol
             subnavigation_right: Ana gezinme sağ
       images:

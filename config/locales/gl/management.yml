@@ -34,7 +34,7 @@ gl:
         info: Dende aquí podes xestionar usuarios a través das accións listadas no menú da esquerda.
     document_verifications:
       already_verified: Esta conta de usuario xa está verificada.
-      link: CONSUL
+      link: CONSUL DEMOCRACY
       in_census_has_following_permissions: "Este usuario pode participar no Portal de Goberno Aberto do Concello de Madrid coas seguintes posibilidades:"
       not_in_census: Este documento non está rexistrado no Padrón Municipal de Madrid.
       not_in_census_info: "As persoas non empadroadas en Madrid poden participar no Portal de Goberno Aberto do Concello de Madrid coas seguintes posibilidades:"

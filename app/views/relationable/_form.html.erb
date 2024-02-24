@@ -12,8 +12,8 @@
   <div class="input-group">
     <div class="input-group-field">
       <%= text_field_tag :url, "",
-                        "aria-describedby": "related_content_help_text",
-                        placeholder: t("related_content.placeholder", url: root_url) %>
+                         "aria-describedby": "related_content_help_text",
+                         placeholder: t("related_content.placeholder", url: root_url) %>
 
       <%= hidden_field_tag :relationable_klass, relationable.class.name %>
       <%= hidden_field_tag :relationable_id, relationable.id %>

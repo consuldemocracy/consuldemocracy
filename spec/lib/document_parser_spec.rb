@@ -21,12 +21,16 @@ describe DocumentParser do
     end
 
     it "tries all the dni variants padding with zeroes" do
-      expect(DocumentParser.get_document_number_variants(1, "0123456")).to eq(["123456", "0123456", "00123456"])
-      expect(DocumentParser.get_document_number_variants(1, "00123456")).to eq(["123456", "0123456", "00123456"])
+      expect(DocumentParser.get_document_number_variants(1, "0123456"))
+        .to eq(["123456", "0123456", "00123456"])
+
+      expect(DocumentParser.get_document_number_variants(1, "00123456"))
+        .to eq(["123456", "0123456", "00123456"])
     end
 
     it "adds upper and lowercase letter when the letter is present" do
-      expect(DocumentParser.get_document_number_variants(1, "1234567A")).to eq(%w[1234567 01234567 1234567a 1234567A 01234567a 01234567A])
+      expect(DocumentParser.get_document_number_variants(1, "1234567A"))
+        .to eq(%w[1234567 01234567 1234567a 1234567A 01234567a 01234567A])
     end
   end
 

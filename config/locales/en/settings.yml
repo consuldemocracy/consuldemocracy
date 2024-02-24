@@ -169,6 +169,9 @@ en:
         valid: "Condition for detecting a valid response"
         valid_description: "What response path has to come informed to be considered a valid response and user verified"
     map:
+      feature:
+        marker_clustering: "Marker clustering"
+        marker_clustering_description: "Enables map markers clusterization. Useful when there are a lot of markers to show."
       latitude: "Latitude"
       latitude_description: "Latitude to show the map position"
       longitude: "Longitude"

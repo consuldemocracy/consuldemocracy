@@ -31,7 +31,9 @@ class Management::ProposalsController < Management::BaseController
     super
     @notifications = @proposal.notifications
 
-    redirect_to management_proposal_path(@proposal), status: :moved_permanently if request.path != management_proposal_path(@proposal)
+    if request.path != management_proposal_path(@proposal)
+      redirect_to management_proposal_path(@proposal), status: :moved_permanently
+    end
   end
 
   def vote

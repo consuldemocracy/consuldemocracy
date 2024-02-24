@@ -1,7 +1,7 @@
 engines:
   rubocop:
     enabled: true
-    channel: rubocop-0-74
+    channel: rubocop-1-31-0
   duplication:
     enabled: true
     config:

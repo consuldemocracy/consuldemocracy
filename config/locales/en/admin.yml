@@ -204,7 +204,7 @@ en:
         max_ballot_lines_info: 'Maximum number of projects a user can vote on this heading during the "Voting projects" phase. Only for budgets using approval voting.'
         population_info: "Budget Heading population field is used for Statistic purposes at the end of the Budget to show for each Heading that represents an area with population what percentage voted. The field is optional so you can leave it empty if it doesn't apply."
         coordinates_info: "If latitude and longitude are provided, the investments page for this heading will include a map. This map will be centered using those coordinates."
-        content_blocks_info: "If allow content block is checked, you will be able to create custom content related to this heading from the section Settings > Custom content blocks. This content will appear on the investments page for this heading."
+        content_blocks_info: "If allow content block is checked, you will be able to create custom content related to this heading from the section Site content > Custom content blocks. This content will appear on the investments page for this heading."
         create: "Create new heading"
         edit: "Edit heading"
         submit: "Save heading"
@@ -453,6 +453,16 @@ en:
         back: Go back to %{org}
         title: Administration
         description: Welcome to the %{org} admin panel.
+        info: |-
+          <p>This is the place where you, as an administrator, implement and oversee the citizen participation process in your city or region.</p>
+
+          <p>You are now one of hundreds of governments and municipalities worldwide that are using the CONSUL DEMOCRACY platform to put citizen participation into practice. Congratulations!</p>
+
+          <p>The CONSUL DEMOCRACY Foundation is at the heart of the global user community. We'd like to ask you to get in touch so we get a grasp of who's using the software and see how we might assist with implementation or use. We can't wait to welcome you to the community.</p>
+
+          <p>Happy administrating!</p>
+
+          <p>Greetings from the CONSUL DEMOCRACY Foundation team.</p>
       actions:
         index:
           description: "When users create proposals they can access a dashboard of their proposal, where you can propose resources and recommendations to get support for their idea."
@@ -531,7 +541,6 @@ en:
         title: "Documents"
         format: "Format"
         size: "Size"
-        url: "URL"
       create:
         success_notice: "Document uploaded successfully"
         unable_notice: "Invalid document"
@@ -1592,7 +1601,8 @@ en:
           name: Name
           names:
             top_links: Top Links
-            footer: Footer
+            footer: Footer (social media)
+            footer_legal: Footer (legal terms)
             subnavigation_left: Main Navigation Left
             subnavigation_right: Main Navigation Right
       images:
