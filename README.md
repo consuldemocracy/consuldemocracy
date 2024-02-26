@@ -99,4 +99,11 @@ rake settings:add_new_settings
 
 ## Deploy
 
+Before deploying, make sure you add the ssh keys to the ssh-agent
+
+```bash
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/{key_name}
+```
+
 Use the deploy.sh script, in the root of the consul project.

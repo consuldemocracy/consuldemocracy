@@ -78,10 +78,10 @@ data:
 search:
   ## Paths or `File.find` patterns to search in:
   paths:
-   - app/
-   - db/pages/
-   - db/dev_seeds/
-   - lib/
+    - app/
+    - db/pages/
+    - db/dev_seeds/
+    - lib/
 
   ## Root directories for relative keys resolution.
   # relative_roots:
@@ -212,10 +212,10 @@ ignore_unused:
   - "stats.budgets.participants_*_phase"
   - "votes.budget_investments.different_heading_assigned*"
   - "*.form.map_skip_checkbox"
-# - "{devise,kaminari,will_paginate}.*"
-# - "simple_form.{yes,no}"
-# - "simple_form.{placeholders,hints,labels}.*"
-# - "simple_form.{error_notification,required}.:"
+  # - "{devise,kaminari,will_paginate}.*"
+  # - "simple_form.{yes,no}"
+  # - "simple_form.{placeholders,hints,labels}.*"
+  # - "simple_form.{error_notification,required}.:"
   - verification.letter.create.flash.offices_url
   - verification.letter.new.offices_url
   - votes.budget_investments.different_heading_assigned*

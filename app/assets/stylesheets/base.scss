@@ -553,11 +553,10 @@ body > header,
 
   a {
     display: block;
-    height: rem-calc(80);
     width: 100%;
 
     img {
-      height: 100% !important;
+      height: 100%;
     }
   }
 }
