@@ -41,11 +41,11 @@ nl:
       destroy:
         notice: "Banner succesvol verwijderd"
       edit:
-        editing: Bewerk banier
+        editing: Bewerk banner
         form:
           submit_button: Bewaar wijzigingen
       new:
-        creating: Maak banier
+        creating: Maak banner
       update:
         notice: "Banner succesvol bijgewerkt"
     activity:
