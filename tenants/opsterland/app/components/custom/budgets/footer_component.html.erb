@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="small-12 column">
+    <div id="section_help" class="section-help margin" data-magellan-target="section_help">
+      <p class="lead">
+        <strong><%= t("budgets.index.section_footer.title") %></strong>
+      </p>
+      <p><%= sanitize(t("budgets.index.section_footer.description",
+                        link: link_to(t("budgets.index.section_footer.description_link"),
+                              page_path("faq")))) %></p>
+    </div>
+  </div>
+</div>

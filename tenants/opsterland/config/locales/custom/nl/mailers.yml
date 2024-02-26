@@ -1,0 +1,66 @@
+nl:
+  mailers:
+    budget_investment_created:
+      subject: "Bedankt voor het delen van uw idee!"
+      title: "Bedankt voor het delen van uw idee!"
+      intro: "Beste <strong>%{author}</strong>,"
+      text: "Bedankt voor het delen van uw idee <strong>%{investment}</strong> <strong>%{budget}</strong>."
+      follow: "We houden u op de hoogte van het proces. U kunt dit ook volgen op <strong>%{link}</strong>."
+      follow_link: "Ideeën"
+      sincerely: ""
+      share: "Deel"
+    config:
+      manage_email_subscriptions: "Wilt u dit soort mails niet meer ontvangen? Verander dan hier uw instellingen"
+    budget_investment_selected:
+      subject: "Gefeliciteerd, idee '%{code}' gaat door naar de stemronde!"
+      title: "Gefeliciteerd, uw idee gaat door naar de stemronde!"
+      hi: "Beste deelnemer,"
+      share: "De Coöperatieve Wijkraad heeft alle ingediende ideeën bekeken, en gekeken hoeveel het ongeveer gaat kosten. Gefeliciteerd, uw idee voor de Oosterparkwijk is haalbaar! U kunt nu beginnen met uw campagne. Deel uw idee op social media en met uw buren.<br>Veel succes!"
+      share_button: "Deel uw idee"
+      sincerely: "Groeten van de Coöperatieve Wijkraad"
+      thanks: "Bedankt voor het meedoen."
+    budget_investment_unfeasible:
+      subject: "Helaas, uw idee is onhaalbaar"
+      hi: "Beste deelnemer,"
+      new: "De Coöperatieve Wijkraad heeft naar uw idee gekeken. Helaas blijkt dat uw idee niet haalbaar is. We leggen ook uit waarom. U kunt uw idee eventueel aanpassen: %{url}."
+      new_href: "dat kan hier"
+      contact: "Heeft u vragen of wilt u hulp bij uw idee? Mail dan naar %{email}, we denken graag met u mee."
+      email: "noreply@consul.dev"
+      sincerely: "Groeten van de Coöperatieve Wijkraad"
+    budget_investment_unselected:
+      subject: "Bedankt voor uw ingediende idee!"
+      hi: "Beste deelnemer,"
+      thanks: "De afgelopen weken hebben er gesprekken plaats gevonden met diverse initiatiefnemers. In eerste instantie met de top 10. Door deze gesprekken bleken sommige ideeën niet haalbaar en/of hebben initiatiefnemers zelf besloten hun idee weer in te trekken. Hierdoor hebben we ideeën die net buiten de top 10 vielen betrokken. Inmiddels is de lijst met ideeën bekend die doorgaan naar de stemronde.<br><br>Helaas zit uw idee hier niet bij en zal uw idee niet doorgaan naar de stemfase.<br><br>We vinden het als gemeente wel heel waardevol dat uw idee door meerdere mensen als favoriet is aangegeven. Daarom zullen we dit zeker meenemen als input in de toekomst. Wellicht dat we daar op een later moment nog bij u op terug komen.<br><br>Nogmaals hartelijk dank voor uw deelname!"
+      sincerely: "Groeten van de Coöperatieve Wijkraad"
+    comment:
+      subject: "Iemand heeft gereageerd op uw idee %{commentable}"
+      title: "Iemand heeft gereageerd op uw idee"
+      hi: "Beste"
+      new_comment_by_html: "Er is een nieuwe reactie op uw idee."
+    reply:
+      subject: "Iemand heeft gereageerd op uw reactie"
+      title: "Iemand heeft gereageerd op uw reactie"
+      hi: "Beste"
+      new_reply_by_html: "<strong>%{commenter}</strong> heeft gereageerd op uw reactie"
+    direct_message_for_receiver:
+      subject: "U heeft een nieuw privébericht ontvangen"
+      title: "U heeft een nieuw privébericht ontvangen."
+      unsubscribe: "Als u geen directe boodschappen wilt ontvangen, kijk dan eens bij %{account en haal het vinkje weg bij 'ontvangen e-mails over directe berichten'."
+    direct_message_for_sender:
+      subject: "U heeft een privébericht gestuurd"
+      title: "U heeft een privébericht gestuurd"
+      text: "U heeft het volgende privébericht gestuurd naar <strong>%{receiver}</strong>:"
+    user_invite:
+      subject: "Welkom op de %{org_name}"
+      title: "Welkom op de %{org}"
+      text: "U kunt zich inschrijven voor de gemeente! Klik hiervoor op de volgende link:"
+      button: "Registreer uzelf"
+      ignore: "Heeft u deze uitnodiging ongevraagd ontvangen? Geen zorgen, dan kunt u deze mail negeren.  "
+      thanks: "Bedankt!"
+    email_verification:
+      subject: "Bevestig uw e-mailadres"
+      title: "Bevestig uw e-mailadres"
+      text: "Bevestig uw account door de volgende link te gebruiken."
+      thanks: "Bedankt!"
+      click_here_to_verify: "deze link"
+    no_reply: "Deze mail is verstuurd vanaf een emailadres waar niet op gereageerd kan worden."

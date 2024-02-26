@@ -1,0 +1,50 @@
+nl:
+  devise:
+    mailer:
+      confirmation_instructions:
+        subject: "Bevestig uw account"
+      reset_password_instructions:
+        subject: "Wachtwoord opnieuw instellen"
+      unlock_instructions:
+        subject: "Instructies voor ontgrendelen account"
+    sessions:
+      signed_in: "U bent ingelogd."
+      signed_out: "U bent uitgelogd."
+      already_signed_out: "U bent afgemeld"
+    passwords:
+      send_instructions: "U ontvangt via e-mail instructies hoe u uw account kunt ontgrendelen."
+      send_paranoid_instructions: "Als uw e-mailadres bij ons bekend is, ontvang u instructies over hoe u weer met uw account kan inloggen"
+      no_token: 'U kunt deze pagina niet benaderen zonder een "wachtwoord reset e-mail".'
+      updated: "Uw wachtwoord is gewijzigd. U bent aangemeld!"
+      updated_not_active: "Uw wachtwoord is gewijzigd"
+    password_expired:
+      change_required: "Dit wachtwoord is helaas verlopen"
+      expire_password: "Dit wachtwoord is helaas verlopen"
+    confirmations:
+      confirmed: "Uw account is geactiveerd"
+      send_instructions: "U ontvangt via e-mail instructies om jouw account te activeren"
+      send_paranoid_instructions: "Als uw e-mailadres bij ons bekend is, ontvangt u hierop instructies hoe u uw account kunt activeren"
+      user:
+        already_confirmed: "Uw mailadres is al geverifieerd. U kunt hiermee nu inloggen."
+    failure:
+      already_authenticated: "U bent al aangemeld"
+      inactive: "Uw account is nog niet geactiveerd"
+      locked: "Uw account is vergrendeld"
+      last_attempt: "U heeft nog één poging over voordat jouw account wordt geblokkeerd."
+      timeout: "Oeps! Uw sessie is verlopen. Meld u opnieuw aan om verder te gaan"
+      unauthenticated: "Log in om verder te gaan. Nog geen account? Maak deze eenvoudig aan via 'aanmelden’"
+      unconfirmed: "Uw account is nog niet geactiveerd. Klik op de link in uw e-mail om uw account te activeren "
+    registrations:
+      destroyed: "Jammer dat u gaat! Uw account is succesvol verwijderd. Wij hopen u nog een keer terug te zien"
+      signed_up: "U bent inschreven"
+      signed_up_but_inactive: "U bent geregistreerd. U kon alleen niet automatisch aangemeld worden omdat uw account nog niet geactiveerd is. Klik hiervoor op de link die naar uw e-mailadres is verstuurd. Geen mail ontvangen? Neem dan contact op met info@opsterland.nl\r\n"
+      signed_up_but_locked: "U bent geregistreerd. U kon alleen niet automatisch aangemeld worden omdat uw account geblokkeerd is. Neem hiervoor contact op met info@opsterland.nl"
+      signed_up_but_unconfirmed: "U ontvangt via de e-mail instructies hoe u uw account kunt activeren. Geen mail ontvangen? Neem dan contact op met info@opsterland.nl"
+      update_needs_confirmation: "U hebt uw e-mailadres succesvol gewijzigd, maar we moeten uw nieuwe mailadres nog verifiëren. Controleer uw e-mail en klik op de link in de mail om uw mailadres te verifiëren"
+      updated: "Uw accountgegevens zijn opgeslagen"
+    unlocks:
+      send_instructions: "U ontvangt via de e-mail instructies hoe u uw account kunt ontgrendelen. Geen mail ontvangen? Neem dan contact op met info@opsterland.nl"
+      send_paranoid_instructions: "Als uw e-mailadres bij ons bekend is, ontvangt u via de e-mail instructies hoe u uw account kan ontgrendelen. Komt u niet verder? Neem dan contact op met info@opsterland.nl"
+      unlocked: "Uw account is succesvol ontgrendeld. U kunt uzelf weer aanmelden!"
+    omniauth_callbacks:
+      success: "Successvol aangemeld via %{kind}."

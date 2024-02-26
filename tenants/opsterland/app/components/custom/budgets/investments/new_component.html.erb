@@ -1,0 +1,17 @@
+<main class="budget-investment-new no-margin-top">
+  <div class="small-12 column light expand padding-top">
+    <%= back_link_to budgets_path %>
+
+    <%= header %>
+
+    <h2 class="margin-top"><%= t("budgets.investments.new.recommendations_title") %></h2>
+    <ul class="recommendations">
+      <li><%= t("budgets.investments.new.recommendation_one") %></li>
+      <li><%= t("budgets.investments.new.recommendation_two") %></li>
+      <li><%= t("budgets.investments.new.recommendation_three") %></li>
+      <li><%= t("budgets.investments.new.recommendation_four") %></li>
+    </ul>
+  </div>
+
+  <%= render "/budgets/investments/form", form_url: budget_investments_path(budget) %>
+</main>

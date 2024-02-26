@@ -1,0 +1,273 @@
+// Custom styles
+// 1. General
+// 2. Participation
+//
+
+// 1. General
+// --------------------
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  src: font-url("poppins_regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: bold;
+  src: font-url("poppins_bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  src: font-url("Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 300;
+  src: font-url("Roboto-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  src: font-url("Roboto-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: bold;
+  src: font-url("Roboto-BoldItalic.ttf") format("truetype");
+}
+
+body,
+p,
+a {
+  font-family: "Roboto", sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", "Roboto", sans-serif !important;
+  font-weight: 400 !important;
+  color: $brand !important;
+}
+
+a {
+  color: $brand;
+}
+
+.top-links {
+  background: $brand;
+}
+
+.top-bar-title {
+  background: #fff;
+
+  &::before {
+    content: none;
+  }
+}
+
+.top-bar {
+
+  @include breakpoint(small only) {
+    flex-direction: row-reverse;
+    padding: 0 $line-height / 4;
+  }
+}
+
+.footer {
+  background: $brand;
+}
+
+main .button,
+.button {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
+  &.warning {
+    background: $brand;
+    color: #fff;
+
+    &:hover {
+      background: #00101d;
+      color: #fff;
+    }
+  }
+}
+
+.home-page,
+.custom-page {
+
+  h2 {
+
+    &.title {
+      font-size: rem-calc(44);
+    }
+  }
+
+  .card .figure-card figcaption h3 {
+    color: #fff !important;
+  }
+}
+
+.home-page-steps {
+  background: #f4f4f4;
+  border-bottom: 0;
+  position: relative;
+
+  &::before {
+    background: #f4f4f4;
+    bottom: 0;
+    content: "";
+    display: block;
+    left: calc(#{$full-width-margin} - #{$global-padding});
+    pointer-events: none;
+    position: absolute;
+    right: calc(#{$full-width-margin} - #{$global-padding});
+    top: 0;
+    z-index: -1;
+  }
+
+  a {
+
+    &.button {
+      color: #fff;
+    }
+  }
+}
+
+// 2. Participation
+// --------------------
+
+.budget-phases {
+
+  header {
+
+    h2 {
+      font-size: rem-calc(44);
+    }
+  }
+
+  .tabs-title > a {
+
+    &[aria-selected="true"],
+    &.is-active {
+      background: $brand;
+      color: #fff;
+
+      &::after {
+        border-left-color: $brand;
+      }
+    }
+  }
+
+  .tabs-title.current-phase-tab [aria-selected="true"] {
+    background: $brand;
+
+    &::after {
+      border-left-color: $brand;
+    }
+  }
+
+  .tabs-controls {
+
+    .budget-prev-phase,
+    .budget-next-phase {
+      border-radius: 0;
+    }
+  }
+
+  .phase-title {
+
+    &.current-phase-tab a {
+      background: #fff;
+      color: #000;
+
+      &::after {
+        border-left-color: #fff;
+      }
+
+      &:hover {
+        background: $brand;
+
+        &::after {
+          border-left-color: $brand;
+        }
+      }
+    }
+  }
+}
+
+.budget-header {
+
+  h1 {
+    color: #fff !important;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  .main-link {
+    background: $brand;
+    border-radius: 0;
+
+    &.disabled,
+    &[disabled] {
+      background: $brand;
+
+      &:hover,
+      &:focus {
+        background: $brand;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      background: $brand-secondary;
+      color: $brand;
+    }
+  }
+}
+
+.investments-list h2 {
+  font-size: rem-calc(44);
+}
+
+.budget-ballot-show > header {
+
+  h1,
+  h2 {
+    color: #fff !important;
+  }
+}
+
+.proposal-new,
+.debate-new,
+.budget-investment-new {
+
+  header {
+    background: $brand;
+    border: 4px solid $brand;
+    border-radius: 0;
+
+    &::after {
+      background: $brand;
+    }
+
+    h1 {
+      color: #fff !important;
+    }
+  }
+}

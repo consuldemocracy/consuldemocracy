@@ -1,0 +1,263 @@
+# i18n-tasks finds and manages missing and unused translations: https://github.com/glebm/i18n-tasks
+
+# The "main" locale.
+base_locale: en
+## All available locales are inferred from the data by default. Alternatively, specify them explicitly:
+locales: [en]
+## Reporting locale, default: en. Available: en, ru.
+# internal_locale: en
+
+# Read and write translations.
+data:
+  ## Translations are read from the file system. Supported format: YAML, JSON.
+  ## Provide a custom adapter:
+  # adapter: I18n::Tasks::Data::FileSystem
+
+  # Locale files or `File.find` patterns where translations are read from:
+  read:
+    ## Default:
+    # - config/locales/%{locale}.yml
+    ## More files:
+    # - config/locales/**/*.%{locale}.yml
+    ## Another gem (replace %#= with %=):
+    # - "<%#= %x[bundle show vagrant].chomp %>/templates/locales/%{locale}.yml"
+    - config/locales/custom/%{locale}/*.yml
+    - config/locales/%{locale}/rails_date_order.yml
+    - config/locales/%{locale}/general.yml
+    - config/locales/%{locale}/activerecord.yml
+    - config/locales/%{locale}/activemodel.yml
+    - config/locales/%{locale}/admin.yml
+    - config/locales/%{locale}/moderation.yml
+    - config/locales/%{locale}/valuation.yml
+    - config/locales/%{locale}/management.yml
+    - config/locales/%{locale}/verification.yml
+    - config/locales/%{locale}/mailers.yml
+    - config/locales/%{locale}/pages.yml
+    - config/locales/%{locale}/devise_views.yml
+    - config/locales/%{locale}/responders.yml
+    - config/locales/%{locale}/kaminari.yml
+    - config/locales/%{locale}/officing.yml
+    - config/locales/%{locale}/budgets.yml
+    - config/locales/%{locale}/legislation.yml
+    - config/locales/%{locale}/community.yml
+    - config/locales/%{locale}/documents.yml
+    - config/locales/%{locale}/images.yml
+    - config/locales/%{locale}/user_groups.yml
+    - config/locales/%{locale}/i18n.yml
+    - config/locales/%{locale}/milestones.yml
+    - config/locales/%{locale}/sdg.yml
+    - config/locales/%{locale}/sdg_management.yml
+    - config/locales/%{locale}/seeds.yml
+    - config/locales/%{locale}/stats.yml
+
+  # Locale files to write new keys to, based on a list of key pattern => file rules. Matched from top to bottom:
+  # `i18n-tasks normalize -p` will force move the keys according to these rules
+  write:
+    ## For example, write devise and simple form keys to their respective files:
+    # - ['{devise, simple_form}.*', 'config/locales/\1.%{locale}.yml']
+    ## Catch-all default:
+    # - config/locales/%{locale}.yml
+
+  ## Specify the router (see Readme for details). Valid values: conservative_router, pattern_router, or a custom class.
+  # router: convervative_router
+
+  yaml:
+    write:
+      # do not wrap lines at 80 characters
+      line_width: -1
+
+  ## Pretty-print JSON:
+  # json:
+  #   write:
+  #     indent: '  '
+  #     space: ' '
+  #     object_nl: "\n"
+  #     array_nl: "\n"
+
+# Find translate calls
+search:
+  ## Paths or `File.find` patterns to search in:
+  paths:
+    - app/
+    - db/pages/
+    - db/dev_seeds/
+    - lib/
+
+  ## Root directories for relative keys resolution.
+  # relative_roots:
+  #   - app/controllers
+  #   - app/helpers
+  #   - app/mailers
+  #   - app/presenters
+  #   - app/views
+
+  ## Files or `File.fnmatch` patterns to exclude from search. Some files are always excluded regardless of this setting:
+  ##   %w(*.jpg *.png *.gif *.svg *.ico *.eot *.otf *.ttf *.woff *.woff2 *.pdf *.css *.sass *.scss *.less *.yml *.json)
+  exclude:
+    - app/assets/images
+    - app/assets/fonts
+
+  ## Alternatively, the only files or `File.fnmatch patterns` to search in `paths`:
+  ## If specified, this settings takes priority over `exclude`, but `exclude` still applies.
+  # include: ["*.rb", "*.html.slim"]
+
+  ## Default scanner finds t() and I18n.t() calls.
+  # scanner: I18n::Tasks::Scanners::PatternWithScopeScanner
+
+## Google Translate
+# translation:
+#   # Get an API key and set billing info at https://code.google.com/apis/console to use Google Translate
+#   api_key: "AbC-dEf5"
+
+## Do not consider these keys missing:
+# ignore_missing:
+# - 'errors.messages.{accepted,blank,invalid,too_short,too_long}'
+# - '{devise,simple_form}.*'
+ignore_missing:
+  - "unauthorized.*"
+  - "activerecord.models.proposal"
+  - "activerecord.errors.models.proposal_notification.*"
+  - "activerecord.errors.models.direct_message.*"
+  - "errors.messages.blank"
+  - "errors.messages.taken"
+  - "errors.messages.too_short"
+  - "errors.messages.too_long"
+  - "devise.failure.invalid"
+  - "devise.registrations.destroyed"
+  - "devise.confirmations.user.already_confirmed"
+  - "devise.password_expired.*"
+  - "seeds.settings.*"
+  - "budgets.progress_bar.you_have_assigned"
+  - "admin.officials.index.help_link"
+  - "debates.index.section_footer.help_text_link"
+  - "budgets.investments.new.recommendations_title"
+  - "budgets.investments.new.recommendation_one"
+  - "budgets.investments.new.recommendation_two"
+  - "budgets.investments.new.recommendation_three"
+  - "budgets.investments.new.recommendation_four"
+  - "budgets.index.section_footer.description_link"
+
+## Consider these keys used:
+ignore_unused:
+  - "budgets.phase.*"
+  - "budgets.investments.index.filter*"
+  - "budgets.investments.index.orders.*"
+  - "budgets.index.section_header.*"
+  - "budgets.ballots.show.amount_available.*"
+  - "budgets.ballots.show.amount_limit.*"
+  - "budgets.ballots.show.amount_spent.*"
+  - "budgets.investments.index.sidebar.voted_info.*"
+  - "activerecord.*"
+  - "activemodel.*"
+  - "attributes.*"
+  - "date.order"
+  - "unauthorized.*"
+  - "admin.officials.level_*"
+  - "admin.hidden_comments.index.filter*"
+  - "admin.banners.index.filters.*"
+  - "admin.hidden_debates.index.filter*"
+  - "admin.hidden_proposals.index.filter*"
+  - "admin.hidden_proposal_notifications.index.filter*"
+  - "admin.budgets.index.filter*"
+  - "admin.budgets.index.help_block"
+  - "admin.budgets.edit.(administrators|valuators).*"
+  - "admin.budgets.help.*"
+  - "admin.budget_investments.index.filter*"
+  - "admin.budgets_wizard.heading_mode.*"
+  - "admin.organizations.index.filter*"
+  - "admin.hidden_users.index.filter*"
+  - "admin.hidden_budget_investments.index.filter*"
+  - "admin.activity.show.filter*"
+  - "admin.legislation.processes.index.filter*"
+  - "admin.legislation.processes.*.submit_button"
+  - "admin.legislation.processes.proposals.orders.*"
+  - "admin.legislation.draft_versions.*.submit_button"
+  - "admin.legislation.questions.*.submit_button"
+  - "admin.hidden_comments.index.hidden_*"
+  - "admin.polls.*.submit_button"
+  - "admin.booths.*.submit_button"
+  - "admin.admin_notifications.*.submit_button"
+  - "admin.homepage.*"
+  - "admin.dashboard.administrator_tasks.index.filter*"
+  - "admin.dashboard.actions.index.default.*"
+  - "admin.users.index.filter*"
+  - "errors.messages.allowed_file_content_types"
+  - "moderation.comments.index.filter*"
+  - "moderation.comments.index.orders.*"
+  - "moderation.debates.index.filter*"
+  - "moderation.proposals.index.filter*"
+  - "moderation.proposals.index.orders.*"
+  - "moderation.debates.index.filter*"
+  - "moderation.debates.index.orders.*"
+  - "moderation.budget_investments.index.filter*"
+  - "moderation.budget_investments.index.orders.*"
+  - "moderation.proposal_notifications.index.filter*"
+  - "moderation.proposal_notifications.index.orders.*"
+  - "valuation.budgets.index.filter*"
+  - "valuation.budget_investments.index.filter*"
+  - "users.show.filters.*"
+  - "polls.index.filters.*"
+  - "polls.index.section_header.*"
+  - "polls.index.orders.*"
+  - "dashboard.recommended_actions.*"
+  - "debates.index.orders.*"
+  - "debates.index.section_header.*"
+  - "proposals.index.orders.*"
+  - "proposals.index.section_header.*"
+  - "*.index.search_form.*"
+  - "notifications.notification.action.*"
+  - "legislation.processes.index.filter*"
+  - "legislation.processes.index.section_header.*"
+  - "legislation.processes.proposals.filters.*"
+  - "helpers.page_entries_info.*" # kaminari
+  - "views.pagination.*" # kaminari
+  - "shared.suggest.*"
+  - "invisible_captcha.*"
+  - "admin.legislation.processes.process.*"
+  - "legislation.processes.index.*"
+  - "stats.budgets.participants_*_phase"
+  - "votes.budget_investments.different_heading_assigned*"
+  - "*.form.map_skip_checkbox"
+  # - "{devise,kaminari,will_paginate}.*"
+  # - "simple_form.{yes,no}"
+  # - "simple_form.{placeholders,hints,labels}.*"
+  # - "simple_form.{error_notification,required}.:"
+  - verification.letter.create.flash.offices_url
+  - verification.letter.new.offices_url
+  - votes.budget_investments.different_heading_assigned*
+  - layouts.header.open_city_title
+  - admin.stats.polls.current
+  - admin.stats.polls.expired
+  - "stats.polls.*_percentage"
+  - landings.cambia_tu_ciudad.*
+  - "dashboard.polls.*.submit"
+  - "admin.budget_groups.*.index.help"
+  - "admin.budget_headings.*.index.help"
+  - "admin.budget_phases.index.help_block"
+  - "devise_views.shared.links.login"
+  - "devise_views.shared.links.signup"
+  - "devise_views.shared.links.signup_link"
+  - "budgets.investments.show.code"
+  - "related_content.content_title.*"
+  - "sdg.goals.goal_*"
+  - "sdg.*.filter.more.*"
+  - "sdg_management.relations.index.filter*"
+  - "tags.list.filter.more.*"
+  - "budgets.index.section_header.help"
+  - "budgets.ballots.show.voted_info"
+  - "layouts.footer.description"
+  - "layouts.footer.open_source"
+  - "layouts.footer.open_source_url"
+  - "layouts.footer.consul"
+  - "layouts.footer.consul_url"
+####
+## Exclude these keys from the `i18n-tasks eq-base" report:
+# ignore_eq_base:
+#   all:
+#     - common.ok
+#   fr,es:
+#     - common.brand
+
+## Ignore these keys completely:
+# ignore:
+#  - kaminari.*
