@@ -95,6 +95,7 @@ class Budget
     scope :compatible,         -> { where(incompatible: false) }
     scope :incompatible,       -> { where(incompatible: true) }
     scope :winners,            -> { selected.compatible.where(winner: true) }
+    scope :not_winners,        -> { selected.compatible.where(winner: false) }
     scope :unselected,         -> { not_unfeasible.where(selected: false) }
     scope :last_week,          -> { where("created_at >= ?", 7.days.ago) }
     scope :sort_by_flags,      -> { order(flags_count: :desc, updated_at: :desc) }
