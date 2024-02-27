@@ -225,7 +225,7 @@ nl:
           filter: Filter
         download_current_selection: "Download huidige selectie"
         no_budget_investments: "Er zijn geen investeringsprojecten."
-        title: Investment projects
+        title: Begrotingsvoorstellen
         columns: Kolommen
         assigned_admin: Toegewezen beheerder
         no_admin_assigned: Geen beheerder toegewezen
