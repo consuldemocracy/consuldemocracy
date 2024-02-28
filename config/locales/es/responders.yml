@@ -17,6 +17,7 @@ es:
         support: "Proyecto de gasto apoyado correctamente"
         topic: "Tema creado correctamente."
         valuator_group: "Grupo de evaluadores creado correctamente"
+        vote: "Voto creado correctamente"
       save_changes:
         notice: Cambios guardados
       update:
@@ -35,3 +36,4 @@ es:
         topic: "Tema eliminado."
         poll_question_answer_video: "Vídeo de respuesta eliminado."
         valuator_group: "Grupo de evaluadores eliminado correctamente"
+        vote: "Voto eliminado correctamente"
