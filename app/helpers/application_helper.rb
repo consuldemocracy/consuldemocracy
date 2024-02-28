@@ -10,8 +10,8 @@ module ApplicationHelper
     %i[ar fa he].include?(locale)
   end
 
-  def markdown(text, **)
-    MarkdownConverter.new(text, **).render
+  def markdown(...)
+    MarkdownConverter.new(...).render
   end
 
   def wysiwyg(text)
