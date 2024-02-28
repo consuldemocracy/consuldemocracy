@@ -1,5 +1,8 @@
 gl:
   seeds:
+    admin_notifications:
+      budget:
+        title: "Últimos días para crear proxectos de Orzamentos Participativos!"
     settings:
       official_level_1_name: Cargo público 1
       official_level_2_name: Cargo público 2
