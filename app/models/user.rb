@@ -409,8 +409,8 @@ class User < ApplicationRecord
     followables.compact.map { |followable| followable.tags.map(&:name) }.flatten.compact.uniq
   end
 
-  def send_devise_notification(notification, *args)
-    devise_mailer.send(notification, self, *args).deliver_later
+  def send_devise_notification(notification, *)
+    devise_mailer.send(notification, self, *).deliver_later
   end
 
   def add_subscriptions_token
