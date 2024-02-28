@@ -6,8 +6,8 @@ class Admin::TableActionsComponent < ApplicationComponent
     @options = options
   end
 
-  def action(action_name, **args)
-    render Admin::ActionComponent.new(action_name, record, "aria-label": true, **args)
+  def action(action_name, **)
+    render Admin::ActionComponent.new(action_name, record, "aria-label": true, **)
   end
 
   private
