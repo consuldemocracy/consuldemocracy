@@ -1187,7 +1187,7 @@ span:hover::before {
   padding-top: 80px;
   padding-bottom: 80px;
 
-  h3:not(:first-of-type) {
-    margin-top: 60px;
+  h3 {
+    font-weight: 500;
   }
 }

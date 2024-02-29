@@ -9,71 +9,89 @@
     <div class="main-indented-content">
       <div class="small-12 medium-10 column medium-centered">
 
-        <h3 dir="ltr"><%= t("custom.terms.main_title") %></h3>
+        <h1 dir="ltr"><%= t("custom.terms.main_title") %></h1>
+        <p><%= t("custom.terms.date") %></p>
+        <br/>
+        <p><%= t("custom.terms.intention") %></p>
         <p dir="ltr">
           <%= t("custom.terms.active_use") %>
         </p>
         <p dir="ltr">
-          <%= t("custom.meta.place_name") %><%= t("custom.terms.changes") %>
+          <%= t("custom.terms.changes") %>
+        </p>
+        <p><%= t("custom.terms.help") %></p>
+        <p>
+          <a href='mailto:<%= t("custom.terms.contact1.mail") %>' target="_blank"><%= t("custom.terms.contact1.mail") %></a>
+          <br/>
+          <%= t("custom.terms.contact1.note1") %>
+          <br/>
+          <%= t("custom.terms.contact1.note2") %>
+        </p>
+        <p>
+          <%= t("custom.terms.contact2.note1") %>
+          <br/>
+          <a href='mailto:<%= t("custom.terms.contact2.mail") %>' target="_blank"><%= t("custom.terms.contact2.mail") %></a>
+          <br/>
+          <%= t("custom.terms.contact2.note2") %>
         </p>
 
-        <h3 dir="ltr"><%= t("custom.terms.data_protection_title") %></h3>
-        <p dir="ltr">
-          <%= t("custom.terms.data_protection_first") %>
-        </p>
-        <p dir="ltr">
-          <%= raw t("custom.terms.data_protection_second") %>
-        </p>
-        <p dir="ltr">
-          <%= t("custom.terms.data_protection_third") %>
-        </p>
+        <br/>
+        <hr/>
+        <br/>
 
-        <h3 dir="ltr"><%= t("custom.terms.data_use_title") %></h3>
-        <p dir="ltr">
-          <%= t("custom.terms.data_use_first") %>
-        </p>
-
-        <h3 dir="ltr">
+        <h2 dir="ltr">
           <%= t("custom.terms.about_title") %>
-        </h3>
+        </h2>
         <p dir="ltr">
           <%= t("custom.terms.about_first") %>
         </p>
-
-        <h3 dir="ltr">
-          <%= t("custom.terms.registration_title") %>
-        </h3>
         <p dir="ltr">
-          <%= t("custom.terms.registration_intro") %>
+          <%= t("custom.terms.about_second") %>
+        </p>
+        <p dir="ltr">
+          <%= t("custom.terms.about_third") %>
+        </p>
+        <p>
+          <%= t("custom.terms.about_list.title") %>
+        </p>
+        <ol>
+          <li>
+            <span><%= t("custom.terms.about_list.li1.title") %></span>
+            <br/>
+            <%= t("custom.terms.about_list.li1.desc") %>
+          </li>
+          <li>
+            <span><%= t("custom.terms.about_list.li2.title") %></span>
+            <br/>
+            <%= t("custom.terms.about_list.li2.desc") %>
+          </li>
+          <li>
+            <span><%= t("custom.terms.about_list.li3.title") %></span>
+            <br/>
+            <%= t("custom.terms.about_list.li3.desc") %>
+          </li>
+        </ol>
+
+        <br/>
+        <h2 dir="ltr"><%= t("custom.terms.registration_title") %></h2>
+        <p dir="ltr">
+          <%= t("custom.terms.registration_intro1") %>
+        </p>
+        <p dir="ltr">
+          <%= raw t("custom.terms.registration_intro2") %>
         </p>
         <p dir="ltr">
           <%= t("custom.terms.registration_requirements") %>
         </p>
-        <ul style="list-style-type:disc;">
-          <li dir="ltr">
-            <p dir="ltr">
-              <%= t("custom.terms.name") %>
-            </p>
+        <ul>
+          <li>
+            <%= t("custom.terms.name") %>
           </li>
-          <li dir="ltr">
-            <p dir="ltr">
-              <%= t("custom.terms.email") %>
-            </p>
+          <li>
+            <%= t("custom.terms.email") %>
           </li>
-          <li dir="ltr">
-            <p dir="ltr">
-              <%= t("custom.terms.address") %>
-            </p>
-          </li>
-          <li dir="ltr">
-            <p dir="ltr">
-              <%= t("custom.terms.phone") %>
-            </p>
-          </li>
-          <li dir="ltr">
-            <p dir="ltr">
-              <%= t("custom.terms.emso") %>
-            </p>
+          <li>
+            <%= t("custom.terms.emso") %>
           </li>
         </ul>
         <p dir="ltr">
@@ -85,129 +103,287 @@
         <p dir="ltr">
           <%= t("custom.terms.registration_third") %>
         </p>
+        <p dir="ltr">
+          <%= t("custom.terms.registration_fourth") %>
+        </p>
+        <p dir="ltr">
+          <%= t("custom.terms.registration_fifth") %>
+        </p>
 
-        <h3 dir="ltr"><%= t("custom.terms.rules_title") %></h3>
+        <br/>
+        <h2 dir="ltr"><%= t("custom.terms.rules_title") %></h2>
         <p dir="ltr">
           <%= t("custom.terms.rules_first") %>
         </p>
         <p dir="ltr">
           <%= t("custom.terms.rules_promise") %>
         </p>
-        <ul style="list-style-type:disc;">
-          <li dir="ltr">
-            <p dir="ltr">
-              <%= t("custom.terms.rules_promise_first") %>
-            </p>
+        <ul>
+          <li>
+            <%= t("custom.terms.rules_promise_first") %>
           </li>
-          <li dir="ltr">
-            <p dir="ltr">
-              <%= t("custom.terms.rules_promise_second") %>
-            </p>
+          <li>
+            <%= t("custom.terms.rules_promise_second") %>
           </li>
-          <li dir="ltr">
-            <p dir="ltr">
-              <%= t("custom.terms.rules_promise_third") %>
-            </p>
+          <li>
+            <%= t("custom.terms.rules_promise_third") %>
           </li>
-          <li dir="ltr">
-            <p dir="ltr">
-              <%= t("custom.terms.rules_promise_fourth") %>
-            </p>
+          <li>
+            <%= t("custom.terms.rules_promise_fourth") %>
           </li>
-          <li dir="ltr">
-            <p dir="ltr">
-              <%= t("custom.terms.rules_promise_fifth") %>
-            </p>
+          <li>
+            <%= t("custom.terms.rules_promise_fifth") %>
           </li>
         </ul>
         <p dir="ltr">
           <%= t("custom.terms.rules_second") %>
         </p>
-
-        <h3 dir="ltr"><%= t("custom.terms.use_title") %></h3>
-        <p dir="ltr">
-          <%= t("custom.terms.use_intro") %>
-        </p>
-        <p dir="ltr">
-          <%= t("custom.terms.use_list") %>
-        </p>
-        <ul style="list-style-type:disc;">
-          <li dir="ltr">
-            <p dir="ltr"><%= t("custom.terms.use_list_first") %></p>
-          </li>
-        </ul>
-        <p dir="ltr" style="margin-left:36pt;">
-          <%= t("custom.terms.use_list_first_desc") %>
-        </p>
-        <ul style="list-style-type:disc;">
-          <li dir="ltr">
-            <p dir="ltr">
-              <%= t("custom.terms.use_list_second") %>
-            </p>
-          </li>
-        </ul>
-        <p dir="ltr" style="margin-left:36pt;">
-          <%= t("custom.terms.use_list_second_desc") %>
-        </p>
-        <ul style="list-style-type:disc;">
-          <li dir="ltr">
-            <p dir="ltr">
-              <%= t("custom.terms.use_list_third") %>
-            </p>
-          </li>
-        </ul>
-        <p dir="ltr" style="margin-left:36pt;">
-          <%= t("custom.terms.use_list_third_desc") %>
-        </p>
-
-        <h3 dir="ltr"><%= t("custom.terms.cookies_title") %></h3>
-        <p dir="ltr">
-          <%= t("custom.terms.cookies_intro") %>
-        </p>
-
-        <h3 dir="ltr"><%= t("custom.terms.ip_title") %></h3>
-        <p dir="ltr">
-          <%= raw t("custom.terms.ip_intro") %>
-        </p>
-
-        <h3 dir="ltr"><%= t("custom.terms.responsibilities_title") %></h3>
+        
+        <br/>
+        <h2 dir="ltr">
+          <%= t("custom.terms.responsibilities_title") %>
+        </h2>
         <p dir="ltr">
           <%= t("custom.terms.responsibilities_first") %>
         </p>
         <p dir="ltr">
-          <%= t("custom.meta.place_name") %><%= t("custom.terms.responsibilities_second") %>
+          <%= t("custom.terms.responsibilities_second") %>
         </p>
         <p dir="ltr">
           <%= t("custom.terms.responsibilities_third") %>
-          <%= t("custom.meta.place_name") %> prav tako ni odgovorna za vsebine:
         </p>
-        <ul style="list-style-type:disc;">
-          <li dir="ltr">
-            <p dir="ltr">
-              <%= t("custom.terms.responsibilities_list_first") %>
-            </p>
-          </li>
-          <li dir="ltr">
-            <p dir="ltr">
-              <%= t("custom.terms.responsibilities_list_second") %>
-            </p>
-          </li>
-          <li dir="ltr">
-            <p dir="ltr">
-              <%= t("custom.terms.responsibilities_list_third") %>
-            </p>
-          </li>
-          <li dir="ltr">
-            <p dir="ltr">
-              <%= t("custom.terms.responsibilities_list_fourth") %>
-            </p>
-          </li>
-        </ul>
         <p dir="ltr">
-          <%= t("custom.meta.place_name") %><%= t("custom.terms.responsibilities_fourth") %>
+          <%= t("custom.terms.responsibilities_fourth") %>
         </p>
         <p dir="ltr">
           <%= t("custom.terms.responsibilities_fifth") %>
+        </p>
+        <p dir="ltr">
+          <%= t("custom.terms.responsibilities_sixth") %>
+        </p>
+        <p dir="ltr">
+          <%= t("custom.terms.responsibilities_list") %>
+        </p>
+        <ul>
+          <li>
+            <%= t("custom.terms.responsibilities_list_first") %>
+          </li>
+          <li>
+            <%= t("custom.terms.responsibilities_list_second") %>
+          </li>
+          <li>
+            <%= t("custom.terms.responsibilities_list_third") %>
+          </li>
+          <li>
+            <%= t("custom.terms.responsibilities_list_fourth") %>
+          </li>
+        </ul>
+        <p dir="ltr">
+          <%= t("custom.terms.responsibilities_seventh") %>
+        </p>
+        <p dir="ltr">
+          <%= t("custom.terms.responsibilities_eighth") %>
+        </p>
+
+        <br/>
+        <h2 dir="ltr"><%= t("custom.terms.data_protection_title") %></h2>
+        <p dir="ltr">
+          <%= t("custom.terms.data_protection_first") %>
+        </p>
+        <p dir="ltr">
+          <%= t("custom.terms.data_protection_first_note1") %>
+          <br/>
+          <%= t("custom.terms.data_protection_first_note2") %>
+          <br/>
+          <%= t("custom.terms.data_protection_first_note3") %>
+          <br/>
+          <%= t("custom.terms.data_protection_first_note4") %>
+          <br/>
+          <%= t("custom.terms.data_protection_first_note5") %>
+        </p>
+        <p dir="ltr">
+          <%= t("custom.terms.data_protection_second") %>
+        </p>
+        <p dir="ltr" style="margin-left:36pt;">
+          <%= t("custom.terms.data_protection_second_note1") %>
+          <br/>
+          <%= t("custom.terms.data_protection_second_note2") %>
+          <br/>
+          <%= t("custom.terms.data_protection_second_note3") %>
+        </p>
+        <p dir="ltr">
+          <%= t("custom.terms.data_protection_third") %>
+        </p>
+        <p dir="ltr">
+          <%= t("custom.terms.data_protection_fourth") %>
+        </p>
+
+        <br/>
+        <h3 dir="ltr"><%= t("custom.terms.data_use_title") %></h3>
+        <p dir="ltr">
+          <%= t("custom.terms.data_use_list") %>
+        </p>
+        <ul>
+          <li dir="ltr">
+            <p dir="ltr"><%= t("custom.terms.data_use_list_li1") %></p>
+          </li>
+        </ul>
+
+        <br/>
+        <h3 dir="ltr"><%= t("custom.terms.data_store_title") %></h3>
+        <p dir="ltr">
+          <%= t("custom.terms.data_store_list") %>
+        </p>
+        <ul>
+          <li dir="ltr">
+            <%= t("custom.terms.data_store_list_li1") %>
+          </li>
+          <li dir="ltr">
+            <%= t("custom.terms.data_store_list_li2") %>
+          </li>
+          <li dir="ltr">
+            <%= t("custom.terms.data_store_list_li3") %>
+          </li>
+        </ul>
+        <p dir="ltr">
+          <%= t("custom.terms.data_store_first") %>
+        </p>
+        <p dir="ltr">
+          <%= t("custom.terms.data_store_second") %>
+        </p>
+
+        <h3 dir="ltr"><%= t("custom.terms.data_process_title") %></h3>
+        <p dir="ltr">
+          <%= t("custom.terms.data_process_first") %>
+        </p>
+
+        <h3 dir="ltr"><%= t("custom.terms.data_time_title") %></h3>
+        <p dir="ltr">
+          <%= t("custom.terms.data_time_first") %>
+        </p>
+
+        <h3 dir="ltr"><%= t("custom.terms.data_insight_title") %></h3>
+        <p dir="ltr">
+          <%= t("custom.terms.data_insight_first") %>
+        </p>
+        <p dir="ltr">
+          <%= t("custom.terms.data_insight_second") %>
+        </p>
+        <p dir="ltr">
+          <%= t("custom.terms.data_insight_third") %>
+        </p>
+        <p dir="ltr">
+          <%= t("custom.terms.data_insight_list") %>
+        </p>
+        <ol>
+          <li dir="ltr">
+            <p>
+              <%= t("custom.terms.data_insight_list_li1") %>
+              <ul>
+                <li dir="ltr"><%= t("custom.terms.data_insight_list_li1_subli1") %></li>
+                <li dir="ltr"><%= t("custom.terms.data_insight_list_li1_subli2") %></li>
+                <li dir="ltr"><%= t("custom.terms.data_insight_list_li1_subli3") %></li>
+                <li dir="ltr"><%= t("custom.terms.data_insight_list_li1_subli4") %></li>
+                <li dir="ltr"><%= t("custom.terms.data_insight_list_li1_subli5") %></li>
+                <li dir="ltr"><%= t("custom.terms.data_insight_list_li1_subli6") %></li>
+                <li dir="ltr"><%= t("custom.terms.data_insight_list_li1_subli7") %></li>
+                <li dir="ltr"><%= t("custom.terms.data_insight_list_li1_subli8") %></li>
+              </ul>
+            </p>
+          </li>
+          <li dir="ltr">
+            <p>
+              <%= t("custom.terms.data_insight_list_li2") %>
+            </p>
+          </li>
+          <li dir="ltr">
+            <p>
+              <%= t("custom.terms.data_insight_list_li3") %>
+              <ul>
+                <li dir="ltr"><%= t("custom.terms.data_insight_list_li3_subli1") %></li>
+                <li dir="ltr"><%= t("custom.terms.data_insight_list_li3_subli2") %></li>
+                <li dir="ltr"><%= t("custom.terms.data_insight_list_li3_subli3") %></li>
+              </ul>
+            </p>
+          </li>
+          <li dir="ltr">
+            <p>
+              <%= t("custom.terms.data_insight_list_li4") %>
+              <ul>
+                <li dir="ltr"><%= t("custom.terms.data_insight_list_li4_subli1") %></li>
+                <li dir="ltr"><%= t("custom.terms.data_insight_list_li4_subli2") %></li>
+                <li dir="ltr"><%= t("custom.terms.data_insight_list_li4_subli3") %></li>
+                <li dir="ltr"><%= t("custom.terms.data_insight_list_li4_subli4") %></li>
+              </ul>
+            </p>
+          </li>
+          <li dir="ltr">
+            <p>
+              <%= t("custom.terms.data_insight_list_li5") %>
+            </p>
+          </li>
+          <li dir="ltr">
+            <p>
+              <%= t("custom.terms.data_insight_list_li6") %>
+            </p>
+          </li>
+          <li dir="ltr">
+            <p>
+              <%= t("custom.terms.data_insight_list_li7") %>
+            </p>
+          </li>
+        </ol>
+        <p dir="ltr">
+          <%= raw t("custom.terms.data_insight_fourth") %>
+        </p>
+        <p dir="ltr" style="margin-left:36pt;">
+          <%= t("custom.terms.data_insight_fourth_note1") %>
+          <br/>
+          <%= t("custom.terms.data_insight_fourth_note2") %>
+          <br/>
+          <%= t("custom.terms.data_insight_fourth_note3") %>
+        </p>
+
+        <br/>
+        <h2 dir="ltr"><%= t("custom.terms.cookies_title") %></h2>
+        <p dir="ltr">
+          <%= t("custom.terms.cookies_intro") %>
+        </p>
+
+        <h3 dir="ltr"><%= t("custom.terms.cookies_what_title") %></h3>
+        <p dir="ltr">
+          <%= t("custom.terms.cookies_what_intro") %>
+        </p>
+
+        <h3 dir="ltr"><%= t("custom.terms.cookies_why_title") %></h3>
+        <p dir="ltr">
+          <%= t("custom.terms.cookies_why_intro") %>
+        </p>
+
+        <h3 dir="ltr"><%= t("custom.terms.cookies_min_title") %></h3>
+        <p dir="ltr">
+          <%= t("custom.terms.cookies_min_intro") %>
+        </p>
+        <p dir="ltr">
+          <%= t("custom.terms.cookies_list") %>
+        </p>
+        <ul>
+          <li dir="ltr">
+            <strong><%= t("custom.terms.cookies_list_li1") %></strong>
+            <br/>
+            <%= t("custom.terms.cookies_list_li1_desc") %>
+          </li>
+          <li dir="ltr">
+            <strong><%= t("custom.terms.cookies_list_li2") %></strong>
+            <br/>
+            <%= t("custom.terms.cookies_list_li2_desc") %>
+          </li>
+        </ul>
+
+        <br/>
+        <h2 dir="ltr"><%= t("custom.terms.ip_title") %></h2>
+        <p dir="ltr">
+          <%= raw t("custom.terms.ip_intro") %>
         </p>
       </div>
     </div>
