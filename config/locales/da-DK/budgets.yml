@@ -84,7 +84,7 @@ da:
         map_location_instructions: "Naviger kortet til den rette lokation og placer markøren."
       index:
         title: Deltagerbudgetter
-        unfeasible: Projekter, der ikke er mulige at gennemføre
+        unfeasible: Forslag, som ikke er mulige at gennemføre
         unfeasible_text: "Projektidéerne skal imødekomme en række kriterier for at kunne indgå i den endelige afstemningsfase. De projektidéer, der ikke opfylder kriterierne bliver fravalgt og er at finde på listen nedenunder sammen med en rapport, der begrunder projektets manglende opfyldelse af de angivede krav. "
         by_heading: "Forslag tilknyttet: %{heading}"
         search_form:
@@ -204,7 +204,7 @@ da:
       incompatibles: Uforeneligede
       investment_title: Titel på forslag
       investment_proyects: Alle forslag
-      unfeasible_investment_proyects: Projekter, der ikke kan gennemføres
+      unfeasible_investment_proyects: Forslag, som ikke kan gennemføres
       not_selected_investment_proyects: Projekter, der ikke er udvalgt til afstemning
     executions:
       link: "Følg projekterne"
