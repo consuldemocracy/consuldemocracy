@@ -35,7 +35,7 @@ jobs:
         ci_node_total: [5]
         ci_node_index: [0, 1, 2, 3, 4]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
