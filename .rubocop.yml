@@ -22,12 +22,14 @@ Bundler/OrderedGems:
 
 Capybara/ClickLinkOrButtonStyle:
   Enabled: true
+  EnforcedStyle: strict
 
 Capybara/CurrentPathExpectation:
   Enabled: true
 
 Capybara/NegationMatcher:
   Enabled: true
+  EnforcedStyle: not_to
 
 Capybara/RSpec/HaveSelector:
   Enabled: true
