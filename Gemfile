@@ -82,7 +82,7 @@ group :development, :test do
 end
 
 group :test do
-  gem "capybara", "~> 3.39.2"
+  gem "capybara", "~> 3.40.0"
   gem "capybara-webmock", "~> 0.7.0"
   gem "email_spec", "~> 2.2.2"
   gem "pdf-reader"
