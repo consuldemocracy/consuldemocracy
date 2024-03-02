@@ -413,7 +413,7 @@ GEM
     parser (3.3.0.5)
       ast (~> 2.4.1)
       racc
-    pdf-reader (2.11.0)
+    pdf-reader (2.12.0)
       Ascii85 (~> 1.0)
       afm (~> 0.2.1)
       hashery (~> 2.0)
@@ -748,7 +748,7 @@ DEPENDENCIES
   omniauth-rails_csrf_protection (~> 1.0.1)
   omniauth-twitter (~> 1.4.0)
   paranoia (~> 2.6.2)
-  pdf-reader
+  pdf-reader (~> 2.12.0)
   pg (~> 1.4.3)
   pg_search (~> 2.3.6)
   pronto (~> 0.11.1)
