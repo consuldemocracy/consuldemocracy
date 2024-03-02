@@ -510,6 +510,9 @@ Rails/Validation:
 Rails/WhereEquals:
   Enabled: true
 
+Rails/WhereMissing:
+  Enabled: true
+
 Rails/WhereNot:
   Enabled: true
 
