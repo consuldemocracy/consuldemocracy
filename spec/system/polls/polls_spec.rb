@@ -55,11 +55,11 @@ describe "Polls" do
     end
 
     scenario "Proposal polls won't be listed" do
-      proposal = create(:proposal)
-      _poll = create(:poll, related: proposal)
+      create(:poll, related: create(:proposal))
 
       visit polls_path
-      expect(page).to have_content("There are no open votings")
+
+      expect(page).to have_content "There are no open votings"
     end
 
     scenario "Filtering polls" do
