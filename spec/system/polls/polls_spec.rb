@@ -23,7 +23,7 @@ describe "Polls" do
       visit polls_path
       expect(page).to have_content("There are no open votings")
 
-      polls = create_list(:poll, 3, :with_image)
+      polls = [create(:poll, :with_image)] # TODO: generate a list again after switching to zeitwerk
 
       visit polls_path
 
