@@ -16,7 +16,7 @@ module Documentable
     end
 
     def accepted_content_types
-      Setting["uploads.documents.content_types"]&.split(" ") || ["application/pdf"]
+      Setting["uploads.documents.content_types"]&.split || ["application/pdf"]
     end
   end
 end

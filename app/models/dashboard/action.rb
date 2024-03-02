@@ -34,10 +34,10 @@ class Dashboard::Action < ApplicationRecord
   scope :resources, -> { where(action_type: 1) }
   scope :proposed_actions, -> { where(action_type: 0) }
   scope :by_proposal, lambda { |proposal|
-    return where(published_proposal: false) if proposal.draft?
+    where(published_proposal: false) if proposal.draft?
   }
   scope :by_published_proposal, lambda { |published|
-    return where(published_proposal: published)
+    where(published_proposal: published)
   }
 
   def self.active_for(proposal)
