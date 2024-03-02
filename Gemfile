@@ -69,7 +69,7 @@ source "https://rails-assets.org" do
 end
 
 group :development, :test do
-  gem "bullet", "~> 7.0.7"
+  gem "bullet", "~> 7.1.6"
   gem "byebug", "~> 11.1.3"
   gem "factory_bot_rails", "~> 6.4.3"
   gem "faker", "~> 3.2.3"
