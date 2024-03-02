@@ -40,7 +40,7 @@ class Setting < ApplicationRecord
     end
 
     def accepted_content_types_for(group)
-      mime_content_types = Setting["uploads.#{group}.content_types"]&.split(" ") || []
+      mime_content_types = Setting["uploads.#{group}.content_types"]&.split || []
       Setting.mime_types[group].select { |_, content_type| mime_content_types.include?(content_type) }.keys
     end
 
