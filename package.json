@@ -5,6 +5,7 @@
     "jquery-ui": "^1.13.2",
     "jquery-ujs": "^1.2.3",
     "leaflet": "^1.9.4",
-    "leaflet.markercluster": "^1.5.3"
+    "leaflet.markercluster": "^1.5.3",
+    "markdown-it": "^9.0.1"
   }
 }

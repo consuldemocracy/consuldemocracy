@@ -1,9 +1,4 @@
 GEM
-  remote: https://rails-assets.org/
-  specs:
-    rails-assets-markdown-it (9.0.1)
-
-GEM
   remote: https://rubygems.org/
   specs:
     Ascii85 (1.1.0)
@@ -770,7 +765,6 @@ DEPENDENCIES
   pronto-scss (~> 0.11.0)
   puma (~> 5.6.8)
   rails (= 6.1.7.7)
-  rails-assets-markdown-it (~> 9.0.1)!
   recipient_interceptor (~> 0.3.1)
   redcarpet (~> 3.6.0)
   responders (~> 3.1.1)
