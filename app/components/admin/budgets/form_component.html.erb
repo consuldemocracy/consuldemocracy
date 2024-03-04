@@ -47,6 +47,15 @@
       </div>
     </div>
 
+    <div class="row expanded">
+      <div class="small-12 column">
+        <p class="form-label"><%= t("admin.budgets.edit.part_fund") %></p>
+        <p class="help-text"><%= t("admin.budgets.edit.part_fund_help_text") %></p>
+        <%= f.check_box :part_fund %>
+      </div>
+    </div>
+
+
     <% unless wizard? %>
       <div class="small-12 medium-6 column">
         <%= f.select :phase, phases_select_options %>
