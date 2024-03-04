@@ -616,8 +616,6 @@ GEM
       coffee-rails
     socksify (1.7.1)
     spring (4.1.3)
-    spring-commands-rspec (1.0.4)
-      spring (>= 0.9.1)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -782,7 +780,6 @@ DEPENDENCIES
   sitemap_generator (~> 6.3.0)
   social-share-button (~> 1.2.4)
   spring (~> 4.1.3)
-  spring-commands-rspec (~> 1.0.4)
   sprockets (~> 4.2.1)
   turbolinks (~> 5.2.1)
   turnout (~> 2.5.0)
