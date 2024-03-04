@@ -5,7 +5,7 @@ class SiteCustomization::ContentBlock < ApplicationRecord
   validates :name, presence: true, uniqueness: { scope: :locale }, inclusion: { in: ->(*) { VALID_BLOCKS }}
 
   def self.block_for(name, locale)
-    locale ||= I18n.default_locale
+    locale ||= Setting.default_locale
     find_by(name: name, locale: locale)&.body
   end
 end

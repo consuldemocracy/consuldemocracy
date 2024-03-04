@@ -304,4 +304,44 @@ describe Setting do
       expect(Setting.available_locales).to eq %i[de en es pt-BR]
     end
   end
+
+  describe ".default_locale" do
+    before { allow(I18n).to receive_messages(default_locale: :en, available_locales: %i[de en es pt-BR]) }
+
+    it "uses I18n default locale by default" do
+      Setting["locales.default"] = ""
+
+      expect(Setting.default_locale).to eq :en
+    end
+
+    it "allows defining the default locale" do
+      Setting["locales.default"] = "de"
+
+      expect(Setting.default_locale).to eq :de
+    end
+
+    it "handles locales which include a dash" do
+      Setting["locales.default"] = "pt-BR"
+
+      expect(Setting.default_locale).to eq :"pt-BR"
+    end
+
+    it "ignores extra whitespace in the locale name" do
+      Setting["locales.default"] = " es "
+
+      expect(Setting.default_locale).to eq :es
+    end
+
+    it "ignores locales which aren't available" do
+      Setting["locales.default"] = "fr"
+
+      expect(Setting.default_locale).to eq :en
+    end
+
+    it "ignores an array of several locales" do
+      Setting["locales.default"] = "de es"
+
+      expect(Setting.default_locale).to eq :en
+    end
+  end
 end
