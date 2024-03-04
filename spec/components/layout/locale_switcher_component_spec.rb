@@ -101,6 +101,7 @@ describe Layout::LocaleSwitcherComponent do
   context "when not all available locales are enabled" do
     before do
       allow(I18n).to receive(:available_locales).and_return(%i[en es fr])
+      Setting["locales.default"] = "es"
       Setting["locales.enabled"] = "es fr"
     end
 

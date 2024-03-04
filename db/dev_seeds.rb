@@ -24,7 +24,7 @@ end
 
 def random_locales
   [
-    I18n.default_locale,
+    Setting.default_locale,
     *(Setting.enabled_locales & %i[en es]),
     *Setting.enabled_locales.sample(4)
   ].uniq.take(5)

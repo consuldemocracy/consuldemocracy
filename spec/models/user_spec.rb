@@ -81,6 +81,16 @@ describe User do
     end
   end
 
+  describe "#locale" do
+    it "defaults to the default locale setting" do
+      Setting["locales.default"] = "nl"
+
+      user = build(:user, locale: nil)
+
+      expect(user.locale).to eq "nl"
+    end
+  end
+
   describe "preferences" do
     describe "email_on_comment" do
       it "is false by default" do

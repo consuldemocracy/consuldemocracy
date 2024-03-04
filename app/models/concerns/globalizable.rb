@@ -82,7 +82,7 @@ module Globalizable
         translation_class.instance_eval do
           validates method,
                     length: options[:length],
-                    if: lambda { |translation| translation.locale == I18n.default_locale }
+                    if: lambda { |translation| translation.locale == Setting.default_locale }
         end
         if options.count > 1
           translation_class.instance_eval do

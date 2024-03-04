@@ -29,6 +29,7 @@ RSpec.describe SiteCustomization::ContentBlock do
   end
 
   it "is not valid with a disabled locale" do
+    Setting["locales.default"] = "nl"
     Setting["locales.enabled"] = "nl pt-BR"
 
     block.locale = "en"

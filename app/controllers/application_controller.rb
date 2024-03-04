@@ -56,7 +56,7 @@ class ApplicationController < ActionController::Base
       elsif Setting.enabled_locales.include?(session[:locale]&.to_sym)
         session[:locale]
       else
-        I18n.default_locale
+        Setting.default_locale
       end
     end
 

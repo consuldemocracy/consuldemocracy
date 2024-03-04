@@ -23,9 +23,11 @@ describe ApplicationController do
 
   describe "#switch_locale" do
     it "uses the default locale by default" do
+      Setting["locales.default"] = "pt-BR"
+
       get :index
 
-      expect(response.body).to eq "en"
+      expect(response.body).to eq "pt-BR"
     end
 
     it "uses the locale in the parameters when it's there" do

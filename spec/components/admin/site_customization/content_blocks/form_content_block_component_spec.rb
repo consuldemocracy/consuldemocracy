@@ -8,6 +8,7 @@ describe Admin::SiteCustomization::ContentBlocks::FormContentBlockComponent do
     end
 
     it "only includes enabled settings" do
+      Setting["locales.default"] = "de"
       Setting["locales.enabled"] = "de fr"
 
       render_inline component

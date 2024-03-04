@@ -21,6 +21,7 @@ describe Budget::ContentBlock do
   end
 
   it "is not valid with a disabled locale" do
+    Setting["locales.default"] = "pt-BR"
     Setting["locales.enabled"] = "nl pt-BR"
 
     block.locale = "en"

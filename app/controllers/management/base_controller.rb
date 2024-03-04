@@ -44,7 +44,7 @@ class Management::BaseController < ActionController::Base
         session[:locale] = params[:locale].to_s
       end
 
-      session[:locale] ||= I18n.default_locale.to_s
+      session[:locale] ||= Setting.default_locale.to_s
 
       I18n.with_locale(session[:locale], &action)
     end
