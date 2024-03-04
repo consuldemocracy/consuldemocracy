@@ -224,7 +224,7 @@ class Setting < ApplicationRecord
     end
 
     def available_locales
-      locales = Setting["locales.available"].to_s.split.map(&:to_sym)
+      locales = Setting["locales.available"].to_s.split.map(&:to_sym) + [Setting.default_locale]
 
       (locales & I18n.available_locales).presence || I18n.available_locales
     end
