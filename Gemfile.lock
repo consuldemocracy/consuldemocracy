@@ -252,9 +252,8 @@ GEM
       request_store (~> 1.0)
     globalize-accessors (0.3.0)
       globalize (>= 5.0.0)
-    graphiql-rails (1.8.0)
+    graphiql-rails (1.10.0)
       railties
-      sprockets-rails
     graphql (1.13.22)
       base64
     groupdate (6.4.0)
@@ -729,7 +728,7 @@ DEPENDENCIES
   foundation_rails_helper (~> 4.0.1)
   globalize (~> 6.2.1)
   globalize-accessors (~> 0.3.0)
-  graphiql-rails (~> 1.8.0)
+  graphiql-rails (~> 1.10.0)
   graphql (~> 1.13.22)
   groupdate (~> 6.4.0)
   i18n-tasks (~> 0.9.37)
