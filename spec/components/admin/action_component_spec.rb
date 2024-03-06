@@ -1,6 +1,38 @@
 require "rails_helper"
 
 describe Admin::ActionComponent do
+  describe "method" do
+    it "is not included by default for most actions" do
+      render_inline Admin::ActionComponent.new(:create, double, path: "/")
+
+      expect(page).to have_link count: 1
+      expect(page).not_to have_button
+      expect(page).not_to have_css "[data-method]"
+    end
+
+    it "is included in the link when the method is get" do
+      render_inline Admin::ActionComponent.new(:create, double, path: "/", method: :get)
+
+      expect(page).to have_link count: 1
+      expect(page).to have_css "a[data-method='get']"
+      expect(page).not_to have_button
+    end
+
+    it "defaults to :delete for the destroy action" do
+      render_inline Admin::ActionComponent.new(:destroy, double, path: "/")
+
+      expect(page).to have_css "input[name='_method']", visible: :all, count: 1
+      expect(page).to have_css "input[name='_method'][value='delete']", visible: :hidden
+    end
+
+    it "can be overriden for the destroy action" do
+      render_inline Admin::ActionComponent.new(:destroy, double, path: "/", method: :put)
+
+      expect(page).to have_css "input[name='_method']", visible: :all, count: 1
+      expect(page).to have_css "input[name='_method'][value='put']", visible: :hidden
+    end
+  end
+
   describe "HTML class" do
     it "includes an HTML class for the action by default" do
       render_inline Admin::ActionComponent.new(:edit, double, path: "/")
@@ -159,7 +191,7 @@ describe Admin::ActionComponent do
 
         render_inline Admin::ActionComponent.new(:destroy, record, path: "/", confirm: true)
 
-        expect(page).to have_link count: 1
+        expect(page).to have_button count: 1
         expect(page).to have_css "[data-confirm='#{text}']"
       end
     end
