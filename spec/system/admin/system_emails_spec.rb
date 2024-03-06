@@ -328,7 +328,7 @@ describe "System Emails" do
       visit admin_system_email_preview_pending_path("proposal_notification_digest")
 
       within("#proposal_notification_#{proposal_notification1.id}") do
-        click_link "Moderate notification send"
+        click_button "Moderate notification send"
       end
 
       expect(page).not_to have_content("Proposal A Title")
