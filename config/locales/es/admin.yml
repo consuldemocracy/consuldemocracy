@@ -1607,7 +1607,6 @@ es:
         index:
           title: Personalizar imágenes
           update: Actualizar
-          delete: Borrar
           image: Imagen
         update:
           notice: Imagen actualizada correctamente
