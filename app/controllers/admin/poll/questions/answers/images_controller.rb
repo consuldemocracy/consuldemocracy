@@ -25,9 +25,8 @@ class Admin::Poll::Questions::Answers::ImagesController < Admin::Poll::BaseContr
   def destroy
     @image.destroy!
 
-    respond_to do |format|
-      format.js { render layout: false }
-    end
+    redirect_to admin_answer_images_path(@image.imageable),
+                notice: t("flash.actions.destroy.poll_question_answer_image")
   end
 
   private

@@ -34,6 +34,7 @@ es:
       destroy:
         budget_investment: "Proyecto de gasto eliminado."
         topic: "Tema eliminado."
+        poll_question_answer_image: "Imagen eliminada correctamente."
         poll_question_answer_video: "Vídeo de respuesta eliminado."
         valuator_group: "Grupo de evaluadores eliminado correctamente"
         vote: "Voto eliminado correctamente"

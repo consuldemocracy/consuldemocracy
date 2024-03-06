@@ -73,7 +73,7 @@ describe "Images", :admin do
       expect(page).to have_content image.title
 
       accept_confirm "Are you sure? Remove image \"#{image.title}\"" do
-        click_link "Remove image"
+        click_button "Remove image"
       end
 
       expect(page).not_to have_css "img[title='#{image.title}']"
@@ -88,7 +88,7 @@ describe "Images", :admin do
       expect(page).to have_css "img[title='#{image.title}']"
       expect(page).to have_content image.title
 
-      expect(page).not_to have_link "Remove image"
+      expect(page).not_to have_content "Remove image"
       expect(page).to have_content "Once the poll has started it will not be possible to create, edit or"
     end
   end
