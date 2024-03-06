@@ -664,7 +664,6 @@ es:
         index:
           title: Versiones del borrador
           create: Crear versión
-          delete: Borrar
           preview: Previsualizar
         new:
           back: Volver
@@ -697,7 +696,6 @@ es:
           back: Volver
           title: Preguntas asociadas a este proceso
           create: Crear pregunta
-          delete: Borrar
         new:
           back: Volver
           title: Crear nueva pregunta

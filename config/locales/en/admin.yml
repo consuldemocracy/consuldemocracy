@@ -664,7 +664,6 @@ en:
         index:
           title: Draft versions
           create: Create version
-          delete: Delete
           preview: Preview
         new:
           back: Back
@@ -697,7 +696,6 @@ en:
           back: Back
           title: Questions associated to this process
           create: Create question
-          delete: Delete
         new:
           back: Back
           title: Create new question

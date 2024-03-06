@@ -75,7 +75,7 @@ describe "Admin legislation questions", :admin do
 
       visit edit_admin_legislation_process_question_path(process, question)
 
-      click_link "Delete"
+      click_button "Delete"
 
       expect(page).to have_content "Questions"
       expect(page).to have_content "Question 1"

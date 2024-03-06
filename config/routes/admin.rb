@@ -346,3 +346,7 @@ end
 resolve "Poll::Question::Answer::Video" do |video, options|
   [:answer, :video, options.merge(answer_id: video.answer, id: video)]
 end
+
+resolve "Legislation::DraftVersion" do |version, options|
+  [version.process, :draft_version, options.merge(id: version)]
+end

@@ -78,7 +78,7 @@ describe "Admin legislation draft versions", :admin do
     version = create(:legislation_draft_version, body: "Version 1")
 
     visit edit_admin_legislation_process_draft_version_path(version.process, version)
-    click_link "Delete"
+    click_button "Delete"
 
     expect(page).to have_content "Draft deleted successfully"
   end
