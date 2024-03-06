@@ -511,9 +511,13 @@ code {
   flex-wrap: wrap;
 
   a,
-  button {
+  button,
+  form {
     margin-#{$global-left}: auto;
+  }
 
+  a,
+  button {
     &:not(.delete) {
       @include regular-button;
       margin-#{$global-left}: auto;

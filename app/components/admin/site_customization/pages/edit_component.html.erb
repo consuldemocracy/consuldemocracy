@@ -2,7 +2,13 @@
 <%= back_link_to admin_site_customization_pages_path %>
 
 <%= header do %>
-  <%= link_to t("admin.site_customization.pages.index.delete"), admin_site_customization_page_path(page), method: :delete, class: "delete" %>
+  <%= render Admin::ActionComponent.new(
+    :destroy,
+    @page,
+    text: t("admin.site_customization.pages.index.delete"),
+    method: :delete,
+    class: "delete"
+  ) %>
 <% end %>
 
 <%= render "form" %>
