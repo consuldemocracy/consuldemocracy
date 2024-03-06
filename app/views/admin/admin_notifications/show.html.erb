@@ -69,11 +69,10 @@
       @admin_notification,
       text: t("admin.admin_notifications.show.send"),
       method: :post,
-      "data-alert": t(
+      confirm: t(
         "admin.admin_notifications.show.send_alert",
         n: @admin_notification.list_of_recipients_count
       ),
-      id: "js-send-admin_notification-alert",
       class: "button success expanded",
     ) %>
   </div>

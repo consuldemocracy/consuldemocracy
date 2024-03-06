@@ -61,8 +61,7 @@
     @newsletter,
     text: t("admin.newsletters.show.send"),
     method: :post,
-    "data-alert": t("admin.newsletters.show.send_alert", n: recipients_count),
-    id: "js-send-newsletter-alert",
+    confirm: t("admin.newsletters.show.send_alert", n: recipients_count),
     class: "button success"
   ) %>
 <% end %>
