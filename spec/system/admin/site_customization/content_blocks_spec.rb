@@ -103,7 +103,9 @@ describe "Admin custom content blocks", :admin do
       block = create(:site_customization_content_block)
       visit edit_admin_site_customization_content_block_path(block)
 
-      click_button "Delete block"
+      accept_confirm("Are you sure? This action will delete \"#{block.name}\" and can't be undone.") do
+        click_button "Delete block"
+      end
 
       expect(page).not_to have_content("#{block.name} (#{block.locale})")
       expect(page).not_to have_content(block.body)
