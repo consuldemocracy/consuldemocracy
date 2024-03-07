@@ -30,8 +30,7 @@ class Geozone < ApplicationRecord
       if geojson.present?
         if geojson.match(/"coordinates"\s*:\s*\[\s*\[\s*\[\s*\[/)
           coordinates.reduce([], :concat).reduce([], :concat)
-         elsif geojson.match(/"coordinates"\s*:\s*\[\s*\[\s*\[/)
-  
+        elsif geojson.match(/"coordinates"\s*:\s*\[\s*\[\s*\[/)
           coordinates.reduce([], :concat)
         else
           coordinates
@@ -40,7 +39,7 @@ class Geozone < ApplicationRecord
         []
       end
     end
-    
+
     def coordinates
       JSON.parse(geojson)["geometry"]["coordinates"]
     end
