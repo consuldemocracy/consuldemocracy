@@ -44,7 +44,7 @@
                     <% if @budget.headings.count > 1 %>
                       <%= render "budgets/investments/districts" %>
                     <% end %>
-                    <% if @budget.categories.count > 1 %>
+                    <% if @budget.categories.count > 0 %>
                       <%= render "budgets/investments/tags" %>
                     <% end %>
                     <%# filter accepted / denied investments in 'balloting' and 'reviewing_ballots' phases %>
@@ -128,7 +128,7 @@
                     <% if @budget.headings.count > 1 %>
                       <%= render "budgets/investments/districts" %>
                     <% end %>
-                    <% if @budget.categories.count > 1 %>
+                    <% if @budget.categories.count > 0 %>
                       <%= render "budgets/investments/tags" %>
                     <% end %>
                     <%# filter accepted / denied investments in 'balloting' and 'reviewing_ballots' phases %>
