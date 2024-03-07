@@ -29,5 +29,8 @@
     <% end %>
   </tbody>
 </table>
-
+<div class="small-12 column">
+  <h2><%= t("admin.geozones.index.geojson_map") %></h2>
+  <p class="help-text">  <%= t("admin.geozones.index.geojson_map_help") %></p>
+</div>
 <%= render Shared::MapLocationComponent.new(nil, geozones_data: geozones_data) %>
