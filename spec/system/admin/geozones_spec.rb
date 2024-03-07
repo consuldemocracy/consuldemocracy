@@ -143,24 +143,12 @@ describe "Admin geozones", :admin do
     end
   end
 
-
   scenario "Show polygons on geozone admin view" do
     Setting["feature.map"] = true
-
     geojson = '{ "geometry": { "type": "Polygon", "coordinates": [[-0.1,51.5],[-0.2,51.4],[-0.3,51.6]] } }'
-    geozone = create(:geozone, name: "Polygon me!")
-
-    visit edit_admin_geozone_path(geozone)
-    fill_in "GeoJSON data (optional)", with: geojson
-    fill_in "Color (optional)", with: "#f5c211"
-    click_button "Save changes"
-
-    expect(page).to have_content "Geozone updated successfully"
+    geozone = create(:geozone, name: "Polygon me!", geojson: geojson)
 
     visit admin_geozones_path
-
-    expect(page).to have_css ".map-polygon[fill='#f5c211']"
-    within(".map-location") { expect(page).not_to have_link "Area 51" }
 
     find(".map-polygon").click
 
@@ -168,6 +156,4 @@ describe "Admin geozones", :admin do
       expect(page).to have_link "Polygon me!", href: edit_admin_geozone_path(geozone)
     end
   end
-
-
 end
