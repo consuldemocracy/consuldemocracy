@@ -45,7 +45,9 @@
       </p>
     <% end %>
 
-    <%= f.number_field :price, label: "Vrednost predloga (v evrih)" %>
+    <%= f.label :price, "Ocena stroškov projektnega predloga (skupaj z DDV-jem)", class: "inline-block" %>
+    <p class="help-text">Vpišite celo število brez kakršnih koli pik, vejic, črk in ostalih simbolov.</p>
+    <%= f.number_field :price, label: false %>
 
     <% if feature?(:allow_images) %>
       <div class="images">
