@@ -5,21 +5,7 @@
 
   <div class="budgets-executions-heading-investments">
     <% investments.each do |investment| %>
-      <div class="budget-execution">
-        <%= render Budgets::Executions::ImageComponent.new(investment) %>
-        <div class="budget-execution-info">
-          <div class="budget-execution-content">
-            <h5>
-              <%= link_to investment.title,
-                          polymorphic_path(investment, anchor: "tab-milestones") %>
-            </h5>
-            <span class="author"><%= investment.author.name %></span>
-          </div>
-          <p class="price margin-top text-center">
-            <strong><%= investment.formatted_price %></strong>
-          </p>
-        </div>
-      </div>
+      <%= render Budgets::Executions::InvestmentComponent.new(investment) %>
     <% end %>
   </div>
 </div>

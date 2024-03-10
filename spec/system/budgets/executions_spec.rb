@@ -294,7 +294,7 @@ describe "Executions" do
 
       visit budget_executions_path(budget)
 
-      expect(page).to have_css(".budget-execution", count: 3)
+      expect(page).to have_css(".budget-executions-investment", count: 3)
       expect(a_heading.name).to appear_before(m_heading.name)
       expect(m_heading.name).to appear_before(z_heading.name)
     end
