@@ -2,23 +2,22 @@
   <h4 id="<%= heading.name.parameterize %>">
     <%= heading.name %> (<%= investments.count %>)
   </h4>
-  <div class="row" data-equalizer-on="medium" data-equalizer>
+
+  <div class="budgets-executions-heading-investments">
     <% investments.each do |investment| %>
-      <div class="small-12 medium-6 large-4 column end margin-bottom">
-        <div class="budget-execution" data-equalizer-watch>
-          <%= render Budgets::Executions::ImageComponent.new(investment) %>
-          <div class="budget-execution-info">
-            <div class="budget-execution-content">
-              <h5>
-                <%= link_to investment.title,
-                            polymorphic_path(investment, anchor: "tab-milestones") %>
-              </h5>
-              <span class="author"><%= investment.author.name %></span>
-            </div>
-            <p class="price margin-top text-center">
-              <strong><%= investment.formatted_price %></strong>
-            </p>
+      <div class="budget-execution">
+        <%= render Budgets::Executions::ImageComponent.new(investment) %>
+        <div class="budget-execution-info">
+          <div class="budget-execution-content">
+            <h5>
+              <%= link_to investment.title,
+                          polymorphic_path(investment, anchor: "tab-milestones") %>
+            </h5>
+            <span class="author"><%= investment.author.name %></span>
           </div>
+          <p class="price margin-top text-center">
+            <strong><%= investment.formatted_price %></strong>
+          </p>
         </div>
       </div>
     <% end %>
