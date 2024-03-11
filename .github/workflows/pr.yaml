@@ -2,74 +2,64 @@ on:
   push:
     branches:
       - djnd-consul
-
 jobs:
   pull-requests:
     name: Automatic PRs
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Check out the repo
+      - name: Check out the repo
         uses: actions/checkout@v3
 
-      -
-        name: pull-request-maribor
+      - name: pull-request-maribor
         uses: repo-sync/pull-request@v2
         with:
           destination_branch: "maribor-k8s"
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pr_title: "Pulling ${{ github.ref }} into maribor-k8s"
 
-      -
-        name: pull-request-medvode
+      - name: pull-request-medvode
         uses: repo-sync/pull-request@v2
         with:
           destination_branch: "medvode-k8s"
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pr_title: "Pulling ${{ github.ref }} into medvode-k8s"
 
-      -
-        name: pull-request-koper
+      - name: pull-request-koper
         uses: repo-sync/pull-request@v2
         with:
           destination_branch: "koper-k8s"
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pr_title: "Pulling ${{ github.ref }} into koper-k8s"
 
-      -
-        name: pull-request-trebnje
+      - name: pull-request-trebnje
         uses: repo-sync/pull-request@v2
         with:
           destination_branch: "trebnje-k8s"
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pr_title: "Pulling ${{ github.ref }} into trebnje-k8s"
 
-      -
-        name: pull-request-novo-mesto
+      - name: pull-request-novo-mesto
         uses: repo-sync/pull-request@v2
         with:
           destination_branch: "novo-mesto-k8s"
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pr_title: "Pulling ${{ github.ref }} into novo-mesto-k8s"
 
-      -
-        name: pull-request-nova-gorica
+      - name: pull-request-nova-gorica
         uses: repo-sync/pull-request@v2
         with:
           destination_branch: "nova-gorica-k8s"
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pr_title: "Pulling ${{ github.ref }} into nova-gorica-k8s"
       
-      -
-        name: pull-request-trzic
+      - name: pull-request-trzic
         uses: repo-sync/pull-request@v2
         with:
           destination_branch: "trzic-k8s"
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pr_title: "Pulling ${{ github.ref }} into trzic-k8s"
 
-       -
-        name: pull-request-staging
+       - name: pull-request-staging
         uses: repo-sync/pull-request@v2
         with:
           destination_branch: "staging-k8s"
