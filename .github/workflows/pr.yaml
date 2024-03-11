@@ -5,10 +5,12 @@ on:
 
 jobs:
   pull-requests:
+    name: Automatic PRs
     runs-on: ubuntu-latest
     steps:
       -
-        uses: actions/checkout@v2
+        name: Check out the repo
+        uses: actions/checkout@v3
 
       -
         name: pull-request-maribor
@@ -57,6 +59,14 @@ jobs:
           destination_branch: "nova-gorica-k8s"
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pr_title: "Pulling ${{ github.ref }} into nova-gorica-k8s"
+      
+      -
+        name: pull-request-trzic
+        uses: repo-sync/pull-request@v2
+        with:
+          destination_branch: "trzic-k8s"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          pr_title: "Pulling ${{ github.ref }} into trzic-k8s"
 
        -
         name: pull-request-staging
