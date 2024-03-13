@@ -579,10 +579,10 @@ body > header,
   display: flex;
   padding-bottom: $topbar-padding;
   padding-top: $topbar-padding;
+  flex-wrap: wrap;
 
   @include breakpoint(small only) {
     flex-direction: row-reverse;
-    flex-wrap: wrap;
 
     .responsive-menu {
       width: 100%;
@@ -606,10 +606,7 @@ body > header,
       height: rem-calc(48);
       margin: 0;
       width: auto;
-
-      @include breakpoint(medium up) {
-        height: auto;
-      }
+      max-width: 400px;
     }
   }
 }
