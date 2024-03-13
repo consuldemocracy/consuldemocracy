@@ -27,17 +27,40 @@
   font-style: normal;
 }
 
+$brand: #2272b7;
+$brand-secondary: #2272b7;
+
+$footer: rgb(128, 161, 182);
+$footer-color: rgb(35, 31, 32);
+
+$base-font-size: 18px;
+$body-font-family: "Formata", sans-serif;
+$header-font-weight: 700;
+$hover: rgb(17, 24, 39);
+$hover-secondary: scale-color($brand-secondary, $lightness: -20%);
+
+$text: #231f20;
+
+$social-background: $text;
+$social-color: #fff;
+
+$social-background-hover: #fff;
+$social-color-hover: $text;
+
 html {
-  $base-font-size: 18px;
-  $body-font-family: 'Formata', sans-serif;
-  $header-font-weight: 700;
+  --brand: #{$brand};
+  --brand-secondary: #{$brand-secondary};
 
-  --brand: #2272b7;
-  --brand-secondary: #0054ad;
-  $footer: #7796ac;
+  --footer: #{$footer};
 
-  $hover: scale-color(var(--brand), $lightness: -20%);
-  $hover-secondary: scale-color(var(--brand-secondary), $lightness: -20%);
+  --header-color: var(--brand);
+  --heading-border-color: #{$footer};
 
-  $text: #231F20;
+  --button-shadow: none;
+  --button-secondary-background: #f1f1f1;
+  --button-secondary-color: var(#{$text}, inherit);
+
+  --small-border-radius: 0px;
+  --medium-border-radius: 0px;
+  --large-border-radius: 0px;
 }

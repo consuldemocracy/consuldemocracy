@@ -1,0 +1,67 @@
+.top-bar-title {
+  background: none;
+}
+
+footer {
+  color: $text;
+}
+
+.footer {
+  .title {
+    border-color: $text;
+  }
+
+  a:hover {
+    color: #fff;
+    border-color: #fff;
+  }
+
+  .social {
+    ul {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+    }
+
+    a {
+      color: $social-color;
+      background: $social-background;
+      margin: 0;
+
+      &:hover {
+        color: $social-color-hover;
+        background: $social-background-hover;
+      }
+    }
+  }
+}
+
+.home-page,
+.custom-page {
+  .card .figure-card figcaption h3 {
+    min-height: unset;
+    background: white;
+    color: var(--brand);
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    margin: 0;
+    padding: rem-calc(10) rem-calc(12);
+  }
+}
+
+.home-page .figure-card,
+.custom-page .figure-card {
+  .gradient {
+    display: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--header-color, inherit);
+}
