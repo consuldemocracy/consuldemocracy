@@ -40,4 +40,8 @@ sed -e "s/xxx.xxx.xxx.xxx/$HOST/" -e "s/user: "deploy"/user: "$ANSIBLE_USER"/" d
 echo "$REPO"
 echo "$branch"
 
-cap production deploy --trace
+if [ "$production" = true ]; then
+  cap production deploy --trace
+else
+  cap staging deploy --trace
+fi
