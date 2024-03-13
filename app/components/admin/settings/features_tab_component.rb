@@ -6,6 +6,7 @@ class Admin::Settings::FeaturesTabComponent < ApplicationComponent
       feature.google_login
       feature.twitter_login
       feature.wordpress_login
+      feature.saml_login
       feature.public_stats
       feature.signature_sheets
       feature.user.recommendations
