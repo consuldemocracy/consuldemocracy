@@ -237,14 +237,15 @@ saml_town = extracted_values["saml_town"]
    # Assign Geozone based on the normalized saml_postcode if it exists
    if normalized_saml_postcode.present?
    # Find the Postcode instance based on the normalized saml_postcode
-   postcode_instance = Postcode.find_by(postcode: normalized_saml_postcode)
+   # This only goes in if Manage Postcodes is added
+   #   postcode_instance = Postcode.find_by(postcode: normalized_saml_postcode)
 
    if postcode_instance
     # Assign the associated Geozone to the user
-      saml_user.geozone = postcode_instance.geozone
+    #  saml_user.geozone = postcode_instance.geozone
    else
     # Handle the case when the postcode is not found
-      saml_user.geozone = nil
+    #  saml_user.geozone = nil
   end
 end
    
