@@ -11,12 +11,9 @@ class User < ApplicationRecord
 
     oauth_email           = auth.info.email
     oauth_verified        = auth.info.verified || auth.info.verified_email || auth.info.email_verified || auth.extra.raw_info.email_verified
+    # following line assumes oauth provider has verified email
     oauth_email_confirmed = oauth_email.present? #&& oauth_verified
     oauth_user            = User.find_by(email: oauth_email) if oauth_email_confirmed
-Rails.logger.info("oauth_email #{oauth_email}")
-Rails.logger.info("oauth_verified #{oauth_verified}")
-Rails.logger.info("oauth_confirmed #{oauth_email_confirmed}")
-Rails.logger.info("oauth_user #{oauth_user}")
 
     oauth_user || User.new(
       username:  auth.info.name || auth.uid,
@@ -75,18 +72,18 @@ end
 # Now you have a hash containing the extracted values
 Rails.logger.info("extracted values: #{extracted_values.inspect}")
 
-# Assuming 'extracted_values' is the hash containing extracted values
-saml_username = extracted_values["saml_username"]
-saml_authority_code = extracted_values["saml_authority_code"]
-saml_firstname = extracted_values["saml_firstname"]
-saml_surname = extracted_values["saml_surname"]
-saml_long = extracted_values["saml_longitude"]
-saml_lat = extracted_values["saml_latitude"]
-saml_date_of_birth = extracted_values["saml_date_of_birth"]
-saml_gender = extracted_values["saml_gender"]
-saml_postcode = extracted_values["saml_postcode"]
-saml_email = extracted_values["saml_email"]
-saml_town = extracted_values["saml_town"]
+    # Assuming 'extracted_values' is the hash containing extracted values
+    saml_username = extracted_values["saml_username"]
+    saml_authority_code = extracted_values["saml_authority_code"]
+    saml_firstname = extracted_values["saml_firstname"]
+    saml_surname = extracted_values["saml_surname"]
+    saml_long = extracted_values["saml_longitude"]
+    saml_lat = extracted_values["saml_latitude"]
+    saml_date_of_birth = extracted_values["saml_date_of_birth"]
+    saml_gender = extracted_values["saml_gender"]
+    saml_postcode = extracted_values["saml_postcode"]
+    saml_email = extracted_values["saml_email"]
+    saml_town = extracted_values["saml_town"]
 
     oauth_email = saml_email
     oauth_gender = saml_gender
@@ -97,11 +94,9 @@ saml_town = extracted_values["saml_town"]
     oauth_email_confirmed = oauth_email.present?
     saml_email_confirmed = saml_email.present?
    # oauth_email_confirmed = oauth_email.present? && (auth.info.verified || auth.info.verified_email)
-   # oauth_lacode              = auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.17", 0).to_s
-   # oauth_full_name           = auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.2", 0).to_s + "_" + auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.4", 0).to_s
-   # Normalize the saml_postcode by stripping spaces and converting to lowercase
-   normalized_saml_postcode = saml_postcode.strip.downcase if saml_postcode.present?
 
+   # Normalize the saml_postcode by stripping spaces and converting to lowercase
+    normalized_saml_postcode = saml_postcode.strip.downcase if saml_postcode.present?
    
    #lacode comes from list of councils registered with IS
     oauth_lacode_ref          = "9079" # this should be picked up from secrets in future
@@ -121,9 +116,7 @@ saml_town = extracted_values["saml_town"]
     # Handle the case when the postcode is not found
     #  saml_user.geozone = nil
 #  end
-end
-   
-   
+   end
    
    # oauth_username = oauth_full_name ||  oauth_email.split("@").first || auth.info.name || auth.uid
    if saml_username.present? && saml_username != saml_email && saml_username != saml_full_name
