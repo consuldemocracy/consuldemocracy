@@ -1,0 +1,74 @@
+<% provide :title do %><%= t("devise_views.users.registrations.new.title") %><% end %>
+<h2><%= t("devise_views.users.registrations.new.title") %></h2>
+
+<p>Creating your account is easy – all you need is an email address:</p>
+
+<ol>
+<li>Create account</li>
+<li>Activate account (via email)</li>
+<li>Login</li>
+<li>Get Started</li>
+</ol>
+
+<p>Registration and sign-in for your online account is powered by the Scottish Government's 'myaccount' service.  It checks who you are and allows you to use a single account to access a range of Scottish public services online.</p>
+
+<%= render "devise/omniauth_form", action: "sign_up" %>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "shared/errors", resource: resource %>
+
+<div id="admin_signup" style= "visibility:hidden">
+  <p>
+    <%= sanitize(t("devise_views.users.registrations.new.organization_signup",
+        signup_link: link_to(t("devise_views.users.registrations.new.organization_signup_link"), new_organization_registration_path))) %>
+  </p> 
+
+  <div class="row">
+    <div class="small-12 column">
+
+      <%= f.hidden_field :use_redeemable_code %>
+      <%= f.hidden_field :locale, value: I18n.locale %>
+
+      <%= f.text_field :username,  autofocus: true, maxlength: User.username_max_length,
+                                   hint: t("devise_views.users.registrations.new.username_note") %>
+
+      <%= f.invisible_captcha :address %>
+
+      <%= f.email_field :email %>
+
+      <%= f.password_field :password, autocomplete: "off" %>
+
+      <%= f.password_field :password_confirmation, autocomplete: "off",
+                           label: t("devise_views.users.registrations.new.password_confirmation_label") %>
+
+      <% if resource.use_redeemable_code %>
+        <%= f.text_field :redeemable_code %>
+      <% end %>
+
+      <%= f.check_box :terms_of_service,
+        title: t("devise_views.users.registrations.new.terms_title"),
+        label: t("devise_views.users.registrations.new.terms",
+                 terms: link_to(t("devise_views.users.registrations.new.terms_link"), "/conditions",
+                                title: t("shared.target_blank"),
+                                target: "_blank")
+                ) %>
+
+      <div class="small-12 medium-6 small-centered">
+        <%= f.submit t("devise_views.users.registrations.new.submit"), class: "button expanded" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+</div>
+
+<button onclick="displayAdminSignUp()">Administration</button>
+
+<script>
+function displayAdminSignUp() {
+    const div = document.getElementById("admin_signup");
+    div.style.visibility = div.style.visibility == "hidden" ? "visible" : "hidden";
+}
+</script>

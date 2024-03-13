@@ -1278,10 +1278,12 @@ table {
 .button.button-saml {
   background: #dcdde3;
   border-left: 3px solid #2f2f33;
+  content: image-url('myaccount_signin.png'); 
+  background-size: 150px;
+  background: no-repeat;
 
   &::before {
     color: #2f2f33;
-    content: "8";
   }
 }
 
