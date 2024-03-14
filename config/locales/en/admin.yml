@@ -1400,6 +1400,8 @@ en:
       index:
         title: Geozone
         create: Create geozone
+        geojson_map: GeoJSON Map
+        geojson_map_help: "If GeoJSON coordinates are available they will be displayed on the map below"
       geozone:
         name: Name
         external_code: External code
