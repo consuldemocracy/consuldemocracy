@@ -29,13 +29,13 @@ sl-SI:
       unlock_instructions:
         subject: "Navodila za odklepanje računa"
     omniauth_callbacks:
-      failure: "Nismo te mogli avtorizirati kot %{kind} zaradi \"%{reason}\"."
+      failure: 'Nismo te mogli avtorizirati kot %{kind} zaradi "%{reason}".'
       success: "Uspešno identificiran/-a kot %{kind}."
     passwords:
       no_token: "Do te strani ne moreš dostopati drugače kot preko povezave za ponastavljanje gesla. Če si tu preko tovrstne povezave, preveri, da je URL povezave pravilen."
       send_instructions: "V nekaj minutah dobiš e-pošto z navodili, kako ponastaviti tvoje geslo."
       send_paranoid_instructions: "Če imamo tvoj e-naslov v bazi, v nekaj minutah dobiš e-pošto s povezavo do ponastavljanja tvojega gesla."
-      updated: "Tvoje geslo je bilo uspešno spremenjeno. Avtentifikacija uspešna."
+      updated: "Tvoje geslo je bilo uspešno spremenjeno."
       updated_not_active: "Tvoje geslo je bilo uspešno spremenjeno."
     registrations:
       destroyed: "Adijo! Tvoj račun smo ugasnili. Upamo, da se kmalu spet vidimo. Skladno s tvojo zahtevo, smo izbrisali osebne podatke, povezane s tvojim računom."
