@@ -134,59 +134,7 @@ module Budgets
       @tag_cloud = tag_cloud
       @remote_translations = detect_remote_translations(@investments)
 
-      # TODO: remove this commented out section when you're sure you don't need it anywhere
-      #@denied_investments = Budget::Investment.where(selected: false).page(params[:page]).per(21).for_render
-      # if @budget.phase == "finished"
-      #   if @heading
-      #     denied_investments = Budget::Investment.where("winner = false AND budget_id = ?",
-      #       @budget.id).where("heading_id = ?", @heading.id)
-      #   else
-      #     denied_investments = Budget::Investment.where("winner = false AND budget_id = ?", @budget.id)
-      #   end
-      # else
-      #   if @heading
-      #     denied_investments = Budget::Investment.where("selected = false OR feasibility = ?", "unfeasible")
-      #     .where("budget_id = ?", @budget.id).where("heading_id = ?", @heading.id)
-      #   else
-      #     denied_investments = Budget::Investment.where("selected = false OR feasibility = ?", "unfeasible")
-      #     .where("budget_id = ?", @budget.id)
-      #   end
-      # end
-      # @denied_investments_count = denied_investments.count
-      # @denied_investments = denied_investments.page(params[:page]).per(400).for_render
-
-    #   # unfeasible_investments = Budget::Investment.where("feasibility = ?", "unfeasible")
-    #   # @unfeasible_investments_count = unfeasible_investments.count
-    #   # @unfesible_investments = unfeasible_investments.page(params[:page]).per(21).for_render
-    #   all_investments = Budget::Investment.where("budget_id = ?", @budget.id).order("id DESC")
-    #   @all_investments_count = all_investments.count
-    #   @all_investments = all_investments.page(params[:page]).per(400).for_render
-    #   @all_investment_ids = @investments.pluck(:id)
     end
-
-    # def edit
-    #   @investment.author = current_user
-    #   @investment_ids = [@investment.id]
-    # end
-
-    # def update
-    #   @investment.update!(investment_params)
-    #   redirect_to budget_investment_path(@budget, @investment),
-    #               notice: t("custom.titles.investment_updated")
-    # end
-
-    # def investments_orders
-    #   case current_budget.phase
-    #   when "accepting", "reviewing"
-    #     %w[created_at]
-    #   when "publishing_prices", "balloting", "reviewing_ballots"
-    #     %w[created_at price]
-    #   when "finished"
-    #     %w[created_at]
-    #   else
-    #     %w[created_at confidence_score]
-    #   end
-    # end
 
     # this is so we get fields for questions on the new investment form
     def new
