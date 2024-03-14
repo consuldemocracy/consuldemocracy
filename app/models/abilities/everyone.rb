@@ -20,8 +20,13 @@ module Abilities
       can :read_executions, Budget, phase: "finished"
       can [:read, :debate, :draft_publication, :allegations, :result_publication,
            :proposals, :milestones], Legislation::Process, published: true
-      can :summary, Legislation::Process,
-          id: Legislation::Process.past.published.where(result_publication_enabled: true).ids
+           
+      can :summary, Legislation::Process do |process|
+          process.summary_publication_enabled? && 
+            (process.summary_publication_date.nil? || process.summary_publication_date <= Date.current) &&
+            process.id.in?(Legislation::Process.published.where(summary_publication_enabled: true).ids)
+      end
+                     
       can [:read, :changes, :go_to_version], Legislation::DraftVersion
       can [:read], Legislation::Question
       can [:read, :share], Legislation::Proposal
