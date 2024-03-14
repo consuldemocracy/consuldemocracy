@@ -29,4 +29,5 @@ class Admin::Geozones::IndexComponent < ApplicationComponent
         }
       end
     end
+
 end
