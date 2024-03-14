@@ -7,7 +7,7 @@
 
     <% unless budget.single_heading? %>
       <div>
-        <%= f.select :heading_id, budget_heading_select_options(budget), { include_blank: true } %>
+          <%= f.select :heading_id, budget_heading_select_options(budget),  { include_blank: true, hint: t("budgets.investments.form.heading_note"),class: "html-area" } %>
       </div>
     <% end %>
 
@@ -18,23 +18,37 @@
     <%= f.translatable_fields do |translations_form| %>
       <div>
         <%= translations_form.text_field :title,
-                                         maxlength: Budget::Investment.title_max_length,
-                                         data: suggest_data(investment) %>
+              hint: t("budgets.investments.form.subtitle_note"),
+              maxlength: Budget::Investment.title_max_length,
+              data: suggest_data(investment) %>
       </div>
       <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
 
+    
       <div>
         <%= translations_form.text_area :description,
-                                        maxlength: Budget::Investment.description_max_length,
-                                        class: "html-area" %>
+              hint: t("budgets.investments.form.description_note"),
+              maxlength: Budget::Investment.description_max_length,
+              class: "html-area" %>
       </div>
-    <% end %>
+      <div>
+          <h2> Estimated Cost </h2>
+          <%= f.number_field :estimated_price, hint: t("budgets.investments.form.estimated_price_note")%>
+       </div>
+
+  
+  <% end %>
   </fieldset>
 
   <%= f.invisible_captcha :subtitle %>
 
   <fieldset>
     <legend><%= t("shared.optional") %></legend>
+
+    <div>   
+      <%= f.text_field :video_url, hint: t("proposals.form.proposal_video_url_note") %>
+    </div>
+
 
     <% if feature?(:allow_images) %>
       <%= render Images::NestedComponent.new(f) %>
@@ -56,11 +70,11 @@
     <% end %>
 
     <div>
-      <%= f.text_field :location %>
+      <%= f.text_field :location, hint: t("budgets.investments.form.location_note") %>
     </div>
 
     <div>
-      <%= f.text_field :organization_name %>
+      <%= f.text_field :organization_name, hint: t("budgets.investments.form.organization_name_note") %>
     </div>
 
     <div>

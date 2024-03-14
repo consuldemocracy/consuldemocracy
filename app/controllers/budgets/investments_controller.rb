@@ -71,10 +71,13 @@ module Budgets
 
     def update
       if @investment.update(investment_params)
+        puts "Investment Params: #{investment_params.inspect}" # Debugging statement
         redirect_to budget_investment_path(@budget, @investment),
                     notice: t("flash.actions.update.budget_investment")
       else
+        puts "Investment Params: #{investment_params.inspect}" # Debugging statement
         render "edit"
+        
       end
     end
 
@@ -106,7 +109,7 @@ module Budgets
       end
 
       def allowed_params
-        attributes = [:heading_id, :tag_list, :organization_name, :location,
+        attributes = [:video_url, :estimated_price, :heading_id, :tag_list, :organization_name, :location,
                       :terms_of_service, :related_sdg_list,
                       image_attributes: image_attributes,
                       documents_attributes: document_attributes,

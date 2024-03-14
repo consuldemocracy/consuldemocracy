@@ -247,6 +247,19 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+  
+  # Load IdP metadata directly from the IdP in dev / prod ENV
+ # idp_metadata = {}
+ # if Rails.application.secrets.saml_idp_metadata_url.present?
+ #   idp_metadata_parser = OneLogin::RubySaml::IdpMetadataParser.new
+ #   idp_metadata = idp_metadata_parser.parse_remote_to_hash(
+ #   Rails.application.secrets.saml_idp_metadata,
+ #   true, # validate cert
+ #   entity_id: Rails.application.secrets.saml_entity_data
+ # )
+ #end
+
+
   config.omniauth :twitter,
                   Rails.application.secrets.twitter_key,
                   Rails.application.secrets.twitter_secret,
@@ -267,13 +280,16 @@ Devise.setup do |config|
                   strategy_class: OmniAuth::Strategies::Wordpress,
                   client_options: { site: Rails.application.secrets.wordpress_oauth2_site },
                   setup: OmniauthTenantSetup.wordpress_oauth2
+
   saml_settings = {}
+
   if Rails.application.secrets.saml_idp_metadata_url.present?
     idp_metadata_parser = OneLogin::RubySaml::IdpMetadataParser.new
     saml_settings = idp_metadata_parser.parse_remote_to_hash(Rails.application.secrets.saml_idp_metadata_url)
     saml_settings[:idp_sso_service_url] = Rails.application.secrets.saml_idp_sso_service_url
     saml_settings[:sp_entity_id] = Rails.application.secrets.saml_sp_entity_id
     saml_settings[:allowed_clock_drift] = 1.hour
+
     saml_settings[:certificate] = Rails.application.secrets.saml_certificate
     saml_settings[:private_key] = Rails.application.secrets.saml_private_key
     saml_settings[:issuer] = Rails.application.secrets.saml_issuer
@@ -288,6 +304,7 @@ Devise.setup do |config|
 
   end
   config.omniauth :saml, saml_settings
+
 
 
   # ==> Warden configuration

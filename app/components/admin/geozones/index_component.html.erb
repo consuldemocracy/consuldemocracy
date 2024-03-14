@@ -29,6 +29,10 @@
     <% end %>
   </tbody>
 </table>
-<div class="budgets-map">
-  <%= render Shared::MapLocationComponent.new(nil, investments_coordinates: nil, geozones_data: geozones_data) %>
+
+<div class="small-12 column">
+  <h2><%= t("admin.geozones.index.geojson_map") %></h2>
+  <p class="help-text">  <%= t("admin.geozones.index.geojson_map_help") %></p>
 </div>
+<%= render Shared::MapLocationComponent.new(nil, geozones_data: geozones_data) %>
+

@@ -2,3 +2,14 @@
 //
 // You can also create SCSS files in the app/assets/stylesheets/custom/
 // folder and they will be loaded automatically.
+.button.button-saml {
+  background: #dcdde3;
+  border-left: 3px solid #2f2f33;
+  content: image-url('myaccount_signin.png'); 
+  background-size: 150px;
+  background: no-repeat;
+
+  &::before {
+    color: #2f2f33;
+  }
+}
