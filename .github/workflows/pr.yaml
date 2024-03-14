@@ -52,7 +52,7 @@ jobs:
           destination_branch: "nova-gorica-k8s"
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pr_title: "Pulling ${{ github.ref }} into nova-gorica-k8s"
-      
+
       - name: pull-request-trzic
         uses: repo-sync/pull-request@v2
         with:
@@ -60,7 +60,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pr_title: "Pulling ${{ github.ref }} into trzic-k8s"
 
-       - name: pull-request-staging
+      - name: pull-request-staging
         uses: repo-sync/pull-request@v2
         with:
           destination_branch: "staging-k8s"
