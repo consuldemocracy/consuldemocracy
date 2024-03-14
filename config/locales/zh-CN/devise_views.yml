@@ -103,7 +103,6 @@ zh-CN:
           submit: 注册
           terms: 通过注册即表示您接受%{terms}
           terms_link: 使用条款和条件
-          terms_title: 通过注册即表示您接受此使用条款和条件
           title: 注册
           username_is_available: 可用用户名
           username_is_not_available: 用户名已被使用

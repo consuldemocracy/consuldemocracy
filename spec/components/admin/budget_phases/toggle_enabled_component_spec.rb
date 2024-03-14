@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Admin::BudgetPhases::ToggleEnabledComponent, controller: Admin::BaseController do
+describe Admin::BudgetPhases::ToggleEnabledComponent, :admin do
   let(:phase) { create(:budget).phases.informing }
   let(:component) { Admin::BudgetPhases::ToggleEnabledComponent.new(phase) }
 

@@ -35,7 +35,7 @@ describe "Voters" do
   end
 
   scenario "Cannot vote" do
-    unvotable_poll = create(:poll, geozone_restricted: true, geozones: [create(:geozone, census_code: "02")])
+    unvotable_poll = create(:poll, geozone_restricted_to: [create(:geozone, census_code: "02")])
     create(:poll_officer_assignment, officer: officer, poll: unvotable_poll, booth: booth)
 
     set_officing_booth(booth)
@@ -68,7 +68,10 @@ describe "Voters" do
   end
 
   scenario "Had already verified his residence, but is not level 2 yet" do
-    user = create(:user, residence_verified_at: Time.current, document_type: "1", document_number: "12345678Z")
+    user = create(:user,
+                  residence_verified_at: Time.current,
+                  document_type: "1",
+                  document_number: "12345678Z")
     expect(user).not_to be_level_two_verified
 
     visit root_path
@@ -96,7 +99,7 @@ describe "Voters" do
     end
 
     scenario "Display polls that the user can vote" do
-      votable_poll = create(:poll, geozone_restricted: true, geozones: [Geozone.first])
+      votable_poll = create(:poll, geozone_restricted_to: [Geozone.first])
       create(:poll_officer_assignment, officer: officer, poll: votable_poll, booth: booth)
 
       set_officing_booth(booth)
@@ -108,7 +111,7 @@ describe "Voters" do
     end
 
     scenario "Display polls that the user cannot vote" do
-      unvotable_poll = create(:poll, geozone_restricted: true, geozones: [create(:geozone, census_code: "02")])
+      unvotable_poll = create(:poll, geozone_restricted_to: [create(:geozone, census_code: "02")])
       create(:poll_officer_assignment, officer: officer, poll: unvotable_poll, booth: booth)
 
       set_officing_booth(booth)

@@ -137,7 +137,6 @@ ru:
       invalid_date_range: "Неверный диапазон дат"
   form:
     accept_terms: Я согласен с %{policy} и %{conditions}
-    accept_terms_title: Я согласен с Политикой конфиденциальности и Положениями и условиями пользования
     conditions: Положения и условия пользования
     debate: Обсуждение
     direct_message: личное сообщение
@@ -165,11 +164,6 @@ ru:
   geozones:
     none: Весь город
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Мы обнаружили, что вы используете Internet Explorer. Для лучшей работы с сайтом, мы рекомендуем вам использовать %{firefox} или %{chrome}.
-      ie_title: Этот сайт не оптимизирован для вашего браузера
     dashboard:
       proposal_header:
         published: Опубликовано
@@ -190,9 +184,9 @@ ru:
     footer:
       accessibility: Доступность
       conditions: Положения и условия пользования
-      consul: Приложение CONSUL
+      consul: Приложение CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Этот портал использует %{consul}, являющийся %{open_source}.
       open_source: открытым программным обеспечением
       participation_text: Решайте каким сделать город, в котором вы хотите жить.

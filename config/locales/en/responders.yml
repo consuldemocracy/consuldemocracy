@@ -17,6 +17,7 @@ en:
         support: "Investment supported successfully"
         topic: "Topic created successfully."
         valuator_group: "Valuator group created successfully"
+        vote: "Vote created successfully"
       save_changes:
         notice: Changes saved
       update:
@@ -35,3 +36,4 @@ en:
         topic: "Topic deleted successfully."
         poll_question_answer_video: "Answer video deleted successfully."
         valuator_group: "Valuator group deleted successfully"
+        vote: "Vote deleted successfully"

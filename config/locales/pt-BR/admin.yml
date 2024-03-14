@@ -428,7 +428,6 @@ pt-BR:
         title: "Documentos"
         format: "Formato"
         size: "Tamanho"
-        url: "URL"
       create:
         success_notice: "Documento carregado com sucesso"
         unable_notice: "Documento inválido"

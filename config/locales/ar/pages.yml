@@ -59,9 +59,9 @@ ar:
         text: |-
           استخدمه في حكومتك المحلية أو ساعدنا في تحسينه، فهو برنامج مجاني.
 
-          بوابة الحوكمة المفتوحة هذه تستخدم [CONSUL app] (https://github.com/consuldemocracy/consuldemocracy 'consul democracy github') الذي يعد برنامجًا مجانيًا، مع [رخصة AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' )، وهذا يعني بكلمات بسيطة أنه يمكن لأي شخص استخدام البرنامج بحرية، ونسخه،ورؤيته بالتفصيل، وتعديله وإعادة توزيعه على العالم مع التعديلات التي يريدها (مع السماح للآخرين بالقيام بنفس الشيء). لأننا نعتقد أن الثقافة أفضل وأكثر ثراءً عندما يتم نشرها.
+          بوابة الحوكمة المفتوحة هذه تستخدم [CONSUL DEMOCRACY app] (https://github.com/consuldemocracy/consuldemocracy 'consul democracy github') الذي يعد برنامجًا مجانيًا، مع [رخصة AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' )، وهذا يعني بكلمات بسيطة أنه يمكن لأي شخص استخدام البرنامج بحرية، ونسخه،ورؤيته بالتفصيل، وتعديله وإعادة توزيعه على العالم مع التعديلات التي يريدها (مع السماح للآخرين بالقيام بنفس الشيء). لأننا نعتقد أن الثقافة أفضل وأكثر ثراءً عندما يتم نشرها.
 
-          إذا كنت مبرمجًا، يمكنك الاطلاع على الكود ومساعدتنا على تحسينه في [CONSUL app](https://github.com/consuldemocracy/consuldemocracy 'consul democracy github').
+          إذا كنت مبرمجًا، يمكنك الاطلاع على الكود ومساعدتنا على تحسينه في [CONSUL DEMOCRACY app](https://github.com/consuldemocracy/consuldemocracy 'consul democracy github').
       titles:
         how_to_use: استخدامه في المؤسسات العامة
     privacy:

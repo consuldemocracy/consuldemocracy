@@ -66,7 +66,7 @@ class CreateSharedExtensionsSchema < ActiveRecord::Migration[6.0]
         execute statement
       else
         log_warning(
-          "GRANT CREATE ON DATABASE #{query_value("SELECT CURRENT_DATABASE()")} "\
+          "GRANT CREATE ON DATABASE #{query_value("SELECT CURRENT_DATABASE()")} " \
           "TO #{query_value("SELECT CURRENT_USER")}"
         )
         log_warning(statement)

@@ -46,7 +46,6 @@ de:
           success: Wohnsitz bestätigt
       new:
         accept_terms_text: Ich stimme den %{terms_url} des Melderegisters zu
-        accept_terms_text_title: Ich stimme den Allgemeinen Nutzungsbedingungen des Melderegisters zu
         document_number: Dokumentennummern
         document_number_help_title: Hilfe
         document_number_help_text: "<strong>Personalausweis</strong>: 12345678A<br> <strong>Pass</strong>: AAA000001<br> <strong>Aufenthaltsbescheinigung</strong>: X1234567P"

@@ -99,7 +99,8 @@ Apartment.configure do |config|
   #
   # config.pg_excluded_names = ["uuid_generate_v4"]
 
-  # Specifies whether the database and schema (when using PostgreSQL schemas) will prepend in ActiveRecord log.
+  # Specifies whether the database and schema (when using PostgreSQL schemas)
+  # will prepend in ActiveRecord log.
   # Uncomment the line below if you want to enable this behavior.
   #
   # config.active_record_log = true
@@ -107,9 +108,9 @@ end
 
 # Setup a custom Tenant switching middleware. The Proc should return the name of the Tenant that
 # you want to switch to.
-Rails.application.config.middleware.insert_before Warden::Manager, Apartment::Elevators::Generic, ->(request) do
-  Tenant.resolve_host(request.host)
-end
+Rails.application.config.middleware.insert_before Warden::Manager,
+                                                  Apartment::Elevators::Generic,
+                                                  ->(request) { Tenant.resolve_host(request.host) }
 
 # Rails.application.config.middleware.use Apartment::Elevators::Domain
 # Rails.application.config.middleware.use Apartment::Elevators::Subdomain

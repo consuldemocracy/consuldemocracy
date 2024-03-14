@@ -1,0 +1,7 @@
+<h2><%= t("admin.settings.index.general") %></h2>
+
+<%= render Admin::Settings::TableComponent.new(setting_name: "setting") do %>
+  <% settings.each do |key| %>
+    <%= render Admin::Settings::RowComponent.new(key, tab: "#tab-configuration") %>
+  <% end %>
+<% end %>

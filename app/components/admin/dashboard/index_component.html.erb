@@ -1,0 +1,11 @@
+<% provide :main_class, "admin-dashboard-index" %>
+<%= header(skip_section_title: true) %>
+
+<p><%= t("admin.dashboard.index.description", org: setting["org_name"]) %></p>
+
+<%= info %>
+
+<address>
+  <%= email_link %>
+  <%= website_link %>
+</address>

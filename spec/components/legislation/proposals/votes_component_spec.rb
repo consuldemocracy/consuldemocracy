@@ -38,19 +38,5 @@ describe Legislation::Proposals::VotesComponent do
       expect(page).to have_button "I don't agree with Require wearing masks at home"
       expect(page).not_to have_content "You must sign in or sign up to continue."
     end
-
-    it "does not include result percentages" do
-      create(:vote, votable: proposal)
-      sign_in(create(:user))
-
-      render_inline component
-
-      expect(page).to have_button count: 2
-      expect(page).to have_button "I agree"
-      expect(page).to have_button "I disagree"
-      expect(page).not_to have_button text: "%"
-      expect(page).not_to have_button text: "100"
-      expect(page).not_to have_button text: "0"
-    end
   end
 end

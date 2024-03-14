@@ -38,6 +38,12 @@ describe Legislation::DraftVersion do
     expect(legislation_draft_version.toc_html).to eq(toc_html)
   end
 
+  it "does not add a target attribute to links" do
+    legislation_draft_version.body = "A [link](/url)"
+
+    expect(legislation_draft_version.body_html).to eq("<p>A <a href=\"/url\">link</a></p>\n")
+  end
+
   def body_markdown
     <<~BODY_MARKDOWN
       # Title 1

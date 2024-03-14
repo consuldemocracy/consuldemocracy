@@ -70,8 +70,8 @@ describe Polls::Questions::AnswersComponent do
 
     render_inline Polls::Questions::AnswersComponent.new(question)
 
-    expect(page).to have_selector "span.disabled", text: "Yes"
-    expect(page).to have_selector "span.disabled", text: "No"
+    expect(page).to have_css "span.disabled", text: "Yes"
+    expect(page).to have_css "span.disabled", text: "No"
   end
 
   it "user cannot vote when poll expired it renders disabled answers" do
@@ -80,8 +80,8 @@ describe Polls::Questions::AnswersComponent do
 
     render_inline Polls::Questions::AnswersComponent.new(question)
 
-    expect(page).to have_selector "span.disabled", text: "Yes"
-    expect(page).to have_selector "span.disabled", text: "No"
+    expect(page).to have_css "span.disabled", text: "Yes"
+    expect(page).to have_css "span.disabled", text: "No"
   end
 
   describe "geozone" do
@@ -95,8 +95,8 @@ describe Polls::Questions::AnswersComponent do
 
       render_inline Polls::Questions::AnswersComponent.new(question)
 
-      expect(page).to have_selector "span.disabled", text: "Yes"
-      expect(page).to have_selector "span.disabled", text: "No"
+      expect(page).to have_css "span.disabled", text: "Yes"
+      expect(page).to have_css "span.disabled", text: "No"
     end
 
     it "reading a same-geozone poll it renders buttons to vote question answers" do

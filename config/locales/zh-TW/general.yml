@@ -128,7 +128,6 @@ zh-TW:
       invalid_date_range: "日期範圍無效"
   form:
     accept_terms: 我同意%{policy} 和%{conditions}
-    accept_terms_title: 我同意隱私政策和使用條款及條件
     conditions: 使用條款及條件
     debate: 辯論
     direct_message: 私人信息
@@ -151,11 +150,6 @@ zh-TW:
   geozones:
     none: 所有城市
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: 我們檢測到您正在使用Internet Explorer來瀏覽。 為了增強體驗，我們建議您使用%{firefox} 或%{chrome}。
-      ie_title: 此網站沒有為您的瀏覽器優化
     dashboard:
       proposal_header:
         published: 發表
@@ -167,9 +161,9 @@ zh-TW:
     footer:
       accessibility: 無障礙功能
       conditions: 使用條款及條件
-      consul: CONSUL 應用程式
+      consul: CONSUL DEMOCRACY 應用程式
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: 此入口網頁使用%{consul}，即是%{open_source}。
       open_source: 開源軟件
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html

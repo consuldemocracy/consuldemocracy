@@ -214,7 +214,7 @@ describe "Admin collaborative legislation", :admin do
 
       within("tr", text: "An example legislation process") { click_link "Edit" }
 
-      expect(page).to have_selector("h2", text: "An example legislation process")
+      expect(page).to have_css "h2", text: "An example legislation process"
       expect(find("#legislation_process_debate_phase_enabled")).to be_checked
       expect(find("#legislation_process_published")).to be_checked
 

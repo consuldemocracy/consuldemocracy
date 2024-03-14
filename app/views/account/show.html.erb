@@ -6,9 +6,11 @@
       <%= link_to t("account.show.erase_account_link"), users_registrations_delete_form_path, class: "delete" %>
     </div>
 
-    <%= avatar_image(@account, seed: @account.id, size: 100, class: "margin-bottom") %>
+    <%= render Shared::AvatarComponent.new(@account, size: 100, class: "margin-bottom") %>
 
     <h1 class="inline-block"><%= t("account.show.title") %></h1>
+
+    <%= render Account::SignInInfoComponent.new(@account) %>
 
     <%= form_for @account, as: :account, url: account_path do |f| %>
       <%= render "shared/errors", resource: @account %>

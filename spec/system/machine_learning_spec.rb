@@ -24,8 +24,8 @@ describe "Machine learning" do
   scenario "proposal view" do
     create(:ml_summary_comment, commentable: proposal, body: "Life is wonderful")
     create(:related_content, parent_relationable: proposal,
-           child_relationable: related_proposal,
-           machine_learning: true)
+                             child_relationable: related_proposal,
+                             machine_learning: true)
 
     visit proposal_path(proposal)
 
@@ -50,8 +50,8 @@ describe "Machine learning" do
   scenario "investment view" do
     create(:ml_summary_comment, commentable: investment, body: "Build in the main square")
     create(:related_content, parent_relationable: investment,
-           child_relationable: related_investment,
-           machine_learning: true)
+                             child_relationable: related_investment,
+                             machine_learning: true)
 
     visit budget_investment_path(investment.budget, investment)
 

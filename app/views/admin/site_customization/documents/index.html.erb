@@ -13,25 +13,26 @@
         <th scope="col"><%= t("admin.shared.title") %></th>
         <th scope="col"><%= t("admin.documents.index.format") %></th>
         <th scope="col"><%= t("admin.documents.index.size") %></th>
-        <th scope="col"><%= t("admin.documents.index.url") %></th>
         <th scope="col"><%= t("admin.shared.actions") %></th>
       </tr>
     </thead>
     <tbody id="documents">
       <% @documents.each do |document| %>
-        <tr id="<%= dom_id(document) %>" class="document">
+        <tr id="<%= dom_id(document) %>" class="document-row">
           <td><%= document.title %></td>
           <td><%= document.attachment.content_type %></td>
           <td><%= number_to_human_size(document.attachment.byte_size) %></td>
-          <td><%= link_to document.title, document.attachment, target: :blank %></td>
           <td>
-            <div class="small-12 medium-6 column">
-              <%= render Admin::TableActionsComponent.new(
-                document,
-                actions: [:destroy],
-                destroy_path: admin_site_customization_document_path(document)
-              ) %>
-            </div>
+            <%= render Admin::TableActionsComponent.new(
+              document,
+              actions: [:destroy],
+              destroy_path: admin_site_customization_document_path(document)
+            ) do |actions| %>
+              <%= actions.action(:download,
+                                 text: t("documents.buttons.download_document"),
+                                 path: document.attachment,
+                                 rel: "nofollow") %>
+            <% end %>
           </td>
         </tr>
       <% end %>

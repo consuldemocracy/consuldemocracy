@@ -84,37 +84,37 @@ describe User do
   describe "preferences" do
     describe "email_on_comment" do
       it "is false by default" do
-        expect(subject.email_on_comment).to eq(false)
+        expect(subject.email_on_comment).to be false
       end
     end
 
     describe "email_on_comment_reply" do
       it "is false by default" do
-        expect(subject.email_on_comment_reply).to eq(false)
+        expect(subject.email_on_comment_reply).to be false
       end
     end
 
     describe "subscription_to_website_newsletter" do
       it "is true by default" do
-        expect(subject.newsletter).to eq(true)
+        expect(subject.newsletter).to be true
       end
     end
 
     describe "email_digest" do
       it "is true by default" do
-        expect(subject.email_digest).to eq(true)
+        expect(subject.email_digest).to be true
       end
     end
 
     describe "email_on_direct_message" do
       it "is true by default" do
-        expect(subject.email_on_direct_message).to eq(true)
+        expect(subject.email_on_direct_message).to be true
       end
     end
 
     describe "official_position_badge" do
       it "is false by default" do
-        expect(subject.official_position_badge).to eq(false)
+        expect(subject.official_position_badge).to be false
       end
     end
   end
@@ -286,7 +286,7 @@ describe User do
       subject.remove_official_position!
 
       expect(subject).not_to be_official
-      expect(subject.official_position).to be_nil
+      expect(subject.official_position).to be nil
       expect(subject.official_level).to eq(0)
     end
   end
@@ -319,10 +319,10 @@ describe User do
       user3 = create(:user, email: "john@unofficials.madrid.es", confirmed_at: Time.current)
       user4 = create(:user, email: "john@example.org", confirmed_at: Time.current)
 
-      expect(user1.has_official_email?).to eq(true)
-      expect(user2.has_official_email?).to eq(true)
-      expect(user3.has_official_email?).to eq(false)
-      expect(user4.has_official_email?).to eq(false)
+      expect(user1.has_official_email?).to be true
+      expect(user2.has_official_email?).to be true
+      expect(user3.has_official_email?).to be false
+      expect(user4.has_official_email?).to be false
 
       # We reset the officials' domain setting
       Setting.find_by(key: "email_domain_for_officials").update!(value: "")
@@ -334,13 +334,13 @@ describe User do
       it "displays the badge if set in preferences" do
         user = create(:user, official_level: 1, official_position_badge: true)
 
-        expect(user.display_official_position_badge?).to eq true
+        expect(user.display_official_position_badge?).to be true
       end
 
       it "does not display the badge if set in preferences" do
         user = create(:user, official_level: 1, official_position_badge: false)
 
-        expect(user.display_official_position_badge?).to eq false
+        expect(user.display_official_position_badge?).to be false
       end
     end
 
@@ -351,10 +351,10 @@ describe User do
         user3 = create(:user, official_level: 4, official_position_badge: false)
         user4 = create(:user, official_level: 5, official_position_badge: false)
 
-        expect(user1.display_official_position_badge?).to eq true
-        expect(user2.display_official_position_badge?).to eq true
-        expect(user3.display_official_position_badge?).to eq true
-        expect(user4.display_official_position_badge?).to eq true
+        expect(user1.display_official_position_badge?).to be true
+        expect(user2.display_official_position_badge?).to be true
+        expect(user3.display_official_position_badge?).to be true
+        expect(user4.display_official_position_badge?).to be true
       end
     end
   end
@@ -491,16 +491,16 @@ describe User do
   describe "#erase" do
     it "erases user information and marks him as erased" do
       user = create(:user,
-                     username: "manolo",
-                     email: "a@a.com",
-                     unconfirmed_email: "a@a.com",
-                     phone_number: "5678",
-                     confirmed_phone: "5678",
-                     unconfirmed_phone: "5678",
-                     encrypted_password: "foobar",
-                     confirmation_token: "token1",
-                     reset_password_token: "token2",
-                     email_verification_token: "token3")
+                    username: "manolo",
+                    email: "a@a.com",
+                    unconfirmed_email: "a@a.com",
+                    phone_number: "5678",
+                    confirmed_phone: "5678",
+                    unconfirmed_phone: "5678",
+                    encrypted_password: "foobar",
+                    confirmation_token: "token1",
+                    reset_password_token: "token2",
+                    email_verification_token: "token3")
 
       user.erase("a test")
       user.reload
@@ -508,16 +508,16 @@ describe User do
       expect(user.erase_reason).to eq("a test")
       expect(user.erased_at).to    be
 
-      expect(user.username).to be_nil
-      expect(user.email).to be_nil
-      expect(user.unconfirmed_email).to be_nil
-      expect(user.phone_number).to be_nil
-      expect(user.confirmed_phone).to be_nil
-      expect(user.unconfirmed_phone).to be_nil
+      expect(user.username).to be nil
+      expect(user.email).to be nil
+      expect(user.unconfirmed_email).to be nil
+      expect(user.phone_number).to be nil
+      expect(user.confirmed_phone).to be nil
+      expect(user.unconfirmed_phone).to be nil
       expect(user.encrypted_password).to be_empty
-      expect(user.confirmation_token).to be_nil
-      expect(user.reset_password_token).to be_nil
-      expect(user.email_verification_token).to be_nil
+      expect(user.confirmation_token).to be nil
+      expect(user.reset_password_token).to be nil
+      expect(user.email_verification_token).to be nil
     end
 
     it "maintains associated identification document" do
@@ -684,8 +684,8 @@ describe User do
 
   describe "email_required?" do
     it "is true for regular users" do
-      expect(subject.email_required?).to eq(true)
-      expect(create(:user, :hidden).email_required?).to eq(true)
+      expect(subject.email_required?).to be true
+      expect(create(:user, :hidden).email_required?).to be true
     end
 
     it "is false for erased users" do
@@ -693,14 +693,14 @@ describe User do
       user.erase
       user.reload
 
-      expect(user.email_required?).to eq(false)
+      expect(user.email_required?).to be false
     end
 
     it "is false for verified users with no email" do
       user = create(:user, username: "Lois", email: "", verified_at: Time.current)
 
       expect(user).to be_valid
-      expect(user.email_required?).to eq(false)
+      expect(user.email_required?).to be false
     end
   end
 
@@ -786,22 +786,26 @@ describe User do
       debate = create(:debate, :hidden, author: user)
       investment = create(:budget_investment, :hidden, author: user)
       proposal = create(:proposal, :hidden, author: user)
-      proposal_notification = create(:proposal_notification, :hidden, proposal: proposal)
       legislation_proposal = create(:legislation_proposal, :hidden, author: user)
+      proposal_notification = create(:proposal_notification, :hidden, proposal: proposal)
 
       old_hidden_comment = create(:comment, hidden_at: 3.days.ago, author: user)
       old_hidden_debate = create(:debate, hidden_at: 3.days.ago, author: user)
       old_hidden_investment = create(:budget_investment, hidden_at: 3.days.ago, author: user)
       old_hidden_proposal = create(:proposal, hidden_at: 3.days.ago, author: user)
-      old_hidden_proposal_notification = create(:proposal_notification, hidden_at: 3.days.ago, proposal: proposal)
       old_hidden_legislation_proposal = create(:legislation_proposal, hidden_at: 3.days.ago, author: user)
+      old_hidden_proposal_notification = create(:proposal_notification,
+                                                hidden_at: 3.days.ago,
+                                                proposal: proposal)
 
       other_user_comment = create(:comment, :hidden, author: other_user)
       other_user_debate = create(:debate, :hidden, author: other_user)
       other_user_proposal = create(:proposal, :hidden, author: other_user)
       other_user_investment = create(:budget_investment, :hidden, author: other_user)
-      other_user_proposal_notification = create(:proposal_notification, :hidden, proposal: other_user_proposal)
       other_user_legislation_proposal = create(:legislation_proposal, :hidden, author: other_user)
+      other_user_proposal_notification = create(:proposal_notification,
+                                                :hidden,
+                                                proposal: other_user_proposal)
 
       user.full_restore
 
@@ -843,6 +847,105 @@ describe User do
       user.add_subscriptions_token
 
       expect(user.subscriptions_token).to eq "already_set"
+    end
+  end
+
+  describe ".password_complexity" do
+    it "returns no complexity when the secrets aren't configured" do
+      expect(User.password_complexity).to eq({ digit: 0, lower: 0, symbol: 0, upper: 0 })
+    end
+
+    context "when secrets are configured" do
+      before do
+        allow(Rails.application).to receive(:secrets).and_return(ActiveSupport::OrderedOptions.new.merge(
+          security: {
+            password_complexity: true
+          },
+          tenants: {
+            tolerant: {
+              security: {
+                password_complexity: false
+              }
+            }
+          }
+        ))
+      end
+
+      it "uses the general secrets for the main tenant" do
+        expect(User.password_complexity).to eq({ digit: 1, lower: 1, symbol: 0, upper: 1 })
+      end
+
+      it "uses the tenant secrets for a tenant" do
+        allow(Tenant).to receive(:current_schema).and_return("tolerant")
+
+        expect(User.password_complexity).to eq({ digit: 0, lower: 0, symbol: 0, upper: 0 })
+      end
+    end
+  end
+
+  describe ".maximum_attempts" do
+    it "returns 20 as default when the secrets aren't configured" do
+      expect(User.maximum_attempts).to eq 20
+    end
+
+    context "when secrets are configured" do
+      before do
+        allow(Rails.application).to receive(:secrets).and_return(ActiveSupport::OrderedOptions.new.merge(
+          security: {
+            lockable: { maximum_attempts: "14" }
+          },
+          tenants: {
+            superstrict: {
+              security: {
+                lockable: { maximum_attempts: "1" }
+              }
+            }
+          }
+        ))
+      end
+
+      it "uses the general secrets for the main tenant" do
+        expect(User.maximum_attempts).to eq 14
+      end
+
+      it "uses the tenant secrets for a tenant" do
+        allow(Tenant).to receive(:current_schema).and_return("superstrict")
+
+        expect(User.maximum_attempts).to eq 1
+      end
+    end
+  end
+
+  describe ".unlock_in" do
+    it "returns 1 as default when the secrets aren't configured" do
+      expect(User.unlock_in).to eq 1.hour
+    end
+
+    context "when secrets are configured" do
+      before do
+        allow(Rails.application).to receive(:secrets).and_return(ActiveSupport::OrderedOptions.new.merge(
+          security: {
+            lockable: { unlock_in: "2" }
+          },
+          tenants: {
+            superstrict: {
+              security: {
+                lockable: { unlock_in: "50" }
+              }
+            }
+          }
+        ))
+      end
+
+      it "uses the general secrets for the main tenant" do
+        expect(User.unlock_in).to eq 2.hours
+      end
+
+      it "uses the tenant secrets for a tenant" do
+        allow(Tenant).to receive(:current_schema).and_return("superstrict")
+
+        expect(User.unlock_in).to eq 50.hours
+      end
     end
   end
 end

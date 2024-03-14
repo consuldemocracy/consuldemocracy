@@ -2,9 +2,7 @@
   <%= back_link_to proposals_path, t("proposals.index.section_header.title") %>
 
   <%= header do %>
-    <%= link_to help_path(anchor: "proposals"), title: t("shared.target_blank"), target: "_blank" do %>
-      <%= t("proposals.new.more_info") %>
-    <% end %>
+    <%= new_window_link_to t("proposals.new.more_info"), help_path(anchor: "proposals") %>
   <% end %>
 
   <aside>

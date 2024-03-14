@@ -103,7 +103,6 @@ cs:
           submit: Registrovat se
           terms: Registrováním souhlasíte se %{terms}
           terms_link: zpracováním osobních údajů a podmínkami používání portálu
-          terms_title: Registrováním souhlasíte s podmínkami používání
           title: Registrovat se
           username_is_available: Uživatelské jméno je k dispozici
           username_is_not_available: Uživatelské jméno je již použito

@@ -1,5 +1,7 @@
 pl:
   moderation:
+    actions:
+      confirm_action: "Czy na pewno? %{action}"
     comments:
       index:
         block_authors: Blokuj autorów

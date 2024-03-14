@@ -143,7 +143,6 @@ da:
         poll_ended: "Kan ikke ændres, hvis afstemning er slut"
   form:
     accept_terms: Jeg accepterer %{policy} og %{conditions}
-    accept_terms_title: Jeg accepterer Persondatapolitikken og Brugervilkår
     conditions: Brugervilkår og betingelser
     debate: Debat
     direct_message: privat besked
@@ -177,11 +176,6 @@ da:
   geozones:
     none: Hele byen
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Vi har opdaget, at du anvender Internet Explorer. For en bedre oplevelse anbefaler vi, at du anvender %{firefox} eller %{chrome}.
-      ie_title: Hjemmesiden fungerer ikke optimal sammen med din valgte browser
     dashboard:
       proposal_header:
         published: Offentliggjort
@@ -200,9 +194,9 @@ da:
     footer:
       accessibility: Tilgængelighed
       conditions: Brugervilkår og betingelser
-      consul: Consul programmet
+      consul: CONSUL DEMOCRACY programmet
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Denne portal anvender %{consul}, som er en %{open_source}.
       open_source: open-source software
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html

@@ -6,7 +6,10 @@
 
 <h2 class="inline-block"><%= t("admin.site_customization.content_blocks.index.title") %></h2>
 
-<%= render "admin/settings/settings_table", settings: @html_settings, setting_name: "setting" %>
+<%= render Admin::Settings::TableComponent.new(setting_name: "setting") do %>
+  <%= render Admin::Settings::RowComponent.new("html.per_page_code_body") %>
+  <%= render Admin::Settings::RowComponent.new("html.per_page_code_head") %>
+<% end %>
 
 <h3><%= t("admin.site_customization.content_blocks.information") %></h3>
 

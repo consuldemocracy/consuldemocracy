@@ -30,6 +30,7 @@ pl:
           proposals: Wnioski
           budgets: Budżetowanie partycypacyjne
           help_page: Pomoc
+          sdg: SDG
       edit:
         editing: Edytuj baner
         form:
@@ -82,6 +83,7 @@ pl:
         title: Edytuj budżet partycypacyjny
         delete: Usuń budżet
         phase: Etap
+        phases_caption: "Etapy"
         enabled: Włączone
         actions: Akcje
         active: Aktywny
@@ -236,6 +238,9 @@ pl:
         budget: Budżet
         groups: Grupy
         headings: Nagłówki
+        phases: Etapy
+      phases:
+        continue: "Zakończ"
     milestones:
       index:
         table_id: "Numer ID"
@@ -338,13 +343,17 @@ pl:
           default:
             email: E-mail
             polls: Ankiety
+            poster: Plakat
         form:
           submit_button: Zapisz
       administrator_tasks:
         index:
+          solve: Rozwiąż
+          source: Źródło
           filter: Filtruj
           filters:
             pending: Oczekujące
+            done: Rozwiązane
         form:
           proposal: Wniosek
     debates:
@@ -361,9 +370,13 @@ pl:
           without_confirmed_hide: Oczekujące
         title: Ukryte debaty
     documents:
+      new:
+        submit_button: "Prześlij"
       index:
         new_link: "Dodaj nowy dolument"
         title: "Dokumenty"
+        format: "Format"
+        size: "Rozmiar"
     hidden_users:
       index:
         filter: Filtruj
@@ -951,6 +964,9 @@ pl:
         title: Nowa odpowiedź
       edit:
         title: Edytuj odpowiedź
+      images:
+        index:
+          title: Obrazy
       videos:
         index:
           title: Filmy
@@ -1110,6 +1126,9 @@ pl:
       no_description: "Brak opisu"
     shared:
       search:
+        advanced_filters:
+          sdg_goals:
+            all: "Wszystkie cele"
         label:
           booths: "Wyszukaj stoisko według nazwy"
           organizations: "Nazwisko, adres e-mail lub numer telefonu"
@@ -1167,6 +1186,8 @@ pl:
         title: Nowe arkusze podpisów
         document_numbers_note: "Napisz liczby oddzielone średnikami (;)"
         submit: Utwórz arkusz podpisu
+        text_help:
+          example_text: "Przykład: "
       show:
         created_at: Stworzony
         author: Autor
@@ -1199,6 +1220,7 @@ pl:
         proposal_notifications: Powiadomienie o wnioskach
         incomplete_verifications: Niekompletne weryfikacje
         polls: Ankiety
+        sdg: SDG
       graph:
         debate_created: Debaty
         visit: Odwiedziny
@@ -1368,6 +1390,9 @@ pl:
         submit_card: Zapisz kartę
     audits:
       id: "Numer ID"
+      field: "Pole"
+      new_value: "Nowa wartość"
+      old_value: "Stara wartość"
       actions: "Akcje"
     local_census_records:
       index:
@@ -1375,6 +1400,7 @@ pl:
         document_number: Numer dokumentu
         date_of_birth: Data urodzenia
     machine_learning:
+      error: "Błąd:"
       related_content: "Powiązana zawartość"
       tab_help: "Pomoc"
       tags: "Tagi"

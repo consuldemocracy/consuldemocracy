@@ -1,13 +1,13 @@
 require "rails_helper"
 
-describe Admin::TableActionsComponent, controller: Admin::BaseController do
+describe Admin::TableActionsComponent, :admin do
   let(:record) { create(:banner, title: "Important!") }
 
   it "renders edit and destroy actions by default" do
     render_inline Admin::TableActionsComponent.new(record)
 
     expect(page).to have_link count: 1
-    expect(page).to have_css "a[href*='edit']", exact_text: "Edit"
+    expect(page).to have_link "Edit", href: /edit/
     expect(page).to have_css "a[aria-label='Edit Important!']"
 
     expect(page).to have_button count: 1
@@ -56,7 +56,7 @@ describe Admin::TableActionsComponent, controller: Admin::BaseController do
   it "allows custom options" do
     render_inline Admin::TableActionsComponent.new(record, edit_options: { id: "edit_me" })
 
-    expect(page).to have_css "a#edit_me"
+    expect(page).to have_link id: "edit_me"
   end
 
   it "allows custom content" do
@@ -64,7 +64,7 @@ describe Admin::TableActionsComponent, controller: Admin::BaseController do
       "<a href='/'>Main</a>".html_safe
     end
 
-    expect(page).to have_css "a", count: 2
+    expect(page).to have_link count: 2
     expect(page).to have_link "Main", href: "/"
     expect(page).to have_link "Edit"
 
@@ -77,7 +77,7 @@ describe Admin::TableActionsComponent, controller: Admin::BaseController do
       render_inline Admin::TableActionsComponent.new(create(:sdg_local_target))
 
       expect(page).to have_link count: 1
-      expect(page).to have_css "a[href^='/sdg_management/'][href*='edit']", exact_text: "Edit"
+      expect(page).to have_link "Edit", href: /\A\/sdg_management\/(.+)edit/
 
       expect(page).to have_button count: 1
       expect(page).to have_css "form[action^='/sdg_management/']", exact_text: "Delete"

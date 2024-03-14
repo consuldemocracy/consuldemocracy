@@ -47,9 +47,9 @@
           <div class="small-12 column">
             <div class="proposal-link">
               <% if proposal.draft? %>
-                <%= link_to t("layouts.dashboard.proposal_totals.preview_proposal"), proposal_path(proposal), class: "button success expanded", target: "_blank" %>
+                <%= link_to t("layouts.dashboard.proposal_totals.preview_proposal"), proposal_path(proposal), class: "button success expanded" %>
               <% else %>
-                <%= link_to t("layouts.dashboard.proposal_totals.show_proposal"), proposal_path(proposal), class: "button success expanded", target: "_blank" %>
+                <%= link_to t("layouts.dashboard.proposal_totals.show_proposal"), proposal_path(proposal), class: "button success expanded" %>
               <% end %>
             </div>
           </div>

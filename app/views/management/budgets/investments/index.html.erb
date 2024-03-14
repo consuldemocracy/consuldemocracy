@@ -19,9 +19,9 @@
 
       <% @investments.each do |investment| %>
         <%= render "/budgets/investments/investment",
-          investment: investment,
-          investment_ids: @investment_ids,
-          ballot: @ballot %>
+                   investment: investment,
+                   investment_ids: @investment_ids,
+                   ballot: @ballot %>
       <% end %>
 
       <%= paginate @investments %>

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Admin::Poll::Officers::OfficersComponent, controller: Admin::BaseController do
+describe Admin::Poll::Officers::OfficersComponent, :admin do
   let(:existing_officer) { create(:poll_officer, name: "Old officer") }
   let(:new_officer) { build(:poll_officer, name: "New officer") }
   let(:officers) { [existing_officer, new_officer] }
@@ -35,6 +35,6 @@ describe Admin::Poll::Officers::OfficersComponent, controller: Admin::BaseContro
   it "accepts table options" do
     render_inline Admin::Poll::Officers::OfficersComponent.new(officers, class: "my-officers-table")
 
-    expect(page).to have_css "table.my-officers-table"
+    expect(page).to have_table class: "my-officers-table"
   end
 end

@@ -1,19 +1,19 @@
 section "Flagging Debates & Comments" do
   40.times do
-    debate = Debate.all.sample
-    flagger = User.where.not(id: debate.author_id).all.sample
+    debate = Debate.sample
+    flagger = User.where.not(id: debate.author_id).sample
     Flag.flag(flagger, debate)
   end
 
   40.times do
-    comment = Comment.all.sample
-    flagger = User.where.not(id: comment.user_id).all.sample
+    comment = Comment.sample
+    flagger = User.where.not(id: comment.user_id).sample
     Flag.flag(flagger, comment)
   end
 
   40.times do
-    proposal = Proposal.all.sample
-    flagger = User.where.not(id: proposal.author_id).all.sample
+    proposal = Proposal.sample
+    flagger = User.where.not(id: proposal.author_id).sample
     Flag.flag(flagger, proposal)
   end
 end

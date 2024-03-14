@@ -204,7 +204,7 @@ sv:
         max_ballot_lines_info: 'Maximalt antal projekt som en användare kan rösta om i det här området under fasen "Omröstning". Bara för budgetar som använder omröstning med godkännande.'
         population_info: "Fältet för folkmängd inom ett budgetområde används för att i slutet av budgeten föra statistik för varje område över hur stor del av befolkningen där som deltagit i omröstningen. Fältet är valfritt, så du kan lämna det tomt om det inte är tillämpligt."
         coordinates_info: "Om latitud och longitud anges kommer budgetsidan för detta område att innehålla en karta. Kartan centreras kring dessa koordinater."
-        content_blocks_info: "Om innehållsblock är tillåtna kan du skapa anpassat innehåll som rör detta område från avsnittet Inställningar > Anpassade innehållsblock. Detta innehåll visas på investeringssidan för området."
+        content_blocks_info: "Om innehållsblock är tillåtna kan du skapa anpassat innehåll som rör detta område från avsnittet Webbplatsens innehåll > Anpassade innehållsblock. Detta innehåll visas på investeringssidan för området."
         create: "Skapa nytt område"
         edit: "Redigera område"
         submit: "Spara område"
@@ -451,6 +451,16 @@ sv:
         back: Gå tillbaka till %{org}
         title: Administration
         description: Välkommen till administrationspanelen för %{org}.
+        info: |-
+          <p>Här kan du som administratör implementera och övervaka processen för medborgardeltagande i din stad eller region.</p>
+
+          <p>Din styrelse är nu en av hundratals i hela världen som använder sig av plattformen CONSUL DEMOCRACY för att omsätta medborgardeltagande i praktiken. Grattis!</p>
+
+          <p>CONSUL DEMOCRACY-stiftelsen är hjärtat av den globala användargemenskapen. Vi ber dig kontakta oss så vi vet vem som använder programvaran och hur vi kan hjälpa till med implementeringen eller användningen. Vi ser fram emot att välkomna dig till gemenskapen!</p>
+
+          <p>Lycka till med administrerandet!</p>
+
+          <p>Hälsningar från CONSUL DEMOCRACY-stiftelsens team.</p>
       actions:
         index:
           description: "När användare skapar förslag kan de använda förslagets dashboard, där du kan föreslå resurser och rekommendationer för att få stöd för deras idé."
@@ -529,7 +539,6 @@ sv:
         title: "Dokument"
         format: "Format"
         size: "Storlek"
-        url: "URL"
       create:
         success_notice: "Dokumentet har skickats in"
         unable_notice: "Ogiltigt dokument"
@@ -1386,7 +1395,7 @@ sv:
       show_results_and_stats: "Visa resultat och statistik"
       results_and_stats_reminder: "Genom att markera dessa rutor kommer omröstningens resultat och/eller statistik att visas för alla användare."
       close_modal: Stäng läget
-      example_url: "https://consuldemocracy.org"
+      example_url: "Till exempel https://consuldemocracy.org eller /hjälp"
     geozones:
       index:
         title: Geografiska områden
@@ -1590,7 +1599,8 @@ sv:
           name: Namn
           names:
             top_links: Topplänkar
-            footer: Sidfot
+            footer: Sidfot (sociala medier)
+            footer_legal: Sidfot (rättsliga villkor)
             subnavigation_left: Huvudnavigering vänster
             subnavigation_right: Huvudnavigering höger
       images:
@@ -1746,10 +1756,10 @@ sv:
       help:
         title_1: "Vad är AI/maskininlärning?"
         description_1: "Traditionellt utformas datorprogram genom att fastställa precisa regler om vad programmet ska göra i varje situation, och hur det ska behandla tillgänglig information vid varje tillfälle. Det som allmänt kallas AI/maskininlärning är en typ av program för vilket det fastställs exakt vilken uppgift som ska utföras och det bedöms om uppgiften utförs bättre eller sämre. Men till skillnad från den traditionella typen upptäcker, eller lär sig, systemet metoden som är lämpligast för att utföra uppgiften."
-        title_2: "Vad är modulen AI/maskininlärning till för i CONSUL?"
-        description_2: "Med den här modulen kan alla typer av AI-/maskininlärningsprogram implementeras i CONSUL. Programmen kan bearbeta informationen som är tillgänglig i CONSUL och ge resultat som hjälper både användare och administratörer att genomföra medborgardeltagande på ett mer effektivt och intelligent sätt. Modulen har utvecklas för att göra det enkelt att implementera och köra nya program, så att CONSUL:s allmänna kod hålls oberoende från dessa nya programs kod."
+        title_2: "Vad är modulen AI/maskininlärning till för i CONSUL DEMOCRACY?"
+        description_2: "Med den här modulen kan alla typer av AI-/maskininlärningsprogram implementeras i CONSUL DEMOCRACY. Programmen kan bearbeta informationen som är tillgänglig i CONSUL DEMOCRACY och ge resultat som hjälper både användare och administratörer att genomföra medborgardeltagande på ett mer effektivt och intelligent sätt. Modulen har utvecklas för att göra det enkelt att implementera och köra nya program, så att CONSUL DEMOCRACY:s allmänna kod hålls oberoende från dessa nya programs kod."
         title_3: "Så här används den här modulen"
-        description_3: "Innan du använder det för första gången måste du aktivera denna modul på rätt sätt enligt instruktionerna i CONSUL-dokumentationen. När modulen har aktiverats korrekt körs programmen från fliken \"Kör skript\". Före körningen kan vi på samma flik se uppskattad körtid och annan relevant information. I slutet av körningen kan vi aktivera innehållet som ska visas i CONSUL från fliken \"Inställningar\", samt hämta andra genererade filer som kan vara användbara för oss."
+        description_3: "Innan du använder det för första gången måste du aktivera denna modul på rätt sätt enligt instruktionerna i CONSUL-dokumentationen. När modulen har aktiverats korrekt körs programmen från fliken \"Kör skript\". Före körningen kan vi på samma flik se uppskattad körtid och annan relevant information. I slutet av körningen kan vi aktivera innehållet som ska visas i CONSUL DEMOCRACY från fliken \"Inställningar\", samt hämta andra genererade filer som kan vara användbara för oss."
         title_4: "Så här implementeras nya AI-/maskininlärningsskript"
         description_4: "Använd föregående skript som exempel."
         description_4b: "De nya skripten ska placeras i mappen <code>public/machine_learning/scripts</code>"

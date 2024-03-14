@@ -31,7 +31,7 @@ describe Verification::Letter do
       letter.user.update!(letter_verification_code: "123456")
       letter.verification_code = "5555"
 
-      expect(letter.valid?).to eq(false)
+      expect(letter.valid?).to be false
       expect(letter.errors[:verification_code].first).to eq("Verification code incorrect")
     end
 
@@ -39,7 +39,7 @@ describe Verification::Letter do
       letter.user.update!(letter_verification_code: "123456")
       letter.verification_code = "123456"
 
-      expect(letter.valid?).to eq(true)
+      expect(letter.valid?).to be true
       expect(letter.errors).to be_empty
     end
 
@@ -47,7 +47,7 @@ describe Verification::Letter do
       letter.user.update!(letter_verification_code: "003456")
       letter.verification_code = "3456"
 
-      expect(letter.valid?).to eq(true)
+      expect(letter.valid?).to be true
       expect(letter.errors).to be_empty
     end
   end

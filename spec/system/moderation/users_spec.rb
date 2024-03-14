@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Moderate users" do
   scenario "Hide" do
-    citizen = create(:user)
+    citizen = create(:user, username: "Mike")
     moderator = create(:moderator)
 
     debate1 = create(:debate, author: citizen)
@@ -24,7 +24,7 @@ describe "Moderate users" do
     visit debate_path(debate1)
 
     within("#debate_#{debate1.id}") do
-      accept_confirm("Are you sure? This will hide the user \"#{debate1.author.name}\" and all their contents.") do
+      accept_confirm("Are you sure? This will hide the user \"Mike\" and all their contents.") do
         click_button "Block author"
       end
     end

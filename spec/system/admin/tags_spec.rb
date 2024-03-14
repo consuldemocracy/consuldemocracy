@@ -40,7 +40,7 @@ describe "Admin tags", :admin do
 
     within("#tag_#{tag2.id}") do
       accept_confirm("Are you sure? This action will delete \"Bad tag\" and can't be undone.") do
-        click_link_or_button "Delete"
+        click_button "Delete"
       end
     end
 
@@ -60,7 +60,7 @@ describe "Admin tags", :admin do
 
     within("#tag_#{tag2.id}") do
       accept_confirm("Are you sure? This action will delete \"Bad tag\" and can't be undone.") do
-        click_link_or_button "Delete"
+        click_button "Delete"
       end
     end
 

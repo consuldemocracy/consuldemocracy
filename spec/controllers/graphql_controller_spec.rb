@@ -16,7 +16,7 @@ describe GraphqlController, type: :request do
       get "/graphql", params: { query: "{ proposal(id: #{proposal.id}) { title } }" }
 
       expect(response).to have_http_status(:ok)
-      expect(JSON.parse(response.body)["data"]["proposal"]["title"]).to eq(proposal.title)
+      expect(response.parsed_body["data"]["proposal"]["title"]).to eq(proposal.title)
     end
 
     specify "with malformed query string" do
@@ -30,7 +30,7 @@ describe GraphqlController, type: :request do
       get "/graphql"
 
       expect(response).to have_http_status(:bad_request)
-      expect(JSON.parse(response.body)["message"]).to eq("Query string not present")
+      expect(response.parsed_body["message"]).to eq("Query string not present")
     end
   end
 
@@ -42,7 +42,7 @@ describe GraphqlController, type: :request do
                        headers: json_headers
 
       expect(response).to have_http_status(:ok)
-      expect(JSON.parse(response.body)["data"]["proposal"]["title"]).to eq(proposal.title)
+      expect(response.parsed_body["data"]["proposal"]["title"]).to eq(proposal.title)
     end
 
     specify "with raw query string inside body" do
@@ -51,7 +51,7 @@ describe GraphqlController, type: :request do
                        headers: graphql_headers
 
       expect(response).to have_http_status(:ok)
-      expect(JSON.parse(response.body)["data"]["proposal"]["title"]).to eq(proposal.title)
+      expect(response.parsed_body["data"]["proposal"]["title"]).to eq(proposal.title)
     end
 
     specify "with malformed query string" do
@@ -65,7 +65,7 @@ describe GraphqlController, type: :request do
       post "/graphql", headers: json_headers
 
       expect(response).to have_http_status(:bad_request)
-      expect(JSON.parse(response.body)["message"]).to eq("Query string not present")
+      expect(response.parsed_body["message"]).to eq("Query string not present")
     end
   end
 

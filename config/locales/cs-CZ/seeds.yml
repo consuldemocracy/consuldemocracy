@@ -5,8 +5,8 @@ cs:
         title: "Uzavíráme participativní rozpočet!"
         body: "Pospěšte si a vytvořte návrh dříve, než v příštích dnech skončí!"
       help:
-        title: "Pomozte nám přeložit consul"
-        body: "Pokud ovládáte nějaký jazyk, pomozte nám přeložit Consul!"
+        title: "Pomozte nám přeložit Consul Democracy"
+        body: "Pokud ovládáte nějaký jazyk, pomozte nám přeložit Consul democracy!"
       map:
         title: "Nyní můžete geolokalizovat návrhy a investice"
         body: "Při vytváření návrhu nebo investice můžete nyní zadat bod na mapě."
@@ -39,7 +39,7 @@ cs:
         link_text: "Více o debatách"
         label: "Debaty"
       header:
-        title: "CONSUL"
+        title: "CONSUL DEMOCRACY"
         description: "Bezplatný software pro účast občanů."
         link_text: "Více informací"
         label: "Vítejte v"

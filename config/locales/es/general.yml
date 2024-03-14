@@ -1,6 +1,7 @@
 es:
   account:
     show:
+      last_sign_in: "Último acceso efectuado: %{last_sign_in_at} desde la IP %{last_sign_in_ip}"
       change_credentials_link: Cambiar mis datos de acceso
       erase_account_link: Darme de baja
       finish_verification: Finalizar verificación
@@ -143,7 +144,6 @@ es:
         poll_ended: "No puede ser cambiada si la votación ha acabado"
   form:
     accept_terms: Acepto la %{policy} y las %{conditions}
-    accept_terms_title: Acepto la Política de privacidad y las Condiciones de uso
     conditions: Condiciones de uso
     debate: el debate
     direct_message: el mensaje privado
@@ -177,11 +177,6 @@ es:
   geozones:
     none: Toda la ciudad
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Hemos detectado que estás navegando desde Internet Explorer. Para una mejor experiencia te recomendamos utilizar %{firefox} o %{chrome}.
-      ie_title: Esta web no está optimizada para tu navegador
     dashboard:
       proposal_header:
         published: Publicada
@@ -725,7 +720,7 @@ es:
       districts: "Distritos"
       districts_list: "Listado de distritos"
       categories: "Categorías"
-    target_blank: " (se abre en ventana nueva)"
+    target_blank: "Se abre en ventana nueva"
     you_are_in: "Estás en"
     unflag: Deshacer denuncia
     unfollow_entity: "Dejar de seguir %{entity}"

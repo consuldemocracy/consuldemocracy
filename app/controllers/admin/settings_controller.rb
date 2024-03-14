@@ -1,16 +1,5 @@
 class Admin::SettingsController < Admin::BaseController
   def index
-    all_settings = Setting.all.group_by(&:type)
-    @configuration_settings = all_settings["configuration"]
-    @feature_settings = all_settings["feature"]
-    @participation_processes_settings = all_settings["process"]
-    @map_configuration_settings = all_settings["map"]
-    @proposals_settings = all_settings["proposals"]
-    @remote_census_general_settings = all_settings["remote_census.general"]
-    @remote_census_request_settings = all_settings["remote_census.request"]
-    @remote_census_response_settings = all_settings["remote_census.response"]
-    @uploads_settings = all_settings["uploads"]
-    @sdg_settings = all_settings["sdg"]
   end
 
   def update
@@ -27,7 +16,7 @@ class Admin::SettingsController < Admin::BaseController
     Setting["map.latitude"] = params[:latitude].to_f
     Setting["map.longitude"] = params[:longitude].to_f
     Setting["map.zoom"] = params[:zoom].to_i
-    redirect_to admin_settings_path, notice: t("admin.settings.index.map.flash.update")
+    redirect_to request_referer, notice: t("admin.settings.index.map.flash.update")
   end
 
   def update_content_types
@@ -37,7 +26,7 @@ class Admin::SettingsController < Admin::BaseController
       Setting.mime_types[group][content_type]
     end
     setting.update! value: mime_type_values.join(" ")
-    redirect_to admin_settings_path, notice: t("admin.settings.flash.updated")
+    redirect_to request_referer, notice: t("admin.settings.flash.updated")
   end
 
   private
@@ -55,8 +44,6 @@ class Admin::SettingsController < Admin::BaseController
     end
 
     def request_referer
-      return request.referer + params[:setting][:tab] if params[:setting][:tab]
-
-      request.referer
+      request.referer + params[:tab].to_s
     end
 end

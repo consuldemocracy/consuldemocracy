@@ -31,10 +31,10 @@
     </div>
 
     <%= link_to t("admin.system_emails.preview_pending.moderate_pending"),
-          admin_system_email_moderate_pending_path(system_email_id: "proposal_notification_digest",
-          id: preview.id),
-          method: :put,
-          class: "button hollow float-right" %>
+                admin_system_email_moderate_pending_path(system_email_id: "proposal_notification_digest",
+                                                         id: preview.id),
+                method: :put,
+                class: "button hollow float-right" %>
   </div>
   <hr>
 <% end %>

@@ -5,7 +5,7 @@
   <%= render "shared/errors", resource: @answer %>
 
   <%= f.hidden_field :given_order,
-        value: @answer.persisted? ? @answer.given_order : @answer.class.last_position(@answer.question_id || @question.id) + 1 %>
+                     value: @answer.persisted? ? @answer.given_order : @answer.class.last_position(@answer.question_id || @question.id) + 1 %>
 
   <div class="row">
     <%= f.translatable_fields do |translations_form| %>

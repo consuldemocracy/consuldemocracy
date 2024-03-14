@@ -458,7 +458,6 @@ bg:
         title: "Документи"
         format: "Формат"
         size: "Размер"
-        url: "URL адрес"
       create:
         success_notice: "Документът качен успешно"
         unable_notice: "Невалиден документ"

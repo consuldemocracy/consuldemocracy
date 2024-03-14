@@ -103,7 +103,6 @@ gl:
           submit: Rexistrarse
           terms: Ao rexistrarte aceptas as %{terms}
           terms_link: condicións de uso
-          terms_title: Ao rexistrarte aceptas as condicións de uso
           title: Rexistrarse
           username_is_available: Nome de usuario dispoñible
           username_is_not_available: Nome de usuario xa existente

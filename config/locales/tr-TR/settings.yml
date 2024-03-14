@@ -169,6 +169,9 @@ tr:
         valid: "Geçerli bir yanıtı belirleme koşulu"
         valid_description: "Yanıtta kullanıcının doğrulandığı ve yanıtın geçerli olduğunun bildirildiği yol."
     map:
+      feature:
+        marker_clustering: "İşaret kümeleme"
+        marker_clustering_description: "Harita işaretlerini kümeler. Görüntülenecek çok sayıda işaret olduğunda kullanışlıdır."
       latitude: "Enlem"
       latitude_description: "Haritada konumun görüntüleneceği enlem"
       longitude: "Boylam"

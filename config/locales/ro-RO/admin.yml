@@ -487,7 +487,6 @@ ro:
         title: "Documente"
         format: "Format"
         size: "Dimensiune"
-        url: "URL"
       create:
         success_notice: "Document încărcat cu succes"
         unable_notice: "Document invalid"

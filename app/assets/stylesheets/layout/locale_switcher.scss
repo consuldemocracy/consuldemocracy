@@ -36,11 +36,13 @@
       outline: none;
       padding-left: $line-height / 4;
       padding-right: calc(#{$line-height / 4} + 1em);
+      transition: none;
       width: auto;
 
       &:focus {
+        @include focus-outline;
         border: 0;
-        outline: $outline-focus;
+        transition: none;
       }
 
       option {

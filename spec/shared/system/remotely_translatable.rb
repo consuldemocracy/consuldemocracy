@@ -10,8 +10,9 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
   before do
     Setting["feature.remote_translations"] = true
     available_locales_response = %w[de en es fr pt zh-Hans]
-    expect(RemoteTranslations::Microsoft::AvailableLocales).to receive(:available_locales).at_most(4).times.
-                                                            and_return(available_locales_response)
+    expect(RemoteTranslations::Microsoft::AvailableLocales)
+      .to receive(:locales).at_most(4).times
+      .and_return(available_locales_response)
     allow(Rails.application.secrets).to receive(:microsoft_api_key).and_return("123")
   end
 
@@ -57,7 +58,8 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
         select "Español", from: "Language:"
 
         expect(page).not_to have_button("Traducir página")
-        expect(page).to have_content("En un breve periodo de tiempo refrescando la página podrá ver todo el contenido en su idioma")
+        expect(page).to have_content "En un breve periodo de tiempo refrescando la página " \
+                                     "podrá ver todo el contenido en su idioma"
       end
     end
 
@@ -151,8 +153,9 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
 
         click_button "Traducir página"
 
-        expect(page).to have_content("Se han solicitado correctamente las traducciones.")
-        expect(page).to have_content("En un breve periodo de tiempo refrescando la página podrá ver todo el contenido en su idioma")
+        expect(page).to have_content "Se han solicitado correctamente las traducciones."
+        expect(page).to have_content "En un breve periodo de tiempo refrescando la página " \
+                                     "podrá ver todo el contenido en su idioma"
       end
 
       scenario "should be present only informative text when user visit page with all content enqueued" do
@@ -165,15 +168,16 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
         select "Español", from: "Idioma:"
 
         expect(page).not_to have_button "Traducir página"
-        expect(page).not_to have_content("Se han solicitado correctamente las traducciones.")
-        expect(page).to have_content("En un breve periodo de tiempo refrescando la página podrá ver todo el contenido en su idioma")
+        expect(page).not_to have_content "Se han solicitado correctamente las traducciones."
+        expect(page).to have_content "En un breve periodo de tiempo refrescando la página " \
+                                     "podrá ver todo el contenido en su idioma"
       end
     end
 
     describe "without delayed jobs" do
       scenario "the remote translation button should not be present" do
-        microsoft_translate_client_response = generate_response(resource)
-        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(microsoft_translate_client_response)
+        response = generate_response(resource)
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
         visit path
         select "Español", from: "Language:"
 
@@ -183,8 +187,8 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
       end
 
       scenario "the remote translation has been translated and destoyed" do
-        microsoft_translate_client_response = generate_response(resource)
-        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(microsoft_translate_client_response)
+        response = generate_response(resource)
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
         visit path
         select "Español", from: "Language:"
 
@@ -196,8 +200,8 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
       end
 
       scenario "request a translation of an already translated text" do
-        microsoft_translate_client_response = generate_response(resource)
-        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(microsoft_translate_client_response)
+        response = generate_response(resource)
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
 
         in_browser(:one) do
           visit path

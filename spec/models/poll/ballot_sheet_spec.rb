@@ -6,8 +6,8 @@ describe Poll::BallotSheet do
     investment1 = create(:budget_investment, budget: budget)
     investment2 = create(:budget_investment, budget: budget)
     build(:poll_ballot_sheet, poll: create(:poll, budget: budget),
-          officer_assignment: create(:poll_officer_assignment),
-          data: "#{investment1.id};#{investment2.id}")
+                              officer_assignment: create(:poll_officer_assignment),
+                              data: "#{investment1.id};#{investment2.id}")
   end
 
   context "Validations" do

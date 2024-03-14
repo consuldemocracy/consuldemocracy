@@ -48,7 +48,6 @@ describe Abilities::Administrator do
 
   it { should be_able_to(:index, Debate) }
   it { should be_able_to(:show, debate) }
-  it { should be_able_to(:vote, debate) }
 
   it { should be_able_to(:index, Proposal) }
   it { should be_able_to(:show, proposal) }
@@ -95,7 +94,11 @@ describe Abilities::Administrator do
   it { should be_able_to(:read_results, create(:budget, :reviewing_ballots, :with_winner)) }
   it { should be_able_to(:read_results, create(:budget, :finished, :with_winner)) }
   it { should be_able_to(:read_results, create(:budget, :finished, results_enabled: true)) }
-  it { should_not be_able_to(:read_results, create(:budget, :balloting, :with_winner, results_enabled: true)) }
+
+  it do
+    should_not be_able_to(:read_results, create(:budget, :balloting, :with_winner, results_enabled: true))
+  end
+
   it { should_not be_able_to(:read_results, create(:budget, :reviewing_ballots, results_enabled: true)) }
   it { should_not be_able_to(:read_results, create(:budget, :finished, results_enabled: false)) }
 

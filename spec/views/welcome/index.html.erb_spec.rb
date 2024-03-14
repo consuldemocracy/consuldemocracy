@@ -4,7 +4,7 @@ RSpec.describe "welcome#index" do
   it "Display images on orbit carrousel when we have defined image_default" do
     debate = create(:debate)
 
-    render template: "welcome/_recommended_carousel.html.erb",
+    render template: "welcome/_recommended_carousel",
            locals: { key: "debates",
                      recommendeds: [debate],
                      image_field: nil,
@@ -15,14 +15,14 @@ RSpec.describe "welcome#index" do
                      btn_path_link: debates_path(order: "recommendations") }
 
     within 'li[data-slide="0"] .card' do
-      expect(page).to have_selector("img")
+      expect(page).to have_css "img"
     end
   end
 
   it "Not display images on orbit carrousel when we have not defined image_default" do
     debate = create(:debate)
 
-    render template: "welcome/_recommended_carousel.html.erb",
+    render template: "welcome/_recommended_carousel",
            locals: { key: "debates",
                      recommendeds: [debate],
                      image_field: nil,
@@ -33,7 +33,7 @@ RSpec.describe "welcome#index" do
                      btn_path_link: debates_path(order: "recommendations") }
 
     within 'li[data-slide="0"] .card' do
-      expect(page).not_to have_selector("img")
+      expect(page).not_to have_css "img"
     end
   end
 end

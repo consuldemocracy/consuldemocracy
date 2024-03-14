@@ -1,9 +1,9 @@
 <% if managed_user.document_number.present? %>
   <section class="account-info">
     <%= link_to(t("management.account_info.change_user"),
-                  logout_management_users_path,
-                  method: :delete,
-                  class: "float-right btchange-user button hollow") %>
+                logout_management_users_path,
+                method: :delete,
+                class: "float-right btchange-user button hollow") %>
 
     <% if managed_user.level_two_or_three_verified? %>
       <p>

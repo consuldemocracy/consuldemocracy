@@ -139,7 +139,6 @@ fr:
       invalid_date_range: "Intervalle de dates invalide"
   form:
     accept_terms: J'accepte le %{policy} et les %{conditions}
-    accept_terms_title: J’accepte la politique de confidentialité et les conditions d’utilisation
     conditions: Conditions légales
     debate: Débat
     direct_message: message privé
@@ -173,11 +172,6 @@ fr:
   geozones:
     none: Toute la ville
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Vous utilisez Internet Explorer. Pour une navigation plus sûre, %{chrome} ou %{firefox} sont recommandés.
-      ie_title: Ce site internet n'est pas affiché de manière optimale par votre navigateur.
     dashboard:
       proposal_header:
         published: Publié
@@ -196,9 +190,9 @@ fr:
     footer:
       accessibility: Accessibilité
       conditions: Conditions légales
-      consul: Application Consul
+      consul: Application CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: Consul, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Ce portail utiliser %{consul} qui est %{open_source}. De Madrid ouvert sur le monde.
       open_source: logiciel libre
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html

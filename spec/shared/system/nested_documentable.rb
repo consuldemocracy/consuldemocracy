@@ -25,7 +25,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       do_login_for user_to_login, management: management
       visit send(path, arguments)
 
-      expect(page).to have_css "#new_document_link"
+      expect(page).to have_link id: "new_document_link"
     end
 
     scenario "Should not show new document link when
@@ -161,9 +161,9 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       visit send(path, arguments)
 
       click_link "Add new document"
-      click_on submit_button
+      click_button submit_button
 
-      within "#nested-documents .document" do
+      within "#nested-documents .document-fields" do
         expect(page).to have_content("can't be blank", count: 2)
       end
     end
@@ -175,7 +175,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       documentable_attach_new_file(file_fixture("empty.pdf"))
       click_link "Remove document"
 
-      expect(page).not_to have_css("#nested-documents .document")
+      expect(page).not_to have_css("#nested-documents .document-fields")
     end
 
     scenario "Should show successful notice when
@@ -184,7 +184,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       visit send(path, arguments)
 
       send(fill_resource_method_name) if fill_resource_method_name
-      click_on submit_button
+      click_button submit_button
 
       expect(page).to have_content documentable_success_notice
     end
@@ -196,7 +196,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       send(fill_resource_method_name) if fill_resource_method_name
 
       documentable_attach_new_file(file_fixture("empty.pdf"))
-      click_on submit_button
+      click_button submit_button
 
       expect(page).to have_content documentable_success_notice
     end
@@ -208,7 +208,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       send(fill_resource_method_name) if fill_resource_method_name
 
       documentable_attach_new_file(file_fixture("empty.pdf"))
-      click_on submit_button
+      click_button submit_button
 
       expect(page).to have_content documentable_success_notice
 
@@ -219,7 +219,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
 
       # Review
       # Doble check why the file is stored with a name different to empty.pdf
-      expect(page).to have_css("a[href$='.pdf']")
+      expect(page).to have_link href: /.pdf\Z/
     end
 
     scenario "Should show resource with new document after successful creation with
@@ -233,7 +233,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
         documentable_attach_new_file(file_fixture("#{filename}.pdf"))
       end
 
-      click_on submit_button
+      click_button submit_button
 
       expect(page).to have_content documentable_success_notice
 
@@ -248,7 +248,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
         do_login_for user_to_login, management: management
         visit send(path, arguments)
 
-        expect(page).to have_css ".document", count: 1
+        expect(page).to have_css ".document-fields", count: 1
       end
 
       scenario "Should not show add document button when
@@ -264,21 +264,21 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
         create_list(:document, documentable.class.max_documents_allowed, documentable: documentable)
         do_login_for user_to_login, management: management
         visit send(path, arguments)
-        last_document = all("#nested-documents .document").last
+        last_document = all("#nested-documents .document-fields").last
         within last_document do
-          click_on "Remove document"
+          click_link "Remove document"
         end
 
-        expect(page).to have_css "#new_document_link"
+        expect(page).to have_link id: "new_document_link"
       end
 
       scenario "Should remove nested field after remove document" do
         create(:document, documentable: documentable)
         do_login_for user_to_login, management: management
         visit send(path, arguments)
-        click_on "Remove document"
+        click_link "Remove document"
 
-        expect(page).not_to have_css ".document"
+        expect(page).not_to have_css ".document-fields"
       end
 
       scenario "Same attachment URL after editing the title" do
@@ -291,14 +291,14 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
 
         expect(page).to have_content documentable_success_notice
 
-        original_url = find_link("Download file")[:href]
+        original_url = find_link(text: "Original")[:href]
 
         visit send(path, arguments)
         within_fieldset("Documents") { fill_in "Title", with: "Updated" }
         click_button submit_button
 
         expect(page).to have_content documentable_success_notice
-        expect(find_link("Download file")[:href]).to eq original_url
+        expect(find_link(text: "Updated")[:href]).to eq original_url
       end
     end
 

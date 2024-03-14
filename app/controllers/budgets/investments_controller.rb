@@ -28,7 +28,8 @@ module Budgets
 
     has_orders %w[most_voted newest oldest], only: :show
     has_orders ->(c) { c.instance_variable_get(:@budget).investments_orders }, only: :index
-    has_filters ->(c) { c.instance_variable_get(:@budget).investments_filters }, only: [:index, :show, :suggest]
+    has_filters ->(c) { c.instance_variable_get(:@budget).investments_filters },
+                only: [:index, :show, :suggest]
 
     invisible_captcha only: [:create, :update], honeypot: :subtitle, scope: :budget_investment
 
@@ -82,12 +83,14 @@ module Budgets
 
     def destroy
       @investment.destroy!
-      redirect_to user_path(current_user, filter: "budget_investments"), notice: t("flash.actions.destroy.budget_investment")
+      redirect_to user_path(current_user, filter: "budget_investments"),
+                  notice: t("flash.actions.destroy.budget_investment")
     end
 
     def suggest
       @resource_path_method = :namespaced_budget_investment_path
-      @resource_relation    = resource_model.where(budget: @budget).apply_filters_and_search(@budget, params, @current_filter)
+      @resource_relation    = resource_model.where(budget: @budget)
+                                            .apply_filters_and_search(@budget, params, @current_filter)
       super
     end
 

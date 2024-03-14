@@ -97,13 +97,12 @@ gd:
           waiting_for: "A’ feitheamh ri dearbhadh air:"
         new:
           cancel: Sguir a bhith a’ clàradh a-steach
-          organization_signup: A bheil thu a’ riochdachadh buidheann no comann? %{ signup_link}
+          organization_signup: A bheil thu a’ riochdachadh buidheann no comann? %{signup_link}
           organization_signup_link: Clàraich an-seo
           password_confirmation_label: Dearbh am facal-faire
           submit: Clàraich
           terms: Le bhith a’ clàradh, tha thu a’ gabhail ris na %{terms}
           terms_link: teirmichean is cumhaichean cleachdaidh
-          terms_title: Le bhith a’ clàradh, tha thu a’ gabhail ris na teirmichean is cumhaichean cleachdaidh
           title: Clàraich
           username_is_available: Tha an t-ainm cleachdaiche ri fhaighinn
           username_is_not_available: Tha an t-ainm-cleachdaiche seo ga chleachdadh mar-thà.

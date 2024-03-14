@@ -327,11 +327,11 @@ describe "Admin polls", :admin do
             expect(page).to have_content("10")
           end
 
-          expect(page).not_to have_selector "#total_system"
+          expect(page).not_to have_css "#total_system"
         end
 
-        expect(page).to have_selector "#poll_booth_assignment_#{booth_assignment.id}_recounts"
-        expect(page).not_to have_selector "#poll_booth_assignment_#{booth_assignment.id}_system"
+        expect(page).to have_css "#poll_booth_assignment_#{booth_assignment.id}_recounts"
+        expect(page).not_to have_css "#poll_booth_assignment_#{booth_assignment.id}_system"
       end
     end
   end
@@ -435,15 +435,15 @@ describe "Admin polls", :admin do
 
         [booth_assignment_1, booth_assignment_2, booth_assignment_3].each do |ba|
           create(:poll_partial_result,
-                  booth_assignment: ba,
-                  question: question_1,
-                  answer: "Yes",
-                  amount: 11)
+                 booth_assignment: ba,
+                 question: question_1,
+                 answer: "Yes",
+                 amount: 11)
           create(:poll_partial_result,
-                  booth_assignment: ba,
-                  question: question_2,
-                  answer: "Tomorrow",
-                  amount: 5)
+                 booth_assignment: ba,
+                 question: question_2,
+                 answer: "Tomorrow",
+                 amount: 5)
         end
         create(:poll_recount,
                booth_assignment: booth_assignment_1,

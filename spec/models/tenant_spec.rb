@@ -1,4 +1,5 @@
 require "rails_helper"
+require "active_storage/service/disk_service"
 
 describe Tenant do
   describe ".resolve_host" do
@@ -135,7 +136,7 @@ describe Tenant do
       expect { Tenant.resolve_host("www.consul.dev") }.to raise_exception(Apartment::TenantNotFound)
     end
 
-    it "raises an exception when accessing a hidden tenant with a domain and another tenant resolves to the same domain" do
+    it "raises an exception with a hidden tenant's domain when another tenant resolves to the same domain" do
       insert(:tenant, :domain, schema: "saturn.consul.dev", hidden_at: Time.current)
       insert(:tenant, schema: "saturn")
 
@@ -415,6 +416,48 @@ describe Tenant do
 
       expect { Tenant.switch("typo") { nil } }.to raise_exception(Apartment::TenantNotFound)
       expect { Tenant.switch("notypo") { nil } }.not_to raise_exception
+    end
+  end
+
+  describe "#rename_storage" do
+    after do
+      FileUtils.rm_rf(File.join(ActiveStorage::Blob.service.root, "tenants", "notypo"))
+    end
+
+    it "does nothing when the active storage blob service is not a TenantDiskService" do
+      disk_service = ActiveStorage::Service::DiskService.new(root: ActiveStorage::Blob.service.root)
+      allow(ActiveStorage::Blob).to receive(:service).and_return(disk_service)
+      tenant = create(:tenant, schema: "typo")
+
+      expect(File).not_to receive(:rename)
+
+      tenant.update!(schema: "notypo")
+    end
+
+    it "does nothing when the tenant has no files to move" do
+      tenant = create(:tenant, schema: "typo")
+
+      expect(File).not_to receive(:rename)
+
+      tenant.update!(schema: "notypo")
+    end
+
+    it "renames the active storage folder when updating the schema" do
+      tenant = create(:tenant, schema: "typo")
+      Tenant.switch("typo") do
+        Setting.reset_defaults
+        create(:image)
+      end
+
+      expect(File).to receive(:rename).and_call_original
+
+      tenant.update!(schema: "notypo")
+
+      Tenant.switch("notypo") do
+        image = Image.first
+        expect(image.file_path).to include "/notypo/"
+        expect(File.exist?(image.file_path)).to be true
+      end
     end
   end
 

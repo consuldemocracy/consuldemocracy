@@ -17,7 +17,7 @@ describe "Proposal Notifications" do
     click_link "Send notification to proposal followers"
 
     fill_in "proposal_notification_title", with: "Thank you for supporting my proposal"
-    fill_in "proposal_notification_body", with: "Please share it with "\
+    fill_in "proposal_notification_body", with: "Please share it with " \
                                                 "others so we can make it happen!"
     click_button "Send notification"
 
@@ -79,11 +79,11 @@ describe "Proposal Notifications" do
     proposal = create(:proposal)
 
     create(:proposal_notification,
-            proposal: proposal, title: "Hey guys",
-            body: "Just wanted to let you know that...")
+           proposal: proposal, title: "Hey guys",
+           body: "Just wanted to let you know that...")
     create(:proposal_notification,
-            proposal: proposal, title: "Another update",
-            body: "We are almost there please share with your peoples!")
+           proposal: proposal, title: "Another update",
+           body: "We are almost there please share with your peoples!")
 
     visit proposal_path(proposal)
     click_link "Notifications (2)"
@@ -104,10 +104,10 @@ describe "Proposal Notifications" do
     login_as(author)
     visit new_proposal_notification_path(proposal_id: proposal.id)
 
-    expect(page).to have_content "This notification will be sent to 7 people and it will "\
+    expect(page).to have_content "This notification will be sent to 7 people and it will " \
                                  "be visible in the proposal's page"
     expect(page).to have_link("the proposal's page", href: proposal_path(proposal,
-                                                     anchor: "comments"))
+                                                                         anchor: "comments"))
   end
 
   scenario "Message about receivers (Disctinct Followers and Voters)" do
@@ -120,10 +120,10 @@ describe "Proposal Notifications" do
     login_as(author)
     visit new_proposal_notification_path(proposal_id: proposal.id)
 
-    expect(page).to have_content "This notification will be sent to 7 people and it will "\
+    expect(page).to have_content "This notification will be sent to 7 people and it will " \
                                  "be visible in the proposal's page"
     expect(page).to have_link("the proposal's page", href: proposal_path(proposal,
-                                                     anchor: "comments"))
+                                                                         anchor: "comments"))
   end
 
   scenario "Message about receivers (Same Followers and Voters)" do
@@ -135,10 +135,10 @@ describe "Proposal Notifications" do
     login_as(author)
     visit new_proposal_notification_path(proposal_id: proposal.id)
 
-    expect(page).to have_content "This notification will be sent to 1 people and it will "\
+    expect(page).to have_content "This notification will be sent to 1 people and it will " \
                                  "be visible in the proposal's page"
     expect(page).to have_link("the proposal's page", href: proposal_path(proposal,
-                                                     anchor: "comments"))
+                                                                         anchor: "comments"))
   end
 
   context "Permissions" do
@@ -190,7 +190,7 @@ describe "Proposal Notifications" do
       visit new_proposal_notification_path(proposal_id: proposal.id)
 
       fill_in "proposal_notification_title", with: "Thank you for supporting my proposal"
-      fill_in "proposal_notification_body", with: "Please share it with "\
+      fill_in "proposal_notification_body", with: "Please share it with " \
                                                   "others so we can make it happen!"
       click_button "Send notification"
 
@@ -242,7 +242,7 @@ describe "Proposal Notifications" do
       visit new_proposal_notification_path(proposal_id: proposal.id)
 
       fill_in "proposal_notification_title", with: "Thank you for supporting my proposal"
-      fill_in "proposal_notification_body", with: "Please share it with "\
+      fill_in "proposal_notification_body", with: "Please share it with " \
                                                   "others so we can make it happen!"
       click_button "Send notification"
 
@@ -292,7 +292,7 @@ describe "Proposal Notifications" do
       visit new_proposal_notification_path(proposal_id: proposal.id)
 
       fill_in "proposal_notification_title", with: "Thank you for supporting my proposal"
-      fill_in "proposal_notification_body", with: "Please share it with "\
+      fill_in "proposal_notification_body", with: "Please share it with " \
                                                   "others so we can make it happen!"
       click_button "Send notification"
 

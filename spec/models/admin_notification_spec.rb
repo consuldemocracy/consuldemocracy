@@ -26,7 +26,7 @@ describe AdminNotification do
 
   describe "#complete_link_url" do
     it "does not change link if there is no value" do
-      expect(admin_notification.link).to be_nil
+      expect(admin_notification.link).to be nil
     end
 
     it "fixes a link without http://" do

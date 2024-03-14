@@ -1,6 +1,7 @@
 en:
   account:
     show:
+      last_sign_in: "Last login: %{last_sign_in_at} from IP %{last_sign_in_ip}"
       change_credentials_link: Change my login details
       erase_account_link: Erase my account
       finish_verification: Complete verification
@@ -143,7 +144,6 @@ en:
         poll_ended: "Cannot be changed if voting has already ended"
   form:
     accept_terms: I agree to the %{policy} and the %{conditions}
-    accept_terms_title: I agree to the Privacy Policy and the Terms and conditions of use
     conditions: Terms and conditions of use
     debate: Debate
     direct_message: private message
@@ -177,11 +177,6 @@ en:
   geozones:
     none: All city
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: We have detected that you are browsing with Internet Explorer. For an enhanced experience, we recommend using %{firefox} or %{chrome}.
-      ie_title: This website is not optimised for your browser
     dashboard:
       proposal_header:
         published: Published
@@ -729,7 +724,7 @@ en:
       districts: "Districts"
       districts_list: "Districts list"
       categories: "Categories"
-    target_blank: " (link opens in new window)"
+    target_blank: "Link opens in new window"
     you_are_in: "You are in"
     unflag: Unflag
     unfollow_entity: "Unfollow %{entity}"

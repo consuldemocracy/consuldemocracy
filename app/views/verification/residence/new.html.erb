@@ -64,17 +64,14 @@
 
       <div class="small-12 medium-5 clear">
         <%= f.text_field :postal_code,
-          hint: t("verification.residence.new.postal_code_note") %>
+                         hint: t("verification.residence.new.postal_code_note") %>
       </div>
 
       <div class="small-12">
         <%= f.check_box :terms_of_service,
-          title: t("verification.residence.new.accept_terms_text_title"),
-          label: t("verification.residence.new.accept_terms_text",
-                   terms_url: link_to(t("verification.residence.new.terms"), page_path("census_terms"),
-                                      title: t("shared.target_blank"),
-                                      target: "_blank")
-                  ) %>
+                        label: t("verification.residence.new.accept_terms_text",
+                                 terms_url: new_window_link_to(t("verification.residence.new.terms"),
+                                                               page_path("census_terms"))) %>
       </div>
 
       <div class="small-12 medium-3 clear">

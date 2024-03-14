@@ -103,7 +103,6 @@ pl:
           submit: Zarejestruj się
           terms: Rejestrując się, akceptujesz %{terms}
           terms_link: warunki użytkowania
-          terms_title: Rejestrując się, akceptujesz regulamin i warunki użytkowania
           title: Zarejestruj się
           username_is_available: Nazwa użytkownika dostępna
           username_is_not_available: Nazwa użytkownika jest już w użyciu

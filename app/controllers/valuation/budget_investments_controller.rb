@@ -77,19 +77,19 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
       investment_headings = Budget::Heading.where(id: investments.pluck(:heading_id)).sort_by(&:name)
 
       all_headings_filter = [
-                              {
-                                name: t("valuation.budget_investments.index.headings_filter_all"),
-                                id: nil,
-                                count: investments.size
-                              }
-                            ]
+        {
+          name: t("valuation.budget_investments.index.headings_filter_all"),
+          id: nil,
+          count: investments.size
+        }
+      ]
 
       investment_headings.reduce(all_headings_filter) do |filters, heading|
         filters << {
-                     name: heading.name,
-                     id: heading.id,
-                     count: investments.count { |i| i.heading_id == heading.id }
-                   }
+          name: heading.name,
+          id: heading.id,
+          count: investments.count { |i| i.heading_id == heading.id }
+        }
       end
     end
 

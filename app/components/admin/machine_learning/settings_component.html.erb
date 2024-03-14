@@ -9,7 +9,7 @@
     <p><strong><%= t("admin.machine_learning.data_folder_content") %></strong></p>
 
     <% filenames.each do |filename| %>
-      <a href="<%= data_path(filename) %>" target="_blank"><%= filename %></a><br>
+      <a href="<%= data_path(filename) %>"><%= filename %></a><br>
     <% end %>
   </div>
 </div>

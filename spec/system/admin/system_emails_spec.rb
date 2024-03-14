@@ -254,23 +254,30 @@ describe "System Emails" do
     describe "#evaluation_comment" do
       scenario "render correctly evaluaton comment mailer with valuator as a sample user" do
         admin = create(:administrator, user: create(:user, username: "Baby Doe"))
-        investment = create(:budget_investment,
+        investment = create(
+          :budget_investment,
           title: "Cleaner city",
           heading: heading,
           author: user,
-          administrator: admin)
+          administrator: admin
+        )
         comment = create(:comment, :valuation, commentable: investment)
 
         visit admin_system_email_view_path("evaluation_comment")
 
         expect(page).to have_content "New evaluation comment for Cleaner city"
         expect(page).to have_content "Hi #{admin.name}"
-        expect(page).to have_content "There is a new evaluation comment from #{comment.user.name} "\
+        expect(page).to have_content "There is a new evaluation comment from #{comment.user.name} " \
                                      "to the budget investment Cleaner city"
         expect(page).to have_content comment.body
 
         expect(page).to have_link "Cleaner city",
-          href: admin_budget_budget_investment_url(investment.budget, investment, anchor: "comments", host: app_host)
+                                  href: admin_budget_budget_investment_url(
+                                    investment.budget,
+                                    investment,
+                                    anchor: "comments",
+                                    host: app_host
+                                  )
       end
 
       scenario "uses a current_user as a sample user for sample regular comments" do
@@ -312,8 +319,8 @@ describe "System Emails" do
       proposal1 = create(:proposal, title: "Proposal A")
       proposal2 = create(:proposal, title: "Proposal B")
       proposal_notification1 = create(:proposal_notification, proposal: proposal1,
-                                                               title: "Proposal A Title",
-                                                               body: "Proposal A Notification Body")
+                                                              title: "Proposal A Title",
+                                                              body: "Proposal A Notification Body")
       proposal_notification2 = create(:proposal_notification, proposal: proposal2)
       create(:notification, notifiable: proposal_notification1, emailed_at: nil)
       create(:notification, notifiable: proposal_notification2, emailed_at: nil)
@@ -321,7 +328,7 @@ describe "System Emails" do
       visit admin_system_email_preview_pending_path("proposal_notification_digest")
 
       within("#proposal_notification_#{proposal_notification1.id}") do
-        click_on "Moderate notification send"
+        click_link "Moderate notification send"
       end
 
       expect(page).not_to have_content("Proposal A Title")
@@ -343,8 +350,8 @@ describe "System Emails" do
     scenario "#send_pending" do
       proposal = create(:proposal)
       proposal_notification = create(:proposal_notification, proposal: proposal,
-                                                              title: "Proposal A Title",
-                                                              body: "Proposal A Notification Body")
+                                                             title: "Proposal A Title",
+                                                             body: "Proposal A Notification Body")
       voter = create(:user, :level_two, followables: [proposal])
       create(:notification, notifiable: proposal_notification, user: voter, emailed_at: nil)
 

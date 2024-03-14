@@ -6,7 +6,7 @@ describe "Tags" do
   let(:group)   { create(:budget_group, name: "Health", budget: budget) }
   let!(:heading) do
     create(:budget_heading, name: "More hospitals",
-           group: group, latitude: "40.416775", longitude: "-3.703790")
+                            group: group, latitude: "40.416775", longitude: "-3.703790")
   end
   let!(:tag_medio_ambiente) { create(:tag, :category, name: "Medio Ambiente") }
   let!(:tag_economia) { create(:tag, :category, name: "Economía") }
@@ -29,7 +29,7 @@ describe "Tags" do
 
   scenario "Index shows 3 tags with no plus link" do
     tag_list = ["Medio Ambiente", "Corrupción", "Fiestas populares"]
-    create :budget_investment, heading: heading, tag_list: tag_list
+    create(:budget_investment, heading: heading, tag_list: tag_list)
 
     visit budget_investments_path(budget, heading_id: heading.id)
 
@@ -43,7 +43,7 @@ describe "Tags" do
 
   scenario "Index shows up to 5 tags per investment" do
     tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
-    create :budget_investment, heading: heading, tag_list: tag_list
+    create(:budget_investment, heading: heading, tag_list: tag_list)
 
     visit budget_investments_path(budget, heading_id: heading.id)
 
@@ -53,7 +53,9 @@ describe "Tags" do
   end
 
   scenario "Show" do
-    investment = create(:budget_investment, heading: heading, tag_list: "#{tag_medio_ambiente.name}, #{tag_economia.name}")
+    investment = create(:budget_investment,
+                        heading: heading,
+                        tag_list: "#{tag_medio_ambiente.name}, #{tag_economia.name}")
 
     visit budget_investment_path(budget, investment)
 
@@ -157,7 +159,8 @@ describe "Tags" do
     fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
     check   "budget_investment_terms_of_service"
 
-    fill_in "budget_investment_tag_list", with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
+    fill_in "budget_investment_tag_list",
+            with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
 
     click_button "Create Investment"
 
