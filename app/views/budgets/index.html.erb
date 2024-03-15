@@ -1,7 +1,7 @@
-<%= render Shared::BannerComponent.new("budgets") %>
-
 <% provide :title do %><%= t("budgets.index.title") %><% end %>
 <% provide :main_class, "budgets-index" %>
+
+<%= render Shared::BannerComponent.new("budgets") %>
 
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: budgets_url %>

@@ -1,5 +1,6 @@
-<%= render Shared::BannerComponent.new("budgets") %>
 <% provide :title do %><%= @budget.name %><% end %>
+
+<%= render Shared::BannerComponent.new("budgets") %>
 
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: budget_url(@budget, filter: @current_filter) %>
