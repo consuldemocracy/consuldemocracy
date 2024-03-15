@@ -1,4 +1,4 @@
-<% provide :title do %><%= t("devise_views.organizations.registrations.new.title") %><% end %>
+<% provide :title, t("devise_views.organizations.registrations.new.title") %>
 <h2><%= t("devise_views.organizations.registrations.new.title") %></h2>
 
  <%= form_for(resource, as: :user, url: organization_registration_path) do |f| %>

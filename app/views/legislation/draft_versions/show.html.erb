@@ -1,4 +1,4 @@
-<% provide :title do %><%= "#{@draft_version.title} - #{@process.title}" %><% end %>
+<% provide :title, "#{@draft_version.title} - #{@process.title}" %>
 
 <%= render "legislation/processes/header", process: @process, header: :small %>
 

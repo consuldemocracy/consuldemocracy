@@ -1,4 +1,4 @@
-<% provide :title do %><%= @proposal.title %><% end %>
+<% provide :title, @proposal.title %>
 <% preview = false unless local_assigns.has_key? :preview %>
 <% content_for :meta_description do %><%= @proposal.summary %><% end %>
 <% provide :social_media_meta_tags do %>

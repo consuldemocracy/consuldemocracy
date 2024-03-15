@@ -1,4 +1,4 @@
-<% provide :title do %><%= t("pages.titles.help", org: setting["org_name"]) %><% end %>
+<% provide :title, t("pages.titles.help", org: setting["org_name"]) %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: help_url %>
 <% end %>

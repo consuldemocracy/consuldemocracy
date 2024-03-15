@@ -1,4 +1,4 @@
-<% provide :title do %><%= @proposal.title %><% end %>
+<% provide :title, @proposal.title %>
 <% provide :social_media_meta_tags do %>
 <%= render "shared/social_media_meta_tags",
            social_url: proposal_url(@proposal),

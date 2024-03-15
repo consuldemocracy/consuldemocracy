@@ -1,4 +1,4 @@
-<% provide :title do %><%= t("budgets.investments.index.title") %><% end %>
+<% provide :title, t("budgets.investments.index.title") %>
 <% content_for :header_addon do %>
   <%= render "shared/search_form",
              search_path: budget_investments_path(budget_id: @budget.id, page: 1),
