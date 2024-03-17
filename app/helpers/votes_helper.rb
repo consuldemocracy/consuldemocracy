@@ -1,6 +1,6 @@
 module VotesHelper
   def debate_percentage_of_likes(debate)
-    debate.likes.percent_of(debate.total_votes)
+    (debate.likes.to_f * 100 / debate.total_votes).to_i
   end
 
   def votes_percentage(vote, debate)
