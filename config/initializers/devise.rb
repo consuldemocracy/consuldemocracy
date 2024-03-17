@@ -1,4 +1,4 @@
-require Rails.root.join("lib", "omniauth_wordpress")
+require Rails.root.join("app", "lib", "omniauth_wordpress")
 
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
