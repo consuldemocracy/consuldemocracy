@@ -132,12 +132,17 @@ module Consul
     # * English: https://github.com/consuldemocracy/consuldemocracy/blob/master/CUSTOMIZE_EN.md
     # * Spanish: https://github.com/consuldemocracy/consuldemocracy/blob/master/CUSTOMIZE_ES.md
     #
-    config.autoload_paths << "#{Rails.root}/app/components/custom"
-    config.autoload_paths << "#{Rails.root}/app/controllers/custom"
-    config.autoload_paths << "#{Rails.root}/app/graphql/custom"
-    config.autoload_paths << "#{Rails.root}/app/mailers/custom"
-    config.autoload_paths << "#{Rails.root}/app/models/custom"
-    config.autoload_paths << "#{Rails.root}/app/models/custom/concerns"
+
+    [
+      "app/components/custom",
+      "app/controllers/custom",
+      "app/graphql/custom",
+      "app/mailers/custom",
+      "app/models/custom",
+      "app/models/custom/concerns"
+    ].each do |path|
+      config.autoload_paths << Rails.root.join(path)
+    end
 
     config.paths["app/views"].unshift(Rails.root.join("app", "views", "custom"))
 
