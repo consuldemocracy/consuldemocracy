@@ -137,6 +137,7 @@ module Consul
       "app/components/custom",
       "app/controllers/custom",
       "app/graphql/custom",
+      "app/lib/custom",
       "app/mailers/custom",
       "app/models/custom",
       "app/models/custom/concerns"
