@@ -10,7 +10,7 @@ AllCops:
   DisplayStyleGuide: true
   Exclude:
     - "db/schema.rb"
-    - "lib/ckeditor/backend/active_storage.rb"
+    - "app/lib/ckeditor/backend/active_storage.rb"
   DisabledByDefault: true
 
 Bundler/DuplicatedGem:
@@ -480,7 +480,7 @@ Rails/SkipsModelValidations:
     - update_attribute
   Exclude:
     - app/models/tenant.rb
-    - lib/acts_as_paranoid_aliases.rb
+    - app/lib/acts_as_paranoid_aliases.rb
 
 Rails/TimeZone:
   Enabled: true

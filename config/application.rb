@@ -125,8 +125,6 @@ module Consul
     config.assets.paths << Rails.root.join("node_modules", "jquery-ui", "themes", "base")
     config.assets.paths << Rails.root.join("node_modules")
 
-    # Add lib to the autoload path
-    config.autoload_paths << Rails.root.join("lib")
     config.active_job.queue_adapter = :delayed_job
 
     # CONSUL DEMOCRACY specific custom overrides
