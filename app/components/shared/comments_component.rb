@@ -1,6 +1,6 @@
 class Shared::CommentsComponent < ApplicationComponent
   attr_reader :record, :comment_tree
-  delegate :current_user, :current_order, :locale_and_user_status, :commentable_cache_key, to: :helpers
+  use_helpers :current_user, :current_order, :locale_and_user_status, :commentable_cache_key
 
   def initialize(record, comment_tree)
     @record = record

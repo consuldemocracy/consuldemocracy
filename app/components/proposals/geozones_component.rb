@@ -1,5 +1,5 @@
 class Proposals::GeozonesComponent < ApplicationComponent
-  delegate :image_path_for, to: :helpers
+  use_helpers :image_path_for
 
   def render?
     Geozone.any?

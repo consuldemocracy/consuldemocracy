@@ -1,7 +1,7 @@
 class Proposals::NewComponent < ApplicationComponent
   include Header
   attr_reader :proposal
-  delegate :new_window_link_to, to: :helpers
+  use_helpers :new_window_link_to
 
   def initialize(proposal)
     @proposal = proposal

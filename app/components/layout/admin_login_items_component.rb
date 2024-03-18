@@ -1,6 +1,6 @@
 class Layout::AdminLoginItemsComponent < ApplicationComponent
   attr_reader :user
-  delegate :link_list, :show_admin_menu?, to: :helpers
+  use_helpers :link_list, :show_admin_menu?
 
   def initialize(user)
     @user = user

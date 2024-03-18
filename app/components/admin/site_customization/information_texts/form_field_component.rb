@@ -1,6 +1,6 @@
 class Admin::SiteCustomization::InformationTexts::FormFieldComponent < ApplicationComponent
   attr_reader :i18n_content, :locale
-  delegate :globalize, :site_customization_display_translation_style, to: :helpers
+  use_helpers :globalize, :site_customization_display_translation_style
 
   def initialize(i18n_content, locale:)
     @i18n_content = i18n_content

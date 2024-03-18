@@ -1,7 +1,7 @@
 class Polls::Questions::ReadMoreComponent < ApplicationComponent
   with_collection_parameter :question
   attr_reader :question
-  delegate :wysiwyg, to: :helpers
+  use_helpers :wysiwyg
 
   def initialize(question:)
     @question = question

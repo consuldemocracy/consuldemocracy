@@ -1,6 +1,6 @@
 class Layout::AdminHeaderComponent < ApplicationComponent
   attr_reader :user
-  delegate :namespace, :namespaced_root_path, :show_admin_menu?, to: :helpers
+  use_helpers :namespace, :namespaced_root_path, :show_admin_menu?
 
   def initialize(user)
     @user = user

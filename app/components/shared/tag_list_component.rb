@@ -1,6 +1,6 @@
 class Shared::TagListComponent < ApplicationComponent
   attr_reader :taggable, :limit
-  delegate :link_list, to: :helpers
+  use_helpers :link_list
 
   def initialize(taggable, limit:)
     @taggable = taggable

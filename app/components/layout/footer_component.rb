@@ -1,5 +1,5 @@
 class Layout::FooterComponent < ApplicationComponent
-  delegate :content_block, to: :helpers
+  use_helpers :content_block
 
   def footer_legal_content_block
     content_block("footer_legal")
