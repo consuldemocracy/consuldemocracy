@@ -6,7 +6,7 @@ describe ApplicationComponent do
 
     component_class = Class.new(ApplicationComponent) do
       def call
-        t("shared.yes")
+        sanitize(t("shared.yes"))
       end
 
       def self.name
