@@ -352,9 +352,6 @@ Performance/EndWith:
 Performance/StartWith:
   Enabled: true
 
-Performance/StringIdentifierArgument:
-  Enabled: true
-
 Performance/Sum:
   Enabled: true
 
