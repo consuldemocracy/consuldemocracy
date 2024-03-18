@@ -5,6 +5,14 @@ describe Comments::VotesComponent do
   let(:comment) { create(:comment, user: user) }
   let(:component) { Comments::VotesComponent.new(comment) }
 
+  it "generates valid HTML" do
+    render_inline component
+
+    expect(page).not_to have_css "span form"
+    expect(page).to have_css "div.in-favor > form"
+    expect(page).to have_css "div.against > form"
+  end
+
   describe "aria-pressed and method attributes" do
     it "have expected values when the in-favor button is pressed" do
       comment.vote_by(voter: user, vote: "yes")
