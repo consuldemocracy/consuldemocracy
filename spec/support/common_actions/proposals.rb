@@ -7,12 +7,11 @@ module Proposals
   end
 
   def create_archived_proposals
-    months_to_archive_proposals = Setting["months_to_archive_proposals"].to_i
     [
       create(:proposal, title: "This is an expired proposal",
-                        created_at: months_to_archive_proposals.months.ago),
+                        created_at: Setting.archived_proposals_date_limit),
       create(:proposal, title: "This is an oldest expired proposal",
-                        created_at: (months_to_archive_proposals + 2).months.ago)
+                        created_at: Setting.archived_proposals_date_limit - 2.months)
     ]
   end
 

@@ -10,7 +10,7 @@ require "rails_helper"
 #     end
 #   end
 # end
-RSpec.describe CommentsHelper, type: :helper do
+RSpec.describe CommentsHelper do
   describe "#user_level_class" do
     def comment_double(as_administrator: false, as_moderator: false, official: false)
       user = instance_double("User", official?: official, official_level: "Y")

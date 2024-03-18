@@ -126,7 +126,6 @@ es-PE:
       invalid_date_range: "El rango de fechas no es válido"
   form:
     accept_terms: Eu concordo com a %{policy} e as %{conditions}
-    accept_terms_title: Acepto la Política de privacidad y las Condiciones de uso
     conditions: Condiciones de uso
     debate: Debate previo
     direct_message: el mensaje privado
@@ -149,10 +148,6 @@ es-PE:
   geozones:
     none: Toda a cidade
   layouts:
-    application:
-      firefox: Firefox
-      ie: Nós detectamos que você está navegando com o Internet Explorer. Para uma melhor experiência, nós recomendamos o uso do %{chrome} ou %{firefox}.
-      ie_title: Este website não está otimizado para o seu navegador
     dashboard:
       proposal_header:
         published: Publicada
@@ -163,7 +158,7 @@ es-PE:
     footer:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
-      consul: aplicación CONSUL
+      consul: aplicación CONSUL DEMOCRACY
       description: Este portal usa o %{consul} que é %{open_source}. De Madrid para o mundo.
       open_source: programa de código aberto
       participation_text: Decida como adequar a Madrid que você deseja viver.

@@ -424,7 +424,6 @@ sr:
         title: "Документа"
         format: "Формат"
         size: "Величина"
-        url: "УРЛ"
       create:
         success_notice: "Документ је додат успешно"
         unable_notice: "Неисправан документ"

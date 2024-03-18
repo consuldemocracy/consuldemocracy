@@ -131,7 +131,6 @@ eu:
       invalid_date_range: "Data tartea ez da baliagarria"
   form:
     accept_terms: '%{policy} eta %{conditions} onartzen ditut'
-    accept_terms_title: Pribatutasun politika eta erabilera baldintzak onartzen ditut
     conditions: Erabilera baldintzak
     debate: Eztabaida
     direct_message: Mezu pribatua
@@ -153,11 +152,6 @@ eu:
   geozones:
     none: Herri osoa
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Internet Explorer erabiltzen ari zarela ohartu gara. %{firefox} edo %{chrome} erabiltzea gomendatzen dizugu.
-      ie_title: Web orri hau ez da zure nabigatzailearentzat sortu. Baliteke behar bezala ez ikustea.
     dashboard:
       proposal_header:
         draft: Zirriborroa

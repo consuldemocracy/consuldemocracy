@@ -18,7 +18,8 @@ module Abilities
       can :create, Legislation::Proposal
       can :show, Legislation::Proposal
       can :proposals, ::Legislation::Process
-
+      can :summary, ::Legislation::Process
+      
       can :restore, Legislation::Proposal
       cannot :restore, Legislation::Proposal, hidden_at: nil
 
@@ -49,8 +50,9 @@ module Abilities
       can :mark_featured, Debate
       can :unmark_featured, Debate
 
-      can :comment_as_administrator, [Debate, Comment, Proposal, Poll, Poll::Question, Budget::Investment,
-                                      Legislation::Question, Legislation::Proposal, Legislation::Annotation, Topic]
+      can :comment_as_administrator, [Debate, Comment, Proposal, Poll, Poll::Question,
+                                      Budget::Investment, Legislation::Question,
+                                      Legislation::Proposal, Legislation::Annotation, Topic]
 
       can [:search, :create, :index, :destroy, :update], ::Administrator
       can [:search, :create, :index, :destroy], ::Moderator
@@ -73,7 +75,7 @@ module Abilities
       can [:hide, :admin_update, :toggle_selection], Budget::Investment
       can [:valuate, :comment_valuation], Budget::Investment
       cannot [:admin_update, :toggle_selection, :valuate, :comment_valuation],
-        Budget::Investment, budget: { phase: "finished" }
+             Budget::Investment, budget: { phase: "finished" }
 
       can :create, Budget::ValuatorAssignment
 
@@ -121,7 +123,8 @@ module Abilities
       can [:manage], ::Legislation::DraftVersion
       can [:manage], ::Legislation::Question
       can [:manage], ::Legislation::Proposal
-      cannot :comment_as_moderator, [::Legislation::Question, Legislation::Annotation, ::Legislation::Proposal]
+      cannot :comment_as_moderator,
+             [::Legislation::Question, Legislation::Annotation, ::Legislation::Proposal]
 
       can [:create], Document
       can [:destroy], Document do |document|

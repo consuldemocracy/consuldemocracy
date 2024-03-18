@@ -46,7 +46,6 @@ cs:
           success: Bydliště ověřeno
       new:
         accept_terms_text: Přijímám %{terms_url} přístupu k základním registrům
-        accept_terms_text_title: Přijímám podmínky přístupu k základním registrům
         document_number: Číslo dokladu
         document_number_help_title: Nápověda
         document_number_help_text: "<strong>Číslo občanského průkazu</strong>: AJ12345678<br> <strong>Pas</strong>: AAA000001<br> <strong>řidičský průkaz</strong>: X1234567P"

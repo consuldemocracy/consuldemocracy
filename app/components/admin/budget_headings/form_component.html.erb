@@ -20,20 +20,20 @@
 
     <% if feature?(:map) %>
       <%= f.select :geozone_id,
-                    geozone_options,
-                    include_blank: t("geozones.none"),
-                    hint: t("admin.budget_headings.form.geozone_info") %>
+                   geozone_options,
+                   include_blank: t("geozones.none"),
+                   hint: t("admin.budget_headings.form.geozone_info") %>
     <% end %>
 
     <% if heading.budget.approval_voting? %>
       <%= f.number_field :max_ballot_lines,
-                           hint: t("admin.budget_headings.form.max_ballot_lines_info") %>
+                         hint: t("admin.budget_headings.form.max_ballot_lines_info") %>
     <% end %>
 
     <%= f.text_field :population,
-                      maxlength: 8,
-                      data: { toggle_focus: "population-info" },
-                      hint: t("admin.budget_headings.form.population_info") %>
+                     maxlength: 8,
+                     data: { toggle_focus: "population-info" },
+                     hint: t("admin.budget_headings.form.population_info") %>
 
     <%= f.text_field :latitude, maxlength: 22 %>
     <%= f.text_field :longitude, maxlength: 22 %>

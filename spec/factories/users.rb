@@ -126,21 +126,21 @@ FactoryBot.define do
   end
 
   factory :follow do
-    association :user, factory: :user
+    user
 
     trait :followed_proposal do
-      association :followable, factory: :proposal
+      followable factory: :proposal
     end
 
     trait :followed_investment do
-      association :followable, factory: :budget_investment
+      followable factory: :budget_investment
     end
   end
 
   factory :direct_message do
     title    { "Hey" }
     body     { "How are You doing?" }
-    association :sender,   factory: :user
-    association :receiver, factory: :user
+    sender factory: :user
+    receiver factory: :user
   end
 end

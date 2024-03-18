@@ -22,7 +22,7 @@ class Budgets::Investments::MapComponent < ApplicationComponent
     end
 
     def geozones_data
-      return unless heading.geozone.present?
+      return if heading.geozone.blank?
 
       [
         {

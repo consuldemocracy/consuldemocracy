@@ -48,9 +48,9 @@ describe "Residence" do
     click_link "Verify my account"
 
     expect(page).to have_select("residence_date_of_birth_1i",
-                                 with_options: [min_age.years.ago.year])
+                                with_options: [min_age.years.ago.year])
     expect(page).not_to have_select("residence_date_of_birth_1i",
-                                     with_options: [underage.years.ago.year])
+                                    with_options: [underage.years.ago.year])
   end
 
   scenario "When trying to verify a deregistered account old votes are reassigned" do
@@ -164,8 +164,9 @@ describe "Residence" do
     login_as(create(:user))
 
     visit new_residence_path
-    click_link "the terms and conditions of access"
 
-    expect(page).to have_content "Terms and conditions of access of the Census"
+    within_window(window_opened_by { click_link "the terms and conditions of access" }) do
+      expect(page).to have_content "Terms and conditions of access of the Census"
+    end
   end
 end

@@ -34,7 +34,7 @@ describe SDG::Goals::TagListComponent do
   it "renders links for each goal" do
     render_inline component
 
-    expect(page).to have_selector "a", count: 2
+    expect(page).to have_css "a", count: 2
     expect(page).to have_link "1. No Poverty",
                               title: "See all Debates related to goal 1",
                               href: "/debates?advanced_search#{CGI.escape("[goal]")}=1"
@@ -54,7 +54,7 @@ describe SDG::Goals::TagListComponent do
 
     render_inline component
 
-    expect(page).to have_selector "a", count: 2
+    expect(page).to have_css "a", count: 2
     expect(page).to have_link "1. No Poverty"
     expect(page).to have_link "1+",
                               title: "One more goal",

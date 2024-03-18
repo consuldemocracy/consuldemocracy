@@ -6,7 +6,7 @@ section "Creating Settings" do
     "feature.featured_proposals": "true",
     "feature.map": "true",
     "instagram_handle": "CONSUL DEMOCRACY",
-    "meta_description": "Citizen participation tool for an open, "\
+    "meta_description": "Citizen participation tool for an open, " \
                         "transparent and democratic government",
     "meta_keywords": "citizen participation, open government",
     "meta_title": "CONSUL DEMOCRACY",

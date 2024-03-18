@@ -60,4 +60,9 @@ pl:
       expired: "utracił/a ważność; proszę wysłać ponowny wniosek."
       not_found: "nie znaleziono."
       not_locked: "nie był zablokowany."
+      not_saved:
+        one: "1 błąd uniemożliwił zapis %{resource}. Sprawdź zaznaczone pola, by dowiedzieć się, jak je poprawić:"
+        few: "%{count} błędy uniemożliwiły zapis %{resource}. Sprawdź zaznaczone pola, by dowiedzieć się, jak je poprawić:"
+        many: "%{count} błędów uniemożliwiło zapis %{resource}. Sprawdź zaznaczone pola, by dowiedzieć się, jak je poprawić:"
+        other: "%{count} błędów uniemożliwiło zapis %{resource}. Sprawdź zaznaczone pola, by dowiedzieć się, jak je poprawić:"
       equal_to_current_password: "musi być inne niż stare hasło."

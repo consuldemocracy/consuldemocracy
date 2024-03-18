@@ -7,10 +7,13 @@
 @import "font-awesome/path";
 @import "font-awesome/mixins";
 @import "font-awesome/core";
-@import "jquery-ui/autocomplete";
-@import "jquery-ui/datepicker";
-@import "jquery-ui/sortable";
-@import "leaflet";
+@import "jquery-ui/themes/base/theme";
+@import "jquery-ui/themes/base/autocomplete";
+@import "jquery-ui/themes/base/datepicker";
+@import "jquery-ui/themes/base/sortable";
+@import "leaflet/dist/leaflet";
+@import "leaflet.markercluster/dist/MarkerCluster";
+@import "leaflet.markercluster/dist/MarkerCluster.Default";
 
 @import "foundation_and_overrides";
 @import "fonts";
@@ -46,6 +49,7 @@
 @import "admin/**/*";
 @import "budgets/**/*";
 @import "debates/**/*";
+@import "documents/**/*";
 @import "layout/**/*";
 @import "machine_learning/**/*";
 @import "moderation/**/*";

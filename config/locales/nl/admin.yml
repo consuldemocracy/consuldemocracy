@@ -72,43 +72,44 @@ nl:
       actions:
         ballots: "Stemhokjes aanmaken"
         confirm:
-          ballots: "Weet je het zeker? Deze actie is allen nodig als er tijdens de laatste stemronde fysieke stemhokjes gebruikt worden. Burgers kunnen nog steeds stemmen via internet met of zonder fysieke stemhokjes."
-          destroy: "Weet je het zeker? Hiermee worden het budget en alle bijbehorende groepen en rubrieken verwijderd. Deze handeling kan niet ongedaan gemaakt worden."
+          ballots: "Weet je het zeker? Dit is alleen relevant wanneer je fysieke (papieren) stemmen gaat inzamelen, in de stemfase. Inwoners kunnen altijd online hun stem uitbrengen, ook mét de aanwezigheid van een fysiek stemhokje."
+          destroy: "Weet je het zeker? Je verwijdert dan de begroting en alle bijbehorende groepen en rubrieken. Deze actie kan je niet ongedaan maken."
         descriptions:
-          calculate_winners: 'Na het berekenen van de resultaten kunnen alleen administratoren deze inzien. Ze worden openbaar als het project de "%{phase}" fase bereikt <strong>als de optie "Toon resultaten" is ingeschakeld</strong> wanneer het budget bewerkt wordt.'
-          destroy: "Hiermee worden het budget en alle bijbehorende groepen en rubrieken verwijderd. Deze actie kan niet ongedaan gemaakt worden."
-        edit: "Edit budget"
+          ballots: "Hiermee kan je fysieke stemmen beheren. Activeer deze optie alleen als je fysieke stemhokjes gebruikt om fysieke (papieren) te verzamelen in de stemfase."
+          calculate_winners: 'Nadat de uitslag is berekend kunnen alleen admins de uitslag zien. De uitslag is openbaar zodra de "%{phase}" fase actief is en <strong>de optie "Toon resultaten" is aangezet</strong> bij het bewerken van de begroting.'
+          destroy: "Je verwijdert de begroting en alle bijbehorende groepen en rubrieken. Deze actie kan je niet ongedaan maken."
+        edit: "Bewerk begroting"
         preview: "Preview"
-        preview_results: "Toon resultaten"
+        preview_results: "Preview resultaten"
       index:
         title: Burgerbegrotingen
-        new_link: Create new budget
+        new_link: Nieuwe begroting aanmaken
         filter: Filter
         filters:
-          all: All
-          open: Open
-          finished: Afgelopen
+          all: Alle
+          open: Actief
+          finished: Afgesloten
         budget_investments: Zie begrotingsvoorstellen
         table_budget_type: "Type"
         table_completed: Voltooid
         table_draft: "Concept"
         table_duration: "Duur"
-        table_name: Naam
+        table_name: Titel
         table_phase: Fase
         table_phase_progress: "(%{current_phase_number}/%{total_phases})"
         type_multiple: "Meerdere rubrieken"
         type_pending: "In afwachting: Nog geen rubrieken"
         type_single: "Enkele rubriek"
-        admin_ballots: Stembiljetten
+        admin_ballots: Papieren stemmen
         no_budgets: "Er zijn geen budgetten."
       create:
         notice: Nieuwe burgerbegroting aangemaakt!
       update:
-        notice: Participatief budgetvoorstel bewerkt
+        notice: Burgerbegroting is bewerkt!
       publish:
-        notice: "Participatief budget succesvol gepubliceerd"
+        notice: "Burgerbegroting succesvol gepubliceerd!"
       edit:
-        title: Bewerk Burgerbegroting
+        title: Bewerk begroting
         publish: "Budget publiceren"
         delete: Verwijder begroting
         phase: Fase
@@ -140,8 +141,8 @@ nl:
         title_single: Nieuw budget met één rubriek
       show:
         add_group: "Groep toevoegen"
-        add_heading: "Voeg kop toe"
-        groups_and_headings: "Rubriekgroepen"
+        add_heading: "Rubriek toevoegen"
+        groups_and_headings: "Instellingen voor groepen en rubrieken"
         headings_caption: "Rubrieken in %{group}"
       winners:
         calculate: Bereken gewonnen bestemmingen
@@ -295,18 +296,32 @@ nl:
         budget: Budget
         groups: Groepen
         headings: Rubrieken
-        phases: Fasen
+        phases: Fases
       budgets:
-        continue: "Doorgaan naar groepen"
+        continue: "Door naar groepen"
       groups:
-        back: "Ga terug naar budget bewerken"
-        continue: "Ga door naar rubrieken"
+        back: "Ga terug"
+        continue: "Door naar rubrieken"
       headings:
-        continue: "Ga door naar fasen"
+        continue: "Door naar fases"
         single:
-          back: "Ga terug naar groep bewerken"
+          back: "Ga terug"
+      heading_mode:
+        multiple:
+          description: "Hier creëer je een proces met meerdere groepen, wijken of thema's. Je hebt als het ware meerdere zakken geld. Bijvoorbeeld 25.000 voor \"Oosterwijk\", 30.000 voor het \"Centrum\", 28.000 voor de \"Westerwijk\" en de hele stad. Of voor verschillende thema's zoals sport, cultuur of gezondheid."
+          link: "Creeër meervoudig budget"
+          title: "<strong>Meervoudig</strong> budget"
+        single:
+          description: "Hier creëer je een proces met één groep, wijk of thema. Je hebt als het ware één zak geld. Bijvoorbeeld 25.000 euro voor de \"Oosterwijk\", of 10.000 voor cultuur."
+          link: "Creëer enkelvoudig budget"
+          title: "<strong>Enkelvoudig</strong> budget"
+        title: "Type burgerbegroting"
       phases:
-        continue: "Afronden"
+        continue: "Voltooien"
+        multiple:
+          back: "Ga terug"
+        single:
+          back: "Ga terug"
     milestones:
       index:
         table_id: "ID"
@@ -398,6 +413,16 @@ nl:
         back: Terug naar %{org}
         title: Beheer
         description: Welkom op de %{org} beheerpagina.
+        info: |-
+          <p>Dit is de plek waar jij, als administrator, het burgerparticipatieproces in jouw stad of regio implementeert en overziet.</p>
+
+          <p>Je bent nu één van de honderden overheden en gemeenten wereldwijd die het CONSUL DEMOCRACY platform gebruiken om burgerparticipatie in de praktijk te brengen. Gefeliciteerd!</p>
+
+          <p>De CONSUL DEMOCRACY Foundation staat midden in de wereldwijde gebruikersgemeenschap. We willen je vragen om contact op te nemen zodat we een idee krijgen wie de software gebruikt en hoe we kunnen helpen bij implementatie of gebruik. We kunnen niet wachten om je in de gemeenschap te verwelkomen.</p>
+
+          <p>Veel participatieplezier!</p>
+
+          <p>Groeten van het CONSUL DEMOCRACY Foundation team.</p>
       actions:
         index:
           active: 'Ja'
@@ -456,7 +481,6 @@ nl:
         title: "Documenten"
         format: "Type"
         size: "Formaat"
-        url: "URL"
       create:
         success_notice: "Bestand is geupload"
         unable_notice: "Ongeldig document"
@@ -819,7 +843,7 @@ nl:
         title: "Budget investering aangemaakt"
         description: "Verzonden wanneer een gebruiker een budget investering maakt."
       budget_investment_selected:
-        title: "Budget investering geselecteerd"
+        title: "Voorstel geselecteerd"
         description: "Verzonden aan de auteur wanneer een budget investering is geselecteerd."
       budget_investment_unfeasible:
         title: "Onhaalbare budget investering"
@@ -1482,8 +1506,24 @@ nl:
           destroy:
             notice: "Tegel verwijderd"
     tenants:
+      create:
+        notice: Tenant aangemaakt
+      form:
+        use_subdomain: "Gebruik een subdomein van het %{domain} domein voor deze tenant"
+        use_domain: "Gebruik een andere domeinnaam voor deze tenant"
+      hide:
+        notice: Tenant uitgeschakeld
       index:
+        create: Tenant aanmaken
+        enable: "Schakel tenant %{tenant} in"
         enabled: Ingeschakeld
+      new:
+        admin_information: "Bij het aanmaken van een tenant, wordt de huidige gebruiker <strong>\"%{username}\"</strong> met het e-mailadres <strong>\"%{email}\"</strong> en het wachtwoord gekopieerd naar de nieuwe tenant waar deze automatisch administrator wordt."
+        title: Nieuwe tenant
+      restore:
+        notice: Tenant ingeschakeld
+      update:
+        notice: Tenant bijgewerkt
     homepage:
       title: Homepage
       description: De actieve modules worden weergegeven op de homepage in dezelfde volgorde als hier.

@@ -30,6 +30,10 @@ module ApplicationHelper
     end
   end
 
+  def new_window_link_to(text, path, **options)
+    link_to text, path, { target: "_blank", title: t("shared.target_blank") }.merge(options)
+  end
+
   def image_path_for(filename)
     image = SiteCustomization::Image.image_for(filename)
 
@@ -48,7 +52,7 @@ module ApplicationHelper
 
   def self.asset_data_base64(path)
     asset = (Rails.application.assets || ::Sprockets::Railtie.build_environment(Rails.application))
-                                                             .find_asset(path)
+            .find_asset(path)
     throw "Could not find asset '#{path}'" if asset.nil?
     base64 = Base64.encode64(asset.to_s).gsub(/\s+/, "")
     "data:#{asset.content_type};base64,#{Rack::Utils.escape(base64)}"

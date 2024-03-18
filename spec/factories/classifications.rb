@@ -21,14 +21,14 @@ FactoryBot.define do
 
   factory :tagging do
     context { "tags" }
-    association :taggable, factory: :proposal
+    taggable factory: :proposal
     tag
   end
 
   factory :topic do
     sequence(:title) { |n| "Topic title #{n}" }
     sequence(:description) { |n| "Description as comment #{n}" }
-    association :author, factory: :user
+    author factory: :user
 
     trait :with_community do
       community { create(:proposal).community }
@@ -38,18 +38,18 @@ FactoryBot.define do
   end
 
   factory :related_content do
-    association :author, factory: :user
-    association :parent_relationable, factory: [:proposal, :debate].sample
-    association :child_relationable, factory: [:proposal, :debate].sample
+    author factory: :user
+    parent_relationable factory: [:proposal, :debate].sample
+    child_relationable factory: [:proposal, :debate].sample
 
     trait :proposals do
-      association :parent_relationable, factory: :proposal
-      association :child_relationable, factory: :proposal
+      parent_relationable factory: :proposal
+      child_relationable factory: :proposal
     end
 
     trait :budget_investments do
-      association :parent_relationable, factory: :budget_investment
-      association :child_relationable, factory: :budget_investment
+      parent_relationable factory: :budget_investment
+      child_relationable factory: :budget_investment
     end
 
     trait :from_machine_learning do
@@ -58,7 +58,7 @@ FactoryBot.define do
   end
 
   factory :related_content_score do
-    association :user
-    association :related_content
+    user
+    related_content
   end
 end

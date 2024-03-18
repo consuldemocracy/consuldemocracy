@@ -57,14 +57,34 @@ class Poll < ApplicationRecord
 
   def self.sort_for_list(user = nil)
     all.sort do |poll, another_poll|
-      [poll.weight(user), poll.starts_at, poll.name] <=> [another_poll.weight(user), another_poll.starts_at, another_poll.name]
+      compare_polls(poll, another_poll, user)
+    end
+  end
+
+  def self.compare_polls(poll, another_poll, user)
+    weight_comparison = poll.weight(user) <=> another_poll.weight(user)
+    return weight_comparison unless weight_comparison.zero?
+
+    time_comparison = compare_times(poll, another_poll)
+    return time_comparison unless time_comparison.zero?
+
+    poll.name <=> another_poll.name
+  end
+
+  def self.compare_times(poll, another_poll)
+    if poll.expired? && another_poll.expired?
+      another_poll.ends_at <=> poll.ends_at
+    else
+      poll.starts_at <=> another_poll.starts_at
     end
   end
 
   def self.overlaping_with(poll)
-    where("? < ends_at and ? >= starts_at", poll.starts_at.beginning_of_day,
-                                            poll.ends_at.end_of_day).where.not(id: poll.id)
-                                            .where(related: poll.related)
+    where("? < ends_at and ? >= starts_at",
+          poll.starts_at.beginning_of_day,
+          poll.ends_at.end_of_day)
+      .where.not(id: poll.id)
+      .where(related: poll.related)
   end
 
   def title
@@ -102,7 +122,7 @@ class Poll < ApplicationRecord
     return none if user.nil? || user.unverified?
 
     current.left_joins(:geozones)
-      .where("geozone_restricted = ? OR geozones.id = ?", false, user.geozone_id)
+           .where("geozone_restricted = ? OR geozones.id = ?", false, user.geozone_id)
   end
 
   def self.votable_by(user)
@@ -146,7 +166,7 @@ class Poll < ApplicationRecord
   end
 
   def date_range
-    unless starts_at.present? && ends_at.present? && starts_at <= ends_at
+    if starts_at.blank? || ends_at.blank? || starts_at > ends_at
       errors.add(:starts_at, I18n.t("errors.messages.invalid_date_range"))
     end
   end
@@ -179,14 +199,19 @@ class Poll < ApplicationRecord
     end
   end
 
+  def geozone_restricted_to=(geozones)
+    self.geozone_restricted = true
+    self.geozones = geozones
+  end
+
   def generate_slug?
     slug.nil?
   end
 
   def only_one_active
-    return unless starts_at.present?
-    return unless ends_at.present?
-    return unless Poll.overlaping_with(self).any?
+    return if starts_at.blank?
+    return if ends_at.blank?
+    return if Poll.overlaping_with(self).none?
 
     errors.add(:starts_at, I18n.t("activerecord.errors.messages.another_poll_active"))
   end
@@ -205,8 +230,8 @@ class Poll < ApplicationRecord
 
   def searchable_translations_definitions
     {
-      name        => "A",
-      summary     => "C",
+      name => "A",
+      summary => "C",
       description => "D"
     }
   end

@@ -55,7 +55,7 @@ describe "Registration form" do
 
     new_user = User.last
     expect(new_user.username).to eq("NewUserWithCode77")
-    expect(new_user.redeemable_code).to be_nil
+    expect(new_user.redeemable_code).to be nil
   end
 
   scenario "Create with invisible_captcha honeypot field", :no_js do

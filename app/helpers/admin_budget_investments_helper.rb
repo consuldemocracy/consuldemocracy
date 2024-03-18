@@ -1,8 +1,8 @@
 module AdminBudgetInvestmentsHelper
   def advanced_menu_visibility
     if params[:advanced_filters].empty? &&
-      params["min_total_supports"].blank? &&
-      params["max_total_supports"].blank?
+       params["min_total_supports"].blank? &&
+       params["max_total_supports"].blank?
       "hide"
     else
       ""
@@ -22,8 +22,8 @@ module AdminBudgetInvestmentsHelper
   end
 
   def valuator_select_options(budget)
-    budget.valuators.order("description ASC").order("users.email ASC").includes(:user).
-      map { |v| [v.description_or_email, "valuator_#{v.id}"] }
+    budget.valuators.order("description ASC").order("users.email ASC").includes(:user)
+          .map { |v| [v.description_or_email, "valuator_#{v.id}"] }
   end
 
   def valuator_group_select_options

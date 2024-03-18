@@ -82,7 +82,7 @@
       }
 
       &:focus {
-        outline: none;
+        @include no-outline;
       }
 
       &[aria-selected="true"],

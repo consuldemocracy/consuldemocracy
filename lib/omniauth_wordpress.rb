@@ -13,10 +13,10 @@ module OmniAuth
 
       info do
         {
-            name: raw_info["display_name"],
-            email: raw_info["user_email"],
-            nickname: raw_info["user_nicename"],
-            urls: { "Website" => raw_info["user_url"] }
+          name: raw_info["display_name"],
+          email: raw_info["user_email"],
+          nickname: raw_info["user_nicename"],
+          urls: { "Website" => raw_info["user_url"] }
         }
       end
 

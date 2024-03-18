@@ -105,7 +105,6 @@ ast:
       invalid_date_range: "El rango de fechas no es válido"
   form:
     accept_terms: Acepto la %{policy} y las %{conditions}
-    accept_terms_title: Acepto la Política de privacidad y las Condiciones de uso
     conditions: Condiciones de uso
     debate: Alderique
     direct_message: el mensaje privado
@@ -123,11 +122,6 @@ ast:
   geozones:
     none: Toda la ciudad
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Hemos detectado que estás navegando desde Internet Explorer. Para una mejor experiencia te recomendamos utilizar %{firefox} o %{chrome}.
-      ie_title: Esta web no está optimizada para tu navegador
     dashboard:
       proposal_header:
         published: Publicáu

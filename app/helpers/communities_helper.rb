@@ -8,7 +8,11 @@ module CommunitiesHelper
   end
 
   def community_description(community)
-    community.from_proposal? ? t("community.show.description.proposal") : t("community.show.description.investment")
+    if community.from_proposal?
+      t("community.show.description.proposal")
+    else
+      t("community.show.description.investment")
+    end
   end
 
   def author?(community, participant)
@@ -28,7 +32,11 @@ module CommunitiesHelper
   end
 
   def community_access_text(community)
-    community.from_proposal? ? t("community.sidebar.description.proposal") : t("community.sidebar.description.investment")
+    if community.from_proposal?
+      t("community.sidebar.description.proposal")
+    else
+      t("community.sidebar.description.investment")
+    end
   end
 
   def create_topic_link(community)

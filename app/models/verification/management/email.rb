@@ -53,10 +53,12 @@ class Verification::Management::Email
       return if errors.count > 0
 
       if document_number_mismatch?
-        errors.add(:email,
-                   I18n.t("management.email_verifications.document_mismatch",
-                           document_type: ApplicationController.helpers.humanize_document_type(user.document_type),
-                           document_number: user.document_number))
+        errors.add(
+          :email,
+          I18n.t("management.email_verifications.document_mismatch",
+                 document_type: ApplicationController.helpers.humanize_document_type(user.document_type),
+                 document_number: user.document_number)
+        )
       end
     end
 

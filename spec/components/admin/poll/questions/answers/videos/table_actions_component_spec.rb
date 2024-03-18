@@ -1,8 +1,6 @@
 require "rails_helper"
 
-describe Admin::Poll::Questions::Answers::Videos::TableActionsComponent, controller: Admin::BaseController do
-  before { sign_in(create(:administrator).user) }
-
+describe Admin::Poll::Questions::Answers::Videos::TableActionsComponent, :admin do
   it "displays the edit and destroy actions when the poll has not started" do
     video = create(:poll_answer_video, poll: create(:poll, :future))
 

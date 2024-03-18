@@ -128,7 +128,7 @@ describe "Poll Officing" do
       expect(page).to have_content("Here you can validate user documents and store voting results")
 
       visit new_officing_residence_path
-      expect(page).to have_selector("#residence_document_type")
+      expect(page).to have_css "#residence_document_type"
 
       select "DNI", from: "residence_document_type"
       fill_in "residence_document_number", with: "12345678Z"
@@ -137,7 +137,11 @@ describe "Poll Officing" do
       expect(page).to have_content "Document verified with Census"
       click_button "Confirm vote"
       expect(page).to have_content "Vote introduced!"
-      expect(Poll::Voter.where(document_number: "12345678Z", poll_id: poll, origin: "booth", officer_id: officer1).count).to be(1)
+      expect(Poll::Voter.where(document_number: "12345678Z",
+                               poll_id: poll,
+                               origin: "booth",
+                               officer_id: officer1)
+                        .count).to be(1)
 
       visit final_officing_polls_path
       expect(page).to have_content("Polls ready for final recounting")
@@ -147,7 +151,7 @@ describe "Poll Officing" do
       expect(page).to have_content("Here you can validate user documents and store voting results")
 
       visit new_officing_residence_path
-      expect(page).to have_selector("#residence_document_type")
+      expect(page).to have_css "#residence_document_type"
 
       select "DNI", from: "residence_document_type"
       fill_in "residence_document_number", with: "12345678Y"
@@ -156,7 +160,11 @@ describe "Poll Officing" do
       expect(page).to have_content "Document verified with Census"
       click_button "Confirm vote"
       expect(page).to have_content "Vote introduced!"
-      expect(Poll::Voter.where(document_number: "12345678Y", poll_id: poll, origin: "booth", officer_id: officer2).count).to be(1)
+      expect(Poll::Voter.where(document_number: "12345678Y",
+                               poll_id: poll,
+                               origin: "booth",
+                               officer_id: officer2)
+                        .count).to be(1)
 
       visit final_officing_polls_path
       expect(page).to have_content("Polls ready for final recounting")

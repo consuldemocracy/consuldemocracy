@@ -2,10 +2,10 @@ class Tenant < ApplicationRecord
   enum schema_type: %w[subdomain domain]
 
   validates :schema,
-    presence: true,
-    uniqueness: true,
-    exclusion: { in: ->(*) { excluded_subdomains }},
-    format: { with: URI::DEFAULT_PARSER.regexp[:HOST] }
+            presence: true,
+            uniqueness: true,
+            exclusion: { in: ->(*) { excluded_subdomains }},
+            format: { with: URI::DEFAULT_PARSER.regexp[:HOST] }
   validates :name, presence: true, uniqueness: true
 
   after_create :create_schema
@@ -19,7 +19,7 @@ class Tenant < ApplicationRecord
   end
 
   def self.resolve_host(host)
-    return nil unless Rails.application.config.multitenancy.present?
+    return nil if Rails.application.config.multitenancy.blank?
     return nil if host.blank? || host.match?(Resolv::AddressRegex)
 
     schema = schema_for(host)
@@ -139,9 +139,9 @@ class Tenant < ApplicationRecord
     Apartment::Tenant.switch(...)
   end
 
-  def self.run_on_each(&block)
+  def self.run_on_each(&)
     ["public"].union(Apartment.tenant_names).each do |schema|
-      switch(schema, &block)
+      switch(schema, &)
     end
   end
 
@@ -172,7 +172,19 @@ class Tenant < ApplicationRecord
         ActiveRecord::Base.connection.execute(
           "ALTER SCHEMA \"#{schema_before_last_save}\" RENAME TO \"#{schema}\";"
         )
+
+        rename_storage
       end
+    end
+
+    def rename_storage
+      return unless ActiveStorage::Blob.service.is_a?(ActiveStorage::Service::TenantDiskService)
+
+      old_storage = File.join(ActiveStorage::Blob.service.root, "tenants", schema_before_last_save)
+      return unless File.directory?(old_storage)
+
+      new_storage = File.join(ActiveStorage::Blob.service.root, "tenants", schema)
+      File.rename(old_storage, new_storage)
     end
 
     def destroy_schema

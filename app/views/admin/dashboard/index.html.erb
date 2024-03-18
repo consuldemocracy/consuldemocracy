@@ -1,3 +1,1 @@
-<h2 class="title inline-block"><%= t("admin.dashboard.index.title") %></h2>
-
-<p><%= t("admin.dashboard.index.description", org: setting["org_name"]) %></p>
+<%= render Admin::Dashboard::IndexComponent.new %>

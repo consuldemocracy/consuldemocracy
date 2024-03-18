@@ -1,8 +1,11 @@
 <%= render "shared/globalize_locales", resource: @draft_version %>
 
 <%= translatable_form_for [:admin, @process, @draft_version], url: url,
-  html: { data: { markdown_changes_message: I18n.t("admin.legislation.draft_versions.edit.markdown_changes_message") }} do |f| %>
-
+                                                              html: {
+                                                                data: {
+                                                                  markdown_changes_message: I18n.t("admin.legislation.draft_versions.edit.markdown_changes_message")
+                                                                }
+                                                              } do |f| %>
   <%= render "shared/errors", resource: @draft_version %>
 
   <div class="row">
@@ -32,8 +35,8 @@
         <div class="small-12 medium-8 column fullscreen-container">
           <div class="markdown-editor-header truncate">
             <%= sanitize(t("admin.legislation.draft_versions.form.title",
-                   draft_version_title: @draft_version.title,
-                   process_title: @process.title)) %>
+                           draft_version_title: @draft_version.title,
+                           process_title: @process.title)) %>
           </div>
 
           <div class="markdown-editor-buttons">
@@ -50,8 +53,9 @@
         </div>
 
         <div class="small-12 medium-6 column markdown-area">
-          <%= translations_form.text_area :body, label: false, rows: 10,
-                                          class: "legislation-draft-version-body" %>
+          <%= translations_form.text_area :body, label: false,
+                                                 rows: 10,
+                                                 class: "legislation-draft-version-body" %>
         </div>
 
         <div class="small-12 medium-6 column markdown-preview">

@@ -28,21 +28,21 @@ class MarkdownConverter
 
     def default_render_options
       {
-        filter_html:     false,
-        hard_wrap:       true,
-        link_attributes: { target: "_blank" }
+        filter_html: false,
+        hard_wrap: true,
+        link_attributes: {}
       }
     end
 
     def extensions
       {
-        autolink:           true,
+        autolink: true,
         fenced_code_blocks: true,
-        lax_spacing:        true,
-        no_intra_emphasis:  true,
-        strikethrough:      true,
-        superscript:        true,
-        tables:             true
+        lax_spacing: true,
+        no_intra_emphasis: true,
+        strikethrough: true,
+        superscript: true,
+        tables: true
       }
     end
 end

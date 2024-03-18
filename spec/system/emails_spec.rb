@@ -386,8 +386,9 @@ describe "Emails" do
       expect(page).to have_content "Dossier updated"
 
       email = open_last_email
-      expect(email).to have_subject("Your investment project '#{investment.code}' has been marked as unfeasible")
-      expect(email).to deliver_to(investment.author.email)
+      expect(email).to have_subject "Your investment project '#{investment.code}' " \
+                                    "has been marked as unfeasible"
+      expect(email).to deliver_to investment.author.email
       expect(email).to have_body_text "This is not legal as stated in Article 34.9"
     end
 
@@ -496,7 +497,8 @@ describe "Emails" do
       expect(email.body.encoded).to include("This is a different body")
       expect(email).to have_body_text("To unsubscribe from these emails, visit")
       expect(email).to have_body_text(
-                        edit_subscriptions_path(token: user_with_newsletter_in_segment_2.subscriptions_token))
+                        edit_subscriptions_path(token: user_with_newsletter_in_segment_2.subscriptions_token)
+                      )
       expect(email).to have_body_text('and uncheck "Receive relevant information by email"')
     end
   end

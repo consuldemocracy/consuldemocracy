@@ -5,7 +5,7 @@ it:
         title: "Stiamo chiudendo il Budget Partecipativo!"
         body: "Sbrigati e crea una proposta prima che termini nei prossimi giorni!"
       help:
-        title: "Aiutaci a traudurre Consul"
+        title: "Aiutaci a traudurre Consul Democracy"
         body: "Se sei competente in una lingua, sei pregato di aiutarci a tradurre Consul!"
       map:
         title: "Puoi ora geolocalizzare proposte e investimenti"
@@ -39,7 +39,7 @@ it:
         link_text: "Di più sui dibattiti"
         label: "Dibattiti"
       header:
-        title: "CONSUL"
+        title: "CONSUL DEMOCRACY"
         description: "Software gratuito per la partecipazione dei cittadini."
         link_text: "Ulteriori informazioni"
         label: "Benvenuto su"

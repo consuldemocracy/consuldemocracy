@@ -33,7 +33,8 @@ class SDG::FilterLinksComponent < ApplicationComponent
 
     def index_by(advanced_search)
       if related_model.name == "Legislation::Proposal"
-        legislation_process_proposals_path(params[:id], advanced_search: advanced_search, filter: params[:filter])
+        legislation_process_proposals_path(params[:id], advanced_search: advanced_search,
+                                                        filter: params[:filter])
       else
         polymorphic_path(related_model, advanced_search: advanced_search)
       end

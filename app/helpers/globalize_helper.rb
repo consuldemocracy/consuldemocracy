@@ -35,7 +35,7 @@ module GlobalizeHelper
 
   def first_i18n_content_translation_locale
     if I18nContentTranslation.existing_languages.count == 0 ||
-        I18nContentTranslation.existing_languages.include?(I18n.locale)
+       I18nContentTranslation.existing_languages.include?(I18n.locale)
       I18n.locale
     else
       I18nContentTranslation.existing_languages.first
@@ -130,7 +130,7 @@ module GlobalizeHelper
     hidden_field_tag("enabled_translations[#{locale}]", (enabled ? 1 : 0))
   end
 
-  def globalize(locale, &block)
-    Globalize.with_locale(locale, &block)
+  def globalize(locale, &)
+    Globalize.with_locale(locale, &)
   end
 end

@@ -8,10 +8,10 @@ describe Admin::Poll::Questions::Answers::VideosController, :admin do
     it "is not possible for an already started poll" do
       post :create, params: {
         poll_question_answer_video: {
-         title: "Video from started poll",
-         url: "https://www.youtube.com/watch?v=-JMf43st-1A"
-       },
-       answer_id: current_answer
+          title: "Video from started poll",
+          url: "https://www.youtube.com/watch?v=-JMf43st-1A"
+        },
+        answer_id: current_answer
       }
 
       expect(flash[:alert]).to eq "You do not have permission to carry out the action 'create' on Video."
@@ -21,8 +21,8 @@ describe Admin::Poll::Questions::Answers::VideosController, :admin do
     it "is possible for a not started poll" do
       post :create, params: {
         poll_question_answer_video: {
-         title: "Video from not started poll",
-         url: "https://www.youtube.com/watch?v=-JMf43st-1A"
+          title: "Video from not started poll",
+          url: "https://www.youtube.com/watch?v=-JMf43st-1A"
         },
         answer_id: future_answer
       }

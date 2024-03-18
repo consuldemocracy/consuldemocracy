@@ -1,0 +1,23 @@
+<% if feature?(:remote_census) %>
+  <h2><%= t("admin.settings.index.remote_census.title") %></h2>
+
+  <%= render Admin::Settings::TableComponent.new(setting_name: "remote_census_general_name") do %>
+    <% general_settings.each do |key| %>
+      <%= render Admin::Settings::RowComponent.new(key, tab: tab) %>
+    <% end %>
+  <% end %>
+  <%= render Admin::Settings::TableComponent.new(setting_name: "remote_census_request_name") do %>
+    <% request_settings.each do |key| %>
+      <%= render Admin::Settings::RowComponent.new(key, tab: tab) %>
+    <% end %>
+  <% end %>
+  <%= render Admin::Settings::TableComponent.new(setting_name: "remote_census_response_name") do %>
+    <% response_settings.each do |key| %>
+      <%= render Admin::Settings::RowComponent.new(key, tab: tab) %>
+    <% end %>
+  <% end %>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.settings.index.remote_census.how_to_enable") %>
+  </div>
+<% end %>

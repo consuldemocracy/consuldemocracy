@@ -25,9 +25,9 @@ describe "Proposal's dashboard" do
 
   scenario "Dashboard progress shows current goal" do
     goal = create(:dashboard_action, :resource, :active,
-                                     required_supports: proposal.votes_for.size + 1_000)
+                  required_supports: proposal.votes_for.size + 1_000)
     future_goal = create(:dashboard_action, :resource, :active,
-                                            required_supports: proposal.votes_for.size + 2_000)
+                         required_supports: proposal.votes_for.size + 2_000)
 
     visit progress_proposal_dashboard_path(proposal)
 
@@ -58,16 +58,16 @@ describe "Proposal's dashboard" do
   scenario "Dashboard progress show proposed actions truncated description" do
     action = create(:dashboard_action, :proposed_action, :active, description: "One short action")
     action_long = create(:dashboard_action, :proposed_action, :active,
-                          description: "This is a really very long description for a proposed "\
-                                       "action on progress dashboard section, so this description "\
-                                       "should be appear truncated and shows the show description "\
-                                       "link to show the complete description to the users.")
+                         description: "This is a really very long description for a proposed " \
+                                      "action on progress dashboard section, so this description " \
+                                      "should be appear truncated and shows the show description " \
+                                      "link to show the complete description to the users.")
 
     visit progress_proposal_dashboard_path(proposal)
 
     expect(page).to have_content(action.description)
     expect(page).to have_content("This is a really very long description for a proposed")
-    expect(page).to have_selector("#truncated_description_dashboard_action_#{action_long.id}")
+    expect(page).to have_css "#truncated_description_dashboard_action_#{action_long.id}"
     expect(page).to have_button("Show description")
   end
 
@@ -127,7 +127,7 @@ describe "Proposal's dashboard" do
     expect(page).to have_content(action.title)
 
     find(:css, "#dashboard_action_#{action.id}_execute").click
-    expect(page).not_to have_selector(:css, "#dashboard_action_#{action.id}_execute")
+    expect(page).not_to have_css "#dashboard_action_#{action.id}_execute"
   end
 
   scenario "Dashboard progress can unexecute proposed action" do
@@ -138,7 +138,7 @@ describe "Proposal's dashboard" do
     expect(page).to have_content(action.title)
 
     find(:css, "#dashboard_action_#{action.id}_unexecute").click
-    expect(page).to have_selector(:css, "#dashboard_action_#{action.id}_execute")
+    expect(page).to have_css "#dashboard_action_#{action.id}_execute"
   end
 
   scenario "Dashboard progress dont show proposed actions with published_proposal: true" do
@@ -154,16 +154,18 @@ describe "Proposal's dashboard" do
 
     requested = create(:dashboard_action, :resource, :admin_request, :active)
     executed_action = create(:dashboard_executed_action, action: requested,
-                              proposal: proposal, executed_at: Time.current)
+                                                         proposal: proposal,
+                                                         executed_at: Time.current)
     _task = create(:dashboard_administrator_task, :pending, source: executed_action)
 
     solved = create(:dashboard_action, :resource, :admin_request, :active)
     executed_solved_action = create(:dashboard_executed_action, action: solved,
-                                     proposal: proposal, executed_at: Time.current)
+                                                                proposal: proposal,
+                                                                executed_at: Time.current)
     _solved_task = create(:dashboard_administrator_task, :done, source: executed_solved_action)
 
     unavailable = create(:dashboard_action, :resource, :active,
-                          required_supports: proposal.votes_for.size + 1_000)
+                         required_supports: proposal.votes_for.size + 1_000)
 
     visit progress_proposal_dashboard_path(proposal)
     within "div#available-resources-section" do
@@ -199,16 +201,18 @@ describe "Proposal's dashboard" do
 
     requested = create(:dashboard_action, :resource, :admin_request, :active)
     executed_action = create(:dashboard_executed_action, action: requested,
-                              proposal: proposal, executed_at: Time.current)
+                                                         proposal: proposal,
+                                                         executed_at: Time.current)
     _task = create(:dashboard_administrator_task, :pending, source: executed_action)
 
     solved = create(:dashboard_action, :resource, :admin_request, :active)
     executed_solved_action = create(:dashboard_executed_action, action: solved,
-                                     proposal: proposal, executed_at: Time.current)
+                                                                proposal: proposal,
+                                                                executed_at: Time.current)
     _solved_task = create(:dashboard_administrator_task, :done, source: executed_solved_action)
 
     unavailable = create(:dashboard_action, :resource, :active,
-                          required_supports: proposal.votes_for.size + 1_000)
+                         required_supports: proposal.votes_for.size + 1_000)
 
     visit progress_proposal_dashboard_path(proposal)
     within "div#available-resources-section" do
@@ -241,8 +245,8 @@ describe "Proposal's dashboard" do
   scenario "Dashboard progress dont show resources with published_proposal: true" do
     available = create(:dashboard_action, :resource, :active, published_proposal: true)
     unavailable = create(:dashboard_action, :resource, :active,
-                          required_supports: proposal.votes_for.size + 1_000,
-                          published_proposal: true)
+                         required_supports: proposal.votes_for.size + 1_000,
+                         published_proposal: true)
 
     visit progress_proposal_dashboard_path(proposal)
 
@@ -269,7 +273,7 @@ describe "Proposal's dashboard" do
     click_link(feature.title)
 
     click_button "Request"
-    expect(page).to have_content("The request has been successfully sent. We will contact you "\
+    expect(page).to have_content("The request has been successfully sent. We will contact you " \
                                  "as soon as possible to inform you about it.")
   end
 
@@ -294,7 +298,7 @@ describe "Proposal's dashboard" do
     end
     click_button "Request"
 
-    expect(page).to have_content("The request has been successfully sent. We will contact you "\
+    expect(page).to have_content("The request has been successfully sent. We will contact you " \
                                  "as soon as possible to inform you about it.")
   end
 
@@ -309,7 +313,7 @@ describe "Proposal's dashboard" do
 
   scenario "Resource admin request button do not appear on archived proposals" do
     feature = create(:dashboard_action, :resource, :active)
-    archived = Setting["months_to_archive_proposals"].to_i.months.ago
+    archived = Setting.archived_proposals_date_limit
     archived_proposal = create(:proposal, created_at: archived)
 
     login_as(archived_proposal.author)
@@ -342,7 +346,7 @@ describe "Proposal's dashboard" do
     visit recommended_actions_proposal_dashboard_path(proposal.to_param)
 
     expect(page).to have_link("Recommended actions")
-    expect(page).to have_selector("h2", text: "Recommended actions")
+    expect(page).to have_css "h2", text: "Recommended actions"
     expect(page).to have_content("Pending")
     expect(page).to have_content("Done")
   end
@@ -377,7 +381,7 @@ describe "Proposal's dashboard" do
     visit messages_proposal_dashboard_path(proposal)
 
     expect(page).to have_link("See previous notifications", href: proposal_path(proposal,
-                                                            anchor: "tab-notifications"))
+                                                                                anchor: "tab-notifications"))
   end
 
   scenario "Dashboard has a related content section" do
@@ -400,9 +404,9 @@ describe "Proposal's dashboard" do
 
     within(".dashboard-related-content") do
       expect(page).to have_content("Related content (2)")
-      expect(page).to have_selector(".related-content-title", text: "PROPOSAL")
+      expect(page).to have_css ".related-content-title", text: "PROPOSAL"
       expect(page).to have_link related_proposal.title
-      expect(page).to have_selector(".related-content-title", text: "DEBATE")
+      expect(page).to have_css ".related-content-title", text: "DEBATE"
       expect(page).to have_link related_debate.title
     end
   end
@@ -511,7 +515,7 @@ describe "Proposal's dashboard" do
 
     scenario "Display tag 'new' on proposed_action when it is new for author since last login" do
       proposed_action = create(:dashboard_action, :proposed_action, :active, day_offset: 0,
-                                                                     published_proposal: false)
+                                                                             published_proposal: false)
 
       visit progress_proposal_dashboard_path(proposal)
 
@@ -522,7 +526,7 @@ describe "Proposal's dashboard" do
 
     scenario "Not display tag 'new' on proposed_action when there is not new since last login" do
       proposed_action = create(:dashboard_action, :proposed_action, :active, day_offset: 0,
-                                                                     published_proposal: false)
+                                                                             published_proposal: false)
       proposal.author.update!(current_sign_in_at: Date.current)
 
       visit progress_proposal_dashboard_path(proposal)

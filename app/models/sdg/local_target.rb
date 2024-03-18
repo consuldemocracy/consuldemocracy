@@ -9,7 +9,7 @@ class SDG::LocalTarget < ApplicationRecord
   validates_translation :description, presence: true
 
   validates :code, presence: true, uniqueness: true,
-    format: ->(local_target) { /\A#{local_target.target&.code}\.\d+/ }
+                   format: ->(local_target) { /\A#{local_target.target&.code}\.\d+/ }
   validates :target, presence: true
   validates :goal, presence: true
 

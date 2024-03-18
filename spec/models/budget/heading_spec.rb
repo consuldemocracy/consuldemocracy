@@ -223,7 +223,7 @@ describe Budget::Heading do
 
     it "Allows longitude inside [-180,180] interval" do
       heading = create(:budget_heading, group: group,
-                       name: "Longitude is inside [-180,180] interval")
+                                        name: "Longitude is inside [-180,180] interval")
 
       heading.longitude = "180"
       expect(heading).to be_valid
@@ -270,8 +270,8 @@ describe Budget::Heading do
 
       create(:budget_investment, heading: heading1)
 
-      expect(heading1.can_be_deleted?).to eq false
-      expect(heading2.can_be_deleted?).to eq true
+      expect(heading1.can_be_deleted?).to be false
+      expect(heading2.can_be_deleted?).to be true
     end
   end
 

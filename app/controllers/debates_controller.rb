@@ -28,10 +28,6 @@ class DebatesController < ApplicationController
     redirect_to debate_path(@debate), status: :moved_permanently if request.path != debate_path(@debate)
   end
 
-  def vote
-    @debate.register_vote(current_user, params[:value])
-  end
-
   def unmark_featured
     @debate.update!(featured_at: nil)
     redirect_to debates_path

@@ -59,9 +59,9 @@ val:
         text: |-
           Utilíza-ho en el teu municipi lliurement o ajuda'ns a millorar-lo, es software lliure.
 
-          Aquest Portal de Govern Obert usa la [aplicació CONSUL] (https://github.com/consuldemocracy/consuldemocracy 'github consul democracy') que és software lliure, amb [llicencia AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), açò significa en paraules senzilles, que quansevol pot lliurement gastar el codi, copiar-lo, vorel en detall, modificar-lo, i redistribuirlo al mon amb les modificacions que vullga (mantenint el que altres puguen a la vegada fer el mateix). Perque creiem que la cultura es millor i més rica quant es libera.
+          Aquest Portal de Govern Obert usa la [aplicació CONSUL DEMOCRACY] (https://github.com/consuldemocracy/consuldemocracy 'github consul democracy') que és software lliure, amb [llicencia AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), açò significa en paraules senzilles, que quansevol pot lliurement gastar el codi, copiar-lo, vorel en detall, modificar-lo, i redistribuirlo al mon amb les modificacions que vullga (mantenint el que altres puguen a la vegada fer el mateix). Perque creiem que la cultura es millor i més rica quant es libera.
 
-          Si eres programador, pots vore el codi i ajudar-nos a millorar-lo en [aplicació CONSUL](https://github.com/consuldemocracy/consuldemocracy 'github consul democraccy').
+          Si eres programador, pots vore el codi i ajudar-nos a millorar-lo en [aplicació CONSUL DEMOCRACY](https://github.com/consuldemocracy/consuldemocracy 'github consul democracy').
       titles:
         how_to_use: Utilítzal en el teu municipi
     privacy:

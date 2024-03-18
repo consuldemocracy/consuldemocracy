@@ -143,7 +143,6 @@ ne:
         poll_ended: "मतदान सकिएको खण्डमा परिवर्तन गर्न सकिँदैन"
   form:
     accept_terms: म %{policy} र %{conditions} मा सहमत छु
-    accept_terms_title: म गोपनीयता नीति र प्रयोगका नियम र सर्तहरूमा सहमत छु
     conditions: प्रयोगका सर्तहरू र सर्तहरू
     debate: बहस
     direct_message: निजी सन्देश
@@ -177,11 +176,6 @@ ne:
   geozones:
     none: सबै सहर
   layouts:
-    application:
-      chrome: गुगल क्रोम
-      firefox: फायरफक्स
-      ie: हामीले पत्ता लगाएका छौं कि तपाइँ इन्टरनेट एक्सप्लोरर मार्फत ब्राउज गर्दै हुनुहुन्छ। परिष्कृत अनुभवको लागि, हामी %{firefox} वा %{chrome} प्रयोग गर्न सिफारिस गर्छौं
-      ie_title: यो वेबसाइट तपाइँको ब्राउजर को लागी अनुकूलित छैन
     dashboard:
       proposal_header:
         published: प्रकाशित

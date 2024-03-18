@@ -39,9 +39,9 @@
 
     <div class="small-12 column">
       <%= translations_form.text_area :description,
-                                       maxlength: Budget::Phase::DESCRIPTION_MAX_LENGTH,
-                                       class: "html-area",
-                                       hint: t("admin.budget_phases.edit.description_help_text") %>
+                                      maxlength: Budget::Phase::DESCRIPTION_MAX_LENGTH,
+                                      class: "html-area",
+                                      hint: t("admin.budget_phases.edit.description_help_text") %>
     </div>
 
     <div class="small-12 column">
@@ -56,8 +56,8 @@
   <% end %>
 
   <% if feature?(:allow_images) %>
-    <div class="images small-12 column">
-      <%= render "images/nested_image", f: f %>
+    <div class="small-12 column">
+      <%= render Images::NestedComponent.new(f) %>
       <p class="help-text"><%= t("admin.budget_phases.edit.image_description") %></p>
     </div>
   <% end %>

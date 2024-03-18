@@ -402,7 +402,6 @@ bs:
         title: "Dokumenti"
         format: "Format"
         size: "Veličina"
-        url: "URL"
       create:
         success_notice: "Dokument uspješno učitan"
         unable_notice: "Neispravan dokument"

@@ -64,9 +64,9 @@ sv:
         text: |-
           Använd plattformen i din stad eller hjälp oss att förbättra den, den är fri programvara.
 
-          Den här plattformen för Open Government använder [CONSUL](https://github.com/consuldemocracy/consuldemocracy 'CONSUL Democracy på GitHub'), som är fri programvara licensierad under [AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), vilket kortfattat betyder att vem som helst kan använda, kopiera, granska eller ändra i koden och dela den vidare under samma licens. Vi tycker att bra tjänster ska vara tillgängliga för fler.
+          Den här plattformen för Open Government använder [CONSUL DEMOCRACY-appen](https://github.com/consuldemocracy/consuldemocracy 'consul democracy github'), som är fri programvara licensierad under [AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), vilket kortfattat betyder att vem som helst kan använda, kopiera, granska eller ändra i koden och dela den vidare under samma licens. Vi tycker att bra tjänster ska vara tillgängliga för fler.
 
-          Om du är programmerare får du gärna hjälpa oss att förbättra koden på [CONSUL](https://github.com/consul/consul 'CONSUL på GitHub'), eller den svenska implementeringen på [Digidem Lab/CONSUL](https://github.com/digidemlab/consul 'CONSUL Democracy Sweden på GitHub').
+          Om du är programmerare får du gärna hjälpa oss att förbättra koden på [CONSUL DEMOCRACY-appen](https://github.com/consuldemocracy/consuldemocracy 'consul democracy github').
       titles:
         how_to_use: Använd det i din kommun
     privacy:
@@ -91,22 +91,22 @@ sv:
           key_header: Tangent
           page_header: Sida
           rows:
-            - 
+            -
               key_column: 0
               page_column: Hem
-            - 
+            -
               key_column: 1
               page_column: Debatter
-            - 
+            -
               key_column: 2
               page_column: Förslag
-            - 
+            -
               key_column: 3
               page_column: Röster
-            - 
+            -
               key_column: 4
               page_column: Medborgarbudgetar
-            - 
+            -
               key_column: 5
               page_column: Lagstiftningsprocesser
         browser_table:
@@ -115,19 +115,19 @@ sv:
           browser_header: Webbläsare
           key_header: Tangentkombination
           rows:
-            - 
+            -
               browser_column: IE
               key_column: ALT + genväg, sedan ENTER
-            - 
+            -
               browser_column: Firefox
               key_column: ALT + CAPS + genväg
-            - 
+            -
               browser_column: Chrome
               key_column: ALT + genväg (CTRL + ALT + genvägar för MAC)
-            - 
+            -
               browser_column: Safari
               key_column: ALT + genväg (CMD + genvägar för MAC)
-            - 
+            -
               browser_column: Opera
               key_column: CAPS + ESC + genväg
       textsize:
@@ -137,28 +137,28 @@ sv:
           browser_header: Webbläsare
           action_header: Åtgärd att vidta
           rows:
-            - 
+            -
               browser_column: IE
               action_column: Visa > Textstorlek
-            - 
+            -
               browser_column: Firefox
               action_column: Visa > Storlek
-            - 
+            -
               browser_column: Chrome
               action_column: Inställningar (ikon) > Alternativ > Avancerat > Webbinnehåll > Textstorlek
-            - 
+            -
               browser_column: Safari
               action_column: Visa > Zooma in/Zooma ut
-            - 
+            -
               browser_column: Opera
               action_column: Visa > skala
         browser_shortcuts_table:
           description: "Ett annat sätt att justera textstorlek är att använda tangentbordets genvägar som definieras i webbläsare, särskilt tangentkombinationen:"
           rows:
-            - 
+            -
               shortcut_column: CTRL och + (CMD och + på MAC)
               description_column: Ökar textstorlek
-            - 
+            -
               shortcut_column: CTRL och - (CMD och - på MAC)
               description_column: Minskar textstorlek
       compatibility:

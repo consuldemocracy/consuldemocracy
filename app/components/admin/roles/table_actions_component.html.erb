@@ -1,5 +1,6 @@
 <% if already_has_role? %>
-  <%= render Admin::TableActionsComponent.new(record,
+  <%= render Admin::TableActionsComponent.new(
+    record,
     actions: actions,
     destroy_options: { class: "destroy-role-link" }
   ) %>

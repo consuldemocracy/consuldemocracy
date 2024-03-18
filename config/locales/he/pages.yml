@@ -57,7 +57,7 @@ he:
         how_to_use: "שימוש %{org_name} בעירך"
       how_to_use:
         text: |-
-          להשתמש בו בממשל המקומי או לעזור לנו לשפר את זה, היא תוכנה חופשית. פורטל ממשלתי פתוח זה משתמש באפליקציה [CONSUL] (https://github.com/consuldemocracy/consuldemocracy 'github'), שהיא תוכנה חופשית, עם [רישיון AGPLv3] (http://www.gnu.org/licenses/ agpl-3.0.html 'AGPLv3 gnu'), זה אומר במילים פשוטות שכל אחד יכול להשתמש בקוד באופן חופשי, להעתיק אותו, לראות אותו בפירוט, לשנות אותו ולהפיץ אותו מחדש לעולם עם השינויים שהם רוצים (המאפשר לאחרים לעשות אותו הדבר). כי אנחנו חושבים שהתרבות טובה ועשירה יותר כשהיא משוחררת. אם אתה מתכנת, תוכל לראות את הקוד ולעזור לנו לשפר אותו ב- [CONSUL app] (https://github.com/consuldemocracy/consuldemocracy 'consul democracy github').
+          להשתמש בו בממשל המקומי או לעזור לנו לשפר את זה, היא תוכנה חופשית. פורטל ממשלתי פתוח זה משתמש באפליקציה [CONSUL DEMOCRACY] (https://github.com/consuldemocracy/consuldemocracy 'github'), שהיא תוכנה חופשית, עם [רישיון AGPLv3] (http://www.gnu.org/licenses/ agpl-3.0.html 'AGPLv3 gnu'), זה אומר במילים פשוטות שכל אחד יכול להשתמש בקוד באופן חופשי, להעתיק אותו, לראות אותו בפירוט, לשנות אותו ולהפיץ אותו מחדש לעולם עם השינויים שהם רוצים (המאפשר לאחרים לעשות אותו הדבר). כי אנחנו חושבים שהתרבות טובה ועשירה יותר כשהיא משוחררת. אם אתה מתכנת, תוכל לראות את הקוד ולעזור לנו לשפר אותו ב- [CONSUL DEMOCRACY app] (https://github.com/consuldemocracy/consuldemocracy 'consul democracy github').
       titles:
         how_to_use: ניתן להשתמש בה בממשל המקומי שלך
     privacy:

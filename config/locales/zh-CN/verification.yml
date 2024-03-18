@@ -42,7 +42,6 @@ zh-CN:
           success: 居住地已核实
       new:
         accept_terms_text: 我接受人口普查的%{terms_url}
-        accept_terms_text_title: 我接受访问人口普查的条款和条件
         document_number: 文档编号
         document_number_help_title: 帮助
         document_number_help_text: "<strong>DNI</strong>: 12345678A<br> <strong>护照</strong>: AAA000001<br> <strong>居留证</strong>: X1234567P"

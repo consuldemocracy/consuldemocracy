@@ -1,0 +1,80 @@
+@mixin focus-outline {
+  $total-width: $focus-inner-width + $focus-middle-width + $focus-outer-width;
+
+  box-shadow: 0 0 0 $total-width $focus-outer;
+  outline: $focus-middle-width solid $focus-middle;
+  outline-offset: $focus-inner-width;
+}
+
+@mixin no-outline {
+  box-shadow: none;
+  outline: none;
+}
+
+@mixin focus-outline-on-img {
+  &:focus {
+    @include no-outline;
+
+    img {
+      @include focus-outline;
+    }
+  }
+
+  &:focus-visible {
+    @include no-outline;
+
+    img {
+      @include focus-outline;
+    }
+  }
+
+  &:focus:not(:focus-visible) {
+    img {
+      @include no-outline;
+    }
+  }
+
+  &:active {
+    @include no-outline;
+
+    img {
+      @include focus-outline;
+    }
+  }
+
+  &:focus:active {
+    @include no-outline;
+
+    img {
+      @include focus-outline;
+    }
+  }
+}
+
+@mixin card {
+  position: relative;
+
+  &:focus-within {
+    @include focus-outline;
+
+    a:focus {
+      @include no-outline;
+    }
+  }
+
+  a {
+    &::after,
+    &::before {
+      bottom: 0;
+      content: "";
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

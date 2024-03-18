@@ -98,8 +98,6 @@ mk:
     topic: Тема
     image: Слика
   layouts:
-    application:
-      firefox: Firefox
     dashboard:
       proposal_header:
         published: Објавено

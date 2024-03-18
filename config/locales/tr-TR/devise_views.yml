@@ -103,7 +103,6 @@ tr:
           submit: Hesap aç
           terms: Hesap açarak %{terms} metnini kabul etmiş olursunuz
           terms_link: kullanım hüküm ve koşulları
-          terms_title: Hesap açarak kullanım hüküm ve koşullarını kabul etmiş olursunuz
           title: Hesap aç
           username_is_available: Kullanıcı adı kullanılabilir
           username_is_not_available: Kullanıcı adı zaten kullanılıyor

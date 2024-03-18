@@ -42,8 +42,13 @@ describe "Topics" do
       expect(page).to have_content "Title"
       expect(page).to have_content "Initial text"
       expect(page).to have_content "Recommendations to create a topic"
-      expect(page).to have_content "Do not write the topic title or whole sentences in capital letters. On the internet that is considered shouting. And no one likes to be yelled at."
-      expect(page).to have_content "Any topic or comment that implies an illegal action will be eliminated, also those that intend to sabotage the spaces of the subject, everything else is allowed."
+      expect(page).to have_content "Do not write the topic title or whole sentences in " \
+                                   "capital letters. On the internet that is considered " \
+                                   "shouting. And no one likes to be yelled at."
+      expect(page).to have_content "Any topic or comment that implies an illegal action " \
+                                   "will be eliminated, also those that intend to " \
+                                   "sabotage the spaces of the subject, everything else " \
+                                   "is allowed."
       expect(page).to have_content "Enjoy this space, the voices that fill it, it's yours too."
       expect(page).to have_button("Create topic")
     end

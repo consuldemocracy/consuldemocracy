@@ -36,8 +36,8 @@ class Poll::BallotSheet < ApplicationRecord
 
     def create_ballot(poll_ballot)
       Budget::Ballot.where(physical: true,
-                         user: nil,
-                         poll_ballot: poll_ballot,
-                         budget: poll.budget).first_or_create!
+                           user: nil,
+                           poll_ballot: poll_ballot,
+                           budget: poll.budget).first_or_create!
     end
 end

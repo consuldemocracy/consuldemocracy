@@ -128,7 +128,6 @@ zh-CN:
       invalid_date_range: "无效日期范围"
   form:
     accept_terms: 我同意%{policy} 和%{conditions}。
-    accept_terms_title: 我同意隐私政策和使用条款及条件
     conditions: 使用条款及条件
     debate: 辩论
     direct_message: 私人信息
@@ -151,11 +150,6 @@ zh-CN:
   geozones:
     none: 所有城市
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: 我们检测到您正在用Internet Explorer浏览。为了加强体验，我们建议使用%{firefox} 或者%{chrome}。
-      ie_title: 此网站没有对您的浏览器优化
     dashboard:
       proposal_header:
         published: 已发表
@@ -167,9 +161,9 @@ zh-CN:
     footer:
       accessibility: 无障碍功能
       conditions: 使用条款及条件
-      consul: CONSUL应用程序
+      consul: CONSUL DEMOCRACY应用程序
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: 此门户网站使用%{consul}，其是%{open_source}。
       open_source: 开源软件
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
