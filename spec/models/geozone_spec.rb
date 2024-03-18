@@ -76,5 +76,77 @@ describe Geozone do
          [-3.9247799675785, 40.8789131852224]]
       )
     end
+
+    it "handles coordinates with three-dimensional arrays" do
+      geozone = build(:geozone, geojson: '{
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[40.8792937308316, -3.9259027239257],
+            [40.8788966596619, -3.9249047078766],
+            [40.8789131852224, -3.9247799675785]]]
+        }
+      }')
+
+      expect(geozone.outline_points).to eq(
+        [[-3.9259027239257, 40.8792937308316],
+         [-3.9249047078766, 40.8788966596619],
+         [-3.9247799675785, 40.8789131852224]]
+      )
+    end
+
+    it "handles coordinates with three-dimensional arrays with spaces between brackets" do
+      geozone = build(:geozone, geojson: '{
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[
+            [40.8792937308316, -3.9259027239257],
+            [40.8788966596619, -3.9249047078766],
+            [40.8789131852224, -3.9247799675785]
+          ]]
+        }
+      }')
+
+      expect(geozone.outline_points).to eq(
+        [[-3.9259027239257, 40.8792937308316],
+         [-3.9249047078766, 40.8788966596619],
+         [-3.9247799675785, 40.8789131852224]]
+      )
+    end
+
+    it "handles coordinates with four-dimensional arrays" do
+      geozone = build(:geozone, geojson: '{
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[[40.8792937308316, -3.9259027239257],
+            [40.8788966596619, -3.9249047078766],
+            [40.8789131852224, -3.9247799675785]]]]
+        }
+      }')
+
+      expect(geozone.outline_points).to eq(
+        [[-3.9259027239257, 40.8792937308316],
+         [-3.9249047078766, 40.8788966596619],
+         [-3.9247799675785, 40.8789131852224]]
+      )
+    end
+
+    it "handles coordinates with four-dimensional arrays with spaces between brackets" do
+      geozone = build(:geozone, geojson: '{
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[
+            [40.8792937308316, -3.9259027239257],
+            [40.8788966596619, -3.9249047078766],
+            [40.8789131852224, -3.9247799675785]
+          ]]]
+        }
+      }')
+
+      expect(geozone.outline_points).to eq(
+        [[-3.9259027239257, 40.8792937308316],
+         [-3.9249047078766, 40.8788966596619],
+         [-3.9247799675785, 40.8789131852224]]
+      )
+    end
   end
 end
