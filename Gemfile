@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 gem "rails", "6.1.7.7"
 
-gem "acts-as-taggable-on", "~> 9.0.1"
+gem "acts-as-taggable-on", "~> 10.0.0"
 gem "acts_as_votable", "~> 0.14.0"
 gem "ahoy_matey", "~> 4.2.1"
 gem "airbrake", "~> 13.0.2"
