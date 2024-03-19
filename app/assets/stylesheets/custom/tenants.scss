@@ -62,3 +62,15 @@
   --sidebar-hover: #FF3366;
   --sidebar: #FF3366;
 }
+
+.site-jdev {
+  --brand: #a783e6;
+  --main-header: var(--brand);
+  --brand-secondary: #e624ae;
+  --top-links: var(--brand-secondary) ;
+  --footer: var(--top-links);
+  .admin-sidebar {
+    background: linear-gradient(to bottom, var(--brand-secondary) 0%, var(--brand) 100%);
+  }
+
+}
