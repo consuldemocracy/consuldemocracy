@@ -74,3 +74,15 @@
   }
 
 }
+
+.site-glasgow {
+  --brand:     #2f7276;
+  --brand-secondary: #83a8ab;
+  --footer: var(--brand-secondary);
+  --callout: var(--brand-secondary);
+  .admin-sidebar {
+    background: linear-gradient(to bottom, var(--brand-secondary) 0%, var(--brand) 100%);
+  }
+
+}
+
