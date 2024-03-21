@@ -2,6 +2,39 @@
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
+## [2.1.1](https://github.com/consuldemocracy/consuldemocracy/tree/2.1.1) (2024-03-21)
+
+[Full Changelog](https://github.com/consuldemocracy/consuldemocracy/compare/2.1.0...2.1.1)
+
+### Changed
+
+- **Maintenance-CI:** Update setup-node action to version 4 [\#5419](https://github.com/consuldemocracy/consuldemocracy/pull/5419)
+- **Maintenance-CI:** Update upload artifact action to version 4 [\#5411](https://github.com/consuldemocracy/consuldemocracy/pull/5411) and [\#5420](https://github.com/consuldemocracy/consuldemocracy/pull/5420)
+- **Maintenance-CI:** Update checkout action to version 4 [\#5407](https://github.com/consuldemocracy/consuldemocracy/pull/5407) and [\#5415](https://github.com/consuldemocracy/consuldemocracy/pull/5415)
+- **Maintenance-Gems:** Bump rubocop-rspec from 2.24.1 to 2.27.0 [\#5405](https://github.com/consuldemocracy/consuldemocracy/pull/5405)
+- **Maintenance-Gems:** \[Security\] Bump rails from 6.1.7.6 to 6.1.7.7 [\#5401](https://github.com/consuldemocracy/consuldemocracy/pull/5401)
+- **Maintenance-Gems:** \[Security\] Bump view_component from 3.6.0 to 3.11.0 [\#5399](https://github.com/consuldemocracy/consuldemocracy/pull/5399) and [\#5432](https://github.com/consuldemocracy/consuldemocracy/pull/5432)
+- **Maintenance-Gems:** Bump rubocop-factory_bot from 2.24.0 to 2.25.1 [\#5385](https://github.com/consuldemocracy/consuldemocracy/pull/5385)
+- **Maintenance-Gems:** Bump rubocop-capybara from 2.19.0 to 2.20.0 [\#5383](https://github.com/consuldemocracy/consuldemocracy/pull/5383)
+- **Maintenance-Gems:** Bump capybara from 3.39.2 to 3.40.0 [\#5378](https://github.com/consuldemocracy/consuldemocracy/pull/5378)
+- **Maintenance-Gems:** Bump bullet from 7.0.7 to 7.1.6 [\#5374](https://github.com/consuldemocracy/consuldemocracy/pull/5374)
+- **Maintenance-Gems:** Bump faker from 3.2.1 to 3.2.3 [\#5373](https://github.com/consuldemocracy/consuldemocracy/pull/5373)
+- **Maintenance-Gems:** \[Security\] Bump puma from 5.6.7 to 5.6.8 [\#5365](https://github.com/consuldemocracy/consuldemocracy/pull/5365)
+- **Maintenance-Gems:** Bump rubocop-rails from 2.21.2 to 2.23.1 [\#5362](https://github.com/consuldemocracy/consuldemocracy/pull/5362)
+- **Maintenance-Gems:** Bump pdf-reader from 2.11.0 to 2.12.0 [\#5361](https://github.com/consuldemocracy/consuldemocracy/pull/5361)
+- **Maintenance-Gems:** Bump factory_bot_rails from 6.2.0 to 6.4.3 [\#5356](https://github.com/consuldemocracy/consuldemocracy/pull/5356)
+- **Maintenance-Gems:** Bump mdl from 0.12.0 to 0.13.0 [\#5290](https://github.com/consuldemocracy/consuldemocracy/pull/5290)
+- **Maintenance-Rubocop:** Add rubocop rules affecting Rails 6.1 [\#5421](https://github.com/consuldemocracy/consuldemocracy/pull/5421)
+
+### Fixed
+
+- **Accessibility:** Fix invalid HTML in comment votes [\#5426](https://github.com/consuldemocracy/consuldemocracy/pull/5426)
+- **Admin:** Allow whitespace between square brackets in GeoJSON polygons [\#5389](https://github.com/consuldemocracy/consuldemocracy/pull/5389)
+- **Maintenance-CI:** Update Code Climate Rubocop version [\#5431](https://github.com/consuldemocracy/consuldemocracy/pull/5431)
+- **Maintenance-Specs:** Prevent "Unable to autoload constant" error in tests [\#5422](https://github.com/consuldemocracy/consuldemocracy/pull/5422)
+- **Translations:** Add missing Spanish translations [\#5403](https://github.com/consuldemocracy/consuldemocracy/pull/5403)
+- **UX:** Fix link to debates help [\#5395](https://github.com/consuldemocracy/consuldemocracy/pull/5395)
+
 ## [2.1.0](https://github.com/consuldemocracy/consuldemocracy/tree/2.1.0) (2024-02-20)
 
 [Full Changelog](https://github.com/consuldemocracy/consuldemocracy/compare/2.0.1...2.1.0)
