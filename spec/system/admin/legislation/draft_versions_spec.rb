@@ -74,6 +74,15 @@ describe "Admin legislation draft versions", :admin do
     end
   end
 
+  scenario "Delete" do
+    version = create(:legislation_draft_version, body: "Version 1")
+
+    visit edit_admin_legislation_process_draft_version_path(version.process, version)
+    click_link "Delete"
+
+    expect(page).to have_content "Draft deleted successfully"
+  end
+
   context "Changing content with the markdown editor" do
     let(:prompt) { "You've edited the text without saving it. Do you confirm to leave the page?" }
     let(:version) { create(:legislation_draft_version, body: "Version 1") }
