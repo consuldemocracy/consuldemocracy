@@ -1400,6 +1400,8 @@ es:
       index:
         title: Zonas
         create: Crear una zona
+        geojson_map: Mapa GeoJSON
+        geojson_map_help: "Si las coordenadas GeoJSON están disponibles, aparecerán en el siguiente mapa"
       geozone:
         name: Nombre
         external_code: Código externo
