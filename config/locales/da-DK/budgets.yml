@@ -85,7 +85,7 @@ da:
       index:
         title: Deltagerbudgetter
         unfeasible: Forslag, som ikke er mulige at gennemføre
-        unfeasible_text: "Projektidéerne skal imødekomme en række kriterier for at kunne indgå i den endelige afstemningsfase. De projektidéer, der ikke opfylder kriterierne bliver fravalgt og er at finde på listen nedenunder sammen med en rapport, der begrunder projektets manglende opfyldelse af de angivede krav. "
+        unfeasible_text: "Alle forslag til et deltagerbudget valideres enkeltvis. Det er for at sikre, de er i overensstemmelse med gældende lovgivning, politikker i Aarhus Kommune og kriterier, som knytter sig til det enkelte deltagerbudget. De forslag, der ikke opfylder kriterierne, bliver enten sorteret fra eller tilpasset så de kan opfylde dem. Hvis flere forslag omhandler samme ønske, bliver de lagt sammen. Alle forslag, der er sorteres fra i den proces, kan findes i listen herunder, sammen med en uddybende begrundelse."
         by_heading: "Forslag tilknyttet: %{heading}"
         search_form:
           button: Søg
