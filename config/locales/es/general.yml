@@ -228,6 +228,7 @@ es:
           zero: "No tienes notificaciones nuevas"
         notifications: Notificaciones
       sdg: "ODS"
+    skip_to_main_content: "Saltar al contenido principal"
   notifications:
     index:
       empty_notifications: No tienes notificaciones nuevas.

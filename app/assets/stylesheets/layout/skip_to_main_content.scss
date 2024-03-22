@@ -1,0 +1,22 @@
+.skip-to-main-content {
+  @include grid-column-gutter;
+
+  a {
+    &:not(:focus) {
+      @include element-invisible;
+      width: 0 !important;
+    }
+
+    &:focus {
+      @include body-colors;
+
+      $outline-size: $focus-inner-width + $focus-middle-width + $focus-outer-width;
+
+      padding: 0.4rem;
+      position: absolute;
+      $global-left: $outline-size;
+      top: $outline-size;
+      z-index: 1000;
+    }
+  }
+}

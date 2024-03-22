@@ -1,24 +1,22 @@
-<main>
-  <h2><%= t("management.proposals.index.title") %></h2>
+<h2><%= t("management.proposals.index.title") %></h2>
 
-  <%= render Admin::SearchComponent.new(label: t("admin.shared.search.label.proposals")) %>
+<%= render Admin::SearchComponent.new(label: t("admin.shared.search.label.proposals")) %>
 
-  <div class="management-list">
-    <div class="proposals-list">
+<div class="management-list">
+  <div class="proposals-list">
 
-      <div class="filters">
-        <% if @search_terms %>
-          <h3>
-            <%= page_entries_info @proposals %>
-            <%= sanitize(t("proposals.index.search_results",
-                           count: @proposals.size,
-                           search_term: strip_tags(@search_terms))) %>
-          </h3>
-        <% end %>
+    <div class="filters">
+      <% if @search_terms %>
+        <h3>
+          <%= page_entries_info @proposals %>
+          <%= sanitize(t("proposals.index.search_results",
+                         count: @proposals.size,
+                         search_term: strip_tags(@search_terms))) %>
+        </h3>
+      <% end %>
 
-        <%= render @proposals %>
-        <%= paginate @proposals %>
-      </div>
+      <%= render @proposals %>
+      <%= paginate @proposals %>
     </div>
   </div>
-</main>
+</div>

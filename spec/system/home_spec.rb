@@ -183,4 +183,20 @@ describe "Home" do
       within(".header-card") { expect(page).not_to have_link }
     end
   end
+
+  describe "Link to skip to main content" do
+    it "is visible on focus" do
+      visit root_path
+
+      expect(page).to have_link "Skip to main content", visible: :hidden
+      expect(page).to have_css "main"
+      expect(page).not_to have_css "main:target"
+
+      page.execute_script("$('.skip-to-main-content a').focus()")
+      sleep 0.01 until page.has_link?("Skip to main content", visible: :visible)
+      click_link "Skip to main content"
+
+      expect(page).to have_css "main:target"
+    end
+  end
 end

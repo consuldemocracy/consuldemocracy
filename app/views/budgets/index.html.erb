@@ -1,31 +1,30 @@
-<%= render Shared::BannerComponent.new("budgets") %>
+<% provide :title, t("budgets.index.title") %>
+<% provide :main_class, "budgets-index" %>
 
-<% provide :title do %><%= t("budgets.index.title") %><% end %>
+<%= render Shared::BannerComponent.new("budgets") %>
 
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: budgets_url %>
 <% end %>
 
-<main class="budgets-index">
-  <% if @budget.present? %>
-    <%= render Budgets::BudgetComponent.new(@budget) %>
+<% if @budget.present? %>
+  <%= render Budgets::BudgetComponent.new(@budget) %>
 
-    <% if @finished_budgets.present? %>
-      <%= render "finished", budgets: @finished_budgets %>
-    <% end %>
-  <% else %>
-    <header>
-      <h1><%= t("budgets.index.title") %></h1>
-    </header>
+  <% if @finished_budgets.present? %>
+    <%= render "finished", budgets: @finished_budgets %>
+  <% end %>
+<% else %>
+  <header>
+    <h1><%= t("budgets.index.title") %></h1>
+  </header>
 
-    <div class="row">
-      <div class="small-12 column">
-        <div class="callout primary">
-          <%= t("budgets.index.empty_budgets") %>
-        </div>
+  <div class="row">
+    <div class="small-12 column">
+      <div class="callout primary">
+        <%= t("budgets.index.empty_budgets") %>
       </div>
     </div>
-  <% end %>
+  </div>
+<% end %>
 
-  <%= render Budgets::FooterComponent.new %>
-</main>
+<%= render Budgets::FooterComponent.new %>

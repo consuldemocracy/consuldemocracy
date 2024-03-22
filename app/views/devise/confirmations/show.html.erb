@@ -1,4 +1,4 @@
-<% provide :title do %><%= t("devise_views.confirmations.show.title") %><% end %>
+<% provide :title, t("devise_views.confirmations.show.title") %>
 <h1 class="text-center"><%= t("devise_views.confirmations.show.title") %></h1>
 
 <p><%= sanitize(t("devise_views.confirmations.show.instructions", email: resource.email)) %></p>

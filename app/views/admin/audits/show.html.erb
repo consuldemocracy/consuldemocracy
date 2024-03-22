@@ -1,6 +1,4 @@
-<% provide(:title) do %>
-  <%= t("admin.audits.title") %>
-<% end %>
+<% provide :title, t("admin.audits.title") %>
 <%= back_link_to admin_polymorphic_path(@audit.associated || @audit.auditable) %>
 
 <h2><%= t("admin.audits.title") %></h2>
