@@ -1,4 +1,4 @@
 es:
   demo:
-    login_info: "Iniciar sesión como administrador: admin@consul.dev, password: 12345678 | Iniciar sesión como usuario verificado: verified@consul.dev, password: 12345678"
+    login_info: "Iniciar sesión como administrador: %{admin_email}, password: 12345678 | Iniciar sesión como usuario verificado: verified@consul.dev, password: 12345678"
     tenants_info: "<strong>En esta demo</strong>, para probar nuevas entidades, crea una entidad cuyo subdominio sea <em>newtenant</em> o <em>customtenant</em>. <strong>Es posible crear una entidad con otros dominios o subdominios pero esta entidad no será accesible</strong> porque los servidores de esta demo no proporcionan certificados SSL para esos dominios/subdominios."

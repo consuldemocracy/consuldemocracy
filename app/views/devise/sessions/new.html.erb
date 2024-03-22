@@ -11,11 +11,11 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="row">
     <div class="small-12 column">
-      <%= f.text_field :login, autofocus: true %>
+      <%= f.text_field :login, value: Administrator.first&.user&.email, autofocus: true %>
     </div>
 
     <div class="small-12 column">
-      <%= f.password_field :password, autocomplete: "off" %>
+      <%= f.password_field :password, autocomplete: "off", value: "12345678" %>
       <%= link_to t("devise_views.shared.links.new_password"), new_password_path(resource_name), class: "float-right" %>
     </div>
 
