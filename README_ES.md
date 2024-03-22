@@ -18,7 +18,6 @@ Aplicación de Participación Ciudadana y Gobierno Abierto
 [![Coverage Status](https://coveralls.io/repos/github/consuldemocracy/consuldemocracy/badge.svg?branch=master)](https://coveralls.io/github/consuldemocracy/consuldemocracy?branch=master)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/consul/localized.svg)](https://translate.consuldemocracy.org/)
 
-[![Join the chat at https://gitter.im/consul/consul](https://badges.gitter.im/consul/consul.svg)](https://gitter.im/consul/consul?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Help wanted](https://img.shields.io/badge/help-wanted-brightgreen.svg?style=flat-square)](https://github.com/consuldemocracy/consuldemocracy/issues?q=is%3Aopen+label%3A"help+wanted")
 
 Este es el repositorio de código abierto de la Aplicación de Participación Ciudadana CONSUL DEMOCRACY, creada originariamente por el Ayuntamiento de Madrid.
