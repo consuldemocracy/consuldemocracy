@@ -34,7 +34,7 @@ Este código de conducta aplica tanto a espacios del proyecto como a espacios p�
 
 ## Aplicación
 
-Ejemplos de abuso, acoso u otro tipo de comportamiento inaceptable puede ser reportado al equipo del proyecto en consul@madrid.es. Todas las quejas serán revisadas e investigadas, generando un resultado apropiado a las circunstancias. El equipo del proyecto está obligado a mantener confidencialidad de la persona que reportó el incidente. Detalles específicos acerca de las políticas de aplicación pueden ser publicadas por separado.
+Ejemplos de abuso, acoso u otro tipo de comportamiento inaceptable puede ser reportado al equipo del proyecto en info@consulfoundation.org. Todas las quejas serán revisadas e investigadas, generando un resultado apropiado a las circunstancias. El equipo del proyecto está obligado a mantener confidencialidad de la persona que reportó el incidente. Detalles específicos acerca de las políticas de aplicación pueden ser publicadas por separado.
 
 Administradores que no sigan o que no hagan cumplir este Código de Conducta pueden ser eliminados de forma temporal o permanente del equipo administrador.
 
