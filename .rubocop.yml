@@ -374,9 +374,6 @@ Rails/CreateTableWithTimestamps:
 Rails/Date:
   Enabled: true
 
-Rails/DeprecatedActiveModelErrorsMethods: # TODO: Remove after upgrading to Rails 7
-  Enabled: true
-
 Rails/DurationArithmetic:
   Enabled: true
 

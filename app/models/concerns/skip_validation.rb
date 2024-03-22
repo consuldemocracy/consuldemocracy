@@ -12,8 +12,8 @@ module SkipValidation
       _validators[field].reject! { |existing_validator| existing_validator.is_a?(validator_class) }
 
       _validate_callbacks.each do |callback|
-        if callback.raw_filter.is_a?(validator_class)
-          callback.raw_filter.instance_variable_set(:@attributes, callback.raw_filter.attributes - [field])
+        if callback.filter.is_a?(validator_class)
+          callback.filter.instance_variable_set(:@attributes, callback.filter.attributes - [field])
         end
       end
     end
