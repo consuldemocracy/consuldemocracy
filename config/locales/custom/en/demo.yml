@@ -1,4 +1,4 @@
 en:
   demo:
-    login_info: "Login as administrator: admin@consul.dev, password: 12345678 | Login as verified user: verified@consul.dev, password: 12345678"
+    login_info: "Login as administrator: %{admin_email}, password: 12345678 | Login as verified user: verified@consul.dev, password: 12345678"
     tenants_info: "<strong>On this demo</strong>, in order to test new tenants, create a tenant with either <em>newtenant</em> or <em>customtenant</em> as subdomains. <strong>Tenants with other domains or subdomains can be created but won't be accessible</strong> because these demo servers don't provide SSL certificates for those domains/subdomains."
