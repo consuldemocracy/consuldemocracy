@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_10_12_141318) do
+ActiveRecord::Schema.define(version: 2023_12_12_153823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -790,6 +790,8 @@ ActiveRecord::Schema.define(version: 2023_10_12_141318) do
     t.text "background_color"
     t.text "font_color"
     t.tsvector "tsv"
+    t.date "summary_publication_date"
+    t.boolean "summary_publication_enabled"
     t.index ["allegations_end_date"], name: "index_legislation_processes_on_allegations_end_date"
     t.index ["allegations_start_date"], name: "index_legislation_processes_on_allegations_start_date"
     t.index ["debate_end_date"], name: "index_legislation_processes_on_debate_end_date"

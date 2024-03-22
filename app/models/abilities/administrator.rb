@@ -18,7 +18,8 @@ module Abilities
       can :create, Legislation::Proposal
       can :show, Legislation::Proposal
       can :proposals, ::Legislation::Process
-
+      can :summary, ::Legislation::Process
+      
       can :restore, Legislation::Proposal
       cannot :restore, Legislation::Proposal, hidden_at: nil
 

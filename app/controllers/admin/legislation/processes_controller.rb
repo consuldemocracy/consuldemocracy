@@ -72,6 +72,8 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
         :background_color,
         :font_color,
         :related_sdg_list,
+        :summary_publication_date,
+        :summary_publication_enabled,
         translation_params(::Legislation::Process),
         documents_attributes: document_attributes,
         image_attributes: image_attributes
