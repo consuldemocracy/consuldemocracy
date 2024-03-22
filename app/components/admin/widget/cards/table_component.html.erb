@@ -5,6 +5,9 @@
         <th><%= attribute_name(:title) %></th>
         <th class="small-4"><%= attribute_name(:description) %></th>
         <th><%= attribute_name(:link_text) %> / <%= attribute_name(:link_url) %></th>
+        <% unless header_section? %>
+          <th><%= attribute_name(:order) %></th>
+        <% end %>
         <th><%= t("admin.shared.image") %></th>
         <th><%= t("admin.shared.actions") %></th>
       </tr>

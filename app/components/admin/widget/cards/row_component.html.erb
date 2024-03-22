@@ -9,6 +9,12 @@
     <%= card.link_url %>
   </td>
 
+  <% unless header_section? %>
+    <td>
+      <%= card.order %>
+    </td>
+  <% end %>
+
   <!-- remove conditional once specs have image validations -->
   <td>
     <% if card.image.present? %>

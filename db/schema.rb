@@ -1768,6 +1768,7 @@ ActiveRecord::Schema.define(version: 2023_10_12_141318) do
     t.integer "cardable_id"
     t.integer "columns", default: 4
     t.string "cardable_type", default: "SiteCustomization::Page"
+    t.integer "order", default: 1, null: false
     t.index ["cardable_id"], name: "index_widget_cards_on_cardable_id"
   end
 

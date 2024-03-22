@@ -1650,6 +1650,7 @@ en:
           create_card: Create card
           no_cards: There are no cards.
           columns_help: "Width of the card in number of columns. On mobile screens it's always a width of 100%."
+          order_help: "You can enter the position where this card will be shown."
           create:
             notice: "Card created successfully!"
           update:

@@ -488,6 +488,7 @@ en:
         link_text: Link text
         link_url: Link URL
         columns: Number of columns
+        order: Position
       widget/card/translation:
         label: Label (optional)
         title: Title
