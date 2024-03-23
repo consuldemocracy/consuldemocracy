@@ -99,7 +99,7 @@ group :development do
   gem "capistrano3-puma", "~> 5.2.0"
   gem "erb_lint", "~> 0.5.0", require: false
   gem "mdl", "~> 0.13.0", require: false
-  gem "pronto", "~> 0.11.1", require: false
+  gem "pronto", "~> 0.11.2", require: false
   gem "pronto-erb_lint", "~> 0.1.6", require: false
   gem "pronto-eslint", "~> 0.11.1", require: false
   gem "pronto-rubocop", "~> 0.11.5", require: false
