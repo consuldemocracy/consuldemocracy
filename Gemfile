@@ -20,7 +20,7 @@ gem "dalli", "~> 3.2.6"
 gem "delayed_job_active_record", "~> 4.1.7"
 gem "devise", "~> 4.9.3"
 gem "devise-security", "~> 0.18.0"
-gem "exiftool_vendored", "~> 12.60.0"
+gem "exiftool_vendored", "~> 12.80.0"
 gem "file_validators", "~> 3.0.0"
 gem "font-awesome-sass", "~> 5.15.1" # Remember to update vendor/assets/images/fontawesome when updating this gem
 gem "foundation-rails", "~> 6.6.2.0"
