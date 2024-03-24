@@ -5,7 +5,6 @@
 // 01. Global styles
 // 02. Sidebar
 // 03. List elements
-// 04. Stats
 // 05. Management
 // 06. Polls
 // 07. Legislation
@@ -361,30 +360,6 @@ code {
   &:hover {
     max-height: rem-calc(1000);
     transition: max-height 0.9s;
-  }
-}
-
-// 04. Stats
-// ---------
-
-.stats-numbers {
-  p {
-    color: $text-medium;
-    font-size: rem-calc(13);
-    padding: rem-calc(6);
-    text-transform: uppercase;
-
-    &.featured {
-      background: $info-bg;
-      border: 1px solid $info-border;
-      font-weight: bold;
-    }
-
-    .number {
-      color: $body-font-color;
-      font-size: rem-calc(30);
-      font-weight: bold;
-    }
   }
 }
 
