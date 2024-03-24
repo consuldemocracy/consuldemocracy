@@ -4,6 +4,8 @@
 //= link_tree ../images
 //= link application.css
 //= link application-rtl.css
+//= link admin_test.css
+//= link admin_test-rtl.css
 //= link vendored.css
 //= link vendored-rtl.css
 //= link application.js
