@@ -9,7 +9,6 @@
 // 06. Polls
 // 07. Legislation
 // 08. CMS
-// 09. Map
 // 10. Budgets
 // 11. Newsletters
 //
@@ -230,14 +229,6 @@ $table-header:   #ecf1f6;
   display: none;
 }
 
-.input-group {
-
-  .input-group-button {
-    padding-bottom: rem-calc(16);
-    vertical-align: top;
-  }
-}
-
 .sortable thead th:hover {
   cursor: pointer;
   text-decoration: underline;
@@ -245,10 +236,6 @@ $table-header:   #ecf1f6;
 
 .enabled {
   color: $color-success;
-}
-
-.disabled {
-  color: $text-medium;
 }
 
 .icon-sortable {
@@ -309,24 +296,6 @@ code {
 // 03. List elements
 // -----------------
 
-.delete {
-  border-bottom: 1px dotted;
-  color: $delete;
-  font-size: $small-font-size;
-
-  &:hover,
-  &:active,
-  &:focus {
-    border-bottom-color: transparent;
-    color: color.adjust($delete, $lightness: -10%);
-  }
-}
-
-[class^="icon-"].delete {
-  border: 0;
-  font-size: $base-font-size;
-}
-
 .rejected {
   color: $delete;
 }
@@ -342,14 +311,6 @@ code {
   border-radius: rem-calc(3);
   font-weight: normal;
   padding: rem-calc(6) rem-calc(12);
-}
-
-.button.small.success {
-  margin-left: rem-calc(12);
-
-  &.no-margin {
-    margin-left: 0;
-  }
 }
 
 .moderation-description {
@@ -554,35 +515,6 @@ table {
   }
 }
 
-.field {
-  margin-bottom: 1rem;
-
-  @include breakpoint(medium) {
-    margin-bottom: 0;
-  }
-
-  a {
-    color: $delete;
-    line-height: 3rem;
-
-    span {
-      text-decoration: underline;
-    }
-
-    .icon-x {
-      line-height: 0;
-      text-decoration: none;
-      vertical-align: sub;
-    }
-
-    &:active,
-    &:focus,
-    &:hover {
-      text-decoration: none;
-    }
-  }
-}
-
 .fullscreen-container {
 
   a {
@@ -759,54 +691,6 @@ table {
       }
     }
   }
-}
-
-// 09. Map
-// --------------
-
-.map {
-  height: 350px;
-  width: 100%;
-
-  .map-marker {
-    left: 50%;
-    margin-top: -5px;
-    position: absolute;
-    top: 50%;
-    visibility: visible;
-
-    .map-icon {
-      background: #00cae9;
-      border-radius: 50% 50% 50% 0;
-      height: 30px;
-      transform: rotate(-45deg);
-      width: 30px;
-    }
-
-    .map-icon::after {
-      background: #fff;
-      border-radius: 50%;
-      content: "";
-      height: 14px;
-      margin: 8px 0 0 8px;
-      position: absolute;
-      width: 14px;
-    }
-  }
-
-  .map-attributtion {
-    height: auto;
-    visibility: visible;
-  }
-}
-
-.map-marker {
-  visibility: hidden;
-}
-
-.map-attributtion {
-  height: 0;
-  visibility: hidden;
 }
 
 // 10. Budgets
