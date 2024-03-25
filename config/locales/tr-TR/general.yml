@@ -228,6 +228,7 @@ tr:
           other: '%{count} yeni bildiriminiz var'
         notifications: Bildirimler
       sdg: "SKA"
+    skip_to_main_content: "Ana içeriğe git"
   notifications:
     index:
       empty_notifications: Yeni bildiriminiz yok.
