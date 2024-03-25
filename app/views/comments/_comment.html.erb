@@ -99,9 +99,9 @@
             <% end %>
 
             <% if !valuation || can?(:comment_valuation, comment.commentable) %>
-              <%= render "comments/form", { commentable: comment.commentable,
-                                            parent_id: comment.id,
-                                            valuation: valuation } %>
+              <%= render Comments::FormComponent.new(comment.commentable,
+                                                     parent_id: comment.id,
+                                                     valuation: valuation) %>
             <% end %>
           <% end %>
         </div>

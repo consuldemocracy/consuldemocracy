@@ -1,12 +1,4 @@
 module CommentsHelper
-  def comment_tree_title_text(commentable)
-    if commentable.class == Legislation::Question
-      t("legislation.questions.comments.comments_title")
-    else
-      t("comments_helper.comments_title")
-    end
-  end
-
   def leave_comment_text(commentable)
     if commentable.class == Legislation::Question
       t("legislation.questions.comments.form.leave_comment")
@@ -81,13 +73,5 @@ module CommentsHelper
 
   def comments_closed_for_commentable?(commentable)
     commentable.respond_to?(:comments_closed?) && commentable.comments_closed?
-  end
-
-  def comments_closed_text(commentable)
-    if commentable.class == Legislation::Question
-      t("legislation.questions.comments.comments_closed")
-    else
-      t("comments.comments_closed")
-    end
   end
 end
