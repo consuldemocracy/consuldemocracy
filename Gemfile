@@ -97,7 +97,7 @@ group :development do
   gem "pronto-erb_lint", "~> 0.1.6", require: false
   gem "pronto-eslint", "~> 0.11.1", require: false
   gem "pronto-rubocop", "~> 0.11.5", require: false
-  gem "pronto-scss", "~> 0.11.0", require: false
+  gem "pronto-stylelint", "~> 0.10.3", require: false
   gem "rubocop", "~> 1.61.0", require: false
   gem "rubocop-capybara", "~> 2.20.0", require: false
   gem "rubocop-factory_bot", "~> 2.25.1", require: false
@@ -105,7 +105,6 @@ group :development do
   gem "rubocop-rails", "~> 2.23.1", require: false
   gem "rubocop-rspec", "~> 2.27.0", require: false
   gem "rvm1-capistrano3", "~> 1.4.0", require: false
-  gem "scss_lint", "~> 0.60.0", require: false
   gem "spring", "~> 4.1.3"
   gem "web-console", "~> 4.2.1"
 end

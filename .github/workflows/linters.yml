@@ -13,6 +13,13 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+      - name: Setup NPM
+        uses: actions/setup-node@v4
+        with:
+          cache: "npm"
+          node-version-file: ".node-version"
+      - name: Install node packages
+        run: npm clean-install
       - name: Run pronto
         run: |
           if [[ ${{ github.event.pull_request.head.repo.full_name }} == ${{ github.event.pull_request.base.repo.full_name }} && ${{ github.actor }} != dependabot* ]]; then
