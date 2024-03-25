@@ -1,7 +1,8 @@
 nl:
   account:
     show:
-      change_credentials_link: Pas mijn toegangsgegevens aan
+      last_sign_in: "Laatste login: %{last_sign_in_at} vanaf het IP %{last_sign_in_ip}"
+      change_credentials_link: Pas mijn logingegevens aan
       erase_account_link: Verwijder mijn account
       finish_verification: Maak verificatieproces af
       notifications: Meldingen

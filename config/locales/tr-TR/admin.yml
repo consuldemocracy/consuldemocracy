@@ -1400,6 +1400,8 @@ tr:
       index:
         title: Coğrafi bölge
         create: Coğrafi bölge oluştur
+        geojson_map: GeoJSON haritası
+        geojson_map_help: "GeoJSON koordinatları kullanılabiliyorsa aşağıdaki haritada görüntülenecekler"
       geozone:
         name: Ad
         external_code: Dış kod
@@ -1648,6 +1650,7 @@ tr:
           create_card: Kart oluştur
           no_cards: Herhangi bir kart yok.
           columns_help: "Sütün sayısı olarak kartın genişliği. Mobil ekranlarda her zaman %100 genişliğindedir."
+          order_help: "Bu kartın görüntüleneceği konumu yazabilirsiniz."
           create:
             notice: "Kart oluşturuldu!"
           update:

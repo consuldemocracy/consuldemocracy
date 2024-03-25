@@ -1400,6 +1400,8 @@ sv:
       index:
         title: Geografiska områden
         create: Skapa geografiskt område
+        geojson_map: GeoJSON-karta
+        geojson_map_help: "Om GeoJSON-koordinater är tillgängliga visas de på kartan nedan"
       geozone:
         name: Namn
         external_code: Extern kod

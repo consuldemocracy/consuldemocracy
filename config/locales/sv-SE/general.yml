@@ -228,6 +228,7 @@ sv:
           other: Du har %{count} nya aviseringar
         notifications: Aviseringar
       sdg: "Globala målen"
+    skip_to_main_content: "Hoppa över och gå till huvudinnehåll"
   notifications:
     index:
       empty_notifications: Du har inga nya aviseringar.

@@ -488,6 +488,7 @@ tr:
         link_text: Bağlantı metni
         link_url: Bağlantı adresi
         columns: Sütun sayısı
+        order: Konum
       widget/card/translation:
         label: Etiket (isteğe bağlı)
         title: Başlık
