@@ -5,7 +5,7 @@
 }
 
 %svg-icon {
-  @supports (mask-image: url()) and (--custom-property-name: custom-property-value) {
+  @supports (mask-image: url("")) and (--custom-property-name: custom-property-value) {
     background: currentcolor;
     content: "" !important;
     height: 1em;

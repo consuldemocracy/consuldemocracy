@@ -1,0 +1,90 @@
+customSyntax: postcss-scss
+ignoreFiles:
+  - app/assets/stylesheets/pdf_fonts.scss.erb
+  - app/assets/stylesheets/print.css
+  - app/assets/stylesheets/browserslist
+  - app/assets/stylesheets/fonts.scss
+plugins:
+  - stylelint-order
+  - stylelint-scss
+  - "@stylistic/stylelint-plugin"
+rules:
+  at-rule-disallowed-list:
+    - debug
+  at-rule-no-vendor-prefix: true
+  block-no-empty: true
+  color-hex-length: "short"
+  color-named: "never"
+  color-no-invalid-hex: true
+  custom-property-pattern: "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$"
+  declaration-property-value-disallowed-list:
+    border:
+      - none
+  function-url-quotes: always
+  length-zero-no-unit: true
+  max-nesting-depth: 4
+  media-feature-name-no-vendor-prefix: true
+  property-no-unknown: true
+  property-no-vendor-prefix: true
+  rule-empty-line-before:
+    - "always-multi-line"
+    - ignore:
+      - after-comment
+      - first-nested
+  selector-class-pattern: "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$"
+  selector-max-compound-selectors: 5
+  selector-max-id: 0
+  selector-no-vendor-prefix: true
+  selector-pseudo-element-colon-notation: "double"
+  selector-pseudo-element-no-unknown: true
+  shorthand-property-no-redundant-values: true
+  value-no-vendor-prefix: true
+  order/order:
+    - type: at-rule
+      name: extend
+    - type: at-rule
+      name: include
+      hasBlock: false
+    - declarations
+    - type: at-rule
+      name: include
+      hasBlock: true
+    - rules
+  scss/at-else-closing-brace-space-after: always-intermediate
+  scss/at-else-empty-line-before: never
+  scss/at-extend-no-missing-placeholder: true
+  scss/at-function-pattern: "^(-?[a-z][a-z0-9]*)(-[a-z0-9]+)*$"
+  scss/at-if-closing-brace-newline-after: always-last-in-chain
+  scss/at-if-closing-brace-space-after: always-intermediate
+  scss/at-import-partial-extension: never
+  scss/at-mixin-pattern: "^(-?[a-z][a-z0-9]*)(-[a-z0-9]+)*$"
+  scss/dollar-variable-colon-space-before: never
+  scss/dollar-variable-pattern: "^(-?[a-z][a-z0-9]*)(-[a-z0-9]+)*$"
+  scss/load-no-partial-leading-underscore: true
+  scss/no-unused-private-members: true
+  scss/operator-no-unspaced: true
+  scss/percent-placeholder-pattern: "^(-?[a-z][a-z0-9]*)(-[a-z0-9]+)*$"
+  scss/selector-no-redundant-nesting-selector: true
+  "@stylistic/declaration-bang-space-after": "never"
+  "@stylistic/declaration-bang-space-before": "always"
+  "@stylistic/declaration-block-semicolon-newline-after": always-multi-line
+  "@stylistic/declaration-block-trailing-semicolon": always
+  "@stylistic/declaration-colon-space-after": always-single-line
+  "@stylistic/declaration-colon-space-before": never
+  "@stylistic/function-parentheses-space-inside": never-single-line
+  "@stylistic/indentation":
+    - 2
+    - ignore:
+      - value
+  "@stylistic/media-feature-parentheses-space-inside": never
+  "@stylistic/no-eol-whitespace": true
+  "@stylistic/no-missing-end-of-source-newline": true
+  "@stylistic/number-no-trailing-zeros": true
+  "@stylistic/selector-attribute-brackets-space-inside": never
+  "@stylistic/selector-pseudo-class-parentheses-space-inside": never
+  "@stylistic/string-quotes": double
+  "@stylistic/value-list-comma-space-after": always-single-line
+  "@stylistic/block-opening-brace-space-before": always
+  "@stylistic/color-hex-case": "lower"
+  "@stylistic/number-leading-zero": "always"
+  "@stylistic/selector-list-comma-newline-after": always
