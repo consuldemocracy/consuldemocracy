@@ -40,6 +40,7 @@ rules:
   shorthand-property-no-redundant-values: true
   value-no-vendor-prefix: true
   order/order:
+    - dollar-variables
     - type: at-rule
       name: extend
     - type: at-rule
