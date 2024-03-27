@@ -61,7 +61,7 @@ gem "uglifier", "~> 4.2.0"
 gem "uuidtools", "~> 2.2.0"
 gem "view_component", "~> 3.11.0"
 gem "whenever", "~> 1.0.0", require: false
-gem "wicked_pdf", "~> 2.7.0"
+gem "wicked_pdf", "~> 2.8.0"
 gem "wkhtmltopdf-binary", "~> 0.12.6"
 
 source "https://rails-assets.org" do
