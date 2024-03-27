@@ -51,7 +51,7 @@
 //= require jquery-ui/ui/widgets/autocomplete
 //= require jquery-ui/ui/widgets/sortable
 //= require jquery-fileupload/basic
-//= require foundation
+//= require foundation-sites
 //= require turbolinks
 //= require turbolinks_anchors
 //= require ckeditor/loader

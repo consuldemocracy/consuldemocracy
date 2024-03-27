@@ -1,11 +1,11 @@
 @charset "utf-8";
 
-@import "util/util";
+@import "foundation-sites/scss/util/util";
 @import "consul_custom_overrides";
 @import "consul_settings";
 @import "settings";
 @import "custom_settings";
-@import "foundation";
+@import "foundation-sites/scss/foundation";
 
 @import "motion-ui/motion-ui";
 
