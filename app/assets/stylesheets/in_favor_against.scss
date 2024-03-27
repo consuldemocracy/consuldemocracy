@@ -50,15 +50,20 @@
       cursor: pointer;
 
       &[aria-pressed=false]:hover,
-      &[aria-pressed=false]:active,
-      &[aria-pressed=true]:not(:hover, :active) {
+      &[aria-pressed=false]:active {
         @include has-fa-icon($icon, solid);
       }
 
       &[aria-pressed=true] {
+        @include has-fa-icon($icon, solid);
         background: $pressed-color;
         border-color: $pressed-color;
         color: #fff;
+
+        &:hover,
+        &:active {
+          @include has-fa-icon($icon, regular);
+        }
       }
     }
   }
