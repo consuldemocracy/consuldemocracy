@@ -12,13 +12,12 @@
             <%= t("budgets.investments.votes.already_supported") %>
           </div>
           <% if feature?(:remove_investments_supports) %>
-            <%= button_to remove_support_path,
+            <%= button_to t("budgets.investments.votes.remove_support"),
+                          remove_support_path,
                           class: "button button-remove-support expanded",
                           method: "delete",
                           remote: true,
-                          "aria-label": remove_support_aria_label do %>
-              <%= t("budgets.investments.votes.remove_support") %>
-            <% end %>
+                          "aria-label": remove_support_aria_label %>
           <% end %>
         </div>
       <% else %>
