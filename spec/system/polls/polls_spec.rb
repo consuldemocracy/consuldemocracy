@@ -26,7 +26,7 @@ describe "Polls" do
     end
 
     scenario "Polls can be listed" do
-      polls = [create(:poll, :with_image)] # TODO: generate a list again after switching to zeitwerk
+      polls = create_list(:poll, 3, :with_image)
 
       visit polls_path
 
@@ -210,24 +210,23 @@ describe "Polls" do
       expect("Second question").to appear_before("Third question")
     end
 
-    # TODO: uncomment after switching to zeitwerk
-    # scenario "Buttons to slide through images work back and forth" do
-    #   question = create(:poll_question, :yes_no, poll: poll)
-    #   create(:image, imageable: question.question_answers.last, title: "The no movement")
-    #   create(:image, imageable: question.question_answers.last, title: "No movement planning")
+    scenario "Buttons to slide through images work back and forth" do
+      question = create(:poll_question, :yes_no, poll: poll)
+      create(:image, imageable: question.question_answers.last, title: "The no movement")
+      create(:image, imageable: question.question_answers.last, title: "No movement planning")
 
-    #   visit poll_path(poll)
+      visit poll_path(poll)
 
-    #   within(".orbit-bullets") do
-    #     find("[data-slide='1']").click
+      within(".orbit-bullets") do
+        find("[data-slide='1']").click
 
-    #     expect(page).to have_css ".is-active[data-slide='1']"
+        expect(page).to have_css ".is-active[data-slide='1']"
 
-    #     find("[data-slide='0']").click
+        find("[data-slide='0']").click
 
-    #     expect(page).to have_css ".is-active[data-slide='0']"
-    #   end
-    # end
+        expect(page).to have_css ".is-active[data-slide='0']"
+      end
+    end
 
     scenario "Non-logged in users" do
       create(:poll_question, :yes_no, poll: poll)

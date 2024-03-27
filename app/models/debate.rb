@@ -1,5 +1,3 @@
-require "numeric"
-
 class Debate < ApplicationRecord
   include Flaggable
   include Taggable

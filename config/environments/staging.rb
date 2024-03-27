@@ -12,11 +12,6 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
-  # Because autoloading is disabled in production environments with Rails 5,
-  # using autoload_paths will not load needed classes from specified paths.
-  # The solution to this, is to ask Rails to eager load classes.
-  config.eager_load_paths += ["#{config.root}/lib"]
-
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
