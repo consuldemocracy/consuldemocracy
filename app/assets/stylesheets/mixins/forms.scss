@@ -92,7 +92,7 @@
         font-size: rem-calc(44);
 
         &::after {
-          right: $icon-size-with-padding + $polygon-size + $heading-icon-size / 2;
+          right: calc(#{$icon-size-with-padding + $polygon-size + $heading-icon-size} / 2);
         }
 
         &::before {
@@ -106,7 +106,7 @@
       span {
         display: block;
         font-size: 0.75em;
-        margin-top: $line-height / 2;
+        margin-top: calc(#{$line-height} / 2);
       }
     }
 
@@ -195,7 +195,7 @@
     color: $admin-text;
     font-size: $small-font-size;
     font-weight: bold;
-    padding-right: $line-height / 2;
+    padding-right: calc(#{$line-height} / 2);
     text-transform: uppercase;
   }
 }

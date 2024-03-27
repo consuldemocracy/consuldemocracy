@@ -12,7 +12,7 @@
 ----------------------------------*/
 .ui-menu {
   list-style: none;
-  padding: $line-height / 4 $line-height / 3;
+  padding: calc(#{$line-height} / 4) calc(#{$line-height} / 3);
   display: block;
   background: $body-background;
   border: 1px solid $border;
@@ -21,7 +21,7 @@
   .ui-menu-item {
 
     .ui-menu-item-wrapper {
-      padding: $line-height / 4 $line-height / 3;
+      padding: calc(#{$line-height} / 4) calc(#{$line-height} / 3);
       position: relative;
     }
 

@@ -34,7 +34,7 @@
   }
 
   &::after {
-    bottom: $padding / 2;
+    bottom: calc(#{$padding} / 2);
     color: $white;
     position: absolute;
     right: calc(#{$padding} + #{$quote-padding});

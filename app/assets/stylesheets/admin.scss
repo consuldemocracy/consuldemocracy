@@ -110,7 +110,7 @@ $table-header:   #ecf1f6;
     th {
       background: $table-header;
       color: $admin-text;
-      padding: $line-height / 2;
+      padding: calc(#{$line-height} / 2);
 
       a {
         color: inherit;
@@ -135,7 +135,7 @@ $table-header:   #ecf1f6;
     }
 
     [type="submit"] ~ a {
-      margin-left: $line-height / 2;
+      margin-left: calc(#{$line-height} / 2);
     }
 
     [type="checkbox"] {
@@ -183,11 +183,11 @@ $table-header:   #ecf1f6;
 
   .menu.simple,
   .order-links {
-    margin-bottom: $line-height / 2;
+    margin-bottom: calc(#{$line-height} / 2);
 
     h2 {
       font-weight: bold;
-      margin-bottom: $line-height / 3;
+      margin-bottom: calc(#{$line-height} / 3);
     }
 
     .is-active {
@@ -239,7 +239,7 @@ $table-header:   #ecf1f6;
     &:hover .on-hover-block {
       display: block;
       margin: 0;
-      margin-top: $line-height / 2;
+      margin-top: calc(#{$line-height} / 2);
       width: 100%;
     }
   }
@@ -440,7 +440,7 @@ code {
   font-size: rem-calc(16);
   font-weight: normal;
   margin-bottom: $line-height;
-  padding: $line-height / 2;
+  padding: calc(#{$line-height} / 2);
 
   strong {
     font-size: rem-calc(18);
@@ -453,7 +453,7 @@ code {
   border-bottom-right-radius: rem-calc(6);
   border-top: 2px solid;
   font-size: $small-font-size;
-  padding: $line-height / 2;
+  padding: calc(#{$line-height} / 2);
 }
 
 .admin-budget-investment-info {
@@ -461,7 +461,7 @@ code {
   border: 2px solid $highlight;
   border-radius: rem-calc(4);
   margin-bottom: $line-height;
-  padding: $line-height / 2;
+  padding: calc(#{$line-height} / 2);
 
   p {
     font-size: $small-font-size;
@@ -548,7 +548,7 @@ table {
     height: $line-height * 2;
     line-height: $line-height * 2;
     margin: 0;
-    padding: 0 $line-height / 2;
+    padding: 0 calc(#{$line-height} / 2);
   }
 }
 
@@ -945,19 +945,19 @@ table {
   margin: $line-height 0;
 
   @include breakpoint(medium) {
-    margin: $line-height / 2 0 0;
+    margin: calc(#{$line-height} / 2) 0 0;
   }
 }
 
 .advanced-filters-content {
   background: $highlight;
   clear: both;
-  padding: $line-height / 2;
+  padding: calc(#{$line-height} / 2);
   margin: $line-height 0;
 
   .filter {
     display: inline-block;
-    margin: 0 $line-height / 2;
+    margin: 0 calc(#{$line-height} / 2);
 
     label {
       font-weight: normal;
@@ -966,7 +966,7 @@ table {
   }
 
   .button {
-    margin-top: $line-height / 2;
+    margin-top: calc(#{$line-height} / 2);
   }
 }
 
