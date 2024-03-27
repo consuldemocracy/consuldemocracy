@@ -40,11 +40,11 @@ class Management::BaseController < ActionController::Base
     end
 
     def switch_locale(&action)
-      if params[:locale] && I18n.available_locales.include?(params[:locale].to_sym)
+      if params[:locale] && Setting.available_locales.include?(params[:locale].to_sym)
         session[:locale] = params[:locale]
       end
 
-      session[:locale] ||= I18n.default_locale
+      session[:locale] ||= Setting.default_locale
 
       I18n.with_locale(session[:locale], &action)
     end

@@ -4,7 +4,7 @@ module GlobalizeHelper
   end
 
   def available_locales(resource)
-    I18n.available_locales.select { |locale| enabled_locale?(resource, locale) }.map do |locale|
+    Setting.available_locales.select { |locale| enabled_locale?(resource, locale) }.map do |locale|
       [name_for_locale(locale), locale, { data: { locale: locale }}]
     end
   end
@@ -121,7 +121,7 @@ module GlobalizeHelper
   end
 
   def all_language_options
-    I18n.available_locales.map do |locale|
+    Setting.available_locales.map do |locale|
       [name_for_locale(locale), locale]
     end
   end
