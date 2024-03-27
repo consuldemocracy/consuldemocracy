@@ -289,7 +289,7 @@ GEM
       ruby-vips (>= 2.0.17, < 3)
     initialjs-rails (0.2.0.9)
       railties (>= 3.1, < 7.0)
-    invisible_captcha (2.1.0)
+    invisible_captcha (2.3.0)
       rails (>= 5.2)
     jquery-fileupload-rails (1.0.0)
       actionpack (>= 3.1)
@@ -333,7 +333,7 @@ GEM
       net-imap
       net-pop
       net-smtp
-    marcel (1.0.2)
+    marcel (1.0.4)
     matrix (0.4.2)
     mdl (0.13.0)
       kramdown (~> 2.3)
@@ -741,7 +741,7 @@ DEPENDENCIES
   i18n-tasks (~> 0.9.37)
   image_processing (~> 1.12.2)
   initialjs-rails (~> 0.2.0.9)
-  invisible_captcha (~> 2.1.0)
+  invisible_captcha (~> 2.3.0)
   jquery-fileupload-rails
   kaminari (~> 1.2.2)
   knapsack_pro (~> 7.0.1)
