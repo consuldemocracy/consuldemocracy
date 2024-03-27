@@ -21,18 +21,7 @@ Bundler.require(*Rails.groups)
 
 module Consul
   class Application < Rails::Application
-    config.load_defaults 6.1
-
-    # Change the format of the cache entry.
-    # Changing this default means that all new cache entries added to the cache
-    # will have a different format that is not supported by Rails 6.1 applications.
-    # Only change this value after your application is fully deployed to Rails 7.0
-    # and you have no plans to rollback.
-    config.active_support.cache_format_version = 7.0
-
-    # Disables the deprecated #to_s override in some Ruby core classes
-    # See https://guides.rubyonrails.org/configuring.html#config-active-support-disable-to-s-conversion for more information.
-    config.active_support.disable_to_s_conversion = true
+    config.load_defaults 7.0
 
     # Keep belongs_to fields optional by default, because that's the way
     # Rails 4 models worked
@@ -44,6 +33,15 @@ module Consul
 
     # Disable Sprockets AssetUrlProcessor for CKEditor compatibility
     config.assets.resolve_assets_in_css_urls = false
+
+    # Keep adding media="screen" attribute to stylesheets, just like
+    # Rails 4, 5 and 6 did, until we change the print stylesheet so it
+    # works when loading all the styles
+    config.action_view.apply_stylesheet_media_default = true
+
+    # Keep using ImageMagick instead of libvips for image processing in
+    # order to make upgrades easier.
+    config.active_storage.variant_processor = :mini_magick
 
     # Keep reading existing data in the legislation_annotations ranges column
     config.active_record.yaml_column_permitted_classes = [ActiveSupport::HashWithIndifferentAccess, Symbol]
