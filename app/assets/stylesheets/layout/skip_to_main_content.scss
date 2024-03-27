@@ -8,13 +8,11 @@
     }
 
     &:focus {
-      @include body-colors;
-
       $outline-size: $focus-inner-width + $focus-middle-width + $focus-outer-width;
+      @include body-colors;
 
       padding: 0.4rem;
       position: absolute;
-      $global-left: $outline-size;
       top: $outline-size;
       z-index: 1000;
     }
