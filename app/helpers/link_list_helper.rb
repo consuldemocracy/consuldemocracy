@@ -1,5 +1,5 @@
 module LinkListHelper
-  def link_list(*links, **options)
-    render Shared::LinkListComponent.new(*links, **options)
+  def link_list(...)
+    render Shared::LinkListComponent.new(...)
   end
 end

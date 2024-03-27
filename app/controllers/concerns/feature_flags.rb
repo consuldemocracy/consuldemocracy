@@ -2,8 +2,8 @@ module FeatureFlags
   extend ActiveSupport::Concern
 
   class_methods do
-    def feature_flag(name, *options)
-      before_action(*options) do
+    def feature_flag(name, *)
+      before_action(*) do
         check_feature_flag(name)
       end
     end

@@ -12,8 +12,8 @@ class RemoteTranslation < ApplicationRecord
     RemoteTranslations::Caller.new(self).delay.call
   end
 
-  def self.for(*args)
-    resources_groups(*args).flatten.select { |resource| translation_empty?(resource) }.map do |resource|
+  def self.for(*)
+    resources_groups(*).flatten.select { |resource| translation_empty?(resource) }.map do |resource|
       new(remote_translatable: resource, locale: I18n.locale)
     end
   end
