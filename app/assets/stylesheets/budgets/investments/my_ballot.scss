@@ -2,7 +2,7 @@
   border-top: 1px solid $border;
 
   h2 + * {
-    @include has-fa-icon(vote-yea, solid);
+    @include has-fa-icon(check-to-slot, solid);
 
     &::before {
       float: left;

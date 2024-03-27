@@ -14,7 +14,7 @@
 [data-icon]::before,
 [class^="icon-"]::before,
 [class*=" icon-"]::before {
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 6 Free";
   font-weight: bold;
 }
 
@@ -279,7 +279,7 @@
 .icon-youtube {
 
   &::before {
-    font-family: "Font Awesome 5 Brands";
+    font-family: "Font Awesome 6 Brands";
   }
 }
 
