@@ -1,5 +1,5 @@
 @mixin sdg-goal-list($spacing: 1ch) {
-  $min-spacing: $sdg-icon-min-width / 10;
+  $min-spacing: $sdg-icon-min-width * 0.1;
   $max-spacing: #{"Max(#{$min-spacing}, #{$spacing})"};
 
   display: flex;

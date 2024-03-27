@@ -1,7 +1,7 @@
 .admin .budgets-help {
-  $padding: $line-height / 2;
+  $padding: $line-height * 0.5;
   $quote-size: 1em;
-  $quote-padding: 2 * $quote-size / 5;
+  $quote-padding: $quote-size * 0.4;
   $quote-width: $quote-size + 2 * $quote-padding;
 
   @include has-fa-icon(quote-right, solid, after);

@@ -1643,7 +1643,7 @@
 }
 
 .poll-question-answers {
-  @include flex-with-gap($line-height / 4);
+  @include flex-with-gap($line-height * 0.25);
   flex-wrap: wrap;
 
   .button {

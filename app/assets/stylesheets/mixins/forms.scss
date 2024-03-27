@@ -22,7 +22,7 @@
     $icon-size: $line-height * 4;
     $padding-right: rem-calc(20);
     $icon-size-with-padding: $icon-size + $padding-right;
-    $polygon-size: $icon-size / 2;
+    $polygon-size: $icon-size * 0.5;
     @include background-till-left-of-screen;
     @include brand-secondary-background;
     border: $border-width solid $brand-secondary;
