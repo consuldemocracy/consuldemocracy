@@ -28,6 +28,6 @@ class Budgets::Ballot::BallotComponent < ApplicationComponent
     end
 
     def group_investments(group)
-      ballot.investments.by_group(group.id)
+      ballot.investments.by_group(group.id).sort_by_ballot_lines
     end
 end

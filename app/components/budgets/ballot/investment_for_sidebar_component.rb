@@ -18,6 +18,6 @@ class Budgets::Ballot::InvestmentForSidebarComponent < Budgets::Ballot::Investme
     end
 
     def delete_path
-      budget_ballot_line_path(id: investment.id, investments_ids: investment_ids)
+      budget_ballot_line_path(budget, id: investment.id, investments_ids: investment_ids)
     end
 end

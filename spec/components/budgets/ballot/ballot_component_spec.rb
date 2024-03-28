@@ -3,11 +3,11 @@ require "rails_helper"
 describe Budgets::Ballot::BallotComponent do
   include Rails.application.routes.url_helpers
   before { vc_test_request.session[:ballot_referer] = "/" }
+  let(:budget) { create(:budget, :balloting) }
+  let(:ballot) { create(:budget_ballot, user: create(:user), budget: budget) }
 
   describe "link to group" do
-    let(:budget) { create(:budget, :balloting) }
     let(:group) { create(:budget_group, budget: budget) }
-    let(:ballot) { create(:budget_ballot, user: create(:user), budget: budget) }
 
     context "group with a single heading" do
       let!(:heading) { create(:budget_heading, group: group, price: 1000) }
@@ -49,5 +49,16 @@ describe Budgets::Ballot::BallotComponent do
                                   href: budget_group_path(budget, group)
       end
     end
+  end
+
+  it "sorts investments by ballot lines" do
+    ["B letter", "A letter", "C letter"].each do |title|
+      ballot.add_investment(create(:budget_investment, :selected, budget: budget, title: title))
+    end
+
+    render_inline Budgets::Ballot::BallotComponent.new(ballot)
+
+    expect("B letter").to appear_before "A letter"
+    expect("A letter").to appear_before "C letter"
   end
 end

@@ -758,6 +758,48 @@ describe Budget::Investment do
       end
     end
 
+    describe ".sort_by_ballot_lines" do
+      let(:budget) { create(:budget, :balloting) }
+      let(:ballot) { create(:budget_ballot, user: create(:user), budget: budget) }
+
+      it "adjusts results when investments are added and removed" do
+        letter_a = create(:budget_investment, :selected, budget: budget, title: "A letter")
+        letter_b = create(:budget_investment, :selected, budget: budget, title: "B letter")
+        letter_c = create(:budget_investment, :selected, budget: budget, title: "C letter")
+
+        ballot.add_investment(letter_b)
+        ballot.add_investment(letter_a)
+        ballot.add_investment(letter_c)
+
+        ballot.investments.delete(letter_a)
+        ballot.add_investment(letter_a)
+
+        ordered_investments = ballot.investments.sort_by_ballot_lines
+
+        expect(ordered_investments.map(&:title)).to eq ["B letter", "C letter", "A letter"]
+      end
+
+      it "does not sort alphabetically" do
+        ["B letter", "A letter", "C letter"].each do |title|
+          ballot.add_investment(create(:budget_investment, :selected, budget: budget, title: title))
+        end
+
+        ordered_investments = ballot.investments.sort_by_ballot_lines
+
+        expect(ordered_investments.map(&:title)).to eq ["B letter", "A letter", "C letter"]
+      end
+
+      it "does not sort by price" do
+        [2, 1, 3].each do |price|
+          ballot.add_investment(create(:budget_investment, :selected, budget: budget, price: price))
+        end
+
+        ordered_investments = ballot.investments.sort_by_ballot_lines
+
+        expect(ordered_investments.map(&:price)).to eq [2, 1, 3]
+      end
+    end
+
     describe "search_by_title_or_id" do
       it "does not return investments by description" do
         create(:budget_investment, title: "Something", description: "Awesome")

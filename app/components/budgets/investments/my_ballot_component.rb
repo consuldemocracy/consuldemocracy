@@ -20,6 +20,6 @@ class Budgets::Investments::MyBallotComponent < ApplicationComponent
     end
 
     def investments
-      ballot.investments.by_heading(heading.id)
+      ballot.investments.by_heading(heading.id).sort_by_ballot_lines
     end
 end
