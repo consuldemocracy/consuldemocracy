@@ -163,6 +163,7 @@ Layout/LineLength:
     - "config/environments/staging.rb"
     - "config/initializers/devise.rb"
     - "config/initializers/backtrace_silencers.rb"
+    - "config/initializers/cookie_rotator.rb"
     - "db/migrate/*create_delayed_jobs.rb"
     - "db/migrate/*create_active_storage_variant_records.active_storage.rb"
     - "app/models/budget/stats.rb"

@@ -27,10 +27,6 @@ module Consul
     # Rails 4 models worked
     config.active_record.belongs_to_required_by_default = false
 
-    # Keep using AES-256-CBC for message encryption in case it's used
-    # in any CONSUL DEMOCRACY installations
-    config.active_support.use_authenticated_message_encryption = false
-
     # Don't enable has_many_inversing because it doesn't seem to currently
     # work with the _count database columns we use for caching purposes
     config.active_record.has_many_inversing = false
