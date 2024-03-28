@@ -16,6 +16,8 @@ class Budget
       scope :by_investment, ->(investment_id) { where(investment_id: investment_id) }
 
       before_validation :set_denormalized_ids
+      after_create :clear_stats_cache
+      after_destroy :clear_stats_cache
 
       def check_enough_resources
         ballot.lock!
@@ -42,6 +44,10 @@ class Budget
           self.heading_id ||= investment&.heading_id
           self.group_id   ||= investment&.group_id
           self.budget_id  ||= investment&.budget_id
+        end
+
+        def clear_stats_cache
+          Budget::Stats.new(budget).clear_cache
         end
     end
   end

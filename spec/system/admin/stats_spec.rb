@@ -147,6 +147,26 @@ describe "Stats", :admin do
         expect(page).to have_content "VOTES\n3"
         expect(page).to have_content "PARTICIPANTS\n2"
       end
+
+      scenario "Clear cache after new votes", :with_cache do
+        create(:user, ballot_lines: [investment])
+
+        visit admin_stats_path
+        click_link "Participatory Budgets"
+        within("#budget_#{budget.id}") do
+          click_link "Final voting"
+        end
+
+        expect(page).to have_content "VOTES\n1"
+        expect(page).to have_content "PARTICIPANTS\n1"
+
+        create(:user, ballot_lines: [investment])
+
+        refresh
+
+        expect(page).to have_content "VOTES\n2"
+        expect(page).to have_content "PARTICIPANTS\n2"
+      end
     end
   end
 
