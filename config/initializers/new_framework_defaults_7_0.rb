@@ -107,7 +107,7 @@ Rails.application.config.action_dispatch.return_only_request_media_type_on_conte
 # Active Storage `has_many_attached` relationships will default to replacing the current collection instead of appending to it.
 # Thus, to support submitting an empty collection, the `file_field` helper will render an hidden field `include_hidden` by default when `multiple_file_field_include_hidden` is set to `true`.
 # See https://guides.rubyonrails.org/configuring.html#config-active-storage-multiple-file-field-include-hidden for more information.
-# Rails.application.config.active_storage.multiple_file_field_include_hidden = true
+Rails.application.config.active_storage.multiple_file_field_include_hidden = true
 
 # ** Please read carefully, this must be configured in config/application.rb (NOT this file) **
 # Disables the deprecated #to_s override in some Ruby core classes
