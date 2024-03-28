@@ -1,27 +1,19 @@
 module OmniauthTenantSetup
   class << self
-    def twitter
-      ->(env) do
-        oauth(env, secrets.twitter_key, secrets.twitter_secret)
-      end
+    def twitter(env)
+      oauth(env, secrets.twitter_key, secrets.twitter_secret)
     end
 
-    def facebook
-      ->(env) do
-        oauth2(env, secrets.facebook_key, secrets.facebook_secret)
-      end
+    def facebook(env)
+      oauth2(env, secrets.facebook_key, secrets.facebook_secret)
     end
 
-    def google_oauth2
-      ->(env) do
-        oauth2(env, secrets.google_oauth2_key, secrets.google_oauth2_secret)
-      end
+    def google_oauth2(env)
+      oauth2(env, secrets.google_oauth2_key, secrets.google_oauth2_secret)
     end
 
-    def wordpress_oauth2
-      ->(env) do
-        oauth2(env, secrets.wordpress_oauth2_key, secrets.wordpress_oauth2_secret)
-      end
+    def wordpress_oauth2(env)
+      oauth2(env, secrets.wordpress_oauth2_key, secrets.wordpress_oauth2_secret)
     end
 
     private
