@@ -37,7 +37,7 @@
 
         <ul class="ballot-list">
           <%= render Budgets::Ballot::InvestmentComponent.with_collection(
-            ballot.investments.by_group(group.id)
+            ballot.investments.by_group(group.id).order(:"budget_ballot_lines.created_at")
           ) %>
         </ul>
       </div>
