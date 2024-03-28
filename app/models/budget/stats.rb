@@ -92,6 +92,14 @@ class Budget::Stats
     groups
   end
 
+  def clear_cache
+    cache_keys = Rails.cache.instance_variable_get("@data")&.keys || []
+    budget_cache_keys = cache_keys.select { |cache_key| cache_key.starts_with?("budgets_stats/#{budget.id}/") }
+    budget_cache_keys.each do |key|
+      Rails.cache.delete(key)
+    end
+  end
+
   private
 
     def phase_methods
