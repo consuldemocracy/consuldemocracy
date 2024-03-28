@@ -30,6 +30,10 @@ module Consul
     # and you have no plans to rollback.
     config.active_support.cache_format_version = 7.0
 
+    # Disables the deprecated #to_s override in some Ruby core classes
+    # See https://guides.rubyonrails.org/configuring.html#config-active-support-disable-to-s-conversion for more information.
+    config.active_support.disable_to_s_conversion = true
+
     # Keep belongs_to fields optional by default, because that's the way
     # Rails 4 models worked
     config.active_record.belongs_to_required_by_default = false
