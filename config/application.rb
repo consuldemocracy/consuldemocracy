@@ -23,6 +23,13 @@ module Consul
   class Application < Rails::Application
     config.load_defaults 6.1
 
+    # Change the format of the cache entry.
+    # Changing this default means that all new cache entries added to the cache
+    # will have a different format that is not supported by Rails 6.1 applications.
+    # Only change this value after your application is fully deployed to Rails 7.0
+    # and you have no plans to rollback.
+    config.active_support.cache_format_version = 7.0
+
     # Keep belongs_to fields optional by default, because that's the way
     # Rails 4 models worked
     config.active_record.belongs_to_required_by_default = false
