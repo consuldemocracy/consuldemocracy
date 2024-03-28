@@ -32,7 +32,7 @@
   <ul class="ballot-list">
     <% if heading %>
       <%= render Budgets::Ballot::InvestmentForSidebarComponent.with_collection(
-        ballot.investments.by_heading(heading.id),
+        ballot.investments.by_heading(heading.id).order(:"budget_ballot_lines.created_at"),
         investment_ids: investment_ids
       ) %>
     <% end %>
