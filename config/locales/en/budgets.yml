@@ -106,7 +106,7 @@ en:
           change_vote_link: "change your vote"
           different_heading_assigned: "You have active votes in another heading: %{heading_link}"
           change_ballot: "If you change your mind you can remove your votes in %{check_ballot} and start again."
-          check_ballot_link: "submit my ballot"
+          check_ballot_link: "check my votes"
           zero: You have not voted any investment project in this group.
           verified_only: "To create a new budget investment %{verify}."
           create: "Create a budget investment"
@@ -155,10 +155,10 @@ en:
           other: "%{count} supports"
           zero: No supports
       header:
-        check_ballot: "Submit my ballot"
+        check_ballot: "Check my votes"
         different_heading_assigned: "You have active votes in another heading: %{heading_link}"
         change_ballot: "If you change your mind you can remove your votes in %{check_ballot} and start again."
-        check_ballot_link: "submit my ballot"
+        check_ballot_link: "check my votes"
         price: "Total budget"
       votes:
         already_supported: "You have already supported this investment project. Share it!"
