@@ -11,7 +11,7 @@ describe RemoteTranslationsController, :remote_translations do
     end
 
     before do
-      request.env["HTTP_REFERER"] = "any_path"
+      request.env["HTTP_REFERER"] = "/any_path"
     end
 
     it "create correctly remote translation" do
@@ -39,7 +39,7 @@ describe RemoteTranslationsController, :remote_translations do
     it "redirect_to request referer after create" do
       post :create, params: { remote_translations: remote_translations_params }
 
-      expect(subject).to redirect_to("any_path")
+      expect(subject).to redirect_to "/any_path"
     end
   end
 end

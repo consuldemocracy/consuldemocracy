@@ -11,7 +11,7 @@ class NotificationsController < ApplicationController
   def show
     @notification = current_user.notifications.find(params[:id])
     @notification.mark_as_read
-    redirect_to linkable_resource_path(@notification)
+    redirect_to linkable_resource_path(@notification), allow_other_host: true
   end
 
   def read
