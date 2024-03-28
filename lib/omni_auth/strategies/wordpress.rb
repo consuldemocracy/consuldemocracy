@@ -5,7 +5,7 @@ require "omniauth-oauth2"
 module OmniAuth
   module Strategies
     class Wordpress < OmniAuth::Strategies::OAuth2
-      option :name, "wordpress_oauth2"
+      option :name, :wordpress_oauth2
 
       option :client_options, {}
 

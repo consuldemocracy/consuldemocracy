@@ -284,7 +284,6 @@ Devise.setup do |config|
   config.omniauth :wordpress_oauth2,
                   Rails.application.secrets.wordpress_oauth2_key,
                   Rails.application.secrets.wordpress_oauth2_secret,
-                  strategy_class: OmniAuth::Strategies::Wordpress,
                   client_options: { site: Rails.application.secrets.wordpress_oauth2_site },
                   setup: OmniauthTenantSetup.wordpress_oauth2
 
