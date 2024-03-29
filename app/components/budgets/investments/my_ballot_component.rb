@@ -18,4 +18,8 @@ class Budgets::Investments::MyBallotComponent < ApplicationComponent
     def budget
       ballot.budget
     end
+
+    def investments
+      ballot.investments.by_heading(heading.id)
+    end
 end

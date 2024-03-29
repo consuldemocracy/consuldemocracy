@@ -36,9 +36,7 @@
         <% end %>
 
         <ul class="ballot-list">
-          <%= render Budgets::Ballot::InvestmentComponent.with_collection(
-            ballot.investments.by_group(group.id)
-          ) %>
+          <%= render Budgets::Ballot::InvestmentComponent.with_collection(group_investments(group)) %>
         </ul>
       </div>
     </div>
