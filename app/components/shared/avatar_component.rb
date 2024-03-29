@@ -10,7 +10,7 @@ class Shared::AvatarComponent < ApplicationComponent
   private
 
     def default_options
-      { background_color: colors[seed % colors.size] }
+      { background_color: colors[seed % colors.size], alt: "" }
     end
 
     def options
