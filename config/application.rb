@@ -39,6 +39,9 @@ module Consul
     # work with the _count database columns we use for caching purposes
     config.active_record.has_many_inversing = false
 
+    # Disable Sprockets AssetUrlProcessor for CKEditor compatibility
+    config.assets.resolve_assets_in_css_urls = false
+
     # Keep reading existing data in the legislation_annotations ranges column
     config.active_record.yaml_column_permitted_classes = [ActiveSupport::HashWithIndifferentAccess, Symbol]
 
