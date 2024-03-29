@@ -80,7 +80,7 @@ describe "Debates" do
     expect(page).to have_content "Debate description"
     expect(page).to have_content "Charles Dickens"
     expect(page).to have_content I18n.l(debate.created_at.to_date)
-    expect(page).to have_avatar "Charles Dickens"
+    expect(page).to have_avatar "C"
     expect(page.html).to include "<title>#{debate.title}</title>"
   end
 

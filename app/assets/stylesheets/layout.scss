@@ -1558,7 +1558,8 @@ table {
 .comment-body,
 .notification-body {
 
-  img {
+  img,
+  svg {
     margin-right: calc(#{$line-height} / 2);
   }
 
