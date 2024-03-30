@@ -2,8 +2,6 @@ require "rails_helper"
 
 describe "Legislation" do
   context "process debate page" do
-    it_behaves_like "notifiable in-app", :legislation_question
-
     let(:process) do
       create(:legislation_process,
              debate_start_date: Date.current - 3.days,
@@ -15,6 +13,8 @@ describe "Legislation" do
       create(:legislation_question, process: process, title: "Question 2", description: "Description 2")
       create(:legislation_question, process: process, title: "Question 3", description: "Description 3")
     end
+
+    it_behaves_like "notifiable in-app", :legislation_question
 
     scenario "shows question list" do
       visit legislation_process_path(process)
