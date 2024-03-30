@@ -28,7 +28,8 @@ describe Statisticable do
     stub_const("DummyStats", dummy_stats)
   end
 
-  let(:stats) { DummyStats.new(double(id: 1, class: double(table_name: ""))) }
+  let(:resource) { double(id: 1, class: double(table_name: "")) }
+  let(:stats) { DummyStats.new(resource) }
 
   describe "#gender?" do
     context "No participants" do
@@ -228,8 +229,8 @@ describe Statisticable do
     end
   end
 
-  describe "cache" do
-    it "expires the cache at the end of the day", :with_cache do
+  describe "cache", :with_cache do
+    it "expires the cache at the end of the day by default" do
       time = Time.current
 
       travel_to(time) do
@@ -247,6 +248,21 @@ describe Statisticable do
       end
 
       travel_to(time.end_of_day + 1.second) do
+        expect(stats.total).to eq 7
+      end
+    end
+
+    it "does not use the cache with cache: false" do
+      stats = DummyStats.new(resource, cache: false)
+      time = Time.current
+
+      travel_to(time) do
+        stats.total = 6
+
+        expect(stats.total).to eq 6
+
+        stats.total = 7
+
         expect(stats.total).to eq 7
       end
     end

@@ -3,7 +3,7 @@ module Statisticable
   PARTICIPATIONS = %w[gender age geozone].freeze
 
   included do
-    attr_reader :resource
+    attr_reader :resource, :cache
   end
 
   class_methods do
@@ -42,8 +42,9 @@ module Statisticable
     end
   end
 
-  def initialize(resource)
+  def initialize(resource, cache: true)
     @resource = resource
+    @cache = cache
   end
 
   def generate
@@ -226,7 +227,11 @@ module Statisticable
       end
     end
 
-    def stats_cache(key, &)
-      Rails.cache.fetch(full_cache_key_for(key), expires_at: Date.current.end_of_day, &)
+    def stats_cache(key, &block)
+      if cache
+        Rails.cache.fetch(full_cache_key_for(key), expires_at: Date.current.end_of_day, &block)
+      else
+        block.call
+      end
     end
 end
