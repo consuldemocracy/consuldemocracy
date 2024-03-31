@@ -1,0 +1,22 @@
+<%= header %>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t("admin.site_customization.images.index.image") %></th>
+      <th><%= t("admin.actions.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% images.each do |image| %>
+      <tr id="image_<%= image.name %>">
+        <td class="small-12 medium-4">
+          <strong><%= image.name %></strong> (<%= image.required_width %>x<%= image.required_height %>)
+        </td>
+        <td class="small-12 medium-8">
+          <%= render Admin::SiteCustomization::Images::TableActionsComponent.new(image) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
