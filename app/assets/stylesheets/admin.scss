@@ -31,6 +31,15 @@ $table-header:   #ecf1f6;
 .admin {
   @include admin-layout;
 
+  main {
+    &.admin-site-customization-pages-new,
+    &.admin-site-customization-pages-edit {
+      > header {
+        @include grid-row;
+      }
+    }
+  }
+
   h2 {
     font-weight: 100;
     margin-bottom: $line-height;
@@ -503,8 +512,12 @@ code {
 
   a,
   button {
-    @include regular-button;
-    margin-left: auto;
+    margin-#{$global-left}: auto;
+
+    &:not(.delete) {
+      @include regular-button;
+      margin-#{$global-left}: auto;
+    }
   }
 }
 
