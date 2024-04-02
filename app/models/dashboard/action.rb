@@ -33,12 +33,8 @@ class Dashboard::Action < ApplicationRecord
   scope :inactive, -> { where(active: false) }
   scope :resources, -> { where(action_type: 1) }
   scope :proposed_actions, -> { where(action_type: 0) }
-  scope :by_proposal, lambda { |proposal|
-    where(published_proposal: false) if proposal.draft?
-  }
-  scope :by_published_proposal, lambda { |published|
-    where(published_proposal: published)
-  }
+  scope :by_proposal, ->(proposal) { where(published_proposal: false) if proposal.draft? }
+  scope :by_published_proposal, ->(published) { where(published_proposal: published) }
 
   def self.active_for(proposal)
     published_at = proposal.published_at&.to_date || Date.current
