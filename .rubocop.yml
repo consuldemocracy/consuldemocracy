@@ -767,6 +767,9 @@ Style/RedundantStringEscape:
 Style/SafeNavigation:
   Enabled: true
 
+Style/SingleLineDoEndBlock:
+  Enabled: true
+
 Style/SingleLineMethods:
   Enabled: true
 
