@@ -69,7 +69,6 @@ namespace :deploy do
   after "deploy:migrate", "add_new_settings"
 
   after :publishing, "setup_puma"
-  before "puma:smart_restart", "stop_puma_daemon"
   after :finished, "refresh_sitemap"
 
   desc "Deploys and runs the tasks needed to upgrade to a new release"
@@ -177,21 +176,4 @@ task :setup_puma do
 
   after "setup_puma", "puma:systemd:config"
   after "setup_puma", "puma:systemd:enable"
-end
-
-# Code adapted from the task to stop the daemon in capistrano3-puma
-desc "Stops the Puma daemon so systemd can start the Puma process"
-task :stop_puma_daemon do
-  on roles(fetch(:puma_role)) do |role|
-    within release_path do
-      with rails_env: fetch(:rails_env) do
-        if test("[ -f #{fetch(:puma_pid)} ]") &&
-           !test("systemctl --user is-active #{fetch(:puma_service_unit_name)}") &&
-           test(:kill, "-0 $( cat #{fetch(:puma_pid)} )")
-          info "Puma: stopping daemon"
-          execute :pumactl, "-S #{fetch(:puma_state)} -F #{fetch(:puma_conf)} stop"
-        end
-      end
-    end
-  end
 end
