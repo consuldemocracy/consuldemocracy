@@ -86,7 +86,7 @@
 //= require banners
 //= require social_share
 //= require checkbox_toggle
-//= require markdown-it
+//= require markdown-it/dist/markdown-it
 //= require markdown_editor
 //= require html_editor
 //= require cocoon
