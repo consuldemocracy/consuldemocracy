@@ -976,7 +976,7 @@ table {
     vertical-align: middle;
   }
 
-  &[aria-expanded='false'] {
+  &[aria-expanded="false"] {
     @include hollow-button;
 
     + .columns-selector-wrapper {
@@ -984,7 +984,7 @@ table {
     }
   }
 
-  &[aria-expanded='true'] {
+  &[aria-expanded="true"] {
     @include regular-button;
   }
 }

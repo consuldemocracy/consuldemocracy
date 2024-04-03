@@ -10,5 +10,12 @@
     "leaflet.markercluster": "^1.5.3",
     "markdown-it": "^12.3.2",
     "motion-ui": "^2.0.3"
+  },
+  "devDependencies": {
+    "@stylistic/stylelint-plugin": "^2.1.0",
+    "postcss-scss": "^4.0.9",
+    "stylelint": "^16.3.1",
+    "stylelint-order": "^6.0.4",
+    "stylelint-scss": "^6.2.1"
   }
 }
