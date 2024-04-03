@@ -58,10 +58,6 @@ module GlobalizeHelper
     end
   end
 
-  def translations_for_locale?(resource)
-    resource.locales_not_marked_for_destruction.any?
-  end
-
   def selected_languages_description(resource)
     sanitize(t("shared.translations.languages_in_use", count: active_languages_count(resource)))
   end
