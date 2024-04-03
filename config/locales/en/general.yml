@@ -742,7 +742,7 @@ en:
         see_more: See more recommendations
         hide: Hide recommendations
     translations:
-      select_language_prompt: Choose language
+      current_language: Current language
       remove_language: Remove language
       add_language: Add language
       languages_in_use:
