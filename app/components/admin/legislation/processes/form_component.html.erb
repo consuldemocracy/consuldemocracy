@@ -121,12 +121,12 @@
       <h3><%= t("admin.legislation.processes.form.banner_title") %></h3>
     </div>
 
-    <div class="small-6 large-3 column">
-      <%= f.label :background_color, nil, for: "background_color_input" %>
+    <div class="small-6 large-3 column background-color-inputs">
+      <%= f.label :background_color, nil, for: "background_color_input", id: "background_color_label" %>
       <p class="help-text"><%= t("admin.shared.color_help") %></p>
       <div class="row collapse">
         <div class="small-12 medium-6 column">
-          <%= f.text_field :background_color, label: false, type: :color %>
+          <%= f.text_field :background_color, label: false, type: :color, "aria-labelledby": "background_color_label" %>
         </div>
         <div class="small-12 medium-6 column">
           <%= f.text_field :background_color, label: false, id: "background_color_input" %>
@@ -134,12 +134,12 @@
       </div>
     </div>
 
-    <div class="small-6 large-3 column end">
-      <%= f.label :font_color, nil, for: "font_color_input" %>
+    <div class="small-6 large-3 column end font-color-inputs">
+      <%= f.label :font_color, nil, for: "font_color_input", id: "font_color_label" %>
       <p class="help-text"><%= t("admin.shared.color_help") %></p>
       <div class="row collapse">
         <div class="small-12 medium-6 column">
-          <%= f.text_field :font_color, label: false, type: :color %>
+          <%= f.text_field :font_color, label: false, type: :color, "aria-labelledby": "font_color_label" %>
         </div>
         <div class="small-12 medium-6 column">
           <%= f.text_field :font_color, label: false, id: "font_color_input" %>
