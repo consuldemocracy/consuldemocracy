@@ -52,8 +52,4 @@ Tenant.run_on_each do
       end
     end
   end
-
-  unless Rails.env.development? || Rails.env.test?
-    SitemapGenerator::Sitemap.ping_search_engines
-  end
 end
