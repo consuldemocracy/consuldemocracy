@@ -24,14 +24,14 @@
     <%= f.text_area :geojson, rows: "10", hint: t("admin.geozones.geozone.geojson_help") %>
   </div>
 
-  <div class="small-12 large-3 column">
-    <%= f.label :color, nil, for: "color_input", id: "color_input_label" %>
+  <div class="small-12 large-3 column color-inputs">
+    <%= f.label :color, nil, for: "color_input", id: "color_label" %>
     <p class="help-text">
       <%= t("admin.geozones.geozone.color_help", format_help: t("admin.shared.color_help")) %>
     </p>
     <div class="row collapse">
       <div class="small-12 medium-6 column">
-        <%= f.text_field :color, label: false, type: :color %>
+        <%= f.text_field :color, label: false, type: :color, "aria-labelledby": "color_label" %>
       </div>
       <div class="small-12 medium-6 column">
         <%= f.text_field :color, label: false, id: "color_input" %>
