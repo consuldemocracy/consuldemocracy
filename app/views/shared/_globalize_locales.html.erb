@@ -1,5 +1,6 @@
 <% if translations_interface_enabled? %>
-  <%= render "shared/common_globalize_locales",
-             resource: resource,
-             manage_languages: defined?(manage_languages) ? manage_languages : true %>
+  <%= render Shared::GlobalizeLocalesComponent.new(
+    resource,
+    manage_languages: defined?(manage_languages) ? manage_languages : true
+  ) %>
 <% end %>
