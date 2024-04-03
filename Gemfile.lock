@@ -282,10 +282,6 @@ GEM
       railties (>= 3.1, < 7.0)
     invisible_captcha (2.3.0)
       rails (>= 5.2)
-    jquery-fileupload-rails (1.0.0)
-      actionpack (>= 3.1)
-      railties (>= 3.1)
-      sassc
     json (2.7.1)
     jwt (2.7.1)
     kaminari (1.2.2)
@@ -728,7 +724,6 @@ DEPENDENCIES
   image_processing (~> 1.12.2)
   initialjs-rails (~> 0.2.0.9)
   invisible_captcha (~> 2.3.0)
-  jquery-fileupload-rails
   kaminari (~> 1.2.2)
   knapsack_pro (~> 7.0.1)
   launchy (~> 2.5.2)
