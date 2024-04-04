@@ -1,3 +1,4 @@
+require "sassc-embedded"
 require_relative "boot"
 
 require "rails"

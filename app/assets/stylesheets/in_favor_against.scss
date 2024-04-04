@@ -1,8 +1,8 @@
 .in-favor-against {
-  @include flex-with-gap($line-height / 4);
+  @include flex-with-gap($line-height * 0.25);
 
   @include breakpoint(medium) {
-    @include flex-with-gap($line-height * 3 / 4);
+    @include flex-with-gap($line-height * 0.75);
   }
 
   &,
@@ -75,7 +75,7 @@
     display: inline-block;
     font-size: $small-font-size;
     line-height: $line-height * 2;
-    padding-right: $line-height / 2;
+    padding-right: calc(#{$line-height} / 2);
     vertical-align: top;
 
     @include breakpoint(medium) {

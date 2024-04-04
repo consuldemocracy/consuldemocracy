@@ -53,8 +53,8 @@ $show-header-for-stacked: true !default;
 // 2. CONSUL DEMOCRACY variables
 // -----------------------------
 
-$body-margin: calc(50vw - #{$global-width / 2}) !default;
-$full-width-margin: unquote("#{$global-width / 2} - 50vw") !default;
+$body-margin: calc(50vw - #{$global-width * 0.5}) !default;
+$full-width-margin: unquote("#{$global-width * 0.5} - 50vw") !default;
 
 $base-font-size:      rem-calc(17) !default;
 $base-line:           rem-calc(26) !default;
@@ -160,7 +160,7 @@ $anchor-color-hover: darken($anchor-color, 20%) !default;
 $tab-background-active: $white !default;
 
 $tab-item-font-size: $base-font-size !default;
-$tab-item-padding: $line-height / 2  0 !default;
+$tab-item-padding: $line-height * 0.5  0 !default;
 $tab-content-border: $border !default;
 
 $tooltip-background-color: $brand !default;

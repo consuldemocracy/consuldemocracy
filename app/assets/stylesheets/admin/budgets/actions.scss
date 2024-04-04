@@ -1,7 +1,7 @@
 .admin .budgets-actions {
   > * {
     $gap: $line-height;
-    $vertical-gap: $line-height / 2;
+    $vertical-gap: $line-height * 0.5;
     @include flex-with-gap($gap);
     align-items: center;
     flex-wrap: wrap;
@@ -22,7 +22,7 @@
     dd {
       flex-basis: 20em;
       flex-grow: 1;
-      max-width: $global-width * 3 / 4;
+      max-width: calc(#{$global-width} * 3 / 4);
     }
 
     + * {
