@@ -67,7 +67,7 @@ GEM
     addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
     afm (0.2.2)
-    ahoy_matey (5.0.2)
+    ahoy_matey (5.1.0)
       activesupport (>= 6.1)
       device_detector (>= 1)
       safely_block (>= 0.4)
@@ -678,7 +678,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on (~> 10.0.0)
   acts_as_votable (~> 0.14.0)
-  ahoy_matey (~> 5.0.2)
+  ahoy_matey (~> 5.1.0)
   airbrake (~> 13.0.4)
   ancestry (~> 4.3.3)
   audited (~> 5.4.3)
