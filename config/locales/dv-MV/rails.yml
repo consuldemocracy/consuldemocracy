@@ -1,0 +1,36 @@
+dv:
+  date:
+    abbr_day_names:
+      - އާދީއްތަ
+      - ހޯމަ
+      - އަންގާރަ
+      - ބުދަ
+      - ބުރާސްފަތި
+      - ހުކުރު
+      - ހޮނިހިރު
+    abbr_month_names:
+      -
+      - ޖަނަވަރީ
+      - ފެބުރުވަރީ
+      - މާރިޗު
+      - އެޕްރީލް
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+  number:
+    currency:
+      format:
+        significant: false
+        strip_insignificant_zeros: false
+    format:
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      format:
+        significant: true
+        strip_insignificant_zeros: true
