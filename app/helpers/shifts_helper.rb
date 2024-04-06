@@ -24,12 +24,12 @@ module ShiftsHelper
   end
 
   def start_date(polls)
-    start_date = polls.map(&:starts_at).min.to_date
+    start_date = polls.minimum(:starts_at).to_date
     [start_date, Date.current].max
   end
 
   def end_date(polls)
-    polls.map(&:ends_at).max.to_date
+    polls.maximum(:ends_at).to_date
   end
 
   def officer_select_options(officers)
