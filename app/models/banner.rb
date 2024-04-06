@@ -20,7 +20,7 @@ class Banner < ApplicationRecord
   has_many :web_sections, through: :sections
 
   scope :with_active, -> { where("post_started_at <= :date and post_ended_at >= :date", date: Date.current) }
-  scope :with_inactive, -> { where.not(id: with_active) }
+  scope :with_inactive, -> { excluding(with_active) }
   scope :in_section, ->(section_name) do
     joins(:web_sections, :sections).where("web_sections.name ilike ?", section_name)
   end
