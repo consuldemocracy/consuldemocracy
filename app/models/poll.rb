@@ -80,7 +80,7 @@ class Poll < ApplicationRecord
     where("? < ends_at and ? >= starts_at",
           poll.starts_at.beginning_of_day,
           poll.ends_at.end_of_day)
-      .where.not(id: poll.id)
+      .excluding(poll)
       .where(related: poll.related)
   end
 

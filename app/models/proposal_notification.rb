@@ -16,7 +16,7 @@ class ProposalNotification < ApplicationRecord
   scope :sort_by_moderated,  -> { reorder(moderated: :desc) }
 
   scope :moderated, -> { where(moderated: true) }
-  scope :not_moderated, -> { where(moderated: false) }
+  scope :not_moderated, -> { excluding(moderated) }
   scope :pending_review, -> { moderated.where(ignored_at: nil) }
   scope :ignored, -> { moderated.where.not(ignored_at: nil) }
 
