@@ -34,9 +34,22 @@ class Poll < ApplicationRecord
 
   validates_translation :name, presence: true
   validate :date_range
-  validate :start_date_is_not_past_date, on: :create
+  validates :starts_at,
+            comparison: {
+              greater_than_or_equal_to: ->(*) { Time.current },
+              message: ->(*) { I18n.t("errors.messages.past_date") }
+            },
+            allow_blank: true,
+            on: :create
+  validates :ends_at,
+            comparison: {
+              greater_than_or_equal_to: ->(*) { Time.current },
+              message: ->(*) { I18n.t("errors.messages.past_date") }
+            },
+            on: :update,
+            if: -> { will_save_change_to_ends_at? }
+
   validate :start_date_change, on: :update
-  validate :end_date_is_not_past_date, on: :update
   validate :end_date_change, on: :update
   validate :only_one_active, unless: :public?
 
@@ -168,12 +181,6 @@ class Poll < ApplicationRecord
     end
   end
 
-  def start_date_is_not_past_date
-    if starts_at.present? && starts_at < Time.current
-      errors.add(:starts_at, I18n.t("errors.messages.past_date"))
-    end
-  end
-
   def start_date_change
     if will_save_change_to_starts_at?
       if starts_at_in_database < Time.current
@@ -181,12 +188,6 @@ class Poll < ApplicationRecord
       elsif starts_at < Time.current
         errors.add(:starts_at, I18n.t("errors.messages.past_date"))
       end
-    end
-  end
-
-  def end_date_is_not_past_date
-    if will_save_change_to_ends_at? && ends_at < Time.current
-      errors.add(:ends_at, I18n.t("errors.messages.past_date"))
     end
   end
 
