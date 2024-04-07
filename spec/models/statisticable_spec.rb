@@ -8,6 +8,11 @@ describe Statisticable do
       def participants
         User.all
       end
+      alias_method :participants_from_original_table, :participants
+
+      def total_participants
+        User.count
+      end
 
       def participation_date
         Time.current
@@ -17,7 +22,7 @@ describe Statisticable do
     stub_const("DummyStats", dummy_stats)
   end
 
-  let(:stats) { DummyStats.new(nil) }
+  let(:stats) { DummyStats.new(double(id: 1, class: double(table_name: ""))) }
 
   describe "#gender?" do
     context "No participants" do
@@ -192,6 +197,28 @@ describe Statisticable do
         expect(stats.stats_methods).to include(:participants_by_age)
         expect(stats.stats_methods).to include(:participants_by_geozone)
       end
+    end
+  end
+
+  describe "#generate" do
+    it "drops the temporary table after finishing" do
+      stats.generate
+
+      expect { stats.send(:participants_class).first }.to raise_exception(ActiveRecord::StatementInvalid)
+    end
+
+    it "can be executed twice without errors" do
+      stats.generate
+
+      expect { stats.generate }.not_to raise_exception
+    end
+
+    it "can be executed twice in parallel since it uses a transaction" do
+      other_stats = DummyStats.new(stats.resource)
+
+      [stats, other_stats].map do |stat|
+        Thread.new { stat.generate }
+      end.each(&:join)
     end
   end
 end

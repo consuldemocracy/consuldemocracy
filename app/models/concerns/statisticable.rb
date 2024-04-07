@@ -47,7 +47,23 @@ module Statisticable
   end
 
   def generate
-    stats_methods.each { |stat_name| send(stat_name) }
+    User.transaction do
+      create_participants_table
+
+      begin
+        define_singleton_method :participants do
+          participants_class.all
+        end
+
+        stats_methods.each { |stat_name| send(stat_name) }
+      ensure
+        define_singleton_method :participants do
+          participants_from_original_table
+        end
+      end
+
+      drop_participants_table
+    end
   end
 
   def stats_methods
@@ -77,6 +93,7 @@ module Statisticable
   def participants
     @participants ||= User.unscoped.where(id: participant_ids)
   end
+  alias_method :participants_from_original_table, :participants
 
   def total_male_participants
     participants.male.count
@@ -149,6 +166,26 @@ module Statisticable
 
     def participation_methods
       participations.map { |participation| self.class.send("#{participation}_methods") }.flatten
+    end
+
+    def create_participants_table
+      User.connection.create_table(
+        participants_table_name,
+        temporary: true,
+        as: participants_from_original_table.to_sql
+      )
+    end
+
+    def drop_participants_table
+      User.connection.drop_table(participants_table_name, if_exists: true, temporary: true)
+    end
+
+    def participants_table_name
+      @participants_table_name ||= "participants_#{resource.class.table_name}_#{resource.id}"
+    end
+
+    def participants_class
+      @participants_class ||= Class.new(User).tap { |klass| klass.table_name = participants_table_name }
     end
 
     def total_participants_with_gender
