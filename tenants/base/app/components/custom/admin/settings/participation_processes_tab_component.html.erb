@@ -1,0 +1,15 @@
+<h2><%= t("admin.settings.index.participation_processes") %></h2>
+
+<%= render Admin::Settings::TableComponent.new(setting_name: "feature", table_class: "featured-settings-table") do %>
+  <% settings.each do |key| %>
+    <%= render Admin::Settings::RowComponent.new(key, type: :feature, tab: "#tab-participation-processes") %>
+  <% end %>
+<% end %>
+
+<h2><%= t("admin.settings.index.show_navbar") %></h2>
+
+<%= render Admin::Settings::TableComponent.new(setting_name: "feature", table_class: "featured-settings-table") do %>
+  <% show_navbar_settings.each do |navbar_setting_key| %>
+    <%= render Admin::Settings::RowComponent.new(navbar_setting_key, type: :feature, tab: "#tab-participation-processes") %>
+  <% end %>
+<% end %>
