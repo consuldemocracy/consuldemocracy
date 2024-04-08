@@ -488,14 +488,14 @@ describe "Users" do
 
   describe "Initials" do
     scenario "display SVG avatars when loaded into the DOM" do
-      login_as(create(:user))
+      login_as(create(:user, username: "Commentator"))
       visit debate_path(create(:debate))
 
       fill_in "Leave your comment", with: "I'm awesome"
       click_button "Publish comment"
 
       within ".comment", text: "I'm awesome" do
-        expect(page).to have_css "img.initialjs-avatar[src^='data:image/svg']"
+        expect(page).to have_avatar "Commentator"
       end
     end
   end

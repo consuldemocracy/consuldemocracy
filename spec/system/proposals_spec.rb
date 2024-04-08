@@ -114,16 +114,16 @@ describe "Proposals" do
   end
 
   scenario "Show" do
-    proposal = create(:proposal)
+    proposal = create(:proposal, author: create(:user, username: "Mark Twain"))
 
     visit proposal_path(proposal)
 
     expect(page).to have_content proposal.title
     expect(page).to have_content proposal.code
     expect(page).to have_content "Proposal description"
-    expect(page).to have_content proposal.author.name
+    expect(page).to have_content "Mark Twain"
     expect(page).to have_content I18n.l(proposal.created_at.to_date)
-    expect(page).to have_css avatar(proposal.author.name)
+    expect(page).to have_avatar "Mark Twain"
     expect(page.html).to include "<title>#{proposal.title}</title>"
     expect(page).not_to have_css ".js-flag-actions"
     expect(page).not_to have_css ".js-follow"

@@ -72,15 +72,15 @@ describe "Debates" do
   end
 
   scenario "Show" do
-    debate = create(:debate)
+    debate = create(:debate, author: create(:user, username: "Charles Dickens"))
 
     visit debate_path(debate)
 
     expect(page).to have_content debate.title
     expect(page).to have_content "Debate description"
-    expect(page).to have_content debate.author.name
+    expect(page).to have_content "Charles Dickens"
     expect(page).to have_content I18n.l(debate.created_at.to_date)
-    expect(page).to have_css avatar(debate.author.name)
+    expect(page).to have_avatar "Charles Dickens"
     expect(page.html).to include "<title>#{debate.title}</title>"
   end
 
