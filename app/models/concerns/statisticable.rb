@@ -114,19 +114,23 @@ module Statisticable
   end
 
   def participants_by_geozone
-    geozone_stats.to_h do |stats|
+    geozones.to_h do |geozone|
+      count = participants.where(geozone: geozone).count
+
       [
-        stats.name,
+        geozone.name,
         {
-          count: stats.count,
-          percentage: stats.percentage
+          count: count,
+          percentage: calculate_percentage(count, total_participants)
         }
       ]
     end
   end
 
   def calculate_percentage(fraction, total)
-    PercentageCalculator.calculate(fraction, total)
+    return 0.0 if total.zero?
+
+    (fraction * 100.0 / total).round(3)
   end
 
   def version
@@ -176,10 +180,6 @@ module Statisticable
 
     def geozones
       Geozone.order("name")
-    end
-
-    def geozone_stats
-      geozones.map { |geozone| GeozoneStats.new(geozone, participants) }
     end
 
     def range_description(start, finish)
