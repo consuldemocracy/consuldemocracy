@@ -224,4 +224,8 @@ module Statisticable
         I18n.t("stats.age_range", start: start, finish: finish)
       end
     end
+
+    def stats_cache(key, &)
+      Rails.cache.fetch(full_cache_key_for(key), &)
+    end
 end
