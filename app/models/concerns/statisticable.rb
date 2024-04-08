@@ -174,10 +174,6 @@ module Statisticable
        [90, 300]]
     end
 
-    def participants_between_ages(from, to)
-      participants.between_ages(from, to)
-    end
-
     def geozones
       Geozone.order("name")
     end
