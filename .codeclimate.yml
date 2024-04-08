@@ -14,7 +14,7 @@ engines:
     enabled: true
   coffeelint:
     enabled: true
-  scss-lint:
+  stylelint:
     enabled: true
   fixme:
     enabled: true
