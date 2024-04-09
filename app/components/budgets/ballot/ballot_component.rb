@@ -26,4 +26,8 @@ class Budgets::Ballot::BallotComponent < ApplicationComponent
         budget_investments_path(budget, heading_id: group.headings.first)
       end
     end
+
+    def group_investments(group)
+      ballot.investments.by_group(group.id).sort_by_ballot_lines
+    end
 end
