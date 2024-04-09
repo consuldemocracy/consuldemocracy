@@ -1,0 +1,26 @@
+.admin .locales-form {
+  label {
+    display: table;
+  }
+
+  select {
+    width: auto;
+  }
+
+  > select + fieldset,
+  > fieldset + fieldset {
+    margin-top: $line-height / 2;
+  }
+
+  > [type="hidden"] + fieldset,
+  > fieldset + fieldset {
+    @include admin-fieldset-separator;
+    padding-top: calc(#{$line-height} / 4);
+  }
+
+  [type="submit"] {
+    @include regular-button;
+    display: block;
+    margin-top: $line-height;
+  }
+}

@@ -54,7 +54,7 @@ class Admin::MenuComponent < ApplicationComponent
     end
 
     def settings?
-      controllers_names = ["settings", "tenants", "tags", "geozones", "local_census_records", "imports"]
+      controllers_names = %w[settings tenants tags locales geozones local_census_records imports]
       controllers_names.include?(controller_name)
     end
 
@@ -462,6 +462,7 @@ class Admin::MenuComponent < ApplicationComponent
           settings_link,
           tenants_link,
           tags_link,
+          locales_link,
           geozones_link,
           local_census_records_link
         )
@@ -491,6 +492,14 @@ class Admin::MenuComponent < ApplicationComponent
         t("admin.menu.proposals_topics"),
         admin_tags_path,
         controller_name == "tags"
+      ]
+    end
+
+    def locales_link
+      [
+        t("admin.menu.locales"),
+        admin_locales_path,
+        controller_name == "locales"
       ]
     end
 

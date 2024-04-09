@@ -710,6 +710,13 @@ en:
       milestones:
         index:
           title: Following
+    locales:
+      default: Default language
+      default_help_text: "This is the default language of the application, and changing it will <strong>affect every user</strong> visiting the website for the first time."
+      enabled: Enabled languages
+      enabled_help_text: The default language, selected above, will be included automatically.
+      update:
+        notice: Languages updated successfully
     managers:
       index:
         title: Managers
@@ -732,6 +739,7 @@ en:
       proposals_topics: Proposals topics
       budgets: Participatory budgets
       geozones: Geozones
+      locales: Languages
       hidden_comments: Hidden comments
       hidden_debates: Hidden debates
       hidden_proposals: Hidden proposals

@@ -1,0 +1,40 @@
+<%= form_tag admin_locales_path, method: :patch, class: "locales-form" do %>
+  <% if many_available_locales? %>
+    <%= label_tag "default_locale", t("admin.locales.default") %>
+    <p class="help-text"><%= sanitize(t("admin.locales.default_help_text")) %></p>
+    <%= select_tag "default_locale", locales_options %>
+  <% else %>
+    <fieldset>
+      <legend><%= t("admin.locales.default") %></legend>
+      <p class="help-text"><%= sanitize(t("admin.locales.default_help_text")) %></p>
+
+      <div class="collection-radio-buttons">
+        <% available_locales.each do |locale| %>
+          <%= label_tag "default_locale_#{locale}" do %>
+            <%= radio_button_tag "default_locale", locale, locale == default %>
+            <%= name_for_locale(locale) %>
+          <% end %>
+        <% end %>
+      </div>
+    </fieldset>
+  <% end %>
+
+  <fieldset>
+    <legend><%= t("admin.locales.enabled") %></legend>
+    <p class="help-text"><%= t("admin.locales.enabled_help_text") %></p>
+
+    <div class="collection-check-boxes">
+      <% available_locales.each do |locale| %>
+        <%= label_tag "enabled_locales_#{locale}" do %>
+          <%= check_box_tag "enabled_locales[]",
+                            locale,
+                            enabled_locales.include?(locale),
+                            id: "enabled_locales_#{locale}" %>
+          <%= name_for_locale(locale) %>
+        <% end %>
+      <% end %>
+    </div>
+  </fieldset>
+
+  <%= submit_tag %>
+<% end %>
