@@ -174,6 +174,8 @@ module Statisticable
         temporary: true,
         as: participants_from_original_table.to_sql
       )
+      User.connection.add_index participants_table_name, :date_of_birth
+      User.connection.add_index participants_table_name, :geozone_id
     end
 
     def drop_participants_table
