@@ -1,5 +1,6 @@
-include DocumentParser
 class LocalCensus
+  include DocumentParser
+
   def call(document_type, document_number)
     record = nil
     get_document_number_variants(document_type, document_number).each do |variant|
