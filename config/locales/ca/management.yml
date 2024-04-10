@@ -35,7 +35,7 @@ ca:
     document_verifications:
       already_verified: Aquest compte d'usuari ja està verificada.
       has_no_account: Per crear un compte, aneu a %{link} i feu clic a In <b>"Registrar-se"</b> a la part superior esquerra de la pantalla.
-      link: CONSUL
+      link: CONSUL DEMOCRACY
       in_census_has_following_permissions: "Aquest usuari pot participar al Portal de Govern Obert amb les següents possibilitats:"
       not_in_census: Aquest document no està registrat.
       not_in_census_info: "Les persones no empadronades poden participar al Portal de Govern Obert amb les següents possibilitats:"

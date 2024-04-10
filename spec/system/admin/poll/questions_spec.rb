@@ -32,7 +32,7 @@ describe "Admin poll questions", :admin do
 
   scenario "Show" do
     geozone = create(:geozone)
-    poll = create(:poll, geozone_restricted: true, geozone_ids: [geozone.id])
+    poll = create(:poll, geozone_restricted_to: [geozone])
     question = create(:poll_question, poll: poll)
 
     visit admin_poll_path(poll)
@@ -51,8 +51,8 @@ describe "Admin poll questions", :admin do
       click_link "Create question"
 
       expect(page).to have_content("Create question to poll Movies")
-      expect(page).to have_selector("input[id='poll_question_poll_id'][value='#{poll.id}']",
-                                    visible: :hidden)
+      expect(page).to have_css "input[id='poll_question_poll_id'][value='#{poll.id}']",
+                               visible: :hidden
 
       fill_in "Question", with: "Star Wars: Episode IV - A New Hope"
       click_button "Save"

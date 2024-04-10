@@ -38,7 +38,7 @@
             <%= link_to proposal_dashboard_polls_path(proposal),
                         class: ("submenu-active" if polls_menu_active?) do %>
               <span data-tooltip title="<%= Setting["proposals.poll_short_title"] ||
-                                            t("dashboard.menu.polls") %>">
+                                              t("dashboard.menu.polls") %>">
                 <%= t("dashboard.menu.polls") %>
               </span>
             <% end %>
@@ -50,7 +50,7 @@
             <%= link_to new_proposal_dashboard_mailing_path(proposal),
                         class: ("submenu-active" if mailing_menu_active?) do %>
               <span data-tooltip title="<%= Setting["proposals.email_short_title"] ||
-                                            t("dashboard.menu.mailing") %>">
+                                              t("dashboard.menu.mailing") %>">
                 <%= t("dashboard.menu.mailing") %>
               </span>
             <% end %>
@@ -62,7 +62,7 @@
             <%= link_to new_proposal_dashboard_poster_path(proposal),
                         class: ("submenu-active" if poster_menu_active?) do %>
               <span data-tooltip title="<%= Setting["proposals.poster_short_title"] ||
-                                            t("dashboard.menu.poster") %>">
+                                              t("dashboard.menu.poster") %>">
                 <%= t("dashboard.menu.poster") %>
               </span>
             <% end %>

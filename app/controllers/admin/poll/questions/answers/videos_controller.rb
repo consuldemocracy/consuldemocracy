@@ -11,7 +11,7 @@ class Admin::Poll::Questions::Answers::VideosController < Admin::Poll::BaseContr
   def create
     if @video.save
       redirect_to admin_answer_videos_path(@answer),
-               notice: t("flash.actions.create.poll_question_answer_video")
+                  notice: t("flash.actions.create.poll_question_answer_video")
     else
       render :new
     end

@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe Budgets::Ballot::BallotComponent do
   include Rails.application.routes.url_helpers
-  before { request.session[:ballot_referer] = "/" }
+  before { vc_test_request.session[:ballot_referer] = "/" }
 
   describe "link to group" do
     let(:budget) { create(:budget, :balloting) }

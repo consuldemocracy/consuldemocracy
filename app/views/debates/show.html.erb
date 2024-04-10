@@ -57,14 +57,14 @@
         <div class="sidebar-divider"></div>
         <h2><%= t("votes.supports") %></h2>
         <div id="<%= dom_id(@debate) %>_votes">
-          <%= render "debates/votes", debate: @debate %>
+          <%= render Debates::VotesComponent.new(@debate) %>
         </div>
         <%= render "shared/social_share",
-          share_title: t("debates.show.share"),
-          title: @debate.title,
-          url: debate_url(@debate),
-          description: @debate.title,
-          mobile: @debate.title %>
+                   share_title: t("debates.show.share"),
+                   title: @debate.title,
+                   url: debate_url(@debate),
+                   description: @debate.title,
+                   mobile: @debate.title %>
       </aside>
     </div>
   </div>

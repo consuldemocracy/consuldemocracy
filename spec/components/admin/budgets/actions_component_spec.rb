@@ -1,8 +1,7 @@
 require "rails_helper"
 
-describe Admin::Budgets::ActionsComponent, controller: Admin::BaseController do
+describe Admin::Budgets::ActionsComponent, :admin do
   include Rails.application.routes.url_helpers
-  before { sign_in(create(:administrator).user) }
 
   let(:budget) { create(:budget) }
   let(:component) { Admin::Budgets::ActionsComponent.new(budget) }

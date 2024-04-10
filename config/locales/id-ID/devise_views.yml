@@ -103,7 +103,6 @@ id:
           submit: Daftar
           terms: Dengan mendaftarkan anda akan menerima %{terms}
           terms_link: syarat dan ketentuan penggunaan
-          terms_title: Dengan mendaftar anda akan menerima persyaratan dan ketentuan penggunaan
           title: Daftar
           username_is_available: Nama pengguna tersedia
           username_is_not_available: Nama pengguna sudah digunakan

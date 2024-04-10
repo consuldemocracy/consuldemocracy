@@ -138,7 +138,6 @@ bg:
       invalid_date_range: "Невалиден диапазон от дати"
   form:
     accept_terms: Съгласявам се с %{policy} и %{conditions}
-    accept_terms_title: Приемам Политиката за поверителност и Общите условия за ползване
     conditions: Условия за ползване
     debate: Дебат
     direct_message: лично съобщение
@@ -172,11 +171,6 @@ bg:
   geozones:
     none: Целият град
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Установихме, че търсите с Internet Explorer. За подобряване на опита, препоръчваме да използвате %{firefox} или %{chrome}.
-      ie_title: Този уеб сайт не е оптимизиран за вашия браузър
     dashboard:
       proposal_header:
         published: Публикувано
@@ -195,9 +189,9 @@ bg:
     footer:
       accessibility: Достъпност
       conditions: Условия за ползване
-      consul: приложението CONSUL
+      consul: приложението CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Този портал използва %{consul}, който е %{open_source}.
       open_source: софтуер с отворен код
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html

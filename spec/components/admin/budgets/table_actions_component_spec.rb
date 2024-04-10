@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Admin::Budgets::TableActionsComponent, controller: Admin::BaseController do
+describe Admin::Budgets::TableActionsComponent, :admin do
   let(:budget) { create(:budget) }
   let(:component) { Admin::Budgets::TableActionsComponent.new(budget) }
 

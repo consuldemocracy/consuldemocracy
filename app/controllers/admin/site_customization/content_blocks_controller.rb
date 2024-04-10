@@ -1,16 +1,14 @@
 class Admin::SiteCustomization::ContentBlocksController < Admin::SiteCustomization::BaseController
   load_and_authorize_resource :content_block, class: "SiteCustomization::ContentBlock",
-                               except: [
-                                 :delete_heading_content_block,
-                                 :edit_heading_content_block,
-                                 :update_heading_content_block
-                               ]
+                                              except: [
+                                                :delete_heading_content_block,
+                                                :edit_heading_content_block,
+                                                :update_heading_content_block
+                                              ]
 
   def index
     @content_blocks = SiteCustomization::ContentBlock.order(:name, :locale)
     @headings_content_blocks = Budget::ContentBlock.all
-    all_settings = Setting.all.group_by(&:type)
-    @html_settings = all_settings["html"]
   end
 
   def create

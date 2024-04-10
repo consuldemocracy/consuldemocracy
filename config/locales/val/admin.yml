@@ -350,7 +350,6 @@ val:
         title: "Documents"
         format: "Format"
         size: "Mida"
-        url: "URL"
       create:
         unable_notice: "Document invàlid"
     hidden_users:

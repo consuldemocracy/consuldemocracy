@@ -129,11 +129,11 @@ describe "Moderate comments" do
 
         visit moderation_comments_path
 
-        within(".js-check") { click_on "All" }
+        within(".js-check") { click_link "All" }
 
         expect(all("input[type=checkbox]")).to all(be_checked)
 
-        within(".js-check") { click_on "None" }
+        within(".js-check") { click_link "None" }
 
         all("input[type=checkbox]").each do |checkbox|
           expect(checkbox).not_to be_checked
@@ -211,8 +211,14 @@ describe "Moderate comments" do
     end
 
     scenario "sorting comments" do
-      flagged_comment = create(:comment, body: "Flagged comment", created_at: 1.day.ago, flags_count: 5)
-      flagged_new_comment = create(:comment, body: "Flagged new comment", created_at: 12.hours.ago, flags_count: 3)
+      flagged_comment = create(:comment,
+                               body: "Flagged comment",
+                               created_at: 1.day.ago,
+                               flags_count: 5)
+      flagged_new_comment = create(:comment,
+                                   body: "Flagged new comment",
+                                   created_at: 12.hours.ago,
+                                   flags_count: 3)
       newer_comment = create(:comment, body: "Newer comment", created_at: Time.current)
 
       visit moderation_comments_path(order: "newest")

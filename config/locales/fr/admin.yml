@@ -526,7 +526,6 @@ fr:
         title: "Documents"
         format: "Format"
         size: "Taille"
-        url: "URL"
       create:
         success_notice: "Document téléchargé avec succès"
         unable_notice: "Document invalide"
@@ -1688,10 +1687,10 @@ fr:
       help:
         title_1: "Qu'est-ce que l'IA/l'apprentissage automatique ?"
         description_1: "Traditionnellement, les programmes informatiques sont conçus en établissant des règles précises sur ce que le programme doit faire dans chaque situation, et comment traiter les informations disponibles à chaque instant. Ce que l'on appelle communément l'IA / Machine Learning est un type de programmes pour lequel ce qui est établi précisément, c'est la tâche à réaliser et comment la tâche est mieux ou moins bien réalisée, mais contrairement aux autres, le système découvre ou apprend quelle serait la méthode la plus appropriée pour réaliser ladite tâche."
-        title_2: "Que fait le module IA/Machine Learning dans CONSUL ?"
-        description_2: "Ce module permet d'implémenter tout type de programmes d'IA / Machine Learning dans CONSUL. Les programmes peuvent traiter les informations disponibles dans CONSUL et produire des résultats qui aident à la fois les utilisateurs et les administrateurs à mener une participation citoyenne plus efficace et intelligente. Le module a été développé pour faciliter la mise en œuvre et l'exécution de nouveaux programmes, en séparant le code CONSUL général et le code de ces nouveaux programmes."
+        title_2: "Que fait le module IA/Machine Learning dans CONSUL DEMOCRACY?"
+        description_2: "Ce module permet d'implémenter tout type de programmes d'IA / Machine Learning dans CONSUL DEMOCRACY. Les programmes peuvent traiter les informations disponibles dans CONSUL DEMOCRACY et produire des résultats qui aident à la fois les utilisateurs et les administrateurs à mener une participation citoyenne plus efficace et intelligente. Le module a été développé pour faciliter la mise en œuvre et l'exécution de nouveaux programmes, en séparant le code CONSUL DEMOCRACY général et le code de ces nouveaux programmes."
         title_3: "Comment utiliser le module"
-        description_3: "Pour l'utiliser pour la première fois, il est nécessaire de suivre les instructions disponibles dans la documentation CONSUL pour activer correctement ce module. Une fois le module correctement activé, les programmes sont exécutés depuis l'onglet \"Exécuter les scripts\". Avant de l'exécuter, nous pouvons voir dans ce même onglet une estimation du temps d'exécution et d'autres informations pertinentes. À la fin de l'exécution, nous pouvons activer le contenu qui sera affiché dans CONSUL à partir de l'onglet \"Configuration\", ainsi que télécharger d'autres fichiers générés qui pourraient nous être utiles."
+        description_3: "Pour l'utiliser pour la première fois, il est nécessaire de suivre les instructions disponibles dans la documentation CONSUL DEMOCRACY pour activer correctement ce module. Une fois le module correctement activé, les programmes sont exécutés depuis l'onglet \"Exécuter les scripts\". Avant de l'exécuter, nous pouvons voir dans ce même onglet une estimation du temps d'exécution et d'autres informations pertinentes. À la fin de l'exécution, nous pouvons activer le contenu qui sera affiché dans CONSUL DEMOCRACY à partir de l'onglet \"Configuration\", ainsi que télécharger d'autres fichiers générés qui pourraient nous être utiles."
         title_4: "Comment implémenter de nouveaux scripts d'IA/apprentissage automatique."
         description_4: "Utilisez des scripts existants comme exemple."
         description_4b: "Les nouveaux scripts doivent se trouver dans le dossier <code>public/machine_learning/scripts</code>"

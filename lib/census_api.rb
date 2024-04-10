@@ -21,7 +21,7 @@ class CensusApi
     def date_of_birth
       str = data[:datos_habitante][:item][:fecha_nacimiento_string]
       day, month, year = str.match(/(\d\d?)\D(\d\d?)\D(\d\d\d?\d?)/)[1..3]
-      return nil unless day.present? && month.present? && year.present?
+      return nil if day.blank? || month.blank? || year.blank?
 
       Time.zone.local(year.to_i, month.to_i, day.to_i).to_date
     end
@@ -71,11 +71,11 @@ class CensusApi
     def request(document_type, document_number)
       { request:
         { codigo_institucion: Rails.application.secrets.census_api_institution_code,
-          codigo_portal:      Rails.application.secrets.census_api_portal_name,
-          codigo_usuario:     Rails.application.secrets.census_api_user_code,
-          documento:          document_number,
-          tipo_documento:     document_type,
-          codigo_idioma:      102,
+          codigo_portal: Rails.application.secrets.census_api_portal_name,
+          codigo_usuario: Rails.application.secrets.census_api_user_code,
+          documento: document_number,
+          tipo_documento: document_type,
+          codigo_idioma: 102,
           nivel: 3 }}
     end
 

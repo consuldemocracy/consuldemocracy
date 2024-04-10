@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe Link do
-  let(:action) { build :dashboard_action }
+  let(:action) { build(:dashboard_action) }
 
   it "is invalid when label is blank" do
     link = build(:link, linkable: action, label: "")

@@ -97,11 +97,11 @@ describe "Moderate proposals" do
 
         visit moderation_proposals_path
 
-        within(".js-check") { click_on "All" }
+        within(".js-check") { click_link "All" }
 
         expect(all("input[type=checkbox]")).to all(be_checked)
 
-        within(".js-check") { click_on "None" }
+        within(".js-check") { click_link "None" }
 
         all("input[type=checkbox]").each do |checkbox|
           expect(checkbox).not_to be_checked
@@ -179,8 +179,14 @@ describe "Moderate proposals" do
     end
 
     scenario "sorting proposals" do
-      flagged_proposal = create(:proposal, title: "Flagged proposal", created_at: 1.day.ago, flags_count: 5)
-      flagged_new_proposal = create(:proposal, title: "Flagged new proposal", created_at: 12.hours.ago, flags_count: 3)
+      flagged_proposal = create(:proposal,
+                                title: "Flagged proposal",
+                                created_at: 1.day.ago,
+                                flags_count: 5)
+      flagged_new_proposal = create(:proposal,
+                                    title: "Flagged new proposal",
+                                    created_at: 12.hours.ago,
+                                    flags_count: 3)
       newer_proposal = create(:proposal, title: "Newer proposal", created_at: Time.current)
 
       visit moderation_proposals_path(order: "created_at")

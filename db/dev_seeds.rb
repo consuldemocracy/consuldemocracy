@@ -5,8 +5,8 @@ end
 
 @logger = Logger.new(STDOUT)
 @logger.formatter = proc do |_severity, _datetime, _progname, msg|
-                      msg unless Rails.env.test?
-                    end
+  msg unless Rails.env.test?
+end
 
 def load_dev_seeds(dev_seeds_file)
   load Rails.root.join("db", "dev_seeds", "#{dev_seeds_file}.rb")

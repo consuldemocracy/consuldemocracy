@@ -7,22 +7,8 @@ class Setting < ApplicationRecord
     key.split(".").first
   end
 
-  def type
-    if %w[feature process proposals map html homepage uploads sdg machine_learning].include? prefix
-      prefix
-    elsif %w[remote_census].include? prefix
-      key.rpartition(".").first
-    else
-      "configuration"
-    end
-  end
-
   def enabled?
     value.present?
-  end
-
-  def content_type?
-    key.split(".").last == "content_types"
   end
 
   def content_type_group
@@ -61,18 +47,18 @@ class Setting < ApplicationRecord
     def mime_types
       {
         "images" => {
-          "jpg"  => "image/jpeg",
-          "png"  => "image/png",
-          "gif"  => "image/gif"
+          "jpg" => "image/jpeg",
+          "png" => "image/png",
+          "gif" => "image/gif"
         },
         "documents" => {
-          "pdf"  => "application/pdf",
-          "doc"  => "application/msword",
+          "pdf" => "application/pdf",
+          "doc" => "application/msword",
           "docx" => "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-          "xls"  => "application/x-ole-storage",
+          "xls" => "application/x-ole-storage",
           "xlsx" => "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-          "csv"  => "text/plain",
-          "zip"  => "application/zip"
+          "csv" => "text/plain",
+          "zip" => "application/zip"
         }
       }
     end
@@ -114,6 +100,7 @@ class Setting < ApplicationRecord
         "map.latitude": 51.48,
         "map.longitude": 0.0,
         "map.zoom": 10,
+        "map.feature.marker_clustering": false,
         "process.debates": true,
         "process.proposals": true,
         "process.polls": true,
@@ -229,6 +216,10 @@ class Setting < ApplicationRecord
     def force_presence_postal_code?
       Setting["feature.remote_census"].present? &&
         Setting["remote_census.request.postal_code"].present?
+    end
+
+    def archived_proposals_date_limit
+      Setting["months_to_archive_proposals"].to_i.months.ago
     end
   end
 end

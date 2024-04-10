@@ -7,13 +7,13 @@
   </div>
 
   <div class="small-12 medium-4 column">
-    <%= render "documents/documents", documents: dashboard_action.documents %>
+    <%= render Documents::DocumentsComponent.new(dashboard_action.documents) %>
 
     <% if dashboard_action.links.any? %>
       <div class="margin-top">
         <h4><%= t("dashboard.new_request.links") %></h4>
         <% dashboard_action.links.each do |link| %>
-          <p><%= link_to link.label, link.url, target: "_blank" %></p>
+          <p><%= link_to link.label, link.url %></p>
         <% end %>
       </div>
     <% end %>

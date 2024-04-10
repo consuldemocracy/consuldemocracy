@@ -17,6 +17,7 @@ sv:
         support: "Du har gett investeringen ditt stöd"
         topic: "Ämnet har skapats."
         valuator_group: "Bedömargruppen har skapats"
+        vote: "Rösten har lagts"
       save_changes:
         notice: Ändringarna har sparats
       update:
@@ -35,3 +36,4 @@ sv:
         topic: "Ämnet har raderats."
         poll_question_answer_video: "Videosvaret har raderats."
         valuator_group: "Bedömargruppen har tagits bort"
+        vote: "Rösten har raderats"

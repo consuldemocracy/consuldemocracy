@@ -5,8 +5,8 @@ de:
         title: "Wir schließen den Bürgerhaushalt!"
         body: "Beeilen Sie sich und erstellen Sie einen Vorschlag, bevor die Aktion in den nächsten Tagen endet!"
       help:
-        title: "Helfen Sie uns bei der Übersetzung von consul."
-        body: "Wenn Sie eine Sprache gut beherrschen, helfen Sie uns bitte bei der Übersetzung von consul!"
+        title: "Helfen Sie uns bei der Übersetzung von Consul Democracy."
+        body: "Wenn Sie eine Sprache gut beherrschen, helfen Sie uns bitte bei der Übersetzung von Consul Democracy!"
       map:
         title: "Sie können jetzt Vorschläge und Investitionen geolokalisieren."
         body: "Wenn Sie einen Vorschlag oder eine Investition erstellen, können Sie jetzt einen Punkt auf einer Karte angeben."
@@ -39,7 +39,7 @@ de:
         link_text: "Mehr über Debatten"
         label: "Debatten"
       header:
-        title: "CONSUL"
+        title: "CONSUL DEMOCRACY"
         description: "Freie Software für die Bürgerbeteiligung."
         link_text: "Mehr Informationen"
         label: "Willkommen bei"

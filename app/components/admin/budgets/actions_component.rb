@@ -83,10 +83,10 @@ class Admin::Budgets::ActionsComponent < ApplicationComponent
       balloting_phase = budget.phases.find_by(kind: "balloting")
 
       admin_polls_path(poll: {
-        name:      budget.name,
+        name: budget.name,
         budget_id: budget.id,
         starts_at: balloting_phase.starts_at,
-        ends_at:   balloting_phase.ends_at
+        ends_at: balloting_phase.ends_at
       })
     end
 

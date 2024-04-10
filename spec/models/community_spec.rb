@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe Community, type: :model do
+RSpec.describe Community do
   it "is valid when create proposal" do
     proposal = create(:proposal)
 

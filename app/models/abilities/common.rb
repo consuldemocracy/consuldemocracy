@@ -81,24 +81,25 @@ module Abilities
       can [:create, :destroy], DirectUpload
 
       unless user.organization?
-        can :vote, Debate
-        can :vote, Comment
+        can [:create, :destroy], ActsAsVotable::Vote, voter_id: user.id, votable_type: "Debate"
+        can [:create, :destroy], ActsAsVotable::Vote, voter_id: user.id, votable_type: "Comment"
       end
 
       if user.level_two_or_three_verified?
         can :vote, Proposal, &:published?
 
-        can :vote, Legislation::Proposal
+        can [:create, :destroy], ActsAsVotable::Vote, voter_id: user.id, votable_type: "Legislation::Proposal"
+
         can :create, Legislation::Answer
 
-        can :create, Budget::Investment,               budget: { phase: "accepting" }
-        can :update, Budget::Investment,               budget: { phase: "accepting" }, author_id: user.id
-        can :suggest, Budget::Investment,              budget: { phase: "accepting" }
-        can :destroy, Budget::Investment,              budget: { phase: ["accepting", "reviewing"] }, author_id: user.id
+        can :create, Budget::Investment,  budget: { phase: "accepting" }
+        can :update, Budget::Investment,  budget: { phase: "accepting" }, author_id: user.id
+        can :suggest, Budget::Investment, budget: { phase: "accepting" }
+        can :destroy, Budget::Investment, budget: { phase: ["accepting", "reviewing"] }, author_id: user.id
         can [:create, :destroy], ActsAsVotable::Vote,
-          voter_id: user.id,
-          votable_type: "Budget::Investment",
-          votable: { budget: { phase: "selecting" }}
+            voter_id: user.id,
+            votable_type: "Budget::Investment",
+            votable: { budget: { phase: "selecting" }}
 
         can [:show, :create], Budget::Ballot,          budget: { phase: "balloting" }
         can [:create, :destroy], Budget::Ballot::Line, budget: { phase: "balloting" }

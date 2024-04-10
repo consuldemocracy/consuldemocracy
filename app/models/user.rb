@@ -5,6 +5,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable,
          :trackable, :validatable, :omniauthable, :password_expirable, :secure_validatable,
          authentication_keys: [:login]
+  devise :lockable if Rails.application.config.devise_lockable
 
   acts_as_voter
   acts_as_paranoid column: :hidden_at
@@ -26,55 +27,55 @@ class User < ApplicationRecord
   has_many :proposals, -> { with_hidden }, foreign_key: :author_id, inverse_of: :author
   has_many :activities
   has_many :budget_investments, -> { with_hidden },
-    class_name:  "Budget::Investment",
-    foreign_key: :author_id,
-    inverse_of:  :author
+           class_name: "Budget::Investment",
+           foreign_key: :author_id,
+           inverse_of: :author
   has_many :comments, -> { with_hidden }, inverse_of: :user
   has_many :failed_census_calls
   has_many :notifications
   has_many :direct_messages_sent,
-    class_name:  "DirectMessage",
-    foreign_key: :sender_id,
-    inverse_of:  :sender
+           class_name: "DirectMessage",
+           foreign_key: :sender_id,
+           inverse_of: :sender
   has_many :direct_messages_received,
-    class_name:  "DirectMessage",
-    foreign_key: :receiver_id,
-    inverse_of:  :receiver
+           class_name: "DirectMessage",
+           foreign_key: :receiver_id,
+           inverse_of: :receiver
   has_many :legislation_answers, class_name: "Legislation::Answer", dependent: :destroy, inverse_of: :user
   has_many :follows
   has_many :legislation_annotations,
-    class_name:  "Legislation::Annotation",
-    foreign_key: :author_id,
-    inverse_of:  :author
+           class_name: "Legislation::Annotation",
+           foreign_key: :author_id,
+           inverse_of: :author
   has_many :legislation_proposals,
-    class_name:  "Legislation::Proposal",
-    foreign_key: :author_id,
-    inverse_of:  :author
+           class_name: "Legislation::Proposal",
+           foreign_key: :author_id,
+           inverse_of: :author
   has_many :legislation_questions,
-    class_name:  "Legislation::Question",
-    foreign_key: :author_id,
-    inverse_of:  :author
+           class_name: "Legislation::Question",
+           foreign_key: :author_id,
+           inverse_of: :author
   has_many :polls, foreign_key: :author_id, inverse_of: :author
   has_many :poll_answers,
-    class_name:  "Poll::Answer",
-    foreign_key: :author_id,
-    inverse_of:  :author
+           class_name: "Poll::Answer",
+           foreign_key: :author_id,
+           inverse_of: :author
   has_many :poll_pair_answers,
-    class_name:  "Poll::PairAnswer",
-    foreign_key: :author_id,
-    inverse_of:  :author
+           class_name: "Poll::PairAnswer",
+           foreign_key: :author_id,
+           inverse_of: :author
   has_many :poll_partial_results,
-    class_name:  "Poll::PartialResult",
-    foreign_key: :author_id,
-    inverse_of:  :author
+           class_name: "Poll::PartialResult",
+           foreign_key: :author_id,
+           inverse_of: :author
   has_many :poll_questions,
-    class_name:  "Poll::Question",
-    foreign_key: :author_id,
-    inverse_of:  :author
+           class_name: "Poll::Question",
+           foreign_key: :author_id,
+           inverse_of: :author
   has_many :poll_recounts,
-    class_name:  "Poll::Recount",
-    foreign_key: :author_id,
-    inverse_of:  :author
+           class_name: "Poll::Recount",
+           foreign_key: :author_id,
+           inverse_of: :author
   has_many :related_contents, foreign_key: :author_id, inverse_of: :author, dependent: nil
   has_many :topics, foreign_key: :author_id, inverse_of: :author
   belongs_to :geozone
@@ -147,7 +148,7 @@ Rails.logger.info("oauth_confirmed #{oauth_email_confirmed}")
 Rails.logger.info("oauth_user #{oauth_user}")
 
     oauth_user || User.new(
-      username:  auth.info.name || auth.uid,
+      username: auth.info.name || auth.uid,
       email: oauth_email,
       oauth_email: oauth_email,
       password: Devise.friendly_token[0, 20],
@@ -460,7 +461,7 @@ Rails.logger.info("oauth_user #{oauth_user}")
     conditions = warden_conditions.dup
     login = conditions.delete(:login)
     where(conditions.to_hash).find_by(["lower(email) = ?", login.downcase]) ||
-    where(conditions.to_hash).find_by(["username = ?", login])
+      where(conditions.to_hash).find_by(["username = ?", login])
   end
 
   def self.find_by_manager_login(manager_login)
@@ -480,10 +481,34 @@ Rails.logger.info("oauth_user #{oauth_user}")
     update!(subscriptions_token: SecureRandom.base58(32)) if subscriptions_token.blank?
   end
 
+  def self.password_complexity
+    if Tenant.current_secrets.dig(:security, :password_complexity)
+      { digit: 1, lower: 1, symbol: 0, upper: 1 }
+    else
+      { digit: 0, lower: 0, symbol: 0, upper: 0 }
+    end
+  end
+
+  def self.maximum_attempts
+    (Tenant.current_secrets.dig(:security, :lockable, :maximum_attempts) || 20).to_i
+  end
+
+  def self.unlock_in
+    (Tenant.current_secrets.dig(:security, :lockable, :unlock_in) || 1).to_f.hours
+  end
+
+  def to_param
+    "#{id}-#{slug}"
+  end
+
+  def slug
+    username.to_s.parameterize
+  end
+
   private
 
     def clean_document_number
-      return unless document_number.present?
+      return if document_number.blank?
 
       self.document_number = document_number.gsub(/[^a-z0-9]+/i, "").upcase
     end
@@ -491,7 +516,8 @@ Rails.logger.info("oauth_user #{oauth_user}")
     def validate_username_length
       validator = ActiveModel::Validations::LengthValidator.new(
         attributes: :username,
-        maximum: User.username_max_length)
+        maximum: User.username_max_length
+      )
       validator.validate(self)
     end
 end

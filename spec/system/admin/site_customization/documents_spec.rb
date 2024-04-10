@@ -23,7 +23,7 @@ describe "Documents", :admin do
     visit admin_site_customization_documents_path
 
     expect(page).to have_content "There are 3 documents"
-    expect(page).to have_link document.title, href: url
+    expect(page).to have_link "Download file", href: url
   end
 
   scenario "Index (empty)" do
@@ -39,7 +39,7 @@ describe "Documents", :admin do
 
     visit admin_site_customization_documents_path
 
-    expect(page).to have_selector("#documents .document", count: per_page)
+    expect(page).to have_css "#documents .document-row", count: per_page
 
     within("ul.pagination") do
       expect(page).to have_content("1")
@@ -48,7 +48,7 @@ describe "Documents", :admin do
       click_link "Next", exact: false
     end
 
-    expect(page).to have_selector("#documents .document", count: 2)
+    expect(page).to have_css "#documents .document-row", count: 2
   end
 
   scenario "Create" do
@@ -58,7 +58,8 @@ describe "Documents", :admin do
     click_button "Upload"
 
     expect(page).to have_content "Document uploaded successfully"
-    expect(page).to have_link "logo.pdf"
+
+    within("tr", text: "logo.pdf") { expect(page).to have_link "Download file" }
   end
 
   scenario "Errors on create" do

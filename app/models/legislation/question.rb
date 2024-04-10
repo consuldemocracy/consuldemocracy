@@ -10,12 +10,19 @@ class Legislation::Question < ApplicationRecord
   belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :legislation_questions
   belongs_to :process, foreign_key: "legislation_process_id", inverse_of: :questions
 
-  has_many :question_options, -> { order(:id) }, class_name: "Legislation::QuestionOption", foreign_key: "legislation_question_id",
-                                                 dependent: :destroy, inverse_of: :question
-  has_many :answers, class_name: "Legislation::Answer", foreign_key: "legislation_question_id", dependent: :destroy, inverse_of: :question
+  has_many :question_options, -> { order(:id) }, class_name: "Legislation::QuestionOption",
+                                                 foreign_key: "legislation_question_id",
+                                                 dependent: :destroy,
+                                                 inverse_of: :question
+  has_many :answers, class_name: "Legislation::Answer",
+                     foreign_key: "legislation_question_id",
+                     dependent: :destroy,
+                     inverse_of: :question
   has_many :comments, as: :commentable, inverse_of: :commentable, dependent: :destroy
 
-  accepts_nested_attributes_for :question_options, reject_if: proc { |attributes| attributes.all? { |k, v| v.blank? } }, allow_destroy: true
+  accepts_nested_attributes_for :question_options,
+                                reject_if: proc { |attributes| attributes.all? { |k, v| v.blank? } },
+                                allow_destroy: true
 
   validates :process, presence: true
   validates_translation :title, presence: true

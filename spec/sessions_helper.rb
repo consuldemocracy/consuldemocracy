@@ -1,3 +1,3 @@
-def in_browser(name, &block)
-  Capybara.using_session(name, &block)
+def in_browser(name, &)
+  Capybara.using_session(name, &)
 end

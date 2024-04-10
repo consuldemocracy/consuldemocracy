@@ -8,8 +8,9 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
   load_and_authorize_resource :process, class: "Legislation::Process"
 
   def index
-    @processes = ::Legislation::Process.send(@current_filter).order(start_date: :desc)
-                 .page(params[:page])
+    @processes = ::Legislation::Process.send(@current_filter)
+                                       .order(start_date: :desc)
+                                       .page(params[:page])
   end
 
   def create
@@ -71,6 +72,8 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
         :background_color,
         :font_color,
         :related_sdg_list,
+        :summary_publication_date,
+        :summary_publication_enabled,
         translation_params(::Legislation::Process),
         documents_attributes: document_attributes,
         image_attributes: image_attributes

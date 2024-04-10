@@ -57,12 +57,12 @@ class Legislation::Proposal < ApplicationRecord
   end
 
   def searchable_values
-    { title              => "A",
-      author.username    => "B",
+    { title => "A",
+      author.username => "B",
       tag_list.join(" ") => "B",
-      geozone&.name      => "B",
-      summary            => "C",
-      description        => "D" }
+      geozone&.name => "B",
+      summary => "C",
+      description => "D" }
   end
 
   def self.search(terms)
@@ -73,7 +73,7 @@ class Legislation::Proposal < ApplicationRecord
   def self.search_by_code(terms)
     matched_code = match_code(terms)
     results = where(id: matched_code[1]) if matched_code
-    return results if results.present? && results.first.code == terms
+    results if results.present? && results.first.code == terms
   end
 
   def self.match_code(terms)
@@ -106,14 +106,6 @@ class Legislation::Proposal < ApplicationRecord
 
   def editable_by?(user)
     author_id == user.id && editable?
-  end
-
-  def votable_by?(user)
-    user&.level_two_or_three_verified?
-  end
-
-  def register_vote(user, vote_value)
-    vote_by(voter: user, vote: vote_value) if votable_by?(user)
   end
 
   def code

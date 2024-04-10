@@ -17,8 +17,8 @@ class Documents::NestedComponent < ApplicationComponent
 
     def note
       t "documents.form.note", max_documents_allowed: max_documents_allowed,
-        accepted_content_types: Document.humanized_accepted_content_types,
-        max_file_size: documentable.class.max_file_size
+                               accepted_content_types: Document.humanized_accepted_content_types,
+                               max_file_size: documentable.class.max_file_size
     end
 
     def max_documents_allowed?

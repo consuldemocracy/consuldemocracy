@@ -424,7 +424,6 @@ hr:
         title: "Dokumenti"
         format: "Format"
         size: "Veličina"
-        url: "URL"
       create:
         success_notice: "Dokument je učitan uspješno"
         unable_notice: "Nevažeč dokument"

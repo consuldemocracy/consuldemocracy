@@ -169,6 +169,9 @@ es:
         valid: "Condición para detectar una respuesta válida"
         valid_description: "Que ruta de la respuesta tiene que venir informado para considerarse una respuesta válida"
     map:
+      feature:
+        marker_clustering: "Agrupación de marcadores"
+        marker_clustering_description: "Activa la agrupación de marcadores en el mapa. Útil cuando hay muchos marcadores que mostrar."
       latitude: "Latitud"
       latitude_description: "Latitud para mostrar la posición del mapa"
       longitude: "Longitud"

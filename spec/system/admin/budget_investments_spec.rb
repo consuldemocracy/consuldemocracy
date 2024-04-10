@@ -67,8 +67,9 @@ describe "Admin budget investments", :admin do
       admin = create(:administrator, user: create(:user, username: "Gema"))
 
       budget_investment1 = create(:budget_investment, budget: budget, valuators: [valuator1])
-      budget_investment2 = create(:budget_investment, budget: budget, valuators: [valuator1, valuator2],
-                                  valuator_groups: [valuator_group])
+      budget_investment2 = create(:budget_investment, budget: budget,
+                                                      valuators: [valuator1, valuator2],
+                                                      valuator_groups: [valuator_group])
       budget_investment3 = create(:budget_investment, budget: budget)
 
       visit admin_budget_budget_investments_path(budget_id: budget.id)
@@ -147,8 +148,9 @@ describe "Admin budget investments", :admin do
       administrator = create(:administrator, user: user)
       administrator2 = create(:administrator, user: user2, description: "Alias")
       budget.administrators = [administrator, administrator2]
-      create(:budget_investment, title: "Realocate visitors", budget: budget,
-                                                              administrator: administrator)
+      create(:budget_investment, title: "Realocate visitors",
+                                 budget: budget,
+                                 administrator: administrator)
       create(:budget_investment, title: "Destroy the city", budget: budget)
 
       visit admin_budget_budget_investments_path(budget_id: budget.id)
@@ -299,16 +301,20 @@ describe "Admin budget investments", :admin do
     end
 
     scenario "Filtering by under valuation" do
-      create(:budget_investment,
+      create(
+        :budget_investment,
         :with_administrator,
         :with_valuator,
         :open,
         title: "Investment without valuation",
-        budget: budget)
-      create(:budget_investment,
+        budget: budget
+      )
+      create(
+        :budget_investment,
         :with_administrator,
         title: "Investment with valuation",
-        budget: budget)
+        budget: budget
+      )
 
       visit admin_budget_budget_investments_path(budget_id: budget)
       expect(page).to have_link("Investment without valuation")
@@ -400,8 +406,9 @@ describe "Admin budget investments", :admin do
     scenario "Filtering by assignment status" do
       create(:budget_investment, :with_administrator, title: "Assigned idea", budget: budget)
       create(:budget_investment, :with_valuator, title: "Evaluating...", budget: budget)
-      create(:budget_investment, title: "With group", budget: budget,
-             valuator_groups: [create(:valuator_group)])
+      create(:budget_investment, title: "With group",
+                                 budget: budget,
+                                 valuator_groups: [create(:valuator_group)])
 
       visit admin_budget_budget_investments_path(budget_id: budget.id, filter: "valuation_open")
 
@@ -410,14 +417,14 @@ describe "Admin budget investments", :admin do
       expect(page).to have_content("With group")
 
       visit admin_budget_budget_investments_path(budget_id: budget.id,
-                                                  advanced_filters: ["without_admin"])
+                                                 advanced_filters: ["without_admin"])
 
       expect(page).to have_content("Evaluating...")
       expect(page).to have_content("With group")
       expect(page).not_to have_content("Assigned idea")
 
       visit admin_budget_budget_investments_path(budget_id: budget.id,
-                                                  advanced_filters: ["without_valuator"])
+                                                 advanced_filters: ["without_valuator"])
 
       expect(page).to have_content("Assigned idea")
       expect(page).not_to have_content("Evaluating...")
@@ -438,7 +445,7 @@ describe "Admin budget investments", :admin do
       expect(page).not_to have_content("Old idea")
 
       visit admin_budget_budget_investments_path(budget_id: budget.id,
-                                                  advanced_filters: ["valuation_finished"])
+                                                 advanced_filters: ["valuation_finished"])
 
       expect(page).not_to have_content("Ongoing valuation")
       expect(page).to have_content("Old idea")
@@ -528,7 +535,7 @@ describe "Admin budget investments", :admin do
       click_button "Filter"
 
       expect(page).not_to have_button "Calculate Winner Investments"
-      expect(page).to have_content 'The budget has to stay on phase "Reviewing voting" '\
+      expect(page).to have_content 'The budget has to stay on phase "Reviewing voting" ' \
                                    "in order to calculate winners projects"
 
       visit admin_budget_path(budget)
@@ -613,8 +620,9 @@ describe "Admin budget investments", :admin do
       administrator = create(:administrator, user: user)
       budget.administrators = [administrator]
 
-      educate_children = create(:budget_investment, budget: budget, title: "Educate the children",
-                                 administrator: administrator)
+      educate_children = create(:budget_investment, budget: budget,
+                                                    title: "Educate the children",
+                                                    administrator: administrator)
       create(:budget_investment, budget: budget, title: "More schools",
                                  administrator: administrator)
       create(:budget_investment, budget: budget, title: "More hospitals")
@@ -686,8 +694,9 @@ describe "Admin budget investments", :admin do
 
       educate_children = create(:budget_investment, :feasible, :finished,
                                 budget: budget, title: "Educate the children", administrator: administrator)
-      create(:budget_investment, :feasible, :finished, budget: budget, title: "More schools",
-                                 administrator: administrator)
+      create(:budget_investment, :feasible, :finished, budget: budget,
+                                                       title: "More schools",
+                                                       administrator: administrator)
       create(:budget_investment, budget: budget, title: "More hospitals",
                                  administrator: administrator)
       create(:budget_investment, budget: budget, title: "More hostals")
@@ -923,13 +932,12 @@ describe "Admin budget investments", :admin do
       user = create(:user, username: "Rachel", email: "rachel@valuators.org")
       valuator = create(:valuator, user: user)
       budget_investment = create(:budget_investment,
-                                  :unfeasible,
-                                  unfeasibility_explanation: "It is impossible",
-                                  price: 1234,
-                                  price_first_year: 1000,
-                                  administrator: administrator,
-                                  valuators: [valuator]
-                                )
+                                 :unfeasible,
+                                 unfeasibility_explanation: "It is impossible",
+                                 price: 1234,
+                                 price_first_year: 1000,
+                                 administrator: administrator,
+                                 valuators: [valuator])
 
       visit admin_budget_budget_investments_path(budget_investment.budget)
 
@@ -955,12 +963,12 @@ describe "Admin budget investments", :admin do
 
     scenario "Show image and documents on investment details" do
       budget_investment = create(:budget_investment,
-                                  :with_image,
-                                  :unfeasible,
-                                  unfeasibility_explanation: "It is impossible",
-                                  price: 1234,
-                                  price_first_year: 1000,
-                                  administrator: administrator)
+                                 :with_image,
+                                 :unfeasible,
+                                 unfeasibility_explanation: "It is impossible",
+                                 price: 1234,
+                                 price_first_year: 1000,
+                                 administrator: administrator)
       document = create(:document, documentable: budget_investment)
 
       visit admin_budget_budget_investments_path(budget_investment.budget)
@@ -973,8 +981,7 @@ describe "Admin budget investments", :admin do
         expect(page).to have_content("Investment preview")
         expect(page).to have_content(budget_investment.image.title)
         expect(page).to have_content("Documents (1)")
-        expect(page).to have_content(document.title)
-        expect(page).to have_content("Download file")
+        expect(page).to have_link text: document.title
         expect(page).to have_content("1234")
         expect(page).to have_content("1000")
         expect(page).to have_content("Unfeasible")
@@ -985,10 +992,10 @@ describe "Admin budget investments", :admin do
 
     scenario "Does not show related content or hide links on preview" do
       budget_investment = create(:budget_investment,
-                                  :unfeasible,
-                                  price: 1234,
-                                  price_first_year: 1000,
-                                  administrator: administrator)
+                                 :unfeasible,
+                                 price: 1234,
+                                 price_first_year: 1000,
+                                 administrator: administrator)
 
       visit admin_budget_budget_investments_path(budget_investment.budget)
 
@@ -1001,8 +1008,8 @@ describe "Admin budget investments", :admin do
     scenario "If budget is finished, investment cannot be edited or valuation comments created" do
       finished_budget = create(:budget, :finished)
       budget_investment = create(:budget_investment,
-                                  budget: finished_budget,
-                                  administrator: administrator)
+                                 budget: finished_budget,
+                                 administrator: administrator)
       visit admin_budget_budget_investments_path(budget_investment.budget)
 
       within_window(window_opened_by { click_link budget_investment.title }) do
@@ -1689,20 +1696,20 @@ describe "Admin budget investments", :admin do
       first_budget_heading = create(:budget_heading, group: budget_group, name: "Budget Heading")
       second_budget_heading = create(:budget_heading, group: budget_group, name: "Other Heading")
       first_investment = create(:budget_investment, :feasible, :selected, title: "Le Investment",
-                                                         budget: budget, group: budget_group,
-                                                         heading: first_budget_heading,
-                                                         cached_votes_up: 88, price: 99,
-                                                         valuators: [],
-                                                         valuator_groups: [valuator_group],
-                                                         administrator: admin,
-                                                         visible_to_valuators: true)
+                                                                          budget: budget, group: budget_group,
+                                                                          heading: first_budget_heading,
+                                                                          cached_votes_up: 88, price: 99,
+                                                                          valuators: [],
+                                                                          valuator_groups: [valuator_group],
+                                                                          administrator: admin,
+                                                                          visible_to_valuators: true)
       second_investment = create(:budget_investment, :unfeasible, title: "Alt Investment",
-                                                         budget: budget, group: budget_group,
-                                                         heading: second_budget_heading,
-                                                         cached_votes_up: 66, price: 88,
-                                                         valuators: [valuator],
-                                                         valuator_groups: [],
-                                                         visible_to_valuators: false)
+                                                                  budget: budget, group: budget_group,
+                                                                  heading: second_budget_heading,
+                                                                  cached_votes_up: 66, price: 88,
+                                                                  valuators: [valuator],
+                                                                  valuator_groups: [],
+                                                                  visible_to_valuators: false)
 
       visit admin_budget_budget_investments_path(budget)
 
@@ -1712,12 +1719,12 @@ describe "Admin budget investments", :admin do
       expect(header).to match(/^attachment/)
       expect(header).to match(/filename="budget_investments.csv"/)
 
-      csv_contents = "ID,Title,Supports,Administrator,Valuator,Valuation Group,Scope of operation,"\
-                     "Feasibility,Val. Fin.,Selected,Show to valuators,Author username\n"\
-                     "#{first_investment.id},Le Investment,88,Admin,-,Valuator Group,"\
-                     "Budget Heading,Feasible (€99),Yes,Yes,Yes,"\
-                     "#{first_investment.author.username}\n#{second_investment.id},"\
-                     "Alt Investment,66,No admin assigned,Valuator,-,Other Heading,"\
+      csv_contents = "ID,Title,Supports,Administrator,Valuator,Valuation Group,Scope of operation," \
+                     "Feasibility,Val. Fin.,Selected,Show to valuators,Author username\n" \
+                     "#{first_investment.id},Le Investment,88,Admin,-,Valuator Group," \
+                     "Budget Heading,Feasible (€99),Yes,Yes,Yes," \
+                     "#{first_investment.author.username}\n#{second_investment.id}," \
+                     "Alt Investment,66,No admin assigned,Valuator,-,Other Heading," \
                      "Unfeasible,No,No,No,#{second_investment.author.username}\n"
 
       expect(page.body).to eq(csv_contents)
@@ -1745,11 +1752,10 @@ describe "Admin budget investments", :admin do
   context "Columns chooser" do
     let!(:investment) do
       create(:budget_investment,
-              :winner,
-              :visible_to_valuators,
-              budget: budget,
-              author: create(:user, username: "Jon Doe")
-            )
+             :winner,
+             :visible_to_valuators,
+             budget: budget,
+             author: create(:user, username: "Jon Doe"))
     end
     let(:default_columns) do
       %w[id title supports admin valuator geozone feasibility price
@@ -1790,8 +1796,8 @@ describe "Admin budget investments", :admin do
       columns_cookie = cookies.find { |cookie| cookie[:name] == "investments-columns" }
       cookie_value = columns_cookie[:value]
 
-      expect(cookie_value).to eq("id,title,supports,admin,valuator,geozone," +
-        "feasibility,price,valuation_finished,visible_to_valuators,selected,incompatible")
+      expect(cookie_value).to eq("id,title,supports,admin,valuator,geozone,feasibility,price," \
+                                 "valuation_finished,visible_to_valuators,selected,incompatible")
     end
 
     scenario "Use column selector to display visible columns" do
@@ -1840,8 +1846,8 @@ describe "Admin budget investments", :admin do
       columns_cookie = cookies.find { |cookie| cookie[:name] == "investments-columns" }
       cookie_value = columns_cookie[:value]
 
-      expect(cookie_value).to eq("id,supports,admin,geozone," +
-        "feasibility,valuation_finished,visible_to_valuators,selected,incompatible,author")
+      expect(cookie_value).to eq("id,supports,admin,geozone,feasibility,valuation_finished," \
+                                 "visible_to_valuators,selected,incompatible,author")
 
       visit admin_budget_budget_investments_path(budget)
 
@@ -1849,8 +1855,8 @@ describe "Admin budget investments", :admin do
       columns_cookie = cookies.find { |cookie| cookie[:name] == "investments-columns" }
       cookie_value = columns_cookie[:value]
 
-      expect(cookie_value).to eq("id,supports,admin,geozone,feasibility,valuation_finished," +
-        "visible_to_valuators,selected,incompatible,author")
+      expect(cookie_value).to eq("id,supports,admin,geozone,feasibility,valuation_finished," \
+                                 "visible_to_valuators,selected,incompatible,author")
     end
 
     scenario "Select an investment when some columns are not displayed" do

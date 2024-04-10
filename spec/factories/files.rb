@@ -2,36 +2,36 @@ FactoryBot.define do
   factory :image do
     attachment { Rack::Test::UploadedFile.new("spec/fixtures/files/clippy.jpg") }
     title { "Lorem ipsum dolor sit amet" }
-    association :user, factory: :user
+    user
 
     trait :proposal_image do
-      association :imageable, factory: :proposal
+      imageable factory: :proposal
     end
 
     trait :budget_image do
-      association :imageable, factory: :budget
+      imageable factory: :budget
     end
 
     trait :budget_investment_image do
-      association :imageable, factory: :budget_investment
+      imageable factory: :budget_investment
     end
   end
 
   factory :document do
     sequence(:title) { |n| "Document title #{n}" }
-    association :user, factory: :user
+    user
     attachment { Rack::Test::UploadedFile.new("spec/fixtures/files/empty.pdf") }
 
     trait :proposal_document do
-      association :documentable, factory: :proposal
+      documentable factory: :proposal
     end
 
     trait :budget_investment_document do
-      association :documentable, factory: :budget_investment
+      documentable factory: :budget_investment
     end
 
     trait :poll_question_document do
-      association :documentable, factory: :poll_question
+      documentable factory: :poll_question
     end
 
     trait :admin do

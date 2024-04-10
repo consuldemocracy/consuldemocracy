@@ -57,9 +57,9 @@ describe "Incomplete verifications", :admin do
 
   scenario "SMS code not confirmed" do
     incompletely_verified_user = create(:user, residence_verified_at: Time.current,
-                                               unconfirmed_phone:     "611111111",
+                                               unconfirmed_phone: "611111111",
                                                sms_confirmation_code: "1234",
-                                               confirmed_phone:       nil)
+                                               confirmed_phone: nil)
 
     visit admin_verifications_path
 

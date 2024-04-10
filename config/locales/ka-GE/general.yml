@@ -135,7 +135,6 @@ ka:
       invalid_date_range: "თარიღთა დიაპაზონი არასწორია"
   form:
     accept_terms: ვეთანხმები %{policy} და %{conditions}
-    accept_terms_title: ვეთანხმები კონფიდენციალურობის პოლიტიკას და გამოყენების წესებსა და პირობებს
     conditions: გამოყენების წესები და პირობები
     debate: დებატები
     direct_message: პირადი შეტყობინება
@@ -168,11 +167,6 @@ ka:
   geozones:
     none: მთელი ქალაქი
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: როგორც ჩანს თქვენ Internet Explorer-ს იყენებთ. გაცილებით სწრაფი გამოცდილების მისაღებად გამოიყენეთ %{firefox} ან %{chrome}.
-      ie_title: ეს ვებ–გვერდი არ არის ოპტიმიზებული თქვენი ბრაუზერისთვის
     dashboard:
       proposal_header:
         published: გამოქვეყნებული
@@ -191,9 +185,9 @@ ka:
     footer:
       accessibility: ხელმისაწვდომობა
       conditions: გამოყენების წესები და პირობები
-      consul: CONSUL-ის აპლიკაცია
+      consul: CONSUL DEMOCRACY-ის აპლიკაცია
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: აღნიშნული პორტალი იყენებს %{consul}, რომელიც არის %{open_source}.
       open_source: ღია წყაროების პროგრამული უზრუნველყოფა
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html

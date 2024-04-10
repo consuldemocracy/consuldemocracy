@@ -119,7 +119,6 @@ sl:
       invalid_date_range: "Neveljavno časovno obdobje"
   form:
     accept_terms: Strinjam se s %{policy} in s %{conditions}
-    accept_terms_title: Strinjam se s politko zasebnosti in pogoji uporabe
     conditions: Pogoji uporabe
     debate: Razprava
     direct_message: Zasebno sporočilo
@@ -142,9 +141,6 @@ sl:
   geozones:
     none: Celo mesto/občina
   layouts:
-    application:
-      ie: Zaznali smo, da za brskanje po internetu uporabljaš Internet Explorer. Za boljšo izkušno te spletne strani, ti predlagamo preklop na %{firefox} ali %{chrome}.
-      ie_title: Ta spletna stran ni optimizirana za tvoj brskalnik
     dashboard:
       proposal_header:
         published: Objavljena
@@ -155,7 +151,7 @@ sl:
     footer:
       accessibility: Dostopnosti
       conditions: Pogoji uporabe
-      consul: Aplikacija CONSUL
+      consul: Aplikacija CONSUL DEMOCRACY
       description: Ta portal uporablja %{consul}, ki je %{open_source}.
       open_source: odprtokodna programska oprema
       participation_text: Odloči se, kako sooblikovati tako mesto, v kakršnem si želiš živeti.

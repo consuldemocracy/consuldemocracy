@@ -1,6 +1,7 @@
 sv:
   account:
     show:
+      last_sign_in: "Senaste inloggningen: %{last_sign_in_at} från IP %{last_sign_in_ip}"
       change_credentials_link: Ändra mina inloggningsuppgifter
       erase_account_link: Radera mitt konto
       finish_verification: Slutför verifiering
@@ -143,7 +144,6 @@ sv:
         poll_ended: "Kan inte ändras om omröstningen redan har avslutats"
   form:
     accept_terms: Jag godkänner %{policy} och %{conditions}
-    accept_terms_title: Jag godkänner integritetspolicyn och användarvillkoren
     conditions: Användarvillkor
     debate: Diskussion
     direct_message: privat meddelande
@@ -177,11 +177,6 @@ sv:
   geozones:
     none: Hela staden
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Vi har upptäckt att du använder Internet Explorer. För en förbättrad upplevelse rekommenderar vi %{firefox} eller %{chrome}.
-      ie_title: Webbplatsen är inte optimerad för din webbläsare
     dashboard:
       proposal_header:
         published: Publicerad
@@ -200,9 +195,9 @@ sv:
     footer:
       accessibility: Tillgänglighet
       conditions: användarvillkoren
-      consul: Programvaran CONSUL
+      consul: Programvaran CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Den här webbplatsen använder %{consul} som är %{open_source}.
       open_source: en plattform med öppen källkod
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
@@ -724,7 +719,7 @@ sv:
       districts: "Distrikt"
       districts_list: "Lista över distrikt"
       categories: "Kategorier"
-    target_blank: " (länken öppnas i ett nytt fönster)"
+    target_blank: "Länken öppnas i ett nytt fönster"
     you_are_in: "Du är på"
     unflag: Ta bort flagga
     unfollow_entity: "Sluta följa %{entity}"

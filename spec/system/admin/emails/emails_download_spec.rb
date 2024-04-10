@@ -8,7 +8,7 @@ describe "Admin download user emails" do
     login_as(admin_user)
   end
 
-  context "Download only emails from segment users with newsletter flag & present email " do
+  context "Download only emails from segment users with newsletter flag & present email" do
     before do
       create(:user, email: "user@consul.dev")
 

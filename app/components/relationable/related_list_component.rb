@@ -13,6 +13,8 @@ class Relationable::RelatedListComponent < ApplicationComponent
   private
 
     def related_contents
-      @related_contents ||= Kaminari.paginate_array(relationable.relationed_contents).page(params[:page]).per(5)
+      @related_contents ||= Kaminari.paginate_array(relationable.relationed_contents)
+                                    .page(params[:page])
+                                    .per(5)
     end
 end

@@ -25,7 +25,7 @@
           <% end %>
         </div>
         <span><%= t("legislation.draft_versions.show.updated_at",
-                     date: format_date(@draft_version.updated_at)) %></span>
+                    date: format_date(@draft_version.updated_at)) %></span>
       </div>
 
       <% unless @draft_version.final_version? %>

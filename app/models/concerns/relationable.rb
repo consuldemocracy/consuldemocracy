@@ -3,9 +3,9 @@ module Relationable
 
   included do
     has_many :related_contents,
-      as:         :parent_relationable,
-      inverse_of: :parent_relationable,
-      dependent:  :destroy
+             as: :parent_relationable,
+             inverse_of: :parent_relationable,
+             dependent: :destroy
   end
 
   def find_related_content(relationable)

@@ -1,4 +1,6 @@
 require:
+  - rubocop-capybara
+  - rubocop-factory_bot
   - rubocop-performance
   - rubocop-rails
   - rubocop-rspec
@@ -18,7 +20,72 @@ Bundler/OrderedGems:
   Enabled: true
   ConsiderPunctuation: true
 
+Capybara/ClickLinkOrButtonStyle:
+  Enabled: true
+
+Capybara/CurrentPathExpectation:
+  Enabled: true
+
+Capybara/NegationMatcher:
+  Enabled: true
+
+Capybara/RSpec/HaveSelector:
+  Enabled: true
+
+Capybara/SpecificActions:
+  Enabled: true
+
+Capybara/VisibilityMatcher:
+  Enabled: true
+
+FactoryBot/AssociationStyle:
+  Enabled: true
+
+FactoryBot/ConsistentParenthesesStyle:
+  Enabled: true
+
+FactoryBot/FactoryAssociationWithStrategy:
+  Enabled: true
+
+FactoryBot/FactoryClassName:
+  Enabled: true
+
+FactoryBot/RedundantFactoryOption:
+  Enabled: true
+
+Layout/ArgumentAlignment:
+  Enabled: true
+
+Layout/ArrayAlignment:
+  Enabled: true
+
 Layout/AssignmentIndentation:
+  Enabled: true
+
+Layout/BeginEndAlignment:
+  Enabled: true
+  EnforcedStyleAlignWith: begin
+
+Layout/BlockAlignment:
+  Enabled: true
+
+Layout/BlockEndNewline:
+  Enabled: true
+
+Layout/ClosingHeredocIndentation:
+  Enabled: true
+
+Layout/ClosingParenthesisIndentation:
+  Enabled: true
+
+Layout/DefEndAlignment:
+  Enabled: true
+  EnforcedStyleAlignWith: def
+
+Layout/DotPosition:
+  Enabled: true
+
+Layout/ElseAlignment:
   Enabled: true
 
 Layout/EmptyLineAfterGuardClause:
@@ -45,10 +112,24 @@ Layout/EmptyLinesAroundMethodBody:
 Layout/EmptyLinesAroundModuleBody:
   Enabled: true
 
+Layout/EndAlignment:
+  Enabled: true
+
 Layout/EndOfLine:
   EnforcedStyle: lf
 
 Layout/ExtraSpacing:
+  Enabled: true
+
+Layout/FirstArrayElementIndentation:
+  Enabled: true
+  EnforcedStyle: consistent
+
+Layout/FirstHashElementIndentation:
+  Enabled: true
+  EnforcedStyle: consistent
+
+Layout/HashAlignment:
   Enabled: true
 
 Layout/HeredocIndentation:
@@ -66,14 +147,49 @@ Layout/IndentationWidth:
 Layout/LeadingEmptyLines:
   Enabled: true
 
+Layout/LineContinuationSpacing:
+  Enabled: true
+
 Layout/LineEndStringConcatenationIndentation:
   Enabled: true
 
 Layout/LineLength:
   Max: 110
-  Severity: refactor
+  Exclude:
+    - "Gemfile"
+    - "config/environments/production.rb"
+    - "config/environments/staging.rb"
+    - "config/initializers/devise.rb"
+    - "config/initializers/backtrace_silencers.rb"
+    - "db/migrate/*create_delayed_jobs.rb"
+    - "db/migrate/*create_active_storage_variant_records.active_storage.rb"
+    - "app/models/budget/stats.rb"
+
+Layout/MultilineArrayBraceLayout:
+  Enabled: true
 
 Layout/MultilineBlockLayout:
+  Enabled: true
+
+Layout/MultilineHashBraceLayout:
+  Enabled: true
+
+Layout/MultilineHashKeyLineBreaks:
+  Enabled: true
+
+Layout/MultilineMethodCallBraceLayout:
+  Enabled: true
+
+Layout/MultilineMethodCallIndentation:
+  Enabled: true
+
+Layout/MultilineOperationIndentation:
+  Enabled: true
+
+Layout/ParameterAlignment:
+  Enabled: true
+
+Layout/RescueEnsureAlignment:
   Enabled: true
 
 Layout/SpaceAfterColon:
@@ -209,6 +325,13 @@ Lint/UselessAssignment:
 Lint/Void:
   Enabled: true
 
+Naming/BlockForwarding:
+  Enabled: true
+  Exclude:
+    - "app/controllers/application_controller.rb"
+    - "app/controllers/management/base_controller.rb"
+    - "app/controllers/subscriptions_controller.rb"
+
 Naming/VariableName:
   Enabled: true
 
@@ -233,6 +356,9 @@ Performance/StringIdentifierArgument:
 Performance/Sum:
   Enabled: true
 
+Rails/ActionControllerFlashBeforeRender:
+  Enabled: true
+
 Rails/ActiveRecordCallbacksOrder:
   Enabled: true
 
@@ -244,6 +370,7 @@ Rails/CreateTableWithTimestamps:
   Exclude:
     - "db/migrate/201[5-8]*"
     - "db/migrate/*install_audited.rb"
+    - "db/migrate/*create_active_storage_variant_records.active_storage.rb"
 
 Rails/Date:
   Enabled: true
@@ -316,6 +443,9 @@ Rails/PluralizationGrammar:
 Rails/Presence:
   Enabled: true
 
+Rails/RedundantActiveRecordAllMethod:
+  Enabled: true
+
 Rails/RedundantTravelBack:
   Enabled: true
 
@@ -323,6 +453,9 @@ Rails/RelativeDateConstant:
   Enabled: true
 
 Rails/RequestReferer:
+  Enabled: true
+
+Rails/ResponseParsedBody:
   Enabled: true
 
 Rails/ReversibleMigration:
@@ -335,6 +468,9 @@ Rails/SafeNavigation:
 Rails/SaveBang:
   Enabled: true
   Severity: refactor
+
+Rails/SelectMap:
+  Enabled: true
 
 Rails/SkipsModelValidations:
   Enabled: true
@@ -372,23 +508,27 @@ Rails/WhereEquals:
 Rails/WhereNot:
   Enabled: true
 
+Rails/WhereNotWithMultipleConditions:
+  Enabled: true
+
 RSpec/AroundBlock:
+  Enabled: true
+
+RSpec/BeEq:
   Enabled: true
 
 RSpec/BeforeAfterAll:
   Enabled: true
 
-RSpec/Capybara/CurrentPathExpectation:
+RSpec/BeNil:
   Enabled: true
+  EnforcedStyle: be
 
 RSpec/Capybara/FeatureMethods:
   Enabled: true
   EnabledMethods:
     - scenario
     - xscenario
-
-RSpec/Capybara/VisibilityMatcher:
-  Enabled: true
 
 RSpec/ContextMethod:
   Enabled: true
@@ -416,10 +556,7 @@ RSpec/EmptyLineAfterExampleGroup:
 RSpec/ExampleWording:
   Enabled: true
 
-RSpec/FactoryBot/FactoryClassName:
-  Enabled: true
-
-RSpec/FilePath:
+RSpec/ExcessiveDocstringSpacing:
   Enabled: true
 
 RSpec/Focus:
@@ -439,10 +576,28 @@ RSpec/LetBeforeExamples:
 RSpec/LetSetup:
   Enabled: true
 
+RSpec/MetadataStyle:
+  Enabled: true
+
 RSpec/NotToNot:
   Enabled: true
 
 RSpec/OverwritingSetup:
+  Enabled: true
+
+RSpec/Rails/HaveHttpStatus:
+  Enabled: true
+
+RSpec/Rails/InferredSpecType:
+  Enabled: true
+
+RSpec/Rails/NegationBeValid:
+  Enabled: true
+
+RSpec/Rails/TravelAround:
+  Enabled: true
+
+RSpec/ReceiveMessages:
   Enabled: true
 
 RSpec/RepeatedExample:
@@ -458,6 +613,12 @@ RSpec/ScatteredLet:
   Enabled: true
 
 RSpec/ScatteredSetup:
+  Enabled: true
+
+RSpec/SpecFilePathFormat:
+  Enabled: true
+
+RSpec/SpecFilePathSuffix:
   Enabled: true
 
 RSpec/VoidExpect:
@@ -482,6 +643,9 @@ Style/AndOr:
   Enabled: true
 
 Style/ArrayCoercion:
+  Enabled: true
+
+Style/ArrayIntersect:
   Enabled: true
 
 Style/BlockDelimiters:
@@ -510,6 +674,7 @@ Style/HashExcept:
 
 Style/HashSyntax:
   Enabled: true
+  EnforcedShorthandSyntax: either
 
 Style/HashTransformKeys:
   Enabled: true
@@ -523,10 +688,27 @@ Style/IdenticalConditionalBranches:
 Style/IfWithBooleanLiteralBranches:
   Enabled: true
 
+Style/InverseMethods:
+  Enabled: true
+
+Style/InvertibleUnlessCondition:
+  Enabled: true
+  InverseMethods:
+    :blank?: :present?
+    :include?: ~
+    :present?: :blank?
+    :zero?: ~
+
+Style/LineEndConcatenation:
+  Enabled: true
+
 Style/MapToHash:
   Enabled: true
 
 Style/MethodDefParentheses:
+  Enabled: true
+
+Style/MinMaxComparison:
   Enabled: true
 
 Style/MutableConstant:
@@ -572,6 +754,9 @@ Style/RedundantReturn:
   Enabled: true
 
 Style/RedundantSelf:
+  Enabled: true
+
+Style/RedundantStringEscape:
   Enabled: true
 
 Style/SafeNavigation:

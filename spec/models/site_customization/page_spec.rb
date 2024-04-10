@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe SiteCustomization::Page, type: :model do
+RSpec.describe SiteCustomization::Page do
   let(:custom_page) { build(:site_customization_page) }
 
   it_behaves_like "globalizable", :site_customization_page
@@ -11,7 +11,7 @@ RSpec.describe SiteCustomization::Page, type: :model do
 
   it "is invalid if slug has symbols" do
     custom_page = build(:site_customization_page, slug: "as/as*la")
-    expect(custom_page).to be_invalid
+    expect(custom_page).not_to be_valid
   end
 
   it "dynamically validates the valid statuses" do

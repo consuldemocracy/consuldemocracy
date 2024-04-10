@@ -1,14 +1,14 @@
 <%= render Pages::Help::SectionComponent.new("debates") do %>
   <p>
     <%= sanitize(t("pages.help.debates.description",
-        org: setting["org_name"],
-        link: link_to(t("pages.help.debates.link"), debates_path))) %>
+                   org: setting["org_name"],
+                   link: link_to(t("pages.help.debates.link"), debates_path))) %>
   </p>
   <ul class="features">
     <li>
       <%= sanitize(t("pages.help.debates.feature",
-            link: link_to(t("pages.help.debates.feature_link", org: setting["org_name"]),
-                             new_user_registration_path))) %>
+                     link: link_to(t("pages.help.debates.feature_link", org: setting["org_name"]),
+                                   new_user_registration_path))) %>
     </li>
   </ul>
 <% end %>

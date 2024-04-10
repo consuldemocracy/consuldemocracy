@@ -11,7 +11,7 @@
       <% @debates.each do |debate| %>
         <tr id="debate_<%= debate.id %>">
           <td>
-            <%= link_to debate.title, debate, target: "_blank" %>
+            <%= link_to debate.title, debate %>
             <br>
             <span class="date"><%= l debate.updated_at.to_date %></span>
             <span class="bullet">&nbsp;&bull;&nbsp;</span>

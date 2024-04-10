@@ -4,6 +4,7 @@
 
   <%= render "shared/errors", resource: @process %>
 
+<div class="row">
   <fieldset>
     <legend class="small-12 medium-4 column">
       <%= t("admin.legislation.processes.form.draft_phase") %>
@@ -85,44 +86,61 @@
     <div class="small-12 medium-3 column">
       <%= f.date_field :allegations_end_date, id: "allegations_end_date" %>
     </div>
-    <div class="small-12 medium-2 column margin-top">
+     <div class="small-12 medium-2 column margin-top">
       <%= f.check_box :allegations_phase_enabled, checked: @process.allegations_phase.enabled?, label: t("admin.legislation.processes.form.enabled") %>
     </div>
-  </fieldset>
+   </fieldset>
+   <fieldset>
+    <legend class="small-12 medium-4 column">
+      <%= t("admin.legislation.processes.form.draft_publication") %>
+      <span class="help-text"><%= t("admin.legislation.processes.form.draft_publication_description") %></span>
+    </legend>
 
-  <fieldset>
     <div class="small-12 medium-3 column end">
       <%= f.date_field :draft_publication_date, id: "draft_publication_date" %>
     </div>
     <div class="small-12 medium-2 column margin-top">
       <%= f.check_box :draft_publication_enabled, checked: @process.draft_publication.enabled?, label: t("admin.legislation.processes.form.enabled") %>
     </div>
-  </fieldset>
+   </fieldset>
+   <fieldset>
 
-  <fieldset>
+    <legend class="small-12 medium-4 column">
+      <%= t("admin.legislation.processes.form.final_publication") %>
+      <span class="help-text"><%= t("admin.legislation.processes.form.final_publication_description") %></span>
+    </legend>
+
     <div class="small-12 medium-3 column end">
       <%= f.date_field :result_publication_date, id: "result_publication_date" %>
     </div>
+
     <div class="small-12 medium-2 column margin-top">
       <%= f.check_box :result_publication_enabled, checked: @process.result_publication.enabled?, label: t("admin.legislation.processes.form.enabled") %>
     </div>
   </fieldset>
 
+  <fieldset>
+    <legend class="small-12 medium-4 column">
+      <%= t("admin.legislation.processes.form.summary_phase") %>
+      <span class="help-text"><%= t("admin.legislation.processes.form.summary_phase_description") %></span>
+    </legend>
+
+    <div class="small-12 medium-3 column end">
+      <%= f.date_field :summary_publication_date, id: "summary_publication_date" %>
+    </div>
+    <div class="small-12 medium-2 column margin-top">
+      <%= f.check_box :summary_publication_enabled, checked: @process.summary_publication.enabled?, label: t("admin.legislation.processes.form.enabled") %>
+    </div>
+  </fieldset>
+  </div>
+
   <div class="row">
-    <div class="documents small-12 column">
-      <%= render "documents/nested_documents", f: f %>
+    <div class="small-12 column">
+      <%= render Documents::NestedComponent.new(f) %>
     </div>
 
     <div class="small-12 column">
-      <hr>
-    </div>
-
-    <div class="images small-12 column">
-      <%= render "images/nested_image", f: f %>
-    </div>
-
-    <div class="small-12 column">
-      <hr>
+      <%= render Images::NestedComponent.new(f) %>
     </div>
 
     <div class="small-12 column">
@@ -153,10 +171,6 @@
           <%= f.text_field :font_color, label: false, id: "font_color_input" %>
         </div>
       </div>
-    </div>
-
-    <div class="small-12 column">
-      <hr>
     </div>
   </div>
 

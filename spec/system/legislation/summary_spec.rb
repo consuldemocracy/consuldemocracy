@@ -1,6 +1,8 @@
 require "rails_helper"
 
-describe "Legislation" do
+describe "Legislation" do 
+  let(:admin_user) { create(:user, :admin) }
+
   context "process summary page" do
     scenario "summary tab is not shown for open processes" do
       process = create(:legislation_process, :open)
@@ -10,20 +12,29 @@ describe "Legislation" do
       expect(page).not_to have_content "Summary"
     end
 
-    scenario "summary tab is shown por past processes" do
-      process = create(:legislation_process, :past)
+    scenario "summary tab is shown for processes with enabled summary and past date" do
+      process = create(:legislation_process,
+                       summary_publication_enabled: true,
+                       summary_publication_date: Date.current - 1.day)
 
       visit legislation_process_path(process)
 
       expect(page).to have_content "Summary"
     end
+
+    scenario "summary tab is not shown for processes with disabled summary" do
+      process = create(:legislation_process, summary_publication_enabled: false)
+
+      visit legislation_process_path(process)
+
+      expect(page).not_to have_content "Summary"
+    end
   end
 
   scenario "empty process" do
     process = create(:legislation_process, :empty,
-      result_publication_enabled: true,
-      end_date: Date.current - 1.day
-    )
+                     result_publication_enabled: true,
+                     end_date: Date.current - 1.day)
 
     visit summary_legislation_process_path(process)
 
@@ -90,13 +101,13 @@ describe "Legislation" do
 
     before do
       create(:legislation_proposal, legislation_process_id: process.id,
-             title: "Legislation proposal 1", selected: true)
+                                    title: "Legislation proposal 1", selected: true)
       create(:legislation_proposal, legislation_process_id: process.id,
-             title: "Legislation proposal 2", selected: false)
+                                    title: "Legislation proposal 2", selected: false)
       create(:legislation_proposal, legislation_process_id: process.id,
-             title: "Legislation proposal 3", selected: true)
+                                    title: "Legislation proposal 3", selected: true)
       create(:legislation_proposal, legislation_process_id: process.id,
-             title: "Legislation proposal 4", selected: false)
+                                    title: "Legislation proposal 4", selected: false)
     end
 
     scenario "shows proposals list" do
@@ -124,11 +135,15 @@ describe "Legislation" do
 
     before do
       user = create(:user, :level_two)
-      draft_version_1 = create(:legislation_draft_version, process: process,
-                               title: "Version 1", body: "Body of the first version",
+      draft_version_1 = create(:legislation_draft_version,
+                               process: process,
+                               title: "Version 1",
+                               body: "Body of the first version",
                                status: "published")
-      draft_version_2 = create(:legislation_draft_version, process: process,
-                               title: "Version 2", body: "Body of the second version and that's it all of it",
+      draft_version_2 = create(:legislation_draft_version,
+                               process: process,
+                               title: "Version 2",
+                               body: "Body of the second version and that's it all of it",
                                status: "published")
       annotation0 = create(:legislation_annotation,
                            draft_version: draft_version_1, text: "my annotation123",

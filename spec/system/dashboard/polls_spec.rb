@@ -155,7 +155,7 @@ describe "Polls" do
     within ".js-questions" do
       expect(page).to have_css ".nested-fields", count: 2
       within first(".nested-fields") do
-        find("a.delete").click
+        click_link class: "delete"
       end
       expect(page).to have_css ".nested-fields", count: 1
     end
@@ -177,7 +177,7 @@ describe "Polls" do
     within ".js-questions .js-answers" do
       expect(page).to have_css ".nested-fields", count: 2
       within first(".nested-fields") do
-        find("a.delete").click
+        click_link class: "delete"
       end
       expect(page).to have_css ".nested-fields", count: 1
     end
@@ -256,9 +256,9 @@ describe "Polls" do
 
     visit proposal_dashboard_polls_path(proposal)
 
-    within_window(window_opened_by { click_link "View results" }) do
-      expect(page).to have_current_path(results_proposal_poll_path(proposal, poll))
-    end
+    click_link "View results"
+
+    expect(page).to have_current_path(results_proposal_poll_path(proposal, poll))
   end
 
   scenario "Enable and disable results" do

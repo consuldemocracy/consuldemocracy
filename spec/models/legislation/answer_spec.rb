@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe Legislation::Answer, type: :model do
+RSpec.describe Legislation::Answer do
   let(:legislation_answer) { build(:legislation_answer) }
 
   it "is valid" do
@@ -30,7 +30,7 @@ RSpec.describe Legislation::Answer, type: :model do
     expect(answer).to be_valid
 
     second_answer = build(:legislation_answer, question: question, question_option: option_1, user: user)
-    expect(second_answer).to be_invalid
+    expect(second_answer).not_to be_valid
 
     expect(question.answers_count).to eq 1
     expect(option_2.answers_count).to eq 1

@@ -1,8 +1,6 @@
 require "rails_helper"
 
-describe Admin::Budgets::LinksComponent, controller: Admin::BaseController do
-  before { sign_in(create(:administrator).user) }
-
+describe Admin::Budgets::LinksComponent, :admin do
   describe "see results link" do
     let(:budget) { create(:budget, :finished) }
     let(:component) { Admin::Budgets::LinksComponent.new(budget) }

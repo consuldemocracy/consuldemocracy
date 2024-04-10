@@ -26,7 +26,7 @@ class MapLocation < ApplicationRecord
   end
 
   def self.investments_json_data(investments)
-    return [] unless investments.any?
+    return [] if investments.none?
 
     budget_id = investments.first.budget_id
 

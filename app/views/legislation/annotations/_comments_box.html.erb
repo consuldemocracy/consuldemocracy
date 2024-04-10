@@ -23,10 +23,10 @@
         <div id="js-comment-form-annotation-<%= annotation.id %>" style="display:none" class="comment-form js-comment-form-annotation">
           <%= form_for @comment, url: legislation_process_draft_version_annotation_new_comment_path(annotation.draft_version.process, annotation.draft_version, annotation), remote: true do |f| %>
             <%= f.text_area :body,
-              id: "comment-body-#{css_id}",
-              maxlength: Comment.body_max_length,
-              label: leave_comment_text(annotation),
-              rows: 8 %>
+                            id: "comment-body-#{css_id}",
+                            maxlength: Comment.body_max_length,
+                            label: leave_comment_text(annotation),
+                            rows: 8 %>
             <%= f.submit comment_button_text(nil, annotation), class: "button" %>
           <% end %>
         </div>

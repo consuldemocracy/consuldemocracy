@@ -27,21 +27,21 @@ class Legislation::Process < ApplicationRecord
   CSS_HEX_COLOR = /\A#?(?:[A-F0-9]{3}){1,2}\z/i
 
   has_many :draft_versions, -> { order(:id) },
-    foreign_key: "legislation_process_id",
-    inverse_of:  :process,
-    dependent:   :destroy
+           foreign_key: "legislation_process_id",
+           inverse_of: :process,
+           dependent: :destroy
   has_one :final_draft_version, -> { where final_version: true, status: "published" },
-    class_name:  "Legislation::DraftVersion",
-    foreign_key: "legislation_process_id",
-    inverse_of:  :process
+          class_name: "Legislation::DraftVersion",
+          foreign_key: "legislation_process_id",
+          inverse_of: :process
   has_many :questions, -> { order(:id) },
-    foreign_key: "legislation_process_id",
-    inverse_of:  :process,
-    dependent:   :destroy
+           foreign_key: "legislation_process_id",
+           inverse_of: :process,
+           dependent: :destroy
   has_many :proposals, -> { order(:id) },
-    foreign_key: "legislation_process_id",
-    inverse_of:  :process,
-    dependent:   :destroy
+           foreign_key: "legislation_process_id",
+           inverse_of: :process,
+           dependent: :destroy
 
   validates_translation :title, presence: true
   validates :start_date, presence: true
@@ -93,6 +93,10 @@ class Legislation::Process < ApplicationRecord
                                     proposals_phase_end_date, proposals_phase_enabled)
   end
 
+  def summary_publication
+    Legislation::Process::Publication.new(summary_publication_date, summary_publication_enabled)
+  end
+
   def draft_publication
     Legislation::Process::Publication.new(draft_publication_date, draft_publication_enabled)
   end
@@ -127,8 +131,8 @@ class Legislation::Process < ApplicationRecord
 
   def searchable_translations_definitions
     {
-      title       => "A",
-      summary     => "C",
+      title => "A",
+      summary => "C",
       description => "D"
     }
   end

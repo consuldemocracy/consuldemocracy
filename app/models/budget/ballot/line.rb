@@ -28,7 +28,8 @@ class Budget
       def check_valid_heading
         return if ballot.valid_heading?(heading)
 
-        errors.add(:heading, "This heading's budget is invalid, or a heading on the same group was already selected")
+        errors.add(:heading,
+                   "This heading's budget is invalid, or a heading on the same group was already selected")
       end
 
       def check_selected

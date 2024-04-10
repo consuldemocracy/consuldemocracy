@@ -46,7 +46,6 @@ hr:
           success: Prebivalište potvrđeno
       new:
         accept_terms_text: Potvrđujem %{terms_url} Cenzusa
-        accept_terms_text_title: Prihvaćam uvjete korištenja za pristup Cenzusu
         document_number: Broj dokumenta
         document_number_help_title: Pomoć
         document_number_help_text: "<strong>OI</strong>: 12345678A<br> <strong>Putovnica</strong>: AAA000001<br><strong>Boravišna iskaznica</strong>: X1234567P"

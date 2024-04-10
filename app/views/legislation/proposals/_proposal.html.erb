@@ -26,7 +26,8 @@
                 url: legislation_process_proposal_path(
                        proposal.legislation_process_id,
                        proposal,
-                       anchor: "comments")
+                       anchor: "comments"
+                     )
               ) %>
 
               <% if proposal.author.hidden? || proposal.author.erased? %>

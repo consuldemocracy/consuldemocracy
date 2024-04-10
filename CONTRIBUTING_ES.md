@@ -10,9 +10,9 @@ El método preferido para informar sobre una incidencia en el proyecto es [crean
 
 * Trata de darle un título descriptivo (algo más que "xxx no funciona").
 * Es buena idea incluir las siguientes secciones:
-  * Pasos que se han realizado para producir la incidencia
-  * Lo que se esperaba que pasara
-  * Lo que ha pasado
+   * Pasos que se han realizado para producir la incidencia
+   * Lo que se esperaba que pasara
+   * Lo que ha pasado
 * También es buena idea que incluyas tu sistema operativo, navegador, versión de navegador y plugins instalados.
 
 ¡Gracias! :heart: :heart: :heart:

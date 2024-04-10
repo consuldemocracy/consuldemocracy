@@ -69,8 +69,8 @@ describe "Admin custom pages", :admin do
 
       within("tr", text: "An example custom page") { click_link "Edit" }
 
-      expect(page).to have_selector("h2", text: "An example custom page")
-      expect(page).to have_selector("input[value='custom-example-page']")
+      expect(page).to have_css "h2", text: "An example custom page"
+      expect(page).to have_css "input[value='custom-example-page']"
 
       fill_in "Title", with: "Another example custom page"
       fill_in "site_customization_page_slug", with: "another-custom-example-page"

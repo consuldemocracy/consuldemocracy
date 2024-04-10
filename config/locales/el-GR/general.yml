@@ -135,7 +135,6 @@ el:
       invalid_date_range: "Μη έγκυρο εύρος ημερομηνίας"
   form:
     accept_terms: Συμφωνώ στην %{policy} και στις %{conditions}
-    accept_terms_title: Συμφωνώ με την Πολιτική Απορρήτου και τους Όρους και Προϋποθέσεις Χρήσης
     conditions: Όροι και προϋποθέσεις χρήσης
     debate: Συζήτηση
     direct_message: προσωπικό μήνυμα
@@ -160,11 +159,6 @@ el:
   geozones:
     none: Σε όλη την πόλη
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Διαπιστώσαμε ότι χρησιμοποιείτε το πρόγραμα περιήγησης Internet Explorer. Για βελτιωμένη εμπειρία, συνιστούμε τη χρήση %{firefox} ή %{chrome}.
-      ie_title: Αυτή η ιστοσελίδα δεν έχει βελτιστοποιηθεί για το πρόγραμμα περιήγησής σας
     dashboard:
       proposal_header:
         published: Δημοσιεύθηκε
@@ -183,9 +177,9 @@ el:
     footer:
       accessibility: Προσβασιμότητα
       conditions: Όροι και προϋποθέσεις χρήσης
-      consul: Εφαρμογή CONSUL
+      consul: Εφαρμογή CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Αυτή η πύλη χρησιμοποιεί το %{consul}, το οποίο είναι %{open_source}.
       open_source: λογισμικό ανοικτού κώδικα
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
