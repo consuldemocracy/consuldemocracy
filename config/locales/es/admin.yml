@@ -711,9 +711,7 @@ es:
         index:
           title: Seguimiento
     locales:
-      default: Idioma por defecto
       default_help_text: "Cambiar el idioma por defecto <strong>afectará a todos los usuarios</strong> que visiten la página por primera vez."
-      enabled: Idiomas habilitados
       enabled_help_text: El idioma por defecto, seleccionado con anterioridad, se habilitará automáticamente.
       update:
         notice: Idiomas actualizados con éxito

@@ -1,10 +1,9 @@
 class Admin::Locales::ShowComponent < ApplicationComponent
   include Header
-  attr_reader :locales, :default
+  attr_reader :locales_settings
 
-  def initialize(locales, default:)
-    @locales = locales
-    @default = default
+  def initialize(locales_settings)
+    @locales_settings = locales_settings
   end
 
   def title

@@ -134,6 +134,8 @@ module Abilities
       can [:deliver], Newsletter, hidden_at: nil
       can [:manage], Dashboard::AdministratorTask
 
+      can :manage, Setting::LocalesSettings
+
       can :manage, LocalCensusRecord
       can [:create, :read], LocalCensusRecords::Import
 

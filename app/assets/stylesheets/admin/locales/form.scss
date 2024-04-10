@@ -7,6 +7,10 @@
     width: auto;
   }
 
+  .help-text {
+    display: block;
+  }
+
   > select + fieldset,
   > fieldset + fieldset {
     margin-top: $line-height / 2;

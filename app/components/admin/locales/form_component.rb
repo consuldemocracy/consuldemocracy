@@ -1,10 +1,9 @@
 class Admin::Locales::FormComponent < ApplicationComponent
-  attr_reader :enabled_locales, :default
+  attr_reader :locales_settings
   use_helpers :name_for_locale
 
-  def initialize(enabled_locales, default:)
-    @enabled_locales = enabled_locales
-    @default = default
+  def initialize(locales_settings)
+    @locales_settings = locales_settings
   end
 
   private
@@ -18,13 +17,14 @@ class Admin::Locales::FormComponent < ApplicationComponent
     end
 
     def locales_options
-      options_for_select(
-        available_locales.map { |locale| [name_for_locale(locale), locale] },
-        default
-      )
+      available_locales.map { |locale| [name_for_locale(locale), locale] }
     end
 
     def select_field_threshold
       10
+    end
+
+    def attribute_name(...)
+      locales_settings.class.human_attribute_name(...)
     end
 end

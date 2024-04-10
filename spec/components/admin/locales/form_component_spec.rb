@@ -3,10 +3,8 @@ require "rails_helper"
 describe Admin::Locales::FormComponent do
   let(:default_locale) { :nl }
   let(:enabled_locales) { %i[en nl] }
-
-  let(:component) do
-    Admin::Locales::FormComponent.new(enabled_locales, default: default_locale)
-  end
+  let(:locales_settings) { Setting::LocalesSettings.new(default: default_locale, enabled: enabled_locales) }
+  let(:component) { Admin::Locales::FormComponent.new(locales_settings) }
 
   describe "default language selector" do
     before { allow(I18n).to receive(:available_locales).and_return(%i[de en es nl]) }

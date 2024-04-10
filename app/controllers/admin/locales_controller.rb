@@ -1,15 +1,27 @@
 class Admin::LocalesController < Admin::BaseController
+  before_action :set_locales_settings
+  authorize_resource :locales_settings
+
   def show
-    @enabled_locales = Setting.enabled_locales
-    @default_locale = Setting.default_locale
   end
 
   def update
-    Setting.transaction do
-      Setting["locales.default"] = params["default_locale"]
-      Setting["locales.enabled"] = [params["default_locale"], *params["enabled_locales"]].join(" ")
-    end
+    @locales_settings.update!(locales_settings_params)
 
     redirect_to admin_locales_path, notice: t("admin.locales.update.notice")
   end
+
+  private
+
+    def locales_settings_params
+      params.require(:setting_locales_settings).permit(allowed_params)
+    end
+
+    def allowed_params
+      [:default, enabled: []]
+    end
+
+    def set_locales_settings
+      @locales_settings = Setting::LocalesSettings.new
+    end
 end
