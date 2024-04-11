@@ -7,13 +7,8 @@ class Admin::Budgets::ActionsComponent < ApplicationComponent
 
   private
 
-    def action(action_name, **options)
-      render Admin::ActionComponent.new(
-        action_name,
-        budget,
-        "aria-describedby": true,
-        **options
-      )
+    def action(action_name, **)
+      render Admin::ActionComponent.new(action_name, budget, "aria-describedby": true, **)
     end
 
     def actions
