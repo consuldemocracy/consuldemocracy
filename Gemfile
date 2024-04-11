@@ -103,7 +103,7 @@ group :development do
   gem "rubocop-factory_bot", "~> 2.25.1", require: false
   gem "rubocop-performance", "~> 1.20.2", require: false
   gem "rubocop-rails", "~> 2.23.1", require: false
-  gem "rubocop-rspec", "~> 2.27.0", require: false
+  gem "rubocop-rspec", "~> 2.29.1", require: false
   gem "rvm1-capistrano3", "~> 1.4.0", require: false
   gem "spring", "~> 4.1.3"
   gem "web-console", "~> 4.2.1"
