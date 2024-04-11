@@ -3,6 +3,76 @@ class Management::MenuComponent < ApplicationComponent
 
   private
 
+    def user_links
+      link_to(t("management.menu.users"), "#", class: "users-link") +
+        link_list(
+          select_user_link,
+          (reset_password_email_link if managed_user.email),
+          reset_password_manually_link,
+          create_proposal_link,
+          support_proposals_link,
+          (create_budget_investment_link if Setting["process.budgets"]),
+          (support_budget_investments_link  if Setting["process.budgets"]),
+          class: "is-active"
+        )
+    end
+
+    def select_user_link
+      [
+        t("management.menu.select_user"),
+        management_document_verifications_path,
+        users?
+      ]
+    end
+
+    def reset_password_email_link
+      [
+        t("management.account.menu.reset_password_email"),
+        edit_password_email_management_account_path,
+        edit_password_email?
+      ]
+    end
+
+    def reset_password_manually_link
+      [
+        t("management.account.menu.reset_password_manually"),
+        edit_password_manually_management_account_path,
+        edit_password_manually?
+      ]
+    end
+
+    def create_proposal_link
+      [
+        t("management.menu.create_proposal"),
+        new_management_proposal_path,
+        create_proposal?
+      ]
+    end
+
+    def support_proposals_link
+      [
+        t("management.menu.support_proposals"),
+        management_proposals_path,
+        support_proposal?
+      ]
+    end
+
+    def create_budget_investment_link
+      [
+        t("management.menu.create_budget_investment"),
+        create_investments_management_budgets_path,
+        create_investments?
+      ]
+    end
+
+    def support_budget_investments_link
+      [
+        t("management.menu.support_budget_investments"),
+        support_investments_management_budgets_path,
+        support_investments?
+      ]
+    end
+
     def users?
       ["users", "email_verifications", "document_verifications"].include?(controller_name)
     end

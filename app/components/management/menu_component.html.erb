@@ -1,50 +1,6 @@
 <ul id="admin_menu" data-accordion-menu>
   <li class="section-title">
-    <a href="#" class="users-link"><%= t("management.menu.users") %></a>
-    <%= link_list(
-      [
-        t("management.menu.select_user"),
-        management_document_verifications_path,
-        users?
-      ],
-      (
-        [
-          t("management.account.menu.reset_password_email"),
-          edit_password_email_management_account_path,
-          edit_password_email?
-        ] if managed_user.email
-      ),
-      [
-        t("management.account.menu.reset_password_manually"),
-        edit_password_manually_management_account_path,
-        edit_password_manually?
-      ],
-      [
-        t("management.menu.create_proposal"),
-        new_management_proposal_path,
-        create_proposal?
-      ],
-      [
-        t("management.menu.support_proposals"),
-        management_proposals_path,
-        support_proposal?
-      ],
-      (
-        [
-          t("management.menu.create_budget_investment"),
-          create_investments_management_budgets_path,
-          create_investments?
-        ] if Setting["process.budgets"]
-      ),
-      (
-        [
-          t("management.menu.support_budget_investments"),
-          support_investments_management_budgets_path,
-          support_investments?
-        ] if Setting["process.budgets"]
-      ),
-      class: "is-active"
-    ) %>
+    <%= user_links %>
   </li>
 
   <% if Setting["process.budgets"] %>
