@@ -378,6 +378,10 @@ describe MachineLearning do
   end
 
   describe "#run_machine_learning_scripts" do
+    let!(:original_fork_mode) { DEBUGGER__::CONFIG[:fork_mode] }
+    before { DEBUGGER__::CONFIG[:fork_mode] = "parent" }
+    after { DEBUGGER__::CONFIG[:fork_mode] = original_fork_mode }
+
     it "returns true if python script executed correctly" do
       machine_learning = MachineLearning.new(job)
 

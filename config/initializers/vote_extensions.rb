@@ -1,6 +1,10 @@
-ActsAsVotable::Vote.class_eval do
-  include Graphqlable
+Rails.application.reloader.to_prepare do
+  ActsAsVotable::Vote.class_eval do
+    include Graphqlable
+  end
+end
 
+ActsAsVotable::Vote.class_eval do
   belongs_to :signature
   belongs_to :budget_investment, foreign_key: "votable_id", class_name: "Budget::Investment"
 

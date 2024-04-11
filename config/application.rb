@@ -32,10 +32,6 @@ module Consul
     # in any CONSUL DEMOCRACY installations
     config.active_support.use_authenticated_message_encryption = false
 
-    # Keep using the classic autoloader until we decide how custom classes
-    # should work with zeitwerk
-    config.autoloader = :classic
-
     # Don't enable has_many_inversing because it doesn't seem to currently
     # work with the _count database columns we use for caching purposes
     config.active_record.has_many_inversing = false
@@ -125,8 +121,6 @@ module Consul
     config.assets.paths << Rails.root.join("node_modules", "jquery-ui", "themes", "base")
     config.assets.paths << Rails.root.join("node_modules")
 
-    # Add lib to the autoload path
-    config.autoload_paths << Rails.root.join("lib")
     config.active_job.queue_adapter = :delayed_job
 
     # CONSUL DEMOCRACY specific custom overrides
@@ -134,12 +128,19 @@ module Consul
     # * English: https://github.com/consuldemocracy/consuldemocracy/blob/master/CUSTOMIZE_EN.md
     # * Spanish: https://github.com/consuldemocracy/consuldemocracy/blob/master/CUSTOMIZE_ES.md
     #
-    config.autoload_paths << "#{Rails.root}/app/components/custom"
-    config.autoload_paths << "#{Rails.root}/app/controllers/custom"
-    config.autoload_paths << "#{Rails.root}/app/graphql/custom"
-    config.autoload_paths << "#{Rails.root}/app/mailers/custom"
-    config.autoload_paths << "#{Rails.root}/app/models/custom"
-    config.autoload_paths << "#{Rails.root}/app/models/custom/concerns"
+
+    [
+      "app/components/custom",
+      "app/controllers/custom",
+      "app/graphql/custom",
+      "app/lib/custom",
+      "app/mailers/custom",
+      "app/models/custom",
+      "app/models/custom/concerns"
+    ].each do |path|
+      config.autoload_paths << Rails.root.join(path)
+      config.eager_load_paths << Rails.root.join(path)
+    end
 
     config.paths["app/views"].unshift(Rails.root.join("app", "views", "custom"))
 
