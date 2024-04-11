@@ -1,12 +1,12 @@
 <span class="comment-avatar">
   <% if comment.as_administrator? %>
-    <%= image_tag("avatar_admin.png", size: 32, class: "admin-avatar", alt: "") %>
+    <%= special_avatar("avatar_admin.png", class: "admin-avatar") %>
   <% elsif comment.as_moderator? %>
-    <%= image_tag("avatar_moderator.png", size: 32, class: "moderator-avatar", alt: "") %>
+    <%= special_avatar("avatar_moderator.png", class: "moderator-avatar") %>
   <% elsif comment.user.hidden? || comment.user.erased? %>
     <span class="icon-deleted user-deleted"></span>
   <% elsif comment.user.organization? %>
-    <%= image_tag("avatar_collective.png", size: 32, class: "avatar", alt: "") %>
+    <%= special_avatar("avatar_collective.png", class: "avatar") %>
   <% else %>
     <%= render Shared::AvatarComponent.new(comment.user, size: 32) %>
   <% end %>
