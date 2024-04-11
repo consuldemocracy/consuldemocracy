@@ -15,7 +15,7 @@ describe "Account" do
     expect(page).to have_current_path(account_path, ignore_query: true)
 
     expect(page).to have_css "input[value='Manuela Colau']"
-    expect(page).to have_css avatar("Manuela Colau"), count: 1
+    expect(page).to have_avatar "M", count: 1
   end
 
   scenario "Show organization" do
@@ -26,7 +26,7 @@ describe "Account" do
     expect(page).to have_css "input[value='Manuela Corp']"
     expect(page).not_to have_css "input[value='Manuela Colau']"
 
-    expect(page).to have_css avatar("Manuela Corp"), count: 1
+    expect(page).to have_avatar "M", count: 1
   end
 
   scenario "Edit" do
