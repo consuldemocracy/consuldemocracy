@@ -1560,7 +1560,7 @@ table {
 
   img,
   svg {
-    margin-right: calc(#{$line-height} / 2);
+    margin-#{$global-right}: calc(#{$line-height} / 2);
   }
 
   .reply {
