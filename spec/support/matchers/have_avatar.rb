@@ -1,6 +1,6 @@
 RSpec::Matchers.define :have_avatar do |text, **options|
-  match do
-    has_css?("svg.initialjs-avatar", **{ exact_text: text }.merge(options))
+  match do |page|
+    page.has_css?("svg.initialjs-avatar", **{ exact_text: text }.merge(options))
   end
 
   failure_message do
