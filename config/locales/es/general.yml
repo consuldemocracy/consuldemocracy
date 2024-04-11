@@ -674,9 +674,8 @@ es:
       author_deleted: Usuario eliminado
       email_deleted: Email eliminado
     back: Volver
-    check: Seleccionar
-    check_all: Todos
-    check_none: Ninguno
+    check_all: Seleccionar todos
+    check_none: Seleccionar ninguno
     collective: Colectivo
     flag: Denunciar como inapropiado
     follow: "Seguir"

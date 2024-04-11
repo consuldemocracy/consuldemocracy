@@ -109,11 +109,11 @@ describe "Moderate budget investments" do
 
         expect(page).to have_field type: :checkbox, count: 3
 
-        within(".check-all-none") { click_button "All" }
+        within(".check-all-none") { click_button "Select all" }
 
         expect(all(:checkbox)).to all(be_checked)
 
-        within(".check-all-none") { click_button "None" }
+        within(".check-all-none") { click_button "Select none" }
 
         all(:checkbox).each { |checkbox| expect(checkbox).not_to be_checked }
       end
