@@ -5,42 +5,42 @@
       [
         t("management.menu.select_user"),
         management_document_verifications_path,
-        menu_users?
+        users?
       ],
       (
         [
           t("management.account.menu.reset_password_email"),
           edit_password_email_management_account_path,
-          menu_edit_password_email?
+          edit_password_email?
         ] if managed_user.email
       ),
       [
         t("management.account.menu.reset_password_manually"),
         edit_password_manually_management_account_path,
-        menu_edit_password_manually?
+        edit_password_manually?
       ],
       [
         t("management.menu.create_proposal"),
         new_management_proposal_path,
-        menu_create_proposal?
+        create_proposal?
       ],
       [
         t("management.menu.support_proposals"),
         management_proposals_path,
-        menu_support_proposal?
+        support_proposal?
       ],
       (
         [
           t("management.menu.create_budget_investment"),
           create_investments_management_budgets_path,
-          menu_create_investments?
+          create_investments?
         ] if Setting["process.budgets"]
       ),
       (
         [
           t("management.menu.support_budget_investments"),
           support_investments_management_budgets_path,
-          menu_support_investments?
+          support_investments?
         ] if Setting["process.budgets"]
       ),
       class: "is-active"
@@ -48,16 +48,16 @@
   </li>
 
   <% if Setting["process.budgets"] %>
-    <li <%= "class=is-active" if menu_print_investments? %>>
+    <li <%= "class=is-active" if print_investments? %>>
       <%= link_to t("management.menu.print_budget_investments"), print_investments_management_budgets_path, class: "print-investments-link" %>
     </li>
   <% end %>
 
-  <li <%= "class=is-active" if menu_print_proposals? %>>
+  <li <%= "class=is-active" if print_proposals? %>>
     <%= link_to t("management.menu.print_proposals"), print_management_proposals_path, class: "print-proposals-link" %>
   </li>
 
-  <li <%= "class=is-active" if menu_user_invites? %>>
+  <li <%= "class=is-active" if user_invites? %>>
     <%= link_to t("management.menu.user_invites"), new_management_user_invite_path, class: "invitations-link" %>
   </li>
 </ul>
