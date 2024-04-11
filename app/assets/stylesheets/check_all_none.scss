@@ -1,3 +1,7 @@
 .check-all-none {
   float: $global-left;
+
+  button {
+    @include link;
+  }
 }
