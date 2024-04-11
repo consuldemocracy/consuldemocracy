@@ -1,6 +1,15 @@
 class Management::MenuComponent < ApplicationComponent
   use_helpers :managed_user, :link_list
 
+  def links
+    [
+      user_links,
+      (print_investments_link if Setting["process.budgets"]),
+      print_proposals_link,
+      user_invites_link
+    ]
+  end
+
   private
 
     def user_links
@@ -70,6 +79,33 @@ class Management::MenuComponent < ApplicationComponent
         t("management.menu.support_budget_investments"),
         support_investments_management_budgets_path,
         support_investments?
+      ]
+    end
+
+    def print_investments_link
+      [
+        t("management.menu.print_budget_investments"),
+        print_investments_management_budgets_path,
+        print_investments?,
+        class: "print-investments-link"
+      ]
+    end
+
+    def print_proposals_link
+      [
+        t("management.menu.print_proposals"),
+        print_management_proposals_path,
+        print_proposals?,
+        class: "print-proposals-link"
+      ]
+    end
+
+    def user_invites_link
+      [
+        t("management.menu.user_invites"),
+        new_management_user_invite_path,
+        user_invites?,
+        class: "invitations-link"
       ]
     end
 
