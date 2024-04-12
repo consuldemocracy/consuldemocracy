@@ -33,7 +33,17 @@ class Poll < ApplicationRecord
   belongs_to :budget
 
   validates_translation :name, presence: true
-  validate :date_range
+
+  validates :starts_at, presence: true
+  validates :ends_at, presence: true
+
+  validates :starts_at,
+            comparison: {
+              less_than_or_equal_to: :ends_at,
+              message: ->(*) { I18n.t("errors.messages.invalid_date_range") }
+            },
+            allow_blank: true,
+            if: -> { ends_at }
   validates :starts_at,
             comparison: {
               greater_than_or_equal_to: ->(*) { Time.current },
@@ -173,12 +183,6 @@ class Poll < ApplicationRecord
 
   def voted_in_web?(user)
     Poll::Voter.where(poll: self, user: user, origin: "web").exists?
-  end
-
-  def date_range
-    if starts_at.blank? || ends_at.blank? || starts_at > ends_at
-      errors.add(:starts_at, I18n.t("errors.messages.invalid_date_range"))
-    end
   end
 
   def start_date_change
