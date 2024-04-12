@@ -96,6 +96,9 @@ describe "Moderate proposals" do
         create_list(:proposal, 2)
 
         visit moderation_proposals_path
+        within(".menu.simple") { click_link "All" }
+
+        expect(page).to have_field type: :checkbox, count: 3
 
         within(".js-check") { click_link "All" }
 

@@ -108,6 +108,9 @@ describe "Moderate proposal notifications" do
         create_list(:proposal_notification, 2)
 
         visit moderation_proposal_notifications_path
+        within(".menu.simple") { click_link "All" }
+
+        expect(page).to have_field type: :checkbox, count: 2
 
         within(".js-check") { click_link "All" }
 

@@ -128,6 +128,9 @@ describe "Moderate comments" do
         create_list(:comment, 2)
 
         visit moderation_comments_path
+        within(".menu.simple") { click_link "All" }
+
+        expect(page).to have_field type: :checkbox, count: 2
 
         within(".js-check") { click_link "All" }
 

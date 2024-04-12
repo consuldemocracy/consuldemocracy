@@ -108,6 +108,9 @@ describe "Moderate budget investments" do
         create_list(:budget_investment, 2, heading: heading, author: create(:user))
 
         visit moderation_budget_investments_path
+        within(".menu.simple") { click_link "All" }
+
+        expect(page).to have_field type: :checkbox, count: 3
 
         within(".js-check") { click_link "All" }
 
