@@ -3,15 +3,14 @@
   App.CheckAllNone = {
     initialize: function() {
       $("[data-check-all]").on("click", function() {
-        var target_name;
-        target_name = $(this).data("check-all");
-        $("[name='" + target_name + "']").prop("checked", true);
+        App.CheckAllNone.associated_fields($(this), "check-all").prop("checked", true);
       });
       $("[data-check-none]").on("click", function() {
-        var target_name;
-        target_name = $(this).data("check-none");
-        $("[name='" + target_name + "']").prop("checked", false);
+        App.CheckAllNone.associated_fields($(this), "check-none").prop("checked", false);
       });
+    },
+    associated_fields: function(element, data_attribute) {
+      return $("[name='" + element.data(data_attribute) + "']");
     }
   };
 }).call(this);
