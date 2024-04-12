@@ -9,7 +9,7 @@
 <% end %>
 
 <%= form_tag form_path, method: :put do %>
-  <p class="float-left js-check">
+  <p class="check-all-none">
     <%= t("shared.check") %>:
     <%= link_to t("shared.check_all"), "#", data: { check_all: field_name } %>
     |

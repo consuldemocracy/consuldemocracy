@@ -101,11 +101,11 @@ describe "Moderate debates" do
 
         expect(page).to have_field type: :checkbox, count: 2
 
-        within(".js-check") { click_link "All" }
+        within(".check-all-none") { click_link "All" }
 
         expect(all(:checkbox)).to all(be_checked)
 
-        within(".js-check") { click_link "None" }
+        within(".check-all-none") { click_link "None" }
 
         all(:checkbox).each { |checkbox| expect(checkbox).not_to be_checked }
       end
