@@ -102,13 +102,11 @@ describe "Moderate proposals" do
 
         within(".js-check") { click_link "All" }
 
-        expect(all("input[type=checkbox]")).to all(be_checked)
+        expect(all(:checkbox)).to all(be_checked)
 
         within(".js-check") { click_link "None" }
 
-        all("input[type=checkbox]").each do |checkbox|
-          expect(checkbox).not_to be_checked
-        end
+        all(:checkbox).each { |checkbox| expect(checkbox).not_to be_checked }
       end
 
       scenario "remembering page, filter and order" do
