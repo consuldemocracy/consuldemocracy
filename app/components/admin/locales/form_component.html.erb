@@ -23,6 +23,10 @@
     <legend><%= attribute_name(:enabled) %></legend>
     <p class="help-text"><%= t("admin.locales.enabled_help_text") %></p>
 
+    <% if many_available_locales? %>
+      <%= render Shared::CheckAllNoneComponent.new %>
+    <% end %>
+
     <div class="collection-check-boxes">
       <%= f.collection_check_boxes(
         :enabled,

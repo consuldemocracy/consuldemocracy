@@ -9,10 +9,7 @@
 <% end %>
 
 <%= form_tag form_path, method: :put do %>
-  <ul class="check-all-none">
-    <li><%= button_tag t("shared.check_all"), type: "button", data: { check_all: field_name } %></li>
-    <li><%= button_tag t("shared.check_none"), type: "button", data: { check_none: field_name } %></li>
-  </ul>
+  <%= render Shared::CheckAllNoneComponent.new(field_name) %>
 
   <%= content %>
 

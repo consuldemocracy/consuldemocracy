@@ -51,4 +51,22 @@ describe "Locales management", :admin do
       expect(page).not_to have_link "English"
     end
   end
+
+  scenario "select all/none" do
+    allow_any_instance_of(Admin::Locales::FormComponent).to receive(:many_available_locales?).and_return(true)
+
+    visit admin_locales_path
+
+    within_fieldset "Enabled languages" do
+      expect(page).to have_field type: :checkbox
+
+      click_button "Select all"
+
+      expect(all(:checkbox)).to all(be_checked)
+
+      click_button "Select none"
+
+      all(:checkbox).each { |checkbox| expect(checkbox).not_to be_checked }
+    end
+  end
 end
