@@ -4,19 +4,19 @@
 /* Autocomplete
 ----------------------------------*/
 .ui-autocomplete {
-  position: absolute;
   cursor: default;
+  position: absolute;
 }
 
 /* Menu
 ----------------------------------*/
 .ui-menu {
-  list-style: none;
-  padding: calc(#{$line-height} / 4) calc(#{$line-height} / 3);
-  display: block;
   background: $body-background;
   border: 1px solid $border;
+  display: block;
   font-size: $small-font-size;
+  list-style: none;
+  padding: calc(#{$line-height} / 4) calc(#{$line-height} / 3);
 
   .ui-menu-item {
 
