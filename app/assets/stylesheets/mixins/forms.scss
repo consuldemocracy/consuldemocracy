@@ -47,20 +47,20 @@
 
       &::after {
         background: $body-background;
-        content: "";
         clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% calc(100% + 1px), 0 50%);
+        content: "";
         display: block;
+        height: 100%;
         position: absolute;
         right: calc(#{$icon-size-with-padding} - #{$rounding-error});
         top: 0;
-        height: 100%;
         width: $polygon-size;
       }
     }
 
     &::before {
-      top: -$border-width;
       height: calc(100% + #{$border-width * 2});
+      top: -$border-width;
     }
 
     h1 {
