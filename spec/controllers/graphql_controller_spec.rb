@@ -90,8 +90,13 @@ describe GraphqlController, type: :request do
     before { Setting["feature.graphql_api"] = false }
 
     it "is disabled" do
-      expect { get "/graphql" }.to raise_exception(FeatureFlags::FeatureDisabled)
-      expect { post "/graphql" }.to raise_exception(FeatureFlags::FeatureDisabled)
+      get "/graphql", params: { query: query_string }
+
+      expect(response).to have_http_status(:forbidden)
+
+      post "/graphql", params: { query: query_string }
+
+      expect(response).to have_http_status(:forbidden)
     end
   end
 end
