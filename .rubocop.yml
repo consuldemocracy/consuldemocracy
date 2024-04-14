@@ -186,6 +186,8 @@ Layout/MultilineMethodCallBraceLayout:
 
 Layout/MultilineMethodCallIndentation:
   Enabled: true
+  Exclude:
+    - "config/environments/production.rb"
 
 Layout/MultilineOperationIndentation:
   Enabled: true
@@ -698,6 +700,8 @@ Style/AndOr:
 
 Style/ArgumentsForwarding:
   Enabled: true
+  Exclude:
+    - "bin/setup"
 
 Style/ArrayCoercion:
   Enabled: true
