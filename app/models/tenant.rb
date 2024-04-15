@@ -184,7 +184,7 @@ class Tenant < ApplicationRecord
     def rename_storage
       service = ActiveStorage::Blob.service
 
-      return unless service.is_a?(ActiveStorage::Service::TenantDiskService)
+      return unless service.respond_to?(:tenant_root_for)
 
       old_storage = service.tenant_root_for(schema_before_last_save)
 

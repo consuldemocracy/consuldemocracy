@@ -1,4 +1,5 @@
 require "rails_helper"
+require "active_storage/service/tenant_disk_service"
 
 describe ActiveStorage::Service::TenantDiskService do
   describe "#tenant_root_for" do
