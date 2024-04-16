@@ -38,7 +38,7 @@ describe SDG::Phase do
     end
 
     it "raises an exception for non-existing kinds" do
-      expect { SDG::Phase["improvement"] }.to raise_exception ActiveRecord::StatementInvalid
+      expect { SDG::Phase["improvement"] }.to raise_exception ActiveRecord::RecordNotFound
     end
   end
 end

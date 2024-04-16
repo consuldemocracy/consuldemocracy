@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "6.1.7.7"
+gem "rails", "7.0.8.1"
 
 gem "acts-as-taggable-on", "~> 10.0.0"
 gem "acts_as_votable", "~> 0.14.0"
@@ -46,13 +46,14 @@ gem "recipient_interceptor", "~> 0.3.1"
 gem "redcarpet", "~> 3.6.0"
 gem "responders", "~> 3.1.1"
 gem "rinku", "~> 2.0.6", require: "rails_rinku"
-gem "ros-apartment", "~> 2.11.0", require: "apartment"
+gem "ros-apartment", "~> 2.11.0", require: "apartment" # Remove ConnectionHandling monkey patch when upgrading
 gem "sassc-embedded", "~> 1.70.1"
 gem "sassc-rails", "~> 2.1.2"
 gem "savon", "~> 2.15.0"
 gem "sitemap_generator", "~> 6.3.0"
 gem "social-share-button", "~> 1.2.4"
 gem "sprockets", "~> 4.2.1"
+gem "sprockets-rails", "~> 3.4.2", require: "sprockets/railtie"
 gem "turbolinks", "~> 5.2.1"
 gem "turnout", "~> 2.5.0"
 gem "uglifier", "~> 4.2.0"
