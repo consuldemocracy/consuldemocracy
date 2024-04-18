@@ -526,7 +526,6 @@ bs:
         index:
           title: Nacrtne verzije
           create: Kreiraj verziju
-          delete: Obriši
           preview: Pregled
         new:
           back: Nazad
@@ -559,7 +558,6 @@ bs:
           back: Nazad
           title: Pitanja vezana za ovaj proces
           create: Napiši pitanje
-          delete: Obriši
         new:
           back: Nazad
           title: Napiši novo pitanje
@@ -1377,7 +1375,6 @@ bs:
         index:
           title: Prilagođene slike
           update: Ažuriraj
-          delete: Obriši
           image: Slika
         update:
           notice: Slika uspješno ažurirana
