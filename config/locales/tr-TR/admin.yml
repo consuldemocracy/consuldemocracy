@@ -664,7 +664,6 @@ tr:
         index:
           title: Taslak sürümler
           create: Sürüm oluştur
-          delete: Sil
           preview: Ön izleme
         new:
           back: Geri
@@ -697,7 +696,6 @@ tr:
           back: Geri
           title: Bu süreç ile ilgili sorular
           create: Soru oluştur
-          delete: Sil
         new:
           back: Geri
           title: Yeni soru oluştur
@@ -1609,7 +1607,6 @@ tr:
         index:
           title: Özel görseller
           update: Güncelle
-          delete: Sil
           image: Görsel
         update:
           notice: Görsel güncellendi
