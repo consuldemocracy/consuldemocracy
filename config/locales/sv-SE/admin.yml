@@ -664,7 +664,6 @@ sv:
         index:
           title: Utkastversioner
           create: Skapa version
-          delete: Ta bort
           preview: Förhandsvisning
         new:
           back: Tillbaka
@@ -697,7 +696,6 @@ sv:
           back: Tillbaka
           title: Frågor som är kopplade till processen
           create: Skapa fråga
-          delete: Ta bort
         new:
           back: Tillbaka
           title: Skapa ny fråga
@@ -1609,7 +1607,6 @@ sv:
         index:
           title: Anpassade bilder
           update: Uppdatera
-          delete: Ta bort
           image: Bild
         update:
           notice: Bilden har uppdaterats
