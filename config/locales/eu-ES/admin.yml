@@ -387,7 +387,6 @@ eu:
         index:
           title: Zirriborroaren bertsioak
           create: Bertsioa sortu
-          delete: Ezabatu
           preview: Aurreikusi
         new:
           back: Itzuli
@@ -420,7 +419,6 @@ eu:
           back: Itzuli
           title: Prosezu honi esleitutako galderak
           create: Galdera sortu
-          delete: Ezabatu
         new:
           back: Itzuli
           title: Galder berria sortu
@@ -1091,7 +1089,6 @@ eu:
         index:
           title: Irudiak pertsonalizatu
           update: Eguneratu
-          delete: Ezabatu
           image: Irudia
         update:
           notice: Irudia ondo eguneratuta
