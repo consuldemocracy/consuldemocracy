@@ -554,7 +554,6 @@ ar:
         index:
           title: إصدارا المسودّة
           create: إنشاء إصدار
-          delete: حذف
           preview: معاينة
         new:
           back: عودة
@@ -587,7 +586,6 @@ ar:
           back: عودة
           title: الأسئلة المرتبطة بهذه العملية
           create: إنشاء سؤال
-          delete: حذف
         new:
           back: عودة
           title: إنشاء سؤال جديد
@@ -1442,7 +1440,6 @@ ar:
         index:
           title: صور مخصصة
           update: تحديث
-          delete: حذف
           image: صورة
         update:
           notice: تم تحديث الصورة بنجاح
