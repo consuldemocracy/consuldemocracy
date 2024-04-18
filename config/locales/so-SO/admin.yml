@@ -427,7 +427,6 @@ so:
         index:
           title: Weerinta qabya qoralka
           create: Saame Weerin
-          delete: Titiriid
           preview: Hor udhaac
         new:
           back: Labasho
@@ -460,7 +459,6 @@ so:
           back: Labasho
           title: Su'aalaha la xiriira habkan
           create: Saame sual
-          delete: Titiriid
         new:
           back: Labasho
           title: Saame sual cusub
@@ -1188,7 +1186,6 @@ so:
         index:
           title: Sawirada Cadada
           update: Cusboneysiin
-          delete: Titiriid
           image: Sawiir
         update:
           notice: Sawiirka ayaa si guula lo cusboneysiyey
