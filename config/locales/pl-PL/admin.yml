@@ -496,7 +496,6 @@ pl:
         index:
           title: Wersji roboczych
           create: Utwórz wersję
-          delete: Usuń
           preview: Podgląd
         new:
           back: Wróć
@@ -529,7 +528,6 @@ pl:
           back: Wróć
           title: Pytania związane z tym procesem
           create: Utwórz pytanie
-          delete: Usuń
         new:
           back: Wróć
           title: Utwórz nowe pytanie
@@ -1319,7 +1317,6 @@ pl:
         index:
           title: Niestandardowych obrazów
           update: Zaktualizuj
-          delete: Usuń
           image: Obraz
         update:
           notice: Strona pomyślnie zaktualizowana
