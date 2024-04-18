@@ -149,10 +149,6 @@ module Statisticable
     (fraction * 100.0 / total).round(3)
   end
 
-  def version
-    "v#{resource.find_or_create_stats_version.updated_at.to_i}"
-  end
-
   def advanced?
     resource.advanced_stats_enabled?
   end
@@ -231,6 +227,6 @@ module Statisticable
     end
 
     def stats_cache(key, &)
-      Rails.cache.fetch(full_cache_key_for(key), &)
+      Rails.cache.fetch(full_cache_key_for(key), expires_at: Date.current.end_of_day, &)
     end
 end

@@ -4,6 +4,12 @@ describe Statisticable do
   before do
     dummy_stats = Class.new do
       include Statisticable
+      attr_accessor :total
+      stats_cache :total
+
+      def full_cache_key_for(key)
+        "dummy_stats/#{object_id}/#{key}"
+      end
 
       def participants
         User.all
@@ -219,6 +225,30 @@ describe Statisticable do
       [stats, other_stats].map do |stat|
         Thread.new { stat.generate }
       end.each(&:join)
+    end
+  end
+
+  describe "cache" do
+    it "expires the cache at the end of the day", :with_cache do
+      time = Time.current
+
+      travel_to(time) do
+        stats.total = 6
+
+        expect(stats.total).to eq 6
+
+        stats.total = 7
+
+        expect(stats.total).to eq 6
+      end
+
+      travel_to(time.end_of_day) do
+        expect(stats.total).to eq 6
+      end
+
+      travel_to(time.end_of_day + 1.second) do
+        expect(stats.total).to eq 7
+      end
     end
   end
 end

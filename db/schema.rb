@@ -1515,14 +1515,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_24_013913) do
     t.string "locale"
   end
 
-  create_table "stats_versions", id: :serial, force: :cascade do |t|
-    t.string "process_type"
-    t.integer "process_id"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-    t.index ["process_type", "process_id"], name: "index_stats_versions_on_process_type_and_process_id"
-  end
-
   create_table "taggings", id: :serial, force: :cascade do |t|
     t.integer "tag_id"
     t.string "taggable_type"

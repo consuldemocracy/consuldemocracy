@@ -193,6 +193,6 @@ class Budget::Stats
     stats_cache(*stats_methods)
 
     def full_cache_key_for(key)
-      "budgets_stats/#{budget.id}/#{phases.join}/#{key}/#{version}"
+      "budgets_stats/#{budget.id}/#{phases.join}/#{key}"
     end
 end

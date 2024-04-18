@@ -122,6 +122,6 @@ class Poll::Stats
     stats_cache(*stats_methods)
 
     def full_cache_key_for(key)
-      "polls_stats/#{poll.id}/#{key}/#{version}"
+      "polls_stats/#{poll.id}/#{key}"
     end
 end
