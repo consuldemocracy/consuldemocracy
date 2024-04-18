@@ -605,7 +605,6 @@ nl:
         index:
           title: Conceptversies
           create: Nieuwe versie
-          delete: Verwijder
           preview: Preview
         new:
           back: Terug
@@ -638,7 +637,6 @@ nl:
           back: Terug
           title: Vragen bij dit plan
           create: Stel een vraag
-          delete: Verwijder
         new:
           back: Terug
           title: Nieuwe vraag
@@ -1475,7 +1473,6 @@ nl:
         index:
           title: Aangepaste afbeeldingen
           update: Sla op
-          delete: Verwijder
           image: Afbeelding
         update:
           notice: Afbeelding aangepast
