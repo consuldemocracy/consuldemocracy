@@ -396,7 +396,6 @@ fa:
         index:
           title: نسخه های پیش نویس
           create: ایجاد نسخه
-          delete: حذف
           preview: پیش نمایش
         new:
           back: برگشت
@@ -428,7 +427,6 @@ fa:
           back: برگشت
           title: سوالات مرتبط با این روند
           create: ایجاد سوال
-          delete: حذف
         new:
           back: برگشت
           title: ایجاد سوال جدید
@@ -1094,7 +1092,6 @@ fa:
         index:
           title: صفحات سفارشی
           update: به روز رسانی
-          delete: حذف
           image: تصویر
         update:
           notice: تصویر با موفقیت به روز رسانی شد
