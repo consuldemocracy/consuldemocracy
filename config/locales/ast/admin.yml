@@ -348,7 +348,6 @@ ast:
         index:
           title: Versiones del borrador
           create: Crear versión
-          delete: Borrar
           preview: Previsualizar
         new:
           back: Volver
@@ -380,7 +379,6 @@ ast:
           back: Volver
           title: Entrugues acomuñaes a esti procesu
           create: Crear entruga pa votación
-          delete: Borrar
         new:
           back: Volver
           title: Crear nueva entruga
@@ -897,7 +895,6 @@ ast:
         index:
           title: Imaxes
           update: Actualizar
-          delete: Borrar
           image: Imaxe
         update:
           notice: Imagen actualizada correctamente
