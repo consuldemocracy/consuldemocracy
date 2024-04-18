@@ -369,7 +369,6 @@ sl:
         index:
           title: Verzije osnutka
           create: Ustvari verzijo
-          delete: Izbriši
           preview: Predogled
         new:
           back: Nazaj
@@ -400,7 +399,6 @@ sl:
           back: Nazaj
           title: Vprašanja, povezana s tem procesom
           create: Ustvari vprašanje
-          delete: Izbriši
         new:
           back: Nazaj
           title: Ustvari novo vprašanje
@@ -1055,7 +1053,6 @@ sl:
         index:
           title: Slike po meri
           update: Posodobi
-          delete: Izbriši
           image: Slika
         update:
           notice: Slika uspešno posodobljena
