@@ -554,7 +554,6 @@ he:
         index:
           title: גירסת הטיוטה
           create: יצירת גירסה
-          delete: מחיקה
           preview: תצוגה מקדימה
         new:
           back: חזרה
@@ -587,7 +586,6 @@ he:
           back: חזרה
           title: שאלות הקשורות לתהליך זה
           create: יצירת שאלה
-          delete: מחיקה
         new:
           back: חזרה
           title: יצירת שאלה חדשה
@@ -1434,7 +1432,6 @@ he:
         index:
           title: תמונות מותאמות אישית
           update: עדכן
-          delete: מחיקה
           image: תמונה
         update:
           notice: התמונה עודכנה בהצלחה
