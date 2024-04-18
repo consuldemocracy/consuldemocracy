@@ -553,7 +553,6 @@ pt-BR:
         index:
           title: Versões preliminares
           create: Criar versão
-          delete: Apagar
           preview: Prévia
         new:
           back: Voltar
@@ -586,7 +585,6 @@ pt-BR:
           back: Voltar
           title: Perguntas associadas a esse processo
           create: Criar questão
-          delete: Apagar
         new:
           back: Voltar
           title: Criar nova pergunta
@@ -1460,7 +1458,6 @@ pt-BR:
         index:
           title: Imagens personalizadas
           update: Atualizar
-          delete: Apagar
           image: Imagem
         update:
           notice: Imagem atualizada com sucesso
