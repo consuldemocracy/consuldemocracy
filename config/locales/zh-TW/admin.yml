@@ -424,7 +424,6 @@ zh-TW:
         index:
           title: 草稿版本
           create: 創建版本
-          delete: 刪除
           preview: 預覽
         new:
           back: 返回
@@ -457,7 +456,6 @@ zh-TW:
           back: 返回
           title: 與此進程相關的問題
           create: 創建問題
-          delete: 刪除
         new:
           back: 返回
           title: 創建新問題
@@ -1179,7 +1177,6 @@ zh-TW:
         index:
           title: 自定義圖像
           update: 更新
-          delete: 刪除
           image: 圖像
         update:
           notice: 圖像已成功更新
