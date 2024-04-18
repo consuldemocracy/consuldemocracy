@@ -658,7 +658,6 @@ cs:
         index:
           title: Pracovní verze
           create: Vytvořit verzi
-          delete: Smazat
           preview: Náhled
         new:
           back: Zpět
@@ -691,7 +690,6 @@ cs:
           back: Zpět
           title: Otázky spojené s tímto procesem
           create: Vytvořit otázku
-          delete: Smazat
         new:
           back: Zpět
           title: Vytvořit otázku
@@ -1611,7 +1609,6 @@ cs:
         index:
           title: Vlastní obrázky
           update: Aktualizovat
-          delete: Smazat
           image: Image
         update:
           notice: Obrázek byl úspěšně aktualizován
