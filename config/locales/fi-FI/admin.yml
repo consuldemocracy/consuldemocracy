@@ -294,7 +294,6 @@ fi:
         form:
           close_text_editor: Sulje tekstieditori
         index:
-          delete: Poista
           preview: Esikatselu
         new:
           back: Takaisin
@@ -311,7 +310,6 @@ fi:
         index:
           back: Takaisin
           create: Luo kysymys
-          delete: Poista
         new:
           back: Takaisin
           submit_button: Luo kysymys
@@ -587,7 +585,6 @@ fi:
       images:
         index:
           update: Päivitä
-          delete: Poista
           image: Kuva
         destroy:
           notice: Kuva poistettu onnistuneesti
