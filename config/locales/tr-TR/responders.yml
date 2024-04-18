@@ -34,6 +34,7 @@ tr:
       destroy:
         budget_investment: "Yatırım projesi silindi."
         topic: "Konu silindi."
+        poll_question_answer_image: "Görsel silindi."
         poll_question_answer_video: "Yanıt videosu silindi."
         valuator_group: "Bilirkişi grubu silindi"
         vote: "Oy silindi"
