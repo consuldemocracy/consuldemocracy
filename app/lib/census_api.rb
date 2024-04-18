@@ -85,7 +85,7 @@ class CensusApi
     end
 
     def end_point_available?
-      (Rails.env.staging? || Rails.env.preproduction? || Rails.env.production?) && end_point_defined?
+      end_point_defined? && !Rails.env.local?
     end
 
     def stubbed_response(document_type, document_number)
