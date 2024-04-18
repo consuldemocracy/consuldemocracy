@@ -425,7 +425,6 @@ id:
         index:
           title: Rancangan versi
           create: Membuat versi
-          delete: Hapus
           preview: Tinjauan
         new:
           back: Kembali
@@ -457,7 +456,6 @@ id:
           back: Kembali
           title: Pertanyaan yang terkait dengan proses ini
           create: Membuat pertanyaan
-          delete: Hapus
         new:
           back: Kembali
           title: Membuat pertanyaan baru
@@ -1064,7 +1062,6 @@ id:
         index:
           title: Gambar Khusus
           update: Perbarui
-          delete: Hapus
           image: Gambar
         update:
           notice: Gambar berhasil diperbarui
