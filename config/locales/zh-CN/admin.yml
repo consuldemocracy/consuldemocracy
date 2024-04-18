@@ -428,7 +428,6 @@ zh-CN:
         index:
           title: 草稿版本
           create: 创建版本
-          delete: 删除
           preview: 预览
         new:
           back: 返回
@@ -461,7 +460,6 @@ zh-CN:
           back: 返回
           title: 与此过程相关的问题
           create: 创建问题
-          delete: 删除
         new:
           back: 返回
           title: 创建新问题
@@ -1189,7 +1187,6 @@ zh-CN:
         index:
           title: 自定义图片
           update: 更新
-          delete: 删除
           image: 图像
         update:
           notice: 图像已成功更新
