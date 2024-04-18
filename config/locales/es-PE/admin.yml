@@ -363,7 +363,6 @@ es-PE:
         index:
           title: Versiones del borrador
           create: Crear versión
-          delete: Borrar
           preview: Previsualizar
         new:
           back: Volver
@@ -395,7 +394,6 @@ es-PE:
           back: Volver
           title: Preguntas asociadas a este proceso
           create: Crear pregunta para votación
-          delete: Borrar
         new:
           back: Volver
           title: Crear nueva pregunta
@@ -1006,7 +1004,6 @@ es-PE:
         index:
           title: Personalizar imágenes
           update: Actualizar
-          delete: Borrar
           image: Imagen
         update:
           notice: Imagen actualizada correctamente
