@@ -165,7 +165,6 @@ nn:
         edit:
           submit_button: Lagre endringer
         index:
-          delete: Slett
           preview: Forhåndsvisning
         table:
           title: Tittel
@@ -174,8 +173,6 @@ nn:
       questions:
         edit:
           submit_button: Lagre endringer
-        index:
-          delete: Slett
         table:
           title: Tittel
       milestones:
@@ -365,7 +362,6 @@ nn:
     site_customization:
       images:
         index:
-          delete: Slett
           image: Bilde
       pages:
         page:
