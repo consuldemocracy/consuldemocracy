@@ -549,7 +549,6 @@ ca:
         index:
           title: Versions de l'esborrany
           create: crear versió
-          delete: Borrar
           preview: Previsualitzar
         new:
           back: Tornar
@@ -582,7 +581,6 @@ ca:
           back: Tornar
           title: Preguntes associades a aquest procés
           create: Crear pregunta per a votació
-          delete: Borrar
         new:
           back: Tornar
           title: Crear nova pregunta
@@ -1436,7 +1434,6 @@ ca:
         index:
           title: Imatges
           update: Actualitzar
-          delete: Borrar
           image: imatge
         update:
           notice: Imatge actualitzada correctament
