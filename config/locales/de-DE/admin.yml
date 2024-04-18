@@ -661,7 +661,6 @@ de:
         index:
           title: Entwurfsfassungen
           create: Version erstellen
-          delete: Löschen
           preview: Vorschau
         new:
           back: Zurück
@@ -694,7 +693,6 @@ de:
           back: Zurück
           title: Fragen, die mit diesem Beteiligungsverfahren zusammenhängen
           create: Frage erstellen
-          delete: Löschen
         new:
           back: Zurück
           title: Neue Frage erstellen
@@ -1590,7 +1588,6 @@ de:
         index:
           title: Bilder
           update: Aktualisieren
-          delete: Löschen
           image: Bild
         update:
           notice: Bild erfolgreich aktualisiert
