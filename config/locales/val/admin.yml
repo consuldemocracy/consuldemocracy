@@ -471,7 +471,6 @@ val:
         index:
           title: Versions esborrany
           create: Crear versió
-          delete: Eliminar
           preview: Vista previa
         new:
           back: Tornar
@@ -504,7 +503,6 @@ val:
           back: Tornar
           title: Preguntes associades a aquest proces
           create: Crear pregunta
-          delete: Eliminar
         new:
           back: Tornar
           title: Crear nova pregunta
@@ -1243,7 +1241,6 @@ val:
         index:
           title: Imatges
           update: Actualitzar
-          delete: Eliminar
           image: Imatge
         update:
           notice: Imatge actualitzada correctament
