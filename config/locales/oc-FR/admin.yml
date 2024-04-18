@@ -543,7 +543,6 @@ oc:
         index:
           title: de Versions del borrolhon
           create: crear version
-          delete: Borrar
           preview: Previsualitzar
         new:
           back: Tornar
@@ -576,7 +575,6 @@ oc:
           back: Tornar
           title: de Questions associadas a aquel procès
           create: Crear question per votacion
-          delete: Borrar
         new:
           back: Tornar
           title: Crear nòva question
@@ -1426,7 +1424,6 @@ oc:
         index:
           title: d'Images
           update: Actualizar
-          delete: Borrar
           image: image
         update:
           notice: Image actualizada corrèctament
