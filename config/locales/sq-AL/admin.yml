@@ -429,7 +429,6 @@ sq:
         index:
           title: Version drafti
           create: Krijo versionin
-          delete: Fshi
           preview: Parapamje
         new:
           back: Pas
@@ -462,7 +461,6 @@ sq:
           back: Pas
           title: Pyetje të lidhura me këtë proces
           create: Krijo pyetje
-          delete: Fshi
         new:
           back: Pas
           title: Krijo pyetje të re
@@ -1191,7 +1189,6 @@ sq:
         index:
           title: Imazhe personalizuara
           update: Përditëso
-          delete: Fshi
           image: Imazh
         update:
           notice: Imazhi u përditësua me sukses
