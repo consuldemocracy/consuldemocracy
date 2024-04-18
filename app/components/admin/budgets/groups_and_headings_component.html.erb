@@ -4,7 +4,7 @@
 
     <div class="groups-actions">
       <%= action(:edit, group, "aria-label": true) %>
-      <%= action(:destroy, group, method: :delete, confirm: true, "aria-label": true) %>
+      <%= action(:destroy, group, confirm: true, "aria-label": true) %>
       <%= action(:new,
                  group,
                  text: t("admin.budgets.show.add_heading"),

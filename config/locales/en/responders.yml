@@ -34,6 +34,7 @@ en:
       destroy:
         budget_investment: "Investment project deleted successfully."
         topic: "Topic deleted successfully."
+        poll_question_answer_image: "Image deleted successfully."
         poll_question_answer_video: "Answer video deleted successfully."
         valuator_group: "Valuator group deleted successfully"
         vote: "Vote deleted successfully"

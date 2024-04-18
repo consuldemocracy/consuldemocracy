@@ -190,7 +190,7 @@ describe "Admin Notifications", :admin do
 
       visit admin_admin_notification_path(notification)
 
-      accept_confirm { click_link "Send notification" }
+      accept_confirm { click_button "Send notification" }
 
       expect(page).to have_content "Notification sent successfully"
 

@@ -1,0 +1,29 @@
+.site-customization-images-table-actions {
+  align-items: flex-start;
+  container-type: inline-size;
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(#{$line-height} / 2);
+
+  > :first-child {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+
+    @container (min-width: 30rem) {
+      flex-direction: row;
+    }
+
+    > div {
+      @include grid-column-gutter;
+      min-width: 5rem;
+      padding-#{$global-left}: 0 !important;
+      width: 50cqi;
+    }
+  }
+
+  .destroy-link {
+    @include hollow-button;
+    color: $alert-color;
+  }
+}

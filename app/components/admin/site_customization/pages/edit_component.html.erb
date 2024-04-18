@@ -1,0 +1,14 @@
+<% provide :main_class, "admin-site-customization-pages-edit" %>
+<%= back_link_to admin_site_customization_pages_path %>
+
+<%= header do %>
+  <%= render Admin::ActionComponent.new(
+    :destroy,
+    @page,
+    text: t("admin.site_customization.pages.index.delete"),
+    confirm: true,
+    class: "delete"
+  ) %>
+<% end %>
+
+<%= render "form" %>

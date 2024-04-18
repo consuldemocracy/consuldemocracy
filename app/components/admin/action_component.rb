@@ -11,7 +11,11 @@ class Admin::ActionComponent < ApplicationComponent
   private
 
     def button?
-      options[:method] && options[:method] != :get
+      method && method != :get
+    end
+
+    def method
+      options[:method] || (:delete if action == :destroy)
     end
 
     def text
@@ -30,6 +34,7 @@ class Admin::ActionComponent < ApplicationComponent
 
     def html_options
       {
+        method: method,
         class: html_class,
         id: (dom_id(record, action) if record.respond_to?(:to_key)),
         "aria-describedby": describedby,
@@ -38,7 +43,7 @@ class Admin::ActionComponent < ApplicationComponent
           confirm: confirmation_text,
           disable_with: (text if button?)
         }
-      }.merge(options.except(:"aria-describedby", :"aria-label", :class, :confirm, :path, :text))
+      }.merge(options.except(:"aria-describedby", :"aria-label", :class, :confirm, :method, :path, :text))
     end
 
     def html_class

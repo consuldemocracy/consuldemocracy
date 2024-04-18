@@ -75,7 +75,9 @@ describe "Admin legislation questions", :admin do
 
       visit edit_admin_legislation_process_question_path(process, question)
 
-      click_link "Delete"
+      accept_confirm("Are you sure? This action will delete \"Question 2\" and can't be undone.") do
+        click_button "Delete"
+      end
 
       expect(page).to have_content "Questions"
       expect(page).to have_content "Question 1"

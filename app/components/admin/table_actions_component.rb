@@ -38,7 +38,6 @@ class Admin::TableActionsComponent < ApplicationComponent
 
     def destroy_options
       {
-        method: :delete,
         confirm: options[:destroy_confirmation] || true
       }.merge(options[:destroy_options] || {})
     end
