@@ -483,7 +483,6 @@ gl:
         index:
           title: Versións borrador
           create: Crear versión
-          delete: Borrar
           preview: Vista previa
         new:
           back: Volver
@@ -516,7 +515,6 @@ gl:
           back: Volver
           title: Preguntas asociadas ao proceso
           create: Crear pregunta
-          delete: Borrar
         new:
           back: Volver
           title: Crear unha nova pregunta
@@ -1274,7 +1272,6 @@ gl:
         index:
           title: Imaxes
           update: Actualizar
-          delete: Borrar
           image: Imaxe
         update:
           notice: Imaxe actualizada correctamente
