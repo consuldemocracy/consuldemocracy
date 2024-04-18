@@ -2,15 +2,12 @@ require "rails_helper"
 
 describe LocalesHelper do
   context "Language names" do
-    let!(:default_enforce) { I18n.enforce_available_locales }
-
-    before do
-      I18n.enforce_available_locales = false
+    around do |example|
+      I18n.with(enforce_available_locales: false) { example.run }
     end
 
     after do
       I18n.backend.reload!
-      I18n.enforce_available_locales = default_enforce
       I18n.backend.send(:init_translations)
     end
 

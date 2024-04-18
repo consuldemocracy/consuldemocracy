@@ -35,14 +35,11 @@ describe Layout::LocaleSwitcherComponent do
     end
 
     context "missing language names" do
-      let!(:default_enforce) { I18n.enforce_available_locales }
+      before { allow(I18n).to receive(:available_locales).and_return(%i[de en es fr nl wl]) }
 
-      before do
-        I18n.enforce_available_locales = false
-        allow(I18n).to receive(:available_locales).and_return(%i[de en es fr nl wl])
+      around do |example|
+        I18n.with(enforce_available_locales: false) { example.run }
       end
-
-      after { I18n.enforce_available_locales = default_enforce }
 
       it "renders the locale key" do
         render_inline component
