@@ -654,7 +654,6 @@ it:
         index:
           title: Bozze
           create: Creare la versione
-          delete: Eliminare
           preview: Anteprima
         new:
           back: Indietro
@@ -687,7 +686,6 @@ it:
           back: Indietro
           title: Quesiti associati a questo procedimento
           create: Creare la domanda
-          delete: Eliminare
         new:
           back: Indietro
           title: Creare una nuova domanda
@@ -1597,7 +1595,6 @@ it:
         index:
           title: Immagini personalizzate
           update: Aggiorna
-          delete: Eliminare
           image: Immagine
         update:
           notice: Immagine aggiornata correttamente
