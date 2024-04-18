@@ -561,7 +561,6 @@ da:
         index:
           title: Kladdeversion
           create: Opret version
-          delete: Slet
           preview: Forhåndsvisning
         new:
           back: Tilbage
@@ -594,7 +593,6 @@ da:
           back: Tilbage
           title: Spørgsmål relateret til denne proces
           create: Stil et spørgsmål
-          delete: Slet
         new:
           back: Tilbage
           title: Stil et nyt spørgsmål
@@ -1425,7 +1423,6 @@ da:
         index:
           title: Brugerdefinerede billeder
           update: Opdater
-          delete: Slet
           image: Billede
         update:
           notice: Billedet blev opdateret
