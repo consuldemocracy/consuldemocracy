@@ -549,7 +549,6 @@ hr:
         index:
           title: Verzije nacrta
           create: Stvori verziju
-          delete: Izbriši
           preview: Pregled
         new:
           back: Nazad
@@ -582,7 +581,6 @@ hr:
           back: Nazad
           title: Pitanja povezana s ovim procesom
           create: Stvori pitanje
-          delete: Izbriši
         new:
           back: Nazad
           title: Stvori novo pitanje
@@ -1441,7 +1439,6 @@ hr:
         index:
           title: Prilagođene slike
           update: Ažuriranje
-          delete: Izbriši
           image: Slika
         update:
           notice: Slika je uspješno ažurirana
