@@ -612,7 +612,6 @@ ro:
         index:
           title: Versiuni schiță
           create: Crează versiune
-          delete: Șterge
           preview: Previzualizare
         new:
           back: Înapoi
@@ -645,7 +644,6 @@ ro:
           back: Înapoi
           title: Întrebări asociate acestui proces
           create: Crează întrebare
-          delete: Șterge
         new:
           back: Înapoi
           title: Crează întrebare nouă
@@ -1526,7 +1524,6 @@ ro:
         index:
           title: Imagini personalizate
           update: Actualizează
-          delete: Șterge
           image: Imagine
         update:
           notice: Imagine actualizată cu succes
