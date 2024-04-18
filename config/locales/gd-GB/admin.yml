@@ -657,7 +657,6 @@ gd:
         index:
           title: Dreachdan
           create: Cruthaich dreachd
-          delete: Sguab às
           preview: Ro-sheall
         new:
           back: Air ais
@@ -690,7 +689,6 @@ gd:
           back: Air ais
           title: Ceistean co-cheangailte ris a’ phròiseas seo
           create: Cruthaich ceist
-          delete: Sguab às
         new:
           back: Air ais
           title: Cruthaich ceist ùr
@@ -1596,7 +1594,6 @@ gd:
         index:
           title: Dealbh gnàthaichte
           update: Ùraich
-          delete: Sguab às
           image: Ìomhaigh
         update:
           notice: Chaidh an dealbh ùrachadh
