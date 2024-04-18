@@ -48,10 +48,9 @@ module Statisticable
 
   def generate
     User.transaction do
-      create_participants_table
-
       begin
         define_singleton_method :participants do
+          create_participants_table unless participants_table_created?
           participants_class.all
         end
 
@@ -176,10 +175,12 @@ module Statisticable
       )
       User.connection.add_index participants_table_name, :date_of_birth
       User.connection.add_index participants_table_name, :geozone_id
+      @participants_table_created = true
     end
 
     def drop_participants_table
       User.connection.drop_table(participants_table_name, if_exists: true, temporary: true)
+      @participants_table_created = false
     end
 
     def participants_table_name
@@ -188,6 +189,10 @@ module Statisticable
 
     def participants_class
       @participants_class ||= Class.new(User).tap { |klass| klass.table_name = participants_table_name }
+    end
+
+    def participants_table_created?
+      @participants_table_created.present?
     end
 
     def total_participants_with_gender
