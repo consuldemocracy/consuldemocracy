@@ -651,7 +651,6 @@ fr:
         index:
           title: Ébauches
           create: Créer une version
-          delete: Supprimer
           preview: Aperçu
         new:
           back: Retour
@@ -684,7 +683,6 @@ fr:
           back: Retour
           title: Questions liées à ce processus
           create: Créer une question
-          delete: Supprimer
         new:
           back: Retour
           title: Créer une nouvelle question
@@ -1559,7 +1557,6 @@ fr:
         index:
           title: Images personnalisées
           update: Mettre-à-jour
-          delete: Supprimer
           image: Image
         update:
           notice: Image mise-à-jour avec succès
