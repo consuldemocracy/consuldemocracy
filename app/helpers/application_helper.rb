@@ -23,15 +23,15 @@ module ApplicationHelper
   end
 
   def include_html_editor
-    include_javascript_in_layout "html_editor_loader"
+    include_javascript_in_layout("html_editor_loader")
   end
 
   def include_javascript_in_layout(filename)
     @loaded_scripts ||= {}
 
     unless @loaded_scripts[filename]
-      content_for :head do
-        javascript_include_tag filename, "data-turbolinks-track" => "reload"
+      content_for :body do
+        javascript_include_tag(filename)
       end
 
       @loaded_scripts[filename] = true

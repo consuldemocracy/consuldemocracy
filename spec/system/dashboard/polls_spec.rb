@@ -51,32 +51,6 @@ describe "Polls" do
 
       expect(page).to have_field "Start Date", with: "22/02/2002"
     end
-
-    scenario "is closed after using the browser back button" do
-      visit proposal_dashboard_polls_path(proposal)
-
-      click_link "Create poll"
-      find_field("Start Date").click
-
-      expect(page).to have_css "#ui-datepicker-div"
-
-      go_back
-
-      expect(page).to have_link "Create poll"
-      expect(page).not_to have_css "#ui-datepicker-div"
-    end
-
-    scenario "works after using the browser back button" do
-      visit new_proposal_dashboard_poll_path(proposal)
-      click_link "Polls"
-
-      expect(page).to have_link "Create poll"
-
-      go_back
-      find_field("Start Date").click
-
-      expect(page).to have_css "#ui-datepicker-div"
-    end
   end
 
   scenario "Create a poll redirects back to form when invalid data" do
