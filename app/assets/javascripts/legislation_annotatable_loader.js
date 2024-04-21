@@ -9,5 +9,4 @@ var initialize_modules = function() {
   }
 };
 
-$(document).on("turbolinks:load", initialize_modules);
-$(document).on("turbolinks:before-cache", App.LegislationAnnotatable.destroy);
+$(document).ready(initialize_modules);

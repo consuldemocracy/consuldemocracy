@@ -1,23 +1,6 @@
 require "rails_helper"
 
 describe "CKEditor" do
-  scenario "is present before & after turbolinks update page" do
-    author = create(:user)
-    login_as(author)
-
-    visit new_debate_path
-
-    expect(page).to have_css ".translatable-fields[data-locale='en'] .cke_wysiwyg_frame"
-
-    within ".subnavigation" do
-      click_link "Debates"
-    end
-
-    click_link "Start a debate"
-
-    expect(page).to have_css ".translatable-fields[data-locale='en'] .cke_wysiwyg_frame"
-  end
-
   scenario "uploading an image through the upload tab", :admin do
     visit new_admin_site_customization_page_path
     fill_in_ckeditor "Content", with: "Filling in to make sure CKEditor is loaded"
@@ -49,19 +32,5 @@ describe "CKEditor" do
     expect(page).to have_css(".cke_dialog")
     expect(page).not_to have_link "Upload"
     expect(page).not_to have_link "Browse Server"
-  end
-
-  context "When navigating back to editor page using browser history back" do
-    scenario "display ckeditor unsaved contents", :admin do
-      visit new_admin_newsletter_path
-      fill_in_ckeditor "Email content", with: "This is an unsaved body"
-      click_link "Newsletters"
-
-      expect(page).to have_link "New newsletter"
-
-      go_back
-
-      expect(page).to have_ckeditor "Email content", with: "This is an unsaved body"
-    end
   end
 end

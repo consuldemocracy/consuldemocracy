@@ -209,19 +209,6 @@ describe "Proposals" do
         expect(page).not_to have_link("No comments", href: "#comments")
       end
     end
-
-    scenario "After using the browser's back button, social buttons will have one screen reader" do
-      Setting["org_name"] = "CONSUL"
-      proposal = create(:proposal)
-      visit proposal_path(proposal)
-      click_link "CONSUL"
-
-      expect(page).to have_content "Most active proposals"
-
-      go_back
-
-      expect(page).to have_css "span.show-for-sr", text: "twitter", count: 1
-    end
   end
 
   describe "Sticky support button on medium and up screens" do
@@ -254,42 +241,6 @@ describe "Proposals" do
       visit proposal_path(proposal)
       click_link "Go back"
       click_link proposal.title
-
-      within("#proposal_sticky") do
-        expect(page).to have_css(".is-stuck")
-        expect(page).not_to have_css(".is-anchored")
-      end
-    end
-
-    scenario "After using the browser's back button" do
-      proposal = create(:proposal)
-
-      visit proposal_path(proposal)
-      click_link "Go back"
-
-      expect(page).to have_link proposal.title
-
-      go_back
-
-      within("#proposal_sticky") do
-        expect(page).to have_css(".is-stuck")
-        expect(page).not_to have_css(".is-anchored")
-      end
-    end
-
-    scenario "After using the browser's forward button" do
-      proposal = create(:proposal)
-
-      visit proposals_path
-      click_link proposal.title
-
-      expect(page).not_to have_link proposal.title
-
-      go_back
-
-      expect(page).to have_link proposal.title
-
-      go_forward
 
       within("#proposal_sticky") do
         expect(page).to have_css(".is-stuck")

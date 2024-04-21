@@ -1,6 +1,6 @@
 class Shared::MapLocationComponent < ApplicationComponent
   attr_reader :investments_coordinates, :form, :geozones_data
-  use_helpers :include_javascript_in_layout
+  delegate :include_javascript_in_layout, to: :helpers
 
   def initialize(map_location, investments_coordinates: nil, form: nil, geozones_data: nil)
     @map_location = map_location

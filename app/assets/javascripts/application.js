@@ -53,8 +53,6 @@
 //= require blueimp-file-upload/js/jquery.iframe-transport
 //= require blueimp-file-upload/js/jquery.fileupload
 //= require foundation-sites
-//= require turbolinks
-//= require turbolinks_anchors
 //= require social-share-button
 //= require app
 //= require check_all_none
@@ -167,13 +165,4 @@ var initialize_modules = function() {
   App.CookiesConsent.initialize();
 };
 
-var destroy_non_idempotent_modules = function() {
-  "use strict";
-
-  App.ColumnsSelector.destroy();
-  App.Datepicker.destroy();
-  App.SocialShare.destroy();
-};
-
-$(document).on("turbolinks:load", initialize_modules);
-$(document).on("turbolinks:before-cache", destroy_non_idempotent_modules);
+$(document).ready(initialize_modules);

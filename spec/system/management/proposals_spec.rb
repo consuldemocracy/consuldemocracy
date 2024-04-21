@@ -241,7 +241,7 @@ describe "Proposals" do
 
       click_link "Print proposals"
       within ".proposals-list" do
-        click_button "Support"
+        click_button "Support" # TODO: the AJAX redirect doesn't work without Turbolinks, apparently
       end
 
       expect(page).to have_content "To perform this action you must select a user"

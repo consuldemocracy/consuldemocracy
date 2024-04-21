@@ -1,5 +1,5 @@
 <%= link_to admin_budget_budget_investments_path(Budget::Investment.filter_params(params).to_h),
-            class: "back", data: { turbolinks: false } do %>
+            class: "back" do %>
   <span class="icon-angle-left"></span><%= t("shared.back") %>
 <% end %>
 
