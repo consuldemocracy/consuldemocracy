@@ -1,12 +1,4 @@
 module PollsHelper
-  def poll_dates(poll)
-    if poll.starts_at.blank? || poll.ends_at.blank?
-      I18n.t("polls.no_dates")
-    else
-      I18n.t("polls.dates", open_at: l(poll.starts_at.to_date), closed_at: l(poll.ends_at.to_date))
-    end
-  end
-
   def booth_name_with_location(booth)
     location = booth.location.blank? ? "" : " (#{booth.location})"
     booth.name + location
