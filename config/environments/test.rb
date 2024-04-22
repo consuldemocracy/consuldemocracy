@@ -72,14 +72,6 @@ Rails.application.configure do
   logger.formatter = config.log_formatter
   config.logger = ActiveSupport::TaggedLogging.new(logger)
 
-  config.after_initialize do
-    Bullet.enable = true
-    Bullet.bullet_logger = true
-    if ENV["BULLET"]
-      Bullet.raise = true # raise an error if n+1 query occurs
-    end
-  end
-
   # Allow managing different tenants using the same application
   config.multitenancy = true
 
