@@ -1,9 +1,5 @@
 <div class="poll with-image">
-  <% if !user_signed_in? %>
-    <div class="icon-poll-answer not-logged-in" title="<%= t("polls.index.not_logged_in") %>">
-      <span class="show-for-sr"><%= t("polls.index.not_logged_in") %></span>
-    </div>
-  <% elsif user_signed_in? %>
+  <% if current_user %>
     <% if current_user.unverified? %>
       <div class="icon-poll-answer unverified" title="<%= t("polls.index.unverified") %>">
         <span class="show-for-sr"><%= t("polls.index.unverified") %></span>
@@ -17,6 +13,10 @@
         <span class="show-for-sr"><%= t("polls.index.already_answer") %></span>
       </div>
     <% end %>
+  <% else %>
+    <div class="icon-poll-answer not-logged-in" title="<%= t("polls.index.not_logged_in") %>">
+      <span class="show-for-sr"><%= t("polls.index.not_logged_in") %></span>
+    </div>
   <% end %>
   <div class="row" data-equalizer data-equalize-on="medium">
     <div class="small-12 medium-3 column">
