@@ -37,4 +37,12 @@ describe Polls::AccessStatusComponent do
     expect(page).to have_css ".already-answer", count: 1
     expect(page).to have_content "You already have participated in this poll"
   end
+
+  it "is not rendered when users can vote" do
+    sign_in(create(:user, :level_two))
+
+    render_inline Polls::AccessStatusComponent.new(create(:poll))
+
+    expect(page).not_to be_rendered
+  end
 end
