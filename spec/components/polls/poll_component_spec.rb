@@ -42,6 +42,14 @@ describe Polls::PollComponent do
     end
   end
 
+  it "renders the dates inside an HTML tag" do
+    poll = create(:poll, starts_at: "2015-07-15", ends_at: "2015-07-22")
+
+    render_inline Polls::PollComponent.new(poll)
+
+    expect(page).to have_css ".dates", exact_text: "From 2015-07-15 to 2015-07-22"
+  end
+
   it "shows a link to poll stats if enabled" do
     poll = create(:poll, :expired, name: "Poll with stats", stats_enabled: true)
 

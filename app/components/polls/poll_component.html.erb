@@ -27,13 +27,12 @@
       </div>
     </div>
     <div class="small-12 medium-6 column" data-equalizer-watch>
-      <div class="dates"></div>
       <% if poll.questions.one? %>
         <h4><%= link_to_poll poll.questions.first.title, poll %></h4>
-        <%= dates %>
+        <div class="dates"><%= dates %></div>
       <% else %>
         <h4><%= link_to_poll poll.name, poll %></h4>
-        <%= dates %>
+        <div class="dates"><%= dates %></div>
 
         <ul class="margin-top">
           <% poll.questions.sort_for_list.each do |question| %>
