@@ -9,6 +9,6 @@ class Polls::PollComponent < ApplicationComponent
   private
 
     def dates
-      I18n.t("polls.dates", open_at: l(poll.starts_at.to_date), closed_at: l(poll.ends_at.to_date))
+      t("polls.dates", open_at: l(poll.starts_at.to_date), closed_at: l(poll.ends_at.to_date))
     end
 end
