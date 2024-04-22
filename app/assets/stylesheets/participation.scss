@@ -1515,7 +1515,7 @@
   position: relative;
 }
 
-.poll,
+.public .poll,
 .poll-question {
   border: 1px solid $border;
   margin-bottom: calc(#{$line-height} / 2);
