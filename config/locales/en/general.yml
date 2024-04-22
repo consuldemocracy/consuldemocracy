@@ -569,7 +569,6 @@ en:
         share: "And if you also do me the great favor of sharing my proposal with your friends, family and contacts, it would be perfect!"
   polls:
     all: "All"
-    no_dates: "no date assigned"
     dates: "From %{open_at} to %{closed_at}"
     final_date: "Final recounts/Results"
     index:
