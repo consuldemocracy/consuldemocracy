@@ -42,12 +42,25 @@ describe Polls::PollComponent do
     end
   end
 
-  it "renders the dates inside an HTML tag" do
-    poll = create(:poll, starts_at: "2015-07-15", ends_at: "2015-07-22")
+  describe "dates" do
+    it "renders the dates inside an HTML tag" do
+      poll = create(:poll, starts_at: "2015-07-15", ends_at: "2015-07-22")
 
-    render_inline Polls::PollComponent.new(poll)
+      render_inline Polls::PollComponent.new(poll)
 
-    expect(page).to have_css ".dates", exact_text: "From 2015-07-15 to 2015-07-22"
+      expect(page).to have_css ".dates", exact_text: "From 2015-07-15 to 2015-07-22"
+    end
+
+    it "allows customizing the text to display dates" do
+      poll = create(:poll, starts_at: "2015-07-15", ends_at: "2015-07-22")
+      create(:i18n_content, key: "polls.dates", value: "Starts someday and finishes who-knows-when")
+
+      render_inline Polls::PollComponent.new(poll)
+
+      expect(page).to have_css ".dates", exact_text: "Starts someday and finishes who-knows-when"
+      expect(page).not_to have_content "2015-07-15"
+      expect(page).not_to have_content "2015-07-22"
+    end
   end
 
   it "shows a link to poll stats if enabled" do
