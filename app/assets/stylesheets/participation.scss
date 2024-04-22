@@ -1547,7 +1547,6 @@
     top: 0;
     width: 0;
 
-    &.can-answer::after,
     &.cant-answer::after,
     &.not-logged-in::after,
     &.already-answer::after,
@@ -1556,15 +1555,6 @@
       left: 34px;
       position: absolute;
       top: 5px;
-    }
-
-    &.can-answer {
-      border-right: 60px solid $info-bg;
-
-      &::after {
-        color: $color-info;
-        content: "\6c";
-      }
     }
 
     &.cant-answer {
