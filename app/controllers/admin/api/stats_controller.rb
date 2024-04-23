@@ -10,7 +10,7 @@ class Admin::Api::StatsController < Admin::Api::BaseController
     ds = Ahoy::DataSource.new
 
     if params[:event].present?
-      ds.add params[:event].titleize, Ahoy::Event.where(name: params[:event]).group_by_day(:time).count
+      ds.add params[:event].titleize, Ahoy::Chart.new(params[:event]).group_by_day(:time).count
     end
 
     if params[:visits].present?

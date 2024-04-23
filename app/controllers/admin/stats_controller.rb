@@ -1,6 +1,6 @@
 class Admin::StatsController < Admin::BaseController
   def show
-    @event_names = Ahoy::Event.distinct.order(:name).pluck(:name)
+    @event_names = Ahoy::Chart.active_event_names
 
     @visits    = Visit.count
     @debates   = Debate.with_hidden.count
@@ -34,7 +34,7 @@ class Admin::StatsController < Admin::BaseController
     @event = params[:event]
 
     if params[:event]
-      @count = Ahoy::Event.where(name: params[:event]).count
+      @count = Ahoy::Chart.new(params[:event]).count
     else
       @count = params[:count]
     end
