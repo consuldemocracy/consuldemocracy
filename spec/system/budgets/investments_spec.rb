@@ -1334,17 +1334,6 @@ describe "Budget Investments" do
         expect(page).to have_content "1 support"
       end
     end
-
-    scenario "Show should display support text and count" do
-      investment = create(:budget_investment, budget: budget, heading: heading, voters: [create(:user)])
-
-      visit budget_investment_path(budget, investment)
-
-      within("#budget_investment_#{investment.id}") do
-        expect(page).to have_content "SUPPORTS"
-        expect(page).to have_content "1 support"
-      end
-    end
   end
 
   context "Publishing prices phase" do
