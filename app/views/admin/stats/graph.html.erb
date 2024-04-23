@@ -4,4 +4,4 @@
 
 <%= back_link_to admin_stats_path %>
 
-<%= render Admin::Stats::ChartComponent.new(name: @name, event: @event, count: @count) %>
+<%= render Admin::Stats::ChartComponent.new(@chart) %>

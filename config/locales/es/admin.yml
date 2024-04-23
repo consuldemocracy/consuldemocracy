@@ -1480,7 +1480,6 @@ es:
           verified_users_who_didnt_vote_proposals: Usuarios verificados que no han votado propuestas
           visits: Visitas
           votes: Votos
-        budgets_title: Presupuestos participativos
         participatory_budgets: Presupuestos Participativos
         direct_messages: Mensajes directos
         proposal_notifications: Notificaciones de propuestas
@@ -1488,9 +1487,10 @@ es:
         polls: Votaciones
         sdg: ODS
       graph:
+        budget_investment_created: Proyectos de gasto creados
         debate_created: Debates
         visit: Visitas
-        level_2_user: Usuarios nivel 2
+        level_3_user: Usuarios nivel 3
         proposal_created: Propuestas Ciudadanas
         title: Gráficos
       budgets:

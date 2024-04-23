@@ -30,14 +30,7 @@ class Admin::StatsController < Admin::BaseController
   end
 
   def graph
-    @name = params[:id]
-    @event = params[:event]
-
-    if params[:event]
-      @count = Ahoy::Chart.new(params[:event]).count
-    else
-      @count = params[:count]
-    end
+    @chart = Ahoy::Chart.new(params[:event])
   end
 
   def proposal_notifications

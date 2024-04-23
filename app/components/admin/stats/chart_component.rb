@@ -1,25 +1,21 @@
 class Admin::Stats::ChartComponent < ApplicationComponent
-  attr_reader :name, :event, :count
+  attr_reader :chart
 
-  def initialize(name:, event:, count:)
-    @name = name
-    @event = event
-    @count = count
+  def initialize(chart)
+    @chart = chart
   end
 
   private
 
-    def chart_tag(opt = {})
-      opt[:data] ||= {}
-      opt[:data][:graph] = admin_api_stats_path(chart_data(opt))
-      tag.div(**opt)
+    def count
+      chart.count
     end
 
-    def chart_data(opt = {})
-      if opt[:id].present?
-        { opt[:id] => true }
-      elsif opt[:event].present?
-        { event: opt[:event] }
-      end
+    def event
+      chart.event_name
+    end
+
+    def chart_tag
+      tag.div("data-graph": admin_api_stats_path(event: event))
     end
 end

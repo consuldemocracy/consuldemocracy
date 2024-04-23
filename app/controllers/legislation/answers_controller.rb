@@ -12,7 +12,6 @@ class Legislation::AnswersController < Legislation::BaseController
     if @process.debate_phase.open?
       @answer.user = current_user
       @answer.save!
-      track_event
       respond_to do |format|
         format.js
         format.html { redirect_to legislation_process_question_path(@process, @question) }
@@ -34,12 +33,5 @@ class Legislation::AnswersController < Legislation::BaseController
 
     def allowed_params
       [:legislation_question_option_id]
-    end
-
-    def track_event
-      ahoy.track :legislation_answer_created,
-                 legislation_answer_id: @answer.id,
-                 legislation_question_option_id: @answer.legislation_question_option_id,
-                 legislation_question_id: @answer.legislation_question_id
     end
 end

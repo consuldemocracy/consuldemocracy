@@ -59,10 +59,6 @@ module CommentableActions
 
   private
 
-    def track_event
-      ahoy.track :"#{resource_name}_created", "#{resource_name}_id": resource.id
-    end
-
     def tag_cloud
       TagCloud.new(resource_model, params[:search])
     end

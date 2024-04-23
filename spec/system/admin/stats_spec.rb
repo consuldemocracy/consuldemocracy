@@ -72,18 +72,6 @@ describe "Stats", :admin do
       expect(page).to have_content "UNVERIFIED USERS\n1"
       expect(page).to have_content "TOTAL USERS\n1"
     end
-
-    scenario "Level 2 user Graph" do
-      create(:geozone)
-      visit account_path
-      click_link "Verify my account"
-      verify_residence
-      confirm_phone
-
-      visit admin_stats_path
-
-      expect(page).to have_content "LEVEL TWO USERS\n1"
-    end
   end
 
   describe "Budget investments" do
@@ -150,15 +138,9 @@ describe "Stats", :admin do
     end
   end
 
-  context "graphs" do
-    scenario "event graphs", :with_frozen_time do
-      visit new_debate_path
-      fill_in_new_debate_title with: "A title for a debate"
-      fill_in_ckeditor "Initial debate text", with: "This is very important because..."
-      check "debate_terms_of_service"
-      click_button "Start a debate"
-
-      expect(page).to have_content "Debate created successfully."
+  describe "graphs", :with_frozen_time do
+    scenario "event graphs" do
+      create(:debate)
 
       visit admin_stats_path
 
@@ -167,6 +149,19 @@ describe "Stats", :admin do
       end
 
       expect(page).to have_content "Debates (1)"
+
+      within("#graph") do
+        expect(page).to have_content Date.current.strftime("%Y-%m-%d")
+      end
+    end
+
+    scenario "Level 3 user Graph" do
+      create(:user, :level_three)
+
+      visit admin_stats_path
+      click_link "level_3_user"
+
+      expect(page).to have_content "Level 3 User (1)"
 
       within("#graph") do
         expect(page).to have_content Date.current.strftime("%Y-%m-%d")

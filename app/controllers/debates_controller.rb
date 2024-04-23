@@ -24,7 +24,6 @@ class DebatesController < ApplicationController
     @debate.author = current_user
 
     if @debate.save
-      track_event
       redirect_to debate_path(@debate), notice: t("flash.actions.create.debate")
     else
       render :new

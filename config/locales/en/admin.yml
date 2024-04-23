@@ -1480,7 +1480,6 @@ en:
           verified_users_who_didnt_vote_proposals: Verified users who didn't votes proposals
           visits: Visits
           votes: Total votes
-        budgets_title: Participatory budgeting
         participatory_budgets: Participatory Budgets
         direct_messages: Direct messages
         proposal_notifications: Proposal notifications
@@ -1488,9 +1487,10 @@ en:
         polls: Polls
         sdg: SDG
       graph:
+        budget_investment_created: Budget investments created
         debate_created: Debates
         visit: Visits
-        level_2_user: Level 2 users
+        level_3_user: Level 3 users
         proposal_created: Citizen proposals
         title: Graphs
       budgets:
