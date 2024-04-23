@@ -1492,6 +1492,7 @@ en:
         visit: Visits
         level_2_user: Level 2 users
         proposal_created: Citizen proposals
+        title: Graphs
       budgets:
         no_data_before_balloting_phase: "There isn't any data to show before the balloting phase."
         title: "Participatory Budgets - Participation stats"
