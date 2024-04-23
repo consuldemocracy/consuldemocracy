@@ -1396,6 +1396,7 @@ cs:
       index:
         title: Geozóna
         create: Vytvořit geozónu
+        geojson_map: GeoJSON Mapa
       geozone:
         name: Název
         external_code: Externí kód
