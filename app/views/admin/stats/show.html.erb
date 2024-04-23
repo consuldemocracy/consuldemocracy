@@ -110,20 +110,16 @@
 
       </div>
 
-      <div class="small-12 column">
-        <% @event_types.each do |event| %>
-          <h3>
-            <%= link_to graph_link_text(event),
-                        graph_admin_stats_path(event: event) %>
-          </h3>
-        <% end %>
-      </div>
+      <% @event_types.each do |event| %>
+        <h3>
+          <%= link_to graph_link_text(event),
+                      graph_admin_stats_path(event: event) %>
+        </h3>
+      <% end %>
 
       <% if feature?(:budgets) %>
-        <div class="small-12 column">
-          <h2><%= t "admin.stats.show.budgets_title" %></h2>
-          <%= budget_investments_chart_tag id: "budget_investments" %>
-        </div>
+        <h2><%= t "admin.stats.show.budgets_title" %></h2>
+        <%= budget_investments_chart_tag id: "budget_investments" %>
       <% end %>
     </div>
   </div>
