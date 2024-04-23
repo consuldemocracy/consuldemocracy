@@ -16,12 +16,10 @@ class Admin::Stats::ChartComponent < ApplicationComponent
     end
 
     def chart_data(opt = {})
-      data = nil
       if opt[:id].present?
-        data = { opt[:id] => true }
+        { opt[:id] => true }
       elsif opt[:event].present?
-        data = { event: opt[:event] }
+        { event: opt[:event] }
       end
-      data
     end
 end
