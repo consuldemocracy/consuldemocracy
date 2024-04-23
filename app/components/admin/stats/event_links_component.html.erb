@@ -1,0 +1,6 @@
+<% event_names.each do |event| %>
+  <h3>
+    <%= link_to link_text(event),
+                graph_admin_stats_path(event: event) %>
+  </h3>
+<% end %>

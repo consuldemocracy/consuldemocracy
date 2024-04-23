@@ -15,14 +15,6 @@ module StatsHelper
     data
   end
 
-  def graph_link_text(event)
-    text = t("admin.stats.graph.#{event}")
-    if text.to_s.match(/translation missing/)
-      text = event
-    end
-    text
-  end
-
   def budget_investments_chart_tag(opt = {})
     opt[:data] ||= {}
     opt[:data][:graph] = admin_api_stats_path(budget_investments: true)

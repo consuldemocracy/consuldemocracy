@@ -114,12 +114,7 @@
 
       </div>
 
-      <% @event_names.each do |event| %>
-        <h3>
-          <%= link_to graph_link_text(event),
-                      graph_admin_stats_path(event: event) %>
-        </h3>
-      <% end %>
+      <%= render Admin::Stats::EventLinksComponent.new(@event_names) %>
 
       <% if feature?(:budgets) %>
         <h2><%= t "admin.stats.show.budgets_title" %></h2>
