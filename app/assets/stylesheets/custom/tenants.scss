@@ -85,6 +85,16 @@
   }
 }
 
+.site-perthandkinross {
+  --brand:     #001489;
+  --brand-secondary: #000853;
+  --footer: #e2e8f5;
+  --callout: var(--brand-secondary);
+  .admin-sidebar {
+    background: linear-gradient(to bottom, var(--brand-secondary) 0%, var(--brand)100%);
+  }
+}
+
 .site-eastlothian {
   --brand:     #005293;
   --brand-secondary: #002F59;
