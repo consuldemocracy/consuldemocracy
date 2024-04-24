@@ -1397,6 +1397,7 @@ cs:
         title: Geozóna
         create: Vytvořit geozónu
         geojson_map: GeoJSON Mapa
+        geojson_map_help: "Pokud jsou k dispozici souřadnice GeoJSON, zobrazí se na mapě níže"
       geozone:
         name: Název
         external_code: Externí kód
@@ -1650,6 +1651,7 @@ cs:
           create_card: Vytvořit kartu
           no_cards: Nemáte žádnou kartu.
           columns_help: "Šířka karty v počtu sloupců. Na mobilních obrazovkách je vždy šířka 100 %."
+          order_help: "Můžete zadat pozici, na které bude tato karta zobrazena."
           create:
             notice: "Karta úspěšně vytvořena!"
           update:
