@@ -5,7 +5,7 @@ describe "Admin custom images", :admin do
     visit admin_root_path
 
     within("#side_menu") do
-      click_link "Site content"
+      click_button "Site content"
       click_link "Custom images"
     end
 

@@ -8,7 +8,7 @@ describe "Tenants", :admin, :seed_tenants do
       visit admin_root_path
 
       within("#side_menu") do
-        click_link "Settings"
+        click_button "Settings"
         click_link "Multitenancy"
       end
 
