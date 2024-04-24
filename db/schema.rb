@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_24_002959) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_24_013913) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -1712,6 +1712,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_24_002959) do
     t.datetime "started_at", precision: nil
     t.index ["started_at"], name: "index_visits_on_started_at"
     t.index ["user_id"], name: "index_visits_on_user_id"
+    t.index ["visitor_id", "started_at"], name: "index_visits_on_visitor_id_and_started_at"
   end
 
   create_table "votation_types", force: :cascade do |t|

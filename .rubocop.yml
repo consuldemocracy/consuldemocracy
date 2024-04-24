@@ -396,6 +396,8 @@ Rails/FindBy:
   Enabled: true
   Include:
     - "**/*.rb"
+  Exclude:
+    - "config/initializers/ahoy.rb"
 
 Rails/FindEach:
   Enabled: true
