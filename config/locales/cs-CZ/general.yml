@@ -1,6 +1,7 @@
 cs:
   account:
     show:
+      last_sign_in: "Poslední přihlášení: %{last_sign_in_at} z IP %{last_sign_in_ip}"
       change_credentials_link: Změnit své přihlašovací údaje
       erase_account_link: Smazat můj účet
       finish_verification: Dokončete ověření
@@ -241,6 +242,7 @@ cs:
           other: Máte %{count} nových oznámení
         notifications: Upozornění
       sdg: "SDG"
+    skip_to_main_content: "Přeskočit na hlavní obsah"
   notifications:
     index:
       empty_notifications: Nemáte nová upozornění.
