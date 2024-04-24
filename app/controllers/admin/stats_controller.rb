@@ -1,6 +1,6 @@
 class Admin::StatsController < Admin::BaseController
   def show
-    @event_types = Ahoy::Event.distinct.order(:name).pluck(:name)
+    @event_names = Ahoy::Event.distinct.order(:name).pluck(:name)
 
     @visits    = Visit.count
     @debates   = Debate.with_hidden.count

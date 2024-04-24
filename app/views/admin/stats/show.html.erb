@@ -114,7 +114,7 @@
 
       </div>
 
-      <% @event_types.each do |event| %>
+      <% @event_names.each do |event| %>
         <h3>
           <%= link_to graph_link_text(event),
                       graph_admin_stats_path(event: event) %>
