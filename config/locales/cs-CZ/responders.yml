@@ -17,6 +17,7 @@ cs:
         support: "Úspěšně podpořená investice"
         topic: "Téma bylo úspěšně vytvořeno."
         valuator_group: "Skupina hodnotitelů byla úspěšně vytvořena"
+        vote: "Hlas úspěšně vytvořen"
       save_changes:
         notice: Změny byly uloženy
       update:
@@ -33,5 +34,7 @@ cs:
       destroy:
         budget_investment: "Investiční projekt byl smazán."
         topic: "Téma bylo smazáno."
+        poll_question_answer_image: "Obrázek byl úspěšně smazán."
         poll_question_answer_video: "Odpověď na video byla smazána."
         valuator_group: "Skupina hodnotitelů byla smazána"
+        vote: "Hlas byl úspěšně smazán"
