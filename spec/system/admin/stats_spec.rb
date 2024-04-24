@@ -152,19 +152,21 @@ describe "Stats", :admin do
 
   context "graphs" do
     scenario "event graphs", :with_frozen_time do
-      campaign = create(:campaign)
+      visit new_debate_path
+      fill_in_new_debate_title with: "A title for a debate"
+      fill_in_ckeditor "Initial debate text", with: "This is very important because..."
+      check "debate_terms_of_service"
+      click_button "Start a debate"
 
-      visit root_path(track_id: campaign.track_id)
-
-      expect(page).to have_content "Sign out"
+      expect(page).to have_content "Debate created successfully."
 
       visit admin_stats_path
 
       within("#stats") do
-        click_link campaign.name
+        click_link "Debates"
       end
 
-      expect(page).to have_content "#{campaign.name} (1)"
+      expect(page).to have_content "Debates (1)"
 
       within("#graph") do
         expect(page).to have_content Date.current.strftime("%Y-%m-%d")

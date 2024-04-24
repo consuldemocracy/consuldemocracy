@@ -9,9 +9,4 @@ FactoryBot.define do
     id { SecureRandom.uuid }
     started_at { DateTime.current }
   end
-
-  factory :campaign do
-    sequence(:name) { |n| "Campaign #{n}" }
-    sequence(:track_id, &:to_s)
-  end
 end
