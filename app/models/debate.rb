@@ -46,8 +46,6 @@ class Debate < ApplicationRecord
   scope :featured,                 -> { where.not(featured_at: nil) }
   scope :public_for_api,           -> { all }
 
-  visitable class_name: "Visit"
-
   attr_accessor :link_required
 
   def self.recommendations(user)
