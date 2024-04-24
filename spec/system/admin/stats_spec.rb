@@ -183,6 +183,8 @@ describe "Stats", :admin do
       visit admin_stats_path
       click_link "Proposal notifications"
 
+      expect(page).to have_link "Go back", href: admin_stats_path
+
       within("#proposal_notifications_count") do
         expect(page).to have_content "3"
       end
@@ -232,6 +234,8 @@ describe "Stats", :admin do
       visit admin_stats_path
       click_link "Direct messages"
 
+      expect(page).to have_link "Go back", href: admin_stats_path
+
       within("#direct_messages_count") do
         expect(page).to have_content "3"
       end
@@ -252,6 +256,8 @@ describe "Stats", :admin do
       within(".stats") do
         click_link "Polls"
       end
+
+      expect(page).to have_link "Go back", href: admin_stats_path
 
       within("#web_participants") do
         expect(page).to have_content "3"
