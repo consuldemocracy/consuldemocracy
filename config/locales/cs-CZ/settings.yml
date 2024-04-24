@@ -169,6 +169,9 @@ cs:
         valid: "Podmínka pro zjištění platné odpovědi"
         valid_description: "Jaká cesta odpovědi musí být oznámena, aby byla považována za platnou odpověď a ověřena uživatelem"
     map:
+      feature:
+        marker_clustering: "Shlukování značek"
+        marker_clustering_description: "Povolí shlukování mapových značek. Užitečné, pokud je třeba zobrazit velké množství značek."
       latitude: "Zeměpisná šířka"
       latitude_description: "Zeměpisná šířka pro zobrazení pozice na mapě"
       longitude: "Zeměpisná délka"
