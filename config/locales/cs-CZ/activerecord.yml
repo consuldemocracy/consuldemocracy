@@ -577,6 +577,7 @@ cs:
         link_text: Link text
         link_url: Link URL
         columns: Počet sloupců
+        order: Pozice
       widget/card/translation:
         label: Label (optional)
         title: Předmět
