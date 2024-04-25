@@ -9,7 +9,9 @@ module Ahoy
     end
 
     def self.active_event_names
-      event_names_with_collections.select { |name, collection| collection.any? }.keys
+      event_names_with_collections.select { |name, collection| collection.any? }.keys.sort_by do |event_name|
+        new(event_name).title
+      end
     end
 
     def self.event_names_with_collections
@@ -23,15 +25,28 @@ module Ahoy
       }
     end
 
+    def self.active_events_data_points
+      ds = Ahoy::DataSource.new
+
+      active_event_names.map { |event_name| new(event_name) }.each do |chart|
+        ds.add chart.title, chart.data
+      end
+
+      ds.build
+    end
+
     def data_points
       ds = Ahoy::DataSource.new
-      ds.add title, records_by_day.count
-
+      ds.add title, data
       ds.build
     end
 
     def title
       t("admin.stats.graph.#{event_name}")
+    end
+
+    def data
+      records_by_day.count
     end
 
     private

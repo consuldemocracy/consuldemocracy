@@ -1,6 +1,34 @@
 require "rails_helper"
 
 describe Ahoy::Chart do
+  describe ".active_events_data_points" do
+    it "groups several events together" do
+      create(:budget_investment, created_at: "2010-01-01")
+      create(:budget_investment, created_at: "2010-01-02")
+      create(:legislation_annotation, created_at: "2010-01-01")
+      create(:legislation_annotation, created_at: "2010-01-03")
+
+      expect(Ahoy::Chart.active_events_data_points).to eq({
+        x: ["2010-01-01", "2010-01-02", "2010-01-03"],
+        "Budget investments created" => [1, 1, 0],
+        "Legislation annotations created" => [1, 0, 1]
+      })
+    end
+
+    it "sorts events alphabetically" do
+      create(:budget_investment, created_at: "2010-01-01")
+      create(:legislation_annotation, created_at: "2010-01-01")
+
+      I18n.with_locale(:es) do
+        expect(Ahoy::Chart.active_events_data_points.keys).to eq([
+          :x,
+          "Anotaciones creadas",
+          "Proyectos de gasto creados"
+        ])
+      end
+    end
+  end
+
   describe "#data_points" do
     it "raises an exception for unknown events" do
       chart = Ahoy::Chart.new(:mystery)

@@ -1,7 +1,5 @@
 class Admin::StatsController < Admin::BaseController
   def show
-    @event_names = Ahoy::Chart.active_event_names
-
     @visits    = Visit.count
     @debates   = Debate.with_hidden.count
     @proposals = Proposal.with_hidden.count

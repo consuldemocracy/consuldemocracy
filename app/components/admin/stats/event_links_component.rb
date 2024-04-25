@@ -12,10 +12,6 @@ class Admin::Stats::EventLinksComponent < ApplicationComponent
       Ahoy::Chart.new(event).title
     end
 
-    def title
-      t("admin.stats.graph.title")
-    end
-
     def links
       event_names.map do |event|
         [link_text(event), graph_admin_stats_path(event: event)]
