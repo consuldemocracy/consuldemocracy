@@ -21,7 +21,8 @@ describe Ahoy::Chart do
 
       chart = Ahoy::Chart.new(:proposal_created)
 
-      expect(chart.data_points).to eq x: ["2015-01-01", "2015-01-02"], "Citizen proposals" => [2, 1]
+      expect(chart.data_points).to eq x: ["2015-01-01", "2015-01-02"],
+                                      "Citizen proposals created" => [2, 1]
     end
 
     it "accepts strings as the event name" do
@@ -30,7 +31,7 @@ describe Ahoy::Chart do
 
       chart = Ahoy::Chart.new("proposal_created")
 
-      expect(chart.data_points).to eq x: ["2015-01-01"], "Citizen proposals" => [1]
+      expect(chart.data_points).to eq x: ["2015-01-01"], "Citizen proposals created" => [1]
     end
 
     it "returns visits data for the visits event" do
@@ -46,7 +47,7 @@ describe Ahoy::Chart do
       expect(chart.data_points).to eq x: ["2015-01-01", "2015-01-02"], "Visits" => [2, 1]
     end
 
-    it "returns user supports for the user_supported_budgets event" do
+    it "returns user supports for the budget_investment_supported event" do
       time_1 = Time.zone.local(2017, 04, 01)
       time_2 = Time.zone.local(2017, 04, 02)
 
@@ -55,9 +56,10 @@ describe Ahoy::Chart do
       create(:vote, votable: create(:budget_investment), created_at: time_2)
       create(:vote, votable: create(:proposal), created_at: time_2)
 
-      chart = Ahoy::Chart.new(:user_supported_budgets)
+      chart = Ahoy::Chart.new(:budget_investment_supported)
 
-      expect(chart.data_points).to eq x: ["2017-04-01", "2017-04-02"], "User Supported Budgets" => [1, 2]
+      expect(chart.data_points).to eq x: ["2017-04-01", "2017-04-02"],
+                                      "Budget investments supported" => [1, 2]
     end
 
     it "returns level three verified dates for the level_3_user event" do
@@ -70,7 +72,7 @@ describe Ahoy::Chart do
 
       chart = Ahoy::Chart.new(:level_3_user)
 
-      expect(chart.data_points).to eq x: ["2001-01-02"], "Level 3 users" => [2]
+      expect(chart.data_points).to eq x: ["2001-01-02"], "Level 3 users verified" => [2]
     end
   end
 end

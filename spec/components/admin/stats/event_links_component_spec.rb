@@ -10,8 +10,8 @@ describe Admin::Stats::EventLinksComponent do
     expect(page).to have_link count: 2
 
     page.find("ul") do |list|
-      expect(list).to have_link "Legislation Annotation Created"
-      expect(list).to have_link "Legislation Answer Created"
+      expect(list).to have_link "Legislation annotations created"
+      expect(list).to have_link "Legislation answers created"
     end
   end
 end

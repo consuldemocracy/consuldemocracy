@@ -29,7 +29,7 @@ describe Admin::Api::StatsController, :admin do
         get :show, params: { event: "proposal_created" }
 
         expect(response).to be_ok
-        expect(response.parsed_body).to eq "x" => ["2015-01-01", "2015-01-02"], "Citizen proposals" => [2, 1]
+        expect(response.parsed_body).to eq "x" => ["2015-01-01", "2015-01-02"], "Citizen proposals created" => [2, 1]
       end
     end
   end

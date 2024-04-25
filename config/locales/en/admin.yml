@@ -1488,11 +1488,14 @@ en:
         sdg: SDG
       graph:
         budget_investment_created: Budget investments created
-        debate_created: Debates
-        visit: Visits
-        level_3_user: Level 3 users
-        proposal_created: Citizen proposals
+        budget_investment_supported: Budget investments supported
+        debate_created: Debates created
+        legislation_annotation_created: Legislation annotations created
+        legislation_answer_created: Legislation answers created
+        level_3_user: Level 3 users verified
+        proposal_created: Citizen proposals created
         title: Graphs
+        visits: Visits
       budgets:
         no_data_before_balloting_phase: "There isn't any data to show before the balloting phase."
         title: "Participatory Budgets - Participation stats"

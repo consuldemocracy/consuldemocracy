@@ -30,6 +30,6 @@ class Admin::Stats::BudgetSupportingComponent < ApplicationComponent
     end
 
     def chart
-      @chart ||= Ahoy::Chart.new("user_supported_budgets")
+      @chart ||= Ahoy::Chart.new("budget_investment_supported")
     end
 end

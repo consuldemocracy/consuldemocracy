@@ -31,18 +31,14 @@ module Ahoy
     end
 
     def title
-      text = t("admin.stats.graph.#{event_name}")
-      if text.to_s.match(/translation missing/)
-        text = event_name.to_s.titleize
-      end
-      text
+      t("admin.stats.graph.#{event_name}")
     end
 
     private
 
       def records
         case event_name.to_sym
-        when :user_supported_budgets
+        when :budget_investment_supported
           Vote.where(votable_type: "Budget::Investment")
         when :visits
           Visit.all
