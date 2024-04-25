@@ -9,11 +9,7 @@ class Admin::Stats::EventLinksComponent < ApplicationComponent
   private
 
     def link_text(event)
-      text = t("admin.stats.graph.#{event}")
-      if text.to_s.match(/translation missing/)
-        text = event
-      end
-      text
+      Ahoy::Chart.new(event).title
     end
 
     def title

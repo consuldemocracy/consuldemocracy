@@ -18,4 +18,8 @@ class Admin::Stats::ChartComponent < ApplicationComponent
     def chart_tag
       tag.div("data-graph": admin_api_stats_path(event: event))
     end
+
+    def title
+      "#{chart.title} (#{count})"
+    end
 end

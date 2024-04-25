@@ -2,6 +2,7 @@ module Ahoy
   class Chart
     attr_reader :event_name
     delegate :count, to: :records
+    delegate :t, to: "ApplicationController.helpers"
 
     def initialize(event_name)
       @event_name = event_name
@@ -24,9 +25,17 @@ module Ahoy
 
     def data_points
       ds = Ahoy::DataSource.new
-      ds.add event_name.to_s.titleize, records_by_day.count
+      ds.add title, records_by_day.count
 
       ds.build
+    end
+
+    def title
+      text = t("admin.stats.graph.#{event_name}")
+      if text.to_s.match(/translation missing/)
+        text = event_name.to_s.titleize
+      end
+      text
     end
 
     private

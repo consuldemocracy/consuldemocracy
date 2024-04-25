@@ -21,7 +21,7 @@ describe Ahoy::Chart do
 
       chart = Ahoy::Chart.new(:proposal_created)
 
-      expect(chart.data_points).to eq x: ["2015-01-01", "2015-01-02"], "Proposal Created" => [2, 1]
+      expect(chart.data_points).to eq x: ["2015-01-01", "2015-01-02"], "Citizen proposals" => [2, 1]
     end
 
     it "accepts strings as the event name" do
@@ -30,7 +30,7 @@ describe Ahoy::Chart do
 
       chart = Ahoy::Chart.new("proposal_created")
 
-      expect(chart.data_points).to eq x: ["2015-01-01"], "Proposal Created" => [1]
+      expect(chart.data_points).to eq x: ["2015-01-01"], "Citizen proposals" => [1]
     end
 
     it "returns visits data for the visits event" do
@@ -70,7 +70,7 @@ describe Ahoy::Chart do
 
       chart = Ahoy::Chart.new(:level_3_user)
 
-      expect(chart.data_points).to eq x: ["2001-01-02"], "Level 3 User" => [2]
+      expect(chart.data_points).to eq x: ["2001-01-02"], "Level 3 users" => [2]
     end
   end
 end

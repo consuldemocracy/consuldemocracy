@@ -159,9 +159,9 @@ describe "Stats", :admin do
       create(:user, :level_three)
 
       visit admin_stats_path
-      click_link "level_3_user"
+      click_link "Level 3 users"
 
-      expect(page).to have_content "Level 3 User (1)"
+      expect(page).to have_content "Level 3 users (1)"
 
       within("#graph") do
         expect(page).to have_content Date.current.strftime("%Y-%m-%d")
