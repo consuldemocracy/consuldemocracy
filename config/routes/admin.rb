@@ -241,10 +241,6 @@ namespace :admin do
     end
   end
 
-  namespace :api do
-    resource :stats, only: :show
-  end
-
   resources :geozones, only: [:index, :new, :create, :edit, :update, :destroy]
 
   namespace :site_customization do

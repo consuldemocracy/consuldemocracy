@@ -16,7 +16,7 @@ class Admin::Stats::ChartComponent < ApplicationComponent
     end
 
     def chart_tag
-      tag.div("data-graph": admin_api_stats_path(event: event))
+      tag.div("data-graph": chart.data_points.to_json)
     end
 
     def title

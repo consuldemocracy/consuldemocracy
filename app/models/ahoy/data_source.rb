@@ -9,7 +9,7 @@ module Ahoy
     # chart
     def add(name, collection)
       collections.push data: collection, name: name
-      collection.each_key { |key| add_key key }
+      shared_keys.merge(collection.keys)
     end
 
     def build
@@ -36,11 +36,7 @@ module Ahoy
       end
 
       def shared_keys
-        @shared_keys ||= []
-      end
-
-      def add_key(key)
-        shared_keys.push(key) unless shared_keys.include? key
+        @shared_keys ||= Set.new
       end
   end
 end
