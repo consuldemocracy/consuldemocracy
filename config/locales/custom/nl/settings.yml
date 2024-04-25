@@ -87,7 +87,7 @@ nl:
       debates_description: "De discussie module is bedoeld voor iedereen die over verschillende beleidskwesties zijn mening wil geven of afstemmen met anderen"
       proposals: "Initiatieven"
       proposals_description: "Initiatieven bieden mensen de kans om mee te beslissen. Nadat een initiatief voldoende steun heeft ontvangen, kan hierop gestemd worden"
-      polls_description:  "Met een peiling kan achterhaald worden wat de mening is van de bevolking over bepaalde beleidskwesties"
+      polls_description: "Met een peiling kan achterhaald worden wat de mening is van de bevolking over bepaalde beleidskwesties"
       budgets: "Ideeën"
       budgets_description: "Met deze module kunnen mensen helpen bepalen welke ideeën tot uitvoering worden gebracht"
       legislation: "Plannen"
@@ -114,3 +114,12 @@ nl:
         max_size_description: "Maximaal toegestane document grootte per document,  in megabytes, MB"
         content_types: "Geaccepteerde documenttypen"
         content_types_description: "Selecteer alle geaccepteerde documenttypen"
+    show_navbar:
+      debates: Discussies
+      proposals: Initiatieven
+      polls: Peilingen
+      budgets: Ideeën
+      legislation: Plannen
+      raad: Raad
+      sdg: SDG
+      help: Help
