@@ -7,6 +7,19 @@ class PagesController < ApplicationController
   def show
     @custom_page = SiteCustomization::Page.published.find_by(slug: params[:id])
 
+    @parties_sorted = {
+      "PvdA" => 1,
+      "GL" => 2,
+      "FNP" => 3,
+      "GBL" => 4,
+      "CDA" => 5,
+      "VVD" => 6,
+      "Lijst058" => 7,
+      "D66" => 8,
+      "CU" => 9,
+      "FvD" => 10,
+    }
+
     @raad_sorted = {
       # PVDA
       67 => 1,
@@ -73,7 +86,7 @@ class PagesController < ApplicationController
 
     if @custom_page.present?
       if @custom_page.id == 10
-        @cards = @custom_page.cards.sort_by { |card| @raad_sorted[card.id] || Float::INFINITY }.group_by { |card| card.label }
+        @cards = @custom_page.cards.sort_by { |card| @raad_sorted[card.id] || Float::INFINITY }.group_by { |card| card.label }.sort_by { |label, cards| @parties_sorted[label] || Float::INFINITY }
       else
         @cards = @custom_page.cards
       end
