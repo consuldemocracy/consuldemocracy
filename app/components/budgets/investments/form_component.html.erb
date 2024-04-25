@@ -87,13 +87,6 @@
   </fieldset>
 
   <div class="actions">
-    <% unless current_user.manager? || investment.persisted? %>
-      <div>
-        <p class="form-label"><%= t("shared.required_fields") %></p>
-        <%= render Shared::AgreeWithTermsOfServiceFieldComponent.new(f) %>
-      </div>
-    <% end %>
-
     <%= f.submit(nil, class: "button large margin-top") %>
   </div>
 <% end %>

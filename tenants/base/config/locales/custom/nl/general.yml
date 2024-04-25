@@ -72,7 +72,6 @@ nl:
     proposal: "initiatief"
     not_saved: "zorgden ervoor dat je %{resource} niet geplaatst kan worden. <br>Bekijk de rode tekst om te zien wat aangepast moet worden."
     budget/investment: "idee"
-    accept_terms: "Ik begrijp dat ik een idee indien voor de Oosterparkwijk"
   proposals:
     proposal:
       reason_for_supports_necessary: ""

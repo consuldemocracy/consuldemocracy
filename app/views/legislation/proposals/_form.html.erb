@@ -60,12 +60,6 @@
                                   aria: { describedby: "tag-list-help-text" } %>
     </div>
 
-    <div class="small-12 column">
-      <% if @proposal.new_record? %>
-        <%= render Shared::AgreeWithTermsOfServiceFieldComponent.new(f) %>
-      <% end %>
-    </div>
-
     <div class="actions small-12 column">
       <p class="form-label"><%= t("shared.required_fields") %></p>
       <%= f.submit(class: "button", value: t("proposals.#{action_name}.form.submit_button")) %>

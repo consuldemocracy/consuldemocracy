@@ -42,7 +42,6 @@
     <% if debate.new_record? %>
       <div>
         <p class="form-label"><%= t("shared.required_fields") %></p>
-        <%= render Shared::AgreeWithTermsOfServiceFieldComponent.new(f) %>
       </div>
     <% end %>
 

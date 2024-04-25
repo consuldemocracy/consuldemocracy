@@ -94,12 +94,6 @@
   </fieldset>
 
   <div class="actions">
-    <% if proposal.new_record? %>
-      <div>
-        <%= render Shared::AgreeWithTermsOfServiceFieldComponent.new(f) %>
-      </div>
-    <% end %>
-
     <%= f.submit(class: "button large margin-top", value: t("proposals.#{action_name}.form.submit_button")) %>
   </div>
 <% end %>
