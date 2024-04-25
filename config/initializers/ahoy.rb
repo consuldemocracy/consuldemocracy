@@ -13,12 +13,6 @@ class Ahoy::Store < Ahoy::DatabaseStore
     super(data)
   end
 
-  def track_event(data)
-    data[:id] = ensure_uuid(data.delete(:event_id))
-    data[:ip] = request.ip
-    super(data)
-  end
-
   def visit
     unless defined?(@visit)
       if ahoy.send(:existing_visit_token) || ahoy.instance_variable_get(:@visit_token)

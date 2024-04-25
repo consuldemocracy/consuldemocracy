@@ -96,19 +96,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_26_112901) do
     t.index ["user_id"], name: "index_administrators_on_user_id"
   end
 
-  create_table "ahoy_events", id: :uuid, default: nil, force: :cascade do |t|
-    t.uuid "visit_id"
-    t.integer "user_id"
-    t.string "name"
-    t.jsonb "properties"
-    t.datetime "time", precision: nil
-    t.string "ip"
-    t.index ["name", "time"], name: "index_ahoy_events_on_name_and_time"
-    t.index ["time"], name: "index_ahoy_events_on_time"
-    t.index ["user_id"], name: "index_ahoy_events_on_user_id"
-    t.index ["visit_id"], name: "index_ahoy_events_on_visit_id"
-  end
-
   create_table "audits", id: :serial, force: :cascade do |t|
     t.integer "auditable_id"
     t.string "auditable_type"
