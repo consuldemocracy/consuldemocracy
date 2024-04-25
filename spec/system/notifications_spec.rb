@@ -175,12 +175,13 @@ describe "Notifications" do
     end
 
     scenario "Without a link" do
-      admin_notification.update!(link: "/stats")
+      admin_notification.update!(link: nil)
 
       visit notifications_path
-      expect(page).to have_content("Notification title")
-      expect(page).to have_content("Notification body")
-      expect(page).not_to have_link(notification_path(notification), visible: :all)
+
+      expect(page).to have_content "Notification title"
+      expect(page).to have_content "Notification body"
+      expect(page).not_to have_link href: notification_path(notification), visible: :all
     end
   end
 
