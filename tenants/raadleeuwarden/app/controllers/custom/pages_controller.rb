@@ -59,12 +59,12 @@ class PagesController < ApplicationController
       54 => 4,
 
       # VVD
-      51 => 1,
+      65 => 1,
       69 => 2,
       56 => 3,
 
       # Lijst 058
-      58 => 1,
+      68 => 1,
       50 => 2,
       47 => 3,
 
