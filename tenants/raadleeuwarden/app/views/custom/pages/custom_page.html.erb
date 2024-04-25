@@ -1,0 +1,36 @@
+<%= content_for :body_class, "custom-page" %>
+<% provide :title do %><%= @custom_page.title %><% end %>
+
+<div id="custom_page" class="row margin-top">
+
+  <div class="small-12 medium-9 column">
+    <h1><%= @custom_page.title %></h1>
+    <% if @custom_page.subtitle.present? %>
+      <h2><%= @custom_page.subtitle %></h2>
+    <% end %>
+
+    <%= auto_link_already_sanitized_html AdminWYSIWYGSanitizer.new.sanitize(@custom_page.content) %>
+  </div>
+
+  <% if @custom_page.print_content_flag %>
+    <div class="small-12 medium-3 column">
+      <%= render "/shared/print" %>
+    </div>
+  <% end %>
+
+
+  <% if @cards.any? %>
+    <% if @cards.is_a?(Hash) %>
+      <% @cards.each do |key, cards| %>
+        <div class="small-12 column">
+          <%= render "shared/cards", cards: cards %>
+        </div>
+      <% end %>
+    <% else %>
+      <div class="small-12 column">
+        <%= render "shared/cards", cards: @cards %>
+      </div>
+    <% end %>
+  <% end %>
+
+</div>
