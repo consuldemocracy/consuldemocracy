@@ -9,11 +9,6 @@
           CKEDITOR.replace(this.name, { language: $("html").attr("lang") });
         }
       });
-    },
-    destroy: function() {
-      for (var name in CKEDITOR.instances) {
-        CKEDITOR.instances[name].destroy();
-      }
     }
   };
 }).call(this);

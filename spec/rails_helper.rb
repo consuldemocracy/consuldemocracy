@@ -70,6 +70,16 @@ module Capybara
         expect(page).to have_css "main#main"
       end
     end
+
+    alias_method :original_click_link, :click_link
+
+    def click_link(url, ...)
+      original_click_link(url, ...)
+
+      unless driver.name == :rack_test
+        expect(page).to be_axe_clean.checking_only :label
+      end
+    end
   end
 end
 
