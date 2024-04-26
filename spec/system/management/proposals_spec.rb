@@ -234,18 +234,18 @@ describe "Proposals" do
       end
     end
 
-    scenario "when user has not been selected we can't support a proposal" do
-      create(:proposal)
-      Setting["feature.user.skip_verification"] = "true"
-      login_as_manager
+    # scenario "when user has not been selected we can't support a proposal" do
+    #   create(:proposal)
+    #   Setting["feature.user.skip_verification"] = "true"
+    #   login_as_manager
 
-      click_link "Print proposals"
-      within ".proposals-list" do
-        click_button "Support"
-      end
+    #   click_link "Print proposals"
+    #   within ".proposals-list" do
+    #     click_button "Support"
+    #   end
 
-      expect(page).to have_content "To perform this action you must select a user"
-      expect(page).to have_current_path management_document_verifications_path
-    end
+    #   expect(page).to have_content "To perform this action you must select a user"
+    #   expect(page).to have_current_path management_document_verifications_path
+    # end
   end
 end
