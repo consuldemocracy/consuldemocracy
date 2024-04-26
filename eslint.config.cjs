@@ -33,7 +33,6 @@ module.exports = defineConfig([globalIgnores([
       c3: "readonly",
       CKEDITOR: "readonly",
       L: "readonly",
-      Turbolinks: "readonly",
     },
     ecmaVersion: 5,
     sourceType: "script",
