@@ -214,7 +214,7 @@ GEM
     execjs (2.8.1)
     exiftool (1.2.5)
       json
-    exiftool_vendored (12.80.0)
+    exiftool_vendored (12.83.0)
       exiftool (>= 0.7.0)
     factory_bot (6.4.6)
       activesupport (>= 5.0.0)
@@ -294,7 +294,7 @@ GEM
     irb (1.12.0)
       rdoc
       reline (>= 0.4.2)
-    json (2.7.1)
+    json (2.7.2)
     jwt (2.7.1)
     kaminari (1.2.2)
       activesupport (>= 4.1.0)
@@ -723,7 +723,7 @@ DEPENDENCIES
   devise-security (~> 0.18.0)
   email_spec (~> 2.2.2)
   erb_lint (~> 0.5.0)
-  exiftool_vendored (~> 12.80.0)
+  exiftool_vendored (~> 12.83.0)
   factory_bot_rails (~> 6.4.3)
   faker (~> 3.3.1)
   file_validators (~> 3.0.0)
