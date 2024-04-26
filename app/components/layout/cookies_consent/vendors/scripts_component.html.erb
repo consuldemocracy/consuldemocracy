@@ -11,6 +11,6 @@
         <%= vendor_method_name %>();
       }
     }
-    $(document).on("turbolinks:load", <%= initialize_vendor_method_name %>);
+    $(document).ready(<%= initialize_vendor_method_name %>);
   <% end %>
 </script>

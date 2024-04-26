@@ -24,7 +24,6 @@ module.exports = defineConfig([globalIgnores([
       CKEDITOR: "readonly",
       Dropzone: "readonly",
       L: "readonly",
-      Turbolinks: "readonly",
     },
     ecmaVersion: 5,
     sourceType: "script",
