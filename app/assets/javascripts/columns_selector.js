@@ -80,9 +80,6 @@
           App.ColumnsSelector.toggleColumn(event);
         }
       });
-    },
-    destroy: function() {
-      $("#js-columns-selector-wrapper").children(":not(#column_selector_item_template)").remove();
     }
   };
 }).call(this);
