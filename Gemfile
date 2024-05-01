@@ -80,7 +80,7 @@ group :test do
   gem "email_spec", "~> 2.2.2"
   gem "pdf-reader", "~> 2.12.0"
   gem "rspec-rails", "~> 6.1.2"
-  gem "selenium-webdriver", "~> 4.16.0"
+  gem "selenium-webdriver", "~> 4.20.1"
   gem "simplecov", "~> 0.22.0", require: false
   gem "simplecov-lcov", "~> 0.8.0", require: false
 end
