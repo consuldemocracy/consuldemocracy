@@ -95,7 +95,7 @@ GEM
       request_store (~> 1.2)
     autoprefixer-rails (10.4.16.0)
       execjs (~> 2)
-    base64 (0.1.1)
+    base64 (0.2.0)
     bcrypt (3.1.20)
     better_html (2.1.1)
       actionview (>= 6.0)
@@ -254,7 +254,7 @@ GEM
     graphiql-rails (1.8.0)
       railties
       sprockets-rails
-    graphql (1.13.22)
+    graphql (2.3.2)
       base64
     groupdate (6.4.0)
       activesupport (>= 6.1)
@@ -732,7 +732,7 @@ DEPENDENCIES
   globalize (~> 6.3.0)
   globalize-accessors (~> 0.3.0)
   graphiql-rails (~> 1.8.0)
-  graphql (~> 1.13.22)
+  graphql (~> 2.3.2)
   groupdate (~> 6.4.0)
   i18n-tasks (~> 0.9.37)
   image_processing (~> 1.12.2)
