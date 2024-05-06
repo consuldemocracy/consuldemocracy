@@ -5,7 +5,7 @@ default: &default
   pool: 5
   schema_search_path: "public,shared_extensions"
   username: consul
-  password:
+  password: password
 
 test:
   <<: *default
