@@ -6,13 +6,14 @@ tests:
   image: "ruby:3.2.5"
   stage: test
   services:
-    - postgres:10.10
+    - postgres:13.16
   cache:
     key: consul
     paths:
       - vendor/
   variables:
     POSTGRES_USER: consul
+    POSTGRES_PASSWORD: password
     RAILS_ENV: test
     TEST_COVERAGE: 1
   parallel: 5
