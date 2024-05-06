@@ -27,7 +27,6 @@ jobs:
           POSTGRES_PASSWORD: ""
     env:
       PGUSER: consul
-      POSTGRES_HOST: postgres
       RAILS_ENV: test
     strategy:
       fail-fast: false
