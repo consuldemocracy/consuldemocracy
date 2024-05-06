@@ -12,6 +12,9 @@ tests:
     paths:
       - vendor/
   variables:
+    DB_HOST: postgres
+    PGUSER: consul
+    PGPASSWORD: password
     POSTGRES_USER: consul
     POSTGRES_PASSWORD: password
     RAILS_ENV: test
@@ -20,7 +23,6 @@ tests:
   script:
     - apt-get update && apt-get install -y nodejs npm chromium
     - for i in config/*.example; do cp "$i" "${i/.example}"; done
-    - for i in config/*.gitlab; do cp "$i" "${i/.gitlab}"; done
     - bundle --without development
     - npm clean-install
     - bundle exec rake db:setup
