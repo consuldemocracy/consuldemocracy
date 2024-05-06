@@ -44,7 +44,7 @@ Then create the secrets and database config files based on the example files:
 
 ```bash
 cp config/secrets.yml.example config/secrets.yml
-cp config/database-docker.yml.example config/database.yml
+cp config/database.yml.example config/database.yml
 ```
 
 Then build the image with:
