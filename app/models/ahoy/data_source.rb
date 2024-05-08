@@ -13,19 +13,19 @@ module Ahoy
     # chart
     def add(name, collection)
       collections.push data: collection, name: name
-      shared_keys.merge(collection.keys)
+      dates.merge(collection.keys)
     end
 
     def build
       data = { x: [] }
-      shared_keys.each do |k|
+      dates.each do |date|
         # Add the key with a valid date format
-        data[:x].push k.strftime("%Y-%m-%d")
+        data[:x].push date.strftime("%Y-%m-%d")
 
         # Add the value for each column, or 0 if not present
         collections.each do |col|
           data[col[:name]] ||= []
-          count = col[:data][k] || 0
+          count = col[:data][date] || 0
           data[col[:name]].push count
         end
       end
@@ -39,8 +39,8 @@ module Ahoy
         @collections ||= []
       end
 
-      def shared_keys
-        @shared_keys ||= Set.new
+      def dates
+        @dates ||= Set.new
       end
   end
 end
