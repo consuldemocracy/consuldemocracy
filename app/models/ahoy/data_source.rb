@@ -4,6 +4,10 @@
 
 module Ahoy
   class DataSource
+    def self.build(&block)
+      new.tap { |data_source| block.call(data_source) }.build
+    end
+
     # Adds a collection with the datasource
     # Name is the name of the collection and will be showed in the
     # chart

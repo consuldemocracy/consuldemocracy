@@ -26,19 +26,17 @@ module Ahoy
     end
 
     def self.active_events_data_points
-      ds = Ahoy::DataSource.new
-
-      active_event_names.map { |event_name| new(event_name) }.each do |chart|
-        ds.add chart.title, chart.data
+      Ahoy::DataSource.build do |data_source|
+        active_event_names.map { |event_name| new(event_name) }.each do |chart|
+          data_source.add chart.title, chart.data
+        end
       end
-
-      ds.build
     end
 
     def data_points
-      ds = Ahoy::DataSource.new
-      ds.add title, data
-      ds.build
+      Ahoy::DataSource.build do |data_source|
+        data_source.add title, data
+      end
     end
 
     def title
