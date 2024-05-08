@@ -18,7 +18,7 @@ module Ahoy
 
     def build
       data = { x: [] }
-      dates.each do |date|
+      dates.sort.each do |date|
         # Add the key with a valid date format
         data[:x].push date.strftime("%Y-%m-%d")
 
