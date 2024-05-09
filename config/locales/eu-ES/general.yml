@@ -552,18 +552,6 @@ eu:
     youtube: "%{org} YouTubea"
     telegram: "%{org} Telegrama"
     instagram: "%{org} Instagrama"
-  stats:
-    index:
-      visits: Bisita
-      debates: Eztabaidak
-      proposals: Herri proposamenak
-      comments: Iruzkinak
-      proposal_votes: Bozkak proposamenetan
-      debate_votes: Bozkak eztabaidetan
-      comment_votes: Bozkak iruzkinetan
-      votes: Bozkak
-      verified_users: Egiaztatutatutako erabiltzaileak
-      unverified_users: Egiaztatu gabeko erabiltzaileak
   unauthorized:
     default: Ez duzu baimenik orri honetara sartzeko.
     manage:
