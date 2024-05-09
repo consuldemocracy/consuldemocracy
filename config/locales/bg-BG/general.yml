@@ -744,18 +744,6 @@ bg:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Посещения
-      debates: Дискусии
-      proposals: Предложения
-      comments: Коментари
-      proposal_votes: Гласове за предложения
-      debate_votes: Гласове за дискусии
-      comment_votes: Гласове за коментари
-      votes: Общо гласове
-      verified_users: Проверени потребители
-      unverified_users: Непроверени потребители
   unauthorized:
     default: Нямате разрешение за достъп до тази страница.
     manage:
