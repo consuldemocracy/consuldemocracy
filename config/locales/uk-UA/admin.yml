@@ -1368,7 +1368,6 @@ uk-UA:
           verified_users_who_didnt_vote_proposals: Перевірені користувачі, які не голосували за пропозиції
           visits: Відвідування
           votes: Загалом голосів
-        budgets_title: Бюджетування участі
         participatory_budgets: Бюджети участі
         direct_messages: Особисті повідомлення
         proposal_notifications: Сповіщення щодо пропозицій
@@ -1376,8 +1375,6 @@ uk-UA:
         polls: Голосування
       graph:
         debate_created: Обговорення
-        visit: Відвідування
-        level_2_user: Користувачі 2 рівня
         proposal_created: Пропозиції громадян
       budgets:
         no_data_before_balloting_phase: "Немає даних для показу до етапу голосування."
