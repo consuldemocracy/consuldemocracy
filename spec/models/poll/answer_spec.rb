@@ -18,6 +18,13 @@ describe Poll::Answer do
       expect(answer).not_to be_valid
     end
 
+    it "is not valid without an author when multiple answers are allowed" do
+      answer.author = nil
+      answer.question = create(:poll_question_multiple)
+
+      expect(answer).not_to be_valid
+    end
+
     it "is not valid without an answer" do
       answer.answer = nil
       expect(answer).not_to be_valid
