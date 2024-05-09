@@ -1086,7 +1086,6 @@ zh-CN:
           verified_users_who_didnt_vote_proposals: 没有投票提议的已验证用户
           visits: 访问
           votes: 总投票数
-        budgets_title: 参与性预算
         participatory_budgets: 参与性预算
         direct_messages: 直接信息
         proposal_notifications: 提议通知
@@ -1094,7 +1093,6 @@ zh-CN:
         polls: 投票
       graph:
         debate_created: 辩论
-        visit: 访问
         proposal_created: 公民提议
       budget_balloting:
         vote_count: 投票
