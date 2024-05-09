@@ -1326,7 +1326,6 @@ ar:
           verified_users_who_didnt_vote_proposals: تم التحقق من المستخدمين الذين لم يقوموا بالتصويت للمقترحات
           visits: الزيارات
           votes: مجموع الأصوات
-        budgets_title: الميزانية التشاركية
         participatory_budgets: الميزانية التشاركية
         direct_messages: الرسائل المباشرة
         proposal_notifications: إشعارات المقترح
@@ -1334,8 +1333,6 @@ ar:
         polls: استطلاعات
       graph:
         debate_created: الحوارات
-        visit: الزيارات
-        level_2_user: المستوى 2 من المستخدمين
         proposal_created: مقترحات المواطنين
       budgets:
         no_data_before_balloting_phase: "لا توجد أي بيانات لإظهارها قبل مرحلة الاقتراع."
