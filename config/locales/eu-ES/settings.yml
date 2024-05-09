@@ -45,7 +45,6 @@ eu:
       allow_images: "Irudiak igotea eta erakustea baimendu"
       allow_attached_documents: "Itsatsitako domumentuak sortzea baimendu"
       guides: "Inbertsio proiektuak edo proposamenak sortzko gidak"
-      public_stats: "Estatistika publikoak"
       help_page: "Laguntza orria"
     process:
       debates: "Eztabaidak"
