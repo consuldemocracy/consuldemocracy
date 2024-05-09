@@ -700,18 +700,6 @@ bs:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Posjete
-      debates: Debate
-      proposals: Prijedlozi
-      comments: Komentari
-      proposal_votes: Glasovi za prijedloge
-      debate_votes: Glasovi za debate
-      comment_votes: Glasovi za komentare
-      votes: Ukupno glasova
-      verified_users: Potvrđeni korisnici
-      unverified_users: Nepotvrđeni korisnici
   unauthorized:
     default: Nemate dozvolu da pristupite ovoj stranici.
     manage:
