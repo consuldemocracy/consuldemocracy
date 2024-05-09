@@ -302,10 +302,6 @@ fi:
       title: Suositukset
   social:
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      proposals: Ehdotukset
-      comments: Kommentit
   users:
     login_to_comment: "Sinun tulee %{signin} tai %{signup} kommentoidaksesi."
     signin: "kirjaudu"
