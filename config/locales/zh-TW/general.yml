@@ -562,18 +562,6 @@ zh-TW:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: 訪問
-      debates: 辯論
-      proposals: 建議
-      comments: 評論
-      proposal_votes: 對建議的投票數
-      debate_votes: 對辯論的投票數
-      comment_votes: 對評論的投票數
-      votes: 投票總數
-      verified_users: 已核實的用戶
-      unverified_users: 未經核實的用戶
   unauthorized:
     default: 您沒有權限訪問此頁面。
     manage:
