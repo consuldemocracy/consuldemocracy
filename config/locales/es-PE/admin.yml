@@ -915,7 +915,6 @@ es-PE:
           verified_users_who_didnt_vote_proposals: Usuarios verificados que no han votado propuestas
           visits: Visitas
           votes: Votos
-        budgets_title: Presupuestos participativos
         participatory_budgets: Presupuestos participativos
         direct_messages: Mensajes directos
         proposal_notifications: Notificaciones de propuestas
@@ -923,7 +922,6 @@ es-PE:
         polls: Votaciones
       graph:
         debate_created: Discusiones
-        visit: Visitas
         proposal_created: Propuestas ciudadanas
       budget_balloting:
         vote_count: Votos
