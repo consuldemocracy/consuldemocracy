@@ -1366,7 +1366,6 @@ nl:
           verified_users_who_didnt_vote_proposals: Verified users who didn't votes proposals
           visits: Bezoeken
           votes: Aantal stemmen
-        budgets_title: Burgerbegrotingen
         participatory_budgets: Burgerbegrotingen
         direct_messages: Privéberichten
         proposal_notifications: Voorstelnotificaties
@@ -1375,7 +1374,6 @@ nl:
         sdg: SDG
       graph:
         debate_created: Discussie
-        visit: Visits
         proposal_created: Voorstellen
       budget_balloting:
         vote_count: Votes
