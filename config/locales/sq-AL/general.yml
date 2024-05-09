@@ -569,18 +569,6 @@ sq:
     youtube: "YouTube %{org}"
     telegram: "Telegram %{org}"
     instagram: " Instagram %{org}"
-  stats:
-    index:
-      visits: Vizitat
-      debates: Debate
-      proposals: Propozime
-      comments: Komentet
-      proposal_votes: Voto propozimet
-      debate_votes: Voto debatet
-      comment_votes: Voto komentet
-      votes: Totali i votimeve
-      verified_users: Përdoruesit e verifikuar
-      unverified_users: Përdoruesit e paverifikuar
   unauthorized:
     default: Nuk ke leje për të hyrë në këtë faqe.
     manage:
