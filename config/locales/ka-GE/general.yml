@@ -733,18 +733,6 @@ ka:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: ვიზიტები
-      debates: დებატები
-      proposals: ინიციატივები
-      comments: კომენტარები
-      proposal_votes: ინიციატივებზე მიცემული ხმები
-      debate_votes: დებატებზე მიცემული ხმები
-      comment_votes: კომენტარებზე მიცემული ხმები
-      votes: ხმების საერთო რაოდენობა
-      verified_users: გადამოწმებული მომხმარებლები
-      unverified_users: გადაუმოწმებელი მომხმარებლები
   unauthorized:
     default: ამ გვერდის ნახვის უფლება არ გაქვთ.
     manage:
