@@ -741,18 +741,6 @@ he:
     youtube: "%{org} יוטיוב YouTube"
     telegram: "%{org} טלגרם Telegram"
     instagram: "%{org} אינסטגרם Instagram"
-  stats:
-    index:
-      visits: ביקורים
-      debates: דיונים
-      proposals: הצעות
-      comments: הערות
-      proposal_votes: הצבעות על הצעות
-      debate_votes: הצבעות על דיונים
-      comment_votes: הצבעות על תגובות
-      votes: סך הכל הצבעות
-      verified_users: משתמשים מאושרים
-      unverified_users: משתמשים שלא נבדקו
   unauthorized:
     default: אין לך הרשאה להיכנס לדף זה.
     manage:
