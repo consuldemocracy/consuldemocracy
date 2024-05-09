@@ -1212,7 +1212,6 @@ pl:
           verified_users_who_didnt_vote_proposals: Zweryfikowani użytkownicy, którzy nie głosowali na wnioski
           visits: Odwiedziny
           votes: Liczba głosów
-        budgets_title: Budżetowanie partycypacyjne
         participatory_budgets: Budżety partycypacyjne
         direct_messages: Bezpośrednie wiadomości
         proposal_notifications: Powiadomienie o wnioskach
@@ -1221,7 +1220,6 @@ pl:
         sdg: SDG
       graph:
         debate_created: Debaty
-        visit: Odwiedziny
         proposal_created: Propozycji obywatelskich
       budget_balloting:
         vote_count: Głosów
