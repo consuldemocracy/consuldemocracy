@@ -775,18 +775,6 @@ uk-UA:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Відвідування
-      debates: Обговорення
-      proposals: Пропозиції
-      comments: Коментарі
-      proposal_votes: Голоси за пропозиції
-      debate_votes: Голоси за обговорення
-      comment_votes: Голоси за коментарі
-      votes: Усі голоси
-      verified_users: Перевірені користувачі
-      unverified_users: Неперевірені користувачі
   unauthorized:
     default: Ви не маєте дозволу на відвідання цієї сторінки.
     manage:
