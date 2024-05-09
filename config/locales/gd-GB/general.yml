@@ -802,18 +802,6 @@ gd:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Tadhalan
-      debates: Deasbadan
-      proposals: Molaidhean
-      comments: Beachdan
-      proposal_votes: Bhòtaichean air molaidhean
-      debate_votes: Bhòtaichean air deasbadan
-      comment_votes: Bhòtaichean air beachdan
-      votes: Bhòtaichean iomlan
-      verified_users: Cleachdaichean dearbhte
-      unverified_users: Cleachdaichean gun dearbhadh
   unauthorized:
     default: Chan eil cead agad an duilleag seo inntrigeadh.
     manage:
