@@ -30,6 +30,17 @@ describe Poll::Answer do
       expect(answer).not_to be_valid
     end
 
+    it "is not valid if there's already an answer to that question" do
+      author = create(:user)
+      question = create(:poll_question, :yes_no)
+
+      create(:poll_answer, author: author, question: question)
+
+      answer = build(:poll_answer, author: author, question: question)
+
+      expect(answer).not_to be_valid
+    end
+
     it "is not valid when user already reached multiple answers question max votes" do
       author = create(:user)
       question = create(:poll_question_multiple, :abc, max_votes: 2)
@@ -38,20 +49,6 @@ describe Poll::Answer do
       answer = build(:poll_answer, author: author, question: question, answer: "Answer C")
 
       expect(answer).not_to be_valid
-    end
-
-    it "validates max votes when creating answers at the same time", :race_condition do
-      author = create(:user, :level_two)
-      question = create(:poll_question_multiple, :abc, max_votes: 2)
-      create(:poll_answer, question: question, answer: "Answer A", author: author)
-      answer = build(:poll_answer, question: question, answer: "Answer B", author: author)
-      other_answer = build(:poll_answer, question: question, answer: "Answer C", author: author)
-
-      [answer, other_answer].map do |a|
-        Thread.new { a.save }
-      end.each(&:join)
-
-      expect(Poll::Answer.count).to be 2
     end
 
     it "is valid for answers included in the Poll::Question's question_options list" do
@@ -65,6 +62,36 @@ describe Poll::Answer do
       expect(build(:poll_answer, question: question, answer: "Three")).to be_valid
 
       expect(build(:poll_answer, question: question, answer: "Four")).not_to be_valid
+    end
+
+    context "creating answers at the same time", :race_condition do
+      it "validates max votes on single-answer questions" do
+        author = create(:user)
+        question = create(:poll_question, :yes_no)
+
+        answer = build(:poll_answer, author: author, question: question, answer: "Yes")
+        other_answer = build(:poll_answer, author: author, question: question, answer: "No")
+
+        [answer, other_answer].map do |poll_answer|
+          Thread.new { poll_answer.save }
+        end.each(&:join)
+
+        expect(Poll::Answer.count).to be 1
+      end
+
+      it "validates max votes on multiple-answer questions" do
+        author = create(:user, :level_two)
+        question = create(:poll_question_multiple, :abc, max_votes: 2)
+        create(:poll_answer, question: question, answer: "Answer A", author: author)
+        answer = build(:poll_answer, question: question, answer: "Answer B", author: author)
+        other_answer = build(:poll_answer, question: question, answer: "Answer C", author: author)
+
+        [answer, other_answer].map do |poll_answer|
+          Thread.new { poll_answer.save }
+        end.each(&:join)
+
+        expect(Poll::Answer.count).to be 2
+      end
     end
   end
 
@@ -92,14 +119,14 @@ describe Poll::Answer do
 
       expect(poll.reload.voters.size).to eq(1)
 
-      answer = create(:poll_answer, question: question, author: author, answer: "No")
-      answer.save_and_record_voter_participation
+      updated_answer = answer.question.find_or_initialize_user_answer(answer.author, "No")
+      updated_answer.save_and_record_voter_participation
 
       expect(poll.reload.voters.size).to eq(1)
 
       voter = poll.voters.first
-      expect(voter.document_number).to eq(answer.author.document_number)
-      expect(voter.poll_id).to eq(answer.poll.id)
+      expect(voter.document_number).to eq(updated_answer.author.document_number)
+      expect(voter.poll_id).to eq(updated_answer.poll.id)
     end
 
     it "does not save the answer if the voter is invalid" do
@@ -111,6 +138,22 @@ describe Poll::Answer do
       end.to raise_error(ActiveRecord::RecordInvalid)
 
       expect(answer).not_to be_persisted
+    end
+
+    it "does not create two voters when creating two answers at the same time", :race_condition do
+      answer = build(:poll_answer, question: question, author: author, answer: "Yes")
+      other_answer = build(:poll_answer, question: question, author: author, answer: "No")
+
+      [answer, other_answer].map do |poll_answer|
+        Thread.new do
+          begin
+            poll_answer.save_and_record_voter_participation
+          rescue ActiveRecord::RecordInvalid
+          end
+        end
+      end.each(&:join)
+
+      expect(Poll::Voter.count).to be 1
     end
   end
 

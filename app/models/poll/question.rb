@@ -28,7 +28,7 @@ class Poll::Question < ApplicationRecord
   accepts_nested_attributes_for :question_options, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :votation_type
 
-  delegate :max_votes, :multiple?, :vote_type, to: :votation_type, allow_nil: true
+  delegate :multiple?, :vote_type, to: :votation_type, allow_nil: true
 
   scope :by_poll_id,    ->(poll_id) { where(poll_id: poll_id) }
 
@@ -88,6 +88,14 @@ class Poll::Question < ApplicationRecord
 
   def unique?
     votation_type.nil? || votation_type.unique?
+  end
+
+  def max_votes
+    if multiple?
+      votation_type.max_votes
+    else
+      1
+    end
   end
 
   def find_or_initialize_user_answer(user, title)
