@@ -733,18 +733,6 @@ oc:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: De visitas
-      debates: De debats
-      proposals: De proposicions ciutadanas
-      comments: De comentaris
-      proposal_votes: De vòts en proposicions
-      debate_votes: De vòts en debats
-      comment_votes: De vòts en comentaris
-      votes: De vòts
-      verified_users: d'Usatgièrs verificats
-      unverified_users: d'Usatgièrs sens verificar
   unauthorized:
     default: Pas tibat permís per accedir a aquela pagina.
     manage:
