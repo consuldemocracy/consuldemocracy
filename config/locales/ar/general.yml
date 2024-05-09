@@ -773,18 +773,6 @@ ar:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: الزيارات
-      debates: النقاشات
-      proposals: إقتراحات
-      comments: تعليقات
-      proposal_votes: التصويت على المقترحات
-      debate_votes: الأصوات على المناقشات
-      comment_votes: الأصوات على التعليقات
-      votes: مجموع الأصوات
-      verified_users: مستخدمين تم التحقق منهم
-      unverified_users: مستخدمين غير متحقق منهم
   unauthorized:
     default: ليس لديك الصلاحية لدخول هذه الصفحة.
     manage:
