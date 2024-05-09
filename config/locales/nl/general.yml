@@ -660,18 +660,6 @@ nl:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Bezoeken
-      debates: Debatten
-      proposals: Voorstellen
-      comments: Reacties
-      proposal_votes: Stemmen op voorstellen
-      debate_votes: Stemmen op debatten
-      comment_votes: Stemmen op reacties
-      votes: Total votes
-      verified_users: Verified users
-      unverified_users: Unverified users
   unauthorized:
     default: U heeft geen toestemming deze pagina te bezoeken.
     manage:
