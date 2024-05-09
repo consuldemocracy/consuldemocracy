@@ -733,18 +733,6 @@ ca:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Visites
-      debates: Debats
-      proposals: Propostes ciutadanes
-      comments: Comentarios
-      proposal_votes: Vots en propostes
-      debate_votes: Vots en debats
-      comment_votes: Vots en comentario
-      votes: Vots
-      verified_users: Usuaris verificats
-      unverified_users: Usuaris sense verificar
   unauthorized:
     default: No tens permís per a accedir a aquesta pàgina.
     manage:
