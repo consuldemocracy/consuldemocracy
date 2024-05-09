@@ -1435,7 +1435,6 @@ fr:
           verified_users_who_didnt_vote_proposals: Utilisateurs vérifiés n'ayant pas voté des propositions
           visits: Visites
           votes: Total des votes
-        budgets_title: Budget participatif
         participatory_budgets: Budgets participatifs
         direct_messages: Messages privés
         proposal_notifications: Notifications des propositions
@@ -1444,8 +1443,6 @@ fr:
         sdg: ODD
       graph:
         debate_created: Débats
-        visit: Visites
-        level_2_user: Utilisateurs de niveau 2
         proposal_created: Propositions citoyennes
       budgets:
         no_data_before_balloting_phase: "Il n'y a aucune donnée à afficher tant que la phase de vote n'est pas ouverte."
