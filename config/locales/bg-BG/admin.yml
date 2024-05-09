@@ -1367,7 +1367,6 @@ bg:
           verified_users_who_didnt_vote_proposals: Проверени потребители, които не са гласували предложения
           visits: Посещения
           votes: Общо гласове
-        budgets_title: Граждански бюджет
         participatory_budgets: Граждански бюджети
         direct_messages: Директно съобщение
         proposal_notifications: Известия за предложения
@@ -1376,8 +1375,6 @@ bg:
         sdg: Цели за устойчиво развитие
       graph:
         debate_created: Дискусии
-        visit: Посещения
-        level_2_user: Потребители от ниво 2
         proposal_created: Граждански предложения
       budgets:
         no_data_before_balloting_phase: "Няма данни, които да се показват преди фазата на гласуване."
