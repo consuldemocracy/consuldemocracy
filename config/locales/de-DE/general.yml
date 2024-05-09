@@ -756,18 +756,6 @@ de:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegramm"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Besuche
-      debates: Diskussionen
-      proposals: Vorschläge
-      comments: Kommentare
-      proposal_votes: Bewertungen der Vorschläge
-      debate_votes: Bewertungen der Diskussionen
-      comment_votes: Bewertungen der Kommentare
-      votes: Gesamtstimmen
-      verified_users: Verifizierte Benutzer*innen
-      unverified_users: Nicht verifizierte Benutzer*innen
   unauthorized:
     default: Sie sind nicht berechtigt, auf diese Seite zuzugreifen.
     manage:
