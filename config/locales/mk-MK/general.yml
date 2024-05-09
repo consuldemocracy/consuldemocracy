@@ -256,11 +256,6 @@ mk:
     documentation: Дополнителна документација
     recommended_index:
       title: Препораки
-  stats:
-    index:
-      debates: Дебати
-      proposals: Предлози
-      comments: Коментари
   users:
     show:
       proposals: Предлози
