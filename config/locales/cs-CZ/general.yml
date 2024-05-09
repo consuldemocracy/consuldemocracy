@@ -784,18 +784,6 @@ cs:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Návštěvy
-      debates: Debaty
-      proposals: Návrhy
-      comments: Komentáře
-      proposal_votes: Hlasujte o návrzích
-      debate_votes: Hlasování k debatám
-      comment_votes: Hlasování ke komentářům
-      votes: Hlasů celkem
-      verified_users: Ověření uživatelé
-      unverified_users: Neověření uživatelé
   unauthorized:
     default: Nemáte oprávnění k přístupu na tuto stránku.
     manage:
