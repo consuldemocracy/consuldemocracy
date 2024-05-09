@@ -94,8 +94,6 @@ gl:
       allow_attached_documents_description: "Permite aos usuarios a subida de documentos cando crean propostas e proxectos de investimento nos Orzamentos Participativos"
       guides: "Guías para crear propostas ou proxectos de investimento"
       guides_description: "Amosa unha guía coas diferenzas entre propostas e proxectos de investimento se hai un orzamento participativo activo"
-      public_stats: "Estatísticas públicas"
-      public_stats_description: "Amosa as estatísticas públicas no panel de administración"
       help_page: "Páxina de axuda"
       help_page_description: 'Amosa un menú de axuda que contén unha páxina con información sobre cada unha das características habilitadas'
     map:
