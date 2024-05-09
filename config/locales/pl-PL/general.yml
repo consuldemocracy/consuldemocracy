@@ -613,18 +613,6 @@ pl:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Odwiedziny
-      debates: Debaty
-      proposals: Zrealizowane projekty
-      comments: Komentarze
-      proposal_votes: Głosy na propozycje
-      debate_votes: Głosy na debaty
-      comment_votes: Głosy na komentarze
-      votes: Liczba głosów
-      verified_users: Zweryfikowani użytkownicy
-      unverified_users: Niezweryfikowani użytkownicy
   unauthorized:
     default: Nie masz uprawnień dostępu do tej strony.
     manage:
