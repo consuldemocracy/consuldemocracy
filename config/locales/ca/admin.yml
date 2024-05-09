@@ -1318,7 +1318,6 @@ ca:
           verified_users_who_didnt_vote_proposals: Usuaris verificats que no han votat propostes
           visits: Visites
           votes: Vots
-        budgets_title: Pressupostos ciutadans
         participatory_budgets: Pressupostos participatius
         direct_messages: missatges directes
         proposal_notifications: Notificacions de propostes
@@ -1326,8 +1325,6 @@ ca:
         polls: votacions
       graph:
         debate_created: Debats
-        visit: Visites
-        level_2_user: Usuaris de nivell 2
         proposal_created: Propostes ciutadanes
       budgets:
         no_data_before_balloting_phase: "No hi ha dades que es mostrin abans de la fase de votacions."
