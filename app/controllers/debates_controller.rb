@@ -19,6 +19,17 @@ class DebatesController < ApplicationController
   helper_method :resource_model, :resource_name
   respond_to :html, :js
 
+  def create
+    @debate = Debate.new(debate_params)
+    @debate.author = current_user
+
+    if @debate.save
+      redirect_to debate_path(@debate), notice: t("flash.actions.create.debate")
+    else
+      render :new
+    end
+  end
+
   def index_customization
     @featured_debates = @debates.featured
   end

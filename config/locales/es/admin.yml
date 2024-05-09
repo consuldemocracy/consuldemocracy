@@ -1480,7 +1480,6 @@ es:
           verified_users_who_didnt_vote_proposals: Usuarios verificados que no han votado propuestas
           visits: Visitas
           votes: Votos
-        budgets_title: Presupuestos participativos
         participatory_budgets: Presupuestos Participativos
         direct_messages: Mensajes directos
         proposal_notifications: Notificaciones de propuestas
@@ -1488,10 +1487,15 @@ es:
         polls: Votaciones
         sdg: ODS
       graph:
-        debate_created: Debates
+        budget_investment_created: Proyectos de gasto creados
+        budget_investment_supported: Proyectos de gasto apoyados
+        debate_created: Debates creados
+        legislation_annotation_created: Anotaciones creadas
+        legislation_answer_created: Repuestas de legislación colaborativa creadas
+        level_3_user: Usuarios de nivel 3 verificados
+        proposal_created: Propuestas Ciudadanas creadas
+        title: Gráficos
         visit: Visitas
-        level_2_user: Usuarios nivel 2
-        proposal_created: Propuestas Ciudadanas
       budgets:
         no_data_before_balloting_phase: "No hay datos que mostrar hasta que la fase de votación no esté abierta."
         title: "Presupuestos participativos - Estadisticas de participación"

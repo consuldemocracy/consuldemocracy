@@ -28,4 +28,8 @@ class Admin::Stats::BudgetSupportingComponent < ApplicationComponent
         [heading, headings_stats[heading.id][:total_participants_support_phase]]
       end
     end
+
+    def chart
+      @chart ||= Ahoy::Chart.new("budget_investment_supported")
+    end
 end

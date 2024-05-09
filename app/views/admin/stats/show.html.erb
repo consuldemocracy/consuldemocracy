@@ -1,3 +1,7 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "stat_graphs", "data-turbolinks-track" => "reload" %>
+<% end %>
+
 <div id="stats" class="stats">
   <div class="row">
     <div class="small-12 column">
@@ -24,7 +28,7 @@
         <div class="small-12 medium-3 column">
           <p class="featured">
             <%= link_to t("admin.stats.show.summary.visits"),
-                        graph_admin_stats_path(id: "visits", count: @visits) %> <br>
+                        graph_admin_stats_path(event: "visits") %> <br>
             <span class="number"><%= number_with_delimiter(@visits) %></span>
           </p>
           <p>
@@ -110,21 +114,7 @@
 
       </div>
 
-      <div class="small-12 column">
-        <% @event_types.each do |event| %>
-          <h3>
-            <%= link_to graph_link_text(event),
-                        graph_admin_stats_path(event: event) %>
-          </h3>
-        <% end %>
-      </div>
-
-      <% if feature?(:budgets) %>
-        <div class="small-12 column">
-          <h2><%= t "admin.stats.show.budgets_title" %></h2>
-          <%= budget_investments_chart_tag id: "budget_investments" %>
-        </div>
-      <% end %>
+      <%= render Admin::Stats::GlobalChartComponent.new %>
     </div>
   </div>
 </div>
