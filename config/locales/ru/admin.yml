@@ -1285,7 +1285,6 @@ ru:
           verified_users_who_didnt_vote_proposals: Верифицированные пользователи, не голосовавшие за предложения
           visits: Посещения
           votes: Всего голосов
-        budgets_title: Партисипаторное бюджетирование
         participatory_budgets: Совместные бюджеты
         direct_messages: Прямые сообщения
         proposal_notifications: Уведомления о предложениях
@@ -1293,8 +1292,6 @@ ru:
         polls: Опросы
       graph:
         debate_created: Дебаты
-        visit: Посещения
-        level_2_user: Пользователи второго уровня
         proposal_created: Предложения граждан
       budgets:
         title: "Совместные бюджеты - Статистика участия"
