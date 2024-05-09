@@ -531,18 +531,6 @@ id:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Mengunjungi
-      debates: Perdebatan
-      proposals: Proposal
-      comments: Komentar
-      proposal_votes: Suara pada proposal
-      debate_votes: Suara pada perdebatan
-      comment_votes: Suara pada komentar
-      votes: Total suara
-      verified_users: Pengguna diverifikasi
-      unverified_users: Pengguna yang belum diverifikasi
   unauthorized:
     default: Anda tidak memiliki izin untuk mengakses halaman ini.
     manage:
