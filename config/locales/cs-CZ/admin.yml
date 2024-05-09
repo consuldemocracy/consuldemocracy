@@ -1484,7 +1484,6 @@ cs:
           verified_users_who_didnt_vote_proposals: Počet ověřených uživatelů, kteří nehlasovali o návrzích
           visits: Návštěvy
           votes: Hlasů celkem
-        budgets_title: Participativní rozpočtování
         participatory_budgets: Participativní rozpočty
         direct_messages: Soukromé zprávy
         proposal_notifications: Upozornění k návrhům
@@ -1493,8 +1492,6 @@ cs:
         sdg: SDG
       graph:
         debate_created: Debaty
-        visit: Návštěvy
-        level_2_user: Počet uživatelů druhé úrovně
         proposal_created: Návrhy občanů
       budgets:
         no_data_before_balloting_phase: "Před fází hlasování nejsou k dispozici žádné údaje."
