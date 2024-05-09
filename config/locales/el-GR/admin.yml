@@ -1290,7 +1290,6 @@ el:
           verified_users_who_didnt_vote_proposals: Επαληθευμένοι χρήστες που δεν ψήφισαν προτάσεις
           visits: Επισκέψεις
           votes: Συνολικοί ψήφοι
-        budgets_title: Συμμετοχικός προϋπολογισμός
         participatory_budgets: Συμμετοχικοί προϋπολογισμοί
         direct_messages: Άμεσα μηνύματα
         proposal_notifications: Ειδοποιήσεις προτάσεων
@@ -1299,8 +1298,6 @@ el:
         sdg: ΣΒΑ
       graph:
         debate_created: Συζητήσεις
-        visit: Επισκέψεις
-        level_2_user: Χρήστες δεύτερου επιπέδου
         proposal_created: Προτάσεις πολιτών
       budgets:
         title: "Συμμετοχικοί Προϋπολογισμοί - Στατιστικά Συμμετοχής"
