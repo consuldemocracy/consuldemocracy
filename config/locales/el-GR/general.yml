@@ -703,18 +703,6 @@ el:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Επισκέψεις
-      debates: Συζητήσεις
-      proposals: Προτάσεις
-      comments: Σχόλια
-      proposal_votes: Ψήφοι προτάσεων
-      debate_votes: Ψήφοι συζητήσεων
-      comment_votes: Ψήφοι σχολίων
-      votes: Συνολικοί ψήφοι
-      verified_users: Επαληθευμένοι χρήστες
-      unverified_users: Μη επαληθευμένοι χρήστες
   unauthorized:
     default: Δεν έχετε δικαίωμα πρόσβασης σε αυτήν τη σελίδα.
     manage:
