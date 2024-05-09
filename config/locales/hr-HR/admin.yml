@@ -1323,7 +1323,6 @@ hr:
           verified_users_who_didnt_vote_proposals: Potvrđeni korisnici koji nisu glasali za prijedloge
           visits: Broj posjeta
           votes: Ukupno glasova
-        budgets_title: Participativno budžetiranje
         participatory_budgets: Participativni Budžeti
         direct_messages: Izravne poruke
         proposal_notifications: Obavijesti prijedloga
@@ -1331,8 +1330,6 @@ hr:
         polls: Glasanja
       graph:
         debate_created: Rasprave
-        visit: Broj posjeta
-        level_2_user: Razina 2 korisnika
         proposal_created: Prijedlozi građana
       budgets:
         no_data_before_balloting_phase: "Nema podataka za prikaz prije faze glasovanja."
