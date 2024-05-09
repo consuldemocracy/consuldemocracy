@@ -116,8 +116,6 @@ cs:
       allow_attached_documents_description: "Umožnit uživatelům nahrát dokumenty v sekci participativní rozpočet při vytváření návrhů a investičních projektů"
       guides: "Zobrazit návod pro vytváření návrhů nebo investičních projektů"
       guides_description: "Zobrazit průvodce rozdílů mezi návrhy a investičními projekty, pokud je aktivní participativní rozpočet"
-      public_stats: "Veřejné statistiky"
-      public_stats_description: "Zobrazit veřejné statistiky v panelu Administrace"
       help_page: "Stránka nápovědy"
       help_page_description: 'Zobrazí nabídku Nápověda obsahující stránku s informacemi o každé povolené funkci'
       remote_translations: "Vzdálený překlad"
