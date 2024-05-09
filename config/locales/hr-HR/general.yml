@@ -754,18 +754,6 @@ hr:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Broj posjeta
-      debates: Rasprave
-      proposals: Prijedlozi
-      comments: Komentari
-      proposal_votes: Glasovi za prijedlog
-      debate_votes: Glasovi za debate
-      comment_votes: Glasovi za komentare
-      votes: Totalno glasova
-      verified_users: Potvrđeni korisnici
-      unverified_users: Korisnici koji nisu potvrđeni
   unauthorized:
     default: Nemate pristup ovoj stranici.
     manage:
