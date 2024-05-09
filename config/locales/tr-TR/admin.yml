@@ -1480,7 +1480,6 @@ tr:
           verified_users_who_didnt_vote_proposals: Doğrulanmış ama önergelere oy vermemiş kullanıcılar
           visits: Ziyaretler
           votes: Toplam oy
-        budgets_title: Katılımcı bütçeleme
         participatory_budgets: Katılımcı bütçeler
         direct_messages: Doğrudan iletiler
         proposal_notifications: Önerge bildirimleri
@@ -1489,9 +1488,7 @@ tr:
         sdg: SKA
       graph:
         debate_created: Tartışmalar
-        visit: Ziyaretler
-        level_2_user: 2. düzey kullanıcılar
-        proposal_created: Yurttaş önergeleri
+        proposal_created: Vatandaş önerileri
       budgets:
         no_data_before_balloting_phase: "Oy kullanma aşamasından önce görüntülenecek bir veri yok."
         title: "Katılımcı bütçeler - Katılım istatistikleri"
