@@ -563,18 +563,6 @@ zh-CN:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram（电报群）"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: 访问
-      debates: 辩论
-      proposals: 提议
-      comments: 评论
-      proposal_votes: 提议的投票数
-      debate_votes: 辩论的投票数
-      comment_votes: 评论的投票数
-      votes: 总投票数
-      verified_users: 已验证的用户
-      unverified_users: 未验证的用户
   unauthorized:
     default: 您没有权限访问此页面。
     manage:
