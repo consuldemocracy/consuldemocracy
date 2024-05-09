@@ -116,8 +116,6 @@ tr:
       allow_attached_documents_description: "Kullanıcıların önergeler ve katılımcı bütçelerin yatırım projelerini oluştururken belgeler yüklemesini sağlar"
       guides: "Önergeler veya yatırım projeleri oluşturma rehberleri"
       guides_description: "Etkin bir katılımcı bütçe varsa, önergeler ve yatırım projeleri arasındaki farklılıkları anlatan bir rehber görüntüler"
-      public_stats: "Herkese açık istatistikler"
-      public_stats_description: "Yönetim panosunda herkese istatistikleri görüntüler"
       help_page: "Yardım sayfası"
       help_page_description: 'Açılan her özellik hakkında bilgi veren bir sayfa içeren bir Yardım menüsü görüntüler. Ayrıca "Özel sayfalar" ve "Özel içerik blokları" bölümlerinden özel sayfalar ve menüler oluşturulabilir'
       remote_translations: "Uzaktan çeviri"
