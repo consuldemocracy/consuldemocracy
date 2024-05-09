@@ -92,8 +92,6 @@ zh-CN:
       allow_attached_documents_description: "允许用户在参与性预算中创建提议和投资项目时上传文档"
       guides: "创建提议或投资项目的指南"
       guides_description: "如果已存在有效的参与性预算，则显示提议和投资项目之间差异的指南"
-      public_stats: "公众统计数据"
-      public_stats_description: "在管理面板中显示公众统计数据"
       help_page: "帮助页面"
       help_page_description: '显示帮助菜单，其中包含一个页面，它含有每个已启用功能的资讯'
     map:
