@@ -1480,7 +1480,6 @@ sv:
           verified_users_who_didnt_vote_proposals: Verifierade användare som inte röstat på något förslag
           visits: Visningar
           votes: Totalt antal röster
-        budgets_title: Medborgarbudgetar
         participatory_budgets: Medborgarbudgetar
         direct_messages: Direktmeddelanden
         proposal_notifications: Aviseringar om förslag
@@ -1489,8 +1488,6 @@ sv:
         sdg: Globala målen
       graph:
         debate_created: Debatter
-        visit: Visningar
-        level_2_user: Användare nivå två
         proposal_created: Medborgarförslag
       budgets:
         no_data_before_balloting_phase: "Det finns inga data att visa före röstfasen."
