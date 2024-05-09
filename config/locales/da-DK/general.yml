@@ -758,18 +758,6 @@ da:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Besøg
-      debates: Debatindlæg
-      proposals: Borgerforslag
-      comments: Kommentarer
-      proposal_votes: Stemmer på forslag
-      debate_votes: Stemmer på debatindlæg
-      comment_votes: Stemmer på kommentarer
-      votes: Sammenlagt antal stemmer
-      verified_users: Verificerede brugere
-      unverified_users: Ikke verificerede brugere
   unauthorized:
     default: Du har ikke tilladelse til at tilgå denne side.
     manage:
