@@ -758,18 +758,6 @@ it:
     youtube: "YouTube di %{org}"
     telegram: "Telegram di %{org}"
     instagram: "Instagram di %{org}"
-  stats:
-    index:
-      visits: Visite
-      debates: Dibattiti
-      proposals: Proposte
-      comments: Commenti
-      proposal_votes: Voti su proposte
-      debate_votes: Voti su dibattiti
-      comment_votes: Voti su commenti
-      votes: Voti totali
-      verified_users: Utenti verificati
-      unverified_users: Utenti non verificati
   unauthorized:
     default: Non hai l’autorizzazione per accedere a questa pagina.
     manage:
