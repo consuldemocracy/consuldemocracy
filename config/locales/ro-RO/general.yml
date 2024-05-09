@@ -763,18 +763,6 @@ ro:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Vizite
-      debates: Dezbateri
-      proposals: Propuneri
-      comments: Comentarii
-      proposal_votes: Votează propuneri
-      debate_votes: Votează dezbateri
-      comment_votes: Votează pe comentarii
-      votes: Voturi totale
-      verified_users: Utilizatori verificați
-      unverified_users: Utilizatori neverificați
   unauthorized:
     default: Nu aveți permisiune să accesați această pagină.
     manage:
