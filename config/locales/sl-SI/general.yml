@@ -499,18 +499,6 @@ sl:
       list: Seznam
     recommended_index:
       title: Priporočila
-  stats:
-    index:
-      visits: Obiski
-      debates: Razprave
-      proposals: Predlogi
-      comments: Komentarji
-      proposal_votes: Glasovi o predlogih
-      debate_votes: Glasovi o razpravah
-      comment_votes: Glasovi na komentarjih
-      votes: Skupaj glasov
-      verified_users: Preverjenih uporabnikov
-      unverified_users: Nepreverjenih uporabnikov
   unauthorized:
     default: Nimaš dovoljenja za obisk te strani.
     manage:
