@@ -667,18 +667,6 @@ gl:
     youtube: "%{org} YouTube"
     telegram: "Telegram de %{org}"
     instagram: "Instagram de %{org}"
-  stats:
-    index:
-      visits: Visitas
-      debates: Debates
-      proposals: Propostas cidadás
-      comments: Comentarios
-      proposal_votes: Votos en propostas
-      debate_votes: Votos en debates
-      comment_votes: Votos en comentarios
-      votes: Votos
-      verified_users: Usuarios verificados
-      unverified_users: Usuarios sen verificar
   unauthorized:
     default: Non tes permiso para acceder a esta páxina.
     manage:
