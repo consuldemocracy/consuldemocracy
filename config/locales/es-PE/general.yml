@@ -524,18 +524,6 @@ es-PE:
     youtube: "YouTube de %{org}"
     telegram: "Telegram de %{org}"
     instagram: "Instagram de %{org}"
-  stats:
-    index:
-      visits: Visitas
-      debates: Discusiones
-      proposals: Propuestas
-      comments: Comentarios
-      proposal_votes: Votos en propuestas
-      debate_votes: Votos en debates
-      comment_votes: Votos en comentarios
-      votes: Votos
-      verified_users: Usuarios verificados
-      unverified_users: Usuarios sin verificar
   unauthorized:
     default: Você não possui permissão de acesso a esta página.
     manage:
