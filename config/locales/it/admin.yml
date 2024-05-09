@@ -1468,7 +1468,6 @@ it:
           verified_users_who_didnt_vote_proposals: Utenti verificati che non hanno votato proposte
           visits: Visite
           votes: Voti totali
-        budgets_title: Bilancio partecipativo
         participatory_budgets: Bilanci partecipativi
         direct_messages: Messaggi diretti
         proposal_notifications: Notifiche di proposta
@@ -1477,8 +1476,6 @@ it:
         sdg: SDG
       graph:
         debate_created: Dibattiti
-        visit: Visite
-        level_2_user: Utenti di livello 2
         proposal_created: Proposte del cittadino
       budgets:
         no_data_before_balloting_phase: "Non ci sono dati da mostrare prima della fase di ballottaggio."
