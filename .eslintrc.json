@@ -11,8 +11,7 @@
     "annotator": "readonly",
     "c3": "readonly",
     "CKEDITOR": "readonly",
-    "L": "readonly",
-    "Turbolinks": "readonly"
+    "L": "readonly"
   },
   "parserOptions": {
     "ecmaVersion": 5

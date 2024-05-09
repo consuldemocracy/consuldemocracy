@@ -239,11 +239,6 @@
       });
 
       App.LegislationAnnotatable.initCommentFormToggler();
-    },
-    destroy: function() {
-      if ($(".legislation-annotatable").length > 0) {
-        App.LegislationAnnotatable.app.destroy();
-      }
     }
   };
 }).call(this);

@@ -43,7 +43,7 @@ describe "Public area translatable records" do
       fill_in_new_investment_title with: "My awesome project"
       fill_in_ckeditor "Description", with: "Everything is awesome!"
 
-      select "Français", from: :add_language
+      select "Français", from: "Add language"
       fill_in_new_investment_title with: "Titre en Français"
       fill_in_ckeditor "Description", with: "Contenu en Français"
 
@@ -56,7 +56,7 @@ describe "Public area translatable records" do
     scenario "Add only single translation at once not having the current locale" do
       visit new_proposal_path
       click_link "Remove language"
-      select "Français", from: :add_language
+      select "Français", from: "Add language"
 
       fill_in_new_proposal_title with: "Titre en Français"
       fill_in "Proposal summary", with: "Résumé en Français"
@@ -71,7 +71,7 @@ describe "Public area translatable records" do
 
       visit new_budget_investment_path(budget)
       click_link "Remove language"
-      select "Português brasileiro", from: :add_language
+      select "Português brasileiro", from: "Add language"
       fill_in_new_investment_title with: "Titre en Français"
       fill_in_ckeditor "Description", with: "Contenu en Français"
 
@@ -123,7 +123,7 @@ describe "Public area translatable records" do
     scenario "Select a locale and add it to the form" do
       visit new_budget_investment_path(create(:budget))
 
-      select "Français", from: :add_language
+      select "Français", from: "Add language"
 
       expect(page).to have_field "Title", with: ""
     end
@@ -147,7 +147,7 @@ describe "Public area translatable records" do
       scenario "Increase description count after add new language" do
         visit new_proposal_path
 
-        select "Español", from: :add_language
+        select "Español", from: "Add language"
 
         expect(page).to have_content "2 languages in use"
       end
@@ -195,7 +195,7 @@ describe "Public area translatable records" do
         scenario "Changes the existing translation" do
           visit path
 
-          select "Español", from: :select_language
+          select "Español", from: "Current language"
 
           fill_in "Debate title", with: "Título corregido"
           fill_in_ckeditor "Initial debate text", with: "Texto corregido"
@@ -218,7 +218,7 @@ describe "Public area translatable records" do
 
         scenario "Show validation errors" do
           visit edit_proposal_path(translatable)
-          select "Español", from: :select_language
+          select "Español", from: "Current language"
 
           expect(page).to have_field "Proposal title", with: "Título en español"
 
@@ -227,7 +227,7 @@ describe "Public area translatable records" do
 
           expect(page).to have_css "#error_explanation"
 
-          select "Español", from: :select_language
+          select "Español", from: "Current language"
 
           expect(page).to have_field "Proposal title", with: "", class: "is-invalid-input"
         end

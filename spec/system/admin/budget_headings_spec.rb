@@ -181,7 +181,7 @@ describe "Admin budget headings", :admin do
 
       visit edit_admin_budget_group_heading_path(budget, group, heading)
 
-      select "Español", from: :add_language
+      select "Español", from: "Add language"
       fill_in "Heading name", with: "Spanish name"
       click_button "Save heading"
 
@@ -193,7 +193,7 @@ describe "Admin budget headings", :admin do
 
       visit edit_admin_budget_group_heading_path(budget, group, heading)
 
-      select "English", from: :select_language
+      select "English", from: "Current language"
       fill_in "Heading name", with: "New English Name"
       click_button "Save heading"
 

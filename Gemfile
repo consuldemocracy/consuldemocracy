@@ -54,7 +54,6 @@ gem "sitemap_generator", "~> 6.3.0"
 gem "social-share-button", "~> 1.2.4"
 gem "sprockets", "~> 4.2.1"
 gem "sprockets-rails", "~> 3.4.2", require: "sprockets/railtie"
-gem "turbolinks", "~> 5.2.1"
 gem "turnout", "~> 2.5.0"
 gem "uglifier", "~> 4.2.0"
 gem "uuidtools", "~> 2.2.0"
@@ -75,6 +74,7 @@ group :development, :test do
 end
 
 group :test do
+  gem "axe-core-rspec", "~> 4.8.2", require: false
   gem "capybara", "~> 3.40.0"
   gem "capybara-webmock", "~> 0.7.0"
   gem "email_spec", "~> 2.2.2"
