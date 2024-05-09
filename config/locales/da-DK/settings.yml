@@ -112,8 +112,6 @@ da:
       allow_attached_documents_description: "Tillader brugere at overføre filer, når de opretter forslag og projektidéer til et deltagerbudget"
       guides: "Guide til oprettelse af forslag eller projektidéer"
       guides_description: "Viser en guide, der forklarer forskellen på et borgerforslag og en projektidé, hvis et deltagerbudget er aktivt"
-      public_stats: "Offentlig statistik"
-      public_stats_description: "Viser offentlig statistik i Administrationspanelet"
       help_page: "Hjælp"
       help_page_description: 'Viser en Hjælpeside, der indeholder en informationssektion omkring enhver aktiveret funktion. Derudover kan brugerdefinerede sider og sektioner oprettes under "Brugerdefinerede sider" og "Brugerdefinerede indholdsblokke"'
       remote_translations: "Fjern oversættelse"
