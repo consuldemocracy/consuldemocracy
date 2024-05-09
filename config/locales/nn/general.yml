@@ -709,18 +709,6 @@ nn:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Besøk
-      debates: Debatter
-      proposals: Forslag
-      comments: Kommentarer
-      proposal_votes: Stemmer på forslag
-      debate_votes: Stemmer på debattinnlegg
-      comment_votes: Stemmer på kommentarer
-      votes: Totalt antall stemmer
-      verified_users: Verifiserte brukere
-      unverified_users: Uverifiserte brukere
   unauthorized:
     default: Du har ikke tilgang til denne siden.
     manage:
