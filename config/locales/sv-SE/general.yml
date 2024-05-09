@@ -760,18 +760,6 @@ sv:
     youtube: "%{org} på YouTube"
     telegram: "%{org} på Telegram"
     instagram: "%{org} på Instagram"
-  stats:
-    index:
-      visits: Visningar
-      debates: Debatter
-      proposals: Förslag
-      comments: Kommentarer
-      proposal_votes: Röster på förslag
-      debate_votes: Röster på debatter
-      comment_votes: Röster på kommentarer
-      votes: Totalt antal röster
-      verified_users: Verifierade användare
-      unverified_users: Ej verifierade användare
   unauthorized:
     default: Du har inte behörighet att komma åt sidan.
     manage:
