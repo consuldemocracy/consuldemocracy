@@ -737,18 +737,6 @@ ru:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: посещения
-      debates: Обсуждения проблем
-      proposals: Заявки
-      comments: Комментарии
-      proposal_votes: Голоса по предложениям
-      debate_votes: Голоса по дебатам
-      comment_votes: Голоса по комментариям
-      votes: Всего голосов
-      verified_users: Верифицированные пользователи
-      unverified_users: Неверифицированные пользователи
   unauthorized:
     default: У вас нет разрешения, чтобы видеть эту страницу.
     manage:
