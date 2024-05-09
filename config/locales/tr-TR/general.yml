@@ -760,18 +760,6 @@ tr:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Ziyaretler
-      debates: Tartışmalar
-      proposals: Önergeler
-      comments: Yorumlar
-      proposal_votes: Önergelere verilen oylar
-      debate_votes: Tartışma oyları
-      comment_votes: Yorum oyları
-      votes: Toplam oy
-      verified_users: Doğrulanmış kullanıcılar
-      unverified_users: Doğrulanmamış kullanıcılar
   unauthorized:
     default: Bu sayfaya erişim izniniz yok.
     manage:
