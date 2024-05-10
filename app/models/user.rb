@@ -289,13 +289,11 @@ class User < ApplicationRecord
   def take_votes_from(other_user)
     return if other_user.blank?
 
-    with_lock do
-      Poll::Voter.where(user_id: other_user.id).find_each do |poll_voter|
-        if Poll::Voter.where(poll: poll_voter.poll, user_id: id).any?
-          poll_voter.delete
-        else
-          poll_voter.update_column(:user_id, id)
-        end
+    Poll::Voter.where(user_id: other_user.id).find_each do |poll_voter|
+      if Poll::Voter.where(poll: poll_voter.poll, user_id: id).any?
+        poll_voter.delete
+      else
+        poll_voter.update_column(:user_id, id)
       end
     end
 
