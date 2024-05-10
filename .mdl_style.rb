@@ -7,3 +7,4 @@ exclude_rule "MD041"
 exclude_rule "MD046"
 
 rule "MD007", indent: 2
+rule "MD026", punctuation: ".,;:!"
