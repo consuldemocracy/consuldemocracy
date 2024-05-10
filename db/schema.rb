@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_03_13_014205) do
+ActiveRecord::Schema[7.1].define(version: 2025_08_14_122241) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -1209,6 +1209,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_13_014205) do
     t.index ["officer_assignment_id"], name: "index_poll_voters_on_officer_assignment_id"
     t.index ["poll_id", "document_number", "document_type"], name: "doc_by_poll"
     t.index ["poll_id"], name: "index_poll_voters_on_poll_id"
+    t.index ["user_id", "poll_id"], name: "index_poll_voters_on_user_id_and_poll_id", unique: true
     t.index ["user_id"], name: "index_poll_voters_on_user_id"
   end
 

@@ -33,8 +33,7 @@ describe Poll::Voter do
 
       voter = build(:poll_voter, user: user, poll: poll)
 
-      expect(voter).not_to be_valid
-      expect(voter.errors.messages[:user_id]).to eq(["User has already voted"])
+      expect { voter.save }.to raise_error ActiveRecord::RecordNotUnique
     end
 
     it "is not valid if the user has already voted in the same poll/booth" do
@@ -42,8 +41,7 @@ describe Poll::Voter do
 
       voter = build(:poll_voter, user: user, poll: poll, booth_assignment: booth_assignment)
 
-      expect(voter).not_to be_valid
-      expect(voter.errors.messages[:user_id]).to eq(["User has already voted"])
+      expect { voter.save }.to raise_error ActiveRecord::RecordNotUnique
     end
 
     it "is not valid if the user has already voted in different booth in the same poll" do
@@ -51,8 +49,7 @@ describe Poll::Voter do
 
       voter = build(:poll_voter, :from_booth, user: user, poll: poll, booth: booth)
 
-      expect(voter).not_to be_valid
-      expect(voter.errors.messages[:user_id]).to eq(["User has already voted"])
+      expect { voter.save }.to raise_error ActiveRecord::RecordNotUnique
     end
 
     it "is valid if the user has already voted in the same booth in different poll" do
@@ -68,8 +65,8 @@ describe Poll::Voter do
       create(:poll_voter, :from_web, user: answer.author, poll: answer.poll)
 
       voter = build(:poll_voter, poll: answer.question.poll, user: answer.author)
-      expect(voter).not_to be_valid
-      expect(voter.errors.messages[:user_id]).to eq(["User has already voted"])
+
+      expect { voter.save }.to raise_error ActiveRecord::RecordNotUnique
     end
 
     context "Skip verification is enabled" do
@@ -83,7 +80,7 @@ describe Poll::Voter do
 
         voter = build(:poll_voter, user: user, poll: poll)
 
-        expect(voter).not_to be_valid
+        expect { voter.save }.to raise_error ActiveRecord::RecordNotUnique
       end
 
       it "is valid if other users have voted in the same poll" do
@@ -144,6 +141,15 @@ describe Poll::Voter do
         voter.booth_assignment_id = nil
         voter.officer_assignment_id = nil
         expect(voter).to be_valid
+      end
+    end
+
+    describe ".create_or_find_by!" do
+      it "finds the voter when it already exists instead of failing the validation" do
+        existing_voter = Poll::Voter.create_with(origin: "web")
+                                    .create_or_find_by!(user: voter.user, poll: voter.poll)
+
+        expect(existing_voter).to eq voter
       end
     end
   end
