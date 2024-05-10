@@ -18,10 +18,10 @@ class Budget
       before_validation :set_denormalized_ids
 
       def check_enough_resources
-        ballot.lock!
-
-        unless ballot.enough_resources?(investment)
-          errors.add(:resources, ballot.not_enough_resources_error)
+        ballot.with_lock do
+          unless ballot.enough_resources?(investment)
+            errors.add(:resources, ballot.not_enough_resources_error)
+          end
         end
       end
 
