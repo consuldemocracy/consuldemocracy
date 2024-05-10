@@ -29,7 +29,7 @@ sudo apt install libssl-dev autoconf bison build-essential libyaml-dev libreadli
 A continuación instalaremos un gestor de versiones de Ruby, como rbenv:
 
 ```bash
-wget -q https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer -O- | bash
+wget -q https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-installer -O- | bash
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 source ~/.bashrc
