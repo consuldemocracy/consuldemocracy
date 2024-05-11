@@ -2,6 +2,8 @@ namespace :polls do
   desc "Removes duplicate poll voters"
   task remove_duplicate_voters: :environment do
     logger = ApplicationLogger.new
+    duplicate_records_logger = DuplicateRecordsLogger.new
+
     logger.info "Removing duplicate voters in polls"
 
     Tenant.run_on_each do
@@ -16,10 +18,12 @@ namespace :polls do
           voter.delete
 
           tenant_info = " on tenant #{Tenant.current_schema}" unless Tenant.default?
-          logger.info "Deleted duplicate record with ID #{voter.id} " \
-                      "from the #{Poll::Voter.table_name} table " \
-                      "with user_id #{user_id} " \
-                      "and poll_id #{poll_id}" + tenant_info.to_s
+          log_message = "Deleted duplicate record with ID #{voter.id} " \
+                        "from the #{Poll::Voter.table_name} table " \
+                        "with user_id #{user_id} " \
+                        "and poll_id #{poll_id}" + tenant_info.to_s
+          logger.info(log_message)
+          duplicate_records_logger.info(log_message)
         end
       end
     end
