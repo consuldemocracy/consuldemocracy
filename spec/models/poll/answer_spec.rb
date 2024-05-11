@@ -155,6 +155,16 @@ describe Poll::Answer do
 
       expect(Poll::Voter.count).to be 1
     end
+
+    it "does not create two voters when calling the method twice at the same time", :race_condition do
+      answer = create(:poll_answer, question: question, author: author, answer: "Yes")
+
+      2.times.map do
+        Thread.new { answer.save_and_record_voter_participation }
+      end.each(&:join)
+
+      expect(Poll::Voter.count).to be 1
+    end
   end
 
   describe "#destroy_and_remove_voter_participation" do

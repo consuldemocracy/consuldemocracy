@@ -21,7 +21,8 @@ class Officing::VotersController < Officing::BaseController
                              officer: current_user.poll_officer,
                              booth_assignment: current_booth.booth_assignments.find_by(poll: @poll),
                              officer_assignment: officer_assignment(@poll))
-    @voter.save!
+
+    @user.with_lock { @voter.save! }
   end
 
   private
