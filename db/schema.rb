@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_24_013913) do
+ActiveRecord::Schema[7.0].define(version: 2024_05_11_141119) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -1208,7 +1208,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_24_013913) do
     t.integer "age"
     t.string "gender"
     t.integer "geozone_id"
-    t.integer "answer_id"
     t.integer "officer_assignment_id"
     t.integer "user_id"
     t.string "origin"
