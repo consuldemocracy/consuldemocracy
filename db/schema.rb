@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_22_223950) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_25_224146) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -94,19 +94,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_22_223950) do
     t.integer "user_id"
     t.string "description"
     t.index ["user_id"], name: "index_administrators_on_user_id"
-  end
-
-  create_table "ahoy_events", id: :uuid, default: nil, force: :cascade do |t|
-    t.uuid "visit_id"
-    t.integer "user_id"
-    t.string "name"
-    t.jsonb "properties"
-    t.datetime "time", precision: nil
-    t.string "ip"
-    t.index ["name", "time"], name: "index_ahoy_events_on_name_and_time"
-    t.index ["time"], name: "index_ahoy_events_on_time"
-    t.index ["user_id"], name: "index_ahoy_events_on_user_id"
-    t.index ["visit_id"], name: "index_ahoy_events_on_visit_id"
   end
 
   create_table "audits", id: :serial, force: :cascade do |t|
@@ -403,13 +390,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_22_223950) do
     t.string "voting_style", default: "knapsack"
     t.boolean "published"
     t.boolean "hide_money", default: false
-  end
-
-  create_table "campaigns", id: :serial, force: :cascade do |t|
-    t.string "name"
-    t.string "track_id"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
   end
 
   create_table "ckeditor_assets", id: :serial, force: :cascade do |t|
