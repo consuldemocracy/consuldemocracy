@@ -17,7 +17,6 @@ class Poll::Answer < ApplicationRecord
 
   def save_and_record_voter_participation
     transaction do
-      touch if persisted?
       save!
       Poll::Voter.find_or_create_by!(user: author, poll: poll, origin: "web")
     end
