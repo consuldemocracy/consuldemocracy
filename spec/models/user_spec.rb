@@ -744,6 +744,24 @@ describe User do
       expect(Poll::Voter.where(user: other_user).count).to eq(0)
       expect(Poll::Voter.where(user: user)).to match_array [v1, v2]
     end
+
+    it "does not reassign votes if the user has already voted" do
+      poll = create(:poll)
+      user = create(:user, :level_three)
+      other_user = create(:user, :level_three)
+
+      voter = create(:poll_voter, poll: poll, user: user)
+      other_voter = create(:poll_voter, poll: poll, user: other_user)
+      other_poll_voter = create(:poll_voter, poll: create(:poll), user: other_user)
+
+      expect(Poll::Voter.where(user: user)).to eq [voter]
+      expect(Poll::Voter.where(user: other_user)).to match_array [other_voter, other_poll_voter]
+
+      user.take_votes_from(other_user)
+
+      expect(Poll::Voter.where(user: user)).to match_array [voter, other_poll_voter]
+      expect(Poll::Voter.where(user: other_user)).to eq []
+    end
   end
 
   describe "#take_votes_if_erased_document" do
