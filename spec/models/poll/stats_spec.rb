@@ -165,6 +165,46 @@ describe Poll::Stats do
     end
   end
 
+  describe "#participants_by_age" do
+    it "returns stats based on what happened when the voting took place" do
+      travel_to(100.years.ago) do
+        [16, 18, 32, 32, 33, 34, 64, 65, 71, 73, 90, 99, 105].each do |age|
+          create(:user, date_of_birth: age.years.ago)
+        end
+
+        create(:poll, starts_at: 1.minute.from_now, ends_at: 2.minutes.from_now)
+      end
+
+      stats = Poll::Stats.new(Poll.last)
+      allow(stats).to receive(:participants).and_return(User.all)
+
+      expect(stats.participants_by_age["16 - 19"][:count]).to eq 2
+      expect(stats.participants_by_age["20 - 24"][:count]).to eq 0
+      expect(stats.participants_by_age["25 - 29"][:count]).to eq 0
+      expect(stats.participants_by_age["30 - 34"][:count]).to eq 4
+      expect(stats.participants_by_age["35 - 39"][:count]).to eq 0
+      expect(stats.participants_by_age["40 - 44"][:count]).to eq 0
+      expect(stats.participants_by_age["45 - 49"][:count]).to eq 0
+      expect(stats.participants_by_age["50 - 54"][:count]).to eq 0
+      expect(stats.participants_by_age["55 - 59"][:count]).to eq 0
+      expect(stats.participants_by_age["60 - 64"][:count]).to eq 1
+      expect(stats.participants_by_age["65 - 69"][:count]).to eq 1
+      expect(stats.participants_by_age["70 - 74"][:count]).to eq 2
+      expect(stats.participants_by_age["75 - 79"][:count]).to eq 0
+      expect(stats.participants_by_age["80 - 84"][:count]).to eq 0
+      expect(stats.participants_by_age["85 - 89"][:count]).to eq 0
+      expect(stats.participants_by_age["90 - 300"][:count]).to eq 3
+    end
+  end
+
+  describe "#participation_date", :with_frozen_time do
+    let(:poll) { create(:poll, starts_at: 3.years.ago, ends_at: 2.years.ago) }
+
+    it "returns the date when the poll finishes" do
+      expect(stats.participation_date).to eq 2.years.ago
+    end
+  end
+
   describe "#participants_by_geozone" do
     it "groups by geozones in alphabetic order" do
       %w[Oceania Eurasia Eastasia].each { |name| create(:geozone, name: name) }

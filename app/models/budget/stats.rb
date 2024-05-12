@@ -37,6 +37,10 @@ class Budget::Stats
     budget.finished?
   end
 
+  def participation_date
+    send("#{phases.last}_phase_participation_date")
+  end
+
   def total_participants
     participants.distinct.count
   end
@@ -96,6 +100,14 @@ class Budget::Stats
 
     def phase_methods
       phases.map { |phase| self.class.send("#{phase}_phase_methods") }.flatten
+    end
+
+    def support_phase_participation_date
+      budget.phases.selecting.ends_at
+    end
+
+    def vote_phase_participation_date
+      budget.phases.balloting.ends_at
     end
 
     def participant_ids

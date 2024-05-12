@@ -8,6 +8,10 @@ describe Statisticable do
       def participants
         User.all
       end
+
+      def participation_date
+        Time.current
+      end
     end
 
     stub_const("DummyStats", dummy_stats)
@@ -75,6 +79,17 @@ describe Statisticable do
 
     context "There's a participant with a defined age" do
       before { create(:user, date_of_birth: 30.years.ago) }
+
+      it "is true" do
+        expect(stats.age?).to be true
+      end
+    end
+
+    context "Partipation took place a long time ago" do
+      before do
+        create(:user, date_of_birth: 2000.years.ago)
+        allow(stats).to receive(:participation_date).and_return(1900.years.ago)
+      end
 
       it "is true" do
         expect(stats.age?).to be true
