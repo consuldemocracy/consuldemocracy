@@ -423,6 +423,21 @@ describe User do
         expect(User.by_username_email_or_document_number(" 12345678Z ")).to eq [larry]
       end
     end
+
+    describe ".between_ages" do
+      it "returns users between certain ages, including both" do
+        [21, 22, 23, 23, 42, 43, 44, 51].each do |age|
+          create(:user, date_of_birth: age.years.ago)
+        end
+
+        expect(User.between_ages(0, 20).count).to eq 0
+        expect(User.between_ages(0, 21).count).to eq 1
+        expect(User.between_ages(21, 23).count).to eq 4
+        expect(User.between_ages(24, 41).count).to eq 0
+        expect(User.between_ages(41, 45).count).to eq 3
+        expect(User.between_ages(51, 100).count).to eq 1
+      end
+    end
   end
 
   describe "self.search" do
