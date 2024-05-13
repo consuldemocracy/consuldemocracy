@@ -53,12 +53,6 @@ describe "Polymorphic routes" do
       )
     end
 
-    it "routes poll questions" do
-      question = create(:poll_question)
-
-      expect(polymorphic_path(question)).to eq question_path(question)
-    end
-
     it "routes topics" do
       community = create(:proposal).community
       topic = create(:topic, community: community)
