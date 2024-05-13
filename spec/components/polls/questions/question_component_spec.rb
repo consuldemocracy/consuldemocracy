@@ -3,9 +3,9 @@ require "rails_helper"
 describe Polls::Questions::QuestionComponent do
   it "renders more information links when any question answer has additional information" do
     question = create(:poll_question)
-    answer_a = create(:poll_question_answer, question: question, title: "Answer A")
-    answer_b = create(:poll_question_answer, question: question, title: "Answer B")
-    allow_any_instance_of(Poll::Question::Answer).to receive(:with_read_more?).and_return(true)
+    answer_a = create(:poll_question_option, question: question, title: "Answer A")
+    answer_b = create(:poll_question_option, question: question, title: "Answer B")
+    allow_any_instance_of(Poll::Question::Option).to receive(:with_read_more?).and_return(true)
 
     render_inline Polls::Questions::QuestionComponent.new(question: question)
 

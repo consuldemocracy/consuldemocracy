@@ -13,8 +13,8 @@ describe "Poll Questions" do
 
   scenario "shows answers with an image and no description" do
     poll = create(:poll)
-    answer = create(:poll_question_answer, poll: poll, title: "Pedestrian road", description: "")
-    create(:image, imageable: answer, title: "Trees on both sides of the road")
+    option = create(:poll_question_option, poll: poll, title: "Pedestrian road", description: "")
+    create(:image, imageable: option, title: "Trees on both sides of the road")
 
     visit poll_path(poll)
 

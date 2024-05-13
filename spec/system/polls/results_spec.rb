@@ -8,13 +8,13 @@ describe "Poll Results" do
 
     poll = create(:poll, results_enabled: true)
     question1 = create(:poll_question, poll: poll)
-    answer1 = create(:poll_question_answer, question: question1, title: "Yes")
-    answer2 = create(:poll_question_answer, question: question1, title: "No")
+    answer1 = create(:poll_question_option, question: question1, title: "Yes")
+    answer2 = create(:poll_question_option, question: question1, title: "No")
 
     question2 = create(:poll_question, poll: poll)
-    answer3 = create(:poll_question_answer, question: question2, title: "Blue")
-    answer4 = create(:poll_question_answer, question: question2, title: "Green")
-    answer5 = create(:poll_question_answer, question: question2, title: "Yellow")
+    answer3 = create(:poll_question_option, question: question2, title: "Blue")
+    answer4 = create(:poll_question_option, question: question2, title: "Green")
+    answer5 = create(:poll_question_option, question: question2, title: "Yellow")
 
     login_as user1
     vote_for_poll_via_web(poll, question1, "Yes")

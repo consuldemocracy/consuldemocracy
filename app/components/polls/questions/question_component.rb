@@ -6,7 +6,7 @@ class Polls::Questions::QuestionComponent < ApplicationComponent
   end
 
   def answers_read_more_links
-    safe_join(question.answers_with_read_more.map do |answer|
+    safe_join(question.options_with_read_more.map do |answer|
       link_to answer.title, "#answer_#{answer.id}"
     end, ", ")
   end

@@ -1642,7 +1642,7 @@
   }
 }
 
-.poll-question-answers {
+.poll-question-options {
   @include flex-with-gap($line-height * 0.25);
   flex-wrap: wrap;
 

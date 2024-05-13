@@ -20,7 +20,7 @@ describe "Voter" do
       login_as user
       visit poll_path(poll)
 
-      within("#poll_question_#{question.id}_answers") do
+      within("#poll_question_#{question.id}_options") do
         click_button "Vote Yes"
 
         expect(page).to have_button("You have voted Yes")
@@ -44,7 +44,7 @@ describe "Voter" do
       expect(page).to have_content("You have already participated in this poll.")
       expect(page).to have_content("If you vote again it will be overwritten")
 
-      within("#poll_question_#{question.id}_answers") do
+      within("#poll_question_#{question.id}_options") do
         click_button "You have voted Yes"
 
         expect(page).to have_button("Vote Yes")
@@ -63,7 +63,7 @@ describe "Voter" do
       login_as user
       visit poll_path(poll)
 
-      within("#poll_question_#{question.id}_answers") do
+      within("#poll_question_#{question.id}_options") do
         expect(page).to have_link("Yes", href: verification_path)
         expect(page).to have_link("No", href: verification_path)
       end
@@ -171,7 +171,7 @@ describe "Voter" do
         login_as user
         visit poll_path(poll)
 
-        within("#poll_question_#{question.id}_answers") do
+        within("#poll_question_#{question.id}_options") do
           expect(page).not_to have_button("Yes")
         end
         expect(page).to have_content "You have already participated in a physical booth. " \
@@ -211,7 +211,7 @@ describe "Voter" do
 
       visit poll_path(poll)
 
-      within("#poll_question_#{question.id}_answers") do
+      within("#poll_question_#{question.id}_options") do
         expect(page).not_to have_button("Yes")
       end
 

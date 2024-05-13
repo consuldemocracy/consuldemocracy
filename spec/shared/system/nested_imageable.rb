@@ -125,7 +125,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
     end
 
     scenario "Render image preview after sending the form with validation errors",
-             unless: imageable_factory_name == "poll_question_answer" do
+             unless: imageable_factory_name == "poll_question_option" do
       do_login_for user, management: management
       visit send(path, arguments)
 

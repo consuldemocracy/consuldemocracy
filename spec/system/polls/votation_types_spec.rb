@@ -17,7 +17,7 @@ describe "Poll Votation Type" do
     expect(page).to have_button("Vote Yes")
     expect(page).to have_button("Vote No")
 
-    within "#poll_question_#{question.id}_answers" do
+    within "#poll_question_#{question.id}_options" do
       click_button "Yes"
 
       expect(page).to have_button("You have voted Yes")
@@ -40,7 +40,7 @@ describe "Poll Votation Type" do
     expect(page).to have_button("Vote Answer B")
     expect(page).to have_button("Vote Answer C")
 
-    within "#poll_question_#{question.id}_answers" do
+    within "#poll_question_#{question.id}_options" do
       click_button "Vote Answer A"
 
       expect(page).to have_button("You have voted Answer A")
