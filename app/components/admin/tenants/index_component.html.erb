@@ -14,7 +14,7 @@
   </thead>
 
   <tbody>
-    <% @tenants.each do |tenant| %>
+    <% tenants.each do |tenant| %>
       <%= render Admin::Tenants::RowComponent.new(tenant) %>
     <% end %>
   </tbody>
