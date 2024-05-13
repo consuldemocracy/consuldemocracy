@@ -162,7 +162,7 @@ en:
     legislation/process: process
     legislation/question: question
     poll/shift: Shift
-    poll/question/answer: Answer
+    poll/question/option: Answer
     user: Account
     verification/sms: phone
     signature_sheet: Signature sheet

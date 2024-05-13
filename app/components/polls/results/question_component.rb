@@ -10,6 +10,6 @@ class Polls::Results::QuestionComponent < ApplicationComponent
   end
 
   def most_voted_answer?(answer)
-    answer.id == question.most_voted_answer_id
+    answer.id == question.most_voted_option_id
   end
 end

@@ -47,11 +47,11 @@ describe Poll::Answer do
       expect(Poll::Answer.count).to be 2
     end
 
-    it "is valid for answers included in the Poll::Question's question_answers list" do
+    it "is valid for answers included in the Poll::Question's question_options list" do
       question = create(:poll_question)
-      create(:poll_question_answer, title: "One", question: question)
-      create(:poll_question_answer, title: "Two", question: question)
-      create(:poll_question_answer, title: "Three", question: question)
+      create(:poll_question_option, title: "One", question: question)
+      create(:poll_question_option, title: "Two", question: question)
+      create(:poll_question_option, title: "Three", question: question)
 
       expect(build(:poll_answer, question: question, answer: "One")).to be_valid
       expect(build(:poll_answer, question: question, answer: "Two")).to be_valid

@@ -152,8 +152,8 @@ describe "Polls" do
 
     scenario "Buttons to slide through images work back and forth" do
       question = create(:poll_question, :yes_no, poll: poll)
-      create(:image, imageable: question.question_answers.last, title: "The no movement")
-      create(:image, imageable: question.question_answers.last, title: "No movement planning")
+      create(:image, imageable: question.question_options.last, title: "The no movement")
+      create(:image, imageable: question.question_options.last, title: "No movement planning")
 
       visit poll_path(poll)
 

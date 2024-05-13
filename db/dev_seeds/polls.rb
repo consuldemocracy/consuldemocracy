@@ -64,17 +64,17 @@ section "Creating Poll Questions & Answers" do
       question.save!
       Faker::Lorem.words(number: (2..4).to_a.sample).each_with_index do |title, index|
         description = "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>"
-        answer = Poll::Question::Answer.new(question: question,
+        option = Poll::Question::Option.new(question: question,
                                             title: title.capitalize,
                                             description: description,
                                             given_order: index + 1)
         Setting.enabled_locales.map do |locale|
           Globalize.with_locale(locale) do
-            answer.title = "#{title} (#{locale})"
-            answer.description = "#{description} (#{locale})"
+            option.title = "#{title} (#{locale})"
+            option.description = "#{description} (#{locale})"
           end
         end
-        answer.save!
+        option.save!
       end
     end
   end
@@ -160,7 +160,7 @@ section "Creating Poll Voters" do
 
       Poll::Answer.create!(question_id: question.id,
                            author: user,
-                           answer: question.question_answers.sample.title)
+                           answer: question.question_options.sample.title)
     end
   end
 
@@ -210,7 +210,7 @@ section "Creating Poll Results" do
       author = Poll::Officer.first.user
 
       poll.questions.each do |question|
-        question.question_answers.each do |answer|
+        question.question_options.each do |answer|
           Poll::PartialResult.create!(officer_assignment: officer_assignment,
                                       booth_assignment: booth_assignment,
                                       date: Date.current,
@@ -240,17 +240,17 @@ section "Creating Poll Questions from Proposals" do
     question.save!
     Faker::Lorem.words(number: (2..4).to_a.sample).each_with_index do |title, index|
       description = "<p>#{Faker::ChuckNorris.fact}</p>"
-      answer = Poll::Question::Answer.new(question: question,
+      option = Poll::Question::Option.new(question: question,
                                           title: title.capitalize,
                                           description: description,
                                           given_order: index + 1)
       Setting.enabled_locales.map do |locale|
         Globalize.with_locale(locale) do
-          answer.title = "#{title} (#{locale})"
-          answer.description = "#{description} (#{locale})"
+          option.title = "#{title} (#{locale})"
+          option.description = "#{description} (#{locale})"
         end
       end
-      answer.save!
+      option.save!
     end
   end
 end
@@ -270,17 +270,17 @@ section "Creating Successful Proposals" do
     question.save!
     Faker::Lorem.words(number: (2..4).to_a.sample).each_with_index do |title, index|
       description = "<p>#{Faker::ChuckNorris.fact}</p>"
-      answer = Poll::Question::Answer.new(question: question,
+      option = Poll::Question::Option.new(question: question,
                                           title: title.capitalize,
                                           description: description,
                                           given_order: index + 1)
       Setting.enabled_locales.map do |locale|
         Globalize.with_locale(locale) do
-          answer.title = "#{title} (#{locale})"
-          answer.description = "#{description} (#{locale})"
+          option.title = "#{title} (#{locale})"
+          option.description = "#{description} (#{locale})"
         end
       end
-      answer.save!
+      option.save!
     end
   end
 end
