@@ -17,15 +17,15 @@ describe Poll::Question::Answer do
     end
 
     it "returns answers with documents and no description" do
-      question = create(:poll_question_answer, :with_document, description: "")
+      answer = create(:poll_question_answer, :with_document, description: "")
 
-      expect(Poll::Question::Answer.with_content).to eq [question]
+      expect(Poll::Question::Answer.with_content).to eq [answer]
     end
 
     it "returns answers with videos and no description" do
-      question = create(:poll_question_answer, :with_video, description: "")
+      answer = create(:poll_question_answer, :with_video, description: "")
 
-      expect(Poll::Question::Answer.with_content).to eq [question]
+      expect(Poll::Question::Answer.with_content).to eq [answer]
     end
 
     it "does not return answers with no description and no images, documents nor videos" do
@@ -37,27 +37,27 @@ describe Poll::Question::Answer do
 
   describe "#with_read_more?" do
     it "returns false when the answer does not have description, images, videos nor documents" do
-      poll_question_answer = build(:poll_question_answer, description: nil)
+      answer = build(:poll_question_answer, description: nil)
 
-      expect(poll_question_answer.with_read_more?).to be_falsy
+      expect(answer.with_read_more?).to be_falsy
     end
 
     it "returns true when the answer has description, images, videos or documents" do
-      poll_question_answer = build(:poll_question_answer, description: "Answer description")
+      answer = build(:poll_question_answer, description: "Answer description")
 
-      expect(poll_question_answer.with_read_more?).to be_truthy
+      expect(answer.with_read_more?).to be_truthy
 
-      poll_question_answer = build(:poll_question_answer, :with_image)
+      answer = build(:poll_question_answer, :with_image)
 
-      expect(poll_question_answer.with_read_more?).to be_truthy
+      expect(answer.with_read_more?).to be_truthy
 
-      poll_question_answer = build(:poll_question_answer, :with_document)
+      answer = build(:poll_question_answer, :with_document)
 
-      expect(poll_question_answer.with_read_more?).to be_truthy
+      expect(answer.with_read_more?).to be_truthy
 
-      poll_question_answer = build(:poll_question_answer, :with_video)
+      answer = build(:poll_question_answer, :with_video)
 
-      expect(poll_question_answer.with_read_more?).to be_truthy
+      expect(answer.with_read_more?).to be_truthy
     end
   end
 end
