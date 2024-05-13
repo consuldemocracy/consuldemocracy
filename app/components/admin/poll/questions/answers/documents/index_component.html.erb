@@ -1,4 +1,4 @@
-<%= back_link_to admin_question_path(@answer.question) %>
+<%= back_link_to admin_question_path(answer.question) %>
 
 <h2><%= t("admin.questions.show.answers.documents_list") %></h2>
 
@@ -8,7 +8,7 @@
 </ul>
 
 <div class="poll-question-form">
-  <% if can?(:update, @answer) %>
+  <% if can?(:update, answer) %>
     <%= form_for(Poll::Question::Answer.new, url: admin_answer_documents_path(answer)) do |f| %>
       <%= render "shared/errors", resource: answer %>
 
