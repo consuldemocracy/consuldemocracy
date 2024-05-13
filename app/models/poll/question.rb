@@ -72,7 +72,7 @@ class Poll::Question < ApplicationRecord
   end
 
   def possible_answers
-    question_answers.joins(:translations).pluck("poll_question_answer_translations.title")
+    question_answers.joins(:translations).pluck(:title)
   end
 
   def answers_with_read_more?
