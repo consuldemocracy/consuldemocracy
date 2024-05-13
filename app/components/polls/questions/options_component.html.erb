@@ -11,7 +11,7 @@
                       "aria-pressed": true %>
       <% else %>
         <%= button_to question_option.title,
-                      answer_question_path(question, answer: question_option.title),
+                      question_answers_path(question, answer: question_option.title),
                       remote: true,
                       title: t("poll_questions.show.vote_answer", answer: question_option.title),
                       class: "button secondary hollow",

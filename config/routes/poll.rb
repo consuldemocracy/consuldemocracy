@@ -5,8 +5,7 @@ resources :polls, only: [:show, :index] do
   end
 
   resources :questions, controller: "polls/questions", shallow: true, only: [] do
-    post :answer, on: :member
-    resources :answers, controller: "polls/answers", only: :destroy, shallow: false
+    resources :answers, controller: "polls/answers", only: [:create, :destroy], shallow: false
   end
 end
 
