@@ -1,5 +1,4 @@
 class Polls::QuestionsController < ApplicationController
-  load_and_authorize_resource :poll
   load_and_authorize_resource :question, class: "Poll::Question"
 
   def answer
