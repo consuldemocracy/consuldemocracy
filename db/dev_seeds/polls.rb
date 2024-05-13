@@ -1,6 +1,3 @@
-require_dependency "poll/answer"
-require_dependency "poll/question/answer"
-
 section "Creating polls" do
   def create_poll!(attributes)
     poll = Poll.create!(attributes.merge(starts_at: 1.day.from_now, ends_at: 2.days.from_now))
