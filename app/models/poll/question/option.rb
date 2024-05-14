@@ -11,6 +11,7 @@ class Poll::Question::Option < ApplicationRecord
   accepts_nested_attributes_for :documents, allow_destroy: true
 
   belongs_to :question, class_name: "Poll::Question"
+  has_many :answers, class_name: "Poll::Answer", dependent: :nullify
   has_many :videos, class_name: "Poll::Question::Option::Video",
                     dependent: :destroy,
                     foreign_key: "answer_id",

@@ -205,6 +205,7 @@ FactoryBot.define do
     question factory: [:poll_question, :yes_no]
     author factory: [:user, :level_two]
     answer { question.question_options.sample.title }
+    option { question.question_options.find_by(title: answer) }
   end
 
   factory :poll_partial_result, class: "Poll::PartialResult" do
