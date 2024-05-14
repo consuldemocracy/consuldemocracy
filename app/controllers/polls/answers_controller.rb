@@ -8,7 +8,7 @@ class Polls::AnswersController < ApplicationController
   def create
     authorize! :answer, @question
 
-    answer = @question.find_or_initialize_user_answer(current_user, params[:answer])
+    answer = @question.find_or_initialize_user_answer(current_user, params[:option_id])
     answer.save_and_record_voter_participation
 
     respond_to do |format|

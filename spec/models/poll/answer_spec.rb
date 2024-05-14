@@ -51,6 +51,44 @@ describe Poll::Answer do
       expect(answer).not_to be_valid
     end
 
+    it "is not valid when there are two identical answers" do
+      author = create(:user)
+      question = create(:poll_question_multiple, :abc)
+      option = question.question_options.first
+
+      create(:poll_answer, author: author, question: question, option: option, answer: "Answer A")
+
+      answer = build(:poll_answer, author: author, question: question, option: option, answer: "Answer A")
+
+      expect(answer).not_to be_valid
+      expect { answer.save(validate: false) }.to raise_error ActiveRecord::RecordNotUnique
+    end
+
+    it "is not valid when there are two answers with the same option and different answer" do
+      author = create(:user)
+      question = create(:poll_question_multiple, :abc)
+      option = question.question_options.first
+
+      create(:poll_answer, author: author, question: question, option: option, answer: "Answer A")
+
+      answer = build(:poll_answer, author: author, question: question, option: option, answer: "Answer B")
+
+      expect(answer).not_to be_valid
+      expect { answer.save(validate: false) }.to raise_error ActiveRecord::RecordNotUnique
+    end
+
+    it "is valid when there are two identical answers and the option is nil" do
+      author = create(:user)
+      question = create(:poll_question_multiple, :abc)
+
+      create(:poll_answer, author: author, question: question, option: nil, answer: "Answer A")
+
+      answer = build(:poll_answer, author: author, question: question, option: nil, answer: "Answer A")
+
+      expect(answer).to be_valid
+      expect { answer.save }.not_to raise_error
+    end
+
     it "is valid for answers included in the Poll::Question's question_options list" do
       question = create(:poll_question)
       create(:poll_question_option, title: "One", question: question)
@@ -119,7 +157,10 @@ describe Poll::Answer do
 
       expect(poll.reload.voters.size).to eq(1)
 
-      updated_answer = answer.question.find_or_initialize_user_answer(answer.author, "No")
+      updated_answer = answer.question.find_or_initialize_user_answer(
+        answer.author,
+        answer.question.question_options.excluding(answer.option).sample.id
+      )
       updated_answer.save_and_record_voter_participation
 
       expect(poll.reload.voters.size).to eq(1)
