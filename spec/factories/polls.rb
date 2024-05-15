@@ -73,6 +73,14 @@ FactoryBot.define do
       end
     end
 
+    trait :abcde do
+      after(:create) do |question|
+        %w[A B C D E].each do |letter|
+          create(:poll_question_option, question: question, title: "Answer #{letter}")
+        end
+      end
+    end
+
     factory :poll_question_unique do
       after(:create) do |question|
         create(:votation_type_unique, questionable: question)

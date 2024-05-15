@@ -46,4 +46,78 @@ describe "polls tasks" do
       end
     end
   end
+
+  describe "polls:remove_duplicate_answers" do
+    before { Rake::Task["polls:remove_duplicate_answers"].reenable }
+
+    it "removes duplicate answers" do
+      question = create(:poll_question_multiple, :abcde, poll: poll, max_votes: 4)
+      abc_question = create(:poll_question_multiple, :abc, poll: poll)
+
+      answer_attributes = {
+        question_id: question.id,
+        author_id: user.id,
+        answer: "Answer A",
+        option_id: nil
+      }
+      abc_answer_attributes = answer_attributes.merge(question_id: abc_question.id, answer: "Answer B")
+
+      answer = create(:poll_answer, answer_attributes)
+      other_answer = create(:poll_answer, answer_attributes.merge(answer: "Answer B"))
+      other_user_answer = create(:poll_answer, answer_attributes.merge(author_id: create(:user).id))
+      abc_answer = create(:poll_answer, abc_answer_attributes)
+
+      2.times { insert(:poll_answer, answer_attributes) }
+      insert(:poll_answer, abc_answer_attributes)
+
+      expect(Poll::Answer.count).to eq 7
+
+      Rake.application.invoke_task("polls:remove_duplicate_answers")
+
+      expect(Poll::Answer.count).to eq 4
+      expect(Poll::Answer.all).to match_array [answer, other_answer, other_user_answer, abc_answer]
+    end
+
+    it "does not remove answers with the same text and different options" do
+      question = create(:poll_question_multiple, :abcde, max_votes: 4)
+      option_a = question.question_options.find_by(title: "Answer A")
+      option_b = question.question_options.find_by(title: "Answer B")
+
+      answer_attributes = { question: question, author: user, answer: "Answer A" }
+      create(:poll_answer, answer_attributes.merge(option: option_a))
+      create(:poll_answer, answer_attributes.merge(option: option_b))
+
+      expect(Poll::Answer.count).to eq 2
+
+      Rake.application.invoke_task("polls:remove_duplicate_answers")
+
+      expect(Poll::Answer.count).to eq 2
+    end
+
+    it "removes duplicate answers on tenants" do
+      create(:tenant, schema: "answers")
+
+      Tenant.switch("answers") do
+        user = create(:user, :level_two)
+        question = create(:poll_question_multiple, :abc)
+
+        answer_attributes = {
+          question_id: question.id,
+          author_id: user.id,
+          answer: "Answer A",
+          option_id: nil
+        }
+        create(:poll_answer, answer_attributes)
+        insert(:poll_answer, answer_attributes)
+
+        expect(Poll::Answer.count).to eq 2
+      end
+
+      Rake.application.invoke_task("polls:remove_duplicate_answers")
+
+      Tenant.switch("answers") do
+        expect(Poll::Answer.count).to eq 1
+      end
+    end
+  end
 end
