@@ -120,4 +120,101 @@ describe "polls tasks" do
       end
     end
   end
+
+  describe "polls:populate_option_id" do
+    before do
+      Rake::Task["polls:remove_duplicate_answers"].reenable
+      Rake::Task["polls:populate_option_id"].reenable
+    end
+
+    it "populates the option_id column of existing answers when there's one valid answer" do
+      yes_no_question = create(:poll_question, :yes_no, poll: poll)
+      abc_question = create(:poll_question_multiple, :abc, poll: poll)
+      option_a = abc_question.question_options.find_by(title: "Answer A")
+      option_b = abc_question.question_options.find_by(title: "Answer B")
+
+      answer = create(:poll_answer, question: yes_no_question, author: user, answer: "Yes", option: nil)
+      abc_answer = create(:poll_answer, question: abc_question, author: user, answer: "Answer A", option: nil)
+      answer_with_inconsistent_option = create(:poll_answer, question: abc_question,
+                                                             author: user,
+                                                             answer: "Answer A",
+                                                             option: option_b)
+      answer_with_invalid_option = build(:poll_answer, question: abc_question,
+                                                       author: user,
+                                                       answer: "Non existing",
+                                                       option: nil)
+      answer_with_invalid_option.save!(validate: false)
+
+      Rake.application.invoke_task("polls:populate_option_id")
+      answer.reload
+      abc_answer.reload
+      answer_with_inconsistent_option.reload
+      answer_with_invalid_option.reload
+
+      expect(answer.option_id).to eq yes_no_question.question_options.find_by(title: "Yes").id
+      expect(abc_answer.option_id).to eq option_a.id
+      expect(answer_with_inconsistent_option.option_id).to eq option_b.id
+      expect(answer_with_invalid_option.option_id).to be nil
+    end
+
+    it "does not populate the option_id column when there are several valid options" do
+      question = create(:poll_question, title: "How do you pronounce it?")
+
+      create(:poll_question_option, question: question, title_en: "A", title_es: "EI")
+      create(:poll_question_option, question: question, title_en: "E", title_es: "I")
+      create(:poll_question_option, question: question, title_en: "I", title_es: "AI")
+
+      answer = create(:poll_answer, question: question, author: user, answer: "I", option: nil)
+
+      Rake.application.invoke_task("polls:populate_option_id")
+      answer.reload
+
+      expect(answer.option_id).to be nil
+    end
+
+    it "removes duplicate answers before populating the option_id column" do
+      user = create(:user, :level_two)
+      question = create(:poll_question_multiple, :abc)
+
+      answer_attributes = {
+        question_id: question.id,
+        author_id: user.id,
+        answer: "Answer A",
+        option_id: nil
+      }
+      answer = create(:poll_answer, answer_attributes)
+      insert(:poll_answer, answer_attributes)
+
+      answer.reload
+      expect(answer.option_id).to be nil
+
+      Rake.application.invoke_task("polls:populate_option_id")
+      answer.reload
+
+      expect(Poll::Answer.count).to eq 1
+      expect(answer.option_id).to eq question.question_options.find_by(title: "Answer A").id
+    end
+
+    it "populates the option_id column on tenants" do
+      create(:tenant, schema: "answers")
+
+      Tenant.switch("answers") do
+        question = create(:poll_question_multiple, :abc)
+
+        create(:poll_answer, question: question, answer: "Answer A", option: nil)
+      end
+
+      Rake.application.invoke_task("polls:populate_option_id")
+
+      Tenant.switch("answers") do
+        expect(Poll::Question.count).to eq 1
+        expect(Poll::Answer.count).to eq 1
+
+        question = Poll::Question.first
+        option_a = question.question_options.find_by(title: "Answer A")
+
+        expect(Poll::Answer.first.option_id).to eq option_a.id
+      end
+    end
+  end
 end

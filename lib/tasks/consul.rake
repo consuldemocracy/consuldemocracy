@@ -9,6 +9,6 @@ namespace :consul do
   task "execute_release_2.2.0_tasks": [
     "db:mask_ips",
     "polls:remove_duplicate_voters",
-    "polls:remove_duplicate_answers"
+    "polls:populate_option_id"
   ]
 end
