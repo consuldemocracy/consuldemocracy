@@ -3,7 +3,7 @@ require "rails_helper"
 describe "Voter" do
   context "Origin", :with_frozen_time do
     let(:poll) { create(:poll) }
-    let!(:question) { create(:poll_question, :yes_no, poll: poll) }
+    let!(:question) { create(:poll_question, :yes_no, poll: poll, title: "Is this question stupid?") }
     let(:booth) { create(:poll_booth) }
     let(:officer) { create(:poll_officer) }
     let(:admin) { create(:administrator) }
@@ -20,41 +20,12 @@ describe "Voter" do
       login_as user
       visit poll_path(poll)
 
-      within("#poll_question_#{question.id}_options") do
-        click_button "Vote Yes"
+      within_fieldset("Is this question stupid?") { choose "Yes" }
+      click_button "Vote"
 
-        expect(page).to have_button("You have voted Yes")
-        expect(page).not_to have_button("Vote Yes")
-      end
-
-      refresh
-
-      expect(page).to have_content("You have already participated in this poll.")
-      expect(page).to have_content("If you vote again it will be overwritten")
-    end
-
-    scenario "Remove vote via web - Standard" do
-      user = create(:user, :level_two)
-      create(:poll_answer, question: question, author: user, answer: "Yes")
-      create(:poll_voter, poll: poll, user: user)
-
-      login_as user
-      visit poll_path(poll)
-
-      expect(page).to have_content("You have already participated in this poll.")
-      expect(page).to have_content("If you vote again it will be overwritten")
-
-      within("#poll_question_#{question.id}_options") do
-        click_button "You have voted Yes"
-
-        expect(page).to have_button("Vote Yes")
-        expect(page).to have_button("Vote No")
-      end
-
-      refresh
-
-      expect(page).not_to have_content("You have already participated in this poll.")
-      expect(page).not_to have_content("If you vote again it will be overwritten")
+      expect(page).to have_content "Thank you for voting!"
+      expect(page).to have_content "You have already participated in this poll. " \
+                                   "If you vote again it will be overwritten."
     end
 
     scenario "Voting via web as unverified user" do
@@ -63,9 +34,9 @@ describe "Voter" do
       login_as user
       visit poll_path(poll)
 
-      within("#poll_question_#{question.id}_options") do
-        expect(page).to have_link("Yes", href: verification_path)
-        expect(page).to have_link("No", href: verification_path)
+      within_fieldset "Is this question stupid?" do
+        expect(page).to have_field "Yes", type: :radio, disabled: true
+        expect(page).to have_field "No", type: :radio, disabled: true
       end
 
       expect(page).to have_content "You must verify your account in order to answer"
@@ -142,7 +113,7 @@ describe "Voter" do
 
       scenario "Trying to vote in web and then in booth" do
         login_as user
-        vote_for_poll_via_web(poll, question, "Yes")
+        vote_for_poll_via_web(poll, question => "Yes")
 
         logout
         login_through_form_as_officer(officer)
@@ -165,8 +136,9 @@ describe "Voter" do
         login_as user
         visit poll_path(poll)
 
-        within("#poll_question_#{question.id}_options") do
-          expect(page).not_to have_button("Yes")
+        within_fieldset "Is this question stupid?" do
+          expect(page).to have_field "Yes", type: :radio, disabled: true
+          expect(page).to have_field "No", type: :radio, disabled: true
         end
         expect(page).to have_content "You have already participated in a physical booth. " \
                                      "You can not participate again."
@@ -203,8 +175,9 @@ describe "Voter" do
 
       visit poll_path(poll)
 
-      within("#poll_question_#{question.id}_options") do
-        expect(page).not_to have_button("Yes")
+      within_fieldset "Is this question stupid?" do
+        expect(page).to have_field "Yes", type: :radio, disabled: true
+        expect(page).to have_field "No", type: :radio, disabled: true
       end
 
       expect(page).to have_content "You have already participated in a physical booth. " \

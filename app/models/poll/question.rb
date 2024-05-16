@@ -41,8 +41,6 @@ class Poll::Question < ApplicationRecord
     end
   end
 
-  delegate :answerable_by?, to: :poll
-
   def options_total_votes
     question_options.reduce(0) { |total, question_option| total + question_option.total_votes }
   end

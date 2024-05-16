@@ -9,7 +9,7 @@ class PollsController < ApplicationController
   load_and_authorize_resource
 
   has_filters %w[current expired]
-  has_orders %w[most_voted newest oldest], only: :show
+  has_orders %w[most_voted newest oldest], only: [:show, :answer]
 
   def index
     @polls = Kaminari.paginate_array(
@@ -18,8 +18,19 @@ class PollsController < ApplicationController
   end
 
   def show
-    @questions = @poll.questions.for_render.sort_for_list
+    @web_vote = Poll::WebVote.new(@poll, current_user)
     @comment_tree = CommentTree.new(@poll, params[:page], @current_order)
+  end
+
+  def answer
+    @web_vote = Poll::WebVote.new(@poll, current_user)
+
+    if @web_vote.update(answer_params)
+      redirect_to @poll, notice: t("flash.actions.create.poll_voter")
+    else
+      @comment_tree = CommentTree.new(@poll, params[:page], @current_order)
+      render :show
+    end
   end
 
   def stats
@@ -37,5 +48,9 @@ class PollsController < ApplicationController
 
     def load_active_poll
       @active_poll = ActivePoll.first
+    end
+
+    def answer_params
+      params[:web_vote] || {}
     end
 end

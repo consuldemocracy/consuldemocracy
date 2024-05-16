@@ -1,0 +1,29 @@
+.poll-form {
+  label {
+    @include radio-or-checkbox-and-label-alignment;
+    font-weight: normal;
+
+    &:first-of-type {
+      margin-top: calc($line-height / 2);
+    }
+  }
+
+  fieldset + fieldset {
+    margin-top: calc($line-height / 2);
+  }
+
+  legend {
+    @include header-font-size(h3);
+    margin-bottom: 0;
+  }
+
+  .help-text {
+    font-size: 1em;
+    font-style: normal;
+    font-weight: bold;
+  }
+
+  [type=submit] {
+    margin-top: calc($line-height * 3 / 4);
+  }
+}
