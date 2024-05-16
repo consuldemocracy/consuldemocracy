@@ -30,7 +30,13 @@ namespace :polls do
   end
 
   desc "Removes duplicate poll answers"
-  task remove_duplicate_answers: :environment do
+  task remove_duplicate_answers: [
+    :remove_duplicate_answers_in_the_same_language,
+    :remove_duplicate_answers_in_different_languages
+  ]
+
+  desc "Removes duplicate poll answers in the same language"
+  task remove_duplicate_answers_in_the_same_language: :environment do
     logger = ApplicationLogger.new
     duplicate_records_logger = DuplicateRecordsLogger.new
 
@@ -62,6 +68,46 @@ namespace :polls do
     end
   end
 
+  desc "Removes duplicate poll answers in different languages"
+  task remove_duplicate_answers_in_different_languages: :environment do
+    logger = ApplicationLogger.new
+    duplicate_records_logger = DuplicateRecordsLogger.new
+
+    Tenant.run_on_each do
+      Poll::Question.find_each do |question|
+        manageable_titles = PollOptionFinder.new(question).manageable_choices.keys
+
+        question.question_options.each do |option|
+          titles = option.translations.where(title: manageable_titles).pluck(:title)
+
+          author_ids = question.answers
+                               .where(answer: titles)
+                               .select(:author_id)
+                               .group(:author_id)
+                               .having("count(*) > 1")
+                               .pluck(:author_id)
+
+          author_ids.each do |author_id|
+            poll_answers = question.answers.where(option_id: nil, answer: titles, author_id: author_id)
+
+            poll_answers.excluding(poll_answers.first).each do |poll_answer|
+              poll_answer.delete
+
+              tenant_info = " on tenant #{Tenant.current_schema}" unless Tenant.default?
+              log_message = "Deleted duplicate record with ID #{poll_answer.id} " \
+                            "from the #{Poll::Answer.table_name} table " \
+                            "with question_id #{question.id}, " \
+                            "author_id #{author_id} " \
+                            "and answer #{poll_answer.answer}" + tenant_info.to_s
+              logger.info(log_message)
+              duplicate_records_logger.info(log_message)
+            end
+          end
+        end
+      end
+    end
+  end
+
   desc "populates the poll answers option_id column"
   task populate_option_id: :remove_duplicate_answers do
     logger = ApplicationLogger.new
@@ -76,20 +122,13 @@ namespace :polls do
       end
 
       questions.each do |question|
-        options = question.question_options.joins(:translations).reorder(:id)
-        existing_choices = question.answers.where(option_id: nil).distinct.pluck(:answer)
+        option_finder = PollOptionFinder.new(question)
 
-        choices_map = existing_choices.to_h do |choice|
-          [choice, options.where("lower(title) = lower(?)", choice).distinct.ids]
-        end
-
-        manageable_choices, unmanageable_choices = choices_map.partition { |choice, ids| ids.count == 1 }
-
-        manageable_choices.each do |choice, ids|
+        option_finder.manageable_choices.each do |choice, ids|
           question.answers.where(option_id: nil, answer: choice).update_all(option_id: ids.first)
         end
 
-        unmanageable_choices.each do |choice, ids|
+        option_finder.unmanageable_choices.each do |choice, ids|
           if ids.count == 0
             logger.warn "Skipping poll_answers with the text \"#{choice}\" for the poll_question " \
                         "with ID #{question.id}. This question has no poll_question_answers " \
