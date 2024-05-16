@@ -573,6 +573,8 @@ es:
   polls:
     dates: "Desde el %{open_at} hasta el %{closed_at}"
     final_date: "Recuento final/Resultados"
+    form:
+      vote: "Votar"
     index:
       filters:
         current: "Abiertas"

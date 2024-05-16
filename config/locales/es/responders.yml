@@ -6,6 +6,7 @@ es:
         debate: "Debate creado correctamente."
         direct_message: "Tu mensaje ha sido enviado correctamente."
         poll: "Votación creada correctamente."
+        poll_answer: "¡Gracias por votar!"
         poll_booth: "Urna creada correctamente."
         poll_question_option: "Respuesta creada correctamente"
         poll_question_option_video: "Vídeo creado correctamente"
