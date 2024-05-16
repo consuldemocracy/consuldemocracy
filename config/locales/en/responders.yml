@@ -6,6 +6,7 @@ en:
         debate: "Debate created successfully."
         direct_message: "You message has been sent successfully."
         poll: "Poll created successfully."
+        poll_answer: "Thank you for voting!"
         poll_booth: "Booth created successfully."
         poll_question_option: "Answer created successfully"
         poll_question_option_video: "Video created successfully"
