@@ -1,0 +1,30 @@
+.poll-form {
+  label {
+    align-items: baseline;
+    display: flex;
+    font-weight: normal;
+
+    &:first-of-type {
+      margin-top: $line-height / 2;
+    }
+  }
+
+  fieldset + fieldset {
+    margin-top: $line-height / 2;
+  }
+
+  legend {
+    @include header-font-size(h3);
+    margin-bottom: 0;
+  }
+
+  .help-text {
+    font-size: 1em;
+    font-style: normal;
+    font-weight: bold;
+  }
+
+  [type=submit] {
+    margin-top: $line-height / 2;
+  }
+}

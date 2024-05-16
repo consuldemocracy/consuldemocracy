@@ -7,63 +7,38 @@ describe "Poll Votation Type" do
     login_as(author)
   end
 
-  scenario "Unique answer" do
-    question = create(:poll_question_unique, :yes_no)
+  scenario "Unique and multiple answers" do
+    poll = create(:poll)
+    create(:poll_question_unique, :yes_no, poll: poll, title: "Is it that bad?")
+    create(:poll_question_multiple, :abcde, poll: poll, max_votes: 3, title: "Which ones do you prefer?")
 
-    visit poll_path(question.poll)
+    visit poll_path(poll)
 
-    expect(page).to have_content "You can select a maximum of 1 answer."
-    expect(page).to have_content(question.title)
-    expect(page).to have_button("Vote Yes")
-    expect(page).to have_button("Vote No")
+    within_fieldset("Is it that bad?") { choose "Yes" }
 
-    within "#poll_question_#{question.id}_options" do
-      click_button "Yes"
-
-      expect(page).to have_button("You have voted Yes")
-      expect(page).to have_button("Vote No")
-
-      click_button "No"
-
-      expect(page).to have_button("Vote Yes")
-      expect(page).to have_button("You have voted No")
+    within_fieldset("Which ones do you prefer?") do
+      check "Answer A"
+      check "Answer C"
     end
-  end
 
-  scenario "Multiple answers" do
-    question = create(:poll_question_multiple, :abc, max_votes: 2)
-    visit poll_path(question.poll)
+    click_button "Vote"
 
-    expect(page).to have_content "You can select a maximum of 2 answers."
-    expect(page).to have_content(question.title)
-    expect(page).to have_button("Vote Answer A")
-    expect(page).to have_button("Vote Answer B")
-    expect(page).to have_button("Vote Answer C")
+    expect(page).to have_content "Thank you for voting!"
+    expect(page).to have_content "You have already participated in this poll. " \
+                                 "If you vote again it will be overwritten."
 
-    within "#poll_question_#{question.id}_options" do
-      click_button "Vote Answer A"
-
-      expect(page).to have_button("You have voted Answer A")
-
-      click_button "Vote Answer C"
-
-      expect(page).to have_button("You have voted Answer C")
-      expect(page).to have_button("Vote Answer B", disabled: true)
-
-      click_button "You have voted Answer A"
-
-      expect(page).to have_button("Vote Answer A")
-      expect(page).to have_button("Vote Answer B")
-
-      click_button "You have voted Answer C"
-
-      expect(page).to have_button("Vote Answer C")
-
-      click_button "Vote Answer B"
-
-      expect(page).to have_button("You have voted Answer B")
-      expect(page).to have_button("Vote Answer A")
-      expect(page).to have_button("Vote Answer C")
+    within_fieldset("Is it that bad?") do
+      expect(page).to have_field "Yes", type: :radio, checked: true
     end
+
+    within_fieldset("Which ones do you prefer?") do
+      expect(page).to have_field "Answer A", type: :checkbox, checked: true
+      expect(page).to have_field "Answer B", type: :checkbox, checked: false
+      expect(page).to have_field "Answer C", type: :checkbox, checked: true
+      expect(page).to have_field "Answer D", type: :checkbox, checked: false
+      expect(page).to have_field "Answer E", type: :checkbox, checked: false
+    end
+
+    expect(page).to have_button "Vote"
   end
 end

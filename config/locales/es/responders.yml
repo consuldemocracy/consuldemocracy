@@ -10,6 +10,7 @@ es:
         poll_question_option: "Respuesta creada correctamente"
         poll_question_option_video: "Vídeo creado correctamente"
         poll_question_option_image: "Imagen cargada correctamente"
+        poll_voter: "¡Gracias por votar!"
         proposal: "Propuesta creada correctamente."
         proposal_notification: "Tu mensaje ha sido enviado correctamente."
         budget_investment: "Proyecto de gasto creado correctamente."

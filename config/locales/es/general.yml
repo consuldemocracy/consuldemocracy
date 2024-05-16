@@ -577,6 +577,8 @@ es:
   polls:
     dates: "Desde el %{open_at} hasta el %{closed_at}"
     final_date: "Recuento final/Resultados"
+    form:
+      vote: "Votar"
     index:
       filters:
         current: "Abiertas"
@@ -634,11 +636,7 @@ es:
     poll_header:
       back_to_proposal: Volver a la propuesta
   poll_questions:
-    show:
-      vote_answer: "Votar %{answer}"
-      voted: "Has votado %{answer}"
     description:
-      unique: "Puedes seleccionar un máximo de 1 respuesta."
       multiple: "Puedes seleccionar un máximo de %{maximum} respuestas."
     read_more_about: "Leer más:"
   proposal_notifications:
