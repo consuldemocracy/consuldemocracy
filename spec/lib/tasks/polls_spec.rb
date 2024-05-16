@@ -94,6 +94,40 @@ describe "polls tasks" do
       expect(Poll::Answer.count).to eq 2
     end
 
+    it "removes duplicate answers in different languages" do
+      question = create(:poll_question_multiple, max_votes: 2)
+
+      create(:poll_question_option, question: question, title_en: "Yes", title_de: "Ja")
+      create(:poll_question_option, question: question, title_en: "No", title_de: "Nein")
+      create(:poll_question_option, question: question, title_en: "Maybe", title_de: "Vielleicht")
+
+      create(:poll_answer, author: user, question: question, answer: "Yes", option: nil)
+      create(:poll_answer, author: user, question: question, answer: "Ja", option: nil)
+
+      expect(Poll::Answer.count).to eq 2
+
+      Rake.application.invoke_task("polls:remove_duplicate_answers")
+
+      expect(Poll::Answer.count).to eq 1
+    end
+
+    it "does not remove duplicate answers when many options are possible" do
+      question = create(:poll_question_multiple, title: "How do you pronounce it?", max_votes: 2)
+
+      create(:poll_question_option, question: question, title_en: "A", title_es: "EI")
+      create(:poll_question_option, question: question, title_en: "E", title_es: "I")
+      create(:poll_question_option, question: question, title_en: "I", title_es: "AI")
+
+      create(:poll_answer, question: question, author: user, answer: "I", option: nil)
+      create(:poll_answer, question: question, author: user, answer: "AI", option: nil)
+
+      expect(Poll::Answer.count).to eq 2
+
+      Rake.application.invoke_task("polls:remove_duplicate_answers")
+
+      expect(Poll::Answer.count).to eq 2
+    end
+
     it "removes duplicate answers on tenants" do
       create(:tenant, schema: "answers")
 
@@ -176,6 +210,11 @@ describe "polls tasks" do
       user = create(:user, :level_two)
       question = create(:poll_question_multiple, :abc)
 
+      localized_question = create(:poll_question_multiple)
+      create(:poll_question_option, question: localized_question, title_en: "Yes", title_de: "Ja")
+      create(:poll_question_option, question: localized_question, title_en: "No", title_de: "Nein")
+      create(:poll_question_option, question: localized_question, title_en: "Maybe", title_de: "Vielleicht")
+
       answer_attributes = {
         question_id: question.id,
         author_id: user.id,
@@ -185,14 +224,23 @@ describe "polls tasks" do
       answer = create(:poll_answer, answer_attributes)
       insert(:poll_answer, answer_attributes)
 
+      localized_answer_attributes = { author: user, question: localized_question, option: nil }
+      localized_answer = create(:poll_answer, localized_answer_attributes.merge(answer: "Yes"))
+      create(:poll_answer, localized_answer_attributes.merge(answer: "Ja"))
+
       answer.reload
+      localized_answer.reload
+
       expect(answer.option_id).to be nil
+      expect(localized_answer.option_id).to be nil
 
       Rake.application.invoke_task("polls:populate_option_id")
       answer.reload
+      localized_answer.reload
 
-      expect(Poll::Answer.count).to eq 1
+      expect(Poll::Answer.count).to eq 2
       expect(answer.option_id).to eq question.question_options.find_by(title: "Answer A").id
+      expect(localized_answer.option_id).to eq localized_question.question_options.find_by(title: "Yes").id
     end
 
     it "populates the option_id column on tenants" do

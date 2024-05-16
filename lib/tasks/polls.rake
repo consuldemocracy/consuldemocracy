@@ -37,26 +37,35 @@ namespace :polls do
     logger.info "Removing duplicate answers in polls"
 
     Tenant.run_on_each do
-      duplicate_ids = Poll::Answer.where(option_id: nil)
-                                  .select(:question_id, :author_id, :answer)
-                                  .group(:question_id, :author_id, :answer)
-                                  .having("count(*) > 1")
-                                  .pluck(:question_id, :author_id, :answer)
+      Poll::Question.find_each do |question|
+        manageable_titles = PollOptionFinder.new(question).manageable_choices.keys
 
-      duplicate_ids.each do |question_id, author_id, answer|
-        poll_answers = Poll::Answer.where(question_id: question_id, author_id: author_id, answer: answer)
+        question.question_options.each do |option|
+          titles = option.translations.where(title: manageable_titles).select(:title).distinct
 
-        poll_answers.excluding(poll_answers.first).each do |poll_answer|
-          poll_answer.delete
+          author_ids = question.answers
+                               .where(answer: titles)
+                               .select(:author_id)
+                               .group(:author_id)
+                               .having("count(*) > 1")
+                               .pluck(:author_id)
 
-          tenant_info = " on tenant #{Tenant.current_schema}" unless Tenant.default?
-          log_message = "Deleted duplicate record with ID #{poll_answer.id} " \
-                        "from the #{Poll::Answer.table_name} table " \
-                        "with question_id #{question_id}, " \
-                        "author_id #{author_id} " \
-                        "and answer #{answer}" + tenant_info.to_s
-          logger.info(log_message)
-          duplicate_records_logger.info(log_message)
+          author_ids.each do |author_id|
+            poll_answers = question.answers.where(option_id: nil, answer: titles, author_id: author_id)
+
+            poll_answers.excluding(poll_answers.first).each do |poll_answer|
+              poll_answer.delete
+
+              tenant_info = " on tenant #{Tenant.current_schema}" unless Tenant.default?
+              log_message = "Deleted duplicate record with ID #{poll_answer.id} " \
+                            "from the #{Poll::Answer.table_name} table " \
+                            "with question_id #{question.id}, " \
+                            "author_id #{author_id} " \
+                            "and answer #{poll_answer.answer}" + tenant_info.to_s
+              logger.info(log_message)
+              duplicate_records_logger.info(log_message)
+            end
+          end
         end
       end
     end
@@ -76,20 +85,13 @@ namespace :polls do
       end
 
       questions.each do |question|
-        options = question.question_options.joins(:translations).reorder(:id)
-        existing_choices = question.answers.where(option_id: nil).distinct.pluck(:answer)
+        option_finder = PollOptionFinder.new(question)
 
-        choices_map = existing_choices.to_h do |choice|
-          [choice, options.where("lower(title) = lower(?)", choice).distinct.ids]
-        end
-
-        manageable_choices, unmanageable_choices = choices_map.partition { |choice, ids| ids.count == 1 }
-
-        manageable_choices.each do |choice, ids|
+        option_finder.manageable_choices.each do |choice, ids|
           question.answers.where(option_id: nil, answer: choice).update_all(option_id: ids.first)
         end
 
-        unmanageable_choices.each do |choice, ids|
+        option_finder.unmanageable_choices.each do |choice, ids|
           tenant_info = " on tenant #{Tenant.current_schema}" unless Tenant.default?
 
           if ids.count == 0
