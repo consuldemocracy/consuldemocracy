@@ -569,7 +569,6 @@ es:
         share: "Y si además, me haces el gran favor de compartir mi propuesta con tus amigos, familiares y contactos ¡sería perfecto!"
   polls:
     all: "Todas"
-    no_dates: "sin fecha asignada"
     dates: "Desde el %{open_at} hasta el %{closed_at}"
     final_date: "Recuento final/Resultados"
     index:

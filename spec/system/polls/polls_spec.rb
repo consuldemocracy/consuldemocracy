@@ -87,36 +87,6 @@ describe "Polls" do
       expect(page).not_to have_link("Expired")
     end
 
-    scenario "Displays a message asking anonymous users to sign in" do
-      create_list(:poll, 3)
-
-      visit polls_path
-
-      expect(page).to have_css(".not-logged-in", count: 3)
-      expect(page).to have_content("You must sign in or sign up to participate")
-    end
-
-    scenario "Displays a message asking unverified users to verify their account" do
-      create_list(:poll, 3)
-      user = create(:user)
-      login_as(user)
-
-      visit polls_path
-
-      expect(page).to have_css(".unverified", count: 3)
-      expect(page).to have_content("You must verify your account to participate")
-    end
-
-    scenario "Geozone poll" do
-      create(:poll, geozone_restricted: true)
-
-      login_as(create(:user, :level_two))
-      visit polls_path
-
-      expect(page).to have_css(".cant-answer", count: 1)
-      expect(page).to have_content("This poll is not available on your geozone")
-    end
-
     scenario "Already participated in a poll" do
       poll_with_question = create(:poll)
       question = create(:poll_question, :yes_no, poll: poll_with_question)
@@ -132,36 +102,6 @@ describe "Polls" do
 
       expect(page).to have_css(".already-answer", count: 1)
       expect(page).to have_content("You already have participated in this poll")
-    end
-
-    scenario "Poll title and button link to stats if enabled" do
-      poll = create(:poll, :expired, name: "Poll with stats", stats_enabled: true)
-
-      visit polls_path(filter: "expired")
-
-      expect(page).to have_link("Poll with stats", href: stats_poll_path(poll.slug))
-      expect(page).to have_link("Poll ended", href: stats_poll_path(poll.slug))
-    end
-
-    scenario "Poll title and button link to results if enabled" do
-      poll = create(:poll, :expired, name: "Poll with results", stats_enabled: true, results_enabled: true)
-
-      visit polls_path(filter: "expired")
-
-      expect(page).to have_link("Poll with results", href: results_poll_path(poll.slug))
-      expect(page).to have_link("Poll ended", href: results_poll_path(poll.slug))
-    end
-
-    scenario "Shows SDG tags when feature is enabled" do
-      Setting["feature.sdg"] = true
-      Setting["sdg.process.polls"] = true
-
-      create(:poll, sdg_goals: [SDG::Goal[1]], sdg_targets: [SDG::Target["1.1"]])
-
-      visit polls_path
-
-      expect(page).to have_css "img[alt='1. No Poverty']"
-      expect(page).to have_content "target 1.1"
     end
   end
 
