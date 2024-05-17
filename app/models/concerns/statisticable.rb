@@ -63,7 +63,11 @@ module Statisticable
   end
 
   def age?
-    participants.between_ages(age_groups.flatten.min, age_groups.flatten.max).any?
+    participants.between_ages(
+      age_groups.flatten.min,
+      age_groups.flatten.max,
+      at_time: participation_date
+    ).any?
   end
 
   def geozone?
@@ -96,7 +100,7 @@ module Statisticable
 
   def participants_by_age
     age_groups.to_h do |start, finish|
-      count = participants.between_ages(start, finish).count
+      count = participants.between_ages(start, finish, at_time: participation_date).count
 
       [
         "#{start} - #{finish}",

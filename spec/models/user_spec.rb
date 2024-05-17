@@ -423,6 +423,41 @@ describe User do
         expect(User.by_username_email_or_document_number(" 12345678Z ")).to eq [larry]
       end
     end
+
+    describe ".between_ages" do
+      it "returns users between certain ages, including both" do
+        [21, 22, 23, 23, 42, 43, 44, 51].each do |age|
+          create(:user, date_of_birth: age.years.ago)
+        end
+
+        expect(User.between_ages(0, 20).count).to eq 0
+        expect(User.between_ages(0, 21).count).to eq 1
+        expect(User.between_ages(21, 23).count).to eq 4
+        expect(User.between_ages(24, 41).count).to eq 0
+        expect(User.between_ages(41, 45).count).to eq 3
+        expect(User.between_ages(51, 100).count).to eq 1
+      end
+
+      it "returns users between certain ages on a reference date" do
+        reference_date = 20.years.ago
+
+        travel_to(reference_date) do
+          [21, 22, 23, 23, 34, 42, 43, 44, 50, 51].each do |age|
+            create(:user, date_of_birth: age.years.ago)
+          end
+        end
+
+        expect(User.between_ages(0, 20, at_time: reference_date).count).to eq 0
+        expect(User.between_ages(21, 25, at_time: reference_date).count).to eq 4
+        expect(User.between_ages(25, 30, at_time: reference_date).count).to eq 0
+        expect(User.between_ages(30, 34, at_time: reference_date).count).to eq 1
+        expect(User.between_ages(35, 39, at_time: reference_date).count).to eq 0
+        expect(User.between_ages(40, 44, at_time: reference_date).count).to eq 3
+        expect(User.between_ages(45, 49, at_time: reference_date).count).to eq 0
+        expect(User.between_ages(50, 54, at_time: reference_date).count).to eq 2
+        expect(User.between_ages(55, 100, at_time: reference_date).count).to eq 0
+      end
+    end
   end
 
   describe "self.search" do
