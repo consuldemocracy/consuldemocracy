@@ -89,3 +89,8 @@ rules:
   "@stylistic/color-hex-case": "lower"
   "@stylistic/number-leading-zero": "always"
   "@stylistic/selector-list-comma-newline-after": always
+overrides:
+  - files: app/assets/stylesheets/legislation_process.scss
+    rules:
+      max-nesting-depth: 8
+      selector-max-compound-selectors: 8
