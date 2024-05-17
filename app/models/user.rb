@@ -120,11 +120,7 @@ class User < ApplicationRecord
     where("username ILIKE ? OR email ILIKE ? OR document_number ILIKE ?", search, search, search)
   end
   scope :between_ages, ->(from, to, at_time: Time.current) do
-    where(
-      "date_of_birth > ? AND date_of_birth < ?",
-      (at_time - to.years).beginning_of_year,
-      (at_time - from.years).end_of_year
-    )
+    where(date_of_birth: (at_time - to.years).beginning_of_year..(at_time - from.years).end_of_year)
   end
 
   before_validation :clean_document_number
