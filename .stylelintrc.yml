@@ -94,3 +94,6 @@ overrides:
     rules:
       max-nesting-depth: 8
       selector-max-compound-selectors: 8
+  - files: app/assets/stylesheets/shared/social_share.scss
+    rules:
+      selector-class-pattern: "^([a-z][a-z0-9]*)((-|_)[a-z0-9]+)*$"
