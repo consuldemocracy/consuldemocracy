@@ -1,5 +1,7 @@
 ---
 EnableDefaultLinters: false
+exclude:
+  - '**/vendor/**/*'
 linters:
   AllowedScriptType:
     enabled: true

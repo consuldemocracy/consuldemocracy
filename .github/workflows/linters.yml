@@ -1,0 +1,42 @@
+name: linters
+on: [pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  linters:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: rubocop
+            run: bundle exec rubocop --fail-level convention --display-only-fail-level-offenses -f github
+          - name: erb_lint
+            run: bundle exec erblint .
+          - name: eslint
+            run: npx eslint . --quiet
+          - name: stylelint
+            run: npx stylelint app/assets/stylesheets
+    name: ${{ matrix.name }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - run: |
+          git fetch --no-tags --prune origin +refs/heads/*:refs/remotes/origin/*
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Setup NPM
+        uses: actions/setup-node@v4
+        with:
+          cache: "npm"
+          node-version-file: ".node-version"
+      - name: Install node packages
+        run: npm clean-install
+      - name: Install node packages
+        run: npm clean-install
+      - name: ${{ matrix.name }}
+        run: ${{ matrix.run }}
