@@ -7,7 +7,7 @@ class Setting < ApplicationRecord
     key.split(".").first
   end
 
-  def enabled?
+  def enabled? 
     value.present?
   end
 

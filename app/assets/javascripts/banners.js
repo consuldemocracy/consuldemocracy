@@ -2,7 +2,7 @@
   "use strict";
   App.Banners = {
     initialize: function() {
-      $("[data-js-banner-title]").on({
+      $("[data-js-banner-title]").on({ 
         change: function() {
           $(".banner h2").text($(this).val());
         }
