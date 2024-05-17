@@ -1,8 +1,8 @@
-name: linters
+name: pronto
 on: [pull_request]
 
 jobs:
-  linters:
+  pronto:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
