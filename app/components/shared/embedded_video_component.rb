@@ -10,30 +10,52 @@ class Shared::EmbeddedVideoComponent < ApplicationComponent
   end
 
   def embedded_video_code
-    link = record.video_url
-    title = t("proposals.show.embed_video_title", proposal: record.title)
-    if link =~ /vimeo.*/
-      server = "Vimeo"
-    elsif link =~ /youtu*.*/
-      server = "YouTube"
-    end
-
-    if server == "Vimeo"
-      reg_exp = record.class::VIMEO_REGEX
-      src = "https://player.vimeo.com/video/"
-    elsif server == "YouTube"
-      reg_exp = record.class::YOUTUBE_REGEX
-      src = "https://www.youtube.com/embed/"
-    end
-
-    if reg_exp
-      match = link.match(reg_exp)
-    end
-
     if match && match[2]
-      '<iframe src="' + src + match[2] + '" style="border:0;" allowfullscreen title="' + title + '"></iframe>'
+      "<iframe #{iframe_attributes}></iframe>"
     else
       ""
     end
   end
+
+  private
+
+    def link
+      record.video_url
+    end
+
+    def title
+      t("proposals.show.embed_video_title", proposal: record.title)
+    end
+
+    def server
+      if link =~ /vimeo.*/
+        "Vimeo"
+      elsif link =~ /youtu*.*/
+        "YouTube"
+      end
+    end
+
+    def reg_exp
+      if server == "Vimeo"
+        record.class::VIMEO_REGEX
+      elsif server == "YouTube"
+        record.class::YOUTUBE_REGEX
+      end
+    end
+
+    def src
+      if server == "Vimeo"
+        "https://player.vimeo.com/video/"
+      elsif server == "YouTube"
+        "https://www.youtube.com/embed/"
+      end
+    end
+
+    def match
+      @match ||= link.match(reg_exp) if reg_exp
+    end
+
+    def iframe_attributes
+      tag.attributes(src: "#{src}#{match[2]}", style: "border:0;", allowfullscreen: true, title: title)
+    end
 end
