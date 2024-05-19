@@ -12,8 +12,6 @@ class Shared::EmbeddedVideoComponent < ApplicationComponent
   def embedded_video_code
     if match && match[2]
       "<iframe #{iframe_attributes}></iframe>"
-    else
-      ""
     end
   end
 
