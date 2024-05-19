@@ -301,23 +301,30 @@ describe "Proposals" do
   context "Embedded video" do
     scenario "Show YouTube video" do
       proposal = create(:proposal, video_url: "http://www.youtube.com/watch?v=a7UFm6ErMPU")
+
       visit proposal_path(proposal)
-      expect(page).to have_css "div[id='js-embedded-video']"
-      expect(page.html).to include "https://www.youtube.com/embed/a7UFm6ErMPU"
+
+      within "#js-embedded-video" do
+        expect(page).to have_css "iframe[src='https://www.youtube.com/embed/a7UFm6ErMPU']"
+      end
     end
 
     scenario "Show Vimeo video" do
       proposal = create(:proposal, video_url: "https://vimeo.com/7232823")
+
       visit proposal_path(proposal)
-      expect(page).to have_css "div[id='js-embedded-video']"
-      expect(page.html).to include "https://player.vimeo.com/video/7232823"
+
+      within "#js-embedded-video" do
+        expect(page).to have_css "iframe[src='https://player.vimeo.com/video/7232823']"
+      end
     end
 
     scenario "Dont show video" do
       proposal = create(:proposal, video_url: nil)
 
       visit proposal_path(proposal)
-      expect(page).not_to have_css "div[id='js-embedded-video']"
+
+      expect(page).not_to have_css "#js-embedded-video"
     end
   end
 
