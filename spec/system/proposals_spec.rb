@@ -315,7 +315,7 @@ describe "Proposals" do
       visit proposal_path(proposal)
 
       within "#js-embedded-video" do
-        expect(page).to have_css "iframe[src='https://player.vimeo.com/video/7232823']"
+        expect(page).to have_css "iframe[src='https://player.vimeo.com/video/7232823?dnt=1']"
       end
     end
 

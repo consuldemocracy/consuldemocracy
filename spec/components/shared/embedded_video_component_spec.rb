@@ -33,7 +33,7 @@ describe Shared::EmbeddedVideoComponent do
 
     it "embeds a vimeo video for vimeo URLs" do
       allow(record).to receive(:video_url).and_return "https://vimeo.com/7232823"
-      embed_url = "https://player.vimeo.com/video/7232823"
+      embed_url = "https://player.vimeo.com/video/7232823?dnt=1"
 
       render_inline component
 

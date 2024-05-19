@@ -43,9 +43,9 @@ class Shared::EmbeddedVideoComponent < ApplicationComponent
 
     def src
       if server == "Vimeo"
-        "https://player.vimeo.com/video/"
+        "https://player.vimeo.com/video/#{match[2]}?dnt=1"
       elsif server == "YouTube"
-        "https://www.youtube-nocookie.com/embed/"
+        "https://www.youtube-nocookie.com/embed/#{match[2]}"
       end
     end
 
@@ -54,6 +54,6 @@ class Shared::EmbeddedVideoComponent < ApplicationComponent
     end
 
     def iframe_attributes
-      tag.attributes(src: "#{src}#{match[2]}", style: "border:0;", allowfullscreen: true, title: title)
+      tag.attributes(src: src, style: "border:0;", allowfullscreen: true, title: title)
     end
 end
