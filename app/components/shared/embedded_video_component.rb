@@ -1,7 +1,17 @@
-module EmbedVideosHelper
-  def embedded_video_code(resource)
-    link = resource.video_url
-    title = t("proposals.show.embed_video_title", proposal: resource.title)
+class Shared::EmbeddedVideoComponent < ApplicationComponent
+  attr_reader :record
+
+  def initialize(record)
+    @record = record
+  end
+
+  def render?
+    record.video_url.present?
+  end
+
+  def embedded_video_code
+    link = record.video_url
+    title = t("proposals.show.embed_video_title", proposal: record.title)
     if link =~ /vimeo.*/
       server = "Vimeo"
     elsif link =~ /youtu*.*/
@@ -9,10 +19,10 @@ module EmbedVideosHelper
     end
 
     if server == "Vimeo"
-      reg_exp = resource.class::VIMEO_REGEX
+      reg_exp = record.class::VIMEO_REGEX
       src = "https://player.vimeo.com/video/"
     elsif server == "YouTube"
-      reg_exp = resource.class::YOUTUBE_REGEX
+      reg_exp = record.class::YOUTUBE_REGEX
       src = "https://www.youtube.com/embed/"
     end
 
