@@ -14,7 +14,7 @@ class Proposal < ApplicationRecord
   include Mappable
   include Notifiable
   include Documentable
-  include EmbedVideosHelper
+  include Videoable
   include Relationable
   include Milestoneable
   include Randomizable
@@ -58,8 +58,6 @@ class Proposal < ApplicationRecord
             inclusion: { in: ->(*) { RETIRE_OPTIONS }}, unless: -> { retired_at.blank? }
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
-
-  validate :valid_video_url?
 
   before_validation :set_responsible_name
 

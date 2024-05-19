@@ -1,7 +1,4 @@
 module EmbedVideosHelper
-  VIMEO_REGEX = /vimeo.*(staffpicks\/|channels\/|videos\/|video\/|\/)([^#\&\?]*).*/
-  YOUTUBE_REGEX = /youtu.*(be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/
-
   def embedded_video_code(resource)
     link = resource.video_url
     title = t("proposals.show.embed_video_title", proposal: resource.title)
@@ -12,10 +9,10 @@ module EmbedVideosHelper
     end
 
     if server == "Vimeo"
-      reg_exp = VIMEO_REGEX
+      reg_exp = resource.class::VIMEO_REGEX
       src = "https://player.vimeo.com/video/"
     elsif server == "YouTube"
-      reg_exp = YOUTUBE_REGEX
+      reg_exp = resource.class::YOUTUBE_REGEX
       src = "https://www.youtube.com/embed/"
     end
 
@@ -28,13 +25,5 @@ module EmbedVideosHelper
     else
       ""
     end
-  end
-
-  def valid_video_url?
-    return if video_url.blank?
-    return if video_url.match(VIMEO_REGEX)
-    return if video_url.match(YOUTUBE_REGEX)
-
-    errors.add(:video_url, :invalid)
   end
 end
