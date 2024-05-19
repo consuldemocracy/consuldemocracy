@@ -24,7 +24,7 @@ describe Shared::EmbeddedVideoComponent do
 
     it "embeds a youtube video for youtube URLs" do
       allow(record).to receive(:video_url).and_return "http://www.youtube.com/watch?v=a7UFm6ErMPU"
-      embed_url = "https://www.youtube.com/embed/a7UFm6ErMPU"
+      embed_url = "https://www.youtube-nocookie.com/embed/a7UFm6ErMPU"
 
       render_inline component
 

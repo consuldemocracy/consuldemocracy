@@ -45,7 +45,7 @@ class Shared::EmbeddedVideoComponent < ApplicationComponent
       if server == "Vimeo"
         "https://player.vimeo.com/video/"
       elsif server == "YouTube"
-        "https://www.youtube.com/embed/"
+        "https://www.youtube-nocookie.com/embed/"
       end
     end
 
