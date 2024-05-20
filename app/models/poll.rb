@@ -7,7 +7,6 @@ class Poll < ApplicationRecord
   include Notifiable
   include Searchable
   include Sluggable
-  include StatsVersionable
   include Reportable
   include SDG::Relatable
 

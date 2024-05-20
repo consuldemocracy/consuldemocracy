@@ -192,7 +192,7 @@ class Budget::Stats
 
     stats_cache(*stats_methods)
 
-    def stats_cache(key, &)
-      Rails.cache.fetch("budgets_stats/#{budget.id}/#{phases.join}/#{key}/#{version}", &)
+    def full_cache_key_for(key)
+      "budgets_stats/#{budget.id}/#{phases.join}/#{key}"
     end
 end
