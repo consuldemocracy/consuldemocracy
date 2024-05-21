@@ -105,6 +105,16 @@
   }
 }
 
+.site-southayrshire {
+  --brand:     #005293;
+  --brand-secondary: #002F59;
+  --footer: #CEDBEA;
+  --callout: var(--brand-secondary);
+  .admin-sidebar {
+    background: linear-gradient(to bottom, var(--brand-secondary) 0%, var(--brand)100%);
+  }
+}
+
 .site-northayrshire {
   --brand:     #0065BD;
   --brand-secondary: #0057A4;
