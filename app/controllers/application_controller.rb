@@ -46,7 +46,7 @@ class ApplicationController < ActionController::Base
         current_user.update(locale: locale)
       end
 
-      session[:locale] = locale
+      session[:locale] = locale.to_s
       I18n.with_locale(locale, &action)
     end
 
