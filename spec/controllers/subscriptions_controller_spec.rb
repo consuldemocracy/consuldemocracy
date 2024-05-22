@@ -27,5 +27,13 @@ describe SubscriptionsController do
 
       expect(session[:locale]).to eq "es"
     end
+
+    it "only accepts available locales" do
+      create(:user, locale: "wl", subscriptions_token: "mytoken")
+
+      get :edit, params: { token: "mytoken" }
+
+      expect(session[:locale]).to eq "en"
+    end
   end
 end
