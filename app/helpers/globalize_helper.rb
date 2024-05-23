@@ -43,10 +43,6 @@ module GlobalizeHelper
     end
   end
 
-  def translation_enabled_tag(locale, enabled)
-    hidden_field_tag("enabled_translations[#{locale}]", (enabled ? 1 : 0))
-  end
-
   def globalize(locale, &)
     Globalize.with_locale(locale, &)
   end

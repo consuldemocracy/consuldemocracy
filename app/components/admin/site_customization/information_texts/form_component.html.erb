@@ -1,4 +1,4 @@
-<%= render "globalize_locales" %>
+<%= render Shared::GlobalizeLocalesComponent.new %>
 
 <%= form_tag admin_site_customization_information_texts_path do %>
   <% I18n.available_locales.each do |l| %>
