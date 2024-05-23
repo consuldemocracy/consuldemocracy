@@ -1487,9 +1487,15 @@ sv:
         polls: Omröstningar
         sdg: Globala målen
       graph:
-        budget_investment_created: Budgetinvesteringar skapade
+        budget_investment_created: Budgetinvesteringar som skapats
+        budget_investment_supported: Budgetinvesteringar som stöds
         debate_created: Debatter
+        legislation_annotation_created: Lagstiftningskommentarer som skapats
+        legislation_answer_created: Lagstiftningssvar som skapats
+        level_3_user: Användare på nivå 3 som verifierats
         proposal_created: Medborgarförslag
+        title: Diagram
+        visits: Visningar
       budgets:
         no_data_before_balloting_phase: "Det finns inga data att visa före röstfasen."
         title: "Deltagarbudgetar – deltagarstatistik"
