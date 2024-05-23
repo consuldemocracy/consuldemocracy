@@ -34,7 +34,6 @@ class Admin::SiteCustomization::ContentBlocksController < Admin::SiteCustomizati
   end
 
   def edit
-    @selected_content_block = @content_block.name
   end
 
   def update
@@ -71,7 +70,6 @@ class Admin::SiteCustomization::ContentBlocksController < Admin::SiteCustomizati
 
   def edit_heading_content_block
     @content_block = Budget::ContentBlock.find(params[:id])
-    @selected_content_block = "hcb_#{@content_block.heading_id}"
     @is_heading_content_block = true
     render :edit
   end
