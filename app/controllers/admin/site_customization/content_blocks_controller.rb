@@ -11,6 +11,9 @@ class Admin::SiteCustomization::ContentBlocksController < Admin::SiteCustomizati
     @headings_content_blocks = Budget::ContentBlock.all
   end
 
+  def new
+  end
+
   def create
     if is_heading_content_block?(@content_block.name)
       heading_content_block = new_heading_content_block
