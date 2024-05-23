@@ -288,7 +288,7 @@ aside {
   }
 
   .author a {
-    color: $anchor-color-dark !important;
+    color: $link-dark !important;
   }
 }
 
@@ -1177,16 +1177,16 @@ body > header,
 // --------------------
 
 footer {
-  color: $footer-color;
+  color: $footer-text-color;
 
   a,
   a:active,
   a:focus {
-    color: $footer-color;
+    color: $footer-text-color;
     text-decoration: none;
 
     &:hover {
-      color: $footer-color;
+      color: $footer-text-color;
     }
   }
 
@@ -2209,7 +2209,7 @@ a {
 
   .user-name {
     a {
-      color: $anchor-color-dark;
+      color: $link-dark;
     }
   }
 }
@@ -2230,7 +2230,7 @@ a {
       }
 
       &.toggle-children {
-        color: $anchor-color-dark;
+        color: $link-dark;
       }
     }
 
@@ -2335,7 +2335,7 @@ a {
 }
 
 .flag-disable {
-  color: $anchor-color-soft;
+  color: $link-soft;
 }
 
 // 7. Admin
