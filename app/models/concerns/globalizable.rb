@@ -13,10 +13,6 @@ module Globalizable
       translations.reject(&:marked_for_destruction?).map(&:locale)
     end
 
-    def locales_marked_for_destruction
-      I18n.available_locales - locales_not_marked_for_destruction
-    end
-
     def locales_persisted_and_marked_for_destruction
       translations.select { |t| t.persisted? && t.marked_for_destruction? }.map(&:locale)
     end
