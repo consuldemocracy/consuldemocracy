@@ -14,12 +14,15 @@
   </head>
   <body id="body" class="<%= yield(:body_class) %> public">
     <%= raw setting["html.per_page_code_body"] %>
+    <%= link_to t("skip_to_content"), "#main_content", class: "skip-to-content-link" %>
 
     <div class="wrapper <%= yield(:wrapper_class) %>">
       <%= render "layouts/header", with_subnavigation: true %>
       <%= render "layouts/flash" %>
 
-      <%= yield %>
+      <div id="main_content">
+        <%= yield %>
+      </div>
 
       <% if feature?(:link_to_top) %>
         <%= render "layouts/link_to_top" %>

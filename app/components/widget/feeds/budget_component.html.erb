@@ -1,6 +1,7 @@
 <div class="budget card small-12 medium-6 large-4 column margin-bottom end">
   <%= link_to url_for(budget), data: { equalizer_watch: "feed_budget" } do %>
     <figure class="figure-card">
+      <h3><%= budget.name %></h3>
       <div class="gradient"></div>
       <% if budget.image.present? %>
         <%= image_tag budget.image.variant(:medium), alt: budget.name %>
@@ -12,8 +13,6 @@
         <% if budget.show_money? %>
           <span><%= budget.formatted_total_headings_price %></span>
         <% end %>
-        <br>
-        <h3><%= budget.name %></h3>
       </figcaption>
     </figure>
 

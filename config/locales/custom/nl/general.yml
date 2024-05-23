@@ -309,8 +309,10 @@ nl:
           one: "1 steunbetuiging"
           other: "%{count} steunbetuigingen"
     link_to_top:
-      title: "Go back to the top of the page"
+      title: "Ga terug naar boven"
   votes:
+    agree_label: "Ik ben het eens met %{title}"
+    disagree_label: "Ik ben het oneens met %{title}"
     supports: "Steun"
     budget_investments:
       not_verified: "Alleen geverifieerde gebruikers mogen stemmen op ideeën; %{verify_account}."
@@ -512,3 +514,4 @@ nl:
       submit_button: "Stuur melding"
       info_about_receivers: "Deze melding stuur je naar <strong>%{count} mensen</strong> en is te zien op %{proposal_page}.<br> Meldingen worden niet direct gestuurd, maar de gebruikers ontvangen periodiek een email met alle meldingen omtrent jouw initiatief."
       proposal_page: "de pagina van het initiatief"
+  skip_to_content: "Ga naar de inhoud"

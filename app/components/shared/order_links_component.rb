@@ -28,4 +28,8 @@ class Shared::OrderLinksComponent < ApplicationComponent
     def link_text(order)
       t("#{i18n_namespace}.orders.#{order}")
     end
+
+    def aria_current(order)
+      "true" if order == current_order
+    end
 end
