@@ -1487,6 +1487,7 @@ sv:
         polls: Omröstningar
         sdg: Globala målen
       graph:
+        budget_investment_created: Budgetinvesteringar skapade
         debate_created: Debatter
         proposal_created: Medborgarförslag
       budgets:
