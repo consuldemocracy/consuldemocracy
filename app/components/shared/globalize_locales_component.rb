@@ -21,7 +21,7 @@ class Shared::GlobalizeLocalesComponent < ApplicationComponent
     end
 
     def selected_locale
-      return first_i18n_content_translation_locale if resource.blank?
+      return first_i18n_content_locale if resource.blank?
 
       if resource.locales_not_marked_for_destruction.any?
         first_translation(resource)
@@ -32,12 +32,11 @@ class Shared::GlobalizeLocalesComponent < ApplicationComponent
       end
     end
 
-    def first_i18n_content_translation_locale
-      if I18nContentTranslation.existing_locales.count == 0 ||
-         I18nContentTranslation.existing_locales.include?(I18n.locale)
+    def first_i18n_content_locale
+      if i18n_content_locales.empty? || i18n_content_locales.include?(I18n.locale)
         I18n.locale
       else
-        I18nContentTranslation.existing_locales.first
+        i18n_content_locales.first
       end
     end
 
@@ -57,18 +56,19 @@ class Shared::GlobalizeLocalesComponent < ApplicationComponent
     end
 
     def active_locales_count
-      if resource.blank?
-        no_resource_locales_count
-      elsif resource.locales_not_marked_for_destruction.size > 0
-        resource.locales_not_marked_for_destruction.size
+      if active_locales.size > 0
+        active_locales.size
       else
         1
       end
     end
 
-    def no_resource_locales_count
-      count = I18nContentTranslation.existing_locales.count
-      count > 0 ? count : 1
+    def active_locales
+      if resource.present?
+        resource.locales_not_marked_for_destruction
+      else
+        i18n_content_locales
+      end
     end
 
     def display_destroy_locale_style(locale)
@@ -87,5 +87,9 @@ class Shared::GlobalizeLocalesComponent < ApplicationComponent
       I18n.available_locales.map do |locale|
         [name_for_locale(locale), locale]
       end
+    end
+
+    def i18n_content_locales
+      I18nContentTranslation.existing_locales
     end
 end
