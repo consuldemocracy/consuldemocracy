@@ -33,16 +33,16 @@ class Shared::GlobalizeLocalesComponent < ApplicationComponent
     end
 
     def first_i18n_content_translation_locale
-      if I18nContentTranslation.existing_languages.count == 0 ||
-         I18nContentTranslation.existing_languages.include?(I18n.locale)
+      if I18nContentTranslation.existing_locales.count == 0 ||
+         I18nContentTranslation.existing_locales.include?(I18n.locale)
         I18n.locale
       else
-        I18nContentTranslation.existing_languages.first
+        I18nContentTranslation.existing_locales.first
       end
     end
 
     def selected_languages_description
-      sanitize(t("shared.translations.languages_in_use", count: active_languages_count))
+      sanitize(t("shared.translations.languages_in_use", count: active_locales_count))
     end
 
     def select_language_error
@@ -56,9 +56,9 @@ class Shared::GlobalizeLocalesComponent < ApplicationComponent
       end
     end
 
-    def active_languages_count
+    def active_locales_count
       if resource.blank?
-        no_resource_languages_count
+        no_resource_locales_count
       elsif resource.locales_not_marked_for_destruction.size > 0
         resource.locales_not_marked_for_destruction.size
       else
@@ -66,8 +66,8 @@ class Shared::GlobalizeLocalesComponent < ApplicationComponent
       end
     end
 
-    def no_resource_languages_count
-      count = I18nContentTranslation.existing_languages.count
+    def no_resource_locales_count
+      count = I18nContentTranslation.existing_locales.count
       count > 0 ? count : 1
     end
 
