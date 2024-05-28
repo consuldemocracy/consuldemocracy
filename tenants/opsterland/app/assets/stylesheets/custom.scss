@@ -82,7 +82,6 @@ a {
 }
 
 .top-bar {
-
   @include breakpoint(small only) {
     flex-direction: row-reverse;
     padding: 0 $line-height / 4;
@@ -111,9 +110,7 @@ main .button,
 
 .home-page,
 .custom-page {
-
   h2 {
-
     &.title {
       font-size: rem-calc(44);
     }
@@ -143,7 +140,6 @@ main .button,
   }
 
   a {
-
     &.button {
       color: #fff;
     }
@@ -154,16 +150,13 @@ main .button,
 // --------------------
 
 .budget-phases {
-
   header {
-
     h2 {
       font-size: rem-calc(44);
     }
   }
 
   .tabs-title > a {
-
     &[aria-selected="true"],
     &.is-active {
       background: $brand;
@@ -184,7 +177,6 @@ main .button,
   }
 
   .tabs-controls {
-
     .budget-prev-phase,
     .budget-next-phase {
       border-radius: 0;
@@ -192,7 +184,6 @@ main .button,
   }
 
   .phase-title {
-
     &.current-phase-tab a {
       background: #fff;
       color: #000;
@@ -213,7 +204,6 @@ main .button,
 }
 
 .budget-header {
-
   h1 {
     color: #fff !important;
     text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
@@ -246,7 +236,6 @@ main .button,
 }
 
 .budget-ballot-show > header {
-
   h1,
   h2 {
     color: #fff !important;
@@ -256,7 +245,6 @@ main .button,
 .proposal-new,
 .debate-new,
 .budget-investment-new {
-
   header {
     background: $brand;
     border: 4px solid $brand;
