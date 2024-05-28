@@ -10,7 +10,6 @@ $dark: #2d313b;
 $delete: #b30000;
 $focus-middle: #f9f9f9;
 $focus-outer: #193146;
-$footer: #c9d8ff;
 $highlight-soft: #f0f3f6;
 $highlight-text: #475252;
 $hover: darken($brand, 20%);
@@ -27,4 +26,5 @@ $unlike: #da262b;
 
 // Custom variables
 // ----------------
+$footer: $brand;
 $footer-text-color: #fff;
