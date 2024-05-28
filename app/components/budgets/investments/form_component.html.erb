@@ -87,6 +87,9 @@
   </fieldset>
 
   <div class="actions">
+    <% unless current_user.manager? || investment.persisted? %>
+      <%= f.hidden_field :terms_of_service, value: 1 %>
+    <% end %>
     <%= f.submit(nil, class: "button large margin-top") %>
   </div>
 <% end %>
