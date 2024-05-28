@@ -78,6 +78,19 @@ button,
   border-top-right-radius: 0 !important;
 }
 
+p,
+.auth-form {
+  a {
+    &:not(.button) {
+      text-decoration: underline !important;
+    }
+  }
+
+  .submenu a {
+    text-decoration: none !important;
+  }
+}
+
 main {
   .button {
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
@@ -275,7 +288,7 @@ aside {
   }
 
   .author a {
-    color: $anchor-color-dark !important;
+    color: $link-dark !important;
   }
 }
 
@@ -488,6 +501,58 @@ aside {
   color: #fff !important;
 }
 
+form {
+  select {
+    &:focus {
+      border: 2px solid $border-forms;
+    }
+  }
+
+  select,
+  textarea,
+  [type]:not(
+      [type="button"],
+      [type="checkbox"],
+      [type="file"],
+      [type="radio"],
+      [type="submit"]
+    ):not(.close-button),
+  .cke {
+    border: 2px solid $border-forms;
+  }
+}
+
+.subnavigation .input-group-button button {
+  border: 2px solid $border-forms;
+}
+
+::placeholder {
+  color: #595959;
+}
+
+.skip-to-content-link {
+  background: #fff;
+  border: 2px solid $brand;
+  color: $link;
+  left: 0;
+  padding: $line-height;
+  position: absolute;
+  top: 0;
+
+  &:focus {
+    z-index: 999;
+  }
+
+  &:not(:focus) {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    width: 1px !important;
+  }
+}
+
 // 1. Header
 // --------------------
 header,
@@ -516,6 +581,7 @@ body > header,
     .button {
       background: none;
       border: 0;
+      border-radius: 0;
       color: $text;
       min-height: 0;
     }
@@ -852,6 +918,7 @@ body > header,
 .home-page .card,
 .custom-page .card {
   margin-top: $line-height;
+  position: relative;
 
   figure {
     border-top-left-radius: rem-calc(12);
@@ -884,6 +951,14 @@ body > header,
       color: var(--brand);
       text-align: right;
     }
+  }
+
+  h3 {
+    color: #fff;
+    left: $line-height / 2;
+    bottom: 0;
+    position: absolute;
+    z-index: 3;
   }
 
   .figure-card {
@@ -1102,16 +1177,16 @@ body > header,
 // --------------------
 
 footer {
-  color: $footer-color;
+  color: $footer-text-color;
 
   a,
   a:active,
   a:focus {
-    color: $footer-color;
+    color: $footer-text-color;
     text-decoration: none;
 
     &:hover {
-      color: $footer-color;
+      color: $footer-text-color;
     }
   }
 
@@ -2134,7 +2209,7 @@ a {
 
   .user-name {
     a {
-      color: $anchor-color-dark;
+      color: $link-dark;
     }
   }
 }
@@ -2155,7 +2230,7 @@ a {
       }
 
       &.toggle-children {
-        color: $anchor-color-dark;
+        color: $link-dark;
       }
     }
 
@@ -2260,7 +2335,7 @@ a {
 }
 
 .flag-disable {
-  color: $anchor-color-soft;
+  color: $link-soft;
 }
 
 // 7. Admin
@@ -3590,8 +3665,8 @@ a {
 .section-recommended {
   .orbit-bullets button {
     background-color: #ccc;
-    height: $line-height / 2;
-    width: $line-height / 2;
+    height: $line-height;
+    width: $line-height;
 
     &.is-active {
       background-color: var(--brand);

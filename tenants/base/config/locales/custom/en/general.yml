@@ -1,4 +1,7 @@
 en:
+  layouts:
+    header:
+      navigation: "Navigation:"
   welcome:
     steps:
       title: "Participate in 3 steps"
@@ -58,3 +61,4 @@ en:
       vote_registered: "Your vote has been registered correctly."
   shared:
     expired: "Expired"
+  skip_to_content: "Skip to content"

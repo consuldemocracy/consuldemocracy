@@ -65,9 +65,9 @@
 
       <% unless @search_terms || @advanced_search_terms %>
         <div id="section_help" class="section-help margin" data-magellan-target="section_help">
-          <p class="lead">
-            <strong><%= t("debates.index.section_footer.title") %></strong>
-          </p>
+          <h2 class="lead">
+            <%= t("debates.index.section_footer.title") %>
+          </h2>
           <p><%= t("debates.index.section_footer.description") %></p>
           <p><%= t("debates.index.section_footer.help_text_1") %></p>
           <p><%= sanitize(t("debates.index.section_footer.help_text_2",
