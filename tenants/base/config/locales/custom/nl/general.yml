@@ -70,7 +70,7 @@ nl:
   form:
     debate: "discussie"
     proposal: "initiatief"
-    not_saved: "zorgden ervoor dat je %{resource} niet geplaatst kan worden. <br>Bekijk de rode tekst om te zien wat aangepast moet worden."
+    not_saved: "\n\n Let op: bekijk de rode tekst voor meer informatie of acties."
     budget/investment: "idee"
   proposals:
     proposal:
@@ -289,10 +289,6 @@ nl:
       org_name: "CONSUL"
       contact_title: "Neem contact met ons op"
       privacy: "Privacyverklaring"
-      contact_email: "noreply@consul.dev"
-      contact: "noreply@consul.dev"
-      facebook: "facebook/consul"
-      facebook_url: "https://facebook.com/consul"
     dashboard:
       proposal_header:
         published: "Gepubliceerd"
