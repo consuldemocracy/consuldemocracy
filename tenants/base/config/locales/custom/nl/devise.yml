@@ -14,7 +14,7 @@ nl:
     passwords:
       send_instructions: "Je ontvangt via e-mail instructies hoe je jouw account kunt ontgrendelen."
       send_paranoid_instructions: "Als je e-mailadres bij ons bekend is, ontvang je instructies over hoe je weer met jouw account kan inloggen"
-      no_token: "Je kunt deze pagina niet benaderen zonder een \"wachtwoord reset e-mail\"."
+      no_token: 'Je kunt deze pagina niet benaderen zonder een "wachtwoord reset e-mail".'
       updated: "Je wachtwoord is gewijzigd. Je bent aangemeld!"
       updated_not_active: "Je wachtwoord is gewijzigd"
     password_expired:
@@ -37,14 +37,14 @@ nl:
     registrations:
       destroyed: "Jammer dat je gaat! Je account is succesvol verwijderd. Wij hopen je nog een keer terug te zien"
       signed_up: "Je bent inschreven"
-      signed_up_but_inactive: "Je bent geregistreerd. Je kon alleen niet automatisch aangemeld worden omdat jouw account nog niet geactiveerd is. Klik hiervoor op de link die naar jouw e-mailadres is verstuurd. Geen mail ontvangen? Neem dan contact op met noreply@consul.dev\r\n"
-      signed_up_but_locked: "Je bent geregistreerd. Je kon alleen niet automatisch aangemeld worden omdat jouw account geblokkeerd is. Neem hiervoor contact op met noreply@consul.dev"
-      signed_up_but_unconfirmed: "Je ontvangt via de e-mail instructies hoe je jouw account kunt activeren. Geen mail ontvangen? Neem dan contact op met noreply@consul.dev"
+      signed_up_but_inactive: "Je bent geregistreerd. Je kon alleen niet automatisch aangemeld worden omdat jouw account nog niet geactiveerd is. Klik hiervoor op de link die naar jouw e-mailadres is verstuurd."
+      signed_up_but_locked: "Je bent geregistreerd. Je kon alleen niet automatisch aangemeld worden omdat jouw account geblokkeerd is."
+      signed_up_but_unconfirmed: "Je ontvangt via de e-mail instructies hoe je jouw account kunt activeren."
       update_needs_confirmation: "U hebt uw e-mailadres succesvol gewijzigd, maar we moeten uw nieuwe mailadres nog verifiëren. Controleer uw e-mail en klik op de link in de mail om uw mailadres te verifiëren"
       updated: "Jouw accountgegevens zijn opgeslagen"
     unlocks:
-      send_instructions: "Je ontvangt via de e-mail instructies hoe je jouw uw account kunt ontgrendelen. Geen mail ontvangen? Neem dan contact op met noreply@consul.dev"
-      send_paranoid_instructions: "Als jouw e-mailadres bij ons bekend is, ontvangt je via de e-mail instructies hoe je jouw account kan ontgrendelen. Kom je niet verder? Neem dan contact op met noreply@consul.dev"
+      send_instructions: "Je ontvangt via de e-mail instructies hoe je jouw uw account kunt ontgrendelen."
+      send_paranoid_instructions: "Als jouw e-mailadres bij ons bekend is, ontvangt je via de e-mail instructies hoe je jouw account kan ontgrendelen."
       unlocked: "Je account is succesvol ontgrendeld. Je kunt jezelf weer aanmelden!"
     omniauth_callbacks:
       success: "Successvol aangemeld via %{kind}."

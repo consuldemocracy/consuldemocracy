@@ -25,7 +25,6 @@ nl:
       new: "De Coöperatieve Wijkraad heeft naar je idee gekeken. Helaas blijkt dat je idee niet haalbaar is. We leggen ook uit waarom. Je kunt je idee eventueel aanpassen: %{url}."
       new_href: "dat kan hier"
       contact: "Heb je vragen of wil je hulp bij je idee? Mail dan naar %{email}, we denken graag met je mee."
-      email: "noreply@consul.dev"
       sincerely: "Groeten van de Coöperatieve Wijkraad"
     budget_investment_unselected:
       subject: "Helaas heeft je idee het niet gehaald"
