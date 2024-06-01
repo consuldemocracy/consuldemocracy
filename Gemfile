@@ -68,7 +68,7 @@ group :development, :test do
   gem "debug", "~> 1.9.2"
   gem "factory_bot_rails", "~> 6.4.3"
   gem "faker", "~> 3.3.1"
-  gem "i18n-tasks", "~> 0.9.37"
+  gem "i18n-tasks", "~> 1.0.14"
   gem "knapsack_pro", "~> 7.0.1"
   gem "launchy", "~> 2.5.2"
   gem "letter_opener_web", "~> 2.0.0"
