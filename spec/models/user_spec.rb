@@ -438,6 +438,80 @@ describe User do
         expect(User.between_ages(51, 100).count).to eq 1
       end
 
+      it "does not consider that people born in the same year share the same age" do
+        april_1st_user = create(:user, date_of_birth: Time.zone.local(2001, 4, 1))
+        april_2nd_user = create(:user, date_of_birth: Time.zone.local(2001, 4, 2))
+        april_3rd_user = create(:user, date_of_birth: Time.zone.local(2001, 4, 3))
+
+        travel_to "2021-04-02" do
+          expect(User.between_ages(18, 19)).to eq [april_3rd_user]
+          expect(User.between_ages(20, 21)).to match_array [april_1st_user, april_2nd_user]
+          expect(User.between_ages(19, 20)).to match_array [april_1st_user, april_2nd_user, april_3rd_user]
+        end
+      end
+
+      it "works on leap years with users born on leap years" do
+        leap_day_user = create(:user, date_of_birth: Time.zone.local(2000, 2, 29))
+        march_1st_user = create(:user, date_of_birth: Time.zone.local(2000, 3, 1))
+
+        travel_to "2024-02-28" do
+          expect(User.between_ages(22, 23)).to match_array [leap_day_user, march_1st_user]
+          expect(User.between_ages(23, 24)).to match_array [leap_day_user, march_1st_user]
+          expect(User.between_ages(24, 25)).to eq []
+        end
+
+        travel_to "2024-02-29" do
+          expect(User.between_ages(22, 23)).to eq [march_1st_user]
+          expect(User.between_ages(23, 24)).to eq [leap_day_user, march_1st_user]
+          expect(User.between_ages(24, 25)).to eq [leap_day_user]
+        end
+
+        travel_to "2024-03-01" do
+          expect(User.between_ages(22, 23)).to eq []
+          expect(User.between_ages(23, 24)).to match_array [leap_day_user, march_1st_user]
+          expect(User.between_ages(24, 25)).to match_array [leap_day_user, march_1st_user]
+        end
+      end
+
+      it "works on non-leap years with users born on leap years" do
+        leap_day_user = create(:user, date_of_birth: Time.zone.local(2000, 2, 29))
+        march_1st_user = create(:user, date_of_birth: Time.zone.local(2000, 3, 1))
+
+        travel_to "2023-02-28" do
+          expect(User.between_ages(21, 22)).to match_array [leap_day_user, march_1st_user]
+          expect(User.between_ages(22, 23)).to match_array [leap_day_user, march_1st_user]
+          expect(User.between_ages(23, 24)).to eq []
+        end
+
+        travel_to "2023-03-01" do
+          expect(User.between_ages(21, 22)).to eq []
+          expect(User.between_ages(22, 23)).to match_array [leap_day_user, march_1st_user]
+          expect(User.between_ages(23, 24)).to match_array [leap_day_user, march_1st_user]
+        end
+      end
+
+      it "works on leap years with users born on non-leap years" do
+        march_1st_user = create(:user, date_of_birth: Time.zone.local(2001, 3, 1))
+
+        travel_to "2024-02-28" do
+          expect(User.between_ages(21, 22)).to eq [march_1st_user]
+          expect(User.between_ages(22, 23)).to eq [march_1st_user]
+          expect(User.between_ages(23, 24)).to eq []
+        end
+
+        travel_to "2024-02-29" do
+          expect(User.between_ages(21, 22)).to eq [march_1st_user]
+          expect(User.between_ages(22, 23)).to eq [march_1st_user]
+          expect(User.between_ages(23, 24)).to eq []
+        end
+
+        travel_to "2024-03-01" do
+          expect(User.between_ages(21, 22)).to eq []
+          expect(User.between_ages(22, 23)).to match_array [march_1st_user]
+          expect(User.between_ages(23, 24)).to match_array [march_1st_user]
+        end
+      end
+
       it "returns users between certain ages on a reference date" do
         reference_date = 20.years.ago
 
