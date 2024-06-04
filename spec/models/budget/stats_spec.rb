@@ -159,7 +159,7 @@ describe Budget::Stats do
   describe "#participants_by_age" do
     it "returns the age groups hash" do
       [21, 22, 23, 23, 34, 42, 43, 44, 50, 51].each do |age|
-        create(:user, date_of_birth: age.years.ago)
+        create(:user, date_of_birth: budget.phases.balloting.ends_at - age.years)
       end
 
       allow(stats).to receive(:participants).and_return(User.all)
@@ -179,15 +179,13 @@ describe Budget::Stats do
     end
 
     it "returns stats based on what happened when the voting took place" do
-      travel_to(50.years.ago) do
-        [21, 22, 23, 23, 34, 42, 43, 44, 50, 51].each do |age|
-          create(:user, date_of_birth: age.years.ago)
-        end
+      budget = travel_to(50.years.ago) { create(:budget, :finished) }
 
-        create(:budget, :finished)
+      [21, 22, 23, 23, 34, 42, 43, 44, 50, 51].each do |age|
+        create(:user, date_of_birth: budget.phases.balloting.ends_at - age.years)
       end
 
-      stats = Budget::Stats.new(Budget.last)
+      stats = Budget::Stats.new(budget)
       allow(stats).to receive(:participants).and_return(User.all)
 
       expect(stats.participants_by_age["16 - 19"][:count]).to eq 0
