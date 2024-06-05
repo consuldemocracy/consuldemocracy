@@ -60,6 +60,9 @@ module DocumentParser
   end
 
   def dni?(document_type)
-    document_type.to_s == "1"
+    # document_type.to_s == "1"
+    # TODO Warning this is not original code.
+    # DJND (and Slovenia in general) never wants to use DNI, so this returns false.
+    false
   end
 end
