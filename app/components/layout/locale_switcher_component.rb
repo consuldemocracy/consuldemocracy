@@ -12,7 +12,7 @@ class Layout::LocaleSwitcherComponent < ApplicationComponent
     end
 
     def locales
-      I18n.available_locales
+      Setting.enabled_locales
     end
 
     def label

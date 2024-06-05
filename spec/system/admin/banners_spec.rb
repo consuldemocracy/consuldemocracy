@@ -65,7 +65,7 @@ describe "Admin banners magement", :admin do
 
     within("#side_menu") do
       click_button "Site content"
-      click_link "Manage banners"
+      click_link "Banners"
     end
 
     click_link "Create banner"
@@ -134,7 +134,7 @@ describe "Admin banners magement", :admin do
 
     within("#side_menu") do
       click_button "Site content"
-      click_link "Manage banners"
+      click_link "Banners"
     end
 
     click_link "Edit"

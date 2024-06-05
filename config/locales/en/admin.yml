@@ -710,6 +710,11 @@ en:
       milestones:
         index:
           title: Following
+    locales:
+      default_help_text: "This is the default language of the application, and changing it will <strong>affect every user</strong> visiting the website for the first time."
+      enabled_help_text: The default language, selected above, will be included automatically.
+      update:
+        notice: Languages updated successfully
     managers:
       index:
         title: Managers
@@ -727,11 +732,12 @@ en:
     menu:
       activity: Moderator activity
       admin: Admin menu
-      banner: Manage banners
+      banner: Banners
       proposals: Proposals
       proposals_topics: Proposals topics
       budgets: Participatory budgets
-      geozones: Manage geozones
+      geozones: Geozones
+      locales: Languages
       hidden_comments: Hidden comments
       hidden_debates: Hidden debates
       hidden_proposals: Hidden proposals
@@ -752,7 +758,7 @@ en:
       polls: Polls
       poll_booths: Booths location
       poll_booth_assignments: Booths Assignments
-      poll_shifts: Manage shifts
+      poll_shifts: Shifts Assignments
       officials: Officials
       organizations: Organisations
       settings: Global settings
@@ -794,7 +800,7 @@ en:
       dashboard_actions: Resources and actions
       debates: "Debates"
       comments: "Comments"
-      local_census_records: Manage local census
+      local_census_records: Local census
       machine_learning: "AI / Machine learning"
       multitenancy: Multitenancy
     administrators:
@@ -1232,7 +1238,7 @@ en:
       show:
         location: "Location"
       booth:
-        shifts: "Manage shifts"
+        shifts: "Shifts Assignments"
     officials:
       edit:
         destroy: Remove "Official" status
@@ -1713,7 +1719,7 @@ en:
       empty: "There are no changes logged"
     local_census_records:
       index:
-        title: Manage local census
+        title: Local census
         create: Create new local census record
         no_local_census_records: There are no local census records.
         document_type: Document type
@@ -1738,7 +1744,7 @@ en:
         create:
           notice: Local census records import process executed successfully!
         show:
-          title: Manage local census
+          title: Local census
           subtitle: Import process results
           import: Import again
           errored: Errored rows

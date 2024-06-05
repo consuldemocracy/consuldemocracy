@@ -27,4 +27,13 @@ RSpec.describe SiteCustomization::ContentBlock do
     block.name = "top_links"
     expect(block).not_to be_valid
   end
+
+  it "is not valid with a disabled locale" do
+    Setting["locales.default"] = "nl"
+    Setting["locales.enabled"] = "nl pt-BR"
+
+    block.locale = "en"
+
+    expect(block).not_to be_valid
+  end
 end

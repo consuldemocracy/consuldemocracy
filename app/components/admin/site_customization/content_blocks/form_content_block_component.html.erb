@@ -1,12 +1,12 @@
-<%= form_for [:admin, @content_block], html: { class: "edit_page" } do |f| %>
+<%= form_for [:admin, content_block], html: { class: "edit_page" } do |f| %>
 
-  <%= render "shared/errors", resource: @content_block %>
+  <%= render "shared/errors", resource: content_block %>
 
   <div class="small-12 medium-6 column">
-    <%= f.select :name, options_for_select(valid_blocks, @selected_content_block) %>
+    <%= f.select :name, options_for_select(valid_blocks, selected_content_block) %>
   </div>
   <div class="small-12 medium-6 column">
-    <%= f.select :locale, I18n.available_locales %>
+    <%= f.select :locale, Setting.enabled_locales %>
   </div>
 
   <div class="small-12 column">
