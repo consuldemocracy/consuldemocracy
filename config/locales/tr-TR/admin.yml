@@ -731,7 +731,7 @@ tr:
       proposals: Önergeler
       proposals_topics: Önerge konuları
       budgets: Katılımcı bütçeler
-      geozones: Coğrafi bölgeleri yönet
+      geozones: Geozone'ları yönet
       hidden_comments: Gizli yorumlar
       hidden_debates: Gizli tartışmalar
       hidden_proposals: Gizli önergeler
@@ -752,7 +752,7 @@ tr:
       polls: Oylamalar
       poll_booths: Kabinlerin konumu
       poll_booth_assignments: Kabin atamaları
-      poll_shifts: Vardiya yönetimi
+      poll_shifts: Vardiyaları yönet
       officials: Görevliler
       organizations: Kuruluşlar
       settings: Genel ayarlar
@@ -794,7 +794,7 @@ tr:
       dashboard_actions: Kaynaklar ve işlemler
       debates: "Tartışmalar"
       comments: "Yorumlar"
-      local_census_records: Yerel seçmen bilgi sistemi yönetimi
+      local_census_records: Yerel nüfus sayımını yönet
       machine_learning: "Yapay Zeka / Makine Öğrenmesi"
       multitenancy: Çok kiracılı
     administrators:
@@ -1232,7 +1232,7 @@ tr:
       show:
         location: "Konum"
       booth:
-        shifts: "Vardiya yönetimi"
+        shifts: "Vardiyaları yönet"
     officials:
       edit:
         destroy: '''Görevli'' durumunu kaldır'
@@ -1706,7 +1706,7 @@ tr:
       empty: "Günlüğe kaydedilmiş bir değişiklik yok"
     local_census_records:
       index:
-        title: Yerel seçmen bilgi sistemi yönetimi
+        title: Yerel vatandaş listesini yönet
         create: Yeni yerel seçmen bilgi sistemi kaydı oluştur
         no_local_census_records: Herhangi bir yerel seçmen bilgi sistemi kaydı yok.
         document_type: Belge türü
@@ -1731,7 +1731,7 @@ tr:
         create:
           notice: Yerel seçmen bilgi sistemi kayıtları içe aktarıldı!
         show:
-          title: Yerel seçmen bilgi sistemi yönetimi
+          title: Yerel vatandaş listesini yönet
           subtitle: Süreç sonuçlarını içe aktar
           import: Yeniden içe aktar
           errored: Hatalı satırlar
