@@ -1,5 +1,10 @@
 module Types
   class QueryType < Types::BaseObject
+    field :budgets, Types::BudgetType.connection_type, "Returns all budgets", null: false
+    field :budget, Types::BudgetType, "Returns budget for ID", null: false do
+      argument :id, ID, required: true, default_value: false
+    end
+
     field :comments, Types::CommentType.connection_type, "Returns all comments", null: false
     field :comment, Types::CommentType, "Returns comment for ID", null: false do
       argument :id, ID, required: true, default_value: false
@@ -45,6 +50,14 @@ module Types
     field :votes, Types::VoteType.connection_type, "Returns all votes", null: false
     field :vote, Types::VoteType, "Returns vote for ID", null: false do
       argument :id, ID, required: true, default_value: false
+    end
+
+    def budgets
+      Budget.public_for_api
+    end
+
+    def budget(id:)
+      Budget.find(id)
     end
 
     def comments
