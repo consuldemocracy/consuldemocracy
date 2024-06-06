@@ -7,6 +7,7 @@ gl:
     name: Nome
     email: O teu correo electrónico
     description: Descrición
+    related_sdg_list: Obxectivos e metas
   activerecord:
     models:
       activity:
@@ -75,6 +76,15 @@ gl:
       proposal:
         one: "Proposta cidadá"
         other: "Propostas cidadás"
+      sdg/goal:
+        one: "obxectivo"
+        other: "obxectivos"
+      sdg/local_target:
+        one: "obxectivo local"
+        other: "obxectivos locais"
+      sdg/manager:
+        one: "xestor ODS"
+        other: "xestores ODS"
       site_customization/page:
         one: Páxina
         other: Páxinas personalizadas
@@ -111,6 +121,9 @@ gl:
       images:
         one: "Imaxe"
         other: "Imaxes"
+      tenant:
+        one: "inquilino"
+        other: "inquilinos"
       topic:
         one: "Tema"
         other: "Temas"
