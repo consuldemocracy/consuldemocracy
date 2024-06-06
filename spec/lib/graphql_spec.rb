@@ -252,16 +252,17 @@ describe "Consul Schema" do
   end
 
   describe "Comments" do
-    it "only returns comments from proposals, debates and polls" do
+    it "only returns comments from proposals, debates, polls and Budget::Investment" do
       create(:comment, commentable: create(:proposal))
       create(:comment, commentable: create(:debate))
       create(:comment, commentable: create(:poll))
+      create(:comment, commentable: create(:topic))
       build(:comment, commentable: create(:budget_investment)).save!(skip_validation: true)
 
       response = execute("{ comments { edges { node { commentable_type } } } }")
       received_commentables = extract_fields(response, "comments", "commentable_type")
 
-      expect(received_commentables).to match_array ["Proposal", "Debate", "Poll"]
+      expect(received_commentables).to match_array ["Proposal", "Debate", "Poll", "Budget::Investment"]
     end
 
     it "displays comments of authors even if public activity is set to false" do
