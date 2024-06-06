@@ -673,8 +673,7 @@ tr:
       author_deleted: Kullanıcı silindi
       email_deleted: E-posta silindi
     back: Geri dön
-    check: Seçin
-    check_all: Tümü
+    check_all: Tüm
     check_none: Yok
     collective: Topluluk
     flag: Uygunsuz olarak işaretle
