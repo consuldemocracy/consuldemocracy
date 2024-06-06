@@ -674,9 +674,8 @@ en:
       author_deleted: User deleted
       email_deleted: Email deleted
     back: Go back
-    check: Select
-    check_all: All
-    check_none: None
+    check_all: Select all
+    check_none: Select none
     collective: Collective
     flag: Flag as inappropriate
     follow: "Follow"
