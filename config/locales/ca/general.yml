@@ -652,7 +652,6 @@ ca:
       author_deleted: Usuari eliminat
       email_deleted: S'ha suprimit el correu electrònic
     back: Tornar
-    check: Seleccionar
     check_all: tots
     check_none: Cap
     collective: Associació
