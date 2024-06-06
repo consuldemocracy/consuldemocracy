@@ -584,8 +584,7 @@ nl:
       author_deleted: Gebruiker verwijderd
       email_deleted: E-mail verwijderd
     back: Ga terug
-    check: Select
-    check_all: Alle
+    check_all: All
     check_none: Geen
     collective: Collectief
     flag: Markeer als ongepast
