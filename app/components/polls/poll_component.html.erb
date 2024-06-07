@@ -40,16 +40,7 @@
           <% end %>
         </ul>
       <% end %>
-      <% if poll.geozones.any? %>
-        <p>
-          <small><%= t("polls.index.geozone_info") %></small>
-        </p>
-      <% end %>
-      <ul class="tags">
-        <% poll.geozones.each do |g| %>
-          <li><span><%= g.name %></span></li>
-        <% end %>
-      </ul>
+      <%= render Polls::GeozonesComponent.new(poll) %>
       <%= render SDG::TagListComponent.new(poll, limit: 5, linkable: false) %>
     </div>
     <div class="small-12 medium-3 column table" data-equalizer-watch>

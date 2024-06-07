@@ -63,6 +63,20 @@ describe Polls::PollComponent do
     end
   end
 
+  describe "geozones" do
+    it "renders a list of geozones when the poll is geozone-restricted" do
+      render_inline Polls::PollComponent.new(create(:poll, geozone_restricted_to: [create(:geozone)]))
+
+      expect(page).to have_css ".tags"
+    end
+
+    it "does not render a list of geozones when the poll isn't geozone-restricted" do
+      render_inline Polls::PollComponent.new(create(:poll))
+
+      expect(page).not_to have_css ".tags"
+    end
+  end
+
   it "shows a link to poll stats if enabled" do
     poll = create(:poll, :expired, name: "Poll with stats", stats_enabled: true)
 

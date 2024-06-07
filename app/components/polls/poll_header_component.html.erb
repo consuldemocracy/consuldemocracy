@@ -11,13 +11,7 @@
 
       <%= auto_link_already_sanitized_html simple_format(poll.summary) %>
 
-      <% if poll.geozones.any? %>
-        <ul class="margin-top tags">
-          <% poll.geozones.each do |g| %>
-            <li><span><%= g.name %></span></li>
-          <% end %>
-        </ul>
-      <% end %>
+      <%= render Polls::GeozonesComponent.new(poll) %>
       <%= render SDG::TagListComponent.new(poll, linkable: false) %>
     </div>
 
