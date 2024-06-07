@@ -10,7 +10,7 @@
 <% end %>
 
 <div class="polls-show">
-  <%= render "poll_header" %>
+  <%= render Polls::PollHeaderComponent.new(@poll) %>
 
   <%= render "poll_subnav" %>
 
