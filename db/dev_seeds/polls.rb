@@ -49,7 +49,7 @@ section "Creating polls" do
   end
 end
 
-section "Creating Poll Questions & Answers" do
+section "Creating Poll Questions & Options" do
   Poll.find_each do |poll|
     (3..5).to_a.sample.times do
       question_title = Faker::Lorem.sentence(word_count: 3).truncate(60) + "?"
@@ -210,12 +210,12 @@ section "Creating Poll Results" do
       author = Poll::Officer.first.user
 
       poll.questions.each do |question|
-        question.question_options.each do |answer|
+        question.question_options.each do |option|
           Poll::PartialResult.create!(officer_assignment: officer_assignment,
                                       booth_assignment: booth_assignment,
                                       date: Date.current,
                                       question: question,
-                                      answer: answer.title,
+                                      answer: option.title,
                                       author: author,
                                       amount: rand(999),
                                       origin: "booth")

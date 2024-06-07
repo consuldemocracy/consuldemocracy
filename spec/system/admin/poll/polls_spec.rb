@@ -119,7 +119,7 @@ describe "Admin polls", :admin do
       expect(page).to have_content("There are no polls.")
     end
 
-    scenario "Can destroy poll with questions and answers" do
+    scenario "Can destroy poll with questions and options" do
       poll = create(:poll, name: "Do you support CONSUL?")
       create(:poll_question, :yes_no, poll: poll)
 

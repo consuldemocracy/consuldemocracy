@@ -11,7 +11,7 @@ describe "Poll Questions" do
     expect(proposal_question.title).to appear_before(normal_question.title)
   end
 
-  scenario "shows answers with an image and no description" do
+  scenario "shows options with an image and no description" do
     poll = create(:poll)
     option = create(:poll_question_option, poll: poll, title: "Pedestrian road", description: "")
     create(:image, imageable: option, title: "Trees on both sides of the road")

@@ -16,7 +16,7 @@
                       title: t("poll_questions.show.vote_answer", answer: question_option.title),
                       class: "button secondary hollow",
                       "aria-pressed": false,
-                      disabled: disable_answer?(question_option) %>
+                      disabled: disable_option?(question_option) %>
       <% end %>
     <% end %>
   <% elsif !user_signed_in? %>

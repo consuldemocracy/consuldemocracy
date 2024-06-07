@@ -13,8 +13,8 @@
   </div>
 
   <div class="js-answers">
-    <%= f.fields_for :question_options do |answer| %>
-      <%= render "question_option_fields", f: answer %>
+    <%= f.fields_for :question_options do |option_form| %>
+      <%= render "question_option_fields", f: option_form %>
     <% end %>
 
     <div class="answer-links links row expanded">

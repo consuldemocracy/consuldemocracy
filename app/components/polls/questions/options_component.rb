@@ -18,7 +18,7 @@ class Polls::Questions::OptionsComponent < ApplicationComponent
     user_answers.find_by(answer: question_option.title)
   end
 
-  def disable_answer?(question_option)
+  def disable_option?(question_option)
     question.multiple? && user_answers.count == question.max_votes
   end
 
