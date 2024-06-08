@@ -660,6 +660,8 @@ gl:
     translations:
       remove_language: Eliminar idioma
       add_language: Engadir idioma
+    optional: "Campos opcionais"
+    required: "Campos obrigatorios"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
