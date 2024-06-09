@@ -710,6 +710,11 @@ tr:
       milestones:
         index:
           title: Takip ediliyor
+    locales:
+      default_help_text: "Bu, varsayılan uygulama dilidir ve bunu değiştirmek, siteye ilk kez gelen <strong>her kullanıcıyı</strong> etkiler."
+      enabled_help_text: Yukarıda seçilmiş varsayılan dil otomatik olarak eklenecek.
+      update:
+        notice: Diller güncellendi
     managers:
       index:
         title: Yöneticiler
@@ -732,6 +737,7 @@ tr:
       proposals_topics: Önerge konuları
       budgets: Katılımcı bütçeler
       geozones: Geozone'ları yönet
+      locales: Diller
       hidden_comments: Gizli yorumlar
       hidden_debates: Gizli tartışmalar
       hidden_proposals: Gizli önergeler
