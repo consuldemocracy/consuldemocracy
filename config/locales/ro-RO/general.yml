@@ -577,7 +577,6 @@ ro:
         share: "Și dacă, de asemenea, îmi faci o mare favoare a-mi distribui propunerea cu prietenii, familia și persoanele de contact, ar fi perfect!"
   polls:
     all: "Tot"
-    no_dates: "nu există date atribuite"
     dates: "De la %{open_at} către %{closed_at}"
     final_date: "Renumărări/ Rezultate finale"
     index:
