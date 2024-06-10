@@ -507,7 +507,6 @@ gl:
         hi: "Ola!"
   polls:
     all: "Todo"
-    no_dates: "sen data asignada"
     dates: "Desde o %{open_at} a %{closed_at}"
     final_date: "Reconto final/resultados"
     index:
