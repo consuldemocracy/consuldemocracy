@@ -569,7 +569,6 @@ en:
         share: "And if you also do me the great favor of sharing my proposal with your friends, family and contacts, it would be perfect!"
   polls:
     all: "All"
-    no_dates: "no date assigned"
     dates: "From %{open_at} to %{closed_at}"
     final_date: "Final recounts/Results"
     index:
@@ -581,7 +580,7 @@ en:
       participate_button_expired: "Poll ended"
       no_geozone_restricted: "All city"
       geozone_restricted: "Districts"
-      geozone_info: "Can participate people in the Census of: "
+      geozone_info: "Only residents in the following areas can participate: "
       already_answer: "You already have participated in this poll"
       not_logged_in: "You must sign in or sign up to participate"
       unverified: "You must verify your account to participate"

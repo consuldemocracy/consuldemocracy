@@ -1,0 +1,9 @@
+<p>
+  <small><%= t("polls.index.geozone_info") %></small>
+</p>
+
+<ul class="tags">
+  <% poll.geozones.each do |geozone| %>
+    <li><span><%= geozone.name %></span></li>
+  <% end %>
+</ul>
