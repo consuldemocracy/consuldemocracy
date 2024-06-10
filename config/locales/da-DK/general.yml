@@ -566,7 +566,6 @@ da:
         share: "Og hvis du også gør mig den store tjeneste at dele mit forslag med venner, familie og andet netværk, vil det være helt perfekt!"
   polls:
     all: "Alle"
-    no_dates: "der er ikke angivet nogen dato"
     dates: "Fra %{open_at} til %{closed_at}"
     final_date: "Endelig opregning/Resultater"
     index:
