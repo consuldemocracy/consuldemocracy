@@ -572,7 +572,6 @@ hr:
         share: "Bilo bi super da mi učinite uslugu dijeljenja mojeg prijedloga sa svojim prijateljima, obitelji i kontaktima, bilo bi savršeno!"
   polls:
     all: "Svi"
-    no_dates: "nije određen datum"
     dates: "Od %{open_at} do %{closed_at}"
     final_date: "Konačno prebrojavanje/Rezultati"
     index:
