@@ -424,7 +424,6 @@ val:
         support_button: Avalar aquesta proposta
   polls:
     all: "Totes"
-    no_dates: "sense data asignada"
     dates: "Des del %{open_at} fins el %{closed_at}"
     final_date: "Recompte final/Resultats"
     index:
