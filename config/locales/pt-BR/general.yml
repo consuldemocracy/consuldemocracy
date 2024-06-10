@@ -557,7 +557,6 @@ pt-BR:
         share: "E se você fizer o grande favor de compartilhar a minha proposta com seus amigos, familiares e contatos, vai ser ótimo!"
   polls:
     all: "Tudo"
-    no_dates: "nenhuma data atribuída"
     dates: "De %{open_at} para %{closed_at}"
     final_date: "Contagem final/resultados"
     index:
