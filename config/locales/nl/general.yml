@@ -486,7 +486,6 @@ nl:
         hi: "Hallo!"
   polls:
     all: "Alle"
-    no_dates: "geen datum toegewezen"
     dates: "Van %{open_at} tot %{closed_at}"
     final_date: "Definitieve hertelling/resultaten"
     index:
