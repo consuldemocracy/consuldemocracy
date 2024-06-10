@@ -555,7 +555,6 @@ ca:
         share: "I si també em feu el gran favor de compartir la meva proposta amb els vostres amics, familiars i contactes, seria perfecte!"
   polls:
     all: "tots"
-    no_dates: "sense data asignada"
     dates: "Des de el %{open_at} fins al %{closed_at}"
     final_date: "Recompte final/Resultats"
     index:
