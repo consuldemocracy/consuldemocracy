@@ -597,7 +597,6 @@ cs:
         share: "A pokud mi také prokážete velkou laskavost a podělíte se o můj návrh se svými přáteli, rodinou a kontakty, bude to perfektní!"
   polls:
     all: "Vše"
-    no_dates: "není přiřazené datum"
     dates: "Od %{open_at} do %{closed_at}"
     final_date: "Konečné přepočty/výsledky"
     index:
@@ -609,7 +608,7 @@ cs:
       participate_button_expired: "Průzkum ukončen"
       no_geozone_restricted: "Celé město"
       geozone_restricted: "Městské části"
-      geozone_info: "Otevřeno pro obyvatele z: "
+      geozone_info: "Může se podílet na registrech občanů: "
       already_answer: "Tohoto hlasování jste se již účastnili"
       not_logged_in: "Pro účast se musíte registrovat a přihlásit"
       unverified: "Pro zapojení je nutné ověřit váš účet"
