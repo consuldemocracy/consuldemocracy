@@ -367,7 +367,6 @@ sl:
         support_button: Podpri ta predlog
   polls:
     all: "Vsi"
-    no_dates: "Brez datuma"
     dates: "Od %{open_at} do %{closed_at}"
     final_date: "Končni rezultati"
     index:
