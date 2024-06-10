@@ -537,7 +537,6 @@ bs:
         share: "Bilo bi super kad bi mi učinili veliku uslugu i podijelili moj prijedlog sa prijateljima, porodicom i poznanicima!"
   polls:
     all: "Sve"
-    no_dates: "nije određen datum"
     dates: "Od %{open_at} do %{closed_at}"
     final_date: "Konačno ponovno brojanje/Rezultati"
     index:
