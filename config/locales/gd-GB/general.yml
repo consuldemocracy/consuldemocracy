@@ -600,7 +600,6 @@ gd:
         share: "Agus ma nì thu fàbhar mòr dhomh cuideachd is ma sgaoileas tu mo mholadh ri do charaidean, do theaghlach agus na daoine as aithne dhut, bhiodh e sgoinneil!"
   polls:
     all: "A h-uile"
-    no_dates: "chan eil ceann-latha air a shònrachadh"
     dates: "Bho %{open_at} gu %{closed_at}"
     final_date: "Cunntasan /Toraidhean deireannach"
     index:
