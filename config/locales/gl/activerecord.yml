@@ -157,6 +157,9 @@ gl:
         description_finished: "Descrición cando o orzamento está rematado"
         phase: "Fase"
         currency_symbol: "Moeda"
+        voting_style: "Estilo da votación final"
+        voting_style_knapsack: "Bolsa de diñeiro"
+        voting_style_approval: "Por aprobación"
       budget/translation:
         name: "Nome"
       budget/investment:
