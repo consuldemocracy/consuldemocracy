@@ -562,7 +562,6 @@ fr:
         share: "Et si vous aussi vous me faites la faveur de partager ma proposition avec vos amis, votre famille et vos contacts, ce serait parfait !"
   polls:
     all: "Toutes"
-    no_dates: "aucune date fixée"
     dates: "De %{open_at} à %{closed_at}"
     final_date: "Dépouillements/résultats définitifs"
     index:
