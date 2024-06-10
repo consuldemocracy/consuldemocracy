@@ -393,7 +393,6 @@ id:
         support_button: Mendukung proyek ini
   polls:
     all: "Semua"
-    no_dates: "tidak ada tanggal yang ditetapkan"
     dates: "Dari %{open_at} untuk %{closed_at}"
     final_date: "Final menceritakan/Hasil"
     index:
