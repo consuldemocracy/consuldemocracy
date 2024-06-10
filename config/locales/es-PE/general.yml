@@ -386,7 +386,6 @@ es-PE:
         support_button: Apoyar esta propuesta
   polls:
     all: "Todas"
-    no_dates: "sin fecha asignada"
     dates: "Desde el %{open_at} hasta el %{closed_at}"
     final_date: "Recuento final/Resultados"
     index:
