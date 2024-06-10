@@ -568,7 +568,6 @@ sv:
         share: "Och om du kunde dela förslaget med dina vänner, din familj och dina kontakter skulle det vara perfekt!"
   polls:
     all: "Alla"
-    no_dates: "inget datum har valts"
     dates: "Från %{open_at} till %{closed_at}"
     final_date: "Slutresultat"
     index:
