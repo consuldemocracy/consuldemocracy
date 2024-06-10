@@ -568,7 +568,6 @@ tr:
         share: "Bana bir iyilik yaparak önergemi arkadaşlarınla, ailenle ve yakınlarınla paylaşırsan, harika olur!"
   polls:
     all: "Tümü"
-    no_dates: "tarih belirtilmemiş"
     dates: "%{open_at} ile %{closed_at} arasında"
     final_date: "Son yeniden sayımlar/Sonuçlar"
     index:
@@ -580,7 +579,7 @@ tr:
       participate_button_expired: "Oylama sona erdi"
       no_geozone_restricted: "Tüm şehir"
       geozone_restricted: "Bölgeler"
-      geozone_info: "Seçmen bilgi sistemi üzerindeki kişiler katılabilir: "
+      geozone_info: "Census'taki kişiler katılabilir: "
       already_answer: "Bu oylamaya zaten katılmışsınız"
       not_logged_in: "Katılmak için oturum ya da hesap açmalısınız"
       unverified: "Katılmak için hesabınızı doğrulamalısınız"
