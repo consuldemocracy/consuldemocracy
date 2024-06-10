@@ -412,7 +412,6 @@ so:
         support_button: Taageeraan hindisahan
   polls:
     all: "Dhamaan"
-    no_dates: "tirada taariikhda la magacaabay"
     dates: "Kadimid%{open_at} ila%{closed_at}"
     final_date: "Soo-celinta ugu dambeysa / Natiijooyinka"
     index:
