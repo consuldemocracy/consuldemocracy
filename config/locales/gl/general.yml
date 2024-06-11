@@ -1,6 +1,7 @@
 gl:
   account:
     show:
+      last_sign_in: "Última conexión: %{last_sign_in_at} dende o enderezo IP %{last_sign_in_ip}"
       change_credentials_link: Cambiar os meus datos de acceso
       erase_account_link: Borrar a miña conta
       finish_verification: Finalizar verificación
@@ -20,6 +21,9 @@ gl:
     close: Cerrar
     menu: Menú
   comments:
+    actions:
+      confirm_delete: "Estás seguro/a? Esta acción eliminará este comentario. Non podes desfacer esta acción."
+      delete: "Borrar comentario"
     comments_closed: Os comentarios están pechados
     verified_only: Para participares, %{verify_account}
     comment:
@@ -131,8 +135,10 @@ gl:
         submit_button: Gardar so cambios
   errors:
     messages:
+      allowed_file_content_types: "o tipo de contido debe ser un dos seguintes: %{types}"
       user_not_found: Usuario non atopado
       invalid_date_range: "O rango de datas non é correcto"
+      past_date: "Non pode ser unha data do pasado"
   form:
     accept_terms: Acepto a %{policy} e as %{conditions}
     conditions: Condicións de uso
