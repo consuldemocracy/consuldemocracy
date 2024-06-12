@@ -66,7 +66,7 @@ FactoryBot.define do
     end
 
     trait :abc do
-      after(:create) do |question, evaluator|
+      after(:create) do |question|
         %w[A B C].each do |letter|
           create(:poll_question_option, question: question, title: "Answer #{letter}")
         end
