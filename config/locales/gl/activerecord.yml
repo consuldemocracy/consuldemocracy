@@ -160,7 +160,10 @@ gl:
         voting_style: "Estilo da votación final"
         voting_style_knapsack: "Bolsa de diñeiro"
         voting_style_approval: "Por aprobación"
+        hide_money: "Agochar a cantidade de diñeiro para este orzamento"
       budget/translation:
+        main_link_text: "Texto na ligazón"
+        main_link_url: "A ligazón lévate a (engade unha ligazón)"
         name: "Nome"
       budget/investment:
         heading_id: "Partida"
@@ -192,7 +195,9 @@ gl:
       geozone:
         name: Nome
         external_code: "Código externo (opcional)"
+        color: "Cor (opcional)"
         census_code: "Código censal (opcional)"
+        geojson: "Datos GeoJSON (opcional)"
         html_map_coordinates: "Coordenadas HTML <map> (opcional)"
       milestone:
         status_id: "Estado do investimento actual (opcional)"
@@ -211,6 +216,8 @@ gl:
       progress_bar/kind:
         primary: "Principal"
         secondary: "Secundaria"
+      budget/group:
+        max_votable_headings: "Número máximo de partidas ás que un usuario pode votar"
       budget/group/translation:
         name: "Nome do grupo"
       budget/heading:
@@ -220,6 +227,7 @@ gl:
         name: "Nome da partida"
         price: "Custo"
         population: "Poboación"
+        max_ballot_lines: "Votos permitidos"
       budget/heading/translation:
         name: "Nome da partida"
       budget/phase:
@@ -230,6 +238,7 @@ gl:
         name: "Nome"
         description: "Descrición"
         summary: "Resumo"
+        main_link_text: "Texto da ligazón"
       comment:
         body: "Comentar"
         user: "Usuario/a"
