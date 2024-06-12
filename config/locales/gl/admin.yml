@@ -4,14 +4,20 @@ gl:
       title: Administración
     actions:
       actions: Accións
+      block_author: "Autor do bloque"
+      confirm_action: "Estás seguro/a? %{action} \"%{name}\""
+      confirm_delete: "Estás seguro/a? Esta acción vai eliminar \"%{name}\" e non se pode desfacer."
       confirm_hide: Confirmar moderación
       delete: "Borrar"
       hide: Agochar
+      label: "%{action} %{name}"
       restore: Volver mostrar
       mark_featured: Destacar
       unmark_featured: Quitar destacado
       edit: Editar proposta
       configure: Configurar
+    officing_booth:
+      title: "Agora mesmo estás na mesa localizada en %{booth}. Se isto non é correcto, non sigas adiante e chama ao teléfono de incidencias. Grazas."
     banners:
       index:
         title: Bánners
@@ -29,12 +35,19 @@ gl:
           proposals: Propostas cidadás
           budgets: Orzamentos participativos
           help_page: Páxina de axuda
+          sdg: ODS
+      create:
+        notice: "Anuncio creado correctamente"
+      destroy:
+        notice: "Anuncio eliminado correctamente"
       edit:
         editing: Editar anuncio
         form:
           submit_button: Gardar so cambios
       new:
         creating: Crear anuncio
+      update:
+        notice: "Anuncio actualizado correctamente"
     activity:
       show:
         action: Acción
@@ -57,6 +70,14 @@ gl:
         no_activity: Non hai actividade dos moderadores.
     budgets:
       actions:
+        ballots: "Crear urnas"
+        confirm:
+          ballots: "Estás seguro/a? Esta acción só é necesaria se vas utilizar urnas físicas durante a votación final. Os cidadáns poderán votar a través da web con, ou sen urnas físicas."
+          destroy: "Estás seguro/a? Esta acción eliminará o orzamento e todos os seus grupos e partidas. Esta acción non se pode desfacer."
+        descriptions:
+          ballots: "Esta acción vaiche permitir a xestión das urnas de votación. Usa esta opción só se vas empregar urnas físicas para recoller votos durante a votación final."
+          calculate_winners: 'Despois de calcular os resultados, só os administradores terán acceso aos mesmos. Faranse públicos cando o orzamento chegue á fase "%{phase}" <strong> se se habilita a opción «Amosar resultados»</strong> ao editar o orzamento.'
+          destroy: "Esta acción eliminará o orzamento e todos os seus grupos e partidas. Esta acción non se pode desfacer."
         edit: "Editar orzamento"
         preview: "Vista previa"
       index:
