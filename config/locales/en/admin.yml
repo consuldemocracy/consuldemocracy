@@ -1294,7 +1294,7 @@ en:
         title: Proposals
         id: ID
         author: Author
-        select: Select
+        select: "Select %{proposal}"
         selected: Selected
         milestones: Milestones
         no_proposals: There are no proposals.

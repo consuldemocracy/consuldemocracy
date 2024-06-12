@@ -1,4 +1,5 @@
 class Admin::MachineLearning::SettingComponent < ApplicationComponent
+  include Admin::SwitchText
   attr_reader :kind
 
   def initialize(kind)
@@ -13,6 +14,10 @@ class Admin::MachineLearning::SettingComponent < ApplicationComponent
 
     def ml_info
       @ml_info ||= MachineLearningInfo.for(kind)
+    end
+
+    def checked?
+      setting.enabled?
     end
 
     def filenames

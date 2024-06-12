@@ -268,7 +268,7 @@ es:
           unfeasible: "Inviable"
           undecided: "Sin decidir"
         selected: "Seleccionado"
-        select: "Seleccionar"
+        select: "Seleccionar %{proposal}"
         list:
           id: ID
           title: Título

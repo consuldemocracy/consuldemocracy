@@ -55,6 +55,7 @@
 <td class="small text-center" data-field="visible_to_valuators">
   <% if can?(:admin_update, investment) %>
     <%= form_for [:admin, investment.budget, investment], remote: true, format: :json do |f| %>
+        <%# TODO %>
         <%= f.check_box :visible_to_valuators,
                         label: false,
                         class: "js-submit-on-change",
@@ -66,40 +67,7 @@
 </td>
 
 <td id="selection" class="small text-center" data-field="selected">
-  <% if investment.selected? %>
-      <%= link_to_if can?(:toggle_selection, investment),
-                     t("admin.budget_investments.index.selected"),
-                     toggle_selection_admin_budget_budget_investment_path(
-                       @budget,
-                       investment,
-                       filter: params[:filter],
-                       sort_by: params[:sort_by],
-                       min_total_supports: params[:min_total_supports],
-                       max_total_supports: params[:max_total_supports],
-                       advanced_filters: params[:advanced_filters],
-                       page: params[:page]
-                     ),
-                     method: :patch,
-                     remote: true,
-                     class: "button small expanded" %>
-  <% elsif investment.feasible? && investment.valuation_finished? %>
-    <% if can?(:toggle_selection, investment) %>
-      <%= link_to t("admin.budget_investments.index.select"),
-                  toggle_selection_admin_budget_budget_investment_path(
-                    @budget,
-                    investment,
-                    filter: params[:filter],
-                    sort_by: params[:sort_by],
-                    min_total_supports: params[:min_total_supports],
-                    max_total_supports: params[:max_total_supports],
-                    advanced_filters: params[:advanced_filters],
-                    page: params[:page]
-                  ),
-                  method: :patch,
-                  remote: true,
-                  class: "button small hollow expanded" %>
-    <% end %>
-  <% end %>
+  <%= render Admin::BudgetInvestments::ToggleSelectionComponent.new(investment) %>
 </td>
 
 <% if params[:advanced_filters]&.include?("selected") %>
