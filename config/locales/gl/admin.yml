@@ -153,12 +153,21 @@ gl:
         groups:
           multiple: "Os grupos serven para organizar as partidas do orzamento. Despois de que un grupo sexa creado e que conteña partidas, é posible determinar o número de partidas ás que un usuario pode votar por grupo."
           single: "Os grupos serven para organizar as partidas do orzamento. Como este orzamento estar formado por unha soa partida, pódese usar o mesmo nome xa que non aparecerá en ningunha parte. Podes continuar co seguinte paso."
+        headings:
+          multiple: "As partidas serven para dividir o diñeiro do orzamento participativo. Aquí podes ir engadindo partidas para cada grupo e estabelecer a cantidade de diñeiro que se gastará en cada partida."
+          single: "As partidas serven para dividir o diñeiro do orzamento participativo. Como este orzamento só terá unha partida, aquí poderás estabelecer a cantidade de diñeiro que se gastará neste orzamento participativo."
+        phases: "Os orzamentos participativos teñen diferentes fases. Aquí podes habilitar ou deshabilitar fases e tamén personalizar cada unha das fases. A configuración destas fases só se fai con fins informativos e amosarase na páxina pública do orzamento participativo."
       show:
+        add_group: "Engadir grupo"
         add_heading: "Engadir partida"
+        groups_and_headings: "Grupos de partidas"
+        headings_caption: "Partidas do grupo %{group}"
       winners:
         calculate: Calcular propostas gañadoras
         calculated: Calculando gañadoras, pode tardar un minuto.
         recalculate: Recalcular propostas gañadoras
+      ballots:
+        feature_disabled: 'A funcionalidade de <strong>Votacións</strong> debe estar activada para poder crear urnas. Podes activala na páxina de <a href="%{link}">configuración</a>.'
     budget_groups:
       name: "Nome"
       headings_name: "Partidas"
