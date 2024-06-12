@@ -30,7 +30,7 @@
   }
 
   .budget-draft {
-    @include has-fa-icon(pencil-alt, solid);
+    @include has-fa-icon(pencil, solid);
 
     span {
       font-style: italic;

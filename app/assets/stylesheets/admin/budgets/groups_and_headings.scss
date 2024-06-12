@@ -59,7 +59,7 @@
   }
 
   .new-link {
-    @include has-fa-icon(plus-square, solid);
+    @include has-fa-icon(square-plus, solid);
 
     &::before {
       margin-#{$global-right}: $font-icon-margin;

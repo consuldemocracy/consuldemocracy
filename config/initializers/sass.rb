@@ -1,4 +1,4 @@
-# TODO: remove once we upgrade Foundation and Font Awesome
+# TODO: remove once we upgrade Foundation
 SassC::Engine.class_eval do
   alias_method :original_initialize, :initialize
 

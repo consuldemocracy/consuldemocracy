@@ -28,7 +28,7 @@
   }
 
   .remove-budget-investment {
-    @include has-fa-icon(times, solid);
+    @include has-fa-icon(xmark, solid);
     font-size: $close-icon-size;
     position: absolute;
     right: $close-icon-margin;

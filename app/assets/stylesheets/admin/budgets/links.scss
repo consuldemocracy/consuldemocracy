@@ -27,10 +27,10 @@
   }
 
   .ballots-link {
-    @include has-fa-icon(archive, solid);
+    @include has-fa-icon(box-archive, solid);
   }
 
   .results-link {
-    @include has-fa-icon(poll, solid);
+    @include has-fa-icon(square-poll-vertical, solid);
   }
 }

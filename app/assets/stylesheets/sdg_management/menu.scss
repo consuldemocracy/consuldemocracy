@@ -9,7 +9,7 @@
   }
 
   .homepage-link {
-    @include has-fa-icon(home, solid);
+    @include has-fa-icon(house, solid);
 
     &::before {
       @extend %admin-menu-icon;
