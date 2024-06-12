@@ -186,10 +186,12 @@ gl:
       form:
         create: "Crear novo grupo"
         edit: "Editar grupo"
+        max_votable_headings_info: "Só se aplica na fase de apoios. Durante a votación final un usuario só pode votar nunha partida por grupo."
         submit: "Gardar grupo"
       index:
         new_button: "Engadir un grupo novo"
     budget_headings:
+      no_headings: "Non hai partidas no grupo <strong>%{group}</strong>."
       create:
         notice: "Partida creada correctamente!"
       update:
@@ -198,20 +200,37 @@ gl:
         success_notice: "Partida eliminada correctamente"
         unable_notice: "Non se pode eliminar unha partida con proxectos asociados"
       form:
+        geozone_info: "Cando se asocia unha partida a unha zona, esta aparecerá no mapa deste orzamento se a zona inclúe datos de GeoJSON."
+        max_ballot_lines_info: 'Número máximo de proxectos que un usuario pode votar nesta partida durante a fase «Votación final». Soamente se aplica a orzamentos con votación por aprobación.'
         population_info: "O campo poboación das partidas do orzamento utilízase unicamente con fins estatísticos, co obxectivo de amosar a porcentaxe de votos de cada partida que represente unha área con poboación. É un campo opcional, así que podes deixalo en branco se non o aplicas."
         coordinates_info: "Se se indican a latitude e lonxitude, a páxina de investimentos para esta partida incluirá un mapa. Este mapa estará centrado segundo estas coordenadas."
         content_blocks_info: "Se o permiso de bloque de contido está activado, poderás crear contido propio para esta partida desde a sección Configuración -> Contido de bloques personalizado. Este contido amosarase na páxina de investimentos desta partida."
         create: "Crear nova partida"
         edit: "Editar Partida"
         submit: "Gardar partida"
+      group_switcher:
+        currently_showing: "Amosando as partidas do grupo <strong>%{group}</strong>."
+        different_group: "Xestionar as partidas doutro grupo"
+        the_other_group: "Xestionar as partidas do grupo %{group}."
       index:
         back: "Volver aos grupos"
+        new_button: "Engadir nova partida"
+        title: "Partidas de %{budget} / %{group}"
     budget_phases:
       edit:
         title: "Editar fase"
+        dates_help_text: "Só con fins informativos"
         description_help_text: Este texto aparecerá na cabeceira cando a fase estiver activa
+        duration: "Duración da fase"
+        duration_description: "Estes campos só se usan con fins informativos e <strong>non implican unha actualización automática da fase activa.</strong> Para actualizala, modifica o orzamento e selecciona a fase activa."
         enabled_help_text: Esta fase será pública no calendario de fases do orzamento e estará activa para outros propósitos
+        image_description: "Se se proporciona unha imaxe, amosarase xunto á descrición desta fase."
+        main_call_to_action: "Ligazón de acción principal (opcional)"
+        main_call_to_action_description: "Esta ligazón aparecerá na cabeceira deste orzamento participativo cando esta fase estea activa, e permite ao usuario executar unha acción específica; como crear unha nova proposta, votar as existentes, ou ler máis sobre funcionamento dos orzamentos participativos."
+        name_help_text: "Este é o título da fase que os usuarios lerán na cabeceira cando a fase se atope activa."
         save_changes: Gardar so cambios
+      index:
+        title: "Fases de %{budget}"
     budget_investments:
       index:
         heading_filter_all: Todas as partidas
@@ -231,6 +250,7 @@ gl:
           undecided: Sen decidir
           unfeasible: Non viables
           min_total_supports: Soportes mínimos
+          max_total_supports: Apoios máximos
           winners: Gañadores
           one_filter: "Filtros aplicados actualmente: <b><em>%{filter}</em></b>"
           two_filters: "Filtros de uso aplicados actualmente: <b><em>%{filter}, %{advanced_filters}</em></b>"
@@ -239,6 +259,7 @@ gl:
         download_current_selection: "Descargar a selección actual"
         no_budget_investments: "Non hai proxectos de investimento."
         title: Propostas de investimento
+        columns: Columnas
         assigned_admin: Administrador asignado
         no_admin_assigned: Sen administrador asignado
         no_valuators_assigned: Sen avaliador
@@ -264,7 +285,9 @@ gl:
           incompatible: Incompatible
           price: Custo
           author: Autoría
+        cannot_calculate_winners: O orzamento debe estar na fase «%{phase}» para poder calcular as propostas gañadoras
         see_results: "Ver resultados"
+        milestone_tags_filter_all: "Todas as marcas de seguimento"
       show:
         assigned_admin: Administrador asignado
         assigned_valuators: Avaliadores asignados
@@ -308,6 +331,32 @@ gl:
         budget: Orzamento participativo
         groups: Grupos
         headings: Partidas
+        phases: Fases
+      budgets:
+        continue: "Continuar cos grupos"
+      groups:
+        back: "Volve atrás para modificar o orzamento"
+        continue: "Continuar coas partidas"
+      headings:
+        continue: "Continuar coas fases"
+        single:
+          back: "Volve atrás para modificar o grupo"
+      heading_mode:
+        multiple:
+          description: "Crea un proceso con múltiples grupos, distritos ou temas. Dispós de algo parecido a sacas de diñeiro. Por exemplo, 25.000 € para «Zona Norte», 30.000 € para «Zona Centro», e 28.000 € para «Zona Sur» e o resto da cidade. Ou para varios temas como deporte, cultura ou saúde."
+          link: "Crea un orzamento con múltiples partidas"
+          title: "Orzamento con <strong>múltiples partidas</strong>"
+        single:
+          description: "Crea un proceso cun grupo, distrito ou tema. Dispós de algo parecido a unha saca de diñeiro. Por exemplo, 25.000 € para unha zona, ou 10.000 € para cultura."
+          link: "Crear un orzamento cunha soa partida"
+          title: "Orzamento <strong>cunha soa partida</strong>"
+        title: "Tipo de orzamento participativo"
+      phases:
+        continue: "Finalizar"
+        multiple:
+          back: "Volve atrás ás partidas"
+        single:
+          back: "Volve atrás para modificar as partidas"
     milestones:
       index:
         table_id: "ID"
@@ -322,6 +371,7 @@ gl:
         documents: "Documentos"
         milestone: Seguimento
         new_milestone: Crear novo seguimento
+        milestone_tags: Marcas de seguimento
       form:
         admin_statuses: Administrar estados de investimento
         no_statuses_defined: Aínda non se definirion os estados dos investimentos
@@ -383,6 +433,7 @@ gl:
         author: "Autoría"
         commentable_type: "Tipo"
         title: Comentarios ocultos
+        no_comments: Non hai comentarios.
         table_link: "Ligazón"
     hidden_comments:
       index:
@@ -394,6 +445,7 @@ gl:
         hidden_debate: Debate agochado
         hidden_proposal: Proposta agochada
         title: Comentarios agochados
+        no_hidden_comments: Non hai comentarios agochados.
     dashboard:
       index:
         back: Volver a %{org}
@@ -401,6 +453,8 @@ gl:
         description: Benvido ao panel de administración de %{org}.
       actions:
         index:
+          description: "Cando os usuarios crean propostas poden acceder a un panel de progreso da súa proposta, onde se lle poden facilitar recursos e consellos para conseguir apoios para a súa idea."
+          create: Crear un recurso ou unha acción
           active: 'Si'
           inactive: 'Non'
           title: Recursos e accións
@@ -999,6 +1053,7 @@ gl:
         no_questions: "Non hai preguntas asignadas a esta votación."
         questions_title: "Listaxe de preguntas"
         table_title: "Título"
+        see_proposal: "(Ver propostas)"
     questions:
       index:
         title: "Preguntas"
