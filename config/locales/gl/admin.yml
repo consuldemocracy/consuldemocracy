@@ -80,6 +80,7 @@ gl:
           destroy: "Esta acción eliminará o orzamento e todos os seus grupos e partidas. Esta acción non se pode desfacer."
         edit: "Editar orzamento"
         preview: "Vista previa"
+        preview_results: "Vista previa de resultados"
       index:
         title: Orzamentos participativos
         new_link: Crear un novo orzamento
@@ -90,25 +91,68 @@ gl:
           finished: Finalizadas
         budget_investments: Xestionar proxectos
         table_budget_type: "Tipo"
+        table_completed: Completado
         table_draft: "Bosquexo"
+        table_duration: "Duración"
         table_name: Nome
         table_phase: Fase
+        table_phase_progress: "(%{current_phase_number}/%{total_phases})"
+        type_multiple: "Múltiples partidas"
+        type_pending: "Pendente: Aínda non hai partidas"
+        type_single: "Partida única"
+        admin_ballots: Xestionar urnas
         no_budgets: "Non hai orzamentos."
       create:
         notice: Nova campaña de orzamentos participativos creada con éxito!
       update:
         notice: Campaña de orzamentos participativos actualizada
+      publish:
+        notice: "Orzamentos participativos publicados con éxito"
       edit:
         title: Editar campaña de orzamentos participativos
+        drafting: "Este orzamento participativo está en modo borrador, só os administradores poden velo dende a parte pública da páxina. Unha vez publicado, non se poderá volver a poñer en modo borrador outra vez."
+        publish: "Publicar orzamento"
         delete: Eliminar orzamento
         phase: Fase
+        phases_caption: "Fases"
+        phases_table_help_text: "A configuración destas fases só se utiliza con fins informativos. A súa función é definir a información das fases que se amosan na páxina pública do orzamento participativo."
+        duration: "Duración"
         enabled: Habilitado
         actions: Accións
+        enable_phase: "Activar fase de %{phase}"
         active: Activos
         blank_dates: Sen datas
+        administrators:
+          zero: "Seleccionar administradores"
+          one: "1 administrador seleccionado"
+          other: "%{count} administradores seleccionados"
+        valuators:
+          zero: "Seleccionar avaliadores"
+          one: "1 avaliador seleccionado"
+          other: "%{count} avaliadores seleccionados"
+        empty_administrators: "Non hai administradores"
+        empty_valuators: "Non hai avaliadores"
+        name_description: "Este é o nome do orzamento participativo usado na cabeceira e tarxetas cando está activo"
+        image_description: "Se carga unha imaxe será usada como fondo do orzamento, se non o fondo será da cor por defecto para os orzamentos."
+        main_call_to_action: "Ligazón de acción principal (opcional)"
+        main_call_to_action_description: "Esta ligazón aparecerá na cabeceira deste orzamento participativo e permite ao usuario executar unha acción específica; como crear unha nova proposta, votar as existentes, ou ler máis sobre o funcionamento dos orzamentos participativos."
+        info:
+          budget_settings: "Axustes xenéricos do orzamento participativo"
+          staff_settings: "Administradores e avaliadores asignados ao orzamento"
+        hide_money: "Agochar o diñeiro"
+        hide_money_help_text: "Se esta opción está marcada, todos os campos que amosan a cantidade de diñeiro serán agochados durante todo o proceso."
       destroy:
         success_notice: Orzamento eliminado correctamente
         unable_notice: Non se pode eliminiar un orzamento con proxectos asociados
+        unable_notice_polls: Non se pode eliminar un orzamento cunha votación asociada
+      new:
+        title_multiple: Novo orzamento de múltiples partidas
+        title_single: Novo orzamento de partida única
+      help:
+        budgets: "Os orzamentos participativos permiten que os cidadáns propoñan e decidan de xeito directo como gastar parte do orzamento, cun seguimento e avaliación estrito das propostas por parte da institución."
+        groups:
+          multiple: "Os grupos serven para organizar as partidas do orzamento. Despois de que un grupo sexa creado e que conteña partidas, é posible determinar o número de partidas ás que un usuario pode votar por grupo."
+          single: "Os grupos serven para organizar as partidas do orzamento. Como este orzamento estar formado por unha soa partida, pódese usar o mesmo nome xa que non aparecerá en ningunha parte. Podes continuar co seguinte paso."
       show:
         add_heading: "Engadir partida"
       winners:
@@ -350,29 +394,59 @@ gl:
         index:
           active: 'Si'
           inactive: 'Non'
+          title: Recursos e accións
           action_title: Título
           action_type: Tipo
+          required_supports: Apoios necesarios
+          day_offset: Días necesarios
           action_active: Activos
           order: Orde
+          published_proposal: Proposta publicada
           default:
             email: O teu correo electrónico
             polls: Votacións
             poster: Cartel
+        new:
+          creating: Nova acción para o panel de control de propostas
+          back: Volver á lista
+        create:
+          notice: Acción creada correctamente
+        edit:
+          editing: Modificar acción para o panel de control de propostas
+          back: Volver á lista
+        delete:
+          success: A acción eliminouse correctamente
         form:
           submit_button: Gardar
+          help_text: Introduce 0 para que este valor non se teña en conta
+          published_proposal_help_text: Marca esta opción para crear a acción só para as propostas publicadas
       administrator_tasks:
         index:
+          description: "Os recursos publicados no panel de progreso das propostas poden incluír un botón para seren solicitados aos administradores. A continuación amósanse as solicitudes dos usuarios."
+          title: Recursos solicitados
+          solve: Resolver
+          no_records: Non hai recursos solicitados
           source: Orixe
+          resource: Recurso solicitado
           filter: Filtro
           filters:
             pending: Pendentes
+            done: Resolto
+        edit:
+          back: Volver á lista de tarefas pendentes
+          solving: Resolver tarefa pendente
         form:
+          solve: Marcar como resolto
           proposal: a proposta
+          request: Recurso solicitado
+        update:
+          success: A tarefa foi marcada como resolta.
     debates:
       index:
         id: ID
         author: Autoría
         title: Debates ocultos
+        no_debates: Non hai debates.
     hidden_debates:
       index:
         filter: Filtro
@@ -381,10 +455,21 @@ gl:
           with_confirmed_hide: Confirmadas
           without_confirmed_hide: Pendentes
         title: Debates agochados
+        no_hidden_debates: Non hai debates agochados.
     documents:
+      new:
+        title: "Cargar un documento"
+        submit_button: "Cargar"
       index:
         new_link: "Engadir novo documento"
+        no_documents: "Non hai documentos."
         title: "Documentos"
+        format: "Formato"
+        size: "Tamaño"
+      create:
+        unable_notice: "Documento non válido"
+      destroy:
+        success_notice: "Documento eliminado correctamente"
     hidden_users:
       index:
         filter: Filtro
