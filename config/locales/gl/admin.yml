@@ -802,6 +802,7 @@ gl:
       comments: "Comentarios"
       local_census_records: Censo local
       machine_learning: "IA / Machine Learning"
+      multitenancy: Multientidade
     administrators:
       index:
         title: Administradores
@@ -812,6 +813,9 @@ gl:
         restricted_removal: "Sentímolo mais non podes borrarte a ti mesmo da relación"
       search:
         title: "Administración: busca de usuarios"
+      form:
+        edit_title: "Editar administrador"
+        updated: "Administrador actualizado correctamente"
     moderators:
       index:
         title: Moderadores
@@ -823,6 +827,7 @@ gl:
     segment_recipient:
       all_users: Todos os usuarios
       administrators: Administradores
+      all_proposal_authors: Autores de propostas (incluíndo arquivadas e retiradas)
       proposal_authors: Autores da proposta
       investment_authors: Autores do investimento no orzamento actual
       feasible_and_undecided_investment_authors: "Autores dalgún investimento no orzamento actual que non cumpre con: [avaliación finalizada inviable]"
@@ -847,6 +852,8 @@ gl:
         empty_newsletters: Non hai notificacións para amosar
       new:
         title: Novo boletín informativo
+        header_footer_help_text: "A cabeceira e o rodapé son iguais en todas as mensaxes de correo, podes modificalos en <code>app/views/layouts/mailer_header</code> e <code>app/views/layouts/mailer_footer</code>.<br>Podes substituír a imaxe da cabeceira en %{link}."
+        image_link: "imaxes personalizadas"
       edit:
         title: Editar boletín informativo
       show:
@@ -910,10 +917,24 @@ gl:
         title: "Resumo de notificacións de propostas"
         description: "Agrupa todas as notificacións de proposta para un usuario nunha única mensaxe, evitando o envío dun número elevado de mensaxes."
         preview_detail: "Os usuarios só recibirán as notificacións das propostas que están a seguir"
+      budget_investment_created:
+        title: "Creouse o proxecto de gasto"
+        description: "Enviado cando un usuario crea un proxecto de orzamento participativo."
+      budget_investment_selected:
+        title: "Proxecto de gasto seleccionado"
+        description: "Enviado ao autor cando se selecciona un proxecto de orzamento participativo."
+      budget_investment_unfeasible:
+        title: "Proxecto de gasto non viable"
+        description: "Enviado ao autor cando un proxecto de orzamento participativo é marcado como non viable."
+      budget_investment_unselected:
+        title: "Proxecto de gasto non seleccionado"
+        description: "Enviado ao autor cando un proxecto de orzamento participativo non foi seleccionado para a fase de votación."
       comment:
         title: "Comentario"
+        description: "Enviado ao autor cando recibe un comentario."
       reply:
         title: "Responder"
+        description: "Enviado ao autor do comentario cando recibe unha resposta."
       direct_message_for_receiver:
         title: "Mensaxe privada para receptor"
         description: "Enviar ao receptor da mensaxe privada."
@@ -925,8 +946,18 @@ gl:
         description: "Enviar ao novo usuario para comprobar a súa conta."
       user_invite:
         title: "Convite de usuario"
+        description: "Enviado á persoa que foi invitada a rexistrar unha conta."
       evaluation_comment:
         title: "Nova avaliación de comentario"
+        description: "Enviado a administradores e avaliadores relacionados co investimento comentado"
+      edit_info: "Podes modificar esta mensaxe de correo en"
+      message_title: "Título da mensaxe"
+      message_body: "Este é un exemplo do contido dunha mensaxe."
+      alert:
+        no_investments: "Non se creou ningún proxecto de gasto. Son necesarios algúns datos de exemplo para a vista previa da mensaxe de correo."
+        no_comments: "Non se creou ningún comentario. Son necesarios algúns datos de exemplo para a vista previa da mensaxe de correo."
+        no_replies: "Non se creou ningunha resposta. Son necesarios algúns datos de exemplo para a vista previa da mensaxe de correo."
+        no_evaluation_comments: "Non se creou ningún comentario da avaliación. Son necesarios algúns datos de exemplo para a vista previa da mensaxe de correo."
     emails_download:
       index:
         title: Descarga de enderezos de correo
@@ -944,6 +975,9 @@ gl:
         valuator_groups: "Grupos de avaliadores"
         group: "Grupo"
         no_group: "Sen grupo"
+        abilities: "Habilidades"
+        can_comment: "Podes comentar"
+        can_edit_dossier: "Podes modificar informes"
       valuator:
         add: Engadir como avaliador
       search:
@@ -955,8 +989,10 @@ gl:
         description: "Descrición"
         email: "O teu correo electrónico"
         group: "Grupo"
+        abilities: "Habilidades"
         no_description: "Sen descrición"
         no_group: "Sen grupo"
+        no_abilities: "Sen habilidades"
     valuator_groups:
       index:
         title: "Grupos de avaliadores"
@@ -982,6 +1018,7 @@ gl:
       search:
         email_placeholder: Buscar usuario por correo electrónico
         user_not_found: Non se atopou o usuario
+        help: "Para engadir ou eliminar Presidentes de mesa utiliza o seguinte buscador."
     poll_officer_assignments:
       index:
         officers_title: "Listaxe de presidentes/as asignados/as"
@@ -1082,7 +1119,16 @@ gl:
         no_questions: "Non hai preguntas asignadas a esta votación."
         questions_title: "Listaxe de preguntas"
         table_title: "Título"
+        edit_answers: Editar respostas
         see_proposal: "(Ver propostas)"
+      destroy:
+        alert: "Esta acción eliminará a enquisa e todas as preguntas relacionadas."
+        success_notice: "A votación foi eliminada correctamente"
+        unable_notice: "Non é posible eliminar unha enquisa con votos"
+      votation_type:
+        title: "Tipo de votación"
+        unique_description: "Só se permite responder unha vez á pregunta."
+        multiple_description: "Permite escoller máis dunha resposta. Pódese elixir o número máximo de respostas."
     questions:
       index:
         title: "Preguntas"
@@ -1099,9 +1145,13 @@ gl:
         poll_not_assigned: "Votación sen asignar"
       edit:
         title: "Editar pregunta cidadá"
+      form:
+        poll_help: "Só podes seleccionar enquisas que están por comezar"
       new:
         title: "Crear pregunta para a enquisa %{poll}"
         title_proposal: "Crear pregunta"
+      destroy:
+        notice: "Pregunta borrada correctamente"
       answers:
         images:
           add_image: "Engadir unha imaxe"
@@ -1125,11 +1175,17 @@ gl:
           documents_list: Listaxe de documentos
           document_title: Título
           document_actions: Accións
+      no_edit: "Unha vez iniciada a enquisa non será posible crear, editar ou eliminar preguntas, respostas ou calquera outro contido asociado á votación."
     answers:
       new:
         title: Nova resposta
       edit:
         title: Editar resposta
+      destroy:
+        success_notice: "Resposta eliminada correctamente"
+      images:
+        index:
+          title: Imaxes
       videos:
         index:
           title: Vídeos
@@ -1144,6 +1200,8 @@ gl:
       index:
         title: "Recontos"
         no_recounts: "Non hai nada para o que facer o reconto"
+        all_booths_total: "Total acumulado en todas as cabinas:"
+        total_final: "Recontos finais"
         total_system: "Votos (automático)"
         table_booth_name: "Urna"
         table_total_recount: "Escrutinio total (presidencia de mesa)"
@@ -1190,6 +1248,7 @@ gl:
         official_updated: Datos do cargo público gardados
       index:
         title: Cargos
+        help: As intervencións das contas de usuario marcadas como cargos públicos serán resaltadas na plataforma. Podes definir a etiqueta que aparece ao carón dos nomes de usuario destas contas de maior (nivel 1) a menor importancia (nivel 5).
         no_officials: Non hai ningún cargo público.
         name: Nome
         official_position: Cargo público
@@ -1239,6 +1298,12 @@ gl:
         selected: Seleccionadas
         milestones: Seguimento
         no_proposals: Non hai ningunha proposta.
+      show:
+        create_question: Engade esta proposta para ser votada na enquisa
+      form:
+        update: Actualizar proposta
+      update:
+        notice: Proposta actualizada correctamente
     hidden_proposals:
       index:
         filter: Filtro
@@ -1264,6 +1329,8 @@ gl:
         title: Configuración global
         general: Configuración global
         update_setting: Actualizar
+        participation_processes: "Procesos de participación"
+        images_and_documents: "Imaxes e documentos"
         feature_flags: Funcionalidades
         features:
           enabled: "Funcionalidade activada"
@@ -1274,12 +1341,31 @@ gl:
             update: A configuración do mapa gardouse correctamente.
           form:
             submit: Actualizar
+          how_to_enable: 'Para amosar o mapa aos usuarios hai que activar «Xeolocalización de propostas e proxectos de gasto» na lapela «Funcionalidades».'
+        dashboard:
+          title: Panel de progreso de propostas
+        remote_census:
+          title: Configuración do censo remoto
+          how_to_enable: 'Para configurar a conexión co Censo Remoto (SOAP) hai que activar «Configurar a conexión ao censo remoto (SOAP)» na lapela «Funcionalidades».'
+        sdg:
+          title: Configuración ODS
+          how_to_enable: 'Para amosar as opcións de configuración dos Obxectivos de Desenvolvemento Sostible hai que activar «SDG» na lapela «Funcionalidades».'
+      remote_census_general_name: Información xeral
+      remote_census_request_name: Datos petición
+      remote_census_response_name: Datos resposta
       setting: Característica
       setting_name: Axuste
       setting_value: Valor
       no_description: "Sen descrición"
     shared:
       search:
+        advanced_filters:
+          sdg_goals:
+            all: "Todos os obxectivos"
+            label: "Por obxectivo"
+          sdg_targets:
+            all: "Todas as metas"
+            label: "Por meta"
         label:
           booths: "Buscar urna por nome"
           organizations: "Nome, correo electrónico ou teléfono"
@@ -1422,12 +1508,16 @@ gl:
         document_number: Número de documento
         roles: Roles
         verification_level: Nivel de verificación
+      account:
+        active_status: Conta confirmada
+        inactive_status: Conta sen confirmar
       index:
         title: Usuario/a
         no_users: Non hai usuarios.
         filter: Filtro
         filters:
           active: Activos
+          erased: Borrado
       search:
         placeholder: Buscar usuarios por correo electrónico, nome ou DNI
     verifications:
@@ -1463,6 +1553,7 @@ gl:
           names:
             top_links: Destacados
             footer: Rodapé
+            footer_legal: Rodapé (termos legais)
             subnavigation_left: Esquerda Navegación Principal
             subnavigation_right: Dereita Navegación Principal
       images:
@@ -1496,6 +1587,7 @@ gl:
           see_page: Ver páxina
         new:
           title: Crear unha páxina nova
+          slug_help: "Texto que identifica esta páxina no URL. Por exemplo <code>https://consuldemocracy.org/page-slug</code>"
         page:
           created_at: Creada
           status: Estado
@@ -1508,12 +1600,28 @@ gl:
           create_card: Crear tarxeta
           no_cards: Non hai tarxetas.
           columns_help: "Largura da tarxeta en número de columnas. En pantallas móbiles sempre ten unha largura do 100%."
+          order_help: "Podes introducir a posición na que se amosará esta tarxeta."
           create:
             notice: "Tarxeta creada correctamente!"
           update:
             notice: "Tarxeta actualizada correctamente"
           destroy:
             notice: "Tarxeta eliminada correctamente"
+    tenants:
+      create:
+        notice: Entidade creada correctamente
+      form:
+        use_subdomain: "Emprega un subdominio no dominio %{domain} para acceder a esta entidade"
+        use_domain: "Emprega un dominio diferente para acceder a esta entidade"
+      hide:
+        notice: Entidade desactivada correctamente
+      index:
+        create: Crear entidade
+        enable: "Activar a entidade %{tenant}"
+        enabled: Activada
+      new:
+        admin_information: "Cando creas unha entidade, o teu usuario actual <strong>\"%{username}\"</strong> xunto co enderezo de correo <strong>\"%{email}\"</strong> e o teu contrasinal serán copiados na nova base de datos da entidade, e vanse conceder permisos de administración na nova entidade de xeito automático. É imporante destacar que as contas de usuario estarán almacenadas en bases de datos completamente independentes, polo que se modificas o contrasinal nunha entidade, as contas que teñas noutras entidades permanecerán intactas."
+        title: Nova entidade
     homepage:
       title: Páxina principal
       description: Os módulos activos aparecerán na páxina principal na mesma orde que aquí.
