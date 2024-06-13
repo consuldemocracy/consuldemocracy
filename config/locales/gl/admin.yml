@@ -451,6 +451,16 @@ gl:
         back: Volver a %{org}
         title: Administración
         description: Benvido ao panel de administración de %{org}.
+        info: |-
+          <p>Este é o lugar onde ti, como administrador/a, implementas e supervisas o proceso de participación cidadá na túa localidade ou rexión.</p>
+
+          <p>Xa formas parte dos centos de gobernos e entidades locais de todo o mundo que utilizan a plataforma CONSUL DEMOCRACY para poñer en práctica a participación cidadá. Parabéns!</p>
+
+          <p>A Fundación CONSUL DEMOCRACY é o corazón da comunidade global de usuarios. Gustaríanos pedirche que te poñas en contacto connosco para saber quen está a utilizar o software e ver como podemos axudar na posta en marcha ou na súa xestión. Estamos ansiosos por darche a benvida á comunidade.</p>
+
+          <p>Feliz administración!</p>
+
+          <p>Un cordial saúdo do equipo da Fundación CONSUL DEMOCRACY</p>
       actions:
         index:
           description: "Cando os usuarios crean propostas poden acceder a un panel de progreso da súa proposta, onde se lle poden facilitar recursos e consellos para conseguir apoios para a súa idea."
