@@ -540,6 +540,7 @@ gl:
         format: "Formato"
         size: "Tamaño"
       create:
+        success_notice: "Documento enviado correctamente"
         unable_notice: "Documento non válido"
       destroy:
         success_notice: "Documento eliminado correctamente"
@@ -648,6 +649,7 @@ gl:
           back: Volver
           submit_button: Gardar so cambios
           warning: Xa editaches o texto, mais lembra premeres o botón Gardar para conservar permanentemente os cambios.
+          markdown_changes_message: "Acabas de modificar o texto sen gardar os cambios. Confirmas que queres saír da páxina?"
         form:
           title: 'Editar <span class="strong">%{draft_version_title}</span> do proceso <span class="strong">%{process_title}</span>'
           launch_text_editor: Abrir editor de texto
@@ -708,6 +710,11 @@ gl:
       milestones:
         index:
           title: Seguindo
+    locales:
+      default_help_text: "Este é o idioma predeterminado da aplicación, e se o cambias <strong>vai afectar a todos os usuarios</strong> que accedan ao sitio por primeira vez."
+      enabled_help_text: O idioma predeterminado, seleccionado máis abaixo, será incluído de xeito automático.
+      update:
+        notice: Idiomas actualizados correctamente
     managers:
       index:
         title: Xestores
@@ -730,6 +737,7 @@ gl:
       proposals_topics: Temas das propostas
       budgets: Orzamentos participativos
       geozones: Xestionar zonas
+      locales: Idiomas
       hidden_comments: Comentarios agochados
       hidden_debates: Debates agochados
       hidden_proposals: Propostas ocultas
@@ -738,6 +746,7 @@ gl:
       hidden_users: Usuarios bloqueados
       administrators: Administradores
       managers: Xestores
+      sdg_managers: Xestores ODS
       moderators: Moderadores
       messaging_users: Mensaxes aos usuarios
       newsletters: Envío de newsletters
@@ -756,12 +765,14 @@ gl:
       stats: Estatísticas
       signature_sheets: Follas de sinaturas
       site_customization:
+        documents: Documentos personalizados
         homepage: Páxina principal
         pages: Páxinas
         images: Imaxes
         content_blocks: Bloques
         information_texts: Textos de información personalizados
         information_texts_menu:
+          basic: "Personalización básica"
           debates: "Debates"
           community: "Comunidade"
           proposals: "Propostas cidadás"
