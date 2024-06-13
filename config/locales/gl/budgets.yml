@@ -14,11 +14,20 @@ gl:
           knapsack: "Cantidade asignada <span>%{count}</span>"
           approval:
             zero: "Votos emitidos: <span>%{count}</span>"
+            one: "Votos emitidos: <span>%{count}</span>"
+            other: "Votos emitidos: <span>%{count}</span>"
+        amount_limit:
+          knapsack: "Orzamento total <span>%{count}</span>"
+          approval:
+            one: "Podes votar a <span>1</span> proxecto"
+            other: "Podes votar a <span>%{count}</span> proxectos"
         no_balloted_group_yet: "Aínda non votaches proxectos deste grupo. Vota!"
         remove: Retirar voto
+        remove_label: "Retira o teu voto a %{investment}"
         voted:
           one: "Votaches <span>unha</span> proposta."
           other: "Votastes <span>%{count}</span> propostas."
+        voted_info: "O teu voto está confirmado!"
         voted_info_2: "Mais podes cambiar o teu voto en calquera momento ata o peche desta fase."
         zero: Aínda non votaches ningunha proposta de investimento.
       reasons_for_not_balloting:
@@ -27,6 +36,7 @@ gl:
         not_enough_money: "Xa asignaches o orzamento dispoñible.<br><small>Lembra que podes %{change_ballot} cando quixeres</small>"
         no_ballots_allowed: O período de votacións está pechado
         different_heading_assigned: "Xa votaches nunha sección distinta do orzamento: %{heading_link}"
+        not_enough_available_votes: "Acadaches o número máximo de votos permitidos"
         change_ballot: cambiar os teus votos
         casted_offline: Xa tes participado en modo «fóra de liña»
     groups:
@@ -53,6 +63,7 @@ gl:
       all_phases: Fases dos orzamentos participativos
       next_phase: Fase seguinte
       prev_phase: Fase anterior
+      current_phase: Fase actual
       map: Proxectos localizables xeograficamente
       finished_budgets: Orzamentos participativos rematados
       see_results: Ver resultados
