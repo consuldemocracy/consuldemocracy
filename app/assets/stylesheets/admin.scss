@@ -273,8 +273,8 @@ $table-header:   #ecf1f6;
 }
 
 .sortable thead th:hover {
-  text-decoration: underline;
   cursor: pointer;
+  text-decoration: underline;
 }
 
 .no-margin-bottom {
@@ -302,8 +302,8 @@ $table-header:   #ecf1f6;
   }
 
   &::before {
-    content: "\f0d8";
     bottom: 0;
+    content: "\f0d8";
   }
 
   &::after {
@@ -331,8 +331,8 @@ code {
 }
 
 .content-type {
-  white-space: nowrap;
   padding-right: $line-height;
+  white-space: nowrap;
 
   label {
     margin-left: 0 !important;
@@ -402,8 +402,8 @@ code {
 
 .moderation-description {
   max-height: rem-calc(65);
-  overflow: hidden;
   max-width: rem-calc(700);
+  overflow: hidden;
 
   &:hover {
     max-height: rem-calc(1000);
@@ -581,8 +581,8 @@ table {
 }
 
 .markdown-editor .markdown-preview {
-  overflow-y: auto;
   height: 15em;
+  overflow-y: auto;
 }
 
 .markdown-editor textarea {
@@ -590,12 +590,12 @@ table {
 }
 
 .markdown-editor.fullscreen {
-  z-index: 9999;
-  width: 100%;
   height: 100%;
+  left: 0;
   position: fixed;
   top: 0;
-  left: 0;
+  width: 100%;
+  z-index: 9999;
 }
 
 .markdown-editor.fullscreen .markdown-preview {
@@ -698,17 +698,17 @@ table {
   }
 
   a {
-    line-height: 3rem;
     color: $delete;
+    line-height: 3rem;
 
     span {
       text-decoration: underline;
     }
 
     .icon-x {
-      vertical-align: sub;
-      text-decoration: none;
       line-height: 0;
+      text-decoration: none;
+      vertical-align: sub;
     }
 
     &:active,
@@ -746,8 +746,8 @@ table {
     }
 
     .markdown-editor-header {
-      vertical-align: top;
       display: inline-block;
+      vertical-align: top;
 
       @include breakpoint(medium) {
         line-height: 3rem;
@@ -756,10 +756,10 @@ table {
 
     .truncate {
       @include breakpoint(medium) {
-        width: 40vw;
-        white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 40vw;
       }
     }
 
@@ -775,10 +775,10 @@ table {
 
     input {
       font-size: $small-font-size;
-      padding: 0.5em 1em;
-      margin-left: 0;
       margin-bottom: 0;
+      margin-left: 0;
       margin-top: 1rem;
+      padding: 0.5em 1em;
 
       @include breakpoint(medium) {
         margin: 0.5rem;
@@ -804,21 +804,21 @@ table {
     margin-bottom: 1rem;
 
     small {
+      color: $text-medium;
       display: block;
       margin-top: -1rem;
-      color: $text-medium;
 
       @include breakpoint(medium) {
-        margin-left: 0.25rem;
         display: inline-block;
+        margin-left: 0.25rem;
         margin-top: 0;
       }
     }
   }
 
   .fullscreen-container {
-    text-align: center;
     background: #ccdbe6;
+    text-align: center;
 
     .markdown-editor-header,
     .markdown-editor-buttons {
@@ -826,21 +826,21 @@ table {
     }
 
     span {
-      text-decoration: none;
       font-size: $small-font-size;
+      text-decoration: none;
     }
 
     .icon-expand {
-      margin-left: 0.25rem;
-      vertical-align: sub;
-      text-decoration: none;
       line-height: 0;
+      margin-left: 0.25rem;
+      text-decoration: none;
+      vertical-align: sub;
     }
   }
 
   .markdown-preview {
-    font-family: $font-family-serif;
     border: 1px solid #cacaca;
+    font-family: $font-family-serif;
     margin-bottom: 2rem;
 
     h1,
@@ -873,10 +873,10 @@ table {
     }
 
     .fullscreen-container {
-      text-align: left;
       background: $admin-color;
-      padding: 0.5rem 1rem;
       margin-bottom: 0;
+      padding: 0.5rem 1rem;
+      text-align: left;
     }
 
     .legislation-draft-version-body {
@@ -893,8 +893,8 @@ table {
     }
 
     .markdown-preview {
-      padding: 1rem;
       border: 0;
+      padding: 1rem;
 
       @include breakpoint(medium) {
         padding: 1rem 2rem;
@@ -907,38 +907,38 @@ table {
 // --------------
 
 .map {
-  width: 100%;
   height: 350px;
+  width: 100%;
 
   .map-marker {
-    visibility: visible;
-    position: absolute;
     left: 50%;
-    top: 50%;
     margin-top: -5px;
+    position: absolute;
+    top: 50%;
+    visibility: visible;
 
     .map-icon {
-      width: 30px;
-      height: 30px;
-      border-radius: 50% 50% 50% 0;
       background: #00cae9;
+      border-radius: 50% 50% 50% 0;
+      height: 30px;
       transform: rotate(-45deg);
+      width: 30px;
     }
 
     .map-icon::after {
+      background: #fff;
+      border-radius: 50%;
       content: "";
-      width: 14px;
       height: 14px;
       margin: 8px 0 0 8px;
-      background: #fff;
       position: absolute;
-      border-radius: 50%;
+      width: 14px;
     }
   }
 
   .map-attributtion {
-    visibility: visible;
     height: auto;
+    visibility: visible;
   }
 }
 
@@ -947,8 +947,8 @@ table {
 }
 
 .map-attributtion {
-  visibility: hidden;
   height: 0;
+  visibility: hidden;
 }
 
 // 10. Budgets
@@ -965,8 +965,8 @@ table {
 .advanced-filters-content {
   background: $highlight;
   clear: both;
-  padding: calc(#{$line-height} / 2);
   margin: $line-height 0;
+  padding: calc(#{$line-height} / 2);
 
   .filter {
     display: inline-block;
@@ -1004,9 +1004,9 @@ table {
 
 .columns-selector-wrapper {
   background: $light-gray;
-  padding: 2rem;
   border-radius: 10px;
   margin-bottom: 1rem;
+  padding: 2rem;
 
   .column-selector-item {
     display: inline-block;

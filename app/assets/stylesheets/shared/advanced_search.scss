@@ -30,8 +30,8 @@
   > [aria-expanded] {
     @include xy-gutters;
     @include link;
-    margin-top: $line-height;
     margin-bottom: $line-height;
+    margin-top: $line-height;
     max-width: max-content;
 
     @include breakpoint(medium) {

@@ -25,8 +25,8 @@
 
     input:not([type="button"], [type="checkbox"], [type="file"], [type="radio"], [type="submit"]) {
       border-bottom-right-radius: 0;
-      border-top-right-radius: 0;
       border-right: 0;
+      border-top-right-radius: 0;
     }
   }
 

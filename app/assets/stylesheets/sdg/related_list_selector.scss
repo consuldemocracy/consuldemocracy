@@ -22,8 +22,8 @@
     }
 
     legend {
-      font-weight: normal;
       font-style: italic;
+      font-weight: normal;
     }
   }
 
@@ -44,9 +44,9 @@
   }
 
   .help-text {
-    font-weight: normal;
-    font-style: italic;
     font-size: $base-font-size;
+    font-style: italic;
+    font-weight: normal;
   }
 
   .input-section {

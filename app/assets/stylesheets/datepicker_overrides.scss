@@ -73,8 +73,8 @@
   }
 
   td {
-    padding: 0;
     border-right: 1px solid $border;
+    padding: 0;
 
     &:last-child {
       border-right: 0;
@@ -82,9 +82,9 @@
 
     span,
     a {
-      text-align: center;
-      line-height: $line-height;
       color: inherit;
+      line-height: $line-height;
+      text-align: center;
     }
   }
 }
