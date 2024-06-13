@@ -3,8 +3,17 @@ gl:
     ballots:
       show:
         title: Os teus votos
+        amount_progress: "%{amount_spent} / %{amount_limit}"
         amount_available:
           knapsack: "Quédanche <span>%{count}</span> para investir."
+          approval:
+            zero: "Quédanche <span>%{count}</span> votos dispoñibles."
+            one: "Quédache <span>%{count}</span> dispoñible."
+            other: "Quédanche <span>%{count}</span> dispoñibles."
+        amount_spent:
+          knapsack: "Cantidade asignada <span>%{count}</span>"
+          approval:
+            zero: "Votos emitidos: <span>%{count}</span>"
         no_balloted_group_yet: "Aínda non votaches proxectos deste grupo. Vota!"
         remove: Retirar voto
         voted:
@@ -42,6 +51,8 @@ gl:
         title: Orzamentos participativos
         help: Axuda sobre os orzamentos participativos
       all_phases: Fases dos orzamentos participativos
+      next_phase: Fase seguinte
+      prev_phase: Fase anterior
       map: Proxectos localizables xeograficamente
       finished_budgets: Orzamentos participativos rematados
       see_results: Ver resultados
@@ -52,6 +63,8 @@ gl:
     investments:
       form:
         title: "Crear un proxecto novo"
+        subtitle: "%{heading} (%{price})"
+        subtitle_without_price: "%{heading}"
         tag_category_label: "Categorías"
         tags_instructions: "Etiqueta esta proposta. Podes elixir entre as categorías propostas ou escribir as que desexares"
         tags_label: Etiquetas
@@ -73,6 +86,12 @@ gl:
             knapsack:
               one: "<strong>Votaches unha proposta cun valor de %{amount_spent}</strong>"
               other: "<strong>Votaches %{count} propostas cun valor de %{amount_spent}</strong>"
+            approval:
+              one: "<strong>Acabas de votar a unha proposta</strong>"
+              other: "<strong>Acabas de votar a %{count} propostas</strong>"
+          change_vote_info:
+            knapsack: "Podes %{link} en calquera momento ata o %{phase_end_date}. Non tes que gastar todo o diñeiro dispoñible."
+            approval: "Podes %{link} en calquera momento ata o %{phase_end_date}."
           change_vote_link: "cambiar o teu voto"
           different_heading_assigned: "Xa apoiaches propostas doutra sección do orzamento: %{heading_link}"
           change_ballot: "Se cambiares de opinión, podes borrar os teus votos en %{check_ballot} e comezar de novo."
@@ -81,9 +100,12 @@ gl:
           verified_only: "Para creares unha nova proposta de investimento %{verify}."
           create: "Crear un proxecto novo"
           not_logged_in: "Para creares unha nova proposta de investimento debes %{sign_in} ou %{sign_up}."
+        filter: "Filtrando proxectos por"
         filters:
+          not_unfeasible: "Activo"
           selected: "Seleccionadas"
           unfeasible: "Non viables"
+          unselected: "Non seleccionados para a votación final"
           winners: "Gañadores"
         orders:
           random: aleatorias
@@ -114,6 +136,7 @@ gl:
       wrong_price_format: Só pode incluír caracteres numéricos
       investment:
         add: Voto
+        add_label: "Votar %{investment}"
         already_added: Xa engadiches esta proposta de investimento
         support_title: Apoiar este proxecto
         supports:
@@ -131,13 +154,30 @@ gl:
         confirm_group:
           one: "Só pode apoiar investimentos en %{count} distrito. De continuar, non poderá cambiarse de distrito. Está seguro?"
           other: "Só pode apoiar investimentos en %{count} distritos. De continuar, non poderá cambiarse de distrito. Está seguro?"
+        remove_support: "Retira o apoio"
+        remove_support_label: "Retira o teu apoio a %{investment}"
         support: "Apoiar"
+        support_label: "Apoiar %{investment}"
     investments_list:
       investment:
         price: "Custo"
+        read_more: "Saber máis"
         supports: "Apoios"
+      see_all: "Ver todos os proxectos"
+      title: "Lista de proxectos"
     show:
       see_results: Ver resultados
+    supports_info:
+      different: "Podes apoiar tantos proxectos diferentes como desexes."
+      next: "Apoia aqueles proxectos que che gustaría ver na seguinte fase."
+      scrolling: "Segue desprazándote para ver todas as ideas"
+      share: "Podes compartir nas redes sociais aqueles proxectos que apoiaches para conseguir maior difusión e apoios!"
+      supported:
+        one: "Ata o de agora tes apoiado <strong>1 proxecto</strong>."
+        other: "Ata o de agora tes apoiado a <strong>%{count} proxectos</strong>."
+      supported_not_logged_in: "Accede para comezar cos <strong>apoios a proxectos</strong>."
+      time: "Podes apoiar proxectos ata o %{phase_end_date}."
+      title: "É tempo de <strong>apoiar</strong> proxectos!"
     results:
       link: Resultados
       page_title: "%{budget} - Resultados"
