@@ -15,7 +15,7 @@
   <tbody>
     <tr>
       <%- question.question_options.each do |option| %>
-        <td id="answer_<%= option.id %>_result" class="<%= option_styles(option) %>">
+        <td id="option_<%= option.id %>_result" class="<%= option_styles(option) %>">
           <%= option.total_votes %>
           (<%= option.total_votes_percentage.round(2) %>%)
         </td>

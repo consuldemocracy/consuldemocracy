@@ -11,8 +11,8 @@ describe Polls::Questions::QuestionComponent do
 
     poll_question = page.find("#poll_question_#{question.id}")
     expect(poll_question).to have_content("Read more about")
-    expect(poll_question).to have_link("Answer A", href: "#answer_#{option_a.id}")
-    expect(poll_question).to have_link("Answer B", href: "#answer_#{option_b.id}")
+    expect(poll_question).to have_link("Answer A", href: "#option_#{option_a.id}")
+    expect(poll_question).to have_link("Answer B", href: "#option_#{option_b.id}")
     expect(poll_question).to have_content("Answer A, Answer B")
   end
 end

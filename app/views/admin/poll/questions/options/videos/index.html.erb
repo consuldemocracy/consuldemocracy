@@ -29,7 +29,7 @@
 
     <tbody>
       <% @videos.each do |video| %>
-        <tr id="<%= dom_id(video) %>" class="poll_question_answer_video">
+        <tr id="<%= dom_id(video) %>" class="poll_question_option_video">
           <td><%= video.title %></td>
           <td><%= link_to video.url, video.url %></td>
           <td>

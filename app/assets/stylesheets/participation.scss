@@ -1400,7 +1400,7 @@
 }
 
 .poll-more-info,
-.poll-more-info-answers {
+.poll-more-info-options {
 
   .read-more {
     margin-bottom: $line-height;
@@ -1416,7 +1416,7 @@
   border-top: 1px solid #eee;
 }
 
-.poll-more-info-answers {
+.poll-more-info-options {
   @include full-width-background;
   @include full-width-border(top, 1px solid #eee);
   @include full-width-border(bottom, 1px solid #eee);
@@ -1426,14 +1426,14 @@
     border-right: 2px solid;
   }
 
-  .answer-divider {
+  .option-divider {
     border-bottom: 2px solid;
     border-right: 0 !important;
     margin-bottom: $line-height;
     padding-bottom: $line-height;
   }
 
-  .answer-description {
+  .option-description {
     height: 100%;
 
     &.short {
@@ -1544,7 +1544,7 @@
   }
 }
 
-.poll-question-answers {
+.poll-question-options {
   @include flex-with-gap($line-height * 0.25);
   flex-wrap: wrap;
 

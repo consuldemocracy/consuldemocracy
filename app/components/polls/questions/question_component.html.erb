@@ -9,7 +9,7 @@
     </strong>
   <% end %>
 
-  <div id="<%= dom_id(question) %>_answers" class="padding">
+  <div id="<%= dom_id(question) %>_options" class="padding">
     <%= render Polls::Questions::OptionsComponent.new(question) %>
   </div>
 

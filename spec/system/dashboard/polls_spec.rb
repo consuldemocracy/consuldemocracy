@@ -174,7 +174,7 @@ describe "Polls" do
       click_link "Edit survey"
     end
 
-    within ".js-questions .js-answers" do
+    within ".js-questions .js-options" do
       expect(page).to have_css ".nested-fields", count: 2
       within first(".nested-fields") do
         click_link class: "delete"
@@ -188,7 +188,7 @@ describe "Polls" do
 
     visit edit_proposal_dashboard_poll_path(proposal, poll)
 
-    within ".js-questions .js-answers" do
+    within ".js-questions .js-options" do
       expect(page).to have_css ".nested-fields", count: 1
     end
   end

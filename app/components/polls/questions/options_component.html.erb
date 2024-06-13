@@ -1,4 +1,4 @@
-<div class="poll-question-answers">
+<div class="poll-question-options">
   <% if can?(:answer, question) && !question.poll.voted_in_booth?(current_user) %>
     <% question_options.each do |question_option| %>
       <% if already_answered?(question_option) %>

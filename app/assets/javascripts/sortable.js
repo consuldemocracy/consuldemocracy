@@ -6,7 +6,7 @@
         update: function() {
           var new_order;
           new_order = $(this).sortable("toArray", {
-            attribute: "data-answer-id"
+            attribute: "data-option-id"
           });
           $.ajax({
             url: $(this).data("js-url"),

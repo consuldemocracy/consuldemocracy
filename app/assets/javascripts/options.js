@@ -19,7 +19,7 @@
       return max_order;
     },
     nestedOptions: function() {
-      $(".js-answers").each(function(index, options) {
+      $(".js-options").each(function(index, options) {
         App.Options.initializeOptions(options);
       });
     },

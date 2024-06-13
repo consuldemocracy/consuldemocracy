@@ -39,14 +39,14 @@ describe "Poll Results" do
     expect(page).to have_content(question2.title)
 
     within("#question_#{question1.id}_results_table") do
-      expect(find("#answer_#{option1.id}_result")).to have_content("2 (66.67%)")
-      expect(find("#answer_#{option2.id}_result")).to have_content("1 (33.33%)")
+      expect(find("#option_#{option1.id}_result")).to have_content("2 (66.67%)")
+      expect(find("#option_#{option2.id}_result")).to have_content("1 (33.33%)")
     end
 
     within("#question_#{question2.id}_results_table") do
-      expect(find("#answer_#{option3.id}_result")).to have_content("1 (33.33%)")
-      expect(find("#answer_#{option4.id}_result")).to have_content("1 (33.33%)")
-      expect(find("#answer_#{option5.id}_result")).to have_content("1 (33.33%)")
+      expect(find("#option_#{option3.id}_result")).to have_content("1 (33.33%)")
+      expect(find("#option_#{option4.id}_result")).to have_content("1 (33.33%)")
+      expect(find("#option_#{option5.id}_result")).to have_content("1 (33.33%)")
     end
   end
 
