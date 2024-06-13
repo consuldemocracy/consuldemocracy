@@ -777,7 +777,10 @@ gl:
           community: "Comunidade"
           proposals: "Propostas cidadás"
           polls: "Votacións"
+          legislation: "Lexislación colaborativa"
+          budgets: "Orzamentos"
           layouts: "Capas"
+          machine_learning: "IA / Machine Learning"
           mailers: "Correos"
           management: "Xestión"
           welcome: "Benvida"
@@ -792,8 +795,13 @@ gl:
       title_booths: Urnas de votación
       legislation: Lexislación colaborativa
       users: Usuarios/as
+      dashboard: Panel de progreso das propostas
+      administrator_tasks: Recursos solicitados
+      dashboard_actions: Recursos e accións
       debates: "Debates"
       comments: "Comentarios"
+      local_census_records: Censo local
+      machine_learning: "IA / Machine Learning"
     administrators:
       index:
         title: Administradores
