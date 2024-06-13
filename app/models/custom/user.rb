@@ -104,6 +104,7 @@ Rails.logger.info("extracted values: #{extracted_values.inspect}")
     oauth_user            = User.find_by(email: saml_email) if saml_email_confirmed
    
    # Assign Geozone based on the normalized saml_postcode if it exists
+   saml_user.geozone = nil
    if normalized_saml_postcode.present?
    # Find the Postcode instance based on the normalized saml_postcode
    # This only goes in if Manage Postcodes is added
