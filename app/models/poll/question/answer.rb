@@ -14,7 +14,7 @@ class Poll::Question::Answer < ApplicationRecord
   validates_translation :title, presence: true
   validates :given_order, presence: true, uniqueness: { scope: :question_id }
 
-  scope :with_content, -> { where.not(id: without_content) }
+  scope :with_content, -> { excluding(without_content) }
   scope :without_content, -> do
     where(description: "")
       .where.missing(:images)

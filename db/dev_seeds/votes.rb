@@ -1,5 +1,5 @@
 section "Voting Debates, Proposals & Comments" do
-  not_org_users = User.where.not(id: User.organizations)
+  not_org_users = User.excluding(User.organizations)
   100.times do
     voter  = not_org_users.level_two_or_three_verified.sample
     vote   = [true, false].sample

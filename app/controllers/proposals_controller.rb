@@ -164,7 +164,7 @@ class ProposalsController < ApplicationController
                                       .sort_by_confidence_score
                                       .limit(Setting["featured_proposals_number"])
         if @featured_proposals.present?
-          @resources = @resources.where.not(id: @featured_proposals)
+          @resources = @resources.excluding(@featured_proposals)
         end
       end
     end
