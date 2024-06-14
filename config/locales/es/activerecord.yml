@@ -458,15 +458,6 @@ es:
       image:
         title: Título
         attachment: "Selecciona una imagen"
-      poll/question/answer:
-        title: Respuesta
-        description: Descripción
-      poll/question/answer/translation:
-        title: Respuesta
-        description: "Descripción (opcional)"
-      poll/question/answer/video:
-        title: Título
-        url: Vídeo externo
       newsletter:
         segment_recipient: Destinatarios
         subject: Asunto
