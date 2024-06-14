@@ -58,6 +58,7 @@ gl:
     meta_keywords_description: 'Palabras clave <meta name="keywords">, usado para mellorar o SEO'
     min_age_to_participate: Idade mínima para participar
     min_age_to_participate_description: "Os usuarios maiores desta idade poden participar en todos os procesos"
+    postal_codes: "Códigos postais"
     proposals:
       poll_short_title: Votacións
       poll_description: Descrición de votacións
