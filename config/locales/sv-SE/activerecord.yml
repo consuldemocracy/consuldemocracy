@@ -459,15 +459,6 @@ sv:
       image:
         title: Titel
         attachment: "Välj bild"
-      poll/question/answer:
-        title: Svar
-        description: Beskrivning
-      poll/question/answer/translation:
-        title: Svar
-        description: "Beskrivning (valfritt)"
-      poll/question/answer/video:
-        title: Titel
-        url: Extern video
       newsletter:
         segment_recipient: Mottagare
         subject: Ämne
