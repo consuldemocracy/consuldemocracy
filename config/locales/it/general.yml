@@ -161,7 +161,6 @@ it:
     legislation/process: processo
     legislation/question: questione
     poll/shift: Turno
-    poll/question/answer: Risposta
     user: Account
     verification/sms: telefono
     signature_sheet: Foglio firme
