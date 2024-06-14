@@ -1368,10 +1368,18 @@ gl:
             label: "Por meta"
         label:
           booths: "Buscar urna por nome"
+          budget_investments: "Buscar investimentos por título, descrición ou partida"
+          comments: "Buscar comentarios"
+          debates: "Buscar debates por título ou descrición"
+          legislation_processes: "Buscar procesos por título ou descrición"
+          legislation_proposals: "Buscar propostas por título ou descrición"
+          local_census_records: "Buscar por número de documento"
           organizations: "Nome, correo electrónico ou teléfono"
           poll_officers: "Buscar presidentes da mesa"
           poll_questions: "Buscar preguntas"
+          polls: "Buscar votacións por nome ou descrición"
           proposals: "Buscar propostas por título, código, descrición ou pregunta"
+          proposal_notifications: "Buscar notificacións por título ou descrición"
           users: "Buscar usuario por nome ou correo electrónico"
         search: "Procurar"
       search_results: "Resultados da procura"
@@ -1389,10 +1397,15 @@ gl:
       created_at: Creada
       color_help: Formato hexadecimal
       show_results_and_stats: "Amosar os resultados e as estatísticas"
+      results_and_stats_reminder: "Se marcas estas opcións, os resultados e/ou estatísticas serán públicos e poderán velos todos os usuarios."
+      close_modal: Pechar xanela emerxente
+      example_url: "Por exemplo, https://consuldemocracy.org ou /help"
     geozones:
       index:
         title: Zonas
         create: Crear unha zona
+        geojson_map: Mapa GeoJSON
+        geojson_map_help: "Se están dispoñibles as coordenadas GeoJSON, amosaranse no seguinte mapa"
       geozone:
         name: Nome
         external_code: Código externo
