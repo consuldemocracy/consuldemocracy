@@ -155,7 +155,6 @@ nl:
     legislation/process: proces
     legislation/question: vraag
     poll/shift: Dienst
-    poll/question/answer: Antwoord
     user: Deelnemer
     verification/sms: telefoon
     signature_sheet: Handtekeningenlijst
