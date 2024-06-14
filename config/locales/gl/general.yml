@@ -162,7 +162,6 @@ gl:
     legislation/process: proceso
     legislation/question: pregunta
     poll/shift: Quenda
-    poll/question/answer: Resposta
     user: a conta
     verification/sms: o teléfono
     signature_sheet: a folla de sinaturas
