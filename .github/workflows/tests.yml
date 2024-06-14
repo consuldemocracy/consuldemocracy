@@ -71,7 +71,7 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: screenshots
+          name: screenshots-${{ matrix.ci_node_index }}
           path: tmp/capybara/
   coveralls:
     permissions:
