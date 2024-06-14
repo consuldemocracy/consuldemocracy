@@ -148,7 +148,6 @@ el:
     budget/group: Ομάδα προϋπολογισμού
     budget/heading: Επικεφαλίδα προϋπολογισμού
     poll/shift: Μετατόπιση
-    poll/question/answer: Απάντηση
     user: Λογαριασμός
     verification/sms: τηλέφωνο
     signature_sheet: Φύλλα υπογραφών
