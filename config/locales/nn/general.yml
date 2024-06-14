@@ -148,7 +148,6 @@ nn:
     budget/group: Budsjettgruppe
     budget/heading: Budsjettoverskrift
     poll/shift: Shift
-    poll/question/answer: Svar
     user: Konto
     verification/sms: telefon
     signature_sheet: Signaturside
