@@ -162,7 +162,6 @@ sv:
     legislation/process: process
     legislation/question: fråga
     poll/shift: Arbetspass
-    poll/question/answer: Svar
     user: Konto
     verification/sms: telefon
     signature_sheet: Namninsamling
