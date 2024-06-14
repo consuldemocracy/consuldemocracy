@@ -7,9 +7,6 @@ ka:
         direct_message: "შეტყობინება წარმატებით გაიგზავნა."
         poll: "ხმის მიცემა წარმატებით შეიქმნა."
         poll_booth: "კაბინა წარმატებით შეიქმნა."
-        poll_question_answer: "პასუხი წარმატებით შეიქმნა"
-        poll_question_answer_video: "ვიდეო წარმატებით შეიქმნა"
-        poll_question_answer_image: "ფოტოსურათი წარმატებით აიტვირთა"
         proposal: "ინიციატივა წარმატებით შეიქმნა."
         proposal_notification: "შეტყობინება წარმატებით გაიგზავნა."
         budget_investment: "საბიუჯეტო ინვესტიცია წარმატებით შეიქმნა."
@@ -32,5 +29,4 @@ ka:
       destroy:
         budget_investment: "საინვესტიციო პროექტი წარმატებით წაიშალა."
         topic: "თემა წარმატებით წაიშალა."
-        poll_question_answer_video: "პასუხის ვიდეო წარმატებით წაიშალა."
         valuator_group: "შემფასებელთა ჯგუფი წარმატებით წაიშალა"
