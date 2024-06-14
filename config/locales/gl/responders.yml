@@ -7,9 +7,6 @@ gl:
         direct_message: "A mensaxe enviouse correctamente."
         poll: "A votación creouse correctamente."
         poll_booth: "A urna creouse correctamente."
-        poll_question_answer: "A resposta creouse correctamente"
-        poll_question_answer_video: "O vídeo creouse correctamente"
-        poll_question_answer_image: "A imaxe subiuse correctamente"
         proposal: "Proposta creada correctamente."
         proposal_notification: "A mensaxe enviouse correctamente."
         budget_investment: "A proposta de investimento creouse correctamente."
@@ -32,5 +29,4 @@ gl:
       destroy:
         budget_investment: "O proxecto de investimento actualizouse correctamente."
         topic: "O tema borrouse correctamente."
-        poll_question_answer_video: "O vídeo borrouse correctamente."
         valuator_group: "O grupo de avaliadores eliminouse correctamente"
