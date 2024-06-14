@@ -7,9 +7,6 @@ so:
         direct_message: "Fariintada Siguula ah ayey u dirsantay."
         poll: "Dorshada sigula ayaa loo Sameyey."
         poll_booth: "Siguula ayaa lo Abuuray."
-        poll_question_answer: "Jawaabta Siguula ayaa Losameyey"
-        poll_question_answer_video: "Fidyoowga siguul ah ayaa lo sameyey"
-        poll_question_answer_image: "Sawirka si guul ah ayaa losorogay"
         proposal: "Soo jeedinta ayaa si guul leh loo abuuray."
         proposal_notification: "Farriintaada ayaa si sax ah loo soo saxay."
         budget_investment: "Misaniya malagashiga ayaa si guul ah loo dejiyey."
@@ -31,5 +28,4 @@ so:
       destroy:
         budget_investment: "Mashruuca maalgelinta si guul leh ayaa loo tirtiray."
         topic: "Mawduucii waa la tirtiray si guul leh."
-        poll_question_answer_video: "Kajawaab Fidyoowga sida gusha ah loo tir tiray."
         valuator_group: "Kooxda qimwynta ayaa si guul ah tirtiray"
