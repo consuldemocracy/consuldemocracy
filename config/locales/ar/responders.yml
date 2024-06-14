@@ -7,9 +7,6 @@ ar:
         direct_message: "تم إرسال رسالتك بنجاح."
         poll: "تم إنشاء الاستطلاع بنجاح."
         poll_booth: "تم إنشاء مكتب الإقتراع بنجاح."
-        poll_question_answer: "تم إنشاء الإجابة بنجاح"
-        poll_question_answer_video: "تم إنشاء الفيديو بنجاح"
-        poll_question_answer_image: "تم رفع الصورة بنجاح"
         proposal: "تم إنشاء الإقتراح بنجاح."
         proposal_notification: "تم إرسال رسالتك بشكل صحيح."
         budget_investment: "تم إنشاء ميزانية الإستثمار بنجاح."
@@ -32,5 +29,4 @@ ar:
       destroy:
         budget_investment: "تم حذف مشروع الاستثمار بنجاح."
         topic: "تم حذف الموضوع بنجاح."
-        poll_question_answer_video: "تم حذف إجابة الفيديو بنجاح."
         valuator_group: "تم حذف مجموعة المقيّمين بنجاح"
