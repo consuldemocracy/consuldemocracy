@@ -454,15 +454,6 @@ ne:
       image:
         title: टाइटल
         attachment: "छवि छान्नुहोस्"
-      poll/question/answer:
-        title: जवाफ
-        description: विवरण
-      poll/question/answer/translation:
-        title: जवाफ
-        description: "विवरण"
-      poll/question/answer/video:
-        title: टाइटल
-        url: बाह्य भिडियो
       newsletter:
         segment_recipient: प्राप्तकर्ताहरू
         subject: विषय
