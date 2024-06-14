@@ -152,7 +152,6 @@ pl:
     budget/heading: Nagłówek budżetu
     legislation/draft_version: szkic
     poll/shift: Zmiana
-    poll/question/answer: Odpowiedź
     user: Konto
     verification/sms: telefon
     signature_sheet: Arkusz podpisu
