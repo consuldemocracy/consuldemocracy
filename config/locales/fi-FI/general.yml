@@ -92,7 +92,6 @@ fi:
     proposal: Ehdotus
     proposal_notification: "Ilmoitus"
     budget/investment: Sijoitus
-    poll/question/answer: Vastaus
     user: Tili
     verification/sms: puhelin
     document: Asiakirja
