@@ -114,7 +114,6 @@ ast:
     proposal: la propuesta
     proposal_notification: "la notificación"
     budget/investment: Proyectu de inversión
-    poll/question/answer: Respuesta
     user: la cuenta
     verification/sms: el teléfono
     signature_sheet: la hoja de firmas
