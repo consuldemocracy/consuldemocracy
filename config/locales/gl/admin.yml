@@ -4,7 +4,7 @@ gl:
       title: Administración
     actions:
       actions: Accións
-      block_author: "Autor do bloque"
+      block_author: "Bloquear autor"
       confirm_action: "Estás seguro/a? %{action} \"%{name}\""
       confirm_delete: "Estás seguro/a? Esta acción vai eliminar \"%{name}\" e non se pode desfacer."
       confirm_hide: Confirmar moderación
@@ -1410,7 +1410,14 @@ gl:
         name: Nome
         external_code: Código externo
         census_code: Código do censo
+        code_help: Código de resposta para esta xeozona na API do censo
+        color_help: "Cor da zona no mapa dun orzamento. %{format_help}"
         coordinates: Coordenadas
+        coordinates_help: Coordenadas que conforman unha área na que poder premer dentro do mapa de imaxe HTML
+        geojson: GeoJSON dispoñible
+        geojson_help: "Deben ter un tipo do formato «Polygon» ou «MultiPolygon»; no mapa dun orzamento aparecerá un polígono baseado nestes datos se unha partida está asociada a esta xeozona"
+      create:
+        notice: "Xeozona creada correctamente"
       edit:
         form:
           submit_button: Gardar so cambios
@@ -1422,6 +1429,8 @@ gl:
       delete:
         success: A zona eliminouse correctamente
         error: Non se pode eliminar a zona porque xa ten elementos asociados
+      update:
+        notice: "Xeozona actualizada correctamente"
     signature_sheets:
       author: Autoría
       created_at: Data de creación
@@ -1434,10 +1443,17 @@ gl:
         title: Nova folla de sinaturas
         document_numbers_note: "Escribe os números separados por puntos y comas (;)"
         submit: Crear folla de sinaturas
+        text_help:
+          required_fields_note: "Para verificar un usuario, a aplicación necesita: Número de documento"
+          date_of_birth_note: ", Día de nacemento (dd/mm/yyyy)"
+          postal_code_note: " e Código Postal"
+          required_fields_structure_note: "Os campos requiridos para cada usuario deben ir separados por comas, e cada usuario debe ir separado por punto e coma."
+          example_text: "Exemplo: "
       show:
         created_at: Creado
         author: Autoría
         users: Usuarios/as
+        signature_count: "Número de sinaturas:"
         verified:
           one: "Hai %{count} sinatura válida"
           other: "Hai %{count} sinaturas válidas"
@@ -1445,6 +1461,10 @@ gl:
           one: "Hai %{count} sinatura válida"
           other: "Hai %{count} sinaturas válidas"
         unverified_error: (Non verificada polo padrón)
+        voted:
+          zero: "Non hai votos creados coas sinaturas verificadas."
+          one: "Hai %{count} voto creados coas sinaturas verificadas."
+          other: "Hai %{count} votos creados coas sinaturas verificadas."
         loading: "Aínda hai sinaturas que o padrón está verificando. Actualiza a páxina dentro dun anaco"
     stats:
       show:
@@ -1471,13 +1491,30 @@ gl:
         proposal_notifications: Notificacións de propostas
         incomplete_verifications: Verificacións incompletas
         polls: Votacións
+        sdg: ODS
       graph:
+        budget_investment_created: Crearonse os proxectos de gasto
+        budget_investment_supported: Proxectos de gasto admitidos
         debate_created: Debates
+        legislation_annotation_created: Crearonse as anotacións lexislativas
+        legislation_answer_created: Crearonse as respostas lexislativas
+        level_3_user: Usuarios de nivel 3 verificados
         proposal_created: Propostas cidadás
+        title: Diagrama
+        visits: Visitas
+      budgets:
+        no_data_before_balloting_phase: "Non hai datos que amosar antes da fase de votación."
+        title: "Orzamentos participativos - Estatísticas de participación"
+        supporting_phase: Fase de apoios
+        balloting_phase: Votación final
       budget_balloting:
+        title: "Estatísticas da votación final"
         vote_count: Votos
         participant_count: Participantes
+        votes_per_heading: Votos por partida
+        participants_per_district: Participantes por zona
       budget_supporting:
+        title: "Estatísticas da fase de apoios"
         headings: Partidas
         users: Usuarios/as
         vote_count: Votos
@@ -1503,9 +1540,14 @@ gl:
           origin_web: Participantes na web
           origin_total: Participantes totais
       sdg:
+        budget_investments:
+          amount: "Orzamento aprobado"
+          winners: "Proxectos de investimento gañadores"
+          sent: "Proxectos de investimento enviados"
         debates: "Debates"
         polls: "Votacións"
         proposals: "Propostas cidadás"
+        title: "Obxectivos de Desenvolvemento Sostible - Estatísticas"
     tags:
       create: Crea un tema
       index:
@@ -1516,11 +1558,13 @@ gl:
     users:
       columns:
         id: ID
+        erase_reason: Motivo da baixa
         name: Nome
         email: O teu correo electrónico
         document_number: Número de documento
         roles: Roles
         verification_level: Nivel de verificación
+        activation_status: Estado da confirmación
       account:
         active_status: Conta confirmada
         inactive_status: Conta sen confirmar
@@ -1671,6 +1715,29 @@ gl:
         new:
           title: Rexistros do censo local
     machine_learning:
+      help:
+        description_4f: "Recoméndase incluír como primeira liña do guión unha cadea inicial de comiñas triplas con información breve sobre o mesmo e ligazóns a calquera información relevante. Esta cadea amosarase de xeito automático na interface de administración."
+        description_4g: "Recomendase crear un rexistro coa información relevante do guión nun ficheiro de texto <code>.log</code>, co mesmo nome do guión."
+        title_5: "Para utilizar os guións de IA / Machine Learning necesitas ter Python instalado no teu servidor"
+        description_5: "Aquí podes ver as instrucións de exemplo para un servidor Ubuntu 18.04:"
+      help_text: "Esta funcionalidade é expermiental."
+      last_execution: "Última execución"
+      no_content: "Aínda non se creou contido."
+      notice:
+        success: "O último guión foi executado correctamente."
+        error: "Produciuse un erro. Máis información a continuación."
+        working: "O guión está executándose. O administrador que o lanzou recibirá unha mensaxe de correo cando remate."
+        delete_generated_content: "O contido xerado foi eliminado correctamente."
+      output_files: "Ficheiros de saída:"
       related_content: "Contido relacionado"
+      related_content_description: "Engade contido relacionado xerado automaticamente ás propostas e proxectos de orzamentos participativos."
+      script_info: "Recibirás unha mensaxe de correo en %{email} cando o guión remate de executarse."
+      script_name: "Nome do guión:"
+      select_script: "Selecciona o guión de Python a executar"
+      started_at: "Iniciado ás:"
       tab_help: "Axuda"
+      tab_scripts: "Lanzar guión"
+      tab_settings: "Axustes / Contido xerado"
       tags: "Etiquetas"
+      tags_description: "Xera etiquetas automáticas en todos os elementos que se poden etiquetar."
+      title: "IA / Machine Learning"
