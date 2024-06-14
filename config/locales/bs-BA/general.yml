@@ -147,7 +147,6 @@ bs:
     budget/group: Budžetska grupa
     budget/heading: Budžetsko poglavlje
     poll/shift: Smjena
-    poll/question/answer: Odgovor
     user: Nalog
     verification/sms: telefon
     signature_sheet: Potpisni list
