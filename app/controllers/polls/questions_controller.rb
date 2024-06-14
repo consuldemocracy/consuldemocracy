@@ -13,7 +13,7 @@ class Polls::QuestionsController < ApplicationController
         redirect_to request.referer
       end
       format.js do
-        render :answers
+        render :options
       end
     end
   end

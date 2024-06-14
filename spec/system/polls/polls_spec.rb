@@ -152,8 +152,8 @@ describe "Polls" do
 
     scenario "Buttons to slide through images work back and forth" do
       question = create(:poll_question, :yes_no, poll: poll)
-      create(:image, imageable: question.question_answers.last, title: "The no movement")
-      create(:image, imageable: question.question_answers.last, title: "No movement planning")
+      create(:image, imageable: question.question_options.last, title: "The no movement")
+      create(:image, imageable: question.question_options.last, title: "No movement planning")
 
       visit poll_path(poll)
 
@@ -206,7 +206,7 @@ describe "Polls" do
       login_as user
       visit poll_path(poll)
 
-      within("#poll_question_#{question.id}_answers") do
+      within("#poll_question_#{question.id}_options") do
         click_button "Vote Yes"
 
         expect(page).to have_button "You have voted Yes"
@@ -223,7 +223,7 @@ describe "Polls" do
       login_as user
       visit poll_path(poll)
 
-      within("#poll_question_#{question.id}_answers") do
+      within("#poll_question_#{question.id}_options") do
         click_button "Yes"
 
         expect(page).to have_button "You have voted Yes"
@@ -266,7 +266,7 @@ describe "Polls" do
       login_as user
       visit poll_path(poll)
 
-      within("#poll_question_#{question.id}_answers") do
+      within("#poll_question_#{question.id}_options") do
         click_button "Yes"
 
         expect(page).to have_button "You have voted Yes"
@@ -301,7 +301,7 @@ describe "Polls" do
       expect(page).to have_content "You have already participated in a physical booth. " \
                                    "You can not participate again."
 
-      within("#poll_question_#{question.id}_answers") do
+      within("#poll_question_#{question.id}_options") do
         expect(page).to have_content("Yes")
         expect(page).to have_content("No")
 

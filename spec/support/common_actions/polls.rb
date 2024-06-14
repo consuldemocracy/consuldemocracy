@@ -1,12 +1,12 @@
 module Polls
-  def vote_for_poll_via_web(poll, question, answer)
+  def vote_for_poll_via_web(poll, question, option)
     visit poll_path(poll)
 
-    within("#poll_question_#{question.id}_answers") do
-      click_button answer
+    within("#poll_question_#{question.id}_options") do
+      click_button option
 
-      expect(page).to have_button("You have voted #{answer}")
-      expect(page).not_to have_button("Vote #{answer}")
+      expect(page).to have_button("You have voted #{option}")
+      expect(page).not_to have_button("Vote #{option}")
     end
   end
 

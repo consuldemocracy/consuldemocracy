@@ -12,7 +12,7 @@ class Polls::AnswersController < ApplicationController
         redirect_to request.referer
       end
       format.js do
-        render "polls/questions/answers"
+        render "polls/questions/options"
       end
     end
   end

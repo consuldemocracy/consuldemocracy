@@ -1,6 +1,4 @@
 class Poll < ApplicationRecord
-  require_dependency "poll/answer"
-
   include Imageable
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases

@@ -14,8 +14,8 @@ class Poll::Question < ApplicationRecord
 
   has_many :comments, as: :commentable, inverse_of: :commentable
   has_many :answers, class_name: "Poll::Answer"
-  has_many :question_answers, -> { order "given_order asc" },
-           class_name: "Poll::Question::Answer",
+  has_many :question_options, -> { order "given_order asc" },
+           class_name: "Poll::Question::Option",
            inverse_of: :question,
            dependent: :destroy
   has_many :partial_results
@@ -25,7 +25,7 @@ class Poll::Question < ApplicationRecord
   validates :author, presence: true
   validates :poll_id, presence: true, if: proc { |question| question.poll.nil? }
 
-  accepts_nested_attributes_for :question_answers, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :question_options, reject_if: :all_blank, allow_destroy: true
 
   scope :by_poll_id,    ->(poll_id) { where(poll_id: poll_id) }
 
@@ -63,23 +63,23 @@ class Poll::Question < ApplicationRecord
     where(poll_id: Poll.answerable_by(user).pluck(:id))
   end
 
-  def answers_total_votes
-    question_answers.reduce(0) { |total, question_answer| total + question_answer.total_votes }
+  def options_total_votes
+    question_options.reduce(0) { |total, question_option| total + question_option.total_votes }
   end
 
-  def most_voted_answer_id
-    question_answers.max_by(&:total_votes)&.id
+  def most_voted_option_id
+    question_options.max_by(&:total_votes)&.id
   end
 
   def possible_answers
-    question_answers.joins(:translations).pluck("poll_question_answer_translations.title")
+    question_options.joins(:translations).pluck(:title)
   end
 
-  def answers_with_read_more?
-    answers_with_read_more.any?
+  def options_with_read_more?
+    options_with_read_more.any?
   end
 
-  def answers_with_read_more
-    question_answers.select(&:with_read_more?)
+  def options_with_read_more
+    question_options.select(&:with_read_more?)
   end
 end

@@ -60,10 +60,6 @@ class User < ApplicationRecord
            class_name: "Poll::Answer",
            foreign_key: :author_id,
            inverse_of: :author
-  has_many :poll_pair_answers,
-           class_name: "Poll::PairAnswer",
-           foreign_key: :author_id,
-           inverse_of: :author
   has_many :poll_partial_results,
            class_name: "Poll::PartialResult",
            foreign_key: :author_id,

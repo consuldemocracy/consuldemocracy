@@ -114,10 +114,10 @@ describe "Polymorphic routes" do
       expect(admin_polymorphic_path(question)).to eq(admin_question_path(question))
     end
 
-    it "routes poll answer videos" do
-      video = create(:poll_answer_video)
+    it "routes poll option videos" do
+      video = create(:poll_option_video)
 
-      expect(admin_polymorphic_path(video)).to eq admin_answer_video_path(video.answer, video)
+      expect(admin_polymorphic_path(video)).to eq admin_option_video_path(video.option, video)
     end
 
     it "routes milestones for resources with no hierarchy" do
