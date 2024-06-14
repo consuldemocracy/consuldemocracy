@@ -158,7 +158,6 @@ hr:
     legislation/process: proces
     legislation/question: pitanje
     poll/shift: Izmjeni
-    poll/question/answer: Odgovor
     user: Račun
     verification/sms: telefon
     signature_sheet: List za potpis
