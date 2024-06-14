@@ -7,9 +7,6 @@ zh-TW:
         direct_message: "您的消息已成功發送。"
         poll: "投票已成功創建。"
         poll_booth: "投票亭已成功創建。"
-        poll_question_answer: "回答已成功創建"
-        poll_question_answer_video: "視頻已成功創建"
-        poll_question_answer_image: "圖片已成功上傳"
         proposal: "建議已成功創建。"
         proposal_notification: "您的消息已正確發送。"
         budget_investment: "預算投資已成功創建。"
@@ -31,5 +28,4 @@ zh-TW:
       destroy:
         budget_investment: "投資項目已成功刪除。"
         topic: "主題已成功刪除。"
-        poll_question_answer_video: "回答視頻已成功刪除。"
         valuator_group: "評估組已成功刪除"
