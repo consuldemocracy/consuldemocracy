@@ -416,15 +416,6 @@ mk:
       image:
         title: Наслов
         attachment: "Избери слика"
-      poll/question/answer:
-        title: Одговор
-        description: Опис
-      poll/question/answer/translation:
-        title: Одговор
-        description: "Опис"
-      poll/question/answer/video:
-        title: Наслов
-        url: Надворешно видео
       newsletter:
         segment_recipient: Примачи
         subject: Предмет
