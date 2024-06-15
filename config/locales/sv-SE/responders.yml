@@ -7,6 +7,9 @@ sv:
         direct_message: "Ditt meddelande har skickats."
         poll: "Omröstningen har skapats."
         poll_booth: "Röststationen har skapats."
+        poll_question_option: "Svaret har skapats"
+        poll_question_option_video: "Videon har skapats"
+        poll_question_option_image: "Bilden har laddats upp"
         proposal: "Förslaget har skapats."
         proposal_notification: "Ditt meddelande har skickats."
         budget_investment: "Budgetinvesteringen har skapats."
@@ -31,5 +34,7 @@ sv:
       destroy:
         budget_investment: "Budgetförslaget har raderats."
         topic: "Ämnet har raderats."
+        poll_question_option_image: "Bilden har raderats."
+        poll_question_option_video: "Videosvaret har raderats."
         valuator_group: "Bedömargruppen har tagits bort"
         vote: "Rösten har raderats"
