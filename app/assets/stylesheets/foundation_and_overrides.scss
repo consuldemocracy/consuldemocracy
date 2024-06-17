@@ -7,7 +7,7 @@
 @import "custom_settings";
 @import "foundation";
 
-@import "motion-ui/motion-ui";
+// @import "motion-ui/motion-ui";
 
 @include foundation-global-styles;
 // @include foundation-xy-grid-classes;
@@ -46,5 +46,5 @@
 @include foundation-tooltip;
 @include foundation-visibility-classes;
 @include foundation-float-classes;
-@include motion-ui-transitions;
-@include motion-ui-animations;
+// @include motion-ui-transitions;
+// @include motion-ui-animations;
