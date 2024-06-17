@@ -459,6 +459,15 @@ gl:
       image:
         title: Título
         attachment: "Anexo"
+      poll/question/option:
+        title: Resposta
+        description: Descrición
+      poll/question/option/translation:
+        title: Resposta
+        description: "Descrición (opcional)"
+      poll/question/option/video:
+        title: Título
+        url: Vídeo externo
       newsletter:
         segment_recipient: Destinatarios
         subject: Asunto
