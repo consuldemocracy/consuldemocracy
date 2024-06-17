@@ -1679,6 +1679,10 @@ gl:
       new:
         admin_information: "Cando creas unha entidade, o teu usuario actual <strong>\"%{username}\"</strong> xunto co enderezo de correo <strong>\"%{email}\"</strong> e o teu contrasinal serán copiados na nova base de datos da entidade, e vanse conceder permisos de administración na nova entidade de xeito automático. É imporante destacar que as contas de usuario estarán almacenadas en bases de datos completamente independentes, polo que se modificas o contrasinal nunha entidade, as contas que teñas noutras entidades permanecerán intactas."
         title: Nova entidade
+      restore:
+        notice: Entidade activada correctamente
+      update:
+        notice: Entidade actualizada correctamente
     homepage:
       title: Páxina principal
       description: Os módulos activos aparecerán na páxina principal na mesma orde que aquí.
@@ -1703,19 +1707,65 @@ gl:
         card_title: Editar tarxeta
         submit_card: Gardar tarxeta
     audits:
+      title: "Historial"
+      changes: "Lista de cambios"
       id: "ID"
+      field: "Campo"
+      new_value: "Novo valor"
+      old_value: "Valor anterior"
+      edited_at: "Editado en"
+      edited_by: "Editado por"
       actions: "Accións"
+      empty: "Non hai cambios rexistrados"
     local_census_records:
       index:
+        title: Censo local
+        create: Crear novo rexistro no censo local
+        no_local_census_records: Non hai rexistros no censo local.
         document_type: Tipo documento
         document_number: Número de documento
         date_of_birth: Data de nacemento
         postal_code: Código postal
+        import: Importar CSV
+      new:
+        creating: Creando novo rexistro no censo local
+      create:
+        notice: Creouse correctamente un novo rexistro no censo local!
+      edit:
+        editing: Editando rexistro do censo local
+      update:
+        notice: Actualizouse correctamente o rexistro do censo local!
+      destroy:
+        notice: Eliminouse correctamente o rexistro do censo local!
       imports:
         new:
           title: Rexistros do censo local
+          subtitle: Importar ficheiros CSV
+        create:
+          notice: O proceso de importación de rexistros do censo local foi executado correctamente!
+        show:
+          title: Censo local
+          subtitle: Resultados do proceso de importación
+          import: Importar de novo
+          errored: Filas con erros
+          created: Rexistros creados
+        local_census_records:
+          no_records_found: Non se atoparon rexistros.
     machine_learning:
+      cancel: "Cancelar operación"
+      cancel_alert: "Esta acción cancelará o guión actual e será necesario volver a executalo."
+      comments_summary: "Resumo de comentarios"
+      comments_summary_description: "Amosa un resumo de comentarios xerado de xeito automático en todos os elementos que poden ser comentados."
+      data_folder_content: "Contido do cartafol Data"
+      error: "Erro:"
+      execute_script: "Lanzar guión"
+      executed_by: "Executado por:"
+      executed_script: "Guión executado:"
+      feature_disabled: "Esta funcionalidade está desactivada. Para utilizar Machine Learning podes activala desde %{link}."
+      feature_disabled_link: "páxina de axustes"
       help:
+        title_1: "Que é IA / Machine Learning?"
+        title_3: "Como usar este módulo"
         description_4f: "Recoméndase incluír como primeira liña do guión unha cadea inicial de comiñas triplas con información breve sobre o mesmo e ligazóns a calquera información relevante. Esta cadea amosarase de xeito automático na interface de administración."
         description_4g: "Recomendase crear un rexistro coa información relevante do guión nun ficheiro de texto <code>.log</code>, co mesmo nome do guión."
         title_5: "Para utilizar os guións de IA / Machine Learning necesitas ter Python instalado no teu servidor"
