@@ -1,4 +1,4 @@
-# What
+## What
 
 Tests that fail randomly are called "flakies", this one seems to be one:
 
@@ -11,11 +11,6 @@ Tests that fail randomly are called "flakies", this one seems to be one:
 ```
   FILL_WITH_FAILURE_REPORT
 ```
-
-# How
-
-- [ ] Explain why the test is flaky, or under which conditions/scenario it fails randomly
-- [ ] Explain why your PR fixes it
 
 ## Tips for flaky hunting
 

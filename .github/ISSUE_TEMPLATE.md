@@ -1,12 +1,12 @@
-### User Story
+## User Story
 
 [comment]: # (As a <user type>, I want to <task> so that <goal>.)
 
-### Why is this Needed?
+## Why is this Needed?
 
 [comment]: # (Describe the problem and why this task is needed. Provide a description of the current state, what you would like to happen, and what actually happened)
 
-### Description
+## Description
 
 [comment]: # (Feature or Bug? eg. Type: Bug)
 *Type*:
