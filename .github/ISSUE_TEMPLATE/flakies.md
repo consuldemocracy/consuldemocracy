@@ -44,7 +44,7 @@ After executing rspec you can see the seed used, add it as an option to rspec, f
 ### Other things to watch for
 
 - Time related issues (current time, two time or date comparisons with miliseconds/time when its not needed)
-- https://semaphoreci.com/community/tutorials/how-to-deal-with-and-eliminate-flaky-tests
+- You can check the [Semaphore tutorial about flaky tests](https://semaphoreci.com/community/tutorials/how-to-deal-with-and-eliminate-flaky-tests)
 
 ### Final thoughts
 
