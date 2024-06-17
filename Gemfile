@@ -64,7 +64,6 @@ gem "wicked_pdf", "~> 2.8.0"
 gem "wkhtmltopdf-binary", "~> 0.12.6"
 
 group :development, :test do
-  gem "bullet", "~> 7.1.6"
   gem "debug", "~> 1.9.2"
   gem "factory_bot_rails", "~> 6.4.3"
   gem "faker", "~> 3.3.1"
