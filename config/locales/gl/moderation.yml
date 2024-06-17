@@ -1,5 +1,7 @@
 gl:
   moderation:
+    actions:
+      confirm_action: "Estás seguro/a? %{action}"
     comments:
       index:
         block_authors: Bloquear autores
@@ -99,6 +101,7 @@ gl:
         title: Notificacións das propostas
     users:
       index:
+        block: Bloquear
         hide: Bloquear
         search_placeholder: correo electrónico ou nome de usuario
         title: Bloquear usuarios
