@@ -1775,6 +1775,7 @@ gl:
         description_4b: "Os novos guións deben estar situados no cartafol <code>public/machine_learning/scripts</code>"
         description_4c: "Os datos de entrada que utilizará o guión crearanse como ficheiros JSON no cartafol <code>../data</code>"
         description_4d: "Calquera saída xerada debe colocarse no cartafol <code>../data</code>"
+        description_4e: "Recoméndase crear un ficheiro de texto <code>.ini</code> independente coa configuración do guión, co mesmo nome do guión e con permiso de lectura para «configparser». Este ficheiro facilitará o cambio de configuración por parte dos administradores."
         description_4f: "Recoméndase incluír como primeira liña do guión unha cadea inicial de comiñas triplas con información breve sobre o mesmo e ligazóns a calquera información relevante. Esta cadea amosarase de xeito automático na interface de administración."
         description_4g: "Recomendase crear un rexistro coa información relevante do guión nun ficheiro de texto <code>.log</code>, co mesmo nome do guión."
         title_5: "Para utilizar os guións de IA / Machine Learning necesitas ter Python instalado no teu servidor"
