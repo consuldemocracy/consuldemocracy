@@ -1,7 +1,7 @@
 gl:
   account:
     show:
-      last_sign_in: "Última conexión: %{last_sign_in_at} dende o enderezo IP %{last_sign_in_ip}"
+      last_sign_in: "Último acceso: %{last_sign_in_at} dende o enderezo IP %{last_sign_in_ip}"
       change_credentials_link: Cambiar os meus datos de acceso
       erase_account_link: Borrar a miña conta
       finish_verification: Finalizar verificación
@@ -162,6 +162,7 @@ gl:
     legislation/process: proceso
     legislation/question: pregunta
     poll/shift: Quenda
+    poll/question/option: Resposta
     user: a conta
     verification/sms: o teléfono
     signature_sheet: a folla de sinaturas
