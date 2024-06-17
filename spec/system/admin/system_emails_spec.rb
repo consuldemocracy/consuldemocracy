@@ -104,6 +104,7 @@ describe "System Emails" do
       expect(page).to have_content "John Doe"
       expect(page).to have_content "Cleaner city"
       expect(page).to have_content "Budget for 2019"
+      expect(page).to have_content "Sincerely"
 
       expect(page).to have_link "Participatory Budgets", href: budgets_url(host: app_host)
 
@@ -118,6 +119,7 @@ describe "System Emails" do
 
       expect(page).to have_content "Your investment project '#{investment.code}' has been selected"
       expect(page).to have_content "Start to get votes, share your investment project"
+      expect(page).to have_content "Sincerely"
 
       share_url = budget_investment_url(budget, investment, anchor: "social-share", host: app_host)
       expect(page).to have_link "Share your investment project", href: share_url
@@ -130,6 +132,7 @@ describe "System Emails" do
 
       expect(page).to have_content "Your investment project '#{investment.code}' "
       expect(page).to have_content "has been marked as unfeasible"
+      expect(page).to have_content "Sincerely"
     end
 
     scenario "#budget_investment_unselected" do
@@ -140,6 +143,7 @@ describe "System Emails" do
       expect(page).to have_content "Your investment project '#{investment.code}' "
       expect(page).to have_content "has not been selected"
       expect(page).to have_content "Thank you again for participating."
+      expect(page).to have_content "Sincerely"
     end
 
     scenario "#comment" do
@@ -159,6 +163,7 @@ describe "System Emails" do
       expect(page).to have_link("Notifications",
                                 href: edit_subscriptions_url(token: user.subscriptions_token,
                                                              host: app_host))
+      expect(page).to have_content "Sincerely"
     end
 
     scenario "#reply" do
@@ -179,6 +184,7 @@ describe "System Emails" do
       expect(page).to have_link("Notifications",
                                 href: edit_subscriptions_url(token: user.subscriptions_token,
                                                              host: app_host))
+      expect(page).to have_content "Sincerely"
     end
 
     scenario "#direct_message_for_receiver" do
@@ -192,6 +198,7 @@ describe "System Emails" do
       expect(page).to have_link("Notifications",
                                 href: edit_subscriptions_url(token: admin.user.subscriptions_token,
                                                              host: app_host))
+      expect(page).to have_content "Sincerely"
     end
 
     scenario "#direct_message_for_sender" do
@@ -200,6 +207,7 @@ describe "System Emails" do
       expect(page).to have_content "You have sent a new private message to #{admin.user.name}"
       expect(page).to have_content "Message's Title"
       expect(page).to have_content "This is a sample of message's content."
+      expect(page).to have_content "Sincerely"
     end
 
     scenario "#email_verification" do
@@ -210,6 +218,7 @@ describe "System Emails" do
       expect(page).to have_content "Confirm your account using the following link"
 
       expect(page).to have_link "this link", href: email_url(email_verification_token: "abc", host: app_host)
+      expect(page).to have_content "Sincerely"
     end
 
     scenario "#user_invite" do
@@ -219,6 +228,7 @@ describe "System Emails" do
       expect(page).to have_content "Invitation to CONSUL"
       expect(page).to have_content "Thank you for applying to join CONSUL!"
       expect(page).to have_link "Complete registration"
+      expect(page).to have_content "Sincerely"
     end
 
     scenario "show flash message if there is no sample data to render the email" do
@@ -278,6 +288,7 @@ describe "System Emails" do
                                     anchor: "comments",
                                     host: app_host
                                   )
+        expect(page).to have_content "Sincerely"
       end
 
       scenario "uses a current_user as a sample user for sample regular comments" do
@@ -287,6 +298,7 @@ describe "System Emails" do
 
         expect(page).to have_content "This is a sample comment"
         expect(page).to have_content admin.name
+        expect(page).to have_content "Sincerely"
       end
     end
   end
