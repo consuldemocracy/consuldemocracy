@@ -90,8 +90,7 @@ describe "Voter" do
       expect(Poll::Voter.count).to eq(1)
       expect(Poll::Voter.first.origin).to eq("booth")
 
-      visit root_path
-      click_link "Sign out"
+      logout
       login_as(admin.user)
       visit admin_poll_recounts_path(poll)
 
@@ -148,8 +147,7 @@ describe "Voter" do
         vote_for_poll_via_web(poll, question, "Yes")
         expect(Poll::Voter.count).to eq(1)
 
-        click_link "Sign out"
-
+        logout
         login_through_form_as_officer(officer.user)
 
         visit new_officing_residence_path
@@ -165,9 +163,7 @@ describe "Voter" do
 
         vote_for_poll_via_booth
 
-        visit root_path
-        click_link "Sign out"
-
+        logout
         login_as user
         visit poll_path(poll)
 
@@ -178,8 +174,7 @@ describe "Voter" do
                                      "You can not participate again."
         expect(Poll::Voter.count).to eq(1)
 
-        visit root_path
-        click_link "Sign out"
+        logout
         login_as(admin.user)
         visit admin_poll_recounts_path(poll)
 
@@ -199,9 +194,7 @@ describe "Voter" do
       login_through_form_as_officer(officer.user)
       vote_for_poll_via_booth
 
-      visit root_path
-      click_link "Sign out"
-
+      logout
       login_as user
       visit account_path
       click_link "Verify my account"
@@ -219,8 +212,7 @@ describe "Voter" do
                                    "You can not participate again."
       expect(Poll::Voter.count).to eq(1)
 
-      visit root_path
-      click_link "Sign out"
+      logout
       login_as(admin.user)
       visit admin_poll_recounts_path(poll)
 
