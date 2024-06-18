@@ -19,6 +19,8 @@ jobs:
             run: npx eslint . --quiet
           - name: Stylelint
             run: npx stylelint app/assets/stylesheets
+          - name: Markdownlint
+            run: bundle exec mdl *.md docs/
     name: ${{ matrix.name }}
     steps:
       - name: Checkout code
