@@ -61,13 +61,13 @@ sudo -u postgres createuser consul --createdb --superuser --pwprompt
 
 To make sure the UTF-8 enconding is used, create a file:
 
-```
+```bash
 sudo nano /etc/profile.d/lang.sh
 ```
 
 Add the following:
 
-```
+```bash
 export LANGUAGE="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
@@ -75,10 +75,12 @@ export LC_ALL="en_US.UTF-8"
 
 Reconfigure Postgres to use the UTF-8 encoding:
 
-`````
+```bash
 sudo su - postgres
 psql
+```
 
+```sql
 update pg_database set datistemplate=false where datname='template1';
 drop database Template1;
 create database template1 with owner=postgres encoding='UTF-8'
@@ -87,7 +89,7 @@ update pg_database set datistemplate=true where datname='template1';
 
 \q
 exit
-`````
+```
 
 ## Imagemagick
 

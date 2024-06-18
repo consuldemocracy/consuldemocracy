@@ -38,7 +38,7 @@ La información a rellenar esta dividida en tres apartados:
 
   Para ayudar a entender como rellenar cada uno de los campos, nos basaremos en un supuesto WebService que recibe un método llamado `:get_habita_datos` con la siguiente estructura:
 
-  ```
+  ```ruby
   {
     request: {
       codigo_institucion: 12,        #Valor estático
@@ -99,7 +99,7 @@ La información a rellenar esta dividida en tres apartados:
 
   Al igual que en el apartado anterior definiremos un ejemplo de respuesta, para ayudar a entender como rellenar cada uno de los campos de esta sección.
 
-  ```
+  ```ruby
       {
         get_habita_datos_response: {
           get_habita_datos_return: {

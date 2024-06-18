@@ -38,7 +38,7 @@ The information to be filled in is divided into three sections:
 
   To help you understand how to fill in each of the fields, we will rely on a supposed WebService that receives a method called  `:get_habita_datos` with the following structure:
 
-  ```
+  ```ruby
   {
     request: {
       codigo_institucion: 12,        # Static Value
@@ -98,7 +98,7 @@ The information to be filled in is divided into three sections:
 
   As in the previous section we will define an example answer, to help you understand how to fill in each of the fields in this section.
 
-  ```
+  ```ruby
       {
         get_habita_datos_response: {
           get_habita_datos_return: {

@@ -22,7 +22,7 @@ OS X ya viene con una versión preinstalada de ruby, pero es bastante vieja y en
 
 ## Bundler
 
-```
+```bash
 gem install bundler
 ```
 
@@ -34,7 +34,7 @@ Para instalar Node, puedes usar [n](https://github.com/tj/n)
 
 Ejecuta el siguiente comando en tu terminal:
 
-```
+```bash
 curl -L https://git.io/n-install | bash -s -- -y lts
 ```
 
@@ -42,19 +42,19 @@ Y este instalará automáticamente la versión LTS (_Long Term Support_, inglés
 
 ## PostgreSQL (>=9.4)
 
-```
+```bash
 brew install postgres
 ```
 
 Una vez instalado es necesario *inicializar* la instalación:
 
-```
+```bash
 initdb /usr/local/var/postgres
 ```
 
 Ahora vamos a configurar algunos aspectos del usuario por defecto. Primero iniciamos el servidor de postgres con:
 
-```
+```bash
 postgres -D /usr/local/var/postgres
 ```
 
@@ -62,7 +62,7 @@ Llegados a este punto se supone que tenemos postgres correctamente instalado y s
 
 Si ejecutamos `psql` accederemos a la consola de postgres con el usuario por defecto. Probablemente fallará porque es necesario que de antemano exista una base de datos por defecto para dicho usuario. Podemos crearla ejecutando sobre la terminal:
 
-```
+```bash
 createdb 'tu_nombre_de_usuario'
 ```
 
@@ -70,13 +70,13 @@ Si ahora ejecutamos `psql` de nuevo deberíamos poder acceder correctamente a la
 
 En el caso de que quieras asignarte una contraseña puedes hacerlo desde la consola de postgres con:
 
-```
+```sql
 ALTER USER tu_nombre_usuario WITH PASSWORD 'tu_contraseña';
 ```
 
 Ahora vamos a crear el usuario *consul*, que es el que utiliza la aplicación. Ejecuta sobre la consola de postgres:
 
-```
+```sql
 CREATE ROLE consul WITH PASSWORD '000';
 ALTER ROLE consul WITH SUPERUSER;
 ALTER ROLE consul WITH login;
@@ -84,25 +84,25 @@ ALTER ROLE consul WITH login;
 
 Si en algún momento durante la instalación de PostgreSQL y sospechas que te has equivocado y deseas desinstalarlo y volver a empezar desde cero:
 
-```
+```bash
 brew uninstall postgres
 ```
 
 También tendrás que borrar el siguiente directorio para que no de conflictos cuando intentes volver a instalarlo (fuente: [gist.github.com/lxneng/741932](https://gist.github.com/lxneng/741932)):
 
-```
+```bash
 rm -rf /usr/local/var/postgres
 ```
 
 ## ChromeDriver
 
-```
+```bash
 brew install chromedriver
 ```
 
 ## Imagemagick
 
-```
+```bash
 brew install imagemagick
 ```
 

@@ -4,15 +4,15 @@ These instructions will help you generate a public key with which you can connec
 
 In the terminal window, type:
 
-  ```
-  ssh-keygen
-  ```
+```bash
+ssh-keygen
+```
 
 When prompted for the file in which to save  the key just press ENTER to leave the default. When prompted for a passphrase, just press ENTER again to leave this empty. At the end you should see a message like this:
 
-  ```
-  Your identification has been saved in /your_home/.ssh/id_rsa. 
-  Your public key has been saved in /your_home/.ssh/id_rsa.pub.
-  ```
+```text
+Your identification has been saved in /your_home/.ssh/id_rsa. 
+Your public key has been saved in /your_home/.ssh/id_rsa.pub.
+```
 
 Take note of the **id_rsa.pub** file location, because you’ll need the content of this file later.

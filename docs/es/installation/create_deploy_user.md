@@ -4,18 +4,18 @@
 
 Puede crear un usuario llamado `deploy` o utilizar cualquier otro nombre. Como ejemplo, vamos a crear un usuario llamado `jupiter`.
 
-  ```
-  adduser jupiter
-  ```
+```bash
+adduser jupiter
+```
 
 Estoy usando jupiter como nombre de usuario, debería cambiar eso por lo que sea que tenga sentido para usted. Introduzca una contraseña cuando se le pida y deje vacías el resto de las opciones.
 
 Creemos un grupo `wheel` y añadamos al usuario `jupiter` al grupo.
 
-  ```
-  sudo groupadd wheel
-  sudo usermod -a -G wheel jupiter
-  ```
+```bash
+sudo groupadd wheel
+sudo usermod -a -G wheel jupiter
+```
 
 **Recuerde cambiar jupiter** por cualquier nombre de usuario que haya elegido en el paso anterior.
 
@@ -23,13 +23,13 @@ Ahora démosle al grupo `wheel` derechos de superadministración sin necesidad d
 
 Primero debemos abrir el archivo `sudoers`:
 
-```
+```bash
 sudo visudo -f /etc/sudoers
 ```
 
 Y añadimos esta línea al final del archivo:
 
-```
+```text
 %wheel ALL=(ALL) NOPASSWD: ALL
 ```
 
@@ -37,7 +37,7 @@ Ahora tenemos que dar las claves del servidor al nuevo usuario. No cierre la ven
 
 Y escriba los siguientes comandos para crear el archivo necesario donde subir la clave pública:
 
-```
+```bash
 su jupiter
 cd ~
 mkdir .ssh
@@ -49,7 +49,7 @@ Asegúrese que ha [generado una clave pública](generating_ssh_key.md) en su ter
 
 Abra otra ventana de terminal local (no en el servidor) y escriba:
 
-```
+```bash
 cat ~/.ssh/id_rsa.pub
 ```
 
@@ -57,26 +57,26 @@ Copie el contenido de ese comando al archivo `authorized_keys` que debería segu
 
 Compruebe que su usuario puede iniciar sesión escribiendo:
 
-  ```
-  ssh jupiter@your-copied-ip-address
-  ```
+```bash
+ssh jupiter@your-copied-ip-address
+```
 
 Debería ver la página de bienvenida del servidor y un mensaje como este:
 
-  ```
-  jupiter@consuldemocracyserver:~$
-  ```
+```bash
+jupiter@consuldemocracyserver:~$
+```
 
 Note que el nombre de usuario en el prompt no es "root", sino su nombre de usuario. Así que todo está bien y ahora podemos bloquear la cuenta root del acceso externo y también dejar de permitir el acceso con contraseña para que sólo las personas con claves SSH puedan iniciar sesión.
 
 Escriba el siguiente comando para editar el archivo de configuración SSH del servidor:
 
-  ```
-  sudo nano /etc/ssh/sshd_config
-  ```
+```bash
+sudo nano /etc/ssh/sshd_config
+```
 
 Busque la línea "PasswordAuthentication yes" y cámbiela por "PasswordAuthentication no". Escriba Control-K para cerrar el editor nano y escriba:
 
-  ```
-  sudo service ssh restart
-  ```
+```bash
+sudo service ssh restart
+```

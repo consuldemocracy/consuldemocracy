@@ -4,7 +4,7 @@
 
 El programa 'sudo' no viene instalado en Debian por defecto. Su instalación y configuración es posible, se puede encontrar información al respecto [aquí](https://wiki.debian.org/es/sudo). Pero no lo recomendamos porque puede causar otros problemas. Recomendamos que se ejecuten las siguientes instrucciones como un super usuario, así que asegúrate de que la primera instrucción que ejecutes sea:
 
-```
+```bash
 su
 ```
 
@@ -25,7 +25,7 @@ apt-get update
 
 Git es mantenido oficialmente en Debian:
 
-```
+```bash
 apt-get install git
 ```
 
@@ -33,7 +33,7 @@ apt-get install git
 
 Curl es mantenido oficialmente en Debian:
 
-```
+```bash
 apt-get install curl
 ```
 
@@ -45,7 +45,7 @@ Una opción es utilizar rvm:
 
 ### Como usuario local
 
-```
+```bash
 command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
 command curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
 curl -L https://get.rvm.io | bash -s stable
@@ -53,13 +53,13 @@ curl -L https://get.rvm.io | bash -s stable
 
 después añadimos el script rvm a nuestro bash (~/.bashrc) (este paso sólo es necesario si no puedes ejecutar el comando rvm)
 
-```
+```bash
 [[ -s /usr/local/rvm/scripts/rvm ]] && source /usr/local/rvm/scripts/rvm
 ```
 
 por úlitmo, volvemos a cargar el .bashrc para poder ejecutar RVM
 
-```
+```bash
 source ~/.bashrc
 ```
 
@@ -71,7 +71,7 @@ Para instalar Node, puedes usar [n](https://github.com/tj/n)
 
 Ejecuta el siguiente comando en tu terminal:
 
-```
+```bash
 curl -L https://git.io/n-install | bash -s -- -y lts
 ```
 
@@ -79,13 +79,13 @@ Y este instalará automáticamente la versión LTS (_Long Term Support_, inglés
 
 vuelve a cargar el .bashrc para poder ejecutar node
 
-```
+```bash
 source /root/.bashrc
 ```
 
 Comprueba que está correctamente instalado ejecutando:
 
-```
+```bash
 node -v
 ```
 
@@ -95,27 +95,27 @@ La versión 9.4 de PostgreSQL no es oficial en Debian 9.
 
 Así que debemos añadir el respositorio oficial de postgresql a apt, por ejemplo creando el fichero */etc/apt/sources.list.d/pgdg.list* con:
 
-```
+```text
 deb http://security.debian.org/debian-security jessie/updates main
 ```
 
 después deberás descargar la key e instalarla:
 
-```
+```bash
 wget https://www.postgresql.org/media/keys/ACCC4CF8.asc
 apt-key add ACCC4CF8.asc
 ```
 
 y finalmente instalar postgresql
 
-```
+```bash
 apt-get update
 apt-get install postgresql-9.4 postgresql-server-dev-9.4 postgresql-contrib-9.4
 ```
 
 Para el correcto funcionamiento de Consul Democracy, necesitas confgurar un usuario para tu base de datos. Como ejemplo, crearemos un usuario llamado "consul":
 
-```
+```bash
 su - postgres
 
 createuser consul --createdb --superuser --pwprompt

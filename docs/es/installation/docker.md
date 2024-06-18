@@ -91,7 +91,7 @@ POSTGRES_PASSWORD=password docker-compose up -d database
 
 Ahora podemos crear la base de datos e introducir datos de prueba:
 
-```
+```bash
 POSTGRES_PASSWORD=password docker-compose run app rake db:create db:migrate
 POSTGRES_PASSWORD=password docker-compose run app rake db:dev_seed
 ```

@@ -12,25 +12,25 @@ Para acceder a la aplicación a través del navegador en la url `localhost:3000`
 
 Abra el archivo de configuración de Vagrant:
 
-```
+```bash
 nano Vagranfile
 ```
 
 Encuentre esta línea:
 
-```
+```ruby
 # config.vm.network "forwarded_port", guest: 80, host: 8080
 ```
 
 Cámbiela por esta:
 
-```
+```ruby
 config.vm.network "forwarded_port", guest: 3000, host: 3000
 ```
 
 Recargue la máquina virtual:
 
-```
+```bash
 vagrant reload
 ```
 
@@ -38,7 +38,7 @@ vagrant reload
 
 En su máquina virtual, debe ejecutar la aplicación enlanzándola a su IP local:
 
-```
+```bash
 bin/rails s -b 0.0.0.0
 ```
 

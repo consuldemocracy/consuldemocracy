@@ -10,7 +10,7 @@ The created directory structure herein is to be used with [capistrano](https://c
 
 First, create the main folder, clone the repo to a repo directory, and create the needed folders:
 
-```
+```bash
 mkdir consul
 cd consul
 git clone --mirror https://github.com/consuldemocracy/consuldemocracy.git repo
@@ -23,7 +23,7 @@ mkdir -p shared/public/assets shared/public/system shared/public/ckeditor_assets
 
 Extract from the repo the first release to the respective directory, and create the symbolic link of the current release (replace `<latest_consuldemocracy_stable_version>` with the latest version number, like 1.3.1 or 1.4.1):
 
-```
+```bash
 cd repo
 git archive <latest_consuldemocracy_stable_version> | tar -x -f - -C ../releases/first
 cd ..
@@ -34,7 +34,7 @@ ln -s releases/first current
 
 Install the gems Consul Democracy depends on:
 
-```
+```bash
 cd releases/first
 bundle install --path ../../shared/bundle --without development test
 cd ../..
@@ -44,7 +44,7 @@ cd ../..
 
 Generate the `database.yml` and `secrets.yml` files:
 
-```
+```bash
 cp current/config/secrets.yml.example shared/config/secrets.yml
 cp current/config/database.yml.example shared/config/database.yml
 cd releases/first/config
@@ -57,7 +57,7 @@ Edit the `shared/config/database.yml` file, filling in `username` and `password`
 
 We now need to generate a secret key:
 
-```
+```bash
 cd current
 bin/rake secret RAILS_ENV=production
 cd ..
@@ -65,7 +65,7 @@ cd ..
 
 Copy that generated key, and edit the `shared/config/secrets.yml` file; under the section `production`, change the following data:
 
-```
+```yaml
   secret_key_base: enter_the_secret_key_you_have_just_generated
   server_name: enter_your_domain
 ```
@@ -76,7 +76,7 @@ If you aren't using a SSL certificate, replace the line saying `force_ssl: true`
 
 Create a database, load the seeds and compile the assets:
 
-```
+```bash
  cd current
  bin/rake db:migrate RAILS_ENV=production
  bin/rake db:seed RAILS_ENV=production
@@ -87,7 +87,7 @@ Create a database, load the seeds and compile the assets:
 
 And, finally, start the Rails server:
 
-```
+```bash
 bin/rails s -e production
 ```
 

@@ -12,13 +12,13 @@ This tutorial explains how to configure Paperclip to use [AWS S3](https://aws.am
 
 First, add the following line in your *Gemfile_custom*
 
-```
+```ruby
 gem 'aws-sdk-s3', '~> 1'
 ```
 
 Make sure to have a recent version of paperclip (Consul Democracy is currently using 5.2.1, which doesn't recognize *aws-sdk-s3*). In your Gemfile, the line should be:
 
-```
+```ruby
 gem 'paperclip', '~> 6.1.0'
 ```
 
@@ -41,7 +41,7 @@ Once you have these pieces of information, you can save them as environment vari
 
 Add the following block in your *secrets.yml* file:
 
-```
+```yaml
 aws: &aws
   aws_s3_region: <%= ENV["AWS_S3_REGION"] %>
   aws_access_key_id: <%= ENV["AWS_ACCESS_KEY_ID"] %>
@@ -52,7 +52,7 @@ aws: &aws
 
 and `<<: *aws` under the environments which you want to use S3 with, for example:
 
-```
+```yaml
 production:
 [...]
   <<: *aws
@@ -62,13 +62,13 @@ production:
 
 First, activate Paperclip's URI adapter by creating the file *config/initializers/paperclip.rb* with the following content:
 
-```
+```ruby
 Paperclip::UriAdapter.register
 ```
 
 Finally, add the following lines in the environment file of the instance which you want to use S3 with. In production, you should for example edit *config/environments/production.rb*.
 
-```
+```ruby
 # Paperclip settings to store images and documents on S3
 config.paperclip_defaults = {
   storage: :s3,

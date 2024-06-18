@@ -8,7 +8,7 @@ Tests that fail randomly are called "flakies", this one seems to be one:
 
 **Failure:**
 
-```
+```text
   FILL_WITH_FAILURE_REPORT
 ```
 
