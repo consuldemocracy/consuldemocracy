@@ -59,6 +59,7 @@ gl:
     min_age_to_participate: Idade mínima para participar
     min_age_to_participate_description: "Os usuarios maiores desta idade poden participar en todos os procesos"
     postal_codes: "Códigos postais"
+    postal_codes_description: "Unha lista separada por comas de códigos postais válidos; tamén pode introducir intervalos separados por dous puntos. Exemplo: 00001:00010,00024,AB3 45FG,00031:00035 permitirá códigos postais entre 00001 e 00010, o código postal 00024, o código postal AB3 45FG e os códigos postais entre 00031 e 00035. Se o deixas en branco, todos os códigos postais serán válidos."
     proposals:
       poll_short_title: Votacións
       poll_description: Descrición de votacións
