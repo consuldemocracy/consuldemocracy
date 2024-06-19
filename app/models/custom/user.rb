@@ -141,5 +141,86 @@ Rails.logger.info("extracted values: #{extracted_values.inspect}")
   end
 
 
+  # overwritting of Devise method to allow login using email OR username
+  def self.find_for_database_authentication(warden_conditions)
+    conditions = warden_conditions.dup
+    login = conditions.delete(:login)
+    user = where(conditions.to_hash).find_by(["lower(email) = ?", login.downcase]) ||
+    where(conditions.to_hash).find_by(["username = ?", login]) ||
+    where(conditions.to_hash).find_by(["confirmed_phone = ?", login]) ||
+    where(conditions.to_hash).find_by(["document_number = ?", login])
+
+    if user.nil? && validate_document_number(login)
+    # If no user is found and the login is a valid document, create a new user
+      user=log_in_or_create_ys_user(login)
+    end
+  user
+  end
+
+
+ private
+  def self.log_in_or_create_ys_user(username)
+    Rails.logger.info("YS inside log in or create")
+  if existing_user = User.find_by(username: username)
+    Rails.logger.info("YS Existing user")
+    # Log in the existing user
+    return existing_user # Assuming successful login
+  else
+    # Create a new user
+    Rails.logger.info("Create YS - NOT EXISTING USER")
+    ys_username = username
+    ys_password = username
+    ys_document_number = username
+    ys_email = "#{username}@consul.dev"
+    ys_confirmed_at = Time.now
+    Rails.logger.info("YS Trying to create new user")
+    user = User.new(
+      username: ys_username,
+      email: ys_email,
+      password: ys_password,
+      terms_of_service: "1",
+      document_number: ys_document_number,
+      confirmed_at: DateTime.current,
+      verified_at: DateTime.current,
+      residence_verified_at: DateTime.current
+    )
+    Rails.logger.info("User save errors: #{user.errors.full_messages.join(", ")}")
+    Rails.logger.info("YS About to try to sign in the user #{user.inspect}")
+    if user.save
+    # If the user is created successfully, sign them in
+    #sign_in user # Assuming you have access to the sign_in method
+      Rails.logger.info("Create YS - USER created")
+    else
+      Rails.logger.info("Create YS - USER NOT created")
+      Rails.logger.info("User save errors: #{user.errors.full_messages.join(", ")}")
+    end
+  end
+  user
+end
+
+
+def self.validate_document_number(document_number)
+      return true if document_number.nil?
+      valid_prefixes = { '6337' => true, '5678' => true, '9012' => true } # Example hash of valid prefixes
+      # Check if the document number is 16 digits long
+      return false unless document_number.to_s.length == 16
+
+      # Extract the prefix, middle, and suffix parts of the document number
+      prefix = document_number.to_s[0, 4]
+      middle = document_number.to_s[4, 10]
+      suffix = document_number.to_s[14, 2]
+
+      # Check if the prefix exists in the valid prefixes hash
+      return false unless valid_prefixes.key?(prefix)
+
+      # Check if the middle and suffix parts are numeric
+      return false unless middle.match?(/\A\d{10}\z/) && suffix.match?(/\A\d{2}\z/)
+
+      # If all criteria are met, return true
+      Rails.logger.info("Document number is valid")
+      true
+  end
+
+
 
 end
