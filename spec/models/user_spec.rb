@@ -472,7 +472,7 @@ describe User do
 
         travel_to "2024-02-29" do
           expect(User.between_ages(22, 23)).to eq [march_1st_user]
-          expect(User.between_ages(23, 24)).to eq [leap_day_user, march_1st_user]
+          expect(User.between_ages(23, 24)).to match_array [leap_day_user, march_1st_user]
           expect(User.between_ages(24, 25)).to eq [leap_day_user]
         end
 
