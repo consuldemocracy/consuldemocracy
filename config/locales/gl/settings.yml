@@ -144,9 +144,9 @@ gl:
         structure: "Estrutura da petición"
         structure_description: 'Estrutura da petición para enviar ao Servizo Web do Censo do Concello. Deben fornecerse os valores «estáticos» desta solicitude. Os valores relacionados co tipo de documento, número de documento, data de nacemento e código postal deben ser nulos. Exemplo dun formato válido: { "request": { "institution_code": 1, "portal_code": 1, "user_code": 1, "document": null, "document_type": null, "language_code": 102, "level ": 3 } }'
         document_type: "Ruta para o tipo de documento"
-        document_type_description: "Ruta da estrutura de solicitude que envía o tipo de documento. NON O ESCRIBAS se o servizo web non require o tipo de documento para verificar un usuario."
+        document_type_description: "Ruta da estrutura de solicitude que envía o tipo de documento. NON A ESCRIBAS se o servizo web non require o tipo de documento para verificar un usuario."
         document_number: "Ruta para o número de documento"
-        document_number_description: "Ruta da estrutura de solicitude que envía o número de documento. NON O ESCRIBAS se o servizo web non require o número de documento para verificar un usuario."
+        document_number_description: "Ruta da estrutura de solicitude que envía o número de documento. NON A ESCRIBAS se o servizo web non require o número de documento para verificar un usuario."
         date_of_birth: "Ruta para a data de nacemento"
         date_of_birth_description: "Ruta da estrutura de solicitude que envía a data de nacemento. NON A ESCRIBAS se o servizo web non require a data de nacemento para verificar un usuario."
         postal_code: "Ruta para o Código Postal"
@@ -214,3 +214,15 @@ gl:
         max_size_description: "Tamaño máximo permitido para un documento enviado (en Megabytes/MB)"
         content_types: "Tipos de contido aceptados para documentos"
         content_types_description: "Selecciona todos os tipos de contido permitidos para os documentos cargados"
+    sdg:
+      process:
+        debates: ODS relacionados nos debates
+        debates_description: Permitir que os debates se vinculen aos Obxectivos de Desenvolvemento Sostible
+        proposals: ODS relacionados nas propostas
+        proposals_description: Permitir que as propostas se vinculen aos Obxectivos de Desenvolvemento Sostible
+        polls: ODS relacionados nas votacións
+        polls_description: Permitir que as votacións se vinculen aos Obxectivos de Desenvolvemento Sostible
+        budgets: ODS relacionados cos orzamentos participativos
+        budgets_description: Permitir que os orzamentos participativos se vinculen aos Obxectivos de Desenvolvemento Sostible
+        legislation: ODS relacionados na lexislación colaborativa
+        legislation_description: Permitir que a lexislación colaborativa se vincule aos Obxectivos de Desenvolvemento Sostible
