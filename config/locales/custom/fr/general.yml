@@ -1,0 +1,43 @@
+fr:
+  account:
+    show:
+      personal: Données personnelles
+      save_changes_submit: Sauvegarder les modifications
+      user_permission_title: Participation
+      user_permission_verify: Pour effectuer toutes les actions, vérifiez votre compte.
+  application:
+      confirm_delete: "Êtes-vous sûr ? Cette action supprimera ce commentaire. Vous ne pourrez pas annuler cette action."
+    comment:
+      responses:
+      responses_collapse:
+        other: "%{count} réponses (masquer)"
+      user_deleted: Utilisateur supprimé
+    orders:
+      most_voted: Les plus votés
+      most_commented: Les plus commentés
+  debates:
+    debate:
+      votes:
+        zero: Aucun vote
+    edit:
+      form:
+        submit_button: Sauvegarder les modifications
+    form:
+      tags_instructions: Étiqueter ce débat
+      tags_placeholder: "Entrez les étiquettes que vous voulez utiliser, séparées par des virgules (',')"
+    index:
+      recommendations:
+        disable: "Les recommandations de discussions cesseront d'apparaître si vous les rejetez. Vous pouvez les réactiver sur la page 'Mon compte'"
+        actions:
+          success: "Les recommandations de discussions sont maintenant désactivées pour ce compte"
+          error: "Une erreur est survenue. Veuillez vous rendre sur la page 'Mon compte' pour désactiver manuellement les recommandations de discussions"
+    footer:
+      conditions: Informations légales
+      description: Ce portail utilise %{consul}, %{open_source} de "Madrid ouvert sur le monde".
+      participation_text: Construisez La Roque d'Anthéron dans laquelle vous souhaitez vivre
+      privacy: Confidentialité
+    header:
+      poll_questions: Scrutins
+      budgets: Budgets
+      notification_item:
+        new_notifications:
