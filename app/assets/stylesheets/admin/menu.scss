@@ -109,6 +109,14 @@
     &.ml-link {
       @include icon(brain, solid);
     }
+
+    &.administrators-link {
+      @include icon(user, solid);
+    }
+
+    &.tenants-link {
+      @include icon(building, regular);
+    }
   }
 
   li {

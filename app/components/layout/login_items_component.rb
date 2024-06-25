@@ -5,4 +5,10 @@ class Layout::LoginItemsComponent < ApplicationComponent
   def initialize(user)
     @user = user
   end
+
+  private
+
+    def show_my_activity_link?
+      !Rails.application.multitenancy_management_mode?
+    end
 end
