@@ -352,6 +352,10 @@ class Budget
     def should_show_price_explanation?
       should_show_price? && price_explanation.present?
     end
+    
+    def should_show_estimated_price?
+      estimated_price.present? && budget.show_money?
+    end
 
     def should_show_unfeasibility_explanation?
       unfeasible? && valuation_finished? && unfeasibility_explanation.present?
