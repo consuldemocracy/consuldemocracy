@@ -8,7 +8,7 @@ Hay que definir los atributos que se quieran traducir en el modelo. Para ello, h
 
 También deberemos añadir la opción `globalize_accessors` con todos aquellos locales a los que queramos tener acceso. Esta gema generará los métodos `title_en`, `title_es`, etc., y que se usan en la aplicación. Si lo que quieres es incluir **todos** los campos traducidos en **todos** los idiomas definidos en tu aplicación, puedes llamar a `globalize_accessors` sin ninguna opción (tal y como se explica en la [documentación](https://github.com/globalize/globalize-accessors#example)).
 
-```
+```ruby
 # Suponiendo un modelo Post con attributos title y text
 
 class Post < ActiveRecord::Base
@@ -21,7 +21,7 @@ end
 
 Hay que crear una migración para generar la tabla donde se almacenarán todas las traducciones de ese modelo. La tabla deberá tener una columna por cada atributo que queramos traducir. Para migrar los datos ya almacenados (en la tabla original), hay que añadir la opción `:migrate_data => true` en la propia migración:
 
-```
+```ruby
 class AddTranslatePost < ActiveRecord::Migration
   def self.up
     Post.create_translation_table!({
@@ -42,7 +42,7 @@ end
 
 Añadir el módulo `Translatable` en el controlador que vaya a gestionar las traducciones.
 
-```
+```ruby
 class Post < Admin::BaseController
   include Translatable
 ...
@@ -50,7 +50,7 @@ class Post < Admin::BaseController
 
 Hay que asegurarse de que este controlador tiene las funciones `resource_model` y `resource`, que devuelven el nombre del modelo y el objeto para el que se van a gestionar las traducciones, respectivamente.
 
-```
+```ruby
 ...
   def resource_model
     Post
@@ -66,7 +66,7 @@ Hay que asegurarse de que este controlador tiene las funciones `resource_model` 
 
 Añadir como parámetros permitidos aquellos que estén dedicados a las traducciones. Para eso, el módulo `Translatable` posee una función llamada `translation_params(params)`, a la que se le pasan el parámetro del objeto. A partir de esos parámetros, y teniendo en cuenta los idiomas definidos para ese modelo, la función devuelve aquellos parámetros que contengan un valor.
 
-```
+```ruby
 # Siguiendo con el ejemplo, en este caso se le pasarían los parámetros params[:post], porque es el
 # hash que contiene toda la información.
 
@@ -86,7 +86,7 @@ Recuerda que, para evitar errores al usar locales como `pt-BR`, `es-ES`, etc. (a
 
 Al formulario que se use para editar las traducciones se le deberá añadir el parámetro oculto que las marca para que se borren:
 
-```
+```erb
 <%= hidden_field_tag "delete_translations[#{locale}]", 0 %>
 ```
 
@@ -96,7 +96,7 @@ También habrá que añadir el link de "Eliminar idioma", que deberá tener:
 - un atributo `data-locale` con el valor de `neutral_locale(locale)`.
 - la clase `delete-language`.
 
-```
+```erb
 <%= link_to t("admin.milestones.form.remove_language"), "#",
                 id: "delete-#{neutral_locale(locale)}",
                 class: 'delete-language',
@@ -109,7 +109,7 @@ Los estilos de CSS y el resto de clases que se le quieran añadir dependerán de
 
 Para que se generen cuando se restablezca la base de datos. Por ejemplo, para crear un post cuya descripción está traducida:
 
-```
+```ruby
 section "Creating post with translations" do
   post = Post.new(title: title)
   I18n.available_locales.map do |locale|

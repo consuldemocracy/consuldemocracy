@@ -14,7 +14,7 @@ If you're upgrading a Consul Democracy installation to version 2.0.0 from versio
 
 First, after deploying version 2.0.0 to your production server, execute the release tasks:
 
-```
+```bash
 RAILS_ENV=production bin/rails consul:execute_release_tasks
 ```
 
@@ -26,13 +26,13 @@ If that's the case, restart the application. If not, make sure the `config/datab
 
 Next, open a database console with a user having permission to create and manage database extensions:
 
-```
+```bash
 sudo -u postgres psql -d consul_production
 ```
 
 If you didn't use the [installer](https://github.com/consuldemocracy/installer/) to install Consul Democracy, you might need to execute a couple of queries to make sure the Rails database user has permission to create schemas and the shared extensions schema has the right permissions:
 
-```
+```sql
 CREATE SCHEMA shared_extensions AUTHORIZATION <replace_with_rails_database_username>;
 GRANT CREATE ON DATABASE consul_production TO <replace_with_rails_database_username>;
 GRANT usage ON SCHEMA shared_extensions TO public;
@@ -40,7 +40,7 @@ GRANT usage ON SCHEMA shared_extensions TO public;
 
 Whether or not you installed Consul Democracy with the installer, run:
 
-```
+```sql
 ALTER EXTENSION pg_trgm SET SCHEMA shared_extensions;
 ALTER EXTENSION unaccent SET SCHEMA shared_extensions;
 ```
@@ -88,13 +88,13 @@ If you've installed Consul Democracy using the installer and are using Certbot t
 
 One option would be adding each certificate manually every time you create a tenant. For example, in orer to add a tenant using the `mars` subdomain in the `solarsystemexample.org` domain, run:
 
-```
+```bash
 sudo certbot certonly --nginx --noninteractive --agree-tos --expand -d solarsystemexample.org,mars.solarsystemexample.org
 ```
 
 If you're going to add many subdomains at different times, this task can be tedious. Another option is enabling any subdomain. In order to achieve this goal, you need access to your DNS configuration in order to follow the instructions you'll get by either using one of the [Certbot DNS plugins](https://eff-certbot.readthedocs.io/en/stable/using.html#dns-plugins) or the [manual generation of the certificate](https://eff-certbot.readthedocs.io/en/stable/using.html#manual) with the following command:
 
-```
+```bash
 sudo certbot certonly --manual --agree-tos --expand -d solarsystemexample.org,*.solarsystemexample.org
 ```
 
@@ -110,7 +110,7 @@ In order to reduce the chance your application sends emails which are erronously
 
 If you'd like to use a different mail configuration for the new tenant, like one for a hypothetical `jupiter` subdomain, edit the `config/secrets.yml` file this way:
 
-```
+```yaml
 production:
   # (...) Other secrets
   multitenancy: true
@@ -138,7 +138,7 @@ The first option is changing your existing application using the Twitter/Google/
 
 The other option is creating a new Twitter/Google/Facebook/Wordpress application and configuring it so it can be used from the new tenant. In this case, you'll have to add the configuration of this application to the `config/secrets.yml` file. For example, if you've added a tenant using the `saturn` subdomain, edit the file this way, filling in the keys and secrets of the services you're using:
 
-```
+```yaml
 production:
   # (...) Other secrets
   multitenancy: true
@@ -172,7 +172,7 @@ When the multitenancy feature is enabled, Consul Democracy adds a class to the `
 
 This way, it'll be possible to overwrite the default styles for just this tenant by creating a new stylesheet in the `app/assets/stylesheets/custom/` folder:
 
-```
+```css
 .tenant-uranus {
   // Styles that will only be applied to the Uranus tenant
 }
@@ -180,7 +180,7 @@ This way, it'll be possible to overwrite the default styles for just this tenant
 
 To easily change the default colors on a specific tenant, you can use CSS variables; their usage is documented in the [app/assets/stylesheets/custom/tenants.scss](https://github.com/consuldemocracy/consuldemocracy/blob/master/app/assets/stylesheets/custom/tenants.scss) file. For example, to make the brand colors green on the tenant with the `uranus` subdomain, write:
 
-```
+```css
 .tenant-uranus {
   --brand: #350;
   --brand-secondary: #173a00;

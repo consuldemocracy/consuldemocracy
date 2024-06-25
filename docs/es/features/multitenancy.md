@@ -14,7 +14,7 @@ Si has actualizado una instalación de Consul Democracy a la versión 2.0.0 desd
 
 Así, en primer lugar, tras subir la versión 2.0.0 al servidor de producción, tendrás que ejecutar las tareas de actualización de versión:
 
-```
+```bash
 RAILS_ENV=production bin/rails consul:execute_release_tasks
 ```
 
@@ -26,13 +26,13 @@ Si es así, reincia la aplicación. Si no has recibido este aviso, comprueba que
 
 Una vez hecho esto, deberás abrir una consola de base de datos utilizando un usuario que tenga permisos para crear y modificar extensiones de base de datos:
 
-```
+```bash
 sudo -u postgres psql -d consul_production
 ```
 
 Si no usaste el [instalador](https://github.com/consuldemocracy/installer/) para instalar Consul Democracy, es posible que tengas que ejecutar las siguientes consultas de base de datos para garantizar los permisos del usuario de Rails para crear esquemas así como el acceso al esquema de extensiones compartidas:
 
-```
+```sql
 CREATE SCHEMA shared_extensions AUTHORIZATION <reemplazar_con_usuario_de_rails_de_base_de_datos>;
 GRANT CREATE ON DATABASE consul_production TO <reemplazar_con_usuario_de_rails_de_base_de_datos>;
 GRANT usage ON SCHEMA shared_extensions TO public;
@@ -40,7 +40,7 @@ GRANT usage ON SCHEMA shared_extensions TO public;
 
 Tanto si usaste el instalador como si no, ejecuta:
 
-```
+```sql
 ALTER EXTENSION pg_trgm SET SCHEMA shared_extensions;
 ALTER EXTENSION unaccent SET SCHEMA shared_extensions;
 ```
@@ -88,13 +88,13 @@ Si has instalado Consul Democracy usando el instalador y estás usando Certbot p
 
 Una opción es añadir manualmente cada certificado cada vez que creas una entidad. Por ejemplo, para añadir la entidad con subdominio `marte` al dominio `ejemplodesistemasolar.org`, ejecuta:
 
-```
+```bash
 sudo certbot certonly --nginx --noninteractive --agree-tos --expand -d ejemplodesistemasolar.org,marte.ejemplodesistemasolar.org
 ```
 
 Si vas a añadir muchos subdominios en distintos momentos, esta tarea puede resultar tediosa. Una alternativa es habilitar cualquier subdominio. Para conseguir esto, deberás tener acceso al panel de administración de tu dominio (DNS) para poder seguir las instrucciones al utilizar bien alguno de los [plugins DNS de Certbot](https://eff-certbot.readthedocs.io/en/stable/using.html#dns-plugins) o la [generación manual del certificado](https://eff-certbot.readthedocs.io/en/stable/using.html#manual) con la siguiente orden:
 
-```
+```bash
 sudo certbot certonly --manual --agree-tos --expand -d ejemplodesistemasolar.org,*.ejemplodesistemasolar.org
 ```
 
@@ -110,7 +110,7 @@ Para disminuir la probabilidad de que los correos enviados por la aplicación se
 
 Si quieres utilizar una configuración de envío de correo electrónico diferente para una entidad, como podría ser una que utilice `jupiter` como subdominio, edita el fichero `config/secrets.yml` de la siguiente manera:
 
-```
+```yaml
 production:
   # (...) Otros secretos
   multitenancy: true
@@ -138,7 +138,7 @@ Como primera opción, en el panel de configuración de Twitter/Google/Facebook/W
 
 Y como segunda opción, puedes crear una nueva aplicación de Twitter/Google/Facebook/Wordpress y configurarla para su uso desde el dominio de la nueva entidad. En este caso, deberás añadir la configuración de esta aplicación al fichero `config/secrets.yml`. Por ejemplo, si administrases una entidad con el subdominio `saturno`, edita el fichero de esta manera, rellenando la información de aquellos servicios que estés utilizando:
 
-```
+```yaml
 production:
   # (...) Otros secretos
   multitenancy: true
@@ -172,7 +172,7 @@ Cuando la funcionalidad de multientidad está activada, Consul Democracy añade 
 
 Así, es posible sobrescribir los estilos para una entidad específica añadiendo a alguna hoja de estilos en la carpeta `app/assets/stylesheets/custom/`:
 
-```
+```css
 .tenant-urano {
   // Estilos que solamente se aplican a Urano
 }
@@ -180,7 +180,7 @@ Así, es posible sobrescribir los estilos para una entidad específica añadiend
 
 Para cambiar los colores en una determinada entidad de forma sencilla, puedes utilizar variables de CSS; su uso aparece documentado en el fichero [app/assets/stylesheets/custom/tenants.scss](https://github.com/consuldemocracy/consuldemocracy/blob/master/app/assets/stylesheets/custom/tenants.scss). Por ejemplo, para utilizar tonos de verde en los colores principales de la entidad con subdominio `urano`, puedes escribir:
 
-```
+```css
 .tenant-urano {
   --brand: #350;
   --brand-secondary: #173a00;

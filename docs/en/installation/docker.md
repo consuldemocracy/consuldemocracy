@@ -91,7 +91,7 @@ POSTGRES_PASSWORD=password docker-compose up -d database
 
 You can now initialize your development DB and populate it with:
 
-```
+```bash
 POSTGRES_PASSWORD=password docker-compose run app rake db:create db:migrate
 POSTGRES_PASSWORD=password docker-compose run app rake db:dev_seed
 ```

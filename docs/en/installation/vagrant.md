@@ -12,25 +12,25 @@ To access the application through the browser at `localhost:3000` we must forwar
 
 Open the Vagrant configuration file:
 
-```
+```bash
 nano Vagranfile
 ```
 
 Find this line:
 
-```
+```ruby
 # config.vm.network "forwarded_port", guest: 80, host: 8080
 ```
 
 And change it for this configuration:
 
-```
+```ruby
 config.vm.network "forwarded_port", guest: 3000, host: 3000
 ```
 
 Reload your virtual machine:
 
-```
+```bash
 vagrant reload
 ```
 
@@ -38,7 +38,7 @@ vagrant reload
 
 In your virtual machine, run the application server, binding to your local ip address:
 
-```
+```bash
 bin/rails s -b 0.0.0.0
 ```
 

@@ -4,7 +4,7 @@
 
 Note that 'sudo' is not installed by default in Debian. It's possible to install and configure it, you can find information [here](https://wiki.debian.org/sudo). But  we don't recommend it cause you may have other problems. We recommend running the following commands as a superuser, so make sure the very first command you run is:
 
-```
+```bash
 su
 ```
 
@@ -25,7 +25,7 @@ apt-get update
 
 Git is officially maintained in Debian:
 
-```
+```bash
 apt-get install git
 ```
 
@@ -33,7 +33,7 @@ apt-get install git
 
 Curl is officially maintained in Debian:
 
-```
+```bash
 apt-get install curl
 ```
 
@@ -45,7 +45,7 @@ One possible tool is rvm:
 
 ### As a local user
 
-```
+```bash
 command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
 command curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
 curl -L https://get.rvm.io | bash -s stable
@@ -53,13 +53,13 @@ curl -L https://get.rvm.io | bash -s stable
 
 then add rvm script source to user's bash (~/.bashrc) (this step is only necessary if you can't execute the rvm command)
 
-```
+```bash
 [[ -s /usr/local/rvm/scripts/rvm ]] && source /usr/local/rvm/scripts/rvm
 ```
 
 and finally, reload .bashrc to be able to run RVM
 
-```
+```bash
 source ~/.bashrc
 ```
 
@@ -71,7 +71,7 @@ To install it, you can use [n](https://github.com/tj/n)
 
 Run the following command on your terminal:
 
-```
+```bash
 curl -L https://git.io/n-install | bash -s -- -y lts
 ```
 
@@ -79,13 +79,13 @@ And it will install the latest LTS (Long Term Support) Node version on your `$HO
 
 Reload .bashrc to be able to run node
 
-```
+```bash
 source /root/.bashrc
 ```
 
 Check it's correctly installed by running:
 
-```
+```bash
 node -v
 ```
 
@@ -97,27 +97,27 @@ So you have to add a repository, the official postgresql works fine.
 
 Add the repository to apt, for example creating file */etc/apt/sources.list.d/pgdg.list* with:
 
-```
+```text
 deb http://security.debian.org/debian-security jessie/updates main
 ```
 
 afterwards you'll have to download the key, and install it, by:
 
-```
+```bash
 wget https://www.postgresql.org/media/keys/ACCC4CF8.asc
 apt-key add ACCC4CF8.asc
 ```
 
 and install postgresql
 
-```
+```bash
 apt-get update
 apt-get install postgresql-9.4 postgresql-server-dev-9.4 postgresql-contrib-9.4
 ```
 
 You also need to configure a user for your database. As an example, we'll choose the username "consul":
 
-```
+```bash
 su - postgres
 
 createuser consul --createdb --superuser --pwprompt

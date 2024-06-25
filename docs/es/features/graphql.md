@@ -36,7 +36,7 @@ Una de las caracteríticas que diferencian una API REST de una GraphQL es que co
 
 Las consultas en GraphQL están escritas siguiendo un estándar que presenta ciertas similitudes con el formato JSON, por ejemplo:
 
-```
+```graphql
 {
   proposal(id: 1) {
     id,
@@ -140,7 +140,7 @@ La lista de modelos es la siguiente:
 
 <h3 id="recuperar-un-unico-elemento-de-una-coleccion">Recuperar un único elemento de una colección</h3>
 
-```
+```graphql
 {
   proposal(id: 2) {
     id,
@@ -166,7 +166,7 @@ Respuesta:
 
 <h3 id="recuperar-una-coleccion-completa">Recuperar una colección completa</h3>
 
-```
+```graphql
 {
   proposals {
     edges {
@@ -205,7 +205,7 @@ Respuesta:
 
 Actualmente el número máximo (y por defecto) de elementos que se devuelven en cada página está establecido a 25. Para poder navegar por las distintas páginas es necesario solicitar además información relativa al `endCursor`:
 
-```
+```graphql
 {
   proposals(first: 25) {
     pageInfo {
@@ -242,7 +242,7 @@ La respuesta:
 
 Para recuperar la siguiente página, hay que pasar como parámetro el cursor recibido en la petición anterior, y así sucesivamente:
 
-```
+```graphql
 {
   proposals(first: 25, after: "NQ==") {
     pageInfo {
@@ -262,7 +262,7 @@ Para recuperar la siguiente página, hay que pasar como parámetro el cursor rec
 
 Esta consulta solicita información relativa a varios modelos distintos en una única petición: `Proposal`, `User`, `Geozone` y `Comment`:
 
-```
+```graphql
 {
   proposal(id: 15262) {
     id,
@@ -298,7 +298,7 @@ Existen tres mecanismos principales para evitar este tipo de abusos:
 
 La profundidad máxima de las consultas está actualmente establecida en 8. Consultas más profundas (como la siguiente), serán rechazadas:
 
-```
+```graphql
 {
   user(id: 1) {
     public_proposals {
@@ -339,7 +339,7 @@ La respuesta obtenida tendrá el siguiente aspecto:
 
 El principal factor de riesgo se da cuando se solicitan varias colecciones de recursos en una misma consulta. El máximo número de colecciones que pueden aparecer en una misma consulta está limitado a 2. La siguiente consulta solicita información de las colecciónes `users`, `debates` y `proposals`, así que será rechazada:
 
-```
+```graphql
 {
   users {
     edges {
@@ -384,7 +384,7 @@ La respuesta obtenida tendrá el siguiente aspecto:
 
 No obstante sí que es posible solicitar información perteneciente a más de dos modelos en una única consulta, siempre y cuando no se intente acceder a la colección completa. Por ejemplo, la siguiente consulta que accede a los modelos `User`, `Proposal` y `Geozone` es válida:
 
-```
+```graphql
 {
   user(id: 468501) {
     id

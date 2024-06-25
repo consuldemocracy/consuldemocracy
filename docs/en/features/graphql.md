@@ -36,7 +36,7 @@ One of the characteristics that differentiates a REST API from a GraphQL one is 
 
 GraphQL queries are written following a standard which resembles to JSON, for example:
 
-```
+```graphql
 {
   proposal(id: 1) {
     id,
@@ -140,7 +140,7 @@ The models are the following:
 
 ### Request a single record from a collection
 
-```
+```graphql
 {
   proposal(id: 2) {
     id,
@@ -166,7 +166,7 @@ Response:
 
 ### Request a complete collection
 
-```
+```graphql
 {
   proposals {
     edges {
@@ -205,7 +205,7 @@ Response:
 
 The maximum (and default) number of records that each page contains is set to 25. For navigating through the different pages it's necessary to request also information relative to the `endCursor`:
 
-```
+```graphql
 {
   proposals(first: 25) {
     pageInfo {
@@ -242,7 +242,7 @@ The response:
 
 To retrieve the next page, you have to pass as a parameter the cursor received in the previous request, and so on:
 
-```
+```graphql
 {
   proposals(first: 25, after: "NQ==") {
     pageInfo {
@@ -262,7 +262,7 @@ To retrieve the next page, you have to pass as a parameter the cursor received i
 
 This query requests information about several models in a single request: `Proposal`, `User`, `Geozone` and `Comment`:
 
-```
+```graphql
 {
   proposal(id: 15262) {
     id,
@@ -298,7 +298,7 @@ There are three main mechanisms to prevent such abuses:
 
 The maximum depth of queries is currently set at 8. Deeper queries (such as the following) will be rejected:
 
-```
+```graphql
 {
   user(id: 1) {
     public_proposals {
@@ -339,7 +339,7 @@ The response will look something like this:
 
 The main risk factor is when multiple collections of resources are requested in the same query. The maximum number of collections that can appear in the same query is limited to 2. The following query requests information from the `users`, `debates` and `proposals` collections, so it will be rejected:
 
-```
+```graphql
 {
   users {
     edges {
@@ -384,7 +384,7 @@ The response will look something like this:
 
 However, it is possible to request information belonging to more than two models in a single query, as long as you do not try to access the entire collection. For example, the following query that accesses the `User`, `Proposal` and `Geozone` models is valid:
 
-```
+```graphql
 {
   user(id: 468501) {
     id

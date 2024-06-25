@@ -8,7 +8,7 @@ We should add in the model the attributes that are going to be translated. To do
 
 We also need to add the option `globalize_accessors` to include all the locales we want to support. This gem generates all the methods needed by the application (`title_en`, `title_es`, etc.). If you want to include **all** the translated fields in **all** the defined languages in your application, just call `globalize_accessors` without any option (as the [documentation](https://github.com/globalize/globalize-accessors#example) says).
 
-```
+```ruby
 # Supposing a model Post with title and text attributes
 
 class Post < ActiveRecord::Base
@@ -21,7 +21,7 @@ end
 
 We must create a migration to generate the table where the translations are going to be stored. The table must have a column for each attribute we want to translate. To migrate the stored data in the original table, add the option `:migrate_data => true` in the migration.
 
-```
+```ruby
 class AddTranslatePost < ActiveRecord::Migration
   def self.up
     Post.create_translation_table!({
@@ -42,7 +42,7 @@ end
 
 Add the `Translatable` module in the controller that will handle the translations.
 
-```
+```ruby
 class PostController < Admin::BaseController
   include Translatable
 ...
@@ -50,7 +50,7 @@ class PostController < Admin::BaseController
 
 Make sure that the controller has the functions `resource_model` and `resource`, which return the name of the model and the object we want to save the translations for, respectively.
 
-```
+```ruby
 ...
   def resource_model
     Post
@@ -66,7 +66,7 @@ Make sure that the controller has the functions `resource_model` and `resource`,
 
 Add as permitted params those dedicated to translations. To do that, the module `Translatable` owns a function called `translation_params(params)`, which will receive the object param and will return those keys with a value. It takes into account the languages defined for that model.
 
-```
+```ruby
 # Following the example, we pass the params[:post] because is the one that has the information.
 
 attributes = [:title, :description]
@@ -85,7 +85,7 @@ Remember that, to avoid errors when using locales like `pt-BR`, `es-ES`, etc. (t
 
 Add the hidden parameters to the form to delete translations:
 
-```
+```erb
 <%= hidden_field_tag "delete_translations[#{locale}]", 0 %>
 ```
 
@@ -95,7 +95,7 @@ We must add the link "Remove translation" to delete translations, which should h
 - an attribute `data-locale` with the value of `neutral_locale(locale)`.
 - the class `delete-language`.
 
-```
+```erb
 <%= link_to t("admin.milestones.form.remove_language"), "#",
                 id: "delete-#{neutral_locale(locale)}",
                 class: 'delete-language',
@@ -108,7 +108,7 @@ The CSS styles and the rest of the classes will depend on the designed UI for th
 
 So that they will be generated when the DB is restored. For example, to create a post whose description is translated.
 
-```
+```ruby
 section "Creating post with translations" do
   post = Post.new(title: title)
   I18n.available_locales.map do |locale|

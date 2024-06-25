@@ -10,7 +10,7 @@ La estructura de directorios que se crea a continuación está pensada para usar
 
 En primer lugar, crea el directorio principal, clona el repositorio y crea los subdirectorios necesarios:
 
-```
+```bash
 mkdir consul && cd consul
 git clone --mirror https://github.com/consuldemocracy/consuldemocracy.git repo
 mkdir releases shared
@@ -22,7 +22,7 @@ mkdir -p shared/public/assets shared/public/system shared/public/ckeditor_assets
 
 Crea una primera carpeta en "releases" a partir del repositorio, junto con un enlace simbólico a la versión actual (sustituye `<latest_consul_stable_version>` por el número de la última versión estable de Consul Democracy, como 1.3.1 o 1.4.1):
 
-```
+```bash
 cd repo
 git archive <latest_consul_stable_version> | tar -x -f - -C ../releases/first
 cd ..
@@ -33,7 +33,7 @@ ln -s releases/first current
 
 Instala las gemas de las que depende Consul Democracy:
 
-```
+```bash
 cd releases/first
 bundle install --path ../../shared/bundle --without development test
 cd ../..
@@ -43,7 +43,7 @@ cd ../..
 
 Genera los ficheros `database.yml` y `secrets.yml`:
 
-```
+```bash
 cp current/config/secrets.yml.example shared/config/secrets.yml
 cp current/config/database.yml.example shared/config/database.yml
 cd releases/first/config
@@ -56,7 +56,7 @@ Edita el fichero `shared/config/database.yml`, rellenando `username` y `password
 
 Ahora generamos una clave secreta:
 
-```
+```bash
 cd current
 bin/rake secret RAILS_ENV=production
 cd ..
@@ -64,7 +64,7 @@ cd ..
 
 Copia la clave generada y edita el fichero `shared/config/secrets.yml`; en la sección `production`, cambia los siguientes datos:
 
-```
+```yaml
   secret_key_base: introduce_la_clave_secreta_que_acabas_de_generar
   server_name: introduce_tu_dominio
 ```
@@ -75,7 +75,7 @@ Si no tienes un certificado SSL, cambia además `force_ssl: true` por `force_ssl
 
 Crea una base de datos, genera los datos necesarios para que la aplicación funcione y compila los ficheros de CSS y JavaScript:
 
-```
+```bash
  cd current
  bin/rake db:migrate RAILS_ENV=production
  bin/rake db:seed RAILS_ENV=production
@@ -86,7 +86,7 @@ Crea una base de datos, genera los datos necesarios para que la aplicación func
 
 Y, por último, inicia el servidor de Rails:
 
-```
+```bash
 bin/rails s -e production
 ```
 

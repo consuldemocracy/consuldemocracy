@@ -23,13 +23,13 @@ bin/rake db:dev_seed
 
 Para ejecutar la aplicación en local:
 
-```
+```bash
 bin/rails s
 ```
 
 Para ejecutar los tests:
 
-```
+```bash
 bin/rspec
 ```
 

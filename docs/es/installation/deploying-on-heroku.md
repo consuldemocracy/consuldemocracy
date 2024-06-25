@@ -113,7 +113,7 @@ Añade el complemento (add-on) de SendGrid en Heroku. Esto creará una cuenta de
 
 Añade el siguiente código a `config/secrets.yml`, en la sección `production:`:
 
-```
+```yaml
   mailer_delivery_method: :smtp
   smtp_settings:
     :address: "smtp.sendgrid.net"
