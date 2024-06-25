@@ -2,3 +2,5 @@ en:
   demo:
     login_info: "Login as administrator: admin@consul.dev, password: 12345678 | Login as verified user: verified@consul.dev, password: 12345678"
     tenants_info: "<strong>On this demo</strong>, in order to test new tenants, create a tenant with either <em>newtenant</em> or <em>customtenant</em> as subdomains. <strong>Tenants with other domains or subdomains can be created but won't be accessible</strong> because these demo servers don't provide SSL certificates for those domains/subdomains."
+    locales_info: "<p><strong>On this demo</strong>, you can only change the enabled languages on the tenants available in %{tenants_link}. To check this feature, please check the tenants in %{tenants_link}.</p><p>The reason you can't change the enabled languages on the main tenant is so people visiting the main tenant can always immediately know which languages are available in Consul Democracy.</p>In a regular Consul Democracy installation, you can also change the enabled languages for the main tenant.</p>"
+    tenants_link: "the multitenancy section"
