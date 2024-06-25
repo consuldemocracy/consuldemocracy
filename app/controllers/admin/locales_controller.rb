@@ -1,6 +1,6 @@
 class Admin::LocalesController < Admin::BaseController
   before_action :set_locales_settings
-  authorize_resource :locales_settings
+  authorize_resource instance_name: :locales_settings, class: "Setting::LocalesSettings"
 
   def show
   end
