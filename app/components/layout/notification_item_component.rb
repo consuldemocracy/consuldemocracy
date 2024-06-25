@@ -5,6 +5,10 @@ class Layout::NotificationItemComponent < ApplicationComponent
     @user = user
   end
 
+  def render?
+    user.present?
+  end
+
   private
 
     def text
