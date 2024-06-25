@@ -462,7 +462,7 @@ class Admin::MenuComponent < ApplicationComponent
           settings_link,
           tenants_link,
           tags_link,
-          locales_link,
+          (locales_link if I18n.available_locales.many?),
           geozones_link,
           local_census_records_link
         )
