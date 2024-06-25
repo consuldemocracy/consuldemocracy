@@ -1,0 +1,8 @@
+<%= header %>
+<% provide :main_class, "admin-locales-show" %>
+
+<% if can? :update, locales_settings %>
+  <%= render Admin::Locales::FormComponent.new(locales_settings) %>
+<% else %>
+  <%= sanitize t("demo.locales_info", tenants_link: link_to(t("demo.tenants_link"), admin_tenants_path)) %>
+<% end %>
