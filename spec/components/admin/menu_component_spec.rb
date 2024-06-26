@@ -35,4 +35,28 @@ describe Admin::MenuComponent, controller: Admin::NewslettersController do
       expect(page).to have_css "[aria-current]", exact_text: "Polls"
     end
   end
+
+  describe "#locales_link" do
+    it "is present when two or more locales are available" do
+      render_inline Admin::MenuComponent.new
+
+      expect(page).to have_link "Languages"
+    end
+
+    it "is present when two or more locales are available but only one is enabled" do
+      Setting["locales.enabled"] = "en"
+
+      render_inline Admin::MenuComponent.new
+
+      expect(page).to have_link "Languages"
+    end
+
+    it "is not present when only one locale is available" do
+      allow(I18n).to receive(:available_locales).and_return([:en])
+
+      render_inline Admin::MenuComponent.new
+
+      expect(page).not_to have_link "Languages"
+    end
+  end
 end
