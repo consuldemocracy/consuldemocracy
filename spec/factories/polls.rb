@@ -66,8 +66,16 @@ FactoryBot.define do
     end
 
     trait :abc do
-      after(:create) do |question, evaluator|
+      after(:create) do |question|
         %w[A B C].each do |letter|
+          create(:poll_question_option, question: question, title: "Answer #{letter}")
+        end
+      end
+    end
+
+    trait :abcde do
+      after(:create) do |question|
+        %w[A B C D E].each do |letter|
           create(:poll_question_option, question: question, title: "Answer #{letter}")
         end
       end
@@ -205,6 +213,7 @@ FactoryBot.define do
     question factory: [:poll_question, :yes_no]
     author factory: [:user, :level_two]
     answer { question.question_options.sample.title }
+    option { question.question_options.find_by(title: answer) }
   end
 
   factory :poll_partial_result, class: "Poll::PartialResult" do
