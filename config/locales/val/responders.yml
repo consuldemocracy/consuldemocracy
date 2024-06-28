@@ -7,9 +7,6 @@ val:
         direct_message: "Missatge enviat correctament."
         poll: "Votació creada correctament."
         poll_booth: "Urna creada correctament."
-        poll_question_answer: "Resposta creada correctament"
-        poll_question_answer_video: "Vídeo creat correctament"
-        poll_question_answer_image: "Imatge pujada correctament"
         proposal: "Proposta creada correctament."
         proposal_notification: "Missatge enviat correctament."
         budget_investment: "Proposta d'inversió creada correctament."
@@ -31,5 +28,4 @@ val:
       destroy:
         budget_investment: "Proposta d'inversió eliminada correctament."
         topic: "Tema eliminat."
-        poll_question_answer_video: "Vídeo de resposta eliminat."
         valuator_group: "Grup d'avaluadors esborrat correctament"
