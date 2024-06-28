@@ -2,6 +2,29 @@ require_dependency Rails.root.join("app", "models", "user").to_s
 
 class User < ApplicationRecord
 
+
+def erase(erase_reason = nil)
+    update!(
+      erased_at: Time.current,
+      erase_reason: erase_reason,
+      username: nil,
+      document_number: nil,
+      email: nil,
+      unconfirmed_email: nil,
+      phone_number: nil,
+      encrypted_password: "",
+      confirmation_token: nil,
+      reset_password_token: nil,
+      email_verification_token: nil,
+      confirmed_phone: nil,
+      unconfirmed_phone: nil
+    )
+    identities.destroy_all
+    remove_roles
+  end
+
+
+
   # Get the existing user by email if the provider gives us a verified email.
   def self.first_or_initialize_for_oauth(auth)
   Rails.logger.info('Attributes in auth.info:')
