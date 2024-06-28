@@ -526,7 +526,6 @@ bs:
         index:
           title: Nacrtne verzije
           create: Kreiraj verziju
-          delete: Obriši
           preview: Pregled
         new:
           back: Nazad
@@ -559,7 +558,6 @@ bs:
           back: Nazad
           title: Pitanja vezana za ovaj proces
           create: Napiši pitanje
-          delete: Obriši
         new:
           back: Nazad
           title: Napiši novo pitanje
@@ -1264,7 +1262,6 @@ bs:
           verified_users_who_didnt_vote_proposals: Potvrđeni korisnici koji nisu glasali za prijedloge
           visits: Posjete
           votes: Ukupno glasova
-        budgets_title: Participativno budžetiranje
         participatory_budgets: Participativni budžeti
         direct_messages: Direktne poruke
         proposal_notifications: Obavijesti o prijedlogu
@@ -1272,8 +1269,6 @@ bs:
         polls: Glasačke ankete
       graph:
         debate_created: Debate
-        visit: Posjete
-        level_2_user: Korisnici na drugom stupnju
         proposal_created: Građanski prijedlozi
       budgets:
         title: "Participativni budžeti - Statistika za učešće"
@@ -1377,7 +1372,6 @@ bs:
         index:
           title: Prilagođene slike
           update: Ažuriraj
-          delete: Obriši
           image: Slika
         update:
           notice: Slika uspješno ažurirana
