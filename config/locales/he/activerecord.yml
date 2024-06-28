@@ -489,15 +489,6 @@ he:
       image:
         title: כותרת
         attachment: "צרופה"
-      poll/question/answer:
-        title: תשובה
-        description: תיאור
-      poll/question/answer/translation:
-        title: תשובה
-        description: "תיאור"
-      poll/question/answer/video:
-        title: כותרת
-        url: מקור וידאו חיצוני
       newsletter:
         segment_recipient: נמענים
         subject: נושא
