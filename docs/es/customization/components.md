@@ -3,7 +3,7 @@
 En el caso de los componentes, la personalización puede utilizarse para cambiar tanto la lógica (incluida en un archivo `.rb`) como la vista (incluida en un archivo `.erb`). Si solo quieres personalizar la lógica, por ejemplo del componente `Admin::TableActionsComponent`, crea el archivo `app/components/custom/admin/table_actions_component.rb` con el siguiente contenido:
 
 ```ruby
-require_dependency Rails.root.join("app", "components", "admin", "table_actions_component").to_s
+load Rails.root.join("app", "components", "admin", "table_actions_component.rb")
 
 class Admin::TableActionsComponent
   # Tu lógica personalizada aquí
@@ -15,7 +15,7 @@ Si, por el contrario, también quieres personalizar la vista, necesitas una pequ
 ```ruby
 class Admin::TableActionsComponent < ApplicationComponent; end
 
-require_dependency Rails.root.join("app", "components", "admin", "table_actions_component").to_s
+load Rails.root.join("app", "components", "admin", "table_actions_component.rb")
 
 class Admin::TableActionsComponent
   # Tu lógica personalizada aquí

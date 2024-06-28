@@ -5,7 +5,7 @@ If you need to create new models or customize existent ones, you can do it so at
 For example for Madrid's City Hall fork its required to check the zip code's format (it always starts with 280 followed by 2 digits). That check is at `app/models/custom/verification/residence.rb`:
 
 ```ruby
-require_dependency Rails.root.join('app', 'models', 'verification', 'residence').to_s
+load Rails.root.join("app", "models", "verification", "residence.rb")
 
 class Verification::Residence
 
