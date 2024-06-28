@@ -147,7 +147,6 @@ bs:
     budget/group: Budžetska grupa
     budget/heading: Budžetsko poglavlje
     poll/shift: Smjena
-    poll/question/answer: Odgovor
     user: Nalog
     verification/sms: telefon
     signature_sheet: Potpisni list
@@ -537,7 +536,6 @@ bs:
         share: "Bilo bi super kad bi mi učinili veliku uslugu i podijelili moj prijedlog sa prijateljima, porodicom i poznanicima!"
   polls:
     all: "Sve"
-    no_dates: "nije određen datum"
     dates: "Od %{open_at} do %{closed_at}"
     final_date: "Konačno ponovno brojanje/Rezultati"
     index:
@@ -632,7 +630,6 @@ bs:
     author_info:
       author_deleted: Korisnik obrisan
     back: Idi nazad
-    check: Odaberi
     check_all: Sve
     check_none: Ništa
     collective: Zajednica
@@ -700,18 +697,6 @@ bs:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Posjete
-      debates: Debate
-      proposals: Prijedlozi
-      comments: Komentari
-      proposal_votes: Glasovi za prijedloge
-      debate_votes: Glasovi za debate
-      comment_votes: Glasovi za komentare
-      votes: Ukupno glasova
-      verified_users: Potvrđeni korisnici
-      unverified_users: Nepotvrđeni korisnici
   unauthorized:
     default: Nemate dozvolu da pristupite ovoj stranici.
     manage:

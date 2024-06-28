@@ -612,7 +612,6 @@ ro:
         index:
           title: Versiuni schiță
           create: Crează versiune
-          delete: Șterge
           preview: Previzualizare
         new:
           back: Înapoi
@@ -645,7 +644,6 @@ ro:
           back: Înapoi
           title: Întrebări asociate acestui proces
           create: Crează întrebare
-          delete: Șterge
         new:
           back: Înapoi
           title: Crează întrebare nouă
@@ -1404,7 +1402,6 @@ ro:
           verified_users_who_didnt_vote_proposals: Utilizatori verificați care nu au votat propuneri
           visits: Vizite
           votes: Voturi totale
-        budgets_title: Bugetare participativă
         participatory_budgets: Bugete participative
         direct_messages: Mesaje directe
         proposal_notifications: Notificări propuneri
@@ -1413,8 +1410,6 @@ ro:
         sdg: ODD
       graph:
         debate_created: Dezbateri
-        visit: Vizite
-        level_2_user: Utilizatori de nivelul doi
         proposal_created: Propunerile cetățeanului
       budgets:
         no_data_before_balloting_phase: "Nu există date care să fie afișate înainte de faza de votare."
@@ -1526,7 +1521,6 @@ ro:
         index:
           title: Imagini personalizate
           update: Actualizează
-          delete: Șterge
           image: Imagine
         update:
           notice: Imagine actualizată cu succes

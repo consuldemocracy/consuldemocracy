@@ -420,15 +420,6 @@ ka:
       image:
         title: სათაური
         attachment: "აირჩიეთ ფოტოსურათი"
-      poll/question/answer:
-        title: პასუხი
-        description: აღწერა
-      poll/question/answer/translation:
-        title: პასუხი
-        description: "აღწერა"
-      poll/question/answer/video:
-        title: სათაური
-        url: სხვა სერვერზე განთავსებული ვიდეოს ბმული
       newsletter:
         segment_recipient: მიმღებები
         subject: თემა

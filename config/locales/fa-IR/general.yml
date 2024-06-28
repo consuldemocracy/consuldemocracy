@@ -109,7 +109,6 @@ fa:
     proposal_notification: "اطلاعیه ها"
     budget/investment: سرمایه گذاری
     poll/shift: تغییر
-    poll/question/answer: پاسخ
     user: "حساب\n"
     verification/sms: تلفن
     signature_sheet: ورق امضا
@@ -286,7 +285,6 @@ fa:
     author_info:
       author_deleted: کاربر حذف شد
     back: برگرد
-    check: انتخاب
     check_all: همه
     print:
       print_button: این اطلاعات را چاپ کنید
@@ -310,18 +308,6 @@ fa:
     translations:
       remove_language: حذف زبان
       add_language: اضافه کردن زبان
-  stats:
-    index:
-      visits: بازديد
-      debates: مباحثه
-      proposals: طرح های پیشنهادی
-      comments: توضیحات
-      proposal_votes: پیشنهادات رای دهی
-      debate_votes: رای در مناظره
-      comment_votes: رای در نظر
-      votes: کل رای
-      verified_users: کاربران تایید شده
-      unverified_users: کاربران تایید نشده
   unauthorized:
     default: شما مجوز دسترسی به این صفحه را ندارید.
     manage:

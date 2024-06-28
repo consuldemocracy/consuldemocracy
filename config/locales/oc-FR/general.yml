@@ -153,7 +153,6 @@ oc:
     legislation/process: procés
     legislation/question: question
     poll/shift: Majusculas
-    poll/question/answer: Responsa
     user: lo compte
     verification/sms: lo telefòn
     signature_sheet: la fuèlha de signaturas
@@ -555,7 +554,6 @@ oc:
         share: "E se me fagatz tanben lo grand favor de partejar la miá proposicion amb los vòstres amics, familiales e de contactes, seriá perfièch!"
   polls:
     all: "totes"
-    no_dates: "sens data assignada"
     dates: "Dempuèi çò %{open_at} fins a lo %{closed_at}"
     final_date: "Recompte final/Resultats"
     index:
@@ -652,7 +650,6 @@ oc:
       author_deleted: Usatgièr eliminat
       email_deleted: S'es suprimit lo corrièr electronic
     back: Tornar
-    check: Seleccionar
     check_all: totes
     check_none: Cap
     collective: Associacion
@@ -733,18 +730,6 @@ oc:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: De visitas
-      debates: De debats
-      proposals: De proposicions ciutadanas
-      comments: De comentaris
-      proposal_votes: De vòts en proposicions
-      debate_votes: De vòts en debats
-      comment_votes: De vòts en comentaris
-      votes: De vòts
-      verified_users: d'Usatgièrs verificats
-      unverified_users: d'Usatgièrs sens verificar
   unauthorized:
     default: Pas tibat permís per accedir a aquela pagina.
     manage:

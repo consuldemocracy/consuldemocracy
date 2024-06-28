@@ -86,8 +86,6 @@ so:
       allow_attached_documents_description: "Waxay u oggolaaneysaa dadka isticmaala inay dukumentiyada ku dhejiyaan marka ay abuurayaan soo jeedin iyo mashaariic maalgashi oo ka socda miisaaniyadda ka qaybqaadashada"
       guides: "Tilmaamaha si loo abuuro soo jeedin ama mashaariic maalgashi"
       guides_description: "Bandhiga tilmaamaha farqiga u dhaxeeya soo jeedinta iyo mashaariicda maalgashiga haddii ay jirto miisaaniyad firfircoon oo ka-qaybgal ah"
-      public_stats: "Tirooyinka guud"
-      public_stats_description: "Muuji tirooyinka dadweynaha ee guddiga maamulka"
       help_page: "Bogga Caawinta"
       help_page_description: 'Waxay muujisaa maqaallada caawimaadda oo ku jira bog leh qaybta macluumaadka ee ku saabsan muuqaal kasta oo awood leh'
     map:

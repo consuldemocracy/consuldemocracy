@@ -7,9 +7,6 @@ mk:
         direct_message: "Пораката беше успешно испратена."
         poll: "Успешно создадена анкета."
         poll_booth: "Успешно создадена кабина."
-        poll_question_answer: "Успешно направен одговор"
-        poll_question_answer_video: "Успешно создадено видео"
-        poll_question_answer_image: "Успешно поставување на слика"
         proposal: "Успешно создаден предлог."
         proposal_notification: "Вашата порака беше коректно испратена."
         budget_investment: "Успешно создадена буџетска инвестиција."
@@ -32,5 +29,4 @@ mk:
       destroy:
         budget_investment: "Успешно избришан проект за инвестиција."
         topic: "Успешно избришана тема."
-        poll_question_answer_video: "Видео одговор успешно избришан."
         valuator_group: "Успешно избришана група за вреднување"

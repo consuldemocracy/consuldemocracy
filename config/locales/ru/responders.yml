@@ -7,9 +7,6 @@ ru:
         direct_message: "Ваше сообщение было успешно отправлено."
         poll: "Голосование успешно создано."
         poll_booth: "Кабинка успешно создана."
-        poll_question_answer: "Ответ успешно создан"
-        poll_question_answer_video: "Видео успешно создано"
-        poll_question_answer_image: "Изображение успешно загружено"
         proposal: "Предложение успешно создано."
         proposal_notification: "Ваше сообщение было корректно отправлено."
         budget_investment: "Инвестирование бюджета успешно создано."
@@ -32,5 +29,4 @@ ru:
       destroy:
         budget_investment: "Проект инвестирования успешно удален."
         topic: "Тема успешно удалена."
-        poll_question_answer_video: "Видео с ответом успешно удалено."
         valuator_group: "Группа оценщиков успешно удалена"

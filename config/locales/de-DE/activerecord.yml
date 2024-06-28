@@ -451,15 +451,6 @@ de:
       image:
         title: Titel
         attachment: "Anhang"
-      poll/question/answer:
-        title: Antwort
-        description: Beschreibung
-      poll/question/answer/translation:
-        title: Antwort
-        description: "Beschreibung"
-      poll/question/answer/video:
-        title: Titel
-        url: Externes Video
       newsletter:
         segment_recipient: Empfänger*innen
         subject: Betreff

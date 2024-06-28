@@ -161,7 +161,6 @@ da:
     legislation/process: proces
     legislation/question: spørgsmål
     poll/shift: Skift
-    poll/question/answer: Svar
     user: Konto
     verification/sms: telefon
     signature_sheet: Signaturark
@@ -566,7 +565,6 @@ da:
         share: "Og hvis du også gør mig den store tjeneste at dele mit forslag med venner, familie og andet netværk, vil det være helt perfekt!"
   polls:
     all: "Alle"
-    no_dates: "der er ikke angivet nogen dato"
     dates: "Fra %{open_at} til %{closed_at}"
     final_date: "Endelig opregning/Resultater"
     index:
@@ -671,7 +669,6 @@ da:
       author_deleted: Bruger slettet
       email_deleted: E-mailen blev slettet
     back: Gå tilbage
-    check: Vælg
     check_all: Alle
     check_none: Ingen
     collective: Grupper
@@ -758,18 +755,6 @@ da:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Besøg
-      debates: Debatindlæg
-      proposals: Borgerforslag
-      comments: Kommentarer
-      proposal_votes: Stemmer på forslag
-      debate_votes: Stemmer på debatindlæg
-      comment_votes: Stemmer på kommentarer
-      votes: Sammenlagt antal stemmer
-      verified_users: Verificerede brugere
-      unverified_users: Ikke verificerede brugere
   unauthorized:
     default: Du har ikke tilladelse til at tilgå denne side.
     manage:

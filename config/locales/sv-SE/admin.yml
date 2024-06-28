@@ -664,7 +664,6 @@ sv:
         index:
           title: Utkastversioner
           create: Skapa version
-          delete: Ta bort
           preview: Förhandsvisning
         new:
           back: Tillbaka
@@ -697,7 +696,6 @@ sv:
           back: Tillbaka
           title: Frågor som är kopplade till processen
           create: Skapa fråga
-          delete: Ta bort
         new:
           back: Tillbaka
           title: Skapa ny fråga
@@ -1400,6 +1398,8 @@ sv:
       index:
         title: Geografiska områden
         create: Skapa geografiskt område
+        geojson_map: GeoJSON-karta
+        geojson_map_help: "Om GeoJSON-koordinater är tillgängliga visas de på kartan nedan"
       geozone:
         name: Namn
         external_code: Extern kod
@@ -1480,7 +1480,6 @@ sv:
           verified_users_who_didnt_vote_proposals: Verifierade användare som inte röstat på något förslag
           visits: Visningar
           votes: Totalt antal röster
-        budgets_title: Medborgarbudgetar
         participatory_budgets: Medborgarbudgetar
         direct_messages: Direktmeddelanden
         proposal_notifications: Aviseringar om förslag
@@ -1488,10 +1487,15 @@ sv:
         polls: Omröstningar
         sdg: Globala målen
       graph:
+        budget_investment_created: Budgetinvesteringar som skapats
+        budget_investment_supported: Budgetinvesteringar som stöds
         debate_created: Debatter
-        visit: Visningar
-        level_2_user: Användare nivå två
+        legislation_annotation_created: Lagstiftningskommentarer som skapats
+        legislation_answer_created: Lagstiftningssvar som skapats
+        level_3_user: Användare på nivå 3 som verifierats
         proposal_created: Medborgarförslag
+        title: Diagram
+        visits: Visningar
       budgets:
         no_data_before_balloting_phase: "Det finns inga data att visa före röstfasen."
         title: "Deltagarbudgetar – deltagarstatistik"
@@ -1607,7 +1611,6 @@ sv:
         index:
           title: Anpassade bilder
           update: Uppdatera
-          delete: Ta bort
           image: Bild
         update:
           notice: Bilden har uppdaterats

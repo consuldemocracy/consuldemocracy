@@ -549,7 +549,6 @@ hr:
         index:
           title: Verzije nacrta
           create: Stvori verziju
-          delete: Izbriši
           preview: Pregled
         new:
           back: Nazad
@@ -582,7 +581,6 @@ hr:
           back: Nazad
           title: Pitanja povezana s ovim procesom
           create: Stvori pitanje
-          delete: Izbriši
         new:
           back: Nazad
           title: Stvori novo pitanje
@@ -1325,7 +1323,6 @@ hr:
           verified_users_who_didnt_vote_proposals: Potvrđeni korisnici koji nisu glasali za prijedloge
           visits: Broj posjeta
           votes: Ukupno glasova
-        budgets_title: Participativno budžetiranje
         participatory_budgets: Participativni Budžeti
         direct_messages: Izravne poruke
         proposal_notifications: Obavijesti prijedloga
@@ -1333,8 +1330,6 @@ hr:
         polls: Glasanja
       graph:
         debate_created: Rasprave
-        visit: Broj posjeta
-        level_2_user: Razina 2 korisnika
         proposal_created: Prijedlozi građana
       budgets:
         no_data_before_balloting_phase: "Nema podataka za prikaz prije faze glasovanja."
@@ -1441,7 +1436,6 @@ hr:
         index:
           title: Prilagođene slike
           update: Ažuriranje
-          delete: Izbriši
           image: Slika
         update:
           notice: Slika je uspješno ažurirana

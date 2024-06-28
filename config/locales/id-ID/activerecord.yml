@@ -363,15 +363,6 @@ id:
       image:
         title: Judul
         attachment: "Lampiran"
-      poll/question/answer:
-        title: Jawaban
-        description: Deskripsi
-      poll/question/answer/translation:
-        title: Jawaban
-        description: "Deskripsi"
-      poll/question/answer/video:
-        title: Judul
-        url: Video eksternal
       newsletter:
         segment_recipient: Penerima
         subject: Subyek

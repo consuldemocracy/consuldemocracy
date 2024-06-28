@@ -92,7 +92,6 @@ fi:
     proposal: Ehdotus
     proposal_notification: "Ilmoitus"
     budget/investment: Sijoitus
-    poll/question/answer: Vastaus
     user: Tili
     verification/sms: puhelin
     document: Asiakirja
@@ -278,7 +277,6 @@ fi:
     author_info:
       author_deleted: Käyttäjä poistettu
     back: Takaisin
-    check: Valitse
     check_all: Kaikki
     check_none: Ei mitään
     follow: "Seuraa"
@@ -302,10 +300,6 @@ fi:
       title: Suositukset
   social:
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      proposals: Ehdotukset
-      comments: Kommentit
   users:
     login_to_comment: "Sinun tulee %{signin} tai %{signup} kommentoidaksesi."
     signin: "kirjaudu"

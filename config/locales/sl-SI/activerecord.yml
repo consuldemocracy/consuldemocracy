@@ -325,15 +325,6 @@ sl:
       image:
         title: Naslov
         attachment: "Priponka"
-      poll/question/answer:
-        title: Odgovor
-        description: Opis
-      poll/question/answer/translation:
-        title: Odgovor
-        description: "Opis"
-      poll/question/answer/video:
-        title: Naslov
-        url: Zunanji video
       newsletter:
         segment_recipient: Prejemniki
         subject: Naslov

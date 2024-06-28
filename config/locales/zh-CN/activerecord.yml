@@ -341,15 +341,6 @@ zh-CN:
       image:
         title: 标题
         attachment: "附件"
-      poll/question/answer:
-        title: 回答
-        description: 说明
-      poll/question/answer/translation:
-        title: 回答
-        description: "说明"
-      poll/question/answer/video:
-        title: 标题
-        url: 外部视频
       newsletter:
         segment_recipient: 收件人
         subject: 主题

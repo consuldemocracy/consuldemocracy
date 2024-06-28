@@ -7,9 +7,6 @@ hr:
         direct_message: "Vaša poruka je uspješno poslana."
         poll: "Anketa je stvorena uspješno."
         poll_booth: "Glasačko mjesto uspješno stvoreno."
-        poll_question_answer: "Odgovor je uspješno stvoren"
-        poll_question_answer_video: "Video je uspješno stvoren"
-        poll_question_answer_image: "Slika je uspješno učitana"
         proposal: "Prijedlog je uspješno stvoren."
         proposal_notification: "Vaša poruka je točno poslana."
         budget_investment: "Proračunska investicija je uspješno stvorena."
@@ -32,5 +29,4 @@ hr:
       destroy:
         budget_investment: "Investicijski projekti uspješno obrisani."
         topic: "Tema je uspješno obrisana."
-        poll_question_answer_video: "Video odgovora uspješno obrisan."
         valuator_group: "Grupa evaluatora uspješno obrisana"
