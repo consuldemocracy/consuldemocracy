@@ -98,8 +98,6 @@ pl:
       allow_attached_documents_description: "Zezwalaj użytkownikom przesyłanie dokumentów podczas tworzenia wniosków i projektów inwestycyjnych z Budżetu Partycypacyjnego"
       guides: "Przewodniki do tworzenia wniosków lub projektów inwestycyjnych"
       guides_description: "Wyświetla przewodnik po różnicach między wnioskami i projektami inwestycyjnymi, jeśli istnieje aktywny budżet partycypacyjny"
-      public_stats: "Publiczne statystyki"
-      public_stats_description: "Wyświetl publiczne statystyki w panelu administracyjnym"
       help_page: "Pomoc"
       help_page_description: 'Wyświetlaj menu "help", które zawiera strony z informacjami o każdej włączonej funkcji. Zamiera także niestandardowe strony i menu, które można utworzyć w "Ustawienia" > "Zawartość witryny" > "Niestandardowych stron"'
       sdg: SDG
