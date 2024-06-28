@@ -7,9 +7,6 @@ de:
         direct_message: "Ihre Nachricht wurde erfolgreich versendet."
         poll: "Umfrage erfolgreich erstellt."
         poll_booth: "Wahlkabine erfolgreich erstellt."
-        poll_question_answer: "Antwort erfolgreich erstellt"
-        poll_question_answer_video: "Video erfolgreich erstellt"
-        poll_question_answer_image: "Bild erfolgreich hochgeladen"
         proposal: "Vorschlag erfolgreich erstellt."
         proposal_notification: "Ihre Nachricht wurde versendet."
         budget_investment: "Budgetinvestition wurde erfolgreich erstellt."
@@ -33,5 +30,4 @@ de:
       destroy:
         budget_investment: "Investitionsprojekt erfolgreich gelöscht."
         topic: "Thema erfolgreich gelöscht."
-        poll_question_answer_video: "Video-Antwort erfolgreich gelöscht."
         valuator_group: "Gutachtergruppe erfolgreich gelöscht"
