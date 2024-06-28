@@ -153,7 +153,6 @@ ka:
     legislation/process: პროცესი
     legislation/question: შეკითხვა
     poll/shift: ცვლა
-    poll/question/answer: პასუხი
     user: ანგარიში
     verification/sms: ტელეფონი
     signature_sheet: ხელმოწერის ფურცელი
@@ -555,7 +554,6 @@ ka:
         share: "და თუკი ჩემს ინიციატივას მეგობრებს და ახლობლებსაც გაუზიარებ, კიდევ უფრო დამეხმარები!"
   polls:
     all: "ყველა"
-    no_dates: "თარიღი განსაზღვრული არ არის"
     dates: "%{open_at}-დან %{closed_at}-მდე"
     final_date: "საბოლოო შედეგები"
     index:
@@ -652,7 +650,6 @@ ka:
       author_deleted: მომხმარებელი წაშლილია
       email_deleted: ელ.ფოსტა წაშლილია
     back: უკან დაბრუნება
-    check: შერჩევა
     check_all: ყველა
     check_none: არცერთი
     collective: კოლექტიური
@@ -733,18 +730,6 @@ ka:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: ვიზიტები
-      debates: დებატები
-      proposals: ინიციატივები
-      comments: კომენტარები
-      proposal_votes: ინიციატივებზე მიცემული ხმები
-      debate_votes: დებატებზე მიცემული ხმები
-      comment_votes: კომენტარებზე მიცემული ხმები
-      votes: ხმების საერთო რაოდენობა
-      verified_users: გადამოწმებული მომხმარებლები
-      unverified_users: გადაუმოწმებელი მომხმარებლები
   unauthorized:
     default: ამ გვერდის ნახვის უფლება არ გაქვთ.
     manage:
