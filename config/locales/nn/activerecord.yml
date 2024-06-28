@@ -123,13 +123,6 @@ nn:
         title: Tittel
       image:
         title: Tittel
-      poll/question/answer:
-        title: Svar
-      poll/question/answer/translation:
-        title: Svar
-      poll/question/answer/video:
-        title: Tittel
-        url: Ekstern video
       admin_notification:
         title: Tittel
       admin_notification/translation:
