@@ -158,7 +158,6 @@ sr:
     legislation/process: процес
     legislation/question: питање
     poll/shift: Пребацити
-    poll/question/answer: Одговор
     user: Налог
     verification/sms: телефон
     signature_sheet: Поље за потпис
@@ -572,7 +571,6 @@ sr:
         share: "Пуно би ми значило и ако бисте поделили овај предлог са својим пријатељима, породицом и контактима!"
   polls:
     all: "Све"
-    no_dates: "није додељен датум"
     dates: "Од %{open_at} до %{closed_at}"
     final_date: "Завршни резултати"
     index:
@@ -669,7 +667,6 @@ sr:
       author_deleted: Корисник обрисан
       email_deleted: Емаил обрисан
     back: Идите назад
-    check: Одаберите
     check_all: Све
     check_none: Ништа
     collective: Колектив
@@ -754,18 +751,6 @@ sr:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Посете
-      debates: Расправе
-      proposals: Предлози
-      comments: Коментари
-      proposal_votes: Гласајте предлог
-      debate_votes: Гласајте расправу
-      comment_votes: Гласајте коментар
-      votes: Укупни гласови
-      verified_users: Потврђени корисници
-      unverified_users: Непотврђени корисници
   unauthorized:
     default: Немате дозволу да приступите овој страни.
     manage:
