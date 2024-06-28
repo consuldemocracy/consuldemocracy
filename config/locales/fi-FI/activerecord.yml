@@ -225,14 +225,6 @@ fi:
         attachment: "Liite"
       image:
         attachment: "Liite"
-      poll/question/answer:
-        title: Vastaus
-        description: Kuvaus
-      poll/question/answer/translation:
-        title: Vastaus
-        description: "Kuvaus"
-      poll/question/answer/video:
-        url: Ulkoinen video
       newsletter:
         subject: Aihe
       admin_notification:
