@@ -5,7 +5,7 @@ Si quieres agregar modelos nuevos, o modificar o agregar métodos a uno ya exist
 Por ejemplo en el caso del Ayuntamiento de Madrid se requiere comprobar que el código postal durante la verificación sigue un cierto formato (empieza con 280). Esto se realiza creando este fichero en `app/models/custom/verification/residence.rb`:
 
 ```ruby
-require_dependency Rails.root.join('app', 'models', 'verification', 'residence').to_s
+load Rails.root.join("app", "models", "verification", "residence.rb")
 
 class Verification::Residence
 

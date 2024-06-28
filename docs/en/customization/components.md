@@ -3,7 +3,7 @@
 For components, customization can be used to change both the logic (included in a `.rb` file) and the view (included in a `.erb` file). If you only want to customize the logic for, let's say, the `Admin::TableActionsComponent`, create a file named `app/components/custom/admin/table_actions_component.rb` with the following content:
 
 ```ruby
-require_dependency Rails.root.join("app", "components", "admin", "table_actions_component").to_s
+load Rails.root.join("app", "components", "admin", "table_actions_component.rb")
 
 class Admin::TableActionsComponent
   # Your custom logic here
@@ -15,7 +15,7 @@ If, on the other hand, you also want to customize the view, you need a small mod
 ```ruby
 class Admin::TableActionsComponent < ApplicationComponent; end
 
-require_dependency Rails.root.join("app", "components", "admin", "table_actions_component").to_s
+load Rails.root.join("app", "components", "admin", "table_actions_component.rb")
 
 class Admin::TableActionsComponent
   # Your custom logic here
