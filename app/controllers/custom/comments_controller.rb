@@ -62,7 +62,8 @@ def openaimoderate(text_string)
   is_flagged = false
   flag_score = 0
   flag_cat = ""
-  if openai_key.nil?
+  puts "openaikey is #{openai_key}"
+  if openai_key.nil? || openai_key.strip.empty?
     return { hidden: is_hidden, flagged: is_flagged, flags: flag_score, category: "missing api key" }
   end
   
@@ -96,8 +97,7 @@ end
     if feature?(:cosla)
       puts "going to do it"
     end
-    thresh = 1.5
-    thresh = Rails.application.secrets.openai_thresh
+    thresh = Rails.application.secrets.openai_thresh || 1.5
     openai_key = Rails.application.secrets.openai_key
 
     body = @comment.body
@@ -111,7 +111,7 @@ end
        response = openaimoderate(body)
        is_hidden = response[:hidden]
        is_flagged = response[:flagged]
-       scores = response[:flags]    
+       flag_score = response[:flags] || 0    
     end
     
 
@@ -119,7 +119,7 @@ end
          @comment.flags_count = flag_score
          @comment.save
     end
-    if is_hidden || (scores > thresh)
+    if is_hidden || (flag_score > thresh)
         @comment.hidden_at = Time.current
         @comment.save
      end
