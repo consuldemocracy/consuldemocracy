@@ -112,8 +112,6 @@ nl:
       allow_attached_documents_description: "Hiermee kunnen gebruikers documenten uploaden bij het maken van voorstellen en investeringsprojecten van participatieve budgetten"
       guides: "Gidsen voor het maken van voorstellen of investeringsprojecten"
       guides_description: "Geeft een gids weer voor verschillen tussen voorstellen en investeringsprojecten als er een actief participatiebudget is"
-      public_stats: "Openbare statistieken"
-      public_stats_description: "De openbare statistieken weergeven in het beheerderspaneel"
       help_page: "Help-pagina"
       help_page_description: 'Toont informatie over alle beschikbare functionaliteit'
       translation_interface: "Vertaalinterface"
