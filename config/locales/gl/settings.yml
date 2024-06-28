@@ -58,12 +58,30 @@ gl:
     meta_keywords_description: 'Palabras clave <meta name="keywords">, usado para mellorar o SEO'
     min_age_to_participate: Idade mínima para participar
     min_age_to_participate_description: "Os usuarios maiores desta idade poden participar en todos os procesos"
+    postal_codes: "Códigos postais"
+    postal_codes_description: "Unha lista separada por comas de códigos postais válidos; tamén pode introducir intervalos separados por dous puntos. Exemplo: 00001:00010,00024,AB3 45FG,00031:00035 permitirá códigos postais entre 00001 e 00010, o código postal 00024, o código postal AB3 45FG e os códigos postais entre 00031 e 00035. Se o deixas en branco, todos os códigos postais serán válidos."
     proposals:
+      successful_proposal_id: Proposta exitosa
+      successful_proposal_id_description: Esta proposta utilízase como referencia para unha proposta exitosa en canto ao número de apoios e amosarase no gráfico do panel.
       poll_short_title: Votacións
+      poll_short_title_description: Breve descrición da función de enquisa. Permite aos usuarios crear enquisas sobre unha proposta
       poll_description: Descrición de votacións
+      poll_description_description: Descrición detallada da funcionalidade de enquisas
+      poll_link: Ligazón de información adicional
+      poll_link_description: Engade unha ligazón de información adicional á función de enquisa
       email_short_title: O teu correo electrónico
+      email_short_title_description: 'Breve descrición da función de correo electrónico. Permite aos usuarios enviar unha mensaxe de correo para difundir a súa proposta. Podes atopar todo o contido desta mensaxe en "/app/views/dashboard/mailer/forward.html.erb"'
+      email_description: Descrición da mensaxe de correo
+      email_description_description: Descrición detallada da funcionalidade de correo electrónico
       poster_short_title: Cartel
+      poster_short_title_description: 'Breve descrición da función de póster. Permite aos usuarios descargar un póster en formato PDF para difundir a súa proposta. Podes atopar todo o contido deste póster en "/app/views/dashboard/poster/index.pdg.erb"'
+      poster_description: Descrición do póster
+      poster_description_description: Descrición detallada da funcionalidade de póster
     analytics_url: "URL de analytics"
+    proposal_notification_minimum_interval_in_days: "Intervalo mínimo (en días) para que os autores de propostas poidan enviar novas notificacións de proposta"
+    proposal_notification_minimum_interval_in_days_description: "O número de días nos que un usuario pode enviar unha notificación a todos os que apoian a súa proposta"
+    direct_message_max_per_day: "Número máximo de mensaxes directas por día"
+    direct_message_max_per_day_description: "Número máximo de mensaxes directas que un usuario pode enviar ao día"
     feature:
       twitter_login: "Rexistro con Twitter"
       twitter_login_description: "Permitir aos usuarios o inicio de sesión coa conta de Twitter"
@@ -71,6 +89,8 @@ gl:
       facebook_login_description: "Permitir aos usuarios o inicio de sesión coa conta de Facebook"
       google_login: "Rexistro con Google"
       google_login_description: "Permitir aos usuarios o inicio de sesión coa conta de Google"
+      wordpress_login: "Rexistro con Wordpress"
+      wordpress_login_description: "Permitir o rexistro de usuarios coa conta de Wordpress"
       featured_proposals: "Propostas destacadas"
       featured_proposals_description: "Amosar as propostas destacadas na páxina principal das propostas"
       signature_sheets: "Follas de sinaturas"
@@ -86,6 +106,8 @@ gl:
         recommendations_on_proposals_description: "Amosa as recomendacións de usuarios aos usuarios na páxina de propostas baseadas nas etiquetas dos elementos seguidos"
       community: "Comunidade de propostas e proxectos de investimento"
       community_description: "Habilita a sección de comunidade nas propostas e nos proxectos de investimento dos Orzamentos Participativos"
+      machine_learning: "IA / Machine Learning"
+      machine_learning_description: "Activar a sección de IA / Machine Learning para executar guións de python e enriquecer o contido de xeito automático."
       map: "Xeolocalización de propostas e proxectos de investimento"
       map_description: "Habilita a xeolocalización das propostas e dos proxectos de investimento"
       allow_images: "Permitir subir e amosar imaxes"
@@ -94,11 +116,60 @@ gl:
       allow_attached_documents_description: "Permite aos usuarios a subida de documentos cando crean propostas e proxectos de investimento nos Orzamentos Participativos"
       guides: "Guías para crear propostas ou proxectos de investimento"
       guides_description: "Amosa unha guía coas diferenzas entre propostas e proxectos de investimento se hai un orzamento participativo activo"
-      public_stats: "Estatísticas públicas"
-      public_stats_description: "Amosa as estatísticas públicas no panel de administración"
       help_page: "Páxina de axuda"
       help_page_description: 'Amosa un menú de axuda que contén unha páxina con información sobre cada unha das características habilitadas'
+      remote_translations: "Tradución remota"
+      remote_translations_description: "Amosa un botón que permite aos usuarios solicitar unha tradución cando non hai contidos no seu idioma."
+      translation_interface: "Interface de tradución"
+      translation_interface_description: "Amosa a interface de tradución manual que permite aos usuarios introducir o seu contido en todos os idiomas dispoñibles da aplicación. Esta opción só afecta aos formularios de solicitude de usuarios e de forma independente sempre estará activa no panel de administración."
+      remote_census: "Configurar a conexión ao censo remoto (SOAP)"
+      remote_census_description: "Permite configurar a conexión ao censo remoto de cada institución"
+      valuation_comment_notification: "Notificación de comentarios de valoración"
+      valuation_comment_notification_description: "Envía unha mensaxe de correo a todos os usuarios, agás a quen tivera comentarios relacionados co orzamento participativo cando se crea un novo comentario de valoración"
+      graphql_api: "API GraphQL"
+      dashboard:
+        notification_emails: "Mensaxes de notificación do panel de control"
+        notification_emails_description: "Activa o envío de mensaxes de notificación aos autores das propostas"
+      remove_investments_supports: "Permite retirar apoios aos proxectos de gasto"
+      remove_investments_supports_description: "Permite aos usuarios eliminar apoios aos investimentos dos orzamentos participativos durante a fase de selección de proxectos."
+      sdg: ODS
+      sdg_description: Activa as seccións dos Obxectivos de Desenvolvemento Sostible no menú de administración e na configuración global.
+    remote_census:
+      general:
+        endpoint: "Punto final"
+        endpoint_description: "Nome do equipo (hostname) onde se atopa o servizo do censo (wsdl)"
+      request:
+        method_name: "Nome do método da petición"
+        method_name_description: "Nome do método que acepta o Servizo Web do Censo do Concello."
+        structure: "Estrutura da petición"
+        structure_description: 'Estrutura da petición para enviar ao Servizo Web do Censo do Concello. Deben fornecerse os valores «estáticos» desta solicitude. Os valores relacionados co tipo de documento, número de documento, data de nacemento e código postal deben ser nulos. Exemplo dun formato válido: { "request": { "institution_code": 1, "portal_code": 1, "user_code": 1, "document": null, "document_type": null, "language_code": 102, "level ": 3 } }'
+        document_type: "Ruta para o tipo de documento"
+        document_type_description: "Ruta da estrutura de solicitude que envía o tipo de documento. NON A ESCRIBAS se o servizo web non require o tipo de documento para verificar un usuario."
+        document_number: "Ruta para o número de documento"
+        document_number_description: "Ruta da estrutura de solicitude que envía o número de documento. NON A ESCRIBAS se o servizo web non require o número de documento para verificar un usuario."
+        date_of_birth: "Ruta para a data de nacemento"
+        date_of_birth_description: "Ruta da estrutura de solicitude que envía a data de nacemento. NON A ESCRIBAS se o servizo web non require a data de nacemento para verificar un usuario."
+        postal_code: "Ruta para o Código Postal"
+        postal_code_description: "Ruta da estrutura de solicitude que envía o código postal. NON A ESCRIBAS se o servizo web non require o código postal para verificar un usuario."
+      response:
+        date_of_birth: "Ruta para a data de nacemento"
+        date_of_birth_description: "En que ruta da resposta se atopa a data de nacemento?"
+        postal_code: "Ruta para o Código Postal"
+        postal_code_description: "En que ruta da resposta se atopa o código postal?"
+        district: "Ruta para a zona"
+        district_description: "En que ruta da resposta se atopa a zona do usuario?"
+        gender: "Ruta para o xénero"
+        gender_description: "En que ruta da resposta se atopa o xénero do usuario?"
+        name: "Ruta para o nome"
+        name_description: "En que ruta da resposta se atopa o nome do usuario?"
+        surname: "Ruta para os apelidos"
+        surname_description: "En que ruta da resposta se atopan os apelidos do usuario?"
+        valid: "Condición para detectar unha resposta válida"
+        valid_description: "Que ruta da resposta ten que vir informada para ser considerada unha resposta válida e verificada polo usuario"
     map:
+      feature:
+        marker_clustering: "Agrupación de marcadores"
+        marker_clustering_description: "Activa a agrupación de marcadores de mapas. Útil cando hai moitos marcadores xuntos para amosar."
       latitude: "Latitude"
       latitude_description: "Latitude para amosar a posición do mapa"
       longitude: "Lonxitude"
@@ -109,12 +180,49 @@ gl:
       debates: "Debates"
       debates_description: "O espazo de debate da cidadanía está dirixido a calquera que poida presentar problemas que lles afecten e sobre os que queren compartir as súas opinións con outros"
       proposals: "Propostas cidadás"
+      proposals_description: "As propostas da cidadanía son unha oportunidade para que os veciños e colectivos poidan decidir sobre como queren que sexa a súa sociedade, despois de conseguir suficientes apoios e sometelas a un proceso de votación"
       polls: "Votacións"
       polls_description: "As votacións da cidadanía son un proceso participativo polo cal os veciños con dereito a voto poden tomar decisións dun modo directo"
       budgets: "Orzamentos participativos"
+      budgets_description: "Con estes orzamentos participativos, a cidadanía decide a que proxectos presentados pola veciñanza vai destinada unha parte do orzamento"
       legislation: "Lexislación colaborativa"
+      legislation_description: "Nos procesos participativos, á cidadanía ten a oportunidade de participar na elaboración e modificación de normativa que lle afecta á sociedade e de dar a súa opinión sobre algunhas accións que teñen previsto levar a cabo"
     html:
       per_page_code_head: "Código para incluír en cada páxina (<head>)"
       per_page_code_head_description: "Este código aparecerá dentro da etiqueta <head>. Pode usarse para inserir scripts personalizados, analíticas,..."
       per_page_code_body: "Código para incluír en cada páxina (<body>)"
       per_page_code_body_description: "Este código aparecerá dentro da etiqueta <body>. Pode usarse para inserir scripts personalizados, analíticas..."
+    uploads:
+      images:
+        min_width: "Largura mínima da imaxe"
+        min_width_description: "Largura mínima permitida para unha imaxe enviada (en píxeles)"
+        min_height: "Altura mínima de imaxe"
+        min_height_description: "Altura mínima permitida para unha imaxe enviada (en píxeles)"
+        max_size: "Tamaño máximo de imaxe"
+        max_size_description: "Tamaño máximo permitido para unha imaxe enviada (en Megabytes/MB)"
+        content_types: "Tipos de contido aceptados para imaxes"
+        content_types_description: "Selecciona todos os tipos de contido permitidos para as imaxes cargadas"
+        title:
+          min_length: "Lonxitude mínima do título da imaxe"
+          min_length_description: "Título proporcionado polo usuario ao enviar unha imaxe (usado como atributo «alt» HTML)"
+          max_length: "Lonxitude máxima do título da imaxe"
+          max_length_description: "Título proporcionado polo usuario ao enviar unha imaxe (usado como atributo «alt» HTML)"
+      documents:
+        max_amount: "Número máximo de documentos"
+        max_amount_description: "Número máximo de documentos que se poden xuntar a unha proposta, investimento..."
+        max_size: "Tamaño máximo do documento"
+        max_size_description: "Tamaño máximo permitido para un documento enviado (en Megabytes/MB)"
+        content_types: "Tipos de contido aceptados para documentos"
+        content_types_description: "Selecciona todos os tipos de contido permitidos para os documentos cargados"
+    sdg:
+      process:
+        debates: ODS relacionados nos debates
+        debates_description: Permitir que os debates se vinculen aos Obxectivos de Desenvolvemento Sostible
+        proposals: ODS relacionados nas propostas
+        proposals_description: Permitir que as propostas se vinculen aos Obxectivos de Desenvolvemento Sostible
+        polls: ODS relacionados nas votacións
+        polls_description: Permitir que as votacións se vinculen aos Obxectivos de Desenvolvemento Sostible
+        budgets: ODS relacionados cos orzamentos participativos
+        budgets_description: Permitir que os orzamentos participativos se vinculen aos Obxectivos de Desenvolvemento Sostible
+        legislation: ODS relacionados na lexislación colaborativa
+        legislation_description: Permitir que a lexislación colaborativa se vincule aos Obxectivos de Desenvolvemento Sostible
