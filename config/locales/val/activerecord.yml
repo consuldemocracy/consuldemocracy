@@ -397,15 +397,6 @@ val:
       image:
         title: Títol
         attachment: "Archiu adjunt"
-      poll/question/answer:
-        title: Resposta
-        description: Descripció
-      poll/question/answer/translation:
-        title: Resposta
-        description: "Descripció (opcional)"
-      poll/question/answer/video:
-        title: Títol
-        url: Video extern
       newsletter:
         segment_recipient: Destinataris
         subject: Asumpte
