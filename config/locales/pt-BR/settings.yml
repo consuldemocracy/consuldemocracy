@@ -112,8 +112,6 @@ pt-BR:
       allow_attached_documents_description: "Permite usuários subir documentos quando criar propostas e projetos de investimento do orçamento participativo"
       guides: "Orientações para criar propostas ou projetos de investimento"
       guides_description: "Mostra um guia de diferenças entre propostas e projetos de investimento se tivver um orçamento participativo ativo"
-      public_stats: "Estatísticas públicas"
-      public_stats_description: "Mostra estatísticas públicas no painel de administração"
       help_page: "Página de ajuda"
       help_page_description: 'Mostra um menu de Ajuda contendo a página com a seção de informações sobre cada recurso abilitado'
       remote_translations: "Tradução remota"

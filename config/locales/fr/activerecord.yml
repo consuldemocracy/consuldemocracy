@@ -445,15 +445,6 @@ fr:
       image:
         title: Titre
         attachment: "Pièce jointe"
-      poll/question/answer:
-        title: Réponse
-        description: Description
-      poll/question/answer/translation:
-        title: Réponse
-        description: "Description"
-      poll/question/answer/video:
-        title: Titre
-        url: Vidéo externe
       newsletter:
         segment_recipient: Destinataires
         subject: Objet

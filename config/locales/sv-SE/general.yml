@@ -162,7 +162,7 @@ sv:
     legislation/process: process
     legislation/question: fråga
     poll/shift: Arbetspass
-    poll/question/answer: Svar
+    poll/question/option: Svar
     user: Konto
     verification/sms: telefon
     signature_sheet: Namninsamling
@@ -228,6 +228,7 @@ sv:
           other: Du har %{count} nya aviseringar
         notifications: Aviseringar
       sdg: "Globala målen"
+    skip_to_main_content: "Hoppa över och gå till huvudinnehåll"
   notifications:
     index:
       empty_notifications: Du har inga nya aviseringar.
@@ -567,7 +568,6 @@ sv:
         share: "Och om du kunde dela förslaget med dina vänner, din familj och dina kontakter skulle det vara perfekt!"
   polls:
     all: "Alla"
-    no_dates: "inget datum har valts"
     dates: "Från %{open_at} till %{closed_at}"
     final_date: "Slutresultat"
     index:
@@ -672,7 +672,6 @@ sv:
       author_deleted: Användaren är borttagen
       email_deleted: E-postadress raderad
     back: Gå tillbaka
-    check: Välj
     check_all: Alla
     check_none: Ingen
     collective: Grupp
@@ -759,18 +758,6 @@ sv:
     youtube: "%{org} på YouTube"
     telegram: "%{org} på Telegram"
     instagram: "%{org} på Instagram"
-  stats:
-    index:
-      visits: Visningar
-      debates: Debatter
-      proposals: Förslag
-      comments: Kommentarer
-      proposal_votes: Röster på förslag
-      debate_votes: Röster på debatter
-      comment_votes: Röster på kommentarer
-      votes: Totalt antal röster
-      verified_users: Verifierade användare
-      unverified_users: Ej verifierade användare
   unauthorized:
     default: Du har inte behörighet att komma åt sidan.
     manage:

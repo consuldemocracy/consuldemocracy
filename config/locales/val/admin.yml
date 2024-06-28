@@ -471,7 +471,6 @@ val:
         index:
           title: Versions esborrany
           create: Crear versió
-          delete: Eliminar
           preview: Vista previa
         new:
           back: Tornar
@@ -504,7 +503,6 @@ val:
           back: Tornar
           title: Preguntes associades a aquest proces
           create: Crear pregunta
-          delete: Eliminar
         new:
           back: Tornar
           title: Crear nova pregunta
@@ -1139,7 +1137,6 @@ val:
           verified_users_who_didnt_vote_proposals: Usuaris verificats que no han votat propostes
           visits: Visites
           votes: Vots
-        budgets_title: Pressupostos participatius
         participatory_budgets: Pressupostos participatius
         direct_messages: Missatges directes
         proposal_notifications: Notificacions de propostes
@@ -1147,7 +1144,6 @@ val:
         polls: Votacions
       graph:
         debate_created: Debats
-        visit: Visites
         proposal_created: Propostes ciutadanes
       budget_balloting:
         vote_count: Vots
@@ -1243,7 +1239,6 @@ val:
         index:
           title: Imatges
           update: Actualitzar
-          delete: Eliminar
           image: Imatge
         update:
           notice: Imatge actualitzada correctament

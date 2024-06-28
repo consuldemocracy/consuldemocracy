@@ -488,15 +488,6 @@ ru:
       image:
         title: Название
         attachment: "Прикрепление"
-      poll/question/answer:
-        title: Ответ
-        description: Описание
-      poll/question/answer/translation:
-        title: Ответ
-        description: "Описание"
-      poll/question/answer/video:
-        title: Название
-        url: Внешнее видео
       newsletter:
         segment_recipient: Получатели
         subject: Тема

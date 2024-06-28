@@ -445,15 +445,6 @@ pt-BR:
       image:
         title: Título
         attachment: "Anexo"
-      poll/question/answer:
-        title: Resposta
-        description: Descrição
-      poll/question/answer/translation:
-        title: Resposta
-        description: "Descrição"
-      poll/question/answer/video:
-        title: Título
-        url: Vídeo externo
       newsletter:
         segment_recipient: Destinatários
         subject: Assunto

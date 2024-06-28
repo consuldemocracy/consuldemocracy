@@ -427,7 +427,6 @@ so:
         index:
           title: Weerinta qabya qoralka
           create: Saame Weerin
-          delete: Titiriid
           preview: Hor udhaac
         new:
           back: Labasho
@@ -460,7 +459,6 @@ so:
           back: Labasho
           title: Su'aalaha la xiriira habkan
           create: Saame sual
-          delete: Titiriid
         new:
           back: Labasho
           title: Saame sual cusub
@@ -1088,7 +1086,6 @@ so:
           verified_users_who_didnt_vote_proposals: Isticmaalayaasha la xaqiijiyay ee aan codka bixin
           visits: Boqashooyinka
           votes: Wadarka codadka
-        budgets_title: Misaaniyada kaqayb qadashada
         participatory_budgets: Misaaniyadaha kaqayb qadashada
         direct_messages: Fariimo toosa
         proposal_notifications: Ogaysiis soo jedin
@@ -1096,7 +1093,6 @@ so:
         polls: Doorashooyinka
       graph:
         debate_created: Doodo
-        visit: Boqashooyinka
       budget_balloting:
         vote_count: Codaad
         participant_count: Kaqayb galayaal
@@ -1188,7 +1184,6 @@ so:
         index:
           title: Sawirada Cadada
           update: Cusboneysiin
-          delete: Titiriid
           image: Sawiir
         update:
           notice: Sawiirka ayaa si guula lo cusboneysiyey

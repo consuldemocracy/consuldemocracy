@@ -163,7 +163,6 @@ ar:
     budget/group: مجموعة الميزانية
     budget/heading: عنوان الميزانية
     poll/shift: المناوبة
-    poll/question/answer: الإجابة
     user: الحساب
     verification/sms: الهاتف
     signature_sheet: ورقة التوقيع
@@ -599,7 +598,6 @@ ar:
         share: "وإذا ساعدتني في مشاركة مقترحي مع الأصدقاء والعائلة وجهات الاتصال ، فسيكون ذلك مثاليًا!"
   polls:
     all: "الكل"
-    no_dates: "التاريخ غير محدد"
     dates: "من %{open_at} إلى %{closed_at}"
     final_date: "التنائج النهائية"
     index:
@@ -695,7 +693,6 @@ ar:
       author_deleted: تم حذف المستخدم
       email_deleted: تم حذف البريد الإلكتروني
     back: عودة
-    check: حدّد
     check_all: الكل
     check_none: لا شيء
     collective: جماعي
@@ -773,18 +770,6 @@ ar:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: الزيارات
-      debates: النقاشات
-      proposals: إقتراحات
-      comments: تعليقات
-      proposal_votes: التصويت على المقترحات
-      debate_votes: الأصوات على المناقشات
-      comment_votes: الأصوات على التعليقات
-      votes: مجموع الأصوات
-      verified_users: مستخدمين تم التحقق منهم
-      unverified_users: مستخدمين غير متحقق منهم
   unauthorized:
     default: ليس لديك الصلاحية لدخول هذه الصفحة.
     manage:

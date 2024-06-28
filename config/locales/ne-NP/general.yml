@@ -161,7 +161,6 @@ ne:
     legislation/process: प्रक्रिया
     legislation/question: प्रश्न
     poll/shift: शिफ्ट
-    poll/question/answer: जवाफ
     user: खाता
     verification/sms: फोन
     signature_sheet: हस्ताक्षर पानाहरू
@@ -566,7 +565,6 @@ ne:
         share: "र यदि तपाईंले मलाई मेरो प्रस्ताव आफ्ना साथीहरू, परिवार र सम्पर्कहरूसँग साझा गर्ने ठूलो पक्षमा गर्नुहुन्छ भने, यो उत्तम हुनेछ!"
   polls:
     all: "सबै"
-    no_dates: "कुनै मिति तोकिएको छैन"
     dates: "%{open_at} देखि %{closed_at} सम्म"
     final_date: "अन्तिम गणना/नतिजा"
     index:
@@ -671,7 +669,6 @@ ne:
       author_deleted: प्रयोगकर्ता मेटाइयो
       email_deleted: इमेल मेटाइयो
     back: फिर्ता जानुहोस्
-    check: छनाेट
     check_all: सबै
     check_none: कुनै पनि छैन
     collective: सामूहिक
@@ -758,18 +755,6 @@ ne:
     youtube: "%{org} YouTube"
     telegram: "%{org} टेलिग्राम"
     instagram: "%{org} इन्स्टाग्राम"
-  stats:
-    index:
-      visits: भ्रमणहरू
-      debates: बहसहरू
-      proposals: प्रस्तावहरू
-      comments: टिप्पणीहरू
-      proposal_votes: प्रस्तावहरूमा मतदान
-      debate_votes: बहसहरूमा मतदान
-      comment_votes: टिप्पणीहरूमा मतदान
-      votes: कुल मतहरू
-      verified_users: प्रमाणित प्रयोगकर्ताहरू
-      unverified_users: अप्रमाणित प्रयोगकर्ताहरू
   unauthorized:
     default: तपाईंसँग यो पृष्ठ पहुँच गर्ने अनुमति छैन।
     manage:

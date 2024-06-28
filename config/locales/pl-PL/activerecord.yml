@@ -476,15 +476,6 @@ pl:
       image:
         title: Tytuł
         attachment: "Załącznik"
-      poll/question/answer:
-        title: Odpowiedź
-        description: Opis
-      poll/question/answer/translation:
-        title: Odpowiedź
-        description: "Opis"
-      poll/question/answer/video:
-        title: Tytuł
-        url: Zewnętrzne video
       newsletter:
         segment_recipient: Adresaci
         subject: Temat

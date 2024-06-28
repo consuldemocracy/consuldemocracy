@@ -459,15 +459,6 @@ tr:
       image:
         title: Başlık
         attachment: "Görsel seçin"
-      poll/question/answer:
-        title: Yanıt
-        description: Açıklama
-      poll/question/answer/translation:
-        title: Yanıt
-        description: "Açıklama (isteğe bağlı)"
-      poll/question/answer/video:
-        title: Başlık
-        url: Dış video
       newsletter:
         segment_recipient: Alıcılar
         subject: Konu
@@ -488,6 +479,7 @@ tr:
         link_text: Bağlantı metni
         link_url: Bağlantı adresi
         columns: Sütun sayısı
+        order: Konum
       widget/card/translation:
         label: Etiket (isteğe bağlı)
         title: Başlık
