@@ -163,7 +163,7 @@ nl:
               description_column: Tekst verkleinen
       compatibility:
         title: Compatibiliteit met standaarden en visuele vormgeving
-        description: 'Alle pagina''s van deze website voldoen aan <strong> Toegankelijkheidsrichtlijnen </strong> of generieke principes van toegankelijk ontwerp zoals opgesteld door de werkgroep <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> behorend bij W3C.'
+        description: 'Alle pagina''s van deze website voldoen aan <strong> Toegankelijkheidsrichtlijnen </strong> of generieke principes van toegankelijk ontwerp zoals opgesteld door de werkgroep <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </abbr> behorend bij W3C.'
     titles:
       help: "Wat is %{org}? - Burgerparticipatie"
     verify:
