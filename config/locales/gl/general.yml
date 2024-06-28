@@ -1,6 +1,7 @@
 gl:
   account:
     show:
+      last_sign_in: "Último acceso: %{last_sign_in_at} dende o enderezo IP %{last_sign_in_ip}"
       change_credentials_link: Cambiar os meus datos de acceso
       erase_account_link: Borrar a miña conta
       finish_verification: Finalizar verificación
@@ -20,6 +21,9 @@ gl:
     close: Cerrar
     menu: Menú
   comments:
+    actions:
+      confirm_delete: "Estás seguro/a? Esta acción eliminará este comentario. Non podes desfacer esta acción."
+      delete: "Borrar comentario"
     comments_closed: Os comentarios están pechados
     verified_only: Para participares, %{verify_account}
     comment:
@@ -131,8 +135,13 @@ gl:
         submit_button: Gardar so cambios
   errors:
     messages:
+      allowed_file_content_types: "o tipo de contido debe ser un dos seguintes: %{types}"
       user_not_found: Usuario non atopado
       invalid_date_range: "O rango de datas non é correcto"
+      past_date: "Non pode ser unha data do pasado"
+      cannot_change_date:
+        poll_started: "Non pode ser cambiada se a votación xa comezou"
+        poll_ended: "Non pode ser cambiada se a votación xa rematou"
   form:
     accept_terms: Acepto a %{policy} e as %{conditions}
     conditions: Condicións de uso
@@ -142,13 +151,18 @@ gl:
     errors: erros
     not_saved: "impediron gardar %{resource}. <br>Revisa os campos marcados para saber como corrixilos:"
     policy: Política de privacidade
+    banner: anuncio
     proposal: a proposta
     proposal_notification: "a notificación"
     budget/investment: Investimento
     budget/group: Grupo orzamento
     budget/heading: a partida orzamentaria
+    geozone: xeozona
+    legislation/draft_version: borrador
+    legislation/process: proceso
+    legislation/question: pregunta
     poll/shift: Quenda
-    poll/question/answer: Resposta
+    poll/question/option: Resposta
     user: a conta
     verification/sms: o teléfono
     signature_sheet: a folla de sinaturas
@@ -157,6 +171,9 @@ gl:
     image: Imaxe
     local_census_record: Rexistro do Censo Local
     local_census_records/import: Importar rexistros do censo local
+    site_customization/content_block: bloque de contido
+    site_customization/page: páxina
+    sdg/local_target: obxectivo local
   geozones:
     none: Toda a cidade
   layouts:
@@ -210,6 +227,8 @@ gl:
           one: Tes unha nova notificación
           other: Tes %{count} notificacións novas
         notifications: Notificacións
+      sdg: "ODS"
+    skip_to_main_content: "Ir ao contido principal"
   notifications:
     index:
       empty_notifications: Non tes notificacións novas.
@@ -247,6 +266,10 @@ gl:
       sign_in: Entra con Google
       sign_up: Rexístrate con Google
       name: Google
+    wordpress_oauth2:
+      sign_in: Acceder con Wordpress
+      sign_up: Rexistrarse con Wordpress
+      name: Wordpress
     twitter:
       sign_in: Entra con Twitter
       sign_up: Rexístrate con Twitter
@@ -366,6 +389,7 @@ gl:
         view_proposal: Agora non, ir á miña proposta
       already_supported: Xa apoiaches esta proposta, compártea!
       support: Apoiar
+      support_label: "Apoiar %{proposal}"
       support_title: Apoiar esta proposta
       supports:
         zero: Sen apoios
@@ -445,19 +469,44 @@ gl:
       resource_locked: Recurso bloqueado
     recommended_actions:
       title: Accións recomendadas
+      goto_proposed_actions: Ir ás accións recomendadas
+      see_proposed_actions: Consultar as accións recomendadas
+      hide_proposed_actions: Agochar as accións recomendadas
       pending_title: Pendentes
+      show_description: Amosar a descrición
+      without_pending_actions: Non hai accións recomendadas pendentes
       done_title: Realizadas
+      without_done_actions: Non hai accións recomendadas completadas
+    next_goal:
+      title: Obxectivo
+      see_complete_course: Ver a ruta completa
+      hide_course: Agochar ruta
     goal:
+      target_supports:
+        one: Consegue %{count} apoio para a túa proposta
+        other: Consegue %{count} apoios para a túa proposta
+      days:
+        one: "%{count} día"
+        other: "%{count} días"
       locked_resource: Recurso bloqueado
+      ideal_time: Tempo ideal
     community:
       access_community: Acceder á comunidade
+      latest_activity: "Última actividade da comunidade: %{at}"
       participants: Participantes
       debates: Debates
       comments: Comentarios
+      latest_comments: Últimos mensaxes
+    messages:
+      send_notification: Enviar notificación aos seguidores da proposta
+      previous_notifications: Ver notificacións anteriores
     polls:
       index:
         title: Votacións
         create: Crear votación
+        count:
+          one: Acabas de crear %{count} enquisa.
+          other: Acabas de crear %{count} enquisas.
         links: Ligazóns
         additiontal_information: Información adicional
       new:
@@ -466,6 +515,13 @@ gl:
       edit:
         submit: Actualizar votación
       poll:
+        responses:
+          one: "%{count} resposta"
+          other: "%{count} respostas"
+        view_results: Ver resultados
+        edit_poll: Editar enquisa
+        show_results_help: Se marcas esta opción, os resultados serán públicos e todos os usuarios poderán velos
+        delete: Eliminar enquisa
         alert_notice: Esta acción eliminará a enquisa e todas as preguntas relacionadas.
         success_notice: Enquisa eliminada correctamente
         unable_notice: Non se pode eliminar unha enquisa con respostas
@@ -482,8 +538,10 @@ gl:
         title: Vista previa do cartel
         poster_title: "Non sigas mirando"
         poster_subtitle: "apóiame! ;-)"
+        intro_text: "<strong>Estou participando en %{org}</strong> coa miña propia proposta cidadán e se me axudas poderei lograr os apoios necesarios para facer a cidade que todos queremos"
         proposal_code: "Código da proposta: %{code}"
         support: Apoia a miña proposta
+        footer: "<strong>Entra en %{link} e apoia esta proposta.</strong> Necesitamos ser moitos/as. Decide ti tamén. Grazas!"
       new:
         title: Cartel da túa proposta
       options:
@@ -505,9 +563,11 @@ gl:
         support_button: Apoia esta proposta
         share_in: Compartir en
         hi: "Ola!"
+        introduction: Escríboche para dicirche que estou a participar en %{org}, a plataforma na que podemos decidir a cidade que queremos. E para isto, veño de crear a miña propia proposta cidadá, e agora necesito da túa axuda! Pero non te preocupes porque é moi sinxelo.
+        support: "Tan só tes que facer clic no botón que verás a continuación «Apoiar esta proposta» e directamente poderás consultar os detalles antes de impulsala. Só as propostas que consigan o máximo apoio poderán levarse a cabo por parte do Concello, e pensei que ti seguro que me axudas a conseguilo!"
+        share: "E se a maiores, me fas o favor de compartir a miña proposta entre os teus contactos, amigos e familiares, xa sería perfecto!"
   polls:
     all: "Todo"
-    no_dates: "sen data asignada"
     dates: "Desde o %{open_at} a %{closed_at}"
     final_date: "Reconto final/resultados"
     index:
@@ -570,10 +630,15 @@ gl:
     show:
       vote_answer: "Votar %{answer}"
       voted: "Votaches %{answer}"
+    description:
+      unique: "Podes seleccionar un máximo de 1 resposta."
+      multiple: "Podes seleccionar un máximo de %{maximum} respostas."
+    read_more_about: "Ler máis:"
   proposal_notifications:
     new:
       title: "Enviar mensaxe"
       submit_button: "Enviar mensaxe"
+      info_about_receivers: "Esta notificación será enviada a <strong>%{count} persoas</strong> e será visíbel en %{proposal_page}.<br> As notificacións non serán enviadas de xeito inmediato, os usuarios recibirán periodicamente unha mensaxe de correo con todas as notificacións das propostas."
       proposal_page: "a páxina da proposta"
     show:
       back: "Volver á miña actividade"
@@ -596,13 +661,17 @@ gl:
       date_5: "Personalizada"
       from: "Dende"
       general: "Co texto"
+      goal: "Por ODS"
+      goal_blank: "Escolle un obxectivo"
       search: "Filtro"
+      target: "Por meta"
+      target_blank: "Selecciona unha meta"
       title: "Busca avanzada"
       to: "Ata"
     author_info:
       author_deleted: Usuario/a borrado/a
+      email_deleted: Enderezo de correo eliminado
     back: Volver
-    check: Seleccionar
     check_all: Todo
     check_none: Ningún
     collective: Colectivo
@@ -610,6 +679,17 @@ gl:
     follow: "Seguir"
     following: "Seguindo"
     follow_entity: "Seguir %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice: "Agora estás seguindo este proxecto de investimento! <br> Notificaremos os cambios que se produzan para que esteas ao tanto."
+        destroy:
+          notice: "Deixaches de seguir este proxecto de investimento! <br> Xa non recibirás máis notificacións relacionadas con este proxecto."
+      proposal:
+        create:
+          notice: "Agora estás seguindo esta proposta cidadá! <br> Notificarémosche os cambios a medida que se produciren para que esteas ao tanto."
+        destroy:
+          notice: "Deixaches de seguir esta proposta cidadá! <br> Xa non recibirás máis notificacións relacionadas coa proposta."
     print:
       print_button: Imprimir esta información
     search: Procurar
@@ -659,26 +739,25 @@ gl:
       see_more: Ver máis recomendacións
       hide: Agochar as recomendacións
     translations:
+      select_language_prompt: Escoller idioma
       remove_language: Eliminar idioma
       add_language: Engadir idioma
+      languages_in_use:
+        zero: "0 idiomas en uso"
+        one: "1 idioma en uso"
+        other: "%{count} idiomas en uso"
+    optional: "Campos opcionais"
+    required: "Campos obrigatorios"
+    comments:
+      zero: "Sen comentarios"
+      one: "1 comentario"
+      other: "%{count} comentarios"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
     telegram: "Telegram de %{org}"
     instagram: "Instagram de %{org}"
-  stats:
-    index:
-      visits: Visitas
-      debates: Debates
-      proposals: Propostas cidadás
-      comments: Comentarios
-      proposal_votes: Votos en propostas
-      debate_votes: Votos en debates
-      comment_votes: Votos en comentarios
-      votes: Votos
-      verified_users: Usuarios verificados
-      unverified_users: Usuarios sen verificar
   unauthorized:
     default: Non tes permiso para acceder a esta páxina.
     manage:
@@ -735,10 +814,13 @@ gl:
       published: Publicada
       see: "Ver proposta"
       actions: Accións
+      retired_help_text: Panel de control non dispoñible para as propostas retiradas
   votes:
     agree: Estou de acordo
+    agree_label: "Estou de acordo con %{title}"
     anonymous: Demasiados votos anónimos, para poder votar %{verify_account}.
     disagree: Non estou de acordo
+    disagree_label: "Non estou de acordo con %{title}"
     organizations: As organizacións non poden votar.
     supports: Apoios
     verified_only: As propostas de investimento só poden ser apoiadas por usuarios verificados, %{verify_account}.
@@ -759,6 +841,10 @@ gl:
         debates: Ver todos os debates
         proposals: Ver todas as propostas
         processes: Ver todos os procesos
+      no_items:
+        debates: Agora mesmo non hai debates
+        proposals: Agora mesmo non hai propostas
+        processes: Agora mesmo non hai procesos abertos
       process_label: Proceso
       see_process: Ver proceso
     cards:
@@ -777,6 +863,7 @@ gl:
       slide: "Ver %{title}"
     welcome:
       go_to_index: Agora non, ver propostas
+      start_using_consul: Ir ao índice
       title: Comeza a participar
       user_permission_info: Coa túa conta xa podes...
       user_permission_verify: "Para poder realizar todas as accións, verifica a túa conta."
@@ -792,6 +879,7 @@ gl:
     help: "Podes inserir calquera ligazón de %{models} que estea dentro de %{org}."
     submit: "Engadir"
     error: "Ligazón non válida. Lembra que debe comezar por %{url}."
+    error_duplicate: "O contido relacionado que estás a engadir xa non existe."
     error_itself: "Ligazón non válida. Non se pode relacionar un contido consigo mesmo."
     success: "Engadiches un novo contido relacionado"
     is_related: "É contido relacionado?"
@@ -815,3 +903,28 @@ gl:
       cancel_button: Cancelar
     nested_links:
       title: Ligazóns
+      note: Engade as ligazóns que sexan de interese
+      add_new_link: Engadir nova ligazón
+  communities:
+    show:
+      surveys: Enquisas
+      complete_survey: Encher a enquisa
+    subnav:
+      surveys: Enquisas
+    poll:
+      take_part: Participa do %{from} ao %{to}
+  remote_translations:
+    text: O contido desta páxina non está dispoñible no teu idioma
+    all_remote_translations_enqueued_text: Nun anaco e despois de actualizar a páxina, poderás ver todo o contido no teu idioma.
+    create:
+      enqueue_remote_translation: As traducións foron solicitadas con éxito.
+    button: Traducir páxina
+  tags:
+    list:
+      filter:
+        more:
+          one: "Unha etiqueta máis"
+          other: "%{count} etiquetas máis"
+  machine_learning:
+    comments_summary: "Resumo de comentarios"
+    info_text: "Contido creado mediante IA / Machine Learning"
