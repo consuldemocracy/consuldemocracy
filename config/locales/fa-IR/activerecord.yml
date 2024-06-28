@@ -352,15 +352,6 @@ fa:
       image:
         title: عنوان
         attachment: "پیوست"
-      poll/question/answer:
-        title: پاسخ
-        description: توضیحات
-      poll/question/answer/translation:
-        title: پاسخ
-        description: "توضیحات"
-      poll/question/answer/video:
-        title: عنوان
-        url: ویدیوهای خارجی
       newsletter:
         segment_recipient: گیرندگان
         subject: "موضوع\n"
