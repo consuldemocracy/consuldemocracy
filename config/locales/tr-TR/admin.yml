@@ -664,7 +664,6 @@ tr:
         index:
           title: Taslak sürümler
           create: Sürüm oluştur
-          delete: Sil
           preview: Ön izleme
         new:
           back: Geri
@@ -697,7 +696,6 @@ tr:
           back: Geri
           title: Bu süreç ile ilgili sorular
           create: Soru oluştur
-          delete: Sil
         new:
           back: Geri
           title: Yeni soru oluştur
@@ -712,6 +710,11 @@ tr:
       milestones:
         index:
           title: Takip ediliyor
+    locales:
+      default_help_text: "Bu, varsayılan uygulama dilidir ve bunu değiştirmek, siteye ilk kez gelen <strong>her kullanıcıyı</strong> etkiler."
+      enabled_help_text: Yukarıda seçilmiş varsayılan dil otomatik olarak eklenecek.
+      update:
+        notice: Diller güncellendi
     managers:
       index:
         title: Yöneticiler
@@ -733,7 +736,8 @@ tr:
       proposals: Önergeler
       proposals_topics: Önerge konuları
       budgets: Katılımcı bütçeler
-      geozones: Coğrafi bölgeleri yönet
+      geozones: Geozone'ları yönet
+      locales: Diller
       hidden_comments: Gizli yorumlar
       hidden_debates: Gizli tartışmalar
       hidden_proposals: Gizli önergeler
@@ -754,7 +758,7 @@ tr:
       polls: Oylamalar
       poll_booths: Kabinlerin konumu
       poll_booth_assignments: Kabin atamaları
-      poll_shifts: Vardiya yönetimi
+      poll_shifts: Vardiyaları yönet
       officials: Görevliler
       organizations: Kuruluşlar
       settings: Genel ayarlar
@@ -796,7 +800,7 @@ tr:
       dashboard_actions: Kaynaklar ve işlemler
       debates: "Tartışmalar"
       comments: "Yorumlar"
-      local_census_records: Yerel seçmen bilgi sistemi yönetimi
+      local_census_records: Yerel nüfus sayımını yönet
       machine_learning: "Yapay Zeka / Makine Öğrenmesi"
       multitenancy: Çok kiracılı
     administrators:
@@ -1234,7 +1238,7 @@ tr:
       show:
         location: "Konum"
       booth:
-        shifts: "Vardiya yönetimi"
+        shifts: "Vardiyaları yönet"
     officials:
       edit:
         destroy: '''Görevli'' durumunu kaldır'
@@ -1400,6 +1404,8 @@ tr:
       index:
         title: Coğrafi bölge
         create: Coğrafi bölge oluştur
+        geojson_map: GeoJSON haritası
+        geojson_map_help: "GeoJSON koordinatları kullanılabiliyorsa aşağıdaki haritada görüntülenecekler"
       geozone:
         name: Ad
         external_code: Dış kod
@@ -1480,7 +1486,6 @@ tr:
           verified_users_who_didnt_vote_proposals: Doğrulanmış ama önergelere oy vermemiş kullanıcılar
           visits: Ziyaretler
           votes: Toplam oy
-        budgets_title: Katılımcı bütçeleme
         participatory_budgets: Katılımcı bütçeler
         direct_messages: Doğrudan iletiler
         proposal_notifications: Önerge bildirimleri
@@ -1489,9 +1494,7 @@ tr:
         sdg: SKA
       graph:
         debate_created: Tartışmalar
-        visit: Ziyaretler
-        level_2_user: 2. düzey kullanıcılar
-        proposal_created: Yurttaş önergeleri
+        proposal_created: Vatandaş önerileri
       budgets:
         no_data_before_balloting_phase: "Oy kullanma aşamasından önce görüntülenecek bir veri yok."
         title: "Katılımcı bütçeler - Katılım istatistikleri"
@@ -1607,7 +1610,6 @@ tr:
         index:
           title: Özel görseller
           update: Güncelle
-          delete: Sil
           image: Görsel
         update:
           notice: Görsel güncellendi
@@ -1648,6 +1650,7 @@ tr:
           create_card: Kart oluştur
           no_cards: Herhangi bir kart yok.
           columns_help: "Sütün sayısı olarak kartın genişliği. Mobil ekranlarda her zaman %100 genişliğindedir."
+          order_help: "Bu kartın görüntüleneceği konumu yazabilirsiniz."
           create:
             notice: "Kart oluşturuldu!"
           update:
@@ -1709,7 +1712,7 @@ tr:
       empty: "Günlüğe kaydedilmiş bir değişiklik yok"
     local_census_records:
       index:
-        title: Yerel seçmen bilgi sistemi yönetimi
+        title: Yerel vatandaş listesini yönet
         create: Yeni yerel seçmen bilgi sistemi kaydı oluştur
         no_local_census_records: Herhangi bir yerel seçmen bilgi sistemi kaydı yok.
         document_type: Belge türü
@@ -1734,7 +1737,7 @@ tr:
         create:
           notice: Yerel seçmen bilgi sistemi kayıtları içe aktarıldı!
         show:
-          title: Yerel seçmen bilgi sistemi yönetimi
+          title: Yerel vatandaş listesini yönet
           subtitle: Süreç sonuçlarını içe aktar
           import: Yeniden içe aktar
           errored: Hatalı satırlar
