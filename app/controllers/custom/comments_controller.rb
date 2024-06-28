@@ -56,13 +56,14 @@ class CommentsController < ApplicationController
   end
 
 def openaimoderate(text_string)
-  thresh = Rails.application.secrets.openai_thresh
+  thresh = Rails.application.secrets.openai_thresh || 1.5
   openai_key = Rails.application.secrets.openai_key
   is_hidden = false
   is_flagged = false
   flag_score = 0
   flag_cat = ""
   puts "openaikey is #{openai_key}"
+  
   if openai_key.nil? || openai_key.strip.empty?
     return { hidden: is_hidden, flagged: is_flagged, flags: flag_score, category: "missing api key" }
   end
@@ -94,9 +95,11 @@ end
     is_hidden = false
     flag_score = 0
     flag_cat = ""
+
     if feature?(:cosla)
       puts "going to do it"
     end
+
     thresh = Rails.application.secrets.openai_thresh || 1.5
     openai_key = Rails.application.secrets.openai_key
 
@@ -107,7 +110,7 @@ end
       is_flagged = "true" 
       total_score = 300
       flag_score = 300
-    else 
+    elsif openai_key && !openai_key.strip.empty? 
        response = openaimoderate(body)
        is_hidden = response[:hidden]
        is_flagged = response[:flagged]
