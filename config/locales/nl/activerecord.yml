@@ -507,7 +507,7 @@ nl:
         name: "Groepsnaam"
       local_census_record:
         document_type: Documentsoort
-        document_number: Document nummer
+        document_number: Documentnummer
         date_of_birth: Date of birth
         postal_code: Postcode
       votation_type:

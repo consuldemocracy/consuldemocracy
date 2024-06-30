@@ -1274,6 +1274,7 @@ nl:
         label:
           booths: "Zoek stemhokje op naam"
           comments: "Reacties zoeken"
+          local_census_records: "Zoeken op documentnummer"
           organizations: "Name, email or phone number"
           poll_officers: "Search poll officers"
           poll_questions: "Zoek peilingvragen"
@@ -1423,6 +1424,7 @@ nl:
         document_number: Documentnummer
         roles: Rollen
         verification_level: Verificatieniveau
+        activation_status: Activeringsstatus
       index:
         title: Verborgen gebruikers
         no_users: Er zijn geen deelnemers.
@@ -1570,7 +1572,7 @@ nl:
     local_census_records:
       index:
         document_type: Documentsoort
-        document_number: Document nummer
+        document_number: Documentnummer
         date_of_birth: Date of birth
         postal_code: Postcode
         import: Importeer CSV
