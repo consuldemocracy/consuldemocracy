@@ -119,16 +119,19 @@ module Budgets
         end
       end
 
+      # shuffle investments
+      shuffled_investments = filtered_investments.sort_by_random(session[:random_seed]) # you can use Time.now.to_i for testing
+
       # pagination
-      @filtered_investments_count = filtered_investments.count
-      @investments = filtered_investments.page(params[:page]).per(PER_PAGE).for_render
+      @filtered_investments_count = shuffled_investments.count
+      @investments = shuffled_investments.page(params[:page]).per(PER_PAGE).for_render
 
       # filters data
       @statuses = Milestone::Status.all
 
       # map
       @investment_ids = @investments.ids
-      @investments_map_coordinates = MapLocation.where(investment: filtered_investments).map(&:json_data)
+      @investments_map_coordinates = MapLocation.where(investment: shuffled_investments).map(&:json_data)
 
       # ?
       @tag_cloud = tag_cloud
