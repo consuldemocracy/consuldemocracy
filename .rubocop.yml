@@ -565,6 +565,9 @@ RSpec/EmptyLineAfterExampleGroup:
   Exclude:
     - spec/factories/**/*
 
+RSpec/EmptyOutput:
+  Enabled: true
+
 RSpec/ExampleWording:
   Enabled: true
 
