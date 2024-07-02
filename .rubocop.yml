@@ -625,6 +625,9 @@ RSpec/SpecFilePathFormat:
 RSpec/SpecFilePathSuffix:
   Enabled: true
 
+RSpec/UndescriptiveLiteralsDescription:
+  Enabled: true
+
 RSpec/VoidExpect:
   Enabled: true
 
