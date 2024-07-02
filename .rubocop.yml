@@ -598,6 +598,9 @@ RSpec/LetSetup:
 RSpec/MetadataStyle:
   Enabled: true
 
+RSpec/MissingExpectationTargetMethod:
+  Enabled: true
+
 RSpec/NotToNot:
   Enabled: true
 
