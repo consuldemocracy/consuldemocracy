@@ -133,6 +133,7 @@ La lista de modelos es la siguiente:
 | `Budget`                | Presupuestos participativos  |
 | `Budget::Investment`    | Proyectos de gasto           |
 | `Comment`               | Comentarios en debates, propuestas y otros comentarios |
+| `Milestone`             | Hitos en propuestas, proyectos de gasto y procesos |
 | `Geozone`               | Geozonas (distritos)         |
 | `ProposalNotification`  | Notificaciones asociadas a propuestas |
 | `Tag`                   | Tags en debates y propuestas |

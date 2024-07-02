@@ -9,5 +9,6 @@ module Types
     field :location, String, null: true
     field :comments, Types::CommentType.connection_type, null: true
     field :comments_count, Integer, null: true
+    field :milestones, Types::MilestoneType.connection_type, null: true
   end
 end

@@ -16,6 +16,9 @@ class Milestone < ApplicationRecord
   scope :order_by_publication_date, -> { order(publication_date: :asc, created_at: :asc) }
   scope :published,                 -> { where(publication_date: ..Date.current.end_of_day) }
   scope :with_status,               -> { where.not(status_id: nil) }
+  scope :public_for_api, -> do
+    where(milestoneable: [Proposal.public_for_api, Budget::Investment.public_for_api])
+  end
 
   def self.title_max_length
     80

@@ -20,6 +20,11 @@ module Types
       argument :id, ID, required: true, default_value: false
     end
 
+    field :milestones, Types::MilestoneType.connection_type, "Returns all milestones", null: false
+    field :milestone, Types::MilestoneType, "Returns milestone for ID", null: false do
+      argument :id, ID, required: true, default_value: false
+    end
+
     field :proposals, Types::ProposalType.connection_type, "Returns all proposals", null: false
     field :proposal, Types::ProposalType, "Returns proposal for ID", null: false do
       argument :id, ID, required: true, default_value: false
@@ -82,6 +87,14 @@ module Types
 
     def geozone(id:)
       Geozone.find(id)
+    end
+
+    def milestones
+      Milestone.public_for_api
+    end
+
+    def milestone(id:)
+      Milestone.find(id)
     end
 
     def proposals
