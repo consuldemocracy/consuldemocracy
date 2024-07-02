@@ -252,16 +252,17 @@ describe "Consul Schema" do
   end
 
   describe "Comments" do
-    it "only returns comments from proposals, debates and polls" do
+    it "only returns comments from proposals, debates, polls and Budget::Investment" do
       create(:comment, commentable: create(:proposal))
       create(:comment, commentable: create(:debate))
       create(:comment, commentable: create(:poll))
+      create(:comment, commentable: create(:topic))
       build(:comment, commentable: create(:budget_investment)).save!(skip_validation: true)
 
       response = execute("{ comments { edges { node { commentable_type } } } }")
       received_commentables = extract_fields(response, "comments", "commentable_type")
 
-      expect(received_commentables).to match_array ["Proposal", "Debate", "Poll"]
+      expect(received_commentables).to match_array ["Proposal", "Debate", "Poll", "Budget::Investment"]
     end
 
     it "displays comments of authors even if public activity is set to false" do
@@ -640,6 +641,48 @@ describe "Consul Schema" do
       received_timestamps = extract_fields(response, "votes", "public_created_at")
 
       expect(Time.zone.parse(received_timestamps.first)).to eq Time.zone.parse("2017-12-31 9:00:00")
+    end
+  end
+
+  describe "Milestone" do
+    it "formats publication date like in view" do
+      milestone = create(:milestone, publication_date: Time.zone.parse("2024-07-02 11:45:17"))
+
+      response = execute("{ milestone(id: #{milestone.id}) { id date_of_publication } }")
+      received_date_of_publication = dig(response, "data.milestone.date_of_publication")
+      expect(received_date_of_publication).to eq "2024-07-02"
+    end
+  end
+
+  describe "Budget investment" do
+    it "does not include hidden comments" do
+      comment1 = create(:comment)
+      comment2 = create(:comment, :hidden)
+      create(:budget_investment, title: "One budget investment")
+      budget = Budget.first
+      budget_investment = budget.investments.first
+      budget_investment.comments = [comment1, comment2]
+
+      query = <<~GRAPHQL
+          {
+          budget(id: #{budget.id}) {
+            investments(id: #{budget_investment.id}) {
+              comments {
+                edges {
+                  node {
+                    body
+                  }
+                }
+              }
+            }
+          }
+        }
+      GRAPHQL
+
+      response = execute(query)
+      comments = dig(response, "data.budget.investments.comments.edges").map { |edge| edge["node"] }
+
+      expect(comments.count).to eq(1)
     end
   end
 end

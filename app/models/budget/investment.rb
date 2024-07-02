@@ -111,6 +111,7 @@ class Budget
     end
 
     scope :for_render, -> { includes(:heading) }
+    scope :public_for_api, -> { all }
 
     def self.by_valuator(valuator_id)
       where(budget_valuator_assignments: { valuator_id: valuator_id }).joins(:valuator_assignments)
