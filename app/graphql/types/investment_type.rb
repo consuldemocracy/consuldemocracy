@@ -7,6 +7,8 @@ module Types
     field :tsv, String, null: true
     field :title, String, null: true
     field :description, String, null: true
+    field :location, String, null: true
     field :comments, Types::CommentType.connection_type, null: true
+    field :milestones, Types::MilestoneType.connection_type, null: true
   end
 end
