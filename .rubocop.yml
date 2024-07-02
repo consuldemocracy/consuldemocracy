@@ -715,6 +715,9 @@ Style/InvertibleUnlessCondition:
 Style/LineEndConcatenation:
   Enabled: true
 
+Style/MapIntoArray:
+  Enabled: true
+
 Style/MapToHash:
   Enabled: true
 
