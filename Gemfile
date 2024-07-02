@@ -100,7 +100,7 @@ group :development do
   gem "pronto-stylelint", "~> 0.10.3", require: false
   gem "rubocop", "~> 1.61.0", require: false
   gem "rubocop-capybara", "~> 2.21.0", require: false
-  gem "rubocop-factory_bot", "~> 2.25.1", require: false
+  gem "rubocop-factory_bot", "~> 2.26.1", require: false
   gem "rubocop-performance", "~> 1.21.1", require: false
   gem "rubocop-rails", "~> 2.23.1", require: false
   gem "rubocop-rspec", "~> 2.27.0", require: false
