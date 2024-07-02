@@ -712,6 +712,9 @@ Style/InvertibleUnlessCondition:
 Style/LineEndConcatenation:
   Enabled: true
 
+Style/MapIntoArray:
+  Enabled: true
+
 Style/MapToHash:
   Enabled: true
 
@@ -789,6 +792,11 @@ Style/StringLiterals:
 
 Style/StringLiteralsInInterpolation:
   EnforcedStyle: double_quotes
+
+Style/SuperArguments:
+  Enabled: true
+  Exclude:
+    - "config/initializers/ahoy.rb"
 
 Style/SymbolProc:
   Enabled: true
