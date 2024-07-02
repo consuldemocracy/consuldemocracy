@@ -43,7 +43,7 @@ class Poll < ApplicationRecord
   accepts_nested_attributes_for :questions, reject_if: :all_blank, allow_destroy: true
 
   scope :for, ->(element) { where(related: element) }
-  scope :current, -> { where("starts_at <= :time and ends_at >= :time", time: Time.current) }
+  scope :current, -> { where(starts_at: ..Time.current, ends_at: Time.current..) }
   scope :expired, -> { where(ends_at: ...Time.current) }
   scope :recounting, -> { where(ends_at: (RECOUNT_DURATION.ago)...Time.current) }
   scope :published, -> { where(published: true) }

@@ -17,7 +17,7 @@ module Verification
       residence_or_phone_unverified.where(verified_at: nil, level_two_verified_at: nil)
     end
     scope :incomplete_verification, -> do
-      residence_unverified.where("failed_census_calls_count > ?", 0)
+      residence_unverified.where(failed_census_calls_count: 1..)
                           .or(residence_verified.phone_not_fully_confirmed)
     end
   end

@@ -75,8 +75,8 @@ class Proposal < ApplicationRecord
   scope :sort_by_archival_date,    -> { archived.sort_by_confidence_score }
   scope :sort_by_recommendations,  -> { order(cached_votes_up: :desc) }
 
-  scope :archived,       -> { where(created_at: ..Setting.archived_proposals_date_limit) }
-  scope :not_archived,   -> { where("proposals.created_at > ?", Setting.archived_proposals_date_limit) }
+  scope :archived,       -> { where(created_at: ...Setting.archived_proposals_date_limit) }
+  scope :not_archived,   -> { where(created_at: Setting.archived_proposals_date_limit..) }
   scope :last_week,      -> { where(created_at: 7.days.ago..) }
   scope :retired,        -> { where.not(retired_at: nil) }
   scope :not_retired,    -> { where(retired_at: nil) }

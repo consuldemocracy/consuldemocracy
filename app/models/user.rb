@@ -95,7 +95,7 @@ class User < ApplicationRecord
   scope :moderators,     -> { joins(:moderator) }
   scope :organizations,  -> { joins(:organization) }
   scope :sdg_managers,   -> { joins(:sdg_manager) }
-  scope :officials,      -> { where("official_level > 0") }
+  scope :officials,      -> { where(official_level: 1..) }
   scope :male,           -> { where(gender: "male") }
   scope :female,         -> { where(gender: "female") }
   scope :newsletter,     -> { where(newsletter: true) }
