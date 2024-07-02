@@ -517,6 +517,9 @@ Rails/WhereNot:
 Rails/WhereNotWithMultipleConditions:
   Enabled: true
 
+Rails/WhereRange:
+  Enabled: true
+
 RSpec/AroundBlock:
   Enabled: true
 

@@ -44,7 +44,7 @@ class Poll < ApplicationRecord
 
   scope :for, ->(element) { where(related: element) }
   scope :current, -> { where("starts_at <= :time and ends_at >= :time", time: Time.current) }
-  scope :expired, -> { where("ends_at < ?", Time.current) }
+  scope :expired, -> { where(ends_at: ...Time.current) }
   scope :recounting, -> { where(ends_at: (RECOUNT_DURATION.ago)...Time.current) }
   scope :published, -> { where(published: true) }
   scope :by_geozone_id, ->(geozone_id) { where(geozones: { id: geozone_id }.joins(:geozones)) }
