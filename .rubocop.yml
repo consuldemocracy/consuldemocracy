@@ -574,6 +574,9 @@ RSpec/ExampleWording:
 RSpec/ExcessiveDocstringSpacing:
   Enabled: true
 
+RSpec/ExpectInLet:
+  Enabled: true
+
 RSpec/Focus:
   Enabled: true
 
