@@ -796,6 +796,11 @@ Style/StringLiterals:
 Style/StringLiteralsInInterpolation:
   EnforcedStyle: double_quotes
 
+Style/SuperArguments:
+  Enabled: true
+  Exclude:
+    - "config/initializers/ahoy.rb"
+
 Style/SymbolProc:
   Enabled: true
   AllowedMethods:
