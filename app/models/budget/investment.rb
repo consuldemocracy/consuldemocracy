@@ -78,8 +78,8 @@ class Budget
     scope :without_valuator,            -> { without_valuator_group.where(valuator_assignments_count: 0) }
     scope :under_valuation,             -> { valuation_open.valuating.with_admin }
     scope :managed,                     -> { valuation_open.where(valuator_assignments_count: 0).with_admin }
-    scope :with_valuator_assignments,   -> { where("valuator_assignments_count > 0") }
-    scope :with_group_assignments,      -> { where("valuator_group_assignments_count > 0") }
+    scope :with_valuator_assignments,   -> { where(valuator_assignments_count: 1..) }
+    scope :with_group_assignments,      -> { where(valuator_group_assignments_count: 1..) }
     scope :with_valuation_assignments,  -> { with_valuator_assignments.or(with_group_assignments) }
     scope :valuating,                   -> { valuation_open.with_valuation_assignments }
     scope :visible_to_valuators,        -> { where(visible_to_valuators: true) }
@@ -90,7 +90,7 @@ class Budget
     scope :not_unfeasible,              -> { where.not(feasibility: "unfeasible") }
     scope :undecided,                   -> { where(feasibility: "undecided") }
 
-    scope :with_supports,      -> { where("cached_votes_up > 0") }
+    scope :with_supports,      -> { where(cached_votes_up: 1..) }
     scope :selected,           -> { feasible.where(selected: true) }
     scope :compatible,         -> { where(incompatible: false) }
     scope :incompatible,       -> { where(incompatible: true) }
