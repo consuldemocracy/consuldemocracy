@@ -39,8 +39,8 @@ class Dashboard::Action < ApplicationRecord
   def self.active_for(proposal)
     published_at = proposal.published_at&.to_date || Date.current
 
-    active.where("required_supports <= ?", proposal.cached_votes_up)
-          .where("day_offset <= ?", (Date.current - published_at).to_i)
+    active.where(required_supports: ..proposal.cached_votes_up)
+          .where(day_offset: ..(Date.current - published_at).to_i)
           .by_proposal(proposal)
   end
 
@@ -105,12 +105,12 @@ class Dashboard::Action < ApplicationRecord
 
     def self.calculate_actions(proposal_votes, day_offset, proposal)
       Dashboard::Action.active
-                       .where("required_supports <= ?", proposal_votes)
-                       .where("day_offset <= ?", day_offset)
+                       .where(required_supports: ..proposal_votes)
+                       .where(day_offset: ..day_offset)
                        .by_published_proposal(proposal.published?)
     end
 
     def self.calculate_votes(proposal, date)
-      Vote.where(votable: proposal).where("created_at <= ?", date).count
+      Vote.where(votable: proposal).where(created_at: ..date).count
     end
 end

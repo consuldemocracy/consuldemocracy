@@ -233,13 +233,13 @@ class User < ApplicationRecord
 
   def full_restore
     ActiveRecord::Base.transaction do
-      Debate.restore_all debates.where("hidden_at >= ?", hidden_at)
-      Comment.restore_all comments.where("hidden_at >= ?", hidden_at)
-      Legislation::Proposal.restore_all legislation_proposals.only_hidden.where("hidden_at >= ?", hidden_at)
-      Proposal.restore_all proposals.where("hidden_at >= ?", hidden_at)
-      Budget::Investment.restore_all budget_investments.where("hidden_at >= ?", hidden_at)
+      Debate.restore_all debates.where(hidden_at: hidden_at..)
+      Comment.restore_all comments.where(hidden_at: hidden_at..)
+      Legislation::Proposal.restore_all legislation_proposals.only_hidden.where(hidden_at: hidden_at..)
+      Proposal.restore_all proposals.where(hidden_at: hidden_at..)
+      Budget::Investment.restore_all budget_investments.where(hidden_at: hidden_at..)
       ProposalNotification.restore_all(
-        ProposalNotification.only_hidden.where("hidden_at >= ?", hidden_at).where(author_id: id)
+        ProposalNotification.only_hidden.where(hidden_at: hidden_at..).where(author_id: id)
       )
 
       restore
