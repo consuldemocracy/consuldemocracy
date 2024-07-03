@@ -536,6 +536,9 @@ RSpec/Capybara/FeatureMethods:
     - scenario
     - xscenario
 
+RSpec/ChangeByZero:
+  Enabled: true
+
 RSpec/ContextMethod:
   Enabled: true
 
