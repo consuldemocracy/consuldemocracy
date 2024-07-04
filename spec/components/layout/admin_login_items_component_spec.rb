@@ -15,6 +15,15 @@ describe Layout::AdminLoginItemsComponent do
     expect(page).not_to be_rendered
   end
 
+  it "is not rendered when multitenancy_management_mode is enabled" do
+    allow(Rails.application.config).to receive(:multitenancy_management_mode).and_return(true)
+    user = create(:administrator).user
+
+    render_inline Layout::AdminLoginItemsComponent.new(user)
+
+    expect(page).not_to be_rendered
+  end
+
   it "shows access to all places except officing to administrators" do
     user = create(:administrator).user
 
