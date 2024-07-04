@@ -114,16 +114,16 @@ describe "Proposals" do
   end
 
   scenario "Show" do
-    proposal = create(:proposal)
+    proposal = create(:proposal, author: create(:user, username: "Mark Twain"))
 
     visit proposal_path(proposal)
 
     expect(page).to have_content proposal.title
     expect(page).to have_content proposal.code
     expect(page).to have_content "Proposal description"
-    expect(page).to have_content proposal.author.name
+    expect(page).to have_content "Mark Twain"
     expect(page).to have_content I18n.l(proposal.created_at.to_date)
-    expect(page).to have_css avatar(proposal.author.name)
+    expect(page).to have_avatar "M"
     expect(page.html).to include "<title>#{proposal.title}</title>"
     expect(page).not_to have_css ".js-flag-actions"
     expect(page).not_to have_css ".js-follow"
@@ -301,23 +301,30 @@ describe "Proposals" do
   context "Embedded video" do
     scenario "Show YouTube video" do
       proposal = create(:proposal, video_url: "http://www.youtube.com/watch?v=a7UFm6ErMPU")
+
       visit proposal_path(proposal)
-      expect(page).to have_css "div[id='js-embedded-video']"
-      expect(page.html).to include "https://www.youtube.com/embed/a7UFm6ErMPU"
+
+      within "#js-embedded-video" do
+        expect(page).to have_css "iframe[src='https://www.youtube-nocookie.com/embed/a7UFm6ErMPU']"
+      end
     end
 
     scenario "Show Vimeo video" do
       proposal = create(:proposal, video_url: "https://vimeo.com/7232823")
+
       visit proposal_path(proposal)
-      expect(page).to have_css "div[id='js-embedded-video']"
-      expect(page.html).to include "https://player.vimeo.com/video/7232823"
+
+      within "#js-embedded-video" do
+        expect(page).to have_css "iframe[src='https://player.vimeo.com/video/7232823?dnt=1']"
+      end
     end
 
     scenario "Dont show video" do
       proposal = create(:proposal, video_url: nil)
 
       visit proposal_path(proposal)
-      expect(page).not_to have_css "div[id='js-embedded-video']"
+
+      expect(page).not_to have_css "#js-embedded-video"
     end
   end
 
@@ -1353,8 +1360,8 @@ describe "Proposals" do
 
   context "Filter" do
     context "By geozone" do
-      let(:california) { Geozone.create(name: "California") }
-      let(:new_york)   { Geozone.create(name: "New York") }
+      let(:california) { create(:geozone, :with_html_coordinates, name: "California") }
+      let(:new_york)   { create(:geozone, name: "New York") }
 
       before do
         create(:proposal, geozone: california, title: "Bigger sequoias")
@@ -1362,14 +1369,11 @@ describe "Proposals" do
         create(:proposal, geozone: new_york, title: "Sully monument")
       end
 
-      scenario "From map", :no_js do
+      scenario "From map" do
         visit proposals_path
 
         click_link "map"
-        within("#html_map") do
-          url = find("area[title='California']")[:href]
-          visit url
-        end
+        within("#html_map") { find("area[title='California']").click }
 
         within("#proposals") do
           expect(page).to have_css(".proposal", count: 2)

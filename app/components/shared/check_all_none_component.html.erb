@@ -1,0 +1,12 @@
+<ul class="check-all-none">
+  <li>
+    <%= button_tag t("shared.check_all"),
+                   type: "button",
+                   data: { field_name: field_name, check_all: true } %>
+  </li>
+  <li>
+    <%= button_tag t("shared.check_none"),
+                   type: "button",
+                   data: { field_name: field_name, check_none: true } %>
+  </li>
+</ul>

@@ -1,6 +1,11 @@
-require_dependency Rails.root.join("app", "models", "user").to_s
+load Rails.root.join("app", "models", "user.rb")
 
 class User < ApplicationRecord
+
+
+def send_devise_notification(notification, *)
+    devise_mailer.send(notification, self, *args).deliver_later
+end
 
 
 def erase(erase_reason = nil)

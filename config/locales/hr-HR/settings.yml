@@ -112,8 +112,6 @@ hr:
       allow_attached_documents_description: "Dopušta korisnicima učitavanje dokumenata kada žele stvoriti prijedloge i investicijske projekte iz Participativnog Budžeta"
       guides: "Priručnik za stvaranje prijedloga ili investicijskih projekata"
       guides_description: "Prikazuje priručnik za različite prijedloge i investicijske projekte ukoliko postoje aktivni participativni budžet"
-      public_stats: "Javne statistike"
-      public_stats_description: "Prikazuje javne statistike u Administrativnom panelu"
       help_page: "Stranica za pomoć"
       help_page_description: 'Prikazuje izbornik Pomoć koji sadrži stranicu s odjeljkom s informacijama o svakoj omogućenoj značajki. U odjeljcima "Prilagođene stranice" i "Blokovi za prilagođeni sadržaj" mogu se izraditi prilagođene stranice i izbornici'
       remote_translations: "Prijevod na daljinu"

@@ -112,8 +112,6 @@ ca:
       allow_attached_documents_description: "Permet als usuaris penjar documents quan creen propostes i projectes d’inversió dels pressupostos participatius"
       guides: "Guies per crear propostes o projectes d’inversió"
       guides_description: "Mostra una guia de diferències entre les propostes i els projectes d’inversió si hi ha un pressupost participatiu actiu"
-      public_stats: "Estadístiques públiques"
-      public_stats_description: "Mostra les estadístiques públiques al tauler d’administració"
       help_page: "Pàgina d’ajuda"
       help_page_description: 'Mostra un menú d''ajuda que conté una pàgina amb una secció d''informació sobre cada funció habilitada. També es poden crear pàgines i menús personalitzats al directori "Custom pages" i  "Custom content blocks" seccions'
       remote_translations: "Traducció remota"

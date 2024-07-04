@@ -112,8 +112,6 @@ oc:
       allow_attached_documents_description: "Permet als usatgièrs penjar de documents quand crèan de proposicions e projèctas d’inversion dels budgèts participatius"
       guides: "de Guidas per crear de proposicions o projèctas d’inversion"
       guides_description: "Mòstra una guida de diferéncias entre las proposicions e los projèctes d’inversion s'i a un budgèt participatiu actiu"
-      public_stats: "Estatisticas publicas"
-      public_stats_description: "Mòstra las estatisticas publicas al tauler d’administracion"
       help_page: "Pagina d’ajuda"
       help_page_description: 'Mòstra un menu d''ajuda que conten una pagina amb una seccion d''informacion sus cada foncion abilitada. Se pòdon tanben crear de paginas e de menus personalizats al directòri "Custom pages" i  "Custom content blocks" de seccions'
       remote_translations: "Traduccion remota"

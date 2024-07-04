@@ -10,8 +10,8 @@ module ApplicationHelper
     %i[ar fa he].include?(locale)
   end
 
-  def markdown(text, **render_options)
-    MarkdownConverter.new(text, **render_options).render
+  def markdown(...)
+    MarkdownConverter.new(...).render
   end
 
   def wysiwyg(text)
@@ -46,8 +46,8 @@ module ApplicationHelper
     end
   end
 
-  def content_block(name, locale = I18n.locale)
-    SiteCustomization::ContentBlock.block_for(name, locale)
+  def content_block(...)
+    SiteCustomization::ContentBlock.block_for(...)
   end
 
   def self.asset_data_base64(path)

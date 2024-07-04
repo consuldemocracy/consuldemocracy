@@ -3,7 +3,7 @@
     <%= t("budgets.investments.index.sidebar.my_ballot") %>
   </h2>
 
-  <% if ballot.investments.by_heading(heading.id).count > 0 %>
+  <% if investments.count > 0 %>
     <p>
       <em><%= sanitize(ballot.voted_info(heading)) %></em>
     </p>
@@ -32,7 +32,7 @@
   <ul class="ballot-list">
     <% if heading %>
       <%= render Budgets::Ballot::InvestmentForSidebarComponent.with_collection(
-        ballot.investments.by_heading(heading.id),
+        investments,
         investment_ids: investment_ids
       ) %>
     <% end %>

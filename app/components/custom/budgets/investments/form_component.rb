@@ -1,6 +1,6 @@
 class Budgets::Investments::FormComponent < ApplicationComponent; end
 
-require_dependency Rails.root.join("app", "components", "custom", "budgets", "investments", "form_component").to_s
+load Rails.root.join("app", "components", "custom", "budgets", "investments", "form_component.rb")
 class Budgets::Investments::FormComponent < ApplicationComponent
   include TranslatableFormHelper
   include GlobalizeHelper

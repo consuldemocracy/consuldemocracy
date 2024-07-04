@@ -1,3 +1,18 @@
+ActsAsTaggableOn.setup do |config|
+  # This works because the classes where the base class is a concern, Tag and Tagging
+  # are autoloaded, and won't be started until after the initializers run. The value
+  # must be a String, as the Rails Zeitwerk autoloader will not allow models to be
+  # referenced at initialization time.
+  #
+  # config.base_class = "ApplicationRecord"
+end
+
+Rails.application.reloader.to_prepare do
+  ActsAsTaggableOn::Tag.class_eval do
+    include Graphqlable
+  end
+end
+
 module ActsAsTaggableOn
   Tagging.class_eval do
     after_create :increment_tag_custom_counter
@@ -29,8 +44,6 @@ module ActsAsTaggableOn
     def category?
       kind == "category"
     end
-
-    include Graphqlable
 
     scope :public_for_api, -> do
       where(

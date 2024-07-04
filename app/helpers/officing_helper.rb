@@ -8,11 +8,11 @@ module OfficingHelper
     options_for_select(options, params[:oa])
   end
 
-  def answer_result_value(question_id, answer_index)
+  def answer_result_value(question_id, option_index)
     return nil if params.blank?
     return nil if params[:questions].blank?
     return nil if params[:questions][question_id.to_s].blank?
 
-    params[:questions][question_id.to_s][answer_index.to_s]
+    params[:questions][question_id.to_s][option_index.to_s]
   end
 end

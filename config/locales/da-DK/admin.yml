@@ -561,7 +561,6 @@ da:
         index:
           title: Kladdeversion
           create: Opret version
-          delete: Slet
           preview: Forhåndsvisning
         new:
           back: Tilbage
@@ -594,7 +593,6 @@ da:
           back: Tilbage
           title: Spørgsmål relateret til denne proces
           create: Stil et spørgsmål
-          delete: Slet
         new:
           back: Tilbage
           title: Stil et nyt spørgsmål
@@ -1311,7 +1309,6 @@ da:
           verified_users_who_didnt_vote_proposals: Verificerede brugere, der ikke stemte på nogle forslag
           visits: Besøg
           votes: Sammenlagt antal stemmer
-        budgets_title: Deltagerbudget
         participatory_budgets: Deltagerbudgetter
         direct_messages: Direkte beskeder
         proposal_notifications: Underretning om forslag
@@ -1320,7 +1317,6 @@ da:
         sdg: Verdensmål
       graph:
         debate_created: Debatforum
-        visit: Besøg
         proposal_created: Borgerforslag
       budgets:
         supporting_phase: Støt de forslag der skal gå videre
@@ -1425,7 +1421,6 @@ da:
         index:
           title: Brugerdefinerede billeder
           update: Opdater
-          delete: Slet
           image: Billede
         update:
           notice: Billedet blev opdateret

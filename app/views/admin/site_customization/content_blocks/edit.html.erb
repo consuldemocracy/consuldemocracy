@@ -4,10 +4,14 @@
 
 <%= back_link_to admin_site_customization_content_blocks_path %>
 
-<%= link_to t("admin.site_customization.content_blocks.index.delete"),
-            (@is_heading_content_block ? admin_site_customization_delete_heading_content_block_path(@content_block.id) : admin_site_customization_content_block_path(@content_block)),
-            method: :delete,
-            class: "delete float-right" %>
+<%= render Admin::ActionComponent.new(
+  :destroy,
+  @content_block,
+  text: t("admin.site_customization.content_blocks.index.delete"),
+  path: (@is_heading_content_block ? admin_site_customization_delete_heading_content_block_path(@content_block.id) : admin_site_customization_content_block_path(@content_block)),
+  confirm: true,
+  class: "delete float-right"
+) %>
 
 <div class="small-12 column">
   <h2><%= t("admin.site_customization.content_blocks.edit.title") %></h2>

@@ -10,6 +10,7 @@
 //= link stat_graphs.js
 //= link dashboard_graphs.js
 //= link dashboard_poster.css
+//= link noscript.css
 //= link print.css
 //= link pdf_fonts.css
 //= link_tree ../../../vendor/assets/images

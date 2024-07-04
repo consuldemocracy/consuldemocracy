@@ -30,13 +30,13 @@
   </div>
 
   <div class="row">
-    <% unless card.header? %>
-      <div class="column">
-        <%= f.label :columns %>
-        <p class="help-text"><%= t("admin.site_customization.pages.cards.columns_help") %></p>
-        <div class="small-12 medium-4 large-2">
-          <%= f.select :columns, (1..12), label: false %>
-        </div>
+    <% unless card.header_or_sdg_header? %>
+      <div class="small-12 medium-6 column">
+        <%= f.select :columns, (1..12), hint: t("admin.site_customization.pages.cards.columns_help") %>
+      </div>
+
+      <div class="small-12 medium-6 column">
+        <%= f.number_field :order, min: 1, hint: t("admin.site_customization.pages.cards.order_help") %>
       </div>
     <% end %>
   </div>
@@ -50,7 +50,7 @@
     </div>
     <div class="column">
       <%= f.submit(
-        t("admin.homepage.#{admin_submit_action(card)}.#{card.header? ? "submit_header" : "submit_card"}"),
+        t("admin.homepage.#{admin_submit_action(card)}.#{card.header_or_sdg_header? ? "submit_header" : "submit_card"}"),
         class: "button success"
       ) %>
     </div>

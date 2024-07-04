@@ -1,7 +1,7 @@
-<main class="topic-edit">
-  <%= back_link_to community_path(@community) %>
+<% provide :main_class, "topic-edit" %>
 
-  <h1><%= t("community.topic.edit") %></h1>
+<%= back_link_to community_path(@community) %>
 
-  <%= render "form" %>
-</main>
+<h1><%= t("community.topic.edit") %></h1>
+
+<%= render "form" %>

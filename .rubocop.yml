@@ -10,7 +10,8 @@ AllCops:
   DisplayStyleGuide: true
   Exclude:
     - "db/schema.rb"
-    - "lib/ckeditor/backend/active_storage.rb"
+    - "app/lib/ckeditor/backend/active_storage.rb"
+    - "vendor/**/*"
   DisabledByDefault: true
 
 Bundler/DuplicatedGem:
@@ -22,12 +23,14 @@ Bundler/OrderedGems:
 
 Capybara/ClickLinkOrButtonStyle:
   Enabled: true
+  EnforcedStyle: strict
 
 Capybara/CurrentPathExpectation:
   Enabled: true
 
 Capybara/NegationMatcher:
   Enabled: true
+  EnforcedStyle: not_to
 
 Capybara/RSpec/HaveSelector:
   Enabled: true
@@ -161,6 +164,7 @@ Layout/LineLength:
     - "config/environments/staging.rb"
     - "config/initializers/devise.rb"
     - "config/initializers/backtrace_silencers.rb"
+    - "config/initializers/active_storage_message_and_cookie_rotator.rb"
     - "db/migrate/*create_delayed_jobs.rb"
     - "db/migrate/*create_active_storage_variant_records.active_storage.rb"
     - "app/models/budget/stats.rb"
@@ -350,9 +354,6 @@ Performance/EndWith:
 Performance/StartWith:
   Enabled: true
 
-Performance/StringIdentifierArgument:
-  Enabled: true
-
 Performance/Sum:
   Enabled: true
 
@@ -396,6 +397,8 @@ Rails/FindBy:
   Enabled: true
   Include:
     - "**/*.rb"
+  Exclude:
+    - "config/initializers/ahoy.rb"
 
 Rails/FindEach:
   Enabled: true
@@ -478,7 +481,7 @@ Rails/SkipsModelValidations:
     - update_attribute
   Exclude:
     - app/models/tenant.rb
-    - lib/acts_as_paranoid_aliases.rb
+    - app/lib/acts_as_paranoid_aliases.rb
 
 Rails/TimeZone:
   Enabled: true
@@ -503,6 +506,9 @@ Rails/Validation:
   Enabled: true
 
 Rails/WhereEquals:
+  Enabled: true
+
+Rails/WhereMissing:
   Enabled: true
 
 Rails/WhereNot:
@@ -569,6 +575,7 @@ RSpec/InstanceVariable:
   Enabled: true
   Exclude:
     - spec/controllers/concerns/has_orders_spec.rb
+    - spec/form_builders/translatable_form_builder_spec.rb
 
 RSpec/LetBeforeExamples:
   Enabled: true
@@ -640,6 +647,9 @@ Style/AccessorGrouping:
   Enabled: true
 
 Style/AndOr:
+  Enabled: true
+
+Style/ArgumentsForwarding:
   Enabled: true
 
 Style/ArrayCoercion:
@@ -760,6 +770,9 @@ Style/RedundantStringEscape:
   Enabled: true
 
 Style/SafeNavigation:
+  Enabled: true
+
+Style/SingleLineDoEndBlock:
   Enabled: true
 
 Style/SingleLineMethods:

@@ -441,15 +441,6 @@ el:
       image:
         title: Τίτλος
         attachment: "Επισύναψη"
-      poll/question/answer:
-        title: Απάντηση
-        description: Περιγραφή
-      poll/question/answer/translation:
-        title: Απάντηση
-        description: "Περιγραφή"
-      poll/question/answer/video:
-        title: Τίτλος
-        url: Εξωτερικό βίντεο
       newsletter:
         segment_recipient: Παραλήπτες
         subject: Θέμα

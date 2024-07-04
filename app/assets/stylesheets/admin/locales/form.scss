@@ -1,0 +1,43 @@
+.admin .locales-form {
+  label {
+    display: table;
+  }
+
+  select {
+    width: auto;
+  }
+
+  .help-text {
+    display: block;
+  }
+
+  > select + fieldset,
+  > fieldset + fieldset {
+    margin-top: $line-height / 2;
+  }
+
+  > [type="hidden"] + fieldset,
+  > fieldset + fieldset {
+    @include admin-fieldset-separator;
+    padding-top: calc(#{$line-height} / 4);
+  }
+
+  .collection-radio-buttons,
+  .collection-check-boxes {
+    column-gap: rem-calc(map-get($grid-column-gutter, medium));
+    column-width: 13rem;
+    max-width: max-content;
+
+    @each $elements in 10, 15, 20, 25, 30 {
+      &:has(label:nth-of-type(#{$elements})) {
+        column-count: calc(#{$elements} / 5);
+      }
+    }
+  }
+
+  [type="submit"] {
+    @include regular-button;
+    display: block;
+    margin-top: $line-height;
+  }
+}

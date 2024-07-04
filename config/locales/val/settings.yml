@@ -96,8 +96,6 @@ val:
       allow_attached_documents_description: "Permet que els usuaris pujen documents al crear propostes i projectes d'inversió dels Pressupostos paticipatius"
       guides: "Guies per a crear propostes o projectes d'inversió"
       guides_description: "Mostra la guia de diferències entre les propostes i els projectes d'inversió si hi ha un pressupost participatiu actiu"
-      public_stats: "Estadístiques públiques"
-      public_stats_description: "Mostra les estadístiques públiques en el panell d'Administració"
       help_page: "Pàgina d'ajuda"
       help_page_description: 'Mostra un menú Ajuda que conté una pàgina amb una secció d''informació sobre cada funcionalitat habilitada'
     map:

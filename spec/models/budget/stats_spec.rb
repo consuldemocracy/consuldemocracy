@@ -157,27 +157,77 @@ describe Budget::Stats do
   end
 
   describe "#participants_by_age" do
-    before do
+    it "returns the age groups hash" do
       [21, 22, 23, 23, 34, 42, 43, 44, 50, 51].each do |age|
-        create(:user, date_of_birth: age.years.ago)
+        create(:user, date_of_birth: budget.phases.balloting.ends_at - age.years - rand(0..11).months)
       end
 
       allow(stats).to receive(:participants).and_return(User.all)
+
+      expect(stats.participants_by_age["16 - 19"][:count]).to eq 0
+      expect(stats.participants_by_age["20 - 24"][:count]).to eq 4
+      expect(stats.participants_by_age["25 - 29"][:count]).to eq 0
+      expect(stats.participants_by_age["30 - 34"][:count]).to eq 1
+      expect(stats.participants_by_age["35 - 39"][:count]).to eq 0
+      expect(stats.participants_by_age["40 - 44"][:count]).to eq 3
+      expect(stats.participants_by_age["45 - 49"][:count]).to eq 0
+      expect(stats.participants_by_age["50 - 54"][:count]).to eq 2
+      expect(stats.participants_by_age["55 - 59"][:count]).to eq 0
+      expect(stats.participants_by_age["60 - 64"][:count]).to eq 0
+      expect(stats.participants_by_age["65 - 69"][:count]).to eq 0
+      expect(stats.participants_by_age["70 - 74"][:count]).to eq 0
     end
 
-    it "returns the age groups hash" do
-      expect(stats.participants_by_age["16 - 19"][:count]).to be 0
-      expect(stats.participants_by_age["20 - 24"][:count]).to be 4
-      expect(stats.participants_by_age["25 - 29"][:count]).to be 0
-      expect(stats.participants_by_age["30 - 34"][:count]).to be 1
-      expect(stats.participants_by_age["35 - 39"][:count]).to be 0
-      expect(stats.participants_by_age["40 - 44"][:count]).to be 3
-      expect(stats.participants_by_age["45 - 49"][:count]).to be 0
-      expect(stats.participants_by_age["50 - 54"][:count]).to be 2
-      expect(stats.participants_by_age["55 - 59"][:count]).to be 0
-      expect(stats.participants_by_age["60 - 64"][:count]).to be 0
-      expect(stats.participants_by_age["65 - 69"][:count]).to be 0
-      expect(stats.participants_by_age["70 - 74"][:count]).to be 0
+    it "returns stats based on what happened when the voting took place" do
+      budget = travel_to(50.years.ago) { create(:budget, :finished) }
+
+      [21, 22, 23, 23, 34, 42, 43, 44, 50, 51].each do |age|
+        create(:user, date_of_birth: budget.phases.balloting.ends_at - age.years - rand(0..11).months)
+      end
+
+      stats = Budget::Stats.new(budget)
+      allow(stats).to receive(:participants).and_return(User.all)
+
+      expect(stats.participants_by_age["16 - 19"][:count]).to eq 0
+      expect(stats.participants_by_age["20 - 24"][:count]).to eq 4
+      expect(stats.participants_by_age["25 - 29"][:count]).to eq 0
+      expect(stats.participants_by_age["30 - 34"][:count]).to eq 1
+      expect(stats.participants_by_age["35 - 39"][:count]).to eq 0
+      expect(stats.participants_by_age["40 - 44"][:count]).to eq 3
+      expect(stats.participants_by_age["45 - 49"][:count]).to eq 0
+      expect(stats.participants_by_age["50 - 54"][:count]).to eq 2
+      expect(stats.participants_by_age["55 - 59"][:count]).to eq 0
+      expect(stats.participants_by_age["60 - 64"][:count]).to eq 0
+      expect(stats.participants_by_age["65 - 69"][:count]).to eq 0
+      expect(stats.participants_by_age["70 - 74"][:count]).to eq 0
+    end
+  end
+
+  describe "#participation_date", :with_frozen_time do
+    let(:budget) do
+      create(:budget).tap do |budget|
+        budget.phases.informing.update!(starts_at: 10.months.ago, ends_at: 9.months.ago)
+        budget.phases.accepting.update!(starts_at: 9.months.ago, ends_at: 8.months.ago)
+        budget.phases.reviewing.update!(starts_at: 8.months.ago, ends_at: 7.months.ago)
+        budget.phases.selecting.update!(starts_at: 7.months.ago, ends_at: 6.months.ago)
+        budget.phases.valuating.update!(starts_at: 6.months.ago, ends_at: 5.months.ago)
+        budget.phases.publishing_prices.update!(starts_at: 5.months.ago, ends_at: 4.months.ago)
+        budget.phases.balloting.update!(starts_at: 4.months.ago, ends_at: 3.months.ago)
+        budget.phases.reviewing_ballots.update!(starts_at: 3.months.ago, ends_at: 2.months.ago)
+        budget.phases.finished.update!(starts_at: 2.months.ago, ends_at: 1.month.ago)
+      end
+    end
+
+    it "returns the date when balloting ended on finished budgets" do
+      budget.update!(phase: "finished")
+
+      expect(stats.participation_date).to eq 3.months.ago
+    end
+
+    it "returns the date when selecting ended on unfinished budgets" do
+      budget.update!(phase: "reviewing_ballots")
+
+      expect(stats.participation_date).to eq 6.months.ago
     end
   end
 

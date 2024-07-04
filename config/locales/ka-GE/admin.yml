@@ -545,7 +545,6 @@ ka:
         index:
           title: კანონპროექტები
           create: ვერსიის შექმნა
-          delete: წაშლა
           preview: ესკიზი
         new:
           back: უკან
@@ -578,7 +577,6 @@ ka:
           back: უკან
           title: ამ პროცესთან დაკავშირებული კითხვები
           create: შეკითხვის შექმნა
-          delete: წაშლა
         new:
           back: უკან
           title: ახალი შეკითხვის შექმნა
@@ -1316,7 +1314,6 @@ ka:
           verified_users_who_didnt_vote_proposals: გადამოწმებული მომხმარებლები, რომლებმაც ხმა არ მისცეს ინიციატივებს
           visits: ვიზიტები
           votes: ხმების საერთო რაოდენობა
-        budgets_title: მონაწილეობითი ბიუჯეტირება
         participatory_budgets: მონაწილეობითი ბიუჯეტები
         direct_messages: პირდაპირი გზავნილები
         proposal_notifications: შეტყობინებები ინიციატივის თაობაზე
@@ -1324,8 +1321,6 @@ ka:
         polls: ხმის მიცემის პროცესები
       graph:
         debate_created: დებატი
-        visit: ვიზიტები
-        level_2_user: მე-2 დონის მომხმარებლები
         proposal_created: მოქალაქის წინადადება
       budgets:
         no_data_before_balloting_phase: "კენჭისყრის ფაზამდე საჩვენებელი მონაცემები არ მოიძებნა."
@@ -1432,7 +1427,6 @@ ka:
         index:
           title: პერსონალური სურათები
           update: განახლება
-          delete: წაშლა
           image: ფოტოსურათი
         update:
           notice: ფოტოსურათი წარმატებით შეიცვალა

@@ -560,7 +560,6 @@ el:
         index:
           title: Εκδόσεις προσχεδίου
           create: Δημιουργία έκδοσης
-          delete: Διαγραφή
           preview: Προεπισκόπηση
         new:
           back: Πίσω
@@ -593,7 +592,6 @@ el:
           back: Πίσω
           title: Ερωτήσεις που σχετίζονται με αυτήν τη διαδικασία
           create: Δημιουργία ερώτησης
-          delete: Διαγραφή
         new:
           back: Πίσω
           title: Δημιουργία νέας ερώτησης
@@ -1292,7 +1290,6 @@ el:
           verified_users_who_didnt_vote_proposals: Επαληθευμένοι χρήστες που δεν ψήφισαν προτάσεις
           visits: Επισκέψεις
           votes: Συνολικοί ψήφοι
-        budgets_title: Συμμετοχικός προϋπολογισμός
         participatory_budgets: Συμμετοχικοί προϋπολογισμοί
         direct_messages: Άμεσα μηνύματα
         proposal_notifications: Ειδοποιήσεις προτάσεων
@@ -1301,8 +1298,6 @@ el:
         sdg: ΣΒΑ
       graph:
         debate_created: Συζητήσεις
-        visit: Επισκέψεις
-        level_2_user: Χρήστες δεύτερου επιπέδου
         proposal_created: Προτάσεις πολιτών
       budgets:
         title: "Συμμετοχικοί Προϋπολογισμοί - Στατιστικά Συμμετοχής"
@@ -1408,7 +1403,6 @@ el:
         index:
           title: Προσαρμοσμένες εικόνες
           update: Ενημέρωση
-          delete: Διαγραφή
           image: Εικόνα
         update:
           notice: Η εικόνα ενημερώθηκε με επιτυχία

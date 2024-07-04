@@ -5,11 +5,11 @@ class Polls::Results::QuestionComponent < ApplicationComponent
     @question = question
   end
 
-  def answer_styles(answer)
-    "win" if most_voted_answer?(answer)
+  def option_styles(option)
+    "win" if most_voted_option?(option)
   end
 
-  def most_voted_answer?(answer)
-    answer.id == question.most_voted_answer_id
+  def most_voted_option?(option)
+    option.id == question.most_voted_option_id
   end
 end

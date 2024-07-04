@@ -140,7 +140,6 @@ zh-TW:
     budget/investment: 投資
     budget/heading: 預算標題
     poll/shift: 輪班
-    poll/question/answer: 回答
     user: 帳戶
     verification/sms: 電話
     signature_sheet: 簽名表
@@ -408,7 +407,6 @@ zh-TW:
         support_button: 支持此建議
   polls:
     all: "所有"
-    no_dates: "未分配日期"
     dates: "從%{open_at} 到%{closed_at}"
     final_date: "最終驗票/結果"
     index:
@@ -500,7 +498,6 @@ zh-TW:
     author_info:
       author_deleted: 用戶已刪除
     back: 返回
-    check: 選擇
     check_all: 所有
     check_none: 無
     collective: 集體
@@ -562,18 +559,6 @@ zh-TW:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: 訪問
-      debates: 辯論
-      proposals: 建議
-      comments: 評論
-      proposal_votes: 對建議的投票數
-      debate_votes: 對辯論的投票數
-      comment_votes: 對評論的投票數
-      votes: 投票總數
-      verified_users: 已核實的用戶
-      unverified_users: 未經核實的用戶
   unauthorized:
     default: 您沒有權限訪問此頁面。
     manage:

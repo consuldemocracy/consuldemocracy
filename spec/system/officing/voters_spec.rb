@@ -74,8 +74,7 @@ describe "Voters" do
                   document_number: "12345678Z")
     expect(user).not_to be_level_two_verified
 
-    visit root_path
-    click_link "Sign out"
+    logout
     login_through_form_as_officer(officer.user)
 
     visit new_officing_residence_path

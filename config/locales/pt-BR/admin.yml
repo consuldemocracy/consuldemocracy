@@ -553,7 +553,6 @@ pt-BR:
         index:
           title: Versões preliminares
           create: Criar versão
-          delete: Apagar
           preview: Prévia
         new:
           back: Voltar
@@ -586,7 +585,6 @@ pt-BR:
           back: Voltar
           title: Perguntas associadas a esse processo
           create: Criar questão
-          delete: Apagar
         new:
           back: Voltar
           title: Criar nova pergunta
@@ -1338,7 +1336,6 @@ pt-BR:
           verified_users_who_didnt_vote_proposals: Usuários verificados que não votaram em propostas
           visits: Visitas
           votes: Total de votos
-        budgets_title: Orçamento participativo
         participatory_budgets: Orçamentos Participativos
         direct_messages: Mensagens diretas
         proposal_notifications: Notificações de proposta
@@ -1347,8 +1344,6 @@ pt-BR:
         sdg: ODS (SDG)
       graph:
         debate_created: Debates
-        visit: Visitas
-        level_2_user: Usuários de nível 2
         proposal_created: Propostas dos cidadãos
       budgets:
         no_data_before_balloting_phase: "Não há dados a mostrar antes da fase de votação."
@@ -1460,7 +1455,6 @@ pt-BR:
         index:
           title: Imagens personalizadas
           update: Atualizar
-          delete: Apagar
           image: Imagem
         update:
           notice: Imagem atualizada com sucesso

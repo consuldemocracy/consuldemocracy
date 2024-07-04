@@ -155,10 +155,10 @@ tr:
           one: 1 destek
           other: "%{count} destek"
       header:
-        check_ballot: "Oyumu gönder"
+        check_ballot: "Oyumu kontrol et"
         different_heading_assigned: "Başka bir bütçe kaleminde etkin oylarınız var: %{heading_link}"
         change_ballot: "Fikrinizi değiştirirseniz %{check_ballot} oyunuzu kaldırıp baştan başlayabilirsiniz."
-        check_ballot_link: "oyumu gönder"
+        check_ballot_link: "oyumu kontrol et"
         price: "Toplam bütçe"
       votes:
         already_supported: "Bu yatırım projesini zaten desteklediniz. Paylaşın!"

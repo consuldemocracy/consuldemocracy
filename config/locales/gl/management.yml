@@ -34,6 +34,7 @@ gl:
         info: Dende aquí podes xestionar usuarios a través das accións listadas no menú da esquerda.
     document_verifications:
       already_verified: Esta conta de usuario xa está verificada.
+      has_no_account: Para crear unha conta, entra en %{link} e preme en <b>'Rexistrarse'</b> na parte superior esquerda da pantalla.
       link: CONSUL DEMOCRACY
       in_census_has_following_permissions: "Este usuario pode participar no Portal de Goberno Aberto do Concello de Madrid coas seguintes posibilidades:"
       not_in_census: Este documento non está rexistrado no Padrón Municipal de Madrid.
@@ -88,6 +89,7 @@ gl:
       alert:
         unverified_user: Este usuario non ten a conta verificada
       create: Crear un proxecto de gasto
+      edit: Modificar proxecto de gasto
       filters:
         heading: Concepto
         unfeasible: Proxectos non factibles
@@ -97,6 +99,7 @@ gl:
         one: " conteñen os termos '%{search_term}'"
         other: " conteñen os termos '%{search_term}'"
     sessions:
+      need_managed_user: Para levar a cabo esta acción debes seleccionar un usuario
       signed_out: Cerraches a sesión correctamente.
       signed_out_managed_user: Cerrouse correctamente a sesión do usuario.
     username_label: Nome de usuario/a

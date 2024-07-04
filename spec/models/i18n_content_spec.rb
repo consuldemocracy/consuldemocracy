@@ -160,6 +160,17 @@ RSpec.describe I18nContent do
     end
 
     it "does not store new keys for disabled translations" do
+      Setting["locales.default"] = "es"
+      Setting["locales.enabled"] = "es"
+
+      I18nContent.update([{ id: "shared.yes", values: { "value_en" => "Oh, yeah" }}])
+
+      expect(I18nContent.all).to be_empty
+    end
+
+    it "uses different enabled translations when given a parameter" do
+      Setting["locales.enabled"] = "en es"
+
       I18nContent.update([{ id: "shared.yes", values: { "value_en" => "Oh, yeah" }}], [:es])
 
       expect(I18nContent.all).to be_empty

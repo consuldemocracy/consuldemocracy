@@ -161,7 +161,6 @@ it:
     legislation/process: processo
     legislation/question: questione
     poll/shift: Turno
-    poll/question/answer: Risposta
     user: Account
     verification/sms: telefono
     signature_sheet: Foglio firme
@@ -566,7 +565,6 @@ it:
         share: "E se mi facessi anche il grande favore di condividere la mia proposta coi tuoi amici, la tua famiglia e i tuoi contatti, sarebbe perfetto!"
   polls:
     all: "Tutti"
-    no_dates: "nessuna data assegnata"
     dates: "Dal %{open_at} al %{closed_at}"
     final_date: "Scrutinio finale/Risultati"
     index:
@@ -671,7 +669,6 @@ it:
       author_deleted: Utente cancellato
       email_deleted: Email eliminata
     back: Indietro
-    check: Selezionare
     check_all: Tutti
     check_none: Nessuno
     collective: Associazione
@@ -758,18 +755,6 @@ it:
     youtube: "YouTube di %{org}"
     telegram: "Telegram di %{org}"
     instagram: "Instagram di %{org}"
-  stats:
-    index:
-      visits: Visite
-      debates: Dibattiti
-      proposals: Proposte
-      comments: Commenti
-      proposal_votes: Voti su proposte
-      debate_votes: Voti su dibattiti
-      comment_votes: Voti su commenti
-      votes: Voti totali
-      verified_users: Utenti verificati
-      unverified_users: Utenti non verificati
   unauthorized:
     default: Non hai l’autorizzazione per accedere a questa pagina.
     manage:
