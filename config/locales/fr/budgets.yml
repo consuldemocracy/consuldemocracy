@@ -178,6 +178,9 @@ fr:
       title: "Liste des projets"
     show:
       see_results: Voir les résultats
+    supports_info:
+      different: "Vous pouvez soutenir autant de projets différents que vous le souhaitez."
+      next: "Soutenez les projets que vous souhaitez pour les voir progresser en phase suivante."
     results:
       link: Résultats
       page_title: "%{budget} - Résultats"
