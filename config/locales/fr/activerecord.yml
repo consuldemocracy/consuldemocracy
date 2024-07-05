@@ -145,6 +145,9 @@ fr:
       local_census_record:
         one: Donnée du recensement local
         other: Données du recensement local
+      votation_type:
+        one: Type de scrutin
+        other: Types de scrutins
     attributes:
       budget:
         name: "Nom"
@@ -160,6 +163,7 @@ fr:
         voting_style: "Style du vote final"
         voting_style_knapsack: "Sac à dos"
         voting_style_approval: "Approbation"
+        hide_money: "Cacher le montant pour ce budget"
       budget/translation:
         main_link_text: "Texte sur le lien"
         main_link_url: "Le lien vous renvoie à (ajouter un lien)"
@@ -504,6 +508,11 @@ fr:
         document_number: Numéro de document
         date_of_birth: Date de naissance
         postal_code: Code postal
+      votation_type:
+        vote_type: Type de scrutin
+      votation_type/vote_type:
+        unique: Réponse unique
+        multiple: Réponses multiples
     errors:
       models:
         user:
@@ -518,6 +527,10 @@ fr:
           attributes:
             max_per_day:
               invalid: "Vous avez atteint le nombre maximum de message privés par jour"
+        geozone:
+          attributes:
+            geojson:
+              invalid: "Le GeoJSON fourni ne respecte pas le bon format. Il doit respecter le type de format \"Polygon\" (Polygône) ou \"MultiPolygon\" (MultiPolygône)."
         image:
           attributes:
             attachment:
