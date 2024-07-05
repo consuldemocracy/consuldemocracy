@@ -28,7 +28,7 @@
 <% if investment.should_show_estimated_price? %>
   <h3><%= t("budgets.investments.show.estimated_price") %></h3>
   <p class="investment-project-amount">
-    <%= investment.formatted_estimated_price %> (<%= investment.should_show_estimated_price?.to_s %>)
+    <%= investment.formatted_estimated_price %>
   </p>
   <hr>
 <% end %>
