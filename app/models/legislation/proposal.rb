@@ -48,7 +48,7 @@ class Legislation::Proposal < ApplicationRecord
   scope :sort_by_id,               -> { reorder(id: :asc) }
   scope :sort_by_supports,         -> { reorder(cached_votes_score: :desc) }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
-  scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago) }
+  scope :last_week,                -> { where(created_at: 7.days.ago..) }
   scope :selected,                 -> { where(selected: true) }
   scope :winners,                  -> { selected.sort_by_confidence_score }
 
