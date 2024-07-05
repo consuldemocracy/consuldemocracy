@@ -180,7 +180,15 @@ fr:
       see_results: Voir les résultats
     supports_info:
       different: "Vous pouvez soutenir autant de projets différents que vous le souhaitez."
-      next: "Soutenez les projets que vous souhaitez pour les voir progresser en phase suivante."
+      next: "Soutenez les projets que vous souhaitez voir progresser en phase suivante."
+      scrolling: "Continuer de faire défiler pour voir toutes les idées"
+      share: "Vous pouvez partager les projets que vous soutenez à travers les réseaux sociaux, pour attirer l'attention et obtenir plus de soutiens !"
+      supported:
+        one: "Jusqu'à présent vous soutenez <strong>1 projet</strong>."
+        other: "Jusqu'à présent vous soutenez <strong>%{count} projets</strong>."
+      supported_not_logged_in: "Connectez-vous pour <strong>soutenir des projets</strong>."
+      time: "Il reste jusqu'à %{phase_end_date} pour soutenir des projets."
+      title: "Il est temps de <strong>soutenir</strong> des projets !"
     results:
       link: Résultats
       page_title: "%{budget} - Résultats"
