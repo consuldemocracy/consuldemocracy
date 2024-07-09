@@ -1,0 +1,20 @@
+<% if budget.name == "Groene Parel" && enabled_phases.first == phase %>
+  <div style="padding:56.25% 0 0 0;position:relative;">
+    <iframe src="https://player.vimeo.com/video/456899778?title=0&byline=0&portrait=0"
+            style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+            allow="autoplay; fullscreen" allowfullscreen></iframe>
+  </div>
+  <script src="https://player.vimeo.com/api/player.js"></script>
+<% elsif budget.name == "Stem van Ten Boer" && phase == enabled_phases.first ||
+         budget.name == "Stem van Ten Boer" && phase == enabled_phases.second %>
+  <div style="padding:56.25% 0 0 0;position:relative;">
+    <iframe src="https://player.vimeo.com/video/536818031?title=0&byline=0&portrait=0"
+            style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+            allow="autoplay; fullscreen" allowfullscreen></iframe>
+  </div>
+  <script src="https://player.vimeo.com/api/player.js"></script>
+<% elsif phase.image.present? %>
+  <%= image_tag phase.image.attachment.url(:large),
+                title: phase.image.title.unicode_normalize,
+                alt: phase.image.title.unicode_normalize %>
+<% end %>

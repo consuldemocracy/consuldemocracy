@@ -1,0 +1,13 @@
+en:
+  budgets:
+    investments:
+      show:
+        title: "Title"
+        edit: "Edit"
+      new:
+        recommendations_title: "Describe the idea. Think for example of:"
+        recommendation_one: "Why is it a good idea?"
+        recommendation_two: "For whom is the idea meant (e.g. older people, young people, everyone)?"
+        recommendation_three: "Is it once-only (like an activity) or for several years (like a facility)?"
+        recommendation_four: "How much money do you think you will need for it? (optional, estimation is also fine)"
+        recommendation_five: "What would you like to do yourself for the realization of the idea?"

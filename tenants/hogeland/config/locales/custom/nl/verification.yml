@@ -1,0 +1,5 @@
+nl:
+  verification:
+    residence:
+      new:
+        error_not_allowed_postal_code: "Alleen met een geldige postcode kun je deelnemen"

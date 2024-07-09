@@ -1,0 +1,8 @@
+nl:
+  stats:
+    title: "Statistieken over deelname"
+    total_participants: "Deelnemers"
+    no_demographic_data:
+      zero: ""
+      one: "* Er zijn geen demografische gegevens over de 1 deelnemer."
+      other: "* Er zijn geen demografische gegevens over de %{count} deelnemers."

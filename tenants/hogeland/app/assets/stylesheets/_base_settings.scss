@@ -1,0 +1,31 @@
+// Base variables
+// --------------
+
+$base-font-size:    rem-calc(16);
+$border:            #cbc7c7;
+$border-forms: #949494;
+$brand:             #004a83;
+$brand-secondary:   #0054ad;
+$dark:              #2d313b;
+$delete: #b30000;
+$footer:            #c9d8ff;
+$highlight-soft:    #f0f3f6;
+$highlight-text:    #8a9999;
+$hover:             darken($brand, 20%);
+$hover-secondary:   darken($brand-secondary, 20%);
+$info:              #4ab4f9;
+$label:             #00469f;
+$light:             #f2f5f7;
+$like:              #21a562;
+$link-dark:         #493d57;
+$link-hover:        $brand;
+$link-soft:         #a099a8;
+$text:              #000;
+$unlike:            #da262b;
+
+$focus-middle: #f9f9f9;
+$focus-outer: #193146;
+
+// Custom variables
+// ----------------
+$footer-text-color: black;

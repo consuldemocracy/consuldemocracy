@@ -1,0 +1,16 @@
+nl:
+  management:
+    budget_investments:
+      edit: "Pas je idee aan."
+      create: "Nieuw idee"
+      filters:
+        unfeasible: "Onhaalbare ideeën"
+    budgets:
+      create_new_investment: "Nieuw idee"
+      print_investments: "Druk idee af"
+      support_investments: "Ideeën"
+    menu:
+      create_budget_investment: "Nieuw idee"
+      support_budget_investments: "Ideeënoverzicht"
+    permissions:
+      support_proposals: "Stem op ideeën"

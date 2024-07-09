@@ -1,0 +1,10 @@
+nl:
+  helpers:
+    page_entries_info:
+      more_pages:
+        display_entries: "<b>%{first}&nbsp;-&nbsp;%{last}</b> van <b>%{total}</b> %{entry_name} gevonden"
+      one_page:
+        display_entries:
+          zero: "Geen %{entry_name} gevonden"
+          one: "<b>1</b> %{entry_name}"
+          other: "<b> %{count}</b> %{entry_name}"

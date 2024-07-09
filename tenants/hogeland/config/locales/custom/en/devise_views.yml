@@ -1,0 +1,18 @@
+en:
+  devise_views:
+    mailer:
+      confirmation_instructions:
+        confirm_link: "Click on %{link} to complete the registration of your account."
+        link: "Confirm my account"
+    shared:
+      sign_in: "Sign in to an account"
+      sign_up: "Register a new account"
+      not_organization: "Not registering for an organisation or collective? %{link}"
+      not_organization_link: "Register here"
+      links:
+        new_confirmation: "Haven't received instructions to activate your account? %{link}"
+        new_confirmation_link: "Click here"
+        not_received: "Didn't receive a link in your mail? Maybe it came in your spam folder."
+    confirmations:
+      new:
+        description: "Didn't receive a link? Maybe it ended up in your spam folder. You can use the button below to have the mail resent."

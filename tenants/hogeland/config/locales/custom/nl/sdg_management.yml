@@ -1,0 +1,50 @@
+nl:
+  sdg_management:
+    actions:
+      edit: "SDGs en subdoelen"
+    header:
+      title: "SDG content"
+    homepage:
+      title: "Homepage instellingen"
+      header:
+        create: "Maak header"
+        no_cards: "Er is geen header"
+        title: "Header"
+      create_card: "Maak tegel voor %{phase}"
+      no_cards: "(Nog) geen tegels"
+    menu:
+      budget_investments: "Ideeën"
+      debates: "Discussies"
+      legislation_processes: "Inspraakprocessen"
+      legislation_proposals: "Initiatieven inspraak"
+      polls: "Peilingen"
+      proposals: "Initiatieven"
+      sdg_content: "Doelen en subdoelen"
+      sdg_homepage: "SDG homepage"
+    local_targets:
+      create:
+        notice: "Lokaal (sub)doel aangemaakt"
+      destroy:
+        notice: "Lokaal (sub)doel verwijderd"
+      edit:
+        title: "Bewerk lokaal (sub)doel"
+      form:
+        code: "De code moet beginnen met de geselecteerde doelcode gevolgd door een punt."
+        description: "Dit is de uitleg van het doel, die helpt gebruikers hem te begrijpen."
+      index:
+        new: "Maak lokaal (sub)doel"
+      new:
+        title: "Nieuw lokaal (sub)doel"
+      update:
+        notice: "Lokaal (sub)doel succesvol bijgewerkt"
+    relations:
+      index:
+        filter: "Filter"
+        filters:
+          all: "Alle"
+          pending_sdg_review: "In behandeling"
+          sdg_reviewed: "Beoordeeld"
+      update:
+        notice: "%{relatable} succesvol bijgewerkt"
+      update_and_review:
+        notice: "%{relatable} succesvol bijgewerkt en beoordeeld"

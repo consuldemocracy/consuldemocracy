@@ -1,0 +1,117 @@
+<div id="<%= dom_id(process) %>" class="legislation clear">
+  <div class="column row legislation-text">
+    <div class="small-12 medium-8 column">
+      <div class="legislation-text">
+        <h3><%= link_to process.title, process %></h3>
+      </div>
+    </div>
+
+    <div class="small-12 medium-4 column text-right">
+      <%= link_to t("legislation.processes.process.see_latest_comments"),
+                  process,
+                  title: t("legislation.processes.process.see_latest_comments_title") %>
+    </div>
+
+    <div class="small-12 medium-11 column end">
+      <%= markdown(process.summary.present? ? process.summary : first_paragraph(process.description)) %>
+    </div>
+  </div>
+
+  <% if process.enabled_phases_and_publications_count.positive? %>
+    <% column_width = 12 / process.enabled_phases_and_publications_count %>
+    <div class="column row">
+      <div class="small-12 column legislation-calendar-info">
+        <p><%= t("legislation.processes.shared.key_dates") %></p>
+      </div>
+    </div>
+
+    <div class="column row small-collapse medium-uncollapse legislation-calendar">
+      <% if process.debate_phase.enabled? %>
+        <div class="small-6 medium-<%= column_width %> column end">
+          <%= link_to debate_legislation_process_path(process), class: "legislation-date" do %>
+            <div class="legislation-date-title">
+              <h4>
+                <%= t("legislation.processes.shared.debate_dates") %>
+                <span>(<%= process.questions.count %>)</span>
+              </h4>
+              <p><%= render "legislation/processes/phase_dates", process: process, phase: "debate" %></p>
+            </div>
+            <%= render "legislation/processes/phase_status", process: process, phase: "debate" %>
+          <% end %>
+        </div>
+      <% end %>
+
+      <% if process.draft_publication.enabled? %>
+        <div class="small-6 medium-<%= column_width %> column end">
+          <%= link_to draft_publication_legislation_process_path(process), class: "legislation-date" do %>
+            <div class="legislation-date-title">
+              <h4><%= t("legislation.processes.shared.draft_publication_date") %></h4>
+              <% if process.draft_publication_date.present? %>
+                <p><%= format_date(process.draft_publication_date) %></p>
+              <% end %>
+            </div>
+            <% if process.draft_publication_date.present? %>
+              <% draft_publication_status = publication_status(process, "draft") %>
+              <span class="date-status <%= draft_publication_status.parameterize %>">
+                <%= draft_publication_status %>
+              </span>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+
+      <% if process.proposals_phase.enabled? %>
+        <div class="small-6 medium-<%= column_width %> column end">
+          <%= link_to proposals_legislation_process_path(process), class: "legislation-date" do %>
+            <div class="legislation-date-title">
+              <h4>
+                <%= t("legislation.processes.shared.proposals_dates") %>
+                <span>(<%= process.proposals.count %>)</span>
+              </h4>
+              <p><%= render "legislation/processes/phase_dates", process: process, phase: "proposals" %></p>
+            </div>
+            <%= render "legislation/processes/phase_status", process: process, phase: "proposals" %>
+          <% end %>
+        </div>
+      <% end %>
+
+      <% if process.allegations_phase.enabled? %>
+        <div class="small-6 medium-<%= column_width %> column end">
+          <%= link_to allegations_legislation_process_path(process), class: "legislation-date" do %>
+            <div class="legislation-date-title">
+              <h4>
+                <%= t("legislation.processes.shared.allegations_dates") %>
+                <% if process.draft_versions.any? %>
+                  <span>(<%= process.draft_versions.last.total_comments %>)</span>
+                <% else %>
+                  <span>(0)</span>
+                <% end %>
+              </h4>
+              <p><%= render "legislation/processes/phase_dates", process: process, phase: "allegations" %></p>
+            </div>
+            <%= render "legislation/processes/phase_status", process: process, phase: "allegations" %>
+          <% end %>
+        </div>
+      <% end %>
+
+      <% if process.result_publication.enabled? %>
+        <div class="small-6 medium-<%= column_width %> column end">
+          <%= link_to result_publication_legislation_process_path(process), class: "legislation-date" do %>
+            <div class="legislation-date-title">
+              <h4><%= t("legislation.processes.shared.result_publication_date") %></h4>
+              <% if process.result_publication_date.present? %>
+                <p><%= format_date(process.result_publication_date) %></p>
+              <% end %>
+            </div>
+            <% if process.result_publication_date.present? %>
+              <% result_publication_status = publication_status(process, "result") %>
+              <span class="date-status <%= result_publication_status.parameterize %>">
+                <%= result_publication_status %>
+              </span>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

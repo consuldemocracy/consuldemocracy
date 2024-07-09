@@ -1,0 +1,6 @@
+en:
+  pages:
+    help:
+      processes:
+        feature: "To participate in the processes you have to %{link} and verify your account."
+        feature_link: "register in %{org_name}"

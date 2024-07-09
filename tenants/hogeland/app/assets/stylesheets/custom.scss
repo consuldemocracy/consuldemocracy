@@ -1,0 +1,739 @@
+//
+// 0. Global styles
+// 1. Header
+// 2. Homepage and custom pages
+// 3. Footer
+// 4. Budgets
+// 5. Legislation
+// 6. Comments
+// 7. Admin
+// 8. Debates
+// 9. Related content
+// 10. Proposals
+// 11. Polls
+// 12. Icons
+//
+
+// 0. Global styles
+// --------------------
+
+body {
+
+  .top-bar-title {
+    background: #fff;
+
+    &::before {
+      background: #fff;
+    }
+  }
+
+  .subnavigation {
+    background: $onshogeland-very-light-grey;
+
+    &, & * {
+      color: black !important;
+    }
+  }
+
+  .button,
+  .button:focus,
+  .budget.button,
+  .button.primary {
+    font-weight: bold;
+    box-shadow: none;
+    background: $brand-secondary;
+    color: #000;
+
+    &:hover {
+      background: #000;
+      color: $brand-secondary;
+    }
+  }
+
+  .no-bullet.submenu {
+    li {
+      a, a * {
+        color: #000;
+
+        &.is-active,
+        &.is-active * {
+          color: $brand;
+
+          &::after {
+            border-color: $brand;
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    background: $onshogeland-very-light-grey;
+
+    &, & * {
+      color: black !important;
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: inherit !important;
+}
+
+.button {
+  background: $brand-light;
+  min-height: $line-height * 2;
+}
+
+.menu {
+
+  &.simple {
+
+    li {
+
+      &.is-active {
+
+        &::after {
+          border-bottom: 4px solid $title-border;
+        }
+      }
+    }
+  }
+}
+
+.no-bullet.submenu {
+
+  *::selection {
+    color: inherit;
+    background: none;
+  }
+
+  li {
+
+    a, a * {
+      color: $brand-light;
+
+      &.is-active {
+
+        &::after {
+          border-bottom: 4px solid $title-border;
+        }
+      }
+    }
+  }
+}
+
+.section-help {
+  background: $brand-secondary;
+}
+
+.tabs {
+
+  .tabs-title {
+
+    > a {
+
+      &:focus,
+      &[aria-selected="true"] {
+        background: none;
+      }
+
+      &[aria-selected="true"]::after,
+      .is-active::after {
+        border-bottom: 4px solid $title-border;
+      }
+    }
+  }
+}
+
+.cke_path {
+  display: none;
+}
+
+// 1. Header
+// --------------------
+
+.top-bar {
+
+  .top-bar-title a img {
+
+    @include breakpoint(small only) {
+      padding: $line-height / 2;
+    }
+  }
+
+  .subnavigation {
+
+    .menu > li {
+
+      a,
+      .button {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.subnavigation {
+  background: $brand;
+
+  a {
+    color: #fff;
+
+    @include breakpoint(medium) {
+
+      &.is-active::after {
+        background: #fff;
+      }
+    }
+
+    &:hover,
+    &.is-active {
+      color: #fff;
+    }
+  }
+}
+
+.subnavigation {
+
+  .dropdown.menu > li {
+
+    a {
+      padding-left: $line-height / 2;
+      padding-right: $line-height;
+    }
+
+    &.opens-left > .is-dropdown-submenu {
+
+      @include breakpoint(small only) {
+        width: 100%;
+      }
+    }
+
+    &.is-dropdown-submenu-parent > a {
+
+      &::before {
+        right: 5px;
+        top: 20px;
+
+        @include breakpoint(small only) {
+          left: 70px;
+          right: auto;
+          top: 10px;
+        }
+      }
+    }
+
+    &.is-active > a {
+      color: #fff;
+    }
+  }
+}
+
+// 2. Homepage and custom pages
+// ----------------------------
+
+.home-page {
+
+  .jumbo {
+
+    @include breakpoint(large) {
+      background-position: right -150px bottom 0;
+      min-height: $line-height * 30;
+    }
+
+    h1 {
+      font-size: rem-calc(36);
+
+      @include breakpoint(large) {
+        font-size: rem-calc(90);
+      }
+    }
+
+    .button {
+      margin-top: $line-height * 2;
+      position: relative;
+
+      &::after {
+        content: "\f054";
+        font-family: "Font Awesome 5 Free";
+        font-weight: bold;
+        position: absolute;
+        right: 24px;
+        top: 19px;
+      }
+    }
+  }
+
+  .lead {
+    font-size: rem-calc(20);
+    font-weight: bold;
+    margin: $line-height 0;
+
+    @include breakpoint(medium) {
+      font-size: rem-calc(24);
+      margin: $line-height * 2 0;
+    }
+  }
+
+  h3 {
+
+    &.title {
+      border-bottom: 0;
+      border-top: 4px solid $title-border;
+    }
+  }
+}
+
+.home-page .card,
+.custom-page .card {
+  flex-grow: initial;
+
+  .gradient {
+    display: none;
+  }
+
+  figcaption h3  {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: rem-calc(4);
+    margin: $line-height / 2;
+    margin-left: 0;
+    padding: $line-height / 2;
+  }
+
+  a {
+    background: $brand-secondary;
+  }
+
+  h4,
+  p {
+
+    &:last-child {
+      text-decoration: underline;
+    }
+  }
+
+  .phase {
+    color: $text;
+  }
+
+  .completed {
+    color: $text;
+  }
+
+  &.budget .description {
+
+    &::after {
+      background: linear-gradient(to bottom, rgba($brand-secondary, 0), rgba($brand-secondary, 1) 50%);
+    }
+
+    p {
+      text-decoration: none;
+    }
+  }
+}
+
+.feed-content-list {
+
+  .row {
+    margin: 0 auto;
+  }
+
+  .proposal {
+    border: 1px solid $border;
+    border-top: 0;
+    padding: $line-height 0;
+
+    &:first-of-type {
+      border-top: 1px solid $border;
+      border-top-left-radius: rem-calc(12);
+      border-top-right-radius: rem-calc(12);
+    }
+
+    &:last-child {
+      border-bottom-left-radius: rem-calc(12);
+      border-bottom-right-radius: rem-calc(12);
+    }
+  }
+
+  .feed-image {
+    border: 1px solid $border;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: -50%;
+    }
+  }
+
+  .feed-description {
+
+    a {
+      color: $brand;
+      display: inline-block;
+      margin-bottom: $line-height / 2;
+    }
+
+    p {
+      font-size: $base-font-size;
+    }
+  }
+}
+
+.home-page-steps {
+
+  h2 {
+    font-size: rem-calc(36);
+
+    @include breakpoint(medium) {
+      font-size: rem-calc(60);
+    }
+  }
+}
+
+// 3. Footer
+// --------------------
+
+.footer {
+  background: $brand;
+  padding-top: $line-height * 3;
+
+  .footer-title {
+    color: $brand-secondary;
+  }
+
+  .social {
+
+    [class^="fa"] {
+      color: #fff;
+    }
+
+    a {
+      color: #fff;
+    }
+  }
+}
+
+// 4. Budgets
+// --------------------
+
+.expanded {
+
+  &.budget {
+    background: $brand;
+
+    &:not(.button) .button {
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      min-width: 30%;
+    }
+  }
+}
+
+.budget-phases {
+
+  .tabs-title {
+
+    &.current-phase-tab [aria-selected="true"] {
+      color: #000;
+    }
+  }
+
+  .tabs-title > a {
+
+    &:hover {
+      background: $brand;
+      color: $white;
+
+      &::after {
+        border-left-color: $brand;
+      }
+    }
+
+    &[aria-selected="true"],
+    &.is-active {
+      background: $brand;
+
+      &::after {
+        border-bottom: 84px solid transparent;
+        border-left-color: $brand;
+      }
+    }
+  }
+
+  .phase-title {
+
+    &.current-phase-tab a {
+      background: $brand-light;
+
+      &::after {
+        border-left-color: $brand-light;
+      }
+    }
+  }
+
+  .budget-prev-phase,
+  .budget-next-phase {
+
+    &::before {
+      background: $brand-light;
+    }
+  }
+
+  .button {
+    margin-top: $line-height * 2;
+    padding-right: $line-height * 1.5;
+    position: relative;
+
+    &::after {
+      content: "\f054";
+      font-family: "Font Awesome 5 Free";
+      font-weight: bold;
+      position: absolute;
+      right: 12px;
+      top: 19px;
+    }
+  }
+
+  .budget-phase {
+
+    .main-link {
+      background: $brand-secondary;
+      color: #000;
+      font-weight: bold;
+    }
+  }
+}
+
+.budget-header {
+
+  h1 {
+    font-size: rem-calc(48);
+
+    @include breakpoint(medium) {
+      font-size: rem-calc(60);
+    }
+  }
+}
+
+.groups-and-headings .heading {
+
+  a {
+    color: $brand;
+  }
+}
+
+.jumbo-budget {
+  border-bottom: 2px solid $border;
+
+  &.budget-heading {
+    border-bottom: 2px solid $border;
+  }
+}
+
+.budget-investment.index .panel img {
+  border-bottom-left-radius: 0;
+  width: 100%;
+}
+
+.budget-investment-index-list {
+
+  .budget-investment {
+    margin-bottom: 0;
+
+    &.index .read-more {
+      bottom: 0;
+      display: block;
+      float: none;
+      left: 0;
+      margin-top: 0;
+      padding-right: $line-height / 2;
+      position: absolute;
+      text-align: right;
+      width: 100%;
+    }
+  }
+}
+
+.budget-investment-new {
+
+  .recommendations li::before {
+    color: $brand-secondary;
+  }
+}
+
+// 5. Legislation
+// --------------------
+
+.draft-panels .draft-allegation .draft-panel {
+  color: $text;
+}
+
+// 6. Comments
+// --------------------
+
+.comments {
+
+  h3 {
+    border-bottom: 4px solid $title-border;
+  }
+}
+
+// 7. Admin
+// --------------------
+
+.newsletter-body-content {
+
+  li {
+    font-size: $base-font-size;
+  }
+}
+
+.admin .top-links {
+  justify-content: right;
+
+  a {
+    flex-grow: unset;
+  }
+}
+
+// 8. Debates
+// --------------------
+
+.debate-new .header,
+.proposal-form .header,
+.budget-investment-new .header {
+  background: $brand-secondary;
+  color: $text;
+
+  a {
+    color: inherit;
+  }
+
+  .header-icon {
+    color: #fff;
+  }
+
+  &::before {
+    background: $brand-secondary;
+  }
+
+  &::before,
+  &::after {
+    border-color: $brand-secondary;
+    color: $brand-secondary;
+  }
+}
+
+// 9. Related content
+// --------------------
+
+
+// 10. Proposals
+// --------------------
+
+.additional-content {
+
+  .tabs {
+    border-bottom: 4px solid $title-border;
+  }
+}
+
+// 11. Polls
+// --------------------
+
+.poll-more-info-answers {
+
+  .column:only-child {
+    width: 100%;
+  }
+}
+
+.zoom-link {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+// 12. Icons
+// --------------------
+
+.debate-content h3,
+.debate-show h1,
+.proposal-content h3,
+.proposal-show h1,
+.poll h4,
+.polls-show h1 {
+  position: relative;
+
+  &::before {
+    color: $border;
+    font-family: "Font Awesome 5 Free";
+    font-size: rem-calc(30);
+    font-weight: normal;
+    position: absolute;
+    left: 0;
+  }
+}
+
+.debate-content h3,
+.debate-show h1 {
+
+  &::before {
+    content: "\f27a";
+  }
+}
+
+.proposal-content h3,
+.proposal-show h1 {
+
+  &::before {
+    content: "\f0eb";
+    font-size: rem-calc(36);
+  }
+}
+
+.poll h4,
+.polls-show h1 {
+
+  &::before {
+    content: "\f080";
+    font-size: rem-calc(36);
+  }
+}
+
+.debate-content h3,
+.debate-show h1,
+.debate-info,
+.proposal-content h3,
+.proposal-show h1,
+.proposal-info,
+.poll h4,
+.polls-show h1 {
+  padding-left: $line-height * 2;
+}
+
+.debate-show h1,
+.polls-show h1 {
+
+  &::before {
+    top: 10px;
+  }
+}
+
+.proposal-show h1 {
+
+  &::before {
+    top: 7px;
+  }
+}
+

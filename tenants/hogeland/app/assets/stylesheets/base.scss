@@ -18,41 +18,38 @@
 // 0. Global styles
 // ------------------------------
 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 @import "font-awesome/icons";
 
-@mixin flex-with-gap($gap: rem-calc(map-get($grid-column-gutter, medium))) {
-  display: flex;
-  margin-#{$global-left}: -$gap;
-
-  > * {
-    padding-#{$global-left}: $gap;
-    margin-#{$global-left}: unset;
-  }
-}
-
-$link: $anchor-color;
+$link:       $anchor-color;
 $link-hover: $anchor-color-hover;
 
 html {
   font-size: unset;
 }
 
+html {
+  font-size: unset;
+}
+
+body,
 h1,
 h2,
 h3,
 h4,
-h5,
-h6 {
-  font-weight: $header-font-weight;
+p,
+a {
+  font-family: "Montserrat", sans-serif !important;
 }
 
 button,
 .button {
-  font-weight: $button-font-weight;
+  font-weight: bold;
   min-height: $line-height * 2;
 }
 
 .input-group-button {
+
   button,
   .button {
     border-bottom-right-radius: rem-calc(4) !important;
@@ -64,6 +61,7 @@ button,
 
 .input-group,
 .input-group-field {
+
   input {
     border-bottom-right-radius: 0 !important;
     border-top-right-radius: 0 !important;
@@ -77,20 +75,8 @@ button,
   border-top-right-radius: 0 !important;
 }
 
-p,
-.auth-form {
-  a {
-    &:not(.button) {
-      text-decoration: underline !important;
-    }
-  }
-
-  .submenu a {
-    text-decoration: none !important;
-  }
-}
-
 main {
+
   .button {
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
 
@@ -100,12 +86,11 @@ main {
   }
 
   .view-mode {
+
     .button {
       box-shadow: none;
-      min-height: unset;
 
       &::before {
-        vertical-align: middle;
 
         &:hover {
           color: #fff;
@@ -116,17 +101,18 @@ main {
 }
 
 .button {
+
   &:hover {
     background: $hover;
   }
 
   &.hollow {
-    border-color: var(--brand);
-    color: var(--brand);
+    border-color: $brand;
+    color: $brand;
   }
 
   &.primary {
-    background: var(--brand-secondary);
+    background: $brand-secondary;
 
     &:hover {
       background: $hover-secondary;
@@ -135,9 +121,11 @@ main {
 }
 
 aside {
+
   .button {
+
     &.hollow {
-      background: var(--brand);
+      background: $brand;
       border: 0;
       color: #fff !important;
 
@@ -155,7 +143,7 @@ aside {
   padding-top: $line-height * 2;
 
   a {
-    color: var(--brand);
+    color: $brand;
     font-weight: bold;
   }
 
@@ -170,6 +158,7 @@ aside {
 }
 
 .menu {
+
   &.simple {
     border-bottom: 4px solid $light;
     display: inline-block;
@@ -186,17 +175,13 @@ aside {
         position: relative;
 
         &::after {
-          border-bottom: 4px solid var(--brand);
+          border-bottom: 4px solid $brand;
           bottom: -4px;
           content: "";
           position: absolute;
           right: 0;
           width: 100%;
         }
-      }
-
-      a {
-        font-weight: $button-font-weight;
       }
     }
   }
@@ -211,12 +196,13 @@ aside {
     margin-right: 0;
 
     a {
+
       &.is-active {
         border-bottom: 0;
         position: relative;
 
         &::after {
-          border-bottom: 4px solid var(--brand);
+          border-bottom: 4px solid $brand;
           bottom: -4px;
           content: "";
           position: absolute;
@@ -247,7 +233,7 @@ aside {
   }
 
   a {
-    color: var(--brand);
+    color: $brand;
     font-weight: bold;
   }
 }
@@ -278,6 +264,7 @@ aside {
 .communities-show,
 .topic-show,
 .milestone-content {
+
   aside h2 {
     border-top: 0;
     color: $label;
@@ -292,6 +279,7 @@ aside {
 }
 
 .draft-panels {
+
   .draft-allegation .draft-text a {
     color: $anchor-color;
   }
@@ -303,6 +291,7 @@ aside {
 
   ul,
   ol {
+
     li {
       font-size: $base-font-size;
     }
@@ -310,6 +299,7 @@ aside {
 }
 
 .back {
+
   .icon-angle-left {
     padding-right: $line-height / 4;
   }
@@ -338,12 +328,14 @@ aside {
 .budget-investments-list .budget-investment,
 .proposals-list .proposal,
 .legislation-proposals .proposal {
+
   .panel {
     border: 2px solid $border;
     border-radius: rem-calc(12);
     box-shadow: none;
 
     @include breakpoint(medium) {
+
       img {
         border-bottom-left-radius: rem-calc(12);
         border-top-left-radius: rem-calc(12);
@@ -357,6 +349,7 @@ aside {
     }
 
     .supported {
+
       &.callout {
         padding: $line-height / 4;
       }
@@ -390,18 +383,19 @@ aside {
   }
 
   a {
-    color: var(--brand);
+    color: $brand;
     font-weight: bold;
   }
 
   .icon-document::before {
-    color: var(--brand);
+    color: $brand;
     content: "\f2b6" !important;
     font-family: "Font Awesome 5 Free";
   }
 }
 
 .document-link {
+
   .button {
     min-height: 0;
   }
@@ -414,6 +408,7 @@ aside {
     margin-bottom: 0;
 
     > a {
+
       &:focus,
       &[aria-selected="true"] {
         background: transparent;
@@ -421,7 +416,7 @@ aside {
 
       &[aria-selected="true"]::after,
       .is-active::after {
-        border-bottom: 4px solid var(--brand);
+        border-bottom: 4px solid $brand;
         bottom: -4px;
       }
     }
@@ -467,7 +462,7 @@ aside {
 }
 
 .delete-comment {
-  color: var(--brand);
+  color: $brand;
 }
 
 .callout a {
@@ -500,35 +495,6 @@ aside {
   color: #fff !important;
 }
 
-form {
-  select {
-    &:focus {
-      border: 2px solid $border-forms;
-    }
-  }
-
-  select,
-  textarea,
-  [type]:not(
-      [type="button"],
-      [type="checkbox"],
-      [type="file"],
-      [type="radio"],
-      [type="submit"]
-    ):not(.close-button),
-  .cke {
-    border: 2px solid $border-forms;
-  }
-}
-
-.subnavigation .input-group-button button {
-  border: 2px solid $border-forms;
-}
-
-::placeholder {
-  color: #595959;
-}
-
 .skip-to-content-link {
   background: #fff;
   border: 2px solid $brand;
@@ -559,6 +525,8 @@ body > header,
 .wrapper > header {
   background: none;
   border-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .top-bar {
@@ -566,12 +534,14 @@ body > header,
   justify-content: space-between;
 
   @include breakpoint(small only) {
+
     .menu {
       margin-bottom: 0;
     }
   }
 
   .menu > li {
+
     a {
       line-height: $line-height;
     }
@@ -580,14 +550,15 @@ body > header,
     .button {
       background: none;
       border: 0;
-      border-radius: 0;
       color: $text;
       min-height: 0;
     }
   }
 
   .dropdown {
+
     &.menu > li {
+
       &.is-active > a {
         color: $text;
       }
@@ -596,7 +567,7 @@ body > header,
 }
 
 .top-bar-title {
-  background: var(--brand);
+  background: $brand;
   margin: 0;
   position: relative;
 
@@ -605,7 +576,7 @@ body > header,
     padding-top: $line-height;
 
     &::before {
-      background: none;
+      background: $brand;
       content: "";
       height: 100%;
       left: -999%;
@@ -618,15 +589,17 @@ body > header,
 
   a {
     display: block;
+    height: rem-calc(80);
     width: 100%;
 
     img {
-      height: 100%;
+      height: 100% !important;
     }
   }
 }
 
 .top-bar .top-bar-title {
+
   @include breakpoint(medium) {
     flex: unset;
     flex-grow: unset;
@@ -634,15 +607,16 @@ body > header,
 }
 
 .top-bar-right {
+
   @include breakpoint(medium) {
     padding-top: $line-height;
-    padding-right: 0.5rem;
   }
 
   a {
     position: relative;
 
     &.hide-for-small-only {
+
       &::after {
         content: "\f078" !important;
         font-family: "Font Awesome 5 Free";
@@ -672,29 +646,26 @@ body > header,
 }
 
 .menu-icon {
-  @include hamburger($color: var(--brand), $color-hover: var(--brand));
+  @include hamburger($color: $brand, $color-hover: $brand);
 
   &.dark {
+
     &::after,
     &:hover::after {
-      background: var(--brand);
-      box-shadow:
-        0 7px 0 var(--brand),
-        0 14px 0 var(--brand);
+      background: $brand;
+      box-shadow: 0 7px 0 $brand, 0 14px 0 $brand;
     }
   }
 }
 
 .menu-icon.dark::after,
 .menu-icon.dark:hover::after {
-  background: var(--brand);
-  box-shadow:
-    0 7px 0 var(--brand),
-    0 14px 0 var(--brand);
+  background: $brand;
+  box-shadow: 0 7px 0 $brand, 0 14px 0 $brand;
 }
 
 .menu-button {
-  color: var(--brand);
+  color: $brand;
   margin-left: $line-height / 4;
 }
 
@@ -710,7 +681,6 @@ body > header,
   color: $text;
   font-size: 16px;
   position: relative;
-  font-weight: $button-font-weight;
 
   @include breakpoint(medium) {
     line-height: $line-height * 2;
@@ -720,7 +690,7 @@ body > header,
     }
 
     &.is-active::after {
-      background: var(--brand);
+      background: $brand;
       bottom: -12px;
       content: "";
       height: 4px;
@@ -732,11 +702,12 @@ body > header,
 
   &:hover,
   &.is-active {
-    color: var(--brand);
+    color: $brand;
   }
 }
 
 .subnavigation ul li {
+
   @include breakpoint(medium) {
     margin-right: $line-height / 2;
   }
@@ -751,11 +722,13 @@ body > header,
 }
 
 .subnavigation {
+
   @include breakpoint(small only) {
     padding: 0 !important;
   }
 
   .dropdown.menu > li {
+
     &.opens-left > .is-dropdown-submenu {
       background: #fff;
 
@@ -765,7 +738,9 @@ body > header,
     }
 
     &.is-dropdown-submenu-parent {
+
       > a {
+
         @include breakpoint(small only) {
           display: inline;
         }
@@ -786,7 +761,7 @@ body > header,
       > a::before {
         border: inset 6px;
         border-bottom-width: 0;
-        border-color: var(--brand) transparent transparent;
+        border-color: $brand transparent transparent;
         border-top-style: solid;
         content: "";
         display: block;
@@ -802,7 +777,7 @@ body > header,
     }
 
     &.is-active > a {
-      color: var(--brand);
+      color: $brand;
     }
 
     > a {
@@ -843,15 +818,10 @@ body > header,
   }
 }
 
-.dropdown.menu > li {
-  &.is-dropdown-submenu-parent > a::after {
-    border-top-color: transparent;
-    margin-top: -8px;
-  }
-}
-
 .top-bar {
+
   .avatar {
+
     a:not(.avatar-image) {
       padding-left: $line-height * 2;
 
@@ -867,24 +837,22 @@ body > header,
   }
 }
 
-.admin > .header > *,
-.public > .wrapper > header > * {
-  left: 0 !important;
-  right: 0 !important;
-}
-
 .public > .wrapper > header::after {
   border-bottom: 0;
 }
 
 .locale .locale-form {
-  padding-left: $line-height / 4;
+
+  @include breakpoint(small only) {
+    padding-left: $line-height / 4;
+  }
 }
 
 // 2. Homepage and custom pages
 // ----------------------------
 
 .home-page {
+
   .jumbo {
     background: none;
 
@@ -908,6 +876,7 @@ body > header,
 
   h2,
   h3 {
+
     &.title {
       border-bottom: 0;
     }
@@ -917,7 +886,6 @@ body > header,
 .home-page .card,
 .custom-page .card {
   margin-top: $line-height;
-  position: relative;
 
   figure {
     border-top-left-radius: rem-calc(12);
@@ -947,20 +915,13 @@ body > header,
 
     &:last-child {
       bottom: 0;
-      color: var(--brand);
+      color: $brand;
       text-align: right;
     }
   }
 
-  h3 {
-    color: #fff;
-    left: $line-height / 2;
-    bottom: 0;
-    position: absolute;
-    z-index: 3;
-  }
-
   .figure-card {
+
     @include breakpoint(medium) {
       max-height: $line-height * 10;
     }
@@ -981,7 +942,6 @@ body > header,
       background: rgba(255, 255, 255, 0.5);
       position: absolute;
       top: 24px;
-      font-weight: $button-font-weight;
     }
   }
 
@@ -992,7 +952,7 @@ body > header,
   }
 
   .phase {
-    color: var(--brand);
+    color: $brand;
     font-size: $tiny-font-size;
     font-weight: bold;
     margin-bottom: 0;
@@ -1027,11 +987,7 @@ body > header,
     position: relative;
 
     &::after {
-      background: linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0),
-        $light 50%
-      );
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0), $light 50%);
       bottom: 0;
       content: "";
       height: 24px;
@@ -1049,12 +1005,14 @@ body > header,
 }
 
 .welcome-cards {
+
   @include breakpoint(medium) {
     display: flex;
   }
 }
 
 .feed-content {
+
   .row {
     margin: 0 auto;
   }
@@ -1087,8 +1045,9 @@ body > header,
   }
 
   .feed-description {
+
     a {
-      color: var(--brand);
+      color: $brand;
       display: inline-block;
       margin-bottom: $line-height / 2;
     }
@@ -1100,10 +1059,10 @@ body > header,
 }
 
 .feeds-participation {
-  @include flex-with-gap;
   display: block;
 
   @include breakpoint(medium) {
+
     .feed-proposals:not(:only-child) {
       width: 100%;
     }
@@ -1119,7 +1078,7 @@ body > header,
   padding: $line-height * 2;
 
   .number {
-    color: var(--brand);
+    color: $brand;
     display: block;
     font-weight: bold;
     font-size: rem-calc(34);
@@ -1142,7 +1101,7 @@ body > header,
   }
 
   a {
-    color: var(--brand);
+    color: $brand;
     display: block;
     font-weight: bold;
     margin: 0 auto;
@@ -1167,6 +1126,7 @@ body > header,
 }
 
 .figure-card {
+
   &.legislation-process img {
     min-height: rem-calc(185);
   }
@@ -1176,20 +1136,21 @@ body > header,
 // --------------------
 
 footer {
-  color: $footer-text-color;
+  color: #fff;
 
   a,
   a:active,
   a:focus {
-    color: $footer-text-color;
+    color: #fff;
     text-decoration: none;
 
     &:hover {
-      color: $footer-text-color;
+      color: #fff;
     }
   }
 
   p {
+
     &.info {
       font-size: $small-font-size;
     }
@@ -1197,6 +1158,7 @@ footer {
 }
 
 .footer {
+  background: #2d313b;
   padding-top: $line-height * 2;
 
   .footer-title {
@@ -1213,12 +1175,14 @@ footer {
     width: auto;
 
     [class^="fa"] {
+      color: $footer;
       font-size: rem-calc(40);
       text-align: center;
       width: rem-calc(60);
     }
 
     a {
+      color: $footer;
       display: inline-block;
       font-size: rem-calc(20);
       line-height: rem-calc(40);
@@ -1251,12 +1215,12 @@ footer {
 // --------------------
 
 .budget-header {
-  background: var(--brand);
+  background: $brand;
   min-height: $line-height * 25;
   padding-top: $line-height * 4;
 
   &:not(.button) .button {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0 , 0, 0, 0.5);
     color: #fff;
     min-width: 30%;
   }
@@ -1300,6 +1264,7 @@ footer {
   }
 
   .callout {
+
     &.primary a {
       color: $anchor-color;
     }
@@ -1349,6 +1314,7 @@ footer {
 .budget-group-show,
 .budget-groups-index,
 .budget-ballot-show {
+
   > header {
     margin-top: -$line-height;
     padding-top: $line-height;
@@ -1356,17 +1322,19 @@ footer {
 }
 
 .budget-phases {
+
   header {
     padding-top: $line-height;
   }
 
   .tabs-title > a {
+
     &.current-phase {
-      background: var(--brand-secondary);
+      background: $brand-secondary;
       color: #fff;
 
       &::after {
-        border-left-color: var(--brand-secondary);
+        border-left-color: $brand-secondary;
       }
 
       &:hover {
@@ -1390,13 +1358,15 @@ footer {
   }
 
   .tabs-title {
+
     &.current-phase-tab {
+
       [aria-selected="true"] {
-        background: var(--brand-secondary);
+        background: $brand-secondary;
         color: $white;
 
         &::after {
-          border-left-color: var(--brand-secondary);
+          border-left-color: $brand-secondary;
         }
       }
     }
@@ -1404,8 +1374,9 @@ footer {
 
   .budget-prev-phase,
   .budget-next-phase {
+
     &::before {
-      background: var(--brand);
+      background: $brand;
     }
   }
 
@@ -1424,6 +1395,7 @@ footer {
     }
 
     &:first-child {
+
       &,
       a {
         clip-path: none;
@@ -1431,6 +1403,7 @@ footer {
     }
 
     &:last-child {
+
       &,
       a {
         clip-path: none;
@@ -1438,8 +1411,9 @@ footer {
     }
 
     &.current-phase-tab a {
+
       &::after {
-        border-left-color: var(--brand-secondary);
+        border-left-color: $brand-secondary;
       }
 
       &:hover {
@@ -1454,6 +1428,7 @@ footer {
 }
 
 .budget-subheader {
+
   .current-phase {
     color: $label;
     text-transform: uppercase;
@@ -1461,6 +1436,7 @@ footer {
 }
 
 .budget-info .groups-and-headings .heading {
+
   @include breakpoint(medium) {
     min-width: rem-calc(160);
     width: auto;
@@ -1477,6 +1453,7 @@ footer {
   margin-right: $line-height / 2;
 
   a {
+
     span {
       color: #000;
       font-weight: normal;
@@ -1509,11 +1486,13 @@ footer {
 }
 
 .admin-budgets-show {
+
   button {
     font-weight: normal;
   }
 
   .groups-and-headings .heading a {
+
     &:hover {
       transform: none;
     }
@@ -1544,7 +1523,7 @@ footer {
   }
 
   .button {
-    background: var(--brand);
+    background: $brand;
     color: #fff;
   }
 }
@@ -1553,18 +1532,18 @@ footer {
 .investment-project-show .supports .total-supports,
 .budget-investment .supports .total-supports,
 .budget-investment-show .supports .total-supports {
-  color: var(--brand);
+  color: $brand;
 }
 
 .investment-project .supports .button-support,
 .investment-project-show .supports .button-support,
 .budget-investment .supports .button-support,
 .budget-investment-show .supports .button-support {
-  background: var(--brand);
+  background: $brand;
   box-shadow: none;
 
   &:hover {
-    background: var(--brand-secondary);
+    background: $brand-secondary;
   }
 }
 
@@ -1576,10 +1555,11 @@ footer {
 .budget-investment .supports .budget-investment-amount,
 .budget-investment-show .supports .investment-project-amount,
 .budget-investment-show .supports .budget-investment-amount {
-  color: var(--brand);
+  color: $brand;
 }
 
 .remove {
+
   .investment-project-amount,
   .budget-investment-amount {
     color: $text !important;
@@ -1603,12 +1583,13 @@ footer {
 }
 
 .progress-votes {
+
   .progress {
     background: #bbcdd9;
   }
 
   .progress-meter {
-    background: var(--brand);
+    background: $brand;
   }
 
   .spent-amount-text,
@@ -1617,7 +1598,7 @@ footer {
   }
 
   .spent-amount-text::before {
-    color: var(--brand);
+    color: $brand;
   }
 
   .spent-amount-text {
@@ -1630,7 +1611,7 @@ footer {
     white-space: nowrap;
 
     &::before {
-      color: var(--brand);
+      color: $brand;
       content: "\57";
       font-family: "icons";
       font-size: $small-font-size;
@@ -1650,7 +1631,7 @@ footer {
     }
 
     .amount-spent {
-      color: var(--brand);
+      color: $brand;
     }
 
     .amount-spent,
@@ -1660,16 +1641,16 @@ footer {
   }
 
   .amount-available span {
-    color: var(--brand);
+    color: $brand;
     font-size: $base-font-size;
   }
 }
 
 .supported .button.button-remove-support {
   background: none;
-  border: 1px solid var(--brand);
+  border: 1px solid $brand;
   box-shadow: none;
-  color: var(--brand-secondary);
+  color: $brand-secondary;
 
   &::before {
     left: 20px;
@@ -1677,6 +1658,7 @@ footer {
 }
 
 .budget-phases {
+
   h3 {
     margin-top: $line-height;
   }
@@ -1696,7 +1678,9 @@ footer {
   }
 
   .budget-phase {
+
     @include breakpoint(medium) {
+
       > * {
         word-break: break-word;
       }
@@ -1705,25 +1689,27 @@ footer {
 }
 
 .ballot .subtitle {
-  border-left: 2px solid var(--brand);
+  border-left: 2px solid $brand;
 }
 
 .ballot-list li {
+
   &:hover {
-    background: var(--brand);
+    background: $brand;
   }
 
   .ballot-list-price {
-    color: var(--brand);
+    color: $brand;
   }
 }
 
 .budget-investment.index .read-more {
-  color: var(--brand);
+  color: $brand;
 }
 
 .budget-info,
 .investments-list {
+
   h2 {
     font-size: rem-calc(20);
     margin: $line-height / 2 0;
@@ -1731,7 +1717,9 @@ footer {
 }
 
 .investments-list {
+
   .budget-investment .panel {
+
     h3 a {
       word-break: break-word;
     }
@@ -1742,6 +1730,7 @@ footer {
   }
 
   .investments-list-item {
+
     h3 {
       word-wrap: break-word;
     }
@@ -1749,16 +1738,16 @@ footer {
 }
 
 .budget-investment-new .header {
-  background: var(--brand-secondary);
+  background: $brand-secondary;
 
   &::before {
-    background: var(--brand-secondary);
+    background: $brand-secondary;
   }
 
   &::before,
   &::after {
-    border-color: var(--brand-secondary);
-    color: var(--brand-secondary);
+    border-color: $brand-secondary;
+    color: $brand-secondary;
   }
 }
 
@@ -1794,7 +1783,7 @@ footer {
   padding: $line-height 0 $line-height / 2;
 
   a {
-    color: var(--brand);
+    color: $brand;
     font-weight: bold;
   }
 }
@@ -1825,7 +1814,7 @@ footer {
     color: $text;
 
     span {
-      color: var(--brand);
+      color: $brand;
     }
   }
 
@@ -1861,11 +1850,12 @@ footer {
 }
 
 a {
+
   &.legislation-date {
     display: block;
 
     &:hover {
-      background: var(--brand);
+      background: $brand;
       text-decoration: none;
 
       h4,
@@ -1902,14 +1892,14 @@ a {
   }
 
   &.active {
-    background: var(--brand);
+    background: $brand;
     color: #fff;
     display: table;
     padding: $line-height / 4 $line-height / 2;
   }
 
   &.published {
-    color: var(--brand);
+    color: $brand;
   }
 }
 
@@ -1938,6 +1928,7 @@ a {
 }
 
 .legislation-hero {
+
   .title {
     border-bottom: 0;
     color: $label;
@@ -1960,6 +1951,7 @@ a {
 }
 
 .key-dates {
+
   .is-active {
     background: #fff;
     border: 2px solid $border;
@@ -1985,7 +1977,7 @@ a {
       color: $text;
 
       span {
-        color: var(--brand);
+        color: $brand;
       }
     }
   }
@@ -1996,6 +1988,7 @@ a {
 }
 
 .debate-chooser {
+
   .debate-list {
     border-bottom: 2px solid $border;
   }
@@ -2013,13 +2006,15 @@ a {
     }
 
     .debate-type {
-      color: var(--brand-secondary);
+      color: $brand-secondary;
     }
   }
 }
 
 .debate-questions {
+
   .quiz-header {
+
     .quiz-title {
       background: $light;
 
@@ -2035,6 +2030,7 @@ a {
   }
 
   aside {
+
     h3 {
       color: $label;
       font-size: rem-calc(18);
@@ -2063,6 +2059,7 @@ a {
 }
 
 .draft-panels .comment-box {
+
   .icon-like,
   .icon-unlike {
     color: $text !important;
@@ -2081,9 +2078,6 @@ a {
 }
 
 .draft-panels .draft-allegation .calc-comments {
-  // .comments-box-container {
-  //   top: rem-calc(100) !important;
-  // }
 
   .comment-box .comment-input {
     border-bottom: 0;
@@ -2097,10 +2091,27 @@ a {
 
 .comments-box-container .comment-meta .comment-votes {
   position: relative;
+}
+
+.draft-panels .draft-allegation .calc-comments {
+
+  .comments-box-container {
+    top: rem-calc(100) !important;
+  }
+
+  .comment-box .comment-input {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+.comments-box-container .comment-meta .comment-votes {
+  position: relative;
   width: 100%;
 }
 
 .comment-box {
+
   .button {
     float: right;
     line-height: $line-height * 2;
@@ -2119,7 +2130,7 @@ a {
   }
 
   .cancel-comment {
-    color: var(--brand) !important;
+    color: $brand !important;
     font-size: $small-font-size;
     text-decoration: none !important;
   }
@@ -2131,6 +2142,7 @@ a {
     padding: $line-height / 2 !important;
 
     .comment-meta {
+
       .comment-more-info {
         display: table-cell !important;
         height: $line-height * 2 !important;
@@ -2138,7 +2150,7 @@ a {
       }
 
       .comment-replies a {
-        color: var(--brand) !important;
+        color: $brand !important;
       }
     }
 
@@ -2152,6 +2164,7 @@ a {
     }
 
     .voted {
+
       .icon-like,
       .icon-unlike {
         color: #fff !important;
@@ -2161,6 +2174,7 @@ a {
 }
 
 .draft-panels .draft-allegation {
+
   .draft-panel {
     color: $text;
   }
@@ -2186,15 +2200,17 @@ a {
 // --------------------
 
 .comments {
+
   h3 {
-    border-bottom: 4px solid var(--brand);
-    color: var(--brand);
+    border-bottom: 4px solid $brand;
+    color: $brand;
     display: table;
     font-size: $base-font-size;
     padding: $line-height / 2 $line-height;
   }
 
   .comment {
+
     p {
       margin-bottom: $line-height;
     }
@@ -2202,11 +2218,13 @@ a {
 }
 
 .comment-info {
+
   a {
     color: $text;
   }
 
   .user-name {
+
     a {
       color: $link-dark;
     }
@@ -2214,6 +2232,7 @@ a {
 }
 
 .comment-body {
+
   .reply {
     border-bottom: 2px solid $border;
     border-top: 0;
@@ -2225,7 +2244,7 @@ a {
       font-weight: bold;
 
       &.add-comment {
-        color: var(--brand);
+        color: $brand;
       }
 
       &.toggle-children {
@@ -2268,6 +2287,7 @@ a {
 }
 
 .comment-votes {
+
   .votes {
     bottom: 24px;
     position: absolute;
@@ -2278,6 +2298,7 @@ a {
     }
 
     .like {
+
       &:hover,
       &.voted {
         background: $like;
@@ -2290,6 +2311,7 @@ a {
     }
 
     .unlike {
+
       &:hover,
       &.voted {
         background: $unlike;
@@ -2341,6 +2363,7 @@ a {
 // --------------------
 
 .admin .heading-mode {
+
   h2 {
     font-size: rem-calc(20);
   }
@@ -2365,7 +2388,7 @@ a {
 
   .is-active {
     border-bottom: 0;
-    color: var(--brand);
+    color: $brand;
   }
 }
 
@@ -2376,13 +2399,12 @@ a {
 }
 
 .admin {
+
   .top-links {
     justify-content: right;
 
     a {
       flex-grow: unset;
-      display: flex;
-      align-items: center;
     }
   }
 
@@ -2397,6 +2419,7 @@ a {
 }
 
 .admin-budgets-show {
+
   h3 {
     color: $admin-text;
     font-size: rem-calc(20);
@@ -2417,6 +2440,7 @@ a {
 }
 
 .reveal button {
+
   &.close-button {
     min-height: 0;
   }
@@ -2424,6 +2448,7 @@ a {
 
 .budget-draft,
 .budget-completed {
+
   span {
     font-style: normal;
     text-transform: uppercase;
@@ -2431,12 +2456,15 @@ a {
 }
 
 .legislation-draft-versions-form .markdown-preview {
+  font-family: "Montserrat", sans-serif !important;
+
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
+    font-family: "Montserrat", sans-serif !important;
     line-height: unset;
   }
 
@@ -2458,16 +2486,16 @@ a {
 // --------------------
 
 .debate-new .header {
-  background: var(--brand-secondary);
+  background: $brand-secondary;
 
   &::before {
-    background: var(--brand-secondary);
+    background: $brand-secondary;
   }
 
   &::before,
   &::after {
-    border-color: var(--brand-secondary);
-    color: var(--brand-secondary);
+    border-color: $brand-secondary;
+    color: $brand-secondary;
   }
 }
 
@@ -2484,7 +2512,9 @@ a {
 .debate-show,
 .proposal-show,
 .legislation-proposals {
+
   .votes {
+
     .divider {
       display: none;
     }
@@ -2503,6 +2533,7 @@ a {
     }
 
     .no-voted {
+
       .icon-like,
       .icon-unlike {
         opacity: 1;
@@ -2513,9 +2544,12 @@ a {
     .unlike {
       background: $light;
       display: block;
+      padding: $line-height / 4;
+      padding-top: $line-height / 2;
       width: rem-calc(48);
 
       &.voted {
+
         .percentage {
           color: #fff;
         }
@@ -2523,6 +2557,7 @@ a {
     }
 
     .like {
+
       &:hover {
         background: $like;
 
@@ -2538,6 +2573,7 @@ a {
     }
 
     .unlike {
+
       &:hover {
         background: $unlike;
 
@@ -2566,6 +2602,7 @@ a {
 .communities-show,
 .topic-show,
 .milestone-content {
+
   .author-photo {
     vertical-align: middle;
   }
@@ -2575,6 +2612,7 @@ a {
 // --------------------
 
 .related-content-list {
+
   li {
     border-bottom: 2px solid $border;
 
@@ -2600,6 +2638,7 @@ a {
     &.debate,
     &.proposal,
     &.budget-investment {
+
       &::before {
         font-family: "Font Awesome 5 Free";
         font-size: $small-font-size;
@@ -2625,6 +2664,7 @@ a {
 }
 
 .related-content {
+
   h2,
   h2 span {
     color: $label;
@@ -2652,7 +2692,9 @@ a {
 // --------------------
 
 .proposals-sidebar {
+
   .small {
+
     &:not(.button) {
       display: block;
       color: $anchor-color;
@@ -2681,6 +2723,7 @@ a {
 
 .proposal-show .supports,
 .proposal .supports {
+
   .total-supports {
     font-size: $small-font-size;
     text-align: right;
@@ -2691,7 +2734,7 @@ a {
   }
 
   .button-support {
-    background: var(--brand);
+    background: $brand;
     color: #fff;
     font-weight: bold;
     line-height: $line-height * 2;
@@ -2709,14 +2752,14 @@ a {
     border: 1px solid $highlight-soft;
 
     .meter {
-      background: var(--brand-secondary);
+      background: $brand-secondary;
       border-bottom-right-radius: 0;
       border-top-right-radius: 0;
     }
   }
 
   .percentage {
-    color: var(--brand-secondary);
+    color: $brand-secondary;
     font-size: $small-font-size;
     font-weight: bold;
     top: -24px;
@@ -2724,6 +2767,7 @@ a {
 }
 
 .proposal-show {
+
   .supports .percentage {
     font-size: $base-font-size;
   }
@@ -2748,6 +2792,7 @@ a {
 }
 
 .additional-content {
+
   .filter-subnav {
     background: none;
   }
@@ -2782,12 +2827,14 @@ a {
 }
 
 .proposal-dashboard .button {
+
   &.expanded {
     word-break: break-word;
   }
 }
 
 .proposals-list {
+
   @include breakpoint(medium) {
     min-height: $line-height * 15;
 
@@ -2808,6 +2855,7 @@ a {
   overflow: hidden;
 
   @include breakpoint(medium) {
+
     img {
       border-bottom-left-radius: rem-calc(12);
       border-top-left-radius: rem-calc(12);
@@ -2816,6 +2864,7 @@ a {
   }
 
   @include breakpoint(small only) {
+
     .message {
       position: unset !important;
     }
@@ -2857,7 +2906,7 @@ a {
 
 .section-title-divider {
   border-bottom: 4px solid $light;
-  color: var(--brand);
+  color: $brand;
 
   span {
     border-bottom: 0;
@@ -2865,7 +2914,7 @@ a {
     position: relative;
 
     &::after {
-      border-bottom: 4px solid var(--brand);
+      border-bottom: 4px solid $brand;
       bottom: -4px;
       content: "";
       left: 0;
@@ -2885,13 +2934,16 @@ a {
 }
 
 .poll-question-answers {
+
   span,
   a {
     width: 100%;
   }
 
   .button {
+
     &.hollow {
+
       &.secondary,
       &.secondary.disabled,
       &.secondary[disabled],
@@ -2906,12 +2958,12 @@ a {
     }
 
     &.answered {
-      background: var(--brand);
-      border: 2px solid var(--brand);
+      background: $brand;
+      border: 2px solid $brand;
       color: #fff;
 
       &::after {
-        background: var(--brand);
+        background: $brand;
         border: 2px solid #fff;
         color: #fff;
         right: -8px;
@@ -2926,10 +2978,6 @@ a {
 }
 
 .poll-more-info-answers {
-  // .row {
-  //   display: flex;
-  //   flex-wrap: wrap;
-  // }
 
   .column:nth-child(odd),
   .columns:nth-child(odd) {
@@ -2951,6 +2999,7 @@ a {
 }
 
 .answer {
+
   a,
   img {
     outline: 0;
@@ -2972,12 +3021,14 @@ a {
 // --------------------
 
 .auth-page {
+
   .auth-title {
     margin: $line-height * 2 0;
     text-align: center;
   }
 
   .auth-form {
+
     @include breakpoint(medium) {
       margin-bottom: 0;
       padding-bottom: $line-height * 10;
@@ -3045,6 +3096,7 @@ a {
 }
 
 .subscriptions-edit {
+
   form {
     max-width: none;
   }
@@ -3058,8 +3110,9 @@ a {
 // ------------------------------
 
 .budget-investment-new {
+
   .header {
-    background: var(--brand-secondary);
+    background: $brand-secondary;
     border-bottom-right-radius: rem-calc(12);
     border-top-right-radius: rem-calc(12);
     color: #fff;
@@ -3076,8 +3129,8 @@ a {
     }
 
     &::before {
-      background: var(--brand-secondary);
-      border: 4px solid var(--brand-secondary);
+      background: $brand-secondary;
+      border: 4px solid $brand-secondary;
       content: "";
       height: 100%;
       position: absolute;
@@ -3089,11 +3142,11 @@ a {
 
     &::after {
       background: #fff;
-      border: 4px solid var(--brand-secondary);
+      border: 4px solid $brand-secondary;
       border-bottom-right-radius: rem-calc(12);
       border-top-right-radius: rem-calc(12);
       clip-path: polygon(20% 0, 100% 1%, 100% 100%, 20% 100%, 5% 50%);
-      color: var(--brand-secondary);
+      color: $brand-secondary;
       content: "\f1ad";
       display: none;
       font-family: "Font Awesome 5 Free";
@@ -3131,7 +3184,9 @@ a {
     }
 
     &.header-single-heading {
+
       .header-icon {
+
         @include breakpoint(large) {
           top: 80px;
         }
@@ -3171,6 +3226,7 @@ a {
 
 .budget-info,
 .investments-list {
+
   h2 {
     font-size: rem-calc(20);
     margin: $line-height / 2 0;
@@ -3178,6 +3234,7 @@ a {
 }
 
 .budget-investment {
+
   &.index {
     height: 100%;
 
@@ -3238,7 +3295,7 @@ a {
 
     .read-more {
       bottom: 0;
-      color: var(--brand);
+      color: $brand;
       display: block;
       left: 0;
       margin-top: 0;
@@ -3251,8 +3308,11 @@ a {
 }
 
 .supports-and-price {
+
   .table-cell {
+
     &:first-child {
+
       &::after {
         content: "\f559";
         font-family: "Font Awesome 5 Free";
@@ -3267,6 +3327,7 @@ a {
 }
 
 .filter-selector {
+
   label {
     margin-right: $line-height / 2;
     padding-top: $line-height / 2;
@@ -3278,6 +3339,7 @@ a {
 }
 
 .budget-header {
+
   &.budget:not(.button) {
     min-height: $line-height * 25;
     padding-top: $line-height * 4;
@@ -3323,6 +3385,7 @@ a {
 }
 
 .budget-subheader {
+
   .current-phase {
     color: $label;
     text-transform: uppercase;
@@ -3344,6 +3407,7 @@ a {
   padding-bottom: $line-height * 2;
 
   @include breakpoint(small only) {
+
     .phases-list {
       display: none;
     }
@@ -3401,6 +3465,7 @@ a {
     }
 
     &:first-child {
+
       a {
         border-bottom-left-radius: rem-calc(6);
         border-top-left-radius: rem-calc(6);
@@ -3408,6 +3473,7 @@ a {
     }
 
     &:last-child {
+
       a {
         border-bottom-right-radius: rem-calc(6);
         border-top-right-radius: rem-calc(6);
@@ -3454,11 +3520,11 @@ a {
     }
 
     &.current-phase {
-      background: var(--brand-secondary);
+      background: $brand-secondary;
       color: #fff;
 
       &::after {
-        border-left-color: var(--brand-secondary);
+        border-left-color: $brand-secondary;
       }
 
       &:hover {
@@ -3486,27 +3552,30 @@ a {
       }
 
       &.current-phase {
-        background: var(--brand-secondary);
+        background: $brand-secondary;
         color: #fff;
 
         &::after {
-          border-left-color: var(--brand-secondary);
+          border-left-color: $brand-secondary;
         }
       }
     }
   }
 
   .tabs-title {
+
     &:last-child a::after {
       content: none !important;
     }
   }
 
   .tabs-controls {
+
     .budget-prev-phase,
     .budget-prev-phase-disabled,
     .budget-next-phase,
     .budget-next-phase-disabled {
+
       &::before {
         left: 6px;
         top: 6px;
@@ -3527,7 +3596,7 @@ a {
     position: relative;
 
     &::before {
-      background: var(--brand);
+      background: $brand;
       border-radius: rem-calc(3);
       color: #fff;
       font-family: "Font Awesome 5 Free";
@@ -3543,6 +3612,7 @@ a {
 
   .budget-prev-phase-disabled,
   .budget-next-phase-disabled {
+
     &::before {
       background: none;
       color: #acb6b6;
@@ -3551,6 +3621,7 @@ a {
 
   .budget-prev-phase,
   .budget-prev-phase-disabled {
+
     &::before {
       content: "\f104";
       left: 0;
@@ -3559,6 +3630,7 @@ a {
 
   .budget-next-phase,
   .budget-next-phase-disabled {
+
     &::before {
       content: "\f105";
       left: 52px;
@@ -3591,7 +3663,7 @@ a {
   position: relative;
 
   &::after {
-    background: var(--brand);
+    background: $brand;
     bottom: 0;
     content: "";
     height: rem-calc(6);
@@ -3605,6 +3677,7 @@ a {
   }
 
   a {
+
     &:hover {
       text-decoration: none;
     }
@@ -3616,7 +3689,9 @@ a {
 }
 
 .supports-info {
+
   @include breakpoint(medium) {
+
     h2 {
       font-size: rem-calc(48);
     }
@@ -3642,7 +3717,7 @@ a {
   }
 
   .fa-thumbs-up {
-    color: var(--brand);
+    color: $brand;
     font-size: rem-calc(100);
     padding: $line-height * 2 0;
   }
@@ -3652,8 +3727,9 @@ a {
   }
 
   a {
+
     &.keep-scrolling {
-      color: var(--brand);
+      color: $brand;
       position: relative;
       text-decoration: none;
       text-transform: uppercase;
@@ -3662,13 +3738,14 @@ a {
 }
 
 .section-recommended {
+
   .orbit-bullets button {
     background-color: #ccc;
-    height: $line-height;
-    width: $line-height;
+    height: $line-height / 2;
+    width: $line-height / 2;
 
     &.is-active {
-      background-color: var(--brand);
+      background-color: $brand;
     }
   }
 
@@ -3702,6 +3779,7 @@ a {
 }
 
 .sdg-related-list-selector {
+
   .help-text,
   .goals legend {
     font-size: $small-font-size;
@@ -3710,6 +3788,7 @@ a {
 
 .sdg-goal-tag-cloud .sdg-goal-tag-list,
 .sdg-tag-list .sdg-goal-tag-list {
+
   img {
     border-radius: 0;
   }
@@ -3718,8 +3797,9 @@ a {
 .debate-new,
 .proposal-form,
 .budget-investment-new {
+
   .header {
-    background: var(--brand-secondary);
+    background: $brand-secondary;
     border-bottom-right-radius: rem-calc(12);
     border-top-right-radius: rem-calc(12);
     color: #fff;
@@ -3740,8 +3820,8 @@ a {
     }
 
     &::before {
-      background: var(--brand-secondary);
-      border: 4px solid var(--brand-secondary);
+      background: $brand-secondary;
+      border: 4px solid $brand-secondary;
       content: "";
       height: 100%;
       position: absolute;
@@ -3753,11 +3833,11 @@ a {
 
     &::after {
       background: #fff;
-      border: 4px solid var(--brand-secondary);
+      border: 4px solid $brand-secondary;
       border-bottom-right-radius: rem-calc(12);
       border-top-right-radius: rem-calc(12);
       clip-path: polygon(20% 0, 100% 1%, 100% 100%, 20% 100%, 5% 50%);
-      color: var(--brand-secondary);
+      color: $brand-secondary;
       content: "\f1ad";
       display: none;
       font-family: "Font Awesome 5 Free";
@@ -3795,7 +3875,9 @@ a {
     }
 
     &.header-single-heading {
+
       .header-icon {
+
         @include breakpoint(large) {
           top: 80px;
         }
@@ -3807,3 +3889,4 @@ a {
     }
   }
 }
+

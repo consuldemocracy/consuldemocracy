@@ -1,0 +1,474 @@
+nl:
+  sdg:
+    goals:
+      goal_1:
+        title: "Geen armoede"
+        title_in_two_lines: "Geen\narmoede"
+        description: "Beëindig armoede overal en in al haar vormen."
+        long_description: '<p>iemand mag in 2030 nog in extreme armoede leven. Onder de millenniumdoelen betekende extreme armoede dat iemand minder dan 1,25 dollar per dag te besteden heeft. De Wereldbank heeft deze grens in 2015 verlegd naar 1,90 dollar per dag.</p><p>In 1990 leefde nog 37 procent van de wereldbevolking, of 1,95 miljard mensen onder deze grens. De verwachting is dat dit aantal in 2015 is gedaald naar 9,5 procent of 702 miljoen mensen van de wereldbevolking.<p>Ook is bepaald dat alle landen zich moeten inzetten voor betere systemen op het gebied van sociale zekerheid. Dit betekent bijvoorbeeld het bedenken van beleid en het opzetten van programma’s voor een inclusieve arbeidsmarkt.</p><p>Daarnaast moet het niet mogelijk zijn dat mensen in armoede kunnen raken door werkeloosheid, ziekte, ouderdom of een handicap. Als dit gebeurt, moet je terug kunnen vallen op sociale systemen die je ondersteunen.</p>'
+        targets:
+          target_1_1:
+            title: "Tegen 2030 extreme armoede uitroeien voor alle mensen wereldwijd, die met minder dan $1,25 per dag moeten rondkomen."
+          target_1_2:
+            title: "Tegen 2030 het aandeel mannen, vrouwen en kinderen van alle leeftijden die volgens de nationale definities in armoede leven in al haar dimensies, minstens tot de helft terugbrengen."
+          target_1_3:
+            title: "Nationaal toepasbare sociale beschermingssystemen en maatregelen implementeren voor iedereen, met inbegrip van sociale beschermingsvloeren, en tegen 2030 een aanzienlijke dekkingsgraad realiseren van de armen en de kwetsbaren."
+          target_1_4:
+            title: "Er tegen 2030 voor zorgen dat alle mannen en vrouwen, in het bijzonder de armen en de kwetsbaren, gelijke rechten hebben op economische middelen, alsook toegang tot basisdiensten, eigenaarschap en controle over land en andere vormen van eigendom, nalatenschap, natuurlijke hulpbronnen, gepaste nieuwe technologie en financiële diensten, met inbegrip van microfinanciering."
+          target_1_5:
+            title: "Tegen 2030 de weerbaarheid opbouwen van de armen en van zij die zich in kwetsbare situaties bevinden en hun blootstelling aan en kwetsbaarheid voor met klimaatgerelateerde extreme gebeurtenissen en andere economische, sociale en ecologische schokken en rampen beperken."
+          target_1_A:
+            title: "Zorgen voor een aanzienlijke mobilisatie van middelen afkomstig uit verschillende bronnen, ook via versterkte ontwikkelingssamenwerking, om adequate en voorspelbare middelen te voorzien voor ontwikkelingslanden, in het bijzonder de minst ontwikkelde landen, om programma’s en beleidslijnen te implementeren die een einde moeten maken aan armoede in al haar vormen."
+          target_1_B:
+            title: "Solide beleidskaders creëren op nationaal, regionaal en internationaal niveau, die zijn gebaseerd op ontwikkelingsstrategieën ten gunste van de armen en het genderbeleid, om de versnelde investering te ondersteunen in acties die gericht zijn op het uitroeien van de armoede."
+      goal_2:
+        title: "Geen honger"
+        title_in_two_lines: "Geen\nhonger"
+        description: "Beëindig honger en promoot duurzame landbouw."
+        long_description: '<p>Iedereen moet toegang hebben tot veilig, voedzaam en voldoende voedsel, het hele jaar door. Volgens het Wereldvoedselprogramma hebben op dit moment 795 miljoen mensen niet genoeg voedsel om een gezond en actief leven te leiden. Dit is ongeveer een op de negen mensen wereldwijd. </p><p>In 2050 zal de wereldbevolking zijn toegenomen tot zeker negen miljard mensen. Daarom richt dit tweede doel zich ook op de voedselproductie. Zo moeten er in 2030 duurzame systemen zijn voor voedselproductie. Dit betekent dat de voedselproductie omhoog moet, zonder ecosystemen aan te tasten.</p>'
+        targets:
+          target_2_1:
+            title: "Tegen 2030 een einde maken aan honger en voor iedereen, in het bijzonder de armen en de mensen die leven in kwetsbare situaties, met inbegrip van kinderen, toegang garanderen tot veilig, voedzaam en voldoende voedsel en dit het hele jaar lang."
+          target_2_2:
+            title: "Tegen 2030 een einde maken aan alle vormen van malnutritie, waarbij ook tegen 2025 voldaan moet kunnen worden aan de internationaal overeengekomen doelstellingen met betrekking tot groeiachterstand en ondergewicht bij kinderen onder de 5 jaar; en eveneens tegemoetkomen aan de voedingsbehoeften van adolescente meisjes, zwangere vrouwen, vrouwen die borstvoeding geven en oudere personen."
+          target_2_3:
+            title: "Tegen 2030 de landbouwproductiviteit en de inkomens verdubbelen voor kleinschalige voedselproducenten, in het bijzonder vrouwen, inheemse bevolkingen, familieboeren, veefokkers en vissers, onder meer door een veilige en gelijke toegang tot land, andere productieve hulpbronnen en inputs, kennis, financiële diensten, markten en opportuniteiten die toegevoegde waarde bieden en ook buiten de landbouw tewerkstelling genereren."
+          target_2_4:
+            title: "Tegen 2030 duurzame voedselproductiesystemen garanderen en veerkrachtige landbouwpraktijken implementeren die de productiviteit en de productie kunnen verhogen, die helpen bij het in stand houden van ecosystemen, die de aanpassingscapaciteit verhogen in de strijd tegen klimaatverandering, extreme weersomstandigheden, droogte, overstromingen en andere rampen en die op een progressieve manier de kwaliteit van het land en de bodem verbeteren."
+          target_2_5:
+            title: "Tegen 2020 de genetische diversiteit in stand houden van zaden, cultuurgewassen en gefokte en gedomesticeerde dieren en hun in het wild levende verwanten, ook aan de hand van zaad- en plantenbanken die op een degelijke manier beheerd en gediversifieerd worden op nationaal, regionaal en internationaal niveau; en de toegang bevorderen tot het eerlijk en billijk delen van voordelen afkomstig van het gebruik van genetische hulpbronnen en daaraan gekoppelde traditionele kennis, zoals internationaal overeengekomen."
+          target_2_A:
+            title: "Verhogen van de investeringen, door versterkte internationale samenwerking, in landelijke infrastructuur, landbouwkundig onderzoek en uitgebreide diensten, technologische ontwikkeling en genetische databanken voor planten en vee om de landbouwkundige productiecapaciteit in ontwikkelingslanden, in het bijzonder in de minst ontwikkelde landen, te versterken."
+          target_2_B:
+            title: "Corrigeren en voorkomen van handelsbeperkingen en scheefgegroeide situaties op de wereldlandbouwmarkten, door onder andere tegelijk alle vormen van landbouwexportsubsidies en alle exportmaatregelen met een gelijkaardig effect af te schaffen, in overeenstemming met het mandaat van de Ontwikkelingsronde in Doha."
+          target_2_C:
+            title: "Maatregelen aannemen die de correcte werking moeten garanderen van de voedselgrondstoffenmarkten en hun afgeleiden en een snelle toegang tot marktinformatie bevorderen, met inbegrip van informatie over voedselreserves, om de extreme volatiliteit van de voedselprijzen te helpen beperken."
+      goal_3:
+        title: "Goede gezondheid en welzijn"
+        title_in_two_lines: "Goede gezondheid\nen welzijn"
+        description: "Verzeker een goede gezondheid en promoot welvaart voor alle leeftijden."
+        long_description: '<p>Volgens de Wereldgezondheidsorganisatie daalde het kindersterftecijfer in 2015 met 53 procent ten opzichte van 1990. Toch sterven er elk jaar nog steeds zes miljoen kinderen voor hun vijfde levensjaar. Het merendeel van deze kinderen wonen in Azië en sub-Sahara Afrika.</p><p>Moedersterfte is in 2015 ten opzichte van 1990 met 44 procent gedaald, aldus de Wereldgezondheidsorganisatie. Maar ook hier kunnen nog stappen worden gezet. Moedersterfte is in ontwikkelingslanden nog steeds 14 keer hoger dan in ontwikkelde landen.</p><p>Daarnaast moet er in 2030 een einde komen aan epidemieën zoals HIV/aids, tuberculose, malaria en andere tropische ziekten. Om dit te bereiken moet er meer aandacht komen voor onderzoek naar vaccins en medicijnen.</p><p>Ook wordt beschreven dat er meer aandacht uit moet gaan naar het voorkomen en het behandelen van drugsverslavingen en alcoholmisbruik. En het aantal verkeersdoden moet in 2020 al gehalveerd zijn. </p><p>Verder moet Seksuele en reproductieve gezondheidszorg in 2030 voor iedereen toegankelijk zijn. Ook moet er betere informatie beschikbaar komen over voortplanting en gezinsplanning, zodat iedereen goed geïnformeerde, eigen keuzes kan maken.'
+        targets:
+          target_3_1:
+            title: "Tegen 2030 de globale moedersterfte terugdringen tot minder dan 70 per 100.000 levendgeborenen."
+          target_3_2:
+            title: "Tegen 2030 een einde maken aan vermijdbare overlijdens van pasgeborenen en kinderen onder de 5 jaar, waarbij alle landen er moeten naar streven om het sterftecijfer van baby’s minstens tot 12 per 1000 levendgeborenen te beperken alsook het sterftecijfer van kinderen jonger dan 5 jaar eveneens in te perken tot maximum 25 per 1000 levendgeborenen."
+          target_3_3:
+            title: "Tegen 2030 een einde maken aan epidemieën zoals aids, tuberculose, malaria en verwaarloosde tropische ziekten, alsook hepatitis, door water overgebrachte ziekten en andere overdraagbare ziekten bestrijden."
+          target_3_4:
+            title: "Tegen 2030 de vroegtijdige sterfte gelinkt aan niet-overdraagbare ziekten met een derde inperken via preventie en behandeling, en mentale gezondheid en welzijn bevorderen"
+          target_3_5:
+            title: "De preventie en behandeling versterken van misbruik van verslavende middelen, met inbegrip van drugsgebruik en het schadelijk gebruik van alcohol."
+          target_3_6:
+            title: "Tegen 2020 het aantal doden en gewonden in het verkeer wereldwijd halveren."
+          target_3_7:
+            title: "Tegen 2030 universele toegang tot seksuele en reproductieve gezondheidszorgdiensten garanderen, met inbegrip van diensten voor gezinsplanning, informatie en opvoeding, en voor de integratie van reproductieve gezondheid in nationale strategieën en programma’s."
+          target_3_8:
+            title: "Zorgen voor een universele ziekteverzekering, met inbegrip van de bescherming tegen financiële risico’s, toegang tot kwaliteitsvolle essentiële gezondheidszorgdiensten en toegang tot de veilige, doeltreffende, kwaliteitsvolle en betaalbare essentiële geneesmiddelen en vaccins voor iedereen."
+          target_3_9:
+            title: "Tegen 2030 in aanzienlijke mate het aantal sterfgevallen en ziekten verminderen als gevolg van gevaarlijke chemicaliën en de vervuiling en besmetting van lucht, water en bodem."
+          target_3_A:
+            title: "Waar nodig de implementatie van de kaderovereenkomst van de Wereldgezondheidsorganisatie over tabakscontrole versterken."
+          target_3_B:
+            title: "Het onderzoek en de ontwikkeling ondersteunen van vaccins en geneesmiddelen voor overdraagbare en niet-overdraagbare ziekten voor de overdraagbare en de niet-overdraagbare ziekten die in hoofdzaak ontwikkelingslanden treffen, toegang verschaffen tot betaalbare essentiële geneesmiddelen en vaccins, volgens de richtlijnen van de Verklaring van Doha aangaande het TRIPS-akkoord en Volksgezondheid."
+          target_3_C:
+            title: "De financiering van de gezondheidszorg aanzienlijk opvoeren, net als de aanwerving, de ontwikkeling, de opleiding en het lange tijd in dienst houden van gezondheidswerkers in ontwikkelingslanden, in het bijzonder in de minst ontwikkelde landen en de kleine eilandstaten."
+          target_3_D:
+            title: "De capaciteit van alle landen versterken, in het bijzonder die van de ontwikkelingslanden, met betrekking tot systemen voor vroegtijdige waarschuwing, risicovermindering en het beheer van nationale en globale gezondheidsrisico’s."
+      goal_4:
+        title: "Kwaliteitsonderwijs"
+        title_in_two_lines: "Kwaliteitsonderwijs"
+        description: "Verzeker gelijke toegang tot kwaliteitsvol onderwijs en bevorder levenslang leren voor iedereen."
+        long_description: '<p>Het aantal kinderen dat niet naar school gaat is ten opzichte van 2000 gehalveerd: van 100 miljoen in 2000 naar 57 miljoen in 2015. Maar er valt nog veel winst te behalen. Vijftig procent van de kinderen met een basisschoolleeftijd die niet naar school gaan, wonen in conflictgebieden. En wereldwijd kunnen 103 miljoen jongeren nog niet lezen of schrijven.</p><p>Omdat het met primair onderwijs al erg goed gaat in de wereld, richt dit doel zich zowel op primair als secundair en tertiair onderwijs. In 2030 moeten dan ook alle jongens en meisjes in de wereld de basisschool en middelbare school kunnen afmaken. Ook moeten alle mannen en vrouwen toegang krijgen tot betaalbaar beroeps-, technisch-, en hoger onderwijs.</p><p>Binnen dit doel is ook meer aandacht voor de kwaliteit van onderwijs. Zo moeten scholieren en studenten kennis en vaardigheden kunnen opdoen over duurzame ontwikkeling, duurzame levensstijlen, mensenrechten en gelijkheid tussen mannen en vrouwen. Daarnaast moeten scholen een cultuur van vrede, geweldloosheid, diversiteit en mondiaal burgerschap promoten. </p>'
+        targets:
+          target_4_1:
+            title: "Er tegen 2030 voor zorgen dat alle meisjes en jongens op een vrije, billijke en kwalitatief hoogstaande manier lager en middelbaar onderwijs kunnen afwerken, wat moet kunnen leiden tot relevante en doeltreffende leerresultaten."
+          target_4_2:
+            title: "Er tegen 2030 voor zorgen dat alle meisjes en jongens in hun vroege kindertijd toegang hebben tot een kwalitatieve ontwikkeling, zorg en opvoeding voorafgaand aan de lagere school zodat ze klaar zijn voor het basisonderwijs."
+          target_4_3:
+            title: "Tegen 2030 gelijke toegang garanderen voor alle vrouwen en mannen tot betaalbaar en kwaliteitsvol technisch, beroeps- en hoger onderwijs, met inbegrip van de universiteit."
+          target_4_4:
+            title: "Tegen 2030 het aantal jongeren en volwassenen met relevante vaardigheden, met inbegrip van technische en beroepsvaardigheden, voor tewerkstelling, degelijke jobs en ondernemerschap aanzienlijk opdrijven."
+          target_4_5:
+            title: "Tegen 2030 genderongelijkheden wegwerken in het onderwijs en zorgen voor gelijke toegang tot alle niveaus inzake onderwijs en beroepsopleiding voor de kwetsbaren, met inbegrip van mensen met een handicap, inheemse bevolkingen en kinderen in kwetsbare situaties."
+          target_4_6:
+            title: "Er tegen 2030 voor zorgen dat alle jongeren en een groot aantal volwassenen, zowel mannen als vrouwen, geletterd en rekenvaardig zijn."
+          target_4_7:
+            title: "Er tegen 2030 voor zorgen dat alle leerlingen kennis en vaardigheden verwerven die nodig zijn om duurzame ontwikkeling te bevorderen, onder andere via vorming omtrent duurzame ontwikkeling en duurzame levenswijzen, mensenrechten, gendergelijkheid, de bevordering van een cultuur van vrede en geweldloosheid, wereldburgerschap en de waardering van culturele diversiteit en van de bijdrage van de cultuur tot de duurzame ontwikkeling."
+          target_4_A:
+            title: "Bouwen en verbeteren van onderwijsfaciliteiten die aandacht hebben voor kinderen, mensen met een beperking en gendergelijkheid en die een veilige, geweldloze, inclusieve en doeltreffende leeromgeving bieden voor iedereen."
+          target_4_B:
+            title: "Tegen 2020 het aantal studiebeurzen wereldwijd en substantieel verhogen dat beschikbaar is voor ontwikkelingslanden, in het bijzonder de minst ontwikkelde landen, de kleine eilandstaten en de Afrikaanse landen, voor toegang tot het hoger onderwijs, met inbegrip van beroepsopleiding en programma’s omtrent informatie en communicatietechnologie, techniek, ingenieurswezen en wetenschappen, in ontwikkelde landen en andere ontwikkelingslanden."
+          target_4_C:
+            title: "Tegen 2030 op aanzienlijke wijze de toevloed verhogen van gekwalificeerde leraren, ook via internationale samenwerking voor lerarenopleidingen in ontwikkelingslanden, in het bijzonder in de minst ontwikkelde landen en de kleine eilandstaten."
+      goal_5:
+        title: "Gendergelijkheid"
+        title_in_two_lines: "Gendergelijkheid"
+        description: "Bereik gendergelijkheid en empowerment voor alle vrouwen en meisjes."
+        long_description: '<p>In de Universele Verklaring voor de Rechten van de Mens is vastgesteld dat mannen en vrouwen dezelfde rechten hebben. Toch is dit niet voldoende.In de praktijk blijkt dat vrouwen en meisjes nog vaak achtergesteld worden ten opzichte van mannen en jongens. Dit vijfde doel stelt dat in 2030 vrouwen en mannen ook in de praktijk gelijke rechten moeten hebben op faciliteiten als onderwijs, gezondheidszorg en werk. Daarnaast moeten vrouwen en mannen gelijk vertegenwoordigd zijn in politieke en conomische besluitvorming.</p><p>In 2030 moeten vrouwen evenveel kansen krijgen als mannen, om mee te beslissen binnen de politiek, de economie en het openbare leven. Landen moeten specifiek beleid maken en wetten aannemen die vrouwen en meisjes gelijke rechten geven op alle gebieden. Ook moet er een einde komen aan al het geweld tegen vrouwen en meisjes zoals mensenhandel, seksuele uitbuiting, kindhuwelijken en vrouwenbesnijdenis.</p>'
+        targets:
+          target_5_1:
+            title: "Een einde maken aan alle vormen van discriminatie jegens vrouwen en meisjes, overal."
+          target_5_2:
+            title: "lle vormen van geweld tegen vrouwen en meisjes in de openbare en de privésfeer uitroeien, ook inzake vrouwenhandel en seksuele en andere soorten uitbuiting."
+          target_5_3:
+            title: "Uit de wereld helpen van alle schadelijke praktijken, zoals kind-, vroege en gedwongen huwelijken en vrouwelijke genitale verminking."
+          target_5_4:
+            title: "Erkennen en naar waarde schatten van onbetaalde zorg en thuiswerk door het voorzien van openbare diensten, infrastructuur en een sociaal beschermingsbeleid en door de bevordering van gedeelde verantwoordelijkheden binnen het gezin en de familie, zoals dat nationaal van toepassing is."
+          target_5_5:
+            title: "Verzekeren van de volledige en doeltreffende deelname van vrouwen en voor gelijke kansen inzake leiderschap op alle niveaus van de besluitvorming in het politieke, economische en openbare leven."
+          target_5_6:
+            title: "Verzekeren van universele toegang tot seksuele en reproductieve gezondheidszorg en reproductieve rechten zoals overeengekomen in het kader van het Actieprogramma van de Internationale Conferentie over Bevolking en Ontwikkeling en het Peking-Actieplatform en de slotdocumenten van hun desbetreffende conferenties."
+          target_5_A:
+            title: "Hervormingen doorvoeren waarbij vrouwen gelijke rechten krijgen op economische middelen, naast toegang tot eigenaarschap en controle over land en andere vormen van eigendom, financiële diensten, erfenissen en natuurlijke hulpbronnen, in overeenstemming met nationaal recht."
+          target_5_B:
+            title: "Het gebruik doen toenemen van innovatieve technologie, in het bijzonder de informatie- en communicatietechnologie, om te komen tot een grotere zelfredzaamheid van vrouwen."
+          target_5_C:
+            title: "Een gezond beleid en afdwingbare wetgeving goedkeuren en versterken voor de bevordering van gendergelijkheid en de zelfredzaamheid van alle vrouwen en meisjes op alle niveaus."
+      goal_6:
+        title: "Schoon water en sanitair"
+        title_in_two_lines: "Schoon water\nen sanitair"
+        description: "Verzeker toegang tot duurzaam beheer van water en sanitatie voor iedereen"
+        long_description: '<p>Schoon drinkwater en goede en schone sanitaire voorzieningen hebben een positieve invloed op andere Global Goals zoals voedselveiligheid, onderwijs en gezondheid. </p><p> Er is genoeg schoon drinkwater voor iedereen op de wereld, maar door problemen zoals een slechte infrastructuur of economie, sterven er elk jaar nog miljoenen mensen aan ziekten die veroorzaakt worden door vervuild drinkwater of slechte hygiëne. 1,8 miljard mensen halen hun drinkwarer nog steeds uit vervuilde bronnen. Daarnaast kunnen 2,4 miljard mensen op de wereld nog geen gebruik maken van schone toiletten en ander sanitair.</p> <p>Er wordt nog steeds veel afval weggegooid in water. Om de kwaliteit van water te verbeteren moet deze vervuiling stoppen en afvalwater moet vaker gezuiverd worden. Ook moeten alle landen in 2030 een goed werkend waterbeheer systeem hebben. </p>'
+        targets:
+          target_6_1:
+            title: "Tegen 2030 komen tot een universele en gelijke toegang tot veilig en betaalbaar drinkwater voor iedereen."
+          target_6_2:
+            title: "Tegen 2030 komen tot toegang tot gepaste en degelijke sanitaire voorzieningen en hygiëne voor iedereen en een einde maken aan openbare ontlasting, waarbij speciale aandacht wordt besteed aan de behoeften van vrouwen en meisjes en mensen in kwetsbare situaties."
+          target_6_3:
+            title: "Tegen 2030 de waterkwaliteit verbeteren door verontreiniging te beperken, de lozing van gevaarlijke chemicaliën en materialen een halt toe te roepen en de uitstoot ervan tot een minimum te beperken waarbij ook het aandeel van onbehandeld afvalwater wordt gehalveerd en recyclage en veilige hergebruik wereldwijd aanzienlijk worden verhoogd."
+          target_6_4:
+            title: "Tegen 2030 in aanzienlijke mate de efficiëntie van het watergebruik verhogen in alle sectoren en het duurzaam winnen en verschaffen van zoetwater garanderen om een antwoord te bieden op de waterschaarste en om het aantal mensen dat af te rekenen heeft met waterschaarste, aanzienlijk te verminderen."
+          target_6_5:
+            title: "Tegen 2030 het geïntegreerde beheer van de waterhulpbronnen implementeren op alle niveaus, ook via gerichte grensoverschrijdende samenwerking."
+          target_6_6:
+            title: "Tegen 2020 de op water gebaseerde ecosystemen beschermen en herstellen, met inbegrip van bergen, bossen, moerassen, rivieren, grondwaterlagen en meren."
+          target_6_A:
+            title: "Tegen 2030 de internationale samenwerking en de capaciteitsopbouwende ondersteuning uitbreiden voor de ontwikkelingslanden voor activiteiten die betrekking hebben op water en sanitaire voorzieningen en programma’s, met inbegrip van technologieën voor waterwinning, ontzilting, waterefficiëntie, afvalwaterzuivering, recyclage en hergebruik."
+          target_6_B:
+            title: "De deelname versterken en ondersteunen van plaatselijke gemeenschappen bij de verbetering van het waterbeheer en van de sanitaire voorzieningen."
+      goal_7:
+        title: "Betaalbare en duurzame energie"
+        title_in_two_lines: "Betaalbare en\nduurzame energie"
+        description: "Verzeker toegang tot betaalbare, betrouwbare, duurzame en moderne energie voor iedereen"
+        long_description: '<p>We hebben energie nodig voor onze welvaart en ons welzijn; om te leven, wonen en werken. De maatschappij zou zich niet zo kunnen ontwikkelen zoals het nu doet zonder energie. </p><p>Maar tegelijkertijd is energie ook een van de grootste problemen van deze eeuw. We halen te veel energie uit kolen, olie en gas. Deze grondstoffen raken een keer op en de brandstof veroorzaakt klimaatverandering. Ten minste 60 procent van de uitstoot van broeikasgassen wordt veroorzaakt door energie.</p><p>In 2030 moet iedereen toegang hebben tot betaalbare, betrouwbare en duurzame energie. Duurzame energie kunnen we halen uit natuurlijke bronnen als water, wind en zon. Om dit doel te bereiken moeten deze bronnen beter onderzocht worden, evenals de technologie waarmee we duurzame energie kunnen opwekken.</p><p>Om moderne en duurzame energie ook in ontwikkelingslanden toegankelijk te maken, moet er gewerkt worden aan een betere infrastructuur en technologische vooruitgang. </p>'
+        targets:
+          target_7_1:
+            title: "Tegen 2030 universele toegang tot betaalbare, betrouwbare en moderne energiediensten garanderen."
+          target_7_2:
+            title: "Tegen 2030 in aanzienlijke mate het aandeel hernieuwbare energie in de globale energiemix verhogen."
+          target_7_3:
+            title: "Tegen 2030 de globale snelheid van verbetering in energie-efficiëntie verdubbelen."
+          target_7_A:
+            title: "Tegen 2030 de internationale samenwerking verhogen om toegang te vergemakkelijken tot onderzoek en technologie inzake schone energie, met inbegrip van de hernieuwbare energie, de energiedoeltreffendheid en de geavanceerde en schonere fossiele brandstoffentechnologie, en de investering promoten in energie-infrastructuur en schone energietechnologie."
+          target_7_B:
+            title: "Tegen 2030 de infrastructuur uitbreiden en de technologie upgraden om moderne en duurzame energiediensten te kunnen aanbieden aan alle ontwikkelingslanden, in het bijzonder de minst ontwikkelde landen, de kleine eilandstaten en door land ingesloten ontwikkelingslanden, in overeenstemming met hun respectieve steunprogramma’s."
+      goal_8:
+        title: "Waardig werk en economische groei"
+        title_in_two_lines: "Waardig werk eN\neconomische groei"
+        description: "Bevorder aanhoudende, inclusieve en duurzame economische groei, volledige en productieve tewerkstelling en waardig werk voor iedereen."
+        long_description: '<p>n veel landen betekent het hebben van een baan niet automatisch dat je aan armoede kunt ontsnappen. Dit moet anders.Dit betekent dat iedereen die kan werken de mogelijkheid moet hebben om te kunnen werken, onder goede werkomstandigheden. Deze banen moeten economische groei stimuleren zonder het milieu aan te tasten.</p><p>an 2007 tot 2012 groeide het aantal werkelozen in de wereld van 170 miljoen naar 202 miljoen. Van dit aantal zijn 75 miljoen jonge vrouwen en mannen. En om het aantal nieuwe mensen op de arbeidsmarkt in de komende jaren van een baan te voorzien, zijn er tussen 2016 en 2030 zijn er 470 miljoen extra banen nodig.</p><p>Zo moeten landen binnen hun beleid  meer aandacht besteden aan ondernemerschap, creativiteit en innovatie. Financiële instituties moeten versterkt worden zodat iedereen toegang krijgt tot banken, verzekeringen en andere financiële diensten.</p><p>Daarnaast moeten landen actie ondernemen op het tegengaan van moderne slavernij, mensenhandel en gedwongen arbeid, inclusief kinderarbeid en kindsoldaten.</p>'
+        targets:
+          target_8_1:
+            title: "De economische groei per capita in stand houden in overeenstemming met de nationale omstandigheden en, in het bijzonder, minstens 7% aangroei van het bruto binnenlands product per jaar in de minst ontwikkelde landen."
+          target_8_2:
+            title: "Tot meer economische productiviteit komen door diversificatie, technologische modernisatie en innovatie, ook door de klemtoon te leggen op sectoren met hoge toegevoegde waarde en arbeidsintensieve sectoren."
+          target_8_3:
+            title: "Bevorderen van op ontwikkeling toegespitste beleidslijnen die productieve activiteiten ondersteunen, alsook de creatie van waardige jobs, ondernemerschap, creativiteit en innovatie, en de formalisering en de groei aanmoedigen van micro-, kleine en middelgrote ondernemingen, ook via toegang tot financiële diensten."
+          target_8_4:
+            title: "Tegen 2030 geleidelijk aan de wereldwijde efficiëntie, productie en consumptie van hulpbronnen verbeteren en streven naar de ontkoppeling van economische groei en achteruitgang van het milieu, volgens het 10-jarig Programmakader voor Duurzame Consumptie en Productie, waarbij de ontwikkelde landen de leiding nemen."
+          target_8_5:
+            title: "Tegen 2030 komen tot een volledige en productieve tewerkstelling en waardig werk voor alle vrouwen en mannen, ook voor jonge mensen en personen met een handicap, alsook een gelijk loon voor werk van gelijke waarde."
+          target_8_6:
+            title: "Tegen 2020 het aandeel aanzienlijk terugschroeven van jongeren die niet aan het werk zijn, geen onderwijs volgen en niet met een opleiding bezig zijn."
+          target_8_7:
+            title: "Onmiddellijke en effectieve maatregelen nemen om gedwongen arbeid uit de wereld te helpen, een einde te maken aan moderne slavernij en mensensmokkel en het verbod en de afschaffing van de ergste vormen van kinderarbeid veiligstellen, met inbegrip van het rekruteren en inzetten van kindsoldaten, en tegen 2025 een einde stellen aan kinderarbeid in al haar vormen."
+          target_8_8:
+            title: "De arbeidsrechten beschermen en veilige en gezonde werkomgevingen bevorderen voor alle werknemers, met inbegrip van migrantenarbeiders, in het bijzonder vrouwelijke migranten, en zij die zich in precaire werkomstandigheden bevinden."
+          target_8_9:
+            title: "Tegen 2030 beleidslijnen uitwerken en implementeren ter ondersteuning van het duurzaam toerisme dat jobs creëert en plaatselijke cultuur en producten bevordert."
+          target_8_10:
+            title: "Versterken van de mogelijkheden van de plaatselijke financiële instellingen om toegang tot het bankwezen, de verzekeringen en financiële diensten voor allen aan te moedigen."
+          target_8_A:
+            title: "Verhogen van de Aid for Trade voor ontwikkelingslanden, in het bijzonder de minst ontwikkelde landen, ook via het verbeterde geïntegreerde kader voor handelsgerelateerde bijstand aan de minst ontwikkelde landen."
+          target_8_B:
+            title: "Tegen 2020 een globale strategie voor jongerentewerkstelling ontwikkelen en die operationeel maken en het Globale Jobspact van de Internationale Arbeidsorganisatie implementeren."
+      goal_9:
+        title: "Industrie, innovatie en infrastructuur"
+        title_in_two_lines: "Industrie, innovatie\nen infrastructuur"
+        description: "Bouw veerkrachtige infrastructuur, bevorder inclusieve en duurzame industrialisering en stimuleer innovatie."
+        long_description: '<p>Bij infrastructuur moeten we denken aan transport, wegen, irrigatie, energie en informatie-, en communicatietechnologie. Om verbeteringen aan te brengen in onderwijs, gezondheidszorg of het drinkwater, is infrastructuur noodzakelijk. Zonder wegen of transport is het voor kinderen uit afgelegen dorpen bijvoorbeeld veel moeilijker om naar school te gaan. In veel ontwikkelingslanden ontbreekt deze fundamentele infrastructuur.</p><p>Zonder infrastructuur is het moeilijker om een baan te krijgen, zaken te doen, informatie te ontvangen en brood te halen. Oftewel, door een betere infrastructuur is het makkelijker om andere doelen te bereiken en gaat de levenskwaliteit omhoog.</p><p>Om dit te bereiken is er technologische vooruitgang nodig. Daarnaast hebben we vooruitgang nodig om doelen over klimaat en duurzame energie te bereiken. Industrialisatie en innovatie zijn binnen dit doel dus ook van belang. Zonder technologie en innovatie zal er geen industrialisatie komen en zonder industrialisatie komt er geen ontwikkeling</p><p>Naast duurzaam en inclusief, moet infrastructuur in 2030 voor iedereen toegankelijk en betaalbaar zijn. Duurzame en inclusieve industrialisatie moet voor meer banen zorgen en het moet het BNP verhogen.</p>'
+        targets:
+          target_9_1:
+            title: "Ontwikkelen van kwalitatieve, betrouwbare, duurzame en veerkrachtige infrastructuur, met inbegrip van regionale en grensoverschrijdende infrastructuur, ter ondersteuning van de economische ontwikkeling en het menselijk welzijn, met klemtoon op een betaalbare en billijke toegang voor iedereen."
+          target_9_2:
+            title: "Bevorderen van inclusieve en duurzame industrialisering en, tegen 2030, het aandeel in de werkgelegenheid en het bruto binnenlands product van de industrie aanzienlijk doen toenemen, in overeenstemming met de nationale omstandigheden, en dat aandeel verdubbelen in de minst ontwikkelde landen."
+          target_9_3:
+            title: "De toegang vergroten van kleinschalige industriële en andere ondernemingen, in het bijzonder in de ontwikkelingslanden, tot financiële diensten, inclusief betaalbare kredietverlening, alsook hun integratie in waardeketens en markten."
+          target_9_4:
+            title: "Tegen 2030 de infrastructuur moderniseren en industrieën aanpassen om hen duurzaam te maken, waarbij de focus ligt op een grotere doeltreffendheid bij het gebruik van hulpbronnen en van schonere en milieuvriendelijke technologieën en industriële processen, waarbij alle landen de nodige actie ondernemen volgens hun eigen respectieve mogelijkheden."
+          target_9_5:
+            title: "Verbeteren van het wetenschappelijk onderzoek, moderniseren van de technologische capaciteiten van industriesectoren in alle landen, in het bijzonder in ontwikkelingslanden, waarbij ook tegen 2030 innovatie wordt aangemoedigd en op aanzienlijke wijze het aantal onderzoeks- en ontwikkelingswerkers per miljoen inwoners wordt verhoogd en waarbij ook meer wordt uitgegeven aan publiek en privaat onderzoek en ontwikkeling."
+          target_9_A:
+            title: "De duurzame en veerkrachtige ontwikkeling van infrastructuur mogelijk maken in ontwikkelingslanden aan de hand van extra financiële, technologische en technische steun aan Afrikaanse landen, de minst ontwikkelde landen, de door land ingesloten ontwikkelingslanden en de kleine eilandstaten."
+          target_9_B:
+            title: "Ondersteunen van de binnenlandse technologische ontwikkeling, onderzoek en innovatie in ontwikkelingslanden, ook door een gunstig beleidsklimaat te garanderen voor, onder andere, industriële diversificatie en waardetoevoeging aan handelsproducten."
+          target_9_C:
+            title: "In aanzienlijke mate de toegang verhogen tot informatie- en communicatietechnologie en streven naar het verschaffen van universele en betaalbare toegang tot internet in de minst ontwikkelde landen tegen 2020."
+      goal_10:
+        title: "Ongelijkheid verminderen"
+        title_in_two_lines: "Ongelijkheid\nverminderen"
+        description: "Dring ongelijkheid in en tussen landen terug."
+        long_description: '<p>Inkomensongelijkheid tussen landen is de laatste jaren verminderd. Maar ongelijkheid binnen landen is alleen maar groter geworden. Tussen 1990 en 2010 is de inkomensongelijkheid binnen ontwikkelingslanden met 11 procent toegenomen. Maar ook binnen ontwikkelde landen is de inkomensongelijkheid toegenomen.</p><p>Het idee dat economische vooruitgang niet genoeg is om armoede te bestrijden, wordt wereldwijd steeds meer ondersteund. Economische groei moet inclusief zijn. Oftewel, iedereen moet er bij betrokken worden. En als we het hebben over economische groei, moeten we ook aandacht hebben voor sociale aspecten en het milieu.</p><p>In doel tien staat dat landen meer aandacht moeten besteden aan de inkomensgroei van arme mensen. Het inkomen van de armste 40 procent van de nationale populatie moet in 2030 dan ook sneller zijn gegroeid dan het nationale gemiddelde. </p><p>Binnen dit doel is ook ruimte voor migratie. Migratie en mobiliteit van mensen moet beter en veiliger georganiseerd worden. Ook moet er een einde komen aan discriminerende wetten en praktijken die ongelijkheid alleen maar groter maken. Iedereen moet gelijke kansen hebben en betrokken worden bij alle sociale, economische en politieke aspecten van de maatschappij.</p>'
+        targets:
+          target_10_1:
+            title: "Tegen 2030 geleidelijk tot een inkomenstoename van de onderste 40% van de bevolking komen tegen een ritme dat hoger ligt dan het nationale gemiddelde, en die toename ook in stand houden."
+          target_10_2:
+            title: "Tegen 2030 de sociale, economische en politieke inclusie van iedereen mogelijk maken en bevorderen, ongeacht leeftijd, geslacht, handicap, ras, etniciteit, herkomst, godsdienst of economische of andere status."
+          target_10_3:
+            title: "Gelijke kansen verzekeren en ongelijkheden wegwerken, ook door het afvoeren van discriminerende wetten, beleidslijnen en praktijken en door het bevorderen van de geschikte wetgeving, beleidslijnen en acties in dit opzicht."
+          target_10_4:
+            title: "Beleid voeren dat geleidelijk tot een grotere gelijkheid leidt, in het bijzonder inzake fiscaliteit, lonen en sociale bescherming."
+          target_10_5:
+            title: "De regulering en monitoring verbeteren van de globale financiële markten en instellingen en de implementatie versterken van dergelijke reguleringen."
+          target_10_6:
+            title: "Een verbeterde vertegenwoordiging verzekeren en een beter gehoor geven aan de ontwikkelingslanden bij de besluitvorming in mondiale, internationale economische en financiële instellingen om te komen tot meer doeltreffende, geloofwaardige, verantwoordelijke en legitieme instellingen."
+          target_10_7:
+            title: " Een ordelijke, veilige, regelmatige en verantwoordelijke migratie en mobiliteit van mensen mogelijk maken, ook via de implementatie van geplande en degelijk beheerde migratiebeleidslijnen."
+          target_10_A:
+            title: "Het beginsel implementeren van speciale en gedifferentieerde behandeling voor ontwikkelingslanden, in het bijzonder de minst ontwikkelde landen, in overeenstemming met de overeenkomsten van de Wereldhandels-organisatie."
+          target_10_B:
+            title: "Officiële ontwikkelingsbijstand en financiële stromen aanmoedigen, met inbegrip van directe buitenlandse investeringen, voor staten waar de behoefte het grootst is, in het bijzonder in de minst ontwikkelde landen, de Afrikaanse landen, de kleine eilandstaten en de door land ingesloten ontwikkelingslanden, in overeenstemming met hun nationale plannen en programma’s."
+          target_10_C:
+            title: "Tegen 2030 de transactiekosten van overschrijvingen van migranten reduceren tot minder dan 3% en transfer vanuit landen met kosten hoger dan 5% elimineren."
+      goal_11:
+        title: "Duurzame steden en gemeenschappen"
+        title_in_two_lines: "Duurzame steden en\ngemeenschappen"
+        description: "Maak steden en menselijke nederzettingen inclusief, veilig, veerkrachtig en duurzaam."
+        long_description: '<p>De helft van de wereldbevolking, zo’n 3,5 miljard mensen, woont in de stad. En de verwachting is dat dat aantal alleen maar toeneemt: in 2030 woont mogelijk bijna 60 procent van alle mensen wereldwijd in stedelijk gebied. Vrijwel al deze verstedelijking, 95 procent, vindt plaats in ontwikkelingslanden.</p><p>Helaas bevat die groei van ‘stedelijk gebied’ ook sloppenwijken. Nu wonen er al 823 miljoen mensen in die sloppenwijken, maar dat aantal zal blijven groeien</p><p>Duurzame groei is de grootste uitdaging van de steden van de toekomst. Ondanks het grote aantal mensen dat in de steden woont, bedekken alle steden slechts drie procent van al het landoppervlakte. </p><p>Toch kunnen de steden een groot verschil maken: ze zijn goed voor zo’n 60 – 80 procent van alle energieconsumptie en zo’n 75 procent van de carbon emissies. De snelle verstedelijking drukt zwaar op het krijgen of behouden van vers watervoorziening, functionerende riolering, de leefomgeving en de volksgezondheid.</p><p>De stad van de toekomst moet met behulp van innovatie en vooruitgang kansen bieden aan iedereen, inclusief toegang basisvoorzieningen als schoon drinkwater, huisvesting, energie, transport en meer.</p>'
+        targets:
+          target_11_1:
+            title: " Tegen 2030 voor iedereen toegang voorzien tot adequate, veilige en betaalbare huisvesting en basisdiensten, en sloppenwijken verbeteren."
+          target_11_2:
+            title: "Tegen 2030 toegang voorzien tot veilige, betaalbare, toegankelijke en duurzame vervoerssystemen voor iedereen, waarbij de verkeersveiligheid verbeterd wordt, met name door het openbaar vervoer uit te breiden, met aandacht voor de behoeften van mensen in kwetsbare situaties, vrouwen, kinderen, personen met een handicap en ouderen."
+          target_11_3:
+            title: "Tegen 2030 inclusieve en duurzame stadsontwikkeling en capaciteit opbouwen voor participatieve, geïntegreerde en duurzame planning en beheer van menselijke nederzettingen in alle landen."
+          target_11_4:
+            title: "De inspanningen verhogen om het culturele en natuurlijke erfgoed van de wereld te beschermen en veilig te stellen."
+          target_11_5:
+            title: "Tegen 2030 het aantal doden en getroffenen aanzienlijk verminderen en in aanzienlijke mate de rechtstreekse economische impact op het bruto binnenlands product terugschroeven dat veroorzaakt wordt door rampen, met inbegrip van rampen die met water verband houden, waarbij de klemtoon ligt op het beschermen van de armen en van mensen in kwetsbare situaties."
+          target_11_6:
+            title: "Tegen 2030 de nadelige milieu-impact van steden per capita reduceren, ook door bijzondere aandacht te besteden aan de luchtkwaliteit en aan het gemeentelijk en ander afvalbeheer."
+          target_11_7:
+            title: "Tegen 2030 universele toegang voorzien tot veilige, inclusieve en toegankelijke, groene en openbare ruimtes, in het bijzonder voor vrouwen en kinderen, ouderen en personen met een handicap."
+          target_11_A:
+            title: "Positieve economische, sociale en ecologische verbanden ondersteunen tussen stedelijke, voorstedelijke en landelijke gebieden door de nationale en regionale ontwikkelingsplanning te versterken."
+          target_11_B:
+            title: "Tegen 2020 het aantal steden en menselijke nederzettingen aanzienlijk verhogen die geïntegreerde beleidslijnen en plannen goedkeuren en implementeren inzake inclusie, doeltreffendheid van hulpbronnengebruik, mitigatie en adaptatie aan klimaatverandering, weerbaarheid tegen rampen, en in overeenstemming met het kader van Sendai voor rampenrisicovermindering 2015-2030 een holistisch ramprisicobeheer ontwikkelen en implementeren op alle niveaus."
+          target_11_C:
+            title: "De minst ontwikkelde landen steunen, ook via financiële en technische bijstand, in het opbouwen van duurzame en veerkrachtige gebouwen waarbij gebruik wordt gemaakt van lokale materialen."
+      goal_12:
+        title: "Verantwoorde consumptie en productie"
+        title_in_two_lines: "Verantwoorde consumptie/nen productie"
+        description: "Verzeker duurzame consumptie- en productiepatronen."
+        long_description: '<p>Zorg voor duurzaam beheer en efficiënt gebruik van natuurlijke hulpbronnen. Het produceren van onze goederen moet met het oog op de groeiende wereldbevolking veel handiger: ‘meer produceren met minder’.</p><p>Zo moet het gebruik van vervuilende energiebronnen teruggeschroefd, want ondanks de technologische vooruitgang zullen OECD-landen naar schatting nog 35 procent meer energie verbruiken in 2020.</p><p>We moeten zorgen dat het kleine percentage aan drinkwater dat er is – maar drie procent van de wereldwatervoorraad is zoet water – minder vaak vervuild en verspild wordt.</p><p>Op het gebied van voedselproductie moet de verdeling beter. Terwijl er bijna 800 miljoen mensen honger hebben, is er in sommige delen van de wereld juist te veel (ongezond) eten, wat zorgt voor hart- en vaatziekten. Naar schatting haalt ongeveer een derde van wat de wereld produceert aan voedsel, ons bord niet.</p><p>Onze productie moet schoner: het doel is om chemicaliën en ander afval in de lucht, water en bodem te verminderen. De bedoeling is om in de hele keten bewust te maken van de problemen en te laten meehelpen bij de oplossingen. Van boer tot supermarkt, tot gemeentes, waterbedrijven en uiteindelijk de consument: zorg dat iedereen voldoende informatie heeft over een groene levensstijl.</p>'
+        targets:
+          target_12_1:
+            title: "Het 10-jarig Programmakader inzake Duurzame Consumptie- en Productiepatronen implementeren, waarbij alle landen actie ondernemen, en waarbij de ontwikkelde landen de leiding nemen, rekening houdend met de ontwikkeling en de mogelijkheden van de ontwikkelingslanden."
+          target_12_2:
+            title: "Tegen 2030 het duurzame beheer en het efficiënte gebruik van natuurlijke hulpbronnen realiseren."
+          target_12_3:
+            title: "Tegen 2030 de voedselverspilling in winkels en bij consumenten per capita halveren en voedselverlies reduceren in de productie- en bevoorradingsketens, met inbegrip van verliezen na de oogst."
+          target_12_4:
+            title: "Tegen 2020 komen tot een vanuit milieuvriendelijk beheer van chemicaliën en van alle afval gedurende hun hele levenscyclus, in overeenstemming met afgesproken nationale kaderovereenkomsten, en de uitstoot aanzienlijk beperken in lucht, water en bodem om hun negatieve invloeden op de menselijke gezondheid en het milieu zoveel mogelijk te beperken."
+          target_12_5:
+            title: "Tegen 2030 de afvalproductie aanzienlijk beperken via preventie, vermindering, recyclage en hergebruik."
+          target_12_6:
+            title: "Bedrijven aanmoedigen, in het bijzonder grote en transnationale bedrijven, om duurzame praktijken aan te nemen en duurzaamheidsinformatie te integreren in hun rapporteringscyclus."
+          target_12_7:
+            title: "Duurzame praktijken bij overheidsopdrachten bevorderen in overeenstemming met nationale beleidslijnen en prioriteiten."
+          target_12_8:
+            title: "Tegen 2030 garanderen dat mensen overal beschikken over relevantie informatie over en zich bewust zijn van duurzame ontwikkeling en levensstijlen die in harmonie zijn met de natuur."
+          target_12_A:
+            title: "Ondersteunen van ontwikkelingslanden ter versterking van hun wetenschappelijke en technologische mogelijkheden om de richting uit te gaan van meer duurzame consumptie- en productiepatronen."
+          target_12_B:
+            title: "Ontwikkelen en implementeren van instrumenten om de impact te monitoren van duurzame ontwikkeling op duurzaam toerisme dat werkgelegenheid creëert en de plaatselijke cultuur en producten promoot."
+          target_12_C:
+            title: "Inefficiënte subsidies voor fossiele brandstoffen die afval producerende consumptie aanmoedigen rationaliseren, door storende marktinvloeden uit de wereld te helpen, in overeenstemming met de nationale omstandigheden, ook door het belastingsysteem te herstructureren en deze schadelijke subsidies te laten uitdoven, waar deze bestaan, waarbij rekening wordt gehouden met de specifieke noden en omstandigheden in de ontwikkelingslanden en waarbij de mogelijke negatieve invloeden worden geminimaliseerd op hun ontwikkeling op een manier die de armen en de getroffen gemeenschappen beschermt."
+      goal_13:
+        title: "Klimaatactie"
+        title_in_two_lines: "Klimaatactie"
+        description: "Neem dringend actie om klimaatverandering en haar impact te bestrijden."
+        long_description: "<p>Ieder land op ieder continent heeft te maken met klimaatverandering. De opwarming van de aarde heeft nu al invloed op het dagelijks leven en het inkomen van miljoenen mensen wereldwijd en dat zal in de toekomst alleen maar toenemen. </p><p>Droogte, overstromingen en extreme stormen komen vaker voor door klimaatverandering. Broeikasgassen die wij uitstoten zorgen ervoor dat de temperatuur op aarde snel stijgt. Dit zorgt ervoor dat het Poolijs smelt en het zeeniveau stijgt.</p><p>In december 2015 werd in Parijs een klimaatakkoord gesloten waarbij landen afgesproken hebben om de opwarming van de aarde onder de twee graden te houden. </p><p>Hiervoor moeten broeikasgassen fors teruggedrongen worden en moeten fossiele energiebronnen vervangen worden door duurzame energie. Verder is het belangrijk dat met name ontwikkelingslanden maatregelen kunnen nemen om zich te wapenen tegen de gevolgen van klimaatverandering.</p>"
+        targets:
+          target_13_1:
+            title: "De veerkracht en het aanpassingsvermogen versterken van met klimaat in verband te brengen gevaren en natuurrampen in alle landen."
+          target_13_2:
+            title: "Maatregelen inzake klimaatverandering integreren in nationale beleidslijnen, strategieën en planning."
+          target_13_3:
+            title: "De opvoeding, bewustwording en de menselijke en institutionele capaciteit verbeteren met betrekking tot mitigatie, adaptatie, impactvermindering en vroegtijdige waarschuwing inzake klimaatverandering."
+          target_13_A:
+            title: "De verbintenis  uitvoeren die door de ontwikkelde landen in het kader van het Raamverdrag van de Verenigde Naties inzake Klimaatverandering genomen werd omtrent de doelstelling om tegen 2020 gezamenlijk jaarlijks $ 100 miljard bijeen te brengen uit allerlei bronnen, om tegemoet te komen aan de behoeften van de ontwikkelingslanden in de context van aanzienlijke mitigatieacties en van transparantie inzake implementatie, en om door deze kapitalisatie het Groene Klimaatfonds zo snel mogelijk volledig operationeel te maken."
+          target_13_B:
+            title: "Mechanismen promoten om de capaciteit te vergroten in het kader van doeltreffende aan klimaatverandering gekoppelde planning en beheer in de minst ontwikkelde landen en de kleine eilandstaten, waarbij ook wordt gefocust op vrouwen, jongeren en lokale en gemarginaliseerde gemeenschappen."
+      goal_14:
+        title: "Leven in het water"
+        title_in_two_lines: "Leven in\nhet water"
+        description: "Behoud en maak duurzaam gebruik van de oceanen, de zeeën en de maritieme hulpbronnen."
+        long_description: '<p>Oceanen zijn met hun temperatuur, hun stromingen en hun onderzeese leven de motor van mondiale systemen die de aarde bewoonbaar maken voor mensen. Ze bedekken drie kwart van het aardoppervlak. Ons drinkwater, ons weer, klimaat, de kusten, veel van ons eten en zelfs de lucht die we inademen zijn afhankelijk van de zee.</p><p>Door de eeuwen heen zijn oceanen en zeeën cruciaal gebleven voor handel en transport. De huidige waarde van economische activiteit op zee wordt geschat op 3 tot 6 biljoen dollar. Nu nog dragen oceanen en zeeën 90 procent van al het transport, en via onderzeese kabels 95 procent van de mondiale telecommunicatie. Visserij en aquacultuur verschaffen voor 4,3 miljard mensen ruim 15 procent van hun dierlijke eiwitconsumptie.</p><p>Zonder zorgvuldig beheer van deze essentiële mondiale hulpbron is er geen duurzame toekomst mogelijk. </p>'
+        targets:
+          target_14_1:
+            title: "Tegen 2025 de vervuiling van de zee voorkomen en in aanzienlijke mate verminderen, in het bijzonder als gevolg van activiteiten op het land, met inbegrip van vervuiling door ronddrijvend afval en voedingsstoffen."
+          target_14_2:
+            title: "Tegen 2020 op een duurzame manier zee- en kustecosystemen beheren en beschermen om aanzienlijke negatieve gevolgen te vermijden, ook door het versterken van hun veerkracht, en actie ondernemen om deze te herstellen en om te komen tot gezonde en productieve oceanen."
+          target_14_3:
+            title: "De impact van de verzuring van de oceanen minimaliseren en aanpakken, ook via verhoogde wetenschappelijke samenwerking op alle niveaus."
+          target_14_4:
+            title: "Tegen 2020 op een doeltreffende manier de visvangst reguleren en een einde maken aan overbevissing, aan illegale, niet-aangegeven en ongereguleerde visserij en aan destructieve visserijpraktijken, en op wetenschap gebaseerde beheerplannen implementeren, om de visvoorraden zo snel mogelijk te herstellen, op zijn minst op niveaus die een maximale duurzame opbrengst kunnen garanderen zoals bepaald door hun biologische kenmerken."
+          target_14_5:
+            title: "Tegen 2020 minstens 10% van de kust- en zeegebieden behouden, in overeenstemming met het nationale en internationale recht en gebaseerd op de beste beschikbare wetenschappelijke informatie."
+          target_14_6:
+            title: "Tegen 2020 bepaalde vormen van visserijsubsidies afschaffen die bijdragen tot overcapaciteit en overbevissing, komaf maken met subsidies die bijdragen tot illegale, niet-aangegeven en ongereguleerde visserij en geen nieuwe vergelijkbare subsidies invoeren, erkennen dat een passende en doeltreffende speciale en gedifferentieerde behandeling van de ontwikkelingslanden en van de minst ontwikkelde landen integraal deel zou moeten uitmaken van de onderhandelingen inzake visserijsubsidies van de Wereldhandelsorganisatie."
+          target_14_7:
+            title: "Tegen 2030 de economische voordelen vergroten voor kleine eilandstaten en voor de minst ontwikkelde landen van het duurzaam gebruik van mariene rijkdommen, ook via het duurzaam beheer van visserij, aquacultuur en toerisme."
+          target_14_A:
+            title: "De wetenschappelijke kennis vergroten, onderzoekscapaciteit ontwikkelen en mariene technologie overdragen, waarbij rekening wordt gehouden met de criteria en richtlijnen van de Intergouvernementele Oceanografische Commissie inzake de overdracht van mariene technologie, om de gezondheid van de oceaan te verbeteren en de bijdrage te verruimen van de mariene biodiversiteit tot de ontwikkeling van ontwikkelingslanden, in het bijzonder kleine eilandstaten en de minst ontwikkelde landen."
+          target_14_B:
+            title: "oegang verschaffen aan kleinschalige ambachtelijke vissers tot mariene hulpbronnen en markten."
+          target_14_C:
+            title: "Het behoud en het duurzaam gebruik van oceanen en hulpbronnen versterken door het implementeren van internationaal recht zoals dat wordt weerspiegeld in het VN-Zeerechtverdrag, dat een wettelijk kader voorziet voor het behoud en het duurzaam gebruik van oceanen en hun hulpbronnen, zoals ook wordt vermeld in paragraaf 158 van ‘De toekomst die wij willen’."
+      goal_15:
+        title: "Leven op het land"
+        title_in_two_lines: "Leven op\nhet land"
+        description: "Bescherm, herstel en bevorder het duurzaam gebruik van ecosystemen, beheer bossen duurzaam, bestrijd woestijnvorming en landdegradatie en draai het terug en roep het verlies aan biodiversiteit een halt toe."
+        long_description: '<p>Bossen bedekken 30 procent van het landoppervlak van de aarde. Naast dat ze belangrijk zijn voor de voedselveiligheid en het bieden van onderdak, zijn ze ook essentieel voor het vechten tegen klimaatverandering, het beschermen van de biodiversiteit en vormen ze het leefgebied van inheemse bevolkingsgroepen.</p><p>We verliezen jaarlijks 13 miljoen hectare bos, terwijl de landaantasting zorgt voor woestijnvorming van 3,6 miljard hectare aan land.</p><p>Ontbossing en verwoestijning – veroorzaakt door de mens en klimmaatverandering – vormen enorme uitdagingen voor duurzame ontwikkeling en tasten de levens van miljoenen mensen aan in hun strijd tegen armoede. Er wordt actie ondernomen om de bossen te beheren en de verwoestijning aan te vechten. </p>'
+        targets:
+          target_15_1:
+            title: "Tegen 2020 het behoud, herstel en het duurzaam gebruik van terrestrische en inlandse zoetwaterecosystemen en hun diensten waarborgen, in het bijzonder bossen, moeraslanden, bergen en droge gebieden, in lijn met de verplichtingen van de internationale overeenkomsten."
+          target_15_2:
+            title: "Tegen 2020 de implementatie bevorderen van het duurzaam beheer van alle soorten bossen, de ontbossing een halt toeroepen, verloederde bossen herstellen en op duurzame manier bebossing en herbebossing mondiaal opvoeren."
+          target_15_3:
+            title: "Tegen 2030 de woestijnvorming tegengaan, aangetast land en gedegradeerde bodem herstellen, ook land dat wordt aangetast door woestijnvorming, droogte en overstromingen, en streven naar een wereld die qua landdegradatie neutraal is."
+          target_15_4:
+            title: "Tegen 2030 het behoud garanderen van de ecosystemen in de bergen, met inbegrip van hun biodiversiteit, om hun vermogen te versterken voordelen te genereren die essentieel zijn voor duurzame ontwikkeling."
+          target_15_5:
+            title: "Dringende en doortastende actie ondernemen om de aftakeling in te perken van natuurlijke leefgebieden, het verlies van biodiversiteit een halt toe te roepen en, tegen 2020, de met uitsterven bedreigde soorten te beschermen en hun uitsterven te voorkomen."
+          target_15_6:
+            title: "Bevorderen van het eerlijk en billijk verdelen van de voordelen die voortvloeien uit het gebruik van genetische hulpbronnen en bevorderen van gepaste toegang tot dergelijke hulpbronnen, zoals internationaal overeengekomen."
+          target_15_7:
+            title: "Dringend actie ondernemen om een einde te maken aan stroperij en de handel in beschermde planten- en diersoorten en zowel de vraag naar als het aanbod van illegale producten afkomstig van deze planten- en diersoorten aan te pakken."
+          target_15_8:
+            title: "Tegen 2020 maatregelen invoeren om de invoering van invasieve uitheemse soorten in land- en waterecosystemen te beperken en hun impact op aanzienlijke wijze te beperken, en de prioritaire soorten controleren of uitroeien."
+          target_15_9:
+            title: "Tegen 2020 ecosysteem- en biodiversiteitswaarden integreren in nationale en plaatselijke planning, ontwikkelingsprocessen, strategieën en plannen inzake armoedebestrijding."
+          target_15_A:
+            title: "Financiële hulpbronnen mobiliseren en aanzienlijk verhogen vanuit allerlei bronnen om de biodiversiteit en de ecosystemen te vrijwaren en op duurzame wijze te gebruiken."
+          target_15_B:
+            title: "Aanzienlijke middelen mobiliseren vanuit allerlei bronnen en op alle niveaus om duurzaam bosbeheer te financieren en gepaste stimuli te verschaffen aan ontwikkelingslanden om een dergelijk beheer te organiseren, ook voor behoud en herbebossing."
+          target_15_C:
+            title: "De wereldwijde inspanningen ter bestrijding van stroperij en illegale handel in beschermde diersoorten opvoeren, ook door verhoging van de capaciteit van plaatselijke gemeenschappen in hun streven naar kansen inzake een duurzaam bestaan."
+      goal_16:
+        title: "Vrede, justitie en sterke publieke diensten"
+        title_in_two_lines: "Vrede, justitie en\nsterke publieke diensten"
+        description: "Bevorder vreedzame en inclusieve samenlevingen met het oog op duurzame ontwikkeling, verzeker toegang tot justitie voor iedereen en creëer op alle niveaus doeltreffende, verantwoordelijke en open instellingen."
+        long_description: '<p>Binnen de millenniumdoelen was er nauwelijks aandacht voor, maar nu is vrijwel iedereen het erover eens dat zonder er vrede, veiligheid en rechtvaardigheid bijna geen ontwikkeling mogelijk is. Corruptie, diefstal en belastingontwijking kost ontwikkelingslanden 1,26 miljard dollar per jaar.</p><p>Geld dat goed gebruikt kan worden voor armoedebestrijding of om kinderen naar school te laten gaan. En de helft van basisschoolleerlingen in conflictgebieden verlaat school zonder diploma. Vrede, veiligheid en rechtvaardigheid zorgen voor ontwikkeling, en andersom. Ze versterken elkaar.</p><p>Er moet een einde komen aan het geweld tegen kinderen. Kinderen hebben nog elke dag te maken met uitbuiting, misbruik en mensenhandel. Corruptie moet omlaag, evenals de illegale wapenhandel.</p><p>Daarnaast moeten rechtssystemen worden versterkt en verbeterd, op nationaal en internationaal niveau. Informatie moet transparanter worden en fundamentele vrijheden zoals de vrijheid van meningsuiting moeten beter beschermd worden.</p>'
+        targets:
+          target_16_1:
+            title: "Alle vormen van geweld en de daaraan gekoppelde sterftecijfers wereldwijd aanzienlijk terugschroeven."
+          target_16_2:
+            title: "Een einde maken aan het misbruik, de exploitatie, de handel en van alle vormen van geweld tegen en het martelen van kinderen."
+          target_16_3:
+            title: "De rechtsregels bevorderen op nationaal en internationaal niveau en gelijke toegang tot het rechtssysteem voor iedereen garanderen."
+          target_16_4:
+            title: "Tegen 2030 ongewettigde financiële en wapenstromen aanzienlijk indijken, het herstel en de teruggave van gestolen goederen versterken en alle vormen van georganiseerde misdaad bestrijden."
+          target_16_5:
+            title: " Op duurzame wijze komaf maken met corruptie en omkoperij in al hun vormen."
+          target_16_6:
+            title: "Doeltreffende, verantwoordelijke en transparante instellingen ontwikkelen op alle niveaus."
+          target_16_7:
+            title: "Ontvankelijke, inclusieve, participatieve en representatieve besluitvorming op alle niveaus garanderen."
+          target_16_8:
+            title: "Verruimen en versterken van de participatie van de ontwikkelingslanden in de instellingen van mondiaal bestuur."
+          target_16_9:
+            title: "Tegen 2030 een wettelijke identiteit voorzien voor iedereen, met inbegrip van geboorteregistratie."
+          target_16_10:
+            title: "Publieke toegang tot informatie en beschermen van fundamentele vrijheden, volgens de nationale wetgeving en internationale overeenkomsten garanderen."
+          target_16_A:
+            title: "Versterken van de relevante nationale instellingen, ook via internationale samenwerking, voor het opbouwen van capaciteit op alle niveaus, in het bijzonder in de ontwikkelingslanden, om geweld te voorkomen en terrorisme en misdaad te bestrijden."
+          target_16_B:
+            title: "Bevorderen en afdwingen van niet-discriminerende wetten en beleidslijnen voor duurzame ontwikkeling."
+      goal_17:
+        title: "Partnerschap om de doelen te bereiken"
+        title_in_two_lines: "Partnerschap om de\ndoelen te bereiken"
+        description: "Versterk de implementatiemiddelen en revitaliseer het wereldwijd partnerschap voor duurzame ontwikkeling."
+        long_description: '<p>Om alle doelen te behalen in 2030 moeten regeringen, bedrijven, burgers en organisaties samenwerken. Het gaat daarbij vooral om technologie, kennisoverdracht, handel, data, beleidscoherentie en financiële stromen. De officiële ontwikkelingshulp (ODA) bedroeg 135,2 miljard dollar in 2014, het hoogste niveau ooit.</p><p>Een succesvolle agenda voor duurzame ontwikkeling vereist partnerschappen tussen regeringen, het bedrijfsleven en het maatschappelijk middenveld. Gezamenlijke principes en waarden, een gedeelde visie en gedeelde doelen zijn nodig op mondiaal, regionaal, nationaal en lokaal niveau.</p><p>Investeringen op lange termijn, met inbegrip van directe buitenlandse investeringen, zijn nodig, met name in ontwikkelingslanden, in duurzame energie, infrastructuur en vervoer, alsook informatie- en communicatietechnologie. Regelgeving moet worden aangepast om investeringen aan te trekken en duurzame ontwikkeling te bevorderen. Nationale toezichtmechanismen zoals rekenkamers en wetgeving moeten worden versterkt.</p>'
+        targets:
+          target_17_1:
+            title: "Versterken van de binnenlandse middelenmobilisatie (DRM), ook via internationale steun aan ontwikkelingslanden, om de binnenlandse capaciteit te verbeteren voor het innen van belastingen en andere inkomsten."
+          target_17_2:
+            title: "Ontwikkelde landen dienen ten volle hun verbintenissen aangaande officiële ontwikkelingshulp te implementeren, waaronder ook de verbintenis van vele ontwikkelde landen om 0,7% van het bruto nationaal inkomen te besteden aan officiële ontwikkelingshulp voor ontwikkelingslanden (ODA/GNI) en 0,15% tot 0,20% ontwikkelingshulp aan de minst ontwikkelde landen; ODA-donoren worden aangemoedigd om voor zichzelf een doelstelling te bepalen om minstens 0,2% van de ODA te besteden aan de minst ontwikkelde landen."
+          target_17_3:
+            title: "Bijkomende financiële middelen voor ontwikkelingslanden mobiliseren vanuit verschillende bronnen."
+          target_17_4:
+            title: "Ontwikkelingslanden bijstaan in hun streven naar schuldhoudbaarheid op lange termijn via gecoördineerde beleidslijnen waarbij aandacht wordt besteed aan het aanmoedigen van de schuldfinanciering, de schuldverlichting en de schuldherstructurering, indien van toepassing, en de externe schuld aanpakken van arme landen met een grote schuldenlast om hun schuldencrisis in te perken."
+          target_17_5:
+            title: "Regelingen goedkeuren en uitvoeren die investeringen in de minst ontwikkelde landen moeten bevorderen."
+          target_17_6:
+            title: "Versterken van de Noord-Zuid-, de Zuid-Zuid- en de regionale en internationale trilaterale samenwerking inzake wetenschap, technologie en innovatie en vergemakkelijken van de toegang daartoe; en het delen van kennis uitbreiden volgens voorwaarden die wederzijds worden bepaald, ook via de verbeterde coördinatie tussen bestaande mechanismen, in het bijzonder op het niveau van de Verenigde Naties, en via een mondiaal mechanisme voor de facilitering van technologie."
+          target_17_7:
+            title: "De ontwikkeling, overdracht, verspreiding en verdeling van ecologische technologieën aan ontwikkelingslanden volgens gunstige voorwaarden, ook inzake gunstige en preferentiële bepalingen, zoals wederzijds overeengekomen."
+          target_17_8:
+            title: "De technologiebank en het mechanisme voor het opbouwen van wetenschappelijke, technologische en innoverende capaciteit voor de minst ontwikkelde landen volledig operationeel maken tegen 2017 en het gebruik opdrijven van de technologie die dit mogelijk moet maken, in het bijzonder de informatie- en communicatietechnologie."
+          target_17_9:
+            title: "De internationale steun verhogen voor het implementeren van doeltreffende en doelgerichte capaciteitsopbouw in ontwikkelingslanden ter ondersteuning van nationale plannen die erop gericht zijn om alle Duurzame Ontwikkelingsdoelstellingen te implementeren, ook via de Noord-Zuid-, Zuid-Zuid- en trilaterale samenwerking."
+          target_17_10:
+            title: "Een universeel, op regels gebaseerd, open, niet-discriminerend en billijk multilateraal handelssysteem bevorderen onder de Wereldhandelsorganisatie ook via het volbrengen van de onderhandelingen onder de Ontwikkelingsagenda van Doha van deze organisatie."
+          target_17_11:
+            title: "De export van ontwikkelingslanden aanzienlijk doen toenemen, in het bijzonder met de bedoeling om het aandeel van de minst ontwikkelde landen in de mondiale export tegen 2020 te verdubbelen."
+          target_17_12:
+            title: "Tijdig de implementatie realiseren van belasting- en quotavrije markttoegang op blijvende wijze voor alle minst ontwikkelde landen, in overeenstemming met de beslissingen van de Wereldhandelsorganisatie ook door ervoor te zorgen dat de voorkeursregels die van oorsprong van toepassing zijn op import van de minst ontwikkelde landen, transparant en eenvoudig zijn en bijdragen tot het vergemakkelijken van markttoegang."
+          target_17_13:
+            title: "De globale macro-economische stabiliteit versterken, ook via beleidscoördinatie en beleidscoherentie."
+          target_17_14:
+            title: "Beleidscoherentie voor duurzame ontwikkeling versterken."
+          target_17_15:
+            title: "De beleidsruimte en het leiderschap van elke land respecteren om beleidslijnen uit te werken en om duurzame ontwikkeling te implementeren om een einde te maken aan armoede."
+          target_17_16:
+            title: "Het Globaal Partnerschap voor duurzame ontwikkeling versterken, aangevuld door partnerschappen met meerdere belanghebbenden (multi-stakeholderpartnerschappen) en kennis, expertise, technologie en financiële hulpmiddelen mobiliseren en delen met het oog op het bereiken van de Duurzame Ontwikkelingsdoelstellingen in alle landen, in het bijzonder in de ontwikkelingslanden."
+          target_17_17:
+            title: "Doeltreffende openbare, publiek-private en maatschappelijke partnerschappen aanmoedigen en bevorderen, voortbouwend op de ervaring en het netwerk van partnerschappen."
+          target_17_18:
+            title: "Tegen 2020 de steun voor capaciteitsopbouw verhogen aan ontwikkelingslanden, inclusief de minst ontwikkelde landen en de kleine eilandstaten, om de beschikbaarheid van hoogwaardige, actuele en betrouwbare gegevens opgedeeld naar inkomen, gender, leeftijd, ras, etnische afkomst, migratiestatus, handicap, geografische locatie en andere kenmerken relevant in een nationale context, aanzienlijk op te drijven."
+          target_17_19:
+            title: "Tegen 2030 voortbouwen op bestaande initiatieven om metingen te ontwikkelen met betrekking tot de vooruitgang van duurzame ontwikkeling die kunnen dienen als aanvulling op het bruto binnenlands product, en de statistische capaciteitsopbouw ondersteunen in ontwikkelingslanden."
+      help:
+        title: "Sustainable Development Goals (Duurzame Ontwikkelingsdoelen) help"
+        description: "Je kunt jouw bijdrage op Stem van Groningen linken aan één of meerdere Sustainable Development Goals (Duurzame Ontwikkelingsdoelen). Deze SDG's zijn afgesproken door de landen die zijn aangesloten bij de Verenigde Naties. Samen vormen ze een mondiaal kompas voor uitdagingen als armoede, onderwijs en de klimaatcrisis en bevat iedere SDG concrete subdoelen en lokale subdoelen. Door jouw bijdrage aan een SDG of subdoel te linken, krijgen wij overzicht van hoe wij als Groningen willen en kunnen bijdragen aan deze SDG's.  "
+      show:
+        read_more: "Lees meer over %{goal}"
+        read_less: "Lees minder over %{goal}"
+        targets:
+          no_local_targets: Deze SDG heeft geen lokaal (sub)doel
+      title: "Sustainable Development Goals (Duurzame Ontwikkelingsdoelen)"
+      filter:
+        heading: "Filter op SDG"
+        link: "Bekijk alle %{resources} met het (sub)doel %{code}"
+        more:
+          one: "Nog één doel"
+          other: "%{count} meer doelen"
+    related_list_selector:
+      goal_identifier: "SDG%{code}"
+      goal_list: "Je kan één of meerdere SDG's kiezen waaraan jouw %{record} bijdraagt"
+      help:
+        title: "Aan welke SDG's draagt mijn %{record} bij?"
+        text: "SDG hulp pagina"
+      hint: Je kan een code van een specifiek doel/subdoel of verschillende termen invoeren om een SDG te vinden %{link}.
+      placeholder: "Voer doel/subdoel of term in"
+      remove_tag: "Verwijderen"
+      title: "SDG's en (sub)doelen"
+    targets:
+      filter:
+        link: "Bekijk alle %{resources} gerelateerd aan %{code}"
+        more:
+          one: "Nog één doel"
+          other: "%{count} meer doelen"
