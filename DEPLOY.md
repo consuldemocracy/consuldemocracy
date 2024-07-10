@@ -2,8 +2,7 @@
 
 __TODO: explain about creating and applying tenants__
 
-
-Make sure the ssh certificates are loaded:
+Make sure correct ssh certificate is loaded:
 
 ```bash
 eval "$(ssh-agent -s)"
@@ -17,6 +16,6 @@ Deploy the consul instance using the deploy.sh script:
 sh deploy.sh [-p] {tenant_name}
 ```
 
-where the `-p` flag denotes that the deployment is for production.
+where the `-p` flag denotes that you're deploying to production.
 
 
