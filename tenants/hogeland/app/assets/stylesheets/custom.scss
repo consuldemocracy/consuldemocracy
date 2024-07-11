@@ -330,6 +330,9 @@ h6,
   p {
 
     &:last-child {
+      bottom: 0;
+      color: $brand;
+      text-align: right;
       text-decoration: underline;
     }
   }
