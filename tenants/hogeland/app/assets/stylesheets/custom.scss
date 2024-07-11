@@ -17,6 +17,16 @@
 // 0. Global styles
 // --------------------
 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+body, h1, h2, h3, h4, p, a {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
 body {
 
   .top-bar-title {
