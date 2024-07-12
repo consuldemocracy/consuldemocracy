@@ -2,9 +2,18 @@ load Rails.root.join("app", "models", "user.rb")
 
 class User < ApplicationRecord
 
+def self.unlock_in
+     security = Tenant.current_secrets[:security]
+     lockable = security[:lockable] if security
+     unlock_in_value = lockable[:unlock_in] if lockable        
+#     Rails.logger.info "Retrieved security: #{security.inspect}"    
+#     Rails.logger.info "Retrieved lockable: #{lockable.inspect}"    
+#     Rails.logger.info "Retrieved unlock_in: #{unlock_in_value.inspect}"        
+     (unlock_in_value || 10).to_f.minutes
+end
 
 def send_devise_notification(notification, *)
-    devise_mailer.send(notification, self, *).deliver_later
+     devise_mailer.send(notification, self, *).deliver_later
 end
 
 
