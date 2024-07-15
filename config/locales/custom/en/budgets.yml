@@ -1,0 +1,5 @@
+en:
+  budgets:
+    ballots:
+      reasons_for_not_balloting:
+        invalid_geozone: Your do not live in the required area to take part in this process
