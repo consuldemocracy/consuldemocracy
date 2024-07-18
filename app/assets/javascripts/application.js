@@ -122,9 +122,8 @@
 //= require budget_hide_money
 //= require datepicker
 //= require authenticity_token_refresh
-//= require link_to_top
-//= require authenticity_token_refresh
 //= require responsive_menu
+//= require link_to_top
 //= require_tree ./admin
 //= require_tree ./sdg
 //= require_tree ./sdg_management
