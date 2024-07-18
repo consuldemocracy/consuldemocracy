@@ -1,6 +1,10 @@
 <div class="small-12 medium-6 column">
-  <span><%= header.label %></span>
-  <h1><%= header.title %></h1>
+  <% if header.label.present? %>
+    <span><%= header.label %></span>
+  <% end %>
+  <% if header.title.present? %>
+    <h1><%= header.title %></h1>
+  <% end %>
 
   <%= auto_link_already_sanitized_html AdminWYSIWYGSanitizer.new.sanitize(header.description) %>
 
