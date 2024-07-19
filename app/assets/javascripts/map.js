@@ -219,19 +219,35 @@
         });
       }
     },
-    addGeozone: function(geozone, map) {
-      var polygon = L.polygon(geozone.outline_points, {
-        color: geozone.color,
-        fillOpacity: 0.3,
-        className: "map-polygon"
-      });
+  addGeozone: function(geozone, map) {
+  try {
+    // Parse the GeoJSON string
+    var geojsonData = JSON.parse(geozone.outline_points);
 
-      if (geozone.headings !== undefined) {
-        polygon.bindPopup(geozone.headings.join("<br>"));
+    // Create a GeoJSON layer
+    var geoJsonLayer = L.geoJSON(geojsonData, {
+      style: function(feature) {
+        return {
+          color: geozone.color || feature.properties.color || 'blue', // Use geozone color if provided, else fallback to feature color, else default to blue
+          fillOpacity: 0.3,
+          className: "map-polygon"
+        };
+      },
+      onEachFeature: function(feature, layer) {
+        if (feature.properties.headings || geozone.headings) {
+          // Use feature properties headings if provided, else fallback to geozone headings
+          var headings = feature.properties.headings || geozone.headings;
+          layer.bindPopup(headings.join("<br>"));
+        }
       }
+    });
 
-      polygon.addTo(map);
-    },
+    // Add the GeoJSON layer to the map
+    geoJsonLayer.addTo(map);
+  } catch (error) {
+    console.error('Error parsing GeoJSON data:', error);
+  }
+},
     getPopupContent: function(data) {
       return "<a href='" + data.link + "'>" + data.title + "</a>";
     },
