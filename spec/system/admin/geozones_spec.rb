@@ -173,4 +173,33 @@ describe "Admin geozones", :admin do
       expect(page).to have_link "Polygon me!", href: edit_admin_geozone_path(geozone)
     end
   end
+
+  scenario "overwrites geozone data with features data" do
+    geojson = <<~JSON
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[-0.1, 51.5], [-0.2, 51.5], [-0.2, 51.6], [-0.1, 51.6], [-0.1, 51.5]]]
+        },
+        "properties": {
+          "color": "#ff5733",
+          "headings": ["Zone 1", "Test zone"]
+        }
+      }
+    JSON
+
+    create(:geozone, color: "#001122", geojson: geojson)
+
+    visit admin_geozones_path
+
+    expect(page).to have_css ".map-polygon[fill='#ff5733']"
+    expect(page).not_to have_css ".map-polygon[fill='#001122']"
+    expect(page).not_to have_content "Zone 1"
+    expect(page).not_to have_content "Test zone"
+
+    find(".map-polygon").click
+
+    expect(page).to have_content "Zone 1\nTest zone"
+  end
 end

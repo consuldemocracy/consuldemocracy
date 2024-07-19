@@ -223,14 +223,18 @@
       var geojsonData = JSON.parse(geozone.outline_points);
 
       var geoJsonLayer = L.geoJSON(geojsonData, {
-        style: {
-          color: geozone.color,
-          fillOpacity: 0.3,
-          className: "map-polygon"
+        style: function(feature) {
+          return {
+            color: feature.properties.color || geozone.color,
+            fillOpacity: 0.3,
+            className: "map-polygon"
+          };
         },
         onEachFeature: function(feature, layer) {
-          if (geozone.headings) {
-            layer.bindPopup(geozone.headings.join("<br>"));
+          var headings = feature.properties.headings || geozone.headings;
+
+          if (headings) {
+            layer.bindPopup(headings.join("<br>"));
           }
         }
       });
