@@ -33,10 +33,18 @@ class Geozone < ApplicationRecord
         parsed_geojson = JSON.parse(geojson)
 
         if parsed_geojson["type"] == "FeatureCollection"
+          parsed_geojson["features"].each do |feature|
+            feature["properties"] ||= {}
+          end
+
           parsed_geojson.to_json
         elsif parsed_geojson["type"] == "Feature"
+          parsed_geojson["properties"] ||= {}
+
           wrap_in_feature_collection(parsed_geojson)
         elsif parsed_geojson["geometry"]
+          parsed_geojson["properties"] ||= {}
+
           wrap_in_feature_collection(wrap_in_feature(parsed_geojson["geometry"]))
         elsif parsed_geojson["type"] && parsed_geojson["coordinates"]
           wrap_in_feature_collection(wrap_in_feature(parsed_geojson))
@@ -49,7 +57,8 @@ class Geozone < ApplicationRecord
     def wrap_in_feature(geometry)
       {
         type: "Feature",
-        geometry: geometry
+        geometry: geometry,
+        properties: {}
       }
     end
 
