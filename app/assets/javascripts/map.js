@@ -220,17 +220,22 @@
       }
     },
     addGeozone: function(geozone, map) {
-      var polygon = L.polygon(geozone.outline_points, {
-        color: geozone.color,
-        fillOpacity: 0.3,
-        className: "map-polygon"
+      var geojsonData = JSON.parse(geozone.outline_points);
+
+      var geoJsonLayer = L.geoJSON(geojsonData, {
+        style: {
+          color: geozone.color,
+          fillOpacity: 0.3,
+          className: "map-polygon"
+        },
+        onEachFeature: function(feature, layer) {
+          if (geozone.headings) {
+            layer.bindPopup(geozone.headings.join("<br>"));
+          }
+        }
       });
 
-      if (geozone.headings !== undefined) {
-        polygon.bindPopup(geozone.headings.join("<br>"));
-      }
-
-      polygon.addTo(map);
+      geoJsonLayer.addTo(map);
     },
     getPopupContent: function(data) {
       return "<a href='" + data.link + "'>" + data.title + "</a>";

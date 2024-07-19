@@ -110,8 +110,16 @@ describe "Admin geozones", :admin do
 
   scenario "Show polygons when a heading is associated with a geozone" do
     Setting["feature.map"] = true
+    geojson = <<~JSON
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[-0.1, 51.5], [-0.2, 51.4], [-0.3, 51.6]]]
+        }
+      }
+    JSON
 
-    geojson = '{ "geometry": { "type": "Polygon", "coordinates": [[-0.1,51.5],[-0.2,51.4],[-0.3,51.6]] } }'
     geozone = create(:geozone, name: "Polygon me!")
     budget = create(:budget)
     group = create(:budget_group, budget: budget)
@@ -145,7 +153,16 @@ describe "Admin geozones", :admin do
 
   scenario "Show polygons on geozone admin view" do
     Setting["feature.map"] = true
-    geojson = '{ "geometry": { "type": "Polygon", "coordinates": [[-0.1,51.5],[-0.2,51.4],[-0.3,51.6]] } }'
+    geojson = <<~JSON
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[-0.1, 51.5], [-0.2, 51.4], [-0.3, 51.6]]]
+        }
+      }
+    JSON
+
     geozone = create(:geozone, name: "Polygon me!", geojson: geojson)
 
     visit admin_geozones_path

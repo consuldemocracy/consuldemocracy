@@ -21,26 +21,40 @@ class Geozone < ApplicationRecord
   end
 
   def outline_points
-    normalized_coordinates.map { |longlat| [longlat.last, longlat.first] }
+    normalized_geojson&.to_json
   end
 
   private
 
-    def normalized_coordinates
+    def normalized_geojson
       if geojson.present?
-        if geojson.match(/"coordinates"\s*:\s*\[\s*\[\s*\[\s*\[/)
-          coordinates.reduce([], :concat).reduce([], :concat)
-        elsif geojson.match(/"coordinates"\s*:\s*\[\s*\[\s*\[/)
-          coordinates.reduce([], :concat)
+        parsed_geojson = JSON.parse(geojson)
+
+        if parsed_geojson["type"] == "FeatureCollection"
+          parsed_geojson
+        elsif parsed_geojson["type"] == "Feature"
+          wrap_in_feature_collection(parsed_geojson)
+        elsif parsed_geojson["geometry"]
+          wrap_in_feature_collection(wrap_in_feature(parsed_geojson["geometry"]))
+        elsif parsed_geojson["type"] && parsed_geojson["coordinates"]
+          wrap_in_feature_collection(wrap_in_feature(parsed_geojson))
         else
-          coordinates
+          raise ArgumentError, "Invalid GeoJSON fragment"
         end
-      else
-        []
       end
     end
 
-    def coordinates
-      JSON.parse(geojson)["geometry"]["coordinates"]
+    def wrap_in_feature(geometry)
+      {
+        type: "Feature",
+        geometry: geometry
+      }
+    end
+
+    def wrap_in_feature_collection(feature)
+      {
+        type: "FeatureCollection",
+        features: [feature]
+      }
     end
 end
