@@ -68,6 +68,7 @@ class GeojsonFormatValidator < ActiveModel::EachValidator
       return false unless feature["type"] == "Feature"
       return false unless feature["geometry"].is_a?(Hash)
       return false unless valid_geometry?(feature["geometry"])
+
       true
     end
 
@@ -114,6 +115,7 @@ class GeojsonFormatValidator < ActiveModel::EachValidator
     def valid_wgs84_coordinates?(coords)
       # Coordinates should be in [longitude, latitude] format
       return false unless coords.is_a?(Array) && coords.size == 2
+
       longitude, latitude = coords
       # Check if latitude and longitude are valid numbers and within valid ranges
       longitude.is_a?(Numeric) && latitude.is_a?(Numeric) &&
