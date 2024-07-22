@@ -759,6 +759,8 @@ es:
     youtube: "YouTube de %{org}"
     telegram: "Telegram de %{org}"
     instagram: "Instagram de %{org}"
+  ip_denied_handler:
+    unauthorized: "Acceso denegado. Tu IP no tiene permiso para ver este contenido."
   unauthorized:
     default: No tienes permiso para acceder a esta página.
     manage:
