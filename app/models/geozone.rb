@@ -21,11 +21,66 @@ class Geozone < ApplicationRecord
   end
 
   def outline_points
-     geojson
+    normalize(geojson)
   end
 
+  def coordinates
+    JSON.parse(geojson)["geometry"]["coordinates"] if geojson.present?
+  end
 
-    def coordinates
-      JSON.parse(geojson)["geometry"]["coordinates"]
+  private
+
+  def normalize(geojson)
+  if geojson.present?
+    parsed_geojson = JSON.parse(geojson)
+
+    # Handle FeatureCollection
+    if parsed_geojson['type'] == 'FeatureCollection'
+      parsed_geojson['features'].each do |feature|
+        feature['properties'] ||= {}
+      end
+      return parsed_geojson.to_json
+
+    # Handle Feature
+    elsif parsed_geojson['type'] == 'Feature'
+      parsed_geojson['properties'] ||= {}
+      return wrap_in_feature_collection(parsed_geojson)
+
+    # Handle Geometry alone
+    elsif parsed_geojson['geometry']
+      parsed_geojson['properties'] ||= {}
+      return wrap_in_feature_collection(wrap_in_feature(parsed_geojson['geometry']))
+
+    # Handle raw geometry (coordinates) which should be a Feature
+    elsif parsed_geojson['type'] && parsed_geojson['coordinates']
+      return wrap_in_feature_collection(wrap_in_feature(parsed_geojson))
+
+    # Handle a valid geometry with type and coordinates
+    elsif parsed_geojson['geometry'] && parsed_geojson['geometry']['type'] && parsed_geojson['geometry']['coordinates']
+      wrapped_feature = wrap_in_feature(parsed_geojson['geometry'])
+      wrapped_feature['properties'] ||= {}
+      return wrap_in_feature_collection(wrapped_feature)
+      
+    else
+      raise ArgumentError, 'Invalid GeoJSON fragment'
     end
+  end
+end
+
+def wrap_in_feature(geometry)
+  {
+    type: 'Feature',
+    geometry: geometry,
+    properties: {}
+  }
+end
+
+def wrap_in_feature_collection(feature)
+  {
+    type: 'FeatureCollection',
+    features: [feature]
+  }.to_json
+end
+
+
 end
