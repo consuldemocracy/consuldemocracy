@@ -98,7 +98,7 @@ group :development do
   gem "pronto-eslint", "~> 0.11.1", require: false
   gem "pronto-rubocop", "~> 0.11.5", require: false
   gem "pronto-stylelint", "~> 0.10.3", require: false
-  gem "rubocop", "~> 1.64.1", require: false
+  gem "rubocop", "~> 1.65.0", require: false
   gem "rubocop-capybara", "~> 2.21.0", require: false
   gem "rubocop-factory_bot", "~> 2.26.1", require: false
   gem "rubocop-performance", "~> 1.21.1", require: false
