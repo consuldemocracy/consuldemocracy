@@ -136,6 +136,8 @@ en:
       remove_investments_supports_description: "Allow users to remove supports on participatory budgets investments during the selecting projects phase."
       sdg: SDG
       sdg_description: Enable Sustainable Development Goals sections in the administration menu and in the Global Settings.
+      demographics: "Demographics"
+      demographics_description: "Enable users to manage gender DOB and Geozone"
     remote_census:
       general:
         endpoint: "Endpoint"
