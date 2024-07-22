@@ -51,6 +51,7 @@ rules:
       name: include
       hasBlock: true
     - rules
+  order/properties-alphabetical-order: true
   scss/at-else-closing-brace-space-after: always-intermediate
   scss/at-else-empty-line-before: never
   scss/at-extend-no-missing-placeholder: true

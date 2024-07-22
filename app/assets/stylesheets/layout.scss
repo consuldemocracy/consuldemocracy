@@ -432,8 +432,8 @@ button,
 
     > nav {
       flex: 20%;
-      min-width: $side-menu-min-width;
       max-width: max-content;
+      min-width: $side-menu-min-width;
 
       + * {
         flex: 80%;
@@ -1092,8 +1092,8 @@ form {
   color: rgba(0, 0, 0, 0.4);
   display: inline-block;
   font-size: rem-calc(32);
-  line-height: rem-calc(32);
   height: rem-calc(32);
+  line-height: rem-calc(32);
   vertical-align: top;
 }
 
@@ -1173,8 +1173,8 @@ form {
   }
 
   .time {
-    font-size: $small-font-size;
     color: $text-medium;
+    font-size: $small-font-size;
   }
 }
 
@@ -1448,8 +1448,8 @@ table {
   padding-bottom: $line-height * 4;
 
   h2 {
-    margin: 0;
     font-weight: bold;
+    margin: 0;
 
     span {
       font-size: rem-calc(18);
@@ -1556,8 +1556,8 @@ table {
 
   .comment-user {
     margin-top: calc(#{$line-height} / 4);
-    padding: calc(#{$line-height} / 4) 0;
     overflow: hidden;
+    padding: calc(#{$line-height} / 4) 0;
 
     &.level-1,
     &.level-2,
@@ -1839,9 +1839,9 @@ table {
     }
 
     h4 {
-      margin-top: 0;
-      margin-bottom: $line-height;
       font-size: rem-calc(18);
+      margin-bottom: $line-height;
+      margin-top: 0;
       min-height: 0;
     }
 
@@ -1874,9 +1874,9 @@ table {
     .proposals-inner,
     .budget-investments-inner {
       border: 1px solid $border;
-      padding: $line-height;
       margin-right: $line-height;
       max-height: rem-calc(500);
+      padding: $line-height;
 
       @include breakpoint(small) {
         max-height: rem-calc(600);
@@ -2076,9 +2076,9 @@ table {
   }
 
   .background-header {
+    background: $highlight;
     clip-path: ellipse(60% 80% at 50% 0%);
     height: $line-height * 2;
-    background: $highlight;
     margin-top: rem-calc(-48);
 
     @include breakpoint($global-width) {
@@ -2201,9 +2201,9 @@ table {
     color: #fff;
     font-size: rem-calc(24);
     line-height: rem-calc(24);
-    text-transform: uppercase;
     padding: calc(#{$line-height} / 4) calc(#{$line-height} / 2);
     position: absolute;
+    text-transform: uppercase;
     width: 100%;
     z-index: 3;
 
@@ -2241,8 +2241,8 @@ table {
   .date-of-birth {
     select {
       float: left;
-      width: 30%;
       margin-right: calc(#{$line-height} / 4);
+      width: 30%;
     }
   }
 }

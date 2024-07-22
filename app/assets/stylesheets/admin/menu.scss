@@ -6,8 +6,8 @@
   ul {
     list-style-type: none;
     margin-bottom: 0;
-    margin-#{$global-left}: 0;
     padding: 0;
+    margin-#{$global-left}: 0;
   }
 
   > ul > li > :first-child {
@@ -113,8 +113,8 @@
 
   li {
     ul {
-      margin-left: calc(#{$line-height * 2} / 3);
       border-left: 1px solid $sidebar-hover;
+      margin-left: calc(#{$line-height * 2} / 3);
       padding-left: calc(#{$line-height} / 2);
     }
 
