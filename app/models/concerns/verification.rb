@@ -3,7 +3,7 @@ module Verification
 
   included do
     scope :residence_verified, -> { where.not(residence_verified_at: nil) }
-    scope :residence_unverified, -> { where(residence_verified_at: nil) }
+    scope :residence_unverified, -> { excluding(residence_verified) }
     scope :residence_and_phone_verified, -> { residence_verified.where.not(confirmed_phone: nil) }
     scope :residence_or_phone_unverified, -> { residence_unverified.or(where(confirmed_phone: nil)) }
     scope :phone_not_fully_confirmed, -> { where(unconfirmed_phone: nil).or(where(confirmed_phone: nil)) }

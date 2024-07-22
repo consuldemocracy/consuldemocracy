@@ -54,7 +54,35 @@ class Legislation::Process < ApplicationRecord
     validates :"#{phase_name}_end_date", presence: true, if: enabled_attribute
   end
 
-  validate :valid_date_ranges
+  validates :end_date,
+            comparison: {
+              greater_than_or_equal_to: :start_date,
+              message: :invalid_date_range
+            },
+            allow_blank: true,
+            if: -> { start_date }
+  validates :debate_end_date,
+            comparison: {
+              greater_than_or_equal_to: :debate_start_date,
+              message: :invalid_date_range
+            },
+            allow_blank: true,
+            if: -> { debate_start_date }
+  validates :draft_end_date,
+            comparison: {
+              greater_than_or_equal_to: :draft_start_date,
+              message: :invalid_date_range
+            },
+            allow_blank: true,
+            if: -> { draft_start_date }
+  validates :allegations_end_date,
+            comparison: {
+              greater_than_or_equal_to: :allegations_start_date,
+              message: :invalid_date_range
+            },
+            allow_blank: true,
+            if: -> { allegations_start_date }
+
   validates :background_color, format: { allow_blank: true, with: ->(*) { CSS_HEX_COLOR }}
   validates :font_color, format: { allow_blank: true, with: ->(*) { CSS_HEX_COLOR }}
 
@@ -140,22 +168,4 @@ class Legislation::Process < ApplicationRecord
   def self.search(terms)
     pg_search(terms)
   end
-
-  private
-
-    def valid_date_ranges
-      if end_date && start_date && end_date < start_date
-        errors.add(:end_date, :invalid_date_range)
-      end
-      if debate_end_date && debate_start_date && debate_end_date < debate_start_date
-        errors.add(:debate_end_date, :invalid_date_range)
-      end
-      if draft_end_date && draft_start_date && draft_end_date < draft_start_date
-        errors.add(:draft_end_date, :invalid_date_range)
-      end
-      if allegations_end_date && allegations_start_date &&
-         allegations_end_date < allegations_start_date
-        errors.add(:allegations_end_date, :invalid_date_range)
-      end
-    end
 end

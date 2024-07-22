@@ -47,7 +47,7 @@ class Budget < ApplicationRecord
   accepts_nested_attributes_for :phases
 
   scope :published, -> { where(published: true) }
-  scope :drafting,  -> { where.not(id: published) }
+  scope :drafting,  -> { excluding(published) }
   scope :informing, -> { where(phase: "informing") }
   scope :accepting, -> { where(phase: "accepting") }
   scope :reviewing, -> { where(phase: "reviewing") }
