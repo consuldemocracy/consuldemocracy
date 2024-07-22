@@ -1,4 +1,4 @@
-# Configuration for development and test environments (Ubuntu 18.04)
+# Configuration for development and test environments (Ubuntu 24.04)
 
 ## System update
 
@@ -23,7 +23,7 @@ Ruby versions packaged in official repositories are not suitable to work with Co
 First, we need to install Ruby's development dependencies:
 
 ```bash
-sudo apt install libssl-dev autoconf bison build-essential libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm5 libgdbm-dev
+sudo apt install libssl-dev autoconf bison build-essential libyaml-dev libreadline-dev zlib1g-dev libncurses-dev libffi-dev libgdbm-dev
 ```
 
 The next step is installing a Ruby version manager, like rbenv:
@@ -33,14 +33,21 @@ wget -qO- https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-installer 
 source ~/.bashrc
 ```
 
-## Node.js
+## CMake and pkg-config
 
-To compile the assets, you'll need a JavaScript runtime. Node.js is the preferred option.
-
-Run the following command on your terminal:
+In order to compile some of the project dependencies, we need CMake and pkg-config:
 
 ```bash
-sudo apt install nodejs
+sudo apt install cmake pkg-config
+```
+
+## Node.js version manager
+
+To compile the assets, you'll need a JavaScript runtime. Node.js is the preferred option. To install Node.js, we will install a Node.js version manager, like NVM:
+
+```bash
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+source ~/.bashrc
 ```
 
 ## PostgreSQL
@@ -65,15 +72,12 @@ Install Imagemagick:
 sudo apt install imagemagick
 ```
 
-## ChromeDriver
+## Chrome or Chromium
 
-To run E2E integration tests, we use Selenium along with Headless Chrome.
-
-To get it working, install the chromium-chromedriver package and make sure it's available on your shell's PATH:
+In order to run the system tests, we need to install Chrome or Chromium.
 
 ```bash
-sudo apt install chromium-chromedriver
-sudo ln -s /usr/lib/chromium-browser/chromedriver /usr/local/bin/
+sudo apt install chromium-browser
 ```
 
 Now you're ready to go [get Consul Democracy installed](local_installation.md)!

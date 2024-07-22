@@ -1,4 +1,4 @@
-# Configuración para los entornos de desarrollo y pruebas (Ubuntu 18.04)
+# Configuración para los entornos de desarrollo y pruebas (Ubuntu 24.04)
 
 ## Actualización de sistema
 
@@ -23,7 +23,7 @@ Las versiones de Ruby empaquetadas en repositorios oficiales no son aptas para t
 En primer lugar, necesitamos los siguiente paquetes para poder instalar Ruby:
 
 ```bash
-sudo apt install libssl-dev autoconf bison build-essential libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm5 libgdbm-dev
+sudo apt install libssl-dev autoconf bison build-essential libyaml-dev libreadline-dev zlib1g-dev libncurses-dev libffi-dev libgdbm-dev
 ```
 
 A continuación instalaremos un gestor de versiones de Ruby, como rbenv:
@@ -33,14 +33,21 @@ wget -qO- https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-installer 
 source ~/.bashrc
 ```
 
-## Node.js
+## CMake y pkg-config
 
-Para compilar los archivos estáticos (JS, CSS, imágenes, etc.), es necesario un _runtime_ de JavaScript. Node.js es la opción recomendada.
-
-Ejecuta en tu terminal:
+Para compilar algunas de las dependencias del proyecto, necesitamos CMake y pkg-config:
 
 ```bash
-sudo apt install nodejs
+sudo apt install cmake pkg-config
+```
+
+## Gestor de versiones de Node.js
+
+Para compilar los archivos estáticos (JS, CSS, imágenes, etc.), es necesario un _runtime_ de JavaScript. Node.js es la opción recomendada. Para instalar Node.js, instalaremos un gestor de versiones de Node.js, como NVM:
+
+```bash
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+source ~/.bashrc
 ```
 
 ## PostgreSQL
@@ -51,7 +58,7 @@ Instala postgresql y sus dependencias de desarrollo con:
 sudo apt install postgresql libpq-dev
 ```
 
-Para el correcto funcionamiento de Consul Democracy, necesitas confgurar un usuario para tu base de datos. Como ejemplo, crearemos un usuario llamado "consul":
+Para el correcto funcionamiento de Consul Democracy, necesitas configurar un usuario para tu base de datos. Como ejemplo, crearemos un usuario llamado "consul":
 
 ```bash
 sudo -u postgres createuser consul --createdb --superuser --pwprompt
@@ -65,15 +72,12 @@ Instala Imagemagick:
 sudo apt install imagemagick
 ```
 
-## ChromeDriver
+## Chrome o Chromium
 
-Para realizar pruebas de integración, usamos Selenium junto a Headless Chrome.
-
-Para poder utilizarlo, instala el paquete chromium-chromedrive y asegúrate de que se encuentre enlazado en algún directorio que esté en la variable de entorno PATH:
+Para poder ejecutar los tests de sistema, necesitaremos tener instalado Chrome o Chromium.
 
 ```bash
-sudo apt install chromium-chromedriver
-sudo ln -s /usr/lib/chromium-browser/chromedriver /usr/local/bin/
+sudo apt install chromium-browser
 ```
 
 ¡Ya estás listo para [instalar Consul Democracy](local_installation.md)!
