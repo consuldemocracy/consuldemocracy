@@ -13,7 +13,7 @@ module Types
     end
 
     def investment(id:)
-      Budget::Investment.find(id)
+      investments.find(id)
     end
   end
 end
