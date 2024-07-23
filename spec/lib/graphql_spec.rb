@@ -362,9 +362,8 @@ describe "Consul Schema" do
     end
 
     it "does not include comments of debates that are not public" do
-      not_public_debate = create(:debate, :hidden)
-      not_public_debate_comment = create(:comment, commentable: not_public_debate)
-      allow(Comment).to receive(:public_for_api).and_return([])
+      allow(Debate).to receive(:public_for_api).and_return([])
+      not_public_debate_comment = create(:comment, commentable: create(:debate))
 
       response = execute("{ comments { edges { node { body } } } }")
       received_comments = extract_fields(response, "comments", "body")
@@ -373,9 +372,8 @@ describe "Consul Schema" do
     end
 
     it "does not include comments of proposals that are not public" do
-      not_public_proposal = create(:proposal)
-      not_public_proposal_comment = create(:comment, commentable: not_public_proposal)
-      allow(Comment).to receive(:public_for_api).and_return([])
+      allow(Proposal).to receive(:public_for_api).and_return([])
+      not_public_proposal_comment = create(:comment, commentable: create(:proposal))
 
       response = execute("{ comments { edges { node { body } } } }")
       received_comments = extract_fields(response, "comments", "body")
@@ -384,9 +382,8 @@ describe "Consul Schema" do
     end
 
     it "does not include comments of polls that are not public" do
-      not_public_poll = create(:poll)
-      not_public_poll_comment = create(:comment, commentable: not_public_poll)
-      allow(Comment).to receive(:public_for_api).and_return([])
+      allow(Poll).to receive(:public_for_api).and_return([])
+      not_public_poll_comment = create(:comment, commentable: create(:poll))
 
       response = execute("{ comments { edges { node { body } } } }")
       received_comments = extract_fields(response, "comments", "body")
@@ -462,9 +459,8 @@ describe "Consul Schema" do
     end
 
     it "does not include proposal notifications for proposals that are not public" do
-      not_public_proposal = create(:proposal)
-      not_public_proposal_notification = create(:proposal_notification, proposal: not_public_proposal)
-      allow(ProposalNotification).to receive(:public_for_api).and_return([])
+      allow(Proposal).to receive(:public_for_api).and_return([])
+      not_public_proposal_notification = create(:proposal_notification, proposal: create(:proposal))
 
       response = execute("{ proposal_notifications { edges { node { title } } } }")
       received_notifications = extract_fields(response, "proposal_notifications", "title")
@@ -558,8 +554,8 @@ describe "Consul Schema" do
     end
 
     it "does not display tags for taggings that are not public" do
+      allow(Proposal).to receive(:public_for_api).and_return([])
       create(:proposal, tag_list: "Health")
-      allow(Tag).to receive(:public_for_api).and_return([])
 
       response = execute("{ tags { edges { node { name } } } }")
       received_tags = extract_fields(response, "tags", "name")
@@ -638,7 +634,7 @@ describe "Consul Schema" do
     end
 
     it "does not include votes of debates that are not public" do
-      allow(Vote).to receive(:public_for_api).and_return([])
+      allow(Debate).to receive(:public_for_api).and_return([])
       not_public_debate = create(:debate, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_id } } } }")
@@ -648,7 +644,7 @@ describe "Consul Schema" do
     end
 
     it "does not include votes of a hidden proposals" do
-      allow(Vote).to receive(:public_for_api).and_return([])
+      allow(Proposal).to receive(:public_for_api).and_return([])
       not_public_proposal = create(:proposal, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_id } } } }")
@@ -658,7 +654,7 @@ describe "Consul Schema" do
     end
 
     it "does not include votes of a hidden comments" do
-      allow(Vote).to receive(:public_for_api).and_return([])
+      allow(Comment).to receive(:public_for_api).and_return([])
       not_public_comment = create(:comment, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_id } } } }")
