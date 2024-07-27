@@ -124,6 +124,9 @@ fr:
       images:
         one: "Image"
         other: "Images"
+      tenant:
+        one: "locataire"
+        other: "locataires"
       topic:
         one: "Sujet"
         other: "Sujets"
