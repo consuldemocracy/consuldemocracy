@@ -1128,6 +1128,7 @@ fr:
       votation_type:
         title: "Type de scrutin"
         unique_description: "Il n'est possible de répondre qu'une seule fois à la question."
+        multiple_description: "Permet de choisir plusieurs réponses. Il est possible de configurer le nombre maximum de réponses."
     questions:
       index:
         title: "Questions"
