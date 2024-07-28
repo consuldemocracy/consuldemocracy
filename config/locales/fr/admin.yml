@@ -167,7 +167,7 @@ fr:
         calculated: Le calcul des gagnants peut prendre quelques minutes.
         recalculate: Recalculer les investissements gagnant
       ballots:
-        feature_disabled: 'La fonctionnalité <strong>Scrutins</strong> doit être activée pour permettre la création d''isoloirs. Vous pouvez l''activer depuis la page <a href="%{link}">paramètres de configuration</a>.'
+        feature_disabled: 'La fonctionnalité <strong>Sondages</strong> doit être activée pour permettre la création d''isoloirs. Vous pouvez l''activer depuis la page <a href="%{link}">paramètres de configuration</a>.'
     budget_groups:
       name: "Nom"
       headings_name: "Titres"
@@ -1093,7 +1093,7 @@ fr:
         title: "Aperçu du vote"
       form:
         description:
-          help_text: "Ce texte apparaîtra dans l'en-tête de la page de vote. Vous pouvez l'utiliser pour ajouter du contexte au vote ouvert"
+          help_text: "Ce texte apparaîtra dans l'en-tête de la page des sondages. Vous pouvez l'utiliser pour ajouter du contexte aux sondages en cours."
     polls:
       index:
         title: "Liste des votes"
@@ -1122,9 +1122,9 @@ fr:
         edit_answers: Modifier les réponses
         see_proposal: "(Voir la proposition)"
       destroy:
-        alert: "Cette action supprimera le scrutin et toutes les questions associées."
-        success_notice: "Scrutin supprimé avec succès"
-        unable_notice: "Vous ne pouvez pas supprimer un scrutin avec des votes"
+        alert: "Cette action supprimera le sondage et toutes les questions associées."
+        success_notice: "Sondage supprimé avec succès"
+        unable_notice: "Vous ne pouvez pas supprimer un sondage qui a des votes"
       votation_type:
         title: "Type de scrutin"
         unique_description: "Il n'est possible de répondre qu'une seule fois à la question."
@@ -1145,6 +1145,8 @@ fr:
         poll_not_assigned: "Sondage non attribué"
       edit:
         title: "Modifier la question"
+      form:
+        poll_help: "Vous ne pouvez sélectionner que des sondages qui n'ont pas démarré"
       new:
         title: "Créer une question pour le sondage %{poll}"
         title_proposal: "Créer une question"
