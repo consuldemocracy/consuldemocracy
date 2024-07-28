@@ -425,7 +425,6 @@ id:
         index:
           title: Rancangan versi
           create: Membuat versi
-          delete: Hapus
           preview: Tinjauan
         new:
           back: Kembali
@@ -457,7 +456,6 @@ id:
           back: Kembali
           title: Pertanyaan yang terkait dengan proses ini
           create: Membuat pertanyaan
-          delete: Hapus
         new:
           back: Kembali
           title: Membuat pertanyaan baru
@@ -977,7 +975,6 @@ id:
           verified_users_who_didnt_vote_proposals: Pengguna terverifikasi yang tidak votes proposal
           visits: Mengunjungi
           votes: Total suara
-        budgets_title: Penganggaran partisipatif
         participatory_budgets: Anggaran Partisipatif
         direct_messages: Pesan langsung
         proposal_notifications: Proposal pemberitahuan
@@ -985,7 +982,6 @@ id:
         polls: Jajak pendapat
       graph:
         debate_created: Perdebatan
-        visit: Mengunjungi
         proposal_created: Usulan warga
       budget_balloting:
         vote_count: Suara
@@ -1064,7 +1060,6 @@ id:
         index:
           title: Gambar Khusus
           update: Perbarui
-          delete: Hapus
           image: Gambar
         update:
           notice: Gambar berhasil diperbarui

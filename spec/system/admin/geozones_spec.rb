@@ -16,7 +16,7 @@ describe "Admin geozones", :admin do
 
     within("#side_menu") do
       click_button "Settings"
-      click_link "Manage geozones"
+      click_link "Geozones"
     end
 
     click_link "Create geozone"

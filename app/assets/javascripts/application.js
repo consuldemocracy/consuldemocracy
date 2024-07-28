@@ -89,7 +89,7 @@
 //= require markdown_editor
 //= require html_editor
 //= require cocoon
-//= require answers
+//= require options
 //= require questions
 //= require legislation_admin
 //= require legislation
@@ -129,7 +129,7 @@
 var initialize_modules = function() {
   "use strict";
 
-  App.Answers.initialize();
+  App.Options.initialize();
   App.Questions.initialize();
   App.Comments.initialize();
   App.ParticipationNotAllowed.initialize();

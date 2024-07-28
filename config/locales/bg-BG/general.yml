@@ -156,7 +156,6 @@ bg:
     legislation/process: процес
     legislation/question: въпрос
     poll/shift: Shift/ Смяна
-    poll/question/answer: Въпрос
     user: Сметка
     verification/sms: телефон
     signature_sheet: Лист за подпис
@@ -560,7 +559,6 @@ bg:
         share: "А ако и вие ми направите голяма услуга да споделите моето предложение с вашите приятели, семейство и контакти, би било чудесно!"
   polls:
     all: "Всички"
-    no_dates: "не е назначена дата"
     dates: "От %{open_at} до %{closed_at}"
     final_date: "Окончателни изчисления / резултати"
     index:
@@ -661,7 +659,6 @@ bg:
       author_deleted: Потребителят е изтрит
       email_deleted: Имейлът е изтрит
     back: Назад
-    check: Изберете
     check_all: Всичко
     check_none: Нищо
     collective: Колективен
@@ -744,18 +741,6 @@ bg:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Посещения
-      debates: Дискусии
-      proposals: Предложения
-      comments: Коментари
-      proposal_votes: Гласове за предложения
-      debate_votes: Гласове за дискусии
-      comment_votes: Гласове за коментари
-      votes: Общо гласове
-      verified_users: Проверени потребители
-      unverified_users: Непроверени потребители
   unauthorized:
     default: Нямате разрешение за достъп до тази страница.
     manage:

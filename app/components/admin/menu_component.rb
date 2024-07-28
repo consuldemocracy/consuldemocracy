@@ -39,8 +39,8 @@ class Admin::MenuComponent < ApplicationComponent
     end
 
     def polls?
-      controller.class.module_parent == Admin::Poll::Questions::Answers ||
-        %w[polls active_polls recounts results questions answers].include?(controller_name) &&
+      controller.class.module_parent == Admin::Poll::Questions::Options ||
+        %w[polls active_polls recounts results questions options].include?(controller_name) &&
           action_name != "booth_assignments"
     end
 
@@ -54,7 +54,7 @@ class Admin::MenuComponent < ApplicationComponent
     end
 
     def settings?
-      controllers_names = ["settings", "tenants", "tags", "geozones", "local_census_records", "imports"]
+      controllers_names = %w[settings tenants tags locales geozones local_census_records imports]
       controllers_names.include?(controller_name)
     end
 
@@ -62,7 +62,7 @@ class Admin::MenuComponent < ApplicationComponent
       controllers_names = ["pages", "banners", "information_texts", "documents", "images", "content_blocks"]
 
       (controllers_names.include?(controller_name) || homepage? || pages?) &&
-        controller.class.module_parent != Admin::Poll::Questions::Answers
+        controller.class.module_parent != Admin::Poll::Questions::Options
     end
 
     def homepage?
@@ -462,6 +462,7 @@ class Admin::MenuComponent < ApplicationComponent
           settings_link,
           tenants_link,
           tags_link,
+          (locales_link if I18n.available_locales.many?),
           geozones_link,
           local_census_records_link
         )
@@ -494,6 +495,14 @@ class Admin::MenuComponent < ApplicationComponent
       ]
     end
 
+    def locales_link
+      [
+        t("admin.menu.locales"),
+        admin_locales_path,
+        controller_name == "locales"
+      ]
+    end
+
     def geozones_link
       [
         t("admin.menu.geozones"),
@@ -506,7 +515,7 @@ class Admin::MenuComponent < ApplicationComponent
       [
         t("admin.menu.site_customization.images"),
         admin_site_customization_images_path,
-        controller_name == "images" && controller.class.module_parent != Admin::Poll::Questions::Answers
+        controller_name == "images" && controller.class.module_parent != Admin::Poll::Questions::Options
       ]
     end
 

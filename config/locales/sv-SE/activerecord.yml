@@ -459,13 +459,13 @@ sv:
       image:
         title: Titel
         attachment: "Välj bild"
-      poll/question/answer:
+      poll/question/option:
         title: Svar
         description: Beskrivning
-      poll/question/answer/translation:
+      poll/question/option/translation:
         title: Svar
         description: "Beskrivning (valfritt)"
-      poll/question/answer/video:
+      poll/question/option/video:
         title: Titel
         url: Extern video
       newsletter:

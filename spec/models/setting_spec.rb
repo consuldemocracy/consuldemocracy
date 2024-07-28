@@ -258,4 +258,96 @@ describe Setting do
       expect(Setting.force_presence_postal_code?).to be true
     end
   end
+
+  describe ".available_locales" do
+    before { allow(I18n).to receive_messages(default_locale: :de, available_locales: %i[de en es pt-BR]) }
+
+    it "uses I18n available locales by default" do
+      Setting["locales.enabled"] = ""
+
+      expect(Setting.enabled_locales).to eq %i[de en es pt-BR]
+    end
+
+    it "defines available locales with a space-separated list" do
+      Setting["locales.enabled"] = "de es"
+
+      expect(Setting.enabled_locales).to eq %i[de es]
+    end
+
+    it "handles locales which include a dash" do
+      Setting["locales.enabled"] = "de en pt-BR"
+
+      expect(Setting.enabled_locales).to eq %i[de en pt-BR]
+    end
+
+    it "adds the default locale to the list of available locales" do
+      Setting["locales.enabled"] = "en es"
+
+      expect(Setting.enabled_locales).to eq %i[de en es]
+    end
+
+    it "ignores extra whitespace between locales" do
+      Setting["locales.enabled"] = " de  en   pt-BR "
+
+      expect(Setting.enabled_locales).to eq %i[de en pt-BR]
+    end
+
+    it "ignores locales which aren't available" do
+      Setting["locales.enabled"] = "de es en-US fr zh-CN"
+
+      expect(Setting.enabled_locales).to eq %i[de es]
+    end
+
+    it "ignores words that don't make sense in this context" do
+      Setting["locales.enabled"] = "yes de 1234 en SuperCool"
+
+      expect(Setting.enabled_locales).to eq %i[de en]
+    end
+
+    it "uses I18n available locales when no locale is available" do
+      Setting["locales.enabled"] = "nl fr zh-CN"
+
+      expect(Setting.enabled_locales).to eq %i[de en es pt-BR]
+    end
+  end
+
+  describe ".default_locale" do
+    before { allow(I18n).to receive_messages(default_locale: :en, available_locales: %i[de en es pt-BR]) }
+
+    it "uses I18n default locale by default" do
+      Setting["locales.default"] = ""
+
+      expect(Setting.default_locale).to eq :en
+    end
+
+    it "allows defining the default locale" do
+      Setting["locales.default"] = "de"
+
+      expect(Setting.default_locale).to eq :de
+    end
+
+    it "handles locales which include a dash" do
+      Setting["locales.default"] = "pt-BR"
+
+      expect(Setting.default_locale).to eq :"pt-BR"
+    end
+
+    it "ignores extra whitespace in the locale name" do
+      Setting["locales.default"] = " es "
+
+      expect(Setting.default_locale).to eq :es
+    end
+
+    it "ignores locales which aren't available" do
+      Setting["locales.default"] = "fr"
+
+      expect(Setting.default_locale).to eq :en
+    end
+
+    it "ignores an array of several locales" do
+      Setting["locales.default"] = "de es"
+
+      expect(Setting.default_locale).to eq :en
+    end
+  end
 end

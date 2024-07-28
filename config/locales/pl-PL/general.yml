@@ -152,7 +152,6 @@ pl:
     budget/heading: Nagłówek budżetu
     legislation/draft_version: szkic
     poll/shift: Zmiana
-    poll/question/answer: Odpowiedź
     user: Konto
     verification/sms: telefon
     signature_sheet: Arkusz podpisu
@@ -450,7 +449,6 @@ pl:
         hi: "Witaj!"
   polls:
     all: "Wszystkie"
-    no_dates: "brak przypisanej daty"
     dates: "Od %{open_at} do %{closed_at}"
     final_date: "Ostateczne przeliczenia/wyniki"
     index:
@@ -542,7 +540,6 @@ pl:
     author_info:
       author_deleted: Użytkownik usunięty
     back: Wróć
-    check: Wybierz
     check_all: Wszystkie
     check_none: Żaden
     collective: Zbiorowy
@@ -613,18 +610,6 @@ pl:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Odwiedziny
-      debates: Debaty
-      proposals: Zrealizowane projekty
-      comments: Komentarze
-      proposal_votes: Głosy na propozycje
-      debate_votes: Głosy na debaty
-      comment_votes: Głosy na komentarze
-      votes: Liczba głosów
-      verified_users: Zweryfikowani użytkownicy
-      unverified_users: Niezweryfikowani użytkownicy
   unauthorized:
     default: Nie masz uprawnień dostępu do tej strony.
     manage:

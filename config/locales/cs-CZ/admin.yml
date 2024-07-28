@@ -658,7 +658,6 @@ cs:
         index:
           title: Pracovní verze
           create: Vytvořit verzi
-          delete: Smazat
           preview: Náhled
         new:
           back: Zpět
@@ -691,7 +690,6 @@ cs:
           back: Zpět
           title: Otázky spojené s tímto procesem
           create: Vytvořit otázku
-          delete: Smazat
         new:
           back: Zpět
           title: Vytvořit otázku
@@ -1398,6 +1396,8 @@ cs:
       index:
         title: Geozóna
         create: Vytvořit geozónu
+        geojson_map: GeoJSON Mapa
+        geojson_map_help: "Pokud jsou k dispozici souřadnice GeoJSON, zobrazí se na mapě níže"
       geozone:
         name: Název
         external_code: Externí kód
@@ -1484,7 +1484,6 @@ cs:
           verified_users_who_didnt_vote_proposals: Počet ověřených uživatelů, kteří nehlasovali o návrzích
           visits: Návštěvy
           votes: Hlasů celkem
-        budgets_title: Participativní rozpočtování
         participatory_budgets: Participativní rozpočty
         direct_messages: Soukromé zprávy
         proposal_notifications: Upozornění k návrhům
@@ -1493,8 +1492,6 @@ cs:
         sdg: SDG
       graph:
         debate_created: Debaty
-        visit: Návštěvy
-        level_2_user: Počet uživatelů druhé úrovně
         proposal_created: Návrhy občanů
       budgets:
         no_data_before_balloting_phase: "Před fází hlasování nejsou k dispozici žádné údaje."
@@ -1611,7 +1608,6 @@ cs:
         index:
           title: Vlastní obrázky
           update: Aktualizovat
-          delete: Smazat
           image: Image
         update:
           notice: Obrázek byl úspěšně aktualizován
@@ -1652,6 +1648,7 @@ cs:
           create_card: Vytvořit kartu
           no_cards: Nemáte žádnou kartu.
           columns_help: "Šířka karty v počtu sloupců. Na mobilních obrazovkách je vždy šířka 100 %."
+          order_help: "Můžete zadat pozici, na které bude tato karta zobrazena."
           create:
             notice: "Karta úspěšně vytvořena!"
           update:

@@ -11,6 +11,7 @@ AllCops:
   Exclude:
     - "db/schema.rb"
     - "app/lib/ckeditor/backend/active_storage.rb"
+    - "vendor/**/*"
   DisabledByDefault: true
 
 Bundler/DuplicatedGem:
@@ -574,6 +575,7 @@ RSpec/InstanceVariable:
   Enabled: true
   Exclude:
     - spec/controllers/concerns/has_orders_spec.rb
+    - spec/form_builders/translatable_form_builder_spec.rb
 
 RSpec/LetBeforeExamples:
   Enabled: true

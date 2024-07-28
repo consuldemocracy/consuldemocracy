@@ -64,15 +64,15 @@
             <% stats.all_phases.each do |phase| %>
               <td id="total_participants_<%= phase %>_phase_heading_<%= heading.id %>"
                   class="border-left text-center">
-                <%= stats.headings[heading.id]["total_participants_#{phase}_phase".to_sym] %>
+                <%= stats.headings[heading.id][:"total_participants_#{phase}_phase"] %>
               </td>
               <td id="percentage_participants_<%= phase %>_phase_heading_<%= heading.id %>"
                   class="border-left border-right text-center">
-                <%= number_to_stats_percentage(stats.headings[heading.id]["percentage_participants_#{phase}_phase".to_sym]) %>
+                <%= number_to_stats_percentage(stats.headings[heading.id][:"percentage_participants_#{phase}_phase"]) %>
               </td>
               <td id="percentage_district_population_<%= phase %>_phase_heading_<%= heading.id %>"
                   class="text-center border-right">
-                <%= number_to_stats_percentage(stats.headings[heading.id]["percentage_district_population_#{phase}_phase".to_sym]) %>
+                <%= number_to_stats_percentage(stats.headings[heading.id][:"percentage_district_population_#{phase}_phase"]) %>
               </td>
             <% end %>
           </tr>

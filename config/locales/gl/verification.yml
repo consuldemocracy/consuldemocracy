@@ -17,6 +17,9 @@ gl:
     letter:
       alert:
         unconfirmed_code: Aínda non introduciches o código de confirmación
+      create:
+        flash:
+          success: Grazas por solicitar o teu <b>código de máxima seguridade (só válido para as votacións finais)</b>. Nuns días enviarémolo ao enderezo que figura nos datos que temos rexistrados. Lembra que, se o prefires, podes recoller o teu código en calquera das Oficinas de Atención ao Cidadán.
       edit:
         see_all: Ver propostas
         title: Carta solicitada
@@ -88,6 +91,7 @@ gl:
     user_permission_proposal: Crear novas propostas
     user_permission_support_proposal: Apoiar propostas*
     user_permission_votes: Participar nas votacións finais
+    verification_needed: É necesaria unha verificación adicional
     verified_user:
       form:
         submit_button: Enviar código

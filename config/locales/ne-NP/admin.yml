@@ -651,7 +651,6 @@ ne:
         index:
           title: मस्यौदा संस्करणहरू
           create: संस्करण सिर्जना गर्नुहोस्
-          delete: मेट्नुहोस्
           preview: पूर्वावलोकन
         new:
           back: फिर्ता
@@ -684,7 +683,6 @@ ne:
           back: फिर्ता
           title: यस प्रक्रियासँग सम्बन्धित प्रश्नहरू
           create: प्रश्न सिर्जना गर्नुहोस्
-          delete: मेट्नुहोस्
         new:
           back: फिर्ता
           title: नयाँ प्रश्न सिर्जना गर्नुहोस्
@@ -1458,7 +1456,6 @@ ne:
           verified_users_who_didnt_vote_proposals: प्रमाणित प्रयोगकर्ताहरू जसले प्रस्तावहरूलाई मतदान गरेनन्
           visits: भ्रमणहरू
           votes: कुल मतहरू
-        budgets_title: सहभागितामूलक बजेट
         participatory_budgets: सहभागितामूलक बजेटहरू
         direct_messages: प्रत्यक्ष सन्देशहरू
         proposal_notifications: प्रस्ताव सूचनाहरू
@@ -1467,8 +1464,6 @@ ne:
         sdg: एस डि जि
       graph:
         debate_created: बहसहरू
-        visit: भ्रमणहरू
-        level_2_user: दोस्रो तहका प्रयोगकर्ताहरू
         proposal_created: नागरिक प्रस्तावहरू
       budgets:
         no_data_before_balloting_phase: "मतदान चरण अघि देखाउन को लागी कुनै डाटा छैन।"
@@ -1580,7 +1575,6 @@ ne:
         index:
           title: आफू अनुकूल छवि अथवा इमेजहरू
           update: अद्यावधिक
-          delete: मेट्नुहोस्
           image: छवि
         update:
           notice: छवि सफलतापूर्वक अद्यावधिक गरियो

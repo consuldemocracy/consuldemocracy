@@ -169,7 +169,7 @@ describe Poll::Stats do
     it "returns stats based on what happened when the voting took place" do
       travel_to(100.years.ago) do
         [16, 18, 32, 32, 33, 34, 64, 65, 71, 73, 90, 99, 105].each do |age|
-          create(:user, date_of_birth: age.years.ago)
+          create(:user, date_of_birth: age.years.ago - rand(0..11).months)
         end
 
         create(:poll, starts_at: 1.minute.from_now, ends_at: 2.minutes.from_now)

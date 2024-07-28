@@ -22,7 +22,7 @@ def generate_content(page)
 end
 if SiteCustomization::Page.find_by(slug: "welcome_not_verified").nil?
   page = SiteCustomization::Page.new(slug: "welcome_not_verified", status: "published")
-  I18n.available_locales.each do |locale|
+  Setting.enabled_locales.each do |locale|
     I18n.with_locale(locale) { generate_content(page) }
   end
 end

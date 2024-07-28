@@ -171,7 +171,6 @@ gd:
     legislation/process: pròiseas
     legislation/question: ceist
     poll/shift: Sioft
-    poll/question/answer: Freagair
     user: Cunntas
     verification/sms: fòn
     signature_sheet: Duilleag nan ainmean-sgrìobhte
@@ -600,7 +599,6 @@ gd:
         share: "Agus ma nì thu fàbhar mòr dhomh cuideachd is ma sgaoileas tu mo mholadh ri do charaidean, do theaghlach agus na daoine as aithne dhut, bhiodh e sgoinneil!"
   polls:
     all: "A h-uile"
-    no_dates: "chan eil ceann-latha air a shònrachadh"
     dates: "Bho %{open_at} gu %{closed_at}"
     final_date: "Cunntasan /Toraidhean deireannach"
     index:
@@ -705,7 +703,6 @@ gd:
       author_deleted: Cleachdaiche air a sguabadh às
       email_deleted: Post-d air a sguabadh às
     back: Air ais
-    check: Tagh
     check_all: Na h-uile
     check_none: Chan eil gin
     collective: Co-chomann
@@ -802,18 +799,6 @@ gd:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Tadhalan
-      debates: Deasbadan
-      proposals: Molaidhean
-      comments: Beachdan
-      proposal_votes: Bhòtaichean air molaidhean
-      debate_votes: Bhòtaichean air deasbadan
-      comment_votes: Bhòtaichean air beachdan
-      votes: Bhòtaichean iomlan
-      verified_users: Cleachdaichean dearbhte
-      unverified_users: Cleachdaichean gun dearbhadh
   unauthorized:
     default: Chan eil cead agad an duilleag seo inntrigeadh.
     manage:

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_24_013913) do
+ActiveRecord::Schema[7.0].define(version: 2024_05_13_135357) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -1024,7 +1024,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_24_013913) do
     t.string "answer"
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
+    t.bigint "option_id"
     t.index ["author_id"], name: "index_poll_answers_on_author_id"
+    t.index ["option_id", "author_id"], name: "index_poll_answers_on_option_id_and_author_id", unique: true
+    t.index ["option_id"], name: "index_poll_answers_on_option_id"
     t.index ["question_id", "answer"], name: "index_poll_answers_on_question_id_and_answer"
     t.index ["question_id"], name: "index_poll_answers_on_question_id"
   end
@@ -1208,7 +1211,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_24_013913) do
     t.integer "age"
     t.string "gender"
     t.integer "geozone_id"
-    t.integer "answer_id"
     t.integer "officer_assignment_id"
     t.integer "user_id"
     t.string "origin"
@@ -1799,6 +1801,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_24_013913) do
   add_foreign_key "moderators", "users"
   add_foreign_key "notifications", "users"
   add_foreign_key "organizations", "users"
+  add_foreign_key "poll_answers", "poll_question_answers", column: "option_id"
   add_foreign_key "poll_answers", "poll_questions", column: "question_id"
   add_foreign_key "poll_booth_assignments", "polls"
   add_foreign_key "poll_officer_assignments", "poll_booth_assignments", column: "booth_assignment_id"

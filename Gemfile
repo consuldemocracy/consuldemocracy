@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "7.0.8.1"
+gem "rails", "7.0.8.4"
 
 gem "acts-as-taggable-on", "~> 10.0.0"
 gem "acts_as_votable", "~> 0.14.0"
@@ -64,7 +64,6 @@ gem "wicked_pdf", "~> 2.8.0"
 gem "wkhtmltopdf-binary", "~> 0.12.6"
 
 group :development, :test do
-  gem "bullet", "~> 7.1.6"
   gem "debug", "~> 1.9.2"
   gem "factory_bot_rails", "~> 6.4.3"
   gem "faker", "~> 3.3.1"

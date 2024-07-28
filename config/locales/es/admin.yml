@@ -710,6 +710,11 @@ es:
       milestones:
         index:
           title: Seguimiento
+    locales:
+      default_help_text: "Cambiar el idioma por defecto <strong>afectará a todos los usuarios</strong> que visiten la página por primera vez."
+      enabled_help_text: El idioma por defecto, seleccionado con anterioridad, se habilitará automáticamente.
+      update:
+        notice: Idiomas actualizados con éxito
     managers:
       index:
         title: Gestores
@@ -727,11 +732,12 @@ es:
     menu:
       activity: Actividad de moderadores
       admin: Menú de administración
-      banner: Gestionar banners
+      banner: Banners
       proposals: Propuestas
       proposals_topics: Temas de propuestas
       budgets: Presupuestos participativos
-      geozones: Gestionar zonas
+      geozones: Zonas
+      locales: Idiomas
       hidden_comments: Comentarios ocultos
       hidden_debates: Debates ocultos
       hidden_proposals: Propuestas ocultas
@@ -794,7 +800,7 @@ es:
       dashboard_actions: Recursos y acciones
       debates: "Debates"
       comments: "Comentarios"
-      local_census_records: Gestionar censo local
+      local_census_records: Censo local
       machine_learning: "IA / Machine learning"
       multitenancy: Multientidad
     administrators:
@@ -1713,7 +1719,7 @@ es:
       empty: "No hay cambios registrados"
     local_census_records:
       index:
-        title: Gestionar censo local
+        title: Censo local
         create: Crear nuevo registro en el censo local
         no_local_census_records: No hay registros de censo local
         document_type: Tipo de documento
@@ -1738,7 +1744,7 @@ es:
         create:
           notice: ¡Proceso de import de registros del censo local ejecutado correctamente!
         show:
-          title: Gestionar censo local
+          title: Censo local
           subtitle: Resultados del proceso de importación
           import: Importar otro fichero
           errored: Filas erróneas
