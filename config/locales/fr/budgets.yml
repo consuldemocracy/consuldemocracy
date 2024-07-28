@@ -8,8 +8,8 @@ fr:
           knapsack: "Toujours disponible pour vous <span>%{count}</span>"
           approval:
             zero: "Vous pouvez toujours envoyer <span>%{count}</span> votes."
-            one: "Vous pouvez toujours voter pour <span>%{count}</span>."
-            other: "Vous pouvez toujours envoyer <span>%{count}</span> votes."
+            one: "Vous pouvez encore voter <span>%{count}</span> fois."
+            other: "Vous pouvez encore voter <span>%{count}</span> fois."
         amount_spent:
           knapsack: "Montant dépensé <span>%{count}</span>"
           approval:
