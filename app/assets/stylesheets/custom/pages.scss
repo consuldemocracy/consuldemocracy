@@ -326,6 +326,10 @@ span:hover::before {
         }
       }
 
+      a.image-holder {
+        height: unset;
+      }
+
       .image-holder {
         text-align: center;
   
