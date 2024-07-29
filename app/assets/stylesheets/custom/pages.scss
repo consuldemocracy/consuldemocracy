@@ -310,6 +310,7 @@ span:hover::before {
 
       a {
         display: flex;
+        height: 100%;
         flex-direction: column;
         text-decoration: none;
       }
@@ -327,6 +328,7 @@ span:hover::before {
 
       .image-holder {
         text-align: center;
+        height: unset;
   
         img {
           height: auto;
