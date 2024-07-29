@@ -326,9 +326,12 @@ span:hover::before {
         }
       }
 
+      a.image-holder {
+        height: unset;
+      }
+
       .image-holder {
         text-align: center;
-        height: unset;
   
         img {
           height: auto;
