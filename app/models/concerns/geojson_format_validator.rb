@@ -4,7 +4,11 @@ class GeojsonFormatValidator < ActiveModel::EachValidator
       geojson = parse_json(value)
 
       unless valid_geojson?(geojson)
-        record.errors.add(attribute, :invalid, message: I18n.t("errors.geozone.attributes.geojson.invalid"))
+        record.errors.add(
+          attribute,
+          :invalid,
+          message: I18n.t("errors.geozone.attributes.geojson.invalid")
+        )
         return
       end
 
@@ -12,16 +16,20 @@ class GeojsonFormatValidator < ActiveModel::EachValidator
       if geojson["type"] == "FeatureCollection"
         geojson["features"].each do |feature|
           unless valid_coordinates?(feature["geometry"])
-            record.errors.add(attribute, :invalid_coordinates, message: I18n.t("errors.geozone.attributes.geojson.invalid_coordinates"))
+            record.errors.add(
+              attribute,
+              :invalid_coordinates,
+              message: I18n.t("errors.geozone.attributes.geojson.invalid_coordinates")
+            )
           end
         end
       elsif geojson["type"] == "Feature"
         unless valid_coordinates?(geojson["geometry"])
-          record.errors.add(attribute, :invalid_coordinates, message: I18n.t("errors.geozone.attributes.geojson.invalid_coordinates"))
-        end
-      elsif geojson["geometry"]
-        unless valid_coordinates?(geojson["geometry"])
-          record.errors.add(attribute, :invalid_coordinates, message: I18n.t("errors.geozone.attributes.geojson.invalid_coordinates"))
+          record.errors.add(
+            attribute,
+            :invalid_coordinates,
+            message: I18n.t("errors.geozone.attributes.geojson.invalid_coordinates")
+          )
         end
       end
     end
@@ -44,11 +52,8 @@ class GeojsonFormatValidator < ActiveModel::EachValidator
           valid_feature_collection?(geojson)
         when "Feature"
           valid_feature?(geojson)
-        when "Point", "LineString", "Polygon", "MultiPoint", "MultiLineString",
-             "MultiPolygon", "GeometryCollection"
-          valid_geometry?(geojson)
         else
-          false
+          valid_geometry?(geojson)
         end
       else
         # Check if it is a top-level geometry object
