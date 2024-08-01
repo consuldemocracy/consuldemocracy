@@ -48,7 +48,7 @@ describe Geozone do
   describe "#outline_points" do
     it "returns nil when geojson is nil" do
       geozone.geojson = nil
-      expect(geozone.outline_points).to eq(nil)
+      expect(geozone.outline_points).to be(nil)
     end
 
     it "returns normalized feature collection when geojson is a valid FeatureCollection" do
@@ -82,7 +82,7 @@ describe Geozone do
             ]]
           },
           "properties" => {}
-        }],
+        }]
       }
 
       expect(geozone.outline_points).to eq(expected.to_json)
@@ -116,7 +116,7 @@ describe Geozone do
             ]]
           },
           "properties" => {}
-        }],
+        }]
       }
 
       expect(geozone.outline_points).to eq(expected.to_json)
@@ -149,9 +149,9 @@ describe Geozone do
             ]]
           },
           "properties" => {}
-        }],
+        }]
       }
-      shape=JSON.parse(geozone.outline_points)
+      shape = JSON.parse(geozone.outline_points)
       expect(shape).to eq(expected)
     end
 
@@ -180,7 +180,7 @@ describe Geozone do
             ]]
           },
           "properties" => {}
-        }],
+        }]
       }
 
       expect(geozone.outline_points).to eq(expected.to_json)
