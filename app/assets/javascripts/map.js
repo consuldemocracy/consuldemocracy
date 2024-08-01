@@ -15,7 +15,7 @@
       App.Map.maps = []
     },
     initializeMap: function (element) {
-      let createMarker, editable, investmentsMarkers, map, marker, markerClustering,
+      var createMarker, editable, investmentsMarkers, map, marker, markerClustering,
         markerData, markerIcon, markers, moveOrPlaceMarker, removeMarker, removeMarkerSelector
       App.Map.cleanInvestmentCoordinates(element)
       removeMarkerSelector = $(element).data('marker-remove-selector')
@@ -35,7 +35,7 @@
         html: '<div class="map-icon"></div>'
       })
       createMarker = function (latitude, longitude) {
-        let newMarker, markerLatLng
+        var newMarker, markerLatLng
         markerLatLng = new L.LatLng(latitude, longitude)
         newMarker = L.marker(markerLatLng, {
           icon: markerIcon,
@@ -88,7 +88,7 @@
       map.addLayer(markers)
     },
     leafletMap: function (element) {
-      let centerData, mapCenterLatLng, map
+      var centerData, mapCenterLatLng, map
 
       centerData = App.Map.centerData(element)
       mapCenterLatLng = new L.LatLng(centerData.lat, centerData.long)
@@ -107,7 +107,7 @@
       return '<a href="https://leafletjs.com" title="A JavaScript library for interactive maps">Leaflet</a>'
     },
     markerData: function (element) {
-      let dataCoordinates, formCoordinates, inputs, latitude, longitude
+      var dataCoordinates, formCoordinates, inputs, latitude, longitude
       inputs = App.Map.coordinatesInputs(element)
 
       dataCoordinates = {
@@ -134,7 +134,7 @@
       }
     },
     centerData: function (element) {
-      let markerCoordinates, latitude, longitude, zoom
+      var markerCoordinates, latitude, longitude, zoom
 
       markerCoordinates = App.Map.markerData(element)
 
@@ -182,7 +182,7 @@
     addInvestmentsMarkers: function (markers, createMarker) {
       if (markers) {
         markers.forEach(function (coordinates) {
-          let marker
+          var marker
 
           if (App.Map.validCoordinates(coordinates)) {
             marker = createMarker(coordinates.lat, coordinates.long)
@@ -193,7 +193,7 @@
       }
     },
     cleanInvestmentCoordinates: function (element) {
-      let clean_markers, markers
+      var clean_markers, markers
       markers = $(element).attr('data-marker-investments-coordinates')
       if (markers != null) {
         clean_markers = markers.replace(/-?(\*+)/g, null)
@@ -201,7 +201,7 @@
       }
     },
     addAttribution: function (map) {
-      let element, mapAttribution, mapTilesProvider
+      var element, mapAttribution, mapTilesProvider
 
       element = map._container
       mapTilesProvider = $(element).data('map-tiles-provider')
