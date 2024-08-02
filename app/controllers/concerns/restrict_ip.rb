@@ -5,7 +5,7 @@ module RestrictIP
     before_action :restrict_ip
   end
 
-  private
+private
 
   # Default empty allowed IPs, meaning unrestricted access by default
   DEFAULT_ALLOWED_IPS = [].freeze
@@ -13,7 +13,7 @@ module RestrictIP
   def restrict_ip
     if restricted_access?
       unless allowed_ip?(request.remote_ip)
-        flash[:alert] = 'Access denied. Your IP address is not allowed.'
+        flash[:alert] = "Access denied. Your IP address is not allowed."
         redirect_to root_path
       end
     end
@@ -30,7 +30,7 @@ module RestrictIP
 
     # Ensure allowed_ips is an array
     allowed_ips = Array(allowed_ips)
-    
+
     allowed_ips.any? do |allowed_ip|
       IPAddr.new(allowed_ip).include?(ip)
     end
