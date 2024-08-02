@@ -104,7 +104,7 @@ GEM
       erubi (~> 1.4)
       parser (>= 2.4)
       smart_properties
-    bigdecimal (3.1.7)
+    bigdecimal (3.1.8)
     bindex (0.8.1)
     bing_translator (6.2.0)
       json
@@ -220,9 +220,10 @@ GEM
       railties (>= 5.0.0)
     faker (3.4.1)
       i18n (>= 1.8.11, < 2)
-    faraday (2.9.0)
+    faraday (2.10.1)
       faraday-net_http (>= 2.0, < 3.2)
-    faraday-net_http (3.1.0)
+      logger
+    faraday-net_http (3.1.1)
       net-http
     ffi (1.15.5)
     file_validators (3.0.0)
@@ -265,11 +266,11 @@ GEM
     httparty (0.21.0)
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
-    httpi (4.0.1)
+    httpi (4.0.4)
       base64
       mutex_m
       nkf
-      rack (>= 2.0, < 3.1)
+      rack (>= 2.0, < 4)
     i18n (1.14.5)
       concurrent-ruby (~> 1.0)
     i18n-tasks (0.9.37)
@@ -372,10 +373,10 @@ GEM
     net-ssh (7.2.3)
     nio4r (2.7.3)
     nkf (0.2.0)
-    nokogiri (1.16.6)
+    nokogiri (1.16.7)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
-    nori (2.7.0)
+    nori (2.7.1)
       bigdecimal
     oauth (0.5.6)
     oauth2 (2.0.9)
@@ -453,7 +454,7 @@ GEM
     public_suffix (4.0.7)
     puma (5.6.8)
       nio4r (~> 2.0)
-    racc (1.8.0)
+    racc (1.8.1)
     rack (2.2.9)
     rack-accept (0.4.5)
       rack (>= 0.4)
@@ -511,7 +512,7 @@ GEM
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
-    rexml (3.3.3)
+    rexml (3.3.4)
       strscan
     rinku (2.0.6)
     ros-apartment (2.11.0)
@@ -589,11 +590,11 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    savon (2.15.0)
+    savon (2.15.1)
       akami (~> 1.2)
       builder (>= 2.1.2)
       gyoku (~> 1.2)
-      httpi (>= 2.4.5, < 5)
+      httpi (>= 4, < 5)
       mail (~> 2.5)
       nokogiri (>= 1.8.1)
       nori (~> 2.4)
@@ -668,9 +669,9 @@ GEM
       method_source (~> 1.0)
     warden (1.2.9)
       rack (>= 2.0.9)
-    wasabi (5.0.2)
+    wasabi (5.0.3)
       addressable
-      faraday (~> 2.8)
+      faraday (>= 1.9, < 3)
       nokogiri (>= 1.13.9)
     web-console (4.2.1)
       actionview (>= 6.0.0)
@@ -776,7 +777,7 @@ DEPENDENCIES
   rvm1-capistrano3 (~> 1.4.0)
   sassc-embedded (~> 1.70.1)
   sassc-rails (~> 2.1.2)
-  savon (~> 2.15.0)
+  savon (~> 2.15.1)
   selenium-webdriver (~> 4.22.0)
   simplecov (~> 0.22.0)
   simplecov-lcov (~> 0.8.0)
