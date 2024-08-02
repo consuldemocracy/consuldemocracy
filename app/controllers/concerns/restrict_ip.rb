@@ -11,17 +11,15 @@ private
   DEFAULT_ALLOWED_IPS = [].freeze
 
   def restrict_ip
-    if restricted_access?
-      unless allowed_ip?(request.remote_ip)
-        flash[:alert] = "Access denied. Your IP address is not allowed."
-        redirect_to root_path
-      end
+    if restricted_access? && !allowed_ip?(request.remote_ip)
+      flash[:alert] = "Access denied. Your IP address is not allowed."
+      redirect_to root_path
     end
   end
 
   def restricted_access?
     # Check if secrets contain a non-empty allowed_ips
-    allowed_ips = Rails.application.secrets.allowed_ips
+    allowed_ips = Tenant.current_secrets.allowed_ips
     allowed_ips.present?
   end
 
