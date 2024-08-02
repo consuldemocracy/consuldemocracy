@@ -49,7 +49,7 @@ gem "rinku", "~> 2.0.6", require: "rails_rinku"
 gem "ros-apartment", "~> 2.11.0", require: "apartment" # Remove ConnectionHandling monkey patch when upgrading
 gem "sassc-embedded", "~> 1.70.1"
 gem "sassc-rails", "~> 2.1.2"
-gem "savon", "~> 2.15.0"
+gem "savon", "~> 2.15.1"
 gem "sitemap_generator", "~> 6.3.0"
 gem "social-share-button", "~> 1.2.4"
 gem "sprockets", "~> 4.2.1"
