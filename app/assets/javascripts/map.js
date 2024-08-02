@@ -1,27 +1,27 @@
-(function () {
-  'use strict';  
+(function() {
+  "use strict";  
   App.Map = {
     maps: [],
-    initialize: function () {
-      $('*[data-map]:visible').each(function () {
+    initialize: function() {
+      $('*[data-map]:visible').each(function() {
         App.Map.initializeMap(this);
       });
     },
-    destroy: function () {
-      App.Map.maps.forEach(function (map) {
+    destroy: function() {
+      App.Map.maps.forEach(function(map) {
         map.off();
         map.remove();
       });
       App.Map.maps = [];
     },
-    initializeMap: function (element) {
+    initializeMap: function(element) {
       var createMarker, editable, investmentsMarkers, map, marker, markerClustering,
         markerData, markerIcon, markers, moveOrPlaceMarker, removeMarker, removeMarkerSelector;
       App.Map.cleanInvestmentCoordinates(element);
       removeMarkerSelector = $(element).data('marker-remove-selector');
-      investmentsMarkers = $(element).data('marker-investments-coordinates');
-      editable = $(element).data('marker-editable');
-      markerClustering = $(element).data('marker-clustering');
+      investmentsMarkers = $(element).data("marker-investments-coordinates");
+      editable = $(element).data("marker-editable");
+      markerClustering = $(element).data("marker-clustering");
       if (markerClustering) {
         markers = L.markerClusterGroup({ chunkedLoading: true });
       } else {
@@ -29,12 +29,12 @@
       }
       marker = null;      
       markerIcon = L.divIcon({
-        className: 'map-marker',
+        className: "map-marker",
         iconSize: [30, 30],
         iconAnchor: [15, 40],
         html: '<div class="map-icon"></div>'
       });
-      createMarker = function (latitude, longitude) {
+      createMarker = function(latitude, longitude) {
         var newMarker, markerLatLng;
         markerLatLng = new L.LatLng(latitude, longitude);
         newMarker = L.marker(markerLatLng, {
@@ -42,21 +42,21 @@
           draggable: editable
         });
         if (editable) {
-          newMarker.on('dragend', function () {
+          newMarker.on("dragend", function() {
             App.Map.updateFormfields(map, newMarker);
           });
         }
         markers.addLayer(newMarker);
         return newMarker;
       };
-      removeMarker = function () {
+      removeMarker = function() {
         if (marker) {
           map.removeLayer(marker);
           marker = null;
         }
         App.Map.clearFormfields(element);
       };
-      moveOrPlaceMarker = function (e) {
+      moveOrPlaceMarker = function(e) {
         if (marker) {
           marker.setLatLng(e.latlng);
         } else {
@@ -75,45 +75,45 @@
       }
       
       if (editable) {
-        $(removeMarkerSelector).on('click', removeMarker);
-        map.on('zoomend', function () {
+        $(removeMarkerSelector).on("click", removeMarker);
+        map.on("zoomend", function() {
           if (marker) {
             App.Map.updateFormfields(map, marker);
           }
         });
-        map.on('click', moveOrPlaceMarker);
+        map.on("click", moveOrPlaceMarker);
       }
 
       App.Map.addInvestmentsMarkers(investmentsMarkers, createMarker);
       App.Map.addGeozones(map);
       map.addLayer(markers);
     },
-    leafletMap: function (element) {
+    leafletMap: function(element) {
       var centerData, mapCenterLatLng, map;
 
       centerData = App.Map.centerData(element);
       mapCenterLatLng = new L.LatLng(centerData.lat, centerData.long);
       map = L.map(element.id, { scrollWheelZoom: false }).setView(mapCenterLatLng, centerData.zoom);
 
-      map.on('focus', function () {
+      map.on("focus", function() {
         map.scrollWheelZoom.enable();
       });
-      map.on('blur mouseout', function () {
+      map.on("blur mouseout", function() {
         map.scrollWheelZoom.disable();
       });
 
       return map;
     },
-    attributionPrefix: function () {
+    attributionPrefix: function() {
       return '<a href="https://leafletjs.com" title="A JavaScript library for interactive maps">Leaflet</a>';
     },
-    markerData: function (element) {
+    markerData: function(element) {
       var dataCoordinates, formCoordinates, inputs, latitude, longitude;
       inputs = App.Map.coordinatesInputs(element);
 
       dataCoordinates = {
-        lat: $(element).data('marker-latitude'),
-        long: $(element).data('marker-longitude')
+        lat: $(element).data("marker-latitude"),
+        long: $(element).data("marker-longitude")
       };
       formCoordinates = {
         lat: inputs.lat.val(),
@@ -135,7 +135,7 @@
         zoom: formCoordinates.zoom
       };
     },
-    centerData: function (element) {
+    centerData: function(element) {
       var markerCoordinates, latitude, longitude, zoom;
 
       markerCoordinates = App.Map.markerData(element);
@@ -144,14 +144,14 @@
         latitude = markerCoordinates.lat;
         longitude = markerCoordinates.long;
       } else {
-        latitude = $(element).data('map-center-latitude');
-        longitude = $(element).data('map-center-longitude');
+        latitude = $(element).data("map-center-latitude");
+        longitude = $(element).data("map-center-longitude");
       }
 
       if (App.Map.validZoom(markerCoordinates.zoom)) {
         zoom = markerCoordinates.zoom;
       } else {
-        zoom = $(element).data('map-zoom');
+        zoom = $(element).data("map-zoom");
       }
 
       return {
@@ -160,30 +160,30 @@
         zoom: zoom
       };
     },
-    coordinatesInputs: function (element) {
+    coordinatesInputs: function(element) {
       return {
-        lat: $($(element).data('latitude-input-selector')),
-        long: $($(element).data('longitude-input-selector')),
-        zoom: $($(element).data('zoom-input-selector'))
+        lat: $($(element).data("latitude-input-selector")),
+        long: $($(element).data("longitude-input-selector")),
+        zoom: $($(element).data("zoom-input-selector"))
       };
     },
-    updateFormfields: function (map, marker) {
+    updateFormfields: function(map, marker) {
       var inputs = App.Map.coordinatesInputs(map._container);
 
       inputs.lat.val(marker.getLatLng().lat);
       inputs.long.val(marker.getLatLng().lng);
       inputs.zoom.val(map.getZoom());
     },
-    clearFormfields: function (element) {
+    clearFormfields: function(element) {
       var inputs = App.Map.coordinatesInputs(element);
 
-      inputs.lat.val('');
-      inputs.long.val('');
-      inputs.zoom.val('');
+      inputs.lat.val("");
+      inputs.long.val("");
+      inputs.zoom.val("");
     },
-    addInvestmentsMarkers: function (markers, createMarker) {
+    addInvestmentsMarkers: function(markers, createMarker) {
       if (markers) {
-        markers.forEach(function (coordinates) {
+        markers.forEach(function(coordinates) {
           var marker;
 
           if (App.Map.validCoordinates(coordinates)) {
@@ -194,51 +194,51 @@
         });
       }
     },
-    cleanInvestmentCoordinates: function (element) {
+    cleanInvestmentCoordinates: function(element) {
       var clean_markers, markers;
-      markers = $(element).attr('data-marker-investments-coordinates');
+      markers = $(element).attr("data-marker-investments-coordinates");
       if (markers != null) {
         clean_markers = markers.replace(/-?(\*+)/g, null);
-        $(element).attr('data-marker-investments-coordinates', clean_markers);
+        $(element).attr("data-marker-investments-coordinates", clean_markers);
       }
     },
-    addAttribution: function (map) {
+    addAttribution: function(map) {
       var element, mapAttribution, mapTilesProvider;
 
       element = map._container;
-      mapTilesProvider = $(element).data('map-tiles-provider');
-      mapAttribution = $(element).data('map-tiles-provider-attribution');
+      mapTilesProvider = $(element).data("map-tiles-provider");
+      mapAttribution = $(element).data("map-tiles-provider-attribution");
 
       map.attributionControl.setPrefix(App.Map.attributionPrefix());
       L.tileLayer(mapTilesProvider, { attribution: mapAttribution }).addTo(map);
     },
-    addGeozones: function (map) {
-      var geozones = $(map._container).data('geozones');
+    addGeozones: function(map) {
+      var geozones = $(map._container).data("geozones");
 
       if (geozones) {
-        geozones.forEach(function (geozone) {
+        geozones.forEach(function(geozone) {
           App.Map.addGeozone(geozone, map);
         });
       }
     },
-    addGeozone: function (geozone, map) {
+    addGeozone: function(geozone, map) {
       // Parse the GeoJSON string
       var geojsonData = JSON.parse(geozone.outline_points);
 
       // Create a GeoJSON layer
       var geoJsonLayer = L.geoJSON(geojsonData, {
-        style: function (feature) {
+        style: function(feature) {
           return {
-            color: geozone.color || feature.properties.color || 'blue',
+            color: geozone.color || feature.properties.color || "blue",
             fillOpacity: 0.3,
-            className: 'map-polygon'
+            className: "map-polygon"
           };
         },
-        onEachFeature: function (feature, layer) {
+        onEachFeature: function(feature, layer) {
           if (feature.properties.headings || geozone.headings) {
             // Use feature properties headings if provided, else fallback to geozone headings
             var headings = feature.properties.headings || geozone.headings;
-            layer.bindPopup(headings.join('<br>'));
+            layer.bindPopup(headings.join("<br>"));
           }
         }
       });
@@ -246,16 +246,16 @@
       // Add the GeoJSON layer to the map
       geoJsonLayer.addTo(map);
     },
-    getPopupContent: function (data) {
+    getPopupContent: function(data) {
       return "<a href='" + data.link + "'>" + data.title + '</a>';
     },
-    validZoom: function (zoom) {
+    validZoom: function(zoom) {
       return App.Map.isNumeric(zoom);
     },
-    validCoordinates: function (coordinates) {
+    validCoordinates: function(coordinates) {
       return App.Map.isNumeric(coordinates.lat) && App.Map.isNumeric(coordinates.long);
     },
-    isNumeric: function (n) {
+    isNumeric: function(n) {
       return !isNaN(parseFloat(n)) && isFinite(n);
     }
   };
