@@ -196,12 +196,12 @@ GEM
       htmlentities (~> 4.3.3)
       launchy (~> 2.1)
       mail (~> 2.7)
-    erb_lint (0.5.0)
+    erb_lint (0.6.0)
       activesupport
       better_html (>= 2.0.1)
       parser (>= 2.7.1.4)
       rainbow
-      rubocop
+      rubocop (>= 1)
       smart_properties
     erubi (1.13.0)
     eslintrb (2.1.0)
@@ -372,7 +372,7 @@ GEM
     net-ssh (7.2.3)
     nio4r (2.7.3)
     nkf (0.2.0)
-    nokogiri (1.16.6)
+    nokogiri (1.16.7)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     nori (2.7.0)
@@ -415,7 +415,7 @@ GEM
     parallel (1.25.1)
     paranoia (2.6.3)
       activerecord (>= 5.1, < 7.2)
-    parser (3.3.3.0)
+    parser (3.3.4.0)
       ast (~> 2.4.1)
       racc
     pdf-reader (2.12.0)
@@ -453,7 +453,7 @@ GEM
     public_suffix (4.0.7)
     puma (5.6.8)
       nio4r (~> 2.0)
-    racc (1.8.0)
+    racc (1.8.1)
     rack (2.2.9)
     rack-accept (0.4.5)
       rack (>= 0.4)
@@ -511,7 +511,7 @@ GEM
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
-    rexml (3.3.3)
+    rexml (3.3.4)
       strscan
     rinku (2.0.6)
     ros-apartment (2.11.0)
@@ -723,7 +723,7 @@ DEPENDENCIES
   devise (~> 4.9.3)
   devise-security (~> 0.18.0)
   email_spec (~> 2.2.2)
-  erb_lint (~> 0.5.0)
+  erb_lint (~> 0.6.0)
   exiftool_vendored (~> 12.80.0)
   factory_bot_rails (~> 6.4.3)
   faker (~> 3.4.1)
