@@ -38,7 +38,10 @@ class Comment < ApplicationRecord
   scope :sort_by_flags, -> { order(flags_count: :desc, updated_at: :desc) }
   scope :public_for_api, -> do
     not_valuations
-      .where(commentable: [Debate.public_for_api, Proposal.public_for_api, Poll.public_for_api])
+      .where(commentable: [Debate.public_for_api,
+                           Proposal.public_for_api,
+                           Poll.public_for_api,
+                           Budget::Investment.public_for_api])
   end
 
   scope :sort_by_most_voted, -> { order(confidence_score: :desc, created_at: :desc) }

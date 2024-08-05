@@ -13,6 +13,7 @@ class Budget
     include Mappable
     include Documentable
     include SDG::Relatable
+    include HasPublicAuthor
 
     acts_as_taggable_on :valuation_tags
     acts_as_votable
@@ -111,6 +112,7 @@ class Budget
     end
 
     scope :for_render, -> { includes(:heading) }
+    scope :public_for_api, -> { where(budget: Budget.public_for_api) }
 
     def self.by_valuator(valuator_id)
       where(budget_valuator_assignments: { valuator_id: valuator_id }).joins(:valuator_assignments)

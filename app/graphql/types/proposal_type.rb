@@ -20,6 +20,7 @@ module Types
     field :title, String, null: true
     field :video_url, String, null: true
     field :votes_for, Types::VoteType.connection_type, null: true
+    field :milestones, Types::MilestoneType.connection_type, null: true
 
     def tags
       object.tags.public_for_api
