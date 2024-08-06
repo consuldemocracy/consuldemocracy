@@ -24,37 +24,39 @@ ruby -v
 => # (debería aparecer la versión mencionada en el fichero .ruby-version)
 ```
 
-4. Instala las gemas requeridas usando Bundler:
-
-```bash
-bundle
-```
-
-5. Copia los archivos de configuración de ejemplo del entorno dentro de unos nuevos válidos:
+4. Copia el archivo de ejemplo de configuración de base de datos:
 
 ```bash
 cp config/database.yml.example config/database.yml
-cp config/secrets.yml.example config/secrets.yml
 ```
 
-Y configura los de tu usuario de base de datos `consul` en `database.yml`
-
-6. Ejecuta las siguientes [tareas Rake](https://github.com/ruby/rake) para crear y rellenar tu base de datos local con el mínimo de información necesaria para que la aplicación funcione correctamente:
+5. Configura las credenciales de base de datos con tu usuario `consul` en tu nuevo fichero `database.yml`
 
 ```bash
-bin/rake db:create
-bin/rake db:setup
-bin/rake db:dev_seed
-bin/rake db:test:prepare
+nano config/database.yml
 ```
 
-7. Comprueba que todo funciona correctamente lanzando la suite de tests (ten en cuenta que podría tardar más de una hora):
+Y edita las líneas que contienen `username:` y `password:`, añadiendo tus credenciales.
+
+6. Instala las dependencias del proyecto y crea la base de datos:
+
+```bash
+bin/setup
+```
+
+7. Ejecuta la siguiente [tarea Rake](https://github.com/ruby/rake) para rellenar tu base de datos local con datos de desarrollo:
+
+```bash
+bin/rake db:dev_seed
+```
+
+8. Comprueba que todo funciona correctamente lanzando la suite de tests (ten en cuenta que podría tardar más de una hora):
 
 ```bash
 bin/rspec
 ```
 
-8. Ahora que ya está todo listo puedes ejecutar la aplicación:
+9. Ahora que ya está todo listo puedes ejecutar la aplicación:
 
 ```bash
 bin/rails s

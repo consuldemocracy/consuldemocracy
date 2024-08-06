@@ -37,6 +37,8 @@ You can access the main website of the project at [http://consuldemocracy.org](h
 
 Prerequisites: install git, Ruby 3.2.4, CMake, pkg-config, Node.js 18.20.3, ImageMagick and PostgreSQL (>=9.5).
 
+**Note**: The `bin/setup` command below might fail if you've configured a username and password for PostgreSQL. If that's the case, edit the lines containing `username:` and `password:` (adding your credentials) in the `config/database.yml` file and run `bin/setup` again.
+
 ```bash
 git clone https://github.com/consuldemocracy/consuldemocracy.git
 cd consuldemocracy
