@@ -24,13 +24,20 @@ ruby -v
 => # (debería aparecer la versión mencionada en el fichero .ruby-version)
 ```
 
-4. Copia el archivo de ejemplo de configuración de base de datos:
+4. Instala la versión de Node.js necesaria con tu gestor de versiones de Node.js. Si usas NVM:
+
+```bash
+nvm install `cat .node-version`
+nvm use `cat .node-version`
+```
+
+5. Copia el archivo de ejemplo de configuración de base de datos:
 
 ```bash
 cp config/database.yml.example config/database.yml
 ```
 
-5. Configura las credenciales de base de datos con tu usuario `consul` en tu nuevo fichero `database.yml`
+6. Configura las credenciales de base de datos con tu usuario `consul` en tu nuevo fichero `database.yml`
 
 ```bash
 nano config/database.yml
@@ -38,25 +45,25 @@ nano config/database.yml
 
 Y edita las líneas que contienen `username:` y `password:`, añadiendo tus credenciales.
 
-6. Instala las dependencias del proyecto y crea la base de datos:
+7. Instala las dependencias del proyecto y crea la base de datos:
 
 ```bash
 bin/setup
 ```
 
-7. Ejecuta la siguiente [tarea Rake](https://github.com/ruby/rake) para rellenar tu base de datos local con datos de desarrollo:
+8. Ejecuta la siguiente [tarea Rake](https://github.com/ruby/rake) para rellenar tu base de datos local con datos de desarrollo:
 
 ```bash
 bin/rake db:dev_seed
 ```
 
-8. Comprueba que todo funciona correctamente lanzando la suite de tests (ten en cuenta que podría tardar más de una hora):
+9. Comprueba que todo funciona correctamente lanzando la suite de tests (ten en cuenta que podría tardar más de una hora):
 
 ```bash
 bin/rspec
 ```
 
-9. Ahora que ya está todo listo puedes ejecutar la aplicación:
+10. Ahora que ya está todo listo puedes ejecutar la aplicación:
 
 ```bash
 bin/rails s
