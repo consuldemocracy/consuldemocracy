@@ -20,12 +20,6 @@ OS X ya viene con una versión preinstalada de ruby, pero es bastante vieja y en
 
 [github.com/rbenv/rbenv](https://github.com/rbenv/rbenv)
 
-## Bundler
-
-```bash
-gem install bundler
-```
-
 ## Node.js
 
 Para compilar los archivos estáticos (JS, CSS, imágenes, etc.), es necesario un _runtime_ de JavaScript. OS X viene con un _runtime_ integrado llamado `Apple JavaScriptCore` pero Node.js es la opción recomendada.

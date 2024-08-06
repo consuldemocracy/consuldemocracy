@@ -24,19 +24,13 @@ ruby -v
 => # (it should be the same as the version in the .ruby-version file)
 ```
 
-4. Install [Bundler](http://bundler.io/):
-
-```bash
-gem install bundler --version 1.17.1
-```
-
-5. Install the required gems using Bundler:
+4. Install the required gems using Bundler:
 
 ```bash
 bundle
 ```
 
-6. Copy the environment example configuration files inside new readable ones:
+5. Copy the environment example configuration files inside new readable ones:
 
 ```bash
 cp config/database.yml.example config/database.yml
@@ -45,7 +39,7 @@ cp config/secrets.yml.example config/secrets.yml
 
 And setup database credentials with your `consul` user in your new `database.yml` file.
 
-7. Run the following [Rake tasks](https://github.com/ruby/rake) to create and fill your local database with the minimum data needed to run the application:
+6. Run the following [Rake tasks](https://github.com/ruby/rake) to create and fill your local database with the minimum data needed to run the application:
 
 ```bash
 bin/rake db:create
@@ -54,13 +48,13 @@ bin/rake db:dev_seed
 bin/rake db:test:prepare
 ```
 
-8. Check everything is fine by running the test suite (beware it might take more than an hour):
+7. Check everything is fine by running the test suite (beware it might take more than an hour):
 
 ```bash
 bin/rspec
 ```
 
-9. Now you have all set, run the application:
+8. Now you have all set, run the application:
 
 ```bash
 bin/rails s
