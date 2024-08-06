@@ -12,7 +12,7 @@
     * [Prerrequisitos](installation/prerequisites.md)
     * [Ubuntu Linux](installation/ubuntu.md)
     * [Debian Linux](installation/debian.md)
-    * [MacOS](installation/macos.md)
+    * [macOS](installation/macos.md)
     * [Windows](installation/windows.md)
     * [Vagrant](installation/vagrant.md)
   * [Servidores de producción y pruebas](installation/servers.md)

@@ -39,6 +39,8 @@ cp config/database.yml.example config/database.yml
 
 6. Configura las credenciales de base de datos con tu usuario `consul` en tu nuevo fichero `database.yml`
 
+Nota: este paso no es necesario si estás utilizando un usuario de base de datos sin contraseña y el mismo nombre de usuario que tu usuario de sistema, que es el comportamiento por defecto en macOS.
+
 ```bash
 nano config/database.yml
 ```
