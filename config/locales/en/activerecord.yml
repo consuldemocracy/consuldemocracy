@@ -459,13 +459,13 @@ en:
       image:
         title: Title
         attachment: "Choose image"
-      poll/question/option:
+      poll/question/answer:
         title: Answer
         description: Description
-      poll/question/option/translation:
+      poll/question/answer/translation:
         title: Answer
         description: "Description (optional)"
-      poll/question/option/video:
+      poll/question/answer/video:
         title: Title
         url: External video
       newsletter:
@@ -551,7 +551,8 @@ en:
         geozone:
           attributes:
             geojson:
-              invalid: "The GeoJSON provided does not follow the correct format. It must follow the \"Polygon\" or \"MultiPolygon\" type format."
+              invalid: "The GeoJSON provided does not follow the correct format. It must be a valid Geojson Feature and follow the \"Geometry\" type format."
+              invalid_coordinates: "The GeoJSOn provided does not use Coordinates in the required \"Longitude, Latitude\" format"
         image:
           attributes:
             attachment:
