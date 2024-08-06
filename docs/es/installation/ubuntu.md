@@ -30,8 +30,6 @@ A continuación instalaremos un gestor de versiones de Ruby, como rbenv:
 
 ```bash
 wget -qO- https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-installer | bash
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
-echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
