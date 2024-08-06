@@ -12,8 +12,8 @@ cd consuldemocracy
 2. Install the Ruby version we need with your Ruby version manager. Here are some examples:
 
 ```bash
-rvm install `cat .ruby-version` # If you're using RVM
 rbenv install `cat .ruby-version` # If you're using rbenv
+rvm install `cat .ruby-version` # If you're using RVM
 asdf install ruby `cat .ruby-version` # If you're using asdf
 ```
 
