@@ -451,15 +451,6 @@ nl:
       image:
         title: Titel
         attachment: "Afbeelding kiezen"
-      poll/question/answer:
-        title: Antwoord
-        description: Omschrijving
-      poll/question/answer/translation:
-        title: Antwoord
-        description: "Omschrijving"
-      poll/question/answer/video:
-        title: Titel
-        url: Externe video
       newsletter:
         segment_recipient: Ontvangers
         subject: Onderwerp

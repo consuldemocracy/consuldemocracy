@@ -1,6 +1,8 @@
 require "rails_helper"
 
-describe "Legislation" do
+describe "Legislation" do 
+  let(:admin_user) { create(:user, :admin) }
+
   context "process summary page" do
     scenario "summary tab is not shown for open processes" do
       process = create(:legislation_process, :open)
@@ -10,12 +12,22 @@ describe "Legislation" do
       expect(page).not_to have_content "Summary"
     end
 
-    scenario "summary tab is shown por past processes" do
-      process = create(:legislation_process, :past)
+    scenario "summary tab is shown for processes with enabled summary and past date" do
+      process = create(:legislation_process,
+                       summary_publication_enabled: true,
+                       summary_publication_date: Date.current - 1.day)
 
       visit legislation_process_path(process)
 
       expect(page).to have_content "Summary"
+    end
+
+    scenario "summary tab is not shown for processes with disabled summary" do
+      process = create(:legislation_process, summary_publication_enabled: false)
+
+      visit legislation_process_path(process)
+
+      expect(page).not_to have_content "Summary"
     end
   end
 

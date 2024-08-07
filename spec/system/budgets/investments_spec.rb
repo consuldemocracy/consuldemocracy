@@ -823,12 +823,12 @@ describe "Budget Investments" do
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
-      expect(page).not_to have_link("Submit my ballot")
+      expect(page).not_to have_link("Check my votes")
       expect(page).not_to have_css("#progress_bar")
 
       within("#sidebar") do
         expect(page).not_to have_content("My ballot")
-        expect(page).not_to have_link("Submit my ballot")
+        expect(page).not_to have_link("Check my votes")
       end
     end
 
@@ -1334,17 +1334,6 @@ describe "Budget Investments" do
         expect(page).to have_content "1 support"
       end
     end
-
-    scenario "Show should display support text and count" do
-      investment = create(:budget_investment, budget: budget, heading: heading, voters: [create(:user)])
-
-      visit budget_investment_path(budget, investment)
-
-      within("#budget_investment_#{investment.id}") do
-        expect(page).to have_content "SUPPORTS"
-        expect(page).to have_content "1 support"
-      end
-    end
   end
 
   context "Publishing prices phase" do
@@ -1394,7 +1383,7 @@ describe "Budget Investments" do
         expect(page).to have_content "€20,000"
       end
 
-      expect(page).to have_link "Submit my ballot"
+      expect(page).to have_link "Check my votes"
       expect(page).to have_content "STILL AVAILABLE TO YOU €666,666"
     end
 
@@ -1568,12 +1557,12 @@ describe "Budget Investments" do
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
-      expect(page).to have_link("Submit my ballot")
+      expect(page).to have_link("Check my votes")
       expect(page).to have_css("#progress_bar")
 
       within("#sidebar") do
         expect(page).to have_content("MY BALLOT")
-        expect(page).to have_link("Submit my ballot")
+        expect(page).to have_link("Check my votes")
       end
     end
 

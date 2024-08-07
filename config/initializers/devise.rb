@@ -1,4 +1,4 @@
-require Rails.root.join("lib", "omniauth_wordpress")
+require Rails.root.join("lib", "omni_auth", "strategies", "wordpress")
 
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
@@ -85,7 +85,7 @@ Devise.setup do |config|
   # It will change confirmation, password recovery and other workflows
   # to behave the same regardless if the e-mail provided was right or wrong.
   # Does not affect registerable.
-  config.paranoid = true
+  config.paranoid = false
 
   # By default Devise will store the user in session. You can skip storage for
   # particular strategies by setting this option.
@@ -199,17 +199,17 @@ Devise.setup do |config|
   # :time  = Re-enables login after a certain amount of time (see :unlock_in below)
   # :both  = Enables both strategies
   # :none  = No unlock strategy. You should handle unlocking by yourself.
-  config.unlock_strategy = :both
+  config.unlock_strategy = :time
 
   # Number of authentication tries before locking an account if lock_strategy
   # is failed attempts.
-  config.maximum_attempts = 20 # Overwritten in User model
+  config.maximum_attempts = 10 # Overwritten in User model
 
   # Time interval to unlock the account if :time is enabled as unlock_strategy.
-  config.unlock_in = 1.hour # Overwritten in User model
+  config.unlock_in = 15.minutes # Overwritten in User model
 
   # Warn on the last attempt before the account is locked.
-  config.last_attempt_warning = false
+  config.last_attempt_warning = true
 
   # ==> Configuration for :recoverable
   #
@@ -264,29 +264,69 @@ Devise.setup do |config|
   config.sign_out_via = :delete
 
   # ==> OmniAuth
+
+
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+  
+  # Load IdP metadata directly from the IdP in dev / prod ENV
+ # idp_metadata = {}
+ # if Rails.application.secrets.saml_idp_metadata_url.present?
+ #   idp_metadata_parser = OneLogin::RubySaml::IdpMetadataParser.new
+ #   idp_metadata = idp_metadata_parser.parse_remote_to_hash(
+ #   Rails.application.secrets.saml_idp_metadata,
+ #   true, # validate cert
+ #   entity_id: Rails.application.secrets.saml_entity_data
+ # )
+ #end
+
+
   config.omniauth :twitter,
                   Rails.application.secrets.twitter_key,
                   Rails.application.secrets.twitter_secret,
-                  setup: OmniauthTenantSetup.twitter
+                  setup: ->(env) { OmniauthTenantSetup.twitter(env) }
   config.omniauth :facebook,
                   Rails.application.secrets.facebook_key,
                   Rails.application.secrets.facebook_secret,
                   scope: "email",
                   info_fields: "email,name,verified",
-                  setup: OmniauthTenantSetup.facebook
+                  setup: ->(env) { OmniauthTenantSetup.facebook(env) }
   config.omniauth :google_oauth2,
                   Rails.application.secrets.google_oauth2_key,
                   Rails.application.secrets.google_oauth2_secret,
-                  setup: OmniauthTenantSetup.google_oauth2
+                  setup: ->(env) { OmniauthTenantSetup.google_oauth2(env) }
   config.omniauth :wordpress_oauth2,
                   Rails.application.secrets.wordpress_oauth2_key,
                   Rails.application.secrets.wordpress_oauth2_secret,
-                  strategy_class: OmniAuth::Strategies::Wordpress,
                   client_options: { site: Rails.application.secrets.wordpress_oauth2_site },
-                  setup: OmniauthTenantSetup.wordpress_oauth2
+                  setup: ->(env) { OmniauthTenantSetup.wordpress_oauth2(env) }
+
+  saml_settings = {}
+
+  if Rails.application.secrets.saml_idp_metadata_url.present?
+    idp_metadata_parser = OneLogin::RubySaml::IdpMetadataParser.new
+    saml_settings = idp_metadata_parser.parse_remote_to_hash(Rails.application.secrets.saml_idp_metadata_url)
+    saml_settings[:idp_sso_service_url] = Rails.application.secrets.saml_idp_sso_service_url
+    saml_settings[:sp_entity_id] = Rails.application.secrets.saml_sp_entity_id
+    saml_settings[:allowed_clock_drift] = 1.hour
+
+    saml_settings[:certificate] = Rails.application.secrets.saml_certificate
+    saml_settings[:private_key] = Rails.application.secrets.saml_private_key
+    saml_settings[:issuer] = Rails.application.secrets.saml_issuer
+    saml_settings[:name_identifier_format] = "urn:oasis:names:tc:SAML:2.0:nameid-format:transient"
+    saml_settings[:security] = { authn_requests_signed: false,
+                    want_assertions_signed: false,
+                    want_assertions_encrypted: true,
+                    metadata_signed: false,
+                    embed_sign: false,
+                    digest_method: XMLSecurity::Document::SHA1,
+                    signature_method: XMLSecurity::Document::RSA_SHA1 }
+
+  end
+  config.omniauth :saml, saml_settings
+
+
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

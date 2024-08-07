@@ -444,15 +444,6 @@ da:
       image:
         title: Titel
         attachment: "Vedhæft fil"
-      poll/question/answer:
-        title: Svar
-        description: Beskrivelse
-      poll/question/answer/translation:
-        title: Svar
-        description: "Beskrivelse"
-      poll/question/answer/video:
-        title: Titel
-        url: Ekstern video
       newsletter:
         segment_recipient: Modtagere
         subject: Emne

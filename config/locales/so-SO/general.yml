@@ -143,7 +143,6 @@ so:
     budget/investment: Maalgashi
     budget/heading: Ciwaanka misaniyada
     poll/shift: Wareeg
-    poll/question/answer: Jawaab
     user: Kontada
     verification/sms: taleefan
     signature_sheet: Warqada Saxixyada
@@ -412,7 +411,6 @@ so:
         support_button: Taageeraan hindisahan
   polls:
     all: "Dhamaan"
-    no_dates: "tirada taariikhda la magacaabay"
     dates: "Kadimid%{open_at} ila%{closed_at}"
     final_date: "Soo-celinta ugu dambeysa / Natiijooyinka"
     index:
@@ -504,7 +502,6 @@ so:
     author_info:
       author_deleted: Isticmalaha la tirtiray
     back: Dib ulaabo
-    check: Dorasho
     check_all: Dhamaan
     check_none: Midna
     collective: Wadijir
@@ -569,18 +566,6 @@ so:
     youtube: "%{org} yotuyuub"
     telegram: "%{org} telegaraam"
     instagram: "%{org} istigraam"
-  stats:
-    index:
-      visits: Boqashooyinka
-      debates: Doodo
-      proposals: Sojeedino
-      comments: Faalo
-      proposal_votes: Codbixin ku saabsan soo jeedinta
-      debate_votes: Codadka doodda
-      comment_votes: Falloyinka codbixinta
-      votes: Wadarka codadka
-      verified_users: Isticmalayaasha la aqonsan yahay
-      unverified_users: Isticmalayaasha an la aqonsaneyn
   unauthorized:
     default: Uma haysid fasax aad ku heli kartid boggan.
     manage:

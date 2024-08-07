@@ -1,4 +1,4 @@
-<h2><%= t("moderation.#{i18n_namespace}.index.title") %></h2>
+<%= header %>
 
 <%= render "shared/filter_subnav", i18n_namespace: "moderation.#{i18n_namespace}.index" %>
 
@@ -9,12 +9,7 @@
 <% end %>
 
 <%= form_tag form_path, method: :put do %>
-  <p class="float-left js-check">
-    <%= t("shared.check") %>:
-    <%= link_to t("shared.check_all"), "#", data: { check_all: field_name } %>
-    |
-    <%= link_to t("shared.check_none"), "#", data: { check_none: field_name } %>
-  </p>
+  <%= render Shared::CheckAllNoneComponent.new(field_name) %>
 
   <%= content %>
 

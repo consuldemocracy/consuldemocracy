@@ -4,7 +4,6 @@
   <%= render "tabs" %>
 
   <div class="tabs-panel is-active" role="tab">
-    <%= render "form", contents: [@content] %>
+    <%= render Admin::SiteCustomization::InformationTexts::FormComponent.new([@content]) %>
   </div>
-
 </div>

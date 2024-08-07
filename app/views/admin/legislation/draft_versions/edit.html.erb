@@ -15,10 +15,12 @@
       <h3 class="inline-block"><%= @draft_version.title %></h3>
 
       <div class="float-right">
-        <%= link_to t("admin.legislation.draft_versions.index.delete"),
-                    admin_legislation_process_draft_version_path(@process, @draft_version),
-                    method: :delete,
-                    class: "button hollow alert" %>
+        <%= render Admin::ActionComponent.new(
+          :destroy,
+          @draft_version,
+          confirm: true,
+          class: "button hollow alert"
+        ) %>
       </div>
     </div>
 

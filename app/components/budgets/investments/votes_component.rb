@@ -64,10 +64,10 @@ class Budgets::Investments::VotesComponent < ApplicationComponent
         t("votes.budget_investments.#{reason}",
           count: investment.group.max_votable_headings,
           verify_account: link_to_verify_account,
-          supported_headings: (current_user && current_user.headings_voted_within_group(investment.group)
-                                                           .map(&:name)
-                                                           .sort
-                                                           .to_sentence))
+          supported_headings: current_user && current_user.headings_voted_within_group(investment.group)
+                                                          .map(&:name)
+                                                          .sort
+                                                          .to_sentence)
       end
     end
 end

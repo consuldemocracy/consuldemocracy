@@ -93,7 +93,6 @@ mk:
     policy: Политика за Приватност
     proposal: Предлог
     budget/investment: Инвестиции
-    poll/question/answer: Одговор
     document: Документ
     topic: Тема
     image: Слика
@@ -256,11 +255,6 @@ mk:
     documentation: Дополнителна документација
     recommended_index:
       title: Препораки
-  stats:
-    index:
-      debates: Дебати
-      proposals: Предлози
-      comments: Коментари
   users:
     show:
       proposals: Предлози

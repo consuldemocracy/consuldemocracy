@@ -329,14 +329,6 @@ ast:
         title: Títulu
       image:
         title: Títulu
-      poll/question/answer:
-        title: Respuesta
-        description: Descripción detallada
-      poll/question/answer/translation:
-        title: Respuesta
-        description: "Descripción detallada"
-      poll/question/answer/video:
-        title: Títulu
       newsletter:
         from: "Desde"
       admin_notification:

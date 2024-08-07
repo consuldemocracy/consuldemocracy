@@ -18,7 +18,8 @@ module Abilities
       can :create, Legislation::Proposal
       can :show, Legislation::Proposal
       can :proposals, ::Legislation::Process
-
+      can :summary, ::Legislation::Process
+      
       can :restore, Legislation::Proposal
       cannot :restore, Legislation::Proposal, hidden_at: nil
 
@@ -96,16 +97,16 @@ module Abilities
       can [:update, :destroy], Poll::Question do |question|
         !question.poll.started?
       end
-      can [:read, :order_answers], Poll::Question::Answer
-      can [:create, :update, :destroy], Poll::Question::Answer do |answer|
-        can?(:update, answer.question)
+      can [:read, :order_options], Poll::Question::Option
+      can [:create, :update, :destroy], Poll::Question::Option do |option|
+        can?(:update, option.question)
       end
-      can :read, Poll::Question::Answer::Video
-      can [:create, :update, :destroy], Poll::Question::Answer::Video do |video|
-        can?(:update, video.answer)
+      can :read, Poll::Question::Option::Video
+      can [:create, :update, :destroy], Poll::Question::Option::Video do |video|
+        can?(:update, video.option)
       end
       can [:destroy], Image do |image|
-        image.imageable_type == "Poll::Question::Answer" && can?(:update, image.imageable)
+        image.imageable_type == "Poll::Question::Option" && can?(:update, image.imageable)
       end
 
       can :manage, SiteCustomization::Page
@@ -127,12 +128,14 @@ module Abilities
 
       can [:create], Document
       can [:destroy], Document do |document|
-        document.documentable_type == "Poll::Question::Answer" && can?(:update, document.documentable)
+        document.documentable_type == "Poll::Question::Option" && can?(:update, document.documentable)
       end
       can [:create, :destroy], DirectUpload
 
       can [:deliver], Newsletter, hidden_at: nil
       can [:manage], Dashboard::AdministratorTask
+
+      can :manage, Setting::LocalesSettings
 
       can :manage, LocalCensusRecord
       can [:create, :read], LocalCensusRecords::Import

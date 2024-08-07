@@ -7,6 +7,12 @@ ActsAsTaggableOn.setup do |config|
   # config.base_class = "ApplicationRecord"
 end
 
+Rails.application.reloader.to_prepare do
+  ActsAsTaggableOn::Tag.class_eval do
+    include Graphqlable
+  end
+end
+
 module ActsAsTaggableOn
   Tagging.class_eval do
     after_create :increment_tag_custom_counter
@@ -38,8 +44,6 @@ module ActsAsTaggableOn
     def category?
       kind == "category"
     end
-
-    include Graphqlable
 
     scope :public_for_api, -> do
       where(

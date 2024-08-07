@@ -1,52 +1,52 @@
 <h2><%= question.title %></h2>
-<% question.answers_with_read_more.each do |answer| %>
-  <div class="small-12 medium-6 column end answer <%= cycle("first", "") %>" id="answer_<%= answer.id %>">
-    <h3><%= answer.title %></h3>
+<% question.options_with_read_more.each do |option| %>
+  <div class="small-12 medium-6 column end option <%= cycle("first", "") %>" id="option_<%= option.id %>">
+    <h3><%= option.title %></h3>
 
     <div class="margin-top">
-      <% if answer.description.present? %>
-        <div id="answer_description_<%= answer.id %>" class="answer-description short" data-toggler="short">
-          <%= wysiwyg(answer.description) %>
+      <% if option.description.present? %>
+        <div id="option_description_<%= option.id %>" class="option-description short" data-toggler="short">
+          <%= wysiwyg(option.description) %>
         </div>
         <div class="read-more">
-          <button type="button" id="read_more_<%= answer.id %>"
-              data-toggle="answer_description_<%= answer.id %> read_more_<%= answer.id %> read_less_<%= answer.id %>"
+          <button type="button" id="read_more_<%= option.id %>"
+              data-toggle="option_description_<%= option.id %> read_more_<%= option.id %> read_less_<%= option.id %>"
               data-toggler="hide">
-            <%= t("polls.show.read_more", answer: answer.title) %>
+            <%= t("polls.show.read_more", answer: option.title) %>
           </button>
-          <button type="button" id="read_less_<%= answer.id %>"
-              data-toggle="answer_description_<%= answer.id %> read_more_<%= answer.id %> read_less_<%= answer.id %>"
+          <button type="button" id="read_less_<%= option.id %>"
+              data-toggle="option_description_<%= option.id %> read_more_<%= option.id %> read_less_<%= option.id %>"
               data-toggler="hide"
               class="hide">
-            <%= t("polls.show.read_less", answer: answer.title) %>
+            <%= t("polls.show.read_less", answer: option.title) %>
           </button>
         </div>
       <% end %>
 
-      <% if answer.images.any? %>
-        <%= render "polls/gallery", answer: answer %>
+      <% if option.images.any? %>
+        <%= render "polls/gallery", option: option %>
       <% end %>
 
-      <% if answer.documents.present? %>
+      <% if option.documents.present? %>
         <div class="document-link">
           <p>
             <strong><%= t("polls.show.documents") %></strong>
           </p>
 
-          <% answer.documents.each do |document| %>
+          <% option.documents.each do |document| %>
             <%= render Documents::DocumentComponent.new(document) %>
           <% end %>
         </div>
       <% end %>
 
-      <% if answer.videos.present? %>
+      <% if option.videos.present? %>
         <div class="video-link">
           <p>
             <span class="icon-video"></span>&nbsp;
             <strong><%= t("polls.show.videos") %></strong>
           </p>
 
-          <% answer.videos.each do |video| %>
+          <% option.videos.each do |video| %>
               <%= link_to video.title,
                           video.url,
                           rel: "nofollow" %><br>

@@ -44,7 +44,7 @@ describe "Admin shifts", :admin do
     visit available_admin_booths_path
 
     within("#booth_#{booth.id}") do
-      click_link "Manage shifts"
+      click_link "Shifts Assignments"
     end
 
     expect(page).to have_content "This booth has no shifts"
@@ -71,7 +71,7 @@ describe "Admin shifts", :admin do
     visit available_admin_booths_path
 
     within("#booth_#{booth.id}") do
-      click_link "Manage shifts"
+      click_link "Shifts Assignments"
     end
 
     expect(page).to have_css(".shift", count: 1)
@@ -117,7 +117,7 @@ describe "Admin shifts", :admin do
     visit available_admin_booths_path
 
     within("#booth_#{booth.id}") do
-      click_link "Manage shifts"
+      click_link "Shifts Assignments"
     end
 
     expect(page).to have_css(".shift", count: 2)
@@ -159,7 +159,7 @@ describe "Admin shifts", :admin do
     visit available_admin_booths_path
 
     within("#booth_#{booth.id}") do
-      click_link "Manage shifts"
+      click_link "Shifts Assignments"
     end
 
     expect(page).to have_content "This booth has no shifts"
@@ -182,7 +182,7 @@ describe "Admin shifts", :admin do
     visit available_admin_booths_path
 
     within("#booth_#{booth.id}") do
-      click_link "Manage shifts"
+      click_link "Shifts Assignments"
     end
 
     expect(page).to have_css(".shift", count: 1)
@@ -208,7 +208,7 @@ describe "Admin shifts", :admin do
     visit available_admin_booths_path
 
     within("#booth_#{booth.id}") do
-      click_link "Manage shifts"
+      click_link "Shifts Assignments"
     end
 
     expect(page).to have_css(".shift", count: 1)
@@ -237,7 +237,7 @@ describe "Admin shifts", :admin do
     visit available_admin_booths_path
 
     within("#booth_#{booth.id}") do
-      click_link "Manage shifts"
+      click_link "Shifts Assignments"
     end
 
     expect(page).to have_css(".shift", count: 1)

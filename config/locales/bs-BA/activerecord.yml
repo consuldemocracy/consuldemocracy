@@ -448,15 +448,6 @@ bs:
       image:
         title: Naziv
         attachment: "Prilog"
-      poll/question/answer:
-        title: Odgovor
-        description: Opis
-      poll/question/answer/translation:
-        title: Odgovor
-        description: "Opis"
-      poll/question/answer/video:
-        title: Naziv
-        url: Eksterni video
       newsletter:
         segment_recipient: Primatelji
         subject: Predmet

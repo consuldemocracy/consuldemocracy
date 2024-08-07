@@ -119,7 +119,7 @@ class I18nContent < ApplicationRecord
     end
   end
 
-  def self.update(contents, enabled_translations = I18n.available_locales)
+  def self.update(contents, enabled_translations = Setting.enabled_locales)
     contents.each do |content|
       values = content[:values].slice(*translation_params(enabled_translations))
 

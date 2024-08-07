@@ -8,8 +8,8 @@ class Admin::Budgets::LinksComponent < ApplicationComponent
 
   private
 
-    def action(action_name, **options)
-      render Admin::ActionComponent.new(action_name, budget, **options)
+    def action(action_name, **)
+      render Admin::ActionComponent.new(action_name, budget, **)
     end
 
     def results_text

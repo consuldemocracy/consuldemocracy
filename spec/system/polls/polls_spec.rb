@@ -26,7 +26,7 @@ describe "Polls" do
     end
 
     scenario "Polls can be listed" do
-      polls = [create(:poll, :with_image)] # TODO: generate a list again after switching to zeitwerk
+      polls = create_list(:poll, 3, :with_image)
 
       visit polls_path
 
@@ -87,36 +87,6 @@ describe "Polls" do
       expect(page).not_to have_link("Expired")
     end
 
-    scenario "Displays a message asking anonymous users to sign in" do
-      create_list(:poll, 3)
-
-      visit polls_path
-
-      expect(page).to have_css(".not-logged-in", count: 3)
-      expect(page).to have_content("You must sign in or sign up to participate")
-    end
-
-    scenario "Displays a message asking unverified users to verify their account" do
-      create_list(:poll, 3)
-      user = create(:user)
-      login_as(user)
-
-      visit polls_path
-
-      expect(page).to have_css(".unverified", count: 3)
-      expect(page).to have_content("You must verify your account to participate")
-    end
-
-    scenario "Geozone poll" do
-      create(:poll, geozone_restricted: true)
-
-      login_as(create(:user, :level_two))
-      visit polls_path
-
-      expect(page).to have_css(".cant-answer", count: 1)
-      expect(page).to have_content("This poll is not available on your geozone")
-    end
-
     scenario "Already participated in a poll" do
       poll_with_question = create(:poll)
       question = create(:poll_question, :yes_no, poll: poll_with_question)
@@ -132,36 +102,6 @@ describe "Polls" do
 
       expect(page).to have_css(".already-answer", count: 1)
       expect(page).to have_content("You already have participated in this poll")
-    end
-
-    scenario "Poll title and button link to stats if enabled" do
-      poll = create(:poll, :expired, name: "Poll with stats", stats_enabled: true)
-
-      visit polls_path(filter: "expired")
-
-      expect(page).to have_link("Poll with stats", href: stats_poll_path(poll.slug))
-      expect(page).to have_link("Poll ended", href: stats_poll_path(poll.slug))
-    end
-
-    scenario "Poll title and button link to results if enabled" do
-      poll = create(:poll, :expired, name: "Poll with results", stats_enabled: true, results_enabled: true)
-
-      visit polls_path(filter: "expired")
-
-      expect(page).to have_link("Poll with results", href: results_poll_path(poll.slug))
-      expect(page).to have_link("Poll ended", href: results_poll_path(poll.slug))
-    end
-
-    scenario "Shows SDG tags when feature is enabled" do
-      Setting["feature.sdg"] = true
-      Setting["sdg.process.polls"] = true
-
-      create(:poll, sdg_goals: [SDG::Goal[1]], sdg_targets: [SDG::Target["1.1"]])
-
-      visit polls_path
-
-      expect(page).to have_css "img[alt='1. No Poverty']"
-      expect(page).to have_content "target 1.1"
     end
   end
 
@@ -210,24 +150,23 @@ describe "Polls" do
       expect("Second question").to appear_before("Third question")
     end
 
-    # TODO: uncomment after switching to zeitwerk
-    # scenario "Buttons to slide through images work back and forth" do
-    #   question = create(:poll_question, :yes_no, poll: poll)
-    #   create(:image, imageable: question.question_answers.last, title: "The no movement")
-    #   create(:image, imageable: question.question_answers.last, title: "No movement planning")
+    scenario "Buttons to slide through images work back and forth" do
+      question = create(:poll_question, :yes_no, poll: poll)
+      create(:image, imageable: question.question_options.last, title: "The no movement")
+      create(:image, imageable: question.question_options.last, title: "No movement planning")
 
-    #   visit poll_path(poll)
+      visit poll_path(poll)
 
-    #   within(".orbit-bullets") do
-    #     find("[data-slide='1']").click
+      within(".orbit-bullets") do
+        find("[data-slide='1']").click
 
-    #     expect(page).to have_css ".is-active[data-slide='1']"
+        expect(page).to have_css ".is-active[data-slide='1']"
 
-    #     find("[data-slide='0']").click
+        find("[data-slide='0']").click
 
-    #     expect(page).to have_css ".is-active[data-slide='0']"
-    #   end
-    # end
+        expect(page).to have_css ".is-active[data-slide='0']"
+      end
+    end
 
     scenario "Non-logged in users" do
       create(:poll_question, :yes_no, poll: poll)
@@ -267,7 +206,7 @@ describe "Polls" do
       login_as user
       visit poll_path(poll)
 
-      within("#poll_question_#{question.id}_answers") do
+      within("#poll_question_#{question.id}_options") do
         click_button "Vote Yes"
 
         expect(page).to have_button "You have voted Yes"
@@ -284,7 +223,7 @@ describe "Polls" do
       login_as user
       visit poll_path(poll)
 
-      within("#poll_question_#{question.id}_answers") do
+      within("#poll_question_#{question.id}_options") do
         click_button "Yes"
 
         expect(page).to have_button "You have voted Yes"
@@ -327,7 +266,7 @@ describe "Polls" do
       login_as user
       visit poll_path(poll)
 
-      within("#poll_question_#{question.id}_answers") do
+      within("#poll_question_#{question.id}_options") do
         click_button "Yes"
 
         expect(page).to have_button "You have voted Yes"
@@ -354,15 +293,18 @@ describe "Polls" do
 
       expect(page).to have_content "Vote introduced!"
 
-      visit new_officing_residence_path
+      within("#notice") { click_button "Close" }
       click_link "Sign out"
+
+      expect(page).to have_content "You must sign in or register to continue."
+
       login_as user
       visit poll_path(poll)
 
       expect(page).to have_content "You have already participated in a physical booth. " \
                                    "You can not participate again."
 
-      within("#poll_question_#{question.id}_answers") do
+      within("#poll_question_#{question.id}_options") do
         expect(page).to have_content("Yes")
         expect(page).to have_content("No")
 

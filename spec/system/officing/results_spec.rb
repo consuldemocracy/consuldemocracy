@@ -9,11 +9,11 @@ describe "Officing Results", :with_frozen_time do
 
   before do
     create(:poll_shift, :recount_scrutiny_task, officer: poll_officer, booth: booth, date: Date.current)
-    create(:poll_question_answer, title: "Yes", question: question_1, given_order: 1)
-    create(:poll_question_answer, title: "No", question: question_1, given_order: 2)
+    create(:poll_question_option, title: "Yes", question: question_1, given_order: 1)
+    create(:poll_question_option, title: "No", question: question_1, given_order: 2)
 
-    create(:poll_question_answer, title: "Today", question: question_2, given_order: 1)
-    create(:poll_question_answer, title: "Tomorrow", question: question_2, given_order: 2)
+    create(:poll_question_option, title: "Today", question: question_2, given_order: 1)
+    create(:poll_question_option, title: "Tomorrow", question: question_2, given_order: 2)
 
     login_as(poll_officer.user)
     set_officing_booth(booth)
@@ -86,7 +86,7 @@ describe "Officing Results", :with_frozen_time do
       booth_assignment: poll_officer.officer_assignments.first.booth_assignment,
       date: Date.current,
       question: question_1,
-      answer: question_1.question_answers.first.title,
+      answer: question_1.question_options.first.title,
       author: poll_officer.user,
       amount: 7777
     )
@@ -160,12 +160,12 @@ describe "Officing Results", :with_frozen_time do
     expect(page).to have_content(booth.name)
 
     expect(page).to have_content(question_1.title)
-    question_1.question_answers.each_with_index do |answer, i|
+    question_1.question_options.each_with_index do |answer, i|
       within("#question_#{question_1.id}_#{i}_result") { expect(page).to have_content(answer.title) }
     end
 
     expect(page).to have_content(question_2.title)
-    question_2.question_answers.each_with_index do |answer, i|
+    question_2.question_options.each_with_index do |answer, i|
       within("#question_#{question_2.id}_#{i}_result") { expect(page).to have_content(answer.title) }
     end
 

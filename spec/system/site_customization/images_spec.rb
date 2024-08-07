@@ -6,7 +6,7 @@ describe "Site customization images" do
 
     visit root_path
 
-    expect(page).to have_css("link[rel='shortcut icon'][href$='favicon_custom.ico']", visible: :hidden)
+    expect(page).to have_css("link[rel='icon'][href$='favicon_custom.ico']", visible: :hidden)
   end
 
   scenario "Custom auth background" do

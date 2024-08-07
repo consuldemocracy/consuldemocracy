@@ -30,6 +30,16 @@ describe Mailer do
     end
   end
 
+  describe "#user_invite" do
+    it "uses the default locale setting" do
+      Setting["locales.default"] = "es"
+
+      Mailer.user_invite("invited@consul.dev").deliver_now
+
+      expect(ActionMailer::Base.deliveries.last.body.to_s).to match "<html lang=\"es\""
+    end
+  end
+
   describe "#manage_subscriptions_token" do
     let(:user) { create(:user) }
     let(:proposal) { create(:proposal, author: user) }

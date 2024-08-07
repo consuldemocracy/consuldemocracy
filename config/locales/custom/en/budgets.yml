@@ -1,0 +1,13 @@
+en:
+  budgets:
+    index:
+      milestones: Progress Updates
+    investments:
+      form:
+        title: "Submit a Project Proposal"
+        heading_note: "Select the area this proposal applies to"
+        subtitle: "%{heading} (%{price})"
+        subtitle_note: "What is your project or application called?"
+        subtitle_without_price: "%{heading}"
+        subtitle_without_price_note: "subtitle help text"
+        summary: "Project Summary"

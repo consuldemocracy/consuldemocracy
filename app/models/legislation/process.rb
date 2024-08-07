@@ -93,6 +93,10 @@ class Legislation::Process < ApplicationRecord
                                     proposals_phase_end_date, proposals_phase_enabled)
   end
 
+  def summary_publication
+    Legislation::Process::Publication.new(summary_publication_date, summary_publication_enabled)
+  end
+
   def draft_publication
     Legislation::Process::Publication.new(draft_publication_date, draft_publication_enabled)
   end

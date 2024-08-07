@@ -2,7 +2,6 @@
 <html <%= common_html_attributes %>>
   <head>
     <%= render "layouts/common_head", default_title: "Admin" %>
-    <%= render "layouts/no_script" %>
     <%= content_for :head %>
   </head>
 
@@ -30,7 +29,7 @@
         <%= render "layouts/flash" %>
         <%= render "layouts/officing_booth" if controller.class.module_parent == Officing && session[:booth_id].present? %>
         <%= yield %>
-      </div>
+      </main>
     </div>
   </body>
 </html>

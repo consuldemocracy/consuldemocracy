@@ -66,10 +66,10 @@ class Dashboard::PollsController < Dashboard::BaseController
 
     def question_attributes
       [:id, :title, :author_id, :proposal_id, :_destroy,
-       question_answers_attributes: question_answers_attributes]
+       question_options_attributes: question_options_attributes]
     end
 
-    def question_answers_attributes
+    def question_options_attributes
       [:id, :_destroy, :title, :description, :given_order, :question_id,
        documents_attributes: document_attributes]
     end

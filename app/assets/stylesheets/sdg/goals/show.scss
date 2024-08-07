@@ -6,7 +6,7 @@
       align-items: center;
       color: $sdg-text;
       display: flex;
-      margin: $line-height / 2 0;
+      margin: calc(#{$line-height} / 2) 0;
       text-shadow: 0 0 1px $black;
       min-width: fit-content;
 
@@ -27,7 +27,7 @@
     h1 {
       align-items: center;
       display: flex;
-      font-family: "Oswald", "Source Sans Pro", sans-serif  !important;
+      font-family: "Oswald", "Source Sans Pro", sans-serif !important;
       font-weight: 500;
       letter-spacing: -1px;
       line-height: 1.1;

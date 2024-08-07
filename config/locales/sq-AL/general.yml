@@ -143,7 +143,6 @@ sq:
     budget/investment: Investim
     budget/heading: Titulli i buxhetit
     poll/shift: Ndryshim
-    poll/question/answer: Përgjigje
     user: Llogari
     verification/sms: telefoni
     signature_sheet: Nënshkrimi i fletëve
@@ -412,7 +411,6 @@ sq:
         support_button: Mbështetni këtë projekt
   polls:
     all: "Të gjithë"
-    no_dates: "Asnjë datë e caktuar"
     dates: "Nga %{open_at} tek %{closed_at}"
     final_date: "Raportet përfundimtare / rezultatet"
     index:
@@ -504,7 +502,6 @@ sq:
     author_info:
       author_deleted: Përdoruesi u fshi
     back: Kthehu pas
-    check: Zgjedh
     check_all: Të gjithë
     check_none: Asnjë
     collective: Kolektiv
@@ -569,18 +566,6 @@ sq:
     youtube: "YouTube %{org}"
     telegram: "Telegram %{org}"
     instagram: " Instagram %{org}"
-  stats:
-    index:
-      visits: Vizitat
-      debates: Debate
-      proposals: Propozime
-      comments: Komentet
-      proposal_votes: Voto propozimet
-      debate_votes: Voto debatet
-      comment_votes: Voto komentet
-      votes: Totali i votimeve
-      verified_users: Përdoruesit e verifikuar
-      unverified_users: Përdoruesit e paverifikuar
   unauthorized:
     default: Nuk ke leje për të hyrë në këtë faqe.
     manage:

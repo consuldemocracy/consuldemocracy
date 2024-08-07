@@ -1,0 +1,46 @@
+<%= back_link_to admin_question_path(option.question) %>
+
+<h2><%= t("admin.questions.show.answers.documents_list") %></h2>
+
+<ul class="breadcrumbs">
+  <li><%= option.question.title %></li>
+  <li><%= option.title %></li>
+</ul>
+
+<div class="poll-question-form">
+  <% if can?(:update, option) %>
+    <%= form_for(Poll::Question::Option.new, url: admin_option_documents_path(option)) do |f| %>
+      <%= render "shared/errors", resource: option %>
+
+      <%= render Documents::NestedComponent.new(f) %>
+
+      <div class="small-12 medium-6 large-2">
+        <%= f.submit(class: "button expanded", value: t("shared.save")) %>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="callout warning">
+      <strong><%= t("admin.questions.no_edit") %></strong>
+    </div>
+  <% end %>
+
+  <% if documents.present? %>
+    <table>
+      <tr>
+        <th scope="col"><%= t("admin.questions.show.answers.document_title") %></th>
+        <th scope="col"><%= t("admin.questions.show.answers.document_actions") %></th>
+      </tr>
+
+      <% documents.each do |document| %>
+        <tr>
+          <td>
+            <%= document.title %>
+          </td>
+          <td>
+            <%= render Admin::Poll::Questions::Options::Documents::TableActionsComponent.new(document) %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+</div>

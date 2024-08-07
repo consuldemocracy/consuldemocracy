@@ -1,4 +1,4 @@
-require_dependency Rails.root.join("app", "models", "setting").to_s
+load Rails.root.join("app", "models", "setting.rb")
 
 class Setting
   class << self
@@ -24,6 +24,7 @@ class Setting
       else
         consul_defaults.merge({
           # Overwrite default CONSUL DEMOCRACY settings or add new settings here
+          "feature.saml_login": true
         })
       end
     end

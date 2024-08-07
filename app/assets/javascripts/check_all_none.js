@@ -2,20 +2,22 @@
   "use strict";
   App.CheckAllNone = {
     initialize: function() {
-      $("[data-check-all]").on("click", function(e) {
-        var target_name;
-        e.preventDefault();
-        e.stopPropagation();
-        target_name = $(this).data("check-all");
-        $("[name='" + target_name + "']").prop("checked", true);
+      $(".check-all-none button").on("click", function() {
+        var fields = App.CheckAllNone.associated_fields($(this));
+
+        if ($(this).data("check-all")) {
+          fields.prop("checked", true);
+        } else if ($(this).data("check-none")) {
+          fields.prop("checked", false);
+        }
       });
-      $("[data-check-none]").on("click", function(e) {
-        var target_name;
-        e.preventDefault();
-        e.stopPropagation();
-        target_name = $(this).data("check-none");
-        $("[name='" + target_name + "']").prop("checked", false);
-      });
+    },
+    associated_fields: function(element) {
+      if (element.data("field-name")) {
+        return $("[name='" + element.data("field-name") + "']");
+      } else {
+        return $("[type='checkbox']", element.closest("fieldset"));
+      }
     }
   };
 }).call(this);

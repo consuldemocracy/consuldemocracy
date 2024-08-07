@@ -569,15 +569,6 @@ ar:
       image:
         title: عنوان
         attachment: "مرفق"
-      poll/question/answer:
-        title: الإجابة
-        description: الوصف
-      poll/question/answer/translation:
-        title: الإجابة
-        description: "الوصف"
-      poll/question/answer/video:
-        title: عنوان
-        url: فيديو خارجي
       newsletter:
         segment_recipient: المستلمين
         subject: الموضوع

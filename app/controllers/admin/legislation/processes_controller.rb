@@ -27,7 +27,7 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
   def update
     if @process.update(process_params)
       link = legislation_process_path(@process)
-      redirect_back(fallback_location: (request.referer || root_path),
+      redirect_back(fallback_location: request.referer || root_path,
                     notice: t("admin.legislation.processes.update.notice", link: link))
     else
       flash.now[:error] = t("admin.legislation.processes.update.error")
@@ -72,6 +72,8 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
         :background_color,
         :font_color,
         :related_sdg_list,
+        :summary_publication_date,
+        :summary_publication_enabled,
         translation_params(::Legislation::Process),
         documents_attributes: document_attributes,
         image_attributes: image_attributes
