@@ -60,7 +60,7 @@ Si ejecutamos `psql` accederemos a la consola de postgres con el usuario por def
 createdb 'tu_nombre_de_usuario'
 ```
 
-Si ahora ejecutamos `psql` de nuevo deberíamos poder acceder correctamente a la consola de postgres. Si sobre la consola de postgres ejecutas `\du` puede ver la lista de usuarios actual.
+Si ahora ejecutamos `psql` de nuevo deberíamos poder acceder correctamente a la consola de postgres. Si sobre la consola de postgres ejecutas `\du` puedes ver la lista de usuarios actual.
 
 En el caso de que quieras asignarte una contraseña puedes hacerlo desde la consola de postgres con:
 

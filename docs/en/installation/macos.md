@@ -54,7 +54,7 @@ postgres -D /usr/local/var/postgres
 
 At this point we're supposed to have postgres correctly installed and a default user will automatically be created (whose name will match our username). This user hasn't got a password yet.
 
-If we run `psql` we'll login into the postgres console with the default user. Probably it will fail since its required that a default database exists for that user. We can create it by typing:
+If we run `psql` we'll login into the postgres console with the default user. It will probably fail since it's required that a default database exists for that user. We can create it by typing:
 
 ```bash
 createdb 'your_username'
@@ -62,7 +62,7 @@ createdb 'your_username'
 
 If we run `psql` again we should now get access to postgres console. With `\du` you can see the current users list.
 
-In case you want to set a password for your user you can make it through postgres console by:
+In case you want to set a password for your user you can make it through the postgres console by:
 
 ```sql
 ALTER USER your_username WITH PASSWORD 'your_password';

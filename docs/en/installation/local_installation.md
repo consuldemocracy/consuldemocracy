@@ -1,6 +1,6 @@
 # Local installation
 
-Before installing Consul Democracy and having it up and running make sure you all [prerequisites](prerequisites.md) installed.
+Before installing Consul Democracy and having it up and running make sure you have all [prerequisites](prerequisites.md) installed.
 
 1. First, clone the [Consul Democracy Github repository](https://github.com/consuldemocracy/consuldemocracy/) and enter the project folder:
 
