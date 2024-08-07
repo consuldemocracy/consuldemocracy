@@ -57,7 +57,9 @@ bin/setup
 bin/rake db:dev_seed
 ```
 
-9. Comprueba que todo funciona correctamente lanzando la suite de tests (ten en cuenta que podría tardar más de una hora):
+9. Comprueba que todo funciona correctamente lanzando la suite de tests
+
+Nota: ejecutar todos los tests en tu máquina puede tardar más de una hora, por lo que recomendamos encarecidamente que configures un sistema de Integración Continua para ejecutarlos utilizando varios trabajos en paralelo cada vez que abras o modifiques una PR (si usas GitHub Actions o GitLab CI, esto ya está configurado en `.github/workflows/tests.yml` y `.gitlab-ci.yml`) y cuando trabajes en tu máquina ejecutes solamente los tests relacionados con tu desarrollo actual. Al configurar la aplicación por primera vez, recomendamos que ejecutes al menos un test en `spec/models/` y un test en `spec/system/` para comprobar que tu máquina está configurada para ejecutar los tests correctamente.
 
 ```bash
 bin/rspec

@@ -57,7 +57,9 @@ bin/setup
 bin/rake db:dev_seed
 ```
 
-9. Check everything is fine by running the test suite (beware it might take more than an hour):
+9. Check everything is fine by running the test suite
+
+Note: running the whole test suite on your machine might take more than an hour, so it's strongly recommended that you setup a Continuous Integration system in order to run them using parallel jobs every time you open or modify a pull request (if you use GitHub Actions or GitLab CI, this is already configured in `.github/workflows/tests.yml` and `.gitlab-ci.yml`) and only run tests related to your current task while developing on your machine. When you configure the application for the first time, it's recommended that you run at least one test in `spec/models/` and one test in `spec/system/` to check your machine is properly configured to run the tests.
 
 ```bash
 bin/rspec
