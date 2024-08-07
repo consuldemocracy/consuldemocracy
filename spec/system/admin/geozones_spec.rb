@@ -202,4 +202,47 @@ describe "Admin geozones", :admin do
 
     expect(page).to have_content "Zone 1\nTest zone"
   end
+
+  scenario "includes a control to select which geozones to display" do
+    north = <<~JSON
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[-0.1, 51.5], [-0.2, 51.5], [-0.2, 51.6], [-0.1, 51.6], [-0.1, 51.5]]]
+        },
+        "properties": {}
+      }
+    JSON
+
+    south = <<~JSON
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[-0.1, 51.45], [-0.2, 51.45], [-0.2, 51.35], [-0.1, 51.35], [-0.1, 51.45]]]
+        },
+        "properties": {}
+      }
+    JSON
+
+    create(:geozone, name: "North", geojson: north)
+    create(:geozone, name: "South", geojson: south)
+
+    visit admin_geozones_path
+
+    within(".map-location") do
+      expect(page).to have_css ".map-polygon", count: 2
+
+      find(".leaflet-control-layers").click
+      uncheck "South"
+
+      expect(page).to have_css ".map-polygon", count: 1
+
+      find(".map-polygon").click
+
+      expect(page).to have_content "North"
+      expect(page).not_to have_content "South"
+    end
+  end
 end

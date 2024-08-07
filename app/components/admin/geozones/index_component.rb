@@ -25,7 +25,8 @@ class Admin::Geozones::IndexComponent < ApplicationComponent
         {
           outline_points: geozone.outline_points,
           color: geozone.color,
-          headings: [link_to(geozone.name, edit_admin_geozone_path(geozone))]
+          headings: [link_to(geozone.name, edit_admin_geozone_path(geozone))],
+          name: geozone.name
         }
       end
     end
