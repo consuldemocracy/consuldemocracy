@@ -16,24 +16,30 @@
     },
     initializeMap: function(element) {
       var createMarker, editable, investmentsMarkers, map, marker, markerClustering,
-        markerData, markerIcon, markers, moveOrPlaceMarker, removeMarker, removeMarkerSelector;
+        markerData, markerIcon, markers, moveOrPlaceMarker, removeMarker, removeMarkerSelector,
+        geozoneLayers = {}, // Object to hold geozone layers
+        layerControl = {}; // Object to hold control layers
+
       App.Map.cleanInvestmentCoordinates(element);
       removeMarkerSelector = $(element).data('marker-remove-selector');
       investmentsMarkers = $(element).data("marker-investments-coordinates");
       editable = $(element).data("marker-editable");
       markerClustering = $(element).data("marker-clustering");
+
       if (markerClustering) {
         markers = L.markerClusterGroup({ chunkedLoading: true });
       } else {
         markers = L.layerGroup();
       }
       marker = null;      
+
       markerIcon = L.divIcon({
         className: "map-marker",
         iconSize: [30, 30],
         iconAnchor: [15, 40],
         html: '<div class="map-icon"></div>'
       });
+
       createMarker = function(latitude, longitude) {
         var newMarker, markerLatLng;
         markerLatLng = new L.LatLng(latitude, longitude);
@@ -49,6 +55,7 @@
         markers.addLayer(newMarker);
         return newMarker;
       };
+
       removeMarker = function() {
         if (marker) {
           map.removeLayer(marker);
@@ -56,6 +63,7 @@
         }
         App.Map.clearFormfields(element);
       };
+
       moveOrPlaceMarker = function(e) {
         if (marker) {
           marker.setLatLng(e.latlng);
@@ -73,7 +81,7 @@
       if (markerData.lat && markerData.long && !investmentsMarkers) {
         marker = createMarker(markerData.lat, markerData.long);
       }
-      
+
       if (editable) {
         $(removeMarkerSelector).on("click", removeMarker);
         map.on("zoomend", function() {
@@ -85,8 +93,18 @@
       }
 
       App.Map.addInvestmentsMarkers(investmentsMarkers, createMarker);
-      App.Map.addGeozones(map);
+      App.Map.addGeozones(map, geozoneLayers); // Pass the geozoneLayers object
+
+      // Add markers layer
       map.addLayer(markers);
+
+      // Add Layer Control
+      layerControl = {
+        "Markers": markers,
+        ...geozoneLayers // Add geozone layers to the control
+      };
+
+      L.control.layers(null, layerControl).addTo(map);
     },
     leafletMap: function(element) {
       var centerData, mapCenterLatLng, map;
@@ -94,7 +112,6 @@
       centerData = App.Map.centerData(element);
       mapCenterLatLng = new L.LatLng(centerData.lat, centerData.long);
       map = L.map(element.id, { scrollWheelZoom: false }).setView(mapCenterLatLng, centerData.zoom);
-
       map.on("focus", function() {
         map.scrollWheelZoom.enable();
       });
@@ -212,16 +229,17 @@
       map.attributionControl.setPrefix(App.Map.attributionPrefix());
       L.tileLayer(mapTilesProvider, { attribution: mapAttribution }).addTo(map);
     },
-    addGeozones: function(map) {
+    addGeozones: function(map, geozoneLayers) {
       var geozones = $(map._container).data("geozones");
 
       if (geozones) {
         geozones.forEach(function(geozone) {
-          App.Map.addGeozone(geozone, map);
+          App.Map.addGeozone(geozone, map, geozoneLayers);
         });
       }
     },
-    addGeozone: function(geozone, map) {
+
+    addGeozone: function(geozone, map, geozoneLayers) {
       // Parse the GeoJSON string
       var geojsonData = JSON.parse(geozone.outline_points);
 
@@ -242,6 +260,15 @@
           }
         }
       });
+
+      // Use geozone headings as the name for the layer, fallback to a default name
+      var layerName = (geozone.headings && geozone.headings.length > 0) 
+        ? geozone.headings.join(", ") 
+        : `Geozone ${Object.keys(geozoneLayers).length + 1}`;
+
+      // Store the GeoJSON layer in the geozoneLayers object with the actual name
+      geozoneLayers[layerName] = geoJsonLayer;
+
 
       // Add the GeoJSON layer to the map
       geoJsonLayer.addTo(map);
