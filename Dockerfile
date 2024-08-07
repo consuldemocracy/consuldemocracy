@@ -14,7 +14,6 @@ RUN apt-get update -qq \
     memcached \
     pkg-config \
     postgresql-client \
-    shared-mime-info \
     sudo \
     unzip
 
