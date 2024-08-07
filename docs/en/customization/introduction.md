@@ -8,16 +8,35 @@ We've created an specific structure where you can overwrite and customize the ap
 
 In order to customize your Consul Democracy fork, you'll make use of some `custom` folders on the following paths:
 
-* `config/locales/custom/`
 * `app/assets/images/custom/`
-* `app/views/custom/`
+* `app/assets/javascripts/custom/`
+* `app/assets/stylesheets/custom/`
+* `app/components/custom/`
 * `app/controllers/custom/`
+* `app/form_builders/custom/`
+* `app/graphql/custom/`
+* `app/lib/custom/`
+* `app/mailers/custom/`
 * `app/models/custom/`
+* `app/models/custom/concerns/`
+* `app/views/custom/`
+* `config/locales/custom/`
+* `spec/components/custom/`
+* `spec/controllers/custom/`
+* `spec/models/custom/`
+* `spec/routing/custom/`
+* `spec/system/custom/`
 
-Also these are the files where you can apply some customization:
+There are also files where you can apply some customizations:
 
+* `app/assets/javascripts/custom.js`
 * `app/assets/stylesheets/custom.css`
 * `app/assets/stylesheets/_custom_settings.css`
-* `app/assets/javascripts/custom.js`
+* `app/assets/stylesheets/_consul_custom_overrides.css`
+* `config/application_custom.rb`
+* `config/environments/custom/development.rb`
+* `config/environments/custom/preproduction.rb`
+* `config/environments/custom/production.rb`
+* `config/environments/custom/staging.rb`
+* `config/environments/custom/test.rb`
 * `Gemfile_custom`
-* `config/application.custom.rb`
