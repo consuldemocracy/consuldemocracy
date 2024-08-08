@@ -10,6 +10,7 @@ class Budget
     include Followable
     include Communitable
     include Imageable
+    include Videoable
     include Mappable
     include Documentable
     include SDG::Relatable

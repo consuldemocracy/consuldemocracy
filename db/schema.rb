@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_05_13_135357) do
+ActiveRecord::Schema[7.0].define(version: 2024_08_08_133334) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -306,6 +306,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_13_135357) do
     t.integer "original_heading_id"
     t.string "video_url"
     t.bigint "estimated_price"
+    t.text "summary"
+    t.string "topic"
+    t.text "inv_summary"
     t.index ["administrator_id"], name: "index_budget_investments_on_administrator_id"
     t.index ["author_id"], name: "index_budget_investments_on_author_id"
     t.index ["budget_id"], name: "index_budget_investments_on_budget_id"

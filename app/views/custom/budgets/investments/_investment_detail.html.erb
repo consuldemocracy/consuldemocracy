@@ -37,21 +37,14 @@
 
 
 <h3><%= t("proposals.show.summary") %></h3>
-<%= auto_link_already_sanitized_html wysiwyg(investment.summary) %>
+<%= auto_link_already_sanitized_html wysiwyg(investment.inv_summary) %>
 <hr>
 <h3><%= t("budgets.investments.show.description") %></h3>
 <%= auto_link_already_sanitized_html wysiwyg(investment.description) %>
 </div>
 <hr>
 
-<% if @investment.video_url.present? %>
-<hr>
-  <div class="small-12 medium-7 small-centered">
-    <div class="flex-video">
-      <div id="js-embedded-video" data-video-code="<%= embedded_video_code(@investment) %>"></div>
-    </div>
-  </div>
-<% end %>
+<%= render Shared::EmbeddedVideoComponent.new(@investment) %>
 
 <% if @investment.video_url.present? %>
   <div class="video-link">
