@@ -1,5 +1,5 @@
 # Instalador
 
-## Instrucciones de instalación para entornos de Producción y Pruebas
+## Instrucciones de instalación para entornos de producción y pruebas
 
-Se encuentran en el [repositorio del instalador](https://github.com/consuldemocracy/installer)
+Puedes encontrar las instrucciones en el [README del repositorio del instalador](https://github.com/consuldemocracy/installer).
