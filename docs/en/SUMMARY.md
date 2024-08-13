@@ -16,7 +16,7 @@
     * [Windows](installation/windows.md)
     * [Vagrant](installation/vagrant.md)
     * [Docker](installation/docker.md)
-  * [Production and Staging servers](installation/servers.md)
+  * [Production and staging servers](installation/servers.md)
     * [Installer](installation/installer.md)
     * [Create a deploy user](installation/create_deploy_user.md)
     * [Generating SSH Key](installation/generating_ssh_key.md)
