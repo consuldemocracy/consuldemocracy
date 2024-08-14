@@ -1,0 +1,118 @@
+  @import "cosla_shared";
+
+// Define site-specific variables
+.site-coslatest {
+  --brand: #c5ead5;
+  --brand-secondary: #f4b56e;
+  --footer: var(--brand-secondary);
+  --top-links: var(--brand-secondary);
+  --main-header: var(--brand);
+  --brand-contrast: #da95a7
+  // Import shared styles
+   @import "cosla_shared";
+   @include shared-styles;
+}
+
+.site-dev {
+  --anchor-color: #372;
+  --anchor-color-hover: #137;
+  --brand: #153;
+  --brand-secondary: #134a00;
+  --button-background-hover: #fa0;
+  --button-background-hover-contrast: #{$black};
+  --brand-contrast: #FFFFFF;
+  --footer: #D0E0F4;
+  --main-header-contrast: #FFFFFF;
+  --main-header: #351;
+  --top-links: var(--main-header);
+  --subnavigation: #ffd;
+   // Import shared styles
+   @import "cosla_shared";
+   @include shared-styles;
+}
+
+.site-dev2 {
+  --brand: #FF3366;
+  --main-header: #EC407A;
+  --footer: #FCE4EC;
+  --top-links: var(--footer);
+  --top-links-contrast: var({$black});
+  --brand-secondary: #f4b56e;
+  --footer: var(--brand-secondary);
+  --main-header: var(--brand);
+  --brand-contrast: #FFFFFF;
+  --main-header-contrast: #FFFFFF;
+   // Import shared styles
+   @import "cosla_shared";
+   @include shared-styles;
+}
+
+.site-glasgow {
+  --brand:     #2f7276;
+  --brand-secondary: #83a8ab;
+  --footer: var(--brand-secondary);
+  --brand-contrast: #FFFFFF;
+  --main-header-contrast: #FFFFFF;
+  @import "cosla_shared"; 
+  @include shared-styles;
+}
+
+.site-perthandkinross {
+  --brand:     #001489;
+  --brand-secondary: #000853;
+  --footer: #e2e8f5;
+   --brand-contrast: #FFFFFF;
+  --footer: #D0E0F4;
+  --main-header-contrast: #FFFFFF;
+  @import "cosla_shared";
+   @include shared-styles;
+}
+
+.site-eastlothian {
+  --brand:     #005293;
+  --brand-secondary: #002F59;
+  --footer: #CEDBEA;
+   --brand-contrast: #FFFFFF;
+  --main-header-contrast: #FFFFFF;
+   --top-links: var(--brand-secondary);
+  --top-links-contrast: #FFFFFF;
+  @import "cosla_shared";
+   @include shared-styles;
+}
+
+.site-southayrshire {
+  --brand:     #005293;
+  --brand-secondary: #002F59;
+  --footer: #CEDBEA;
+  --brand-contrast: #FFFFFF;
+  --main-header-contrast: #FFFFFF;
+  --top-links: var(--brand-secondary);
+  --top-links-contrast: #FFFFFF;
+  @import "cosla_shared"; 
+  @include shared-styles;
+}
+
+.site-northayrshire {
+  --brand:     #0065BD;
+  --brand-secondary: #0057A4;
+  --brand-contrast: #FFFFFF;
+  --footer: #D0E0F4;
+  --main-header-contrast: #FFFFFF;
+   --top-links: var(--brand-secondary);
+  --top-links-contrast: #FFFFFF;
+   @import "cosla_shared";
+   @include shared-styles;
+}
+
+.site-edinburgh {
+  --brand:     #6D3465;
+  --brand-secondary: #492445;
+  --brand-contrast: #FFFFFF;
+  --footer: #D0E0F4;
+  --main-header-contrast: #FFFFFF;
+   --top-links: var(--brand-secondary);
+  --top-links-contrast: #FFFFFF;
+  @import "cosla_shared";
+   @include shared-styles;
+}
+
