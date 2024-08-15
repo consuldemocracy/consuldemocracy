@@ -45,7 +45,7 @@
   --main-header: #EC407A;
   --footer: #FCE4EC;
   --top-links: var(--footer);
-  --top-links-contrast: var({$black});
+  --top-links-contrast: #{$black};
   --brand-secondary: #f4b56e;
   --footer: var(--brand-secondary);
   --main-header: var(--brand);
@@ -61,7 +61,7 @@
   --main-header: #EC407A;
   --footer: #FCE4EC;
   --top-links: var(--footer);
-  --top-links-contrast: var({$black});
+  --top-links-contrast: #{$black};
   --brand-secondary: #f4b56e;
   --footer: var(--brand-secondary);
   --main-header: var(--brand);
