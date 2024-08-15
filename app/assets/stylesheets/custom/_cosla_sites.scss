@@ -48,7 +48,7 @@
   --footer: var(--brand-secondary);
   --top-links: var(--brand-secondary);
   --main-header: var(--brand);
-  --brand-contrast: #da95a7
+  --brand-contrast: #da95a7;
   // Import shared styles
    @import "cosla_shared";
    @include shared-styles;
@@ -116,7 +116,6 @@
 .site-perthandkinross {
   --brand:     #001489;
   --brand-secondary: #000853;
-  --footer: #e2e8f5;
    --brand-contrast: #FFFFFF;
   --footer: #D0E0F4;
   --main-header-contrast: #FFFFFF;
