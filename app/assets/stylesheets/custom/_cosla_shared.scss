@@ -1,6 +1,7 @@
 // _cosla_shared.scss
 
 @mixin shared-styles {
+
   .admin-sidebar {
     background: linear-gradient(to bottom, var(--brand) 0%,var(--brand-secondary) 100%);
   }
@@ -29,9 +30,56 @@
     z-index: -1;
   }
   
+.budget-header .row .medium-6 {
+  width: unset;
+  }
+
+.budget-header .homepage-lead {
+  max-width: 80%;
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: center;
+}
+
+.budget-header .homepage-link {
+    display: inline-block;
+    margin: 0.5rem 0;
+    margin-top: 1.0rem;
+    margin-bottom: 1.0rem;
+    justify-content: center;
+    background-color: var(--brand-secondary);
+    color: white; /* Text color */
+    padding: 0.75rem 1.5rem; /* Add padding to make it look like a button */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline for links */
+    border-radius: 5px; /* Rounded corners for button effect */
+    font-size: 1.2rem; /* Adjust font size */
+    font-weight: bold; /* Make text bold */
+    cursor: pointer; /* Show pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Add hover and focus styles to make it interactive */
+.budget-header .homepage-link:hover,
+.budget-header .homepage-link:focus {
+    background-color: var(--brand); /* Change background on hover */
+    color: white; /* Ensure text remains visible */
+}
+
+.budget-header.with-background-image {
+padding-bottom: 5rem;
+}
+
+.budget-header h1 {
+padding: 1.5rem 0 .5rem;
+}  
+
     .callout {
     background-color: var(--brand-secondary);
     border-color: #bce8f1;
     color: var(--brand-contrast);
 }
+
 }
