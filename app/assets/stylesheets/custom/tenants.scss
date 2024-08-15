@@ -39,3 +39,35 @@
 //
 // NOTE: If you are **not** using mulitenancy, we recommend overwriting
 // SCSS variables in the `_consul_custom_overrides.scss` file instead
+
+.tenant-dev2 {
+  --brand: #FF3366;
+  --main-header: #EC407A;
+  --footer: #FCE4EC;
+  --top-links: var(--footer);
+  --top-links-contrast: var({$black});
+  --brand-secondary: #f4b56e;
+  --footer: var(--brand-secondary);
+  --main-header: var(--brand);
+  --brand-contrast: #FFFFFF;
+  --main-header-contrast: #FFFFFF;
+   // Import shared styles
+   @import "cosla_shared";
+   @include shared-styles;
+}
+
+.tenant-flotta {
+  --brand: #FF3366;
+  --main-header: #EC407A;
+  --footer: #FCE4EC;
+  --top-links: var(--footer);
+  --top-links-contrast: var({$black});
+  --brand-secondary: #f4b56e;
+  --footer: var(--brand-secondary);
+  --main-header: var(--brand);
+  --brand-contrast: #FFFFFF;
+  --main-header-contrast: #FFFFFF;
+   // Import shared styles
+   @import "cosla_shared";
+   @include shared-styles;
+}
