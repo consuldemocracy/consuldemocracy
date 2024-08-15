@@ -17,12 +17,18 @@ class Layout::CommonHtmlAttributesComponent
       "lang=\"#{I18n.locale}\""
     end
 
-    def html_class
-        if Rails.application.secrets.site_name.present?
-        "class=\"site-#{Rails.application.secrets.site_name}\""
-      else
-        "class=\"tenant-#{Tenant.current_schema}\"" if Rails.application.config.multitenancy
+     def html_class
+    # Check if multitenancy is enabled
+      if Rails.application.config.multitenancy
+      # Return the current schema as class unless it's 'public'
+        current_schema = Tenant.current_schema
+        return "class=\"tenant-#{current_schema}\"" unless current_schema == 'public'
       end
 
+    # If multitenancy is not enabled or schema is 'public', use the site name
+      if Rails.application.secrets.site_name.present?
+       "class=\"site-#{Rails.application.secrets.site_name}\""
+      end
     end
+
 end
