@@ -171,3 +171,15 @@
    @include shared-styles;
 }
 
+
+.site-orkney {
+  --brand:     #000000;
+  --brand-secondary: #f10505;
+  --brand-contrast: #FFFFFF;
+  --footer: #cacaca;
+  --main-header-contrast: #FFFFFF;
+   --top-links: #222222fc;
+  --top-links-contrast: #FFFFFF;
+  @import "cosla_shared";
+   @include shared-styles;
+}
