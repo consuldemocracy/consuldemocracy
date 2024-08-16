@@ -71,3 +71,16 @@
    @import "cosla_shared";
    @include shared-styles;
 }
+
+.tenant-test {
+   --anchor-color: #008585;
+   --anchor-color-hover: #74a892;
+   --brand: #c7522a;
+   --brand-secondary: #e5c185;
+   --button-background-hover: #fbf2c4;
+   --button-background-hover-contrast: #{$black};
+   --footer: #e6e6e6;
+   --main-header: #74a892;
+   --top-links: var(--main-header);
+   --subnavigation: #c7522a;
+ }
