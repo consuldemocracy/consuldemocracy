@@ -183,3 +183,9 @@
   @import "cosla_shared";
    @include shared-styles;
 }
+
+.site-inverclyde {
+  --brand: #0065BD;
+   @import "cosla_shared";
+   @include shared-styles;
+}
