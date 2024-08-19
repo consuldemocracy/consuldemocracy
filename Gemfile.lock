@@ -415,7 +415,7 @@ GEM
     parallel (1.25.1)
     paranoia (2.6.3)
       activerecord (>= 5.1, < 7.2)
-    parser (3.3.3.0)
+    parser (3.3.4.2)
       ast (~> 2.4.1)
       racc
     pdf-reader (2.12.0)
