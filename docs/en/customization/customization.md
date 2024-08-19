@@ -6,6 +6,7 @@
 * [Views and Styles](views_and_styles.md)
 * [Javascript](javascript.md)
 * [Models](models.md)
+* [Controllers](controllers.md)
 * [Components](components.md)
 * [Gems](gems.md)
 * [Overwriting Application](overwriting.md)

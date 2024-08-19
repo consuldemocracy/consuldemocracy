@@ -34,6 +34,7 @@
   * [Views and Styles](customization/views_and_styles.md)
   * [Javascript](customization/javascript.md)
   * [Models](customization/models.md)
+  * [Controllers](customization/controllers.md)
   * [Components](customization/components.md)
   * [Gems](customization/gems.md)
   * [Overwriting Application](customization/overwriting.md)

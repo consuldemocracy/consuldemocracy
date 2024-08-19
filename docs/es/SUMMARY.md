@@ -34,6 +34,7 @@
   * [Vistas y Estilos](customization/views_and_styles.md)
   * [Javascript](customization/javascript.md)
   * [Modelos](customization/models.md)
+  * [Controladores](customization/controllers.md)
   * [Componentes](customization/components.md)
   * [Gemas](customization/gems.md)
   * [Adaptar la aplicación](customization/overwriting.md)
