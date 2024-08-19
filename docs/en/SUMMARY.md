@@ -45,6 +45,7 @@
   * [Configure Census Connection](features/census_configuration.md)
   * [Local Census](features/local_census.md)
   * [Multitenancy](features/multitenancy.md)
+  * [User content translations](features/user_content_translations.md)
 
 * [Open Source project](open_source/open_source.md)
   * [Code of conduct](open_source/code_of_conduct.md)
