@@ -12,3 +12,4 @@
 * [Other Ruby classes (GraphQL, lib, mailers, builders)](ruby.md)
 * [Gems](gems.md)
 * [Application configuration](application.md)
+* [Tests](tests.md)

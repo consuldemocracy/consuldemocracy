@@ -40,6 +40,7 @@
   * [Other Ruby classes (GraphQL, lib, mailers, builders)](customization/ruby.md)
   * [Gems](customization/gems.md)
   * [Application configuration](customization/application.md)
+  * [Tests](customization/tests.md)
 
 * [Technical Features](features/features.md)
   * [OAuth](features/oauth.md)
