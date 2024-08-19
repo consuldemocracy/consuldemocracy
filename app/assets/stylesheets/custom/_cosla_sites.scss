@@ -186,6 +186,12 @@
 
 .site-inverclyde {
   --brand: #36808c;
+  --brand-secondary: #75a5ad;
+  --brand-contrast: #FFFFFF;
+  --footer: #d7e5e7;
+  --main-header-contrast: #FFFFFF;
+   --top-links: var(--brand-secondary);
+  --top-links-contrast: #FFFFFF;
    @import "cosla_shared";
    @include shared-styles;
 }
