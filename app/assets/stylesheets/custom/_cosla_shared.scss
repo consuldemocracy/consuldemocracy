@@ -58,7 +58,8 @@
     font-size: 1.2rem; /* Adjust font size */
     font-weight: bold; /* Make text bold */
     cursor: pointer; /* Show pointer on hover */
-    transition: background-color 0.3s ease; /* Smooth transition for hover */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
 }
 
 /* Add hover and focus styles to make it interactive */
