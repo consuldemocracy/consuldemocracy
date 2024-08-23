@@ -197,14 +197,14 @@
 }
 
 .site-arb {
-  --brand: #22549E;
-  --brand-secondary: #07295A;
+  --brand: #10069F;
+  --brand-secondary: #00B140;
   --brand-contrast: #FFFFFF;
   --footer: #023C19;
   --footer-contrast: #FFFFFF;
   --main-header-contrast: #FFFFFF;
-   --top-links: #22549E;
+   --top-links: var(--brand-secondary);
   --top-links-contrast: #FFFFFF;
   @import "cosla_shared";
    @include shared-styles;
-}
+
