@@ -3,3 +3,140 @@ fr:
     show:
       personal: Données personnelles
       save_changes_submit: Sauvegarder les modifications
+  comments:
+    actions:
+      confirm_delete: "Êtes-vous sûr ? Cette action supprimera ce commentaire. Vous ne pouvez pas annuler cette action."
+    comment:
+      user_deleted: Utilisateur supprimé
+  debates:
+    debate:
+      votes:
+        zero: Aucun vote
+    edit:
+      form:
+        submit_button: Sauvegarder les modifications
+    form:
+      tags_instructions: Étiqueter ce débat
+      tags_placeholder: "Entrez les étiquettes que vous voulez utiliser, séparées par des virgules (',')"
+    index:
+      recommendations:
+        actions:
+          success: "Les recommandations de discussions sont maintenant désactivées pour ce compte"
+          error: "Une erreur est survenue. Veuillez vous rendre sur la page 'Votre compte' pour désactiver manuellement les recommandations de discussions"
+    show:
+      author_deleted: Utilisateur supprimé
+      flag: Ce débat a été étiqueté comme inapproprié par plusieurs utilisateurs
+  errors:
+    messages:
+      cannot_change_date:
+        poll_started: "Ne peut pas être modifié si le scrutin a déjà commencé"
+        poll_ended: "Ne peut pas être modifié si le scrutin est déjà terminé"
+  form:
+    site_customization/content_block: bloc de contenu
+  layouts:
+    dashboard:
+      proposal_header:
+        retired: Retiré
+      proposal_totals:
+        active_resources: Ressources actives
+        preview_proposal: Aperçu de la proposition
+        supports:
+          zero: Aucun soutien
+    footer:
+      consul: CONSUL DEMOCRACY
+      description: Ce portail utilise %{consul}, qui est un %{open_source}.
+      participation_text: Construisez La Roque d'Anthéron dans laquelle vous souhaitez vivre.
+    header:
+      open_gov: Municipalité ouverte
+      poll_questions: Scrutins
+      budgets: Budgets participatifs
+      notification_item:
+        new_notifications:
+          zero: "Vous n'avez aucune nouvelle notification"
+  notifications:
+    index:
+      empty_notifications: Vous n'avez aucune nouvelle notification
+      mark_all_as_read: Marquer tout comme lu
+    notification:
+      action:
+        comments_on:
+          one: Il y a 1 nouveau commentaire
+          other: Il y a %{count} nouveaux commentaires
+        replies_to:
+          one: Quelqu'un a répondu à votre commentaire
+  map:
+    title: "Quartiers"
+    proposal_for_district: "Commencer une proposition pour votre quartier"
+  omniauth:
+    google_oauth2:
+      sign_in: Se connecter avec Google
+    wordpress_oauth2:
+      sign_in: Se connecter avec Wordpress
+      sign_up: S'enregistrer avec Wordpress
+    twitter:
+      sign_in: Se Connecter avec X (ex-Twitter)
+      sign_up: S'enregistrer avec X ( ex-Twitter)
+      name: X ( ex-Twitter)
+  proposals:
+    share:
+      dashboard: Voir plus d’informations
+      message: "Je soutiens la proposition %{title} dans %{handle}. Si vous êtes intéressé.es, soutenez-la aussi !"
+    edit:
+      form:
+        submit_button: Sauvegarder les modifications
+    retire_form:
+      warning: "Si vous retirez cette proposition, elle pourra toujours recevoir des soutiens mais elle sera retirée de la liste principale et un message indiquera que l'auteur ne souhaite plus que cette proposition soit soutenue"
+    form:
+      proposal_responsible_name_note: "(individuellement ou comme représentant d'un\ncollectif ; ne sera pas public)"
+      tags_instructions: "Étiqueter cette proposition. Vous pouvez choisir parmi\nles catégories proposées ou ajouter la vôtre"
+      tags_placeholder: "Entrez les étiquettes que vous voulez utiliser, séparer par des virgules (',')"
+    index:
+      recommendations:
+        without_results: Il n’y a aucune proposition liée à vos centres d’intérêt
+      retired_links:
+        duplicated: Doublon d'une autre proposition
+      section_footer:
+        description: Les propositions des citoyens sont une occasion pour les voisins et les collectifs de décider directement comment ils veulent que soit leur ville, après l’obtention d’un soutien suffisant, et de le soumettre au vote des citoyens.
+    new:
+      more_info: Comment fonctionnent les propositions citoyennes ?
+      recommendation_one: Ne pas utiliser de lettres capitales dans le titre de votre proposition, ni de phrases entières. Sur internet, les capitales sont considérées comme crier sur une personne. Et personne n'aime qu'on lui crie dessus.
+      recommendation_two: Toute proposition ou commentaire suggérant une action illicite sera supprimée, ainsi que ceux qui perturbent les espaces de débats. Le reste est autorisé.
+    proposal:
+      supports:
+        zero: Aucun soutien
+        one: 1 soutien
+      votes:
+        zero: Aucun vote
+    show:
+      author_deleted: Utilisateur supprimé
+      milestones_tab: Étapes
+      retired_warning: "L’auteur considère que cette proposition ne devrait plus recevoir de soutiens."
+    update:
+      form:
+        submit_button: Sauvegarder les modifications
+  dashboard:
+    recommended_actions:
+      see_proposed_actions: Consulter les actions recommandées
+    next_goal:
+      see_complete_course: Voir l'évolution complète
+      hide_course: Masquer l'évolution
+    polls:
+      index:
+        title: Scrutins
+        create: Créer le scrutin
+        links: Liens
+        additiontal_information: Informations supplémentaires
+      new:
+        title: Nouveau scrutin
+        submit: Créer le scrutin
+      edit:
+        submit: Mettre à jour le scrutin
+      poll:
+        view_results: Voir les résultats
+        delete: Supprimer le sondage
+    poster:
+      index:
+        footer: "<strong>Suivez %{link} et soutenez cette proposition.</strong> Nous devons être nombreux. Vous décidez aussi. Merci !"
+    mailer:
+      forward:
+        hi: "Bonjour !"
