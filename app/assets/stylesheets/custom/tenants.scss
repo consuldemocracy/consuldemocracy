@@ -84,3 +84,16 @@
    --top-links: var(--main-header);
    --subnavigation: #c7522a;
  }
+
+.tenant-arb {
+  --brand: #10069F;
+  --brand-secondary: #00B140;
+  --brand-contrast: #FFFFFF;
+  --footer: #023C19;
+  --footer-contrast: #FFFFFF;
+  --main-header-contrast: #FFFFFF;
+   --top-links: var(--brand-secondary);
+  --top-links-contrast: #FFFFFF;
+  @import "cosla_shared";
+   @include shared-styles;
+}
