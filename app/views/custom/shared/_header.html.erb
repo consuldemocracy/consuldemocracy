@@ -1,8 +1,9 @@
+
 <% if header.present? %>
 
 <% if header.image.present? %>
         <div class="budget-header with-background-image"
-	style="background-image: url(<%= polymorphic_path(header.image.variant(:large)) %>);">
+	style="background-image: url(<%= polymorphic_path(header.image.variant(:larger)) %>);">
 <% else %>
   <div class="budget-header">
 <!--  <div class="header-card jumbo highlight">  -->
