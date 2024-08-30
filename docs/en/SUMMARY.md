@@ -37,7 +37,7 @@
   * [Controllers](customization/controllers.md)
   * [Components](customization/components.md)
   * [Gems](customization/gems.md)
-  * [Overwriting Application](customization/overwriting.md)
+  * [Application configuration](customization/application.md)
 
 * [Technical Features](features/features.md)
   * [OAuth](features/oauth.md)

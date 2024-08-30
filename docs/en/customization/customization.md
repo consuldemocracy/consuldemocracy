@@ -9,4 +9,4 @@
 * [Controllers](controllers.md)
 * [Components](components.md)
 * [Gems](gems.md)
-* [Overwriting Application](overwriting.md)
+* [Application configuration](application.md)
