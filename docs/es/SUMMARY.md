@@ -32,7 +32,7 @@
   * [Traducciones y Textos](customization/translations.md)
   * [Imágenes](customization/images.md)
   * [Estilos con CSS](customization/css.md)
-  * [Javascript](customization/javascript.md)
+  * [JavaScript](customization/javascript.md)
   * [Modelos](customization/models.md)
   * [Controladores](customization/controllers.md)
   * [Vistas y HTML](customization/views.md)

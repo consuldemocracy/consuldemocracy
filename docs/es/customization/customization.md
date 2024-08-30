@@ -1,10 +1,10 @@
-# Customization
+# Personalización del código
 
 * [Introducción](introduction.md)
 * [Traducciones y Textos](translations.md)
 * [Imágenes](images.md)
 * [Estilos con CSS](css.md)
-* [Javascript](javascript.md)
+* [JavaScript](javascript.md)
 * [Modelos](models.md)
 * [Controladores](controllers.md)
 * [Vistas y HTML](views.md)
