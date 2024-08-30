@@ -37,6 +37,7 @@
   * [Controllers](customization/controllers.md)
   * [Views and HTML](customization/views.md)
   * [Components](customization/components.md)
+  * [Other Ruby classes (GraphQL, lib, mailers, builders)](customization/ruby.md)
   * [Gems](customization/gems.md)
   * [Application configuration](customization/application.md)
 
