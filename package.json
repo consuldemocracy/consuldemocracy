@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@stylistic/stylelint-plugin": "^2.1.2",
-    "eslint": "^8.57.0",
+    "eslint": "^9.9.1",
     "postcss-scss": "^4.0.9",
     "stylelint": "^16.6.1",
     "stylelint-order": "^6.0.4",
