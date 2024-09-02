@@ -1,7 +1,7 @@
 # Personalización del código
 
 * [Introducción](introduction.md)
-* [Traducciones y Textos](translations.md)
+* [Traducciones y textos](translations.md)
 * [Imágenes](images.md)
 * [Estilos con CSS](css.md)
 * [JavaScript](javascript.md)

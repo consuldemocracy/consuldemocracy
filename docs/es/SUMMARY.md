@@ -29,7 +29,7 @@
 
 * [Personalización](customization/customization.md)
   * [Introducción](customization/introduction.md)
-  * [Traducciones y Textos](customization/translations.md)
+  * [Traducciones y textos](customization/translations.md)
   * [Imágenes](customization/images.md)
   * [Estilos con CSS](customization/css.md)
   * [JavaScript](customization/javascript.md)
