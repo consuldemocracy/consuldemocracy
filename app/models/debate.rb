@@ -1,5 +1,3 @@
-require "numeric"
-
 class Debate < ApplicationRecord
   include Flaggable
   include Taggable
@@ -47,8 +45,6 @@ class Debate < ApplicationRecord
   scope :last_week,                -> { where("created_at >= ?", 7.days.ago) }
   scope :featured,                 -> { where.not(featured_at: nil) }
   scope :public_for_api,           -> { all }
-
-  visitable class_name: "Visit"
 
   attr_accessor :link_required
 

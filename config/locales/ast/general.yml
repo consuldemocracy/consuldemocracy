@@ -114,7 +114,6 @@ ast:
     proposal: la propuesta
     proposal_notification: "la notificación"
     budget/investment: Proyectu de inversión
-    poll/question/answer: Respuesta
     user: la cuenta
     verification/sms: el teléfono
     signature_sheet: la hoja de firmas
@@ -340,7 +339,6 @@ ast:
         support_button: Apoyar esta propuesta
   polls:
     all: "Toes"
-    no_dates: "sin fecha asignada"
     dates: "Desde el %{open_at} hasta el %{closed_at}"
     final_date: "Recuento final/Resultados"
     index:
@@ -406,7 +404,6 @@ ast:
     author_info:
       author_deleted: Usuariu esaniciáu
     back: Volver
-    check: Escoyer
     check_all: Toes
     check_none: Ninguno
     collective: Colectivo
@@ -452,18 +449,6 @@ ast:
     youtube: "YouTube de %{org}"
     telegram: "Telegram de %{org}"
     instagram: "Instagram de %{org}"
-  stats:
-    index:
-      visits: Visitas
-      debates: Alderique
-      proposals: Propuestes
-      comments: Comentarios
-      proposal_votes: Votos en propuestas
-      debate_votes: Votos en debates
-      comment_votes: Votos en comentarios
-      votes: Votos
-      verified_users: Usuarios verificados
-      unverified_users: Usuarios sin verificar
   unauthorized:
     default: No tienes permiso para acceder a esta página.
     manage:

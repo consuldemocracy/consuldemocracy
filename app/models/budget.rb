@@ -1,7 +1,6 @@
 class Budget < ApplicationRecord
   include Measurable
   include Sluggable
-  include StatsVersionable
   include Reportable
   include Imageable
   include SDG::Relatable

@@ -7,6 +7,7 @@
   </head>
 
   <body class="auth-page">
+    <%= render Layout::SkipToMainContentComponent.new %>
     <%= raw setting["html.per_page_code_body"] %>
     <div class="wrapper">
       <div class="auth-image small-12 medium-3 column"
@@ -21,11 +22,11 @@
       <div class="small-12 medium-9 column">
         <div class="row">
           <div class="small-12 medium-9 large-7 small-centered column">
-            <div class="auth-form margin">
+            <main id="main" class="auth-form margin <%= yield(:main_class) %>">
               <%= render "layouts/flash" %>
 
               <%= yield %>
-            </div>
+            </main>
           </div>
         </div>
       </div>

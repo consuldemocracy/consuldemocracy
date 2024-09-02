@@ -1,19 +1,5 @@
-<% provide :title do %><%= t("devise_views.sessions.new.title") %><% end %>
-
-<ul class="no-bullet submenu">
-  <li class="inline-block">
-    <%= link_to new_session_path(resource_name), class: "is-active" do %>
-      <h2><%= t("devise_views.shared.sign_in") %></h2>
-    <% end %>
-  </li>
-  <li class="inline-block">
-    <%= link_to t("devise_views.shared.sign_up"), new_user_registration_path %>
-  </li>
-</ul>
-
-<div class="auth-title">
-  <h2><%= t("devise_views.sessions.new.title") %></h2>
-</div>
+<% provide :title, t("devise_views.sessions.new.title") %>
+<h2><%= t("devise_views.sessions.new.title") %></h2>
 
 <%= render "devise/omniauth_form", action: "sign_in" %>
 

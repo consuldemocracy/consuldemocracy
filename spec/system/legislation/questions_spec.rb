@@ -14,6 +14,8 @@ describe "Legislation" do
       create(:legislation_question, process: process, title: "Question 3", description: "Description 3")
     end
 
+    it_behaves_like "notifiable in-app", :legislation_question
+
     scenario "shows question list" do
       visit legislation_process_path(process)
 

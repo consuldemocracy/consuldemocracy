@@ -40,7 +40,7 @@ class Setting < ApplicationRecord
     end
 
     def accepted_content_types_for(group)
-      mime_content_types = Setting["uploads.#{group}.content_types"]&.split(" ") || []
+      mime_content_types = Setting["uploads.#{group}.content_types"]&.split || []
       Setting.mime_types[group].select { |_, content_type| mime_content_types.include?(content_type) }.keys
     end
 
@@ -70,7 +70,6 @@ class Setting < ApplicationRecord
         "feature.google_login": true,
         "feature.twitter_login": true,
         "feature.wordpress_login": false,
-        "feature.public_stats": true,
         "feature.signature_sheets": true,
         "feature.user.recommendations": true,
         "feature.user.recommendations_on_debates": true,
@@ -101,6 +100,8 @@ class Setting < ApplicationRecord
         "html.per_page_code_body": "",
         # Code to be included at the top (inside <head>) of every page (useful for tracking)
         "html.per_page_code_head": "",
+        "locales.enabled": nil,
+        "locales.default": nil,
         "map.latitude": 51.48,
         "map.longitude": 0.0,
         "map.zoom": 10,
@@ -224,6 +225,21 @@ class Setting < ApplicationRecord
 
     def archived_proposals_date_limit
       Setting["months_to_archive_proposals"].to_i.months.ago
+    end
+
+    def enabled_locales
+      locales = Setting["locales.enabled"].to_s.split.map(&:to_sym)
+
+      [
+        default_locale,
+        *((locales & I18n.available_locales).presence || I18n.available_locales)
+      ].uniq
+    end
+
+    def default_locale
+      locale = Setting["locales.default"].to_s.strip.to_sym
+
+      ([locale] & I18n.available_locales).first || I18n.default_locale
     end
   end
 end

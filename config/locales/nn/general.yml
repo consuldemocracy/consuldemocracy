@@ -148,7 +148,6 @@ nn:
     budget/group: Budsjettgruppe
     budget/heading: Budsjettoverskrift
     poll/shift: Shift
-    poll/question/answer: Svar
     user: Konto
     verification/sms: telefon
     signature_sheet: Signaturside
@@ -548,7 +547,6 @@ nn:
         share: "Om du også vil gjøre meg en tjeneste og dele forslaget mitt med vennene dine, familie og kontakter, ville jeg satt stor pris på det!"
   polls:
     all: "Alle"
-    no_dates: "ingen dato er satt"
     dates: "Fra%{open_at} til%{closed_at}"
     final_date: "Endelige opptellinger/resultater"
     index:
@@ -644,7 +642,6 @@ nn:
       author_deleted: Bruker slettet
       email_deleted: E-post er slettet
     back: Gå tilbake
-    check: Velg
     check_all: Alle
     check_none: Ingen
     collective: Grupper
@@ -709,18 +706,6 @@ nn:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Besøk
-      debates: Debatter
-      proposals: Forslag
-      comments: Kommentarer
-      proposal_votes: Stemmer på forslag
-      debate_votes: Stemmer på debattinnlegg
-      comment_votes: Stemmer på kommentarer
-      votes: Totalt antall stemmer
-      verified_users: Verifiserte brukere
-      unverified_users: Uverifiserte brukere
   unauthorized:
     default: Du har ikke tilgang til denne siden.
     manage:

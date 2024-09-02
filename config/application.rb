@@ -1,3 +1,4 @@
+require "sassc-embedded"
 require_relative "boot"
 
 require "rails"
@@ -12,7 +13,6 @@ require "action_mailer/railtie"
 # require "action_text/engine"
 require "action_view/railtie"
 require "action_cable/engine"
-require "sprockets/railtie"
 require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
@@ -21,23 +21,27 @@ Bundler.require(*Rails.groups)
 
 module Consul
   class Application < Rails::Application
-    config.load_defaults 6.1
+    config.load_defaults 7.0
 
     # Keep belongs_to fields optional by default, because that's the way
     # Rails 4 models worked
     config.active_record.belongs_to_required_by_default = false
 
-    # Keep using AES-256-CBC for message encryption in case it's used
-    # in any CONSUL DEMOCRACY installations
-    config.active_support.use_authenticated_message_encryption = false
-
-    # Keep using the classic autoloader until we decide how custom classes
-    # should work with zeitwerk
-    config.autoloader = :classic
-
     # Don't enable has_many_inversing because it doesn't seem to currently
     # work with the _count database columns we use for caching purposes
     config.active_record.has_many_inversing = false
+
+    # Disable Sprockets AssetUrlProcessor for CKEditor compatibility
+    config.assets.resolve_assets_in_css_urls = false
+
+    # Keep adding media="screen" attribute to stylesheets, just like
+    # Rails 4, 5 and 6 did, until we change the print stylesheet so it
+    # works when loading all the styles
+    config.action_view.apply_stylesheet_media_default = true
+
+    # Keep using ImageMagick instead of libvips for image processing in
+    # order to make upgrades easier.
+    config.active_storage.variant_processor = :mini_magick
 
     # Keep reading existing data in the legislation_annotations ranges column
     config.active_record.yaml_column_permitted_classes = [ActiveSupport::HashWithIndifferentAccess, Symbol]
@@ -121,8 +125,6 @@ module Consul
     config.assets.paths << Rails.root.join("node_modules", "jquery-ui", "themes", "base")
     config.assets.paths << Rails.root.join("node_modules")
 
-    # Add lib to the autoload path
-    config.autoload_paths << Rails.root.join("lib")
     config.active_job.queue_adapter = :delayed_job
 
     # CONSUL DEMOCRACY specific custom overrides
@@ -130,12 +132,20 @@ module Consul
     # * English: https://github.com/consuldemocracy/consuldemocracy/blob/master/CUSTOMIZE_EN.md
     # * Spanish: https://github.com/consuldemocracy/consuldemocracy/blob/master/CUSTOMIZE_ES.md
     #
-    config.autoload_paths << "#{Rails.root}/app/components/custom"
-    config.autoload_paths << "#{Rails.root}/app/controllers/custom"
-    config.autoload_paths << "#{Rails.root}/app/graphql/custom"
-    config.autoload_paths << "#{Rails.root}/app/mailers/custom"
-    config.autoload_paths << "#{Rails.root}/app/models/custom"
-    config.autoload_paths << "#{Rails.root}/app/models/custom/concerns"
+
+    [
+      "app/components/custom",
+      "app/controllers/custom",
+      "app/form_builders/custom",
+      "app/graphql/custom",
+      "app/lib/custom",
+      "app/mailers/custom",
+      "app/models/custom",
+      "app/models/custom/concerns"
+    ].each do |path|
+      config.autoload_paths << Rails.root.join(path)
+      config.eager_load_paths << Rails.root.join(path)
+    end
 
     config.paths["app/views"].unshift(Rails.root.join("app", "views", "custom"))
 

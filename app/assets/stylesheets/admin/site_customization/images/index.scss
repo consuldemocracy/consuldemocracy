@@ -1,0 +1,11 @@
+.admin-site-customization-images-index {
+  tbody tr td {
+    &:first-child {
+      width: calc(100% / 3);
+    }
+
+    &:last-child {
+      width: calc(100% * 2 / 3);
+    }
+  }
+}

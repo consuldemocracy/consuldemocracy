@@ -24,7 +24,7 @@ class Verification::Sms
   end
 
   def send_sms
-    SMSApi.new.sms_deliver(user.unconfirmed_phone, user.sms_confirmation_code)
+    SmsApi.new.sms_deliver(user.unconfirmed_phone, user.sms_confirmation_code)
   end
 
   def verified?

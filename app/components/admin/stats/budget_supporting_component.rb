@@ -8,7 +8,7 @@ class Admin::Stats::BudgetSupportingComponent < ApplicationComponent
   private
 
     def stats
-      @stats ||= Budget::Stats.new(budget)
+      @stats ||= Budget::Stats.new(budget, cache: false)
     end
 
     def headings_stats
@@ -27,5 +27,9 @@ class Admin::Stats::BudgetSupportingComponent < ApplicationComponent
       budget.headings.map do |heading|
         [heading, headings_stats[heading.id][:total_participants_support_phase]]
       end
+    end
+
+    def chart
+      @chart ||= Ahoy::Chart.new("budget_investment_supported")
     end
 end

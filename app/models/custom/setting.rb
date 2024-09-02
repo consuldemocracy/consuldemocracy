@@ -1,4 +1,4 @@
-require_dependency Rails.root.join("app", "models", "setting").to_s
+load Rails.root.join("app", "models", "setting.rb")
 
 class Setting
   # alias_method :consul_type, :type

@@ -1,6 +1,6 @@
 class Admin::Poll::Questions::FilterComponent < ApplicationComponent
   attr_reader :polls
-  delegate :current_path_with_query_params, to: :helpers
+  use_helpers :current_path_with_query_params
 
   def initialize(polls)
     @polls = polls

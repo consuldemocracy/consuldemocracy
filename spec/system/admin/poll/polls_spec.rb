@@ -119,7 +119,7 @@ describe "Admin polls", :admin do
       expect(page).to have_content("There are no polls.")
     end
 
-    scenario "Can destroy poll with questions and answers" do
+    scenario "Can destroy poll with questions and options" do
       poll = create(:poll, name: "Do you support CONSUL?")
       create(:poll_question, :yes_no, poll: poll)
 
@@ -133,12 +133,12 @@ describe "Admin polls", :admin do
       expect(page).not_to have_content("Do you support CONSUL?")
 
       expect(Poll::Question.count).to eq(0)
-      expect(Poll::Question::Answer.count).to eq(0)
+      expect(Poll::Question::Option.count).to eq(0)
     end
 
-    scenario "Can destroy polls with answers including videos" do
+    scenario "Can destroy polls with options including videos" do
       poll = create(:poll, name: "Do you support CONSUL?")
-      create(:poll_answer_video, poll: poll)
+      create(:poll_option_video, poll: poll)
 
       visit admin_polls_path
 
@@ -354,12 +354,12 @@ describe "Admin polls", :admin do
         booth_assignment_3 = create(:poll_booth_assignment, poll: poll)
 
         question_1 = create(:poll_question, poll: poll)
-        create(:poll_question_answer, title: "Oui", question: question_1)
-        create(:poll_question_answer, title: "Non", question: question_1)
+        create(:poll_question_option, title: "Oui", question: question_1)
+        create(:poll_question_option, title: "Non", question: question_1)
 
         question_2 = create(:poll_question, poll: poll)
-        create(:poll_question_answer, title: "Aujourd'hui", question: question_2)
-        create(:poll_question_answer, title: "Demain", question: question_2)
+        create(:poll_question_option, title: "Aujourd'hui", question: question_2)
+        create(:poll_question_option, title: "Demain", question: question_2)
 
         [booth_assignment_1, booth_assignment_2, booth_assignment_3].each do |ba|
           create(:poll_partial_result,
@@ -430,8 +430,8 @@ describe "Admin polls", :admin do
         question_1 = create(:poll_question, :yes_no, poll: poll)
 
         question_2 = create(:poll_question, poll: poll)
-        create(:poll_question_answer, title: "Today", question: question_2)
-        create(:poll_question_answer, title: "Tomorrow", question: question_2)
+        create(:poll_question_option, title: "Today", question: question_2)
+        create(:poll_question_option, title: "Tomorrow", question: question_2)
 
         [booth_assignment_1, booth_assignment_2, booth_assignment_3].each do |ba|
           create(:poll_partial_result,
@@ -456,17 +456,17 @@ describe "Admin polls", :admin do
         click_link "Results"
 
         expect(page).to have_content(question_1.title)
-        question_1.question_answers.each_with_index do |answer, i|
+        question_1.question_options.each_with_index do |option, i|
           within("#question_#{question_1.id}_#{i}_result") do
-            expect(page).to have_content(answer.title)
+            expect(page).to have_content(option.title)
             expect(page).to have_content([33, 0][i])
           end
         end
 
         expect(page).to have_content(question_2.title)
-        question_2.question_answers.each_with_index do |answer, i|
+        question_2.question_options.each_with_index do |option, i|
           within("#question_#{question_2.id}_#{i}_result") do
-            expect(page).to have_content(answer.title)
+            expect(page).to have_content(option.title)
             expect(page).to have_content([0, 15][i])
           end
         end

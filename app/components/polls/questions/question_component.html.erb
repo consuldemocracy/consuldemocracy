@@ -9,14 +9,14 @@
     </strong>
   <% end %>
 
-  <div id="<%= dom_id(question) %>_answers" class="padding">
-    <%= render Polls::Questions::AnswersComponent.new(question) %>
+  <div id="<%= dom_id(question) %>_options" class="padding">
+    <%= render Polls::Questions::OptionsComponent.new(question) %>
   </div>
 
-  <% if question.answers_with_read_more? %>
+  <% if question.options_with_read_more? %>
     <div>
       <p><%= t("poll_questions.read_more_about") %></p>
-      <p><%= answers_read_more_links %></p>
+      <p><%= options_read_more_links %></p>
     </div>
   <% end %>
 </div>

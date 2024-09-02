@@ -687,7 +687,6 @@ en:
         index:
           title: Draft versions
           create: Create version
-          delete: Delete
           preview: Preview
         new:
           back: Back
@@ -720,7 +719,6 @@ en:
           back: Back
           title: Questions associated to this process
           create: Create question
-          delete: Delete
         new:
           back: Back
           title: Create new question
@@ -735,6 +733,11 @@ en:
       milestones:
         index:
           title: Following
+    locales:
+      default_help_text: "This is the default language of the application, and changing it will <strong>affect every user</strong> visiting the website for the first time."
+      enabled_help_text: The default language, selected above, will be included automatically.
+      update:
+        notice: Languages updated successfully
     managers:
       index:
         title: Managers
@@ -752,11 +755,12 @@ en:
     menu:
       activity: Moderator activity
       admin: Admin menu
-      banner: Manage banners
+      banner: Banners
       proposals: Proposals
       proposals_topics: Proposals topics
       budgets: Participatory budgets
-      geozones: Manage geozones
+      geozones: Geozones
+      locales: Languages
       hidden_comments: Hidden comments
       hidden_debates: Hidden debates
       hidden_proposals: Hidden proposals
@@ -777,7 +781,7 @@ en:
       polls: Polls
       poll_booths: Booths location
       poll_booth_assignments: Booths Assignments
-      poll_shifts: Manage shifts
+      poll_shifts: Shifts Assignments
       officials: Officials
       organizations: Organisations
       settings: Global settings
@@ -819,7 +823,7 @@ en:
       dashboard_actions: Resources and actions
       debates: "Debates"
       comments: "Comments"
-      local_census_records: Manage local census
+      local_census_records: Local census
       machine_learning: "AI / Machine learning"
       maps: "Maps"
       multitenancy: Multitenancy
@@ -1261,7 +1265,7 @@ en:
       show:
         location: "Location"
       booth:
-        shifts: "Manage shifts"
+        shifts: "Shifts Assignments"
     officials:
       edit:
         destroy: Remove "Official" status
@@ -1429,6 +1433,8 @@ en:
       index:
         title: Geozone
         create: Create geozone
+        geojson_map: GeoJSON Map
+        geojson_map_help: "If GeoJSON coordinates are available they will be displayed on the map below"
       geozone:
         name: Name
         external_code: External code
@@ -1526,7 +1532,6 @@ en:
           verified_users_who_didnt_vote_proposals: Verified users who didn't votes proposals
           visits: Visits
           votes: Total votes
-        budgets_title: Participatory budgeting
         participatory_budgets: Participatory Budgets
         direct_messages: Direct messages
         proposal_notifications: Proposal notifications
@@ -1534,10 +1539,15 @@ en:
         polls: Polls
         sdg: SDG
       graph:
-        debate_created: Debates
-        visit: Visits
-        level_2_user: Level 2 users
-        proposal_created: Citizen proposals
+        budget_investment_created: Budget investments created
+        budget_investment_supported: Budget investments supported
+        debate_created: Debates created
+        legislation_annotation_created: Legislation annotations created
+        legislation_answer_created: Legislation answers created
+        level_3_user: Level 3 users verified
+        proposal_created: Citizen proposals created
+        title: Graphs
+        visits: Visits
       budgets:
         no_data_before_balloting_phase: "There isn't any data to show before the balloting phase."
         title: "Participatory Budgets - Participation stats"
@@ -1653,7 +1663,6 @@ en:
         index:
           title: Custom images
           update: Update
-          delete: Delete
           image: Image
         update:
           notice: Image updated successfully
@@ -1694,6 +1703,7 @@ en:
           create_card: Create card
           no_cards: There are no cards.
           columns_help: "Width of the card in number of columns. On mobile screens it's always a width of 100%."
+          order_help: "You can enter the position where this card will be shown."
           create:
             notice: "Card created successfully!"
           update:
@@ -1755,7 +1765,7 @@ en:
       empty: "There are no changes logged"
     local_census_records:
       index:
-        title: Manage local census
+        title: Local census
         create: Create new local census record
         no_local_census_records: There are no local census records.
         document_type: Document type
@@ -1780,7 +1790,7 @@ en:
         create:
           notice: Local census records import process executed successfully!
         show:
-          title: Manage local census
+          title: Local census
           subtitle: Import process results
           import: Import again
           errored: Errored rows

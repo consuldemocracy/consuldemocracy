@@ -363,7 +363,6 @@ es-PE:
         index:
           title: Versiones del borrador
           create: Crear versión
-          delete: Borrar
           preview: Previsualizar
         new:
           back: Volver
@@ -395,7 +394,6 @@ es-PE:
           back: Volver
           title: Preguntas asociadas a este proceso
           create: Crear pregunta para votación
-          delete: Borrar
         new:
           back: Volver
           title: Crear nueva pregunta
@@ -917,7 +915,6 @@ es-PE:
           verified_users_who_didnt_vote_proposals: Usuarios verificados que no han votado propuestas
           visits: Visitas
           votes: Votos
-        budgets_title: Presupuestos participativos
         participatory_budgets: Presupuestos participativos
         direct_messages: Mensajes directos
         proposal_notifications: Notificaciones de propuestas
@@ -925,7 +922,6 @@ es-PE:
         polls: Votaciones
       graph:
         debate_created: Discusiones
-        visit: Visitas
         proposal_created: Propuestas ciudadanas
       budget_balloting:
         vote_count: Votos
@@ -1006,7 +1002,6 @@ es-PE:
         index:
           title: Personalizar imágenes
           update: Actualizar
-          delete: Borrar
           image: Imagen
         update:
           notice: Imagen actualizada correctamente

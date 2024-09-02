@@ -1,12 +1,4 @@
 module CommentsHelper
-  def comment_tree_title_text(commentable)
-    if commentable.class == Legislation::Question
-      t("legislation.questions.comments.comments_title")
-    else
-      t("comments_helper.comments_title")
-    end
-  end
-
   def leave_comment_text(commentable)
     if commentable.class == Legislation::Question
       t("legislation.questions.comments.form.leave_comment")
@@ -81,25 +73,5 @@ module CommentsHelper
 
   def comments_closed_for_commentable?(commentable)
     commentable.respond_to?(:comments_closed?) && commentable.comments_closed?
-  end
-
-  def comments_closed_text(commentable)
-    if commentable.class == Legislation::Question
-      t("legislation.questions.comments.comments_closed")
-    else
-      t("comments.comments_closed")
-    end
-  end
-
-  def is_author?(comment)
-    comment.author_id == current_user.id
-  end
-
-  def all_descendants_hidden?(comment)
-    Comment.descendants_of(comment).for_render.all?(&:hidden?)
-  end
-
-  def comments_without_children_for(commentable)
-    commentable.comments.for_render.map { |comment| dom_id(comment) if all_descendants_hidden?(comment) }
   end
 end

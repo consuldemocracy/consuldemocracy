@@ -502,15 +502,6 @@ uk-UA:
       image:
         title: Заголовок
         attachment: "Обрати зображення"
-      poll/question/answer:
-        title: Відповідь
-        description: Опис
-      poll/question/answer/translation:
-        title: Відповідь
-        description: "Опис"
-      poll/question/answer/video:
-        title: Заголовок
-        url: Зовнішнє відео
       newsletter:
         segment_recipient: Отримувачі
         subject: Предмет

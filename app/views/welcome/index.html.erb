@@ -13,32 +13,30 @@
 
 <%= render "shared/header", header: @header %>
 
-<main>
-  <% if feature?(:welcome_steps) %>
-    <%= render "steps" %>
+<% if feature?(:welcome_steps) %>
+  <%= render "steps" %>
+<% end %>
+
+<%= render "feeds" %>
+
+<div class="row">
+  <% if @cards.any? %>
+    <div class="small-12 column <%= "large-8" if feed_processes_enabled? %>">
+      <h2 class="title"><%= t("welcome.cards.title") %></h2>
+
+      <%= render "shared/cards", cards: @cards %>
+    </div>
   <% end %>
 
-  <%= render "feeds" %>
-
-  <div id="welcome_cards" class="row">
-    <% if feed_processes_enabled? %>
-      <div class="small-12 column">
-        <%= render "processes" %>
-      </div>
-    <% end %>
-
-    <% if @cards.any? %>
-      <div class="small-12 column margin-top">
-        <h3 class="title"><%= t("welcome.cards.title") %></h3>
-
-        <%= render "shared/cards", cards: @cards %>
-      </div>
-    <% end %>
-  </div>
-
-  <% if feature?("user.recommendations") && (@recommended_debates.present? || @recommended_proposals.present?) %>
-    <%= render "recommended",
-               recommended_debates: @recommended_debates,
-               recommended_proposals: @recommended_proposals %>
+  <% if feed_processes_enabled? %>
+    <div class="small-12 large-4 column">
+      <%= render "processes" %>
+    </div>
   <% end %>
-</main>
+</div>
+
+<% if feature?("user.recommendations") && (@recommended_debates.present? || @recommended_proposals.present?) %>
+  <%= render "recommended",
+             recommended_debates: @recommended_debates,
+             recommended_proposals: @recommended_proposals %>
+<% end %>

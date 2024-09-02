@@ -161,7 +161,6 @@ de:
     legislation/process: Beteiligungsverfahren
     legislation/question: Frage
     poll/shift: Arbeitsschicht
-    poll/question/answer: Antwort
     user: Konto
     verification/sms: Telefon
     signature_sheet: Unterschriftenblatt
@@ -566,7 +565,6 @@ de:
         share: "Sie würden mir einen großen Gefallen tun, wenn Sie meinen Vorschlag mit Ihren Freunden, Familie und Kontakten teilen - das wäre perfekt!"
   polls:
     all: "Alle"
-    no_dates: "kein Datum zugewiesen"
     dates: "Von %{open_at} bis %{closed_at}"
     final_date: "Endgültige Nachzählungen/Ergebnisse"
     index:
@@ -671,7 +669,6 @@ de:
       author_deleted: Benutzer*in gelöscht
       email_deleted: E-Mail gelöscht
     back: Zurück
-    check: Auswählen
     check_all: Alle
     check_none: Keinen
     collective: Kollektiv
@@ -756,18 +753,6 @@ de:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegramm"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Besuche
-      debates: Diskussionen
-      proposals: Vorschläge
-      comments: Kommentare
-      proposal_votes: Bewertungen der Vorschläge
-      debate_votes: Bewertungen der Diskussionen
-      comment_votes: Bewertungen der Kommentare
-      votes: Gesamtstimmen
-      verified_users: Verifizierte Benutzer*innen
-      unverified_users: Nicht verifizierte Benutzer*innen
   unauthorized:
     default: Sie sind nicht berechtigt, auf diese Seite zuzugreifen.
     manage:

@@ -60,10 +60,6 @@ class User < ApplicationRecord
            class_name: "Poll::Answer",
            foreign_key: :author_id,
            inverse_of: :author
-  has_many :poll_pair_answers,
-           class_name: "Poll::PairAnswer",
-           foreign_key: :author_id,
-           inverse_of: :author
   has_many :poll_partial_results,
            class_name: "Poll::PartialResult",
            foreign_key: :author_id,
@@ -119,12 +115,11 @@ class User < ApplicationRecord
     search = "%#{search_string.strip}%"
     where("username ILIKE ? OR email ILIKE ? OR document_number ILIKE ?", search, search, search)
   end
-  scope :between_ages, ->(from, to) do
-    where(
-      "date_of_birth > ? AND date_of_birth < ?",
-      to.years.ago.beginning_of_year,
-      from.years.ago.end_of_year
-    )
+  scope :between_ages, ->(from, to, at_time: Time.current) do
+    start_date = at_time - (to + 1).years + 1.day
+    end_date = at_time - from.years
+
+    where(date_of_birth: start_date.beginning_of_day..end_date.end_of_day)
   end
 
   before_validation :clean_document_number
@@ -294,7 +289,16 @@ class User < ApplicationRecord
   def take_votes_from(other_user)
     return if other_user.blank?
 
-    Poll::Voter.where(user_id: other_user.id).update_all(user_id: id)
+    with_lock do
+      Poll::Voter.where(user_id: other_user.id).find_each do |poll_voter|
+        if Poll::Voter.where(poll: poll_voter.poll, user_id: id).any?
+          poll_voter.delete
+        else
+          poll_voter.update_column(:user_id, id)
+        end
+      end
+    end
+
     Budget::Ballot.where(user_id: other_user.id).update_all(user_id: id)
     Vote.where("voter_id = ? AND voter_type = ?", other_user.id, "User").update_all(voter_id: id)
     data_log = "id: #{other_user.id} - #{Time.current.strftime("%Y-%m-%d %H:%M:%S")}"
@@ -340,7 +344,7 @@ class User < ApplicationRecord
   end
 
   def locale
-    self[:locale] || I18n.default_locale.to_s
+    self[:locale] || Setting.default_locale.to_s
   end
 
   def confirmation_required?
@@ -409,8 +413,8 @@ class User < ApplicationRecord
     followables.compact.map { |followable| followable.tags.map(&:name) }.flatten.compact.uniq
   end
 
-  def send_devise_notification(notification, *args)
-    devise_mailer.send(notification, self, *args).deliver_later
+  def send_devise_notification(notification, *)
+    devise_mailer.send(notification, self, *).deliver_later
   end
 
   def add_subscriptions_token

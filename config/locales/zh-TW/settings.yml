@@ -86,8 +86,6 @@ zh-TW:
       allow_attached_documents_description: "允許用戶在參與性預算中創建建議和投資項目時上傳文檔"
       guides: "創建建議或投資項目的指南"
       guides_description: "如果已存在活躍的參與性預算，則顯示建議和投資項目之間差異的指南"
-      public_stats: "公眾統計數據"
-      public_stats_description: "在管理面板中顯示公眾統計數據"
       help_page: "幫助頁"
       help_page_description: '顯示説明菜單，其中包含一個頁面，內有每個已啟用功能的資訊'
     map:

@@ -1,6 +1,6 @@
 class Shared::OrderLinksComponent < ApplicationComponent
   attr_reader :i18n_namespace, :anchor
-  delegate :current_path_with_query_params, :current_order, :valid_orders, to: :helpers
+  use_helpers :current_path_with_query_params, :current_order, :valid_orders
 
   def initialize(i18n_namespace, anchor: nil)
     @i18n_namespace = i18n_namespace

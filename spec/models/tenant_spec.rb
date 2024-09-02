@@ -424,9 +424,13 @@ describe Tenant do
       FileUtils.rm_rf(File.join(ActiveStorage::Blob.service.root, "tenants", "notypo"))
     end
 
-    it "does nothing when the active storage blob service is not a TenantDiskService" do
-      disk_service = ActiveStorage::Service::DiskService.new(root: ActiveStorage::Blob.service.root)
-      allow(ActiveStorage::Blob).to receive(:service).and_return(disk_service)
+    it "does nothing when the active storage blob service cannot manage tenants" do
+      allow(Rails.configuration.active_storage).to receive(:service_configurations) do
+        ActiveSupport::ConfigurationFile.parse(Rails.root.join("config/storage.yml")).tap do |config|
+          config[Rails.configuration.active_storage.service.to_s]["service"] = "Disk"
+        end
+      end
+
       tenant = create(:tenant, schema: "typo")
 
       expect(File).not_to receive(:rename)

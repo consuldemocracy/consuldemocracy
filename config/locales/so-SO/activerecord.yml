@@ -359,15 +359,6 @@ so:
       image:
         title: Ciwaan
         attachment: "Kulifaaq"
-      poll/question/answer:
-        title: Jawaab
-        description: Sharaxaad
-      poll/question/answer/translation:
-        title: Jawaab
-        description: "Sharaxaad"
-      poll/question/answer/video:
-        title: Ciwaan
-        url: Fidyoowga dibada
       newsletter:
         segment_recipient: Sooqataha
         subject: Mawduuc

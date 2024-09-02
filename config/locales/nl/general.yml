@@ -1,7 +1,8 @@
 nl:
   account:
     show:
-      change_credentials_link: Pas mijn toegangsgegevens aan
+      last_sign_in: "Laatste login: %{last_sign_in_at} vanaf het IP %{last_sign_in_ip}"
+      change_credentials_link: Pas mijn logingegevens aan
       erase_account_link: Verwijder mijn account
       finish_verification: Maak verificatieproces af
       notifications: Meldingen
@@ -154,7 +155,6 @@ nl:
     legislation/process: proces
     legislation/question: vraag
     poll/shift: Dienst
-    poll/question/answer: Antwoord
     user: Deelnemer
     verification/sms: telefoon
     signature_sheet: Handtekeningenlijst
@@ -486,7 +486,6 @@ nl:
         hi: "Hallo!"
   polls:
     all: "Alle"
-    no_dates: "geen datum toegewezen"
     dates: "Van %{open_at} tot %{closed_at}"
     final_date: "Definitieve hertelling/resultaten"
     index:
@@ -585,8 +584,7 @@ nl:
       author_deleted: Gebruiker verwijderd
       email_deleted: E-mail verwijderd
     back: Ga terug
-    check: Select
-    check_all: Alle
+    check_all: All
     check_none: Geen
     collective: Collectief
     flag: Markeer als ongepast
@@ -661,18 +659,6 @@ nl:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Bezoeken
-      debates: Debatten
-      proposals: Voorstellen
-      comments: Reacties
-      proposal_votes: Stemmen op voorstellen
-      debate_votes: Stemmen op debatten
-      comment_votes: Stemmen op reacties
-      votes: Total votes
-      verified_users: Verified users
-      unverified_users: Unverified users
   unauthorized:
     default: U heeft geen toestemming deze pagina te bezoeken.
     manage:

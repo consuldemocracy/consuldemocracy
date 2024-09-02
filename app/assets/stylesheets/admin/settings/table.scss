@@ -1,7 +1,7 @@
 .admin {
   .featured-settings-table {
     td {
-      max-width: $global-width / 3;
+      max-width: calc($global-width / 3);
     }
   }
 

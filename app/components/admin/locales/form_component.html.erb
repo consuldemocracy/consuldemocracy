@@ -1,0 +1,43 @@
+<%= form_for locales_settings, url: admin_locales_path, html: { class: "locales-form" } do |f| %>
+  <% if many_available_locales? %>
+    <%= f.select :default, locales_options, hint: sanitize(t("admin.locales.default_help_text")) %>
+  <% else %>
+    <fieldset>
+      <legend><%= attribute_name(:default) %></legend>
+      <p class="help-text"><%= sanitize(t("admin.locales.default_help_text")) %></p>
+
+      <div class="collection-radio-buttons">
+        <%= f.collection_radio_buttons(
+          :default,
+          available_locales,
+          :to_sym,
+          ->(locale) { name_for_locale(locale) }
+        ) do |b| %>
+          <%= b.label { b.radio_button + b.text } %>
+        <% end %>
+      </div>
+    </fieldset>
+  <% end %>
+
+  <fieldset>
+    <legend><%= attribute_name(:enabled) %></legend>
+    <p class="help-text"><%= t("admin.locales.enabled_help_text") %></p>
+
+    <% if many_available_locales? %>
+      <%= render Shared::CheckAllNoneComponent.new %>
+    <% end %>
+
+    <div class="collection-check-boxes">
+      <%= f.collection_check_boxes(
+        :enabled,
+        available_locales,
+        :to_sym,
+        ->(locale) { name_for_locale(locale) }
+      ) do |b| %>
+        <%= b.label { b.check_box + b.text } %>
+      <% end %>
+    </div>
+  </fieldset>
+
+  <%= submit_tag %>
+<% end %>

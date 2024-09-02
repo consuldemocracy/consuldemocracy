@@ -116,8 +116,6 @@ fr:
       allow_attached_documents_description: "Permet aux utilisateurs de télécharger des documents lors de la création de propositions et projets d’investissement des budgets participatifs"
       guides: "Guides pour créer des propositions ou projets d’investissement"
       guides_description: "Affiche un guide des différences entre les propositions et les projets d’investissement s’il y a un budget participatif actif"
-      public_stats: "Stats publiques"
-      public_stats_description: "Afficher les stats publiques dans le panneau d’Administration"
       help_page: "Page d'aide"
       help_page_description: 'Affiche un menu d’aide qui contient une page avec une section d’informations sur chaque fonctionnalité activée. Des menus et des pages personnalisées peuvent également être créées dans les sections de « Blocs de contenu personnalisé » et de « Pages personnalisées »'
       remote_translations: "Traductions à distance"

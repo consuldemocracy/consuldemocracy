@@ -131,7 +131,6 @@ sl:
     budget/investment: Naložba
     budget/heading: Proračunska postavka
     poll/shift: Izmena
-    poll/question/answer: Odgovor
     user: Račun
     verification/sms: telefon
     signature_sheet: Podpisni list
@@ -367,7 +366,6 @@ sl:
         support_button: Podpri ta predlog
   polls:
     all: "Vsi"
-    no_dates: "Brez datuma"
     dates: "Od %{open_at} do %{closed_at}"
     final_date: "Končni rezultati"
     index:
@@ -455,7 +453,6 @@ sl:
     author_info:
       author_deleted: Uporabnik izbrisan
     back: Pojdi nazaj
-    check: Izberi
     check_all: Vse
     check_none: Nič
     collective: Kolektiv
@@ -499,18 +496,6 @@ sl:
       list: Seznam
     recommended_index:
       title: Priporočila
-  stats:
-    index:
-      visits: Obiski
-      debates: Razprave
-      proposals: Predlogi
-      comments: Komentarji
-      proposal_votes: Glasovi o predlogih
-      debate_votes: Glasovi o razpravah
-      comment_votes: Glasovi na komentarjih
-      votes: Skupaj glasov
-      verified_users: Preverjenih uporabnikov
-      unverified_users: Nepreverjenih uporabnikov
   unauthorized:
     default: Nimaš dovoljenja za obisk te strani.
     manage:

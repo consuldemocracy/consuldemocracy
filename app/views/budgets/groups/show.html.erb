@@ -1,28 +1,28 @@
-<main class="budget-group-show">
-  <header>
-    <%= back_link_to budget_path(@budget) %>
-    <h1><%= t("budgets.groups.show.title") %></h1>
-  </header>
+<% provide :main_class, "budget-group-show" %>
 
-  <div class="row margin">
-    <div id="headings" class="small-12 medium-7 column select-district">
-      <div class="row">
-        <% @group.headings.sort_by_name.each_slice(7) do |slice| %>
-          <div class="small-6 medium-4 column end">
-            <% slice.each do |heading| %>
-              <span id="<%= dom_id(heading) %>"
-                    class="<%= css_for_ballot_heading(heading) %>">
-                <%= link_to heading.name, budget_investments_path(heading_id: heading.id) %>
-                <br>
-              </span>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
-    </div>
+<header>
+  <%= back_link_to budget_path(@budget) %>
+  <h1><%= t("budgets.groups.show.title") %></h1>
+</header>
 
-    <div class="medium-5 column show-for-medium text-center">
-      <%= image_tag(image_path_for("map.jpg")) %>
+<div class="row margin">
+  <div id="headings" class="small-12 medium-7 column select-district">
+    <div class="row">
+      <% @group.headings.sort_by_name.each_slice(7) do |slice| %>
+        <div class="small-6 medium-4 column end">
+          <% slice.each do |heading| %>
+            <span id="<%= dom_id(heading) %>"
+                  class="<%= css_for_ballot_heading(heading) %>">
+              <%= link_to heading.name, budget_investments_path(heading_id: heading.id) %>
+              <br>
+            </span>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
-</main>
+
+  <div class="medium-5 column show-for-medium text-center">
+    <%= image_tag(image_path_for("map.jpg")) %>
+  </div>
+</div>
