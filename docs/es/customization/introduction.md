@@ -1,12 +1,14 @@
-# Personalización
+# Personalización de código
 
-Puedes modificar Consul Democracy y ponerle tu propia imagen, para esto debes primero [crear tu propio fork](../getting_started/create.md).
+Puedes modificar Consul Democracy y adaptarlo a la imagen y a la manera de trabajar de tu institución. Para esto, debes primero [crear tu propio "fork"](../getting_started/create.md).
 
-Hemos creado una estructura específica donde puedes sobreescribir y personalizar la aplicación para que puedas actualizar sin que tengas problemas al hacer merge y se sobreescriban por error tus cambios. Intentamos que Consul Democracy sea una aplicación Ruby on Rails lo más plain vanilla posible para facilitar el acceso de nuevas desarrolladoras.
+La principal regla a seguir al personalizar código de Consul Democracy es hacerlo de manera que los cambios personalizados estén separados del resto del código. De esta forma, al actualizar a una nueva versión de Consul Democracy, será más fácil comprobar qué código pertenece a la aplicación y cómo cambia el código en la nueva versión. En caso contrario, será muy difícil adaptar tus cambios personalizados a la nueva versión.
+
+Con este fin, Consul Democracy incluye directorios "custom" para que rara vez tengas que cambiar los archivos originales.
 
 ## Ficheros y directorios especiales
 
-Para adaptar tu fork de Consul Democracy puedes utilizar alguno de los directorios `custom` que están en las rutas:
+Para adaptar tu "fork" de Consul Democracy, puedes utilizar alguno de los directorios `custom` que están en las rutas:
 
 * `app/assets/images/custom/`
 * `app/assets/javascripts/custom/`
@@ -40,6 +42,8 @@ Aparte de estos directorios, también puedes utilizar los siguientes ficheros:
 * `config/environments/custom/staging.rb`
 * `config/environments/custom/test.rb`
 * `Gemfile_custom`
+
+Utilizando estos ficheros, podrás personalizar [traducciones](translations.md), [imágenes](images.md), [CSS](css.md), [JavaScript](javascript.md), [vistas HTML](views.md), cualquier código de Ruby como [modelos](models.md), [controladores](controllers.md), [componentes](components.md) u [otras clases de Ruby](ruby.md), [gemas](gems.md), [configuración de la aplicación](application.md), [rutas](routes.md) y [tests](tests.md).
 
 ## Ejecutar los tests
 

@@ -1,8 +1,10 @@
 # Customization
 
-You can modify your own Consul Democracy to have your custom visual style, but first you'll have to [create your own fork from](../getting_started/create.md).
+You can modify your own Consul Democracy to adapt it to the visual style of your institution. To do so, first you'll have to [create your own fork](../getting_started/create.md).
 
-We've created an specific structure where you can overwrite and customize the application in a way that will let you keep updating it from Consul Democracy's main repository, without having conflicts on code merging or risking loosing your customization changes. We try to make Consul Democracy as vanilla as possible to help other developers onboard the codebase.
+The main principle to follow when customizing Consul Democracy is doing so in a way that custom changes are isolated so, when updating to a new version of Consul Democracy, it'll be easier to check which code belongs to the application and how the code changed in the new version. Otherwise, it'll be very hard to adapt your custom changes to the new version.
+
+For that purpose, Consul Democracy includes custom folders so you rarely have to touch the original application files.
 
 ## Special Folders and Files
 
@@ -40,6 +42,8 @@ There are also files where you can apply some customizations:
 * `config/environments/custom/staging.rb`
 * `config/environments/custom/test.rb`
 * `Gemfile_custom`
+
+Using these files, you will be able to customize [translations](translations.md), [images](images.md), [CSS](css.md), [JavaScript](javascript.md), [HTML views](views.md), any Ruby code like [models](models.md), [controllers](controllers.md), [components](components.md) or [other Ruby classes](ruby.md), [gems](gems.md), [application configuration](application.md), [routes](routes.md) and [tests](tests.md).
 
 ## Running the tests
 
