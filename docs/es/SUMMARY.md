@@ -40,6 +40,7 @@
   * [Otras clases de Ruby (GraphQL, lib, mailers, builders)](customization/ruby.md)
   * [Gemas](customization/gems.md)
   * [Configuración de la aplicación](customization/application.md)
+  * [Rutas](customization/routes.md)
   * [Tests](customization/tests.md)
 
 * [Funcionalidades Técnicas](features/features.md)

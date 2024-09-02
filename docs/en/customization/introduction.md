@@ -41,6 +41,7 @@ There are also files where you can apply some customizations:
 * `config/environments/custom/production.rb`
 * `config/environments/custom/staging.rb`
 * `config/environments/custom/test.rb`
+* `config/routes/custom.rb`
 * `Gemfile_custom`
 
 Using these files, you will be able to customize [translations](translations.md), [images](images.md), [CSS](css.md), [JavaScript](javascript.md), [HTML views](views.md), any Ruby code like [models](models.md), [controllers](controllers.md), [components](components.md) or [other Ruby classes](ruby.md), [gems](gems.md), [application configuration](application.md), [routes](routes.md) and [tests](tests.md).

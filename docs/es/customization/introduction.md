@@ -41,6 +41,7 @@ Aparte de estos directorios, también puedes utilizar los siguientes ficheros:
 * `config/environments/custom/production.rb`
 * `config/environments/custom/staging.rb`
 * `config/environments/custom/test.rb`
+* `config/routes/custom.rb`
 * `Gemfile_custom`
 
 Utilizando estos ficheros, podrás personalizar [traducciones](translations.md), [imágenes](images.md), [CSS](css.md), [JavaScript](javascript.md), [vistas HTML](views.md), cualquier código de Ruby como [modelos](models.md), [controladores](controllers.md), [componentes](components.md) u [otras clases de Ruby](ruby.md), [gemas](gems.md), [configuración de la aplicación](application.md), [rutas](routes.md) y [tests](tests.md).
