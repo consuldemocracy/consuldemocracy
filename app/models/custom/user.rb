@@ -238,7 +238,6 @@ end
 
 def self.validate_document_number(document_number)
       return true if document_number.nil?
-#      valid_prefixes = { '6337' => true, '5678' => true, '9012' => true } # Example hash of valid prefixes
       valid_prefixes = Rails.application.secrets.ys_prefixes || []
       if valid_prefixes.empty?
         Rails.logger.warn("No valid document prefixes found in secrets. Validation will fail.")
@@ -249,15 +248,15 @@ def self.validate_document_number(document_number)
       return false unless document_number.to_s.length == 16
 
       # Extract the prefix, middle, and suffix parts of the document number
-      prefix = document_number.to_s[0, 4]
-      middle = document_number.to_s[4, 10]
+      prefix = document_number.to_s[0, 6]
+      middle = document_number.to_s[6, 8]
       suffix = document_number.to_s[14, 2]
 
       # Check if the prefix exists in the valid prefixes hash
       return false unless valid_prefixes.include?(prefix)
 
       # Check if the middle and suffix parts are numeric
-      return false unless middle.match?(/\A\d{10}\z/) && suffix.match?(/\A\d{2}\z/)
+      return false unless middle.match?(/\A\d{8}\z/) && suffix.match?(/\A\d{2}\z/)
 
       # If all criteria are met, return true
       Rails.logger.info("Document number is valid")
