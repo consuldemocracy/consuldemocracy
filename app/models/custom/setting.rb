@@ -24,7 +24,8 @@ class Setting
       else
         consul_defaults.merge({
           # Overwrite default CONSUL DEMOCRACY settings or add new settings here
-          "feature.saml_login": true
+          "feature.saml_login": true,
+          "feature.valid_geozone": true
         })
       end
     end
