@@ -2,7 +2,7 @@
 
 * [Introduction](README.md)
 * [Getting started](getting_started/getting_started.md)
-  * [Fork Consul Democracy](getting_started/create.md)
+  * [Create your fork](getting_started/create.md)
   * [Configure your fork](getting_started/configuration.md)
   * [Keep your fork updated](getting_started/update.md)
   * [Communication](getting_started/communication.md)

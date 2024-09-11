@@ -4,7 +4,7 @@
 * [Primeros pasos](getting_started/getting_started.md)
   * [Crea tu fork](getting_started/create.md)
   * [Configura tu fork](getting_started/configuration.md)
-  * [Manten tu fork actualizado](getting_started/update.md)
+  * [Mantén tu fork actualizado](getting_started/update.md)
   * [Comunicación](getting_started/communication.md)
 
 * [Instalación](installation/introduction.md)
