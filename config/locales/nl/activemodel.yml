@@ -27,7 +27,7 @@ nl:
         document_type: "Documentsoort:"
         document_number: "Document nummer"
       verification/residence:
-        date_of_birth: "Date of birth"
+        date_of_birth: "Geboortedatum"
         document_type: "Documentsoort"
         postal_code: "Postcode"
       verification/sms:

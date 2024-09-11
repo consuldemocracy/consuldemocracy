@@ -1,0 +1,13 @@
+.admin {
+  .featured-settings-table {
+    td {
+      max-width: calc($global-width / 3);
+    }
+  }
+
+  .mixed-settings-table {
+    td {
+      width: 50%;
+    }
+  }
+}

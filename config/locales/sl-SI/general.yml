@@ -119,7 +119,6 @@ sl:
       invalid_date_range: "Neveljavno časovno obdobje"
   form:
     accept_terms: Strinjam se s %{policy} in s %{conditions}
-    accept_terms_title: Strinjam se s politko zasebnosti in pogoji uporabe
     conditions: Pogoji uporabe
     debate: Razprava
     direct_message: Zasebno sporočilo
@@ -132,7 +131,6 @@ sl:
     budget/investment: Naložba
     budget/heading: Proračunska postavka
     poll/shift: Izmena
-    poll/question/answer: Odgovor
     user: Račun
     verification/sms: telefon
     signature_sheet: Podpisni list
@@ -142,9 +140,6 @@ sl:
   geozones:
     none: Celo mesto/občina
   layouts:
-    application:
-      ie: Zaznali smo, da za brskanje po internetu uporabljaš Internet Explorer. Za boljšo izkušno te spletne strani, ti predlagamo preklop na %{firefox} ali %{chrome}.
-      ie_title: Ta spletna stran ni optimizirana za tvoj brskalnik
     dashboard:
       proposal_header:
         published: Objavljena
@@ -155,7 +150,7 @@ sl:
     footer:
       accessibility: Dostopnosti
       conditions: Pogoji uporabe
-      consul: Aplikacija CONSUL
+      consul: Aplikacija CONSUL DEMOCRACY
       description: Ta portal uporablja %{consul}, ki je %{open_source}.
       open_source: odprtokodna programska oprema
       participation_text: Odloči se, kako sooblikovati tako mesto, v kakršnem si želiš živeti.
@@ -371,7 +366,6 @@ sl:
         support_button: Podpri ta predlog
   polls:
     all: "Vsi"
-    no_dates: "Brez datuma"
     dates: "Od %{open_at} do %{closed_at}"
     final_date: "Končni rezultati"
     index:
@@ -459,7 +453,6 @@ sl:
     author_info:
       author_deleted: Uporabnik izbrisan
     back: Pojdi nazaj
-    check: Izberi
     check_all: Vse
     check_none: Nič
     collective: Kolektiv
@@ -503,18 +496,6 @@ sl:
       list: Seznam
     recommended_index:
       title: Priporočila
-  stats:
-    index:
-      visits: Obiski
-      debates: Razprave
-      proposals: Predlogi
-      comments: Komentarji
-      proposal_votes: Glasovi o predlogih
-      debate_votes: Glasovi o razpravah
-      comment_votes: Glasovi na komentarjih
-      votes: Skupaj glasov
-      verified_users: Preverjenih uporabnikov
-      unverified_users: Nepreverjenih uporabnikov
   unauthorized:
     default: Nimaš dovoljenja za obisk te strani.
     manage:

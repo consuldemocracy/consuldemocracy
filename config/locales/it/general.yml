@@ -143,7 +143,6 @@ it:
         poll_ended: "Impossibile modificare se il voto è già terminato"
   form:
     accept_terms: Acconsento alle %{policy} e alle %{conditions}
-    accept_terms_title: Acconsento all’Informativa sulla Privacy e ai Termini e condizioni d’uso
     conditions: Termini e condizioni d'uso
     debate: Dibattito
     direct_message: messaggio privato
@@ -162,7 +161,6 @@ it:
     legislation/process: processo
     legislation/question: questione
     poll/shift: Turno
-    poll/question/answer: Risposta
     user: Account
     verification/sms: telefono
     signature_sheet: Foglio firme
@@ -177,11 +175,6 @@ it:
   geozones:
     none: Tutta la città
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Abbiamo rilevato che stai navigando con Internet Explorer. Per una migliore esperienza, raccomandiamo di usare %{firefox} o %{chrome}.
-      ie_title: Questo sito non è ottimizzato per il tuo browser
     dashboard:
       proposal_header:
         published: Pubblicato
@@ -200,9 +193,9 @@ it:
     footer:
       accessibility: Accessibilità
       conditions: Termini e condizioni d'uso
-      consul: app CONSUL
+      consul: app CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSOLE, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Questo portale utilizza %{consul} che è %{open_source}.
       open_source: software open-source
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
@@ -572,7 +565,6 @@ it:
         share: "E se mi facessi anche il grande favore di condividere la mia proposta coi tuoi amici, la tua famiglia e i tuoi contatti, sarebbe perfetto!"
   polls:
     all: "Tutti"
-    no_dates: "nessuna data assegnata"
     dates: "Dal %{open_at} al %{closed_at}"
     final_date: "Scrutinio finale/Risultati"
     index:
@@ -677,7 +669,6 @@ it:
       author_deleted: Utente cancellato
       email_deleted: Email eliminata
     back: Indietro
-    check: Selezionare
     check_all: Tutti
     check_none: Nessuno
     collective: Associazione
@@ -764,18 +755,6 @@ it:
     youtube: "YouTube di %{org}"
     telegram: "Telegram di %{org}"
     instagram: "Instagram di %{org}"
-  stats:
-    index:
-      visits: Visite
-      debates: Dibattiti
-      proposals: Proposte
-      comments: Commenti
-      proposal_votes: Voti su proposte
-      debate_votes: Voti su dibattiti
-      comment_votes: Voti su commenti
-      votes: Voti totali
-      verified_users: Utenti verificati
-      unverified_users: Utenti non verificati
   unauthorized:
     default: Non hai l’autorizzazione per accedere a questa pagina.
     manage:

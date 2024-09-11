@@ -9,7 +9,7 @@ default: &default
 
 development: &development
   <<: *default
-  database: consul_development
+  database: coslaconsul_dev
 
 # The staging, preproduction and production dbs are only needed
 # for running rake assets:precompile locally before deploying

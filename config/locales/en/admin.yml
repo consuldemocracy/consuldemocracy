@@ -204,7 +204,7 @@ en:
         max_ballot_lines_info: 'Maximum number of projects a user can vote on this heading during the "Voting projects" phase. Only for budgets using approval voting.'
         population_info: "Budget Heading population field is used for Statistic purposes at the end of the Budget to show for each Heading that represents an area with population what percentage voted. The field is optional so you can leave it empty if it doesn't apply."
         coordinates_info: "If latitude and longitude are provided, the investments page for this heading will include a map. This map will be centered using those coordinates."
-        content_blocks_info: "If allow content block is checked, you will be able to create custom content related to this heading from the section Settings > Custom content blocks. This content will appear on the investments page for this heading."
+        content_blocks_info: "If allow content block is checked, you will be able to create custom content related to this heading from the section Site content > Custom content blocks. This content will appear on the investments page for this heading."
         create: "Create new heading"
         edit: "Edit heading"
         submit: "Save heading"
@@ -589,6 +589,12 @@ en:
           draft_phase_description: If this phase is active, the process won't be listed on processes index. Allow to preview the process and create content before the start.
           allegations_phase: Comments phase
           proposals_phase: Proposals phase
+          summary_phase: Summary Phase
+          summary_phase_description: This phase will show a summary of proposals which have been selected and the best comments from the most recent draft.
+          draft_publication: Draft Publication
+          draft_publication_description: In draft state, registered users can comment on your document
+          final_publication_description: This publishes your final version of the legislation or outcome of this process. Users cannot comment on this version. 
+          final_publication: Final Result Publication
           use_markdown: Use Markdown to format the text
           homepage_description: Here you can explain the content of the process
           banner_title: Header colors
@@ -664,7 +670,6 @@ en:
         index:
           title: Draft versions
           create: Create version
-          delete: Delete
           preview: Preview
         new:
           back: Back
@@ -697,7 +702,6 @@ en:
           back: Back
           title: Questions associated to this process
           create: Create question
-          delete: Delete
         new:
           back: Back
           title: Create new question
@@ -712,6 +716,11 @@ en:
       milestones:
         index:
           title: Following
+    locales:
+      default_help_text: "This is the default language of the application, and changing it will <strong>affect every user</strong> visiting the website for the first time."
+      enabled_help_text: The default language, selected above, will be included automatically.
+      update:
+        notice: Languages updated successfully
     managers:
       index:
         title: Managers
@@ -729,12 +738,13 @@ en:
     menu:
       activity: Moderator activity
       admin: Admin menu
-      banner: Manage banners
+      banner: Banners
       proposals: Proposals
       proposals_topics: Proposals topics
       budgets: Participatory budgets
       geozones: Manage geozones
       postcodes: Manage Postcodes
+      locales: Languages
       hidden_comments: Hidden comments
       hidden_debates: Hidden debates
       hidden_proposals: Hidden proposals
@@ -755,7 +765,7 @@ en:
       polls: Polls
       poll_booths: Booths location
       poll_booth_assignments: Booths Assignments
-      poll_shifts: Manage shifts
+      poll_shifts: Shifts Assignments
       officials: Officials
       organizations: Organisations
       settings: Global settings
@@ -797,7 +807,7 @@ en:
       dashboard_actions: Resources and actions
       debates: "Debates"
       comments: "Comments"
-      local_census_records: Manage local census
+      local_census_records: Local census
       machine_learning: "AI / Machine learning"
       multitenancy: Multitenancy
     administrators:
@@ -1235,7 +1245,7 @@ en:
       show:
         location: "Location"
       booth:
-        shifts: "Manage shifts"
+        shifts: "Shifts Assignments"
     officials:
       edit:
         destroy: Remove "Official" status
@@ -1401,6 +1411,8 @@ en:
       index:
         title: Geozone
         create: Create geozone
+        geojson_map: GeoJSON Map
+        geojson_map_help: "If GeoJSON coordinates are available they will be displayed on the map below"
       geozone:
         name: Name
         external_code: External code
@@ -1506,7 +1518,6 @@ en:
           verified_users_who_didnt_vote_proposals: Verified users who didn't votes proposals
           visits: Visits
           votes: Total votes
-        budgets_title: Participatory budgeting
         participatory_budgets: Participatory Budgets
         direct_messages: Direct messages
         proposal_notifications: Proposal notifications
@@ -1514,10 +1525,15 @@ en:
         polls: Polls
         sdg: SDG
       graph:
-        debate_created: Debates
-        visit: Visits
-        level_2_user: Level 2 users
-        proposal_created: Citizen proposals
+        budget_investment_created: Budget investments created
+        budget_investment_supported: Budget investments supported
+        debate_created: Debates created
+        legislation_annotation_created: Legislation annotations created
+        legislation_answer_created: Legislation answers created
+        level_3_user: Level 3 users verified
+        proposal_created: Citizen proposals created
+        title: Graphs
+        visits: Visits
       budgets:
         no_data_before_balloting_phase: "There isn't any data to show before the balloting phase."
         title: "Participatory Budgets - Participation stats"
@@ -1633,7 +1649,6 @@ en:
         index:
           title: Custom images
           update: Update
-          delete: Delete
           image: Image
         update:
           notice: Image updated successfully
@@ -1674,6 +1689,7 @@ en:
           create_card: Create card
           no_cards: There are no cards.
           columns_help: "Width of the card in number of columns. On mobile screens it's always a width of 100%."
+          order_help: "You can enter the position where this card will be shown."
           create:
             notice: "Card created successfully!"
           update:
@@ -1735,7 +1751,7 @@ en:
       empty: "There are no changes logged"
     local_census_records:
       index:
-        title: Manage local census
+        title: Local census
         create: Create new local census record
         no_local_census_records: There are no local census records.
         document_type: Document type
@@ -1760,7 +1776,7 @@ en:
         create:
           notice: Local census records import process executed successfully!
         show:
-          title: Manage local census
+          title: Local census
           subtitle: Import process results
           import: Import again
           errored: Errored rows

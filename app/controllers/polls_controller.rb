@@ -23,7 +23,7 @@ class PollsController < ApplicationController
   end
 
   def stats
-    @stats = Poll::Stats.new(@poll)
+    @stats = Poll::Stats.new(@poll).tap(&:generate)
   end
 
   def results

@@ -34,7 +34,7 @@ sq:
         info: Këtu ju mund të menaxhoni përdoruesit përmes të gjitha veprimeve të renditura në menunë e majtë.
     document_verifications:
       already_verified: Kjo llogari përdoruesi është verifikuar tashmë
-      link: KONSUL
+      link: CONSUL DEMOCRACY
       in_census_has_following_permissions: "Ky përdorues mund të marrë pjesë në faqe me lejet e mëposhtme:"
       not_in_census: Ky dokument nuk është i regjistruar.
       not_in_census_info: "Qytetarët që nuk janë rregjistruar mund të marrin pjesë në faqen me lejet e mëposhtme:"

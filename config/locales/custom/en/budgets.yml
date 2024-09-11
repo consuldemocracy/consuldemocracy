@@ -1,5 +1,19 @@
 en:
   budgets:
+
     ballots:
       reasons_for_not_balloting:
         invalid_geozone: Your do not live in the required area to take part in this process
+
+    index:
+      milestones: Progress Updates
+    investments:
+      form:
+        title: "Submit a Project Proposal"
+        heading_note: "Select the area this proposal applies to"
+        subtitle: "%{heading} (%{price})"
+        subtitle_note: "What is your project or application called?"
+        subtitle_without_price: "%{heading}"
+        subtitle_without_price_note: "subtitle help text"
+        summary: "Project Summary"
+

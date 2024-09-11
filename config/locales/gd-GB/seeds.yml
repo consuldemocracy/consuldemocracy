@@ -5,8 +5,8 @@ gd:
         title: "Tha sinn a’ dùnadh a’ Bhuidseit Com-pàirteachail!"
         body: "Greas ort agus cruthaich moladh mus tig e gu crìch ann am beagan làithean!"
       help:
-        title: "Cuidich sinn gus consul eadar-theangachadh"
-        body: "Ma tha thu fileanta ann an cànan, feuch an cuidich thu sinn le bhith ag eadar-theangachadh consul!"
+        title: "Cuidich sinn gus Consul Democracy eadar-theangachadh"
+        body: "Ma tha thu fileanta ann an cànan, feuch an cuidich thu sinn le bhith ag eadar-theangachadh Consul Democracy!"
       map:
         title: "Faodaidh tu a-nis geo-lorgadh a chur air molaidhean agus tasgaidhean"
         body: "Nuair a chruthaicheas tu moladh no tasgadh faodaidh tu a-nis àite a shònrachadh air mapa."
@@ -39,7 +39,7 @@ gd:
         link_text: "Barrachd mu dheasbadan"
         label: "Deasbadan"
       header:
-        title: "CONSUL"
+        title: "CONSUL DEMOCRACY"
         description: "Bathar-bog an-asgaidh airson com-pàirteachadh nan saoranach."
         link_text: "Barrachd fiosrachaidh"
         label: "Fàilte gu"

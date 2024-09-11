@@ -1,0 +1,5 @@
+{
+  "gitbook": ">= 3.0.0",
+  "title": "Documentación Consul Democracy",
+  "description": "Aplicación de Gobierno Abierto y Participación Ciudadana"
+}

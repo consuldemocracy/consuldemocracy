@@ -1,5 +1,5 @@
-class Layout::CommonHTMLAttributesComponent < ApplicationComponent
-  delegate :rtl?, to: :helpers
+class Layout::CommonHtmlAttributesComponent < ApplicationComponent
+  use_helpers :rtl?
 
   private
 
@@ -16,6 +16,6 @@ class Layout::CommonHTMLAttributesComponent < ApplicationComponent
     end
 
     def html_class
-      "class=\"tenant-#{Tenant.current_schema}\"" if Rails.application.config.multitenancy
+        "class=\"tenant-#{Tenant.current_schema}\"" if Rails.application.config.multitenancy
     end
 end

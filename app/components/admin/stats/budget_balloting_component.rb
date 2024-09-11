@@ -8,7 +8,7 @@ class Admin::Stats::BudgetBallotingComponent < ApplicationComponent
   private
 
     def stats
-      @stats ||= Budget::Stats.new(budget)
+      @stats ||= Budget::Stats.new(budget, cache: false)
     end
 
     def headings_stats

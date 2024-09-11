@@ -103,7 +103,6 @@ oc:
           submit: Enregistrar
           terms: En enregistrar accèptas las %{terms}
           terms_link: de condicions d'usatge
-          terms_title: En enregistrar accèptas las condicions d'usatge
           title: Enregistrar
           username_is_available: Nom d'usatgièr disponible
           username_is_not_available: Nom d'usatgièr ja existent

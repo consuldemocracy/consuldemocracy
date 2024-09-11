@@ -103,7 +103,6 @@ bs:
           submit: Registrujte se
           terms: Registracijom prihvatate (uvjete) %{terms}
           terms_link: uvjeti korištenja
-          terms_title: Registracijom prihvatate uvjete korištenja
           title: Registrujte se
           username_is_available: Korisničko ime se može uzeti
           username_is_not_available: Neko drugi već koristi ovo korisničko ime

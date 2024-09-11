@@ -1,0 +1,20 @@
+.skip-to-main-content {
+  @include grid-column-gutter;
+
+  a {
+    &:not(:focus) {
+      @include element-invisible;
+      width: 0 !important;
+    }
+
+    &:focus {
+      $outline-size: $focus-inner-width + $focus-middle-width + $focus-outer-width;
+      @include body-colors;
+
+      padding: 0.4rem;
+      position: absolute;
+      top: $outline-size;
+      z-index: 1000;
+    }
+  }
+}

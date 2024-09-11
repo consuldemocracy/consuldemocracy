@@ -3,7 +3,7 @@ module Statisticable
   PARTICIPATIONS = %w[gender age geozone].freeze
 
   included do
-    attr_reader :resource
+    attr_reader :resource, :cache
   end
 
   class_methods do
@@ -42,12 +42,28 @@ module Statisticable
     end
   end
 
-  def initialize(resource)
+  def initialize(resource, cache: true)
     @resource = resource
+    @cache = cache
   end
 
   def generate
-    stats_methods.each { |stat_name| send(stat_name) }
+    User.transaction do
+      begin
+        define_singleton_method :participants do
+          create_participants_table unless participants_table_created?
+          participants_class.all
+        end
+
+        stats_methods.each { |stat_name| send(stat_name) }
+      ensure
+        define_singleton_method :participants do
+          participants_from_original_table
+        end
+      end
+
+      drop_participants_table
+    end
   end
 
   def stats_methods
@@ -63,7 +79,11 @@ module Statisticable
   end
 
   def age?
-    participants.between_ages(age_groups.flatten.min, age_groups.flatten.max).any?
+    participants.between_ages(
+      age_groups.flatten.min,
+      age_groups.flatten.max,
+      at_time: participation_date
+    ).any?
   end
 
   def geozone?
@@ -73,6 +93,7 @@ module Statisticable
   def participants
     @participants ||= User.unscoped.where(id: participant_ids)
   end
+  alias_method :participants_from_original_table, :participants
 
   def total_male_participants
     participants.male.count
@@ -96,7 +117,7 @@ module Statisticable
 
   def participants_by_age
     age_groups.to_h do |start, finish|
-      count = participants.between_ages(start, finish).count
+      count = participants.between_ages(start, finish, at_time: participation_date).count
 
       [
         "#{start} - #{finish}",
@@ -110,23 +131,23 @@ module Statisticable
   end
 
   def participants_by_geozone
-    geozone_stats.to_h do |stats|
+    geozones.to_h do |geozone|
+      count = participants.where(geozone: geozone).count
+
       [
-        stats.name,
+        geozone.name,
         {
-          count: stats.count,
-          percentage: stats.percentage
+          count: count,
+          percentage: calculate_percentage(count, total_participants)
         }
       ]
     end
   end
 
   def calculate_percentage(fraction, total)
-    PercentageCalculator.calculate(fraction, total)
-  end
+    return 0.0 if total.zero?
 
-  def version
-    "v#{resource.find_or_create_stats_version.updated_at.to_i}"
+    (fraction * 100.0 / total).round(3)
   end
 
   def advanced?
@@ -141,6 +162,34 @@ module Statisticable
 
     def participation_methods
       participations.map { |participation| self.class.send("#{participation}_methods") }.flatten
+    end
+
+    def create_participants_table
+      User.connection.create_table(
+        participants_table_name,
+        temporary: true,
+        as: participants_from_original_table.to_sql
+      )
+      User.connection.add_index participants_table_name, :date_of_birth
+      User.connection.add_index participants_table_name, :geozone_id
+      @participants_table_created = true
+    end
+
+    def drop_participants_table
+      User.connection.drop_table(participants_table_name, if_exists: true, temporary: true)
+      @participants_table_created = false
+    end
+
+    def participants_table_name
+      @participants_table_name ||= "participants_#{resource.class.table_name}_#{resource.id}"
+    end
+
+    def participants_class
+      @participants_class ||= Class.new(User).tap { |klass| klass.table_name = participants_table_name }
+    end
+
+    def participants_table_created?
+      @participants_table_created.present?
     end
 
     def total_participants_with_gender
@@ -166,16 +215,8 @@ module Statisticable
        [90, 300]]
     end
 
-    def participants_between_ages(from, to)
-      participants.between_ages(from, to)
-    end
-
     def geozones
       Geozone.order("name")
-    end
-
-    def geozone_stats
-      geozones.map { |geozone| GeozoneStats.new(geozone, participants) }
     end
 
     def range_description(start, finish)
@@ -183,6 +224,14 @@ module Statisticable
         I18n.t("stats.age_more_than", start: start)
       else
         I18n.t("stats.age_range", start: start, finish: finish)
+      end
+    end
+
+    def stats_cache(key, &block)
+      if cache
+        Rails.cache.fetch(full_cache_key_for(key), expires_at: Date.current.end_of_day, &block)
+      else
+        block.call
       end
     end
 end

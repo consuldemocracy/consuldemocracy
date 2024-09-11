@@ -1,132 +1,42 @@
+load Rails.root.join("app", "models", "user.rb")
+
 class User < ApplicationRecord
-  include Verification
-  attribute :registering_from_web, default: false
 
-  devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable,
-         :trackable, :validatable, :omniauthable, :password_expirable, :secure_validatable,
-         authentication_keys: [:login]
+def self.unlock_in
+     security = Tenant.current_secrets[:security]
+     lockable = security[:lockable] if security
+     unlock_in_value = lockable[:unlock_in] if lockable        
+#     Rails.logger.info "Retrieved security: #{security.inspect}"    
+#     Rails.logger.info "Retrieved lockable: #{lockable.inspect}"    
+#     Rails.logger.info "Retrieved unlock_in: #{unlock_in_value.inspect}"        
+     (unlock_in_value || 10).to_f.minutes
+end
 
-  acts_as_voter
-  acts_as_paranoid column: :hidden_at
-  include ActsAsParanoidAliases
+def send_devise_notification(notification, *)
+     devise_mailer.send(notification, self, *).deliver_later
+end
 
-  include Graphqlable
 
-  has_one :administrator
-  has_one :moderator
-  has_one :valuator
-  has_one :manager
-  has_one :sdg_manager, class_name: "SDG::Manager", dependent: :destroy
-  has_one :poll_officer, class_name: "Poll::Officer"
-  has_one :organization
-  has_one :lock
-  has_many :flags
-  has_many :identities, dependent: :destroy
-  has_many :debates, -> { with_hidden }, foreign_key: :author_id, inverse_of: :author
-  has_many :proposals, -> { with_hidden }, foreign_key: :author_id, inverse_of: :author
-  has_many :activities
-  has_many :budget_investments, -> { with_hidden },
-    class_name:  "Budget::Investment",
-    foreign_key: :author_id,
-    inverse_of:  :author
-  has_many :comments, -> { with_hidden }, inverse_of: :user
-  has_many :failed_census_calls
-  has_many :notifications
-  has_many :direct_messages_sent,
-    class_name:  "DirectMessage",
-    foreign_key: :sender_id,
-    inverse_of:  :sender
-  has_many :direct_messages_received,
-    class_name:  "DirectMessage",
-    foreign_key: :receiver_id,
-    inverse_of:  :receiver
-  has_many :legislation_answers, class_name: "Legislation::Answer", dependent: :destroy, inverse_of: :user
-  has_many :follows
-  has_many :legislation_annotations,
-    class_name:  "Legislation::Annotation",
-    foreign_key: :author_id,
-    inverse_of:  :author
-  has_many :legislation_proposals,
-    class_name:  "Legislation::Proposal",
-    foreign_key: :author_id,
-    inverse_of:  :author
-  has_many :legislation_questions,
-    class_name:  "Legislation::Question",
-    foreign_key: :author_id,
-    inverse_of:  :author
-  has_many :polls, foreign_key: :author_id, inverse_of: :author
-  has_many :poll_answers,
-    class_name:  "Poll::Answer",
-    foreign_key: :author_id,
-    inverse_of:  :author
-  has_many :poll_pair_answers,
-    class_name:  "Poll::PairAnswer",
-    foreign_key: :author_id,
-    inverse_of:  :author
-  has_many :poll_partial_results,
-    class_name:  "Poll::PartialResult",
-    foreign_key: :author_id,
-    inverse_of:  :author
-  has_many :poll_questions,
-    class_name:  "Poll::Question",
-    foreign_key: :author_id,
-    inverse_of:  :author
-  has_many :poll_recounts,
-    class_name:  "Poll::Recount",
-    foreign_key: :author_id,
-    inverse_of:  :author
-  has_many :related_contents, foreign_key: :author_id, inverse_of: :author, dependent: nil
-  has_many :topics, foreign_key: :author_id, inverse_of: :author
-  belongs_to :geozone
-
-  validates :username, presence: true, if: :username_required?
-  validates :username, uniqueness: { scope: :registering_with_oauth }, if: :username_required?
-  validates :document_number, uniqueness: { scope: :document_type }, allow_nil: true
-
-  validate :validate_username_length
-
-  validates :official_level, inclusion: { in: 0..5 }
-  validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
-
-  validates_associated :organization, message: false
-
-  accepts_nested_attributes_for :organization, update_only: true
-
-  attr_accessor :skip_password_validation, :use_redeemable_code, :login
-
-  scope :administrators, -> { joins(:administrator) }
-  scope :moderators,     -> { joins(:moderator) }
-  scope :organizations,  -> { joins(:organization) }
-  scope :sdg_managers,   -> { joins(:sdg_manager) }
-  scope :officials,      -> { where("official_level > 0") }
-  scope :male,           -> { where(gender: "male") }
-  scope :female,         -> { where(gender: "female") }
-  scope :newsletter,     -> { where(newsletter: true) }
-  scope :for_render,     -> { includes(:organization) }
-  scope :by_document,    ->(document_type, document_number) do
-    where(document_type: document_type, document_number: document_number)
-  end
-  scope :email_digest,   -> { where(email_digest: true) }
-  scope :active,         -> { where(erased_at: nil) }
-  scope :erased,         -> { where.not(erased_at: nil) }
-  scope :public_for_api, -> { all }
-  scope :by_authors,     ->(author_ids) { where(id: author_ids) }
-  scope :by_comments,    ->(commentables) do
-    joins(:comments).where("comments.commentable": commentables).distinct
-  end
-  scope :by_username_email_or_document_number, ->(search_string) do
-    search = "%#{search_string.strip}%"
-    where("username ILIKE ? OR email ILIKE ? OR document_number ILIKE ?", search, search, search)
-  end
-  scope :between_ages, ->(from, to) do
-    where(
-      "date_of_birth > ? AND date_of_birth < ?",
-      to.years.ago.beginning_of_year,
-      from.years.ago.end_of_year
+def erase(erase_reason = nil)
+    update!(
+      erased_at: Time.current,
+      erase_reason: erase_reason,
+      username: nil,
+      document_number: nil,
+      email: nil,
+      unconfirmed_email: nil,
+      phone_number: nil,
+      encrypted_password: "",
+      confirmation_token: nil,
+      reset_password_token: nil,
+      email_verification_token: nil,
+      confirmed_phone: nil,
+      unconfirmed_phone: nil
     )
+    identities.destroy_all
+    remove_roles
   end
 
-  before_validation :clean_document_number
 
   # Get the existing user by email if the provider gives us a verified email.
   def self.first_or_initialize_for_oauth(auth)
@@ -139,10 +49,7 @@ class User < ApplicationRecord
     oauth_verified        = auth.info.verified || auth.info.verified_email || auth.info.email_verified || auth.extra.raw_info.email_verified
     oauth_email_confirmed = oauth_email.present? #&& oauth_verified
     oauth_user            = User.find_by(email: oauth_email) if oauth_email_confirmed
-Rails.logger.info("oauth_email #{oauth_email}")
-Rails.logger.info("oauth_verified #{oauth_verified}")
-Rails.logger.info("oauth_confirmed #{oauth_email_confirmed}")
-Rails.logger.info("oauth_user #{oauth_user}")
+
 
     oauth_user || User.new(
       username:  auth.info.name || auth.uid,
@@ -201,18 +108,19 @@ end
 # Now you have a hash containing the extracted values
 Rails.logger.info("extracted values: #{extracted_values.inspect}")
 
-# Assuming 'extracted_values' is the hash containing extracted values
-saml_username = extracted_values["saml_username"]
-saml_authority_code = extracted_values["saml_authority_code"]
-saml_firstname = extracted_values["saml_firstname"]
-saml_surname = extracted_values["saml_surname"]
-saml_long = extracted_values["saml_longitude"]
-saml_lat = extracted_values["saml_latitude"]
-saml_date_of_birth = extracted_values["saml_date_of_birth"]
-saml_gender = extracted_values["saml_gender"]
-saml_postcode = extracted_values["saml_postcode"]
-saml_email = extracted_values["saml_email"]
-saml_town = extracted_values["saml_town"]
+
+    # Assuming 'extracted_values' is the hash containing extracted values
+    saml_username = extracted_values["saml_username"]
+    saml_authority_code = extracted_values["saml_authority_code"]
+    saml_firstname = extracted_values["saml_firstname"]
+    saml_surname = extracted_values["saml_surname"]
+    saml_long = extracted_values["saml_longitude"]
+    saml_lat = extracted_values["saml_latitude"]
+    saml_date_of_birth = extracted_values["saml_date_of_birth"]
+    saml_gender = extracted_values["saml_gender"]
+    saml_postcode = extracted_values["saml_postcode"]
+    saml_email = extracted_values["saml_email"]
+    saml_town = extracted_values["saml_town"]
 
     oauth_email = saml_email
     oauth_gender = saml_gender
@@ -223,11 +131,9 @@ saml_town = extracted_values["saml_town"]
     oauth_email_confirmed = oauth_email.present?
     saml_email_confirmed = saml_email.present?
    # oauth_email_confirmed = oauth_email.present? && (auth.info.verified || auth.info.verified_email)
-   # oauth_lacode              = auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.17", 0).to_s
-   # oauth_full_name           = auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.2", 0).to_s + "_" + auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.4", 0).to_s
-   # Normalize the saml_postcode by stripping spaces and converting to lowercase
-   normalized_saml_postcode = saml_postcode.strip.downcase if saml_postcode.present?
 
+   # Normalize the saml_postcode by stripping spaces and converting to lowercase
+    normalized_saml_postcode = saml_postcode.strip.downcase if saml_postcode.present?
    
    #lacode comes from list of councils registered with IS
     oauth_lacode_ref          = "9079" # this should be picked up from secrets in future
@@ -235,6 +141,7 @@ saml_town = extracted_values["saml_town"]
     oauth_user            = User.find_by(email: saml_email) if saml_email_confirmed
    
    # Assign Geozone based on the normalized saml_postcode if it exists
+
    if normalized_saml_postcode.present?
    # Find the Postcode instance based on the normalized saml_postcode
    postcode_instance = Postcode.find_by(postcode: normalized_saml_postcode)
@@ -247,8 +154,7 @@ saml_town = extracted_values["saml_town"]
       saml_user.geozone = nil
   end
 end
-   
-   
+
    
    # oauth_username = oauth_full_name ||  oauth_email.split("@").first || auth.info.name || auth.uid
    if saml_username.present? && saml_username != saml_email && saml_username != saml_full_name
@@ -272,289 +178,91 @@ end
   end
 
 
-  def name
-    organization? ? organization.name : username
-  end
-
-  def comment_flags(comments)
-    comment_flags = flags.for_comments(comments)
-    comment_flags.each_with_object({}) { |f, h| h[f.flaggable_id] = true }
-  end
-
-  def voted_in_group?(group)
-    votes.where(votable: Budget::Investment.where(group: group)).exists?
-  end
-
-  def headings_voted_within_group(group)
-    Budget::Heading.where(id: voted_investments.by_group(group).pluck(:heading_id))
-  end
-
-  def voted_investments
-    Budget::Investment.where(id: votes.where(votable: Budget::Investment.all).pluck(:votable_id))
-  end
-
-  def administrator?
-    administrator.present?
-  end
-
-  def moderator?
-    moderator.present?
-  end
-
-  def valuator?
-    valuator.present?
-  end
-
-  def manager?
-    manager.present?
-  end
-
-  def sdg_manager?
-    sdg_manager.present?
-  end
-
-  def poll_officer?
-    poll_officer.present?
-  end
-
-  def organization?
-    organization.present?
-  end
-
-  def verified_organization?
-    organization&.verified?
-  end
-
-  def official?
-    official_level && official_level > 0
-  end
-
-  def add_official_position!(position, level)
-    return if position.blank? || level.blank?
-
-    update! official_position: position, official_level: level.to_i
-  end
-
-  def remove_official_position!
-    update! official_position: nil, official_level: 0
-  end
-
-  def has_official_email?
-    domain = Setting["email_domain_for_officials"]
-    email.present? && ((email.end_with? "@#{domain}") || (email.end_with? ".#{domain}"))
-  end
-
-  def display_official_position_badge?
-    return true if official_level > 1
-
-    official_position_badge? && official_level == 1
-  end
-
-  def block
-    hide
-
-    Debate.hide_all debate_ids
-    Comment.hide_all comment_ids
-    Legislation::Proposal.hide_all legislation_proposal_ids
-    Proposal.hide_all proposal_ids
-    Budget::Investment.hide_all budget_investment_ids
-    ProposalNotification.hide_all ProposalNotification.where(author_id: id).ids
-    remove_roles
-  end
-
-  def full_restore
-    ActiveRecord::Base.transaction do
-      Debate.restore_all debates.where("hidden_at >= ?", hidden_at)
-      Comment.restore_all comments.where("hidden_at >= ?", hidden_at)
-      Legislation::Proposal.restore_all legislation_proposals.only_hidden.where("hidden_at >= ?", hidden_at)
-      Proposal.restore_all proposals.where("hidden_at >= ?", hidden_at)
-      Budget::Investment.restore_all budget_investments.where("hidden_at >= ?", hidden_at)
-      ProposalNotification.restore_all(
-        ProposalNotification.only_hidden.where("hidden_at >= ?", hidden_at).where(author_id: id)
-      )
-
-      restore
-    end
-  end
-
-  def erase(erase_reason = nil)
-    update!(
-      erased_at: Time.current,
-      erase_reason: erase_reason,
-      username: nil,
-      email: nil,
-      unconfirmed_email: nil,
-      phone_number: nil,
-      encrypted_password: "",
-      confirmation_token: nil,
-      reset_password_token: nil,
-      email_verification_token: nil,
-      confirmed_phone: nil,
-      unconfirmed_phone: nil
-    )
-    identities.destroy_all
-    remove_roles
-  end
-
-  def erased?
-    erased_at.present?
-  end
-
-  def remove_roles
-    administrator&.destroy!
-    valuator&.destroy!
-    moderator&.destroy!
-    manager&.destroy!
-    sdg_manager&.destroy!
-  end
-
-  def take_votes_if_erased_document(document_number, document_type)
-    erased_user = User.erased.find_by(document_number: document_number,
-                                      document_type: document_type)
-    if erased_user.present?
-      take_votes_from(erased_user)
-      erased_user.update!(document_number: nil, document_type: nil)
-    end
-  end
-
-  def take_votes_from(other_user)
-    return if other_user.blank?
-
-    Poll::Voter.where(user_id: other_user.id).update_all(user_id: id)
-    Budget::Ballot.where(user_id: other_user.id).update_all(user_id: id)
-    Vote.where("voter_id = ? AND voter_type = ?", other_user.id, "User").update_all(voter_id: id)
-    data_log = "id: #{other_user.id} - #{Time.current.strftime("%Y-%m-%d %H:%M:%S")}"
-    update!(former_users_data_log: "#{former_users_data_log} | #{data_log}")
-  end
-
-  def locked?
-    Lock.find_or_create_by!(user: self).locked?
-  end
-
-  def self.search(term)
-    return none if term.blank?
-
-    search = term.strip
-    where("email = ? OR username ILIKE ?", search, "%#{search}%")
-  end
-
-  def self.username_max_length
-    @username_max_length ||= columns.find { |c| c.name == "username" }.limit || 60
-  end
-
-  def self.minimum_required_age
-    (Setting["min_age_to_participate"] || 16).to_i
-  end
-
-  def show_welcome_screen?
-    verification = Setting["feature.user.skip_verification"].present? ? true : unverified?
-    sign_in_count == 1 && verification && !organization && !administrator?
-  end
-
-  def password_required?
-    return false if skip_password_validation
-
-    super
-  end
-
-  def username_required?
-    !organization? && !erased?
-  end
-
-  def email_required?
-    !erased? && (unverified? || registering_from_web)
-  end
-
-  def locale
-    self[:locale] || I18n.default_locale.to_s
-  end
-
-  def confirmation_required?
-    super && !registering_with_oauth
-  end
-
-  def send_oauth_confirmation_instructions
-    if oauth_email != email || confirmed_at.nil?
-      update(confirmed_at: nil)
-      send_confirmation_instructions
-    end
-    update(oauth_email: nil) if oauth_email.present?
-  end
-
-  def name_and_email
-    "#{name} (#{email})"
-  end
-
-  def age
-    Age.in_years(date_of_birth)
-  end
-
-  def save_requiring_finish_signup
-    begin
-      self.registering_with_oauth = true
-      save!(validate: false)
-    # Devise puts unique constraints for the email the db, so we must detect & handle that
-    rescue ActiveRecord::RecordNotUnique
-      self.email = nil
-      save!(validate: false)
-    end
-    true
-  end
-
-  def ability
-    @ability ||= Ability.new(self)
-  end
-  delegate :can?, :cannot?, to: :ability
-
-  def public_proposals
-    public_activity? ? proposals : proposals.none
-  end
-
-  def public_debates
-    public_activity? ? debates : debates.none
-  end
-
-  def public_comments
-    public_activity? ? comments : comments.none
-  end
-
-  # overwritting of Devise method to allow login using email OR username
+  # overwriting of Devise method to allow login using email OR username
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     login = conditions.delete(:login)
-    where(conditions.to_hash).find_by(["lower(email) = ?", login.downcase]) ||
-    where(conditions.to_hash).find_by(["username = ?", login])
-  end
+    user = where(conditions.to_hash).find_by(["lower(email) = ?", login.downcase]) ||
+    where(conditions.to_hash).find_by(["username = ?", login]) ||
+    where(conditions.to_hash).find_by(["confirmed_phone = ?", login]) ||
+    where(conditions.to_hash).find_by(["document_number = ?", login])
 
-  def self.find_by_manager_login(manager_login)
-    find_by(id: manager_login.split("_").last)
-  end
-
-  def interests
-    followables = follows.map(&:followable)
-    followables.compact.map { |followable| followable.tags.map(&:name) }.flatten.compact.uniq
-  end
-
-  def send_devise_notification(notification, *args)
-    devise_mailer.send(notification, self, *args).deliver_later
-  end
-
-  def add_subscriptions_token
-    update!(subscriptions_token: SecureRandom.base58(32)) if subscriptions_token.blank?
-  end
-
-  private
-
-    def clean_document_number
-      return unless document_number.present?
-
-      self.document_number = document_number.gsub(/[^a-z0-9]+/i, "").upcase
+    if user.nil? && validate_document_number(login)
+    # If no user is found and the login is a valid document, create a new user
+      user=log_in_or_create_ys_user(login)
     end
+  user
+  end
 
-    def validate_username_length
-      validator = ActiveModel::Validations::LengthValidator.new(
-        attributes: :username,
-        maximum: User.username_max_length)
-      validator.validate(self)
+
+ private
+  def self.log_in_or_create_ys_user(username)
+    Rails.logger.info("YS inside log in or create")
+  if existing_user = User.find_by(username: username)
+    Rails.logger.info("YS Existing user")
+    # Log in the existing user
+    return existing_user # Assuming successful login
+  else
+    # Create a new user
+    Rails.logger.info("Create YS - NOT EXISTING USER")
+    ys_username = username
+    ys_password = username
+    ys_document_number = username
+    ys_email = "#{username}@consul.dev"
+    ys_confirmed_at = Time.now
+    Rails.logger.info("YS Trying to create new user")
+    user = User.new(
+      username: ys_username,
+      email: ys_email,
+      password: ys_password,
+      terms_of_service: "1",
+      document_number: ys_document_number,
+      confirmed_at: DateTime.current,
+      verified_at: DateTime.current,
+      residence_verified_at: DateTime.current
+    )
+    Rails.logger.info("User save errors: #{user.errors.full_messages.join(", ")}")
+    Rails.logger.info("YS About to try to sign in the user #{user.inspect}")
+    if user.save
+    # If the user is created successfully, sign them in
+    #sign_in user # Assuming you have access to the sign_in method
+      Rails.logger.info("Create YS - USER created")
+    else
+      Rails.logger.info("Create YS - USER NOT created")
+      Rails.logger.info("User save errors: #{user.errors.full_messages.join(", ")}")
     end
+  end
+  user
+end
+
+
+def self.validate_document_number(document_number)
+      return true if document_number.nil?
+      valid_prefixes = Rails.application.secrets.ys_prefixes || []
+      if valid_prefixes.empty?
+        Rails.logger.warn("No valid document prefixes found in secrets. Validation will fail.")
+        return false
+      end
+
+      # Check if the document number is 16 digits long
+      return false unless document_number.to_s.length == 16
+
+      # Extract the prefix, middle, and suffix parts of the document number
+      prefix = document_number.to_s[0, 6]
+      middle = document_number.to_s[6, 8]
+      suffix = document_number.to_s[14, 2]
+
+      # Check if the prefix exists in the valid prefixes hash
+      return false unless valid_prefixes.include?(prefix)
+
+      # Check if the middle and suffix parts are numeric
+      return false unless middle.match?(/\A\d{8}\z/) && suffix.match?(/\A\d{2}\z/)
+
+      # If all criteria are met, return true
+      Rails.logger.info("Document number is valid")
+      true
+  end
+
+
+
 end

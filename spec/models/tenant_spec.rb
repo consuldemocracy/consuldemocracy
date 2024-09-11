@@ -1,4 +1,5 @@
 require "rails_helper"
+require "active_storage/service/disk_service"
 
 describe Tenant do
   describe ".resolve_host" do
@@ -415,6 +416,52 @@ describe Tenant do
 
       expect { Tenant.switch("typo") { nil } }.to raise_exception(Apartment::TenantNotFound)
       expect { Tenant.switch("notypo") { nil } }.not_to raise_exception
+    end
+  end
+
+  describe "#rename_storage" do
+    after do
+      FileUtils.rm_rf(File.join(ActiveStorage::Blob.service.root, "tenants", "notypo"))
+    end
+
+    it "does nothing when the active storage blob service cannot manage tenants" do
+      allow(Rails.configuration.active_storage).to receive(:service_configurations) do
+        ActiveSupport::ConfigurationFile.parse(Rails.root.join("config/storage.yml")).tap do |config|
+          config[Rails.configuration.active_storage.service.to_s]["service"] = "Disk"
+        end
+      end
+
+      tenant = create(:tenant, schema: "typo")
+
+      expect(File).not_to receive(:rename)
+
+      tenant.update!(schema: "notypo")
+    end
+
+    it "does nothing when the tenant has no files to move" do
+      tenant = create(:tenant, schema: "typo")
+
+      expect(File).not_to receive(:rename)
+
+      tenant.update!(schema: "notypo")
+    end
+
+    it "renames the active storage folder when updating the schema" do
+      tenant = create(:tenant, schema: "typo")
+      Tenant.switch("typo") do
+        Setting.reset_defaults
+        create(:image)
+      end
+
+      expect(File).to receive(:rename).and_call_original
+
+      tenant.update!(schema: "notypo")
+
+      Tenant.switch("notypo") do
+        image = Image.first
+        expect(image.file_path).to include "/notypo/"
+        expect(File.exist?(image.file_path)).to be true
+      end
     end
   end
 

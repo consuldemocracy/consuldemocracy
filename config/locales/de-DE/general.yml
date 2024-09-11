@@ -143,7 +143,6 @@ de:
         poll_ended: "Kann nicht geändert werden, wenn die Abstimmung bereits beendet ist."
   form:
     accept_terms: Ich stimme der %{policy} und den %{conditions} zu
-    accept_terms_title: Ich stimme den Datenschutzrichtlinien und den Nutzungsbedingungen zu
     conditions: Allgemeine Nutzungsbedingungen
     debate: Diskussion
     direct_message: Private Nachricht
@@ -162,7 +161,6 @@ de:
     legislation/process: Beteiligungsverfahren
     legislation/question: Frage
     poll/shift: Arbeitsschicht
-    poll/question/answer: Antwort
     user: Konto
     verification/sms: Telefon
     signature_sheet: Unterschriftenblatt
@@ -177,11 +175,6 @@ de:
   geozones:
     none: Ganze Stadt
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Wir haben festgestellt, dass Sie Internet Explorer verwenden. Für eine verbesserte Anwendung empfehlen wir %{firefox} oder %{chrome}.
-      ie_title: Diese Website ist für Ihren Browser nicht optimiert
     dashboard:
       proposal_header:
         published: Veröffentlicht
@@ -200,9 +193,9 @@ de:
     footer:
       accessibility: Barrierefreiheit
       conditions: Allgemeine Nutzungsbedingungen
-      consul: CONSUL Anwendung
+      consul: CONSUL DEMOCRACY Anwendung
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Die Plattform basiert auf %{consul}, einer %{open_source}.
       open_source: Open-Source Software
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
@@ -572,7 +565,6 @@ de:
         share: "Sie würden mir einen großen Gefallen tun, wenn Sie meinen Vorschlag mit Ihren Freunden, Familie und Kontakten teilen - das wäre perfekt!"
   polls:
     all: "Alle"
-    no_dates: "kein Datum zugewiesen"
     dates: "Von %{open_at} bis %{closed_at}"
     final_date: "Endgültige Nachzählungen/Ergebnisse"
     index:
@@ -677,7 +669,6 @@ de:
       author_deleted: Benutzer*in gelöscht
       email_deleted: E-Mail gelöscht
     back: Zurück
-    check: Auswählen
     check_all: Alle
     check_none: Keinen
     collective: Kollektiv
@@ -762,18 +753,6 @@ de:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegramm"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Besuche
-      debates: Diskussionen
-      proposals: Vorschläge
-      comments: Kommentare
-      proposal_votes: Bewertungen der Vorschläge
-      debate_votes: Bewertungen der Diskussionen
-      comment_votes: Bewertungen der Kommentare
-      votes: Gesamtstimmen
-      verified_users: Verifizierte Benutzer*innen
-      unverified_users: Nicht verifizierte Benutzer*innen
   unauthorized:
     default: Sie sind nicht berechtigt, auf diese Seite zuzugreifen.
     manage:

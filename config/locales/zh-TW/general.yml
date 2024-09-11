@@ -128,7 +128,6 @@ zh-TW:
       invalid_date_range: "日期範圍無效"
   form:
     accept_terms: 我同意%{policy} 和%{conditions}
-    accept_terms_title: 我同意隱私政策和使用條款及條件
     conditions: 使用條款及條件
     debate: 辯論
     direct_message: 私人信息
@@ -141,7 +140,6 @@ zh-TW:
     budget/investment: 投資
     budget/heading: 預算標題
     poll/shift: 輪班
-    poll/question/answer: 回答
     user: 帳戶
     verification/sms: 電話
     signature_sheet: 簽名表
@@ -151,11 +149,6 @@ zh-TW:
   geozones:
     none: 所有城市
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: 我們檢測到您正在使用Internet Explorer來瀏覽。 為了增強體驗，我們建議您使用%{firefox} 或%{chrome}。
-      ie_title: 此網站沒有為您的瀏覽器優化
     dashboard:
       proposal_header:
         published: 發表
@@ -167,9 +160,9 @@ zh-TW:
     footer:
       accessibility: 無障礙功能
       conditions: 使用條款及條件
-      consul: CONSUL 應用程式
+      consul: CONSUL DEMOCRACY 應用程式
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: 此入口網頁使用%{consul}，即是%{open_source}。
       open_source: 開源軟件
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
@@ -414,7 +407,6 @@ zh-TW:
         support_button: 支持此建議
   polls:
     all: "所有"
-    no_dates: "未分配日期"
     dates: "從%{open_at} 到%{closed_at}"
     final_date: "最終驗票/結果"
     index:
@@ -506,7 +498,6 @@ zh-TW:
     author_info:
       author_deleted: 用戶已刪除
     back: 返回
-    check: 選擇
     check_all: 所有
     check_none: 無
     collective: 集體
@@ -568,18 +559,6 @@ zh-TW:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: 訪問
-      debates: 辯論
-      proposals: 建議
-      comments: 評論
-      proposal_votes: 對建議的投票數
-      debate_votes: 對辯論的投票數
-      comment_votes: 對評論的投票數
-      votes: 投票總數
-      verified_users: 已核實的用戶
-      unverified_users: 未經核實的用戶
   unauthorized:
     default: 您沒有權限訪問此頁面。
     manage:

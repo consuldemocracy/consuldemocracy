@@ -35,7 +35,7 @@ fr:
     document_verifications:
       already_verified: Ce compte utilisateur est déjà vérifié.
       has_no_account: Afin de créer un compte, aller sur %{link} et cliquer sur <b>'S'enregistrer'</b> en haut à gauche de l'écran.
-      link: Consul
+      link: CONSUL DEMOCRACY
       in_census_has_following_permissions: "Cet utilisateur peut participer à la plateforme avec les permissions suivantes :"
       not_in_census: Ce document n'est pas enregistré.
       not_in_census_info: "Les citoyens non recensés peuvent participer avec les permissions suivantes :"

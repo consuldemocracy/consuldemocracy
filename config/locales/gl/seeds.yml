@@ -1,5 +1,18 @@
 gl:
   seeds:
+    admin_notifications:
+      budget:
+        title: "Últimos días para crear proxectos de Orzamentos Participativos!"
+        body: "Date présa e crea unha proposta antes de que acabe o prazo!"
+      help:
+        title: "Axúdanos coa tradución de Consul Democracy"
+        body: "Se dominas un idioma, axúdanos coa tradución de Consul Democracy!"
+      map:
+        title: "Agora xa podes xeolocalizar propostas e investimentos"
+        body: "Agora cando creas unha proposta ou un investimento podes indicar un punto no mapa."
+      proposal:
+        title: "Tes algunha proposta?"
+        body: "Recorda que podes crear unha proposta coas túas ideas, e a xente pode debatelas e apoialas."
     settings:
       official_level_1_name: Cargo público 1
       official_level_2_name: Cargo público 2
@@ -14,6 +27,27 @@ gl:
     organizations:
       human_rights: Dereitos Humanos
       neighborhood_association: Asociación Veciñan
+    cards:
+      budget:
+        title: "Como funcionan os orzamentos participativos?"
+        description: "Os orzamentos participativos permiten aos cidadáns propoñer e decidir directamente como gastar parte do orzamento, cun seguimento e avaliación rigorosa das propostas por parte da institución. Máxima eficacia e control con satisfacción para todos."
+        link_text: "Máis información sobre os orzamentos participativos"
+        label: "Orzamentos participativos"
+      debate:
+        title: "Como funcionan os debates?"
+        description: "Calquera persoa pode abrir conversas sobre calquera tema, creando espazos separados onde a xente poida discutir o tema proposto. Os debates son valorados por todos, para destacar os temas máis importantes."
+        link_text: "Máis información sobre os debates"
+        label: "Debates"
+      header:
+        title: "CONSUL DEMOCRACY"
+        description: "Software libre para a participación cidadá."
+        link_text: "Máis información"
+        label: "Benvido/a a"
+      proposal:
+        title: "Como funcionan as propostas cidadás?"
+        description: "Un espazo para que calquera poida crear unha proposta cidadá e buscar apoios. As propostas que acaden suficientes apoios serán votadas e así, xuntos, podemos decidir os asuntos que nos importan."
+        link_text: "Máis información sobre as propostas"
+        label: "Propostas cidadás"
     categories:
       associations: Asociacións
       culture: Cultura
@@ -36,11 +70,18 @@ gl:
       groups:
         all_city: Toda a Cidade
         districts: Zonas
+      phases:
+        description: "Descrición en %{language}"
+        summary: "Resumo en %{language}"
       statuses:
         studying_project: Estudando o proxecto
         bidding: Licitación
         executing_project: Executando o proxecto
         executed: Executado
+    legislation:
+      draft_versions:
+        title: "Versión %{number}"
+        body: "Versión preliminar en %{language}"
     polls:
       current_poll: "Votación aberta"
       current_poll_geozone_restricted: "Votación aberta restrinxida por zona xeográfica"

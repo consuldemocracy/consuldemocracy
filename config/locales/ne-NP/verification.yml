@@ -46,7 +46,6 @@ ne:
           success: निवास प्रमाणित
       new:
         accept_terms_text: म जनगणनाको %{terms_url} स्वीकार गर्छु
-        accept_terms_text_title: म जनगणनाको पहुँचका सर्तहरू स्वीकार गर्दछु
         document_number: कागजात नम्बर
         document_number_help_title: मद्दत
         document_number_help_text: "<strong>DNI</strong>: 12345678A<br> <strong>पासपोर्ट</strong>: AAA000001<br> <strong>निवास कार्ड</strong>: X1234567P"

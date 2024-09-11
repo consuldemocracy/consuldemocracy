@@ -60,10 +60,6 @@ class User < ApplicationRecord
            class_name: "Poll::Answer",
            foreign_key: :author_id,
            inverse_of: :author
-  has_many :poll_pair_answers,
-           class_name: "Poll::PairAnswer",
-           foreign_key: :author_id,
-           inverse_of: :author
   has_many :poll_partial_results,
            class_name: "Poll::PartialResult",
            foreign_key: :author_id,
@@ -119,22 +115,32 @@ class User < ApplicationRecord
     search = "%#{search_string.strip}%"
     where("username ILIKE ? OR email ILIKE ? OR document_number ILIKE ?", search, search, search)
   end
-  scope :between_ages, ->(from, to) do
-    where(
-      "date_of_birth > ? AND date_of_birth < ?",
-      to.years.ago.beginning_of_year,
-      from.years.ago.end_of_year
-    )
+  scope :between_ages, ->(from, to, at_time: Time.current) do
+    start_date = at_time - (to + 1).years + 1.day
+    end_date = at_time - from.years
+
+    where(date_of_birth: start_date.beginning_of_day..end_date.end_of_day)
   end
 
   before_validation :clean_document_number
 
   # Get the existing user by email if the provider gives us a verified email.
   def self.first_or_initialize_for_oauth(auth)
+  Rails.logger.info('Attributes in auth.info:')
+    auth.info.each do |key, value|
+    Rails.logger.info("#{key}: #{value}")
+  end
+
     oauth_email           = auth.info.email
-    oauth_verified        = auth.info.verified || auth.info.verified_email || auth.info.email_verified
-    oauth_email_confirmed = oauth_email.present? && oauth_verified
+    oauth_verified        = auth.info.verified || auth.info.verified_email || auth.info.email_verified || auth.extra.raw_info.email_verified
+    oauth_email_confirmed = oauth_email.present? # && oauth_verified
     oauth_user            = User.find_by(email: oauth_email) if oauth_email_confirmed
+#Rails.logger.info("auth verified #{auth.info.verified}")
+#Rails.logger.info("google email verified #{auth.info.extra.raw_info.email_verified}")
+Rails.logger.info("oauth_email #{oauth_email}")
+Rails.logger.info("oauth_verified #{oauth_verified}")
+Rails.logger.info("oauth_confirmed #{oauth_email_confirmed}")
+Rails.logger.info("oauth_user #{oauth_user}")
 
     oauth_user || User.new(
       username: auth.info.name || auth.uid,
@@ -142,9 +148,62 @@ class User < ApplicationRecord
       oauth_email: oauth_email,
       password: Devise.friendly_token[0, 20],
       terms_of_service: "1",
-      confirmed_at: oauth_email_confirmed ? DateTime.current : nil
+      confirmed_at: oauth_email_confirmed ? DateTime.current : nil,
+      verified_at: DateTime.current ,
+      residence_verified_at:  DateTime.current
     )
   end
+  
+
+# Get the existing user by email if the provider gives us a verified email.
+  def self.first_or_initialize_for_saml(auth)
+    # Log the attributes in auth.info
+  Rails.logger.info('Attributes in auth.info:')
+    auth.info.each do |key, value|
+    Rails.logger.info("#{key}: #{value}")
+  end
+  Rails.logger.info( auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.1", 0).to_s)
+  Rails.logger.info( auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.2", 0).to_s)
+ Rails.logger.info( auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.3", 0).to_s)
+  Rails.logger.info( auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.4", 0).to_s)
+  Rails.logger.info( auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.5", 0).to_s)
+   Rails.logger.info( auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.6", 0).to_s)
+    oauth_username           = auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.1", 0).to_s
+    oauth_email           = auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.22", 0).to_s
+    oauth_email_confirmed = oauth_email.present?
+   # oauth_email_confirmed = oauth_email.present? && (auth.info.verified || auth.info.verified_email)
+    oauth_lacode              = auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.17", 0).to_s
+    oauth_full_name           = auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.2", 0).to_s + "_" + auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.4", 0).to_s
+    oauth_date_of_birth = auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.8", 0).to_s
+    oauth_gender = auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.9", 0).to_s
+    #lacode comes from list of councils registered with IS
+    oauth_lacode_ref          = "9079"
+    oauth_lacode_confirmed    = oauth_lacode == oauth_lacode_ref
+    oauth_user            = User.find_by(email: oauth_email) if oauth_email_confirmed
+  #  oauth_username = oauth_full_name ||  oauth_email.split("@").first || auth.info.name || auth.uid
+   # if oauth_username == oauth_full_name
+   #      oauth_username = "#{oauth_full_name}_#{rand(100..999)}"
+   #   end
+  if oauth_username.present? && oauth_username != oauth_email && oauth_username != oauth_full_name
+      oauth_username = oauth_username
+   else
+   # If the original value of oauth_username is the same as oauth_email or oauth_full_name, add a random numbe
+      oauth_username = "#{oauth_full_name}_#{rand(100..999)}"
+   end
+    oauth_user || User.new(
+      username:  oauth_username,
+      email: oauth_email,
+      #date_of_birth: oauth_date_of_birth,
+      gender: oauth_gender,
+      password: Devise.friendly_token[0, 20],
+      terms_of_service: "1",
+      confirmed_at: DateTime.current,
+      verified_at: DateTime.current ,
+      residence_verified_at:  DateTime.current
+    )
+  end
+
+
 
   def name
     organization? ? organization.name : username
@@ -294,7 +353,16 @@ class User < ApplicationRecord
   def take_votes_from(other_user)
     return if other_user.blank?
 
-    Poll::Voter.where(user_id: other_user.id).update_all(user_id: id)
+    with_lock do
+      Poll::Voter.where(user_id: other_user.id).find_each do |poll_voter|
+        if Poll::Voter.where(poll: poll_voter.poll, user_id: id).any?
+          poll_voter.delete
+        else
+          poll_voter.update_column(:user_id, id)
+        end
+      end
+    end
+
     Budget::Ballot.where(user_id: other_user.id).update_all(user_id: id)
     Vote.where("voter_id = ? AND voter_type = ?", other_user.id, "User").update_all(voter_id: id)
     data_log = "id: #{other_user.id} - #{Time.current.strftime("%Y-%m-%d %H:%M:%S")}"
@@ -340,7 +408,7 @@ class User < ApplicationRecord
   end
 
   def locale
-    self[:locale] || I18n.default_locale.to_s
+    self[:locale] || Setting.default_locale.to_s
   end
 
   def confirmation_required?
@@ -409,7 +477,7 @@ class User < ApplicationRecord
     followables.compact.map { |followable| followable.tags.map(&:name) }.flatten.compact.uniq
   end
 
-  def send_devise_notification(notification, *args)
+  def send_devise_notification(notification, *)
     devise_mailer.send(notification, self, *args).deliver_later
   end
 

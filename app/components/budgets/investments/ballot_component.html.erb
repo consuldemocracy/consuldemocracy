@@ -10,15 +10,14 @@
         </p>
       <% end %>
       <% if investment.should_show_ballots? %>
-        <%= button_to budget_ballot_line_path(id: investment.id,
+        <%= button_to t("budgets.ballots.show.remove"),
+                      budget_ballot_line_path(id: investment.id,
                                               budget_id: investment.budget_id,
                                               investments_ids: investment_ids),
                       class: "button button-remove-support expanded",
                       method: :delete,
                       remote: true,
-                      "aria-label": remove_vote_aria_label do %>
-          <%= t("budgets.ballots.show.remove") %>
-        <% end %>
+                      "aria-label": remove_vote_aria_label %>
       <% end %>
     </div>
   <% else %>
@@ -29,16 +28,15 @@
         </p>
       <% end %>
       <% if investment.should_show_ballots? %>
-        <%= button_to budget_ballot_lines_path(investment_id: investment.id,
+        <%= button_to t("budgets.investments.investment.add"),
+                      budget_ballot_lines_path(investment_id: investment.id,
                                                budget_id: investment.budget_id,
                                                investments_ids: investment_ids),
                       class: "button button-support expanded",
                       title: t("budgets.investments.investment.support_title"),
                       method: :post,
                       remote: true,
-                      "aria-label": vote_aria_label do %>
-          <%= t("budgets.investments.investment.add") %>
-        <% end %>
+                      "aria-label": vote_aria_label %>
       <% end %>
     </div>
   <% end %>

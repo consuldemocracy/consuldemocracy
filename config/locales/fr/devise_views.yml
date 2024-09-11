@@ -103,7 +103,6 @@ fr:
           submit: S'enregistrer
           terms: En vous enregistrant, vous acceptez les %{terms}
           terms_link: Conditions d'utilisation
-          terms_title: En vous enregistrant, vous acceptez les conditions d'utilisation.
           title: S'enregistrer
           username_is_available: Nom d'utilisateur disponible
           username_is_not_available: Nom d'utilisateur déjà utilisé

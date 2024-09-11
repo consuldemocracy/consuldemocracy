@@ -20,14 +20,14 @@ describe Abilities::Administrator do
   let(:future_poll) { create(:poll, :future) }
   let(:current_poll_question) { create(:poll_question) }
   let(:future_poll_question) { create(:poll_question, poll: future_poll) }
-  let(:current_poll_question_answer) { create(:poll_question_answer) }
-  let(:future_poll_question_answer) { create(:poll_question_answer, poll: future_poll) }
-  let(:current_poll_answer_video) { create(:poll_answer_video, answer: current_poll_question_answer) }
-  let(:future_poll_answer_video) { create(:poll_answer_video, answer: future_poll_question_answer) }
-  let(:current_poll_answer_image) { build(:image, imageable: current_poll_question_answer) }
-  let(:future_poll_answer_image) { build(:image, imageable: future_poll_question_answer) }
-  let(:current_poll_answer_document) { build(:document, documentable: current_poll_question_answer) }
-  let(:future_poll_answer_document) { build(:document, documentable: future_poll_question_answer) }
+  let(:current_poll_question_option) { create(:poll_question_option) }
+  let(:future_poll_question_option) { create(:poll_question_option, poll: future_poll) }
+  let(:current_poll_option_video) { create(:poll_option_video, option: current_poll_question_option) }
+  let(:future_poll_option_video) { create(:poll_option_video, option: future_poll_question_option) }
+  let(:current_poll_option_image) { build(:image, imageable: current_poll_question_option) }
+  let(:future_poll_option_image) { build(:image, imageable: future_poll_question_option) }
+  let(:current_poll_option_document) { build(:document, documentable: current_poll_question_option) }
+  let(:future_poll_option_document) { build(:document, documentable: future_poll_question_option) }
 
   let(:past_process) { create(:legislation_process, :past) }
   let(:past_draft_process) { create(:legislation_process, :past, :not_published) }
@@ -131,27 +131,27 @@ describe Abilities::Administrator do
   it { should_not be_able_to(:update, current_poll_question) }
   it { should_not be_able_to(:destroy, current_poll_question) }
 
-  it { should be_able_to(:read, Poll::Question::Answer) }
-  it { should be_able_to(:order_answers, Poll::Question::Answer) }
-  it { should be_able_to(:create, future_poll_question_answer) }
-  it { should be_able_to(:update, future_poll_question_answer) }
-  it { should be_able_to(:destroy, future_poll_question_answer) }
-  it { should_not be_able_to(:create, current_poll_question_answer) }
-  it { should_not be_able_to(:update, current_poll_question_answer) }
-  it { should_not be_able_to(:destroy, current_poll_question_answer) }
+  it { should be_able_to(:read, Poll::Question::Option) }
+  it { should be_able_to(:order_options, Poll::Question::Option) }
+  it { should be_able_to(:create, future_poll_question_option) }
+  it { should be_able_to(:update, future_poll_question_option) }
+  it { should be_able_to(:destroy, future_poll_question_option) }
+  it { should_not be_able_to(:create, current_poll_question_option) }
+  it { should_not be_able_to(:update, current_poll_question_option) }
+  it { should_not be_able_to(:destroy, current_poll_question_option) }
 
-  it { should be_able_to(:create, future_poll_answer_video) }
-  it { should be_able_to(:update, future_poll_answer_video) }
-  it { should be_able_to(:destroy, future_poll_answer_video) }
-  it { should_not be_able_to(:create, current_poll_answer_video) }
-  it { should_not be_able_to(:update, current_poll_answer_video) }
-  it { should_not be_able_to(:destroy, current_poll_answer_video) }
+  it { should be_able_to(:create, future_poll_option_video) }
+  it { should be_able_to(:update, future_poll_option_video) }
+  it { should be_able_to(:destroy, future_poll_option_video) }
+  it { should_not be_able_to(:create, current_poll_option_video) }
+  it { should_not be_able_to(:update, current_poll_option_video) }
+  it { should_not be_able_to(:destroy, current_poll_option_video) }
 
-  it { should be_able_to(:destroy, future_poll_answer_image) }
-  it { should_not be_able_to(:destroy, current_poll_answer_image) }
+  it { should be_able_to(:destroy, future_poll_option_image) }
+  it { should_not be_able_to(:destroy, current_poll_option_image) }
 
-  it { should be_able_to(:destroy, future_poll_answer_document) }
-  it { should_not be_able_to(:destroy, current_poll_answer_document) }
+  it { should be_able_to(:destroy, future_poll_option_document) }
+  it { should_not be_able_to(:destroy, current_poll_option_document) }
 
   it { is_expected.to be_able_to :manage, Dashboard::AdministratorTask }
   it { is_expected.to be_able_to :manage, dashboard_administrator_task }

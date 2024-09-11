@@ -162,7 +162,7 @@ en:
     legislation/process: process
     legislation/question: question
     poll/shift: Shift
-    poll/question/answer: Answer
+    poll/question/option: Answer
     user: Account
     verification/sms: phone
     signature_sheet: Signature sheet
@@ -228,6 +228,7 @@ en:
           zero: "You don't have new notifications"
         notifications: Notifications
       sdg: "SDG"
+    skip_to_main_content: "Skip to main content"
   notifications:
     index:
       empty_notifications: You don't have new notifications.
@@ -269,6 +270,10 @@ en:
       sign_in: Sign in with Wordpress
       sign_up: Sign up with Wordpress
       name: Wordpress
+    saml:
+      sign_in: Sign in with Saml
+      sign_up: Sign up with Saml
+      name: Saml
     twitter:
       sign_in: Sign in with Twitter
       sign_up: Sign up with Twitter
@@ -568,7 +573,6 @@ en:
         share: "And if you also do me the great favor of sharing my proposal with your friends, family and contacts, it would be perfect!"
   polls:
     all: "All"
-    no_dates: "no date assigned"
     dates: "From %{open_at} to %{closed_at}"
     final_date: "Final recounts/Results"
     index:
@@ -580,7 +584,7 @@ en:
       participate_button_expired: "Poll ended"
       no_geozone_restricted: "All city"
       geozone_restricted: "Districts"
-      geozone_info: "Can participate people in the Census of: "
+      geozone_info: "Only residents in the following areas can participate: "
       already_answer: "You already have participated in this poll"
       not_logged_in: "You must sign in or sign up to participate"
       unverified: "You must verify your account to participate"
@@ -673,9 +677,8 @@ en:
       author_deleted: User deleted
       email_deleted: Email deleted
     back: Go back
-    check: Select
-    check_all: All
-    check_none: None
+    check_all: Select all
+    check_none: Select none
     collective: Collective
     flag: Flag as inappropriate
     follow: "Follow"
@@ -760,18 +763,6 @@ en:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Visits
-      debates: Debates
-      proposals: Proposals
-      comments: Comments
-      proposal_votes: Votes on proposals
-      debate_votes: Votes on debates
-      comment_votes: Votes on comments
-      votes: Total votes
-      verified_users: Verified users
-      unverified_users: Unverified users
   unauthorized:
     default: You do not have permission to access this page.
     manage:

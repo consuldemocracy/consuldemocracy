@@ -1,0 +1,75 @@
+.social-share-button .ssb-icon {
+  background-image: none;
+  color: #fff;
+  height: $icon-width;
+  line-height: $icon-width;
+  text-align: center;
+  width: $icon-width;
+
+  &::before {
+    font-size: calc(#{$icon-width} / 2);
+    margin-right: 0;
+  }
+
+  &:hover,
+  &:focus {
+    background: #fff;
+  }
+}
+
+.ssb-twitter {
+  @include has-fa-icon(twitter, brands);
+  background: #45b0e3;
+
+  &:hover,
+  &:focus {
+    color: #40a2d1;
+  }
+}
+
+
+.ssb-facebook {
+  @include has-fa-icon(facebook-f, brands);
+  background: #3b5998;
+
+  &:hover,
+  &:focus {
+    color: #354f88;
+  }
+}
+
+.ssb-telegram {
+  @include has-fa-icon(telegram-plane, brands);
+  background: #08c;
+
+  &:hover,
+  &:focus {
+    color: #40a2d1;
+  }
+}
+
+.ssb-whatsapp_app {
+  @include has-fa-icon(whatsapp, brands);
+  background: #43d854;
+
+  &:hover,
+  &:focus {
+    color: #43d854;
+  }
+}
+
+@include breakpoint(medium) {
+
+  .ssb-telegram,
+  .ssb-whatsapp_app {
+    display: none !important;
+  }
+}
+
+.share-supported {
+  text-align: center;
+
+  .social-share-button {
+    display: inline-block;
+  }
+}

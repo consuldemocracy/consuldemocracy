@@ -488,6 +488,7 @@ en:
         link_text: Link text
         link_url: Link URL
         columns: Number of columns
+        order: Position
       widget/card/translation:
         label: Label (optional)
         title: Title
@@ -550,7 +551,8 @@ en:
         geozone:
           attributes:
             geojson:
-              invalid: "The GeoJSON provided does not follow the correct format. It must follow the \"Polygon\" or \"MultiPolygon\" type format."
+              invalid: "The GeoJSON provided does not follow the correct format. It must be a valid Geojson Feature and follow the \"Geometry\" type format."
+              invalid_coordinates: "The GeoJSOn provided does not use Coordinates in the required \"Longitude, Latitude\" format"
         image:
           attributes:
             attachment:

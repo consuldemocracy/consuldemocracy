@@ -45,7 +45,6 @@ ar:
           success: تم التحقق من الإقامة
       new:
         accept_terms_text: أقبل %{terms_url} التعداد
-        accept_terms_text_title: أوافق على أحكام وشروط النّفاذ إلى التعداد
         document_number: رقم الوثيقة
         document_number_help_title: المساعدة
         document_number_help_text: "<strong>DNI</strong>: 12345678A<br> <strong>جواز السّفر</strong>: AAA000001<br> <strong>بطاقة الإقامة</strong>: X1234567P"

@@ -7,9 +7,6 @@ tr:
         direct_message: "İletiniz gönderildi."
         poll: "Oylama oluşturuldu."
         poll_booth: "Kabin oluşturuldu."
-        poll_question_answer: "Yanıt oluşturuldu"
-        poll_question_answer_video: "Video oluşturuldu"
-        poll_question_answer_image: "Görsel yüklendi"
         proposal: "Önerge oluşturuldu."
         proposal_notification: "İletiniz doğru şekilde gönderildi."
         budget_investment: "Yatırım bütçesi oluşturuldu."
@@ -17,6 +14,7 @@ tr:
         support: "Yatırım desteklendi"
         topic: "Konu oluşturuldu."
         valuator_group: "Bilirkişi grubu oluşturuldu"
+        vote: "Oy eklendi"
       save_changes:
         notice: Değişiklikler kaydedildi
       update:
@@ -33,5 +31,5 @@ tr:
       destroy:
         budget_investment: "Yatırım projesi silindi."
         topic: "Konu silindi."
-        poll_question_answer_video: "Yanıt videosu silindi."
         valuator_group: "Bilirkişi grubu silindi"
+        vote: "Oy silindi"

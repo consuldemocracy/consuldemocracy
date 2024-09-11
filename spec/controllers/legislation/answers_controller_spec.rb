@@ -10,20 +10,6 @@ describe Legislation::AnswersController do
     let(:question_option) { create(:legislation_question_option, question: question, value: "Yes") }
     let(:user) { create(:user, :level_two) }
 
-    it "creates an ahoy event" do
-      sign_in user
-
-      post :create, params: {
-        process_id: legal_process.id,
-        question_id: question.id,
-        legislation_answer: {
-          legislation_question_option_id: question_option.id
-        }
-      }
-      expect(Ahoy::Event.where(name: :legislation_answer_created).count).to eq 1
-      expect(Ahoy::Event.last.properties["legislation_answer_id"]).to eq Legislation::Answer.last.id
-    end
-
     it "creates an answer if the process debate phase is open" do
       sign_in user
 

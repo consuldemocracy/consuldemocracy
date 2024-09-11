@@ -73,15 +73,23 @@ en:
       milestones: Milestones
     investments:
       form:
-        title: "Create a budget investment"
+        title: "Submit a project proposal"
+        heading_note: "Select the area this proposal applies to"
         subtitle: "%{heading} (%{price})"
+        subtitle_note: "What is your project or application called?"
         subtitle_without_price: "%{heading}"
+        subtitle_without_price_note: "subtitle help text"
         tag_category_label: "Categories"
         tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
         tags_label: Tags
         tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
         map_location: "Map location"
         map_location_instructions: "Navigate the map to the location and place the marker."
+        location_note: "Tell us which place this proposal affects"
+        organization_name_note: "Tell us about your organization and any partners involved in this project"
+        description_note: "Describe your project clearly. See the Application Guidance for information on what to include"
+        estimated_price: "Estimated Cost"
+        estimated_price_note: "How much will this project cost?"
       index:
         title: Participatory budgeting
         unfeasible: Unfeasible investment projects
@@ -106,7 +114,7 @@ en:
           change_vote_link: "change your vote"
           different_heading_assigned: "You have active votes in another heading: %{heading_link}"
           change_ballot: "If you change your mind you can remove your votes in %{check_ballot} and start again."
-          check_ballot_link: "submit my ballot"
+          check_ballot_link: "check my votes"
           zero: You have not voted any investment project in this group.
           verified_only: "To create a new budget investment %{verify}."
           create: "Create a budget investment"
@@ -155,10 +163,10 @@ en:
           other: "%{count} supports"
           zero: No supports
       header:
-        check_ballot: "Submit my ballot"
+        check_ballot: "Check my votes"
         different_heading_assigned: "You have active votes in another heading: %{heading_link}"
         change_ballot: "If you change your mind you can remove your votes in %{check_ballot} and start again."
-        check_ballot_link: "submit my ballot"
+        check_ballot_link: "check my votes"
         price: "Total budget"
       votes:
         already_supported: "You have already supported this investment project. Share it!"

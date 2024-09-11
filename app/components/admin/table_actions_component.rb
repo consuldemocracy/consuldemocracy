@@ -6,8 +6,8 @@ class Admin::TableActionsComponent < ApplicationComponent
     @options = options
   end
 
-  def action(action_name, **args)
-    render Admin::ActionComponent.new(action_name, record, "aria-label": true, **args)
+  def action(action_name, **)
+    render Admin::ActionComponent.new(action_name, record, "aria-label": true, **)
   end
 
   private
@@ -38,7 +38,6 @@ class Admin::TableActionsComponent < ApplicationComponent
 
     def destroy_options
       {
-        method: :delete,
         confirm: options[:destroy_confirmation] || true
       }.merge(options[:destroy_options] || {})
     end

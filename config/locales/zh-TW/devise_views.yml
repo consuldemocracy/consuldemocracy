@@ -103,7 +103,6 @@ zh-TW:
           submit: 註冊
           terms: 註冊即表示您接受 %{terms}
           terms_link: 使用條款及條件
-          terms_title: 註冊即表示您接受使用條款及條件
           title: 註冊
           username_is_available: 可用的用戶名
           username_is_not_available: 用戶名已被使用

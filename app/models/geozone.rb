@@ -22,26 +22,66 @@ class Geozone < ApplicationRecord
   end
 
   def outline_points
-    normalized_coordinates.map { |longlat| [longlat.last, longlat.first] }
+    normalize(geojson)
+  end
+
+  def coordinates
+    JSON.parse(geojson)["geometry"]["coordinates"] if geojson.present?
   end
 
   private
 
-    def normalized_coordinates
+    def normalize(geojson)
       if geojson.present?
-        if geojson.match(/"coordinates"\s*:\s*\[{4}/)
-          coordinates.reduce([], :concat).reduce([], :concat)
-        elsif geojson.match(/"coordinates"\s*:\s*\[{3}/)
-          coordinates.reduce([], :concat)
+        parsed_geojson = JSON.parse(geojson)
+
+        # Handle FeatureCollection
+        if parsed_geojson["type"] == "FeatureCollection"
+          parsed_geojson["features"].each do |feature|
+            feature["properties"] ||= {}
+          end
+          parsed_geojson.to_json
+
+        # Handle Feature
+        elsif parsed_geojson["type"] == "Feature"
+          parsed_geojson["properties"] ||= {}
+          wrap_in_feature_collection(parsed_geojson)
+
+        # Handle Geometry alone
+        elsif parsed_geojson["geometry"]
+          parsed_geojson["properties"] ||= {}
+          wrap_in_feature_collection(wrap_in_feature(parsed_geojson["geometry"]))
+
+        # Handle raw geometry (coordinates) which should be a Feature
+        elsif parsed_geojson["type"] && parsed_geojson["coordinates"]
+          wrap_in_feature_collection(wrap_in_feature(parsed_geojson))
+
+        # Handle a valid geometry with type and coordinates
+        elsif parsed_geojson["geometry"] &&
+              parsed_geojson["geometry"]["type"] &&
+              parsed_geojson["geometry"]["coordinates"]
+          wrapped_feature = wrap_in_feature(parsed_geojson["geometry"])
+          wrapped_feature["properties"] ||= {}
+          wrap_in_feature_collection(wrapped_feature)
+
         else
-          coordinates
+          raise ArgumentError, "Invalid GeoJSON fragment"
         end
-      else
-        []
       end
     end
 
-    def coordinates
-      JSON.parse(geojson)["geometry"]["coordinates"]
+    def wrap_in_feature(geometry)
+      {
+        type: "Feature",
+        geometry: geometry,
+        properties: {}
+      }
+    end
+
+    def wrap_in_feature_collection(feature)
+      {
+        type: "FeatureCollection",
+        features: [feature]
+      }.to_json
     end
 end

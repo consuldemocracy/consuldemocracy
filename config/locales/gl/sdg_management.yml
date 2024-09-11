@@ -1,18 +1,50 @@
 gl:
   sdg_management:
+    actions:
+      edit: "Xestionar obxectivos e metas"
+    header:
+      title: "Contido ODS"
     homepage:
+      title: "Configuración da páxina de inicio"
       header:
         create: "Crear cabeceira"
+        no_cards: "Non hai cabeceira"
         title: "Cabeceira"
+      create_card: "Crear tarxeta de %{phase}"
+      no_cards: "Non hai tarxetas para esta fase"
     menu:
       budget_investments: "Orzamentos participativos"
       debates: "Debates"
       legislation_processes: "Procesos lexislativos"
+      legislation_proposals: "Propostas lexislativas"
       polls: "Votacións"
       proposals: "Propostas cidadás"
+      sdg_content: "Obxectivos e metas"
+      sdg_homepage: "Páxina de inicio ODS"
+    local_targets:
+      create:
+        notice: "Meta local creada correctamente"
+      destroy:
+        notice: "Meta local eliminada correctamente"
+      edit:
+        title: "Editar meta local"
+      form:
+        code: "O código debe comezar co código da meta seleccionada seguido dun punto"
+        description: "Esta descrición amosarase como axuda aos usuarios."
+      index:
+        new: "Crear meta local"
+      new:
+        title: "Nova meta local"
+      update:
+        notice: "Meta local actualizada correctamente"
     relations:
       index:
         filter: "Filtro"
         filters:
           all: "Todo"
           pending_sdg_review: "Pendentes"
+          sdg_reviewed: "Marcado como revisado"
+      update:
+        notice: "%{relatable} actualizado correctamente"
+      update_and_review:
+        notice: "%{relatable} actualizado correctamente e marcado como revisado"

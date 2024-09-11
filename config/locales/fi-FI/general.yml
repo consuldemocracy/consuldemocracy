@@ -92,16 +92,12 @@ fi:
     proposal: Ehdotus
     proposal_notification: "Ilmoitus"
     budget/investment: Sijoitus
-    poll/question/answer: Vastaus
     user: Tili
     verification/sms: puhelin
     document: Asiakirja
     topic: Aihe
     image: Kuva
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
     dashboard:
       proposal_totals:
         supports:
@@ -109,7 +105,7 @@ fi:
     footer:
       conditions: Ehdot ja käyttöehdot
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       open_source: avoimen lähdekoodin ohjelmisto
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       privacy: Tietosuojakäytäntö
@@ -281,7 +277,6 @@ fi:
     author_info:
       author_deleted: Käyttäjä poistettu
     back: Takaisin
-    check: Valitse
     check_all: Kaikki
     check_none: Ei mitään
     follow: "Seuraa"
@@ -305,10 +300,6 @@ fi:
       title: Suositukset
   social:
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      proposals: Ehdotukset
-      comments: Kommentit
   users:
     login_to_comment: "Sinun tulee %{signin} tai %{signup} kommentoidaksesi."
     signin: "kirjaudu"

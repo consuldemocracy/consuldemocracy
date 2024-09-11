@@ -7,9 +7,6 @@ nl:
         direct_message: "Uw boodschap is verzonden."
         poll: "Stemronde is aangemaakt."
         poll_booth: "Booth is aangemaakt."
-        poll_question_answer: "Antwoord is aangemaakt"
-        poll_question_answer_video: "Video is aangemaakt"
-        poll_question_answer_image: "Afbeelding is geupload"
         proposal: "Voorstel is aangemaakt."
         proposal_notification: "Uw boodschap is verzonden."
         budget_investment: "Budget investering is aangemaakt."
@@ -32,5 +29,4 @@ nl:
       destroy:
         budget_investment: "Budgetinvestering is verwijderd."
         topic: "Onderwerp is verwijderd."
-        poll_question_answer_video: "Reactie video is verwijderd."
         valuator_group: "Beoordelingsgroep is verwijderd"

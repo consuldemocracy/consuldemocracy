@@ -112,10 +112,14 @@ class Tenant < ApplicationRecord
   end
 
   def self.subfolder_path
-    if default?
+    subfolder_path_for(current_schema)
+  end
+
+  def self.subfolder_path_for(schema)
+    if schema == "public"
       ""
     else
-      File.join("tenants", current_schema)
+      File.join("tenants", schema)
     end
   end
 
@@ -172,7 +176,22 @@ class Tenant < ApplicationRecord
         ActiveRecord::Base.connection.execute(
           "ALTER SCHEMA \"#{schema_before_last_save}\" RENAME TO \"#{schema}\";"
         )
+
+        rename_storage
       end
+    end
+
+    def rename_storage
+      service = ActiveStorage::Blob.service
+
+      return unless service.respond_to?(:tenant_root_for)
+
+      old_storage = service.tenant_root_for(schema_before_last_save)
+
+      return unless File.directory?(old_storage)
+
+      new_storage = service.tenant_root_for(schema)
+      File.rename(old_storage, new_storage)
     end
 
     def destroy_schema

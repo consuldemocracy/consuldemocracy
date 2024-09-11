@@ -17,14 +17,6 @@ describe Geozone do
     expect(geozone).to be_valid
   end
 
-  it "is not valid with invalid geojson file format" do
-    geozone.geojson = '{"geo\":{"type":"Incorrect key","coordinates": [
-                                 [40.8792937308316, -3.9259027239257],
-                                 [40.8788966596619, -3.9249047078766],
-                                 [40.8789131852224, -3.9247799675785]]}}'
-    expect(geozone).not_to be_valid
-  end
-
   describe "#safe_to_destroy?" do
     let(:geozone) { create(:geozone) }
 
@@ -54,27 +46,144 @@ describe Geozone do
   end
 
   describe "#outline_points" do
-    it "returns empty array when geojson is nil" do
-      expect(geozone.outline_points).to eq([])
+    it "returns nil when geojson is nil" do
+      geozone.geojson = nil
+      expect(geozone.outline_points).to be(nil)
     end
 
-    it "returns coordinates array when geojson is not nil" do
-      geozone = build(:geozone, geojson: '{
+    it "returns normalized feature collection when geojson is a valid FeatureCollection" do
+      geozone.geojson = '{
+        "type": "FeatureCollection",
+        "features": [{
+          "type": "Feature",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [[
+              [-3.9259027239257, 40.8792937308316],
+              [-3.9249047078766, 40.8788966596619],
+              [-3.9247799675785, 40.8789131852224],
+              [-3.9259027239257, 40.8792937308316]
+            ]]
+          }
+        }]
+      }'
+
+      expected = {
+        "type" => "FeatureCollection",
+        "features" => [{
+          "type" => "Feature",
+          "geometry" => {
+            "type" => "Polygon",
+            "coordinates" => [[
+              [-3.9259027239257, 40.8792937308316],
+              [-3.9249047078766, 40.8788966596619],
+              [-3.9247799675785, 40.8789131852224],
+              [-3.9259027239257, 40.8792937308316]
+            ]]
+          },
+          "properties" => {}
+        }]
+      }
+
+      expect(geozone.outline_points).to eq(expected.to_json)
+    end
+
+    it "returns normalized feature collection when geojson is a valid Feature" do
+      geozone.geojson = '{
+        "type": "Feature",
         "geometry": {
           "type": "Polygon",
-          "coordinates": [
-            [40.8792937308316, -3.9259027239257],
-            [40.8788966596619, -3.9249047078766],
-            [40.8789131852224, -3.9247799675785]
-          ]
+          "coordinates": [[
+            [-3.9259027239257, 40.8792937308316],
+            [-3.9249047078766, 40.8788966596619],
+            [-3.9247799675785, 40.8789131852224],
+            [-3.9259027239257, 40.8792937308316]
+          ]]
         }
-      }')
+      }'
 
-      expect(geozone.outline_points).to eq(
-        [[-3.9259027239257, 40.8792937308316],
-         [-3.9249047078766, 40.8788966596619],
-         [-3.9247799675785, 40.8789131852224]]
-      )
+      expected = {
+        "type" => "FeatureCollection",
+        "features" => [{
+          "type" => "Feature",
+          "geometry" => {
+            "type" => "Polygon",
+            "coordinates" => [[
+              [-3.9259027239257, 40.8792937308316],
+              [-3.9249047078766, 40.8788966596619],
+              [-3.9247799675785, 40.8789131852224],
+              [-3.9259027239257, 40.8792937308316]
+            ]]
+          },
+          "properties" => {}
+        }]
+      }
+
+      expect(geozone.outline_points).to eq(expected.to_json)
+    end
+
+    it "returns normalized feature collection when geojson is a valid Geometry object" do
+      geozone.geojson = '{
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[
+            [-3.9259027239257, 40.8792937308316],
+            [-3.9249047078766, 40.8788966596619],
+            [-3.9247799675785, 40.8789131852224],
+            [-3.9259027239257, 40.8792937308316]
+          ]]
+        }
+      }'
+
+      expected = {
+        "type" => "FeatureCollection",
+        "features" => [{
+          "type" => "Feature",
+          "geometry" => {
+            "type" => "Polygon",
+            "coordinates" => [[
+              [-3.9259027239257, 40.8792937308316],
+              [-3.9249047078766, 40.8788966596619],
+              [-3.9247799675785, 40.8789131852224],
+              [-3.9259027239257, 40.8792937308316]
+            ]]
+          },
+          "properties" => {}
+        }]
+      }
+      shape = JSON.parse(geozone.outline_points)
+      expect(shape).to eq(expected)
+    end
+
+    it "returns normalized feature collection when geojson is a valid top-level Geometry object" do
+      geozone.geojson = '{
+        "type": "Polygon",
+        "coordinates": [[
+          [-3.9259027239257, 40.8792937308316],
+          [-3.9249047078766, 40.8788966596619],
+          [-3.9247799675785, 40.8789131852224],
+          [-3.9259027239257, 40.8792937308316]
+        ]]
+      }'
+
+      expected = {
+        "type" => "FeatureCollection",
+        "features" => [{
+          "type" => "Feature",
+          "geometry" => {
+            "type" => "Polygon",
+            "coordinates" => [[
+              [-3.9259027239257, 40.8792937308316],
+              [-3.9249047078766, 40.8788966596619],
+              [-3.9247799675785, 40.8789131852224],
+              [-3.9259027239257, 40.8792937308316]
+            ]]
+          },
+          "properties" => {}
+        }]
+      }
+
+      expect(geozone.outline_points).to eq(expected.to_json)
     end
   end
 end

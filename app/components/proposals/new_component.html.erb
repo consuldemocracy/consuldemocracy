@@ -1,19 +1,19 @@
-<main class="proposal-new">
-  <%= back_link_to proposals_path, t("proposals.index.section_header.title") %>
+<% provide :main_class, "proposal-new" %>
 
-  <%= header do %>
-    <%= new_window_link_to t("proposals.new.more_info"), help_path(anchor: "proposals") %>
-  <% end %>
+<%= back_link_to proposals_path, t("proposals.index.section_header.title") %>
 
-  <aside>
-    <h2><%= t("proposals.new.recommendations_title") %></h2>
+<%= header do %>
+  <%= new_window_link_to t("proposals.new.more_info"), help_path(anchor: "proposals") %>
+<% end %>
 
-    <ul class="recommendations">
-      <li><%= t("proposals.new.recommendation_one") %></li>
-      <li><%= t("proposals.new.recommendation_two") %></li>
-      <li><%= t("proposals.new.recommendation_three") %></li>
-    </ul>
-  </aside>
+<aside>
+  <h2><%= t("proposals.new.recommendations_title") %></h2>
 
-  <%= render Proposals::FormComponent.new(proposal, url: proposals_path) %>
-</main>
+  <ul class="recommendations">
+    <li><%= t("proposals.new.recommendation_one") %></li>
+    <li><%= t("proposals.new.recommendation_two") %></li>
+    <li><%= t("proposals.new.recommendation_three") %></li>
+  </ul>
+</aside>
+
+<%= render Proposals::FormComponent.new(proposal, url: proposals_path) %>

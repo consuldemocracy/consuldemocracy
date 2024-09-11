@@ -1,39 +1,27 @@
 require "rails_helper"
 
-describe "rake db:calculate_tsv" do
-  before { Rake::Task["db:calculate_tsv"].reenable }
+describe "rake db:mask_ips" do
+  before { Rake::Task["db:mask_ips"].reenable }
 
-  let :run_rake_task do
-    Rake.application.invoke_task("db:calculate_tsv")
-  end
+  it "mask IPs on all tenants" do
+    create(:visit, ip: "1.1.1.1")
+    create(:visit, ip: "1.1.1.2")
+    create(:visit, ip: "1.1.2.2")
 
-  it "calculates the tsvector for comments, including hidden ones" do
-    comment = create(:comment)
-    hidden = create(:comment, :hidden)
-    comment.update_column(:tsv, nil)
-    hidden.update_column(:tsv, nil)
+    create(:tenant, schema: "myhometown")
 
-    expect(comment.reload.tsv).to be nil
-    expect(hidden.reload.tsv).to be nil
+    Tenant.switch("myhometown") do
+      create(:visit, ip: "1.1.1.1")
+      create(:visit, ip: "1.1.1.2")
+      create(:visit, ip: "1.1.3.3")
+    end
 
-    run_rake_task
+    Rake.application.invoke_task("db:mask_ips")
 
-    expect(comment.reload.tsv).not_to be nil
-    expect(hidden.reload.tsv).not_to be nil
-  end
+    expect(Visit.pluck(:ip)).to match_array %w[1.1.1.0 1.1.1.0 1.1.2.0]
 
-  it "calculates the tsvector for proposal notifications, including hidden ones" do
-    notification = create(:proposal_notification)
-    hidden = create(:proposal_notification, :hidden)
-    notification.update_column(:tsv, nil)
-    hidden.update_column(:tsv, nil)
-
-    expect(notification.reload.tsv).to be nil
-    expect(hidden.reload.tsv).to be nil
-
-    run_rake_task
-
-    expect(notification.reload.tsv).not_to be nil
-    expect(hidden.reload.tsv).not_to be nil
+    Tenant.switch("myhometown") do
+      expect(Visit.pluck(:ip)).to match_array %w[1.1.1.0 1.1.1.0 1.1.3.0]
+    end
   end
 end

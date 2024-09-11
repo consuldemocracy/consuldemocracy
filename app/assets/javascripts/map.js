@@ -1,9 +1,9 @@
 (function() {
-  "use strict";
+  "use strict";  
   App.Map = {
     maps: [],
     initialize: function() {
-      $("*[data-map]:visible").each(function() {
+      $('*[data-map]:visible').each(function() {
         App.Map.initializeMap(this);
       });
     },
@@ -15,19 +15,31 @@
       App.Map.maps = [];
     },
     initializeMap: function(element) {
-      var createMarker, editable, investmentsMarkers, markerData, map, marker,
-        markerIcon, moveOrPlaceMarker, removeMarker, removeMarkerSelector;
+      var createMarker, editable, investmentsMarkers, map, marker, markerClustering,
+        markerData, markerIcon, markers, moveOrPlaceMarker, removeMarker, removeMarkerSelector,
+        geozoneLayers = {}, // Object to hold geozone layers
+        layerControl = {}; // Object to hold control layers
+
       App.Map.cleanInvestmentCoordinates(element);
-      removeMarkerSelector = $(element).data("marker-remove-selector");
+      removeMarkerSelector = $(element).data('marker-remove-selector');
       investmentsMarkers = $(element).data("marker-investments-coordinates");
       editable = $(element).data("marker-editable");
-      marker = null;
+      markerClustering = $(element).data("marker-clustering");
+
+      if (markerClustering) {
+        markers = L.markerClusterGroup({ chunkedLoading: true });
+      } else {
+        markers = L.layerGroup();
+      }
+      marker = null;      
+
       markerIcon = L.divIcon({
         className: "map-marker",
         iconSize: [30, 30],
         iconAnchor: [15, 40],
         html: '<div class="map-icon"></div>'
       });
+
       createMarker = function(latitude, longitude) {
         var newMarker, markerLatLng;
         markerLatLng = new L.LatLng(latitude, longitude);
@@ -40,9 +52,10 @@
             App.Map.updateFormfields(map, newMarker);
           });
         }
-        newMarker.addTo(map);
+        markers.addLayer(newMarker);
         return newMarker;
       };
+
       removeMarker = function() {
         if (marker) {
           map.removeLayer(marker);
@@ -50,6 +63,7 @@
         }
         App.Map.clearFormfields(element);
       };
+
       moveOrPlaceMarker = function(e) {
         if (marker) {
           marker.setLatLng(e.latlng);
@@ -67,6 +81,7 @@
       if (markerData.lat && markerData.long && !investmentsMarkers) {
         marker = createMarker(markerData.lat, markerData.long);
       }
+
       if (editable) {
         $(removeMarkerSelector).on("click", removeMarker);
         map.on("zoomend", function() {
@@ -78,7 +93,18 @@
       }
 
       App.Map.addInvestmentsMarkers(investmentsMarkers, createMarker);
-      App.Map.addGeozones(map);
+      App.Map.addGeozones(map, geozoneLayers); // Pass the geozoneLayers object
+
+      // Add markers layer
+      map.addLayer(markers);
+
+      // Add Layer Control
+      layerControl = {
+        "Markers": markers,
+        ...geozoneLayers // Add geozone layers to the control
+      };
+
+      L.control.layers(null, layerControl).addTo(map);
     },
     leafletMap: function(element) {
       var centerData, mapCenterLatLng, map;
@@ -86,7 +112,6 @@
       centerData = App.Map.centerData(element);
       mapCenterLatLng = new L.LatLng(centerData.lat, centerData.long);
       map = L.map(element.id, { scrollWheelZoom: false }).setView(mapCenterLatLng, centerData.zoom);
-
       map.on("focus", function() {
         map.scrollWheelZoom.enable();
       });
@@ -112,6 +137,7 @@
         long: inputs.long.val(),
         zoom: inputs.zoom.val()
       };
+
       if (App.Map.validCoordinates(formCoordinates)) {
         latitude = formCoordinates.lat;
         longitude = formCoordinates.long;
@@ -203,30 +229,52 @@
       map.attributionControl.setPrefix(App.Map.attributionPrefix());
       L.tileLayer(mapTilesProvider, { attribution: mapAttribution }).addTo(map);
     },
-    addGeozones: function(map) {
+    addGeozones: function(map, geozoneLayers) {
       var geozones = $(map._container).data("geozones");
 
       if (geozones) {
         geozones.forEach(function(geozone) {
-          App.Map.addGeozone(geozone, map);
+          App.Map.addGeozone(geozone, map, geozoneLayers);
         });
       }
     },
-    addGeozone: function(geozone, map) {
-      var polygon = L.polygon(geozone.outline_points, {
-        color: geozone.color,
-        fillOpacity: 0.3,
-        className: "map-polygon"
+
+    addGeozone: function(geozone, map, geozoneLayers) {
+      // Parse the GeoJSON string
+      var geojsonData = JSON.parse(geozone.outline_points);
+
+      // Create a GeoJSON layer
+      var geoJsonLayer = L.geoJSON(geojsonData, {
+        style: function(feature) {
+          return {
+            color: geozone.color || feature.properties.color || "blue",
+            fillOpacity: 0.3,
+            className: "map-polygon"
+          };
+        },
+        onEachFeature: function(feature, layer) {
+          if (feature.properties.headings || geozone.headings) {
+            // Use feature properties headings if provided, else fallback to geozone headings
+            var headings = feature.properties.headings || geozone.headings;
+            layer.bindPopup(headings.join("<br>"));
+          }
+        }
       });
 
-      if (geozone.headings !== undefined) {
-        polygon.bindPopup(geozone.headings.join("<br>"));
-      }
+      // Use geozone headings as the name for the layer, fallback to a default name
+      var layerName = (geozone.headings && geozone.headings.length > 0) 
+        ? geozone.headings.join(", ") 
+        : `Geozone ${Object.keys(geozoneLayers).length + 1}`;
 
-      polygon.addTo(map);
+      // Store the GeoJSON layer in the geozoneLayers object with the actual name
+      geozoneLayers[layerName] = geoJsonLayer;
+
+
+      // Add the GeoJSON layer to the map
+      geoJsonLayer.addTo(map);
     },
     getPopupContent: function(data) {
-      return "<a href='" + data.link + "'>" + data.title + "</a>";
+      return "<a href='" + data.link + "'>" + data.title + '</a>';
     },
     validZoom: function(zoom) {
       return App.Map.isNumeric(zoom);

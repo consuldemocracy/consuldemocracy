@@ -35,7 +35,7 @@ da:
     document_verifications:
       already_verified: Brugerkontoen er allerede verificeret.
       has_no_account: For at oprette en konto følg %{link} og klik på <b>"Tilmeld dig"</b>.
-      link: CONSUL
+      link: CONSUL DEMOCRACY
       in_census_has_following_permissions: "Med følgende tilladelse kan denne bruger deltage på hjemmesiden:"
       not_in_census: Persondokumentet er ikke registreret.
       not_in_census_info: "Borgere, der ikke er bosiddende i byen, kan stadig deltage på følgende måde:"

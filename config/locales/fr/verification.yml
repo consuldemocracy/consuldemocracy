@@ -46,7 +46,6 @@ fr:
           success: Résidence vérifiée
       new:
         accept_terms_text: J'accepte %{terms_url} du recensement.
-        accept_terms_text_title: J'accepte les termes et conditions d'accès au recensement
         document_number: Numéro de document
         document_number_help_title: Aide
         document_number_help_text: "<strong>CNI</strong> : 12345678A<br> <strong>Passeport</strong> : AAA000001<br> <strong>Carte de séjour</strong> : X1234567P"

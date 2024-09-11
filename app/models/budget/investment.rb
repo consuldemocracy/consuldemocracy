@@ -10,9 +10,11 @@ class Budget
     include Followable
     include Communitable
     include Imageable
+    include Videoable
     include Mappable
     include Documentable
     include SDG::Relatable
+    include Videoable
 
     acts_as_taggable_on :valuation_tags
     acts_as_votable
@@ -65,6 +67,8 @@ class Budget
     validates :price, presence: { if: :price_required? }
     validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
+     validate :valid_video_url?
+
     scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc, id: :desc) }
     scope :sort_by_ballots,          -> { reorder(ballot_lines_count: :desc, id: :desc) }
     scope :sort_by_price,            -> { reorder(price: :desc, confidence_score: :desc, id: :desc) }
@@ -99,6 +103,7 @@ class Budget
     scope :last_week,          -> { where("created_at >= ?", 7.days.ago) }
     scope :sort_by_flags,      -> { order(flags_count: :desc, updated_at: :desc) }
     scope :sort_by_created_at, -> { reorder(created_at: :desc) }
+    scope :sort_by_ballot_lines, -> { order(:"budget_ballot_lines.created_at") }
 
     scope :by_budget,           ->(budget)     { where(budget: budget) }
     scope :by_group,            ->(group_id)   { where(group_id: group_id) }
@@ -352,6 +357,10 @@ class Budget
     def should_show_price_explanation?
       should_show_price? && price_explanation.present?
     end
+    
+    def should_show_estimated_price?
+      estimated_price.present? && budget.show_money?
+    end
 
     def should_show_unfeasibility_explanation?
       unfeasible? && valuation_finished? && unfeasibility_explanation.present?
@@ -360,6 +369,11 @@ class Budget
     def formatted_price
       budget.formatted_amount(price)
     end
+
+    def formatted_estimated_price
+      budget.formatted_amount(estimated_price)
+    end
+
 
     def self.apply_filters_and_search(_budget, params, current_filter = nil)
       investments = all

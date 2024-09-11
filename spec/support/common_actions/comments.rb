@@ -18,8 +18,4 @@ module Comments
     end
     expect(page).to have_content "It will be done next week."
   end
-
-  def avatar(name)
-    "img.initialjs-avatar[data-name='#{name}']"
-  end
 end

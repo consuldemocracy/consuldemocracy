@@ -32,8 +32,7 @@ describe "BudgetPolls", :with_frozen_time do
       expect(Poll::Voter.count).to eq(1)
       expect(Poll::Voter.first.origin).to eq("booth")
 
-      visit root_path
-      click_link "Sign out"
+      logout
       login_as(admin.user)
       visit admin_poll_recounts_path(poll)
 

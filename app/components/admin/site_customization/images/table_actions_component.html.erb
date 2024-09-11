@@ -1,0 +1,18 @@
+<div class="site-customization-images-table-actions">
+  <%= form_for([:admin, image], html: { id: "edit_#{dom_id(image)}" }) do |f| %>
+    <div>
+      <%= image_tag image.image if image.persisted_attachment? %>
+      <%= f.file_field :image, label: false %>
+    </div>
+
+    <%= f.submit(t("admin.site_customization.images.index.update"), class: "button hollow") %>
+  <% end %>
+
+  <% if image.persisted_attachment? %>
+    <%= render Admin::ActionComponent.new(
+      :destroy,
+      image,
+      path: admin_site_customization_image_path(image)
+    ) %>
+  <% end %>
+</div>

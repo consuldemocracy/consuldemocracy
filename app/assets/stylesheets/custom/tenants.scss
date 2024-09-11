@@ -39,3 +39,73 @@
 //
 // NOTE: If you are **not** using mulitenancy, we recommend overwriting
 // SCSS variables in the `_consul_custom_overrides.scss` file instead
+
+.tenant-dev2 {
+  --brand: #FF3366;
+  --main-header: #EC407A;
+  --footer: #FCE4EC;
+  --top-links: var(--footer);
+  --top-links-contrast: #{$black};
+  --brand-secondary: #f4b56e;
+  --footer: var(--brand-secondary);
+  --main-header: var(--brand);
+  --brand-contrast: #FFFFFF;
+  --main-header-contrast: #FFFFFF;
+   // Import shared styles
+   @import "cosla_shared";
+   @include shared-styles;
+}
+
+.tenant-flotta {
+  --brand: #FF3366;
+  --main-header: #EC407A;
+  --footer: #FCE4EC;
+  --top-links: var(--footer);
+  --top-links-contrast: #{$black};
+  --brand-secondary: #f4b56e;
+  --footer: var(--brand-secondary);
+  --main-header: var(--brand);
+  --brand-contrast: #FFFFFF;
+  --main-header-contrast: #FFFFFF;
+   // Import shared styles
+   @import "cosla_shared";
+   @include shared-styles;
+}
+
+.tenant-test {
+   --anchor-color: #008585;
+   --anchor-color-hover: #74a892;
+   --brand: #c7522a;
+   --brand-secondary: #e5c185;
+   --button-background-hover: #fbf2c4;
+   --button-background-hover-contrast: #{$black};
+   --footer: #e6e6e6;
+   --main-header: #74a892;
+   --top-links: var(--main-header);
+   --subnavigation: #c7522a;
+ }
+
+.tenant-arb {
+  --brand: #10069F;
+  --brand-secondary: #00B140;
+  --brand-contrast: #FFFFFF;
+  --footer: #023C19;
+  --footer-contrast: #FFFFFF;
+  --main-header-contrast: #FFFFFF;
+   --top-links: var(--brand-secondary);
+  --top-links-contrast: #FFFFFF;
+  @import "cosla_shared";
+   @include shared-styles;
+}
+
+ .tenant-inverc {
+  --brand: #36808c;
+  --brand-secondary: #75a5ad;
+  --brand-contrast: #FFFFFF;
+  --footer: #d7e5e7;
+  --main-header-contrast: #FFFFFF;
+   --top-links: #75a5ad ;
+  --top-links-contrast: #FFFFFF;
+   @import "cosla_shared";
+   @include shared-styles;
+}

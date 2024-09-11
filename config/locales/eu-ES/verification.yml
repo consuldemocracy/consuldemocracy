@@ -42,7 +42,6 @@ eu:
           success: Bizitokia egiaztatuta
       new:
         accept_terms_text: Errolda %{terms_url}-ak onartzen ditut
-        accept_terms_text_title: Errolda baldintzak onartzen ditut
         document_number: NAN/Pasaportea/Egoitza txartela
         document_number_help_title: Laguntza
         document_type:

@@ -116,8 +116,6 @@ gd:
       allow_attached_documents_description: "A’ leigeil le luchd-cleachdaidh sgrìobhainnean a luchdachadh suas nuair a bhios iad a’ cruthachadh mholaidhean agus pròiseactan tasgaidh bho Bhuidseatan Com-pàirteachail"
       guides: "Stiùireadh gus molaidhean no pròiseactan tasgaidh a chruthachadh"
       guides_description: "Bidih seeo a’ taisbeanadh stiùireadh air eadar-dhealachaidhean eadar molaidhean agus pròiseactan tasgaidh ma tha buidseat com-pàirteachail gnìomhach ann"
-      public_stats: "Staitistig phoblach"
-      public_stats_description: "Seall staitistig phoblach anns a’ phannal Rianachd"
       help_page: "Duilleag cuideachaidh"
       help_page_description: 'Taisbeanaidh seo clàr-taice Cobhair anns a bheil duilleag le earrann fiosrachaidh mu gach feart a tha an comas. Cuideachd faodar duilleagan gnàthaichte agus clàran-taice a chruthachadh anns na h-earrannan “Duilleagan gnàthaichte” agus “blocaichean susbaint gnàthaichte”.'
       remote_translations: "Iarr eadar-theangachadh"

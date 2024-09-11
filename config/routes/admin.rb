@@ -175,13 +175,13 @@ namespace :admin do
     end
 
     resources :questions, shallow: true do
-      resources :answers, except: [:index, :show], controller: "questions/answers", shallow: false
-      resources :answers, only: [], controller: "questions/answers" do
-        resources :images, controller: "questions/answers/images"
-        resources :videos, controller: "questions/answers/videos", shallow: false
-        resources :documents, only: [:index, :create], controller: "questions/answers/documents"
+      resources :options, except: [:index, :show], controller: "questions/options", shallow: false
+      resources :options, only: [], controller: "questions/options" do
+        resources :images, controller: "questions/options/images"
+        resources :videos, controller: "questions/options/videos", shallow: false
+        resources :documents, only: [:index, :create], controller: "questions/options/documents"
       end
-      post "/answers/order_answers", to: "questions/answers#order_answers"
+      post "/options/order_options", to: "questions/options#order_options"
     end
 
     resource :active_polls, only: [:create, :edit, :update]
@@ -241,11 +241,8 @@ namespace :admin do
     end
   end
 
-  namespace :api do
-    resource :stats, only: :show
-  end
-
   resources :geozones, only: [:index, :new, :create, :edit, :update, :destroy]
+  resource :locales, only: [:show, :update]
 
   resources :postcodes, only: [:index, :new, :create, :edit, :update, :destroy, :ncsv, :process_csv, :ncsv_review] do
     collection do
@@ -347,10 +344,14 @@ resolve "Poll::Officer" do |officer, options|
   [:officer, options.merge(id: officer)]
 end
 
-resolve "Poll::Question::Answer" do |answer, options|
-  [:question, :answer, options.merge(question_id: answer.question, id: answer)]
+resolve "Poll::Question::Option" do |option, options|
+  [:question, :option, options.merge(question_id: option.question, id: option)]
 end
 
-resolve "Poll::Question::Answer::Video" do |video, options|
-  [:answer, :video, options.merge(answer_id: video.answer, id: video)]
+resolve "Poll::Question::Option::Video" do |video, options|
+  [:option, :video, options.merge(option_id: video.option, id: video)]
+end
+
+resolve "Legislation::DraftVersion" do |version, options|
+  [version.process, :draft_version, options.merge(id: version)]
 end

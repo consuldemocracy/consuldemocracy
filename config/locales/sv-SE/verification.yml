@@ -46,7 +46,6 @@ sv:
           success: Din bostadsadress har bekräftats
       new:
         accept_terms_text: Jag godkänner %{terms_url} för adressregistret
-        accept_terms_text_title: Jag godkänner villkoren för tillgång till adressregistret
         document_number: Dokumentnummer
         document_number_help_title: Hjälp
         document_number_help_text: "<strong>Nationellt id-kort</strong>: 12345678A<br> <strong>Pass</strong>: AAA000001<br> <strong>Uppehållstillstånd</strong>: X1234567P"

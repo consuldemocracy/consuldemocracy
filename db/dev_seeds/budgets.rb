@@ -57,8 +57,8 @@ section "Creating Budgets" do
       {
         price: 1000000,
         population: 1000000,
-        latitude: "40.416775",
-        longitude: "-3.703790"
+        latitude: Setting["map.latitude"],
+        longitude: Setting["map.longitude"]
       }.merge(
         random_locales_attributes(name: -> { I18n.t("seeds.budgets.groups.all_city") })
       )
@@ -84,8 +84,8 @@ section "Creating Budgets" do
     ].each do |heading_params|
       districts_group.headings.create!(heading_params.merge(
         price: rand(5..10) * 100000,
-        latitude: "40.416775",
-        longitude: "-3.703790"
+        latitude: Setting["map.latitude"],
+        longitude: Setting["map.longitude"]
       ))
     end
   end

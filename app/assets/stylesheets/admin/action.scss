@@ -3,4 +3,8 @@
   &[disabled] {
     @include button-disabled;
   }
+
+  &.delete {
+    cursor: pointer;
+  }
 }

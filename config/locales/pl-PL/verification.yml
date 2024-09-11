@@ -42,7 +42,6 @@ pl:
           success: Adres zweryfikowany
       new:
         accept_terms_text: Akceptuję %{terms_url} spisu
-        accept_terms_text_title: Akceptuję zasady i warunki dostępu do spisu
         document_number: Numer dokumentu
         document_number_help_title: Pomoc
         document_number_help_text: "<strong>DNI</strong>: 12345678A<br> <strong>paszport</strong>: AAA000001<br> <strong>Karta pobytu</strong>: X1234567P"
@@ -87,6 +86,7 @@ pl:
     user_permission_proposal: Twórz i dołączaj do pomysłów
     user_permission_support_proposal: Popieraj propozycje*
     user_permission_votes: Uczestniczyć w głosowaniu końcowym*
+    verification_needed: Potrzebna jest dodatkowa weryfikacja
     verified_user:
       form:
         submit_button: Wyślij kod

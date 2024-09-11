@@ -445,15 +445,6 @@ bg:
       image:
         title: Заглавие
         attachment: "Изберете изображение"
-      poll/question/answer:
-        title: Въпрос
-        description: Описание
-      poll/question/answer/translation:
-        title: Отговор
-        description: "Описание"
-      poll/question/answer/video:
-        title: Заглавие
-        url: Външно видео
       newsletter:
         segment_recipient: Получатели
         subject: Предмет

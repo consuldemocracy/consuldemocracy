@@ -226,7 +226,7 @@ gd:
       not_selected_investment_proyects: Liosta de na pròiseactan tasgaidh nach deach a thaghadh airson baileat
     executions:
       link: "Clachan-mìle"
-      page_title: "%{buidseat} - Clachan-mhìle"
+      page_title: "%{budget} - Clachan-mhìle"
       heading: "Chlachan-mìle buidseatadh com-pàirteachail"
       heading_selection_title: "A rèir sgìre"
       no_winner_investments: "Cha do bhuannaich tasgadh sam bith san stàit seo."
