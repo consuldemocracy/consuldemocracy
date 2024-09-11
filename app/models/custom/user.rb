@@ -210,11 +210,14 @@ end
     ys_document_number = username
     ys_email = "#{username}@consul.dev"
     ys_confirmed_at = Time.now
+#    ys_geozone = 1
+    ys_geozone = Geozone.find_or_create_by(name: "ys").id
     Rails.logger.info("YS Trying to create new user")
     user = User.new(
       username: ys_username,
       email: ys_email,
       password: ys_password,
+      geozone_id: ys_geozone,
       terms_of_service: "1",
       document_number: ys_document_number,
       confirmed_at: DateTime.current,
