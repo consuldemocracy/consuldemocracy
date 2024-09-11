@@ -1,5 +1,10 @@
 en:
   budgets:
+
+    ballots:
+      reasons_for_not_balloting:
+        invalid_geozone: Your do not live in the required area to take part in this process
+
     index:
       milestones: Progress Updates
     investments:
@@ -11,3 +16,4 @@ en:
         subtitle_without_price: "%{heading}"
         subtitle_without_price_note: "subtitle help text"
         summary: "Project Summary"
+
