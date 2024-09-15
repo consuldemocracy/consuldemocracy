@@ -33,8 +33,10 @@ services:
     volumes:
       - .:/var/www/consul
       - bundle:/usr/local/bundle
+      - node_modules:/var/www/consul/node_modules
     environment:
       - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
 volumes:
   db_data: {}
   bundle: {}
+  node_modules: {}
