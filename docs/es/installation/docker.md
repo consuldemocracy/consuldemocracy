@@ -47,19 +47,19 @@ cp config/secrets.yml.example config/secrets.yml
 cp config/database-docker.yml.example config/database.yml
 ```
 
-Y generamos el contenedor:
+Ahora genera la imagen con:
 
 ```bash
 POSTGRES_PASSWORD=password docker-compose build
 ```
 
-Arrancamos el servicio de base de datos:
+Y crea los contenedores:
 
 ```bash
-POSTGRES_PASSWORD=password docker-compose up -d database
+POSTGRES_PASSWORD=password docker-compose create
 ```
 
-Ahora podemos crear la base de datos e introducir datos de prueba:
+Por último, crea la base de datos e introduce datos de prueba:
 
 ```bash
 POSTGRES_PASSWORD=password docker-compose run app rake db:create db:migrate

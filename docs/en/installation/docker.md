@@ -47,16 +47,16 @@ cp config/secrets.yml.example config/secrets.yml
 cp config/database-docker.yml.example config/database.yml
 ```
 
-Then you'll have to build the container with:
+Then build the image with:
 
 ```bash
 POSTGRES_PASSWORD=password docker-compose build
 ```
 
-Start the database service:
+And create the containers:
 
 ```bash
-POSTGRES_PASSWORD=password docker-compose up -d database
+POSTGRES_PASSWORD=password docker-compose create
 ```
 
 You can now initialize your development DB and populate it with:
