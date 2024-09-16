@@ -1,6 +1,6 @@
 FROM ruby:3.2.5-bullseye
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Install essential Linux packages
 RUN apt-get update -qq \
@@ -29,7 +29,7 @@ RUN echo 'Defaults secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bi
 RUN chmod 0440 /etc/sudoers.d/secure_path
 
 # Define where our application will live inside the image
-ENV RAILS_ROOT /var/www/consul
+ENV RAILS_ROOT=/var/www/consul
 
 # Create application home. App server will need the pids dir so just create everything in one shot
 RUN mkdir -p $RAILS_ROOT/tmp/pids
