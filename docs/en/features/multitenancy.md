@@ -158,6 +158,30 @@ production:
 
 After editing this file, restart the application.
 
+### Enabling different languages for different tenants
+
+In Consul Democracy 2.2.0 or later, it's possible to display the application in different languages for different tenants.
+
+By default, every tenant uses all the languages defined in `config/application.rb`. You can (optionally) overwrite this value by [customizing your application configuration](../customization/application.md). Note that **if you overwrite this value, tenants will only be able to enable the languages you define here**. So, for instance, with this code in the `config/application_custom.rb` file:
+
+```ruby
+module Consul
+  class Application < Rails::Application
+    config.i18n.available_locales = ["de", "en", "es", "fr", "it", "ru", "zh-CN"]
+  end
+end
+```
+
+After restarting the application, tenants will be able to choose which language is the default and which ones are enabled among German, English, Spanish, French, Italian, Russian and Simplified Chinese. However, they'll no longer be able to enable any other language.
+
+To define the default and the enabled languages for a tenant, go the administration area of that tenant. Then, on the side navigation menu, click on "Settings" and then click on "Languages". Note that **this section is not present if you only have one language in `available_locales`**.
+
+On this page you'll find a form to choose the default and the enabled languages for this tenant (note: this form changes slightly when only a few languages are available):
+
+![Form with a select control for the default language and a list of checkboxes to choose which ones to enable](../../img/multitenancy/languages-en.png)
+
+Choose the ones you'd like, save the changes, and the language selector at the top of the web will be updated immediately.
+
 ## Information to take into account during development
 
 ### Maintenance of the schema.rb file
@@ -228,12 +252,6 @@ However, this will only work for images which can already be configured through 
 In Consul Democracy 2.0.0, data from all tenants is stored in the same database and so it isn't possible to use several databases on different servers.
 
 If this feature is requested often, it'll be possible to include it in Consul Democracy in the future, since Rails 6.1 and Rails 7.0 added better support for it.
-
-### Different languages per tenant
-
-In Consul Democracy 2.0.0, every tenant is available in the same languages, so it wouldn't be possible (for instance) to enable French in one tenant and German in a different one; you'd have to enable both languages in both tenants.
-
-Implementing this feature is planned for Consul Democracy 2.1.0.
 
 ### Deleting tenants
 
