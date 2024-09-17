@@ -17,6 +17,8 @@
   * [Ejemplo de consulta demasiado profunda](#ejemplo-de-consulta-demasiado-profunda)
   * [Ejemplo de consulta demasiado compleja](#ejemplo-de-consulta-demasiado-compleja)
 * [Ejemplos de código](#ejemplos-de-codigo)
+  * [Ejemplo sencillo](#ejemplo-sencillo)
+  * [Ejemplo con paginación](#ejemplo-con-paginacion)
 
 <h2 id="caracteristicas">Características</h2>
 
@@ -425,4 +427,113 @@ La respuesta:
 
 <h2 id="ejemplos-de-codigo">Ejemplos de código</h2>
 
-El directorio [doc/api/examples](https://github.com/consuldemocracy/consuldemocracy/tree/master/doc/api/examples/ruby) contiene ejemplos de código para acceder a la API.
+### Ejemplo sencillo
+
+Este es un ejemplo sencillo de código accediendo a la API de la demo de Consul Democracy:
+
+```ruby
+require "net/http"
+
+API_ENDPOINT = "https://demo.consuldemocracy.org/graphql".freeze
+
+def make_request(query_string)
+  uri = URI(API_ENDPOINT)
+  uri.query = URI.encode_www_form(query: query_string)
+  request = Net::HTTP::Get.new(uri)
+  request[:accept] = "application/json"
+
+  Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |https|
+    https.request(request)
+  end
+end
+
+query = <<-GRAPHQL
+  {
+    proposal(id: 1) {
+        id,
+        title,
+        public_created_at
+    }
+  }
+GRAPHQL
+
+response = make_request(query)
+
+puts "Response code: #{response.code}"
+puts "Response body: #{response.body}"
+```
+
+<h3 id="ejemplo-con-paginacion">Ejemplo con paginación</h3>
+
+Y este es un ejemplo un tanto más complejo usando paginación, una vez más accediendo a la API de la demo de Consul Democracy:
+
+```ruby
+require "net/http"
+require "json"
+
+API_ENDPOINT = "https://demo.consuldemocracy.org/graphql".freeze
+
+def make_request(query_string)
+  uri = URI(API_ENDPOINT)
+  uri.query = URI.encode_www_form(query: query_string)
+  request = Net::HTTP::Get.new(uri)
+  request[:accept] = "application/json"
+
+  Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |https|
+    https.request(request)
+  end
+end
+
+def build_query(options = {})
+  page_size = options[:page_size] || 25
+  page_size_parameter = "first: #{page_size}"
+
+  page_number = options[:page_number] || 0
+  after_parameter = page_number.positive? ? ", after: \"#{options[:next_cursor]}\"" : ""
+
+  <<-GRAPHQL
+  {
+    proposals(#{page_size_parameter}#{after_parameter}) {
+      pageInfo {
+        endCursor,
+        hasNextPage
+      },
+      edges {
+        node {
+          id,
+          title,
+          public_created_at
+        }
+      }
+    }
+  }
+  GRAPHQL
+end
+
+page_number = 0
+next_cursor = nil
+proposals   = []
+
+loop do
+  puts "> Requesting page #{page_number}"
+
+  query = build_query(page_size: 25, page_number: page_number, next_cursor: next_cursor)
+  response = make_request(query)
+
+  response_hash  = JSON.parse(response.body)
+  page_info      = response_hash["data"]["proposals"]["pageInfo"]
+  has_next_page  = page_info["hasNextPage"]
+  next_cursor    = page_info["endCursor"]
+  proposal_edges = response_hash["data"]["proposals"]["edges"]
+
+  puts "\tHTTP code: #{response.code}"
+
+  proposal_edges.each do |edge|
+    proposals << edge["node"]
+  end
+
+  page_number += 1
+
+  break unless has_next_page
+end
+```
