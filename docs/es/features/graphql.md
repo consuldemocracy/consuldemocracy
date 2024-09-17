@@ -22,19 +22,19 @@
 
 * API de sólo lectura
 * Acceso público, sin autenticación
-* Usa GraphQL por debajo
-  * El tamaño máximo (y por defecto) de página está establecido a 25
-  * La profundiad máxima de las consultas es de 8 niveles
+* Usa GraphQL:
+  * El tamaño máximo (y por defecto) de registros por página es 25
+  * La profundidad máxima de las consultas es de 8 niveles
   * Como máximo se pueden solicitar 2 colecciones en una misma consulta
   * Soporte para peticiones GET (consulta dentro del *query string*) y POST (consulta dentro del *body*, como `application/json` o `application/graphql`).
 
 ## GraphQL
 
-La API de Consul Democracy utiliza GraphQL [http://graphql.org](https://graphql.org), en concreto la [implementación en Ruby](http://graphql-ruby.org/). Si no estás familiarizado con este tipo de APIs, es recomendable investigar un poco sobre GraphQL previamente.
+La API de Consul Democracy utiliza [GraphQL](https://graphql.org), en concreto la [implementación en Ruby](http://graphql-ruby.org/). Si no estás familiarizado con este tipo de APIs, te recomendamos consultar la [documentación oficial de GraphQL](https://graphql.org/learn/).
 
-Una de las caracteríticas que diferencian una API REST de una GraphQL es que con esta última es posible construir *consultas personalizadas*, de forma que el servidor nos devuelva únicamente la información en la que estamos interesados.
+Una de las características que diferencian una API REST de una GraphQL es que con esta última es posible construir *consultas personalizadas*, de forma que el servidor nos devuelva únicamente la información en la que estamos interesados.
 
-Las consultas en GraphQL están escritas siguiendo un estándar que presenta ciertas similitudes con el formato JSON, por ejemplo:
+Las consultas en GraphQL están escritas siguiendo un formato que presenta ciertas similitudes con el formato JSON, por ejemplo:
 
 ```graphql
 {
@@ -56,10 +56,10 @@ Las respuestas son en formato JSON:
   "data": {
     "proposal": {
       "id": 1,
-      "title": "Hacer las calles del centro de Madrid peatonales",
+      "title": "Aumentar la cantidad de zonas verdes",
       "public_author": {
         "id": 2,
-        "username": "electrocronopio"
+        "username": "unmundomejor"
       }
     }
   }
@@ -79,7 +79,7 @@ Siguiendo las [directrices oficiales](http://graphql.org/learn/serving-over-http
 
 Al ser una API que funciona a través de HTTP, cualquier herramienta capaz de realizar este tipo de peticiones resulta válida.
 
-Esta sección contiene unos pequeños ejemplos sobre cómo hacer las peticiones a través de:
+Esta sección contiene algunos ejemplos sobre cómo hacer las peticiones a través de:
 
 * GraphiQL
 * Extensiones de Chrome como Postman
@@ -87,9 +87,9 @@ Esta sección contiene unos pequeños ejemplos sobre cómo hacer las peticiones 
 
 #### GraphiQL
 
-[GraphiQL](https://github.com/graphql/graphiql) es una interfaz de navegador para realizar consultas a una API GraphQL, así como una fuente adicional de documentación. Está desplegada en la ruta `/graphiql` y es la mejor forma de familiarizarse una API basada en GraphQL.
+[GraphiQL](https://github.com/graphql/graphiql) es una interfaz de navegador para realizar consultas a una API GraphQL, así como una fuente adicional de documentación. Consul Democracy utiliza la gema [graphiql-rails](https://github.com/rmosolgo/graphiql-rails) para acceder a esta interfaz en la ruta `/graphiql`; esta es la mejor forma de familiarizarse con una API basada en GraphQL.
 
-![GraphiQL](../../img/graphql/graphiql.png)
+![Interfaz de GraphiQL](../../img/graphql/graphiql.png)
 
 Tiene tres paneles principales:
 
@@ -101,27 +101,27 @@ Tiene tres paneles principales:
 
 Ejemplo de petición `GET`, con la consulta como parte del *query string*:
 
-![Postman GET](../../img/graphql/graphql-postman-get.png)
+![Petición GET con Postman, con la consulta en la URL del navegador](../../img/graphql/graphql-postman-get.png)
 
 Ejemplo de petición `POST`, con la consulta como parte del *body* y codificada como `application/json`:
 
-![Postman POST](../../img/graphql/graphql-postman-post-headers.png)
+![Pestaña "Headers" de Postman, con la clave "Content-Type" con valor "application/json"](../../img/graphql/graphql-postman-post-headers.png)
 
 La consulta debe estar ubicada en un documento JSON válido, como valor de la clave `"query"`:
 
-![Postman POST](../../img/graphql/graphql-postman-post-body.png)
+![Pestaña "Body" de Postman, con la consulta dentro de la clave "query"](../../img/graphql/graphql-postman-post-body.png)
 
 <h4 id="librerias-http">Librerías HTTP</h4>
 
-Por supuesto es posible utilizar cualquier librería HTTP de lenguajes de programación.
+Es posible utilizar cualquier librería HTTP de lenguajes de programación.
 
-**IMPORTANTE**: Debido a los protocolos de seguridad de los servidores del Ayuntamiento de Madrid, es necesario incluir un *User Agent* perteneciente a un navegador para que la petición no sea descartada. Por ejemplo:
+**IMPORTANTE**: Algunos servidores podrían tener protocolos de seguridad que hagan necesario incluir un *User Agent* perteneciente a un navegador para que la petición no sea descartada. Por ejemplo:
 
-`User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36`
+`User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/116.0`
 
 <h2 id="informacion-disponible">Información disponible</h2>
 
-El fichero [config/api.yml](../../config/api.yml) contiene una lista completa de los modelos (y sus campos) que están expuestos actualmente en la API.
+El directorio `app/graphql/types/` contiene una lista completa de los modelos (y sus campos) que están expuestos actualmente en la API.
 
 La lista de modelos es la siguiente:
 
@@ -160,7 +160,7 @@ Respuesta:
   "data": {
     "proposal": {
       "id": 2,
-      "title": "Crear una zona cercada para perros en Las Tablas",
+      "title": "Crear una zona cercada para perros cerca de la playa",
       "comments_count": 10
     }
   }
@@ -190,12 +190,12 @@ Respuesta:
       "edges": [
         {
           "node": {
-            "title": "ELIMINACION DE ZONA APARCAMIENTO EXCLUSIVO FUNCIONARIOS EN MADRID"
+            "title": "Parada de autobús cerca del colegio"
           }
         },
         {
           "node": {
-            "title": "iluminación de zonas deportivas"
+            "title": "Mejorar la iluminación de zonas deportivas"
           }
         }
       ]
@@ -206,7 +206,7 @@ Respuesta:
 
 <h4 id="paginacion">Paginación</h4>
 
-Actualmente el número máximo (y por defecto) de elementos que se devuelven en cada página está establecido a 25. Para poder navegar por las distintas páginas es necesario solicitar además información relativa al `endCursor`:
+Actualmente el número máximo (y por defecto) de elementos que se devuelven en cada página está establecido a 25. Para poder navegar por las distintas páginas, es necesario solicitar además información relativa al `endCursor`:
 
 ```graphql
 {
@@ -340,7 +340,7 @@ La respuesta obtenida tendrá el siguiente aspecto:
 
 ### Ejemplo de consulta demasiado compleja
 
-El principal factor de riesgo se da cuando se solicitan varias colecciones de recursos en una misma consulta. El máximo número de colecciones que pueden aparecer en una misma consulta está limitado a 2. La siguiente consulta solicita información de las colecciónes `users`, `debates` y `proposals`, así que será rechazada:
+El principal factor de riesgo se da cuando se solicitan varias colecciones de recursos en una misma consulta. El máximo número de colecciones que pueden aparecer en una misma consulta está limitado a 2. La siguiente consulta solicita información de las colecciones `users`, `debates` y `proposals`, así que será rechazada:
 
 ```graphql
 {
@@ -374,18 +374,12 @@ La respuesta obtenida tendrá el siguiente aspecto:
   "errors": [
     {
       "message": "Query has complexity of 3008, which exceeds max complexity of 2500"
-    },
-    {
-      "message": "Query has complexity of 3008, which exceeds max complexity of 2500"
-    },
-    {
-      "message": "Query has complexity of 3008, which exceeds max complexity of 2500"
     }
   ]
 }
 ```
 
-No obstante sí que es posible solicitar información perteneciente a más de dos modelos en una única consulta, siempre y cuando no se intente acceder a la colección completa. Por ejemplo, la siguiente consulta que accede a los modelos `User`, `Proposal` y `Geozone` es válida:
+No obstante, sí que es posible solicitar información perteneciente a más de dos modelos en una única consulta, siempre y cuando no se intente acceder a la colección completa. Por ejemplo, la siguiente consulta que accede a los modelos `User`, `Proposal` y `Geozone` es válida:
 
 ```graphql
 {
@@ -416,9 +410,9 @@ La respuesta:
         "edges": [
           {
             "node": {
-              "title": "Empadronamiento necesario para la admisión en GoFit Vallehermoso",
+              "title": "Descuento para empadronados en los centros deportivos",
               "geozone": {
-                "name": "Chamberí"
+                "name": "Zona sur"
               }
             }
           }

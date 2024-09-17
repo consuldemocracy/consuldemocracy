@@ -4,7 +4,7 @@ API_ENDPOINT = "https://demo.consuldemocracy.org/graphql".freeze
 
 def make_request(query_string)
   uri = URI(API_ENDPOINT)
-  uri.query = URI.encode_www_form(query: query_string.delete("\n").delete(" "))
+  uri.query = URI.encode_www_form(query: query_string)
   request = Net::HTTP::Get.new(uri)
   request[:accept] = "application/json"
 
