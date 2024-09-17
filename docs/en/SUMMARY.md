@@ -23,7 +23,7 @@
     * [Manual installation (not recommended)](installation/manual_installation_production.md)
     * [Digital Ocean](installation/digital_ocean.md)
     * [Heroku](installation/deploying-on-heroku.md)
-    * [Mail Server Configuration](installation/mail_server_configuration.md)
+    * [Mail server configuration](installation/mail_server_configuration.md)
   * [Basic configuration](installation/basic_configuration.md)
   * [User documentation and guides](installation/documentation_and_guides.md)
 
