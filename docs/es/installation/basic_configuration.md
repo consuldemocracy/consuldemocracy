@@ -6,6 +6,20 @@ Para ello, deberás acceder a tu instalación de Consul Democracy a través de c
 
 Una vez identificado, en la parte superior derecha de la pantalla verás un botón con el texto "Menú". Pincha en él y a continuación pincha en "Administración" para ir al área de administración. Desde esta interfaz puedes configurar las siguientes opciones básicas:
 
+## Cambio de la contraseña de administrador
+
+Ya que el correo `admin@consul.dev` no existe, y que cualquiera que esté familiarizado con Consul Democracy sabrá cuál es la contraseña por defecto de administrador, recomendamos encarecidamente que cambies las credenciales justo después de instalar la aplicación.
+
+En primer lugar, identifícate como administrador utilizando el correo y la contraseña por defecto.
+
+A continuación, entra en "Mi cuenta". En la página de "Mi cuenta", pincha en "Cambiar mis datos de acceso". Rellena el formulario con el nuevo correo y la nueva contraseña.
+
+La contraseña se actualizará inmediatamente, y podrás cerrar la sesión y abrir una nueva utilizando la nueva contraseña. Para actualizar la dirección de correo, recibirás un correo en esa dirección pidiéndote que confirmes tu cuenta. Pincha en el enlace incluido en ese correo, y podrás identificarte en la aplicación usando la nueva dirección de correo.
+
+También puedes cambiar el nombre de usuario por defecto ("admin"). Una vez más, entra en "Mi cuenta". En esa página, verás un formulario que incluye el campo "Nombre de usuario". Para actualizarlo, cambia el valor de ese campo y pincha el botón de "Guardar cambios".
+
+Es posible que, antes de hacer todo esto, ya hayas registrado un nuevo usuario que te gustaría usar como administrador. De ser así, en lugar de seguir el proceso descrito anteriormente, identifícate como administrador y vete al área de administración. Una vez allí, en el menú de navegación, pincha en "Perfiles" para abrir un submenú y a continuación pincha en "Administradores". Para añadir un administrador, usa el formulario de búsqueda e introduce el correo del usuario al que quieras hacer administrador (sabemos que no es muy intuitivo; ¡perdón!). Una vez que aparezcan los resultados de búsqueda, pincha en "Añadir como Administrador". Ahora puedes cerrar sesión, entrar con el nuevo administrador, pinchar nuevamente en "Perfiles" y a continuación en "Administradores", y borrar el administrador por defecto `admin@consul.dev`. Ten en cuenta que con esto ese usuario no se borrará, pero ya no tendrá permisos de administrador.
+
 ## Parámetros de la configuración global
 
 En el menú de navegación del área de administración, pincha en "Configuración" para abrir un submenú y a continuación pincha en "Configuración global". Aquí encontrarás muchos parámetros interesantes, pero por el momento te recomendamos definir algunos de los más básicos (más adelante, cuando estés más familiarizado con la herramienta, podrás volver a esta sección a configurar otros parámetros):

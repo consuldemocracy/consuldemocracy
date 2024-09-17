@@ -6,6 +6,20 @@ To do this, you will need to go to your Consul Democracy installation URL with a
 
 Once you have logged in you will see on the top right of the screen a "Menu" button. Click on it and then click on "Administration" to go to the administration area. From this interface you can configure the following basic options:
 
+## Change the administrator credentials
+
+Since the `admin@consul.dev` email address doesn't exist, and since anyone familiar with Consul Democracy will know the default password, we strongly recommended that you change the login credentials immediately after installing the application.
+
+First, sign in using the default administrator credentials.
+
+Then, click on "My account". On the "My account" page, click on "Change my login details". Fill in the form with the new email and password.
+
+The password will be updated immediately, and you can sign out and sign in using the new password. In order to update the email address, you will receive an email on that address asking to confirm your account. Click on the link included in that email, and you'll be able to sign in using the new email address.
+
+You can also change the default "admin" username. Once again, go to "My account". On that page, you will see a form containing a "username" field. Just change the username and click on the form button to update it.
+
+It's possible that, before following this process, you've already signed up with the email you'd like to use as an administrator. If that's the case, instead of following the previous process, sign in as an administrator and go the admin area. Once there, on the side navigation menu, click on "Profiles" to open a submenu and then click on "Administrators". To add an administrator, use the search form and enter the email of the user you'd like to make an administrator (not very intuitive; sorry for that!). Once the search results are returned, click on the "Add" icon. Now, sign out, sign in as the new administrator, go to the admin area, click once again on "Profiles" and then on "Administrators" and delete the default `admin@consul.dev` administrator. Note that this won't delete the user, but that user will no longer be an administrator.
+
 ## Global configuration parameters
 
 In the admin area, on the side navigation menu, click on "Settings" to open a submenu and then click on "Global settings". Here you will find many interesting parameters, but at the moment we recommend you to define some of the most basic ones (later, when you are more familiar with the tool, you will be able to configure other parameters):
