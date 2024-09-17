@@ -22,7 +22,7 @@ Es posible que, tras ejecutar esta orden, veas el siguiente aviso:
 
 > The database search path has been updated. Restart the application to apply the changes.
 
-Si es así, reincia la aplicación. Si no has recibido este aviso, comprueba que el fichero `config/database.yml` contiene la línea `schema_search_path: "public,shared_extensions"` y, de no ser así, añádela por ejemplo bajo la línea que dice `adapter: postgresql` y reincia la aplicación.
+Si es así, reinicia la aplicación. Si no has recibido este aviso, comprueba que el fichero `config/database.yml` contiene la línea `schema_search_path: "public,shared_extensions"` y, de no ser así, añádela por ejemplo bajo la línea que dice `adapter: postgresql` y reinicia la aplicación.
 
 Una vez hecho esto, deberás abrir una consola de base de datos utilizando un usuario que tenga permisos para crear y modificar extensiones de base de datos:
 
