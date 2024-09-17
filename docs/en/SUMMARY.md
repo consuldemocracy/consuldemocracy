@@ -25,7 +25,7 @@
     * [Docker](installation/docker.md)
     * [Mail Server Configuration](installation/mail_server_configuration.md)
   * [Basic configuration](installation/basic_configuration.md)
-  * [Consul Democracy Documentation and guides](installation/documentation_and_guides.md)
+  * [User documentation and guides](installation/documentation_and_guides.md)
 
 * [Customization](customization/customization.md)
   * [Introduction](customization/introduction.md)
