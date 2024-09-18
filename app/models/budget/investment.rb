@@ -296,11 +296,14 @@ class Budget
       nil
     end
     
-    def valid_geozone?(user)
+    def goodvalid_geozone?(user)
       heading.geozone_id.nil? || (heading.geozone_id == user.geozone_id)
     end
-
-
+    
+    def valid_geozone?(user)
+      heading.geozone_id.nil? || heading.geozone_ids.include?(user.geozone_id)
+    end
+    
     def permission_problem?(user)
       permission_problem(user).present?
     end
