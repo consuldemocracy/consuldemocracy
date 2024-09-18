@@ -140,20 +140,15 @@ Rails.logger.info("extracted values: #{extracted_values.inspect}")
     oauth_lacode_confirmed    = oauth_lacode == oauth_lacode_ref
     oauth_user            = User.find_by(email: saml_email) if saml_email_confirmed
    
-   # Assign Geozone based on the normalized saml_postcode if it exists
-
-   if normalized_saml_postcode.present?
-   # Find the Postcode instance based on the normalized saml_postcode
-   postcode_instance = Postcode.find_by(postcode: normalized_saml_postcode)
-
-   if postcode_instance
-    # Assign the associated Geozone to the user
-      saml_user.geozone = postcode_instance.geozone
-   else
-    # Handle the case when the postcode is not found
-      saml_user.geozone = nil
-  end
-end
+    # Initialize saml_geozone_id
+    saml_geozone_id = nil
+    # Assign Geozone based on the normalized saml_postcode if it exists
+    if normalized_saml_postcode.present?  # Find the Postcode instance based on the normalized saml_postcode
+      postcode_instance = Postcode.find_by(postcode: normalized_saml_postcode)
+        if postcode_instance    # Extract the associated Geozone ID from the Postcode instance
+            saml_geozone_id = postcode_instance.geozone&.id
+        end
+   end
 
    
    # oauth_username = oauth_full_name ||  oauth_email.split("@").first || auth.info.name || auth.uid
