@@ -144,7 +144,7 @@ Rails.logger.info("extracted values: #{extracted_values.inspect}")
     saml_geozone_id = nil
     # Assign Geozone based on the normalized saml_postcode if it exists
     if normalized_saml_postcode.present?  # Find the Postcode instance based on the normalized saml_postcode
-      postcode_instance = Postcode.find_by(postcode: normalized_saml_postcode)
+     postcode_instance = Postcode.find_by_normalized_postcode(normalized_saml_postcode)
         if postcode_instance    # Extract the associated Geozone ID from the Postcode instance
             saml_geozone_id = postcode_instance.geozone&.id
         end
