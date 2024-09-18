@@ -96,6 +96,28 @@ CONTAINER ID   IMAGE                 COMMAND                  CREATED          S
 d57fdd9637d6   postgres:13.16        "docker-entrypoint.s…"   50 minutes ago   Up 22 seconds   5432/tcp   consuldemocracy-database-1
 ```
 
+## Running tests with RSpec
+
+Consul Democracy includes more than 6000 tests checking the way the application behaves. While we recommend you [configure your fork](../getting_started/configuration.md) to use a continuous integration system to run the whole test suite and verify that the latest changes don't break anything, while developing you probably want to run the tests related to the code you're working on.
+
+First, setup the database for the test environment:
+
+```bash
+POSTGRES_PASSWORD=password docker-compose run app bundle exec rake db:test:prepare
+```
+
+Then you can run tests using RSpec. For example, to run the tests for the proposal model:
+
+```bash
+POSTGRES_PASSWORD=password docker-compose run app bundle exec rspec spec/models/proposal_spec.rb
+```
+
+System tests also work out of the box, although they might fail the first time while the tool running the tests downloads the right version of Chromedriver (which is needed to run them), and only "headless" mode (with a browser running in the background) is supported, which is the mode you'd probably use more than 95% of the time anyway. For example, to run the tests for the homepage:
+
+```bash
+POSTGRES_PASSWORD=password docker-compose run app bundle exec rspec spec/system/welcome_spec.rb
+```
+
 ## Troubleshooting
 
 Run these commands **inside Consul Democracy's directory**, to erase all your previous Consul Democracy's Docker images and containers. Then start the Docker [installation process](#installation) once again.
