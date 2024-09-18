@@ -84,6 +84,8 @@ module Abilities
       can [:search, :update, :create, :index, :destroy], Banner
 
       can [:index, :create, :update, :destroy], Geozone
+      can [:index, :create, :update, :destroy], Postcode
+      can [:ncsv, :process_csv, :ncsv_review], Postcode
 
       can [:read, :create, :update, :destroy, :booth_assignments], Poll
       can [:read, :create, :update, :destroy, :available], Poll::Booth

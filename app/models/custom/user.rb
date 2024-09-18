@@ -38,7 +38,6 @@ def erase(erase_reason = nil)
   end
 
 
-
   # Get the existing user by email if the provider gives us a verified email.
   def self.first_or_initialize_for_oauth(auth)
   Rails.logger.info('Attributes in auth.info:')
@@ -48,9 +47,9 @@ def erase(erase_reason = nil)
 
     oauth_email           = auth.info.email
     oauth_verified        = auth.info.verified || auth.info.verified_email || auth.info.email_verified || auth.extra.raw_info.email_verified
-    # following line assumes oauth provider has verified email
     oauth_email_confirmed = oauth_email.present? #&& oauth_verified
     oauth_user            = User.find_by(email: oauth_email) if oauth_email_confirmed
+
 
     oauth_user || User.new(
       username:  auth.info.name || auth.uid,
@@ -109,6 +108,7 @@ end
 # Now you have a hash containing the extracted values
 Rails.logger.info("extracted values: #{extracted_values.inspect}")
 
+
     # Assuming 'extracted_values' is the hash containing extracted values
     saml_username = extracted_values["saml_username"]
     saml_authority_code = extracted_values["saml_authority_code"]
@@ -140,21 +140,18 @@ Rails.logger.info("extracted values: #{extracted_values.inspect}")
     oauth_lacode_confirmed    = oauth_lacode == oauth_lacode_ref
     oauth_user            = User.find_by(email: saml_email) if saml_email_confirmed
    
-   # Assign Geozone based on the normalized saml_postcode if it exists
-   saml_geozone = nil
-   if normalized_saml_postcode.present?
-   # Find the Postcode instance based on the normalized saml_postcode
-   # This only goes in if Manage Postcodes is added
-   #   postcode_instance = Postcode.find_by(postcode: normalized_saml_postcode)
-
-#   if postcode_instance
-    # Assign the associated Geozone to the user
-    #  saml_user.geozone = postcode_instance.geozone
-#   else
-    # Handle the case when the postcode is not found
-    #  saml_user.geozone = nil
-#  end
+    # Initialize saml_geozone_id
+    saml_geozone_id = nil
+    # Assign Geozone based on the normalized saml_postcode if it exists
+    if normalized_saml_postcode.present?  # Find the Postcode instance based on the normalized saml_postcode
+      puts "about to check: #{normalized_saml_postcode}"
+      saml_geozone_id = Postcode.find_geozone_for_postcode(normalized_saml_postcode)
+#     postcode_instance = Postcode.find_by_normalized_postcode(normalized_saml_postcode)
+#        if postcode_instance    # Extract the associated Geozone ID from the Postcode instance
+#            saml_geozone_id = postcode_instance.geozone&.id
+#        end
    end
+
    
    # oauth_username = oauth_full_name ||  oauth_email.split("@").first || auth.info.name || auth.uid
    if saml_username.present? && saml_username != saml_email && saml_username != saml_full_name
@@ -178,7 +175,7 @@ Rails.logger.info("extracted values: #{extracted_values.inspect}")
   end
 
 
-  # overwritting of Devise method to allow login using email OR username
+  # overwriting of Devise method to allow login using email OR username
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     login = conditions.delete(:login)
@@ -210,11 +207,14 @@ Rails.logger.info("extracted values: #{extracted_values.inspect}")
     ys_document_number = username
     ys_email = "#{username}@consul.dev"
     ys_confirmed_at = Time.now
+#    ys_geozone = 1
+    ys_geozone = Geozone.find_or_create_by(name: "ys").id
     Rails.logger.info("YS Trying to create new user")
     user = User.new(
       username: ys_username,
       email: ys_email,
       password: ys_password,
+      geozone_id: ys_geozone,
       terms_of_service: "1",
       document_number: ys_document_number,
       confirmed_at: DateTime.current,

@@ -292,10 +292,18 @@ class Budget
       return :not_logged_in unless user
       return :organization  if user.organization?
       return :not_verified  unless user.level_two_or_three_verified?
-
+      return :invalid_geozone unless valid_geozone?(user)
       nil
     end
-
+    
+    def goodvalid_geozone?(user)
+      heading.geozone_id.nil? || (heading.geozone_id == user.geozone_id)
+    end
+    
+    def valid_geozone?(user)
+      heading.geozone_id.nil? || heading.geozone_ids.include?(user.geozone_id)
+    end
+    
     def permission_problem?(user)
       permission_problem(user).present?
     end
