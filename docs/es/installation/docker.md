@@ -1,65 +1,37 @@
 # Usando Docker para desarrollo en local
 
-Puedes usar Docker para tener una instalación local de Consul Democracy si:
-
-- Estás teniendo problemas para instalar los [prerrequisitos](prerequisites.md) correctamente.
-- Quieres tener una instalación local rápidamente para probar o hacer una demo.
-- Prefieres no interferir con instalaciones de apps Rails existentes.
-
 ## Prerrequisitos
 
-Debes tener instalador Docker y Docker Compose en tu ordenador:
+Debes tener instalados Docker y Docker Compose en tu ordenador. El proceso de instalación depende de tu sistema operativo.
 
 ### macOS
 
-Puedes seguir la [guía oficial de docker](https://docs.docker.com/docker-for-mac/install/)
+Puedes seguir la [guía oficial de Docker](https://docs.docker.com/docker-for-mac/install/).
 
-O si tienes instalado [homebrew](http://brew.sh) y [cask](https://caskroom.github.io/) puedes ejecutar:
+O, si tienes instalado [homebrew](http://brew.sh), puedes ejecutar:
 
 ```bash
 brew install docker
 brew install docker-compose
-brew cask install docker
+brew install --cask docker
 open -a docker
 ```
 
-La aplicación de Docker te pedirá darle permisos e intrudocir tu contraseña.
+La aplicación de Docker te pedirá darle permisos e introducir tu contraseña.
 
 ### Linux
 
-1. Instala Docker:
+1. Instala Docker y Docker Compose. Por ejemplo, en Ubuntu 22.04:
 
 ```bash
-sudo apt-get update
-sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
-sudo apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
-sudo apt-get update
-apt-cache policy docker-engine
-sudo apt-get install -y docker-engine
-```
-
-2. Instala Docker Compose
-
-```bash
-sudo curl -o /usr/local/bin/docker-compose -L "https://github.com/docker/compose/releases/download/1.15.0/docker-compose-$(uname -s)-$(uname -m)"
-sudo chmod +x /usr/local/bin/docker-compose
+sudo apt-get install docker.io docker-compose-v2
 ```
 
 ### Windows
 
-En la página de [https://www.docker.com/get-started](Empezando con Docker), en la sección "Docker Desktop", selecciona "Download for Windows", y ejecútalo. Debería tardar unos 5 minutos.
+La documentación oficial de Docker incluye una página con instrucciones para [instalar Docker Desktop en Windows](https://docs.docker.com/desktop/install/windows-install/). En esa página, descarga Docker Desktop para Windows y ejecútalo.
 
-Si encuentras el error "WSL 2 installation incomplete":
-
-1. Ejecuta PowerShell como administrator
-1. Ejecuta `dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart`
-1. Ejecuta `dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart`
-1. Instala el [paquete de actualización de WSL2 para 64 bits](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
-1. Ejecuta `wsl --set-default-version 2`
-1. Reinicia el sistema
-1. Se iniciará Docker Enginer. tardará unos minutos. Tras esto, tendrás la opción de usar la applicación de Docker Desktop y la orden `docker` de PowerShell/Bash
-
-## Instalación
+<h2 id="instalacion">Instalación</h2>
 
 Clona el repositorio en tu ordenador y entra en el directorio:
 
@@ -68,49 +40,41 @@ git clone https://github.com/consuldemocracy/consuldemocracy.git
 cd consuldemocracy
 ```
 
-### macOS & Linux
-
-Creamos nuestros ficheros de secrets y database basados en los ejemplos:
+A continuación, crea los ficheros de `config/secrets.yml` y `config/database.yml` basados en los ficheros de ejemplo:
 
 ```bash
 cp config/secrets.yml.example config/secrets.yml
 cp config/database-docker.yml.example config/database.yml
 ```
 
-Y generamos el contenedor:
+Ahora genera la imagen con:
 
 ```bash
 POSTGRES_PASSWORD=password docker-compose build
 ```
 
-Arrancamos el servicio de base de datos:
+Y crea los contenedores:
 
 ```bash
-POSTGRES_PASSWORD=password docker-compose up -d database
+POSTGRES_PASSWORD=password docker-compose create
 ```
 
-Ahora podemos crear la base de datos e introducir datos de prueba:
+Por último, crea la base de datos e introduce datos de prueba:
 
 ```bash
 POSTGRES_PASSWORD=password docker-compose run app rake db:create db:migrate
 POSTGRES_PASSWORD=password docker-compose run app rake db:dev_seed
 ```
 
-### Windows
+## Arranque de Consul Democracy en desarrollo
 
-Pendiente de ser completado... ¡Se agradecen las Contribuciones!
-
-## Corriendo Consul Democracy en local con Docker
-
-### macOS & Linux
-
-Una vez instalado, puedes lanzar la aplicación con:
+Una vez instalada, puedes lanzar la aplicación con:
 
 ```bash
 POSTGRES_PASSWORD=password docker-compose up
 ```
 
-Y podrás acceder a la aplicación desde tu navegador visitando [http://localhost:3000](http://localhost:3000)
+Y podrás acceder a la aplicación desde tu navegador visitando [http://localhost:3000](http://localhost:3000).
 
 Adicionalmente, si quieres lanzar por ejemplo la consola de rails:
 
@@ -118,42 +82,65 @@ Adicionalmente, si quieres lanzar por ejemplo la consola de rails:
 POSTGRES_PASSWORD=password docker-compose run app rails console
 ```
 
-Para verificar que los contenedores estan corriendo usa:
+Para verificar que los contenedores están ejecutándose usa:
 
 ```bash
-docker ps .
+docker ps
 ```
 
 Deberías obtener algo similar a:
-![docker ps](https://i.imgur.com/ASvzXrd.png)
 
-### Windows
+```bash
+CONTAINER ID   IMAGE                 COMMAND                  CREATED          STATUS          PORTS      NAMES
+603ec83b78a6   consuldemocracy-app   "./docker-entrypoint…"   23 seconds ago   Up 22 seconds              consuldemocracy-app-run-afb6d68e2d99
+d57fdd9637d6   postgres:13.16        "docker-entrypoint.s…"   50 minutes ago   Up 22 seconds   5432/tcp   consuldemocracy-database-1
+```
 
-Pendiente de ser completado... ¡Se agradecen las Contribuciones!
+## Ejecutar tests con RSpec
 
-## ¿Tienes problemas?
+Consul Democracy incluye más de 6000 tests que comprueban la manera en que se comporta la aplicación. Si bien recomendamos que [configures tu "fork"](../getting_started/configuration.md) para que use un sistema de integración continua para ejecutar todos los tests y comprobar que los últimos cambios no rompen nada, durante el desarrollo probablemente quieras ejecutar tests relacionados con el código en el que estás trabajando.
 
-Ejecute los comandos en el **directorio de Consul Democracy**, para borrar todas las imágenes y contenedores anteriores del Docker de Consul Democracy. Luego, reinicie el [proceso de instalación](#instalacion) de Docker:
+En primer lugar, prepara la base de datos para el entorno de test:
 
-1. Quitar todas las imágenes de Consul Democracy:
+```bash
+POSTGRES_PASSWORD=password docker-compose run app bundle exec rake db:test:prepare
+```
+
+Ahora puedes ejecutar tests usando RSpec. Por ejemplo, para ejecutar los tests del modelo "proposal":
+
+```bash
+POSTGRES_PASSWORD=password docker-compose run app bundle exec rspec spec/models/proposal_spec.rb
+```
+
+Los tests de sistema también funcionan sin que tengas que realizar ninguna configuración adicional, si bien la primera vez que se ejecutan pueden fallar mientras la herramienta que ejecuta los tests descarga una versión adecuada de Chromedriver (que se necesita para ejecutarlos), y solamente puedes ejecutar el modo "headless" (con un navegador ejecutándose en segundo plano), que por otro lado en cualquier caso es el modo que utilizarías más del 95% del tiempo. Por ejemplo, para ejecutar los tests de la página de inicio:
+
+```bash
+POSTGRES_PASSWORD=password docker-compose run app bundle exec rspec spec/system/welcome_spec.rb
+```
+
+## Resolución de problemas
+
+Ejecuta los siguientes comandos **en el directorio de Consul Democracy** para borrar todas las imágenes y contenedores anteriores del Docker de Consul Democracy. Luego, comienza de nuevo con el [proceso de instalación](#instalacion) de Docker.
+
+1. Quita todas las imágenes de Consul Democracy:
 
 ```bash
 docker-compose down --rmi all -v --remove-orphans
 ```
 
-2. Quitar todos los contenedores de Consul Democracy
+2. Quita todos los contenedores de Consul Democracy:
 
 ```bash
 docker-compose rm -f -s -v
 ```
 
-3. Verificar si todavía hay algún contenedor:
+3. Verifica si todavía hay algún contenedor:
 
 ```bash
 docker ps -a
 ```
 
-Caso positivo, eliminar cada uno de forma manual:
+4. En caso afirmativo, elimina cada uno de forma manual:
 
 ```bash
 docker container rm <container_id>

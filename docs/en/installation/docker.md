@@ -1,63 +1,35 @@
 # Using Docker for local development
 
-You can use Docker to have a local Consul Democracy installation for development if:
-
-- You're having troubles having [prerequisites](prerequisites.md) installed.
-- You want to do a quick local installation just to try Consul Democracy or make a demo.
-- You prefer not to interfere with other rails installations.
-
 ## Prerequisites
 
-You should have installed Docker and Docker Compose in your machine:
+Docker and Docker Compose should be installed on your machine. The installation process depends on your operating system.
 
 ### macOS
 
-You can follow the [official docker install](https://docs.docker.com/docker-for-mac/install/)
+You can follow the [official Docker installation documentation](https://docs.docker.com/docker-for-mac/install/).
 
-Or if you have [homebrew](http://brew.sh) and [cask](https://caskroom.github.io/) installed you can just:
+Or, if you have [homebrew](http://brew.sh) installed, you can just:
 
 ```bash
 brew install docker
 brew install docker-compose
-brew cask install docker
+brew install --cask docker
 open -a docker
 ```
 
-You'll be asked to give Docker app permissions and type your password, then you're set.
+You'll be asked to give permissions to the Docker app and type your password; then, you're set.
 
 ### Linux
 
-1. Install Docker:
+1. Install Docker and Docker Compose. For example, in Ubuntu 22.04:
 
 ```bash
-sudo apt-get update
-sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
-sudo apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
-sudo apt-get update
-apt-cache policy docker-engine
-sudo apt-get install -y docker-engine
-```
-
-2. Install Docker Compose
-
-```bash
-sudo curl -o /usr/local/bin/docker-compose -L "https://github.com/docker/compose/releases/download/1.15.0/docker-compose-$(uname -s)-$(uname -m)"
-sudo chmod +x /usr/local/bin/docker-compose
+sudo apt-get install docker.io docker-compose-v2
 ```
 
 ### Windows
 
-Go to the [https://www.docker.com/get-started](Get Started with Docker) page. Under Docker Desktop, select Download for Windows with default options checked, and run. Should take about 5 minutes.
-
-If you encounter the "WSL 2 installation incomplete" error:
-
-1. Start PowerShell as Administrator
-1. Run `dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart`
-1. Run `dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart`
-1. Install [WSL2 Linux kernel update package for x64 machines](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
-1. Run `wsl --set-default-version 2`
-1. Restart your PC
-1. The Docker Enginer will start up. Give it a few minutes. You now have the option of using the docker desktop app (GUI) and `docker` PowerShell/Bash commands
+The official Docker documentation includes a page with instructions to [install Docker Desktop on Windows](https://docs.docker.com/desktop/install/windows-install/). From there, download Docker Desktop for Windows and execute it.
 
 ## Installation
 
@@ -68,25 +40,23 @@ git clone https://github.com/consuldemocracy/consuldemocracy.git
 cd consuldemocracy
 ```
 
-### macOS & Linux
-
-Then lets create our secrets and database config files based on examples:
+Then create the secrets and database config files based on the example files:
 
 ```bash
 cp config/secrets.yml.example config/secrets.yml
 cp config/database-docker.yml.example config/database.yml
 ```
 
-Then you'll have to build the container with:
+Then build the image with:
 
 ```bash
 POSTGRES_PASSWORD=password docker-compose build
 ```
 
-Start the database service:
+And create the containers:
 
 ```bash
-POSTGRES_PASSWORD=password docker-compose up -d database
+POSTGRES_PASSWORD=password docker-compose create
 ```
 
 You can now initialize your development DB and populate it with:
@@ -96,13 +66,7 @@ POSTGRES_PASSWORD=password docker-compose run app rake db:create db:migrate
 POSTGRES_PASSWORD=password docker-compose run app rake db:dev_seed
 ```
 
-### Windows
-
-Pending to be completed... Contributions Welcome!
-
-## Running local Consul Democracy with Docker
-
-### macOS & Linux
+## Running Consul Democracy in development with Docker
 
 Now we can finally run the application with:
 
@@ -110,9 +74,9 @@ Now we can finally run the application with:
 POSTGRES_PASSWORD=password docker-compose up
 ```
 
-And you'll be able to access it at your browser visiting [http://localhost:3000](http://localhost:3000)
+And you'll be able to access it by opening your browser and visiting [http://localhost:3000](http://localhost:3000).
 
-Additionally, if you want to run the rails console just run in another terminal:
+Additionally, if you'd like to run the rails console:
 
 ```bash
 POSTGRES_PASSWORD=password docker-compose run app rails console
@@ -121,19 +85,42 @@ POSTGRES_PASSWORD=password docker-compose run app rails console
 To verify the containers are up execute:
 
 ```bash
-docker ps .
+docker ps
 ```
 
-You should see output similar to this:
-![docker ps](https://i.imgur.com/ASvzXrd.png)
+You should see an output similar to this:
 
-### Windows
+```bash
+CONTAINER ID   IMAGE                 COMMAND                  CREATED          STATUS          PORTS      NAMES
+603ec83b78a6   consuldemocracy-app   "./docker-entrypoint…"   23 seconds ago   Up 22 seconds              consuldemocracy-app-run-afb6d68e2d99
+d57fdd9637d6   postgres:13.16        "docker-entrypoint.s…"   50 minutes ago   Up 22 seconds   5432/tcp   consuldemocracy-database-1
+```
 
-Pending to be completed... Contributions Welcome!
+## Running tests with RSpec
 
-## Having trouble?
+Consul Democracy includes more than 6000 tests checking the way the application behaves. While we recommend you [configure your fork](../getting_started/configuration.md) to use a continuous integration system to run the whole test suite and verify that the latest changes don't break anything, while developing you probably want to run the tests related to the code you're working on.
 
-Run these commands at **Consul Democracy's directory**, to erase all your previous Consul Democracy's Docker images and containers. Then restart the Docker [installation process](#installation):
+First, setup the database for the test environment:
+
+```bash
+POSTGRES_PASSWORD=password docker-compose run app bundle exec rake db:test:prepare
+```
+
+Then you can run tests using RSpec. For example, to run the tests for the proposal model:
+
+```bash
+POSTGRES_PASSWORD=password docker-compose run app bundle exec rspec spec/models/proposal_spec.rb
+```
+
+System tests also work out of the box, although they might fail the first time while the tool running the tests downloads the right version of Chromedriver (which is needed to run them), and only "headless" mode (with a browser running in the background) is supported, which is the mode you'd probably use more than 95% of the time anyway. For example, to run the tests for the homepage:
+
+```bash
+POSTGRES_PASSWORD=password docker-compose run app bundle exec rspec spec/system/welcome_spec.rb
+```
+
+## Troubleshooting
+
+Run these commands **inside Consul Democracy's directory**, to erase all your previous Consul Democracy's Docker images and containers. Then start the Docker [installation process](#installation) once again.
 
 1. Remove all Consul Democracy images:
 
@@ -141,19 +128,19 @@ Run these commands at **Consul Democracy's directory**, to erase all your previo
 docker-compose down --rmi all -v --remove-orphans
 ```
 
-2. Remove all Consul Democracy containers
+2. Remove all Consul Democracy containers:
 
 ```bash
 docker-compose rm -f -s -v
 ```
 
-3. Verify if there is some container yet:
+3. Check whether there are still containers left:
 
 ```bash
 docker ps -a
 ```
 
-Case positive, remove each one manually:
+4. In case there are, remove each one manually:
 
 ```bash
 docker container rm <container_id>
