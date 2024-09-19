@@ -25,7 +25,7 @@
     * [Docker](installation/docker.md)
     * [Configuración del servidor de correo](installation/mail_server_configuration.md)
   * [Configuración básica](installation/basic_configuration.md)
-  * [Documentación y guías sobre Consul Democracy](installation/documentation_and_guides.md)
+  * [Documentación y guías de usuario](installation/documentation_and_guides.md)
 
 * [Personalización](customization/customization.md)
   * [Introducción](customization/introduction.md)
