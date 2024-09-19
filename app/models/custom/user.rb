@@ -135,16 +135,6 @@ Rails.logger.info("extracted values: #{extracted_values.inspect}")
    # Normalize the saml_postcode by stripping spaces and converting to lowercase
     normalized_saml_postcode = saml_postcode.strip.downcase if saml_postcode.present?
 
-    # Find existing user based on the current email (before potential update)
-    existing_user = User.find_by(email: saml_email)
-    # Find the Geozone ID for the new postcode
-    new_geozone_id = Postcode.find_geozone_for_postcode(normalized_saml_postcode)
-    # Update the user's geozone if it has changed (based on geozone ID comparison)
-  if existing_user && new_geozone_id && new_geozone_id != existing_user.geozone_id
-    existing_user.update(geozone_id: new_geozone_id)
-    Rails.logger.info("User geozone updated to #{new_geozone_id}")
-  end
-   
    #lacode comes from list of councils registered with IS
     oauth_lacode_ref          = "9079" # this should be picked up from secrets in future
     oauth_lacode_confirmed    = oauth_lacode == oauth_lacode_ref
