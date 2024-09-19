@@ -25,6 +25,20 @@ module Admin::BudgetHeadingsActions
   end
 
   def update
+  sanitized_params = budget_heading_params
+  sanitized_params[:geozone_ids] = sanitized_params[:geozone_ids].reject(&:blank?) if sanitized_params[:geozone_ids].present?
+
+  if @heading.update(sanitized_params)
+    Rails.logger.info("Budget heading updated successfully. Parameters: #{sanitized_params.inspect}")
+    redirect_to headings_index, notice: t("admin.budget_headings.update.notice")
+  else
+    puts sanitized_params.inspect
+    render :edit
+  end
+end
+
+
+  def old_update
     if @heading.update(budget_heading_params)
       Rails.logger.info("Budget heading updated successfully. Parameters: #{budget_heading_params.inspect}")
       redirect_to headings_index, notice: t("admin.budget_headings.update.notice")

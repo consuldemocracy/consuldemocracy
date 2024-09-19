@@ -301,8 +301,17 @@ class Budget
     end
     
     def valid_geozone?(user)
-      heading.geozone_id.nil? || heading.geozone_ids.include?(user.geozone_id)
-    end
+  Rails.logger.info "Heading geozone_restricted: #{heading.geozone_restricted}"
+  Rails.logger.info "Heading geozone_id: #{heading.geozone_id}"
+  Rails.logger.info "Heading geozone_ids: #{heading.geozone_ids.inspect}"
+  Rails.logger.info "User geozone_id: #{user.geozone_id}"
+
+  valid = !heading.geozone_restricted || heading.geozone_ids.include?(user.geozone_id)
+  Rails.logger.info "Is valid geozone? #{valid}"
+
+  valid
+end
+
     
     def permission_problem?(user)
       permission_problem(user).present?
