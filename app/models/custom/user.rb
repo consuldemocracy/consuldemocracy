@@ -60,7 +60,7 @@ def erase(erase_reason = nil)
   end
   
   
-  def extract_saml_attributes(auth)
+  def self.extract_saml_attributes(auth)
     # Define the attribute mapping here or in a constant
     attribute_mapping = {
       "saml_username" => "urn:oid:0.9.2342.19200300.100.1.1",
@@ -99,7 +99,7 @@ def erase(erase_reason = nil)
   end
 
   def self.first_or_initialize_for_saml(auth)
-    extracted_values = extract_saml_attributes(auth)
+    extracted_values = self.extract_saml_attributes(auth)
 
    # Now you have a hash containing the extracted values
    #Rails.logger.info("extracted values: #{extracted_values.inspect}")
@@ -194,7 +194,7 @@ def erase(erase_reason = nil)
   
   # Method to update user attributes based on SAML data
   def update_user_details_from_saml(auth)
-   extracted_values = extract_saml_attributes(auth)
+   extracted_values = self.class.extract_saml_attributes(auth)
 
    # Now you have a hash containing the extracted values
     Rails.logger.info("extracted values: #{extracted_values.inspect}")
