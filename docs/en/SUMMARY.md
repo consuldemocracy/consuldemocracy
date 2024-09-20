@@ -46,7 +46,7 @@
 * [Technical Features](features/features.md)
   * [OAuth](features/oauth.md)
   * [GraphQL](features/graphql.md)
-  * [Recommendations](features/recommendations.md)
+  * [Debates and proposals recommendations](features/recommendations.md)
   * [Configure Census Connection](features/census_configuration.md)
   * [Local Census](features/local_census.md)
   * [Multitenancy](features/multitenancy.md)
