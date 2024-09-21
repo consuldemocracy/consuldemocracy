@@ -135,15 +135,6 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
 
   context "After click remote translations button" do
     describe "with delayed jobs", :delay_jobs do
-      scenario "the remote translation button should not be present" do
-        visit path
-        select "Español", from: "Language:"
-
-        click_button "Traducir página"
-
-        expect(page).not_to have_button "Traducir página"
-      end
-
       scenario "the remote translation is pending to translate" do
         visit path
         select "Español", from: "Language:"
@@ -151,45 +142,27 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
         expect { click_button "Traducir página" }.to change { RemoteTranslation.count }.from(0).to(1)
       end
 
-      scenario "should be present enqueued notice and informative text" do
+      scenario "shows informative text when content is enqueued" do
         visit path
         select "Español", from: "Language:"
 
         click_button "Traducir página"
 
-        expect(page).to have_content "Se han solicitado correctamente las traducciones."
-        expect(page).to have_content "En un breve periodo de tiempo refrescando la página " \
-                                     "podrá ver todo el contenido en su idioma"
-      end
-
-      scenario "should be present only informative text when user visit page with all content enqueued" do
-        visit path
-        select "Español", from: "Language:"
-        click_button "Traducir página"
-        expect(page).to have_content "Se han solicitado correctamente las traducciones."
-
-        visit path
-        select "Español", from: "Idioma:"
-
-        expect(page).to have_content "En un breve periodo de tiempo refrescando la página " \
-                                     "podrá ver todo el contenido en su idioma"
         expect(page).not_to have_button "Traducir página"
+        expect(page).to have_content "Se han solicitado correctamente las traducciones."
+        expect(page).to have_content "En un breve periodo de tiempo refrescando la página " \
+                                     "podrá ver todo el contenido en su idioma"
+
+        refresh
+
         expect(page).not_to have_content "Se han solicitado correctamente las traducciones."
+        expect(page).not_to have_button "Traducir página"
+        expect(page).to have_content "En un breve periodo de tiempo refrescando la página " \
+                                     "podrá ver todo el contenido en su idioma"
       end
     end
 
     describe "without delayed jobs" do
-      scenario "the remote translation button should not be present" do
-        response = generate_response(resource)
-        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
-        visit path
-        select "Español", from: "Language:"
-
-        click_button "Traducir página"
-
-        expect(page).not_to have_button "Traducir página"
-      end
-
       scenario "the remote translation has been translated and destoyed" do
         response = generate_response(resource)
         expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
