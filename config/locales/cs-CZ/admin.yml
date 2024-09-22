@@ -704,6 +704,9 @@ cs:
       milestones:
         index:
           title: Sledované
+    locales:
+      update:
+        notice: Jazyky úspěšně aktualizovány
     managers:
       index:
         title: Manažeři
@@ -726,6 +729,7 @@ cs:
       proposals_topics: Témata návrhů
       budgets: Participativní rozpočty
       geozones: Správa geografických oblastí
+      locales: Jazyky
       hidden_comments: Skryté komentáře
       hidden_debates: Skrýt debaty
       hidden_proposals: Skryté návrhy
@@ -1493,6 +1497,8 @@ cs:
       graph:
         debate_created: Debaty
         proposal_created: Návrhy občanů
+        title: Grafy
+        visits: Návštěvy
       budgets:
         no_data_before_balloting_phase: "Před fází hlasování nejsou k dispozici žádné údaje."
         title: "Participativní rozpočty - statistiky účasti"
