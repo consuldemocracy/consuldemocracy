@@ -5,6 +5,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
     path_arguments.transform_values { |path_to_value| resource.send(path_to_value) }
   end
   let(:path) { send(path_name, arguments) }
+  let(:path_in_spanish) { send(path_name, arguments.merge(locale: :es)) }
   let!(:resource) { create(factory_name) }
 
   before do
@@ -24,9 +25,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
     end
 
     scenario "should be present when current locale translation does not exists" do
-      visit path
-
-      select "Español", from: "Language:"
+      visit path_in_spanish
 
       expect(page).to have_button "Traducir página"
     end
@@ -44,20 +43,15 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
 
     scenario "should not be present when there are no resources to translate", if: index_path?(path_name) do
       resource.destroy!
-      visit path
+      visit path_in_spanish
 
-      select "Español", from: "Language:"
-
-      expect(page).to have_select "Idioma:"
       expect(page).not_to have_button "Traducir página"
     end
 
     describe "with delayed job active", :delay_jobs do
       scenario "should not be present when an equal RemoteTranslation is enqueued" do
         create(:remote_translation, remote_translatable: resource, locale: :es)
-        visit path
-
-        select "Español", from: "Language:"
+        visit path_in_spanish
 
         expect(page).to have_content "En un breve periodo de tiempo refrescando la página " \
                                      "podrá ver todo el contenido en su idioma"
@@ -136,8 +130,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
   context "After click remote translations button" do
     describe "with delayed jobs", :delay_jobs do
       scenario "shows informative text when content is enqueued" do
-        visit path
-        select "Español", from: "Language:"
+        visit path_in_spanish
 
         click_button "Traducir página"
 
@@ -159,10 +152,8 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
       scenario "content is immediately translated" do
         response = generate_response(resource)
         expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
-        visit path
-        select "Español", from: "Language:"
+        visit path_in_spanish
 
-        expect(page).to have_select "Idioma:"
         expect(page).not_to have_content response.first
 
         click_button "Traducir página"
@@ -176,15 +167,13 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
         expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
 
         in_browser(:one) do
-          visit path
-          select "Español", from: "Language:"
+          visit path_in_spanish
 
           expect(page).to have_button "Traducir página"
         end
 
         in_browser(:two) do
-          visit path
-          select "Español", from: "Language:"
+          visit path_in_spanish
           click_button "Traducir página"
 
           expect(page).to have_content "Se han solicitado correctamente las traducciones"
