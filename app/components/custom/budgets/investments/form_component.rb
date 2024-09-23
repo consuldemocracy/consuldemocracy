@@ -2,7 +2,7 @@ class Budgets::Investments::FormComponent < ApplicationComponent; end
 
 load Rails.root.join("app", "components", "budgets", "investments","form_component.rb")
 
-class Budgets::Investments::FormComponent < ApplicationComponent
+class Budgets::Investments::FormComponent
   include TranslatableFormHelper
   include GlobalizeHelper
   attr_reader :investment, :url
