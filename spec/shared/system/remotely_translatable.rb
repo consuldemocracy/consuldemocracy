@@ -135,13 +135,6 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
 
   context "After click remote translations button" do
     describe "with delayed jobs", :delay_jobs do
-      scenario "the remote translation is pending to translate" do
-        visit path
-        select "Español", from: "Language:"
-
-        expect { click_button "Traducir página" }.to change { RemoteTranslation.count }.from(0).to(1)
-      end
-
       scenario "shows informative text when content is enqueued" do
         visit path
         select "Español", from: "Language:"
@@ -163,17 +156,19 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
     end
 
     describe "without delayed jobs" do
-      scenario "the remote translation has been translated and destoyed" do
+      scenario "content is immediately translated" do
         response = generate_response(resource)
         expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
         visit path
         select "Español", from: "Language:"
 
+        expect(page).to have_select "Idioma:"
+        expect(page).not_to have_content response.first
+
         click_button "Traducir página"
 
         expect(page).not_to have_button "Traducir página"
-        expect(RemoteTranslation.count).to eq(0)
-        expect(resource.translations.count).to eq(2)
+        expect(page).to have_content response.first
       end
 
       scenario "request a translation of an already translated text" do
