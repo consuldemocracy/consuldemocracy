@@ -40,10 +40,6 @@ def erase(erase_reason = nil)
 
   # Get the existing user by email if the provider gives us a verified email.
   def self.first_or_initialize_for_oauth(auth)
-  Rails.logger.info('Attributes in auth.info:')
-    auth.info.each do |key, value|
-    Rails.logger.info("#{key}: #{value}")
-  end
 
     oauth_email           = auth.info.email
     oauth_verified        = auth.info.verified || auth.info.verified_email || auth.info.email_verified || auth.extra.raw_info.email_verified
@@ -64,49 +60,49 @@ def erase(erase_reason = nil)
   end
   
   
+  def self.extract_saml_attributes(auth)
+    # Define the attribute mapping here or in a constant
+    attribute_mapping = {
+      "saml_username" => "urn:oid:0.9.2342.19200300.100.1.1",
+      "saml_authority_code" => "urn:oid:0.9.2342.19200300.100.1.17",
+      "saml_firstname" => "urn:oid:0.9.2342.19200300.100.1.2",
+      "saml_surname" => "urn:oid:0.9.2342.19200300.100.1.4",
+      "saml_latitude" => "urn:oid:0.9.2342.19200300.100.1.33",
+      "saml_longitude" => "urn:oid:0.9.2342.19200300.100.1.34",
+      "saml_date_of_birth" => "urn:oid:0.9.2342.19200300.100.1.8",
+      "saml_gender" => "urn:oid:0.9.2342.19200300.100.1.9",
+      "saml_postcode" => "urn:oid:0.9.2342.19200300.100.1.16",
+      "saml_email" => "urn:oid:0.9.2342.19200300.100.1.22",
+      "saml_town" => "urn:oid:0.9.2342.19200300.100.1.15",
+      "saml_add1" => "urn:oid:0.9.2342.19200300.100.1.12",
+      "saml_5" => "urn:oid:0.9.2342.19200300.100.1.5",
+      "saml_6" => "urn:oid:0.9.2342.19200300.100.1.6",
+      "saml_7" => "urn:oid:0.9.2342.19200300.100.1.7",
+      "saml_assurance" => "urn:oid:0.9.2342.19200300.100.1.20",
+      "saml_10" => "urn:oid:0.9.2342.19200300.100.1.10"
+    }
 
+    # Assuming 'auth.extra.raw_info' is the OneLogin::RubySaml::Attributes object
+    attributes = auth.extra.raw_info.attributes
 
+    # Initialize a hash to store the extracted values
+    extracted_values = {}
 
-# Get the existing user by email if the provider gives us a verified email.
-  def self.first_or_initialize_for_saml(auth)
+    # Iterate through the attribute mapping and extract values
+    attribute_mapping.each do |attribute_name, oid_value|
+      if attributes[oid_value]
+        extracted_values[attribute_name] = attributes[oid_value][0]
+      end
+    end
 
-# Assuming 'auth.extra.raw_info' is the OneLogin::RubySaml::Attributes object
-attributes = auth.extra.raw_info.attributes
-
-
-# Define a mapping of attribute names to OID values
-attribute_mapping = {
-  "saml_username" => "urn:oid:0.9.2342.19200300.100.1.1",
-  "saml_authority_code" => "urn:oid:0.9.2342.19200300.100.1.17",
-  "saml_firstname" => "urn:oid:0.9.2342.19200300.100.1.2",
-  "saml_surname" => "urn:oid:0.9.2342.19200300.100.1.4",
-  "saml_latitude" => "urn:oid:0.9.2342.19200300.100.1.33",
-  "saml_longitude" => "urn:oid:0.9.2342.19200300.100.1.34",
-  "saml_date_of_birth" => "urn:oid:0.9.2342.19200300.100.1.8",
-  "saml_gender" => "urn:oid:0.9.2342.19200300.100.1.9",
-  "saml_postcode" => "urn:oid:0.9.2342.19200300.100.1.16",
-  "saml_email" => "urn:oid:0.9.2342.19200300.100.1.22",
-  "saml_town" => "urn:oid:0.9.2342.19200300.100.1.15",
-  "saml_add1" => "urn:oid:0.9.2342.19200300.100.1.12",
-  "saml_5" => "urn:oid:0.9.2342.19200300.100.1.5",
-  "saml_6" => "urn:oid:0.9.2342.19200300.100.1.6",
-  "saml_7" => "urn:oid:0.9.2342.19200300.100.1.7",
-  "saml_assurance" => "urn:oid:0.9.2342.19200300.100.1.20",
-  "saml_10" => "urn:oid:0.9.2342.19200300.100.1.10"
-}
-
-# Initialize a hash to store the extracted values
-extracted_values = {}
-
-# Iterate through the attribute mapping and extract values
-attribute_mapping.each do |attribute_name, oid_value|
-  if attributes[oid_value]
-    extracted_values[attribute_name] = attributes[oid_value][0]
+    extracted_values
   end
-end
 
-# Now you have a hash containing the extracted values
-Rails.logger.info("extracted values: #{extracted_values.inspect}")
+  def self.first_or_initialize_for_saml(auth)
+    extracted_values = self.extract_saml_attributes(auth)
+
+   # Now you have a hash containing the extracted values
+   #Rails.logger.info("extracted values: #{extracted_values.inspect}")
 
 
     # Assuming 'extracted_values' is the hash containing extracted values
@@ -130,10 +126,19 @@ Rails.logger.info("extracted values: #{extracted_values.inspect}")
     oauth_date_of_birth = saml_date_of_birth
     oauth_email_confirmed = oauth_email.present?
     saml_email_confirmed = saml_email.present?
-   # oauth_email_confirmed = oauth_email.present? && (auth.info.verified || auth.info.verified_email)
 
    # Normalize the saml_postcode by stripping spaces and converting to lowercase
     normalized_saml_postcode = saml_postcode.strip.downcase if saml_postcode.present?
+
+    # Find existing user based on the current email (before potential update)
+    existing_user = User.find_by(email: saml_email)
+    # Find the Geozone ID for the new postcode
+    new_geozone_id = Postcode.find_geozone_for_postcode(normalized_saml_postcode)
+    # Update the user's geozone if it has changed (based on geozone ID comparison)
+    if existing_user && new_geozone_id && new_geozone_id != existing_user.geozone_id
+      existing_user.update(geozone_id: new_geozone_id)
+      Rails.logger.info("User geozone updated to #{new_geozone_id}")
+    end
    
    #lacode comes from list of councils registered with IS
     oauth_lacode_ref          = "9079" # this should be picked up from secrets in future
@@ -146,10 +151,6 @@ Rails.logger.info("extracted values: #{extracted_values.inspect}")
     if normalized_saml_postcode.present?  # Find the Postcode instance based on the normalized saml_postcode
       puts "about to check: #{normalized_saml_postcode}"
       saml_geozone_id = Postcode.find_geozone_for_postcode(normalized_saml_postcode)
-#     postcode_instance = Postcode.find_by_normalized_postcode(normalized_saml_postcode)
-#        if postcode_instance    # Extract the associated Geozone ID from the Postcode instance
-#            saml_geozone_id = postcode_instance.geozone&.id
-#        end
    end
 
    
@@ -190,9 +191,33 @@ Rails.logger.info("extracted values: #{extracted_values.inspect}")
     end
   user
   end
+  
+  # Method to update user attributes based on SAML data
+  def update_user_details_from_saml(auth)
+   extracted_values = self.class.extract_saml_attributes(auth)
+
+   # Now you have a hash containing the extracted values
+    Rails.logger.info("extracted values: #{extracted_values.inspect}")
+    saml_date_of_birth = extracted_values["saml_date_of_birth"]
+    saml_gender = extracted_values["saml_gender"]
+    saml_postcode = extracted_values["saml_postcode"]
+     # Normalize the saml_postcode by stripping spaces and converting to lowercase
+    normalized_saml_postcode = saml_postcode.strip.downcase if saml_postcode.present?
+
+    # Find the Geozone ID for the new postcode
+    new_geozone_id = Postcode.find_geozone_for_postcode(normalized_saml_postcode)
+
+    # Check and update the user's details if they have changed
+    self.geozone_id = new_geozone_id if geozone_id != new_geozone_id
+    # Add more fields if necessary
+
+    # Save only if any changes have been made
+    save if changed?
+  end
 
 
  private
+  
   def self.log_in_or_create_ys_user(username)
     Rails.logger.info("YS inside log in or create")
   if existing_user = User.find_by(username: username)

@@ -1,5 +1,5 @@
 module Budgets
-  class InvestmentsController < ApplicationController
+  class InvestmentsController < ApplicationController 
     include FeatureFlags
     include CommentableActions
     include FlagActions
