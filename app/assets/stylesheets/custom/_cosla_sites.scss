@@ -208,3 +208,15 @@
   @import "cosla_shared";
    @include shared-styles;
 }
+
+.site-wdn {
+  --brand: #0063be;
+  --brand-secondary: #002664;
+  --brand-contrast: #FFFFFF;
+  --footer: #009a49;
+  --main-header-contrast: #FFFFFF;
+   --top-links: #009a49;
+  --top-links-contrast: #FFFFFF;
+   @import "cosla_shared";
+   @include shared-styles;
+}
