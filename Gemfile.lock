@@ -246,7 +246,8 @@ GEM
       request_store (~> 1.0)
     globalize-accessors (0.3.0)
       globalize (>= 5.0.0)
-    google-protobuf (4.26.0)
+    google-protobuf (4.27.5)
+      bigdecimal
       rake (>= 13)
     graphiql-rails (1.8.0)
       railties
