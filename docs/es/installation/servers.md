@@ -2,20 +2,20 @@
 
 ## Requisitos de sistema mínimos recomendados
 
-### 1. Production Server
+### 1. Servidor de producción
 
-- Distrubution: Ubuntu 16.04.X
+- Distribuciones compatibles: Ubuntu 22.04, Ubuntu 24.04, Debian Bullseye o Debian Bookworm
 - RAM: 32GB
-- Processor: Quad core
-- Hard Drive: 20 GB
-- Database: Postgres
+- Procesador: Quad core
+- Disco duro: 20 GB
+- Base de datos: Postgres
 
-### 2. Staging Server
+### 2. Servidor de pruebas
 
-- Distrubution: Ubuntu 16.04.X
+- Distribuciones compatibles: Ubuntu 22.04, Ubuntu 24.04, Debian Bullseye o Debian Bookworm
 - RAM: 16GB
-- Processor: Dual core
-- Hard Drive: 20 GB
-- Database: Postgres
+- Procesador: Dual core
+- Disco duro: 20 GB
+- Base de datos: Postgres
 
 Si tu ciudad tiene una población superior a 1.000.000, considera añadir un balanceador de carga y usar 2-3 servidores de producción, además de un servidor de base de datos dedicado.
