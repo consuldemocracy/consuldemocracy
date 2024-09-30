@@ -62,7 +62,7 @@ module Types
     end
 
     def budget(id:)
-      Budget.find(id)
+      budgets.find(id)
     end
 
     def comments
@@ -70,7 +70,7 @@ module Types
     end
 
     def comment(id:)
-      Comment.find(id)
+      comments.find(id)
     end
 
     def debates
@@ -78,7 +78,7 @@ module Types
     end
 
     def debate(id:)
-      Debate.find(id)
+      debates.find(id)
     end
 
     def geozones
@@ -86,7 +86,7 @@ module Types
     end
 
     def geozone(id:)
-      Geozone.find(id)
+      geozones.find(id)
     end
 
     def milestones
@@ -94,7 +94,7 @@ module Types
     end
 
     def milestone(id:)
-      Milestone.find(id)
+      milestones.find(id)
     end
 
     def proposals
@@ -102,7 +102,7 @@ module Types
     end
 
     def proposal(id:)
-      Proposal.find(id)
+      proposals.find(id)
     end
 
     def proposal_notifications
@@ -110,7 +110,7 @@ module Types
     end
 
     def proposal_notification(id:)
-      ProposalNotification.find(id)
+      proposal_notifications.find(id)
     end
 
     def tags
@@ -118,7 +118,7 @@ module Types
     end
 
     def tag(id:)
-      Tag.find(id)
+      tags.find(id)
     end
 
     def users
@@ -126,7 +126,7 @@ module Types
     end
 
     def user(id:)
-      User.find(id)
+      users.find(id)
     end
 
     def votes
@@ -134,7 +134,7 @@ module Types
     end
 
     def vote(id:)
-      Vote.find(id)
+      votes.find(id)
     end
   end
 end

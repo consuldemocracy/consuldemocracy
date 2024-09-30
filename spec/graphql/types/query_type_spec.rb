@@ -1,36 +1,6 @@
 require "rails_helper"
 
-def execute(query_string, context = {}, variables = {})
-  ConsulSchema.execute(query_string, context: context, variables: variables)
-end
-
-def dig(response, path)
-  response.dig(*path.split("."))
-end
-
-def hidden_field?(response, field_name)
-  data_is_empty = response["data"].nil?
-  error_message = /Field '#{field_name}' doesn't exist on type '[[:alnum:]]*'/
-
-  error_is_present = ((response["errors"].first["message"] =~ error_message) == 0)
-  data_is_empty && error_is_present
-end
-
-def extract_fields(response, collection_name, field_chain)
-  fields = field_chain.split(".")
-  dig(response, "data.#{collection_name}.edges").map do |node|
-    begin
-      if fields.size > 1
-        node["node"][fields.first][fields.second]
-      else
-        node["node"][fields.first]
-      end
-    rescue NoMethodError
-    end
-  end.compact
-end
-
-describe "Consul Schema" do
+describe Types::QueryType do
   let(:user) { create(:user) }
   let(:proposal) { create(:proposal, author: user) }
 
@@ -94,175 +64,7 @@ describe "Consul Schema" do
     expect(hidden_field?(response, "encrypted_password")).to be_truthy
   end
 
-  describe "Users" do
-    let(:user) { create(:user, public_activity: false) }
-
-    it "does not link debates if activity is not public" do
-      create(:debate, author: user)
-
-      response = execute("{ user(id: #{user.id}) { public_debates { edges { node { title } } } } }")
-      received_debates = dig(response, "data.user.public_debates.edges")
-
-      expect(received_debates).to eq []
-    end
-
-    it "does not link proposals if activity is not public" do
-      create(:proposal, author: user)
-
-      response = execute("{ user(id: #{user.id}) { public_proposals { edges { node { title } } } } }")
-      received_proposals = dig(response, "data.user.public_proposals.edges")
-
-      expect(received_proposals).to eq []
-    end
-
-    it "does not link comments if activity is not public" do
-      create(:comment, author: user)
-
-      response = execute("{ user(id: #{user.id}) { public_comments { edges { node { body } } } } }")
-      received_comments = dig(response, "data.user.public_comments.edges")
-
-      expect(received_comments).to eq []
-    end
-  end
-
-  describe "Proposals" do
-    it "does not include hidden proposals" do
-      create(:proposal, title: "Visible")
-      create(:proposal, :hidden, title: "Hidden")
-
-      response = execute("{ proposals { edges { node { title } } } }")
-      received_titles = extract_fields(response, "proposals", "title")
-
-      expect(received_titles).to match_array ["Visible"]
-    end
-
-    it "includes proposals of authors even if public activity is set to false" do
-      visible_author = create(:user, public_activity: true)
-      hidden_author  = create(:user, public_activity: false)
-
-      visible_proposal = create(:proposal, author: visible_author)
-      hidden_proposal  = create(:proposal, author: hidden_author)
-
-      response = execute("{ proposals { edges { node { title } } } }")
-      received_titles = extract_fields(response, "proposals", "title")
-
-      expect(received_titles).to match_array [visible_proposal.title, hidden_proposal.title]
-    end
-
-    it "does not link author if public activity is set to false" do
-      create(:user, :with_proposal, username: "public",  public_activity: true)
-      create(:user, :with_proposal, username: "private", public_activity: false)
-
-      response = execute("{ proposals { edges { node { public_author { username } } } } }")
-      received_authors = extract_fields(response, "proposals", "public_author.username")
-
-      expect(received_authors).to match_array ["public"]
-    end
-
-    it "only returns date and hour for created_at" do
-      created_at = Time.zone.parse("2017-12-31 9:30:15")
-      create(:proposal, created_at: created_at)
-
-      response = execute("{ proposals { edges { node { public_created_at } } } }")
-      received_timestamps = extract_fields(response, "proposals", "public_created_at")
-
-      expect(Time.zone.parse(received_timestamps.first)).to eq Time.zone.parse("2017-12-31 9:00:00")
-    end
-
-    it "only retruns tags with kind nil or category" do
-      create(:tag, name: "Parks")
-      create(:tag, :category, name: "Health")
-      create(:tag, name: "Admin tag", kind: "admin")
-
-      proposal = create(:proposal, tag_list: "Parks, Health, Admin tag")
-
-      response = execute("{ proposal(id: #{proposal.id}) { tags  { edges { node { name } } } } }")
-      received_tags = dig(response, "data.proposal.tags.edges").map { |node| node["node"]["name"] }
-
-      expect(received_tags).to match_array ["Parks", "Health"]
-    end
-
-    it "returns nested votes for a proposal" do
-      proposal = create(:proposal, voters: [create(:user), create(:user)])
-
-      response = execute("{ proposal(id: #{proposal.id}) " \
-                         "{ votes_for { edges { node { public_created_at } } } } }")
-
-      votes = response["data"]["proposal"]["votes_for"]["edges"]
-      expect(votes.count).to eq(2)
-    end
-  end
-
-  describe "Budgets" do
-    it "does not include unpublished budgets" do
-      create(:budget, :drafting, name: "Draft")
-
-      response = execute("{ budgets { edges { node { name } } } }")
-      received_names = extract_fields(response, "budgets", "name")
-
-      expect(received_names).to eq []
-    end
-  end
-
-  describe "Debates" do
-    it "does not include hidden debates" do
-      create(:debate, title: "Visible")
-      create(:debate, :hidden, title: "Hidden")
-
-      response = execute("{ debates { edges { node { title } } } }")
-      received_titles = extract_fields(response, "debates", "title")
-
-      expect(received_titles).to match_array ["Visible"]
-    end
-
-    it "includes debates of authors even if public activity is set to false" do
-      visible_author = create(:user, public_activity: true)
-      hidden_author  = create(:user, public_activity: false)
-
-      visible_debate = create(:debate, author: visible_author)
-      hidden_debate  = create(:debate, author: hidden_author)
-
-      response = execute("{ debates { edges { node { title } } } }")
-      received_titles = extract_fields(response, "debates", "title")
-
-      expect(received_titles).to match_array [visible_debate.title, hidden_debate.title]
-    end
-
-    it "does not link author if public activity is set to false" do
-      create(:user, :with_debate, username: "public",  public_activity: true)
-      create(:user, :with_debate, username: "private", public_activity: false)
-
-      response = execute("{ debates { edges { node { public_author { username } } } } }")
-      received_authors = extract_fields(response, "debates", "public_author.username")
-
-      expect(received_authors).to match_array ["public"]
-    end
-
-    it "only returns date and hour for created_at" do
-      created_at = Time.zone.parse("2017-12-31 9:30:15")
-      create(:debate, created_at: created_at)
-
-      response = execute("{ debates { edges { node { public_created_at } } } }")
-      received_timestamps = extract_fields(response, "debates", "public_created_at")
-
-      expect(Time.zone.parse(received_timestamps.first)).to eq Time.zone.parse("2017-12-31 9:00:00")
-    end
-
-    it "only retruns tags with kind nil or category" do
-      create(:tag, name: "Parks")
-      create(:tag, :category, name: "Health")
-      create(:tag, name: "Admin tag", kind: "admin")
-
-      debate = create(:debate, tag_list: "Parks, Health, Admin tag")
-
-      response = execute("{ debate(id: #{debate.id}) { tags  { edges { node { name } } } } }")
-      received_tags = dig(response, "data.debate.tags.edges").map { |node| node["node"]["name"] }
-
-      expect(received_tags).to match_array ["Parks", "Health"]
-    end
-  end
-
-  describe "Comments" do
+  describe "#comments" do
     it "only returns comments from proposals, debates, polls and Budget::Investment" do
       create(:comment, commentable: create(:proposal))
       create(:comment, commentable: create(:debate))
@@ -287,16 +89,6 @@ describe "Consul Schema" do
       received_comments = extract_fields(response, "comments", "body")
 
       expect(received_comments).to match_array [visible_comment.body, hidden_comment.body]
-    end
-
-    it "does not link author if public activity is set to false" do
-      create(:user, :with_comment, username: "public",  public_activity: true)
-      create(:user, :with_comment, username: "private", public_activity: false)
-
-      response = execute("{ comments { edges { node { public_author { username } } } } }")
-      received_authors = extract_fields(response, "comments", "public_author.username")
-
-      expect(received_authors).to match_array ["public"]
     end
 
     it "does not include hidden comments" do
@@ -362,9 +154,8 @@ describe "Consul Schema" do
     end
 
     it "does not include comments of debates that are not public" do
-      not_public_debate = create(:debate, :hidden)
-      not_public_debate_comment = create(:comment, commentable: not_public_debate)
-      allow(Comment).to receive(:public_for_api).and_return([])
+      allow(Debate).to receive(:public_for_api).and_return([])
+      not_public_debate_comment = create(:comment, commentable: create(:debate))
 
       response = execute("{ comments { edges { node { body } } } }")
       received_comments = extract_fields(response, "comments", "body")
@@ -373,9 +164,8 @@ describe "Consul Schema" do
     end
 
     it "does not include comments of proposals that are not public" do
-      not_public_proposal = create(:proposal)
-      not_public_proposal_comment = create(:comment, commentable: not_public_proposal)
-      allow(Comment).to receive(:public_for_api).and_return([])
+      allow(Proposal).to receive(:public_for_api).and_return([])
+      not_public_proposal_comment = create(:comment, commentable: create(:proposal))
 
       response = execute("{ comments { edges { node { body } } } }")
       received_comments = extract_fields(response, "comments", "body")
@@ -384,9 +174,8 @@ describe "Consul Schema" do
     end
 
     it "does not include comments of polls that are not public" do
-      not_public_poll = create(:poll)
-      not_public_poll_comment = create(:comment, commentable: not_public_poll)
-      allow(Comment).to receive(:public_for_api).and_return([])
+      allow(Poll).to receive(:public_for_api).and_return([])
+      not_public_poll_comment = create(:comment, commentable: create(:poll))
 
       response = execute("{ comments { edges { node { body } } } }")
       received_comments = extract_fields(response, "comments", "body")
@@ -404,27 +193,6 @@ describe "Consul Schema" do
       expect(received_comments).not_to include(not_public_investment_comment.body)
     end
 
-    it "only links public comments" do
-      user = create(:administrator).user
-      create(:comment, author: user, body: "Public")
-      create(:budget_investment_comment, author: user, valuation: true, body: "Valuation")
-
-      response = execute("{ user(id: #{user.id}) { public_comments { edges { node { body } } } } }")
-      received_comments = dig(response, "data.user.public_comments.edges")
-
-      expect(received_comments).to eq [{ "node" => { "body" => "Public" }}]
-    end
-
-    it "only returns date and hour for created_at" do
-      created_at = Time.zone.parse("2017-12-31 9:30:15")
-      create(:comment, created_at: created_at)
-
-      response = execute("{ comments { edges { node { public_created_at } } } }")
-      received_timestamps = extract_fields(response, "comments", "public_created_at")
-
-      expect(Time.zone.parse(received_timestamps.first)).to eq Time.zone.parse("2017-12-31 9:00:00")
-    end
-
     it "does not include valuation comments" do
       create(:comment, body: "Regular comment")
       create(:comment, :valuation, body: "Valuation comment")
@@ -436,7 +204,110 @@ describe "Consul Schema" do
     end
   end
 
-  describe "Geozones" do
+  describe "#comment" do
+    it "does not find comments that are not public" do
+      comment = create(:comment, :valuation, body: "Valuation comment")
+
+      expect do
+        execute("{ comment(id: #{comment.id}) { body } }")
+      end.to raise_exception ActiveRecord::RecordNotFound
+    end
+  end
+
+  describe "#budgets" do
+    it "does not include unpublished budgets" do
+      create(:budget, :drafting, name: "Draft")
+
+      response = execute("{ budgets { edges { node { name } } } }")
+      received_names = extract_fields(response, "budgets", "name")
+
+      expect(received_names).to eq []
+    end
+  end
+
+  describe "#budget" do
+    it "does not find budgets that are not public" do
+      budget = create(:budget, :drafting)
+
+      expect do
+        execute("{ budget(id: #{budget.id}) { name } }")
+      end.to raise_exception ActiveRecord::RecordNotFound
+    end
+  end
+
+  describe "#debates" do
+    it "does not include hidden debates" do
+      create(:debate, title: "Visible")
+      create(:debate, :hidden, title: "Hidden")
+
+      response = execute("{ debates { edges { node { title } } } }")
+      received_titles = extract_fields(response, "debates", "title")
+
+      expect(received_titles).to match_array ["Visible"]
+    end
+
+    it "includes debates of authors even if public activity is set to false" do
+      visible_author = create(:user, public_activity: true)
+      hidden_author  = create(:user, public_activity: false)
+
+      visible_debate = create(:debate, author: visible_author)
+      hidden_debate  = create(:debate, author: hidden_author)
+
+      response = execute("{ debates { edges { node { title } } } }")
+      received_titles = extract_fields(response, "debates", "title")
+
+      expect(received_titles).to match_array [visible_debate.title, hidden_debate.title]
+    end
+  end
+
+  describe "#debate" do
+    it "does not find debates that are not public" do
+      allow(Debate).to receive(:public_for_api).and_return(Debate.none)
+      debate = create(:debate)
+
+      expect do
+        execute("{ debate(id: #{debate.id}) { title } } ")
+      end.to raise_exception ActiveRecord::RecordNotFound
+    end
+  end
+
+  describe "#proposals" do
+    it "does not include hidden proposals" do
+      create(:proposal, title: "Visible")
+      create(:proposal, :hidden, title: "Hidden")
+
+      response = execute("{ proposals { edges { node { title } } } }")
+      received_titles = extract_fields(response, "proposals", "title")
+
+      expect(received_titles).to match_array ["Visible"]
+    end
+
+    it "includes proposals of authors even if public activity is set to false" do
+      visible_author = create(:user, public_activity: true)
+      hidden_author  = create(:user, public_activity: false)
+
+      visible_proposal = create(:proposal, author: visible_author)
+      hidden_proposal  = create(:proposal, author: hidden_author)
+
+      response = execute("{ proposals { edges { node { title } } } }")
+      received_titles = extract_fields(response, "proposals", "title")
+
+      expect(received_titles).to match_array [visible_proposal.title, hidden_proposal.title]
+    end
+  end
+
+  describe "#proposal" do
+    it "does not find proposals that are not public" do
+      allow(Proposal).to receive(:public_for_api).and_return(Proposal.none)
+      proposal = create(:proposal)
+
+      expect do
+        execute("{ proposal(id: #{proposal.id}) { title } } ")
+      end.to raise_exception ActiveRecord::RecordNotFound
+    end
+  end
+
+  describe "#geozones" do
     it "returns geozones" do
       geozone_names = [create(:geozone), create(:geozone)].map(&:name)
 
@@ -447,7 +318,29 @@ describe "Consul Schema" do
     end
   end
 
-  describe "Proposal notifications" do
+  describe "#geozone" do
+    it "does not find geozones that are not public" do
+      allow(Geozone).to receive(:public_for_api).and_return(Geozone.none)
+      geozone = create(:geozone)
+
+      expect do
+        execute("{ geozone(id: #{geozone.id}) { name } }")
+      end.to raise_exception ActiveRecord::RecordNotFound
+    end
+  end
+
+  describe "#milestone" do
+    it "does not find milestones that are not public" do
+      investment = create(:budget_investment, budget: create(:budget, :drafting))
+      milestone = create(:milestone, milestoneable: investment)
+
+      expect do
+        execute("{ milestone(id: #{milestone.id}) { title } }")
+      end.to raise_exception ActiveRecord::RecordNotFound
+    end
+  end
+
+  describe "#proposal_notifications" do
     it "does not include proposal notifications for hidden proposals" do
       visible_proposal = create(:proposal)
       hidden_proposal  = create(:proposal, :hidden)
@@ -462,41 +355,28 @@ describe "Consul Schema" do
     end
 
     it "does not include proposal notifications for proposals that are not public" do
-      not_public_proposal = create(:proposal)
-      not_public_proposal_notification = create(:proposal_notification, proposal: not_public_proposal)
-      allow(ProposalNotification).to receive(:public_for_api).and_return([])
+      allow(Proposal).to receive(:public_for_api).and_return([])
+      not_public_proposal_notification = create(:proposal_notification, proposal: create(:proposal))
 
       response = execute("{ proposal_notifications { edges { node { title } } } }")
       received_notifications = extract_fields(response, "proposal_notifications", "title")
 
       expect(received_notifications).not_to include(not_public_proposal_notification.title)
     end
+  end
 
-    it "only returns date and hour for created_at" do
-      created_at = Time.zone.parse("2017-12-31 9:30:15")
-      create(:proposal_notification, created_at: created_at)
+  describe "#proposal_notification" do
+    it "does not find proposal notifications that are not public" do
+      allow(Proposal).to receive(:public_for_api).and_return(Proposal.none)
+      notification = create(:proposal_notification)
 
-      response = execute("{ proposal_notifications { edges { node { public_created_at } } } }")
-      received_timestamps = extract_fields(response, "proposal_notifications", "public_created_at")
-
-      expect(Time.zone.parse(received_timestamps.first)).to eq Time.zone.parse("2017-12-31 9:00:00")
-    end
-
-    it "only links proposal if public" do
-      visible_proposal = create(:proposal, title: "Visible")
-      hidden_proposal  = create(:proposal, :hidden, title: "Hidden")
-
-      create(:proposal_notification, proposal: visible_proposal)
-      create(:proposal_notification, proposal: hidden_proposal)
-
-      response = execute("{ proposal_notifications { edges { node { proposal { title } } } } }")
-      received_proposals = extract_fields(response, "proposal_notifications", "proposal.title")
-
-      expect(received_proposals).to match_array ["Visible"]
+      expect do
+        execute("{ proposal_notification(id: #{notification.id}) { title } } ")
+      end.to raise_exception ActiveRecord::RecordNotFound
     end
   end
 
-  describe "Tags" do
+  describe "#tags" do
     it "only display tags with kind nil or category" do
       create(:tag, name: "Parks")
       create(:tag, :category, name: "Health")
@@ -526,7 +406,7 @@ describe "Consul Schema" do
         expect(received_tags).to match_array ["Health", "health"]
       end
 
-      it "works OK when both tags are present for proposals" do
+      it "works OK when both tags are present for debates" do
         create(:debate).tags = [uppercase_tag]
         create(:debate).tags = [lowercase_tag]
 
@@ -558,8 +438,8 @@ describe "Consul Schema" do
     end
 
     it "does not display tags for taggings that are not public" do
+      allow(Proposal).to receive(:public_for_api).and_return([])
       create(:proposal, tag_list: "Health")
-      allow(Tag).to receive(:public_for_api).and_return([])
 
       response = execute("{ tags { edges { node { name } } } }")
       received_tags = extract_fields(response, "tags", "name")
@@ -568,7 +448,30 @@ describe "Consul Schema" do
     end
   end
 
-  describe "Votes" do
+  describe "#tag" do
+    it "does not find tags that are not public" do
+      allow(Proposal).to receive(:public_for_api).and_return(Proposal.none)
+      tag = create(:tag, name: "Health")
+      create(:proposal, tag_list: "Health")
+
+      expect do
+        execute("{ tag(id: #{tag.id}) { name } } ")
+      end.to raise_exception ActiveRecord::RecordNotFound
+    end
+  end
+
+  describe "#user" do
+    it "does not find users that are not public" do
+      allow(User).to receive(:public_for_api).and_return(User.none)
+      user = create(:user)
+
+      expect do
+        execute("{ user(id: #{user.id}) { username } } ")
+      end.to raise_exception ActiveRecord::RecordNotFound
+    end
+  end
+
+  describe "#votes" do
     it "only returns votes from proposals, debates and comments" do
       create(:proposal, voters: [create(:user)])
       create(:debate, voters: [create(:user)])
@@ -638,7 +541,7 @@ describe "Consul Schema" do
     end
 
     it "does not include votes of debates that are not public" do
-      allow(Vote).to receive(:public_for_api).and_return([])
+      allow(Debate).to receive(:public_for_api).and_return([])
       not_public_debate = create(:debate, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_id } } } }")
@@ -648,7 +551,7 @@ describe "Consul Schema" do
     end
 
     it "does not include votes of a hidden proposals" do
-      allow(Vote).to receive(:public_for_api).and_return([])
+      allow(Proposal).to receive(:public_for_api).and_return([])
       not_public_proposal = create(:proposal, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_id } } } }")
@@ -658,7 +561,7 @@ describe "Consul Schema" do
     end
 
     it "does not include votes of a hidden comments" do
-      allow(Vote).to receive(:public_for_api).and_return([])
+      allow(Comment).to receive(:public_for_api).and_return([])
       not_public_comment = create(:comment, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_id } } } }")
@@ -666,56 +569,16 @@ describe "Consul Schema" do
 
       expect(received_votables).not_to include(not_public_comment.id)
     end
-
-    it "only returns date and hour for created_at" do
-      created_at = Time.zone.parse("2017-12-31 9:30:15")
-      create(:vote, created_at: created_at)
-
-      response = execute("{ votes { edges { node { public_created_at } } } }")
-      received_timestamps = extract_fields(response, "votes", "public_created_at")
-
-      expect(Time.zone.parse(received_timestamps.first)).to eq Time.zone.parse("2017-12-31 9:00:00")
-    end
   end
 
-  describe "Milestone" do
-    it "formats publication date like in view" do
-      milestone = create(:milestone, publication_date: Time.zone.parse("2024-07-02 11:45:17"))
+  describe "#vote" do
+    it "does not find votes that are not public" do
+      allow(Debate).to receive(:public_for_api).and_return(Debate.none)
+      vote = create(:vote, votable: create(:debate))
 
-      response = execute("{ milestone(id: #{milestone.id}) { id publication_date } }")
-      received_publication_date = dig(response, "data.milestone.publication_date")
-      expect(received_publication_date).to eq "2024-07-02"
-    end
-  end
-
-  describe "Budget investment" do
-    it "does not include hidden comments" do
-      budget = create(:budget)
-      investment = create(:budget_investment, budget: budget)
-
-      create(:comment, commentable: investment, body: "Visible")
-      create(:comment, :hidden, commentable: investment, body: "Hidden")
-
-      query = <<~GRAPHQL
-        {
-          budget(id: #{budget.id}) {
-            investment(id: #{investment.id}) {
-              comments {
-                edges {
-                  node {
-                    body
-                  }
-                }
-              }
-            }
-          }
-        }
-      GRAPHQL
-
-      response = execute(query)
-      received_bodies = extract_fields(response, "budget.investment.comments", "body")
-
-      expect(received_bodies).to eq ["Visible"]
+      expect do
+        execute("{ vote(id: #{vote.id}) { votable_id } }")
+      end.to raise_exception ActiveRecord::RecordNotFound
     end
   end
 end
