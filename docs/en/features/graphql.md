@@ -130,7 +130,10 @@ The models are the following:
 | `User`                  | Users                         |
 | `Debate`                | Debates                       |
 | `Proposal`              | Proposals                     |
+| `Budget`                | Participatory budgets         |
+| `Budget::Investment`    | Budget investments            |
 | `Comment`               | Comments on debates, proposals and other comments |
+| `Milestone`             | Proposals, investments and processes milestones |
 | `Geozone`               | Geozones (districts)          |
 | `ProposalNotification`  | Notifications related to proposals |
 | `Tag`                   | Tags on debates and proposals |

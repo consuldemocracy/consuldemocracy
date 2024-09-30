@@ -193,6 +193,17 @@ describe "Consul Schema" do
     end
   end
 
+  describe "Budgets" do
+    it "does not include unpublished budgets" do
+      create(:budget, :drafting, name: "Draft")
+
+      response = execute("{ budgets { edges { node { name } } } }")
+      received_names = extract_fields(response, "budgets", "name")
+
+      expect(received_names).to eq []
+    end
+  end
+
   describe "Debates" do
     it "does not include hidden debates" do
       create(:debate, title: "Visible")
@@ -252,16 +263,17 @@ describe "Consul Schema" do
   end
 
   describe "Comments" do
-    it "only returns comments from proposals, debates and polls" do
+    it "only returns comments from proposals, debates, polls and Budget::Investment" do
       create(:comment, commentable: create(:proposal))
       create(:comment, commentable: create(:debate))
       create(:comment, commentable: create(:poll))
-      build(:comment, commentable: create(:budget_investment)).save!(skip_validation: true)
+      create(:comment, commentable: create(:topic))
+      create(:comment, commentable: create(:budget_investment))
 
       response = execute("{ comments { edges { node { commentable_type } } } }")
       received_commentables = extract_fields(response, "comments", "commentable_type")
 
-      expect(received_commentables).to match_array ["Proposal", "Debate", "Poll"]
+      expect(received_commentables).to match_array ["Proposal", "Debate", "Poll", "Budget::Investment"]
     end
 
     it "displays comments of authors even if public activity is set to false" do
@@ -336,6 +348,19 @@ describe "Consul Schema" do
       expect(received_comments).to match_array ["I can see the poll"]
     end
 
+    it "does not include comments from hidden investments" do
+      visible_investment = create(:budget_investment)
+      hidden_investment  = create(:budget_investment, :hidden)
+
+      create(:comment, commentable: visible_investment, body: "I can see the investment")
+      create(:comment, commentable: hidden_investment, body: "This investment is hidden!")
+
+      response = execute("{ comments { edges { node { body } } } }")
+      received_comments = extract_fields(response, "comments", "body")
+
+      expect(received_comments).to match_array ["I can see the investment"]
+    end
+
     it "does not include comments of debates that are not public" do
       not_public_debate = create(:debate, :hidden)
       not_public_debate_comment = create(:comment, commentable: not_public_debate)
@@ -367,6 +392,16 @@ describe "Consul Schema" do
       received_comments = extract_fields(response, "comments", "body")
 
       expect(received_comments).not_to include(not_public_poll_comment.body)
+    end
+
+    it "does not include comments of investments that are not public" do
+      investment = create(:budget_investment, budget: create(:budget, :drafting))
+      not_public_investment_comment = create(:comment, commentable: investment)
+
+      response = execute("{ comments { edges { node { body } } } }")
+      received_comments = extract_fields(response, "comments", "body")
+
+      expect(received_comments).not_to include(not_public_investment_comment.body)
     end
 
     it "only links public comments" do
@@ -640,6 +675,47 @@ describe "Consul Schema" do
       received_timestamps = extract_fields(response, "votes", "public_created_at")
 
       expect(Time.zone.parse(received_timestamps.first)).to eq Time.zone.parse("2017-12-31 9:00:00")
+    end
+  end
+
+  describe "Milestone" do
+    it "formats publication date like in view" do
+      milestone = create(:milestone, publication_date: Time.zone.parse("2024-07-02 11:45:17"))
+
+      response = execute("{ milestone(id: #{milestone.id}) { id publication_date } }")
+      received_publication_date = dig(response, "data.milestone.publication_date")
+      expect(received_publication_date).to eq "2024-07-02"
+    end
+  end
+
+  describe "Budget investment" do
+    it "does not include hidden comments" do
+      budget = create(:budget)
+      investment = create(:budget_investment, budget: budget)
+
+      create(:comment, commentable: investment, body: "Visible")
+      create(:comment, :hidden, commentable: investment, body: "Hidden")
+
+      query = <<~GRAPHQL
+        {
+          budget(id: #{budget.id}) {
+            investment(id: #{investment.id}) {
+              comments {
+                edges {
+                  node {
+                    body
+                  }
+                }
+              }
+            }
+          }
+        }
+      GRAPHQL
+
+      response = execute(query)
+      received_bodies = extract_fields(response, "budget.investment.comments", "body")
+
+      expect(received_bodies).to eq ["Visible"]
     end
   end
 end

@@ -1,5 +1,10 @@
 module Types
   class QueryType < Types::BaseObject
+    field :budgets, Types::BudgetType.connection_type, "Returns all budgets", null: false
+    field :budget, Types::BudgetType, "Returns budget for ID", null: false do
+      argument :id, ID, required: true, default_value: false
+    end
+
     field :comments, Types::CommentType.connection_type, "Returns all comments", null: false
     field :comment, Types::CommentType, "Returns comment for ID", null: false do
       argument :id, ID, required: true, default_value: false
@@ -12,6 +17,11 @@ module Types
 
     field :geozones, Types::GeozoneType.connection_type, "Returns all geozones", null: false
     field :geozone, Types::GeozoneType, "Returns geozone for ID", null: false do
+      argument :id, ID, required: true, default_value: false
+    end
+
+    field :milestones, Types::MilestoneType.connection_type, "Returns all milestones", null: false
+    field :milestone, Types::MilestoneType, "Returns milestone for ID", null: false do
       argument :id, ID, required: true, default_value: false
     end
 
@@ -47,6 +57,14 @@ module Types
       argument :id, ID, required: true, default_value: false
     end
 
+    def budgets
+      Budget.public_for_api
+    end
+
+    def budget(id:)
+      Budget.find(id)
+    end
+
     def comments
       Comment.public_for_api
     end
@@ -69,6 +87,14 @@ module Types
 
     def geozone(id:)
       Geozone.find(id)
+    end
+
+    def milestones
+      Milestone.public_for_api
+    end
+
+    def milestone(id:)
+      Milestone.find(id)
     end
 
     def proposals
