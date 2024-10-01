@@ -1,33 +1,28 @@
-# Local Census
+# Local census
 
-To provide to administrator users a way to manage the local census database through the administration panel **Settings > Manage local census**. Currently the only way to manipulate this table records is through the rails console.
+This feature is designed for installations with limited resources that cannot configure and customize their census connection remotely, so we offer them a solution to use a local census instead. For this purpose, administrators are provided with a way to manage the local census database through the administration panel under **Settings > Local census**.
 
-Allow administrators users to manage this table in two different ways:
+## Managing the local census
 
-- **Manually**: one by one through a CRUD interface.
-- **Automatically**: through an importation process.
+Administrators can manage this census in two different ways:
 
-## Manually
+* **Manually**: adding one citizen at a time through a form.
+* **Automatically**: through an importation process.
 
-Provide a way to manage local census records to administrator users through administration interface.
+### Manually
 
-- Local Census Page
-  ![Manage local census](../../img/local_census/manage-local-census-en.png)
+Administrators can create a record by clicking the _Create new local census record_ button, which appears in the top right corner of the page. This will take us to a new page where we can fill in the following form and create the new record:
 
-- Add new record
-  ![Create local census record](../../img/local_census/add-local-census-record-en.png)
+![Form to create a record by filling in the document type, document number, date of birth and postal code](../../img/local_census/add-local-census-record-en.png)
 
-Features:
+### Automatically
 
-1. Search by document_number: As local_census_records could contain a lot of records we have added a search feature to allow administrators to find existing records by document_number.
-1. Avoid the introduction of duplicated records: A model validation has been added to the following attributes pair [:document_number, :document_type]
+Administrators can import multiple records through a CSV file by clicking the _Import CSV_ button, which appears in the top right corner of the page. This will take us to a new page where we can attach a CSV file to create the new records:
 
-## Automatically
+![Page to import new records via csv](../../img/local_census/add-local-census-records-csv-en.png)
 
-Allow administrator users to import local census records though CSV file.
+## Features
 
-- Local Census Page
-  ![Manage local census csv](../../img/local_census/manage-local-census-csv-en.png)
+* Search by document number: Since the local census could contain a lot of records, we have added a search feature to allow administrators to find existing records by document number.
 
-- Import CSV
-  ![Create local census records csv](../../img/local_census/add-local-census-records-csv-en.png)
+* Avoid the introduction of duplicated records: A model validation has been added that does not allow adding records that share the same _number_ and _type_ of document.
