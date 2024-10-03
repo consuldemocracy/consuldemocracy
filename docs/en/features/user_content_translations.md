@@ -45,15 +45,19 @@ Once we have the api key in our `secrets.yml` and the feature enabled, users wil
 We attach some screenshots of how the application interacts with our users:
 
 * When a user visits a page in a language without translated content, an informative text will appear at the top of the page next to a button to request the translation. (**Note:** *If a user visits a page with a language not supported by the translation service, no text or translation button will be displayed. See section: Available languages for remote translation*)
+
   ![The text "The content of this page is not available in your language" is displayed next to a "Translate page" button at the top of the page](../../img/translations/remote_translations/display-text-and-button-en.png)
 
 * Once the user clicks the `Translate page` button, the translations are enqueued and the page is reloaded with a notice (*informing that the translations have been requested correctly*) and an informative text in the header (*explaining when you will be able to see these translations*).
+
   ![Display notice and text after enqueued translations](../../img/translations/remote_translations/display-notice-and-text-after-enqueued-en.png)
 
 * If a user visits a page that does not have translations but its translations have already been requested by another user, the application will not show the translate button but an informative text in the header (*explaining when you will be able to see these translations*).
+
   ![Display text explaining that translations are pending](../../img/translations/remote_translations/display-text-translations-pending-en.png)
 
 * The translation request, response processing and data saving are processed by background jobs and, as soon as they've finished, the user will be able to read them after refreshing the page.
+
   ![Display translated content](../../img/translations/remote_translations/display-translated-content-en.png)
 
 ### Available languages for remote translation
@@ -127,8 +131,10 @@ Depending on whether we enable or disable the **Translation Interface** feature 
   Additionally, the interface provides a link `Remove language` to delete the current language shown at "Select language". If a user accidentally removes a translation they can recover it by re-adding it to the form.
 
   This feature is visible during the creation and edition of translatable resources.
+
   ![Translations interface enabled](../../img/translations/interface_translations/translations-interface-enabled-en.png)
 
 * When the translation interface is disabled:
   When this feature is disabled users will see standard forms without the translation interface and without highlighted translation fields.
+
   ![Translations interface disabled](../../img/translations/interface_translations/translations-interface-disabled-en.png)
