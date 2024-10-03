@@ -548,6 +548,15 @@ cs:
       image:
         title: Předmět
         attachment: "Attachment"
+      poll/question/option:
+        title: Odpověď
+        description: Popis
+      poll/question/option/translation:
+        title: Odpověď
+        description: "Popis (volitelné)"
+      poll/question/option/video:
+        title: Nadpis
+        url: Externí video
       newsletter:
         segment_recipient: Příjemci
         subject: Subject

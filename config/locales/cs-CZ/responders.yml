@@ -7,6 +7,9 @@ cs:
         direct_message: "Vaše zpráva byla úspěšně odeslána."
         poll: "Anketa úspěšně vytvořena."
         poll_booth: "Booth byl úspěšně vytvořen."
+        poll_question_option: "Odpověď úspěšně vytvořena"
+        poll_question_option_video: "Video úspěšně vytvořeno"
+        poll_question_option_image: "Obrázek úspěšně nahrán"
         proposal: "Návrh byl úspěšně vytvořen."
         proposal_notification: "Vaše zpráva byla odeslána správně."
         budget_investment: "Rozpočtová investice byla úspěšně vytvořena."
@@ -31,5 +34,7 @@ cs:
       destroy:
         budget_investment: "Investiční projekt byl smazán."
         topic: "Téma bylo smazáno."
+        poll_question_option_image: "Obrázek úspěšně smazán."
+        poll_question_option_video: "Odpověď na video úspěšně smazána."
         valuator_group: "Skupina hodnotitelů byla smazána"
         vote: "Hlas byl úspěšně smazán"
