@@ -45,15 +45,19 @@ Una vez tenemos la api key en nuestro `secrets.yml` y la funcionalidad activada,
 Para aclarar el funcionamiento, se adjuntan unos pantallazos de cómo interactúa la aplicación con nuestros usuarios:
 
 * Cuando un usuario accede a una pantalla en un idioma en el que no están disponibles todas las traducciones, le aparecerá un texto en la parte superior de la pantalla y un botón para poder solicitar la traducción. (**Nota:** *En el caso de acceder con un idioma no soportado por el servicio de traducción no se mostrará ningún texto ni botón de traducción. Ver sección: Idiomas disponibles para la traducción remota*)
+
   ![Se muestra el texto "El contenido de esta página no esta disponible en tu idioma" y al lado el botón de traducción "Traducir página" en la parte superior de la página](../../img/translations/remote_translations/display-text-and-button-es.png)
 
 * Una vez el usuario pulsa el botón de `Traducir página` se encolan las traducciones y se recarga la pantalla con un notice (*informando que se han solicitado correctamente las traducciones*) y un texto informativo en la cabecera (*explicando cuándo podrá ver estas traducciones*).
+
   ![Se informa al usuario que se han solicitado las traducciones](../../img/translations/remote_translations/display-notice-and-text-after-enqueued-es.png)
 
 * Si un usuario accede a una pantalla que no dispone de traducciones pero ya han sido solicitadas por otro usuario, la aplicación no le mostrará el botón de traducir, pero sí un texto informativo en la cabecera (*explicando cuándo podrá ver estas traducciones*).
+
   ![Se informa al usuario que las traducciones están pendientes](../../img/translations/remote_translations/display-text-translations-pending-es.png)
 
 * Las peticiones de traducción se delegan a `Delayed Job` y en cuanto haya sido procesada, el usuario después de refrescar su página podrá ver el contenido traducido.
+
   ![Se muestra el contenido traducido](../../img/translations/remote_translations/display-translated-content-es.png)
 
 ### Idiomas disponibles para la traducción remota
@@ -127,8 +131,10 @@ Dependiendo de si activamos o desactivamos el módulo de **Interfaz de traducci�
  También disponemos de un botón `Eliminar idioma` para eliminar un idioma en caso de necesitarlo. Si un usuario elimina accidentalmente un idioma puede recuperarlo añadiendo dicho idioma otra vez al formulario.
 
  Esta funcionalidad está visible tanto para las páginas de creación como para las páginas de edición.
+
  ![Interfaz de traducción activada](../../img/translations/interface_translations/translations-interface-enabled-es.png)
 
 * Cuando la interfaz de traducción está desactivada:
   Cuando esta funcionalidad está desactivada los formularios se renderizan sin la interfaz de traducción y sin resaltar los campos traducibles con fondo azul.
+
   ![Interfaz de traducción desactivada](../../img/translations/interface_translations/translations-interface-disabled-es.png)
