@@ -806,6 +806,8 @@ en:
       local_census_records: Local census
       machine_learning: "AI / Machine learning"
       multitenancy: Multitenancy
+      projects: Projects
+      project_phases: Project phases
     administrators:
       index:
         title: Administrators
@@ -1699,6 +1701,8 @@ en:
         proposals: Proposals
         debates: Debates
         processes: Processes
+        active_projects: "Active projects"
+        archived_projects: "Archived projects"
       new:
         header_title: New header
         submit_header: Create header
@@ -1804,3 +1808,52 @@ en:
       tags: "Tags"
       tags_description: "Generates automatic tags on all items that can be tagged on."
       title: "AI / Machine learning"
+    projects:
+      index:
+        create: "Create project"
+        no_projects: "No projects created yet."
+        show_project: "Phases"
+        title: "Projects"
+      new:
+        title: "New project"
+      cards:
+        cards_title: "Project cards"
+        create_card: "Create project card"
+        no_cards: "No cards for this project created yet."
+      show:
+        see_cards: "Show cards"
+      new:
+        title: "New project"
+      edit: 
+        title: "Edit project"
+      form:
+        slug_help: "Custom URL for this project, for example <code>https://consuldemocracy.org/project-slug</code>"
+      update:
+        notice: "Successfully updated project."
+        error: "Error while trying to update project."
+      create:
+        notice: "Successfully created project."
+      tabs:
+        homepage: "Project homepage"
+      phases:
+        cards:
+          cards_title: "Phases cards"
+          create_card: "Create phase card"
+          no_cards: "No cards for this project phase created yet."
+        index:
+          create: "Create project phase"
+          see_cards: "Show cards"
+          no_phases: "No phases for this project created yet."
+        new:
+          title: "New project phase"
+        edit:
+          title: "Edit project phase"
+        form:
+          order_help: "You can enter the position where this phase will be shown."
+        update:
+          notice: "Successfully updated project phase."
+          error: "Error while trying to update project phase."
+        create:
+          notice: "Successfully created project phase."
+        errors:
+          dates_range_invalid: "Start date needs to me earlier than end date."

@@ -1,0 +1,11 @@
+<% provide :main_class, "admin-projects-edit" %>
+
+<%= back_link_to admin_projects_path %>
+
+<header>
+  <h2><%= t("admin.projects.edit.title") %></h2>
+</header>
+
+<%= render Admin::Projects::FormComponent.new(@project, 'submit') %>
+
+

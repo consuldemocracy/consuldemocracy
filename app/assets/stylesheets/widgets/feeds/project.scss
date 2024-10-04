@@ -1,0 +1,11 @@
+.feed-active_projects,
+.feed-archived_projects {
+  .see-all {
+    clear: both;
+  }
+  .project-card {
+    margin-top:calc(#{$line-height} / 2);
+
+  }
+}
+

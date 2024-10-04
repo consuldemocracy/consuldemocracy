@@ -1,0 +1,47 @@
+<%= render "shared/globalize_locales", resource: @project %>
+
+<%= translatable_form_for [:admin, @project] do |f| %>
+  <%= render "shared/errors", resource: @project %>
+
+  <div class="row">
+    <%= f.translatable_fields do |translations_form| %>
+      <div class="small-12 medium-6 column">
+        <%= translations_form.text_field :title %>
+      </div>
+      <div class="small-12 medium-12 column">
+        <%= translations_form.text_area :teaser, rows: 3 %>
+      </div>
+
+      <div class="small-12 column">
+        <%= translations_form.text_area :content, class: "html-area admin" %>
+      </div>
+    <% end %>
+  </div>
+    
+  <div class="row">
+    <div class="small-12 medium-4 column">
+      <%= f.enum_select :state, {}, class: "project-state" %>
+    </div>
+    <div class="small-12 medium-6 column">
+      <%= f.text_field :slug, size: 80,
+                              maxlength: 80,
+                              hint: sanitize(t("admin.projects.form.slug_help")) %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 column">
+      <%= render Images::NestedComponent.new(f) %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="clear">
+      <div class="small-12 medium-4 large-2 column">
+        <%= f.submit t("admin.projects.form.#{@action}_button"),
+                     class: "button success expanded margin-top" %>
+      </div>
+    </div>
+  </div>
+
+<% end %>

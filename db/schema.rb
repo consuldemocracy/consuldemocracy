@@ -1263,6 +1263,54 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_26_112901) do
     t.datetime "updated_at", precision: nil, null: false
   end
 
+  create_table "project_phase_translations", force: :cascade do |t|
+    t.bigint "project_phase_id", null: false
+    t.string "locale", null: false
+    t.string "title"
+    t.string "title_short"
+    t.string "subtitle"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["locale"], name: "index_project_phase_translations_on_locale"
+    t.index ["project_phase_id"], name: "index_project_phase_translations_on_project_phase_id"
+  end
+
+  create_table "project_phases", force: :cascade do |t|
+    t.bigint "project_id"
+    t.integer "order", default: 1, null: false
+    t.boolean "enabled", default: true
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["enabled"], name: "index_project_phases_on_enabled"
+    t.index ["ends_at"], name: "index_project_phases_on_ends_at"
+    t.index ["order"], name: "index_project_phases_on_order"
+    t.index ["project_id"], name: "index_project_phases_on_project_id"
+    t.index ["starts_at"], name: "index_project_phases_on_starts_at"
+  end
+
+  create_table "project_translations", force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.string "locale", null: false
+    t.string "title"
+    t.text "teaser"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["locale"], name: "index_project_translations_on_locale"
+    t.index ["project_id"], name: "index_project_translations_on_project_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "slug", null: false
+    t.integer "state", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["state"], name: "index_projects_on_state"
+  end
+
   create_table "proposal_notifications", id: :serial, force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -1515,6 +1563,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_26_112901) do
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.string "locale"
+    t.boolean "in_navigation", default: false
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|

@@ -50,12 +50,20 @@
                                 accesskey: "6" %>
       </li>
     <% end %>
+    <% if feature?(:projects) %>
+      <li>
+        <%= layout_menu_link_to t("layouts.header.projects"),
+                                projects_path,
+                                controller_name == "projects",
+                                accesskey: "7" %>
+      </li>
+    <% end %>
     <% if feature?(:help_page) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.help"),
                                 help_path,
                                 current_page?(help_path),
-                                accesskey: "7" %>
+                                accesskey: "8" %>
       </li>
     <% end %>
 

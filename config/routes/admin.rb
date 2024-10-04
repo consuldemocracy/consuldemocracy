@@ -114,6 +114,16 @@ namespace :admin do
       end
     end
 
+    resources :projects, only: [:show, :index, :new, :create, :edit, :update, :destroy] do
+      resources :cards, except: [:show], as: :widget_cards, controller: "projects/cards"
+      resources :phases, except: [:index], as: :project_phases, controller: "projects/phases" do
+        resources :cards, except: [:show], as: :widget_cards, controller: "projects/phases/cards"
+      end
+    end
+    resources :project_phases, only: [:show] do
+      resources :cards, except: [:show], as: :widget_cards, controller: "project_phases/cards"
+    end
+
     resources :milestone_statuses, only: [:index, :new, :create, :update, :edit, :destroy]
 
     resources :signature_sheets, only: [:index, :new, :create, :show]

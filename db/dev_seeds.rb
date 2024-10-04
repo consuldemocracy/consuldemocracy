@@ -75,6 +75,7 @@ load_dev_seeds "admin_notifications"
 load_dev_seeds "legislation_proposals"
 load_dev_seeds "milestones"
 load_dev_seeds "pages"
+load_dev_seeds "projects"
 load_dev_seeds "sdg"
 
 log "All dev seeds created successfuly 👍"

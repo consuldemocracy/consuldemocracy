@@ -6,6 +6,7 @@ section "Creating DEMO Settings" do
     "meta_title": "CONSUL DEMOCRACY Demo",
     "mailer_from_name": "CONSUL DEMOCRACY",
     "feature.map": true,
+    "feature.projects": true,
     "feature.remove_investments_supports": true,
     "map.latitude": 51.51,
     "map.longitude": -0.05,

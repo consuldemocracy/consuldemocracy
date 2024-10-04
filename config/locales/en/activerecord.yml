@@ -151,6 +151,12 @@ en:
       votation_type:
         one: Votation type
         other: Votation types
+      project:
+        one: project
+        other: projects
+      project/phase:
+        one: project phase
+        other: projct phases
     attributes:
       budget:
         name: "Name"
@@ -534,6 +540,38 @@ en:
       votation_type/vote_type:
         unique: Unique answer
         multiple: Multiple answers
+      project:
+        title: "Title"
+        slug: "Slug"
+        created_at: "Created at"
+        updated_at: "Updated at"
+        state: "State"
+        teaser: "Teaser text"
+        content: "Content"
+      project/translation:
+        title: "Title"
+        teaser: "Teaser text"
+        content: "Content"
+      project/state:
+        active: "Active"
+        draft: "Draft"
+        archived: "Archived"
+      project/phase:
+        title: "Title"
+        title_short: "Short title"
+        subtitle: "Subtitle"
+        content: "Content"
+        enabled: "Enabled"
+        starts_at: "Starts at (optional)"
+        ends_at: "Ends at (optional)"
+        order: "Order"
+        created_at: "Created at"
+        updated_at: "Updated at"
+      project/phase/translation:
+        title: "Title"
+        title_short: "Short title (used in tabs)"
+        content: "Content"
+        subtitle: "Subtitle (optional)"
     errors:
       models:
         user:

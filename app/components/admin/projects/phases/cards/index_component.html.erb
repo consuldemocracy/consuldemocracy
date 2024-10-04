@@ -1,0 +1,18 @@
+<% provide :title do %>
+  <%= t("admin.header.title") %> - <%= t("admin.menu.project_phases") %> - <%= @project_phase.title %>
+<% end %>
+<%= back_link_to admin_project_path(@project_phase.project) %>
+<div id="cards">
+  <h2 class="inline-block">
+    <%= @project_phase.title %> <%= t("admin.projects.phases.cards.cards_title") %></h2>
+
+  <div class="float-right">
+    <%= link_to t("admin.projects.phases.cards.create_card"),
+                new_admin_project_phase_widget_card_path(@project_phase), class: "button" %>
+  </div>
+
+  <%= render Admin::Widget::Cards::TableComponent.new(
+    @cards,
+    no_cards_message: t("admin.projects.phases.cards.no_cards")
+  ) %>
+</div>

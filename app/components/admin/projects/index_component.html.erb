@@ -1,0 +1,48 @@
+<%= header do %>
+  <%= link_to t("admin.projects.index.create"), new_admin_project_path %>
+<% end %>
+
+<% if projects.any? %>
+  <h3><%#= page_entries_info projects %></h3>
+
+  <table class="cms-project-list">
+    <thead>
+      <tr>
+        <th><%= Project.human_attribute_name(:title) %></th>
+        <th><%= Project.human_attribute_name(:slug) %></th>
+        <th><%= Project.human_attribute_name(:created_at) %></th>
+        <th><%= Project.human_attribute_name(:updated_at) %></th>
+        <th><%= Project.human_attribute_name(:state) %></th>
+        <th><%= t("admin.actions.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% projects.each do |project| %>
+      <tr id="<%= dom_id(project) %>">
+        <td><%= project.title %></td>
+        <td><%= project.slug %></td>
+        <td><%= I18n.l project.created_at, format: :long %></td>
+        <td><%= I18n.l project.updated_at, format: :long %></td>
+        <td><%= t("admin.projects.project.status_#{project.status}") %></td>
+        <td>
+          <%= render Admin::TableActionsComponent.new(project) do |actions|%>
+
+
+            <%= actions.action(:edit,
+                                 text: t("admin.projects.index.show_project"),
+                                 path: admin_project_path(project)) %>
+
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <%#= paginate projects %>
+<% else %>
+  <div class="callout primary">
+    <%#= page_entries_info projects %>
+    <%= t("admin.projects.index.no_projects") %>
+  </div>
+<% end %>

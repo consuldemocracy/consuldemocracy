@@ -1,0 +1,15 @@
+<div id="<%= dom_id(project) %>" class="project-card card small-12 medium-4 column margin-bottom end">
+  <%= link_to url_for(project) do %>
+    <figure class="figure-card">
+      <div class="gradient"></div>
+      <% if project.image.present? %>
+        <%= image_tag(project.image.variant(:large), alt: project.image.title) %>
+      <% end %>
+      <figcaption>
+        <h3><%= project.title %></h3>
+      </figcaption>
+    </figure>
+    <p class="description"><%= project.teaser %></p>
+    <p><%= project.title %></p>
+  <% end %>
+</div>

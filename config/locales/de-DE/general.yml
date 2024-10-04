@@ -226,6 +226,7 @@ de:
           other: Sie haben %{count} neue Benachrichtigungen
         notifications: Benachrichtigungen
       sdg: "SDG"
+      projects: "Projekte"
   notifications:
     index:
       empty_notifications: Sie haben keine neuen Benachrichtigungen.
@@ -832,14 +833,20 @@ de:
         debates: "Aktivste Debatten"
         proposals: "Aktivste Vorschläge"
         processes: "Laufende Verfahren"
+        active_projects: "Aktive Projekte"
+        archived_projects: "Archivierte Projekte"
       see_all:
         debates: Alle Debatten anzeigen
         proposals: Alle Vorschläge anzeigen
         processes: Alle Beteiligungsverfahren anzeigen
+        active_projects: "Alle aktiven Projekte anzeigen"
+        archived_projects: "Alle archivierten Projekte anzeigen"
       no_items:
         debates: Aktuell gibt es keine Diskussionen
         proposals: Aktuell gibt es keine Vorschläge
         processes: Aktuell gibt es keine laufende Prozesse
+        active_projects: "Aktuell gibt es keine aktiven Projekte"
+        archived_projects: "Aktuell gibt es keine archivierten Projekte"
       process_label: Beteiligungsverfahren
       see_process: Beteiligungsverfahren anzeigen
     cards:
@@ -923,3 +930,20 @@ de:
   machine_learning:
     comments_summary: "Zusammenfassung der Kommentare"
     info_text: "Durch KI/Maschinelles Lernen generierte Inhalte"
+  projects:
+    index:
+      title: "Projekte"
+      section_header:
+        title: "Projekte"
+        help: "Hilfe zu Projekten"
+      filters:
+        archived: "Archivierte Projekte"
+        active: "Aktive Projekte"
+      no_projects: "Aktuell keine Projekte vorhanden."
+      section_footer:
+        title: "Hilfe zu Projekten"
+        description: "Projekte sind eine Sammlung von Informationen sowie Betweiligungsinformationen zu aktuellen Themen in Ihrer Stadt."
+    show:
+      back: "Zurück zur Übersicht"
+    tabs:
+      homepage: "Informationen"

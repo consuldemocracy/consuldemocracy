@@ -20,12 +20,18 @@ class Widget::Feeds::FeedComponent < ApplicationComponent
         Widget::Feeds::DebateComponent
       when "processes"
         Widget::Feeds::ProcessComponent
+      when "active_projects", "archived_projects"
+        Widget::Feeds::ProjectComponent
       end
     end
 
     def filters
       if feed.respond_to?(:goal) && kind != "processes"
         { advanced_search: { goal: feed.goal.code }}
+      elsif kind == "active_projects"
+        { filter: 'active' }
+      elsif kind == "archived_projects"
+        { filter: 'archived' }
       else
         {}
       end

@@ -134,6 +134,8 @@ de:
       remove_investments_supports_description: "Ermöglicht es den Nutzern, in der Phase der Projektauswahl Unterstützungen für Investitionen in Bürgerhaushalte zu entfernen."
       sdg: SDG
       sdg_description: Aktivieren Sie die Abschnitte über die Ziele für nachhaltige Entwicklung im Verwaltungsmenü und in den globalen Einstellungen.
+      projects: "Projekte"
+      projects_description: "Aktivieren Sie Projekte um eine zentrale Übersichtsseite für Projekte und individuelle Projektphasen verwalten zu können."
     remote_census:
       general:
         endpoint: "Endpunkt"

@@ -1,0 +1,54 @@
+<% provide :title, t("projects.index.title") %>
+<% provide :main_class, "projects-index" %>
+
+<%#= render Shared::BannerComponent.new("projects") %>
+
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: projects_url %>
+<% end %>
+
+<%= render "shared/section_header", i18n_namespace: "projects.index.section_header", image: "projects" %>
+
+<%= render "shared/filter_subnav", i18n_namespace: "projects.index" %>
+
+<div class="row">
+  <div class="small-12 column">
+    <% if @projects.any? %>
+      <div id="projects">
+        <% projects.each do |project| %>
+          <div class="project">
+            <div class="panel single-project">
+
+              <div id="project<%= project.id %>_results">
+
+                <%= render Widget::Feeds::ProjectComponent.new(project) %>
+
+                  
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+    <% else %>
+      <div class="callout primary">
+        <%= t("projects.index.no_projects") %>
+      </div>
+    <% end %>
+  </div>
+  <div class="small-12 column">
+    <%= paginate @projects %>
+  </div>
+
+  <div class="small-12 column">
+    <div id="section_help" class="margin" data-magellan-target="section_help">
+      <p class="lead">
+        <strong><%= t("projects.index.section_footer.title") %></strong>
+      </p>
+      <p><%= t("projects.index.section_footer.description") %></p>
+    </div>
+
+  </div>
+</div>
+
+<%#= render Budgets::FooterComponent.new %>

@@ -1,0 +1,17 @@
+<h2><%= @project_phase.title %></h2>
+
+<% if @project_phase.image.present? %>
+	<span class="float-right">
+		<%= image_tag(@project_phase.image.variant(:large), alt: @project_phase.image.title) %>
+	</span>
+<% end %>
+
+<%= auto_link_already_sanitized_html AdminWYSIWYGSanitizer.new.sanitize(@project_phase.content) %>
+
+<div class="clear">
+	<% if @project_phase.cards.any? %>
+		<div class="small-12 column">
+			<%= render "shared/cards", cards: @project_phase.cards %>
+		</div>
+	<% end %>
+</div>

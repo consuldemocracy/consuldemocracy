@@ -13,6 +13,7 @@
 // 09. Map
 // 10. Budgets
 // 11. Newsletters
+// 12. Projects
 //
 
 // 01. Global styles
@@ -1021,5 +1022,14 @@ table {
     &:hover {
       background: none;
     }
+  }
+}
+
+
+// 12. Projects
+// -----------------
+table.cms-project_phases-list {
+  tr.admin-project-homepage-phase {
+    background:$highlight;
   }
 }

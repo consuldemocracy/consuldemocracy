@@ -134,6 +134,8 @@ en:
       remove_investments_supports_description: "Allow users to remove supports on participatory budgets investments during the selecting projects phase."
       sdg: SDG
       sdg_description: Enable Sustainable Development Goals sections in the administration menu and in the Global Settings.
+      projects: "Projects"
+      projects_description: "Enable Projects to manage a central overview page for individual projects and describe individual project phases."
     remote_census:
       general:
         endpoint: "Endpoint"

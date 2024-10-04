@@ -1,0 +1,70 @@
+<% provide :title, @project.title %>
+
+<%#= render "projects/header", project: @project, header: :full %>
+
+
+<div class="row margin-top">
+  <div class="small-12 column">
+    <%= back_link_to projects_path(filter: @project.state), t("projects.show.back") %>
+    <h2>
+    	<%= @project.title %>
+			<% if @project.state == 'archived' %>
+		    	(<%= t('projects.index.filters.archived') %>)
+			<% end %>
+    </h2>
+    <nav class="<%= "project-phase-list" if @project.phases.present? %>">
+	  <div class="row">
+	    <div class="small-12 column">
+	      <ul class="key-dates">
+	        <li <%= "class=is-active" if !@active_phase.present? %>>
+	          <%= link_to project_path(id: @project) do %>
+	            <h4><%= t("projects.tabs.homepage") %></h4>
+	            <span>&nbsp;<br/>&nbsp;</span>
+	          <% end %>
+	        </li>
+	      <% @project.phases.enabled.sort_by_order.each do |project_phase| %>
+	        <li <%= "class=is-active" if @active_phase.present? && project_phase == @active_phase %>>
+	          <%= link_to project_path(id: @project, phase: project_phase.id) do %>
+	            <h4><%= project_phase.title_short %></h4>
+            	<span><i><%= project_phase.subtitle %></i></span><br/>
+            	<span><%= format_date(project_phase.starts_at) %> - <%= format_date(project_phase.ends_at) %></span>
+	          <% end %>
+	        </li>
+	      <% end %>
+
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+
+	<div class="row">
+	  <div class="small-12 medium-12 column">
+	    <div class="active-phase">
+	      <% if @active_phase.present? %>
+	      	<%= render Projects::Phases::ActivePhaseComponent.new(@active_phase) %>
+	      <% else %>
+	        <p></p>
+		      <% if @project.image.present? %>
+		      	<span class="float-right">
+			        <%= image_tag(@project.image.variant(:large), alt: @project.image.title) %>
+			      </span>
+		      <% end %>
+	        <%= auto_link_already_sanitized_html AdminWYSIWYGSanitizer.new.sanitize(@project.content) %>
+
+   				<div class="clear">
+		        <% if @project.cards.any? %>
+		          <div class="small-12 column">
+		            <%= render "shared/cards", cards: @project.cards %>
+		          </div>
+		        <% end %>
+	        </div>
+
+	      <% end %>
+	    </div>
+	  </div>
+	</div>
+
+
+  </div>
+
+</div>

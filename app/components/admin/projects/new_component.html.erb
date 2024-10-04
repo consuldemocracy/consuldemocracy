@@ -1,0 +1,9 @@
+<% provide :main_class, "admin-projects-new" %>
+
+<%= back_link_to admin_projects_path %>
+
+<header>
+  <h2><%= t("admin.projects.new.title") %></h2>
+</header>
+
+<%= render Admin::Projects::FormComponent.new(@project, 'create') %>

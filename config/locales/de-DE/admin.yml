@@ -792,6 +792,8 @@ de:
       local_census_records: Verwaltung des lokalen Registers
       machine_learning: "KI / Maschinelles Lernen"
       multitenancy: Mehrmandantenfähigkeit
+      projects: Projekte
+      project_phases: Projektphasen
     administrators:
       index:
         title: Administrator*innen
@@ -1663,6 +1665,8 @@ de:
         proposals: Vorschläge
         debates: Diskussionen
         processes: Beteiligungsverfahren
+        active_projects: "Aktive Projekte"
+        archived_projects: "Archivierte Projekte"
       new:
         header_title: Neue Kopfzeile
         submit_header: Kopfzeile erstellen
@@ -1768,3 +1772,66 @@ de:
       tags: "Tags"
       tags_description: "Erzeugt automatische Tags für alle Artikel, die mit Tags versehen werden können."
       title: "KI / Maschinelles Lernen"
+    projects:
+      index:
+        create: "Projekt erstellen"
+        delete: "Projekt löschen"
+        no_projects: "Es wurden noch keine Projekte angelegt."
+        show_project: "Phasen"
+        title: "Projekte"
+      new:
+        title: "Neues Projekt"
+      cards:
+        cards_title: "Projekt Karten"
+        create_card: "Karte hinzufügen"
+        no_cards: "Es wurden noch keine Karten zum Projekt angelegt."
+      show:
+        go_back: "Zurück"
+        see_cards: "Karten ansehen"
+        title: "Projektphasen"
+      new:
+        title: "Neues Projekt"
+      edit: 
+        title: "Projekt bearbeiten"
+      form:
+        create_button: "Projekt erstellen"
+        submit_button: "Speichern"
+        slug_help: "Eigene Projekt-URL, z.B. <code>https://consuldemocracy.org/project-slug</code>"
+      update:
+        notice: "Projekt wurde erfogreich aktualisiert."
+        error: "Ein Fehler ist aufgetreten, bitte versuchen Sie es erneut."
+      create:
+        notice: "Projekt wurde erfolgreich angelegt."
+      project:
+        status_draft: "Entwurf"
+        status_archived: "Archiviert"
+        status_active: "Aktiv"
+      tabs:
+        homepage: "Projekt Informationen"
+      phases:
+        cards:
+          cards_title: "Karten zu Projektphase"
+          create_card: "Neue Karte erstellen"
+          no_cards: "Es wurden noch keine Karten zur Projektphase angelegt."
+        index:
+          create: "Projektphase erstellen"
+          see_cards: "Karten ansehen"
+          no_phases: "Es wurden noch keine Phasen im Projekt hinzugefügt."
+        new:
+          title: "Neue Projektphase"
+        edit:
+          title: "Projektphase bearbeiten"
+        form:
+          create_button: "Projektphase erstellen"
+          submit_button: "Speichern"
+          order_help: "Sie können die Reihenfolge der Projektphasen hiermit manuell bearbeiten."
+        update:
+          notice: "Projektphase wurde erfolgreich aktualisiert."
+          error: "Ein Fehler ist aufgetreten, bitte versuchen Sie es erneut."
+        create:
+          notice: "Projektphase wurde erfolgreich angelegt."
+        phase:
+          enabled_true: "Öffentlich"
+          enabled_false: "Versteckt"
+        errors:
+          dates_range_invalid: "Von-Datum muss kleiner sein als das Bis-Datum."

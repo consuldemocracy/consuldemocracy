@@ -88,9 +88,12 @@ class Setting < ApplicationRecord
         "feature.sdg": true,
         "feature.machine_learning": false,
         "feature.remove_investments_supports": true,
+        "feature.projects": false,
         "homepage.widgets.feeds.debates": true,
         "homepage.widgets.feeds.processes": true,
         "homepage.widgets.feeds.proposals": true,
+        "homepage.widgets.feeds.active_projects": false,
+        "homepage.widgets.feeds.archived_projects": false,
         # Code to be included at the top (inside <body>) of every page
         "html.per_page_code_body": "",
         # Code to be included at the top (inside <head>) of every page (useful for tracking)

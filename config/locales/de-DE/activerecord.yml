@@ -145,6 +145,12 @@ de:
       local_census_record:
         one: Import von Datensatz aus dem Melderegister
         other: Import von Datensätzen aus dem Melderegister
+      project:
+        one: Projekt
+        other: Projekte
+      project/phase:
+        one: Projektphase
+        other: Projektphasen
     attributes:
       budget:
         name: "Name"
@@ -516,6 +522,38 @@ de:
       votation_type/vote_type:
         unique: "Eindeutige Antwort\n"
         multiple: Mehrere Antworten
+      project:
+        title: "Titel"
+        slug: "Url-Pfad"
+        created_at: "Erstellt"
+        updated_at: "Aktualisiert"
+        state: "Status"
+        teaser: "Teaser text"
+        content: "Beschreibung"
+      project/translation:
+        title: "Titel"
+        teaser: "Teasertext für Startseite"
+        content: "Beschreibung"
+      project/state:
+        active: "Aktiv"
+        draft: "Entwurf"
+        archived: "Archiviert"
+      project/phase:
+        enabled: "Phase sichtbar"
+        starts_at: "Von (optional)"
+        ends_at: "Bis (optional)"
+        order: "Reihenfolge"
+        created_at: "Erstellt"
+        updated_at: "Aktualisiert"
+        title: "Titel"
+        title_short: "Kurztitel"
+        subtitle: "Untertitel"
+        content: "Beschreibung"
+      project/phase/translation:
+        title: "Titel"
+        title_short: "Kurztitel (für Reiter)"
+        content: "Beschreibung"
+        subtitle: "Untertitel (optional)"
     errors:
       models:
         user:

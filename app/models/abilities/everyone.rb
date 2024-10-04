@@ -11,6 +11,8 @@ module Abilities
       can :stats, Poll, id: Poll.expired.stats_enabled.not_budget.ids
       can :read, Poll::Question
       can :read, User
+      can :read, Project
+      can :read, Project::Phase
       can [:read, :welcome], Budget
       can [:read], Budget
       can [:read], Budget::Group

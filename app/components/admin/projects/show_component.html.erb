@@ -1,0 +1,84 @@
+<%= back_link_to admin_projects_path %>
+<%= header do %>
+    <%= link_to t("admin.projects.phases.index.create"), new_admin_project_project_phase_path(@project) %>
+<% end %>
+
+
+  <h3><%#= page_entries_info projects %></h3>
+
+  <table class="cms-project_phases-list">
+    <thead>
+      <tr>
+        <th><%= Project::Phase.human_attribute_name(:title_short) %></th>
+        <th><%= Project::Phase.human_attribute_name(:starts_at) %></th>
+        <th><%= Project::Phase.human_attribute_name(:ends_at) %></th>
+        <th><%= Project::Phase.human_attribute_name(:created_at) %></th>
+        <th><%= Project::Phase.human_attribute_name(:enabled) %></th>
+        <th><%= Project::Phase.human_attribute_name(:order) %></th>
+        <th><%= t("admin.actions.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="<%= dom_id(@project) %>" class="admin-project-homepage-phase">
+        <td><%= t("admin.projects.tabs.homepage") %></td>
+        <td></td>
+        <td></td>
+        <td><%= I18n.l project.created_at, format: :long %></td>
+        <td></td>
+        <td>0</td>
+        <td>
+          <%= render Admin::TableActionsComponent.new(project, actions:[:edit]) do |actions|%>
+
+            <%= actions.action(:cards,
+                               text: t("admin.projects.show.see_cards"),
+                               path: admin_project_widget_cards_path(project)) %>
+
+          <% end %>
+        </td>
+      </tr>
+        <% @project.phases.sort_by_order.each do |project_phase| %>
+          <tr id="<%= dom_id(project_phase) %>">
+            <td><%= project_phase.title_short %></td>
+            <td>
+              <% if project_phase.starts_at %>
+                <%= I18n.l project_phase.starts_at, format: :long %>
+              <% else %>
+                -
+              <% end %>
+            </td>
+            <td>
+              <% if project_phase.ends_at %>
+                <%= I18n.l project_phase.ends_at, format: :long %>
+              <% else %>
+                -
+              <% end %>
+            </td>
+            <td><%= I18n.l project_phase.created_at, format: :long %></td>
+            <td><%= t("admin.projects.phases.phase.enabled_#{project_phase.enabled}") %></td>
+            <td><%= project_phase.order %></td>
+            <td>
+              <%#= render Admin::ActionComponent.new('edit', project_phase, "aria-label": true) %>
+              <%= render Admin::TableActionsComponent.new(
+                project_phase,
+                  actions: [:edit, :destroy],
+                  edit_path: edit_admin_project_project_phase_path(@project, project_phase),
+                  destroy_path: admin_project_project_phase_path(@project, project_phase)
+                ) do |actions| %>
+
+                <%= actions.action(:cards,
+                                   text: t("admin.projects.phases.index.see_cards"),
+                                   path: admin_project_phase_widget_cards_path(project_phase)) %>
+
+                <% end %>
+            </td>
+          </tr>
+        <% end %>
+    </tbody>
+  </table>
+
+<% if !@project.phases.any? %>
+  <div class="callout primary">
+    <%#= page_entries_info projects %>
+    <%= t("admin.projects.phases.index.no_phases") %>
+  </div>
+<% end %>

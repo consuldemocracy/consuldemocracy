@@ -1,0 +1,28 @@
+#projects {
+
+  .card {
+    border: 0;
+    flex-grow: 0;
+    overflow: visible;
+
+    a {
+      .figure-card img {
+        transition-duration: 0.3s;
+        transition-property: transform;
+      }
+    }
+
+    a:hover:not(:focus) {
+      box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+      text-decoration: none;
+
+      .figure-card img {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+.project-phase-list .key-dates{
+  line-height: $line-height * 0.7;
+}

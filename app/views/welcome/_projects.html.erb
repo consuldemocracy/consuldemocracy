@@ -1,0 +1,24 @@
+<% if feature?("projects") %>
+  <% if Setting["homepage.widgets.feeds.active_projects"].present? %>
+    <div class="large-12 column">
+		<div class="feeds-list">
+		  <% @feeds.each do |feed| %>
+		    <% if feed_active_projects?(feed) %>
+		      <%= render Widget::Feeds::FeedComponent.new(feed) %>
+		    <% end %>
+		  <% end %>
+		</div>
+    </div>
+  <% end %>
+  <% if Setting["homepage.widgets.feeds.archived_projects"].present?  %>
+    <div class="large-12 column">
+		<div class="feeds-list">
+		  <% @feeds.each do |feed| %>
+		    <% if feed_archived_projects?(feed) %>
+		      <%= render Widget::Feeds::FeedComponent.new(feed) %>
+		    <% end %>
+		  <% end %>
+		</div>
+    </div>
+  <% end %>
+<% end %>
