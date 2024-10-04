@@ -2,6 +2,79 @@
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
+## [2.2.1](https://github.com/consuldemocracy/consuldemocracy/tree/2.2.1) (2024-10-04)
+
+[Full Changelog](https://github.com/consuldemocracy/consuldemocracy/compare/2.2.0...2.2.1)
+
+### Added
+
+- **GraphQL:** Add new GraphQL types for budget investments [\#5571](https://github.com/consuldemocracy/consuldemocracy/pull/5571)
+- **Translations:** Update translations from Crowdin [\#5729](https://github.com/consuldemocracy/consuldemocracy/pull/5729)
+
+### Changed
+
+- **Documentation:** Update user content translations documentation [\#5710](https://github.com/consuldemocracy/consuldemocracy/pull/5710) and [\#5728](https://github.com/consuldemocracy/consuldemocracy/pull/5728)
+- **Documentation:** Update local census documentation [\#5709](https://github.com/consuldemocracy/consuldemocracy/pull/5709)
+- **Documentation:** Update remote census configuration documentation [\#5708](https://github.com/consuldemocracy/consuldemocracy/pull/5708)
+- **Documentation:** Update OAuth documentation [\#5707](https://github.com/consuldemocracy/consuldemocracy/pull/5707)
+- **Documentation:** Update multitenancy documentation [\#5699](https://github.com/consuldemocracy/consuldemocracy/pull/5699)
+- **Documentation:** Update recommendations documentation [\#5697](https://github.com/consuldemocracy/consuldemocracy/pull/5697)
+- **Documentation:** Update documentation for Production and Staging servers [\#5696](https://github.com/consuldemocracy/consuldemocracy/pull/5696)
+- **Documentation:** Update GraphQL documentation [\#5695](https://github.com/consuldemocracy/consuldemocracy/pull/5695)
+- **Documentation:** Update basic configuration guides [\#5694](https://github.com/consuldemocracy/consuldemocracy/pull/5694)
+- **Documentation:** Update Docker installation documentation [\#5693](https://github.com/consuldemocracy/consuldemocracy/pull/5693)
+- **Documentation:** Update documentation to customize the application [\#5685](https://github.com/consuldemocracy/consuldemocracy/pull/5685)
+- **Documentation:** Update getting started instructions [\#5655](https://github.com/consuldemocracy/consuldemocracy/pull/5655)
+- **Documentation:** Update local installation instructions [\#5652](https://github.com/consuldemocracy/consuldemocracy/pull/5652)
+- **Linters:** Add properties-alphabetical-order Stylelint rule [\#5493](https://github.com/consuldemocracy/consuldemocracy/pull/5493)
+- **Maintenance:** Use dependabot to update github actions dependencies [\#5611](https://github.com/consuldemocracy/consuldemocracy/pull/5611)
+- **Maintenance-CI:** Bump toshimaru/auto-author-assign from 1.4.0 to 2.1.1 [\#5621](https://github.com/consuldemocracy/consuldemocracy/pull/5621)
+- **Maintenance-CI:** Bump docker/setup-buildx-action from 1 to 3 [\#5619](https://github.com/consuldemocracy/consuldemocracy/pull/5619)
+- **Maintenance-CI:** Bump docker/build-push-action from 2 to 6 [\#5618](https://github.com/consuldemocracy/consuldemocracy/pull/5618)
+- **Maintenance-Docker:** Use a maintained version of PostgreSQL in Docker [\#5691](https://github.com/consuldemocracy/consuldemocracy/pull/5691)
+- **Maintenance-Gems:** \[Security\] Bump webrick from 1.8.1 to 1.8.2 [\#5704](https://github.com/consuldemocracy/consuldemocracy/pull/5704)
+- **Maintenance-Gems:** \[Security\] Bump puma from 5.6.8 to 5.6.9 [\#5701](https://github.com/consuldemocracy/consuldemocracy/pull/5701)
+- **Maintenance-Gems:** \[Security\] Bump google-protobuf from 4.26.0 to 4.27.5 [\#5700](https://github.com/consuldemocracy/consuldemocracy/pull/5700)
+- **Maintenance-Gems:** Bump mini_magick from 4.12.0 to 4.13.2 [\#5631](https://github.com/consuldemocracy/consuldemocracy/pull/5631)
+- **Maintenance-Gems:** \[Security\] Bump rexml from 3.3.1 to 3.3.6 [\#5629](https://github.com/consuldemocracy/consuldemocracy/pull/5629), [\#5650](https://github.com/consuldemocracy/consuldemocracy/pull/5650) and [\#5658](https://github.com/consuldemocracy/consuldemocracy/pull/5658)
+- **Maintenance-Gems:** Bump capistrano from 3.18.1 to 3.19.1 [\#5609](https://github.com/consuldemocracy/consuldemocracy/pull/5609)
+- **Maintenance-Gems:** Bump knapsack_pro from 7.0.1 to 7.6.2 [\#5606](https://github.com/consuldemocracy/consuldemocracy/pull/5606)
+- **Maintenance-Gems:** Bump selenium-webdriver from 4.16.0 to 4.22.0 [\#5604](https://github.com/consuldemocracy/consuldemocracy/pull/5604)
+- **Maintenance-Gems:** Bump rubocop-factory_bot from 2.25.1 to 2.26.1 [\#5599](https://github.com/consuldemocracy/consuldemocracy/pull/5599)
+- **Maintenance-Gems:** Bump rubocop-rails from 2.23.1 to 2.25.1 [\#5598](https://github.com/consuldemocracy/consuldemocracy/pull/5598)
+- **Maintenance-Gems:** Bump rubocop-performance from 1.20.2 to 1.21.1 [\#5596](https://github.com/consuldemocracy/consuldemocracy/pull/5596)
+- **Maintenance-Gems:** Bump rubocop-capybara from 2.20.0 to 2.21.0 [\#5595](https://github.com/consuldemocracy/consuldemocracy/pull/5595)
+- **Maintenance-Gems:** Bump rspec-rails from 6.1.2 to 6.1.3 [\#5594](https://github.com/consuldemocracy/consuldemocracy/pull/5594)
+- **Maintenance-Gems:** Bump rubocop-rspec from 2.27.0 to 3.0.1 [\#5579](https://github.com/consuldemocracy/consuldemocracy/pull/5579)
+- **Maintenance-Gems:** Bump letter_opener_web from 2.0.0 to 3.0.0 [\#5566](https://github.com/consuldemocracy/consuldemocracy/pull/5566)
+- **Maintenance-Gems:** Bump faker from 3.3.1 to 3.4.1 [\#5565](https://github.com/consuldemocracy/consuldemocracy/pull/5565)
+- **Maintenance-Gems:** Bump rubocop from 1.61.0 to 1.64.1 [\#5564](https://github.com/consuldemocracy/consuldemocracy/pull/5564)
+- **Maintenance-Gems:** Bump recipient_interceptor from 0.3.1 to 0.3.2 [\#5559](https://github.com/consuldemocracy/consuldemocracy/pull/5559)
+- **Maintenance-Gems:** Bump spring from 4.1.3 to 4.2.1 [\#5527](https://github.com/consuldemocracy/consuldemocracy/pull/5527)
+- **Maintenance-Deployment:** Upgrade Ruby to version 3.2.5 [\#5651](https://github.com/consuldemocracy/consuldemocracy/pull/5651)
+- **Maintenance-JavaScript:** \[Security\] Bump micromatch from 4.0.7 to 4.0.8 [\#5661](https://github.com/consuldemocracy/consuldemocracy/pull/5661)
+- **Maintenance-JavaScript:** Bump stylelint-scss from 6.2.1 to 6.3.2 [\#5592](https://github.com/consuldemocracy/consuldemocracy/pull/5592)
+- **Maintenance-JavaScript:** Bump stylelint from 16.3.1 to 16.6.1 [\#5550](https://github.com/consuldemocracy/consuldemocracy/pull/5550)
+- **Maintenance-JavaScript:** Bump @stylistic/stylelint-plugin from 2.1.1 to 2.1.2 [\#5518](https://github.com/consuldemocracy/consuldemocracy/pull/5518)
+- **Maintenance-Refactoring:** Use Rails 7.0 methods to simplify code [\#5491](https://github.com/consuldemocracy/consuldemocracy/pull/5491)
+
+### Fixed
+
+- **GraphQL:** \[Security\] Bring back GraphQL security limits [\#5706](https://github.com/consuldemocracy/consuldemocracy/pull/5706)
+- **GraphQL:** Make sure we only return public records in the API [\#5637](https://github.com/consuldemocracy/consuldemocracy/pull/5637)
+- **Maintenance:** Use bundle exec to run delayed jobs on reboot [\#5686](https://github.com/consuldemocracy/consuldemocracy/pull/5686)
+- **Maintenance-CI:** Exclude irrelevant Consul Democracy tests in knapsack [\#5687](https://github.com/consuldemocracy/consuldemocracy/pull/5687)
+- **Maintenance-Docker:** Fix environment variables and version warnings in Docker [\#5692](https://github.com/consuldemocracy/consuldemocracy/pull/5692)
+- **Maintenance-Docker:** Don't overwrite node_modules with Docker Compose [\#5690](https://github.com/consuldemocracy/consuldemocracy/pull/5690)
+- **Maintenance-Specs:** Directly select language in remotely translatable tests [\#5689](https://github.com/consuldemocracy/consuldemocracy/pull/5689)
+- **Maintenance-Specs:** Make "show proposal" tests pass on GitHub Actions [\#5688](https://github.com/consuldemocracy/consuldemocracy/pull/5688)
+- **Translations:** Fix custom locales not taking precedence [\#5660](https://github.com/consuldemocracy/consuldemocracy/pull/5660)
+
+### Removed
+
+- **Maintenance-CI:** Remove kanban management github action workflow [\#5608](https://github.com/consuldemocracy/consuldemocracy/pull/5608)
+- **Maintenance-CI:** Don't run linters in Code Climate [\#5483](https://github.com/consuldemocracy/consuldemocracy/pull/5483)
+
 ## [2.2.0](https://github.com/consuldemocracy/consuldemocracy/tree/2.2.0) (2024-07-01)
 
 [Full Changelog](https://github.com/consuldemocracy/consuldemocracy/compare/2.1.1...2.2.0)
