@@ -192,9 +192,9 @@ GEM
       devise (>= 4.3.0)
     diff-lcs (1.5.1)
     docile (1.4.0)
-    email_spec (2.2.2)
+    email_spec (2.3.0)
       htmlentities (~> 4.3.3)
-      launchy (~> 2.1)
+      launchy (>= 2.1, < 4.0)
       mail (~> 2.7)
     erb_lint (0.6.0)
       activesupport
@@ -357,7 +357,7 @@ GEM
     mutex_m (0.2.0)
     net-http (0.4.1)
       uri
-    net-imap (0.4.14)
+    net-imap (0.4.16)
       date
       net-protocol
     net-pop (0.1.2)
@@ -721,7 +721,7 @@ DEPENDENCIES
   delayed_job_active_record (~> 4.1.8)
   devise (~> 4.9.3)
   devise-security (~> 0.18.0)
-  email_spec (~> 2.2.2)
+  email_spec (~> 2.3.0)
   erb_lint (~> 0.6.0)
   exiftool_vendored (~> 12.80.0)
   factory_bot_rails (~> 6.4.3)
