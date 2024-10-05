@@ -224,7 +224,7 @@ GEM
       faraday-net_http (>= 2.0, < 3.2)
     faraday-net_http (3.1.0)
       net-http
-    ffi (1.15.5)
+    ffi (1.17.0)
     file_validators (3.0.0)
       activemodel (>= 3.2)
       mime-types (>= 1.0)
@@ -283,7 +283,7 @@ GEM
       rails-i18n
       rainbow (>= 2.2.2, < 4.0)
       terminal-table (>= 1.5.1)
-    image_processing (1.12.2)
+    image_processing (1.13.0)
       mini_magick (>= 4.9.5, < 5)
       ruby-vips (>= 2.0.17, < 3)
     invisible_captcha (2.3.0)
@@ -568,8 +568,9 @@ GEM
       rubocop-rspec (~> 3, >= 3.0.1)
     ruby-progressbar (1.13.0)
     ruby-rc4 (0.1.5)
-    ruby-vips (2.1.4)
+    ruby-vips (2.2.2)
       ffi (~> 1.12)
+      logger
     rubyzip (2.3.2)
     rugged (1.6.3)
     rvm1-capistrano3 (1.4.0)
@@ -735,7 +736,7 @@ DEPENDENCIES
   graphql (~> 1.13.22)
   groupdate (~> 6.4.0)
   i18n-tasks (~> 0.9.37)
-  image_processing (~> 1.12.2)
+  image_processing (~> 1.13.0)
   invisible_captcha (~> 2.3.0)
   kaminari (~> 1.2.2)
   knapsack_pro (~> 7.8.0)
