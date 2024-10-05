@@ -141,6 +141,8 @@ en:
           staff_settings: "Administrators and Valuators assigned to the budget"
         hide_money: "Hide money"
         hide_money_help_text: "If this option is checked, all fields showing the amount of money will be hidden throughout the process."
+        part_fund: "Part Fund Winners"
+        part_fund_help_text: "If this option is checked, if there is insufficient budget left, the next most voted for investment will be offered part funding"
       destroy:
         success_notice: Budget deleted successfully
         unable_notice: You cannot delete a budget that has associated investments
