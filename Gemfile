@@ -56,7 +56,7 @@ gem "sprockets", "~> 4.2.1"
 gem "sprockets-rails", "~> 3.5.2", require: "sprockets/railtie"
 gem "turbolinks", "~> 5.2.1"
 gem "turnout", "~> 2.5.0"
-gem "uglifier", "~> 4.2.0"
+gem "uglifier", "~> 4.2.1"
 gem "uuidtools", "~> 2.2.0"
 gem "view_component", "~> 3.11.0"
 gem "whenever", "~> 1.0.0", require: false
