@@ -11,12 +11,18 @@ class Admin::Legislation::ProposalsController < Admin::Legislation::BaseControll
   def select
     @proposal.update!(selected: true)
 
-    render :toggle_selection
+    respond_to do |format|
+      format.html { redirect_to request.referer, notice: t("flash.actions.update.proposal") }
+      format.js { render :toggle_selection }
+    end
   end
 
   def deselect
     @proposal.update!(selected: false)
 
-    render :toggle_selection
+    respond_to do |format|
+      format.html { redirect_to request.referer, notice: t("flash.actions.update.proposal") }
+      format.js { render :toggle_selection }
+    end
   end
 end
