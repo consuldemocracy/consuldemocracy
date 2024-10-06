@@ -32,7 +32,11 @@ namespace :admin do
   resources :debates, only: [:index, :show]
 
   resources :proposals, only: [:index, :show, :update] do
-    member { patch :toggle_selection }
+    member do
+      patch :select
+      patch :deselect
+    end
+
     resources :milestones, controller: "proposal_milestones"
     resources :progress_bars, except: :show, controller: "proposal_progress_bars"
   end
@@ -232,7 +236,10 @@ namespace :admin do
     resources :processes do
       resources :questions
       resources :proposals do
-        member { patch :toggle_selection }
+        member do
+          patch :select
+          patch :deselect
+        end
       end
       resources :draft_versions
       resources :milestones
