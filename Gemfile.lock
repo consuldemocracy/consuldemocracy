@@ -110,7 +110,7 @@ GEM
     bing_translator (6.2.0)
       json
     builder (3.3.0)
-    cancancan (3.5.0)
+    cancancan (3.6.1)
     capistrano (3.19.1)
       airbrussh (>= 1.0.0)
       i18n
@@ -706,7 +706,7 @@ DEPENDENCIES
   audited (~> 5.4.3)
   autoprefixer-rails (~> 10.4.19)
   bing_translator (~> 6.2.0)
-  cancancan (~> 3.5.0)
+  cancancan (~> 3.6.1)
   capistrano (~> 3.19.1)
   capistrano-bundler (~> 2.1.1)
   capistrano-npm (~> 1.0.3)
