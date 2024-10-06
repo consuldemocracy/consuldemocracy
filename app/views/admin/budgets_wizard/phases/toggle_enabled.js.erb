@@ -1,5 +1,3 @@
-var replacement = $("<%= j render Admin::BudgetPhases::ToggleEnabledComponent.new(@phase) %>");
-var form = $("#<%= dom_id(@phase) %> .toggle-switch");
-
-form.replaceWith(replacement);
-replacement.find("[type='submit']").focus();
+<%= render "admin/shared/toggle_switch",
+           record: @phase,
+           new_content: render(Admin::BudgetPhases::ToggleEnabledComponent.new(@phase)) %>
