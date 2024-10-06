@@ -19,9 +19,16 @@ class Admin::ProposalsController < Admin::BaseController
     end
   end
 
-  def toggle_selection
-    @proposal.toggle :selected
-    @proposal.save!
+  def select
+    @proposal.update!(selected: true)
+
+    render :toggle_selection
+  end
+
+  def deselect
+    @proposal.update!(selected: false)
+
+    render :toggle_selection
   end
 
   private

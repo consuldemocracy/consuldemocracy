@@ -8,8 +8,15 @@ class Admin::Legislation::ProposalsController < Admin::Legislation::BaseControll
     @proposals = @proposals.send("sort_by_#{@current_order}").page(params[:page])
   end
 
-  def toggle_selection
-    @proposal.toggle :selected
-    @proposal.save!
+  def select
+    @proposal.update!(selected: true)
+
+    render :toggle_selection
+  end
+
+  def deselect
+    @proposal.update!(selected: false)
+
+    render :toggle_selection
   end
 end

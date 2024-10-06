@@ -8,7 +8,11 @@ class Admin::Proposals::ToggleSelectionComponent < ApplicationComponent
   private
 
     def action
-      :toggle_selection
+      if selected?
+        :deselect
+      else
+        :select
+      end
     end
 
     def selected?
