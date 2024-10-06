@@ -1,0 +1,5 @@
+var replacement = $("<%= j new_content %>");
+var form = $("#<%= dom_id(record) %> .toggle-switch");
+
+form.replaceWith(replacement);
+replacement.find("[type='submit']").focus();
