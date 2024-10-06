@@ -1451,22 +1451,22 @@ describe "Admin budget investments", :admin do
 
       visit admin_budget_budget_investments_path(budget)
 
-      within("#budget_investment_#{unfeasible_bi.id} #selection") do
+      within("#budget_investment_#{unfeasible_bi.id} [data-field=selected]") do
         expect(page).not_to have_content("Select")
         expect(page).not_to have_content("Selected")
       end
 
-      within("#budget_investment_#{feasible_bi.id} #selection") do
+      within("#budget_investment_#{feasible_bi.id} [data-field=selected]") do
         expect(page).not_to have_content("Select")
         expect(page).not_to have_content("Selected")
       end
 
-      within("#budget_investment_#{feasible_vf_bi.id} #selection") do
+      within("#budget_investment_#{feasible_vf_bi.id} [data-field=selected]") do
         expect(page).not_to have_content("Select")
         expect(page).not_to have_content("Selected")
       end
 
-      within("#budget_investment_#{selected_bi.id} #selection") do
+      within("#budget_investment_#{selected_bi.id} [data-field=selected]") do
         expect(page).not_to contain_exactly("Select")
         expect(page).to have_content("Selected")
       end

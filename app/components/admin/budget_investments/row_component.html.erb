@@ -54,7 +54,7 @@
     <% end %>
   </td>
 
-  <td id="selection" data-field="selected">
+  <td data-field="selected">
     <% if investment.selected? %>
         <%= link_to_if can?(:toggle_selection, investment),
                        t("admin.budget_investments.index.selected"),
