@@ -1410,6 +1410,8 @@ describe "Admin budget investments", :admin do
     scenario "Selecting an investment" do
       visit admin_budget_budget_investments_path(budget)
 
+      expect(page).to have_content "Unfeasible project"
+
       within("#budget_investment_#{feasible_vf_bi.id}") do
         click_button "Select"
         expect(page).to have_button "Selected"
@@ -1419,6 +1421,8 @@ describe "Admin budget investments", :admin do
 
       within("#advanced_filters") { check("Selected") }
       click_button("Filter")
+
+      expect(page).not_to have_content "Unfeasible project"
 
       within("#budget_investment_#{feasible_vf_bi.id}") do
         expect(page).not_to have_button "Select"
