@@ -42,16 +42,7 @@
   </td>
 
   <td data-field="visible_to_valuators">
-    <% if can?(:admin_update, investment) %>
-      <%= form_for [:admin, budget, investment], remote: true, format: :json do |f| %>
-          <%= f.check_box :visible_to_valuators,
-                          label: false,
-                          class: "js-submit-on-change",
-                          id: "budget_investment_visible_to_valuators_#{investment.id}" %>
-      <% end %>
-    <% else %>
-      <%= investment.visible_to_valuators? ? t("shared.yes") : t("shared.no") %>
-    <% end %>
+    <%= render Admin::BudgetInvestments::ToggleVisibleToValuatorsComponent.new(investment) %>
   </td>
 
   <td data-field="selected">
