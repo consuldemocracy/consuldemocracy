@@ -1,1 +1,3 @@
-$("#<%= dom_id(@investment) %>").html("<%= j render("select_investment", investment: @investment) %>").trigger("inserted");
+$("#<%= dom_id(@investment) %>").replaceWith(
+  "<%= j render Admin::BudgetInvestments::RowComponent.new(@investment) %>"
+).trigger("inserted");
