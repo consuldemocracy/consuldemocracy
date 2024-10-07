@@ -4,11 +4,7 @@
   </td>
 
   <td data-field="title">
-    <%= link_to investment.title,
-                admin_budget_budget_investment_path(budget_id: budget.id,
-                                                    id: investment.id,
-                                                    params: Budget::Investment.filter_params(params).to_h),
-                target: "_blank" %>
+    <%= link_to investment.title, investment_path, target: "_blank" %>
   </td>
 
   <td class="text-center" data-field="supports">
@@ -16,13 +12,7 @@
   </td>
 
   <td class="small" data-field="admin">
-    <% if investment.administrator.present? %>
-      <span title="<%= t("admin.budget_investments.index.assigned_admin") %>">
-        <%= investment.administrator.description_or_name %>
-      </span>
-    <% else %>
-      <%= t("admin.budget_investments.index.no_admin_assigned") %>
-    <% end %>
+    <%= administrator_info %>
   </td>
 
   <td class="small" data-field="author">
@@ -30,9 +20,7 @@
   </td>
 
   <td class="small" data-field="valuator">
-    <% valuators = [investment.assigned_valuation_groups, investment.assigned_valuators].compact %>
-    <% no_valuators_assigned = t("admin.budget_investments.index.no_valuators_assigned") %>
-    <%= valuators.present? ? valuators.join(", ") : no_valuators_assigned %>
+    <%= valuators_info %>
   </td>
 
   <td class="small" data-field="geozone">
