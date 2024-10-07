@@ -49,9 +49,7 @@
 
     <tbody>
       <% @investments.each do |investment| %>
-        <tr id="<%= dom_id(investment) %>" class="budget_investment">
-          <%= render "/admin/budget_investments/select_investment", investment: investment %>
-        </tr>
+        <%= render Admin::BudgetInvestments::RowComponent.new(investment) %>
       <% end %>
     </tbody>
   </table>
