@@ -1,11 +1,4 @@
 module BudgetsHelper
-  def csv_params
-    csv_params = params.clone.merge(format: :csv)
-    csv_params = csv_params.to_unsafe_h.transform_keys(&:to_sym)
-    csv_params.delete(:page)
-    csv_params
-  end
-
   def namespaced_budget_investment_path(investment, options = {})
     case namespace
     when "management"
