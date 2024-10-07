@@ -44,7 +44,7 @@ A continuación, crea los ficheros de `config/secrets.yml` y `config/database.ym
 
 ```bash
 cp config/secrets.yml.example config/secrets.yml
-cp config/database-docker.yml.example config/database.yml
+cp config/database.yml.example config/database.yml
 ```
 
 Ahora genera la imagen con:
