@@ -80,6 +80,10 @@ FactoryBot.define do
       after(:create) { |proposal| create(:image, imageable: proposal) }
     end
 
+    trait :with_video do
+      video_url { "https://youtu.be/nhuNb0XtRhQ" }
+    end
+
     transient do
       voters { [] }
       followers { [] }
