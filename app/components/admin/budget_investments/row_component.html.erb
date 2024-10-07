@@ -7,41 +7,41 @@
     <%= link_to investment.title, investment_path, target: "_blank" %>
   </td>
 
-  <td class="text-center" data-field="supports">
+  <td data-field="supports">
     <%= investment.total_votes %>
   </td>
 
-  <td class="small" data-field="admin">
+  <td data-field="admin">
     <%= administrator_info %>
   </td>
 
-  <td class="small" data-field="author">
+  <td data-field="author">
     <%= investment.author.name %>
   </td>
 
-  <td class="small" data-field="valuator">
+  <td data-field="valuator">
     <%= valuators_info %>
   </td>
 
-  <td class="small" data-field="geozone">
+  <td data-field="geozone">
     <%= investment.heading.name %>
   </td>
 
-  <td class="small" data-field="feasibility">
+  <td data-field="feasibility">
     <%= t("admin.budget_investments.index.feasibility.#{investment.feasibility}") %>
   </td>
 
   <% if budget.show_money? %>
-    <td class="small" data-field="price">
+    <td data-field="price">
       <%= investment.formatted_price %>
     </td>
   <% end %>
 
-  <td class="small text-center" data-field="valuation_finished">
+  <td data-field="valuation_finished">
     <%= investment.valuation_finished? ? t("shared.yes") : t("shared.no") %>
   </td>
 
-  <td class="small text-center" data-field="visible_to_valuators">
+  <td data-field="visible_to_valuators">
     <% if can?(:admin_update, investment) %>
       <%= form_for [:admin, budget, investment], remote: true, format: :json do |f| %>
           <%= f.check_box :visible_to_valuators,
@@ -54,7 +54,7 @@
     <% end %>
   </td>
 
-  <td id="selection" class="small text-center" data-field="selected">
+  <td id="selection" data-field="selected">
     <% if investment.selected? %>
         <%= link_to_if can?(:toggle_selection, investment),
                        t("admin.budget_investments.index.selected"),
@@ -92,7 +92,7 @@
   </td>
 
   <% if params[:advanced_filters]&.include?("selected") %>
-    <td class="small text-center" data-field="incompatible">
+    <td data-field="incompatible">
       <%= investment.incompatible? ? t("shared.yes") : t("shared.no") %>
     </td>
   <% end %>
