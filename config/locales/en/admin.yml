@@ -17,6 +17,7 @@ en:
       edit: Edit
       configure: Configure
       select: Select
+      show_to_valuators: "Show %{name} to valuators"
     officing_booth:
       title: "You are officing the booth located at %{booth}. If this is not correct, do not continue and call the help phone number. Thank you."
     banners:

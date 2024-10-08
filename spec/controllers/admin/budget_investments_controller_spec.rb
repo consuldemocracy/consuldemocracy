@@ -23,18 +23,61 @@ describe Admin::BudgetInvestmentsController, :admin do
     end
   end
 
-  describe "PATCH update" do
-    it "does not redirect on AJAX requests" do
-      investment = create(:budget_investment)
+  describe "PATCH show_to_valuators" do
+    let(:investment) { create(:budget_investment, :invisible_to_valuators) }
 
-      patch :update, params: {
-        id: investment,
-        budget_id: investment.budget,
-        format: :json,
-        budget_investment: { visible_to_valuators: true }
-      }
+    it "marks the investment as visible to valuators" do
+      expect do
+        patch :show_to_valuators, xhr: true, params: { id: investment, budget_id: investment.budget }
+      end.to change { investment.reload.visible_to_valuators? }.from(false).to(true)
 
-      expect(response).not_to be_redirect
+      expect(response).to be_successful
+    end
+
+    it "does not modify investments visible to valuators" do
+      investment.update!(visible_to_valuators: true)
+
+      expect do
+        patch :show_to_valuators, xhr: true, params: { id: investment, budget_id: investment.budget }
+      end.not_to change { investment.reload.visible_to_valuators? }
+    end
+
+    it "redirects admins without JavaScript to the same page" do
+      request.env["HTTP_REFERER"] = admin_budget_budget_investments_path(investment.budget)
+
+      patch :show_to_valuators, params: { id: investment, budget_id: investment.budget }
+
+      expect(response).to redirect_to admin_budget_budget_investments_path(investment.budget)
+      expect(flash[:notice]).to eq "Investment project updated successfully."
+    end
+  end
+
+  describe "PATCH hide_from_valuators" do
+    let(:investment) { create(:budget_investment, :visible_to_valuators) }
+
+    it "marks the investment as visible to valuators" do
+      expect do
+        patch :hide_from_valuators, xhr: true, params: { id: investment, budget_id: investment.budget }
+      end.to change { investment.reload.visible_to_valuators? }.from(true).to(false)
+
+      expect(response).to be_successful
+    end
+
+    it "does not modify investments visible to valuators" do
+      investment.update!(visible_to_valuators: false)
+
+      expect do
+        patch :hide_from_valuators, xhr: true, params: { id: investment, budget_id: investment.budget }
+      end.not_to change { investment.reload.visible_to_valuators? }
+    end
+
+    it "redirects admins without JavaScript to the same page" do
+      request.env["HTTP_REFERER"] = admin_budget_budget_investments_path(investment.budget)
+
+      patch :hide_from_valuators, params: { id: investment, budget_id: investment.budget }
+
+      expect(response).to redirect_to admin_budget_budget_investments_path(investment.budget)
+      expect(flash[:notice]).to eq "Investment project updated successfully."
     end
   end
 

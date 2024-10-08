@@ -1497,8 +1497,8 @@ describe "Admin budget investments", :admin do
 
     let(:heading) { create(:budget_heading, budget: budget) }
 
-    let(:investment1) { create(:budget_investment, heading: heading) }
-    let(:investment2) { create(:budget_investment, heading: heading) }
+    let(:investment1) { create(:budget_investment, heading: heading, title: "Investment 1") }
+    let(:investment2) { create(:budget_investment, heading: heading, title: "Investment 2") }
 
     scenario "Mark as visible to valuator" do
       investment1.valuators << valuator
@@ -1511,14 +1511,22 @@ describe "Admin budget investments", :admin do
       check "Under valuation"
       click_button "Filter"
 
-      within("#budget_investment_#{investment1.id}") do
-        check "budget_investment[visible_to_valuators]"
+      within("tr", text: "Investment 1") do
+        within("[data-field=visible_to_valuators]") do
+          expect(page).to have_content "No"
+
+          click_button "Show Investment 1 to valuators"
+
+          expect(page).to have_content "Yes"
+        end
       end
 
       refresh
 
-      within("#budget_investment_#{investment1.id}") do
-        expect(page).to have_field "budget_investment[visible_to_valuators]", checked: true
+      within("tr", text: "Investment 1") do
+        within("[data-field=visible_to_valuators]") do
+          expect(page).to have_content "Yes"
+        end
       end
     end
 
@@ -1557,14 +1565,22 @@ describe "Admin budget investments", :admin do
       check "Under valuation"
       click_button "Filter"
 
-      within("#budget_investment_#{investment1.id}") do
-        uncheck "budget_investment[visible_to_valuators]"
+      within("tr", text: "Investment 1") do
+        within("[data-field=visible_to_valuators]") do
+          expect(page).to have_content "Yes"
+
+          click_button "Show Investment 1 to valuators"
+
+          expect(page).to have_content "No"
+        end
       end
 
       refresh
 
-      within("#budget_investment_#{investment1.id}") do
-        expect(page).to have_field "budget_investment[visible_to_valuators]", checked: false
+      within("tr", text: "Investment 1") do
+        within("[data-field=visible_to_valuators]") do
+          expect(page).to have_content "No"
+        end
       end
     end
 
@@ -1576,16 +1592,16 @@ describe "Admin budget investments", :admin do
       visit admin_budget_budget_investments_path(budget)
 
       within "tr", text: "Visible" do
-        within "td[data-field=visible_to_valuators]" do
+        within "[data-field=visible_to_valuators]" do
           expect(page).to have_text "Yes"
-          expect(page).not_to have_field "budget_investment[visible_to_valuators]"
+          expect(page).not_to have_button
         end
       end
 
       within "tr", text: "Invisible" do
-        within "td[data-field=visible_to_valuators]" do
+        within "[data-field=visible_to_valuators]" do
           expect(page).to have_text "No"
-          expect(page).not_to have_field "budget_investment[visible_to_valuators]"
+          expect(page).not_to have_button
         end
       end
     end
@@ -1602,12 +1618,18 @@ describe "Admin budget investments", :admin do
       check "Under valuation"
       click_button "Filter"
 
-      within("#budget_investment_#{investment1.id}") do
-        expect(page).to have_field "budget_investment[visible_to_valuators]", checked: true
+      within "tr", text: "Investment 1" do
+        within "[data-field=visible_to_valuators]" do
+          expect(page).to have_content "Yes"
+          expect(page).to have_css "button[aria-pressed='true']"
+        end
       end
 
-      within("#budget_investment_#{investment2.id}") do
-        expect(page).to have_field "budget_investment[visible_to_valuators]", checked: false
+      within "tr", text: "Investment 2" do
+        within "[data-field=visible_to_valuators]" do
+          expect(page).to have_content "No"
+          expect(page).to have_css "button[aria-pressed='false']"
+        end
       end
     end
 
@@ -1617,8 +1639,14 @@ describe "Admin budget investments", :admin do
 
       visit admin_budget_budget_investments_path(budget)
 
-      within("#budget_investment_#{investment1.id}") do
-        check "budget_investment[visible_to_valuators]"
+      within "tr", text: "Investment 1" do
+        within "[data-field=visible_to_valuators]" do
+          expect(page).to have_content "No"
+
+          click_button "Show Investment 1 to valuators"
+
+          expect(page).to have_content "Yes"
+        end
       end
 
       visit edit_admin_budget_budget_investment_path(budget, investment1)
