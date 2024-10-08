@@ -1,6 +1,6 @@
 class SDG::Phase < ApplicationRecord
   include Cardable
-  enum kind: %w[sensitization planning monitoring]
+  enum :kind, %w[sensitization planning monitoring]
   validates :kind, presence: true, uniqueness: true
 
   def self.[](kind)

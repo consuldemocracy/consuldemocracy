@@ -9,7 +9,7 @@ class Dashboard::Action < ApplicationRecord
                               class_name: "Dashboard::ExecutedAction"
   has_many :proposals, through: :executed_actions
 
-  enum action_type: [:proposed_action, :resource]
+  enum :action_type, [:proposed_action, :resource]
 
   validates :title, presence: true, allow_blank: false, length: { in: 4..80 }
 
