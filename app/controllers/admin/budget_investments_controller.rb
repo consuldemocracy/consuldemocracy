@@ -9,7 +9,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   has_filters %w[all], only: :index
 
   before_action :load_budget
-  before_action :load_investment, only: [:show, :edit, :update, :toggle_selection]
+  before_action :load_investment, except: [:index]
   before_action :load_ballot, only: [:show, :index]
   before_action :parse_valuation_filters
   before_action :load_investments, only: :index
@@ -60,10 +60,18 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
   end
 
-  def toggle_selection
-    authorize! :toggle_selection, @investment
-    @investment.toggle :selected
-    @investment.save!
+  def select
+    authorize! :select, @investment
+    @investment.update!(selected: true)
+
+    render :toggle_selection
+  end
+
+  def deselect
+    authorize! :deselect, @investment
+    @investment.update!(selected: false)
+
+    render :toggle_selection
   end
 
   private

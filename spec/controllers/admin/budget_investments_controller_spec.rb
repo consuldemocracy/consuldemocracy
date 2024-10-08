@@ -38,18 +38,63 @@ describe Admin::BudgetInvestmentsController, :admin do
     end
   end
 
-  describe "PATCH toggle selection" do
-    it "uses the toggle_selection authorization rules" do
-      investment = create(:budget_investment)
+  describe "PATCH select" do
+    let(:investment) { create(:budget_investment, :feasible, :finished) }
 
-      patch :toggle_selection, xhr: true, params: {
-        id: investment,
-        budget_id: investment.budget,
-      }
+    it "selects the investment" do
+      expect do
+        patch :select, xhr: true, params: { id: investment, budget_id: investment.budget }
+      end.to change { investment.reload.selected? }.from(false).to(true)
+
+      expect(response).to be_successful
+    end
+
+    it "does not modify already selected investments" do
+      investment.update!(selected: true)
+
+      expect do
+        patch :select, xhr: true, params: { id: investment, budget_id: investment.budget }
+      end.not_to change { investment.reload.selected? }
+    end
+
+    it "uses the select/deselect authorization rules" do
+      investment.update!(valuation_finished: false)
+
+      patch :select, xhr: true, params: { id: investment, budget_id: investment.budget }
 
       expect(flash[:alert]).to eq "You do not have permission to carry out the action " \
-                                  "'toggle_selection' on Investment."
+                                  "'select' on Investment."
       expect(investment).not_to be_selected
+    end
+  end
+
+  describe "PATCH deselect" do
+    let(:investment) { create(:budget_investment, :feasible, :finished, :selected) }
+
+    it "deselects the investment" do
+      expect do
+        patch :deselect, xhr: true, params: { id: investment, budget_id: investment.budget }
+      end.to change { investment.reload.selected? }.from(true).to(false)
+
+      expect(response).to be_successful
+    end
+
+    it "does not modify non-selected investments" do
+      investment.update!(selected: false)
+
+      expect do
+        patch :deselect, xhr: true, params: { id: investment, budget_id: investment.budget }
+      end.not_to change { investment.reload.selected? }
+    end
+
+    it "uses the select/deselect authorization rules" do
+      investment.update!(valuation_finished: false)
+
+      patch :deselect, xhr: true, params: { id: investment, budget_id: investment.budget }
+
+      expect(flash[:alert]).to eq "You do not have permission to carry out the action " \
+                                  "'deselect' on Investment."
+      expect(investment).to be_selected
     end
   end
 end

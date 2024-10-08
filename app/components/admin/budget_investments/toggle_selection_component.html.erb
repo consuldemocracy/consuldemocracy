@@ -1,4 +1,4 @@
-<% if can?(:toggle_selection, investment) %>
+<% if can?(action, investment) %>
   <%= render Admin::ToggleSwitchComponent.new(action, investment, pressed: selected?, **options) %>
 <% elsif selected? %>
   <%= selected_text %>
