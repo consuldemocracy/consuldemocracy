@@ -18,20 +18,26 @@ class Admin::BudgetInvestments::ToggleSelectionComponent < ApplicationComponent
     end
 
     def action
-      :toggle_selection
+      if selected?
+        :deselect
+      else
+        :select
+      end
     end
 
     def path
-      toggle_selection_admin_budget_budget_investment_path(
-        budget,
-        investment,
+      url_for({
+        controller: "admin/budget_investments",
+        action: action,
+        budget_id: budget,
+        id: investment,
         filter: params[:filter],
         sort_by: params[:sort_by],
         min_total_supports: params[:min_total_supports],
         max_total_supports: params[:max_total_supports],
         advanced_filters: params[:advanced_filters],
         page: params[:page]
-      )
+      })
     end
 
     def options

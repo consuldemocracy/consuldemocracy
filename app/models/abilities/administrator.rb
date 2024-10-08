@@ -75,7 +75,7 @@ module Abilities
       can [:valuate, :comment_valuation], Budget::Investment
       cannot [:admin_update, :valuate, :comment_valuation],
              Budget::Investment, budget: { phase: "finished" }
-      can :toggle_selection, Budget::Investment do |investment|
+      can [:select, :deselect], Budget::Investment do |investment|
         investment.feasible? && investment.valuation_finished? && !investment.budget.finished?
       end
 
