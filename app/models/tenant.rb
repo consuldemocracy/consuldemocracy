@@ -1,5 +1,5 @@
 class Tenant < ApplicationRecord
-  enum :schema_type, %w[subdomain domain]
+  enum :schema_type, { subdomain: 0, domain: 1 }
 
   validates :schema,
             presence: true,
