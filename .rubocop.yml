@@ -367,6 +367,9 @@ Rails/ActiveRecordCallbacksOrder:
 Rails/AddColumnIndex:
   Enabled: true
 
+Rails/CompactBlank:
+  Enabled: true
+
 Rails/CreateTableWithTimestamps:
   Enabled: true
   Exclude:
