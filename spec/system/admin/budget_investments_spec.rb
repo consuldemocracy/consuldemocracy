@@ -1515,10 +1515,7 @@ describe "Admin budget investments", :admin do
         check "budget_investment[visible_to_valuators]"
       end
 
-      visit admin_budget_budget_investments_path(budget)
-      click_link "Advanced filters"
-      check "Under valuation"
-      click_button "Filter"
+      refresh
 
       within("#budget_investment_#{investment1.id}") do
         expect(page).to have_field "budget_investment[visible_to_valuators]", checked: true
@@ -1564,11 +1561,7 @@ describe "Admin budget investments", :admin do
         uncheck "budget_investment[visible_to_valuators]"
       end
 
-      visit admin_budget_budget_investments_path(budget)
-
-      click_link "Advanced filters"
-      check "Under valuation"
-      click_button "Filter"
+      refresh
 
       within("#budget_investment_#{investment1.id}") do
         expect(page).to have_field "budget_investment[visible_to_valuators]", checked: false
@@ -1598,10 +1591,10 @@ describe "Admin budget investments", :admin do
     end
 
     scenario "Showing the valuating checkbox" do
-      investment1 = create(:budget_investment, :with_administrator, :with_valuator, :visible_to_valuators,
-                           budget: budget)
-      investment2 = create(:budget_investment, :with_administrator, :with_valuator, :invisible_to_valuators,
-                           budget: budget)
+      investment1.valuators << valuator
+      investment2.valuators << valuator
+      investment1.update!(administrator: admin, visible_to_valuators: true)
+      investment2.update!(administrator: admin, visible_to_valuators: false)
 
       visit admin_budget_budget_investments_path(budget)
 
