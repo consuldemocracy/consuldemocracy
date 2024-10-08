@@ -1,5 +1,5 @@
 var replacement = $("<%= j new_content %>");
-var form = $("#<%= dom_id(record) %> .toggle-switch");
+var form = $("#<%= dom_id(record) %> .<%= local_assigns[:form_class] || "toggle-switch" %>");
 
 form.replaceWith(replacement);
 replacement.find("[type='submit']").focus();

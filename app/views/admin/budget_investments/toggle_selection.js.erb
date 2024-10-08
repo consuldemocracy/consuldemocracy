@@ -1,3 +1,4 @@
 <%= render "admin/shared/toggle_switch",
            record: @investment,
+           form_class: "toggle-selection",
            new_content: render(Admin::BudgetInvestments::ToggleSelectionComponent.new(@investment)) %>

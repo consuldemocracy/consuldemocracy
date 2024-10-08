@@ -43,6 +43,7 @@ class Admin::BudgetInvestments::ToggleSelectionComponent < ApplicationComponent
     def options
       {
         "aria-label": label,
+        form_class: "toggle-selection",
         path: path
       }
     end

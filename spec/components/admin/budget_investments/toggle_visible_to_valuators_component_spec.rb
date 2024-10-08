@@ -1,9 +1,21 @@
 require "rails_helper"
 
 describe Admin::BudgetInvestments::ToggleVisibleToValuatorsComponent, :admin do
-  it "uses a JSON request to update visible to valuators" do
-    render_inline Admin::BudgetInvestments::ToggleVisibleToValuatorsComponent.new(create(:budget_investment))
+  describe "aria-pressed attribute" do
+    it "is true for investments visible to valuators" do
+      investment = create(:budget_investment, :visible_to_valuators)
 
-    expect(page).to have_css "form[action$='json'] input[name$='[visible_to_valuators]']"
+      render_inline Admin::BudgetInvestments::ToggleVisibleToValuatorsComponent.new(investment)
+
+      expect(page).to have_css "[aria-pressed=true]"
+    end
+
+    it "is true for investments invisible to valuators" do
+      investment = create(:budget_investment, :invisible_to_valuators)
+
+      render_inline Admin::BudgetInvestments::ToggleVisibleToValuatorsComponent.new(investment)
+
+      expect(page).to have_css "[aria-pressed=false]"
+    end
   end
 end
