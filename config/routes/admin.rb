@@ -69,6 +69,8 @@ namespace :admin do
       member do
         patch :select
         patch :deselect
+        patch :show_to_valuators
+        patch :hide_from_valuators
       end
 
       resources :audits, only: :show, controller: "budget_investment_audits"

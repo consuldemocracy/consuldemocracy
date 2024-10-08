@@ -17,6 +17,7 @@ es:
       edit: Editar
       configure: Configurar
       select: Seleccionar
+      show_to_valuators: "Mostrar %{name} a evaluadores"
     officing_booth:
       title: "Estás ahora mismo en la mesa ubicada en %{booth}. Si esto no es correcto no sigas adelante y llama al teléfono de incidencias. Gracias."
     banners:
