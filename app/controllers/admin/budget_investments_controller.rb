@@ -64,14 +64,20 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     authorize! :select, @investment
     @investment.update!(selected: true)
 
-    render :toggle_selection
+    respond_to do |format|
+      format.html { redirect_to request.referer, notice: t("flash.actions.update.budget_investment") }
+      format.js { render :toggle_selection }
+    end
   end
 
   def deselect
     authorize! :deselect, @investment
     @investment.update!(selected: false)
 
-    render :toggle_selection
+    respond_to do |format|
+      format.html { redirect_to request.referer, notice: t("flash.actions.update.budget_investment") }
+      format.js { render :toggle_selection }
+    end
   end
 
   private
