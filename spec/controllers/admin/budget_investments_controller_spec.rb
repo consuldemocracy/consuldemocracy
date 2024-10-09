@@ -66,6 +66,15 @@ describe Admin::BudgetInvestmentsController, :admin do
                                   "'select' on Investment."
       expect(investment).not_to be_selected
     end
+
+    it "redirects admins without JavaScript to the same page" do
+      request.env["HTTP_REFERER"] = admin_budget_budget_investments_path(investment.budget)
+
+      patch :select, params: { id: investment, budget_id: investment.budget }
+
+      expect(response).to redirect_to admin_budget_budget_investments_path(investment.budget)
+      expect(flash[:notice]).to eq "Investment project updated successfully."
+    end
   end
 
   describe "PATCH deselect" do
@@ -95,6 +104,15 @@ describe Admin::BudgetInvestmentsController, :admin do
       expect(flash[:alert]).to eq "You do not have permission to carry out the action " \
                                   "'deselect' on Investment."
       expect(investment).to be_selected
+    end
+
+    it "redirects admins without JavaScript to the same page" do
+      request.env["HTTP_REFERER"] = admin_budget_budget_investments_path(investment.budget)
+
+      patch :deselect, params: { id: investment, budget_id: investment.budget }
+
+      expect(response).to redirect_to admin_budget_budget_investments_path(investment.budget)
+      expect(flash[:notice]).to eq "Investment project updated successfully."
     end
   end
 end
