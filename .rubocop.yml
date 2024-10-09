@@ -781,6 +781,9 @@ Style/RedundantInterpolation:
 Style/RedundantParentheses:
   Enabled: true
 
+Style/RedundantRegexpCharacterClass:
+  Enabled: true
+
 Style/RedundantReturn:
   Enabled: true
 
