@@ -16,6 +16,8 @@ es:
       unmark_featured: Quitar destacado
       edit: Editar
       configure: Configurar
+      select: Seleccionar
+      show_to_valuators: "Mostrar %{name} a evaluadores"
     officing_booth:
       title: "Estás ahora mismo en la mesa ubicada en %{booth}. Si esto no es correcto no sigas adelante y llama al teléfono de incidencias. Gracias."
     banners:
@@ -268,7 +270,6 @@ es:
           unfeasible: "Inviable"
           undecided: "Sin decidir"
         selected: "Seleccionado"
-        select: "Seleccionar"
         list:
           id: ID
           title: Título
@@ -1295,7 +1296,6 @@ es:
         id: ID
         author: Autor
         milestones: Hitos
-        select: Seleccionar
         selected: Seleccionada
         no_proposals: No hay propuestas.
       show:

@@ -32,7 +32,11 @@ namespace :admin do
   resources :debates, only: [:index, :show]
 
   resources :proposals, only: [:index, :show, :update] do
-    member { patch :toggle_selection }
+    member do
+      patch :select
+      patch :deselect
+    end
+
     resources :milestones, controller: "proposal_milestones"
     resources :progress_bars, except: :show, controller: "proposal_progress_bars"
   end
@@ -62,7 +66,12 @@ namespace :admin do
     end
 
     resources :budget_investments, only: [:index, :show, :edit, :update] do
-      member { patch :toggle_selection }
+      member do
+        patch :select
+        patch :deselect
+        patch :show_to_valuators
+        patch :hide_from_valuators
+      end
 
       resources :audits, only: :show, controller: "budget_investment_audits"
       resources :milestones, controller: "budget_investment_milestones"
@@ -232,7 +241,10 @@ namespace :admin do
     resources :processes do
       resources :questions
       resources :proposals do
-        member { patch :toggle_selection }
+        member do
+          patch :select
+          patch :deselect
+        end
       end
       resources :draft_versions
       resources :milestones
