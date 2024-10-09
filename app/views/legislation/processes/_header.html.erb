@@ -18,13 +18,13 @@
 
           <% if @process.description.present? %>
             <p class="title"><%= t("legislation.processes.header.description") %></p>
-            <%= markdown @process.description %>
+            <%= auto_link_already_sanitized_html AdminWYSIWYGSanitizer.new.sanitize(@process.description) %>
           <% end %>
 
           <% if @process.additional_info.present? %>
             <hr>
             <p class="title"><%= t("legislation.processes.header.additional_info") %></p>
-            <%= markdown @process.additional_info if @process.additional_info %>
+            <%= auto_link_already_sanitized_html AdminWYSIWYGSanitizer.new.sanitize(@process.additional_info) if @process.additional_info %>
           <% end %>
         </div>
 
