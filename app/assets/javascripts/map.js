@@ -73,6 +73,7 @@
       if (markerData.lat && markerData.long && !investmentsMarkers) {
         marker = createMarker(markerData.lat, markerData.long);
       }
+
       if (editable) {
         $(removeMarkerSelector).on("click", removeMarker);
         map.on("zoomend", function() {
@@ -119,6 +120,7 @@
         long: inputs.long.val(),
         zoom: inputs.zoom.val()
       };
+
       if (App.Map.validCoordinates(formCoordinates)) {
         latitude = formCoordinates.lat;
         longitude = formCoordinates.long;
@@ -220,17 +222,29 @@
       }
     },
     addGeozone: function(geozone, map) {
-      var polygon = L.polygon(geozone.outline_points, {
-        color: geozone.color,
-        fillOpacity: 0.3,
-        className: "map-polygon"
+      // Parse the GeoJSON string
+      var geojsonData = JSON.parse(geozone.outline_points);
+
+      // Create a GeoJSON layer
+      var geoJsonLayer = L.geoJSON(geojsonData, {
+        style: function(feature) {
+          return {
+            color: geozone.color || feature.properties.color || "blue",
+            fillOpacity: 0.3,
+            className: "map-polygon"
+          };
+        },
+        onEachFeature: function(feature, layer) {
+          if (feature.properties.headings || geozone.headings) {
+            // Use feature properties headings if provided, else fallback to geozone headings
+            var headings = feature.properties.headings || geozone.headings;
+            layer.bindPopup(headings.join("<br>"));
+          }
+        }
       });
 
-      if (geozone.headings !== undefined) {
-        polygon.bindPopup(geozone.headings.join("<br>"));
-      }
-
-      polygon.addTo(map);
+      // Add the GeoJSON layer to the map
+      geoJsonLayer.addTo(map);
     },
     getPopupContent: function(data) {
       return "<a href='" + data.link + "'>" + data.title + "</a>";
