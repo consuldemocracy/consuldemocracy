@@ -337,6 +337,9 @@ Naming/BlockForwarding:
     - "app/controllers/management/base_controller.rb"
     - "app/controllers/subscriptions_controller.rb"
 
+Naming/RescuedExceptionsVariableName:
+  Enabled: true
+
 Naming/VariableName:
   Enabled: true
 
