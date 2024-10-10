@@ -20,7 +20,11 @@ class Admin::SiteCustomization::InformationTexts::FormFieldComponent < Applicati
     end
 
     def i18n_text
-      I18n.translate(i18n_content.key, locale: locale)
+      I18n.translate(i18n_key, locale: locale)
+    end
+
+    def i18n_key
+      i18n_content.key
     end
 
     def site_customization_display_translation_style
