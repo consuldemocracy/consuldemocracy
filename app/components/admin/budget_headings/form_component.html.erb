@@ -24,6 +24,11 @@
                    include_blank: t("geozones.none"),
                    hint: t("admin.budget_headings.form.geozone_info") %>
     <% end %>
+    
+    <% if heading.budget.approval_voting? %>
+      <%= f.number_field :max_ballot_lines,
+                         hint: t("admin.budget_headings.form.max_ballot_lines_info") %>
+    <% end %>
     </div>
     <hr> <!-- Dividing line before the geozone section -->
 
