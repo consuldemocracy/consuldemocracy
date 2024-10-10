@@ -27,7 +27,11 @@
             </div>
           </td>
           <td class="text-center">
-            <%= check_box_tag "budget_investment_ids[]", investment.id, nil, id: "#{dom_id(investment)}_check" %>
+            <%= check_box_tag "budget_investment_ids[]",
+                              investment.id,
+                              nil,
+                              id: "#{dom_id(investment)}_check",
+                              "aria-label": investment.title %>
           </td>
         </tr>
       <% end %>
