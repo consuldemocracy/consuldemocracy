@@ -496,11 +496,11 @@ describe "Admin edit translatable records", :admin do
     scenario "Show selected locale form" do
       visit path
 
-      expect(page).to have_field "contents_content_#{content.key}values_value_en", with: "Value in English"
+      expect(page).to have_field content.key, with: "Value in English"
 
       select "Español", from: "Current language"
 
-      expect(page).to have_field "contents_content_#{content.key}values_value_es", with: "Value en español"
+      expect(page).to have_field content.key, with: "Value en español"
     end
 
     scenario "Select a locale and add it to the form" do
