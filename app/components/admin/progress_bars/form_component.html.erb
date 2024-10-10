@@ -16,12 +16,13 @@
     <% end %>
   </div>
 
-  <div class="row">
+  <div class="row percentage-inputs">
     <div class="small-12 medium-6 large-2 column">
-      <%= f.label :percentage %>
+      <%= f.label :percentage, nil, id: "percentage_label" %>
       <%= f.text_field :percentage, { type: :range,
                                       id: "percentage_range",
                                       label: false,
+                                      "aria-labelledby": "percentage_label",
                                       class: "column" }.merge(progress_options) %>
     </div>
 
