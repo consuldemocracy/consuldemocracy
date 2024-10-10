@@ -4,61 +4,61 @@ nl:
       title: Evaluatie
     menu:
       title: Evaluatie
-      budgets: Participatory budgets
+      budgets: Burgerbegrotingen
     budgets:
       index:
-        title: Participatory budgets
+        title: Burgerbegrotingen
         filters:
           current: Open
           finished: Afgelopen
-        table_name: Name
-        table_phase: Phase
-        table_assigned_investments_valuation_open: Investment projects assigned with valuation open
+        table_name: Naam
+        table_phase: Fase
+        table_assigned_investments_valuation_open: Investeringsprojecten zonder evaluatie
         table_actions: Activiteiten
-        evaluate: Evaluate
+        evaluate: Evalueer
         no_budgets: "Er zijn geen budgetten"
     budget_investments:
       index:
         headings_filter_all: Alle koppen
         filters:
           valuation_open: Open
-          valuating: Under valuation
+          valuating: In evaluatie
           valuation_finished: Beoordeling voltooid
-        assigned_to: "Assigned to %{valuator}"
+        assigned_to: "Toegewezen aan %{valuator}"
         title: Budget bestemmingen
         edit: Bewerk dossier
         table_id: ID
-        table_title: Title
+        table_title: Titel
         table_heading_name: Kop naam
         table_actions: Activiteiten
         no_investments: "Er zijn geen begrotingsvoorstellen."
       show:
         back: Terug
-        title: Investment project
-        info: Author info
-        by: Sent by
-        sent: Sent at
-        heading: Partida
+        title: Investeringsproject
+        info: Over de auteur
+        by: Verzonden door
+        sent: Verzonden naar
+        heading: Kop
         dossier: Dossier
         edit_dossier: Bewerk dossier
         price: Prijs
-        price_first_year: Cost during the first year
+        price_first_year: Kosten tijdens het eerste jaar
         currency: "€"
-        feasibility: Feasibility
-        feasible: Feasible
-        unfeasible: Unfeasible
-        undefined: Niet gedefinieerd
+        feasibility: Haalbaarheid
+        feasible: Haalbaar
+        unfeasible: Niet haalbaar
+        undefined: Ongedefinieerd
         valuation_finished: Beoordeling voltooid
-        duration: Time scope
-        responsibles: Responsibles
-        assigned_admin: Assigned admin
+        duration: Tijdsspanne
+        responsibles: Verantwoordelijken
+        assigned_admin: Toegewezen beheerder
         assigned_valuators: Toegewezen beoordelaars
         preview: Investeringsoverzicht
       edit:
         dossier: Dossier
         price: "Prijs (%{currency})"
         price_first_year: "Kosten tijdens het eerste jaar (%{currency}) <small>(optioneel, gegevens niet openbaar)</small>"
-        feasibility: Feasibility
+        feasibility: Haalbaarheid
         valuation_finished_alert: "Dit rapport als voltooid markeren? Daarna kan het niet meer worden gewijzigd."
         not_feasible_alert: "Een email met de beoordeling van de haalbaarheid wordt verstuurd aan de auteur van het project."
         save: Bewaar wijzigingen

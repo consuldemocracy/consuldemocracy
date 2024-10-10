@@ -2,22 +2,22 @@
 <table id="question_<%= question.id %>_results_table">
   <thead>
     <tr>
-      <%- question.question_answers.each do |answer| %>
-        <th scope="col" class="<%= answer_styles(answer) %>">
-          <% if most_voted_answer?(answer) %>
+      <%- question.question_options.each do |option| %>
+        <th scope="col" class="<%= option_styles(option) %>">
+          <% if most_voted_option?(option) %>
             <span class="show-for-sr"><%= t("polls.show.results.most_voted_answer") %></span>
           <% end %>
-          <%= answer.title %>
+          <%= option.title %>
         </th>
       <% end %>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <%- question.question_answers.each do |answer| %>
-        <td id="answer_<%= answer.id %>_result" class="<%= answer_styles(answer) %>">
-          <%= answer.total_votes %>
-          (<%= answer.total_votes_percentage.round(2) %>%)
+      <%- question.question_options.each do |option| %>
+        <td id="option_<%= option.id %>_result" class="<%= option_styles(option) %>">
+          <%= option.total_votes %>
+          (<%= option.total_votes_percentage.round(2) %>%)
         </td>
       <% end %>
     </tr>

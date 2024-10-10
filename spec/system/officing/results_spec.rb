@@ -9,11 +9,11 @@ describe "Officing Results", :with_frozen_time do
 
   before do
     create(:poll_shift, :recount_scrutiny_task, officer: poll_officer, booth: booth, date: Date.current)
-    create(:poll_question_answer, title: "Yes", question: question_1, given_order: 1)
-    create(:poll_question_answer, title: "No", question: question_1, given_order: 2)
+    create(:poll_question_option, title: "Yes", question: question_1, given_order: 1)
+    create(:poll_question_option, title: "No", question: question_1, given_order: 2)
 
-    create(:poll_question_answer, title: "Today", question: question_2, given_order: 1)
-    create(:poll_question_answer, title: "Tomorrow", question: question_2, given_order: 2)
+    create(:poll_question_option, title: "Today", question: question_2, given_order: 1)
+    create(:poll_question_option, title: "Tomorrow", question: question_2, given_order: 2)
 
     login_as(poll_officer.user)
     set_officing_booth(booth)
@@ -80,16 +80,20 @@ describe "Officing Results", :with_frozen_time do
   end
 
   scenario "Edit result" do
-    partial_result = create(:poll_partial_result,
-                      officer_assignment: poll_officer.officer_assignments.first,
-                      booth_assignment: poll_officer.officer_assignments.first.booth_assignment,
-                      date: Date.current,
-                      question: question_1,
-                      answer: question_1.question_answers.first.title,
-                      author: poll_officer.user,
-                      amount: 7777)
+    partial_result = create(
+      :poll_partial_result,
+      officer_assignment: poll_officer.officer_assignments.first,
+      booth_assignment: poll_officer.officer_assignments.first.booth_assignment,
+      date: Date.current,
+      question: question_1,
+      answer: question_1.question_options.first.title,
+      author: poll_officer.user,
+      amount: 7777
+    )
 
-    visit officing_poll_results_path(poll, date: I18n.l(partial_result.date), booth_assignment_id: partial_result.booth_assignment_id)
+    visit officing_poll_results_path(poll,
+                                     date: I18n.l(partial_result.date),
+                                     booth_assignment_id: partial_result.booth_assignment_id)
 
     within("#question_#{question_1.id}_0_result") { expect(page).to have_content("7777") }
 
@@ -129,20 +133,24 @@ describe "Officing Results", :with_frozen_time do
     booth_assignment = officer_assignment.booth_assignment
     booth = booth_assignment.booth
 
-    create(:poll_partial_result,
+    create(
+      :poll_partial_result,
       officer_assignment: officer_assignment,
       booth_assignment: booth_assignment,
       date: poll.ends_at,
       question: question_1,
-      amount: 33)
+      amount: 33
+    )
 
-    create(:poll_recount,
+    create(
+      :poll_recount,
       officer_assignment: officer_assignment,
       booth_assignment: booth_assignment,
       date: poll.ends_at,
       white_amount: 21,
       null_amount: 44,
-      total_amount: 66)
+      total_amount: 66
+    )
 
     visit officing_poll_results_path(poll,
                                      date: I18n.l(poll.ends_at.to_date),
@@ -152,12 +160,12 @@ describe "Officing Results", :with_frozen_time do
     expect(page).to have_content(booth.name)
 
     expect(page).to have_content(question_1.title)
-    question_1.question_answers.each_with_index do |answer, i|
+    question_1.question_options.each_with_index do |answer, i|
       within("#question_#{question_1.id}_#{i}_result") { expect(page).to have_content(answer.title) }
     end
 
     expect(page).to have_content(question_2.title)
-    question_2.question_answers.each_with_index do |answer, i|
+    question_2.question_options.each_with_index do |answer, i|
       within("#question_#{question_2.id}_#{i}_result") { expect(page).to have_content(answer.title) }
     end
 

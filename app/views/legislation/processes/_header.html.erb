@@ -3,9 +3,10 @@
     <div class="small-12 medium-9 column">
 
       <% if banner_color? %>
-        <%= link_to t("shared.back"), legislation_processes_path,
-                                      class: "icon-angle-left",
-                                      style: "color:#{process.font_color};" %>
+        <%= link_to t("shared.back"),
+                    legislation_processes_path,
+                    class: "icon-angle-left",
+                    style: "color:#{process.font_color};" %>
       <% else %>
         <%= back_link_to legislation_processes_path %>
       <% end %>
@@ -37,11 +38,11 @@
 
     <aside class="small-12 medium-3 column">
       <%= render "shared/social_share",
-        share_title: t("proposals.show.share"),
-        title: @process.title,
-        url: legislation_process_url(@process),
-        description: @process.title,
-        mobile: @process.title %>
+                 share_title: t("proposals.show.share"),
+                 title: @process.title,
+                 url: legislation_process_url(@process),
+                 description: @process.title,
+                 mobile: @process.title %>
 
       <% if @process.image.present? %>
         <hr>

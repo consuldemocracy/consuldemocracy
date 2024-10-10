@@ -9,11 +9,16 @@
     <%= card.link_url %>
   </td>
 
+  <% unless header_section? %>
+    <td>
+      <%= card.order %>
+    </td>
+  <% end %>
+
   <!-- remove conditional once specs have image validations -->
   <td>
     <% if card.image.present? %>
-      <%= link_to t("admin.shared.show_image"), card.image.variant(:large),
-                  title: card.image.title, target: "_blank" %>
+      <%= link_to t("admin.shared.show_image"), card.image.variant(:large), title: card.image.title %>
     <% end %>
   </td>
   <td>

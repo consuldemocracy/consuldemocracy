@@ -7,8 +7,8 @@
   <div class="row">
     <div class="small-12 column">
       <%= f.email_field :email,
-        label: t("devise_views.users.registrations.edit.email_label"),
-        autofocus: true %>
+                        label: t("devise_views.users.registrations.edit.email_label"),
+                        autofocus: true %>
     </div>
 
     <div class="small-12 column">
@@ -19,22 +19,22 @@
 
     <div class="small-12 column">
       <%= f.password_field :password,
-        autocomplete: "off",
-        label: t("devise_views.users.registrations.edit.password_label"),
-        hint: t("devise_views.users.registrations.edit.leave_blank") %>
+                           autocomplete: "off",
+                           label: t("devise_views.users.registrations.edit.password_label"),
+                           hint: t("devise_views.users.registrations.edit.leave_blank") %>
     </div>
 
     <div class="small-12 column">
       <%= f.password_field :password_confirmation,
-        label: t("devise_views.users.registrations.edit.password_confirmation_label"),
-        autocomplete: "off" %>
+                           label: t("devise_views.users.registrations.edit.password_confirmation_label"),
+                           autocomplete: "off" %>
     </div>
 
     <div class="small-12 column">
       <%= f.password_field :current_password,
-        label: t("devise_views.users.registrations.edit.current_password_label"),
-        autocomplete: "off",
-        hint: t("devise_views.users.registrations.edit.need_current") %>
+                           label: t("devise_views.users.registrations.edit.current_password_label"),
+                           autocomplete: "off",
+                           hint: t("devise_views.users.registrations.edit.need_current") %>
     </div>
 
     <div class="small-12 column">

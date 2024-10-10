@@ -25,7 +25,6 @@ describe Abilities::Moderator do
 
   it { should be_able_to(:index, Debate) }
   it { should be_able_to(:show, debate) }
-  it { should be_able_to(:vote, debate) }
 
   it { should be_able_to(:index, Proposal) }
   it { should be_able_to(:show, proposal) }

@@ -46,7 +46,6 @@ en:
           success: Residence verified
       new:
         accept_terms_text: I accept %{terms_url} of the Census
-        accept_terms_text_title: I accept the terms and conditions of access of the Census
         document_number: Document number
         document_number_help_title: Help
         document_number_help_text: "<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>Residence card</strong>: X1234567P"

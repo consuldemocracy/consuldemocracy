@@ -19,8 +19,8 @@ class Poll
       where("officer_id = ? AND poll_booth_assignments.poll_id = ?", officer_id, poll_id)
     end
     scope :by_officer, ->(officer) { where(officer_id: officer.id) }
-    scope :by_poll,  ->(poll) { joins(:booth_assignment).where("poll_booth_assignments.poll_id" => poll.id) }
-    scope :by_booth, ->(booth) { joins(:booth_assignment).where("poll_booth_assignments.booth_id" => booth.id) }
+    scope :by_poll,  ->(poll) { joins(:booth_assignment).where("poll_booth_assignments.poll_id": poll.id) }
+    scope :by_booth, ->(booth) { joins(:booth_assignment).where("poll_booth_assignments.booth_id": booth.id) }
     scope :by_date, ->(date) { where(date: date) }
 
     before_create :log_user_data

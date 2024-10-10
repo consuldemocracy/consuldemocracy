@@ -1,0 +1,11 @@
+<div id="documents" class="documents">
+  <h2><%= t("documents.title") %>&nbsp;<span>(<%= documents.count %>)</span></h2>
+
+  <ul class="no-bullet document-link">
+    <% documents.each do |document| %>
+      <li>
+        <%= render Documents::DocumentComponent.new(document, show_destroy_link: true) %>
+      </li>
+    <% end %>
+  </ul>
+</div>

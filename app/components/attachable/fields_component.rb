@@ -1,6 +1,6 @@
 class Attachable::FieldsComponent < ApplicationComponent
   attr_reader :f, :resource_type, :resource_id, :relation_name
-  delegate :current_user, :render_image, to: :helpers
+  use_helpers :current_user, :render_image
 
   def initialize(f, resource_type:, resource_id:, relation_name:)
     @f = f
@@ -46,10 +46,10 @@ class Attachable::FieldsComponent < ApplicationComponent
     def file_field
       klass = attachable.persisted? || attachable.cached_attachment.present? ? " hide" : ""
       f.file_field :attachment,
-        label_options: { class: "button hollow #{klass}" },
-        accept: accepted_content_types_extensions,
-        class: "js-#{singular_name}-attachment",
-        data: { url: direct_upload_path }
+                   label_options: { class: "button hollow #{klass}" },
+                   accept: accepted_content_types_extensions,
+                   class: "js-#{singular_name}-attachment",
+                   data: { url: direct_upload_path }
     end
 
     def direct_upload_path

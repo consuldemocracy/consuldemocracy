@@ -53,7 +53,6 @@ zh-CN:
         tags_placeholder: "输入您希望使用的标签，用逗号 (',') 分割"
         map_location: "地图位置"
         map_location_instructions: "将地图导航到该位置并放置标记。"
-        map_remove_marker: "删除地图标记"
       index:
         title: 参与性预算
         unfeasible: 不可行的投资项目

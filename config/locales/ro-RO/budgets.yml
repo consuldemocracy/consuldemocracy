@@ -84,7 +84,6 @@ ro:
         tags_placeholder: "Introduceți etichetele pe care doriți să le utilizați, separate prin virgule (',')"
         map_location: "Localizare pe hartă"
         map_location_instructions: "Navigați pe hartă până la locație și plasați marcatorul."
-        map_remove_marker: "Eliminați marcatorul de hartă"
       index:
         title: Bugetare participativă
         unfeasible: Proiecte de investiții imposibile

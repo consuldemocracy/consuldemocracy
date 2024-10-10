@@ -1,9 +1,13 @@
 $("#progress_bar").html("<%= j render("budgets/ballot/progress_bar", ballot: @ballot, heading: @heading) %>");
-$("#sidebar").html("<%= j render("budgets/investments/sidebar") %>");
+$("#my_ballot").html("<%= j render(
+  Budgets::Investments::MyBallotComponent.new(
+    ballot: @ballot,
+    heading: @heading,
+    investment_ids: @investment_ids
+  )
+) %>");
 $("#ballot").html("<%= j render("budgets/ballot/ballot") %>")
 
 <%= render "refresh_ballots",
             investment_ids: @investment_ids,
             ballot: @ballot %>
-
-App.Map.initialize();

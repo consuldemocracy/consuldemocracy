@@ -1,5 +1,10 @@
 module Types
   class QueryType < Types::BaseObject
+    field :budgets, Types::BudgetType.connection_type, "Returns all budgets", null: false
+    field :budget, Types::BudgetType, "Returns budget for ID", null: false do
+      argument :id, ID, required: true, default_value: false
+    end
+
     field :comments, Types::CommentType.connection_type, "Returns all comments", null: false
     field :comment, Types::CommentType, "Returns comment for ID", null: false do
       argument :id, ID, required: true, default_value: false
@@ -15,13 +20,25 @@ module Types
       argument :id, ID, required: true, default_value: false
     end
 
+    field :milestones, Types::MilestoneType.connection_type, "Returns all milestones", null: false
+    field :milestone, Types::MilestoneType, "Returns milestone for ID", null: false do
+      argument :id, ID, required: true, default_value: false
+    end
+
     field :proposals, Types::ProposalType.connection_type, "Returns all proposals", null: false
     field :proposal, Types::ProposalType, "Returns proposal for ID", null: false do
       argument :id, ID, required: true, default_value: false
     end
 
-    field :proposal_notifications, Types::ProposalNotificationType.connection_type, "Returns all proposal notifications", null: false
-    field :proposal_notification, Types::ProposalNotificationType, "Returns proposal notification for ID", null: false do
+    field :proposal_notifications,
+          Types::ProposalNotificationType.connection_type,
+          "Returns all proposal notifications",
+          null: false
+
+    field :proposal_notification,
+          Types::ProposalNotificationType,
+          "Returns proposal notification for ID",
+          null: false do
       argument :id, ID, required: true, default_value: false
     end
 
@@ -40,12 +57,20 @@ module Types
       argument :id, ID, required: true, default_value: false
     end
 
+    def budgets
+      Budget.public_for_api
+    end
+
+    def budget(id:)
+      budgets.find(id)
+    end
+
     def comments
       Comment.public_for_api
     end
 
     def comment(id:)
-      Comment.find(id)
+      comments.find(id)
     end
 
     def debates
@@ -53,7 +78,7 @@ module Types
     end
 
     def debate(id:)
-      Debate.find(id)
+      debates.find(id)
     end
 
     def geozones
@@ -61,7 +86,15 @@ module Types
     end
 
     def geozone(id:)
-      Geozone.find(id)
+      geozones.find(id)
+    end
+
+    def milestones
+      Milestone.public_for_api
+    end
+
+    def milestone(id:)
+      milestones.find(id)
     end
 
     def proposals
@@ -69,7 +102,7 @@ module Types
     end
 
     def proposal(id:)
-      Proposal.find(id)
+      proposals.find(id)
     end
 
     def proposal_notifications
@@ -77,7 +110,7 @@ module Types
     end
 
     def proposal_notification(id:)
-      ProposalNotification.find(id)
+      proposal_notifications.find(id)
     end
 
     def tags
@@ -85,7 +118,7 @@ module Types
     end
 
     def tag(id:)
-      Tag.find(id)
+      tags.find(id)
     end
 
     def users
@@ -93,7 +126,7 @@ module Types
     end
 
     def user(id:)
-      User.find(id)
+      users.find(id)
     end
 
     def votes
@@ -101,7 +134,7 @@ module Types
     end
 
     def vote(id:)
-      Vote.find(id)
+      votes.find(id)
     end
   end
 end

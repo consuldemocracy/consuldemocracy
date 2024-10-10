@@ -19,7 +19,6 @@ nn:
         tags_placeholder: "Skriv tag'ene du vil bruke, avgrenset med komma (',')"
         map_location: "Kartposisjon"
         map_location_instructions: "Naviger til plassen på kartet og plasser markøren."
-        map_remove_marker: "Fjern kartmarkøren"
       index:
         title: Deltakende budsjettering
         search_form:

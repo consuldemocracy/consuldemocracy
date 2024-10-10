@@ -95,7 +95,8 @@ describe Signature do
         investment = create(:budget_investment)
         signature_sheet = create(:signature_sheet, signable: investment)
         user = create(:user, :level_two, document_number: "123A")
-        signature = create(:signature, document_number: user.document_number, signature_sheet: signature_sheet)
+        signature = create(:signature, document_number: user.document_number,
+                                       signature_sheet: signature_sheet)
 
         signature.verify
 
@@ -116,7 +117,8 @@ describe Signature do
         investment = create(:budget_investment)
         signature_sheet = create(:signature_sheet, signable: investment)
         user = create(:user, document_number: "123A")
-        signature = create(:signature, document_number: user.document_number, signature_sheet: signature_sheet)
+        signature = create(:signature, document_number: user.document_number,
+                                       signature_sheet: signature_sheet)
 
         signature.verify
 
@@ -128,7 +130,8 @@ describe Signature do
         investment = create(:budget_investment)
         signature_sheet = create(:signature_sheet, signable: investment)
         user = create(:user, :level_two, document_number: "123A")
-        signature = create(:signature, document_number: user.document_number, signature_sheet: signature_sheet)
+        signature = create(:signature, document_number: user.document_number,
+                                       signature_sheet: signature_sheet)
 
         signature.verify
         signature.verify
@@ -140,7 +143,8 @@ describe Signature do
         user = create(:user, :level_two, document_number: "123A")
         proposal = create(:proposal, voters: [user])
         signature_sheet = create(:signature_sheet, signable: proposal)
-        signature = create(:signature, signature_sheet: signature_sheet, document_number: user.document_number)
+        signature = create(:signature, signature_sheet: signature_sheet,
+                                       document_number: user.document_number)
 
         signature.verify
 
@@ -152,7 +156,8 @@ describe Signature do
         investment = create(:budget_investment, voters: [user])
 
         signature_sheet = create(:signature_sheet, signable: investment)
-        signature = create(:signature, document_number: user.document_number, signature_sheet: signature_sheet)
+        signature = create(:signature, document_number: user.document_number,
+                                       signature_sheet: signature_sheet)
 
         expect(Vote.count).to eq(1)
 
@@ -179,7 +184,7 @@ describe Signature do
 
         user = User.last
         expect(user.document_number).to eq("12345678Z")
-        expect(user.created_from_signature).to eq(true)
+        expect(user.created_from_signature).to be true
         expect(user.verified_at).to be
         expect(user.erased_at).to be
         expect(user.geozone).to be

@@ -14,7 +14,7 @@ class Proposal < ApplicationRecord
   include Mappable
   include Notifiable
   include Documentable
-  include EmbedVideosHelper
+  include Videoable
   include Relationable
   include Milestoneable
   include Randomizable
@@ -50,12 +50,14 @@ class Proposal < ApplicationRecord
   validates :author, presence: true
   validates :responsible_name, presence: true, unless: :skip_user_verification?
 
-  validates :responsible_name, length: { in: 6..Proposal.responsible_name_max_length }, unless: :skip_user_verification?
-  validates :retired_reason, presence: true, inclusion: { in: ->(*) { RETIRE_OPTIONS }}, unless: -> { retired_at.blank? }
+  validates :responsible_name,
+            length: { in: 6..Proposal.responsible_name_max_length },
+            unless: :skip_user_verification?
+  validates :retired_reason,
+            presence: true,
+            inclusion: { in: ->(*) { RETIRE_OPTIONS }}, unless: -> { retired_at.blank? }
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
-
-  validate :valid_video_url?
 
   before_validation :set_responsible_name
 
@@ -72,20 +74,22 @@ class Proposal < ApplicationRecord
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :sort_by_archival_date,    -> { archived.sort_by_confidence_score }
   scope :sort_by_recommendations,  -> { order(cached_votes_up: :desc) }
-  scope :archived,                 -> { where("proposals.created_at <= ?", Setting["months_to_archive_proposals"].to_i.months.ago) }
-  scope :not_archived,             -> { where("proposals.created_at > ?", Setting["months_to_archive_proposals"].to_i.months.ago) }
-  scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago) }
-  scope :retired,                  -> { where.not(retired_at: nil) }
-  scope :not_retired,              -> { where(retired_at: nil) }
-  scope :successful,               -> { where("cached_votes_up >= ?", Proposal.votes_needed_for_success) }
-  scope :unsuccessful,             -> { where("cached_votes_up < ?", Proposal.votes_needed_for_success) }
-  scope :public_for_api,           -> { all }
-  scope :selected,                 -> { where(selected: true) }
-  scope :not_selected,             -> { where(selected: false) }
-  scope :not_supported_by_user,    ->(user) { where.not(id: user.find_voted_items(votable_type: "Proposal").compact.map(&:id)) }
-  scope :published,                -> { where.not(published_at: nil) }
-  scope :draft,                    -> { where(published_at: nil) }
-  scope :created_by,               ->(author) { where(author: author) }
+
+  scope :archived,       -> { where(created_at: ...Setting.archived_proposals_date_limit) }
+  scope :not_archived,   -> { where(created_at: Setting.archived_proposals_date_limit..) }
+  scope :last_week,      -> { where(created_at: 7.days.ago..) }
+  scope :retired,        -> { where.not(retired_at: nil) }
+  scope :not_retired,    -> { excluding(retired) }
+  scope :successful,     -> { where(cached_votes_up: Proposal.votes_needed_for_success..) }
+  scope :unsuccessful,   -> { where(cached_votes_up: ...Proposal.votes_needed_for_success) }
+  scope :public_for_api, -> { all }
+  scope :selected,       -> { where(selected: true) }
+  scope :not_selected,   -> { where(selected: false) }
+  scope :published,      -> { where.not(published_at: nil) }
+  scope :draft,          -> { excluding(published) }
+
+  scope :not_supported_by_user, ->(user) { where.not(id: user.find_voted_items(votable_type: "Proposal")) }
+  scope :created_by,            ->(author) { where(author: author) }
 
   def publish
     update!(published_at: Time.current)
@@ -104,13 +108,9 @@ class Proposal < ApplicationRecord
     tagged_with(user.interests, any: true)
       .where.not(author_id: user.id)
       .unsuccessful
-      .not_followed_by_user(user)
+      .excluding(followed_by_user(user))
       .not_archived
       .not_supported_by_user(user)
-  end
-
-  def self.not_followed_by_user(user)
-    where.not(id: followed_by_user(user).ids)
   end
 
   def to_param
@@ -118,16 +118,16 @@ class Proposal < ApplicationRecord
   end
 
   def searchable_translations_definitions
-    { title       => "A",
-      summary     => "C",
+    { title => "A",
+      summary => "C",
       description => "D" }
   end
 
   def searchable_values
     {
-      author.username       => "B",
-      tag_list.join(" ")    => "B",
-      geozone&.name         => "B"
+      author.username => "B",
+      tag_list.join(" ") => "B",
+      geozone&.name => "B"
     }.merge!(searchable_globalized_values)
   end
 
@@ -139,7 +139,7 @@ class Proposal < ApplicationRecord
   def self.search_by_code(terms)
     matched_code = match_code(terms)
     results = where(id: matched_code[1]) if matched_code
-    return results if results.present? && results.first.code == terms
+    results if results.present? && results.first.code == terms
   end
 
   def self.match_code(terms)
@@ -221,7 +221,7 @@ class Proposal < ApplicationRecord
   end
 
   def archived?
-    created_at <= Setting["months_to_archive_proposals"].to_i.months.ago
+    created_at <= Setting.archived_proposals_date_limit
   end
 
   def notifications
@@ -234,7 +234,11 @@ class Proposal < ApplicationRecord
 
   def self.proposals_orders(user)
     orders = %w[hot_score confidence_score created_at relevance archival_date]
-    orders << "recommendations" if Setting["feature.user.recommendations_on_proposals"] && user&.recommended_proposals
+
+    if Setting["feature.user.recommendations_on_proposals"] && user&.recommended_proposals
+      orders << "recommendations"
+    end
+
     orders
   end
 

@@ -1,0 +1,17 @@
+ne:
+  images:
+    remove_image: छवि हटाउनुहोस्
+    form:
+      title: वर्णनात्मक छवि
+      title_placeholder: छविको लागि वर्णनात्मक शीर्षक थप्नुहोस्
+      delete_button: छवि हटाउनुहोस्
+      note: "तपाईंले निम्न सामग्री र प्रकारहरूको एउटा छवि अपलोड गर्न सक्नुहुन्छ: %{accepted_content_types}, %{max_file_size} MB सम्म।"
+      add_new_image: छवि थप्नुहोस्
+    actions:
+      destroy:
+        notice: छवि सफलतापूर्वक मेटाइयो
+        alert: छवि मेटाउन सकिँदैन।
+    errors:
+      messages:
+        in_between: '%{min} र %{max} बीचमा हुनुपर्छ'
+        wrong_content_type: सामग्री प्रकार %{content_type} कुनै पनि स्वीकृत सामग्री प्रकारहरूसँग %{accepted_content_types} मेल खाँदैन

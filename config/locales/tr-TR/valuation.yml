@@ -11,58 +11,58 @@ tr:
         filters:
           current: Açık
           finished: Tamamlanmış
-        table_name: İsim
+        table_name: Ad
         table_phase: Aşama
-        table_assigned_investments_valuation_open: Açık değerlendirme ile belirlenen yatırım projeleri
+        table_assigned_investments_valuation_open: Açık değerlendirme ile belirlenmiş yatırım projeleri
         table_actions: Yapılacaklar
         evaluate: Değerlendir
-        no_budgets: "Bütçe bulunmamaktadır"
+        no_budgets: "Herhangi bir bütçe yok"
     budget_investments:
       index:
-        headings_filter_all: Tüm başlıklar
+        headings_filter_all: Tüm bütçe kalemleri
         filters:
           valuation_open: Açık
-          valuating: Değerlendirme aşamasında
-          valuation_finished: Değerlendirme tamamlandı
-        assigned_to: "%{valuator} tarafından değerlendirilecek"
+          valuating: Değerlendiriliyor
+          valuation_finished: Değerlendirildi
+        assigned_to: "%{valuator} bilirkişisi görevlendirildi"
         title: Yatırım projeleri
         edit: Dosyayı düzenle
-        table_id: KİMLİK
+        table_id: Kimlik
         table_title: Başlık
-        table_heading_name: Başlık
+        table_heading_name: Bütçe kalemi adı
         table_actions: Yapılacaklar
-        no_investments: "Herhangi bir yatırım projesi bulunmamaktadır."
+        no_investments: "Herhangi bir yatırım projesi yok."
       show:
         back: Geri
         title: Yatırım projesi
-        info: Yazar bilgisi
-        by: Tarafından gönderildi
-        sent: Tarihinde gönderildi
-        heading: Başlık
+        info: Sahip bilgileri
+        by: Gönderen
+        sent: Gönderilme zamanı
+        heading: Bütçe kalemi
         dossier: Dosya
-        edit_dossier: Dosya düzenleme
+        edit_dossier: Dosyayı düzenle
         price: Maliyet
-        price_first_year: İlk yıl maliyet bedeli
+        price_first_year: İlk yılın maliyeti
         currency: "€"
         feasibility: Uygulanabilirlik
-        feasible: Uygulanabilir
-        unfeasible: Uygulanamaz
+        feasible: Uygulanabilir bulunmuş
+        unfeasible: Uygulanabilir bulunmamış
         undefined: Tanımlanmamış
-        valuation_finished: Değerlendirme tamamlandı
-        duration: Zaman kapsamı
+        valuation_finished: Değerlendirildi
+        duration: Zaman aralığı
         responsibles: Sorumlular
-        assigned_admin: Görevlendirilmiş sorumlu
+        assigned_admin: Görevlendirilmiş yönetici
         assigned_valuators: Görevlendirilmiş bilirkişiler
-        preview: Yatırım ön izleme
+        preview: Yatırım ön izlemesi
       edit:
         dossier: Dosya
-        price: "Fiyat (%{currency})"
-        price_first_year: "İlk yıl içindeki maliyet(%{currency}) <small>(isteğe bağlı, veri kamuya açık değil)</small>"
+        price: "Maliyet (%{currency})"
+        price_first_year: "İlk yılın maliyeti (%{currency}) <small>(isteğe bağlı, veri kamuya açık değil)</small>"
         feasibility: Uygulanabilirlik
-        valuation_finished_alert: "Bu raporun tamamlandığından emin misiniz? Bunu belirtmeniz halinde, raporda daha fazla değişikli yapmanız mümkün olmayacak."
-        not_feasible_alert: "Uygunsuzluk raporunu içeren bir e-posta fikrin sahibine hemen gönderilecektir."
+        valuation_finished_alert: "Bu raporu tamamlanmış olarak işaretlemek istediğinize emin misiniz? Bu yapıldığında rapor artık değiştirilemez."
+        not_feasible_alert: "Proje sahibine hemen uygulanabilir bulunmama raporunun bulunduğu bir e-posta gönderilecek."
         save: Değişiklikleri kaydet
       notice:
         valuate: "Dosya güncellendi"
-      valuation_comments: Değerlendirme yorumları
-      not_in_valuating_phase: Yatırımlar sadece Bütçe değerlendirme aşamasındayken değerlendirilebilir
+      valuation_comments: Değerlendirmeler
+      not_in_valuating_phase: Yatırımlar yalnızca bütçe değerlendirme aşamasındayken değerlendirilebilir

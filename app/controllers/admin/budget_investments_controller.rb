@@ -115,7 +115,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
 
     def load_valuator_groups
-      @valuator_groups = ValuatorGroup.all.order(name: :asc)
+      @valuator_groups = ValuatorGroup.order(name: :asc)
     end
 
     def load_tags

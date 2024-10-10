@@ -10,7 +10,6 @@ class ProposalsController < ApplicationController
   before_action :load_categories, only: [:index, :map, :summary]
   before_action :load_geozones, only: [:edit, :map, :summary]
   before_action :authenticate_user!, except: [:index, :show, :map, :summary]
-  before_action :destroy_map_location_association, only: :update
   before_action :set_view, only: :index
   before_action :proposals_recommendations, only: :index, if: :current_user
 
@@ -22,6 +21,8 @@ class ProposalsController < ApplicationController
   has_orders %w[most_voted newest oldest], only: :show
 
   load_and_authorize_resource
+  before_action :destroy_map_location_association, only: :update
+
   helper_method :resource_model, :resource_name
   respond_to :html, :js
 
@@ -73,6 +74,11 @@ class ProposalsController < ApplicationController
 
   def summary
     @proposals = Proposal.for_summary
+    @tag_cloud = tag_cloud
+  end
+
+  def map
+    @proposal = Proposal.new
     @tag_cloud = tag_cloud
   end
 
@@ -131,7 +137,10 @@ class ProposalsController < ApplicationController
     def load_retired
       if params[:retired].present?
         @resources = @resources.retired
-        @resources = @resources.where(retired_reason: params[:retired]) if Proposal::RETIRE_OPTIONS.include?(params[:retired])
+
+        if Proposal::RETIRE_OPTIONS.include?(params[:retired])
+          @resources = @resources.where(retired_reason: params[:retired])
+        end
       else
         @resources = @resources.not_retired
       end
@@ -146,13 +155,16 @@ class ProposalsController < ApplicationController
     end
 
     def load_featured
-      return unless !@advanced_search_terms && @search_terms.blank? && params[:retired].blank? && @current_order != "recommendations"
+      return if @advanced_search_terms || @search_terms.present? ||
+                params[:retired].present? || @current_order == "recommendations"
 
       if Setting["feature.featured_proposals"]
-        @featured_proposals = Proposal.not_archived.unsuccessful
-                              .sort_by_confidence_score.limit(Setting["featured_proposals_number"])
+        @featured_proposals = Proposal.not_archived
+                                      .unsuccessful
+                                      .sort_by_confidence_score
+                                      .limit(Setting["featured_proposals_number"])
         if @featured_proposals.present?
-          @resources = @resources.where.not(id: @featured_proposals)
+          @resources = @resources.excluding(@featured_proposals)
         end
       end
     end
@@ -166,9 +178,10 @@ class ProposalsController < ApplicationController
     end
 
     def destroy_map_location_association
-      map_location = params[:proposal][:map_location_attributes]
-      if map_location && (map_location[:longitude] && map_location[:latitude]).blank? && !map_location[:id].blank?
-        MapLocation.destroy(map_location[:id])
+      map_location_params = proposal_params[:map_location_attributes]
+
+      if map_location_params.blank? || map_location_params.values.all?(&:blank?)
+        @proposal.map_location = nil
       end
     end
 

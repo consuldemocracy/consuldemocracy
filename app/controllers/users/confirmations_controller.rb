@@ -43,7 +43,8 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
 
     yield resource if block_given?
 
-    # New condition added to if: when no password was given, display the "show" view (which uses "update" above)
+    # New condition added to if: when no password was given, display the "show" view
+    # (which uses "update" above)
     if resource.encrypted_password.blank?
       respond_with_navigational(resource) { render :show }
     elsif resource.errors.empty?
@@ -51,9 +52,14 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
 
       if resource.confirm
         set_flash_message(:notice, :confirmed) if is_flashing_format?
-        respond_with_navigational(resource) { redirect_to after_confirmation_path_for(resource_name, resource) }
+
+        respond_with_navigational(resource) do
+          redirect_to after_confirmation_path_for(resource_name, resource)
+        end
       else
-        respond_with_navigational(resource.errors, status: :unprocessable_entity) { render :new, status: :unprocessable_entity }
+        respond_with_navigational(resource.errors, status: :unprocessable_entity) do
+          render :new, status: :unprocessable_entity
+        end
       end
     else
       respond_with_navigational(resource.errors, status: :unprocessable_entity) { render :new }

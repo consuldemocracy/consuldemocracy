@@ -1,5 +1,3 @@
-require "numeric"
-
 class Debate < ApplicationRecord
   include Flaggable
   include Taggable
@@ -44,11 +42,9 @@ class Debate < ApplicationRecord
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :sort_by_recommendations,  -> { order(cached_votes_total: :desc) }
-  scope :last_week,                -> { where("created_at >= ?", 7.days.ago) }
+  scope :last_week,                -> { where(created_at: 7.days.ago..) }
   scope :featured,                 -> { where.not(featured_at: nil) }
   scope :public_for_api,           -> { all }
-
-  visitable class_name: "Visit"
 
   attr_accessor :link_required
 
@@ -57,15 +53,15 @@ class Debate < ApplicationRecord
   end
 
   def searchable_translations_definitions
-    { title       => "A",
+    { title => "A",
       description => "D" }
   end
 
   def searchable_values
     {
-      author.username    => "B",
+      author.username => "B",
       tag_list.join(" ") => "B",
-      geozone&.name      => "B"
+      geozone&.name => "B"
     }.merge!(searchable_globalized_values)
   end
 
@@ -107,8 +103,13 @@ class Debate < ApplicationRecord
 
   def register_vote(user, vote_value)
     if votable_by?(user)
-      Debate.increment_counter(:cached_anonymous_votes_total, id) if user.unverified? && !user.voted_for?(self)
-      vote_by(voter: user, vote: vote_value)
+      transaction do
+        if user.unverified? && !user.voted_for?(self)
+          Debate.increment_counter(:cached_anonymous_votes_total, id)
+        end
+
+        vote_by(voter: user, vote: vote_value)
+      end
     end
   end
 
@@ -155,7 +156,11 @@ class Debate < ApplicationRecord
 
   def self.debates_orders(user)
     orders = %w[hot_score confidence_score created_at relevance]
-    orders << "recommendations" if Setting["feature.user.recommendations_on_debates"] && user&.recommended_debates
+
+    if Setting["feature.user.recommendations_on_debates"] && user&.recommended_debates
+      orders << "recommendations"
+    end
+
     orders
   end
 

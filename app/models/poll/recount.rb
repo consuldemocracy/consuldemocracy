@@ -20,7 +20,9 @@ class Poll::Recount < ApplicationRecord
     amounts_changed = false
 
     [:white, :null, :total].each do |amount|
-      next unless send("will_save_change_to_#{amount}_amount?") && send("#{amount}_amount_in_database").present?
+      unless send("will_save_change_to_#{amount}_amount?") && send("#{amount}_amount_in_database").present?
+        next
+      end
 
       self["#{amount}_amount_log"] += ":#{send("#{amount}_amount_in_database")}"
       amounts_changed = true

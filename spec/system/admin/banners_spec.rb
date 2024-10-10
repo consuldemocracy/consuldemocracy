@@ -4,44 +4,44 @@ describe "Admin banners magement", :admin do
   context "Index" do
     before do
       create(:banner, title: "Banner number one",
-             description:  "This is the text of banner number one and is not active yet",
-             target_url:  "http://www.url.com",
-             post_started_at: (Date.current + 4.days),
-             post_ended_at:   (Date.current + 10.days),
-             background_color: "#FF0000",
-             font_color: "#FFFFFF")
+                      description: "This is the text of banner number one and is not active yet",
+                      target_url: "http://www.url.com",
+                      post_started_at: (Date.current + 4.days),
+                      post_ended_at: (Date.current + 10.days),
+                      background_color: "#FF0000",
+                      font_color: "#FFFFFF")
 
       create(:banner, title: "Banner number two",
-             description:  "This is the text of banner number two and is not longer active",
-             target_url:  "http://www.url.com",
-             post_started_at: (Date.current - 10.days),
-             post_ended_at:   (Date.current - 3.days),
-             background_color: "#00FF00",
-             font_color: "#FFFFFF")
+                      description: "This is the text of banner number two and is not longer active",
+                      target_url: "http://www.url.com",
+                      post_started_at: (Date.current - 10.days),
+                      post_ended_at: (Date.current - 3.days),
+                      background_color: "#00FF00",
+                      font_color: "#FFFFFF")
 
       create(:banner, title: "Banner number three",
-             description:  "This is the text of banner number three",
-             target_url:  "http://www.url.com",
-             post_started_at: (Date.current - 1.day),
-             post_ended_at:   (Date.current + 10.days),
-             background_color: "#0000FF",
-             font_color: "#FFFFFF")
+                      description: "This is the text of banner number three",
+                      target_url: "http://www.url.com",
+                      post_started_at: (Date.current - 1.day),
+                      post_ended_at: (Date.current + 10.days),
+                      background_color: "#0000FF",
+                      font_color: "#FFFFFF")
 
       create(:banner, title: "Banner number four",
-             description:  "This is the text of banner number four",
-             target_url:  "http://www.url.com",
-             post_started_at: (Date.current - 10.days),
-             post_ended_at:   (Date.current + 10.days),
-             background_color: "#FFF000",
-             font_color: "#FFFFFF")
+                      description: "This is the text of banner number four",
+                      target_url: "http://www.url.com",
+                      post_started_at: (Date.current - 10.days),
+                      post_ended_at: (Date.current + 10.days),
+                      background_color: "#FFF000",
+                      font_color: "#FFFFFF")
 
       create(:banner, title: "Banner number five",
-             description:  "This is the text of banner number five",
-             target_url:  "http://www.url.com",
-             post_started_at: (Date.current - 10.days),
-             post_ended_at:   (Date.current + 10.days),
-             background_color: "#FFFF00",
-             font_color: "#FFFFFF")
+                      description: "This is the text of banner number five",
+                      target_url: "http://www.url.com",
+                      post_started_at: (Date.current - 10.days),
+                      post_ended_at: (Date.current + 10.days),
+                      background_color: "#FFFF00",
+                      font_color: "#FFFFFF")
     end
 
     scenario "Index show active banners" do
@@ -64,8 +64,8 @@ describe "Admin banners magement", :admin do
     visit admin_root_path
 
     within("#side_menu") do
-      click_link "Site content"
-      click_link "Manage banners"
+      click_button "Site content"
+      click_link "Banners"
     end
 
     click_link "Create banner"
@@ -124,17 +124,17 @@ describe "Admin banners magement", :admin do
   scenario "Edit banner with live refresh" do
     create(:banner, title: "Hello",
                     description: "Wrong text",
-                    target_url:  "http://www.url.com",
+                    target_url: "http://www.url.com",
                     post_started_at: (Date.current + 4.days),
-                    post_ended_at:   (Date.current + 10.days),
+                    post_ended_at: (Date.current + 10.days),
                     background_color: "#FF0000",
                     font_color: "#FFFFFF")
 
     visit admin_root_path
 
     within("#side_menu") do
-      click_link "Site content"
-      click_link "Manage banners"
+      click_button "Site content"
+      click_link "Banners"
     end
 
     click_link "Edit"
@@ -145,8 +145,8 @@ describe "Admin banners magement", :admin do
     page.find("body").click
 
     within(".banner") do
-      expect(page).to have_selector("h2", text: "Modified title")
-      expect(page).to have_selector("h3", text: "Edited text")
+      expect(page).to have_css "h2", text: "Modified title"
+      expect(page).to have_css "h3", text: "Edited text"
     end
 
     click_button "Save changes"
@@ -163,9 +163,9 @@ describe "Admin banners magement", :admin do
   scenario "Delete a banner" do
     create(:banner, title: "Ugly banner",
                     description: "Bad text",
-                    target_url:  "http://www.url.com",
+                    target_url: "http://www.url.com",
                     post_started_at: (Date.current + 4.days),
-                    post_ended_at:   (Date.current + 10.days),
+                    post_ended_at: (Date.current + 10.days),
                     background_color: "#FF0000",
                     font_color: "#FFFFFF")
 

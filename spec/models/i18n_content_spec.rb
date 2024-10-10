@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe I18nContent, type: :model do
+RSpec.describe I18nContent do
   let(:i18n_content) { build(:i18n_content, key: "awe.so.me") }
 
   it "is valid" do
@@ -32,8 +32,8 @@ RSpec.describe I18nContent, type: :model do
     it "returns nil if translations are not available" do
       expect(i18n_content.value_en).to eq("Text in english")
       expect(i18n_content.value_es).to eq("Texto en español")
-      expect(i18n_content.value_nl).to be(nil)
-      expect(i18n_content.value_fr).to be(nil)
+      expect(i18n_content.value_nl).to be nil
+      expect(i18n_content.value_fr).to be nil
     end
 
     it "responds accordingly to the current locale" do
@@ -160,6 +160,17 @@ RSpec.describe I18nContent, type: :model do
     end
 
     it "does not store new keys for disabled translations" do
+      Setting["locales.default"] = "es"
+      Setting["locales.enabled"] = "es"
+
+      I18nContent.update([{ id: "shared.yes", values: { "value_en" => "Oh, yeah" }}])
+
+      expect(I18nContent.all).to be_empty
+    end
+
+    it "uses different enabled translations when given a parameter" do
+      Setting["locales.enabled"] = "en es"
+
       I18nContent.update([{ id: "shared.yes", values: { "value_en" => "Oh, yeah" }}], [:es])
 
       expect(I18nContent.all).to be_empty

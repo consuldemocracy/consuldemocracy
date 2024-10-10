@@ -53,9 +53,10 @@ val:
         responsibles: Responsables
         assigned_admin: Administrador asignat
         assigned_valuators: Evaluadors asignats
+        preview: Vista previa del pressupost
       edit:
         dossier: Informe
-        price: "Cost (%{currency}) (dada pública)"
+        price: "Cost (%{currency})"
         price_first_year: "Cost en el primer any (%{currency}) <small>(opcional, dada no pública)</small>"
         feasibility: Viabilitat
         valuation_finished_alert: "Segur que vols marcar este informe com a finalitzat? Si ho fas, no podràs modificarlo més."

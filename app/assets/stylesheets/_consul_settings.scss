@@ -1,12 +1,11 @@
-//  CONSUL Settings
+//  CONSUL DEMOCRACY Settings
 //  -----------------------------
 //
 //  Table of Contents:
 //
 //  1. Foundation settings overrides
-//  2. CONSUL variables
-//  3. Foundation overrides depending on CONSUL variables
-//  4. Foundation fixes
+//  2. CONSUL DEMOCRACY variables
+//  3. Foundation overrides depending on CONSUL DEMOCRACY variables
 
 // 1. Foundation settings overrides
 // ---------------------------------
@@ -50,11 +49,11 @@ $orbit-caption-background: #eee;
 
 $show-header-for-stacked: true !default;
 
-// 2. CONSUL variables
-// --------------------
+// 2. CONSUL DEMOCRACY variables
+// -----------------------------
 
-$body-margin: calc(50vw - #{$global-width / 2}) !default;
-$full-width-margin: unquote("#{$global-width / 2} - 50vw") !default;
+$body-margin: calc(50vw - #{$global-width * 0.5}) !default;
+$full-width-margin: unquote("#{$global-width * 0.5} - 50vw") !default;
 
 $base-font-size:      rem-calc(17) !default;
 $base-line:           rem-calc(26) !default;
@@ -73,10 +72,10 @@ $border:            #dee0e3 !default;
 
 $debates:           $brand !default;
 
-$like:              #7bd2a8 !default;
-$unlike:            #ef8585 !default;
+$like:              #38a36f !default;
+$unlike:            #ea6666 !default;
 
-$delete:            #f04124 !default;
+$delete:            #db2e0f !default;
 $check:             #46db91 !default;
 
 $proposals:         #ffa42d !default;
@@ -115,7 +114,11 @@ $color-alert:       #a94442 !default;
 $pdf-primary:       #0300ff !default;
 $pdf-secondary:     #ff9e00 !default;
 
-$outline-focus:     3px solid #ffbf47 !default;
+$focus-middle:       #ffbf47 !default;
+$focus-outer:        $brand !default;
+$focus-inner-width:  1px !default;
+$focus-middle-width: 3px !default;
+$focus-outer-width:  2px !default;
 
 $input-height:      $line-height * 2 !default;
 
@@ -147,8 +150,8 @@ $sdg-colors: (
   17: #19486a
 ) !default;
 
-// 3. Foundation overrides depending on CONSUL variables
-// -----------------------------------------------------
+// 3. Foundation overrides depending on CONSUL DEMOCRACY variables
+// ---------------------------------------------------------------
 
 $anchor-color: $brand !default;
 $anchor-color-hover: darken($anchor-color, 20%) !default;
@@ -156,18 +159,7 @@ $anchor-color-hover: darken($anchor-color, 20%) !default;
 $tab-background-active: $white !default;
 
 $tab-item-font-size: $base-font-size !default;
-$tab-item-padding: $line-height / 2  0 !default;
+$tab-item-padding: $line-height * 0.5  0 !default;
 $tab-content-border: $border !default;
 
 $tooltip-background-color: $brand !default;
-
-// 4. Foundation fixes
-// -------------------
-
-$alert-color: null !default;
-$primary-color: null !default;
-$secondary-color: null !default;
-$success-color: null !default;
-$warning-color: null !default;
-$-zf-bp-value: null !default;
-$-zf-size: null !default;

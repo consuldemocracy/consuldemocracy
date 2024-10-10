@@ -14,7 +14,7 @@ class Admin::LocalCensusRecords::ImportsController < Admin::LocalCensusRecords::
   private
 
     def local_census_records_import_params
-      return {} unless params[:local_census_records_import].present?
+      return {} if params[:local_census_records_import].blank?
 
       params.require(:local_census_records_import).permit(allowed_params)
     end

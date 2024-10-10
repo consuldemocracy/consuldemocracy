@@ -1,7 +1,6 @@
 class Budget < ApplicationRecord
   include Measurable
   include Sluggable
-  include StatsVersionable
   include Reportable
   include Imageable
 
@@ -34,6 +33,7 @@ class Budget < ApplicationRecord
   has_many :ballots, dependent: :destroy
   has_many :groups, dependent: :destroy
   has_many :headings, through: :groups
+  has_many :geozones, through: :headings
   has_many :lines, through: :ballots, class_name: "Budget::Ballot::Line"
   has_many :phases, class_name: "Budget::Phase"
   has_many :budget_administrators, dependent: :destroy
@@ -47,7 +47,7 @@ class Budget < ApplicationRecord
   accepts_nested_attributes_for :phases
 
   scope :published, -> { where(published: true) }
-  scope :drafting,  -> { where.not(id: published) }
+  scope :drafting,  -> { excluding(published) }
   scope :informing, -> { where(phase: "informing") }
   scope :accepting, -> { where(phase: "accepting") }
   scope :reviewing, -> { where(phase: "reviewing") }
@@ -58,6 +58,7 @@ class Budget < ApplicationRecord
   scope :balloting, -> { where(phase: "balloting") }
   scope :reviewing_ballots, -> { where(phase: "reviewing_ballots") }
   scope :finished, -> { where(phase: "finished") }
+  scope :public_for_api, -> { published }
 
   class << self; undef :open; end
   scope :open, -> { where.not(phase: "finished") }

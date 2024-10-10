@@ -1,5 +1,6 @@
 val:
   mailers:
+    title: "Govern Obert"
     no_reply: "Aquest missatge s'ha enviat des d'una direcció de correu electrònic que no admet respostes."
     comment:
       hi: Hola
@@ -66,4 +67,11 @@ val:
       thanks: "Gràcies de nou per la teua participació."
       sincerely: "Atentament"
     evaluation_comment:
+      subject: "Nou comentari d'avaluació"
       hi: Hola
+      commenter_info: "%{commenter}, %{time}:"
+    machine_learning_success:
+      link: "Visita el panell de d'Aprenentatge Automatic"
+      title: "Script d'Aprenentatge Automàtic"
+    new_actions_notification_on_create:
+      hi: "Hola %{name}!"

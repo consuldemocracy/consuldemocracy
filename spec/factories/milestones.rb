@@ -5,8 +5,8 @@ FactoryBot.define do
   end
 
   factory :milestone do
-    association :milestoneable, factory: :budget_investment
-    association :status, factory: :milestone_status
+    milestoneable factory: :budget_investment
+    status factory: :milestone_status
     sequence(:title)     { |n| "Milestone #{n} title" }
     description          { "Milestone description" }
     publication_date     { Date.current }
@@ -25,7 +25,7 @@ FactoryBot.define do
   end
 
   factory :progress_bar do
-    association :progressable, factory: :budget_investment
+    progressable factory: :budget_investment
     percentage { rand(0..100) }
     kind { :primary }
 

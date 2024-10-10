@@ -1,9 +1,14 @@
-shared_examples "mappable" do |mappable_factory_name, mappable_association_name, mappable_new_path, mappable_edit_path, mappable_show_path, mappable_path_arguments: {}, management: false|
+shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
+                               mappable_new_path, mappable_edit_path, mappable_show_path,
+                               mappable_path_arguments: {},
+                               management: false|
   let!(:user)         { create(:user, :level_two) }
   let!(:arguments)    { {} }
   let!(:mappable)     { create(mappable_factory_name.to_s.to_sym) }
-  let!(:map_location) { create(:map_location, "#{mappable_factory_name}_map_location".to_sym, "#{mappable_association_name}": mappable) }
   let(:management)    { management }
+  let!(:map_location) do
+    create(:map_location, :"#{mappable_factory_name}_map_location", "#{mappable_association_name}": mappable)
+  end
 
   before do
     Setting["feature.map"] = true
@@ -18,7 +23,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
       send("fill_in_#{mappable_factory_name}_form")
 
-      within ".map_location" do
+      within ".map-location" do
         expect(page).not_to have_css(".map-icon")
       end
     end
@@ -30,7 +35,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       send("fill_in_#{mappable_factory_name}_form")
       find("#new_map_location").click
 
-      within ".map_location" do
+      within ".map-location" do
         expect(page).to have_css(".map-icon")
       end
     end
@@ -43,7 +48,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       find("#new_map_location").click
       send("submit_#{mappable_factory_name}_form")
 
-      within ".map_location" do
+      within ".map-location" do
         expect(page).to have_css(".map-icon")
       end
     end
@@ -53,10 +58,10 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       visit send(mappable_new_path, arguments)
 
       send("fill_in_#{mappable_factory_name}_form")
-      expect(page).to have_css ".map_location"
+      expect(page).to have_css ".map-location"
       send("submit_#{mappable_factory_name}_form")
 
-      expect(page).not_to have_css(".map_location")
+      expect(page).not_to have_css(".map-location")
     end
 
     scenario "Can not display map on #{mappable_factory_name} when feature.map is disabled" do
@@ -65,10 +70,10 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       visit send(mappable_new_path, arguments)
 
       send("fill_in_#{mappable_factory_name}_form")
-      expect(page).not_to have_css ".map_location"
+      expect(page).not_to have_css ".map-location"
       send("submit_#{mappable_factory_name}_form")
 
-      expect(page).not_to have_css(".map_location")
+      expect(page).not_to have_css(".map-location")
     end
 
     describe "When restoring the page from browser history" do
@@ -83,14 +88,14 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
           expect(page).to have_content "User management"
         else
-          click_link "Help"
+          click_link "CONSUL"
 
-          expect(page).to have_content "CONSUL is a platform for citizen participation"
+          expect(page).to have_content "Most active proposals"
         end
 
         go_back
 
-        within ".map_location" do
+        within ".map-location" do
           expect(page).to have_css(".leaflet-map-pane", count: 1)
         end
       end
@@ -99,7 +104,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
         do_login_for user, management: management
         visit send(mappable_new_path, arguments)
 
-        within ".map_location" do
+        within ".map-location" do
           expect(page).not_to have_css(".map-icon")
         end
         expect(page.execute_script("return App.Map.maps[0].getZoom();")).to eq(10)
@@ -107,7 +112,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
         map_zoom_in
         find("#new_map_location").click
 
-        within ".map_location" do
+        within ".map-location" do
           expect(page).to have_css(".map-icon")
         end
 
@@ -116,14 +121,14 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
           expect(page).to have_content "User management"
         else
-          click_link "Help"
+          click_link "CONSUL"
 
-          expect(page).to have_content "CONSUL is a platform for citizen participation"
+          expect(page).to have_content "Most active proposals"
         end
 
         go_back
 
-        within ".map_location" do
+        within ".map-location" do
           expect(page).to have_css(".map-icon")
           expect(page.execute_script("return App.Map.maps[0].getZoom();")).to eq(11)
         end
@@ -133,14 +138,14 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
         do_login_for user, management: management
         visit send(mappable_new_path, arguments)
 
-        within ".map_location" do
+        within ".map-location" do
           expect(page).not_to have_css(".map-icon")
         end
 
         place_map_at(-68.592487, -62.391357)
         find("#new_map_location").click
 
-        within ".map_location" do
+        within ".map-location" do
           expect(page).to have_css(".map-icon")
         end
 
@@ -149,14 +154,14 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
           expect(page).to have_content "User management"
         else
-          click_link "Help"
+          click_link "CONSUL"
 
-          expect(page).to have_content "CONSUL is a platform for citizen participation"
+          expect(page).to have_content "Most active proposals"
         end
 
         go_back
 
-        within ".map_location" do
+        within ".map-location" do
           expect(page).to have_css(".map-icon")
         end
       end
@@ -181,21 +186,23 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       visit send(mappable_edit_path, id: mappable.id)
 
       expect(page).to have_content "Navigate the map to the location and place the marker."
-      expect(page).to have_field "#{mappable_factory_name}_map_location_attributes_latitude", type: :hidden, with: "51.48"
-      expect(page).to have_field "#{mappable_factory_name}_map_location_attributes_longitude", type: :hidden, with: "0.0"
+      expect(page).to have_field "#{mappable_factory_name}_map_location_attributes_latitude", type: :hidden,
+                                                                                              with: "51.48"
+      expect(page).to have_field "#{mappable_factory_name}_map_location_attributes_longitude", type: :hidden,
+                                                                                               with: "0.0"
     end
 
     scenario "Should edit default values from map on #{mappable_factory_name} edit page" do
       do_login_for mappable.author, management: management
 
       visit send(mappable_edit_path, id: mappable.id)
-      find(".map_location").click
-      click_on("Save changes")
+      find(".map-location").click
+      click_button "Save changes"
       mappable.reload
 
-      expect(page).to have_css(".map_location")
-      expect(page).not_to have_selector(".map_location[data-marker-latitude='#{map_location.latitude}']")
-      expect(page).to have_selector(".map_location[data-marker-latitude='#{mappable.map_location.latitude}']")
+      expect(page).to have_css(".map-location")
+      expect(page).not_to have_css ".map-location[data-marker-latitude='#{map_location.latitude}']"
+      expect(page).to have_css ".map-location[data-marker-latitude='#{mappable.map_location.latitude}']"
     end
 
     scenario "Should edit mappable on #{mappable_factory_name} without change map" do
@@ -203,22 +210,22 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
       visit send(mappable_edit_path, id: mappable.id)
       fill_in "#{mappable_factory_name.camelize} title", with: "New title"
-      click_on("Save changes")
+      click_button "Save changes"
       mappable.reload
 
-      expect(page).to have_css(".map_location")
-      expect(page).to have_selector(".map_location[data-marker-latitude='#{map_location.latitude}']")
-      expect(page).to have_selector(".map_location[data-marker-latitude='#{mappable.map_location.latitude}']")
+      expect(page).to have_css(".map-location")
+      expect(page).to have_css ".map-location[data-marker-latitude='#{map_location.latitude}']"
+      expect(page).to have_css ".map-location[data-marker-latitude='#{mappable.map_location.latitude}']"
     end
 
     scenario "Can not display map on #{mappable_factory_name} edit when remove map marker" do
       do_login_for mappable.author, management: management
 
       visit send(mappable_edit_path, id: mappable.id)
-      click_link "Remove map marker"
-      click_on "Save changes"
+      click_button "Remove map marker"
+      click_button "Save changes"
 
-      expect(page).not_to have_css(".map_location")
+      expect(page).not_to have_css(".map-location")
     end
 
     scenario "Can not display map on #{mappable_factory_name} edit when feature.map is disabled" do
@@ -227,17 +234,17 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
       visit send(mappable_edit_path, id: mappable.id)
       fill_in "#{mappable_factory_name.camelize} title", with: "New title"
-      click_on("Save changes")
+      click_button "Save changes"
 
-      expect(page).not_to have_css(".map_location")
+      expect(page).not_to have_css(".map-location")
     end
 
     scenario "No need to skip map on update" do
       do_login_for mappable.author, management: management
 
       visit send(mappable_edit_path, id: mappable.id)
-      click_link "Remove map marker"
-      click_on "Save changes"
+      click_button "Remove map marker"
+      click_button "Save changes"
 
       expect(page).not_to have_content "Map location can't be blank"
     end
@@ -254,7 +261,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       do_login_for user, management: management if management
       visit send(mappable_show_path, arguments)
 
-      within ".map_location" do
+      within ".map-location" do
         expect(page).to have_css(".map-icon")
       end
     end
@@ -267,7 +274,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       do_login_for user, management: management if management
       visit send(mappable_show_path, arguments)
 
-      expect(page).not_to have_css(".map_location")
+      expect(page).not_to have_css(".map-location")
     end
 
     scenario "Should not display map on #{mappable_factory_name} show page when feature.map is disable" do
@@ -277,7 +284,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       do_login_for user, management: management if management
       visit send(mappable_show_path, arguments)
 
-      expect(page).not_to have_css(".map_location")
+      expect(page).not_to have_css(".map-location")
     end
   end
 end

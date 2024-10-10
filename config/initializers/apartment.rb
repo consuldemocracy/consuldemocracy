@@ -1,3 +1,20 @@
+module ActiveRecord # TODO: Remove after upgrading ros-apartment
+  # Code based on the current (as of March 2024) development version of the apartment gem
+  module ConnectionHandling
+    def connected_to_with_rails7_tenant(role: nil, prevent_writes: false, &blk)
+      current_tenant = Apartment::Tenant.current
+
+      # The connected_to_without_tenant method is defined by Apartment
+      connected_to_without_tenant(role: role, prevent_writes: prevent_writes) do
+        Apartment::Tenant.switch!(current_tenant)
+        yield(blk)
+      end
+    end
+
+    alias connected_to connected_to_with_rails7_tenant
+  end
+end
+
 # You can have Apartment route to the appropriate Tenant by adding some Rack middleware.
 # Apartment can support many different "Elevators" that can take care of this routing to your data.
 # Require whichever Elevator you're using below or none if you have a custom one.
@@ -99,7 +116,8 @@ Apartment.configure do |config|
   #
   # config.pg_excluded_names = ["uuid_generate_v4"]
 
-  # Specifies whether the database and schema (when using PostgreSQL schemas) will prepend in ActiveRecord log.
+  # Specifies whether the database and schema (when using PostgreSQL schemas)
+  # will prepend in ActiveRecord log.
   # Uncomment the line below if you want to enable this behavior.
   #
   # config.active_record_log = true
@@ -107,9 +125,9 @@ end
 
 # Setup a custom Tenant switching middleware. The Proc should return the name of the Tenant that
 # you want to switch to.
-Rails.application.config.middleware.insert_before Warden::Manager, Apartment::Elevators::Generic, ->(request) do
-  Tenant.resolve_host(request.host)
-end
+Rails.application.config.middleware.insert_before Warden::Manager,
+                                                  Apartment::Elevators::Generic,
+                                                  ->(request) { Tenant.resolve_host(request.host) }
 
 # Rails.application.config.middleware.use Apartment::Elevators::Domain
 # Rails.application.config.middleware.use Apartment::Elevators::Subdomain

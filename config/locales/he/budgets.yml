@@ -59,7 +59,6 @@ he:
         tags_placeholder: "נא לרשום את כל התגיות שברצונך להשתמש בהן, עם פסיק (',') מפריד ביניהן"
         map_location: "מיקום מפה"
         map_location_instructions: "נווט במפה למיקום ומקם את הסמן."
-        map_remove_marker: "הסר סמן מפה"
       index:
         title: מימון השתתפותי
         unfeasible: פרויקטים להשקעה שאינם ברי ביצוע

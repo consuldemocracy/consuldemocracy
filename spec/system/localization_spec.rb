@@ -6,7 +6,7 @@ describe "Localization" do
       create(:widget_card, title: "Bienvenido a CONSUL",
                            description: "Software libre para la participación ciudadana.",
                            link_text: "Más información",
-                           link_url: "http://consulproject.org/",
+                           link_url: "http://consuldemocracy.org/",
                            header: true)
     end
 

@@ -1,3 +1,5 @@
+require "active_support/core_ext/integer/time"
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -9,11 +11,6 @@ Rails.application.configure do
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
-
-  # Because autoloading is disabled in production environments with Rails 5,
-  # using autoload_paths will not load needed classes from specified paths.
-  # The solution to this, is to ask Rails to eager load classes.
-  config.eager_load_paths += ["#{config.root}/lib"]
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
@@ -35,7 +32,7 @@ Rails.application.configure do
   config.assets.compile = false
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  # config.action_controller.asset_host = "http://assets.example.com"
+  # config.asset_host = "http://assets.example.com"
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for Apache
@@ -50,8 +47,8 @@ Rails.application.configure do
   # Configure force_ssl in secrets.yml
   config.force_ssl = Rails.application.secrets.force_ssl
 
-  # Use the lowest log level to ensure availability of diagnostic information
-  # when problems arise.
+  # Include generic and useful information about system operation, but avoid logging too much
+  # information to avoid inadvertent exposure of personally identifiable information (PII).
   config.log_level = :warn
 
   # Prepend all log lines with the following tags.
@@ -77,15 +74,21 @@ Rails.application.configure do
     config.action_mailer.smtp_settings = Rails.application.secrets.smtp_settings
   end
 
-  # Disable locale fallbacks for I18n
-  # (prevents using fallback locales set in application.rb).
-  # config.i18n.fallbacks = false
+  # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
+  # the I18n.default_locale when a translation cannot be found).
+  # (commented because it prevents using fallback locales set in application.rb).
+  # config.i18n.fallbacks = true
 
-  # Send deprecation notices to registered listeners.
-  config.active_support.deprecation = :notify
+  # Don't log any deprecations.
+  config.active_support.report_deprecations = false
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # Rotate logger
+  logger = ActiveSupport::Logger.new(config.default_log_file, "daily")
+  logger.formatter = config.log_formatter
+  config.logger = ActiveSupport::TaggedLogging.new(logger)
 
   # Use a different logger for distributed setups.
   # require "syslog/logger"
@@ -99,27 +102,6 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
-  # Inserts middleware to perform automatic connection switching.
-  # The `database_selector` hash is used to pass options to the DatabaseSelector
-  # middleware. The `delay` is used to determine how long to wait after a write
-  # to send a subsequent read to the primary.
-  #
-  # The `database_resolver` class is used by the middleware to determine which
-  # database is appropriate to use based on the time delay.
-  #
-  # The `database_resolver_context` class is used by the middleware to set
-  # timestamps for the last write to the primary. The resolver uses the context
-  # class timestamps to determine how long to wait before reading from the
-  # replica.
-  #
-  # By default Rails will store a last write timestamp in the session. The
-  # DatabaseSelector middleware is designed as such you can define your own
-  # strategy for connection switching and pass that into the middleware through
-  # these configuration options.
-  # config.active_record.database_selector = { delay: 2.seconds }
-  # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
-  # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 end
 
 require Rails.root.join("config", "environments", "custom", "production")

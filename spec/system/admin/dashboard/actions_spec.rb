@@ -26,7 +26,7 @@ describe "Admin dashboard actions", :admin do
     end
 
     context "and actions defined" do
-      let!(:action) { create :dashboard_action }
+      let!(:action) { create(:dashboard_action) }
 
       before do
         visit admin_dashboard_actions_path
@@ -39,7 +39,7 @@ describe "Admin dashboard actions", :admin do
   end
 
   context "when creating an action" do
-    let(:action) { build :dashboard_action }
+    let(:action) { build(:dashboard_action) }
 
     before do
       visit admin_dashboard_actions_path
@@ -63,7 +63,7 @@ describe "Admin dashboard actions", :admin do
   end
 
   context "when editing an action" do
-    let!(:action) { create :dashboard_action }
+    let!(:action) { create(:dashboard_action) }
 
     before do
       visit admin_dashboard_actions_path
@@ -87,7 +87,7 @@ describe "Admin dashboard actions", :admin do
   end
 
   context "when destroying an action" do
-    let!(:action) { create :dashboard_action }
+    let!(:action) { create(:dashboard_action) }
 
     before do
       visit admin_dashboard_actions_path

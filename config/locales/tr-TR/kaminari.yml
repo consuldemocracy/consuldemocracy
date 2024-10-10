@@ -2,19 +2,19 @@ tr:
   helpers:
     page_entries_info:
       entry:
-        zero: Paylaşımlar
-        one: Girdi
-        other: Girdiler
+        zero: Kayıtlar
+        one: Kayıt
+        other: Kayıtlar
       more_pages:
-        display_entries: <strong>%{total}%{entry_name}</strong> 'in <strong>%{first}&nbsp;&nbsp;%{last}</strong> 'i gösteriliyor
+        display_entries: <strong>%{first}&nbsp;-&nbsp;%{last}</strong> / <strong>%{total}%{entry_name}</strong> görüntüleniyor
       one_page:
         display_entries:
-          zero: "%{entry_name} bulunamıyor"
-          one: Şurada <strong>1 %{entry_name}</strong> var
-          other: Şurada <strong>%{count} %{entry_name}</strong> var
+          zero: "%{entry_name} bulunamadı"
+          one: <strong>1 %{entry_name}</strong> var
+          other: <strong>%{count} %{entry_name}</strong> var
   views:
     pagination:
-      current: Sayfadasınız
+      current: Şu sayfadasınız
       first: İlk
       last: Son
       next: Sonraki

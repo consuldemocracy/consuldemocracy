@@ -103,7 +103,6 @@ da:
           submit: Tilmeld
           terms: Når du tilmelder dig, accepterer du %{terms}
           terms_link: brugervilkår og betingelser
-          terms_title: Når du tilmelder dig, accepterer du vores brugervilkår og betingelser
           title: Tilmeld
           username_is_available: Brugernavnet er tilgængeligt
           username_is_not_available: Brugernavnet er allerede taget af en anden bruger

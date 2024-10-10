@@ -52,7 +52,7 @@ describe "Imports", :admin do
       end
 
       expect(page).to have_content "Created records (4)"
-      expect(page).to have_selector("#created-local-census-records tbody tr", count: 4)
+      expect(page).to have_css "#created-local-census-records tbody tr", count: 4
     end
 
     scenario "Should show invalid local census records at errored group" do
@@ -64,7 +64,7 @@ describe "Imports", :admin do
       end
 
       expect(page).to have_content "Errored rows (5)"
-      expect(page).to have_selector("#invalid-local-census-records tbody tr", count: 5)
+      expect(page).to have_css "#invalid-local-census-records tbody tr", count: 5
     end
 
     scenario "Should show error messages inside cells at errored group" do

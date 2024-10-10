@@ -1,11 +1,11 @@
 class Tenant < ApplicationRecord
-  enum schema_type: %w[subdomain domain]
+  enum :schema_type, { subdomain: 0, domain: 1 }
 
   validates :schema,
-    presence: true,
-    uniqueness: true,
-    exclusion: { in: ->(*) { excluded_subdomains }},
-    format: { with: URI::DEFAULT_PARSER.regexp[:HOST] }
+            presence: true,
+            uniqueness: true,
+            exclusion: { in: ->(*) { excluded_subdomains }},
+            format: { with: URI::DEFAULT_PARSER.regexp[:HOST] }
   validates :name, presence: true, uniqueness: true
 
   after_create :create_schema
@@ -19,7 +19,7 @@ class Tenant < ApplicationRecord
   end
 
   def self.resolve_host(host)
-    return nil unless Rails.application.config.multitenancy.present?
+    return nil if Rails.application.config.multitenancy.blank?
     return nil if host.blank? || host.match?(Resolv::AddressRegex)
 
     schema = schema_for(host)
@@ -102,7 +102,7 @@ class Tenant < ApplicationRecord
 
       if @cached_rails_secrets != Rails.application.secrets
         @secrets = {}
-        @cached_rails_secrets = nil
+        @cached_rails_secrets = Rails.application.secrets
       end
 
       @secrets[current_schema] ||= Rails.application.secrets.merge(
@@ -112,10 +112,14 @@ class Tenant < ApplicationRecord
   end
 
   def self.subfolder_path
-    if default?
+    subfolder_path_for(current_schema)
+  end
+
+  def self.subfolder_path_for(schema)
+    if schema == "public"
       ""
     else
-      File.join("tenants", current_schema)
+      File.join("tenants", schema)
     end
   end
 
@@ -139,9 +143,9 @@ class Tenant < ApplicationRecord
     Apartment::Tenant.switch(...)
   end
 
-  def self.run_on_each(&block)
+  def self.run_on_each(&)
     ["public"].union(Apartment.tenant_names).each do |schema|
-      switch(schema, &block)
+      switch(schema, &)
     end
   end
 
@@ -172,7 +176,22 @@ class Tenant < ApplicationRecord
         ActiveRecord::Base.connection.execute(
           "ALTER SCHEMA \"#{schema_before_last_save}\" RENAME TO \"#{schema}\";"
         )
+
+        rename_storage
       end
+    end
+
+    def rename_storage
+      service = ActiveStorage::Blob.service
+
+      return unless service.respond_to?(:tenant_root_for)
+
+      old_storage = service.tenant_root_for(schema_before_last_save)
+
+      return unless File.directory?(old_storage)
+
+      new_storage = service.tenant_root_for(schema)
+      File.rename(old_storage, new_storage)
     end
 
     def destroy_schema

@@ -90,7 +90,6 @@ cs:
         tags_placeholder: "Zadejte štítky, které chcete používat, oddělené čárkami (',')"
         map_location: "Mapa umístění"
         map_location_instructions: "Nalezněte mapu lokality a umístěte kliknutím značku."
-        map_remove_marker: "Odstranit značku z mapy"
       index:
         title: Participativní rozpočtování
         unfeasible: Nerealizovatelné investiční projekty

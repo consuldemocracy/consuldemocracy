@@ -5,12 +5,11 @@ describe Shared::BannerComponent do
     banner = create(:banner,
                     title: "Vote now!",
                     description: "Banner description",
-                    target_url:  "http://www.url.com",
+                    target_url: "http://www.url.com",
                     post_started_at: (Date.current - 4.days),
-                    post_ended_at:   (Date.current + 10.days),
+                    post_ended_at: (Date.current + 10.days),
                     background_color: "#FF0000",
-                    font_color: "#FFFFFF"
-                   )
+                    font_color: "#FFFFFF")
 
     render_inline Shared::BannerComponent.new(banner)
 
@@ -38,15 +37,13 @@ describe Shared::BannerComponent do
              web_sections: [WebSection.find_by!(name: "debates")],
              title: "First banner",
              description: "First description",
-             target_url: "/first_target"
-            )
+             target_url: "/first_target")
 
       create(:banner,
              web_sections: [WebSection.find_by!(name: "debates")],
              title: "Second banner",
              description: "Second description",
-             target_url: "/second_target"
-            )
+             target_url: "/second_target")
     end
 
     it "only renders one banner" do
@@ -78,7 +75,7 @@ describe Shared::BannerComponent do
     end
 
     it "does not render anything with no active banners" do
-      Banner.all.each { |banner| banner.update!(post_ended_at: Date.current - 1.day) }
+      Banner.find_each { |banner| banner.update!(post_ended_at: Date.current - 1.day) }
 
       render_inline Shared::BannerComponent.new("debates")
 

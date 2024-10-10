@@ -24,7 +24,7 @@ class Image < ApplicationRecord
   end
 
   def self.accepted_content_types
-    Setting["uploads.images.content_types"]&.split(" ") || ["image/jpeg"]
+    Setting["uploads.images.content_types"]&.split || ["image/jpeg"]
   end
 
   def self.humanized_accepted_content_types
@@ -41,9 +41,9 @@ class Image < ApplicationRecord
 
   def variant(style)
     if style
-      attachment.variant(self.class.styles[style])
+      attachment.variant(self.class.styles[style].merge(strip: true))
     else
-      attachment
+      attachment.variant(strip: true)
     end
   end
 

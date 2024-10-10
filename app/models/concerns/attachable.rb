@@ -6,25 +6,25 @@ module Attachable
     attr_accessor :cached_attachment
 
     validates :attachment,
-      presence: true,
-      file_content_type: {
-        allow: ->(record) { record.accepted_content_types },
-        if: -> { association_class && attachment.attached? },
-        message: ->(record, *) do
-          I18n.t("#{record.model_name.plural}.errors.messages.wrong_content_type",
-                 content_type: record.attachment_content_type,
-                 accepted_content_types: record.class.humanized_accepted_content_types)
-        end
-      },
-      file_size: {
-        less_than_or_equal_to: ->(record) { record.max_file_size.megabytes },
-        if: -> { association_class && attachment.attached? },
-        message: ->(record, *) do
-          I18n.t("#{record.model_name.plural}.errors.messages.in_between",
-                 min: "0 Bytes",
-                 max: "#{record.max_file_size} MB")
-        end
-      }
+              presence: true,
+              file_content_type: {
+                allow: ->(record) { record.accepted_content_types },
+                if: -> { association_class && attachment.attached? && attachment.new_record? },
+                message: ->(record, *) do
+                  I18n.t("#{record.model_name.plural}.errors.messages.wrong_content_type",
+                         content_type: record.attachment_content_type,
+                         accepted_content_types: record.class.humanized_accepted_content_types)
+                end
+              },
+              file_size: {
+                less_than_or_equal_to: ->(record) { record.max_file_size.megabytes },
+                if: -> { association_class && attachment.attached? && attachment.new_record? },
+                message: ->(record, *) do
+                  I18n.t("#{record.model_name.plural}.errors.messages.in_between",
+                         min: "0 Bytes",
+                         max: "#{record.max_file_size} MB")
+                end
+              }
 
     before_validation :set_attachment_from_cached_attachment, if: -> { cached_attachment.present? }
   end

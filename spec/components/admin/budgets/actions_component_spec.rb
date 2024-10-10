@@ -1,7 +1,7 @@
 require "rails_helper"
 
-describe Admin::Budgets::ActionsComponent, controller: Admin::BaseController do
-  before { sign_in(create(:administrator).user) }
+describe Admin::Budgets::ActionsComponent, :admin do
+  include Rails.application.routes.url_helpers
 
   let(:budget) { create(:budget) }
   let(:component) { Admin::Budgets::ActionsComponent.new(budget) }
@@ -29,6 +29,24 @@ describe Admin::Budgets::ActionsComponent, controller: Admin::BaseController do
 
       expect(page).not_to have_css "form[action*='polls']"
       expect(page).not_to have_button "Create booths"
+    end
+
+    it "is disabled when the polls feature is disabled" do
+      Setting["process.polls"] = false
+
+      render_inline component
+
+      expect(page).to have_button "Create booths", disabled: true
+      expect(page).to have_link href: admin_settings_path(anchor: "tab-participation-processes")
+    end
+
+    it "is enabled when the polls feature is enabled" do
+      Setting["process.polls"] = true
+
+      render_inline component
+
+      expect(page).to have_button "Create booths", disabled: false
+      expect(page).not_to have_link href: admin_settings_path(anchor: "tab-participation-processes")
     end
   end
 end

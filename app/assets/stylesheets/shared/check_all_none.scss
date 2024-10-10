@@ -1,0 +1,16 @@
+.check-all-none {
+  list-style-type: none;
+  margin-#{$global-left}: 0;
+
+  button {
+    @include link;
+  }
+
+  li {
+    display: inline-block;
+
+    + li::before {
+      @include vertical-separator;
+    }
+  }
+}

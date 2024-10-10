@@ -1,17 +1,17 @@
-<main class="topic-new">
-  <%= back_link_to community_path(@community) %>
+<% provide :main_class, "topic-new" %>
 
-  <h1><%= t("community.topic.create") %></h1>
+<%= back_link_to community_path(@community) %>
 
-  <aside>
-    <h2><%= t("community.topic.sidebar.recommendations_title") %></h2>
+<h1><%= t("community.topic.create") %></h1>
 
-    <ul class="recommendations">
-      <li><%= t("community.topic.sidebar.recommendation_one") %></li>
-      <li><%= t("community.topic.sidebar.recommendation_two") %></li>
-      <li><%= t("community.topic.sidebar.recommendation_three") %></li>
-    </ul>
-  </aside>
+<aside>
+  <h2><%= t("community.topic.sidebar.recommendations_title") %></h2>
 
-  <%= render "form" %>
-</main>
+  <ul class="recommendations">
+    <li><%= t("community.topic.sidebar.recommendation_one") %></li>
+    <li><%= t("community.topic.sidebar.recommendation_two") %></li>
+    <li><%= t("community.topic.sidebar.recommendation_three") %></li>
+  </ul>
+</aside>
+
+<%= render "form" %>

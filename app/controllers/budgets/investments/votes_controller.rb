@@ -14,7 +14,7 @@ module Budgets
         respond_to do |format|
           format.html do
             redirect_to budget_investments_path(heading_id: @investment.heading.id),
-              notice: t("flash.actions.create.support")
+                        notice: t("flash.actions.create.support")
           end
 
           format.js { render :show }

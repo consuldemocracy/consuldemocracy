@@ -3,15 +3,15 @@ tr:
     remove_image: Görseli kaldır
     form:
       title: Açıklayıcı görsel
-      title_placeholder: Görsel için açıklama ekle
+      title_placeholder: Görsel için açıklayıcı bir başlık ekleyin
       delete_button: Görseli kaldır
-      note: "Burada belirtilen kriterlere uygun bir görsel yükleyebilirsiniz: %{accepted_content_types}, %{max_file_size} MB'ye kadar."
+      note: "Şu içerik türlerindeki bir görseli yükleyebilirsiniz: %{accepted_content_types}, en fazla %{max_file_size} MB boyutuna kadar."
       add_new_image: Görsel ekle
     actions:
       destroy:
-        notice: Görsel başarıyla silindi.
+        notice: Görsel silindi.
         alert: Görsel silinemedi.
     errors:
       messages:
-        in_between: '%{min} ve %{max} arasında olmalı'
-        wrong_content_type: içerik türü %{content_type} kabul edilen içerik türleriyle uyumlu değil %{accepted_content_types}
+        in_between: '%{min} ile %{max} arasında olmalıdır'
+        wrong_content_type: '%{content_type} içerik türü, kabul edilen içerik türlerinden değil %{accepted_content_types}'

@@ -1,24 +1,24 @@
 tr:
   documents:
     title: Belgeler
-    max_documents_allowed_reached: İzin verilen maksimum belge sayısına ulaştınız! <strong> Başka bir yükleme yapabilmek için önce mevcut bir belgeyi silmelisiniz. </strong>
-    additional: Ek belge
+    max_documents_allowed_reached: İzin verilen en fazla belge sayısına ulaştınız! <strong>Başka bir yükleme yapabilmek için önce var olan bir belgeyi silmelisiniz.</strong>
+    additional: Ek belgeler
     form:
       title: Belgeler
       title_placeholder: Belge için açıklayıcı bir başlık ekleyin
       delete_button: Belgeyi kaldır
       cancel_button: İptal
-      note: "Aşağıdaki içerik türlerinden %{accepted_content_types}, her dosya en fazla %{max_file_size} MB olmak kaydıyla en fazla %{max_documents_allowed} sayıda belge yükleyebilirsiniz."
+      note: "Şu içerik türlerinden en fazla %{max_documents_allowed} belge yükleyebilirsiniz: %{accepted_content_types}, her dosya en fazla %{max_file_size} MB boyutunda olabilir."
       add_new_document: Yeni belge ekle
     actions:
       destroy:
-        notice: Belge başarıyla silindi.
+        notice: Belge silindi.
         alert: Belge silinemedi.
-        confirm: Belgeyi silmek istediğnizden emin misiniz? Bu işlem geri alınamaz!
+        confirm: Belgeyi silmek istediğinize emin misiniz? Bu işlem geri alınamaz!
     buttons:
-      download_document: Dosyayı kaydet
+      download_document: Dosyayı indir
       destroy_document: Belgeyi sil
     errors:
       messages:
-        in_between: '%{min} ve %{max} arasında olmalı'
-        wrong_content_type: içerik türü %{content_type} kabul edilen içerik türlerinin %{accepted_content_types} hiçbiriyle eşleşmedi
+        in_between: '%{min} ile %{max} arasında olmalıdır'
+        wrong_content_type: '%{content_type} içerik türü %{accepted_content_types} gibi kabul edilen içerik türleriyle eşleşmiyor'

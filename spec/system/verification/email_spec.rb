@@ -4,13 +4,13 @@ describe "Verify email" do
   scenario "Verify" do
     user = create(:user,
                   residence_verified_at: Time.current,
-                  document_number:       "12345678Z",
-                  document_type:         "dni")
+                  document_number: "12345678Z",
+                  document_type: "dni")
 
     verified_user = create(:verified_user,
                            document_number: "12345678Z",
-                           document_type:   "dni",
-                           email:           "rock@example.com")
+                           document_type: "dni",
+                           email: "rock@example.com")
 
     login_as(user)
 
@@ -44,13 +44,13 @@ describe "Verify email" do
   scenario "Errors on sending confirmation email" do
     user = create(:user,
                   residence_verified_at: Time.current,
-                  document_number:       "12345678Z",
-                  document_type:         "dni")
+                  document_number: "12345678Z",
+                  document_type: "dni")
 
     verified_user = create(:verified_user,
                            document_number: "12345678Z",
-                           document_type:   "dni",
-                           email:           "rock@example.com")
+                           document_type: "dni",
+                           email: "rock@example.com")
 
     login_as(user)
 

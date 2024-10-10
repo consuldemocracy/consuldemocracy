@@ -13,7 +13,7 @@ describe Flag do
 
     it "does nothing if the flag already exists" do
       Flag.flag(user, comment)
-      expect(Flag.flag(user, comment)).to eq(false)
+      expect(Flag.flag(user, comment)).to be false
       expect(Flag.by_user_and_flaggable(user, comment).count).to eq(1)
     end
 
@@ -24,7 +24,7 @@ describe Flag do
 
   describe ".unflag" do
     it "raises an error if the flag does not exist" do
-      expect(Flag.unflag(user, comment)).to eq(false)
+      expect(Flag.unflag(user, comment)).to be false
     end
 
     describe "when the flag already exists" do

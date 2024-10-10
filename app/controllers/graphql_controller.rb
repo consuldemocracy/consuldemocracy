@@ -12,7 +12,8 @@ class GraphqlController < ApplicationController
     begin
       raise GraphqlController::QueryStringError if query_string.nil?
 
-      result = ConsulSchema.execute(query_string,
+      result = ConsulSchema.execute(
+        query_string,
         variables: prepare_variables,
         context: {},
         operation_name: params[:operationName]

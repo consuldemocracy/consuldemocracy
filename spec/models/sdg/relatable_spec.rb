@@ -171,7 +171,10 @@ describe SDG::Relatable do
     it "assigns goals, targets and local_targets" do
       relatable.related_sdg_list = "1.1,3,4,4.1,#{another_local_target.code}"
 
-      expect(relatable.reload.sdg_goals).to match_array [SDG::Goal[1], another_local_target.goal, SDG::Goal[3], SDG::Goal[4]]
+      expect(relatable.reload.sdg_goals).to match_array [SDG::Goal[1],
+                                                         another_local_target.goal,
+                                                         SDG::Goal[3],
+                                                         SDG::Goal[4]]
       expect(relatable.reload.sdg_global_targets).to match_array [SDG::Target[1.1], SDG::Target[4.1]]
       expect(relatable.reload.sdg_local_targets).to match_array [another_local_target]
     end

@@ -18,7 +18,7 @@
         </p>
         <div class="proposal-image">
           <% if proposal.image.present? %>
-            <div class="overflow-image" style="background-image: url(<%= polymorphic_path(proposal.image.variant(:large)) %>);"></div>
+            <div class="overflow-image" style="<%= attached_background_css polymorphic_path(proposal.image.variant(:large)) %>"></div>
           <% else %>
             <div class="overflow-image" style="background-image: url(<%= asset_url "default_mailing.jpg" %>);"></div>
           <% end %>

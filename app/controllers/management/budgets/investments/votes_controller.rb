@@ -9,7 +9,7 @@ class Management::Budgets::Investments::VotesController < Management::BaseContro
     respond_to do |format|
       format.html do
         redirect_to management_budget_investments_path(heading_id: @investment.heading.id),
-          notice: t("flash.actions.create.support")
+                    notice: t("flash.actions.create.support")
       end
 
       format.js { render :show }

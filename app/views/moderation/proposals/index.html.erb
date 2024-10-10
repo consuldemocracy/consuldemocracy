@@ -1,5 +1,5 @@
 <%= render Moderation::Shared::IndexComponent.new(@proposals) do %>
-  <table class="clear">
+  <table>
     <thead>
       <tr>
         <th><%= t("moderation.proposals.index.headers.proposal") %></th>
@@ -11,7 +11,7 @@
       <% @proposals.each do |proposal| %>
         <tr id="proposal_<%= proposal.id %>">
           <td>
-            <%= link_to proposal.title, proposal, target: "_blank" %>
+            <%= link_to proposal.title, proposal %>
             <br>
             <span class="date"><%= l proposal.updated_at.to_date %></span>
             <span class="bullet">&nbsp;&bull;&nbsp;</span>

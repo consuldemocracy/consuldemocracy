@@ -3,7 +3,7 @@ require "rails_helper"
 describe Age do
   describe ".in_years" do
     it "handles nils" do
-      expect(Age.in_years(nil)).to be_nil
+      expect(Age.in_years(nil)).to be nil
     end
 
     it "calculates age correctly for common dates" do

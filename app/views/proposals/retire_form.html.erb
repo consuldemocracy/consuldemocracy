@@ -16,8 +16,9 @@
       <%= render "shared/errors", resource: @proposal %>
       <div class="row column">
         <div class="small-12 medium-6 large-4 column">
-          <%= f.select :retired_reason, retire_proposals_options,
-            include_blank: t("proposals.retire_form.retired_reason_blank") %>
+          <%= f.select :retired_reason,
+                       retire_proposals_options,
+                       include_blank: t("proposals.retire_form.retired_reason_blank") %>
         </div>
       </div>
 
@@ -25,8 +26,9 @@
         <%= f.translatable_fields do |translations_form| %>
           <div class="small-12 medium-9 column float-left">
             <%= translations_form.text_area :retired_explanation,
-                  rows: 4, maxlength: 500,
-                  placeholder: t("proposals.retire_form.retired_explanation_placeholder") %>
+                                            rows: 4,
+                                            maxlength: 500,
+                                            placeholder: t("proposals.retire_form.retired_explanation_placeholder") %>
           </div>
         <% end %>
       </div>

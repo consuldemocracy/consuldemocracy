@@ -1,6 +1,6 @@
 class Relationable::RelatedListComponent < ApplicationComponent
   attr_reader :relationable
-  delegate :current_user, to: :helpers
+  use_helpers :current_user
 
   def initialize(relationable)
     @relationable = relationable
@@ -13,6 +13,8 @@ class Relationable::RelatedListComponent < ApplicationComponent
   private
 
     def related_contents
-      @related_contents ||= Kaminari.paginate_array(relationable.relationed_contents).page(params[:page]).per(5)
+      @related_contents ||= Kaminari.paginate_array(relationable.relationed_contents)
+                                    .page(params[:page])
+                                    .per(5)
     end
 end

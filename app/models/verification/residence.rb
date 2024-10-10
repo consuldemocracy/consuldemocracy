@@ -29,11 +29,11 @@ class Verification::Residence
 
     user.take_votes_if_erased_document(document_number, document_type)
 
-    user.update(document_number:       document_number,
-                document_type:         document_type,
-                geozone:               geozone,
-                date_of_birth:         date_of_birth.in_time_zone.to_datetime,
-                gender:                gender,
+    user.update(document_number: document_number,
+                document_type: document_type,
+                geozone: geozone,
+                date_of_birth: date_of_birth.in_time_zone.to_datetime,
+                gender: gender,
                 residence_verified_at: Time.current)
   end
 
@@ -48,7 +48,9 @@ class Verification::Residence
   end
 
   def document_number_uniqueness
-    errors.add(:document_number, I18n.t("errors.messages.taken")) if User.active.where(document_number: document_number).any?
+    if User.active.where(document_number: document_number).any?
+      errors.add(:document_number, I18n.t("errors.messages.taken"))
+    end
   end
 
   def store_failed_attempt
@@ -74,7 +76,8 @@ class Verification::Residence
   end
 
   def local_postal_code
-    errors.add(:postal_code, I18n.t("verification.residence.new.error_not_allowed_postal_code")) unless valid_postal_code?
+    errors.add(:postal_code,
+               I18n.t("verification.residence.new.error_not_allowed_postal_code")) unless valid_postal_code?
   end
 
   def local_residence

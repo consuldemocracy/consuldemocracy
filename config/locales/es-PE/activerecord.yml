@@ -352,15 +352,6 @@ es-PE:
       image:
         title: Título
         attachment: "Archivo adjunto"
-      poll/question/answer:
-        title: Respuesta
-        description: Descripción detallada
-      poll/question/answer/translation:
-        title: Respuesta
-        description: "Descripción detallada"
-      poll/question/answer/video:
-        title: Título
-        url: Video externo
       newsletter:
         from: "Desde"
       admin_notification:

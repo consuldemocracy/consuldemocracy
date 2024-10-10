@@ -14,4 +14,8 @@ module ImagesHelper
                            version: (version if image.persisted?),
                            show_caption: show_caption
   end
+
+  def attached_background_css(path)
+    "background-image: url('#{j path}');"
+  end
 end

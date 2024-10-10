@@ -73,13 +73,13 @@ en:
       share: "Start to get votes, share your investment project on social networks. Share is essential to make it a reality."
       share_button: "Share your investment project"
       thanks: "Thank you again for participating."
-      sincerely: "Sincererly"
+      sincerely: "Sincerely"
     budget_investment_unselected:
       subject: "Your investment project '%{code}' has not been selected"
       title: "Your investment project has not been selected"
       hi: "Dear user,"
       thanks: "Thank you again for participating."
-      sincerely: "Sincererly"
+      sincerely: "Sincerely"
     evaluation_comment:
       subject: "New evaluation comment"
       title: New evaluation comment for %{investment}

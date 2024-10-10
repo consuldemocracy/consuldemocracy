@@ -49,7 +49,7 @@
         </div>
 
         <div id="<%= dom_id(debate) %>_votes" class="small-12 medium-3 column">
-            <%= render "debates/votes", debate: debate %>
+            <%= render Debates::VotesComponent.new(debate) %>
         </div>
 
       </div>

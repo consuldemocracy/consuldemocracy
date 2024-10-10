@@ -49,8 +49,9 @@ module Abilities
       can :mark_featured, Debate
       can :unmark_featured, Debate
 
-      can :comment_as_administrator, [Debate, Comment, Proposal, Poll, Poll::Question, Budget::Investment,
-                                      Legislation::Question, Legislation::Proposal, Legislation::Annotation, Topic]
+      can :comment_as_administrator, [Debate, Comment, Proposal, Poll, Poll::Question,
+                                      Budget::Investment, Legislation::Question,
+                                      Legislation::Proposal, Legislation::Annotation, Topic]
 
       can [:search, :create, :index, :destroy, :update], ::Administrator
       can [:search, :create, :index, :destroy], ::Moderator
@@ -73,7 +74,7 @@ module Abilities
       can [:hide, :admin_update, :toggle_selection], Budget::Investment
       can [:valuate, :comment_valuation], Budget::Investment
       cannot [:admin_update, :toggle_selection, :valuate, :comment_valuation],
-        Budget::Investment, budget: { phase: "finished" }
+             Budget::Investment, budget: { phase: "finished" }
 
       can :create, Budget::ValuatorAssignment
 
@@ -95,16 +96,16 @@ module Abilities
       can [:update, :destroy], Poll::Question do |question|
         !question.poll.started?
       end
-      can [:read, :order_answers], Poll::Question::Answer
-      can [:create, :update, :destroy], Poll::Question::Answer do |answer|
-        can?(:update, answer.question)
+      can [:read, :order_options], Poll::Question::Option
+      can [:create, :update, :destroy], Poll::Question::Option do |option|
+        can?(:update, option.question)
       end
-      can :read, Poll::Question::Answer::Video
-      can [:create, :update, :destroy], Poll::Question::Answer::Video do |video|
-        can?(:update, video.answer)
+      can :read, Poll::Question::Option::Video
+      can [:create, :update, :destroy], Poll::Question::Option::Video do |video|
+        can?(:update, video.option)
       end
       can [:destroy], Image do |image|
-        image.imageable_type == "Poll::Question::Answer" && can?(:update, image.imageable)
+        image.imageable_type == "Poll::Question::Option" && can?(:update, image.imageable)
       end
 
       can :manage, SiteCustomization::Page
@@ -121,16 +122,19 @@ module Abilities
       can [:manage], ::Legislation::DraftVersion
       can [:manage], ::Legislation::Question
       can [:manage], ::Legislation::Proposal
-      cannot :comment_as_moderator, [::Legislation::Question, Legislation::Annotation, ::Legislation::Proposal]
+      cannot :comment_as_moderator,
+             [::Legislation::Question, Legislation::Annotation, ::Legislation::Proposal]
 
       can [:create], Document
       can [:destroy], Document do |document|
-        document.documentable_type == "Poll::Question::Answer" && can?(:update, document.documentable)
+        document.documentable_type == "Poll::Question::Option" && can?(:update, document.documentable)
       end
       can [:create, :destroy], DirectUpload
 
       can [:deliver], Newsletter, hidden_at: nil
       can [:manage], Dashboard::AdministratorTask
+
+      can :manage, Setting::LocalesSettings
 
       can :manage, LocalCensusRecord
       can [:create, :read], LocalCensusRecords::Import

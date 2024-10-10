@@ -41,7 +41,10 @@ describe "Verification path" do
   end
 
   scenario "User received a verification sms" do
-    user = create(:user, residence_verified_at: Time.current, unconfirmed_phone: "666666666", sms_confirmation_code: "666")
+    user = create(:user,
+                  residence_verified_at: Time.current,
+                  unconfirmed_phone: "666666666",
+                  sms_confirmation_code: "666")
 
     login_as(user)
     visit verification_path

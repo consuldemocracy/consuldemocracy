@@ -75,13 +75,13 @@ it:
       form:
         title: "Crea un investimento di bilancio"
         subtitle: "%{heading} (%{price})"
+        subtitle_without_price: "%{heading}"
         tag_category_label: "Categorie"
         tags_instructions: "Aggiungi etichette a questa proposta. Puoi scegliere tra le categorie proposte a aggiungerne di tue"
         tags_label: Etichette
         tags_placeholder: "Inserisci i tag che desideri utilizzare, separati da virgole (',')"
         map_location: "Posizione sulla mappa"
         map_location_instructions: "Scorri la mappa sino a individuare il luogo giusto e posiziona il segnaposto."
-        map_remove_marker: "Rimuovi segnaposto"
       index:
         title: Bilancio partecipativo
         unfeasible: Progetti di investimento irrealizzabili

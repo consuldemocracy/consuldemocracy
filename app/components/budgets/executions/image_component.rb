@@ -1,6 +1,6 @@
 class Budgets::Executions::ImageComponent < ApplicationComponent
   attr_reader :investment
-  delegate :image_path_for, to: :helpers
+  use_helpers :image_path_for
 
   def initialize(investment)
     @investment = investment
@@ -9,7 +9,9 @@ class Budgets::Executions::ImageComponent < ApplicationComponent
   private
 
     def milestone
-      investment.milestones.order_by_publication_date
-                           .select { |milestone| milestone.image.present? }.last
+      investment.milestones
+                .order_by_publication_date
+                .select { |milestone| milestone.image.present? }
+                .last
     end
 end

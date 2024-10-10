@@ -1,0 +1,16 @@
+# Personalización del código
+
+* [Introducción](introduction.md)
+* [Traducciones y textos](translations.md)
+* [Imágenes](images.md)
+* [Estilos con CSS](css.md)
+* [JavaScript](javascript.md)
+* [Modelos](models.md)
+* [Controladores](controllers.md)
+* [Vistas y HTML](views.md)
+* [Componentes](components.md)
+* [Otras clases de Ruby (GraphQL, lib, mailers, builders)](ruby.md)
+* [Gemas](gems.md)
+* [Configuración de la aplicación](application.md)
+* [Rutas](routes.md)
+* [Tests](tests.md)

@@ -131,7 +131,6 @@ val:
       invalid_date_range: "El rang de dates no es vàlid"
   form:
     accept_terms: Accepte la %{policy} i les %{conditions}
-    accept_terms_title: Accepte la Política de privacitat i les Condicions d'us
     conditions: Termes i condicions d'us
     debate: Debat
     direct_message: el missatge privat
@@ -144,34 +143,31 @@ val:
     budget/investment: Proposta d'inversió
     budget/heading: Partida pressupostaria
     poll/shift: Torn
-    poll/question/answer: Resposta
     user: Compte
     verification/sms: telèfon
     signature_sheet: Full de signatures
     document: Document
     topic: Tema
     image: Imatge
+    site_customization/page: pàgina
+    sdg/local_target: objectiu local
   geozones:
     none: Tota la ciutat
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Hem detectat que estàs navegant desde Internet Explorer. Per a una millor experiència et recomanem utilitzar %{firefox} o %{chrome}.
-      ie_title: Esta web no està optimitzada per al teu navegador
     dashboard:
       proposal_header:
         published: Publicada
         draft: Esborrany
+        retired: Retras
       proposal_totals:
         supports:
           zero: Sense avals
     footer:
       accessibility: Accessibilitat
       conditions: Termes i condicions d'us
-      consul: Aplicació CONSUL
-      consul_url: https://github.com/consul/consul
-      copyright: CONSUL, %{year}
+      consul: Aplicació CONSUL DEMOCRACY
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Este portal utilitza la %{consul} que es %{open_source}.
       open_source: software de codi obert
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
@@ -238,6 +234,8 @@ val:
       sign_in: Entra amb Google
       sign_up: Regístrat amb Google
       name: Google
+    wordpress_oauth2:
+      name: Wordpress
     twitter:
       sign_in: Entra amb Twitter
       sign_up: Regístrat amb Twitter
@@ -361,6 +359,7 @@ val:
       author_deleted: Usuari eliminat
       code: "Codi de la proposta:"
       comments_tab: Comentaris
+      dashboard_proposal_link: Panell
       flag: Esta proposta ha sigut marcada com inapropiada per diversos usuaris.
       notifications_tab: Notificacions
       milestones_tab: Seguiments
@@ -379,6 +378,8 @@ val:
     menu:
       community: Comunitat
       polls: Votacions
+      mailing: Correu electrònic
+      poster: Pòster
       related_content: Contingut relacionat
     progress:
       supports: Avals
@@ -388,6 +389,8 @@ val:
     recommended_actions:
       pending_title: Pendents
       done_title: Realitzada
+    next_goal:
+      title: Objectiu
     community:
       access_community: Accedir a la comunitat
       participants: Participants
@@ -406,10 +409,12 @@ val:
       form:
         add_question: Escriu un títol a la pregunta
       question_fields:
+        remove_question: Eliminar pregunta
         add_answer: Afegir resposta
     poster:
       options:
         preview: Vista previa
+        download: Descarrega
     mailing:
       mailing_options:
         preview: Vista previa
@@ -418,7 +423,6 @@ val:
         support_button: Avalar aquesta proposta
   polls:
     all: "Totes"
-    no_dates: "sense data asignada"
     dates: "Des del %{open_at} fins el %{closed_at}"
     final_date: "Recompte final/Resultats"
     index:
@@ -504,13 +508,13 @@ val:
       date_5: "Personalitzada"
       from: "De"
       general: "Amb el text"
+      goal: "Per SDG"
       search: "Filtre"
       title: "Cerca avançada"
       to: "Fins"
     author_info:
       author_deleted: Usuari eliminat
     back: Tornar
-    check: Seleccionar
     check_all: Totes
     check_none: Cap
     collective: Col·lectiu
@@ -569,24 +573,15 @@ val:
     translations:
       remove_language: Eliminar idioma
       add_language: Afegir idioma
+    required: "Camps obligatoris"
+    comments:
+      zero: "Sense comentaris"
   social:
     facebook: "Facebook de %{org}"
     twitter: "Twitter de %{org}"
     youtube: "YouTube de %{org}"
     telegram: "Telegram de %{org}"
     instagram: "Instagram de %{org}"
-  stats:
-    index:
-      visits: Visites
-      debates: Debats
-      proposals: Propostes
-      comments: Comentaris
-      proposal_votes: Vots en propostes
-      debate_votes: Vots en debats
-      comment_votes: Vots en comentaris
-      votes: Vots totals
-      verified_users: Usuaris verificats
-      unverified_users: Usuaris sense verificar
   unauthorized:
     default: No tens permís per a accedir a aquesta pàgina.
     manage:
@@ -718,3 +713,13 @@ val:
     form:
       delete_button: Eliminar
       cancel_button: Cancel·lar
+    nested_links:
+      title: Enllaços
+      note: Afegeix els enllaços d'interes
+  communities:
+    show:
+      surveys: Enquestes
+    subnav:
+      surveys: Enquestes
+  remote_translations:
+    button: Traduir pàgina

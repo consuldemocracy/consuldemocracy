@@ -6,6 +6,7 @@ describe Budget do
   it_behaves_like "sluggable", updatable_slug_trait: :drafting
   it_behaves_like "reportable"
   it_behaves_like "globalizable", :budget
+  it_behaves_like "acts as imageable", :budget_image
 
   describe "scopes" do
     describe ".open" do
@@ -131,7 +132,7 @@ describe Budget do
     end
 
     it "is valid if main_link_text and main_link_url are both provided" do
-      valid_budget = build(:budget, main_link_text: "Text link", main_link_url: "https://consulproject.org")
+      valid_budget = build(:budget, main_link_text: "Text link", main_link_url: "https://consuldemocracy.org")
 
       expect(valid_budget).to be_valid
     end
@@ -240,7 +241,7 @@ describe Budget do
     it "returns nil if there is only one budget and it is still in drafting phase" do
       create(:budget, :drafting)
 
-      expect(Budget.current).to eq(nil)
+      expect(Budget.current).to be nil
     end
 
     it "returns the budget if there is only one and not in drafting phase" do
@@ -339,11 +340,11 @@ describe Budget do
     it "returns true if there is a winner investment" do
       budget.investments << build(:budget_investment, :winner, price: 3, ballot_lines_count: 2)
 
-      expect(budget.has_winning_investments?).to eq true
+      expect(budget.has_winning_investments?).to be true
     end
 
     it "hould return false if there is not a winner investment" do
-      expect(budget.has_winning_investments?).to eq false
+      expect(budget.has_winning_investments?).to be false
     end
   end
 
@@ -369,9 +370,9 @@ describe Budget do
       expect(publishing_prices_phase.next_phase).to eq(balloting_phase)
       expect(balloting_phase.next_phase).to eq(reviewing_ballots_phase)
       expect(reviewing_ballots_phase.next_phase).to eq(finished_phase)
-      expect(finished_phase.next_phase).to eq(nil)
+      expect(finished_phase.next_phase).to be nil
 
-      expect(informing_phase.prev_phase).to eq(nil)
+      expect(informing_phase.prev_phase).to be nil
       expect(accepting_phase.prev_phase).to eq(informing_phase)
       expect(reviewing_phase.prev_phase).to eq(accepting_phase)
       expect(selecting_phase.prev_phase).to eq(reviewing_phase)

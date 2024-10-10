@@ -19,7 +19,9 @@ describe Poll::Stats do
     it "supports every channel" do
       3.times { create(:poll_voter, :from_web, poll: poll) }
       create(:poll_recount, :from_booth, poll: poll,
-             total_amount: 8, white_amount: 4, null_amount: 1)
+                                         total_amount: 8,
+                                         white_amount: 4,
+                                         null_amount: 1)
 
       expect(stats.total_participants_web).to eq(3)
       expect(stats.total_participants_booth).to eq(13)
@@ -153,11 +155,53 @@ describe Poll::Stats do
     it "is relative to the total amount of votes" do
       3.times { create(:poll_voter, :from_web, poll: poll) }
       create(:poll_recount, :from_booth, poll: poll,
-             total_amount: 8, white_amount: 5, null_amount: 4)
+                                         total_amount: 8,
+                                         white_amount: 5,
+                                         null_amount: 4)
 
       expect(stats.total_valid_percentage).to eq(50)
       expect(stats.total_white_percentage).to eq(30)
       expect(stats.total_null_percentage).to eq(20)
+    end
+  end
+
+  describe "#participants_by_age" do
+    it "returns stats based on what happened when the voting took place" do
+      travel_to(100.years.ago) do
+        [16, 18, 32, 32, 33, 34, 64, 65, 71, 73, 90, 99, 105].each do |age|
+          create(:user, date_of_birth: age.years.ago - rand(0..11).months)
+        end
+
+        create(:poll, starts_at: 1.minute.from_now, ends_at: 2.minutes.from_now)
+      end
+
+      stats = Poll::Stats.new(Poll.last)
+      allow(stats).to receive(:participants).and_return(User.all)
+
+      expect(stats.participants_by_age["16 - 19"][:count]).to eq 2
+      expect(stats.participants_by_age["20 - 24"][:count]).to eq 0
+      expect(stats.participants_by_age["25 - 29"][:count]).to eq 0
+      expect(stats.participants_by_age["30 - 34"][:count]).to eq 4
+      expect(stats.participants_by_age["35 - 39"][:count]).to eq 0
+      expect(stats.participants_by_age["40 - 44"][:count]).to eq 0
+      expect(stats.participants_by_age["45 - 49"][:count]).to eq 0
+      expect(stats.participants_by_age["50 - 54"][:count]).to eq 0
+      expect(stats.participants_by_age["55 - 59"][:count]).to eq 0
+      expect(stats.participants_by_age["60 - 64"][:count]).to eq 1
+      expect(stats.participants_by_age["65 - 69"][:count]).to eq 1
+      expect(stats.participants_by_age["70 - 74"][:count]).to eq 2
+      expect(stats.participants_by_age["75 - 79"][:count]).to eq 0
+      expect(stats.participants_by_age["80 - 84"][:count]).to eq 0
+      expect(stats.participants_by_age["85 - 89"][:count]).to eq 0
+      expect(stats.participants_by_age["90 - 300"][:count]).to eq 3
+    end
+  end
+
+  describe "#participation_date", :with_frozen_time do
+    let(:poll) { create(:poll, starts_at: 3.years.ago, ends_at: 2.years.ago) }
+
+    it "returns the date when the poll finishes" do
+      expect(stats.participation_date).to eq 2.years.ago
     end
   end
 
@@ -172,8 +216,8 @@ describe Poll::Stats do
       hobbiton = create(:geozone, name: "Hobbiton")
       rivendel = create(:geozone, name: "Rivendel")
 
-      3.times { create :poll_voter, poll: poll, user: create(:user, :level_two, geozone: hobbiton) }
-      2.times { create :poll_voter, poll: poll, user: create(:user, :level_two, geozone: rivendel) }
+      3.times { create(:poll_voter, poll: poll, user: create(:user, :level_two, geozone: hobbiton)) }
+      2.times { create(:poll_voter, poll: poll, user: create(:user, :level_two, geozone: rivendel)) }
 
       expect(stats.participants_by_geozone["Hobbiton"][:count]).to eq 3
       expect(stats.participants_by_geozone["Hobbiton"][:percentage]).to eq 60.0
@@ -252,34 +296,6 @@ describe Poll::Stats do
 
       it "returns all channels" do
         expect(stats.channels).to eq %w[web booth letter]
-      end
-    end
-  end
-
-  describe "#version", :with_frozen_time do
-    context "record with no stats" do
-      it "returns a string based on the current time" do
-        expect(stats.version).to eq "v#{Time.current.to_i}"
-      end
-
-      it "doesn't overwrite the timestamp when called multiple times" do
-        time = Time.current
-
-        expect(stats.version).to eq "v#{time.to_i}"
-
-        unfreeze_time
-
-        travel_to 2.seconds.from_now do
-          expect(stats.version).to eq "v#{time.to_i}"
-        end
-      end
-    end
-
-    context "record with stats" do
-      before { poll.create_stats_version(updated_at: 1.day.ago) }
-
-      it "returns the version of the existing stats" do
-        expect(stats.version).to eq "v#{1.day.ago.to_i}"
       end
     end
   end

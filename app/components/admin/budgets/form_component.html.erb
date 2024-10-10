@@ -10,8 +10,8 @@
       <div class="row expanded">
         <div class="small-12 medium-9 large-6 column end">
           <%= translations_form.text_field :name,
-                                            maxlength: Budget.title_max_length,
-                                            hint: t("admin.budgets.edit.name_description") %>
+                                           maxlength: Budget.title_max_length,
+                                           hint: t("admin.budgets.edit.name_description") %>
         </div>
       </div>
       <div class="row expanded">
@@ -54,8 +54,8 @@
     <% end %>
 
     <% if feature?(:allow_images) %>
-      <div class="images small-12 column">
-        <%= render "/images/nested_image", f: f %>
+      <div class="small-12 column">
+        <%= render Images::NestedComponent.new(f) %>
         <p class="help-text"><%= t("admin.budgets.edit.image_description") %></p>
       </div>
     <% end %>
@@ -67,9 +67,9 @@
     <% %w[administrators valuators].each do |staff| %>
       <div class="small-12 medium-6 large-3 column end">
         <%= link_to t("admin.budgets.edit.#{staff}", count: budget.send(staff).count),
-          "#",
-          class: "button expanded hollow js-budget-show-#{staff}-list js-budget-show-users-list",
-          data: { toggle: "#{staff}_list", texts: t("admin.budgets.edit.#{staff}") } %>
+                    "#",
+                    class: "button expanded hollow js-budget-show-#{staff}-list js-budget-show-users-list",
+                    data: { toggle: "#{staff}_list", texts: t("admin.budgets.edit.#{staff}") } %>
       </div>
     <% end %>
 

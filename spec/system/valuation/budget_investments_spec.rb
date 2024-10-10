@@ -202,10 +202,11 @@ describe "Valuation budget investments" do
       create(:valuator, user: create(:user, username: "Rick", email: "rick@valuators.org"))
     end
     let(:investment) do
-      create(:budget_investment, :unfeasible, budget: budget, price: 1234,
-                                 unfeasibility_explanation: "It is impossible",
-                                 administrator: administrator,
-                                 valuators: [valuator, second_valuator])
+      create(:budget_investment, :unfeasible, budget: budget,
+                                              price: 1234,
+                                              unfeasibility_explanation: "It is impossible",
+                                              administrator: administrator,
+                                              valuators: [valuator, second_valuator])
     end
 
     scenario "visible for assigned valuators" do
@@ -399,8 +400,8 @@ describe "Valuation budget investments" do
 
       within("#duration") { expect(page).to have_content("12 months") }
       within("#feasibility") { expect(page).to have_content("Feasible") }
-      expect(page).not_to have_selector "#price"
-      expect(page).not_to have_selector "#price_first_year"
+      expect(page).not_to have_css "#price"
+      expect(page).not_to have_css "#price_first_year"
     end
 
     scenario "Finish valuation" do
@@ -456,9 +457,9 @@ describe "Valuation budget investments" do
       scenario "Valuators that are not admins cannot reopen or modify a finished valuation" do
         visit edit_valuation_budget_budget_investment_path(budget, investment)
 
-        expect(page).not_to have_selector("input[id='budget_investment_feasibility_undecided']")
-        expect(page).not_to have_selector("textarea[id='budget_investment_unfeasibility_explanation']")
-        expect(page).not_to have_selector("input[name='budget_investment[valuation_finished]']")
+        expect(page).not_to have_css "input[id='budget_investment_feasibility_undecided']"
+        expect(page).not_to have_css "textarea[id='budget_investment_unfeasibility_explanation']"
+        expect(page).not_to have_css "input[name='budget_investment[valuation_finished]']"
         expect(page).to have_content("Valuation finished")
         expect(page).to have_content("Feasibility: Feasible")
         expect(page).to have_content("Feasibility explanation: Explanation is explanatory")

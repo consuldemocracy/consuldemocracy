@@ -18,7 +18,7 @@ describe "Tags" do
 
   scenario "Index shows up to 5 tags per proposal" do
     tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
-    create :debate, tag_list: tag_list
+    create(:debate, tag_list: tag_list)
 
     visit debates_path
 
@@ -29,7 +29,7 @@ describe "Tags" do
 
   scenario "Index shows 3 tags with no plus link" do
     tag_list = ["Medio Ambiente", "Corrupción", "Fiestas populares"]
-    create :debate, tag_list: tag_list
+    create(:debate, tag_list: tag_list)
 
     visit debates_path
 
@@ -47,8 +47,8 @@ describe "Tags" do
 
     visit debates_path(tag: "123")
 
-    expect(page).not_to have_selector("#debates .debate-featured")
-    expect(page).not_to have_selector("#featured-debates")
+    expect(page).not_to have_css "#debates .debate-featured"
+    expect(page).not_to have_css "#featured-debates"
   end
 
   scenario "Show" do
@@ -123,15 +123,15 @@ describe "Tags" do
     login_as(debate.author)
     visit edit_debate_path(debate)
 
-    expect(page).to have_selector("input[value='Economía']")
+    expect(page).to have_css "input[value='Economía']"
 
     fill_in "debate_tag_list", with: "Economía, Hacienda"
     click_button "Save changes"
 
     expect(page).to have_content "Debate updated successfully."
     within(".tags") do
-      expect(page).to have_css("a", text: "Economía")
-      expect(page).to have_css("a", text: "Hacienda")
+      expect(page).to have_link "Economía"
+      expect(page).to have_link "Hacienda"
     end
   end
 

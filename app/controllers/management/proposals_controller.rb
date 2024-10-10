@@ -17,7 +17,6 @@ class Management::ProposalsController < Management::BaseController
                                                        published_at: Time.current))
 
     if @resource.save
-      track_event
       redirect_path = url_for(controller: controller_name, action: :show, id: @resource.id)
       redirect_to redirect_path, notice: t("flash.actions.create.#{resource_name.underscore}")
     else
@@ -31,7 +30,9 @@ class Management::ProposalsController < Management::BaseController
     super
     @notifications = @proposal.notifications
 
-    redirect_to management_proposal_path(@proposal), status: :moved_permanently if request.path != management_proposal_path(@proposal)
+    if request.path != management_proposal_path(@proposal)
+      redirect_to management_proposal_path(@proposal), status: :moved_permanently
+    end
   end
 
   def vote

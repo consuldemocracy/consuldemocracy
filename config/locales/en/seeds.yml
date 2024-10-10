@@ -5,8 +5,8 @@ en:
         title: "We are closing the Participatory Budget!"
         body: "Hurry up and create a proposal before it ends in the next few days!"
       help:
-        title: "Help us translate consul"
-        body: "If you are proficient in a language, please help us translate consul!"
+        title: "Help us translate Consul Democracy"
+        body: "If you are proficient in a language, please help us translate Consul democracy!"
       map:
         title: "You can now geolocate proposals and investments"
         body: "When you create a proposal or investment you now can specify a point on a map."
@@ -39,7 +39,7 @@ en:
         link_text: "More about debates"
         label: "Debates"
       header:
-        title: "CONSUL"
+        title: "CONSUL DEMOCRACY"
         description: "Free software for citizen participation."
         link_text: "More information"
         label: "Welcome to"

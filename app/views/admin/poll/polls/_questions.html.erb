@@ -24,8 +24,7 @@
           <% if question.proposal.present? %>
             <small>
               <%= link_to t("admin.polls.show.see_proposal"),
-                          proposal_path(question.proposal),
-                          target: "_blank" %>
+                          proposal_path(question.proposal) %>
             </small>
           <% end %>
         </td>

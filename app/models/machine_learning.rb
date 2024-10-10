@@ -22,13 +22,15 @@ class MachineLearning
 
       return unless run_machine_learning_scripts
 
-      if updated_file?(MachineLearning.proposals_taggings_filename) && updated_file?(MachineLearning.proposals_tags_filename)
+      if updated_file?(MachineLearning.proposals_taggings_filename) &&
+         updated_file?(MachineLearning.proposals_tags_filename)
         cleanup_proposals_tags!
         import_ml_proposals_tags
         update_machine_learning_info_for("tags")
       end
 
-      if updated_file?(MachineLearning.investments_taggings_filename) && updated_file?(MachineLearning.investments_tags_filename)
+      if updated_file?(MachineLearning.investments_taggings_filename) &&
+         updated_file?(MachineLearning.investments_tags_filename)
         cleanup_investments_tags!
         import_ml_investments_tags
         update_machine_learning_info_for("tags")
@@ -60,9 +62,9 @@ class MachineLearning
 
       job.update!(finished_at: Time.current)
       Mailer.machine_learning_success(user).deliver_later
-    rescue Exception => error
-      handle_error(error)
-      raise error
+    rescue Exception => e
+      handle_error(e)
+      raise e
     end
   end
   handle_asynchronously :run, queue: "machine_learning"
@@ -95,14 +97,32 @@ class MachineLearning
     def data_output_files
       files = { tags: [], related_content: [], comments_summary: [] }
 
-      files[:tags] << proposals_tags_filename if File.exist?(data_folder.join(proposals_tags_filename))
-      files[:tags] << proposals_taggings_filename if File.exist?(data_folder.join(proposals_taggings_filename))
-      files[:tags] << investments_tags_filename if File.exist?(data_folder.join(investments_tags_filename))
-      files[:tags] << investments_taggings_filename if File.exist?(data_folder.join(investments_taggings_filename))
-      files[:related_content] << proposals_related_filename if File.exist?(data_folder.join(proposals_related_filename))
-      files[:related_content] << investments_related_filename if File.exist?(data_folder.join(investments_related_filename))
-      files[:comments_summary] << proposals_comments_summary_filename if File.exist?(data_folder.join(proposals_comments_summary_filename))
-      files[:comments_summary] << investments_comments_summary_filename if File.exist?(data_folder.join(investments_comments_summary_filename))
+      if File.exist?(data_folder.join(proposals_tags_filename))
+        files[:tags] << proposals_tags_filename
+      end
+      if File.exist?(data_folder.join(proposals_taggings_filename))
+        files[:tags] << proposals_taggings_filename
+      end
+      if File.exist?(data_folder.join(investments_tags_filename))
+        files[:tags] << investments_tags_filename
+      end
+      if File.exist?(data_folder.join(investments_taggings_filename))
+        files[:tags] << investments_taggings_filename
+      end
+
+      if File.exist?(data_folder.join(proposals_related_filename))
+        files[:related_content] << proposals_related_filename
+      end
+      if File.exist?(data_folder.join(investments_related_filename))
+        files[:related_content] << investments_related_filename
+      end
+
+      if File.exist?(data_folder.join(proposals_comments_summary_filename))
+        files[:comments_summary] << proposals_comments_summary_filename
+      end
+      if File.exist?(data_folder.join(investments_comments_summary_filename))
+        files[:comments_summary] << investments_comments_summary_filename
+      end
 
       files
     end
@@ -171,14 +191,12 @@ class MachineLearning
     end
 
     def scripts_info
-      scripts_info = []
-      Dir[SCRIPTS_FOLDER.join("*.py")].each do |full_path_filename|
-        scripts_info << {
+      Dir[SCRIPTS_FOLDER.join("*.py")].map do |full_path_filename|
+        {
           name: full_path_filename.split("/").last,
           description: description_from(full_path_filename)
         }
-      end
-      scripts_info.sort_by { |script_info| script_info[:name] }
+      end.sort_by { |script_info| script_info[:name] }
     end
 
     def description_from(script_filename)
@@ -445,7 +463,7 @@ class MachineLearning
 
     def updated_file?(filename)
       return false unless File.exist? data_folder.join(filename)
-      return true unless previous_modified_date[filename].present?
+      return true if previous_modified_date[filename].blank?
 
       last_modified_date_for(filename) > previous_modified_date[filename]
     end

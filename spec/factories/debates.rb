@@ -3,7 +3,7 @@ FactoryBot.define do
     sequence(:title)     { |n| "Debate #{n} title" }
     description          { "Debate description" }
     terms_of_service     { "1" }
-    association :author, factory: :user
+    author factory: :user
 
     trait :hidden do
       hidden_at { Time.current }
@@ -46,7 +46,7 @@ FactoryBot.define do
   end
 
   factory :flag do
-    association :flaggable, factory: :debate
-    association :user, factory: :user
+    flaggable factory: :debate
+    user
   end
 end

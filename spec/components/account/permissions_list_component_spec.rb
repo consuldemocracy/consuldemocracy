@@ -11,7 +11,8 @@ describe Account::PermissionsListComponent do
   it "adds a hint when an action cannot be performed" do
     render_inline Account::PermissionsListComponent.new(User.new)
 
-    expect(page).to have_css "li", exact_text: "Additional verification needed Support proposals", normalize_ws: true
+    expect(page).to have_css "li", exact_text: "Additional verification needed Support proposals",
+                                   normalize_ws: true
     expect(page).to have_css "li", exact_text: "Participate in debates", normalize_ws: true
   end
 end

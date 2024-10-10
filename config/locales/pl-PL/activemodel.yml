@@ -22,7 +22,7 @@ pl:
         verification_code: "Kod otrzymany listem"
       verification/management/document:
         document_type: "Rodzaj dokumentu:"
-        document_number: "Numer dokumentu:"
+        document_number: "Numer dokumentu"
       verification/residence:
         date_of_birth: "Data urodzenia"
         document_type: "Rodzaj dokumentu"

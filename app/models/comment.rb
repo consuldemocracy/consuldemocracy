@@ -6,8 +6,8 @@ class Comment < ApplicationRecord
   include Searchable
 
   COMMENTABLE_TYPES = %w[Debate Proposal Budget::Investment Poll Topic
-                        Legislation::Question Legislation::Annotation
-                        Legislation::Proposal].freeze
+                         Legislation::Question Legislation::Annotation
+                         Legislation::Proposal].freeze
 
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
@@ -38,7 +38,10 @@ class Comment < ApplicationRecord
   scope :sort_by_flags, -> { order(flags_count: :desc, updated_at: :desc) }
   scope :public_for_api, -> do
     not_valuations
-      .where(commentable: [Debate.public_for_api, Proposal.public_for_api, Poll.public_for_api])
+      .where(commentable: [Debate.public_for_api,
+                           Proposal.public_for_api,
+                           Poll.public_for_api,
+                           Budget::Investment.public_for_api])
   end
 
   scope :sort_by_most_voted, -> { order(confidence_score: :desc, created_at: :desc) }
@@ -57,10 +60,10 @@ class Comment < ApplicationRecord
 
   def self.build(commentable, user, body, p_id = nil, valuation = false)
     new(commentable: commentable,
-        user_id:     user.id,
-        body:        body,
-        parent_id:   p_id,
-        valuation:   valuation)
+        user_id: user.id,
+        body: body,
+        parent_id: p_id,
+        valuation: valuation)
   end
 
   def self.find_commentable(c_type, c_id)
@@ -134,7 +137,7 @@ class Comment < ApplicationRecord
 
   def searchable_values
     {
-      body               => "A",
+      body => "A",
       commentable&.title => "B"
     }
   end
@@ -148,7 +151,8 @@ class Comment < ApplicationRecord
     def validate_body_length
       validator = ActiveModel::Validations::LengthValidator.new(
         attributes: :body,
-        maximum: Comment.body_max_length)
+        maximum: Comment.body_max_length
+      )
       validator.validate(self)
     end
 

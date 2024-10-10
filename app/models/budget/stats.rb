@@ -37,6 +37,10 @@ class Budget::Stats
     budget.finished?
   end
 
+  def participation_date
+    send("#{phases.last}_phase_participation_date")
+  end
+
   def total_participants
     participants.distinct.count
   end
@@ -98,6 +102,14 @@ class Budget::Stats
       phases.map { |phase| self.class.send("#{phase}_phase_methods") }.flatten
     end
 
+    def support_phase_participation_date
+      budget.phases.selecting.ends_at
+    end
+
+    def vote_phase_participation_date
+      budget.phases.balloting.ends_at
+    end
+
     def participant_ids
       phases.map { |phase| send("participant_ids_#{phase}_phase") }.flatten.uniq
     end
@@ -119,7 +131,7 @@ class Budget::Stats
     end
 
     def balloters
-      @balloters ||= budget.ballots.where("ballot_lines_count > ?", 0).distinct.pluck(:user_id).compact
+      @balloters ||= budget.ballots.where(ballot_lines_count: 1..).distinct.pluck(:user_id).compact
     end
 
     def poll_ballot_voters
@@ -129,8 +141,8 @@ class Budget::Stats
     def balloters_by_heading(heading_id)
       stats_cache("balloters_by_heading_#{heading_id}") do
         budget.ballots.joins(:lines)
-                      .where(budget_ballot_lines: { heading_id: heading_id })
-                      .distinct.pluck(:user_id)
+              .where(budget_ballot_lines: { heading_id: heading_id })
+              .distinct.pluck(:user_id)
       end
     end
 
@@ -180,7 +192,7 @@ class Budget::Stats
 
     stats_cache(*stats_methods)
 
-    def stats_cache(key, &block)
-      Rails.cache.fetch("budgets_stats/#{budget.id}/#{phases.join}/#{key}/#{version}", &block)
+    def full_cache_key_for(key)
+      "budgets_stats/#{budget.id}/#{phases.join}/#{key}"
     end
 end

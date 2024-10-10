@@ -1,5 +1,5 @@
 class Widget::Feeds::ProcessComponent < ApplicationComponent
-  delegate :image_path_for, to: :helpers
+  use_helpers :image_path_for
   attr_reader :process
 
   def initialize(process)

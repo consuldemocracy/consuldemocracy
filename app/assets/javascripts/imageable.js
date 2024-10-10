@@ -9,7 +9,7 @@
         $("#new_image_link").removeClass("hide");
       });
       $("#nested-image").on("cocoon:before-insert", function() {
-        $(".js-image-attachment").closest(".image").remove();
+        $(".js-image-attachment").closest(".image-fields").remove();
       });
       $("#nested-image").on("cocoon:after-insert", function(e, nested_image) {
         var input;

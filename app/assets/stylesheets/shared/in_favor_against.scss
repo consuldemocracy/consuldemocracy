@@ -1,0 +1,92 @@
+.in-favor-against {
+  @include flex-with-gap($line-height * 0.25);
+
+  @include breakpoint(medium) {
+    @include flex-with-gap($line-height * 0.75);
+  }
+
+  &,
+  .in-favor,
+  .against,
+  form {
+    display: inline-block;
+  }
+
+  button {
+    background: #fff;
+    border-radius: rem-calc(3);
+    color: $dark-gray;
+    display: inline-block;
+    font-size: rem-calc(30);
+    line-height: rem-calc(30);
+    padding: rem-calc(3) rem-calc(6) rem-calc(6);
+    position: relative;
+
+    &[aria-pressed=true] {
+      border-style: inset;
+      border-width: 3px 2px 2px 3px;
+
+      &:active {
+        border-style: outset;
+        border-width: 2px 3px 3px 2px;
+      }
+    }
+
+    &[aria-pressed=false] {
+      border-style: outset;
+      border-width: 2px 3px 3px 2px;
+
+      &:active {
+        border-style: inset;
+        border-width: 3px 2px 2px 3px;
+      }
+    }
+  }
+
+  @mixin like-unlike-icon($icon, $pressed-color) {
+    @include has-fa-icon($icon, regular);
+
+    &:not([disabled]) {
+      cursor: pointer;
+
+      &[aria-pressed=false]:hover,
+      &[aria-pressed=false]:active {
+        @include has-fa-icon($icon, solid);
+      }
+
+      &[aria-pressed=true] {
+        @include has-fa-icon($icon, solid);
+        background: $pressed-color;
+        border-color: $pressed-color;
+        color: #fff;
+
+        &:hover,
+        &:active {
+          @include has-fa-icon($icon, regular);
+        }
+      }
+    }
+  }
+
+  .in-favor button {
+    @include like-unlike-icon(thumbs-up, $like);
+  }
+
+  .against button {
+    @include like-unlike-icon(thumbs-down, $unlike);
+  }
+
+  .percentage {
+    display: inline-block;
+    font-size: $small-font-size;
+    line-height: $line-height * 2;
+    padding-right: calc(#{$line-height} / 2);
+    vertical-align: top;
+
+    @include breakpoint(medium) {
+      display: block;
+      line-height: $line-height;
+      padding-right: 0;
+    }
+  }
+}

@@ -7,7 +7,11 @@ module CommentableActions
   def index
     @resources = resource_model.all
 
-    @resources = @current_order == "recommendations" && current_user.present? ? @resources.recommendations(current_user) : @resources.for_render
+    @resources = if @current_order == "recommendations" && current_user.present?
+                   @resources.recommendations(current_user)
+                 else
+                   @resources.for_render
+                 end
     @resources = @resources.search(@search_terms) if @search_terms.present?
     @resources = @resources.filter_by(@advanced_search_terms)
 
@@ -40,21 +44,6 @@ module CommentableActions
     @resources = @search_terms.present? ? resource_relation.search(@search_terms) : nil
   end
 
-  def create
-    @resource = resource_model.new(strong_params)
-    @resource.author = current_user
-
-    if @resource.save
-      track_event
-      redirect_path = url_for(controller: controller_name, action: :show, id: @resource.id)
-      redirect_to redirect_path, notice: t("flash.actions.create.#{resource_name.underscore}")
-    else
-      load_geozones
-      set_resource_instance
-      render :new
-    end
-  end
-
   def edit
   end
 
@@ -68,23 +57,14 @@ module CommentableActions
     end
   end
 
-  def map
-    @resource = resource_model.new
-    @tag_cloud = tag_cloud
-  end
-
   private
-
-    def track_event
-      ahoy.track "#{resource_name}_created".to_sym, "#{resource_name}_id": resource.id
-    end
 
     def tag_cloud
       TagCloud.new(resource_model, params[:search])
     end
 
     def load_geozones
-      @geozones = Geozone.all.order(name: :asc)
+      @geozones = Geozone.order(name: :asc)
     end
 
     def set_geozone

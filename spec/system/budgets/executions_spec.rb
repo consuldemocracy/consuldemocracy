@@ -76,6 +76,12 @@ describe "Executions" do
     expect(page).to have_content("No winner investments in this state")
   end
 
+  scenario "Back link redirects to budget page" do
+    visit budget_executions_path(budget)
+
+    expect(page).to have_link("Go back", href: budget_path(budget))
+  end
+
   context "Images" do
     scenario "renders milestone image if available" do
       milestone1 = create(:milestone, :with_image, milestoneable: investment1)

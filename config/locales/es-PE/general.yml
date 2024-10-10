@@ -126,7 +126,6 @@ es-PE:
       invalid_date_range: "El rango de fechas no es válido"
   form:
     accept_terms: Eu concordo com a %{policy} e as %{conditions}
-    accept_terms_title: Acepto la Política de privacidad y las Condiciones de uso
     conditions: Condiciones de uso
     debate: Debate previo
     direct_message: el mensaje privado
@@ -139,7 +138,6 @@ es-PE:
     budget/investment: Proyecto de inversión
     budget/heading: la partida presupuestaria
     poll/shift: Turno
-    poll/question/answer: Respuesta
     user: Conta
     verification/sms: el teléfono
     signature_sheet: la hoja de firmas
@@ -149,10 +147,6 @@ es-PE:
   geozones:
     none: Toda a cidade
   layouts:
-    application:
-      firefox: Firefox
-      ie: Nós detectamos que você está navegando com o Internet Explorer. Para uma melhor experiência, nós recomendamos o uso do %{chrome} ou %{firefox}.
-      ie_title: Este website não está otimizado para o seu navegador
     dashboard:
       proposal_header:
         published: Publicada
@@ -163,7 +157,7 @@ es-PE:
     footer:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
-      consul: aplicación CONSUL
+      consul: aplicación CONSUL DEMOCRACY
       description: Este portal usa o %{consul} que é %{open_source}. De Madrid para o mundo.
       open_source: programa de código aberto
       participation_text: Decida como adequar a Madrid que você deseja viver.
@@ -391,7 +385,6 @@ es-PE:
         support_button: Apoyar esta propuesta
   polls:
     all: "Todas"
-    no_dates: "sin fecha asignada"
     dates: "Desde el %{open_at} hasta el %{closed_at}"
     final_date: "Recuento final/Resultados"
     index:
@@ -475,7 +468,6 @@ es-PE:
     author_info:
       author_deleted: Usuario eliminado
     back: Volver
-    check: Seleccionar
     check_all: Todas
     check_none: Nenhum
     collective: Coletivo
@@ -529,18 +521,6 @@ es-PE:
     youtube: "YouTube de %{org}"
     telegram: "Telegram de %{org}"
     instagram: "Instagram de %{org}"
-  stats:
-    index:
-      visits: Visitas
-      debates: Discusiones
-      proposals: Propuestas
-      comments: Comentarios
-      proposal_votes: Votos en propuestas
-      debate_votes: Votos en debates
-      comment_votes: Votos en comentarios
-      votes: Votos
-      verified_users: Usuarios verificados
-      unverified_users: Usuarios sin verificar
   unauthorized:
     default: Você não possui permissão de acesso a esta página.
     manage:

@@ -4,9 +4,13 @@ da:
       title: Administration
     actions:
       actions: Handlinger
+      block_author: "Bloker bruger"
+      confirm_action: "Er du sikker? %{action} \"%{name}\""
+      confirm_delete: "Er du sikker? Denne handling vil slette \"%{name}\" og kan ikke fortrydes."
       confirm_hide: Bekræft moderation
       delete: "Slet"
       hide: Skjul
+      label: "%{action} %{name}"
       restore: Gendan
       mark_featured: Fremhævet
       unmark_featured: Fjern fremhævning
@@ -32,12 +36,18 @@ da:
           budgets: Deltagerbudgetter
           help_page: Hjælp
           sdg: Verdensmål
+      create:
+        notice: "Banner blev oprettet"
+      destroy:
+        notice: "Banner blev slettet"
       edit:
         editing: Rediger banner
         form:
           submit_button: Gem ændringer
       new:
         creating: Opret banner
+      update:
+        notice: "Banner blev opdateret"
     activity:
       show:
         action: Handlinger
@@ -60,6 +70,7 @@ da:
         no_activity: Der er ingen moderator aktivitet.
     budgets:
       actions:
+        ballots: "Lav stemmeboks"
         edit: "Rediger budget"
         preview: "Forhåndsvisning"
       index:
@@ -75,12 +86,16 @@ da:
         table_draft: "Udkast"
         table_name: Navn
         table_phase: Fase
+        type_multiple: "Flere budgetter"
+        type_single: "Enkelt budget"
         admin_ballots: Administrer valgsteder
         no_budgets: "Der er ingen budgetter."
       create:
         notice: Det nye deltagerbudget blev oprettet!
       update:
         notice: Deltagerbudgettet blev opdateret
+      publish:
+        notice: "Deltagerbudget oprettet"
       edit:
         title: Rediger deltagerbudget
         delete: Slet budget
@@ -422,7 +437,6 @@ da:
         title: "Dokumenter"
         format: "Format"
         size: "Størrelse"
-        url: "URL"
       create:
         success_notice: "Dokumentet blev uploadet"
         unable_notice: "Ugyldigt dokument"
@@ -547,7 +561,6 @@ da:
         index:
           title: Kladdeversion
           create: Opret version
-          delete: Slet
           preview: Forhåndsvisning
         new:
           back: Tilbage
@@ -580,7 +593,6 @@ da:
           back: Tilbage
           title: Spørgsmål relateret til denne proces
           create: Stil et spørgsmål
-          delete: Slet
         new:
           back: Tilbage
           title: Stil et nyt spørgsmål
@@ -1297,7 +1309,6 @@ da:
           verified_users_who_didnt_vote_proposals: Verificerede brugere, der ikke stemte på nogle forslag
           visits: Besøg
           votes: Sammenlagt antal stemmer
-        budgets_title: Deltagerbudget
         participatory_budgets: Deltagerbudgetter
         direct_messages: Direkte beskeder
         proposal_notifications: Underretning om forslag
@@ -1306,7 +1317,6 @@ da:
         sdg: Verdensmål
       graph:
         debate_created: Debatforum
-        visit: Besøg
         proposal_created: Borgerforslag
       budgets:
         supporting_phase: Støt de forslag der skal gå videre
@@ -1411,7 +1421,6 @@ da:
         index:
           title: Brugerdefinerede billeder
           update: Opdater
-          delete: Slet
           image: Billede
         update:
           notice: Billedet blev opdateret
@@ -1439,7 +1448,7 @@ da:
           see_page: Vis side
         new:
           title: Opret ny brugerdefineret side
-          slug_help: "Tekst til at identificere siden på URL, for eksempel <code>https://consulproject.org/page-slug</code>"
+          slug_help: "Tekst til at identificere siden på URL, for eksempel <code>https://consuldemocracy.org/page-slug</code>"
         page:
           created_at: Oprettet den
           status: Status

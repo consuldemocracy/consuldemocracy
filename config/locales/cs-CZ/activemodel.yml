@@ -31,7 +31,7 @@ cs:
       verification/residence:
         date_of_birth: "Datum narození"
         document_type: "Typ dokumentu"
-        postal_code: "Psč"
+        postal_code: "PSČ"
       verification/sms:
         confirmation_code: "Zadejte kód, který jste obdrželi na váš mobil"
       officing/residence:
@@ -40,6 +40,9 @@ cs:
         year_of_birth: "Rok narození"
       local_census_records/import:
         file: Soubor
+      setting/locales_settings:
+        default: Výchozí jazyk
+        enabled: Zapnuté jazyky
     errors:
       models:
         local_census_records/import:

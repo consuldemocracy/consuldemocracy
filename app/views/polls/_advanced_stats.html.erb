@@ -7,7 +7,8 @@
     <% stats.channels.each do |channel| %>
       <%= number_with_info_tags(
         stats.send("total_participants_#{channel}"),
-        t("stats.polls.#{channel}_percentage",
+        t(
+          "stats.polls.#{channel}_percentage",
           percentage: number_to_stats_percentage(stats.send(:"total_participants_#{channel}_percentage"))
         ),
         html_class: channel

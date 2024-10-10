@@ -85,6 +85,7 @@ gd:
       title: Beachd luachaidh ùr airson %{investment}
       hi: Haidh
       new_comment_by: Tha beachd luachaidh ùr ann bho <strong>%{commenter}</strong> dhan tasgadh buidseit %{investment}
+      commenter_info: "%{commenter}, %{time}:"
     machine_learning_error:
       link: "Tadhail air pannal Ionnsachadh Inneil"
       subject: "Ionnsachadh Inneill - Thachair mearachd le bhith a’ ruith an sgriobt"

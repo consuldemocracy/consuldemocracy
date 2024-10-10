@@ -7,9 +7,9 @@
       <%= f.hidden_field :document_type %>
       <%= f.hidden_field :document_number %>
       <%= f.text_field :username,
-          label: t("management.username_label") %>
+                       label: t("management.username_label") %>
       <%= f.text_field :email,
-          label: t("management.users.email_optional_label") %>
+                       label: t("management.users.email_optional_label") %>
       <div class="date-of-birth">
         <%= f.date_select :date_of_birth,
                           prompt: true,
@@ -24,7 +24,7 @@
 <div class="small-12 medium-6 column">
   <div class="callout">
     <%= render "management/user_permissions",
-                message: t("management.document_verifications.in_census_has_following_permissions"),
-                user: @user %>
+               message: t("management.document_verifications.in_census_has_following_permissions"),
+               user: @user %>
   </div>
 </div>

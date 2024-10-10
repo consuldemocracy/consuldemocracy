@@ -16,6 +16,26 @@ describe "Polymorphic routes" do
       expect(polymorphic_path(proposal)).to eq legislation_process_proposal_path(process, proposal)
     end
 
+    it "routes legislation proposals vote" do
+      process = create(:legislation_process)
+      proposal = create(:legislation_proposal, process: process)
+      path = polymorphic_path(Vote.new(votable: proposal), value: true)
+
+      expect(path).to eq legislation_process_legislation_proposal_votes_path(process, proposal, value: true)
+    end
+
+    it "routes legislation proposals remove vote" do
+      process = create(:legislation_process)
+      proposal = create(:legislation_proposal, process: process)
+      vote = create(:vote, votable: proposal)
+      path = polymorphic_path(vote, value: true)
+
+      expect(path).to eq legislation_process_legislation_proposal_vote_path(process,
+                                                                            proposal,
+                                                                            vote,
+                                                                            value: true)
+    end
+
     it "routes legislation questions" do
       process = create(:legislation_process)
       question = create(:legislation_question, process: process)
@@ -31,12 +51,6 @@ describe "Polymorphic routes" do
       expect(polymorphic_path(annotation)).to eq(
         legislation_process_draft_version_annotation_path(process, draft_version, annotation)
       )
-    end
-
-    it "routes poll questions" do
-      question = create(:poll_question)
-
-      expect(polymorphic_path(question)).to eq question_path(question)
     end
 
     it "routes topics" do
@@ -94,10 +108,10 @@ describe "Polymorphic routes" do
       expect(admin_polymorphic_path(question)).to eq(admin_question_path(question))
     end
 
-    it "routes poll answer videos" do
-      video = create(:poll_answer_video)
+    it "routes poll option videos" do
+      video = create(:poll_option_video)
 
-      expect(admin_polymorphic_path(video)).to eq admin_answer_video_path(video.answer, video)
+      expect(admin_polymorphic_path(video)).to eq admin_option_video_path(video.option, video)
     end
 
     it "routes milestones for resources with no hierarchy" do

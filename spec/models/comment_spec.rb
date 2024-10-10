@@ -101,23 +101,23 @@ describe Comment do
 
     it "expires cache when the author is hidden" do
       expect { comment.user.hide }
-      .to change { [comment.reload.cache_version, comment.author.cache_version] }
+        .to change { [comment.reload.cache_version, comment.author.cache_version] }
     end
 
     it "expires cache when the author is erased" do
       expect { comment.user.erase }
-      .to change { [comment.reload.cache_version, comment.author.cache_version] }
+        .to change { [comment.reload.cache_version, comment.author.cache_version] }
     end
 
     it "expires cache when the author changes" do
       expect { comment.user.update(username: "Isabel") }
-      .to change { [comment.reload.cache_version, comment.author.cache_version] }
+        .to change { [comment.reload.cache_version, comment.author.cache_version] }
     end
 
     it "expires cache when the author's organization get verified" do
       create(:organization, user: comment.user)
       expect { comment.user.organization.verify }
-      .to change { [comment.reload.cache_version, comment.author.cache_version] }
+        .to change { [comment.reload.cache_version, comment.author.cache_version] }
     end
   end
 
@@ -175,8 +175,14 @@ describe Comment do
       expect(Comment.public_for_api).to be_empty
     end
 
-    it "does not return comments on elements which are not debates or proposals" do
-      create(:comment, commentable: create(:budget_investment))
+    it "returns comments on budget investments" do
+      comment = create(:comment, commentable: create(:budget_investment))
+
+      expect(Comment.public_for_api).to eq [comment]
+    end
+
+    it "does not return comments on elements which are not debates, proposals or budget investments" do
+      create(:comment, commentable: create(:topic))
 
       expect(Comment.public_for_api).to be_empty
     end

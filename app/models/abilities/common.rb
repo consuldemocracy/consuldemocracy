@@ -71,34 +71,35 @@ module Abilities
       can [:create, :destroy], Follow, user_id: user.id
 
       can [:destroy], Document do |document|
-        document.documentable_type != "Poll::Question::Answer" && document.documentable&.author_id == user.id
+        document.documentable_type != "Poll::Question::Option" && document.documentable&.author_id == user.id
       end
 
       can [:destroy], Image do |image|
-        image.imageable_type != "Poll::Question::Answer" && image.imageable&.author_id == user.id
+        image.imageable_type != "Poll::Question::Option" && image.imageable&.author_id == user.id
       end
 
       can [:create, :destroy], DirectUpload
 
       unless user.organization?
-        can :vote, Debate
-        can :vote, Comment
+        can [:create, :destroy], ActsAsVotable::Vote, voter_id: user.id, votable_type: "Debate"
+        can [:create, :destroy], ActsAsVotable::Vote, voter_id: user.id, votable_type: "Comment"
       end
 
       if user.level_two_or_three_verified?
         can :vote, Proposal, &:published?
 
-        can :vote, Legislation::Proposal
+        can [:create, :destroy], ActsAsVotable::Vote, voter_id: user.id, votable_type: "Legislation::Proposal"
+
         can :create, Legislation::Answer
 
-        can :create, Budget::Investment,               budget: { phase: "accepting" }
-        can :update, Budget::Investment,               budget: { phase: "accepting" }, author_id: user.id
-        can :suggest, Budget::Investment,              budget: { phase: "accepting" }
-        can :destroy, Budget::Investment,              budget: { phase: ["accepting", "reviewing"] }, author_id: user.id
+        can :create, Budget::Investment,  budget: { phase: "accepting" }
+        can :update, Budget::Investment,  budget: { phase: "accepting" }, author_id: user.id
+        can :suggest, Budget::Investment, budget: { phase: "accepting" }
+        can :destroy, Budget::Investment, budget: { phase: ["accepting", "reviewing"] }, author_id: user.id
         can [:create, :destroy], ActsAsVotable::Vote,
-          voter_id: user.id,
-          votable_type: "Budget::Investment",
-          votable: { budget: { phase: "selecting" }}
+            voter_id: user.id,
+            votable_type: "Budget::Investment",
+            votable: { budget: { phase: "selecting" }}
 
         can [:show, :create], Budget::Ballot,          budget: { phase: "balloting" }
         can [:create, :destroy], Budget::Ballot::Line, budget: { phase: "balloting" }

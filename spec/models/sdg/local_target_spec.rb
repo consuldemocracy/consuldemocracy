@@ -25,14 +25,18 @@ describe SDG::LocalTarget do
     local_target = build(:sdg_local_target, code: "1.6.1", target: SDG::Target[1.1])
 
     expect(local_target).not_to be_valid
-    expect(local_target.errors.full_messages).to include "Code must start with the same code as its target followed by a dot and end with a number"
+    expect(local_target.errors.full_messages).to include "Code must start with the same " \
+                                                         "code as its target followed by " \
+                                                         "a dot and end with a number"
   end
 
   it "is not valid when local target code part is not a number" do
     local_target = build(:sdg_local_target, code: "1.1.A", target: SDG::Target[1.1])
 
     expect(local_target).not_to be_valid
-    expect(local_target.errors.full_messages).to include "Code must start with the same code as its target followed by a dot and end with a number"
+    expect(local_target.errors.full_messages).to include "Code must start with the same " \
+                                                         "code as its target followed by " \
+                                                         "a dot and end with a number"
   end
 
   it "is not valid if code is not unique" do

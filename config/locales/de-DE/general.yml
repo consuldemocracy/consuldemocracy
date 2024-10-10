@@ -134,11 +134,15 @@ de:
         submit_button: Änderungen speichern
   errors:
     messages:
+      allowed_file_content_types: "Inhaltstyp muss einer von %{types} sein."
       user_not_found: Benutzer*in wurde nicht gefunden
       invalid_date_range: "Ungültiger Datenbereich"
+      past_date: "Darf kein vergangenes Datum sein."
+      cannot_change_date:
+        poll_started: "Kann nicht geändert werden, wenn die Abstimmung bereits begonnen hat."
+        poll_ended: "Kann nicht geändert werden, wenn die Abstimmung bereits beendet ist."
   form:
     accept_terms: Ich stimme der %{policy} und den %{conditions} zu
-    accept_terms_title: Ich stimme den Datenschutzrichtlinien und den Nutzungsbedingungen zu
     conditions: Allgemeine Nutzungsbedingungen
     debate: Diskussion
     direct_message: Private Nachricht
@@ -157,7 +161,6 @@ de:
     legislation/process: Beteiligungsverfahren
     legislation/question: Frage
     poll/shift: Arbeitsschicht
-    poll/question/answer: Antwort
     user: Konto
     verification/sms: Telefon
     signature_sheet: Unterschriftenblatt
@@ -172,11 +175,6 @@ de:
   geozones:
     none: Ganze Stadt
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Wir haben festgestellt, dass Sie Internet Explorer verwenden. Für eine verbesserte Anwendung empfehlen wir %{firefox} oder %{chrome}.
-      ie_title: Diese Website ist für Ihren Browser nicht optimiert
     dashboard:
       proposal_header:
         published: Veröffentlicht
@@ -195,9 +193,9 @@ de:
     footer:
       accessibility: Barrierefreiheit
       conditions: Allgemeine Nutzungsbedingungen
-      consul: CONSUL Anwendung
-      consul_url: https://github.com/consul/consul
-      copyright: CONSUL, %{year}
+      consul: CONSUL DEMOCRACY Anwendung
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Die Plattform basiert auf %{consul}, einer %{open_source}.
       open_source: Open-Source Software
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
@@ -388,6 +386,7 @@ de:
         view_proposal: Nicht jetzt. Gehe zu meinem Vorschlag
       already_supported: Sie haben diesen Vorschlag bereits unterstützt. Teilen Sie ihn!
       support: Unterstützung
+      support_label: "Unterstützung %{proposal}"
       support_title: Vorschlag unterstützen
       supports:
         zero: Keine Unterstützer*innen
@@ -566,7 +565,6 @@ de:
         share: "Sie würden mir einen großen Gefallen tun, wenn Sie meinen Vorschlag mit Ihren Freunden, Familie und Kontakten teilen - das wäre perfekt!"
   polls:
     all: "Alle"
-    no_dates: "kein Datum zugewiesen"
     dates: "Von %{open_at} bis %{closed_at}"
     final_date: "Endgültige Nachzählungen/Ergebnisse"
     index:
@@ -629,6 +627,10 @@ de:
     show:
       vote_answer: "Für %{answer} abstimmen"
       voted: "Sie haben für %{answer} abgestimmt"
+    description:
+      unique: "Sie können maximal 1 Antwort auswählen."
+      multiple: "Sie können maximal %{maximum} Antworten auswählen."
+    read_more_about: "Lesen Sie mehr über:"
   proposal_notifications:
     new:
       title: "Nachricht senden"
@@ -667,7 +669,6 @@ de:
       author_deleted: Benutzer*in gelöscht
       email_deleted: E-Mail gelöscht
     back: Zurück
-    check: Auswählen
     check_all: Alle
     check_none: Keinen
     collective: Kollektiv
@@ -742,24 +743,16 @@ de:
         zero: "O verwendete Sprachen "
         one: "1 verwendete Sprachen"
         other: "%{count} verwendete Sprachen"
+    optional: "Optionale Felder"
+    required: "Erforderliche Felder"
+    comments:
+      zero: "Keine Kommentare"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegramm"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Besuche
-      debates: Diskussionen
-      proposals: Vorschläge
-      comments: Kommentare
-      proposal_votes: Bewertungen der Vorschläge
-      debate_votes: Bewertungen der Diskussionen
-      comment_votes: Bewertungen der Kommentare
-      votes: Gesamtstimmen
-      verified_users: Verifizierte Benutzer*innen
-      unverified_users: Nicht verifizierte Benutzer*innen
   unauthorized:
     default: Sie sind nicht berechtigt, auf diese Seite zuzugreifen.
     manage:
@@ -819,8 +812,10 @@ de:
       retired_help_text: Dashboard nicht verfügbar für zurückgezogene Vorschläge
   votes:
     agree: Ich stimme zu
+    agree_label: "Ich stimme %{title} zu."
     anonymous: Zu viele anonyme Stimmen, um die Wahl anzuerkennen %{verify_account}.
     disagree: Ich stimme nicht zu
+    disagree_label: "Ich stimme %{title} nicht zu."
     organizations: Organisationen ist es nicht erlaubt abzustimmen
     supports: Unterstützer*innen
     verified_only: 'Nur verifizierte Benutzer können Vorschläge bewerten: %{verify_account}.'
@@ -879,6 +874,7 @@ de:
     help: "Sie können Links von %{models} innerhalb des %{org} hinzufügen."
     submit: "Hinzufügen"
     error: "Ungültiger Link. Starten Sie mit %{url}."
+    error_duplicate: "Der verwandte Inhalt, den Sie hinzufügen, existiert bereits."
     error_itself: "Ungültiger Link. Sie können einen Inhalt nicht auf sich selbst beziehen."
     success: "Sie haben einen neuen verwandten Inhalt hinzugefügt"
     is_related: "Ist der Inhalt verknüpft?"
@@ -924,3 +920,6 @@ de:
         more:
           one: "Einen Tag mehr"
           other: "%{count} mehr Tags"
+  machine_learning:
+    comments_summary: "Zusammenfassung der Kommentare"
+    info_text: "Durch KI/Maschinelles Lernen generierte Inhalte"

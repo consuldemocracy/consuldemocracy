@@ -33,3 +33,12 @@ ar:
         document_type: "نوع الوثيقة"
         document_number: "رقم المستند (بما في ذلك الاحرف)"
         year_of_birth: "عام الولادة"
+      local_census_records/import:
+        file: مِلَفّ
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "نموذج الملف المعطى خاطئ. النموذج المسموح به هو: %{valid_extensions}."
+              headers: "العناوين الرئيسية للملف خاطئة, إذ أنها يجب أن تتوفر على الأسماء التالية: %{required_headers}."

@@ -16,9 +16,7 @@ class Lock < ApplicationRecord
   end
 
   def too_many_tries?
-    return false unless tries > 0
-
-    tries % Lock.max_tries == 0
+    tries > 0 && tries % Lock.max_tries == 0
   end
 
   def self.increase_tries(user)

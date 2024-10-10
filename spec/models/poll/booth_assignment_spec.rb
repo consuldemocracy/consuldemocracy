@@ -12,8 +12,8 @@ describe Poll::BoothAssignment do
     create(:poll_officer_assignment, officer: officer, booth_assignment: assignment_with_shifts)
     create(:poll_shift, booth: booth, officer: officer)
 
-    expect(assignment_with_shifts.shifts?).to eq(true)
-    expect(assignment_without_shifts.shifts?).to eq(false)
+    expect(assignment_with_shifts.shifts?).to be true
+    expect(assignment_without_shifts.shifts?).to be false
   end
 
   it "deletes shifts associated to booth assignments" do
@@ -24,6 +24,6 @@ describe Poll::BoothAssignment do
 
     assignment.destroy!
 
-    expect(Poll::Shift.all.count).to eq(0)
+    expect(Poll::Shift.count).to eq 0
   end
 end

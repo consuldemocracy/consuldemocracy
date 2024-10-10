@@ -93,9 +93,11 @@ describe Newsletter do
     end
 
     it "sends batches in time intervals" do
-      allow(newsletter).to receive(:batch_size).and_return(1)
-      allow(newsletter).to receive(:batch_interval).and_return(1.second)
-      allow(newsletter).to receive(:first_batch_run_at).and_return(Time.current)
+      allow(newsletter).to receive_messages(
+        batch_size: 1,
+        batch_interval: 1.second,
+        first_batch_run_at: Time.current
+      )
 
       newsletter.deliver
 

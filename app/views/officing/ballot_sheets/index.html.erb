@@ -13,7 +13,7 @@
       <% @ballot_sheets.each do |ballot_sheet| %>
         <tr id="<%= dom_id(ballot_sheet) %>" class="ballot_sheet">
           <td><%= link_to t("officing.poll_budgets.index.ballot_sheet", id: ballot_sheet.id),
-                         officing_poll_ballot_sheet_path(@poll.id, ballot_sheet.id) %></td>
+                          officing_poll_ballot_sheet_path(@poll.id, ballot_sheet.id) %></td>
           <td><%= ballot_sheet.author %></td>
           <td><%= l(ballot_sheet.created_at, format: :long) %></td>
         </tr>

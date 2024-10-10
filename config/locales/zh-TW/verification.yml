@@ -42,7 +42,6 @@ zh-TW:
           success: 居住地已核實
       new:
         accept_terms_text: 我接受人口普查的%{terms_url}
-        accept_terms_text_title: 我接受訪問人口普查的條款和條件
         document_number: 文檔編號
         document_number_help_title: 說明
         document_number_help_text: "<strong>DNI</strong>：12345678A <br> <strong>護照</strong>：AAA000001 <br> <strong>居留證</strong>：X1234567P"

@@ -1,0 +1,36 @@
+ja:
+  activemodel:
+    models:
+      verification:
+        residence: "住居"
+        sms: "SMS"
+    attributes:
+      verification:
+        residence:
+          date_of_birth: "生年月日"
+          postal_code: "郵便番号"
+        sms:
+          phone: "電話番号"
+          confirmation_code: "確認コード"
+        email:
+          recipient: "メールアドレス"
+      verification/letter:
+        email: "メールアドレス"
+        password: "パスワード"
+        verification_code: "手紙で受け取ったコード"
+      verification/residence:
+        date_of_birth: "生年月日"
+        postal_code: "郵便番号"
+      verification/sms:
+        confirmation_code: "携帯電話で受け取ったコードを入力してください。"
+      officing/residence:
+        year_of_birth: "生まれた年"
+      local_census_records/import:
+        file: ファイル
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "ファイルの形式が間違っています。許可されたファイル形式は: %{valid_extensions}"
+              headers: "ファイルのヘッダーが間違っています。ファイルのヘッダーはこのような名前でなければなりません: %{required_headers}"

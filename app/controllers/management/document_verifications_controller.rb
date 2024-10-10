@@ -15,7 +15,9 @@ class Management::DocumentVerificationsController < Management::BaseController
       elsif @document_verification.user?
         render :new
       elsif @document_verification.in_census?
-        redirect_to new_management_email_verification_path(email_verification: document_verification_params.to_h)
+        redirect_to new_management_email_verification_path(
+          email_verification: document_verification_params.to_h
+        )
       else
         render :invalid_document
       end
@@ -49,6 +51,8 @@ class Management::DocumentVerificationsController < Management::BaseController
     def clean_document_number
       return if params[:document_verification][:document_number].blank?
 
-      params[:document_verification][:document_number] = params[:document_verification][:document_number].gsub(/[^a-z0-9]+/i, "").upcase
+      params[:document_verification][:document_number] = params[:document_verification][:document_number]
+                                                         .gsub(/[^a-z0-9]+/i, "")
+                                                         .upcase
     end
 end

@@ -19,7 +19,6 @@
 // 20. Documents
 // 21. Related content
 // 22. Images
-// 23. Maps
 // 24. Homepage
 // 25. LocalCensusRecords
 //
@@ -103,20 +102,20 @@ button,
 [type="button"],
 [type="submit"] {
   &:focus {
-    outline: $outline-focus;
+    @include focus-outline;
   }
 
   &:focus-visible {
-    outline: $outline-focus;
+    @include focus-outline;
   }
 
   &:focus:not(:focus-visible) {
-    outline: none;
+    @include no-outline;
   }
 
   &:active,
   &:focus:active {
-    outline: $outline-focus;
+    @include focus-outline;
   }
 }
 
@@ -224,26 +223,15 @@ button,
   color: $check;
 }
 
-.ie-callout {
-  position: absolute;
-  top: 0;
-  width: 100%;
-
-  .close {
-    font-size: rem-calc(34);
-    top: 20%;
-  }
-}
-
 .menu.simple {
   border-bottom: 1px solid $border;
   clear: both;
-  margin-bottom: $line-height / 2;
+  margin-bottom: calc(#{$line-height} / 2);
 
   li {
     font-size: $base-font-size;
     margin-bottom: 0;
-    margin-right: $line-height / 2;
+    margin-right: calc(#{$line-height} / 2);
 
     @include breakpoint(medium) {
       margin-right: $line-height * 1.5;
@@ -268,7 +256,7 @@ button,
     }
 
     &:not(.is-active) {
-      margin-bottom: $line-height / 3;
+      margin-bottom: calc(#{$line-height} / 3);
     }
   }
 
@@ -326,7 +314,7 @@ button,
 }
 
 .close-button {
-  top: $line-height / 2;
+  top: calc(#{$line-height} / 2);
 }
 
 .back,
@@ -334,7 +322,7 @@ button,
   clear: both;
   color: $text-medium;
   display: inline-block;
-  padding-right: $line-height / 2;
+  padding-right: calc(#{$line-height} / 2);
 }
 
 .back:not([class^="icon-"]) {
@@ -390,7 +378,7 @@ button,
 }
 
 .button.float-right ~ .button.float-right {
-  margin: 0 $line-height / 2;
+  margin: 0 calc(#{$line-height} / 2);
 }
 
 .pagination .current {
@@ -444,8 +432,8 @@ button,
 
     > nav {
       flex: 20%;
-      min-width: $side-menu-min-width;
       max-width: max-content;
+      min-width: $side-menu-min-width;
 
       + * {
         flex: 80%;
@@ -517,6 +505,10 @@ body > header,
   .external-links {
     padding: rem-calc(6) 0;
     text-align: center;
+  }
+
+  h1 a {
+    color: inherit;
   }
 }
 
@@ -651,13 +643,13 @@ body > header,
 .submenu {
   border-bottom: 1px solid $border;
   clear: both;
-  margin-bottom: $line-height / 2;
+  margin-bottom: calc(#{$line-height} / 2);
 
   a {
     @include text-colored-link;
     display: inline-block;
     font-weight: bold;
-    margin-right: $line-height / 2;
+    margin-right: calc(#{$line-height} / 2);
     position: relative;
     text-align: left;
 
@@ -745,7 +737,29 @@ footer {
 .subfooter {
   border-top: 1px solid $text-light;
   font-size: $small-font-size;
-  padding-top: $line-height / 2;
+  padding-top: calc(#{$line-height} / 2);
+
+  .legal {
+    display: inline-block;
+    margin-#{$global-left}: 0;
+
+    &::before {
+      content: "|";
+    }
+
+    li {
+      display: inline-block;
+
+      &::after {
+        content: "|";
+        margin-left: 4px;
+      }
+
+      &:last-child::after {
+        content: none;
+      }
+    }
+  }
 }
 
 // 04. Tags
@@ -774,8 +788,8 @@ footer {
   display: inline-block;
   font-size: rem-calc(16);
   font-weight: bold;
-  margin: -1px 0 $line-height / 2;
-  padding-top: $line-height / 4;
+  margin: -1px 0 calc(#{$line-height} / 2);
+  padding-top: calc(#{$line-height} / 4);
   text-transform: uppercase;
 }
 
@@ -836,9 +850,9 @@ footer {
     background: $body-background;
     box-decoration-break: clone;
     font-weight: bold;
-    padding: 0 $line-height / 2;
+    padding: 0 calc(#{$line-height} / 2);
     position: relative;
-    top: -$line-height / 2;
+    top: calc(#{-$line-height} / 2);
   }
 }
 
@@ -894,7 +908,7 @@ form {
   }
 
   [type=file] {
-    margin: $line-height / 2 0 $line-height / 2 $line-height / 4;
+    margin: calc(#{$line-height} / 2) 0 calc(#{$line-height} / 2) calc(#{$line-height} / 4);
   }
 
   .cke {
@@ -1020,7 +1034,7 @@ form {
   background: $alert-bg;
   color: $color-alert;
   display: inline-block;
-  margin: 0 $line-height / 4;
+  margin: 0 calc(#{$line-height} / 4);
 
   a {
     color: $color-alert;
@@ -1042,7 +1056,7 @@ form {
 
   select {
     height: $line-height * 2;
-    margin-right: $line-height / 2;
+    margin-right: calc(#{$line-height} / 2);
   }
 
   .final-votes-info {
@@ -1050,10 +1064,10 @@ form {
     border: 1px solid $warning-border;
     color: $color-warning;
     margin-top: $line-height;
-    padding: $line-height / 2;
+    padding: calc(#{$line-height} / 2);
 
     ul li {
-      margin: $line-height / 2 0;
+      margin: calc(#{$line-height} / 2) 0;
     }
 
     .icon-box {
@@ -1078,8 +1092,8 @@ form {
   color: rgba(0, 0, 0, 0.4);
   display: inline-block;
   font-size: rem-calc(32);
-  line-height: rem-calc(32);
   height: rem-calc(32);
+  line-height: rem-calc(32);
   vertical-align: top;
 }
 
@@ -1100,9 +1114,9 @@ form {
 .notification {
   border: 1px solid $border;
   display: block;
-  margin-bottom: $line-height / 4;
+  margin-bottom: calc(#{$line-height} / 4);
   margin-left: $line-height;
-  padding: $line-height / 2 $line-height;
+  padding: calc(#{$line-height} / 2) $line-height;
   position: relative;
 
   @include breakpoint(medium) {
@@ -1125,6 +1139,7 @@ form {
 
   .notification-link {
     @include text-colored-link;
+    display: inline-block;
   }
 
   &:hover {
@@ -1158,8 +1173,8 @@ form {
   }
 
   .time {
-    font-size: $small-font-size;
     color: $text-medium;
+    font-size: $small-font-size;
   }
 }
 
@@ -1215,7 +1230,7 @@ table {
 
     td {
       line-height: $line-height;
-      padding: $line-height / 2 $line-height / 4;
+      padding: calc(#{$line-height} / 2) calc(#{$line-height} / 4);
     }
 
     &:nth-child(odd) {
@@ -1269,35 +1284,6 @@ table {
   }
 }
 
-.social-share-button .ssb-icon {
-  background-image: none;
-  color: #fff;
-  height: $icon-width;
-  line-height: $icon-width;
-  text-align: center;
-  width: $icon-width;
-
-  &::before {
-    font-size: $icon-width / 2;
-    margin-right: 0;
-  }
-
-  &:hover,
-  &:focus {
-    background: #fff;
-  }
-}
-
-.ssb-twitter {
-  @include has-fa-icon(twitter, brands);
-  background: #45b0e3;
-
-  &:hover,
-  &:focus {
-    color: #40a2d1;
-  }
-}
-
 .button.button-facebook {
   @include has-fa-icon(facebook-f, brands);
   background: #ebeef4;
@@ -1305,16 +1291,6 @@ table {
 
   &::before {
     color: #3b5998;
-  }
-}
-
-.ssb-facebook {
-  @include has-fa-icon(facebook-f, brands);
-  background: #3b5998;
-
-  &:hover,
-  &:focus {
-    color: #354f88;
   }
 }
 
@@ -1338,42 +1314,6 @@ table {
   }
 }
 
-.ssb-telegram {
-  @include has-fa-icon(telegram-plane, brands);
-  background: #08c;
-
-  &:hover,
-  &:focus {
-    color: #40a2d1;
-  }
-}
-
-.ssb-whatsapp_app {
-  @include has-fa-icon(whatsapp, brands);
-  background: #43d854;
-
-  &:hover,
-  &:focus {
-    color: #43d854;
-  }
-}
-
-@include breakpoint(medium) {
-
-  .ssb-telegram,
-  .ssb-whatsapp_app {
-    display: none !important;
-  }
-}
-
-.share-supported {
-  text-align: center;
-
-  .social-share-button {
-    display: inline-block;
-  }
-}
-
 // 14. Verification
 // ----------------
 
@@ -1381,7 +1321,7 @@ table {
 
   @include breakpoint(medium) {
     .left + .left {
-      margin-left: $line-height / 2;
+      margin-left: calc(#{$line-height} / 2);
     }
   }
 
@@ -1413,7 +1353,7 @@ table {
     background: #f6f6f6;
     font-weight: bold;
     line-height: rem-calc(20);
-    padding-top: $line-height / 4;
+    padding-top: calc(#{$line-height} / 4);
     text-transform: uppercase;
     vertical-align: top;
 
@@ -1445,7 +1385,7 @@ table {
 
   .button + form {
     display: inline-block;
-    margin-left: $line-height / 2;
+    margin-left: calc(#{$line-height} / 2);
   }
 
   .verification-list {
@@ -1494,7 +1434,7 @@ table {
       color: $color-info;
       font-size: rem-calc(24);
       margin-left: -27px;
-      padding: 0 $line-height / 2;
+      padding: 0 calc(#{$line-height} / 2);
       position: absolute;
       top: -12px;
     }
@@ -1508,8 +1448,8 @@ table {
   padding-bottom: $line-height * 4;
 
   h2 {
-    margin: 0;
     font-weight: bold;
+    margin: 0;
 
     span {
       font-size: rem-calc(18);
@@ -1525,7 +1465,7 @@ table {
 
   .comment {
     line-height: $list-lineheight;
-    margin: $line-height / 4 0;
+    margin: calc(#{$line-height} / 4) 0;
     position: relative;
 
     p {
@@ -1543,8 +1483,9 @@ table {
 .comment-body,
 .notification-body {
 
-  img {
-    margin-right: $line-height / 2;
+  img,
+  svg {
+    margin-#{$global-right}: calc(#{$line-height} / 2);
   }
 
   .reply {
@@ -1552,8 +1493,8 @@ table {
     border-left: 0;
     border-right: 0;
     font-size: $small-font-size;
-    margin: $line-height / 4 0;
-    padding: $line-height / 4;
+    margin: calc(#{$line-height} / 4) 0;
+    padding: calc(#{$line-height} / 4);
     position: relative;
 
     &:empty {
@@ -1566,7 +1507,7 @@ table {
     }
 
     .comment-form form {
-      margin-top: $line-height / 2;
+      margin-top: calc(#{$line-height} / 2);
     }
   }
 
@@ -1614,9 +1555,9 @@ table {
   }
 
   .comment-user {
-    margin-top: $line-height / 4;
-    padding: $line-height / 4 0;
+    margin-top: calc(#{$line-height} / 4);
     overflow: hidden;
+    padding: calc(#{$line-height} / 4) 0;
 
     &.level-1,
     &.level-2,
@@ -1627,7 +1568,7 @@ table {
     &.is-admin,
     &.is-moderator {
       background: rgba(70, 219, 145, 0.3);
-      padding: $line-height / 4 $line-height / 2;
+      padding: calc(#{$line-height} / 4) calc(#{$line-height} / 2);
     }
 
     &.level-1 {
@@ -1647,7 +1588,7 @@ table {
 }
 
 .comment-list {
-  margin: $line-height / 4 0;
+  margin: calc(#{$line-height} / 4) 0;
 
   .comment-list {
     border-left: 1px dashed $border;
@@ -1680,7 +1621,7 @@ table {
 
   button,
   form {
-    color: $text-light;
+    color: $dark-gray;
     display: inline-block;
   }
 
@@ -1692,20 +1633,30 @@ table {
     }
   }
 
-  .in-favor button {
-    @include has-fa-icon(thumbs-up, solid);
+  @mixin like-unlike-icon($icon, $pressed-color) {
+    @include has-fa-icon($icon, regular);
 
-    &:hover {
-      color: $like;
+    &[aria-pressed=false]:hover,
+    &[aria-pressed=true]:not(:hover) {
+      @include has-fa-icon($icon, solid);
+    }
+
+    &[aria-pressed=true] {
+      color: $pressed-color;
     }
   }
 
-  .against button {
-    @include has-fa-icon(thumbs-down, solid);
+  .in-favor,
+  .against {
+    display: inline;
+  }
 
-    &:hover {
-      color: $unlike;
-    }
+  .in-favor button {
+    @include like-unlike-icon(thumbs-up, $like);
+  }
+
+  .against button {
+    @include like-unlike-icon(thumbs-down, $unlike);
   }
 }
 
@@ -1758,7 +1709,7 @@ table {
 .public-interests {
 
   li {
-    margin-right: $line-height / 4;
+    margin-right: calc(#{$line-height} / 4);
 
     span {
       background: none;
@@ -1771,10 +1722,10 @@ table {
 
   .follow-list {
     list-style-type: circle;
-    padding: $line-height / 2;
+    padding: calc(#{$line-height} / 2);
 
     li {
-      margin-bottom: $line-height / 2;
+      margin-bottom: calc(#{$line-height} / 2);
       margin-left: $line-height;
     }
   }
@@ -1836,7 +1787,7 @@ table {
   }
 
   .card {
-    padding: $line-height / 2;
+    padding: calc(#{$line-height} / 2);
 
     .card {
       border: 0;
@@ -1888,9 +1839,9 @@ table {
     }
 
     h4 {
-      margin-top: 0;
-      margin-bottom: $line-height;
       font-size: rem-calc(18);
+      margin-bottom: $line-height;
+      margin-top: 0;
       min-height: 0;
     }
 
@@ -1923,9 +1874,9 @@ table {
     .proposals-inner,
     .budget-investments-inner {
       border: 1px solid $border;
-      padding: $line-height;
       margin-right: $line-height;
       max-height: rem-calc(500);
+      padding: $line-height;
 
       @include breakpoint(small) {
         max-height: rem-calc(600);
@@ -1950,7 +1901,7 @@ table {
   background: #fafafa;
   margin-bottom: $line-height;
   margin-top: rem-calc(-25);
-  padding: $line-height 0 $line-height / 2;
+  padding: $line-height 0 calc(#{$line-height} / 2);
 
   @include breakpoint(medium) {
     padding-top: 0;
@@ -1974,13 +1925,15 @@ table {
   }
 
   .recommendation {
+    @include card;
     background: $body-background;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
     display: block;
-    margin-bottom: $line-height / 4;
-    padding: $line-height / 2;
+    margin-bottom: calc(#{$line-height} / 4);
+    padding: calc(#{$line-height} / 2);
+    z-index: 1;
 
-    &:hover {
+    &:hover:not(:focus-within) {
       box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.15);
     }
   }
@@ -1991,75 +1944,26 @@ table {
   position: absolute;
   right: 12px;
   top: -18px;
+  z-index: 2;
 }
 
 // 20. Documents
 // -------------
 
-.documents {
-
-  h2 {
-    font-size: rem-calc(24);
-
-    span {
-      color: #4f4f4f;
-      font-weight: normal;
-    }
-  }
-
-  ul li {
-    padding-top: $line-height / 2;
-
-    &:not(:first-child) {
-      border-top: 1px solid $highlight;
-    }
-  }
-
-  .document-link {
-    background: $highlight-soft;
-    border: 2px solid $highlight;
-    border-radius: rem-calc(5);
-    display: block;
-    margin: $line-height / 2 0;
-    padding: $line-height / 2;
-    position: relative;
-
-    .icon-document {
-      color: #007bb7;
-      display: inline-block;
-      font-size: rem-calc(24);
-      line-height: $line-height;
-      vertical-align: middle;
-    }
-
-    p {
-      margin-bottom: 0;
-    }
-  }
-}
-
-.document-link a {
-  word-wrap: break-word;
-}
-
 .additional-document-link {
   background: $highlight-soft;
   border: 1px solid $highlight;
   display: block;
-  margin: $line-height / 2 0;
-  padding: $line-height / 2;
+  margin: calc(#{$line-height} / 2) 0;
+  padding: calc(#{$line-height} / 2);
   position: relative;
 
   a {
     word-wrap: break-word;
   }
 
-  .icon-document {
-    color: #007bb7;
-    display: inline-block;
-    font-size: rem-calc(24);
-    line-height: $line-height;
-    vertical-align: middle;
+  > :first-child {
+    @include has-fa-icon(file, regular);
   }
 }
 
@@ -2146,52 +2050,10 @@ table {
 
     &::before {
       $button-padding-left: nth($button-padding, 2);
-      margin-left: -$button-padding-left / 2;
-      margin-right: $button-padding-left / 2;
+      margin-left: calc(#{-$button-padding-left} / 2);
+      margin-right: calc(#{$button-padding-left} / 2);
     }
   }
-}
-
-// 23. Maps
-// -----------------
-
-.location-map-remove-marker {
-  border-bottom: 1px dotted #cf2a0e;
-  color: $delete;
-  display: inline-block;
-  margin-top: $line-height / 2;
-
-  &:hover,
-  &:active,
-  &:focus {
-    border-bottom-style: solid;
-    color: #cf2a0e;
-    text-decoration: none;
-  }
-}
-
-.leaflet-bar a {
-
-  &.leaflet-disabled {
-    color: #525252;
-  }
-}
-
-.leaflet-container {
-
-  .leaflet-control-attribution {
-    background: rgba(255, 255, 255, 0.9);
-  }
-
-  a {
-    @include link;
-  }
-}
-
-.leaflet-bottom,
-.leaflet-pane,
-.leaflet-top {
-  z-index: 4;
 }
 
 // 24. Homepage
@@ -2214,9 +2076,9 @@ table {
   }
 
   .background-header {
+    background: $highlight;
     clip-path: ellipse(60% 80% at 50% 0%);
     height: $line-height * 2;
-    background: $highlight;
     margin-top: rem-calc(-48);
 
     @include breakpoint($global-width) {
@@ -2246,7 +2108,7 @@ table {
       }
     }
 
-    a:hover {
+    a:hover:not(:focus) {
       box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
       text-decoration: none;
 
@@ -2257,7 +2119,7 @@ table {
 
     p,
     .sdg-tag-list {
-      padding: 0 $line-height / 4;
+      padding: 0 calc(#{$line-height} / 4);
     }
   }
 
@@ -2274,7 +2136,7 @@ table {
       @include brand-border(top, 4px);
       display: inline-block;
       margin-bottom: 0;
-      padding: $line-height / 2 0;
+      padding: calc(#{$line-height} / 2) 0;
     }
   }
 
@@ -2296,7 +2158,7 @@ table {
       border-bottom: 1px solid $border;
       display: block;
       font-size: $small-font-size;
-      margin: $line-height 0 $line-height / 2;
+      margin: $line-height 0 calc(#{$line-height} / 2);
       text-align: right;
       width: 100%;
     }
@@ -2339,9 +2201,9 @@ table {
     color: #fff;
     font-size: rem-calc(24);
     line-height: rem-calc(24);
-    text-transform: uppercase;
-    padding: $line-height / 4 $line-height / 2;
+    padding: calc(#{$line-height} / 4) calc(#{$line-height} / 2);
     position: absolute;
+    text-transform: uppercase;
     width: 100%;
     z-index: 3;
 
@@ -2364,7 +2226,7 @@ table {
       display: inline-block;
       font-size: $small-font-size;
       font-weight: bold;
-      margin-bottom: $line-height / 4;
+      margin-bottom: calc(#{$line-height} / 4);
       padding: rem-calc(4) rem-calc(8);
     }
   }
@@ -2379,8 +2241,8 @@ table {
   .date-of-birth {
     select {
       float: left;
+      margin-right: calc(#{$line-height} / 4);
       width: 30%;
-      margin-right: $line-height / 4;
     }
   }
 }

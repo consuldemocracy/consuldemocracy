@@ -1,10 +1,1 @@
 en-GB:
-  stats:
-    total_participants: "Учасники"
-    total: "Загалом"
-    budgets:
-      link: "Статистика"
-      total_unfeasible_investments: "Недоцільні проєкти"
-      total: "Загалом"
-      heading: "Розділ"
-      participants_every_phase: "Загалом учасників"

@@ -3,12 +3,11 @@ FactoryBot.define do
     sequence(:title)     { |n| "Proposal #{n} title" }
     sequence(:summary)   { |n| "In summary, what we want is... #{n}" }
     description          { "Proposal description" }
-    video_url            { "https://youtu.be/nhuNb0XtRhQ" }
     responsible_name     { "John Snow" }
     terms_of_service     { "1" }
     published_at         { Time.current }
 
-    association :author, factory: :user
+    author factory: :user
 
     trait :hidden do
       hidden_at { Time.current }
@@ -69,12 +68,20 @@ FactoryBot.define do
       published_at { Time.current }
     end
 
+    trait :with_map_location do
+      map_location
+    end
+
     trait :with_milestone_tags do
       after(:create) { |proposal| proposal.milestone_tags << create(:tag, :milestone) }
     end
 
     trait :with_image do
       after(:create) { |proposal| create(:image, imageable: proposal) }
+    end
+
+    trait :with_video do
+      video_url { "https://youtu.be/nhuNb0XtRhQ" }
     end
 
     transient do
@@ -92,7 +99,7 @@ FactoryBot.define do
     sequence(:title) { |n| "Thank you for supporting my proposal #{n}" }
     sequence(:body) { |n| "Please let others know so we can make it happen #{n}" }
     proposal
-    association :author, factory: :user
+    author factory: :user
 
     trait :moderated do
       moderated { true }
@@ -112,8 +119,8 @@ FactoryBot.define do
   end
 
   factory :signature_sheet do
-    association :signable, factory: :proposal
-    association :author, factory: :user
+    signable factory: :proposal
+    author factory: :user
     required_fields_to_verify { "123A, 456B, 789C" }
 
     trait :with_title do
@@ -129,7 +136,7 @@ FactoryBot.define do
   factory :activity do
     user
     action { "hide" }
-    association :actionable, factory: :proposal
+    actionable factory: :proposal
   end
 
   factory :dashboard_action, class: "Dashboard::Action" do

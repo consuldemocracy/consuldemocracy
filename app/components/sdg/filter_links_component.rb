@@ -1,6 +1,6 @@
 class SDG::FilterLinksComponent < ApplicationComponent
   attr_reader :records, :related_model, :see_more_link
-  delegate :link_list, to: :helpers
+  use_helpers :link_list
 
   def initialize(records, related_model, see_more_link: nil)
     @records = records
@@ -33,7 +33,8 @@ class SDG::FilterLinksComponent < ApplicationComponent
 
     def index_by(advanced_search)
       if related_model.name == "Legislation::Proposal"
-        legislation_process_proposals_path(params[:id], advanced_search: advanced_search, filter: params[:filter])
+        legislation_process_proposals_path(params[:id], advanced_search: advanced_search,
+                                                        filter: params[:filter])
       else
         polymorphic_path(related_model, advanced_search: advanced_search)
       end

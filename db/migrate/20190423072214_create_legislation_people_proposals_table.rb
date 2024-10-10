@@ -29,6 +29,9 @@ class CreateLegislationPeopleProposalsTable < ActiveRecord::Migration[4.2]
       t.boolean  "validated"
       t.integer  "cached_votes_score", default: 0
     end
-    add_index "legislation_people_proposals", ["cached_votes_score"], name: "index_legislation_people_proposals_on_cached_votes_score", using: :btree
+    add_index "legislation_people_proposals",
+              ["cached_votes_score"],
+              name: "index_legislation_people_proposals_on_cached_votes_score",
+              using: :btree
   end
 end

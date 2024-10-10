@@ -42,8 +42,8 @@
       &:focus,
       &:hover {
         @include brand-background;
+        @include no-outline;
         text-decoration: none;
-        outline: none;
       }
     }
   }

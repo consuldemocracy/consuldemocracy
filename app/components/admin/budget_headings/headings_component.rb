@@ -14,4 +14,12 @@ class Admin::BudgetHeadings::HeadingsComponent < ApplicationComponent
     def budget
       @budget ||= group.budget
     end
+
+    def geozone_for(heading)
+      if heading.geozone
+        link_to heading.geozone.name, edit_admin_geozone_path(heading.geozone)
+      else
+        t("geozones.none")
+      end
+    end
 end

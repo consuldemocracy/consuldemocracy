@@ -53,7 +53,6 @@ zh-TW:
         tags_placeholder: "輸入您要用的標籤，以逗號分隔 (',')"
         map_location: "地圖位置"
         map_location_instructions: "將地圖導航到該位置，並放置標記。"
-        map_remove_marker: "刪除地圖標記"
       index:
         title: 參與式預算編制
         unfeasible: 不可行的投資項目

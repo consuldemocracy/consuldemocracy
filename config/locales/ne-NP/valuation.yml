@@ -1,0 +1,68 @@
+ne:
+  valuation:
+    header:
+      title: मूल्याङ्कन
+    menu:
+      title: मूल्याङ्कन
+      budgets: सहभागितामूलक बजेटहरू
+    budgets:
+      index:
+        title: सहभागितामूलक बजेटहरू
+        filters:
+          current: खोल्नुहोस्
+          finished: समाप्त भयो
+        table_name: नाम
+        table_phase: चरण
+        table_assigned_investments_valuation_open: खुला मूल्याङ्कनका साथ तोकिएका लगानी परियोजनाहरू
+        table_actions: कार्यहरू
+        evaluate: मूल्याङ्कन गर्नुहोस्
+        no_budgets: "बजेटहरू छैनन्"
+    budget_investments:
+      index:
+        headings_filter_all: सबै शीर्षकहरू
+        filters:
+          valuation_open: खोल्नुहोस्
+          valuating: अबमुल्यांन
+          valuation_finished: मूल्याङ्कन सकियो
+        assigned_to: "%{valuator} लाई तोकियो"
+        title: लगानी परियोजनाहरू
+        edit: दस्तावेजहरू सम्पादन गर्नुहोस्
+        table_id: आईडी
+        table_title: टाइटल
+        table_heading_name: शीर्षककाे नाम
+        table_actions: कार्यहरू
+        no_investments: "लगानीका आयोजना छैनन् ।"
+      show:
+        back: फिर्ता
+        title: लगानी परियोजना
+        info: लेखक जानकारी
+        by: द्वारा पठाइयो
+        sent: मा पठाइयो
+        heading: शीर्षक
+        dossier: दस्तावेजहरू
+        edit_dossier: दस्तावेजहरू सम्पादन गर्नुहोस्
+        price: मूल्य
+        price_first_year: पहिलो वर्षको अवधिमा लागत
+        currency: "ने. रू"
+        feasibility: सम्भाव्यता
+        feasible: सम्भाव्य
+        unfeasible: असम्भाव्य
+        undefined: अपरिभाषित
+        valuation_finished: मूल्याङ्कन सकियो
+        duration: समय दायरा
+        responsibles: जिम्मेवारहरू
+        assigned_admin: नियुक्त व्यवस्थापक
+        assigned_valuators: नियुक्त मूल्याङ्कनकर्ताहरू
+        preview: लगानी पूर्वावलोकन
+      edit:
+        dossier: दस्तावेजहरू
+        price: "मूल्य (%{currency})"
+        price_first_year: "पहिलो वर्षको लागत (%{currency}) <small>(वैकल्पिक, डाटा सार्वजनिक छैन)</small>"
+        feasibility: सम्भाव्यता
+        valuation_finished_alert: "के तपाइँ यो रिपोर्टलाई पूरा भएको भनी चिन्ह लगाउन निश्चित हुनुहुन्छ? यदि तपाईंले यो गर्नुभयो भने, यो अब परिमार्जन गर्न सकिँदैन।"
+        not_feasible_alert: "एउटा इमेल तुरुन्तै परियोजनाको लेखकलाई अयोग्यताको रिपोर्टको साथ पठाइनेछ।"
+        save: परिवर्तनहरू सुरक्षित गर्नुहोस
+      notice:
+        valuate: "कागजात अद्यावधिक गरियो"
+      valuation_comments: मूल्याङ्कन टिप्पणीहरू
+      not_in_valuating_phase: बजेट मूल्याङ्कन गर्ने चरणमा हुँदा मात्र लगानीको मूल्याङ्कन गर्न सकिन्छ

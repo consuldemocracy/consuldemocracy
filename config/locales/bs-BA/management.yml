@@ -35,7 +35,7 @@ bs:
     document_verifications:
       already_verified: Korisnički nalog je već potvrđen.
       has_no_account: Za otvaranje naloga, idite na %{link} i kliknite na <b> "Registracija" </b> u gornjem lijevom dijelu ekrana.
-      link: CONSUL
+      link: CONSUL DEMOCRACY
       in_census_has_following_permissions: "Korisnik može učestvovati na web-stranici pod ovim uvjetima:"
       not_in_census: Dokument nije registrovan.
       not_in_census_info: "Građani koji nisu na popisu mogu učestvovati na web-stranici pod sljedećim uvjetima:"

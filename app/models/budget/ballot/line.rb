@@ -18,17 +18,18 @@ class Budget
       before_validation :set_denormalized_ids
 
       def check_enough_resources
-        ballot.lock!
-
-        unless ballot.enough_resources?(investment)
-          errors.add(:resources, ballot.not_enough_resources_error)
+        ballot.with_lock do
+          unless ballot.enough_resources?(investment)
+            errors.add(:resources, ballot.not_enough_resources_error)
+          end
         end
       end
 
       def check_valid_heading
         return if ballot.valid_heading?(heading)
 
-        errors.add(:heading, "This heading's budget is invalid, or a heading on the same group was already selected")
+        errors.add(:heading,
+                   "This heading's budget is invalid, or a heading on the same group was already selected")
       end
 
       def check_selected

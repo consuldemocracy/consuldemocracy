@@ -11,7 +11,6 @@ module MailerHelper
     link_to(
       commentable.title,
       valuation_comments_url(@email.commentable),
-      target: :blank,
       style: "color: #2895F1; text-decoration:none;"
     )
   end
@@ -49,7 +48,10 @@ module MailerHelper
   end
 
   def css_for_mailer_button
-    mailer_font_family + "background: #004a83;border-radius: 6px;color: #fff!important;display: inline-block;font-weight: bold;margin: 0;min-width: 200px;padding: 10px 15px;text-align: center;text-decoration: none;"
+    mailer_font_family + "background: #004a83;border-radius: 6px;color: #fff!important;" \
+                         "display: inline-block;font-weight: bold;margin: 0;" \
+                         "min-width: 200px;padding: 10px 15px;text-align: center;" \
+                         "text-decoration: none;"
   end
 
   def css_for_mailer_link

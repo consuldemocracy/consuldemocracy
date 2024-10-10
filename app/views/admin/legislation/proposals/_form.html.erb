@@ -4,11 +4,11 @@
 
   <div class="small-12 medium-8 column">
     <%= f.text_field :custom_list, value: @process.tag_list_on(:customs).sort.join(", "),
-                      label: t("admin.legislation.proposals.form.custom_categories"),
-                      hint: t("admin.legislation.proposals.form.custom_categories_description"),
-                      placeholder: t("admin.legislation.proposals.form.custom_categories_placeholder"),
-                      class: "js-tag-list",
-                      aria: { describedby: "tag-list-help-text" } %>
+                                   label: t("admin.legislation.proposals.form.custom_categories"),
+                                   hint: t("admin.legislation.proposals.form.custom_categories_description"),
+                                   placeholder: t("admin.legislation.proposals.form.custom_categories_placeholder"),
+                                   class: "js-tag-list",
+                                   aria: { describedby: "tag-list-help-text" } %>
   </div>
 
   <div class="small-12 medium-3 column clear end">

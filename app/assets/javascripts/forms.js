@@ -27,11 +27,12 @@
       });
     },
     synchronizeInputs: function() {
-      var banners, inputs, processes, progress_bar;
+      var banners, geozones, inputs, processes, progress_bar;
       progress_bar = "[name='progress_bar[percentage]']";
       processes = "[name='legislation_process[background_color]'], [name='legislation_process[font_color]']";
       banners = "[name='banner[background_color]'], [name='banner[font_color]']";
-      inputs = $(progress_bar + ", " + processes + ", " + banners);
+      geozones = "[name='geozone[color]']";
+      inputs = $(progress_bar + ", " + processes + ", " + banners + ", " + geozones);
       inputs.on({
         input: function() {
           $("[name='" + this.name + "']").val($(this).val());

@@ -9,19 +9,7 @@
           </div>
         <% end %>
       <% else %>
-        <% if comment.as_administrator? %>
-          <%= image_tag("avatar_admin.png", size: 32, class: "admin-avatar float-left") %>
-        <% elsif comment.as_moderator? %>
-          <%= image_tag("avatar_moderator.png", size: 32, class: "moderator-avatar float-left") %>
-        <% else %>
-        <% if comment.user.hidden? || comment.user.erased? %>
-            <span class="icon-deleted user-deleted"></span>
-          <% elsif comment.user.organization? %>
-            <%= image_tag("avatar_collective.png", size: 32, class: "avatar float-left") %>
-          <% else %>
-            <%= avatar_image(comment.user, seed: comment.user_id, size: 32, class: "float-left") %>
-          <% end %>
-        <% end %>
+        <%= render Comments::AvatarComponent.new(comment) %>
 
         <div class="comment-info">
 
@@ -81,7 +69,7 @@
         <div id="<%= dom_id(comment) %>_reply" class="reply">
           <% unless valuation %>
             <div id="<%= dom_id(comment) %>_votes" class="comment-votes float-right">
-              <%= render "comments/votes", comment: comment %>
+              <%= render Comments::VotesComponent.new(comment) %>
             </div>
           <% end %>
 
@@ -99,9 +87,9 @@
             <% end %>
 
             <% if !valuation || can?(:comment_valuation, comment.commentable) %>
-              <%= render "comments/form", { commentable: comment.commentable,
-                                           parent_id: comment.id,
-                                           valuation: valuation } %>
+              <%= render Comments::FormComponent.new(comment.commentable,
+                                                     parent_id: comment.id,
+                                                     valuation: valuation) %>
             <% end %>
           <% end %>
         </div>

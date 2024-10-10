@@ -5,7 +5,7 @@ describe "Admin custom images", :admin do
     visit admin_root_path
 
     within("#side_menu") do
-      click_link "Settings"
+      click_button "Site content"
       click_link "Custom images"
     end
 
@@ -31,6 +31,7 @@ describe "Admin custom images", :admin do
   end
 
   scenario "Image is replaced on front views" do
+    create(:geozone)
     budget = create(:budget)
     group = create(:budget_group, budget: budget)
 
@@ -111,7 +112,7 @@ describe "Admin custom images", :admin do
     expect(page).to have_css("img[src*='social_media_icon.png']")
 
     within("tr#image_social_media_icon") do
-      click_link "Delete"
+      click_button "Delete"
     end
 
     expect(page).not_to have_css("img[src*='social_media_icon.png']")

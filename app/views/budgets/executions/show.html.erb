@@ -2,9 +2,9 @@
 <% content_for :meta_description do %><%= @budget.description_for_phase("finished") %><% end %>
 <% provide :social_media_meta_tags do %>
 <%= render "shared/social_media_meta_tags",
-            social_url: budget_executions_url(@budget),
-            social_title: @budget.name,
-            social_description: @budget.description_for_phase("finished") %>
+           social_url: budget_executions_url(@budget),
+           social_title: @budget.name,
+           social_description: @budget.description_for_phase("finished") %>
 <% end %>
 
 <% content_for :canonical do %>
@@ -15,7 +15,7 @@
   <div class="expanded no-margin-top padding header">
     <div class="row">
       <div class="small-12 column">
-        <%= back_link_to budgets_path %>
+        <%= back_link_to budget_path(@budget) %>
         <h2 class="margin-top">
           <%= t("budgets.executions.heading") %><br>
           <span><%= @budget.name %></span>

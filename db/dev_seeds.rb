@@ -5,8 +5,8 @@ end
 
 @logger = Logger.new(STDOUT)
 @logger.formatter = proc do |_severity, _datetime, _progname, msg|
-                      msg unless Rails.env.test?
-                    end
+  msg unless Rails.env.test?
+end
 
 def load_dev_seeds(dev_seeds_file)
   load Rails.root.join("db", "dev_seeds", "#{dev_seeds_file}.rb")
@@ -23,7 +23,11 @@ def log(msg)
 end
 
 def random_locales
-  [I18n.default_locale, *(I18n.available_locales & %i[en es]), *I18n.available_locales.sample(4)].uniq.take(5)
+  [
+    Setting.default_locale,
+    *(Setting.enabled_locales & %i[en es]),
+    *Setting.enabled_locales.sample(4)
+  ].uniq.take(5)
 end
 
 def random_locales_attributes(**attribute_names_with_values)

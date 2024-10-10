@@ -23,7 +23,8 @@ describe "Officing ballot sheets" do
     within("tr", text: "Latest budget poll") { click_link "Add results" }
 
     select "The only booth", from: "Booth"
-    fill_in "CSV data", with: "#{investments[0..1].map(&:id).join(",")};#{investments[1..2].map(&:id).join(",")}"
+    fill_in "CSV data",
+            with: "#{investments[0..1].map(&:id).join(",")};#{investments[1..2].map(&:id).join(",")}"
     click_button "Save"
 
     expect(page).to have_content "Creation date"

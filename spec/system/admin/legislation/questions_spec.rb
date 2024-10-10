@@ -75,7 +75,9 @@ describe "Admin legislation questions", :admin do
 
       visit edit_admin_legislation_process_question_path(process, question)
 
-      click_link "Delete"
+      accept_confirm("Are you sure? This action will delete \"Question 2\" and can't be undone.") do
+        click_button "Delete"
+      end
 
       expect(page).to have_content "Questions"
       expect(page).to have_content "Question 1"
@@ -143,7 +145,7 @@ describe "Admin legislation questions", :admin do
       scenario "Add translation for question option" do
         visit edit_question_url
 
-        click_on "Add option"
+        click_link "Add option"
 
         find("#nested_question_options input").set("Option 1")
 
@@ -166,7 +168,7 @@ describe "Admin legislation questions", :admin do
 
         select "Español", from: :select_language
 
-        click_on "Add option"
+        click_link "Add option"
 
         find("#nested_question_options input").set("Opción 1")
 

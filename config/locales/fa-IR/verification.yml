@@ -42,7 +42,6 @@ fa:
           success: اقامت تأیید شده است.
       new:
         accept_terms_text: من %{terms_url} سرشماری را قبول می کنم
-        accept_terms_text_title: من شرایط و ضوابط دسترسی به سرشماری را می پذیرم.
         document_number: شماره سند
         document_number_help_title: کمک
         document_number_help_text: "DNI <strong></strong>: 12345678A<br> <strong>گذرنامه</strong>: AAA000001<br> <strong>کارت اقامت</strong>: X1234567P"

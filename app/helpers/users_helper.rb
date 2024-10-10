@@ -16,7 +16,7 @@ module UsersHelper
       deleted_commentable_text(comment)
     elsif commentable.hidden?
       tag.del(commentable.title) + " " +
-      tag.span("(#{deleted_commentable_text(comment)})", class: "small")
+        tag.span("(#{deleted_commentable_text(comment)})", class: "small")
     else
       link_to(commentable.title, comment)
     end

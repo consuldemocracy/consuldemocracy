@@ -46,7 +46,6 @@ sv:
           success: Din bostadsadress har bekräftats
       new:
         accept_terms_text: Jag godkänner %{terms_url} för adressregistret
-        accept_terms_text_title: Jag godkänner villkoren för tillgång till adressregistret
         document_number: Dokumentnummer
         document_number_help_title: Hjälp
         document_number_help_text: "<strong>Nationellt id-kort</strong>: 12345678A<br> <strong>Pass</strong>: AAA000001<br> <strong>Uppehållstillstånd</strong>: X1234567P"
@@ -55,7 +54,7 @@ sv:
           residence_card: Uppehållstillstånd
           spanish_id: Nationellt id-kort
         error_not_allowed_age: Du är för ung för att delta
-        error_not_allowed_postal_code: Du måste vara registrerad för att kunna verifieras.
+        error_not_allowed_postal_code: Du måste vara registrerad för att kunna verifieras
         error_verifying_census: Den adress du angett stämmer inte överens med adressregistret. Var vänlig kontrollera dina adressuppgifter genom att ringa kommunen eller besöka ett medborgarkontor.
         form_errors: gjorde att din adress inte kunde bekräftas
         postal_code_note: För att verifiera ditt konto måste du vara registrerad

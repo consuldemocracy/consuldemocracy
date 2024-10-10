@@ -20,7 +20,7 @@ describe SDG::Goals::TagCloudComponent do
 
     render_inline component
 
-    expect(page).to have_selector ".sdg-goal-icon", count: 17
+    expect(page).to have_css ".sdg-goal-icon", count: 17
     expect(page.first("a")[:title]).to end_with "goal 1"
     expect(page.all("a").last[:title]).to end_with "goal 17"
   end

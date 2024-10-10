@@ -104,7 +104,7 @@ describe "Admin newsletter emails", :admin do
 
     confirmation = "Are you sure? This action will delete \"#{newsletter.subject}\" and can't be undone."
     within("#newsletter_#{newsletter.id}") do
-      accept_confirm(confirmation) { click_link_or_button "Delete" }
+      accept_confirm(confirmation) { click_button "Delete" }
     end
 
     expect(page).to have_content "Newsletter deleted successfully"
@@ -134,7 +134,7 @@ describe "Admin newsletter emails", :admin do
       newsletter = create(:newsletter)
       visit admin_newsletter_path(newsletter)
 
-      accept_confirm { click_link "Send" }
+      accept_confirm { click_button "Send" }
 
       expect(page).to have_content "Newsletter sent successfully"
     end
@@ -153,7 +153,7 @@ describe "Admin newsletter emails", :admin do
       newsletter = create(:newsletter, segment_recipient: "administrators")
       visit admin_newsletter_path(newsletter)
 
-      accept_confirm { click_link "Send" }
+      accept_confirm { click_button "Send" }
 
       expect(page).to have_content "Newsletter sent successfully"
 

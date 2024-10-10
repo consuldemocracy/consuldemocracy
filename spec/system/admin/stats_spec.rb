@@ -72,18 +72,6 @@ describe "Stats", :admin do
       expect(page).to have_content "UNVERIFIED USERS\n1"
       expect(page).to have_content "TOTAL USERS\n1"
     end
-
-    scenario "Level 2 user Graph" do
-      create(:geozone)
-      visit account_path
-      click_link "Verify my account"
-      verify_residence
-      confirm_phone
-
-      visit admin_stats_path
-
-      expect(page).to have_content "LEVEL TWO USERS\n1"
-    end
   end
 
   describe "Budget investments" do
@@ -109,6 +97,33 @@ describe "Stats", :admin do
         expect(page).to have_content "VOTES\n3"
         expect(page).to have_content "PARTICIPANTS\n2"
         expect(page).to have_link "Go back", count: 1
+      end
+
+      scenario "Don't use the cache for supports", :with_cache do
+        budget.update!(phase: :selecting)
+        investment = create(:budget_investment, heading: heading_all_city)
+        create(:user, :level_two, votables: [investment])
+
+        supporter = create(:user, :level_two)
+
+        visit budget_supporting_admin_stats_path(budget_id: budget)
+
+        expect(page).to have_content "VOTES\n1"
+        expect(page).to have_content "PARTICIPANTS\n1"
+
+        in_browser(:supporter) do
+          login_as(supporter)
+
+          visit budget_investment_path(budget, investment)
+          click_button "Support"
+
+          expect(page).to have_button "Remove your support"
+        end
+
+        refresh
+
+        expect(page).to have_content "VOTES\n2"
+        expect(page).to have_content "PARTICIPANTS\n2"
       end
 
       scenario "hide final voting link" do
@@ -147,24 +162,59 @@ describe "Stats", :admin do
         expect(page).to have_content "VOTES\n3"
         expect(page).to have_content "PARTICIPANTS\n2"
       end
+
+      scenario "Don't use the cache for votes", :with_cache do
+        budget.update!(phase: :balloting)
+        create(:user, ballot_lines: [investment])
+
+        balloter = create(:user, :level_two)
+
+        visit budget_balloting_admin_stats_path(budget_id: budget.id)
+
+        expect(page).to have_content "VOTES\n1"
+        expect(page).to have_content "PARTICIPANTS\n1"
+
+        in_browser(:balloter) do
+          login_as(balloter)
+
+          visit budget_investment_path(budget, investment)
+          click_button "Vote"
+
+          expect(page).to have_button "Remove vote"
+        end
+
+        refresh
+
+        expect(page).to have_content "VOTES\n2"
+        expect(page).to have_content "PARTICIPANTS\n2"
+      end
     end
   end
 
-  context "graphs" do
-    scenario "event graphs", :with_frozen_time do
-      campaign = create(:campaign)
-
-      visit root_path(track_id: campaign.track_id)
-
-      expect(page).to have_content "Sign out"
+  describe "graphs", :with_frozen_time do
+    scenario "event graphs" do
+      create(:debate)
 
       visit admin_stats_path
 
       within("#stats") do
-        click_link campaign.name
+        click_link "Debates created"
       end
 
-      expect(page).to have_content "#{campaign.name} (1)"
+      expect(page).to have_content "Debates created (1)"
+
+      within("#graph") do
+        expect(page).to have_content Date.current.strftime("%Y-%m-%d")
+      end
+    end
+
+    scenario "Level 3 user Graph" do
+      create(:user, :level_three)
+
+      visit admin_stats_path
+      click_link "Level 3 users verified"
+
+      expect(page).to have_content "Level 3 users verified (1)"
 
       within("#graph") do
         expect(page).to have_content Date.current.strftime("%Y-%m-%d")
@@ -182,6 +232,8 @@ describe "Stats", :admin do
 
       visit admin_stats_path
       click_link "Proposal notifications"
+
+      expect(page).to have_link "Go back", href: admin_stats_path
 
       within("#proposal_notifications_count") do
         expect(page).to have_content "3"
@@ -232,6 +284,8 @@ describe "Stats", :admin do
       visit admin_stats_path
       click_link "Direct messages"
 
+      expect(page).to have_link "Go back", href: admin_stats_path
+
       within("#direct_messages_count") do
         expect(page).to have_content "3"
       end
@@ -252,6 +306,8 @@ describe "Stats", :admin do
       within(".stats") do
         click_link "Polls"
       end
+
+      expect(page).to have_link "Go back", href: admin_stats_path
 
       within("#web_participants") do
         expect(page).to have_content "3"

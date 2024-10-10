@@ -8,8 +8,9 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
   load_and_authorize_resource :process, class: "Legislation::Process"
 
   def index
-    @processes = ::Legislation::Process.send(@current_filter).order(start_date: :desc)
-                 .page(params[:page])
+    @processes = ::Legislation::Process.send(@current_filter)
+                                       .order(start_date: :desc)
+                                       .page(params[:page])
   end
 
   def create
@@ -26,7 +27,7 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
   def update
     if @process.update(process_params)
       link = legislation_process_path(@process)
-      redirect_back(fallback_location: (request.referer || root_path),
+      redirect_back(fallback_location: request.referer || root_path,
                     notice: t("admin.legislation.processes.update.notice", link: link))
     else
       flash.now[:error] = t("admin.legislation.processes.update.error")

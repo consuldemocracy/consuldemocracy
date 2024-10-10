@@ -1,11 +1,10 @@
 class Admin::Legislation::DraftVersionsController < Admin::Legislation::BaseController
   include Translatable
 
-  load_and_authorize_resource :draft_version, class: "Legislation::DraftVersion", through: :process, prepend: true
-  load_and_authorize_resource :process, class: "Legislation::Process", prepend: true
+  load_and_authorize_resource :process, class: "Legislation::Process"
+  load_and_authorize_resource :draft_version, class: "Legislation::DraftVersion", through: :process
 
   def index
-    @draft_versions = @process.draft_versions
   end
 
   def create

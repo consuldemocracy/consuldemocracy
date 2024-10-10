@@ -166,7 +166,8 @@ describe "SDG Goals" do
 
       click_link "Local targets"
 
-      expect(page).not_to have_content "15.1 By 2020, ensure the conservation, restoration and sustainable use"
+      expect(page).not_to have_content "15.1 By 2020, ensure the conservation, " \
+                                       "restoration and sustainable use"
       expect(page).to have_content "SDG local target sample text"
     end
   end

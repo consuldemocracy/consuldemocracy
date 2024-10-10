@@ -53,6 +53,7 @@ pl:
         responsibles: Odpowiedzialni
         assigned_admin: Przypisany administrator
         assigned_valuators: Przypisani wyceniający
+        preview: Podgląd inwestycji
       edit:
         dossier: Dokumentacja
         price: "Koszt (%{currency})"

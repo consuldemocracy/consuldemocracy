@@ -22,11 +22,11 @@
     <tr>
       <td>
         <%= form_for(tag,
-            url: admin_tag_path(tag),
-            as: :tag,
-            html: { id: "edit_tag_#{tag.id}" }) do |f| %>
+                     url: admin_tag_path(tag),
+                     as: :tag,
+                     html: { id: "edit_tag_#{tag.id}" }) do |f| %>
 
-            <strong><%= tag.name %></strong>
+          <strong><%= tag.name %></strong>
         <% end %>
       </td>
       <td id="tag_<%= tag.id %>">

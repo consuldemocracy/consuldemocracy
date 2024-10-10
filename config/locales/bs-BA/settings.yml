@@ -110,8 +110,6 @@ bs:
       allow_attached_documents_description: "Omogućava korisnicima da učitaju dokumente kada kreiraju prijedloge i investicione projekte za participativne budžete"
       guides: "Vodiči za kreiranje prijedloga i investicionih projekata"
       guides_description: "Pokazuje vodič u vezi razlika između prijedloga i investicionih projekata, u slučaju postojanja aktivnog participativnog budžeta"
-      public_stats: "Javna statistika"
-      public_stats_description: "Pokaži javnu statistiku u admin panelu"
       help_page: "Strana za pomoć"
       help_page_description: 'Pokazuje meni za pomoć, koji sadrži stranu sa osnovnim informacijama o svakom uključenom elementu. Prilagođene stranice i meniji se mogu napraviti u "Prilagođenim stranama" i "Prilagođenim blokovima sadržaja"'
     map:

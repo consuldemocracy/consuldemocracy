@@ -18,6 +18,16 @@ describe Widget::Card do
       expect(build(:widget_card, title: "")).not_to be_valid
     end
 
+    describe "order" do
+      it "is not valid without an order" do
+        expect(build(:widget_card, order: nil)).not_to be_valid
+      end
+
+      it "is not valid with an order less than 1" do
+        expect(build(:widget_card, order: 0)).not_to be_valid
+      end
+    end
+
     context "regular cards" do
       it "is not valid without a link_url" do
         card = build(:widget_card, header: false, link_url: nil)
@@ -44,7 +54,7 @@ describe Widget::Card do
 
       it "is valid if link_text and link_url are both provided" do
         header = build(:widget_card, :header, link_text: "Text link",
-                                              link_url: "https://consulproject.org")
+                                              link_url: "https://consuldemocracy.org")
 
         expect(header).to be_valid
       end
@@ -75,6 +85,15 @@ describe Widget::Card do
       expect(Widget::Card.body).to match_array [card1, card2]
       expect(Widget::Card.body).not_to include(header)
       expect(Widget::Card.body).not_to include(page_card)
+    end
+
+    it "returns cards sorted by defined order, then by 'created_at' when order is equal" do
+      card1 = create(:widget_card, order: 1)
+      card2 = create(:widget_card, order: 3)
+      card3 = create(:widget_card, order: 2)
+      card4 = create(:widget_card, order: 3)
+
+      expect(Widget::Card.body).to eq [card1, card3, card2, card4]
     end
   end
 end

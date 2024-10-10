@@ -4,7 +4,7 @@
 
 <%= form_for [:admin, @signature_sheet] do |f| %>
   <%= render "shared/errors",
-              resource: @signature_sheet %>
+             resource: @signature_sheet %>
 
   <div class="small-12 medium-6 large-4">
     <%= f.text_field :title %>
@@ -19,7 +19,7 @@
   </div>
 
   <%= f.text_area :required_fields_to_verify, rows: "6",
-    hint: sanitize("#{required_fields_to_verify_text_help}<br/>#{example_text_help}") %>
+                                              hint: sanitize("#{required_fields_to_verify_text_help}<br/>#{example_text_help}") %>
 
   <%= f.submit(class: "button", value: t("admin.signature_sheets.new.submit")) %>
 <% end %>

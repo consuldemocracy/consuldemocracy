@@ -23,20 +23,20 @@ describe "Proposals" do
 
       visit proposals_path
 
-      expect(page).to have_selector("#proposals .proposal-featured", count: 3)
+      expect(page).to have_css "#proposals .proposal-featured", count: 3
       featured_proposals.each do |featured_proposal|
         within("#featured-proposals") do
           expect(page).to have_content featured_proposal.title
-          expect(page).to have_css("a[href='#{proposal_path(featured_proposal)}']")
+          expect(page).to have_link href: proposal_path(featured_proposal)
         end
       end
 
-      expect(page).to have_selector("#proposals .proposal", count: 3)
+      expect(page).to have_css "#proposals .proposal", count: 3
       proposals.each do |proposal|
         within("#proposals") do
           expect(page).to have_content proposal.title
           expect(page).to have_content proposal.summary
-          expect(page).to have_css("a[href='#{proposal_path(proposal)}']", text: proposal.title)
+          expect(page).to have_link proposal.title, href: proposal_path(proposal)
         end
       end
     end
@@ -74,7 +74,7 @@ describe "Proposals" do
 
       click_link "View selected proposals"
 
-      expect(page).not_to have_selector(".view-mode")
+      expect(page).not_to have_css ".view-mode"
       expect(page).not_to have_button("View mode")
     end
 
@@ -85,7 +85,7 @@ describe "Proposals" do
 
       visit proposals_path
 
-      expect(page).to have_selector("#proposals .proposal", count: per_page)
+      expect(page).to have_css "#proposals .proposal", count: per_page
 
       within("ul.pagination") do
         expect(page).to have_content("1")
@@ -94,8 +94,8 @@ describe "Proposals" do
         click_link "Next", exact: false
       end
 
-      expect(page).to have_selector("#proposals .proposal-featured", count: 3)
-      expect(page).to have_selector("#proposals .proposal", count: 2)
+      expect(page).to have_css "#proposals .proposal-featured", count: 3
+      expect(page).to have_css "#proposals .proposal", count: 2
     end
 
     scenario "Index should show proposal descriptive image only when is defined" do
@@ -114,19 +114,19 @@ describe "Proposals" do
   end
 
   scenario "Show" do
-    proposal = create(:proposal)
+    proposal = create(:proposal, author: create(:user, username: "Mark Twain"))
 
     visit proposal_path(proposal)
 
     expect(page).to have_content proposal.title
     expect(page).to have_content proposal.code
     expect(page).to have_content "Proposal description"
-    expect(page).to have_content proposal.author.name
+    expect(page).to have_content "Mark Twain"
     expect(page).to have_content I18n.l(proposal.created_at.to_date)
-    expect(page).to have_selector(avatar(proposal.author.name))
+    expect(page).to have_avatar "M"
     expect(page.html).to include "<title>#{proposal.title}</title>"
-    expect(page).not_to have_selector ".js-flag-actions"
-    expect(page).not_to have_selector ".js-follow"
+    expect(page).not_to have_css ".js-flag-actions"
+    expect(page).not_to have_css ".js-follow"
   end
 
   describe "Social share buttons" do
@@ -214,9 +214,9 @@ describe "Proposals" do
       Setting["org_name"] = "CONSUL"
       proposal = create(:proposal)
       visit proposal_path(proposal)
-      click_link "Help"
+      click_link "CONSUL"
 
-      expect(page).to have_content "CONSUL is a platform for citizen participation"
+      expect(page).to have_content "Most active proposals"
 
       go_back
 
@@ -301,23 +301,30 @@ describe "Proposals" do
   context "Embedded video" do
     scenario "Show YouTube video" do
       proposal = create(:proposal, video_url: "http://www.youtube.com/watch?v=a7UFm6ErMPU")
+
       visit proposal_path(proposal)
-      expect(page).to have_selector("div[id='js-embedded-video']")
-      expect(page.html).to include "https://www.youtube.com/embed/a7UFm6ErMPU"
+
+      within "#js-embedded-video" do
+        expect(page).to have_css "iframe[src='https://www.youtube-nocookie.com/embed/a7UFm6ErMPU']"
+      end
     end
 
     scenario "Show Vimeo video" do
       proposal = create(:proposal, video_url: "https://vimeo.com/7232823")
+
       visit proposal_path(proposal)
-      expect(page).to have_selector("div[id='js-embedded-video']")
-      expect(page.html).to include "https://player.vimeo.com/video/7232823"
+
+      within "#js-embedded-video" do
+        expect(page).to have_css "iframe[src='https://player.vimeo.com/video/7232823?dnt=1']"
+      end
     end
 
     scenario "Dont show video" do
       proposal = create(:proposal, video_url: nil)
 
       visit proposal_path(proposal)
-      expect(page).not_to have_selector("div[id='js-embedded-video']")
+
+      expect(page).not_to have_css "#js-embedded-video"
     end
   end
 
@@ -325,8 +332,8 @@ describe "Proposals" do
     proposal = create(:proposal)
 
     visit proposal_path(proposal)
-    expect(page).to have_css "meta[name='twitter:title'][content=\'#{proposal.title}\']", visible: :hidden
-    expect(page).to have_css "meta[property='og:title'][content=\'#{proposal.title}\']", visible: :hidden
+    expect(page).to have_css "meta[name='twitter:title'][content='#{proposal.title}']", visible: :hidden
+    expect(page).to have_css "meta[property='og:title'][content='#{proposal.title}']", visible: :hidden
   end
 
   scenario "Create and publish", :with_frozen_time do
@@ -423,9 +430,9 @@ describe "Proposals" do
     click_link "Dashboard"
     click_link "Edit my proposal"
 
-    within_window(window_opened_by { click_link "Edit proposal" }) do
-      expect(page).to have_field "Full name of the person submitting the proposal", with: "Isabel Garcia"
-    end
+    click_link "Edit proposal"
+
+    expect(page).to have_field "Full name of the person submitting the proposal", with: "Isabel Garcia"
   end
 
   scenario "Responsible name field is not shown for verified users" do
@@ -505,7 +512,9 @@ describe "Proposals" do
 
   scenario "JS injection is prevented but autolinking is respected", :no_js do
     author = create(:user)
-    js_injection_string = "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> http://example.org"
+    js_injection_string = "<script>alert('hey')</script> " \
+                          "<a href=\"javascript:alert('surprise!')\">click me<a/> " \
+                          "http://example.org"
     login_as(author)
 
     visit new_proposal_path
@@ -540,7 +549,15 @@ describe "Proposals" do
   end
 
   context "Geozones" do
+    scenario "When there are not gezones defined it does not show the geozone link" do
+      visit proposal_path(create(:proposal))
+
+      expect(page).not_to have_css "#geozone"
+      expect(page).not_to have_link "All city"
+    end
+
     scenario "Default whole city" do
+      create(:geozone)
       author = create(:user)
       login_as(author)
 
@@ -556,6 +573,25 @@ describe "Proposals" do
       within "#geozone" do
         expect(page).to have_content "All city"
       end
+    end
+
+    scenario "form shows the geozone selector when there are geozones defined" do
+      create(:geozone)
+      author = create(:user)
+      login_as(author)
+
+      visit new_proposal_path
+
+      expect(page).to have_field("Scope of operation")
+    end
+
+    scenario "form do not show geozone selector when there are no geozones defined" do
+      author = create(:user)
+      login_as(author)
+
+      visit new_proposal_path
+
+      expect(page).not_to have_field("Scope of operation")
     end
 
     scenario "Specific geozone" do
@@ -599,15 +635,15 @@ describe "Proposals" do
         click_link "Edit my proposal"
       end
 
-      within_window(window_opened_by { click_link "Withdraw proposal" }) do
-        expect(page).to have_current_path(retire_form_proposal_path(proposal))
+      click_link "Withdraw proposal"
 
-        select "Duplicated", from: "proposal_retired_reason"
-        fill_in "Explanation", with: "There are three other better proposals with the same subject"
-        click_button "Withdraw proposal"
+      expect(page).to have_current_path(retire_form_proposal_path(proposal))
 
-        expect(page).to have_content "The proposal has been withdrawn"
-      end
+      select "Duplicated", from: "proposal_retired_reason"
+      fill_in "Explanation", with: "There are three other better proposals with the same subject"
+      click_button "Withdraw proposal"
+
+      expect(page).to have_content "The proposal has been withdrawn"
 
       visit proposal_path(proposal)
 
@@ -637,7 +673,7 @@ describe "Proposals" do
 
       visit proposals_path
 
-      expect(page).to have_selector("#proposals .proposal", count: 1)
+      expect(page).to have_css "#proposals .proposal", count: 1
       within("#proposals") do
         expect(page).to have_content not_retired.title
         expect(page).not_to have_content retired.title
@@ -781,7 +817,7 @@ describe "Proposals" do
 
       visit proposals_path
       click_link "highest rated"
-      expect(page).to have_selector("a.is-active", text: "highest rated")
+      expect(page).to have_css "a.is-active", text: "highest rated"
 
       within "#proposals" do
         expect(best_proposal.title).to appear_before(medium_proposal.title)
@@ -799,7 +835,7 @@ describe "Proposals" do
 
       visit proposals_path
       click_link "newest"
-      expect(page).to have_selector("a.is-active", text: "newest")
+      expect(page).to have_css "a.is-active", text: "newest"
 
       within "#proposals" do
         expect(best_proposal.title).to appear_before(medium_proposal.title)
@@ -817,7 +853,7 @@ describe "Proposals" do
 
       scenario "can't be sorted if there's no logged user" do
         visit proposals_path
-        expect(page).not_to have_selector("a", text: "recommendations")
+        expect(page).not_to have_css "a", text: "recommendations"
       end
 
       scenario "are shown on index header when account setting is enabled" do
@@ -866,7 +902,7 @@ describe "Proposals" do
 
         click_link "recommendations"
 
-        expect(page).to have_selector("a.is-active", text: "recommendations")
+        expect(page).to have_css "a.is-active", text: "recommendations"
 
         within "#proposals-list" do
           expect(best_proposal.title).to appear_before(medium_proposal.title)
@@ -973,7 +1009,7 @@ describe "Proposals" do
       Setting["feature.featured_proposals"] = true
       featured_proposal = create(:proposal, :with_confidence_score, cached_votes_up: 100)
       archived_proposal = create(:proposal, :archived, :with_confidence_score,
-                                                        cached_votes_up: 10000)
+                                 cached_votes_up: 10000)
 
       visit proposals_path
 
@@ -1021,7 +1057,7 @@ describe "Proposals" do
     scenario "do not show in index by default" do
       visit proposals_path
 
-      expect(page).to have_selector("#proposals .proposal", count: 1)
+      expect(page).to have_css "#proposals .proposal", count: 1
       expect(page).to have_content not_selected_proposal.title
       expect(page).not_to have_content selected_proposal.title
     end
@@ -1030,7 +1066,7 @@ describe "Proposals" do
       visit proposals_path
       click_link "View selected proposals"
 
-      expect(page).to have_selector("#proposals .proposal", count: 1)
+      expect(page).to have_css "#proposals .proposal", count: 1
       expect(page).to have_content selected_proposal.title
       expect(page).not_to have_content not_selected_proposal.title
     end
@@ -1048,13 +1084,13 @@ describe "Proposals" do
 
       visit proposals_path
 
-      expect(page).to have_selector("#proposals .proposal-featured")
-      expect(page).to have_selector("#featured-proposals")
+      expect(page).to have_css "#proposals .proposal-featured"
+      expect(page).to have_css "#featured-proposals"
 
       click_link "View selected proposals"
 
-      expect(page).not_to have_selector("#proposals .proposal-featured")
-      expect(page).not_to have_selector("#featured-proposals")
+      expect(page).not_to have_css "#proposals .proposal-featured"
+      expect(page).not_to have_css "#featured-proposals"
     end
 
     scenario "do not show recommented proposal in selected proposals list" do
@@ -1154,7 +1190,7 @@ describe "Proposals" do
           click_button "Search"
         end
 
-        expect(page).to have_selector("input[name='search'][value='Schwifty']")
+        expect(page).to have_css "input[name='search'][value='Schwifty']"
       end
     end
 
@@ -1167,7 +1203,7 @@ describe "Proposals" do
       fill_in "search", with: "Title content"
       click_button "Search"
 
-      expect(page).to have_selector("a.is-active", text: "relevance")
+      expect(page).to have_css "a.is-active", text: "relevance"
 
       within("#proposals") do
         expect(all(".proposal")[0].text).to match "Title content"
@@ -1190,7 +1226,7 @@ describe "Proposals" do
 
       click_link "newest"
 
-      expect(page).to have_selector("a.is-active", text: "newest")
+      expect(page).to have_css "a.is-active", text: "newest"
 
       within("#proposals") do
         expect(all(".proposal")[0].text).to match "Show you got"
@@ -1214,7 +1250,7 @@ describe "Proposals" do
       fill_in "search", with: "Show you got"
       click_button "Search"
       click_link "recommendations"
-      expect(page).to have_selector("a.is-active", text: "recommendations")
+      expect(page).to have_css "a.is-active", text: "recommendations"
 
       within("#proposals") do
         expect(all(".proposal")[0].text).to match "Show you got"
@@ -1235,8 +1271,8 @@ describe "Proposals" do
         click_button "Search"
       end
 
-      expect(page).not_to have_selector("#proposals .proposal-featured")
-      expect(page).not_to have_selector("#featured-proposals")
+      expect(page).not_to have_css "#proposals .proposal-featured"
+      expect(page).not_to have_css "#featured-proposals"
     end
   end
 
@@ -1324,8 +1360,8 @@ describe "Proposals" do
 
   context "Filter" do
     context "By geozone" do
-      let(:california) { Geozone.create(name: "California") }
-      let(:new_york)   { Geozone.create(name: "New York") }
+      let(:california) { create(:geozone, :with_html_coordinates, name: "California") }
+      let(:new_york)   { create(:geozone, name: "New York") }
 
       before do
         create(:proposal, geozone: california, title: "Bigger sequoias")
@@ -1333,14 +1369,11 @@ describe "Proposals" do
         create(:proposal, geozone: new_york, title: "Sully monument")
       end
 
-      scenario "From map", :no_js do
+      scenario "From map" do
         visit proposals_path
 
         click_link "map"
-        within("#html_map") do
-          url = find("area[title='California']")[:href]
-          visit url
-        end
+        within("#html_map") { find("area[title='California']").click }
 
         within("#proposals") do
           expect(page).to have_css(".proposal", count: 2)

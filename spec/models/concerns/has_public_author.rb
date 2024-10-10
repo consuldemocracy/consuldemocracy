@@ -15,7 +15,7 @@ shared_examples_for "has_public_author" do
       author = create(:user, public_activity: false)
       authored_element = create(model.to_s.underscore.to_sym, author: author)
 
-      expect(authored_element.public_author).to be_nil
+      expect(authored_element.public_author).to be nil
     end
   end
 end

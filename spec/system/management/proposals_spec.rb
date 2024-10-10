@@ -110,7 +110,7 @@ describe "Proposals" do
       expect(page).to have_content(proposal1.title)
       expect(page).to have_content(proposal1.summary)
       expect(page).not_to have_content(proposal2.title)
-      expect(page).to have_css("a[href='#{management_proposal_path(proposal1)}']", text: proposal1.title)
+      expect(page).to have_link proposal1.title, href: management_proposal_path(proposal1)
     end
   end
 
@@ -133,9 +133,9 @@ describe "Proposals" do
 
     within(".proposals-list") do
       expect(page).to have_css(".proposal", count: 2)
-      expect(page).to have_css("a[href='#{management_proposal_path(proposal1)}']", text: proposal1.title)
+      expect(page).to have_link proposal1.title, href: management_proposal_path(proposal1)
       expect(page).to have_content(proposal1.summary)
-      expect(page).to have_css("a[href='#{management_proposal_path(proposal2)}']", text: proposal2.title)
+      expect(page).to have_link proposal2.title, href: management_proposal_path(proposal2)
       expect(page).to have_content(proposal2.summary)
     end
   end
@@ -200,7 +200,7 @@ describe "Proposals" do
       click_link "Print proposals"
 
       expect(page).to have_css(".proposal", count: 5)
-      expect(page).to have_css("a[href='javascript:window.print();']", text: "Print")
+      expect(page).to have_link "Print", href: "javascript:window.print();"
     end
 
     scenario "Filtering proposals to be printed" do

@@ -12,7 +12,8 @@
   </td>
   <td>
     <% unless @poll.expired? %>
-      <%= render Admin::TableActionsComponent.new(booth_assignment,
+      <%= render Admin::TableActionsComponent.new(
+        booth_assignment,
         actions: [:destroy],
         destroy_text: t("admin.booth_assignments.manage.actions.unassign"),
         destroy_confirmation: (booth_assignment.shifts? ? t("admin.poll_booth_assignments.alert.shifts") : ""),

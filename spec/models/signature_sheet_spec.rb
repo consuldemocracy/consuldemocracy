@@ -108,18 +108,18 @@ describe SignatureSheet do
 
       expect(Signature.count).to eq(2)
       expect(Signature.first.document_number).to eq("123A")
-      expect(Signature.first.date_of_birth).to eq(nil)
-      expect(Signature.first.postal_code).to eq(nil)
+      expect(Signature.first.date_of_birth).to be nil
+      expect(Signature.first.postal_code).to be nil
       expect(Signature.last.document_number).to eq("456B")
-      expect(Signature.last.date_of_birth).to eq(nil)
-      expect(Signature.last.postal_code).to eq(nil)
+      expect(Signature.last.date_of_birth).to be nil
+      expect(Signature.last.postal_code).to be nil
     end
 
     it "marks signature sheet as processed" do
       signature_sheet = create(:signature_sheet)
       signature_sheet.verify_signatures
 
-      expect(signature_sheet.processed).to eq(true)
+      expect(signature_sheet.processed).to be true
     end
 
     context "with remote census active", :remote_census do
@@ -135,11 +135,11 @@ describe SignatureSheet do
 
         expect(Signature.count).to eq(2)
         expect(Signature.first.document_number).to eq("123A")
-        expect(Signature.first.date_of_birth).to eq(nil)
-        expect(Signature.first.postal_code).to eq(nil)
+        expect(Signature.first.date_of_birth).to be nil
+        expect(Signature.first.postal_code).to be nil
         expect(Signature.last.document_number).to eq("456B")
-        expect(Signature.last.date_of_birth).to eq(nil)
-        expect(Signature.last.postal_code).to eq(nil)
+        expect(Signature.last.date_of_birth).to be nil
+        expect(Signature.last.postal_code).to be nil
       end
 
       it "creates signatures for each group with document_number and date_of_birth" do
@@ -154,10 +154,10 @@ describe SignatureSheet do
         expect(Signature.count).to eq(2)
         expect(Signature.first.document_number).to eq("123A")
         expect(Signature.first.date_of_birth).to eq(Date.parse("01/01/1980"))
-        expect(Signature.first.postal_code).to eq(nil)
+        expect(Signature.first.postal_code).to be nil
         expect(Signature.last.document_number).to eq("456B")
         expect(Signature.last.date_of_birth).to eq(Date.parse("01/02/1980"))
-        expect(Signature.last.postal_code).to eq(nil)
+        expect(Signature.last.postal_code).to be nil
       end
 
       it "creates signatures for each group with document_number and postal_code" do
@@ -171,10 +171,10 @@ describe SignatureSheet do
 
         expect(Signature.count).to eq(2)
         expect(Signature.first.document_number).to eq("123A")
-        expect(Signature.first.date_of_birth).to eq(nil)
+        expect(Signature.first.date_of_birth).to be nil
         expect(Signature.first.postal_code).to eq("28001")
         expect(Signature.last.document_number).to eq("456B")
-        expect(Signature.last.date_of_birth).to eq(nil)
+        expect(Signature.last.date_of_birth).to be nil
         expect(Signature.last.postal_code).to eq("28002")
       end
 
@@ -200,21 +200,32 @@ describe SignatureSheet do
     it "returns an array after spliting document numbers by semicolons" do
       signature_sheet.required_fields_to_verify = "123A\r\n;456B;\n789C;123B"
 
-      expect(signature_sheet.parsed_required_fields_to_verify_groups).to eq([["123A"], ["456B"], ["789C"], ["123B"]])
+      expect(signature_sheet.parsed_required_fields_to_verify_groups).to eq([["123A"],
+                                                                             ["456B"],
+                                                                             ["789C"],
+                                                                             ["123B"]])
     end
 
     it "returns an array after spliting all required_fields_to_verify by semicolons" do
-      required_fields_to_verify = "123A\r\n, 01/01/1980\r\n, 28001\r\n; 456B\n, 01/02/1980\n, 28002\n; 789C, 01/03/1980"
+      required_fields_to_verify = "123A\r\n, 01/01/1980\r\n, 28001\r\n; " \
+                                  "456B\n, 01/02/1980\n, 28002\n; " \
+                                  "789C, 01/03/1980"
       # signature_sheet.required_fields_to_verify = "123A\r\n456B\n789C;123B"
       signature_sheet.required_fields_to_verify = required_fields_to_verify
 
-      expect(signature_sheet.parsed_required_fields_to_verify_groups).to eq([["123A", "01/01/1980", "28001"], ["456B", "01/02/1980", "28002"], ["789C", "01/03/1980"]])
+      expect(signature_sheet.parsed_required_fields_to_verify_groups).to eq([["123A", "01/01/1980", "28001"],
+                                                                             ["456B", "01/02/1980", "28002"],
+                                                                             ["789C", "01/03/1980"]])
     end
 
     it "strips spaces between number and letter" do
-      signature_sheet.required_fields_to_verify = "123 A, 01/01/1980, 28001;\n456 B , 01/02/1980, 28002;\n 789C ,01/03/1980, 28 003"
+      signature_sheet.required_fields_to_verify = "123 A, 01/01/1980, 28001;\n" \
+                                                  "456 B , 01/02/1980, 28002;\n" \
+                                                  "789C ,01/03/1980, 28 003"
 
-      expect(signature_sheet.parsed_required_fields_to_verify_groups).to eq([["123A", "01/01/1980", "28001"], ["456B", "01/02/1980", "28002"], ["789C", "01/03/1980", "28003"]])
+      expect(signature_sheet.parsed_required_fields_to_verify_groups).to eq([["123A", "01/01/1980", "28001"],
+                                                                             ["456B", "01/02/1980", "28002"],
+                                                                             ["789C", "01/03/1980", "28003"]])
     end
   end
 end

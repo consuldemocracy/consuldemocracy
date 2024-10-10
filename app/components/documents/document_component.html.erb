@@ -1,0 +1,17 @@
+<div id="<%= dom_id(document) %>" class="document">
+  <%= link_to document.attachment, rel: "nofollow" do %>
+    <strong class="document-title"><%= document.title %></strong>
+    <small class="document-metadata">
+      <span class="document-content-type"><%= document.humanized_content_type %></span>
+      <span class="document-size"><%= number_to_human_size(document.attachment_file_size, precision: 2) %></span>
+    </small>
+  <% end %>
+
+  <% if show_destroy_link? && can?(:destroy, document) %>
+    <%= link_to t("documents.buttons.destroy_document"),
+                document,
+                method: :delete,
+                data: { confirm: t("documents.actions.destroy.confirm") },
+                class: "delete" %>
+  <% end %>
+</div>

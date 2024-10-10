@@ -98,7 +98,6 @@ eu:
           submit: Erregistratzea
           terms: Erregistratzerakoan %{terms} onartzen dituzu
           terms_link: erabilera baldintzak
-          terms_title: Erregistratzerakoan erabilera baldintzak onartzen dituzu
           title: Erregistratzea
           username_is_available: Erabiltzailea izena eskuragarri
           username_is_not_available: Erabiltzailea izen hori erabiltzen ari da

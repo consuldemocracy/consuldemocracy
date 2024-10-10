@@ -14,7 +14,7 @@ describe ScoreCalculator do
       expect(ScoreCalculator.hot_score(resource)).to eq 1
     end
 
-    it "ignores setting with negative value " do
+    it "ignores setting with negative value" do
       Setting["hot_score_period_in_days"] = -1
 
       expect(ScoreCalculator.hot_score(resource)).to eq 1

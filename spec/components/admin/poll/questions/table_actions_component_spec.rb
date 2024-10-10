@@ -1,8 +1,6 @@
 require "rails_helper"
 
-describe Admin::Poll::Questions::TableActionsComponent, controller: Admin::BaseController do
-  before { sign_in(create(:administrator).user) }
-
+describe Admin::Poll::Questions::TableActionsComponent, :admin do
   it "displays the edit and destroy actions when the poll has not started" do
     question = create(:poll_question, poll: create(:poll, :future))
 

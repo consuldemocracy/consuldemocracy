@@ -43,7 +43,6 @@ he:
           success: אזור מגוריך אומת
       new:
         accept_terms_text: אני מסכים/ה על %{terms_url} תנאי מפקד האוכלוסין
-        accept_terms_text_title: אני מסכים/ה על התנאים וכללי השימוש במפקד האוכלוסין
         document_number: מספר תעודה מזהה
         document_number_help_title: עזרה
         document_number_help_text: "<strong>תעודת זהות</strong>: 12345678A<br> <strong>דרכון</strong>: AAA000001<br> <strong>כרטיס תושב</strong>: X1234567P"

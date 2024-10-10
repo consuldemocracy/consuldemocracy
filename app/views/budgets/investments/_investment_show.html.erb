@@ -1,10 +1,10 @@
 <% provide :social_media_meta_tags do %>
 <%= render "shared/social_media_meta_tags",
-            social_url: budget_investments_path(investment),
-            social_title: investment.title,
-            social_description: investment.description,
-            twitter_image_url: (investment.image.present? ? polymorphic_path(investment.image.variant(:thumb)) : nil),
-            og_image_url: (investment.image.present? ? polymorphic_path(investment.image.variant(:thumb)) : nil) %>
+           social_url: budget_investments_path(investment),
+           social_title: investment.title,
+           social_description: investment.description,
+           twitter_image_url: (investment.image.present? ? polymorphic_path(investment.image.variant(:thumb)) : nil),
+           og_image_url: (investment.image.present? ? polymorphic_path(investment.image.variant(:thumb)) : nil) %>
 <% end %>
 
 <section class="budget-investment-show" id="<%= dom_id(investment) %>">
@@ -39,7 +39,7 @@
             <span class="total-supports">
               <strong>
                 <%= t("budgets.investments.investment.supports",
-                    count: investment.total_votes) %>
+                      count: investment.total_votes) %>
               </strong>
             </span>
           </div>
@@ -49,9 +49,9 @@
           <div class="text-center">
             <div id="<%= dom_id(investment) %>_ballot">
               <%= render "ballot",
-                investment: investment,
-                investment_ids: investment_ids,
-                ballot: ballot %>
+                         investment: investment,
+                         investment_ids: investment_ids,
+                         ballot: ballot %>
             </div>
           </div>
         <% end %>
@@ -93,22 +93,23 @@
         <% if investment.should_show_price_explanation? %>
           <div class="text-center" data-magellan>
             <%= link_to t("budgets.investments.show.see_price_explanation"),
-                          "#price_explanation", class: "small" %>
+                        "#price_explanation",
+                        class: "small" %>
           </div>
         <% end %>
       <% end %>
 
       <%= render "shared/social_share",
-        share_title: t("budgets.investments.show.share"),
-        title: investment.title,
-        image_url: image_absolute_url(investment.image, :thumb),
-        url: budget_investment_url(investment.budget, investment),
-        description: t("budgets.investments.share.message",
-                        title: investment.title,
-                        handle: setting["org_name"]),
-        mobile: t("budgets.investments.share.message",
-                   title: investment.title,
-                   handle: setting["twitter_handle"]) %>
+                 share_title: t("budgets.investments.show.share"),
+                 title: investment.title,
+                 image_url: image_absolute_url(investment.image, :thumb),
+                 url: budget_investment_url(investment.budget, investment),
+                 description: t("budgets.investments.share.message",
+                                title: investment.title,
+                                handle: setting["org_name"]),
+                 mobile: t("budgets.investments.share.message",
+                           title: investment.title,
+                           handle: setting["twitter_handle"]) %>
 
       <% if current_user %>
         <div class="sidebar-divider"></div>

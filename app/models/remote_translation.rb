@@ -4,7 +4,7 @@ class RemoteTranslation < ApplicationRecord
   validates :remote_translatable_id, presence: true
   validates :remote_translatable_type, presence: true
   validates :locale, presence: true
-  validates :locale, inclusion: { in: ->(_) { RemoteTranslations::Microsoft::AvailableLocales.available_locales }}
+  validates :locale, inclusion: { in: ->(_) { RemoteTranslations::Microsoft::AvailableLocales.locales }}
   validate :already_translated_resource
   after_create :enqueue_remote_translation
 
@@ -12,8 +12,8 @@ class RemoteTranslation < ApplicationRecord
     RemoteTranslations::Caller.new(self).delay.call
   end
 
-  def self.for(*args)
-    resources_groups(*args).flatten.select { |resource| translation_empty?(resource) }.map do |resource|
+  def self.for(*)
+    resources_groups(*).flatten.select { |resource| translation_empty?(resource) }.map do |resource|
       new(remote_translatable: resource, locale: I18n.locale)
     end
   end

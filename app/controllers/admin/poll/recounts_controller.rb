@@ -4,10 +4,10 @@ class Admin::Poll::RecountsController < Admin::Poll::BaseController
   def index
     @stats = Poll::Stats.new(@poll)
 
-    @booth_assignments = @poll.booth_assignments.
-                              includes(:booth, :recounts, :voters).
-                              order("poll_booths.name").
-                              page(params[:page]).per(50)
+    @booth_assignments = @poll.booth_assignments
+                              .includes(:booth, :recounts, :voters)
+                              .order("poll_booths.name")
+                              .page(params[:page]).per(50)
   end
 
   private

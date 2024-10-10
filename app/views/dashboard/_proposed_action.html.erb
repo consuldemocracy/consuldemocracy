@@ -46,10 +46,12 @@
       <% end %>
 
       <% proposed_action.links.each do |link| %>
-        <p><%= link_to link.label, link.url, target: "_blank" %></p>
+        <p><%= link_to link.label, link.url %></p>
       <% end %>
 
-      <%= render partial: "document", collection: proposed_action.documents %>
+      <% proposed_action.documents.each do |document| %>
+        <%= render Documents::DocumentComponent.new(document) %>
+      <% end %>
     </div>
   </div>
 </div>

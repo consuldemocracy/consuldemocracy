@@ -1,0 +1,89 @@
+ne:
+  officing:
+    header:
+      title: मतदान
+    dashboard:
+      index:
+        title: मतदान कार्यालय
+        info: यहाँ तपाइँ प्रयोगकर्ता कागजातहरू मान्य गर्न सक्नुहुन्छ र मत परिणामहरू भण्डारण गर्न सक्नुहुन्छ
+        no_shifts: तपाईंसँग आज अफिसिङ सिफ्टहरू छैनन्।
+    menu:
+      voters: कागजात प्रमाणित गर्नुहोस्
+      total_recounts: कुल गणना र परिणामहरू
+    polls:
+      final:
+        title: मतगणना अन्तिम चरणमा पुगेको छ
+        no_polls: 'तपाइँ कुनै पनि सक्रिय मतदानमा अन्तिम पुन: गणना गर्नुहुन्न'
+        select_poll: मतदान चयन गर्नुहोस्
+        add_results: परिणामहरू थप्नुहोस्
+    poll_budgets:
+      see_ballot_sheets: मतपत्रको सूची हेर्नुहोस्
+      index:
+        title: "%{poll_budget} - मतपत्रको सूची"
+        ballot_sheet: "मतपत्र %{id}"
+        ballot_sheet_name: नाम
+        ballot_sheet_author: लेखक
+        ballot_sheet_creation_date: बनाएको मिति
+        empty_results: यस मतदानको लागि अझै कुनै मतपत्रहरू छैनन्
+      new:
+        title: "%{poll_budget} - नयाँ मतपत्र"
+        booth: बुथ
+        select_booth: बुथ चयन गर्नुहोस्
+        csv_data: CSV डाटा
+        submit: सुरक्षित गर्नुहोस्
+      show:
+        created_at: बनाएको मिति
+        author: लेखक
+        data: CSV डाटा
+    booth:
+      new:
+        title: "आफ्नो बूथ छान्नुहोस्"
+    results:
+      flash:
+        create: "परिणामहरू सुरक्षित गरियो"
+        error_create: "परिणामहरू सुरक्षित गरिएको छैन। डाटा मा त्रुटि।"
+        error_wrong_booth: "गलत बुथ। परिणामहरू सुरक्षित गरिएको छैन।"
+      new:
+        title: "%{poll} - परिणामहरू थप्नुहोस्"
+        not_allowed: "तपाईंलाई यो मतदानको लागि परिणामहरू थप्न अनुमति छैन"
+        booth: "बुथ"
+        date: "मिति"
+        select_booth: "बुथ चयन गर्नुहोस्"
+        ballots_white: "पूर्ण रूपमा खाली मतपत्रहरू"
+        ballots_null: "अमान्य मतपत्रहरू"
+        ballots_total: "मान्य मतपत्रहरू"
+        submit: "सुरक्षित गर्नुहोस्"
+        results_list: "तपाईंको नतिजा"
+        see_results: "परिणामहरू हेर्नुहोस्"
+      index:
+        no_results: "कुनै परिणाम छैन"
+        results: परिणामहरू
+        table_answer: जवाफ
+        table_votes: मतहरू
+        table_whites: "पूर्ण रूपमा खाली मतपत्रहरू"
+        table_nulls: "अमान्य मतपत्रहरू"
+        table_total: "मान्य मतपत्रहरू"
+    residence:
+      flash:
+        create: "जनगणना संग प्रमाणित कागजात"
+        not_allowed: "तपाईंसँग आज अफिसिङ सिफ्टहरू छैनन्।"
+      new:
+        title: प्रमाणित कागजात
+        submit: कागजात प्रमाणित गर्नुहोस्
+        error_verifying_census: "जनगणनाले यो कागजात प्रमाणित गर्न सकेन।"
+        form_errors: यस कागजातको प्रमाणीकरण रोकियो
+    voters:
+      new:
+        title: मतदानहरू
+        table_poll: मतदान
+        table_status: मतदान स्थिति
+        table_actions: कार्यहरू
+        not_to_vote: व्यक्तिले यस समयमा मतदान नगर्ने निर्णय गरेको छ
+      show:
+        can_vote: मत दिन सक्छ
+        cannot_vote: मतदान हुने जिल्ला (हरू) मा दर्ता नभएकाले व्यक्तिले मतदान गर्न सक्दैन।
+        error_already_voted: यस मतदानमा पहिले नै सहभागी भइसकेका छन्
+        submit: मत पुष्टि गर्नुहोस्
+        success: "मत हालियाे !"
+      can_vote:
+        submit_disable_with: "पर्खनुहोस्, मतदान पुष्टि गर्दै..."

@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe GeozonesHelper do
   describe "#geozone_name" do
-    let(:geozone) { create :geozone }
+    let(:geozone) { create(:geozone) }
 
     it "returns geozone name if present" do
       proposal = create(:proposal, geozone: geozone)

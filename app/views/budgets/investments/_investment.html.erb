@@ -42,7 +42,7 @@
             <div class="supports">
               <span class="total-supports no-button">
                 <%= t("budgets.investments.investment.supports",
-                    count: investment.total_votes) %>
+                      count: investment.total_votes) %>
               </span>
             </div>
           </div>
@@ -50,9 +50,9 @@
           <div id="<%= dom_id(investment) %>_ballot"
                class="small-12 medium-3 column text-center">
                 <%= render "/budgets/investments/ballot",
-                  investment: investment,
-                  investment_ids: investment_ids,
-                  ballot: ballot %>
+                           investment: investment,
+                           investment_ids: investment_ids,
+                           ballot: ballot %>
           </div>
         <% elsif investment.should_show_price? %>
           <div id="<%= dom_id(investment) %>_price"

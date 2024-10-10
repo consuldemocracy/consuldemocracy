@@ -18,9 +18,12 @@ describe Shared::LinkListComponent do
       ["Home", "/"], ["Info", "/info"], class: "menu"
     )
 
-    expect(page).to be_rendered with: '<ul class="menu">' + "\n" +
-      '<li><a href="/">Home</a></li>' + "\n" +
-      '<li><a href="/info">Info</a></li>' + "\n</ul>\n"
+    expect(page).to be_rendered with: <<~HTML
+      <ul class="menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="/info">Info</a></li>
+      </ul>
+    HTML
   end
 
   it "accepts anchor tags" do
@@ -28,9 +31,12 @@ describe Shared::LinkListComponent do
       '<a href="/">Home</a>'.html_safe, ["Info", "/info"], class: "menu"
     )
 
-    expect(page).to be_rendered with: '<ul class="menu">' + "\n" +
-      '<li><a href="/">Home</a></li>' + "\n" +
-      '<li><a href="/info">Info</a></li>' + "\n</ul>\n"
+    expect(page).to be_rendered with: <<~HTML
+      <ul class="menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="/info">Info</a></li>
+      </ul>
+    HTML
   end
 
   it "accepts options for links" do
@@ -38,9 +44,9 @@ describe Shared::LinkListComponent do
       ["Home", "/", class: "root"], ["Info", "/info", id: "info"]
     )
 
-    expect(page).to have_css "a", count: 2
-    expect(page).to have_css "a.root", count: 1, exact_text: "Home"
-    expect(page).to have_css "a#info", count: 1, exact_text: "Info"
+    expect(page).to have_link count: 2
+    expect(page).to have_link "Home", class: "root", count: 1
+    expect(page).to have_link "Info", id: "info", count: 1
   end
 
   it "ignores nil entries" do
@@ -49,8 +55,8 @@ describe Shared::LinkListComponent do
     )
 
     expect(page).to have_css "li", count: 2
-    expect(page).to have_css "a.root", count: 1, exact_text: "Home"
-    expect(page).to have_css "a#info", count: 1, exact_text: "Info"
+    expect(page).to have_link "Home", class: "root", count: 1
+    expect(page).to have_link "Info", id: "info", count: 1
   end
 
   it "ignores empty entries" do
@@ -59,8 +65,8 @@ describe Shared::LinkListComponent do
     )
 
     expect(page).to have_css "li", count: 2
-    expect(page).to have_css "a.root", count: 1, exact_text: "Home"
-    expect(page).to have_css "a#info", count: 1, exact_text: "Info"
+    expect(page).to have_link "Home", class: "root", count: 1
+    expect(page).to have_link "Info", id: "info", count: 1
   end
 
   it "accepts an optional condition to check the active element" do
@@ -84,8 +90,8 @@ describe Shared::LinkListComponent do
     expect(page).to have_css "li", count: 3
     expect(page).to have_css "li[aria-current='true']", count: 1, exact_text: "Info"
 
-    expect(page).to have_css "a.root", count: 1, exact_text: "Home"
-    expect(page).to have_css "a#info", count: 1, exact_text: "Info"
+    expect(page).to have_link "Home", class: "root", count: 1
+    expect(page).to have_link "Info", id: "info", count: 1
     expect(page).to have_css "a[rel='help']", count: 1, exact_text: "Help"
   end
 end

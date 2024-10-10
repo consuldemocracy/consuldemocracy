@@ -32,17 +32,17 @@ class Officing::Residence
       user.update!(verified_at: Time.current)
     else
       user_params = {
-        document_number:       document_number,
-        document_type:         document_type,
-        geozone:               geozone,
-        date_of_birth:         response_date_of_birth.in_time_zone.to_datetime,
-        gender:                gender,
+        document_number: document_number,
+        document_type: document_type,
+        geozone: geozone,
+        date_of_birth: response_date_of_birth.in_time_zone.to_datetime,
+        gender: gender,
         residence_verified_at: Time.current,
-        verified_at:           Time.current,
-        erased_at:             Time.current,
-        password:              random_password,
-        terms_of_service:      "1",
-        email:                 nil
+        verified_at: Time.current,
+        erased_at: Time.current,
+        password: random_password,
+        terms_of_service: "1",
+        email: nil
       }
       self.user = User.create!(user_params)
     end

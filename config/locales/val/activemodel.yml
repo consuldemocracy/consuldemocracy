@@ -33,3 +33,12 @@ val:
         document_type: "Tipus de document"
         document_number: "Número de document (inclosa lletra)"
         year_of_birth: "Any de naixement"
+      local_census_records/import:
+        file: Fitxer
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "El format del fitxer es incorrecte. El format de arxiu permés es: %{valid_extensions}."
+              headers: "Les capçaleres del fitxer son incorrectes. Les capçaleres del fitxer han de tenir els noms següents: %{required_headers}."

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe BudgetInvestmentsHelper, type: :helper do
+RSpec.describe BudgetInvestmentsHelper do
   describe "#set_direction" do
     it "returns ASC if current_direction is DESC" do
       expect(set_direction("desc")).to eq "asc"

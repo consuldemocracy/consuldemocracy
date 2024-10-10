@@ -7,7 +7,7 @@
     li {
 
       &:focus {
-        outline: $outline-focus;
+        @include focus-outline;
       }
     }
   }

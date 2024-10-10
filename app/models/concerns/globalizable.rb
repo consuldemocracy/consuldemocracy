@@ -13,10 +13,6 @@ module Globalizable
       translations.reject(&:marked_for_destruction?).map(&:locale)
     end
 
-    def locales_marked_for_destruction
-      I18n.available_locales - locales_not_marked_for_destruction
-    end
-
     def locales_persisted_and_marked_for_destruction
       translations.select { |t| t.persisted? && t.marked_for_destruction? }.map(&:locale)
     end
@@ -83,9 +79,10 @@ module Globalizable
     def validates_translation(method, options = {})
       validates(method, options.merge(if: lambda { |resource| resource.translations.blank? }))
       if options.include?(:length)
-        lenght_validate = { length: options[:length] }
         translation_class.instance_eval do
-          validates method, lenght_validate.merge(if: lambda { |translation| translation.locale == I18n.default_locale })
+          validates method,
+                    length: options[:length],
+                    if: lambda { |translation| translation.locale == Setting.default_locale }
         end
         if options.count > 1
           translation_class.instance_eval do
@@ -99,6 +96,19 @@ module Globalizable
 
     def translation_class_delegate(method)
       translation_class.instance_eval { delegate method, to: :globalized_model }
+    end
+
+    def with_fallback_translation
+      translations_foreign_key = reflect_on_association(:translations).foreign_key
+      fallbacks = Globalize.fallbacks(Globalize.locale)
+
+      translations_ids = translation_class
+                         .select("DISTINCT ON (#{translations_foreign_key}) id")
+                         .where(locale: fallbacks)
+                         .order(translations_foreign_key)
+                         .in_order_of(:locale, fallbacks)
+
+      with_translations(fallbacks).where("#{translations_table_name}.id": translations_ids)
     end
   end
 end

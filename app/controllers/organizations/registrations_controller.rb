@@ -13,7 +13,7 @@ class Organizations::RegistrationsController < Devise::RegistrationsController
     if resource.valid?
       super do |user|
         # Removes unuseful "organization is invalid" error message
-        user.errors.messages.delete(:organization)
+        user.errors.delete(:organization)
       end
     else
       render :new

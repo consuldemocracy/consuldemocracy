@@ -24,7 +24,9 @@ class Poll
     private
 
       def shifts
-        Poll::Shift.where(booth_id: booth_id, officer_id: officer_assignments.pluck(:officer_id), date: officer_assignments.pluck(:date))
+        Poll::Shift.where(booth_id: booth_id,
+                          officer_id: officer_assignments.pluck(:officer_id),
+                          date: officer_assignments.pluck(:date))
       end
 
       def destroy_poll_shifts

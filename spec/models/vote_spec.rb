@@ -1,13 +1,23 @@
 require "rails_helper"
 
 describe Vote do
+  describe ".count_for" do
+    it "returns the number of records for a votable type" do
+      3.times { create(:vote, votable: create(:debate)) }
+      2.times { create(:vote, votable: create(:proposal)) }
+
+      expect(Vote.count_for("Debate")).to eq 3
+      expect(Vote.count_for("Proposal")).to eq 2
+    end
+  end
+
   describe "#value" do
     it "returns vote flag" do
       vote = create(:vote, vote_flag: true)
-      expect(vote.value).to eq(true)
+      expect(vote.value).to be true
 
       vote = create(:vote, vote_flag: false)
-      expect(vote.value).to eq(false)
+      expect(vote.value).to be false
     end
   end
 

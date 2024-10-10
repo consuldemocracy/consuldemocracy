@@ -9,7 +9,8 @@ RSpec::Matchers.define :be_rendered do |with: nil|
 
   failure_message do |page|
     if page.has_css?("body")
-      "expected page to be rendered with #{with}, but was rendered with #{page.find("body").native.inner_html}"
+      "expected page to be rendered with #{with}, " \
+        "but was rendered with #{page.find("body").native.inner_html}"
     else
       "expected page to be rendered with #{with}, but was not rendered"
     end

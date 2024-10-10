@@ -89,7 +89,7 @@ describe "Local Targets" do
       sdg_local_target = create(:sdg_local_target, code: "1.1.1")
       visit sdg_management_local_targets_path
 
-      confirmation = "Are you sure? This action will delete "\
+      confirmation = "Are you sure? This action will delete " \
                      "\"#{sdg_local_target.title}\" and can't be undone."
 
       accept_confirm(confirmation) { click_button "Delete" }

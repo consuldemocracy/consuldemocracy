@@ -7,6 +7,7 @@ module CommonActions
   include Debates
   include Documents
   include Emails
+  include GraphQLAPI
   include Images
   include Maps
   include Notifications
@@ -35,8 +36,8 @@ module CommonActions
   end
 
   def validate_officer
-    allow_any_instance_of(Officing::BaseController).
-    to receive(:verify_officer_assignment).and_return(true)
+    allow_any_instance_of(Officing::BaseController)
+      .to receive(:verify_officer_assignment).and_return(true)
   end
 
   def fill_in_proposal
@@ -69,8 +70,8 @@ module CommonActions
   def set_officing_booth(booth = nil)
     booth = create(:poll_booth) if booth.blank?
 
-    allow_any_instance_of(Officing::BaseController).
-    to receive(:current_booth).and_return(booth)
+    allow_any_instance_of(Officing::BaseController)
+      .to receive(:current_booth).and_return(booth)
   end
 
   def click_sdg_goal(code)

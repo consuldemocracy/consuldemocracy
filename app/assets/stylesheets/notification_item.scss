@@ -18,9 +18,9 @@
 
       color: #ecf00b;
       font-size: $circle-icon-size;
-      position: absolute;
       left: $notification-icon-size - rem-calc(5);
-      top: $menu-link-top-padding - $circle-icon-size / 2;
+      position: absolute;
+      top: calc(#{$menu-link-top-padding} - #{$circle-icon-size} / 2);
 
       @include breakpoint(medium) {
         $menu-link-left-padding: rem-calc(16);

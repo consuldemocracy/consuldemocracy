@@ -1,27 +1,3 @@
-class WickedPdf
-  # Wicked Pdf magic breaks ViewComponent
-  # https://github.com/mileszs/wicked_pdf/pull/925
-  module PdfHelper
-    def render(*args)
-      options = args.first
-      if options.is_a?(Hash) && options.key?(:pdf)
-        render_with_wicked_pdf(options)
-      else
-        super
-      end
-    end
-
-    def render_to_string(*args)
-      options = args.first
-      if options.is_a?(Hash) && options.key?(:pdf)
-        render_to_string_with_wicked_pdf(options)
-      else
-        super
-      end
-    end
-  end
-end
-
 # WickedPDF Global Configuration
 #
 # Use this to set up shared configuration options for your entire application.
@@ -32,15 +8,23 @@ end
 #
 # https://github.com/mileszs/wicked_pdf/blob/master/README.md
 
-WickedPdf.config = {
+WickedPdf.configure do |config|
   # Path to the wkhtmltopdf executable: This usually isn't needed if using
   # one of the wkhtmltopdf-binary family of gems.
-  # exe_path: '/usr/local/bin/wkhtmltopdf',
+  # config.exe_path = '/usr/local/bin/wkhtmltopdf'
   #   or
-  # exe_path: Gem.bin_path('wkhtmltopdf-binary', 'wkhtmltopdf')
+  # config.exe_path = Gem.bin_path('wkhtmltopdf-binary', 'wkhtmltopdf')
+
+  # Needed for wkhtmltopdf 0.12.6+ to use many wicked_pdf asset helpers
+  config.enable_local_file_access = true
 
   # Layout file to be used for all PDFs
   # (but can be overridden in `render :pdf` calls)
-  # layout: 'pdf.html',
-  enable_local_file_access: true
-}
+  # config.layout = 'pdf.html'
+
+  # Using wkhtmltopdf without an X server can be achieved by enabling the
+  # 'use_xvfb' flag. This will wrap all wkhtmltopdf commands around the
+  # 'xvfb-run' command, in order to simulate an X server.
+  #
+  # config.use_xvfb = true
+end

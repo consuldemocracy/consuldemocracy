@@ -8,16 +8,16 @@
   <div class="row expanded">
     <div class="small-12 medium-3 column">
       <%= f.text_field :starts_at,
-                        autocomplete: "off",
-                        value: poll.starts_at.present? ? l(poll.starts_at.to_date) : nil,
-                        class: "js-calendar-full" %>
+                       autocomplete: "off",
+                       value: poll.starts_at.present? ? l(poll.starts_at.to_date) : nil,
+                       class: "js-calendar-full" %>
     </div>
 
     <div class="small-12 medium-3 column end">
       <%= f.text_field :ends_at,
-                        autocomplete: "off",
-                        value: poll.ends_at.present? ? l(poll.ends_at.to_date) : nil,
-                        class: "js-calendar-full" %>
+                       autocomplete: "off",
+                       value: poll.ends_at.present? ? l(poll.ends_at.to_date) : nil,
+                       class: "js-calendar-full" %>
     </div>
   </div>
 

@@ -6,6 +6,10 @@ class CreateRelatedContentScores < ActiveRecord::Migration[4.2]
       t.integer :value
     end
 
-    add_index :related_content_scores, [:user_id, :related_content_id], name: "unique_user_related_content_scoring", unique: true, using: :btree
+    add_index :related_content_scores,
+              [:user_id, :related_content_id],
+              name: "unique_user_related_content_scoring",
+              unique: true,
+              using: :btree
   end
 end

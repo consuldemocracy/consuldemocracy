@@ -113,8 +113,21 @@ pl:
       title: "Podsumowanie"
       votes:
         zero: "%{count} głosów"
+        one: "%{count} głos"
+        few: "%{count} głosy"
+        many: "%{count} głosów"
+        other: "%{count} głosów"
       debate_phase: "Faza debaty"
       proposals_phase: "Etap składania wniosków"
       allegations_phase: "Faza Komentarzy"
+      debates:
+        zero: "Brak debat"
+        one: "%{count} debata"
+        few: "%{count} debaty"
+        many: "%{count} debat"
+        other: "%{count} debat"
+      proposals:
+        zero: "Brak propozycji"
+      download: "Podsumowanie pobierania"
       top_comments:
         zero: "Brak komentarzy"

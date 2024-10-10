@@ -75,7 +75,6 @@ pt-BR:
         tags_placeholder: "Entre com as marcações que você deseja usar, separadas por vírgulas ('s\")"
         map_location: "Localização no mapa"
         map_location_instructions: "Navegue no mapa até o local e fixe o marcador."
-        map_remove_marker: "Remover o marcador do mapa"
       index:
         title: Orçamento participativo
         unfeasible: Projetos de investimento inviáveis

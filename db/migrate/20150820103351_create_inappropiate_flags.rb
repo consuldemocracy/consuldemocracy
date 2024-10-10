@@ -10,6 +10,7 @@ class CreateInappropiateFlags < ActiveRecord::Migration[4.2]
     end
 
     add_index :inappropiate_flags, [:flaggable_type, :flaggable_id]
-    add_index :inappropiate_flags, [:user_id, :flaggable_type, :flaggable_id], name: "access_inappropiate_flags"
+    add_index :inappropiate_flags, [:user_id, :flaggable_type, :flaggable_id],
+              name: "access_inappropiate_flags"
   end
 end

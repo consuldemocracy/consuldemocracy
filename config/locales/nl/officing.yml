@@ -1,10 +1,10 @@
 nl:
   officing:
     header:
-      title: Polling
+      title: Peilingen
     dashboard:
       index:
-        title: Poll officing
+        title: Beheer peilingen
         info: Hier kun je documenten van gebruikers valideren en stemresultaten opslaan
         no_shifts: Je hebt geen beheerdienst vandaag.
     menu:
@@ -12,10 +12,10 @@ nl:
       total_recounts: Totaal aantal hertellingen en resultaten
     polls:
       final:
-        title: Polls ready for final recounting
-        no_polls: You are not officing final recounts in any active poll
-        select_poll: Select poll
-        add_results: Add results
+        title: Peilingen gereed voor laatste hertelling
+        no_polls: Je beheert geen laatste hertellingen in een actieve peiling
+        select_poll: Selecteer peiling
+        add_results: Voeg resultaten toe
     poll_budgets:
       see_ballot_sheets: Stembiljettenoverzicht
       index:
@@ -29,7 +29,7 @@ nl:
         title: "%{poll_budget} - Nieuw stembiljet"
         booth: Stemlocatie
         select_booth: Selecteer stemlocatie
-        csv_data: CSV data
+        csv_data: CSV-data
         submit: Opslaan
       show:
         created_at: Aanmaakdatum
@@ -40,26 +40,26 @@ nl:
         title: "Kies de stemlocatie"
     results:
       flash:
-        create: "Results saved"
-        error_create: "Results NOT saved. Error in data."
-        error_wrong_booth: "Wrong booth. Results NOT saved."
+        create: "Resultaten opgeslagen"
+        error_create: "Resultaten NIET opgeslagen. Foutmelding in data"
+        error_wrong_booth: "Verkeerd stemhokje. Resultaten NIET opgeslagen."
       new:
-        title: "%{poll} - Add results"
+        title: "%{poll} - Voeg resultaten toe"
         not_allowed: "Voor deze peiling kun je resultaten toevoegen"
         booth: "Stemhokje"
         date: "Datum"
-        select_booth: "Select booth"
+        select_booth: "Selecteer stemhokje"
         ballots_white: "Blanco stemmen"
-        ballots_null: "Invalid ballots"
+        ballots_null: "Ongeldige stemmen"
         ballots_total: "Totaal stemmen"
-        submit: "Save"
+        submit: "Opslaan"
         results_list: "Your results"
         see_results: "Bekijk resultaten"
       index:
-        no_results: "No results"
+        no_results: "Geen resultaten"
         results: Resultaten
         table_answer: Antwoord
-        table_votes: Votes
+        table_votes: Stemmen
         table_whites: "Blanco stemmen"
         table_nulls: "Invalid ballots"
         table_total: "Totaal stemmen"
@@ -74,13 +74,14 @@ nl:
         form_errors: voorkwam de verificatie van dit document
     voters:
       new:
-        title: Polls
-        table_poll: Poll
+        title: Peilingen
+        table_poll: Peiling
         table_status: Polls status
         table_actions: Activiteiten
         not_to_vote: De persoon heeft besloten niet te stemmen op dit moment
       show:
-        can_vote: Can vote
+        can_vote: Mag stemmen
+        cannot_vote: De persoon kan niet stemmen omdat hij/zij niet geregistreerd staat in de wijk(en) waar de stemming plaatsvindt.
         error_already_voted: Has already participated in this poll
         submit: Confirm vote
         success: "Vote introduced!"

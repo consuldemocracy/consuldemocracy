@@ -4,12 +4,11 @@
   <div class="small-12 medium-9 column">
     <%= link_to t("dashboard.community.access_community"),
                 community_path(proposal.community),
-                class: "button hollow",
-                target: "_blank" %>
+                class: "button hollow" %>
     <% if proposal.community.latest_activity.present? %>
       <p class="help-text">
         <%= t("dashboard.community.latest_activity",
-            at: l(proposal.community.latest_activity.to_date)) %>
+              at: l(proposal.community.latest_activity.to_date)) %>
       </p>
     <% end %>
   </div>

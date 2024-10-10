@@ -37,11 +37,11 @@ class Dashboard::AchievementsController < Dashboard::BaseController
     def executed_proposed_actions
       @executed_proposed_actions ||=
         Dashboard::ExecutedAction
-          .joins(:action)
-          .includes(:action)
-          .where(proposal: proposal)
-          .where(executed_at: start_date.beginning_of_day..end_date.end_of_day)
-          .where(dashboard_actions: { action_type: 0 })
-          .order(executed_at: :asc)
+        .joins(:action)
+        .includes(:action)
+        .where(proposal: proposal)
+        .where(executed_at: start_date.beginning_of_day..end_date.end_of_day)
+        .where(dashboard_actions: { action_type: 0 })
+        .order(executed_at: :asc)
     end
 end

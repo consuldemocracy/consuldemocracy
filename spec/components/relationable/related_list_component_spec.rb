@@ -12,8 +12,8 @@ describe Relationable::RelatedListComponent do
 
     create(:related_content, parent_relationable: proposal, child_relationable: user_proposal)
     create(:related_content, parent_relationable: proposal,
-           child_relationable: machine_proposal,
-           machine_learning: true)
+                             child_relationable: machine_proposal,
+                             machine_learning: true)
   end
 
   it "displays machine learning and user content when machine learning is enabled" do

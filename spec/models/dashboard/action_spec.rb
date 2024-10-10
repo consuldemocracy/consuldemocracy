@@ -2,13 +2,13 @@ require "rails_helper"
 
 describe Dashboard::Action do
   subject do
-    build :dashboard_action,
+    build(:dashboard_action,
           title: "Take action!",
           description: description,
           day_offset: day_offset,
           required_supports: required_supports,
           request_to_administrators: request_to_administrators,
-          action_type: action_type
+          action_type: action_type)
   end
 
   let(:description) { Faker::Lorem.sentence }
@@ -150,34 +150,34 @@ describe Dashboard::Action do
   end
 
   describe ".active_for" do
-    let!(:active_action) { create :dashboard_action, :active, day_offset: 0, required_supports: 0 }
-    let!(:inactive_action) { create :dashboard_action, :inactive }
+    let!(:active_action) { create(:dashboard_action, :active, day_offset: 0, required_supports: 0) }
+    let!(:inactive_action) { create(:dashboard_action, :inactive) }
     let!(:not_enough_supports_action) do
-      create :dashboard_action, :active, day_offset: 0, required_supports: 10_000
+      create(:dashboard_action, :active, day_offset: 0, required_supports: 10_000)
     end
 
     let!(:future_action) do
-      create :dashboard_action, :active, day_offset: 300, required_supports: 0
+      create(:dashboard_action, :active, day_offset: 300, required_supports: 0)
     end
 
     let!(:action_published_proposal) do
-      create :dashboard_action,
+      create(:dashboard_action,
              :active,
              day_offset: 0,
              required_supports: 0,
-             published_proposal: true
+             published_proposal: true)
     end
 
     let!(:action_for_draft_proposal) do
-      create :dashboard_action,
+      create(:dashboard_action,
              :active,
              day_offset: 0,
              required_supports: 0,
-             published_proposal: false
+             published_proposal: false)
     end
 
-    let(:proposal) { create :proposal }
-    let(:draft_proposal) { create :proposal, :draft }
+    let(:proposal) { create(:proposal) }
+    let(:draft_proposal) { create(:proposal, :draft) }
 
     it "actions with enough supports or days are active" do
       expect(Dashboard::Action.active_for(proposal)).to include(active_action)
@@ -213,13 +213,13 @@ describe Dashboard::Action do
   end
 
   describe ".course_for" do
-    let!(:proposed_action) { create :dashboard_action, :active, required_supports: 0 }
+    let!(:proposed_action) { create(:dashboard_action, :active, required_supports: 0) }
     let!(:inactive_resource) do
-      create :dashboard_action, :inactive, :resource, required_supports: 0
+      create(:dashboard_action, :inactive, :resource, required_supports: 0)
     end
-    let!(:resource) { create :dashboard_action, :active, :resource, required_supports: 10_000 }
-    let!(:achieved_resource) { create :dashboard_action, :active, :resource, required_supports: 0 }
-    let(:proposal) { create :proposal }
+    let!(:resource) { create(:dashboard_action, :active, :resource, required_supports: 10_000) }
+    let!(:achieved_resource) { create(:dashboard_action, :active, :resource, required_supports: 0) }
+    let(:proposal) { create(:proposal) }
 
     it "proposed actions are not part of proposal's course" do
       expect(Dashboard::Action.course_for(proposal)).not_to include(proposed_action)
@@ -290,9 +290,9 @@ describe Dashboard::Action do
 
         it "when proposal has been created today and day_offset is valid only for today" do
           expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,
-                                                          proposal)).to include(resource.id)
+                                                            proposal)).to include(resource.id)
           expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,
-                                                          proposal)).to include(action.id)
+                                                            proposal)).to include(action.id)
         end
 
         it "when proposal has received a new vote today" do
@@ -302,9 +302,9 @@ describe Dashboard::Action do
           create(:vote, voter: proposal.author, votable: proposal)
 
           expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,
-                                                          proposal)).to include(action.id)
+                                                            proposal)).to include(action.id)
           expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,
-                                                          proposal)).not_to include(resource.id)
+                                                            proposal)).not_to include(resource.id)
         end
       end
 
@@ -321,9 +321,9 @@ describe Dashboard::Action do
 
         it "when day_offset field is valid for today and invalid for yesterday" do
           expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,
-                                                          proposal)).to include(resource.id)
+                                                            proposal)).to include(resource.id)
           expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,
-                                                          proposal)).to include(action.id)
+                                                            proposal)).to include(action.id)
         end
 
         it "when proposal has received a new vote today" do
@@ -333,9 +333,9 @@ describe Dashboard::Action do
           create(:vote, voter: proposal.author, votable: proposal)
 
           expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,
-                                                          proposal)).to include(action.id)
+                                                            proposal)).to include(action.id)
           expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,
-                                                          proposal)).not_to include(resource.id)
+                                                            proposal)).not_to include(resource.id)
         end
       end
     end

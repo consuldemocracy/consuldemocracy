@@ -8,9 +8,20 @@ FactoryBot.define do
     sequence(:name) { |n| "District #{n}" }
     sequence(:external_code, &:to_s)
     sequence(:census_code, &:to_s)
+    color { "#0081aa" }
 
     trait :in_census do
       census_code { "01" }
+    end
+
+    trait :with_html_coordinates do
+      html_map_coordinates { "30,139,45,153,77,148,107,125" }
+    end
+
+    trait :with_geojson do
+      geojson do
+        '{ "geometry": { "type": "Polygon", "coordinates": [[0.117,51.513],[0.118,51.512],[0.119,51.514]] } }'
+      end
     end
   end
 
@@ -29,8 +40,8 @@ FactoryBot.define do
   end
 
   factory :banner_section, class: "Banner::Section" do
-    association :banner_id, factory: :banner
-    association :web_section, factory: :web_section
+    banner_id factory: :banner
+    web_section
   end
 
   factory :site_customization_page, class: "SiteCustomization::Page" do
@@ -63,16 +74,16 @@ FactoryBot.define do
   end
 
   factory :map_location do
-    latitude { 51.48 }
-    longitude { 0.0 }
-    zoom { 10 }
+    latitude { Setting["map.latitude"] }
+    longitude { Setting["map.longitude"] }
+    zoom { Setting["map.zoom"] }
 
     trait :proposal_map_location do
       proposal
     end
 
     trait :budget_investment_map_location do
-      association :investment, factory: :budget_investment
+      investment factory: :budget_investment
     end
   end
 

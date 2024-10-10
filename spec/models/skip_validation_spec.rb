@@ -58,6 +58,7 @@ describe SkipValidation do
         translates :title, touch: true
         translates :description, touch: true
         include Globalizable
+        has_many :translations, class_name: "DummyBanner::Translation", foreign_key: "banner_id"
 
         validates_translation :title, presence: true
         validates_translation :description, presence: true

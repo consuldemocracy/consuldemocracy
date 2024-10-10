@@ -4,8 +4,8 @@
       <p>
         <strong>
           <%= t("shared.suggest.#{resource_name}.found",
-              count: @resources.count,
-              query: @search_terms) %>
+                count: @resources.count,
+                query: @search_terms) %>
         </strong>
       </p>
 
@@ -19,9 +19,9 @@
         <p>
           <strong>
             <%= t("shared.suggest.#{resource_name}.message",
-                count: @resources.count,
-                query: @search_terms,
-                limit: @limit) %>
+                  count: @resources.count,
+                  query: @search_terms,
+                  limit: @limit) %>
           </strong>
           <%= link_to t("shared.suggest.#{resource_name}.see_all"),
                       polymorphic_path(resource_model, search: @search_terms) %>

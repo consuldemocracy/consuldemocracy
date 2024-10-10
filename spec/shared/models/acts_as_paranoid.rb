@@ -37,14 +37,17 @@ shared_examples "acts as paranoid" do |factory_name|
       resource.destroy!
       resource.reload
 
-      expect { resource.restore(recursive: true) }.to change { resource.translations.with_deleted.first.hidden_at }
+      expect do
+        resource.restore(recursive: true)
+      end.to change { resource.translations.with_deleted.first.hidden_at }
     end
 
     it "can be recovered after soft deletion through recursive restore" do
       original_translation = resource.translations.first
       new_translation = resource.translations.build
       described_class.translated_attribute_names.each do |translated_attribute_name|
-        new_translation.send("#{translated_attribute_name}=", original_translation.send(translated_attribute_name))
+        new_translation.send("#{translated_attribute_name}=",
+                             original_translation.send(translated_attribute_name))
       end
       new_translation.locale = :fr
       new_translation.save!

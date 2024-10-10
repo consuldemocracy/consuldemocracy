@@ -8,7 +8,7 @@ describe Budgets::Investments::BallotComponent do
       Budgets::Investments::BallotComponent.new(
         investment: investment,
         investment_ids: [],
-        ballot: Budget::Ballot.where(budget: budget, user: controller.current_user).first_or_create!
+        ballot: Budget::Ballot.where(budget: budget, user: vc_test_controller.current_user).first_or_create!
       )
     end
 
@@ -51,7 +51,7 @@ describe Budgets::Investments::BallotComponent do
       Budgets::Investments::BallotComponent.new(
         investment: investment,
         investment_ids: [],
-        ballot: Budget::Ballot.where(budget: budget, user: controller.current_user).first_or_create!
+        ballot: Budget::Ballot.where(budget: budget, user: vc_test_controller.current_user).first_or_create!
       )
     end
 

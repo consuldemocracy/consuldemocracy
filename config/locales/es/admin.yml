@@ -166,6 +166,8 @@ es:
         calculate: Calcular proyectos ganadores
         calculated: Calculando ganadores, puede tardar un minuto.
         recalculate: Recalcular proyectos ganadores
+      ballots:
+        feature_disabled: 'La funcionalidad de <strong>Votaciones</strong> debe estar activada para poder crear urnas. Puedes activarla en la página de <a href="%{link}">configuración</a>.'
     budget_groups:
       name: "Nombre"
       headings_name: "Partidas"
@@ -198,10 +200,11 @@ es:
         success_notice: "Partida presupuestaria eliminada correctamente"
         unable_notice: "No se puede eliminar una partida presupuestaria con proyectos asociados"
       form:
+        geozone_info: "Cuando se asocia una partida a una zona, la zona aparecerá en el mapa de este presupuesto si la zona incluye datos de GeoJSON."
         max_ballot_lines_info: 'Máximo número de proyectos que un usuario puede votar en esta partida durante la fase "Votación final". Solamente se aplica a presupuestos con votación por aprobación.'
         population_info: "El campo población de las partidas presupuestarias se usa con fines estadísticos únicamente, con el objetivo de mostrar el porcentaje de votos habidos en cada partida que represente un área con población. Es un campo opcional, así que puedes dejarlo en blanco si no aplica."
         coordinates_info: "Si se añaden los campos latitud y longitud, en la página de proyectos de esta partida aparecerá un mapa, que estará centrado en esas coordenadas."
-        content_blocks_info: "Si se permite el bloque de contenidos, se tendrá la oportunidad de crear bloques de contenido relativos a esta partida desde la sección Configuración > Personalizar bloques. Este contenido aparecerá en la página de proyectos de esta partida."
+        content_blocks_info: "Si se permite el bloque de contenidos, se tendrá la oportunidad de crear bloques de contenido relativos a esta partida desde la sección Contenido del sitio > Personalizar bloques. Este contenido aparecerá en la página de proyectos de esta partida."
         create: "Crear nueva partida"
         edit: "Editar partida"
         submit: "Guardar partida"
@@ -448,6 +451,16 @@ es:
         back: Volver a %{org}
         title: Administración
         description: Bienvenido al panel de administración de %{org}.
+        info: |-
+          <p>Este es el lugar donde tú, como administrador, implementas y supervisas el proceso de participación ciudadana en tu ciudad o región.</p>
+
+          <p>Ahora eres uno de los cientos de gobiernos y municipios de todo el mundo que están utilizando la plataforma CONSUL DEMOCRACY para poner en práctica la participación ciudadana. ¡Enhorabuena!</p>
+
+          <p>La Fundación CONSUL DEMOCRACY está en el centro de la comunidad mundial de usuarios. Nos gustaría pedirte que te pongas en contacto con nosotros para saber quién utiliza el software y ver cómo podemos ayudar en su implantación o uso. Estamos deseando darte la bienvenida a la comunidad.</p>
+
+          <p>¡Feliz administración!</p>
+
+          <p>Saludos del equipo de la Fundación CONSUL DEMOCRACY.</p>
       actions:
         index:
           description: "Cuando los usuarios crean propuestas pueden acceder a un panel de progreso de su propuesta, donde se le puede proponer recursos y recomendaciones para conseguir apoyos a su idea."
@@ -526,7 +539,6 @@ es:
         title: "Documentos"
         format: "Formato"
         size: "Tamaño"
-        url: "URL"
       create:
         success_notice: "Documento creado correctamente"
         unable_notice: "Documento inválido"
@@ -652,7 +664,6 @@ es:
         index:
           title: Versiones del borrador
           create: Crear versión
-          delete: Borrar
           preview: Previsualizar
         new:
           back: Volver
@@ -685,7 +696,6 @@ es:
           back: Volver
           title: Preguntas asociadas a este proceso
           create: Crear pregunta
-          delete: Borrar
         new:
           back: Volver
           title: Crear nueva pregunta
@@ -700,6 +710,11 @@ es:
       milestones:
         index:
           title: Seguimiento
+    locales:
+      default_help_text: "Cambiar el idioma por defecto <strong>afectará a todos los usuarios</strong> que visiten la página por primera vez."
+      enabled_help_text: El idioma por defecto, seleccionado con anterioridad, se habilitará automáticamente.
+      update:
+        notice: Idiomas actualizados con éxito
     managers:
       index:
         title: Gestores
@@ -717,11 +732,12 @@ es:
     menu:
       activity: Actividad de moderadores
       admin: Menú de administración
-      banner: Gestionar banners
+      banner: Banners
       proposals: Propuestas
       proposals_topics: Temas de propuestas
       budgets: Presupuestos participativos
-      geozones: Gestionar zonas
+      geozones: Zonas
+      locales: Idiomas
       hidden_comments: Comentarios ocultos
       hidden_debates: Debates ocultos
       hidden_proposals: Propuestas ocultas
@@ -761,6 +777,8 @@ es:
           community: "Comunidad"
           proposals: "Propuestas"
           polls: "Votaciones"
+          legislation: "Legislación colaborativa"
+          budgets: "Presupuestos participativos"
           layouts: "Plantillas"
           machine_learning: "IA / Machine Learning"
           mailers: "Correos"
@@ -782,7 +800,7 @@ es:
       dashboard_actions: Recursos y acciones
       debates: "Debates"
       comments: "Comentarios"
-      local_census_records: Gestionar censo local
+      local_census_records: Censo local
       machine_learning: "IA / Machine learning"
       multitenancy: Multientidad
     administrators:
@@ -1381,18 +1399,25 @@ es:
       show_results_and_stats: "Mostrar resultados y estadísticas"
       results_and_stats_reminder: "Si marcas estas casillas los resultados y/o estadísticas serán públicos y podrán verlos todos los usuarios."
       close_modal: Cerrar ventana emergente
-      example_url: "Por ejemplo, https://consulproject.org o /help"
+      example_url: "Por ejemplo, https://consuldemocracy.org o /help"
     geozones:
       index:
         title: Zonas
         create: Crear una zona
+        geojson_map: Mapa GeoJSON
+        geojson_map_help: "Si las coordenadas GeoJSON están disponibles, aparecerán en el siguiente mapa"
       geozone:
         name: Nombre
         external_code: Código externo
         census_code: Código del censo
         code_help: Código de respuesta para esta zona en la API del censo
-        coordinates: Coordenadas
+        color_help: "Color con el que aparecerá esta zona en el mapa de un presupuesto. %{format_help}"
+        coordinates: Coordenadas disponibles
         coordinates_help: Coordenadas que generarán una zona clicable en un mapa de imagen HTML
+        geojson: GeoJSON disponible
+        geojson_help: "Deben tener un tipo del formato \"Polygon\" o \"MultiPolygon\"; en el mapa de un presupuesto aparecerá un polígono basado en estos datos si una partida se asocia a esta geozona"
+      create:
+        notice: "Zona creada correctamente"
       edit:
         form:
           submit_button: Guardar cambios
@@ -1404,6 +1429,8 @@ es:
       delete:
         success: Zona borrada correctamente
         error: No se puede borrar la zona porque ya tiene elementos asociados
+      update:
+        notice: "Zona actualizada correctamente"
     signature_sheets:
       author: Autor
       created_at: Fecha de creación
@@ -1459,7 +1486,6 @@ es:
           verified_users_who_didnt_vote_proposals: Usuarios verificados que no han votado propuestas
           visits: Visitas
           votes: Votos
-        budgets_title: Presupuestos participativos
         participatory_budgets: Presupuestos Participativos
         direct_messages: Mensajes directos
         proposal_notifications: Notificaciones de propuestas
@@ -1467,10 +1493,15 @@ es:
         polls: Votaciones
         sdg: ODS
       graph:
-        debate_created: Debates
+        budget_investment_created: Proyectos de gasto creados
+        budget_investment_supported: Proyectos de gasto apoyados
+        debate_created: Debates creados
+        legislation_annotation_created: Anotaciones creadas
+        legislation_answer_created: Repuestas de legislación colaborativa creadas
+        level_3_user: Usuarios de nivel 3 verificados
+        proposal_created: Propuestas Ciudadanas creadas
+        title: Gráficos
         visit: Visitas
-        level_2_user: Usuarios nivel 2
-        proposal_created: Propuestas Ciudadanas
       budgets:
         no_data_before_balloting_phase: "No hay datos que mostrar hasta que la fase de votación no esté abierta."
         title: "Presupuestos participativos - Estadisticas de participación"
@@ -1533,6 +1564,10 @@ es:
         document_number: Número de documento
         roles: Roles
         verification_level: Nivel de verficación
+        activation_status: Estado de la confirmación
+      account:
+        active_status: Cuenta confirmada
+        inactive_status: Cuenta no confirmada
       index:
         title: Usuarios
         no_users: No hay usuarios.
@@ -1574,14 +1609,14 @@ es:
           name: Nombre
           names:
             top_links: Enlaces superiores
-            footer: Pie de página
+            footer: Pie de página (redes sociales)
+            footer_legal: Pie de página (términos legales)
             subnavigation_left: Navegación principal izquierda
             subnavigation_right: Navegación principal derecha
       images:
         index:
           title: Personalizar imágenes
           update: Actualizar
-          delete: Borrar
           image: Imagen
         update:
           notice: Imagen actualizada correctamente
@@ -1609,7 +1644,7 @@ es:
           see_page: Ver
         new:
           title: Página nueva
-          slug_help: "Texto que identifica esta página en la URL, por ejemplo <code>https://consulproject.org/slug-de-pagina</code>"
+          slug_help: "Texto que identifica esta página en la URL, por ejemplo <code>https://consuldemocracy.org/slug-de-pagina</code>"
         page:
           created_at: Creada
           status: Estado
@@ -1622,6 +1657,7 @@ es:
           create_card: Crear tarjeta
           no_cards: No hay tarjetas.
           columns_help: "Ancho de la tarjeta en número de columnas. En pantallas móviles siempre es un ancho del 100%."
+          order_help: "Puedes introducir la posición en la que se mostrará esta tarjeta."
           create:
             notice: "¡Tarjeta creada con éxito!"
           update:
@@ -1683,7 +1719,7 @@ es:
       empty: "No hay cambios registrados"
     local_census_records:
       index:
-        title: Gestionar censo local
+        title: Censo local
         create: Crear nuevo registro en el censo local
         no_local_census_records: No hay registros de censo local
         document_type: Tipo de documento
@@ -1708,7 +1744,7 @@ es:
         create:
           notice: ¡Proceso de import de registros del censo local ejecutado correctamente!
         show:
-          title: Gestionar censo local
+          title: Censo local
           subtitle: Resultados del proceso de importación
           import: Importar otro fichero
           errored: Filas erróneas
@@ -1730,10 +1766,10 @@ es:
       help:
         title_1: "¿Qué es IA / Machine Learning?"
         description_1: "Tradicionalmente, los programas informáticos se diseñan estableciendo reglas precisas sobre lo que debe hacer el programa en cada situación, y cómo procesar en cada momento la información disponible. Lo que se conoce comúnmente como IA / Machine Learning es un tipo de programas para los cuales lo que se establece de manera precisa es cuál es la tarea a realizar y cómo se valora el que la tarea esté mejor o peor realizada. Pero a diferencia de los otros, el sistema descubre o aprende cuál sería el método más adecuado para realizar dicha tarea."
-        title_2: "¿Qué hace el módulo de IA / Machine Learning en CONSUL?"
-        description_2: "Este módulo permite implementar en CONSUL cualquier tipo de programas de IA / Machine Learning. Los programas pueden procesar la información disponible en CONSUL y producir resultados que ayuden tanto a los usuarios como a los administradores a llevar a cabo una participación ciudadana más eficaz e inteligente. El módulo se ha desarrollado para que sea sencillo implementar y ejecutar nuevos programas, manteniendo por separado el código general de CONSUL y el código de estos nuevos programas."
+        title_2: "¿Qué hace el módulo de IA / Machine Learning en CONSUL DEMOCRACY?"
+        description_2: "Este módulo permite implementar en CONSUL DEMOCRACY cualquier tipo de programas de IA / Machine Learning. Los programas pueden procesar la información disponible en CONSUL DEMOCRACY y producir resultados que ayuden tanto a los usuarios como a los administradores a llevar a cabo una participación ciudadana más eficaz e inteligente. El módulo se ha desarrollado para que sea sencillo implementar y ejecutar nuevos programas, manteniendo por separado el código general de CONSUL DEMOCRACY y el código de estos nuevos programas."
         title_3: "Cómo usar el módulo"
-        description_3: "Para usarlo por primera vez es necesario seguir las instrucciones disponibles en la documentación de CONSUL para activar correctamente este módulo. Una vez el módulo esté correctamente activado, los programas se ejecutan desde la pestaña \"Ejecutar scripts\". Antes de ejecutarlo podemos ver en esa misma pestaña una estimación del tiempo de ejecución y otras informaciones relevantes. Al terminar la ejecución podemos activar el contenido que se mostrará en CONSUL desde la pestaña de \"Configuración\", así como descargar otros archivos generados que nos puedan resultar útiles."
+        description_3: "Para usarlo por primera vez es necesario seguir las instrucciones disponibles en la documentación de CONSUL DEMOCRACY para activar correctamente este módulo. Una vez el módulo esté correctamente activado, los programas se ejecutan desde la pestaña \"Ejecutar scripts\". Antes de ejecutarlo podemos ver en esa misma pestaña una estimación del tiempo de ejecución y otras informaciones relevantes. Al terminar la ejecución podemos activar el contenido que se mostrará en CONSUL DEMOCRACY desde la pestaña de \"Configuración\", así como descargar otros archivos generados que nos puedan resultar útiles."
         title_4: "Cómo implementar nuevos scripts de IA / Machine Learning."
         description_4: "Utiliza los scripts existentes como ejemplo."
         description_4b: "Los nuevos scripts deben estar ubicados en la carpeta <code>public/machine_learning/scripts</code>"

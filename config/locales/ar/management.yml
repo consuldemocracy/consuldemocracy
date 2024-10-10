@@ -35,7 +35,7 @@ ar:
     document_verifications:
       already_verified: تم تأكيد هذا الحساب مسبقاً.
       has_no_account: لإنشاء حساب، اذهب إلى %{link} وانقر على <b>"تسجيل"</b> في أعلى يسار الشاشة.
-      link: CONSUL
+      link: CONSUL DEMOCRACY
       in_census_has_following_permissions: "يمكن لهذا المستخدم المشاركة في موقع الويب باستخدام التراخيص التالية:"
       not_in_census: لم يتم تسجيل هذا المستند.
       not_in_census_info: "يمكن للمواطنين غير الموجودين في تعداد السكان الاشتراك في موقع الويب باستخدام التراخيص التالية:"

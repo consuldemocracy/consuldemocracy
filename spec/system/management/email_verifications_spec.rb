@@ -15,7 +15,8 @@ describe "EmailVerifications" do
     fill_in "email_verification_email", with: user.email
     click_button "Send verification email"
 
-    expect(page).to have_content("In order to completely verify this user, it is necessary that the user clicks on a link")
+    expect(page).to have_content "In order to completely verify this user, " \
+                                 "it is necessary that the user clicks on a link"
 
     user.reload
 

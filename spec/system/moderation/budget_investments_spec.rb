@@ -4,7 +4,8 @@ describe "Moderate budget investments" do
   let(:budget)      { create(:budget) }
   let(:heading)     { create(:budget_heading, budget: budget, price: 666666) }
   let(:mod)         { create(:moderator) }
-  let!(:investment) { create(:budget_investment, heading: heading, author: create(:user)) }
+  let(:author)      { create(:user, username: "Julia") }
+  let!(:investment) { create(:budget_investment, heading: heading, author: author) }
 
   scenario "Hiding an investment" do
     login_as(mod.user)
@@ -23,7 +24,7 @@ describe "Moderate budget investments" do
     login_as(mod.user)
     visit budget_investment_path(budget, investment)
 
-    accept_confirm("Are you sure? This will hide the user \"#{investment.author.name}\" and all their contents.") do
+    accept_confirm("Are you sure? This will hide the user \"Julia\" and all their contents.") do
       click_button "Block author"
     end
 
@@ -52,10 +53,7 @@ describe "Moderate budget investments" do
       describe "When an investment has been selected for moderation" do
         before do
           visit moderation_budget_investments_path
-
-          within(".menu.simple") do
-            click_link "All"
-          end
+          click_link "All"
 
           within("#investment_#{investment.id}") do
             check "budget_investment_#{investment.id}_check"
@@ -107,16 +105,17 @@ describe "Moderate budget investments" do
         create_list(:budget_investment, 2, heading: heading, author: create(:user))
 
         visit moderation_budget_investments_path
+        click_link "All"
 
-        within(".js-check") { click_on "All" }
+        expect(page).to have_field type: :checkbox, count: 3
 
-        expect(all("input[type=checkbox]")).to all(be_checked)
+        within(".check-all-none") { click_button "Select all" }
 
-        within(".js-check") { click_on "None" }
+        expect(all(:checkbox)).to all(be_checked)
 
-        all("input[type=checkbox]").each do |checkbox|
-          expect(checkbox).not_to be_checked
-        end
+        within(".check-all-none") { click_button "Select none" }
+
+        all(:checkbox).each { |checkbox| expect(checkbox).not_to be_checked }
       end
 
       scenario "remembering page, filter and order" do
@@ -138,34 +137,24 @@ describe "Moderate budget investments" do
 
     scenario "Current filter is properly highlighted" do
       visit moderation_budget_investments_path
-
       expect(page).not_to have_link("Pending")
       expect(page).to have_link("All")
       expect(page).to have_link("Marked as viewed")
 
       visit moderation_budget_investments_path(filter: "all")
-
-      within(".menu.simple") do
-        expect(page).not_to have_link("All")
-        expect(page).to have_link("Pending")
-        expect(page).to have_link("Marked as viewed")
-      end
+      expect(page).not_to have_link("All")
+      expect(page).to have_link("Pending")
+      expect(page).to have_link("Marked as viewed")
 
       visit moderation_budget_investments_path(filter: "pending_flag_review")
-
-      within(".menu.simple") do
-        expect(page).to have_link("All")
-        expect(page).not_to have_link("Pending")
-        expect(page).to have_link("Marked as viewed")
-      end
+      expect(page).to have_link("All")
+      expect(page).not_to have_link("Pending")
+      expect(page).to have_link("Marked as viewed")
 
       visit moderation_budget_investments_path(filter: "with_ignored_flag")
-
-      within(".menu.simple") do
-        expect(page).to have_link("All")
-        expect(page).to have_link("Pending")
-        expect(page).not_to have_link("Marked as viewed")
-      end
+      expect(page).to have_link("All")
+      expect(page).to have_link("Pending")
+      expect(page).not_to have_link("Marked as viewed")
     end
 
     scenario "Filtering investments" do
@@ -197,21 +186,24 @@ describe "Moderate budget investments" do
     end
 
     scenario "sorting investments" do
-      flagged_investment = create(:budget_investment,
+      flagged_investment = create(
+        :budget_investment,
         heading: heading,
         title: "Flagged investment",
         created_at: 1.day.ago,
         flags_count: 5
       )
 
-      flagged_new_investment = create(:budget_investment,
+      flagged_new_investment = create(
+        :budget_investment,
         heading: heading,
         title: "Flagged new investment",
         created_at: 12.hours.ago,
         flags_count: 3
       )
 
-      latest_investment = create(:budget_investment,
+      latest_investment = create(
+        :budget_investment,
         heading: heading,
         title: "Latest investment",
         created_at: Time.current

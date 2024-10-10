@@ -8,13 +8,14 @@
   <div class="participation-not-allowed">
     <p>
       <%= sanitize(t("legislation.questions.participation.verified_only",
-          verify_account: link_to_verify_account)) %>
+                     verify_account: link_to_verify_account)) %>
     </p>
   </div>
 <% elsif !user_signed_in? %>
   <div class="participation-not-allowed">
     <%= sanitize(t("legislation.questions.participation.unauthenticated",
-          signin: link_to_signin, signup: link_to_signup)) %>
+                   signin: link_to_signin,
+                   signup: link_to_signup)) %>
   </div>
 <% elsif !@process.debate_phase.open? %>
   <div class="participation-not-allowed">

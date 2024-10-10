@@ -11,7 +11,7 @@ section "Creating investment milestones" do
       rand(1..5).times do
         milestone = record.milestones.build(
           publication_date: Date.tomorrow,
-          status_id: Milestone::Status.all.sample
+          status_id: Milestone::Status.sample
         )
 
         random_locales.map do |locale|
@@ -29,7 +29,7 @@ section "Creating investment milestones" do
 
       rand(0..3).times do
         progress_bar = record.progress_bars.build(
-          kind:       :secondary,
+          kind: :secondary,
           percentage: rand(ProgressBar::RANGE)
         )
 

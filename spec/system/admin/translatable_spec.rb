@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Admin edit translatable records", :admin do
   before do
-    translatable.main_link_url = "https://consulproject.org" if translatable.is_a?(Budget::Phase)
+    translatable.main_link_url = "https://consuldemocracy.org" if translatable.is_a?(Budget::Phase)
     translatable.update!(attributes)
   end
 
@@ -123,7 +123,7 @@ describe "Admin edit translatable records", :admin do
     let(:translatable) { create(:budget_investment) }
 
     context "Input field" do
-      let(:translatable) { create(:budget, main_link_url: "https://consulproject.org") }
+      let(:translatable) { create(:budget, main_link_url: "https://consuldemocracy.org") }
 
       scenario "Shows validation erros" do
         visit edit_admin_budget_path(translatable)
@@ -215,8 +215,8 @@ describe "Admin edit translatable records", :admin do
     end
 
     context "CKEditor fields" do
-      let(:translatable) { create(:poll_question_answer, poll: create(:poll, :future)) }
-      let(:path) { edit_admin_question_answer_path(translatable.question, translatable) }
+      let(:translatable) { create(:poll_question_option, poll: create(:poll, :future)) }
+      let(:path) { edit_admin_question_option_path(translatable.question, translatable) }
 
       scenario "Changes the existing translation" do
         visit path

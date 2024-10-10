@@ -1,8 +1,7 @@
 require "rails_helper"
 
-describe Admin::AllowedTableActionsComponent, controller: Admin::BaseController do
+describe Admin::AllowedTableActionsComponent, :admin do
   before do
-    sign_in(create(:administrator).user)
     allow_any_instance_of(Admin::AllowedTableActionsComponent).to receive(:can?).and_return true
   end
   let(:record) { create(:banner, title: "Important!") }

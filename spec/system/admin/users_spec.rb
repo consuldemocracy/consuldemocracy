@@ -18,9 +18,9 @@ describe "Admin users" do
   scenario "The username links to their public profile" do
     visit admin_users_path
 
-    within_window(window_opened_by { click_link user.name }) do
-      expect(page).to have_current_path(user_path(user))
-    end
+    click_link user.name
+
+    expect(page).to have_current_path(user_path(user))
   end
 
   scenario "Show active or erased users using filters" do
@@ -55,5 +55,24 @@ describe "Admin users" do
     expect(page).to have_content user.email
     expect(page).not_to have_content admin.name
     expect(page).not_to have_content admin.email
+  end
+
+  describe "Show account activation status" do
+    scenario "when user account is confimed" do
+      visit admin_users_path
+
+      expect(page).to have_content "Activation Status"
+      expect(page).to have_content "Account activated"
+      expect(page).not_to have_content "Account not activated"
+    end
+
+    scenario "when user account is not confimed" do
+      user.update!(confirmed_at: nil)
+
+      visit admin_users_path
+
+      expect(page).to have_content "Activation Status"
+      expect(page).to have_content "Account not activated"
+    end
   end
 end

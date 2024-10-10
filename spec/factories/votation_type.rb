@@ -9,6 +9,6 @@ FactoryBot.define do
       max_votes { 3 }
     end
 
-    association :questionable, factory: :poll_question
+    questionable factory: :poll_question
   end
 end

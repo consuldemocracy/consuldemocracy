@@ -29,7 +29,8 @@
           <%= enabled_cell(phase) %>
         </td>
         <td>
-          <%= render Admin::TableActionsComponent.new(phase,
+          <%= render Admin::TableActionsComponent.new(
+            phase,
             actions: [:edit],
             edit_path: edit_path(phase)
           ) %>

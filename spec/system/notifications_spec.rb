@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Notifications" do
-  let(:user) { create :user }
+  let(:user) { create(:user) }
   before { login_as(user) }
 
   scenario "View all" do
@@ -164,23 +164,25 @@ describe "Notifications" do
     end
 
     scenario "With internal link" do
-      admin_notification.update!(link: "/stats")
+      admin_notification.update!(link: "/debates")
 
       visit notifications_path
       expect(page).to have_content("Notification title")
       expect(page).to have_content("Notification body")
 
       first("#notification_#{notification.id} a").click
-      expect(page).to have_current_path("/stats")
+
+      expect(page).to have_current_path "/debates"
     end
 
     scenario "Without a link" do
-      admin_notification.update!(link: "/stats")
+      admin_notification.update!(link: nil)
 
       visit notifications_path
-      expect(page).to have_content("Notification title")
-      expect(page).to have_content("Notification body")
-      expect(page).not_to have_link(notification_path(notification), visible: :all)
+
+      expect(page).to have_content "Notification title"
+      expect(page).to have_content "Notification body"
+      expect(page).not_to have_link href: notification_path(notification), visible: :all
     end
   end
 
@@ -213,9 +215,11 @@ describe "Notifications" do
     end
 
     it "sends batches in time intervals" do
-      allow(Notification).to receive(:batch_size).and_return(1)
-      allow(Notification).to receive(:batch_interval).and_return(1.second)
-      allow(Notification).to receive(:first_batch_run_at).and_return(Time.current)
+      allow(Notification).to receive_messages(
+        batch_size: 1,
+        batch_interval: 1.second,
+        first_batch_run_at: Time.current
+      )
 
       remove_users_without_pending_notifications
 
@@ -239,7 +243,7 @@ describe "Notifications" do
   end
 
   def users_without_notifications
-    User.all.select do |user|
+    User.select do |user|
       user.notifications.not_emailed.where(notifiable_type: "ProposalNotification").blank?
     end
   end

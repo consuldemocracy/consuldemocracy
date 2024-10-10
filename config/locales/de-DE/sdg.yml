@@ -9,18 +9,25 @@ de:
         targets:
           target_1_1:
             long_title: "Bis 2030 Beseitigung der extremen Armut für alle Menschen weltweit, welche derzeit alle Menschen umfasst, die von weniger als 1,25 Us-Dollar pro Tag leben"
+            short_title: "Beseitigung der extremen Armut"
           target_1_2:
             long_title: "Bis 2030 den Anteil der Männer, Frauen und Kinder aller Altersgruppen, die in Armut leben, in all ihren Dimensionen gemäß den nationalen Definitionen mindestens halbieren"
+            short_title: "Reduzierung der Armut um mindestens 50%"
           target_1_3:
             long_title: "Sozialschutzsysteme und -maßnahmen für alle umsetzen, einschließlich eines Basisschutzes, und bis 2030 eine breite Versorgung der Armen und Schwachen erreichen"
+            short_title: "Umsetzung von Sozialschutzsystemen"
           target_1_4:
             long_title: "Bis 2030 sicherstellen, dass alle Männer und Frauen, insbesondere die Armen und Schwachen, die gleichen Rechte auf wirtschaftliche Ressourcen sowie Zugang zu grundlegenden Diensten, Grundeigentum und Verfügungsgewalt über Grund und Boden und sonstigen Vermögensformen, Erbschaften, natürlichen Ressourcen, geeigneten neuen Technologien und Finanzdienstleistungen einschließlich Mikrofinanzierung haben"
+            short_title: "Gleiche Rechte auf Eigentum, Grundversorgung, Technologie und wirtschaftliche Ressourcen."
           target_1_5:
             long_title: "Bis 2030 die Widerstandsfähigkeit der Armen und der Menschen in prekären Situationen erhöhen und ihre Exposition und Anfälligkeit gegenüber klimabedingten Extremereignissen und anderen wirtschaftlichen, sozialen und ökologischen Schocks und Katastrophen verringern"
+            short_title: "Stärkung der Widerstandsfähigkeit gegenüber ökologischen, wirtschaftlichen und sozialen Katastrophen"
           target_1_A:
             long_title: "Eine erhebliche Mobilisierung von Ressourcen aus einer Vielzahl von Quellen gewährleisten, einschließlich durch verbesserte Entwicklungszusammenarbeit, um den Entwicklungsländern und insbesondere den am wenigsten entwickelten Ländern ausreichende und berechenbare Mittel für die Umsetzung von Programmen und Politiken zur Beendigung der Armut in all ihren Dimensionen bereitzustellen"
+            short_title: "Mobilisierung von Ressourcen zur Umsetzung von Maßnahmen zur Armutsbekämpfung."
           target_1_B:
             long_title: "Auf nationaler, regionaler und internationaler Ebene solide politische Rahmen auf der Grundlage armutsorientierter und geschlechtersensibler Entwicklungsstrategien schaffen, um beschleunigte Investitionen in Maßnahmen zur Beseitigung der Armut zu unterstützen"
+            short_title: "Schaffung eines armutsorientierten und geschlechtergerechten politischen Rahmens."
       goal_2:
         title: "Kein Hunger"
         title_in_two_lines: "Kein \nHunger"
@@ -29,20 +36,28 @@ de:
         targets:
           target_2_1:
             long_title: "Bis 2030 den Hunger beenden und den Zugang aller Menschen, insbesondere der Armen und Menschen in gefährdeten Situationen, einschließlich Kleinkindern, zu sicherer, nahrhafter und ausreichender Nahrung das ganze Jahr über sicherstellen."
+            short_title: "Allgemeiner Zugang zu sicheren und nahrhaften Lebensmitteln."
           target_2_2:
             long_title: "Bis 2030 alle Formen von Unterernährung beenden, einschließlich der Erreichung der international vereinbarten Ziele zur Beendigung von Wachstumshemmnissen und Schwindsucht bei Kndern unter fünf Jahren bis 2025, sowie auf die Ernährungsbedürfnisse jugendlicher Mädchen und schwangerer und stillender Frauen eingehen."
+            short_title: "Alle Formen der Unterernährung beenden"
           target_2_3:
             long_title: "Verdopplung der landwirtschaftlichen Produktivität und Einkommen kleinerer Lebensmittelproduzent:innen bis 2030, insbesondere von Frauen, Indigenen, Familienbauern, Pastoralist:innen und Fischer:innen, unter anderem durch gesicherten und gleichberechtigten Zugang zu Land, anderen produktiven Ressourcen und Betriebsmitteln, Wissen, finanzielle Dienstleistungen, Märkte und Möglichkeiten der Wertschöpfung und Beschäftigung außerhalb der Landwirtschaft."
+            short_title: "Verdoppelung der Produktivität und des Einkommens von kleinen Lebensmittelproduzenten"
           target_2_4:
             long_title: "Gewährleistung nachhaltiger Lebensmittelproduktionssysteme bis 2030 und Umsetzung widerstandsfähiger landwirtschaftlicher Praktiken, die die Produktivität und Produktion steigern, zur Erhaltung der Ökosysteme beitragen, die Anpassungsfähigkeit an den Klimawandel, extremes Wetter, Dürre, Überschwemmungen und andere Katastrophen stärken und die Land- und Bodenqualität schrittweise verbessern."
+            short_title: "Nachhaltige Lebensmittelproduktion und widerstandsfähige landwirtschaftliche Praktiken."
           target_2_5:
             long_title: "Die Erhaltung der genetischen Vielfalt von Saatgut, Kulturpflanzen sowie Nutztieren und domestizierten Tieren und den damit verbundenen Wildarten bis 2020, auch durch solide verwaltete und diversifizierte Saatgut- und Pflanzenbanken auf nationaler, regionaler und internationaler Ebene, sowie die Förderung des Zugangs zu einer fairen und gerechten Aufteilung der Vorteile, die sich aus der Nutzung genetischer Ressourcen und des damit verbundenen traditionellen Wissens ergeben, so wie international vereinbart."
+            short_title: "Erhaltung der genetischen Vielfalt in der Lebensmittelproduktion."
           target_2_A:
             long_title: "Steigerung der Investitionen, unter anderem durch verbesserte internationale Kooperation, in ländliche Infrastruktur, landwirtschaftliche Forschungs- und Beratungsdienste, Technologieentwicklung sowie Genbanken für Pflanzen und Nutztiere, um die landwirtschaftlichen Produktionskapazitäten in Entwicklungsländern, insbesondere in den am wenigsten entwickelten Ländern, zu verbessern."
+            short_title: "Investitionen in ländliche Infrastruktur, Agrarforschung, Technologie und Genbanken."
           target_2_B:
             long_title: "Korrektur und Verhinderung von Handelsbeschränkungen und -verzerrungen auf den weltweiten Agrarmärkten, unter anderem durch die parallele Beseitigung aller Formen von Agrarexportsubventionen und aller Exportmaßnahmen mit gleicher Wirkung gemäß dem Mandat der Doha-Entwicklungsrunde."
+            short_title: "Verhinderung von Agrarhandelsbeschränkungen, Marktverzerrungen und Exportsubventionen"
           target_2_C:
             long_title: "Verabschiedung von Maßnahmen zur Gewährleistung des ordnungsgemäßen Funktionierens der Lebensmittelmärkte und ihrer Derivate sowie zur Erleichterung des rechtzeitigen Zugangs zu Marktinformationen, einschließlich der Lebensmittelreserven, um die extreme Volatilität der Lebensmittelpreise zu begrenzen."
+            short_title: "Gewährleistung stabiler Lebensmittelmärkte und eines rechtzeitigen Zugangs zu Informationen"
       goal_3:
         title: "Gute Gesundheit und Wohlbefinden"
         title_in_two_lines: "Gute Gesundheit\nund Wohlbefinden"
@@ -51,34 +66,571 @@ de:
         targets:
           target_3_1:
             long_title: "Reduzierung der Müttersterblichkeitsrate auf unter 70 pro 100.000 Lebendgeburten bis 2030."
+            short_title: "Senkung der Müttersterblichkeit"
           target_3_2:
             long_title: "Bis 2030 die vermeidbaren Todesfälle von Neugeborenen und Kindern unter 5 Jahren überwinden, wobei alle Länder das Ziel haben, die Neugeborenensterblichkeit auf mindestens 12 pro 1.000 Lebendgeburten und die Sterblichkeit unter 5 Jahren auf mindestens 25 pro 1.000 Lebendgeburten zu senken."
+            short_title: "Alle vermeidbaren Todesfälle im Alter von unter 5 Jahren beenden"
           target_3_3:
             long_title: "Bis 2030 die Epidemien von AIDS, Tuberkulose, Malaria und vernachlässigten Tropenkrankheiten bewältigen und Hepatitis, durch Wasser übertragene Krankheiten und andere übertragbare Krankheiten bekämpfen."
+            short_title: "Kampf gegen übertragbare Krankheiten"
           target_3_4:
             long_title: "Bis 2030 die vorzeitige Sterblichkeitsrate durch nichtübertragbare Krankheiten durch Prävention und Behandlung um ein Drittel reduzieren und die psychische Gesundheit und das Wohlbefinden fördern."
+            short_title: "Senkung der Sterblichkeit durch nicht übertragbare Krankheiten und Förderung der psychischen Gesundheit"
           target_3_5:
             long_title: "Stärkung der Prävention und Behandlung von Drogenmissbrauch, einschließlich Betäubungsmittelmissbrauch und schädlichem Alkoholkonsum."
+            short_title: "Vorbeugung und Behandlung von Substanzmissbrauch"
           target_3_6:
             long_title: "Halbierung der weltweiten Todesfälle und Verletzungen durch Verkehrsunfälle bis 2020."
+            short_title: "Verringerung von Verletzungen und Todesfällen im Straßenverkehr"
           target_3_7:
             long_title: "Bis 2030 den universellen Zugang zu Dienstleistungen im Bereich der sexuellen und reproduktiven Gesundheit, einschließlich Familienplanung, Information und Bildung, sowie die Integration der reproduktiven Gesundheit in nationale Strategien und Programme sicherstellen."
+            short_title: "Universeller Zugang zu sexueller und reproduktiver Versorgung, Familienplanung und Bildung"
           target_3_8:
             long_title: "Schaffung einer universellen Gesundheitsversorgung, einschließlich finanzieller Risikoabsicherung, Zugang zu hochwertigen grundlegenden Gesundheitsdiensten und Zugang zu sicheren, wirksamen, hochwertigen und erschwinglichen unentbehrlichen Arzneimitteln und Impfstoffen für alle."
+            short_title: "Erreichen einer allgemeinen Gesundheitsversorgung"
           target_3_9:
             long_title: "Die Zahl der Todesfälle und Erkrankungen durch gefährliche Chemikalien sowie Luft-, Wasser- und Bodenverschmutzung und Kontamination bis 2030 substantiell verringern."
+            short_title: "Verringerung von Krankheiten und Todesfällen durch gefährliche Chemikalien und Umweltverschmutzung"
           target_3_A:
             long_title: "Die Umsetzung des Rahmenübereinkommens der Weltgesundheitsorganisation zur Eindämmung des Tabakkonsums in allen Ländern angemessen verstärken."
+            short_title: "Umsetzung des WHO-Rahmenübereinkommens zur Eindämmung des Tabakkonsums"
           target_3_B:
             long_title: "Unterstützung der Erforschung und Entwicklung von Impfstoffen und Arzneimitteln gegen übertragbare und nichtübertragbare Krankheiten, von denen hauptsächlich Entwicklungsländer betroffen sind, Bereitstellung des Zugangs zu erschwinglichen unentbehrlichen Arzneimitteln und Impfstoffen gemäß der Erklärung von Doha zum TRIPS-Abkommen und zur öffentlichen Gesundheit, die das Recht von Entwicklungsländern bekräftigt, die Bestimmungen des Abkommens über handelsbezogene Aspekte der Rechte des geistigen Eigentums in Bezug auf Flexibilitäten zum Schutz der öffentlichen Gesundheit in vollem Umfang zu nutzen und insbesondere den Zugang zu Arzneimitteln für alle zu ermöglichen."
+            short_title: "Unterstützung von Forschung, Entwicklung und allgemeinem Zugang zu erschwinglichen Impfstoffen und Arzneimitteln"
           target_3_C:
             long_title: "Deutliche Erhöhung der Gesundheitsfinanzierung und der Anwerbung, Entwicklung, Ausbildung und Bindung von Gesundheitspersonal in Entwicklungsländern, insbesondere in den am wenigsten entwickelten Ländern und kleinen Inselentwicklungsländern."
+            short_title: "Aufstockung der Finanzmittel für das Gesundheitswesen und Unterstützung des Gesundheitspersonals in Entwicklungsländern"
           target_3_D:
             long_title: "Stärkung der Kapazitäten aller Länder, insbesondere von Entwicklungsländern, zur Frühwarnung, Risikoreduzierung und zum Management von nationalen und globalen Gesundheitsrisiken."
+            short_title: "Verbesserung der Frühwarnsysteme für globale Gesundheitsrisiken"
       goal_4:
         title: "Qualitative Bildung"
         title_in_two_lines: "Qualitative\nBildung"
         description: "Qualitative Bildung."
         long_description: 'Bildung ermöglicht sozioökonomische Aufwärtsmobilität und ist ein Schlüssel zur Flucht aus der Armut. In den letzten zehn Jahren wurden große Fortschritte bei der Verbesserung des Zugangs zu Bildung und der Einschulungsrate auf allen Ebenen, insbesondere für Mädchen, erzielt. Nichtsdestotrotz konnten ungefähr 260 Millionen Kinder 2018 nicht in die Schule gehen - fast ein Fünftel aller Kinder. Darüber hinaus erfüllen mehr als die Hälfte aller Kinder und Jugendlichen weltweit nicht die Mindestkompetenzen in Lesen und Mathematik. Als sich die COVID-19-Pandemie 2020 über den Globus ausbreitet, hat deie rheit der Länder eine temporäre Schließung der Schulen angekündigt '
+        targets:
+          target_4_1:
+            long_title: "Bis 2030 soll sichergestellt werden, dass alle Mädchen und Jungen eine kostenlose, gerechte und hochwertige Grund- und Sekundarschulbildung abschließen, die zu relevanten und Ziel-4-wirksamen Lernergebnissen führt."
+            short_title: "Kostenlose Grund- und Sekundarschulbildung"
+          target_4_2:
+            long_title: "Bis 2030 soll sichergestellt werden, dass alle Mädchen und Jungen Zugang zu einer qualitativ hochwertigen frühkindlichen Entwicklung, Betreuung und Vorschulerziehung haben, damit sie für die Grundschulbildung bereit sind."
+            short_title: "Gleicher Zugang zu hochwertiger Vorschulbildung"
+          target_4_3:
+            long_title: "Bis 2030 gleichen Zugang für alle Frauen und Männer zu erschwinglicher und hochwertiger technischer, beruflicher und tertiärer Bildung, einschließlich Hochschulbildung, gewährleisten."
+            short_title: "Gleicher Zugang zu erschwinglicher technischer, beruflicher und höherer Bildung"
+          target_4_4:
+            long_title: "Bis 2030 die Zahl der Jugendlichen und Erwachsenen, die über die für Beschäftigung, menschenwürdige Arbeit und Unternehmertum erforderlichen Qualifikationen, einschließlich technischer und beruflicher Qualifikationen, verfügen, deutlich erhöhen."
+            short_title: "Erhöhung der Zahl der Menschen mit relevanten Fähigkeiten für den finanziellen Erfolg"
+          target_4_5:
+            long_title: "Bis 2030 Beseitigung der geschlechtsspezifischen Ungleichheiten im Bildungswesen und Gewährleistung des gleichberechtigten Zugangs zu allen Ebenen der allgemeinen und beruflichen Bildung für sozial Schwache, einschließlich Menschen mit Behinderungen, indigener Völker und Kinder in prekären Situationen."
+            short_title: "Abschaffung jeglicher Diskriminierung im Bildungswesen"
+          target_4_6:
+            long_title: "Bis 2030 sicherstellen, dass alle Jugendlichen und ein erheblicher Anteil der Erwachsenen, sowohl Männer als auch Frauen, Lese-, Schreib- und Rechenkenntnisse erwerben."
+            short_title: "Universelle Lese-, Schreib- und Rechenfähigkeiten"
+          target_4_7:
+            long_title: "Bis 2030 sicherstellen, dass alle Lernenden die Kenntnisse und Fähigkeiten erwerben, die zur Förderung der nachhaltigen Entwicklung erforderlich sind, unter anderem durch Bildung für nachhaltige Entwicklung und nachhaltige Lebensstile, Menschenrechte, Gleichstellung der Geschlechter, Förderung einer Kultur des Friedens und der Gewaltlosigkeit, Weltbürgertum und Wertschätzung der kulturellen Vielfalt und des Beitrags der Kultur zur nachhaltigen Entwicklung."
+            short_title: "Bildung für nachhaltige Entwicklung und globale Bürgerschaft"
+          target_4_A:
+            long_title: "Bau und Modernisierung von Bildungseinrichtungen, die kinder-, behinderten- und geschlechtergerecht sind und ein sicheres, gewaltfreies, integratives und effektives Lernumfeld für alle bieten."
+            short_title: "Bau und Modernisierung integrativer und sicherer Schulen"
+          target_4_B:
+            long_title: "Bis 2020 die Zahl der Stipendien für Entwicklungsländer, insbesondere für die am wenigsten entwickelten Länder, die kleinen Inselstaaten unter den Entwicklungsländern und die afrikanischen Länder, für die Aufnahme eines Studiums der Hochschulbildung, einschließlich der Berufsbildung und der Programme in den Bereichen Informations- und Kommunikationstechnologie, Technik, Ingenieurwesen und Naturwissenschaften, in den Industrieländern und anderen Entwicklungsländern weltweit erheblich erhöhen."
+            short_title: "Ausweitung der Hochschulstipendien für Entwicklungsländer"
+          target_4_C:
+            long_title: "Bis 2030 soll das Angebot an qualifizierten Lehrern deutlich erhöht werden, auch durch internationale Zusammenarbeit bei der Lehrerausbildung in Entwicklungsländern, insbesondere in den am wenigsten entwickelten Ländern und kleinen Inselstaaten."
+            short_title: "Erhöhung des Angebots an qualifizierten Lehrern in Entwicklungsländern"
+      goal_5:
+        title: "Gleichberechtigung der Geschlechter"
+        title_in_two_lines: "Geschlecht\nGleichstellung"
+        description: "Verwirklichung der Gleichstellung der Geschlechter und Ermächtigung aller Frauen und Mädchen."
+        long_description: "<p>Die Gleichstellung der Geschlechter ist nicht nur ein grundlegendes Menschenrecht, sondern auch eine notwendige Grundlage für eine friedliche, wohlhabende und nachhaltige Welt.</p> <p> In den letzten Jahrzehnten hat es <a href=\"https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/gender-equality-womens-rights-in-review-key-facts-and-figures-en.pdf?la=en&amp;vs=935\">Fortschritte</a> gegeben: Mehr Mädchen gehen zur Schule, weniger Mädchen werden zu Frühverheiratungen gezwungen, mehr Frauen sitzen im Parlament und in Führungspositionen, und Gesetze werden reformiert, um die Gleichstellung der Geschlechter voranzutreiben.&nbsp</p> <p>Trotz dieser Fortschritte bleiben viele <a href=\"https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/gender-equality-womens-rights-in-review-key-facts-and-figures-en.pdf?la=en&amp;vs=935\">Herausforderungen</a> bestehen: diskriminierende Gesetze und soziale Normen sind nach wie vor allgegenwärtig, Frauen sind auf allen politischen Führungsebenen nach wie vor unterrepräsentiert, und jede fünfte Frau und jedes fünfte Mädchen im Alter zwischen 15 und 49 Jahren berichtet, dass sie innerhalb eines Zeitraums von 12 Monaten körperliche oder sexuelle Gewalt durch einen Intimpartner erlebt haben.</p> <p>Die Auswirkungen der <a href=\"https://www.un.org/sites/un2.un.org/files/policy_brief_on_covid_impact_on_women_9_apr_2020_updated.pdf\">COVID-19-Pandemie könnten die begrenzten Fortschritte</a> bei der Gleichstellung der Geschlechter und den Rechten der Frauen zunichte machen.&nbsp; Der Ausbruch des Coronavirus <a href=\"https://www.unfpa.org/sites/default/files/resource-pdf/COVID-19_A_Gender_Lens_Guidance_Note.pdf\">verschärft die bestehenden Ungleichheiten</a> für Frauen und Mädchen in allen Bereichen - von der Gesundheit über die Wirtschaft bis hin zu Sicherheit und Sozialschutz.&nbsp;</p><p> Frauen spielen eine unverhältnismäßig große Rolle bei der Reaktion auf das Virus, unter anderem als Beschäftigte im Gesundheitswesen und als häusliche Pflegekräfte. Die unbezahlte Betreuungsarbeit von Frauen hat aufgrund von Schulschließungen und der gestiegenen Bedürfnisse älterer Menschen erheblich zugenommen. Frauen sind auch von den wirtschaftlichen Auswirkungen von COVID-19 stärker betroffen, da sie überproportional häufig in unsicheren Arbeitsverhältnissen arbeiten. Fast 60 Prozent der Frauen arbeiten in der informellen Wirtschaft, wodurch sie einem größeren Risiko ausgesetzt sind, in die Armut zu geraten.&nbsp;</p> \n\n<p>Die Pandemie hat auch zu einem starken Anstieg der <a href=\"https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/issue-brief-covid-19-and-ending-violence-against-women-and-girls-en.pdf?la=en&amp;vs=5006\">Gewalt gegen Frauen und Mädchen</a> geführt. Angesichts der Abriegelungsmaßnahmen sitzen viele Frauen zu Hause bei ihren Peinigern fest und haben Schwierigkeiten, Zugang zu Diensten zu erhalten, die unter Kürzungen und Einschränkungen leiden. Neue Daten zeigen, dass seit dem Ausbruch der Pandemie die Gewalt gegen Frauen und Mädchen - und insbesondere die häusliche Gewalt - zugenommen hat.</p>"
+        targets:
+          target_5_1:
+            long_title: "Beendigung aller Formen der Diskriminierung von Frauen und Mädchen überall."
+            short_title: "Beendigung der Diskriminierung von Frauen und Mädchen"
+          target_5_2:
+            long_title: "Beseitigung aller Formen von Gewalt gegen Frauen und Mädchen im öffentlichen und privaten Bereich, einschließlich Menschenhandel sowie sexueller und anderer Formen der Ausbeutung."
+            short_title: "Beendigung jeglicher Gewalt gegen und Ausbeutung von Frauen und Mädchen"
+          target_5_3:
+            long_title: "Abschaffung aller schädlichen Praktiken wie Kinder-, Früh- und Zwangsheirat sowie Genitalverstümmelung bei Frauen."
+            short_title: "Abschaffung von Zwangsheiraten und Genitalverstümmelung"
+          target_5_4:
+            long_title: "Anerkennung und Wertschätzung unbezahlter Betreuungs- und Hausarbeit durch die Bereitstellung öffentlicher Dienstleistungen, Infrastruktur und sozialer Schutzmaßnahmen sowie die Förderung geteilter Verantwortung im Haushalt und in der Familie, soweit dies auf nationaler Ebene angemessen ist."
+            short_title: "Wertschätzung unbezahlter Pflege und Förderung geteilter häuslicher Pflichten"
+          target_5_5:
+            long_title: "Gewährleistung der uneingeschränkten und effektiven Beteiligung von Frauen und ihrer Chancengleichheit bei der Übernahme von Führungspositionen auf allen Entscheidungsebenen im politischen, wirtschaftlichen und öffentlichen Leben."
+            short_title: "Gewährleistung einer umfassenden Beteiligung an der Führung und Entscheidungsfindung"
+          target_5_6:
+            long_title: "Gewährleistung des allgemeinen Zugangs zu sexueller und reproduktiver Gesundheit und reproduktiven Rechten gemäß dem Aktionsprogramm der Internationalen Konferenz über Bevölkerung und Entwicklung und der Aktionsplattform von Peking sowie den Ergebnisdokumenten ihrer Überprüfungskonferenzen."
+            short_title: "Universeller Zugang zu reproduktiver Gesundheit und Rechten"
+          target_5_A:
+            long_title: "Durchführung von Reformen, um Frauen im Einklang mit den nationalen Gesetzen gleiche Rechte in Bezug auf wirtschaftliche Ressourcen sowie den Zugang zu Eigentum und Kontrolle über Land und andere Formen von Eigentum, Finanzdienstleistungen, Erbschaften und natürliche Ressourcen zu gewähren."
+            short_title: "Gleiches Recht auf wirtschaftliche Ressourcen, Eigentumsrechte und Finanzdienstleistungen"
+          target_5_B:
+            long_title: "Verstärkter Einsatz von Grundlagentechnologien, insbesondere von Informations- und Kommunikationstechnologien, um die Stärkung der Rolle der Frau zu fördern."
+            short_title: "Förderung des Empowerments von Frauen durch Technologie"
+          target_5_C:
+            long_title: "Verabschiedung und Stärkung solider politischer Maßnahmen und durchsetzbarer Rechtsvorschriften zur Förderung der Gleichstellung der Geschlechter und der Stärkung der Rolle von Frauen und Mädchen auf allen Ebenen."
+            short_title: "Verabschiedung und Stärkung von Politiken und durchsetzbaren Rechtsvorschriften zur Gleichstellung der Geschlechter"
+      goal_6:
+        title: "Sauberes Wasser und sanitäre Einrichtungen"
+        title_in_two_lines: "Sauberes Wasser und sanitäre Einrichtungen"
+        description: "Sicherstellung des Zugangs zu Wasser und sanitären Einrichtungen für alle."
+        long_description: '<p>Zwar wurden erhebliche Fortschritte beim Zugang zu sauberem Trinkwasser und sanitären Einrichtungen erzielt, doch fehlt es Milliarden von Menschen - vor allem in ländlichen Gebieten - noch immer an diesen grundlegenden Dienstleistungen. Weltweit hat <a href="https://www.who.int/news-room/detail/18-06-2019-1-in-3-people-globally-do-not-have-access-to-safe-drinking-water-unicef-who">einer von drei Menschen keinen Zugang zu sauberem Trinkwasser</a>, <a href="https://www.unwater.org/water-facts/water-sanitation-and-hygiene/">zwei von fünf Menschen haben keine Möglichkeit, sich mit Wasser und Seife die Hände zu waschen</a>, und mehr als <a href="https://news.un.org/en/story/2019/11/1051561">673 Millionen Menschen praktizieren immer noch offene Defäkation</a>.</p> <p>Die COVID-19-Pandemie hat gezeigt, wie wichtig sanitäre Einrichtungen, Hygiene und ein angemessener Zugang zu sauberem Wasser für die Prävention und Eindämmung von Krankheiten sind.<a href="https://www.unwater.org/water-facts/handhygiene/">Handhygiene rettet Leben</a>. Nach Angaben der Weltgesundheitsorganisation ist <a href="https://www.who.int/news-room/events/detail/2020/05/05/default-calendar/hand-hygiene-day">Handwaschen eine der wirksamsten Maßnahmen, die Sie ergreifen können</a> um die Ausbreitung von Krankheitserregern einzudämmen und Infektionen, einschließlich des COVID-19-Virus, zu verhindern. Doch für Milliarden von Menschen gibt es immer noch keine sichere Wasserversorgung und Abwasserentsorgung, und die Finanzierung ist unzureichend. </p>'
+        targets:
+          target_6_1:
+            long_title: "Bis 2030 soll der allgemeine und gerechte Zugang zu sicherem und erschwinglichem Trinkwasser für alle erreicht werden."
+            short_title: "Sicheres und erschwingliches Trinkwasser"
+          target_6_2:
+            long_title: "Bis 2030 Zugang zu angemessenen und gerechten sanitären Einrichtungen und Hygienemaßnahmen für alle und Beendigung der offenen Defäkation unter besonderer Berücksichtigung der Bedürfnisse von Frauen und Mädchen und Menschen in prekären Situationen."
+            short_title: "Beendigung der offenen Defäkation und Zugang zu sanitären Einrichtungen und Hygiene"
+          target_6_3:
+            long_title: "Bis 2030 Verbesserung der Wasserqualität durch Verringerung der Verschmutzung, Unterbindung der Verklappung und Minimierung der Freisetzung gefährlicher Chemikalien und Materialien, Halbierung des Anteils unbehandelter Abwässer und erhebliche Steigerung von Recycling und sicherer Wiederverwendung weltweit."
+            short_title: "Verbesserung der Wasserqualität, Abwasserbehandlung und sichere Wiederverwendung"
+          target_6_4:
+            long_title: "Bis 2030 die Effizienz der Wassernutzung in allen Sektoren erheblich steigern und eine nachhaltige Entnahme und Versorgung mit Süßwasser sicherstellen, um der Wasserknappheit entgegenzuwirken und die Zahl der Menschen, die unter Wasserknappheit leiden, erheblich zu verringern."
+            short_title: "Steigerung der Wassernutzungseffizienz und Sicherung der Süßwasserversorgung"
+          target_6_5:
+            long_title: "Bis 2030: Umsetzung einer integrierten Bewirtschaftung der Wasserressourcen auf allen Ebenen, gegebenenfalls auch durch grenzüberschreitende Zusammenarbeit."
+            short_title: "Umsetzung der integrierten Bewirtschaftung von Wasserressourcen"
+          target_6_6:
+            long_title: "Bis 2020 Schutz und Wiederherstellung von wasserbezogenen Ökosystemen, einschließlich Bergen, Wäldern, Feuchtgebieten, Flüssen, Grundwasserleitern und Seen."
+            short_title: "Schutz und Wiederherstellung wasserbezogener Ökosysteme"
+          target_6_A:
+            long_title: "Bis 2030 die internationale Zusammenarbeit und die Unterstützung der Entwicklungsländer beim Aufbau von Kapazitäten für wasser- und abwasserbezogene Aktivitäten und Programme ausbauen, einschließlich Wassergewinnung, Entsalzung, Wassereffizienz, Abwasserbehandlung, Recycling und Wiederverwendungstechnologien."
+            short_title: "Ausweitung der Unterstützung für die Wasserversorgung und Abwasserentsorgung in den Entwicklungsländern"
+          target_6_B:
+            long_title: "Unterstützung und Stärkung der Beteiligung der lokalen Gemeinschaften an der Verbesserung der Wasser- und Abwasserbewirtschaftung."
+            short_title: "Unterstützung des lokalen Engagements bei der Wasser- und Abwasserbewirtschaftung"
+      goal_7:
+        title: "Erschwingliche und saubere Energie"
+        title_in_two_lines: "Erschwingliche und saubere Energie"
+        description: "Sicherstellung des Zugangs zu erschwinglicher, zuverlässiger, nachhaltiger und moderner Energie."
+        long_description: '<p> Die Welt macht <a href="https://unstats.un.org/sdgs/report/2019/goal-07/">Fortschritte auf dem Weg zu Ziel 7</a>, wobei es ermutigende Anzeichen dafür gibt, dass Energie immer nachhaltiger und in größerem Umfang verfügbar wird. Der Zugang zu Elektrizität in ärmeren Ländern hat sich beschleunigt, die Energieeffizienz verbessert sich weiter, und erneuerbare Energien machen im Elektrizitätssektor beeindruckende Fortschritte. &nbsp;</p> <p> Dennoch ist mehr Aufmerksamkeit erforderlich, um den Zugang zu sauberen und sicheren Kochbrennstoffen und Technologien für 3 Milliarden Menschen zu verbessern, die Nutzung erneuerbarer Energien über den Elektrizitätssektor hinaus auszuweiten und die Elektrifizierung in den afrikanischen Ländern südlich der Sahara voranzutreiben.</p> <p> Der <a href="https://trackingsdg7.esmap.org/">Fortschrittsbericht Energie</a> bietet ein globales Dashboard zur Erfassung der Fortschritte bei Energiezugang, Energieeffizienz und erneuerbaren Energien. Er bewertet die Fortschritte der einzelnen Länder bei diesen drei Säulen und liefert eine Momentaufnahme, wie weit wir von der Erreichung der Ziele für nachhaltige Entwicklung 2030 entfernt sind.</p>'
+        targets:
+          target_7_1:
+            long_title: "Bis 2030: Gewährleistung des allgemeinen Zugangs zu erschwinglichen, zuverlässigen und modernen Energiedienstleistungen."
+            short_title: "Universeller Zugang zu moderner Energie"
+          target_7_2:
+            long_title: "Bis 2030 soll der Anteil der erneuerbaren Energien am globalen Energiemix deutlich erhöht werden."
+            short_title: "Erhöhung des weltweiten Anteils erneuerbarer Energien"
+          target_7_3:
+            long_title: "Bis 2030 Verdoppelung der weltweiten Steigerungsrate bei der Energieeffizienz."
+            short_title: "Doppelte Verbesserung der Energieeffizienz"
+          target_7_A:
+            long_title: "Bis 2030 die internationale Zusammenarbeit ausbauen, um den Zugang zu Forschung und Technologie im Bereich der sauberen Energie, einschließlich erneuerbarer Energien, Energieeffizienz und fortschrittlicher und sauberer Technologie für fossile Brennstoffe, zu erleichtern, und Investitionen in Energieinfrastruktur und saubere Energietechnologie fördern."
+            short_title: "Förderung des Zugangs zu Forschung, Technologie und Investitionen in saubere Energie"
+          target_7_B:
+            long_title: "Bis 2030 Ausbau der Infrastruktur und Verbesserung der Technologie für die Bereitstellung moderner und nachhaltiger Energiedienstleistungen für alle in den Entwicklungsländern, insbesondere in den am wenigsten entwickelten Ländern, den kleinen Inselstaaten und den Binnenentwicklungsländern, im Einklang mit ihren jeweiligen Förderprogrammen."
+            short_title: "Ausbau und Verbesserung der Energiedienstleistungen für Entwicklungsländer"
+      goal_8:
+        title: "Menschenwürdige Arbeit und Wirtschaftswachstum"
+        title_in_two_lines: "Menschenwürdige Arbeit und\nWirtschaftswachstum"
+        description: "Förderung von integrativem und nachhaltigem Wirtschaftswachstum, Beschäftigung und menschenwürdiger Arbeit für alle."
+        long_description: '<p>Das anhaltende und inklusive Wirtschaftswachstum kann Fortschritte vorantreiben, menschenwürdige Arbeitsplätze für alle schaffen und den Lebensstandard verbessern.&nbsp;</p> <p>COVID-19 hat <a href="https://www.un.org/sites/un2.un.org/files/sg_report_socio-economic_impact_of_covid19.pdf">zerstört Milliarden von Leben</a> und die globale Wirtschaft gefährdet. Der Internationale Währungsfonds (IWF) erwartet eine <a href="https://blogs.imf.org/2020/04/14/the-great-lockdown-worst-economic-downturn-since-the-great-depression/">weltweite Rezession</a> wie schlecht oder schlechter als 2009. Als eskalierende Arbeitsverluste schätzt die Internationale Arbeitsorganisation, dass <a href="https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_743036/lang--en/index.htm">fast die Hälfte der globalen Arbeitskräfte gefährdet</a> ihre Lebensgrundlagen zu verlieren.</p> <p><a href="https://developmentfinance.un.org/press-release-financing-sustainable-development-report-2020">Noch vor dem Ausbruch von COVID-19</a>, eins in fünf Ländern – Heimat von Milliarden von Menschen, die in Armut leben – war wahrscheinlich, dass die Pro-Kopf-Einkommen stagnieren oder im Jahr 2020 sinken. Jetzt, die<a href="https://developmentfinance.un.org/press-release-financing-sustainable-development-report-2020"> wirtschaftliche und finanzielle Schocks</a> In Verbindung mit COVID-19 – wie Störungen in der industriellen Produktion, sinkenden Rohstoffpreisen, Finanzmarktvolatilität und steigender Unsicherheit – werden die bereits abgeschwächten Wirtschaftswachstums und die damit verbundenen Risiken aus anderen Faktoren entlastet. &nbsp; &nbsp;</p>'
+        targets:
+          target_8_1:
+            long_title: "Aufrechterhaltung des Pro-Kopf-Wirtschaftswachstums im Einklang mit den nationalen Gegebenheiten und insbesondere ein jährliches Wachstum des Bruttoinlandsprodukts von mindestens 7 % in den am wenigsten entwickelten Ländern."
+            short_title: "Nachhaltiges Wirtschaftswachstum"
+          target_8_2:
+            long_title: "Erzielung eines höheren Produktivitätsniveaus durch Diversifizierung, technologische Modernisierung und Innovation, auch durch Konzentration auf wertschöpfungsintensive und arbeitsintensive Sektoren."
+            short_title: "Diversifizierung, Innovation und Modernisierung zur Steigerung der wirtschaftlichen Produktivität"
+          target_8_3:
+            long_title: "Förderung einer entwicklungsorientierten Politik, die produktive Tätigkeiten, die Schaffung von menschenwürdigen Arbeitsplätzen, Unternehmertum, Kreativität und Innovation unterstützt und die Formalisierung und das Wachstum von Kleinst-, Klein- und Mittelbetrieben fördert, auch durch den Zugang zu Finanzdienstleistungen."
+            short_title: "Förderung politischer Maßnahmen zur Unterstützung der Schaffung von Arbeitsplätzen und des Wachstums von Unternehmen"
+          target_8_4:
+            long_title: "Eine schrittweise Verbesserung der globalen Ressourceneffizienz in Verbrauch und Produktion bis 2030 und Bemühen um die Abkopplung des Wirtschaftswachstums von der Umweltzerstörung im Einklang mit dem Zehnjahresrahmen der Programme für nachhaltigen Verbrauch und nachhaltige Produktion, wobei die Industrieländer die Führung übernehmen sollten."
+            short_title: "Verbesserung der Ressourceneffizienz bei Verbrauch und Produktion"
+          target_8_5:
+            long_title: "Bis 2030 Vollbeschäftigung, produktive Beschäftigung und menschenwürdige Arbeit für alle Frauen und Männer, auch für junge Menschen und Menschen mit Behinderungen, sowie gleiches Entgelt für gleichwertige Arbeit erreichen."
+            short_title: "Vollbeschäftigung und menschenwürdige Arbeit bei gleichem Lohn"
+          target_8_6:
+            long_title: "Bis 2020 den Anteil der Jugendlichen, die nicht in Beschäftigung, allgemeiner oder beruflicher Bildung sind, erheblich reduzieren."
+            short_title: "Förderung von Beschäftigung, Bildung und Ausbildung für Jugendliche"
+          target_8_7:
+            long_title: "Sofortige und wirksame Maßnahmen zur Abschaffung der Zwangsarbeit, zur Beendigung der modernen Sklaverei und des Menschenhandels sowie zur Gewährleistung des Verbots und der Abschaffung der schlimmsten Formen der Kinderarbeit, einschließlich der Rekrutierung und des Einsatzes von Kindersoldaten, zu ergreifen und bis 2025 der Kinderarbeit in all ihren Formen ein Ende zu setzen."
+            short_title: "Moderne Sklaverei, Menschenhandel und Kinderarbeit beenden"
+          target_8_8:
+            long_title: "Schutz der Arbeitnehmerrechte und Förderung eines sicheren Arbeitsumfelds für alle Arbeitnehmer, einschließlich Wanderarbeitnehmern, insbesondere weiblichen Wanderarbeitnehmern, und Arbeitnehmern in prekären Beschäftigungsverhältnissen."
+            short_title: "Schutz der Arbeitnehmerrechte und Förderung eines sicheren Arbeitsumfelds"
+          target_8_9:
+            long_title: "Bis 2030: Entwicklung und Umsetzung von Maßnahmen zur Förderung eines nachhaltigen Tourismus, der Arbeitsplätze schafft und die lokale Kultur und Produkte fördert"
+            short_title: "Förderung eines vorteilhaften und nachhaltigen Tourismus"
+          target_8_10:
+            long_title: "Stärkung der Kapazitäten der inländischen Finanzinstitute, um den Zugang zu Bank-, Versicherungs- und Finanzdienstleistungen für alle zu fördern und zu erweitern."
+            short_title: "Universeller Zugang zu Bank-, Versicherungs- und Finanzdienstleistungen"
+          target_8_A:
+            long_title: "Aufstockung der Handelshilfe für Entwicklungsländer, insbesondere für die am wenigsten entwickelten Länder, u. a. durch den verstärkten integrierten Rahmen für handelsbezogene technische Hilfe für die am wenigsten entwickelten Länder."
+            short_title: "Aufstockung der Unterstützung für die Handelshilfe"
+          target_8_B:
+            long_title: "Bis 2020 eine globale Strategie für Jugendbeschäftigung entwickeln und umsetzen und den Globalen Beschäftigungspakt der Internationalen Arbeitsorganisation umsetzen."
+            short_title: "Entwicklung einer globalen Jugendbeschäftigungsstrategie"
+      goal_9:
+        title: "Industrie, Innovation und Infrastruktur"
+        title_in_two_lines: "Industrie, Innovation \nund Infrastruktur"
+        description: "Aufbau einer widerstandsfähigen Infrastruktur, Förderung einer nachhaltigen Industrialisierung und Unterstützung von Innovationen."
+        long_description: "<p>Inklusive und nachhaltige Industrialisierung zusammen mit <a href=\"https://unstats.un.org/sdgs/report/2019/goal-09/\">Innovation und Infrastruktur</a>, kann dynamische und wettbewerbsfähige Wirtschaftskräfte entfesseln, die Beschäftigung und Einkommen erzeugen. Sie spielen eine Schlüsselrolle bei der Einführung und Förderung neuer Technologien, der Erleichterung des internationalen Handels und der effizienten Nutzung von Ressourcen.&nbsp;</p> <p>Dennoch hat die Welt noch einen langen Weg, um dieses Potenzial voll auszuschöpfen. Insbesondere die am wenigsten entwickelten Länder müssen die Entwicklung ihres Fertigungssektors beschleunigen, wenn sie das Ziel von 2030 erfüllen und Investitionen in wissenschaftliche Forschung und Innovation verstärken. &nbsp; </p> <p>Das globale Produktionswachstum ist bereits vor dem Ausbruch der COVID-19 Pandemie stetig rückläufig. Die Pandemie ist <a href=\"https://unctad.org/en/pages/newsdetails.aspx?OriginalVersionID=2297\">Industriezweige</a> hart und verursachen Störungen in globalen Wertschöpfungsketten und die Lieferung von Produkten. &nbsp;</p> <p>Innovation und technologischer Fortschritt sind der Schlüssel, dauerhafte Lösungen für wirtschaftliche und ökologische Herausforderungen zu finden, wie z.B. erhöhte Ressourcen und Energieeffizienz. \n\nGlobal <a href=\"https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf\">Investitionen in Forschung und Entwicklung</a> (R&amp;D) als Anteil des BIP stieg von 1,5 Prozent im Jahr 2000 auf 1,7 Prozent im Jahr 2015 und blieb 2017 nahezu unverändert, in Entwicklungsregionen lagen jedoch nur weniger als 1 Prozent. &nbsp;</p> <p>In Bezug auf die Kommunikationsinfrastruktur ist jetzt mehr als die Hälfte der Weltbevölkerung online und fast die gesamte Weltbevölkerung lebt in einem von einem Mobilfunknetz abgedeckten Bereich. Es wird geschätzt, dass 2019, <a href=\"https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf\"> 96,5 Prozent wurden von mindestens einem 2G-Netz abgedeckt</a>. &nbsp; &nbsp; &nbsp; &nbsp;  </p> <p>Die Coronavirus Pandemie hat die dringende <a href=\"https://www.unescap.org/blog/covid-19-reveals-urgent-need-resilient-infrastructure\">Notwendigkeit einer widerstandsfähigen Infrastruktur</a>. Die Asiatische Entwicklungsbank stellt fest, dass die kritische Infrastruktur in der Region in vielen Ländern trotz des rasanten Wirtschaftswachstums und der Entwicklung, die die Region in den letzten zehn Jahren erlebt hat, nicht ausreichend ist. Die <a href=\"https://www.unescap.org/publications/economic-and-social-survey-asia-and-pacific-2019-ambitions-beyond-growth\">Wirtschafts- und Sozialerhebung über Asien und den Pazifik</a> Highlights, die eine Beeinträchtigung der Infrastruktur für Katastrophen und Klimawandel erfordern eine zusätzliche Investition von 434 Milliarden Dollar pro Jahr. Diese Summe muss in einigen Teilbereichen, &nbsp; wie z.B. in den Pazifik-Regionen, noch größer sein. &nbsp; &nbsp; &nbsp; </p>"
+        targets:
+          target_9_1:
+            long_title: "Building resilient infrastructure, promoting sustainable industrialization, and supporting innovation."
+            short_title: "Entwicklung nachhaltiger, widerstandsfähiger und integrativer Infrastrukturen"
+          target_9_2:
+            long_title: "Eine integrative und nachhaltige Industrialisierung zu fördern und bis 2030 den Anteil der Industrie an der Beschäftigung und am Bruttoinlandsprodukt im Einklang mit den nationalen Gegebenheiten deutlich zu erhöhen und ihren Anteil in den am wenigsten entwickelten Ländern zu verdoppeln."
+            short_title: "Förderung einer integrativen und nachhaltigen Industrialisierung"
+          target_9_3:
+            long_title: "Verbesserung des Zugangs von kleinen Industrie- und anderen Unternehmen, insbesondere in Entwicklungsländern, zu Finanzdienstleistungen, einschließlich erschwinglicher Kredite, und ihrer Integration in Wertschöpfungsketten und Märkte."
+            short_title: "Verbesserung des Zugangs zu Finanzdienstleistungen und -märkten"
+          target_9_4:
+            long_title: "By 2030, upgrade infrastructure and retrofit industries to make them sustainable, with increased resource-use efficiency and greater adoption of clean and environmentally sound technologies and industrial processes, with all countries taking action in accordance with their respective capabilities."
+            short_title: "Modernisierung aller Industrien und Infrastrukturen im Hinblick auf Nachhaltigkeit"
+          target_9_5:
+            long_title: "Ausbau der wissenschaftlichen Forschung, Verbesserung der technologischen Fähigkeiten der Industriesektoren in allen Ländern, insbesondere in den Entwicklungsländern, einschließlich der Förderung von Innovationen bis 2030 und einer deutlichen Erhöhung der Zahl der Beschäftigten in Forschung und Entwicklung pro 1 Million Einwohner sowie der öffentlichen und privaten Ausgaben für Forschung und Entwicklung."
+            short_title: "Verstärkung der Forschung und Verbesserung der industriellen Technologien "
+          target_9_A:
+            long_title: "Erleichterung einer nachhaltigen und widerstandsfähigen Infrastrukturentwicklung in den Entwicklungsländern durch verstärkte finanzielle, technologische und technische Unterstützung der afrikanischen Länder, der am wenigsten entwickelten Länder, der Binnenentwicklungsländer und der kleinen Inselentwicklungsstaaten 18."
+            short_title: "Erleichterung einer nachhaltigen Infrastrukturentwicklung für Entwicklungsländer"
+          target_9_B:
+            long_title: "Unterstützung der einheimischen Technologieentwicklung, Forschung und Innovation in den Entwicklungsländern, u. a. durch die Gewährleistung eines günstigen politischen Umfelds für die industrielle Diversifizierung und die Wertschöpfung bei Rohstoffen."
+            short_title: "Förderung der inländischen Technologieentwicklung und der industriellen Diversifizierung"
+          target_9_C:
+            long_title: "Erhebliche Verbesserung des Zugangs zur Informations- und Kommunikationstechnologie und Bemühen um einen universellen und erschwinglichen Internetzugang in den am wenigsten entwickelten Ländern bis 2020."
+            short_title: "Universeller Zugang zur Informations- und Kommunikationstechnologie"
+      goal_10:
+        title: "Reduzierte Ungleichheiten"
+        title_in_two_lines: "Verringert\nUngleichheiten"
+        description: "Verringerung der Ungleichheit innerhalb und zwischen den Ländern."
+        long_description: '<p>Die Natur ist für unser Überleben von entscheidender Bedeutung: Die Natur versorgt uns mit Sauerstoff, reguliert unsere Wettermuster, verunreinigt unsere Kulturen, produziert unsere Nahrung, Futter und Faser. Aber es ist unter zunehmendem Stress. <a href="https://news.un.org/en/story/2020/04/1061082">Die menschliche Aktivität hat fast 75 Prozent der Erdoberfläche verändert</a>, Quetschen von Tierwelt und Natur in eine immerkleinere Ecke des Planeten.</p> <p>Rund <a href="https://ipbes.net/sites/default/files/2020-02/ipbes_global_assessment_report_summary_for_policymakers_en.pdf">1 Million Tier- und Pflanzenarten sind vom Aussterben bedroht</a> – viele innerhalb von Jahrzehnten – nach dem Global Assessment Report über Biodiversität und Ökosystemservice 2019. .&nbsp; Der Bericht forderte transformative Veränderungen zur Wiederherstellung und zum Schutz der Natur. Es stellte sich heraus, dass die Gesundheit von Ökosystemen, von denen wir und alle anderen Arten abhängen, schneller als je zuvor verschlechtert wird, was die Grundlagen unserer Volkswirtschaften, Lebensgrundlagen, Lebensmittelsicherheit, Gesundheit und Lebensqualität weltweit betrifft. .&nbsp; </p> <p>Verteidigung und Wüstenbildung – verursacht durch menschliche Aktivitäten und Klimawandel – stellen große Herausforderungen für eine nachhaltige Entwicklung dar und haben das Leben und die Lebensgrundlagen von Millionen Menschen beeinflusst. <a href="https://news.un.org/en/story/2019/05/1038291">Wälder sind lebenswichtig </a>um das Leben auf der Erde zu erhalten und eine wichtige Rolle im Kampf gegen den Klimawandel zu spielen. Und Investitionen in <a href="https://news.un.org/en/story/2019/09/1045802">Land Restaurierung</a> ist entscheidend für die Verbesserung der Lebensgrundlagen, die Verringerung der Schwachstellen und die Verringerung der Risiken für die Wirtschaft.</p> <p>Die Gesundheit unseres Planeten spielt auch eine wichtige Rolle in <a href="https://www.unenvironment.org/resources/emerging-zoonotic-diseases-and-links-ecosystem-health-unep-frontiers-2016-chapter">die Entstehung von Zoonoseerkrankungen</a>, d.h. Krankheiten, die zwischen Tieren und Menschen übertragbar sind. Während wir weiterhin auf fragile Ökosysteme stoßen, bringen wir Menschen in immer engeren Kontakt mit der Tierwelt, wodurch Krankheitserreger in der Tierwelt zu Vieh und Menschen überfallen und das Risiko von Krankheitserscheinungen und -verstärkung erhöhen.</p>'
+        targets:
+          target_10_1:
+            long_title: "Bis 2030 schrittweise Erzielung und Aufrechterhaltung eines Einkommenswachstums der unteren 40 % der Bevölkerung, das über dem nationalen Durchschnitt liegt."
+            short_title: "Verringerung der Einkommensunterschiede"
+          target_10_2:
+            long_title: "Bis 2030 die soziale, wirtschaftliche und politische Eingliederung aller Menschen, unabhängig von Alter, Geschlecht, Behinderung, Rasse, ethnischer Zugehörigkeit, Herkunft, Religion oder wirtschaftlichem oder sonstigem Status, stärken und fördern."
+            short_title: "Förderung der allgemeinen sozialen, wirtschaftlichen und politischen Eingliederung"
+          target_10_3:
+            long_title: "Gewährleistung der Chancengleichheit und Verringerung der Ungleichheiten bei den Ergebnissen, unter anderem durch die Beseitigung diskriminierender Gesetze, Politiken und Praktiken und die Förderung geeigneter Rechtsvorschriften, Politiken und Maßnahmen in diesem Bereich."
+            short_title: "Gewährleistung der Chancengleichheit und Beendigung der Diskriminierung"
+          target_10_4:
+            long_title: "Politische Maßnahmen ergreifen, insbesondere in den Bereichen Steuern, Löhne und Sozialschutz, und schrittweise mehr Gleichheit erreichen."
+            short_title: "Verabschiedung einer Steuer- und Sozialpolitik, die die Gleichstellung fördert"
+          target_10_5:
+            long_title: "Verbesserung der Regulierung und Überwachung der globalen Finanzmärkte und -institutionen und Stärkung der Umsetzung dieser Vorschriften."
+            short_title: "Verbesserte Regulierung der globalen Finanzmärkte und -institutionen"
+          target_10_6:
+            long_title: "Gewährleistung einer stärkeren Vertretung und Mitsprache der Entwicklungsländer bei der Entscheidungsfindung in den globalen internationalen Wirtschafts- und Finanzinstitutionen, um wirksamere, glaubwürdigere, rechenschaftspflichtige und legitimere Institutionen zu schaffen."
+            short_title: "Stärkere Vertretung der Entwicklungsländer in den Finanzinstitutionen"
+          target_10_7:
+            long_title: "Erleichterung einer geordneten, sicheren, regelmäßigen und verantwortungsvollen Migration und Mobilität von Menschen, unter anderem durch die Umsetzung einer geplanten und gut gesteuerten Migrationspolitik."
+            short_title: "Verantwortungsvolle und gut gemanagte Migrationspolitik"
+          target_10_A:
+            long_title: "Umsetzung des Grundsatzes der besonderen und differenzierten Behandlung der Entwicklungsländer, insbesondere der am wenigsten entwickelten Länder, im Einklang mit den Vereinbarungen der Welthandelsorganisation."
+            short_title: "Besondere und differenzierte Behandlung für Entwicklungsländer"
+          target_10_B:
+            long_title: "Förderung der öffentlichen Entwicklungshilfe und der Finanzströme, einschließlich ausländischer Direktinvestitionen, in die Staaten, in denen der Bedarf am größten ist, insbesondere in die am wenigsten entwickelten Länder, die afrikanischen Länder, die kleinen Inselstaaten und die Binnenentwicklungsländer, im Einklang mit ihren nationalen Plänen und Programmen."
+            short_title: "Förderung von Entwicklungshilfe und Investitionen in den am wenigsten entwickelten Ländern"
+          target_10_C:
+            long_title: "Bis 2030 sollen die Transaktionskosten für Überweisungen von Migranten auf unter 3 % gesenkt und Überweisungskorridore mit Kosten von über 5 % beseitigt werden."
+            short_title: "Senkung der Transaktionskosten für Überweisungen von Migranten"
+      goal_11:
+        title: "Nachhaltige Städte und Gemeinden"
+        title_in_two_lines: "Nachhaltige Städte\nund Gemeinden"
+        description: "Städte integrativ, sicher, widerstandsfähig und nachhaltig machen."
+        long_description: '<p> Die Welt wird zunehmend urbanisiert. Seit 2007 <a href="https://unstats.un.org/sdgs/report/2019/goal-11/">mehr als die Hälfte der Weltbevölkerung lebt in Städten</a>, und dieser Anteil wird bis 2030 auf 60 Prozent steigen.&nbsp;</p> <p> Städte und Metropolregionen sind Kraftwerke des Wirtschaftswachstums – mit rund 60 Prozent des globalen BIP. Sie machen aber auch rund 70 Prozent der globalen CO2-Emissionen und über 60 Prozent der Ressourcennutzung aus.&nbsp;</p> <p> Die rasche Urbanisierung führt zu einer wachsenden Zahl von Slumbewohnern, zu unzureichenden und überlasteten Infrastrukturen und Dienstleistungen (wie Abfallentsorgung, Wasser- und Sanitäranlagen, Straßen und Verkehr), zu einer Verschärfung der Luftverschmutzung und zu einer unvorhergesehenen städtischen Vermehrung.&nbsp;</p> <p><a href="https://unhabitat.org/coronavirus-will-travel-incredibly-fast-in-africas-slums-un-habitat-chief-warns">Die Auswirkungen von COVID-19</a> wird in armen und dicht besiedelten städtischen Gebieten am verheerendsten sein, vor allem für die eine Milliarde Menschen, die weltweit in informellen Siedlungen und Slums leben, wo es auch schwierig macht, empfahlen Maßnahmen wie soziale Distancing und Selbstisolation zu folgen.&nbsp;</p> <p> Die UN-Foodagentur, FAO, warnte, dass Hunger und Schicksale in städtischen Gebieten deutlich steigen könnten, ohne Maßnahmen, um sicherzustellen, dass arme und verletzliche Bewohner <a href="https://news.un.org/en/story/2020/05/1063622">Zugang zu Lebensmitteln</a>.&nbsp;</p>'
+        targets:
+          target_11_1:
+            long_title: "Bis 2030 soll der Zugang zu angemessenen, sicheren und erschwinglichen Wohnungen und grundlegenden Dienstleistungen für alle gewährleistet und die Slums saniert werden."
+            short_title: "Sicherer und erschwinglicher Wohnraum"
+          target_11_2:
+            long_title: "Bis 2030 Zugang zu sicheren, erschwinglichen, zugänglichen und nachhaltigen Verkehrssystemen für alle, Verbesserung der Straßenverkehrssicherheit, insbesondere durch den Ausbau des öffentlichen Verkehrs, unter besonderer Berücksichtigung der Bedürfnisse von Menschen in prekären Situationen, Frauen, Kindern, Menschen mit Behinderungen und älteren Menschen."
+            short_title: "Erschwingliche und nachhaltige Verkehrssysteme"
+          target_11_3:
+            long_title: "Bis 2030 sollen die integrative und nachhaltige Urbanisierung und die Kapazitäten für eine partizipative, integrierte und nachhaltige Siedlungsplanung und -verwaltung in allen Ländern verbessert werden."
+            short_title: "Inklusive und nachhaltige Urbanisierung"
+          target_11_4:
+            long_title: "Verstärkte Anstrengungen zum Schutz und zur Bewahrung des Kultur- und Naturerbes der Welt."
+            short_title: "Schutz des Kultur- und Naturerbes der Welt"
+          target_11_5:
+            long_title: "Bis 2030 die Zahl der Todesopfer und der betroffenen Menschen deutlich reduzieren und die direkten wirtschaftlichen Verluste im Verhältnis zum globalen Bruttoinlandsprodukt, die durch Katastrophen, einschließlich wasserbedingter Katastrophen, verursacht werden, erheblich verringern, wobei der Schwerpunkt auf dem Schutz der Armen und der Menschen in gefährdeten Situationen liegt."
+            short_title: "Verringerung der negativen Auswirkungen von Naturkatastrophen"
+          target_11_6:
+            long_title: "Bis 2030 Verringerung der negativen Pro-Kopf-Umweltauswirkungen der Städte, unter anderem durch besondere Berücksichtigung der Luftqualität und der Bewirtschaftung von Siedlungsabfällen und anderen Abfällen."
+            short_title: "Verringerung der Umweltauswirkungen von Städten"
+          target_11_7:
+            long_title: "Bis 2030 soll der allgemeine Zugang zu sicheren, inklusiven und zugänglichen Grünflächen und öffentlichen Räumen gewährleistet werden, insbesondere für Frauen und Kinder, ältere Menschen und Menschen mit Behinderungen."
+            short_title: "Zugang zu sicheren und barrierefreien grünen und öffentlichen Räumen schaffen"
+          target_11_A:
+            long_title: "Förderung positiver wirtschaftlicher, sozialer und ökologischer Verbindungen zwischen städtischen, stadtnahen und ländlichen Gebieten durch Stärkung der nationalen und regionalen Entwicklungsplanung."
+            short_title: "Starke nationale und regionale Entwicklungsplanung"
+          target_11_B:
+            long_title: "Bis 2020 die Zahl der Städte und Siedlungen, die integrierte Strategien und Pläne für Inklusion, Ressourceneffizienz, Abschwächung des Klimawandels und Anpassung an den Klimawandel sowie Widerstandsfähigkeit gegenüber Katastrophen annehmen und umsetzen, deutlich erhöhen und im Einklang mit dem Sendai-Rahmen für die Verringerung des Katastrophenrisikos 2015-2030 ein ganzheitliches Katastrophenrisikomanagement auf allen Ebenen entwickeln und umsetzen."
+            short_title: "Umsetzung politischer Maßnahmen für Integration, Ressourceneffizienz und Katastrophenrisikominderung"
+          target_11_C:
+            long_title: "Unterstützung der am wenigsten entwickelten Länder, auch durch finanzielle und technische Hilfe, beim Bau nachhaltiger und widerstandsfähiger Gebäude unter Verwendung lokaler Materialien."
+            short_title: "Unterstützung der am wenigsten entwickelten Länder beim nachhaltigen und widerstandsfähigen Bauen"
+      goal_12:
+        title: "Verantwortungsbewusster Konsum und Produktion"
+        title_in_two_lines: "Verantwortungsbewusster Konsum \nund Produktion"
+        description: "Sicherstellung nachhaltiger Konsum- und Produktionsmuster."
+        long_description: '<p>Weltweiter Verbrauch und Produktion – eine treibende Kraft der globalen Wirtschaft – ruhen auf die Nutzung der natürlichen Umwelt und Ressourcen in einer Weise, die weiterhin destruktive Auswirkungen auf den Planeten hat.&nbsp;</p> <p>Der wirtschaftliche und soziale Fortschritt im letzten Jahrhundert wurde von der Umweltzerstörung begleitet, die die Systeme gefährdet, auf denen unsere künftige Entwicklung, ja unser Überleben, abhängt. &nbsp;</p> <p>Ein paar <a href="https://www.unenvironment.org/explore-topics/sustainable-development-goals/why-do-sustainable-development-goals-matter/goal-12">Fakten und Zahlen</a>:</p> <ul> <li style="font-weight: 400">Jedes Jahr verrottet ein geschätztes Drittel aller produzierten Lebensmittel – das entspricht 1,3 Milliarden Tonnen im Wert von rund 1 Billionen Dollar – in den Müllcontainern von Verbrauchern und Händlern oder durch schlechte Transport- und Erntepraktiken.</li> <li style="font-weight: 400">Wenn Menschen weltweit auf energieeffiziente Glühbirnen umgestellt werden, würde die Welt jährlich 120 Milliarden US-Dollar sparen.</li> <li style="font-weight: 400">Sollte die globale Bevölkerung bis 2050 9,6 Milliarden erreichen, könnte das Äquivalent von fast drei Planeten benötigt werden, um die natürlichen Ressourcen zu liefern, die zur Erhaltung der aktuellen Lebensweise benötigt werden.</li> </ul> <p>Die COVID-19 Pandemie bietet Ländern die Möglichkeit, Erholungspläne zu erstellen, die aktuelle Trends umkehren und unsere Konsum- und Produktionsmuster in eine nachhaltigere Zukunft umwandeln.</p> <p><a href="https://www.unenvironment.org/explore-topics/resource-efficiency/what-we-do/sustainable-consumption-and-production-policies">Nachhaltiger Verbrauch und Produktion</a> geht es darum, mehr und besser mit weniger zu tun. Es geht auch um die Entkoppelung des Wirtschaftswachstums durch Umweltzerstörung, die Steigerung der Ressourceneffizienz und die Förderung nachhaltiger Lebensstile.</p> <p>Der nachhaltige Konsum und die Produktion können auch wesentlich zur Armutsbekämpfung und zum Übergang zu kohlenstoffarmen und grünen Volkswirtschaften beitragen.</p>'
+        targets:
+          target_12_1:
+            long_title: "Umsetzung des 10-Jahres-Rahmenprogramms für nachhaltigen Verbrauch und nachhaltige Produktion, wobei alle Länder Maßnahmen ergreifen und die Industrieländer unter Berücksichtigung der Entwicklung und der Fähigkeiten der Entwicklungsländer die Führung übernehmen."
+            short_title: "Umsetzung des 10-Jahres-Rahmens für Nachhaltigkeit in Produktion und Verbrauch"
+          target_12_2:
+            long_title: "Bis 2030: nachhaltige Bewirtschaftung und effiziente Nutzung der natürlichen Ressourcen."
+            short_title: "Nachhaltige Bewirtschaftung und Nutzung der natürlichen Ressourcen"
+          target_12_3:
+            long_title: "Bis 2030 Halbierung der weltweiten Pro-Kopf-Lebensmittelverschwendung im Einzelhandel und bei den Verbrauchern und Verringerung der Lebensmittelverluste entlang der Produktions- und Lieferketten, einschließlich der Nachernteverluste."
+            short_title: "Halbierung der weltweiten Pro-Kopf-Lebensmittelabfälle"
+          target_12_4:
+            long_title: "Bis 2020 ein umweltverträgliche Bewirtschaftung von Chemikalien und sämtlichen Abfällen während ihres gesamten Lebenszyklus in Übereinstimmung mit den vereinbarten internationalen Rahmenregelungen zu erreichen und ihre Freisetzung in Luft, Wasser und Boden deutlich zu verringern, um ihre negativen Auswirkungen auf die menschliche Gesundheit und die Umwelt zu minimieren."
+            short_title: "Verantwortungsvoller Umgang mit Chemikalien und Abfällen"
+          target_12_5:
+            long_title: "Bis 2030 deutliche Reduzierung des Abfallaufkommens durch Vermeidung, Verringerung, Recycling und Wiederverwendung."
+            short_title: "Erhebliche Verringerung der Abfallerzeugung"
+          target_12_6:
+            long_title: "Ermutigung von Unternehmen, insbesondere von großen und transnationalen Unternehmen, zur Einführung nachhaltiger Praktiken und zur Integration von Nachhaltigkeitsinformationen in ihren Berichtszyklus."
+            short_title: "Ermutigung von Unternehmen zur Einführung nachhaltiger Praktiken und zur Nachhaltigkeitsberichterstattung"
+          target_12_7:
+            long_title: "Förderung nachhaltiger Praktiken im öffentlichen Beschaffungswesen im Einklang mit den nationalen Politiken und Prioritäten."
+            short_title: "Förderung nachhaltiger Praktiken im öffentlichen Beschaffungswesen"
+          target_12_8:
+            long_title: "Bis 2030 soll sichergestellt werden, dass die Menschen überall auf der Welt über die relevanten Informationen und das Bewusstsein für eine nachhaltige Entwicklung und einen Lebensstil im Einklang mit der Natur verfügen."
+            short_title: "Förderung des allgemeinen Verständnisses für nachhaltige Lebensstile"
+          target_12_A:
+            long_title: "Unterstützung der Entwicklungsländer beim Ausbau ihrer wissenschaftlichen und technologischen Kapazitäten, um zu nachhaltigeren Verbrauchs- und Produktionsmustern überzugehen."
+            short_title: "Unterstützung der wissenschaftlichen und technologischen Kapazitäten der Entwicklungsländer für nachhaltigen Verbrauch und nachhaltige Produktion"
+          target_12_B:
+            long_title: "Entwicklung und Umsetzung von Instrumenten zur Überwachung der Auswirkungen einer nachhaltigen Entwicklung auf einen nachhaltigen Tourismus, der Arbeitsplätze schafft und die lokale Kultur und Produkte fördert."
+            short_title: "Entwicklung und Umsetzung von Instrumenten zur Überwachung des nachhaltigen Tourismus"
+          target_12_C:
+            long_title: "Rationalisierung ineffizienter Subventionen für fossile Brennstoffe, die einen verschwenderischen Verbrauch begünstigen, durch Beseitigung von Marktverzerrungen im Einklang mit den nationalen Gegebenheiten, einschließlich der Umstrukturierung der Besteuerung und der schrittweisen Abschaffung dieser schädlichen Subventionen, wo sie bestehen, um ihre Umweltauswirkungen widerzuspiegeln, wobei die spezifischen Bedürfnisse und Bedingungen der Entwicklungsländer in vollem Umfang berücksichtigt und die möglichen negativen Auswirkungen auf ihre Entwicklung in einer Weise minimiert werden, die die Armen und die betroffenen Gemeinschaften schützt."
+            short_title: "Beseitigung von Marktverzerrungen, die zu verschwenderischem Konsum ermutigen"
+      goal_13:
+        title: "Klima-Aktion"
+        title_in_two_lines: "Klima\nAktion"
+        description: "Ergreifen Sie dringend Maßnahmen zur Bekämpfung des Klimawandels und seiner Auswirkungen."
+        long_description: '<p>2019 war das <a href="https://news.un.org/en/story/2020/03/1059061">zweitwärmste Jahr seit Beginn der Aufzeichnungen</a> und das Ende des wärmsten jemals aufgezeichneten Jahrzehnts (2010 bis 2019).&nbsp;&nbsp;</p> <p>Der Gehalt an Kohlendioxid (CO2) und anderen <a href="https://news.un.org/en/story/2020/04/1062332">Treibhausgasen in der Atmosphäre</a> ist 2019 auf neue Rekordwerte gestiegen.&nbsp;</p> <p>Der Klimawandel wirkt sich auf jedes Land auf jedem Kontinent aus. Er stört die Volkswirtschaften und beeinträchtigt das Leben. Die Wettermuster ändern sich, der Meeresspiegel steigt, und die Wetterereignisse werden immer extremer.</p> <p>Obwohl die Treibhausgasemissionen im Jahr 2020 aufgrund von Reiseverboten und wirtschaftlichen Abschwächungen infolge der COVID-19-Pandemie voraussichtlich um etwa 6 Prozent sinken werden, ist diese Verbesserung nur vorübergehend. <a href="https://news.un.org/en/story/2020/04/1062332"> Der Klimawandel ist nicht auf Eis gelegt</a>. Sobald sich die Weltwirtschaft von der Pandemie erholt, werden die Emissionen voraussichtlich wieder ansteigen. </p> <p>Die Rettung von Leben und Lebensgrundlagen erfordert dringende Maßnahmen, um sowohl die Pandemie als auch den Klimanotstand anzugehen.</p> <p>Das <a href="https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement">Pariser Abkommen</a>, das 2015 verabschiedet wurde, zielt darauf ab, die globale Reaktion auf die Bedrohung durch den Klimawandel zu stärken, indem der globale Temperaturanstieg in diesem Jahrhundert deutlich unter 2 Grad Celsius über dem vorindustriellen Niveau gehalten wird. Das Abkommen zielt auch darauf ab, die Fähigkeit der Länder zu stärken, mit den Auswirkungen des Klimawandels umzugehen, und zwar durch angemessene Finanzströme, einen neuen Technologierahmen und einen verbesserten Rahmen für den Aufbau von Kapazitäten.</p>'
+        targets:
+          target_13_1:
+            long_title: "Stärkung der Widerstandsfähigkeit und Anpassungsfähigkeit gegenüber klimabedingten Gefahren und Naturkatastrophen in allen Ländern."
+            short_title: "Stärkung der Widerstandsfähigkeit und Anpassungsfähigkeit gegenüber klimabedingten Katastrophen"
+          target_13_2:
+            long_title: "Einbeziehung von Maßnahmen zum Klimawandel in die nationale Politik, Strategien und Planung."
+            short_title: "Integration von Maßnahmen zum Klimawandel in Politik und Planung"
+          target_13_3:
+            long_title: "Verbesserung der Bildung, der Sensibilisierung und der personellen und institutionellen Kapazitäten in den Bereichen Eindämmung des Klimawandels, Anpassung, Verringerung der Auswirkungen und Frühwarnung."
+            short_title: "Aufbau von Wissen und Kapazitäten zur Bewältigung des Klimawandels"
+          target_13_A:
+            long_title: "Umsetzung der von den Industrieländern im Rahmen der Klimarahmenkonvention der Vereinten Nationen eingegangenen Verpflichtung, bis 2020 gemeinsam 100 Milliarden Dollar jährlich aus allen Quellen zu mobilisieren, um die Bedürfnisse der Entwicklungsländer im Zusammenhang mit sinnvollen Minderungsmaßnahmen und Transparenz bei der Umsetzung zu befriedigen und den Grünen Klimafonds durch seine Kapitalisierung so bald wie möglich voll funktionsfähig zu machen."
+            short_title: "Umsetzung des UN-Rahmenübereinkommens über Klimaänderungen"
+          target_13_B:
+            long_title: "Förderung von Mechanismen zum Aufbau von Kapazitäten für eine wirksame Planung und Bewältigung des Klimawandels in den am wenigsten entwickelten Ländern und den kleinen Inselstaaten unter besonderer Berücksichtigung von Frauen, Jugendlichen und lokalen und marginalisierten Gemeinschaften."
+            short_title: "Förderung von Mechanismen zur Steigerung der Planungs- und Managementkapazität"
+      goal_14:
+        title: "Leben unter Wasser"
+        title_in_two_lines: "Leben unter \nWasser"
+        description: "Erhaltung und nachhaltige Nutzung der Ozeane, Meere und Meeresressourcen."
+        long_description: '<p> Der Ozean treibt globale Systeme an, die die Erde für die Menschheit bewohnbar machen. Unser Regenwasser, unser Trinkwasser, das Wetter, das Klima, die Küsten, ein Großteil unserer Lebensmittel und sogar der Sauerstoff in der Luft, die wir atmen, werden letztlich alle vom Meer bereitgestellt und reguliert.&nbsp;</p> <p> Eine sorgfältige Bewirtschaftung dieser <a href="https://www.unenvironment.org/explore-topics/oceans-seas/why-do-oceans-and-seas-matter">wichtigen globalen Ressource</a> ist ein Schlüsselelement für eine nachhaltige Zukunft. Gegenwärtig werden die Küstengewässer jedoch durch die Verschmutzung immer schlechter, und die Versauerung der Meere wirkt sich negativ auf das Funktionieren der Ökosysteme und die biologische Vielfalt aus. Dies wirkt sich auch negativ auf die kleine Fischerei aus. &nbsp;</p> <p> Die Rettung unserer Meere muss eine Priorität bleiben. Die biologische Vielfalt der Meere ist entscheidend für die Gesundheit der Menschen und unseres Planeten. Meeresschutzgebiete müssen wirksam verwaltet und mit ausreichenden Mitteln ausgestattet werden, und es müssen Vorschriften erlassen werden, um Überfischung, Meeresverschmutzung und Ozeanversauerung einzudämmen. </p>'
+        targets:
+          target_14_1:
+            long_title: "Bis 2025 Verhinderung und deutliche Verringerung der Meeresverschmutzung aller Art, insbesondere durch Aktivitäten vom Land aus, einschließlich Meeresmüll und Nährstoffverschmutzung."
+            short_title: "Verringerung der Meeresverschmutzung"
+          target_14_2:
+            long_title: "Bis 2020 nachhaltige Bewirtschaftung und Schutz der Meeres- und Küstenökosysteme, um erhebliche negative Auswirkungen zu vermeiden, u. a. durch Stärkung ihrer Widerstandsfähigkeit, und Maßnahmen zu ihrer Wiederherstellung, um gesunde und produktive Ozeane zu erreichen."
+            short_title: "Schutz und Wiederherstellung von Ökosystemen"
+          target_14_3:
+            long_title: "Minimierung und Bewältigung der Auswirkungen der Ozeanversauerung, unter anderem durch verstärkte wissenschaftliche Zusammenarbeit auf allen Ebenen."
+            short_title: "Reduzierung der Ozeanversauerung"
+          target_14_4:
+            long_title: "Bis 2020 wirksame Regulierung des Fischfangs und Beendigung der Überfischung, der illegalen, nicht gemeldeten und unregulierten Fischerei und der destruktiven Fischereipraktiken sowie Umsetzung von wissenschaftlich fundierten Bewirtschaftungsplänen, um die Fischbestände so schnell wie möglich wieder auf ein Niveau zu bringen, das zumindest den höchstmöglichen Dauerertrag gemäß ihren biologischen Merkmalen ermöglicht."
+            short_title: "Nachhaltige Fischerei"
+          target_14_5:
+            long_title: "Bis 2020 sollen mindestens 10 % der Küsten- und Meeresgebiete im Einklang mit nationalem und internationalem Recht und auf der Grundlage der besten verfügbaren wissenschaftlichen Informationen erhalten werden."
+            short_title: "Schutz von Küsten- und Meeresgebieten"
+          target_14_6:
+            long_title: "Bis 2020 Verbot bestimmter Formen von Fischereisubventionen, die zu Überkapazitäten und Überfischung beitragen, Abschaffung von Subventionen, die zur illegalen, nicht gemeldeten und unregulierten Fischerei beitragen, und Verzicht auf die Einführung neuer Subventionen dieser Art, in Anerkennung der Tatsache, dass eine angemessene und wirksame besondere und differenzierte Behandlung der Entwicklungsländer und der am wenigsten entwickelten Länder integraler Bestandteil der Verhandlungen der Welthandelsorganisation über Fischereisubventionen sein sollte."
+            short_title: "Beendigung von Subventionen, die zur Überfischung beitragen"
+          target_14_7:
+            long_title: "Bis 2030 Steigerung des wirtschaftlichen Nutzens der nachhaltigen Nutzung der Meeresressourcen für die kleinen Inselstaaten unter den Entwicklungsländern und die am wenigsten entwickelten Länder, unter anderem durch eine nachhaltige Bewirtschaftung der Fischerei, der Aquakultur und des Tourismus."
+            short_title: "Steigerung des wirtschaftlichen Nutzens einer nachhaltigen Nutzung der Meeresressourcen"
+          target_14_A:
+            long_title: "Ausbau der wissenschaftlichen Kenntnisse, Entwicklung von Forschungskapazitäten und Transfer von Meerestechnologie unter Berücksichtigung der Kriterien und Leitlinien der Zwischenstaatlichen Ozeanographischen Kommission für den Transfer von Meerestechnologie, um die Gesundheit der Meere zu verbessern und den Beitrag der biologischen Vielfalt der Meere zur Entwicklung der Entwicklungsländer, insbesondere der kleinen Inselstaaten und der am wenigsten entwickelten Länder, zu erhöhen."
+            short_title: "Ausbau der wissenschaftlichen Kenntnisse, Forschung und Technologie für die Gesundheit der Ozeane"
+          target_14_B:
+            long_title: "Ermöglichung des Zugangs kleiner handwerklicher Fischer zu den Meeresressourcen und Märkten."
+            short_title: "Unterstützung von Kleinfischern"
+          target_14_C:
+            long_title: "Verbesserung der Erhaltung und nachhaltigen Nutzung der Ozeane und ihrer Ressourcen durch die Umsetzung des internationalen Rechts, wie es im UNCLOS zum Ausdruck kommt, das den rechtlichen Rahmen für die Erhaltung und nachhaltige Nutzung der Ozeane und ihrer Ressourcen bildet, wie in Absatz 158 von The Future We Want in Erinnerung gerufen wird."
+            short_title: "Umsetzung und Durchsetzung des internationalen Seerechts"
+      goal_15:
+        title: "Das Leben an Land"
+        title_in_two_lines: "Leben auf Land"
+        description: "Nachhaltige Bewirtschaftung der Wälder, Bekämpfung der Wüstenbildung, Eindämmung und Umkehrung der Landverödung, Eindämmung des Verlusts der biologischen Vielfalt."
+        long_description: '<p>Die Natur ist für unser Überleben von entscheidender Bedeutung: Die Natur versorgt uns mit Sauerstoff, reguliert unsere Wettermuster, verunreinigt unsere Kulturen, produziert unsere Nahrung, Futter und Faser. Aber es ist unter zunehmendem Stress. <a href="https://news.un.org/en/story/2020/04/1061082">Die menschliche Aktivität hat fast 75 Prozent der Erdoberfläche verändert</a>, Quetschen von Tierwelt und Natur in eine immerkleinere Ecke des Planeten.</p> <p>Rund <a href="https://ipbes.net/sites/default/files/2020-02/ipbes_global_assessment_report_summary_for_policymakers_en.pdf">1 Million Tier- und Pflanzenarten sind vom Aussterben bedroht</a> – viele innerhalb von Jahrzehnten – nach dem Global Assessment Report über Biodiversität und Ökosystemservice 2019. Der Bericht forderte transformative Veränderungen zur Wiederherstellung und zum Schutz der Natur. Es stellte sich heraus, dass die Gesundheit von Ökosystemen, von denen wir und alle anderen Arten abhängen, schneller als je zuvor verschlechtert wird, was die Grundlagen unserer Volkswirtschaften, Lebensgrundlagen, Lebensmittelsicherheit, Gesundheit und Lebensqualität weltweit betrifft.</p> <p>Verteidigung und Wüstenbildung – verursacht durch menschliche Aktivitäten und Klimawandel – stellen große Herausforderungen für eine nachhaltige Entwicklung dar und haben das Leben und die Lebensgrundlagen von Millionen Menschen beeinflusst. <a href="https://news.un.org/en/story/2019/05/1038291">Wälder sind lebenswichtig </a>um das Leben auf der Erde zu erhalten und eine wichtige Rolle im Kampf gegen den Klimawandel zu spielen. Und Investitionen in <a href="https://news.un.org/en/story/2019/09/1045802">Land Restaurierung</a> ist entscheidend für die Verbesserung der Lebensgrundlagen, die Verringerung der Schwachstellen und die Verringerung der Risiken für die Wirtschaft.</p> <p>Die Gesundheit unseres Planeten spielt auch eine wichtige Rolle in <a href="https://www.unenvironment.org/resources/emerging-zoonotic-diseases-and-links-ecosystem-health-unep-frontiers-2016-chapter">die Entstehung von Zoonoseerkrankungen</a>, d.h. Krankheiten, die zwischen Tieren und Menschen übertragbar sind. Während wir weiterhin auf fragile Ökosysteme stoßen, bringen wir Menschen in immer engeren Kontakt mit der Tierwelt, wodurch Krankheitserreger in der Tierwelt zu Vieh und Menschen überfallen und das Risiko von Krankheitserscheinungen und -verstärkung erhöhen.</p>'
+        targets:
+          target_15_1:
+            long_title: "Bis 2020 Gewährleistung der Erhaltung, Wiederherstellung und nachhaltigen Nutzung von Land- und Binnensüßwasserökosystemen und ihrer Leistungen, insbesondere von Wäldern, Feuchtgebieten, Gebirgen und Trockengebieten, im Einklang mit den Verpflichtungen aus internationalen Übereinkommen."
+            short_title: "Terrestrische und Süßwasser-Ökosysteme erhalten und wiederherstellen"
+          target_15_2:
+            long_title: "Bis 2020 die nachhaltige Bewirtschaftung aller Arten von Wäldern fördern, die Entwaldung stoppen, geschädigte Wälder wiederherstellen und die Aufforstung und Wiederaufforstung weltweit erheblich steigern."
+            short_title: "Beendigung der Entwaldung und Wiederherstellung geschädigter Wälder"
+          target_15_3:
+            long_title: "Bis 2030: Bekämpfung der Wüstenbildung, Wiederherstellung degradierter Flächen und Böden, einschließlich der von Wüstenbildung, Dürre und Überschwemmungen betroffenen Flächen, und Streben nach einer Welt ohne Bodendegradation."
+            short_title: "Beendigung der Wüstenbildung und Wiederherstellung degradierter Flächen"
+          target_15_4:
+            long_title: "Bis 2030 soll die Erhaltung der Bergökosysteme, einschließlich ihrer biologischen Vielfalt, sichergestellt werden, um ihre Fähigkeit zu verbessern, die für eine nachhaltige Entwicklung erforderlichen Leistungen zu erbringen."
+            short_title: "Gewährleistung der Erhaltung von Bergökosystemen"
+          target_15_5:
+            long_title: "Ergreifung dringender und signifikanter Maßnahmen, um die Zerstörung natürlicher Lebensräume zu verringern, den Verlust der biologischen Vielfalt aufzuhalten und bis 2020 das Aussterben bedrohter Arten zu schützen und zu verhindern."
+            short_title: "Schutz der biologischen Vielfalt und der natürlichen Lebensräume"
+          target_15_6:
+            long_title: "Förderung einer fairen und gerechten Aufteilung der sich aus der Nutzung der genetischen Ressourcen ergebenden Vorteile und Förderung eines angemessenen Zugangs zu diesen Ressourcen, wie international vereinbart."
+            short_title: "Förderung des Zugangs zu genetischen Ressourcen und gerechte Aufteilung des Nutzens"
+          target_15_7:
+            long_title: "Dringende Maßnahmen zur Beendigung der Wilderei und des illegalen Handels mit geschützten Tier- und Pflanzenarten sowie zur Bekämpfung der Nachfrage und des Angebots an illegalen Wildtierprodukten."
+            short_title: "Unterbindung der Wilderei und des illegalen Handels mit geschützten Arten"
+          target_15_8:
+            long_title: "Bis 2020 Einführung von Maßnahmen zur Verhinderung der Einschleppung invasiver gebietsfremder Arten und zur deutlichen Verringerung ihrer Auswirkungen auf Land- und Wasserökosysteme sowie Bekämpfung oder Ausrottung der prioritären Arten."
+            short_title: "Verhinderung invasiver gebietsfremder Arten auf dem Land und in den Wasserökosystemen"
+          target_15_9:
+            long_title: "Bis 2020 sollen die Werte der Ökosysteme und der biologischen Vielfalt in die nationale und lokale Planung, die Entwicklungsprozesse, die Strategien zur Armutsbekämpfung und die Rechnungslegung einbezogen werden."
+            short_title: "Integration von Ökosystem und Biodiversität in die staatliche Planung"
+          target_15_A:
+            long_title: "Mobilisierung und erhebliche Aufstockung der finanziellen Mittel aus allen Quellen zur Erhaltung und nachhaltigen Nutzung der biologischen Vielfalt und der Ökosysteme."
+            short_title: "Aufstockung der Finanzmittel zur Erhaltung und nachhaltigen Nutzung von Ökosystemen und biologischer Vielfalt"
+          target_15_B:
+            long_title: "Mobilisierung erheblicher Mittel aus allen Quellen und auf allen Ebenen zur Finanzierung der nachhaltigen Waldbewirtschaftung und Schaffung angemessener Anreize für die Entwicklungsländer, um diese Bewirtschaftung, einschließlich der Erhaltung und Wiederaufforstung, voranzutreiben."
+            short_title: "Finanzierung und Anreize für eine nachhaltige Waldbewirtschaftung"
+          target_15_C:
+            long_title: "Verstärkte weltweite Unterstützung der Bemühungen zur Bekämpfung der Wilderei und des Handels mit geschützten Arten, auch durch die Stärkung der Fähigkeit lokaler Gemeinschaften, nachhaltige Lebensgrundlagen zu schaffen."
+            short_title: "Bekämpfung von Wilderei und Menschenhandel weltweit"
+      goal_16:
+        title: "Frieden, Gerechtigkeit und starke Institutionen"
+        title_in_two_lines: "Frieden, Gerechtigkeit und\nStarke Institutionen"
+        description: "Förderung von gerechten, friedlichen und integrativen Gesellschaften."
+        long_description: '<p> Konflikte, Unsicherheit, schwache Institutionen und ein eingeschränkter Zugang zur Justiz stellen nach wie vor eine große Bedrohung für die nachhaltige Entwicklung dar.&nbsp;</p> <p>Die Zahl der <a href="https://www.unhcr.org/en-us/news/press/2019/6/5d03b22b4/worldwide-displacement-tops-70-million-un-refugee-chief-urges-greater-solidarity.html">Menschen, die vor Krieg, Verfolgung und Konflikten fliehen, überstieg 2018 die Zahl von 70 Millionen</a>, der höchste Stand, den das UN-Flüchtlingshilfswerk (UNHCR) seit fast 70 Jahren verzeichnete; &nbsp;</p> <p>Im Jahr 2019 verzeichneten die Vereinten Nationen <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">357 Morde und 30 Fälle von Verschwindenlassen</a> von Menschenrechtsverteidigern, Journalisten und Gewerkschaftern in 47 Ländern.</p> <p>Und die Geburten von etwa <a href="https://data.unicef.org/topic/child-protection/birth-registration/">einem von vier Kindern</a> unter 5 Jahren weltweit werden nie offiziell registriert, wodurch ihnen ein Nachweis der legalen Identität vorenthalten wird, der für den Schutz ihrer Rechte und für den Zugang zu Justiz und sozialen Diensten entscheidend ist.</p>'
+        targets:
+          target_16_1:
+            long_title: "Deutliche Verringerung aller Formen von Gewalt und der damit verbundenen Todesfälle überall."
+            short_title: "Reduce Violence Everywhere"
+          target_16_2:
+            long_title: "Beendigung von Missbrauch, Ausbeutung, Menschenhandel und allen Formen von Gewalt gegen Kinder und deren Folter."
+            short_title: "Schutz von Kindern vor Missbrauch, Ausbeutung, Menschenhandel und Gewalt"
+          target_16_3:
+            long_title: "Förderung der Rechtsstaatlichkeit auf nationaler und internationaler Ebene und Gewährleistung eines gleichberechtigten Zugangs zur Justiz für alle."
+            short_title: "Förderung der Rechtsstaatlichkeit und Gewährleistung des gleichberechtigten Zugangs zur Justiz"
+          target_16_4:
+            long_title: "Bis 2030 deutliche Verringerung der illegalen Finanz- und Waffenströme, verstärkte Einziehung und Rückgabe gestohlener Vermögenswerte und Bekämpfung aller Formen der organisierten Kriminalität."
+            short_title: "Bekämpfung der organisierten Kriminalität und der illegalen Finanz- und Waffenströme"
+          target_16_5:
+            long_title: "Erhebliche Verringerung von Korruption und Bestechung in all ihren Formen."
+            short_title: "Significantly reduce corruption and bribery in all its forms"
+          target_16_6:
+            long_title: "Aufbau effizienter, rechenschaftspflichtiger und transparenter Institutionen auf allen Ebenen."
+            short_title: "Entwicklung effizienter, rechenschaftspflichtiger und transparenter Institutionen"
+          target_16_7:
+            long_title: "Gewährleistung einer reaktionsfähigen, integrativen, partizipativen und repräsentativen Entscheidungsfindung auf allen Ebenen."
+            short_title: "Gewährleistung einer reaktionsfähigen, integrativen und repräsentativen Entscheidungsfindung"
+          target_16_8:
+            long_title: "Ausweitung und Stärkung der Beteiligung der Entwicklungsländer an den Institutionen der Weltordnungspolitik."
+            short_title: "Stärkung der Beteiligung an der Global Governance"
+          target_16_9:
+            long_title: "Bis 2030 Schaffung einer legalen Identität für alle, einschließlich Geburtsregistrierung."
+            short_title: "Bereitstellung einer universellen rechtlichen Identität"
+          target_16_10:
+            long_title: "Gewährleistung des Zugangs der Öffentlichkeit zu Informationen und Schutz der Grundfreiheiten im Einklang mit den nationalen Rechtsvorschriften und internationalen Übereinkommen."
+            short_title: "Gewährleistung des öffentlichen Zugangs zu Informationen und Schutz der Grundfreiheiten"
+          target_16_A:
+            long_title: "Stärkung der einschlägigen nationalen Einrichtungen, auch durch internationale Zusammenarbeit, zum Aufbau von Kapazitäten auf allen Ebenen, insbesondere in Entwicklungsländern, zur Verhütung von Gewalt und zur Bekämpfung von Terrorismus und Kriminalität."
+            short_title: "Stärkung der nationalen Institutionen zur Gewaltprävention und Bekämpfung von Terrorismus und Kriminalität"
+          target_16_B:
+            long_title: "Förderung und Durchsetzung von nicht diskriminierenden Gesetzen und politischen Maßnahmen für eine nachhaltige Entwicklung."
+            short_title: "Förderung und Durchsetzung von diskriminierungsfreien Gesetzen und Politiken"
+      goal_17:
+        title: "Partnerschaften für die Ziele"
+        title_in_two_lines: "Partnerschaften\nFür die Ziele"
+        description: "Neubelebung der globalen Partnerschaft für nachhaltige Entwicklung."
+        long_description: '<p>Die SDGs können nur mit starken globalen Partnerschaften und Kooperationen verwirklicht werden.</p> <p>Eine erfolgreiche Entwicklungsagenda erfordert integrative Partnerschaften - auf globaler, regionaler, nationaler und lokaler Ebene -, die auf Grundsätzen und Werten sowie auf einer gemeinsamen Vision und gemeinsamen Zielen beruhen, bei denen die Menschen und der Planet im Mittelpunkt stehen.</p> <p>Viele Länder benötigen öffentliche Entwicklungshilfe, um Wachstum und Handel zu fördern. </p> <p>Doch die <a href="https://www.un.org/press/en/2019/ga12191.doc.htm">Hilfe ist rückläufig</a> und die Geberländer haben ihre Zusage, die Entwicklungsfinanzierung zu erhöhen, nicht eingehalten.</p> <p>Aufgrund der COVID-19-Pandemie wird die <a href="https://www.imf.org/en/Publications/WEO/Issues/2020/04/14/weo-april-2020">Weltwirtschaft</a> im Jahr 2020 voraussichtlich um 3 Prozent schrumpfen und die schwerste Rezession seit der Großen Depression erleben.</p><p>Eine starke internationale Zusammenarbeit ist jetzt mehr denn je erforderlich, um sicherzustellen, dass die Länder die Mittel haben, sich von der Pandemie zu erholen, sich besser zu erholen und die Ziele für nachhaltige Entwicklung zu erreichen.</p>'
+        targets:
+          target_17_1:
+            long_title: "Stärkung der inländischen Ressourcenmobilisierung, auch durch internationale Unterstützung für Entwicklungsländer, um die inländischen Kapazitäten für die Erhebung von Steuern und anderen Einnahmen zu verbessern."
+            short_title: "Mobilisierung von Ressourcen zur Verbesserung der inländischen Steuererhebung"
+          target_17_2:
+            long_title: "Die Industrieländer sollten ihre Verpflichtungen im Bereich der öffentlichen Entwicklungshilfe in vollem Umfang erfüllen, einschließlich der Verpflichtung vieler Industrieländer, das Ziel von 0,7 Prozent des BNE für die Entwicklungsländer und 0,15 bis 0,20 Prozent des BNE für die am wenigsten entwickelten Länder zu erreichen. Die Geber von öffentlicher Entwicklungshilfe sollten in Erwägung ziehen, mindestens 0,20 Prozent des BNE für die am wenigsten entwickelten Länder bereitzustellen."
+            short_title: "Umsetzung aller Entwicklungshilfeverpflichtungen"
+          target_17_3:
+            long_title: "Mobilisierung zusätzlicher Finanzmittel für Entwicklungsländer aus verschiedenen Quellen."
+            short_title: "Mobilisierung von Finanzmitteln für Entwicklungsländer"
+          target_17_4:
+            long_title: "Unterstützung der Entwicklungsländer bei der Erreichung einer langfristigen Schuldentragfähigkeit durch koordinierte Maßnahmen zur Förderung der Schuldenfinanzierung, des Schuldenerlasses und der Schuldenumstrukturierung, soweit dies angemessen ist, und Behandlung der Auslandsschulden hochverschuldeter armer Länder, um die Schuldenlast zu verringern."
+            short_title: "Unterstützung der Entwicklungsländer bei der Erreichung der Schuldentragfähigkeit"
+          target_17_5:
+            long_title: "Verabschiedung und Umsetzung von Investitionsförderregelungen für die am wenigsten entwickelten Länder."
+            short_title: "Investitionen in den am wenigsten entwickelten Ländern"
+          target_17_6:
+            long_title: "Ausbau der regionalen und internationalen Nord-Süd-, Süd-Süd- und Dreiecks-Zusammenarbeit und des Zugangs zu Wissenschaft, Technologie und Innovation sowie Verbesserung des Wissensaustauschs zu einvernehmlich festgelegten Bedingungen, unter anderem durch eine bessere Koordinierung zwischen den bestehenden Mechanismen, insbesondere auf Ebene der Vereinten Nationen, und durch einen globalen Mechanismus zur Technologieförderung."
+            short_title: "Wissensaustausch und Zusammenarbeit für den Zugang zu Wissenschaft, Technologie und Innovation"
+          target_17_7:
+            long_title: "Förderung der Entwicklung, des Transfers, der Verbreitung und des Einsatzes umweltverträglicher Technologien in den Entwicklungsländern zu günstigen Bedingungen, auch zu Vorzugsbedingungen, wie sie im gegenseitigen Einvernehmen vereinbart werden."
+            short_title: "Förderung von nachhaltigen Technologien in Entwicklungsländern"
+          target_17_8:
+            long_title: "Die Technologiebank und den Mechanismus zum Aufbau von Kapazitäten in den Bereichen Wissenschaft, Technologie und Innovation für die am wenigsten entwickelten Länder bis 2017 vollständig einsatzbereit zu machen und die Nutzung von Grundlagentechnologien, insbesondere der Informations- und Kommunikationstechnologie, zu verbessern"
+            short_title: "Stärkung der Wissenschafts-, Technologie- und Innovationskapazität für die am wenigsten entwickelten Länder"
+          target_17_9:
+            long_title: "Verstärkte internationale Unterstützung für die Umsetzung eines wirksamen und gezielten Kapazitätsaufbaus in den Entwicklungsländern, um die nationalen Pläne zur Umsetzung aller nachhaltigen Entwicklungsziele zu unterstützen, auch durch Nord-Süd-, Süd-Süd- und Dreieckskooperation."
+            short_title: "Ausbau der SDG-Kapazitäten in Entwicklungsländern"
+          target_17_10:
+            long_title: "Förderung eines universellen, regelbasierten, offenen, diskriminierungsfreien und gerechten multilateralen Handelssystems im Rahmen der Welthandelsorganisation, unter anderem durch den Abschluss der Verhandlungen im Rahmen der Entwicklungsagenda von Doha."
+            short_title: "Förderung eines universellen Handelssystems im Rahmen der WTO"
+          target_17_11:
+            long_title: "Deutliche Steigerung der Ausfuhren der Entwicklungsländer, insbesondere mit dem Ziel, den Anteil der am wenigsten entwickelten Länder an den weltweiten Ausfuhren bis 2020 zu verdoppeln."
+            short_title: "Steigerung der Exporte der Entwicklungsländer"
+          target_17_12:
+            long_title: "Rechtzeitige Umsetzung des zoll- und kontingentfreien Marktzugangs auf Dauer für alle am wenigsten entwickelten Länder im Einklang mit den Beschlüssen der Welthandelsorganisation, u.a. indem sichergestellt wird, dass die für Einfuhren aus den am wenigsten entwickelten Ländern geltenden präferenziellen Ursprungsregeln transparent und einfach sind und zur Erleichterung des Marktzugangs beitragen."
+            short_title: "Handelshemmnisse für die am wenigsten entwickelten Länder abbauen"
+          target_17_13:
+            long_title: "Stärkung der globalen makroökonomischen Stabilität, auch durch politische Koordinierung und Kohärenz."
+            short_title: "Verbesserung der globalen makroökonomischen Stabilität"
+          target_17_14:
+            long_title: "Verbesserung der politischen Kohärenz für eine nachhaltige Entwicklung."
+            short_title: "Verbesserung der Politikkohärenz für nachhaltige Entwicklung"
+          target_17_15:
+            long_title: "Respektierung des politischen Handlungsspielraums und der Führungsrolle der einzelnen Länder bei der Festlegung und Umsetzung von Maßnahmen zur Beseitigung der Armut und zur nachhaltigen Entwicklung."
+            short_title: "Respektieren Sie die nationale Führungsrolle bei der Umsetzung von Maßnahmen zur Verwirklichung der Ziele für nachhaltige Entwicklung"
+          target_17_16:
+            long_title: "Ausbau der globalen Partnerschaft für nachhaltige Entwicklung, ergänzt durch Multi-Stakeholder-Partnerschaften, die Wissen, Know-how, Technologie und finanzielle Ressourcen mobilisieren und gemeinsam nutzen, um die Verwirklichung der Ziele für nachhaltige Entwicklung in allen Ländern, insbesondere in den Entwicklungsländern, zu unterstützen."
+            short_title: "Ausbau der globalen Partnerschaft für nachhaltige Entwicklung"
+          target_17_17:
+            long_title: "Ermutigung und Förderung wirksamer öffentlicher, öffentlich-privater und zivilgesellschaftlicher Partnerschaften, aufbauend auf den Erfahrungen und Finanzierungsstrategien von Partnerschaften."
+            short_title: "Wirksame Partnerschaften ermutigen"
+          target_17_18:
+            long_title: "Bis 2020 verstärkte Unterstützung des Kapazitätsaufbaus in den Entwicklungsländern, einschließlich der am wenigsten entwickelten Länder und der kleinen Inselstaaten unter den Entwicklungsländern, um die Verfügbarkeit hochwertiger, aktueller und zuverlässiger Daten, die nach Einkommen, Geschlecht, Alter, Rasse, ethnischer Zugehörigkeit, Migrationsstatus, Behinderung, geografischer Lage und anderen im nationalen Kontext relevanten Merkmalen aufgeschlüsselt sind, erheblich zu verbessern."
+            short_title: "Verbesserung der Verfügbarkeit von zuverlässigen Daten"
+          target_17_19:
+            long_title: "Bis 2030 auf bestehenden Initiativen aufbauen, um Messungen des Fortschritts bei der nachhaltigen Entwicklung zu entwickeln, die das Bruttoinlandsprodukt ergänzen, und den Aufbau statistischer Kapazitäten in den Entwicklungsländern unterstützen."
+            short_title: "Weitere Entwicklungen Fortschrittsmessungen"
+      help:
+        title: "Die Ziele für nachhaltige Entwicklung helfen"
+        description: "Sie können Ihre Beiträge zur Gemeinschaft (Debatten, Bürgervorschläge und Investitionsprojekte) mit der Agenda 2030 für nachhaltige Entwicklung abgleichen, damit wir einen Überblick über unseren Beitrag zu den einzelnen Zielen für nachhaltige Entwicklung erhalten. Im Folgenden finden Sie Informationen über alle Ziele, ihre Zielvorgaben und lokalisierte Ziele."
+      show:
+        read_more: "Lesen Sie mehr über %{goal}"
+        read_less: "Weniger lesen über %{goal}"
+        targets:
+          no_local_targets: Für dieses Ziel gibt es keine lokalen Vorgaben
+      title: "Ziele für nachhaltige Entwicklung"
+      filter:
+        heading: "Filter nach SDG"
+        link: "Alle %{resources} für das Ziel %{code} anzeigen"
     related_list_selector:
+      goal_identifier: "SDG%{code}"
+      goal_list: "Sie können ein oder mehrere SDGs auswählen, die mit Ihrem %{record}"
+      help:
+        title: "Welche SDGs und Ziele sind mit meinem %{record} abgestimmt?"
+        text: "SDG-Hilfeseite"
+      hint: Sie können den Code eines bestimmten Ziels oder einen Text eingeben, um ein Ziel zu finden. Für weitere Informationen besuchen Sie den %{link}.
       remove_tag: "Entfernen"
+      title: "Ziele und Vorgaben für nachhaltige Entwicklung"
+    targets:
+      filter:
+        link: "Alle %{resources} für das Ziel %{code} anzeigen"

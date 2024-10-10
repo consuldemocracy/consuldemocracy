@@ -4,4 +4,4 @@
 
 <%= render Admin::BudgetsWizard::CreationTimelineComponent.new("headings") %>
 
-<%= render "/admin/budget_headings/form", heading: heading, path: form_path, action: "submit" %>
+<%= render Admin::BudgetHeadings::FormComponent.new(heading, path: form_path, action: "submit") %>

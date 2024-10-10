@@ -26,13 +26,37 @@ describe "Custom content blocks" do
 
     visit "/?locale=en"
 
-    expect(page).to have_content("content for footer")
-    expect(page).not_to have_content("contenido para footer")
+    within ".social" do
+      expect(page).to have_content("content for footer")
+      expect(page).not_to have_content("contenido para footer")
+    end
 
     visit "/?locale=es"
 
-    expect(page).to have_content("contenido para footer")
-    expect(page).not_to have_content("content for footer")
+    within ".social" do
+      expect(page).to have_content("contenido para footer")
+      expect(page).not_to have_content("content for footer")
+    end
+  end
+
+  scenario "footer_legal content block" do
+    create(:site_customization_content_block, name: "footer_legal", locale: "en",
+                                              body: "legal content for footer")
+    create(:site_customization_content_block, name: "footer_legal", locale: "es",
+                                              body: "contenido legal para el footer")
+
+    visit "/?locale=en"
+
+    within ".legal" do
+      expect(page).to have_content("legal content for footer")
+      expect(page).not_to have_content("contenido legal para el footer")
+    end
+
+    visit "/?locale=es"
+    within ".legal" do
+      expect(page).to have_content("contenido legal para el footer")
+      expect(page).not_to have_content("legal content for footer")
+    end
   end
 
   scenario "main navigation left" do

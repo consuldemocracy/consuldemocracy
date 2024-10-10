@@ -5,8 +5,7 @@ describe Admin::Organizations::TableActionsComponent, controller: Admin::Organiz
   let(:component) { Admin::Organizations::TableActionsComponent.new(organization) }
 
   it "renders buttons to verify and reject when it can" do
-    allow(component).to receive(:can_verify?).and_return(true)
-    allow(component).to receive(:can_reject?).and_return(true)
+    allow(component).to receive_messages(can_verify?: true, can_reject?: true)
 
     render_inline component
 
@@ -17,8 +16,7 @@ describe Admin::Organizations::TableActionsComponent, controller: Admin::Organiz
   end
 
   it "renders button to verify when it cannot reject" do
-    allow(component).to receive(:can_verify?).and_return(true)
-    allow(component).to receive(:can_reject?).and_return(false)
+    allow(component).to receive_messages(can_verify?: true, can_reject?: false)
 
     render_inline component
 
@@ -27,8 +25,7 @@ describe Admin::Organizations::TableActionsComponent, controller: Admin::Organiz
   end
 
   it "renders button to reject when it cannot verify" do
-    allow(component).to receive(:can_verify?).and_return(false)
-    allow(component).to receive(:can_reject?).and_return(true)
+    allow(component).to receive_messages(can_verify?: false, can_reject?: true)
 
     render_inline component
 
@@ -37,8 +34,7 @@ describe Admin::Organizations::TableActionsComponent, controller: Admin::Organiz
   end
 
   it "does not render any actions when it cannot verify nor reject" do
-    allow(component).to receive(:can_verify?).and_return(false)
-    allow(component).to receive(:can_reject?).and_return(false)
+    allow(component).to receive_messages(can_verify?: false, can_reject?: false)
 
     render_inline component
 

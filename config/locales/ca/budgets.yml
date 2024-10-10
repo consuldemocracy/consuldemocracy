@@ -75,7 +75,6 @@ ca:
         tags_placeholder: "Escriu les etiquetes que desitges separades per coma (',')"
         map_location: "Ubicació del mapa"
         map_location_instructions: "Desplaceu-vos al mapa fins a la ubicació i poseu-hi el marcador."
-        map_remove_marker: "Elimina el marcador de mapa"
       index:
         title: Pressupostos ciutadans
         unfeasible: Propostes d'inversió no viables

@@ -51,7 +51,6 @@ fa:
         tags_placeholder: "برچسبهایی را که میخواهید از آن استفاده کنید، با کاما ('،') جدا کنید"
         map_location: "نقشه محل"
         map_location_instructions: "نقشه محل حرکت و نشانگر محل."
-        map_remove_marker: "حذف  نشانگر نقشه"
       index:
         title: بودجه مشارکتی
         unfeasible: سرمایه گذاری غیر قابل پیش بینی

@@ -7,9 +7,9 @@
     <div class="callout primary">
       <p>
         <%= sanitize(t("proposal_notifications.new.info_about_receivers",
-              count: @proposal.users_to_notify.count,
-              proposal_page: link_to(t("proposal_notifications.new.proposal_page"),
-                                     proposal_path(@proposal, anchor: "comments")))) %>
+                       count: @proposal.users_to_notify.count,
+                       proposal_page: link_to(t("proposal_notifications.new.proposal_page"),
+                                              proposal_path(@proposal, anchor: "comments")))) %>
       </p>
     </div>
   </div>

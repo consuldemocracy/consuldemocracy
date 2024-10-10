@@ -1,9 +1,8 @@
 require "rails_helper"
 
-describe Admin::Budgets::CalculateWinnersButtonComponent, controller: Admin::BaseController do
+describe Admin::Budgets::CalculateWinnersButtonComponent, :admin do
   let(:budget) { create(:budget) }
   let(:component) { Admin::Budgets::CalculateWinnersButtonComponent.new(budget) }
-  before { sign_in(create(:administrator).user) }
 
   it "renders when reviewing ballots" do
     budget.update!(phase: "reviewing_ballots")

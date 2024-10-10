@@ -12,8 +12,7 @@
     <%= sanitize(
       t("mailers.evaluation_comment.new_comment_by",
         commenter: @email.comment.author.name,
-        investment: valuation_comments_link(@email.commentable)
-      )
+        investment: valuation_comments_link(@email.commentable))
     ) %>
   </p>
 

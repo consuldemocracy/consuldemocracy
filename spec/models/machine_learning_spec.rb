@@ -378,6 +378,10 @@ describe MachineLearning do
   end
 
   describe "#run_machine_learning_scripts" do
+    let!(:original_fork_mode) { DEBUGGER__::CONFIG[:fork_mode] }
+    before { DEBUGGER__::CONFIG[:fork_mode] = "parent" }
+    after { DEBUGGER__::CONFIG[:fork_mode] = original_fork_mode }
+
     it "returns true if python script executed correctly" do
       machine_learning = MachineLearning.new(job)
 
@@ -522,17 +526,23 @@ describe MachineLearning do
       machine_learning = MachineLearning.new(job)
 
       tags_data = [
-        { id: 0,
-          name: "Existing tag" },
-        { id: 1,
-          name: "Machine learning tag" }
+        {
+          id: 0,
+          name: "Existing tag"
+        },
+        {
+          id: 1,
+          name: "Machine learning tag"
+        }
       ]
 
       taggings_data = [
-        { tag_id: 0,
+        {
+          tag_id: 0,
           taggable_id: proposal.id
         },
-        { tag_id: 1,
+        {
+          tag_id: 1,
           taggable_id: proposal.id
         }
       ]
@@ -564,17 +574,23 @@ describe MachineLearning do
       machine_learning = MachineLearning.new(job)
 
       tags_data = [
-        { id: 0,
-          name: "Existing tag" },
-        { id: 1,
-          name: "Machine learning tag" }
+        {
+          id: 0,
+          name: "Existing tag"
+        },
+        {
+          id: 1,
+          name: "Machine learning tag"
+        }
       ]
 
       taggings_data = [
-        { tag_id: 0,
+        {
+          tag_id: 0,
           taggable_id: investment.id
         },
-        { tag_id: 1,
+        {
+          tag_id: 1,
           taggable_id: investment.id
         }
       ]
