@@ -370,6 +370,9 @@ Rails/ActiveRecordCallbacksOrder:
 Rails/AddColumnIndex:
   Enabled: true
 
+Rails/CompactBlank:
+  Enabled: true
+
 Rails/CreateTableWithTimestamps:
   Enabled: true
   Exclude:
@@ -390,6 +393,12 @@ Rails/DynamicFindBy:
     - find_by_slug_or_id
     - find_by_slug_or_id!
     - find_by_manager_login
+
+Rails/EnumHash:
+  Enabled: true
+
+Rails/EnumSyntax:
+  Enabled: true
 
 Rails/EnumUniqueness:
   Enabled: true
