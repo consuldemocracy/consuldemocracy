@@ -27,7 +27,15 @@ class Admin::SiteCustomization::InformationTexts::FormFieldComponent < Applicati
       i18n_content.key
     end
 
-    def site_customization_display_translation_style
+    def html_id
+      html_name.tr("[", "_").tr("]", "")
+    end
+
+    def html_name
+      "contents[content_#{i18n_key}]values[value_#{locale}]"
+    end
+
+    def display_style
       site_customization_enable_translation?(locale) ? "" : "display: none;"
     end
 end
