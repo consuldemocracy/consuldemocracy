@@ -631,6 +631,9 @@ RSpec/SpecFilePathFormat:
 RSpec/SpecFilePathSuffix:
   Enabled: true
 
+RSpec/StringAsInstanceDoubleConstant:
+  Enabled: true
+
 RSpec/UndescriptiveLiteralsDescription:
   Enabled: true
 
