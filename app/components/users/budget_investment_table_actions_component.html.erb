@@ -1,11 +1,9 @@
 <div class="user-budget-investment-table-actions">
   <% if can? :update, investment %>
-    <%= link_to t("shared.edit"), edit_budget_investment_path(investment.budget, investment),
-                class: "button hollow" %>
+    <%= edit_link %>
   <% end %>
+
   <% if can? :destroy, investment %>
-    <%= button_to t("shared.delete"), budget_investment_path(investment.budget, investment),
-                  method: :delete, class: "button hollow alert",
-                  data: { confirm: t("users.show.delete_alert") } %>
+    <%= destroy_button %>
   <% end %>
 </div>
