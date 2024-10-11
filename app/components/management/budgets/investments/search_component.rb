@@ -6,4 +6,21 @@ class Management::Budgets::Investments::SearchComponent < ApplicationComponent
     @budget = budget
     @url = url
   end
+
+  private
+
+    def options
+      {
+        method: :get,
+        class: "management-investments-search"
+      }
+    end
+
+    def search_label_text
+      t("management.budget_investments.search.label")
+    end
+
+    def attribute_name(attribute)
+      Budget::Investment.human_attribute_name(attribute)
+    end
 end

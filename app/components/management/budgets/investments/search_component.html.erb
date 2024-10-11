@@ -1,9 +1,11 @@
-<%= form_tag(url, method: :get) do |f| %>
+<%= form_tag(url, options) do |f| %>
   <div class="row">
     <div class="small-12 medium-6 column">
+      <%= label_tag :search, search_label_text %>
       <%= text_field_tag :search, "" %>
     </div>
     <div class="small-12 medium-6 column">
+      <%= label_tag :heading_id, attribute_name(:heading_id) %>
       <%= select_tag :heading_id,
                      options_for_select(budget_heading_select_options(budget),
                                         params[:heading_id]),
@@ -12,8 +14,10 @@
   </div>
   <div class="row">
     <div class="small-12 column">
-      <%= check_box_tag :unfeasible, "1", params[:unfeasible].present? %>
-      <%= t("admin.budget_investments.search_unfeasible") %>
+      <%= label_tag :unfeasible, class: "checkbox-label" do %>
+        <%= check_box_tag :unfeasible, "1", params[:unfeasible].present? %>
+        <%= t("admin.budget_investments.search_unfeasible") %>
+      <% end %>
     </div>
   </div>
 
