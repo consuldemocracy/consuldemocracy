@@ -4,4 +4,12 @@
   &::before {
     @include vertical-separator;
   }
+
+  form {
+    display: inline;
+  }
+
+  button {
+    @include link;
+  }
 }
