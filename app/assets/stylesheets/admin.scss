@@ -956,34 +956,6 @@ table {
 // 10. Budgets
 // -----------------
 
-.advanced-filters {
-  margin: $line-height 0;
-
-  @include breakpoint(medium) {
-    margin: calc(#{$line-height} / 2) 0 0;
-  }
-}
-
-.advanced-filters-content {
-  background: $highlight;
-  clear: both;
-  margin: $line-height 0;
-  padding: calc(#{$line-height} / 2);
-
-  .filter {
-    display: inline-block;
-    margin: 0 calc(#{$line-height} / 2);
-
-    label {
-      font-weight: normal;
-      margin: 0;
-    }
-  }
-
-  .button {
-    margin-top: calc(#{$line-height} / 2);
-  }
-}
 
 .columns-selector {
 
