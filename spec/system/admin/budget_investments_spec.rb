@@ -245,7 +245,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_link("Investment without admin")
       expect(page).to have_link("Investment with admin")
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       check("Without assigned admin")
       click_button "Filter"
 
@@ -269,7 +269,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_link("Investment without valuator")
       expect(page).to have_link("Investment with valuator")
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       check "Without assigned valuator"
       click_button "Filter"
 
@@ -305,7 +305,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_link("Investment without valuation")
       expect(page).to have_link("Investment with valuation")
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       check "Under valuation"
       click_button "Filter"
 
@@ -329,7 +329,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_link("Investment valuation open")
       expect(page).to have_link("Investment valuation finished")
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       check "Valuation finished"
       click_button "Filter"
 
@@ -353,7 +353,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_link("Investment winner")
       expect(page).to have_link("Investment without winner")
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       check "Winners"
       click_button "Filter"
 
@@ -497,7 +497,7 @@ describe "Admin budget investments", :admin do
 
       visit admin_budget_budget_investments_path(budget)
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       check "Winners"
       click_button "Filter"
 
@@ -515,7 +515,7 @@ describe "Admin budget investments", :admin do
 
       visit admin_budget_budget_investments_path(budget)
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       check "Winners"
       click_button "Filter"
 
@@ -551,7 +551,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_link("St. 200 supports")
       expect(page).to have_link("St. 300 supports")
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       fill_in "min_total_supports", with: 180
       click_button "Filter"
 
@@ -587,7 +587,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_link("St. 200 supports")
       expect(page).to have_link("St. 300 supports")
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       fill_in "max_total_supports", with: 180
       click_button "Filter"
 
@@ -651,7 +651,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_content("More schools")
       expect(page).to have_content("More hospitals")
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
 
       check("Feasible")
       click_button "Filter"
@@ -703,7 +703,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_content("More hospitals")
       expect(page).not_to have_content("More hostals")
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
 
       within("#advanced_filters") { check("Feasible") }
       click_button("Filter")
@@ -1339,7 +1339,7 @@ describe "Admin budget investments", :admin do
     scenario "Filtering by valuation and selection" do
       visit admin_budget_budget_investments_path(budget)
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       check "Valuation finished"
       click_button "Filter"
 
@@ -1384,7 +1384,7 @@ describe "Admin budget investments", :admin do
     scenario "Aggregating results" do
       visit admin_budget_budget_investments_path(budget)
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
 
       within("#advanced_filters") { check("Undecided") }
       click_button("Filter")
@@ -1422,7 +1422,7 @@ describe "Admin budget investments", :admin do
         end
       end
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
 
       within("#advanced_filters") { check("Selected") }
       click_button("Filter")
@@ -1438,7 +1438,7 @@ describe "Admin budget investments", :admin do
 
     scenario "Unselecting an investment" do
       visit admin_budget_budget_investments_path(budget)
-      click_link "Advanced filters"
+      click_button "Advanced filters"
 
       within("#advanced_filters") { check("Selected") }
       click_button("Filter")
@@ -1507,7 +1507,7 @@ describe "Admin budget investments", :admin do
       investment2.update!(administrator: admin)
 
       visit admin_budget_budget_investments_path(budget)
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       check "Under valuation"
       click_button "Filter"
 
@@ -1561,7 +1561,7 @@ describe "Admin budget investments", :admin do
 
       visit admin_budget_budget_investments_path(budget)
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       check "Under valuation"
       click_button "Filter"
 
@@ -1614,7 +1614,7 @@ describe "Admin budget investments", :admin do
 
       visit admin_budget_budget_investments_path(budget)
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       check "Under valuation"
       click_button "Filter"
 
@@ -1704,7 +1704,7 @@ describe "Admin budget investments", :admin do
       create(:budget_investment, :finished, budget: budget, title: "Finished Investment")
 
       visit admin_budget_budget_investments_path(budget)
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       check "Valuation finished"
       click_button "Filter"
 

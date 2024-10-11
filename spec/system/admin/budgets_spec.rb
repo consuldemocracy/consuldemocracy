@@ -490,7 +490,7 @@ describe "Admin budgets", :admin do
       create(:budget_investment, :winner, budget: budget)
 
       visit admin_budget_budget_investments_path(budget)
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       check "Winners"
       click_button "Filter"
 
