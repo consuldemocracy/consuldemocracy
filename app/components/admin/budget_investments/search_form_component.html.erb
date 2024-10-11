@@ -30,40 +30,49 @@
     </div>
   </div>
 
-  <div class="small-12 medium-3 column">
-    <%= select_tag :administrator_id,
-                   options_for_select(admin_select_options, params[:administrator_id]),
-                   { prompt: t("admin.budget_investments.index.administrator_filter_all") } %>
-  </div>
-  <div class="small-12 medium-3 column">
-    <%= select_tag :valuator_or_group_id,
-                   options_for_select(valuator_or_group_select_options, params[:valuator_or_group_id]),
-                   { prompt: t("admin.budget_investments.index.valuator_filter_all") } %>
-  </div>
-  <div class="small-12 medium-3 column">
-    <%= select_tag :heading_id,
-                   options_for_select(budget_heading_select_options(budget), params[:heading_id]),
-                   { prompt: t("admin.budget_investments.index.heading_filter_all") } %>
-  </div>
-  <div class="small-12 medium-3 column">
-    <%= select_tag :tag_name,
-                   options_for_select(investment_tags_select_options("valuation_tags"), params[:tag_name]),
-                   { prompt: t("admin.budget_investments.index.tags_filter_all") } %>
-  </div>
-
-  <div class="small-12 medium-3 column">
-    <%= select_tag :milestone_tag_name,
-                   options_for_select(investment_tags_select_options("milestone_tags"), params[:milestone_tag_name]),
-                   { prompt: t("admin.budget_investments.index.milestone_tags_filter_all") } %>
-  </div>
-
-  <div class="small-12 medium-6 column">
-    <div class="input-group">
-      <%= text_field_tag :title_or_id, params["title_or_id"], placeholder: t("admin.budget_investments.index.placeholder") %>
+  <div class="basic-filters">
+    <div class="filter">
+      <%= label_tag :administrator_id, attribute_name(:administrator_id) %>
+      <%= select_tag :administrator_id,
+                     options_for_select(admin_select_options, params[:administrator_id]),
+                     { prompt: t("admin.budget_investments.index.administrator_filter_all") } %>
     </div>
-  </div>
 
-  <div class="small-12 medium-3 column end">
-    <%= submit_tag t("admin.budget_investments.index.buttons.filter"), class: "button expanded" %>
+    <div class="filter">
+      <%= label_tag :valuator_or_group_id, t("admin.budget_investments.index.basic_filters.valuator_or_group") %>
+      <%= select_tag :valuator_or_group_id,
+                     options_for_select(valuator_or_group_select_options, params[:valuator_or_group_id]),
+                     { prompt: t("admin.budget_investments.index.valuator_filter_all") } %>
+    </div>
+
+    <div class="filter">
+      <%= label_tag :heading_id, attribute_name(:heading_id) %>
+      <%= select_tag :heading_id,
+                     options_for_select(budget_heading_select_options(budget), params[:heading_id]),
+                     { prompt: t("admin.budget_investments.index.heading_filter_all") } %>
+    </div>
+
+    <div class="filter">
+      <%= label_tag :tag_name, attribute_name(:valuation_tag_list) %>
+      <%= select_tag :tag_name,
+                     options_for_select(investment_tags_select_options("valuation_tags"), params[:tag_name]),
+                     { prompt: t("admin.budget_investments.index.tags_filter_all") } %>
+    </div>
+
+    <div class="filter">
+      <%= label_tag :milestone_tag_name, attribute_name(:milestone_tag_list) %>
+      <%= select_tag :milestone_tag_name,
+                     options_for_select(investment_tags_select_options("milestone_tags"), params[:milestone_tag_name]),
+                     { prompt: t("admin.budget_investments.index.milestone_tags_filter_all") } %>
+    </div>
+
+    <div class="filter title-or-id-filter">
+      <%= label_tag :title_or_id, t("admin.budget_investments.index.basic_filters.title_or_id") %>
+      <%= text_field_tag :title_or_id, params["title_or_id"] %>
+    </div>
+
+    <div class="filter">
+      <%= submit_tag t("admin.budget_investments.index.buttons.filter"), class: "button expanded" %>
+    </div>
   </div>
 <% end %>
