@@ -1924,6 +1924,10 @@ table {
     }
   }
 
+  button {
+    cursor: pointer;
+  }
+
   .recommendation {
     @include card;
     background: $body-background;
