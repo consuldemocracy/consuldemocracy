@@ -7,10 +7,9 @@ class UserSegments
     if budget_segment?(segment)
       budget_segment_name(segment)
     elsif geozones[segment.to_s]
-      "Geozone: geozones[segment.to_s]&.name"
+      "Geozone: #{geozones[segment.to_s]&.name}"
     else
-      # || I18n.t("admin.segment_recipient.#{segment}") if valid_segment?(segment)
-      I18n.t("admin.segment_recipient.#{segment}", default: segment.to_s.humanize) if valid_segment?(segment) 
+      I18n.t("admin.segment_recipient.#{segment}", default: segment.to_s.humanize) if valid_segment?(segment)
     end
   end
 
@@ -61,35 +60,84 @@ class UserSegments
   end
 
   def self.recipients(segment)
-    if geozones[segment.to_s]
-      all_users.where(geozone: geozones[segment.to_s])
-    else
-      send(segment)
+    Rails.logger.info "UserSegments.recipients called with segment: #{segment}"
+    geozone_name = segment.start_with?("geozone: ") ? segment.sub("geozone: ", "") : segment
+    
+    if geozones[geozone_name.to_s]
+    Rails.logger.info "UserSegments.recipients called with segment: #{geozone_name}"
+      all_users.where(geozone: geozones[geozone_name.to_s])
+    elsif segment.start_with?("PB:") && segment.include?(":")
+      budget_name, segment_type = segment.sub("PB:", "").split("_", 2)
+      budget_name = budget_name.strip.chomp(":")
+      Rails.logger.info "Segment is a PB: #{budget_name}, #{segment_type}"
+      budget = Budget.find_by(name: budget_name.strip)
+      if budget
+        users = send("pb_#{segment_type}", budget)
+        Rails.logger.info "Users found for PB segment #{segment}: #{users.pluck(:id)}"
+        users
+      else
+        Rails.logger.error "Budget not found: #{budget_name}"
+        raise NoMethodError, "Undefined budget: #{budget_name}"
+      end
+    else  
+      Rails.logger.info "Segment is not a geozone or PB, calling method: #{segment}"
+      users = send(segment)
+      Rails.logger.info "Users found for segment #{segment}: #{users.pluck(:id)}"
+      users    
     end
   end
+  
+  def self.pb_all_proposal_authors(budget)
+    author_ids(budget.investments.pluck(:author_id))
+  end
 
+  def self.pb_proposal_authors(budget)
+    author_ids(budget.investments.not_archived.not_retired.pluck(:author_id))
+  end
+
+  def self.pb_investment_authors(budget)
+    author_ids(budget.investments.pluck(:author_id))
+  end
+
+  def self.pb_feasible_and_undecided_investment_authors(budget)
+    unfeasible_and_finished_condition = "feasibility = 'unfeasible' and valuation_finished = true"
+    investments = budget.investments.where.not(unfeasible_and_finished_condition)
+    author_ids(investments.pluck(:author_id))
+  end
+
+  def self.pb_selected_investment_authors(budget)
+    author_ids(budget.investments.selected.pluck(:author_id))
+  end
+  
+  def self.pb_not_selected_investment_authors(budget)
+    author_ids(budget.investments.where.not(id: budget.investments.selected.pluck(:id)).pluck(:author_id))
+  end
+
+
+  def self.pb_winner_investment_authors(budget)
+    author_ids(budget.investments.winners.pluck(:author_id))
+  end
+  
   def self.user_segment_emails(segment)
     recipients(segment).newsletter.order(:created_at).pluck(:email).compact
   end
 
+
   private
 
   def self.static_segments
-    %w[all_users
-       administrators
-       ] + geozones.keys.map { |geozone| "geozone: #{geozone}" }
+    %w[all_users administrators] + geozones.keys.map { |geozone| "geozone: #{geozone}" }
   end
 
   def self.budget_segments
     open_budgets.map do |budget|
       %W[
-        #{budget.name}_all_proposal_authors
-        #{budget.name}_proposal_authors
-        #{budget.name}_investment_authors
-        #{budget.name}_feasible_and_undecided_investment_authors
-        #{budget.name}_selected_investment_authors
-        #{budget.name}_winner_investment_authors
-      ]
+        PB:#{budget.name}:_investment_authors
+        PB:#{budget.name}:_feasible_and_undecided_investment_authors
+        PB:#{budget.name}:_selected_investment_authors
+        PB:#{budget.name}:_not_selected_investment_authors
+        PB:#{budget.name}:_winner_investment_authors
+       ]
     end.flatten
   end
 
