@@ -1,10 +1,9 @@
 <%= form_tag(admin_budget_budget_investments_path(budget), method: :get, enforce_utf8: false, class: "admin-budget-investments-search-form") do %>
   <div class="small-12 column">
-    <%= link_to "#advanced_filters_content",
-                data: { toggle: "advanced_filters" },
-                class: "advanced-filters float-right clear" do %>
-      <%= t("admin.budget_investments.index.advanced_filters") %>
-    <% end %>
+    <%= button_tag t("admin.budget_investments.index.advanced_filters"),
+                   type: :button,
+                   data: { toggle: "advanced_filters" },
+                   class: "advanced-filters float-right clear" %>
   </div>
 
   <div id="advanced_filters" class="<%= advanced_menu_visibility %>" data-toggler=".hide">
