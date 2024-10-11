@@ -98,28 +98,28 @@ describe "Admin budget investments", :admin do
       expect(page).to have_link("Change name")
       expect(page).to have_link("Plant trees")
 
-      select "Parks: Central Park", from: "heading_id"
+      select "Parks: Central Park", from: "Heading"
       click_button "Filter"
 
       expect(page).not_to have_link("Realocate visitors")
       expect(page).not_to have_link("Change name")
       expect(page).to have_link("Plant trees")
 
-      select "All headings", from: "heading_id"
+      select "All headings", from: "Heading"
       click_button "Filter"
 
       expect(page).to have_link("Realocate visitors")
       expect(page).to have_link("Change name")
       expect(page).to have_link("Plant trees")
 
-      select "Streets: Main Avenue", from: "heading_id"
+      select "Streets: Main Avenue", from: "Heading"
       click_button "Filter"
 
       expect(page).to have_link("Realocate visitors")
       expect(page).not_to have_link("Change name")
       expect(page).not_to have_link("Plant trees")
 
-      select "Streets: Mercy Street", from: "heading_id"
+      select "Streets: Mercy Street", from: "Heading"
       click_button "Filter"
 
       expect(page).not_to have_link("Realocate visitors")
@@ -142,28 +142,28 @@ describe "Admin budget investments", :admin do
       expect(page).to have_link("Realocate visitors")
       expect(page).to have_link("Destroy the city")
 
-      select "Admin 1", from: "administrator_id"
+      select "Admin 1", from: "Administrator"
       click_button "Filter"
 
       expect(page).to have_content("There is 1 investment")
       expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
-      select "Alias", from: "administrator_id"
+      select "Alias", from: "Administrator"
       click_button "Filter"
 
       expect(page).to have_content("There are no investment projects")
       expect(page).not_to have_link("Destroy the city")
       expect(page).not_to have_link("Realocate visitors")
 
-      select "All administrators", from: "administrator_id"
+      select "All administrators", from: "Administrator"
       click_button "Filter"
 
       expect(page).to have_content("There are 2 investments")
       expect(page).to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
-      select "Admin 1", from: "administrator_id"
+      select "Admin 1", from: "Administrator"
       click_button "Filter"
 
       expect(page).to have_content("There is 1 investment")
@@ -183,21 +183,21 @@ describe "Admin budget investments", :admin do
       expect(page).to have_link("Realocate visitors")
       expect(page).to have_link("Destroy the city")
 
-      select "Valuator 1", from: "valuator_or_group_id"
+      select "Valuator 1", from: "Valuator or group"
       click_button "Filter"
 
       expect(page).to have_content("There is 1 investment")
       expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
-      select "All valuators", from: "valuator_or_group_id"
+      select "All valuators", from: "Valuator or group"
       click_button "Filter"
 
       expect(page).to have_content("There are 2 investments")
       expect(page).to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
-      select "Valuator 1", from: "valuator_or_group_id"
+      select "Valuator 1", from: "Valuator or group"
       click_button "Filter"
       expect(page).to have_content("There is 1 investment")
       expect(page).not_to have_link("Destroy the city")
@@ -215,21 +215,21 @@ describe "Admin budget investments", :admin do
       expect(page).to have_link("Build a hospital")
       expect(page).to have_link("Build a theatre")
 
-      select "Health", from: "valuator_or_group_id"
+      select "Health", from: "Valuator or group"
       click_button "Filter"
 
       expect(page).to have_content("There is 1 investment")
       expect(page).to have_link("Build a hospital")
       expect(page).not_to have_link("Build a theatre")
 
-      select "All valuators", from: "valuator_or_group_id"
+      select "All valuators", from: "Valuator or group"
       click_button "Filter"
 
       expect(page).to have_content("There are 2 investments")
       expect(page).to have_link("Build a hospital")
       expect(page).to have_link("Build a theatre")
 
-      select "Culture", from: "valuator_or_group_id"
+      select "Culture", from: "Valuator or group"
       click_button "Filter"
 
       expect(page).to have_content("There is 1 investment")
@@ -619,7 +619,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_content("More schools")
       expect(page).to have_content("More hospitals")
 
-      select "Admin 1", from: "administrator_id"
+      select "Admin 1", from: "Administrator"
       click_button "Filter"
 
       expect(page).to have_css(".budget_investment", count: 2)
@@ -627,7 +627,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_content("More schools")
       expect(page).not_to have_content("More hospitals")
 
-      fill_in "title_or_id", with: educate_children.id
+      fill_in "Title or ID", with: educate_children.id
       click_button "Filter"
 
       expect(page).to have_css(".budget_investment", count: 1)
@@ -661,7 +661,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_content("More schools")
       expect(page).not_to have_content("More hospitals")
 
-      fill_in "title_or_id", with: educate_children.id
+      fill_in "Title or ID", with: educate_children.id
       click_button "Filter"
 
       expect(page).to have_css(".budget_investment", count: 1)
@@ -694,7 +694,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_content("More hospitals")
       expect(page).to have_content("More hostals")
 
-      select "Admin 1", from: "administrator_id"
+      select "Admin 1", from: "Administrator"
       click_button "Filter"
 
       expect(page).to have_css(".budget_investment", count: 3)
@@ -714,7 +714,7 @@ describe "Admin budget investments", :admin do
       expect(page).not_to have_content("More hospitals")
       expect(page).not_to have_content("More hostals")
 
-      fill_in "title_or_id", with: educate_children.id
+      fill_in "Title or ID", with: educate_children.id
       click_button "Filter"
 
       expect(page).to have_css(".budget_investment", count: 1)
@@ -759,13 +759,13 @@ describe "Admin budget investments", :admin do
       expect(page).to have_content("Proyecto de inversión")
       expect(page).to have_content("Some other investment")
 
-      fill_in "title_or_id", with: "Proyecto de inversión"
+      fill_in "Title or ID", with: "Proyecto de inversión"
       click_button "Filter"
 
       expect(page).to have_content("Proyecto de inversión")
       expect(page).not_to have_content("Some other investment")
 
-      fill_in "title_or_id", with: "Some other investment"
+      fill_in "Title or ID", with: "Some other investment"
       click_button "Filter"
 
       expect(page).not_to have_content("Proyecto de inversión")
@@ -778,7 +778,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_content("Proyecto de inversión")
       expect(page).to have_content("Some other investment")
 
-      fill_in "title_or_id", with: first_investment.id
+      fill_in "Title or ID", with: first_investment.id
       click_button "Filter"
 
       expect(page).to have_content("Some other investment")

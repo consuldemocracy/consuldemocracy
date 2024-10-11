@@ -8,6 +8,10 @@ class Admin::BudgetInvestments::SearchFormComponent < ApplicationComponent
 
   private
 
+    def attribute_name(attribute)
+      Budget::Investment.human_attribute_name(attribute)
+    end
+
     def advanced_filters_params
       params[:advanced_filters] ||= []
     end

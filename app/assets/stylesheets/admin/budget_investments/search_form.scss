@@ -29,4 +29,26 @@
       margin-top: calc(#{$line-height} / 2);
     }
   }
+
+  .basic-filters {
+    align-items: flex-end;
+    clear: both;
+    display: flex;
+    flex-wrap: wrap;
+
+    > * {
+      @include grid-column-gutter;
+      width: 100%;
+
+      @include breakpoint(medium) {
+        width: 25%;
+      }
+    }
+
+    > .title-or-id-filter {
+      @include breakpoint(medium) {
+        width: 50%;
+      }
+    }
+  }
 }
