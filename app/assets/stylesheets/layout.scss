@@ -1943,10 +1943,18 @@ table {
 
 .hide-recommendations {
   color: $text-light;
+  cursor: pointer;
+  font-size: $small-font-size;
+  line-height: inherit;
   position: absolute;
   right: 12px;
   top: -18px;
   z-index: 2;
+
+  &:focus,
+  &:hover {
+    @include anchor-color-hover;
+  }
 }
 
 // 20. Documents
