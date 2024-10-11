@@ -1543,8 +1543,13 @@ table {
     }
   }
 
+  .delete-comment-form {
+    display: inline;
+  }
+
   .delete-comment {
     @include has-fa-icon(trash-alt, regular);
+    cursor: pointer;
 
     &:not(:hover):not(:active) {
       color: $delete;
