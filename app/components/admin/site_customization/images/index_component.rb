@@ -20,6 +20,8 @@ class Admin::SiteCustomization::Images::IndexComponent < ApplicationComponent
     end
 
     def image_hint(image)
-      "(#{image.required_width}x#{image.required_height})"
+      t("admin.site_customization.images.index.dimensions",
+        width: image.required_width,
+        height: image.required_height)
     end
 end
