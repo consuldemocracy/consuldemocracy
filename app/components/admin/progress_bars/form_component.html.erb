@@ -1,6 +1,6 @@
-<%= render "shared/globalize_locales", resource: @progress_bar %>
+<%= render "shared/globalize_locales", resource: progress_bar %>
 
-<%= translatable_form_for @progress_bar, url: admin_polymorphic_path(@progress_bar) do |f| %>
+<%= translatable_form_for progress_bar, url: admin_polymorphic_path(progress_bar) do |f| %>
 
   <div class="row">
     <div class="small-12 medium-6 column">
@@ -16,7 +16,6 @@
     <% end %>
   </div>
 
-  <% progress_options = { min: ProgressBar::RANGE.min, max: ProgressBar::RANGE.max, step: 1 } %>
   <div class="row">
     <div class="small-12 medium-6 large-2 column">
       <%= f.label :percentage %>
