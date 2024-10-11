@@ -1,0 +1,7 @@
+.debate-show .mark-featured-action {
+  display: inline;
+
+  &::before {
+    @include vertical-separator;
+  }
+}
