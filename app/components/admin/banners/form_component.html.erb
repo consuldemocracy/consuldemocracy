@@ -1,8 +1,8 @@
-<%= render "shared/globalize_locales", resource: @banner %>
+<%= render "shared/globalize_locales", resource: banner %>
 
-<%= translatable_form_for [:admin, @banner] do |f| %>
+<%= translatable_form_for [:admin, banner] do |f| %>
 
-  <%= render "shared/errors", resource: @banner %>
+  <%= render "shared/errors", resource: banner %>
 
   <div class="row">
     <div class="small-12 medium-3 column">
@@ -36,7 +36,7 @@
   <div class="row">
     <fieldset class="small-12 column">
       <legend><%= t("admin.banners.banner.sections_label") %></legend>
-      <%= f.collection_check_boxes(:web_section_ids, @banner_sections, :id, :name) do |b| %>
+      <%= f.collection_check_boxes(:web_section_ids, sections, :id, :name) do |b| %>
         <%= b.label do %>
           <%= b.check_box + t("admin.banners.banner.sections.#{b.text}") %>
         <% end %>
@@ -79,6 +79,6 @@
   </div>
 
   <div class="row">
-    <%= render Shared::BannerComponent.new(@banner) %>
+    <%= render Shared::BannerComponent.new(banner) %>
   </div>
 <% end %>
