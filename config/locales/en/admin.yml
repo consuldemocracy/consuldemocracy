@@ -1615,6 +1615,7 @@ en:
             subnavigation_right: Main Navigation Right
       images:
         index:
+          dimensions: "(%{width}x%{height})"
           title: Custom images
           update: Update
           image: Image

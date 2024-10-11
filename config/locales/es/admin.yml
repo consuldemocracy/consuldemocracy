@@ -1615,6 +1615,7 @@ es:
             subnavigation_right: Navegación principal derecha
       images:
         index:
+          dimensions: "(%{width}x%{height})"
           title: Personalizar imágenes
           update: Actualizar
           image: Imagen
