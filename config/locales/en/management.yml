@@ -95,6 +95,8 @@ en:
         unfeasible: Unfeasible investment
       print:
         print_button: Print
+      search:
+        label: "Search investments"
       search_results:
         one: " containing the term '%{search_term}'"
         other: " containing the term '%{search_term}'"

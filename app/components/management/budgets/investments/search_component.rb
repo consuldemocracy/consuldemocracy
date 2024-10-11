@@ -16,4 +16,15 @@ class Management::Budgets::Investments::SearchComponent < ApplicationComponent
         budget_id: budget.id
       )
     end
+
+    def options
+      {
+        method: :get,
+        class: "management-investments-search"
+      }
+    end
+
+    def search_label_text
+      t("management.budget_investments.search.label")
+    end
 end
