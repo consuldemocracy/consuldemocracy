@@ -1,6 +1,6 @@
 (function() {
   "use strict";
-  App.PollsAdmin = {
+  App.AdminPollShiftsForm = {
     initialize: function() {
       $("select[class='js-poll-shifts']").on({
         change: function() {
