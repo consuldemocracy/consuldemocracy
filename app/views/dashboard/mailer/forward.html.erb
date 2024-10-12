@@ -15,9 +15,13 @@
   </table>
 
   <% if @proposal.image.present? %>
-    <%= image_tag @proposal.image.variant(:large), style: "width: 100%; box-shadow: -16px 61px 49px -19px rgba(0,0,0,0.1);" %>
+    <%= image_tag @proposal.image.variant(:large),
+                  alt: @proposal.image.title.unicode_normalize,
+                  style: "width: 100%; box-shadow: -16px 61px 49px -19px rgba(0,0,0,0.1);" %>
   <% else %>
-    <%= image_tag "default_mailing.jpg", style: "width: 100%; box-shadow: -16px 61px 49px -19px rgba(0,0,0,0.1);" %>
+    <%= image_tag "default_mailing.jpg",
+                  alt: "",
+                  style: "width: 100%; box-shadow: -16px 61px 49px -19px rgba(0,0,0,0.1);" %>
   <% end %>
 
   <p style="padding: 0 50px; font-size:32px; text-align: left; line-height:43px; color: #515151;"><%= t("dashboard.mailer.forward.hi") %></p>
