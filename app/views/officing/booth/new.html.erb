@@ -13,8 +13,7 @@
             <%= f.select :id,
                          @booths.map { |booth| [booth.location, booth.id] },
                          selected: @booths.first,
-                         label: false,
-                         tabindex: "1" %>
+                         label: false %>
 
             <%= f.submit(t("devise_views.sessions.new.submit"), class: "button expanded") %>
           </div>
