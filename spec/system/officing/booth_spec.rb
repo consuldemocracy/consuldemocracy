@@ -47,7 +47,7 @@ describe "Booth", :with_frozen_time do
 
     expect(page).to have_content "Choose your booth"
 
-    select booth2.location, from: "booth_id"
+    select booth2.location, from: "Choose your booth"
     click_button "Enter"
 
     within("#officing-booth") do
@@ -72,6 +72,6 @@ describe "Booth", :with_frozen_time do
 
     expect(page).to have_content "Choose your booth"
 
-    expect(page).to have_select("booth_id", options: [booth1.location, booth2.location])
+    expect(page).to have_select "Choose your booth", options: [booth1.location, booth2.location]
   end
 end
