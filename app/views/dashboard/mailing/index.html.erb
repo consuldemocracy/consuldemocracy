@@ -9,7 +9,11 @@
     </div>
 
     <div class="margin-bottom">
-      <%= image_tag(proposal.image&.variant(:large).presence || "default_mailing.jpg") %>
+      <% if proposal.image.present? %>
+        <%= image_tag(proposal.image.variant(:large), alt: proposal.image.title.unicode_normalize) %>
+      <% else %>
+        <%= image_tag("default_mailing.jpg", alt: "") %>
+      <% end %>
     </div>
 
     <div class="mail-body">
