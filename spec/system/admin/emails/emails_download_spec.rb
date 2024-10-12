@@ -26,7 +26,7 @@ describe "Admin download user emails" do
       visit admin_emails_download_index_path
 
       within("#admin_download_emails") do
-        select "Administrators", from: "users_segment"
+        select "Administrators", from: "Download email addresses"
         click_button "Download emails list"
       end
 
