@@ -11,7 +11,7 @@
     <h1>
       <strong><%= t("dashboard.poster.index.poster_title") %>
       <br>
-      <%= wicked_pdf_image_tag("finger.png") %>
+      <%= wicked_pdf_image_tag("finger.png", alt: "") %>
       <%= t("dashboard.poster.index.poster_subtitle") %>
       </strong>
     </h1>
@@ -30,9 +30,9 @@
     </div>
     <div class="poster-content">
       <h2 class="text-center"><strong><%= t("dashboard.poster.index.support") %></strong></h2>
-      <%= wicked_pdf_image_tag "quote_before_blue.png" %>
+      <%= wicked_pdf_image_tag "quote_before_blue.png", alt: "" %>
       <h3><strong><%= proposal.title %></strong></h3>
-      <%= wicked_pdf_image_tag "quote_after_blue.png" %>
+      <%= wicked_pdf_image_tag "quote_after_blue.png", alt: "" %>
       <p class="poster-footer">
         <%= sanitize(t("dashboard.poster.index.footer", link: proposal_url(proposal))) %>
       </p>
