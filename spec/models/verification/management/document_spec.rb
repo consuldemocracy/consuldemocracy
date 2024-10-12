@@ -57,17 +57,13 @@ describe Verification::Management::Document do
 
       describe "dates" do
         it "is valid with a valid date of birth" do
-          verification_document = Verification::Management::Document.new("date_of_birth(3i)" => "1",
-                                                                         "date_of_birth(2i)" => "1",
-                                                                         "date_of_birth(1i)" => "1980")
+          verification_document = Verification::Management::Document.new(date_of_birth: "1980-01-01")
 
           expect(verification_document.errors[:date_of_birth]).to be_empty
         end
 
         it "is not valid without a date of birth" do
-          verification_document = Verification::Management::Document.new("date_of_birth(3i)" => "",
-                                                                         "date_of_birth(2i)" => "",
-                                                                         "date_of_birth(1i)" => "")
+          verification_document = Verification::Management::Document.new(date_of_birth: "")
           expect(verification_document).not_to be_valid
           expect(verification_document.errors[:date_of_birth]).to include("can't be blank")
         end

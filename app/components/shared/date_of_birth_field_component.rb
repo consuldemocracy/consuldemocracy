@@ -10,9 +10,8 @@ class Shared::DateOfBirthFieldComponent < ApplicationComponent
 
     def default_options
       {
-        prompt: true,
-        start_year: 1900,
-        end_year: minimum_required_age.years.ago.year
+        min: "1900-01-01",
+        max: minimum_required_age.years.ago
       }
     end
 

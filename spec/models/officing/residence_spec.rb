@@ -84,18 +84,14 @@ describe Officing::Residence do
 
       describe "dates" do
         it "is not valid but not because date of birth" do
-          custom_residence = Officing::Residence.new("date_of_birth(3i)" => "1",
-                                                     "date_of_birth(2i)" => "1",
-                                                     "date_of_birth(1i)" => "1980")
+          custom_residence = Officing::Residence.new(date_of_birth: "1980-01-01")
 
           expect(custom_residence).not_to be_valid
           expect(custom_residence.errors[:date_of_birth]).to be_empty
         end
 
         it "is not valid without a date of birth" do
-          custom_residence = Officing::Residence.new("date_of_birth(3i)" => "",
-                                                     "date_of_birth(2i)" => "",
-                                                     "date_of_birth(1i)" => "")
+          custom_residence = Officing::Residence.new(date_of_birth: "")
           expect(custom_residence).not_to be_valid
           expect(custom_residence.errors[:date_of_birth]).to include("can't be blank")
         end
