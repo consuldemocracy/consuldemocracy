@@ -19,8 +19,8 @@ describe Shared::DateOfBirthFieldComponent do
     travel_to "2015-07-15" do
       render_inline component
 
-      expect(page).to have_select with_options: [2002, 2001, 2000, 1999]
-      expect(page).not_to have_select with_options: [2003]
+      expect(page).to have_field "Date of birth"
+      expect(page).to have_css "input[type=date][min='1900-01-01'][max='2002-07-15']"
     end
   end
 end
