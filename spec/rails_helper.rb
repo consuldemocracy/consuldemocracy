@@ -21,6 +21,18 @@ require "capybara/rspec"
 require "selenium/webdriver"
 require "view_component/test_helpers"
 
+module Axe
+  module Matchers
+    class BeAxeClean
+      def audit(page)
+        @audit ||= Core.new(page).call(@run).tap do |audit|
+          audit.results.violations.select! { |violation| [:critical, :serious].include?(violation.impact) }
+        end
+      end
+    end
+  end
+end
+
 module ViewComponent
   module TestHelpers
     def sign_in(user)
@@ -62,7 +74,7 @@ module Capybara
       original_visit(url, ...)
 
       unless driver.name == :rack_test
-        expect(page).to be_axe_clean.checking_only :label
+        expect(page).to be_axe_clean
       end
 
       unless url.match?("robots.txt") || url.match?("active_storage/representations")
@@ -78,7 +90,7 @@ module Capybara
       original_click_link(url, ...)
 
       unless driver.name == :rack_test
-        expect(page).to be_axe_clean.checking_only :label
+        expect(page).to be_axe_clean
       end
     end
   end
