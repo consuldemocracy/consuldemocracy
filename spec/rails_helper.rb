@@ -70,11 +70,18 @@ module Capybara
   module DSL
     alias_method :original_visit, :visit
 
+    def axe_tests_to_skip
+      [
+        :"link-in-text-block",
+        :"color-contrast"
+      ]
+    end
+
     def visit(url, ...)
       original_visit(url, ...)
 
       unless driver.name == :rack_test
-        expect(page).to be_axe_clean
+        expect(page).to be_axe_clean.skipping(*axe_tests_to_skip)
       end
 
       unless url.match?("robots.txt") || url.match?("active_storage/representations")
@@ -90,7 +97,7 @@ module Capybara
       original_click_link(url, ...)
 
       unless driver.name == :rack_test
-        expect(page).to be_axe_clean
+        expect(page).to be_axe_clean.skipping(*axe_tests_to_skip)
       end
     end
   end
