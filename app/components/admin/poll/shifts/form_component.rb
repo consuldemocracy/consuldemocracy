@@ -17,16 +17,16 @@ class Admin::Poll::Shifts::FormComponent < ApplicationComponent
       booth.polls.current_or_recounting
     end
 
-    def shift_vote_collection_dates(polls)
-      return [] if polls.blank?
+    def shift_vote_collection_dates
+      return [] if voting_polls.blank?
 
-      date_options((start_date(polls)..end_date(polls)), Poll::Shift.tasks[:vote_collection])
+      date_options((voting_start_date..voting_end_date), Poll::Shift.tasks[:vote_collection])
     end
 
-    def shift_recount_scrutiny_dates(polls)
-      return [] if polls.blank?
+    def shift_recount_scrutiny_dates
+      return [] if recount_polls.blank?
 
-      dates = polls.map(&:ends_at).map(&:to_date).sort.reduce([]) do |total, date|
+      dates = recount_polls.map(&:ends_at).map(&:to_date).sort.reduce([]) do |total, date|
         initial_date = [date, Date.current].max
         total << (initial_date..date + Poll::RECOUNT_DURATION).to_a
       end
@@ -41,13 +41,13 @@ class Admin::Poll::Shifts::FormComponent < ApplicationComponent
       dates.reject { |date| officer_shifts(task_id).include?(date) }
     end
 
-    def start_date(polls)
-      start_date = polls.minimum(:starts_at).to_date
+    def voting_start_date
+      start_date = voting_polls.minimum(:starts_at).to_date
       [start_date, Date.current].max
     end
 
-    def end_date(polls)
-      polls.maximum(:ends_at).to_date
+    def voting_end_date
+      voting_polls.maximum(:ends_at).to_date
     end
 
     def officer_shifts(task_id)
