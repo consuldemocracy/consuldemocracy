@@ -2,6 +2,54 @@
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
+## [2.2.2](https://github.com/consuldemocracy/consuldemocracy/tree/2.2.2) (2024-10-15)
+
+[Full Changelog](https://github.com/consuldemocracy/consuldemocracy/compare/2.2.1...2.2.2)
+
+### Changed
+
+- **Maintenance-CI:** Make github actions workflows compatible with Ubuntu 24.04 [\#5741](https://github.com/consuldemocracy/consuldemocracy/pull/5741)
+- **Maintenance-Gems:** Bump groupdate from 6.4.0 to 6.5.1 [\#5735](https://github.com/consuldemocracy/consuldemocracy/pull/5735)
+- **Maintenance-Gems:** Bump rubocop-rails from 2.25.1 to 2.26.2 [\#5722](https://github.com/consuldemocracy/consuldemocracy/pull/5722)
+- **Maintenance-Gems:** Bump rspec-rails from 6.1.3 to 7.0.1 [\#5720](https://github.com/consuldemocracy/consuldemocracy/pull/5720)
+- **Maintenance-Gems:** Bump rubocop-performance from 1.21.1 to 1.22.1 [\#5719](https://github.com/consuldemocracy/consuldemocracy/pull/5719)
+- **Maintenance-Gems:** Bump rubocop-rspec from 3.0.3 to 3.1.0 [\#5717](https://github.com/consuldemocracy/consuldemocracy/pull/5717)
+- **Maintenance-Gems:** Bump exiftool_vendored from 12.80.0 to 12.97.0 [\#5716](https://github.com/consuldemocracy/consuldemocracy/pull/5716)
+- **Maintenance-Gems:** Bump pg from 1.5.6 to 1.5.8 [\#5715](https://github.com/consuldemocracy/consuldemocracy/pull/5715)
+- **Maintenance-Gems:** Bump uglifier from 4.2.0 to 4.2.1 [\#5714](https://github.com/consuldemocracy/consuldemocracy/pull/5714)
+- **Maintenance-Gems:** Bump rubocop from 1.64.1 to 1.66.1 [\#5705](https://github.com/consuldemocracy/consuldemocracy/pull/5705)
+- **Maintenance-Gems:** Bump selenium-webdriver from 4.22.0 to 4.25.0 [\#5702](https://github.com/consuldemocracy/consuldemocracy/pull/5702)
+- **Maintenance-Gems:** Bump acts-as-taggable-on from 10.0.0 to 11.0.0 [\#5677](https://github.com/consuldemocracy/consuldemocracy/pull/5677)
+- **Maintenance-Gems:** Bump wkhtmltopdf-binary from 0.12.6.6 to 0.12.6.8 [\#5675](https://github.com/consuldemocracy/consuldemocracy/pull/5675)
+- **Maintenance-Gems:** Bump capistrano-bundler from 2.1.0 to 2.1.1 [\#5674](https://github.com/consuldemocracy/consuldemocracy/pull/5674)
+- **Maintenance-Gems:** Bump pg_search from 2.3.6 to 2.3.7 [\#5672](https://github.com/consuldemocracy/consuldemocracy/pull/5672)
+- **Maintenance-Gems:** Bump knapsack_pro from 7.6.2 to 7.8.0 [\#5669](https://github.com/consuldemocracy/consuldemocracy/pull/5669)
+- **Maintenance-Gems:** Bump delayed_job_active_record from 4.1.8 to 4.1.10 [\#5668](https://github.com/consuldemocracy/consuldemocracy/pull/5668)
+- **Maintenance-Gems:** Bump wicked_pdf from 2.8.0 to 2.8.1 [\#5664](https://github.com/consuldemocracy/consuldemocracy/pull/5664)
+- **Maintenance-Gems:** Bump audited from 5.4.3 to 5.7.0 [\#5663](https://github.com/consuldemocracy/consuldemocracy/pull/5663)
+- **Maintenance-Gems:** Bump paranoia from 2.6.3 to 3.0.0 [\#5657](https://github.com/consuldemocracy/consuldemocracy/pull/5657)
+- **Maintenance-Gems:** Bump sprockets-rails from 3.4.2 to 3.5.2 [\#5648](https://github.com/consuldemocracy/consuldemocracy/pull/5648)
+- **Maintenance-Gems:** Bump email_spec from 2.2.2 to 2.3.0 [\#5647](https://github.com/consuldemocracy/consuldemocracy/pull/5647)
+- **Maintenance-Gems:** Bump erb_lint from 0.5.0 to 0.6.0 [\#5646](https://github.com/consuldemocracy/consuldemocracy/pull/5646)
+- **Maintenance-Gems:** Bump image_processing from 1.12.2 to 1.13.0 [\#5645](https://github.com/consuldemocracy/consuldemocracy/pull/5645)
+- **Maintenance-Gems:** Bump autoprefixer-rails from 10.4.16.0 to 10.4.19.0 [\#5642](https://github.com/consuldemocracy/consuldemocracy/pull/5642)
+- **Maintenance-Gems:** Bump savon from 2.15.0 to 2.15.1 [\#5627](https://github.com/consuldemocracy/consuldemocracy/pull/5627)
+- **Maintenance-Gems:** Bump faker from 3.4.1 to 3.4.2 [\#5624](https://github.com/consuldemocracy/consuldemocracy/pull/5624)
+- **Maintenance-Gems:** Bump caxlsx_rails from 0.6.3 to 0.6.4 [\#5597](https://github.com/consuldemocracy/consuldemocracy/pull/5597)
+- **Maintenance-Gems:** Bump cancancan from 3.5.0 to 3.6.1 [\#5561](https://github.com/consuldemocracy/consuldemocracy/pull/5561)
+- **Maintenance-Gems:** Bump devise from 4.9.3 to 4.9.4 [\#5513](https://github.com/consuldemocracy/consuldemocracy/pull/5513)
+- **Maintenance-JavaScript:** Bump @stylistic/stylelint-plugin from 2.1.2 to 3.1.1 [\#5732](https://github.com/consuldemocracy/consuldemocracy/pull/5732)
+- **Maintenance-JavaScript:** Bump stylelint-scss from 6.3.2 to 6.7.0 [\#5726](https://github.com/consuldemocracy/consuldemocracy/pull/5726)
+- **Maintenance-JavaScript:** Bump jquery-ui from 1.13.2 to 1.13.3 [\#5520](https://github.com/consuldemocracy/consuldemocracy/pull/5520)
+- **Maintenance-Refactoring:** Unify database configuration files [\#5530](https://github.com/consuldemocracy/consuldemocracy/pull/5530)
+
+### Fixed
+
+- **Legislation:** Fix crash in legislation proposals with videos [\#5742](https://github.com/consuldemocracy/consuldemocracy/pull/5742)
+- **Maintenance-Specs:** Make sure requests finish in ballots back link tests [\#5747](https://github.com/consuldemocracy/consuldemocracy/pull/5747)
+- **Maintenance-Specs:** Fix default dashboard actions factories [\#5738](https://github.com/consuldemocracy/consuldemocracy/pull/5738)
+- **Maintenance-Specs:** Fix warning in hidden proposals spec [\#5731](https://github.com/consuldemocracy/consuldemocracy/pull/5731)
+
 ## [2.2.1](https://github.com/consuldemocracy/consuldemocracy/tree/2.2.1) (2024-10-04)
 
 [Full Changelog](https://github.com/consuldemocracy/consuldemocracy/compare/2.2.0...2.2.1)
