@@ -48,9 +48,7 @@ describe "Moderate proposals" do
           visit moderation_proposals_path
           click_link "All"
 
-          within("#proposal_#{proposal.id}") do
-            check "proposal_#{proposal.id}_check"
-          end
+          check proposal.title
         end
 
         scenario "Hide the proposal" do

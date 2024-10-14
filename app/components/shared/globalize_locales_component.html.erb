@@ -6,9 +6,9 @@
         <%= selected_languages_description %>
       </strong>
     </span>
+    <%= label_tag :select_language, t("shared.translations.current_language") %>
     <%= select_tag :select_language,
                    options_for_select_language,
-                   prompt: t("shared.translations.select_language_prompt"),
                    class: "js-select-language" %>
     <%= select_language_error %>
     <div class="margin-bottom">
@@ -24,9 +24,10 @@
   </div>
   <div class="small-6 large-3 column margin-top end">
     <% if manage_languages %>
+      <%= label_tag :add_language, t("shared.translations.add_language") %>
       <%= select_tag :add_language,
                      options_for_add_language,
-                     prompt: t("shared.translations.add_language"),
+                     prompt: "",
                      class: "js-add-language" %>
     <% end %>
   </div>

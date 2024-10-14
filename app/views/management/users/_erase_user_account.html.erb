@@ -5,5 +5,5 @@
     <%= t("management.users.erase_warning") %>
   </div>
 
-  <%= link_to t("management.users.erase_submit"), erase_management_users_path, method: :delete, class: "button hollow alert", data: { confirm: t("management.users.erase_account_confirm") } %>
+  <%= button_to t("management.users.erase_submit"), erase_management_users_path, method: :delete, class: "button hollow alert", data: { confirm: t("management.users.erase_account_confirm") } %>
 </div>

@@ -23,7 +23,8 @@
             <%= check_box_tag "proposal_notification_ids[]",
                               proposal_notification.id,
                               nil,
-                              id: "#{dom_id(proposal_notification)}_check" %>
+                              id: "#{dom_id(proposal_notification)}_check",
+                              "aria-label": proposal_notification.title %>
           </td>
         </tr>
       <% end %>

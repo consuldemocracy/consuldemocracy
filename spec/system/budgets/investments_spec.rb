@@ -1170,7 +1170,7 @@ describe "Budget Investments" do
       within("#budget_investment_#{investment1.id}") do
         expect(page).to have_content(investment1.title)
 
-        accept_confirm { click_link("Delete") }
+        accept_confirm { click_button "Delete" }
       end
 
       expect(page).to have_content "Investment project deleted successfully"

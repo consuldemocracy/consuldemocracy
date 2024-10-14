@@ -57,9 +57,7 @@ describe "Moderate proposal notifications" do
           visit moderation_proposal_notifications_path
           click_link "All"
 
-          within("#proposal_notification_#{proposal_notification.id}") do
-            check "proposal_notification_#{proposal_notification.id}_check"
-          end
+          check proposal_notification.title
         end
 
         scenario "Hide the proposal" do
