@@ -11,26 +11,20 @@ describe Verification::Residence do
 
     describe "dates" do
       it "is valid with a valid date of birth" do
-        residence = Verification::Residence.new("date_of_birth(3i)" => "1",
-                                                "date_of_birth(2i)" => "1",
-                                                "date_of_birth(1i)" => "1980")
+        residence = Verification::Residence.new(date_of_birth: "1980-01-01")
 
         expect(residence.errors[:date_of_birth]).to be_empty
       end
 
       it "is not valid without a date of birth" do
-        residence = Verification::Residence.new("date_of_birth(3i)" => "",
-                                                "date_of_birth(2i)" => "",
-                                                "date_of_birth(1i)" => "")
+        residence = Verification::Residence.new(date_of_birth: "")
         expect(residence).not_to be_valid
         expect(residence.errors[:date_of_birth]).to include("can't be blank")
       end
     end
 
     it "validates user has allowed age" do
-      residence = Verification::Residence.new("date_of_birth(3i)" => "1",
-                                              "date_of_birth(2i)" => "1",
-                                              "date_of_birth(1i)" => 5.years.ago.year.to_s)
+      residence = Verification::Residence.new(date_of_birth: 5.years.ago)
       expect(residence).not_to be_valid
       expect(residence.errors[:date_of_birth]).to include("You don't have the required age to participate")
     end
