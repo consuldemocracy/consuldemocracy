@@ -142,7 +142,7 @@ FactoryBot.define do
   factory :dashboard_action, class: "Dashboard::Action" do
     title { Faker::Lorem.sentence[0..79].strip }
     description { Faker::Lorem.sentence }
-    request_to_administrators { true }
+    request_to_administrators { false }
     day_offset { 0 }
     required_supports { 0 }
     order { 0 }
