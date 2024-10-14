@@ -3,7 +3,7 @@ on: [pull_request]
 
 jobs:
   pronto:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     if: github.event.pull_request.head.repo.full_name == github.event.pull_request.base.repo.full_name && github.actor != 'dependabot[bot]'
     steps:
       - name: Checkout code
