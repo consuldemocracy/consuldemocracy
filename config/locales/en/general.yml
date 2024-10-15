@@ -644,6 +644,8 @@ en:
     show:
       back: "Go back to my content"
   shared:
+    actions:
+      label: "%{action} %{name}"
     edit: "Edit"
     filter: "Filter"
     save: "Save"
