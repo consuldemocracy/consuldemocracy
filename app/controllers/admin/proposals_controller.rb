@@ -19,9 +19,22 @@ class Admin::ProposalsController < Admin::BaseController
     end
   end
 
-  def toggle_selection
-    @proposal.toggle :selected
-    @proposal.save!
+  def select
+    @proposal.update!(selected: true)
+
+    respond_to do |format|
+      format.html { redirect_to request.referer, notice: t("flash.actions.update.proposal") }
+      format.js { render :toggle_selection }
+    end
+  end
+
+  def deselect
+    @proposal.update!(selected: false)
+
+    respond_to do |format|
+      format.html { redirect_to request.referer, notice: t("flash.actions.update.proposal") }
+      format.js { render :toggle_selection }
+    end
   end
 
   private

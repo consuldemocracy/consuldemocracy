@@ -3,18 +3,6 @@ module BudgetInvestmentsHelper
     params.map { |af| t("admin.budget_investments.index.filters.#{af}") }.join(", ")
   end
 
-  def link_to_investments_sorted_by(column)
-    direction = set_direction(params[:direction])
-    icon = set_sorting_icon(direction, column)
-
-    translation = t("admin.budget_investments.index.list.#{column}")
-
-    link_to(
-      safe_join([translation, tag.span(class: "icon-sortable #{icon}")]),
-      admin_budget_budget_investments_path(sort_by: column, direction: direction)
-    )
-  end
-
   def set_sorting_icon(direction, sort_by)
     if sort_by.to_s == params[:sort_by]
       if direction == "desc"

@@ -12,6 +12,4 @@
 
 <%= render "/shared/filter_subnav", i18n_namespace: "admin.budget_investments.index" %>
 
-<div id="investments">
-  <%= render "investments" %>
-</div>
+<%= render Admin::BudgetInvestments::InvestmentsComponent.new(@budget, @investments) %>

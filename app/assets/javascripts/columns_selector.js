@@ -80,9 +80,6 @@
           App.ColumnsSelector.toggleColumn(event);
         }
       });
-      $(".column-selectable").on("inserted", function() {
-        App.ColumnsSelector.initColumns();
-      });
     },
     destroy: function() {
       $("#js-columns-selector-wrapper").children(":not(#column_selector_item_template)").remove();
