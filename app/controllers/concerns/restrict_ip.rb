@@ -1,4 +1,4 @@
-module RestrictIP
+module RestrictIp
   extend ActiveSupport::Concern
 
   included do

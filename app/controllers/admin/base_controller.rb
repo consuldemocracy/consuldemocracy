@@ -1,5 +1,5 @@
 class Admin::BaseController < ApplicationController
-  include RestrictIP
+  include RestrictIp
   layout "admin"
   before_action :authenticate_user!
 
