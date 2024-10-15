@@ -10,6 +10,7 @@ class Legislation::Proposal < ApplicationRecord
   include Followable
   include Communitable
   include Documentable
+  include Videoable
   include Notifiable
   include Imageable
   include Randomizable
