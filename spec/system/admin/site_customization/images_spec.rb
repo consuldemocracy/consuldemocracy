@@ -45,19 +45,19 @@ describe "Admin custom images", :admin do
     visit proposals_path
 
     within("#map") do
-      expect(page).to have_css("img[src*='custom_map.jpg']")
+      expect(page).to have_css("img[src*='custom_map.jpg'][alt='Districts list']")
     end
 
     visit map_proposals_path
 
     within(".show-for-medium") do
-      expect(page).to have_css("img[src*='custom_map.jpg']")
+      expect(page).to have_css("img[src*='custom_map.jpg'][alt='Districts list']")
     end
 
     visit budget_group_path(budget, group)
 
     within(".show-for-medium") do
-      expect(page).to have_css("img[src*='custom_map.jpg']")
+      expect(page).to have_css("img[src*='custom_map.jpg'][alt='Districts list']")
     end
   end
 

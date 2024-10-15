@@ -53,8 +53,6 @@
 //= require blueimp-file-upload/js/jquery.iframe-transport
 //= require blueimp-file-upload/js/jquery.fileupload
 //= require foundation-sites
-//= require turbolinks
-//= require turbolinks_anchors
 //= require ckeditor/loader
 //= require_directory ./ckeditor
 //= require social-share-button
@@ -183,16 +181,4 @@ var initialize_modules = function() {
   App.AuthenticityTokenRefresh.initialize();
 };
 
-var destroy_non_idempotent_modules = function() {
-  "use strict";
-
-  App.ColumnsSelector.destroy();
-  App.Datepicker.destroy();
-  App.HTMLEditor.destroy();
-  App.LegislationAnnotatable.destroy();
-  App.Map.destroy();
-  App.SocialShare.destroy();
-};
-
-$(document).on("turbolinks:load", initialize_modules);
-$(document).on("turbolinks:before-cache", destroy_non_idempotent_modules);
+$(document).ready(initialize_modules);
