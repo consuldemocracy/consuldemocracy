@@ -30,5 +30,9 @@ module Types
         argument :id, ID, required: true, default_value: false
       end
     end
+
+    def self.connection_field(field_name, connection_type, ...)
+      field(field_name, connection_type.connection_type, ...)
+    end
   end
 end
