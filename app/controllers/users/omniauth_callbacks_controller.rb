@@ -45,7 +45,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       Rails.logger.info("about to test for existomh user")
       if identity.user
         Rails.logger.info("about to try to update for existing user")
-        @user.update_user_details_from_saml(auth)
+        @user.update_user_details_from_saml(auth)  if provider == :saml
       end      
       if save_user
         identity.update!(user: @user)
