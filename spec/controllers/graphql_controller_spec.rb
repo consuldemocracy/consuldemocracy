@@ -4,7 +4,7 @@ require "rails_helper"
 
 def parser_error_raised?(response)
   data_is_empty = response["data"].nil?
-  error_is_present = (JSON.parse(response.body)["errors"].first["message"] =~ /^Parse error on/)
+  error_is_present = (JSON.parse(response.body)["errors"].first["message"] =~ /Expected one of/)
   data_is_empty && error_is_present
 end
 
