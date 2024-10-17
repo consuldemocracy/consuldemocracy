@@ -1,10 +1,7 @@
 module Types
   class QueryType < Types::BaseObject
     def self.collection_and_object_by_id_fields(name, type)
-      field name.to_s.pluralize.to_sym,
-            type.connection_type,
-            "Returns all #{name.to_s.pluralize}",
-             null: false
+      collection_field name.to_s.pluralize.to_sym, type, "Returns all #{name.to_s.pluralize}", null: false
       object_by_id_field name, type, "Returns #{name} for ID", null: false
     end
 
