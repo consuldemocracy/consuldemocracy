@@ -5,18 +5,18 @@ describe Types::QueryType do
   let(:proposal) { create(:proposal, author: user) }
 
   it "returns fields of Int type" do
-    response = execute("{ proposal(id: #{proposal.id}) { cached_votes_up } }")
-    expect(dig(response, "data.proposal.cached_votes_up")).to eq(proposal.cached_votes_up)
+    response = run_graphql_field("Proposal.cached_votes_up", proposal)
+    expect(response).to eq(proposal.cached_votes_up)
   end
 
   it "returns fields of String type" do
-    response = execute("{ proposal(id: #{proposal.id}) { title } }")
-    expect(dig(response, "data.proposal.title")).to eq(proposal.title)
+    response = run_graphql_field("Proposal.title", proposal)
+    expect(response).to eq(proposal.title)
   end
 
   it "returns belongs_to associations" do
-    response = execute("{ proposal(id: #{proposal.id}) { public_author { username } } }")
-    expect(dig(response, "data.proposal.public_author.username")).to eq(proposal.public_author.username)
+    response = run_graphql_field("Proposal.public_author.username", proposal)
+    expect(response).to eq(proposal.public_author.username)
   end
 
   it "returns has_many associations" do
@@ -24,9 +24,8 @@ describe Types::QueryType do
     comment_1 = create(:comment, author: comments_author, commentable: proposal)
     comment_2 = create(:comment, author: comments_author, commentable: proposal)
 
-    response = execute("{ proposal(id: #{proposal.id}) { comments { edges { node { body } } } } }")
-    comments = dig(response, "data.proposal.comments.edges").map { |edge| edge["node"] }
-    comment_bodies = comments.map { |comment| comment["body"] }
+    response = run_graphql_field("Proposal.comments", proposal)
+    comment_bodies = response.items.map(&:body)
 
     expect(comment_bodies).to match_array([comment_1.body, comment_2.body])
   end
