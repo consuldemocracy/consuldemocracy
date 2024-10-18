@@ -75,6 +75,7 @@ end
 
 group :test do
   gem "capybara", "~> 3.40.0"
+  gem "capybara-playwright-driver"
   gem "capybara-webmock", "~> 0.7.0"
   gem "email_spec", "~> 2.3.0"
   gem "pdf-reader", "~> 2.12.0"

@@ -80,6 +80,11 @@ Capybara.register_driver :headless_chrome do |app|
   Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
 end
 
+Capybara.register_driver(:headless_playwright) do |app|
+  Capybara::Playwright::Driver.new(app, browser_type: :chromium, headless: true)
+end
+Capybara.default_max_wait_time = 15
+Capybara.default_driver = :playwright
 Capybara.exact = true
 Capybara.enable_aria_label = true
 Capybara.disable_animation = true
