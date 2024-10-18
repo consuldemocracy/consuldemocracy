@@ -16,4 +16,20 @@ en:
         subtitle_without_price: "%{heading}"
         subtitle_without_price_note: "subtitle help text"
         summary: "Project Summary"
+    select:
+      title: "Select Budget"
+      proposal_name: "Proposal Name"
+      select_budget: "Select Budget"
+      choose_budget: "Choose a budget"
+      next: "Next"
+    select_headings:
+      title: "Select Budget Heading"
+      proposal_name: "Proposal Name"
+      budget_name: "Budget Name"
+      select_group: "Select Group"
+      choose_group: "Choose a group"
+      select_heading: "Select Heading"
+      choose_heading: "Choose a heading"
+      submit: "Submit"
+    
 

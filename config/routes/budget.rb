@@ -1,4 +1,9 @@
 resources :budgets, only: [:show, :index] do
+  collection do
+    get :select
+    get :select_headings
+    get :budget_headings, defaults: { format: :json }
+  end
   resources :groups, controller: "budgets/groups", only: [:show, :index]
   resources :investments, controller: "budgets/investments" do
     member do

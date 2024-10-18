@@ -63,6 +63,14 @@
                 <span class="icon-edit"></span>
                 <%= t("proposals.show.dashboard_proposal_link") %>
               <% end %>
+               <!-- New Button for copy to Budget Investment -->
+                <%= link_to select_budgets_path(proposal_id: @proposal.id),
+                  class: "button hollow expanded",
+                  id: "budget-investment-link" do %>
+                  <span class="icon-money"></span>
+                  <%= t("proposals.show.budget_investment_link") %>
+              <% end %>
+
             </div>
           <% end %>
 
