@@ -6,3 +6,14 @@ pt:
     help:
       polls:
         link: "votações"
+    accessibility:
+      keyboard_shortcuts:
+        browser_table:
+          rows:
+            -
+            - 
+              key_column: ALT + CAPS + atalho
+            - 
+              browser_column: Chrome
+            -
+            -
