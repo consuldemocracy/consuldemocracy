@@ -3,3 +3,6 @@ pt:
     census_terms:
       title: "Termos e condições de acesso ao Censo"
       description: "Página de informação sobre los termos e condições de acesso ao Censo."
+    help:
+      polls:
+        link: "votações"
