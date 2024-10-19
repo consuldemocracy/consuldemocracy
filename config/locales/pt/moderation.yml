@@ -1,1 +1,13 @@
 pt:
+  moderation:
+    debates:
+      index:
+        title: Debates
+    proposal_notifications:
+      index:
+        orders:
+          moderated:
+    users:
+      index:
+        confirm_hide: ""
+      notice_block: O utilizador foi bloqueado. Todos os seus conteúdos foram ocultados.
