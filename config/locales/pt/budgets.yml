@@ -5,3 +5,8 @@ pt:
     index:
       section_footer:
         title: Ajuda com orçamentos participativos
+    investments:
+      show:
+        supports: Apoios
+    results:
+      amount_available: Orçamento disponível
