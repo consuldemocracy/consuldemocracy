@@ -1,1 +1,5 @@
+#Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 pt:
+  devise:
+    registrations:
+      signed_up_but_inactive: "O seu registo foi bem-sucedido, mas não pode entrar porque a sua conta não foi ativada."
