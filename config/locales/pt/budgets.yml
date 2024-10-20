@@ -1,1 +1,18 @@
 pt:
+  budgets:
+    ballots:
+      reasons_for_not_balloting:
+        different_heading_assigned: "Já votou numa rubrica diferente: %{heading_link}"
+    groups:
+      show:
+        title: Selecione uma rubrica
+    phase:
+      reviewing:
+    index:
+      section_footer:
+        title: Ajuda com orçamentos participativos
+    investments:
+      show:
+        supports: Apoios
+    results:
+      amount_available: Orçamento disponível

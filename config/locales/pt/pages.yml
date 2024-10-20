@@ -1,1 +1,19 @@
 pt:
+  pages:
+    census_terms:
+      title: "Termos e condições de acesso ao Censo"
+      description: "Página de informação sobre los termos e condições de acesso ao Censo."
+    help:
+      polls:
+        link: "votações"
+    accessibility:
+      keyboard_shortcuts:
+        browser_table:
+          rows:
+            -
+            - 
+              key_column: ALT + CAPS + atalho
+            - 
+              browser_column: Chrome
+            -
+            -

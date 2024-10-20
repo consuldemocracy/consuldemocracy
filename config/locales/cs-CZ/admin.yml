@@ -1507,6 +1507,7 @@ cs:
         polls: Průzkum
         sdg: SDG
       graph:
+        budget_investment_created: Rozpočtová investice vytvořena
         debate_created: Debaty
         proposal_created: Návrhy občanů
         title: Grafy

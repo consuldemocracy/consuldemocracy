@@ -1,1 +1,13 @@
 pt:
+  activerecord:
+    attributes:
+      budget/translation:
+        main_link_url: "O link aponta para (adicionar link)"
+      budget/investment:
+        duration: "Prazo"
+      budget/heading:
+        name: "Nome da rubrica"
+      budget/phase/translation:
+        main_link_text: "Texto no link"
+      user:
+        current_password: "Palavra-passe atual"
