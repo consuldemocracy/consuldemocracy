@@ -1,1 +1,13 @@
 pt:
+  devise_views:
+    mailer:
+      reset_password_instructions:
+        ignore_text: Se não pediu uma mudança de palavra-passe, pode ignorar este E-mail.
+        title: Altere a sua palavra-passe
+    organizations:
+      registrations:
+        success:
+          instructions_2: Enquanto o seu E-mail <strong>é revisto</strong>, enviamos um link <strong>para confirmar a sua conta</strong>.
+    unlocks:
+      new:
+        email_label: E-mail
