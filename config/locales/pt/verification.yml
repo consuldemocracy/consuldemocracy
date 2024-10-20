@@ -1,1 +1,5 @@
 pt:
+  verification:
+    sms:
+      new:
+        title: Enviar código de confirmação
