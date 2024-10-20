@@ -1,5 +1,9 @@
 pt:
   moderation:
+    comments:
+      index:
+        headers:
+          comment: Comentário
     debates:
       index:
         title: Debates
