@@ -1,1 +1,5 @@
 pt:
+  activemodel:
+    attributes:
+      setting/locales_settings:
+        default: Idioma por defeito
