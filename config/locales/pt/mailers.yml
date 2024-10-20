@@ -1,1 +1,7 @@
 pt:
+  mailers:
+    direct_message_for_receiver:
+      subject: "Recebeu uma nova mensagem privada"
+      unsubscribe_text: "Se não quiser receber mensagens privadas, vá a %{notifications} e desmarque a opção 'Receber E-mails com mensagens privadas'."
+    machine_learning_success:
+      subject: "Machine learning - Conteúdo gerado corretamente"
