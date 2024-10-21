@@ -19,7 +19,7 @@ class BudgetsController < ApplicationController
   
   def select
     @proposal = Proposal.find(params[:proposal_id])
-    @budgets = Budget.all
+    @budgets = Budget.where(phase: "accepting")
   end
 
   def select_headings
