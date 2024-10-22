@@ -21,6 +21,34 @@
     list-style: none;
     margin: 0;
 
+    @include breakpoint(medium) {
+      display: flex;
+      flex-wrap: wrap;
+
+      > li {
+        flex-basis: 50%;
+      }
+
+      a {
+        height: 100%;
+      }
+
+      + * {
+        text-align: right;
+      }
+    }
+
+    @include breakpoint(large) {
+      > li {
+        flex-basis: calc(100% / 3);
+      }
+    }
+
+    > li,
+    + * {
+      @include grid-column-gutter;
+    }
+
     > li {
       margin-bottom: calc($line-height / 4);
     }
@@ -52,8 +80,12 @@
     line-height: inherit;
     position: absolute;
     right: 12px;
-    top: -18px;
+    top: 0;
     z-index: 2;
+
+    @include breakpoint(medium) {
+      top: -18px;
+    }
 
     &:focus,
     &:hover {
