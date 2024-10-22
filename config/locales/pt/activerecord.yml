@@ -11,3 +11,5 @@ pt:
         main_link_text: "Texto no link"
       user:
         current_password: "Palavra-passe atual"
+      site_customization/page:
+        status_published: "Publicado"
