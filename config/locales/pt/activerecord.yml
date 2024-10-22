@@ -13,3 +13,7 @@ pt:
         current_password: "Palavra-passe atual"
       site_customization/page:
         status_published: "Publicado"
+      poll/question/option/translation:
+        description: "Descrição (opcional)"
+      dashboard/action:
+        action_type_proposed_action: "Ação proposta"
