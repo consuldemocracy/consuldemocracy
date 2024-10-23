@@ -1,1 +1,21 @@
 pt:
+  activerecord:
+    attributes:
+      budget/translation:
+        main_link_url: "O link aponta para (adicionar link)"
+      budget/investment:
+        duration: "Prazo"
+      budget/heading:
+        name: "Nome da rubrica"
+      budget/phase/translation:
+        main_link_text: "Texto no link"
+      user:
+        current_password: "Palavra-passe atual"
+      sdg/local_target:
+        target_id: "Meta7"
+      site_customization/page:
+        status_published: "Publicado"
+      poll/question/option/translation:
+        description: "Descrição (opcional)"
+      dashboard/action:
+        action_type_proposed_action: "Ação proposta"
