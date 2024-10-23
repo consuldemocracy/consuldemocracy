@@ -45,3 +45,19 @@ pt:
         targets:
           target_12_C:
             short_title: "Eliminar Distorções de Mercado que Encorajam o Consumo Exagerado"
+      goal_14:
+        targets:
+          target_14_C:
+            short_title: "Implementar o Direito Internacional, Refletido na Unclos [Convenção das Nações Unidas sobre o Direito do Mar]"
+      goal_15:
+        targets:
+          target_15_C:
+            short_title: "Apoio Global ao Combate à Caça Ilegal e Tráfico de Espécies Protegidas"
+      goal_16:
+        targets:
+          target_16_B:
+            short_title: "Promover e Fazer Cumprir as Leis e Políticas Não Discriminatórias"
+      goal_17:
+        targets:
+          target_17_19:
+            short_title: "Desenvolver Medidas do Progresso do Desenvolvimento Sustentável"
