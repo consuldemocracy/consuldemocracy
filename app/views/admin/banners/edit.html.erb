@@ -5,6 +5,6 @@
 
     <h1><%= t("admin.banners.edit.editing") %></h1>
 
-    <%= render "form" %>
+    <%= render Admin::Banners::FormComponent.new(@banner) %>
   </div>
 </div>

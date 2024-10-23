@@ -25,27 +25,27 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       scenario "Should not be able when no user logged in" do
         visit send(documentable_path, arguments)
 
-        expect(page).not_to have_link("Delete document")
+        expect(page).not_to have_button "Delete document"
       end
 
       scenario "Should be able when documentable author is logged in" do
         login_as documentable.author
         visit send(documentable_path, arguments)
 
-        expect(page).to have_link("Delete document")
+        expect(page).to have_button "Delete document"
       end
 
       scenario "Administrators cannot destroy documentables they have not authored", :admin do
         visit send(documentable_path, arguments)
 
-        expect(page).not_to have_link("Delete document")
+        expect(page).not_to have_button "Delete document"
       end
 
       scenario "Users cannot destroy documentables they have not authored" do
         login_as(create(:user))
         visit send(documentable_path, arguments)
 
-        expect(page).not_to have_link("Delete document")
+        expect(page).not_to have_button "Delete document"
       end
     end
 
@@ -93,7 +93,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       visit send(documentable_path, arguments)
 
       within "#document_#{document.id}" do
-        accept_confirm { click_link "Delete document" }
+        accept_confirm { click_button "Delete document" }
       end
 
       expect(page).to have_content "Document was deleted successfully."
@@ -105,7 +105,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       visit send(documentable_path, arguments)
 
       within "#document_#{document.id}" do
-        accept_confirm { click_link "Delete document" }
+        accept_confirm { click_button "Delete document" }
       end
 
       expect(page).not_to have_content "Documents (0)"
@@ -117,7 +117,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       visit send(documentable_path, arguments)
 
       within "#document_#{document.id}" do
-        accept_confirm { click_link "Delete document" }
+        accept_confirm { click_button "Delete document" }
       end
 
       within "##{ActionView::RecordIdentifier.dom_id(documentable)}" do

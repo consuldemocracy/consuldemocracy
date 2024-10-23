@@ -55,9 +55,7 @@ describe "Moderate budget investments" do
           visit moderation_budget_investments_path
           click_link "All"
 
-          within("#investment_#{investment.id}") do
-            check "budget_investment_#{investment.id}_check"
-          end
+          check investment.title
         end
 
         scenario "Hide the investment" do

@@ -143,7 +143,7 @@ describe "Budget Investments" do
         click_link "Support budget investments"
       end
 
-      fill_in "search", with: "what you got"
+      fill_in "Search investments", with: "what you got"
       click_button "Search"
 
       within("#budget-investments") do
@@ -170,7 +170,7 @@ describe "Budget Investments" do
         click_link "Support budget investments"
       end
 
-      fill_in "search", with: "Area 52"
+      fill_in "Search investments", with: "Area 52"
       click_button "Search"
 
       within("#budget-investments") do
@@ -523,8 +523,8 @@ describe "Budget Investments" do
         expect(page).to have_content(low_investment.title)
       end
 
-      select "District Nine", from: "heading_id"
-      click_button("Search")
+      select "District Nine", from: "Heading"
+      click_button "Search"
 
       within "#budget-investments" do
         expect(page).not_to have_content(unvoted_investment.title)

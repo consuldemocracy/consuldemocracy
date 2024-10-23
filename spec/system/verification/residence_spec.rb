@@ -10,7 +10,7 @@ describe "Residence" do
     visit account_path
     click_link "Verify my account"
 
-    fill_in "residence_document_number", with: "12345678Z"
+    fill_in "Document number", with: "12345678Z"
     select "DNI", from: "residence_document_type"
     select_date "31-December-1980", from: "residence_date_of_birth"
     fill_in "residence_postal_code", with: "28013"
@@ -28,7 +28,7 @@ describe "Residence" do
     visit account_path
     click_link "Verify my account"
 
-    fill_in "residence_document_number", with: "12345678Z"
+    fill_in "Document number", with: "12345678Z"
     select "DNI", from: "residence_document_type"
     select_date "31-December-1980", from: "residence_date_of_birth"
     fill_in "residence_postal_code", with: "28013"
@@ -63,7 +63,7 @@ describe "Residence" do
     visit account_path
     click_link "Verify my account"
 
-    fill_in "residence_document_number", with: "12345678Z"
+    fill_in "Document number", with: "12345678Z"
     select "DNI", from: "residence_document_type"
     select_date "31-December-1980", from: "residence_date_of_birth"
     fill_in "residence_postal_code", with: "28013"
@@ -98,7 +98,7 @@ describe "Residence" do
     visit account_path
     click_link "Verify my account"
 
-    fill_in "residence_document_number", with: "12345678Z"
+    fill_in "Document number", with: "12345678Z"
     select "DNI", from: "residence_document_type"
     select "1997", from: "residence_date_of_birth_1i"
     select "January", from: "residence_date_of_birth_2i"
@@ -118,7 +118,7 @@ describe "Residence" do
     visit account_path
     click_link "Verify my account"
 
-    fill_in "residence_document_number", with: "12345678Z"
+    fill_in "Document number", with: "12345678Z"
     select "DNI", from: "residence_document_type"
     select "1997", from: "residence_date_of_birth_1i"
     select "January", from: "residence_date_of_birth_2i"
@@ -139,7 +139,7 @@ describe "Residence" do
     click_link "Verify my account"
 
     5.times do
-      fill_in "residence_document_number", with: "12345678Z"
+      fill_in "Document number", with: "12345678Z"
       select "DNI", from: "residence_document_type"
       select "1997", from: "residence_date_of_birth_1i"
       select "January", from: "residence_date_of_birth_2i"

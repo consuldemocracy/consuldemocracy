@@ -49,9 +49,7 @@ describe "Moderate debates" do
           visit moderation_debates_path
           click_link "All"
 
-          within("#debate_#{debate.id}") do
-            check "debate_#{debate.id}_check"
-          end
+          check debate.title
         end
 
         scenario "Hide the debate" do
