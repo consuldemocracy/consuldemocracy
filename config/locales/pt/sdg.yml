@@ -25,3 +25,23 @@ pt:
         targets:
           target_7_B:
             short_title: "Expandir e Modernizar os Serviços de Energia para os Países em Desenvolvimento"
+      goal_8:
+        targets:
+          target_8_B:
+            short_title: "Desenvolver uma Estratégia Global para o Emprego dos Jovens"
+      goal_9:
+        targets:
+          target_9_C:
+            short_title: "Acesso Universal às Tecnologias de Informação e Comunicação"
+      goal_10:
+        targets:
+          target_10_C:
+            short_title: "Reduzir os Custos de Transação de Remessas dos Migrantes"
+      goal_11:
+        targets:
+          target_11_C:
+            short_title: "Apoiar os Países Menos Desenvolvidos para Construções Sustentáveis e Resilientes"
+      goal_12:
+        targets:
+          target_12_C:
+            short_title: "Eliminar Distorções de Mercado que Encorajam o Consumo Exagerado"
