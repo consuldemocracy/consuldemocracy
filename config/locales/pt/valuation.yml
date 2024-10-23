@@ -3,3 +3,6 @@ pt:
     budgets:
       index:
         table_phase: Fase
+    budget_investments:
+      edit:
+        valuation_finished_alert: "Tem certeza que deseja marcar este relatório como concluído? Depois de concluído, o relatório não poderá ser modificado."
