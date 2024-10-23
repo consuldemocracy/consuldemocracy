@@ -9,7 +9,19 @@ pt:
             long_title: "Atingir a cobertura universal de saúde, incluindo a proteção do risco financeiro, o acesso a serviços de saúde essenciais de qualidade e o acesso a medicamentos e vacinas essenciais para todos de forma segura, eficaz, de qualidade e a preços acessíveis."
           target_3_9:
             long_title: "Até 2030, reduzir substancialmente o número de mortes e doenças devido a químicos perigosos, contaminação e poluição do ar, água e solo."
+          target_3_A:
+            long_title: "Fortalecer a implementação da Convenção Quadro para o Controlo do Tabaco em todos os países, conforme apropriado."
       goal_4:
         targets:
           target_4_5:
             long_title: "Até 2030, eliminar as disparidades de género na educação e garantir a igualdade de acesso a todos os níveis de educação e formação profissional para os mais vulneráveis, incluindo as pessoas com deficiência, população autóctone e crianças em situação de vulnerabilidade."
+      goal_6:
+        targets:
+          target_6_2:
+            short_title: ""
+          target_6_4:
+            long_title: "Até 2030, aumentar substancialmente a eficiência no uso da água em todos os setores e assegurar extrações sustentáveis e o abastecimento de água doce para enfrentar a escassez de água, e reduzir substancialmente o número de pessoas que sofrem com a escassez de água."
+      goal_7:
+        targets:
+          target_7_B:
+            short_title: "Expandir e Modernizar os Serviços de Energia para os Países em Desenvolvimento"
