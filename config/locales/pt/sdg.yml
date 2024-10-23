@@ -1,1 +1,15 @@
 pt:
+  sdg:
+    goals:
+      goal_3:
+        targets:
+          target_3_2:
+            long_title: "Até 2030, acabar com as mortes evitáveis de recém-nascidos e crianças menores de 5 anos, com todos os países empenhados em reduzir a mortalidade neonatal para pelo menos 12 por 1 000 nados-vivos e a mortalidade de crianças menores de 5 anos para pelo menos 25 por 1 000 nados-vivos."
+          target_3_8:
+            long_title: "Atingir a cobertura universal de saúde, incluindo a proteção do risco financeiro, o acesso a serviços de saúde essenciais de qualidade e o acesso a medicamentos e vacinas essenciais para todos de forma segura, eficaz, de qualidade e a preços acessíveis."
+          target_3_9:
+            long_title: "Até 2030, reduzir substancialmente o número de mortes e doenças devido a químicos perigosos, contaminação e poluição do ar, água e solo."
+      goal_4:
+        targets:
+          target_4_5:
+            long_title: "Até 2030, eliminar as disparidades de género na educação e garantir a igualdade de acesso a todos os níveis de educação e formação profissional para os mais vulneráveis, incluindo as pessoas com deficiência, população autóctone e crianças em situação de vulnerabilidade."
