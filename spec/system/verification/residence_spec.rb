@@ -12,7 +12,7 @@ describe "Residence" do
 
     fill_in "Document number", with: "12345678Z"
     select "DNI", from: "residence_document_type"
-    select_date "31-December-1980", from: "residence_date_of_birth"
+    fill_in "Date of birth", with: Date.new(1980, 12, 31)
     fill_in "residence_postal_code", with: "28013"
     check "residence_terms_of_service"
     click_button "Verify residence"
@@ -30,27 +30,12 @@ describe "Residence" do
 
     fill_in "Document number", with: "12345678Z"
     select "DNI", from: "residence_document_type"
-    select_date "31-December-1980", from: "residence_date_of_birth"
+    fill_in "Date of birth", with: Date.new(1980, 12, 31)
     fill_in "residence_postal_code", with: "28013"
     check "residence_terms_of_service"
     click_button "Verify residence"
 
     expect(page).to have_content "Residence verified"
-  end
-
-  scenario "Residence form use min age to participate" do
-    min_age = (Setting["min_age_to_participate"] = 16).to_i
-    underage = min_age - 1
-    user = create(:user)
-    login_as(user)
-
-    visit account_path
-    click_link "Verify my account"
-
-    expect(page).to have_select("residence_date_of_birth_1i",
-                                with_options: [min_age.years.ago.year])
-    expect(page).not_to have_select("residence_date_of_birth_1i",
-                                    with_options: [underage.years.ago.year])
   end
 
   scenario "When trying to verify a deregistered account old votes are reassigned" do
@@ -65,7 +50,7 @@ describe "Residence" do
 
     fill_in "Document number", with: "12345678Z"
     select "DNI", from: "residence_document_type"
-    select_date "31-December-1980", from: "residence_date_of_birth"
+    fill_in "Date of birth", with: Date.new(1980, 12, 31)
     fill_in "residence_postal_code", with: "28013"
     check "residence_terms_of_service"
 
@@ -100,9 +85,7 @@ describe "Residence" do
 
     fill_in "Document number", with: "12345678Z"
     select "DNI", from: "residence_document_type"
-    select "1997", from: "residence_date_of_birth_1i"
-    select "January", from: "residence_date_of_birth_2i"
-    select "1", from: "residence_date_of_birth_3i"
+    fill_in "Date of birth", with: Date.new(1997, 1, 1)
     fill_in "residence_postal_code", with: "00000"
     check "residence_terms_of_service"
 
@@ -120,9 +103,7 @@ describe "Residence" do
 
     fill_in "Document number", with: "12345678Z"
     select "DNI", from: "residence_document_type"
-    select "1997", from: "residence_date_of_birth_1i"
-    select "January", from: "residence_date_of_birth_2i"
-    select "1", from: "residence_date_of_birth_3i"
+    fill_in "Date of birth", with: Date.new(1997, 1, 1)
     fill_in "residence_postal_code", with: "28013"
     check "residence_terms_of_service"
 
@@ -141,9 +122,7 @@ describe "Residence" do
     5.times do
       fill_in "Document number", with: "12345678Z"
       select "DNI", from: "residence_document_type"
-      select "1997", from: "residence_date_of_birth_1i"
-      select "January", from: "residence_date_of_birth_2i"
-      select "1", from: "residence_date_of_birth_3i"
+      fill_in "Date of birth", with: Date.new(1997, 1, 1)
       fill_in "residence_postal_code", with: "28013"
       check "residence_terms_of_service"
 

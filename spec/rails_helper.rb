@@ -61,7 +61,7 @@ module Capybara
       original_visit(url, ...)
 
       unless driver.name == :rack_test
-        expect(page).to be_axe_clean.checking_only :label
+        expect(page).to be_axe_clean.checking_only :label, :"select-name"
       end
 
       unless url.match?("robots.txt") || url.match?("active_storage/representations")
@@ -77,7 +77,7 @@ module Capybara
       original_click_link(url, ...)
 
       unless driver.name == :rack_test
-        expect(page).to be_axe_clean.checking_only :label
+        expect(page).to be_axe_clean.checking_only :label, :"select-name"
       end
     end
   end

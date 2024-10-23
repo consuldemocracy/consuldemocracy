@@ -84,9 +84,7 @@ describe "Admin local census records", :admin do
 
       select "DNI", from: :local_census_record_document_type
       fill_in :local_census_record_document_number, with: "#DOCUMENT"
-      select "1982", from: :local_census_record_date_of_birth_1i
-      select "July", from: :local_census_record_date_of_birth_2i
-      select "7", from: :local_census_record_date_of_birth_3i
+      fill_in "Date of birth", with: Date.new(1982, 7, 7)
       fill_in :local_census_record_postal_code, with: "07003"
       click_button "Save"
 
@@ -116,9 +114,7 @@ describe "Admin local census records", :admin do
 
       select "Passport", from: :local_census_record_document_type
       fill_in :local_census_record_document_number, with: "#NIE_NUMBER"
-      select "1982", from: :local_census_record_date_of_birth_1i
-      select "August", from: :local_census_record_date_of_birth_2i
-      select "8", from: :local_census_record_date_of_birth_3i
+      fill_in "Date of birth", with: Date.new(1982, 8, 8)
       fill_in :local_census_record_postal_code, with: "07007"
       click_button "Save"
 

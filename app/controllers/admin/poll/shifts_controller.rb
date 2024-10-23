@@ -5,8 +5,6 @@ class Admin::Poll::ShiftsController < Admin::Poll::BaseController
   def new
     load_shifts
     @shift = ::Poll::Shift.new
-    @voting_polls = @booth.polls.current
-    @recount_polls = @booth.polls.current_or_recounting
   end
 
   def create

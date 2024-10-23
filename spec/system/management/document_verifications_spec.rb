@@ -63,7 +63,7 @@ describe "DocumentVerifications" do
         login_as_manager
         visit management_document_verifications_path
         fill_in "document_verification_document_number", with: "12345678Z"
-        select_date "31-December-1980", from: "document_verification_date_of_birth"
+        fill_in "Date of birth", with: Date.new(1980, 12, 31)
         fill_in "document_verification_postal_code", with: "inexisting"
         click_button "Check document"
 
@@ -77,7 +77,7 @@ describe "DocumentVerifications" do
         login_as_manager
         visit management_document_verifications_path
         fill_in "document_verification_document_number", with: "12345678Z"
-        select_date "31-December-1980", from: "document_verification_date_of_birth"
+        fill_in "Date of birth", with: Date.new(1980, 12, 31)
         fill_in "document_verification_postal_code", with: "28013"
         click_button "Check document"
 

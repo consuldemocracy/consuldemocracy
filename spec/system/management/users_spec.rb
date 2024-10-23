@@ -13,7 +13,7 @@ describe "Users" do
 
     fill_in "user_username", with: "pepe"
     fill_in "user_email", with: "pepe@gmail.com"
-    select_date "31-December-1980", from: "user_date_of_birth"
+    fill_in "Date of birth", with: Date.new(1980, 12, 31)
 
     click_button "Create user"
 
@@ -54,7 +54,7 @@ describe "Users" do
 
     fill_in "user_username", with: "Kelly Sue"
     fill_in "user_email", with: ""
-    select_date "31-December-1980", from: "user_date_of_birth"
+    fill_in "Date of birth", with: Date.new(1980, 12, 31)
 
     click_button "Create user"
 
