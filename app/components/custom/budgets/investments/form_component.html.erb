@@ -24,9 +24,10 @@
       </div>
       <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
       <div>
-        <%= f.text_area :summary,
-                                 rows: 4, maxlength: 500,
-                                 hint: t("budgets.investments.form.summary_note") %>
+      <%= f.text_area :summary,
+        label: t("budgets.investments.form.summary"),
+        rows: 4, maxlength: 500,
+        hint: t("budgets.investments.form.summary_note") %>
       </div>
     
       <div>
