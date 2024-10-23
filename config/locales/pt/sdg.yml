@@ -26,6 +26,7 @@ pt:
           target_7_B:
             short_title: "Expandir e Modernizar os Serviços de Energia para os Países em Desenvolvimento"
       goal_8:
+        long_description: 'Garantir o desenvolvimento económico inclusivo e sustentável em todo o mundo. Alcançar níveis mais altos de produtividade económica por meio da diversificação, atualização tecnológica e inovação. Alcançar emprego pleno e produtivo e trabalho decente para todos, inclusive para jovens e pessoas com deficiência. Alcançar salário igual para trabalho de igual valor'
         targets:
           target_8_B:
             short_title: "Desenvolver uma Estratégia Global para o Emprego dos Jovens"
@@ -34,6 +35,7 @@ pt:
           target_9_C:
             short_title: "Acesso Universal às Tecnologias de Informação e Comunicação"
       goal_10:
+        long_description: 'Capacitar e promover a inclusão social, económica e política de todos, independentemente de idade, sexo, deficiência, raça, etnia, origem, religião ou condição econômica ou outra. Garanta a igualdade de oportunidades. Reduzir as desigualdades de resultado, eliminando leis, políticas e práticas discriminatórias'
         targets:
           target_10_C:
             short_title: "Reduzir os Custos de Transação de Remessas dos Migrantes"
@@ -42,6 +44,7 @@ pt:
           target_11_C:
             short_title: "Apoiar os Países Menos Desenvolvidos para Construções Sustentáveis e Resilientes"
       goal_12:
+        long_description: 'Reduzir o desperdício global de alimentos na produção e consumidor. Alcançar a gestão ambientalmente saudável de produtos químicos ao longo de seu ciclo de vida. Reduzir substancialmente a geração de resíduos por meio da prevenção, redução, reciclagem e reutilização.'
         targets:
           target_12_C:
             short_title: "Eliminar Distorções de Mercado que Encorajam o Consumo Exagerado"
@@ -50,6 +53,7 @@ pt:
           target_14_C:
             short_title: "Implementar o Direito Internacional, Refletido na Unclos [Convenção das Nações Unidas sobre o Direito do Mar]"
       goal_15:
+        long_description: 'Prevenir ameaças à biodiversidade.Garantir a conservação, restauração e uso sustentável dos ecossistemas terrestres e de água doce, incluindo florestas, pântanos, montanhas e terras secas.Promover a implementação da gestão sustentável de todos os tipos de florestas.Deter o desmatamento.Combater a desertificação e restaurar terras e solos degradados.'
         targets:
           target_15_C:
             short_title: "Apoio Global ao Combate à Caça Ilegal e Tráfico de Espécies Protegidas"
@@ -58,6 +62,7 @@ pt:
           target_16_B:
             short_title: "Promover e Fazer Cumprir as Leis e Políticas Não Discriminatórias"
       goal_17:
+        long_description: 'Revitalizar a parceria global para o desenvolvimento sustentável. Apoiar a criação de fortes parcerias ODS para atingir as metas ambiciosas da Agenda 2030. Reunir os governos nacionais, a comunidade internacional, a sociedade civil, o setor privado e outros atores.'
         targets:
           target_17_19:
             short_title: "Desenvolver Medidas do Progresso do Desenvolvimento Sustentável"
