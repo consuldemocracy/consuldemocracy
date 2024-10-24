@@ -24,6 +24,7 @@ class Setting
       else
         consul_defaults.merge({
           # Overwrite default CONSUL DEMOCRACY settings or add new settings here
+          # 0.2254967693139029, -78.26420731888575
         })
       end
     end
