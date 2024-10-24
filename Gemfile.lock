@@ -295,7 +295,7 @@ GEM
     irb (1.12.0)
       rdoc
       reline (>= 0.4.2)
-    json (2.7.2)
+    json (2.7.3)
     jwt (2.9.3)
       base64
     kaminari (1.2.2)
@@ -401,11 +401,11 @@ GEM
     omniauth-facebook (10.0.0)
       bigdecimal
       omniauth-oauth2 (>= 1.2, < 3)
-    omniauth-google-oauth2 (1.1.1)
-      jwt (>= 2.0)
-      oauth2 (~> 2.0.6)
+    omniauth-google-oauth2 (1.2.0)
+      jwt (>= 2.9)
+      oauth2 (~> 2.0)
       omniauth (~> 2.0)
-      omniauth-oauth2 (~> 1.8.0)
+      omniauth-oauth2 (~> 1.8)
     omniauth-oauth (1.2.0)
       oauth
       omniauth (>= 1.0, < 3)
@@ -753,7 +753,7 @@ DEPENDENCIES
   mini_magick (~> 4.13.2)
   omniauth (~> 2.1.2)
   omniauth-facebook (~> 10.0.0)
-  omniauth-google-oauth2 (~> 1.1.1)
+  omniauth-google-oauth2 (~> 1.2.0)
   omniauth-rails_csrf_protection (~> 1.0.2)
   omniauth-twitter (~> 1.4.0)
   paranoia (~> 3.0.0)
