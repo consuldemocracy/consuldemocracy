@@ -7,7 +7,7 @@ class Layout::AdminLoginItemsComponent < ApplicationComponent
   end
 
   def render?
-    show_admin_menu?(user)
+    show_admin_menu?(user) && !Rails.application.multitenancy_management_mode?
   end
 
   private
