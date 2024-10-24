@@ -2,3 +2,5 @@ es:
   layouts:
     footer:
       copyright: GADMCO, %{year}
+    header:
+      open_gov: Gobierno abierto del GADMCO

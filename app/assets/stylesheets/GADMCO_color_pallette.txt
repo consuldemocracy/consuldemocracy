@@ -1,0 +1,3 @@
+blue: #2D4FB
+red: #E11328
+green: #3A683D
