@@ -1,0 +1,4 @@
+es:
+  layouts:
+    footer:
+      copyright: Tu Organización, %{year}
