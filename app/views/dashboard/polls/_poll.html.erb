@@ -27,10 +27,10 @@
     <% end %>
     <p class="help-text"><%= t("dashboard.polls.poll.show_results_help") %></p>
 
-    <%= link_to t("dashboard.polls.poll.delete"),
-                proposal_dashboard_poll_path(proposal, poll),
-                method: :delete,
-                "data-confirm": t("dashboard.polls.poll.alert_notice"),
-                class: "delete" %>
+    <%= button_to t("dashboard.polls.poll.delete"),
+                  proposal_dashboard_poll_path(proposal, poll),
+                  method: :delete,
+                  "data-confirm": t("dashboard.polls.poll.alert_notice"),
+                  class: "delete" %>
   </div>
 </div>
