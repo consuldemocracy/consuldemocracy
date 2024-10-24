@@ -1,4 +1,4 @@
 es:
   layouts:
     footer:
-      copyright: Tu Organización, %{year}
+      copyright: GADMCO, %{year}
