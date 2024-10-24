@@ -1,3 +1,4 @@
 blue: #2D4FB
+secondary blue: #003088
 red: #E11328
 green: #3A683D
