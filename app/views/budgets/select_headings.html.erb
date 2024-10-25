@@ -4,22 +4,20 @@
 <p><%= t("budgets.select_headings.budget_name") %>: <%= @budget.name %></p>
 
 <%= form_with url: new_budget_investment_path(@budget.id, proposal_id: @proposal.id), method: :get, local: true do |form| %>
-  <div class="field">
+  <div  class="small-12 medium-6 column">
     <%= form.label :group_id, t("budgets.select_headings.select_group") %>
     <%= form.collection_select :group_id, @groups, :id, :name, { prompt: t("budgets.select_headings.choose_group") }, { id: "group-select" } %>
-  </div>
 
-
-  <div class="field">
     <%= form.label :heading_id, t("budgets.select_headings.select_heading") %>
     <%= form.collection_select :heading_id, [], :id, :name, { prompt: t("budgets.select_headings.choose_heading") }, { id: "heading-select" } %>
   </div>
 
   <%= form.hidden_field :proposal_id, value: @proposal.id %>
   <%= form.hidden_field :budget_id, value: @budget.id %>
-
-  <div class="actions">
+  <div class="small-12 column">
+  <div class="button success">
     <%= form.submit t("budgets.select_headings.submit") %>
+  </div>
   </div>
 <% end %>
 
