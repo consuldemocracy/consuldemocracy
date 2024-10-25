@@ -661,9 +661,7 @@ describe "Users" do
 
   context "Regular authentication with password complexity enabled" do
     before do
-      allow(Rails.application).to receive(:secrets).and_return(ActiveSupport::OrderedOptions.new.merge(
-        security: { password_complexity: true }
-      ))
+      stub_secrets(security: { password_complexity: true })
     end
 
     context "Sign up" do

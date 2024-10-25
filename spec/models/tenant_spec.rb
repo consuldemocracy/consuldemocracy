@@ -243,10 +243,7 @@ describe Tenant do
   describe ".current_secrets" do
     context "same secrets for all tenants" do
       before do
-        allow(Rails.application).to receive(:secrets).and_return(ActiveSupport::OrderedOptions.new.merge(
-          star: "Sun",
-          volume: "Medium"
-        ))
+        stub_secrets(star: "Sun", volume: "Medium")
       end
 
       it "returns the default secrets for the default tenant" do
@@ -266,11 +263,11 @@ describe Tenant do
 
     context "tenant overwriting secrets" do
       before do
-        allow(Rails.application).to receive(:secrets).and_return(ActiveSupport::OrderedOptions.new.merge(
+        stub_secrets(
           star: "Sun",
           volume: "Medium",
           tenants: { proxima: { star: "Alpha Centauri" }}
-        ))
+        )
       end
 
       it "returns the default secrets for the default tenant" do
