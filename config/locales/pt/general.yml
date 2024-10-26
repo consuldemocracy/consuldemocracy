@@ -34,3 +34,8 @@ pt:
   welcome:
     welcome:
       go_to_index: Agora não, ir para a página de índice
+  invisible_captcha:
+    sentence_for_humans: "Se é humano, ignore este campo"
+    timestamp_error_message: "Isto foi muito rápido. Por favor, reenvie o formulário."
+  related_content:
+    title: "Conteúdo relacionado"
