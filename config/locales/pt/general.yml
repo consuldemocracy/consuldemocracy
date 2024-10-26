@@ -5,3 +5,13 @@ pt:
   debates:
     new:
       recommendations_title: Recomendações para criar um debate
+  layouts:
+    dashboard:
+      proposal_totals:
+        active_resources: Recursos ativos
+  notifications:
+    notification:
+      mark_as_read: Marcar como lido
+  proposals:
+    form:
+      tags_placeholder: "Insira as etiquetas que deseja usar, separadas por vírgulas (',')"
