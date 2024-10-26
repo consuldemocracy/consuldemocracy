@@ -26,3 +26,8 @@ pt:
         icon_alt: Ícone de votação
       section_footer:
         description: Votações dos cidadãos são um mecanismo de participação onde os cidadãos podem ter decisões diretas
+  shared:
+    target_blank: "O link abre numa nova janela"
+  users:
+    show:
+      comments: Comentários
