@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_05_13_135357) do
+ActiveRecord::Schema[7.0].define(version: 2024_10_26_111636) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -1686,7 +1686,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_13_135357) do
     t.text "landing_page"
     t.integer "user_id"
     t.string "referring_domain"
-    t.string "search_keyword"
     t.string "browser"
     t.string "os"
     t.string "device_type"
