@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_10_26_111636) do
+ActiveRecord::Schema[7.0].define(version: 2024_10_26_112901) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -1703,9 +1703,13 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_26_111636) do
     t.string "utm_content"
     t.string "utm_campaign"
     t.datetime "started_at", precision: nil
+    t.string "visit_token"
+    t.string "visitor_token"
     t.index ["started_at"], name: "index_visits_on_started_at"
     t.index ["user_id"], name: "index_visits_on_user_id"
+    t.index ["visit_token"], name: "index_visits_on_visit_token", unique: true
     t.index ["visitor_id", "started_at"], name: "index_visits_on_visitor_id_and_started_at"
+    t.index ["visitor_token", "started_at"], name: "index_visits_on_visitor_token_and_started_at"
   end
 
   create_table "votation_types", force: :cascade do |t|
