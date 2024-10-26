@@ -15,3 +15,8 @@ pt:
   proposals:
     form:
       tags_placeholder: "Insira as etiquetas que deseja usar, separadas por vírgulas (',')"
+    proposal:
+      created: "Criou uma proposta!"
+    show:
+      retired_warning: "O autor considera que esta proposta não deve receber mais apoios."
+      retired_warning_link_to_explanation: Leia a explicação antes de votar.
