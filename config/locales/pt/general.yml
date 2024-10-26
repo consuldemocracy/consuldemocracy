@@ -20,3 +20,9 @@ pt:
     show:
       retired_warning: "O autor considera que esta proposta não deve receber mais apoios."
       retired_warning_link_to_explanation: Leia a explicação antes de votar.
+  polls:
+    index:
+      section_header:
+        icon_alt: Ícone de votação
+      section_footer:
+        description: Votações dos cidadãos são um mecanismo de participação onde os cidadãos podem ter decisões diretas
