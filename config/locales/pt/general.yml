@@ -31,3 +31,6 @@ pt:
   users:
     show:
       comments: Comentários
+  welcome:
+    welcome:
+      go_to_index: Agora não, ir para a página de início
