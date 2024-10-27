@@ -1,5 +1,8 @@
 pt:
   admin:
+    banners:
+      index:
+        create: Criar faixa de anúncio
     budget_headings:
       form:
         geozone_info: "Quando se associa uma rubrica a uma zona geográfica, a aparecerá no mapa deste orçamento se a zona incluir dados GeoJSON."
