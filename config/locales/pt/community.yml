@@ -1,1 +1,8 @@
 pt:
+  community:
+    sidebar:
+      button_to_access: Aceder à comunidade
+    show:
+      title:
+        proposal: Proposta da comunidade
+      author: Autor

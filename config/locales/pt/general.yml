@@ -1,1 +1,41 @@
 pt:
+  comments:
+    form:
+      comment_as_moderator: Comentar como moderador
+  debates:
+    new:
+      recommendations_title: Recomendações para criar um debate
+  layouts:
+    dashboard:
+      proposal_totals:
+        active_resources: Recursos ativos
+  notifications:
+    notification:
+      mark_as_read: Marcar como lido
+  proposals:
+    form:
+      tags_placeholder: "Insira as etiquetas que deseja usar, separadas por vírgulas (',')"
+    proposal:
+      created: "Criou uma proposta!"
+    show:
+      retired_warning: "O autor considera que esta proposta não deve receber mais apoios."
+      retired_warning_link_to_explanation: Leia a explicação antes de votar.
+  polls:
+    index:
+      section_header:
+        icon_alt: Ícone de votação
+      section_footer:
+        description: Votações dos cidadãos são um mecanismo de participação onde os cidadãos podem ter decisões diretas
+  shared:
+    target_blank: "O link abre numa nova janela"
+  users:
+    show:
+      comments: Comentários
+  welcome:
+    welcome:
+      go_to_index: Agora não, ir para a página de índice
+  invisible_captcha:
+    sentence_for_humans: "Se é humano, ignore este campo"
+    timestamp_error_message: "Isto foi muito rápido. Por favor, reenvie o formulário."
+  related_content:
+    title: "Conteúdo relacionado"
