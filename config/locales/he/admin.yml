@@ -196,7 +196,6 @@ he:
           unfeasible: "אינו בר ביצוע"
           undecided: "טרם הוחלט"
         selected: "נבחר"
-        select: "בחר"
         list:
           id: מזהה
           title: כותרת
@@ -1161,7 +1160,6 @@ he:
         title: הצעות
         id: מזהה
         author: מחבר/ת
-        select: בחר
         selected: נבחר
         milestones: אבני דרך
         no_proposals: לא נמצאו הצעות.
