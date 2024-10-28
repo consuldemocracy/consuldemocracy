@@ -207,7 +207,6 @@ el:
           unfeasible: "Δεν είναι έφικτο"
           undecided: "Δεν έχει συμφωνηθεί"
         selected: "Επιλεγμένο"
-        select: "Επιλέξτε"
         list:
           id: Ταυτότητα
           title: Τίτλος
@@ -1148,7 +1147,6 @@ el:
         title: Προτάσεις
         id: ID
         author: Συγγραφέας
-        select: Επιλογή
         selected: Επιλεγμένο
         milestones: Ορόσημα
         no_proposals: Δεν υπάρχουν προτάσεις.
