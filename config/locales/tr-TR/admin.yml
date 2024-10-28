@@ -268,7 +268,6 @@ tr:
           unfeasible: "Uygulanabilir bulunmamış"
           undecided: "Kararsız"
         selected: "Seçilmiş"
-        select: "Seçin"
         list:
           id: Kimlik
           title: Başlık
@@ -1294,7 +1293,6 @@ tr:
         title: Önergeler
         id: Kimlik
         author: Sahibi
-        select: Seçin
         selected: Seçilmiş
         milestones: Aşamalar
         no_proposals: Herhangi bir önerge yok.
