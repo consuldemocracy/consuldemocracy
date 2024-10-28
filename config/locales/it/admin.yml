@@ -268,7 +268,6 @@ it:
           unfeasible: "Irrealizzabile"
           undecided: "Nessuna decisione"
         selected: "Selezionato"
-        select: "Selezionare"
         list:
           id: ID
           title: Titolo
@@ -1278,7 +1277,6 @@ it:
         title: Proposte
         id: ID
         author: Autore
-        select: Selezionare
         selected: Selezionato
         milestones: Traguardi
         no_proposals: Nessuna proposta.
