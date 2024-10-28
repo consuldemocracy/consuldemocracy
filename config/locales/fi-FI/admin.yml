@@ -103,7 +103,6 @@ fi:
         feasibility:
           unfeasible: "Toteuttamiskelvoton"
         selected: "Valittu"
-        select: "Valitse"
         list:
           id: ID
           admin: Järjestelmänvalvoja
@@ -488,7 +487,6 @@ fi:
         title: Ehdotukset
         id: ID
         author: Tekijä
-        select: Valitse
         selected: Valittu
         milestones: Tavoitteet
     hidden_proposals:
