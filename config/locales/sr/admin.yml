@@ -190,7 +190,6 @@ sr:
           unfeasible: "Неизводљиво"
           undecided: "Неодлучено"
         selected: "Изабрано"
-        select: "Изабери"
         list:
           id: ИД
           title: Назив
@@ -1155,7 +1154,6 @@ sr:
         title: Предлози
         id: ИД
         author: Аутор
-        select: Одабрати
         selected: Одабрано
         milestones: Прекретнице
         no_proposals: Нема предлога.
