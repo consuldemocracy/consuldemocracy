@@ -235,7 +235,6 @@ nl:
           unfeasible: "Onhaalbaar"
           undecided: "Undecided"
         selected: "Geselecteerd"
-        select: "Selecteer"
         list:
           id: ID
           title: Titel
@@ -1213,7 +1212,6 @@ nl:
         title: Voorstellen
         id: ID
         author: Auteur
-        select: Select
         selected: Geselecteerd
         milestones: Mijlpalen
         no_proposals: Er zijn geen voorstellen.
