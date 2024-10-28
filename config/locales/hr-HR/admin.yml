@@ -190,7 +190,6 @@ hr:
           unfeasible: "Neizvodljivo"
           undecided: "Nije odlučeno"
         selected: "Odabrano"
-        select: "Odaberi"
         list:
           id: ID
           title: Naziv
@@ -1155,7 +1154,6 @@ hr:
         title: Prijedlozi
         id: ID
         author: Autor
-        select: Odaberi
         selected: Odabrano
         milestones: Ključni ciljevi
         no_proposals: Ne postoje prijedlozi.
