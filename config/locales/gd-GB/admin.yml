@@ -271,7 +271,6 @@ gd:
           unfeasible: "Neo-dhèante"
           undecided: "Gun cho-dhùnadh"
         selected: "Na thagh thu"
-        select: "Tagh"
         list:
           id: ID
           title: Tiotal
@@ -1283,7 +1282,6 @@ gd:
         title: Molaidhean
         id: ID
         author: Ùghdar
-        select: Tagh
         selected: Na thagh thu
         milestones: Clachan-mìle
         no_proposals: Chan eil moladh sam bith ann.
