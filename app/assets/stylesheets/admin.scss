@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // Table of Contents
 //
 // 01. Global styles
@@ -131,7 +133,7 @@ $table-header:   #ecf1f6;
       border: $table-border;
 
       &:hover {
-        background: adjust-color(darken($table-background, 2%), $red: -4, $green: -1);
+        background: color.adjust(color.adjust($table-background, $lightness: -2%), $red: -4, $green: -1);
       }
     }
 
@@ -356,7 +358,7 @@ code {
   &:active,
   &:focus {
     border-bottom-color: transparent;
-    color: darken($delete, 10%);
+    color: color.adjust($delete, $lightness: -10%);
   }
 }
 
