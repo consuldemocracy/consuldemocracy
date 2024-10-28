@@ -194,7 +194,6 @@ pt-BR:
           unfeasible: "Inviável"
           undecided: "Não decidido"
         selected: "Selecionado"
-        select: "Selecionar"
         list:
           id: ID
           title: Título
@@ -1158,7 +1157,6 @@ pt-BR:
         title: Propostas
         id: ID
         author: Autor
-        select: Selecionar
         selected: Selecionado
         milestones: Marcos
         no_proposals: Não existem propostas.
