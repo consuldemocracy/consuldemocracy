@@ -187,7 +187,6 @@ ka:
           unfeasible: "შეუძლებელი"
           undecided: "გადასაწყვეტია"
         selected: "შერჩეული"
-        select: "შერჩევა"
         list:
           id: ID
           title: სათაური
@@ -1149,7 +1148,6 @@ ka:
         title: ინიციატივები
         id: ID
         author: ავტორი
-        select: შერჩევა
         selected: შერჩეული
         milestones: ეტაპები
         no_proposals: ინიციატივა არ მოიძებნა.
