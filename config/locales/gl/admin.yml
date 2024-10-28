@@ -268,7 +268,6 @@ gl:
           unfeasible: "Non viables"
           undecided: "Sen decidir"
         selected: "Seleccionadas"
-        select: "Seleccionar"
         list:
           id: ID
           title: Título
@@ -1294,7 +1293,6 @@ gl:
         title: Propostas cidadás
         id: ID
         author: Autoría
-        select: Seleccionar
         selected: Seleccionadas
         milestones: Seguimento
         no_proposals: Non hai ningunha proposta.
