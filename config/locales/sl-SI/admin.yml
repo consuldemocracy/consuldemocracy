@@ -131,7 +131,6 @@ sl:
           unfeasible: "Neizvedljivo"
           undecided: "Neodločeno"
         selected: "Izbrano"
-        select: "Izberi"
         list:
           title: Naslov
           supports: Glasovi
@@ -848,7 +847,6 @@ sl:
       index:
         title: Skriti predlogi
         author: Avtor
-        select: Izberi
         selected: Označeno
         milestones: Mejniki
     hidden_proposals:
