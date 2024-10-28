@@ -16,6 +16,8 @@ sv:
       unmark_featured: Ta bort markering som utvald
       edit: Redigera
       configure: Inställningar
+      select: Välj
+      show_to_valuators: "Visa %{name} för bedömare"
     officing_booth:
       title: "Du är valarbetare för röstbåset på %{booth}. Om detta inte stämmer, fortsätt inte utan ring hjälptelefonnumret. Tack."
     banners:
@@ -268,7 +270,6 @@ sv:
           unfeasible: "Ej genomförbart"
           undecided: "Ej beslutat"
         selected: "Vald"
-        select: "Välj"
         list:
           id: ID
           title: Titel
@@ -732,6 +733,7 @@ sv:
       proposals_topics: Förslag till ämnen
       budgets: Medborgarbudgetar
       geozones: Hantera geografiska områden
+      locales: Språk
       hidden_comments: Dolda kommentarer
       hidden_debates: Dolda debatter
       hidden_proposals: Dolda förslag
@@ -1288,7 +1290,6 @@ sv:
         title: Förslag
         id: ID
         author: Skribent
-        select: Välj
         selected: Valt
         milestones: Milstolpar
         no_proposals: Det finns inga förslag.
@@ -1651,6 +1652,7 @@ sv:
           create_card: Skapa kort
           no_cards: Det finns inga kort.
           columns_help: "Kortets bredd i antal kolumner. På mobilskärmar är det alltid en bredd om 100 %."
+          order_help: "Du kan ange positionen där detta kort kommer att visas."
           create:
             notice: "Kortet har skapats!"
           update:
