@@ -25,7 +25,11 @@ class Admin::ToggleSwitchComponent < ApplicationComponent
         method: :patch,
         remote: true,
         "aria-pressed": pressed?,
-        form_class: "toggle-switch"
+        form_class: "toggle-switch #{options[:form_class]}".strip
       }
+    end
+
+    def html_options
+      default_options.merge(options.except(:form_class))
     end
 end

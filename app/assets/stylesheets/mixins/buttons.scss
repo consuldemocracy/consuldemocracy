@@ -85,7 +85,7 @@
   @include regular-button;
   border-radius: $line-height;
   font-weight: bold;
-  min-width: rem-calc(100);
+  min-width: 6em;
   position: relative;
 
   &::after {
