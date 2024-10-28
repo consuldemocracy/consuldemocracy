@@ -272,7 +272,6 @@ cs:
           unfeasible: "Nerealizovatelné"
           undecided: "Nerozhodnuté"
         selected: "Vybrané"
-        select: "Vybrat"
         list:
           id: ID
           title: Předmět
@@ -1302,7 +1301,6 @@ cs:
         title: Návrhy
         id: ID
         author: Autor
-        select: Vybrat
         selected: Vybrané
         milestones: Milníky
         no_proposals: Neexistují žádné návrhy.
