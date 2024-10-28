@@ -169,7 +169,6 @@ id:
           unfeasible: "Tidak layak"
           undecided: "Bimbang"
         selected: "Dipilih"
-        select: "Pilih"
         list:
           id: ID
           title: Judul
@@ -854,7 +853,6 @@ id:
         title: Proposal
         id: ID
         author: Penulis
-        select: Pilih
         selected: Dipilih
         milestones: Tonggak
     hidden_proposals:
