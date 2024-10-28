@@ -190,7 +190,6 @@ ca:
           unfeasible: "No viables"
           undecided: "sense decidir"
         selected: "seleccionada"
-        select: "Seleccionar"
         list:
           id: ID
           title: Títol
@@ -1153,7 +1152,6 @@ ca:
         title: Propostes ciutadanes
         id: ID
         author: Autor
-        select: Selecciona
         selected: Seleccionat
         milestones: Fites
         no_proposals: No hi ha propostes.
