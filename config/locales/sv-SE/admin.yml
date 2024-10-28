@@ -711,6 +711,11 @@ sv:
       milestones:
         index:
           title: Följer
+    locales:
+      default_help_text: "Detta är programmets standardspråk och om det ändras kommer det att ha en <strong>inverkan på varje användare</strong> som kommer till webbplatsen för första gången."
+      enabled_help_text: Standardspråket, som valts ovan, omfattas automatiskt.
+      update:
+        notice: Språk har uppdaterats
     managers:
       index:
         title: Medborgarguider
