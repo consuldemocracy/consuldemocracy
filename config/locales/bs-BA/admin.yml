@@ -175,7 +175,6 @@ bs:
           unfeasible: "Nije izvodivo"
           undecided: "Nije odlučeno"
         selected: "Odabrano"
-        select: "Odaberi"
         list:
           id: Identifikacioni broj
           title: Naziv
@@ -1119,7 +1118,6 @@ bs:
         title: Prijedlozi
         id: Identifikacioni broj
         author: Autor
-        select: Odaberi
         selected: Odabrano
         milestones: Rokovi
         no_proposals: Nema prijedloga.
