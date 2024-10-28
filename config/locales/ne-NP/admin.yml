@@ -265,7 +265,6 @@ ne:
           unfeasible: "असम्भाव्य"
           undecided: "अनिश्चित"
         selected: "छानिएकाे"
-        select: "छनाेट"
         list:
           id: ID
           title: टाइटल
@@ -1273,7 +1272,6 @@ ne:
         title: प्रस्तावहरू
         id: आईडी
         author: लेखक
-        select: छनाेट
         selected: छानिएकाे
         milestones: माइलस्टोनहरू
         no_proposals: कुनै प्रस्तावहरू छैनन्।
