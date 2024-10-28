@@ -140,7 +140,6 @@ fa:
           unfeasible: "غیر قابل پیش بینی"
           undecided: "بلاتکلیف"
         selected: "انتخاب شده"
-        select: "انتخاب"
         list:
           id: شناسه
           title: عنوان
@@ -875,7 +874,6 @@ fa:
         title: طرح های پیشنهادی
         id: شناسه
         author: نویسنده
-        select: انتخاب
         selected: انتخاب شده
         milestones: نقطه عطف
     hidden_proposals:
