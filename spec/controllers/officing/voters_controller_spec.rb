@@ -15,7 +15,7 @@ describe Officing::VotersController do
             voter: { poll_id: poll.id, user_id: user.id },
             format: :js
           }
-        rescue ActionDispatch::IllegalStateError
+        rescue ActionDispatch::IllegalStateError, ActiveRecord::RecordInvalid
         end
       end.each(&:join)
 
