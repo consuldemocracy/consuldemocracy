@@ -488,6 +488,7 @@ sv:
         link_text: Länktext
         link_url: Länk-URL
         columns: Antal kolumner
+        order: Position
       widget/card/translation:
         label: Etikett (valfritt)
         title: Titel
