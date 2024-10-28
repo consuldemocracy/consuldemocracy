@@ -237,7 +237,6 @@ ro:
           unfeasible: "Nerealizabil"
           undecided: "Nehotărât"
         selected: "Selectat"
-        select: "Selectează"
         list:
           id: ID
           title: Titlu
@@ -1219,7 +1218,6 @@ ro:
         title: Propuneri
         id: ID
         author: Autor
-        select: Selectează
         selected: Selectat
         milestones: Repere
         no_proposals: Nu există propuneri.
