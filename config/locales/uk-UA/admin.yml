@@ -209,7 +209,6 @@ uk-UA:
           unfeasible: "Реалізація недоцільна"
           undecided: "Не вирішено"
         selected: "Вибрано"
-        select: "Обрати"
         list:
           id: ID
           title: Назва
@@ -1193,7 +1192,6 @@ uk-UA:
         title: Пропозиції
         id: ID
         author: Автор
-        select: Обрати
         selected: Вибрано
         milestones: Основні етапи
         no_proposals: Пропозицій немає.
