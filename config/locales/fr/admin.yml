@@ -268,7 +268,6 @@ fr:
           unfeasible: "Infaisable"
           undecided: "Incertain"
         selected: "Sélectionné"
-        select: "Sélectionner"
         list:
           id: ID
           title: Titre
@@ -1286,7 +1285,6 @@ fr:
         title: Propositions
         id: ID
         author: Auteur
-        select: Sélecter
         selected: Sélecté
         milestones: Jalons
         no_proposals: il n'y a aucune proposition.
