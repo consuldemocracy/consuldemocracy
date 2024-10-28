@@ -178,7 +178,6 @@ ru:
           unfeasible: "Неприемлемая"
           undecided: "Нерешенная"
         selected: "Выбранная"
-        select: "Выбрать"
         list:
           id: ID
           title: Название
@@ -1133,7 +1132,6 @@ ru:
         title: Заявки
         id: ID
         author: Автор
-        select: Выбрать
         selected: Выбрано
         milestones: Основные этапы
         no_proposals: Предложений нет.
