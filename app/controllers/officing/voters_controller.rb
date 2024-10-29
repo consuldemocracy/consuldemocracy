@@ -14,6 +14,10 @@ class Officing::VotersController < Officing::BaseController
     @poll = Poll.find(voter_params[:poll_id])
     @user = User.find(voter_params[:user_id])
 
+    # TODO: create_with could be done to split fields that are part of the index
+    # and fields that are not, but, honestly, not sure whether it's worth it,
+    # and also not sure what we should do if there's a record with different attributes
+    # and it seems to me that raising an exception in this case is OK.
     Poll::Voter.find_or_create_by!(
       document_type: @user.document_type,
       document_number: @user.document_number,
