@@ -111,7 +111,8 @@ module Consul
       "it" => "es",
       "oc" => "fr",
       "pt-BR" => "es",
-      "val" => "es"
+      "val" => "es",
+      "ki" => "es"
     }]
 
     initializer :exclude_custom_locales_automatic_loading, before: :add_locales do
