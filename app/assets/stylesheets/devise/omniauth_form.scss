@@ -1,0 +1,15 @@
+.devise-omniauth-form {
+  .oauth-logins {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(medium) {
+      flex-direction: row;
+    }
+
+    .oauth-login {
+      @include grid-column-gutter;
+      flex-grow: 1;
+    }
+  }
+}
