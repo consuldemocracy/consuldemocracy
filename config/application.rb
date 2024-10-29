@@ -81,6 +81,7 @@ module Consul
       "hr",
       "id",
       "it",
+      "ki",
       "ka",
       "ne",
       "nl",
