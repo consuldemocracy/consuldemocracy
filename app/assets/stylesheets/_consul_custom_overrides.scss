@@ -16,3 +16,6 @@ $main-header: #eaeaea;
 $body-font-family: "Lato", "Helvetica", "Arial", sans-serif !important !default;
 $brand:             #003088 !default;
 $brand-secondary:   darken($brand, 10%) !default;
+
+$button-background-hover: scale-color(#003088 , $lightness: 20%) !default;
+$anchor-color-hover: lighten(#003088, 25%) !default;
