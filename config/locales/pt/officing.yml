@@ -1,6 +1,30 @@
 pt:
   officing:
+    header:
+      title: Votação
+    dashboard:
+      index:
+        title: Presidir mesa eleitoral
+        info: Aqui pode validar os documentos do utilizador e guardar os resultados dos votos
+        no_shifts: Não tem turnos como presidente de mesa hoje.
+    menu:
+      voters: Validar documento
+      total_recounts: Recontagem total e resultados
+    polls:
+      final:
+        title: Votações prontas para recontagem final
+        no_polls: Não está a oficializar recontagens finais em nenhuma votação ativa
+        select_poll: Selecionar votação
+        add_results: Adicionar resultados
     poll_budgets:
+      see_ballot_sheets: Ver lista de boletins de voto
+      index:
+        title: "%{poll_budget} - Lista de boletins de voto"
+        ballot_sheet: "Boletim de voto %{id}"
+        ballot_sheet_name: Nome
+        ballot_sheet_author: Autor
+        ballot_sheet_creation_date: Data de criação
+        empty_results: Ainda não há boletins de voto para esta votação
       new:
         booth: Urna
         select_booth: Selecione urna
