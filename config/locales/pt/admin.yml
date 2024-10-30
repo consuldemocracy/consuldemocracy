@@ -16,6 +16,8 @@ pt:
       unmark_featured: Desmarcar destaques
       edit: Editar
       configure: Configurar
+      select: Selecionar
+      show_to_valuators: "Mostrar %{name} aos avaliadores"
     officing_booth:
       title: "É responsável pela urna localizada em %{booth}. Se isto estiver errado, não faça nada e peça ajuda por telefone. Obrigado."
     banners:
@@ -134,6 +136,7 @@ pt:
         empty_valuators: "Não há avaliadores"
         name_description: "Este é o nome do orçamento participativo utilizado no cabeçalho e nos cartões sempre que este está ativo"
         image_description: "Se for carregada uma imagem, esta será utilizada como faixa de anúncio no topo deste orçamento participativo, caso contrário será utilizada a cor predefinida dos orçamentos."
+        main_call_to_action: "Apelo à ação (opcional)"
         main_call_to_action_description: "Este link irá aparecer na faixa de anúncio principal deste orçamento participativo e incentiva o seu utilizador a realizar uma ação específica como criar uma proposta, votar nas já existentes ou saber mais sobre o processo."
         info:
           budget_settings: "Configurações gerais dos orçamentos participativos"
@@ -224,7 +227,7 @@ pt:
         duration_description: "Estes campos só se usam a título informativo e <strong>não  implicam uma atualização automática da fase ativa.</strong> Para a atualizar, edite o orçamento e selecione a fase ativa."
         enabled_help_text: Esta fase será pública no cronograma de fases do orçamento.
         image_description: "Se for carregada uma imagem, será mostrada junto à descrição desta fase."
-        main_call_to_action: "Apelo à ação principal (opcional)"
+        main_call_to_action: "Apelo à ação (opcional)"
         main_call_to_action_description: "Este link aparecerá na faixa de anúncio deste orçamento participativo, quando esta fase está ativa, e permite ao utilizador executar uma ação específica; como criar uma nova proposta, votar nas existentes, ou ler mais sobre o processo."
         name_help_text: "Este é o título da fase que os utilizadores verão no cabeçalho quando a fase está ativa."
         save_changes: Gravar alterações
@@ -1623,6 +1626,7 @@ pt:
           error: Não foi possível eliminar a imagem
       pages:
         create:
+          notice: Página criada com sucesso
           error: Não foi possível criar a página
         update:
           notice: Página atualizada com sucesso
@@ -1764,6 +1768,7 @@ pt:
         description_1: "Tradicionalmente, os programas de computador são concebidos estabelecendo regras precisas sobre o que o programa deve fazer em cada situação e como processar a informação disponível em cada momento. Aquilo que é vulgarmente conhecido como AI/Machine Learning é um tipo de programa para o qual o que se estabelece com precisão é qual é a tarefa a ser executada e como se avalia se a tarefa é melhor ou pior executada. Mas ao contrário do primeiro, o sistema descobre ou aprende qual seria o método mais adequado para realizar a tarefa."
         title_2: "O que faz o módulo AI / Machine Learning do CONSUL DEMOCRACY?"
         description_2: "Este módulo permite que qualquer tipo de programa de AI/Machine Learning seja implementado no CONSUL DEMOCRACY. Os programas podem processar a informação disponível no CONSUL DEMOCRACY e produzir resultados que ajudam tanto os utilizadores como os administradores a realizar uma participação de cidadãos mais eficaz e inteligente. O módulo foi desenvolvido para facilitar a implementação e execução de novos programas, mantendo o código geral do CONSUL DEMOCRACY e o código destes novos programas independentes entre si."
+        title_3: "Como usar este módulo"
         description_3: "Para utilizar pela primeira vez é necessário seguir as instruções disponíveis na documentação do CONSUL DEMOCRACY para ativar corretamente este módulo. Uma vez activado correctamente, os programas são executados a partir do separador \"Executar scripts\". Antes de o executar, podemos ver no mesmo separador uma estimativa do tempo de execução e outras informações relevantes. No final da execução, podemos ativar o conteúdo que será apresentado no CONSUL DEMOCRACY no separador “Definições”, bem como descarregar outros ficheiros gerados que nos possam ser úteis."
         title_4: "Como implementar novos scripts de AI/Machine Learning"
         description_4: "Utilize scripts anteriores como exemplos."
