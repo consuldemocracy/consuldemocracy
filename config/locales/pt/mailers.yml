@@ -1,7 +1,7 @@
 pt:
   mailers:
     title: "Governo  Aberto"
-    no_reply: "Esta mensagem foi enviada de um endereço de E-mail que não aceita respostas."
+    no_reply: "Esta mensagem foi enviada de um endereço de e-mail que não aceita respostas."
     already_confirmed:
       info: "Recebemos um pedido para lhe enviar instruções para confirmar a sua conta. No entanto, a sua conta já está confirmada, não é necessário fazê-lo novamente."
       new_password: "Se se esqueceu da sua palavra-passe, pode reiniciá-la no link seguinte:"
@@ -13,14 +13,14 @@ pt:
       title: Novo comentário
     config:
       notifications_link: Notificações
-      unsubscribe_text: 'Para cancelar a subscrição destes E-mails, vá a %{notifications} e desmarque "%{notification}".'
+      unsubscribe_text: 'Para cancelar a subscrição destes e-mails, vá a %{notifications} e desmarque "%{notification}".'
     email_verification:
       click_here_to_verify: este link
-      instructions_2: Este E-mail é para verificar a sua conta com <b>%{document_type} %{document_number}</b>. Se esta conta não lhe pertence, não clique no link anterior e ignore este E-mail.
+      instructions_2: Este e-mail é para verificar a sua conta com <b>%{document_type} %{document_number}</b>. Se esta conta não lhe pertence, não clique no link anterior e ignore este e-mail.
       instructions: Para completar a verificação da sua conta de utilizador, clique em %{verification_link}.
-      subject: Confirme o seu E-mail
+      subject: Confirme o seu e-mail
       thanks: Muito Obrigado.
-      title: "Confirme o seu E-mail"
+      title: "Confirme o seu e-mail"
       text: "Confirme a sua conta usando o seguinte link"
     reply:
       hi: Olá
@@ -37,13 +37,13 @@ pt:
     direct_message_for_receiver:
       subject: "Recebeu uma nova mensagem privada"
       reply: Responder a %{sender}
-      unsubscribe_text: "Se não quiser receber mensagens privadas, vá a %{notifications} e desmarque a opção 'Receber E-mails  com mensagens privadas'."
+      unsubscribe_text: "Se não quiser receber mensagens privadas, vá a %{notifications} e desmarque a opção 'Receber e-mails  com mensagens privadas'."
     direct_message_for_sender:
       subject: "Enviou uma nova mensagem privada"
       title: "Enviou uma nova mensagem privada"
       text: "Enviou uma nova mensagem privada para <strong>%{receiver}</strong> com o conteúdo:"
     user_invite:
-      ignore: "Se não solicitou este convite, não se preocupe, pode ignorar este E-mail."
+      ignore: "Se não solicitou este convite, não se preocupe, pode ignorar este e-mail."
       text: "Obrigado por se inscrever para participar do %{org}! Dentro de segundos pode começar a participar das decisões da sua cidade, basta preencher o formulário abaixo:"
       thanks: "Muito obrigado."
       title: "Bem-vindo a %{org}"
@@ -105,7 +105,7 @@ pt:
       text_3: "Sabemos que criar uma proposta cativante para conseguir os apoios necessários pode ser complicado. Mas não se preocupe, nós vamos ajudar!"
       text_4: "Tem uma ferramenta que será a sua melhor aliada: o painel de Propostas de cidadãos."
       list_1: "Aceda diariamente o painel da sua proposta para aproveitar os nossos recursos e dicas."
-      list_2: "Essas dicas, ações e recursos trarão ideias e também soluções práticas para conseguir mais apoios e contar com uma comunidade mais ampla. Não se esqueça disso!"
+      list_2: "Estas dicas, ações e recursos dar-lhe-ão ideias e também soluções práticas para obter mais apoio e uma comunidade mais ampla. Não se esqueça deles!"
       list_3: "À medida que conseguir mais apoios, desbloqueará novos e melhores recursos.De momento, tem disponível um modelo de mensagem para enviar E-mails em massa a todos os seus contatos, além de um poster para imprimir, entre outras funcionalidades e recompensas, que vai descobrir. Continue a angariar apoios e nós não vamos parar de recompensar e ajudar!"
       list_4: "Tem %{max_month} meses a partir da publicação da proposta para obter %{max_votes} apoios e para que a sua proposta se possa tornar realidade. Mas os primeiros dias são os mais importantes. Prepare-se para este desafio!"
       text_5: "E para começar com motivação total,"
