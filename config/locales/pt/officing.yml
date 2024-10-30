@@ -1,1 +1,22 @@
 pt:
+  officing:
+    poll_budgets:
+      new:
+        booth: Urna
+        select_booth: Selecione urna
+        submit: Gravar
+    booth:
+      new:
+        title: "Escolha a sua urna"
+    results:
+      flash:
+        create: "Resultados gravados"
+        error_create: "Os resultados NÃO foram gravados. Erro nos dados."
+        error_wrong_booth: "Urna incorreta. Os resultados NÃO foram gravados."
+      new:
+        booth: "Urna"
+        select_booth: "Selecione urna"
+        submit: "Gravar"
+    voters:
+      new:
+        table_status: Estado das votações
