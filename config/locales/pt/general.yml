@@ -2,13 +2,13 @@ pt:
   account:
     show:
       last_sign_in: "Último acesso: %{last_sign_in_at} desde o endereço IP %{last_sign_in_ip}"
-      change_credentials_link: Alterar os meus dados de login
+      change_credentials_link: Alterar os meus dados de autenticação
       erase_account_link: Apagar a minha conta
       finish_verification: Completar verificação
       notifications: Notificações
       personal: Dados pessoais
       public_interests_my_title_list: Etiquetas dos elementos que segue
-      public_interests_user_title_list: Etiquetas dos elementos que esse utilizador segue
+      public_interests_user_title_list: Etiquetas dos elementos que este utilizador segue
       save_changes_submit: Gravar alterações
       recommendations: Recomendações
       title: Minha conta
@@ -251,8 +251,8 @@ pt:
       mark_as_unread: Marcar como não lido
       notifiable_hidden: Este recurso já não está disponível.
   map:
-    title: "Distritos"
-    proposal_for_district: "Inicie uma proposta para seu distrito"
+    title: "Zona"
+    proposal_for_district: "Inicie uma proposta para a sua zona"
     start_proposal: Criar uma proposta
   omniauth:
     facebook:
@@ -554,7 +554,7 @@ pt:
         send: Enviar para %{address}
         preview: Pré-visualizar
       create:
-        sent: O E-mail foi enviado
+        sent: O e-mail foi enviado
     mailer:
       forward:
         subtitle: "Se me apoiar, <br>vamos conseguir."
@@ -576,10 +576,10 @@ pt:
       participate_button: "Participar nesta votação"
       participate_button_expired: "Votação encerrada"
       no_geozone_restricted: "Toda a cidade"
-      geozone_restricted: "Distritos"
+      geozone_restricted: "Zona"
       geozone_info: "Só podem participar os residentes das áreas:"
       already_answer: "Já participou nesta votação"
-      not_logged_in: "Deve iniciar sessão ou registar-se para participar"
+      not_logged_in: "Deve iniciar sessão ou inscrever-se para participar"
       unverified: "Tem que verificar a sua conta para participar"
       cant_answer: "Esta votação não está disponível para a sua zona geográfica"
       section_header:
@@ -636,7 +636,7 @@ pt:
     new:
       title: "Enviar notificação"
       submit_button: "Enviar notificação"
-      info_about_receivers: "Esta notificação será enviada para <strong>%{count} pessoas</strong> e ficará visível em %{proposal_page}.<br> As notificações não são enviadas imediatamente, os utilizadores receberão periodicamente um E-mail com todas as notificações da proposta."
+      info_about_receivers: "Esta notificação será enviada para <strong>%{count} pessoas</strong> e ficará visível em %{proposal_page}.<br> As notificações não são enviadas imediatamente, os utilizadores receberão periodicamente um e-mail com todas as notificações da proposta."
       proposal_page: "a página da proposta"
     show:
       back: "Voltar para os meus conteúdos"
@@ -713,8 +713,8 @@ pt:
         see_all: "Ver todas"
     tags_cloud:
       tags: Tendências
-      districts: "Distritos"
-      districts_list: "Lista de distritos"
+      districts: "Zona"
+      districts_list: "Lista de zonas"
       categories: "Categorias"
     target_blank: "O link abre numa nova janela"
     you_are_in: "Está em"
@@ -764,7 +764,7 @@ pt:
     login_to_comment: "Tem que %{signin} ou %{signup} para fazer um comentário."
     login_to_continue: "Tem que %{signin} ou %{signup} para continuar."
     signin: "iniciar sessão"
-    signup: "registar-se"
+    signup: "inscrever-se"
     verify_account: "verifique a sua conta"
     direct_messages:
       new:
@@ -782,7 +782,7 @@ pt:
       proposals: Propostas
       proposals_status: Estado
       debates: Debates
-      budget_investments: Proposta de investimento
+      budget_investments: Investimentos Orçamentais
       comments: Comentários
       actions: Ações
       filters:
@@ -827,8 +827,8 @@ pt:
       unfeasible: Projetos de investimento inviáveis não podem ser apoiados
       not_voting_allowed: A fase de votação está encerrada
       different_heading_assigned:
-        one: "Só pode apoiar projetos de investimento em %{count} distrito. Já apoiou investimentos em %{supported_headings}."
-        other: "Só pode apoiar projetos de investimento em %{count} distritos. Já apoiou investimentos em %{supported_headings}."
+        one: "Só pode apoiar projetos de investimento em %{count} zona. Já apoiou investimentos em %{supported_headings}."
+        other: "Só pode apoiar projetos de investimento em %{count} zonas. Já apoiou investimentos em %{supported_headings}."
   welcome:
     feed:
       most_active:
@@ -886,7 +886,7 @@ pt:
     content_title:
       proposal: "Proposta"
       debate: "Debate"
-      budget_investment: "Investimentos Orçamental"
+      budget_investment: "Investimento Orçamental"
   admin/widget:
     header:
       title: Administração
