@@ -1,1 +1,12 @@
 pt:
+  sdg_management:
+    local_targets:
+      destroy:
+        notice: "Meta local eliminada com sucesso"
+      update:
+        notice: "Meta local atualizada com sucesso"
+    relations:
+      update:
+        notice: "%{relatable} atualizado com sucesso"
+      update_and_review:
+        notice: "%{relatable} atualizado com sucesso e marcado como revisto"
