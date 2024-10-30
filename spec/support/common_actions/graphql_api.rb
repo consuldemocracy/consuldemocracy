@@ -18,14 +18,12 @@ module GraphQLAPI
   def extract_fields(response, collection_name, field_chain)
     fields = field_chain.split(".")
     dig(response, "data.#{collection_name}.edges").map do |node|
-      begin
-        if fields.size > 1
-          node["node"][fields.first][fields.second]
-        else
-          node["node"][fields.first]
-        end
-      rescue NoMethodError
+      if fields.size > 1
+        node["node"][fields.first][fields.second]
+      else
+        node["node"][fields.first]
       end
+    rescue NoMethodError
     end.compact
   end
 end

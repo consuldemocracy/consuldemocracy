@@ -187,10 +187,8 @@ describe Poll::Answer do
 
       [answer, other_answer].map do |poll_answer|
         Thread.new do
-          begin
-            poll_answer.save_and_record_voter_participation
-          rescue ActiveRecord::RecordInvalid
-          end
+          poll_answer.save_and_record_voter_participation
+        rescue ActiveRecord::RecordInvalid
         end
       end.each(&:join)
 

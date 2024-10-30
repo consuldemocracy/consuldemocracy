@@ -759,6 +759,8 @@ en:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
+  ip_denied_handler:
+    unauthorized: "Access denied. Your IP address is not allowed."
   unauthorized:
     default: You do not have permission to access this page.
     manage:
