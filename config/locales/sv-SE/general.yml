@@ -758,6 +758,8 @@ sv:
     youtube: "%{org} på YouTube"
     telegram: "%{org} på Telegram"
     instagram: "%{org} på Instagram"
+  ip_denied_handler:
+    unauthorized: "Åtkomst nekad. Din IP-adress tillåts inte."
   unauthorized:
     default: Du har inte behörighet att komma åt sidan.
     manage:
