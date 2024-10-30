@@ -60,6 +60,7 @@ pt:
         price_first_year: "Custo durante o primeiro ano (%{currency})<small>(opcional, dados não públicos)</small>"
         feasibility: Viabilidade
         valuation_finished_alert: "Tem certeza que deseja marcar este relatório como concluído? Depois de concluído, o relatório não poderá ser modificado."
+        not_feasible_alert: "Será enviado de imediato um e-mail ao autor do projeto com o relato de inviabilidade."
         save: Guardar alterações
       notice:
         valuate: "Pasta atualizada"
