@@ -18,11 +18,14 @@ pt:
             other: "Votos: <span>%{count}</span>"
         amount_limit:
           knapsack: "Orçamento total <span>%{count}</span>"
+          approval:
+            one: "Pede votar em <span>1</span> projeto"
+            other: "Pode votar em até <span>%{count}</span> projetos"
         no_balloted_group_yet: "Ainda não votou neste grupo, vote!"
         remove: Proposta cidadãvoto
         remove_label: "Remover voto em %{investment}"
         voted:
-          one: "Votou em <span>um</span> investimento."
+          one: "Votou em <span>um</span> investimento.</span>"
           other: "Votou em <span>%{count}</span> investimentos."
         voted_info: "O voto foi confirmado!"
         voted_info_2: "Mas pode alterar o voto a qualquer momento antes da conclusão desta fase."
@@ -131,28 +134,69 @@ pt:
         share: Compartilhar
         title: Projeto de investimento
         supports: Apoios
+        votes: Votos
         price: Custo
+        comments_tab: Comentários
         milestones_tab: Etapas
+        author: Autor
         project_unfeasible: "Este projeto de investimento <strong>foi marcado como não viável</strong> e não vai à fase de votação."
         project_selected: "Este projeto de investimento <strong>foi selecionado</strong> para a fase de votação."
+        project_winner: "Projeto de investimento vencedor"
         project_not_selected: "Este projeto de investimento <strong>não foi selecionado</strong> para a fase de votação."
         see_price_explanation: Exposição de custos
+      wrong_price_format: Apenas números inteiros
+      investment:
+        add: Votar
+        add_label: "Votar %{investment}"
+        already_added: Já adicionou este projeto de investimento
+        support_title: Apoiar este projeto
+        supports:
+          zero: Nenhum apoio
+          one: 1 apoio
+          other: "%{count} apoios"
       header:
+        check_ballot: "Verificar os meus votos"
         different_heading_assigned: "Tem votos ativos numa rubrica diferente: %{heading_link}"
         change_ballot: "Se mudar de ideias, poderá remover os seus votos em %{check_ballot} e começar de novo."
+        check_ballot_link: "verificar os meus votos"
+        price: "Orçamento total"
       votes:
+        already_supported: "Já apoiou esta proposta de investimento. Partilhe!"
         confirm_group:
           one: "Só pode apoiar investimentos em %{count} zona. Se continuar, não poderá alterar a eleição da sua zona. Tem a certeza?"
           other: "Só pode apoiar investimentos em %{count} zonas. Se continuar, não poderá alterar a eleição da sua zona. Tem a certeza?"
         remove_support: "Remover o seu apoio"
         remove_support_label: "Remover o seu apoio a %{investment}"
+        support: "Apoiar"
+        support_label: "Apoiar %{investment}"
     investments_list:
       investment:
         price: "Custo"
+        read_more: "Ler mais"
+        supports: "Apoios"
+      see_all: "Ver todos os investimentos"
+      title: "Lista de investimentos"
+    show:
+      see_results: Ver resultados
     supports_info:
-      next: "Apoia os projetos que gostaria de ver na fase seguinte."
+      different: "Pode apoiar quantos projetos diferentes desejar."
+      next: "Apoie os projetos que gostaria de ver na fase seguinte."
+      scrolling: "Continue a deslizar para ver todas as ideias"
+      share: "Pode partilhar os projetos que apoiou nas redes sociais e atrair mais atenção e apoio para os mesmos!"
+      supported:
+        one: "Até agora apoiou <strong>1 projeto</strong>."
+        other: "Até agora apoiou <strong>%{count} projetos</strong>."
+      supported_not_logged_in: "Inicie sessão para começar a <strong>apoiar projetos</strong>."
+      time: "Ainda vai a tempo até %{phase_end_date} para apoiar projetos."
+      title: "Está na hora de <strong>apoiar</strong> projetos!"
     results:
+      link: Resultados
+      page_title: "%{budget} - Resultados"
+      heading: "Resultados do orçamento participativo"
       heading_selection_title: "Por zona"
+      ballot_lines_count: Votos
+      hide_discarded_link: Ocultar descartados
+      show_all_link: Mostrar todos
       price: Custo
       amount_available: Orçamento disponível
       accepted: "Proposta de investimento aceite: "
