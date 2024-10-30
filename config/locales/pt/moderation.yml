@@ -13,7 +13,7 @@ pt:
         headers:
           comment: Comentário
           moderate: Moderar
-        hide: Ocultar comentários
+        hide: "Ocultar comentários\n"
         ignore_flags: Marcar como visto
         orders:
           flags: Mais denunciados
