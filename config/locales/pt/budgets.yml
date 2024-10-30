@@ -21,13 +21,16 @@ pt:
         no_balloted_group_yet: "Ainda não votou neste grupo, vote!"
         remove: Proposta cidadãvoto
         remove_label: "Remover voto em %{investment}"
+        voted:
+          one: "Votou em <span>um</span> investimento."
+          other: "Votou em <span>%{count}</span> investimentos."
         voted_info: "O voto foi confirmado!"
         voted_info_2: "Mas pode alterar o voto a qualquer momento antes da conclusão desta fase."
         zero: Não votou num projeto de investimento.
       reasons_for_not_balloting:
         not_verified: Apenas utilizadores verificados podem votar em investimentos; %{verify_account}.
         not_selected: Projetos de investimento não selecionados não podem ser apoiados
-        not_enough_money: "Já atribuiu o orçamento disponível.<br><small>Lembre-se que pode %{change_ballot} a qualquer momento</small>"
+        not_enough_money: "Já atribuiu o orçamento disponível.<br><small>Lembre-se que pode %{change_ballot} a qualquer momento</small>\n"
         no_ballots_allowed: A fase de seleção está fechada
         different_heading_assigned: "Já votou numa rubrica diferente: %{heading_link}"
         not_enough_available_votes: "Já atingiu o número máximo de votos permitidos"
@@ -79,7 +82,7 @@ pt:
       index:
         title: Orçamento participativo
         unfeasible: Projetos de investimento inviáveis
-        unfeasible_text: "As propostas devem atender a uma série de critérios (legalidade, ser concreto, não exceder o limite do orçamento) para serem declaradas viáveis e chegarem à fase de votação final. Todas as propostas que não atendem a esses critérios são marcadas como inviáveis e publicadas na lista seguinte, juntamente com seu relatório de inviabilidade."
+        unfeasible_text: "As propostas devem atender a uma série de critérios (legalidade, ser concreto, não exceder o limite do orçamento) para serem declaradas viáveis e chegarem à fase de votação final. Todas as propostas que não atendem a estes critérios são marcadas como inviáveis e publicadas na lista seguinte, juntamente com seu relatório de inviabilidade."
         by_heading: "Projetos de investimento com âmbito: %{heading}"
         search_form:
           button: Procurar
@@ -138,6 +141,9 @@ pt:
         different_heading_assigned: "Tem votos ativos numa rubrica diferente: %{heading_link}"
         change_ballot: "Se mudar de ideias, poderá remover os seus votos em %{check_ballot} e começar de novo."
       votes:
+        confirm_group:
+          one: "Só pode apoiar investimentos em %{count} zona. Se continuar, não poderá alterar a eleição da sua zona. Tem a certeza?"
+          other: "Só pode apoiar investimentos em %{count} zonas. Se continuar, não poderá alterar a eleição da sua zona. Tem a certeza?"
         remove_support: "Remover o seu apoio"
         remove_support_label: "Remover o seu apoio a %{investment}"
     investments_list:
@@ -146,6 +152,7 @@ pt:
     supports_info:
       next: "Apoia os projetos que gostaria de ver na fase seguinte."
     results:
+      heading_selection_title: "Por zona"
       price: Custo
       amount_available: Orçamento disponível
       accepted: "Proposta de investimento aceite: "
@@ -159,7 +166,7 @@ pt:
       link: "Etapas"
       page_title: "%{budget} - Etapas"
       heading: "Etapas do orçamento participativo"
-      heading_selection_title: "Por distrito"
+      heading_selection_title: "Por zona"
       no_winner_investments: "Não há projetos de investimentos vencedores neste estado"
       filters:
         status:
