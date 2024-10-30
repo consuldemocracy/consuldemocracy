@@ -341,11 +341,11 @@ pt:
           back: "Voltar para editar grupo"
       heading_mode:
         multiple:
-          description: "Crie um processo com vários grupos, distritos ou temas, incluindo várias fatias orçamentais. Por exemplo, 25.000€ para a “Zona Norte”, 30.000€ para a “Zona Centro”, 28.000€ para a “Zona Sul” e toda a cidade. Ou por temas diversos como o desporto, a cultura ou a saúde."
+          description: "Crie um processo com vários grupos, zonas ou temas, incluindo várias fatias orçamentais. Por exemplo, 25.000€ para a “Zona Norte”, 30.000€ para a “Zona Centro”, 28.000€ para a “Zona Sul” e toda a cidade. Ou por temas diversos como o desporto, a cultura ou a saúde."
           link: "Criar orçamento com múltiplas rubricas"
           title: "Orçamento <strong>múltiplas rubricas</strong>"
         single:
-          description: "Crie um processo com um grupo, distrito ou tópico, incluindo várias fatias orçamentais. Por exemplo, 25.000€ para a \"Zona Sul\", ou 10.000€ para a cultura."
+          description: "Crie um processo com um grupo, zona ou tópico, incluindo várias fatias orçamentais. Por exemplo, 25.000€ para a \"Zona Sul\", ou 10.000€ para a cultura."
           link: "Criar um orçamento de rubrica única"
           title: "Orçamento de <strong>rubrica única</strong>"
         title: "Tipo de orçamento participativo"
@@ -692,7 +692,7 @@ pt:
           question_options: "Respostas possíveis (opcionais, por defeito: respostas abertas)"
         index:
           back: Voltar
-          title: Perguntas associadas a esse processo
+          title: Perguntas associadas a este processo
           create: Criar pergunta
         new:
           back: Voltar
@@ -750,7 +750,7 @@ pt:
       newsletters: Boletins informativos
       admin_notifications: Notificações
       system_emails: E-mails do Sistema
-      emails_download: Descarregar E-mails
+      emails_download: Descarregar e-mails
       valuators: Avaliadores
       poll_officers: Presidente de mesa
       polls: Votações
@@ -850,7 +850,7 @@ pt:
         empty_newsletters: Não há boletins informativos para mostrar
       new:
         title: Novo boletim informativo
-        header_footer_help_text: "O cabeçalho e o rodapé são os mesmos em todos os E-mails. Pode modificá-los em <code>app/views/layouts/mailer_header</code> e <code>app/views/layouts/mailer_footer</code>.<br>É possível substituir a imagem do cabeçalho em %{link}."
+        header_footer_help_text: "O cabeçalho e o rodapé são os mesmos em todos os e-mails. Pode modificá-los em <code>app/views/layouts/mailer_header</code> e <code>app/views/layouts/mailer_footer</code>.<br>É possível substituir a imagem do cabeçalho em %{link}."
         image_link: "imagens personalizadas"
       edit:
         title: Editar boletim informativo
@@ -865,8 +865,8 @@ pt:
         subject: Assunto
         segment_recipient: Destinatários
         from: Endereço de E-mail que irá aparecer como remetente do boletim informativo
-        body: Conteúdo do E-mail
-        body_help_text: É assim que os utilizadores verão o E-mail.
+        body: Conteúdo do e-mail
+        body_help_text: É assim que os utilizadores verão o e-mail.
         send_alert: Tem a certeza que quer enviar este boletim informativo para %{n} utilizadores?
     admin_notifications:
       create_success: Notificação criada com sucesso
@@ -913,7 +913,7 @@ pt:
         send_pending_notification: Notificações pendentes enviadas com sucesso
       proposal_notification_digest:
         title: "Resumo da notificação da proposta"
-        description: "Juntar todas as notificações de proposta para um utilizador numa mensagem para evitar muitos E-mails."
+        description: "Juntar todas as notificações de proposta para um utilizador numa mensagem para evitar muitos e-mails."
         preview_detail: "Os utilizadores receberão notificações apenas das propostas que estão a seguir"
       budget_investment_created:
         title: "Investimento orçamental criado"
@@ -940,7 +940,7 @@ pt:
         title: "Remetente da mensagem particular"
         description: "Enviar ao remetente da mensagem particular."
       email_verification:
-        title: "Verificação por E-mail"
+        title: "Verificação por e-mail"
         description: "Enviado ao novo utilizador para verificar a sua conta."
       user_invite:
         title: "Convite de utilizadores"
@@ -948,20 +948,20 @@ pt:
       evaluation_comment:
         title: "Novo comentário de avaliação"
         description: "Enviado a administradores e avaliadores do orçamento"
-      edit_info: "Pode editar este E-mail em"
+      edit_info: "Pode editar este e-mail em"
       message_title: "Título da mensagem"
       message_body: "Este é um exemplo de conteúdo de uma mensagem."
       alert:
-        no_investments: "Não há qualquer investimento orçamental criado. São necessários alguns dados de exemplo para pré-visualizar o E-mail."
-        no_comments: "Não foram criados comentários. São necessários alguns dados de exemplo para pré-visualizar o E-mail."
-        no_replies: "Não foram criadas respostas. São necessários alguns dados de exemplo para pré-visualizar o E-mail."
-        no_evaluation_comments: "Não foram criados comentários de avaliação. São necessários alguns dados de exemplo para pré-visualizar o E-mail."
+        no_investments: "Não há nenhum investimento orçamental criado. São necessários alguns dados de exemplo para pré-visualizar o e-mail."
+        no_comments: "Não foram criados comentários. São necessários alguns dados de exemplo para pré-visualizar o e-mail."
+        no_replies: "Não foram criadas respostas. São necessários alguns dados de exemplo para pré-visualizar o e-mail."
+        no_evaluation_comments: "Não foram criados comentários de avaliação. São necessários alguns dados de exemplo para pré-visualizar o e-mail."
     emails_download:
       index:
-        title: Descarregar E-mails
-        download_segment: Descarregar endereços de E-mail
+        title: Descarregar e-mails
+        download_segment: Descarregar endereços de e-mail
         download_segment_help_text: Descarregar em formato CSV
-        download_emails_button: Descarregar lista de E-mails
+        download_emails_button: Descarregar lista de e-mails
     valuators:
       index:
         title: Avaliadores
@@ -1000,7 +1000,7 @@ pt:
         no_groups: "Não há grupos de avaliação"
       show:
         title: "Grupo de avaliação %{group}"
-        no_valuators: "Não há avaliadores atribuídos a esse grupo"
+        no_valuators: "Não há avaliadores atribuídos a este grupo"
       form:
         new: "Criar grupos de avaliação"
         edit: "Gravar grupos de avaliação"
@@ -1014,7 +1014,7 @@ pt:
         email: E-mail
         entry_name: Presidente de mesa
       search:
-        email_placeholder: Procurar utilizador pelo E-mail
+        email_placeholder: Procurar utilizador pelo e-mail
         user_not_found: Utilizador não encontrado
         help: "Para adicionar ou remover Presidentes de Mesa, utilize o navegador a seguir."
     poll_officer_assignments:
@@ -1101,7 +1101,7 @@ pt:
         dates: "Datas"
         start_date: "Data de início"
         closing_date: "Data de encerramento"
-        geozone_restricted: "Restrito aos distritos"
+        geozone_restricted: "Restrito às zonas"
       new:
         title: "Nova votação"
         submit_button: "Criar votação"
@@ -1338,7 +1338,7 @@ pt:
             update: Configuração do mapa atualizada com sucesso.
           form:
             submit: Atualizar
-          how_to_enable: 'Para mostrar o mapa aos utilizadores, é preciso ativar "Geolocalização de propostas e projetos de investimento" na aba "Funcionalidades".'
+          how_to_enable: 'Para mostrar o mapa aos utilizadores, é preciso ativar "Geolocalização de propostas e investimentos orçamentais" na aba "Funcionalidades".'
         dashboard:
           title: Painel de propostas
         remote_census:
@@ -1371,13 +1371,13 @@ pt:
           legislation_processes: "Procurar processos por título ou descrição"
           legislation_proposals: "Procurar propostas por título ou descrição"
           local_census_records: "Procurar por número de documento"
-          organizations: "Nome, E-mail ou número de telefone"
+          organizations: "Nome, e-mail ou número de telefone"
           poll_officers: "Procurar presidentes de mesa"
           poll_questions: "Procurar perguntas de votação"
           polls: "Procurar votações por nome ou descrição"
           proposals: "Procurar propostas por título, código, descrição ou pergunta"
           proposal_notifications: "Procurar notificações por título ou descrição"
-          users: "Procurar utilizador por nome ou pelo E-mail"
+          users: "Procurar utilizador por nome ou pelo e-mail"
         search: "Procurar"
       search_results: "Procurar resultados"
       no_search_results: "Nenhum resultado encontrado."
@@ -1422,7 +1422,7 @@ pt:
         back: Voltar
       new:
         back: Voltar
-        creating: Criar distrito
+        creating: Criar zona
       delete:
         success: Zona geográfica eliminada com êxito
         error: Esta zona geográfica não pode ser eliminada, uma vez que existem elementos ligados a ela
@@ -1509,7 +1509,7 @@ pt:
         vote_count: Votos
         participant_count: Participantes
         votes_per_heading: Votos por rubrica
-        participants_per_district: Participantes por distrito
+        participants_per_district: Participantes por zona
       budget_supporting:
         title: "Estatísticas da fase de apoios"
         headings: Rubricas
@@ -1573,7 +1573,7 @@ pt:
           active: Ativos
           erased: Apagados
       search:
-        placeholder: Procurar utilizador por E-mail, nome ou número do documento
+        placeholder: Procurar utilizador por e-mail, nome ou número do documento
     verifications:
       index:
         phone_not_given: Telefone não fornecido
@@ -1670,6 +1670,7 @@ pt:
         notice: Inquilino desativado com sucesso
       index:
         create: Criar inquilino
+        enable: "Ativar inquilino %{tenant}"
         enabled: Ativado
       new:
         admin_information: "Ao criar um inquilino, o seu utilizador atual <strong>\"%{username}\"</strong> com o e-mail <strong>\"%{email}\"</strong> e a sua palavra-passe serão copiados para a base de dados do novo inquilino e receberão automaticamente permissões de administração. Note que estas contas de utilizador são armazenadas em bases de dados completamente separadas, portanto, se alterar a palavra-passe do seu utilizador num inquilino, as suas contas noutros inquilinos permanecerão inalteradas."
@@ -1785,7 +1786,7 @@ pt:
       output_files: "Ficheiros resultantes:"
       related_content: "Conteúdo relacionado"
       related_content_description: "Adiciona conteúdo relacionado gerado automaticamente a propostas e projetos de orçamento participativo."
-      script_info: "Receberá um E-mail em %{email} quando a execução do script terminar."
+      script_info: "Receberá um e-mail em %{email} quando a execução do script terminar."
       script_name: "Nome do script:"
       select_script: "Selecione o script python para executar"
       started_at: "Iniciado em:"
