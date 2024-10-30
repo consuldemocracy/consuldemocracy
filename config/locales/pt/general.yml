@@ -117,7 +117,7 @@ pt:
       form:
         submit_button: Iniciar um debate
       more_info: Como funcionam os debates?
-      recommendation_four: Aproveite este espaço e as vozes que o preenchem. Também pertence si.
+      recommendation_four: Aproveite este espaço e as vozes que o preenchem. Também lhe pertence.
       recommendation_one: Não use letras maiúsculas para o título do debate ou para frases completas. Na Internet, isto é considerado gritar. E ninguém gosta que lhe gritem.
       recommendation_three: Críticas implacáveis são bem-vindas. Este é um espaço para reflexão. Mas recomendamos que mantenha a sua inteligência e elegância. O mundo é um lugar melhor com estas virtudes em prática.
       recommendation_two: Qualquer debate ou comentário implique uma ação ilegal será removido, assim como aqueles que pretenderem perturbar os espaços de discussão, o resto é permitido.
@@ -373,6 +373,8 @@ pt:
       form:
         submit_button: Criar proposta
       more_info: Como funcionam as propostas dos cidadãos?
+      recommendation_one: Não utilize letras maiúsculas no título da proposta ou em frases inteiras.  Na Internet isso é considerado como grito. E ninguém gosta que lhe gritem.
+      recommendation_three: Aproveite este espaço e as vozes que o preenchem. Também lhe pertence.
       recommendation_two: Qualquer proposta ou comentário que implique uma ação ilegal será removida, assim como aqueles que pretenderem perturbar os espaços de discussão, o resto é permitido.
       recommendations_title: Recomendações para a criação de uma proposta
       start_new: Criar nova proposta
@@ -756,6 +758,8 @@ pt:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
+  ip_denied_handler:
+    unauthorized: "Acesso negado. O seu endereço IP não é permitido."
   unauthorized:
     default: Não tem permissão para aceder a esta página.
     manage:
