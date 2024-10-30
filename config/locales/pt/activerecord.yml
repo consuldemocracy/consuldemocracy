@@ -280,11 +280,11 @@ pt:
         password_confirmation: "Confirmação de palavra-passe"
         password: "Palavra-passe"
         current_password: "Palavra-passe atual"
-        email_digest: "Receber resumo de notificações sobre propostas"
-        email_on_comment: "Notificar-me por E-mail quando alguém comentar as minhas propostas ou debates"
-        email_on_comment_reply: "Notificar-me por E-mail quando alguém responder aos meus comentários"
-        email_on_direct_message: "Receber E-mails sobre mensagens diretas"
-        newsletter: "Receber informações relevantes por E-mail "
+        email_digest: "Receber resumo de notificações de propostas"
+        email_on_comment: "Notificar-me por e-mail quando alguém comentar as minhas propostas ou debates"
+        email_on_comment_reply: "Notificar-me por e-mail quando alguém responder aos meus comentários"
+        email_on_direct_message: "Receber e-mails sobre mensagens diretas"
+        newsletter: "Receber informações relevantes por e-mail "
         official_position: "Cargo público"
         official_position_badge: "Mostrar etiqueta da posição oficial"
         official_level: "Nível do cargo"
@@ -293,7 +293,7 @@ pt:
         public_interests: "Manter públicas as etiquetas dos elementos que sigo"
         recommended_debates: "Mostrar recomendações de debates"
         recommended_proposals: "Mostrar recomendações de propostas"
-        redeemable_code: "Código de verificação recebido via E-mail"
+        redeemable_code: "Código de verificação recebido via e-mail"
       direct_message:
         title: "Título"
         body: "Mensagem"
@@ -472,7 +472,7 @@ pt:
         segment_recipient: Destinatários
         subject: Assunto
         from: "Endereço de E-mail que aparecerá como remetente da newsletter"
-        body: Conteúdo do E-mail
+        body: Conteúdo do e-mail
       admin_notification:
         segment_recipient: Destinatários
         title: Título
