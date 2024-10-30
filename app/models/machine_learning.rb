@@ -15,57 +15,55 @@ class MachineLearning
   end
 
   def run
-    begin
-      export_proposals_to_json
-      export_budget_investments_to_json
-      export_comments_to_json
+    export_proposals_to_json
+    export_budget_investments_to_json
+    export_comments_to_json
 
-      return unless run_machine_learning_scripts
+    return unless run_machine_learning_scripts
 
-      if updated_file?(MachineLearning.proposals_taggings_filename) &&
-         updated_file?(MachineLearning.proposals_tags_filename)
-        cleanup_proposals_tags!
-        import_ml_proposals_tags
-        update_machine_learning_info_for("tags")
-      end
-
-      if updated_file?(MachineLearning.investments_taggings_filename) &&
-         updated_file?(MachineLearning.investments_tags_filename)
-        cleanup_investments_tags!
-        import_ml_investments_tags
-        update_machine_learning_info_for("tags")
-      end
-
-      if updated_file?(MachineLearning.proposals_related_filename)
-        cleanup_proposals_related_content!
-        import_proposals_related_content
-        update_machine_learning_info_for("related_content")
-      end
-
-      if updated_file?(MachineLearning.investments_related_filename)
-        cleanup_investments_related_content!
-        import_budget_investments_related_content
-        update_machine_learning_info_for("related_content")
-      end
-
-      if updated_file?(MachineLearning.proposals_comments_summary_filename)
-        cleanup_proposals_comments_summary!
-        import_ml_proposals_comments_summary
-        update_machine_learning_info_for("comments_summary")
-      end
-
-      if updated_file?(MachineLearning.investments_comments_summary_filename)
-        cleanup_investments_comments_summary!
-        import_ml_investments_comments_summary
-        update_machine_learning_info_for("comments_summary")
-      end
-
-      job.update!(finished_at: Time.current)
-      Mailer.machine_learning_success(user).deliver_later
-    rescue Exception => e
-      handle_error(e)
-      raise e
+    if updated_file?(MachineLearning.proposals_taggings_filename) &&
+       updated_file?(MachineLearning.proposals_tags_filename)
+      cleanup_proposals_tags!
+      import_ml_proposals_tags
+      update_machine_learning_info_for("tags")
     end
+
+    if updated_file?(MachineLearning.investments_taggings_filename) &&
+       updated_file?(MachineLearning.investments_tags_filename)
+      cleanup_investments_tags!
+      import_ml_investments_tags
+      update_machine_learning_info_for("tags")
+    end
+
+    if updated_file?(MachineLearning.proposals_related_filename)
+      cleanup_proposals_related_content!
+      import_proposals_related_content
+      update_machine_learning_info_for("related_content")
+    end
+
+    if updated_file?(MachineLearning.investments_related_filename)
+      cleanup_investments_related_content!
+      import_budget_investments_related_content
+      update_machine_learning_info_for("related_content")
+    end
+
+    if updated_file?(MachineLearning.proposals_comments_summary_filename)
+      cleanup_proposals_comments_summary!
+      import_ml_proposals_comments_summary
+      update_machine_learning_info_for("comments_summary")
+    end
+
+    if updated_file?(MachineLearning.investments_comments_summary_filename)
+      cleanup_investments_comments_summary!
+      import_ml_investments_comments_summary
+      update_machine_learning_info_for("comments_summary")
+    end
+
+    job.update!(finished_at: Time.current)
+    Mailer.machine_learning_success(user).deliver_later
+  rescue Exception => e
+    handle_error(e)
+    raise e
   end
   handle_asynchronously :run, queue: "machine_learning"
 

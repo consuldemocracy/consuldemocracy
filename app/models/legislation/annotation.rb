@@ -25,23 +25,21 @@ class Legislation::Annotation < ApplicationRecord
   end
 
   def store_context
-    begin
-      html = draft_version.body_html
-      doc = Nokogiri::HTML(html)
+    html = draft_version.body_html
+    doc = Nokogiri::HTML(html)
 
-      selector_start = "/html/body/#{range_start}"
-      el_start = doc.at_xpath(selector_start)
+    selector_start = "/html/body/#{range_start}"
+    el_start = doc.at_xpath(selector_start)
 
-      selector_end = "/html/body/#{range_end}"
-      el_end = doc.at_xpath(selector_end)
+    selector_end = "/html/body/#{range_end}"
+    el_end = doc.at_xpath(selector_end)
 
-      remainder_el_start = el_start.text[0..range_start_offset - 1] unless range_start_offset.zero?
-      remainder_el_end = el_end.text[range_end_offset..-1]
+    remainder_el_start = el_start.text[0..range_start_offset - 1] unless range_start_offset.zero?
+    remainder_el_end = el_end.text[range_end_offset..-1]
 
-      self.context = "#{remainder_el_start}<span class=annotator-hl>#{quote}</span>#{remainder_el_end}"
-    rescue
-      "<span class=annotator-hl>#{quote}</span>"
-    end
+    self.context = "#{remainder_el_start}<span class=annotator-hl>#{quote}</span>#{remainder_el_end}"
+  rescue
+    "<span class=annotator-hl>#{quote}</span>"
   end
 
   def create_first_comment

@@ -84,18 +84,16 @@ end
 task :install_ruby do
   on roles(:app) do
     within release_path do
-      begin
-        current_ruby = capture(:rvm, "current")
-      rescue SSHKit::Command::Failed
+      current_ruby = capture(:rvm, "current")
+    rescue SSHKit::Command::Failed
+      after "install_ruby", "rvm1:install:rvm"
+      after "install_ruby", "rvm1:install:ruby"
+    else
+      if current_ruby.include?("not installed")
         after "install_ruby", "rvm1:install:rvm"
         after "install_ruby", "rvm1:install:ruby"
       else
-        if current_ruby.include?("not installed")
-          after "install_ruby", "rvm1:install:rvm"
-          after "install_ruby", "rvm1:install:ruby"
-        else
-          info "Ruby: Using #{current_ruby}"
-        end
+        info "Ruby: Using #{current_ruby}"
       end
     end
   end
@@ -104,19 +102,17 @@ end
 task :install_node do
   on roles(:app) do
     with rails_env: fetch(:rails_env) do
+      execute fetch(:fnm_install_node_command)
+    rescue SSHKit::Command::Failed
       begin
-        execute fetch(:fnm_install_node_command)
+        execute fetch(:fnm_setup_command)
       rescue SSHKit::Command::Failed
-        begin
-          execute fetch(:fnm_setup_command)
-        rescue SSHKit::Command::Failed
-          execute fetch(:fnm_install_command)
-        else
-          execute fetch(:fnm_update_command)
-        end
-
-        execute fetch(:fnm_install_node_command)
+        execute fetch(:fnm_install_command)
+      else
+        execute fetch(:fnm_update_command)
       end
+
+      execute fetch(:fnm_install_node_command)
     end
   end
 end
