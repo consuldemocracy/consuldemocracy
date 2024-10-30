@@ -6,9 +6,9 @@ pt:
     email:
       create:
         alert:
-          failure: Houve um problema com o envio de um E-mail para a sua conta.
+          failure: Houve um problema com o envio de um e-mail para a sua conta.
         flash:
-          success: "Enviamos um E-mail de confirmação para a sua conta: %{email}"
+          success: "Enviamos um e-mail de confirmação para a sua conta: %{email}"
       show:
         alert:
           failure: Código de verificação incorreto
@@ -37,7 +37,7 @@ pt:
           success: Código correto. A sua conta está verificada
     redirect_notices:
       already_verified: A sua conta já está verificada
-      email_already_sent: Já enviamos um E-mail com um link de confirmação. Se não conseguir encontrar o E-mail, pode solicitar o reenvio aqui
+      email_already_sent: Já enviamos um e-mail com um link de confirmação. Se não conseguir encontrar o e-mail, pode solicitar o reenvio aqui
     residence:
       alert:
         unconfirmed_residency: Ainda não confirmou a sua residência
