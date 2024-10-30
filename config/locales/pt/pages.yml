@@ -55,7 +55,7 @@ pt:
         button: "Ver perguntas frequentes"
         page:
           title: "Perguntas frequentes"
-          description: "Utilize essa página para resolver Perguntas Frequentes dos utilizadores da plataforma."
+          description: "Utilize esta página para resolver Perguntas Frequentes dos utilizadores da plataforma."
       other:
         title: "Outras informações de interesse"
         how_to_use: "Use o %{org_name} na sua cidade"
@@ -77,9 +77,9 @@ pt:
       description: |-
         Acessibilidade Web refere-se à possibilidade de acesso à web e seu conteúdo por todas as pessoas, independentemente de deficiências (físicas, intelectuais ou técnicas), ou dificuldades que derivem do contexto de uso (tecnológico ou ambiental).
 
-        Quando sites são projetados com acessibilidade em mente, todos os usuários podem acessar o conteúdo em igualdade de condições, por exemplo:
+        Quando os websites são concebidos tendo em mente a acessibilidade, todos os utilizadores podem aceder ao conteúdo em igualdade de condições, por exemplo
       examples:
-        - Proporcionando um texto alternativo a imagens, para que utilizadores cegos ou com deficiências visuais usando leitores especiais possam acessar informações.
+        - Fornecendo texto alternativo às imagens, os utilizadores cegos ou com deficiência visual podem utilizar leitores especiais para aceder à informação.
         - Quando os vídeos têm legendas, os utilizadores com dificuldades auditivas podem compreendê-los totalmente.
         - Se os conteúdos estiverem escritos numa linguagem simples e ilustrada, os utilizadores com problemas de aprendizagem conseguirão entendê-los com maior facilidade.
         - Se o utilizador tem problemas motores que dificultem o uso do rato, as alternativas com o teclado ajudam na navegação.
@@ -163,7 +163,7 @@ pt:
               description_column: Diminui o tamanho do texto
       compatibility:
         title: Compatibilidade com padrões e design visual
-        description: 'Todas as páginas desta plataforma estão de acordo com <strong>Diretrizes de Acessibilidade</strong> ou com os Princípios Gerais de Design Acessível estabelecidos pelo grupo de trabalho <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> pertencentes a W3C.'
+        description: 'Todas as páginas desta plataforma estão de acordo com <strong>Diretrizes de Acessibilidade</strong> ou com os Princípios Gerais de Design Acessível estabelecidos pelo grupo de trabalho <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> pertencentes ao W3C.'
     titles:
       help: "O que é %{org}? - Participação cidadã"
     verify:
