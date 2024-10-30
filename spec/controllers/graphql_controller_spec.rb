@@ -3,7 +3,7 @@ require "rails_helper"
 # Useful resource: http://graphql.org/learn/serving-over-http/
 
 def parser_error_raised?(response)
-  data_is_empty = response["data"].nil?
+  data_is_empty = response.parsed_body["data"].nil?
   error_is_present = (JSON.parse(response.body)["errors"].first["message"] =~ /^Parse error on/)
   data_is_empty && error_is_present
 end
