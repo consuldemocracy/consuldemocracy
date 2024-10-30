@@ -1,1 +1,10 @@
 pt:
+  images:
+    remove_image: Remover imagem
+    form:
+      delete_button: Eliminar imagem
+      note: "Pode carregar uma imagem dos seguintes tipos: %{accepted_content_types}, até %{max_file_size} MB."
+    actions:
+      destroy:
+        notice: Imagem eliminada com sucesso.
+        alert: Não é possível eliminar a imagem.
