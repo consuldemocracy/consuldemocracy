@@ -5,22 +5,22 @@ pt:
         submit: Reenviar instruções
         title: Reenviar instruções de confirmação
       show:
-        instructions: Vamos confirmar a conta com o E-mail %{email}
+        instructions: Vamos confirmar a conta com o e-mail %{email}
         new_password_confirmation_label: Repita a palavra-passe de acesso
         new_password_label: Nova palavra-passe de acesso
-        please_set_password: Por favor, escolha a sua nova palavra-passe (isso permitirá que se autentique com o E-mail acima)
+        please_set_password: Por favor, escolha a sua nova palavra-passe (isso permitirá que se autentique com o e-mail acima)
         submit: Confirmar
         title: Confirmar a minha conta
     mailer:
       confirmation_instructions:
         confirm_link: Confirmar a minha conta
-        text: "Pode confirmar a sua conta de E-mail no seguinte link:"
+        text: "Pode confirmar a sua conta de e-mail no seguinte link:"
         title: Bem-vindo
         welcome: Bem-vindo
       reset_password_instructions:
         change_link: Alterar a minha palavra-passe
         hello: Olá
-        ignore_text: Se não pediu uma mudança de palavra-passe, pode ignorar este E-mail.
+        ignore_text: Se não pediu uma mudança de palavra-passe, pode ignorar este e-mail.
         info_text: A sua palavra-passe não será alterada a menos que aceda ao link e a edite.
         text: "Recebemos um pedido para alterar a sua palavra-passe. Pode fazer isso no seguinte link:"
         title: Altere a sua palavra-passe
@@ -45,7 +45,7 @@ pt:
         success:
           back_to_index: Eu entendo; voltar à página principal
           instructions_1: "<strong>Entraremos em contacto em breve</strong> para confirmar que realmente representa este coletivo."
-          instructions_2: Enquanto o seu E-mail <strong>é revisto</strong>, enviamos um link <strong>para confirmar a sua conta</strong>.
+          instructions_2: Enquanto o seu e-mail <strong>é revisto</strong>, enviamos um link <strong>para confirmar a sua conta</strong>.
           instructions_3: Uma vez confirmado, pode começar a participar como um coletivo não verificado.
           thank_you: Obrigado por registar o seu coletivo na plataforma. Ele está ainda <strong>pendente de verificação</strong>.
           title: Registo de organização / coletivo
@@ -69,9 +69,9 @@ pt:
         new_confirmation: Ainda não recebeu as instruções para ativar a sua conta?
         new_password: Esqueceu a palavra-passe?
         new_unlock: Ainda não recebeu as instruções de desbloqueio?
-        signin_with_provider: Autentique-se com %{provider}
+        signin_with_provider: Inicie sessão com %{provider}
         signup: Não tem uma conta? %{signup_link}
-        signup_link: Inscrever
+        signup_link: Inscrever-se
     unlocks:
       new:
         email_label: E-mail
@@ -109,7 +109,7 @@ pt:
           username_note: Nome que aparece junto às suas publicações
         success:
           back_to_index: Eu entendo; voltar à página principal
-          instructions_1: Por favor <b>verifique o seu E-mail</b>. Enviamos um <b>link para confirmar a sua conta</b>.
+          instructions_1: Por favor <b>verifique o seu e-mail</b>. Enviamos um <b>link para confirmar a sua conta</b>.
           instructions_2: Após confirmar, pode começar a participar.
-          thank_you: Obrigado por se registar na plataforma. Agora é preciso <b>confirmar o seu E-mail</b>.
-          title: Confirme o seu E-mail
+          thank_you: Obrigado por se registar na plataforma. Agora é preciso <b>confirmar o seu e-mail</b>.
+          title: Confirme o seu e-mail
