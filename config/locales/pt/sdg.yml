@@ -27,7 +27,7 @@ pt:
             short_title: "Mobilizar Recursos para Implementar Políticas para Acabar com a pobreza"
           target_1_B:
             long_title: "Criar enquadramentos políticos sólidos ao nível nacional, regional e internacional, com base em estratégias de desenvolvimento em prol dos mais pobres e sensíveis às questão da igualdade de género, para apoiar a aceleração do investimento em ações de erradicação da pobreza."
-            short_title: "Criar  Quadros Políticos em Prol dos Mais Pobres e Sensíveis à Igualdade de Género"
+            short_title: "Criar Quadros Políticos em Prol dos Mais Pobres e Sensíveis à Igualdade de Género"
       goal_2:
         title: "Erradicar a fome"
         title_in_two_lines: "Erradicar\na fome"
@@ -42,7 +42,7 @@ pt:
             short_title: "Acabar com Todas as Formas de Malnutrição"
           target_2_3:
             long_title: "Até 2030, duplicar a produtividade agrícola e o rendimento dos pequenos produtores de alimentos, particularmente das mulheres, povos indígenas, agricultores de subsistência, pastores e pescadores, nomeadamente através de garantia de acesso igualitário à terra e a outros recursos produtivos tais como conhecimento, serviços financeiros, mercados e oportunidades de valor acrescentado e de emprego não agrícola."
-            short_title: "Duplicar a Produtividade e Rendimento dos Pequenos Produtores de Alimentos,"
+            short_title: "Duplicar a Produtividade e Rendimento dos Pequenos Produtores de Alimentos"
           target_2_4:
             long_title: "Até 2030, garantir sistemas sustentáveis de produção de alimentos e implementar práticas agrícolas resilientes, que aumentem a produtividade e a produção, que ajudem a manter os ecossistemas, que fortaleçam a capacidade de adaptação às alterações climáticas, às condições meteorológicas extremas, secas, inundações e outros desastres, e que melhorem progressivamente a qualidade da terra e do solo."
             short_title: "Práticas Agrícolas Sustentáveis e Resilientes"
@@ -72,12 +72,12 @@ pt:
             short_title: "Acabar com as Mortes Evitáveis de Menores de 5 Anos"
           target_3_3:
             long_title: "Até 2030, acabar com as epidemias de SIDA, tuberculose, malária e doenças tropicais negligenciadas, e combater a hepatite, doenças transmitidas pela água e outras doenças transmissíveis."
-            short_title: "Combater as  Doenças Transmissíveis"
+            short_title: "Combater as Doenças Transmissíveis"
           target_3_4:
             long_title: "Até 2030, reduzir num terço a mortalidade prematura por doenças não transmissíveis via prevenção e tratamento, e promover a saúde mental e o bem-estar."
             short_title: "Reduzir Mortalidade e Doenças Não Transmissíveis e Promover a Saúde Mental"
           target_3_5:
-            long_title: "Reforçar a prevenção e o tratamento do abuso de substâncias, incluindo o abuso de drogas e o uso nocivo do álcool"
+            long_title: "Reforçar a prevenção e o tratamento do abuso de substâncias, incluindo o abuso de drogas e o uso nocivo do álcool."
             short_title: "Prevenir e Tratar o Abuso de Substâncias"
           target_3_6:
             long_title: "Até 2020, reduzir para metade, a nível global, o número de mortos e feridos devido a acidentes rodoviários."
@@ -114,13 +114,13 @@ pt:
             short_title: "Ensino Primário e Secundário gratuito"
           target_4_2:
             long_title: "Até 2030, garantir que todos as meninas e meninos tenham acesso a um desenvolvimento de qualidade na primeira infância, bem como cuidados e educação pré-escolar, de modo a que estejam preparados para o ensino primário."
-            short_title: "Igualdade de Acesso  a Educação Pré-Escolar de Qualidade "
+            short_title: "Igualdade de Acesso a Educação Pré-Escolar de Qualidade"
           target_4_3:
             long_title: "Até 2030, assegurar a igualdade de acesso para todos os homens e mulheres à educação técnica, profissional e terciária, incluindo a universidade, com qualidade e a preços acessíveis."
             short_title: "Igualdade de Acesso a Educação Técnica, Profissional e Terciária a preços acessíveis"
           target_4_4:
             long_title: "Até 2030, aumentar substancialmente o número de jovens e adultos que tenham habilitações relevantes, inclusive competências técnicas e profissionais, para emprego, trabalho decente e empreendedorismo."
-            short_title: "Aumentar o Número de Pessoas com Habilitações Relevantes  para o Sucesso Financeiro"
+            short_title: "Aumentar o Número de Pessoas com Habilitações Relevantes para o Sucesso Financeiro"
           target_4_5:
             long_title: "Até 2030, eliminar as disparidades de género na educação e garantir a igualdade de acesso a todos os níveis de educação e formação profissional para os mais vulneráveis, incluindo as pessoas com deficiência, população autóctone e crianças em situação de vulnerabilidade."
             short_title: "Eliminar Todas as Discriminações na Educação"
@@ -168,13 +168,13 @@ pt:
             short_title: "Direitos Iguais aos Recursos Económicos, Acesso à Propriedade e Serviços Financeiros"
           target_5_B:
             long_title: "Aumentar o uso de tecnologias de base, em particular as tecnologias de informação e comunicação, para promover a capacitação das mulheres."
-            short_title: "Promover a Capacitação das Mulheres Através das Tecnologias "
+            short_title: "Promover a Capacitação das Mulheres Através das Tecnologias"
           target_5_C:
             long_title: "Adotar e fortalecer políticas sólidas e legislação aplicável para a promoção da igualdade de género e a capacitação de todas as mulheres e meninas, a todos os níveis."
             short_title: "Adotar e Fortalecer Políticas e Legislação Aplicável para a Igualdade de Género"
       goal_6:
-        title: "Água potável e saneamento "
-        title_in_two_lines: "Água potável\ne saneamento "
+        title: "Água potável e saneamento"
+        title_in_two_lines: "Água potável\ne saneamento"
         description: "Garantir a disponibilidade e a gestão sustentável da água potável e do saneamento para todos."
         long_description: 'Alcançar o acesso universal à água potável segura e acessível para todos. Alcançar o acesso a saneamento e higiene adequados para todos. Melhorar a qualidade da água reduzindo a poluição, eliminando o despejo de produtos químicos e materiais perigosos.'
         targets:
@@ -219,7 +219,7 @@ pt:
             short_title: "Duplicar a Melhoria da Eficiência Energética"
           target_7_A:
             long_title: "Até 2030, reforçar a cooperação internacional para facilitar o acesso às tecnologias e investigação sobre energias limpas, incluindo energias renováveis, eficiência energética e tecnologias de combustíveis fósseis avançadas e mais limpas, e promover o investimento em infraestrutura de energia e em tecnologias de energia limpa."
-            short_title: "Promover o Acesso às Tecnologias, Investigação e Investimento em Energia Limpa"
+            short_title: "Promover o Acesso às Tecnologias, Investigação e Investimento em Energia Limpa "
           target_7_B:
             long_title: "Até 2030, expandir a infraestrutura e modernizar a tecnologia para o fornecimento de serviços de energia modernos e sustentáveis para todos nos países em desenvolvimento, particularmente nos países menos desenvolvidos, nos pequenos Estados insulares em desenvolvimento e nos países em desenvolvimento sem litoral, de acordo com os seus respetivos programas de apoio."
             short_title: "Expandir e Modernizar os Serviços de Energia para os Países em Desenvolvimento"
@@ -245,7 +245,7 @@ pt:
             long_title: "Até 2030, alcançar o emprego pleno e produtivo, e trabalho decente para todas as mulheres e homens, inclusive para os jovens e as pessoas com deficiência, e remuneração igual para trabalho de igual valor."
             short_title: "Emprego pleno e Trabalho Decente para todos"
           target_8_6:
-            long_title: "Até 2020, reduzir substancialmente a proporção de jovens não empregados que não estão em educação ou formação"
+            long_title: "Até 2020, reduzir substancialmente a proporção de jovens não empregados que não estão em educação ou formação."
             short_title: "Promover o Emprego Jovem"
           target_8_7:
             long_title: "Tomar medidas imediatas e eficazes para erradicar o trabalho forçado, acabar com a escravidão moderna e o tráfico de pessoas, e assegurar a proibição e a eliminação das piores formas de trabalho infantil, incluindo recrutamento e utilização de crianças-soldado, e até 2025 acabar com o trabalho infantil em todas as suas formas."
@@ -285,7 +285,7 @@ pt:
             short_title: "Modernizar as Indústrias e Infraestruturas para Torná-las Sustentáveis"
           target_9_5:
             long_title: "Fortalecer a investigação científica, melhorar as capacidades tecnológicas de setores industriais em todos os países, particularmente os países em desenvolvimento, inclusive, até 2030, incentivar a inovação e aumentar substancialmente o número de trabalhadores na área de investigação e desenvolvimento por milhão de pessoas e a despesa pública e privada em investigação e desenvolvimento."
-            short_title: "Fortalecer a Investigação Científica e Melhorar as Capacidades Tecnológicas"
+            short_title: "Fortalecer a Investigação Científica e Melhorar as Capacidades Tecnológicas "
           target_9_A:
             long_title: "Facilitar o desenvolvimento de infraestruturas sustentáveis e resilientes nos países em desenvolvimento, através de maior apoio financeiro, tecnológico e técnico aos países africanos, aos países menos desenvolvidos, aos países em desenvolvimento sem litoral e aos pequenos Estados insulares em desenvolvimento."
             short_title: "Facilitar o Desenvolvimento de Infraestruturas Sustentáveis nos Países em Desenvolvimento"
@@ -317,7 +317,7 @@ pt:
             long_title: "Melhorar a regulamentação e monitorização dos mercados e instituições financeiras globais e fortalecer a implementação de tais regulamentações."
             short_title: "Melhorar a Regulamentação dos Mercados e Instituições Financeiras Globais"
           target_10_6:
-            long_title: "Assegurar uma representação e voz mais forte dos países em desenvolvimento em tomadas de decisão nas instituições económicas e financeiras internacionais globais, a fim de produzir instituições mais eficazes, credíveis, responsáveis e legítimas"
+            long_title: "Assegurar uma representação e voz mais forte dos países em desenvolvimento em tomadas de decisão nas instituições económicas e financeiras internacionais globais, a fim de produzir instituições mais eficazes, credíveis, responsáveis e legítimas."
             short_title: "Melhorar a Representação dos Países em Desenvolvimento nas Instituições Económicas e Financeiras"
           target_10_7:
             long_title: "Facilitar a migração e a mobilidade das pessoas de forma ordenada, segura, regular e responsável, inclusive através da implementação de políticas de migração planeadas e bem geridas."
@@ -426,7 +426,7 @@ pt:
             short_title: "Implementar a Convenção das Nações Unidas sobre Alterações Climáticas [UNFCCC, em inglês]"
           target_13_B:
             long_title: "Promover mecanismos para a criação de capacidades para o planeamento e gestão eficaz no que respeita às alterações climáticas, nos países menos desenvolvidos e pequenos Estados insulares em desenvolvimento, e que tenham um especial enfoque nas mulheres, jovens, comunidades locais e marginalizadas."
-            short_title: "Capacitar para o Planeamento e Gestão Eficaz no que Respeita às Alterações Climáticas, nos Países Menos Desenvolvidos "
+            short_title: "Capacitar para o Planeamento e Gestão Eficaz no que Respeita às Alterações Climáticas, nos Países Menos Desenvolvidos"
       goal_14:
         title: "Proteger a vida marinha"
         title_in_two_lines: "Proteger a\nvida marinha"
@@ -462,7 +462,7 @@ pt:
             short_title: "Apoiar os pescadores de pequena escala"
           target_14_C:
             long_title: "Assegurar a conservação e o uso sustentável dos oceanos e seus recursos pela implementação do direito internacional, como refletido na UNCLOS [Convenção das Nações Unidas sobre o Direito do Mar], que determina o enquadramento legal para a conservação e utilização sustentável dos oceanos e dos seus recursos, conforme registado no parágrafo 158 do “Futuro Que Queremos”."
-            short_title: "Implementar o Direito Internacional, Refletido na UNCLOS  [Convenção das Nações Unidas sobre o Direito do Mar]"
+            short_title: "Implementar o Direito Internacional, Refletido na UNCLOS [Convenção das Nações Unidas sobre o Direito do Mar]"
       goal_15:
         title: "Proteger a vida terrestre"
         title_in_two_lines: "Proteger a\nvida terrestre"
@@ -518,7 +518,7 @@ pt:
             long_title: "Acabar com o abuso, exploração, tráfico e todas as formas de violência e tortura contra as crianças."
             short_title: "Acabar com o Abuso, Exploração, Tráfico e Violência Contra as Crianças"
           target_16_3:
-            long_title: "Promover o Estado de Direito, ao nível nacional e internacional, e garantir a igualdade de acesso à justiça para todos"
+            long_title: "Promover o Estado de Direito, ao nível nacional e internacional, e garantir a igualdade de acesso à justiça para todos."
             short_title: "Promover o Estado de Direito, e Garantir Igualdade de Acesso à Justiça"
           target_16_4:
             long_title: "Até 2030, reduzir significativamente os fluxos ilegais financeiros e de armas, reforçar a recuperação e devolução de recursos roubados e combater todas as formas de crime organizado."
@@ -550,12 +550,12 @@ pt:
       goal_17:
         title: "Parcerias para a implementação dos objetivos"
         title_in_two_lines: "Parcerias para a \nimplementação dos objetivos"
-        description: "Reforçar os meios de implementação e revitalizar a Parceria Global para o Desenvolvimento Sustentável"
+        description: "Reforçar os meios de implementação e revitalizar a Parceria Global para o Desenvolvimento Sustentável."
         long_description: 'Revitalizar a parceria global para o desenvolvimento sustentável. Apoiar a criação de fortes parcerias ODS para atingir as metas ambiciosas da Agenda 2030. Reunir os governos nacionais, a comunidade internacional, a sociedade civil, o setor privado e outros atores.'
         targets:
           target_17_1:
             long_title: "Fortalecer a mobilização de recursos internos, inclusive através do apoio internacional aos países em desenvolvimento, para melhorar a capacidade nacional de cobrança de impostos e outras fontes de receita."
-            short_title: "Mobilizar Recursos para Melhorar Cobrança de Impostos e outras Fontes de Receita"
+            short_title: "Mobilizar Recursos para Melhorar Cobrança de Impostos e outras Fontes de Receita "
           target_17_2:
             long_title: "Os países desenvolvidos devem implementar de forma plena os seus compromissos em matéria de ajuda pública ao desenvolvimento (APD), incluindo o compromisso de muitos países desenvolvidos de atingir a meta de 0,7% da APD/RNB para os países em desenvolvimento e de 0,15 a 0,20% da APD/RNB para os países menos desenvolvidos; os prestadores de APD são incentivados a considerar estabelecer uma meta para fornecer pelo menos 0,20% da APD/RNB aos países menos desenvolvidos."
             short_title: "Implementar Todos os Compromissos de Ajuda Pública"
@@ -579,7 +579,7 @@ pt:
             short_title: "Capacitação em Ciência, Tecnologia e Inovação para os Países Menos Desenvolvidos"
           target_17_9:
             long_title: "Reforçar o apoio internacional para a implementação eficaz e orientada da capacitação em países em desenvolvimento, a fim de apoiar os planos nacionais para implementar todos os objetivos de desenvolvimento sustentável, inclusive através da cooperação Norte-Sul, Sul-Sul e triangular."
-            short_title: "Apoiar internacionalmente a Implementação dos ODS nos Países em Desenvolvimento"
+            short_title: "Apoiar internacionalmente a Implementação dos ODS nos Países em Desenvolvimento "
           target_17_10:
             long_title: "Promover um sistema multilateral de comércio universal, baseado em regras, aberto, não discriminatório e equitativo no âmbito da Organização Mundial do Comércio (OMC), inclusive através da conclusão das negociações no âmbito da Agenda de Desenvolvimento de Doha."
             short_title: "Promover um Sistema Multilateral de Comércio Universal, no Âmbito da Organização Mundial do Comércio (OMC)"
@@ -611,8 +611,32 @@ pt:
             long_title: "Até 2030, partir de iniciativas existentes para desenvolver medidas do progresso do desenvolvimento sustentável que complementem o Produto Interno Bruto (PIB) e apoiem a capacitação estatística nos países em desenvolvimento."
             short_title: "Desenvolver Medidas do Progresso do Desenvolvimento Sustentável"
       help:
+        title: "Objetivos de Desenvolvimento Sustentável - Ajuda"
         description: "Pode alinhar as suas contribuições para a comunidade (debates, propostas cidadãs e projetos de investimento) com a Agenda dos Objetivos de Desenvolvimento Sustentável 2030, o que nos permitirá ter uma visão geral da nossa contribuição para cada um dos Objetivos de Desenvolvimento Sustentável. Abaixo pode conhecer todos os objetivos, os seus alvos e metas localizadas."
+      show:
+        read_more: "Ler mais sobre %{goal}"
+        read_less: "Ler menos sobre %{goal}"
+        targets:
+          no_local_targets: Este objetivo não tem metas locais
+      title: "Objetivos de Desenvolvimento Sustentável"
       filter:
         heading: "Filtros por ODS"
+        link: "Ver todos os %{resources} relacionados com a meta %{code}"
+        more:
+          one: "Mais um objetivo"
+          other: "mais %{count} objetivos"
     related_list_selector:
+      goal_identifier: "ODS%{code}"
+      goal_list: "Pode escolher um ou vários ODS alinhados com o seu %{record}"
+      help:
+        title: "Que ODS e metas estão alinhados com o meu %{record}?"
+        text: "Página de ajuda ODS"
+      hint: Pode introduzir o código de um objetivo/meta específico ou um texto para o encontrar. Para mais informações visite %{link}.
       remove_tag: "Remover"
+      title: "Objetivos de Desenvolvimento Sustentável e Metas"
+    targets:
+      filter:
+        link: "Ver todos os %{resources} relacionados com o destino %{code}"
+        more:
+          one: "Mais uma meta"
+          other: "mais %{count} metas"
