@@ -1,1 +1,6 @@
 pt:
+  milestones:
+    index:
+      no_milestones: Não tem etapa definidas
+    show:
+      status_changed: Estado alterado para
