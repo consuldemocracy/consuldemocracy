@@ -18,16 +18,65 @@ pt:
           reseted: Palavra-passe redefinida com sucesso
           random: Gerar palavra-passe aleatória
           save: Gravar palavra-passe
+          print: Imprimir palavra-passe
           print_help: Poderá imprimir a palavra-passe quando for gravada.
+    account_info:
+      change_user: Alterar utilizador
+      document_number_label: "Número do documento:"
+      document_type_label: "Tipo de documento:"
+      email_label: "E-mail:"
+      identified_label: "Identificado como:"
+      username_label: "Nome de utilizador:"
+    check: Verificar o documento
+    dashboard:
+      index:
+        title: Gestão
+        info: Aqui pode gerir os utilizadores através de todas as ações listadas no menu esquerdo.
     document_verifications:
+      already_verified: Esta conta de utilizador já foi verificada.
+      has_no_account: Para criar uma conta, aceda a %{link} e clique em <b>"Registar"</b> na parte superior esquerda do ecrã.
+      link: CONSUL DEMOCRACY
+      in_census_has_following_permissions: "Este utilizador pode participar no site com as seguintes permissões:"
+      not_in_census: Este documento não está registado.
+      not_in_census_info: "Cidadãos que não estão no censo podem participar na plataforma com as seguintes permissões:"
+      please_check_account_data: Por favor, verifique se as informações da conta acima estão corretas.
+      title: Gestão de utilizadores
       under_age: "Não tem a idade exigida para verificar a sua conta."
       verify: Verificar
+    date_of_birth: Data de nascimento
     email_verifications:
+      already_verified: Esta conta de utilizador já foi verificada.
+      choose_options: "Por favor, escolha uma das seguintes opções:"
+      document_found_in_census: Este documento foi encontrado no censo, mas não há nenhuma conta de utilizador associada a ele.
+      document_mismatch: "Este e-mail corresponde a um utilizador que já tem um ID associado:%{document_number}(%{document_type})"
       email_sent_instructions: Para verificar completamente este utilizador, é necessário que o utilizador clique num link que enviamos para o endereço de e-mail acima. Este passo é necessário para confirmar que o endereço lhe pertence.
+      if_existing_account: Se a pessoa já possui uma conta de utilizador criada na plataforma,
+      if_no_existing_account: Se a pessoa ainda não criou uma conta
+      introduce_email: "Por favor, introduza o e-mail usado na conta:"
+      send_email: Enviar e-mail de verificação
     menu:
+      create_proposal: Criar proposta
+      print_proposals: Imprimir propostas
+      support_proposals: Apoiar propostas
       create_budget_investment: Criar investimento orçamental
       print_budget_investments: Imprimir investimentos orçamentais
       support_budget_investments: Apoiar investimentos orçamentais
+      users: Gestão de utilizadores
+      user_invites: Enviar convites
+      select_user: Selecione utilizador
+    print:
+      proposals_info: Crie a sua proposta em http://url.consul
+      proposals_title: "Propostas:"
+      budget_investments_info: Participe em http://url.consul
+    print_info: Imprimir esta informação
+    proposals:
+      alert:
+        unverified_user: Utilizador não está verificado
+      create_proposal: Criar proposta
+      print:
+        print_button: Imprimir
+      index:
+        title: Apoiar propostas
     budgets:
       create_new_investment: Criar investimento orçamental
       print_investments: Imprimir investimentos orçamentais
