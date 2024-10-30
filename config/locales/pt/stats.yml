@@ -1,1 +1,13 @@
 pt:
+  stats:
+    budgets:
+      total_selected_investments: "Projetos em fase final de votação"
+      by_phase: "Participantes por fase"
+      by_heading: "Participantes por fase e rubrica"
+      heading: "Rubrica"
+      participants_support_phase: "Fase de apoio dos participantes"
+      participants_vote_phase: "Fase de votação dos participantes"
+      percent_heading_census: "% Censo de rubricas"
+      heading_disclaimer: "*** Os dados das rubricas referem-se à rubrica onde o utilizador votou, não necessariamente onde a pessoa se registou."
+    polls:
+      booth_percentage: "%{percentage} Urnas"
