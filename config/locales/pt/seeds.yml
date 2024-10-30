@@ -1,1 +1,11 @@
 pt:
+  seeds:
+    cards:
+      budget:
+        description: "Os orçamentos participativos permitem aos cidadãos propor e decidir diretamente como gastar parte do orçamento, com um acompanhamento e avaliação rigorosa das propostas por parte da instituição. Máxima eficácia e controlo com satisfação para todos."
+      proposal:
+        title: "Como funcionam as propostas de cidadãos?"
+        description: "Um espaço para que todos criem uma proposta de cidadão e procurem apoios. Serão votadas as propostas que obtiverem apoios suficientes e assim, em conjunto, poderemos decidir as questões que nos interessam."
+        label: "Propostas de cidadãos"
+    polls:
+      current_poll_geozone_restricted: "Votação atual restrita por zona geográfica"
