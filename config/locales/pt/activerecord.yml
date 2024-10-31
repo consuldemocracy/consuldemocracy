@@ -228,8 +228,8 @@ pt:
         name: "Nome do grupo"
       budget/heading:
         allow_custom_content: "Permitir bloqueio de conteúdos"
-        latitude: "Latitude (optional)"
-        longitude: "Longitude (optional)"
+        latitude: "Latitude (opcional)"
+        longitude: "Longitude (opcional)"
         name: "Nome da rubrica"
         price: "Montante"
         population: "População (opcional)"
@@ -384,9 +384,9 @@ pt:
       tag:
         name: "Insira o nome do tópico"
       tenant:
-        domain: "Dominio"
-        schema: "Dominio / Subdominio"
-        subdomain: "Subdominio"
+        domain: "Domínio"
+        schema: "Domínio / Subdomínio"
+        subdomain: "Subdomínio"
         url: "URL"
       topic:
         title: "Título"
@@ -471,7 +471,7 @@ pt:
       newsletter:
         segment_recipient: Destinatários
         subject: Assunto
-        from: "Endereço de E-mail que aparecerá como remetente da newsletter"
+        from: "Endereço de e-mail que aparecerá como remetente do boletim informativo"
         body: Conteúdo do e-mail
       admin_notification:
         segment_recipient: Destinatários
