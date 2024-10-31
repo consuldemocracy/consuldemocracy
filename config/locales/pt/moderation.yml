@@ -105,7 +105,7 @@ pt:
         confirm_block: "Tem a certeza? Isto ocultará o utilizador \"%{name}\" e todos os seus conteúdos."
         confirm_hide: "Tem a certeza? Isto ocultará o utilizador \"%{name}\" sem ocultar os seus conteúdos."
         hide: Ocultar
-        search_placeholder: E-mail ou nome de utilizador
+        search_placeholder: e-mail ou nome de utilizador
         title: Bloquear utilizadores
       notice_block: O utilizador foi bloqueado. Todos os seus conteúdos foram ocultados.
       notice_hide: O utilizador foi ocultado. Os seus conteúdos continuam disponíveis.
