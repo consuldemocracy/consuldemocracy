@@ -19,7 +19,7 @@ pt:
         unconfirmed_code: Ainda não inseriu o código de confirmação
       create:
         flash:
-          success: Obrigado por solicitar o seu <b>código de máxima segurança (só válido para as votações finais)</b>. Dentro de alguns dias iremos enviá-lo para o endereço que consta nos datos que temos registados. Por favor lembre-se que, se preferir pode recolher o seu código num Gabinete de Apoio ao Cidadão.
+          success: Obrigado por solicitar o seu <b>código de máxima segurança (só válido para as votações finais)</b>. Dentro de alguns dias, iremos enviá-lo para o endereço que consta nos dados que temos registados. Por favor lembre-se que, se preferir, pode recolher o seu código num Gabinete de Apoio ao Cidadão.
       edit:
         see_all: Ver propostas
         title: Carta solicitada
@@ -31,7 +31,7 @@ pt:
         office: Faça a verificação num Gabinete de Apoio ao Cidadão
         send_letter: Envie-me uma carta com o código
         title: Parabéns!
-        user_permission_info: Com sua conta, pode...
+        user_permission_info: Com a sua conta, pode...
       update:
         flash:
           success: Código correto. A sua conta está verificada
