@@ -1,6 +1,6 @@
 pt:
   mailers:
-    title: "Governo  Aberto"
+    title: "Governo Aberto"
     no_reply: "Esta mensagem foi enviada de um endereço de e-mail que não aceita respostas."
     already_confirmed:
       info: "Recebemos um pedido para lhe enviar instruções para confirmar a sua conta. No entanto, a sua conta já está confirmada, não é necessário fazê-lo novamente."
@@ -21,7 +21,7 @@ pt:
       subject: Confirme o seu e-mail
       thanks: Muito Obrigado.
       title: "Confirme o seu e-mail"
-      text: "Confirme a sua conta usando o seguinte link"
+      text: "Confirme a sua conta usando o seguinte link."
     reply:
       hi: Olá
       new_reply_by: Há uma nova resposta de <strong>%{commenter}</strong> ao seu comentário sobre
@@ -32,12 +32,12 @@ pt:
       title: "Notificações de propostas em %{org_name}"
       share: Compartilhar proposta
       comment: Comentar proposta
-      unsubscribe_text: "Se não quiser receber notificações de propostas, vá a  %{notifications} e desmarque a opção 'Receber resumo de notificações de propostas'."
+      unsubscribe_text: "Se não quiser receber notificações de propostas, vá a %{notifications} e desmarque a opção 'Receber resumo de notificações de propostas'."
       unfollow: "Vá a esta proposta e deixe de segui-la para parar de receber notificações."
     direct_message_for_receiver:
       subject: "Recebeu uma nova mensagem privada"
       reply: Responder a %{sender}
-      unsubscribe_text: "Se não quiser receber mensagens privadas, vá a %{notifications} e desmarque a opção 'Receber e-mails  com mensagens privadas'."
+      unsubscribe_text: "Se não quiser receber mensagens privadas, vá a %{notifications} e desmarque a opção 'Receber e-mails com mensagens privadas'."
     direct_message_for_sender:
       subject: "Enviou uma nova mensagem privada"
       title: "Enviou uma nova mensagem privada"
@@ -89,12 +89,12 @@ pt:
     machine_learning_error:
       link: "Visitar o painel de Machine Learning"
       subject: "Machine learning - Ocorreu um erro"
-      text: "Ocorreu um erro executando o script de Machine Learning"
+      text: "Ocorreu um erro executando o script de Machine Learning."
       title: "Script Machine Learning"
     machine_learning_success:
       link: "Visitar o painel de Machine Learning"
       subject: "Machine learning - Conteúdo gerado corretamente"
-      text: "O conteúdo foi gerado corretamente"
+      text: "O conteúdo foi gerado corretamente."
       title: "Script Machine Learning"
     new_actions_notification_on_create:
       subject: "O rascunho da sua proposta foi criado"
@@ -106,7 +106,7 @@ pt:
       text_4: "Tem uma ferramenta que será a sua melhor aliada: o painel de Propostas de cidadãos."
       list_1: "Aceda diariamente o painel da sua proposta para aproveitar os nossos recursos e dicas."
       list_2: "Estas dicas, ações e recursos dar-lhe-ão ideias e também soluções práticas para obter mais apoio e uma comunidade mais ampla. Não se esqueça deles!"
-      list_3: "À medida que conseguir mais apoios, desbloqueará novos e melhores recursos.De momento, tem disponível um modelo de mensagem para enviar E-mails em massa a todos os seus contatos, além de um poster para imprimir, entre outras funcionalidades e recompensas, que vai descobrir. Continue a angariar apoios e nós não vamos parar de recompensar e ajudar!"
+      list_3: "À medida que conseguir mais apoios, desbloqueará novos e melhores recursos.De momento, tem disponível um modelo de mensagem para enviar E-mails em massa a todos os seus contatos, além de um poster para imprimir, entre outras funcionalidades e recompensas, que vai descobrir. Continue a angariar apoios e nós não vamos parar de recompensar e ajudar! "
       list_4: "Tem %{max_month} meses a partir da publicação da proposta para obter %{max_votes} apoios e para que a sua proposta se possa tornar realidade. Mas os primeiros dias são os mais importantes. Prepare-se para este desafio!"
       text_5: "E para começar com motivação total,"
       text_6: "aqui há vários recursos e toda uma lista de dicas que chegarão diariamente para preparar a divulgação!"
