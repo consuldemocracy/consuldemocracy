@@ -111,7 +111,7 @@ pt:
           verified_only: "Para criar um novo investimento orçamental %{verify}."
           create: "Criar um investimento orçamental"
           not_logged_in: "Para criar um novo investimento orçamental, deve %{sign_in} ou %{sign_up}."
-        filter: "Projetos filtrados  por"
+        filter: "Projetos filtrados por"
         filters:
           not_unfeasible: "Ativos"
           selected: "Ativos"
