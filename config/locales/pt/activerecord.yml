@@ -160,7 +160,7 @@ pt:
         description_valuating: "Descrição durante a fase de Avaliação"
         description_balloting: "Descrição durante a fase de Votação"
         description_reviewing_ballots: "Descrição durante a fase de Revisão dos Boletins de Voto"
-        description_finished: "Descrição quando o orçamento for concluído."
+        description_finished: "Descrição quando o orçamento for concluído"
         phase: "Fase ativa"
         currency_symbol: "Moeda"
         voting_style: "Estilo final de votação"
@@ -172,7 +172,7 @@ pt:
         main_link_url: "O link aponta para (adicionar link)"
         name: "Nome"
       budget/investment:
-        heading_id: "Rubrica "
+        heading_id: "Rubrica"
         title: "Título"
         description: "Descrição"
         external_url: "Link para documentação adicional"
@@ -232,7 +232,7 @@ pt:
         longitude: "Longitude (optional)"
         name: "Nome da rubrica"
         price: "Montante"
-        population: "População"
+        population: "População (opcional)"
         max_ballot_lines: "Votos permitidos"
       budget/heading/translation:
         name: "Nome da rubrica"
@@ -245,7 +245,7 @@ pt:
         description: "Descrição"
         summary: "Resumo"
         main_link_text: "Texto no link"
-        main_link_url: "O link aponta para  (adicionar link)"
+        main_link_url: "O link aponta para (adicionar um link)"
       comment:
         body: "Comentário"
         user: "Utilizador"
@@ -284,7 +284,7 @@ pt:
         email_on_comment: "Notificar-me por e-mail quando alguém comentar as minhas propostas ou debates"
         email_on_comment_reply: "Notificar-me por e-mail quando alguém responder aos meus comentários"
         email_on_direct_message: "Receber e-mails sobre mensagens diretas"
-        newsletter: "Receber informações relevantes por e-mail "
+        newsletter: "Receber informações relevantes por e-mail"
         official_position: "Cargo público"
         official_position_badge: "Mostrar etiqueta da posição oficial"
         official_level: "Nível do cargo"
@@ -543,7 +543,7 @@ pt:
         debate:
           attributes:
             tag_list:
-              less_than_or_equal_to: "O número de etiquetas deve ser menor ou igual a %{count}"
+              less_than_or_equal_to: "o número de etiquetas deve ser menor ou igual a %{count}"
         direct_message:
           attributes:
             max_per_day:
