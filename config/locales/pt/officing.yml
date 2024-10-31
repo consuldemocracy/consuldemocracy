@@ -13,7 +13,7 @@ pt:
     polls:
       final:
         title: Votações prontas para recontagem final
-        no_polls: Não está a oficializar recontagens finais em nenhuma votação ativa
+        no_polls: Não oficializa recontagens finais em nenhuma votação ativa
         select_poll: Selecionar votação
         add_results: Adicionar resultados
     poll_budgets:
