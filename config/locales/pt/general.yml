@@ -32,15 +32,15 @@ pt:
       deleted: Este comentário foi eliminado
       moderator: Moderador
       responses:
-        zero: Sem respostas
+        zero: Nenhuma resposta
         one: 1 resposta
         other: "%{count} respostas"
       responses_show:
-        zero: Sem respostas
+        zero: Nenhuma resposta
         one: "1 resposta (mostrar)"
         other: "%{count} respostas (mostrar)"
       responses_collapse:
-        zero: Sem respostas
+        zero: Nenhuma resposta
         one: "1 resposta (colapsar)"
         other: "%{count} respostas (colapsar)"
       user_deleted: Utilizador apagado
@@ -149,7 +149,7 @@ pt:
     direct_message: mensagem privada
     error: erro
     errors: erros
-    not_saved: "impediu que este %{resource} fosse salvo. <br>Verifique os campos marcados para saber como corrigi-los:"
+    not_saved: "impediu que este %{resource} fosse salvo. <br> Verifique os campos marcados para saber como corrigi-los:"
     policy: Política de privacidade
     banner: faixa de anúncio
     proposal: Proposta
@@ -189,7 +189,7 @@ pt:
         preview_proposal: Pré-visualizar proposta
         current_goal: Objetivo atual
         supports:
-          zero: Sem apoios
+          zero: Nenhum apoio
           one: 1 Apoio
           other: "Apoios"
     footer:
@@ -387,16 +387,16 @@ pt:
         guide: "Agora pode partilhá-la para que as pessoas possam começar a apoiar."
         edit: "Antes de ser publicada, pode alterar o texto a seu gosto."
         view_proposal: Agora não, ir para a minha proposta
-      already_supported: Você já apoiou esta proposta. Partilhe-a!
+      already_supported: Já apoiou esta proposta. Partilhe-a!
       support: Apoiar
       support_label: "Apoiar %{proposal}"
       support_title: Apoiar esta proposta
       supports:
-        zero: Sem apoios
+        zero: Nenhum apoio
         one: 1 apoio
         other: "%{count} apoios"
       votes:
-        zero: Sem votos
+        zero: Nenhum voto
         one: 1 voto
         other: "%{count} votos"
       supports_necessary: "%{number} apoios necessários"
@@ -549,9 +549,9 @@ pt:
         download: Descarregar
     mailing:
       index:
-        title: Pré-visualização do E-mail
+        title: Pré-visualização do e-mail
       new:
-        title: Modelo do E-mail para partilhar
+        title: Modelo do e-mail para partilhar
       mailing_options:
         send: Enviar para %{address}
         preview: Pré-visualizar
@@ -682,12 +682,12 @@ pt:
     followable:
       budget_investment:
         create:
-          notice: "Agora está a acompanhar este projeto de investimento! <br> Iremos notificá-lo sobre alterações à medida que ocorrerem para que esteja atualizado."
+          notice: "Agora está a seguir este projeto de investimento! <br> Iremos notificá-lo sobre alterações à medida que ocorrerem para que esteja atualizado."
         destroy:
           notice: "Parou de seguir este projeto de investimento! <br> Não receberá mais notificações relacionadas com este projeto."
       proposal:
         create:
-          notice: "Agora está a acompanhar esta proposta de cidadão! <br> Iremos notificá-lo sobre alterações à medida que ocorrerem para que esteja atualizado."
+          notice: "Agora está a seguir esta proposta de cidadão! <br> Iremos notificá-lo sobre alterações à medida que ocorrerem para que esteja atualizado."
         destroy:
           notice: "Parou de seguir esta proposta de cidadão! <br> Não receberá mais notificações relacionadas com esta proposta."
     print:
@@ -743,13 +743,13 @@ pt:
       remove_language: Remover idioma
       add_language: Adicionar idioma
       languages_in_use:
-        zero: "0 idiomas em uso"
+        zero: "Nenhum idioma em uso"
         one: "1 idioma em uso"
         other: "%{count} idiomas em uso"
     optional: "Campos opcionais"
     required: "Campos obrigatórios"
     comments:
-      zero: "Sem comentários"
+      zero: "Nenhum comentário"
       one: "1 comentário"
       other: "%{count} comentários"
   social:
@@ -772,7 +772,7 @@ pt:
     verify_account: "verifique a sua conta"
     direct_messages:
       new:
-        direct_messages_bloqued: "Este usuário decidiu não receber mensagens diretas"
+        direct_messages_bloqued: "Este utilizador decidiu não receber mensagens diretas"
         submit_button: Enviar mensagem
         title: Enviar mensagem privada para %{receiver}
         verified_only: Para enviar uma mensagem privada %{verify_account}
@@ -837,7 +837,7 @@ pt:
     feed:
       most_active:
         debates: "Debates mais ativos"
-        proposals: "Propostas mais activas"
+        proposals: "Propostas mais ativas"
         processes: "Processos abertos"
       see_all:
         debates: Ver todos os debates
@@ -883,7 +883,7 @@ pt:
     error: "Link inválido. Lembre-se de iniciar com %{url}."
     error_duplicate: "O conteúdo relacionado que esta a adicionar já não existe."
     error_itself: "Link inválido. Não pode relacionar um conteúdo com ele mesmo."
-    success: "Você adicionou um novo conteúdo relacionado"
+    success: "Adicionou um novo conteúdo relacionado"
     is_related: "É um conteúdo relacionado?"
     score_positive: "Sim"
     score_negative: "Não"
