@@ -12,7 +12,7 @@ pt:
     official_level_4_name_description: "Etiqueta que vai aparecer nos utilizadores de posição oficial nível 4"
     official_level_5_name: "Cargos públicos de nível 5"
     official_level_5_name_description: "Etiqueta que vai aparecer nos utilizadores de posição oficial nível 5"
-    max_ratio_anon_votes_on_debates: "Porcentagem máxima de votos anônimos por debate"
+    max_ratio_anon_votes_on_debates: "Percentagem máxima de votos anónimos por debate"
     max_ratio_anon_votes_on_debates_description: "Os votos anónimos são os feitos por utilizadores registados com uma conta não verificada"
     max_votes_for_proposal_edit: "Número de votos com que uma proposta deixa de poder ser editada"
     max_votes_for_proposal_edit_description: "A partir deste número de apoios o autor de uma Proposta já não a poderá editar"
@@ -41,7 +41,7 @@ pt:
     instagram_handle: "Instagram handle"
     instagram_handle_description: "Se preenchido vai aparecer no rodapé"
     org_name: "Nome da plataforma"
-    org_name_description: "Este nome aparecerá no assunto dos E-mails, nas páginas de ajuda..."
+    org_name_description: "Este nome aparecerá no assunto dos e-mails, nas páginas de ajuda..."
     related_content_score_threshold: "Limite de pontuação de conteúdo relacionado"
     related_content_score_threshold_description: "Conforme a classificação dos votos num conteúdo relacionado, oculta o conteúdo que os utilizadores marcam como não relacionado"
     hot_score_period_in_days: "Período (dias) usado para o filtro 'mais ativos'"
@@ -73,7 +73,7 @@ pt:
       email_short_title_description: 'Breve descrição da funcionalidade de e-mail. Permite aos utilizadores enviar um e-mail para promover a sua proposta. Pode encontrar todo o conteúdo deste e-mail em "/app/views/dashboard/mailer/forward.html.erb"'
       email_description: Descrição do e-mail
       email_description_description: Descrição detalhada da funcionalidade de e-mail
-      poster_short_title: Pôster
+      poster_short_title: Póster
       poster_short_title_description: 'Breve descrição do recurso de póster. Permite ao utilizador descarregar um póster em formato PDF para divulgar a sua proposta. Pode encontrar todo o conteúdo deste póster em "/app/views/dashboard/poster/index.pdf.erb"'
       poster_description: Descrição do póster
       poster_description_description: Descrição detalhada da funcionalidade de póster
@@ -110,7 +110,7 @@ pt:
       machine_learning_description: "Ativa a secção AI/Machine Learning para executar scripts python e enriquecer o conteúdo automaticamente."
       map: "Geolocalização de propostas e investimentos orçamentais"
       map_description: "Permite a geolocalização nas propostas e projetos de investimentos"
-      allow_images: "Permitir upload e mostrar imagens"
+      allow_images: "Permitir carregar e mostrar imagens"
       allow_images_description: "Permite aos utilizadores carregar imagens na criação de propostas e projetos de investimento a partir de Orçamentos Participativos"
       allow_attached_documents: "Permitir carregar e mostrar documentos anexados"
       allow_attached_documents_description: "Permite aos utilizadores carregar documentos na criação de propostas e projetos de investimento a partir de Orçamentos Participativos"
@@ -164,7 +164,7 @@ pt:
         name_description: "Em que caminho (path) da resposta está o Nome do utilizador?"
         surname: "Caminho (path) para Sobrenome"
         surname_description: "Em que caminho (path) da resposta está o Sobrenome do utilizador?"
-        valid: "Condição para detectar uma resposta válida"
+        valid: "Condição para detetar uma resposta válida"
         valid_description: "Que caminho de resposta deve vir informado para que a resposta seja válida e utilizador verificado"
     map:
       feature:
@@ -195,9 +195,9 @@ pt:
     uploads:
       images:
         min_width: "Largura mínima da imagem"
-        min_width_description: "Largura mínima permitida para uma imagem enviada (em pixéis)"
+        min_width_description: "Largura mínima permitida para uma imagem enviada (em pixeis)"
         min_height: "Altura mínima da imagem"
-        min_height_description: "Altura mínima permitida para uma imagem enviada (em pixéis)"
+        min_height_description: "Altura mínima permitida para uma imagem enviada (em pixeis)"
         max_size: "Tamanho máximo da imagem"
         max_size_description: "Tamanho máximo permitido para uma imagem carregada (em Megabytes/MB)"
         content_types: "Tipos de conteúdo permitidos para imagens"
@@ -209,7 +209,7 @@ pt:
           max_length_description: "Título fornecido pelo utilizador ao enviar uma imagem (utilizado como atributo HTML alternativo)"
       documents:
         max_amount: "Número máximo de documentos"
-        max_amount_description: "NúmNúmero máximo de documentos que podem ser anexados a uma proposta, investimento..."
+        max_amount_description: "Número máximo de documentos que podem ser anexados a uma proposta, investimento..."
         max_size: "Tamanho máximo do documento"
         max_size_description: "Tamanho máximo permitido para um documento carregado (em Megabytes/MB)"
         content_types: "Tipos de conteúdos permitidos para o documento"
