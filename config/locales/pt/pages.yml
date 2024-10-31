@@ -165,7 +165,7 @@ pt:
         title: Compatibilidade com padrões e design visual
         description: 'Todas as páginas desta plataforma estão de acordo com <strong>Diretrizes de Acessibilidade</strong> ou com os Princípios Gerais de Design Acessível estabelecidos pelo grupo de trabalho <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> pertencentes ao W3C.'
     titles:
-      help: "O que é %{org}? - Participação cidadã"
+      help: "O que é %{org}? - Participação de cidadãos"
     verify:
       info: "Para verificar a sua conta introduza os seus dados de acesso:"
       info_code: "Agora introduza o código recebido na carta:"
