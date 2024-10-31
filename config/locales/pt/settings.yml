@@ -186,7 +186,7 @@ pt:
       budgets: "Orçamento participativo"
       budgets_description: "Com os orçamentos participativos, os cidadãos decidem quais os projetos apresentados pelos seus vizinhos que receberão uma parte do orçamento"
       legislation: "Legislação colaborativa"
-      legislation_description: "Nos processos participativos, é oferecida aos cidadãos a oportunidade de participar na elaboração e modificação de regulamentos que afetam a sociedade e de dar a sua opinião sobre determinadas ações planeadas."
+      legislation_description: "Nos processos participativos, é oferecida aos cidadãos a oportunidade de participar na elaboração e modificação de regulamentos que afetam a sociedade e de dar a sua opinião sobre determinadas ações planeadas"
     html:
       per_page_code_head: "Código a incluir em cada página (<head>)"
       per_page_code_head_description: "Este código aparecerá dentro do rótulo <head>. Útil para inserir scripts personalizados, analytics..."
