@@ -102,7 +102,7 @@ pt:
         type_multiple: "Múltiplas rubricas"
         type_pending: "Pendente: Ainda não há rubricas"
         type_single: "Rubrica única"
-        admin_ballots: boletins de voto
+        admin_ballots: Boletins de voto
         no_budgets: "Não há orçamentos."
       create:
         notice: Novo orçamento participativo criado com sucesso!
@@ -224,7 +224,7 @@ pt:
         dates_help_text: "Apenas a título informativo"
         description_help_text: Este texto será exibido na rubrica quando a fase estiver ativa
         duration: "Duração da fase"
-        duration_description: "Estes campos só se usam a título informativo e <strong>não  implicam uma atualização automática da fase ativa.</strong> Para a atualizar, edite o orçamento e selecione a fase ativa."
+        duration_description: "Estes campos só se usam a título informativo e <strong>não implicam uma atualização automática da fase ativa.</strong> Para a atualizar, edite o orçamento e selecione a fase ativa."
         enabled_help_text: Esta fase será pública no cronograma de fases do orçamento.
         image_description: "Se for carregada uma imagem, será mostrada junto à descrição desta fase."
         main_call_to_action: "Apelo à ação (opcional)"
@@ -635,7 +635,7 @@ pt:
           supports: Apoios
         form:
           custom_categories: Categorias
-          custom_categories_description: Categorias que os utilizadores podem selecionar ao criar a proposta. Max. 160 caracteres
+          custom_categories_description: Categorias que os utilizadores podem selecionar ao criar a proposta. Max. 160 caracteres.
           custom_categories_placeholder: Insira as etiquetas que deseja usar, separadas por vírgulas (,) e entre aspas (" ")
       draft_versions:
         create:
@@ -657,7 +657,7 @@ pt:
           close_text_editor: Fechar o editor de texto
           use_markdown: Usar Markdown para formatar o texto
           hints:
-            final_version: Esta versão será publicada como Resultado Final para este processo. Não serão permitidos comentários  nesta versão.
+            final_version: Esta versão será publicada como Resultado Final para este processo. Não serão permitidos comentários nesta versão.
             status:
               draft: Pode pré-visualizar como admin, mais ninguém pode ver
               published: Visível para todos
@@ -723,7 +723,7 @@ pt:
       manager:
         add: Adicionar
       search:
-        title: "Gestores:  Procurar utilizador"
+        title: "Gestores: Procurar utilizador"
     sdg_managers:
       index:
         no_sdg_managers: Não há utilizadores.
@@ -1015,7 +1015,7 @@ pt:
         delete: Eliminar posição
         name: Nome
         email: E-mail
-        entry_name: Presidente de mesa
+        entry_name: presidente de mesa
       search:
         email_placeholder: Procurar utilizador pelo e-mail
         user_not_found: Utilizador não encontrado
@@ -1482,7 +1482,7 @@ pt:
           user_level_three: Utilizadores de nível três
           user_level_two: Utilizadores de nível dois
           users: Total de utilizadores
-          verified_users: Utilizadores  verificados
+          verified_users: Utilizadores verificados
           verified_users_who_didnt_vote_proposals: Utilizadores verificados que não votaram em propostas
           visits: Visitas
           votes: Total de votos
@@ -1656,7 +1656,7 @@ pt:
           cards_title: cartões
           create_card: Criar cartão
           no_cards: Não há cartões.
-          columns_help: "Largura do cartão em número de colunas. Em ecrãs de telemóvel é sempre (100%)."
+          columns_help: "Largura do cartão em número de colunas. Em ecrãs de telemóvel é sempre 100%."
           order_help: "Pode inserir a posição onde este cartão será mostrado."
           create:
             notice: "Cartão criado com sucesso!"
@@ -1782,7 +1782,7 @@ pt:
         description_5: "Aqui pode ver as instruções de exemplo para um servidor Ubuntu 18.04:"
       help_text: "Esta funcionalidade é experimental."
       last_execution: "Última execução"
-      no_content: "Ainda sem conteúdo gerado"
+      no_content: "Ainda sem conteúdo gerado."
       notice:
         success: "O último script foi executado com sucesso."
         error: "Ocorreu um erro. Pode ver os detalhes abaixo."
