@@ -8,7 +8,7 @@ pt:
           knapsack: "Ainda disponível <span>%{count}</span>"
           approval:
             zero: "Ainda tem <span>%{count}</span> votos disponíveis."
-            one: "Ainda tem <span>%{count}</span> voto disponíveis."
+            one: "Ainda tem <span>%{count}</span> voto disponível."
             other: "Ainda tem <span>%{count}</span> votos disponíveis."
         amount_spent:
           knapsack: "Total gasto <span>%{count}</span>"
@@ -33,7 +33,7 @@ pt:
       reasons_for_not_balloting:
         not_verified: Apenas utilizadores verificados podem votar em investimentos; %{verify_account}.
         not_selected: Projetos de investimento não selecionados não podem ser apoiados
-        not_enough_money: "Já atribuiu o orçamento disponível.<br><small>Lembre-se que pode %{change_ballot} a qualquer momento</small>\n"
+        not_enough_money: "Já atribuiu o orçamento disponível.<br><small> Lembre-se que pode %{change_ballot} a qualquer momento</small>\n"
         no_ballots_allowed: A fase de seleção está fechada
         different_heading_assigned: "Já votou numa rubrica diferente: %{heading_link}"
         not_enough_available_votes: "Já atingiu o número máximo de votos permitidos"
