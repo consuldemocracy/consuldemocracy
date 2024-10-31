@@ -6,7 +6,7 @@ pt:
     email:
       create:
         alert:
-          failure: Houve um problema com o envio de um e-mail para a sua conta.
+          failure: Houve um problema com o envio de um e-mail para a sua conta
         flash:
           success: "Enviamos um e-mail de confirmação para a sua conta: %{email}"
       show:
@@ -24,7 +24,7 @@ pt:
         see_all: Ver propostas
         title: Carta solicitada
       errors:
-        incorrect_code: Código de verificação incorreto.
+        incorrect_code: Código de verificação incorreto
       new:
         explanation: "Para participar da votação final, pode:"
         go_to_index: Ver propostas
