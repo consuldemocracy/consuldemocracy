@@ -42,7 +42,7 @@ pt:
         description: "A secção %{link} é ativada cada vez que uma proposta atinge 1% de apoio e vai para votação, ou quando a Câmara Municipal propõe uma questão para as pessoas decidirem."
         link: "votações"
         feature_1: "Para participar da votação, precisa %{link} e verificar a sua conta."
-        feature_1_link: "Registrar em %{org_name}"
+        feature_1_link: "registar em %{org_name}"
       processes:
         title: "Processos"
         description: "Na seção %{link}, os cidadãos participam da redação e modificação dos regulamentos que afetam a cidade e podem opinar sobre as políticas municipais em debates anteriores."
@@ -77,7 +77,7 @@ pt:
       description: |-
         Acessibilidade Web refere-se à possibilidade de acesso à web e seu conteúdo por todas as pessoas, independentemente de deficiências (físicas, intelectuais ou técnicas), ou dificuldades que derivem do contexto de uso (tecnológico ou ambiental).
 
-        Quando os websites são concebidos tendo em mente a acessibilidade, todos os utilizadores podem aceder ao conteúdo em igualdade de condições, por exemplo
+        Quando os websites são concebidos tendo em mente a acessibilidade, todos os utilizadores podem aceder ao conteúdo em igualdade de condições, por exemplo:
       examples:
         - Fornecendo texto alternativo às imagens, os utilizadores cegos ou com deficiência visual podem utilizar leitores especiais para aceder à informação.
         - Quando os vídeos têm legendas, os utilizadores com dificuldades auditivas podem compreendê-los totalmente.
