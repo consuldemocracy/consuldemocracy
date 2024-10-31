@@ -4,7 +4,7 @@ pt:
       create:
         notice: "%{resource_name} criado com sucesso."
         debate: "Debate criado com sucesso."
-        direct_message: "Sua mensagem foi enviada com sucesso."
+        direct_message: "A sua mensagem foi enviada com sucesso."
         poll: "Votação criada com sucesso."
         poll_booth: "Urna criada com sucesso."
         poll_question_option: "Resposta criada com sucesso"
