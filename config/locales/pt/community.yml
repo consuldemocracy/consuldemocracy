@@ -24,7 +24,7 @@ pt:
         new_topic: Criar tópico
       topic:
         edit: Editar tópico
-        destroy: Eliminar  tópico
+        destroy: Eliminar tópico
       author: Autor
       back: Regressar a %{community} %{proposal}
     topic:
