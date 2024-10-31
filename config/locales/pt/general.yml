@@ -22,7 +22,7 @@ pt:
     menu: Menu
   comments:
     actions:
-      confirm_delete: "Tem a  certeza? Esta ação eliminará este comentário. Esta ação não pode ser desfeita."
+      confirm_delete: "Tem a certeza? Esta ação eliminará este comentário. Esta ação não pode ser desfeita."
       delete: "Eliminar comentário"
     comments_closed: Os comentários estão fechados
     verified_only: Para participar %{verify_account}
@@ -58,7 +58,7 @@ pt:
       oldest: Mais antigos primeiro
       most_commented: Mais comentados
     show:
-      return_to_commentable: "Voltar a"
+      return_to_commentable: "Voltar a "
   comments_helper:
     comment_button: Publicar comentário
     comment_link: Comentário
@@ -373,7 +373,7 @@ pt:
       form:
         submit_button: Criar proposta
       more_info: Como funcionam as propostas dos cidadãos?
-      recommendation_one: Não utilize letras maiúsculas no título da proposta ou em frases inteiras.  Na Internet isso é considerado como grito. E ninguém gosta que lhe gritem.
+      recommendation_one: Não utilize letras maiúsculas no título da proposta ou em frases inteiras. Na Internet isso é considerado como grito. E ninguém gosta que lhe gritem.
       recommendation_three: Aproveite este espaço e as vozes que o preenchem. Também lhe pertence.
       recommendation_two: Qualquer proposta ou comentário que implique uma ação ilegal será removida, assim como aqueles que pretenderem perturbar os espaços de discussão, o resto é permitido.
       recommendations_title: Recomendações para a criação de uma proposta
@@ -523,7 +523,7 @@ pt:
         show_results_help: Se ativar esta opção, os resultados ficarão públicos e todos os utilizadores poderão vê-los
         delete: Eliminar inquérito
         alert_notice: Esta ação irá remover o inquérito e todas as perguntas associadas.
-        success_notice: inquérito eliminado com sucesso
+        success_notice: Inquérito eliminado com sucesso
         unable_notice: Não é possível eliminar inquéritos com respostas
       form:
         name: Título do inquérito
@@ -538,7 +538,7 @@ pt:
         title: Pré-visualização do póster
         poster_title: "Não continue a procurar,"
         poster_subtitle: "apoie-me! ;-)"
-        intro_text: "<strong>Estou a participar de %{org}</strong> com a minha própria proposta de cidadão, e só se você se juntar conseguirei obter o apoio necessário para fazer a cidade que todos queremos."
+        intro_text: "<strong>Estou a participar de %{org}</strong> com a minha própria proposta de cidadão, e só se você se juntar conseguirei obter o apoio necessário para fazer a cidade que todos queremos"
         proposal_code: "Código da proposta: %{code}"
         support: Apoie a minha proposta
         footer: "<strong>Entre em %{link} e apoie esta proposta.</strong> Quantos mais, melhor. Vamos fazer a nossa parte. Obrigado!"
@@ -579,7 +579,7 @@ pt:
       participate_button_expired: "Votação encerrada"
       no_geozone_restricted: "Toda a cidade"
       geozone_restricted: "Zona"
-      geozone_info: "Só podem participar os residentes das áreas:"
+      geozone_info: "Só podem participar os residentes das áreas: "
       already_answer: "Já participou nesta votação"
       not_logged_in: "Deve iniciar sessão ou inscrever-se para participar"
       unverified: "Tem que verificar a sua conta para participar"
@@ -631,8 +631,8 @@ pt:
       vote_answer: "Votar %{answer}"
       voted: "Votou %{answer}"
     description:
-      unique: "Pode  selecionar no máximo 1 resposta."
-      multiple: "Pode  selecionar no máximo  %{maximum} respostas."
+      unique: "Pode selecionar no máximo 1 resposta."
+      multiple: "Pode selecionar no máximo  %{maximum} respostas."
     read_more_about: "Ler mais sobre:"
   proposal_notifications:
     new:
@@ -709,8 +709,8 @@ pt:
         see_all: "Ver todos"
       proposal:
         found:
-          one: "Existe uma proposta com o termo '%{query}', pode participar nela em vez de abrir uma nova."
-          other: "Existem propostas com o termo '%{query}', pode participar nelas em vez de abrir uma nova."
+          one: "Existe uma proposta com o termo '%{query}', pode participar nela em vez de abrir uma nova"
+          other: "Existem propostas com o termo '%{query}', pode participar nelas em vez de abrir uma nova"
         message: "Está a ver %{limit} de %{count} propostas contendo o termo '%{query}'"
         see_all: "Ver todas"
     tags_cloud:
@@ -807,7 +807,7 @@ pt:
           other: "%{count} Seguindo"
       no_activity: Utilizador não possui atividade pública
       no_private_messages: "Este utilizador não aceita mensagens privadas."
-      private_activity: Este utilizador decidiu manter a lista de atividades privada
+      private_activity: Este utilizador decidiu manter a lista de atividades privada.
       send_private_message: "Enviar mensagem privada"
       delete_alert: "Tem certeza que deseja eliminar o seu projeto de investimento? Esta ação não pode ser desfeita"
     proposals:
@@ -820,12 +820,12 @@ pt:
   votes:
     agree: Eu concordo
     agree_label: "Eu concordo com %{title}"
-    anonymous: Excesso de votos anónimos para admitir voto %{verify_account}
+    anonymous: Excesso de votos anónimos para admitir voto %{verify_account}.
     disagree: Eu discordo
     disagree_label: "Eu discordo de %{title}"
     organizations: Organizações não tem permissão de voto
     supports: Apoios
-    verified_only: Apenas utilizadores verificados podem votar nas propostas;  %{verify_account}.
+    verified_only: Apenas utilizadores verificados podem votar nas propostas;%{verify_account}.
     budget_investments:
       not_verified: Apenas utilizadores verificados podem votar em projetos de investimento; %{verify_account}.
       unfeasible: Projetos de investimento inviáveis não podem ser apoiados
