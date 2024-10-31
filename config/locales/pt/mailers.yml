@@ -99,7 +99,7 @@ pt:
     new_actions_notification_on_create:
       subject: "O rascunho da sua proposta foi criado"
       hi: "Olá %{name}!"
-      introduction: "Sua proposta %{title} foi criada com sucesso."
+      introduction: "A sua proposta %{title} foi criada com sucesso."
       text_1: "Aproveite que a sua proposta ainda não foi publicada e prepare-se para contactar muita gente."
       text_2: "Quando a sua proposta estiver pronta para ser publicada, use este <a href='%{link}'>link</a>."
       text_3: "Sabemos que criar uma proposta cativante para conseguir os apoios necessários pode ser complicado. Mas não se preocupe, nós vamos ajudar!"
@@ -112,7 +112,7 @@ pt:
       text_6: "aqui há vários recursos e toda uma lista de dicas que chegarão diariamente para preparar a divulgação!"
       dashboard_button: "Vá em frente, descubra-os!"
     new_actions_notification_on_published:
-      subject: "A sua proposta já foi publicada. Continue divulgando!"
+      subject: "A sua proposta já foi publicada. Continue a divulgar!"
       hi: "Parabéns, %{name}! A sua proposta %{title} foi criada com sucesso."
       text_1: "E agora, obtenha os seus primeiros 100 apoios!"
       text_2: "Por quê 100?"
