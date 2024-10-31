@@ -126,7 +126,7 @@ pt:
         other: "%{count} propostas"
       download: "Descarregar resumo"
       top_comments:
-        zero: "Sem comentários"
+        zero: "Nenhum comentário"
         one: "%{count} comentário"
         other: "Melhores comentários"
       most_voted_comments: "Comentários mais votados"
