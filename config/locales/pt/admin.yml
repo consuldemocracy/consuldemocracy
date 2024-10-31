@@ -30,7 +30,7 @@ pt:
           with_inactive: Inativo
         preview: Pré-visualizar
       banner:
-        sections_label: Seções onde irá aparecer
+        sections_label: Secções onde irá aparecer
         sections:
           homepage: Página inicial
           debates: Debates
@@ -74,7 +74,7 @@ pt:
       actions:
         ballots: "Criar urnas"
         confirm:
-          ballots: "Tem a certeza? Esta ação só é necessária se vai utilizar urnas físicas durante a votação final. Os cidadãos vão poder votar através da web com ou sem urnas físicas."
+          ballots: "Tem a certeza? Esta ação só é necessária se vai utilizar urnas físicas durante a votação final. Os cidadãos vão poder votar através da Internet com ou sem urnas físicas."
           destroy: "Tem a certeza? Esta ação irá eliminar o orçamento e todos os grupos e rubricas associadas. Esta ação não pode ser desfeita."
         descriptions:
           ballots: "Esta ação vai permitir a gestão das urnas de votação. Use esta opção apenas se vai utilizar urnas físicas para recolher votos durante a votação final."
@@ -243,8 +243,8 @@ pt:
         placeholder: Procurar projetos
         filters:
           all: Todos
-          without_admin: Sem administrador atribuído
-          without_valuator: Sem avaliador atribuído
+          without_admin: Nenhum administrador atribuído
+          without_valuator: Nenhum avaliador atribuído
           under_valuation: Em avaliação
           valuation_finished: Avaliação terminada
           feasible: Viável
@@ -263,8 +263,8 @@ pt:
         title: Projetos de investimento
         columns: Colunas
         assigned_admin: Administrador atribuído
-        no_admin_assigned: Sem administrador atribuído
-        no_valuators_assigned: Sem avaliadores atribuídos
+        no_admin_assigned: Nenhum administrador atribuído
+        no_valuators_assigned: Nenhum avaliador atribuído
         feasibility:
           feasible: "Viável"
           unfeasible: "Inviável"
@@ -533,7 +533,7 @@ pt:
     documents:
       new:
         title: "Carregar um documento"
-        submit_button: "Upload"
+        submit_button: "Carregar"
       index:
         new_link: "Adicionar novo documento"
         no_documents: "Não há documentos."
@@ -559,7 +559,7 @@ pt:
         email: "E-mail:"
         hidden_at: "Ocultado em:"
         registered_at: "Registado em:"
-        title: Atividade do usuário (%{user})
+        title: Atividade do utilizador (%{user})
     hidden_budget_investments:
       index:
         filter: Filtro
@@ -659,7 +659,7 @@ pt:
           hints:
             final_version: Esta versão será publicada como Resultado Final para este processo. Não serão permitidos comentários nesta versão.
             status:
-              draft: Pode pré-visualizar como admin, mais ninguém pode ver
+              draft: Pode pré-visualizar como administrador, mais ninguém pode ver
               published: Visível para todos
           changelog_placeholder: Adicionar as principais alterações a partir da versão anterior
         index:
@@ -732,7 +732,7 @@ pt:
         add: Adicionar
     menu:
       activity: Atividade do moderador
-      admin: Menu de admin
+      admin: Menu de administração
       banner: Faixas de anúncio
       proposals: Propostas
       proposals_topics: Tópicos de propostas
@@ -867,7 +867,7 @@ pt:
         sent_at: Enviado em
         subject: Assunto
         segment_recipient: Destinatários
-        from: Endereço de E-mail que irá aparecer como remetente do boletim informativo
+        from: Endereço de e-mail que irá aparecer como remetente do boletim informativo
         body: Conteúdo do e-mail
         body_help_text: É assim que os utilizadores verão o e-mail.
         send_alert: Tem a certeza que quer enviar este boletim informativo para %{n} utilizadores?
@@ -897,7 +897,7 @@ pt:
         section_title: Pré-visualização da notificação
         send: Enviar notificação
         will_get_notified: (%{n} utilizadores serão notificados)
-        got_notified: (%{n} usuários foram notificados)
+        got_notified: (%{n} utilizadores foram notificados)
         sent_at: Enviado em
         title: Título
         body: Texto
@@ -971,7 +971,7 @@ pt:
         name: Nome
         email: E-mail
         description: Descrição
-        no_description: Sem descrição
+        no_description: Nenhuma descrição
         no_valuators: Não há avaliadores.
         valuator_groups: "Grupos de avaliação"
         group: "Grupo"
@@ -1068,7 +1068,7 @@ pt:
           unassigned: Não atribuído
         actions:
           assign: Atribuir urna
-          unassign: Desatribuir urna
+          unassign: Cancelar atribuição de urna
     poll_booth_assignments:
       alert:
         shifts: "Existem turnos associados a esta urna. Se remover a atribuição da urna, os turnos também serão eliminados. Continuar?"
@@ -1428,7 +1428,7 @@ pt:
         creating: Criar zona
       delete:
         success: Zona geográfica eliminada com êxito
-        error: Esta zona geográfica não pode ser eliminada, uma vez que existem elementos ligados a ela
+        error: Esta zona geográfica não pode ser eliminada porque existem elementos ligados a ela
       update:
         notice: "Zona geográfica atualizada com sucesso"
     signature_sheets:
@@ -1734,12 +1734,12 @@ pt:
       edit:
         editing: A editar registo do censo local
       update:
-        notice: Registro do censo local alterado com sucesso!
+        notice: Registo do censo local alterado com sucesso!
       destroy:
         notice: Registo do censo local removido com sucesso!
       imports:
         new:
-          title: Registros do censo local
+          title: Registos do censo local
           subtitle: Importar ficheiro CSV
         create:
           notice: Processo de importação de registos do censo local executado com sucesso!
@@ -1769,15 +1769,15 @@ pt:
         title_2: "O que faz o módulo AI / Machine Learning do CONSUL DEMOCRACY?"
         description_2: "Este módulo permite que qualquer tipo de programa de AI/Machine Learning seja implementado no CONSUL DEMOCRACY. Os programas podem processar a informação disponível no CONSUL DEMOCRACY e produzir resultados que ajudam tanto os utilizadores como os administradores a realizar uma participação de cidadãos mais eficaz e inteligente. O módulo foi desenvolvido para facilitar a implementação e execução de novos programas, mantendo o código geral do CONSUL DEMOCRACY e o código destes novos programas independentes entre si."
         title_3: "Como usar este módulo"
-        description_3: "Para utilizar pela primeira vez é necessário seguir as instruções disponíveis na documentação do CONSUL DEMOCRACY para ativar corretamente este módulo. Uma vez activado correctamente, os programas são executados a partir do separador \"Executar scripts\". Antes de o executar, podemos ver no mesmo separador uma estimativa do tempo de execução e outras informações relevantes. No final da execução, podemos ativar o conteúdo que será apresentado no CONSUL DEMOCRACY no separador “Definições”, bem como descarregar outros ficheiros gerados que nos possam ser úteis."
+        description_3: "Para utilizar pela primeira vez é necessário seguir as instruções disponíveis na documentação do CONSUL DEMOCRACY para ativar corretamente este módulo. Uma vez activado, os programas são executados a partir do separador \"Executar scripts\". Antes de o executar, podemos ver no mesmo separador uma estimativa do tempo de execução e outras informações relevantes. No final da execução, podemos ativar o conteúdo que será apresentado no CONSUL DEMOCRACY no separador “Definições”, bem como descarregar outros ficheiros gerados que nos possam ser úteis."
         title_4: "Como implementar novos scripts de AI/Machine Learning"
         description_4: "Utilize scripts anteriores como exemplos."
         description_4b: "Os novos scripts devem estar localizados na pasta <code>public/machine_learning/scripts</code>"
         description_4c: "Os dados de entrada a utilizar pelo script serão criados como ficheiros JSON na pasta <code>../data</code>"
         description_4d: "Qualquer resultado gerado deve ser colocada na pasta <code>../data</code>"
-        description_4e: "Recomenda-se a criação de um ficheiro de texto <code>. ini</code> independente com as definições do script, com o mesmo nome do script e legível pelo configparser. Este ficheiro facilitará a alteração das definições pelos administradores."
-        description_4f: "Recomenda-se incluir como primeira linha do script uma sequência inicial de aspas triplas com algumas informações breves sobre o mesmo e links para qualquer informação relevante. Esta string será mostrada automaticamente na interface de Administração."
-        description_4g: "Recomenda-se o registo da informação relevante do script num ficheiro de texto <code>. log</code>, com o mesmo nome do script."
+        description_4e: "É recomendada a criação de um ficheiro de texto <code>.ini</code> independente com as definições do script, com o mesmo nome do script e legível pelo configparser. Este ficheiro facilitará a alteração das definições pelos administradores."
+        description_4f: "É recomendado incluir como primeira linha do script uma sequência inicial de aspas triplas com algumas informações breves sobre o mesmo e links para qualquer informação relevante. Esta string será mostrada automaticamente na interface de Administração."
+        description_4g: "É recomendado o registo da informação relevante do script num ficheiro de texto <code>. log</code>, com o mesmo nome do script."
         title_5: "Para utilizar scripts de AI/Machine Learning necessita de ter o Python instalado no seu servidor"
         description_5: "Aqui pode ver as instruções de exemplo para um servidor Ubuntu 18.04:"
       help_text: "Esta funcionalidade é experimental."
