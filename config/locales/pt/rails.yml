@@ -118,19 +118,19 @@ pt:
       required: deve existir
       taken: já foi escolhido
       too_long:
-        one: é muito longo (máximo é 1 caractere)
+        one: é muito longo (máximo é 1 carácter)
         other: é muito longo (máximo é %{count} caracteres)
       too_short:
-        one: é muito curto (mínimo é 1 caractere)
+        one: é muito curto (mínimo é 1 carácter)
         other: é muito curto (mínimo é %{count} caracteres)
       wrong_length:
-        one: comprimento errado (deve ter 1 caractere)
+        one: comprimento errado (deve ter 1 carácter)
         other: comprimento errado (deve ter %{count} caracteres)
       other_than: deve ser maior que %{count}
     template:
       body: "Houve problemas com os seguintes campos:"
       header:
-        one: 1 erro impediu este %{model} de ser gravado
+        one: Um erro impediu este %{model} de ser gravado
         other: "%{count} erros impediram este %{model} de ser gravado"
   helpers:
     select:
