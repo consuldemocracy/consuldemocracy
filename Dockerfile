@@ -37,6 +37,13 @@ RUN mkdir -p $RAILS_ROOT/tmp/pids
 # Set our working directory inside the image
 WORKDIR $RAILS_ROOT
 
+# Instalar dependencias necesarias
+RUN apt-get update && apt-get install -y \
+    curl \
+    tar \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
 # Install Node
 COPY .node-version ./
 ENV PATH=/usr/local/node/bin:$PATH
