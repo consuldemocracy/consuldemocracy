@@ -47,7 +47,8 @@ RUN apt-get update && apt-get install -y \
 # Install Node
 COPY .node-version ./
 ENV PATH=/usr/local/node/bin:$PATH
-RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz -C /tmp/ && \
+RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz -o /tmp/node-build.tar.gz && \
+    tar xz -C /tmp -f /tmp/node-build.tar.gz && \
     /tmp/node-build-master/bin/node-build `cat .node-version` /usr/local/node && \
     rm -rf /tmp/node-build-master
 
