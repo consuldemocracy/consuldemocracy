@@ -16,6 +16,8 @@ tr:
       unmark_featured: Öne çıkarılmış işaretini kaldır
       edit: Düzenle
       configure: Yapılandır
+      select: Seçin
+      show_to_valuators: "%{name} bilirkişilere görüntülensin"
     officing_booth:
       title: "%{booth} konumundaki kabinde görevlisiniz. Bu bilgi doğru değilse ilerlemeyin ve yardım telefon numarasını arayın. Teşekkürler."
     banners:
@@ -731,11 +733,11 @@ tr:
     menu:
       activity: Sorumlu işlemi
       admin: Yönetici menüsü
-      banner: Afiş yönetimi
+      banner: Afişler
       proposals: Önergeler
       proposals_topics: Önerge konuları
       budgets: Katılımcı bütçeler
-      geozones: Geozone'ları yönet
+      geozones: Coğrafi bölgeler
       locales: Diller
       hidden_comments: Gizli yorumlar
       hidden_debates: Gizli tartışmalar
@@ -757,7 +759,7 @@ tr:
       polls: Oylamalar
       poll_booths: Kabinlerin konumu
       poll_booth_assignments: Kabin atamaları
-      poll_shifts: Vardiyaları yönet
+      poll_shifts: Vardiya atamaları
       officials: Görevliler
       organizations: Kuruluşlar
       settings: Genel ayarlar
@@ -799,7 +801,7 @@ tr:
       dashboard_actions: Kaynaklar ve işlemler
       debates: "Tartışmalar"
       comments: "Yorumlar"
-      local_census_records: Yerel nüfus sayımını yönet
+      local_census_records: Yerel seçmen bilgi sistemi
       machine_learning: "Yapay Zeka / Makine Öğrenmesi"
       multitenancy: Çok kiracılı
     administrators:
@@ -1237,7 +1239,7 @@ tr:
       show:
         location: "Konum"
       booth:
-        shifts: "Vardiyaları yönet"
+        shifts: "Vardiya atamaları"
     officials:
       edit:
         destroy: '''Görevli'' durumunu kaldır'
@@ -1491,8 +1493,15 @@ tr:
         polls: Oylamalar
         sdg: SKA
       graph:
-        debate_created: Tartışmalar
-        proposal_created: Vatandaş önerileri
+        budget_investment_created: Oluşturulan bütçe yatırımları
+        budget_investment_supported: Desteklenen bütçe yatırımları
+        debate_created: Başlatılan tartışmalar
+        legislation_annotation_created: Oluşturulan mevzuat notları
+        legislation_answer_created: Oluşturulan mevzuat yanıtları
+        level_3_user: Doğrulanmış 3. düzey kullanıcılar
+        proposal_created: Verilen yurttaş önergeleri
+        title: Çizelgeler
+        visits: Ziyaretler
       budgets:
         no_data_before_balloting_phase: "Oy kullanma aşamasından önce görüntülenecek bir veri yok."
         title: "Katılımcı bütçeler - Katılım istatistikleri"
@@ -1710,7 +1719,7 @@ tr:
       empty: "Günlüğe kaydedilmiş bir değişiklik yok"
     local_census_records:
       index:
-        title: Yerel vatandaş listesini yönet
+        title: Yerel seçmen bilgi sistemi
         create: Yeni yerel seçmen bilgi sistemi kaydı oluştur
         no_local_census_records: Herhangi bir yerel seçmen bilgi sistemi kaydı yok.
         document_type: Belge türü
@@ -1735,7 +1744,7 @@ tr:
         create:
           notice: Yerel seçmen bilgi sistemi kayıtları içe aktarıldı!
         show:
-          title: Yerel vatandaş listesini yönet
+          title: Yerel seçmen bilgi sistemi
           subtitle: Süreç sonuçlarını içe aktar
           import: Yeniden içe aktar
           errored: Hatalı satırlar
