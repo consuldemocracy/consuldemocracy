@@ -12,21 +12,12 @@
         </ul>
       </div>
 
-      <div class="show-for-medium medium-9 column text-center">
-        <%= image_tag(image_path_for("map.jpg"), usemap: "#map") %>
-      </div>
-
-      <map name="map" id="html_map">
-        <% @geozones.each do |geozone| %>
-          <area shape="poly"
-                coords="<%= geozone.html_map_coordinates %>"
-                href="<%= polymorphic_path(@proposal, search: geozone.name) %>"
-                title="<%= geozone.name %>"
-                alt="<%= geozone.name %>">
-        <% end %>
-      </map>
     </div>
-
+     <div>
+      <div class="budget-investments-map">
+         <%= render Shared::MapLocationComponent.new(nil, geozones_data: geozones_data) %>
+      </div> 
+      </div>
     <h2><%= t("map.proposal_for_district") %></h2>
 
     <%= form_for(@proposal, url: new_proposal_path, method: :get) do |f| %>
