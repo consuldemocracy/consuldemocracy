@@ -11,6 +11,6 @@ module Types
     field :id, ID, null: false
     field :public_author, Types::UserType, null: true
     field :public_created_at, String, null: true
-    field :votes_for, Types::VoteType.connection_type, null: true
+    collection_field :votes_for, Types::VoteType, null: true
   end
 end

@@ -24,5 +24,15 @@ module Types
         define_method(field_name) { object.send(field_name).public_for_api }
       end
     end
+
+    def self.object_by_id_field(field_name, type, description, null:)
+      field field_name, type, description, null: null do
+        argument :id, ID, required: true, default_value: false
+      end
+    end
+
+    def self.collection_field(field_name, type, ...)
+      field(field_name, type.connection_type, ...)
+    end
   end
 end
