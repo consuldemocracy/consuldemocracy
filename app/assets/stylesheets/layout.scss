@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // Table of Contents
 //
 // 01. Global styles
@@ -1238,7 +1240,7 @@ table {
     }
 
     &:nth-child(even) {
-      background: adjust-color($table-background, $red: -3, $green: -1, $blue: -2);
+      background: color.adjust($table-background, $red: -3, $green: -1, $blue: -2);
     }
   }
 

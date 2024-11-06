@@ -1,3 +1,5 @@
+@use "sass:color";
+
 //  Foundation for Sites Settings
 //  -----------------------------
 //
@@ -773,15 +775,15 @@ $table-color-scale: 5% !default;
 $table-border: 1px solid smart-scale($table-background, $table-color-scale) !default;
 $table-padding: rem-calc(8 10 10) !default;
 $table-hover-scale: 2% !default;
-$table-row-hover: darken($table-background, $table-hover-scale) !default;
-$table-row-stripe-hover: darken($table-background, $table-color-scale + $table-hover-scale) !default;
+$table-row-hover: color.adjust($table-background, $lightness: -1 * $table-hover-scale) !default;
+$table-row-stripe-hover: color.adjust($table-background, $lightness: -1 * ($table-color-scale + $table-hover-scale)) !default;
 $table-is-striped: true !default;
 $table-striped-background: smart-scale($table-background, $table-color-scale) !default;
 $table-stripe: even !default;
 $table-head-background: smart-scale($table-background, $table-color-scale * 0.5) !default;
-$table-head-row-hover: darken($table-head-background, $table-hover-scale) !default;
+$table-head-row-hover: color.adjust($table-head-background, $lightness: -1 * $table-hover-scale) !default;
 $table-foot-background: smart-scale($table-background, $table-color-scale) !default;
-$table-foot-row-hover: darken($table-foot-background, $table-hover-scale) !default;
+$table-foot-row-hover: color.adjust($table-foot-background, $lightness: -1 * $table-hover-scale) !default;
 $table-head-font-color: $body-font-color !default;
 $table-foot-font-color: $body-font-color !default;
 $show-header-for-stacked: false !default;

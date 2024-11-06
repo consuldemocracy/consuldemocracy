@@ -13,7 +13,7 @@
 
   > select + fieldset,
   > fieldset + fieldset {
-    margin-top: $line-height / 2;
+    margin-top: calc($line-height / 2);
   }
 
   > [type="hidden"] + fieldset,
