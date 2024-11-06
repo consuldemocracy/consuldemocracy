@@ -228,6 +228,7 @@ GEM
     faraday-net_http (3.3.0)
       net-http
     ffi (1.17.0)
+    fiber-storage (1.0.0)
     file_validators (3.0.0)
       activemodel (>= 3.2)
       mime-types (>= 1.0)
@@ -255,8 +256,9 @@ GEM
     graphiql-rails (1.8.0)
       railties
       sprockets-rails
-    graphql (2.0.31)
+    graphql (2.3.18)
       base64
+      fiber-storage
     groupdate (6.5.1)
       activesupport (>= 7)
     gyoku (1.4.0)
@@ -740,7 +742,7 @@ DEPENDENCIES
   globalize (~> 6.3.0)
   globalize-accessors (~> 0.3.0)
   graphiql-rails (~> 1.8.0)
-  graphql (~> 2.0.0)
+  graphql (~> 2.3.18)
   groupdate (~> 6.5.1)
   i18n-tasks (~> 0.9.37)
   image_processing (~> 1.13.0)
