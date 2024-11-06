@@ -52,11 +52,11 @@ describe Types::QueryType do
   end
 
   it "hides confidential belongs_to associations" do
-    create(:failed_census_call, user: user)
+    user.geozone = create(:geozone)
 
     expect do
-      run_graphql_field("User.failed_census_calls.id", user)
-    end.to raise_error GraphQL::Testing::Helpers::FieldNotDefinedError, /no field named `failed_census_calls`/
+      run_graphql_field("User.geozone.id", user)
+    end.to raise_error GraphQL::Testing::Helpers::FieldNotDefinedError, /no field named `geozone`/
   end
 
   it "hides confidential has_many associations" do
