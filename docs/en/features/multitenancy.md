@@ -78,6 +78,21 @@ Note that, if you use a different domain for a tenant, you'll have to configure 
 
 When adding a new tenant, an admin user **copying the same login data as the administrator creating the tenant** will be automatically created. Note this user is stored in the database schema of the new tenant, so changing their password in one tenant won't change their password in any other tenants.
 
+### Multitenancy management mode
+
+The `multitenancy_management_mode` setting allows using the main tenant solely for managing other tenants and admin users, hiding any other admin panel functionality or public content.
+
+There are two possible ways to enable multitenancy management mode:
+
+* Adding `config.multitenancy_management_mode = true` inside the `class Application < Rails::Application` class in the `config/application_custom.rb` file
+* Replacing the line `multitenancy_management_mode: false` with `multitenancy_management_mode: true` (or adding it if it isn't already there) in the `config/secrets.yml` file
+
+We recommend using the same method that has been used to enable the multitenancy functionality in the [Common step for all Consul Democracy installations](#common-step-for-all-consul-democracy-installations) section.
+
+After enabling this option, restart the application and you will see the administration panel as follows:
+
+![The administration panel only contains links to multitenancy and administrators](../../img/multitenancy/management-mode-en.png)
+
 ## Steps to take after adding a tenant
 
 ### SSL certificates

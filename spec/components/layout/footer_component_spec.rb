@@ -13,4 +13,11 @@ describe Layout::FooterComponent do
       end
     end
   end
+
+  it "is not rendered when multitenancy_management_mode is enabled" do
+    allow(Rails.application.config).to receive(:multitenancy_management_mode).and_return(true)
+    render_inline Layout::FooterComponent.new
+
+    expect(page).not_to be_rendered
+  end
 end
