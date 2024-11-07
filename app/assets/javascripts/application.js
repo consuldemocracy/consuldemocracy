@@ -58,7 +58,6 @@
 //= require ckeditor/loader
 //= require_directory ./ckeditor
 //= require social-share-button
-//= require ahoy
 //= require app
 //= require check_all_none
 //= require comments
