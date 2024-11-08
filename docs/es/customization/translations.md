@@ -1,39 +1,38 @@
-# Traducciones y Textos
+# Personalización de traducciones y textos
 
 ## Traducciones
 
-Actualmente Consul Democracy esta traducido total o parcialmente a multiples idiomas, visita el proyecto en [Crowdin](https://translate.consuldemocracy.org/)
+Actualmente Consul Democracy está traducido total o parcialmente a múltiples idiomas. Visita el [proyecto en Crowdin](https://translate.consuldemocracy.org/) para comprobar el estado de las traducciones.
 
-[Únete a los traductores](https://crwd.in/consul) para ayudar a completar los existentes, o contacta con nosotros a través del [gitter de Consul Democracy](https://gitter.im/consul/consul) para convertirte en Revisor y validar las contribuciones de los traductores.
+[Únete a los traductores](https://crwd.in/consul) para ayudar a completar los idiomas existentes, o contacta con nosotros a través de [las conversaciones de Consul Democracy](https://github.com/consuldemocracy/consuldemocracy/discussions) para convertirte en revisor y validar las contribuciones de los traductores.
 
-En el caso de que tu lenguage no este presente en el proyecto de Crowdin, por favor [abre una incicencia](https://github.com/consuldemocracy/consuldemocracy/issues/new?title=New%20language&body=Hello%20I%20would%20like%20to%20have%20my%20language%20INSERT%20YOUR%20LANGUAGE%20NAME%20added%20to%20Consul%20Democracy) y lo añadiremos rápidamente.
+En el caso de que tu idioma no esté presente en el proyecto de Crowdin, por favor [abre una incidencia](https://github.com/consuldemocracy/consuldemocracy/issues/new?title=New%20language&body=Hello%20I%20would%20like%20to%20have%20my%20language%20INSERT%20YOUR%20LANGUAGE%20NAME%20added%20to%20Consul%20Democracy) y lo añadiremos rápidamente.
 
-Si quieres ver las traducciones de los textos de la web, puedes encontrarlos en los ficheros formato YML disponibles en `config/locales/`. Puedes leer la [guía de internacionalización](http://guides.rubyonrails.org/i18n.html) de Ruby on Rails sobre como funciona este sistema.
+Si quieres ver las traducciones de los textos de la web, puedes encontrarlos en los ficheros en formato YAML disponibles en `config/locales/`. Puedes leer la [guía de internacionalización](http://guides.rubyonrails.org/i18n.html) de Ruby on Rails para aprender cómo funciona este sistema.
 
 ## Textos personalizados
 
-Dado que Consul Democracy está en evolución continua con nuevas funcionalidades, y para que mantener tu fork actualizado sea más sencillo, recomendamos no modificar los ficheros de traducciones, es una mejor idea "sobreescribirlos" usando ficheros personalizados en caso de necesidad de alterar un texto.
+Dado que Consul Democracy está en evolución continua con nuevas funcionalidades, y para que mantener tu "fork" actualizado sea más sencillo, recomendamos no modificar los ficheros de traducciones sino sobrescribirlos usando ficheros personalizados en caso de que quieras cambiar un texto.
 
-Así pues las adaptaciones las debes poner en el directorio `config/locales/custom/`, recomendamos poner solo los textos que quieras personalizar. Por ejemplo si quieres personalizar el texto de "Ayuntamiento de Madrid, 2016" que se encuentra en el footer en todas las páginas, primero debemos ubicar en que plantilla se encuentra (`app/views/layouts/_footer.html.erb`), vemos que en el código pone lo siguiente:
+Así que, para cambiar algunos de los textos existentes, puedes añadir tus cambios en el directorio `config/locales/custom/`. Recomendamos encarecidamente poner solamente los textos que quieras personalizar en lugar de copiar todo el contenido del archivo original. Por ejemplo, si quieres personalizar el texto "CONSUL DEMOCRACY, 2024" (o el año actual) que se encuentra en el pie de página, primero debemos encontrar dónde se utiliza (en este caso, `app/components/layouts/footer_component.html.erb`), y comprobar el identificador de traducción que aparece en el código:
 
-```ruby
+```erb
 <%= t("layouts.footer.copyright", year: Time.current.year) %>
 ```
 
-Y que en el fichero `config/locales/es/general.yml` sigue esta estructura (solo ponemos lo relevante para este caso):
+Localiza el fichero en el que se encuentra este identificador (en este caso, `config/locales/es/general.yml`) y crea un archivo en `config/locales/custom/` (en este caso, crea el archivo `config/locales/custom/es/general.yml`) con el siguiente contenido:
 
 ```yml
 es:
   layouts:
     footer:
-      copyright: Ayuntamiento de Madrid, %{year}
-
+      copyright: Tu Organización, %{year}
 ```
 
-Si creamos el fichero `config/locales/custom/es/general.yml` y modificamos "Ayuntamiento de Madrid" por el nombre de la organización que se este haciendo la modificación. Recomendamos directamente copiar los ficheros `config/locales/` e ir revisando y corrigiendo las que querramos, borrando las líneas que no querramos traducir.
+Es importante que los ficheros de `config/locales/custom/` solamente incluyan textos personalizados y no los textos originales. De este modo, será más fácil actualizar a una nueva versión de Consul Democracy.
 
-## Mantener tus Textos Personalizados y Lenguajes
+## Mantener tus textos personalizados y lenguajes
 
-Consul Democracy tiene la gema [i18n-tasks](https://github.com/glebm/i18n-tasks), es una herramienta estupenda para gestionar textos i18n. Prueba en tu consola `i18n-tasks health` para ver un reporte de estado.
+Consul Democracy utiliza la gema [i18n-tasks](https://github.com/glebm/i18n-tasks), que es una herramienta estupenda para gestionar traducciones. Ejecuta en una consola `i18n-tasks health` para ver un informe de estado.
 
-Si tienes un lenguaje propio diferente al Inglés, deberias añadirlo al fichero de configuración [i18n-tasks.yml para las variables `base_locale` y `locales`](https://github.com/consuldemocracy/consuldemocracy/blob/master/config/i18n-tasks.yml#L4-L7) de forma que los ficheros de tu idioma también sean comprobados.
+Si tienes un idioma propio diferente al inglés, deberías añadirlo a las variables `base_locale` y `locales` del [fichero de configuración i18n-tasks.yml](https://github.com/consuldemocracy/consuldemocracy/blob/master/config/i18n-tasks.yml#L3-L6), de forma que los ficheros de tu idioma también sean comprobados.

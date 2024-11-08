@@ -12,6 +12,7 @@ fr:
       subject: Quelqu'un a commenté votre %{commentable}
       title: Nouveau commentaire
     config:
+      notifications_link: Notifications
       unsubscribe_text: 'Pour vous désabonner de ces e-mails, vous pouvez saisir %{notifications} et décocher l''option "%{notification}".'
     email_verification:
       click_here_to_verify: sur ce lien

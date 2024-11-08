@@ -102,17 +102,11 @@ module Globalizable
       translations_foreign_key = reflect_on_association(:translations).foreign_key
       fallbacks = Globalize.fallbacks(Globalize.locale)
 
-      fallbacks_with_order = fallbacks.map.with_index do |locale, order|
-        "('#{locale}', #{order})"
-      end.join(", ")
-
       translations_ids = translation_class
                          .select("DISTINCT ON (#{translations_foreign_key}) id")
                          .where(locale: fallbacks)
-                         .joins("LEFT JOIN (VALUES #{fallbacks_with_order}) " \
-                                "AS locales(name, ordering) " \
-                                "ON locale = locales.name")
-                         .order(translations_foreign_key, "locales.ordering")
+                         .order(translations_foreign_key)
+                         .in_order_of(:locale, fallbacks)
 
       with_translations(fallbacks).where("#{translations_table_name}.id": translations_ids)
     end

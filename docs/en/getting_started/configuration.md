@@ -1,17 +1,17 @@
 # Configure your fork
 
-## Travis CI
+## Continuous Integration with GitHub Actions
 
-[Travis](https://travis-ci.org/) is a Continuous Integration service, free for OpenSource projects (like Consul Democracy and its forks). It will help you check on each Pull Request if the test suite is alright.
+[GitHub Actions](https://docs.github.com/en/actions) is a tool integrated into GitHub that allows you to automate tasks such as running tests every time you make a change to your code. Since Consul Democracy already includes predefined configurations for GitHub Actions, enabling continuous integration in your fork is very straightforward.
 
-1. Visit <https://github.com/marketplace/travis-ci> and click the "**Install it for free**" green button at the bottom of the page.
+### Steps to enable GitHub Actions
 
-2. Click on the "**Complete order and begin installation**" green button.
+1. **Enable GitHub Actions in your fork**:
+   1. Once you have created the fork, go to the "**Actions**" tab in your GitHub repository.
+   1. You will see a message that says: "Workflows aren’t being run on this forked repository." This is normal because GitHub disables workflows by default in newly forked repositories for security reasons.
+   1. Click the "**I understand my workflows, go ahead and enable them**" button to enable workflows in your fork.
 
-3. If you are asked to Authorize Travis CI to access your Github account, check the organization or user where you have your Consul Democracy fork at the bottom and click the "**Authorize travis-ci**" button.
-
-4. Visit your [Travis profile](https://travis-ci.org/profile/) and enable Travis for your Consul Democracy fork in the list of repositories.
-
-5. Click on the sprocket icon to the right of the repository to see the builds.
-
-6. Check that everything is well configured by creating a test Pull Request (editing a simple .md file could help).
+2. **Verify the configuration**:
+   1. Make a change to any project file (for example, edit a `.md` file) in a branch other than master and push it to your fork.
+   1. Open a pull request from the new branch to master in your fork.
+   1. Go to the "**Actions**" tab and verify that the tests are running correctly based on the workflows defined in the project's `.github/workflows/` directory.

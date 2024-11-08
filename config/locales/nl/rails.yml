@@ -41,8 +41,8 @@ nl:
       - maart
       - april
       - mei
-      - Juni
-      - Juli
+      - juni
+      - juli
       - augustus
       - september
       - oktober
@@ -88,11 +88,11 @@ nl:
         one: 1 seconde
         other: "%{count} seconden"
     prompts:
-      day: dag
+      day: Dag
       hour: Uur
       minute: minuut
       month: Maand
-      second: seconde
+      second: Seconden
       year: Jaar
   errors:
     format: "%{attribute} %{message}"

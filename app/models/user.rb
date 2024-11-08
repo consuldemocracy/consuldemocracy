@@ -95,7 +95,7 @@ class User < ApplicationRecord
   scope :moderators,     -> { joins(:moderator) }
   scope :organizations,  -> { joins(:organization) }
   scope :sdg_managers,   -> { joins(:sdg_manager) }
-  scope :officials,      -> { where("official_level > 0") }
+  scope :officials,      -> { where(official_level: 1..) }
   scope :male,           -> { where(gender: "male") }
   scope :female,         -> { where(gender: "female") }
   scope :newsletter,     -> { where(newsletter: true) }
@@ -104,8 +104,8 @@ class User < ApplicationRecord
     where(document_type: document_type, document_number: document_number)
   end
   scope :email_digest,   -> { where(email_digest: true) }
-  scope :active,         -> { where(erased_at: nil) }
   scope :erased,         -> { where.not(erased_at: nil) }
+  scope :active,         -> { excluding(erased) }
   scope :public_for_api, -> { all }
   scope :by_authors,     ->(author_ids) { where(id: author_ids) }
   scope :by_comments,    ->(commentables) do
@@ -233,13 +233,13 @@ class User < ApplicationRecord
 
   def full_restore
     ActiveRecord::Base.transaction do
-      Debate.restore_all debates.where("hidden_at >= ?", hidden_at)
-      Comment.restore_all comments.where("hidden_at >= ?", hidden_at)
-      Legislation::Proposal.restore_all legislation_proposals.only_hidden.where("hidden_at >= ?", hidden_at)
-      Proposal.restore_all proposals.where("hidden_at >= ?", hidden_at)
-      Budget::Investment.restore_all budget_investments.where("hidden_at >= ?", hidden_at)
+      Debate.restore_all debates.where(hidden_at: hidden_at..)
+      Comment.restore_all comments.where(hidden_at: hidden_at..)
+      Legislation::Proposal.restore_all legislation_proposals.only_hidden.where(hidden_at: hidden_at..)
+      Proposal.restore_all proposals.where(hidden_at: hidden_at..)
+      Budget::Investment.restore_all budget_investments.where(hidden_at: hidden_at..)
       ProposalNotification.restore_all(
-        ProposalNotification.only_hidden.where("hidden_at >= ?", hidden_at).where(author_id: id)
+        ProposalNotification.only_hidden.where(hidden_at: hidden_at..).where(author_id: id)
       )
 
       restore

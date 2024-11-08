@@ -304,4 +304,34 @@ describe "Legislation Proposals" do
 
     expect(page).not_to have_field("Scope of operation")
   end
+
+  context "Embedded video" do
+    scenario "Show YouTube video" do
+      proposal = create(:legislation_proposal, video_url: "http://www.youtube.com/watch?v=a7UFm6ErMPU")
+
+      visit legislation_process_proposal_path(proposal.process, proposal)
+
+      within "#js-embedded-video" do
+        expect(page).to have_css "iframe[src='https://www.youtube-nocookie.com/embed/a7UFm6ErMPU']"
+      end
+    end
+
+    scenario "Show Vimeo video" do
+      proposal = create(:legislation_proposal, video_url: "https://vimeo.com/7232823")
+
+      visit legislation_process_proposal_path(proposal.process, proposal)
+
+      within "#js-embedded-video" do
+        expect(page).to have_css "iframe[src='https://player.vimeo.com/video/7232823?dnt=1']"
+      end
+    end
+
+    scenario "Dont show video" do
+      proposal = create(:legislation_proposal, video_url: nil)
+
+      visit legislation_process_proposal_path(proposal.process, proposal)
+
+      expect(page).not_to have_css "#js-embedded-video"
+    end
+  end
 end

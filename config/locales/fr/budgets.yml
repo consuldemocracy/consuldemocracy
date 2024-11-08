@@ -8,8 +8,8 @@ fr:
           knapsack: "Toujours disponible pour vous <span>%{count}</span>"
           approval:
             zero: "Vous pouvez toujours envoyer <span>%{count}</span> votes."
-            one: "Vous pouvez toujours voter pour <span>%{count}</span>."
-            other: "Vous pouvez toujours envoyer <span>%{count}</span> votes."
+            one: "Vous pouvez encore voter <span>%{count}</span> fois."
+            other: "Vous pouvez encore voter <span>%{count}</span> fois."
         amount_spent:
           knapsack: "Montant dépensé <span>%{count}</span>"
           approval:
@@ -178,6 +178,17 @@ fr:
       title: "Liste des projets"
     show:
       see_results: Voir les résultats
+    supports_info:
+      different: "Vous pouvez soutenir autant de projets différents que vous le souhaitez."
+      next: "Soutenez les projets que vous souhaitez voir progresser en phase suivante."
+      scrolling: "Continuer de faire défiler pour voir toutes les idées"
+      share: "Vous pouvez partager les projets que vous soutenez à travers les réseaux sociaux, pour attirer l'attention et obtenir plus de soutiens !"
+      supported:
+        one: "Jusqu'à présent vous soutenez <strong>1 projet</strong>."
+        other: "Jusqu'à présent vous soutenez <strong>%{count} projets</strong>."
+      supported_not_logged_in: "Connectez-vous pour <strong>soutenir des projets</strong>."
+      time: "Il reste jusqu'à %{phase_end_date} pour soutenir des projets."
+      title: "Il est temps de <strong>soutenir</strong> des projets !"
     results:
       link: Résultats
       page_title: "%{budget} - Résultats"

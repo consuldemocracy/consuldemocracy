@@ -1,5 +1,5 @@
 # Installer
 
-## Installation notes for Production and Staging servers
+## Installation notes for production and staging servers
 
-Check out the [installer's README](https://github.com/consuldemocracy/installer).
+Check out the [installer's README](https://github.com/consuldemocracy/installer) for detailed installation instructions.

@@ -2,25 +2,18 @@
 
 Este es un ejemplo de cómo integrar un servicio de correo con Consul Democracy.
 
-En este ejemplo usamos [Mailgun](https://www.mailgun.com/).
+## Obtener una cuenta de tu proveedor de correos de confianza
 
-## Crear una cuenta en Mailgun
+Para poder configurar el correo en Consul Democracy necesitaremos:
 
-![Creando una cuenta en Mailgun](../../img/mailserver/mailgun-create-account.png)
-
-* Puedes omitir el formulario de tarjeta de crédito
-* Y activa tu cuenta con el enlace enviado por correo electrónico
-
-## Configuración del dominio
-
-* Ve a la sección "domain": ![Mailgun sección domain](../../img/mailserver/mailgun-domains.png)
-* Como todavía no tienes un dominio, debes pinchar en el "sandbox" que ya está creado
-* Recuerda las siguientes credenciales: ![Mailgun sandbox](../../img/mailserver/mailgun-sandbox.png)
+* El _smtp_address_, que es la dirección del servidor SMTP de tu proveedor de correos (por ejemplo, smtp.tudominio.com).
+* El _domain_, que es el nombre de dominio de tu aplicación.
+* El _user_name_ y _password_, que son las credenciales que tu proveedor de correos te proporciona para autenticarte en el servidor SMTP.
 
 ## Configuración del correo en Consul Democracy
 
-* Ve al archivo `config/secrets.yml`
-* Modifica las líneas en el archivo para configurar el servidor de correo:
+1. Ve al archivo `config/secrets.yml`.
+2. Modifica las siguientes líneas en la sección de `staging`, `preproduction` or `production`, dependiendo de tu configuración:
 
 ```yml
   mailer_delivery_method: :smtp
@@ -34,5 +27,5 @@ En este ejemplo usamos [Mailgun](https://www.mailgun.com/).
      :enable_starttls_auto: true
 ```
 
-* Rellena `<smtp address>`, `<domain>`, `<user_name>` y `<password>` con tu información.
-* Guarda el fichero y reinicia tu aplicación Consul Democracy
+3. Rellena `<smtp address>`, `<domain>`, `<user_name>` y `<password>` con tu información.
+4. Guarda el fichero y reinicia tu aplicación Consul Democracy.

@@ -1,33 +1,28 @@
-# Censo Local
+# Censo local
 
-Proporcionar a los usuarios administradores una forma de gestionar la base de datos del censo local a través del panel de administración **Configuración > Gestionar censo local**. Actualmente la única manera de manipular los registros de esta tabla es a través de la consola de rails.
+Esta funcionalidad está pensada para instalaciones con pocos recursos que no pueden configurar y personalizar su conexión con el censo de forma remota, por lo que les ofrecemos una solución para que puedan utilizar un censo local. Para ello, se proporciona a los administradores una forma de gestionar la base de datos del censo local a través del panel de administración en **Configuración > Censo local**.
 
-Permitir a los usuarios de administradores gestionar esta tabla de dos maneras diferentes:
+## Gestión del censo local
 
-- **Manualmente**: uno por uno a través de una interfaz CRUD.
-- **Automáticamente**: a través de un proceso de importación.
+Los administradores pueden gestionar este censo de dos maneras diferentes:
 
-## Manualmente
+* **Manualmente**: añadiendo ciudadanos uno por uno a través de un formulario.
+* **Automáticamente**: a través de un proceso de importación.
 
-Provide a way to manage local census records to administrator users through administration interface.
+### Manualmente
 
-- Página de censo local
-  ![Manage local census](../../img/local_census/manage-local-census-es.png)
+Permite a los administradores crear un registro clicando en el botón _Crear nuevo registro en el censo local_ que aparece en la parte superior derecha de la página. Esto nos llevará a una nueva página donde poder rellenar el siguiente formulario y crear el nuevo registro:
 
-- Añadir un nuevo registro
-  ![Create local census record](../../img/local_census/add-local-census-record-es.png)
+![Formulario para crear un registro rellenando el tipo de documento, el número de documento, la fecha de nacimiento y el código postal](../../img/local_census/add-local-census-record-es.png)
 
-Funcionalidades:
+### Automáticamente
 
-1. Búsqueda por número_de_documento: Como local_census_records podría contener muchos registros, hemos añadido una función de búsqueda para permitir a los administradores encontrar los registros existentes por número de documento.
-1. Evitar la introducción de registros duplicados: Se ha añadido una validación de modelo al siguiente par de atributos [:número_de_documento, :tipo_de_documento]
+Permite a los usuarios administradores importar multiples registros a través de un archivo CSV, clicando en el botón _Importar CSV_, que aparece en la parte superior derecha de la página. Esto nos llevará a una nueva página donde poder importar el CSV y crear los nuevos registros:
 
-## Automáticamente
+![Página para importar nuevos registros a través de un csv](../../img/local_census/add-local-census-records-csv-es.png)
 
-Permite a los usuarios administradores importar registros del censo local a través de un archivo CSV.
+## Funcionalidades
 
-- Página de censo local
-  ![Manage local census csv](../../img/local_census/manage-local-census-csv-en.png)
+* Búsqueda por número de documento: Como el censo local podría contener muchos registros, existe una función de búsqueda para permitir a los administradores encontrar los registros existentes por número de documento.
 
-- Página para importar un CSV
-  ![Create local census records csv](../../img/local_census/add-local-census-records-csv-en.png)
+* Evitar la introducción de registros duplicados: Existe una validación de modelo que no permite añadir registros que compartan el mismo _número_ y _tipo_ de documento.

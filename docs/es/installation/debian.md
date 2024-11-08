@@ -1,24 +1,31 @@
-# Configuración para los entornos de desarrollo y pruebas (Debian GNU/Linux 9.8)
+# Configuración para los entornos de desarrollo y pruebas (Debian GNU/Linux 12 - Bookworm)
 
-## Super usuario
+## Superusuario
 
-El programa 'sudo' no viene instalado en Debian por defecto. Su instalación y configuración es posible, se puede encontrar información al respecto [aquí](https://wiki.debian.org/es/sudo). Pero no lo recomendamos porque puede causar otros problemas. Recomendamos que se ejecuten las siguientes instrucciones como un super usuario, así que asegúrate de que la primera instrucción que ejecutes sea:
+Por defecto, en Debian ningún usuario puede utilizar `sudo` si se ha proporcionado una contraseña para el usuario root durante la instalación.
+
+Por tanto, para instalar las dependencias del proyecto, tendremos dos opciones. La primera opción es abrir un terminal de superusuario. En un terminal, ejecuta:
 
 ```bash
 su
 ```
 
-> Para [Vagrant](/es/installation/vagrant.md) ejecutar:
-> ```
-> sudo su -
-> ```
+Te pedirá introducir la contraseña del usuario root.
+
+La segunda opción es añadir un usuario regular al grupo `sudo`. Para ello, tras abrir un terminal de superusuario, ejecuta:
+
+```bash
+gpasswd -a <your_username> sudo
+```
+
+Tendrás que cerrar sesión y volverla abrir para que los cambios tengan efecto.
 
 ## Actualización de sistema
 
 Ejecuta una actualización general de las librerías de sistema:
 
 ```bash
-apt-get update
+sudo apt update
 ```
 
 ## Git
@@ -26,101 +33,55 @@ apt-get update
 Git es mantenido oficialmente en Debian:
 
 ```bash
-apt-get install git
-```
-
-## Curl
-
-Curl es mantenido oficialmente en Debian:
-
-```bash
-apt-get install curl
+sudo apt install git
 ```
 
 ## Gestor de versiones de Ruby
 
-Las versiones de Ruby empaquetadas en repositorios oficiales no son aptas para trabajar con Consul Democracy, así que debemos instalar manualmente.
+Las versiones de Ruby empaquetadas en repositorios oficiales no son aptas para trabajar con Consul Democracy, así que debemos instalarlo manualmente.
 
-Una opción es utilizar rvm:
-
-### Como usuario local
+En primer lugar, necesitamos los siguiente paquetes para poder instalar Ruby:
 
 ```bash
-command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
-command curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
-curl -L https://get.rvm.io | bash -s stable
+sudo apt install libssl-dev autoconf bison build-essential libyaml-dev libreadline-dev zlib1g-dev libncurses-dev libffi-dev libgdbm-dev
 ```
 
-después añadimos el script rvm a nuestro bash (~/.bashrc) (este paso sólo es necesario si no puedes ejecutar el comando rvm)
+A continuación instalaremos un gestor de versiones de Ruby, como rbenv:
 
 ```bash
-[[ -s /usr/local/rvm/scripts/rvm ]] && source /usr/local/rvm/scripts/rvm
-```
-
-por úlitmo, volvemos a cargar el .bashrc para poder ejecutar RVM
-
-```bash
+wget -qO- https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-installer | bash
 source ~/.bashrc
 ```
 
-## Node.js
+## CMake y pkg-config
 
-Para compilar los archivos estáticos (JS, CSS, imágenes, etc.), es necesario un _runtime_ de JavaScript. Node.js es la opción recomendada. Al igual que como ocurre con Ruby, no es recomendable instalar Node directamente de los repositorios de tu distribución Linux.
-
-Para instalar Node, puedes usar [n](https://github.com/tj/n)
-
-Ejecuta el siguiente comando en tu terminal:
+Para compilar algunas de las dependencias del proyecto, necesitamos CMake y pkg-config:
 
 ```bash
-curl -L https://git.io/n-install | bash -s -- -y lts
+sudo apt install cmake pkg-config
 ```
 
-Y este instalará automáticamente la versión LTS (_Long Term Support_, inglés para "Soporte a largo plazo") más reciente de Node en tu directorio `$HOME` (Este comando hace uso de [n-install](https://github.com/mklement0/n-install))
+## Gestor de versiones de Node.js
 
-vuelve a cargar el .bashrc para poder ejecutar node
+Para compilar los archivos estáticos (JS, CSS, imágenes, etc.), es necesario un _runtime_ de JavaScript. Node.js es la opción recomendada. Para instalar Node.js, instalaremos un gestor de versiones de Node.js, como NVM:
 
 ```bash
-source /root/.bashrc
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+source ~/.bashrc
 ```
 
-Comprueba que está correctamente instalado ejecutando:
+## PostgreSQL
+
+Instala postgresql y sus dependencias de desarrollo con:
 
 ```bash
-node -v
+sudo apt install postgresql libpq-dev
 ```
 
-## PostgreSQL (>=9.4)
-
-La versión 9.4 de PostgreSQL no es oficial en Debian 9.
-
-Así que debemos añadir el respositorio oficial de postgresql a apt, por ejemplo creando el fichero */etc/apt/sources.list.d/pgdg.list* con:
-
-```text
-deb http://security.debian.org/debian-security jessie/updates main
-```
-
-después deberás descargar la key e instalarla:
+Para el correcto funcionamiento de Consul Democracy, necesitas configurar un usuario para tu base de datos. Como ejemplo, crearemos un usuario llamado "consul":
 
 ```bash
-wget https://www.postgresql.org/media/keys/ACCC4CF8.asc
-apt-key add ACCC4CF8.asc
-```
-
-y finalmente instalar postgresql
-
-```bash
-apt-get update
-apt-get install postgresql-9.4 postgresql-server-dev-9.4 postgresql-contrib-9.4
-```
-
-Para el correcto funcionamiento de Consul Democracy, necesitas confgurar un usuario para tu base de datos. Como ejemplo, crearemos un usuario llamado "consul":
-
-```bash
-su - postgres
-
-createuser consul --createdb --superuser --pwprompt
-
-exit
+sudo -u postgres createuser consul --createdb --superuser --pwprompt
 ```
 
 ## Imagemagick
@@ -128,34 +89,15 @@ exit
 Instala Imagemagick:
 
 ```bash
-apt-get install imagemagick
+sudo apt install imagemagick
 ```
 
-## ChromeDriver
+## Chrome o Chromium
 
-Para realizar pruebas de integración, usamos Selenium junto a Headless Chrome.
-
-Para ello, primero instala el siguiente paquete:
+Para poder ejecutar los tests de sistema, necesitaremos tener instalado Chrome o Chromium.
 
 ```bash
-apt-get install chromedriver
-ln -s /usr/lib/chromedriver /usr/local/bin/
+sudo apt install chromium
 ```
 
-Asegúrate de que todo funciona como es debido ejecutando el siguiente comando:
-
-```bash
-chromedriver --version
-```
-
-Deberías recibir un mensaje indicando la última versión de ChromeDriver. Si ese es el caso, está todo listo
-
-Si te encuentras usando una distro basada en Arch, instalando `chromium` desde el repositorio `extra` debería ser suficiente
-
-También tienes la opción de solo instalar ChromeDriver desde AUR. Si usas `pacaur`, ejecuta el siguiente comando:
-
-```bash
-pacaur -S chromedriver
-```
-
-Ya estás listo para [instalar Consul Democracy](local_installation.md)!!
+¡Ya estás listo para [instalar Consul Democracy](local_installation.md)!

@@ -42,7 +42,7 @@ class Debate < ApplicationRecord
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :sort_by_recommendations,  -> { order(cached_votes_total: :desc) }
-  scope :last_week,                -> { where("created_at >= ?", 7.days.ago) }
+  scope :last_week,                -> { where(created_at: 7.days.ago..) }
   scope :featured,                 -> { where.not(featured_at: nil) }
   scope :public_for_api,           -> { all }
 

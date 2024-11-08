@@ -202,9 +202,9 @@
   }
 
   .label {
+    left: 0;
     position: absolute;
     top: 20px;
-    left: 0;
   }
 
   h4 {
@@ -531,16 +531,16 @@
 
     .overflow-image {
       background-position: center;
-      background-size: cover;
       background-repeat: no-repeat;
+      background-size: cover;
       overflow: hidden;
       position: relative;
     }
   }
 
   .poster-content {
-    max-width: 90%;
     margin: 0 auto;
+    max-width: 90%;
 
     h2 {
       color: $text-medium;

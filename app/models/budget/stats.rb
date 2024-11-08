@@ -131,7 +131,7 @@ class Budget::Stats
     end
 
     def balloters
-      @balloters ||= budget.ballots.where("ballot_lines_count > ?", 0).distinct.pluck(:user_id).compact
+      @balloters ||= budget.ballots.where(ballot_lines_count: 1..).distinct.pluck(:user_id).compact
     end
 
     def poll_ballot_voters
