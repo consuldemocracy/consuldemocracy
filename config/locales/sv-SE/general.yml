@@ -643,6 +643,8 @@ sv:
     show:
       back: "Gå tillbaka till min aktivitet"
   shared:
+    actions:
+      label: "%{action} %{name}"
     edit: "Redigera"
     filter: "Filtrera"
     save: "Spara"
