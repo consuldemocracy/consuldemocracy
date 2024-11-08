@@ -41,7 +41,7 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_options = { from: "participa@portalotavalo.gob.ec"}
-  config.action_mailer.default_url_options = { host: "172.20.4.16", port: 3000 }
+  config.action_mailer.default_url_options = { host: "172.20.4.16", protocol: "http", port: 3000 }
 
   # Deliver emails to a development mailbox at /letter_opener
   config.action_mailer.delivery_method = :smtp
