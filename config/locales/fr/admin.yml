@@ -166,6 +166,8 @@ fr:
         calculate: Calculer les investissements gagnant
         calculated: Le calcul des gagnants peut prendre quelques minutes.
         recalculate: Recalculer les investissements gagnant
+      ballots:
+        feature_disabled: 'La fonctionnalité <strong>Sondages</strong> doit être activée pour permettre la création d''isoloirs. Vous pouvez l''activer depuis la page <a href="%{link}">paramètres de configuration</a>.'
     budget_groups:
       name: "Nom"
       headings_name: "Titres"
@@ -198,6 +200,7 @@ fr:
         success_notice: "Rubrique supprimée avec succès"
         unable_notice: "Vous ne pouvez pas supprimer une rubrique qui est associé à des investissements"
       form:
+        geozone_info: "Quand un entête est associé à une géozone, la géozone apparaît sur la carte de ce budget si la géozone inclut les données GeoJSON."
         max_ballot_lines_info: 'Nombre maximum de projets qu''un utilisateur peut voter sur cette rubrique lors de la phase « Vote des projets ». Uniquement pour les budgets utilisant le vote d''approbation.'
         population_info: "Le champ de population pour la tranche du budget est utilisé à des fins statistiques à la fin du budget pour montrer le pourcentage de votants pour chaque tranche qui représente une zone. Le champ est optionnel donc vous pouvez le laissez blanc."
         coordinates_info: "Si la latitude et la longitude sont fournies, la page d’investissements pour cette rubrique comprendra une carte. Cette carte sera centrée en utilisant ces coordonnées."
@@ -368,7 +371,7 @@ fr:
         documents: "Documents"
         milestone: Jalon
         new_milestone: Créer nouveau jalon
-        milestone_tags: tags de suivi
+        milestone_tags: Étiquettes d'étape
       form:
         admin_statuses: Administrer les statuts d'investissement
         no_statuses_defined: Il n'y a pas encore de statuts d'investissement définis
@@ -415,8 +418,8 @@ fr:
         creating: "Créer une nouvelle barre de progrès"
       edit:
         title:
-          primary: "Editer la barre de progrès primaire"
-          secondary: "Editer la barre de progrès %{title}"
+          primary: "Éditer la barre de progression principale"
+          secondary: "Éditer la barre de progression %{title}"
       create:
         notice: "Barre de progrès créée avec succès!"
       update:
@@ -430,7 +433,7 @@ fr:
         author: "Auteur"
         commentable_type: "Type"
         title: Commentaires masqués
-        no_comments: il n'y a pas de commentaires.
+        no_comments: Il n'y a pas de commentaires.
         table_link: "Lien"
     hidden_comments:
       index:
@@ -442,12 +445,22 @@ fr:
         hidden_debate: Débat masqué
         hidden_proposal: Proposition masquée
         title: Commentaires masqués
-        no_hidden_comments: il n'y a pas de commentaires masqués.
+        no_hidden_comments: Il n'y a pas de commentaires masqués.
     dashboard:
       index:
         back: Retourner au %{org}
         title: Administration
         description: Bienvenue sur le page d’administration de %{org}.
+        info: |-
+          <p>C'est ici qu'en tant qu'administrateur vous créez et surveillez les processus citoyens participatifs de votre ville ou votre région.</p>
+
+          <p>Vous êtes maintenant l'un des gouvernements et municipalités dans le monde qui utilisent la plateforme CONSUL DEMOCRACY pour mettre en pratique la participation citoyenne. Félicitations !</p>
+
+          <p>La Fondation CONSUL DEMOCRACY est au coeur de la communauté internationale d'utilisateurs. Nous aimerions vous demander de nous contacter pour que nous ayons une idée de qui utilise le logiciel, et voir comment nous pourrions vous assister dans  sa mise en oeuvre et son utilisation. Nous sommes impatients de vous accueillir dans notre communauté.</p>
+
+          <p>Bonne administration !</p>
+
+          <p>Salutations de la part de l'équipe de la Fondation CONSUL DEMOCRACY.</p>
       actions:
         index:
           description: "Lorsque les utilisateurs créent des propositions il peuvent accéder au tableau de bord de leur proposition, où vous pouvez proposer des ressources et recommandations pour soutenir leur idée."
@@ -697,6 +710,11 @@ fr:
       milestones:
         index:
           title: Suivent
+    locales:
+      default_help_text: "Ceci est la langue par défaut de l'application. La changer <strong>affectera tout utilisateur</strong> qui visite le site pour la première fois."
+      enabled_help_text: La langue par défaut sélectionnée ci-dessus sera incluse automatiquement.
+      update:
+        notice: Langues mises à jour avec succès
     managers:
       index:
         title: Responsables
@@ -719,6 +737,7 @@ fr:
       proposals_topics: Sujets des propositions
       budgets: Budgets participatifs
       geozones: Gérer les districts
+      locales: Langues
       hidden_comments: Commentaires masqués
       hidden_debates: Débats masqués
       hidden_proposals: Propositions masquées
@@ -758,6 +777,8 @@ fr:
           community: "Communauté"
           proposals: "Propositions"
           polls: "Votes"
+          legislation: "Législation collaborative"
+          budgets: "Budgets"
           layouts: "Mise en page"
           machine_learning: "IA / Apprentissage automatique"
           mailers: "Courriels"
@@ -806,6 +827,7 @@ fr:
     segment_recipient:
       all_users: Tous les utilisateurs
       administrators: Administrateurs
+      all_proposal_authors: Auteurs de la proposition (y compris archivés et retirés)
       proposal_authors: Auteurs de la proposition
       investment_authors: Auteurs des propositions d'investissement dans le budget actuel
       feasible_and_undecided_investment_authors: "Auteurs des propositions d'investissement dans le budget actuel qui ne sont pas concernées par : [évaluation terminée, non viable]"
@@ -1071,7 +1093,7 @@ fr:
         title: "Aperçu du vote"
       form:
         description:
-          help_text: "Ce texte apparaîtra dans l'en-tête de la page de vote. Vous pouvez l'utiliser pour ajouter du contexte au vote ouvert"
+          help_text: "Ce texte apparaîtra dans l'en-tête de la page des sondages. Vous pouvez l'utiliser pour ajouter du contexte aux sondages en cours."
     polls:
       index:
         title: "Liste des votes"
@@ -1099,6 +1121,14 @@ fr:
         table_title: "Titre"
         edit_answers: Modifier les réponses
         see_proposal: "(Voir la proposition)"
+      destroy:
+        alert: "Cette action supprimera le sondage et toutes les questions associées."
+        success_notice: "Sondage supprimé avec succès"
+        unable_notice: "Vous ne pouvez pas supprimer un sondage qui a des votes"
+      votation_type:
+        title: "Type de scrutin"
+        unique_description: "Il n'est possible de répondre qu'une seule fois à la question."
+        multiple_description: "Permet de choisir plusieurs réponses. Il est possible de configurer le nombre maximum de réponses."
     questions:
       index:
         title: "Questions"
@@ -1115,6 +1145,8 @@ fr:
         poll_not_assigned: "Sondage non attribué"
       edit:
         title: "Modifier la question"
+      form:
+        poll_help: "Vous ne pouvez sélectionner que des sondages qui n'ont pas démarré"
       new:
         title: "Créer une question pour le sondage %{poll}"
         title_proposal: "Créer une question"
@@ -1442,8 +1474,15 @@ fr:
         polls: Votes
         sdg: ODD
       graph:
+        budget_investment_created: Investissements budgétaires créés
+        budget_investment_supported: Investissements budgétaires soutenus
         debate_created: Débats
+        legislation_annotation_created: Annotations de législation créées
+        legislation_answer_created: Réponses à législation créées
+        level_3_user: Utilisateurs de niveau 3 vérifiés
         proposal_created: Propositions citoyennes
+        title: Graphiques
+        visits: Visites
       budgets:
         no_data_before_balloting_phase: "Il n'y a aucune donnée à afficher tant que la phase de vote n'est pas ouverte."
         title: "Budget participatifs - Stats de participation"
@@ -1506,6 +1545,10 @@ fr:
         document_number: Numéro de document
         roles: Rôles
         verification_level: Niveau de vérification
+        activation_status: Statut d'activation
+      account:
+        active_status: Compte activé
+        inactive_status: Compte non activé
       index:
         title: Utilisateurs masqués
         no_users: Il n'y a pas aucun utilisateur.
@@ -1548,6 +1591,7 @@ fr:
           names:
             top_links: Liens du haut
             footer: Pied de page
+            footer_legal: PIed de page (conditions légales)
             subnavigation_left: Navigation principale gauche
             subnavigation_right: Navigation principale droite
       images:
@@ -1594,12 +1638,19 @@ fr:
           create_card: Créer un encart
           no_cards: Il n'y a pas d'encarts.
           columns_help: "Largeur de la carte en nombre de colonnes. Sur les écrans mobiles, c'est toujours 100 % de largeur."
+          order_help: "Vous pouvez saisir l'emplacement de cette carte."
           create:
             notice: "Carte créée avec succès !"
           update:
             notice: "Carte mise à jour avec succès"
           destroy:
             notice: "Carte supprimée avec succès"
+    tenants:
+      create:
+        notice: Locataire créé avec succès
+      form:
+        use_subdomain: "Utilisez un sous-domaine du domaine %{domain} pour accéder à ce locataire"
+        use_domain: "Utilisez un domaine différent pour accéder à ce locataire"
     homepage:
       title: Page d’accueil
       description: Les modules actifs apparaissent dans la page d’accueil dans le même ordre, comme en l’espèce.

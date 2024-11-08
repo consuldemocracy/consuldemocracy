@@ -39,7 +39,7 @@ class SignatureSheet < ApplicationRecord
   end
 
   def parsed_required_fields_to_verify_groups
-    required_fields_to_verify.split(/[;]/).map { |d| d.gsub(/\s+/, "") }.map { |group| group.split(/[,]/) }
+    required_fields_to_verify.split(";").map { |d| d.gsub(/\s+/, "") }.map { |group| group.split(",") }
   end
 
   def signable_found

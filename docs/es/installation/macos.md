@@ -1,61 +1,56 @@
-# Configuración para los entornos de desarrollo y pruebas (Mac OS X)
+# Configuración para los entornos de desarrollo y pruebas (macOS Sonoma 14.6)
 
 ## Homebrew
 
-Homebrew es un gestor de paquetes para OS X muy popular. Es recomendable usarlo pues facilita enormemente la instalación de algunos de los paquetes necesarios.
+Homebrew es un gestor de paquetes para macOS muy popular. Es recomendable usarlo pues facilita enormemente la instalación de algunos de los paquetes necesarios.
 
 Puedes encontrar las instrucciones de instalación en: [brew.sh](http://brew.sh)
 
-## XCode y XCode Command Line Tools
+## Git
 
-Para utilizar git necesitarás instalar *Xcode* (está en la Mac App Store) y las *Xcode Command Line Tools* (se instalan desde el menú de Xcode).
+Puedes instalar git:
 
-## Git y Github
-
-Puedes descargar git desde: [git-scm.com/download/mac](https://git-scm.com/download/mac)
+```bash
+brew install git
+```
 
 ## Gestor de versiones de Ruby
 
-OS X ya viene con una versión preinstalada de ruby, pero es bastante vieja y en nuestro caso no nos sirve. Una de las formas de instalar Ruby es a través de rbenv. Las instrucciones de instalación están en su GitHub y son bastante claras:
-
-[github.com/rbenv/rbenv](https://github.com/rbenv/rbenv)
-
-## Bundler
+macOS ya viene con una versión preinstalada de ruby, pero necesitamos una versión más reciente. Una de las formas de instalar Ruby es a través de un gestor de versiones de Ruby como [rbenv](https://github.com/rbenv/rbenv):
 
 ```bash
-gem install bundler
+brew install rbenv
+rbenv init
+source ~/.zprofile
 ```
 
-## Node.js
+## CMake y pkg-config
 
-Para compilar los archivos estáticos (JS, CSS, imágenes, etc.), es necesario un _runtime_ de JavaScript. OS X viene con un _runtime_ integrado llamado `Apple JavaScriptCore` pero Node.js es la opción recomendada.
-
-Para instalar Node, puedes usar [n](https://github.com/tj/n)
-
-Ejecuta el siguiente comando en tu terminal:
+Para compilar algunas de las dependencias del proyecto, necesitamos CMake y pkg-config:
 
 ```bash
-curl -L https://git.io/n-install | bash -s -- -y lts
+brew install cmake pkg-config
 ```
 
-Y este instalará automáticamente la versión LTS (_Long Term Support_, inglés para "Soporte a largo plazo") más reciente de Node en tu directorio `$HOME` (Este comando hace uso de [n-install](https://github.com/mklement0/n-install))
+## Gestor de versiones de Node.js
 
-## PostgreSQL (>=9.4)
+Para compilar los archivos estáticos (JS, CSS, imágenes, etc.), es necesario un _runtime_ de JavaScript. macOS viene con un _runtime_ integrado llamado `Apple JavaScriptCore` pero Node.js es la opción recomendada. Para instalar Node.js, instalaremos un gestor de versiones de Node.js, como NVM:
 
 ```bash
-brew install postgres
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+source ~/.zprofile
 ```
 
-Una vez instalado es necesario *inicializar* la instalación:
+## PostgreSQL
 
 ```bash
-initdb /usr/local/var/postgres
+brew install postgresql
 ```
 
 Ahora vamos a configurar algunos aspectos del usuario por defecto. Primero iniciamos el servidor de postgres con:
 
 ```bash
-postgres -D /usr/local/var/postgres
+brew services start postgresql
 ```
 
 Llegados a este punto se supone que tenemos postgres correctamente instalado y se nos habrá creado un usuario por defecto (cuyo nombre es nuestro nombre de usuario), y que (todavía) no tiene contraseña.
@@ -66,7 +61,7 @@ Si ejecutamos `psql` accederemos a la consola de postgres con el usuario por def
 createdb 'tu_nombre_de_usuario'
 ```
 
-Si ahora ejecutamos `psql` de nuevo deberíamos poder acceder correctamente a la consola de postgres. Si sobre la consola de postgres ejecutas `\du` puede ver la lista de usuarios actual.
+Si ahora ejecutamos `psql` de nuevo deberíamos poder acceder correctamente a la consola de postgres. Si sobre la consola de postgres ejecutas `\du` puedes ver la lista de usuarios actual.
 
 En el caso de que quieras asignarte una contraseña puedes hacerlo desde la consola de postgres con:
 
@@ -74,36 +69,20 @@ En el caso de que quieras asignarte una contraseña puedes hacerlo desde la cons
 ALTER USER tu_nombre_usuario WITH PASSWORD 'tu_contraseña';
 ```
 
-Ahora vamos a crear el usuario *consul*, que es el que utiliza la aplicación. Ejecuta sobre la consola de postgres:
-
-```sql
-CREATE ROLE consul WITH PASSWORD '000';
-ALTER ROLE consul WITH SUPERUSER;
-ALTER ROLE consul WITH login;
-```
-
-Si en algún momento durante la instalación de PostgreSQL y sospechas que te has equivocado y deseas desinstalarlo y volver a empezar desde cero:
-
-```bash
-brew uninstall postgres
-```
-
-También tendrás que borrar el siguiente directorio para que no de conflictos cuando intentes volver a instalarlo (fuente: [gist.github.com/lxneng/741932](https://gist.github.com/lxneng/741932)):
-
-```bash
-rm -rf /usr/local/var/postgres
-```
-
-## ChromeDriver
-
-```bash
-brew install chromedriver
-```
-
 ## Imagemagick
+
+Instala Imagemagick:
 
 ```bash
 brew install imagemagick
 ```
 
-Ahora que ya tenemos todas las dependencias instalado podemos proceder con la [instalación de Consul Democracy](local_installation.md)
+## Chrome o Chromium
+
+Para poder ejecutar los tests de sistema, necesitaremos tener instalado Chrome o Chromium.
+
+```bash
+brew install google-chrome
+```
+
+¡Ya estás listo para [instalar Consul Democracy](local_installation.md)!

@@ -1,87 +1,64 @@
 # Using AWS S3 as file storage
 
-While Consul Democracy keeps most of its data in a PostgreSQL database, all the files such as documents or images have to be stored elsewhere.
-
-To take care of them, Consul Democracy uses the [Paperclip gem](https://github.com/thoughtbot/paperclip) (Warning: this gem is now deprecated and Consul Democracy will probably migrate to ActiveStorage in the future. Check that this is not already the case before using this guide).
-
-By default, the attachments are stored on the filesystem. However, with services such as Heroku, there is no persistent storage which means that these files are periodically erased.
-
-This tutorial explains how to configure Paperclip to use [AWS S3](https://aws.amazon.com/fr/s3/). It doesn't recommend S3 or the use of Amazon services and will hopefully be expanded to include configuration for [fog storage](http://fog.io/storage/).
+Although Consul Democracy stores most of its data in a PostgreSQL database, in Heroku all files, such as documents or images, must be stored elsewhere, such as AWS S3.
 
 ## Adding the gem *aws-sdk-s3*
 
-First, add the following line in your *Gemfile_custom*
+Add the following line to your *Gemfile_custom*:
 
 ```ruby
-gem 'aws-sdk-s3', '~> 1'
+gem "aws-sdk-s3", "~> 1"
 ```
 
-Make sure to have a recent version of paperclip (Consul Democracy is currently using 5.2.1, which doesn't recognize *aws-sdk-s3*). In your Gemfile, the line should be:
-
-```ruby
-gem 'paperclip', '~> 6.1.0'
-```
-
-Run `bundle install` to apply your changes.
+And run `bundle install` to apply your changes.
 
 ## Adding your credentials in *secrets.yml*
 
-This guide will assume that you have an Amazon account configured to use S3 and that you created a bucket for your instance of Consul Democracy. It is highly recommended to use a different bucket for each instance (production, preproduction, staging).
+This guide assumes you have an Amazon account configured to use S3 and that you have created a bucket for your instance of Consul Democracy. It is strongly recommended to use a different bucket for each instance (production, preproduction, staging).
 
 You will need the following information:
 
-- the **name** of the S3 bucket
-- the **region** of the S3 bucket (`eu-central-1` for UE-Francfort for example)
-- the **hostname** of the S3 bucket (`s3.eu-central-1.amazonaws.com` for Francfort, for example)
-- an **access key id** and a **secret access key** with read/write permission to that bucket
+- The **name** of the S3 bucket.
+- The **region** of the S3 bucket (`eu-central-1` for UE-Francfort for example).
+- An **access_key** and a **secret_key** with read/write permission to that bucket.
 
-**WARNING:** It is recommended to create IAM users that will only have read/write permission to the bucket you want to use for that specific instance of Consul Democracy.
+**WARNING:** It is recommended to create IAM users (Identity and Access Management) who only have read/write permissions for the bucket you intend to use for that specific instance of Consul Democracy.
 
-Once you have these pieces of information, you can save them as environment variables of the instance running Consul Democracy. In this tutorial, we save them respectively as *AWS_S3_BUCKET*, *AWS_S3_REGION*, *AWS_S3_HOSTNAME*, *AWS_ACCESS_KEY_ID* and *AWS_SECRET_ACCESS_KEY*.
+Once you have these pieces of information, you can save them as environment variables of the instance running Consul Democracy. In this tutorial, we save them respectively as *S3_BUCKET*, *S3_REGION*, *S3_ACCESS_KEY_ID* and *S3_SECRET_ACCESS_KEY*.
 
-Add the following block in your *secrets.yml* file:
-
-```yaml
-aws: &aws
-  aws_s3_region: <%= ENV["AWS_S3_REGION"] %>
-  aws_access_key_id: <%= ENV["AWS_ACCESS_KEY_ID"] %>
-  aws_secret_access_key: <%= ENV["AWS_SECRET_ACCESS_KEY"] %>
-  aws_s3_bucket: <%= ENV["AWS_S3_BUCKET"] %>
-  aws_s3_host_name: <%= ENV["AWS_S3_HOST_NAME"] %>
+```bash
+heroku config:set S3_BUCKET=example-bucket-name S3_REGION=eu-west-example S3_ACCESS_KEY_ID=xxxxxxxxx S3_SECRET_ACCESS_KEY=yyyyyyyyyy
 ```
 
-and `<<: *aws` under the environments which you want to use S3 with, for example:
+Now add the following block to your *secrets.yml* file:
 
 ```yaml
 production:
-[...]
-  <<: *aws
+  s3:
+    access_key_id: <%= ENV["S3_ACCESS_KEY_ID"] %>
+    secret_access_key: <%= ENV["S3_SECRET_ACCESS_KEY"] %>
+    region: <%= ENV["S3_REGION"] %>
+    bucket: <%= ENV["S3_BUCKET"] %>
 ```
 
-## Configuring Paperclip
+## Enabling the use of S3 in the application
 
-First, activate Paperclip's URI adapter by creating the file *config/initializers/paperclip.rb* with the following content:
+First, add the following line inside the `class Application < Rails::Application` class in the `config/application_custom.rb` file:
 
 ```ruby
-Paperclip::UriAdapter.register
+# Store uploaded files on the local file system (see config/storage.yml for options).
+config.active_storage.service = :s3
 ```
 
-Finally, add the following lines in the environment file of the instance which you want to use S3 with. In production, you should for example edit *config/environments/production.rb*.
+Then, uncomment the s3 block that you will find in the *storage.yml* file:
 
-```ruby
-# Paperclip settings to store images and documents on S3
-config.paperclip_defaults = {
-  storage: :s3,
-  preserve_files: true,
-  s3_host_name: Rails.application.secrets.aws_s3_host_name,
-  s3_protocol: :https,
-  s3_credentials: {
-    bucket: Rails.application.secrets.aws_s3_bucket,
-    access_key_id: Rails.application.secrets.aws_access_key_id,
-    secret_access_key: Rails.application.secrets.aws_secret_access_key,
-    s3_region: Rails.application.secrets.aws_s3_region,
-  }
-}
+```yaml
+s3:
+  service: S3
+  access_key_id: <%= Rails.application.secrets.dig(:s3, :access_key_id) %>
+  secret_access_key: <%= Rails.application.secrets.dig(:s3, :secret_access_key) %>
+  region: <%= Rails.application.secrets.dig(:s3, :region) %>
+  bucket: <%= Rails.application.secrets.dig(:s3, :bucket) %>
 ```
 
-You will need to restart to apply the changes.
+You will need to restart the application to apply the changes.

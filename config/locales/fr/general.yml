@@ -162,6 +162,7 @@ fr:
     legislation/process: processus
     legislation/question: question
     poll/shift: Période de travail
+    poll/question/option: Réponse
     user: Compte
     verification/sms: téléphone
     signature_sheet: Feuille de signature
@@ -504,8 +505,8 @@ fr:
         title: Votes
         create: Créer le vote
         count:
-          one: Vous avez créé %{count} scrutin.
-          other: Vous avez créé %{count} scrutins.
+          one: Vous avez créé %{count} sondage.
+          other: Vous avez créé %{count} sondages.
         links: Liens
         additiontal_information: Information supplémentaire
       new:
@@ -521,11 +522,11 @@ fr:
         edit_poll: Modifier le sondage
         show_results_help: Si vous cochez cette case, les résultats seront publics et tous les utilisateurs pourront les voir
         delete: Supprimer l'enquête
-        alert_notice: Cette action supprimera le scrutin et toutes les questions associées.
-        success_notice: Scrutin supprimé avec succès
-        unable_notice: Impossible de supprimer un scrutin avec des réponses
+        alert_notice: Cette action supprimera l'enquête et toutes ses questions associées.
+        success_notice: Enquête supprimée avec succès
+        unable_notice: Impossible de supprimer une enquête qui a des réponses
       form:
-        name: Titre du scrutin
+        name: Titre de l'enquête
         add_question: Ajouter une question
       question_fields:
         remove_question: Supprimer la question

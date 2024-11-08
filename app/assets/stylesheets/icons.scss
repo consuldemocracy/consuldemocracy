@@ -2,13 +2,13 @@
 
 @font-face {
   font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
   src: font-url("icons.eot");
   src: font-url("icons.eot?#iefix") format("embedded-opentype"),
     font-url("icons.woff") format("woff"),
     font-url("icons.ttf") format("truetype"),
     font-url("icons.svg#icons") format("svg");
-  font-weight: normal;
-  font-style: normal;
 }
 
 [data-icon]::before,
@@ -284,31 +284,31 @@
 }
 
 .icon-quote-before::before {
-  content: "";
-  background-size: cover;
-  display: block;
-  width: 60px;
-  height: 60px;
   background-image: url("quote_before_blue.png");
   background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  display: block;
+  height: 60px;
+  width: 60px;
 }
 
 .icon-quote-after::before {
-  content: "";
-  background-size: cover;
-  display: block;
-  width: 60px;
-  height: 60px;
   background-image: url("quote_after_blue.png");
   background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  display: block;
+  height: 60px;
+  width: 60px;
 }
 
 .icon-finger::before {
-  content: "";
-  background-size: cover;
-  display: inline-block;
-  width: 50px;
-  height: 50px;
   background-image: url("finger.png");
   background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  display: inline-block;
+  height: 50px;
+  width: 50px;
 }

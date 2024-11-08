@@ -1,7 +1,4 @@
 engines:
-  rubocop:
-    enabled: true
-    channel: rubocop-1-56-3
   duplication:
     enabled: true
     config:
@@ -12,13 +9,7 @@ engines:
     enabled: true
   bundler-audit:
     enabled: true
-  coffeelint:
-    enabled: true
-  scss-lint:
-    enabled: true
   fixme:
-    enabled: true
-  markdownlint:
     enabled: true
 ratings:
   paths:

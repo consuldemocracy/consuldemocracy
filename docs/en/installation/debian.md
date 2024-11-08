@@ -1,24 +1,31 @@
-# Configuration for development and test environments (Debian GNU/Linux 9.8)
+# Configuration for development and test environments (Debian GNU/Linux 12 - Bookworm)
 
 ## Superuser
 
-Note that 'sudo' is not installed by default in Debian. It's possible to install and configure it, you can find information [here](https://wiki.debian.org/sudo). But  we don't recommend it cause you may have other problems. We recommend running the following commands as a superuser, so make sure the very first command you run is:
+By default, in Debian no user can use `sudo` if a password for the root user was provided during the installation.
+
+So, in order to install the project dependencies, we've got two options. The first option is opening a root shell. Run:
 
 ```bash
 su
 ```
 
-> For [Vagrant](/en/installation/vagrant.md) run:
-> ```
-> sudo su -
-> ```
+You'll be asked to introduce the password for the root user.
+
+The second option is adding a regular user to the `sudo` group. For that, after opening a root shell, run:
+
+```bash
+gpasswd -a <your_username> sudo
+```
+
+You'll have to log out and log in again for these changes to take effect.
 
 ## System update
 
 Run a general system update:
 
 ```bash
-apt-get update
+sudo apt update
 ```
 
 ## Git
@@ -26,103 +33,55 @@ apt-get update
 Git is officially maintained in Debian:
 
 ```bash
-apt-get install git
-```
-
-## Curl
-
-Curl is officially maintained in Debian:
-
-```bash
-apt-get install curl
+sudo apt install git
 ```
 
 ## Ruby version manager
 
 Ruby versions packaged in official repositories are not suitable to work with Consul Democracy, so we'll have to install it manually.
 
-One possible tool is rvm:
-
-### As a local user
+First, we need to install Ruby's development dependencies:
 
 ```bash
-command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
-command curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
-curl -L https://get.rvm.io | bash -s stable
+sudo apt install libssl-dev autoconf bison build-essential libyaml-dev libreadline-dev zlib1g-dev libncurses-dev libffi-dev libgdbm-dev
 ```
 
-then add rvm script source to user's bash (~/.bashrc) (this step is only necessary if you can't execute the rvm command)
+The next step is installing a Ruby version manager, like rbenv:
 
 ```bash
-[[ -s /usr/local/rvm/scripts/rvm ]] && source /usr/local/rvm/scripts/rvm
-```
-
-and finally, reload .bashrc to be able to run RVM
-
-```bash
+wget -qO- https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-installer | bash
 source ~/.bashrc
 ```
 
-## Node.js
+## CMake and pkg-config
 
-To compile the assets, you'll need a JavaScript runtime. Node.js is the preferred option. As with Ruby, we don't recommend installing Node from your distro's repositories.
-
-To install it, you can use [n](https://github.com/tj/n)
-
-Run the following command on your terminal:
+In order to compile some of the project dependencies, we need CMake and pkg-config:
 
 ```bash
-curl -L https://git.io/n-install | bash -s -- -y lts
+sudo apt install cmake pkg-config
 ```
 
-And it will install the latest LTS (Long Term Support) Node version on your `$HOME` folder automatically (This makes use of [n-install](https://github.com/mklement0/n-install))
+## Node.js version manager
 
-Reload .bashrc to be able to run node
+To compile the assets, you'll need a JavaScript runtime. Node.js is the preferred option. To install Node.js, we will install a Node.js version manager, like NVM:
 
 ```bash
-source /root/.bashrc
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+source ~/.bashrc
 ```
 
-Check it's correctly installed by running:
+## PostgreSQL
+
+Install postgresql and its development dependencies with:
 
 ```bash
-node -v
-```
-
-## PostgreSQL (>=9.4)
-
-PostgreSQL version 9.4 is not official in debian 9.
-
-So you have to add a repository, the official postgresql works fine.
-
-Add the repository to apt, for example creating file */etc/apt/sources.list.d/pgdg.list* with:
-
-```text
-deb http://security.debian.org/debian-security jessie/updates main
-```
-
-afterwards you'll have to download the key, and install it, by:
-
-```bash
-wget https://www.postgresql.org/media/keys/ACCC4CF8.asc
-apt-key add ACCC4CF8.asc
-```
-
-and install postgresql
-
-```bash
-apt-get update
-apt-get install postgresql-9.4 postgresql-server-dev-9.4 postgresql-contrib-9.4
+sudo apt install postgresql libpq-dev
 ```
 
 You also need to configure a user for your database. As an example, we'll choose the username "consul":
 
 ```bash
-su - postgres
-
-createuser consul --createdb --superuser --pwprompt
-
-exit
+sudo -u postgres createuser consul --createdb --superuser --pwprompt
 ```
 
 ## Imagemagick
@@ -130,34 +89,15 @@ exit
 Install Imagemagick:
 
 ```bash
-apt-get install imagemagick
+sudo apt install imagemagick
 ```
 
-## ChromeDriver
+## Chrome or Chromium
 
-To run E2E integration tests, we use Selenium along with Headless Chrome.
-
-To get it working, install the chromedriver package:
+In order to run the system tests, we need to install Chrome or Chromium.
 
 ```bash
-apt-get install chromedriver
-ln -s /usr/lib/chromedriver /usr/local/bin/
+sudo apt install chromium
 ```
 
-Make sure it's working as expected by running the following command:
-
-```bash
-chromedriver --version
-```
-
-You should receive an output with the latest version of ChromeDriver. If that's the case, you're good to go!
-
-If you are using an Arch-based distro, installing `chromium` from the `extra` repository should be sufficient.
-
-You also have the option of just installing ChromeDriver from AUR. If you use `pacaur`, run the following command:
-
-```bash
-pacaur -S chromedriver
-```
-
-Now you're ready to go get Consul Democracy [installed](local_installation.md)!!
+Now you're ready to go [get Consul Democracy installed](local_installation.md)!

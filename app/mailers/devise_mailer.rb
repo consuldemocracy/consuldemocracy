@@ -5,8 +5,6 @@ class DeviseMailer < Devise::Mailer
   protected
 
     def devise_mail(record, action, opts = {})
-      I18n.with_locale record.locale do
-        super(record, action, opts)
-      end
+      I18n.with_locale(record.locale) { super }
     end
 end

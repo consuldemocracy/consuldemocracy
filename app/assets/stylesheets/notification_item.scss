@@ -18,8 +18,8 @@
 
       color: #ecf00b;
       font-size: $circle-icon-size;
-      position: absolute;
       left: $notification-icon-size - rem-calc(5);
+      position: absolute;
       top: calc(#{$menu-link-top-padding} - #{$circle-icon-size} / 2);
 
       @include breakpoint(medium) {

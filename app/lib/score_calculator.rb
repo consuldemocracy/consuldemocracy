@@ -4,8 +4,8 @@ module ScoreCalculator
 
     period = [1, [max_period, resource_age(resource)].min].max
 
-    votes_total = resource.votes_for.where("created_at >= ?", period.days.ago).count
-    votes_up    = resource.get_upvotes.where("created_at >= ?", period.days.ago).count
+    votes_total = resource.votes_for.where(created_at: period.days.ago..).count
+    votes_up    = resource.get_upvotes.where(created_at: period.days.ago..).count
     votes_down  = votes_total - votes_up
     votes_score = votes_up - votes_down
 

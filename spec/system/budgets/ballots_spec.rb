@@ -444,6 +444,7 @@ describe "Ballots" do
       click_link "Go back"
 
       expect(page).to have_current_path(budget_investments_path(budget, heading_id: new_york.id))
+      expect(page).to have_link "Check my votes"
     end
 
     scenario "before adding any investments" do
@@ -459,6 +460,7 @@ describe "Ballots" do
       click_link "Go back"
 
       expect(page).to have_current_path(budget_investments_path(budget, heading_id: new_york.id))
+      expect(page).to have_link "Check my votes"
     end
   end
 

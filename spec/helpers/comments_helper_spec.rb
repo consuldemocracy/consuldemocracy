@@ -13,8 +13,8 @@ require "rails_helper"
 RSpec.describe CommentsHelper do
   describe "#user_level_class" do
     def comment_double(as_administrator: false, as_moderator: false, official: false)
-      user = instance_double("User", official?: official, official_level: "Y")
-      instance_double("Comment", as_administrator?: as_administrator, as_moderator?: as_moderator, user: user)
+      user = instance_double(User, official?: official, official_level: "Y")
+      instance_double(Comment, as_administrator?: as_administrator, as_moderator?: as_moderator, user: user)
     end
 
     it "returns is-admin for comment done as administrator" do
@@ -45,14 +45,14 @@ RSpec.describe CommentsHelper do
   describe "#comment_author_class" do
     it "returns is-author if author is the commenting user" do
       author_id = 42
-      comment = instance_double("Comment", user_id: author_id)
+      comment = instance_double(Comment, user_id: author_id)
 
       expect(helper.comment_author_class(comment, author_id)).to eq("is-author")
     end
 
     it "returns an empty string if commenter is not the author" do
       author_id = 42
-      comment = instance_double("Comment", user_id: author_id - 1)
+      comment = instance_double(Comment, user_id: author_id - 1)
 
       expect(helper.comment_author_class(comment, author_id)).to eq("")
     end
