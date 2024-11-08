@@ -44,8 +44,4 @@ class Admin::BannersController < Admin::BaseController
        translation_params(Banner),
        web_section_ids: []]
     end
-
-    def resource
-      @banner ||= Banner.find(params[:id])
-    end
 end
