@@ -58,7 +58,7 @@ es:
           description: "Utiliza esta página para resolver las Preguntas frecuentes a los usuarios del sitio."
       other:
         title: "Otra información de interés"
-        how_to_use: "Utiliza %{org_name} en tu municipio"
+        how_to_use: "Utiliza CONSUL en tu municipio"
         sdg: "Ayuda Objetivos de Desarrollo Sostenible"
       how_to_use:
         text: |-
