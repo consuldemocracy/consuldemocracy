@@ -3,7 +3,7 @@
     margin-top: calc(#{$line-height} / 3);
   }
 
-  a:first-of-type {
+  a {
     word-wrap: break-word;
 
     .document-metadata {
@@ -17,5 +17,9 @@
         @include vertical-separator;
       }
     }
+  }
+
+  button {
+    cursor: pointer;
   }
 }

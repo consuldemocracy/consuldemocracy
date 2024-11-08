@@ -336,16 +336,16 @@ describe "Comments" do
       visit polymorphic_path(resource)
 
       accept_confirm("Are you sure? This action will delete this comment. You can't undo this action.") do
-        within(".comment-body", text: "This was a mistake") { click_link "Delete comment" }
+        within(".comment-body", text: "This was a mistake") { click_button "Delete comment" }
       end
 
       expect(page).not_to have_content "This was a mistake"
-      expect(page).not_to have_link "Delete comment"
+      expect(page).not_to have_button "Delete comment"
 
       refresh
 
       expect(page).not_to have_content "This was a mistake"
-      expect(page).not_to have_link "Delete comment"
+      expect(page).not_to have_button "Delete comment"
 
       logout
       login_as(admin)
@@ -363,7 +363,7 @@ describe "Comments" do
       visit polymorphic_path(resource)
 
       accept_confirm("Are you sure? This action will delete this comment. You can't undo this action.") do
-        within(".comment-body", text: "Wrong comment") { click_link "Delete comment" }
+        within(".comment-body", text: "Wrong comment") { click_button "Delete comment" }
       end
 
       within "#comments > .comment-list > li", text: "Right reply" do
