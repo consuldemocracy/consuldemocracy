@@ -1,0 +1,10 @@
+- [ ] Make sure that the right version of Ruby is in use: rvm only checks the version when changing directory. Therefore, do:
+cd ..
+cd consuldemocracy
+rvm install "ruby-x.x.x"
+
+- [ ] Should a new version of Ruby be required, a message should be displayed on stdout.
+
+- [ ] if the Ruby version has changed, capistrano should likely be updated too:
+gem install capistrano
+bundle install
