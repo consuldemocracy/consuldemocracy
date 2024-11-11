@@ -238,7 +238,6 @@ gl:
         valuator_filter_all: Todos os avaliadores
         tags_filter_all: Todas as etiquetas
         advanced_filters: Filtros avanzados
-        placeholder: Buscar proxectos
         filters:
           all: Todo
           without_admin: Sen administrador
