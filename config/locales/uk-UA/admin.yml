@@ -179,7 +179,6 @@ uk-UA:
         valuator_filter_all: Усі оцінювачі
         tags_filter_all: Усі теги
         advanced_filters: Розширені фільтри
-        placeholder: Пошук проектів
         filters:
           all: Усі
           without_admin: Без призначеного адміністратора
