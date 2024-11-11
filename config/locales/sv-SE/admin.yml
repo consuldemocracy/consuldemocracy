@@ -240,7 +240,6 @@ sv:
         valuator_filter_all: Alla bedömare
         tags_filter_all: Alla taggar
         advanced_filters: Avancerade filter
-        placeholder: Sök projekt
         filters:
           all: Alla
           without_admin: Utan tilldelad administratör
