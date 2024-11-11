@@ -160,7 +160,6 @@ sr:
         valuator_filter_all: Сви оцењивачи
         tags_filter_all: Све ознаке
         advanced_filters: Унапређени филтери
-        placeholder: Претражите пројекте
         filters:
           all: Све
           without_admin: Без додељеног администратора
