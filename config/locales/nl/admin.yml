@@ -205,7 +205,6 @@ nl:
         valuator_filter_all: Alle beoordelaars
         tags_filter_all: Alle labels
         advanced_filters: Geavanceerde filters
-        placeholder: Zoek in projecten
         filters:
           all: Alle
           without_admin: Zonder toegewezen beheerder
