@@ -219,7 +219,7 @@ de:
         dates_help_text: "Nur zu Informationszwecken"
         description_help_text: Dieser Text erscheint in der Kopfzeile, wenn die Phase aktiv ist
         duration: "Laufzeit dieser Phase"
-        duration_description: "Der Zeitraum, in dem diese Phase aktiv sein wird."
+        duration_description: "Diese Felder werden nur zu Informationszwecken verwendet und <strong> lösen keine automatische Aktualisierung der aktiven Phase aus.</strong>. Um sie zu aktualisieren, muss der Bürgerhaushalt bearbeitet und die aktive Phase ausgewählt werden."
         enabled_help_text: Diese Phase wird öffentlich in der Zeitleiste der Phasen des Bürgerhaushalts angezeigt und ist auch für andere Zwecke aktiv
         image_description: "Wenn ein Bild hochgeladen wurde, wird es neben der Beschreibung dieser Phase angezeigt."
         main_call_to_action: "Hauptaufforderung zum Handeln (optional)"
