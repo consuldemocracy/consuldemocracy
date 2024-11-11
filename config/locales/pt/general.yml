@@ -739,7 +739,6 @@ pt:
       see_more: Ver mais recomendações
       hide: Ocultar recomendações
     translations:
-      select_language_prompt: Selecionar idioma
       remove_language: Remover idioma
       add_language: Adicionar idioma
       languages_in_use:
