@@ -1,0 +1,54 @@
+.admin-budget-investments-search-form {
+  .advanced-filters {
+    @include link;
+    float: $global-right;
+    margin: $line-height 0;
+
+    @include breakpoint(medium) {
+      margin: calc(#{$line-height} / 2) 0 0;
+    }
+  }
+
+  .advanced-filters-content {
+    background: $highlight;
+    clear: both;
+    margin: $line-height 0;
+    padding: calc(#{$line-height} / 2);
+
+    .filter {
+      display: inline-block;
+      margin: 0 calc(#{$line-height} / 2);
+
+      label {
+        font-weight: normal;
+        margin: 0;
+      }
+    }
+
+    .button {
+      margin-top: calc(#{$line-height} / 2);
+    }
+  }
+
+  .basic-filters {
+    align-items: flex-end;
+    clear: both;
+    display: flex;
+    flex-wrap: wrap;
+
+    > * {
+      @include grid-column-gutter;
+      width: 100%;
+
+      @include breakpoint(medium) {
+        width: 25%;
+      }
+    }
+
+    > .title-or-id-filter {
+      @include breakpoint(medium) {
+        width: 50%;
+      }
+    }
+  }
+}

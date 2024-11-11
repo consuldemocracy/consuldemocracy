@@ -6,7 +6,7 @@
   <% end %>
   <% contents.each do |group| %>
     <% group.each do |content| %>
-      <b><%= content.key %></b>
+      <%= hidden_field_tag "contents[content_#{content.key}][id]", content.key %>
       <% (content.globalize_locales & enabled_locales.map(&:to_sym)).each do |locale| %>
         <%= render Admin::SiteCustomization::InformationTexts::FormFieldComponent.new(content, locale: locale) %>
       <% end %>
