@@ -160,7 +160,6 @@ hr:
         valuator_filter_all: Svi procjenitelji
         tags_filter_all: Sve oznake
         advanced_filters: Napredni filtri
-        placeholder: Pretraži projetke
         filters:
           all: Svi
           without_admin: Bez dodjeljenog admina
