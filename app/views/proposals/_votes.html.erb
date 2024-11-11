@@ -1,1 +1,9 @@
-<%= render Proposals::VotesComponent.new(proposal, vote_url: local_assigns[:vote_url]) %>
+<% hide_proposal_votes = Rails.application.secrets.fetch(:hide_proposal_votes, false) %>
+
+<% if Rails.application.secrets.hide_proposal_votes %>
+  <div class="share-supported">
+    <%= render "proposals/social_share", proposal: proposal, share_title: false %>
+  </div>
+<% else %>
+  <%= render Proposals::VotesComponent.new(proposal, vote_url: local_assigns[:vote_url]) %>
+<% end %>
