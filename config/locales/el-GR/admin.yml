@@ -178,7 +178,6 @@ el:
         valuator_filter_all: Όλοι οι εκτιμητές
         tags_filter_all: Όλες οι ετικέτες
         advanced_filters: Σύνθετα φίλτρα
-        placeholder: Αναζήτηση έργων
         filters:
           all: Όλα
           without_admin: Δεν έχει ανατεθεί διαχειριστής
