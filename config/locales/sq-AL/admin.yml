@@ -118,7 +118,6 @@ sq:
         valuator_filter_all: Të gjithë vlerësuesit
         tags_filter_all: Të gjitha etiketat
         advanced_filters: Filtra të avancuar
-        placeholder: Kërko projekte
         filters:
           all: Të gjithë
           without_admin: Pa caktuar administratorin
