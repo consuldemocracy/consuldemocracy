@@ -235,7 +235,6 @@ de:
         valuator_filter_all: Alle Begutachter*innen
         tags_filter_all: Alle Tags
         advanced_filters: Erweiterte Filter
-        placeholder: Suche Projekte
         filters:
           all: Alle
           without_admin: Ohne zugewiesene*n Administrator*in
