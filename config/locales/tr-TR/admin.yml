@@ -240,7 +240,6 @@ tr:
         valuator_filter_all: Tüm bilirkişiler
         tags_filter_all: Tüm etiketler
         advanced_filters: Gelişmiş süzgeçler
-        placeholder: Proje ara
         filters:
           all: Tümü
           without_admin: Görevlendirilmiş yöneticisi olmayan
