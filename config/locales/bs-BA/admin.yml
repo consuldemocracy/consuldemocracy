@@ -146,7 +146,6 @@ bs:
         valuator_filter_all: Svi procjenitelji
         tags_filter_all: Svi tagovi
         advanced_filters: Napredni filteri
-        placeholder: Nađi projekte
         filters:
           all: Sve
           without_admin: Bez dodijeljenog administratora
