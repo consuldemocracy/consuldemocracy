@@ -26,10 +26,16 @@ class Setting
           # Overwrite default CONSUL DEMOCRACY settings or add new settings here
           "feature.saml_login": true,
           "feature.valid_geozone": true,
+          "feature.hide_comments": false,
           "feature.hide_local_login": false
         })
       end
     end
+    
+    def hide_comments?
+      Setting["feature.hide_comments"] == "active"
+    end
+
     
     def hide_local_login?
       Setting["feature.hide_local_login"] == "active"
