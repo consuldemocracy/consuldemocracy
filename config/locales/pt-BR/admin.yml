@@ -164,7 +164,6 @@ pt-BR:
         valuator_filter_all: Todos avaliadores
         tags_filter_all: Todas as marcações
         advanced_filters: Filtros avançados
-        placeholder: Buscar projetos
         filters:
           all: Tudo
           without_admin: Sem administrador designado
