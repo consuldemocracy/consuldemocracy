@@ -759,7 +759,6 @@ cs:
       see_more: Další doporučení
       hide: Skrýt doporučení
     translations:
-      select_language_prompt: Vybrat jazykovou sadu
       remove_language: Odstranit jazykovou sadu
       add_language: Přidat jazykovou sadu
       languages_in_use:
