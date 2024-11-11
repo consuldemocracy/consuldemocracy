@@ -142,7 +142,6 @@ id:
         valuator_filter_all: Semua penilai
         tags_filter_all: Semua tag
         advanced_filters: Saring lanjutan
-        placeholder: Cari proyek
         filters:
           all: Semua
           without_admin: Tanpa ditugaskan admin
