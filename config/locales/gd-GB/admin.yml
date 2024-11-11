@@ -241,7 +241,6 @@ gd:
         valuator_filter_all: A h-uile neach-luachaidh
         tags_filter_all: Gach taga
         advanced_filters: Criathragan adhartach
-        placeholder: Lorg pròiseactan
         filters:
           all: A h-uile
           without_admin: Gun rianaire ainmichte
