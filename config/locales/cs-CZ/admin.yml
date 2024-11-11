@@ -242,7 +242,6 @@ cs:
         valuator_filter_all: Všichni hodotitelé
         tags_filter_all: Všechny štítky
         advanced_filters: Pokročilé filtry
-        placeholder: Prohledat projekty
         filters:
           all: Vše
           without_admin: Bez přidělené role admin
