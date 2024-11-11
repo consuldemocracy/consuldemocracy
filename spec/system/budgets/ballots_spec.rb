@@ -697,6 +697,8 @@ describe "Ballots" do
       login_as(user)
       visit budget_investments_path(budget_hide_money, heading_id: heading_no_price.id)
 
+      expect(page).not_to have_content "Your ballot"
+
       within("#sidebar") do
         expect(page).to have_content investment_1.title
         expect(page).to have_content investment_2.title
@@ -706,6 +708,7 @@ describe "Ballots" do
         click_link "Check my votes"
       end
 
+      expect(page).to have_content "Your ballot"
       expect(page).to have_content investment_1.title
       expect(page).to have_content investment_2.title
       expect(page).not_to have_content investment_1.price
