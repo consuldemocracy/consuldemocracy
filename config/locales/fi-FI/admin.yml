@@ -90,7 +90,6 @@ fi:
         administrator_filter_all: Kaikki järjestelmänvalvojat
         tags_filter_all: Kaikki tunnisteet
         advanced_filters: Edistyneet suodattimet
-        placeholder: Hae projekteja
         filters:
           all: Kaikki
           selected: Valittu
