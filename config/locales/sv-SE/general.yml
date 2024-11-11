@@ -741,6 +741,7 @@ sv:
       see_more: Visa fler rekommendationer
       hide: Dölj rekommendationer
     translations:
+      current_language: Nuvarande språk
       remove_language: Ta bort språk
       add_language: Lägg till språk
       languages_in_use:
