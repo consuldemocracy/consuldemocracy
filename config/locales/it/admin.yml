@@ -238,7 +238,6 @@ it:
         valuator_filter_all: Tutti i valutatori
         tags_filter_all: Tutti i tag
         advanced_filters: Filtri avanzati
-        placeholder: Cerca progetti
         filters:
           all: Tutti
           without_admin: Senza amministratore designato
