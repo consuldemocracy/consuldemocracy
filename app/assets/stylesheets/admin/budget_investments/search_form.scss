@@ -1,6 +1,7 @@
 .admin-budget-investments-search-form {
   .advanced-filters {
     @include link;
+    float: $global-right;
     margin: $line-height 0;
 
     @include breakpoint(medium) {
