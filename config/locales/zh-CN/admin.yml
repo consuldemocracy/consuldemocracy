@@ -118,7 +118,6 @@ zh-CN:
         valuator_filter_all: 所有评估员
         tags_filter_all: 所有标签
         advanced_filters: 高级过滤器
-        placeholder: 搜索项目
         filters:
           all: 所有
           without_admin: 没有指定的管理员
