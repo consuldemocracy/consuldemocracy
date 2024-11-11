@@ -235,6 +235,9 @@ sv:
         title: "%{budget}-faser"
     budget_investments:
       index:
+        basic_filters:
+          valuator_or_group: Bedömare eller grupp
+          title_or_id: Titel eller ID
         heading_filter_all: Alla områden
         administrator_filter_all: Alla administratörer
         valuator_filter_all: Alla bedömare
@@ -1614,6 +1617,7 @@ sv:
             subnavigation_right: Huvudnavigering höger
       images:
         index:
+          dimensions: "(%{width} x %{height})"
           title: Anpassade bilder
           update: Uppdatera
           image: Bild
