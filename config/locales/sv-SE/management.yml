@@ -95,6 +95,8 @@ sv:
         unfeasible: Ej genomförbar investering
       print:
         print_button: Skriv ut
+      search:
+        label: "Sök i investeringar"
       search_results:
         one: " som innehåller ordet '%{search_term}'"
         other: " som innehåller '%{search_term}'"
