@@ -113,7 +113,6 @@ fa:
         valuator_filter_all: همه ارزیابان
         tags_filter_all: همه برچسب ها
         advanced_filters: فیلترهای پیشرفته
-        placeholder: جستجو در پروژه ها
         filters:
           all: همه
           without_admin: بدون تعیین مدیر
