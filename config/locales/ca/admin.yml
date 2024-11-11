@@ -160,7 +160,6 @@ ca:
         valuator_filter_all: Tots els avaluadors
         tags_filter_all: Totes les etiquetes
         advanced_filters: Filtres avançats
-        placeholder: Cerca de projectes
         filters:
           all: tots
           without_admin: Sense administrador
