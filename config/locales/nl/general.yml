@@ -662,7 +662,6 @@ nl:
       see_more: Meer aanbevelingen bekijken
       hide: Verborgen aanbevelingen
     translations:
-      select_language_prompt: Kies taal
       remove_language: Verwijder taal
       add_language: Taal toevoegen
       languages_in_use:
