@@ -155,7 +155,6 @@ oc:
         valuator_filter_all: Totes los avaluadors
         tags_filter_all: Totas las etiquetas
         advanced_filters: de Filtres avançats
-        placeholder: Cèrca de projèctes
         filters:
           all: totes
           without_admin: Sens administrador
