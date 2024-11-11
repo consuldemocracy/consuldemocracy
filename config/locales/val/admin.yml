@@ -146,7 +146,6 @@ val:
         valuator_filter_all: Tots els avaluadors
         tags_filter_all: Totes les etiquetes
         advanced_filters: Filtres avançats
-        placeholder: Buscar projectes
         filters:
           all: Totes
           without_admin: Sense administrador
