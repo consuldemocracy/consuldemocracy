@@ -118,7 +118,6 @@ zh-TW:
         valuator_filter_all: 所有評估員
         tags_filter_all: 所有標籤
         advanced_filters: 高級篩選器
-        placeholder: 搜索項目
         filters:
           all: 所有
           without_admin: 沒有指定的管理員
