@@ -157,7 +157,6 @@ ka:
         valuator_filter_all: ყველა შემფასებელი
         tags_filter_all: ყველა ტეგი
         advanced_filters: დამატებითი ფილტრები
-        placeholder: პროექტების ძებნა
         filters:
           all: ყველა
           without_admin: ინდივიდუალური ადმინისტრატორის გარეშე
