@@ -739,7 +739,6 @@ tr:
       see_more: Diğer önerilere bakın
       hide: Önerileri gizle
     translations:
-      select_language_prompt: Dil seçin
       remove_language: Dili kaldır
       add_language: Dil ekle
       languages_in_use:
