@@ -32,10 +32,6 @@ module ShiftsHelper
     polls.maximum(:ends_at).to_date
   end
 
-  def officer_select_options(officers)
-    officers.map { |officer| [officer.name, officer.id] }
-  end
-
   private
 
     def officer_shifts(task_id, booth)
