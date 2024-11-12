@@ -5,10 +5,6 @@ module VerificationHelper
      [t("verification.residence.new.document_type.residence_card"), 3]]
   end
 
-  def minimum_required_age
-    (Setting["min_age_to_participate"] || 16).to_i
-  end
-
   def mask_phone(number)
     match = number.match(/\d{3}$/)
     "******#{match}"

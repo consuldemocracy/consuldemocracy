@@ -101,7 +101,6 @@
 //= require imageable
 //= require tree_navigator
 //= require tag_autocomplete
-//= require polls_admin
 //= require leaflet/dist/leaflet
 //= require leaflet.markercluster/dist/leaflet.markercluster
 //= require map
@@ -157,7 +156,6 @@ var initialize_modules = function() {
   App.Documentable.initialize();
   App.Imageable.initialize();
   App.TagAutocomplete.initialize();
-  App.PollsAdmin.initialize();
   App.Map.initialize();
   App.Polls.initialize();
   App.Sortable.initialize();
@@ -171,6 +169,7 @@ var initialize_modules = function() {
   }
   App.AdminBudgetsWizardCreationStep.initialize();
   App.AdminMachineLearningScripts.initialize();
+  App.AdminPollShiftsForm.initialize();
   App.AdminTenantsForm.initialize();
   App.AdminVotationTypesFields.initialize();
   App.AdminMenu.initialize();
