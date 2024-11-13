@@ -235,6 +235,9 @@ tr:
         title: "%{budget} aşamaları"
     budget_investments:
       index:
+        basic_filters:
+          valuator_or_group: Bilirkişi ya da grup
+          title_or_id: Başlık ya da kimlik
         heading_filter_all: Tüm bütçe kalemleri
         administrator_filter_all: Tüm yöneticiler
         valuator_filter_all: Tüm bilirkişiler
@@ -1614,6 +1617,7 @@ tr:
             subnavigation_right: Ana gezinme sağ
       images:
         index:
+          dimensions: "(%{width}x%{height})"
           title: Özel görseller
           update: Güncelle
           image: Görsel
