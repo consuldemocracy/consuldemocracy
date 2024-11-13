@@ -643,6 +643,8 @@ tr:
     show:
       back: "İçeriğime dön"
   shared:
+    actions:
+      label: "%{action} %{name}"
     edit: "Düzenle"
     filter: "Süz"
     save: "Kaydet"
@@ -739,6 +741,7 @@ tr:
       see_more: Diğer önerilere bakın
       hide: Önerileri gizle
     translations:
+      current_language: Geçerli dil
       remove_language: Dili kaldır
       add_language: Dil ekle
       languages_in_use:
