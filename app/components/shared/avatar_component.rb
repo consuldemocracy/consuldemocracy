@@ -49,7 +49,7 @@ class Shared::AvatarComponent < ApplicationComponent
         width: size,
         height: size,
         role: "img",
-        "aria-label": "",
+        "aria-hidden": true,
         style: "background-color: #{background_color}",
         class: "initialjs-avatar #{options[:class]}".strip
       }
