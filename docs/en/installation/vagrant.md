@@ -2,7 +2,7 @@
 
 Install [Vagrant](https://www.vagrantup.com/) and setup a virtual machine with [Linux](prerequisites.md)
 
-Vagrant is compatible for [Debian](/en/installation/debian.md) and [Ubuntu](/en/installation/ubuntu.md).
+Vagrant is compatible for [Debian](debian.md) and [Ubuntu](ubuntu.md).
 
 ## Browser configuration
 
