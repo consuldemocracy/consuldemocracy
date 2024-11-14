@@ -5,7 +5,7 @@
                method: :get,
                id: "admin_download_emails" do %>
 
-    <label><%= t("admin.emails_download.index.download_segment") %></label>
+    <%= label_tag :users_segment, t("admin.emails_download.index.download_segment") %>
     <p class="help-text" id="emails-help-text">
       <%= t("admin.emails_download.index.download_segment_help_text") %>
     </p>

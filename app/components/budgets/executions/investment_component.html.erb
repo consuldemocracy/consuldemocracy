@@ -1,0 +1,15 @@
+<div class="budget-executions-investment">
+  <%= render Budgets::Executions::ImageComponent.new(investment) %>
+  <div class="budget-execution-info">
+    <div class="budget-execution-content">
+      <h5>
+        <%= link_to investment.title,
+                    polymorphic_path(investment, anchor: "tab-milestones") %>
+      </h5>
+      <span class="author"><%= investment.author.name %></span>
+    </div>
+    <p class="price margin-top text-center">
+      <strong><%= investment.formatted_price %></strong>
+    </p>
+  </div>
+</div>

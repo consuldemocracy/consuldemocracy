@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Admin::MenuComponent, controller: Admin::NewslettersController do
+describe Admin::MenuComponent, :admin, controller: Admin::NewslettersController do
   it "disables all buttons when JavaScript isn't available" do
     render_inline Admin::MenuComponent.new
 
@@ -18,6 +18,17 @@ describe Admin::MenuComponent, controller: Admin::NewslettersController do
     render_inline Admin::MenuComponent.new
 
     expect(page).to have_css "button[aria-expanded='false']", exact_text: "Settings"
+  end
+
+  it "only renders the multitenancy and administrators sections in multitenancy management mode" do
+    allow(Rails.application.config).to receive(:multitenancy_management_mode).and_return(true)
+
+    render_inline Admin::MenuComponent.new
+
+    expect(page).to have_css "#admin_menu"
+    expect(page).to have_link "Multitenancy"
+    expect(page).to have_link "Administrators"
+    expect(page).to have_link count: 2
   end
 
   describe "#polls_link" do

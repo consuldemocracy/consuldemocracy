@@ -11,10 +11,7 @@
       <%= f.text_field :email,
                        label: t("management.users.email_optional_label") %>
       <div class="date-of-birth">
-        <%= f.date_select :date_of_birth,
-                          prompt: true,
-                          start_year: 1900, end_year: 16.years.ago.year,
-                          label: t("management.date_of_birth") %>
+        <%= render Shared::DateOfBirthFieldComponent.new(f, label: t("management.date_of_birth")) %>
       </div>
       <%= f.submit t("management.users.create_user_submit"), class: "button success" %>
     <% end %>

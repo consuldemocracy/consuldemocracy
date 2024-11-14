@@ -149,7 +149,7 @@ describe "Admin legislation questions", :admin do
 
         find("#nested_question_options input").set("Option 1")
 
-        select "Español", from: :select_language
+        select "Español", from: "Current language"
 
         find("#nested_question_options input").set("Opción 1")
 
@@ -158,7 +158,7 @@ describe "Admin legislation questions", :admin do
 
         expect(page).to have_field(field_en[:id], with: "Option 1")
 
-        select "Español", from: :select_language
+        select "Español", from: "Current language"
 
         expect(page).to have_field(field_es[:id], with: "Opción 1")
       end
@@ -166,13 +166,13 @@ describe "Admin legislation questions", :admin do
       scenario "Add new question option after changing active locale" do
         visit edit_question_url
 
-        select "Español", from: :select_language
+        select "Español", from: "Current language"
 
         click_link "Add option"
 
         find("#nested_question_options input").set("Opción 1")
 
-        select "English", from: :select_language
+        select "English", from: "Current language"
 
         find("#nested_question_options input").set("Option 1")
 
@@ -182,7 +182,7 @@ describe "Admin legislation questions", :admin do
 
         expect(page).to have_field(field_en[:id], with: "Option 1")
 
-        select "Español", from: :select_language
+        select "Español", from: "Current language"
 
         expect(page).to have_field(field_es[:id], with: "Opción 1")
       end

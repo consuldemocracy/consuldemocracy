@@ -1,1 +1,3 @@
-$("#<%= dom_id(@proposal) %> .js-select").html("<%= j render("select_proposal", proposal: @proposal) %>");
+<%= render "admin/shared/toggle_switch",
+           record: @proposal,
+           new_content: render(Admin::Proposals::ToggleSelectionComponent.new(@proposal)) %>

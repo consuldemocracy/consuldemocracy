@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // Table of Contents
 //
 // 01. Global styles
@@ -1238,12 +1240,12 @@ table {
     }
 
     &:nth-child(even) {
-      background: adjust-color($table-background, $red: -3, $green: -1, $blue: -2);
+      background: color.adjust($table-background, $red: -3, $green: -1, $blue: -2);
     }
   }
 
   .button {
-    margin: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -1541,8 +1543,13 @@ table {
     }
   }
 
+  .delete-comment-form {
+    display: inline;
+  }
+
   .delete-comment {
     @include has-fa-icon(trash-alt, regular);
+    cursor: pointer;
 
     &:not(:hover):not(:active) {
       color: $delete;
@@ -1941,10 +1948,18 @@ table {
 
 .hide-recommendations {
   color: $text-light;
+  cursor: pointer;
+  font-size: $small-font-size;
+  line-height: inherit;
   position: absolute;
   right: 12px;
   top: -18px;
   z-index: 2;
+
+  &:focus,
+  &:hover {
+    @include anchor-color-hover;
+  }
 }
 
 // 20. Documents

@@ -7,8 +7,8 @@ module Types
     field :title, String, null: true
     field :description, String, null: true
     field :location, String, null: true
-    field :comments, Types::CommentType.connection_type, null: true
+    collection_field :comments, Types::CommentType, null: true
     field :comments_count, Integer, null: true
-    field :milestones, Types::MilestoneType.connection_type, null: true
+    collection_field :milestones, Types::MilestoneType, null: true
   end
 end

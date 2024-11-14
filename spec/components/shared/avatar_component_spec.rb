@@ -8,7 +8,7 @@ describe Shared::AvatarComponent do
     render_inline component
 
     expect(page).to have_css "svg", count: 1
-    expect(page).to have_css "svg[role='img'][aria-label='']"
+    expect(page).to have_css "svg[role='img'][aria-hidden='true']"
   end
 
   it "shows the initial letter of the name" do

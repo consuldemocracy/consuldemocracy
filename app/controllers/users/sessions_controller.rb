@@ -7,7 +7,9 @@ class Users::SessionsController < Devise::SessionsController
   private
 
     def after_sign_in_path_for(resource)
-      if !verifying_via_email? && resource.show_welcome_screen?
+      if Rails.application.multitenancy_management_mode? && !resource.administrator?
+        account_path
+      elsif !verifying_via_email? && resource.show_welcome_screen?
         welcome_path
       else
         super

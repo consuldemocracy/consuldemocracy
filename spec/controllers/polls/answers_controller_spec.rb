@@ -8,14 +8,12 @@ describe Polls::AnswersController do
 
       2.times.map do
         Thread.new do
-          begin
-            post :create, params: {
-              question_id: question.id,
-              option_id: question.question_options.find_by(title: "Answer A").id,
-              format: :js
-            }
-          rescue ActionDispatch::IllegalStateError, ActiveRecord::RecordInvalid
-          end
+          post :create, params: {
+            question_id: question.id,
+            option_id: question.question_options.find_by(title: "Answer A").id,
+            format: :js
+          }
+        rescue ActionDispatch::IllegalStateError, ActiveRecord::RecordInvalid
         end
       end.each(&:join)
 

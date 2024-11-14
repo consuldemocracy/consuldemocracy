@@ -15,10 +15,6 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
 
   private
 
-    def resource
-      I18nContent.find(content_params[:id])
-    end
-
     def content_params
       params.require(:contents).values
     end

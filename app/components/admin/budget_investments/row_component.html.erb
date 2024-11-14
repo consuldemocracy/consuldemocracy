@@ -1,0 +1,57 @@
+<tr id="<%= dom_id(investment) %>" class="budget_investment">
+  <td class="text-right" data-field="id">
+    <strong><%= investment.id %></strong>
+  </td>
+
+  <td data-field="title">
+    <%= link_to investment.title, investment_path, target: "_blank" %>
+  </td>
+
+  <td data-field="supports">
+    <%= investment.total_votes %>
+  </td>
+
+  <td data-field="admin">
+    <%= administrator_info %>
+  </td>
+
+  <td data-field="author">
+    <%= investment.author.name %>
+  </td>
+
+  <td data-field="valuator">
+    <%= valuators_info %>
+  </td>
+
+  <td data-field="geozone">
+    <%= investment.heading.name %>
+  </td>
+
+  <td data-field="feasibility">
+    <%= t("admin.budget_investments.index.feasibility.#{investment.feasibility}") %>
+  </td>
+
+  <% if budget.show_money? %>
+    <td data-field="price">
+      <%= investment.formatted_price %>
+    </td>
+  <% end %>
+
+  <td data-field="valuation_finished">
+    <%= investment.valuation_finished? ? t("shared.yes") : t("shared.no") %>
+  </td>
+
+  <td data-field="visible_to_valuators">
+    <%= render Admin::BudgetInvestments::ToggleVisibleToValuatorsComponent.new(investment) %>
+  </td>
+
+  <td data-field="selected">
+    <%= render Admin::BudgetInvestments::ToggleSelectionComponent.new(investment) %>
+  </td>
+
+  <% if params[:advanced_filters]&.include?("selected") %>
+    <td data-field="incompatible">
+      <%= investment.incompatible? ? t("shared.yes") : t("shared.no") %>
+    </td>
+  <% end %>
+</tr>

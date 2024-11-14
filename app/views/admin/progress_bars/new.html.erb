@@ -6,4 +6,4 @@
 
 <h2><%= t("admin.progress_bars.new.creating") %></h2>
 
-<%= render "form" %>
+<%= render Admin::ProgressBars::FormComponent.new(@progress_bar) %>

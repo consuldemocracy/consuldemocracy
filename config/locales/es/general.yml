@@ -644,6 +644,8 @@ es:
     show:
       back: "Volver a mi contenido"
   shared:
+    actions:
+      label: "%{action} %{name}"
     edit: "Editar"
     filter: "Filtrar"
     save: "Guardar"
@@ -740,7 +742,7 @@ es:
       see_more: Ver más recomendaciones
       hide: Ocultar recomendaciones
     translations:
-      select_language_prompt: Seleccionar idioma
+      current_language: Idioma actual
       remove_language: Eliminar idioma
       add_language: Añadir idioma
       languages_in_use:
@@ -759,6 +761,8 @@ es:
     youtube: "YouTube de %{org}"
     telegram: "Telegram de %{org}"
     instagram: "Instagram de %{org}"
+  ip_denied_handler:
+    unauthorized: "Acceso denegado. Tu IP no tiene permiso para ver este contenido."
   unauthorized:
     default: No tienes permiso para acceder a esta página.
     manage:

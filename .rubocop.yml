@@ -781,6 +781,9 @@ Style/RaiseArgs:
 Style/RedundantArgument:
   Enabled: true
 
+Style/RedundantBegin:
+  Enabled: true
+
 Style/RedundantCondition:
   Enabled: true
 

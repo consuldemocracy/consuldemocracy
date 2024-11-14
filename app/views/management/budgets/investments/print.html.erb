@@ -1,5 +1,5 @@
 <span class="not-print">
-  <%= render "admin/shared/budget_investment_search", url: print_management_budget_investments_path(@budget) %>
+  <%= render Management::Budgets::Investments::SearchComponent.new(@budget, url: print_management_budget_investments_path(@budget)) %>
 </span>
 
 <div class="wrap row">

@@ -16,6 +16,8 @@ en:
       unmark_featured: Unmark featured
       edit: Edit
       configure: Configure
+      select: Select
+      show_to_valuators: "Show %{name} to valuators"
     officing_booth:
       title: "You are officing the booth located at %{booth}. If this is not correct, do not continue and call the help phone number. Thank you."
     banners:
@@ -233,12 +235,14 @@ en:
         title: "%{budget} phases"
     budget_investments:
       index:
+        basic_filters:
+          valuator_or_group: Valuator or group
+          title_or_id: Title or ID
         heading_filter_all: All headings
         administrator_filter_all: All administrators
         valuator_filter_all: All valuators
         tags_filter_all: All tags
         advanced_filters: Advanced filters
-        placeholder: Search projects
         filters:
           all: All
           without_admin: Without assigned admin
@@ -268,7 +272,6 @@ en:
           unfeasible: "Unfeasible"
           undecided: "Undecided"
         selected: "Selected"
-        select: "Select"
         list:
           id: ID
           title: Title
@@ -1294,7 +1297,6 @@ en:
         title: Proposals
         id: ID
         author: Author
-        select: Select
         selected: Selected
         milestones: Milestones
         no_proposals: There are no proposals.
@@ -1615,6 +1617,7 @@ en:
             subnavigation_right: Main Navigation Right
       images:
         index:
+          dimensions: "(%{width}x%{height})"
           title: Custom images
           update: Update
           image: Image

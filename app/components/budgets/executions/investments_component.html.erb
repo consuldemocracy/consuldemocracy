@@ -1,0 +1,3 @@
+<% investments_by_heading.each do |heading, investments| %>
+  <%= render Budgets::Executions::HeadingComponent.new(heading, investments) %>
+<% end %>

@@ -19,7 +19,3 @@ resources :budgets, only: [:show, :index] do
   resource :stats, only: :show, controller: "budgets/stats"
   resource :executions, only: :show, controller: "budgets/executions"
 end
-
-resolve "Budget::Investment" do |investment, options|
-  [investment.budget, :investment, options.merge(id: investment)]
-end

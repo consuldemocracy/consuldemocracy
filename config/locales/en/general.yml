@@ -644,6 +644,8 @@ en:
     show:
       back: "Go back to my content"
   shared:
+    actions:
+      label: "%{action} %{name}"
     edit: "Edit"
     filter: "Filter"
     save: "Save"
@@ -740,7 +742,7 @@ en:
         see_more: See more recommendations
         hide: Hide recommendations
     translations:
-      select_language_prompt: Choose language
+      current_language: Current language
       remove_language: Remove language
       add_language: Add language
       languages_in_use:
@@ -759,6 +761,8 @@ en:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
+  ip_denied_handler:
+    unauthorized: "Access denied. Your IP address is not allowed."
   unauthorized:
     default: You do not have permission to access this page.
     manage:

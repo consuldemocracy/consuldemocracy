@@ -16,6 +16,8 @@ es:
       unmark_featured: Quitar destacado
       edit: Editar
       configure: Configurar
+      select: Seleccionar
+      show_to_valuators: "Mostrar %{name} a evaluadores"
     officing_booth:
       title: "Estás ahora mismo en la mesa ubicada en %{booth}. Si esto no es correcto no sigas adelante y llama al teléfono de incidencias. Gracias."
     banners:
@@ -233,12 +235,14 @@ es:
         title: "Fases de %{budget}"
     budget_investments:
       index:
+        basic_filters:
+          valuator_or_group: Evaluador o grupo
+          title_or_id: Título o ID
         heading_filter_all: Todas las partidas
         administrator_filter_all: Todos los administradores
         valuator_filter_all: Todos los evaluadores
         tags_filter_all: Todas las etiquetas
         advanced_filters: Filtros avanzados
-        placeholder: Buscar proyectos
         filters:
           all: Todos
           without_admin: Sin administrador
@@ -268,7 +272,6 @@ es:
           unfeasible: "Inviable"
           undecided: "Sin decidir"
         selected: "Seleccionado"
-        select: "Seleccionar"
         list:
           id: ID
           title: Título
@@ -1295,7 +1298,6 @@ es:
         id: ID
         author: Autor
         milestones: Hitos
-        select: Seleccionar
         selected: Seleccionada
         no_proposals: No hay propuestas.
       show:
@@ -1615,6 +1617,7 @@ es:
             subnavigation_right: Navegación principal derecha
       images:
         index:
+          dimensions: "(%{width}x%{height})"
           title: Personalizar imágenes
           update: Actualizar
           image: Imagen

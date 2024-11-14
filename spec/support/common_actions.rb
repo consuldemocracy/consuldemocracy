@@ -14,6 +14,7 @@ module CommonActions
   include Polls
   include Proposals
   include RemoteCensusMock
+  include Secrets
   include Tags
   include Translations
   include Users
