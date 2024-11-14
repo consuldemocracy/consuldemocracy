@@ -14,7 +14,7 @@
 # Check input args
 if [ $# -eq 0 ]
   then
-    echo "FAIL: release tag required"
+    echo "FAIL: release tag required as an argument"
     exit 0
 fi
 
@@ -39,11 +39,15 @@ CURRENT=$PWD
 cd..
 cd $CURRENT
 
-# when the Ruby version has changed, capistrano should likely be updated too:
+# when the Ruby version has changed, capistrano should likely be updated too.
+# If no update is required, the command should not harm and just print out a
+# message on stdout:
 gem install capistrano
 bundle install
 
 # deploy with capistrano
+# To include the deployment in the upgade process, just un comment the following
+# command. You may also want to comment out the echoed messages below.
 # branch=master cap production deploy
 echo
 echo "DO NOT forget to deploy the app with capistrano."
