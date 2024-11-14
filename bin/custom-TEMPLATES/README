@@ -14,10 +14,7 @@ The backup-content.sh and restore-content.sh ones will not work without the
 required custom values, such as the target domain name.
 How to customize and use these two scripts is detailed in each file.
 
-upgrade.sh and deploy-capistrano.sh may work without any change, provided that
-they are installed in a standard file structure.
-
-Please note that these scripts are provided with absolutely no guarantee at
-all. Use them at your own risk.
+Please note that these scripts are provided with absolutely no guarantee or
+warranty at all. Use them at your own risk.
 
 #eof
