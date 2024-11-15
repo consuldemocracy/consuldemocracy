@@ -3,6 +3,7 @@ require "rails_helper"
 describe "Nested imageable" do
   factories = [
     :budget,
+    :budget_investment,
     :proposal
   ]
 
@@ -12,18 +13,21 @@ describe "Nested imageable" do
   let(:path) do
     case factory
     when :budget then new_admin_budgets_wizard_budget_path
+    when :budget_investment then new_budget_investment_path(budget_id: imageable.budget_id)
     when :proposal then new_proposal_path
     end
   end
   let(:submit_button_text) do
     case factory
     when :budget then "Continue to groups"
+    when :budget_investment then "Create Investment"
     when :proposal then "Create proposal"
     end
   end
   let(:notice_text) do
     case factory
     when :budget then "New participatory budget created successfully!"
+    when :budget_investment then "Budget Investment created successfully."
     when :proposal then "Proposal created successfully"
     end
   end
@@ -201,6 +205,7 @@ describe "Nested imageable" do
   def fill_in_required_fields
     case factory
     when :budget then fill_budget
+    when :budget_investment then fill_budget_investment
     when :proposal then fill_proposal
     end
   end
@@ -213,5 +218,11 @@ describe "Nested imageable" do
 
   def fill_budget
     fill_in "Name", with: "Budget name"
+  end
+
+  def fill_budget_investment
+    fill_in_new_investment_title with: "Budget investment title"
+    fill_in_ckeditor "Description", with: "Budget investment description"
+    check :budget_investment_terms_of_service
   end
 end
