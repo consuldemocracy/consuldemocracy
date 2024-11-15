@@ -24,9 +24,10 @@
       </div>
       <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
       <div>
-        <%= f.text_area :summary,
-                                 rows: 4, maxlength: 500,
-                                 hint: t("proposals.form.proposal_summary_note") %>
+      <%= f.text_area :summary,
+        label: t("budgets.investments.form.summary"),
+        rows: 4, maxlength: 500,
+        hint: t("budgets.investments.form.summary_note") %>
       </div>
     
       <div>
@@ -48,8 +49,8 @@
 
   <fieldset>
     <legend><%= t("shared.optional") %></legend>
-
-    <div>   
+    <br>
+    <div  id="video_url">   
       <%= f.text_field :video_url, hint: t("proposals.form.proposal_video_url_note") %>
     </div>
 
@@ -73,15 +74,15 @@
       </div>
     <% end %>
 
-    <div>
+    <div  id="location">
       <%= f.text_field :location, hint: t("budgets.investments.form.location_note") %>
     </div>
 
-    <div>
+    <div  id="org_name">
       <%= f.text_field :organization_name, hint: t("budgets.investments.form.organization_name_note") %>
     </div>
 
-    <div>
+    <div id="tags">
       <%= f.label :tag_list, t("budgets.investments.form.tags_label") %>
       <p class="help-text" id="tags-list-help-text"><%= t("budgets.investments.form.tags_instructions") %></p>
 
