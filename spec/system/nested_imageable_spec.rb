@@ -4,6 +4,7 @@ describe "Nested imageable" do
   factories = [
     :budget,
     :budget_investment,
+    :future_poll_question_option,
     :proposal
   ]
 
@@ -14,6 +15,7 @@ describe "Nested imageable" do
     case factory
     when :budget then new_admin_budgets_wizard_budget_path
     when :budget_investment then new_budget_investment_path(budget_id: imageable.budget_id)
+    when :future_poll_question_option then new_admin_option_image_path(option_id: imageable.id)
     when :proposal then new_proposal_path
     end
   end
@@ -21,6 +23,7 @@ describe "Nested imageable" do
     case factory
     when :budget then "Continue to groups"
     when :budget_investment then "Create Investment"
+    when :future_poll_question_option then "Save image"
     when :proposal then "Create proposal"
     end
   end
@@ -28,12 +31,13 @@ describe "Nested imageable" do
     case factory
     when :budget then "New participatory budget created successfully!"
     when :budget_investment then "Budget Investment created successfully."
+    when :future_poll_question_option then "Image uploaded successfully"
     when :proposal then "Proposal created successfully"
     end
   end
 
   before do
-    create(:administrator, user: user) if factory == :budget
+    create(:administrator, user: user) if [:budget, :future_poll_question_option].include?(factory)
     login_as(user)
     visit path
   end
@@ -67,7 +71,11 @@ describe "Nested imageable" do
     fill_in input_title[:id], with: "Title"
     attach_file "Choose image", file_fixture("clippy.jpg")
 
-    expect(find("##{factory}_image_attributes_title").value).to eq "Title"
+    if factory == :future_poll_question_option
+      expect(find("input[id$='_title']").value).to eq "Title"
+    else
+      expect(find("##{factory}_image_attributes_title").value).to eq "Title"
+    end
   end
 
   scenario "Should update loading bar style after valid file upload" do
@@ -131,12 +139,16 @@ describe "Nested imageable" do
     expect(page).not_to have_css "#nested-image .image-fields"
   end
 
-  scenario "Should show successful notice when resource filled correctly without any nested images" do
-    fill_in_required_fields
+  context "Budgets, investments and proposals" do
+    let(:factory) { (factories - [:future_poll_question_option]).sample }
 
-    click_button submit_button_text
+    scenario "Should show successful notice when resource filled correctly without any nested images" do
+      fill_in_required_fields
 
-    expect(page).to have_content notice_text
+      click_button submit_button_text
+
+      expect(page).to have_content notice_text
+    end
   end
 
   scenario "Should show successful notice when resource filled correctly and after valid file uploads" do
