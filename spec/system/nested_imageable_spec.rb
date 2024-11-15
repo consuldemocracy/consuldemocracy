@@ -2,17 +2,34 @@ require "rails_helper"
 
 describe "Nested imageable" do
   factories = [
-    :budget
+    :budget,
+    :proposal
   ]
 
   let(:factory) { factories.sample }
   let!(:imageable) { create(factory) }
-  let!(:user) { create(:administrator).user }
-  let(:path) { new_admin_budgets_wizard_budget_path }
-  let(:submit_button_text) { "Continue to groups" }
-  let(:notice_text) { "New participatory budget created successfully!" }
+  let!(:user) { create(:user, :level_two) }
+  let(:path) do
+    case factory
+    when :budget then new_admin_budgets_wizard_budget_path
+    when :proposal then new_proposal_path
+    end
+  end
+  let(:submit_button_text) do
+    case factory
+    when :budget then "Continue to groups"
+    when :proposal then "Create proposal"
+    end
+  end
+  let(:notice_text) do
+    case factory
+    when :budget then "New participatory budget created successfully!"
+    when :proposal then "Proposal created successfully"
+    end
+  end
 
   before do
+    create(:administrator, user: user) if factory == :budget
     login_as(user)
     visit path
   end
@@ -111,7 +128,7 @@ describe "Nested imageable" do
   end
 
   scenario "Should show successful notice when resource filled correctly without any nested images" do
-    imageable_fill_new_valid_budget
+    fill_in_required_fields
 
     click_button submit_button_text
 
@@ -119,7 +136,7 @@ describe "Nested imageable" do
   end
 
   scenario "Should show successful notice when resource filled correctly and after valid file uploads" do
-    imageable_fill_new_valid_budget
+    fill_in_required_fields
 
     imageable_attach_new_file(file_fixture("clippy.jpg"))
 
@@ -131,7 +148,7 @@ describe "Nested imageable" do
   end
 
   scenario "Should show new image after successful creation with one uploaded file" do
-    imageable_fill_new_valid_budget
+    fill_in_required_fields
 
     imageable_attach_new_file(file_fixture("clippy.jpg"))
 
@@ -179,5 +196,22 @@ describe "Nested imageable" do
     when "Proposal"
       click_link "Not now, go to my proposal" rescue Capybara::ElementNotFound
     end
+  end
+
+  def fill_in_required_fields
+    case factory
+    when :budget then fill_budget
+    when :proposal then fill_proposal
+    end
+  end
+
+  def fill_proposal
+    fill_in_new_proposal_title with: "Proposal title"
+    fill_in "Proposal summary", with: "Proposal summary"
+    check :proposal_terms_of_service
+  end
+
+  def fill_budget
+    fill_in "Name", with: "Budget name"
   end
 end
