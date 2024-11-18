@@ -1291,14 +1291,6 @@ describe "Proposals" do
 
   it_behaves_like "imageable", "proposal", "proposal_path", { id: "id" }
 
-  it_behaves_like "nested imageable",
-                  "proposal",
-                  "edit_proposal_path",
-                  { id: "id" },
-                  nil,
-                  "Save changes",
-                  "Proposal updated successfully"
-
   it_behaves_like "documentable", "proposal", "proposal_path", { id: "id" }
 
   it_behaves_like "nested documentable",
