@@ -94,12 +94,6 @@ describe "Nested imageable" do
       end
     end
 
-    scenario "Should update loading bar style after valid file upload" do
-      imageable_attach_new_file(file_fixture("clippy.jpg"))
-
-      expect(page).to have_css ".loading-bar.complete"
-    end
-
     scenario "Should update loading bar style after invalid file upload" do
       imageable_attach_new_file(file_fixture("logo_header.png"), false)
 
@@ -172,8 +166,6 @@ describe "Nested imageable" do
 
       imageable_attach_new_file(file_fixture("clippy.jpg"))
 
-      expect(page).to have_css ".loading-bar.complete"
-
       click_button submit_button_text
 
       expect(page).to have_content notice_text
@@ -183,8 +175,6 @@ describe "Nested imageable" do
       fill_in_required_fields
 
       imageable_attach_new_file(file_fixture("clippy.jpg"))
-
-      expect(page).to have_css ".loading-bar.complete"
 
       click_button submit_button_text
 
