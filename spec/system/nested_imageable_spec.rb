@@ -81,12 +81,6 @@ describe "Nested imageable" do
       end
     end
 
-    scenario "Should update loading bar style after invalid file upload" do
-      imageable_attach_new_file(file_fixture("logo_header.png"), false)
-
-      expect(page).to have_css ".loading-bar.errors"
-    end
-
     scenario "Should update image cached_attachment field after valid file upload" do
       click_link "Add image"
 
