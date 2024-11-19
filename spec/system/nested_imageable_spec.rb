@@ -58,26 +58,13 @@ describe "Nested imageable" do
       visit path
     end
 
-    scenario "Should show new image link when imageable has not an associated image defined" do
+    scenario "Handles image link visibility, upload, and file updates correctly" do
       expect(page).to have_css "#new_image_link"
-    end
 
-    scenario "Should hide new image link after adding one image" do
-      click_link "Add image"
-
-      expect(page).not_to have_css "#new_image_link"
-    end
-
-    scenario "Should update image file name after choosing any file" do
-      click_link "Add image"
-      attach_file "Choose image", file_fixture("clippy.jpg")
-
-      expect(page).to have_css ".file-name", text: "clippy.jpg"
-    end
-
-    scenario "Should update image file title after choosing a file when no title is defined" do
       imageable_attach_new_file(file_fixture("clippy.jpg"))
 
+      expect(page).not_to have_css "#new_image_link"
+      expect(page).to have_css ".file-name", text: "clippy.jpg"
       expect_image_has_title("clippy.jpg")
     end
 
