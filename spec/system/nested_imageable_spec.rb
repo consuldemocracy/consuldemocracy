@@ -14,7 +14,11 @@ describe "Nested imageable" do
   let(:path) do
     case factory
     when :budget then new_admin_budgets_wizard_budget_path
-    when :budget_investment then new_budget_investment_path(budget_id: imageable.budget_id)
+    when :budget_investment
+      [
+        new_budget_investment_path(budget_id: imageable.budget_id),
+        new_management_budget_investment_path(budget_id: imageable.budget_id)
+      ].sample
     when :future_poll_question_option then new_admin_option_image_path(option_id: imageable.id)
     when :proposal then new_proposal_path
     end
@@ -37,8 +41,8 @@ describe "Nested imageable" do
   end
 
   before do
-    create(:administrator, user: user) if [:budget, :future_poll_question_option].include?(factory)
-    login_as(user)
+    create(:administrator, user: user) if admin_section? || management_section?
+    do_login_for(user, management: management_section?)
     visit path
   end
 
@@ -236,5 +240,13 @@ describe "Nested imageable" do
     fill_in_new_investment_title with: "Budget investment title"
     fill_in_ckeditor "Description", with: "Budget investment description"
     check :budget_investment_terms_of_service
+  end
+
+  def admin_section?
+    path.starts_with?("/admin/")
+  end
+
+  def management_section?
+    path.starts_with?("/management/")
   end
 end
