@@ -358,7 +358,7 @@ describe "Emails" do
       check "budget_investment_terms_of_service"
 
       click_button "Create Investment"
-      expect(page).to have_content "Investment created successfully"
+      expect(page).to have_content "Budget Investment created successfully"
 
       email = open_last_email
 
