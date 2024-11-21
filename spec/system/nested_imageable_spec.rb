@@ -163,7 +163,7 @@ describe "Nested imageable" do
 
       expect(page).to have_content notice_text
 
-      redirected_to_resource_show_or_navigate_to(imageable)
+      visit edit_admin_budget_path(imageable) if factory == :budget
 
       expect(page).to have_css "figure img"
       expect(page).to have_css "figure figcaption" if show_caption_for?(factory)
@@ -206,15 +206,6 @@ describe "Nested imageable" do
 
   def show_caption_for?(factory)
     factory != :budget
-  end
-
-  def redirected_to_resource_show_or_navigate_to(imageable)
-    case imageable.class.to_s
-    when "Budget"
-      visit edit_admin_budget_path(Budget.last)
-    when "Proposal"
-      click_link "Not now, go to my proposal" rescue Capybara::ElementNotFound
-    end
   end
 
   def fill_in_required_fields
