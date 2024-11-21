@@ -163,10 +163,12 @@ describe "Nested imageable" do
 
       expect(page).to have_content notice_text
 
-      visit edit_admin_budget_path(imageable) if factory == :budget
-
+      if factory == :budget
+        click_link "Go back to edit budget"
+      else
+        expect(page).to have_css "figure figcaption"
+      end
       expect(page).to have_css "figure img"
-      expect(page).to have_css "figure figcaption" if show_caption_for?(factory)
     end
 
     scenario "Different URLs for different images" do
@@ -202,10 +204,6 @@ describe "Nested imageable" do
 
       expect(page).to have_css ".image-fields", count: 1, visible: :all
     end
-  end
-
-  def show_caption_for?(factory)
-    factory != :budget
   end
 
   def fill_in_required_fields
