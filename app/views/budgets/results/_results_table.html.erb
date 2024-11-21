@@ -34,12 +34,12 @@
               class="budget-investments <%= investment.winner? ? "success" : "js-discarded" %>"
               style="<%= investment.winner? ? "" : "display: none" %>">
             <td>
-              <% if investment.winner? %>
-                <span class="icon-check">
-                  <span class="show-for-sr">
-                    <%= t("budgets.results.accepted") %>
-                  </span>
-                </span>
+            <% if investment.winner? %>
+               <span class="icon-check" style="color: <%= @budget.part_fund && investment.winner && amount_available - investment.price < 0 ? 'orange' : '' %>">
+                 <span class="show-for-sr">
+                   <%= t("budgets.results.accepted") %>
+                 </span>
+               </span>
               <% else %>
                 <span class="icon-x delete">
                   <span class="show-for-sr">
@@ -53,17 +53,27 @@
               <%= investment.ballot_lines_count %>
             </td>
             <% if @budget.show_money? %>
-              <td class="text-center">
-                <%= @budget.formatted_amount(investment.price) %>
-              </td>
-              <% if results_type == :compatible %>
-                <td class="small text-right"
-                    title="<%= @budget.formatted_amount(amount_available) %> - <%= @budget.formatted_amount(investment.price) %>">
-                    <%= @budget.formatted_amount(amount_available - investment.price) %>
-                    <% amount_available -= investment.price if investment.winner? %>
+  	    <td class="text-center" >
+    	      <% if @budget.part_fund && investment.winner && amount_available - investment.price < 0 %>
+       	      <%= @budget.formatted_amount(investment.price) %>(Part Fund)
+	    <% else %>
+  	      <%= @budget.formatted_amount(investment.price) %>
+	    <% end %>
+            </td>
+            <% if results_type == :compatible %>
+              <% if @budget.part_fund && investment.winner && amount_available - investment.price < 0 %>
+                <% amount_after_investment = amount_available - investment.price %>
+                <td class="small text-right" title="<%= @budget.formatted_amount(amount_available) %> - <%= @budget.formatted_amount(investment.price) %>">
+                  <%= @budget.formatted_amount(amount_after_investment) %>
+                </td>
+              <% else %>
+                <td class="small text-right" title="<%= @budget.formatted_amount(amount_available) %> - <%= @budget.formatted_amount(investment.price) %> ">
+                  <%= @budget.formatted_amount(amount_available - investment.price) %>
+                  <% amount_available -= investment.price if investment.winner? %>
                 </td>
               <% end %>
             <% end %>
+           <% end %>
         </tr>
       <% end %>
     </tbody>

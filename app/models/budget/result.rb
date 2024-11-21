@@ -24,7 +24,8 @@ class Budget
     end
 
     def inside_budget?
-      available_budget >= @current_investment.price
+#      available_budget >= @current_investment.price
+       available_budget > @current_investment.price || (available_budget > 0 && @budget.part_fund)
     end
 
     def available_budget
@@ -44,7 +45,13 @@ class Budget
     end
 
     def set_winner
-      @money_spent += @current_investment.price
+#      @money_spent += @current_investment.price
+#      @current_investment.update!(winner: true)
+      if @budget.part_fund
+        @money_spent += [@current_investment.price, available_budget].min
+      else
+        @money_spent += @current_investment.price
+      end
       @current_investment.update!(winner: true)
     end
 
