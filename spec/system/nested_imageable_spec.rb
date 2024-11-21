@@ -65,7 +65,9 @@ describe "Nested imageable" do
 
       expect(page).not_to have_css "#new_image_link"
       expect(page).to have_css ".file-name", text: "clippy.jpg"
-      expect_image_has_title("clippy.jpg")
+      within ".image-fields" do
+        expect(find("input[name$='[title]']").value).to eq "clippy.jpg"
+      end
     end
 
     scenario "Should not update image file title after choosing a file when a title is already defined" do
@@ -204,14 +206,6 @@ describe "Nested imageable" do
 
   def show_caption_for?(factory)
     factory != :budget
-  end
-
-  def expect_image_has_title(title)
-    image = find(".image-fields")
-
-    within image do
-      expect(find("input[name$='[title]']").value).to eq title
-    end
   end
 
   def redirected_to_resource_show_or_navigate_to(imageable)
