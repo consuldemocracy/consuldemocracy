@@ -188,30 +188,20 @@ describe "Nested imageable" do
   end
 
   context "Only for edit path" do
-    let(:factory) { :proposal }
-    let(:path) { edit_proposal_path(imageable) }
+    let(:proposal) { create(:proposal, :with_image, author: user) }
 
-    before do
-      create(:image, imageable: imageable)
-      imageable.update!(author: user)
+    scenario "handles image fields correctly" do
       login_as(user)
-      visit path
-    end
+      visit edit_proposal_path(proposal)
 
-    scenario "show persisted image" do
       expect(page).to have_css ".image-fields", count: 1
       expect(page).not_to have_css "a#new_image_link"
-    end
 
-    scenario "remove nested field after removing the image" do
       click_link "Remove image"
 
       expect(page).not_to have_css ".image-fields"
       expect(page).to have_link id: "new_image_link"
-    end
 
-    scenario "don't duplicate fields after removing and adding an image" do
-      click_link "Remove image"
       click_link "Add image"
 
       expect(page).to have_css ".image-fields", count: 1, visible: :all
