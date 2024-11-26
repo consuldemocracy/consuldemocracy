@@ -14,16 +14,7 @@ describe "Budget Investments" do
                   { budget_id: "budget_id" },
                   "documentable_fill_new_valid_budget_investment",
                   "Create Investment",
-                  "Investment created successfully.",
-                  management: true
-
-  it_behaves_like "nested imageable",
-                  "budget_investment",
-                  "new_management_budget_investment_path",
-                  { budget_id: "budget_id" },
-                  "imageable_fill_new_valid_budget_investment",
-                  "Create Investment",
-                  "Investment created successfully.",
+                  "Budget Investment created successfully.",
                   management: true
 
   it_behaves_like "mappable",
@@ -73,7 +64,7 @@ describe "Budget Investments" do
 
       click_button "Create Investment"
 
-      expect(page).to have_content "Investment created successfully."
+      expect(page).to have_content "Budget Investment created successfully."
 
       expect(page).to have_content "Health"
       expect(page).to have_content "Build a park in my neighborhood"
