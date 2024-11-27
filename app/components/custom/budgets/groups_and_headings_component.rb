@@ -1,4 +1,4 @@
-class Budgets::GroupsAndHeadingsComponent < ApplicationComponent; END
+class Budgets::GroupsAndHeadingsComponent < ApplicationComponent; end
 load Rails.root.join("app", "components", "budgets", "groups_and_headings_component.rb")
 class Budgets::GroupsAndHeadingsComponent
   attr_reader :budget
