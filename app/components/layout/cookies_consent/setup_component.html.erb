@@ -12,6 +12,17 @@
 
   <h3><%= t("cookies_setup.essentials.title") %></h3>
   <p><%= t("cookies_setup.essentials.description") %></p>
+  <div class="cookies-vendors">
+    <ul>
+      <li>
+        <%= render Cookies::SwitchComponent.new(:essential_cookies,
+                                                label: t("cookies_setup.essentials.title"),
+                                                description: t("cookies_setup.essentials.button.description"),
+                                                checked: true,
+                                                disabled: true) %>
+      </li>
+    </ul>
+  </div>
 
   <hr>
 
