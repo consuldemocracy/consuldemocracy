@@ -4,3 +4,5 @@
   <%= render Admin::Settings::RowComponent.new("feature.cookies_consent", type: :feature, tab: tab) %>
   <%= render Admin::Settings::RowComponent.new("cookies_consent.more_info_link", type: :text, tab: tab) %>
 <% end %>
+
+<%= render Admin::Cookies::Vendors::TableComponent.new %>

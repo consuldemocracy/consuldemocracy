@@ -172,6 +172,10 @@ describe Abilities::Administrator do
 
   it { should be_able_to(:manage, Widget::Card) }
 
+  it { should be_able_to(:create, Cookies::Vendor) }
+  it { should be_able_to(:update, Cookies::Vendor) }
+  it { should be_able_to(:destroy, Cookies::Vendor) }
+
   describe "tenants" do
     context "with multitenancy disabled" do
       before { allow(Rails.application.config).to receive(:multitenancy).and_return(false) }
