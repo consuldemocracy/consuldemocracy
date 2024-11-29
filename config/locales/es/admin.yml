@@ -1808,3 +1808,27 @@ es:
       tags: "Etiquetas"
       tags_description: "Genera etiquetas automáticas para todos los elementos que pueden ser etiquetados."
       title: "IA / Machine learning"
+    cookies:
+      vendors:
+        empty: No se han encontrado registros
+        third_party_cookies: Cookies de terceros
+        create_button: Nueva cookie
+        create:
+          notice: Cookie creada correctamente
+        new:
+          title: Nueva cookie de terceros
+        edit:
+          title: Editar cookie
+        update:
+          notice: Cookie actualizada correctamente
+        destroy:
+          notice: Cookie eliminada correctamente
+        form:
+          name:
+            help_text: Introduzca el nombre del proveedor. Esta información será visible públicamente.
+          cookie:
+            help_text: Introduzca el nombre de la cookie para este proveedor. Esta información se utilizará internamente. El nombre de la cookie debe ser único, solo puede contener letras, dígitos y guiones bajos.
+          description:
+            help_text: Introduzca la descripción del proveedor. Esta información será visible públicamente.
+          script:
+            help_text: Introduzca el script que se ejecutará cuando esta cookie sea aceptada por el usuario. Puede introducir código Javascript aquí e introducir referencias a otro javascript de la aplicación.
