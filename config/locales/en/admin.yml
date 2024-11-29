@@ -1808,3 +1808,27 @@ en:
       tags: "Tags"
       tags_description: "Generates automatic tags on all items that can be tagged on."
       title: "AI / Machine learning"
+    cookies:
+      vendors:
+        empty: No records found
+        third_party_cookies: Third party cookies
+        create_button: Create vendor
+        create:
+          notice: Cookie created successfully
+        new:
+          title: Third party cookies vendors
+        edit:
+          title: Edit cookie vendor
+        update:
+          notice: Cookie updated successfully
+        destroy:
+          notice: Cookie vendor deleted successfully
+        form:
+          name:
+            help_text: Enter the vendor name. This information will be publicly visible.
+          cookie:
+            help_text: Enter the cookie name for this vendor. This information will be used internally. The cookie name must be unique, it can only contain letters, digits and underscores.
+          description:
+            help_text: Enter the vendor description. This information will be publicly visible.
+          script:
+            help_text: Enter the script to run when this cookies is accepted by the user. You can enter vanilla Javascript code here and introduce references to other application javascript.

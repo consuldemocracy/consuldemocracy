@@ -151,6 +151,9 @@ en:
       votation_type:
         one: Votation type
         other: Votation types
+      cookies_vendor:
+        one: Cookie vendor
+        other: Cookie vendors
     attributes:
       budget:
         name: "Name"
@@ -534,6 +537,11 @@ en:
       votation_type/vote_type:
         unique: Unique answer
         multiple: Multiple answers
+      cookies/vendor:
+        name: Vendor name
+        cookie: Cookie name
+        description: Description
+        script: Javascript code
     errors:
       models:
         user:
@@ -623,6 +631,10 @@ en:
           attributes:
             code:
               invalid: "must start with the same code as its target followed by a dot and end with a number"
+        cookies/vendor:
+          attributes:
+            cookie:
+              collision: "cannot start with \"cookies_consent\". Please consider adding the vendor name as a prefix."
       messages:
         translations_too_short: Is mandatory to provide one translation at least
         record_invalid: "Validation failed: %{errors}"

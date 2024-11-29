@@ -51,4 +51,8 @@ describe Abilities::Valuator do
   it { should_not be_able_to(:read, SDG::Manager) }
   it { should_not be_able_to(:create, SDG::Manager) }
   it { should_not be_able_to(:delete, SDG::Manager) }
+
+  it { should_not be_able_to(:create, Cookies::Vendor) }
+  it { should_not be_able_to(:update, Cookies::Vendor) }
+  it { should_not be_able_to(:destroy, Cookies::Vendor) }
 end
