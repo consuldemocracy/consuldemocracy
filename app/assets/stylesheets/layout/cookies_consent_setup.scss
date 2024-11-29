@@ -1,0 +1,39 @@
+.cookies-consent-setup {
+  border-radius: 0.75rem;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  ul {
+    font-size: $base-font-size;
+  }
+
+  .close-button {
+    @include close-button;
+    bottom: auto;
+    left: auto;
+    position: relative;
+    right: auto;
+    top: auto;
+  }
+
+  button {
+    font-weight: bold;
+
+    @include breakpoint(small only) {
+      display: block;
+      width: 100%;
+    }
+
+    &.accept-essential-cookies {
+      @include regular-button;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.is-reveal-open {
+  overflow: unset !important;
+}

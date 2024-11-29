@@ -937,4 +937,12 @@ es:
     title: "Política de cookies"
     message: "Las cookies nos ayudan a ofrecer nuestros servicios. Al utilizar nuestros servicios, aceptas el uso de cookies."
     accept_essential_cookies: "Aceptar cookies esenciales"
+    setup: "Ajustes"
     more_info_link: "Más información"
+  cookies_setup:
+    title: Configuración de cookies
+    description: Esta web utiliza cookies propias y de terceros para su correcto funcionamiento. Al hacer click en el botón Aceptar, acepta el uso de estas tecnologías y el procesamiento de tus datos para estos propósitos.
+    essentials:
+      title: Cookies esenciales
+      description: Utilizadas para finalidades muy diversas, como por ejemplo, reconocerte como usuario, elegir el idioma o personalizar la forma en la que se muestra el contenido. Sin estas las funciones básicas de navegación se verán perjudicadas, por eso deben estar siempre activas.
+    accept_essential_cookies: Aceptar cookies esenciales
