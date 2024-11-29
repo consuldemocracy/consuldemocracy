@@ -79,8 +79,10 @@ class GeojsonFormatValidator < ActiveModel::EachValidator
       case geometry["type"]
       when "Point"
         valid_wgs84_coordinates?(coordinates)
-      when "LineString", "MultiPoint"
-        coordinates.all? { |coordinates| valid_wgs84_coordinates?(coordinates) }
+      when "LineString"
+        coordinates.many? && valid_coordinates_array?(coordinates)
+      when "MultiPoint"
+        valid_coordinates_array?(coordinates)
       when "Polygon", "MultiLineString"
         valid_polygon_coordinates?(coordinates)
       when "MultiPolygon"
@@ -99,9 +101,13 @@ class GeojsonFormatValidator < ActiveModel::EachValidator
       (-180.0..180.0).include?(longitude) && (-90.0..90.0).include?(latitude)
     end
 
+    def valid_coordinates_array?(coordinates_array)
+      coordinates_array.all? { |coordinates| valid_wgs84_coordinates?(coordinates) }
+    end
+
     def valid_polygon_coordinates?(polygon_coordinates)
-      polygon_coordinates.all? do |ring|
-        ring.all? { |coordinates| valid_wgs84_coordinates?(coordinates) }
+      polygon_coordinates.all? do |ring_coordinates|
+        valid_coordinates_array?(ring_coordinates)
       end
     end
 end
