@@ -939,3 +939,9 @@ es:
     more_info_link: "Más información"
     notice: "Tus preferencias de cookies se han guardado."
     title: "Política de cookies"
+  cookies_setup:
+    title: Configuración de cookies
+    description: Esta web utiliza cookies propias para su correcto funcionamiento.
+    essentials:
+      title: Cookies esenciales
+      description: Utilizadas para finalidades muy diversas, como por ejemplo, reconocerte como usuario, elegir el idioma o personalizar la forma en la que se muestra el contenido. Sin estas las funciones básicas de navegación se verán perjudicadas, por eso deben estar siempre activas.

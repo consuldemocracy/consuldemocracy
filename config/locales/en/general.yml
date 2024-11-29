@@ -939,3 +939,9 @@ en:
     more_info_link: "More information"
     notice: "Your cookies preferences were saved."
     title: "Cookies policy"
+  cookies_setup:
+    title: Cookies setup
+    description: This website uses own cookies for its proper functioning.
+    essentials:
+      title: Essential cookies
+      description: They are used for many different purposes, such as recognising you as a user, choosing the language or customising the way in which content is displayed.

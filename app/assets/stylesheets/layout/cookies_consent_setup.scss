@@ -1,0 +1,21 @@
+.cookies-consent-setup {
+  border-radius: 0.75rem;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .close-button {
+    @include close-button;
+    bottom: auto;
+    left: auto;
+    position: relative;
+    right: auto;
+    top: auto;
+  }
+}
+
+.is-reveal-open {
+  overflow: unset !important;
+}
