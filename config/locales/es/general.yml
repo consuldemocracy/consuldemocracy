@@ -946,3 +946,4 @@ es:
     essentials:
       title: Cookies esenciales
       description: Utilizadas para finalidades muy diversas, como por ejemplo, reconocerte como usuario, elegir el idioma o personalizar la forma en la que se muestra el contenido.
+      hint: Sin ellas, las funciones básicas de navegación se verán afectadas, por lo que deben estar siempre activas.

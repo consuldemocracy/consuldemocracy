@@ -12,6 +12,17 @@
 
   <h3><%= t("cookies_management.essentials.title") %></h3>
   <p><%= t("cookies_management.essentials.description") %></p>
+  <div class="cookies-essentials">
+    <ul>
+      <li>
+        <%= render Layout::CookiesConsent::SwitchComponent.new(:essential_cookies,
+                                                               label: t("cookies_management.essentials.title"),
+                                                               description: t("cookies_management.essentials.hint"),
+                                                               checked: true,
+                                                               disabled: true) %>
+      </li>
+    </ul>
+  </div>
 
   <div class="buttons">
     <button type="button" class="accept-essential-cookies"><%= t("cookies_consent.accept_essential_cookies") %></button>

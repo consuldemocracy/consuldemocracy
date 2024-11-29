@@ -30,4 +30,34 @@
       }
     }
   }
+
+  .cookies-essentials {
+    ul {
+      list-style: none;
+      margin-#{$global-left}: 0;
+
+      li {
+        display: flex;
+        gap: $line-height;
+        justify-content: space-between;
+        padding: $line-height / 3;
+
+        &:nth-child(odd) {
+          background: #efefef;
+        }
+      }
+    }
+
+    .switch {
+      margin-top: $line-height / 3;
+
+      &:focus-within {
+        @include focus-outline;
+      }
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
 }
