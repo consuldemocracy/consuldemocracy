@@ -1,8 +1,8 @@
-class Layout::CookiesConsent::BannerComponent < ApplicationComponent
+class Layout::CookiesConsent::BannerComponent < Layout::CookiesConsent::BaseComponent
   delegate :cookies, to: :helpers
 
   def render?
-    feature?(:cookies_consent) && cookies_consent_unset?
+    super && cookies_consent_unset?
   end
 
   def more_info_link
