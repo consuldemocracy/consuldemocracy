@@ -35,6 +35,11 @@
 
 html {
   font-size: calc(0.25em + Max(0.75em, 0.75vw));
+
+  &.is-reveal-open.zf-has-scroll,
+  &.is-reveal-open {
+    overflow: unset;
+  }
 }
 
 html,

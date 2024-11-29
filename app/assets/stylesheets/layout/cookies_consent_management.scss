@@ -1,0 +1,16 @@
+.cookies-consent-management {
+  border-radius: 0.75rem;
+
+  @include breakpoint(medium) {
+    width: 50%;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .close-button {
+    @include modal-close-button;
+  }
+}
