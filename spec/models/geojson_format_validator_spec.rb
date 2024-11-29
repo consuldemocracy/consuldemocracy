@@ -122,16 +122,6 @@ describe GeojsonFormatValidator do
       expect(record).not_to be_valid
     end
 
-    it "is valid with a two-dimensional array including only one point" do
-      record.geojson = '{ "type": "LineString", "coordinates": [[1.23, 4.56]] }'
-
-      expect(record).to be_valid
-
-      record.geojson = '{ "type": "MultiPoint", "coordinates": [[1.23, 4.56]] }'
-
-      expect(record).to be_valid
-    end
-
     it "is not valid when some coordinates are invalid" do
       record.geojson = '{ "type": "LineString", "coordinates": [[1.23, 4.56], [180.01, 4.56]] }'
 
@@ -148,6 +138,22 @@ describe GeojsonFormatValidator do
       expect(record).to be_valid
 
       record.geojson = '{ "type": "MultiPoint", "coordinates": [[1.23, 4.56], [7.89, 4.56]] }'
+
+      expect(record).to be_valid
+    end
+  end
+
+  context "LineString geometry" do
+    it "is not valid with only one point" do
+      record.geojson = '{ "type": "LineString", "coordinates": [[1.23, 4.56]] }'
+
+      expect(record).not_to be_valid
+    end
+  end
+
+  context "MultiPoint geometry" do
+    it "is valid with only one point" do
+      record.geojson = '{ "type": "MultiPoint", "coordinates": [[1.23, 4.56]] }'
 
       expect(record).to be_valid
     end
