@@ -1,0 +1,5 @@
+<h2><%= t("admin.settings.index.cookies_consent_banner.title") %></h2>
+
+<%= render Admin::Settings::TableComponent.new(setting_name: "feature") do %>
+  <%= render Admin::Settings::RowComponent.new("feature.cookies_consent", type: :feature, tab: tab) %>
+<% end %>
