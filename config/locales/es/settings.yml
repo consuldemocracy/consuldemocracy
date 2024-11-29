@@ -228,3 +228,6 @@ es:
         budgets_description: Permitir alineamiento de los Objetivos de Desarrollo Sostenible en presupuestos participativos
         legislation: Alineamiento ODS en legislación colaborativa
         legislation_description: Permitir alineamiento de los Objetivos de Desarrollo Sostenible en legislación colaborativa
+    cookies_consent:
+      more_info_link: Enlace a la política de cookies
+      more_info_link_description: Enlace que se muestra en el banner de consentimiento a la página de política de cookies
