@@ -5,10 +5,6 @@ class Layout::CookiesConsent::BannerComponent < Layout::CookiesConsent::BaseComp
     super && cookies_consent_unset?
   end
 
-  def more_info_link
-    Setting["cookies_consent.more_info_link"]
-  end
-
   private
 
     def cookies_consent_unset?
