@@ -1,5 +1,9 @@
 <div id="cookies_consent_banner" class="cookies-consent-banner" data-notice="<%= notice %>">
   <h2><%= t("cookies_consent.title") %></h2>
   <p><%= t("cookies_consent.message") %></p>
+  <% if more_info_link.present? %>
+    <p><%= link_to t("cookies_consent.more_info_link"), more_info_link %></p>
+  <% end %>
+
   <button type="button" class="accept-essential-cookies"><%= t("cookies_consent.accept_essential_cookies") %></button>
 </div>

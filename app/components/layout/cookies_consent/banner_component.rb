@@ -10,6 +10,10 @@ class Layout::CookiesConsent::BannerComponent < ApplicationComponent
                                                         message: t("cookies_consent.notice")))
   end
 
+  def more_info_link
+    Setting["cookies_consent.more_info_link"]
+  end
+
   private
 
     def cookies_consent_unset?
