@@ -947,4 +947,6 @@ es:
     essentials:
       title: Cookies esenciales
       description: Utilizadas para finalidades muy diversas, como por ejemplo, reconocerte como usuario, elegir el idioma o personalizar la forma en la que se muestra el contenido. Sin estas las funciones básicas de navegación se verán perjudicadas, por eso deben estar siempre activas.
+      button:
+        description: Without these, basic navigation functions will be impaired, so they should always be active.
     accept_essential_cookies: Aceptar cookies esenciales
