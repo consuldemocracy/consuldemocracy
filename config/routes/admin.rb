@@ -304,6 +304,10 @@ namespace :admin do
       post :execute, on: :collection
       delete :cancel, on: :collection
     end
+
+    namespace :cookies do
+      resources :vendors, except: [:index, :show]
+    end
   end
 end
 
