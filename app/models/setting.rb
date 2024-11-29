@@ -161,6 +161,7 @@ class Setting < ApplicationRecord
         "related_content_score_threshold": -0.3,
         "featured_proposals_number": 3,
         "feature.dashboard.notification_emails": nil,
+        "cookies_consent.more_info_link": "",
         "machine_learning.comments_summary": false,
         "machine_learning.related_content": false,
         "machine_learning.tags": false,

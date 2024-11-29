@@ -20,10 +20,22 @@ describe Layout::CookiesConsent::BannerComponent do
   end
 
   it "renders the banner content when feature `cookies_consent` is enabled and cookies were not accepted" do
+    Setting["cookies_consent.more_info_link"] = "/cookies_policy"
+
     render_inline Layout::CookiesConsent::BannerComponent.new
 
     expect(page).to be_rendered
     expect(page).to have_css "h2", text: "Cookies policy"
+    expect(page).to have_link "More information about cookies", href: "/cookies_policy"
     expect(page).to have_button "Accept essential cookies"
+  end
+
+  it "does not render a link when the setting `cookies_consent.more_info_link` is not defined" do
+    Setting["cookies_consent.more_info_link"] = ""
+
+    render_inline Layout::CookiesConsent::BannerComponent.new
+
+    expect(page).not_to have_link "More information about cookies"
+    expect(page).to be_rendered
   end
 end

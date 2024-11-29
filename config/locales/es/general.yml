@@ -936,4 +936,5 @@ es:
   cookies_consent:
     accept_essential_cookies: "Aceptar cookies esenciales"
     message: "Las cookies nos ayudan a ofrecer nuestros servicios. Al utilizar nuestros servicios, aceptas el uso de cookies."
+    more_info_link: "Más información sobre cookies"
     title: "Política de cookies"
