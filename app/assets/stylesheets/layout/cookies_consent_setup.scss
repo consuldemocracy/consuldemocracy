@@ -28,6 +28,43 @@
       margin-bottom: 0;
     }
   }
+
+  .cookies-vendors {
+    ul {
+      list-style: none;
+      margin-left: 0;
+      margin-right: 0;
+
+      li {
+        display: flex;
+        gap: $line-height;
+        justify-content: space-between;
+        padding: $line-height / 3;
+        width: 100%;
+
+        &:nth-child(odd) {
+          background: #efefef;
+        }
+      }
+    }
+
+    .switch {
+      margin-top: $line-height / 3;
+
+      &:focus-within {
+        @include focus-outline;
+      }
+    }
+
+    p {
+      font-size: $base-font-size;
+      margin-bottom: 0;
+    }
+
+    .name {
+      font-weight: bold;
+    }
+  }
 }
 
 .is-reveal-open {
