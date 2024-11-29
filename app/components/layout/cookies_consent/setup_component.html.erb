@@ -6,6 +6,9 @@
     </button>
   </div>
   <p><%= t("cookies_setup.description") %><p>
+  <% if more_info_link.present? %>
+    <p><%= link_to t("cookies_consent.more_info_link"), more_info_link, target: "_blank" %></p>
+  <% end %>
 
   <h3><%= t("cookies_setup.essentials.title") %></h3>
   <p><%= t("cookies_setup.essentials.description") %></p>
