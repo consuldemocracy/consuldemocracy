@@ -1,29 +1,29 @@
-# Debates & Proposals Recommendations
+# Debates and proposals recommendations
 
-Logged in users can see recommended Debates or Proposals listed with the ordering option "recommendations".
+Logged in users can see recommended debates or proposals by sorting them by "recommendations".
 
-The list shows, ordered by votes descending, those elements that:
+The sorted list shows, ordered by votes in descending order, those elements that:
 
-1. Have tags that interests the user. Being those tags the ones on the proposals that the user follows.
+1. Have tags that interest the user. Those tags are the ones on the proposals that the user follows.
 2. The user isn't the author.
-3. In the case of proposals: only those that haven't reached the required threshold of votes, hiding as well those that the user is already following.
+3. In the case of proposals: only those that haven't reached the required threshold of votes and the user isn't already following.
 
-## How to try it
+## How to try this feature
 
-In our local installation, if we haven't logged in, we can check at <http://localhost:3000/proposals> that the "recommendations" ordering isn't present:
+In our local installation, if we haven't logged in, we can check at <http://localhost:3000/proposals> that the "recommendations" sorting option isn't present:
 
-![Recommendations not logged in](../../img/recommendations/recommendations_not_logged_in.jpg)
+![The sorting options don't include "recommendations"](../../img/recommendations/recommendations_not_logged_in.jpg)
 
-Once we log in we see the menu, but because we don't aren't following any proposals we get the message "Follow proposals so we can give you recommendations" at <http://localhost:3000/proposals?locale=en&order=recommendations&page=1>
+Once we log in we see the menu, but since we aren't following any proposals we get the message "Follow proposals so we can give you recommendations" at <http://localhost:3000/proposals?locale=en&order=recommendations&page=1>
 
-![Recommendations no follows](../../img/recommendations/recommendations_no_follows.jpg)
+![Recommendations are empty](../../img/recommendations/recommendations_no_follows.jpg)
 
-After following any proposal with the "Follow citizen proposal" on the side menu:
+Follow any proposal using the "Follow citizen proposal" button on the side menu:
 
-![Recommendations follow button](../../img/recommendations/recommendations_follow_button.jpg)
+![Button to follow a citizen proposal](../../img/recommendations/recommendations_follow_button.jpg)
 
-We can finally see some recommendations:
+Now we can finally see some recommendations:
 
-![Recommendations with follows](../../img/recommendations/recommendations_with_follows.jpg)
+![List of recommendations](../../img/recommendations/recommendations_with_follows.jpg)
 
-The feature works the same for debates
+The feature works the same way for debates.

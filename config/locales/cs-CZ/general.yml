@@ -172,6 +172,7 @@ cs:
     legislation/process: proces
     legislation/question: otázka
     poll/shift: Posun
+    poll/question/option: Odpověď
     user: Účet
     verification/sms: telefon
     signature_sheet: Podpisové arch

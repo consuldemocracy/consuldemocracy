@@ -37,5 +37,5 @@ end
 
 every :reboot do
   # Number of workers must be kept in sync with capistrano's delayed_job_workers
-  command "cd #{@path} && RAILS_ENV=#{@environment} bin/delayed_job -m -n 2 restart"
+  command "cd #{@path} && RAILS_ENV=#{@environment} bundle exec bin/delayed_job -m -n 2 restart"
 end

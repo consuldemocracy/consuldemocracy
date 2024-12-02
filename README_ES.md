@@ -32,9 +32,11 @@ Puedes acceder a la página principal del proyecto en [http://consuldemocracy.or
 
 ## Configuración para desarrollo y tests
 
-**NOTA**: para unas instrucciones más detalladas consulta la [documentación](https://docs.consuldemocracy.org)
+**NOTA**: para unas instrucciones más detalladas, consulta la [documentación de instalación local](docs/es/installation/local_installation.md).
 
-Prerequisitos: tener instalado git, Ruby 3.2.4, CMake, pkg-config, shared-mime-info, Node.js 18.20.3 y PostgreSQL (9.5 o superior).
+Prerrequisitos: tener instalado git, Ruby 3.2.5, CMake, pkg-config, Node.js 18.20.3, ImageMagick y PostgreSQL (9.5 o superior).
+
+**Nota**: Es posible que ejecutar `bin/setup`, como se indica a continuación, falle si has configurado un nombre de usuario y contraseña para PostgreSQL. Si es así, edita las líneas que contienen `username:` y `password:` (añadiendo tus credenciales) en el fichero `config/database.yml` y ejecuta `bin/setup` de nuevo.
 
 ```bash
 git clone https://github.com/consuldemocracy/consuldemocracy.git

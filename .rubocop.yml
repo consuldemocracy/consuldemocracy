@@ -4,6 +4,7 @@ require:
   - rubocop-performance
   - rubocop-rails
   - rubocop-rspec
+  - rubocop-rspec_rails
 
 AllCops:
   DisplayCopNames: true
@@ -517,6 +518,9 @@ Rails/WhereNot:
 Rails/WhereNotWithMultipleConditions:
   Enabled: true
 
+Rails/WhereRange:
+  Enabled: true
+
 RSpec/AroundBlock:
   Enabled: true
 
@@ -530,18 +534,20 @@ RSpec/BeNil:
   Enabled: true
   EnforcedStyle: be
 
-RSpec/Capybara/FeatureMethods:
-  Enabled: true
-  EnabledMethods:
-    - scenario
-    - xscenario
-
 RSpec/ContextMethod:
   Enabled: true
 
 RSpec/DescribedClass:
   Enabled: true
   EnforcedStyle: explicit
+
+RSpec/Dialect:
+  Enabled: true
+  PreferredMethods:
+    background: :before
+    given:      :let
+    given!:     :let!
+    feature:    :describe
 
 RSpec/EmptyExampleGroup:
   Enabled: true
@@ -559,10 +565,16 @@ RSpec/EmptyLineAfterExampleGroup:
   Exclude:
     - spec/factories/**/*
 
+RSpec/EmptyOutput:
+  Enabled: true
+
 RSpec/ExampleWording:
   Enabled: true
 
 RSpec/ExcessiveDocstringSpacing:
+  Enabled: true
+
+RSpec/ExpectInLet:
   Enabled: true
 
 RSpec/Focus:
@@ -586,22 +598,13 @@ RSpec/LetSetup:
 RSpec/MetadataStyle:
   Enabled: true
 
+RSpec/MissingExpectationTargetMethod:
+  Enabled: true
+
 RSpec/NotToNot:
   Enabled: true
 
 RSpec/OverwritingSetup:
-  Enabled: true
-
-RSpec/Rails/HaveHttpStatus:
-  Enabled: true
-
-RSpec/Rails/InferredSpecType:
-  Enabled: true
-
-RSpec/Rails/NegationBeValid:
-  Enabled: true
-
-RSpec/Rails/TravelAround:
   Enabled: true
 
 RSpec/ReceiveMessages:
@@ -628,7 +631,22 @@ RSpec/SpecFilePathFormat:
 RSpec/SpecFilePathSuffix:
   Enabled: true
 
+RSpec/UndescriptiveLiteralsDescription:
+  Enabled: true
+
 RSpec/VoidExpect:
+  Enabled: true
+
+RSpecRails/HaveHttpStatus:
+  Enabled: true
+
+RSpecRails/InferredSpecType:
+  Enabled: true
+
+RSpecRails/NegationBeValid:
+  Enabled: true
+
+RSpecRails/TravelAround:
   Enabled: true
 
 Security/Eval:
@@ -712,6 +730,9 @@ Style/InvertibleUnlessCondition:
 Style/LineEndConcatenation:
   Enabled: true
 
+Style/MapIntoArray:
+  Enabled: true
+
 Style/MapToHash:
   Enabled: true
 
@@ -789,6 +810,11 @@ Style/StringLiterals:
 
 Style/StringLiteralsInInterpolation:
   EnforcedStyle: double_quotes
+
+Style/SuperArguments:
+  Enabled: true
+  Exclude:
+    - "config/initializers/ahoy.rb"
 
 Style/SymbolProc:
   Enabled: true

@@ -126,7 +126,7 @@ RSpec.configure do |config|
 
   config.before(:each, :small_window) do
     @window_size = Capybara.current_window.size
-    Capybara.current_window.resize_to(639, 479)
+    Capybara.current_window.resize_to(320, 640)
   end
 
   config.after(:each, :small_window) do

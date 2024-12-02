@@ -1,17 +1,17 @@
 # Configura tu fork
 
-## Travis CI
+## Integración Continua con GitHub Actions
 
-[Travis](https://travis-ci.org/) es un servicio de Integración Contínua, gratuito para proyectos OpenSource (como Consul Democracy y sus forks). Te ayudará a vigilar que en las Pull Requests no se rompan los tests.
+[GitHub Actions](https://docs.github.com/es/actions) es una herramienta integrada en GitHub que permite automatizar tareas como la ejecución de tests cada vez que haces un cambio en tu código. Dado que Consul Democracy ya incluye configuraciones predefinidas para GitHub Actions, habilitar la integración continua en tu fork es muy sencillo.
 
-1. Visita <https://github.com/marketplace/travis-ci> y haz click en el botón verde "**Install it for free**"" al pie de la página.
+### Pasos para habilitar GitHub Actions
 
-2. Haz click en el botón verde "**Complete order and begin installation**"
+1. **Habilita GitHub Actions en tu fork**:
+   1. Una vez que hayas creado el fork, ve a la pestaña "**Actions**" en tu repositorio en GitHub.
+   1. Verás un mensaje que dice: "Workflows aren’t being run on this forked repository". Esto es normal, ya que GitHub deshabilita por defecto los workflows en los nuevos forks por motivos de seguridad.
+   1. Haz clic en el botón "**I understand my workflows, go ahead and enable them**" para habilitar los workflows en tu fork.
 
-3. Si se te solicita acceso a tu cuenta de Github por parte de Travis CIaccess, marca la organización o usuario bajo el cual reside tu fork de Consul Democracy y haz click en el botón "**Authorize travis-ci**".
-
-4. Visita [tu perfil en Travis](https://travis-ci.org/profile/) y habilita Travis para tu fork de Consul Democracy en el listado de repositorios.
-
-5. Haz click en el icono de un piñón a la derecha del repositorio para ver las builds.
-
-6. Comprueba que todo está bien configurado creando un Pull Request de prueba (editar un simple fichero .md podría servir).
+2. **Verifica la configuración**:
+   1. Realiza un cambio en algún archivo del proyecto (por ejemplo, edita un archivo `.md`) en una rama distinta de master y súbelo a tu fork.
+   1. Abre una pull request desde nueva rama hacia master en tu fork.
+   1. Ve a la pestaña "**Actions**" y verifica que los tests se están ejecutando correctamente en base a los workflows definidos en la carpeta `.github/workflows/` del proyecto.

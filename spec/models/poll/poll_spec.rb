@@ -24,12 +24,14 @@ describe Poll do
       poll.starts_at = nil
 
       expect(poll).not_to be_valid
-      expect(poll.errors[:starts_at]).to eq ["Invalid date range"]
+      expect(poll.errors[:starts_at]).to eq ["can't be blank"]
     end
 
     it "is not valid without an end date" do
       poll.ends_at = nil
+
       expect(poll).not_to be_valid
+      expect(poll.errors[:ends_at]).to eq ["can't be blank"]
     end
 
     it "is not valid without a proper start/end date range" do

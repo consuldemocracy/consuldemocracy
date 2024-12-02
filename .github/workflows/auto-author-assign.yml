@@ -13,4 +13,4 @@ jobs:
     if: github.repository_owner == 'consuldemocracy'
     runs-on: ubuntu-latest
     steps:
-      - uses: toshimaru/auto-author-assign@v1.4.0
+      - uses: toshimaru/auto-author-assign@v2.1.1

@@ -2,5 +2,5 @@
 
 * [Ubuntu Linux](ubuntu.md)
 * [Debian Linux](debian.md)
-* [MacOS](macos.md)
+* [macOS](macos.md)
 * [Windows](windows.md)
