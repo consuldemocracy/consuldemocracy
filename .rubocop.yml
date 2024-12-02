@@ -337,6 +337,9 @@ Naming/BlockForwarding:
     - "app/controllers/management/base_controller.rb"
     - "app/controllers/subscriptions_controller.rb"
 
+Naming/RescuedExceptionsVariableName:
+  Enabled: true
+
 Naming/VariableName:
   Enabled: true
 
@@ -367,6 +370,9 @@ Rails/ActiveRecordCallbacksOrder:
 Rails/AddColumnIndex:
   Enabled: true
 
+Rails/CompactBlank:
+  Enabled: true
+
 Rails/CreateTableWithTimestamps:
   Enabled: true
   Exclude:
@@ -387,6 +393,12 @@ Rails/DynamicFindBy:
     - find_by_slug_or_id
     - find_by_slug_or_id!
     - find_by_manager_login
+
+Rails/EnumHash:
+  Enabled: true
+
+Rails/EnumSyntax:
+  Enabled: true
 
 Rails/EnumUniqueness:
   Enabled: true
@@ -631,6 +643,9 @@ RSpec/SpecFilePathFormat:
 RSpec/SpecFilePathSuffix:
   Enabled: true
 
+RSpec/StringAsInstanceDoubleConstant:
+  Enabled: true
+
 RSpec/UndescriptiveLiteralsDescription:
   Enabled: true
 
@@ -779,6 +794,12 @@ Style/RedundantInterpolation:
   Enabled: true
 
 Style/RedundantParentheses:
+  Enabled: true
+
+Style/RedundantRegexpArgument:
+  Enabled: true
+
+Style/RedundantRegexpCharacterClass:
   Enabled: true
 
 Style/RedundantReturn:

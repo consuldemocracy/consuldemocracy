@@ -62,9 +62,9 @@ class MachineLearning
 
       job.update!(finished_at: Time.current)
       Mailer.machine_learning_success(user).deliver_later
-    rescue Exception => error
-      handle_error(error)
-      raise error
+    rescue Exception => e
+      handle_error(e)
+      raise e
     end
   end
   handle_asynchronously :run, queue: "machine_learning"

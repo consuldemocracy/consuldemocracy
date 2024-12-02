@@ -15,7 +15,7 @@ env:
 
 jobs:
   tests:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 60
     services:
       postgres:
@@ -46,6 +46,8 @@ jobs:
           node-version-file: ".node-version"
       - name: Install node packages
         run: npm clean-install
+      - name: Install ImageMagick
+        run: sudo apt-get install imagemagick
       - name: Copy secrets and database files
         run: for i in config/*.example; do cp "$i" "${i/.example}"; done
       - name: Setup database
@@ -76,7 +78,7 @@ jobs:
   coveralls:
     permissions:
       contents: none
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: tests
     steps:
       - name: Finish coveralls

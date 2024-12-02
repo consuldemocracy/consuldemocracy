@@ -2,7 +2,7 @@ class ProgressBar < ApplicationRecord
   self.inheritance_column = nil
   RANGE = (0..100)
 
-  enum kind: %i[primary secondary]
+  enum :kind, { primary: 0, secondary: 1 }
 
   belongs_to :progressable, polymorphic: true
 
