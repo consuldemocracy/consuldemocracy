@@ -159,6 +159,64 @@ describe GeojsonFormatValidator do
     end
   end
 
+  context "Polygon or MultiLineString geometry" do
+    it "is not valid with a one-dimensional array of coordinates" do
+      record.geojson = '{ "type": "MultiLineString", "coordinates": [1.23, 4.56] }'
+
+      expect(record).not_to be_valid
+
+      record.geojson = '{ "type": "Polygon", "coordinates": [1.23, 4.56] }'
+
+      expect(record).not_to be_valid
+    end
+
+    it "is not valid with a two-dimensional array of coordinates" do
+      record.geojson = '{ "type": "MultiLineString", "coordinates": [[1.23, 4.56], [7.89, 4.56]] }'
+
+      expect(record).not_to be_valid
+
+      record.geojson = '{ "type": "Polygon", "coordinates": [[1.23, 4.56], [7.89, 4.56]] }'
+
+      expect(record).not_to be_valid
+    end
+  end
+
+  context "MultiLineString geometry" do
+    it "is valid with just one line" do
+      record.geojson = '{ "type": "MultiLineString", "coordinates": [[[1.23, 4.56], [7.89, 4.56]]] }'
+
+      expect(record).to be_valid
+    end
+
+    it "is valid with multiple valid lines" do
+      record.geojson = <<~JSON
+        {
+          "type": "MultiLineString",
+          "coordinates": [
+            [[1.23, 4.56], [7.89, 4.56]],
+            [[10.11, 12.13], [14.15, 16.17]]
+          ]
+        }
+      JSON
+
+      expect(record).to be_valid
+    end
+
+    it "is not valid if some lines are invalid" do
+      record.geojson = <<~JSON
+        {
+          "type": "MultiLineString",
+          "coordinates": [
+            [[1.23, 4.56], [7.89, 4.56]],
+            [[10.11, 12.13]]
+          ]
+        }
+      JSON
+
+      expect(record).not_to be_valid
+    end
+  end
+
   context "GeometryCollection" do
     it "is not valid if it doesn't contain geometries" do
       record.geojson = '{ "type": "GeometryCollection" }'
