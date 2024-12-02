@@ -115,7 +115,7 @@ describe "Admin geozones", :admin do
         "type": "Feature",
         "geometry": {
           "type": "Polygon",
-          "coordinates": [[[-0.1, 51.5], [-0.2, 51.4], [-0.3, 51.6]]]
+          "coordinates": [[[-0.1, 51.5], [-0.2, 51.4], [-0.3, 51.6], [-0.1, 51.5]]]
         }
       }
     JSON
@@ -158,7 +158,7 @@ describe "Admin geozones", :admin do
         "type": "Feature",
         "geometry": {
           "type": "Polygon",
-          "coordinates": [[[-0.1, 51.5], [-0.2, 51.4], [-0.3, 51.6]]]
+          "coordinates": [[[-0.1, 51.5], [-0.2, 51.4], [-0.3, 51.6], [-0.1, 51.5]]]
         }
       }
     JSON

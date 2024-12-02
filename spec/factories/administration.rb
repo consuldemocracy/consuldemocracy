@@ -25,7 +25,7 @@ FactoryBot.define do
             "type": "Feature",
             "geometry": {
               "type": "Polygon",
-              "coordinates": [[[0.117, 51.513], [0.118, 51.512], [0.119, 51.514]]]
+              "coordinates": [[[0.117, 51.513], [0.118, 51.512], [0.119, 51.514], [0.117, 51.513]]]
             }
           }
         JSON
