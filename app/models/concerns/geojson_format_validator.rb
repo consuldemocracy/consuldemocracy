@@ -115,8 +115,13 @@ class GeojsonFormatValidator < ActiveModel::EachValidator
     end
 
     def valid_polygon_coordinates?(polygon_coordinates)
-      polygon_coordinates.all? do |ring_coordinates|
-        valid_coordinates_array?(ring_coordinates)
-      end
+      polygon_coordinates.is_a?(Array) &&
+        polygon_coordinates.all? { |ring_coordinates| valid_ring_coordinates?(ring_coordinates) }
+    end
+
+    def valid_ring_coordinates?(ring_coordinates)
+      valid_coordinates_array?(ring_coordinates) &&
+        ring_coordinates.size >= 4 &&
+        ring_coordinates.first == ring_coordinates.last
     end
 end

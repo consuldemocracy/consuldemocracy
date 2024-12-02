@@ -217,6 +217,221 @@ describe GeojsonFormatValidator do
     end
   end
 
+  context "Polygon geometry" do
+    it "is not valid with a ring having less than four elements" do
+      record.geojson = <<~JSON
+        {
+          "type": "Polygon",
+          "coordinates": [[
+            [1.23, 4.56],
+            [7.89, 10.11],
+            [1.23, 4.56]
+          ]]
+        }
+      JSON
+
+      expect(record).not_to be_valid
+    end
+
+    it "is not valid with a ring which with different starting and end points" do
+      record.geojson = <<~JSON
+        {
+          "type": "Polygon",
+          "coordinates": [[
+            [1.23, 4.56],
+            [7.89, 10.11],
+            [12.13, 14.15],
+            [16.17, 18.19]
+          ]]
+        }
+      JSON
+
+      expect(record).not_to be_valid
+    end
+
+    it "is valid with one valid ring" do
+      record.geojson = <<~JSON
+        {
+          "type": "Polygon",
+          "coordinates": [[
+            [1.23, 4.56],
+            [7.89, 10.11],
+            [12.13, 14.15],
+            [1.23, 4.56]
+          ]]
+        }
+      JSON
+
+      expect(record).to be_valid
+    end
+
+    it "is valid with multiple valid rings" do
+      record.geojson = <<~JSON
+        {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [100.0, 0.0],
+              [101.0, 0.0],
+              [101.0, 1.0],
+              [100.0, 1.0],
+              [100.0, 0.0]
+            ],
+            [
+              [100.8, 0.8],
+              [100.8, 0.2],
+              [100.2, 0.2],
+              [100.2, 0.8],
+              [100.8, 0.8]
+            ]
+          ]
+        }
+      JSON
+
+      expect(record).to be_valid
+    end
+
+    it "is not valid with multiple rings if some rings are invalid" do
+      record.geojson = <<~JSON
+        {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [100.0, 0.0],
+              [101.0, 0.0],
+              [101.0, 1.0],
+              [100.0, 1.0],
+              [100.0, 0.0]
+            ],
+            [
+              [100.8, 0.8],
+              [100.8, 0.2],
+              [100.2, 0.2]
+            ]
+          ]
+        }
+      JSON
+
+      expect(record).not_to be_valid
+    end
+  end
+
+  context "MultiPolygon geometry" do
+    it "is not valid with a one-dimensional array of coordinates" do
+      record.geojson = '{ "type": "MultiPolygon", "coordinates": [1.23, 4.56] }'
+
+      expect(record).not_to be_valid
+    end
+
+    it "is not valid with a two-dimensional array of coordinates" do
+      record.geojson = '{ "type": "MultiPolygon", "coordinates": [[1.23, 4.56], [7.89, 4.56]] }'
+
+      expect(record).not_to be_valid
+    end
+
+    it "is not valid with a three-dimensional polygon coordinates array" do
+      record.geojson = <<~JSON
+        {
+          "type": "MultiPolygon",
+          "coordinates": [[
+            [1.23, 4.56],
+            [7.89, 10.11],
+            [12.13, 14.15],
+            [1.23, 4.56]
+          ]]
+        }
+      JSON
+
+      expect(record).not_to be_valid
+    end
+
+    it "is valid with a valid polygon" do
+      record.geojson = <<~JSON
+        {
+          "type": "MultiPolygon",
+          "coordinates": [[[
+            [1.23, 4.56],
+            [7.89, 10.11],
+            [12.13, 14.15],
+            [1.23, 4.56]
+          ]]]
+        }
+      JSON
+
+      expect(record).to be_valid
+    end
+
+    it "is valid with multiple valid polygons" do
+      record.geojson = <<~JSON
+        {
+          "type": "MultiPolygon",
+          "coordinates": [
+            [
+              [
+                [1.23, 4.56],
+                [7.89, 10.11],
+                [12.13, 14.15],
+                [1.23, 4.56]
+              ]
+            ],
+            [
+              [
+                [100.0, 0.0],
+                [101.0, 0.0],
+                [101.0, 1.0],
+                [100.0, 1.0],
+                [100.0, 0.0]
+              ],
+              [
+                [100.8, 0.8],
+                [100.8, 0.2],
+                [100.2, 0.2],
+                [100.2, 0.8],
+                [100.8, 0.8]
+              ]
+            ]
+          ]
+        }
+      JSON
+
+      expect(record).to be_valid
+    end
+
+    it "is not valid with multiple polygons if some polygons are invalid" do
+      record.geojson = <<~JSON
+        {
+          "type": "MultiPolygon",
+          "coordinates": [
+            [
+              [
+                [1.23, 4.56],
+                [7.89, 10.11],
+                [12.13, 14.15],
+                [1.23, 4.56]
+              ]
+            ],
+            [
+              [
+                [100.0, 0.0],
+                [101.0, 0.0],
+                [101.0, 1.0],
+                [100.0, 1.0],
+                [100.0, 0.0]
+              ],
+              [
+                [100.8, 0.8],
+                [100.8, 0.2],
+                [100.2, 0.2]
+              ]
+            ]
+          ]
+        }
+      JSON
+
+      expect(record).not_to be_valid
+    end
+  end
+
   context "GeometryCollection" do
     it "is not valid if it doesn't contain geometries" do
       record.geojson = '{ "type": "GeometryCollection" }'
