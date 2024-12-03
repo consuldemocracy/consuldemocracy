@@ -694,6 +694,9 @@ Style/ArrayIntersect:
 Style/BlockDelimiters:
   Enabled: true
 
+Style/CaseLikeIf:
+  Enabled: true
+
 Style/ClassCheck:
   Enabled: true
 

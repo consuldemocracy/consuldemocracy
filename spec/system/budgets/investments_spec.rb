@@ -610,7 +610,7 @@ describe "Budget Investments" do
 
       click_button "Create Investment"
 
-      expect(page).to have_content "Investment created successfully"
+      expect(page).to have_content "Budget Investment created successfully"
       expect(page).to have_content "Build a skyscraper"
       expect(page).to have_content "I want to live in a high tower over the clouds"
       expect(page).to have_content "City center"
@@ -678,7 +678,7 @@ describe "Budget Investments" do
 
       click_button "Create Investment"
 
-      expect(page).to have_content "Investment created successfully"
+      expect(page).to have_content "Budget Investment created successfully"
       expect(page).to have_content "Build a skyscraper"
       expect(page).to have_content "I want to live in a high tower over the clouds"
       expect(page).to have_content "City center"
@@ -1117,14 +1117,6 @@ describe "Budget Investments" do
                   "budget_investment",
                   "budget_investment_path",
                   { budget_id: "budget_id", id: "id" }
-
-  it_behaves_like "nested imageable",
-                  "budget_investment",
-                  "new_budget_investment_path",
-                  { budget_id: "budget_id" },
-                  "imageable_fill_new_valid_budget_investment",
-                  "Create Investment",
-                  "Budget Investment created successfully."
 
   it_behaves_like "documentable",
                   "budget_investment",
