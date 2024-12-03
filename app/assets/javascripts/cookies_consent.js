@@ -1,6 +1,11 @@
 (function() {
   "use strict";
   App.CookiesConsent = {
+    addThirdPartyScript: function(src) {
+      var script = document.createElement("script");
+      script.setAttribute("src", src);
+      document.body.appendChild(script);
+    },
     hide: function() {
       if ($("#cookies_consent_banner").length > 0) {
         $("#cookies_consent_banner").hide();
