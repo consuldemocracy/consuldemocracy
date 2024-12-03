@@ -33,4 +33,13 @@
   .name {
     font-weight: bold;
   }
+
+  .save-preferences {
+    display: flex;
+    flex-direction: row-reverse;
+
+    .save-cookies-preferences {
+      @include hollow-button;
+    }
+  }
 }

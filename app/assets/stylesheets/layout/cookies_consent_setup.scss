@@ -27,9 +27,20 @@
       width: 100%;
     }
 
+    &.accept-cookies,
     &.accept-essential-cookies {
       @include regular-button;
       margin-bottom: 0;
+    }
+
+    &.accept-cookies {
+      @include breakpoint(small only) {
+        margin-bottom: $line-height / 3;
+      }
+    }
+
+    &.save-cookies-preferences {
+      @include hollow-button;
     }
   }
 }
