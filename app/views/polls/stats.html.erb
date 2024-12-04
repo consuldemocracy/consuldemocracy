@@ -1,7 +1,7 @@
-<% provide :title do %><%= @poll.name %><% end %>
+<% provide :title, @poll.name %>
 
 <div class="participation-stats polls-results-stats">
-  <%= render "poll_header" %>
+  <%= render Polls::PollHeaderComponent.new(@poll) %>
 
   <%= render "poll_subnav" %>
 

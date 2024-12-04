@@ -7,8 +7,9 @@
 
       <p class="info">
         <%= sanitize(t("layouts.footer.description",
-                       open_source: link_to(t("layouts.footer.open_source"), t("layouts.footer.open_source_url"), target: "blank", rel: "nofollow"),
-                       consul: link_to(t("layouts.footer.consul"), t("layouts.footer.consul_url"), target: "blank", rel: "nofollow"))) %>
+                       open_source: open_source_link,
+                       consul: repository_link),
+                     attributes: allowed_link_attributes) %>
       </p>
     </div>
 

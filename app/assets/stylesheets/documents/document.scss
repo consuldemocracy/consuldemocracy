@@ -1,0 +1,25 @@
+.document {
+  + .document {
+    margin-top: calc(#{$line-height} / 3);
+  }
+
+  a {
+    word-wrap: break-word;
+
+    .document-metadata {
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+      }
+
+      * + *::before {
+        @include vertical-separator;
+      }
+    }
+  }
+
+  button {
+    cursor: pointer;
+  }
+}

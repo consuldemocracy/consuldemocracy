@@ -91,8 +91,8 @@ FactoryBot.define do
     sequence(:name) { |n| "Heading #{n}" }
     price { 1000000 }
     population { 1234 }
-    latitude { "40.416775" }
-    longitude { "-3.703790" }
+    latitude { Setting["map.latitude"] }
+    longitude { Setting["map.longitude"] }
 
     transient { budget { nil } }
     group { association :budget_group, budget: budget || association(:budget) }
@@ -198,7 +198,11 @@ FactoryBot.define do
     end
 
     trait :with_map_location do
-      map_location
+      map_location do
+        association :map_location,
+                    longitude: heading.longitude.to_f + rand(-0.0001..0.0001),
+                    latitude: heading.latitude.to_f + rand(-0.0001..0.0001)
+      end
     end
 
     trait :flagged do

@@ -72,7 +72,6 @@ fi:
           submit: Rekisteröidy
           terms: Rekisteröitymällä hyväksyt %{terms}
           terms_link: ehdot ja käyttöehdot
-          terms_title: Rekisteröitymällä hyväksyt ehdot ja käyttöehdot
           title: Rekisteröidy
           username_is_available: Käyttäjätunnus käytettävissä
           username_is_not_available: Käyttäjätunnus on jo käytössä

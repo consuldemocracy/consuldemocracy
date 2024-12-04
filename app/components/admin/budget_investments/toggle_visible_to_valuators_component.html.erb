@@ -1,0 +1,5 @@
+<% if can?(:admin_update, investment) %>
+  <%= render Admin::ToggleSwitchComponent.new(action, investment, pressed: visible_to_valuators?, **options) %>
+<% else %>
+  <%= text %>
+<% end %>

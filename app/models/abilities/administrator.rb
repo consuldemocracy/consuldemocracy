@@ -71,10 +71,13 @@ module Abilities
 
       can [:read, :create, :update, :destroy], Budget::Group
       can [:read, :create, :update, :destroy], Budget::Heading
-      can [:hide, :admin_update, :toggle_selection], Budget::Investment
+      can [:hide, :admin_update], Budget::Investment
       can [:valuate, :comment_valuation], Budget::Investment
-      cannot [:admin_update, :toggle_selection, :valuate, :comment_valuation],
+      cannot [:admin_update, :valuate, :comment_valuation],
              Budget::Investment, budget: { phase: "finished" }
+      can [:select, :deselect], Budget::Investment do |investment|
+        investment.feasible? && investment.valuation_finished? && !investment.budget.finished?
+      end
 
       can :create, Budget::ValuatorAssignment
 
@@ -96,16 +99,16 @@ module Abilities
       can [:update, :destroy], Poll::Question do |question|
         !question.poll.started?
       end
-      can [:read, :order_answers], Poll::Question::Answer
-      can [:create, :update, :destroy], Poll::Question::Answer do |answer|
-        can?(:update, answer.question)
+      can [:read, :order_options], Poll::Question::Option
+      can [:create, :update, :destroy], Poll::Question::Option do |option|
+        can?(:update, option.question)
       end
-      can :read, Poll::Question::Answer::Video
-      can [:create, :update, :destroy], Poll::Question::Answer::Video do |video|
-        can?(:update, video.answer)
+      can :read, Poll::Question::Option::Video
+      can [:create, :update, :destroy], Poll::Question::Option::Video do |video|
+        can?(:update, video.option)
       end
       can [:destroy], Image do |image|
-        image.imageable_type == "Poll::Question::Answer" && can?(:update, image.imageable)
+        image.imageable_type == "Poll::Question::Option" && can?(:update, image.imageable)
       end
 
       can :manage, SiteCustomization::Page
@@ -127,12 +130,14 @@ module Abilities
 
       can [:create], Document
       can [:destroy], Document do |document|
-        document.documentable_type == "Poll::Question::Answer" && can?(:update, document.documentable)
+        document.documentable_type == "Poll::Question::Option" && can?(:update, document.documentable)
       end
       can [:create, :destroy], DirectUpload
 
       can [:deliver], Newsletter, hidden_at: nil
       can [:manage], Dashboard::AdministratorTask
+
+      can :manage, Setting::LocalesSettings
 
       can :manage, LocalCensusRecord
       can [:create, :read], LocalCensusRecords::Import

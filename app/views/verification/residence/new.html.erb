@@ -38,7 +38,7 @@
           <div class="small-12 medium-5 column end">
 
           <div class="inline-block">
-            <%= f.label t("verification.residence.new.document_number") %>
+            <%= f.label :document_number, t("verification.residence.new.document_number") %>
           </div>
 
           <button type="button" class="inline-block" data-toggle="info-document-number">
@@ -57,9 +57,7 @@
       </div>
 
       <div class="date-of-birth small-12 medium-6 clear">
-      <%= f.date_select :date_of_birth,
-                        prompt: true,
-                        start_year: 1900, end_year: minimum_required_age.years.ago.year %>
+        <%= render Shared::DateOfBirthFieldComponent.new(f) %>
       </div>
 
       <div class="small-12 medium-5 clear">
@@ -69,12 +67,9 @@
 
       <div class="small-12">
         <%= f.check_box :terms_of_service,
-                        title: t("verification.residence.new.accept_terms_text_title"),
                         label: t("verification.residence.new.accept_terms_text",
-                                 terms_url: link_to(t("verification.residence.new.terms"),
-                                                    page_path("census_terms"),
-                                                    title: t("shared.target_blank"),
-                                                    target: "_blank")) %>
+                                 terms_url: new_window_link_to(t("verification.residence.new.terms"),
+                                                               page_path("census_terms"))) %>
       </div>
 
       <div class="small-12 medium-3 clear">

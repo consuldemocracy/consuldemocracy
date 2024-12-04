@@ -24,6 +24,6 @@ describe Poll::BoothAssignment do
 
     assignment.destroy!
 
-    expect(Poll::Shift.all.count).to eq(0)
+    expect(Poll::Shift.count).to eq 0
   end
 end

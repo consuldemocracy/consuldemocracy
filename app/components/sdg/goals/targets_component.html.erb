@@ -2,7 +2,7 @@
   <ul class="tabs" id="goal_<%= goal.code %>_targets" data-deep-link="true" data-tabs>
     <% [global_targets, local_targets].each do |targets| %>
       <li class="tabs-title <%= active(targets) %>">
-        <%= link_to title(targets), "#goal_#{@goal.code}_tab_#{type(targets)}_targets" %>
+        <%= link_to title(targets), "#goal_#{goal.code}_tab_#{type(targets)}_targets" %>
       </li>
     <% end %>
   </ul>

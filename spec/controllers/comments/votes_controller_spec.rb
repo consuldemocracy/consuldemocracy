@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe Comments::VotesController do
-  let(:comment) { create(:comment) }
+  let(:comment) { create(:debate_comment) }
 
   describe "POST create" do
     it "allows voting" do
@@ -10,6 +10,18 @@ describe Comments::VotesController do
       expect do
         post :create, xhr: true, params: { comment_id: comment.id, value: "yes" }
       end.to change { comment.reload.votes_for.size }.by(1)
+    end
+
+    it "redirects authenticated users without JavaScript to the same page" do
+      request.env["HTTP_REFERER"] = comment_path(comment)
+      sign_in create(:user)
+
+      expect do
+        post :create, params: { comment_id: comment.id, value: "yes" }
+      end.to change { comment.reload.votes_for.size }.by(1)
+
+      expect(response).to redirect_to comment_path(comment)
+      expect(flash[:notice]).to eq "Vote created successfully"
     end
   end
 
@@ -29,6 +41,18 @@ describe Comments::VotesController do
       expect do
         delete :destroy, xhr: true, params: { comment_id: comment.id, id: vote }
       end.to change { comment.reload.votes_for.size }.by(-1)
+    end
+
+    it "redirects authenticated users without JavaScript to the same page" do
+      request.env["HTTP_REFERER"] = debate_path(comment.commentable)
+      sign_in user
+
+      expect do
+        delete :destroy, params: { comment_id: comment.id, id: vote }
+      end.to change { comment.reload.votes_for.size }.by(-1)
+
+      expect(response).to redirect_to debate_path(comment.commentable)
+      expect(flash[:notice]).to eq "Vote deleted successfully"
     end
   end
 end

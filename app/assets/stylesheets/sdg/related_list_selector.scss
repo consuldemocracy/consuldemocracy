@@ -22,8 +22,8 @@
     }
 
     legend {
-      font-weight: normal;
       font-style: italic;
+      font-weight: normal;
     }
   }
 
@@ -44,13 +44,13 @@
   }
 
   .help-text {
-    font-weight: normal;
-    font-style: italic;
     font-size: $base-font-size;
+    font-style: italic;
+    font-weight: normal;
   }
 
   .input-section {
-    margin-bottom: 2 * $line-height / 3;
+    margin-bottom: calc(#{2 * $line-height} / 3);
   }
 
   .amsify-suggestags-area {
@@ -66,7 +66,7 @@
     flex-wrap: wrap;
 
     > input {
-      margin-bottom: $line-height / 4 !important;
+      margin-bottom: calc(#{$line-height} / 4) !important;
       order: -1;
     }
   }

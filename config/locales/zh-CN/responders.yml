@@ -7,9 +7,6 @@ zh-CN:
         direct_message: "您的消息已经成功发送。"
         poll: "投票已成功创建。"
         poll_booth: "投票亭已成功创建。"
-        poll_question_answer: "回答已成功创建"
-        poll_question_answer_video: "视频已成功创建"
-        poll_question_answer_image: "图像已成功上传"
         proposal: "提议已成功创建。"
         proposal_notification: "您的消息已正确发送。"
         budget_investment: "预算投资已成功创建。"
@@ -31,5 +28,4 @@ zh-CN:
       destroy:
         budget_investment: "投资项目已成功删除。"
         topic: "主题已成功删除。"
-        poll_question_answer_video: "回答视频已成功删除。"
         valuator_group: "评估组已成功删除"

@@ -1,5 +1,3 @@
-require "application_responder"
-
 class ApplicationController < ActionController::Base
   include TenantVariants
   include GlobalizeFallbacks
@@ -13,7 +11,6 @@ class ApplicationController < ActionController::Base
 
   before_action :ensure_signup_complete
   around_action :switch_locale
-  before_action :track_email_campaign
   before_action :set_return_url
 
   check_authorization unless: :devise_controller?
@@ -49,17 +46,17 @@ class ApplicationController < ActionController::Base
         current_user.update(locale: locale)
       end
 
-      session[:locale] = locale
+      session[:locale] = locale.to_s
       I18n.with_locale(locale, &action)
     end
 
     def current_locale
-      if I18n.available_locales.include?(params[:locale]&.to_sym)
+      if Setting.enabled_locales.include?(params[:locale]&.to_sym)
         params[:locale]
-      elsif I18n.available_locales.include?(session[:locale]&.to_sym)
+      elsif Setting.enabled_locales.include?(session[:locale]&.to_sym)
         session[:locale]
       else
-        I18n.default_locale
+        Setting.default_locale
       end
     end
 
@@ -90,13 +87,6 @@ class ApplicationController < ActionController::Base
     def verify_verified!
       if current_user.level_three_verified?
         redirect_to(account_path, notice: t("verification.redirect_notices.already_verified"))
-      end
-    end
-
-    def track_email_campaign
-      if params[:track_id]
-        campaign = Campaign.find_by(track_id: params[:track_id])
-        ahoy.track campaign.name if campaign.present?
       end
     end
 

@@ -145,7 +145,6 @@ uk-UA:
       invalid_date_range: "Недійсний діапазон даних"
   form:
     accept_terms: Я погоджуюся з %{policy} та %{conditions}
-    accept_terms_title: Я погоджуюся з Політикою конфіденційності і Правилами та умовами користування
     conditions: Правила та умови користування
     debate: Обговорення
     direct_message: особисте повідомлення
@@ -164,7 +163,6 @@ uk-UA:
     legislation/process: процес
     legislation/question: запитання
     poll/shift: Зміна
-    poll/question/answer: Відповідь
     user: Обліковий запис
     verification/sms: телефон
     signature_sheet: Підписний лист
@@ -178,11 +176,6 @@ uk-UA:
   geozones:
     none: Все місто
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Ми виявили, що ви користуєтесь браузером Internet Explorer. Для кращого результату ми рекомендуємо користуватися %{firefox} або %{chrome}.
-      ie_title: Цей вебсайт не пристосований для вашого браузера
     dashboard:
       proposal_header:
         published: Опубліковано
@@ -203,9 +196,9 @@ uk-UA:
     footer:
       accessibility: Доступність
       conditions: Правила та умови користування
-      consul: Додаток CONSUL
+      consul: Додаток CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Цей портал використовує %{consul} який знаходиться %{open_source}.
       open_source: відкрите програмне забезпечення
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
@@ -595,7 +588,6 @@ uk-UA:
         share: "Також ви зробите мені велику послугу, якщо поділитеся моєю пропозицією зі своїми друзями, родиною та контактами - це було б чудово!"
   polls:
     all: "Усі"
-    no_dates: "без призначеної дати"
     dates: "Від %{open_at} до %{closed_at}"
     final_date: "Остаточний перерахунок/Результати"
     index:
@@ -692,7 +684,6 @@ uk-UA:
       author_deleted: Користувача видалено
       email_deleted: Електронну адресу видалено
     back: Повернутися
-    check: Обрати
     check_all: Усі
     check_none: Жодного
     collective: Колективні
@@ -781,18 +772,6 @@ uk-UA:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Відвідування
-      debates: Обговорення
-      proposals: Пропозиції
-      comments: Коментарі
-      proposal_votes: Голоси за пропозиції
-      debate_votes: Голоси за обговорення
-      comment_votes: Голоси за коментарі
-      votes: Усі голоси
-      verified_users: Перевірені користувачі
-      unverified_users: Неперевірені користувачі
   unauthorized:
     default: Ви не маєте дозволу на відвідання цієї сторінки.
     manage:

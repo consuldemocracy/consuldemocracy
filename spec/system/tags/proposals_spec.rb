@@ -32,8 +32,8 @@ describe "Tags" do
 
     visit proposals_path(tag: "123")
 
-    expect(page).not_to have_selector("#proposals .proposal-featured")
-    expect(page).not_to have_selector("#featured-proposals")
+    expect(page).not_to have_css "#proposals .proposal-featured"
+    expect(page).not_to have_css "#featured-proposals"
   end
 
   scenario "Index shows 3 tags with no plus link" do
@@ -159,7 +159,7 @@ describe "Tags" do
     login_as(proposal.author)
     visit edit_proposal_path(proposal)
 
-    expect(page).to have_selector("input[value='Economía']")
+    expect(page).to have_css "input[value='Economía']"
 
     fill_in "Tags", with: "Economía, Hacienda"
     click_button "Save changes"

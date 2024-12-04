@@ -1,6 +1,4 @@
-<% content_for :head do %>
-  <%= javascript_include_tag "stat_graphs", "data-turbolinks-track" => "reload" %>
-<% end %>
+<% include_stat_graphs_javascript %>
 
 <%= back_link_to budgets_admin_stats_path %>
 
@@ -30,7 +28,7 @@
   </div>
 </div>
 
-<%= render "admin/stats/graph", name: "user_supported_budgets", event: "", count: user_count %>
+<%= render Admin::Stats::ChartComponent.new(chart) %>
 
 <table class="investment-projects-summary user-count-by-heading">
   <thead>

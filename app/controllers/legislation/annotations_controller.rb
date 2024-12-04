@@ -51,7 +51,6 @@ class Legislation::AnnotationsController < Legislation::BaseController
       @annotation = @draft_version.annotations.new(annotation_params)
       @annotation.author = current_user
       if @annotation.save
-        track_event
         render json: @annotation.to_json
       else
         render json: @annotation.errors.full_messages, status: :unprocessable_entity
@@ -98,12 +97,6 @@ class Legislation::AnnotationsController < Legislation::BaseController
 
     def allowed_params
       [:quote, :text, ranges: [:start, :startOffset, :end, :endOffset]]
-    end
-
-    def track_event
-      ahoy.track :legislation_annotation_created,
-                 legislation_annotation_id: @annotation.id,
-                 legislation_draft_version_id: @draft_version.id
     end
 
     def convert_ranges_parameters

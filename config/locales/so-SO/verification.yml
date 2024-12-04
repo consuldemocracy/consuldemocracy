@@ -42,7 +42,6 @@ so:
           success: Deganaanshaha waa la xaqiijiyay
       new:
         accept_terms_text: Waan aqbalay%{terms_url} tirooyinka tirakoobka
-        accept_terms_text_title: Waxaan aqbalayaa shuruudaha iyo xaaladaha helitaanka tirakoobka
         document_number: Lambarka dukumeentiga
         document_number_help_title: Caawin
         document_number_help_text: "<strong>DNI</strong>: 12345678A<br><strong>Basab</strongoorAAA000001<br><strong>Kaarka degganaanshaha\n</strong>: X1234567P"

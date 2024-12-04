@@ -235,7 +235,7 @@ describe "Advanced search" do
       click_button "Filter"
 
       within ".advanced-search-form" do
-        expect(page).to have_selector("input[name='search'][value='Schwifty']")
+        expect(page).to have_css "input[name='search'][value='Schwifty']"
         expect(page).to have_select("By SDG", selected: "7. Affordable and Clean Energy")
         expect(page).to have_select("advanced_search[date_min]", selected: "Last 24 hours")
       end
@@ -255,10 +255,10 @@ describe "Advanced search" do
 
       within ".advanced-search-form" do
         expect(page).to have_select "advanced_search[date_min]", selected: "Customized"
-        expect(page).to have_selector "input[name='advanced_search[date_min]']" \
-                                      "[value*='#{7.days.ago.strftime("%d/%m/%Y")}']"
-        expect(page).to have_selector "input[name='advanced_search[date_max]']" \
-                                      "[value*='#{1.day.ago.strftime("%d/%m/%Y")}']"
+        expect(page).to have_css "input[name='advanced_search[date_min]']" \
+                                 "[value*='#{7.days.ago.strftime("%d/%m/%Y")}']"
+        expect(page).to have_css "input[name='advanced_search[date_max]']" \
+                                 "[value*='#{1.day.ago.strftime("%d/%m/%Y")}']"
       end
     end
   end

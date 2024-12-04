@@ -59,9 +59,9 @@ zh-TW:
         text: |-
           在您本地政府中使用它，或幫助我們改進它，這是免費軟件。
 
-          這個開放政府門戶網站使用 [CONSUL app](https://github.com/consuldemocracy/consuldemocracy 'consul democracy github') ，這是一個免費軟件，使用 [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' )。簡單來說，就是說任何人都可以自由地使用原始碼，複製它，詳細查看，修改它，並將他想要的修改重新發送到全球 (並允許其他人也可同樣做) 。 因為我們認為文化在發佈後會更好，更豐富。
+          這個開放政府門戶網站使用 [CONSUL DEMOCRACY app](https://github.com/consuldemocracy/consuldemocracy 'consul democracy github') ，這是一個免費軟件，使用 [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' )。簡單來說，就是說任何人都可以自由地使用原始碼，複製它，詳細查看，修改它，並將他想要的修改重新發送到全球 (並允許其他人也可同樣做) 。 因為我們認為文化在發佈後會更好，更豐富。
 
-          如果您是程序員，您可以在 [CONSUL app](https://github.com/consuldemocracy/consuldemocracy 'consul democracy github')查看原始碼，並幫助我們改進它。
+          如果您是程序員，您可以在 [CONSUL DEMOCRACY app](https://github.com/consuldemocracy/consuldemocracy 'consul democracy github')查看原始碼，並幫助我們改進它。
       titles:
         how_to_use: 在您本地政府中使用它
     privacy:

@@ -58,7 +58,7 @@ describe "Budget Investments" do
     visit budget_path(budget)
     click_link "See all investments"
 
-    expect(page).to have_selector("#budget-investments .budget-investment", count: 3)
+    expect(page).to have_css "#budget-investments .budget-investment", count: 3
     investments.each do |investment|
       within("#budget-investments") do
         expect(page).to have_content investment.title
@@ -424,7 +424,7 @@ describe "Budget Investments" do
 
       visit budget_investments_path(budget, heading_id: heading.id)
       click_link "highest rated"
-      expect(page).to have_selector("a.is-active", text: "highest rated")
+      expect(page).to have_css "a.is-active", text: "highest rated"
 
       within "#budget-investments" do
         expect(best_proposal.title).to appear_before(medium_proposal.title)
@@ -610,7 +610,7 @@ describe "Budget Investments" do
 
       click_button "Create Investment"
 
-      expect(page).to have_content "Investment created successfully"
+      expect(page).to have_content "Budget Investment created successfully"
       expect(page).to have_content "Build a skyscraper"
       expect(page).to have_content "I want to live in a high tower over the clouds"
       expect(page).to have_content "City center"
@@ -678,7 +678,7 @@ describe "Budget Investments" do
 
       click_button "Create Investment"
 
-      expect(page).to have_content "Investment created successfully"
+      expect(page).to have_content "Budget Investment created successfully"
       expect(page).to have_content "Build a skyscraper"
       expect(page).to have_content "I want to live in a high tower over the clouds"
       expect(page).to have_content "City center"
@@ -823,12 +823,12 @@ describe "Budget Investments" do
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
-      expect(page).not_to have_link("Submit my ballot")
+      expect(page).not_to have_link("Check my votes")
       expect(page).not_to have_css("#progress_bar")
 
       within("#sidebar") do
         expect(page).not_to have_content("My ballot")
-        expect(page).not_to have_link("Submit my ballot")
+        expect(page).not_to have_link("Check my votes")
       end
     end
 
@@ -950,7 +950,7 @@ describe "Budget Investments" do
 
     visit budget_investment_path(budget, id: investment.id)
 
-    expect(page).not_to have_selector ".js-follow"
+    expect(page).not_to have_css ".js-follow"
   end
 
   scenario "Show back link contains heading id" do
@@ -1118,14 +1118,6 @@ describe "Budget Investments" do
                   "budget_investment_path",
                   { budget_id: "budget_id", id: "id" }
 
-  it_behaves_like "nested imageable",
-                  "budget_investment",
-                  "new_budget_investment_path",
-                  { budget_id: "budget_id" },
-                  "imageable_fill_new_valid_budget_investment",
-                  "Create Investment",
-                  "Budget Investment created successfully."
-
   it_behaves_like "documentable",
                   "budget_investment",
                   "budget_investment_path",
@@ -1170,7 +1162,7 @@ describe "Budget Investments" do
       within("#budget_investment_#{investment1.id}") do
         expect(page).to have_content(investment1.title)
 
-        accept_confirm { click_link("Delete") }
+        accept_confirm { click_button "Delete" }
       end
 
       expect(page).to have_content "Investment project deleted successfully"
@@ -1334,17 +1326,6 @@ describe "Budget Investments" do
         expect(page).to have_content "1 support"
       end
     end
-
-    scenario "Show should display support text and count" do
-      investment = create(:budget_investment, budget: budget, heading: heading, voters: [create(:user)])
-
-      visit budget_investment_path(budget, investment)
-
-      within("#budget_investment_#{investment.id}") do
-        expect(page).to have_content "SUPPORTS"
-        expect(page).to have_content "1 support"
-      end
-    end
   end
 
   context "Publishing prices phase" do
@@ -1394,7 +1375,7 @@ describe "Budget Investments" do
         expect(page).to have_content "€20,000"
       end
 
-      expect(page).to have_link "Submit my ballot"
+      expect(page).to have_link "Check my votes"
       expect(page).to have_content "STILL AVAILABLE TO YOU €666,666"
     end
 
@@ -1414,7 +1395,7 @@ describe "Budget Investments" do
       visit budget_investments_path(budget, heading_id: heading.id)
 
       click_link "by price"
-      expect(page).to have_selector("a.is-active", text: "by price")
+      expect(page).to have_css "a.is-active", text: "by price"
 
       within "#budget-investments" do
         expect(high_investment.title).to appear_before(mid_investment.title)
@@ -1448,9 +1429,9 @@ describe "Budget Investments" do
       login_as(user)
       visit budget_investment_path(budget, investment2)
 
-      expect(page).to have_selector(".participation-not-allowed",
-                                    text: "You have already voted a different heading: Heading 1",
-                                    visible: :hidden)
+      expect(page).to have_css ".participation-not-allowed",
+                               text: "You have already voted a different heading: Heading 1",
+                               visible: :hidden
     end
 
     scenario "Sidebar in show should display vote text" do
@@ -1568,12 +1549,12 @@ describe "Budget Investments" do
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
-      expect(page).to have_link("Submit my ballot")
+      expect(page).to have_link("Check my votes")
       expect(page).to have_css("#progress_bar")
 
       within("#sidebar") do
         expect(page).to have_content("MY BALLOT")
-        expect(page).to have_link("Submit my ballot")
+        expect(page).to have_link("Check my votes")
       end
     end
 
@@ -1643,20 +1624,7 @@ describe "Budget Investments" do
 
   context "sidebar map" do
     scenario "Display 6 investment's markers on sidebar map" do
-      investment1 = create(:budget_investment, heading: heading)
-      investment2 = create(:budget_investment, heading: heading)
-      investment3 = create(:budget_investment, heading: heading)
-      investment4 = create(:budget_investment, heading: heading)
-      investment5 = create(:budget_investment, heading: heading)
-      investment6 = create(:budget_investment, heading: heading)
-
-      create(:map_location, longitude: 40.1231, latitude: -3.636, investment: investment1)
-      create(:map_location, longitude: 40.1232, latitude: -3.635, investment: investment2)
-      create(:map_location, longitude: 40.1233, latitude: -3.634, investment: investment3)
-      create(:map_location, longitude: 40.1234, latitude: -3.633, investment: investment4)
-      create(:map_location, longitude: 40.1235, latitude: -3.632, investment: investment5)
-      create(:map_location, longitude: 40.1236, latitude: -3.631, investment: investment6)
-
+      create_list(:budget_investment, 6, :with_map_location, heading: heading)
       visit budget_investments_path(budget, heading_id: heading.id)
 
       within ".map-location" do
@@ -1664,36 +1632,10 @@ describe "Budget Investments" do
       end
     end
 
-    scenario "Display 2 investment's markers on sidebar map" do
-      investment1 = create(:budget_investment, heading: heading)
-      investment2 = create(:budget_investment, heading: heading)
-
-      create(:map_location, longitude: 40.1281, latitude: -3.656, investment: investment1)
-      create(:map_location, longitude: 40.1292, latitude: -3.665, investment: investment2)
-
-      visit budget_investments_path(budget, heading_id: heading.id)
-
-      within ".map-location" do
-        expect(page).to have_css(".map-icon", count: 2, visible: :all)
-      end
-    end
-
     scenario "Display only investment's related to the current heading" do
       heading_2 = create(:budget_heading, name: "Madrid", group: group)
-
-      investment1 = create(:budget_investment, heading: heading)
-      investment2 = create(:budget_investment, heading: heading)
-      investment3 = create(:budget_investment, heading: heading)
-      investment4 = create(:budget_investment, heading: heading)
-      investment5 = create(:budget_investment, heading: heading_2)
-      investment6 = create(:budget_investment, heading: heading_2)
-
-      create(:map_location, longitude: 40.1231, latitude: -3.636, investment: investment1)
-      create(:map_location, longitude: 40.1232, latitude: -3.685, investment: investment2)
-      create(:map_location, longitude: 40.1233, latitude: -3.664, investment: investment3)
-      create(:map_location, longitude: 40.1234, latitude: -3.673, investment: investment4)
-      create(:map_location, longitude: 40.1235, latitude: -3.672, investment: investment5)
-      create(:map_location, longitude: 40.1236, latitude: -3.621, investment: investment6)
+      create_list(:budget_investment, 4, :with_map_location, heading: heading)
+      create_list(:budget_investment, 2, :with_map_location, heading: heading_2)
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
@@ -1704,14 +1646,7 @@ describe "Budget Investments" do
 
     scenario "Do not display investment's, since they're all related to other heading" do
       heading_2 = create(:budget_heading, name: "Madrid", group: group)
-
-      investment1 = create(:budget_investment, heading: heading_2)
-      investment2 = create(:budget_investment, heading: heading_2)
-      investment3 = create(:budget_investment, heading: heading_2)
-
-      create(:map_location, longitude: 40.1255, latitude: -3.644, investment: investment1)
-      create(:map_location, longitude: 40.1258, latitude: -3.637, investment: investment2)
-      create(:map_location, longitude: 40.1251, latitude: -3.649, investment: investment3)
+      create_list(:budget_investment, 3, :with_map_location, heading: heading_2)
 
       visit budget_investments_path(budget, heading_id: heading.id)
 

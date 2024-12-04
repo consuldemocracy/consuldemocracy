@@ -14,8 +14,8 @@
     border-radius: rem-calc(6);
     display: flex;
     flex-direction: column;
+    margin-bottom: calc(#{$line-height} / 2);
     padding: 0;
-    margin-bottom: $line-height / 2;
     position: relative;
     width: 100%;
 
@@ -39,8 +39,8 @@
       display: flex;
       flex: 1;
       flex-direction: column;
-      padding: 0 rem-calc(12) rem-calc(6);
       min-height: $line-height * 8;
+      padding: 0 rem-calc(12) rem-calc(6);
 
       .investment-project-info {
         flex: 1;

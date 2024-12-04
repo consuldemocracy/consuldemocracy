@@ -103,7 +103,6 @@ nl:
           submit: Aanmelden
           terms: Met aanmelding accepteerd u de %{terms}
           terms_link: voorwaarden van gebruik
-          terms_title: Met aanmelding accepteerd u de voorwaarden van gebruik
           title: Registreren
           username_is_available: Gebruikersnaam is beschikbaar
           username_is_not_available: Gebruikersnaam is bezet

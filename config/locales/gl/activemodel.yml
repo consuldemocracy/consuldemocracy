@@ -38,6 +38,9 @@ gl:
         year_of_birth: "Ano de nacemento"
       local_census_records/import:
         file: Ficheiros
+      setting/locales_settings:
+        default: Idioma predeterminado
+        enabled: Idiomas activados
     errors:
       models:
         local_census_records/import:

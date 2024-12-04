@@ -22,7 +22,7 @@ id:
         info: Di sini anda dapat mengatur pengguna melalui semua tindakan yang tercantum di menu sebelah kiri.
     document_verifications:
       already_verified: Akun pengguna ini sudah diverifikasi.
-      link: CONSUL
+      link: CONSUL DEMOCRACY
       in_census_has_following_permissions: "Pengguna ini dapat berpartisipasi dalam situs web dengan izin berikut:"
       not_in_census: Dokumen ini tidak terdaftar.
       not_in_census_info: "Warga negara yang tidak berada dalam Sensus dapat berpartisipasi dalam situs web dengan izin berikut:"

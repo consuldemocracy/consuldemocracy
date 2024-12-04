@@ -55,7 +55,7 @@ describe SDG::Targets::PlainTagListComponent do
     render_inline component
 
     expect(page).to have_css "li", text: "target 1.1"
-    expect(page).to have_selector "a", count: 1
+    expect(page).to have_css "a", count: 1
     expect(page).to have_link "2+",
                               title: "2 more targets",
                               href: "/debates/#{debate.to_param}"

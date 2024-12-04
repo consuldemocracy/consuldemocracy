@@ -34,7 +34,7 @@ describe SDG::Goals::PlainTagListComponent do
   it "renders icons for each goal" do
     render_inline component
 
-    expect(page).to have_selector ".sdg-goal-icon", count: 2
+    expect(page).to have_css ".sdg-goal-icon", count: 2
   end
 
   it "orders goals by code" do
@@ -48,7 +48,7 @@ describe SDG::Goals::PlainTagListComponent do
 
     render_inline component
 
-    expect(page).to have_selector ".sdg-goal-icon"
+    expect(page).to have_css ".sdg-goal-icon"
     expect(page).to have_link "1+",
                               title: "One more goal",
                               href: "/debates/#{debate.to_param}"

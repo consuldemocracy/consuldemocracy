@@ -11,7 +11,6 @@ module MailerHelper
     link_to(
       commentable.title,
       valuation_comments_url(@email.commentable),
-      target: :blank,
       style: "color: #2895F1; text-decoration:none;"
     )
   end

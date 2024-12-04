@@ -11,49 +11,41 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
   end
 
   context "Show documents" do
-    scenario "Download action should be able to anyone" do
+    scenario "Download action should be availabe to anyone and open in the same tab" do
       visit send(documentable_path, arguments)
 
-      expect(page).to have_link("Download file")
-    end
-
-    scenario "Download file link should have blank target attribute" do
-      visit send(documentable_path, arguments)
-
-      expect(page).to have_selector("a[target=_blank]", text: "Download file")
-    end
-
-    scenario "Download file links should have rel attribute setted to no follow" do
-      visit send(documentable_path, arguments)
-
-      expect(page).to have_selector("a[rel=nofollow]", text: "Download file")
+      within "#documents" do
+        expect(page).to have_link text: document.title
+        expect(page).to have_css "a[rel=nofollow]", text: document.title
+        expect(page).not_to have_css "a[target=_blank]"
+      end
     end
 
     describe "Destroy action" do
       scenario "Should not be able when no user logged in" do
         visit send(documentable_path, arguments)
 
-        expect(page).not_to have_link("Delete document")
+        expect(page).not_to have_button "Delete document"
       end
 
       scenario "Should be able when documentable author is logged in" do
         login_as documentable.author
         visit send(documentable_path, arguments)
 
-        expect(page).to have_link("Delete document")
+        expect(page).to have_button "Delete document"
       end
 
       scenario "Administrators cannot destroy documentables they have not authored", :admin do
         visit send(documentable_path, arguments)
 
-        expect(page).not_to have_link("Delete document")
+        expect(page).not_to have_button "Delete document"
       end
 
       scenario "Users cannot destroy documentables they have not authored" do
         login_as(create(:user))
         visit send(documentable_path, arguments)
 
-        expect(page).not_to have_link("Delete document")
+        expect(page).not_to have_button "Delete document"
       end
     end
 
@@ -101,7 +93,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       visit send(documentable_path, arguments)
 
       within "#document_#{document.id}" do
-        accept_confirm { click_link "Delete document" }
+        accept_confirm { click_button "Delete document" }
       end
 
       expect(page).to have_content "Document was deleted successfully."
@@ -113,7 +105,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       visit send(documentable_path, arguments)
 
       within "#document_#{document.id}" do
-        accept_confirm { click_link "Delete document" }
+        accept_confirm { click_button "Delete document" }
       end
 
       expect(page).not_to have_content "Documents (0)"
@@ -125,11 +117,11 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       visit send(documentable_path, arguments)
 
       within "#document_#{document.id}" do
-        accept_confirm { click_link "Delete document" }
+        accept_confirm { click_button "Delete document" }
       end
 
       within "##{ActionView::RecordIdentifier.dom_id(documentable)}" do
-        expect(page).to have_selector "h1", text: documentable.title
+        expect(page).to have_css "h1", text: documentable.title
       end
     end
   end

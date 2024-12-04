@@ -103,7 +103,6 @@ en:
           submit: Register
           terms: By registering you accept the %{terms}
           terms_link: terms and conditions of use
-          terms_title: By registering you accept the terms and conditions of use
           title: Register
           username_is_available: Username available
           username_is_not_available: Username already in use

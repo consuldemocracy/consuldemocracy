@@ -28,6 +28,12 @@ describe "Results" do
     Budget::Result.new(budget, heading).calculate_winners
   end
 
+  scenario "Back link redirects to budget page" do
+    visit budget_results_path(budget)
+
+    expect(page).to have_link("Go back", href: budget_path(budget))
+  end
+
   scenario "No links to budget results with results disabled" do
     budget.update!(results_enabled: false)
 
@@ -50,7 +56,7 @@ describe "Results" do
     visit budget_path(budget)
     click_link "See results"
 
-    expect(page).to have_selector("a.is-active", text: heading.name)
+    expect(page).to have_css "a.is-active", text: heading.name
 
     within("#budget-investments-compatible") do
       expect(page).to have_content "First selected"
@@ -110,7 +116,7 @@ describe "Results" do
   scenario "Loads budget and heading by slug" do
     visit budget_results_path(budget.slug, heading_id: heading.slug)
 
-    expect(page).to have_selector("a.is-active", text: heading.name)
+    expect(page).to have_css "a.is-active", text: heading.name
 
     within("#budget-investments-compatible") do
       expect(page).to have_content "First selected"

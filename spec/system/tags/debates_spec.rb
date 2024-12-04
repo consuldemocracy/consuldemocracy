@@ -47,8 +47,8 @@ describe "Tags" do
 
     visit debates_path(tag: "123")
 
-    expect(page).not_to have_selector("#debates .debate-featured")
-    expect(page).not_to have_selector("#featured-debates")
+    expect(page).not_to have_css "#debates .debate-featured"
+    expect(page).not_to have_css "#featured-debates"
   end
 
   scenario "Show" do
@@ -123,7 +123,7 @@ describe "Tags" do
     login_as(debate.author)
     visit edit_debate_path(debate)
 
-    expect(page).to have_selector("input[value='Economía']")
+    expect(page).to have_css "input[value='Economía']"
 
     fill_in "debate_tag_list", with: "Economía, Hacienda"
     click_button "Save changes"

@@ -95,7 +95,7 @@ describe "Tags" do
     login_as(debate.author)
     visit edit_debate_path(debate)
 
-    expect(page).to have_selector("input[value='Economía']")
+    expect(page).to have_css "input[value='Economía']"
 
     fill_in "debate_tag_list", with: "Economía, Hacienda"
     click_button "Save changes"

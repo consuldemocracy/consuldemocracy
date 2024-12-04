@@ -10,12 +10,18 @@ module ApplicationHelper
     %i[ar fa he].include?(locale)
   end
 
-  def markdown(text, **render_options)
-    MarkdownConverter.new(text, **render_options).render
+  def markdown(...)
+    MarkdownConverter.new(...).render
   end
 
   def wysiwyg(text)
     WYSIWYGSanitizer.new.sanitize(text)
+  end
+
+  def include_stat_graphs_javascript
+    content_for :head do
+      javascript_include_tag "stat_graphs", "data-turbolinks-track" => "reload"
+    end
   end
 
   def author_of?(authorable, user)
@@ -30,6 +36,10 @@ module ApplicationHelper
     end
   end
 
+  def new_window_link_to(text, path, **options)
+    link_to text, path, { target: "_blank", title: t("shared.target_blank") }.merge(options)
+  end
+
   def image_path_for(filename)
     image = SiteCustomization::Image.image_for(filename)
 
@@ -42,8 +52,8 @@ module ApplicationHelper
     end
   end
 
-  def content_block(name, locale = I18n.locale)
-    SiteCustomization::ContentBlock.block_for(name, locale)
+  def content_block(...)
+    SiteCustomization::ContentBlock.block_for(...)
   end
 
   def self.asset_data_base64(path)

@@ -1,14 +1,6 @@
 require "rails_helper"
 
 describe "Admin budgets", :admin do
-  it_behaves_like "nested imageable",
-                  "budget",
-                  "new_admin_budgets_wizard_budget_path",
-                  {},
-                  "imageable_fill_new_valid_budget",
-                  "Continue to groups",
-                  "New participatory budget created successfully!"
-
   context "Load" do
     before { create(:budget, slug: "budget_slug") }
 
@@ -101,7 +93,7 @@ describe "Admin budgets", :admin do
       click_link "Create multiple headings budget"
 
       expect(page).to have_select("Final voting style", selected: "Knapsack")
-      expect(page).not_to have_selector("#budget_hide_money")
+      expect(page).not_to have_css "#budget_hide_money"
 
       fill_in "Name", with: "Budget hide money"
       select "Approval", from: "Final voting style"
@@ -315,7 +307,7 @@ describe "Admin budgets", :admin do
 
       visit edit_admin_budget_path(budget)
 
-      select "Español", from: :add_language
+      select "Español", from: "Add language"
       fill_in "Name", with: "Spanish name"
       click_button "Update Budget"
 
@@ -327,7 +319,7 @@ describe "Admin budgets", :admin do
 
       visit edit_admin_budget_path(budget)
 
-      select "English", from: :select_language
+      select "English", from: "Current language"
       fill_in "Name", with: "New English Name"
       click_button "Update Budget"
 
@@ -490,7 +482,7 @@ describe "Admin budgets", :admin do
       create(:budget_investment, :winner, budget: budget)
 
       visit admin_budget_budget_investments_path(budget)
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       check "Winners"
       click_button "Filter"
 

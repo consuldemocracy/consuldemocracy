@@ -5,14 +5,12 @@
   var buildGraph;
 
   buildGraph = function(el) {
-    var conf, url;
-    url = $(el).data("graph");
+    var conf;
     conf = {
       bindto: el,
       data: {
         x: "x",
-        url: url,
-        mimeType: "json"
+        json: $(el).data("graph")
       },
       axis: {
         x: {

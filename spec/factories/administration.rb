@@ -15,7 +15,7 @@ FactoryBot.define do
     end
 
     trait :with_html_coordinates do
-      html_map_coordinates { "30,139,45,153,77,148,107,165" }
+      html_map_coordinates { "30,139,45,153,77,148,107,125" }
     end
 
     trait :with_geojson do
@@ -74,9 +74,9 @@ FactoryBot.define do
   end
 
   factory :map_location do
-    latitude { 51.48 }
-    longitude { 0.0 }
-    zoom { 10 }
+    latitude { Setting["map.latitude"] }
+    longitude { Setting["map.longitude"] }
+    zoom { Setting["map.zoom"] }
 
     trait :proposal_map_location do
       proposal

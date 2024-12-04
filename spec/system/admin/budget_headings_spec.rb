@@ -37,7 +37,7 @@ describe "Admin budget headings", :admin do
 
       within "section", text: "Heading groups" do
         within "tbody" do
-          expect(page).to have_selector "tr", count: 3
+          expect(page).to have_css "tr", count: 3
 
           within("tr", text: "Laptops") { expect(page).to have_content "€1,000" }
           within("tr", text: "Tablets") { expect(page).to have_content "€2,000" }
@@ -181,7 +181,7 @@ describe "Admin budget headings", :admin do
 
       visit edit_admin_budget_group_heading_path(budget, group, heading)
 
-      select "Español", from: :add_language
+      select "Español", from: "Add language"
       fill_in "Heading name", with: "Spanish name"
       click_button "Save heading"
 
@@ -193,7 +193,7 @@ describe "Admin budget headings", :admin do
 
       visit edit_admin_budget_group_heading_path(budget, group, heading)
 
-      select "English", from: :select_language
+      select "English", from: "Current language"
       fill_in "Heading name", with: "New English Name"
       click_button "Save heading"
 

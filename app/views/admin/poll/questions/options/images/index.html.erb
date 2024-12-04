@@ -1,0 +1,38 @@
+<%= back_link_to admin_question_path(@option.question) %>
+
+<div class="clear"></div>
+
+<h2 class="inline-block">
+  <%= t("admin.answers.images.index.title") %>
+</h2>
+
+<% if can?(:update, @option) %>
+  <%= link_to t("admin.questions.answers.images.add_image"),
+              new_admin_option_image_path(@option),
+              class: "button hollow float-right" %>
+<% else %>
+  <div class="callout warning">
+    <strong><%= t("admin.questions.no_edit") %></strong>
+  </div>
+<% end %>
+
+<ul class="breadcrumbs margin-top">
+  <li><%= @option.question.title %></li>
+  <li><%= @option.title %></li>
+</ul>
+
+<% @option.images.each do |image| %>
+  <div class="small-12 medium-4 column end">
+    <%= render_image(image, :large, true) if image.present? %>
+
+    <% if can?(:destroy, image) %>
+      <%= render Admin::ActionComponent.new(
+        :destroy,
+        image,
+        text: t("images.remove_image"),
+        confirm: t("admin.actions.confirm_action", action: t("images.remove_image"), name: image.title),
+        class: "delete float-right"
+      ) %>
+    <% end %>
+  </div>
+<% end %>

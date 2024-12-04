@@ -1,6 +1,7 @@
 tr:
   account:
     show:
+      last_sign_in: "Son oturum açma: %{last_sign_in_at} IP adresi: %{last_sign_in_ip}"
       change_credentials_link: Oturum açma bilgilerimi değiştir
       erase_account_link: Hesabımı sil
       finish_verification: Doğrulamayı tamamla
@@ -143,7 +144,6 @@ tr:
         poll_ended: "Oylama bitirildikten sonra değiştirilemez"
   form:
     accept_terms: '%{policy} ve %{conditions} metinlerini kabul ediyorum'
-    accept_terms_title: Gizlilik ileksi ve kullanım hüküm ve koşullarını kabul ediyorum
     conditions: Kullanım hüküm ve koşulları
     debate: Tartışma
     direct_message: özel ileti
@@ -162,7 +162,6 @@ tr:
     legislation/process: süreç
     legislation/question: soru
     poll/shift: Vardiya
-    poll/question/answer: Yanıt
     user: Hesap
     verification/sms: telefon
     signature_sheet: İmza sayfası
@@ -177,11 +176,6 @@ tr:
   geozones:
     none: Tüm şehir
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Internet Explorer kullandığınızı fark ettik. Gelişmiş bir deneyim için, %{firefox} ya da %{chrome} kullanmanızı öneririz.
-      ie_title: Bu site tarayıcınıza uygun olarak ayarlanmamış
     dashboard:
       proposal_header:
         published: Yayınlanmış
@@ -233,6 +227,7 @@ tr:
           other: '%{count} yeni bildiriminiz var'
         notifications: Bildirimler
       sdg: "SKA"
+    skip_to_main_content: "Ana içeriğe git"
   notifications:
     index:
       empty_notifications: Yeni bildiriminiz yok.
@@ -572,7 +567,6 @@ tr:
         share: "Bana bir iyilik yaparak önergemi arkadaşlarınla, ailenle ve yakınlarınla paylaşırsan, harika olur!"
   polls:
     all: "Tümü"
-    no_dates: "tarih belirtilmemiş"
     dates: "%{open_at} ile %{closed_at} arasında"
     final_date: "Son yeniden sayımlar/Sonuçlar"
     index:
@@ -584,7 +578,7 @@ tr:
       participate_button_expired: "Oylama sona erdi"
       no_geozone_restricted: "Tüm şehir"
       geozone_restricted: "Bölgeler"
-      geozone_info: "Seçmen bilgi sistemi üzerindeki kişiler katılabilir: "
+      geozone_info: "Census'taki kişiler katılabilir: "
       already_answer: "Bu oylamaya zaten katılmışsınız"
       not_logged_in: "Katılmak için oturum ya da hesap açmalısınız"
       unverified: "Katılmak için hesabınızı doğrulamalısınız"
@@ -677,8 +671,7 @@ tr:
       author_deleted: Kullanıcı silindi
       email_deleted: E-posta silindi
     back: Geri dön
-    check: Seçin
-    check_all: Tümü
+    check_all: Tüm
     check_none: Yok
     collective: Topluluk
     flag: Uygunsuz olarak işaretle
@@ -724,7 +717,7 @@ tr:
       districts: "Bölgeler"
       districts_list: "Bölgeler listesi"
       categories: "Kategoriler"
-    target_blank: " (bağlantı yeni pencerede açılır)"
+    target_blank: "Bağlantı yeni pencerede açılır"
     you_are_in: "Şuradasınız"
     unflag: İşareti kaldır
     unfollow_entity: "%{entity} takibini bırak"
@@ -764,18 +757,6 @@ tr:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Ziyaretler
-      debates: Tartışmalar
-      proposals: Önergeler
-      comments: Yorumlar
-      proposal_votes: Önergelere verilen oylar
-      debate_votes: Tartışma oyları
-      comment_votes: Yorum oyları
-      votes: Toplam oy
-      verified_users: Doğrulanmış kullanıcılar
-      unverified_users: Doğrulanmamış kullanıcılar
   unauthorized:
     default: Bu sayfaya erişim izniniz yok.
     manage:

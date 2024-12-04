@@ -92,7 +92,7 @@ describe Abilities::Common do
   it { should_not be_able_to(:comment_as_administrator, proposal) }
   it { should_not be_able_to(:comment_as_moderator, proposal)     }
 
-  it { should     be_able_to(:new,    DirectMessage) }
+  it { should_not be_able_to(:new,    DirectMessage) }
   it { should_not be_able_to(:create, DirectMessage) }
   it { should_not be_able_to(:show,   DirectMessage) }
 

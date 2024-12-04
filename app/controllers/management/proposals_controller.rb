@@ -17,7 +17,6 @@ class Management::ProposalsController < Management::BaseController
                                                        published_at: Time.current))
 
     if @resource.save
-      track_event
       redirect_path = url_for(controller: controller_name, action: :show, id: @resource.id)
       redirect_to redirect_path, notice: t("flash.actions.create.#{resource_name.underscore}")
     else

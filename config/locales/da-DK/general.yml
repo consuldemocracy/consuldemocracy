@@ -143,7 +143,6 @@ da:
         poll_ended: "Kan ikke ændres, hvis afstemning er slut"
   form:
     accept_terms: Jeg accepterer %{policy} og %{conditions}
-    accept_terms_title: Jeg accepterer Persondatapolitikken og Brugervilkår
     conditions: Brugervilkår og betingelser
     debate: Debat
     direct_message: privat besked
@@ -162,7 +161,6 @@ da:
     legislation/process: proces
     legislation/question: spørgsmål
     poll/shift: Skift
-    poll/question/answer: Svar
     user: Konto
     verification/sms: telefon
     signature_sheet: Signaturark
@@ -177,11 +175,6 @@ da:
   geozones:
     none: Hele byen
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Vi har opdaget, at du anvender Internet Explorer. For en bedre oplevelse anbefaler vi, at du anvender %{firefox} eller %{chrome}.
-      ie_title: Hjemmesiden fungerer ikke optimal sammen med din valgte browser
     dashboard:
       proposal_header:
         published: Offentliggjort
@@ -200,9 +193,9 @@ da:
     footer:
       accessibility: Tilgængelighed
       conditions: Brugervilkår og betingelser
-      consul: Consul programmet
+      consul: CONSUL DEMOCRACY programmet
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Denne portal anvender %{consul}, som er en %{open_source}.
       open_source: open-source software
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
@@ -572,7 +565,6 @@ da:
         share: "Og hvis du også gør mig den store tjeneste at dele mit forslag med venner, familie og andet netværk, vil det være helt perfekt!"
   polls:
     all: "Alle"
-    no_dates: "der er ikke angivet nogen dato"
     dates: "Fra %{open_at} til %{closed_at}"
     final_date: "Endelig opregning/Resultater"
     index:
@@ -677,7 +669,6 @@ da:
       author_deleted: Bruger slettet
       email_deleted: E-mailen blev slettet
     back: Gå tilbage
-    check: Vælg
     check_all: Alle
     check_none: Ingen
     collective: Grupper
@@ -764,18 +755,6 @@ da:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Besøg
-      debates: Debatindlæg
-      proposals: Borgerforslag
-      comments: Kommentarer
-      proposal_votes: Stemmer på forslag
-      debate_votes: Stemmer på debatindlæg
-      comment_votes: Stemmer på kommentarer
-      votes: Sammenlagt antal stemmer
-      verified_users: Verificerede brugere
-      unverified_users: Ikke verificerede brugere
   unauthorized:
     default: Du har ikke tilladelse til at tilgå denne side.
     manage:

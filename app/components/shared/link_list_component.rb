@@ -13,7 +13,7 @@ class Shared::LinkListComponent < ApplicationComponent
   private
 
     def present_links
-      links.select(&:present?)
+      links.compact_blank
     end
 
     def list_items

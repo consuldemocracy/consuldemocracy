@@ -8,7 +8,7 @@ class Poll
     validates :date, presence: true, uniqueness: { scope: [:officer_id, :booth_id, :task] }
     validates :task, presence: true
 
-    enum task: { vote_collection: 0, recount_scrutiny: 1 }
+    enum :task, { vote_collection: 0, recount_scrutiny: 1 }
 
     scope :current, -> { where(date: Date.current) }
 

@@ -53,7 +53,7 @@ describe "Admin budget phases" do
 
       imageable_attach_new_file(file_fixture("clippy.jpg"))
 
-      click_on "Save changes"
+      click_button "Save changes"
 
       expect(page).to have_content "Changes saved"
     end

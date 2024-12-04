@@ -64,8 +64,8 @@ describe "Admin banners magement", :admin do
     visit admin_root_path
 
     within("#side_menu") do
-      click_link "Site content"
-      click_link "Manage banners"
+      click_button "Site content"
+      click_link "Banners"
     end
 
     click_link "Create banner"
@@ -95,7 +95,7 @@ describe "Admin banners magement", :admin do
     expect_to_have_language_selected "English"
 
     click_link "Remove language"
-    select "Français", from: "add_language"
+    select "Français", from: "Add language"
 
     fill_in "Title", with: "En Français"
     fill_in "Description", with: "Link en Français"
@@ -133,8 +133,8 @@ describe "Admin banners magement", :admin do
     visit admin_root_path
 
     within("#side_menu") do
-      click_link "Site content"
-      click_link "Manage banners"
+      click_button "Site content"
+      click_link "Banners"
     end
 
     click_link "Edit"
@@ -145,8 +145,8 @@ describe "Admin banners magement", :admin do
     page.find("body").click
 
     within(".banner") do
-      expect(page).to have_selector("h2", text: "Modified title")
-      expect(page).to have_selector("h3", text: "Edited text")
+      expect(page).to have_css "h2", text: "Modified title"
+      expect(page).to have_css "h3", text: "Edited text"
     end
 
     click_button "Save changes"

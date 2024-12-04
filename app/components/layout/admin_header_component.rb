@@ -1,6 +1,6 @@
 class Layout::AdminHeaderComponent < ApplicationComponent
   attr_reader :user
-  delegate :namespace, :namespaced_root_path, :show_admin_menu?, to: :helpers
+  use_helpers :namespace, :namespaced_root_path, :show_admin_menu?
 
   def initialize(user)
     @user = user
@@ -28,5 +28,9 @@ class Layout::AdminHeaderComponent < ApplicationComponent
 
     def show_account_menu?
       show_admin_menu?(user) || namespace != "management"
+    end
+
+    def show_link_to_root_path?
+      !Rails.application.multitenancy_management_mode?
     end
 end

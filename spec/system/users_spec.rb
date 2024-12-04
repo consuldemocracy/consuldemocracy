@@ -131,12 +131,12 @@ describe "Users" do
       expect(page).to have_link budget_investment.title
 
       within("#budget_investment_#{budget_investment.id}") do
-        dismiss_confirm { click_link "Delete" }
+        dismiss_confirm { click_button "Delete" }
       end
       expect(page).to have_link budget_investment.title
 
       within("#budget_investment_#{budget_investment.id}") do
-        accept_confirm { click_link "Delete" }
+        accept_confirm { click_button "Delete" }
       end
       expect(page).not_to have_link budget_investment.title
     end
@@ -159,10 +159,12 @@ describe "Users" do
       uncheck "account_public_activity"
       click_button "Save changes"
 
-      logout
+      expect(page).to have_content "Changes saved"
 
+      logout
       visit user_path(user)
-      expect(page).to have_content("activity list private")
+
+      expect(page).to have_content "activity list private"
     end
 
     scenario "is always visible for the owner" do
@@ -183,11 +185,13 @@ describe "Users" do
       uncheck "account_public_activity"
       click_button "Save changes"
 
-      logout
+      expect(page).to have_content "Changes saved"
 
+      logout
       login_as(create(:administrator).user)
       visit user_path(user)
-      expect(page).not_to have_content("activity list private")
+
+      expect(page).not_to have_content "activity list private"
     end
 
     scenario "is always visible for moderators" do
@@ -197,11 +201,13 @@ describe "Users" do
       uncheck "account_public_activity"
       click_button "Save changes"
 
-      logout
+      expect(page).to have_content "Changes saved"
 
+      logout
       login_as(create(:moderator).user)
       visit user_path(user)
-      expect(page).not_to have_content("activity list private")
+
+      expect(page).not_to have_content "activity list private"
     end
 
     describe "User email" do
@@ -461,8 +467,9 @@ describe "Users" do
       check "account_public_interests"
       click_button "Save changes"
 
-      logout
+      expect(page).to have_content "Changes saved"
 
+      logout
       visit user_path(user, filter: "follows")
 
       expect(page).to have_css "#public_interests"
@@ -479,24 +486,12 @@ describe "Users" do
       check "account_public_interests"
       click_button "Save changes"
 
+      expect(page).to have_content "Changes saved"
+
       logout
-
       visit user_path(user)
-      expect(page).not_to have_content("Sport")
-    end
-  end
 
-  describe "Initials" do
-    scenario "display SVG avatars when loaded into the DOM" do
-      login_as(create(:user))
-      visit debate_path(create(:debate))
-
-      fill_in "Leave your comment", with: "I'm awesome"
-      click_button "Publish comment"
-
-      within ".comment", text: "I'm awesome" do
-        expect(page).to have_css "img.initialjs-avatar[src^='data:image/svg']"
-      end
+      expect(page).not_to have_content "Sport"
     end
   end
 end

@@ -17,11 +17,16 @@ gl:
         select_poll: Escolle votación
         add_results: Engadir resultados
     poll_budgets:
+      see_ballot_sheets: Ver lista de papeletas
       index:
+        title: "%{poll_budget} - Lista de papeletas"
+        ballot_sheet: "Papeleta %{id}"
         ballot_sheet_name: Nome
         ballot_sheet_author: Autoría
         ballot_sheet_creation_date: Data de creación
+        empty_results: Aínda non hai papeletas para esta votación
       new:
+        title: "%{poll_budget} - Nova papeleta"
         booth: Urna
         select_booth: Elixe urna
         csv_data: Datos CSV
@@ -30,6 +35,9 @@ gl:
         created_at: Data de creación
         author: Autoría
         data: Datos CSV
+    booth:
+      new:
+        title: "Escolle a túa urna"
     results:
       flash:
         create: "Gardaronse os resultados"
@@ -73,6 +81,7 @@ gl:
         not_to_vote: A persoa decidiu non votar neste intre
       show:
         can_vote: Pode votar
+        cannot_vote: A persoa non pode votar porque non está empadroada na zona(s) onde se realiza a votación.
         error_already_voted: Xa participou nesta votación
         submit: Confirmar o voto
         success: "Voto introducido!"

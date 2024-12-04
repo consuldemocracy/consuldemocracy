@@ -135,7 +135,6 @@ ka:
       invalid_date_range: "თარიღთა დიაპაზონი არასწორია"
   form:
     accept_terms: ვეთანხმები %{policy} და %{conditions}
-    accept_terms_title: ვეთანხმები კონფიდენციალურობის პოლიტიკას და გამოყენების წესებსა და პირობებს
     conditions: გამოყენების წესები და პირობები
     debate: დებატები
     direct_message: პირადი შეტყობინება
@@ -154,7 +153,6 @@ ka:
     legislation/process: პროცესი
     legislation/question: შეკითხვა
     poll/shift: ცვლა
-    poll/question/answer: პასუხი
     user: ანგარიში
     verification/sms: ტელეფონი
     signature_sheet: ხელმოწერის ფურცელი
@@ -168,11 +166,6 @@ ka:
   geozones:
     none: მთელი ქალაქი
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: როგორც ჩანს თქვენ Internet Explorer-ს იყენებთ. გაცილებით სწრაფი გამოცდილების მისაღებად გამოიყენეთ %{firefox} ან %{chrome}.
-      ie_title: ეს ვებ–გვერდი არ არის ოპტიმიზებული თქვენი ბრაუზერისთვის
     dashboard:
       proposal_header:
         published: გამოქვეყნებული
@@ -191,9 +184,9 @@ ka:
     footer:
       accessibility: ხელმისაწვდომობა
       conditions: გამოყენების წესები და პირობები
-      consul: CONSUL-ის აპლიკაცია
+      consul: CONSUL DEMOCRACY-ის აპლიკაცია
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: აღნიშნული პორტალი იყენებს %{consul}, რომელიც არის %{open_source}.
       open_source: ღია წყაროების პროგრამული უზრუნველყოფა
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
@@ -561,7 +554,6 @@ ka:
         share: "და თუკი ჩემს ინიციატივას მეგობრებს და ახლობლებსაც გაუზიარებ, კიდევ უფრო დამეხმარები!"
   polls:
     all: "ყველა"
-    no_dates: "თარიღი განსაზღვრული არ არის"
     dates: "%{open_at}-დან %{closed_at}-მდე"
     final_date: "საბოლოო შედეგები"
     index:
@@ -658,7 +650,6 @@ ka:
       author_deleted: მომხმარებელი წაშლილია
       email_deleted: ელ.ფოსტა წაშლილია
     back: უკან დაბრუნება
-    check: შერჩევა
     check_all: ყველა
     check_none: არცერთი
     collective: კოლექტიური
@@ -739,18 +730,6 @@ ka:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: ვიზიტები
-      debates: დებატები
-      proposals: ინიციატივები
-      comments: კომენტარები
-      proposal_votes: ინიციატივებზე მიცემული ხმები
-      debate_votes: დებატებზე მიცემული ხმები
-      comment_votes: კომენტარებზე მიცემული ხმები
-      votes: ხმების საერთო რაოდენობა
-      verified_users: გადამოწმებული მომხმარებლები
-      unverified_users: გადაუმოწმებელი მომხმარებლები
   unauthorized:
     default: ამ გვერდის ნახვის უფლება არ გაქვთ.
     manage:

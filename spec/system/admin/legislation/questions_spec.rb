@@ -75,7 +75,9 @@ describe "Admin legislation questions", :admin do
 
       visit edit_admin_legislation_process_question_path(process, question)
 
-      click_link "Delete"
+      accept_confirm("Are you sure? This action will delete \"Question 2\" and can't be undone.") do
+        click_button "Delete"
+      end
 
       expect(page).to have_content "Questions"
       expect(page).to have_content "Question 1"
@@ -143,11 +145,11 @@ describe "Admin legislation questions", :admin do
       scenario "Add translation for question option" do
         visit edit_question_url
 
-        click_on "Add option"
+        click_link "Add option"
 
         find("#nested_question_options input").set("Option 1")
 
-        select "Español", from: :select_language
+        select "Español", from: "Current language"
 
         find("#nested_question_options input").set("Opción 1")
 
@@ -156,7 +158,7 @@ describe "Admin legislation questions", :admin do
 
         expect(page).to have_field(field_en[:id], with: "Option 1")
 
-        select "Español", from: :select_language
+        select "Español", from: "Current language"
 
         expect(page).to have_field(field_es[:id], with: "Opción 1")
       end
@@ -164,13 +166,13 @@ describe "Admin legislation questions", :admin do
       scenario "Add new question option after changing active locale" do
         visit edit_question_url
 
-        select "Español", from: :select_language
+        select "Español", from: "Current language"
 
-        click_on "Add option"
+        click_link "Add option"
 
         find("#nested_question_options input").set("Opción 1")
 
-        select "English", from: :select_language
+        select "English", from: "Current language"
 
         find("#nested_question_options input").set("Option 1")
 
@@ -180,7 +182,7 @@ describe "Admin legislation questions", :admin do
 
         expect(page).to have_field(field_en[:id], with: "Option 1")
 
-        select "Español", from: :select_language
+        select "Español", from: "Current language"
 
         expect(page).to have_field(field_es[:id], with: "Opción 1")
       end

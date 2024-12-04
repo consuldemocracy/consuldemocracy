@@ -3,7 +3,7 @@ module Verification
 
   included do
     scope :residence_verified, -> { where.not(residence_verified_at: nil) }
-    scope :residence_unverified, -> { where(residence_verified_at: nil) }
+    scope :residence_unverified, -> { excluding(residence_verified) }
     scope :residence_and_phone_verified, -> { residence_verified.where.not(confirmed_phone: nil) }
     scope :residence_or_phone_unverified, -> { residence_unverified.or(where(confirmed_phone: nil)) }
     scope :phone_not_fully_confirmed, -> { where(unconfirmed_phone: nil).or(where(confirmed_phone: nil)) }
@@ -17,7 +17,7 @@ module Verification
       residence_or_phone_unverified.where(verified_at: nil, level_two_verified_at: nil)
     end
     scope :incomplete_verification, -> do
-      residence_unverified.where("failed_census_calls_count > ?", 0)
+      residence_unverified.where(failed_census_calls_count: 1..)
                           .or(residence_verified.phone_not_fully_confirmed)
     end
   end

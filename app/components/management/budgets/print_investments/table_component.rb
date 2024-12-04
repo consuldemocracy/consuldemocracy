@@ -1,6 +1,6 @@
 class Management::Budgets::PrintInvestments::TableComponent < ApplicationComponent
   attr_reader :budgets
-  delegate :paginate, to: :helpers
+  use_helpers :paginate
 
   def initialize(budgets)
     @budgets = budgets

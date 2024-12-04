@@ -1,0 +1,4 @@
+<div class="callout primary">
+  <%= t("account.show.last_sign_in", last_sign_in_at: I18n.l(account.last_sign_in_at, format: :long),
+                                     last_sign_in_ip: account.last_sign_in_ip) %>
+</div>

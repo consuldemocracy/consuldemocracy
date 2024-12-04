@@ -34,7 +34,7 @@ val:
         info: Des d'ací pots gestionar usuaris a través de les accions llistades en el menú de l'esquerra.
     document_verifications:
       already_verified: Este compte d'usuari ja està verificat.
-      link: CONSUL
+      link: CONSUL DEMOCRACY
       in_census_has_following_permissions: "Este usuari pot participar en el Portal de Govern Obert amb les següents posibilitats:"
       not_in_census: Este document no està registrat.
       not_in_census_info: "Les persones no empadronades poden participaren el Portal de Govern Obert amb les següents posibilitats:"

@@ -1,0 +1,4 @@
+<%= render "admin/shared/toggle_switch",
+           record: @investment,
+           form_class: "visible-to-valuators",
+           new_content: render(Admin::BudgetInvestments::ToggleVisibleToValuatorsComponent.new(@investment)) %>

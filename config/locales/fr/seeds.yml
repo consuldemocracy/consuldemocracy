@@ -5,8 +5,8 @@ fr:
         title: "Derniers jours pour créer des projets de Budget Participatif"
         body: "Il ne reste plus que quelques jours avant la date limite de dépôt des projets d'investissement pour les budgets participatifs !"
       help:
-        title: "Aidez-nous à traduire CONSUL"
-        body: "Si vous parlez une langue, aidez-nous à compléter sa traduction en CONSUL."
+        title: "Aidez-nous à traduire Consul Democracy"
+        body: "Si vous parlez une langue, aidez-nous à compléter sa traduction en Consul Democracy."
       map:
         title: "Vous pouvez désormais géolocaliser les propositions et les projets d'investissement"
         body: "Lorsque vous créez une proposition ou un projet d'investissement, vous pouvez spécifier son emplacement sur la carte"

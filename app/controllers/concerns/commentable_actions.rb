@@ -44,21 +44,6 @@ module CommentableActions
     @resources = @search_terms.present? ? resource_relation.search(@search_terms) : nil
   end
 
-  def create
-    @resource = resource_model.new(strong_params)
-    @resource.author = current_user
-
-    if @resource.save
-      track_event
-      redirect_path = url_for(controller: controller_name, action: :show, id: @resource.id)
-      redirect_to redirect_path, notice: t("flash.actions.create.#{resource_name.underscore}")
-    else
-      load_geozones
-      set_resource_instance
-      render :new
-    end
-  end
-
   def edit
   end
 
@@ -74,16 +59,12 @@ module CommentableActions
 
   private
 
-    def track_event
-      ahoy.track "#{resource_name}_created".to_sym, "#{resource_name}_id": resource.id
-    end
-
     def tag_cloud
       TagCloud.new(resource_model, params[:search])
     end
 
     def load_geozones
-      @geozones = Geozone.all.order(name: :asc)
+      @geozones = Geozone.order(name: :asc)
     end
 
     def set_geozone

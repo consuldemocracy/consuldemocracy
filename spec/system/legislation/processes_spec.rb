@@ -139,7 +139,7 @@ describe "Legislation" do
 
       visit legislation_processes_path
 
-      expect(page).to have_selector "img[alt='1. No Poverty']"
+      expect(page).to have_css "img[alt='1. No Poverty']"
       expect(page).to have_content "target 1.1"
     end
   end
@@ -238,7 +238,7 @@ describe "Legislation" do
 
         visit legislation_process_path(process)
 
-        expect(page).to have_selector "img[alt='1. No Poverty']"
+        expect(page).to have_css "img[alt='1. No Poverty']"
         expect(page).to have_content "target 1.1"
       end
     end

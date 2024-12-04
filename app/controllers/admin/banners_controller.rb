@@ -3,8 +3,6 @@ class Admin::BannersController < Admin::BaseController
 
   has_filters %w[all with_active with_inactive], only: :index
 
-  before_action :banner_sections, only: [:edit, :new, :create, :update]
-
   respond_to :html, :js
 
   load_and_authorize_resource
@@ -45,13 +43,5 @@ class Admin::BannersController < Admin::BaseController
       [:target_url, :post_started_at, :post_ended_at, :background_color, :font_color,
        translation_params(Banner),
        web_section_ids: []]
-    end
-
-    def banner_sections
-      @banner_sections = WebSection.all
-    end
-
-    def resource
-      @banner ||= Banner.find(params[:id])
     end
 end

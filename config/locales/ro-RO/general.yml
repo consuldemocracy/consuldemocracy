@@ -143,7 +143,6 @@ ro:
       invalid_date_range: "Interval de timp invalid"
   form:
     accept_terms: Sunt de acord cu %{policy} și cu %{conditions}
-    accept_terms_title: Sunt de acord cu Politica de confidențialitate și cu Termenii și condițiile de utilizare
     conditions: Termeni și condiții de utilizare
     debate: Dezbate
     direct_message: mesaj privat
@@ -162,7 +161,6 @@ ro:
     legislation/process: proces
     legislation/question: întrebare
     poll/shift: Schimb
-    poll/question/answer: Răspuns
     user: Cont
     verification/sms: telefon
     signature_sheet: Foaie de semnături
@@ -177,11 +175,6 @@ ro:
   geozones:
     none: Tot orașul
   layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Am detectat că utilizați Internet Explorer. Pentru o experiență îmbunătățită, vă recomandăm să folosiți %{firefox} sau %{chrome}.
-      ie_title: Acest site web nu este optimizat pentru browserul dumnevoastră
     dashboard:
       proposal_header:
         published: Publicat
@@ -201,9 +194,9 @@ ro:
     footer:
       accessibility: Accesibilitate
       conditions: Termeni și condiții de utilizare
-      consul: Cerere CONSUL
+      consul: Cerere CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
-      copyright: CONSUL, %{year}
+      copyright: CONSUL DEMOCRACY, %{year}
       description: Acest portal folosește %{consul} care este %{open_source}.
       open_source: software open-source
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
@@ -583,7 +576,6 @@ ro:
         share: "Și dacă, de asemenea, îmi faci o mare favoare a-mi distribui propunerea cu prietenii, familia și persoanele de contact, ar fi perfect!"
   polls:
     all: "Tot"
-    no_dates: "nu există date atribuite"
     dates: "De la %{open_at} către %{closed_at}"
     final_date: "Renumărări/ Rezultate finale"
     index:
@@ -684,7 +676,6 @@ ro:
       author_deleted: Utilizator șters
       email_deleted: Email șters
     back: Mergi înapoi
-    check: Selectează
     check_all: Tot
     check_none: Nici unul
     collective: Colectiv
@@ -769,18 +760,6 @@ ro:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Vizite
-      debates: Dezbateri
-      proposals: Propuneri
-      comments: Comentarii
-      proposal_votes: Votează propuneri
-      debate_votes: Votează dezbateri
-      comment_votes: Votează pe comentarii
-      votes: Voturi totale
-      verified_users: Utilizatori verificați
-      unverified_users: Utilizatori neverificați
   unauthorized:
     default: Nu aveți permisiune să accesați această pagină.
     manage:

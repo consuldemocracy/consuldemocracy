@@ -16,8 +16,8 @@ describe SDGManagement::SubnavigationComponent do
   it "renders tabs and links properly styled" do
     render_inline component
 
-    expect(page).to have_selector "a.is-active", text: "Goals"
-    expect(page).to have_selector "a:not(.is-active)", text: "Targets"
+    expect(page).to have_css "a.is-active", text: "Goals"
+    expect(page).to have_css "a:not(.is-active)", text: "Targets"
   end
 
   it "renders given block within active panel" do

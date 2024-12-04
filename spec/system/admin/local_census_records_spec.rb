@@ -61,7 +61,7 @@ describe "Admin local census records", :admin do
         visit admin_local_census_records_path
 
         fill_in :search, with: "X66777888"
-        click_on "Search"
+        click_button "Search"
 
         expect(page).to have_content "X66777888"
         expect(page).not_to have_content local_census_record.document_number
@@ -73,7 +73,7 @@ describe "Admin local census records", :admin do
     scenario "Should show validation errors" do
       visit new_admin_local_census_record_path
 
-      click_on "Save"
+      click_button "Save"
 
       expect(page).to have_content "4 errors prevented this Local Census Record from being saved."
       expect(page).to have_content "can't be blank", count: 4
@@ -84,11 +84,9 @@ describe "Admin local census records", :admin do
 
       select "DNI", from: :local_census_record_document_type
       fill_in :local_census_record_document_number, with: "#DOCUMENT"
-      select "1982", from: :local_census_record_date_of_birth_1i
-      select "July", from: :local_census_record_date_of_birth_2i
-      select "7", from: :local_census_record_date_of_birth_3i
+      fill_in "Date of birth", with: Date.new(1982, 7, 7)
       fill_in :local_census_record_postal_code, with: "07003"
-      click_on "Save"
+      click_button "Save"
 
       expect(page).to have_content "New local census record created successfully!"
       expect(page).to have_content "DNI"
@@ -105,7 +103,7 @@ describe "Admin local census records", :admin do
       visit edit_admin_local_census_record_path(local_census_record)
 
       fill_in :local_census_record_document_number, with: ""
-      click_on "Save"
+      click_button "Save"
 
       expect(page).to have_content "1 error prevented this Local Census Record from being saved."
       expect(page).to have_content "can't be blank", count: 1
@@ -116,11 +114,9 @@ describe "Admin local census records", :admin do
 
       select "Passport", from: :local_census_record_document_type
       fill_in :local_census_record_document_number, with: "#NIE_NUMBER"
-      select "1982", from: :local_census_record_date_of_birth_1i
-      select "August", from: :local_census_record_date_of_birth_2i
-      select "8", from: :local_census_record_date_of_birth_3i
+      fill_in "Date of birth", with: Date.new(1982, 8, 8)
       fill_in :local_census_record_postal_code, with: "07007"
-      click_on "Save"
+      click_button "Save"
 
       expect(page).to have_content "Local census record updated successfully!"
       expect(page).to have_content "Passport"
@@ -142,7 +138,7 @@ describe "Admin local census records", :admin do
       confirmation = "Are you sure? This action will delete " \
                      "\"#{local_census_record.title}\" and can't be undone."
 
-      accept_confirm(confirmation) { click_on "Delete" }
+      accept_confirm(confirmation) { click_button "Delete" }
 
       expect(page).to have_content "Local census record removed successfully!"
       expect(page).not_to have_content deleted_document_number

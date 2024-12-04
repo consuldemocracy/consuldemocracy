@@ -34,7 +34,7 @@ describe Users::PublicActivityComponent, controller: UsersController do
         with_request_url user_path(user, filter: "follows") do
           render_inline component
 
-          expect(page).to have_selector "li.is-active", text: "1 Following"
+          expect(page).to have_css "li.is-active", text: "1 Following"
         end
       end
     end

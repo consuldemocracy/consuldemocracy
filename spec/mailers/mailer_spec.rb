@@ -30,6 +30,16 @@ describe Mailer do
     end
   end
 
+  describe "#user_invite" do
+    it "uses the default locale setting" do
+      Setting["locales.default"] = "es"
+
+      Mailer.user_invite("invited@consul.dev").deliver_now
+
+      expect(ActionMailer::Base.deliveries.last.body.to_s).to match "<html lang=\"es\""
+    end
+  end
+
   describe "#manage_subscriptions_token" do
     let(:user) { create(:user) }
     let(:proposal) { create(:proposal, author: user) }
@@ -75,12 +85,12 @@ describe Mailer do
       let(:super_settings) { { address: "super.consul.dev", username: "super" } }
 
       before do
-        allow(Rails.application).to receive(:secrets).and_return(ActiveSupport::OrderedOptions.new.merge(
+        stub_secrets(
           smtp_settings: default_settings,
           tenants: {
             supermailer: { smtp_settings: super_settings }
           }
-        ))
+        )
       end
 
       it "does not overwrite the settings for the default tenant" do

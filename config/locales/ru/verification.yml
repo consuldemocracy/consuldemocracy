@@ -43,7 +43,6 @@ ru:
           success: Место жительства верифицировано
       new:
         accept_terms_text: Я принимаю %{terms_url} Цензуса
-        accept_terms_text_title: Я принимаю положения и условия доступа Цензуса
         document_number: Номер документа
         document_number_help_title: Помощь
         document_number_help_text: "<strong>Национальное удостоверение личности (Испания)</strong>: 12345678A<br> <strong>Паспорт</strong>: AAA000001<br> <strong>Документ о регистрации по месту жительства</strong>: X1234567P"

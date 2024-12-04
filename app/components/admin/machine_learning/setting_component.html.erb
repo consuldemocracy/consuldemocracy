@@ -20,7 +20,7 @@
         <dt><%= t("admin.machine_learning.output_files") %></dt>
         <dd>
           <% filenames.each do |filename| %>
-            <a href="<%= data_path(filename) %>" target="_blank"><%= filename %></a><br>
+            <a href="<%= data_path(filename) %>"><%= filename %></a><br>
           <% end %>
         </dd>
       </dl>

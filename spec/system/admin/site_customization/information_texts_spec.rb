@@ -67,7 +67,7 @@ describe "Admin custom information texts", :admin do
 
       visit admin_site_customization_information_texts_path
 
-      select "Français", from: :add_language
+      select "Français", from: "Add language"
       fill_in "contents[content_#{key}]values[value_fr]", with: "Aide personalise sur les débats"
 
       click_button "Save"
@@ -75,7 +75,7 @@ describe "Admin custom information texts", :admin do
       expect(page).to have_content "Translation updated successfully"
 
       visit admin_site_customization_information_texts_path
-      select "Français", from: :select_language
+      select "Français", from: "Current language"
 
       expect(page).to have_content "Aide personalise sur les débats"
       expect(page).not_to have_content "Aide sur les débats"
@@ -87,14 +87,14 @@ describe "Admin custom information texts", :admin do
 
       visit admin_site_customization_information_texts_path(tab: "proposals")
 
-      select "Français", from: :select_language
+      select "Français", from: "Current language"
       fill_in "contents_content_#{key}values_value_fr", with: "Partager personalise"
 
       click_button "Save"
       expect(page).to have_content "Translation updated successfully"
 
       visit admin_site_customization_information_texts_path(tab: "proposals")
-      select "Français", from: :select_language
+      select "Français", from: "Current language"
 
       expect(page).to have_content "Partager personalise"
       expect(page).not_to have_content "Partager la proposition"
@@ -111,14 +111,14 @@ describe "Admin custom information texts", :admin do
 
       visit admin_site_customization_information_texts_path(tab: "debates")
 
-      select "Español", from: :select_language
+      select "Español", from: "Current language"
       click_link "Remove language"
       click_button "Save"
 
       expect(page).not_to have_link "Español"
 
       visit admin_site_customization_information_texts_path(tab: "debates")
-      select "English", from: :select_language
+      select "English", from: "Current language"
 
       expect(page).to have_content "Start a new debate"
       expect(page).to have_content "Custom featured"

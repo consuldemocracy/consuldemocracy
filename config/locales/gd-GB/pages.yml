@@ -64,9 +64,9 @@ gd:
         text: |-
           Cleachd e san ùghdarras ionadail agad no cuidich sinn gus a leasachadh, is e bathar-bog an-asgaidh a th’ ann.
 
-          Bidh am Portal Riaghaltas Fosgailte seo a’ cleachdadh an [CONSUL app] (https://github.com/consuldemocracy/consuldemocracy ‘consul democracy github’) a tha na bhathar-bog an-asgaidh, le [cead AGPLv3](http://www.gnu.org/licenses/ agpl-3.0.html ‘AGPLv3 gnu’ ), a tha a’ ciallachadh ann am faclan sìmplidh gun urrainn do dhuine sam bith an còd a chleachdadh gu saor, lethbhreac a dhèanamh dheth, fhaicinn gu mionaideach, atharrachadh agus ath-sgaoileadh dhan t-saoghal leis na h-atharrachaidhean a tha iad ag iarraidh (a’ leigeil le daoine eile an aon rud a dhèanamh). Oir tha gu bheil sinn den bheachd gu bheil cultar nas fheàrr agus nas beairtiche nuair a thèid a leigeil ma sgaoil.
+          Bidh am Portal Riaghaltas Fosgailte seo a’ cleachdadh an [CONSUL DEMOCRACY app] (https://github.com/consuldemocracy/consuldemocracy ‘consul democracy github’) a tha na bhathar-bog an-asgaidh, le [cead AGPLv3](http://www.gnu.org/licenses/ agpl-3.0.html ‘AGPLv3 gnu’ ), a tha a’ ciallachadh ann am faclan sìmplidh gun urrainn do dhuine sam bith an còd a chleachdadh gu saor, lethbhreac a dhèanamh dheth, fhaicinn gu mionaideach, atharrachadh agus ath-sgaoileadh dhan t-saoghal leis na h-atharrachaidhean a tha iad ag iarraidh (a’ leigeil le daoine eile an aon rud a dhèanamh). Oir tha gu bheil sinn den bheachd gu bheil cultar nas fheàrr agus nas beairtiche nuair a thèid a leigeil ma sgaoil.
 
-          Mas e prògramadair a th’ annad, chì thu an còd agus faodaidh tu ar cuideachadh gus piseach a thoirt air aig [app CONSUL] (https://github.com/consuldemocracy/consuldemocracy ‘consul democracy github’).
+          Mas e prògramadair a th’ annad, chì thu an còd agus faodaidh tu ar cuideachadh gus piseach a thoirt air aig [app CONSUL DEMOCRACY] (https://github.com/consuldemocracy/consuldemocracy ‘consul democracy github’).
       titles:
         how_to_use: Cleachd e airson an ùghdarrais ionadail agad
     privacy:

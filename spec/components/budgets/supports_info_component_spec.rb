@@ -10,7 +10,7 @@ describe Budgets::SupportsInfoComponent do
 
     render_inline component
 
-    expect(page).to have_selector ".supports-info"
+    expect(page).to have_css ".supports-info"
     expect(page).to have_content "It's time to support projects!"
     expect(page).to have_link "Keep scrolling to see all ideas"
   end

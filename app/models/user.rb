@@ -5,6 +5,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable,
          :trackable, :validatable, :omniauthable, :password_expirable, :secure_validatable,
          authentication_keys: [:login]
+  devise :lockable if Rails.application.config.devise_lockable
 
   acts_as_voter
   acts_as_paranoid column: :hidden_at
@@ -59,10 +60,6 @@ class User < ApplicationRecord
            class_name: "Poll::Answer",
            foreign_key: :author_id,
            inverse_of: :author
-  has_many :poll_pair_answers,
-           class_name: "Poll::PairAnswer",
-           foreign_key: :author_id,
-           inverse_of: :author
   has_many :poll_partial_results,
            class_name: "Poll::PartialResult",
            foreign_key: :author_id,
@@ -98,7 +95,7 @@ class User < ApplicationRecord
   scope :moderators,     -> { joins(:moderator) }
   scope :organizations,  -> { joins(:organization) }
   scope :sdg_managers,   -> { joins(:sdg_manager) }
-  scope :officials,      -> { where("official_level > 0") }
+  scope :officials,      -> { where(official_level: 1..) }
   scope :male,           -> { where(gender: "male") }
   scope :female,         -> { where(gender: "female") }
   scope :newsletter,     -> { where(newsletter: true) }
@@ -107,8 +104,8 @@ class User < ApplicationRecord
     where(document_type: document_type, document_number: document_number)
   end
   scope :email_digest,   -> { where(email_digest: true) }
-  scope :active,         -> { where(erased_at: nil) }
   scope :erased,         -> { where.not(erased_at: nil) }
+  scope :active,         -> { excluding(erased) }
   scope :public_for_api, -> { all }
   scope :by_authors,     ->(author_ids) { where(id: author_ids) }
   scope :by_comments,    ->(commentables) do
@@ -118,12 +115,11 @@ class User < ApplicationRecord
     search = "%#{search_string.strip}%"
     where("username ILIKE ? OR email ILIKE ? OR document_number ILIKE ?", search, search, search)
   end
-  scope :between_ages, ->(from, to) do
-    where(
-      "date_of_birth > ? AND date_of_birth < ?",
-      to.years.ago.beginning_of_year,
-      from.years.ago.end_of_year
-    )
+  scope :between_ages, ->(from, to, at_time: Time.current) do
+    start_date = at_time - (to + 1).years + 1.day
+    end_date = at_time - from.years
+
+    where(date_of_birth: start_date.beginning_of_day..end_date.end_of_day)
   end
 
   before_validation :clean_document_number
@@ -237,13 +233,13 @@ class User < ApplicationRecord
 
   def full_restore
     ActiveRecord::Base.transaction do
-      Debate.restore_all debates.where("hidden_at >= ?", hidden_at)
-      Comment.restore_all comments.where("hidden_at >= ?", hidden_at)
-      Legislation::Proposal.restore_all legislation_proposals.only_hidden.where("hidden_at >= ?", hidden_at)
-      Proposal.restore_all proposals.where("hidden_at >= ?", hidden_at)
-      Budget::Investment.restore_all budget_investments.where("hidden_at >= ?", hidden_at)
+      Debate.restore_all debates.where(hidden_at: hidden_at..)
+      Comment.restore_all comments.where(hidden_at: hidden_at..)
+      Legislation::Proposal.restore_all legislation_proposals.only_hidden.where(hidden_at: hidden_at..)
+      Proposal.restore_all proposals.where(hidden_at: hidden_at..)
+      Budget::Investment.restore_all budget_investments.where(hidden_at: hidden_at..)
       ProposalNotification.restore_all(
-        ProposalNotification.only_hidden.where("hidden_at >= ?", hidden_at).where(author_id: id)
+        ProposalNotification.only_hidden.where(hidden_at: hidden_at..).where(author_id: id)
       )
 
       restore
@@ -293,7 +289,16 @@ class User < ApplicationRecord
   def take_votes_from(other_user)
     return if other_user.blank?
 
-    Poll::Voter.where(user_id: other_user.id).update_all(user_id: id)
+    with_lock do
+      Poll::Voter.where(user_id: other_user.id).find_each do |poll_voter|
+        if Poll::Voter.where(poll: poll_voter.poll, user_id: id).any?
+          poll_voter.delete
+        else
+          poll_voter.update_column(:user_id, id)
+        end
+      end
+    end
+
     Budget::Ballot.where(user_id: other_user.id).update_all(user_id: id)
     Vote.where("voter_id = ? AND voter_type = ?", other_user.id, "User").update_all(voter_id: id)
     data_log = "id: #{other_user.id} - #{Time.current.strftime("%Y-%m-%d %H:%M:%S")}"
@@ -339,7 +344,7 @@ class User < ApplicationRecord
   end
 
   def locale
-    self[:locale] || I18n.default_locale.to_s
+    self[:locale] || Setting.default_locale.to_s
   end
 
   def confirmation_required?
@@ -408,12 +413,36 @@ class User < ApplicationRecord
     followables.compact.map { |followable| followable.tags.map(&:name) }.flatten.compact.uniq
   end
 
-  def send_devise_notification(notification, *args)
-    devise_mailer.send(notification, self, *args).deliver_later
+  def send_devise_notification(notification, *)
+    devise_mailer.send(notification, self, *).deliver_later
   end
 
   def add_subscriptions_token
     update!(subscriptions_token: SecureRandom.base58(32)) if subscriptions_token.blank?
+  end
+
+  def self.password_complexity
+    if Tenant.current_secrets.dig(:security, :password_complexity)
+      { digit: 1, lower: 1, symbol: 0, upper: 1 }
+    else
+      { digit: 0, lower: 0, symbol: 0, upper: 0 }
+    end
+  end
+
+  def self.maximum_attempts
+    (Tenant.current_secrets.dig(:security, :lockable, :maximum_attempts) || 20).to_i
+  end
+
+  def self.unlock_in
+    (Tenant.current_secrets.dig(:security, :lockable, :unlock_in) || 1).to_f.hours
+  end
+
+  def to_param
+    "#{id}-#{slug}"
+  end
+
+  def slug
+    username.to_s.parameterize
   end
 
   private

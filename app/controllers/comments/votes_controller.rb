@@ -10,6 +10,7 @@ module Comments
       @comment.vote_by(voter: current_user, vote: params[:value])
 
       respond_to do |format|
+        format.html { redirect_to request.referer, notice: I18n.t("flash.actions.create.vote") }
         format.js { render :show }
       end
     end
@@ -18,6 +19,7 @@ module Comments
       @comment.unvote_by(current_user)
 
       respond_to do |format|
+        format.html { redirect_to request.referer, notice: I18n.t("flash.actions.destroy.vote") }
         format.js { render :show }
       end
     end

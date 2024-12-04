@@ -9,7 +9,7 @@ gd:
     men_percentage: "%{percentage} Fireannaich"
     women_percentage: "%{percentage} Boireannaich"
     age: "Aois"
-    age_more_than: "%{tòiseachadh} bliadhna a dh’aois is nas sine"
+    age_more_than: "%{start} bliadhna a dh’aois is nas sine"
     age_range: "%{start} - %{finish} bliadhna a dh’aois"
     total: "Iomlan"
     geozone: "Sgìre"

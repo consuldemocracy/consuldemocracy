@@ -1,0 +1,18 @@
+<tr>
+  <td>
+    <strong id="<%= dom_id(setting, :title) %>"><%= t("settings.#{setting.key}") %></strong>
+    <br>
+    <span id="<%= dom_id(setting, :description) %>" class="small">
+      <%= t("settings.#{setting.key}_description", default: t("admin.settings.no_description")) %>
+    </span>
+  </td>
+  <td>
+    <% if content_type_setting? %>
+      <%= render Admin::Settings::ContentTypesFormComponent.new(setting, tab: tab) %>
+    <% elsif featured_setting? %>
+      <%= render Admin::Settings::FeaturedSettingsFormComponent.new(setting, tab: tab) %>
+    <% else %>
+      <%= render Admin::Settings::TextFormComponent.new(setting, tab: tab) %>
+    <% end %>
+  </td>
+</tr>

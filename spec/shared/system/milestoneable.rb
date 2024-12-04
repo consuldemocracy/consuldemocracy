@@ -29,7 +29,7 @@ shared_examples "milestoneable" do |factory_name|
         expect(page).to have_content(Date.yesterday)
         expect(page).not_to have_content(Date.current)
         expect(page.find("#image_#{first_milestone.id}")["alt"]).to have_content(image.title)
-        expect(page).to have_link(document.title)
+        expect(page).to have_link text: document.title
         expect(page).to have_link("https://consul.dev")
         expect(page).to have_content(first_milestone.status.name)
       end

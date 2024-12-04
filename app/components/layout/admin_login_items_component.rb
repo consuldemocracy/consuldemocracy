@@ -1,13 +1,13 @@
 class Layout::AdminLoginItemsComponent < ApplicationComponent
   attr_reader :user
-  delegate :link_list, :show_admin_menu?, to: :helpers
+  use_helpers :link_list, :show_admin_menu?
 
   def initialize(user)
     @user = user
   end
 
   def render?
-    show_admin_menu?(user)
+    show_admin_menu?(user) && !Rails.application.multitenancy_management_mode?
   end
 
   private

@@ -5,8 +5,8 @@ sv:
         title: "Vi stänger medborgarbudgeten!"
         body: "Skynda dig att skapa ett förslag innan det upphör inom de närmaste dagarna!"
       help:
-        title: "Hjälp oss att översätta consul"
-        body: "Om du talar ett språk flytande, ber vi dig hjälpa oss att översätta consul!"
+        title: "Hjälp oss att översätta Consul Democracy"
+        body: "Om du talar ett språk flytande, ber vi dig hjälpa oss att översätta Consul Democracy!"
       map:
         title: "Du kan nu geografiskt placera förslag och investeringar"
         body: "När du skapar ett förslag eller en investering kan du nu ange en plats på en karta."
@@ -39,7 +39,7 @@ sv:
         link_text: "Mer om debatter"
         label: "Debatter"
       header:
-        title: "CONSUL"
+        title: "CONSUL DEMOCRACY"
         description: "Kostnadsfri programvara för medborgardeltagande."
         link_text: "Mer information"
         label: "Välkommen till"

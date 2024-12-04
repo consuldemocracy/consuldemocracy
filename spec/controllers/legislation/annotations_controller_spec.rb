@@ -36,27 +36,6 @@ describe Legislation::AnnotationsController do
     end
     let(:user) { create(:user, :level_two) }
 
-    it "creates an ahoy event" do
-      sign_in user
-
-      post :create, params: {
-        process_id: legal_process.id,
-        draft_version_id: draft_version.id,
-        legislation_annotation: {
-          "quote" => "ipsum",
-          "ranges" => [{
-            "start" => "/p[1]",
-            "startOffset" => 6,
-            "end" => "/p[1]",
-            "endOffset" => 11
-          }],
-          "text" => "una anotacion"
-        }
-      }
-      expect(Ahoy::Event.where(name: :legislation_annotation_created).count).to eq 1
-      expect(Ahoy::Event.last.properties["legislation_annotation_id"]).to eq Legislation::Annotation.last.id
-    end
-
     it "does not create an annotation if the draft version is a final version" do
       sign_in user
 

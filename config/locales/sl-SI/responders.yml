@@ -7,9 +7,6 @@ sl:
         direct_message: "Tvoje sporočilo je bilo uspešno poslano."
         poll: "Glasovanje uspešno ustvarjeno."
         poll_booth: "Volišče uspešno ustvarjeno."
-        poll_question_answer: "Odgovor uspešno ustvarjen."
-        poll_question_answer_video: "Video uspešno ustvarjen."
-        poll_question_answer_image: "Slika uspešno naložena"
         proposal: "Predlog uspešno ustvarjen."
         proposal_notification: "Tvoje sporočilo je bilo uspešno poslano."
         budget_investment: "Proračunska naložba uspešno ustvarjena."
@@ -30,5 +27,4 @@ sl:
       destroy:
         budget_investment: "Naložbeni projekt uspešno izbrisan."
         topic: "Tema uspešno izbrisana."
-        poll_question_answer_video: "Video odgovora uspešno izbrisan."
         valuator_group: "Cenilska skupina uspešno izbrisana"

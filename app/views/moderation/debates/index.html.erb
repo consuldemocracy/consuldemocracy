@@ -1,5 +1,5 @@
 <%= render Moderation::Shared::IndexComponent.new(@debates) do %>
-  <table class="clear">
+  <table>
     <thead>
       <tr>
         <th><%= t("moderation.debates.index.headers.debate") %></th>
@@ -11,7 +11,7 @@
       <% @debates.each do |debate| %>
         <tr id="debate_<%= debate.id %>">
           <td>
-            <%= link_to debate.title, debate, target: "_blank" %>
+            <%= link_to debate.title, debate %>
             <br>
             <span class="date"><%= l debate.updated_at.to_date %></span>
             <span class="bullet">&nbsp;&bull;&nbsp;</span>
@@ -24,7 +24,11 @@
             </div>
           </td>
           <td class="text-center">
-            <%= check_box_tag "debate_ids[]", debate.id, nil, id: "#{dom_id(debate)}_check" %>
+            <%= check_box_tag "debate_ids[]",
+                              debate.id,
+                              nil,
+                              id: "#{dom_id(debate)}_check",
+                              "aria-label": debate.title %>
           </td>
         </tr>
       <% end %>

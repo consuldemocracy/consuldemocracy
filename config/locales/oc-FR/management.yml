@@ -35,7 +35,7 @@ oc:
     document_verifications:
       already_verified: Aquel compte d'usatgièr es ja verificat.
       has_no_account: Per crear un compte, anatz a %{link} e faguèt clic a In <b>"S'enregistrar"</b> a la part superiora esquèrra de la pantalha.
-      link: CONSUL
+      link: CONSUL DEMOCRACY
       in_census_has_following_permissions: "Aquel usatgièr pòt participar dins lo Portal de Govèrn Dobèrt amb las seguentas possibilitats:"
       not_in_census: Aquel document es pas enregistrat.
       not_in_census_info: "Las personas pas empadronades pòdon participar dins lo Portal de Govèrn Dobèrt amb las seguentas possibilitats:"
