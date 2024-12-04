@@ -941,6 +941,7 @@ es:
     accept_essential_cookies: "Aceptar cookies esenciales"
     setup: "Ajustes"
     more_info_link: "Más información"
+    notice: "Tus preferencias de cookies se han guardado. Puedes cambiarlas en cualquier momento desde el enlace \"Configuración de cookies\" en el pie de página."
   cookies_setup:
     title: Configuración de cookies
     description: Esta web utiliza cookies propias y de terceros para su correcto funcionamiento. Al hacer click en el botón Aceptar, acepta el uso de estas tecnologías y el procesamiento de tus datos para estos propósitos.

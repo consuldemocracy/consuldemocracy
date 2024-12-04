@@ -13,6 +13,13 @@
       if ($("#cookies_consent_setup").length > 0) {
         $("#cookies_consent_setup").foundation("close");
       }
+      if ($(".subfooter a[data-open=cookies_consent_setup]").length > 0) {
+        App.CookiesConsent.showCallout();
+      }
+    },
+    showCallout: function() {
+      var callout = $("#cookies_consent_setup").data("notice");
+      App.Callout.show(new DOMParser().parseFromString(callout, "text/html").documentElement.textContent);
     },
     setCookiesConsent: function(id, value) {
       document.getElementById(id).checked = value;
