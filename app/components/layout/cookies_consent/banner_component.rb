@@ -12,6 +12,15 @@ class Layout::CookiesConsent::BannerComponent < ApplicationComponent
   private
 
     def cookies_consent_unset?
-      cookies["cookies_consent"].blank?
+      current_value.blank?
+    end
+
+    def current_value
+      # cookies["cookies_consent"]
+      cookies["cookies_consent#{version_name}"]
+    end
+
+    def version_name
+      Setting["cookies_consent.version_name"]
     end
 end

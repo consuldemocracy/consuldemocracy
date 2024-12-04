@@ -7,6 +7,10 @@ class Layout::CookiesConsent::SetupComponent < ApplicationComponent
     Cookies::Vendor.all
   end
 
+  def version_name
+    Setting["cookies_consent.version_name"]
+  end
+
   private
 
     def more_info_link
