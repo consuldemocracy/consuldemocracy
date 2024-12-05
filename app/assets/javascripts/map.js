@@ -15,7 +15,7 @@
       App.Map.maps = [];
     },
     initializeMap: function(element) {
-      var createMarker, editable, investmentsMarkers, map, marker, markerClustering,
+      var createMarker, editable, geozoneLayers, investmentsMarkers, map, marker, markerClustering,
         markerData, markerIcon, markers, moveOrPlaceMarker, removeMarker, removeMarkerSelector;
       App.Map.cleanInvestmentCoordinates(element);
       removeMarkerSelector = $(element).data("marker-remove-selector");
@@ -84,7 +84,10 @@
       }
 
       App.Map.addInvestmentsMarkers(investmentsMarkers, createMarker);
-      App.Map.addGeozones(map);
+      geozoneLayers = App.Map.geozoneLayers(map);
+      App.Map.addGeozones(map, geozoneLayers);
+      App.Map.addLayerControl(map, geozoneLayers);
+
       map.addLayer(markers);
     },
     leafletMap: function(element) {
@@ -210,27 +213,52 @@
       map.attributionControl.setPrefix(App.Map.attributionPrefix());
       L.tileLayer(mapTilesProvider, { attribution: mapAttribution }).addTo(map);
     },
-    addGeozones: function(map) {
+    addGeozones: function(map, geozoneLayers) {
+      $.each(geozoneLayers, function(_, geozoneLayer) {
+        App.Map.addGeozone(map, geozoneLayer);
+      });
+    },
+    addLayerControl: function(map, geozoneLayers) {
+      if (Object.keys(geozoneLayers).length > 1) {
+        L.control.layers(null, geozoneLayers).addTo(map);
+      }
+    },
+    geozoneLayers: function(map) {
       var geozones = $(map._container).data("geozones");
+      var layers = {};
 
       if (geozones) {
         geozones.forEach(function(geozone) {
-          App.Map.addGeozone(geozone, map);
+          if (geozone.outline_points) {
+            layers[geozone.name] = App.Map.geozoneLayer(geozone);
+          }
         });
       }
+
+      return layers;
     },
-    addGeozone: function(geozone, map) {
-      var polygon = L.polygon(geozone.outline_points, {
-        color: geozone.color,
-        fillOpacity: 0.3,
-        className: "map-polygon"
+    geozoneLayer: function(geozone) {
+      var geojsonData = JSON.parse(geozone.outline_points);
+
+      return L.geoJSON(geojsonData, {
+        style: function(feature) {
+          return {
+            color: feature.properties.color || geozone.color,
+            fillOpacity: 0.3,
+            className: "map-polygon"
+          };
+        },
+        onEachFeature: function(feature, layer) {
+          var headings = feature.properties.headings || geozone.headings;
+
+          if (headings) {
+            layer.bindPopup(headings.join("<br>"));
+          }
+        }
       });
-
-      if (geozone.headings !== undefined) {
-        polygon.bindPopup(geozone.headings.join("<br>"));
-      }
-
-      polygon.addTo(map);
+    },
+    addGeozone: function(map, geozoneLayer) {
+      geozoneLayer.addTo(map);
     },
     getPopupContent: function(data) {
       return "<a href='" + data.link + "'>" + data.title + "</a>";
