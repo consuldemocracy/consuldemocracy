@@ -91,7 +91,7 @@ group :development do
   gem "capistrano-rails", "~> 1.6.3", require: false
   gem "capistrano3-delayed-job", "~> 1.7.6"
   gem "capistrano3-puma", "~> 5.2.0"
-  gem "erb_lint", "~> 0.6.0", require: false
+  gem "erb_lint", "~> 0.7.0", require: false
   gem "mdl", "~> 0.13.0", require: false
   gem "pronto", "~> 0.11.2", require: false
   gem "pronto-erb_lint", "~> 0.1.6", require: false
