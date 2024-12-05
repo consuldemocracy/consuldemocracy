@@ -1,0 +1,40 @@
+<section id="cookies_consent_setup"
+         class="cookies-consent-setup small reveal"
+         data-reveal
+         aria-labelledby="modal-heading"
+         data-notice="<%= notice %>"
+         data-version-name="<%= version_name %>">
+  <div class="header">
+    <h2 id="modal-heading"><%= t("cookies_setup.title") %></h2>
+    <button class="close-button" aria-label="<%= t("admin.shared.close_modal") %>" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <p><%= t("cookies_setup.description") %><p>
+  <% if more_info_link.present? %>
+    <p><%= link_to t("cookies_consent.more_info_link"), more_info_link, target: "_blank" %></p>
+  <% end %>
+
+  <h3><%= t("cookies_setup.essentials.title") %></h3>
+  <p><%= t("cookies_setup.essentials.description") %></p>
+  <div class="cookies-vendors">
+    <ul>
+      <li>
+        <%= render Cookies::SwitchComponent.new(:essential_cookies,
+                                                label: t("cookies_setup.essentials.title"),
+                                                description: t("cookies_setup.essentials.button.description"),
+                                                checked: true,
+                                                disabled: true) %>
+      </li>
+    </ul>
+  </div>
+
+  <h3><%= t("cookies_setup.third_party.title") %></h3>
+  <p><%= t("cookies_setup.third_party.description") %></p>
+  <%= render Cookies::VendorsComponent.new(vendors) %>
+
+  <hr>
+
+  <button type="button" class="accept-cookies"><%= t("cookies_setup.accept_all") %></button>
+  <button type="button" class="reject-cookies"><%= t("cookies_setup.accept_essentials") %></button>
+</section>

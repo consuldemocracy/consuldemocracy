@@ -1,0 +1,17 @@
+<div class="cookies-vendors">
+  <ul>
+    <% vendors.each do |vendor| %>
+      <li id="<%= dom_id(vendor) %>">
+        <%= render Cookies::SwitchComponent.new(vendor.cookie,
+                                                label: vendor.name,
+                                                description: vendor.description,
+                                                checked: enabled?(vendor),
+                                                disabled: false) %>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="save-preferences">
+    <button type="button" class="save-cookies-preferences"><%= t("cookies_setup.save_preferences") %></button>
+  </div>
+</div>

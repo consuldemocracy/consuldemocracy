@@ -151,6 +151,9 @@ es:
       votation_type:
         one: Tipo de votación
         other: Tipos de votación
+      cookies_vendor:
+        one: Proveedor de cookies
+        other: Proveedorores de cookies
     attributes:
       budget:
         name: "Nombre"
@@ -534,6 +537,11 @@ es:
       votation_type/vote_type:
         unique: Respuesta única
         multiple: Respuesta múltiple
+      cookies/vendor:
+        name: Nombre del proveedor
+        cookie: Nombre de la cookie
+        description: Descripción
+        script: Código javascript
     errors:
       models:
         user:
@@ -623,6 +631,10 @@ es:
           attributes:
             code:
               invalid: "debe empezar con el código de su meta seguido de un punto y terminar con un número"
+        cookies/vendor:
+          attributes:
+            cookie:
+              collision: "no puede empezar por \"cookies_consent\". Considere la posibilidad de añadir el nombre del proveedor como prefijo."
       messages:
         translations_too_short: El obligatorio proporcionar una traducción como mínimo
         record_invalid: "Error de validación: %{errors}"

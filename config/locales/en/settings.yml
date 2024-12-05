@@ -134,6 +134,8 @@ en:
       remove_investments_supports_description: "Allow users to remove supports on participatory budgets investments during the selecting projects phase."
       sdg: SDG
       sdg_description: Enable Sustainable Development Goals sections in the administration menu and in the Global Settings.
+      cookies_consent: Cookies consent banner
+      cookies_consent_description: Enable the cookies consent banner to inform users about the cookies the application uses.
     remote_census:
       general:
         endpoint: "Endpoint"
@@ -226,3 +228,12 @@ en:
         budgets_description: Allow participatory budgets to be linked to Sustainable Development Goals
         legislation: Related SDG in collaborative legislation
         legislation_description: Allow collaborative legislation to be linked to Sustainable Development Goals
+    cookies_consent:
+      admin_test_mode: Enable testing mode
+      admin_test_mode_description: This feature will hide the cookie consent interface for all users except administrators when enabled. It allows you to test your settings before publishing. Turn off this feature once you have successfully tested it.
+      more_info_link: Link to cookies policy
+      more_info_link_description: Link shown in the consent banner to the cookie policy page.
+      setup_page: Enable third party cookies setup page
+      setup_page_description: Allow users to configure (accept or reject) the tracking of third party cookies.
+      version_name: Version name
+      version_name_description: Change the version name to force all users to go through the cookie consent process again. This feature can be handy when introducing drastic cookie policy changes requiring a new user acknowledgement.

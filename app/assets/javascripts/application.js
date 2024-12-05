@@ -59,6 +59,7 @@
 //= require_directory ./ckeditor
 //= require social-share-button
 //= require app
+//= require callout
 //= require check_all_none
 //= require comments
 //= require foundation_extras
@@ -113,6 +114,7 @@
 //= require globalize
 //= require settings
 //= require cookies
+//= require cookies_consent
 //= require columns_selector
 //= require budget_edit_associations
 //= require budget_hide_money
@@ -179,6 +181,7 @@ var initialize_modules = function() {
   App.SDGRelatedListSelector.initialize();
   App.SDGManagementRelationSearch.initialize();
   App.AuthenticityTokenRefresh.initialize();
+  App.CookiesConsent.initialize();
 };
 
 var destroy_non_idempotent_modules = function() {
