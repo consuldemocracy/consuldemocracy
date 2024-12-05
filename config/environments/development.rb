@@ -35,7 +35,7 @@ Rails.application.configure do
   end
 
   # Allow accessing the application through a domain so subdomains can be used
-  config.hosts << "lvh.me"
+  config.hosts << "consuldev.communitychoices.scot:3000"
   config.hosts << /.*\.lvh\.me/
 
   # Don't care if the mailer can't send.
