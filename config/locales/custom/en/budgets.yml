@@ -16,7 +16,7 @@ en:
         subtitle_without_price: "%{heading}"
         subtitle_without_price_note: "subtitle help text"
         summary: "Project Summary"
-         summary_note: "Give a brief summary of you project (maximum 200 characters)"
+        summary_note: "Give a brief summary of you project (maximum 200 characters)"
     select:
       title: "Select Budget"
       proposal_name: "Proposal Name"
