@@ -1,23 +1,29 @@
 <div class="row">
-  <div class="small-12 medium-9 column margin-top">
-
+  <div class="small-12 medium-3 column margin-top">
     <h1><%= t("map.title") %></h1>
 
     <div class="row">
-      <div class="small-12 medium-3 column">
+      <div class="small-12 column">
         <ul id="geozones" class="no-bullet">
           <% @geozones.each do |geozone| %>
             <li><%= link_to geozone.name, proposals_path(search: geozone.name) %></li>
           <% end %>
         </ul>
       </div>
-
     </div>
-     <div>
-      <div class="budget-investments-map">
-         <%= render Shared::MapLocationComponent.new(nil, geozones_data: geozones_data) %>
-      </div> 
-      </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-9 column">
+    <div class="budget-investments-map">
+      <%= render Shared::MapLocationComponent.new(nil, geozones_data: geozones_data) %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 column">
     <h2><%= t("map.proposal_for_district") %></h2>
 
     <%= form_for(@proposal, url: new_proposal_path, method: :get) do |f| %>
@@ -29,13 +35,5 @@
         <%= f.submit(class: "button radius", value: t("map.start_proposal")) %>
       </div>
     <% end %>
-  </div>
-
-  <div class="small-12 medium-3 column">
-    <aside class="sidebar">
-      <%= link_to t("map.start_proposal"),
-                  new_proposal_path, class: "button radius expand" %>
-      <%= render "shared/tag_cloud", taggable: "Proposal" %>
-    </aside>
   </div>
 </div>
