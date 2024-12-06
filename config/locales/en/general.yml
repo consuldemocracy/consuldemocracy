@@ -414,6 +414,7 @@ en:
       code: "Proposal code:"
       comments_tab: Comments
       dashboard_proposal_link: Dashboard
+      budget_investment_link: Create Budget Proposal 
       flag: This proposal has been flagged as inappropriate by several users.
       notifications_tab: Notifications
       milestones_tab: Milestones
