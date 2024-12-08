@@ -1,0 +1,109 @@
+# Installation notes for a local dev environment, to be deployed with capistrano
+
+## Preliminary comments
+
+- Prerequisites
+MUST CHECK THE UBUNTU PREREQUISITES! Should prevent some of the issues below...
+```
+https://docs.consuldemocracy.org/tech_docs/introduction-1/local_installation/ubuntu
+```
+
+- The procedure: 
+```
+https://docs.consuldemocracy.org/tech_docs/introduction-1/local_installation
+```
+
+- IMPORTANT: should prefer rbenv to other ruby version managers, in order to be able to use the right version through `.ruby-version`, but the guidelines, so far, have only been tested with rvm (bottom-line: keep rvm until the shift to rbenv is supported)
+
+- Check the multiple related [Q/A](https://github.com/consuldemocracy/consuldemocracy/discussions/categories/q-a) and issues on github
+
+## step by step
+### Step #1: OK
+
+### Step #2: Install the Ruby version manager:
+Installing rbenv with apt seems not to be enough: the version expected by
+consudemocracy can not be found. Hence the following actions:
+
+- [ ] install homebrew -- OBSOLETE DO *NOT* USE BREW (CONFLICTS WITH APT)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+- [ ] update the PATH var with brew -- OBSOLETE DO *NOT* USE BREW (CONFLICTS WITH APT)
+(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/prost/.bashrc
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    
+- [ ] Install Homebrew's dependencies:  -- OBSOLETE DO *NOT* USE BREW (CONFLICTS WITH APT)
+sudo apt-get install build-essential
+
+- [ ] install recommanded GCC: OBSOLETE: USE APT
+brew install gcc
+
+- [ ] install rbenv (the actual ruby version manager): OBSOLETE: USE APT
+brew install rbenv
+brew upgrade rbenv
+
+- [ ] add rbenv to the PATH:
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+exec $SHELL
+
+### Steps #3-4: OK
+
+### Step #5: install the required gems using Bundler:
+
+* ERROR case: missing PostgreSQL client library
+ * Fix: install libpq or postgresql client package like so:
+```
+sudo apt install libpq-dev
+```
+
+ * then run again:
+```
+bundle
+```
+
+* ERROR case: CMake required
+ * Fix:
+```
+sudo apt install cmake
+```
+
+also installed, but not sure it's required:
+```
+sudo apt install ruby-rugged
+```
+
+* ERROR case: not sure why...
+Seems to be a problem related to libgit2 and OpenSSL.
+lib-git2-28 was already installed. Installed lib-git2-deb, but still fails.
+
+* In case some libraries were installed with homebrew on Ubuntu:
+```
+brew uninstall rbenv
+remove rbenv from the PATH in .bashrc
+```
+Then install rvm : 
+```
+https://rvm.io/rvm/install and https://github.com/rvm/ubuntu_rvm
+```
+
+## CLONE CUSTOM FORK TO DIFFERENT LOCAL DESTINATION FOR FRESH INSTALL (with
+clean DB)
+
+- [ ] clone your fork
+
+- [ ] Prerequisite: make sure that the correct version of ruby is used (rvm
+checks the version every time the current dir changes):
+cd..;cd consuldemocracy
+
+It should be enough to copy and update the following:
+- [ ] config/database.yml
+- [ ] config/secrets.yml
+- [ ] config/deploy-secrets.yml
+
+- [ ] Push the changes, if any:
+git add .
+git commit -a -m "Add sample text to homepage"
+git push origin stable
+
+- [ ] deploy:
+./deploy-capistrano.sh

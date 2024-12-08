@@ -1,0 +1,91 @@
+# Installation notes for a remote prod server
+
+To complement the installer's [README](https://github.com/LaRoqueEnCommun/installer)
+
+## Setup a new remote production server (e.g. on Gandi.net)
+
+Server config:
+ * 1Gb RAM
+ * Ubuntu 22.04 (the installer failed with Ubuntu 24.04, but it might just be a python issue)
+
+### create/update the ReverseDNS record for the subdomain: 
+ E.g., in gandi.net>Domain names>yourDomain.ext>DNS records:
+add the following record via the form, and/or check the IP address (here, for a subdomain):
+```
+subdomain	A	10800	00.000.00.000
+```
+
+### on the remote host:
+```
+sudo apt update
+sudo apt upgrade -y
+```
+
+### on the remote host: create and setup a 2Gb swap file:
+ - [ ] create the file:
+```
+sudo dd if=/dev/zero of=/mnt/2Gbfile.swap bs=1024 count=2097152
+sudo chmod 600 /mnt/2Gbfile.swap
+sudo mkswap /mnt/2Gbfile.swap
+sudo swapon /mnt/2Gbfile.swap
+echo '/mnt/2Gbfile.swap swap swap defaults 0 0' | sudo tee -a /etc/fstab
+```
+ - [ ] verification:
+```
+cat /proc/swaps
+```
+### install python 3.13 on the remote server:
+```
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+sudo apt install python3.13
+```
+
+### update the local ssh fingerprint (user: "doe") for the remote server:
+```
+ssh-keygen -f "/home/doe/.ssh/known_hosts" -R "subdomain.yourDomain.foo"
+```
+
+### copy the public ssh key to the remote server (my user is 'ubuntu' instead of 'root'):
+```
+ssh-copy-id -i ~/.ssh/id_rsa.pub ubuntu@subdomain.yourDomain.foo
+```
+
+### confirm root access for the user:
+```
+ssh ubuntu@subdomain.yourDomain.foo
+```
+### manage repositories 
+ - clone your fork
+ - add the upstream main repo
+ - fetch the tags
+ - checkout the latest stable version on a new branch
+```
+git clone git@github.com:LaRoqueEnCommun/installer.git;cd installer
+git remote add upstream git@github.com:consuldemocracy/installer.git
+git fetch upstream --tags
+git checkout 2.1.1 -b stable
+```
+
+## Go through the [README](https://github.com/LaRoqueEnCommun/installer)
+(except the cloning stage)
+
+### Update the IP addr in config files (group_vars/all, hosts, )
+
+### in installer/group_vars/all: set the group of the deploy user to sudo:
+```
+deploy_group: sudo
+```
+### in installer/group_vars/all: uncomment and set the domain var:
+```
+domain: subdomain.yourDomain.foo
+```
+### uncomment letsencrypt_email in the local config file and set its value:
+```
+letsencrypt_email: "contact@yourDomain.foo"
+```
+### create installer/hosts file with the line:
+```
+00.000.00.000 ansible_user=ubuntu ansible_ssh_extra_args='-o StrictHostKeyChecking=no' ansible_port=22
+```
+

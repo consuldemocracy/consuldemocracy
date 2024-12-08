@@ -1,0 +1,16 @@
+- [ ] add the main repository:
+```
+git remote add upstream git@github.com:consuldemocracy/consuldemocracy.git
+```
+and then try:
+```
+git fetch upstream --tags
+```
+before checking out the latest version on a new branch:
+```
+git checkout 2.1.1 -b stable
+```
+
+- [ ] restoration of `app/assets/stylesheets/foundation_and_overrides.scss` and `package-lock.json`
+
+- [ ] change file path: config/deploy.rb

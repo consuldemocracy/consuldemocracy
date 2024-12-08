@@ -1,0 +1,20 @@
+#
+# Author: Jean-Philippe.Prost@univ-amu.fr
+# Creation: 9 Nov 2024
+# History of versions:
+# - v1: (current)
+#
+###########################################################################
+
+To be able to use the scripts in this directory, first copy and paste them in
+bin/custom. You may have to create the custom/ directory.
+You can, then, proceed with the customisation of the scripts you are interested
+in.
+The backup-content.sh and restore-content.sh ones will not work without the
+required custom values, such as the target domain name.
+How to customize and use these two scripts is detailed in each file.
+
+Please note that these scripts are provided with absolutely no guarantee or
+warranty at all. Use them at your own risk.
+
+#eof
