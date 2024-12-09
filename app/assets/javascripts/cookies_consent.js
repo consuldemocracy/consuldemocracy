@@ -19,6 +19,10 @@
     vendors: function() {
       return $(".cookies-vendors input[type=checkbox]:not([disabled])");
     },
+    cookieName: function() {
+      var versionName = $("#cookies_consent_setup").data("version-name");
+      return "cookies_consent_" + versionName;
+    },
     dispatchCookieAllowanceEvent: function(name) {
       var event = new CustomEvent(name + "_consented");
       document.dispatchEvent(event);
@@ -29,7 +33,7 @@
     },
     initialize: function() {
       $(".accept-all-cookies").on("click", function() {
-        App.Cookies.saveCookie("cookies_consent", "all", 365);
+        App.Cookies.saveCookie(App.CookiesConsent.cookieName(), "all", 365);
         App.CookiesConsent.vendors().each(function() {
           App.Cookies.saveCookie(this.name, true, 365);
           App.CookiesConsent.dispatchCookieAllowanceEvent(this.name);
@@ -40,7 +44,7 @@
       });
 
       $(".accept-essential-cookies").on("click", function() {
-        App.Cookies.saveCookie("cookies_consent", "essential", 365);
+        App.Cookies.saveCookie(App.CookiesConsent.cookieName(), "essential", 365);
         App.CookiesConsent.vendors().each(function() {
           App.Cookies.saveCookie(this.name, false, 365);
           App.CookiesConsent.dispatchCookieRejectionEvent(this.name);
@@ -51,7 +55,7 @@
       });
 
       $(".save-cookies-preferences").on("click", function() {
-        App.Cookies.saveCookie("cookies_consent", "custom", 365);
+        App.Cookies.saveCookie(App.CookiesConsent.cookieName(), "custom", 365);
         App.CookiesConsent.vendors().each(function() {
           App.Cookies.saveCookie(this.name, this.checked, 365);
           if (this.checked) {
