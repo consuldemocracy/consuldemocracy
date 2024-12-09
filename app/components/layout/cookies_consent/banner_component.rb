@@ -13,6 +13,6 @@ class Layout::CookiesConsent::BannerComponent < Layout::CookiesConsent::BaseComp
   private
 
     def cookies_consent_unset?
-      cookies["cookies_consent"].blank?
+      cookies["cookies_consent_#{version_name}"].blank?
     end
 end
