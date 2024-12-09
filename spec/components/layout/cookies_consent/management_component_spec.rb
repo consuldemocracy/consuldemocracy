@@ -22,6 +22,7 @@ describe Layout::CookiesConsent::ManagementComponent do
     expect(page).to have_link "More information about cookies", href: "/cookies_policy"
     expect(page).to have_css "h3", text: "Essential cookies"
     expect(page).to have_css ".switch-input[type='checkbox'][name='essential_cookies'][disabled][checked]"
+    expect(page).to have_css "h3", text: "Third party cookies"
     expect(page).to have_button "Accept all"
     expect(page).to have_button "Accept essential cookies"
   end
