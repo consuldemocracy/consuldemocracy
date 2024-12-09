@@ -935,6 +935,7 @@ es:
     comments_summary: "Resumen de comentarios"
     info_text: "Contenido generado mediante IA / Machine Learning"
   cookies_consent:
+    accept_all_cookies: "Aceptar todo"
     accept_essential_cookies: "Aceptar cookies esenciales"
     message: "Las cookies nos ayudan a ofrecer nuestros servicios. Al utilizar nuestros servicios, aceptas el uso de cookies."
     more_info_link: "Más información"
@@ -949,4 +950,5 @@ es:
       description: Utilizadas para finalidades muy diversas, como por ejemplo, reconocerte como usuario, elegir el idioma o personalizar la forma en la que se muestra el contenido. Sin estas las funciones básicas de navegación se verán perjudicadas, por eso deben estar siempre activas.
       button:
         description: Without these, basic navigation functions will be impaired, so they should always be active.
+    accept_all_cookies: Aceptar todo
     accept_essential_cookies: Aceptar cookies esenciales

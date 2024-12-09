@@ -28,6 +28,7 @@ describe Layout::CookiesConsent::BannerComponent do
     expect(page).to have_css ".cookies-consent-banner"
     expect(page).to have_css "h2", text: "Cookies policy"
     expect(page).to have_link "More information", href: "/cookies_policy"
+    expect(page).to have_button "Accept all"
     expect(page).to have_button "Accept essential cookies"
     expect(page).to have_button "Setup"
   end
