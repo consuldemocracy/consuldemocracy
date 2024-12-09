@@ -29,7 +29,7 @@
         <li><%= link_to t("layouts.footer.conditions"), page_path("conditions") %></li>
         <li><%= link_to t("layouts.footer.accessibility"), page_path("accessibility") %></li>
         <% if feature?(:cookies_consent) %>
-          <li>
+          <li class="cookies-consent-management-footer-content">
             <a href="#cookies_consent_management" data-open="cookies_consent_management">
               <%= t("layouts.footer.cookies_consent_management") %>
             </a>
