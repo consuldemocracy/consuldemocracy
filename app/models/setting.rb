@@ -184,7 +184,8 @@ class Setting < ApplicationRecord
         "sdg.process.polls": true,
         "sdg.process.budgets": true,
         "sdg.process.legislation": true,
-        "cookies_consent.more_info_link": ""
+        "cookies_consent.more_info_link": "",
+        "cookies_consent.version_name": "v1"
       }
     end
 
