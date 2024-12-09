@@ -6,4 +6,8 @@ class Layout::CookiesConsent::BaseComponent < ApplicationComponent
   def more_info_link
     Setting["cookies_consent.more_info_link"]
   end
+
+  def vendors
+    Cookies::Vendor.all
+  end
 end

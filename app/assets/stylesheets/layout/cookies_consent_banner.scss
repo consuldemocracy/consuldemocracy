@@ -14,9 +14,14 @@
       width: 100%;
     }
 
+    &.accept-all-cookies,
     &.accept-essential-cookies {
       @include regular-button;
       margin-bottom: 0;
+
+      @include breakpoint(small only) {
+        margin-bottom: $line-height / 3;
+      }
     }
 
     &.manage-cookies {

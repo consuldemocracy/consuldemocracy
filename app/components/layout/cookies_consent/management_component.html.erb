@@ -25,6 +25,9 @@
   </div>
 
   <div class="buttons">
+    <% if vendors.any? %>
+      <button type="button" class="accept-all-cookies"><%= t("cookies_consent.accept_all_cookies") %></button>
+    <% end %>  
     <button type="button" class="accept-essential-cookies"><%= t("cookies_consent.accept_essential_cookies") %></button>
   </div>
 </section>
