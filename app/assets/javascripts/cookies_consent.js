@@ -14,6 +14,12 @@
       App.Callout.show(new DOMParser().parseFromString(callout, "text/html").documentElement.textContent);
     },
     initialize: function() {
+      $(".accept-all-cookies").on("click", function() {
+        App.Cookies.saveCookie("cookies_consent", "all", 365);
+        App.CookiesConsent.showCallout();
+        App.CookiesConsent.hide();
+      });
+
       $(".accept-essential-cookies").on("click", function() {
         App.Cookies.saveCookie("cookies_consent", "essential", 365);
         App.CookiesConsent.showCallout();
