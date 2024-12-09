@@ -162,6 +162,7 @@ class Setting < ApplicationRecord
         "featured_proposals_number": 3,
         "feature.dashboard.notification_emails": nil,
         "cookies_consent.more_info_link": "",
+        "cookies_consent.version_name": "v1",
         "machine_learning.comments_summary": false,
         "machine_learning.related_content": false,
         "machine_learning.tags": false,

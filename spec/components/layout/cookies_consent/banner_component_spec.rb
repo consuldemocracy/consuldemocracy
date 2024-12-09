@@ -4,7 +4,7 @@ describe Layout::CookiesConsent::BannerComponent do
   before { Setting["feature.cookies_consent"] = true }
 
   it "does not render the banner when cookies were accepted" do
-    vc_test_request.cookies[:cookies_consent] = "essential"
+    vc_test_request.cookies[:cookies_consent_v1] = "essential"
 
     render_inline Layout::CookiesConsent::BannerComponent.new
 

@@ -10,4 +10,8 @@ class Layout::CookiesConsent::BaseComponent < ApplicationComponent
   def vendors
     Cookies::Vendor.all
   end
+
+  def version_name
+    Setting["cookies_consent.version_name"].to_s.strip
+  end
 end
