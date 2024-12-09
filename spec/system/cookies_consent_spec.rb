@@ -20,6 +20,23 @@ describe "Cookies consent" do
 
       expect(page).not_to have_css ".cookies-consent-banner"
     end
+
+    scenario "Hides the banner when accept all cookies and for consecutive visits" do
+      visit root_path
+
+      expect(cookie_by_name("cookies_consent")).to be nil
+
+      within ".cookies-consent-banner" do
+        click_button "Accept all"
+      end
+
+      expect(cookie_by_name("cookies_consent")[:value]).to eq "all"
+      expect(page).not_to have_css ".cookies-consent-banner"
+
+      refresh
+
+      expect(page).not_to have_css ".cookies-consent-banner"
+    end
   end
 
   context "Setup modal" do
@@ -37,6 +54,28 @@ describe "Cookies consent" do
       end
 
       expect(cookie_by_name("cookies_consent")[:value]).to eq "essential"
+      expect(page).not_to have_css ".cookies-consent-banner"
+      expect(page).not_to have_css ".cookies-consent-setup"
+
+      refresh
+
+      expect(page).not_to have_css ".cookies-consent-banner"
+    end
+
+    scenario "Allow users to accept all cookies from the cookies setup modal" do
+      visit root_path
+
+      expect(cookie_by_name("cookies_consent")).to be nil
+
+      within ".cookies-consent-banner" do
+        click_button "Setup"
+      end
+
+      within ".cookies-consent-setup" do
+        click_button "Accept all"
+      end
+
+      expect(cookie_by_name("cookies_consent")[:value]).to eq "all"
       expect(page).not_to have_css ".cookies-consent-banner"
       expect(page).not_to have_css ".cookies-consent-setup"
 
