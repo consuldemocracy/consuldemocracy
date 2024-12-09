@@ -74,13 +74,7 @@ This tutorial assumes that you have already managed to clone Consul Democracy on
   heroku buildpacks:add heroku/nodejs
   ```
 
-  In _Gemfile_, add the ruby version and run bundle:
-
-  ```Gemfile
-  ruby file: ".ruby-version"
-  ```
-
-  and apply:
+  Run `bundle` and apply:
 
   ```bash
   heroku buildpacks:set heroku/ruby
