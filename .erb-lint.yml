@@ -13,6 +13,7 @@ linters:
     enabled: true
     exclude:
       - app/components/budgets/investments/content_blocks_component.html.erb
+      - app/components/layout/cookies_consent/vendors/scripts_component.html.erb
       - app/components/layout/footer_component.html.erb
       - app/components/layout/social_component.html.erb
       - app/components/layout/subnavigation_component.html.erb
