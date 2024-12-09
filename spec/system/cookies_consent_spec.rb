@@ -3,7 +3,8 @@ require "rails_helper"
 describe "Cookies consent" do
   before do
     Setting["feature.cookies_consent"] = true
-    create(:cookies_vendor, name: "Third party", cookie: "third_party" )
+    script = "$('body').append('Running third party script');"
+    create(:cookies_vendor, name: "Third party", cookie: "third_party", script: script)
   end
 
   context "Banner consent" do
@@ -12,6 +13,7 @@ describe "Cookies consent" do
 
       expect(cookie_by_name("cookies_consent")).to be nil
       expect(cookie_by_name("third_party")).to be nil
+      expect(page).not_to have_content "Running third party script"
 
       within ".cookies-consent-banner" do
         click_button "Accept essential cookies"
@@ -20,6 +22,7 @@ describe "Cookies consent" do
       expect(cookie_by_name("cookies_consent")[:value]).to eq "essential"
       expect(cookie_by_name("third_party")[:value]).to eq "false"
       expect(page).not_to have_css ".cookies-consent-banner"
+      expect(page).not_to have_content "Running third party script"
       expect(page).to have_content "Your cookies preferences were saved."
 
       refresh
@@ -32,6 +35,7 @@ describe "Cookies consent" do
 
       expect(cookie_by_name("cookies_consent")).to be nil
       expect(cookie_by_name("third_party")).to be nil
+      expect(page).not_to have_content "Running third party script"
 
       within ".cookies-consent-banner" do
         click_button "Accept all"
@@ -40,6 +44,7 @@ describe "Cookies consent" do
       expect(cookie_by_name("cookies_consent")[:value]).to eq "all"
       expect(cookie_by_name("third_party")[:value]).to eq "true"
       expect(page).not_to have_css ".cookies-consent-banner"
+      expect(page).to have_content "Running third party script", count: 1
       expect(page).to have_content "Your cookies preferences were saved."
 
       refresh
@@ -54,6 +59,7 @@ describe "Cookies consent" do
 
       expect(cookie_by_name("cookies_consent")).to be nil
       expect(cookie_by_name("third_party")).to be nil
+      expect(page).not_to have_content "Running third party script"
 
       within ".cookies-consent-banner" do
         click_button "Setup"
@@ -67,6 +73,7 @@ describe "Cookies consent" do
       expect(cookie_by_name("third_party")[:value]).to eq "false"
       expect(page).not_to have_css ".cookies-consent-banner"
       expect(page).not_to have_css ".cookies-consent-setup"
+      expect(page).not_to have_content "Running third party script"
       expect(page).to have_content "Your cookies preferences were saved."
 
       refresh
@@ -79,6 +86,7 @@ describe "Cookies consent" do
 
       expect(cookie_by_name("cookies_consent")).to be nil
       expect(cookie_by_name("third_party")).to be nil
+      expect(page).not_to have_content "Running third party script"
 
       within ".cookies-consent-banner" do
         click_button "Setup"
@@ -92,6 +100,7 @@ describe "Cookies consent" do
       expect(cookie_by_name("third_party")[:value]).to eq "true"
       expect(page).not_to have_css ".cookies-consent-banner"
       expect(page).not_to have_css ".cookies-consent-setup"
+      expect(page).to have_content "Running third party script", count: 1
       expect(page).to have_content "Your cookies preferences were saved."
 
       refresh
@@ -120,11 +129,28 @@ describe "Cookies consent" do
       expect(cookie_by_name("third_party")[:value]).to eq "true"
       expect(page).not_to have_css ".cookies-consent-banner"
       expect(page).not_to have_css ".cookies-consent-setup"
+      expect(page).to have_content "Running third party script", count: 1
       expect(page).to have_content "Your cookies preferences were saved."
 
       refresh
 
+      expect(page).to have_content "Running third party script", count: 1
       expect(page).not_to have_css ".cookies-consent-banner"
+
+      click_link "Cookies setup"
+
+      within ".cookies-consent-setup" do
+        expect(find("label[for='third_party']")).to be_checked
+        find("label[for='third_party']").click
+
+        click_button "Save preferences"
+      end
+
+      expect(page).to have_content "Running third party script", count: 1
+
+      refresh
+
+      expect(page).to have_content "Running third party script", count: 0
     end
   end
 end
