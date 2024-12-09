@@ -944,11 +944,15 @@ es:
     title: "Política de cookies"
   cookies_setup:
     title: Configuración de cookies
-    description: Esta web utiliza cookies propias para su correcto funcionamiento. Al hacer click en el botón Aceptar cookies esenciales, acepta el uso de estas tecnologías y el procesamiento de tus datos para estos propósitos.
+    description: Esta web utiliza cookies propias y de terceros para su correcto funcionamiento. Al hacer click en el botón Aceptar todo, acepta el uso de estas tecnologías y el procesamiento de tus datos para estos propósitos.
     essentials:
       title: Cookies esenciales
       description: Utilizadas para finalidades muy diversas, como por ejemplo, reconocerte como usuario, elegir el idioma o personalizar la forma en la que se muestra el contenido. Sin estas las funciones básicas de navegación se verán perjudicadas, por eso deben estar siempre activas.
       button:
         description: Without these, basic navigation functions will be impaired, so they should always be active.
+    third_party:
+      title: Cookies de terceros
+      description: Esta web usa cookies de terceros para recopilar información anónima tal como el número de visitantes del sitio, o las páginas más populares. Activar estas cookies nos permite mejorar nuestra web.
     accept_all_cookies: Aceptar todo
     accept_essential_cookies: Aceptar cookies esenciales
+    save_preferences: Guardar preferencias

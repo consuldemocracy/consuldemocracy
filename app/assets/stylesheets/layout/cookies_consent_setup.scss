@@ -34,6 +34,15 @@
         margin-bottom: $line-height / 3;
       }
     }
+
+    &.save-cookies-preferences {
+      @include hollow-button;
+    }
+  }
+
+  .save-preferences {
+    display: flex;
+    flex-direction: row-reverse;
   }
 
   .cookies-vendors {

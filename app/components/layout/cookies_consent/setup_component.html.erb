@@ -24,6 +24,10 @@
     </ul>
   </div>
 
+  <h3><%= t("cookies_setup.third_party.title") %></h3>
+  <p><%= t("cookies_setup.third_party.description") %></p>
+  <%= render Cookies::VendorsComponent.new %>
+
   <hr>
 
   <button type="button" class="accept-all-cookies"><%= t("cookies_setup.accept_all_cookies") %></button>
