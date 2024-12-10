@@ -5,6 +5,9 @@
       if ($("#cookies_consent_banner").length > 0) {
         $("#cookies_consent_banner").hide();
       }
+      if ($("#cookies_consent_setup").length > 0) {
+        $("#cookies_consent_setup").foundation("close");
+      }
     },
     showCallout: function() {
       var callout = $("#cookies_consent_banner").data("notice");
