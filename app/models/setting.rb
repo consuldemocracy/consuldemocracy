@@ -75,6 +75,7 @@ class Setting < ApplicationRecord
         "feature.user.recommendations": true,
         "feature.user.recommendations_on_debates": true,
         "feature.user.recommendations_on_proposals": true,
+        "feature.hide_comments": false,
         "feature.user.skip_verification": "true",
         "feature.community": true,
         "feature.map": nil,

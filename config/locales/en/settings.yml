@@ -140,6 +140,8 @@ en:
       demographics_description: "Enable users to manage gender DOB and Geozone"
       cookies_consent: Cookies consent banner
       cookies_consent_description: Enable the cookies consent banner to inform users about the cookies the application uses.
+      hide_comments: "Hide Comments"
+      hide_comments_description: "Disable commenting on proposals"
     remote_census:
       general:
         endpoint: "Endpoint"
