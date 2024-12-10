@@ -21,4 +21,16 @@ describe "Cookies consent" do
       expect(page).not_to have_content "Cookies policy"
     end
   end
+
+  context "Management modal" do
+    scenario "Allow users access to cookies management modal" do
+      visit root_path
+
+      within ".cookies-consent-banner" do
+        click_button "Manage cookies"
+      end
+
+      expect(page).to have_css "h2", text: "Cookies management"
+    end
+  end
 end

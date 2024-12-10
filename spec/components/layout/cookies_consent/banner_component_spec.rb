@@ -28,6 +28,7 @@ describe Layout::CookiesConsent::BannerComponent do
     expect(page).to have_css "h2", text: "Cookies policy"
     expect(page).to have_link "More information about cookies", href: "/cookies_policy"
     expect(page).to have_button "Accept essential cookies"
+    expect(page).to have_button "Manage cookies"
   end
 
   it "does not render a link when the setting `cookies_consent.more_info_link` is not defined" do

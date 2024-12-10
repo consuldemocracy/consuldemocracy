@@ -18,5 +18,9 @@
       @include regular-button;
       margin-bottom: 0;
     }
+
+    &.manage-cookies {
+      @include hollow-button;
+    }
   }
 }
