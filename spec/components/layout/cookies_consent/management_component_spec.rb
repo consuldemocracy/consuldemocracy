@@ -17,5 +17,6 @@ describe Layout::CookiesConsent::ManagementComponent do
     expect(page).to be_rendered
     expect(page).to have_css "h2", text: "Cookies management"
     expect(page).to have_css "h3", text: "Essential cookies"
+    expect(page).to have_button "Accept essential cookies"
   end
 end

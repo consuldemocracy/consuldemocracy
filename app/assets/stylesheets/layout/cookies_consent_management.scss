@@ -13,4 +13,21 @@
   .close-button {
     @include modal-close-button;
   }
+
+  .buttons {
+    border-top: 1px solid $medium-gray;
+    padding-top: $line-height;
+
+    button {
+      @include breakpoint(small only) {
+        display: block;
+        width: 100%;
+      }
+
+      &.accept-essential-cookies {
+        @include regular-button;
+        margin-bottom: 0;
+      }
+    }
+  }
 }

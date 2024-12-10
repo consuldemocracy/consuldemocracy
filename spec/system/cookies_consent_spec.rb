@@ -23,14 +23,26 @@ describe "Cookies consent" do
   end
 
   context "Management modal" do
-    scenario "Allow users access to cookies management modal" do
+    scenario "Allow users to accept essential cookies and hide management modal" do
       visit root_path
+
+      expect(cookie_by_name("cookies_consent")).to be nil
 
       within ".cookies-consent-banner" do
         click_button "Manage cookies"
       end
 
-      expect(page).to have_css "h2", text: "Cookies management"
+      within ".cookies-consent-management" do
+        click_button "Accept essential cookies"
+      end
+
+      expect(cookie_by_name("cookies_consent")[:value]).to eq "essential"
+      expect(page).not_to have_content "Cookies policy"
+      expect(page).not_to have_content "Cookies management"
+
+      refresh
+
+      expect(page).not_to have_content "Cookies policy"
     end
   end
 end
