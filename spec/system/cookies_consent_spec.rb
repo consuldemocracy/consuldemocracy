@@ -15,6 +15,7 @@ describe "Cookies consent" do
 
       expect(cookie_by_name("cookies_consent")[:value]).to eq "essential"
       expect(page).not_to have_css ".cookies-consent-banner"
+      expect(page).to have_content "Your cookies preferences were saved."
 
       refresh
 

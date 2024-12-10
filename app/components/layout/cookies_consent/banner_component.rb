@@ -5,6 +5,11 @@ class Layout::CookiesConsent::BannerComponent < ApplicationComponent
     feature?(:cookies_consent) && cookies_consent_unset?
   end
 
+  def notice
+    CGI::escapeHTML(render Layout::CalloutComponent.new(id: "cookies-settings-callout",
+                                                        message: t("cookies_consent.notice")))
+  end
+
   private
 
     def cookies_consent_unset?
