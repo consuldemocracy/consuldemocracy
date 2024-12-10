@@ -138,6 +138,8 @@ en:
       sdg_description: Enable Sustainable Development Goals sections in the administration menu and in the Global Settings.
       demographics: "Demographics"
       demographics_description: "Enable users to manage gender DOB and Geozone"
+      hide_comments: "Hide Comments"
+      hide_comments_description: "Disable commenting on proposals"
     remote_census:
       general:
         endpoint: "Endpoint"
