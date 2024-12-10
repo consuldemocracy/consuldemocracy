@@ -7,4 +7,16 @@
   position: fixed;
   right: $line-height / 3;
   z-index: 20;
+
+  button {
+    @include breakpoint(small only) {
+      display: block;
+      width: 100%;
+    }
+
+    &.accept-essential-cookies {
+      @include regular-button;
+      margin-bottom: 0;
+    }
+  }
 }

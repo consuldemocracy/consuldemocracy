@@ -934,5 +934,6 @@ es:
     comments_summary: "Resumen de comentarios"
     info_text: "Contenido generado mediante IA / Machine Learning"
   cookies_consent:
+    accept_essential_cookies: "Aceptar cookies esenciales"
     message: "Las cookies nos ayudan a ofrecer nuestros servicios. Al utilizar nuestros servicios, aceptas el uso de cookies."
     title: "Política de cookies"
