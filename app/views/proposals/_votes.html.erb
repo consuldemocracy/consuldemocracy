@@ -1,6 +1,5 @@
-<% hide_proposal_votes = Rails.application.secrets.fetch(:hide_proposal_votes, false) %>
-
-<% if Rails.application.secrets.hide_proposal_votes %>
+<% hide_proposal_votes = Tenant.current_secrets.hide_proposal_votes || false %>
+<% if hide_proposal_votes %>
   <div class="share-supported">
     <%= render "proposals/social_share", proposal: proposal, share_title: false %>
   </div>
