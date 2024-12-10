@@ -20,5 +20,9 @@
       @include regular-button;
       margin-bottom: 0;
     }
+
+    &.setup {
+      @include hollow-button;
+    }
   }
 }
