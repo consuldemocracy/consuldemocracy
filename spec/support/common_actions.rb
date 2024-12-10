@@ -4,6 +4,7 @@ Dir["./spec/support/common_actions/custom/*.rb"].each { |f| require f }
 module CommonActions
   include Budgets
   include Comments
+  include Cookies
   include Debates
   include Documents
   include Emails
