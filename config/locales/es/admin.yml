@@ -1352,6 +1352,10 @@ es:
         sdg:
           title: Configuración ODS
           how_to_enable: 'Para mostrar las opciones de configuración de los Objetivos de Desarrollo Sostenible se debe activar "ODS" en la pestaña "Funcionalidades".'
+        cookies_consent:
+          title: Consentimiento de cookies
+        cookies_consent_banner:
+          title: Banner de consentimiento de cookies
       remote_census_general_name: Datos Generales
       remote_census_request_name: Datos Petición
       remote_census_response_name: Datos Respuesta

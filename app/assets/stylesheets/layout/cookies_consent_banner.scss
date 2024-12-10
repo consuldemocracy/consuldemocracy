@@ -1,0 +1,10 @@
+.cookies-consent-banner {
+  background: $white;
+  border: 1px solid $brand;
+  bottom: $line-height / 3;
+  left: $line-height / 3;
+  padding: 2rem;
+  position: fixed;
+  right: $line-height / 3;
+  z-index: 9;
+}
