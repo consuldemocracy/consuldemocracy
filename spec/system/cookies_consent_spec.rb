@@ -22,4 +22,17 @@ describe "Cookies consent" do
       expect(page).not_to have_css ".cookies-consent-banner"
     end
   end
+
+  context "Setup modal" do
+    scenario "Allow users access to cookies setup modal" do
+      visit root_path
+
+      within ".cookies-consent-banner" do
+        click_button "Setup"
+      end
+
+      expect(page).not_to have_css ".cookies-consent-banner"
+      expect(page).to have_css ".cookies-consent-setup"
+    end
+  end
 end

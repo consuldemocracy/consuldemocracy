@@ -938,6 +938,7 @@ es:
     message: "Las cookies nos ayudan a ofrecer nuestros servicios. Al utilizar nuestros servicios, aceptas el uso de cookies."
     more_info_link: "Más información"
     notice: "Tus preferencias de cookies se han guardado."
+    setup: "Ajustes"
     title: "Política de cookies"
   cookies_setup:
     title: Configuración de cookies
