@@ -3,6 +3,15 @@ require "rails_helper"
 describe Layout::CookiesConsent::BannerComponent do
   before { Setting["feature.cookies_consent"] = true }
 
+  it "does not render the banner when cookies were accepted" do
+    allow_any_instance_of(Layout::CookiesConsent::BannerComponent).to receive(:cookies_consent_unset?)
+                                                                  .and_return(false)
+
+    render_inline Layout::CookiesConsent::BannerComponent.new
+
+    expect(page).not_to have_css ".cookies-consent-banner"
+  end
+
   it "does not render the banner when feature `cookies_consent` is disabled" do
     Setting["feature.cookies_consent"] = nil
 
@@ -11,7 +20,7 @@ describe Layout::CookiesConsent::BannerComponent do
     expect(page).not_to have_css ".cookies-consent-banner"
   end
 
-  it "renders the banner content when feature `cookies_consent` is enabled" do
+  it "renders the banner content when feature `cookies_consent` is enabled and cookies were not accepted" do
     render_inline Layout::CookiesConsent::BannerComponent.new
 
     expect(page).to have_css ".cookies-consent-banner"

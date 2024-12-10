@@ -113,6 +113,7 @@
 //= require globalize
 //= require settings
 //= require cookies
+//= require cookies_consent
 //= require columns_selector
 //= require budget_edit_associations
 //= require budget_hide_money
@@ -179,6 +180,7 @@ var initialize_modules = function() {
   App.SDGRelatedListSelector.initialize();
   App.SDGManagementRelationSearch.initialize();
   App.AuthenticityTokenRefresh.initialize();
+  App.CookiesConsent.initialize();
 };
 
 var destroy_non_idempotent_modules = function() {
