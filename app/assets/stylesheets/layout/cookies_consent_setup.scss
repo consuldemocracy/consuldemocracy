@@ -14,6 +14,20 @@
     right: auto;
     top: auto;
   }
+
+  button {
+    font-weight: bold;
+
+    @include breakpoint(small only) {
+      display: block;
+      width: 100%;
+    }
+
+    &.accept-essential-cookies {
+      @include regular-button;
+      margin-bottom: 0;
+    }
+  }
 }
 
 .is-reveal-open {

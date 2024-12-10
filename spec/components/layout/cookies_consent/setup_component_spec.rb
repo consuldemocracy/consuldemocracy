@@ -17,5 +17,6 @@ describe Layout::CookiesConsent::SetupComponent do
     expect(page).to have_css ".cookies-consent-setup"
     expect(page).to have_css "h2", text: "Cookies setup"
     expect(page).to have_css "h3", text: "Essential cookies"
+    expect(page).to have_button "Accept essential cookies"
   end
 end
