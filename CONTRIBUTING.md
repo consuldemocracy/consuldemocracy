@@ -37,6 +37,7 @@ If you'd like us to review your pull request in good spirits, please follow our 
 * Run `bundle exec pronto run` and fix any issues it reports; these issues will also be automatically reported on the pull request
 * Follow [the seven rules of a great commit message](https://chris.beams.io/posts/git-commit/)
 * Add or modify i18n translations only in the base languages, English (en) and Spanish (es); we manage all other languages through the [Crowdin integration](https://translate.consuldemocracy.org/).
+* Check the [coding conventions documentation file](docs/en/open_source/coding_conventions.md) for more information.
 
 When we review your pull request and ask for changes, if you're proficient using `git rebase` edit existing commits instead of adding new ones. If you aren't proficient with `git rebase`, ignore this point.
 

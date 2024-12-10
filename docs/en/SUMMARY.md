@@ -55,4 +55,5 @@
 * [Open Source project](open_source/open_source.md)
   * [Code of conduct](open_source/code_of_conduct.md)
   * [Contributing](open_source/contributing.md)
+  * [Coding conventions](open_source/coding_conventions.md)
   * [License](open_source/license.md)
