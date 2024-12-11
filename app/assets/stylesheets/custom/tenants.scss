@@ -109,3 +109,15 @@
    @import "cosla_shared";
    @include shared-styles;
 }
+
+.tenant-edi {
+  --brand:     #6D3465;
+  --brand-secondary: #492445;
+  --brand-contrast: #FFFFFF;
+  --footer: #D0E0F4;
+  --main-header-contrast: #FFFFFF;
+   --top-links: var(--brand-secondary);
+  --top-links-contrast: #FFFFFF;
+  @import "cosla_shared";
+   @include shared-styles;
+}
