@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_08_08_133334) do
+ActiveRecord::Schema[7.0].define(version: 2024_09_13_114407) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -248,6 +248,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_08_133334) do
     t.integer "max_ballot_lines", default: 1
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
+    t.boolean "geozone_restricted", default: false
+    t.integer "geozone_ids", default: [], array: true
     t.index ["geozone_id"], name: "index_budget_headings_on_geozone_id"
     t.index ["group_id"], name: "index_budget_headings_on_group_id"
   end
@@ -307,8 +309,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_08_133334) do
     t.string "video_url"
     t.bigint "estimated_price"
     t.text "summary"
-    t.string "topic"
-    t.text "inv_summary"
     t.index ["administrator_id"], name: "index_budget_investments_on_administrator_id"
     t.index ["author_id"], name: "index_budget_investments_on_author_id"
     t.index ["budget_id"], name: "index_budget_investments_on_budget_id"
@@ -408,6 +408,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_08_133334) do
     t.string "voting_style", default: "knapsack"
     t.boolean "published"
     t.boolean "hide_money", default: false
+    t.boolean "stv"
+    t.integer "stv_winners"
+    t.boolean "part_fund"
   end
 
   create_table "campaigns", id: :serial, force: :cascade do |t|
@@ -1251,6 +1254,12 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_08_133334) do
     t.index ["starts_at", "ends_at"], name: "index_polls_on_starts_at_and_ends_at"
   end
 
+  create_table "postcodes", force: :cascade do |t|
+    t.string "postcode"
+    t.string "ward"
+    t.integer "geozone_id"
+  end
+
   create_table "progress_bar_translations", id: :serial, force: :cascade do |t|
     t.integer "progress_bar_id", null: false
     t.string "locale", null: false
@@ -1646,6 +1655,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_08_133334) do
     t.integer "failed_attempts", default: 0, null: false
     t.datetime "locked_at", precision: nil
     t.string "unlock_token"
+    t.boolean "guest", default: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["date_of_birth"], name: "index_users_on_date_of_birth"
     t.index ["email"], name: "index_users_on_email", unique: true
