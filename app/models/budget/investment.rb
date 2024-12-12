@@ -15,6 +15,7 @@ class Budget
     include Documentable
     include SDG::Relatable
     include Videoable
+    include HasPublicAuthor
 
     acts_as_taggable_on :valuation_tags
     acts_as_votable
@@ -77,13 +78,13 @@ class Budget
 
     scope :valuation_open,              -> { where(valuation_finished: false) }
     scope :with_admin,                  -> { where.not(administrator_id: nil) }
-    scope :without_admin,               -> { where(administrator_id: nil) }
+    scope :without_admin,               -> { excluding(with_admin) }
     scope :without_valuator_group,      -> { where(valuator_group_assignments_count: 0) }
     scope :without_valuator,            -> { without_valuator_group.where(valuator_assignments_count: 0) }
     scope :under_valuation,             -> { valuation_open.valuating.with_admin }
     scope :managed,                     -> { valuation_open.where(valuator_assignments_count: 0).with_admin }
-    scope :with_valuator_assignments,   -> { where("valuator_assignments_count > 0") }
-    scope :with_group_assignments,      -> { where("valuator_group_assignments_count > 0") }
+    scope :with_valuator_assignments,   -> { where(valuator_assignments_count: 1..) }
+    scope :with_group_assignments,      -> { where(valuator_group_assignments_count: 1..) }
     scope :with_valuation_assignments,  -> { with_valuator_assignments.or(with_group_assignments) }
     scope :valuating,                   -> { valuation_open.with_valuation_assignments }
     scope :visible_to_valuators,        -> { where(visible_to_valuators: true) }
@@ -91,8 +92,9 @@ class Budget
     scope :valuation_finished_feasible, -> { where(valuation_finished: true, feasibility: "feasible") }
     scope :feasible,                    -> { where(feasibility: "feasible") }
     scope :unfeasible,                  -> { where(feasibility: "unfeasible") }
-    scope :not_unfeasible,              -> { where.not(feasibility: "unfeasible") }
+    scope :not_unfeasible,              -> { excluding(unfeasible) }
     scope :undecided,                   -> { where(feasibility: "undecided") }
+
 
     scope :everything,         -> { all }
     scope :with_supports,      -> { where("cached_votes_up > 0") }
@@ -102,7 +104,7 @@ class Budget
     scope :winners,            -> { selected.compatible.where(winner: true) }
     scope :unsuccessful,          -> { selected.compatible.where(winner: false) }
     scope :unselected,         -> { not_unfeasible.where(selected: false) }
-    scope :last_week,          -> { where("created_at >= ?", 7.days.ago) }
+    scope :last_week,          -> { where(created_at: 7.days.ago..) }
     scope :sort_by_flags,      -> { order(flags_count: :desc, updated_at: :desc) }
     scope :sort_by_created_at, -> { reorder(created_at: :desc) }
     scope :sort_by_ballot_lines, -> { order(:"budget_ballot_lines.created_at") }
@@ -117,6 +119,7 @@ class Budget
     end
 
     scope :for_render, -> { includes(:heading) }
+    scope :public_for_api, -> { where(budget: Budget.public_for_api) }
 
     def self.by_valuator(valuator_id)
       where(budget_valuator_assignments: { valuator_id: valuator_id }).joins(:valuator_assignments)

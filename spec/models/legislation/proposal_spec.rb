@@ -27,6 +27,18 @@ describe Legislation::Proposal do
     expect(proposal).not_to be_valid
   end
 
+  describe "#video_url" do
+    it "is not valid when URL is not from Youtube or Vimeo" do
+      proposal.video_url = "https://twitter.com"
+      expect(proposal).not_to be_valid
+    end
+
+    it "is valid when URL is from Youtube or Vimeo" do
+      proposal.video_url = "https://vimeo.com/112681885"
+      expect(proposal).to be_valid
+    end
+  end
+
   describe "#hot_score" do
     let(:now) { Time.current }
 

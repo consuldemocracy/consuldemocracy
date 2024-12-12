@@ -47,7 +47,7 @@ class Budget < ApplicationRecord
   accepts_nested_attributes_for :phases
 
   scope :published, -> { where(published: true) }
-  scope :drafting,  -> { where.not(id: published) }
+  scope :drafting,  -> { excluding(published) }
   scope :informing, -> { where(phase: "informing") }
   scope :accepting, -> { where(phase: "accepting") }
   scope :reviewing, -> { where(phase: "reviewing") }
@@ -58,6 +58,7 @@ class Budget < ApplicationRecord
   scope :balloting, -> { where(phase: "balloting") }
   scope :reviewing_ballots, -> { where(phase: "reviewing_ballots") }
   scope :finished, -> { where(phase: "finished") }
+  scope :public_for_api, -> { published }
 
   class << self; undef :open; end
   scope :open, -> { where.not(phase: "finished") }

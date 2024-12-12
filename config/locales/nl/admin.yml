@@ -280,6 +280,7 @@ nl:
           "true": "Ja"
           "false": "Nee"
         valuator_groups: "Beoordelingsgroepen"
+        preview: Investeringsoverzicht
       edit:
         classification: Classificatie
         compatibility: Compatibiliteit
@@ -673,6 +674,7 @@ nl:
       proposals_topics: Voorstelonderwerpen
       budgets: Burgerbegrotingen
       geozones: Manage geozones
+      locales: Talen
       hidden_comments: Verborgen commentaar
       hidden_debates: Verborgen debatten
       hidden_proposals: Verborgen voorstellen
@@ -1274,6 +1276,7 @@ nl:
         label:
           booths: "Zoek stemhokje op naam"
           comments: "Reacties zoeken"
+          local_census_records: "Zoeken op documentnummer"
           organizations: "Name, email or phone number"
           poll_officers: "Search poll officers"
           poll_questions: "Zoek peilingvragen"
@@ -1332,6 +1335,8 @@ nl:
         document_numbers_note: "Voeg nummers toe, gescheiden door komma's (,)"
         submit: Niewe handtekeningenlijst
         text_help:
+          date_of_birth_note: ", Geboortedatum (dd/mm/jjjj)"
+          postal_code_note: " en Postcode"
           example_text: "Voorbeeld: "
       show:
         created_at: Aangemaakt
@@ -1375,6 +1380,8 @@ nl:
       graph:
         debate_created: Discussie
         proposal_created: Voorstellen
+        title: Grafieken
+        visits: Bezoeken
       budget_balloting:
         vote_count: Votes
         participant_count: deelnemers
@@ -1418,11 +1425,16 @@ nl:
     users:
       columns:
         id: ID
+        erase_reason: Reden verwijderen
         name: Naam
         email: E-mail
         document_number: Documentnummer
         roles: Rollen
         verification_level: Verificatieniveau
+        activation_status: Activeringsstatus
+      account:
+        active_status: Account geactiveerd
+        inactive_status: Account niet geactiveerd
       index:
         title: Verborgen gebruikers
         no_users: Er zijn geen deelnemers.
@@ -1559,6 +1571,7 @@ nl:
         card_title: Kaart bewerken
         submit_card: Kaart opslaan
     audits:
+      title: "Wijzigingen"
       changes: "Lijst met aanpassingen"
       id: "ID"
       field: "Veld"
@@ -1570,7 +1583,7 @@ nl:
     local_census_records:
       index:
         document_type: Documentsoort
-        document_number: Document nummer
+        document_number: Documentnummer
         date_of_birth: Date of birth
         postal_code: Postcode
         import: Importeer CSV
@@ -1589,3 +1602,4 @@ nl:
       started_at: "Gestart op:"
       tab_help: "Help"
       tags: "Tags"
+      title: "AI / Machine learning"

@@ -1,7 +1,7 @@
 module Types
   class BaseObject < GraphQL::Schema::Object
     def self.field(*args, **kwargs, &)
-      super(*args, **kwargs, &)
+      super
 
       # The old api contained non-camelized fields
       # We want to support these for now, but throw a deprecation warning
@@ -13,8 +13,7 @@ module Types
 
       if field_name.to_s.include?("_")
         reason = "Snake case fields are deprecated. Please use #{field_name.to_s.camelize(:lower)}."
-        kwargs = kwargs.merge({ camelize: false, deprecation_reason: reason })
-        super(*args, **kwargs, &)
+        super(*args, **kwargs.merge({ camelize: false, deprecation_reason: reason }), &)
       end
 
       # Make sure associations only return public records

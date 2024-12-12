@@ -7,7 +7,7 @@ module Header
         (t("#{namespace}.header.title", default: "") unless skip_section_title),
         strip_tags(title),
         setting["org_name"]
-      ].reject(&:blank?).join(" - ")
+      ].compact_blank.join(" - ")
     end
 
     heading_tag = if %w[admin management moderation sdg_management valuation].include?(namespace)

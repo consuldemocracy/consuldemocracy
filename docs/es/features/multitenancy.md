@@ -22,7 +22,7 @@ Es posible que, tras ejecutar esta orden, veas el siguiente aviso:
 
 > The database search path has been updated. Restart the application to apply the changes.
 
-Si es así, reincia la aplicación. Si no has recibido este aviso, comprueba que el fichero `config/database.yml` contiene la línea `schema_search_path: "public,shared_extensions"` y, de no ser así, añádela por ejemplo bajo la línea que dice `adapter: postgresql` y reincia la aplicación.
+Si es así, reinicia la aplicación. Si no has recibido este aviso, comprueba que el fichero `config/database.yml` contiene la línea `schema_search_path: "public,shared_extensions"` y, de no ser así, añádela por ejemplo bajo la línea que dice `adapter: postgresql` y reinicia la aplicación.
 
 Una vez hecho esto, deberás abrir una consola de base de datos utilizando un usuario que tenga permisos para crear y modificar extensiones de base de datos:
 
@@ -158,6 +158,30 @@ production:
 
 Tras editar el fichero, reinicia la aplicación.
 
+### Habilitar idiomas distintos para distintas entidades
+
+En Consul Democracy 2.2.0 o posterior, es posible mostrar la aplicación en diferentes idiomas para diferentes entidades.
+
+Por defecto, todas las entidades utilizan todos los idiomas definidos en `config/application.rb`. Puedes (de forma opcional) sobrescribir este valor [personalizando la configuración de tu aplicación](../customization/application.md). Ten en cuenta que **si sobrescribes este valor, las entidades solamente podrán habilitar los idiomas que definas**. Por ejemplo, si ponemos este código en el fichero `config/application_custom.rb`:
+
+```ruby
+module Consul
+  class Application < Rails::Application
+    config.i18n.available_locales = ["de", "en", "es", "fr", "it", "ru", "zh-CN"]
+  end
+end
+```
+
+Tras reiniciar la aplicación, con esto las entidades podrán escoger cuál es el idioma por defecto y cuáles están habilitados entre alemán, inglés, español, francés, italiano, ruso y chino simplificado. Sin embargo, ya no podrán habilitar ningún otro idioma.
+
+Para definir el idioma por defecto y los idiomas habilitados en una entidad, accede al área de administración de esa entidad. Una vez allí, en el menú de navegación, pincha en "Configuración" y a continuación pincha en "Idiomas". Ten en cuenta que **está sección no aparecerá si solamente tienes un idioma en `available_locales`**.
+
+En esta página encontrarás un formulario para elegir el idioma por defecto y los idiomas habilitados para esta entidad (nota: el formulario es un tanto distinto cuando hay pocos idiomas disponibles):
+
+![Formulario con un selector para el idioma por defecto y una lista de casillas para seleccionar qué idiomas habilitar](../../img/multitenancy/languages-es.png)
+
+Tras elegir los idiomas, guarda los cambios, y el selector de idiomas en la parte superior de la página se actualizará de forma inmediata.
+
 ## Información a tener en cuenta al realizar desarrollos
 
 ### Mantenimiento del fichero schema.rb
@@ -228,12 +252,6 @@ Este sistema tiene una limitación y es que solamente funcionará para imágenes
 En la versión 2.0.0 de Consul Democracy, los datos de todas las entidades se almacenan en la misma base de datos y por tanto no es posible usar bases de datos en distintos servidores.
 
 En caso de que esta funcionalidad sea suficientemente solicitada, podrá incluirse en Consul Democracy en el futuro. Hay que tener en cuenta que la versión 2.0.0 de Consul Democracy utiliza Rails 6.0 y que para esta funcionalidad será necesario usar Rails 6.1 o incluso Rails 7.0.
-
-### Idiomas distintos para distintas entidades
-
-En la versión 2.0.0 de COSNSUL, todas las entidades están disponibles en los mismos idiomas, con lo que no sería posible (por ejemplo) que una entidad estuviera disponible en francés y otra en alemán, sino que ambas tendrían que estar disponibles en ambos idiomas.
-
-Implementar esta posibilidad está planeado para la versión 2.1.0 de Consul Democracy.
 
 ### Borrado de entidades
 

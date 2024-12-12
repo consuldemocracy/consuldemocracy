@@ -1,26 +1,19 @@
-# Mail Server Configuration
+# Mail server configuration
 
 This is an example of how to integrate a mailing service with Consul Democracy.
 
-In this example we use [Mailgun](https://www.mailgun.com/).
+## Get an account from any email provider
 
-## Create an account in Mailgun
+To configure email in Consul Democracy, you will need:
 
-![Creating an account in Mailgun](../../img/mailserver/mailgun-create-account.png)
+* The _smtp_address_, which is the address of your email provider's SMTP server (e.g., smtp.yourdomain.com).
+* The _domain_, which is the domain name of your application.
+* The _user_name_ and _password_, which are the credentials provided by your email provider to authenticate with the SMTP server.
 
-* Skip the credit card form
-* And activate your account with the link sent by email
+## Email configuration in Consul Democracy
 
-## Domain configuration
-
-* Go to the Domains section: ![Mailgun domain section](../../img/mailserver/mailgun-domains.png)
-* Since you don't have a domain yet, you should click in the sandbox that is already created
-* Remember the following credentials: ![Mailgun sandbox](../../img/mailserver/mailgun-sandbox.png)
-
-## Consul Democracy mailing configuration
-
-* Go to the `config/secrets.yml` file
-* Change the lines on the file to configure the mail server under the section `staging`, `preproduction` or `production`, depending on your setup:
+1. Go to the `config/secrets.yml` file.
+2. On this file, change these lines under the section `staging`, `preproduction` or `production`, depending on your setup:
 
 ```yml
   mailer_delivery_method: :smtp
@@ -34,5 +27,5 @@ In this example we use [Mailgun](https://www.mailgun.com/).
      :enable_starttls_auto: true
 ```
 
-* Fill `<smtp address>`, `<domain>`, `<user_name>` and `<password>` with your information
-* Save the file and restart your Consul Democracy application
+3. Fill `<smtp address>`, `<domain>`, `<user_name>` and `<password>` with your information.
+4. Save the file and restart your Consul Democracy application.

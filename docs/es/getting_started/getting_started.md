@@ -1,6 +1,6 @@
-# Getting started
+# Primeros pasos
 
-* [Fork Consul Democracy](create.md)
-* [Configure your fork](configuration.md)
-* [Keep your fork updated](update.md)
-* [Communication](communication.md)
+* [Crea tu fork](create.md)
+* [Configura tu fork](configuration.md)
+* [Mantén tu fork actualizado](update.md)
+* [Comunicación](communication.md)

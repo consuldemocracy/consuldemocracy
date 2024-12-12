@@ -4,13 +4,13 @@
 
 The multitenancy feature allows managing several independent institutions ("tenants") using the same application. For example, in our case, a user who signs up for a certain tenant will only be able to sign in on that tenant, and that user's data won't be available from any other tenant.
 
-Which tenant we're accessing depends on the URL we're using in the browser to access the application. In Consul Democracy, the current tenant is established by the subdomain used in this URL. For example, if we used the domain `solarsystemexample.org` to manage the planets in the Solar System, using the URL `https://mercury.solarsystemexample.org` we'd access data from the planet Mercury while using the URL `https://venus.solarsystemexample.org` we'd access data from the planet Venus. It's also be possible to use different domains per tenant (for example, `earthexample.org`).
+Which tenant we're accessing depends on the URL we're using in the browser to access the application. In Consul Democracy, the current tenant is established by the subdomain used in this URL. For example, if we used the domain `solarsystemexample.org` to manage the planets in the Solar System, using the URL `https://mercury.solarsystemexample.org` we'd access data from the planet Mercury, while using the URL `https://venus.solarsystemexample.org` we'd access data from the planet Venus. It's also possible to use different domains per tenant (for example, `earthexample.org`).
 
 ## Enabling multitenancy
 
 ### Preliminary steps after upgrading from Consul Democracy version 1.5.0
 
-If you're upgrading a Consul Democracy installation to version 2.0.0 from version 1.5.0, you'll have to follow these steps before enabling multitenancy. These steps aren't necessary on new Consul Democracy installations.
+If you're upgrading a Consul Democracy installation to version 2.0.0 from version 1.5.0, you'll have to follow these steps before enabling multitenancy. These steps aren't necessary on Consul Democracy installations that used version 2.0.0 or later as their initial version.
 
 First, after deploying version 2.0.0 to your production server, execute the release tasks:
 
@@ -18,7 +18,7 @@ First, after deploying version 2.0.0 to your production server, execute the rele
 RAILS_ENV=production bin/rails consul:execute_release_tasks
 ```
 
-After runing this command, you might get the following warning:
+After running this command, you might get the following warning:
 
 > The database search path has been updated. Restart the application to apply the changes.
 
@@ -86,7 +86,7 @@ In order to make it possible to access the application using secure HTTPS/SSL co
 
 If you've installed Consul Democracy using the installer and are using Certbot to manage these certificates, you have two options.
 
-One option would be adding each certificate manually every time you create a tenant. For example, in orer to add a tenant using the `mars` subdomain in the `solarsystemexample.org` domain, run:
+One option would be adding each certificate manually every time you create a tenant. For example, in order to add a tenant using the `mars` subdomain in the `solarsystemexample.org` domain, run:
 
 ```bash
 sudo certbot certonly --nginx --noninteractive --agree-tos --expand -d solarsystemexample.org,mars.solarsystemexample.org
@@ -104,7 +104,7 @@ After doing so, update your web server configuration file (by default `/etc/ngin
 
 ### Sending e-mails
 
-In order to reduce the chance your application sends emails which are erronously identified as spam, you might want to edit the fields "Sender email name" and "Sender email address" in the administration panel of the new tenant. The default values for these fields are the name and subdomain introduced when creating the tenant.
+In order to reduce the chance your application sends emails which are erroneously identified as spam, you might want to edit the fields "Sender email name" and "Sender email address" in the administration panel of the new tenant. The default values for these fields are the name and subdomain introduced when creating the tenant.
 
 ![Fields to edit sender email name and address](../../img/multitenancy/email-settings-en.png)
 
@@ -158,13 +158,37 @@ production:
 
 After editing this file, restart the application.
 
+### Enabling different languages for different tenants
+
+In Consul Democracy 2.2.0 or later, it's possible to display the application in different languages for different tenants.
+
+By default, every tenant uses all the languages defined in `config/application.rb`. You can (optionally) overwrite this value by [customizing your application configuration](../customization/application.md). Note that **if you overwrite this value, tenants will only be able to enable the languages you define here**. So, for instance, with this code in the `config/application_custom.rb` file:
+
+```ruby
+module Consul
+  class Application < Rails::Application
+    config.i18n.available_locales = ["de", "en", "es", "fr", "it", "ru", "zh-CN"]
+  end
+end
+```
+
+After restarting the application, tenants will be able to choose which language is the default and which ones are enabled among German, English, Spanish, French, Italian, Russian and Simplified Chinese. However, they'll no longer be able to enable any other language.
+
+To define the default and the enabled languages for a tenant, go the administration area of that tenant. Then, on the side navigation menu, click on "Settings" and then click on "Languages". Note that **this section is not present if you only have one language in `available_locales`**.
+
+On this page you'll find a form to choose the default and the enabled languages for this tenant (note: this form changes slightly when only a few languages are available):
+
+![Form with a select control for the default language and a list of checkboxes to choose which ones to enable](../../img/multitenancy/languages-en.png)
+
+Choose the ones you'd like, save the changes, and the language selector at the top of the web will be updated immediately.
+
 ## Information to take into account during development
 
 ### Maintenance of the schema.rb file
 
-When Consul Democracy creates a tenant, it loads the content of the `db/schema.rb` file to create a new database schema for the new tenant. This means that if for some reason this file doesn't contain the same database structure you'd get by creating a new database and running the migrations with `rake db:migrate`, you could end up with different database table or columns on different tenants. This could result in a disastrous situation.
+When Consul Democracy creates a tenant, it loads the content of the `db/schema.rb` file to create a new database schema for the new tenant. This means that if for some reason this file doesn't contain the same database structure you'd get by creating a new database and running the migrations with `rake db:migrate`, you could end up with different database tables or columns on different tenants. This could result in a disastrous situation.
 
-In order to avoid it, we recommend checking the integrity of the `db/schema.rb` file in your continuous integration system. If you're doing continuous intergration using GitHub Actions, you can use the workflow already included in Consul Democracy. Pull requests adding this check on GitLab CI or other continuous intergration environments are welcome.
+In order to avoid it, we recommend checking the integrity of the `db/schema.rb` file in your continuous integration system. If you're doing continuous integration using GitHub Actions, you can use the workflow already included in Consul Democracy. Pull requests adding this check on GitLab CI or other continuous integration environments are welcome.
 
 ### Using custom styles for a tenant with CSS
 
@@ -227,13 +251,7 @@ However, this will only work for images which can already be configured through 
 
 In Consul Democracy 2.0.0, data from all tenants is stored in the same database and so it isn't possible to use several databases on different servers.
 
-If this feature is requested often, it'll be possible to include it in Consul Democracy in the future. However, Consul Democracy 2.0.0 uses Rails 6.0 and this feature will require upgrading to Rails 6.1 or even Rails 7.0.
-
-### Different languages per tenant
-
-In Consul Democracy 2.0.0, every tenant is available in the same languages, so it wouldn't be possible (for instance) to enable French in one tenant and German in a different one; you'd have to enable both languages in both tenants.
-
-Implementing this feature is planned for Consul Democracy 2.1.0.
+If this feature is requested often, it'll be possible to include it in Consul Democracy in the future, since Rails 6.1 and Rails 7.0 added better support for it.
 
 ### Deleting tenants
 

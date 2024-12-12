@@ -178,7 +178,7 @@ describe "Proposal's dashboard" do
       expect(page).to have_content(solved.title)
 
       within "div#dashboard_action_#{available.id}" do
-        expect(page).to have_link("Request resource")
+        expect(page).to have_link "See resource"
       end
 
       within "div#dashboard_action_#{requested.id}" do
@@ -225,7 +225,7 @@ describe "Proposal's dashboard" do
       expect(page).to have_content(solved.title)
 
       within "div#dashboard_action_#{available.id}" do
-        expect(page).to have_link("Request resource")
+        expect(page).to have_link "See resource"
       end
 
       within "div#dashboard_action_#{requested.id}" do
@@ -308,7 +308,8 @@ describe "Proposal's dashboard" do
     visit proposal_dashboard_path(proposal)
     click_link(feature.title)
 
-    expect(page).not_to have_button("Request")
+    expect(page).to have_content feature.description
+    expect(page).not_to have_button "Request"
   end
 
   scenario "Resource admin request button do not appear on archived proposals" do
@@ -323,8 +324,8 @@ describe "Proposal's dashboard" do
       click_link(feature.title)
     end
 
-    expect(page).not_to have_button("Request")
-    expect(page).to have_content("This proposal is archived and can not request resources.")
+    expect(page).to have_content "This proposal is archived and can not request resources."
+    expect(page).not_to have_button "Request"
   end
 
   scenario "Dashboard has a link to dashboard community" do

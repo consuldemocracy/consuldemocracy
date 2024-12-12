@@ -27,7 +27,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if resource.registering_with_oauth
       finish_signup_path
     else
-      super(resource)
+      super
     end
   end
 
