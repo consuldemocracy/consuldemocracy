@@ -203,7 +203,8 @@ class Budget < ApplicationRecord
       ("selected" if publishing_prices_or_later? && !finished?),
       ("unselected" if publishing_prices_or_later?),
       ("not_unfeasible" if valuating?),
-      ("unfeasible" if valuating_or_later?)
+      ("unfeasible" if valuating_or_later?),
+      ("everything")
     ].compact
   end
 
