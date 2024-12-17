@@ -3,27 +3,30 @@ stages:
   - lint
 
 tests:
-  image: "ruby:3.1.4"
+  image: "ruby:3.2.5"
   stage: test
   services:
-    - postgres:10.10
+    - postgres:13.16
   cache:
     key: consul
     paths:
       - vendor/
   variables:
+    DB_HOST: postgres
+    PGUSER: consul
+    PGPASSWORD: password
     POSTGRES_USER: consul
+    POSTGRES_PASSWORD: password
     RAILS_ENV: test
     TEST_COVERAGE: 1
   parallel: 5
   script:
-    - apt-get update && apt-get install -y nodejs chromium
+    - apt-get update && apt-get install -y nodejs npm chromium
     - for i in config/*.example; do cp "$i" "${i/.example}"; done
-    - for i in config/*.gitlab; do cp "$i" "${i/.gitlab}"; done
     - bundle --without development
+    - npm clean-install
     - bundle exec rake db:setup
     - bundle exec rake assets:precompile > /dev/null 2>&1
-    - npm clean-install
     - bin/knapsack_pro_rspec
   artifacts:
     when: on_failure
@@ -35,7 +38,7 @@ tests:
 # PRONTO_GITLAB_API_PRIVATE_TOKEN to your repository CI/CD settings
 # giving it the value of the Personal Access Token
 linters:
-  image: "ruby:3.1.4"
+  image: "ruby:3.2.5"
   stage: lint
   cache:
     key: consul

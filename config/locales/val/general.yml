@@ -143,7 +143,6 @@ val:
     budget/investment: Proposta d'inversió
     budget/heading: Partida pressupostaria
     poll/shift: Torn
-    poll/question/answer: Resposta
     user: Compte
     verification/sms: telèfon
     signature_sheet: Full de signatures
@@ -424,7 +423,6 @@ val:
         support_button: Avalar aquesta proposta
   polls:
     all: "Totes"
-    no_dates: "sense data asignada"
     dates: "Des del %{open_at} fins el %{closed_at}"
     final_date: "Recompte final/Resultats"
     index:
@@ -517,7 +515,6 @@ val:
     author_info:
       author_deleted: Usuari eliminat
     back: Tornar
-    check: Seleccionar
     check_all: Totes
     check_none: Cap
     collective: Col·lectiu
@@ -585,18 +582,6 @@ val:
     youtube: "YouTube de %{org}"
     telegram: "Telegram de %{org}"
     instagram: "Instagram de %{org}"
-  stats:
-    index:
-      visits: Visites
-      debates: Debats
-      proposals: Propostes
-      comments: Comentaris
-      proposal_votes: Vots en propostes
-      debate_votes: Vots en debats
-      comment_votes: Vots en comentaris
-      votes: Vots totals
-      verified_users: Usuaris verificats
-      unverified_users: Usuaris sense verificar
   unauthorized:
     default: No tens permís per a accedir a aquesta pàgina.
     manage:

@@ -546,15 +546,6 @@ gd:
       image:
         title: Tiotal
         attachment: "Tagh dealbh"
-      poll/question/answer:
-        title: Freagair
-        description: Tuairisgeul
-      poll/question/answer/translation:
-        title: Freagair
-        description: "Tuairisgeul (roghainneil)"
-      poll/question/answer/video:
-        title: Tiotal
-        url: Bhidio air an taobh a-muigh
       newsletter:
         segment_recipient: Faightearean
         subject: Cuspair

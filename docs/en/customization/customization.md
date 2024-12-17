@@ -1,0 +1,16 @@
+# Customization
+
+* [Introduction](introduction.md)
+* [Translations and texts](translations.md)
+* [Images](images.md)
+* [Styles with CSS](css.md)
+* [JavaScript](javascript.md)
+* [Models](models.md)
+* [Controllers](controllers.md)
+* [Views and HTML](views.md)
+* [Components](components.md)
+* [Other Ruby classes (GraphQL, lib, mailers, builders)](ruby.md)
+* [Gems](gems.md)
+* [Application configuration](application.md)
+* [Routes](routes.md)
+* [Tests](tests.md)

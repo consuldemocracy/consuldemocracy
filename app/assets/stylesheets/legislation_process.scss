@@ -65,12 +65,12 @@
 
     @include breakpoint(large) {
       background: #fafafa;
-      display: inline-block;
       border-bottom: 0;
       border-top-left-radius: rem-calc(6);
       border-top-right-radius: rem-calc(6);
+      display: inline-block;
       margin-bottom: 0;
-      margin-right: $line-height / 4;
+      margin-right: calc(#{$line-height} / 4);
       margin-top: 0;
 
       &:hover:not(.is-active) {
@@ -84,7 +84,7 @@
 
     a {
       display: block;
-      padding: $line-height / 4 $line-height / 2;
+      padding: calc(#{$line-height} / 4) calc(#{$line-height} / 2);
 
       @include breakpoint(large) {
         display: inline-block;
@@ -135,9 +135,9 @@
 
     .debate-type {
       @include brand-color;
-      text-transform: uppercase;
-      font-weight: 700;
       font-size: $small-font-size;
+      font-weight: 700;
+      text-transform: uppercase;
 
       .icon-debates {
         margin-left: rem-calc(3);
@@ -151,13 +151,13 @@
 
   .debate-meta,
   .debate-meta a {
-    font-size: $small-font-size;
     color: #6d6d6d;
+    font-size: $small-font-size;
   }
 
   .debate-info {
-    padding: rem-calc(16);
     background: #f4f4f4;
+    padding: rem-calc(16);
   }
 }
 
@@ -235,8 +235,8 @@
   }
 
   .debate-questions {
-    position: relative;
     list-style: none;
+    position: relative;
 
     .control {
       background: #fff;
@@ -245,9 +245,9 @@
       color: #555;
       cursor: pointer;
       display: inline-block;
-      margin-bottom: $line-height / 2;
+      margin-bottom: calc(#{$line-height} / 2);
       margin-right: $line-height;
-      padding: $line-height / 2  $line-height * 2;
+      padding: calc(#{$line-height} / 2)  $line-height * 2;
       position: relative;
     }
 
@@ -257,8 +257,8 @@
     }
 
     .control input {
-      position: absolute;
       opacity: 0;
+      position: absolute;
       z-index: -1;
     }
 
@@ -272,18 +272,18 @@
     }
 
     .control-indicator {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      display: block;
-      width: rem-calc(16);
-      height: rem-calc(16);
-      line-height: rem-calc(16);
-      font-size: 65%;
-      text-align: center;
       border: 2px solid #9c9c9c;
+      display: block;
+      font-size: 65%;
+      height: rem-calc(16);
+      left: 15px;
+      line-height: rem-calc(16);
       pointer-events: none;
+      position: absolute;
+      text-align: center;
+      top: 15px;
       user-select: none;
+      width: rem-calc(16);
     }
   }
 }
@@ -292,25 +292,25 @@
 // ---------------------------
 
 .draft-panels {
-  position: relative;
   padding: rem-calc(32) 0;
+  position: relative;
 
   .draft-chooser {
 
     h3 {
-      vertical-align: top;
       display: inline-block;
       font-weight: 400;
       margin-right: rem-calc(8);
+      vertical-align: top;
     }
 
     span {
-      margin-left: rem-calc(4);
-      font-style: italic;
-      font-size: $small-font-size;
       color: $text-medium;
-      vertical-align: top;
+      font-size: $small-font-size;
+      font-style: italic;
       line-height: rem-calc(37);
+      margin-left: rem-calc(4);
+      vertical-align: top;
     }
 
     .select-box {
@@ -321,13 +321,13 @@
       }
 
       select {
-        margin-bottom: 0;
         display: block;
+        margin-bottom: 0;
       }
 
       span {
-        vertical-align: inherit;
         font-style: normal;
+        vertical-align: inherit;
       }
 
       .see-changes {
@@ -394,20 +394,20 @@
     }
 
     .draft-panel {
-      text-transform: uppercase;
+      background: #f2f2f2;
+      color: #696969;
+      font-size: $small-font-size;
       font-weight: 700;
       padding: rem-calc(8) rem-calc(16);
-      color: #696969;
-      background: #f2f2f2;
-      font-size: $small-font-size;
+      text-transform: uppercase;
 
       .icon-comments {
         margin-right: rem-calc(4);
       }
 
       .icon-banner {
-        line-height: 0;
         color: $text-medium;
+        line-height: 0;
         vertical-align: sub;
       }
     }
@@ -415,9 +415,9 @@
     .draft-index {
       ul:first-child {
         font-size: rem-calc(16);
-        text-decoration: underline;
         margin-left: rem-calc(36);
         margin-top: $line-height;
+        text-decoration: underline;
       }
 
       ul {
@@ -428,34 +428,34 @@
         }
 
         .open::before {
-          cursor: pointer;
-          position: absolute;
-          margin-left: rem-calc(-20);
-          font-family: "icons";
           content: "\58";
+          cursor: pointer;
+          font-family: "icons";
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
+          margin-left: rem-calc(-20);
+          position: absolute;
         }
 
         .closed::before {
-          cursor: pointer;
-          position: absolute;
-          margin-left: rem-calc(-20);
-          font-family: "icons";
           content: "\5a";
+          cursor: pointer;
+          font-family: "icons";
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
+          margin-left: rem-calc(-20);
+          position: absolute;
         }
       }
     }
 
     .draft-text {
-      position: relative;
       padding: rem-calc(16);
+      position: relative;
 
       @include breakpoint(medium) {
         margin: 0 auto;
-        max-width: 3 * $grid-row-width / 4;
+        max-width: calc(3 * #{$grid-row-width} / 4);
         padding: rem-calc(32) rem-calc(32) rem-calc(32) rem-calc(48);
       }
 
@@ -475,11 +475,11 @@
       }
 
       .anchor::before {
-        display: none;
-        content: "#";
         color: $text-medium;
-        position: absolute;
+        content: "#";
+        display: none;
         left: 0;
+        position: absolute;
 
         @include breakpoint(medium) {
           left: 24px;
@@ -530,14 +530,14 @@
         width: rem-calc(50);
 
         .draft-panel {
-          line-height: 1;
+          color: #696969;
           display: block;
           font-size: $small-font-size;
-          text-transform: uppercase;
           font-weight: 700;
-          color: #696969;
+          line-height: 1;
           padding: 0;
           text-align: center;
+          text-transform: uppercase;
 
           .icon-banner::before,
           .icon-comments::before {
@@ -547,8 +547,8 @@
 
           .panel-title {
             display: block;
-            transform: rotate(-90deg);
             filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+            transform: rotate(-90deg);
           }
         }
       }
@@ -558,11 +558,11 @@
       border-right: 0;
 
       .show-comments {
-        width: 105%;
         background: #fafafa;
-        padding: rem-calc(4) rem-calc(40) rem-calc(4) rem-calc(4);
         border: 1px solid $border;
         margin-bottom: rem-calc(16);
+        padding: rem-calc(4) rem-calc(40) rem-calc(4) rem-calc(4);
+        width: 105%;
 
         p {
           margin-bottom: 0;
@@ -590,11 +590,11 @@
       }
 
       .comment-box {
-        padding: rem-calc(4);
         background: #f9f9f9;
         border: 1px solid $border;
         display: block;
         margin-bottom: rem-calc(32);
+        padding: rem-calc(4);
 
         .button {
           font-size: $small-font-size;
@@ -606,14 +606,14 @@
         }
 
         .comment-header {
-          padding-bottom: rem-calc(8);
-          margin-bottom: rem-calc(16);
           border-bottom: 1px solid $border;
+          margin-bottom: rem-calc(16);
+          padding-bottom: rem-calc(8);
 
           a .icon-expand {
             color: #838383;
-            font-size: $small-font-size;
             float: right;
+            font-size: $small-font-size;
           }
         }
 
@@ -622,20 +622,20 @@
         }
 
         .comment-input {
-          padding-bottom: rem-calc(64);
+          border-bottom: 1px solid $border;
           margin-bottom: rem-calc(16);
           margin-top: rem-calc(16);
-          border-bottom: 1px solid $border;
+          padding-bottom: rem-calc(64);
 
           .comment-advice {
-            border-top: 1px solid #d0d0d0;
-            border-right: 1px solid #d0d0d0;
+            background: #dfdfdf;
             border-left: 1px solid #d0d0d0;
-            width: 100%;
-            padding: rem-calc(8);
+            border-right: 1px solid #d0d0d0;
+            border-top: 1px solid #d0d0d0;
             display: inline-block;
             font-size: $small-font-size;
-            background: #dfdfdf;
+            padding: rem-calc(8);
+            width: 100%;
 
             .icon-proposals {
               color: #838383;
@@ -648,38 +648,38 @@
           }
 
           textarea {
-            border-radius: 0;
-            box-shadow: none;
             border-bottom: 1px solid #d0d0d0;
-            border-right: 1px solid #d0d0d0;
             border-left: 1px solid #d0d0d0;
-            width: 100%;
+            border-radius: 0;
+            border-right: 1px solid #d0d0d0;
+            box-shadow: none;
             height: rem-calc(200);
             margin-bottom: rem-calc(8);
+            width: 100%;
           }
 
           .comment-actions {
             .cancel-comment {
               color: #87a3b9;
-              text-decoration: underline;
-              font-size: $small-font-size;
               display: inline-block;
+              font-size: $small-font-size;
+              text-decoration: underline;
             }
           }
         }
 
         .comment {
           border-bottom: 1px solid $border;
-          padding-bottom: $line-height / 2;
-          margin-bottom: rem-calc(16);
           font-size: $small-font-size;
+          margin-bottom: rem-calc(16);
+          padding-bottom: calc(#{$line-height} / 2);
 
           .comment-text {
             margin-bottom: rem-calc(8);
 
             p {
-              line-height: 1.5;
               font-size: $small-font-size;
+              line-height: 1.5;
 
               &:last-child {
                 margin-bottom: rem-calc(8);
@@ -696,8 +696,8 @@
                 display: inline-block;
 
                 &::after {
-                  content: "|";
                   color: #838383;
+                  content: "|";
                 }
               }
 
@@ -708,16 +708,16 @@
 
             .comment-votes {
               color: #838383;
-              float: right;
               display: inline-block;
+              float: right;
 
               .comment-votes-number {
-                margin-right: rem-calc(4);
                 display: inline-block;
+                margin-right: rem-calc(4);
 
                 &::after {
-                  margin-left: rem-calc(4);
                   content: "|";
+                  margin-left: rem-calc(4);
                 }
               }
             }
@@ -741,16 +741,16 @@
       margin-bottom: rem-calc(16);
 
       &::before {
-        margin-right: rem-calc(4);
         content: "—";
+        margin-right: rem-calc(4);
       }
     }
   }
 
   .changes-link {
     display: block;
-    margin-left: rem-calc(16);
     font-size: $small-font-size;
+    margin-left: rem-calc(16);
 
     @include breakpoint(medium) {
       display: inline-block;
@@ -763,11 +763,11 @@
       }
 
       .icon-external {
-        text-decoration: none;
         color: #999;
         line-height: 0;
-        vertical-align: sub;
         margin-left: rem-calc(8);
+        text-decoration: none;
+        vertical-align: sub;
       }
 
       &:active,
@@ -786,10 +786,10 @@
 
   .comment-section {
     background: #fafafa;
-    padding: rem-calc(16);
     border: 1px solid #dee0e3;
-    margin-top: rem-calc(4);
     margin-bottom: rem-calc(16);
+    margin-top: rem-calc(4);
+    padding: rem-calc(16);
   }
 
   .comment {
@@ -801,9 +801,9 @@
       }
 
       .icon-expand {
-        text-decoration: none;
         color: #999;
         line-height: 0;
+        text-decoration: none;
       }
 
       .icon-expand {
@@ -830,10 +830,10 @@
 
   .comment-section {
     background: #fafafa;
-    padding: rem-calc(16);
     border: 1px solid #dee0e3;
-    margin-top: rem-calc(4);
     margin-bottom: rem-calc(16);
+    margin-top: rem-calc(4);
+    padding: rem-calc(16);
   }
 
   .comment {
@@ -845,9 +845,9 @@
 
       .icon-expand,
       .icon-comments {
-        text-decoration: none;
         color: #999;
         line-height: 0;
+        text-decoration: none;
       }
 
       .icon-expand {
@@ -955,17 +955,17 @@
     padding-top: rem-calc(16);
 
     &:not(:last-child) {
-      margin-bottom: $line-height / 2;
+      margin-bottom: calc(#{$line-height} / 2);
     }
   }
 
   .question-title:not(:only-child) {
-    margin-bottom: $line-height / 2;
+    margin-bottom: calc(#{$line-height} / 2);
   }
 
   .annotation-title {
-    margin-bottom: $line-height / 2;
-    margin-top: $line-height / 2;
+    margin-bottom: calc(#{$line-height} / 2);
+    margin-top: calc(#{$line-height} / 2);
   }
 
   .annotation-quote {
@@ -974,7 +974,7 @@
   }
 
   .comment-summary {
-    margin-bottom: $line-height / 2;
+    margin-bottom: calc(#{$line-height} / 2);
 
     > :first-child {
       background-color: rgba(217, 216, 243, 0.2);

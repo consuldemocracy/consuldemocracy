@@ -1,7 +1,8 @@
 nl:
   account:
     show:
-      change_credentials_link: Pas mijn toegangsgegevens aan
+      last_sign_in: "Laatste login: %{last_sign_in_at} vanaf het IP %{last_sign_in_ip}"
+      change_credentials_link: Pas mijn logingegevens aan
       erase_account_link: Verwijder mijn account
       finish_verification: Maak verificatieproces af
       notifications: Meldingen
@@ -135,6 +136,7 @@ nl:
     messages:
       user_not_found: Gebruiker niet gevonden
       invalid_date_range: "Ongeldige periode"
+      past_date: "Mag geen datum in het verleden zijn"
   form:
     accept_terms: Ik accepteer het %{policy} en de %{conditions}
     conditions: Gebruiksvoorwaarden
@@ -150,11 +152,12 @@ nl:
     budget/investment: Investering
     budget/group: Budgetgroep
     budget/heading: Budget onderdeel
+    geozone: geozone
     legislation/draft_version: concept
     legislation/process: proces
     legislation/question: vraag
     poll/shift: Dienst
-    poll/question/answer: Antwoord
+    poll/question/option: Antwoord
     user: Deelnemer
     verification/sms: telefoon
     signature_sheet: Handtekeningenlijst
@@ -172,6 +175,7 @@ nl:
         draft: Concept
         retired: Teruggetrokken
       proposal_totals:
+        community: Deelnemers in jouw community
         supports:
           zero: Geen steunbetuigingen
           one: 1 steunbetuiging
@@ -397,10 +401,15 @@ nl:
         submit_button: Bewaar wijzigingen
   dashboard:
     menu:
+      my_proposal: Wijzig mijn voorstel
       progress: Voortgang
+      resources: Bronnen
       community: Community
       polls: Polls
       mailing: E-mail
+      poster: Poster
+      recommended_actions: Aanbevolen acties
+      messages: Bericht naar gebruikers
       related_content: Gerelateerde inhoud
     form:
       request: Verzoek
@@ -418,8 +427,12 @@ nl:
       links: Links
     resource:
       required_days: "%{days} dagen nodig"
+      and: en
     recommended_actions:
+      title: Aanbevolen acties
+      goto_proposed_actions: Ga naar aanbevolen acties
       pending_title: In afwachting
+      show_description: Toon beschrijving
       done_title: Is al gereed
     next_goal:
       title: Doel
@@ -433,6 +446,8 @@ nl:
       debates: Discussie
       comments: Reacties
       latest_comments: Nieuwste berichten
+    messages:
+      previous_notifications: Bekijk vorige notificaties
     polls:
       index:
         title: Polls
@@ -449,6 +464,9 @@ nl:
           one: "%{count} reactie"
           other: "%{count} reacties"
         view_results: Bekijk resultaten
+        edit_poll: Bewerk enquête
+        delete: Verwijder enquête
+        success_notice: Enquête succesvol verwijderd
         unable_notice: Je kan een vragenlijst met antwoorden niet verwijderen
       form:
         name: Vragenlijsttitel
@@ -463,6 +481,7 @@ nl:
         title: Poster preview
         poster_title: "Blijf niet kijken"
         poster_subtitle: "maar steun me! ;)"
+        proposal_code: "Code van het voorstel: %{code}"
         support: Steun mijn voorstel
       new:
         title: Poster van je voorstel
@@ -485,7 +504,6 @@ nl:
         hi: "Hallo!"
   polls:
     all: "Alle"
-    no_dates: "geen datum toegewezen"
     dates: "Van %{open_at} tot %{closed_at}"
     final_date: "Definitieve hertelling/resultaten"
     index:
@@ -542,10 +560,15 @@ nl:
       results:
         title: "Vragen"
         most_voted_answer: "Antwoord met de meeste stemmen: "
+    poll_header:
+      back_to_proposal: Terug naar voorstel
   poll_questions:
     show:
       vote_answer: "Stem %{answer}"
       voted: "U heeft %{answer} gestemd"
+    description:
+      unique: "Je kan maximaal 1 antwoord selecteren."
+      multiple: "Je kan maximaal %{maximum} antwoorden selecteren."
     read_more_about: "Lees meer over:"
   proposal_notifications:
     new:
@@ -583,8 +606,7 @@ nl:
       author_deleted: Gebruiker verwijderd
       email_deleted: E-mail verwijderd
     back: Ga terug
-    check: Select
-    check_all: Alle
+    check_all: All
     check_none: Geen
     collective: Collectief
     flag: Markeer als ongepast
@@ -659,18 +681,6 @@ nl:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Bezoeken
-      debates: Debatten
-      proposals: Voorstellen
-      comments: Reacties
-      proposal_votes: Stemmen op voorstellen
-      debate_votes: Stemmen op debatten
-      comment_votes: Stemmen op reacties
-      votes: Total votes
-      verified_users: Verified users
-      unverified_users: Unverified users
   unauthorized:
     default: U heeft geen toestemming deze pagina te bezoeken.
     manage:

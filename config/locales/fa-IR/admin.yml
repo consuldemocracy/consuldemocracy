@@ -396,7 +396,6 @@ fa:
         index:
           title: نسخه های پیش نویس
           create: ایجاد نسخه
-          delete: حذف
           preview: پیش نمایش
         new:
           back: برگشت
@@ -428,7 +427,6 @@ fa:
           back: برگشت
           title: سوالات مرتبط با این روند
           create: ایجاد سوال
-          delete: حذف
         new:
           back: برگشت
           title: ایجاد سوال جدید
@@ -1001,7 +999,6 @@ fa:
           verified_users_who_didnt_vote_proposals: کاربران تأیید شده که آرا پیشنهاد نموده اند
           visits: بازديد
           votes: کل رای
-        budgets_title: بودجه مشارکتی
         participatory_budgets: بودجه مشارکتی
         direct_messages: پیام های مستقیم
         proposal_notifications: اطلاعیه های پیشنهاد
@@ -1009,7 +1006,6 @@ fa:
         polls: نظر سنجی ها
       graph:
         debate_created: مباحثه
-        visit: بازديد
         proposal_created: پیشنهادات شهروند
       budget_balloting:
         vote_count: آرا
@@ -1094,7 +1090,6 @@ fa:
         index:
           title: صفحات سفارشی
           update: به روز رسانی
-          delete: حذف
           image: تصویر
         update:
           notice: تصویر با موفقیت به روز رسانی شد

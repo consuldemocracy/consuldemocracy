@@ -65,7 +65,7 @@ fr:
       successful_proposal_id_description: cette proposition est utilisée comme référence d'une proposition réussie en nombre de soutiens et sera affichée dans le graphique du panneau de contrôle
       poll_short_title: Votes
       poll_short_title_description: brève description de la fonctionnalité d'interrogation. Permet aux utilisateurs de créer des sondages sur une proposition.
-      poll_description: description du sondage
+      poll_description: Description des sondages
       poll_description_description: description détaillée de la fonctionnalité d'interrogation
       poll_link: lien d'informations supplémentaires
       poll_link_description: ajoute un lien d'informations supplémentaires à la fonctionnalité d'interrogation du tableau de bord
@@ -116,8 +116,6 @@ fr:
       allow_attached_documents_description: "Permet aux utilisateurs de télécharger des documents lors de la création de propositions et projets d’investissement des budgets participatifs"
       guides: "Guides pour créer des propositions ou projets d’investissement"
       guides_description: "Affiche un guide des différences entre les propositions et les projets d’investissement s’il y a un budget participatif actif"
-      public_stats: "Stats publiques"
-      public_stats_description: "Afficher les stats publiques dans le panneau d’Administration"
       help_page: "Page d'aide"
       help_page_description: 'Affiche un menu d’aide qui contient une page avec une section d’informations sur chaque fonctionnalité activée. Des menus et des pages personnalisées peuvent également être créées dans les sections de « Blocs de contenu personnalisé » et de « Pages personnalisées »'
       remote_translations: "Traductions à distance"
@@ -218,7 +216,7 @@ fr:
         debates_description: Permettre l'alignement des objectifs de développement durable dans les débats
         proposals: alignement des ODD dans les propositions
         proposals_description: permettre l'alignement des objectifs de développement durable dans les propositions
-        polls: alignement des ODD dans le vote
+        polls: ODD concernés par les sondages
         polls_description: Autoriser l'alignement des objectifs de développement durable lors du vote
         budgets: alignement des ODD dans les budgets participatifs
         budgets_description: Permettre l'alignement des objectifs de développement durable dans les budgets participatifs

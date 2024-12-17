@@ -91,6 +91,7 @@ fr:
     user_permission_proposal: Créer des propositions
     user_permission_support_proposal: Soutenir des propositions
     user_permission_votes: Participer au vote final*
+    verification_needed: Vérification supplémentaire requise
     verified_user:
       form:
         submit_button: Envoyer le code

@@ -348,7 +348,6 @@ ast:
         index:
           title: Versiones del borrador
           create: Crear versión
-          delete: Borrar
           preview: Previsualizar
         new:
           back: Volver
@@ -380,7 +379,6 @@ ast:
           back: Volver
           title: Entrugues acomuñaes a esti procesu
           create: Crear entruga pa votación
-          delete: Borrar
         new:
           back: Volver
           title: Crear nueva entruga
@@ -815,7 +813,6 @@ ast:
           verified_users_who_didnt_vote_proposals: Usuarios verificados que no han votado propuestas
           visits: Visitas
           votes: Votos
-        budgets_title: Presupuestos participativos
         participatory_budgets: Presupuestos participativos
         direct_messages: Mensajes directos
         proposal_notifications: Notificaciones de propuestas
@@ -823,7 +820,6 @@ ast:
         polls: Votaciones
       graph:
         debate_created: Alderique
-        visit: Visitas
         proposal_created: Propuestes ciudadanes
       budget_balloting:
         vote_count: Votos
@@ -897,7 +893,6 @@ ast:
         index:
           title: Imaxes
           update: Actualizar
-          delete: Borrar
           image: Imaxe
         update:
           notice: Imagen actualizada correctamente

@@ -20,11 +20,11 @@
         pass += possible_chars.charAt(Math.floor(Math.random() * possible_chars.length)).toUpperCase();
       }
 
-      for (var i = 0; i < password_complexity.digit; i++) {
+      for (var j = 0; j < password_complexity.digit; j++) {
         pass += possible_digits.charAt(Math.floor(Math.random() * possible_digits.length));
       }
 
-      for (var i = 0; i < password_complexity.symbol; i++) {
+      for (var k = 0; k < password_complexity.symbol; k++) {
         pass += possible_symbols.charAt(Math.floor(Math.random() * possible_symbols.length));
       }
 

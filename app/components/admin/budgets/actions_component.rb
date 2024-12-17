@@ -7,13 +7,8 @@ class Admin::Budgets::ActionsComponent < ApplicationComponent
 
   private
 
-    def action(action_name, **options)
-      render Admin::ActionComponent.new(
-        action_name,
-        budget,
-        "aria-describedby": true,
-        **options
-      )
+    def action(action_name, **)
+      render Admin::ActionComponent.new(action_name, budget, "aria-describedby": true, **)
     end
 
     def actions
@@ -44,7 +39,6 @@ class Admin::Budgets::ActionsComponent < ApplicationComponent
     def destroy_action
       action(:destroy,
              text: t("admin.budgets.edit.delete"),
-             method: :delete,
              confirm: t("admin.budgets.actions.confirm.destroy"),
              disabled: budget.investments.any? || budget.poll)
     end

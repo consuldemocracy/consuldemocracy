@@ -13,10 +13,6 @@ module Globalizable
       translations.reject(&:marked_for_destruction?).map(&:locale)
     end
 
-    def locales_marked_for_destruction
-      I18n.available_locales - locales_not_marked_for_destruction
-    end
-
     def locales_persisted_and_marked_for_destruction
       translations.select { |t| t.persisted? && t.marked_for_destruction? }.map(&:locale)
     end
@@ -86,7 +82,7 @@ module Globalizable
         translation_class.instance_eval do
           validates method,
                     length: options[:length],
-                    if: lambda { |translation| translation.locale == I18n.default_locale }
+                    if: lambda { |translation| translation.locale == Setting.default_locale }
         end
         if options.count > 1
           translation_class.instance_eval do
@@ -106,17 +102,11 @@ module Globalizable
       translations_foreign_key = reflect_on_association(:translations).foreign_key
       fallbacks = Globalize.fallbacks(Globalize.locale)
 
-      fallbacks_with_order = fallbacks.map.with_index do |locale, order|
-        "('#{locale}', #{order})"
-      end.join(", ")
-
       translations_ids = translation_class
                          .select("DISTINCT ON (#{translations_foreign_key}) id")
                          .where(locale: fallbacks)
-                         .joins("LEFT JOIN (VALUES #{fallbacks_with_order}) " \
-                                "AS locales(name, ordering) " \
-                                "ON locale = locales.name")
-                         .order(translations_foreign_key, "locales.ordering")
+                         .order(translations_foreign_key)
+                         .in_order_of(:locale, fallbacks)
 
       with_translations(fallbacks).where("#{translations_table_name}.id": translations_ids)
     end

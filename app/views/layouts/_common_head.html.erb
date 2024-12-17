@@ -11,3 +11,10 @@
 <%= javascript_include_tag "application", "data-turbolinks-track" => "reload" %>
 <%= csrf_meta_tags %>
 <%= favicon_link_tag image_path_for("favicon.ico") %>
+<noscript>
+  <%= stylesheet_link_tag "noscript" %>
+</noscript>
+
+<% if Rails.env.test? %>
+  <meta name="turbolinks-cache-control" content="no-preview">
+<% end %>

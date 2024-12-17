@@ -3,7 +3,7 @@
   App.Questions = {
     nestedQuestions: function() {
       $(".js-questions").on("cocoon:after-insert", function(e, new_question) {
-        App.Answers.initializeAnswers($(new_question).find(".js-answers"));
+        App.Options.initializeOptions($(new_question).find(".js-options"));
       });
     },
     initialize: function() {

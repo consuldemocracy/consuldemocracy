@@ -44,7 +44,7 @@ module SDG::Relatable
     end
 
     def pending_sdg_review
-      left_joins(:sdg_review).merge(SDG::Review.where(id: nil))
+      where.missing(:sdg_review)
     end
   end
 

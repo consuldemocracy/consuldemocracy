@@ -17,7 +17,7 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "shared/errors", resource: resource %>
 
-<div id="admin_signup" style= "visibility:hidden">
+<div id="admin_signup">
   <p>
     <%= sanitize(t("devise_views.users.registrations.new.organization_signup",
         signup_link: link_to(t("devise_views.users.registrations.new.organization_signup_link"), new_organization_registration_path))) %>
@@ -64,11 +64,4 @@
 
 </div>
 
-<button onclick="displayAdminSignUp()">Administration</button>
 
-<script>
-function displayAdminSignUp() {
-    const div = document.getElementById("admin_signup");
-    div.style.visibility = div.style.visibility == "hidden" ? "visible" : "hidden";
-}
-</script>

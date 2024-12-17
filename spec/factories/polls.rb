@@ -38,6 +38,10 @@ FactoryBot.define do
       after(:create) { |poll| create(:image, imageable: poll) }
     end
 
+    trait :with_author do
+      author factory: :user
+    end
+
     transient { officers { [] } }
 
     after(:create) do |poll, evaluator|
@@ -45,6 +49,8 @@ FactoryBot.define do
         create(:poll_officer_assignment, poll: poll, officer: officer)
       end
     end
+
+    factory :poll_with_author, traits: [:with_author]
   end
 
   factory :poll_question, class: "Poll::Question" do
@@ -54,15 +60,23 @@ FactoryBot.define do
 
     trait :yes_no do
       after(:create) do |question|
-        create(:poll_question_answer, question: question, title: "Yes")
-        create(:poll_question_answer, question: question, title: "No")
+        create(:poll_question_option, question: question, title: "Yes")
+        create(:poll_question_option, question: question, title: "No")
       end
     end
 
     trait :abc do
-      after(:create) do |question, evaluator|
+      after(:create) do |question|
         %w[A B C].each do |letter|
-          create(:poll_question_answer, question: question, title: "Answer #{letter}")
+          create(:poll_question_option, question: question, title: "Answer #{letter}")
+        end
+      end
+    end
+
+    trait :abcde do
+      after(:create) do |question|
+        %w[A B C D E].each do |letter|
+          create(:poll_question_option, question: question, title: "Answer #{letter}")
         end
       end
     end
@@ -82,7 +96,7 @@ FactoryBot.define do
     end
   end
 
-  factory :poll_question_answer, class: "Poll::Question::Answer" do
+  factory :poll_question_option, class: "Poll::Question::Option" do
     sequence(:title) { |n| "Answer title #{n}" }
     sequence(:description) { |n| "Answer description #{n}" }
     sequence(:given_order) { |n| n }
@@ -92,29 +106,29 @@ FactoryBot.define do
     question { association(:poll_question, poll: poll) }
 
     trait :with_image do
-      after(:create) { |answer| create(:image, imageable: answer) }
+      after(:create) { |option| create(:image, imageable: option) }
     end
 
     trait :with_document do
-      after(:create) { |answer| create(:document, documentable: answer) }
+      after(:create) { |option| create(:document, documentable: option) }
     end
 
     trait :with_video do
-      after(:create) { |answer| create(:poll_answer_video, answer: answer) }
+      after(:create) { |option| create(:poll_option_video, option: option) }
     end
 
-    factory :future_poll_question_answer do
+    factory :future_poll_question_option do
       poll { association(:poll, :future) }
     end
   end
 
-  factory :poll_answer_video, class: "Poll::Question::Answer::Video" do
+  factory :poll_option_video, class: "Poll::Question::Option::Video" do
     title { "Sample video title" }
     url { "https://youtu.be/nhuNb0XtRhQ" }
 
     transient { poll { association(:poll) } }
 
-    answer { association(:poll_question_answer, poll: poll) }
+    option { association(:poll_question_option, poll: poll) }
   end
 
   factory :poll_booth, class: "Poll::Booth" do
@@ -198,14 +212,15 @@ FactoryBot.define do
   factory :poll_answer, class: "Poll::Answer" do
     question factory: [:poll_question, :yes_no]
     author factory: [:user, :level_two]
-    answer { question.question_answers.sample.title }
+    answer { question.question_options.sample.title }
+    option { question.question_options.find_by(title: answer) }
   end
 
   factory :poll_partial_result, class: "Poll::PartialResult" do
     question factory: [:poll_question, :yes_no]
     author factory: :user
     origin { "web" }
-    answer { question.question_answers.sample.title }
+    answer { question.question_options.sample.title }
   end
 
   factory :poll_recount, class: "Poll::Recount" do

@@ -1,5 +1,5 @@
 class Admin::Organizations::TableActionsComponent < ApplicationComponent
-  delegate :can?, to: :controller
+  use_helpers :can?
   attr_reader :organization
 
   def initialize(organization)

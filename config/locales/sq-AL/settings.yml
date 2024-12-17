@@ -86,8 +86,6 @@ sq:
       allow_attached_documents_description: "Lejon përdoruesit të ngarkojnë dokumenta kur krijojnë propozime dhe projekte investimi nga buxhetet pjesëmarrëse "
       guides: "Udhëzues për të krijuar propozime ose projekte investimi"
       guides_description: "Tregon një udhëzues për dallimet ndërmjet propozimeve dhe projekteve të investimeve nëse ka një buxhet aktiv pjesëmarrës"
-      public_stats: "Statistikat publike"
-      public_stats_description: "Shfaqni statistikat publike në panelin e Administratës"
       help_page: "Faqja ndihmëse"
       help_page_description: 'Shfaq një meny Ndihmë që përmban një faqe me një seksion informacioni rreth secilës janë të akitivizuar vecoritë'
     map:

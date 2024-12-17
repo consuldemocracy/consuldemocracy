@@ -455,6 +455,16 @@ cs:
         back: Přejít zpět na %{org}
         title: Administrace
         description: Vítejte v admin panelu portálu %{org}.
+        info: |-
+          <p>Je to místo, kde jako správce realizujete a dohlížíte na proces participace občanů ve vašem městě nebo regionu.</p>
+
+          <p>Jste nyní jedním ze stovek úřadů a obcí po celém světě, které využívají platformu CONSUL DEMOCRACY k zavádění občanské participace do praxe. Gratulujeme!</p>
+
+          <p>Nadace CONSUL DEMOCRACY je srdcem celosvětové komunity uživatelů. Rádi bychom vás požádali, abyste se nám ozvali, abychom získali přehled o tom, kdo software používá, a zjistili, jak bychom mohli pomoci s implementací nebo používáním. Nemůžeme se dočkat, až vás přivítáme v komunitě.</p>
+
+          <p>Šťastnou administraci!</p>
+
+          <p>Pozdravuje vás tým nadace CONSUL DEMOCRACY.</p>
       actions:
         index:
           description: "Když uživatelé vytvářejí návrhy, mají přístup k ovládacímu panelu svého návrhu, kde mohou navrhnout zdroje a doporučení, aby získali podporu pro svůj nápad."
@@ -658,7 +668,6 @@ cs:
         index:
           title: Pracovní verze
           create: Vytvořit verzi
-          delete: Smazat
           preview: Náhled
         new:
           back: Zpět
@@ -691,7 +700,6 @@ cs:
           back: Zpět
           title: Otázky spojené s tímto procesem
           create: Vytvořit otázku
-          delete: Smazat
         new:
           back: Zpět
           title: Vytvořit otázku
@@ -706,6 +714,11 @@ cs:
       milestones:
         index:
           title: Sledované
+    locales:
+      default_help_text: "Jedná se o výchozí jazyk aplikace a jeho změna <strong>ovlivní každého uživatele</strong>, který navštíví webovou stránku poprvé."
+      enabled_help_text: Výše zvolený výchozí jazyk bude zahrnut automaticky.
+      update:
+        notice: Jazyky úspěšně aktualizovány
     managers:
       index:
         title: Manažeři
@@ -728,6 +741,7 @@ cs:
       proposals_topics: Témata návrhů
       budgets: Participativní rozpočty
       geozones: Správa geografických oblastí
+      locales: Jazyky
       hidden_comments: Skryté komentáře
       hidden_debates: Skrýt debaty
       hidden_proposals: Skryté návrhy
@@ -1398,6 +1412,8 @@ cs:
       index:
         title: Geozóna
         create: Vytvořit geozónu
+        geojson_map: GeoJSON Mapa
+        geojson_map_help: "Pokud jsou k dispozici souřadnice GeoJSON, zobrazí se na mapě níže"
       geozone:
         name: Název
         external_code: Externí kód
@@ -1484,7 +1500,6 @@ cs:
           verified_users_who_didnt_vote_proposals: Počet ověřených uživatelů, kteří nehlasovali o návrzích
           visits: Návštěvy
           votes: Hlasů celkem
-        budgets_title: Participativní rozpočtování
         participatory_budgets: Participativní rozpočty
         direct_messages: Soukromé zprávy
         proposal_notifications: Upozornění k návrhům
@@ -1493,9 +1508,9 @@ cs:
         sdg: SDG
       graph:
         debate_created: Debaty
-        visit: Návštěvy
-        level_2_user: Počet uživatelů druhé úrovně
         proposal_created: Návrhy občanů
+        title: Grafy
+        visits: Návštěvy
       budgets:
         no_data_before_balloting_phase: "Před fází hlasování nejsou k dispozici žádné údaje."
         title: "Participativní rozpočty - statistiky účasti"
@@ -1611,7 +1626,6 @@ cs:
         index:
           title: Vlastní obrázky
           update: Aktualizovat
-          delete: Smazat
           image: Image
         update:
           notice: Obrázek byl úspěšně aktualizován
@@ -1652,6 +1666,7 @@ cs:
           create_card: Vytvořit kartu
           no_cards: Nemáte žádnou kartu.
           columns_help: "Šířka karty v počtu sloupců. Na mobilních obrazovkách je vždy šířka 100 %."
+          order_help: "Můžete zadat pozici, na které bude tato karta zobrazena."
           create:
             notice: "Karta úspěšně vytvořena!"
           update:

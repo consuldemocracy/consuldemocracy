@@ -5,7 +5,7 @@ describe "Admin booths", :admin do
     visit admin_root_path
 
     within("#side_menu") do
-      click_link "Voting booths"
+      click_button "Voting booths"
       click_link "Booths location"
     end
 
@@ -18,7 +18,7 @@ describe "Admin booths", :admin do
     visit admin_root_path
 
     within("#side_menu") do
-      click_link "Voting booths"
+      click_button "Voting booths"
       click_link "Booths location"
     end
 
@@ -38,8 +38,8 @@ describe "Admin booths", :admin do
     visit admin_root_path
 
     within("#side_menu") do
-      click_link "Voting booths"
-      click_link "Manage shifts"
+      click_button "Voting booths"
+      click_link "Shifts Assignments"
     end
 
     expect(page).to have_css(".booth", count: 1)
@@ -80,7 +80,7 @@ describe "Admin booths", :admin do
     visit admin_booths_path
 
     within("#booth_#{booth.id}") do
-      expect(page).not_to have_link "Manage shifts"
+      expect(page).not_to have_link "Shifts Assignments"
       click_link "Edit"
     end
 
@@ -105,7 +105,7 @@ describe "Admin booths", :admin do
     visit available_admin_booths_path
 
     within("#booth_#{booth.id}") do
-      click_link "Manage shifts"
+      click_link "Shifts Assignments"
     end
 
     click_link "Go back"

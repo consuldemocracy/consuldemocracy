@@ -1,0 +1,9 @@
+<div class="poll-question-form">
+  <%= form_for(@option, url: admin_option_images_path(@option), method: :post) do |f| %>
+    <%= render "shared/errors", resource: @option %>
+
+    <%= render Images::NestedComponent.new(f, image_fields: :images) %>
+
+    <%= f.submit t("admin.questions.answers.images.save_image"), class: "button success" %>
+  <% end %>
+</div>

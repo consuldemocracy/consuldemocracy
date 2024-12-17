@@ -1,15 +1,34 @@
-require_dependency Rails.root.join("app", "components", "layout", "common_html_attributes_component").to_s
+load Rails.root.join("app","components","layout","common_html_attributes_component.rb")
 
-class Layout::CommonHTMLAttributesComponent
+class Layout::CommonHtmlAttributesComponent
+  use_helpers :rtl?
+
   private
 
-    alias_method :consul_html_class, :html_class
+    def attributes
+      sanitize([dir, lang, html_class].compact.join(" "))
+    end
 
-    def html_class
+    def dir
+      'dir="rtl"' if rtl?
+    end
+
+    def lang
+      "lang=\"#{I18n.locale}\""
+    end
+
+     def html_class
+    # Check if multitenancy is enabled
+      if Rails.application.config.multitenancy
+      # Return the current schema as class unless it's 'public'
+        current_schema = Tenant.current_schema
+        return "class=\"tenant-#{current_schema}\"" unless current_schema == 'public'
+      end
+
+    # If multitenancy is not enabled or schema is 'public', use the site name
       if Rails.application.secrets.site_name.present?
-        "class=\"site-#{Rails.application.secrets.site_name}\""
-      else
-        consul_html_class
+       "class=\"site-#{Rails.application.secrets.site_name}\""
       end
     end
+
 end

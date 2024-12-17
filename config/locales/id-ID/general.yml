@@ -135,7 +135,6 @@ id:
     budget/investment: Investasi
     budget/heading: Anggaran judul
     poll/shift: Regu
-    poll/question/answer: Jawaban
     user: Akun
     verification/sms: telepon
     signature_sheet: Lembar tanda tangan
@@ -393,7 +392,6 @@ id:
         support_button: Mendukung proyek ini
   polls:
     all: "Semua"
-    no_dates: "tidak ada tanggal yang ditetapkan"
     dates: "Dari %{open_at} untuk %{closed_at}"
     final_date: "Final menceritakan/Hasil"
     index:
@@ -481,7 +479,6 @@ id:
     author_info:
       author_deleted: Pengguna dihapus
     back: Kembali
-    check: Pilih
     check_all: Semua
     check_none: Tidak ada
     collective: Kolektif
@@ -531,18 +528,6 @@ id:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Mengunjungi
-      debates: Perdebatan
-      proposals: Proposal
-      comments: Komentar
-      proposal_votes: Suara pada proposal
-      debate_votes: Suara pada perdebatan
-      comment_votes: Suara pada komentar
-      votes: Total suara
-      verified_users: Pengguna diverifikasi
-      unverified_users: Pengguna yang belum diverifikasi
   unauthorized:
     default: Anda tidak memiliki izin untuk mengakses halaman ini.
     manage:

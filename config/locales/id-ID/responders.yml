@@ -7,9 +7,6 @@ id:
         direct_message: "Pesan anda telah berhasil dikirim."
         poll: "Jumlah suara berhasil dibuat."
         poll_booth: "Stan berhasil dibuat."
-        poll_question_answer: "Jawaban berhasil dibuat"
-        poll_question_answer_video: "Video berhasil dibuat"
-        poll_question_answer_image: "Gambar berhasil diunggah"
         proposal: "Proposal berhasil dibuat."
         proposal_notification: "Pesan anda telah terkirim dengan benar."
         budget_investment: "Anggaran Investasi yang berhasil dibuat."
@@ -28,4 +25,3 @@ id:
       destroy:
         budget_investment: "Proyek investasi berhasil dihapus."
         topic: "Tema berhasil dihapus."
-        poll_question_answer_video: "Jawaban video dengan berhasil dihapus."

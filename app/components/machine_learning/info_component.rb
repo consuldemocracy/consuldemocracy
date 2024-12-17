@@ -1,3 +1,3 @@
 class MachineLearning::InfoComponent < ApplicationComponent
-  delegate :current_user, to: :helpers
+  use_helpers :current_user
 end

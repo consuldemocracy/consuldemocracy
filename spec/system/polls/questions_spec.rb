@@ -11,14 +11,14 @@ describe "Poll Questions" do
     expect(proposal_question.title).to appear_before(normal_question.title)
   end
 
-  scenario "shows answers with an image and no description" do
+  scenario "shows options with an image and no description" do
     poll = create(:poll)
-    answer = create(:poll_question_answer, poll: poll, title: "Pedestrian road", description: "")
-    create(:image, imageable: answer, title: "Trees on both sides of the road")
+    option = create(:poll_question_option, poll: poll, title: "Pedestrian road", description: "")
+    create(:image, imageable: option, title: "Trees on both sides of the road")
 
     visit poll_path(poll)
 
-    within "#poll_more_info_answers" do
+    within "#poll_more_info_options" do
       expect(page).to have_content "Pedestrian road"
       expect(page).to have_css "img[alt='Trees on both sides of the road']"
     end

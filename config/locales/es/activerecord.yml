@@ -459,13 +459,13 @@ es:
       image:
         title: Título
         attachment: "Selecciona una imagen"
-      poll/question/answer:
+      poll/question/option:
         title: Respuesta
         description: Descripción
-      poll/question/answer/translation:
+      poll/question/option/translation:
         title: Respuesta
         description: "Descripción (opcional)"
-      poll/question/answer/video:
+      poll/question/option/video:
         title: Título
         url: Vídeo externo
       newsletter:
@@ -488,6 +488,7 @@ es:
         link_text: Texto del enlace
         link_url: URL del enlace
         columns: Número de columnas
+        order: Posición
       widget/card/translation:
         label: Etiqueta (opcional)
         title: Título

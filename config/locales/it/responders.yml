@@ -7,9 +7,6 @@ it:
         direct_message: "Il messaggio è stato inviato correttamente."
         poll: "Sondaggio creato correttamente."
         poll_booth: "Seggio creato correttamente."
-        poll_question_answer: "Risposta creata con successo"
-        poll_question_answer_video: "Video creato con successo"
-        poll_question_answer_image: "Immagine caricata con successo"
         proposal: "Proposta creata correttamente."
         proposal_notification: "Il tuo messaggio è stato inviato correttamente."
         budget_investment: "Proposta di investimento creata correttamente."
@@ -33,5 +30,4 @@ it:
       destroy:
         budget_investment: "Progetto d'investimento eliminato."
         topic: "Argomento eliminato con successo."
-        poll_question_answer_video: "Video di risposta eliminato con successo."
         valuator_group: "Gruppo di stimatori eliminato con successo"

@@ -1,5 +1,5 @@
 class Admin::BudgetsWizard::BaseComponent < ApplicationComponent
-  delegate :single_heading?, :url_params, to: :helpers
+  use_helpers :single_heading?, :url_params
 
   def budget_mode
     helpers.budget_mode || "multiple"

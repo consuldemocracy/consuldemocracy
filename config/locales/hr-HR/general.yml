@@ -158,7 +158,6 @@ hr:
     legislation/process: proces
     legislation/question: pitanje
     poll/shift: Izmjeni
-    poll/question/answer: Odgovor
     user: Račun
     verification/sms: telefon
     signature_sheet: List za potpis
@@ -572,7 +571,6 @@ hr:
         share: "Bilo bi super da mi učinite uslugu dijeljenja mojeg prijedloga sa svojim prijateljima, obitelji i kontaktima, bilo bi savršeno!"
   polls:
     all: "Svi"
-    no_dates: "nije određen datum"
     dates: "Od %{open_at} do %{closed_at}"
     final_date: "Konačno prebrojavanje/Rezultati"
     index:
@@ -669,7 +667,6 @@ hr:
       author_deleted: Korisnik obrisan
       email_deleted: E-mail poruka izbrisana
     back: Vrati se
-    check: Odaberi
     check_all: Svi
     check_none: Niti jedan
     collective: Kolektiv
@@ -754,18 +751,6 @@ hr:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Broj posjeta
-      debates: Rasprave
-      proposals: Prijedlozi
-      comments: Komentari
-      proposal_votes: Glasovi za prijedlog
-      debate_votes: Glasovi za debate
-      comment_votes: Glasovi za komentare
-      votes: Totalno glasova
-      verified_users: Potvrđeni korisnici
-      unverified_users: Korisnici koji nisu potvrđeni
   unauthorized:
     default: Nemate pristup ovoj stranici.
     manage:

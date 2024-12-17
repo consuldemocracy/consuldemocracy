@@ -56,10 +56,12 @@
 </div>
 
 <% if @newsletter.draft? && @newsletter.valid_segment_recipient? %>
-  <%= link_to t("admin.newsletters.show.send"),
-              deliver_admin_newsletter_path(@newsletter),
-              "data-alert": t("admin.newsletters.show.send_alert", n: recipients_count),
-              method: :post,
-              id: "js-send-newsletter-alert",
-              class: "button success" %>
+  <%= render Admin::ActionComponent.new(
+    :deliver,
+    @newsletter,
+    text: t("admin.newsletters.show.send"),
+    method: :post,
+    confirm: t("admin.newsletters.show.send_alert", n: recipients_count),
+    class: "button success"
+  ) %>
 <% end %>

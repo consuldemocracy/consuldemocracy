@@ -1,5 +1,7 @@
 ---
 EnableDefaultLinters: false
+exclude:
+  - '**/vendor/**/*'
 linters:
   AllowedScriptType:
     enabled: true
@@ -9,6 +11,16 @@ linters:
     enabled: true
   ErbSafety:
     enabled: true
+    exclude:
+      - app/components/budgets/investments/content_blocks_component.html.erb
+      - app/components/layout/footer_component.html.erb
+      - app/components/layout/social_component.html.erb
+      - app/components/layout/subnavigation_component.html.erb
+      - app/components/layout/top_links_component.html.erb
+      - app/views/admin/site_customization/content_blocks/index.html.erb
+      - app/views/layouts/application.html.erb
+      - app/views/layouts/dashboard.html.erb
+      - app/views/layouts/devise.html.erb
   ExtraNewline:
     enabled: true
   FinalNewline:

@@ -1,12 +1,12 @@
-version: "3"
 services:
   # service configuration for our database
   database:
 
     # use the preferred version of the official Postgres image
     # see https://hub.docker.com/_/postgres/
-    image: postgres:9.6.21
+    image: postgres:13.16
     environment:
+      - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
     # persist the database between containers by storing it in a volume
     volumes:
@@ -33,8 +33,13 @@ services:
     volumes:
       - .:/var/www/consul
       - bundle:/usr/local/bundle
+      - node_modules:/var/www/consul/node_modules
     environment:
+      - DB_HOST=database # Same name as the database service
+      - PGUSER=postgres
+      - PGPASSWORD=${PGPASSWORD-$POSTGRES_PASSWORD}
       - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
 volumes:
   db_data: {}
   bundle: {}
+  node_modules: {}

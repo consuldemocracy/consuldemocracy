@@ -34,21 +34,21 @@
     <tbody>
     <% @content_blocks.each do |content_block| %>
       <tr id="<%= dom_id(content_block) %>">
-        <td><%= link_to "#{content_block.name} (#{content_block.locale})", edit_admin_site_customization_content_block_path(content_block) %></td>
+        <td><%= "#{content_block.name} (#{content_block.locale})" %></td>
         <td><%= raw content_block.body %></td>
         <td>
-          <%= render Admin::TableActionsComponent.new(content_block, actions: [:destroy]) %>
+          <%= render Admin::TableActionsComponent.new(content_block) %>
         </td>
       </tr>
     <% end %>
     <% @headings_content_blocks.each do |content_block| %>
       <tr id="<%= dom_id(content_block) %>">
-        <td><%= link_to "#{content_block.name} (#{content_block.locale})", admin_site_customization_edit_heading_content_block_path(content_block) %></td>
+        <td><%= "#{content_block.name} (#{content_block.locale})" %></td>
         <td><%= raw content_block.body %></td>
         <td>
           <%= render Admin::TableActionsComponent.new(
             content_block,
-            actions: [:destroy],
+            edit_path: admin_site_customization_edit_heading_content_block_path(content_block),
             destroy_path: admin_site_customization_delete_heading_content_block_path(content_block)
           ) %>
         </td>

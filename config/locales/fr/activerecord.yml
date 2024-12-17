@@ -124,6 +124,9 @@ fr:
       images:
         one: "Image"
         other: "Images"
+      tenant:
+        one: "locataire"
+        other: "locataires"
       topic:
         one: "Sujet"
         other: "Sujets"
@@ -145,6 +148,9 @@ fr:
       local_census_record:
         one: Donnée du recensement local
         other: Données du recensement local
+      votation_type:
+        one: Type de scrutin
+        other: Types de scrutins
     attributes:
       budget:
         name: "Nom"
@@ -160,6 +166,7 @@ fr:
         voting_style: "Style du vote final"
         voting_style_knapsack: "Sac à dos"
         voting_style_approval: "Approbation"
+        hide_money: "Cacher le montant pour ce budget"
       budget/translation:
         main_link_text: "Texte sur le lien"
         main_link_url: "Le lien vous renvoie à (ajouter un lien)"
@@ -194,7 +201,9 @@ fr:
       geozone:
         name: Nom
         external_code: "Code externe (optionnel)"
+        color: "Couleur (optionnel)"
         census_code: "Code de recensement (optionnel)"
+        geojson: "Gestion data (optionnel)"
         html_map_coordinates: "Coordonées HTML <map> (optionnel)"
       milestone:
         status_id: "Statut actuel de l'investissement (facultatif)"
@@ -374,6 +383,11 @@ fr:
         body: Contenu
       tag:
         name: "Saisir le nom du sujet"
+      tenant:
+        domain: "Domaine"
+        schema: "Domaine / Sous-domaine"
+        subdomain: "Sous-domaine"
+        url: "URL"
       topic:
         title: "Titre"
         description: "Texte initial"
@@ -445,13 +459,13 @@ fr:
       image:
         title: Titre
         attachment: "Pièce jointe"
-      poll/question/answer:
+      poll/question/option:
         title: Réponse
         description: Description
-      poll/question/answer/translation:
+      poll/question/option/translation:
         title: Réponse
-        description: "Description"
-      poll/question/answer/video:
+        description: "Description (optionnelle)"
+      poll/question/option/video:
         title: Titre
         url: Vidéo externe
       newsletter:
@@ -474,6 +488,7 @@ fr:
         link_text: Texte du lien
         link_url: Url du lien
         columns: Nombre de colonnes
+        order: Position
       widget/card/translation:
         label: Label (facultatif)
         title: Titre
@@ -513,6 +528,12 @@ fr:
         document_number: Numéro de document
         date_of_birth: Date de naissance
         postal_code: Code postal
+      votation_type:
+        max_votes: Nombre maximum de votes
+        vote_type: Type de scrutin
+      votation_type/vote_type:
+        unique: Réponse unique
+        multiple: Réponses multiples
     errors:
       models:
         user:
@@ -527,6 +548,10 @@ fr:
           attributes:
             max_per_day:
               invalid: "Vous avez atteint le nombre maximum de message privés par jour"
+        geozone:
+          attributes:
+            geojson:
+              invalid: "Le GeoJSON fourni ne respecte pas le bon format. Il doit respecter le type de format \"Polygon\" (Polygône) ou \"MultiPolygon\" (MultiPolygône)."
         image:
           attributes:
             attachment:

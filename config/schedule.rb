@@ -27,10 +27,6 @@ every 1.day, at: "5:00 am" do
   rake "-s sitemap:refresh:no_ping"
 end
 
-every 2.hours do
-  rake "-s stats:generate"
-end
-
 every 1.day, at: "1:00 am", roles: [:cron] do
   rake "files:remove_old_cached_attachments"
 end
@@ -41,5 +37,5 @@ end
 
 every :reboot do
   # Number of workers must be kept in sync with capistrano's delayed_job_workers
-  command "cd #{@path} && RAILS_ENV=#{@environment} bin/delayed_job -m -n 2 restart"
+  command "cd #{@path} && RAILS_ENV=#{@environment} bundle exec bin/delayed_job -m -n 2 restart"
 end

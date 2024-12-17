@@ -1,6 +1,4 @@
-<% provide :title do %>
-  <%= t("stats.budgets.page_title", budget: @budget.name) %>
-<% end %>
+<% provide :title, t("stats.budgets.page_title", budget: @budget.name) %>
 <% provide :social_media_meta_tags do %>
 <%= render "shared/social_media_meta_tags",
            social_url: budget_stats_url(@budget),

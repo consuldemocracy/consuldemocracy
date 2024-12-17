@@ -162,7 +162,7 @@ es:
     legislation/process: el proceso
     legislation/question: la pregunta
     poll/shift: el turno
-    poll/question/answer: la respuesta
+    poll/question/option: la respuesta
     user: la cuenta
     verification/sms: el teléfono
     signature_sheet: la hoja de firmas
@@ -228,6 +228,7 @@ es:
           zero: "No tienes notificaciones nuevas"
         notifications: Notificaciones
       sdg: "ODS"
+    skip_to_main_content: "Saltar al contenido principal"
   notifications:
     index:
       empty_notifications: No tienes notificaciones nuevas.
@@ -568,7 +569,6 @@ es:
         share: "Y si además, me haces el gran favor de compartir mi propuesta con tus amigos, familiares y contactos ¡sería perfecto!"
   polls:
     all: "Todas"
-    no_dates: "sin fecha asignada"
     dates: "Desde el %{open_at} hasta el %{closed_at}"
     final_date: "Recuento final/Resultados"
     index:
@@ -673,9 +673,8 @@ es:
       author_deleted: Usuario eliminado
       email_deleted: Email eliminado
     back: Volver
-    check: Seleccionar
-    check_all: Todos
-    check_none: Ninguno
+    check_all: Seleccionar todos
+    check_none: Seleccionar ninguno
     collective: Colectivo
     flag: Denunciar como inapropiado
     follow: "Seguir"
@@ -760,18 +759,6 @@ es:
     youtube: "YouTube de %{org}"
     telegram: "Telegram de %{org}"
     instagram: "Instagram de %{org}"
-  stats:
-    index:
-      visits: Visitas
-      debates: Debates
-      proposals: Propuestas ciudadanas
-      comments: Comentarios
-      proposal_votes: Votos en propuestas
-      debate_votes: Votos en debates
-      comment_votes: Votos en comentarios
-      votes: Votos
-      verified_users: Usuarios verificados
-      unverified_users: Usuarios sin verificar
   unauthorized:
     default: No tienes permiso para acceder a esta página.
     manage:

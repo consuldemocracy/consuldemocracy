@@ -554,7 +554,6 @@ he:
         index:
           title: גירסת הטיוטה
           create: יצירת גירסה
-          delete: מחיקה
           preview: תצוגה מקדימה
         new:
           back: חזרה
@@ -587,7 +586,6 @@ he:
           back: חזרה
           title: שאלות הקשורות לתהליך זה
           create: יצירת שאלה
-          delete: מחיקה
         new:
           back: חזרה
           title: יצירת שאלה חדשה
@@ -1320,7 +1318,6 @@ he:
           verified_users_who_didnt_vote_proposals: משתמשים מאומתים שלא הצביעו על הצעות
           visits: ביקורים
           votes: סך הכל הצבעות
-        budgets_title: מימון השתתפותי
         participatory_budgets: תקציבים שיתופיים
         direct_messages: הודעות ישירות
         proposal_notifications: התראות להצעות
@@ -1328,8 +1325,6 @@ he:
         polls: סקרים
       graph:
         debate_created: דיונים
-        visit: ביקורים
-        level_2_user: משתמשים ברמה 2
         proposal_created: הצעות תושבים
       budgets:
         no_data_before_balloting_phase: "אין נתונים להצגה לפני שלב ההצבעה."
@@ -1434,7 +1429,6 @@ he:
         index:
           title: תמונות מותאמות אישית
           update: עדכן
-          delete: מחיקה
           image: תמונה
         update:
           notice: התמונה עודכנה בהצלחה

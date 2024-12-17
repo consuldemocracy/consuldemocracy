@@ -1,7 +1,5 @@
 fi:
   flash:
     actions:
-      create:
-        poll_question_answer_video: "Video luotu onnistuneesti"
       destroy:
         topic: "Aihe poistettu onnistuneesti."
