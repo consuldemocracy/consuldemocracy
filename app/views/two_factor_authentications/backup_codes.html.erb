@@ -1,0 +1,34 @@
+<%# app/views/two_factor_authentication/backup_codes.html.erb %>
+
+<div class="container two-factor-backup-codes">
+  <h1><%= t("devise_views.sessions.two_factor.backup_codes.title") %></h1>
+
+  <%# This is the success message from the controller %>
+  <% if flash[:notice] %>
+    <div class="flash-notice"><%= flash[:notice] %></div>
+  <% end %>
+
+  <div class="callout warning">
+    <h2><%= t("devise_views.sessions.two_factor.backup_codes.save_title") %></h2>
+    <p>
+      <%= t("devise_views.sessions.two_factor.backup_codes.instruction") %>
+    </p>
+    <p>
+      <%= t("devise_views.sessions.two_factor.backup_codes.warning") %>
+    </p>
+  </div>
+
+  <h3><%= t("devise_views.sessions.two_factor.backup_codes.codes_title") %></h3>
+
+  <ul class="backup-code-list">
+    <% @backup_codes.each do |code| %>
+      <li class="backup-code"><%= code %></li>
+    <% end %>
+  </ul>
+
+  <div class="actions">
+    <%= link_to t("devise_views.sessions.two_factor.backup_codes.save_button"),
+                account_path,
+                class: "button primary large" %>
+  </div>
+</div>

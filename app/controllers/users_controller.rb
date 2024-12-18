@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   load_and_authorize_resource
   before_action :check_slug
   helper_method :valid_interests_access?
-
   def show
     raise CanCan::AccessDenied if params[:filter] == "follows" && !valid_interests_access?(@user)
   end

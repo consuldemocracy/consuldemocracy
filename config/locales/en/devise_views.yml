@@ -60,9 +60,29 @@ en:
         title: Forgotten password?
     sessions:
       new:
+        otp_label: Enter your 6-Digit Code
         remember_me: Remember me
         submit: Enter
         title: Sign in
+      two_factor:
+        enabled: "Two factor authentication is enabled."
+        disabled: "Two factor authentication is NOT enabled."
+        enable_link: "Enable Two Factor Authentication"
+        disable_link: "Disable Two Factor Authentication"
+        disable_confirm: "Are you sure you want to disable two factor authentication?"
+        authentication:
+          title: "Enter your two-factor authentication code"
+          instruction: "Open your authenticator app and enter the code below to complete your sign-in."
+          card_title: "Two Factor Authentication"
+          otp_label: "Authentication Code"
+          submit: "Verify and Sign In"
+        backup_codes:
+          title: "Two-Factor Authentication Enabled"
+          save_title: "Save Your Backup Codes"
+          instruction: "Please treat these backup codes like a password. We recommend storing them in a secure password manager."
+          warning: "Each code can only be used once. These codes will **not be shown again**."
+          codes_title: "Your Backup Codes"
+          save_button: "I have saved my codes"
     shared:
       links:
         login: Enter

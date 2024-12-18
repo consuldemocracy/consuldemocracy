@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  devise :two_factor_authenticatable
   include Verification
 
   attribute :registering_from_web, default: false
@@ -12,17 +11,13 @@ class User < ApplicationRecord
          :trackable, :validatable, :omniauthable, :password_expirable, :secure_validatable,
          authentication_keys: [:login]
   devise :lockable if Rails.application.config.devise_lockable
-  
-  devise :two_factor_authenticatable,
-         :otp_secret_encryption_key => ENV['DEVISE_OTP_ENCRYPTION_KEY']
 
+  devise :two_factor_authenticatable
 
-  # If you want to use backup codes
-  devise :two_factor_backupable, otp_number_of_backup_codes: 10
-  serialize :otp_backup_codes, JSON
-  
-#  before_create :generate_otp_secret  
-  
+  devise :two_factor_backupable
+
+  serialize :otp_backup_codes, type: Array
+
   acts_as_voter
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
@@ -111,6 +106,8 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :organization, update_only: true
 
   attr_accessor :skip_password_validation, :login
+#  attr_accessor :otp_backup_codes
+#  attr_accessor :otp_plain_backup_codes
 
   scope :administrators, -> { joins(:administrator) }
   scope :moderators,     -> { joins(:moderator) }
@@ -455,37 +452,38 @@ class User < ApplicationRecord
     username.to_s.parameterize
   end
 
-  def otp_provisioning_uri(account, options = {})
-    issuer = options[:issuer]
-    secret = self.otp_secret
-   "otpauth://totp/#{issuer}:#{account}?secret=#{secret}&issuer=#{issuer}"
-  end
+ # def otp_provisioning_uri(account, options = {})
+ #   issuer = options[:issuer]
+ #   secret = self.otp_secret
+ #   "otpauth://totp/#{issuer}:#{account}?secret=#{secret}&issuer=#{issuer}"
+ # end
 
-   def otp_qr_code
-    issuer = 'consuldev.communitychoices.scot:3000'
+  def otp_qr_code
+    issuer = Tenant.current_secrets.server_name.to_s #this needs changed to server name
     label = "#{issuer}:#{email}"
     uri = otp_provisioning_uri(label, issuer: issuer)
     RQRCode::QRCode.new(uri).as_png(size: 200).to_data_url
   end
 
-   def requires_2fa?
+  def requires_2fa?
     administrator?
-   end
-   
-   def generate_otp_secret
+  end
+
+  def generate_otp_secret
     self.otp_secret = ROTP::Base32.random_base32
   end
-  
-   # Generate an OTP secret it it does not already exist
+
+  # Generate an OTP secret it it does not already exist
   def generate_two_factor_secret_if_missing!
     return unless otp_secret.nil?
+
     update!(otp_secret: User.generate_otp_secret)
   end
-   
+
   def otp_two_factor_enabled?
     otp_required_for_login
-  end 
-   
+  end
+
   # Ensure that the user is prompted for their OTP when they login
   def enable_two_factor!
     update!(otp_required_for_login: true)
@@ -494,15 +492,21 @@ class User < ApplicationRecord
   # Disable the use of OTP-based two-factor.
   def disable_two_factor!
     update!(
-        otp_required_for_login: false,
-        otp_secret: nil,
-        otp_backup_codes: nil)
+      otp_required_for_login: false,
+      otp_secret: nil,
+      otp_backup_codes: nil
+    )
   end
-  
+
+  # Determine if backup codes have been generated
+  def two_factor_backup_codes_generated?
+    otp_backup_codes.present?
+  end
+
   def can_be_administrator?
-    self.otp_required_for_login
-  end   
-   
+    otp_required_for_login
+  end
+
   private
 
     def validate_username_length

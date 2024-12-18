@@ -40,12 +40,12 @@ set :local_user, ENV["USER"]
 
 set :fnm_path, "$HOME/.fnm"
 set :fnm_install_command, "curl -fsSL https://fnm.vercel.app/install | " \
-                          "bash -s -- --install-dir \"#{fetch(:fnm_path)}\""
+  "bash -s -- --install-dir \"#{fetch(:fnm_path)}\""
 set :fnm_update_command, "#{fetch(:fnm_install_command)} --skip-shell"
 set :fnm_setup_command, -> do
-                          "export PATH=\"#{fetch(:fnm_path)}:$PATH\" && " \
-                            "cd #{release_path} && fnm env > /dev/null && eval \"$(fnm env)\""
-                        end
+  "export PATH=\"#{fetch(:fnm_path)}:$PATH\" && " \
+    "cd #{release_path} && fnm env > /dev/null && eval \"$(fnm env)\""
+end
 set :fnm_install_node_command, -> { "#{fetch(:fnm_setup_command)} && fnm use --install-if-missing" }
 set :fnm_map_bins, %w[node npm rake yarn]
 
