@@ -1,0 +1,10 @@
+<div class="small-12 column">
+<h1>Two-Factor Authentication</h1>
+<p>Scan this QR code with your authenticator app:</p>
+<img src="<%= @qr_code %>" alt="QR Code">
+<%= form_with url: enable_two_factor_authentication_path, method: :post do |f| %>
+  <%= f.text_field :otp_attempt, label: 'Enter the 6-Digit Code from your authenticator app'%>
+ 
+  <%= f.submit 'Enable' %>
+</div>
+<% end %>
