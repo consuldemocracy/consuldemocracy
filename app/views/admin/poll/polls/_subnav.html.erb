@@ -72,4 +72,18 @@
       <%= link_to t("admin.polls.show.results_tab"), admin_poll_results_path(@poll) %>
     </li>
   <% end %>
+
+  <% if @poll.preliminary_results? %>
+    <% if controller_name == "preliminary_results" %>
+      <li class="is-active">
+        <h2>
+          <%= t("admin.polls.show.preliminary_results_tab") %>
+        </h2>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to t("admin.polls.show.preliminary_results_tab"), admin_poll_preliminary_results_path(@poll) %>
+      </li>
+    <% end %>
+  <% end %>
 </ul>

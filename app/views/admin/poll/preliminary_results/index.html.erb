@@ -1,0 +1,13 @@
+<%= render "/admin/poll/polls/poll_header" %>
+
+<div id="poll-resources">
+  <%= render "/admin/poll/polls/subnav" %>
+
+  <h3><%= t("admin.polls.preliminary_results.title") %></h3>
+
+  <div class="column" data-equalizer-watch>
+    <% @poll.questions.each do |question| %>
+      <%= render Polls::Results::QuestionComponent.new(question, true) %>
+    <% end %>
+  </div>
+</div>

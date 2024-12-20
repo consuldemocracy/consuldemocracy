@@ -1119,6 +1119,7 @@ en:
         officers_tab: Officers
         recounts_tab: Recounting
         results_tab: Results
+        preliminary_results_tab: Preliminary Results
         no_questions: "There are no questions assigned to this poll."
         questions_title: "List of questions"
         table_title: "Title"
@@ -1132,6 +1133,9 @@ en:
         title: "Votation type"
         unique_description: "It's only possible to answer one time to the question."
         multiple_description: "Allows to choose multiple answers. It's possible to set the maximum number of answers."
+        essay_description: "Open ended question that allows the user to provide a single answer in their own words."
+      preliminary_results:
+        title: "Preliminary Results"
     questions:
       index:
         title: "Questions"
@@ -1178,6 +1182,9 @@ en:
           documents_list: Documents list
           document_title: Title
           document_actions: Actions
+          open_text: Open text
+          open_text_true: Yes
+          open_text_false: No
       no_edit: "Once the poll has started it will not be possible to create, edit or delete questions, answers or any content associated with the poll."
     answers:
       new:
