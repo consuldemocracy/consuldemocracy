@@ -1,17 +1,63 @@
-<div id="<%= dom_id(question) %>" class="poll-question">
+<fieldset id="<%= dom_id(question) %>" class="poll-question <%= question.max_votes > 1 ? 'multiple-choice' : 'single-choice' %>" data-max_votes="<%=question.max_votes%>" <%= "disabled='disabled'" unless can?(:answer, question.poll) %>>
   <h3>
     <%= question.title %>
   </h3>
 
-  <% if question.votation_type.present? %>
-    <strong>
+  <% if question.max_votes > 1 %>
+    <span class="help-text">
       <%= t("poll_questions.description.#{question.vote_type}", maximum: question.max_votes) %>
-    </strong>
-  <% end %>
+    </span>
 
-  <div id="<%= dom_id(question) %>_options" class="padding">
-    <%= render Polls::Questions::OptionsComponent.new(question) %>
-  </div>
+    <% question.question_options.each do |option| %>
+      <%= label_tag "web_vote_option_#{option.id}" do %>
+        <%= check_box_tag "web_vote[#{question.id}][option_id][]",
+                          option.id,
+                          checked?(question, option),
+                          id: "web_vote_option_#{option.id}",
+                          class: (option.open_text ? "web_vote_open_text_option" : '') %>
+        <%= option.title %>
+        <% if option.open_text %>
+          <%= text_field "web_vote[#{question.id}][#{option.id}]",
+                          'text_answer',
+                          value: existing_answer(question, option),
+                          class: "open_text_field" %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% elsif question.essay? && question.essay_option %>
+
+    <%= label_tag "web_vote_option_#{question.essay_option.id}" do %>
+      <%= check_box_tag "web_vote[#{question.id}][option_id][]",
+                        question.essay_option.id,
+                        true,
+                        id: "web_vote_option_#{question.essay_option.id}",
+                        hidden: true,
+                        class: "hidden" %>
+      <%= text_area "web_vote[#{question.id}][#{question.essay_option.id}]",
+                        'text_answer',
+                        value: existing_answer(question, question.essay_option),
+                        rows: 3,
+                        class: "open_text_field" %>
+    <% end %>
+
+  <% else %>
+    <% question.question_options.each do |option| %>
+      <%= label_tag "web_vote_option_#{option.id}" do %>
+        <%= radio_button_tag "web_vote[#{question.id}][option_id]",
+                             option.id,
+                             checked?(question, option),
+                             id: "web_vote_option_#{option.id}",
+                             class: (option.open_text ? "web_vote_open_text_option" : '') %>
+        <%= option.title %>
+        <% if option.open_text %>
+          <%= text_field "web_vote[#{question.id}][#{option.id}]",
+                            'text_answer',
+                            value: existing_answer(question, option),
+                            class: "open_text_field" %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
 
   <% if question.options_with_read_more? %>
     <div>
@@ -19,4 +65,4 @@
       <p><%= options_read_more_links %></p>
     </div>
   <% end %>
-</div>
+</fieldset>

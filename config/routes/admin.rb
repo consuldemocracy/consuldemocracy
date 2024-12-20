@@ -178,6 +178,7 @@ namespace :admin do
 
         resources :recounts, only: :index
         resources :results, only: :index
+        resources :preliminary_results, only: :index
       end
 
       resources :officers, only: [:index, :new, :create, :destroy] do

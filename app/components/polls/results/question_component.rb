@@ -1,8 +1,9 @@
 class Polls::Results::QuestionComponent < ApplicationComponent
-  attr_reader :question
+  attr_reader :question, :list_text_answers
 
-  def initialize(question:)
+  def initialize(question, list_text_answers = false)
     @question = question
+    @list_text_answers = list_text_answers
   end
 
   def option_styles(option)

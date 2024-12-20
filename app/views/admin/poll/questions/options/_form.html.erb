@@ -10,12 +10,23 @@
   <div class="row">
     <%= f.translatable_fields do |translations_form| %>
       <div class="column end">
-        <%= translations_form.text_field :title %>
+        <% if @option.question.essay? %>
+          <%= f.hidden_field :title, value: 'open text' %>
+        <% else %>
+          <%= translations_form.text_field :title %>
+        <% end %>
       </div>
       <div class="column">
         <%= translations_form.text_area :description, maxlength: Poll::Question.description_max_length, class: "html-area" %>
       </div>
     <% end %>
+    <div class="column">
+      <% if @option.question.essay? %>
+        <%= f.hidden_field :open_text, value: true %>
+      <% else %>
+        <%= f.check_box :open_text, checked: @option.open_text? %>
+      <% end %>
+    </div>
   </div>
 
   <div class="row">

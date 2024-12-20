@@ -16,7 +16,9 @@
     </div>
 
     <div class="small-12 medium-9 column" data-equalizer-watch>
-      <%= render Polls::Results::QuestionComponent.with_collection(@poll.questions) %>
+      <% @poll.questions.each do |question| %>
+        <%= render Polls::Results::QuestionComponent.new(question, false) %>
+      <% end %>
     </div>
   </div>
 </div>

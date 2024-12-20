@@ -300,6 +300,7 @@ de:
         geozone_restricted: "Beschränkt auf Gebiete"
         summary: "Zusammenfassung"
         description: "Beschreibung"
+        preliminary_results: "Zwischenergebnisse für Admins anzeigen"
       active_poll/translation:
         description: "Beschreibung"
       poll/booth:
@@ -323,6 +324,11 @@ de:
         officer_assignment_id: Zuordnung Verwaltung
       poll/shift:
         task: "Aufgabe"
+      poll/question/option:
+        open_text: "Freitext-Antwort abfragen"
+      poll/question/option/translation:
+        title: Antwort
+        description: "Beschreibung (optional)"
       proposal_notification:
         body: "Nachricht"
         title: "Titel"
@@ -516,6 +522,7 @@ de:
       votation_type/vote_type:
         unique: "Eindeutige Antwort\n"
         multiple: Mehrere Antworten
+        essay: Freitext-Antwort
     errors:
       models:
         user:

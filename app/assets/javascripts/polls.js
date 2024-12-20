@@ -1,7 +1,39 @@
 (function() {
   "use strict";
   App.Polls = {
+    updateMultipleChoiceStatus: function(fieldset, try_to_check, click_target) {
+      var max_votes = $(fieldset).attr('data-max_votes');
+      var checked_boxes_count = $(fieldset).find("input[type='checkbox']:checked").length;
+      var unchecked_boxes = $(fieldset).find("input[type='checkbox']:not(:checked)");
+
+      if(try_to_check && checked_boxes_count >= max_votes) {
+        // disable currently unchecked boxes if no more votes available
+        $(unchecked_boxes).prop( "disabled", true );
+        if(click_target && checked_boxes_count > max_votes){
+          // disable self + prevent click (edge case, shouldn't occur)
+          event.preventDefault();
+          $(click_target).prop( "disabled", true );
+        }
+      }else{
+        $(fieldset).find("input[type='checkbox']").prop( "disabled", false );
+      }
+    },
+    updateOpenTextFieldStatus: function() {
+      $("input.web_vote_open_text_option").each(function() {
+        var checked = $(this).is(':checked');
+        var label = $(this).closest('label');
+        if(checked) {
+          $(label).find("input[type='text'].open_text_field").prop( "disabled", false );
+        }else{
+          $(label).find("input[type='text'].open_text_field").prop( "disabled", true );
+        }
+      });
+    },
     initialize: function() {
+      App.Polls.updateOpenTextFieldStatus();
+      $("fieldset.multiple-choice").each(function() {
+        App.Polls.updateMultipleChoiceStatus(this, true, null);
+      });
       $(".zoom-link").on("click", function(event) {
         var option;
         option = $(event.target).closest("div.option");
@@ -19,6 +51,17 @@
             $(option).insertAfter($(option).next("div.option"));
           }
         }
+      });
+      $("fieldset.multiple-choice input[type='checkbox']").on("click", function(event) {
+          var self = event.target;
+          // :checked status reflects what the click would do if we wouldn't use event.preventDefault()
+          var try_to_check = $(self).is(':checked');
+          var fieldset = $(self).closest('fieldset');
+
+          App.Polls.updateMultipleChoiceStatus(fieldset, try_to_check, self);
+      });
+      $("fieldset input").on("change", function(event) {
+        App.Polls.updateOpenTextFieldStatus();
       });
     }
   };

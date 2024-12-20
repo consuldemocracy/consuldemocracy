@@ -1,4 +1,5 @@
 <h3 id="<%= question.title.parameterize %>"><%= question.title %></h3>
+<% if !question.essay? %>
 <table id="question_<%= question.id %>_results_table">
   <thead>
     <tr>
@@ -23,3 +24,29 @@
     </tr>
   </tbody>
 </table>
+<% end %>
+<% if @list_text_answers %>
+  <% if question.essay? && question.essay_option %>
+    <h4><%=t("polls.show.results.open_text_answers")%>: <%= question.essay_option.open_text_answers.count %> </h4>
+    <% if question.essay_option.open_text_answers.count > 0 %>
+      <ul>
+        <%- question.essay_option.open_text_answers.each do |answer| %>
+          <li><%= answer.text_answer %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  <% else %>
+    <%- question.question_options.where(open_text: true).each do |option| %>
+      <h4><%=t("polls.show.results.open_text_answers")%> "<%= option.title %>"</h4>
+      <% if option.open_text_answers.count > 0 %>
+          <ul>
+            <%- option.open_text_answers.each do |answer| %>
+              <li><%= answer.text_answer %></li>
+            <% end %>
+          </ul>
+      <% else %>
+        <p class="small"><em><%=t("polls.show.results.no_valid_open_text_answers")%></em></p>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
