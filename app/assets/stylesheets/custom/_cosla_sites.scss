@@ -222,6 +222,12 @@
 }
 .site-dundee {
   --brand: #593F73;
+  --main-header: var(--brand);
+  --brand-secondary: #87759c;
+  --top-links: var(--brand-secondary);
+  --brand-contrast: #FFFFFF;
+  --main-header-contrast: #FFFFFF;
+  --footer: var(--top-links);
    @import "cosla_shared";
    @include shared-styles;
 }
