@@ -220,3 +220,8 @@
    @import "cosla_shared";
    @include shared-styles;
 }
+.site-dundee {
+  --brand: #593F73;
+   @import "cosla_shared";
+   @include shared-styles;
+}
