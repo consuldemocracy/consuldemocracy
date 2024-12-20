@@ -1,31 +1,34 @@
-<h3 id="<%= question.title.parameterize %>"><%= question.title %></h3>
 <% if !question.essay? %>
-<table id="question_<%= question.id %>_results_table">
-  <thead>
-    <tr>
-      <%- question.question_options.each do |option| %>
-        <th scope="col" class="<%= option_styles(option) %>">
-          <% if most_voted_option?(option) %>
-            <span class="show-for-sr"><%= t("polls.show.results.most_voted_answer") %></span>
-          <% end %>
-          <%= option.title %>
-        </th>
-      <% end %>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <%- question.question_options.each do |option| %>
-        <td id="option_<%= option.id %>_result" class="<%= option_styles(option) %>">
-          <%= option.total_votes %>
-          (<%= option.total_votes_percentage.round(2) %>%)
-        </td>
-      <% end %>
-    </tr>
-  </tbody>
-</table>
+  <h3 id="<%= question.title.parameterize %>"><%= question.title %></h3>
+  <table id="question_<%= question.id %>_results_table">
+    <thead>
+      <tr>
+        <%- question.question_options.each do |option| %>
+          <th scope="col" class="<%= option_styles(option) %>">
+            <% if most_voted_option?(option) %>
+              <span class="show-for-sr"><%= t("polls.show.results.most_voted_answer") %></span>
+            <% end %>
+            <%= option.title %>
+          </th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <%- question.question_options.each do |option| %>
+          <td id="option_<%= option.id %>_result" class="<%= option_styles(option) %>">
+            <%= option.total_votes %>
+            (<%= option.total_votes_percentage.round(2) %>%)
+          </td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
 <% end %>
 <% if @list_text_answers %>
+  <% if question.essay? %>
+    <h3 id="<%= question.title.parameterize %>"><%= question.title %></h3>
+  <% end %>
   <% if question.essay? && question.essay_option %>
     <h4><%=t("polls.show.results.open_text_answers")%>: <%= question.essay_option.open_text_answers.count %> </h4>
     <% if question.essay_option.open_text_answers.count > 0 %>
