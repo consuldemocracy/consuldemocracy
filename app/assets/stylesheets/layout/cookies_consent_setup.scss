@@ -1,0 +1,88 @@
+.cookies-consent-setup {
+  border-radius: 0.75rem;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .close-button {
+    @include close-button;
+    bottom: auto;
+    left: auto;
+    position: relative;
+    right: auto;
+    top: auto;
+  }
+
+  button {
+    font-weight: bold;
+
+    @include breakpoint(small only) {
+      display: block;
+      width: 100%;
+    }
+
+    &.accept-all-cookies,
+    &.accept-essential-cookies {
+      @include regular-button;
+      margin-bottom: 0;
+    }
+
+    &.accept-all-cookies {
+      @include breakpoint(small only) {
+        margin-bottom: $line-height / 3;
+      }
+    }
+
+    &.save-cookies-preferences {
+      @include hollow-button;
+    }
+  }
+
+  .save-preferences {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .cookies-vendors {
+    ul {
+      list-style: none;
+      margin-left: 0;
+      margin-right: 0;
+
+      li {
+        display: flex;
+        gap: $line-height;
+        justify-content: space-between;
+        padding: $line-height / 3;
+        width: 100%;
+
+        &:nth-child(odd) {
+          background: #efefef;
+        }
+      }
+    }
+
+    .switch {
+      margin-top: $line-height / 3;
+
+      &:focus-within {
+        @include focus-outline;
+      }
+    }
+
+    p {
+      font-size: $base-font-size;
+      margin-bottom: 0;
+    }
+
+    .name {
+      font-weight: bold;
+    }
+  }
+}
+
+.is-reveal-open {
+  overflow: unset !important;
+}
