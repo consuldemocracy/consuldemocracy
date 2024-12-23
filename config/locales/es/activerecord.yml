@@ -551,7 +551,8 @@ es:
         geozone:
           attributes:
             geojson:
-              invalid: "Los datos GeoJSON proporcionados no tienen el formato correcto. Deben tener un tipo del formato \"Polygon\" o \"MultiPolygon\"."
+              invalid: "Los datos GeoJSON proporcionados no tienen el formato correcto. Deben seguir el formato estándar RFC 7946"
+              invalid_coordinates: "Los datos GeoJSON proporcionados contienen coordenadas inválidas; las coordenadas deben utilizar el formato \"Longitud, Latitud\" y seguir el formato estándar RFC 7946"
         image:
           attributes:
             attachment:

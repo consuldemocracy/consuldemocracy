@@ -1658,18 +1658,20 @@ describe "Budget Investments" do
     scenario "Shows the polygon associated to the current heading" do
       triangle = <<~JSON
         {
+          "type": "Feature",
           "geometry": {
             "type": "Polygon",
-            "coordinates": [[-0.1,51.5],[-0.2,51.4],[-0.3,51.6]]
+            "coordinates": [[[-0.1, 51.5], [-0.2, 51.4], [-0.3, 51.6], [-0.1, 51.5]]]
           }
         }
       JSON
 
       rectangle = <<~JSON
         {
+          "type": "Feature",
           "geometry": {
             "type": "Polygon",
-            "coordinates": [[-0.1,51.5],[-0.2,51.5],[-0.2,51.6],[-0.1,51.6]]
+            "coordinates": [[[-0.1, 51.5], [-0.2, 51.5], [-0.2, 51.6], [-0.1, 51.6], [-0.1, 51.5]]]
           }
         }
       JSON
