@@ -1105,6 +1105,7 @@ de:
         officers_tab: Beamte/innen
         recounts_tab: Nachzählung
         results_tab: Ergebnisse
+        preliminary_results_tab: Zwischenergebnisse
         no_questions: "Dieser Abstimmung sind keine Fragen zugeordnet."
         questions_title: "Liste der Fragen"
         table_title: "Titel"
@@ -1118,6 +1119,9 @@ de:
         title: "Art der Votierung"
         unique_description: "Es ist nur möglich, die Frage einmal zu beantworten."
         multiple_description: "Erlaubt die Auswahl mehrerer Antworten. Es ist möglich, die maximale Anzahl von Antworten festzulegen."
+        essay_description: "Erlaubt eine Antwort in eigenen Worten abzugeben. Nur eine Antwort ist möglich."
+      preliminary_results:
+        title: "Zwischenergebnisse"
     questions:
       index:
         title: "Fragen"
@@ -1164,6 +1168,9 @@ de:
           documents_list: Liste der Dokumente
           document_title: Titel
           document_actions: Aktionen
+          open_text: Freitext
+          open_text_true: Ja
+          open_text_false: Nein
       no_edit: "Sobald die Umfrage gestartet wurde, ist es nicht mehr möglich, Fragen, Antworten oder andere mit der Umfrage verbundene Inhalte zu erstellen, zu bearbeiten oder zu löschen."
     answers:
       new:

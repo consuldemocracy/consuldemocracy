@@ -19,6 +19,7 @@ class Poll::Question::Option < ApplicationRecord
 
   validates_translation :title, presence: true
   validates :given_order, presence: true, uniqueness: { scope: :question_id }
+  validate :validate_essay_question
 
   scope :with_content, -> { excluding(without_content) }
   scope :without_content, -> do
@@ -43,6 +44,15 @@ class Poll::Question::Option < ApplicationRecord
       ::Poll::PartialResult.where(question: question).where(answer: title).sum(:amount)
   end
 
+  def open_text_answers
+    if open_text
+      Poll::Answer
+        .where(question_id: question, option_id: id)
+        .where.not(text_answer: nil )
+        .where.not(text_answer: '' )
+    end
+  end
+
   def total_votes_percentage
     question.options_total_votes.zero? ? 0 : (total_votes * 100.0) / question.options_total_votes
   end
@@ -50,4 +60,11 @@ class Poll::Question::Option < ApplicationRecord
   def with_read_more?
     description.present? || images.any? || documents.any? || videos.any?
   end
+
+  private
+    def validate_essay_question
+      if question.essay? && question.question_options.count > 1
+        errors.add(:open_text, "can't create additional answer for question of type essay")
+      end
+    end
 end

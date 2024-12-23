@@ -24,6 +24,9 @@ class Poll::Question < ApplicationRecord
   validates_translation :title, presence: true, length: { minimum: 4 }
   validates :author, presence: true
   validates :poll_id, presence: true, if: proc { |question| question.poll.nil? }
+  validate :validate_votation_type_essay
+
+  after_save :votation_type_essay_auto_option
 
   accepts_nested_attributes_for :question_options, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :votation_type
@@ -86,8 +89,16 @@ class Poll::Question < ApplicationRecord
     question_options.select(&:with_read_more?)
   end
 
+  def essay_option
+    question_options.where(open_text: true).first
+  end
+
   def unique?
     votation_type.nil? || votation_type.unique?
+  end
+
+  def essay?
+    votation_type.essay?
   end
 
   def max_votes
@@ -98,12 +109,15 @@ class Poll::Question < ApplicationRecord
     end
   end
 
-  def find_or_initialize_user_answer(user, option_id)
+  def find_or_initialize_user_answer(user, option_id, text_answer)
     option = question_options.find(option_id)
 
     answer = answers.find_or_initialize_by(find_by_attributes(user, option))
     answer.option = option
     answer.answer = option.title
+    if option.open_text && text_answer
+      answer.text_answer = text_answer
+    end
     answer
   end
 
@@ -111,10 +125,22 @@ class Poll::Question < ApplicationRecord
 
     def find_by_attributes(user, option)
       case vote_type
-      when "unique", nil
+      when "unique", "essay", nil
         { author: user }
       when "multiple"
         { author: user, answer: option.title }
+      end
+    end
+
+    def votation_type_essay_auto_option
+      if essay? && question_options.count == 0
+        question_options.create!(title: 'open text', open_text: true);
+      end
+    end
+
+    def validate_votation_type_essay
+      if essay? && ( question_options.count > 1 || question_options.where(open_text: false).count > 1 )
+        errors.add(:votation_type, "can't change to type essay, multiple answers already exist on question")
       end
     end
 end

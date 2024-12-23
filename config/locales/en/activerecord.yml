@@ -308,6 +308,7 @@ en:
         geozone_restricted: "Restricted by geozone"
         summary: "Summary"
         description: "Description"
+        preliminary_results: "Allow admins access to preliminary results"
       active_poll/translation:
         description: "Description"
       poll/booth:
@@ -462,6 +463,7 @@ en:
       poll/question/option:
         title: Answer
         description: Description
+        open_text: "Allow entering text as answer"
       poll/question/option/translation:
         title: Answer
         description: "Description (optional)"
@@ -534,6 +536,7 @@ en:
       votation_type/vote_type:
         unique: Unique answer
         multiple: Multiple answers
+        essay: Single essay answer
     errors:
       models:
         user:
