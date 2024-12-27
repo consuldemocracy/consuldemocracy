@@ -551,6 +551,7 @@ tr:
         geozone:
           attributes:
             geojson:
+              invalid: "Belirtilen GeoJSON uygun biçimde değil RFC 7946 standart biçimine uygun olmalıdır"
               invalid_coordinates: "Belirtilen GeoJSON içinde geçersiz koordinatlar var. Koordinatlar \"Boylam, Enlem\" biçiminde olmalı ve RFC 7946 standart biçimine uygun olmalıdır"
         image:
           attributes:
