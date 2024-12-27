@@ -551,7 +551,7 @@ tr:
         geozone:
           attributes:
             geojson:
-              invalid: "Belirtilen GeoJSON verilerinin biçimi doğru değil. \"Polygon\" ya da \"MultiPolygon\" tür biçimini izlemeli."
+              invalid_coordinates: "Belirtilen GeoJSON içinde geçersiz koordinatlar var. Koordinatlar \"Boylam, Enlem\" biçiminde olmalı ve RFC 7946 standart biçimine uygun olmalıdır"
         image:
           attributes:
             attachment:
