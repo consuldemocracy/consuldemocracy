@@ -232,3 +232,16 @@
    @import "cosla_shared";
    @include shared-styles;
 }
+
+.site-aberdeen {
+  --brand: #452947;
+  --brand-secondary: #E5005B;
+  --brand-contrast: #FFFFFF;
+  --footer: #029F98;
+  --main-header-contrast: #FFFFFF;
+   --top-links: #029F98 ;
+  --top-links-contrast: #FFFFFF;
+   @import "cosla_shared";
+   @include shared-styles;
+}
+
