@@ -4,9 +4,13 @@
 <meta name="generator" content="Zurb Foundation for Sites 6" class="foundation-mq">
 <title><%= content_for?(:title) ? yield(:title) : default_title %></title>
 <% if rtl? %>
+  <%= stylesheet_link_tag "vendored-rtl" %>
   <%= stylesheet_link_tag "application-rtl" %>
+  <%= stylesheet_link_tag "administration-rtl" %>
 <% else %>
+  <%= stylesheet_link_tag "vendored" %>
   <%= stylesheet_link_tag "application" %>
+  <%= stylesheet_link_tag "administration" %>
 <% end %>
 <%= javascript_include_tag "application", "data-turbolinks-track" => "reload" %>
 <%= csrf_meta_tags %>

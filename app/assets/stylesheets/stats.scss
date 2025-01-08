@@ -173,6 +173,27 @@
   }
 }
 
+.stats-numbers {
+  p {
+    color: $text-medium;
+    font-size: rem-calc(13);
+    padding: rem-calc(6);
+    text-transform: uppercase;
+
+    &.featured {
+      background: $info-bg;
+      border: 1px solid $info-border;
+      font-weight: bold;
+    }
+
+    .number {
+      color: $body-font-color;
+      font-size: rem-calc(30);
+      font-weight: bold;
+    }
+  }
+}
+
 table {
 
   &.survey-districts {
