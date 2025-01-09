@@ -242,5 +242,7 @@
     --main-header-contrast: #FFFFFF;
     --top-links: #eee6db;
     --top-links-contrast: #FF;
+   @import "cosla_shared";
+   @include shared-styles;
 }
 
