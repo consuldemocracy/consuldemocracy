@@ -234,14 +234,13 @@
 }
 
 .site-aberdeen {
-  --brand: #452947;
-  --brand-secondary: #E5005B;
-  --brand-contrast: #FFFFFF;
-  --footer: #5F3962;
-  --main-header-contrast: #FFFFFF;
-   --top-links: #029F98 ;
-  --top-links-contrast: #FFFFFF;
-   @import "cosla_shared";
-   @include shared-styles;
+    --main-header: #EF5D9E;
+    --brand: #45D3A1;
+    --brand-secondary: #6CBEEC;
+    --brand-contrast: #FF;
+    --footer: #eee6db;
+    --main-header-contrast: #FFFFFF;
+    --top-links: #eee6db;
+    --top-links-contrast: #FF;
 }
 
