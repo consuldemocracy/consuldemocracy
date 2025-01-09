@@ -30,7 +30,11 @@ module ProposalsDashboardHelper
       false
     end
   end
-  
+
+  def community_menu_visible?
+    Setting["feature.community"] == "active"
+  end
+
   def resources_menu_active?
     poster_menu_active? || polls_menu_active? || mailing_menu_active? || is_resource_request?
   end
