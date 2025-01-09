@@ -79,6 +79,7 @@ class Setting < ApplicationRecord
         "feature.hide_comments": false,
         "feature.user.skip_verification": "true",
         "feature.community": true,
+        "feature.resources": true,
         "feature.map": nil,
         "feature.allow_attached_documents": true,
         "feature.allow_images": true,
