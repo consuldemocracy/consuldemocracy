@@ -28,7 +28,7 @@ module ProposalsDashboardHelper
   end
   
   def community_menu_visible?
-    Setting["feature.community"]&.any?
+    Setting["feature.community"] == "active"
   end
  
   def resources_menu_active?
