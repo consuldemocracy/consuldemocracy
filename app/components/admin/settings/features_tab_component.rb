@@ -15,6 +15,7 @@ class Admin::Settings::FeaturesTabComponent < ApplicationComponent
       feature.hide_comments
       feature.user.skip_verification
       feature.community
+      feature.resources
       feature.map
       feature.allow_attached_documents
       feature.allow_images
