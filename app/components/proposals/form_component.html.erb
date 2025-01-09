@@ -34,6 +34,12 @@
     <legend><%= t("shared.optional") %></legend>
 
     <div>
+    <h2> Estimated Cost </h2>
+          <%= f.number_field :price, hint: t("budgets.investments.form.estimated_price_note")%>
+    </div>
+
+
+    <div>
       <%= f.text_field :video_url, hint: t("proposals.form.proposal_video_url_note") %>
     </div>
 
