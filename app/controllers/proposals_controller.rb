@@ -117,7 +117,7 @@ class ProposalsController < ApplicationController
 
     def allowed_params
       attributes = [:video_url, :responsible_name, :tag_list, :terms_of_service,
-                    :geozone_id, :related_sdg_list,
+                    :geozone_id, :related_sdg_list, :price,
                     image_attributes: image_attributes,
                     documents_attributes: document_attributes,
                     map_location_attributes: map_location_attributes]
