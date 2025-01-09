@@ -77,6 +77,7 @@ class Setting < ApplicationRecord
         "feature.user.recommendations_on_proposals": true,
         "feature.user.skip_verification": "true",
         "feature.community": true,
+        "feature.resources": true,
         "feature.map": nil,
         "feature.allow_attached_documents": true,
         "feature.allow_images": true,
