@@ -55,3 +55,7 @@ So, first, make sure you've [configured your fork](../getting_started/configurat
 Then, if some tests fail, check one of the tests and see whether the test fails because the custom code contains a bug or because the test checks a behavior that no longer applies due to your custom changes (for example, you might modify the code so only verified users can add comments, but there might be a test checking that any user can add comments, which is the default behavior). If the test fails due to a bug in the custom code, fix it ;). If it fails due to a behavior that no longer applies, check the [tests customization](tests.md) section.
 
 We also **strongly recommend adding tests for your custom changes**, so you'll have a way to know whether these changes keep working when upgrading to a new version of Consul Democracy.
+
+## Coding conventions
+
+Consul Democracy includes linters that define code conventions for Ruby, ERB, JavaScript, SCSS and Markdown. We recommend you follow these conventions in your code as well in order to make it easier to maintain. See also the [coding conventions](../open_source/coding_conventions.md) section for more information.
