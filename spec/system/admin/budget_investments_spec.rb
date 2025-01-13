@@ -1761,9 +1761,7 @@ describe "Admin budget investments", :admin do
     scenario "Set cookie with default columns value if undefined" do
       visit admin_budget_budget_investments_path(budget)
 
-      cookies = page.driver.browser.manage.all_cookies
-      columns_cookie = cookies.find { |cookie| cookie[:name] == "investments-columns" }
-      cookie_value = columns_cookie[:value]
+      cookie_value = cookie_by_name("investments-columns")[:value]
 
       expect(cookie_value).to eq("id,title,supports,admin,valuator,geozone,feasibility,price," \
                                  "valuation_finished,visible_to_valuators,selected,incompatible")
@@ -1811,18 +1809,14 @@ describe "Admin budget investments", :admin do
         check "Author"
       end
 
-      cookies = page.driver.browser.manage.all_cookies
-      columns_cookie = cookies.find { |cookie| cookie[:name] == "investments-columns" }
-      cookie_value = columns_cookie[:value]
+      cookie_value = cookie_by_name("investments-columns")[:value]
 
       expect(cookie_value).to eq("id,supports,admin,geozone,feasibility,valuation_finished," \
                                  "visible_to_valuators,selected,incompatible,author")
 
       visit admin_budget_budget_investments_path(budget)
 
-      cookies = page.driver.browser.manage.all_cookies
-      columns_cookie = cookies.find { |cookie| cookie[:name] == "investments-columns" }
-      cookie_value = columns_cookie[:value]
+      cookie_value = cookie_by_name("investments-columns")[:value]
 
       expect(cookie_value).to eq("id,supports,admin,geozone,feasibility,valuation_finished," \
                                  "visible_to_valuators,selected,incompatible,author")
