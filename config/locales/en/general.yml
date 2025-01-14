@@ -317,7 +317,9 @@ en:
       other: Other
     form:
       proposal_responsible_name_note: "(individually or as representative of a collective; will not be displayed publically)"
-      proposal_summary_note: "(maximum 200 characters)"
+      proposal_title_note: "Give a suitable name to your proposal"
+      proposal_summary_note: "Give a short overview of your proposal(maximum 200 characters)"
+      proposal_description_note: "Provide a detailed description of your project"
       proposal_video_url_note: You may add a link to YouTube or Vimeo
       tag_category_label: "Categories"
       tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
