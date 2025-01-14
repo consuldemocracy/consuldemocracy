@@ -10,7 +10,8 @@
       <div>
         <%= translations_form.text_field :title,
                                          maxlength: Proposal.title_max_length,
-                                         data: suggest_data(proposal) %>
+                                         data: suggest_data(proposal),
+                                         hint: t("proposals.form.proposal_title_note") %>
       </div>
       <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
 
@@ -23,6 +24,7 @@
       <div>
         <%= translations_form.text_area :description,
                                         maxlength: Proposal.description_max_length,
+                                        hint: t("proposals.form.proposal_description_note"),
                                         class: "html-area" %>
       </div>
     <% end %>
