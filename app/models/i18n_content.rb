@@ -69,6 +69,7 @@ class I18nContent < ApplicationRecord
 
   def self.basic_translations
     %w[
+      attributes.geozone_id
       debates.index.section_footer.title
       debates.index.section_footer.description
       debates.index.section_footer.help_text_1
@@ -83,6 +84,10 @@ class I18nContent < ApplicationRecord
       debates.new.recommendations_title
       devise.sessions.local_sign_in_title
       devise.sessions.local_sign_in_description
+      geozones.none
+      map.title
+      map.proposal_for_district
+      map.start_proposal
       proposals.index.section_footer.title
       proposals.index.section_footer.description
       proposals.new.more_info
