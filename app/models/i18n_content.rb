@@ -86,6 +86,8 @@ class I18nContent < ApplicationRecord
       map.title
       map.proposal_for_district
       map.start_proposal
+      shared.tags_cloud.districts
+      shared.tags_cloud.districts_list
       proposals.index.section_footer.title
       proposals.index.section_footer.description
       proposals.new.more_info
