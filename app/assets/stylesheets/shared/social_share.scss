@@ -38,8 +38,28 @@
   }
 }
 
+.ssb-linkedin {
+  @include has-fa-icon(linkedin, brands);
+  background: #45b0e3;
+
+  &:hover,
+  &:focus {
+    color: #40a2d1;
+  }
+}
+
+.ssb-youtube {
+  @include has-fa-icon(youtube, brands);
+  background: #45b0e3;
+
+  &:hover,
+  &:focus {
+    color: #40a2d1;
+  }
+}
+
 .ssb-telegram {
-  @include has-fa-icon(telegram-plane, brands);
+  @include has-fa-icon(telegram, brands);
   background: #08c;
 
   &:hover,
@@ -58,13 +78,17 @@
   }
 }
 
-@include breakpoint(medium) {
 
-  .ssb-telegram,
-  .ssb-whatsapp_app {
-    display: none !important;
+.ssb-weibo {
+  @include has-fa-icon(weibo, brands);
+  background: #45b0e3;
+
+  &:hover,
+  &:focus {
+    color: #40a2d1;
   }
 }
+
 
 .share-supported {
   text-align: center;
