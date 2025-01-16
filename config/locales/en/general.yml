@@ -251,8 +251,8 @@ en:
       mark_as_unread: Mark as unread
       notifiable_hidden: This resource is not available anymore.
   map:
-    title: "Districts"
-    proposal_for_district: "Start a proposal for your district"
+    title: "Administrative Areas"
+    proposal_for_district: "Start a proposal for your area"
     start_proposal: Create a proposal
   omniauth:
     facebook:
