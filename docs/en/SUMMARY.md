@@ -1,4 +1,4 @@
-# Summary
+# Table of contents
 
 * [Introduction](README.md)
 * [Getting started](getting_started/getting_started.md)
@@ -6,7 +6,6 @@
   * [Configure your fork](getting_started/configuration.md)
   * [Keep your fork updated](getting_started/update.md)
   * [Communication](getting_started/communication.md)
-
 * [Installation](installation/introduction.md)
   * [Local installation](installation/local_installation.md)
     * [Prerequisites](installation/prerequisites.md)
@@ -26,7 +25,6 @@
     * [Mail server configuration](installation/mail_server_configuration.md)
   * [Basic configuration](installation/basic_configuration.md)
   * [User documentation and guides](installation/documentation_and_guides.md)
-
 * [Customization](customization/customization.md)
   * [Introduction](customization/introduction.md)
   * [Translations and texts](customization/translations.md)
@@ -42,7 +40,6 @@
   * [Application configuration](customization/application.md)
   * [Routes](customization/routes.md)
   * [Tests](customization/tests.md)
-
 * [Technical Features](features/features.md)
   * [OAuth](features/oauth.md)
   * [GraphQL](features/graphql.md)
@@ -51,8 +48,8 @@
   * [Local Census](features/local_census.md)
   * [Multitenancy](features/multitenancy.md)
   * [User content translations](features/user_content_translations.md)
-
 * [Open Source project](open_source/open_source.md)
   * [Code of conduct](open_source/code_of_conduct.md)
   * [Contributing](open_source/contributing.md)
   * [License](open_source/license.md)
+  * [Open source forks and modifications](open_source/open-source-forks-and-modifications.md)
