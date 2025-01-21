@@ -101,9 +101,37 @@ class I18nContent < ApplicationRecord
       legislation.processes.index.section_footer.description
       budgets.index.section_footer.title
       budgets.index.section_footer.description
+      dashboard.poster.index.poster_title
+      dashboard.poster.index.poster_subtitle
+      dashboard.poster.index.intro_text
+      dashboard.poster.index.proposal_code
+      dashboard.poster.index.support
+      dashboard.poster.index.footer
+      dashboard.mailer.forward.hi
+      dashboard.mailer.forward.introduction
+      dashboard.mailer.forward.support
+      dashboard.mailer.forward.support_button
+      dashboard.mailer.forward.share
+    ]
+  end
+  
+  def self.dashboard_translations
+    %w[
+      dashboard.poster.index.poster_title
+      dashboard.poster.index.poster_subtitle
+      dashboard.poster.index.intro_text
+      dashboard.poster.index.proposal_code
+      dashboard.poster.index.support
+      dashboard.poster.index.footer
+      dashboard.mailer.forward.hi
+      dashboard.mailer.forward.introduction
+      dashboard.mailer.forward.support
+      dashboard.mailer.forward.support_button
+      dashboard.mailer.forward.share
     ]
   end
 
+  
   def self.machine_learning_translations
     %w[
       admin.machine_learning.title
