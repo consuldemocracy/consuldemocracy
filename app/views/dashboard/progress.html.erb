@@ -38,4 +38,6 @@
   <%= render "summary_recommended_actions" %>
 <% end %>
 
-<%= render "resources" %>
+<% if Setting["feature.resources"] %>
+  <%= render "resources" %>
+<% end %>
