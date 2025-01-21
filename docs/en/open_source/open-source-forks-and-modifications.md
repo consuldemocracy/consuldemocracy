@@ -56,6 +56,7 @@ Netherlands
   * platform: [https://stemvan.midden-groningen.nl/](https://stemvan.midden-groningen.nl/)
 * Gemeente Dantumadiel platform 'Stem van Dantumadiel'&#x20;
   * platform: [https://stemvandantumadiel.frl/](https://stemvandantumadiel.frl/)\
+    \
 
   * shared code base: [https://github.com/consul-nl/consul-nl](https://github.com/consul-nl/consul-nl)
 
