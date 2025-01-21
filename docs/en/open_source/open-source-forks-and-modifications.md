@@ -42,15 +42,36 @@ Mexico
 
 Netherlands
 
+* Provincie Fryslan platform 'Stim fan Fryslan'
+  * platform: [https://stimfanfryslan.frl/](https://stimfanfryslan.frl/)
+* Gemeente Oldenzaal platform 'Stem van Oldenzaal'
+  * platform: [https://www.stemvanoldenzaal.nl/](https://www.stemvanoldenzaal.nl/)
+* Gemeente Hogeland platform 'Stem van Ons Hogeland'&#x20;
+  * platform: [https://stemvanonshogeland.nl/](https://stemvanonshogeland.nl/)
+* Gemeente Waadhoeke platform 'Stem van Waadhoeke'
+  * platform: [https://stemvanwaadhoeke.nl/](https://stemvanwaadhoeke.nl/)
+* Gemeente Noard-East Fryslan platform 'Stem van Noardeast'
+  * platform: [https://stemvannoardeast.nl/](https://stemvannoardeast.nl/)
+* Gemeente Midden-Groningen platform 'Stem van Midden-Groningen'
+  * platform: [https://stemvan.midden-groningen.nl/](https://stemvan.midden-groningen.nl/)
+* Gemeente Dantumadiel platform 'Stem van Dantumadiel'&#x20;
+  * platform: [https://stemvandantumadiel.frl/](https://stemvandantumadiel.frl/)\
 
+  * shared code base: [https://github.com/consul-nl/consul-nl](https://github.com/consul-nl/consul-nl)
 
 Romania
 
 * Primaria Sinaia platform 'Bugetare Participativ'
+  * platform: [https://bugetparticipativ.primaria-sinaia.ro/](https://bugetparticipativ.primaria-sinaia.ro/)
 * Primaria Brasov Elinor platform 'Bugetare Participativ'
-* Primaria Dumbravita platform 'Dumbravita Decide'
-  * platforms: [https://bugetparticipativ.primaria-sinaia.ro/](https://bugetparticipativ.primaria-sinaia.ro/), [https://bugetareparticipativa.primariabrasovenilor.ro/](https://bugetareparticipativa.primariabrasovenilor.ro/) [https://dumbravitadecide.ro/](https://dumbravitadecide.ro/)
-  * same code base: [https://github.com/code4romania/consul](https://github.com/code4romania/consul)
+  * platform: [https://bugetareparticipativa.primariabrasovenilor.ro/](https://bugetareparticipativa.primariabrasovenilor.ro/)
+*   Primaria Dumbravita platform 'Dumbravita Decide'
+
+    * &#x20;platform: [https://dumbravitadecide.ro/](https://dumbravitadecide.ro/)
+
+
+
+    * shared code base: [https://github.com/code4romania/consul](https://github.com/code4romania/consul)
 
 Slovenia
 
