@@ -98,6 +98,15 @@ Spain
 * Ayuntamiento de Zamora platform 'Zamora Participa'
   * platform: [https://zamoraparticipa.com/](https://zamoraparticipa.com/)
   * code base: [https://github.com/jaam1974/consul](https://github.com/jaam1974/consul)
+* Ayuntamiento de Arucas platform 'Participa Arucas'
+  * platform: [http://participa.arucas.org/](http://participa.arucas.org/)
+  * code base: [https://github.com/Usabi/consul\_arucas](https://github.com/Usabi/consul_arucas)
+* Generalitat Valenciana platform 'Pla Recuperem Valencia'
+  * platform: [https://gvaparticipa.gva.es/](https://gvaparticipa.gva.es/)
+  * code base: [https://github.com/Usabi/consul\_gva](https://github.com/Usabi/consul_gva)
+* Ayuntamiento de Las Palmas de Gran Canaria platform 'LPGC Decide'
+  * platform: [https://decide.laspalmasgc.es/](https://decide.laspalmasgc.es/)
+  * code base: [https://github.com/LauraConcepcion/consulLPA](https://github.com/LauraConcepcion/consulLPA)
 
 United Kingdom
 
