@@ -86,6 +86,7 @@ module Consul
       "nl",
       "oc",
       "pl",
+      "pt",
       "pt-BR",
       "ro",
       "ru",
