@@ -488,6 +488,7 @@ sv:
         link_text: Länktext
         link_url: Länk-URL
         columns: Antal kolumner
+        order: Position
       widget/card/translation:
         label: Etikett (valfritt)
         title: Titel
@@ -551,6 +552,7 @@ sv:
           attributes:
             geojson:
               invalid: "Angiven GeoJSON följer inte korrekt format. Den måste följa ett format av typen \"Polygon\" eller \"MultiPolygon\"."
+              invalid_coordinates: "Tillhandahållen GeoJSON innehåller ogiltiga koordinater; koordinaterna måste ha erfordrat format för \"Longitud, latitud\" och följa standardformatet RFC 7946"
         image:
           attributes:
             attachment:
