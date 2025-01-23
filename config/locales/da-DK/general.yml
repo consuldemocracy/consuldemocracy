@@ -736,7 +736,6 @@ da:
       see_more: Se flere anbefalinger
       hide: Skjul anbefalinger
     translations:
-      select_language_prompt: Vælg sprog
       remove_language: Fjern sprog
       add_language: Tilføj sprog
       languages_in_use:
