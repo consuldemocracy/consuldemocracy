@@ -142,7 +142,7 @@ de:
   number:
     currency:
       format:
-        delimiter: ","
+        delimiter: "."
         format: "%u%n"
         precision: 2
         separator: "."
