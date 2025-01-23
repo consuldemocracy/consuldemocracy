@@ -264,6 +264,21 @@ pt-BR:
         budget: Orçamento
         groups: Grupos
         headings: Títulos
+        phases: Fases
+      budgets:
+        continue: "Continuar para \"grupos\""
+      groups:
+        back: "Retorne para editar o orçamento"
+        continue: "Continuar para \"cabeçalhos\""
+      headings:
+        continue: "Continuar para \"fases\""
+        single:
+          back: "Retorne para editar os grupos"
+      heading_mode:
+        multiple:
+          description: "Crie um processo com múltiplos grupos, distritos ou temas. Imagine que você tem várias \"bolsas de dinheiro\". Por exemplo, € 25.000 para o \"Distrito Norte\", € 30.000 para o \"Distrito Centro\", € 28.000 para o \"Distrito Sul\" e um valor para toda a cidade. Ou para vários temas como esporte, cultura ou saúde."
+          link: "Criar orçamento com diversos cabeçalhos"
+          title: "<strong>Múltiplos cabeçalhos</strong>orçamento"
     milestones:
       index:
         table_id: "ID"
