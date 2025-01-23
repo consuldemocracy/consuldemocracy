@@ -241,7 +241,6 @@ gd:
         valuator_filter_all: A h-uile neach-luachaidh
         tags_filter_all: Gach taga
         advanced_filters: Criathragan adhartach
-        placeholder: Lorg pròiseactan
         filters:
           all: A h-uile
           without_admin: Gun rianaire ainmichte
@@ -271,7 +270,6 @@ gd:
           unfeasible: "Neo-dhèante"
           undecided: "Gun cho-dhùnadh"
         selected: "Na thagh thu"
-        select: "Tagh"
         list:
           id: ID
           title: Tiotal
@@ -1283,7 +1281,6 @@ gd:
         title: Molaidhean
         id: ID
         author: Ùghdar
-        select: Tagh
         selected: Na thagh thu
         milestones: Clachan-mìle
         no_proposals: Chan eil moladh sam bith ann.
