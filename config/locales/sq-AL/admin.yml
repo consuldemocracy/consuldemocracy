@@ -118,7 +118,6 @@ sq:
         valuator_filter_all: Të gjithë vlerësuesit
         tags_filter_all: Të gjitha etiketat
         advanced_filters: Filtra të avancuar
-        placeholder: Kërko projekte
         filters:
           all: Të gjithë
           without_admin: Pa caktuar administratorin
@@ -146,7 +145,6 @@ sq:
           unfeasible: "Parealizueshme"
           undecided: "I pavendosur"
         selected: "I zgjedhur"
-        select: "Zgjidh"
         list:
           id: ID
           title: Titull
@@ -958,7 +956,6 @@ sq:
         title: Propozime
         id: ID
         author: Autor
-        select: Zgjidh
         selected: I zgjedhur
         milestones: Pikëarritje
     hidden_proposals:

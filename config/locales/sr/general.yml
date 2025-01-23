@@ -737,7 +737,6 @@ sr:
       see_more: Види више препорука
       hide: Сакриј препоруке
     translations:
-      select_language_prompt: Изабери језик
       remove_language: Уклони језик
       add_language: Додај језик
       languages_in_use:

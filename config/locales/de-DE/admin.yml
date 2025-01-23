@@ -219,7 +219,7 @@ de:
         dates_help_text: "Nur zu Informationszwecken"
         description_help_text: Dieser Text erscheint in der Kopfzeile, wenn die Phase aktiv ist
         duration: "Laufzeit dieser Phase"
-        duration_description: "Der Zeitraum, in dem diese Phase aktiv sein wird."
+        duration_description: "Diese Felder werden nur zu Informationszwecken verwendet und <strong> lösen keine automatische Aktualisierung der aktiven Phase aus.</strong>. Um sie zu aktualisieren, muss der Bürgerhaushalt bearbeitet und die aktive Phase ausgewählt werden."
         enabled_help_text: Diese Phase wird öffentlich in der Zeitleiste der Phasen des Bürgerhaushalts angezeigt und ist auch für andere Zwecke aktiv
         image_description: "Wenn ein Bild hochgeladen wurde, wird es neben der Beschreibung dieser Phase angezeigt."
         main_call_to_action: "Hauptaufforderung zum Handeln (optional)"
@@ -235,7 +235,6 @@ de:
         valuator_filter_all: Alle Begutachter*innen
         tags_filter_all: Alle Tags
         advanced_filters: Erweiterte Filter
-        placeholder: Suche Projekte
         filters:
           all: Alle
           without_admin: Ohne zugewiesene*n Administrator*in
@@ -265,7 +264,6 @@ de:
           unfeasible: "Undurchführbar"
           undecided: "Offen"
         selected: "Ausgewählt"
-        select: "Auswählen"
         list:
           id: ID
           title: Titel
@@ -1283,7 +1281,6 @@ de:
         title: Vorschläge
         id: ID
         author: Autor
-        select: Auswählen
         selected: Ausgewählt
         milestones: Meilensteine
         no_proposals: Keine Vorschläge vorhanden.

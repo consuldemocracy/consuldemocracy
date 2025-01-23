@@ -172,7 +172,6 @@ da:
         valuator_filter_all: Alle evaluatorer
         tags_filter_all: Alle tags
         advanced_filters: Flere filtre
-        placeholder: Søg efter projekter
         filters:
           all: Alle
           without_admin: Uden tildelte administrator
@@ -202,7 +201,6 @@ da:
           unfeasible: "Kan ikke gennemføres"
           undecided: "Under behandling"
         selected: "Valgt"
-        select: "Vælg"
         list:
           id: ID
           title: Titel
@@ -1163,7 +1161,6 @@ da:
         title: Borgerforslag
         id: ID
         author: Oprettet af
-        select: Vælg
         selected: Valgt
         milestones: Proces
         no_proposals: Der er ingen forslag.

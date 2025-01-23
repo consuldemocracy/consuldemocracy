@@ -1,1 +1,115 @@
 pt:
+  devise_views:
+    confirmations:
+      new:
+        submit: Reenviar instruções
+        title: Reenviar instruções de confirmação
+      show:
+        instructions: Vamos confirmar a conta com o e-mail %{email}
+        new_password_confirmation_label: Repita a palavra-passe de acesso
+        new_password_label: Nova palavra-passe de acesso
+        please_set_password: Por favor, escolha a sua nova palavra-passe (isso permitirá que se autentique com o e-mail acima)
+        submit: Confirmar
+        title: Confirmar a minha conta
+    mailer:
+      confirmation_instructions:
+        confirm_link: Confirmar a minha conta
+        text: "Pode confirmar a sua conta de e-mail no seguinte link:"
+        title: Bem-vindo
+        welcome: Bem-vindo
+      reset_password_instructions:
+        change_link: Alterar a minha palavra-passe
+        hello: Olá
+        ignore_text: Se não pediu uma mudança de palavra-passe, pode ignorar este e-mail.
+        info_text: A sua palavra-passe não será alterada a menos que aceda ao link e a edite.
+        text: "Recebemos um pedido para alterar a sua palavra-passe. Pode fazer isso no seguinte link:"
+        title: Altere a sua palavra-passe
+      unlock_instructions:
+        hello: Olá
+        info_text: A sua conta foi bloqueada devido a um número excessivo de tentativas de entrada falhadas.
+        instructions_text: "Por favor clique neste link para desbloquear a sua conta:"
+        title: A sua conta foi bloqueada
+        unlock_link: Desbloquear a minha conta
+    menu:
+      login_items:
+        login: Iniciar sessão
+        logout: Terminar sessão
+        signup: Registe-se
+    organizations:
+      registrations:
+        new:
+          password_confirmation_label: Confirmar palavra-passe
+          responsible_name_note: Esta seria a pessoa que representa a associação/coletivo em nome de quem as propostas são apresentadas
+          submit: Registe-se
+          title: Registar-se como uma organização ou coletivo
+        success:
+          back_to_index: Eu entendo; voltar à página principal
+          instructions_1: "<strong>Entraremos em contacto em breve</strong> para confirmar que realmente representa este coletivo."
+          instructions_2: Enquanto o seu e-mail <strong>é revisto</strong>, enviamos um link <strong>para confirmar a sua conta</strong>.
+          instructions_3: Uma vez confirmado, pode começar a participar como um coletivo não verificado.
+          thank_you: Obrigado por registar o seu coletivo na plataforma. Ele está ainda <strong>pendente de verificação</strong>.
+          title: Registo de organização / coletivo
+    passwords:
+      edit:
+        change_submit: Alterar a minha palavra-passe
+        password_confirmation_label: Confirmar a nova palavra-passe
+        password_label: Nova palavra-passe
+        title: Altere a sua palavra-passe
+      new:
+        send_submit: Enviar instruções
+        title: Palavra-passe esquecida?
+    sessions:
+      new:
+        remember_me: Lembrar-se de mim
+        submit: Entrar
+        title: Iniciar sessão
+    shared:
+      links:
+        login: Entrar
+        new_confirmation: Ainda não recebeu as instruções para ativar a sua conta?
+        new_password: Esqueceu a palavra-passe?
+        new_unlock: Ainda não recebeu as instruções de desbloqueio?
+        signin_with_provider: Inicie sessão com %{provider}
+        signup: Não tem uma conta? %{signup_link}
+        signup_link: Inscrever-se
+    unlocks:
+      new:
+        email_label: E-mail
+        submit: Reenviar instruções de desbloqueio
+        title: Reenviar instruções de desbloqueio
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: Motivo
+          info: Esta ação não pode ser desfeita. Por favor, certifique-se que isto é o que quer fazer.
+          info_reason: Se quiser, deixe-nos um motivo (opcional)
+          submit: Eliminar a minha conta
+          title: Eliminar conta
+        edit:
+          current_password_label: Palavra-passe atual
+          edit: Editar
+          email_label: E-mail
+          leave_blank: Deixe em branco se não desejar modificar
+          need_current: Precisamos da sua palavra-passe atual para confirmar as alterações
+          password_confirmation_label: Confirmar nova palavra-passe
+          password_label: Nova palavra-passe
+          update_submit: Atualizar
+          waiting_for: "Aguardando confirmação de:"
+        new:
+          cancel: Cancelar o Início de sessão
+          organization_signup: Representa uma organização ou coletivo? %{signup_link}
+          organization_signup_link: Inscreva-se aqui
+          password_confirmation_label: Confirme a palavra-passe
+          submit: Registar-se
+          terms: Ao registar-se aceita os %{terms}
+          terms_link: termos e condições de uso
+          title: Registar-se
+          username_is_available: Nome de utilizador disponível
+          username_is_not_available: Nome de utilizador já está em uso
+          username_note: Nome que aparece junto às suas publicações
+        success:
+          back_to_index: Eu entendo; voltar à página principal
+          instructions_1: Por favor <b>verifique o seu e-mail</b>. Enviamos um <b>link para confirmar a sua conta</b>.
+          instructions_2: Após confirmar, pode começar a participar.
+          thank_you: Obrigado por se registar na plataforma. Agora é preciso <b>confirmar o seu e-mail</b>.
+          title: Confirme o seu e-mail

@@ -164,6 +164,7 @@ tr:
           quadrillion: Katrilyon
           thousand: Bin
           trillion: Trilyon
+          unit: ""
       format:
         precision: 3
         significant: true

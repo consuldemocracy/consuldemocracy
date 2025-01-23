@@ -157,7 +157,6 @@ ka:
         valuator_filter_all: ყველა შემფასებელი
         tags_filter_all: ყველა ტეგი
         advanced_filters: დამატებითი ფილტრები
-        placeholder: პროექტების ძებნა
         filters:
           all: ყველა
           without_admin: ინდივიდუალური ადმინისტრატორის გარეშე
@@ -187,7 +186,6 @@ ka:
           unfeasible: "შეუძლებელი"
           undecided: "გადასაწყვეტია"
         selected: "შერჩეული"
-        select: "შერჩევა"
         list:
           id: ID
           title: სათაური
@@ -1149,7 +1147,6 @@ ka:
         title: ინიციატივები
         id: ID
         author: ავტორი
-        select: შერჩევა
         selected: შერჩეული
         milestones: ეტაპები
         no_proposals: ინიციატივა არ მოიძებნა.

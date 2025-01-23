@@ -717,7 +717,6 @@ oc:
       see_more: Veire mai de recomandacions
       hide: Amagatz las recomandacions
     translations:
-      select_language_prompt: Escuelh l’idiòma
       remove_language: Elimina l’idiòma
       add_language: Apondre idiòma
       languages_in_use:

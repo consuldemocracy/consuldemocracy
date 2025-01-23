@@ -106,7 +106,6 @@ eu:
         valuator_filter_all: Ebaluatzaile guztiak
         tags_filter_all: Etiketa guztiak
         advanced_filters: Iragazki aurreratuak
-        placeholder: Proiektuak bilatu
         filters:
           all: Guztiak
           without_admin: Administratzaile gabe
@@ -131,7 +130,6 @@ eu:
           unfeasible: "Bideraezina"
           undecided: "Erabaki gabe"
         selected: "Aukeratuta"
-        select: "Aukeratu"
         list:
           id: ID
           title: Izenburua
@@ -872,7 +870,6 @@ eu:
         title: Ezkutatutako proposamenak
         id: ID
         author: Sortzailea
-        select: Aukeratu
         selected: Hautatutakoak
         milestones: Jarraipena
     hidden_proposals:

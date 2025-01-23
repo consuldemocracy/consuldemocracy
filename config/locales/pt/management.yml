@@ -1,1 +1,127 @@
 pt:
+  management:
+    account:
+      menu:
+        reset_password_email: Redefinir palavra-passe via e-mail
+        reset_password_manually: Redefinir palavra-passe manualmente
+      alert:
+        unverified_user: Nenhum utilizador verificado iniciou sessão ainda
+      show:
+        title: Conta do utilizador
+      edit:
+        title: "Editar a conta de utilizador: Redefinir a palavra-passe"
+        back: Voltar
+        password:
+          password: Palavra-passe
+          send_email: Enviar e-mail para redefinir a palavra-passe
+          reset_email_send: E-mail enviado corretamente.
+          reseted: Palavra-passe redefinida com sucesso
+          random: Gerar palavra-passe aleatória
+          save: Gravar palavra-passe
+          print: Imprimir palavra-passe
+          print_help: Poderá imprimir a palavra-passe quando for gravada.
+    account_info:
+      change_user: Alterar utilizador
+      document_number_label: "Número do documento:"
+      document_type_label: "Tipo de documento:"
+      email_label: "E-mail:"
+      identified_label: "Identificado como:"
+      username_label: "Nome de utilizador:"
+    check: Verificar o documento
+    dashboard:
+      index:
+        title: Gestão
+        info: Aqui pode gerir os utilizadores através de todas as ações listadas no menu esquerdo.
+    document_verifications:
+      already_verified: Esta conta de utilizador já foi verificada.
+      has_no_account: Para criar uma conta, aceda a %{link} e clique em <b>"Registar"</b> na parte superior esquerda do ecrã.
+      link: CONSUL DEMOCRACY
+      in_census_has_following_permissions: "Este utilizador pode participar na plataforma com as seguintes permissões:"
+      not_in_census: Este documento não está registado.
+      not_in_census_info: "Cidadãos que não estão no censo podem participar na plataforma com as seguintes permissões:"
+      please_check_account_data: Por favor, verifique se as informações da conta acima estão corretas.
+      title: Gestão de utilizadores
+      under_age: "Não tem a idade exigida para verificar a sua conta."
+      verify: Verificar
+    date_of_birth: Data de nascimento
+    email_verifications:
+      already_verified: Esta conta de utilizador já foi verificada.
+      choose_options: "Por favor, escolha uma das seguintes opções:"
+      document_found_in_census: Este documento foi encontrado no censo, mas não há nenhuma conta de utilizador associada a ele.
+      document_mismatch: "Este e-mail corresponde a um utilizador que já tem um ID associado:%{document_number}(%{document_type})"
+      email_sent_instructions: Para verificar completamente este utilizador, é necessário que o utilizador clique num link que enviamos para o endereço de e-mail acima. Este passo é necessário para confirmar que o endereço lhe pertence.
+      if_existing_account: Se a pessoa já possui uma conta de utilizador criada na plataforma,
+      if_no_existing_account: Se a pessoa ainda não criou uma conta
+      introduce_email: "Por favor, introduza o e-mail usado na conta:"
+      send_email: Enviar e-mail de verificação
+    menu:
+      create_proposal: Criar proposta
+      print_proposals: Imprimir propostas
+      support_proposals: Apoiar propostas
+      create_budget_investment: Criar investimento orçamental
+      print_budget_investments: Imprimir investimentos orçamentais
+      support_budget_investments: Apoiar investimentos orçamentais
+      users: Gestão de utilizadores
+      user_invites: Enviar convites
+      select_user: Selecione utilizador
+    print:
+      proposals_info: Crie a sua proposta em http://url.consul
+      proposals_title: "Propostas:"
+      budget_investments_info: Participe em http://url.consul
+    print_info: Imprimir esta informação
+    proposals:
+      alert:
+        unverified_user: Utilizador não está verificado
+      create_proposal: Criar proposta
+      print:
+        print_button: Imprimir
+      index:
+        title: Apoiar propostas
+    budgets:
+      create_new_investment: Criar investimento orçamental
+      print_investments: Imprimir investimentos orçamentais
+      support_investments: Apoiar investimentos orçamentais
+      table_name: Nome
+      table_phase: Fase
+      table_actions: Ações
+      no_budgets: Não há orçamento participativo em atividade.
+    budget_investments:
+      alert:
+        unverified_user: O utilizador não está verificado
+      create: Criar um investimento orçamental
+      edit: Editar investimento orçamental
+      filters:
+        heading: Conceito
+        unfeasible: Investimentos inviáveis
+      print:
+        print_button: Imprimir
+      search_results:
+        one: " contendo o termo '%{search_term}'"
+        other: " contendo os termos '%{search_term}'"
+    sessions:
+      need_managed_user: Para realizar esta ação deve selecionar um utilizador
+      signed_out: Sessão encerrada com sucesso.
+      signed_out_managed_user: Sessão do utilizador encerrada com sucesso.
+    username_label: Nome de utilizador
+    users:
+      create_user: Criar uma nova conta
+      create_user_info: Vamos criar uma conta com os seguintes dados
+      create_user_submit: Criar utilizador
+      create_user_success: Enviámos um e-mail para o endereço <b>%{email}</b> para verificar se pertence a este utilizador. Contém um link onde devem clicar. Depois terão de definir a sua palavra-passe de acesso antes de poderem iniciar sessão na plataforma
+      autogenerated_password: "A palavra-passe gerada automaticamente é <b>%{password}</b>. Pode alterá-la na secção 'Minha conta'"
+      email_optional_label: E-mail (opcional)
+      erased_notice: Conta de utilizador eliminada.
+      erased_by_manager: "Eliminado pelo gestor: %{manager}"
+      erase_account_link: Eliminar utilizador
+      erase_account_confirm: Tem a certeza de que pretende apagar a conta? Esta ação não pode ser anulada
+      erase_warning: Esta ação não pode ser anulada. Certifique-se de que pretende apagar esta conta.
+      erase_submit: Eliminar conta
+    user_invites:
+      new:
+        label: E-mails
+        info: "Insira os e-mails separados por vírgulas (,)"
+        submit: Enviar convites
+        title: Enviar convites
+      create:
+        success: Foram enviados <strong>%{count} convites</strong>.
+        title: Enviar convites

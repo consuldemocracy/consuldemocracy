@@ -238,7 +238,6 @@ gl:
         valuator_filter_all: Todos os avaliadores
         tags_filter_all: Todas as etiquetas
         advanced_filters: Filtros avanzados
-        placeholder: Buscar proxectos
         filters:
           all: Todo
           without_admin: Sen administrador
@@ -268,7 +267,6 @@ gl:
           unfeasible: "Non viables"
           undecided: "Sen decidir"
         selected: "Seleccionadas"
-        select: "Seleccionar"
         list:
           id: ID
           title: Título
@@ -1294,7 +1292,6 @@ gl:
         title: Propostas cidadás
         id: ID
         author: Autoría
-        select: Seleccionar
         selected: Seleccionadas
         milestones: Seguimento
         no_proposals: Non hai ningunha proposta.

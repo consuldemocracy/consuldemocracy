@@ -118,7 +118,6 @@ zh-CN:
         valuator_filter_all: 所有评估员
         tags_filter_all: 所有标签
         advanced_filters: 高级过滤器
-        placeholder: 搜索项目
         filters:
           all: 所有
           without_admin: 没有指定的管理员
@@ -146,7 +145,6 @@ zh-CN:
           unfeasible: "不可行"
           undecided: "未定"
         selected: "已选"
-        select: "选择"
         list:
           id: ID
           title: 标题
@@ -957,7 +955,6 @@ zh-CN:
         title: 提议
         id: ID
         author: 作者
-        select: 选择
         selected: 已选
         milestones: 里程碑
         no_proposals: 没有提议。

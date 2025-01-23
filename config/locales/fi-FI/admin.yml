@@ -90,7 +90,6 @@ fi:
         administrator_filter_all: Kaikki järjestelmänvalvojat
         tags_filter_all: Kaikki tunnisteet
         advanced_filters: Edistyneet suodattimet
-        placeholder: Hae projekteja
         filters:
           all: Kaikki
           selected: Valittu
@@ -103,7 +102,6 @@ fi:
         feasibility:
           unfeasible: "Toteuttamiskelvoton"
         selected: "Valittu"
-        select: "Valitse"
         list:
           id: ID
           admin: Järjestelmänvalvoja
@@ -488,7 +486,6 @@ fi:
         title: Ehdotukset
         id: ID
         author: Tekijä
-        select: Valitse
         selected: Valittu
         milestones: Tavoitteet
     hidden_proposals:
