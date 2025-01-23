@@ -238,7 +238,6 @@ fr:
         valuator_filter_all: Tous les évaluateurs
         tags_filter_all: Toutes les étiquettes
         advanced_filters: Filtres avancés
-        placeholder: Chercher des projets
         filters:
           all: Toutes
           without_admin: Sans administrateur affecté
@@ -268,7 +267,6 @@ fr:
           unfeasible: "Infaisable"
           undecided: "Incertain"
         selected: "Sélectionné"
-        select: "Sélectionner"
         list:
           id: ID
           title: Titre
@@ -1286,7 +1284,6 @@ fr:
         title: Propositions
         id: ID
         author: Auteur
-        select: Sélecter
         selected: Sélecté
         milestones: Jalons
         no_proposals: il n'y a aucune proposition.
