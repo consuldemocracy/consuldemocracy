@@ -142,7 +142,6 @@ id:
         valuator_filter_all: Semua penilai
         tags_filter_all: Semua tag
         advanced_filters: Saring lanjutan
-        placeholder: Cari proyek
         filters:
           all: Semua
           without_admin: Tanpa ditugaskan admin
@@ -169,7 +168,6 @@ id:
           unfeasible: "Tidak layak"
           undecided: "Bimbang"
         selected: "Dipilih"
-        select: "Pilih"
         list:
           id: ID
           title: Judul
@@ -854,7 +852,6 @@ id:
         title: Proposal
         id: ID
         author: Penulis
-        select: Pilih
         selected: Dipilih
         milestones: Tonggak
     hidden_proposals:

@@ -238,7 +238,6 @@ it:
         valuator_filter_all: Tutti i valutatori
         tags_filter_all: Tutti i tag
         advanced_filters: Filtri avanzati
-        placeholder: Cerca progetti
         filters:
           all: Tutti
           without_admin: Senza amministratore designato
@@ -268,7 +267,6 @@ it:
           unfeasible: "Irrealizzabile"
           undecided: "Nessuna decisione"
         selected: "Selezionato"
-        select: "Selezionare"
         list:
           id: ID
           title: Titolo
@@ -1278,7 +1276,6 @@ it:
         title: Proposte
         id: ID
         author: Autore
-        select: Selezionare
         selected: Selezionato
         milestones: Traguardi
         no_proposals: Nessuna proposta.

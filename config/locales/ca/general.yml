@@ -717,7 +717,6 @@ ca:
       see_more: Veure més recomanacions
       hide: Amagueu les recomanacions
     translations:
-      select_language_prompt: Tria l’idioma
       remove_language: Elimina l’idioma
       add_language: Afegir idioma
       languages_in_use:

@@ -124,7 +124,6 @@ es-PE:
           unfeasible: "Inviable"
           undecided: "Sin decidir"
         selected: "Seleccionada"
-        select: "Seleccionar"
         list:
           title: Título
           supports: Apoyos
@@ -791,7 +790,6 @@ es-PE:
       index:
         title: Propuestas
         author: Autor
-        select: Seleccionar
         selected: Seleccionada
         milestones: Seguimiento
     hidden_proposals:

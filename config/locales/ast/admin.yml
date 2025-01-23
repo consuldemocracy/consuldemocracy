@@ -117,7 +117,6 @@ ast:
           unfeasible: "Invidable"
           undecided: "Ensin decidir"
         selected: "Escoyía"
-        select: "Escoyer"
         list:
           id: ID
           title: Títulu
@@ -697,7 +696,6 @@ ast:
         title: Propuestes
         id: ID
         author: Autor
-        select: Escoyer
         selected: Escoyía
         milestones: Siguimientu
     hidden_proposals:

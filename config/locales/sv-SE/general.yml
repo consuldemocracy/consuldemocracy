@@ -643,6 +643,8 @@ sv:
     show:
       back: "Gå tillbaka till min aktivitet"
   shared:
+    actions:
+      label: "%{action} %{name}"
     edit: "Redigera"
     filter: "Filtrera"
     save: "Spara"
@@ -739,7 +741,7 @@ sv:
       see_more: Visa fler rekommendationer
       hide: Dölj rekommendationer
     translations:
-      select_language_prompt: Välj språk
+      current_language: Nuvarande språk
       remove_language: Ta bort språk
       add_language: Lägg till språk
       languages_in_use:
@@ -758,6 +760,8 @@ sv:
     youtube: "%{org} på YouTube"
     telegram: "%{org} på Telegram"
     instagram: "%{org} på Instagram"
+  ip_denied_handler:
+    unauthorized: "Åtkomst nekad. Din IP-adress tillåts inte."
   unauthorized:
     default: Du har inte behörighet att komma åt sidan.
     manage:

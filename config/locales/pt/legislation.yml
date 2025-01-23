@@ -1,1 +1,134 @@
 pt:
+  legislation:
+    annotations:
+      comments:
+        see_all: Ver todos
+        see_complete: Ver completo
+        replies_count:
+          one: "%{count} resposta"
+          other: "%{count} respostas"
+        cancel: Cancelar
+        publish_comment: Publicar comentário
+      form:
+        phase_not_open: Esta fase não está aberta
+      index:
+        title: Comentários
+        comments_about: Comentários sobre
+        see_in_context: Ver no contexto
+      show:
+        title: Comentário
+      version_chooser:
+        seeing_version: Comentários para a versão
+        see_text: Ver rascunho do texto
+    draft_versions:
+      changes:
+        title: Alterações
+        seeing_changelog_version: Resumo das alterações da revisão
+        see_text: Ver rascunho do texto
+      show:
+        loading_comments: Carregando comentários
+        seeing_version: Está a ver a versão de rascunho
+        select_draft_version: Selecionar rascunho
+        select_version_submit: ver
+        updated_at: atualizado em %{date}
+        see_changes: ver resumo de alterações
+        see_comments: Ver todos os comentários
+        text_toc: Índice
+        text_body: Texto
+        text_comments: Comentários
+    processes:
+      header:
+        additional_info: Informação adicional
+        description: Descrição
+        more_info: Mais informação e contexto
+      proposals:
+        empty_proposals: Não existem propostas
+        filters:
+          random: Aleatório
+          winners: Selecionado
+      debate:
+        empty_questions: Não há perguntas
+      index:
+        filter: Filtro
+        filters:
+          open: Processos abertos
+          past: Terminados
+        no_open_processes: Não existem processos abertos
+        no_past_processes: Não existem processos terminados
+        section_header:
+          icon_alt: Ícone de legislação colaborativa
+          title: Legislação colaborativa
+          help: Ajuda sobre legislação colaborativa
+        section_footer:
+          title: Ajuda sobre legislação colaborativa
+          description: Participe nos debates e processos prévios à aprovação de novos regulamentos ou estratégias. A sua opinião será considerada pela Câmara municipal.
+      phase_not_open:
+        not_open: Esta fase ainda não está aberta
+      phase_empty:
+        empty: Nada publicado ainda
+      process:
+        see_latest_comments: Ver últimos comentários
+        see_latest_comments_title: Comente este processo
+      shared:
+        key_dates: Fases de participação
+        homepage: Página inicial
+        debate_dates: Debate
+        draft_publication_date: Rascunho da publicação
+        allegations_dates: Comentários
+        result_publication_date: Publicação do resultado final
+        milestones_date: Seguindo
+        proposals_dates: Propostas
+    questions:
+      comments:
+        comment_button: Publicar resposta
+        comments_title: Respostas abertas
+        comments_closed: Fase encerrada
+        form:
+          leave_comment: Deixe a sua resposta
+      question:
+        debate: Debate
+      show:
+        answer_question: Enviar resposta
+        next_question: Próxima pergunta
+        first_question: Primeira pergunta
+        share: Partilhar
+        title: Processo de legislação colaborativa
+      participation:
+        phase_not_open: Esta fase não está aberta
+        organizations: As organizações não podem participar no debate
+        unauthenticated: Têm que %{signin} ou %{signup} para participar.
+        verified_only: Somente utilizadores verificados podem participar, %{verify_account}.
+        debate_phase_not_open: Terminou a fase de debate e não são aceites mais respostas
+    shared:
+      share: Partilhar
+      share_comment: Comente sobre a %{version_name} do rascunho do processo %{process_name}
+    proposals:
+      form:
+        tags_label: "Categorias"
+      not_verified: "Para votar propostas %{verify_account}."
+      process_title: Processo de legislação colaborativa
+    summary:
+      title: "Resumo"
+      votes:
+        zero: "%{count} votos"
+        one: "%{count} voto"
+        other: "%{count} votos"
+      debate_phase: "Fase de debate"
+      proposals_phase: "Fase de propostas"
+      allegations_phase: "Fase de comentários"
+      debates:
+        zero: "Não há debates"
+        one: "%{count} debate"
+        other: "%{count} debates"
+      proposals:
+        zero: "Não há propostas"
+        one: "%{count} proposta"
+        other: "%{count} propostas"
+      download: "Descarregar resumo"
+      top_comments:
+        zero: "Nenhum comentário"
+        one: "%{count} comentário"
+        other: "Melhores comentários"
+      most_voted_comments: "Comentários mais votados"
+      no_allegation: "Não há comentários"
+      process_empty: "Este processo não teve fases de participação"

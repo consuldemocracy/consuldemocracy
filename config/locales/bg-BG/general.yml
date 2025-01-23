@@ -726,7 +726,6 @@ bg:
       see_more: Вижте повече препоръки
       hide: Скрийте препоръки
     translations:
-      select_language_prompt: Изберете език
       remove_language: Премахнете език
       add_language: Добавете език
       languages_in_use:

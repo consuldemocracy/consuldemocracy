@@ -1,1 +1,226 @@
 pt:
+  budgets:
+    ballots:
+      show:
+        title: Meus votos
+        amount_progress: "%{amount_spent} / %{amount_limit}"
+        amount_available:
+          knapsack: "Ainda disponível <span>%{count}</span>"
+          approval:
+            zero: "Ainda tem <span>%{count}</span> votos disponíveis."
+            one: "Ainda tem <span>%{count}</span> voto disponível."
+            other: "Ainda tem <span>%{count}</span> votos disponíveis."
+        amount_spent:
+          knapsack: "Total gasto <span>%{count}</span>"
+          approval:
+            zero: "Votos: <span>%{count}</span>"
+            one: "Votos: <span>%{count}</span>"
+            other: "Votos: <span>%{count}</span>"
+        amount_limit:
+          knapsack: "Orçamento total <span>%{count}</span>"
+          approval:
+            one: "Pede votar em <span>1</span> projeto"
+            other: "Pode votar em até <span>%{count}</span> projetos"
+        no_balloted_group_yet: "Ainda não votou neste grupo, vote!"
+        remove: Proposta cidadãvoto
+        remove_label: "Remover voto em %{investment}"
+        voted:
+          one: "Votou em <span>um</span> investimento.</span>"
+          other: "Votou em <span>%{count}</span> investimentos."
+        voted_info: "O voto foi confirmado!"
+        voted_info_2: "Mas pode alterar o voto a qualquer momento antes da conclusão desta fase."
+        zero: Não votou num projeto de investimento.
+      reasons_for_not_balloting:
+        not_verified: Apenas utilizadores verificados podem votar em investimentos; %{verify_account}.
+        not_selected: Projetos de investimento não selecionados não podem ser apoiados
+        not_enough_money: "Já atribuiu o orçamento disponível.<br><small> Lembre-se que pode %{change_ballot} a qualquer momento</small>\n"
+        no_ballots_allowed: A fase de seleção está fechada
+        different_heading_assigned: "Já votou numa rubrica diferente: %{heading_link}"
+        not_enough_available_votes: "Já atingiu o número máximo de votos permitidos"
+        change_ballot: mudar os seus votos
+        casted_offline: Já participou presencialmente
+    groups:
+      show:
+        title: Selecione uma rubrica
+    phase:
+      drafting: Rascunho (não visível ao público)
+      informing: Informação
+      accepting: Apresentação de projetos
+      reviewing: Revisão interna de projetos
+      selecting: Seleção dos projetos
+      valuating: Avaliação dos projetos
+      publishing_prices: Publicação dos custos dos projetos
+      balloting: Votação de projetos
+      reviewing_ballots: Revisão de voto
+      finished: Orçamento final
+    index:
+      title: Orçamentos participativos
+      empty_budgets: Não há orçamentos.
+      section_header:
+        icon_alt: Ícone dos orçamentos participativos
+        title: Orçamentos participativos
+        help: Ajuda com orçamentos participativos
+      all_phases: Fases do orçamento participativo
+      next_phase: Próxima fase
+      prev_phase: Fase anterior
+      current_phase: Fase atual
+      map: Propostas de investimentos orçamentais localizadas geograficamente
+      finished_budgets: Orçamentos participativos concluídos
+      see_results: Exibir resultados
+      section_footer:
+        title: Ajuda com orçamentos participativos
+        description: Com os orçamentos participativos, os cidadãos decidem para quais dos projetos apresentados será destinada uma parte do orçamento municipal.
+      milestones: Etapas
+    investments:
+      form:
+        title: "Criar um investimento orçamental"
+        subtitle: "%{heading} (%{price})"
+        subtitle_without_price: "%{heading}"
+        tag_category_label: "Categorias"
+        tags_instructions: "Marque esta proposta. Pode escolher entre as categorias propostas ou adicionar a sua própria"
+        tags_label: Etiquetas
+        tags_placeholder: "Insira as etiquetas que pretender usar separadas por vírgulas (,)"
+        map_location: "Localização no mapa"
+        map_location_instructions: "Navegue no mapa até o local e coloque o marcador."
+      index:
+        title: Orçamento participativo
+        unfeasible: Projetos de investimento inviáveis
+        unfeasible_text: "As propostas devem atender a uma série de critérios (legalidade, ser concreto, não exceder o limite do orçamento) para serem declaradas viáveis e chegarem à fase de votação final. Todas as propostas que não atendem a estes critérios são marcadas como inviáveis e publicadas na lista seguinte, juntamente com seu relatório de inviabilidade."
+        by_heading: "Projetos de investimento com âmbito: %{heading}"
+        search_form:
+          button: Procurar
+          placeholder: Procurar projetos de investimento...
+          title: Procurar
+        sidebar:
+          my_ballot: Os meus votos
+          voted_info:
+            knapsack:
+              one: "<strong>Votou numa proposta com um custo de %{amount_spent}</strong>"
+              other: "<strong>Votou em %{count} propostas com um custo de %{amount_spent}</strong>"
+            approval:
+              one: "<strong>Votou em uma proposta</strong>"
+              other: "<strong>Votou em %{count} propostas</strong>"
+          change_vote_info:
+            knapsack: "Pode %{link} em qualquer momento até %{phase_end_date}. Não tem que gastar todo o dinheiro disponível."
+            approval: "Pode %{link} em qualquer momento até %{phase_end_date}."
+          change_vote_link: "mudar o seu voto"
+          different_heading_assigned: "Tem votos ativos numa rubrica diferente: %{heading_link}"
+          change_ballot: "Se mudar de ideias, poderá remover os seus votos em %{check_ballot} e começar de novo."
+          check_ballot_link: "rever os meus votos"
+          zero: Não votou em nenhum projeto de investimento neste grupo.
+          verified_only: "Para criar um novo investimento orçamental %{verify}."
+          create: "Criar um investimento orçamental"
+          not_logged_in: "Para criar um novo investimento orçamental, deve %{sign_in} ou %{sign_up}."
+        filter: "Projetos filtrados por"
+        filters:
+          not_unfeasible: "Ativos"
+          selected: "Ativos"
+          unfeasible: "Inviável"
+          unselected: "Não selecionado para a votação final"
+          winners: "Vencedores"
+        orders:
+          random: aleatório
+          confidence_score: melhor avaliados
+          price: por custo
+      share:
+        message: "Eu criei o projeto de investimento %{title} em %{handle}. Crie um projeto também!"
+      show:
+        author_deleted: Utilizador eliminado
+        price_explanation: Explicação do custo
+        unfeasibility_explanation: Explicação da inviabilidade
+        code: "Código do projeto de investimento: <strong>%{code}</strong>"
+        location: "Localização: <strong>%{location}</strong>"
+        organization_name: "Proposta em nome de: <strong>%{name}</strong>"
+        share: Compartilhar
+        title: Projeto de investimento
+        supports: Apoios
+        votes: Votos
+        price: Custo
+        comments_tab: Comentários
+        milestones_tab: Etapas
+        author: Autor
+        project_unfeasible: "Este projeto de investimento <strong>foi marcado como não viável</strong> e não vai à fase de votação."
+        project_selected: "Este projeto de investimento <strong>foi selecionado</strong> para a fase de votação."
+        project_winner: "Projeto de investimento vencedor"
+        project_not_selected: "Este projeto de investimento <strong>não foi selecionado</strong> para a fase de votação."
+        see_price_explanation: Exposição de custos
+      wrong_price_format: Apenas números inteiros
+      investment:
+        add: Votar
+        add_label: "Votar %{investment}"
+        already_added: Já adicionou este projeto de investimento
+        support_title: Apoiar este projeto
+        supports:
+          zero: Nenhum apoio
+          one: 1 apoio
+          other: "%{count} apoios"
+      header:
+        check_ballot: "Verificar os meus votos"
+        different_heading_assigned: "Tem votos ativos numa rubrica diferente: %{heading_link}"
+        change_ballot: "Se mudar de ideias, poderá remover os seus votos em %{check_ballot} e começar de novo."
+        check_ballot_link: "verificar os meus votos"
+        price: "Orçamento total"
+      votes:
+        already_supported: "Já apoiou esta proposta de investimento. Partilhe!"
+        confirm_group:
+          one: "Só pode apoiar investimentos em %{count} zona. Se continuar, não poderá alterar a eleição da sua zona. Tem a certeza?"
+          other: "Só pode apoiar investimentos em %{count} zonas. Se continuar, não poderá alterar a eleição da sua zona. Tem a certeza?"
+        remove_support: "Remover o seu apoio"
+        remove_support_label: "Remover o seu apoio a %{investment}"
+        support: "Apoiar"
+        support_label: "Apoiar %{investment}"
+    investments_list:
+      investment:
+        price: "Custo"
+        read_more: "Ler mais"
+        supports: "Apoios"
+      see_all: "Ver todos os investimentos"
+      title: "Lista de investimentos"
+    show:
+      see_results: Ver resultados
+    supports_info:
+      different: "Pode apoiar quantos projetos diferentes desejar."
+      next: "Apoie os projetos que gostaria de ver na fase seguinte."
+      scrolling: "Continue a deslizar para ver todas as ideias"
+      share: "Pode partilhar os projetos que apoiou nas redes sociais e atrair mais atenção e apoio para os mesmos!"
+      supported:
+        one: "Até agora apoiou <strong>1 projeto</strong>."
+        other: "Até agora apoiou <strong>%{count} projetos</strong>."
+      supported_not_logged_in: "Inicie sessão para começar a <strong>apoiar projetos</strong>."
+      time: "Ainda vai a tempo até %{phase_end_date} para apoiar projetos."
+      title: "Está na hora de <strong>apoiar</strong> projetos!"
+    results:
+      link: Resultados
+      page_title: "%{budget} - Resultados"
+      heading: "Resultados do orçamento participativo"
+      heading_selection_title: "Por zona"
+      ballot_lines_count: Votos
+      hide_discarded_link: Ocultar descartados
+      show_all_link: Mostrar todos
+      price: Custo
+      amount_available: Orçamento disponível
+      accepted: "Proposta de investimento aceite: "
+      discarded: "Proposta de investimento descartado: "
+      incompatibles: Incompatíveis
+      investment_title: Título do projeto
+      investment_proyects: Lista de todos os projetos de investimento
+      unfeasible_investment_proyects: Lista de todos os projetos de investimento inviáveis
+      not_selected_investment_proyects: Lista de todos os projetos de investimento não selecionados para votação
+    executions:
+      link: "Etapas"
+      page_title: "%{budget} - Etapas"
+      heading: "Etapas do orçamento participativo"
+      heading_selection_title: "Por zona"
+      no_winner_investments: "Não há projetos de investimentos vencedores neste estado"
+      filters:
+        status:
+          label: "Estado atual do projeto"
+          all: "Todos (%{count})"
+        milestone_tag:
+          label: "Etiquetas de etapas"
+          all: "Todas (%{count})"
+    phases:
+      errors:
+        dates_range_invalid: "Data de início não pode ser igual ou posterior à data de término"
+        prev_phase_dates_invalid: "Data de início deve ser posterior à data de início da fase anterior ativada (%{phase_name})"
+        next_phase_dates_invalid: "Data de término deve ser anterior à data de término da próxima fase ativada (%{phase_name})"

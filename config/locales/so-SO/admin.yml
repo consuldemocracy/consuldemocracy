@@ -118,7 +118,6 @@ so:
         valuator_filter_all: Dhamaan qimeeyayasha
         tags_filter_all: Dhamaan Taagyada
         advanced_filters: Sifeyaysha Sare
-        placeholder: Mashariic raadin
         filters:
           all: Dhamaan
           without_admin: Anlahayn maamul
@@ -146,7 +145,6 @@ so:
           unfeasible: "An surtgak ahayn"
           undecided: "An go aasan"
         selected: "Ladoortay"
-        select: "Dorasho"
         list:
           id: Aqoonsi
           title: Ciwaan
@@ -956,7 +954,6 @@ so:
         title: Sojeedino
         id: Aqoonsi
         author: Qoraa
-        select: Dorasho
         selected: Ladoortay
         milestones: Dhib meel loga baxo oo an lahayn dhibato wayn
     hidden_proposals:

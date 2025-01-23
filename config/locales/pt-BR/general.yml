@@ -723,7 +723,6 @@ pt-BR:
       see_more: Ver mais recomendações
       hide: Ocultar recomendações
     translations:
-      select_language_prompt: Selecionar idioma
       remove_language: Remover idioma
       add_language: E o idioma
       languages_in_use:

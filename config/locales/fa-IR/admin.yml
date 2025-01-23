@@ -113,7 +113,6 @@ fa:
         valuator_filter_all: همه ارزیابان
         tags_filter_all: همه برچسب ها
         advanced_filters: فیلترهای پیشرفته
-        placeholder: جستجو در پروژه ها
         filters:
           all: همه
           without_admin: بدون تعیین مدیر
@@ -140,7 +139,6 @@ fa:
           unfeasible: "غیر قابل پیش بینی"
           undecided: "بلاتکلیف"
         selected: "انتخاب شده"
-        select: "انتخاب"
         list:
           id: شناسه
           title: عنوان
@@ -875,7 +873,6 @@ fa:
         title: طرح های پیشنهادی
         id: شناسه
         author: نویسنده
-        select: انتخاب
         selected: انتخاب شده
         milestones: نقطه عطف
     hidden_proposals:

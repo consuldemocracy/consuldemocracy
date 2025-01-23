@@ -736,7 +736,6 @@ ne:
       see_more: थप सिफारिसहरू हेर्नुहोस्
       hide: सिफारिसहरू लुकाउनुहोस्
     translations:
-      select_language_prompt: भाषा छान्नुहोस्
       remove_language: भाषा हटाउनुहोस्
       add_language: भाषा थप्नुहोस्
       languages_in_use:
