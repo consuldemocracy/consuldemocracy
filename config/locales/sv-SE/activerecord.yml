@@ -151,6 +151,9 @@ sv:
       votation_type:
         one: Omröstningstyp
         other: Omröstningstyper
+      cookies/vendor:
+        one: cookie-leverantör
+        other: cookie-leverantörer
     attributes:
       budget:
         name: "Namn"
@@ -534,6 +537,10 @@ sv:
       votation_type/vote_type:
         unique: Unikt svar
         multiple: Flera svar
+      cookies/vendor:
+        name: Leverantörsnamn
+        cookie: Cookie-namn
+        script: Javascript-kod
     errors:
       models:
         user:
