@@ -160,7 +160,6 @@ hr:
         valuator_filter_all: Svi procjenitelji
         tags_filter_all: Sve oznake
         advanced_filters: Napredni filtri
-        placeholder: Pretraži projetke
         filters:
           all: Svi
           without_admin: Bez dodjeljenog admina
@@ -190,7 +189,6 @@ hr:
           unfeasible: "Neizvodljivo"
           undecided: "Nije odlučeno"
         selected: "Odabrano"
-        select: "Odaberi"
         list:
           id: ID
           title: Naziv
@@ -1155,7 +1153,6 @@ hr:
         title: Prijedlozi
         id: ID
         author: Autor
-        select: Odaberi
         selected: Odabrano
         milestones: Ključni ciljevi
         no_proposals: Ne postoje prijedlozi.
