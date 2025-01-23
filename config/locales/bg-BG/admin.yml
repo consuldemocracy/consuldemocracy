@@ -190,7 +190,6 @@ bg:
         valuator_filter_all: Всички оценители
         tags_filter_all: Всички тагове
         advanced_filters: Разширени филтри
-        placeholder: Търсене на проекти
         filters:
           all: Всички
           without_admin: Без назначен администратор
@@ -220,7 +219,6 @@ bg:
           unfeasible: "Неизпълнимо"
           undecided: "Нерешено"
         selected: "Избрано"
-        select: "Избиране"
         list:
           id: Идентификация
           title: Заглавие
@@ -1188,7 +1186,6 @@ bg:
         title: Предложения
         id: Идентификация
         author: Автор
-        select: Изберете
         selected: Избрано
         milestones: Основни етапи
         no_proposals: Няма предложения.
