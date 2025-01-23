@@ -104,7 +104,6 @@ sl:
         valuator_filter_all: Vsi cenilci
         tags_filter_all: Vse oznake
         advanced_filters: Napredni filtri
-        placeholder: Išči projekte
         filters:
           all: Vsi
           without_admin: Brez določenega administratorja
@@ -131,7 +130,6 @@ sl:
           unfeasible: "Neizvedljivo"
           undecided: "Neodločeno"
         selected: "Izbrano"
-        select: "Izberi"
         list:
           title: Naslov
           supports: Glasovi
@@ -848,7 +846,6 @@ sl:
       index:
         title: Skriti predlogi
         author: Avtor
-        select: Izberi
         selected: Označeno
         milestones: Mejniki
     hidden_proposals:
