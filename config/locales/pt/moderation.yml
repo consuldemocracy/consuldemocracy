@@ -1,1 +1,111 @@
 pt:
+  moderation:
+    actions:
+      confirm_action: "Tem a certeza? %{action}"
+    comments:
+      index:
+        block_authors: Bloquear autores
+        filter: Filtro
+        filters:
+          all: Todos
+          pending_flag_review: Pendentes
+          with_ignored_flag: Marcados como visto
+        headers:
+          comment: Comentário
+          moderate: Moderar
+        hide: "Ocultar comentários\n"
+        ignore_flags: Marcar como visto
+        orders:
+          flags: Mais denunciados
+          newest: Mais recentes
+        title: Comentários
+    dashboard:
+      index:
+        title: Moderação
+    debates:
+      index:
+        block_authors: Bloquear autores
+        filter: Filtrar
+        filters:
+          all: Todos
+          pending_flag_review: Pendentes
+          with_ignored_flag: Marcados como vistos
+        headers:
+          debate: Debate
+          moderate: Moderar
+        hide: Ocultar debates
+        ignore_flags: Marcar como visto
+        orders:
+          created_at: Mais recente
+          flags: Mais denunciados
+        title: Debates
+    header:
+      title: Moderação
+    menu:
+      flagged_comments: Comentários
+      flagged_debates: Debates
+      flagged_investments: Investimentos orçamentais
+      proposals: Propostas
+      proposal_notifications: Notificação das propostas
+      users: Bloquear utilizadores
+    proposals:
+      index:
+        block_authors: Bloquear autores
+        filter: Filtro
+        filters:
+          all: Todas
+          pending_flag_review: Revisão pendente
+          with_ignored_flag: Marcar como visto
+        headers:
+          moderate: Moderar
+          proposal: Proposta
+        hide: Ocultar propostas
+        ignore_flags: Marcar como visto
+        orders:
+          created_at: Mais recentes
+          flags: Mais denunciadas
+        title: Propostas
+    budget_investments:
+      index:
+        block_authors: Bloquear autores
+        filter: Filtro
+        filters:
+          all: Todos
+          pending_flag_review: Pendente
+          with_ignored_flag: Marcar como visto
+        headers:
+          moderate: Moderar
+          budget_investment: Investimento orçamental
+        hide: Ocultar investimentos orçamentais
+        ignore_flags: Marcar como visto
+        orders:
+          created_at: Mais recentes
+          flags: Mais denunciadas
+        title: Investimentos orçamentais
+    proposal_notifications:
+      index:
+        block_authors: Bloquear autores
+        filter: Filtro
+        filters:
+          all: Todas
+          pending_review: Revisão pendente
+          ignored: Marcar como visto
+        headers:
+          moderate: Moderar
+          proposal_notification: Notificação de proposta
+        hide: Ocultar propostas
+        ignore_flags: Marcar como visto
+        orders:
+          created_at: Mais recentes
+          moderated: Moderado
+        title: Notificações de proposta
+    users:
+      index:
+        block: Bloquear
+        confirm_block: "Tem a certeza? Isto ocultará o utilizador \"%{name}\" e todos os seus conteúdos."
+        confirm_hide: "Tem a certeza? Isto ocultará o utilizador \"%{name}\" sem ocultar os seus conteúdos."
+        hide: Ocultar
+        search_placeholder: e-mail ou nome de utilizador
+        title: Bloquear utilizadores
+      notice_block: O utilizador foi bloqueado. Todos os seus conteúdos foram ocultados.
+      notice_hide: O utilizador foi ocultado. Os seus conteúdos continuam disponíveis.
