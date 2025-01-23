@@ -155,7 +155,6 @@ oc:
         valuator_filter_all: Totes los avaluadors
         tags_filter_all: Totas las etiquetas
         advanced_filters: de Filtres avançats
-        placeholder: Cèrca de projèctes
         filters:
           all: totes
           without_admin: Sens administrador
@@ -185,7 +184,6 @@ oc:
           unfeasible: "Pas viables"
           undecided: "sens decidir"
         selected: "seleccionada"
-        select: "Seleccionar"
         list:
           id: ID
           title: Títol
@@ -1147,7 +1145,6 @@ oc:
         title: de Proposicions ciutadanas
         id: ID
         author: Autor
-        select: Selecciona
         selected: Seleccionat
         milestones: de Hitas
         no_proposals: I a pas de proposicions.
