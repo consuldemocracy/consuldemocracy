@@ -1352,6 +1352,10 @@ sv:
         sdg:
           title: Konfigurering av Globala målen
           how_to_enable: 'För att visa konfigurationsalternativen från Globala mål för hållbar utveckling måste du aktivera "Globala målen" på fliken "Funktioner".'
+        cookies_consent:
+          title: Cookies-samtycke
+        cookies_consent_banner:
+          title: Banner om cookies-samtycke
       remote_census_general_name: Generell information
       remote_census_request_name: Begär data
       remote_census_response_name: Svarsdata
@@ -1804,3 +1808,25 @@ sv:
       tags: "Taggar"
       tags_description: "Genererar automatiska taggar på alla objekt som kan taggas."
       title: "AI/maskininlärning"
+    cookies:
+      vendors:
+        empty: Det hittades inga leverantörer
+        third_party_cookies: Tredje parts cookies
+        create_button: Skapa cookie-leverantör
+        create:
+          notice: Cookie-leverantör har skapats
+        new:
+          title: Ny cookie-leverantör
+        edit:
+          title: Redigera cookie-leverantör
+        update:
+          notice: Cookie-leverantör har uppdaterats
+        destroy:
+          notice: Cookie-leverantör har raderats
+        form:
+          name:
+            help_text: Denna information kommer att synas offentligt.
+          cookie:
+            help_text: Denna information kommer att användas internt. Cookie-namnet måste vara unikt, och det kan bara innehålla bokstäver, siffror och understreck.
+          description:
+            help_text: Den här informationen kommer att synas offentligt.
