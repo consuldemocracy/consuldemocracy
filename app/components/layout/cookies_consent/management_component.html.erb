@@ -1,0 +1,39 @@
+<section id="cookies_consent_management"
+         class="cookies-consent-management reveal"
+         data-reveal
+         aria-labelledby="modal_heading"
+         data-version-name="<%= version_name %>">
+  <header>
+    <h2 id="modal_heading"><%= t("cookies_management.title") %></h2>
+    <button class="close-button" aria-label="<%= t("admin.shared.close_modal") %>" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </header>
+  <p><%= t("cookies_management.description") %><p>
+  <% if more_info_link.present? %>
+    <p><%= link_to t("cookies_consent.more_info_link"), more_info_link, target: "_blank" %></p>
+  <% end %>
+
+  <h3><%= t("cookies_management.essentials.title") %></h3>
+  <p><%= t("cookies_management.essentials.description") %></p>
+  <div class="cookies-essentials">
+    <ul>
+      <li>
+        <%= render Layout::CookiesConsent::SwitchComponent.new(:essential_cookies,
+                                                               label: t("cookies_management.essentials.title"),
+                                                               description: t("cookies_management.essentials.hint"),
+                                                               checked: true,
+                                                               disabled: true) %>
+      </li>
+    </ul>
+  </div>
+
+  <%= render Layout::CookiesConsent::VendorsComponent.new %>
+
+  <div class="buttons">
+    <% if vendors.any? %>
+      <button type="button" class="accept-all-cookies"><%= t("cookies_consent.accept_all_cookies") %></button>
+    <% end %>
+    <button type="button" class="accept-essential-cookies"><%= t("cookies_consent.accept_essential_cookies") %></button>
+  </div>
+</section>

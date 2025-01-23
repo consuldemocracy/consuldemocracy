@@ -1,0 +1,13 @@
+<div id="cookies_consent_banner" class="cookies-consent-banner">
+  <h2><%= t("cookies_consent.title") %></h2>
+  <p><%= t("cookies_consent.message") %></p>
+  <% if more_info_link.present? %>
+    <p><%= link_to t("cookies_consent.more_info_link"), more_info_link %></p>
+  <% end %>
+
+  <% if vendors.any? %>
+    <button type="button" class="accept-all-cookies"><%= t("cookies_consent.accept_all_cookies") %></button>
+  <% end %>
+  <button type="button" class="accept-essential-cookies"><%= t("cookies_consent.accept_essential_cookies") %></button>
+  <button type="button" data-open="cookies_consent_management" class="manage-cookies"><%= t("cookies_consent.management") %></button>
+</div>

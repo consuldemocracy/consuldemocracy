@@ -1,0 +1,31 @@
+.cookies-consent-banner {
+  @include brand-border;
+  background: inherit;
+  bottom: $line-height / 3;
+  left: $line-height / 3;
+  padding: 2rem;
+  position: fixed;
+  right: $line-height / 3;
+  z-index: 20;
+
+  button {
+    @include breakpoint(small only) {
+      display: block;
+      width: 100%;
+    }
+
+    &.accept-all-cookies,
+    &.accept-essential-cookies {
+      @include regular-button;
+      margin-bottom: 0;
+
+      @include breakpoint(small only) {
+        margin-bottom: $line-height / 3;
+      }
+    }
+
+    &.manage-cookies {
+      @include hollow-button;
+    }
+  }
+}

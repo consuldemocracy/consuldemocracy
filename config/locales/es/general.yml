@@ -197,6 +197,7 @@ es:
       conditions: Condiciones de uso
       consul: aplicación CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
+      cookies_consent_management: Configuración de cookies
       copyright: CONSUL DEMOCRACY, %{year}
       description: Este portal usa la %{consul} que es %{open_source}.
       open_source: software de código abierto
@@ -933,3 +934,21 @@ es:
   machine_learning:
     comments_summary: "Resumen de comentarios"
     info_text: "Contenido generado mediante IA / Machine Learning"
+  cookies_consent:
+    accept_all_cookies: "Aceptar todo"
+    accept_essential_cookies: "Aceptar cookies esenciales"
+    message: "Las cookies nos ayudan a ofrecer nuestros servicios. Al utilizar nuestros servicios, aceptas el uso de cookies."
+    more_info_link: "Más información sobre cookies"
+    management: "Ajustes"
+    title: "Política de cookies"
+  cookies_management:
+    title: Configuración de cookies
+    description: Esta web utiliza cookies propias y de terceros para su correcto funcionamiento. Al hacer click en el botón Aceptar todo, aceptas el uso de estas tecnologías y el procesamiento de tus datos para estos propósitos.
+    essentials:
+      title: Cookies esenciales
+      description: Utilizadas para finalidades muy diversas, como por ejemplo, reconocerte como usuario, elegir el idioma o personalizar la forma en la que se muestra el contenido.
+      hint: Sin ellas, las funciones básicas de navegación se verán afectadas, por lo que deben estar siempre activas.
+    third_party:
+      title: Cookies de terceros
+      description: Esta web usa cookies de terceros. Estas cookies pueden recopilar información para mejorar tu experiencia de usuario.
+    save_preferences: Guardar preferencias

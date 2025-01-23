@@ -1352,6 +1352,10 @@ en:
         sdg:
           title: SDG configuration
           how_to_enable: 'To show the configuration options from Sustainable Development Goals you must enable "SDG" on "Features" tab.'
+        cookies_consent:
+          title: Cookies consent
+        cookies_consent_banner:
+          title: Cookies consent banner
       remote_census_general_name: General Information
       remote_census_request_name: Request Data
       remote_census_response_name: Response Data
@@ -1804,3 +1808,27 @@ en:
       tags: "Tags"
       tags_description: "Generates automatic tags on all items that can be tagged on."
       title: "AI / Machine learning"
+    cookies:
+      vendors:
+        empty: No vendors found
+        third_party_cookies: Third party cookies
+        create_button: Create cookie vendor
+        create:
+          notice: Cookie vendor created successfully
+        new:
+          title: New cookie vendor
+        edit:
+          title: Edit cookie vendor
+        update:
+          notice: Cookie vendor updated successfully
+        destroy:
+          notice: Cookie vendor deleted successfully
+        form:
+          name:
+            help_text: This information will be publicly visible.
+          cookie:
+            help_text: This information will be used internally. The cookie name must be unique, and it can only contain letters, digits and underscores.
+          description:
+            help_text: This information will be publicly visible.
+          script:
+            help_text: This is the script to run when this cookie is accepted by the user. You can enter vanilla Javascript code here and introduce references to other application javascript.

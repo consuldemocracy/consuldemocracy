@@ -151,6 +151,9 @@ en:
       votation_type:
         one: Votation type
         other: Votation types
+      cookies/vendor:
+        one: cookie vendor
+        other: cookie vendors
     attributes:
       budget:
         name: "Name"
@@ -534,6 +537,10 @@ en:
       votation_type/vote_type:
         unique: Unique answer
         multiple: Multiple answers
+      cookies/vendor:
+        name: Vendor name
+        cookie: Cookie name
+        script: Javascript code
     errors:
       models:
         user:
