@@ -64,7 +64,7 @@ class Proposal < ApplicationRecord
   before_save :calculate_hot_score, :calculate_confidence_score
 
   after_create :send_new_actions_notification_on_create
-
+  
   scope :for_render,               -> { includes(:tags) }
   scope :sort_by_hot_score,        -> { reorder(hot_score: :desc) }
   scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc) }
@@ -93,6 +93,7 @@ class Proposal < ApplicationRecord
 
   def publish
     update!(published_at: Time.current)
+    Mailer.proposal_published(self).deliver_later
     send_new_actions_notification_on_published
   end
 
@@ -256,7 +257,7 @@ class Proposal < ApplicationRecord
 
   def send_new_actions_notification_on_published
     new_actions_ids = Dashboard::Action.detect_new_actions_since(Date.yesterday, self)
-
+    puts "inside publishing. New actions ids are #{new_actions_ids}"
     if new_actions_ids.present?
       Dashboard::Mailer.delay.new_actions_notification_on_published(self, new_actions_ids)
     end
