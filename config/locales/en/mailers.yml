@@ -27,6 +27,15 @@ en:
       new_reply_by: There is a new response from <strong>%{commenter}</strong> to your comment on
       subject: Someone has responded to your comment
       title: New response to your comment
+    proposal_published:
+      subject: "Thank you for publishing a proposal!"
+      title: "Thank you for publishing a proposal!"
+      intro: "Hi <strong>%{author}</strong>,"
+      text: "Thank you for publishing your proposal <strong>%{proposal}</strong>."
+      follow: "We will inform you about how the process progresses, which you can also follow on <strong>%{link}</strong>."
+      follow_link: "Proposals"
+      sincerely: "Sincerely,"
+      share: "Share your project"
     proposal_notification_digest:
       info: "Here are the new notifications that have been published by authors of the proposals that you have supported in %{org_name}."
       title: "Proposal notifications in %{org_name}"
