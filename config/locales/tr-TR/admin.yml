@@ -1352,6 +1352,10 @@ tr:
         sdg:
           title: SKA yapılandırması
           how_to_enable: 'Sürdürülebilir Kalkınma Amaçları ile ilgili yapılandırma seçeneklerini görüntülemek için, "Özellikler" sekmesinden "SKA" özelliğini açmalısınız.'
+        cookies_consent:
+          title: Tanımlama bilgileri onayı
+        cookies_consent_banner:
+          title: Tanımlama bilgileri onayı afişi
       remote_census_general_name: Genel bilgiler
       remote_census_request_name: Veri isteği
       remote_census_response_name: Veri yanıtı
@@ -1804,3 +1808,27 @@ tr:
       tags: "Etiketler"
       tags_description: "Etiketlenebilecek tüm ögelere otomatik olarak etiketler üretir."
       title: "Yapay Zeka / Makine Öğrenmesi"
+    cookies:
+      vendors:
+        empty: Herhangi bir sağlayıcı bulunamadı
+        third_party_cookies: Üçüncü taraf tanımlama bilgileri
+        create_button: Tanımlama bilgileri sağlayıcısı oluştur
+        create:
+          notice: Tanımlama bilgileri sağlayıcısı oluşturuldu
+        new:
+          title: Yeni tanımlama bilgileri sağlayıcısı
+        edit:
+          title: Tanımlama bilgileri sağlayıcısını düzenle
+        update:
+          notice: Tanımlama bilgileri sağlayıcısı güncellendi
+        destroy:
+          notice: Tanımlama bilgileri sağlayıcısı silindi
+        form:
+          name:
+            help_text: Bu bilgiler herkese açık olarak görülebilir.
+          cookie:
+            help_text: Bu bilgiler içeride kullanılır. Tanımlama bilgileri adı benzersiz olmalı ve yalnızca harf, rakam ve alt çizgi karakterlerinden oluşmalıdır.
+          description:
+            help_text: Bu bilgiler herkese açık olarak görülebilir.
+          script:
+            help_text: Bu betik, bu tanımlama bilgileri kullanıcı tarafından onaylandığında çalıştırılır. Buraya vanilla JavaScript kodu yazabilir ve diğer uygulama JavaScript betiklerine referanslar sunabilirsiniz.
