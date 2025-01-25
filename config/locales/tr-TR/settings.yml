@@ -230,3 +230,6 @@ tr:
         legislation_description: Katılımcı mevzuatlar Sürdürülebilir Kalkınma Amaçları ile ilişkilendirilebilsin
     cookies_consent:
       more_info_link: Tanımlama bilgileri ilkesi bağlantısı
+      more_info_link_description: Onay afişinde görüntülenecek çerez ilkesi sayfası bağlantısı.
+      version_name: Sürüm adı
+      version_name_description: Tüm kullanıcıların tanımlama bilgileri onay sürecinden yeniden geçmesini sağlamak için sürüm adını değiştirin. Bu özellik, yeni bir kullanıcı onayı gerektiren köklü tanımlama bilgileri ilkesi değişiklikleri yaparken kullanışlı olabilir.
