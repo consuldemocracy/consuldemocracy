@@ -94,11 +94,12 @@ group :development do
   gem "capistrano3-delayed-job", "~> 1.7.6"
   gem "capistrano3-puma", "~> 5.2.0"
   gem "erb_lint", "~> 0.6.0", require: false
+  gem "faraday-retry", "~> 2.2.1", require: false
   gem "mdl", "~> 0.13.0", require: false
   gem "pronto", "~> 0.11.2", require: false
   gem "pronto-erb_lint", "~> 0.1.6", require: false
   gem "pronto-eslint", "~> 0.11.1", require: false
-  gem "pronto-rubocop", "~> 0.11.5", require: false
+  gem "pronto-rubocop", "~> 0.11.6", require: false
   gem "pronto-stylelint", "~> 0.10.3", require: false
   gem "rubocop", "~> 1.66.1", require: false
   gem "rubocop-capybara", "~> 2.21.0", require: false
