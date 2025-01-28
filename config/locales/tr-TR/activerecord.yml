@@ -151,6 +151,9 @@ tr:
       votation_type:
         one: Oylama türü
         other: Oylama türleri
+      cookies/vendor:
+        one: tanımlama bilgileri sağlayıcı
+        other: tanımlama bilgileri sağlayıcıları
     attributes:
       budget:
         name: "Ad"
@@ -534,6 +537,10 @@ tr:
       votation_type/vote_type:
         unique: Eşsiz yanıt
         multiple: Birden çok yanıt
+      cookies/vendor:
+        name: Sağlayıcı adı
+        cookie: Tanımlama bilgileri adı
+        script: JavaScript kodu
     errors:
       models:
         user:

@@ -198,6 +198,7 @@ tr:
       consul: CONSUL DEMOCRACY uygulaması
       consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: CONSUL DEMOCRACY, %{year}
+      cookies_consent_management: Tanımlama bilgileri yönetimi
       description: Bu site %{open_source} olan %{consul} ile sunuluyor.
       open_source: açık kaynaklı yazılım
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
@@ -932,3 +933,21 @@ tr:
   machine_learning:
     comments_summary: "Yorumların özeti"
     info_text: "İçerik Yapay Zeka / Makine Öğrenmesi tarafından oluşturulmuş"
+  cookies_consent:
+    accept_all_cookies: "Tümünü onayla"
+    accept_essential_cookies: "Temel tanımlama bilgilerini onayla"
+    message: "Tanımlama bilgileri hizmetlerimizi sunmamıza yardımcı olur. Hizmetlerimizi kullanarak tanımlama bilgilerini kullanacağımızı onaylamış olursunuz."
+    more_info_link: "Tanımlama bilgileri hakkında ayrıntılı bilgiler"
+    management: "Tanımlama bilgileri yönetimi"
+    title: "Tanımlama bilgileri ilkesi"
+  cookies_management:
+    title: Tanımlama bilgileri yönetimi
+    description: Bu site düzgün çalışması için kendisi ve üçüncü taraflar için tanımlama bilgilerini kullanıyorr. Tümünü onayla düğmesine tıklayarak, bu teknolojilerin kullanımını ve verilerinizin bu amaçlar için işlenmesini onaylamış olursunuz.
+    essentials:
+      title: Temel tanımlama bilgileri
+      description: Tanımlama bilgileri, sizi kullanıcı olarak tanımak, dilinizi seçmek veya içeriğin görüntülenme biçimini özelleştirmek gibi birçok farklı amaç için kullanılırlar.
+      hint: Bunlar olmadan temel gezinme işlemleri bozulacağından bunların her zaman kullanılması gerekir.
+    third_party:
+      title: Üçüncü tarafların tanımlama bilgileri
+      description: Bu site üçüncü tarafların tanımlama bilgilerini kullanır. Bu tanımlama bilgileri işlevselliği artırabilir veya kullanıcı deneyiminizi iyileştirmek için bilgi toplayabilir.
+    save_preferences: Tercihleri kaydet
