@@ -71,7 +71,7 @@ group :development, :test do
   gem "faker", "~> 3.4.2"
   gem "i18n-tasks", "~> 0.9.37"
   gem "knapsack_pro", "~> 7.8.0"
-  gem "launchy", "~> 2.5.2"
+  gem "launchy", "~> 3.1.0"
   gem "letter_opener_web", "~> 3.0.0"
 end
 
