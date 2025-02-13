@@ -311,6 +311,9 @@ Lint/NonAtomicFileOperation:
 Lint/ParenthesesAsGroupedExpression:
   Enabled: true
 
+Lint/RedundantSafeNavigation:
+  Enabled: true
+
 Lint/RedundantStringCoercion:
   Enabled: true
 
