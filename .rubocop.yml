@@ -735,6 +735,9 @@ Style/HashConversion:
 Style/HashExcept:
   Enabled: true
 
+Style/HashSlice:
+  Enabled: true
+
 Style/HashSyntax:
   Enabled: true
 
