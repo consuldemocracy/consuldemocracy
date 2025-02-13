@@ -284,6 +284,9 @@ Lint/BooleanSymbol:
 Lint/ConstantDefinitionInBlock:
   Enabled: true
 
+Lint/ConstantReassignment:
+  Enabled: true
+
 Lint/DeprecatedClassMethods:
   Enabled: true
 
@@ -321,6 +324,9 @@ Lint/SafeNavigationChain:
   Enabled: true
 
 Lint/ShadowingOuterLocalVariable:
+  Enabled: true
+
+Lint/SharedMutableDefault:
   Enabled: true
 
 Lint/SymbolConversion:
