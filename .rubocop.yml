@@ -299,6 +299,9 @@ Lint/EmptyBlock:
 Lint/EmptyFile:
   Enabled: true
 
+Lint/HashNewWithKeywordArgumentsAsDefault:
+  Enabled: true
+
 Lint/LiteralAsCondition:
   Enabled: true
 
@@ -324,6 +327,9 @@ Lint/SymbolConversion:
     - "db/dev_seeds/settings.rb"
 
 Lint/UselessAssignment:
+  Enabled: true
+
+Lint/UselessDefined:
   Enabled: true
 
 Lint/Void:
@@ -703,6 +709,9 @@ Style/ClassVars:
   Enabled: true
 
 Style/CollectionMethods:
+  Enabled: true
+
+Style/DigChain:
   Enabled: true
 
 Style/FileRead:
