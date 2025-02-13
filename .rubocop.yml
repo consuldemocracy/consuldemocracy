@@ -743,6 +743,9 @@ Style/InvertibleUnlessCondition:
     :present?: :blank?
     :zero?: ~
 
+Style/KeywordArgumentsMerging:
+  Enabled: true
+
 Style/LineEndConcatenation:
   Enabled: true
 
