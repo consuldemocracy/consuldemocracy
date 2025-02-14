@@ -169,8 +169,8 @@ def erase(erase_reason = nil)
       password: Devise.friendly_token[0, 20],
       terms_of_service: "1",
       confirmed_at: DateTime.current,
-      verified_at: DateTime.current ,
-      residence_verified_at:  DateTime.current,
+#      verified_at: DateTime.current ,
+#      residence_verified_at:  DateTime.current,
       geozone_id: saml_geozone_id
     )
   end
