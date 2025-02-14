@@ -14,7 +14,7 @@ jobs:
           - name: RuboCop
             run: bundle exec rubocop --fail-level convention --display-only-fail-level-offenses -f github
           - name: ERB Lint
-            run: bundle exec erblint .
+            run: bundle exec erb_lint .
           - name: ESLint
             run: npx eslint . --quiet
           - name: Stylelint
