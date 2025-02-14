@@ -200,7 +200,7 @@ GEM
       htmlentities (~> 4.3.3)
       launchy (>= 2.1, < 4.0)
       mail (~> 2.7)
-    erb_lint (0.6.0)
+    erb_lint (0.9.0)
       activesupport
       better_html (>= 2.0.1)
       parser (>= 2.7.1.4)
@@ -282,7 +282,7 @@ GEM
       mutex_m
       nkf
       rack (>= 2.0, < 4)
-    i18n (1.14.6)
+    i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     i18n-tasks (0.9.37)
       activesupport (>= 4.0.2)
@@ -303,7 +303,7 @@ GEM
     irb (1.12.0)
       rdoc
       reline (>= 0.4.2)
-    json (2.9.1)
+    json (2.10.1)
     jwt (2.9.3)
       base64
     kaminari (1.2.2)
@@ -324,7 +324,7 @@ GEM
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
-    language_server-protocol (3.17.0.3)
+    language_server-protocol (3.17.0.4)
     launchy (3.1.0)
       addressable (~> 2.8)
       childprocess (~> 5.0)
@@ -388,7 +388,7 @@ GEM
     net-ssh (7.3.0)
     nio4r (2.7.4)
     nkf (0.2.0)
-    nokogiri (1.18.1)
+    nokogiri (1.18.2)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     nori (2.7.1)
@@ -433,7 +433,7 @@ GEM
     parallel (1.26.3)
     paranoia (3.0.0)
       activerecord (>= 6, < 8.1)
-    parser (3.3.7.0)
+    parser (3.3.7.1)
       ast (~> 2.4.1)
       racc
     pdf-reader (2.12.0)
@@ -563,7 +563,7 @@ GEM
       rubocop-ast (>= 1.32.2, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 3.0)
-    rubocop-ast (1.37.0)
+    rubocop-ast (1.38.0)
       parser (>= 3.3.1.0)
     rubocop-capybara (2.21.0)
       rubocop (~> 1.41)
@@ -740,7 +740,7 @@ DEPENDENCIES
   devise (~> 4.9.4)
   devise-security (~> 0.18.0)
   email_spec (~> 2.3.0)
-  erb_lint (~> 0.6.0)
+  erb_lint (~> 0.9.0)
   exiftool_vendored (~> 12.97.0)
   factory_bot_rails (~> 6.4.3)
   faker (~> 3.4.2)
