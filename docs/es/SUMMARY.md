@@ -56,4 +56,5 @@
   * [Código de conducta](open_source/code_of_conduct.md)
   * [Contribuciones](open_source/contributing.md)
   * [Convenciones de código](open_source/coding_conventions.md)
+  * [Open source forks y modificaciones](open_source/open-source-forks-y-modificaciones.md)
   * [Licencia](open_source/license.md)
