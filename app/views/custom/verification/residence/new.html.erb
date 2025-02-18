@@ -49,12 +49,13 @@
           </div>
         </div>
       </div>
-
+      <% if Verification::Residence.new.verify_dob %>
       <div class="date-of-birth small-12 medium-6 clear" >
       <%= f.date_select :date_of_birth,
                         prompt: true,
-                        start_year: 1900, end_year: minimum_required_age.years.ago.year %>
+                        start_year: 1920, end_year: minimum_required_age.years.ago.year %>
       </div>
+      <% end %>
 
       <div class="small-12 medium-5 clear">
         <%= f.text_field :postal_code,

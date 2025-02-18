@@ -7,11 +7,11 @@ class Verification::Residence
 
 #  validates :document_number, presence: true
 #  validates :document_type, presence: true
-  validates :date_of_birth, presence: true
+  validates :date_of_birth, presence: true, if: -> { Setting["min_age_to_participate"].present? }
   validates :postal_code, presence: true
   validates :terms_of_service, acceptance: { allow_nil: false }
 
-  validate :allowed_age
+  validate :allowed_age, if: -> { Setting["min_age_to_participate"].present? }
  # validate :document_number_uniqueness
 
   validate :local_postal_code
@@ -32,8 +32,9 @@ class Verification::Residence
     user.update(#document_number: document_number,
                 #document_type: document_type,
                 geozone_id: my_geozone,
-                date_of_birth: date_of_birth.in_time_zone.to_datetime,
-  #              gender: gender,
+                date_of_birth: date_of_birth.present? ? date_of_birth.in_time_zone.to_datetime : nil,
+#               date_of_birth: date_of_birth.in_time_zone.to_datetime,
+ #              gender: gender,
                 residence_verified_at: Time.current,
                 verified_at: Time.current)             
   end
@@ -75,7 +76,11 @@ class Verification::Residence
    geozone_id
   #  Geozone.find_by(census_code: district_code)
   end
-
+  
+  def verify_dob
+    Setting["min_age_to_participate"].present?
+  end
+  
   def district_code
     census_data.district_code
   end
