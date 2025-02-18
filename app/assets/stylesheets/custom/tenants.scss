@@ -133,3 +133,14 @@
     --top-links-contrast: #FF;
 }
 
+.tenant-sac {
+  --brand:     #005293;
+  --brand-secondary: #002F59;
+  --footer: #CEDBEA;
+  --brand-contrast: #FFFFFF;
+  --main-header-contrast: #FFFFFF;
+  --top-links: var(--brand-secondary);
+  --top-links-contrast: #FFFFFF;
+  @import "cosla_shared"; 
+  @include shared-styles;
+}
