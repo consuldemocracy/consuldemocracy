@@ -1,6 +1,5 @@
 class Poll::Question < ApplicationRecord
   include Measurable
-  include Searchable
 
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
@@ -30,24 +29,8 @@ class Poll::Question < ApplicationRecord
 
   delegate :multiple?, :vote_type, to: :votation_type, allow_nil: true
 
-  scope :by_poll_id,    ->(poll_id) { where(poll_id: poll_id) }
-
   scope :sort_for_list, -> { order(Arel.sql("poll_questions.proposal_id IS NULL"), :created_at) }
   scope :for_render,    -> { includes(:author, :proposal) }
-
-  def self.search(params)
-    results = all
-    results = results.by_poll_id(params[:poll_id]) if params[:poll_id].present?
-    results = results.pg_search(params[:search])   if params[:search].present?
-    results
-  end
-
-  def searchable_values
-    { title => "A",
-      proposal&.title => "A",
-      author.username => "C",
-      author_visible_name => "C" }
-  end
 
   def copy_attributes_from_proposal(proposal)
     if proposal.present?
