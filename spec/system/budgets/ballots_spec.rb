@@ -108,6 +108,12 @@ describe "Ballots" do
         create(:budget_investment, :selected, heading: new_york, price: 20000, title: "Paint cabs black")
 
         visit budget_investments_path(budget, heading_id: new_york)
+
+        within("#progress_bar") do
+          expect(page).to have_css "#total_amount", exact_text: "AMOUNT SPENT €0 / TOTAL BUDGET €1,000,000"
+          expect(page).to have_css "[role=progressbar][aria-labelledby='total_amount']"
+        end
+
         add_to_ballot("Bring back King Kong")
 
         within("#progress_bar") do

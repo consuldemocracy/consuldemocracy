@@ -18,6 +18,7 @@ describe Milestones::ProgressBarsComponent do
 
     expect(page).to have_content "Progress"
     expect(page).to have_css "[role=progressbar]", count: 1
+    expect(page).to have_css "[role=progressbar][aria-label='Progress']"
   end
 
   it "renders both main and secondary progress bars" do
@@ -29,5 +30,7 @@ describe Milestones::ProgressBarsComponent do
     expect(page).to have_content "Progress"
     expect(page).to have_content "Build laboratory"
     expect(page).to have_css "[role=progressbar]", count: 2
+    expect(page).to have_css "[role=progressbar][aria-label='Progress']"
+    expect(page).to have_css "[role=progressbar][aria-label='Build laboratory']"
   end
 end
