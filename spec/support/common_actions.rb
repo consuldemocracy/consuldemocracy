@@ -21,7 +21,11 @@ module CommonActions
   include Verifications
 
   def app_host
-    "#{Capybara.app_host}:#{app_port}"
+    if app_port
+      "#{Capybara.app_host}:#{app_port}"
+    else
+      Capybara.app_host
+    end
   end
 
   def app_port
