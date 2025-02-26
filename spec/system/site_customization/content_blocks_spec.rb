@@ -3,9 +3,9 @@ require "rails_helper"
 describe "Custom content blocks" do
   scenario "top links" do
     create(:site_customization_content_block, name: "top_links", locale: "en",
-                                              body: "content for top links")
+                                              body: "<li>content for top links</li>")
     create(:site_customization_content_block, name: "top_links", locale: "es",
-                                              body: "contenido para top links")
+                                              body: "<li>contenido para top links</li>")
 
     visit "/?locale=en"
 
@@ -20,9 +20,9 @@ describe "Custom content blocks" do
 
   scenario "footer" do
     create(:site_customization_content_block, name: "footer", locale: "en",
-                                              body: "content for footer")
+                                              body: "<li>content for footer</li>")
     create(:site_customization_content_block, name: "footer", locale: "es",
-                                              body: "contenido para footer")
+                                              body: "<li>contenido para footer</li>")
 
     visit "/?locale=en"
 
@@ -41,9 +41,9 @@ describe "Custom content blocks" do
 
   scenario "footer_legal content block" do
     create(:site_customization_content_block, name: "footer_legal", locale: "en",
-                                              body: "legal content for footer")
+                                              body: "<li>legal content for footer</li>")
     create(:site_customization_content_block, name: "footer_legal", locale: "es",
-                                              body: "contenido legal para el footer")
+                                              body: "<li>contenido legal para el footer</li>")
 
     visit "/?locale=en"
 
@@ -61,9 +61,9 @@ describe "Custom content blocks" do
 
   scenario "main navigation left" do
     create(:site_customization_content_block, name: "subnavigation_left", locale: "en",
-                                              body: "content for left links")
+                                              body: "<li>content for left links</li>")
     create(:site_customization_content_block, name: "subnavigation_left", locale: "es",
-                                              body: "contenido para left links")
+                                              body: "<li>contenido para left links</li>")
 
     visit "/?locale=en"
 
@@ -78,9 +78,9 @@ describe "Custom content blocks" do
 
   scenario "main navigation right" do
     create(:site_customization_content_block, name: "subnavigation_right", locale: "en",
-                                              body: "content for right links")
+                                              body: "<li>content for right links</li>")
     create(:site_customization_content_block, name: "subnavigation_right", locale: "es",
-                                              body: "contenido para right links")
+                                              body: "<li>contenido para right links</li>")
 
     visit "/?locale=en"
 
