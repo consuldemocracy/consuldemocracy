@@ -36,7 +36,8 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       find("#new_map_location").click
 
       within ".map-location" do
-        expect(page).to have_css(".map-icon")
+        expect(page).to have_css ".map-icon"
+        expect(page).not_to have_css ".map-icon[aria-label]"
       end
     end
 
@@ -274,14 +275,15 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       set_arguments(arguments, mappable, mappable_path_arguments)
     end
 
-    scenario "Should display map and marker on #{mappable_factory_name} show page" do
+    scenario "Should display marker on #{mappable_factory_name} show page with aria label" do
       arguments[:id] = mappable.id
+      mappable.update!(title: "Malformed quote\" and >")
 
       do_login_for user, management: management if management
       visit send(mappable_show_path, arguments)
 
       within ".map-location" do
-        expect(page).to have_css(".map-icon")
+        expect(page).to have_css ".map-icon[aria-label='#{mappable.title}']"
       end
     end
 

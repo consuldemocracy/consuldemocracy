@@ -193,6 +193,8 @@ describe "Ballots" do
           expect(page).to have_content "OpenStreetMap"
           expect(page).to have_content "New Block"
           expect(page).to have_css ".map-icon", visible: :all, count: 2
+          expect(page).to have_css ".map-icon[aria-label='More bridges']", visible: :all
+          expect(page).to have_css ".map-icon[aria-label='Less bridges']", visible: :all
         end
 
         add_to_ballot("More bridges")
