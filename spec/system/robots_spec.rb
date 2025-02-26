@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "robots.txt" do
+describe "robots.txt", :no_js do
   scenario "uses the default sitemap for the default tenant" do
     visit "/robots.txt"
 
@@ -13,7 +13,7 @@ describe "robots.txt" do
     with_subdomain("cyborgs") do
       visit "/robots.txt"
 
-      expect(page).to have_content "Sitemap: http://cyborgs.lvh.me:#{app_port}/tenants/cyborgs/sitemap.xml"
+      expect(page).to have_content "Sitemap: http://cyborgs.lvh.me/tenants/cyborgs/sitemap.xml"
     end
   end
 end
