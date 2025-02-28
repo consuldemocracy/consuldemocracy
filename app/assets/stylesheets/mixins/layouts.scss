@@ -37,10 +37,10 @@
   bottom: 0;
   content: "";
   display: block;
-  left: 0;
+  left: calc(-1 * $body-margin);
   pointer-events: none;
   position: absolute;
-  right: 0;
+  right: calc(-1 * $body-margin);
   top: 0;
 
   @if $adjust-padding {
@@ -50,19 +50,8 @@
     right: -$small-padding;
 
     @include breakpoint(medium) {
-      left: -$global-padding;
-      right: -$global-padding;
-    }
-  }
-
-  @include breakpoint($global-width) {
-
-    @if $adjust-padding and $adjust-margin {
-      left: calc($full-width-margin - $global-padding);
-      right: calc($full-width-margin - $global-padding);
-    } @else if $adjust-margin {
-      left: calc($full-width-margin);
-      right: calc($full-width-margin);
+      left: calc(-1 * $body-margin - $global-padding);
+      right: calc(-1 * $body-margin - $global-padding);
     }
   }
 }
