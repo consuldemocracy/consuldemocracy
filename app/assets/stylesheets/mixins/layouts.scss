@@ -45,14 +45,11 @@
 
   @if $adjust-padding {
     $small-padding: rem-calc(map-get($grid-column-gutter, small)) * 0.5;
-
-    left: -$small-padding;
-    right: -$small-padding;
-
-    @include breakpoint(medium) {
-      left: calc(-1 * $body-margin - $global-padding);
-      right: calc(-1 * $body-margin - $global-padding);
-    }
+    $medium-padding: rem-calc(map-get($grid-column-gutter, medium)) * 0.5;
+    $breakpoint: rem-calc(map-get($breakpoints, medium));
+    $padding: clamp($small-padding, (100vw - $breakpoint) * 1000, $medium-padding);
+    left: calc(-1 * $body-margin - $padding);
+    right: calc(-1 * $body-margin - $padding);
   }
 }
 
