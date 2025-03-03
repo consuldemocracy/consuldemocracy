@@ -1,4 +1,5 @@
 class Moderation::Shared::IndexComponent < ApplicationComponent
+  include Header
   attr_reader :records
 
   def initialize(records)
@@ -6,6 +7,10 @@ class Moderation::Shared::IndexComponent < ApplicationComponent
   end
 
   private
+
+    def title
+      t("moderation.#{i18n_namespace}.index.title")
+    end
 
     def i18n_namespace
       table_name

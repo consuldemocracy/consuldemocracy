@@ -7,6 +7,7 @@ module CommonActions
   include Debates
   include Documents
   include Emails
+  include GraphQLAPI
   include Images
   include Maps
   include Notifications

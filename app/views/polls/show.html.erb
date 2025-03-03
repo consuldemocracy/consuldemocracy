@@ -10,7 +10,7 @@
 <% end %>
 
 <div class="polls-show">
-  <%= render "poll_header" %>
+  <%= render Polls::PollHeaderComponent.new(@poll) %>
 
   <%= render "poll_subnav" %>
 
@@ -44,7 +44,7 @@
     </div>
   </div>
 
-  <div id="poll_more_info_answers" class="expanded poll-more-info-answers">
+  <div id="poll_more_info_options" class="expanded poll-more-info-options">
     <div class="row padding">
       <%= render Polls::Questions::ReadMoreComponent.with_collection(@questions) %>
     </div>

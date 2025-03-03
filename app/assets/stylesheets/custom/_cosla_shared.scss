@@ -1,0 +1,87 @@
+// _cosla_shared.scss
+
+@mixin shared-styles {
+
+  .admin-sidebar {
+    background: linear-gradient(to bottom, var(--brand) 0%,var(--brand-secondary) 100%);
+  }
+
+  .budget-header .row {
+    padding: 1rem;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    margin-right: unset;
+    margin-left: 10%;
+    position: relative; // For positioning ::before
+  }
+
+  .budget-header .row::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, var(--brand-secondary) 0%, var(--brand) 100%);
+    opacity: 0.7;
+    border-radius: inherit;
+    z-index: -1;
+  }
+  
+.budget-header .row .medium-6 {
+  width: unset;
+  }
+
+.budget-header .homepage-lead {
+  max-width: 80%;
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: center;
+}
+
+.budget-header .homepage-link {
+    display: inline-block;
+    margin: 0.5rem 0;
+    margin-top: 1.0rem;
+    margin-bottom: 1.0rem;
+    justify-content: center;
+    background-color: var(--brand-secondary);
+    color: white; /* Text color */
+    padding: 0.75rem 1.5rem; /* Add padding to make it look like a button */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline for links */
+    border-radius: 5px; /* Rounded corners for button effect */
+    font-size: 1.2rem; /* Adjust font size */
+    font-weight: bold; /* Make text bold */
+    cursor: pointer; /* Show pointer on hover */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+/* Add hover and focus styles to make it interactive */
+.budget-header .homepage-link:hover,
+.budget-header .homepage-link:focus {
+    background-color: var(--brand); /* Change background on hover */
+    color: white; /* Ensure text remains visible */
+}
+
+.budget-header.with-background-image {
+padding-bottom: 5rem;
+}
+
+.budget-header h1 {
+  padding: 1.5rem 0 .5rem;
+  text-shadow: 1px 1px 2px $black;
+}  
+
+    .no-items {
+    background-color: var(--brand-secondary);
+    border-color: #bce8f1;
+    color: var(--brand-contrast);
+}
+
+}

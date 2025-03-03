@@ -1,37 +1,35 @@
-<main>
-  <span class="not-print">
-    <%= render "admin/shared/budget_investment_search", url: print_management_budget_investments_path(@budget) %>
-  </span>
+<span class="not-print">
+  <%= render "admin/shared/budget_investment_search", url: print_management_budget_investments_path(@budget) %>
+</span>
 
-  <div class="wrap row">
-    <div id="budget-investments" class="budget-investments-list small-12 column">
+<div class="wrap row">
+  <div id="budget-investments" class="budget-investments-list small-12 column">
 
-      <div class="not-print">
-        <a id="print_link" href="javascript:window.print();" class="button warning float-right">
-          <%= t("management.budget_investments.print.print_button") %>
-        </a>
-      </div>
+    <div class="not-print">
+      <a id="print_link" href="javascript:window.print();" class="button warning float-right">
+        <%= t("management.budget_investments.print.print_button") %>
+      </a>
+    </div>
 
-      <div class="small-12 search-results">
-        <% if params[:unfeasible].present? %>
-          <h2 class="inline-block"><%= t("management.budget_investments.filters.unfeasible") %></h2>
-        <% end %>
-        <% if @heading.present? %>
-          <h2 class="inline-block"><%= t("management.budget_investments.filters.heading", heading_name: @heading.name) %></h2>
-        <% end %>
-        <h2 class="inline-block"><%= t("management.budget_investments.search_results", count: @investments.count, search_term: params[:search]) %></h2>
-      </div>
-
-      <% @investments.each do |investment| %>
-        <%= render "/budgets/investments/investment",
-                   investment: investment,
-                   investment_ids: @investment_ids,
-                   ballot: @ballot %>
+    <div class="small-12 search-results">
+      <% if params[:unfeasible].present? %>
+        <h2 class="inline-block"><%= t("management.budget_investments.filters.unfeasible") %></h2>
       <% end %>
+      <% if @heading.present? %>
+        <h2 class="inline-block"><%= t("management.budget_investments.filters.heading", heading_name: @heading.name) %></h2>
+      <% end %>
+      <h2 class="inline-block"><%= t("management.budget_investments.search_results", count: @investments.count, search_term: params[:search]) %></h2>
+    </div>
 
-      <div class="for-print-only">
-        <p><strong><%= t("management.print.budget_investments_info") %></strong></p>
-      </div>
+    <% @investments.each do |investment| %>
+      <%= render "/budgets/investments/investment",
+                 investment: investment,
+                 investment_ids: @investment_ids,
+                 ballot: @ballot %>
+    <% end %>
+
+    <div class="for-print-only">
+      <p><strong><%= t("management.print.budget_investments_info") %></strong></p>
     </div>
   </div>
-</main>
+</div>

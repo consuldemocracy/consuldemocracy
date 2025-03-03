@@ -11,40 +11,60 @@
     </div>
   <% end %>
 
-  <div class="small-12 medium-6">
+  <div class="small-12 medium-6 column">
     <% if budget.show_money? %>
       <%= f.text_field :price, maxlength: 8 %>
     <% else %>
       <%= f.hidden_field :price, value: 0 %>
     <% end %>
 
-    <% if feature?(:map) %>
+  <% if feature?(:map) %>
       <%= f.select :geozone_id,
                    geozone_options,
                    include_blank: t("geozones.none"),
                    hint: t("admin.budget_headings.form.geozone_info") %>
     <% end %>
-
+    
     <% if heading.budget.approval_voting? %>
       <%= f.number_field :max_ballot_lines,
                          hint: t("admin.budget_headings.form.max_ballot_lines_info") %>
     <% end %>
+    </div>
+    <hr> <!-- Dividing line before the geozone section -->
 
-    <%= f.text_field :population,
-                     maxlength: 8,
-                     data: { toggle_focus: "population-info" },
-                     hint: t("admin.budget_headings.form.population_info") %>
+   <div class="row">    
+     <div class="small-12 column">
+      <%= f.check_box :geozone_restricted, data: { checkbox_toggle: "#geozones" }, hint: t("admin.budget_headings.form.geozone_restricted_info") %>
+      <p class="help-text" id="geozone-restricted-help-text">
+        <%= t("admin.budget_headings.form.geozone_restricted_info") %>
+      </p>
+    </div>
+   </div>
 
-    <%= f.text_field :latitude, maxlength: 22 %>
-    <%= f.text_field :longitude, maxlength: 22 %>
-    <p class="help-text" id="budgets-coordinates-help-text">
-      <%= t("admin.budget_headings.form.coordinates_info") %>
-    </p>
+    <div class="row">
+      <%= f.collection_check_boxes(:geozone_ids, @geozones, :id, :name) do |b| %>
+        <div class="small-12 medium-6 large-3 column">
+          <%= b.label do %>
+            <%= b.check_box + b.text %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
 
-    <%= f.check_box :allow_custom_content %>
-    <p class="help-text" id="budgets-content-blocks-help-text">
-      <%= t("admin.budget_headings.form.content_blocks_info") %>
-    </p>
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= f.text_field :population, maxlength: 8, data: { toggle_focus: "population-info" }, hint: t("admin.budget_headings.form.population_info") %>
+      <%= f.text_field :latitude, maxlength: 22 %>
+      <%= f.text_field :longitude, maxlength: 22 %>
+      <p class="help-text" id="budgets-coordinates-help-text">
+        <%= t("admin.budget_headings.form.coordinates_info") %>
+      </p>
+
+      <%= f.check_box :allow_custom_content %>
+      <p class="help-text" id="budgets-content-blocks-help-text">
+        <%= t("admin.budget_headings.form.content_blocks_info") %>
+      </p>
+    </div>
   </div>
 
   <div class="clear">

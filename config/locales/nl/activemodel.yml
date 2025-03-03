@@ -25,7 +25,7 @@ nl:
         verification_code: "Code die je in je email ontvangt"
       verification/management/document:
         document_type: "Documentsoort:"
-        document_number: "Document nummer"
+        document_number: "Documentnummer"
       verification/residence:
         date_of_birth: "Geboortedatum"
         document_type: "Documentsoort"
@@ -38,6 +38,8 @@ nl:
         year_of_birth: "Geboortejaar"
       local_census_records/import:
         file: Bestand
+      setting/locales_settings:
+        default: Standaard taal
     errors:
       models:
         local_census_records/import:

@@ -40,6 +40,9 @@ cs:
         year_of_birth: "Rok narození"
       local_census_records/import:
         file: Soubor
+      setting/locales_settings:
+        default: Výchozí jazyk
+        enabled: Zapnuté jazyky
     errors:
       models:
         local_census_records/import:

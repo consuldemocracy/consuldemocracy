@@ -7,9 +7,6 @@ fa:
         direct_message: "پیام شما با موفقیت ارسال شده است."
         poll: "نظر سنجی با موفقیت ایجاد شده."
         poll_booth: "غرفه با موفقیت ایجاد شده."
-        poll_question_answer: "پاسخ با موفقیت ایجاد شده"
-        poll_question_answer_video: "فیلم با موفقیت ایجاد شده"
-        poll_question_answer_image: " تصویر با موفقیت بارگذاری ایجاد شده"
         proposal: "پیشنهاد با موفقیت ایجاد شده است ."
         proposal_notification: "پیام شما صحیح ارسال شده است."
         budget_investment: "بودجه سرمایه گذاری با موفقیت ایجاد شد."
@@ -30,5 +27,4 @@ fa:
       destroy:
         budget_investment: "پروژه سرمایه گذاری با موفقیت حذف شد."
         topic: "موضوع با موفقیت حذف شد."
-        poll_question_answer_video: " ویدئو پاسخ با موفقیت حذف شد."
         valuator_group: "گروه ارزیابی با موفقیت حذف شده"

@@ -6,7 +6,6 @@
 //  1. Foundation settings overrides
 //  2. CONSUL DEMOCRACY variables
 //  3. Foundation overrides depending on CONSUL DEMOCRACY variables
-//  4. Foundation fixes
 
 // 1. Foundation settings overrides
 // ---------------------------------
@@ -53,8 +52,8 @@ $show-header-for-stacked: true !default;
 // 2. CONSUL DEMOCRACY variables
 // -----------------------------
 
-$body-margin: calc(50vw - #{$global-width / 2}) !default;
-$full-width-margin: unquote("#{$global-width / 2} - 50vw") !default;
+$body-margin: calc(50vw - #{$global-width * 0.5}) !default;
+$full-width-margin: unquote("#{$global-width * 0.5} - 50vw") !default;
 
 $base-font-size:      rem-calc(17) !default;
 $base-line:           rem-calc(26) !default;
@@ -160,18 +159,7 @@ $anchor-color-hover: darken($anchor-color, 20%) !default;
 $tab-background-active: $white !default;
 
 $tab-item-font-size: $base-font-size !default;
-$tab-item-padding: $line-height / 2  0 !default;
+$tab-item-padding: $line-height * 0.5  0 !default;
 $tab-content-border: $border !default;
 
 $tooltip-background-color: $brand !default;
-
-// 4. Foundation fixes
-// -------------------
-
-$alert-color: null !default;
-$primary-color: null !default;
-$secondary-color: null !default;
-$success-color: null !default;
-$warning-color: null !default;
-$-zf-bp-value: null !default;
-$-zf-size: null !default;

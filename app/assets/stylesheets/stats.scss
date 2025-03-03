@@ -16,15 +16,15 @@
     }
 
     ul {
-      margin-left: $line-height / 2;
+      margin-left: calc(#{$line-height} / 2);
       margin-top: 0;
       padding: 0;
     }
   }
 
   .section-title {
-    font-size: rem-calc(24);
     border-bottom: 1px solid $border;
+    font-size: rem-calc(24);
   }
 
   .stats-group {
@@ -37,7 +37,7 @@
 
     &::before {
       display: inline-block;
-      margin-right: $line-height / 2;
+      margin-right: calc(#{$line-height} / 2);
       vertical-align: top;
     }
 
@@ -99,7 +99,7 @@
   .progress {
     background: #ebf0f4;
     border-radius: rem-calc(20);
-    height: $line-height / 2;
+    height: calc(#{$line-height} / 2);
   }
 
   .progress-meter {
@@ -134,8 +134,8 @@
     }
 
     th {
-      font-weight: bold;
       font-size: rem-calc(21);
+      font-weight: bold;
 
       &.gender {
         opacity: 0;
@@ -157,8 +157,8 @@
     td {
 
       &.gender {
-        font-weight: bold;
         font-size: rem-calc(21);
+        font-weight: bold;
         text-align: left;
       }
 

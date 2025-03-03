@@ -62,9 +62,9 @@ class MachineLearning
 
       job.update!(finished_at: Time.current)
       Mailer.machine_learning_success(user).deliver_later
-    rescue Exception => error
-      handle_error(error)
-      raise error
+    rescue Exception => e
+      handle_error(e)
+      raise e
     end
   end
   handle_asynchronously :run, queue: "machine_learning"
@@ -191,14 +191,12 @@ class MachineLearning
     end
 
     def scripts_info
-      scripts_info = []
-      Dir[SCRIPTS_FOLDER.join("*.py")].each do |full_path_filename|
-        scripts_info << {
+      Dir[SCRIPTS_FOLDER.join("*.py")].map do |full_path_filename|
+        {
           name: full_path_filename.split("/").last,
           description: description_from(full_path_filename)
         }
-      end
-      scripts_info.sort_by { |script_info| script_info[:name] }
+      end.sort_by { |script_info| script_info[:name] }
     end
 
     def description_from(script_filename)

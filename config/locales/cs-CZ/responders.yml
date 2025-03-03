@@ -7,9 +7,9 @@ cs:
         direct_message: "Vaše zpráva byla úspěšně odeslána."
         poll: "Anketa úspěšně vytvořena."
         poll_booth: "Booth byl úspěšně vytvořen."
-        poll_question_answer: "Odpověď byla úspěšně vytvořena"
-        poll_question_answer_video: "Video bylo úspěšně vytvořeno"
-        poll_question_answer_image: "Obrázek byl úspěšně nahrán"
+        poll_question_option: "Odpověď úspěšně vytvořena"
+        poll_question_option_video: "Video úspěšně vytvořeno"
+        poll_question_option_image: "Obrázek úspěšně nahrán"
         proposal: "Návrh byl úspěšně vytvořen."
         proposal_notification: "Vaše zpráva byla odeslána správně."
         budget_investment: "Rozpočtová investice byla úspěšně vytvořena."
@@ -17,6 +17,7 @@ cs:
         support: "Úspěšně podpořená investice"
         topic: "Téma bylo úspěšně vytvořeno."
         valuator_group: "Skupina hodnotitelů byla úspěšně vytvořena"
+        vote: "Hlas úspěšně vytvořen"
       save_changes:
         notice: Změny byly uloženy
       update:
@@ -33,5 +34,7 @@ cs:
       destroy:
         budget_investment: "Investiční projekt byl smazán."
         topic: "Téma bylo smazáno."
-        poll_question_answer_video: "Odpověď na video byla smazána."
+        poll_question_option_image: "Obrázek úspěšně smazán."
+        poll_question_option_video: "Odpověď na video úspěšně smazána."
         valuator_group: "Skupina hodnotitelů byla smazána"
+        vote: "Hlas byl úspěšně smazán"

@@ -1,0 +1,27 @@
+<%= form_for [:admin, @postcode] do |f| %>
+
+  <%= render "shared/errors", resource: @postcode %>
+
+  <div class="small-12 large-8 column">
+    <%= f.text_field :postcode %>
+  </div>
+
+  <div class="clear">
+    <div class="small-12 medium-6 large-4 column">
+      <%# Dropdown for existing wards %>
+      <%= f.select :ward, options_for_select(Ward.all.pluck(:name)), { prompt: t("admin.postcodes.postcode.select_ward_prompt") }, class: "ward-dropdown" %>
+    </div>
+    <div class="small-12 medium-6 large-4 column">
+      <%= f.text_field :ward, hint: t("admin.postcodes.postcode.ward_help") %>
+    </div>
+
+    <div class="small-12 medium-6 large-4 column end">
+      <%= f.collection_select :geozone_id, Geozone.all, :id, :name, prompt:true, hint: t("admin.postcodes.postcode.geozone_help") %>
+    </div>
+  </div>
+
+  <div class="small-12 column">
+    <%= f.submit(value: t("admin.postcodes.edit.form.submit_button"),
+                class: "button success") %>
+  </div>
+<% end %>

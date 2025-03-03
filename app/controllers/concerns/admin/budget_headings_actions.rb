@@ -6,6 +6,7 @@ module Admin::BudgetHeadingsActions
     include FeatureFlags
     feature_flag :budgets
 
+    before_action :load_geozones, only: [:new, :create, :edit, :update]
     before_action :load_budget
     before_action :load_group
     before_action :load_heading, only: [:edit, :update, :destroy]
@@ -24,10 +25,27 @@ module Admin::BudgetHeadingsActions
   end
 
   def update
+  sanitized_params = budget_heading_params
+  sanitized_params[:geozone_ids] = sanitized_params[:geozone_ids].reject(&:blank?) if sanitized_params[:geozone_ids].present?
+
+  if @heading.update(sanitized_params)
+    Rails.logger.info("Budget heading updated successfully. Parameters: #{sanitized_params.inspect}")
+    redirect_to headings_index, notice: t("admin.budget_headings.update.notice")
+  else
+    puts sanitized_params.inspect
+    render :edit
+  end
+end
+
+
+  def old_update
     if @heading.update(budget_heading_params)
+      Rails.logger.info("Budget heading updated successfully. Parameters: #{budget_heading_params.inspect}")
       redirect_to headings_index, notice: t("admin.budget_headings.update.notice")
     else
+      puts budget_heading_params.inspect
       render :edit
+      
     end
   end
 
@@ -42,6 +60,11 @@ module Admin::BudgetHeadingsActions
 
   private
 
+    def load_geozones
+      @geozones = Geozone.order(:name)
+      Rails.logger.debug("Loaded Geozones: #{@geozones.inspect}")
+    end
+    
     def load_budget
       @budget = Budget.find_by_slug_or_id! params[:budget_id]
     end
@@ -60,7 +83,7 @@ module Admin::BudgetHeadingsActions
 
     def allowed_params
       valid_attributes = [:price, :population, :allow_custom_content, :latitude, :longitude,
-                          :max_ballot_lines, :geozone_id]
+                          :max_ballot_lines, :geozone_id, :geozone_restricted, geozone_ids: [] ]
 
       [*valid_attributes, translation_params(Budget::Heading)]
     end

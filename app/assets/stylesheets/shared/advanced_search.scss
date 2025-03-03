@@ -1,0 +1,53 @@
+.advanced-search-form {
+  @include grid-row-nest;
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint(large) {
+    .filter {
+      @include grid-column;
+      width: 33%;
+    }
+
+    .date-filters {
+      float: left;
+      width: 33%;
+
+      .filter {
+        width: 100%;
+      }
+
+      .custom-date-filters {
+        clear: both;
+      }
+    }
+
+    .submit {
+      width: 33%;
+    }
+  }
+
+  > [aria-expanded] {
+    @include xy-gutters;
+    @include link;
+    margin-bottom: $line-height;
+    margin-top: $line-height;
+    max-width: max-content;
+
+    @include breakpoint(medium) {
+      align-self: flex-end;
+      margin-bottom: 0;
+      margin-top: calc(#{$line-height} / 4);
+    }
+  }
+
+  .general-search,
+  .filter,
+  .submit {
+    @include grid-column-gutter;
+  }
+
+  select {
+    height: $line-height * 2;
+  }
+}

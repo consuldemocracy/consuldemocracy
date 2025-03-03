@@ -461,15 +461,6 @@ sr:
       image:
         title: Наслов
         attachment: "Изаберите слику"
-      poll/question/answer:
-        title: Одговор
-        description: Опис
-      poll/question/answer/translation:
-        title: Одговор
-        description: "Опис"
-      poll/question/answer/video:
-        title: Наслов
-        url: Спољни видео
       newsletter:
         segment_recipient: Примаоци
         subject: Тема

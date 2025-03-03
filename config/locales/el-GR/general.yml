@@ -148,7 +148,6 @@ el:
     budget/group: Ομάδα προϋπολογισμού
     budget/heading: Επικεφαλίδα προϋπολογισμού
     poll/shift: Μετατόπιση
-    poll/question/answer: Απάντηση
     user: Λογαριασμός
     verification/sms: τηλέφωνο
     signature_sheet: Φύλλα υπογραφών
@@ -542,7 +541,6 @@ el:
         share: "Αν πιστεύεις ότι η πρόταση μου αξίζει της στήριξης σου, μπορείς να το δείξεις έμπρακτα επιλέγοντας να την μοιραστείς με τους φίλους, την οικογένεια και τις επαφές σου. Σε ευχαριστώ εκ των προτέρων για την υποστήριξη σου! "
   polls:
     all: "Όλα"
-    no_dates: "δεν έχει ανατεθεί ημερομηνία"
     dates: "Από %{open_at} έως %{closed_at}"
     final_date: "Τελικές επαναμετρήσεις ψήφων / αποτελέσματα"
     index:
@@ -638,7 +636,6 @@ el:
       author_deleted: Ο χρήστης έχει διαγραφεί
       email_deleted: Το E-mail έχει διαγραφεί
     back: Επιστροφή
-    check: Επιλογή
     check_all: Όλα
     check_none: Κανένα
     collective: Σύλλογος
@@ -703,18 +700,6 @@ el:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Επισκέψεις
-      debates: Συζητήσεις
-      proposals: Προτάσεις
-      comments: Σχόλια
-      proposal_votes: Ψήφοι προτάσεων
-      debate_votes: Ψήφοι συζητήσεων
-      comment_votes: Ψήφοι σχολίων
-      votes: Συνολικοί ψήφοι
-      verified_users: Επαληθευμένοι χρήστες
-      unverified_users: Μη επαληθευμένοι χρήστες
   unauthorized:
     default: Δεν έχετε δικαίωμα πρόσβασης σε αυτήν τη σελίδα.
     manage:

@@ -2,17 +2,17 @@
   <%= t("comments.comment.votes", count: comment.total_votes) %>
   &nbsp;|&nbsp;
 
-  <span class="in-favor">
+  <div class="in-favor">
     <%= render Shared::VoteButtonComponent.new(comment,
                                                value: "yes",
                                                title: t("votes.agree")) %>
     <%= comment.total_likes %>
-  </span>
+  </div>
 
-  <span class="against">
+  <div class="against">
     <%= render Shared::VoteButtonComponent.new(comment,
                                                value: "no",
                                                title: t("votes.disagree")) %>
     <%= comment.total_dislikes %>
-  </span>
+  </div>
 </div>

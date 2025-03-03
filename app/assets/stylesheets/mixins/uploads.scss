@@ -1,8 +1,8 @@
 @mixin direct-uploads {
 
   .cached-image {
-    max-width: rem-calc(150);
     max-height: rem-calc(150);
+    max-width: rem-calc(150);
   }
 
   .progress-bar-placeholder {
@@ -39,13 +39,13 @@
   }
 
   .progress-bar {
-    width: 100%;
     background-color: $light-gray;
+    width: 100%;
   }
 
   .file-name {
-    padding-left: 0;
     margin-top: 0;
+    padding-left: 0;
 
     &:empty {
       display: none;
@@ -59,8 +59,8 @@
 
   .loading-bar {
     height: 5px;
-    width: 0;
     transition: width 500ms ease-out;
+    width: 0;
 
     &.uploading {
       background-color: $dark-gray;
@@ -72,7 +72,7 @@
 
     &.errors {
       background-color: $alert-color;
-      margin-top: $line-height / 2;
+      margin-top: calc(#{$line-height} / 2);
     }
   }
 

@@ -4,16 +4,32 @@ describe Statisticable do
   before do
     dummy_stats = Class.new do
       include Statisticable
+      attr_accessor :total
+      stats_cache :total
+
+      def full_cache_key_for(key)
+        "dummy_stats/#{object_id}/#{key}"
+      end
 
       def participants
         User.all
+      end
+      alias_method :participants_from_original_table, :participants
+
+      def total_participants
+        User.count
+      end
+
+      def participation_date
+        Time.current
       end
     end
 
     stub_const("DummyStats", dummy_stats)
   end
 
-  let(:stats) { DummyStats.new(nil) }
+  let(:resource) { double(id: 1, class: double(table_name: "")) }
+  let(:stats) { DummyStats.new(resource) }
 
   describe "#gender?" do
     context "No participants" do
@@ -75,6 +91,17 @@ describe Statisticable do
 
     context "There's a participant with a defined age" do
       before { create(:user, date_of_birth: 30.years.ago) }
+
+      it "is true" do
+        expect(stats.age?).to be true
+      end
+    end
+
+    context "Partipation took place a long time ago" do
+      before do
+        create(:user, date_of_birth: 2000.years.ago)
+        allow(stats).to receive(:participation_date).and_return(1900.years.ago)
+      end
 
       it "is true" do
         expect(stats.age?).to be true
@@ -176,6 +203,67 @@ describe Statisticable do
         expect(stats.stats_methods).to include(:total_male_participants)
         expect(stats.stats_methods).to include(:participants_by_age)
         expect(stats.stats_methods).to include(:participants_by_geozone)
+      end
+    end
+  end
+
+  describe "#generate" do
+    it "drops the temporary table after finishing" do
+      stats.generate
+
+      expect { stats.send(:participants_class).first }.to raise_exception(ActiveRecord::StatementInvalid)
+    end
+
+    it "can be executed twice without errors" do
+      stats.generate
+
+      expect { stats.generate }.not_to raise_exception
+    end
+
+    it "can be executed twice in parallel since it uses a transaction" do
+      other_stats = DummyStats.new(stats.resource)
+
+      [stats, other_stats].map do |stat|
+        Thread.new { stat.generate }
+      end.each(&:join)
+    end
+  end
+
+  describe "cache", :with_cache do
+    it "expires the cache at the end of the day by default" do
+      time = Time.current
+
+      travel_to(time) do
+        stats.total = 6
+
+        expect(stats.total).to eq 6
+
+        stats.total = 7
+
+        expect(stats.total).to eq 6
+      end
+
+      travel_to(time.end_of_day) do
+        expect(stats.total).to eq 6
+      end
+
+      travel_to(time.end_of_day + 1.second) do
+        expect(stats.total).to eq 7
+      end
+    end
+
+    it "does not use the cache with cache: false" do
+      stats = DummyStats.new(resource, cache: false)
+      time = Time.current
+
+      travel_to(time) do
+        stats.total = 6
+
+        expect(stats.total).to eq 6
+
+        stats.total = 7
+
+        expect(stats.total).to eq 7
       end
     end
   end

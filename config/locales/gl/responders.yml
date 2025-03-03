@@ -7,15 +7,17 @@ gl:
         direct_message: "A mensaxe enviouse correctamente."
         poll: "A votación creouse correctamente."
         poll_booth: "A urna creouse correctamente."
-        poll_question_answer: "A resposta creouse correctamente"
-        poll_question_answer_video: "O vídeo creouse correctamente"
-        poll_question_answer_image: "A imaxe subiuse correctamente"
+        poll_question_option: "Resposta creada correctamente"
+        poll_question_option_video: "Vídeo creado correctamente"
+        poll_question_option_image: "Imaxe cargada correctamente"
         proposal: "Proposta creada correctamente."
         proposal_notification: "A mensaxe enviouse correctamente."
         budget_investment: "A proposta de investimento creouse correctamente."
         signature_sheet: "A folla de sinaturas creouse correctamente"
+        support: "Investimento apoiado correctamente"
         topic: "O tema creouse correctamente."
         valuator_group: "O grupo de avaliadores creouse correctamente"
+        vote: "Voto creado correctamente"
       save_changes:
         notice: Cambios gardados
       update:
@@ -32,5 +34,7 @@ gl:
       destroy:
         budget_investment: "O proxecto de investimento actualizouse correctamente."
         topic: "O tema borrouse correctamente."
-        poll_question_answer_video: "O vídeo borrouse correctamente."
+        poll_question_option_image: "Imaxe eliminada correctamente."
+        poll_question_option_video: "Vídeo de resposta eliminado correctamente."
         valuator_group: "O grupo de avaliadores eliminouse correctamente"
+        vote: "Voto eliminado correctamente"

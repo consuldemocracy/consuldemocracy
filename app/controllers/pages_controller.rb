@@ -8,7 +8,7 @@ class PagesController < ApplicationController
     @custom_page = SiteCustomization::Page.published.find_by(slug: params[:id])
 
     if @custom_page.present?
-      @cards = @custom_page.cards
+      @cards = @custom_page.cards.sort_by_order
       render action: :custom_page
     else
       render action: params[:id].split(".").first

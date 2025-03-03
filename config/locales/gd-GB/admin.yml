@@ -657,7 +657,6 @@ gd:
         index:
           title: Dreachdan
           create: Cruthaich dreachd
-          delete: Sguab às
           preview: Ro-sheall
         new:
           back: Air ais
@@ -690,7 +689,6 @@ gd:
           back: Air ais
           title: Ceistean co-cheangailte ris a’ phròiseas seo
           create: Cruthaich ceist
-          delete: Sguab às
         new:
           back: Air ais
           title: Cruthaich ceist ùr
@@ -1474,7 +1472,6 @@ gd:
           verified_users_who_didnt_vote_proposals: Cleachdaichean dearbhte nach do bhòt airson molaidhean
           visits: Tadhalan
           votes: Bhòtaichean iomlan
-        budgets_title: Buidseatan Com-pàirteachail
         participatory_budgets: Buidseatan Com-pàirteachail
         direct_messages: Teachdaireachdan dìreach
         proposal_notifications: Brathan mu mholaidhean
@@ -1483,8 +1480,6 @@ gd:
         sdg: SDG
       graph:
         debate_created: Deasbadan
-        visit: Tadhalan
-        level_2_user: Cleachdaichean ìre 2
         proposal_created: Molaidhean saoranach
       budgets:
         no_data_before_balloting_phase: "Chan eil dàta sam bith ri shealltainn ron ìre baileat."
@@ -1596,7 +1591,6 @@ gd:
         index:
           title: Dealbh gnàthaichte
           update: Ùraich
-          delete: Sguab às
           image: Ìomhaigh
         update:
           notice: Chaidh an dealbh ùrachadh

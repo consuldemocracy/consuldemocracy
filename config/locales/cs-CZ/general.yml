@@ -1,6 +1,7 @@
 cs:
   account:
     show:
+      last_sign_in: "Poslední přihlášení: %{last_sign_in_at} z IP %{last_sign_in_ip}"
       change_credentials_link: Změnit své přihlašovací údaje
       erase_account_link: Smazat můj účet
       finish_verification: Dokončete ověření
@@ -171,7 +172,7 @@ cs:
     legislation/process: proces
     legislation/question: otázka
     poll/shift: Posun
-    poll/question/answer: Answer
+    poll/question/option: Odpověď
     user: Účet
     verification/sms: telefon
     signature_sheet: Podpisové arch
@@ -241,6 +242,7 @@ cs:
           other: Máte %{count} nových oznámení
         notifications: Upozornění
       sdg: "SDG"
+    skip_to_main_content: "Přeskočit na hlavní obsah"
   notifications:
     index:
       empty_notifications: Nemáte nová upozornění.
@@ -595,7 +597,6 @@ cs:
         share: "A pokud mi také prokážete velkou laskavost a podělíte se o můj návrh se svými přáteli, rodinou a kontakty, bude to perfektní!"
   polls:
     all: "Vše"
-    no_dates: "není přiřazené datum"
     dates: "Od %{open_at} do %{closed_at}"
     final_date: "Konečné přepočty/výsledky"
     index:
@@ -607,7 +608,7 @@ cs:
       participate_button_expired: "Průzkum ukončen"
       no_geozone_restricted: "Celé město"
       geozone_restricted: "Městské části"
-      geozone_info: "Otevřeno pro obyvatele z: "
+      geozone_info: "Může se podílet na registrech občanů: "
       already_answer: "Tohoto hlasování jste se již účastnili"
       not_logged_in: "Pro účast se musíte registrovat a přihlásit"
       unverified: "Pro zapojení je nutné ověřit váš účet"
@@ -700,7 +701,6 @@ cs:
       author_deleted: Uživatel
       email_deleted: E-mail smazán
     back: Jít zpět
-    check: Vybrat
     check_all: Vše
     check_none: Žádné
     collective: Kolektiv
@@ -782,18 +782,6 @@ cs:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: Návštěvy
-      debates: Debaty
-      proposals: Návrhy
-      comments: Komentáře
-      proposal_votes: Hlasujte o návrzích
-      debate_votes: Hlasování k debatám
-      comment_votes: Hlasování ke komentářům
-      votes: Hlasů celkem
-      verified_users: Ověření uživatelé
-      unverified_users: Neověření uživatelé
   unauthorized:
     default: Nemáte oprávnění k přístupu na tuto stránku.
     manage:

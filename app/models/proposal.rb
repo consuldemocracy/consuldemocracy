@@ -14,7 +14,7 @@ class Proposal < ApplicationRecord
   include Mappable
   include Notifiable
   include Documentable
-  include EmbedVideosHelper
+  include Videoable
   include Relationable
   include Milestoneable
   include Randomizable
@@ -59,8 +59,6 @@ class Proposal < ApplicationRecord
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
-  validate :valid_video_url?
-
   before_validation :set_responsible_name
 
   before_save :calculate_hot_score, :calculate_confidence_score
@@ -77,18 +75,18 @@ class Proposal < ApplicationRecord
   scope :sort_by_archival_date,    -> { archived.sort_by_confidence_score }
   scope :sort_by_recommendations,  -> { order(cached_votes_up: :desc) }
 
-  scope :archived,       -> { where("proposals.created_at <= ?", Setting.archived_proposals_date_limit) }
-  scope :not_archived,   -> { where("proposals.created_at > ?", Setting.archived_proposals_date_limit) }
-  scope :last_week,      -> { where("proposals.created_at >= ?", 7.days.ago) }
+  scope :archived,       -> { where(created_at: ...Setting.archived_proposals_date_limit) }
+  scope :not_archived,   -> { where(created_at: Setting.archived_proposals_date_limit..) }
+  scope :last_week,      -> { where(created_at: 7.days.ago..) }
   scope :retired,        -> { where.not(retired_at: nil) }
-  scope :not_retired,    -> { where(retired_at: nil) }
-  scope :successful,     -> { where("cached_votes_up >= ?", Proposal.votes_needed_for_success) }
-  scope :unsuccessful,   -> { where("cached_votes_up < ?", Proposal.votes_needed_for_success) }
+  scope :not_retired,    -> { excluding(retired) }
+  scope :successful,     -> { where(cached_votes_up: Proposal.votes_needed_for_success..) }
+  scope :unsuccessful,   -> { where(cached_votes_up: ...Proposal.votes_needed_for_success) }
   scope :public_for_api, -> { all }
   scope :selected,       -> { where(selected: true) }
   scope :not_selected,   -> { where(selected: false) }
   scope :published,      -> { where.not(published_at: nil) }
-  scope :draft,          -> { where(published_at: nil) }
+  scope :draft,          -> { excluding(published) }
 
   scope :not_supported_by_user, ->(user) { where.not(id: user.find_voted_items(votable_type: "Proposal")) }
   scope :created_by,            ->(author) { where(author: author) }
@@ -110,13 +108,9 @@ class Proposal < ApplicationRecord
     tagged_with(user.interests, any: true)
       .where.not(author_id: user.id)
       .unsuccessful
-      .not_followed_by_user(user)
+      .excluding(followed_by_user(user))
       .not_archived
       .not_supported_by_user(user)
-  end
-
-  def self.not_followed_by_user(user)
-    where.not(id: followed_by_user(user).ids)
   end
 
   def to_param

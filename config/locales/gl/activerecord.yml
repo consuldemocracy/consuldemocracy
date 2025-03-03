@@ -7,6 +7,7 @@ gl:
     name: Nome
     email: O teu correo electrónico
     description: Descrición
+    related_sdg_list: Obxectivos e metas
   activerecord:
     models:
       activity:
@@ -75,6 +76,18 @@ gl:
       proposal:
         one: "Proposta cidadá"
         other: "Propostas cidadás"
+      sdg/goal:
+        one: "obxectivo"
+        other: "obxectivos"
+      sdg/local_target:
+        one: "meta local"
+        other: "metas locais"
+      sdg/manager:
+        one: "xestor ODS"
+        other: "xestores ODS"
+      sdg/target:
+        one: "meta"
+        other: "metas"
       site_customization/page:
         one: Páxina
         other: Páxinas personalizadas
@@ -111,6 +124,9 @@ gl:
       images:
         one: "Imaxe"
         other: "Imaxes"
+      tenant:
+        one: "entidade"
+        other: "entidades"
       topic:
         one: "Tema"
         other: "Temas"
@@ -132,6 +148,9 @@ gl:
       local_census_record:
         one: Rexistro do censo local
         other: Rexistros do censo local
+      votation_type:
+        one: Tipo de votación
+        other: Tipos de votación
     attributes:
       budget:
         name: "Nome"
@@ -144,7 +163,13 @@ gl:
         description_finished: "Descrición cando o orzamento está rematado"
         phase: "Fase"
         currency_symbol: "Moeda"
+        voting_style: "Estilo da votación final"
+        voting_style_knapsack: "Bolsa de diñeiro"
+        voting_style_approval: "Por aprobación"
+        hide_money: "Agochar a cantidade de diñeiro para este orzamento"
       budget/translation:
+        main_link_text: "Texto na ligazón"
+        main_link_url: "A ligazón lévate a (engade unha ligazón)"
         name: "Nome"
       budget/investment:
         heading_id: "Partida"
@@ -176,7 +201,9 @@ gl:
       geozone:
         name: Nome
         external_code: "Código externo (opcional)"
+        color: "Cor (opcional)"
         census_code: "Código censal (opcional)"
+        geojson: "Datos GeoJSON (opcional)"
         html_map_coordinates: "Coordenadas HTML <map> (opcional)"
       milestone:
         status_id: "Estado do investimento actual (opcional)"
@@ -195,6 +222,8 @@ gl:
       progress_bar/kind:
         primary: "Principal"
         secondary: "Secundaria"
+      budget/group:
+        max_votable_headings: "Número máximo de partidas ás que un usuario pode votar"
       budget/group/translation:
         name: "Nome do grupo"
       budget/heading:
@@ -204,6 +233,7 @@ gl:
         name: "Nome da partida"
         price: "Custo"
         population: "Poboación"
+        max_ballot_lines: "Votos permitidos"
       budget/heading/translation:
         name: "Nome da partida"
       budget/phase:
@@ -214,6 +244,8 @@ gl:
         name: "Nome"
         description: "Descrición"
         summary: "Resumo"
+        main_link_text: "Texto da ligazón"
+        main_link_url: "A ligazón lévate a (engade unha ligazón)"
       comment:
         body: "Comentar"
         user: "Usuario/a"
@@ -235,6 +267,7 @@ gl:
         retired_reason: "Razón pola que se elimina a proposta"
         selected: "Marcar como seleccionado"
         terms_of_service: "Termos de servizo"
+        video_url: "URL de vídeo externo"
       proposal/translation:
         title: "Título da proposta"
         description: "Texto da proposta"
@@ -257,6 +290,7 @@ gl:
         official_level: "Nivel do cargo"
         phone_number: "Teléfono"
         public_activity: "Amosar publicamente a miña lista de actividades"
+        public_interests: "Amosar publicamente as etiquetas dos elementos que sigo"
         recommended_debates: "Amosar recomendacións de debates"
         recommended_proposals: "Amosar recomendacións de propostas"
         redeemable_code: "Código de verificación por carta (opcional)"
@@ -294,6 +328,7 @@ gl:
       poll/ballot_sheet:
         data: Datos CSV
         poll_id: Votación
+        officer_assignment_id: Persoal designado
       poll/shift:
         task: "Tarefa"
       proposal_notification:
@@ -305,14 +340,22 @@ gl:
         signable_id: "ID de proposta cidadá/proposta de investimento"
         document_numbers: "Números de documentos"
       sdg/goal:
+        code: "Código"
         title: "Título"
         description: "Descrición"
       sdg/local_target:
+        code: "Código"
+        target_id: "Meta"
         title: "Título"
       sdg/local_target/translation:
         title: "Título"
         description: "Descrición"
+      sdg/phase/kind:
+        sensitization: "Sensibilización"
+        planning: "Planificación"
+        monitoring: "Seguimento"
       sdg/target:
+        code: "Código"
         title: "Título"
       site_customization/page:
         content: Contido
@@ -340,6 +383,11 @@ gl:
         body: Contido
       tag:
         name: "Escribe o nome do tema"
+      tenant:
+        domain: "Dominio"
+        schema: "Dominio / Subdominio"
+        subdomain: "Subdominio"
+        url: "URL"
       topic:
         title: "Título"
         description: "Texto de inicio"
@@ -411,13 +459,13 @@ gl:
       image:
         title: Título
         attachment: "Anexo"
-      poll/question/answer:
+      poll/question/option:
         title: Resposta
         description: Descrición
-      poll/question/answer/translation:
+      poll/question/option/translation:
         title: Resposta
-        description: "Descrición"
-      poll/question/answer/video:
+        description: "Descrición (opcional)"
+      poll/question/option/video:
         title: Título
         url: Vídeo externo
       newsletter:
@@ -440,6 +488,7 @@ gl:
         link_text: Texto da ligazón
         link_url: URL da ligazón
         columns: Número de columnas
+        order: Posición
       widget/card/translation:
         label: Etiqueta (opcional)
         title: Título
@@ -458,6 +507,9 @@ gl:
         order: Podes introducir a posición na que se lle amosará ao usuario esta acción na lista de accións
         active: Activo
         action_type: Tipo
+        action_type_proposed_action: "Acción proposta"
+        action_type_resource: "Recurso"
+        published_proposal: "Para propostas publicadas?"
       dashboard/administrator_task:
         source: Orixe
         user: Executado por
@@ -476,6 +528,12 @@ gl:
         document_number: Número de documento
         date_of_birth: Data de nacemento
         postal_code: Código postal
+      votation_type:
+        max_votes: Número máximo de votos
+        vote_type: Tipo de votación
+      votation_type/vote_type:
+        unique: Risposta única
+        multiple: Respostas múltiples
     errors:
       models:
         user:
@@ -490,6 +548,10 @@ gl:
           attributes:
             max_per_day:
               invalid: "Chegaches ao número máximo de mensaxes privadas por día"
+        geozone:
+          attributes:
+            geojson:
+              invalid: "O GeoJSON proporcionado non segue o formato correcto. Debe seguir o formato de tipo «Polygon» ou «MultiPolygon»."
         image:
           attributes:
             attachment:
@@ -519,6 +581,10 @@ gl:
               invalid_date_range: ten que ser igual ou posterior á data de comezo da redacción
             allegations_end_date:
               invalid_date_range: ten que ser igual ou posterior á data en que comezan ás alegacións
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: non está incluído na lista, os valores permitidos son 1 para DNI, 2 para pasaporte e 3 para tarxeta de residencia.
         proposal:
           attributes:
             tag_list:
@@ -549,6 +615,14 @@ gl:
           attributes:
             valuation:
               cannot_comment_valuation: "Non podes comentar unha avaliación"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: O recurso xa está traducido
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "ten que empezar co código da súa meta, seguido dun punto, e rematar cun número"
       messages:
         translations_too_short: É necesaria unha tradución como mínimo
         record_invalid: "Erro de validación: %{errors}"

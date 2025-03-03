@@ -316,15 +316,6 @@ eu:
       image:
         title: Izenburua
         attachment: "Itsatsitako fitxategia"
-      poll/question/answer:
-        title: Erantzuna
-        description: Deskribapena
-      poll/question/answer/translation:
-        title: Erantzuna
-        description: "Deskribapena"
-      poll/question/answer/video:
-        title: Izenburua
-        url: Kanpo bideoa
       newsletter:
         segment_recipient: Hartzaileak
         subject: Gaia

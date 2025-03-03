@@ -158,7 +158,6 @@ he:
     budget/group: תקציב הקבוצה
     budget/heading: כותרת התקציב
     poll/shift: משמרת
-    poll/question/answer: תשובה
     user: חשבון משתמש/ת
     verification/sms: מספר טלפון
     signature_sheet: גיליון חתימה
@@ -574,7 +573,6 @@ he:
         share: "ואם תסייע לי לשתף את ההצעה שלי עם חברים, משפחה ואנשי קשר, זה יהיה מושלם!"
   polls:
     all: "כולם"
-    no_dates: "לא הוקצה תאריך"
     dates: "מ %{open_at} עד %{closed_at}"
     final_date: "סיכום תוצאות סופיות"
     index:
@@ -670,8 +668,7 @@ he:
       author_deleted: משתמש/ת זה/ו נמחק/ה
       email_deleted: האימייל נמחק
     back: חזרה
-    check: בחר
-    check_all: כולם
+    check_all: הכל
     check_none: כלום
     collective: קבוצתי
     flag: סמן כתוכן לא ראוי
@@ -741,18 +738,6 @@ he:
     youtube: "%{org} יוטיוב YouTube"
     telegram: "%{org} טלגרם Telegram"
     instagram: "%{org} אינסטגרם Instagram"
-  stats:
-    index:
-      visits: ביקורים
-      debates: דיונים
-      proposals: הצעות
-      comments: הערות
-      proposal_votes: הצבעות על הצעות
-      debate_votes: הצבעות על דיונים
-      comment_votes: הצבעות על תגובות
-      votes: סך הכל הצבעות
-      verified_users: משתמשים מאושרים
-      unverified_users: משתמשים שלא נבדקו
   unauthorized:
     default: אין לך הרשאה להיכנס לדף זה.
     manage:

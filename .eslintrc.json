@@ -1,4 +1,9 @@
 {
+  "ignorePatterns": [
+    "app/assets/javascripts/ckeditor/config.js",
+    "node_modules/",
+    "vendor/"
+  ],
   "env": {
     "browser": true,
     "es6": false

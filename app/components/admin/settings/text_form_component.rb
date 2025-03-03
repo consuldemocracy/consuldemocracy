@@ -1,6 +1,6 @@
 class Admin::Settings::TextFormComponent < ApplicationComponent
   attr_reader :setting, :tab
-  delegate :dom_id, to: :helpers
+  use_helpers :dom_id
 
   def initialize(setting, tab: nil)
     @setting = setting

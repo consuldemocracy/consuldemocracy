@@ -116,8 +116,6 @@ sv:
       allow_attached_documents_description: "Tillåter användare att skicka in dokument när de skapar förslag och investeringsprojekt i medborgarbudgetar"
       guides: "Instruktioner för att skapa förslag och investeringsprojekt"
       guides_description: "Visar en guide över skillnaderna mellan förslag och investeringsprojekt om det finns en aktiv medborgarbudget"
-      public_stats: "Offentlig statistik"
-      public_stats_description: "Visar offentlig statistik i administratörspanelen"
       help_page: "Hjälpsida"
       help_page_description: 'Visar en hjälpmeny som innehåller en sida med ett infoavsnitt om varje aktiverad funktion. Även anpassade sidor och menyer kan skapas under avsnitten "Anpassade sidor" och "Anpassade innehållsblock"'
       remote_translations: "Fjärröversättning"

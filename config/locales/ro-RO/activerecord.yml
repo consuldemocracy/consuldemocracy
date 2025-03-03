@@ -490,15 +490,6 @@ ro:
       image:
         title: Titlu
         attachment: "Alege imagine"
-      poll/question/answer:
-        title: Răspuns
-        description: Descriere
-      poll/question/answer/translation:
-        title: Răspuns
-        description: "Descriere"
-      poll/question/answer/video:
-        title: Titlu
-        url: Video extern
       newsletter:
         segment_recipient: Destinatari
         subject: Subiect

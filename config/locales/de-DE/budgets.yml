@@ -106,7 +106,7 @@ de:
           change_vote_link: "ihre Wahl ändern"
           different_heading_assigned: "Sie haben bereits in einer anderen Rubrik: %{heading_link} abgestimmt"
           change_ballot: "Wenn Sie Ihre Meinung ändern, können Sie Ihre Stimme unter %{check_ballot} entfernen und von vorne beginnen."
-          check_ballot_link: "Überprüfung meiner Abstimmung"
+          check_ballot_link: "meine Abstimmung überprüfen"
           zero: Sie haben für keinen Ausgabenvorschlag in dieser Gruppe abgestimmt.
           verified_only: "Um ein neuen Ausgabenvorschlag zu erstellen %{verify}."
           create: "Eine Budgetinvestitionen erstellen"

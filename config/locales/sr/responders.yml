@@ -7,9 +7,6 @@ sr:
         direct_message: "Ваша порука је успешно послата."
         poll: "Анкета је успешно креирана."
         poll_booth: "Гласачко место је успешно креирано."
-        poll_question_answer: "Одговор је успешно креиран"
-        poll_question_answer_video: "Видео је успешно креиран"
-        poll_question_answer_image: "Слика је успешно креирана"
         proposal: "Предлог је успешно креиран."
         proposal_notification: "Ваша порука је послата исправно."
         budget_investment: "Инвестициони буџет је успешно креиран."
@@ -32,5 +29,4 @@ sr:
       destroy:
         budget_investment: "Инвестициони пројект је успешно обрисан."
         topic: "Тема је успешно обрисана."
-        poll_question_answer_video: "Видео запис одговора је успешно избрисан."
         valuator_group: "Оцењивачка група је успешно обрисана"

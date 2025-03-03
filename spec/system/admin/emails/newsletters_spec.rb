@@ -134,7 +134,7 @@ describe "Admin newsletter emails", :admin do
       newsletter = create(:newsletter)
       visit admin_newsletter_path(newsletter)
 
-      accept_confirm { click_link "Send" }
+      accept_confirm { click_button "Send" }
 
       expect(page).to have_content "Newsletter sent successfully"
     end
@@ -153,7 +153,7 @@ describe "Admin newsletter emails", :admin do
       newsletter = create(:newsletter, segment_recipient: "administrators")
       visit admin_newsletter_path(newsletter)
 
-      accept_confirm { click_link "Send" }
+      accept_confirm { click_button "Send" }
 
       expect(page).to have_content "Newsletter sent successfully"
 

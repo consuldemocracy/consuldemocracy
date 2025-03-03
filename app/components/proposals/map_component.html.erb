@@ -1,0 +1,11 @@
+<div class="sidebar-divider"></div>
+
+<div class="proposals-geozones">
+  <h2 class="sidebar-title"><%= t("shared.tags_cloud.districts") %></h2>
+  <br>
+<%= link_to t("shared.tags_cloud.districts_list"), map_proposals_path, id: "map", title: t("shared.tags_cloud.districts_list") %>
+
+<div class="budgets-map">
+  <%= render_map(nil, investments_coordinates: coordinates, geozones_data: geozones_data) %>
+</div>
+</div>

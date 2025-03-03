@@ -140,7 +140,6 @@ zh-CN:
     budget/investment: 投资
     budget/heading: 预算标题
     poll/shift: 轮班
-    poll/question/answer: 回答
     user: 帐户
     verification/sms: 电话
     signature_sheet: 签名表
@@ -409,7 +408,6 @@ zh-CN:
         support_button: 支持此提议
   polls:
     all: "所有"
-    no_dates: "没指定日期"
     dates: "从%{open_at} 到%{closed_at}"
     final_date: "最终重新计票／结果"
     index:
@@ -501,7 +499,6 @@ zh-CN:
     author_info:
       author_deleted: 已删除的用户
     back: 返回
-    check: 选择
     check_all: 所有
     check_none: 没有
     collective: 集体
@@ -563,18 +560,6 @@ zh-CN:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram（电报群）"
     instagram: "%{org} Instagram"
-  stats:
-    index:
-      visits: 访问
-      debates: 辩论
-      proposals: 提议
-      comments: 评论
-      proposal_votes: 提议的投票数
-      debate_votes: 辩论的投票数
-      comment_votes: 评论的投票数
-      votes: 总投票数
-      verified_users: 已验证的用户
-      unverified_users: 未验证的用户
   unauthorized:
     default: 您没有权限访问此页面。
     manage:

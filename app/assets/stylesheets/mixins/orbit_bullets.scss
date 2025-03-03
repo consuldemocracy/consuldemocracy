@@ -1,17 +1,17 @@
 @mixin orbit-bullets {
   @include disable-mouse-outline;
-  position: relative;
-  margin-top: $orbit-bullet-margin-top;
   margin-bottom: $orbit-bullet-margin-bottom;
+  margin-top: $orbit-bullet-margin-top;
+  position: relative;
   text-align: center;
 
   button {
-    width: $orbit-bullet-diameter;
-    height: $orbit-bullet-diameter;
-    margin: $orbit-bullet-margin;
+    background-color: $orbit-bullet-background;
 
     border-radius: 50%;
-    background-color: $orbit-bullet-background;
+    height: $orbit-bullet-diameter;
+    margin: $orbit-bullet-margin;
+    width: $orbit-bullet-diameter;
 
     &:hover {
       background-color: $orbit-bullet-background-active;

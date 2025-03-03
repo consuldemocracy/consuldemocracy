@@ -11,7 +11,7 @@ class Admin::Widget::Cards::EditComponent < ApplicationComponent
   private
 
     def title
-      if card.header?
+      if card.header_or_sdg_header?
         t("admin.homepage.edit.header_title")
       else
         t("admin.homepage.edit.card_title")

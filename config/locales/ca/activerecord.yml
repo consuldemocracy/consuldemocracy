@@ -420,15 +420,6 @@ ca:
       image:
         title: Títol
         attachment: "Tria la imatge"
-      poll/question/answer:
-        title: Resposta
-        description: Descripció detallada
-      poll/question/answer/translation:
-        title: Resposta
-        description: "Descripció detallada"
-      poll/question/answer/video:
-        title: Títol
-        url: Vídeo extern
       newsletter:
         segment_recipient: Destinataris
         subject: Assignatura

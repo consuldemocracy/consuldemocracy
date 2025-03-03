@@ -11,6 +11,9 @@ class Admin::SiteCustomization::ContentBlocksController < Admin::SiteCustomizati
     @headings_content_blocks = Budget::ContentBlock.all
   end
 
+  def new
+  end
+
   def create
     if is_heading_content_block?(@content_block.name)
       heading_content_block = new_heading_content_block
@@ -31,11 +34,6 @@ class Admin::SiteCustomization::ContentBlocksController < Admin::SiteCustomizati
   end
 
   def edit
-    if @content_block.is_a? SiteCustomization::ContentBlock
-      @selected_content_block = @content_block.name
-    else
-      @selected_content_block = "hcb_#{@content_block.heading_id}"
-    end
   end
 
   def update
@@ -72,11 +70,6 @@ class Admin::SiteCustomization::ContentBlocksController < Admin::SiteCustomizati
 
   def edit_heading_content_block
     @content_block = Budget::ContentBlock.find(params[:id])
-    if @content_block.is_a? Budget::ContentBlock
-      @selected_content_block = "hcb_#{@content_block.heading_id}"
-    else
-      @selected_content_block = @content_block.name
-    end
     @is_heading_content_block = true
     render :edit
   end

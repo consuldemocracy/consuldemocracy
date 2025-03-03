@@ -165,6 +165,46 @@ describe Poll::Stats do
     end
   end
 
+  describe "#participants_by_age" do
+    it "returns stats based on what happened when the voting took place" do
+      travel_to(100.years.ago) do
+        [16, 18, 32, 32, 33, 34, 64, 65, 71, 73, 90, 99, 105].each do |age|
+          create(:user, date_of_birth: age.years.ago - rand(0..11).months)
+        end
+
+        create(:poll, starts_at: 1.minute.from_now, ends_at: 2.minutes.from_now)
+      end
+
+      stats = Poll::Stats.new(Poll.last)
+      allow(stats).to receive(:participants).and_return(User.all)
+
+      expect(stats.participants_by_age["16 - 19"][:count]).to eq 2
+      expect(stats.participants_by_age["20 - 24"][:count]).to eq 0
+      expect(stats.participants_by_age["25 - 29"][:count]).to eq 0
+      expect(stats.participants_by_age["30 - 34"][:count]).to eq 4
+      expect(stats.participants_by_age["35 - 39"][:count]).to eq 0
+      expect(stats.participants_by_age["40 - 44"][:count]).to eq 0
+      expect(stats.participants_by_age["45 - 49"][:count]).to eq 0
+      expect(stats.participants_by_age["50 - 54"][:count]).to eq 0
+      expect(stats.participants_by_age["55 - 59"][:count]).to eq 0
+      expect(stats.participants_by_age["60 - 64"][:count]).to eq 1
+      expect(stats.participants_by_age["65 - 69"][:count]).to eq 1
+      expect(stats.participants_by_age["70 - 74"][:count]).to eq 2
+      expect(stats.participants_by_age["75 - 79"][:count]).to eq 0
+      expect(stats.participants_by_age["80 - 84"][:count]).to eq 0
+      expect(stats.participants_by_age["85 - 89"][:count]).to eq 0
+      expect(stats.participants_by_age["90 - 300"][:count]).to eq 3
+    end
+  end
+
+  describe "#participation_date", :with_frozen_time do
+    let(:poll) { create(:poll, starts_at: 3.years.ago, ends_at: 2.years.ago) }
+
+    it "returns the date when the poll finishes" do
+      expect(stats.participation_date).to eq 2.years.ago
+    end
+  end
+
   describe "#participants_by_geozone" do
     it "groups by geozones in alphabetic order" do
       %w[Oceania Eurasia Eastasia].each { |name| create(:geozone, name: name) }
@@ -256,34 +296,6 @@ describe Poll::Stats do
 
       it "returns all channels" do
         expect(stats.channels).to eq %w[web booth letter]
-      end
-    end
-  end
-
-  describe "#version", :with_frozen_time do
-    context "record with no stats" do
-      it "returns a string based on the current time" do
-        expect(stats.version).to eq "v#{Time.current.to_i}"
-      end
-
-      it "doesn't overwrite the timestamp when called multiple times" do
-        time = Time.current
-
-        expect(stats.version).to eq "v#{time.to_i}"
-
-        unfreeze_time
-
-        travel_to 2.seconds.from_now do
-          expect(stats.version).to eq "v#{time.to_i}"
-        end
-      end
-    end
-
-    context "record with stats" do
-      before { poll.create_stats_version(updated_at: 1.day.ago) }
-
-      it "returns the version of the existing stats" do
-        expect(stats.version).to eq "v#{1.day.ago.to_i}"
       end
     end
   end

@@ -81,6 +81,16 @@ describe User do
     end
   end
 
+  describe "#locale" do
+    it "defaults to the default locale setting" do
+      Setting["locales.default"] = "nl"
+
+      user = build(:user, locale: nil)
+
+      expect(user.locale).to eq "nl"
+    end
+  end
+
   describe "preferences" do
     describe "email_on_comment" do
       it "is false by default" do
@@ -423,6 +433,115 @@ describe User do
         expect(User.by_username_email_or_document_number(" 12345678Z ")).to eq [larry]
       end
     end
+
+    describe ".between_ages" do
+      it "returns users between certain ages, including both" do
+        [21, 22, 23, 23, 42, 43, 44, 51].each do |age|
+          create(:user, date_of_birth: age.years.ago)
+        end
+
+        expect(User.between_ages(0, 20).count).to eq 0
+        expect(User.between_ages(0, 21).count).to eq 1
+        expect(User.between_ages(21, 23).count).to eq 4
+        expect(User.between_ages(24, 41).count).to eq 0
+        expect(User.between_ages(41, 45).count).to eq 3
+        expect(User.between_ages(51, 100).count).to eq 1
+      end
+
+      it "does not consider that people born in the same year share the same age" do
+        april_1st_user = create(:user, date_of_birth: Time.zone.local(2001, 4, 1))
+        april_2nd_user = create(:user, date_of_birth: Time.zone.local(2001, 4, 2))
+        april_3rd_user = create(:user, date_of_birth: Time.zone.local(2001, 4, 3))
+
+        travel_to "2021-04-02" do
+          expect(User.between_ages(18, 19)).to eq [april_3rd_user]
+          expect(User.between_ages(20, 21)).to match_array [april_1st_user, april_2nd_user]
+          expect(User.between_ages(19, 20)).to match_array [april_1st_user, april_2nd_user, april_3rd_user]
+        end
+      end
+
+      it "works on leap years with users born on leap years" do
+        leap_day_user = create(:user, date_of_birth: Time.zone.local(2000, 2, 29))
+        march_1st_user = create(:user, date_of_birth: Time.zone.local(2000, 3, 1))
+
+        travel_to "2024-02-28" do
+          expect(User.between_ages(22, 23)).to match_array [leap_day_user, march_1st_user]
+          expect(User.between_ages(23, 24)).to match_array [leap_day_user, march_1st_user]
+          expect(User.between_ages(24, 25)).to eq []
+        end
+
+        travel_to "2024-02-29" do
+          expect(User.between_ages(22, 23)).to eq [march_1st_user]
+          expect(User.between_ages(23, 24)).to match_array [leap_day_user, march_1st_user]
+          expect(User.between_ages(24, 25)).to eq [leap_day_user]
+        end
+
+        travel_to "2024-03-01" do
+          expect(User.between_ages(22, 23)).to eq []
+          expect(User.between_ages(23, 24)).to match_array [leap_day_user, march_1st_user]
+          expect(User.between_ages(24, 25)).to match_array [leap_day_user, march_1st_user]
+        end
+      end
+
+      it "works on non-leap years with users born on leap years" do
+        leap_day_user = create(:user, date_of_birth: Time.zone.local(2000, 2, 29))
+        march_1st_user = create(:user, date_of_birth: Time.zone.local(2000, 3, 1))
+
+        travel_to "2023-02-28" do
+          expect(User.between_ages(21, 22)).to match_array [leap_day_user, march_1st_user]
+          expect(User.between_ages(22, 23)).to match_array [leap_day_user, march_1st_user]
+          expect(User.between_ages(23, 24)).to eq []
+        end
+
+        travel_to "2023-03-01" do
+          expect(User.between_ages(21, 22)).to eq []
+          expect(User.between_ages(22, 23)).to match_array [leap_day_user, march_1st_user]
+          expect(User.between_ages(23, 24)).to match_array [leap_day_user, march_1st_user]
+        end
+      end
+
+      it "works on leap years with users born on non-leap years" do
+        march_1st_user = create(:user, date_of_birth: Time.zone.local(2001, 3, 1))
+
+        travel_to "2024-02-28" do
+          expect(User.between_ages(21, 22)).to eq [march_1st_user]
+          expect(User.between_ages(22, 23)).to eq [march_1st_user]
+          expect(User.between_ages(23, 24)).to eq []
+        end
+
+        travel_to "2024-02-29" do
+          expect(User.between_ages(21, 22)).to eq [march_1st_user]
+          expect(User.between_ages(22, 23)).to eq [march_1st_user]
+          expect(User.between_ages(23, 24)).to eq []
+        end
+
+        travel_to "2024-03-01" do
+          expect(User.between_ages(21, 22)).to eq []
+          expect(User.between_ages(22, 23)).to match_array [march_1st_user]
+          expect(User.between_ages(23, 24)).to match_array [march_1st_user]
+        end
+      end
+
+      it "returns users between certain ages on a reference date" do
+        reference_date = 20.years.ago
+
+        travel_to(reference_date) do
+          [21, 22, 23, 23, 34, 42, 43, 44, 50, 51].each do |age|
+            create(:user, date_of_birth: age.years.ago)
+          end
+        end
+
+        expect(User.between_ages(0, 20, at_time: reference_date).count).to eq 0
+        expect(User.between_ages(21, 25, at_time: reference_date).count).to eq 4
+        expect(User.between_ages(25, 30, at_time: reference_date).count).to eq 0
+        expect(User.between_ages(30, 34, at_time: reference_date).count).to eq 1
+        expect(User.between_ages(35, 39, at_time: reference_date).count).to eq 0
+        expect(User.between_ages(40, 44, at_time: reference_date).count).to eq 3
+        expect(User.between_ages(45, 49, at_time: reference_date).count).to eq 0
+        expect(User.between_ages(50, 54, at_time: reference_date).count).to eq 2
+        expect(User.between_ages(55, 100, at_time: reference_date).count).to eq 0
+      end
+    end
   end
 
   describe "self.search" do
@@ -624,6 +743,24 @@ describe User do
 
       expect(Poll::Voter.where(user: other_user).count).to eq(0)
       expect(Poll::Voter.where(user: user)).to match_array [v1, v2]
+    end
+
+    it "does not reassign votes if the user has already voted" do
+      poll = create(:poll)
+      user = create(:user, :level_three)
+      other_user = create(:user, :level_three)
+
+      voter = create(:poll_voter, poll: poll, user: user)
+      other_voter = create(:poll_voter, poll: poll, user: other_user)
+      other_poll_voter = create(:poll_voter, poll: create(:poll), user: other_user)
+
+      expect(Poll::Voter.where(user: user)).to eq [voter]
+      expect(Poll::Voter.where(user: other_user)).to match_array [other_voter, other_poll_voter]
+
+      user.take_votes_from(other_user)
+
+      expect(Poll::Voter.where(user: user)).to match_array [voter, other_poll_voter]
+      expect(Poll::Voter.where(user: other_user)).to eq []
     end
   end
 

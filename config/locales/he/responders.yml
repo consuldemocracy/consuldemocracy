@@ -7,9 +7,6 @@ he:
         direct_message: "הודעתך נשלחה בהצלחה"
         poll: "הסקר נוצר בהצלחה."
         poll_booth: "הדוכן נוצר בהצלחה."
-        poll_question_answer: "התשובה נוצרו בהצלחה"
-        poll_question_answer_video: "וידאו נוצר בהצלחה"
-        poll_question_answer_image: "התמונה הועלתה בהצלחה"
         proposal: "הצעתך נוספה בהצלחה"
         proposal_notification: "הודעתך נשלחה כראוי"
         budget_investment: "תקצוב ההשקעות נוצר בהצלחה"
@@ -32,5 +29,4 @@ he:
       destroy:
         budget_investment: "מיזם ההשקעות נמחק בהצלחה"
         topic: "הנושא נמחק בהצלחה."
-        poll_question_answer_video: "תשובת הוידאו נמחק בהצלחה."
         valuator_group: "קבוצת המעריכים נמחקה בהצלחה"

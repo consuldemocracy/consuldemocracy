@@ -43,7 +43,7 @@ class Officing::ResultsController < Officing::BaseController
         results.each_pair do |answer_index, count|
           next if count.blank?
 
-          answer = question.question_answers.find_by(given_order: answer_index.to_i + 1).title
+          answer = question.question_options.find_by(given_order: answer_index.to_i + 1).title
           go_back_to_new if question.blank?
 
           partial_result = ::Poll::PartialResult.find_or_initialize_by(

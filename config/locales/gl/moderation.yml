@@ -1,5 +1,7 @@
 gl:
   moderation:
+    actions:
+      confirm_action: "Estás seguro/a? %{action}"
     comments:
       index:
         block_authors: Bloquear autores
@@ -99,7 +101,11 @@ gl:
         title: Notificacións das propostas
     users:
       index:
-        hide: Bloquear
+        block: Bloquear
+        confirm_block: "Estás seguro/a? Isto agochará o usuario «%{name}», así como todos os seus contidos."
+        confirm_hide: "Estás seguro/a? Isto agochará a «%{name}», sen agochar os seus contidos."
+        hide: Agochar
         search_placeholder: correo electrónico ou nome de usuario
         title: Bloquear usuarios
-      notice_hide: Usuario bloqueado. Ocultáronse todos os seus debates e comentarios.
+      notice_block: Bloqueouse o usuario. Agocháronse todos os contidos creados por este usuario.
+      notice_hide: Usuario bloqueado. Agocháronse todos os seus debates e comentarios.

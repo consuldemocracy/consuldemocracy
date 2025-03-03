@@ -13,6 +13,7 @@
     <%= raw setting["per_page_code_head"] %>
   </head>
   <body class="proposal-dashboard">
+    <%= render Layout::SkipToMainContentComponent.new %>
     <%= raw setting["per_page_code_body"] %>
 
     <h1 class="show-for-sr"><%= setting["org_name"] %></h1>
@@ -26,7 +27,7 @@
         <%= render "dashboard/menu" %>
       </nav>
 
-      <div class="admin-content">
+      <main id="main" class="admin-content <%= yield(:main_class) %>">
         <%= label_tag :show_menu, t("admin.menu.admin"),
                       "aria-hidden": true, class: "button hollow expanded" %>
 
@@ -34,7 +35,7 @@
         <%= render "layouts/dashboard/proposal_totals" %>
         <%= render "layouts/dashboard/proposal_header" %>
         <%= yield %>
-      </div>
+      </main>
     </div>
   </body>
 </html>

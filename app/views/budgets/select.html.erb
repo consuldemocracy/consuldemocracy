@@ -1,0 +1,16 @@
+<h1><%= t("budgets.select.title") %></h1>
+
+<p><%= t("budgets.select.proposal_name") %>: <%= @proposal.title %></p>
+
+<%= form_with url: select_headings_budgets_path, method: :get, local: true do |form| %>
+  <div class="small-12 medium-6 column">
+    <%= form.label :budget_id, t("budgets.select.select_budget") %>
+    <%= form.collection_select :budget_id, @budgets, :id, :name, prompt: t("budgets.select.choose_budget") %>
+  </div>
+
+  <%= form.hidden_field :proposal_id, value: @proposal.id %>
+
+  <div class="actions" style="clear: both;width: 100%; text-align: left;">
+    <%= form.submit t("budgets.select.next") %>
+  </div>
+<% end %>

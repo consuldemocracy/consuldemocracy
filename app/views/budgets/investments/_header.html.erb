@@ -62,6 +62,20 @@
       </div>
     </div>
   </section>
+  <% if @heading.geozone_restricted? %>
+          <p>
+            <small><%= t("polls.index.geozone_info") %></small>
+          </p>
+        <% end %>
+        <ul class="tags">
+  <% @heading.geozone_ids.each do |geozone_id| %>
+    <% geozone = Geozone.find_by(id: geozone_id) %>
+    <% if geozone %>
+      <li><span><%= geozone.name %></span></li>
+    <% end %>
+  <% end %>
+</ul>
+
 <% else %>
   <div class="expanded jumbo-budget padding no-margin-top margin-bottom">
     <div class="row">

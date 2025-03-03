@@ -1,6 +1,6 @@
 class Attachable::FieldsComponent < ApplicationComponent
   attr_reader :f, :resource_type, :resource_id, :relation_name
-  delegate :current_user, :render_image, to: :helpers
+  use_helpers :current_user, :render_image
 
   def initialize(f, resource_type:, resource_id:, relation_name:)
     @f = f

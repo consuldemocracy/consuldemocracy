@@ -4,7 +4,7 @@ class SDG::Targets::PlainTagListComponent < ApplicationComponent
   private
 
     def tags
-      [*target_tags, see_more_link].select(&:present?)
+      [*target_tags, see_more_link].compact_blank
     end
 
     def target_tags

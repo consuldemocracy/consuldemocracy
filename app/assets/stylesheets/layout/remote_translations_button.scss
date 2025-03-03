@@ -1,8 +1,8 @@
 .remote-translations-button {
   @include info-colors;
   font-size: $small-font-size;
-  text-align: center;
   padding: rem-calc(6);
+  text-align: center;
 
   [type="submit"] {
     @include link;

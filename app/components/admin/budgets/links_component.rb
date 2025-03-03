@@ -1,6 +1,6 @@
 class Admin::Budgets::LinksComponent < ApplicationComponent
   attr_reader :budget
-  delegate :can?, to: :helpers
+  use_helpers :can?
 
   def initialize(budget)
     @budget = budget
@@ -8,8 +8,8 @@ class Admin::Budgets::LinksComponent < ApplicationComponent
 
   private
 
-    def action(action_name, **options)
-      render Admin::ActionComponent.new(action_name, budget, **options)
+    def action(action_name, **)
+      render Admin::ActionComponent.new(action_name, budget, **)
     end
 
     def results_text

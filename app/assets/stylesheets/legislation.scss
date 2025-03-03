@@ -1,49 +1,9 @@
-// Table of Contents
-//
-// 01. Sidebar menu
-// 02. Legislation cards
-//
-
-// 01. Sidebar menu
-// -----------------
-.legislation-categories {
-
-  .menu.simple {
-    border-bottom: 0;
-    list-style: none;
-    padding-left: 0;
-    margin-left: 0;
-    margin-top: 0;
-
-    @include breakpoint(medium) {
-      margin: 1.5rem 0;
-    }
-
-    li {
-      display: block;
-      cursor: pointer;
-      margin-bottom: 1rem;
-
-      @include breakpoint(medium) {
-        margin-bottom: 2rem;
-        max-width: 80%;
-      }
-
-      &.is-active {
-        font-weight: 700;
-      }
-    }
-  }
-}
-
-// 02. Legislation cards
-// -----------------
 .legislation {
-  margin: 0 0 $line-height;
   border: 1px solid;
   border-color: #e5e6e9 #dfe0e4 #d0d1d5;
   border-radius: 0;
   box-shadow: 0 1px 3px 0 #dee0e3;
+  margin: 0 0 $line-height;
   min-height: 12rem;
   padding: 2rem 0 0;
 }
@@ -63,8 +23,8 @@
 }
 
 .legislation-calendar-info p {
-  font-size: $small-font-size;
   color: $text-medium;
+  font-size: $small-font-size;
   margin-bottom: 0;
 }
 
@@ -73,10 +33,10 @@
   padding-top: 1rem;
 
   h4 {
-    font-size: rem-calc(16);
-    margin-left: 0.25rem;
-    margin-bottom: 0;
     color: #61686e;
+    font-size: rem-calc(16);
+    margin-bottom: 0;
+    margin-left: 0.25rem;
 
     @include breakpoint(medium) {
       margin-left: 0;
@@ -84,8 +44,8 @@
   }
 
   p {
-    margin-left: 0.25rem;
     font-size: $small-font-size;
+    margin-left: 0.25rem;
 
     @include breakpoint(medium) {
       margin-left: 0;
