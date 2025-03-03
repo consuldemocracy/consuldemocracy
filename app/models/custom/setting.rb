@@ -30,5 +30,9 @@ class Setting
         })
       end
     end
+    
+    def hide_local_login?
+      Setting["feature.hide_local_login"] == "active"
+    end
   end
 end
