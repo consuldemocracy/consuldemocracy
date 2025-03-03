@@ -10,10 +10,12 @@
       signup_link: link_to(t("devise_views.shared.links.signup_link"), new_user_registration_path))) %>
 </p>
 
+
 <div id="admin_login" style="visibility:<%= Setting.hide_local_login? ? "hidden" : "visible" %>">
 
 <h2><%= t("devise.sessions.local_sign_in_title") %></h2>
 <p><%= t("devise.sessions.local_sign_in_description") %></p>
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="row">
     <div class="small-12 column">
