@@ -6,7 +6,6 @@ class Admin::Settings::FeaturesTabComponent < ApplicationComponent
       feature.google_login
       feature.twitter_login
       feature.wordpress_login
-      feature.saml_login
       feature.public_stats
       feature.signature_sheets
       feature.user.recommendations
@@ -27,8 +26,6 @@ class Admin::Settings::FeaturesTabComponent < ApplicationComponent
       feature.machine_learning
       feature.remove_investments_supports
       feature.dashboard.notification_emails
-      feature.demographics
-      feature.valid_geozone
     ]
   end
 end
