@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby file: ".ruby-version"
+#ruby file: ".ruby-version"
 
 gem "rails", "7.0.8.7"
 
@@ -40,7 +40,6 @@ gem "omniauth-facebook", "~> 10.0.0"
 gem "omniauth-google-oauth2", "~> 1.2.0"
 gem "omniauth-rails_csrf_protection", "~> 1.0.2"
 gem "omniauth-twitter", "~> 1.4.0"
-gem "omniauth-saml", "~> 2.1.0"
 gem "paranoia", "~> 3.0.0"
 gem "pg", "~> 1.5.8"
 gem "pg_search", "~> 2.3.7"
