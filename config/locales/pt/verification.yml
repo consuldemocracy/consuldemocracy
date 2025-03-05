@@ -1,1 +1,103 @@
 pt:
+  verification:
+    alert:
+      lock: Atingiu o número máximo de tentativas. Por favor, tente novamente mais tarde.
+    back: Voltar à minha conta
+    email:
+      create:
+        alert:
+          failure: Houve um problema com o envio de um e-mail para a sua conta
+        flash:
+          success: "Enviamos um e-mail de confirmação para a sua conta: %{email}"
+      show:
+        alert:
+          failure: Código de verificação incorreto
+        flash:
+          success: É um utilizador verificado
+    letter:
+      alert:
+        unconfirmed_code: Ainda não inseriu o código de confirmação
+      create:
+        flash:
+          success: Obrigado por solicitar o seu <b>código de máxima segurança (só válido para as votações finais)</b>. Dentro de alguns dias, iremos enviá-lo para o endereço que consta nos dados que temos registados. Por favor lembre-se que, se preferir, pode recolher o seu código num Gabinete de Apoio ao Cidadão.
+      edit:
+        see_all: Ver propostas
+        title: Carta solicitada
+      errors:
+        incorrect_code: Código de verificação incorreto
+      new:
+        explanation: "Para participar da votação final, pode:"
+        go_to_index: Ver propostas
+        office: Faça a verificação num Gabinete de Apoio ao Cidadão
+        send_letter: Envie-me uma carta com o código
+        title: Parabéns!
+        user_permission_info: Com a sua conta, pode...
+      update:
+        flash:
+          success: Código correto. A sua conta está verificada
+    redirect_notices:
+      already_verified: A sua conta já está verificada
+      email_already_sent: Já enviamos um e-mail com um link de confirmação. Se não conseguir encontrar o e-mail, pode solicitar o reenvio aqui
+    residence:
+      alert:
+        unconfirmed_residency: Ainda não confirmou a sua residência
+      create:
+        flash:
+          success: Residência verificada
+      new:
+        accept_terms_text: Eu aceito %{terms_url} do Censo
+        document_number: Número do documento
+        document_number_help_title: Ajuda
+        document_number_help_text: "<strong>Cartão de Cidadão</strong>: 123456789<br> <strong>Passaporte</strong>: AA123456<br> <strong>Cartão de residência</strong>: 123456"
+        document_type:
+          passport: Passaporte
+          residence_card: Cartão de residência
+          spanish_id: Cartão de Cidadão
+        error_not_allowed_age: Não tem a idade mínima para participar
+        error_not_allowed_postal_code: Cidadãos deste Código Postal não podem participar
+        error_verifying_census: O Censo não conseguiu verificar as suas informações. Por favor confirme que os seus detalhes do Censo estão corretos ligando para a Câmara municipal ou visitando um Gabinete de Apoio ao Cidadão.
+        form_errors: impediu a verificação da sua residência
+        postal_code_note: Para verificar a sua conta, deve estar registado
+        terms: os termos e condições de acesso
+        title: Verificar residência
+        verify_residence: Verificar residência
+    sms:
+      create:
+        flash:
+          success: Insira o código de confirmação enviado por mensagem de texto
+      edit:
+        resend_sms_link: Clique aqui para enviá-lo novamente
+        resend_sms_text: Não recebeu uma mensagem de texto com o código de confirmação?
+        submit_button: Enviar
+        title: Confirmação do código de segurança
+      new:
+        phone: Insira o seu número de telemóvel para receber o código
+        phone_format: "<strong><em>(Exemplo: 123456789 ou +351123456789)</em></strong>"
+        phone_note: Apenas usamos o seu número de telefone para enviar um código, nunca o contactaremos.
+        submit_button: Enviar
+        title: Enviar código de confirmação
+      update:
+        error: Código de confirmação incorreto
+        flash:
+          level_three:
+            success: Código correto. A sua conta está verificada
+          level_two:
+            success: Código correto
+    step_1: Residência
+    step_2: Código de confirmação
+    step_3: Verificação final
+    user_permission_debates: Participar em debates
+    user_permission_info: Confirmando as suas informações, será capaz de...
+    user_permission_proposal: Criar novas propostas
+    user_permission_support_proposal: Apoiar propostas
+    user_permission_votes: Votar em projetos orçamentais
+    verification_needed: É necessária uma verificação adicional
+    verified_user:
+      form:
+        submit_button: Enviar o código
+      show:
+        email_title: E-mails
+        explanation: Atualmente mantemos os seguintes detalhes no Registo; por favor, selecione um método para que o código de confirmação seja enviado.
+        phone_title: Números de telefone
+        title: Informação disponível
+        use_another_phone: Utilize outro número de telefone

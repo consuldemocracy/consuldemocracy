@@ -79,8 +79,4 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
         image_attributes: image_attributes
       ]
     end
-
-    def resource
-      @process || ::Legislation::Process.find(params[:id])
-    end
 end

@@ -167,7 +167,6 @@ ar:
         valuator_filter_all: كل المقيّمين
         tags_filter_all: كل العلامات
         advanced_filters: إنتقاءات متقدمة
-        placeholder: بحث عن مشاريع
         filters:
           all: الكل
           without_admin: بدون تعيين المدير
@@ -196,7 +195,6 @@ ar:
           unfeasible: "غير مجدي"
           undecided: "متردد"
         selected: "محدّد"
-        select: "حدّد"
         list:
           id: ID
           title: عنوان
@@ -1164,7 +1162,6 @@ ar:
         title: إقتراحات
         id: ID
         author: كاتب
-        select: حدّد
         selected: محدّد
         milestones: معالم
         no_proposals: لا توجد مقترحات.

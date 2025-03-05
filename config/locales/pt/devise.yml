@@ -1,1 +1,66 @@
+#Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 pt:
+  devise:
+    password_expired:
+      expire_password: "Palavra-passe expirada"
+      change_required: "A sua palavra-passe expirou"
+      change_password: "Altere a sua palavra-passe"
+      new_password: "Nova palavra-passe"
+      updated: "Palavra-passe alterada com sucesso"
+    confirmations:
+      confirmed: "A sua conta foi confirmada."
+      send_instructions: "Em alguns minutos, receberá um e-mail com instruções sobre como redefinir a sua palavra-passe."
+      send_paranoid_instructions: "Se o seu endereço de e-mail estiver na nossa base de dados, dentro de minutos receberá um e-mail com instruções sobre como redefinir a sua palavra-passe."
+    failure:
+      already_authenticated: "Já iniciou a sessão."
+      inactive: "A sua conta ainda não foi ativada."
+      invalid: "%{authentication_keys} ou palavra-passe inválida."
+      locked: "A sua conta foi bloqueada."
+      last_attempt: "Tem mais uma tentativa restante antes que a sua conta seja bloqueada."
+      not_found_in_database: "%{authentication_keys} ou palavra-passe inválida."
+      timeout: "A sua sessão expirou. Por favor, inicie sessão novamente para continuar."
+      unauthenticated: "Deve entrar na sua conta ou registar-se para continuar."
+      unconfirmed: "Para continuar, clique no link de confirmação que enviamos por e-mail"
+    mailer:
+      confirmation_instructions:
+        subject: "Instruções de confirmação"
+      reset_password_instructions:
+        subject: "Instruções para redefinir a sua palavra-passe"
+      unlock_instructions:
+        subject: "Instruções de desbloqueio"
+    omniauth_callbacks:
+      failure: "Não foi possível autorizá-lo como %{kind} porque \"%{reason}\"."
+      success: "Identificado com sucesso como %{kind}."
+    passwords:
+      no_token: "Não pode aceder a esta página, exceto através de um link de redefinição de palavra-passe. Se tiver acedido através de um link de redefinição de palavra-passe, verifique se o URL está completo."
+      send_instructions: "Em alguns minutos, receberá um e-mail contendo instruções sobre como redefinir a sua palavra-passe."
+      send_paranoid_instructions: "Se o seu endereço de e-mail estiver na nossa base de dados, dentro de minutos receberá um link para redefinir a sua palavra-passe."
+      updated: "A sua palavra-passe foi alterada com sucesso. Autenticação bem sucedida."
+      updated_not_active: "A sua palavra-passe foi alterada com sucesso."
+    registrations:
+      destroyed: "Adeus! A sua conta foi cancelada. Esperamos voltar a vê-lo em breve."
+      signed_up: "Bem-vindo! Foi autenticado."
+      signed_up_but_inactive: "O seu registo foi bem-sucedido, mas não pode entrar porque a sua conta não foi ativada."
+      signed_up_but_locked: "O seu registo foi bem-sucedido, mas não pode entrar porque a sua conta não foi ativada."
+      signed_up_but_unconfirmed: "Foi enviada uma mensagem para o seu e-mail contendo um link de verificação. Por favor, clique neste link para ativar a sua conta."
+      update_needs_confirmation: "A sua conta foi atualizada com êxito; no entanto, precisamos verificar o seu novo endereço de e-mail. Por favor, verifique o seu e-mail e clique no link para completar a confirmação do seu novo endereço de e-mail."
+      updated: "A sua palavra-passe foi alterada com sucesso."
+    sessions:
+      signed_in: "Entrou na sua conta com sucesso."
+      signed_out: "Saiu da sua conta com sucesso."
+      already_signed_out: "Saiu da sua conta com sucesso."
+    unlocks:
+      send_instructions: "Em alguns minutos, receberá um e-mail contendo instruções sobre como desbloquear a sua conta."
+      send_paranoid_instructions: "Se possui uma conta, em alguns minutos, receberá um e-mail contendo instruções sobre como desbloqueá-la."
+      unlocked: "A sua conta foi desbloqueada. Por favor, inicie sessão para continuar."
+  errors:
+    messages:
+      already_confirmed: "Já foi verificado; por favor tente iniciar sessão."
+      confirmation_period_expired: "Necessita de ser confirmado dentro de %{period}; por favor, faça um pedido repetido."
+      expired: "expirou; por favor, volte a solicitar."
+      not_found: "não encontrado."
+      not_locked: "não estava bloqueado."
+      not_saved:
+        one: "Um erro impediu que %{resource} fosse gravado. Por favor, verifique os campos marcados para saber como corrigi-los:"
+        other: "%{count} erros impediram que %{resource} fosse gravado. Por favor, verifique os campos marcados para saber como corrigi-los:"
+      equal_to_current_password: "deve ser diferente da palavra-passe atual."

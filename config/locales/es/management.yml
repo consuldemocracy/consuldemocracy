@@ -95,6 +95,8 @@ es:
         unfeasible: Proyectos no factibles
       print:
         print_button: Imprimir
+      search:
+        label: "Buscar proyectos"
       search_results:
         one: " que contiene '%{search_term}'"
         other: " que contienen '%{search_term}'"

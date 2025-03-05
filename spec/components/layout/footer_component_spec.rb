@@ -13,4 +13,31 @@ describe Layout::FooterComponent do
       end
     end
   end
+
+  it "is not rendered when multitenancy_management_mode is enabled" do
+    allow(Rails.application.config).to receive(:multitenancy_management_mode).and_return(true)
+    render_inline Layout::FooterComponent.new
+
+    expect(page).not_to be_rendered
+  end
+
+  describe "link to manage cookies" do
+    it "shows a link to the cookies management modal when the cookies consent is enabled" do
+      Setting["feature.cookies_consent"] = true
+
+      render_inline Layout::FooterComponent.new
+
+      page.find(".subfooter") do |footer|
+        expect(footer).to have_css "a[data-open=cookies_consent_management]", text: "Manage cookies"
+      end
+    end
+
+    it "does not show a link to the cookies management modal when the cookies consent is disabled" do
+      Setting["feature.cookies_consent"] = false
+
+      render_inline Layout::FooterComponent.new
+
+      expect(page).not_to have_content "Manage cookies"
+    end
+  end
 end

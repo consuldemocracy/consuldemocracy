@@ -757,7 +757,6 @@ uk-UA:
       see_more: Переглянути більше рекомендацій
       hide: Приховати рекомендації
     translations:
-      select_language_prompt: Обрати мову
       remove_language: Видалити мову
       add_language: Додати мову
       languages_in_use:

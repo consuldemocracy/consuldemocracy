@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // Table of Contents
 //
 // 01. Global styles
@@ -8,6 +10,7 @@
 // 06. Forms
 // 07. Callout
 // 08. User account
+// 09. Map
 // 10. Official levels
 // 11. Tables
 // 12. Social
@@ -32,6 +35,11 @@
 
 html {
   font-size: calc(0.25em + Max(0.75em, 0.75vw));
+
+  &.is-reveal-open.zf-has-scroll,
+  &.is-reveal-open {
+    overflow: unset;
+  }
 }
 
 html,
@@ -486,6 +494,25 @@ button,
   }
 }
 
+.delete {
+  border-bottom: 1px dotted;
+  color: $delete;
+  font-size: $small-font-size;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-bottom-color: transparent;
+    color: color.adjust($delete, $lightness: -10%);
+  }
+}
+
+[class^="icon-"].delete {
+  border: 0;
+  font-size: $base-font-size;
+}
+
+
 // 02. Header
 // ----------
 
@@ -933,6 +960,55 @@ form {
   }
 }
 
+.input-group {
+
+  .input-group-button {
+    padding-bottom: rem-calc(16);
+    vertical-align: top;
+  }
+}
+
+.disabled {
+  color: $text-medium;
+}
+
+.button.small.success {
+  margin-left: rem-calc(12);
+
+  &.no-margin {
+    margin-left: 0;
+  }
+}
+
+.field {
+  margin-bottom: 1rem;
+
+  @include breakpoint(medium) {
+    margin-bottom: 0;
+  }
+
+  a {
+    color: $delete;
+    line-height: 3rem;
+
+    span {
+      text-decoration: underline;
+    }
+
+    .icon-x {
+      line-height: 0;
+      text-decoration: none;
+      vertical-align: sub;
+    }
+
+    &:active,
+    &:focus,
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
 .translatable-fields {
 
   &.highlight {
@@ -1179,6 +1255,54 @@ form {
   }
 }
 
+// 09. Map
+// -------
+
+.map {
+  height: 350px;
+  width: 100%;
+
+  .map-marker {
+    left: 50%;
+    margin-top: -5px;
+    position: absolute;
+    top: 50%;
+    visibility: visible;
+
+    .map-icon {
+      background: #00cae9;
+      border-radius: 50% 50% 50% 0;
+      height: 30px;
+      transform: rotate(-45deg);
+      width: 30px;
+    }
+
+    .map-icon::after {
+      background: #fff;
+      border-radius: 50%;
+      content: "";
+      height: 14px;
+      margin: 8px 0 0 8px;
+      position: absolute;
+      width: 14px;
+    }
+  }
+
+  .map-attributtion {
+    height: auto;
+    visibility: visible;
+  }
+}
+
+.map-marker {
+  visibility: hidden;
+}
+
+.map-attributtion {
+  height: 0;
+  visibility: hidden;
+}
+
 // 10. Officials levels
 // --------------------
 
@@ -1239,12 +1363,12 @@ table {
     }
 
     &:nth-child(even) {
-      background: adjust-color($table-background, $red: -3, $green: -1, $blue: -2);
+      background: color.adjust($table-background, $red: -3, $green: -1, $blue: -2);
     }
   }
 
   .button {
-    margin: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -1601,8 +1725,13 @@ table {
     }
   }
 
+  .delete-comment-form {
+    display: inline;
+  }
+
   .delete-comment {
     @include has-fa-icon(trash-alt, regular);
+    cursor: pointer;
 
     &:not(:hover):not(:active) {
       color: $delete;
@@ -2001,10 +2130,18 @@ table {
 
 .hide-recommendations {
   color: $text-light;
+  cursor: pointer;
+  font-size: $small-font-size;
+  line-height: inherit;
   position: absolute;
   right: 12px;
   top: -18px;
   z-index: 2;
+
+  &:focus,
+  &:hover {
+    @include anchor-color-hover;
+  }
 }
 
 // 20. Documents

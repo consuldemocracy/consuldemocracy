@@ -1,10 +1,10 @@
 class Officing::Residence
   include ActiveModel::Model
-  include ActiveModel::Dates
+  include ActiveModel::Attributes
   include ActiveModel::Validations::Callbacks
 
-  attr_accessor :user, :officer, :document_number, :document_type, :year_of_birth,
-                :date_of_birth, :postal_code
+  attribute :date_of_birth, :date
+  attr_accessor :user, :officer, :document_number, :document_type, :year_of_birth, :postal_code
 
   before_validation :retrieve_census_data
 
@@ -18,8 +18,6 @@ class Officing::Residence
   validate :local_residence
 
   def initialize(attrs = {})
-    self.date_of_birth = parse_date("date_of_birth", attrs)
-    attrs = remove_date("date_of_birth", attrs)
     super
     clean_document_number
   end

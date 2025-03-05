@@ -1,0 +1,80 @@
+.cookies-consent-management {
+  border-radius: 0.75rem;
+
+  @include breakpoint(medium) {
+    width: 50%;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .close-button {
+    @include modal-close-button;
+  }
+
+  .buttons {
+    border-top: 1px solid $medium-gray;
+    margin-top: $line-height;
+    padding-top: $line-height;
+  }
+
+  button {
+    @include breakpoint(small only) {
+      display: block;
+      width: 100%;
+    }
+
+    &.accept-all-cookies,
+    &.accept-essential-cookies {
+      @include regular-button;
+      margin-bottom: 0;
+    }
+
+    &.accept-all-cookies {
+      @include breakpoint(small only) {
+        margin-bottom: $line-height / 3;
+      }
+    }
+
+    &.save-cookies-preferences {
+      @include hollow-button;
+    }
+  }
+
+  .save-preferences {
+    text-align: #{$global-right};
+  }
+
+  .cookies-essentials,
+  .cookies-vendors {
+    ul {
+      list-style: none;
+      margin-#{$global-left}: 0;
+
+      li {
+        display: flex;
+        gap: $line-height;
+        justify-content: space-between;
+        padding: $line-height / 3;
+
+        &:nth-child(odd) {
+          background: #efefef;
+        }
+      }
+    }
+
+    .switch {
+      margin-top: $line-height / 3;
+
+      &:focus-within {
+        @include focus-outline;
+      }
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

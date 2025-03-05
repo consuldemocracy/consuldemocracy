@@ -5,10 +5,10 @@
 <% if can?(:hide, comment) || can?(:hide, comment.user) %>
   <% if comment.author == current_user %>
     <span class="divider">&nbsp;&bull;&nbsp;</span>
-    <%= link_to t("comments.actions.delete"),
-                hide_comment_path(comment),
-                method: :put, remote: true, class: "delete-comment",
-                data: { confirm: t("comments.actions.confirm_delete") } %>
+    <%= button_to t("comments.actions.delete"),
+                  hide_comment_path(comment),
+                  method: :put, remote: true, class: "delete-comment", form_class: "delete-comment-form",
+                  data: { confirm: t("comments.actions.confirm_delete") } %>
   <% else %>
     <%= render Shared::ModerationActionsComponent.new(comment) %>
   <% end %>

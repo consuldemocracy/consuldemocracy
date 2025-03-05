@@ -151,6 +151,9 @@ en:
       votation_type:
         one: Votation type
         other: Votation types
+      cookies/vendor:
+        one: cookie vendor
+        other: cookie vendors
     attributes:
       budget:
         name: "Name"
@@ -534,6 +537,10 @@ en:
       votation_type/vote_type:
         unique: Unique answer
         multiple: Multiple answers
+      cookies/vendor:
+        name: Vendor name
+        cookie: Cookie name
+        script: Javascript code
     errors:
       models:
         user:
@@ -551,8 +558,8 @@ en:
         geozone:
           attributes:
             geojson:
-              invalid: "The GeoJSON provided does not follow the correct format. It must be a valid Geojson Feature and follow the \"Geometry\" type format."
-              invalid_coordinates: "The GeoJSOn provided does not use Coordinates in the required \"Longitude, Latitude\" format"
+              invalid: "The GeoJSON provided does not follow the correct format. It must follow the RFC 7946 standard format"
+              invalid_coordinates: "The GeoJSON provided contains invalid coordinates; the coordinates must be in the required \"Longitude, Latitude\" format and follow the RFC 7946 standard format"
         image:
           attributes:
             attachment:

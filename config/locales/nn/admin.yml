@@ -53,7 +53,6 @@ nn:
           filter: Filter
         feasibility:
           unfeasible: "Ikke gjennomførbart"
-        select: "Velg"
         list:
           title: Tittel
           supports: Støtte
@@ -290,7 +289,6 @@ nn:
       index:
         title: Forslag
         author: Forfatter
-        select: Velg
         milestones: Milepæler
     hidden_proposals:
       index:

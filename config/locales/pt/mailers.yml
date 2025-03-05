@@ -1,1 +1,129 @@
 pt:
+  mailers:
+    title: "Governo Aberto"
+    no_reply: "Esta mensagem foi enviada de um endereço de e-mail que não aceita respostas."
+    already_confirmed:
+      info: "Recebemos um pedido para lhe enviar instruções para confirmar a sua conta. No entanto, a sua conta já está confirmada, não é necessário fazê-lo novamente."
+      new_password: "Se se esqueceu da sua palavra-passe, pode reiniciá-la no link seguinte:"
+      subject: A sua conta já está confirmada
+    comment:
+      hi: Olá
+      new_comment_by: Há um novo comentário de <strong>%{commenter}</strong>
+      subject: Alguém comentou sobre o seu %{commentable}
+      title: Novo comentário
+    config:
+      notifications_link: Notificações
+      unsubscribe_text: 'Para cancelar a subscrição destes e-mails, vá a %{notifications} e desmarque "%{notification}".'
+    email_verification:
+      click_here_to_verify: este link
+      instructions_2: Este e-mail é para verificar a sua conta com <b>%{document_type} %{document_number}</b>. Se esta conta não lhe pertence, não clique no link anterior e ignore este e-mail.
+      instructions: Para completar a verificação da sua conta de utilizador, clique em %{verification_link}.
+      subject: Confirme o seu e-mail
+      thanks: Muito Obrigado.
+      title: "Confirme o seu e-mail"
+      text: "Confirme a sua conta usando o seguinte link."
+    reply:
+      hi: Olá
+      new_reply_by: Há uma nova resposta de <strong>%{commenter}</strong> ao seu comentário sobre
+      subject: Alguém respondeu ao seu comentário
+      title: Nova resposta ao seu comentário
+    proposal_notification_digest:
+      info: "Aqui estão as novas notificações publicadas pelos autores das propostas que apoiou em %{org_name}."
+      title: "Notificações de propostas em %{org_name}"
+      share: Compartilhar proposta
+      comment: Comentar proposta
+      unsubscribe_text: "Se não quiser receber notificações de propostas, vá a %{notifications} e desmarque a opção 'Receber resumo de notificações de propostas'."
+      unfollow: "Vá a esta proposta e deixe de segui-la para parar de receber notificações."
+    direct_message_for_receiver:
+      subject: "Recebeu uma nova mensagem privada"
+      reply: Responder a %{sender}
+      unsubscribe_text: "Se não quiser receber mensagens privadas, vá a %{notifications} e desmarque a opção 'Receber e-mails com mensagens privadas'."
+    direct_message_for_sender:
+      subject: "Enviou uma nova mensagem privada"
+      title: "Enviou uma nova mensagem privada"
+      text: "Enviou uma nova mensagem privada para <strong>%{receiver}</strong> com o conteúdo:"
+    user_invite:
+      ignore: "Se não solicitou este convite, não se preocupe, pode ignorar este e-mail."
+      text: "Obrigado por se inscrever para participar do %{org}! Dentro de segundos pode começar a participar das decisões da sua cidade, basta preencher o formulário abaixo:"
+      thanks: "Muito obrigado."
+      title: "Bem-vindo a %{org}"
+      button: Completar registo
+      subject: "Convite para %{org_name}"
+    budget_investment_created:
+      subject: "Obrigado por criar uma proposta de investimento!"
+      title: "Obrigado por criar uma proposta de investimento!"
+      intro: "Olá, <strong>%{author}</strong>,"
+      text: "Obrigado por criar a sua proposta de investimento <strong>%{investment}</strong> para Orçamentos Participativos <strong>%{budget}</strong>."
+      follow: "Iremos informá-lo sobre como o processo avança, o que também pode acompanhar em <strong>%{link}</strong>."
+      follow_link: "Orçamentos Participativos"
+      sincerely: "Atentamente,"
+      share: "Compartilhe o seu projeto"
+    budget_investment_unfeasible:
+      title: "A sua proposta de despesa foi marcada como inviável"
+      hi: "Caro utilizador,"
+      new: "Por tudo isto, convidámo-lo a elaborar uma <strong>nova proposta de investimento</strong> que se ajuste às condições deste processo. Para isso, clique no link: %{url}."
+      new_href: "novo projeto de investimento"
+      sincerely: "Atentamente"
+      sorry: "Desculpe o inconveniente e mais uma vez agradecemos pela sua valiosa participação."
+      subject: "O seu projeto de investimento '%{code}' foi marcado como inviável"
+    budget_investment_selected:
+      subject: "O seu projeto de investimento '%{code}' foi selecionado"
+      title: "O seu projeto de investimento foi selecionado"
+      hi: "Caro utilizador,"
+      share: "Comece a receber votos, compartilhe o seu projeto de investimento em redes sociais. Compartilhar é essencial para torná-lo realidade."
+      share_button: "Partilhe o seu projeto de investimento"
+      thanks: "Obrigado novamente por participar."
+      sincerely: "Atentamente"
+    budget_investment_unselected:
+      subject: "O seu projeto de investimento '%{code}' não foi selecionado"
+      title: "O seu projeto de investimento não foi selecionado"
+      hi: "Caro utilizador,"
+      thanks: "Obrigado novamente por participar."
+      sincerely: "Atentamente"
+    evaluation_comment:
+      subject: "Novo comentário de avaliação"
+      title: Novo comentário de avaliação para %{investment}
+      hi: Olá
+      new_comment_by: Há um novo comentário de avaliação de <strong>%{commenter}</strong> no investimento orçamental %{investment}
+      commenter_info: "%{commenter}, %{time}:"
+    machine_learning_error:
+      link: "Visitar o painel de Machine Learning"
+      subject: "Machine learning - Ocorreu um erro"
+      text: "Ocorreu um erro executando o script de Machine Learning."
+      title: "Script Machine Learning"
+    machine_learning_success:
+      link: "Visitar o painel de Machine Learning"
+      subject: "Machine learning - Conteúdo gerado corretamente"
+      text: "O conteúdo foi gerado corretamente."
+      title: "Script Machine Learning"
+    new_actions_notification_on_create:
+      subject: "O rascunho da sua proposta foi criado"
+      hi: "Olá %{name}!"
+      introduction: "A sua proposta %{title} foi criada com sucesso."
+      text_1: "Aproveite que a sua proposta ainda não foi publicada e prepare-se para contactar muita gente."
+      text_2: "Quando a sua proposta estiver pronta para ser publicada, use este <a href='%{link}'>link</a>."
+      text_3: "Sabemos que criar uma proposta cativante para conseguir os apoios necessários pode ser complicado. Mas não se preocupe, nós vamos ajudar!"
+      text_4: "Tem uma ferramenta que será a sua melhor aliada: o painel de Propostas de cidadãos."
+      list_1: "Aceda diariamente o painel da sua proposta para aproveitar os nossos recursos e dicas."
+      list_2: "Estas dicas, ações e recursos dar-lhe-ão ideias e também soluções práticas para obter mais apoio e uma comunidade mais ampla. Não se esqueça deles!"
+      list_3: "À medida que conseguir mais apoios, desbloqueará novos e melhores recursos.De momento, tem disponível um modelo de mensagem para enviar E-mails em massa a todos os seus contatos, além de um poster para imprimir, entre outras funcionalidades e recompensas, que vai descobrir. Continue a angariar apoios e nós não vamos parar de recompensar e ajudar! "
+      list_4: "Tem %{max_month} meses a partir da publicação da proposta para obter %{max_votes} apoios e para que a sua proposta se possa tornar realidade. Mas os primeiros dias são os mais importantes. Prepare-se para este desafio!"
+      text_5: "E para começar com motivação total,"
+      text_6: "aqui há vários recursos e toda uma lista de dicas que chegarão diariamente para preparar a divulgação!"
+      dashboard_button: "Vá em frente, descubra-os!"
+    new_actions_notification_on_published:
+      subject: "A sua proposta já foi publicada. Continue a divulgar!"
+      hi: "Parabéns, %{name}! A sua proposta %{title} foi criada com sucesso."
+      text_1: "E agora, obtenha os seus primeiros 100 apoios!"
+      text_2: "Por quê 100?"
+      text_3: "A nossa experiência diz-nos que o primeiro dia é fundamental, pois além de ter a energia de lançar algo novo, por ser uma proposta recém-publicada, contará com a importante visibilidade de estar entre as novas propostas em destaque."
+      text_4: "Consiga 100 apoios no primeiro dia, e terá uma primeira comunidade para lhe dar apoio."
+      text_5: "Por isso o desafiamos a conseguir, mas não sem uma grande ajuda!"
+      text_6: "Lembre-se de que no seu Painel de Propostas há novos recursos disponíveis de ações de divulgação."
+      list_1: "Volte diariamente para ver o seu progresso e para aproveitar os conselhos e recursos que ofereceremos. São ideias e também soluções práticas para conseguir os apoios de que necessita."
+      list_2: "À medida que conseguir mais apoios, desbloqueará novos e melhores recursos. Continue a obter apoios, e nós não vamos parar de recompensar e ajudar!"
+      text_7: "E para que comece com todo o gás..."
+      text_8: "Aqui está um excelente recurso à sua disposição!"
+      text_9: "Também encontrará esta nova ação de divulgação recomendada..."
+      text_10: "Com certeza, tem mais recursos disponíveis!"
+      dashboard_button: "Vá em frente, descubra-os!"

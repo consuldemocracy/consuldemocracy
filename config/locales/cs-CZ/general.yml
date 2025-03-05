@@ -672,6 +672,8 @@ cs:
     show:
       back: "Jít zpět na své aktivity"
   shared:
+    actions:
+      label: "%{action} %{name}"
     edit: "Upravit"
     filter: "Filtr"
     save: "Uložit"
@@ -759,7 +761,7 @@ cs:
       see_more: Další doporučení
       hide: Skrýt doporučení
     translations:
-      select_language_prompt: Vybrat jazykovou sadu
+      current_language: Aktuální jazyk
       remove_language: Odstranit jazykovou sadu
       add_language: Přidat jazykovou sadu
       languages_in_use:
@@ -782,6 +784,8 @@ cs:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
+  ip_denied_handler:
+    unauthorized: "Přístup odepřen. Vaše IP adresa není povolena."
   unauthorized:
     default: Nemáte oprávnění k přístupu na tuto stránku.
     manage:

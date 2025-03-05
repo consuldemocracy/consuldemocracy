@@ -83,31 +83,6 @@ describe "Executions" do
   end
 
   context "Images" do
-    scenario "renders milestone image if available" do
-      milestone1 = create(:milestone, :with_image, milestoneable: investment1)
-
-      visit budget_path(budget)
-
-      click_link "See results"
-      click_link "Milestones"
-
-      expect(page).to have_content(investment1.title)
-      expect(page).to have_css("img[alt='#{milestone1.image.title}']")
-    end
-
-    scenario "renders investment image if no milestone image is available" do
-      create(:milestone, milestoneable: investment2)
-      create(:image, imageable: investment2)
-
-      visit budget_path(budget)
-
-      click_link "See results"
-      click_link "Milestones"
-
-      expect(page).to have_content(investment2.title)
-      expect(page).to have_css("img[alt='#{investment2.image.title}']")
-    end
-
     scenario "renders default image if no milestone nor investment images are available" do
       create(:milestone, milestoneable: investment4)
 
@@ -116,23 +91,8 @@ describe "Executions" do
       click_link "See results"
       click_link "Milestones"
 
-      expect(page).to have_content(investment4.title)
-      expect(page).to have_css("img[alt='#{investment4.title}']")
-    end
-
-    scenario "renders last milestone's image if investment has multiple milestones with images associated" do
-      create(:milestone, milestoneable: investment1)
-      create(:milestone, :with_image, image_title: "First image", milestoneable: investment1)
-      create(:milestone, :with_image, image_title: "Second image", milestoneable: investment1)
-      create(:milestone, milestoneable: investment1)
-
-      visit budget_path(budget)
-
-      click_link "See results"
-      click_link "Milestones"
-
-      expect(page).to have_content(investment1.title)
-      expect(page).to have_css("img[alt='Second image']")
+      expect(page).to have_content investment4.title
+      expect(page).to have_css "img[alt='#{investment4.title}']"
     end
   end
 
@@ -294,7 +254,7 @@ describe "Executions" do
 
       visit budget_executions_path(budget)
 
-      expect(page).to have_css(".budget-execution", count: 3)
+      expect(page).to have_css(".budget-executions-investment", count: 3)
       expect(a_heading.name).to appear_before(m_heading.name)
       expect(m_heading.name).to appear_before(z_heading.name)
     end

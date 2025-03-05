@@ -69,8 +69,4 @@ class Admin::AdminNotificationsController < Admin::BaseController
     def allowed_params
       [:link, :segment_recipient, translation_params(AdminNotification)]
     end
-
-    def resource
-      AdminNotification.find(params[:id])
-    end
 end

@@ -1,9 +1,6 @@
 <% globalize(locale) do %>
-  <%= hidden_field_tag "contents[content_#{i18n_content.key}][id]", i18n_content.key %>
-  <%= text_area_tag "contents[content_#{i18n_content.key}]values[value_#{locale}]",
-                    text,
-                    rows: 5,
-                    class: "js-globalize-attribute",
-                    style: site_customization_display_translation_style,
-                    data: { locale: locale } %>
+  <div class="js-globalize-attribute" data-locale="<%= locale %>" style="<%= display_style %>">
+    <%= label_tag html_id, i18n_key %>
+    <%= text_area_tag html_name, text, id: html_id, rows: 5 %>
+  </div>
 <% end %>

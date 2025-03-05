@@ -7,5 +7,5 @@
 
   <h2><%= t("admin.legislation.processes.new.title") %></h2>
 
-  <%= render "form" %>
+  <%= render Admin::Legislation::Processes::FormComponent.new(@process) %>
 </div>

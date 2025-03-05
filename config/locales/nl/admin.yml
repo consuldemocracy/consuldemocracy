@@ -205,7 +205,6 @@ nl:
         valuator_filter_all: Alle beoordelaars
         tags_filter_all: Alle labels
         advanced_filters: Geavanceerde filters
-        placeholder: Zoek in projecten
         filters:
           all: Alle
           without_admin: Zonder toegewezen beheerder
@@ -235,7 +234,6 @@ nl:
           unfeasible: "Onhaalbaar"
           undecided: "Undecided"
         selected: "Geselecteerd"
-        select: "Selecteer"
         list:
           id: ID
           title: Titel
@@ -1213,7 +1211,6 @@ nl:
         title: Voorstellen
         id: ID
         author: Auteur
-        select: Select
         selected: Geselecteerd
         milestones: Mijlpalen
         no_proposals: Er zijn geen voorstellen.

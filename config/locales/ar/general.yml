@@ -761,7 +761,6 @@ ar:
       see_more: رؤية المزيد من التوصيات
       hide: إخفاء التوصيات
     translations:
-      select_language_prompt: اخيار لغة
       remove_language: إزالة اللغة
       add_language: إضافة لغة
   social:

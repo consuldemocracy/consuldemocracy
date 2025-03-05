@@ -86,6 +86,7 @@ module Consul
       "nl",
       "oc",
       "pl",
+      "pt",
       "pt-BR",
       "ro",
       "ru",
@@ -125,6 +126,7 @@ module Consul
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.assets.paths << Rails.root.join("vendor", "assets", "fonts")
     config.assets.paths << Rails.root.join("node_modules", "jquery-ui", "themes", "base")
+    config.assets.paths << Rails.root.join("node_modules", "leaflet", "dist")
     config.assets.paths << Rails.root.join("node_modules")
 
     config.active_job.queue_adapter = :delayed_job
@@ -159,6 +161,12 @@ module Consul
 
     # Set to true to enable managing different tenants using the same application
     config.multitenancy = Rails.application.secrets.multitenancy
+    # Set to true if you want that the default tenant only to be used to manage other tenants
+    config.multitenancy_management_mode = Rails.application.secrets.multitenancy_management_mode
+
+    def multitenancy_management_mode?
+      config.multitenancy && Tenant.default? && config.multitenancy_management_mode
+    end
   end
 end
 

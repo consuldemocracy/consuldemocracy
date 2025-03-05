@@ -1,3 +1,5 @@
+@use "sass:color";
+
 %font-icon {
   @extend %fa-icon;
   font-family: "Font Awesome 5 Free";
@@ -1539,7 +1541,7 @@ $font-awesome-icons: (
   .destroy-officer-link,
   .reject-link,
   .confirm-hide-link {
-    color: darken($alert-color, 5%);
+    color: color.adjust($alert-color, $lightness: -5%);
   }
 
   .show-link,
@@ -1571,7 +1573,7 @@ $font-awesome-icons: (
 
   .restore-link,
   .investments-link {
-    color: darken($warning-color, 20%);
+    color: color.adjust($warning-color, $lightness: -20%);
 
     &:not(:hover, :focus)::before {
       color: $warning-color;

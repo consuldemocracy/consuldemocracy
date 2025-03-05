@@ -11,25 +11,13 @@ class GeojsonFormatValidator < ActiveModel::EachValidator
         return
       end
 
-      # Validate coordinates if the GeoJSON is valid
-      if geojson["type"] == "FeatureCollection"
-        geojson["features"].each do |feature|
-          unless valid_coordinates?(feature["geometry"])
-            record.errors.add(
-              attribute,
-              :invalid_coordinates,
-              message: I18n.t("errors.geozone.attributes.geojson.invalid_coordinates")
-            )
-          end
-        end
-      elsif geojson["type"] == "Feature"
-        unless valid_coordinates?(geojson["geometry"])
-          record.errors.add(
-            attribute,
-            :invalid_coordinates,
-            message: I18n.t("errors.geozone.attributes.geojson.invalid_coordinates")
-          )
-        end
+      unless valid_geojson?(geojson)
+        record.errors.add(attribute, :invalid)
+        return
+      end
+
+      unless valid_coordinates?(geojson)
+        record.errors.add(attribute, :invalid_coordinates)
       end
     end
   end
@@ -45,84 +33,104 @@ class GeojsonFormatValidator < ActiveModel::EachValidator
     def valid_geojson?(geojson)
       return false unless geojson.is_a?(Hash)
 
-      if geojson["type"]
-        case geojson["type"]
-        when "FeatureCollection"
-          valid_feature_collection?(geojson)
-        when "Feature"
-          valid_feature?(geojson)
-        else
-          valid_geometry?(geojson)
-        end
+      if geojson["type"] == "FeatureCollection"
+        valid_feature_collection?(geojson)
+      elsif geojson["type"] == "Feature"
+        valid_feature?(geojson)
       else
-        # Check if it is a top-level geometry object
-        geojson["geometry"] && valid_geometry?(geojson["geometry"])
+        valid_geometry?(geojson)
       end
     end
 
     def valid_feature_collection?(geojson)
       return false unless geojson["features"].is_a?(Array)
 
-      geojson["features"].all? do |feature|
-        valid_feature?(feature)
-      end
+
+      geojson["features"].all? { |feature| valid_feature?(feature) }
     end
 
     def valid_feature?(feature)
-      return false unless feature["type"] == "Feature"
-      return false unless feature["geometry"].is_a?(Hash)
-      return false unless valid_geometry?(feature["geometry"])
-
-      true
+      feature["type"] == "Feature" && valid_geometry?(feature["geometry"])
     end
 
     def valid_geometry?(geometry)
-      valid_geometry_types = [
-        "Point", "LineString", "Polygon",
-        "MultiPoint", "MultiLineString", "MultiPolygon",
-        "GeometryCollection"
-      ]
-
-      return false unless valid_geometry_types.include?(geometry["type"])
-      return false unless geometry["coordinates"].is_a?(Array)
-
-      # Additional checks can be added for specific geometry types if needed
-      true
+      geometry.is_a?(Hash) && valid_geometry_types.include?(geometry["type"])
     end
 
-    def valid_coordinates?(geometry)
-      # Coordinates must be an array of numbers
-      return false unless geometry["coordinates"].is_a?(Array)
+    def valid_geometry_types
+      [
+        "Point", "LineString", "Polygon", "MultiPoint", "MultiLineString", "MultiPolygon",
+        "GeometryCollection"
+      ]
+    end
+
+    def valid_coordinates?(geojson)
+      if geojson["type"] == "FeatureCollection"
+        geojson["features"].all? { |feature| valid_coordinates?(feature) }
+      elsif geojson["type"] == "Feature"
+        valid_geometry_coordinates?(geojson["geometry"])
+      else
+        valid_geometry_coordinates?(geojson)
+      end
+    end
+
+    def valid_geometry_coordinates?(geometry)
+      if geometry["type"] == "GeometryCollection"
+        geometries = geometry["geometries"]
+
+        return geometries.is_a?(Array) && geometries.all? { |geom| valid_geometry_coordinates?(geom) }
+      end
+
+      coordinates = geometry["coordinates"]
+
+      return false unless coordinates.is_a?(Array)
 
       case geometry["type"]
       when "Point"
-        valid_wgs84_coordinates?(geometry["coordinates"])
-      when "LineString", "MultiPoint"
-        geometry["coordinates"].all? { |coord| valid_wgs84_coordinates?(coord) }
-      when "Polygon", "MultiLineString"
-        geometry["coordinates"].all? do |ring|
-          ring.all? { |coord| valid_wgs84_coordinates?(coord) }
+        valid_wgs84_coordinates?(coordinates)
+      when "LineString"
+        valid_linestring_coordinates?(coordinates)
+      when "MultiPoint"
+        valid_coordinates_array?(coordinates)
+      when "MultiLineString"
+        coordinates.all? do |linestring_coordinates|
+          valid_linestring_coordinates?(linestring_coordinates)
         end
+      when "Polygon"
+        valid_polygon_coordinates?(coordinates)
       when "MultiPolygon"
-        geometry["coordinates"].all? do |polygon|
-          polygon.all? do |ring|
-            ring.all? { |coord| valid_wgs84_coordinates?(coord) }
-          end
+        coordinates.all? do |polygon_coordinates|
+          valid_polygon_coordinates?(polygon_coordinates)
         end
-      when "GeometryCollection"
-        geometry["geometries"].all? { |geom| valid_coordinates?(geom) }
       else
         false
       end
     end
 
-    def valid_wgs84_coordinates?(coords)
-      # Coordinates should be in [longitude, latitude] format
-      return false unless coords.is_a?(Array) && coords.size == 2
+    def valid_wgs84_coordinates?(coordinates)
+      return false unless coordinates.is_a?(Array) && coordinates.size == 2
 
-      longitude, latitude = coords
-      # Check if latitude and longitude are valid numbers and within valid ranges
-      longitude.is_a?(Numeric) && latitude.is_a?(Numeric) &&
-        longitude.between?(-180.0, 180.0) && latitude.between?(-90.0, 90.0)
+      longitude, latitude = coordinates
+      (-180.0..180.0).include?(longitude) && (-90.0..90.0).include?(latitude)
+    end
+
+    def valid_coordinates_array?(coordinates_array)
+      coordinates_array.is_a?(Array) &&
+        coordinates_array.all? { |coordinates| valid_wgs84_coordinates?(coordinates) }
+    end
+
+    def valid_linestring_coordinates?(coordinates)
+      valid_coordinates_array?(coordinates) && coordinates.many?
+    end
+
+    def valid_polygon_coordinates?(polygon_coordinates)
+      polygon_coordinates.is_a?(Array) &&
+        polygon_coordinates.all? { |ring_coordinates| valid_ring_coordinates?(ring_coordinates) }
+    end
+
+    def valid_ring_coordinates?(ring_coordinates)
+      valid_coordinates_array?(ring_coordinates) &&
+        ring_coordinates.size >= 4 &&
+        ring_coordinates.first == ring_coordinates.last
     end
 end

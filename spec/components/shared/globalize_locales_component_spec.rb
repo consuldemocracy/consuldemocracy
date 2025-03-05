@@ -8,13 +8,13 @@ describe Shared::GlobalizeLocalesComponent do
       I18n.with_locale(:en) do
         render_inline Shared::GlobalizeLocalesComponent.new
 
-        expect(page).to have_select options: ["Choose language", "English"]
+        expect(page).to have_select "Current language", options: ["English"]
       end
 
       I18n.with_locale(:es) do
         render_inline Shared::GlobalizeLocalesComponent.new
 
-        expect(page).to have_select options: ["Seleccionar idioma"]
+        expect(page).to have_select "Idioma actual", options: []
       end
     end
   end
@@ -43,7 +43,7 @@ describe Shared::GlobalizeLocalesComponent do
 
       render_inline Shared::GlobalizeLocalesComponent.new
 
-      expect(page).to have_select options: ["Add language", "English", "Nederlands"]
+      expect(page).to have_select "Add language", options: ["", "English", "Nederlands"]
     end
   end
 end

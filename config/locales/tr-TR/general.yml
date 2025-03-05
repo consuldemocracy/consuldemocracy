@@ -162,6 +162,7 @@ tr:
     legislation/process: süreç
     legislation/question: soru
     poll/shift: Vardiya
+    poll/question/option: Yanıt
     user: Hesap
     verification/sms: telefon
     signature_sheet: İmza sayfası
@@ -197,6 +198,7 @@ tr:
       consul: CONSUL DEMOCRACY uygulaması
       consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: CONSUL DEMOCRACY, %{year}
+      cookies_consent_management: Tanımlama bilgileri yönetimi
       description: Bu site %{open_source} olan %{consul} ile sunuluyor.
       open_source: açık kaynaklı yazılım
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
@@ -578,7 +580,7 @@ tr:
       participate_button_expired: "Oylama sona erdi"
       no_geozone_restricted: "Tüm şehir"
       geozone_restricted: "Bölgeler"
-      geozone_info: "Census'taki kişiler katılabilir: "
+      geozone_info: "Yalnızca şu bölgelerde yaşayan kişiler katılabilir: "
       already_answer: "Bu oylamaya zaten katılmışsınız"
       not_logged_in: "Katılmak için oturum ya da hesap açmalısınız"
       unverified: "Katılmak için hesabınızı doğrulamalısınız"
@@ -642,6 +644,8 @@ tr:
     show:
       back: "İçeriğime dön"
   shared:
+    actions:
+      label: "%{action} %{name}"
     edit: "Düzenle"
     filter: "Süz"
     save: "Kaydet"
@@ -671,8 +675,8 @@ tr:
       author_deleted: Kullanıcı silindi
       email_deleted: E-posta silindi
     back: Geri dön
-    check_all: Tüm
-    check_none: Yok
+    check_all: Tümünü seç
+    check_none: Tümünü bırak
     collective: Topluluk
     flag: Uygunsuz olarak işaretle
     follow: "Takip et"
@@ -738,7 +742,7 @@ tr:
       see_more: Diğer önerilere bakın
       hide: Önerileri gizle
     translations:
-      select_language_prompt: Dil seçin
+      current_language: Geçerli dil
       remove_language: Dili kaldır
       add_language: Dil ekle
       languages_in_use:
@@ -757,6 +761,8 @@ tr:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
+  ip_denied_handler:
+    unauthorized: "Erişim reddedildi. IP adresinize izin verilmiyor."
   unauthorized:
     default: Bu sayfaya erişim izniniz yok.
     manage:
@@ -927,3 +933,21 @@ tr:
   machine_learning:
     comments_summary: "Yorumların özeti"
     info_text: "İçerik Yapay Zeka / Makine Öğrenmesi tarafından oluşturulmuş"
+  cookies_consent:
+    accept_all_cookies: "Tümünü onayla"
+    accept_essential_cookies: "Temel tanımlama bilgilerini onayla"
+    message: "Tanımlama bilgileri hizmetlerimizi sunmamıza yardımcı olur. Hizmetlerimizi kullanarak tanımlama bilgilerini kullanacağımızı onaylamış olursunuz."
+    more_info_link: "Tanımlama bilgileri hakkında ayrıntılı bilgiler"
+    management: "Tanımlama bilgileri yönetimi"
+    title: "Tanımlama bilgileri ilkesi"
+  cookies_management:
+    title: Tanımlama bilgileri yönetimi
+    description: Bu site düzgün çalışması için kendisi ve üçüncü taraflar için tanımlama bilgilerini kullanıyorr. Tümünü onayla düğmesine tıklayarak, bu teknolojilerin kullanımını ve verilerinizin bu amaçlar için işlenmesini onaylamış olursunuz.
+    essentials:
+      title: Temel tanımlama bilgileri
+      description: Tanımlama bilgileri, sizi kullanıcı olarak tanımak, dilinizi seçmek veya içeriğin görüntülenme biçimini özelleştirmek gibi birçok farklı amaç için kullanılırlar.
+      hint: Bunlar olmadan temel gezinme işlemleri bozulacağından bunların her zaman kullanılması gerekir.
+    third_party:
+      title: Üçüncü tarafların tanımlama bilgileri
+      description: Bu site üçüncü tarafların tanımlama bilgilerini kullanır. Bu tanımlama bilgileri işlevselliği artırabilir veya kullanıcı deneyiminizi iyileştirmek için bilgi toplayabilir.
+    save_preferences: Tercihleri kaydet

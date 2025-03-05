@@ -15,11 +15,8 @@
       App.Map.maps = [];
     },
     initializeMap: function(element) {
-      var createMarker, editable, investmentsMarkers, map, marker, markerClustering,
-        markerData, markerIcon, markers, moveOrPlaceMarker, removeMarker, removeMarkerSelector,
-        geozoneLayers = {}, // Object to hold geozone layers
-        layerControl = {}; // Object to hold control layers
-
+      var createMarker, editable, geozoneLayers, investmentsMarkers, map, marker, markerClustering,
+        markerData, markerIcon, markers, moveOrPlaceMarker, removeMarker, removeMarkerSelector;
       App.Map.cleanInvestmentCoordinates(element);
       removeMarkerSelector = $(element).data('marker-remove-selector');
       investmentsMarkers = $(element).data("marker-investments-coordinates");
@@ -93,9 +90,10 @@
       }
 
       App.Map.addInvestmentsMarkers(investmentsMarkers, createMarker);
-      App.Map.addGeozones(map, geozoneLayers); // Pass the geozoneLayers object
+      geozoneLayers = App.Map.geozoneLayers(map);
+      App.Map.addGeozones(map, geozoneLayers);
+      App.Map.addLayerControl(map, geozoneLayers);
 
-      // Add markers layer
       map.addLayer(markers);
 
       // Add Layer Control
@@ -230,48 +228,51 @@
       L.tileLayer(mapTilesProvider, { attribution: mapAttribution }).addTo(map);
     },
     addGeozones: function(map, geozoneLayers) {
+      $.each(geozoneLayers, function(_, geozoneLayer) {
+        App.Map.addGeozone(map, geozoneLayer);
+      });
+    },
+    addLayerControl: function(map, geozoneLayers) {
+      if (Object.keys(geozoneLayers).length > 1) {
+        L.control.layers(null, geozoneLayers).addTo(map);
+      }
+    },
+    geozoneLayers: function(map) {
       var geozones = $(map._container).data("geozones");
+      var layers = {};
 
       if (geozones) {
         geozones.forEach(function(geozone) {
-          App.Map.addGeozone(geozone, map, geozoneLayers);
+          if (geozone.outline_points) {
+            layers[geozone.name] = App.Map.geozoneLayer(geozone);
+          }
         });
       }
-    },
 
-    addGeozone: function(geozone, map, geozoneLayers) {
-      // Parse the GeoJSON string
+      return layers;
+    },
+    geozoneLayer: function(geozone) {
       var geojsonData = JSON.parse(geozone.outline_points);
 
-      // Create a GeoJSON layer
-      var geoJsonLayer = L.geoJSON(geojsonData, {
+      return L.geoJSON(geojsonData, {
         style: function(feature) {
           return {
-            color: geozone.color || feature.properties.color || "blue",
+            color: feature.properties.color || geozone.color,
             fillOpacity: 0.3,
             className: "map-polygon"
           };
         },
         onEachFeature: function(feature, layer) {
-          if (feature.properties.headings || geozone.headings) {
-            // Use feature properties headings if provided, else fallback to geozone headings
-            var headings = feature.properties.headings || geozone.headings;
+          var headings = feature.properties.headings || geozone.headings;
+
+          if (headings) {
             layer.bindPopup(headings.join("<br>"));
           }
         }
       });
-
-      // Use geozone headings as the name for the layer, fallback to a default name
-      var layerName = (geozone.headings && geozone.headings.length > 0) 
-        ? geozone.headings.join(", ") 
-        : `Geozone ${Object.keys(geozoneLayers).length + 1}`;
-
-      // Store the GeoJSON layer in the geozoneLayers object with the actual name
-      geozoneLayers[layerName] = geoJsonLayer;
-
-
-      // Add the GeoJSON layer to the map
-      geoJsonLayer.addTo(map);
+    },
+    addGeozone: function(map, geozoneLayer) {
+      geozoneLayer.addTo(map);
     },
     getPopupContent: function(data) {
       return "<a href='" + data.link + "'>" + data.title + '</a>';

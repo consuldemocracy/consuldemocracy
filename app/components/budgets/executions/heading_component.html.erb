@@ -1,0 +1,11 @@
+<div class="budgets-executions-heading">
+  <h4 id="<%= heading.name.parameterize %>">
+    <%= heading.name %> (<%= investments.count %>)
+  </h4>
+
+  <div class="budgets-executions-heading-investments">
+    <% investments.each do |investment| %>
+      <%= render Budgets::Executions::InvestmentComponent.new(investment) %>
+    <% end %>
+  </div>
+</div>

@@ -4,6 +4,9 @@ pt-BR:
       title: Administração
     actions:
       actions: Ações
+      block_author: "Bloquear autor "
+      confirm_action: "Você tem certeza? %{action} \"%{name}\""
+      confirm_delete: "Você tem certeza? Essa ação vai deletar %{name}\" e não pode ser desfeita."
       confirm_hide: Confirmar a moderação
       delete: "Apagar"
       hide: Ocultar
@@ -12,6 +15,8 @@ pt-BR:
       unmark_featured: Desmarcar destaques
       edit: Editar
       configure: Configurar
+      select: Selecione
+      show_to_valuators: "Mostrar %{name} para "
     officing_booth:
       title: "Você é responsável pela cabine localizada em %{booth}. Se isto estiver errado, não faça nada e peça ajuda por telefone. Obrigado."
     banners:
@@ -32,6 +37,8 @@ pt-BR:
           budgets: Orçamento participativo
           help_page: Página de ajuda
           sdg: ODS (SDG)
+      create:
+        notice: "\"Banner\" criado com sucesso"
       edit:
         editing: Editar banner
         form:
@@ -151,10 +158,13 @@ pt-BR:
         submit: "Salvar título"
       index:
         back: "Voltar a grupos"
+        title: "%{budget}/%{group} cabeçalhos"
     budget_phases:
       edit:
         title: "Editar estágio"
+        dates_help_text: "Apenas para propósitos informativos"
         description_help_text: Esse texto será exibido no cabeçalho quando a fase estiver ativa
+        duration: "Duração da fase"
         enabled_help_text: Esta fase será pública no cronograma de fases do orçamento, bem como ativa para qualquer outra finalidade
         save_changes: Salvar alterações
     budget_investments:
@@ -164,7 +174,6 @@ pt-BR:
         valuator_filter_all: Todos avaliadores
         tags_filter_all: Todas as marcações
         advanced_filters: Filtros avançados
-        placeholder: Buscar projetos
         filters:
           all: Tudo
           without_admin: Sem administrador designado
@@ -194,7 +203,6 @@ pt-BR:
           unfeasible: "Inviável"
           undecided: "Não decidido"
         selected: "Selecionado"
-        select: "Selecionar"
         list:
           id: ID
           title: Título
@@ -256,6 +264,21 @@ pt-BR:
         budget: Orçamento
         groups: Grupos
         headings: Títulos
+        phases: Fases
+      budgets:
+        continue: "Continuar para \"grupos\""
+      groups:
+        back: "Retorne para editar o orçamento"
+        continue: "Continuar para \"cabeçalhos\""
+      headings:
+        continue: "Continuar para \"fases\""
+        single:
+          back: "Retorne para editar os grupos"
+      heading_mode:
+        multiple:
+          description: "Crie um processo com múltiplos grupos, distritos ou temas. Imagine que você tem várias \"bolsas de dinheiro\". Por exemplo, € 25.000 para o \"Distrito Norte\", € 30.000 para o \"Distrito Centro\", € 28.000 para o \"Distrito Sul\" e um valor para toda a cidade. Ou para vários temas como esporte, cultura ou saúde."
+          link: "Criar orçamento com diversos cabeçalhos"
+          title: "<strong>Múltiplos cabeçalhos</strong>orçamento"
     milestones:
       index:
         table_id: "ID"
@@ -1158,7 +1181,6 @@ pt-BR:
         title: Propostas
         id: ID
         author: Autor
-        select: Selecionar
         selected: Selecionado
         milestones: Marcos
         no_proposals: Não existem propostas.

@@ -5,9 +5,7 @@ describe Account::SignInInfoComponent do
 
   context "Security secret for render last sign in is enabled" do
     it "shows a sign in info" do
-      allow(Rails.application).to receive(:secrets).and_return(ActiveSupport::OrderedOptions.new.merge(
-        security: { last_sign_in: true }
-      ))
+      stub_secrets(security: { last_sign_in: true })
 
       render_inline Account::SignInInfoComponent.new(account)
 

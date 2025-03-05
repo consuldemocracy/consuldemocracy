@@ -27,10 +27,15 @@ class Budgets::MapComponent < ApplicationComponent
         {
           outline_points: geozone.outline_points,
           color: geozone.color,
-          headings: budget.headings.where(geozone: geozone).map do |heading|
+          headings: geozone_headings(geozone).map do |heading|
             link_to heading.name, budget_investments_path(budget, heading_id: heading.id)
-          end
+          end,
+          name: geozone_headings(geozone).map(&:name).join(", ")
         }
       end
+    end
+
+    def geozone_headings(geozone)
+      budget.headings.where(geozone: geozone)
     end
 end

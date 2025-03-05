@@ -6,7 +6,7 @@ describe "Documents" do
       login_as(create(:user))
       visit new_proposal_path
 
-      fill_in "Proposal title", with: "debate"
+      fill_in_new_proposal_title with: "debate"
       fill_in "Proposal summary", with: "In summary, what we want is..."
       fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
       documentable_attach_new_file(file_fixture("logo_with_metadata.pdf"))

@@ -10,7 +10,7 @@ describe "Admin custom images", :admin do
     end
 
     within("tr#image_logo_header") do
-      attach_file "site_customization_image_image", file_fixture("logo_header.png")
+      attach_file "logo_header", file_fixture("logo_header.png")
       click_button "Update"
     end
 
@@ -22,7 +22,7 @@ describe "Admin custom images", :admin do
     visit admin_site_customization_images_path
 
     within("tr#image_map") do
-      attach_file "site_customization_image_image", file_fixture("custom_map.jpg")
+      attach_file "map", file_fixture("custom_map.jpg")
       click_button "Update"
     end
 
@@ -38,26 +38,26 @@ describe "Admin custom images", :admin do
     visit admin_site_customization_images_path
 
     within("tr#image_map") do
-      attach_file "site_customization_image_image", file_fixture("custom_map.jpg")
+      attach_file "map", file_fixture("custom_map.jpg")
       click_button "Update"
     end
 
     visit proposals_path
 
     within("#map") do
-      expect(page).to have_css("img[src*='custom_map.jpg']")
+      expect(page).to have_css("img[src*='custom_map.jpg'][alt='Districts list']")
     end
 
     visit map_proposals_path
 
     within(".show-for-medium") do
-      expect(page).to have_css("img[src*='custom_map.jpg']")
+      expect(page).to have_css("img[src*='custom_map.jpg'][alt='Districts list']")
     end
 
     visit budget_group_path(budget, group)
 
     within(".show-for-medium") do
-      expect(page).to have_css("img[src*='custom_map.jpg']")
+      expect(page).to have_css("img[src*='custom_map.jpg'][alt='Districts list']")
     end
   end
 
@@ -78,7 +78,7 @@ describe "Admin custom images", :admin do
     visit admin_site_customization_images_path
 
     within("tr#image_logo_email") do
-      attach_file "site_customization_image_image", file_fixture("logo_email_custom.png")
+      attach_file "logo_email", file_fixture("logo_email_custom.png")
       click_button "Update"
     end
 
@@ -93,7 +93,7 @@ describe "Admin custom images", :admin do
     visit admin_site_customization_images_path
 
     within("tr#image_social_media_icon") do
-      attach_file "site_customization_image_image", file_fixture("logo_header.png")
+      attach_file "social_media_icon", file_fixture("logo_header.png")
       click_button "Update"
     end
 
@@ -105,7 +105,7 @@ describe "Admin custom images", :admin do
     visit admin_site_customization_images_path
 
     within("tr#image_social_media_icon") do
-      attach_file "site_customization_image_image", file_fixture("social_media_icon.png")
+      attach_file "social_media_icon", file_fixture("social_media_icon.png")
       click_button "Update"
     end
 

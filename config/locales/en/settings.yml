@@ -138,6 +138,8 @@ en:
       sdg_description: Enable Sustainable Development Goals sections in the administration menu and in the Global Settings.
       demographics: "Demographics"
       demographics_description: "Enable users to manage gender DOB and Geozone"
+      cookies_consent: Cookies consent banner
+      cookies_consent_description: Enable the cookies consent banner to inform users about the cookies the application uses.
     remote_census:
       general:
         endpoint: "Endpoint"
@@ -230,3 +232,8 @@ en:
         budgets_description: Allow participatory budgets to be linked to Sustainable Development Goals
         legislation: Related SDG in collaborative legislation
         legislation_description: Allow collaborative legislation to be linked to Sustainable Development Goals
+    cookies_consent:
+      more_info_link: Link to cookies policy
+      more_info_link_description: Link shown in the consent banner to the cookie policy page.
+      version_name: Version name
+      version_name_description: Change the version name to force all users to go through the cookie consent process again. This feature can be handy when introducing drastic cookie policy changes requiring a new user acknowledgement.

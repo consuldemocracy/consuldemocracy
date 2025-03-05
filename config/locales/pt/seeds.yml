@@ -1,1 +1,90 @@
 pt:
+  seeds:
+    admin_notifications:
+      budget:
+        title: "Estamos a fechar o Orçamento Participativo!"
+        body: "Apresse-se e crie uma proposta antes que termine o prazo nos próximos dias!"
+      help:
+        title: "Ajude-nos a traduzir o Consul Democracy"
+        body: "Se é proficiente numa língua, ajude-nos a traduzir o Consul Democracy!"
+      map:
+        title: "Agora pode localizar geograficamente propostas e investimentos"
+        body: "Ao criar uma proposta ou investimento pode agora especificar um ponto num mapa."
+      proposal:
+        title: "Tem uma proposta?"
+        body: "Lembre-se que pode criar uma proposta com as suas ideias e as pessoas irão discuti-la e apoiá-la."
+    settings:
+      official_level_1_name: Cargo público 1
+      official_level_2_name: Cargo público 2
+      official_level_3_name: Cargo público 3
+      official_level_4_name: Cargo público 4
+      official_level_5_name: Cargo público 5
+    geozones:
+      north_district: Zona norte
+      west_district: Zona oeste
+      east_district: Zona este
+      central_district: Zona central
+    organizations:
+      human_rights: Direitos Humanos
+      neighborhood_association: Associação de bairro
+    cards:
+      budget:
+        title: "Como funcionam os orçamentos participativos?"
+        description: "Os orçamentos participativos permitem aos cidadãos propor e decidir diretamente como gastar parte do orçamento, com um acompanhamento e avaliação rigorosa das propostas por parte da instituição. Máxima eficácia e controlo com satisfação para todos."
+        link_text: "Mais sobre orçamentos participativos"
+        label: "Orçamentos participativos"
+      debate:
+        title: "Como funcionam os debates?"
+        description: "Qualquer pessoa pode abrir tópicos sobre qualquer assunto, criando espaços separados onde as pessoas possam discutir o tema proposto. Os debates são valorizados por todos, para realçar os assuntos mais importantes."
+        link_text: "Mais sobre debates"
+        label: "Debates"
+      header:
+        title: "CONSUL DEMOCRACY"
+        description: "Software livre para a participação dos cidadãos."
+        link_text: "Mais informação"
+        label: "Bem-vindo a"
+      proposal:
+        title: "Como funcionam as propostas de cidadãos?"
+        description: "Um espaço para que todos criem uma proposta de cidadão e procurem apoios. Serão votadas as propostas que obtiverem apoios suficientes e assim, em conjunto, poderemos decidir as questões que nos interessam."
+        link_text: "Mais sobre propostas"
+        label: "Propostas de cidadãos"
+    categories:
+      associations: Associações
+      culture: Cultura
+      sports: Desporto
+      social_rights: Direitos Sociais
+      economy: Economia
+      employment: Emprego
+      equity: Equidade
+      sustainability: Sustentabilidade
+      participation: Participação
+      mobility: Mobilidade
+      media: Media
+      health: Saúde
+      transparency: Transparência
+      security_emergencies: Segurança e Emergências
+      environment: Meio Ambiente
+    budgets:
+      budget: Orçamento participativo
+      currency: '€'
+      groups:
+        all_city: Toda a cidade
+        districts: Zonas
+      phases:
+        description: "Descrição em %{language}"
+        summary: "Resumo em %{language}"
+      statuses:
+        studying_project: A estudar o projeto
+        bidding: Licitação
+        executing_project: A executar o projeto
+        executed: Executado
+    legislation:
+      draft_versions:
+        title: "Versão %{number}"
+        body: "Versão de rascunho em %{language}"
+    polls:
+      current_poll: "Votação atual"
+      current_poll_geozone_restricted: "Votação atual restrita por zona geográfica"
+      recounting_poll: "Votação em recontagem"
+      expired_poll_without_stats: "Votação expirada sem estatísticas e resultados"
+      expired_poll_with_stats: "Votação expirada com estatísticas e resultados"

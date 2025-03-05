@@ -45,7 +45,7 @@ describe "Multitenancy", :seed_tenants do
 
     with_subdomain("mars") do
       visit new_proposal_path
-      fill_in "Proposal title", with: "Use the unaccent extension in Mars"
+      fill_in_new_proposal_title with: "Use the unaccent extension in Mars"
       fill_in "Proposal summary", with: "tsvector for María the Martian"
       check "I agree to the Privacy Policy and the Terms and conditions of use"
 
@@ -73,7 +73,7 @@ describe "Multitenancy", :seed_tenants do
 
     with_subdomain("mars") do
       visit new_debate_path
-      fill_in "Debate title", with: "Found any water here?"
+      fill_in_new_debate_title with: "Found any water here?"
       fill_in_ckeditor "Initial debate text", with: "Found any water here?"
       check "I agree to the Privacy Policy and the Terms and conditions of use"
 
