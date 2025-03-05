@@ -560,10 +560,6 @@
       display: inline;
     }
 
-    .title-quote {
-      display: inline-block;
-    }
-
     .poster-footer {
       border-left: 2px solid $border;
       color: $text-medium;
@@ -645,11 +641,6 @@
     h3 {
       font-size: rem-calc(45);
       margin-bottom: $line-height * 2;
-    }
-
-    .title-quote {
-      display: inline-block;
-      font-size: rem-calc(50);
     }
   }
 
