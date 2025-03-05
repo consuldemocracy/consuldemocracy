@@ -15,6 +15,6 @@ class Admin::AllowedTableActionsComponent < ApplicationComponent
     end
 
     def table_actions_component
-      @table_actions_component ||= Admin::TableActionsComponent.new(record, **options.merge(actions: actions))
+      @table_actions_component ||= Admin::TableActionsComponent.new(record, **options, actions: actions)
     end
 end
