@@ -605,14 +605,9 @@
     }
 
     .total-votes {
-      float: right;
+      display: block;
       font-weight: bold;
       line-height: $line-height * 2;
-
-      @include breakpoint(medium) {
-        display: block;
-        float: none;
-      }
     }
   }
 }
