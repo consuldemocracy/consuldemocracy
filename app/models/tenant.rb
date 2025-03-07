@@ -5,7 +5,7 @@ class Tenant < ApplicationRecord
             presence: true,
             uniqueness: true,
             exclusion: { in: ->(*) { excluded_subdomains }},
-            format: { with: URI::DEFAULT_PARSER.regexp[:HOST] }
+            format: { with: URI::RFC2396_PARSER.regexp[:HOST] }
   validates :name, presence: true, uniqueness: true
 
   after_create :create_schema
