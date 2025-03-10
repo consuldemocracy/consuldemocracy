@@ -375,9 +375,12 @@ describe "Admin edit translatable records", :admin do
       translatable.update!(status: nil)
 
       visit admin_polymorphic_path(translatable, action: :edit)
+      expect_to_have_language_selected "English"
 
       click_link "Remove language"
+      expect_to_have_language_selected "Español"
       click_link "Remove language"
+      expect_to_have_language_selected nil
 
       click_button "Update milestone"
 
@@ -388,9 +391,12 @@ describe "Admin edit translatable records", :admin do
       translatable.update!(status: Milestone::Status.first)
 
       visit admin_polymorphic_path(translatable, action: :edit)
+      expect_to_have_language_selected "English"
 
       click_link "Remove language"
+      expect_to_have_language_selected "Español"
       click_link "Remove language"
+      expect_to_have_language_selected nil
 
       click_button "Update milestone"
 
@@ -480,6 +486,8 @@ describe "Admin edit translatable records", :admin do
         click_link "Remove language"
         select "Español", from: "Current language"
         click_link "Remove language"
+        expect_to_have_language_selected "Français"
+
         click_button "Save"
 
         expect(page).to have_content "Polls description updated successfully"
