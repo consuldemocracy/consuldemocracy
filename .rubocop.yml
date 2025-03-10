@@ -826,6 +826,8 @@ Style/MinMaxComparison:
 
 Style/MutableConstant:
   Enabled: true
+  Exclude:
+    - "bin/setup"
 
 Style/NegatedIfElseCondition:
   Enabled: true
