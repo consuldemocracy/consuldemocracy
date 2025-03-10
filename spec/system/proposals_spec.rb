@@ -1249,6 +1249,9 @@ describe "Proposals" do
       visit proposals_path
       fill_in "search", with: "Show you got"
       click_button "Search"
+
+      expect(page).to have_content "Search results"
+
       click_link "recommendations"
       expect(page).to have_css "a.is-active", text: "recommendations"
 
