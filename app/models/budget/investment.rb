@@ -74,7 +74,7 @@ class Budget
 
     scope :valuation_open,              -> { where(valuation_finished: false) }
     scope :with_admin,                  -> { where.not(administrator_id: nil) }
-    scope :without_admin,               -> { excluding(with_admin) }
+    scope :without_admin,               -> { where(administrator_id: nil) }
     scope :without_valuator_group,      -> { where(valuator_group_assignments_count: 0) }
     scope :without_valuator,            -> { without_valuator_group.where(valuator_assignments_count: 0) }
     scope :under_valuation,             -> { valuation_open.valuating.with_admin }
@@ -88,7 +88,7 @@ class Budget
     scope :valuation_finished_feasible, -> { where(valuation_finished: true, feasibility: "feasible") }
     scope :feasible,                    -> { where(feasibility: "feasible") }
     scope :unfeasible,                  -> { where(feasibility: "unfeasible") }
-    scope :not_unfeasible,              -> { excluding(unfeasible) }
+    scope :not_unfeasible,              -> { where.not(feasibility: "unfeasible") }
     scope :undecided,                   -> { where(feasibility: "undecided") }
 
     scope :with_supports,      -> { where(cached_votes_up: 1..) }
