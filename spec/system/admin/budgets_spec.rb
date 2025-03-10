@@ -435,6 +435,9 @@ describe "Admin budgets", :admin do
       expect(page).to have_link "Select valuators"
 
       click_button "Update Budget"
+
+      expect(page).to have_content "Participatory budget updated successfully"
+
       visit edit_admin_budget_path(budget)
 
       expect(page).to have_link "Select administrators"
