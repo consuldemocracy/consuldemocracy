@@ -42,6 +42,8 @@ describe "Admin custom images", :admin do
       click_button "Update"
     end
 
+    expect(page).to have_content "Image updated successfully"
+
     visit proposals_path
 
     within("#map") do
@@ -81,6 +83,8 @@ describe "Admin custom images", :admin do
       attach_file "logo_email", file_fixture("logo_email_custom.png")
       click_button "Update"
     end
+
+    expect(page).to have_content "Image updated successfully"
 
     visit admin_newsletter_path(newsletter)
 
