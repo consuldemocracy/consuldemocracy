@@ -39,8 +39,10 @@ module Users
 
     fill_in "user_login", with: user.email
     fill_in "user_password", with: user.password
-
     click_button "Enter"
+
+    expect(page).to have_content "You have been signed in successfully"
+
     visit new_officing_residence_path
   end
 

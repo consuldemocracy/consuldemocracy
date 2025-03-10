@@ -314,6 +314,8 @@ describe "Admin collaborative legislation", :admin do
       fill_in "Categories", with: "recycling,bicycles,pollution"
       click_button "Save changes"
 
+      expect(page).to have_content "Process updated successfully"
+
       visit admin_legislation_process_proposals_path(process)
 
       expect(page).to have_field("Categories", with: "bicycles, pollution, recycling")
@@ -321,6 +323,8 @@ describe "Admin collaborative legislation", :admin do
       within(".admin-content") { click_link "Information" }
       fill_in "Summary", with: "Summarizing the process"
       click_button "Save changes"
+
+      expect(page).to have_content "Process updated successfully"
 
       visit admin_legislation_process_proposals_path(process)
 
@@ -337,6 +341,7 @@ describe "Admin collaborative legislation", :admin do
 
       click_button "Update Process"
 
+      expect(page).to have_content "Process updated successfully."
       expect(page).to have_current_path admin_legislation_process_milestones_path(process)
 
       visit milestones_legislation_process_path(process)
@@ -397,6 +402,9 @@ describe "Admin collaborative legislation", :admin do
 
       click_sdg_goal(17)
       click_button "Create process"
+
+      expect(page).to have_content "Process created successfully"
+
       visit admin_legislation_processes_path
 
       within("tr", text: "Legislation process with SDG related content") do
@@ -411,6 +419,9 @@ describe "Admin collaborative legislation", :admin do
 
       remove_sdg_goal_or_target_tag(1)
       click_button "Save changes"
+
+      expect(page).to have_content "Process updated successfully"
+
       visit admin_legislation_processes_path
 
       within("tr", text: "Legislation process with SDG related content") do

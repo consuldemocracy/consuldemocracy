@@ -545,6 +545,9 @@ describe "Admin polls", :admin do
 
       click_sdg_goal(17)
       click_button "Create poll"
+
+      expect(page).to have_content "Poll created successfully"
+
       visit admin_polls_path
 
       within("tr", text: "Upcoming poll with SDG related content") do
@@ -559,6 +562,9 @@ describe "Admin polls", :admin do
 
       remove_sdg_goal_or_target_tag(1)
       click_button "Update poll"
+
+      expect(page).to have_content "Poll updated successfully"
+
       visit admin_polls_path
 
       within("tr", text: "Upcoming poll with SDG related content") do
