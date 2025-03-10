@@ -49,6 +49,8 @@ module Users
   def login_as_manager(manager = create(:manager))
     login_as(manager.user)
     visit management_sign_in_path
+
+    expect(page).to have_content "Management"
   end
 
   def login_managed_user(user)
@@ -74,6 +76,9 @@ module Users
 
     fill_in "user_email", with: "manuela@consul.dev"
     click_button "Send instructions"
+
+    expect(page).to have_content "If your email address is in our database, in a few minutes " \
+                                 "you will receive a link to use to reset your password."
   end
 
   def expect_to_be_signed_in
