@@ -7,9 +7,12 @@ module Maps
   def submit_proposal_form
     check :proposal_terms_of_service
     click_button "Create proposal"
+    expect(page).to have_content "Proposal created successfully."
 
     if page.has_content?("Not now, go to my proposal")
       click_link "Not now, go to my proposal"
+
+      expect(page).not_to have_link "Not now, go to my proposal"
     end
   end
 
@@ -22,6 +25,7 @@ module Maps
   def submit_budget_investment_form
     check :budget_investment_terms_of_service
     click_button "Create Investment"
+    expect(page).to have_content "Budget Investment created successfully"
   end
 
   def set_arguments(arguments, mappable, mappable_path_arguments)
