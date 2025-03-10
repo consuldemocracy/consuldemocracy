@@ -63,7 +63,7 @@ class Proposal < ApplicationRecord
 
   before_save :calculate_hot_score, :calculate_confidence_score
 
-  after_create :send_new_actions_notification_on_create
+  after_commit :send_new_actions_notification_on_create, on: :create
 
   scope :for_render,               -> { includes(:tags) }
   scope :sort_by_hot_score,        -> { reorder(hot_score: :desc) }
