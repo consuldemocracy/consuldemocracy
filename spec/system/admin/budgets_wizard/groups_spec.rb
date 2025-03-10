@@ -103,6 +103,8 @@ describe "Budgets wizard, groups step", :admin do
       fill_in "Group name", with: "Group wiht typo"
       click_button "Continue to headings"
 
+      expect(page).to have_content "Group created successfully"
+
       click_link "Go back to edit group"
 
       expect(page).to have_field "Group name", with: "Group wiht typo"
