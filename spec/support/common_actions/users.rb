@@ -42,8 +42,6 @@ module Users
     click_button "Enter"
 
     expect(page).to have_content "You have been signed in successfully"
-
-    visit new_officing_residence_path
   end
 
   def login_as_manager(manager = create(:manager))
