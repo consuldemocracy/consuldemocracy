@@ -202,6 +202,8 @@ describe "Public area translatable records" do
 
           click_button "Save changes"
 
+          expect(page).to have_content "Debate updated successfully"
+
           visit path
 
           expect(page).to have_field "Debate title", with: "Title in English"

@@ -26,6 +26,8 @@ describe "Admin edit translatable records", :admin do
         fill_in "Heading name", with: "Nom en Français"
         click_button "Save heading"
 
+        expect(page).to have_content "Heading updated successfully"
+
         visit path
 
         expect(page).to have_field "Heading name", with: "Heading name in English"
@@ -52,6 +54,8 @@ describe "Admin edit translatable records", :admin do
         fill_in "Subtitle", with: "Sous-titres en Français"
         fill_in_ckeditor "Content", with: "Contenu en Français"
         click_button "Update Custom page"
+
+        expect(page).to have_content "Page updated successfully"
 
         visit path
 
@@ -80,6 +84,8 @@ describe "Admin edit translatable records", :admin do
         fill_in "Text", with: "Texte en Français"
         click_link class: "fullscreen-toggle"
         click_button "Save changes"
+
+        expect(page).to have_content "Draft updated successfully"
 
         visit path
         click_link class: "fullscreen-toggle"
@@ -110,6 +116,8 @@ describe "Admin edit translatable records", :admin do
         select "Português brasileiro", from: "Add language"
         fill_in "Question", with: "Português"
         click_button "Save changes"
+
+        expect(page).to have_content "Question updated successfully"
 
         visit path
         select "Português brasileiro", from: "Language:"
@@ -201,6 +209,8 @@ describe "Admin edit translatable records", :admin do
 
         click_button "Save card"
 
+        expect(page).to have_content "Card updated successfully"
+
         visit path
 
         expect(page).to have_field "Title", with: "Title in English"
@@ -230,6 +240,8 @@ describe "Admin edit translatable records", :admin do
 
         click_button "Save"
 
+        expect(page).to have_content "Changes saved"
+
         visit path
 
         expect(page).to have_field "Answer", with: "Answer in English"
@@ -252,6 +264,8 @@ describe "Admin edit translatable records", :admin do
 
         fill_in "Summary", with: ""
         click_button "Update poll"
+
+        expect(page).to have_content "Poll updated successfully"
 
         visit path
 
@@ -344,6 +358,8 @@ describe "Admin edit translatable records", :admin do
       expect(page).not_to have_select "Current language", with_options: ["Español"]
 
       click_button "Save group"
+
+      expect(page).to have_content "Group updated successfully"
 
       visit path
 
@@ -443,6 +459,8 @@ describe "Admin edit translatable records", :admin do
 
         click_button "Save changes"
 
+        expect(page).to have_content "Changes saved"
+
         visit budgets_path
         click_link "Name en Français"
 
@@ -463,6 +481,8 @@ describe "Admin edit translatable records", :admin do
         select "Español", from: "Current language"
         click_link "Remove language"
         click_button "Save"
+
+        expect(page).to have_content "Polls description updated successfully"
 
         visit polls_path
 
