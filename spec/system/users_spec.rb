@@ -174,6 +174,8 @@ describe "Users" do
       uncheck "account_public_activity"
       click_button "Save changes"
 
+      expect(page).to have_content "Changes saved"
+
       visit user_path(user)
       expect(page).not_to have_content("activity list private")
     end

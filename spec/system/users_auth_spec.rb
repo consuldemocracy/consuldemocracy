@@ -232,6 +232,8 @@ describe "Users" do
         expect(page).to have_current_path(finish_signup_path)
         click_link "Cancel login"
 
+        expect(page).to have_content "You have been signed out successfully"
+
         visit "/"
         expect_not_to_be_signed_in
       end
