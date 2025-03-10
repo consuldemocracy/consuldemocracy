@@ -45,6 +45,7 @@ module Consul
       secrets
     end
 
+    # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
 
     # Keep belongs_to fields optional by default, because that's the way
@@ -77,8 +78,16 @@ module Consul
     config.action_dispatch.rescue_responses["FeatureFlags::FeatureDisabled"] = :forbidden
     config.action_dispatch.rescue_responses["Apartment::TenantNotFound"] = :not_found
 
-    # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
-    # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
+    # Please, add to the `ignore` list any other `lib` subdirectories that do
+    # not contain `.rb` files, or that should not be reloaded or eager loaded.
+    # Common ones are `templates`, `generators`, or `middleware`, for example.
+    # config.autoload_lib(ignore: %w[assets tasks])
+
+    # Configuration for the application, engines, and railties goes here.
+    #
+    # These settings can be overridden in specific environments using the files
+    # in config/environments, which are processed later.
+    #
     config.time_zone = Rails.application.secrets.time_zone.presence || "Madrid"
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
