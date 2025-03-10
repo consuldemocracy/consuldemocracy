@@ -43,7 +43,7 @@ module ActsAsParanoidAliases
     end
 
     def without_confirmed_hide
-      excluding(with_confirmed_hide)
+      where(confirmed_hide_at: nil)
     end
 
     def with_hidden
