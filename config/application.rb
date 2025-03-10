@@ -143,11 +143,9 @@ module Consul
     config.active_job.queue_adapter = :delayed_job
 
     # CONSUL DEMOCRACY specific custom overrides
-    # Read more on documentation:
-    # * English: https://github.com/consuldemocracy/consuldemocracy/blob/master/CUSTOMIZE_EN.md
-    # * Spanish: https://github.com/consuldemocracy/consuldemocracy/blob/master/CUSTOMIZE_ES.md
-    #
-
+    # You can find more info in the documentation:
+    # * English: docs/en/customization/introduction.md
+    # * Spanish: docs/es/customization/introduction.md
     [
       "app/components/custom",
       "app/controllers/custom",
