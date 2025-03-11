@@ -3,7 +3,7 @@ require "rails_helper"
 describe "Multitenancy", :seed_tenants do
   before { create(:tenant, schema: "mars") }
 
-  scenario "Disabled features", :no_js do
+  scenario "Disabled features", :show_exceptions do
     create(:tenant, schema: "venus")
     Tenant.switch("mars") { Setting["process.debates"] = true }
     Tenant.switch("venus") { Setting["process.debates"] = nil }
@@ -15,7 +15,9 @@ describe "Multitenancy", :seed_tenants do
     end
 
     with_subdomain("venus") do
-      expect { visit debates_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+      visit debates_path
+
+      expect(page).to have_title "Forbidden"
     end
   end
 
