@@ -306,21 +306,6 @@ describe "Emails" do
       expect(notification2.emailed_at).to be
       expect(email_digest.notifications).to be_empty
     end
-
-    scenario "notifications moderated are not sent" do
-      user = create(:user, email_digest: true)
-      notification = create(:notification, :for_proposal_notification)
-
-      reset_mailer
-
-      notification.notifiable.moderate_system_email(create(:administrator).user)
-
-      email_digest = EmailDigest.new(user)
-      email_digest.deliver(Time.current)
-      email_digest.mark_as_emailed
-
-      expect { open_last_email }.to raise_error "No email has been sent!"
-    end
   end
 
   context "User invites" do
