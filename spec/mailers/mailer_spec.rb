@@ -116,4 +116,34 @@ describe Mailer do
       end
     end
   end
+
+  describe "#machine_learning_success" do
+    let(:admin) { create(:administrator) }
+
+    it "is delivered to the user who executes the script" do
+      Mailer.machine_learning_success(admin.user).deliver
+
+      email = open_last_email
+      expect(email).to have_subject "Machine Learning - Content has been generated successfully"
+      expect(email).to have_content "Machine Learning script"
+      expect(email).to have_content "Content has been generated successfully."
+      expect(email).to have_link "Visit Machine Learning panel"
+      expect(email).to deliver_to(admin.user.email)
+    end
+  end
+
+  describe "#machine_learning_error" do
+    let(:admin) { create(:administrator) }
+
+    it "is delivered to the user who executes the script" do
+      Mailer.machine_learning_error(admin.user).deliver
+
+      email = open_last_email
+      expect(email).to have_subject "Machine Learning - An error has occurred running the script"
+      expect(email).to have_content "Machine Learning script"
+      expect(email).to have_content "An error has occurred running the Machine Learning script."
+      expect(email).to have_link "Visit Machine Learning panel"
+      expect(email).to deliver_to(admin.user.email)
+    end
+  end
 end
