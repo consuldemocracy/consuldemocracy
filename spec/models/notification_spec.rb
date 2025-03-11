@@ -168,4 +168,66 @@ describe Notification do
       expect(notification.notifiable_action).to eq "replies_to"
     end
   end
+
+  describe ".send_pending", :delay_jobs do
+    let!(:user1) { create(:user) }
+    let!(:user2) { create(:user) }
+    let!(:user3) { create(:user) }
+    let!(:proposal_notification) { create(:proposal_notification) }
+
+    before do
+      create(:notification, notifiable: proposal_notification, user: user1)
+      create(:notification, notifiable: proposal_notification, user: user2)
+      create(:notification, notifiable: proposal_notification, user: user3)
+      reset_mailer
+    end
+
+    it "sends pending proposal notifications" do
+      Setting["org_name"] = "CONSUL"
+      Delayed::Worker.delay_jobs = false
+      Notification.send_pending
+
+      email = open_last_email
+      expect(email).to have_subject "Proposal notifications in CONSUL"
+    end
+
+    it "sends emails in batches" do
+      Notification.send_pending
+
+      expect(Delayed::Job.count).to eq 3
+    end
+
+    it "sends batches in time intervals" do
+      allow(Notification).to receive_messages(
+        batch_size: 1,
+        batch_interval: 1.second,
+        first_batch_run_at: Time.current
+      )
+
+      remove_users_without_pending_notifications
+
+      Notification.send_pending
+
+      now = Notification.first_batch_run_at
+
+      first_batch_run_at  = now.change(usec: 0)
+      second_batch_run_at = (now + 1.second).change(usec: 0)
+      third_batch_run_at  = (now + 2.seconds).change(usec: 0)
+
+      expect(Delayed::Job.count).to eq 3
+      expect(Delayed::Job.first.run_at.change(usec: 0)).to eq first_batch_run_at
+      expect(Delayed::Job.second.run_at.change(usec: 0)).to eq second_batch_run_at
+      expect(Delayed::Job.third.run_at.change(usec: 0)).to eq third_batch_run_at
+    end
+  end
+
+  def remove_users_without_pending_notifications
+    users_without_notifications.each(&:destroy)
+  end
+
+  def users_without_notifications
+    User.select do |user|
+      user.notifications.not_emailed.where(notifiable_type: "ProposalNotification").blank?
+    end
+  end
 end
