@@ -193,21 +193,35 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
     end
 
     scenario "Should edit default values from map on #{mappable_factory_name} edit page" do
+      original_longitude = map_location.longitude
+      original_latitude = map_location.latitude
+
       do_login_for mappable.author, management: management
 
       visit send(mappable_edit_path, id: mappable.id)
-      find(".map-location").click
+      find(".map-location").click(x: 30, y: 30)
+
+      new_latitude = find_field(
+        "#{mappable_factory_name}_map_location_attributes_latitude", type: :hidden
+      ).value
+      new_longitude = find_field(
+        "#{mappable_factory_name}_map_location_attributes_longitude", type: :hidden
+      ).value
+
       click_button "Save changes"
 
       expect(page).not_to have_button "Save changes"
-      mappable.reload
-
-      expect(page).to have_css(".map-location")
-      expect(page).not_to have_css ".map-location[data-marker-latitude='#{map_location.latitude}']"
-      expect(page).to have_css ".map-location[data-marker-latitude='#{mappable.map_location.latitude}']"
+      expect(page).to have_css ".map-location"
+      expect(page).to have_css ".map-location[data-marker-latitude='#{new_latitude}']"
+      expect(page).to have_css ".map-location[data-marker-longitude='#{new_longitude}']"
+      expect(page).not_to have_css ".map-location[data-marker-latitude='#{original_latitude}']"
+      expect(page).not_to have_css ".map-location[data-marker-longitude='#{original_longitude}']"
     end
 
     scenario "Should edit mappable on #{mappable_factory_name} without change map" do
+      original_longitude = map_location.longitude
+      original_latitude = map_location.latitude
+
       do_login_for mappable.author, management: management
 
       visit send(mappable_edit_path, id: mappable.id)
@@ -215,11 +229,9 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       click_button "Save changes"
 
       expect(page).not_to have_button "Save changes"
-      mappable.reload
-
-      expect(page).to have_css(".map-location")
-      expect(page).to have_css ".map-location[data-marker-latitude='#{map_location.latitude}']"
-      expect(page).to have_css ".map-location[data-marker-latitude='#{mappable.map_location.latitude}']"
+      expect(page).to have_css ".map-location"
+      expect(page).to have_css ".map-location[data-marker-latitude='#{original_latitude}']"
+      expect(page).to have_css ".map-location[data-marker-longitude='#{original_longitude}']"
     end
 
     scenario "Can not display map on #{mappable_factory_name} edit when remove map marker" do
