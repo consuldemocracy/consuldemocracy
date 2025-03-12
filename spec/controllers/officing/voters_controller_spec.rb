@@ -20,6 +20,7 @@ describe Officing::VotersController do
       end.each(&:join)
 
       expect(Poll::Voter.count).to eq 1
+      expect(Poll::Voter.last.officer_id).to eq(officer.id)
     end
   end
 end
