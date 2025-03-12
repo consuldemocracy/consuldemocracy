@@ -189,6 +189,7 @@ describe "Voter" do
     end
 
     scenario "Voting in poll and then verifiying account" do
+      allow_any_instance_of(Verification::Sms).to receive(:generate_confirmation_code).and_return("1357")
       user = create(:user)
 
       login_through_form_as_officer(officer.user)
@@ -200,7 +201,7 @@ describe "Voter" do
       click_link "Verify my account"
 
       verify_residence
-      confirm_phone(user)
+      confirm_phone(code: "1357")
 
       visit poll_path(poll)
 
