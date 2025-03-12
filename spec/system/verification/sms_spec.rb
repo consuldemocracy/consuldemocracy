@@ -2,6 +2,7 @@ require "rails_helper"
 
 describe "SMS Verification" do
   scenario "Verify" do
+    allow_any_instance_of(Verification::Sms).to receive(:generate_confirmation_code).and_return("2468")
     user = create(:user, residence_verified_at: Time.current)
     login_as(user)
 
@@ -12,8 +13,7 @@ describe "SMS Verification" do
 
     expect(page).to have_content "Security code confirmation"
 
-    user = user.reload
-    fill_in "sms_confirmation_code", with: user.sms_confirmation_code
+    fill_in "sms_confirmation_code", with: "2468"
     click_button "Send"
 
     expect(page).to have_content "Code correct"
