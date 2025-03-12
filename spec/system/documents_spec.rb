@@ -15,7 +15,7 @@ describe "Documents" do
 
       expect(page).to have_content "Proposal created successfully"
 
-      io = URI.parse("#{app_host}#{polymorphic_path(Document.last.attachment)}").open
+      io = URI.parse(find_link(text: "PDF")[:href]).open
       reader = PDF::Reader.new(io)
 
       expect(reader.info[:Keywords]).not_to eq "Test Metadata"

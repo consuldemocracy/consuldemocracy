@@ -134,11 +134,6 @@ describe "Poll Officing" do
 
       click_button "Confirm vote"
       expect(page).to have_content "Vote introduced!"
-      expect(Poll::Voter.where(document_number: "12345678Z",
-                               poll_id: poll,
-                               origin: "booth",
-                               officer_id: officer1)
-                        .count).to be(1)
     end
 
     in_browser(:two) do
@@ -147,11 +142,11 @@ describe "Poll Officing" do
 
       click_button "Confirm vote"
       expect(page).to have_content "Vote introduced!"
-      expect(Poll::Voter.where(document_number: "12345678Y",
-                               poll_id: poll,
-                               origin: "booth",
-                               officer_id: officer2)
-                        .count).to be(1)
+
+      visit new_officing_residence_path
+      officing_verify_residence(document_number: "12345678Z")
+
+      expect(page).to have_content "Has already participated in this poll"
     end
   end
 end
