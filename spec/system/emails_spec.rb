@@ -86,33 +86,62 @@ describe "Emails" do
 
   context "Direct Message" do
     scenario "Receiver email" do
-      sender   = create(:user, :level_two)
-      receiver = create(:user, :level_two)
+      sender   = create(:user, :level_two, username: "John")
+      receiver = create(:user, :level_two, username: "Paul", subscriptions_token: "receiver_token")
 
-      direct_message = create_direct_message(sender, receiver)
+      login_as(sender)
+      visit user_path(receiver)
+
+      click_link "Send private message"
+
+      expect(page).to have_content "Send private message to Paul"
+
+      fill_in "direct_message_title", with: "Hey!"
+      fill_in "direct_message_body",  with: "How are you doing?"
+
+      click_button "Send message"
+
+      expect(page).to have_content "You message has been sent successfully."
 
       email = unread_emails_for(receiver.email).first
 
-      expect(email).to have_subject("You have received a new private message")
-      expect(email).to have_body_text(direct_message.title)
-      expect(email).to have_body_text(direct_message.body)
-      expect(email).to have_body_text(direct_message.sender.name)
-      expect(email).to have_body_text(user_path(direct_message.sender_id))
-      expect(email).to have_body_text(edit_subscriptions_path(token: receiver.subscriptions_token))
+      expect(email).to have_subject "You have received a new private message"
+      expect(email).to have_body_text "Hey!"
+      expect(email).to have_body_text "How are you doing?"
+      expect(email).to have_link "Reply to John", href: user_url(
+                                                          sender,
+                                                          host: Mailer.default_url_options[:host]
+                                                        )
+      expect(email).to have_link "Notifications", href: edit_subscriptions_url(
+                                                          host: Mailer.default_url_options[:host],
+                                                          token: "receiver_token"
+                                                        )
     end
 
     scenario "Sender email" do
       sender   = create(:user, :level_two)
-      receiver = create(:user, :level_two)
+      receiver = create(:user, :level_two, username: "Keith")
 
-      direct_message = create_direct_message(sender, receiver)
+      login_as(sender)
+      visit user_path(receiver)
+
+      click_link "Send private message"
+
+      expect(page).to have_content "Send private message to Keith"
+
+      fill_in "direct_message_title", with: "Hey!"
+      fill_in "direct_message_body",  with: "How are you doing?"
+
+      click_button "Send message"
+
+      expect(page).to have_content "You message has been sent successfully."
 
       email = unread_emails_for(sender.email).first
 
-      expect(email).to have_subject("You have sent a new private message")
-      expect(email).to have_body_text(direct_message.title)
-      expect(email).to have_body_text(direct_message.body)
-      expect(email).to have_body_text(direct_message.receiver.name)
+      expect(email).to have_subject "You have sent a new private message"
+      expect(email).to have_body_text "Hey!"
+      expect(email).to have_body_text "How are you doing?"
+      expect(email).to have_body_text "You have sent a new private message to <strong>Keith</strong>"
     end
   end
 
