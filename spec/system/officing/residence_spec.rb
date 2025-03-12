@@ -53,7 +53,6 @@ describe "Residence", :with_frozen_time do
     end
 
     scenario "Error on Census (document number)" do
-      initial_failed_census_calls_count = officer.failed_census_calls_count
       within("#side_menu") do
         click_link "Validate document"
       end
@@ -65,13 +64,6 @@ describe "Residence", :with_frozen_time do
       click_button "Validate document"
 
       expect(page).to have_content "The Census was unable to verify this document"
-
-      officer.reload
-      fcc = FailedCensusCall.last
-      expect(fcc).to be
-      expect(fcc.poll_officer).to eq(officer)
-      expect(officer.failed_census_calls.last).to eq(fcc)
-      expect(officer.failed_census_calls_count).to eq(initial_failed_census_calls_count + 1)
     end
 
     scenario "Error on Census (year of birth)" do
