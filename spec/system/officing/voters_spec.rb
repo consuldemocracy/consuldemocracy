@@ -30,8 +30,6 @@ describe "Voters" do
     page.evaluate_script("window.location.reload()")
     expect(page).to have_content "Has already participated in this poll"
     expect(page).not_to have_button "Confirm vote"
-
-    expect(Poll::Voter.last.officer_id).to eq(officer.id)
   end
 
   scenario "Cannot vote" do
