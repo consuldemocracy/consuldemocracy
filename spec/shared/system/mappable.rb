@@ -198,6 +198,8 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       visit send(mappable_edit_path, id: mappable.id)
       find(".map-location").click
       click_button "Save changes"
+
+      expect(page).not_to have_button "Save changes"
       mappable.reload
 
       expect(page).to have_css(".map-location")
@@ -211,6 +213,8 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       visit send(mappable_edit_path, id: mappable.id)
       fill_in "#{mappable_factory_name.camelize} title", with: "New title"
       click_button "Save changes"
+
+      expect(page).not_to have_button "Save changes"
       mappable.reload
 
       expect(page).to have_css(".map-location")
@@ -225,7 +229,8 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       click_button "Remove map marker"
       click_button "Save changes"
 
-      expect(page).not_to have_css(".map-location")
+      expect(page).not_to have_button "Save changes"
+      expect(page).not_to have_css ".map-location"
     end
 
     scenario "Can not display map on #{mappable_factory_name} edit when feature.map is disabled" do
@@ -236,7 +241,8 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       fill_in "#{mappable_factory_name.camelize} title", with: "New title"
       click_button "Save changes"
 
-      expect(page).not_to have_css(".map-location")
+      expect(page).not_to have_button "Save changes"
+      expect(page).not_to have_css ".map-location"
     end
 
     scenario "No need to skip map on update" do
@@ -246,6 +252,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       click_button "Remove map marker"
       click_button "Save changes"
 
+      expect(page).not_to have_button "Save changes"
       expect(page).not_to have_content "Map location can't be blank"
     end
   end
