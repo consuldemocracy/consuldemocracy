@@ -11,6 +11,7 @@ module Users
     check "user_terms_of_service"
 
     click_button "Register"
+    expect(page).to have_content "Thank you for registering"
   end
 
   def login_through_form_with_email_and_password(email = "manuela@consul.dev", password = "judgementday")
