@@ -312,32 +312,19 @@ describe "Emails" do
 
   context "Polls" do
     scenario "Send email on poll comment reply" do
-      user1 = create(:user, email_on_comment_reply: true)
-      user2 = create(:user)
+      user = create(:user, email_on_comment_reply: true)
       poll = create(:poll, author: create(:user))
-      comment = create(:comment, commentable: poll, author: user1)
+      comment = create(:comment, commentable: poll, author: user)
 
-      login_as(user2)
-      visit poll_path(poll)
-
-      click_link "Reply"
-
-      within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "Leave your comment", with: "It will be done next week."
-        click_button "Publish reply"
-      end
-
-      within "#comment_#{comment.id}" do
-        expect(page).to have_content "It will be done next week."
-      end
+      reply_to(comment)
 
       email = open_last_email
       expect(email).to have_subject("Someone has responded to your comment")
-      expect(email).to deliver_to(user1)
+      expect(email).to deliver_to(user)
       expect(email).not_to have_body_text(poll_path(poll))
       expect(email).to have_body_text(comment_path(Comment.last))
       expect(email).to have_body_text("To unsubscribe from these emails, visit")
-      expect(email).to have_body_text(edit_subscriptions_path(token: user1.subscriptions_token))
+      expect(email).to have_body_text(edit_subscriptions_path(token: user.subscriptions_token))
       expect(email).to have_body_text('and uncheck "Notify me by email when someone replies to my comments"')
     end
   end
