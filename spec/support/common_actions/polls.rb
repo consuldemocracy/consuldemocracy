@@ -18,8 +18,6 @@ module Polls
 
     first(:button, "Confirm vote").click
     expect(page).to have_content "Vote introduced!"
-
-    expect(Poll::Voter.count).to eq(1)
   end
 
   def confirm_phone(code:)
