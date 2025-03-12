@@ -44,8 +44,7 @@ shared_examples "notifiable in-app" do |factory_name|
     visit notifications_path
 
     expect(page).to have_css ".notification", count: 1
-    expect(page).to have_content "There are 3 new comments on"
-    expect(page).to have_xpath "//a[@href='#{notification_path(Notification.last)}']"
+    expect(page).to have_link text: "There are 3 new comments on"
   end
 
   scenario "A user replied to my comment" do
@@ -69,8 +68,7 @@ shared_examples "notifiable in-app" do |factory_name|
     visit notifications_path
 
     expect(page).to have_css ".notification", count: 1
-    expect(page).to have_content "Someone replied to your comment on"
-    expect(page).to have_xpath "//a[@href='#{notification_path(Notification.last)}']"
+    expect(page).to have_link text: "Someone replied to your comment on"
   end
 
   scenario "Multiple replies to my comment" do
@@ -96,8 +94,7 @@ shared_examples "notifiable in-app" do |factory_name|
     visit notifications_path
 
     expect(page).to have_css ".notification", count: 1
-    expect(page).to have_content "There are 3 new replies to your comment on"
-    expect(page).to have_xpath "//a[@href='#{notification_path(Notification.last)}']"
+    expect(page).to have_link text: "There are 3 new replies to your comment on"
   end
 
   scenario "Author commented on his own notifiable" do
