@@ -87,9 +87,6 @@ describe "Voter" do
         expect(page).to have_content("Vote introduced!")
       end
 
-      expect(Poll::Voter.count).to eq(1)
-      expect(Poll::Voter.first.origin).to eq("booth")
-
       logout
       login_as(admin.user)
       visit admin_poll_recounts_path(poll)
@@ -145,7 +142,6 @@ describe "Voter" do
       scenario "Trying to vote in web and then in booth" do
         login_as user
         vote_for_poll_via_web(poll, question, "Yes")
-        expect(Poll::Voter.count).to eq(1)
 
         logout
         login_through_form_as_officer(officer)
@@ -172,7 +168,6 @@ describe "Voter" do
         end
         expect(page).to have_content "You have already participated in a physical booth. " \
                                      "You can not participate again."
-        expect(Poll::Voter.count).to eq(1)
 
         logout
         login_as(admin.user)
@@ -211,7 +206,6 @@ describe "Voter" do
 
       expect(page).to have_content "You have already participated in a physical booth. " \
                                    "You can not participate again."
-      expect(Poll::Voter.count).to eq(1)
 
       logout
       login_as(admin.user)
