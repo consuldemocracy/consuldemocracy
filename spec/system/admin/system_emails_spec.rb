@@ -359,6 +359,8 @@ describe "System Emails" do
 
       click_button "Send pending"
 
+      expect(page).to have_content "Pending notifications sent successfully"
+
       email = open_last_email
       expect(email).to deliver_to(voter)
       expect(email).to have_body_text(proposal_notification.body)
