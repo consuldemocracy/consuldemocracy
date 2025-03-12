@@ -15,10 +15,9 @@ describe "Verify Letter" do
                                  "we will send it to the address featuring in the data " \
                                  "we have on file."
 
-    user.reload
+    visit verification_path
 
-    expect(user.letter_requested_at).to be
-    expect(user.letter_verification_code).to be
+    expect(page).to have_field "Code you received in letter"
   end
 
   scenario "Deny access unless verified residence" do

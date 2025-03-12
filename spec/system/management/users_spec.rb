@@ -37,9 +37,12 @@ describe "Users" do
 
     click_button "Confirm"
 
-    expect(user.reload).to be_confirmed
-
     expect(page).to have_content "Your account has been confirmed."
+
+    visit account_path
+
+    expect(page).to have_field "Username", with: "pepe"
+    expect(page).to have_content "Account verified"
   end
 
   scenario "Create a level 3 user without email from scratch" do

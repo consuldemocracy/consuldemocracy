@@ -2,6 +2,7 @@ require "rails_helper"
 
 describe "Level two verification" do
   scenario "Verification with residency and sms" do
+    allow_any_instance_of(Verification::Sms).to receive(:generate_confirmation_code).and_return("5678")
     create(:geozone)
     user = create(:user)
     login_as(user)
@@ -16,8 +17,7 @@ describe "Level two verification" do
 
     expect(page).to have_content "Security code confirmation"
 
-    user = user.reload
-    fill_in "sms_confirmation_code", with: user.sms_confirmation_code
+    fill_in "sms_confirmation_code", with: "5678"
     click_button "Send"
 
     expect(page).to have_content "Code correct"
