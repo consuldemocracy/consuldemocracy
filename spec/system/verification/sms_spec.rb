@@ -76,6 +76,10 @@ describe "SMS Verification" do
     expect(page).to have_content "You have reached the maximum number of attempts. Please try again later."
     expect(page).to have_current_path(account_path)
 
+    visit root_path
+
+    expect(page).not_to have_content "You have reached the maximum number of attempts"
+
     visit new_sms_path
     expect(page).to have_content "You have reached the maximum number of attempts. Please try again later."
     expect(page).to have_current_path(account_path)
