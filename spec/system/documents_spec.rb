@@ -11,8 +11,9 @@ describe "Documents" do
       fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
       documentable_attach_new_file(file_fixture("logo_with_metadata.pdf"))
       check "I agree to the Privacy Policy and the Terms and conditions of use"
-
       click_button "Create proposal"
+
+      expect(page).to have_content "Proposal created successfully"
 
       io = URI.parse("#{app_host}#{polymorphic_path(Document.last.attachment)}").open
       reader = PDF::Reader.new(io)
