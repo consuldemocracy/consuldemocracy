@@ -74,7 +74,7 @@ describe "Voter" do
     end
 
     scenario "Voting in booth" do
-      login_through_form_as_officer(officer.user)
+      login_through_form_as_officer(officer)
 
       visit new_officing_residence_path
       officing_verify_residence
@@ -107,7 +107,7 @@ describe "Voter" do
       before { create(:user, :in_census) }
 
       scenario "Show not to vote at this time button" do
-        login_through_form_as_officer(officer.user)
+        login_through_form_as_officer(officer)
 
         visit new_officing_residence_path
         officing_verify_residence
@@ -119,7 +119,7 @@ describe "Voter" do
       end
 
       scenario "Hides not to vote at this time button if already voted" do
-        login_through_form_as_officer(officer.user)
+        login_through_form_as_officer(officer)
 
         visit new_officing_residence_path
         officing_verify_residence
@@ -148,7 +148,7 @@ describe "Voter" do
         expect(Poll::Voter.count).to eq(1)
 
         logout
-        login_through_form_as_officer(officer.user)
+        login_through_form_as_officer(officer)
 
         visit new_officing_residence_path
         officing_verify_residence
@@ -159,7 +159,7 @@ describe "Voter" do
       end
 
       scenario "Trying to vote in booth and then in web" do
-        login_through_form_as_officer(officer.user)
+        login_through_form_as_officer(officer)
 
         vote_for_poll_via_booth
 
@@ -192,7 +192,7 @@ describe "Voter" do
       allow_any_instance_of(Verification::Sms).to receive(:generate_confirmation_code).and_return("1357")
       user = create(:user)
 
-      login_through_form_as_officer(officer.user)
+      login_through_form_as_officer(officer)
       vote_for_poll_via_booth
 
       logout
@@ -228,7 +228,7 @@ describe "Voter" do
 
     context "Side menu" do
       scenario "'Validate document' menu item with votable polls" do
-        login_through_form_as_officer(officer.user)
+        login_through_form_as_officer(officer)
 
         visit new_officing_residence_path
         officing_verify_residence
@@ -252,7 +252,7 @@ describe "Voter" do
       scenario "'Validate document' menu item without votable polls" do
         create(:poll_voter, poll: poll, user: create(:user, :in_census))
 
-        login_through_form_as_officer(officer.user)
+        login_through_form_as_officer(officer)
 
         visit new_officing_residence_path
         officing_verify_residence

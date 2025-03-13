@@ -4,7 +4,7 @@ describe "Booth", :with_frozen_time do
   scenario "Officer with no booth assignments today" do
     officer = create(:poll_officer)
 
-    login_through_form_as_officer(officer.user)
+    login_through_form_as_officer(officer)
     visit new_officing_residence_path
 
     expect(page).to have_content "You don't have officing shifts today"
@@ -14,7 +14,7 @@ describe "Booth", :with_frozen_time do
     officer = create(:poll_officer)
     create(:poll_officer_assignment, officer: officer, date: Date.current + 1.day)
 
-    login_through_form_as_officer(officer.user)
+    login_through_form_as_officer(officer)
     visit new_officing_residence_path
 
     expect(page).to have_content "You don't have officing shifts today"
@@ -28,7 +28,7 @@ describe "Booth", :with_frozen_time do
 
     create(:poll_officer_assignment, officer: officer, poll: poll, booth: booth, date: Date.current)
 
-    login_through_form_as_officer(officer.user)
+    login_through_form_as_officer(officer)
     visit new_officing_residence_path
 
     within("#officing-booth") do
@@ -46,7 +46,7 @@ describe "Booth", :with_frozen_time do
     create(:poll_officer_assignment, officer: officer, poll: poll, booth: booth1, date: Date.current)
     create(:poll_officer_assignment, officer: officer, poll: poll, booth: booth2, date: Date.current)
 
-    login_through_form_as_officer(officer.user)
+    login_through_form_as_officer(officer)
     visit new_officing_residence_path
 
     expect(page).to have_content "Choose your booth"
@@ -72,7 +72,7 @@ describe "Booth", :with_frozen_time do
     create(:poll_officer_assignment, officer: officer, poll: poll2, booth: booth2, date: Date.current)
     create(:poll_officer_assignment, officer: officer, poll: poll2, booth: booth2, date: Date.current)
 
-    login_through_form_as_officer(officer.user)
+    login_through_form_as_officer(officer)
     visit new_officing_residence_path
 
     expect(page).to have_content "Choose your booth"
