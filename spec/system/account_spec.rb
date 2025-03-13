@@ -72,11 +72,7 @@ describe "Account" do
     visit_in_email("Confirm my account")
 
     logout
-    visit root_path
-    click_link "Sign in"
-    fill_in "user_login", with: "new_user_email@example.com"
-    fill_in "user_password", with: "new_password"
-    click_button "Enter"
+    login_through_form_with("new_user_email@example.com", password: "new_password")
 
     expect(page).to have_content "You have been signed in successfully."
 
