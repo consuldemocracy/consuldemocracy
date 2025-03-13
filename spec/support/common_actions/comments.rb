@@ -1,11 +1,4 @@
 module Comments
-  def comment_on(commentable, user = nil)
-    user ||= create(:user)
-
-    comment = create(:comment, commentable: commentable, user: user)
-    CommentNotifier.new(comment: comment).process
-  end
-
   def reply_to(comment, replier: create(:user))
     login_as(replier)
 
