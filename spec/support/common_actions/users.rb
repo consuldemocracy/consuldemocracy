@@ -25,13 +25,7 @@ module Users
   end
 
   def login_through_form_as(user)
-    visit root_path
-    click_link "Sign in"
-
-    fill_in "user_login", with: user.email
-    fill_in "user_password", with: user.password
-
-    click_button "Enter"
+    login_through_form_with_email_and_password(user.email, user.password)
   end
 
   def login_through_form_as_officer(officer)
