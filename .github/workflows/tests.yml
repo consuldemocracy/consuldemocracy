@@ -46,6 +46,11 @@ jobs:
         run: npm clean-install
       - name: Install ImageMagick
         run: sudo apt-get install imagemagick
+      - name: Setup Chrome/Chromium
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: 133
+          install-chromedriver: true
       - name: Copy secrets and database files
         run: for i in config/*.example; do cp "$i" "${i/.example}"; done
       - name: Setup database
