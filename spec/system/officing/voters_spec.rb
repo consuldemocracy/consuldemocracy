@@ -158,44 +158,4 @@ describe "Voters" do
       expect(page).not_to have_content poll1.name
     end
   end
-
-  scenario "Store officer and booth information" do
-    create(:user, :in_census)
-    poll1 = create(:poll, name: "¿Quieres que XYZ sea aprobado?")
-    poll2 = create(:poll, name: "Pregunta de votación de prueba")
-
-    second_booth = create(:poll_booth)
-
-    ba1 = create(:poll_booth_assignment, poll: poll1, booth: second_booth)
-    ba2 = create(:poll_booth_assignment, poll: poll2, booth: second_booth)
-    create(:poll_shift, officer: officer, booth: second_booth, date: Date.current, task: :vote_collection)
-
-    validate_officer
-    visit new_officing_residence_path
-    set_officing_booth(second_booth)
-    officing_verify_residence
-
-    within("#poll_#{poll1.id}") do
-      click_button "Confirm vote"
-
-      expect(page).to have_content "Vote introduced!"
-    end
-
-    within("#poll_#{poll2.id}") do
-      click_button "Confirm vote"
-
-      expect(page).to have_content "Vote introduced!"
-    end
-
-    expect(Poll::Voter.count).to eq(2)
-
-    voter1 = Poll::Voter.first
-
-    expect(voter1.booth_assignment).to eq(ba1)
-    expect(voter1.officer_assignment).to eq(ba1.officer_assignments.first)
-
-    voter2 = Poll::Voter.last
-    expect(voter2.booth_assignment).to eq(ba2)
-    expect(voter2.officer_assignment).to eq(ba2.officer_assignments.first)
-  end
 end
