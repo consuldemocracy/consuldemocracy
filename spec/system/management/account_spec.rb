@@ -42,7 +42,7 @@ describe "Account" do
 
     logout
 
-    login_through_form_with_email_and_password(user.email, "new_password")
+    login_through_form_with(user.email, password: "new_password")
 
     expect(page).to have_content "You have been signed in successfully."
   end
@@ -63,7 +63,7 @@ describe "Account" do
 
     logout
 
-    login_through_form_with_email_and_password(user.username, new_password)
+    login_through_form_with(user.username, password: new_password)
 
     expect(page).to have_content "You have been signed in successfully."
   end
