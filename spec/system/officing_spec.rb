@@ -117,16 +117,18 @@ describe "Poll Officing" do
     in_browser(:one) do
       login_as officer1.user
       visit officing_root_path
+
+      expect(page).to have_content "Here you can validate user documents and store voting results"
     end
 
     in_browser(:two) do
       login_as officer2.user
       visit officing_root_path
+
+      expect(page).to have_content "Here you can validate user documents and store voting results"
     end
 
     in_browser(:one) do
-      expect(page).to have_content("Here you can validate user documents and store voting results")
-
       visit new_officing_residence_path
       expect(page).to have_css "#residence_document_type"
 
@@ -148,8 +150,6 @@ describe "Poll Officing" do
     end
 
     in_browser(:two) do
-      expect(page).to have_content("Here you can validate user documents and store voting results")
-
       visit new_officing_residence_path
       expect(page).to have_css "#residence_document_type"
 
