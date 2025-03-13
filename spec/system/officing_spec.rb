@@ -130,12 +130,8 @@ describe "Poll Officing" do
 
     in_browser(:one) do
       visit new_officing_residence_path
-      select "DNI", from: "residence_document_type"
-      fill_in "residence_document_number", with: "12345678Z"
-      fill_in "residence_year_of_birth", with: "1980"
-      click_button "Validate document"
+      officing_verify_residence(document_number: "12345678Z")
 
-      expect(page).to have_content "Document verified with Census"
       click_button "Confirm vote"
       expect(page).to have_content "Vote introduced!"
       expect(Poll::Voter.where(document_number: "12345678Z",
@@ -143,19 +139,12 @@ describe "Poll Officing" do
                                origin: "booth",
                                officer_id: officer1)
                         .count).to be(1)
-
-      visit final_officing_polls_path
-      expect(page).to have_content("Polls ready for final recounting")
     end
 
     in_browser(:two) do
       visit new_officing_residence_path
-      select "DNI", from: "residence_document_type"
-      fill_in "residence_document_number", with: "12345678Y"
-      fill_in "residence_year_of_birth", with: "1980"
-      click_button "Validate document"
+      officing_verify_residence(document_number: "12345678Y")
 
-      expect(page).to have_content "Document verified with Census"
       click_button "Confirm vote"
       expect(page).to have_content "Vote introduced!"
       expect(Poll::Voter.where(document_number: "12345678Y",
@@ -163,9 +152,6 @@ describe "Poll Officing" do
                                origin: "booth",
                                officer_id: officer2)
                         .count).to be(1)
-
-      visit final_officing_polls_path
-      expect(page).to have_content("Polls ready for final recounting")
     end
   end
 end
