@@ -42,12 +42,7 @@ describe "Moderate users" do
 
     expect(page).to have_content "You have been signed out successfully"
 
-    visit root_path
-
-    click_link "Sign in"
-    fill_in "user_login",    with: citizen.email
-    fill_in "user_password", with: citizen.password
-    click_button "Enter"
+    login_through_form_as(citizen)
 
     expect(page).to have_content "Invalid Email or username or password"
     expect(page).to have_current_path(new_user_session_path)
