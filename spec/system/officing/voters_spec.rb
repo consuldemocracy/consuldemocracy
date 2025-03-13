@@ -75,7 +75,7 @@ describe "Voters" do
     expect(user).not_to be_level_two_verified
 
     logout
-    login_through_form_as_officer(officer.user)
+    login_through_form_as_officer(officer)
 
     visit new_officing_residence_path
     officing_verify_residence
