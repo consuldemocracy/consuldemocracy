@@ -130,12 +130,11 @@ describe "Poll Officing" do
 
     in_browser(:one) do
       visit new_officing_residence_path
-      expect(page).to have_css "#residence_document_type"
-
       select "DNI", from: "residence_document_type"
       fill_in "residence_document_number", with: "12345678Z"
       fill_in "residence_year_of_birth", with: "1980"
       click_button "Validate document"
+
       expect(page).to have_content "Document verified with Census"
       click_button "Confirm vote"
       expect(page).to have_content "Vote introduced!"
@@ -151,12 +150,11 @@ describe "Poll Officing" do
 
     in_browser(:two) do
       visit new_officing_residence_path
-      expect(page).to have_css "#residence_document_type"
-
       select "DNI", from: "residence_document_type"
       fill_in "residence_document_number", with: "12345678Y"
       fill_in "residence_year_of_birth", with: "1980"
       click_button "Validate document"
+
       expect(page).to have_content "Document verified with Census"
       click_button "Confirm vote"
       expect(page).to have_content "Vote introduced!"
