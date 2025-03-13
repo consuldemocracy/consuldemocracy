@@ -34,13 +34,8 @@ module Users
     click_button "Enter"
   end
 
-  def login_through_form_as_officer(user)
-    visit root_path
-    click_link "Sign in"
-
-    fill_in "user_login", with: user.email
-    fill_in "user_password", with: user.password
-    click_button "Enter"
+  def login_through_form_as_officer(officer)
+    login_through_form_as(officer.user)
 
     expect(page).to have_content "You have been signed in successfully"
   end
