@@ -161,7 +161,7 @@ describe "Advanced search" do
       find_field("With the text").click
       click_button "Filter"
 
-      within("#debates") do
+      within("#debates") do # TODO: What if the browser checks the existence of this element before changing to the new page?
         expect(page).to have_css(".debate", count: 2)
 
         expect(page).to have_content(debate1.title)
