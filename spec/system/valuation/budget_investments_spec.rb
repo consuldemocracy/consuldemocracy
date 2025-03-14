@@ -427,7 +427,9 @@ describe "Valuation budget investments" do
 
       expect(page).to have_content investment.title
       click_link investment.title
-      expect(page).to have_content("Valuation finished")
+
+      expect(page).to have_content "Investment preview"
+      expect(page).to have_content "Valuation finished"
     end
 
     context "Reopen valuation" do

@@ -78,15 +78,14 @@ describe "Users" do
     fill_in "document_verification_document_number", with: "12345678Z"
     click_button "Check document"
 
-    expect(page).not_to have_content "This user account is already verified."
     expect(page).to have_content "This user can participate in the website with the following permissions"
+    expect(page).not_to have_content "This user account is already verified."
 
     click_link "Delete user"
     accept_confirm { click_button "Delete account" }
 
     expect(page).to have_content "User account deleted."
 
-    visit management_document_verifications_path
     fill_in "document_verification_document_number", with: "12345678Z"
     click_button "Check document"
 
