@@ -74,6 +74,7 @@ describe "Voter" do
     end
 
     scenario "Voting in booth" do
+      admin_user = admin.user
       login_through_form_as_officer(officer)
 
       visit new_officing_residence_path
@@ -88,7 +89,7 @@ describe "Voter" do
       end
 
       logout
-      login_as(admin.user)
+      login_as(admin_user)
       visit admin_poll_recounts_path(poll)
 
       within("#total_system") do
@@ -155,6 +156,7 @@ describe "Voter" do
       end
 
       scenario "Trying to vote in booth and then in web" do
+        admin_user = admin.user
         login_through_form_as_officer(officer)
 
         vote_for_poll_via_booth
@@ -170,7 +172,7 @@ describe "Voter" do
                                      "You can not participate again."
 
         logout
-        login_as(admin.user)
+        login_as(admin_user)
         visit admin_poll_recounts_path(poll)
 
         within("#total_system") do
@@ -186,6 +188,7 @@ describe "Voter" do
     scenario "Voting in poll and then verifiying account" do
       allow_any_instance_of(Verification::Sms).to receive(:generate_confirmation_code).and_return("1357")
       user = create(:user)
+      admin_user = admin.user
 
       login_through_form_as_officer(officer)
       vote_for_poll_via_booth
@@ -208,7 +211,7 @@ describe "Voter" do
                                    "You can not participate again."
 
       logout
-      login_as(admin.user)
+      login_as(admin_user)
       visit admin_poll_recounts_path(poll)
 
       within("#total_system") do
