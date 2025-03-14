@@ -111,6 +111,8 @@ describe "Admin poll questions", :admin do
 
     click_button "Save"
 
+    # TODO: this test failed when being the first in a batch. No
+    # idea why, though.
     expect(page).to have_content(proposal.title)
   end
 
