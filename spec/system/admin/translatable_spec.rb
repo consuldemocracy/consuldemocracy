@@ -87,7 +87,6 @@ describe "Admin edit translatable records", :admin do
 
         expect(page).to have_content "Draft updated successfully"
 
-        visit path
         click_link class: "fullscreen-toggle"
 
         expect(page).to have_field "Text", with: "Text in English"
@@ -120,6 +119,9 @@ describe "Admin edit translatable records", :admin do
         expect(page).to have_content "Question updated successfully"
 
         visit path
+
+        expect(page).not_to have_content "Question updated successfully"
+
         select "Português brasileiro", from: "Language:"
 
         expect(page).to have_field "Questão", with: "Português"
@@ -338,8 +340,6 @@ describe "Admin edit translatable records", :admin do
 
       expect(page).to have_content "Process updated successfully"
 
-      visit edit_admin_legislation_process_path(translatable)
-
       expect_to_have_language_selected "Français"
       expect_not_to_have_language "English"
     end
@@ -363,8 +363,8 @@ describe "Admin edit translatable records", :admin do
 
       visit path
 
-      expect(page).not_to have_select "Current language", with_options: ["Español"]
       expect(page).to have_select "Current language", with_options: ["English"]
+      expect(page).not_to have_select "Current language", with_options: ["Español"]
     end
   end
 

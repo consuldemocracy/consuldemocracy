@@ -52,6 +52,9 @@ describe "Budgets creation wizard", :admin do
     within("table") { expect(page).to have_content "All city" }
     expect(page).not_to have_content "There are no groups."
 
+    within("#notice") { click_button "Close" }
+    expect(page).not_to have_content "Group created successfully!"
+
     click_button "Add new group"
     fill_in "Group name", with: "Districts"
     click_button "Create new group"
@@ -84,6 +87,9 @@ describe "Budgets creation wizard", :admin do
     expect(page).to have_content "Heading created successfully!"
     within_table("Headings in Districts") { expect(page).to have_content "North" }
     expect(page).not_to have_content "There are no headings"
+
+    within("#notice") { click_button "Close" }
+    expect(page).not_to have_content "Heading created successfully!"
 
     click_button "Add new heading"
     fill_in "Heading name", with: "South"

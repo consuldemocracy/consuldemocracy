@@ -34,16 +34,16 @@ describe "Moderate users" do
     expect(page).not_to have_content(debate2.title)
     expect(page).to have_content(debate3.title)
 
-    visit debate_path(debate3)
+    click_link debate3.title
 
+    expect(page).to have_css "h1", exact_text: debate3.title
     expect(page).not_to have_content(comment3.body)
 
     click_link "Sign out"
 
     expect(page).to have_content "You have been signed out successfully"
 
-    visit root_path
-
+    within("#notice") { click_button "Close" }
     click_link "Sign in"
     fill_in "user_login",    with: citizen.email
     fill_in "user_password", with: citizen.password
