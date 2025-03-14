@@ -86,7 +86,7 @@ describe "Users" do
 
     expect(page).to have_content "User account deleted."
 
-    visit management_document_verifications_path
+    refresh
     fill_in "document_verification_document_number", with: "12345678Z"
     click_button "Check document"
 

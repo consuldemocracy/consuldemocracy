@@ -34,7 +34,7 @@ shared_examples "flaggable" do |factory_name, admin: false|
       expect(page).not_to have_link "Flag as inappropriate", visible: :all
     end
 
-    visit path
+    refresh
 
     within "##{dom_id(flaggable)} .flag-content" do
       expect(page).to have_link "Unflag", visible: :hidden

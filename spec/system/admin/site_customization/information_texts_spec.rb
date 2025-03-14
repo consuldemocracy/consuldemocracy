@@ -74,7 +74,7 @@ describe "Admin custom information texts", :admin do
 
       expect(page).to have_content "Translation updated successfully"
 
-      visit admin_site_customization_information_texts_path
+      refresh
       select "Français", from: "Current language"
 
       expect(page).to have_content "Aide personalise sur les débats"

@@ -64,7 +64,7 @@ describe "Poll question options", :admin do
     expect(page).to have_content "Changes saved"
     expect(page).to have_content "New title"
 
-    visit admin_question_path(question)
+    refresh
 
     expect(page).not_to have_content "Answer title"
 

@@ -18,7 +18,7 @@ describe "Budget Poll Officing" do
     create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :recount_scrutiny)
     create(:poll_officer_assignment, booth_assignment: booth_assignment, officer: officer)
 
-    visit officing_root_path
+    refresh
 
     expect(page).not_to have_content("You don't have officing shifts today")
     expect(page).to have_content("Validate document")

@@ -41,7 +41,7 @@ describe "Account" do
 
     expect(page).to have_content "Changes saved"
 
-    visit account_path
+    refresh
 
     expect(page).to have_css "input[value='Larry Bird']"
     expect(find("#account_email_on_comment")).to be_checked
@@ -96,7 +96,7 @@ describe "Account" do
 
     expect(page).to have_content "Changes saved"
 
-    visit account_path
+    refresh
 
     expect(page).to have_css "input[value='Google']"
     expect(find("#account_email_on_comment")).to be_checked
@@ -130,7 +130,7 @@ describe "Account" do
       click_button "Save changes"
       expect(page).to have_content "Changes saved"
 
-      visit account_path
+      refresh
       expect(find("#account_official_position_badge")).to be_checked
     end
 
@@ -144,7 +144,7 @@ describe "Account" do
       expect(page).not_to have_css "#account_official_position_badge"
 
       login_as(official_user3)
-      visit account_path
+      refresh
 
       expect(page).not_to have_css "#account_official_position_badge"
     end

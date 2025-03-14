@@ -26,7 +26,7 @@ describe "Admin tags", :admin do
 
     within("table") { expect(page).to have_content "important issues" }
 
-    visit admin_tags_path
+    refresh
 
     expect(page).to have_content "important issues"
   end

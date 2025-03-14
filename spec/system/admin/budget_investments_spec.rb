@@ -72,7 +72,7 @@ describe "Admin budget investments", :admin do
       end
 
       budget_investment3.update!(administrator_id: admin.id)
-      visit admin_budget_budget_investments_path(budget_id: budget.id)
+      refresh
 
       within("#budget_investment_#{budget_investment3.id}") do
         expect(page).to have_content("Gema")
@@ -1814,7 +1814,7 @@ describe "Admin budget investments", :admin do
       expect(cookie_value).to eq("id,supports,admin,geozone,feasibility,valuation_finished," \
                                  "visible_to_valuators,selected,incompatible,author")
 
-      visit admin_budget_budget_investments_path(budget)
+      refresh
 
       cookie_value = cookie_by_name("investments-columns")[:value]
 

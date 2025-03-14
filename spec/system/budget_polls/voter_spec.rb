@@ -110,7 +110,7 @@ describe "BudgetPolls", :with_frozen_time do
         expect(page).to have_content "Remove"
       end
 
-      visit budget_investment_path(budget, investment)
+      refresh
 
       within("#budget_investment_#{investment.id}") do
         expect(page).to have_content "Remove vote"
