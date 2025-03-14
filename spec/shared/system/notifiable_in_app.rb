@@ -26,8 +26,10 @@ shared_examples "notifiable in-app" do |factory_name|
   end
 
   scenario "Multiple users commented on my notifiable" do
-    3.times do |n|
-      login_as(create(:user, :verified))
+    users = 3.times.map { create(:user, :verified) }
+
+    users.each.with_index do |user, n|
+      login_as(user)
 
       visit path_for(notifiable)
 
@@ -61,9 +63,10 @@ shared_examples "notifiable in-app" do |factory_name|
 
   scenario "Multiple replies to my comment" do
     comment = create(:comment, commentable: notifiable, user: author)
+    users = 3.times.map { create(:user, :verified) }
 
-    3.times do |n|
-      login_as(create(:user, :verified))
+    users.each.with_index do |user, n|
+      login_as(user)
       visit path_for(notifiable)
 
       within("#comment_#{comment.id}_reply") { click_link "Reply" }
