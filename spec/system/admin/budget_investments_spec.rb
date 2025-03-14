@@ -55,7 +55,7 @@ describe "Admin budget investments", :admin do
       budget_investment2 = create(:budget_investment, budget: budget,
                                                       valuators: [valuator1, valuator2],
                                                       valuator_groups: [valuator_group])
-      budget_investment3 = create(:budget_investment, budget: budget)
+      budget_investment3 = create(:budget_investment, budget: budget, administrator: admin)
 
       visit admin_budget_budget_investments_path(budget_id: budget.id)
 
@@ -70,9 +70,6 @@ describe "Admin budget investments", :admin do
         expect(page).to have_content("Valuator Miriam")
         expect(page).to have_content("Health")
       end
-
-      budget_investment3.update!(administrator_id: admin.id)
-      refresh
 
       within("#budget_investment_#{budget_investment3.id}") do
         expect(page).to have_content("Gema")
