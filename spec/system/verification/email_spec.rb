@@ -47,16 +47,18 @@ describe "Verify email" do
                   document_number: "12345678Z",
                   document_type: "dni")
 
-    verified_user = create(:verified_user,
-                           document_number: "12345678Z",
-                           document_type: "dni",
-                           email: "rock@example.com")
+    create(:verified_user,
+           document_number: "12345678Z",
+           document_type: "dni",
+           email: "rock@example.com")
 
     login_as(user)
-
     visit verified_user_path
 
-    verified_user.destroy!
+    expect(page).to have_button "Send code"
+
+    allow(VerifiedUser).to receive(:by_user).and_return(VerifiedUser.none)
+
     click_button "Send code"
 
     expect(page).to have_content "There was a problem with sending an email to your account"
