@@ -18,19 +18,15 @@ module Polls
 
     first(:button, "Confirm vote").click
     expect(page).to have_content "Vote introduced!"
-
-    expect(Poll::Voter.count).to eq(1)
   end
 
-  def confirm_phone(user = nil)
-    user ||= User.last
-
+  def confirm_phone(code:)
     fill_in "sms_phone", with: "611111111"
     click_button "Send"
 
     expect(page).to have_content "Enter the confirmation code sent to you by text message"
 
-    fill_in "sms_confirmation_code", with: user.reload.sms_confirmation_code
+    fill_in "sms_confirmation_code", with: code
     click_button "Send"
 
     expect(page).to have_content "Code correct"

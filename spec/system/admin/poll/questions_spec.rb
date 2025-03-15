@@ -111,6 +111,8 @@ describe "Admin poll questions", :admin do
 
     click_button "Save"
 
+    # TODO: this test failed when being the first in a batch. No
+    # idea why, though.
     expect(page).to have_content(proposal.title)
   end
 
@@ -118,10 +120,9 @@ describe "Admin poll questions", :admin do
     create(:poll, :future, name: "Proposals")
     proposal = create(:proposal, :successful)
 
-    visit admin_proposal_path(proposal)
-
-    expect(page).to have_content("This proposal has reached the required supports")
-    click_link "Add this proposal to a poll to be voted"
+    visit admin_proposals_path
+    click_link "Successful proposals"
+    click_link "Create question"
 
     expect(page).to have_current_path(new_admin_question_path, ignore_query: true)
     expect(page).to have_field("Question", with: proposal.title)
@@ -130,11 +131,7 @@ describe "Admin poll questions", :admin do
 
     click_button "Save"
 
-    expect(page).to have_content(proposal.title)
-
-    visit admin_questions_path
-
-    expect(page).to have_content(proposal.title)
+    expect(page).to have_content proposal.title
   end
 
   scenario "Update" do

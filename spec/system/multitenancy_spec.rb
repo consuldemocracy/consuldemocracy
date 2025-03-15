@@ -3,7 +3,7 @@ require "rails_helper"
 describe "Multitenancy", :seed_tenants do
   before { create(:tenant, schema: "mars") }
 
-  scenario "Disabled features", :no_js do
+  scenario "Disabled features", :show_exceptions do
     create(:tenant, schema: "venus")
     Tenant.switch("mars") { Setting["process.debates"] = true }
     Tenant.switch("venus") { Setting["process.debates"] = nil }
@@ -15,7 +15,9 @@ describe "Multitenancy", :seed_tenants do
     end
 
     with_subdomain("venus") do
-      expect { visit debates_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+      visit debates_path
+
+      expect(page).to have_title "Forbidden"
     end
   end
 
@@ -143,19 +145,13 @@ describe "Multitenancy", :seed_tenants do
     Tenant.switch("mars") { create(:user, email: "marty@consul.dev", password: "20151021") }
 
     with_subdomain("mars") do
-      visit new_user_session_path
-      fill_in "Email or username", with: "marty@consul.dev"
-      fill_in "Password", with: "20151021"
-      click_button "Enter"
+      login_through_form_with("marty@consul.dev", password: "20151021")
 
       expect(page).to have_content "You have been signed in successfully."
     end
 
     with_subdomain("venus") do
-      visit new_user_session_path
-      fill_in "Email or username", with: "marty@consul.dev"
-      fill_in "Password", with: "20151021"
-      click_button "Enter"
+      login_through_form_with("marty@consul.dev", password: "20151021")
 
       expect(page).to have_content "Invalid Email or username or password."
     end
@@ -163,10 +159,7 @@ describe "Multitenancy", :seed_tenants do
 
   scenario "Uses the right tenant after failing to sign in" do
     with_subdomain("mars") do
-      visit new_user_session_path
-      fill_in "Email or username", with: "wrong@consul.dev"
-      fill_in "Password", with: "wrong"
-      click_button "Enter"
+      login_through_form_with("wrong@consul.dev", password: "wrong")
 
       expect(page).to have_content "Invalid Email or username or password"
       expect(page).to have_css "html.tenant-mars"
