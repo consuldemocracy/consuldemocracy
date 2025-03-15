@@ -597,6 +597,9 @@ describe "Debates" do
       visit debates_path
       fill_in "search", with: "Show you got"
       click_button "Search"
+
+      expect(page).to have_content "Search results"
+
       click_link "newest"
       expect(page).to have_css "a.is-active", text: "newest"
 
@@ -621,6 +624,9 @@ describe "Debates" do
       visit debates_path
       fill_in "search", with: "Show you got"
       click_button "Search"
+
+      expect(page).to have_content "Search results"
+
       click_link "recommendations"
       expect(page).to have_css "a.is-active", text: "recommendations"
 
@@ -664,10 +670,11 @@ describe "Debates" do
     user.erase
 
     visit debates_path
-    expect(page).to have_content("User deleted")
+    expect(page).to have_content "User deleted"
 
     visit debate_path(debate)
-    expect(page).to have_content("User deleted")
+    expect(page).to have_css "h1", exact_text: debate.title
+    expect(page).to have_content "User deleted"
   end
 
   context "Suggesting debates" do

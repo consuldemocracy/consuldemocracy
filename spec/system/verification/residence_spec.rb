@@ -128,6 +128,9 @@ describe "Residence" do
 
       click_button "Verify residence"
       expect(page).to have_content "The Census was unable to verify your information"
+
+      within("#error_explanation") { click_button "Close" }
+      expect(page).not_to have_content "The Census was unable to verify your information"
     end
 
     click_button "Verify residence"

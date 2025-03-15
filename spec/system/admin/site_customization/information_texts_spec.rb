@@ -115,9 +115,14 @@ describe "Admin custom information texts", :admin do
       click_link "Remove language"
       click_button "Save"
 
-      expect(page).not_to have_link "Español"
+      expect(page).to have_content "Translation updated successfully"
+      expect(page).to have_select "Current language", options: ["English"]
+      expect(page).not_to have_field "debates.index.featured_debates"
 
       visit admin_site_customization_information_texts_path(tab: "debates")
+
+      expect(page).to have_field "debates.index.featured_debates"
+
       select "English", from: "Current language"
 
       expect(page).to have_content "Start a new debate"

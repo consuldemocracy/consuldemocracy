@@ -94,12 +94,9 @@ describe "Users" do
         click_button "Enter"
 
         expect(page).to have_content "You have been signed in successfully."
-
-        visit account_path
-
         expect(page).to have_link "My content", href: user_path(u1)
 
-        visit "/"
+        within("#notice") { click_button "Close" }
         click_link "Sign out"
 
         expect(page).to have_content "You have been signed out successfully."
@@ -231,6 +228,8 @@ describe "Users" do
 
         expect(page).to have_current_path(finish_signup_path)
         click_link "Cancel login"
+
+        expect(page).to have_content "You have been signed out successfully"
 
         visit "/"
         expect_not_to_be_signed_in

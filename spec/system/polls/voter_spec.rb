@@ -27,7 +27,7 @@ describe "Voter" do
         expect(page).not_to have_button("Vote Yes")
       end
 
-      visit poll_path(poll)
+      refresh
 
       expect(page).to have_content("You have already participated in this poll.")
       expect(page).to have_content("If you vote again it will be overwritten")
@@ -51,7 +51,7 @@ describe "Voter" do
         expect(page).to have_button("Vote No")
       end
 
-      visit poll_path(poll)
+      refresh
 
       expect(page).not_to have_content("You have already participated in this poll.")
       expect(page).not_to have_content("If you vote again it will be overwritten")

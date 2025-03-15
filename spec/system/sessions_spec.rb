@@ -39,7 +39,13 @@ describe "Sessions" do
     user = create(:user, :level_two)
 
     visit debates_path
+
+    expect(page).to have_content "Help with debates"
+
     visit "/"
+
+    expect(page).to have_content "Most active proposals"
+
     click_link "Sign in"
     fill_in "user_login", with: user.email
     fill_in "user_password", with: user.password
