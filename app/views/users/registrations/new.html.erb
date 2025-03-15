@@ -15,7 +15,6 @@
   <div class="row">
     <div class="small-12 column">
 
-      <%= f.hidden_field :use_redeemable_code %>
       <%= f.hidden_field :locale, value: I18n.locale %>
 
       <%= f.text_field :username,  autofocus: true, maxlength: User.username_max_length,
@@ -29,10 +28,6 @@
 
       <%= f.password_field :password_confirmation, autocomplete: "off",
                                                    label: t("devise_views.users.registrations.new.password_confirmation_label") %>
-
-      <% if resource.use_redeemable_code %>
-        <%= f.text_field :redeemable_code %>
-      <% end %>
 
       <%= f.check_box :terms_of_service,
                       label: t("devise_views.users.registrations.new.terms",
