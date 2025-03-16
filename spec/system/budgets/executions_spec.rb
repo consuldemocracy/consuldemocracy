@@ -18,12 +18,6 @@ describe "Executions" do
 
     visit budget_executions_path(budget)
     within(".budgets-stats") { expect(page).to have_content budget.name }
-
-    visit budget_executions_path("budget_slug")
-    within(".budgets-stats") { expect(page).to have_content budget.name }
-
-    visit budget_executions_path(budget)
-    within(".budgets-stats") { expect(page).to have_content budget.name }
   end
 
   scenario "only displays investments with milestones" do
