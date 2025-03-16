@@ -10,13 +10,16 @@ describe "Executions" do
   let!(:investment4) { create(:budget_investment, :winner,       heading: heading) }
   let!(:investment3) { create(:budget_investment, :incompatible, heading: heading) }
 
-  scenario "finds budget by id or slug" do
+  scenario "finds budget by slug" do
     budget.update!(slug: "budget_slug")
 
     visit budget_executions_path("budget_slug")
     within(".budgets-stats") { expect(page).to have_content budget.name }
+  end
 
-    visit budget_executions_path(budget)
+  scenario "finds budget by id" do
+    visit budget_executions_path(budget.id)
+
     within(".budgets-stats") { expect(page).to have_content budget.name }
   end
 
