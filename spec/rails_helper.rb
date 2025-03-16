@@ -66,6 +66,49 @@ module Capybara
         expect(page).to have_css "main#main"
       end
     end
+
+    def click_button_and_check_path(...)
+      path = current_path
+
+      original_click_button(...)
+
+      page.has_no_current_path?(path)
+    end
+
+    alias_method :original_click_button, :click_button
+    def click_button(*, check_path: true, **)
+      if check_path
+        click_button_and_check_path(*, **)
+      else
+        original_click_button(*, **)
+      end
+    end
+
+    alias_method :original_accept_confirm, :accept_confirm
+    def accept_confirm(...)
+      define_singleton_method :click_button do |*args, **kw|
+        original_click_button(*args, **kw)
+      end
+
+      original_accept_confirm(...)
+
+      define_singleton_method :click_button do |*args, **kw|
+        click_button_and_check_path(*args, **kw)
+      end
+    end
+
+    alias_method :original_dismiss_confirm, :dismiss_confirm
+    def dismiss_confirm(...)
+      define_singleton_method :click_button do |*args, **kw|
+        original_click_button(*args, **kw)
+      end
+
+      original_dismiss_confirm(...)
+
+      define_singleton_method :click_button do |*args, **kw|
+        click_button_and_check_path(*args, **kw)
+      end
+    end
   end
 end
 

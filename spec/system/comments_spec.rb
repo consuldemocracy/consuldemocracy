@@ -514,7 +514,7 @@ describe "Comments" do
     visit polymorphic_path(resource)
 
     fill_in fill_text, with: "Testing submit button!"
-    click_button button_text
+    click_button button_text, check_path: false
 
     expect(page).to have_button button_text, disabled: true
     expect(page).to have_content "Testing submit button!"
