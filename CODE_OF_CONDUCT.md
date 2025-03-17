@@ -1,4 +1,4 @@
-# Contributor Covenant Code of Conduct
+# Contributor Covenant Code of Conduct (NTARI Democracy Console)
 
 ## Our Pledge
 
