@@ -1,6 +1,6 @@
 # Open source forks y modificaciones
 
-El ecosistema de software en torno al proyecto Consul Democracy es grande y amplio, y engloba a muchas empresas de software, gobiernos locales, organizaciones sin ánimo de lucro dedicadas a la tecnología cívica y ONG que trabajan con el código, lo modifican para satisfacer sus necesidades particulares y, en ocasiones, recuperan características cruciales para poner sus modificaciones a disposición de una comunidad más amplia de usuarios y desarrolladores.&#x20;
+El ecosistema de software en torno al proyecto Consul Democracy es grande y amplio, y engloba a muchas empresas de software, gobiernos locales, organizaciones sin ánimo de lucro dedicadas a la tecnología cívica y ONG que trabajan con el código, lo modifican para satisfacer sus necesidades particulares y, en ocasiones, recuperan características cruciales para poner sus modificaciones a disposición de una comunidad más amplia de usuarios y desarrolladores.
 
 He aquí una lista preliminar y creciente de bifurcaciones y modificaciones de código abierto de nuestro software que sabemos que existen:
 
@@ -42,20 +42,47 @@ Mexico
 
 Netherlands
 
+* Provincie Fryslan platform 'Stim fan Fryslan'
+  * platform: [https://stimfanfryslan.frl/](https://stimfanfryslan.frl/)
+* Gemeente Oldenzaal platform 'Stem van Oldenzaal'
+  * platform: [https://www.stemvanoldenzaal.nl/](https://www.stemvanoldenzaal.nl/)
+* Gemeente Hogeland platform 'Stem van Ons Hogeland'
+  * platform: [https://stemvanonshogeland.nl/](https://stemvanonshogeland.nl/)
+* Gemeente Waadhoeke platform 'Stem van Waadhoeke'
+  * platform: [https://stemvanwaadhoeke.nl/](https://stemvanwaadhoeke.nl/)
+* Gemeente Noard-East Fryslan platform 'Stem van Noardeast'
+  * platform: [https://stemvannoardeast.nl/](https://stemvannoardeast.nl/)
+* Gemeente Midden-Groningen platform 'Stem van Midden-Groningen'
+  * platform: [https://stemvan.midden-groningen.nl/](https://stemvan.midden-groningen.nl/)
+*   Gemeente Dantumadiel platform 'Stem van Dantumadiel'
+
+    * platform: [https://stemvandantumadiel.frl/](https://stemvandantumadiel.frl/)\\
+
+
+
+    * code base compartido: [https://github.com/consul-nl/consul-nl](https://github.com/consul-nl/consul-nl)
+
 Romania
 
 * Primaria Sinaia platform 'Bugetare Participativ'
+  * platform: [https://bugetparticipativ.primaria-sinaia.ro/](https://bugetparticipativ.primaria-sinaia.ro/)
 * Primaria Brasov Elinor platform 'Bugetare Participativ'
-* Primaria Dumbravita platform 'Dumbravita Decide'
-  * platforms: [https://bugetparticipativ.primaria-sinaia.ro/](https://bugetparticipativ.primaria-sinaia.ro/), [https://bugetareparticipativa.primariabrasovenilor.ro/](https://bugetareparticipativa.primariabrasovenilor.ro/) [https://dumbravitadecide.ro/](https://dumbravitadecide.ro/)
-  * same code base: [https://github.com/code4romania/consul](https://github.com/code4romania/consul)
+  * platform: [https://bugetareparticipativa.primariabrasovenilor.ro/](https://bugetareparticipativa.primariabrasovenilor.ro/)&#x20;
+*   Primaria Dumbravita platform 'Dumbravita Decide'
+
+    * platforms: , [https://dumbravitadecide.ro/](https://dumbravitadecide.ro/)
+
+
+
+    * code base compartido: [https://github.com/code4romania/consul](https://github.com/code4romania/consul)
 
 Slovenia
 
 * City of Maribor platform 'Maribor Sodeluj'
+  * platform: [https://www.mariborsodeluj.si/](https://www.mariborsodeluj.si/),
 * Obcine Medvode platform 'Sodeluj in Glasuj'
-  * platform: [https://www.mariborsodeluj.si/](https://www.mariborsodeluj.si/), [https://www.sodelujinglasuj.si/](https://www.sodelujinglasuj.si/)
-  * same code base: [https://github.com/danesjenovdan/consul](https://github.com/danesjenovdan/consul)
+  * platform: [https://www.sodelujinglasuj.si/](https://www.sodelujinglasuj.si/)
+  * code base compartido: [https://github.com/danesjenovdan/consul](https://github.com/danesjenovdan/consul)
 * Obcina Hrpelje-Kozina
   * platform: [https://pp.hrpelje-kozina.si/](https://pp.hrpelje-kozina.si/)
   * code base:
@@ -86,4 +113,10 @@ Spain
 
 United Kingdom
 
+
+
 Uruguay
+
+* Intendencia de Montevideo platform 'Montevideo Participa'
+  * platform: [https://participa.montevideo.gub.uy/](https://participa.montevideo.gub.uy/)
+  * code base:&#x20;
