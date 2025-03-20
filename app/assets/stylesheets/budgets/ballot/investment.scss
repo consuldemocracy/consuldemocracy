@@ -33,6 +33,7 @@
     position: absolute;
     right: $close-icon-margin;
     top: $close-icon-margin;
+    cursor: pointer;
   }
 
   &:hover {

@@ -3,7 +3,7 @@
   <%= investment_price %>
 
   <% if budget.balloting? %>
-    <%= link_to delete_path,
+    <%= button_to delete_path,
                 title: t("budgets.ballots.show.remove"),
                 class: "remove-budget-investment",
                 method: :delete,
