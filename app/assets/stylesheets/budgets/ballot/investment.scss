@@ -29,11 +29,11 @@
 
   .remove-budget-investment {
     @include has-fa-icon(times, solid);
+    cursor: pointer;
     font-size: $close-icon-size;
     position: absolute;
     right: $close-icon-margin;
     top: $close-icon-margin;
-    cursor: pointer;
   }
 
   &:hover {
