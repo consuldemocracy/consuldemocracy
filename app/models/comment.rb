@@ -14,7 +14,7 @@ class Comment < ApplicationRecord
   acts_as_votable
   has_ancestry touch: true
 
-  attr_accessor :as_moderator, :as_administrator
+  attr_accessor :as_moderator, :as_administrator, :valuation
 
   translates :body, touch: true
   include Globalizable
