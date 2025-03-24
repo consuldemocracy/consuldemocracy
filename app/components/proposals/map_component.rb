@@ -14,7 +14,7 @@
 
      def coordinates
       Rails.logger.info "Proposals data: #{proposals.inspect}"
-      map_proposals = Proposal.all
+      map_proposals = Proposal.published
       Rails.logger.info "Map Proposals data: #{map_proposals.inspect}"
       MapLocation.proposals_json_data(map_proposals)
     end
