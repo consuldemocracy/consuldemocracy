@@ -2,19 +2,21 @@
 
 The software ecosystem around the Consul Democracy project is large and wide and emcompasses many software companies, local governments, civic tech non-profits and ngo's who work with the code, modify it to meet their special needs, and, sometimes, bring crucial features back to make their modifications available to the wider community of users and developers.
 
-Here is a preliminary and growing list of open source forks and modifications of our software that we know exist:
+Here is a preliminary and growing list of open source forks and modifications of our software and its maintainers, that we know exist:
 
 Brasil
 
 * Prefeitura de São Paulo platform 'Participe+'
   * platform: [https://participemais.prefeitura.sp.gov.br/](https://participemais.prefeitura.sp.gov.br/)
   * code base: [https://codigoaberto.prefeitura.sp.gov.br/casacivil/participemais/-/tree/prodam\_12\_08\_24](https://codigoaberto.prefeitura.sp.gov.br/casacivil/participemais/-/tree/prodam_12_08_24)
+  * maitainer: Prefeitura de São Paulo ([https://capital.sp.gov.br/](https://capital.sp.gov.br/))
 
 Denmark
 
 * Aarhus Kommune platform 'Sammen om Aarhus'
   * platform: [https://www.sammenomaarhus.dk/](https://www.sammenomaarhus.dk/)
   * code base: [https://github.com/bellcom/consul](https://github.com/bellcom/consul)
+  * maintainer: Bellcom ([https://www.bellcom.dk/](https://www.bellcom.dk/))&#x20;
 
 Germany
 
@@ -27,6 +29,7 @@ Germany
 * Regensburg platform 'Mein Regensburg'
   * platform: [https://mein.regensburg.de/](https://mein.regensburg.de/)
   * code base: [https://github.com/StadtRegensburg/consul](https://github.com/StadtRegensburg/consul)
+  * maintainer all German repos: Demokratie Today ([https://demokratie.today/](https://demokratie.today/))
 
 Italy
 
@@ -46,7 +49,7 @@ Netherlands
   * platform: [https://stimfanfryslan.frl/](https://stimfanfryslan.frl/)
 * Gemeente Oldenzaal platform 'Stem van Oldenzaal'
   * platform: [https://www.stemvanoldenzaal.nl/](https://www.stemvanoldenzaal.nl/)
-* Gemeente Hogeland platform 'Stem van Ons Hogeland'&#x20;
+* Gemeente Hogeland platform 'Stem van Ons Hogeland'
   * platform: [https://stemvanonshogeland.nl/](https://stemvanonshogeland.nl/)
 * Gemeente Waadhoeke platform 'Stem van Waadhoeke'
   * platform: [https://stemvanwaadhoeke.nl/](https://stemvanwaadhoeke.nl/)
@@ -54,9 +57,10 @@ Netherlands
   * platform: [https://stemvannoardeast.nl/](https://stemvannoardeast.nl/)
 * Gemeente Midden-Groningen platform 'Stem van Midden-Groningen'
   * platform: [https://stemvan.midden-groningen.nl/](https://stemvan.midden-groningen.nl/)
-* Gemeente Dantumadiel platform 'Stem van Dantumadiel'&#x20;
-  * platform: [https://stemvandantumadiel.frl/](https://stemvandantumadiel.frl/)\
+* Gemeente Dantumadiel platform 'Stem van Dantumadiel'
+  * platform: [https://stemvandantumadiel.frl/](https://stemvandantumadiel.frl/)\\
   * shared code base: [https://github.com/consul-nl/consul-nl](https://github.com/consul-nl/consul-nl)
+  * maintainer of all Dutch repos: Buro Radstake
 
 Romania
 
@@ -65,8 +69,9 @@ Romania
 * Primaria Brasov Elinor platform 'Bugetare Participativ'
   * platform: [https://bugetareparticipativa.primariabrasovenilor.ro/](https://bugetareparticipativa.primariabrasovenilor.ro/)
 * Primaria Dumbravita platform 'Dumbravita Decide'
-  * &#x20;platform: [https://dumbravitadecide.ro/](https://dumbravitadecide.ro/)
+  * platform: [https://dumbravitadecide.ro/](https://dumbravitadecide.ro/)
   * shared code base: [https://github.com/code4romania/consul](https://github.com/code4romania/consul)
+  * maintainer of all Romanian repos: Code4Romania ([https://www.code4.ro/ro](https://www.code4.ro/ro))
 
 Slovenia
 
@@ -77,12 +82,14 @@ Slovenia
 * Obcina Hrpelje-Kozina
   * platform: [https://pp.hrpelje-kozina.si/](https://pp.hrpelje-kozina.si/)
   * code base:
+  * maintainer of all Slovenian repos: Danes Je Nov Dan ([https://danesjenovdan.si/en/](https://danesjenovdan.si/en/))
 
 Spain
 
 * Ayuntamiento de Madrid platform 'Decide Madrid'
-  * platform: decide.madrid.es
+  * platform: https://decide.madrid.es/&#x20;
   * code base: [https://github.com/AyuntamientoMadrid/consul](https://github.com/AyuntamientoMadrid/consul)
+  * maintainer: Ayuntamiento de Madrid
 * Ajuntament de Castelló platform 'Decide Castello'
   * platform: [https://decidim.castello.es/](https://decidim.castello.es/)
   * code base: [https://github.com/AjuntamentdeCastello/consul](https://github.com/AjuntamentdeCastello/consul)
@@ -98,10 +105,32 @@ Spain
 * Generalitat Valenciana platform 'Pla Recuperem Valencia'
   * platform: [https://gvaparticipa.gva.es/](https://gvaparticipa.gva.es/)
   * code base: [https://github.com/Usabi/consul\_gva](https://github.com/Usabi/consul_gva)
+  * maintainer: Usabi ([https://usabi.es/](https://usabi.es/))
 * Ayuntamiento de Las Palmas de Gran Canaria platform 'LPGC Decide'
   * platform: [https://decide.laspalmasgc.es/](https://decide.laspalmasgc.es/)
   * code base: [https://github.com/LauraConcepcion/consulLPA](https://github.com/LauraConcepcion/consulLPA)
+  * maintainer: Usabi ([https://usabi.es/](https://usabi.es/))
 
-United Kingdom
+Scotland
+
+* The City of Edinburgh Council platform '
+  * platform: [https://yourvoice.edinburgh.gov.uk/](https://yourvoice.edinburgh.gov.uk/)
+* Westlothian Council platform 'Community Choices':
+  * platform: [https://westlothiancouncil.communitychoices.scot/](https://westlothiancouncil.communitychoices.scot/)
+* North Ayrshire Council platform 'Community Choices':
+  * platform: [https://northayrshire.communitychoices.scot/](https://northayrshire.communitychoices.scot/)
+* Glasgow Council platform 'Community Choices':
+  * platform: [https://glasgow.communitychoices.scot/](https://glasgow.communitychoices.scot/)
+* East Lothian Council platform 'Community Choices':
+  * platform: [https://eastlothian.communitychoices.scot/](https://eastlothian.communitychoices.scot/)
+  * code base:
+  * maintainer of all Scottish repos: Cosla ([https://www.cosla.gov.uk/](https://www.cosla.gov.uk/))
+
+
 
 Uruguay
+
+* Intendencia de Montevideo platform 'Montevideo Participa':
+  * platform: [https://participa.montevideo.gub.uy/](https://participa.montevideo.gub.uy/)
+  * code base:&#x20;
+  * maintainer: Intendencia de Montevideo ([https://montevideo.gub.uy/](https://montevideo.gub.uy/))
