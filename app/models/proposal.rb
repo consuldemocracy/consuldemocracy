@@ -55,7 +55,7 @@ class Proposal < ApplicationRecord
             unless: :skip_user_verification?
   validates :retired_reason,
             presence: true,
-            inclusion: { in: ->(*) { RETIRE_OPTIONS } },
+            inclusion: { in: ->(*) { RETIRE_OPTIONS }},
             unless: -> { retired_at.blank? }
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
@@ -242,7 +242,7 @@ class Proposal < ApplicationRecord
 
     orders
   end
- 
+
   def skip_user_verification?
     Rails.env.test? || Setting["feature.user.skip_verification"].present?
   end
@@ -264,11 +264,10 @@ class Proposal < ApplicationRecord
   end
 
   protected
-   
-  
-  def set_responsible_name
-    if author&.document_number?
-      self.responsible_name = author.document_number
+
+    def set_responsible_name
+      if author&.document_number?
+        self.responsible_name = author.document_number
+      end
     end
-  end
 end
