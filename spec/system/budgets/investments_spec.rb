@@ -1169,6 +1169,7 @@ describe "Budget Investments" do
 
       refresh
 
+      expect(page).not_to have_content "Investment project deleted successfully"
       expect(page).to have_content "User has no public activity"
       expect(page).not_to have_content investment1.title
     end

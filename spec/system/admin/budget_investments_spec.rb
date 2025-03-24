@@ -1802,6 +1802,8 @@ describe "Admin budget investments", :admin do
 
       click_button "Columns"
 
+      expect(page).to have_css "button[aria-expanded=true]", exact_text: "Columns"
+
       within("#js-columns-selector-wrapper") do
         uncheck "Title"
         uncheck "Price"
@@ -1815,6 +1817,8 @@ describe "Admin budget investments", :admin do
                                  "visible_to_valuators,selected,incompatible,author")
 
       refresh
+
+      expect(page).to have_css "button[aria-expanded=false]", exact_text: "Columns"
 
       cookie_value = cookie_by_name("investments-columns")[:value]
 

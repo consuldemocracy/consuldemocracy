@@ -69,6 +69,8 @@ describe "Admin booths", :admin do
     expect(page).to have_content "Booth created successfully"
 
     refresh
+
+    expect(page).not_to have_content "Booth created successfully"
     expect(page).to have_content "Upcoming booth"
     expect(page).to have_content "39th Street, number 2, ground floor"
   end

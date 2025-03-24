@@ -43,6 +43,7 @@ describe "Account" do
 
     refresh
 
+    expect(page).not_to have_content "Changes saved"
     expect(page).to have_css "input[value='Larry Bird']"
     expect(find("#account_email_on_comment")).to be_checked
     expect(find("#account_email_on_comment_reply")).to be_checked
@@ -98,6 +99,7 @@ describe "Account" do
 
     refresh
 
+    expect(page).not_to have_content "Changes saved"
     expect(page).to have_css "input[value='Google']"
     expect(find("#account_email_on_comment")).to be_checked
     expect(find("#account_email_on_comment_reply")).to be_checked
@@ -131,21 +133,25 @@ describe "Account" do
       expect(page).to have_content "Changes saved"
 
       refresh
+
+      expect(page).not_to have_content "Changes saved"
       expect(find("#account_official_position_badge")).to be_checked
     end
 
     scenario "Users with official position of level 2 and above" do
-      official_user2 = create(:user, official_level: 2)
-      official_user3 = create(:user, official_level: 3)
+      official_user2 = create(:user, official_level: 2, username: "Official 2")
+      official_user3 = create(:user, official_level: 3, username: "Official 3")
 
       login_as(official_user2)
       visit account_path
 
+      expect(page).to have_field "Username", with: "Official 2"
       expect(page).not_to have_css "#account_official_position_badge"
 
       login_as(official_user3)
       refresh
 
+      expect(page).to have_field "Username", with: "Official 3"
       expect(page).not_to have_css "#account_official_position_badge"
     end
   end
