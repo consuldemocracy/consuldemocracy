@@ -213,8 +213,6 @@ describe "Users" do
     end
 
     describe "User email" do
-      let(:user) { create(:user) }
-
       scenario "is not shown if no user logged in" do
         visit user_path(user)
         expect(page).not_to have_content(user.email)
