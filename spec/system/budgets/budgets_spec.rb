@@ -1,9 +1,7 @@
 require "rails_helper"
 
 describe "Budgets" do
-  let(:budget)             { create(:budget) }
-  let(:level_two_user)     { create(:user, :level_two) }
-  let(:allowed_phase_list) { ["balloting", "reviewing_ballots", "finished"] }
+  let(:budget) { create(:budget) }
 
   context "Load" do
     before { budget.update(slug: "budget_slug") }

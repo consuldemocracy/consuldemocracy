@@ -1,8 +1,7 @@
 require "rails_helper"
 
 describe "Stats" do
-  let(:budget)  { create(:budget, :finished) }
-  let(:heading) { create(:budget_heading, budget: budget, price: 1000) }
+  let(:budget) { create(:budget, :finished) }
 
   context "Load" do
     before { budget.update(slug: "budget_slug") }
