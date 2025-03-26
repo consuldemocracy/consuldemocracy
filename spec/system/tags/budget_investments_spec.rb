@@ -10,7 +10,6 @@ describe "Tags" do
   end
   let!(:tag_medio_ambiente) { create(:tag, :category, name: "Medio Ambiente") }
   let!(:tag_economia) { create(:tag, :category, name: "Economía") }
-  let(:admin) { create(:administrator).user }
 
   scenario "Index" do
     earth = create(:budget_investment, heading: heading, tag_list: tag_medio_ambiente.name)

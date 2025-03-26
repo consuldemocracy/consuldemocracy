@@ -130,8 +130,6 @@ describe "Admin edit translatable records", :admin do
   end
 
   context "Add an invalid translation" do
-    let(:translatable) { create(:budget_investment) }
-
     context "Input field" do
       let(:translatable) { create(:budget, main_link_url: "https://consuldemocracy.org") }
 
