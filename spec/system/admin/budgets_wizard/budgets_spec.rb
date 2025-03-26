@@ -48,9 +48,9 @@ describe "Budgets wizard, first step", :admin do
       visit new_admin_budgets_wizard_budget_path
       click_button "Continue to groups"
 
-      expect(page).not_to have_content "New participatory budget created successfully!"
       expect(page).to have_css ".is-invalid-label", text: "Name"
       expect(page).to have_css ".creation-timeline"
+      expect(page).not_to have_content "New participatory budget created successfully!"
     end
 
     scenario "Name should be unique" do
@@ -60,9 +60,9 @@ describe "Budgets wizard, first step", :admin do
       fill_in "Name", with: "Existing Name"
       click_button "Continue to groups"
 
-      expect(page).not_to have_content "New participatory budget created successfully!"
       expect(page).to have_css(".is-invalid-label", text: "Name")
       expect(page).to have_css("small.form-error", text: "has already been taken")
+      expect(page).not_to have_content "New participatory budget created successfully!"
     end
 
     scenario "Do not show results and stats settings on new budget" do

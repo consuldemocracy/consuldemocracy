@@ -65,11 +65,20 @@ describe "SMS Verification" do
     5.times do
       fill_in "sms_phone", with: "611111111"
       click_button "Send"
+
+      expect(page).to have_content "Enter the confirmation code sent to you by text message"
+
       click_link "Click here to send it again"
+
+      expect(page).not_to have_content "Enter the confirmation code sent to you by text message"
     end
 
     expect(page).to have_content "You have reached the maximum number of attempts. Please try again later."
     expect(page).to have_current_path(account_path)
+
+    visit root_path
+
+    expect(page).not_to have_content "You have reached the maximum number of attempts"
 
     visit new_sms_path
     expect(page).to have_content "You have reached the maximum number of attempts. Please try again later."

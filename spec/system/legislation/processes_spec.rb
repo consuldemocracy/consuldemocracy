@@ -113,7 +113,7 @@ describe "Legislation" do
         expect(page).to have_content("published")
 
         login_as(administrator)
-        visit legislation_processes_path
+        refresh
         expect(page).not_to have_content("not published")
         expect(page).to have_content("published")
       end
@@ -124,7 +124,7 @@ describe "Legislation" do
         expect(page).to have_content("past published")
 
         login_as(administrator)
-        visit legislation_processes_path(filter: "past")
+        refresh
         expect(page).not_to have_content("not published")
         expect(page).to have_content("past published")
       end

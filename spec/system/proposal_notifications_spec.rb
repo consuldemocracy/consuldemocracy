@@ -185,7 +185,6 @@ describe "Proposal Notifications" do
       user3 = create(:user, votables: [proposal])
 
       login_as(author)
-      visit root_path
 
       visit new_proposal_notification_path(proposal_id: proposal.id)
 
@@ -287,7 +286,6 @@ describe "Proposal Notifications" do
       proposal = create(:proposal, author: author, voters: [user], followers: [user])
 
       login_as(author)
-      visit root_path
 
       visit new_proposal_notification_path(proposal_id: proposal.id)
 

@@ -331,7 +331,7 @@ describe "Budget Investments" do
       order = all(".budget-investment h3").map(&:text)
       expect(order).not_to be_empty
 
-      visit budget_investments_path(budget, heading_id: heading.id)
+      refresh
       new_order = all(".budget-investment h3").map(&:text)
 
       expect(order).to eq(new_order)
@@ -522,7 +522,7 @@ describe "Budget Investments" do
       order = all(".budget-investment h3").map(&:text)
       expect(order).not_to be_empty
 
-      visit budget_investments_path(budget, heading_id: heading.id)
+      refresh
       new_order = all(".budget-investment h3").map(&:text)
 
       expect(order).to eq(new_order)
@@ -1167,8 +1167,9 @@ describe "Budget Investments" do
 
       expect(page).to have_content "Investment project deleted successfully"
 
-      visit user_path(user, tab: :budget_investments)
+      refresh
 
+      expect(page).not_to have_content "Investment project deleted successfully"
       expect(page).to have_content "User has no public activity"
       expect(page).not_to have_content investment1.title
     end

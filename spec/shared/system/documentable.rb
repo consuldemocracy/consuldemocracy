@@ -97,28 +97,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       end
 
       expect(page).to have_content "Document was deleted successfully."
-    end
-
-    scenario "Should hide documents tab if there is no documents" do
-      login_as documentable.author
-
-      visit send(documentable_path, arguments)
-
-      within "#document_#{document.id}" do
-        accept_confirm { click_button "Delete document" }
-      end
-
       expect(page).not_to have_content "Documents (0)"
-    end
-
-    scenario "Should redirect to documentable path after successful deletion" do
-      login_as documentable.author
-
-      visit send(documentable_path, arguments)
-
-      within "#document_#{document.id}" do
-        accept_confirm { click_button "Delete document" }
-      end
 
       within "##{ActionView::RecordIdentifier.dom_id(documentable)}" do
         expect(page).to have_css "h1", text: documentable.title

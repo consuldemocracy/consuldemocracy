@@ -161,6 +161,9 @@ describe "Polls" do
     end
 
     click_button "Update poll"
+
+    expect(page).to have_content "Poll updated successfully"
+
     visit edit_proposal_dashboard_poll_path(proposal, poll)
 
     expect(page).to have_css ".nested-fields", count: 1

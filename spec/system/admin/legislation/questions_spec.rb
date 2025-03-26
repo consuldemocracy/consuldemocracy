@@ -110,9 +110,12 @@ describe "Admin legislation questions", :admin do
       find("#nested_question_options input").set("Changed")
       click_button "Save changes"
 
+      expect(page).to have_content "Question updated successfully"
       expect(page).not_to have_css "#error_explanation"
 
-      visit edit_question_url
+      refresh
+
+      expect(page).not_to have_content "Question updated successfully"
       expect(page).to have_field(field_en[:id], with: "Changed")
     end
 
@@ -131,8 +134,12 @@ describe "Admin legislation questions", :admin do
       expect(page).to have_field fields_for(:en).last[:id], with: "No"
 
       click_button "Save changes"
-      visit edit_question_url
 
+      expect(page).to have_content "Question updated successfully"
+
+      refresh
+
+      expect(page).not_to have_content "Question updated successfully"
       expect(page).not_to have_field fields_for(:en).first[:id], with: "Yes"
       expect(page).to have_field fields_for(:en).last[:id], with: "No"
     end
@@ -154,6 +161,9 @@ describe "Admin legislation questions", :admin do
         find("#nested_question_options input").set("Opción 1")
 
         click_button "Save changes"
+
+        expect(page).to have_content "Question updated successfully"
+
         visit edit_question_url
 
         expect(page).to have_field(field_en[:id], with: "Option 1")
@@ -177,6 +187,8 @@ describe "Admin legislation questions", :admin do
         find("#nested_question_options input").set("Option 1")
 
         click_button "Save changes"
+
+        expect(page).to have_content "Question updated successfully"
 
         visit edit_question_url
 

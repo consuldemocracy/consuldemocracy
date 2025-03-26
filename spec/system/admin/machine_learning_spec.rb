@@ -146,28 +146,6 @@ describe "Machine learning" do
     expect(page).to have_button "Execute script"
   end
 
-  scenario "Email content received by the user who execute the script" do
-    reset_mailer
-    Mailer.machine_learning_success(admin.user).deliver
-
-    email = open_last_email
-    expect(email).to have_subject "Machine Learning - Content has been generated successfully"
-    expect(email).to have_content "Machine Learning script"
-    expect(email).to have_content "Content has been generated successfully."
-    expect(email).to have_link "Visit Machine Learning panel"
-    expect(email).to deliver_to(admin.user.email)
-
-    reset_mailer
-    Mailer.machine_learning_error(admin.user).deliver
-
-    email = open_last_email
-    expect(email).to have_subject "Machine Learning - An error has occurred running the script"
-    expect(email).to have_content "Machine Learning script"
-    expect(email).to have_content "An error has occurred running the Machine Learning script."
-    expect(email).to have_link "Visit Machine Learning panel"
-    expect(email).to deliver_to(admin.user.email)
-  end
-
   scenario "Machine Learning visualization settings are disabled by default" do
     allow_any_instance_of(MachineLearning).to receive(:run) do
       MachineLearningJob.first.update!(finished_at: Time.current)
