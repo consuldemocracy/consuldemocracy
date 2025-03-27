@@ -8,9 +8,9 @@ describe "Homepage", :admin do
     Setting["feature.user.recommendations"] = false
   end
 
-  let!(:proposals_feed)    { create(:widget_feed, kind: "proposals") }
-  let!(:debates_feed)      { create(:widget_feed, kind: "debates") }
-  let!(:processes_feed)    { create(:widget_feed, kind: "processes") }
+  let!(:proposals_feed) { create(:widget_feed, kind: "proposals") }
+  let!(:debates_feed)   { create(:widget_feed, kind: "debates") }
+  let!(:processes_feed) { create(:widget_feed, kind: "processes") }
 
   let(:user) { create(:user) }
 
