@@ -43,9 +43,11 @@ describe "Budgets" do
     end
 
     scenario "Show finished budgets list" do
+      budget = create(:budget)
       finished_budget_1 = create(:budget, :finished)
       finished_budget_2 = create(:budget, :finished)
       drafting_budget = create(:budget, :drafting)
+
       visit budgets_path
 
       within("#finished_budgets") do

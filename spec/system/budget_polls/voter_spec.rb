@@ -6,7 +6,6 @@ describe "BudgetPolls", :with_frozen_time do
   let(:poll) { create(:poll, budget: budget) }
   let(:booth) { create(:poll_booth) }
   let(:officer) { create(:poll_officer) }
-  let(:admin) { create(:administrator) }
   let!(:user) { create(:user, :in_census) }
 
   before do
@@ -16,6 +15,7 @@ describe "BudgetPolls", :with_frozen_time do
 
   context "Offline" do
     scenario "A citizen can cast a paper vote" do
+      admin = create(:administrator).user
       login_through_form_as_officer(officer)
 
       visit new_officing_residence_path
@@ -30,7 +30,7 @@ describe "BudgetPolls", :with_frozen_time do
       end
 
       logout
-      login_as(admin.user)
+      login_as(admin)
       visit admin_poll_recounts_path(poll)
 
       within("#total_system") do
