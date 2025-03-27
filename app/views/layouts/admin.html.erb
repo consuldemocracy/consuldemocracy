@@ -17,6 +17,8 @@
           <%= render Admin::MenuComponent.new %>
         <% elsif namespace == "sdg_management" %>
           <%= render SDGManagement::MenuComponent.new %>
+        <% elsif namespace == "officing" %>
+          <%= render Officing::MenuComponent.new(voter_user: @user) %>
         <% else %>
           <%= render "/#{namespace}/menu" %>
         <% end %>
