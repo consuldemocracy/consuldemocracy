@@ -51,18 +51,7 @@ shared_examples "notifiable in-app" do |factory_name|
   scenario "A user replied to my comment" do
     comment = create(:comment, commentable: notifiable, user: author)
 
-    login_as(create(:user, :verified))
-    visit path_for(notifiable)
-
-    click_link "Reply"
-    within "#js-comment-form-comment_#{comment.id}" do
-      fill_in comment_body(notifiable), with: "I replied to your comment"
-      click_button "Publish reply"
-    end
-
-    within "#comment_#{comment.id}" do
-      expect(page).to have_content "I replied to your comment"
-    end
+    reply_to(comment, with: "I replied to your comment", replier: create(:user, :verified))
 
     logout
     login_as author
@@ -120,18 +109,7 @@ shared_examples "notifiable in-app" do |factory_name|
   scenario "Author replied to his own comment" do
     comment = create(:comment, commentable: notifiable, user: author)
 
-    login_as author
-    visit path_for(notifiable)
-
-    click_link "Reply"
-    within "#js-comment-form-comment_#{comment.id}" do
-      fill_in comment_body(notifiable), with: "I replied to my own comment"
-      click_button "Publish reply"
-    end
-
-    within "#comment_#{comment.id}" do
-      expect(page).to have_content "I replied to my own comment"
-    end
+    reply_to(comment, with: "I replied to my own comment", replier: author)
 
     within("#notifications") do
       click_link "You don't have new notifications"
