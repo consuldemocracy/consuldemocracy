@@ -104,17 +104,21 @@ describe "Admin custom information texts", :admin do
     end
 
     scenario "Remove a translation" do
-      featured = create(:i18n_content, key: "debates.index.featured_debates",
-                                       value_en: "Custom featured",
-                                       value_es: "Destacar personalizado")
+      create(:i18n_content, key: "debates.index.featured_debates",
+                            value_en: "Custom featured",
+                            value_es: "Destacar personalizado")
 
-      page_title = create(:i18n_content, key: "debates.new.start_new",
-                                         value_en: "Start a new debate",
-                                         value_es: "Empezar un debate")
+      create(:i18n_content, key: "debates.new.start_new",
+                            value_en: "Start a new custom debate",
+                            value_es: "Empezar un nuevo debate personalizado")
 
       visit admin_site_customization_information_texts_path(tab: "debates")
 
       select "Español", from: "Current language"
+
+      expect(page).to have_field "debates.index.featured_debates", with: "Destacar personalizado"
+      expect(page).to have_field "debates.new.start_new", with: "Empezar un nuevo debate personalizado"
+
       click_link "Remove language"
       click_button "Save"
 
@@ -124,20 +128,13 @@ describe "Admin custom information texts", :admin do
 
       visit admin_site_customization_information_texts_path(tab: "debates")
 
-      expect(page).to have_field "debates.index.featured_debates"
+      expect(page).to have_field "debates.index.featured_debates", with: "Custom featured"
+      expect(page).to have_field "debates.new.start_new", with: "Start a new custom debate"
 
-      select "English", from: "Current language"
+      select "Español", from: "Add language"
 
-      expect(page).to have_content "Start a new debate"
-      expect(page).to have_content "Custom featured"
-
-      featured.reload
-      page_title.reload
-
-      expect(page_title.value_es).to be nil
-      expect(featured.value_es).to be nil
-      expect(page_title.value_en).to eq "Start a new debate"
-      expect(featured.value_en).to eq "Custom featured"
+      expect(page).to have_field "debates.index.featured_debates", with: "Destacar"
+      expect(page).to have_field "debates.new.start_new", with: "Empezar un debate"
     end
   end
 end

@@ -498,7 +498,7 @@ describe "Admin edit translatable records", :admin do
   end
 
   context "Globalize javascript interface" do
-    let(:translatable) { create(:i18n_content) }
+    let!(:translatable) { create(:i18n_content) }
     let(:content) { translatable }
     let(:path) { admin_site_customization_information_texts_path }
 

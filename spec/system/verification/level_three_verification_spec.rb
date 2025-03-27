@@ -2,6 +2,7 @@ require "rails_helper"
 
 describe "Level three verification" do
   scenario "Verification with residency and verified sms" do
+    allow_any_instance_of(Verification::Sms).to receive(:generate_confirmation_code).and_return("2015")
     create(:geozone)
     user = create(:user)
 
@@ -23,8 +24,7 @@ describe "Level three verification" do
 
     expect(page).to have_content "Security code confirmation"
 
-    user = user.reload
-    fill_in "sms_confirmation_code", with: user.sms_confirmation_code
+    fill_in "sms_confirmation_code", with: "2015"
     click_button "Send"
 
     expect(page).to have_content "Code correct. Your account is now verified"
@@ -65,6 +65,7 @@ describe "Level three verification" do
   end
 
   scenario "Verification with residency and sms and letter" do
+    allow_any_instance_of(Verification::Sms).to receive(:generate_confirmation_code).and_return("1234")
     create(:geozone)
     user = create(:user)
     login_as(user)
@@ -73,17 +74,7 @@ describe "Level three verification" do
     click_link "Verify my account"
 
     verify_residence
-
-    fill_in "sms_phone", with: "611111111"
-    click_button "Send"
-
-    expect(page).to have_content "Security code confirmation"
-
-    user = user.reload
-    fill_in "sms_confirmation_code", with: user.sms_confirmation_code
-    click_button "Send"
-
-    expect(page).to have_content "Code correct"
+    confirm_phone(code: "1234")
 
     click_link "Send me a letter with the code"
 

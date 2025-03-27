@@ -14,33 +14,21 @@ module Users
     expect(page).to have_content "Thank you for registering"
   end
 
-  def login_through_form_with_email_and_password(email = "manuela@consul.dev", password = "judgementday")
-    visit root_path
-    click_link "Sign in"
+  def login_through_form_with(email_or_username, password:)
+    visit new_user_session_path
 
-    fill_in "user_login", with: email
-    fill_in "user_password", with: password
+    fill_in "Email or username", with: email_or_username
+    fill_in "Password", with: password
 
     click_button "Enter"
   end
 
   def login_through_form_as(user)
-    visit root_path
-    click_link "Sign in"
-
-    fill_in "user_login", with: user.email
-    fill_in "user_password", with: user.password
-
-    click_button "Enter"
+    login_through_form_with(user.email, password: user.password)
   end
 
-  def login_through_form_as_officer(user)
-    visit root_path
-    click_link "Sign in"
-
-    fill_in "user_login", with: user.email
-    fill_in "user_password", with: user.password
-    click_button "Enter"
+  def login_through_form_as_officer(officer)
+    login_through_form_as(officer.user)
 
     expect(page).to have_content "You have been signed in successfully"
   end
