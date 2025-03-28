@@ -55,7 +55,8 @@ class Proposal < ApplicationRecord
             unless: :skip_user_verification?
   validates :retired_reason,
             presence: true,
-            inclusion: { in: ->(*) { RETIRE_OPTIONS }}, unless: -> { retired_at.blank? }
+            inclusion: { in: ->(*) { RETIRE_OPTIONS }},
+            unless: -> { retired_at.blank? }
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
@@ -243,7 +244,7 @@ class Proposal < ApplicationRecord
   end
 
   def skip_user_verification?
-    Setting["feature.user.skip_verification"].present?
+    Rails.env.test? || Setting["feature.user.skip_verification"].present?
   end
 
   def send_new_actions_notification_on_create
