@@ -70,8 +70,9 @@ class Image < ApplicationRecord
         height = attachment.metadata[:height]
         min_width = Setting["uploads.images.min_width"].to_i
         min_height = Setting["uploads.images.min_height"].to_i
-        errors.add(:attachment, :min_image_width, required_min_width: min_width) if width < min_width
-        errors.add(:attachment, :min_image_height, required_min_height: min_height) if height < min_height
+        errors.add(:attachment, :min_image_width, required_min_width: min_width) if width && width < min_width
+
+        errors.add(:attachment, :min_image_height, required_min_height: min_height) if width && width < min_width
       end
     end
 
