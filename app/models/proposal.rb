@@ -244,7 +244,7 @@ class Proposal < ApplicationRecord
   end
 
   def skip_user_verification?
-    Rails.env.test? || Setting["feature.user.skip_verification"].present?
+    Setting["feature.user.skip_verification"].present?
   end
 
   def send_new_actions_notification_on_create
