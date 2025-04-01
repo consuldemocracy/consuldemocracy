@@ -47,7 +47,7 @@ jobs:
       - name: Install node packages
         run: npm clean-install
       - name: Install ImageMagick
-        run: sudo apt-get install imagemagick
+        run: sudo apt-get update && sudo apt-get install imagemagick
       - name: Remove image-bundled Chrome
         run: sudo apt-get purge google-chrome-stable
       - name: Setup Chrome/Chromium 128
