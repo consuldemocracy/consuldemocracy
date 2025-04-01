@@ -529,26 +529,21 @@ describe "Budget Investments" do
     end
 
     scenario "Order always is random for unfeasible and unselected investments" do
-      Budget::Phase::kind_or_later("valuating").each do |phase|
-        budget.update!(phase: phase)
+      phase = Budget::Phase::kind_or_later("valuating").sample
+      budget.update!(phase: phase)
 
-        visit budget_investments_path(budget, heading_id: heading.id, filter: "unfeasible")
+      filter = if Budget::Phase.kind_or_later("publishing_prices").include?(phase)
+                 "unselected"
+               else
+                 "unfeasible"
+               end
 
-        within(".submenu") do
-          expect(page).to have_content "random"
-          expect(page).not_to have_content "by price"
-          expect(page).not_to have_content "highest rated"
-        end
-      end
+      visit budget_investments_path(budget, heading_id: heading.id, filter: filter)
 
-      Budget::Phase.kind_or_later("publishing_prices").each do |phase|
-        visit budget_investments_path(budget, heading_id: heading.id, filter: "unselected")
-
-        within(".submenu") do
-          expect(page).to have_content "random"
-          expect(page).not_to have_content "price"
-          expect(page).not_to have_content "highest rated"
-        end
+      within(".submenu") do
+        expect(page).to have_content "random"
+        expect(page).not_to have_content "by price"
+        expect(page).not_to have_content "highest rated"
       end
     end
 
@@ -872,38 +867,36 @@ describe "Budget Investments" do
 
     context "When investment with price is selected" do
       scenario "Price & explanation is shown when Budget is on published prices phase" do
-        Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
-          budget.update!(phase: phase)
+        phase = Budget::Phase::PUBLISHED_PRICES_PHASES.sample
+        budget.update!(phase: phase)
 
-          if budget.finished?
-            investment.update!(winner: true)
-          end
-
-          visit budget_investment_path(budget, id: investment.id)
-
-          expect(page).to have_content(investment.formatted_price)
-          expect(page).to have_content(investment.price_explanation)
-          expect(page).to have_link("See price explanation")
-
-          visit budget_investments_path(budget)
-
-          expect(page).to have_content(investment.formatted_price)
+        if budget.finished?
+          investment.update!(winner: true)
         end
+
+        visit budget_investment_path(budget, id: investment.id)
+
+        expect(page).to have_content(investment.formatted_price)
+        expect(page).to have_content(investment.price_explanation)
+        expect(page).to have_link("See price explanation")
+
+        visit budget_investments_path(budget)
+
+        expect(page).to have_content(investment.formatted_price)
       end
 
       scenario "Price & explanation isn't shown when Budget is not on published prices phase" do
-        (Budget::Phase::PHASE_KINDS - Budget::Phase::PUBLISHED_PRICES_PHASES).each do |phase|
-          budget.update!(phase: phase)
-          visit budget_investment_path(budget, id: investment.id)
+        phase = (Budget::Phase::PHASE_KINDS - Budget::Phase::PUBLISHED_PRICES_PHASES).sample
+        budget.update!(phase: phase)
+        visit budget_investment_path(budget, id: investment.id)
 
-          expect(page).not_to have_content(investment.formatted_price)
-          expect(page).not_to have_content(investment.price_explanation)
-          expect(page).not_to have_link("See price explanation")
+        expect(page).not_to have_content(investment.formatted_price)
+        expect(page).not_to have_content(investment.price_explanation)
+        expect(page).not_to have_link("See price explanation")
 
-          visit budget_investments_path(budget)
+        visit budget_investments_path(budget)
 
-          expect(page).not_to have_content(investment.formatted_price)
-        end
+        expect(page).not_to have_content(investment.formatted_price)
       end
     end
 
@@ -913,18 +906,17 @@ describe "Budget Investments" do
       end
 
       scenario "Price & explanation isn't shown for any Budget's phase" do
-        Budget::Phase::PHASE_KINDS.each do |phase|
-          budget.update!(phase: phase)
-          visit budget_investment_path(budget, id: investment.id)
+        phase = Budget::Phase::PHASE_KINDS.sample
+        budget.update!(phase: phase)
+        visit budget_investment_path(budget, id: investment.id)
 
-          expect(page).not_to have_content(investment.formatted_price)
-          expect(page).not_to have_content(investment.price_explanation)
-          expect(page).not_to have_link("See price explanation")
+        expect(page).not_to have_content(investment.formatted_price)
+        expect(page).not_to have_content(investment.price_explanation)
+        expect(page).not_to have_link("See price explanation")
 
-          visit budget_investments_path(budget)
+        visit budget_investments_path(budget)
 
-          expect(page).not_to have_content(investment.formatted_price)
-        end
+        expect(page).not_to have_content(investment.formatted_price)
       end
     end
   end

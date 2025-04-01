@@ -26,7 +26,11 @@ describe "DocumentVerifications" do
 
     expect(page).to have_content "already verified"
 
-    expect(user.reload).to be_level_three_verified
+    visit management_document_verifications_path
+    fill_in "document_verification_document_number", with: user.document_number
+    click_button "Check document"
+
+    expect(page).to have_content "already verified"
   end
 
   describe "Verifying througth Census" do

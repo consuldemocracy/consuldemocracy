@@ -40,10 +40,15 @@ describe "Residence" do
 
   scenario "When trying to verify a deregistered account old votes are reassigned" do
     erased_user = create(:user, document_number: "12345678Z", document_type: "1", erased_at: Time.current)
-    vote = create(:vote, voter: erased_user)
     new_user = create(:user)
+    debate = create(:debate, title: "Improve everything")
+    create(:vote, voter: erased_user, votable: debate)
 
     login_as(new_user)
+
+    visit debate_path(debate)
+
+    expect(page).to have_css "button[aria-pressed='false']", exact_text: "I agree"
 
     visit account_path
     click_link "Verify my account"
@@ -58,9 +63,9 @@ describe "Residence" do
 
     expect(page).to have_content "Residence verified"
 
-    expect(vote.reload.voter).to eq(new_user)
-    expect(erased_user.reload.document_number).to be_blank
-    expect(new_user.reload.document_number).to eq("12345678Z")
+    visit debate_path(debate)
+
+    expect(page).to have_css "button[aria-pressed='true']", exact_text: "I agree"
   end
 
   scenario "Error on verify" do

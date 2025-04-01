@@ -232,6 +232,12 @@ class Proposal < ApplicationRecord
     followers - [author]
   end
 
+  def notify_users(notification)
+    users_to_notify.each do |user|
+      Notification.add(user, notification)
+    end
+  end
+
   def self.proposals_orders(user)
     orders = %w[hot_score confidence_score created_at relevance archival_date]
 

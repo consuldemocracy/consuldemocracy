@@ -72,11 +72,7 @@ describe "Account" do
     visit_in_email("Confirm my account")
 
     logout
-    visit root_path
-    click_link "Sign in"
-    fill_in "user_login", with: "new_user_email@example.com"
-    fill_in "user_password", with: "new_password"
-    click_button "Enter"
+    login_through_form_with("new_user_email@example.com", password: "new_password")
 
     expect(page).to have_content "You have been signed in successfully."
 
@@ -198,7 +194,9 @@ describe "Account" do
     user.update!(username: "Admin")
     administrators = [create(:administrator, user: user),
                       create(:administrator, user: create(:user, username: "Other admin"))]
+    other_user = administrators.last.user
     budget = create(:budget, administrators: administrators)
+
     visit admin_budget_budget_investments_path(budget)
 
     expect(page).to have_select options: ["All administrators", "Admin", "Other admin"]
@@ -210,7 +208,7 @@ describe "Account" do
 
     expect(page).to have_content "Goodbye! Your account has been cancelled. We hope to see you again soon."
 
-    login_as(administrators.last.user)
+    login_as(other_user)
     visit admin_budget_budget_investments_path(budget)
 
     expect(page).to have_select options: ["All administrators", "Other admin"]
