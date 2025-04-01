@@ -45,7 +45,7 @@ gem "pg", "~> 1.5.8"
 gem "pg_search", "~> 2.3.7"
 gem "puma", "~> 5.6.9"
 gem "recipient_interceptor", "~> 0.3.3"
-gem "redcarpet", "~> 3.6.0"
+gem "redcarpet", "~> 3.6.1"
 gem "responders", "~> 3.1.1"
 gem "rinku", "~> 2.0.6", require: "rails_rinku"
 gem "ros-apartment", "~> 2.11.0", require: "apartment" # Remove ConnectionHandling monkey patch when upgrading
