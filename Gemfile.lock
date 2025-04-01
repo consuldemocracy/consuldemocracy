@@ -90,7 +90,7 @@ GEM
       nokogiri
     ancestry (4.3.3)
       activerecord (>= 5.2.6)
-    ast (2.4.2)
+    ast (2.4.3)
     audited (5.7.0)
       activerecord (>= 5.2, < 8.0)
       activesupport (>= 5.2, < 8.0)
@@ -435,7 +435,7 @@ GEM
     parallel (1.26.3)
     paranoia (3.0.0)
       activerecord (>= 6, < 8.1)
-    parser (3.3.7.1)
+    parser (3.3.7.4)
       ast (~> 2.4.1)
       racc
     pdf-reader (2.14.1)
@@ -819,7 +819,7 @@ DEPENDENCIES
   wkhtmltopdf-binary (~> 0.12.6)
 
 RUBY VERSION
-   ruby 3.2.7p253
+   ruby 3.2.8p263
 
 BUNDLED WITH
    2.4.19
