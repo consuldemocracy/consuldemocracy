@@ -1,56 +1,6 @@
 <% if @officer_assignments.any? %>
   <h2><%= t("officing.results.new.title", poll: @poll.name) %></h2>
-
-  <%= form_tag(officing_poll_results_path(@poll), { id: "officer_assignment_form" }) do %>
-    <div class="row">
-      <div class="small-12 medium-6 column">
-        <%= label_tag :officer_assignment_id, t("officing.results.new.booth") %>
-        <%= select_tag :officer_assignment_id,
-                       booths_for_officer_select_options(@officer_assignments),
-                       { prompt: t("officing.results.new.select_booth") } %>
-      </div>
-    </div>
-
-    <% @poll.questions.each do |question| %>
-      <div class="row">
-        <div class="small-12 column">
-          <h3><%= question.title %></h3>
-        </div>
-        <% question.question_options.each_with_index do |option, i| %>
-          <div class="small-12 medium-6 large-3 column end">
-            <label><%= option.title %></label>
-            <%= text_field_tag "questions[#{question.id}][#{i}]", answer_result_value(question.id, i), placeholder: "0" %>
-          </div>
-        <% end %>
-      </div>
-      <hr>
-    <% end %>
-
-    <div class="row">
-      <div class="small-12 medium-6 large-3 column">
-        <h3><%= t("officing.results.new.ballots_white") %></h3>
-        <%= text_field_tag :whites, params[:whites].presence, placeholder: "0" %>
-      </div>
-
-      <div class="small-12 medium-6 large-3 column end">
-        <h3><%= t("officing.results.new.ballots_null") %></h3>
-        <%= text_field_tag :nulls, params[:nulls].presence, placeholder: "0" %>
-      </div>
-
-      <div class="small-12 medium-6 large-3 column end">
-        <h3><%= t("officing.results.new.ballots_total") %></h3>
-        <%= text_field_tag :total, params[:total].presence, placeholder: "0" %>
-      </div>
-    </div>
-    <hr>
-
-    <div class="row">
-      <div class="small-12 medium-6 large-3 column">
-        <%= submit_tag t("officing.results.new.submit"), class: "button expanded" %>
-      </div>
-    </div>
-  <% end %>
-
+  <%= render Officing::Results::FormComponent.new(@poll, @officer_assignments) %>
 <% else %>
   <h2><%= @poll.name %></h2>
   <div class="callout alert">
