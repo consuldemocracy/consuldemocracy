@@ -1,4 +1,4 @@
-<%= form_tag(officing_poll_results_path(poll), { id: "officer_assignment_form" }) do %>
+<%= form_tag(officing_poll_results_path(poll), { id: "officer_assignment_form", class: "officing-results-form" }) do %>
   <div class="row">
     <div class="small-12 medium-6 column">
       <%= label_tag :officer_assignment_id, t("officing.results.new.booth") %>
@@ -9,17 +9,15 @@
   </div>
 
   <% poll.questions.each do |question| %>
-    <div class="row">
-      <div class="small-12 column">
-        <h3><%= question.title %></h3>
-      </div>
+    <fieldset class="row">
+      <legend class="column"><%= question.title %></legend>
       <% question.question_options.each_with_index do |option, i| %>
         <div class="small-12 medium-6 large-3 column end">
           <%= label_tag "questions_#{question.id}_#{i}", option.title %>
           <%= text_field_tag "questions[#{question.id}][#{i}]", answer_result_value(question.id, i), placeholder: "0" %>
         </div>
       <% end %>
-    </div>
+    </fieldset>
     <hr>
   <% end %>
 

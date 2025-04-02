@@ -59,11 +59,15 @@ describe "Officing Results", :with_frozen_time do
 
     select booth.name, from: "Booth"
 
-    fill_in "Yes", with: "100"
-    fill_in "No", with: "200"
+    within_fieldset question_1.title do
+      fill_in "Yes", with: "100"
+      fill_in "No", with: "200"
+    end
 
-    fill_in "Today", with: "333"
-    fill_in "Tomorrow", with: "444"
+    within_fieldset question_2.title do
+      fill_in "Today", with: "333"
+      fill_in "Tomorrow", with: "444"
+    end
 
     fill_in "Totally blank ballots", with: "66"
     fill_in "Invalid ballots", with: "77"
@@ -102,8 +106,11 @@ describe "Officing Results", :with_frozen_time do
     booth_name = partial_result.booth_assignment.booth.name
     select booth_name, from: "Booth"
 
-    fill_in "Yes", with: "5555"
-    fill_in "No", with: "200"
+    within_fieldset question_1.title do
+      fill_in "Yes", with: "5555"
+      fill_in "No", with: "200"
+    end
+
     fill_in "Totally blank ballots", with: "6"
     fill_in "Invalid ballots", with: "7"
     fill_in "Valid ballots", with: "8"
