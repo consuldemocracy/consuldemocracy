@@ -8,37 +8,41 @@ Brasil
 
 * Prefeitura de São Paulo platform 'Participe+'
   * platform: [https://participemais.prefeitura.sp.gov.br/](https://participemais.prefeitura.sp.gov.br/)
-  * code base: [https://codigoaberto.prefeitura.sp.gov.br/casacivil/participemais/-/tree/prodam\_12\_08\_24](https://codigoaberto.prefeitura.sp.gov.br/casacivil/participemais/-/tree/prodam_12_08_24)
+  * repositorio de código: [https://codigoaberto.prefeitura.sp.gov.br/casacivil/participemais/-/tree/prodam\_12\_08\_24](https://codigoaberto.prefeitura.sp.gov.br/casacivil/participemais/-/tree/prodam_12_08_24)
+  * mantenedor del repositorio: Prefeitura de São Paulo ([https://capital.sp.gov.br/](https://capital.sp.gov.br/))&#x20;
 
 Denmark
 
 * Aarhus Kommune platform 'Sammen om Aarhus'
   * platform: [https://www.sammenomaarhus.dk/](https://www.sammenomaarhus.dk/)
-  * code base: [https://github.com/bellcom/consul](https://github.com/bellcom/consul)
+  * repositorio de código: [https://github.com/bellcom/consul](https://github.com/bellcom/consul)
+  * mantenedor del repositorio: Bellcom ([https://www.bellcom.dk/](https://www.bellcom.dk/))
 
 Germany
 
 * Landeshauptstadt München platform 'Unser Muenchen'
   * platform: [https://unser.muenchen.de/](https://unser.muenchen.de/)
-  * code base: [https://github.com/it-at-m/consul-lhm-dev](https://github.com/it-at-m/consul-lhm-dev)
+  * repositorio de código: [https://github.com/it-at-m/consul-lhm-dev](https://github.com/it-at-m/consul-lhm-dev)
 * Landeshauptstadt Würzburg platform 'Würzburg Mitmachen'
   * platform: [https://wuerzburg-mitmachen.de/](https://wuerzburg-mitmachen.de/)
-  * code base: [https://github.com/StadtWuerzburg/wuerzburg-mitmachen](https://github.com/StadtWuerzburg/wuerzburg-mitmachen)
+  * repositorio de código: [https://github.com/StadtWuerzburg/wuerzburg-mitmachen](https://github.com/StadtWuerzburg/wuerzburg-mitmachen)
 * Regensburg platform 'Mein Regensburg'
   * platform: [https://mein.regensburg.de/](https://mein.regensburg.de/)
-  * code base: [https://github.com/StadtRegensburg/consul](https://github.com/StadtRegensburg/consul)
+  * repositorio de código: [https://github.com/StadtRegensburg/consul](https://github.com/StadtRegensburg/consul)
+  * mantenedor de todos los repositorios alemanes: Demokratie Today ([https://demokratie.today/](https://demokratie.today/))
 
 Italy
 
 * Comune di Bari platform 'Partecipa Bari'
   * platform: [https://web.archive.org/web/20240805175301/https://partecipa.ba.it/](https://web.archive.org/web/20240805175301/https://partecipa.ba.it/)
-  * code base: [https://github.com/comunedibari/consul](https://github.com/comunedibari/consul)
+  * repositorio de código: [https://github.com/comunedibari/consul](https://github.com/comunedibari/consul)
 
 Mexico
 
 * San Pedro Garca-Garcia platform 'Decide San Pedro'
   * platform: [https://decide.sanpedro.gob.mx/](https://decide.sanpedro.gob.mx/)
-  * code base:
+  * repositorio de código: [https://github.com/sanpgg/decide](https://github.com/sanpgg/decide)
+  * mantenedor del repositorio: San Pedro Garca-Garcia municipio ([https://www.sanpedro.gob.mx/](https://www.sanpedro.gob.mx/))
 
 Netherlands
 
@@ -54,13 +58,10 @@ Netherlands
   * platform: [https://stemvannoardeast.nl/](https://stemvannoardeast.nl/)
 * Gemeente Midden-Groningen platform 'Stem van Midden-Groningen'
   * platform: [https://stemvan.midden-groningen.nl/](https://stemvan.midden-groningen.nl/)
-*   Gemeente Dantumadiel platform 'Stem van Dantumadiel'
-
-    * platform: [https://stemvandantumadiel.frl/](https://stemvandantumadiel.frl/)\\
-
-
-
-    * code base compartido: [https://github.com/consul-nl/consul-nl](https://github.com/consul-nl/consul-nl)
+* Gemeente Dantumadiel platform 'Stem van Dantumadiel'
+  * platform: [https://stemvandantumadiel.frl/](https://stemvandantumadiel.frl/)\\
+  * repositorio de código compartido: [https://github.com/consul-nl/consul-nl](https://github.com/consul-nl/consul-nl)
+  * mantenedor del repositorio: Buro Radstake
 
 Romania
 
@@ -68,13 +69,10 @@ Romania
   * platform: [https://bugetparticipativ.primaria-sinaia.ro/](https://bugetparticipativ.primaria-sinaia.ro/)
 * Primaria Brasov Elinor platform 'Bugetare Participativ'
   * platform: [https://bugetareparticipativa.primariabrasovenilor.ro/](https://bugetareparticipativa.primariabrasovenilor.ro/)&#x20;
-*   Primaria Dumbravita platform 'Dumbravita Decide'
-
-    * platforms: , [https://dumbravitadecide.ro/](https://dumbravitadecide.ro/)
-
-
-
-    * code base compartido: [https://github.com/code4romania/consul](https://github.com/code4romania/consul)
+* Primaria Dumbravita platform 'Dumbravita Decide'
+  * platforms: , [https://dumbravitadecide.ro/](https://dumbravitadecide.ro/)
+  * repositorio de código compartido: [https://github.com/code4romania/consul](https://github.com/code4romania/consul)
+  * mantenedor del repositorio: Code4Romania (https://code4.ro/)
 
 Slovenia
 
@@ -82,7 +80,8 @@ Slovenia
   * platform: [https://www.mariborsodeluj.si/](https://www.mariborsodeluj.si/),
 * Obcine Medvode platform 'Sodeluj in Glasuj'
   * platform: [https://www.sodelujinglasuj.si/](https://www.sodelujinglasuj.si/)
-  * code base compartido: [https://github.com/danesjenovdan/consul](https://github.com/danesjenovdan/consul)
+  * repositorio de código compartido: [https://github.com/danesjenovdan/consul](https://github.com/danesjenovdan/consul)
+  * mantenedor del repositorio: Danes Je Nov Dan (https://danesjenovdan.si/)
 * Obcina Hrpelje-Kozina
   * platform: [https://pp.hrpelje-kozina.si/](https://pp.hrpelje-kozina.si/)
   * code base:
@@ -91,29 +90,42 @@ Spain
 
 * Ayuntamiento de Madrid platform 'Decide Madrid'
   * platform: decide.madrid.es
-  * code base: [https://github.com/AyuntamientoMadrid/consul](https://github.com/AyuntamientoMadrid/consul)
+  * repositorio de código [https://github.com/AyuntamientoMadrid/consul](https://github.com/AyuntamientoMadrid/consul)
 * Ajuntament de Castelló platform 'Decide Castello'
   * platform: [https://decidim.castello.es/](https://decidim.castello.es/)
-  * code base: [https://github.com/AjuntamentdeCastello/consul](https://github.com/AjuntamentdeCastello/consul)
+  * repositorio de código: [https://github.com/AjuntamentdeCastello/consul](https://github.com/AjuntamentdeCastello/consul)
 * Diputacion de Valladolid platform 'Participa Valladolid'
   * platform: [http://participa.diputaciondevalladolid.es/](http://participa.diputaciondevalladolid.es/)
-  * code base: [https://github.com/DipVa/consul](https://github.com/DipVa/consul)
+  * repositorio de código: [https://github.com/DipVa/consul](https://github.com/DipVa/consul)
 * Ayuntamiento de Zamora platform 'Zamora Participa'
   * platform: [https://zamoraparticipa.com/](https://zamoraparticipa.com/)
-  * code base: [https://github.com/jaam1974/consul](https://github.com/jaam1974/consul)
+  * repositorio de código: [https://github.com/jaam1974/consul](https://github.com/jaam1974/consul)
 * Ayuntamiento de Arucas platform 'Participa Arucas'
   * platform: [http://participa.arucas.org/](http://participa.arucas.org/)
-  * code base: [https://github.com/Usabi/consul\_arucas](https://github.com/Usabi/consul_arucas)
+  * repositorio de código: [https://github.com/Usabi/consul\_arucas](https://github.com/Usabi/consul_arucas)
 * Generalitat Valenciana platform 'Pla Recuperem Valencia'
   * platform: [https://gvaparticipa.gva.es/](https://gvaparticipa.gva.es/)
-  * code base: [https://github.com/Usabi/consul\_gva](https://github.com/Usabi/consul_gva)
+  * repositorio de código: [https://github.com/Usabi/consul\_gva](https://github.com/Usabi/consul_gva)
+  * mantenedor del repositorio: Usabi ([https://usabi.es/](https://usabi.es/))
 * Ayuntamiento de Las Palmas de Gran Canaria platform 'LPGC Decide'
   * platform: [https://decide.laspalmasgc.es/](https://decide.laspalmasgc.es/)
   * code base: [https://github.com/LauraConcepcion/consulLPA](https://github.com/LauraConcepcion/consulLPA)
+  * mantenedor del repositorio: Usabi ([https://usabi.es/](https://usabi.es/))
 
-United Kingdom
+Scotland
 
-
+* The City of Edinburgh Council platform '
+  * platform: [https://yourvoice.edinburgh.gov.uk/](https://yourvoice.edinburgh.gov.uk/)
+* Westlothian Council platform 'Community Choices':
+  * platform: [https://westlothiancouncil.communitychoices.scot/](https://westlothiancouncil.communitychoices.scot/)
+* North Ayrshire Council platform 'Community Choices':
+  * platform: [https://northayrshire.communitychoices.scot/](https://northayrshire.communitychoices.scot/)
+* Glasgow Council platform 'Community Choices':
+  * platform: [https://glasgow.communitychoices.scot/](https://glasgow.communitychoices.scot/)
+* East Lothian Council platform 'Community Choices':
+  * platform: [https://eastlothian.communitychoices.scot/](https://eastlothian.communitychoices.scot/)
+  * repositorio de código compartido:
+  * mantenedor del repositorio: Cosla ([https://www.cosla.gov.uk/](https://www.cosla.gov.uk/))
 
 Uruguay
 
