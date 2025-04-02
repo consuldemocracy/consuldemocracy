@@ -41,7 +41,8 @@ Mexico
 
 * San Pedro Garca-Garcia platform 'Decide San Pedro'
   * platform: [https://decide.sanpedro.gob.mx/](https://decide.sanpedro.gob.mx/)
-  * code base:
+  * code base: [https://github.com/sanpgg/decide](https://github.com/sanpgg/decide)
+  * maintainer: San Pedro Garca-Garcia municipality ([https://www.sanpedro.gob.mx/](https://www.sanpedro.gob.mx/))
 
 Netherlands
 
