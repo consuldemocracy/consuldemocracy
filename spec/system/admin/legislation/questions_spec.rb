@@ -107,7 +107,7 @@ describe "Admin legislation questions", :admin do
       create(:legislation_question_option, question: question, value: "Original")
 
       visit edit_question_url
-      find("#nested_question_options input").set("Changed")
+      fill_in "Add a closed answer", with: "Changed"
       click_button "Save changes"
 
       expect(page).to have_content "Question updated successfully"
@@ -154,11 +154,11 @@ describe "Admin legislation questions", :admin do
 
         click_link "Add option"
 
-        find("#nested_question_options input").set("Option 1")
+        fill_in "Add a closed answer", with: "Option 1"
 
         select "Español", from: "Current language"
 
-        find("#nested_question_options input").set("Opción 1")
+        fill_in "Add a closed answer", with: "Opción 1"
 
         click_button "Save changes"
 
@@ -180,11 +180,11 @@ describe "Admin legislation questions", :admin do
 
         click_link "Add option"
 
-        find("#nested_question_options input").set("Opción 1")
+        fill_in "Add a closed answer", with: "Opción 1"
 
         select "English", from: "Current language"
 
-        find("#nested_question_options input").set("Option 1")
+        fill_in "Add a closed answer", with: "Option 1"
 
         click_button "Save changes"
 

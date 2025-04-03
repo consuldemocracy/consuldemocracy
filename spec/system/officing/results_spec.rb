@@ -59,15 +59,19 @@ describe "Officing Results", :with_frozen_time do
 
     select booth.name, from: "Booth"
 
-    fill_in "questions[#{question_1.id}][0]", with: "100"
-    fill_in "questions[#{question_1.id}][1]", with: "200"
+    within_fieldset question_1.title do
+      fill_in "Yes", with: "100"
+      fill_in "No", with: "200"
+    end
 
-    fill_in "questions[#{question_2.id}][0]", with: "333"
-    fill_in "questions[#{question_2.id}][1]", with: "444"
+    within_fieldset question_2.title do
+      fill_in "Today", with: "333"
+      fill_in "Tomorrow", with: "444"
+    end
 
-    fill_in "whites", with: "66"
-    fill_in "nulls",  with: "77"
-    fill_in "total",  with: "88"
+    fill_in "Totally blank ballots", with: "66"
+    fill_in "Invalid ballots", with: "77"
+    fill_in "Valid ballots", with: "88"
 
     click_button "Save"
 
@@ -102,11 +106,14 @@ describe "Officing Results", :with_frozen_time do
     booth_name = partial_result.booth_assignment.booth.name
     select booth_name, from: "Booth"
 
-    fill_in "questions[#{question_1.id}][0]", with: "5555"
-    fill_in "questions[#{question_1.id}][1]", with: "200"
-    fill_in "whites", with: "6"
-    fill_in "nulls",  with: "7"
-    fill_in "total",  with: "8"
+    within_fieldset question_1.title do
+      fill_in "Yes", with: "5555"
+      fill_in "No", with: "200"
+    end
+
+    fill_in "Totally blank ballots", with: "6"
+    fill_in "Invalid ballots", with: "7"
+    fill_in "Valid ballots", with: "8"
 
     click_button "Save"
 

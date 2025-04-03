@@ -1,0 +1,47 @@
+<%= form_tag(officing_poll_results_path(poll), { id: "officer_assignment_form", class: "officing-results-form" }) do %>
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= label_tag :officer_assignment_id, t("officing.results.new.booth") %>
+      <%= select_tag :officer_assignment_id,
+                     booths_for_officer_select_options(officer_assignments),
+                     { prompt: t("officing.results.new.select_booth") } %>
+    </div>
+  </div>
+
+  <% poll.questions.each do |question| %>
+    <fieldset class="row">
+      <legend class="column"><%= question.title %></legend>
+      <% question.question_options.each_with_index do |option, i| %>
+        <div class="small-12 medium-6 large-3 column end">
+          <%= label_tag "questions_#{question.id}_#{i}", option.title %>
+          <%= number_field_tag "questions[#{question.id}][#{i}]", answer_result_value(question.id, i), min: 0 %>
+        </div>
+      <% end %>
+    </fieldset>
+    <hr>
+  <% end %>
+
+  <div class="row">
+    <div class="small-12 medium-6 large-3 column">
+      <%= label_tag :whites, t("officing.results.new.ballots_white") %>
+      <%= number_field_tag :whites, params[:whites].to_i, min: 0 %>
+    </div>
+
+    <div class="small-12 medium-6 large-3 column end">
+      <%= label_tag :nulls, t("officing.results.new.ballots_null") %>
+      <%= number_field_tag :nulls, params[:nulls].to_i, min: 0 %>
+    </div>
+
+    <div class="small-12 medium-6 large-3 column end">
+      <%= label_tag :total, t("officing.results.new.ballots_total") %>
+      <%= number_field_tag :total, params[:total].to_i, min: 0 %>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="small-12 medium-6 large-3 column">
+      <%= submit_tag t("officing.results.new.submit"), class: "button expanded" %>
+    </div>
+  </div>
+<% end %>
