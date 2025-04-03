@@ -84,4 +84,171 @@ padding-bottom: 5rem;
     color: var(--brand-contrast);
 }
 
+.debate-questions .control {
+    background: #f9f9f9; /* Slightly lighter background */
+    border: 1px solid #ccc; /* Softer border color */
+    border-radius: .5rem; /* Larger border radius for a more modern feel */
+    color: #333; /* Darker text color for better contrast */
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 1rem; /* Increased margin for better spacing */
+    margin-right: 1rem; /* Reduced right margin for better alignment */
+    padding: 1rem 2rem; /* Adjusted padding for better proportions */
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.debate-questions .control:hover {
+    background: #e6e6e6; /* Slightly darker background on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.debate-list {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.debate-block {
+    background: #f9f9f9; /* Light background for contrast */
+    border: 1px solid #ddd; /* Soft border */
+    border-radius: .5rem; /* Rounded corners */
+    padding: 1rem; /* Padding for spacing */
+    margin-bottom: 1.5rem; /* Space between blocks */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.debate-block:hover {
+    background: #e6e6e6; /* Slightly darker background on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.debate-type {
+    font-weight: bold;
+    color: #333; /* Darker text color */
+    margin-bottom: .5rem; /* Space below type */
+}
+
+.debate-title h4 {
+    font-size: 1.25rem; /* Larger font size */
+    margin: 0; /* Remove default margin */
+}
+
+.debate-title a {
+    color: #007acc; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.debate-title a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.debate-meta {
+    font-size: .875rem; /* Smaller font size */
+    color: #777; /* Lighter text color */
+    margin-top: .5rem; /* Space above meta */
+}
+
+.comments-count a {
+    color: #007acc; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.comments-count a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.debate-date {
+    color: #555; /* Slightly darker text color */
+}
+
+.comment {
+    background: #f9f9f9; /* Light background for contrast */
+    border: 1px solid #ddd; /* Soft border */
+    border-radius: .5rem; /* Rounded corners */
+    padding: 1rem; /* Padding for spacing */
+    margin-bottom: 1rem; /* Space between comments */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.comment:hover {
+    background: #e6e6e6; /* Slightly darker background on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.comment-avatar {
+    display: inline-block;
+    margin-right: .5rem; /* Space between avatar and info */
+    vertical-align: top;
+}
+
+.comment-info {
+    display: inline-block;
+    vertical-align: top;
+    max-width: calc(100% - 40px); /* Adjust width to fit with avatar */
+}
+
+.user-name a {
+    color: #007acc; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.user-name a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.label.round.level-1 {
+    background: #007acc; /* Background color for label */
+    color: #fff; /* Text color for label */
+    padding: .25rem .5rem; /* Padding for label */
+    border-radius: 1rem; /* Rounded label */
+    font-size: .875rem; /* Smaller font size */
+}
+
+.comment-user p {
+    margin: .5rem 0; /* Space above and below comment text */
+    color: #333; /* Darker text color */
+}
+
+.comment-votes {
+    margin-top: .5rem; /* Space above votes */
+}
+
+.comment-votes .votes {
+    display: flex;
+    align-items: center;
+}
+
+.comment-votes .in-favor, .comment-votes .against {
+    margin-left: .5rem; /* Space between vote buttons */
+}
+
+.comment-votes button {
+    background: none;
+    border: none;
+    color: #007acc; /* Button color */
+    cursor: pointer;
+    padding: 0;
+}
+
+.comment-votes button:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+:root {
+    --background-color: #d9edf7; /* Default background color */
+    --text-color: #31708f; /* Default text color */
+}
+
+.callout.primary {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-radius: .5rem;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+  
 }
