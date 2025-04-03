@@ -130,7 +130,7 @@ describe "Users" do
         visit "/"
         click_link "Register"
 
-        click_link "Sign up with Twitter"
+        click_button "Sign up with Twitter"
 
         expect_to_be_signed_in
 
@@ -149,7 +149,7 @@ describe "Users" do
         visit "/"
         click_link "Register"
 
-        click_link "Sign up with Twitter"
+        click_button "Sign up with Twitter"
 
         expect(page).to have_current_path(new_user_session_path)
         expect(page).to have_content "To continue, please click on the confirmation " \
@@ -160,7 +160,7 @@ describe "Users" do
 
         visit "/"
         click_link "Sign in"
-        click_link "Sign in with Twitter"
+        click_button "Sign in with Twitter"
         expect_to_be_signed_in
 
         within("#notice") { click_button "Close" }
@@ -177,7 +177,7 @@ describe "Users" do
 
         visit "/"
         click_link "Register"
-        click_link "Sign up with Twitter"
+        click_button "Sign up with Twitter"
 
         expect(page).to have_current_path(finish_signup_path)
         fill_in "Email", with: "manueladelascarmenas@example.com"
@@ -191,7 +191,7 @@ describe "Users" do
 
         visit "/"
         click_link "Sign in"
-        click_link "Sign in with Twitter"
+        click_button "Sign in with Twitter"
         expect_to_be_signed_in
 
         within("#notice") { click_button "Close" }
@@ -208,7 +208,7 @@ describe "Users" do
 
         visit "/"
         click_link "Register"
-        click_link "Sign up with Twitter"
+        click_button "Sign up with Twitter"
 
         expect(page).to have_current_path(finish_signup_path)
         click_link "Cancel login"
@@ -228,7 +228,7 @@ describe "Users" do
 
         visit "/"
         click_link "Sign in"
-        click_link "Sign in with Twitter"
+        click_button "Sign in with Twitter"
 
         expect_to_be_signed_in
 
@@ -247,7 +247,7 @@ describe "Users" do
 
         visit "/"
         click_link "Register"
-        click_link "Sign up with Twitter"
+        click_button "Sign up with Twitter"
 
         expect(page).to have_current_path(finish_signup_path)
 
@@ -275,7 +275,7 @@ describe "Users" do
 
         visit "/"
         click_link "Register"
-        click_link "Sign up with Twitter"
+        click_button "Sign up with Twitter"
 
         expect(page).to have_current_path(finish_signup_path)
         expect(page).to have_field "Username", with: "manuela"
@@ -296,7 +296,7 @@ describe "Users" do
 
         visit "/"
         click_link "Sign in"
-        click_link "Sign in with Twitter"
+        click_button "Sign in with Twitter"
 
         within("#notice") { click_button "Close" }
         click_link "My account"
@@ -312,7 +312,7 @@ describe "Users" do
 
         visit "/"
         click_link "Register"
-        click_link "Sign up with Twitter"
+        click_button "Sign up with Twitter"
 
         expect(page).to have_current_path(finish_signup_path)
 
@@ -332,7 +332,7 @@ describe "Users" do
 
         visit "/"
         click_link "Sign in"
-        click_link "Sign in with Twitter"
+        click_button "Sign in with Twitter"
         expect_to_be_signed_in
 
         within("#notice") { click_button "Close" }
@@ -350,7 +350,7 @@ describe "Users" do
 
         visit "/"
         click_link "Register"
-        click_link "Sign up with Twitter"
+        click_button "Sign up with Twitter"
 
         expect(page).to have_current_path(finish_signup_path)
 
@@ -366,7 +366,7 @@ describe "Users" do
 
         visit "/"
         click_link "Sign in"
-        click_link "Sign in with Twitter"
+        click_button "Sign in with Twitter"
         expect_to_be_signed_in
 
         within("#notice") { click_button "Close" }
@@ -398,7 +398,7 @@ describe "Users" do
         create(:user, username: "manuela", email: "manuelacarmena@example.com")
 
         visit new_user_session_path
-        click_link "Sign in with Google"
+        click_button "Sign in with Google"
 
         expect_to_be_signed_in
       end
@@ -423,7 +423,7 @@ describe "Users" do
         visit "/"
         click_link "Register"
 
-        click_link "Sign up with Wordpress"
+        click_button "Sign up with Wordpress"
 
         expect(page).to have_current_path(new_user_session_path)
         expect(page).to have_content "To continue, please click on the confirmation " \
@@ -434,7 +434,7 @@ describe "Users" do
 
         visit "/"
         click_link "Sign in"
-        click_link "Sign in with Wordpress"
+        click_button "Sign in with Wordpress"
         expect_to_be_signed_in
 
         within("#notice") { click_button "Close" }
@@ -452,7 +452,7 @@ describe "Users" do
 
         visit "/"
         click_link "Register"
-        click_link "Sign up with Wordpress"
+        click_button "Sign up with Wordpress"
 
         expect(page).to have_current_path(finish_signup_path)
 
@@ -475,7 +475,7 @@ describe "Users" do
 
         visit "/"
         click_link "Sign in"
-        click_link "Sign in with Wordpress"
+        click_button "Sign in with Wordpress"
 
         expect_to_be_signed_in
 
