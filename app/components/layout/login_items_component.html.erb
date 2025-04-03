@@ -18,8 +18,8 @@
                                    t("layouts.header.my_account_link") %>
   </li>
   <li>
-    <%= link_to t("devise_views.menu.login_items.logout"),
-                destroy_user_session_path, rel: "nofollow", method: :delete %>
+    <%= button_to t("devise_views.menu.login_items.logout"),
+                  destroy_user_session_path, rel: "nofollow", method: :delete %>
   </li>
 <% else %>
   <li>

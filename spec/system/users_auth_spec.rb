@@ -85,7 +85,7 @@ describe "Users" do
         expect(page).to have_link "My content", href: user_path(u1)
 
         within("#notice") { click_button "Close" }
-        click_link "Sign out"
+        click_button "Sign out"
 
         expect(page).to have_content "You have been signed out successfully."
 
@@ -495,7 +495,7 @@ describe "Users" do
     login_as(user)
 
     visit "/"
-    click_link "Sign out"
+    click_button "Sign out"
 
     expect(page).to have_content "You have been signed out successfully."
   end
