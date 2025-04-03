@@ -1,12 +1,11 @@
 module Abilities
-  class Administrator
+  class ProcessManager
     include CanCan::Ability
 
     def initialize(user)
-      merge Abilities::ProcessManager.new(user)
-      merge Abilities::Moderation.new(user)
-      merge Abilities::SDG::Manager.new(user)
-
+      
+      can :show, Admin
+      
       can :restore, Comment
       cannot :restore, Comment, hidden_at: nil
 
@@ -55,10 +54,11 @@ module Abilities
                                       Budget::Investment, Legislation::Question,
                                       Legislation::Proposal, Legislation::Annotation, Topic]
 
-      can [:search, :create, :index, :destroy, :update], ::Administrator
-      can [:search, :create, :index, :destroy], ::Moderator
-      can [:search, :show, :update, :create, :index, :destroy, :summary], ::Valuator
-      can [:search, :create, :index, :destroy], ::Manager
+      cannot [:search, :create, :index, :destroy, :update], ::Administrator
+      cannot [:search, :create, :index, :destroy], ::Moderator
+      cannot [:search, :show, :update, :create, :index, :destroy, :summary], ::Valuator
+      cannot [:search, :create, :index, :destroy], ::Manager
+      can [:search, :create, :read, :destroy], ::ProcessManager
       can [:create, :read, :destroy], ::SDG::Manager
       can [:search, :index], ::User
 
@@ -146,7 +146,7 @@ module Abilities
       can :manage, LocalCensusRecord
       can [:create, :read], LocalCensusRecords::Import
 
-      can :manage, Cookies::Vendor
+      cannot :manage, Cookies::Vendor
 
       if Rails.application.config.multitenancy && Tenant.default?
         can [:create, :read, :update, :hide, :restore], Tenant

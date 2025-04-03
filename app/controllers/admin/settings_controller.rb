@@ -1,4 +1,7 @@
 class Admin::SettingsController < Admin::BaseController
+  skip_authorization_check
+  before_action :verify_administrator
+
   def index
   end
 
@@ -30,6 +33,10 @@ class Admin::SettingsController < Admin::BaseController
   end
 
   private
+  
+    def verify_administrator
+      raise CanCan::AccessDenied if current_user&.process_manager? 
+    end
 
     def settings_params
       params.require(:setting).permit(allowed_params)

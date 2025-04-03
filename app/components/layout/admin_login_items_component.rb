@@ -15,6 +15,7 @@ class Layout::AdminLoginItemsComponent < ApplicationComponent
     def admin_links
       [
         (admin_link if user.administrator?),
+        (admin_link if user.process_manager?),
         (moderation_link if user.administrator? || user.moderator?),
         (valuation_link if feature?(:budgets) && (user.administrator? || user.valuator?)),
         (management_link if user.administrator? || user.manager?),

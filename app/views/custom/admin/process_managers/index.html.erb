@@ -1,0 +1,38 @@
+<h2><%= t("admin.process_managers.index.title") %></h2>
+
+<%= render "admin/shared/user_search", url: search_admin_process_managers_path %>
+
+<div id="process_managers">
+  <% if @process_managers.any? %>
+    <h3><%= page_entries_info @process_managers %></h3>
+
+    <table>
+      <thead>
+        <th scope="col"><%= Manager.human_attribute_name(:name) %></th>
+        <th scope="col"><%= Manager.human_attribute_name(:email) %></th>
+        <th scope="col" class="small-3"><%= t("admin.shared.actions") %></th>
+      </thead>
+      <tbody>
+        <% @process_managers.each do |process_manager| %>
+          <tr>
+            <td>
+              <%= process_manager.name %>
+            </td>
+            <td>
+              <%= process_manager.email %>
+            </td>
+            <td>
+              <%= render Admin::Roles::TableActionsComponent.new(process_manager) %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= paginate @process_managers %>
+  <% else %>
+    <div class="callout primary">
+      <%= t("admin.process_managers.index.no_process_managers") %>
+    </div>
+  <% end %>
+</div>
