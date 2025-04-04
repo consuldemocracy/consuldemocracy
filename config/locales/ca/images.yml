@@ -3,7 +3,6 @@ ca:
     remove_image: Eliminar imatge
     form:
       title: Imatge descriptiva
-      title_placeholder: Afegeix un title descriptiu per la imatge
       delete_button: Eliminar imatge
       note: "Pots pujar una imatge del següents tipus: %{accepted_content_types}, fins un màxim de %{max_file_size} MB."
       add_new_image: Afegir imatge
