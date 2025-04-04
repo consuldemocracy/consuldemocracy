@@ -18,7 +18,7 @@ describe Layout::AdminHeaderComponent do
       expect(page).to have_link "You don't have new notifications"
       expect(page).to have_link "My content"
       expect(page).to have_link "My account"
-      expect(page).to have_link "Sign out"
+      expect(page).to have_button "Sign out"
       expect(page).to have_css "[data-toggle]"
     end
 
