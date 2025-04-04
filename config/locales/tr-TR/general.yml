@@ -474,6 +474,8 @@ tr:
       see_proposed_actions: Önerilen işlemleri gözden geçir
       hide_proposed_actions: Önerilen işlemleri gizle
       pending_title: Bekliyor
+      execute: "%{name} ögesini tamamlanmış olarak işaretle"
+      unexecute: "%{name} ögesinin tamamlanmış işaretini kaldır"
       show_description: Açıklamayı göster
       without_pending_actions: Bekleyen bir önerilen işlem yok
       done_title: Tamam
