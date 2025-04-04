@@ -338,7 +338,6 @@ ast:
       forward:
         support_button: Apoyar esta propuesta
   polls:
-    all: "Toes"
     dates: "Desde el %{open_at} hasta el %{closed_at}"
     final_date: "Recuento final/Resultados"
     index:
