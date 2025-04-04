@@ -1028,18 +1028,11 @@ pt-BR:
         unable_notice: "Não é possível excluir votações com votos"
     questions:
       index:
-        title: "Perguntas"
         create: "Criar questão"
-        no_questions: "Não há perguntas."
-        filter_poll: Filtrar por votação
         select_poll: Selecionar votação
-        questions_tab: "Perguntas"
         successful_proposals_tab: "Propostas bem sucedidas"
         create_question: "Criar questão"
         table_proposal: "Proposta"
-        table_question: "Questão"
-        table_poll: "Votação"
-        poll_not_assigned: "Votação sem atribuições"
       edit:
         title: "Editar pergunta"
       new:
@@ -1056,7 +1049,6 @@ pt-BR:
         edit_question: Editar questão
         valid_answers: Respostas válidas
         add_answer: Adicionar resposta
-        video_url: Vídeo externo
         answers:
           title: Resposta
           description: Descrição
