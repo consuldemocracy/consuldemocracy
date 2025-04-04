@@ -358,18 +358,13 @@ mk:
         table_title: "Наслов"
     questions:
       index:
-        title: "Прашање"
-        questions_tab: "Прашање"
         table_proposal: "Предлог"
-        table_question: "Прашање"
-        table_poll: "Анкета"
       answers:
         images:
           add_image: "Додади слика"
       show:
         author: Автор
         question: Прашање
-        video_url: Надворешно видео
         answers:
           title: Одговор
           description: Опис
