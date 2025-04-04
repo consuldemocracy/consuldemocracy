@@ -218,7 +218,6 @@ mk:
         links: Линкови
         additiontal_information: Додатни информации
   polls:
-    all: "Сите"
     index:
       filters:
         current: "Отворено"
