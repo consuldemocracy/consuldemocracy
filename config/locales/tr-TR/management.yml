@@ -18,6 +18,7 @@ tr:
           reseted: Parola sıfırlandı
           random: Rastgele parola oluştur
           save: Parolayı kaydet
+          show: Parolayı görüntüle
           print: Parolayı yazdır
           print_help: Kaydedildiğinde parolayı yazdırabileceksiniz.
     account_info:
