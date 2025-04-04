@@ -806,17 +806,11 @@ so:
         table_title: "Ciwaan"
     questions:
       index:
-        title: "Sualo"
         create: "Saame sual"
-        no_questions: "Majiraan Suaalo."
-        filter_poll: Falanqee sorashada
         select_poll: Xuulo doorshada
-        questions_tab: "Sualo"
         successful_proposals_tab: "Soojedin guleysatay"
         create_question: "Saame sual"
         table_proposal: "Sojeedin"
-        table_question: "Sual"
-        table_poll: "Dorasho"
       edit:
         title: "Tafatiir Suasha"
       new:
@@ -832,7 +826,6 @@ so:
         edit_question: Tafatiir Suasha
         valid_answers: Jawaab Sax ah
         add_answer: Kudar Jawaab
-        video_url: Fidyoowga dibada
         answers:
           title: Jawaab
           description: Sharaxaad
