@@ -474,6 +474,8 @@ sv:
       see_proposed_actions: Visa rekommenderade åtgärder
       hide_proposed_actions: Dölj rekommenderade åtgärder
       pending_title: Väntande
+      execute: "Markera %{name} som klart"
+      unexecute: "Avmarkera %{name} som klart"
       show_description: Visa beskrivning
       without_pending_actions: Inga kommande rekommenderade åtgärder
       done_title: Genomfört
