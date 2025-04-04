@@ -710,15 +710,10 @@ id:
         table_title: "Judul"
     questions:
       index:
-        title: "Pertanyaan"
         create: "Membuat pertanyaan"
-        no_questions: "Tidak ada pertanyaan."
-        questions_tab: "Pertanyaan"
         successful_proposals_tab: "Sukses proposal"
         create_question: "Membuat pertanyaan"
         table_proposal: "Usulan"
-        table_question: "Pertanyaan"
-        table_poll: "Jajak pendapat"
       edit:
         title: "Edit Pertanyaan"
       new:
@@ -733,7 +728,6 @@ id:
         question: Pertanyaan
         valid_answers: Jawaban yang sah
         add_answer: Tambahkan jawaban
-        video_url: Video eksternal
         answers:
           title: Jawaban
           description: Deskripsi
