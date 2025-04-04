@@ -5,7 +5,6 @@ val:
     additional: Documentació adicional
     form:
       title: Documents
-      title_placeholder: Afegeix un títol descriptiu al document
       delete_button: Eliminar document
       cancel_button: Cancel·lar
       note: "Pots pujar fins un màxim de %{max_documents_allowed} documents en els formats: %{accepted_content_types}, y de fins %{max_file_size} MB per arxiu."
