@@ -999,18 +999,11 @@ sr:
         unable_notice: "Не можете избрисати анкету која има гласове"
     questions:
       index:
-        title: "Питања"
         create: "Креирајте питање"
-        no_questions: "Нема питања."
-        filter_poll: Филтрирати по анкети
         select_poll: Одредити анкету
-        questions_tab: "Питања"
         successful_proposals_tab: "Успешни предлози"
         create_question: "Креирати питање"
         table_proposal: "Предлог"
-        table_question: "Питање"
-        table_poll: "Анкета"
-        poll_not_assigned: "Анкета није додељена"
       edit:
         title: "Уредити питање"
       new:
@@ -1027,7 +1020,6 @@ sr:
         edit_question: Уредити питање
         valid_answers: Важећи одговор
         add_answer: Додати одговор
-        video_url: Спољни видео
         answers:
           title: Одговор
           description: Опис

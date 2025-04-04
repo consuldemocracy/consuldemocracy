@@ -564,7 +564,6 @@ de:
         support: "Sie müssen nur auf die Schaltfläche klicken, die unter \"Diesen Vorschlag unterstützen\" angezeigt wird. Sie können sich dort informieren, bevor Sie ihn bewerben. Nur die Vorschläge, die die notwendige Unterstützung erreichen, werden vom Stadtrat ausgeführt. Sie können mir helfen, dies zu erreichen!"
         share: "Sie würden mir einen großen Gefallen tun, wenn Sie meinen Vorschlag mit Ihren Freunden, Familie und Kontakten teilen - das wäre perfekt!"
   polls:
-    all: "Alle"
     dates: "Von %{open_at} bis %{closed_at}"
     final_date: "Endgültige Nachzählungen/Ergebnisse"
     index:

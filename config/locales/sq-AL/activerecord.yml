@@ -229,7 +229,6 @@ sq:
         public_activity: "Mbaje listën e aktiviteteve të mia publike"
         recommended_debates: "Trego rekomandimet e debateve"
         recommended_proposals: "Trego rekomandimet e propozimeve"
-        redeemable_code: "Kodi i verifikimit është pranuar përmes postës elektronike"
       direct_message:
         title: "Titull"
         body: "Mesazh"

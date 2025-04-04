@@ -643,17 +643,11 @@ es-PE:
         table_title: "Título"
     questions:
       index:
-        title: "Preguntas ciudadanas"
         create: "Crear pregunta para votación"
-        no_questions: "No hay ninguna pregunta ciudadana."
-        filter_poll: Filtrar por votación
         select_poll: Seleccionar votación
-        questions_tab: "Preguntas ciudadanas"
         successful_proposals_tab: "Propuestas que han superado el umbral"
         create_question: "Crear pregunta para votación"
         table_proposal: "la propuesta"
-        table_question: "Pregunta"
-        table_poll: "Votación"
       edit:
         title: "Editar pregunta ciudadana"
       new:
@@ -670,7 +664,6 @@ es-PE:
         edit_question: Editar pregunta
         valid_answers: Respuestas válidas
         add_answer: Añadir respuesta
-        video_url: Vídeo externo
         answers:
           title: Respuesta
           description: Descripción detallada

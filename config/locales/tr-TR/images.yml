@@ -3,7 +3,6 @@ tr:
     remove_image: Görseli kaldır
     form:
       title: Açıklayıcı görsel
-      title_placeholder: Görsel için açıklayıcı bir başlık ekleyin
       delete_button: Görseli kaldır
       note: "Şu içerik türlerindeki bir görseli yükleyebilirsiniz: %{accepted_content_types}, en fazla %{max_file_size} MB boyutuna kadar."
       add_new_image: Görsel ekle

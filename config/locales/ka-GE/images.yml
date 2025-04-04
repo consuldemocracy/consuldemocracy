@@ -3,7 +3,6 @@ ka:
     remove_image: სურათის წაშლა
     form:
       title: აღწერილობითი სურათი
-      title_placeholder: აღწერილობითი სათაურის დამატება სურათზე
       delete_button: სურათის წაშლა
       note: "დასაშვებია მაქსიმუმ %{max_file_size} მეგაბაიტის ზომის შემდეგი ტიპის ფოტოების ატვირთვა: %{accepted_content_types}"
       add_new_image: ფოტოსურათის დამატება

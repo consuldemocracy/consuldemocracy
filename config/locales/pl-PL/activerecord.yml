@@ -320,7 +320,6 @@ pl:
         public_activity: "Pokazuj publicznie moją listę aktywności"
         recommended_debates: "Pokaż zalecenia debat"
         recommended_proposals: "Pokaż wnioski rekomendacji"
-        redeemable_code: "Kod weryfikacyjny otrzymany za pośrednictwem poczty e-mail"
       direct_message:
         title: "Tytuł"
         body: "Wiadomość"

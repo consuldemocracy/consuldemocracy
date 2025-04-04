@@ -380,7 +380,6 @@ gd:
         public_interests: "Cùm na h-eileamaidean a tha mi a’ leantainn poblach"
         recommended_debates: "Deasbadan a chaidh moladh dhomh"
         recommended_proposals: "Molaidhean a chaidh moladh dhomh"
-        redeemable_code: "An còd dearbhaidh a fhuaras tro phost-d."
       direct_message:
         title: "Tiotal"
         body: "Teachdaireachd"

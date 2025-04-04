@@ -308,7 +308,6 @@ hr:
         public_interests: "Javno prikaži oznake elemenata koje pratim"
         recommended_debates: "Prikaži preporuke za rasprave"
         recommended_proposals: "Prikaži preporuke za prijedloge"
-        redeemable_code: "Verifikacijski kod primljen preko emaila"
       direct_message:
         title: "Naziv"
         body: "Poruka"

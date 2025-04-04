@@ -5,7 +5,6 @@ mk:
     additional: Дополнителна документација
     form:
       title: Документи
-      title_placeholder: Додади описен наслов за документот
       delete_button: Избриши документ
       cancel_button: Откажи
       note: "Можете да поставите максимум %{max_documents_allowed} документи од следните типови на содржина: %{accepted_content_types}, до максимум %{max_file_size} мегабајти по фајл."

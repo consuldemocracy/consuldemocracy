@@ -293,7 +293,6 @@ it:
         public_interests: "Mantieni pubblica le etichette di elementi che seguo"
         recommended_debates: "Mostra raccomandazioni dei dibattiti"
         recommended_proposals: "Mostra raccomandazioni proposte"
-        redeemable_code: "Il codice di verifica che hai ricevuto via email"
       direct_message:
         title: "Titolo"
         body: "Messaggio"

@@ -5,7 +5,6 @@ fr:
     additional: Plus de documentation
     form:
       title: Documents
-      title_placeholder: Ajouter un titre descriptif pour le document
       delete_button: Supprimer le document
       cancel_button: Annuler
       note: "Vous pouvez ajouter au plus %{max_documents_allowed} documents de type %{accepted_content_types} et de taille %{max_file_size} Mo par fichier."

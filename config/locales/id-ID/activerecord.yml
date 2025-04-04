@@ -211,7 +211,6 @@ id:
         official_level: "Tingkat resmi"
         phone_number: "Nomor telepon"
         public_activity: "Menjaga daftar kegiatan Umum"
-        redeemable_code: "Kode verifikasi diterima melalui surel"
       direct_message:
         title: "Judul"
         body: "Pesan"

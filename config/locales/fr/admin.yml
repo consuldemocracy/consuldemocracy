@@ -210,7 +210,6 @@ fr:
         submit: "Sauvegarder la rubrique"
       group_switcher:
         currently_showing: "Affichage les en-têtes du groupe %{group}."
-        different_group: "Gérer les en-têtes d'un groupe différent"
         the_other_group: "Aller aux elements du %{group}."
       index:
         back: "Retourner aux groupes"
@@ -1129,18 +1128,11 @@ fr:
         multiple_description: "Permet de choisir plusieurs réponses. Il est possible de configurer le nombre maximum de réponses."
     questions:
       index:
-        title: "Questions"
         create: "Créer une question"
-        no_questions: "Il n'y a pas de questions."
-        filter_poll: Filtrer par vote
         select_poll: Sélectionner un vote
-        questions_tab: "Questions"
         successful_proposals_tab: "Propositions ayant dépassées le seuil"
         create_question: "Créer une question"
         table_proposal: "Proposition"
-        table_question: "Question"
-        table_poll: "Vote"
-        poll_not_assigned: "Sondage non attribué"
       edit:
         title: "Modifier la question"
       form:
@@ -1159,7 +1151,6 @@ fr:
         edit_question: Modifier la question
         valid_answers: Réponses valides
         add_answer: Ajouter une réponse
-        video_url: Vidéo externe
         answers:
           title: Réponse
           description: Description

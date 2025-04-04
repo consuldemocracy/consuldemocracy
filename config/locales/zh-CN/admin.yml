@@ -808,17 +808,11 @@ zh-CN:
         table_title: "标题"
     questions:
       index:
-        title: "问题"
         create: "创建问题"
-        no_questions: "没有问题。"
-        filter_poll: 按投票项过滤
         select_poll: 选择投票项
-        questions_tab: "问题"
         successful_proposals_tab: "成功的提议"
         create_question: "创建问题"
         table_proposal: "提议"
-        table_question: "问题"
-        table_poll: "投票"
       edit:
         title: "编辑问题"
       new:
@@ -834,7 +828,6 @@ zh-CN:
         edit_question: 编辑问题
         valid_answers: 有效答案
         add_answer: 添加答案
-        video_url: 外部视频
         answers:
           title: 回答
           description: 说明

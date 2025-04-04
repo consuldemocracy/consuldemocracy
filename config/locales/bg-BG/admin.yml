@@ -1033,18 +1033,11 @@ bg:
         unable_notice: "Не можете да изтриете анкета с гласове"
     questions:
       index:
-        title: "Въпроси"
         create: "Създайте въпрос"
-        no_questions: "Няма въпроси."
-        filter_poll: Филтриране по анкета
         select_poll: Избиране на анкета
-        questions_tab: "Въпроси"
         successful_proposals_tab: "Успешни предложения"
         create_question: "Създайте въпрос"
         table_proposal: "Предложение"
-        table_question: "Въпрос"
-        table_poll: "Анкета"
-        poll_not_assigned: "Анкета не е назначена"
       edit:
         title: "Редактиране на въпроса"
       new:
@@ -1061,7 +1054,6 @@ bg:
         edit_question: Редактиране на въпрос
         valid_answers: Валидни отговори
         add_answer: Добавете отговор
-        video_url: Външно видео
         answers:
           title: Въпрос
           description: Описание

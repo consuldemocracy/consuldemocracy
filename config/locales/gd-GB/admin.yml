@@ -213,7 +213,6 @@ gd:
         submit: "Sàbhail bann-sinn"
       group_switcher:
         currently_showing: "A’ sealltainn cinn-sgrìobhaidh sam bith sa bhuidhinn <strong>%{group}</strong> ."
-        different_group: "Stiùirich cinn-sgrìobhaidh à bhuidhinn eile %{group}."
         the_other_group: "Stiùirich cinn-sgrìobhaidh sa bhuidhinn %{group}."
       index:
         back: "Air ais do na buidhnean"
@@ -1116,18 +1115,11 @@ gd:
         multiple_description: "Tha seo a’ ceadachadh grunn fhreagairtean a thaghadh. Tha e comasach an àireamh as motha de fhreagairtean a tha ceadaichte a shuidheachadh."
     questions:
       index:
-        title: "Ceistean"
         create: "Cruthaich ceist"
-        no_questions: "Chan eil ceist sam bith ann."
-        filter_poll: Criathraich a rèir cinn-latha
         select_poll: Tagh cunntas-bheachd
-        questions_tab: "Ceistean"
         successful_proposals_tab: "Molaidhean soirbheachail"
         create_question: "Cruthaich ceist"
         table_proposal: "Moladh"
-        table_question: "Ceist"
-        table_poll: "Cunntas-bheachd"
-        poll_not_assigned: "Chan eil a’ bhòt air a shònrachadh"
       edit:
         title: "Deasaich Ceist"
       form:
@@ -1148,7 +1140,6 @@ gd:
         edit_question: Deasaich ceist
         valid_answers: Freagairtean dligheach
         add_answer: Cuir freagairt ris
-        video_url: Bhidio air an taobh a-muigh
         answers:
           title: Freagairt
           description: Tuairisgeul

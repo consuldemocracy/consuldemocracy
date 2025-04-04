@@ -4,7 +4,6 @@ eu:
     additional: Gehigarrizko agiriak
     form:
       title: Dokumentuak
-      title_placeholder: Deskribapen izenburu bat idatzi agiriarentzako
       delete_button: Agiria ezabatu
       cancel_button: Ezeztatu
       note: "Gehienez %{max_documents_allowed} agiri igo ditzakezu. Hurengo formatuan izan behar dira: %{accepted_content_types}, eta gehienez %{max_file_size} MB fitxategi bakoitzeko."

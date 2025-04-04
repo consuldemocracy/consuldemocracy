@@ -249,7 +249,6 @@ fa:
       mailing_options:
         preview: پیش نمایش
   polls:
-    all: "همه"
     index:
       filters:
         current: "بازکردن"

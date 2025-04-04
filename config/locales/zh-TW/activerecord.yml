@@ -194,7 +194,6 @@ zh-TW:
         public_activity: "把我的活動清單公開"
         recommended_debates: "顯示辯論推薦"
         recommended_proposals: "顯示建議推薦"
-        redeemable_code: "通過電子郵件收到的驗證代碼"
       direct_message:
         title: "標題"
         body: "消息"

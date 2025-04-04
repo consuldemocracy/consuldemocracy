@@ -702,17 +702,11 @@ sl:
         table_title: "Naslov"
     questions:
       index:
-        title: "Vprašanja"
         create: "Ustvari vprašanje"
-        no_questions: "Ni vprašanj."
-        filter_poll: Filtriraj po glasovanju
         select_poll: Izberi glasovanje
-        questions_tab: "Vprašanja"
         successful_proposals_tab: "Uspešni predlogi"
         create_question: "Ustvari vprašanje"
         table_proposal: "Predlog"
-        table_question: "Vprašanje"
-        table_poll: "Glasovanje"
       edit:
         title: "Uredi vprašanje"
       new:
@@ -729,7 +723,6 @@ sl:
         edit_question: Uredi vprašanje
         valid_answers: Veljavni odgovori
         add_answer: Dodaj odgovor
-        video_url: Zunanji video
         answers:
           title: Odgovor
           description: Opis

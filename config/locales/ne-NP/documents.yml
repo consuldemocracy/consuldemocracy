@@ -5,7 +5,6 @@ ne:
     additional: अतिरिक्त कागजातहरू
     form:
       title: कागजातहरू
-      title_placeholder: कागजातको लागि वर्णनात्मक शीर्षक थप्नुहोस्
       delete_button: कागजात हटाउनु हाेस्
       cancel_button: रद्द
       note: "तपाईंले निम्न सामग्री प्रकारहरूको अधिकतम %{max_documents_allowed} कागजातहरू अपलोड गर्न सक्नुहुन्छ: %{accepted_content_types}, प्रति फाइल %{max_file_size} MB सम्म।"

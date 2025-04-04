@@ -5,7 +5,6 @@ ru:
     additional: Дополнительная документация
     form:
       title: Документы
-      title_placeholder: Добавить описательное название для документа
       delete_button: Убрать документ
       cancel_button: Отменить
       note: "Вы можете загрузить максимум %{max_documents_allowed} документов следующих типов содержимого: %{accepted_content_types}, максимум %{max_file_size} МБ на файл."

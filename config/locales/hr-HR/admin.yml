@@ -999,18 +999,11 @@ hr:
         unable_notice: "Ne možete obrisati glasanje koje ima zabilježene glasove"
     questions:
       index:
-        title: "Pitanja"
         create: "Stvori pitanje"
-        no_questions: "Ne postoje pitanja."
-        filter_poll: Filtriraj po Glasanju
         select_poll: Odaberi Glasanje
-        questions_tab: "Pitanja"
         successful_proposals_tab: "Uspješni prijedlozi"
         create_question: "Stvori pitanje"
         table_proposal: "Prijedlog"
-        table_question: "Pitanje"
-        table_poll: "Glasanje"
-        poll_not_assigned: "Glasanje nije dodijeljeno"
       edit:
         title: "Uredi Pitanje"
       new:
@@ -1027,7 +1020,6 @@ hr:
         edit_question: Uredi pitanje
         valid_answers: Valjani odgovori
         add_answer: Dodaj odgovor
-        video_url: Vanjski video
         answers:
           title: Odgovor
           description: Opis

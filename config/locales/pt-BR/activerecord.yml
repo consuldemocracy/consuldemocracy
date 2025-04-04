@@ -284,7 +284,6 @@ pt-BR:
         public_interests: "Tornar públicos os rótulos dos elementos que sigo"
         recommended_debates: "Mostrar recomendações de debates"
         recommended_proposals: "Mostrar recomendações de debates"
-        redeemable_code: "Código de verificação recebido via e-mail"
       direct_message:
         title: "Título"
         body: "Mensagem"

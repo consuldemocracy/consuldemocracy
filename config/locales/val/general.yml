@@ -422,7 +422,6 @@ val:
       forward:
         support_button: Avalar aquesta proposta
   polls:
-    all: "Totes"
     dates: "Des del %{open_at} fins el %{closed_at}"
     final_date: "Recompte final/Resultats"
     index:

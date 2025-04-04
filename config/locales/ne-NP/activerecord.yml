@@ -291,7 +291,6 @@ ne:
         public_interests: "मैले पछ्याउने तत्वहरू सार्वजनिक राख्नुहोस्"
         recommended_debates: "मलाई बहस गर्न सिफारिस गर्नुहोस्"
         recommended_proposals: "मलाई प्रस्तावहरू सिफारिस गर्नुहोस्"
-        redeemable_code: "इमेल मार्फत प्रमाणिकरण कोड प्राप्त भयो"
       direct_message:
         title: "टाइटल"
         body: "सन्देश"

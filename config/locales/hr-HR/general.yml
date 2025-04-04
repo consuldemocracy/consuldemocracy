@@ -570,7 +570,6 @@ hr:
         support: "Vi samo trebate kliknuti na gumb koji ćete vidjeti u nastavku 'Podržite ovaj prijedlog' i dobiti povratne informacije prije nego ga promovirate. Samo će prijedlozi za postizanje maksimalne potpore biti izvršeni od strane javnog tijela, a uz vašu pomoć možemo ostvariti prijedlog!"
         share: "Bilo bi super da mi učinite uslugu dijeljenja mojeg prijedloga sa svojim prijateljima, obitelji i kontaktima, bilo bi savršeno!"
   polls:
-    all: "Svi"
     dates: "Od %{open_at} do %{closed_at}"
     final_date: "Konačno prebrojavanje/Rezultati"
     index:

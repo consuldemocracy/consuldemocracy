@@ -423,13 +423,9 @@ fi:
         questions_tab: Kysymykset
     questions:
       index:
-        title: "Kysymykset"
         create: "Luo kysymys"
-        questions_tab: "Kysymykset"
         create_question: "Luo kysymys"
         table_proposal: "Ehdotus"
-        table_question: "Kysymys"
-        table_poll: "Kysely"
       new:
         title_proposal: "Luo kysymys"
       answers:
@@ -438,7 +434,6 @@ fi:
       show:
         author: Tekijä
         question: Kysymys
-        video_url: Ulkoinen video
         answers:
           title: Vastaus
           description: Kuvaus

@@ -5,7 +5,6 @@ ar:
     additional: وثائق إضافية
     form:
       title: الوثائق
-      title_placeholder: اضف عنوان وصفي للمستند
       delete_button: ازالة مستند
       cancel_button: إلغاء
       note: "يمكنك تحميل ما يصل إلى%{max_documents_allowed} وثيقة بحد أقصى من أنواع المحتوى التالية: %{accepted_content_types} ، و ذلك حتى %{max_file_size} ميغابايت لكل ملف."

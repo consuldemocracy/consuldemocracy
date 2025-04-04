@@ -210,7 +210,6 @@ gl:
         submit: "Gardar partida"
       group_switcher:
         currently_showing: "Amosando as partidas do grupo <strong>%{group}</strong>."
-        different_group: "Xestionar as partidas doutro grupo"
         the_other_group: "Xestionar as partidas do grupo %{group}."
       index:
         back: "Volver aos grupos"
@@ -1129,18 +1128,11 @@ gl:
         multiple_description: "Permite escoller máis dunha resposta. Pódese elixir o número máximo de respostas."
     questions:
       index:
-        title: "Preguntas"
         create: "Crear pregunta"
-        no_questions: "Non hai preguntas cidadás."
-        filter_poll: Filtrar por votación
         select_poll: Escoller votación
-        questions_tab: "Preguntas"
         successful_proposals_tab: "Propostas que superaron o límite"
         create_question: "Crear pregunta"
         table_proposal: "a proposta"
-        table_question: "Pregunta"
-        table_poll: "Votación"
-        poll_not_assigned: "Votación sen asignar"
       edit:
         title: "Editar pregunta cidadá"
       form:
@@ -1161,7 +1153,6 @@ gl:
         edit_question: Editar pregunta
         valid_answers: Respostas válidas
         add_answer: Engadir resposta
-        video_url: Vídeo externo
         answers:
           title: Resposta
           description: Descrición

@@ -293,7 +293,6 @@ gl:
         public_interests: "Amosar publicamente as etiquetas dos elementos que sigo"
         recommended_debates: "Amosar recomendacións de debates"
         recommended_proposals: "Amosar recomendacións de propostas"
-        redeemable_code: "Código de verificación por carta (opcional)"
       direct_message:
         title: "Título"
         body: "Mensaxe"

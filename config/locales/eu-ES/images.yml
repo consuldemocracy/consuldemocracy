@@ -3,7 +3,6 @@ eu:
     remove_image: Irudia ezabatu
     form:
       title: irudi descriptiboa
-      title_placeholder: Izenburu deskriptibo bat gehitu irudiarentzako
       delete_button: Irudia ezabatu
       note: "Irudia formatu hauetan igo dezakezu: %{accepted_content_types}, eta %{max_file_size} MB fitxategi bakoitzeko."
       add_new_image: Irudia gehitu

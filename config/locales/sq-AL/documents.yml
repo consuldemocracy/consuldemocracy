@@ -5,7 +5,6 @@ sq:
     additional: Dokumentacion shtesë
     form:
       title: Dokumentet
-      title_placeholder: Shto një titull përshkrues për dokumentin
       delete_button: Hiq dokumentin
       cancel_button: Anullo
       note: "Mund të ngarkoni deri në një maksimum prej %{max_documents_allowed} dokumenta të llojeve të mëposhtme të përmbajtjes: %{accepted_content_types}, deri%{max_file_size} MB pë dokument"
