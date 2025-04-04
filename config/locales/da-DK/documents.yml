@@ -5,7 +5,6 @@ da:
     additional: Supplerende dokumentation
     form:
       title: Dokumenter
-      title_placeholder: Tilføj en beskrivende titel til dokumentet
       delete_button: Fjern fil
       cancel_button: Annuller
       note: "Du kan maksimalt uploade %{max_documents_allowed} filer i følgende format %{accepted_content_types}, op til %{max_file_size} MB pr. fil."
