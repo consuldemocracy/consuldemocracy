@@ -584,17 +584,11 @@ ast:
         table_title: "Títulu"
     questions:
       index:
-        title: "Entruges"
         create: "Crear entruga pa votación"
-        no_questions: "Nun hai nenguna entruga ciudadana."
-        filter_poll: Peñerar por votación
         select_poll: Escoyer votación
-        questions_tab: "Entruges"
         successful_proposals_tab: "Propuestes que superaron l'estragal"
         create_question: "Crear entruga pa votación"
         table_proposal: "la propuesta"
-        table_question: "Entruga"
-        table_poll: "Votación"
       edit:
         title: "Editar entruga ciudadana"
       new:

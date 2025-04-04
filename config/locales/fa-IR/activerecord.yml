@@ -209,7 +209,6 @@ fa:
         official_level: "سطح رسمی"
         phone_number: "شماره تلفن"
         public_activity: "نگه داشتن لیست فعالیت های عمومی  من"
-        redeemable_code: "کد تایید  از طریق ایمیل دریافت شد."
       direct_message:
         title: "عنوان"
         body: "پیام"

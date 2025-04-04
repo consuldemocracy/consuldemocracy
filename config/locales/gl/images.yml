@@ -3,7 +3,6 @@ gl:
     remove_image: Borrar imaxe
     form:
       title: Imaxe descritiva
-      title_placeholder: Escribe un título descritivo para a imaxe
       delete_button: Borrar imaxe
       note: "Podes subir unha imaxe nos formatos seguintes: %{accepted_content_types}, e de até %{max_file_size} MB por ficheiro."
       add_new_image: Engadir imaxe

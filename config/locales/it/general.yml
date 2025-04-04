@@ -564,7 +564,6 @@ it:
         support: "Devi solo cliccare sul pulsante seguente 'Supporta questa proposta' e puoi informarti prima di promuoverla. Solo le proposte che ricevono il massimo supporto arriveranno in Comune e ho pensato che tu potessi aiutarmi a farcela!"
         share: "E se mi facessi anche il grande favore di condividere la mia proposta coi tuoi amici, la tua famiglia e i tuoi contatti, sarebbe perfetto!"
   polls:
-    all: "Tutti"
     dates: "Dal %{open_at} al %{closed_at}"
     final_date: "Scrutinio finale/Risultati"
     index:

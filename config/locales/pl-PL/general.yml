@@ -448,7 +448,6 @@ pl:
         support_button: Poprzyj ten wniosek
         hi: "Witaj!"
   polls:
-    all: "Wszystkie"
     dates: "Od %{open_at} do %{closed_at}"
     final_date: "Ostateczne przeliczenia/wyniki"
     index:

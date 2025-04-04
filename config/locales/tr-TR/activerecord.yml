@@ -296,7 +296,6 @@ tr:
         public_interests: "İzlediğim bileşenler herkese açık olsun"
         recommended_debates: "Bana tartışmalar önerilsin"
         recommended_proposals: "Bana önergeler önerilsin"
-        redeemable_code: "Doğrulama kodu e-posta ile alındı"
       direct_message:
         title: "Başlık"
         body: "İleti"

@@ -51,7 +51,7 @@ pt-BR:
           residence_card: Cartão de residência
           spanish_id: RG
         error_not_allowed_age: Você não tem a idade mínima para participar
-        error_not_allowed_postal_code: Para ser verificado, você deve estar registrado.
+        error_not_allowed_postal_code: Para ser verificado, você deve estar registrado
         error_verifying_census: O Censo não foi capaz de verificar suas informações. Por favor confirme que os seus detalhes do Censo estão corretos ligando para a Prefeitura ou visitando um um Escritório de Apoio ao Cidadão.
         form_errors: impediu a verificação da sua residência
         postal_code_note: Para verificar sua conta, você deve estar registrado

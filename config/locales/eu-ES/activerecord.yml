@@ -188,7 +188,6 @@ eu:
         official_position: "Kargu publikoa"
         official_level: "Kargu maila"
         phone_number: "Telefonoa"
-        redeemable_code: "Eskutitz bidezko egiaztapen kodea (aukerakoa)"
       direct_message:
         title: "Izenburua"
       organization:

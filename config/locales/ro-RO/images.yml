@@ -3,7 +3,6 @@ ro:
     remove_image: Șterge imagine
     form:
       title: Imagine descriptivă
-      title_placeholder: Adăugați un titlu descriptiv pentru imagine
       delete_button: Șterge imagine
       note: "Puteți încărca o imagine cu următoarele tipuri de conținut: %{accepted_content_types}, până la %{max_file_size} MB."
       add_new_image: Adaugă imagine

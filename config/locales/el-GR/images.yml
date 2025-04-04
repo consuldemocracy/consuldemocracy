@@ -3,7 +3,6 @@ el:
     remove_image: Διαγραφή εικόνας
     form:
       title: Περιγραφική εικόνα
-      title_placeholder: Προσθέστε έναν περιγραφικό τίτλο σε αυτήν την εικόνα
       delete_button: Κατάργηση εικόνας
       note: "Μπορείτε να ανεβάσετε μια εικόνα της ακόλουθης μορφής: %{accepted_content_types}, μέχρι %{max_file_size} MB."
       add_new_image: Προσθήκη εικόνας

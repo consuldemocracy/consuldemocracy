@@ -290,7 +290,6 @@ nl:
         public_interests: "Wat ik volg is zichtbaar voor anderen"
         recommended_debates: "Aanbevolen debatten weergeven"
         recommended_proposals: "Laat aanbevolen voorstellen zien"
-        redeemable_code: "Verificatiecode ontvangen via email"
       direct_message:
         title: "Title"
         body: "Bericht"

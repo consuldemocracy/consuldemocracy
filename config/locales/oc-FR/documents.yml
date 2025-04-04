@@ -5,7 +5,6 @@ oc:
     additional: Documentacion addicionala
     form:
       title: de Documents
-      title_placeholder: Apondètz un títol descriptiu pel document
       delete_button: Elimina lo document
       cancel_button: Cancel · lar
       note: "Podètz penjar fins a un maximal de %{max_documents_allowed} de documents dels tipes de contengut seguent: %{accepted_content_types}, Fins a %{max_file_size} MB per fichièr."

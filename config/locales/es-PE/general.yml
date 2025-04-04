@@ -384,7 +384,6 @@ es-PE:
       forward:
         support_button: Apoyar esta propuesta
   polls:
-    all: "Todas"
     dates: "Desde el %{open_at} hasta el %{closed_at}"
     final_date: "Recuento final/Resultados"
     index:

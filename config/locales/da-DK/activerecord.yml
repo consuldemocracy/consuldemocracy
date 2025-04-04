@@ -284,7 +284,6 @@ da:
         public_interests: "Andre brugere kan se de tags, jeg følger"
         recommended_debates: "Se anbefalede debatindlæg"
         recommended_proposals: "Se anbefalede borgerforslag"
-        redeemable_code: "Verifikationskode modtaget via e-mail"
       direct_message:
         title: "Titel"
         body: "Besked"

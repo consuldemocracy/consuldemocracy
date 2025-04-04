@@ -5,7 +5,6 @@ tr:
     additional: Ek belgeler
     form:
       title: Belgeler
-      title_placeholder: Belge için açıklayıcı bir başlık ekleyin
       delete_button: Belgeyi kaldır
       cancel_button: İptal
       note: "Şu içerik türlerinden en fazla %{max_documents_allowed} belge yükleyebilirsiniz: %{accepted_content_types}, her dosya en fazla %{max_file_size} MB boyutunda olabilir."

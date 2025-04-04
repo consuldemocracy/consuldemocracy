@@ -5,7 +5,6 @@ hr:
     additional: Dodatna dokumentacija
     form:
       title: Dokumenti
-      title_placeholder: Dodaj opisni naziv dokumenta
       delete_button: Ukloni dokument
       cancel_button: Otkaži
       note: "Možete učitati maksimalno %{max_documents_allowed} dokumenata sljdećih tipova sadržaja:%{accepted_content_types}, do veličine %{max_file_size} MB po datoteci."

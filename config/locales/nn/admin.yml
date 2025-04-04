@@ -256,13 +256,10 @@ nn:
         table_title: "Tittel"
     questions:
       index:
-        title: "Spørsmål"
-        questions_tab: "Spørsmål"
         table_proposal: "Forslag"
       show:
         author: Forfatter
         add_answer: Legg til svar
-        video_url: Ekstern video
         answers:
           title: Svar
           documents: Dokumenter

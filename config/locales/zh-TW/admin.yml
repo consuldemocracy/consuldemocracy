@@ -799,17 +799,11 @@ zh-TW:
         table_title: "標題"
     questions:
       index:
-        title: "問題"
         create: "創建問題"
-        no_questions: "這裡沒有問題。"
-        filter_poll: 按投票項篩選
         select_poll: 選擇投票項
-        questions_tab: "問題"
         successful_proposals_tab: "成功的建議"
         create_question: "創建問題"
         table_proposal: "建議"
-        table_question: "問題"
-        table_poll: "投票"
       edit:
         title: "編輯問題"
       new:
@@ -825,7 +819,6 @@ zh-TW:
         edit_question: 編輯問題
         valid_answers: 有效答案
         add_answer: 添加答案
-        video_url: 外部視頻
         answers:
           title: 回答
           description: 描述

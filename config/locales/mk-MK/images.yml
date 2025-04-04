@@ -3,7 +3,6 @@ mk:
     remove_image: Отстрани слика
     form:
       title: Описна слика
-      title_placeholder: Додади описен наслов за сликата
       delete_button: Отстрани слика
       note: "Можете да поставите слика од следните содржински типови: %{accepted_content_types}, до големина од %{max_file_size} мегабајти."
       add_new_image: Додади слика

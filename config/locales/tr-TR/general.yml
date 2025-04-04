@@ -568,7 +568,6 @@ tr:
         support: "'Bu önergeyi destekle' seçeneğinin altında göreceğiniz düğmeye tıklamanız yeterli. Önerge hakkında bilgi sahibi olduktan sonra duyurulmasına da yardımcı olabilirsiniz. Yönetim yalnızca en çok destek alan önergeleri gerçekleştirecek ve bunu başarmamıza yardım edeceğinizden eminim!"
         share: "Bana bir iyilik yaparak önergemi arkadaşlarınla, ailenle ve yakınlarınla paylaşırsan, harika olur!"
   polls:
-    all: "Tümü"
     dates: "%{open_at} ile %{closed_at} arasında"
     final_date: "Son yeniden sayımlar/Sonuçlar"
     index:

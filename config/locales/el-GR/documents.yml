@@ -5,7 +5,6 @@ el:
     additional: Πρόσθετη τεκμηρίωση
     form:
       title: Έγγραφα
-      title_placeholder: Προσθέστε έναν περιγραφικό τίτλο για το έγγραφο
       delete_button: Αφαιρέστε το έγγραφο
       cancel_button: Άκυρο
       note: "Μπορείτε να ανεβάσετε έως και ένα μέγιστο %{max_documents_allowed} εγγράφων των ακόλουθων τύπων περιεχομένου: \n%{accepted_content_types}, μέχρι %{max_file_size} MB ανά αρχείο."

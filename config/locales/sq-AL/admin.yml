@@ -808,17 +808,11 @@ sq:
         table_title: "Titull"
     questions:
       index:
-        title: "Pyetjet"
         create: "Krijo pyetje"
-        no_questions: "Nuk ka pyetje."
-        filter_poll: Filtro sipas sondazhit
         select_poll: Zgjidh sondazhin
-        questions_tab: "Pyetjet"
         successful_proposals_tab: "Propozime të suksesshme"
         create_question: "Krijo pyetje"
         table_proposal: "Propozime"
-        table_question: "Pyetje"
-        table_poll: "Sondazh"
       edit:
         title: "Ndrysho pyetjet"
       new:
@@ -834,7 +828,6 @@ sq:
         edit_question: Ndrysho pyetjet
         valid_answers: Përgjigje të vlefshme
         add_answer: Shto përgjigje
-        video_url: Video e jashtme
         answers:
           title: Përgjigje
           description: Përshkrimi

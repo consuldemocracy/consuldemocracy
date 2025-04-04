@@ -598,7 +598,6 @@ gd:
         support: "Chan eil agad ri dhèanamh ach briogadh air a’ phutan a chì thu gu h-ìosal ‘Cuir taic ris a’ mholadh seo’ agus gheibh thu cothrom ionnsachadh mu dheidhinn mus cuir thu air adhart e. Is e dìreach na molaidhean a gheibh an taic as motha a thèid a chur an gnìomh le Comhairle a’ Bhaile, agus bha mi a’ smaoineachadh gun cuidicheadh tu mi gus seo a choileanadh!"
         share: "Agus ma nì thu fàbhar mòr dhomh cuideachd is ma sgaoileas tu mo mholadh ri do charaidean, do theaghlach agus na daoine as aithne dhut, bhiodh e sgoinneil!"
   polls:
-    all: "A h-uile"
     dates: "Bho %{open_at} gu %{closed_at}"
     final_date: "Cunntasan /Toraidhean deireannach"
     index:

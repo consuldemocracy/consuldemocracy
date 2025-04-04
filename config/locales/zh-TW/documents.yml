@@ -5,7 +5,6 @@ zh-TW:
     additional: 額外的文檔
     form:
       title: 文檔
-      title_placeholder: 為文檔添加描述性的標題
       delete_button: 刪除文檔
       cancel_button: 取消
       note: "以下內容類型%{accepted_content_types} 的文檔，您最多可以上載%{max_documents_allowed} 個，每個文檔最大%{max_file_size} MB。"

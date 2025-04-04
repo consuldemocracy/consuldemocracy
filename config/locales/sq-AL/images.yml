@@ -3,7 +3,6 @@ sq:
     remove_image: Hiq imazhin
     form:
       title: Imazhi përshkrues
-      title_placeholder: Shto një titull përshkrues për imazhin
       delete_button: Hiq imazhin
       note: "Ju mund të ngarkoni një imazh të llojeve të mëposhtme të përmbajtjes: %{accepted_content_types}, deri në %{max_file_size} MB"
       add_new_image: Shto imazhin

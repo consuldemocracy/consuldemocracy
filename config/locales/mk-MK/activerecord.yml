@@ -263,7 +263,6 @@ mk:
         public_interests: "Зачувај ги јавни назнаките на елементите кои ги следам"
         recommended_debates: "Покажи препораки за дебати"
         recommended_proposals: "Покажи препораки за предлози"
-        redeemable_code: "Верификациски код примен преку електронска пошта"
       direct_message:
         title: "Наслов"
         body: "Порака"

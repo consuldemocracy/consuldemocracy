@@ -308,7 +308,6 @@ sr:
         public_interests: "Задржи етикете елемената које пратим"
         recommended_debates: "Покажи препоруке за дебате"
         recommended_proposals: "Покажи препоруке за предлоге"
-        redeemable_code: "Верификациони код примљен путем емаила"
       direct_message:
         title: "Наслов"
         body: "Порука"

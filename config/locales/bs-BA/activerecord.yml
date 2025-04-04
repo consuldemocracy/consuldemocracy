@@ -295,7 +295,6 @@ bs:
         public_activity: "Moja lista aktivnosti je javna"
         recommended_debates: "Pokaži preporuke iz debata"
         recommended_proposals: "Pokaži preporuke iz prijedloga"
-        redeemable_code: "Verifikacioni kod primljen emailom"
       direct_message:
         title: "Naziv"
         body: "Poruka"

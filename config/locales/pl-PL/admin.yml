@@ -916,18 +916,11 @@ pl:
         see_proposal: "(Zobacz wnioski)"
     questions:
       index:
-        title: "Pytania"
         create: "Utwórz pytanie"
-        no_questions: "Nie ma pytań."
-        filter_poll: Filtruj według głosowania
         select_poll: Wybierz ankietę
-        questions_tab: "Pytania"
         successful_proposals_tab: "Udane wnioski"
         create_question: "Utwórz pytanie"
         table_proposal: "Wniosek"
-        table_question: "Pytanie"
-        table_poll: "Sondaż"
-        poll_not_assigned: "Punkt nie przypisany"
       edit:
         title: "Edytuj Pytanie"
       new:
@@ -943,7 +936,6 @@ pl:
         edit_question: Edytuj Pytanie
         valid_answers: Ważne odpowiedzi
         add_answer: Dodaj odpowiedź
-        video_url: Zewnętrzne video
         answers:
           title: Odpowiedź
           description: Opis

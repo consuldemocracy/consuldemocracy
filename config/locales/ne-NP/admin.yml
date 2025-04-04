@@ -207,7 +207,6 @@ ne:
         submit: "शीर्षक सुरक्षित गर्नुहोस्"
       group_switcher:
         currently_showing: "<strong>%{group}</strong> समूहबाट शीर्षकहरू देखाउँदै।"
-        different_group: "फरक समूहबाट शीर्षकहरू प्रबन्ध गर्नुहोस्"
         the_other_group: "%{group} समूहबाट शीर्षकहरू प्रबन्ध गर्नुहोस्।"
       index:
         back: "समूहहरूमा फर्कनुहोस्"
@@ -1108,18 +1107,11 @@ ne:
         multiple_description: "धेरै उत्तरहरू छनौट गर्न अनुमति दिन्छ। उत्तरहरूको अधिकतम संख्या सेट गर्न सम्भव छ।"
     questions:
       index:
-        title: "प्रश्नहरू"
         create: "प्रश्न सिर्जना गर्नुहोस्"
-        no_questions: "कुनै प्रश्नहरू छैनन्।"
-        filter_poll: मतदानद्वारा फिल्टर गर्नुहोस्
         select_poll: मतदान चयन गर्नुहोस्
-        questions_tab: "प्रश्नहरू"
         successful_proposals_tab: "सफल प्रस्तावहरू"
         create_question: "प्रश्न सिर्जना गर्नुहोस्"
         table_proposal: "प्रस्ताव"
-        table_question: "प्रश्न"
-        table_poll: "मतदान"
-        poll_not_assigned: "मतदान तोकिएको छैन"
       edit:
         title: "प्रश्न सम्पादन गर्नुहोस्"
       form:
@@ -1140,7 +1132,6 @@ ne:
         edit_question: प्रश्न सम्पादन गर्नुहोस्
         valid_answers: मान्य उत्तरहरू
         add_answer: जवाफ थप्नुहोस्
-        video_url: बाह्य भिडियो
         answers:
           title: जवाफ
           description: विवरण

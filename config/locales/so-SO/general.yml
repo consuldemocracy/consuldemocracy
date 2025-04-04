@@ -410,7 +410,6 @@ so:
       forward:
         support_button: Taageeraan hindisahan
   polls:
-    all: "Dhamaan"
     dates: "Kadimid%{open_at} ila%{closed_at}"
     final_date: "Soo-celinta ugu dambeysa / Natiijooyinka"
     index:

@@ -1006,18 +1006,11 @@ ar:
         unable_notice: "لا يمكنك حذف استطلاع لديه أصوات"
     questions:
       index:
-        title: "أسئلة"
         create: "إنشاء سؤال"
-        no_questions: "لا توجد هناك أسئلة."
-        filter_poll: ترشيح حسب استطلاع الرأي
         select_poll: تحديد الاستطلاع
-        questions_tab: "أسئلة"
         successful_proposals_tab: "الاقتراحات الناجحة"
         create_question: "إنشاء سؤال"
         table_proposal: "اقتراح"
-        table_question: "سؤال"
-        table_poll: "استطلاع"
-        poll_not_assigned: "استطلاع غير معين"
       edit:
         title: "تحرير سؤال"
       new:
@@ -1033,7 +1026,6 @@ ar:
         edit_question: تحرير سؤال
         valid_answers: إجابات صالحة
         add_answer: إضافة إجابة
-        video_url: فيديو خارجي
         answers:
           title: الإجابة
           description: الوصف

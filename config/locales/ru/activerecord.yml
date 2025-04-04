@@ -335,7 +335,6 @@ ru:
         public_activity: "Оставить мой список действий публичным"
         recommended_debates: "Показывать некомендации дебатов"
         recommended_proposals: "Показывать рекомендации предложений"
-        redeemable_code: "Код подтверждения получен по электронному адресу"
       direct_message:
         title: "Название"
         body: "Сообщение"

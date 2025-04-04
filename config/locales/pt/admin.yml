@@ -212,7 +212,6 @@ pt:
         submit: "Gravar rubrica"
       group_switcher:
         currently_showing: "Mostrando rubricas do grupo <strong>%{group}</strong>."
-        different_group: "Gerir rubricas de um grupo diferente"
         the_other_group: "Gerir rubricas do grupo %{group}."
       index:
         back: "Voltar a grupos"
@@ -1131,18 +1130,11 @@ pt:
         multiple_description: "Permite escolher múltiplas respostas. É possível definir o número máximo de respostas."
     questions:
       index:
-        title: "Perguntas"
         create: "Criar pergunta"
-        no_questions: "Não há perguntas."
-        filter_poll: Filtrar por votação
         select_poll: Selecionar votação
-        questions_tab: "Perguntas"
         successful_proposals_tab: "Propostas bem sucedidas"
         create_question: "Criar pergunta"
         table_proposal: "Proposta"
-        table_question: "Pergunta"
-        table_poll: "Votação"
-        poll_not_assigned: "Votação sem atribuições"
       edit:
         title: "Editar pergunta"
       form:
@@ -1163,7 +1155,6 @@ pt:
         edit_question: Editar pergunta
         valid_answers: Respostas válidas
         add_answer: Adicionar resposta
-        video_url: Vídeo externo
         answers:
           title: Resposta
           description: Descrição

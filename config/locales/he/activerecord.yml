@@ -336,7 +336,6 @@ he:
         public_activity: "השאר את פירוט הפעילויות שלי גלוי לציבור"
         recommended_debates: "הצג המלצות לדיונים"
         recommended_proposals: "הצג המלצות להצעות"
-        redeemable_code: "אימות הסיסמה יתקבל בדואר אלקטרוני"
       direct_message:
         title: "שם"
         body: "תוכן ההודעה"

@@ -1008,18 +1008,11 @@ da:
         success_notice: "Undersøgelsen blev slettet"
     questions:
       index:
-        title: "Spørgsmål"
         create: "Stil spørgsmål"
-        no_questions: "Der er ingen spørgsmål."
-        filter_poll: Filtrer efter Afstemning
         select_poll: Vælg afstemning
-        questions_tab: "Spørgsmål"
         successful_proposals_tab: "Forslag, der har modtaget tilstrækkelig støtte"
         create_question: "Stil spørgsmål"
         table_proposal: "Borgerforslag"
-        table_question: "Spørgsmål"
-        table_poll: "Afstemning"
-        poll_not_assigned: "Afstemning ikke tildelt"
       edit:
         title: "Rediger Spørgsmål"
       new:
@@ -1036,7 +1029,6 @@ da:
         edit_question: Rediger spørgsmål
         valid_answers: Gyldige svar
         add_answer: Tilføj svar
-        video_url: Ekstern video
         answers:
           title: Svar
           description: Beskrivelse
