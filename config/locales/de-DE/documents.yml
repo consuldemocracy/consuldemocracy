@@ -5,7 +5,6 @@ de:
     additional: Zusätzliche Dokumentation
     form:
       title: Dokumente
-      title_placeholder: Fügen Sie einen aussagekräftigen Titel zum Dokument hinzu
       delete_button: Dokument entfernen
       cancel_button: Abbrechen
       note: "Sie können maximal bis zu %{max_documents_allowed} Dokumente des folgenden Inhalttyps hochladen: %{accepted_content_types}, bis zu %{max_file_size} MB pro Datei."
