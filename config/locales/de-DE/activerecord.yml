@@ -285,7 +285,6 @@ de:
         public_interests: "Die Bezeichnungen der Elemente denen ich folge öffentlich zugänglich halten"
         recommended_debates: "Debatten-Empfehlungen anzeigen"
         recommended_proposals: "Antrags-Empfehlungen anzeigen"
-        redeemable_code: "Bestätigungscode per Post (optional)"
       direct_message:
         title: "Titel"
         body: "Nachricht"
