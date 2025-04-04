@@ -55,7 +55,8 @@ class Proposal < ApplicationRecord
             unless: :skip_user_verification?
   validates :retired_reason,
             presence: true,
-            inclusion: { in: ->(*) { RETIRE_OPTIONS }}, unless: -> { retired_at.blank? }
+            inclusion: { in: ->(*) { RETIRE_OPTIONS }},
+            unless: -> { retired_at.blank? }
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 

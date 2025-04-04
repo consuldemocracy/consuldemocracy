@@ -41,8 +41,10 @@ describe "Multitenancy", :seed_tenants do
   end
 
   scenario "PostgreSQL extensions work for tenants" do
-    Tenant.switch("mars") { login_as(create(:user)) }
-
+    Tenant.switch("mars") do
+      Setting["feature.user.skip_verification"] = true
+      login_as(create(:user))
+    end
     with_subdomain("mars") do
       visit new_proposal_path
       fill_in_new_proposal_title with: "Use the unaccent extension in Mars"
