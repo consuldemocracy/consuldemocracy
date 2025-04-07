@@ -407,7 +407,6 @@ zh-CN:
       forward:
         support_button: 支持此提议
   polls:
-    all: "所有"
     dates: "从%{open_at} 到%{closed_at}"
     final_date: "最终重新计票／结果"
     index:

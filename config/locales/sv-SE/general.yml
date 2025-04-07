@@ -474,6 +474,8 @@ sv:
       see_proposed_actions: Visa rekommenderade åtgärder
       hide_proposed_actions: Dölj rekommenderade åtgärder
       pending_title: Väntande
+      execute: "Markera %{name} som klart"
+      unexecute: "Avmarkera %{name} som klart"
       show_description: Visa beskrivning
       without_pending_actions: Inga kommande rekommenderade åtgärder
       done_title: Genomfört
@@ -568,7 +570,6 @@ sv:
         support: "Du behöver bara klicka på knappen under 'Stöd förslaget', och du kan läsa på innan du sprider det vidare. Endast de förslag som får mesta möjliga stöd kommer att genomföras av kommunfullmäktige, och med din hjälp är jag säker på att vi kan klara det!"
         share: "Och om du kunde dela förslaget med dina vänner, din familj och dina kontakter skulle det vara perfekt!"
   polls:
-    all: "Alla"
     dates: "Från %{open_at} till %{closed_at}"
     final_date: "Slutresultat"
     index:

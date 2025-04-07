@@ -5,7 +5,6 @@ cs:
     additional: Dodatečná dokumentace
     form:
       title: Dokumenty
-      title_placeholder: Přidejte popisný název dokumentu
       delete_button: Smazat dokument
       cancel_button: Zrušit
       note: "Můžete nahrát maximálně %{max_documents_allowed} dokumentů z následujících typů obsahu: %{accepted_content_types}, až do %{max_file_size} MB v souboru."

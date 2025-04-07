@@ -18,6 +18,7 @@ sv:
           reseted: Lösenordet har återställts
           random: Skapa ett slumpmässigt lösenord
           save: Spara lösenord
+          show: Visa lösenord
           print: Visa lösenord
           print_help: Du kommer kunna skriva ut lösenordet när det har sparats.
     account_info:

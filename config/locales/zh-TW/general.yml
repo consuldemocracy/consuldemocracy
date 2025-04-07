@@ -406,7 +406,6 @@ zh-TW:
       forward:
         support_button: 支持此建議
   polls:
-    all: "所有"
     dates: "從%{open_at} 到%{closed_at}"
     final_date: "最終驗票/結果"
     index:

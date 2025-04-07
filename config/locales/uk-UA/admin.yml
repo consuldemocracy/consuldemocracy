@@ -1027,18 +1027,11 @@ uk-UA:
         unable_notice: "Ви не можете видалити голосування, за яке віддані голоси"
     questions:
       index:
-        title: "Запитання"
         create: "Створити запитання"
-        no_questions: "Запитання відсутні."
-        filter_poll: Фільтр за голосуванням
         select_poll: Обрати голосування
-        questions_tab: "Запитання"
         successful_proposals_tab: "Успішні пропозиції"
         create_question: "Створити запитання"
         table_proposal: "Пропозиція"
-        table_question: "Запитання"
-        table_poll: "Голосування"
-        poll_not_assigned: "Голосування не призначено"
       edit:
         title: "Редагувати запитання"
       form:
@@ -1059,7 +1052,6 @@ uk-UA:
         edit_question: Редагувати запитання
         valid_answers: Правильні відповіді
         add_answer: Додати відповідь
-        video_url: Зовнішнє відео
         answers:
           title: Відповідь
           description: Опис

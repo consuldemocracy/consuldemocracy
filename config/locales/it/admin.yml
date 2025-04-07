@@ -210,7 +210,6 @@ it:
         submit: "Salvare voce di bilancio"
       group_switcher:
         currently_showing: "Mostrare i titoli dal gruppo <strong>%{group}</strong>."
-        different_group: "Gestire i titoli da un gruppo diverso"
         the_other_group: "Gestire i titoli dal gruppo %{group}."
       index:
         back: "Torna ai gruppi"
@@ -1113,18 +1112,11 @@ it:
         multiple_description: "Consente di scegliere risposte multiple. È possibile impostare il numero massimo di risposte."
     questions:
       index:
-        title: "Quesiti"
         create: "Creare la domanda"
-        no_questions: "Non ci sono domande."
-        filter_poll: Filtra in base alla Votazione
         select_poll: Seleziona sondaggio
-        questions_tab: "Quesiti"
         successful_proposals_tab: "La proposta ha superato la soglia minima"
         create_question: "Creare la domanda"
         table_proposal: "Proposta"
-        table_question: "Quesito"
-        table_poll: "Sondaggio"
-        poll_not_assigned: "Sondaggio non assegnato"
       edit:
         title: "Modifica la domanda"
       form:
@@ -1145,7 +1137,6 @@ it:
         edit_question: Modifica quesito
         valid_answers: Risposte valide
         add_answer: Aggiungi risposta
-        video_url: Video esterno
         answers:
           title: Risposta
           description: Descrizione

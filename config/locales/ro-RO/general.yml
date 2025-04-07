@@ -575,7 +575,6 @@ ro:
         support: "Trebuie doar să faceți clic pe butonul pe care îl veți vedea mai jos „Sprijină această propunere” și vă puteți informa înainte de a o promova. Doar propunerile care vor obține sprijinul maxim vor fi trimise de către Primărie și am crezut că dumneavoastră sunt sigur că mă veți ajuta!"
         share: "Și dacă, de asemenea, îmi faci o mare favoare a-mi distribui propunerea cu prietenii, familia și persoanele de contact, ar fi perfect!"
   polls:
-    all: "Tot"
     dates: "De la %{open_at} către %{closed_at}"
     final_date: "Renumărări/ Rezultate finale"
     index:

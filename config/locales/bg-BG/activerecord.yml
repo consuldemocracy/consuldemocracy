@@ -284,7 +284,6 @@ bg:
         public_interests: "Запазване етикетите на елементите, които следя публично"
         recommended_debates: "Показване на препоръки за дискусии"
         recommended_proposals: "Показване на препоръки за предложения"
-        redeemable_code: "Код за потвърждение, получен по имейл"
       direct_message:
         title: "Заглавие"
         body: "Съобщение"

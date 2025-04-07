@@ -994,18 +994,11 @@ ka:
         unable_notice: "შეუძლებელია იმ კენჭისყრის წაშლა, რომელზეც მიცემულია ხმა"
     questions:
       index:
-        title: "კითხვები"
         create: "შეკითხვის შექმნა"
-        no_questions: "შეკითხვები არ მოიძებნა."
-        filter_poll: კენჭისყრის მიხედვით გაფილტვრა
         select_poll: კენჭისყრის შერჩევა
-        questions_tab: "კითხვები"
         successful_proposals_tab: "წარმატებული ინიციატივები"
         create_question: "შეკითხვის შექმნა"
         table_proposal: "ინიციატივა"
-        table_question: "კითხვა"
-        table_poll: "ხმის მიცემა"
-        poll_not_assigned: "ხმის მიცემა არ  დანიშნულა"
       edit:
         title: "შეკითხვის რედაქტირება"
       new:
@@ -1022,7 +1015,6 @@ ka:
         edit_question: შეკითხვის რედაქტირება
         valid_answers: სწორი პასუხები
         add_answer: პასუხის დამატება
-        video_url: სხვა სერვერზე განთავსებული ვიდეო
         answers:
           title: პასუხი
           description: აღწერა
