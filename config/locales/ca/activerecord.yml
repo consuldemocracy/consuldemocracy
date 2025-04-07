@@ -267,7 +267,6 @@ ca:
         public_interests: "Guardeu les etiquetes dels elements que segueixo públics"
         recommended_debates: "Mostra recomanacions de debats"
         recommended_proposals: "Mostra recomanacions de propostes"
-        redeemable_code: "Codi de verificació per carta (opcional)"
       direct_message:
         title: "Títol"
         body: "Missatge"

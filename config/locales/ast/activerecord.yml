@@ -189,7 +189,6 @@ ast:
         official_level: "Nivel del cargu"
         phone_number: "Númberu de teléfonu"
         public_activity: "Amosar públicamente la mio llista d'actividaes"
-        redeemable_code: "Códigu de verificación per email"
       direct_message:
         title: "Títulu"
         body: "Mensaje"

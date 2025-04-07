@@ -727,17 +727,11 @@ fa:
         table_title: "عنوان"
     questions:
       index:
-        title: "سوالات"
         create: "ایجاد سوال"
-        no_questions: "هیچ سوالی وجود ندارد"
-        filter_poll: فیلتر توسط نظرسنجی
         select_poll: انتخاب نظرسنجي
-        questions_tab: "سوالات"
         successful_proposals_tab: "طرح های موفق"
         create_question: "ایجاد سوال"
         table_proposal: "طرح های پیشنهادی"
-        table_question: "سوال"
-        table_poll: "نظرسنجی"
       edit:
         title: "ویرایش پرسش"
       new:
@@ -753,7 +747,6 @@ fa:
         edit_question: ویرایش پرسش
         valid_answers: پاسخ های معتبر
         add_answer: اضافه کردن پاسخ
-        video_url: ویدیوهای خارجی
         answers:
           title: پاسخ
           description: توضیحات

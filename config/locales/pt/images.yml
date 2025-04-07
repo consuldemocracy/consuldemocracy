@@ -3,7 +3,6 @@ pt:
     remove_image: Remover imagem
     form:
       title: Imagem descritiva
-      title_placeholder: Adicionar um título descritivo para a imagem
       delete_button: Eliminar imagem
       note: "Pode carregar uma imagem dos seguintes tipos: %{accepted_content_types}, até %{max_file_size} MB."
       add_new_image: Adicionar imagem

@@ -555,7 +555,6 @@ pt-BR:
         support: "Você apenas precisa clicar no botão 'Apoiar esta proposta' logo abaixo para se informar sobre ela antes de apoiá-la. Somente as propostas que conseguirem o máximo de apoio serão executadas pela Prefeitura. Assim, tenho certeza que você me ajudará!"
         share: "E se você fizer o grande favor de compartilhar a minha proposta com seus amigos, familiares e contatos, vai ser ótimo!"
   polls:
-    all: "Tudo"
     dates: "De %{open_at} para %{closed_at}"
     final_date: "Contagem final/resultados"
     index:

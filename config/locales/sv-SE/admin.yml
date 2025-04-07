@@ -212,7 +212,6 @@ sv:
         submit: "Spara område"
       group_switcher:
         currently_showing: "Visar områden från %{group}-gruppen."
-        different_group: "Hantera områden från en annan grupp"
         the_other_group: "Hantera områden från %{group}-gruppen."
       index:
         back: "Gå tillbaka till grupper"
@@ -1134,18 +1133,11 @@ sv:
         multiple_description: "Gör det möjligt att välja flera svar. Det går att ställa in maximalt antal svar."
     questions:
       index:
-        title: "Frågor"
         create: "Skapa fråga"
-        no_questions: "Det finns inga frågor."
-        filter_poll: Filtrera efter omröstning
         select_poll: Välj omröstning
-        questions_tab: "Frågor"
         successful_proposals_tab: "Förslag som fått tillräckligt med stöd"
         create_question: "Skapa fråga"
         table_proposal: "Förslag"
-        table_question: "Fråga"
-        table_poll: "Omröstning"
-        poll_not_assigned: "Omröstningen har inte tilldelats"
       edit:
         title: "Redigera fråga"
       form:
@@ -1166,7 +1158,6 @@ sv:
         edit_question: Redigera fråga
         valid_answers: Giltiga svar
         add_answer: Lägg till svar
-        video_url: Extern video
         answers:
           title: Svar
           description: Beskrivning

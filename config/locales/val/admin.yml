@@ -853,18 +853,11 @@ val:
         table_title: "Títol"
     questions:
       index:
-        title: "Preguntes"
         create: "Crear pregunta"
-        no_questions: "No hi ha preguntes."
-        filter_poll: Filtrar per votació
         select_poll: Seleccionar votació
-        questions_tab: "Preguntes"
         successful_proposals_tab: "Propostes que han superat el umbral"
         create_question: "Crear pregunta"
         table_proposal: "Proposta"
-        table_question: "Pregunta"
-        table_poll: "Votació"
-        poll_not_assigned: "Votació sense asignar"
       edit:
         title: "Editar pregunta ciutadana"
       new:
@@ -880,7 +873,6 @@ val:
         edit_question: Editar pregunta
         valid_answers: Respostes vàlides
         add_answer: Afegir resposta
-        video_url: Vídeo extern
         answers:
           title: Resposta
           description: Descripció

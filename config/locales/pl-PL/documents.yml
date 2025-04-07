@@ -5,7 +5,6 @@ pl:
     additional: Dodatkowa dokumentacja
     form:
       title: Dokumenty
-      title_placeholder: Dodaj tytuł opisowy dla dokumentu
       delete_button: Usuń dokument
       cancel_button: Anuluj
       note: "Możesz przesłać maksymalnie do %{max_documents_allowed} dokumentów o następujących typach treści: %{accepted_content_types} aż do %{max_file_size} MB na plik."

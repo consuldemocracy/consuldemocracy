@@ -564,7 +564,6 @@ da:
         support: "Alt du skal gøre er at klikke på knappen 'Støt forslag'. Kun forslag, der modtager den nødvendige støtte, vil blive taget op af Byrådet, og jeg er sikker på, at du kan hjælpe mig med at nå det!"
         share: "Og hvis du også gør mig den store tjeneste at dele mit forslag med venner, familie og andet netværk, vil det være helt perfekt!"
   polls:
-    all: "Alle"
     dates: "Fra %{open_at} til %{closed_at}"
     final_date: "Endelig opregning/Resultater"
     index:

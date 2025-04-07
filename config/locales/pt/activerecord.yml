@@ -293,7 +293,6 @@ pt:
         public_interests: "Manter públicas as etiquetas dos elementos que sigo"
         recommended_debates: "Mostrar recomendações de debates"
         recommended_proposals: "Mostrar recomendações de propostas"
-        redeemable_code: "Código de verificação recebido via e-mail"
       direct_message:
         title: "Título"
         body: "Mensagem"

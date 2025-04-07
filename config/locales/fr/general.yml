@@ -567,7 +567,6 @@ fr:
         support: "Il vous suffit de cliquer sur le bouton que vous verrez ci-dessous 'Soutenir cette proposition' et vous pourrez vous renseigner avant de la promouvoir. Seules les propositions qui obtiendront le maximum de soutien seront réalisées par la Mairie, et j'ai pensé que vous, je suis sûr que vous m'aidez à y parvenir !"
         share: "Et si vous aussi vous me faites la faveur de partager ma proposition avec vos amis, votre famille et vos contacts, ce serait parfait !"
   polls:
-    all: "Toutes"
     dates: "De %{open_at} à %{closed_at}"
     final_date: "Dépouillements/résultats définitifs"
     index:

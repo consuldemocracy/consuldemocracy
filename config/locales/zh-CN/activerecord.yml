@@ -195,7 +195,6 @@ zh-CN:
         public_activity: "将我的活动列表公开"
         recommended_debates: "显示辩论推荐"
         recommended_proposals: "显示提议推荐"
-        redeemable_code: "通过电子邮件接收到的验证码"
       direct_message:
         title: "标题"
         body: "信息"

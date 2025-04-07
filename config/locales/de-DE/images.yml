@@ -3,7 +3,6 @@ de:
     remove_image: Bild entfernen
     form:
       title: Aussagekräftiges Bild
-      title_placeholder: Fügen Sie einen aussagekräftigen Titel zu diesem Bild hinzu
       delete_button: Bild entfernen
       note: "Sie können ein Bild des folgenden Formats hochladen: %{accepted_content_types}, bis zu %{max_file_size} MB."
       add_new_image: Bild hinzufügen
