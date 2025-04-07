@@ -3,8 +3,9 @@ module Abilities
     include CanCan::Ability
 
     def initialize(user)
-      
-      can :show, Admin
+
+      cannot :edit, Administrator
+       can :index, Administrator
       
       can :restore, Comment
       cannot :restore, Comment, hidden_at: nil
