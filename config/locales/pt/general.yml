@@ -567,7 +567,6 @@ pt:
         support: "Basta clicar no botão que verá abaixo 'Apoie esta proposta' e poderá informar-se antes de a promover. Só serão levadas a cabo pela Câmara Municipal as propostas que obtenham o máximo apoio, e tenho a certeza que me vai ajudar a consegui-lo!"
         share: "E se fizer o grande favor de compartilhar a minha proposta com os seus amigos, familiares e contactos, seria perfeito!"
   polls:
-    all: "Todas"
     dates: "Das %{open_at} às %{closed_at}"
     final_date: "Recontagem final/resultados"
     index:

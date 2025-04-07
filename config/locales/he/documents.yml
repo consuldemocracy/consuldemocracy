@@ -5,7 +5,6 @@ he:
     additional: תיעוד נוסף
     form:
       title: מסמכים
-      title_placeholder: הוספת כותרת המתארת את המסמך
       delete_button: הסר מסמך
       cancel_button: ביטול
       note: "ניתן לטעון עד \"%{max_documents_allowed}\"מסמכים מסוגי התוכן הבאים:\n\"%{accepted_content_types}\", עד \"%{max_file_size}\" מגה בייט לקובץ."

@@ -5,7 +5,6 @@ bg:
     additional: Допълнителна документация
     form:
       title: Документи
-      title_placeholder: Добавете описателно заглавие на документа
       delete_button: Премахване на документ
       cancel_button: Отказ
       note: "Можете да качите до максимум %{max_documents_allowed} документи от следните типове съдържание: %{accepted_content_types}, до %{max_file_size} MB на файл."

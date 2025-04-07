@@ -5,7 +5,6 @@ it:
     additional: Documentazione aggiuntiva
     form:
       title: Documenti
-      title_placeholder: Aggiungi un titolo descrittivo per il documento
       delete_button: Rimuovi documento
       cancel_button: Cancella
       note: "È possibile caricare fino ad un massimo di %{max_documents_allowed} documenti con i seguenti tipi di contenuto: %{accepted_content_types}, fino a %{max_file_size} MB per ogni file."

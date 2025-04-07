@@ -992,18 +992,11 @@ oc:
         unable_notice: "No podeu suprimir una enquesta amb vots"
     questions:
       index:
-        title: "Demandas de ciutadanas"
         create: "Crear question per votacion"
-        no_questions: "I a pas ninguna demanda ciutadana."
-        filter_poll: Filtrar per votacion
         select_poll: Seleccionar votacion
-        questions_tab: "Demandas de ciutadanas"
         successful_proposals_tab: "de Proposicions qu'an superat lo umbral"
         create_question: "Crear question per votacion"
         table_proposal: "la proposicion"
-        table_question: "question"
-        table_poll: "votacion"
-        poll_not_assigned: "Enquèsta pas assignada"
       edit:
         title: "Editar demanda ciutadana"
       new:
@@ -1020,7 +1013,6 @@ oc:
         edit_question: Edita la question
         valid_answers: de Responsas válidas
         add_answer: Apondètz responsa
-        video_url: Vidèo extèrne
         answers:
           title: Responsa
           description: Descripcion detalhada

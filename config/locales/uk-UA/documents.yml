@@ -5,7 +5,6 @@ uk-UA:
     additional: Додаткова документація
     form:
       title: Документи
-      title_placeholder: Додати назву для опису документу
       delete_button: Видалити документ
       cancel_button: Відмінити
       note: "Ви можете завантажити щонайбільше %{max_documents_allowed} документів наступних типів: %{accepted_content_types}, до %{max_file_size} MB на файл."

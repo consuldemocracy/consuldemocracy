@@ -391,7 +391,6 @@ id:
       forward:
         support_button: Mendukung proyek ini
   polls:
-    all: "Semua"
     dates: "Dari %{open_at} untuk %{closed_at}"
     final_date: "Final menceritakan/Hasil"
     index:
