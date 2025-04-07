@@ -15,6 +15,10 @@ module ActionDispatch::Routing::UrlFor
     end
   end
 
+  def process_management_polymorphic_path(resource, options = {})
+    namespaced_polymorphic_path(:process_management, resource, options)
+  end
+  
   def admin_polymorphic_path(resource, options = {})
     namespaced_polymorphic_path(:admin, resource, options)
   end

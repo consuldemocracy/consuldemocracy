@@ -2,6 +2,18 @@ load Rails.root.join("app", "models", "user.rb")
 
 class User < ApplicationRecord
 
+ has_one :process_manager
+ scope :process_managers,     -> { joins(:process_manager) }
+
+ def process_manager?
+    process_manager.present?
+ end
+
+ def administrator?
+    administrator.present? || process_manager.present?
+ end
+
+
 def self.unlock_in
      security = Tenant.current_secrets[:security]
      lockable = security[:lockable] if security
