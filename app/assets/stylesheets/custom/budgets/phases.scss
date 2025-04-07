@@ -55,7 +55,7 @@
         padding: 1rem; /* Added padding for better spacing */
         border-radius: .5rem; /* Rounded corners */
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-        background-color: #fff; /* White background for contrast */
+        background-color: var(--brand-secondary); /* White background for contrast */
 
         @supports(clip-path: polygon(0 0, 50% 50%, 0% 100%)) {
             $triangle-width: 1em;
