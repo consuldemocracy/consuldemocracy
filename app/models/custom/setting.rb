@@ -33,10 +33,13 @@ class Setting
       end
     end
     
+    def hide_votes?
+      Setting["feature.hide_votes"] == "active"
+    end
+
     def hide_comments?
       Setting["feature.hide_comments"] == "active"
     end
-
     
     def hide_local_login?
       Setting["feature.hide_local_login"] == "active"
