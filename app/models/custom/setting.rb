@@ -27,6 +27,7 @@ class Setting
           "feature.saml_login": true,
           "feature.valid_geozone": true,
           "feature.hide_comments": false,
+          "feature.hide_votes": false,
           "feature.hide_local_login": false
         })
       end
