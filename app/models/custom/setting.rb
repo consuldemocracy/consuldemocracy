@@ -33,6 +33,10 @@ class Setting
       end
     end
     
+    def resources_visible?
+      Setting["feature.resources"] == "active"
+    end
+
     def hide_votes?
       Setting["feature.hide_votes"] == "active"
     end
