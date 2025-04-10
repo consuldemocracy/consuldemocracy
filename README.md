@@ -30,6 +30,7 @@ Check the [ongoing documentation](https://docs.consuldemocracy.org/index) to lea
 ## CONSUL DEMOCRACY Foundation and project website
 
 You can access the main website of the project at [http://consuldemocracy.org](http://consuldemocracy.org) where you can find information about the use of the platform, the CONSUL DEMOCRACY Foundation, the global community of users and local partners, news, and ways to get more support or get in touch.
+<a rel="me" href="https://waag.social/@consuldemocracy">Mastodon</a>
 
 ## Configuration for development and test environments
 
