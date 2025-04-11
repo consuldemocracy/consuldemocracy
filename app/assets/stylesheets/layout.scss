@@ -859,6 +859,7 @@ footer {
 
   p,
   a,
+  button,
   .checkbox {
     font-size: $small-font-size;
   }
@@ -876,6 +877,16 @@ footer {
     padding: 0 calc($line-height / 2);
     position: relative;
     top: calc(-1 * $line-height / 2);
+  }
+}
+
+.button-as-link {
+  color: $anchor-color;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
   }
 }
 
