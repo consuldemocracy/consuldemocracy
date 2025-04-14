@@ -149,7 +149,7 @@ describe "Managed User" do
       expect(page).to have_content "Identified as"
       expect(page).to have_content user.username.to_s
 
-      click_link "Change user"
+      click_button "Change user"
     end
 
     expect(page).to have_content "User session signed out successfully."
