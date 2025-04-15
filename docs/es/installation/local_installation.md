@@ -2,7 +2,8 @@
 
 Antes de comenzar a instalar Consul Democracy, comprueba que tengas todos los [prerrequisitos](prerequisites.md) correctamente instalados.
 
-La instalación variará según el sistema operativo: 
+La instalación variará según el sistema operativo:
+
 - [Ubuntu Linux](docs/en/installation/ubuntu.md)
 - [Debian Linux](docs/en/installation/debian.md)
 - [macOS](docs/en/installation/macos.md)
