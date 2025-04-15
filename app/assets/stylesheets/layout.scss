@@ -1190,9 +1190,17 @@ form {
   @include breakpoint(medium) {
 
     .mark-notification {
+      @include anchor-color;
+      cursor: pointer;
       position: absolute;
       right: 12px;
       top: 12px;
+
+      &:hover,
+      &:active,
+      &:focus {
+        @include anchor-color-hover;
+      }
     }
   }
 

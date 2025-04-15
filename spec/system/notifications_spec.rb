@@ -59,7 +59,7 @@ describe "Notifications" do
     click_notifications_icon
 
     within("#notification_#{notification1.id}") do
-      click_link "Mark as read"
+      click_button "Mark as read"
     end
 
     expect(page).to have_css(".notification", count: 1)
@@ -89,7 +89,7 @@ describe "Notifications" do
 
     expect(page).to have_css(".notification", count: 1)
     within("#notification_#{notification1.id}") do
-      click_link "Mark as unread"
+      click_button "Mark as unread"
     end
 
     expect(page).to have_css(".notification", count: 0)
