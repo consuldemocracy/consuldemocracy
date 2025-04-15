@@ -36,7 +36,7 @@ Puedes acceder a la página principal del proyecto en [http://consuldemocracy.or
 
 Para instrucciones más detalladas, consulta la [documentación de instalación local](docs/es/installation/local_installation.md).
 
-Para usuarios de Mac, consulta la [instalación para macOS](https://docs.consuldemocracy.org/tech_docs/introduction/local_installation/macos).
+Para usuarios de Mac, consulta la [instalación para macOS](https://docs.consuldemocracy.org/tech_docs/spanish-6/introduction/local_installation/macos).
 
 Prerrequisitos: tener instalado git, Ruby 3.2.8, CMake, pkg-config, Node.js 18.20.3, ImageMagick y PostgreSQL (9.5 o superior).
 
