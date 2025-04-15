@@ -33,10 +33,8 @@ You can access the main website of the project at [http://consuldemocracy.org](h
 
 ## Configuration for development and test environments
 
-**NOTES**: 
-For more detailed instructions, check the [local installation docs](docs/en/installation/local_installation.md).
-
-For Mac users, please follow the [macOS Installation Guide](https://docs.consuldemocracy.org/tech_docs/introduction/local_installation/macos).
+**NOTE**: 
+The installation process will vary depending on your operative system. Please make sure to follow the [Local Installation Guide](docs/en/installation/local_installation.md) appropriate for your OS.
 
 Prerequisites: install git, Ruby 3.2.8, CMake, pkg-config, Node.js 18.20.3, ImageMagick and PostgreSQL (>=9.5).
 
