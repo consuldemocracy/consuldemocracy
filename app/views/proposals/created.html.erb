@@ -13,9 +13,9 @@
       <% end %>
 
       <% if can?(:publish, @proposal) %>
-        <%= link_to t("proposals.created.publish"),
-                    publish_proposal_path(@proposal),
-                    method: :patch, class: "button" %>
+        <%= button_to t("proposals.created.publish"),
+                      publish_proposal_path(@proposal),
+                      method: :patch, class: "button", form_class: "inline" %>
       <% end %>
     </div>
   </div>
