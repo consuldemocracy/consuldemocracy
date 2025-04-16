@@ -74,7 +74,7 @@ describe "Notifications" do
     click_notifications_icon
 
     expect(page).to have_css(".notification", count: 2)
-    click_link "Mark all as read"
+    click_button "Mark all as read"
 
     expect(page).to have_css(".notification", count: 0)
   end
