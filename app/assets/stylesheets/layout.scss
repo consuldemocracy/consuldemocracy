@@ -2134,7 +2134,7 @@ table {
     text-align: center;
   }
 
-  a {
+  button {
     font-weight: bold;
     margin-right: $line-height;
     text-decoration: none;
@@ -2152,6 +2152,14 @@ table {
     &::before {
       margin-right: $font-icon-margin;
     }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  form {
+    display: inline;
   }
 }
 

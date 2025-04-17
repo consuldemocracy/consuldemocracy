@@ -1,15 +1,15 @@
 <small><%= t("related_content.is_related") %></small>
 
-<span class="relate-content-score">
-  <%= link_to t("related_content.score_positive"),
-              score_positive_related_content_path(related),
-              method: :put,
-              remote: true,
-              class: "score-positive" %>
+<div class="relate-content-score">
+  <%= button_to t("related_content.score_positive"),
+                score_positive_related_content_path(related),
+                method: :put,
+                remote: true,
+                class: "score-positive" %>
 
-  <%= link_to t("related_content.score_negative"),
-              score_negative_related_content_path(related),
-              method: :put,
-              remote: true,
-              class: "score-negative" %>
-</span>
+  <%= button_to t("related_content.score_negative"),
+                score_negative_related_content_path(related),
+                method: :put,
+                remote: true,
+                class: "score-negative" %>
+</div>
