@@ -1811,8 +1811,11 @@ table {
   color: $delete;
 }
 
-.dropdown-pane a {
-  color: $text-medium;
+.dropdown-pane {
+  a,
+  button {
+    color: $text-medium;
+  }
 }
 
 // 17. Activity
