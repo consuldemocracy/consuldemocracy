@@ -821,6 +821,16 @@ footer {
 
 .auth-page {
 
+  .cancel-button {
+    cursor: pointer;
+
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
   .footer {
     margin-top: 0;
   }
