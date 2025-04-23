@@ -492,6 +492,7 @@ button,
 .delete {
   border-bottom: 1px dotted;
   color: $delete;
+  cursor: pointer;
   font-size: $small-font-size;
 
   &:hover,
@@ -499,6 +500,7 @@ button,
   &:focus {
     border-bottom-color: transparent;
     color: color.adjust($delete, $lightness: -10%);
+    text-decoration: underline;
   }
 }
 

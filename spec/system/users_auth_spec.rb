@@ -211,7 +211,7 @@ describe "Users" do
         click_button "Sign up with Twitter"
 
         expect(page).to have_current_path(finish_signup_path)
-        click_link "Cancel login"
+        click_button "Cancel login"
 
         expect(page).to have_content "You have been signed out successfully"
 
