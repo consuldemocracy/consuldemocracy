@@ -1157,6 +1157,10 @@ form {
       line-height: rem-calc(120);
       vertical-align: top;
     }
+
+    button {
+      @include link;
+    }
   }
 }
 
