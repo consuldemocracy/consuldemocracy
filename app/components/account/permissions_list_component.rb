@@ -12,7 +12,7 @@ class Account::PermissionsListComponent < ApplicationComponent
         t("verification.user_permission_debates") => true,
         t("verification.user_permission_proposal") => true,
         t("verification.user_permission_support_proposal") => user.level_two_or_three_verified?,
-        t("verification.user_permission_votes") => user.level_three_verified?
+        t("verification.user_permission_votes") => user.level_two_or_three_verified?
       }
     end
 
