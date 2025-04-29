@@ -19,8 +19,6 @@ class Verification::Residence
   #validate :local_residence
 
   def initialize(attrs = {})
-    self.date_of_birth = parse_date("date_of_birth", attrs)
-    attrs = remove_date("date_of_birth", attrs)
     super
 #    clean_document_number
   end
