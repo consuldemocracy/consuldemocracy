@@ -3,6 +3,7 @@ class Verification::Residence
   include ActiveModel::Attributes
   include ActiveModel::Validations::Callbacks
 
+  attribute :date_of_birth, :date
   attr_accessor :user, :document_number, :document_type, :date_of_birth, :postal_code, :terms_of_service
 
 #  validates :document_number, presence: true
