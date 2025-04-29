@@ -1,6 +1,6 @@
 class Verification::Residence
   include ActiveModel::Model
-  include ActiveModel::Dates
+  include ActiveModel::Attributes
   include ActiveModel::Validations::Callbacks
 
   attr_accessor :user, :document_number, :document_type, :date_of_birth, :postal_code, :terms_of_service
