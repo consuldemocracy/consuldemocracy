@@ -21,6 +21,7 @@ module AdminHelper
   def user_roles(user)
     roles = []
     roles << :admin if user.administrator?
+    roles << :process_manager if user.process_manager?
     roles << :moderator if user.moderator?
     roles << :valuator if user.valuator?
     roles << :manager if user.manager?

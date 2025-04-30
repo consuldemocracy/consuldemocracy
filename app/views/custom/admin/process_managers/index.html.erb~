@@ -1,0 +1,38 @@
+<h2><%= t("admin.managers.index.title") %></h2>
+
+<%= render "admin/shared/user_search", url: search_admin_managers_path %>
+
+<div id="managers">
+  <% if @managers.any? %>
+    <h3><%= page_entries_info @managers %></h3>
+
+    <table>
+      <thead>
+        <th scope="col"><%= Manager.human_attribute_name(:name) %></th>
+        <th scope="col"><%= Manager.human_attribute_name(:email) %></th>
+        <th scope="col" class="small-3"><%= t("admin.shared.actions") %></th>
+      </thead>
+      <tbody>
+        <% @managers.each do |manager| %>
+          <tr>
+            <td>
+              <%= manager.name %>
+            </td>
+            <td>
+              <%= manager.email %>
+            </td>
+            <td>
+              <%= render Admin::Roles::TableActionsComponent.new(manager) %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= paginate @managers %>
+  <% else %>
+    <div class="callout primary">
+      <%= t("admin.managers.index.no_managers") %>
+    </div>
+  <% end %>
+</div>

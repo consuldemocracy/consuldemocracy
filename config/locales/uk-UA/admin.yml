@@ -179,7 +179,6 @@ uk-UA:
         valuator_filter_all: Усі оцінювачі
         tags_filter_all: Усі теги
         advanced_filters: Розширені фільтри
-        placeholder: Пошук проектів
         filters:
           all: Усі
           without_admin: Без призначеного адміністратора
@@ -209,7 +208,6 @@ uk-UA:
           unfeasible: "Реалізація недоцільна"
           undecided: "Не вирішено"
         selected: "Вибрано"
-        select: "Обрати"
         list:
           id: ID
           title: Назва
@@ -1193,7 +1191,6 @@ uk-UA:
         title: Пропозиції
         id: ID
         author: Автор
-        select: Обрати
         selected: Вибрано
         milestones: Основні етапи
         no_proposals: Пропозицій немає.

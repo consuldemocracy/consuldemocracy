@@ -610,7 +610,7 @@ describe "Budget Investments" do
 
       click_button "Create Investment"
 
-      expect(page).to have_content "Investment created successfully"
+      expect(page).to have_content "Budget Investment created successfully"
       expect(page).to have_content "Build a skyscraper"
       expect(page).to have_content "I want to live in a high tower over the clouds"
       expect(page).to have_content "City center"
@@ -678,7 +678,7 @@ describe "Budget Investments" do
 
       click_button "Create Investment"
 
-      expect(page).to have_content "Investment created successfully"
+      expect(page).to have_content "Budget Investment created successfully"
       expect(page).to have_content "Build a skyscraper"
       expect(page).to have_content "I want to live in a high tower over the clouds"
       expect(page).to have_content "City center"
@@ -1118,14 +1118,6 @@ describe "Budget Investments" do
                   "budget_investment_path",
                   { budget_id: "budget_id", id: "id" }
 
-  it_behaves_like "nested imageable",
-                  "budget_investment",
-                  "new_budget_investment_path",
-                  { budget_id: "budget_id" },
-                  "imageable_fill_new_valid_budget_investment",
-                  "Create Investment",
-                  "Budget Investment created successfully."
-
   it_behaves_like "documentable",
                   "budget_investment",
                   "budget_investment_path",
@@ -1170,7 +1162,7 @@ describe "Budget Investments" do
       within("#budget_investment_#{investment1.id}") do
         expect(page).to have_content(investment1.title)
 
-        accept_confirm { click_link("Delete") }
+        accept_confirm { click_button "Delete" }
       end
 
       expect(page).to have_content "Investment project deleted successfully"
@@ -1666,18 +1658,20 @@ describe "Budget Investments" do
     scenario "Shows the polygon associated to the current heading" do
       triangle = <<~JSON
         {
+          "type": "Feature",
           "geometry": {
             "type": "Polygon",
-            "coordinates": [[-0.1,51.5],[-0.2,51.4],[-0.3,51.6]]
+            "coordinates": [[[-0.1, 51.5], [-0.2, 51.4], [-0.3, 51.6], [-0.1, 51.5]]]
           }
         }
       JSON
 
       rectangle = <<~JSON
         {
+          "type": "Feature",
           "geometry": {
             "type": "Polygon",
-            "coordinates": [[-0.1,51.5],[-0.2,51.5],[-0.2,51.6],[-0.1,51.6]]
+            "coordinates": [[[-0.1, 51.5], [-0.2, 51.5], [-0.2, 51.6], [-0.1, 51.6], [-0.1, 51.5]]]
           }
         }
       JSON

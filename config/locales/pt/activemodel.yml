@@ -1,1 +1,50 @@
 pt:
+  activemodel:
+    models:
+      verification:
+        residence: "Residência"
+        sms: "SMS"
+      local_census_records/import:
+        one: Importação de registos do censo local
+        other: Importações de registos do censo local
+    attributes:
+      verification:
+        residence:
+          document_type: "Tipo de documento"
+          document_number: "Número do documento (incluindo as letras)"
+          date_of_birth: "Data de nascimento"
+          postal_code: "Código postal"
+        sms:
+          phone: "Telefone"
+          confirmation_code: "Código de confirmação"
+        email:
+          recipient: "E-mail"
+      verification/letter:
+        email: "E-mail"
+        password: "Palavra-passe"
+        verification_code: "Código recebido por carta"
+      verification/management/document:
+        document_type: "Tipo de documento:"
+        document_number: "Número do documento"
+      verification/residence:
+        date_of_birth: "Data de nascimento"
+        document_type: "Tipo de documento"
+        postal_code: "Código postal"
+      verification/sms:
+        confirmation_code: "Insira o código recebido no telemóvel"
+      officing/residence:
+        document_type: "Tipo de documento"
+        document_number: "Número do documento (incluindo as letras)"
+        year_of_birth: "Ano de nascimento"
+      local_census_records/import:
+        file: Ficheiro
+      setting/locales_settings:
+        default: Idioma predefinido
+        enabled: Idiomas ativados
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "Formato de ficheiro inválido. O formato permitido é: %{valid_extensions}."
+              headers: "Cabeçalhos dos ficheiros inválidos. Os cabeçalhos devem ter os seguintes nomes: %{required_headers}."

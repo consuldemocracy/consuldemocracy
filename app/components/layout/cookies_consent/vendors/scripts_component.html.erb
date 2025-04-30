@@ -1,0 +1,16 @@
+<script type="text/javascript">
+  <% vendors.each do |vendor| %>
+    <% vendor_method_name = "#{vendor.cookie}_script" %>
+    function <%= vendor_method_name %>() {
+      <%= sanitize vendor.script %>
+    }
+
+    <% initialize_vendor_method_name = "initialize_#{vendor.cookie}_script" %>
+    function <%= initialize_vendor_method_name %>() {
+      if (App.Cookies.getCookie("<%= vendor.cookie %>") === "true") {
+        <%= vendor_method_name %>();
+      }
+    }
+    $(document).on("turbolinks:load", <%= initialize_vendor_method_name %>);
+  <% end %>
+</script>

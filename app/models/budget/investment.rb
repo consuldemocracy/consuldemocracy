@@ -95,7 +95,9 @@ class Budget
     scope :not_unfeasible,              -> { excluding(unfeasible) }
     scope :undecided,                   -> { where(feasibility: "undecided") }
 
-    scope :with_supports,      -> { where(cached_votes_up: 1..) }
+
+    scope :everything,         -> { all }
+    scope :with_supports,      -> { where("cached_votes_up > 0") }
     scope :selected,           -> { feasible.where(selected: true) }
     scope :compatible,         -> { where(incompatible: false) }
     scope :incompatible,       -> { where(incompatible: true) }

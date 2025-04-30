@@ -160,7 +160,6 @@ ca:
         valuator_filter_all: Tots els avaluadors
         tags_filter_all: Totes les etiquetes
         advanced_filters: Filtres avançats
-        placeholder: Cerca de projectes
         filters:
           all: tots
           without_admin: Sense administrador
@@ -190,7 +189,6 @@ ca:
           unfeasible: "No viables"
           undecided: "sense decidir"
         selected: "seleccionada"
-        select: "Seleccionar"
         list:
           id: ID
           title: Títol
@@ -1153,7 +1151,6 @@ ca:
         title: Propostes ciutadanes
         id: ID
         author: Autor
-        select: Selecciona
         selected: Seleccionat
         milestones: Fites
         no_proposals: No hi ha propostes.

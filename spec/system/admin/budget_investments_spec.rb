@@ -43,21 +43,6 @@ describe "Admin budget investments", :admin do
       expect(page).not_to have_content("€")
     end
 
-    scenario "If budget is finished do not show 'Selected' button" do
-      finished_budget = create(:budget, :finished)
-      budget_investment = create(:budget_investment, budget: finished_budget, cached_votes_up: 77)
-
-      visit admin_budget_budget_investments_path(budget_id: finished_budget.id)
-
-      within("#budget_investment_#{budget_investment.id}") do
-        expect(page).to have_content(budget_investment.title)
-        expect(page).to have_content(budget_investment.heading.name)
-        expect(page).to have_content(budget_investment.id)
-        expect(page).to have_content(budget_investment.total_votes)
-        expect(page).not_to have_link("Selected")
-      end
-    end
-
     scenario "Display admin and valuator assignments" do
       olga = create(:user, username: "Olga")
       miriam = create(:user, username: "Miriam")
@@ -113,28 +98,28 @@ describe "Admin budget investments", :admin do
       expect(page).to have_link("Change name")
       expect(page).to have_link("Plant trees")
 
-      select "Parks: Central Park", from: "heading_id"
+      select "Parks: Central Park", from: "Heading"
       click_button "Filter"
 
       expect(page).not_to have_link("Realocate visitors")
       expect(page).not_to have_link("Change name")
       expect(page).to have_link("Plant trees")
 
-      select "All headings", from: "heading_id"
+      select "All headings", from: "Heading"
       click_button "Filter"
 
       expect(page).to have_link("Realocate visitors")
       expect(page).to have_link("Change name")
       expect(page).to have_link("Plant trees")
 
-      select "Streets: Main Avenue", from: "heading_id"
+      select "Streets: Main Avenue", from: "Heading"
       click_button "Filter"
 
       expect(page).to have_link("Realocate visitors")
       expect(page).not_to have_link("Change name")
       expect(page).not_to have_link("Plant trees")
 
-      select "Streets: Mercy Street", from: "heading_id"
+      select "Streets: Mercy Street", from: "Heading"
       click_button "Filter"
 
       expect(page).not_to have_link("Realocate visitors")
@@ -157,28 +142,28 @@ describe "Admin budget investments", :admin do
       expect(page).to have_link("Realocate visitors")
       expect(page).to have_link("Destroy the city")
 
-      select "Admin 1", from: "administrator_id"
+      select "Admin 1", from: "Administrator"
       click_button "Filter"
 
       expect(page).to have_content("There is 1 investment")
       expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
-      select "Alias", from: "administrator_id"
+      select "Alias", from: "Administrator"
       click_button "Filter"
 
       expect(page).to have_content("There are no investment projects")
       expect(page).not_to have_link("Destroy the city")
       expect(page).not_to have_link("Realocate visitors")
 
-      select "All administrators", from: "administrator_id"
+      select "All administrators", from: "Administrator"
       click_button "Filter"
 
       expect(page).to have_content("There are 2 investments")
       expect(page).to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
-      select "Admin 1", from: "administrator_id"
+      select "Admin 1", from: "Administrator"
       click_button "Filter"
 
       expect(page).to have_content("There is 1 investment")
@@ -198,21 +183,21 @@ describe "Admin budget investments", :admin do
       expect(page).to have_link("Realocate visitors")
       expect(page).to have_link("Destroy the city")
 
-      select "Valuator 1", from: "valuator_or_group_id"
+      select "Valuator 1", from: "Valuator or group"
       click_button "Filter"
 
       expect(page).to have_content("There is 1 investment")
       expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
-      select "All valuators", from: "valuator_or_group_id"
+      select "All valuators", from: "Valuator or group"
       click_button "Filter"
 
       expect(page).to have_content("There are 2 investments")
       expect(page).to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
-      select "Valuator 1", from: "valuator_or_group_id"
+      select "Valuator 1", from: "Valuator or group"
       click_button "Filter"
       expect(page).to have_content("There is 1 investment")
       expect(page).not_to have_link("Destroy the city")
@@ -230,21 +215,21 @@ describe "Admin budget investments", :admin do
       expect(page).to have_link("Build a hospital")
       expect(page).to have_link("Build a theatre")
 
-      select "Health", from: "valuator_or_group_id"
+      select "Health", from: "Valuator or group"
       click_button "Filter"
 
       expect(page).to have_content("There is 1 investment")
       expect(page).to have_link("Build a hospital")
       expect(page).not_to have_link("Build a theatre")
 
-      select "All valuators", from: "valuator_or_group_id"
+      select "All valuators", from: "Valuator or group"
       click_button "Filter"
 
       expect(page).to have_content("There are 2 investments")
       expect(page).to have_link("Build a hospital")
       expect(page).to have_link("Build a theatre")
 
-      select "Culture", from: "valuator_or_group_id"
+      select "Culture", from: "Valuator or group"
       click_button "Filter"
 
       expect(page).to have_content("There is 1 investment")
@@ -260,7 +245,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_link("Investment without admin")
       expect(page).to have_link("Investment with admin")
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       check("Without assigned admin")
       click_button "Filter"
 
@@ -284,7 +269,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_link("Investment without valuator")
       expect(page).to have_link("Investment with valuator")
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       check "Without assigned valuator"
       click_button "Filter"
 
@@ -320,7 +305,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_link("Investment without valuation")
       expect(page).to have_link("Investment with valuation")
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       check "Under valuation"
       click_button "Filter"
 
@@ -344,7 +329,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_link("Investment valuation open")
       expect(page).to have_link("Investment valuation finished")
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       check "Valuation finished"
       click_button "Filter"
 
@@ -368,7 +353,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_link("Investment winner")
       expect(page).to have_link("Investment without winner")
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       check "Winners"
       click_button "Filter"
 
@@ -512,7 +497,7 @@ describe "Admin budget investments", :admin do
 
       visit admin_budget_budget_investments_path(budget)
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       check "Winners"
       click_button "Filter"
 
@@ -530,7 +515,7 @@ describe "Admin budget investments", :admin do
 
       visit admin_budget_budget_investments_path(budget)
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       check "Winners"
       click_button "Filter"
 
@@ -566,7 +551,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_link("St. 200 supports")
       expect(page).to have_link("St. 300 supports")
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       fill_in "min_total_supports", with: 180
       click_button "Filter"
 
@@ -602,7 +587,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_link("St. 200 supports")
       expect(page).to have_link("St. 300 supports")
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       fill_in "max_total_supports", with: 180
       click_button "Filter"
 
@@ -634,7 +619,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_content("More schools")
       expect(page).to have_content("More hospitals")
 
-      select "Admin 1", from: "administrator_id"
+      select "Admin 1", from: "Administrator"
       click_button "Filter"
 
       expect(page).to have_css(".budget_investment", count: 2)
@@ -642,7 +627,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_content("More schools")
       expect(page).not_to have_content("More hospitals")
 
-      fill_in "title_or_id", with: educate_children.id
+      fill_in "Title or ID", with: educate_children.id
       click_button "Filter"
 
       expect(page).to have_css(".budget_investment", count: 1)
@@ -666,7 +651,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_content("More schools")
       expect(page).to have_content("More hospitals")
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
 
       check("Feasible")
       click_button "Filter"
@@ -676,7 +661,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_content("More schools")
       expect(page).not_to have_content("More hospitals")
 
-      fill_in "title_or_id", with: educate_children.id
+      fill_in "Title or ID", with: educate_children.id
       click_button "Filter"
 
       expect(page).to have_css(".budget_investment", count: 1)
@@ -709,7 +694,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_content("More hospitals")
       expect(page).to have_content("More hostals")
 
-      select "Admin 1", from: "administrator_id"
+      select "Admin 1", from: "Administrator"
       click_button "Filter"
 
       expect(page).to have_css(".budget_investment", count: 3)
@@ -718,7 +703,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_content("More hospitals")
       expect(page).not_to have_content("More hostals")
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
 
       within("#advanced_filters") { check("Feasible") }
       click_button("Filter")
@@ -729,7 +714,7 @@ describe "Admin budget investments", :admin do
       expect(page).not_to have_content("More hospitals")
       expect(page).not_to have_content("More hostals")
 
-      fill_in "title_or_id", with: educate_children.id
+      fill_in "Title or ID", with: educate_children.id
       click_button "Filter"
 
       expect(page).to have_css(".budget_investment", count: 1)
@@ -774,13 +759,13 @@ describe "Admin budget investments", :admin do
       expect(page).to have_content("Proyecto de inversión")
       expect(page).to have_content("Some other investment")
 
-      fill_in "title_or_id", with: "Proyecto de inversión"
+      fill_in "Title or ID", with: "Proyecto de inversión"
       click_button "Filter"
 
       expect(page).to have_content("Proyecto de inversión")
       expect(page).not_to have_content("Some other investment")
 
-      fill_in "title_or_id", with: "Some other investment"
+      fill_in "Title or ID", with: "Some other investment"
       click_button "Filter"
 
       expect(page).not_to have_content("Proyecto de inversión")
@@ -793,7 +778,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_content("Proyecto de inversión")
       expect(page).to have_content("Some other investment")
 
-      fill_in "title_or_id", with: first_investment.id
+      fill_in "Title or ID", with: first_investment.id
       click_button "Filter"
 
       expect(page).to have_content("Some other investment")
@@ -1354,7 +1339,7 @@ describe "Admin budget investments", :admin do
     scenario "Filtering by valuation and selection" do
       visit admin_budget_budget_investments_path(budget)
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       check "Valuation finished"
       click_button "Filter"
 
@@ -1399,7 +1384,7 @@ describe "Admin budget investments", :admin do
     scenario "Aggregating results" do
       visit admin_budget_budget_investments_path(budget)
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
 
       within("#advanced_filters") { check("Undecided") }
       click_button("Filter")
@@ -1422,99 +1407,64 @@ describe "Admin budget investments", :admin do
       expect(page).not_to have_content(feasible_vf_bi.title)
     end
 
-    scenario "Showing the selection buttons" do
-      visit admin_budget_budget_investments_path(budget)
-
-      within("#budget_investment_#{unfeasible_bi.id}") do
-        expect(page).not_to have_link("Select")
-        expect(page).not_to have_link("Selected")
-      end
-
-      within("#budget_investment_#{feasible_bi.id}") do
-        expect(page).not_to have_link("Select")
-        expect(page).not_to have_link("Selected")
-      end
-
-      within("#budget_investment_#{feasible_vf_bi.id}") do
-        expect(page).to have_link("Select")
-        expect(page).not_to have_link("Selected")
-      end
-
-      within("#budget_investment_#{selected_bi.id}") do
-        expect(page).not_to have_link("Select")
-        expect(page).to have_link("Selected")
-      end
-    end
-
-    scenario "Show only selected text when budget is finished" do
-      budget.update!(phase: "finished")
-
-      visit admin_budget_budget_investments_path(budget)
-
-      within("#budget_investment_#{unfeasible_bi.id} #selection") do
-        expect(page).not_to have_content("Select")
-        expect(page).not_to have_content("Selected")
-      end
-
-      within("#budget_investment_#{feasible_bi.id} #selection") do
-        expect(page).not_to have_content("Select")
-        expect(page).not_to have_content("Selected")
-      end
-
-      within("#budget_investment_#{feasible_vf_bi.id} #selection") do
-        expect(page).not_to have_content("Select")
-        expect(page).not_to have_content("Selected")
-      end
-
-      within("#budget_investment_#{selected_bi.id} #selection") do
-        expect(page).not_to contain_exactly("Select")
-        expect(page).to have_content("Selected")
-      end
-    end
-
     scenario "Selecting an investment" do
       visit admin_budget_budget_investments_path(budget)
 
-      within("#budget_investment_#{feasible_vf_bi.id}") do
-        click_link("Select")
-        expect(page).to have_link("Selected")
+      expect(page).to have_content "Unfeasible project"
+
+      within("tr", text: "Feasible, VF project") do
+        within("[data-field=selected]") do
+          expect(page).to have_content "No"
+
+          click_button "Select Feasible, VF project"
+
+          expect(page).to have_content "Yes"
+        end
       end
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
 
       within("#advanced_filters") { check("Selected") }
       click_button("Filter")
 
-      within("#budget_investment_#{feasible_vf_bi.id}") do
-        expect(page).not_to have_link("Select")
-        expect(page).to have_link("Selected")
+      expect(page).not_to have_content "Unfeasible project"
+
+      within("tr", text: "Feasible, VF project") do
+        within("[data-field=selected]") do
+          expect(page).to have_content "Yes"
+        end
       end
     end
 
     scenario "Unselecting an investment" do
       visit admin_budget_budget_investments_path(budget)
-      click_link "Advanced filters"
+      click_button "Advanced filters"
 
       within("#advanced_filters") { check("Selected") }
       click_button("Filter")
 
       expect(page).to have_content("There are 2 investments")
 
-      within("#budget_investment_#{selected_bi.id}") do
-        click_link("Selected")
+      within("tr", text: "Selected project") do
+        within("[data-field=selected]") do
+          expect(page).to have_content "Yes"
 
-        expect(page).to have_link("Select")
+          click_button "Select Selected project"
+
+          expect(page).to have_content "No"
+        end
       end
 
-      click_button("Filter")
-      expect(page).not_to have_content(selected_bi.title)
-      expect(page).to have_content("There is 1 investment")
+      click_button "Filter"
+      expect(page).not_to have_content "Selected project"
+      expect(page).to have_content "There is 1 investment"
 
       visit admin_budget_budget_investments_path(budget)
 
-      within("#budget_investment_#{selected_bi.id}") do
-        expect(page).to have_link("Select")
-        expect(page).not_to have_link("Selected")
+      within("tr", text: "Selected project") do
+        within("[data-field=selected]") do
+          expect(page).to have_content "No"
+        end
       end
     end
 
@@ -1526,10 +1476,12 @@ describe "Admin budget investments", :admin do
 
         visit admin_budget_budget_investments_path(budget)
 
-        within("#budget_investment_#{selected_bi.id}") do
-          click_link("Selected")
+        within("tr", text: "Selected project") do
+          within("[data-field=selected]") do
+            click_button "Select Selected project"
 
-          expect(page).to have_link "Select"
+            expect(page).to have_content "No"
+          end
         end
 
         click_link("Next")
@@ -1545,8 +1497,8 @@ describe "Admin budget investments", :admin do
 
     let(:heading) { create(:budget_heading, budget: budget) }
 
-    let(:investment1) { create(:budget_investment, heading: heading) }
-    let(:investment2) { create(:budget_investment, heading: heading) }
+    let(:investment1) { create(:budget_investment, heading: heading, title: "Investment 1") }
+    let(:investment2) { create(:budget_investment, heading: heading, title: "Investment 2") }
 
     scenario "Mark as visible to valuator" do
       investment1.valuators << valuator
@@ -1555,21 +1507,26 @@ describe "Admin budget investments", :admin do
       investment2.update!(administrator: admin)
 
       visit admin_budget_budget_investments_path(budget)
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       check "Under valuation"
       click_button "Filter"
 
-      within("#budget_investment_#{investment1.id}") do
-        check "budget_investment_visible_to_valuators"
+      within("tr", text: "Investment 1") do
+        within("[data-field=visible_to_valuators]") do
+          expect(page).to have_content "No"
+
+          click_button "Show Investment 1 to valuators"
+
+          expect(page).to have_content "Yes"
+        end
       end
 
-      visit admin_budget_budget_investments_path(budget)
-      click_link "Advanced filters"
-      check "Under valuation"
-      click_button "Filter"
+      refresh
 
-      within("#budget_investment_#{investment1.id}") do
-        expect(find("#budget_investment_visible_to_valuators")).to be_checked
+      within("tr", text: "Investment 1") do
+        within("[data-field=visible_to_valuators]") do
+          expect(page).to have_content "Yes"
+        end
       end
     end
 
@@ -1604,22 +1561,26 @@ describe "Admin budget investments", :admin do
 
       visit admin_budget_budget_investments_path(budget)
 
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       check "Under valuation"
       click_button "Filter"
 
-      within("#budget_investment_#{investment1.id}") do
-        uncheck "budget_investment_visible_to_valuators"
+      within("tr", text: "Investment 1") do
+        within("[data-field=visible_to_valuators]") do
+          expect(page).to have_content "Yes"
+
+          click_button "Show Investment 1 to valuators"
+
+          expect(page).to have_content "No"
+        end
       end
 
-      visit admin_budget_budget_investments_path(budget)
+      refresh
 
-      click_link "Advanced filters"
-      check "Under valuation"
-      click_button "Filter"
-
-      within("#budget_investment_#{investment1.id}") do
-        expect(find("#budget_investment_visible_to_valuators")).not_to be_checked
+      within("tr", text: "Investment 1") do
+        within("[data-field=visible_to_valuators]") do
+          expect(page).to have_content "No"
+        end
       end
     end
 
@@ -1631,42 +1592,44 @@ describe "Admin budget investments", :admin do
       visit admin_budget_budget_investments_path(budget)
 
       within "tr", text: "Visible" do
-        within "td[data-field=visible_to_valuators]" do
+        within "[data-field=visible_to_valuators]" do
           expect(page).to have_text "Yes"
-          expect(page).not_to have_field "budget_investment_visible_to_valuators"
+          expect(page).not_to have_button
         end
       end
 
       within "tr", text: "Invisible" do
-        within "td[data-field=visible_to_valuators]" do
+        within "[data-field=visible_to_valuators]" do
           expect(page).to have_text "No"
-          expect(page).not_to have_field "budget_investment_visible_to_valuators"
+          expect(page).not_to have_button
         end
       end
     end
 
     scenario "Showing the valuating checkbox" do
-      investment1 = create(:budget_investment, :with_administrator, :with_valuator, :visible_to_valuators,
-                           budget: budget)
-      investment2 = create(:budget_investment, :with_administrator, :with_valuator, :invisible_to_valuators,
-                           budget: budget)
+      investment1.valuators << valuator
+      investment2.valuators << valuator
+      investment1.update!(administrator: admin, visible_to_valuators: true)
+      investment2.update!(administrator: admin, visible_to_valuators: false)
 
       visit admin_budget_budget_investments_path(budget)
 
-      expect(page).to have_css("#budget_investment_visible_to_valuators")
-
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       check "Under valuation"
       click_button "Filter"
 
-      within("#budget_investment_#{investment1.id}") do
-        valuating_checkbox = find("#budget_investment_visible_to_valuators")
-        expect(valuating_checkbox).to be_checked
+      within "tr", text: "Investment 1" do
+        within "[data-field=visible_to_valuators]" do
+          expect(page).to have_content "Yes"
+          expect(page).to have_css "button[aria-pressed='true']"
+        end
       end
 
-      within("#budget_investment_#{investment2.id}") do
-        valuating_checkbox = find("#budget_investment_visible_to_valuators")
-        expect(valuating_checkbox).not_to be_checked
+      within "tr", text: "Investment 2" do
+        within "[data-field=visible_to_valuators]" do
+          expect(page).to have_content "No"
+          expect(page).to have_css "button[aria-pressed='false']"
+        end
       end
     end
 
@@ -1676,8 +1639,14 @@ describe "Admin budget investments", :admin do
 
       visit admin_budget_budget_investments_path(budget)
 
-      within("#budget_investment_#{investment1.id}") do
-        check "budget_investment_visible_to_valuators"
+      within "tr", text: "Investment 1" do
+        within "[data-field=visible_to_valuators]" do
+          expect(page).to have_content "No"
+
+          click_button "Show Investment 1 to valuators"
+
+          expect(page).to have_content "Yes"
+        end
       end
 
       visit edit_admin_budget_budget_investment_path(budget, investment1)
@@ -1735,7 +1704,7 @@ describe "Admin budget investments", :admin do
       create(:budget_investment, :finished, budget: budget, title: "Finished Investment")
 
       visit admin_budget_budget_investments_path(budget)
-      click_link "Advanced filters"
+      click_button "Advanced filters"
       check "Valuation finished"
       click_button "Filter"
 
@@ -1792,9 +1761,7 @@ describe "Admin budget investments", :admin do
     scenario "Set cookie with default columns value if undefined" do
       visit admin_budget_budget_investments_path(budget)
 
-      cookies = page.driver.browser.manage.all_cookies
-      columns_cookie = cookies.find { |cookie| cookie[:name] == "investments-columns" }
-      cookie_value = columns_cookie[:value]
+      cookie_value = cookie_by_name("investments-columns")[:value]
 
       expect(cookie_value).to eq("id,title,supports,admin,valuator,geozone,feasibility,price," \
                                  "valuation_finished,visible_to_valuators,selected,incompatible")
@@ -1842,18 +1809,14 @@ describe "Admin budget investments", :admin do
         check "Author"
       end
 
-      cookies = page.driver.browser.manage.all_cookies
-      columns_cookie = cookies.find { |cookie| cookie[:name] == "investments-columns" }
-      cookie_value = columns_cookie[:value]
+      cookie_value = cookie_by_name("investments-columns")[:value]
 
       expect(cookie_value).to eq("id,supports,admin,geozone,feasibility,valuation_finished," \
                                  "visible_to_valuators,selected,incompatible,author")
 
       visit admin_budget_budget_investments_path(budget)
 
-      cookies = page.driver.browser.manage.all_cookies
-      columns_cookie = cookies.find { |cookie| cookie[:name] == "investments-columns" }
-      cookie_value = columns_cookie[:value]
+      cookie_value = cookie_by_name("investments-columns")[:value]
 
       expect(cookie_value).to eq("id,supports,admin,geozone,feasibility,valuation_finished," \
                                  "visible_to_valuators,selected,incompatible,author")
@@ -1867,11 +1830,16 @@ describe "Admin budget investments", :admin do
       within("#js-columns-selector-wrapper") { uncheck "Title" }
 
       within("#budget_investment_#{investment.id}") do
-        click_link "Selected"
+        within("[data-field=selected]") do
+          expect(page).to have_content "Yes"
 
-        expect(page).to have_link "Select"
-        expect(page).not_to have_content "Don't display me, please!"
+          click_button "Select Don't display me, please!"
+
+          expect(page).to have_content "No"
+        end
       end
+
+      expect(page).not_to have_content "Don't display me, please!"
     end
 
     scenario "When restoring the page from browser history renders columns selectors only once" do

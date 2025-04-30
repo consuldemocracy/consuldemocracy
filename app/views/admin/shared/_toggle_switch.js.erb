@@ -1,0 +1,5 @@
+var new_toggle_switch = $("<%= j new_content %>");
+var current_toggle_switch = $("#<%= dom_id(record) %> .<%= local_assigns[:form_class] || "toggle-switch" %>");
+
+current_toggle_switch.replaceWith(new_toggle_switch);
+new_toggle_switch.find("[type='submit']").focus();

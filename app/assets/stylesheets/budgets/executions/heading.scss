@@ -1,0 +1,20 @@
+.budgets-executions-heading {
+  .budgets-executions-heading-investments {
+    $spacing: rem-calc(map-get($grid-column-gutter, medium));
+
+    @include flex-with-gap($spacing);
+    flex-wrap: wrap;
+
+    > * {
+      margin-bottom: $line-height;
+
+      @include breakpoint(medium) {
+        width: calc(100% / 2 - #{$spacing});
+      }
+
+      @include breakpoint(large) {
+        width: calc(100% / 3 - #{$spacing});
+      }
+    }
+  }
+}

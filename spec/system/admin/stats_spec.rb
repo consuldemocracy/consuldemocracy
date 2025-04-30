@@ -13,7 +13,32 @@ describe "Stats", :admin do
       expect(page).to have_content "DEBATES\n1"
       expect(page).to have_content "PROPOSALS\n2"
       expect(page).to have_content "COMMENTS\n3"
-      expect(page).to have_content "VISITS\n4"
+      expect(page).to have_content "VISITS\n5"
+    end
+
+    scenario "Visits" do
+      visit admin_stats_path
+      refresh
+
+      expect(page).to have_content "VISITS\n1"
+
+      allow_any_instance_of(ActionDispatch::Request).to receive(:user_agent).and_return("Different")
+
+      in_browser(:different) do
+        visit root_path
+
+        click_link "Debates"
+        expect(page).to have_link "Start a debate"
+
+        click_link "Proposals"
+        expect(page).to have_link "Create a proposal"
+      end
+
+      allow_any_instance_of(ActionDispatch::Request).to receive(:user_agent).and_call_original
+
+      refresh
+
+      expect(page).to have_content "VISITS\n2"
     end
 
     scenario "Votes" do

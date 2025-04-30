@@ -127,138 +127,6 @@ describe "Users" do
   end
 
   context "OAuth authentication" do
-    context "Form buttons" do
-      before do
-        Setting["feature.facebook_login"] = false
-        Setting["feature.twitter_login"] = false
-        Setting["feature.google_login"] = false
-        Setting["feature.wordpress_login"] = false
-        Setting["feature.saml"] = false
-      end
-
-      scenario "No button will appear if all features are disabled" do
-        visit new_user_registration_path
-
-        expect(page).not_to have_link "Twitter"
-        expect(page).not_to have_link "Facebook"
-        expect(page).not_to have_link "Google"
-        expect(page).not_to have_link "Wordpress"
-        expect(page).not_to have_link "Saml"
- 
-        visit new_user_session_path
-
-        expect(page).not_to have_link "Twitter"
-        expect(page).not_to have_link "Facebook"
-        expect(page).not_to have_link "Google"
-        expect(page).not_to have_link "Wordpress"
-        expect(page).not_to have_link "Saml"
-
-      end
-
-      scenario "Twitter login button will appear if feature is enabled" do
-        Setting["feature.twitter_login"] = true
-
-        visit new_user_registration_path
-
-        expect(page).to have_link "Twitter"
-        expect(page).not_to have_link "Facebook"
-        expect(page).not_to have_link "Google"
-        expect(page).not_to have_link "Wordpress"
-        expect(page).not_to have_link "Saml"
-        
-        visit new_user_session_path
-
-        expect(page).to have_link "Twitter"
-        expect(page).not_to have_link "Facebook"
-        expect(page).not_to have_link "Google"
-        expect(page).not_to have_link "Wordpress"
-        expect(page).not_to have_link "Saml"
-      end
-
-      scenario "Facebook login button will appear if feature is enabled" do
-        Setting["feature.facebook_login"] = true
-
-        visit new_user_registration_path
-
-        expect(page).not_to have_link "Twitter"
-        expect(page).to have_link "Facebook"
-        expect(page).not_to have_link "Google"
-        expect(page).not_to have_link "Wordpress"
-        expect(page).not_to have_link "Saml"
-
-        visit new_user_session_path
-
-        expect(page).not_to have_link "Twitter"
-        expect(page).to have_link "Facebook"
-        expect(page).not_to have_link "Google"
-        expect(page).not_to have_link "Wordpress"
-        expect(page).not_to have_link "Saml"
-
-      end
-
-      scenario "Google login button will appear if feature is enabled" do
-        Setting["feature.google_login"] = true
-
-        visit new_user_registration_path
-
-        expect(page).not_to have_link "Twitter"
-        expect(page).not_to have_link "Facebook"
-        expect(page).to have_link "Google"
-        expect(page).not_to have_link "Wordpress"
-        expect(page).not_to have_link "Saml"
-
-        visit new_user_session_path
-
-        expect(page).not_to have_link "Twitter"
-        expect(page).not_to have_link "Facebook"
-        expect(page).to have_link "Google"
-        expect(page).not_to have_link "Wordpress"
-        expect(page).not_to have_link "Saml"
-
-      end
-
-      scenario "Wordpress login button will appear if feature is enabled" do
-        Setting["feature.wordpress_login"] = true
-
-        visit new_user_registration_path
-
-        expect(page).not_to have_link "Twitter"
-        expect(page).not_to have_link "Facebook"
-        expect(page).not_to have_link "Google"
-        expect(page).to have_link "Wordpress"
-        expect(page).not_to have_link "Saml"
-
-        visit new_user_session_path
-
-        expect(page).not_to have_link "Twitter"
-        expect(page).not_to have_link "Facebook"
-        expect(page).not_to have_link "Google"
-        expect(page).to have_link "Wordpress"
-        expect(page).not_to have_link "Saml"
-
-      end
-
-      scenario "Saml login button will appear if feature is enabled" do
-        Setting["feature.saml_login"] = true
-
-        visit new_user_registration_path
-
-        expect(page).not_to have_link "Twitter"
-        expect(page).not_to have_link "Facebook"
-        expect(page).not_to have_link "Google"
-        expect(page).not_to have_link "Wordpress"
-        expect(page).to have_link "Saml"
-
-        visit new_user_session_path
-
-        expect(page).not_to have_link "Twitter"
-        expect(page).not_to have_link "Facebook"
-        expect(page).not_to have_link "Google"
-        expect(page).not_to have_link "Wordpress"
-        expect(page).to have_link "Saml"
-      end
-    end
-
     context "Twitter" do
       let(:twitter_hash) { { uid: "12345", info: { name: "manuela" }} }
       let(:twitter_hash_with_email) do
@@ -793,9 +661,7 @@ describe "Users" do
 
   context "Regular authentication with password complexity enabled" do
     before do
-      allow(Rails.application).to receive(:secrets).and_return(ActiveSupport::OrderedOptions.new.merge(
-        security: { password_complexity: true }
-      ))
+      stub_secrets(security: { password_complexity: true })
     end
 
     context "Sign up" do

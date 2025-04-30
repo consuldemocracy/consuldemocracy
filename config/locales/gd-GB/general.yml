@@ -776,7 +776,6 @@ gd:
       see_more: Faic barrachd mholaidhean
       hide: Falaich molaidhean
     translations:
-      select_language_prompt: Tagh cànan
       remove_language: Thoir cànan air falbh
       add_language: Cuir cànan ris
       languages_in_use:

@@ -1,10 +1,12 @@
 source "https://rubygems.org"
 
-gem "rails", "7.0.8.4"
+#ruby file: ".ruby-version"
+
+gem "rails", "7.0.8.7"
 
 gem "acts-as-taggable-on", "~> 11.0.0"
 gem "acts_as_votable", "~> 0.14.0"
-gem "ahoy_matey", "~> 5.0.2"
+gem "ahoy_matey", "~> 5.2.0"
 gem "airbrake", "~> 13.0.4"
 gem "ancestry", "~> 4.3.3"
 gem "audited", "~> 5.7.0"
@@ -27,18 +29,17 @@ gem "foundation_rails_helper", "~> 4.0.1"
 gem "globalize", "~> 6.3.0"
 gem "globalize-accessors", "~> 0.3.0"
 gem "graphiql-rails", "~> 1.8.0"
-gem "graphql", "~> 1.13.22"
+gem "graphql", "~> 2.3.18"
 gem "groupdate", "~> 6.5.1"
 gem "image_processing", "~> 1.13.0"
 gem "invisible_captcha", "~> 2.3.0"
 gem "kaminari", "~> 1.2.2"
 gem "mini_magick", "~> 4.13.2"
 gem "omniauth", "~> 2.1.2"
-gem "omniauth-facebook", "~> 9.0.0"
-gem "omniauth-google-oauth2", "~> 1.1.1"
-gem "omniauth-rails_csrf_protection", "~> 1.0.1"
+gem "omniauth-facebook", "~> 10.0.0"
+gem "omniauth-google-oauth2", "~> 1.2.0"
+gem "omniauth-rails_csrf_protection", "~> 1.0.2"
 gem "omniauth-twitter", "~> 1.4.0"
-gem "omniauth-saml", "~> 2.1.0"
 gem "paranoia", "~> 3.0.0"
 gem "pg", "~> 1.5.8"
 gem "pg_search", "~> 2.3.7"
@@ -48,7 +49,7 @@ gem "redcarpet", "~> 3.6.0"
 gem "responders", "~> 3.1.1"
 gem "rinku", "~> 2.0.6", require: "rails_rinku"
 gem "ros-apartment", "~> 2.11.0", require: "apartment" # Remove ConnectionHandling monkey patch when upgrading
-gem "sassc-embedded", "~> 1.70.1"
+gem "sassc-embedded", "~> 1.80.1"
 gem "sassc-rails", "~> 2.1.2"
 gem "savon", "~> 2.15.1"
 gem "sitemap_generator", "~> 6.3.0"
@@ -99,11 +100,12 @@ group :development do
   gem "capistrano3-delayed-job", "~> 1.7.6"
   gem "capistrano3-puma", "~> 5.2.0"
   gem "erb_lint", "~> 0.6.0", require: false
+  gem "faraday-retry", "~> 2.2.1", require: false
   gem "mdl", "~> 0.13.0", require: false
   gem "pronto", "~> 0.11.2", require: false
   gem "pronto-erb_lint", "~> 0.1.6", require: false
   gem "pronto-eslint", "~> 0.11.1", require: false
-  gem "pronto-rubocop", "~> 0.11.5", require: false
+  gem "pronto-rubocop", "~> 0.11.6", require: false
   gem "pronto-stylelint", "~> 0.10.3", require: false
   gem "rubocop", "~> 1.66.1", require: false
   gem "rubocop-capybara", "~> 2.21.0", require: false

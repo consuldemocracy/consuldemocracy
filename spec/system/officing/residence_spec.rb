@@ -162,7 +162,7 @@ describe "Residence", :with_frozen_time do
 
       select "DNI", from: "residence_document_type"
       fill_in "residence_document_number", with: "12345678Z"
-      select_date "31-December-1980", from: "residence_date_of_birth"
+      fill_in "Date of birth", with: Date.new(1980, 12, 31)
       fill_in "residence_postal_code", with: "28013"
 
       click_button "Validate document"

@@ -3,10 +3,8 @@ module Types
     field :id, ID, null: false
     field :name, String, null: true
     field :phase, String, null: true
-    field :investments, Types::BudgetInvestmentType.connection_type, "Returns all investments", null: false
-    field :investment, Types::BudgetInvestmentType, null: false do
-      argument :id, ID, required: true, default_value: false
-    end
+    collection_field :investments, Types::BudgetInvestmentType, "Returns all investments", null: false
+    object_by_id_field :investment, Types::BudgetInvestmentType, "Returns investment for ID", null: false
 
     def investments
       Budget::Investment.public_for_api

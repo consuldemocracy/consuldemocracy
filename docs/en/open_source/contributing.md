@@ -23,6 +23,7 @@ We suggest to follow these steps to keep a good track of the changes you're abou
 - First of all, add a comment to the issue to make everyone know you are going to work on it. If the issue has someone assigned it means that person is already solving it.
 - Fork the project.
 - Create a feature branch based on the `master` branch. To make it easier to identify, you can name it with the issue number followed by a concise and descriptive name (e.g. `123-fix_proposals_link`).
+- Check our [coding conventions](coding_conventions.md) to help you decide how to write your code.
 - Work in your branch committing there your changes.
 - Make sure all tests are passing. In case you're extending or creating a new feature, consider adding its own specs.
 - Once you've finished, send a **pull request** to the [Consul Democracy repository](https://github.com/consuldemocracy/consuldemocracy/) describing your solution to help us understand it. It's also important to tell what issue you're addressing, so specify it in the pull request description's first line (e.g. `Fixes #123`).

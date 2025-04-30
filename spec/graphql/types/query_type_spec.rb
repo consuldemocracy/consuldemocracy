@@ -5,18 +5,18 @@ describe Types::QueryType do
   let(:proposal) { create(:proposal, author: user) }
 
   it "returns fields of Int type" do
-    response = execute("{ proposal(id: #{proposal.id}) { cached_votes_up } }")
-    expect(dig(response, "data.proposal.cached_votes_up")).to eq(proposal.cached_votes_up)
+    response = run_graphql_field("Proposal.cached_votes_up", proposal)
+    expect(response).to eq(proposal.cached_votes_up)
   end
 
   it "returns fields of String type" do
-    response = execute("{ proposal(id: #{proposal.id}) { title } }")
-    expect(dig(response, "data.proposal.title")).to eq(proposal.title)
+    response = run_graphql_field("Proposal.title", proposal)
+    expect(response).to eq(proposal.title)
   end
 
   it "returns belongs_to associations" do
-    response = execute("{ proposal(id: #{proposal.id}) { public_author { username } } }")
-    expect(dig(response, "data.proposal.public_author.username")).to eq(proposal.public_author.username)
+    response = run_graphql_field("Proposal.public_author.username", proposal)
+    expect(response).to eq(proposal.public_author.username)
   end
 
   it "returns has_many associations" do
@@ -32,36 +32,46 @@ describe Types::QueryType do
   end
 
   it "hides confidential fields of Int type" do
-    response = execute("{ user(id: #{user.id}) { failed_census_calls_count } }")
-    expect(hidden_field?(response, "failed_census_calls_count")).to be_truthy
+    expect do
+      run_graphql_field("User.failed_census_calls_count", user)
+    end.to raise_error GraphQL::Testing::Helpers::FieldNotDefinedError
   end
 
   it "hides confidential fields of String type" do
-    response = execute("{ user(id: #{user.id}) { encrypted_password } }")
-    expect(hidden_field?(response, "encrypted_password")).to be_truthy
+    expect do
+      run_graphql_field("User.encrypted_password", user)
+    end.to raise_error GraphQL::Testing::Helpers::FieldNotDefinedError
   end
 
   it "hides confidential has_one associations" do
     user.administrator = create(:administrator)
-    response = execute("{ user(id: #{user.id}) { administrator { id } } }")
-    expect(hidden_field?(response, "administrator")).to be_truthy
+
+    expect do
+      run_graphql_field("User.administrator.id", user)
+    end.to raise_error GraphQL::Testing::Helpers::FieldNotDefinedError, /no field named `administrator`/
   end
 
   it "hides confidential belongs_to associations" do
-    create(:failed_census_call, user: user)
-    response = execute("{ user(id: #{user.id}) { failed_census_calls { id } } }")
-    expect(hidden_field?(response, "failed_census_calls")).to be_truthy
+    user.geozone = create(:geozone)
+
+    expect do
+      run_graphql_field("User.geozone.id", user)
+    end.to raise_error GraphQL::Testing::Helpers::FieldNotDefinedError, /no field named `geozone`/
   end
 
   it "hides confidential has_many associations" do
     create(:direct_message, sender: user)
-    response = execute("{ user(id: #{user.id}) { direct_messages_sent { id } } }")
-    expect(hidden_field?(response, "direct_messages_sent")).to be_truthy
+
+    expect do
+      run_graphql_field("User.direct_messages_sent.id", user)
+    end.to raise_error GraphQL::Testing::Helpers::FieldNotDefinedError,
+                       /no field named `direct_messages_sent`/
   end
 
   it "hides confidential fields inside deeply nested queries" do
-    response = execute("{ proposals(first: 1) { edges { node { public_author { encrypted_password } } } } }")
-    expect(hidden_field?(response, "encrypted_password")).to be_truthy
+    expect do
+      run_graphql_field("Proposal.public_author.encrypted_password", proposal)
+    end.to raise_error GraphQL::Testing::Helpers::FieldNotDefinedError, /no field named `encrypted_password`/
   end
 
   describe "#comments" do

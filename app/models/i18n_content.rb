@@ -82,6 +82,8 @@ class I18nContent < ApplicationRecord
       debates.new.recommendation_three
       debates.new.recommendation_four
       debates.new.recommendations_title
+      devise.sessions.local_sign_in_title
+      devise.sessions.local_sign_in_description
       geozones.none
       map.title
       map.proposal_for_district

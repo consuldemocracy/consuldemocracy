@@ -55,8 +55,4 @@ class Admin::Legislation::QuestionsController < Admin::Legislation::BaseControll
                                       translation_params(::Legislation::QuestionOption)]
       ]
     end
-
-    def resource
-      @question || ::Legislation::Question.find(params[:id])
-    end
 end

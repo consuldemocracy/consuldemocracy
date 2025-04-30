@@ -85,12 +85,12 @@ describe Mailer do
       let(:super_settings) { { address: "super.consul.dev", username: "super" } }
 
       before do
-        allow(Rails.application).to receive(:secrets).and_return(ActiveSupport::OrderedOptions.new.merge(
+        stub_secrets(
           smtp_settings: default_settings,
           tenants: {
             supermailer: { smtp_settings: super_settings }
           }
-        ))
+        )
       end
 
       it "does not overwrite the settings for the default tenant" do

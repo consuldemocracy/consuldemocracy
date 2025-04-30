@@ -220,3 +220,29 @@
    @import "cosla_shared";
    @include shared-styles;
 }
+.site-dundee {
+  --brand: #593F73;
+  --main-header: var(--brand);
+  --brand-secondary: #7e59a3;
+  --top-links: var(--brand-secondary);
+  --brand-contrast: #FFFFFF;
+  --main-header-contrast: #FFFFFF;
+  --footer: var(--top-links);
+  --footer-contrast: #FFFFFF;
+   @import "cosla_shared";
+   @include shared-styles;
+}
+
+.site-aberdeen {
+    --main-header: #EC008B;
+    --brand: #55366B;
+    --brand-secondary: #EE7522;
+    --brand-contrast: #FFFFFF;
+    --footer: #eee6db;
+    --main-header-contrast: #FFFFFF;
+    --top-links: #a9c731;
+    --top-links-contrast: #FFFFFF;
+   @import "cosla_shared";
+   @include shared-styles;
+}
+

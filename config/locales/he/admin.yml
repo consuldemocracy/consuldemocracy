@@ -167,7 +167,6 @@ he:
         valuator_filter_all: כל המעריכים
         tags_filter_all: כל התגיות
         advanced_filters: סינון מתקדם
-        placeholder: חיפוש פרויקטים
         filters:
           all: כולם
           without_admin: מבלי להקצות מנהל/ת
@@ -196,7 +195,6 @@ he:
           unfeasible: "אינו בר ביצוע"
           undecided: "טרם הוחלט"
         selected: "נבחר"
-        select: "בחר"
         list:
           id: מזהה
           title: כותרת
@@ -1161,7 +1159,6 @@ he:
         title: הצעות
         id: מזהה
         author: מחבר/ת
-        select: בחר
         selected: נבחר
         milestones: אבני דרך
         no_proposals: לא נמצאו הצעות.

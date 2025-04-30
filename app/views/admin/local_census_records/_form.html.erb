@@ -15,9 +15,7 @@
 
   <div class="row">
     <div class="date-of-birth small-12">
-      <%= f.date_select :date_of_birth,
-                        prompt: true,
-                        start_year: 1900, end_year: minimum_required_age.years.ago.year %>
+      <%= render Shared::DateOfBirthFieldComponent.new(f) %>
     </div>
   </div>
 

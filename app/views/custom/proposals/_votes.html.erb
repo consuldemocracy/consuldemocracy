@@ -1,0 +1,7 @@
+<% if Setting.hide_votes? %>
+  <div class="share-supported">
+    <%= render "proposals/social_share", proposal: proposal, share_title: false %>
+  </div>
+<% else %>
+  <%= render Proposals::VotesComponent.new(proposal, vote_url: local_assigns[:vote_url]) %>
+<% end %>

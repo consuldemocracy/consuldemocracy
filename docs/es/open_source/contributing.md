@@ -23,6 +23,7 @@ Te sugerimos seguir los siguientes pasos para facilitar el seguimiento de los ca
 - Primero, añade un comentario en el issue para notificar que vas resolverlo. Si el issue tiene a alguien asignado significa que ya hay alguien encargado de él.
 - Crea un fork del proyecto.
 - Crea una rama de funcionalidad basada en la rama `master`. Para identificarla más fácilmente, puedes nombrarla con el número del issue seguido de un nombre conciso y descriptivo (por ejemplo: `123-fix_proposals_link`).
+- Comprueba nuestras [convenciones de código](coding_conventions.md) para ayudarte a decidir cómo escribir tu código.
 - Desarrolla los cambios haciendo commits en tu nueva rama.
 - Asegúrate de que todos los tests pasan. Si estás extendiendo una funcionalidad o creando una nueva, considera añadir sus propios tests.
 - Cuando hayas terminado, envía un **pull request** al [repositorio de Consul Democracy](https://github.com/consuldemocracy/consuldemocracy/) describiendo la solución que propones para ayudarnos a entenderlo. También es importante que especifiques qué issue estás resolviendo al principio de la descripción del PR (por ejemplo, `Fixes #123`).

@@ -1,6 +1,8 @@
 class Geozone < ApplicationRecord
   include Graphqlable
 
+  attribute :color, default: "#0000ff"
+
   has_many :proposals
   has_many :debates
   has_many :users
@@ -22,48 +24,31 @@ class Geozone < ApplicationRecord
   end
 
   def outline_points
-    normalize(geojson)
-  end
-
-  def coordinates
-    JSON.parse(geojson)["geometry"]["coordinates"] if geojson.present?
+    normalized_geojson&.to_json
   end
 
   private
 
-    def normalize(geojson)
+    def normalized_geojson
       if geojson.present?
         parsed_geojson = JSON.parse(geojson)
 
-        # Handle FeatureCollection
         if parsed_geojson["type"] == "FeatureCollection"
           parsed_geojson["features"].each do |feature|
             feature["properties"] ||= {}
           end
-          parsed_geojson.to_json
 
-        # Handle Feature
+          parsed_geojson
         elsif parsed_geojson["type"] == "Feature"
           parsed_geojson["properties"] ||= {}
-          wrap_in_feature_collection(parsed_geojson)
 
-        # Handle Geometry alone
+          wrap_in_feature_collection(parsed_geojson)
         elsif parsed_geojson["geometry"]
           parsed_geojson["properties"] ||= {}
-          wrap_in_feature_collection(wrap_in_feature(parsed_geojson["geometry"]))
 
-        # Handle raw geometry (coordinates) which should be a Feature
+          wrap_in_feature_collection(wrap_in_feature(parsed_geojson["geometry"]))
         elsif parsed_geojson["type"] && parsed_geojson["coordinates"]
           wrap_in_feature_collection(wrap_in_feature(parsed_geojson))
-
-        # Handle a valid geometry with type and coordinates
-        elsif parsed_geojson["geometry"] &&
-              parsed_geojson["geometry"]["type"] &&
-              parsed_geojson["geometry"]["coordinates"]
-          wrapped_feature = wrap_in_feature(parsed_geojson["geometry"])
-          wrapped_feature["properties"] ||= {}
-          wrap_in_feature_collection(wrapped_feature)
-
         else
           raise ArgumentError, "Invalid GeoJSON fragment"
         end
@@ -82,6 +67,6 @@ class Geozone < ApplicationRecord
       {
         type: "FeatureCollection",
         features: [feature]
-      }.to_json
+      }
     end
 end

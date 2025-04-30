@@ -1,1 +1,49 @@
 pt:
+  community:
+    sidebar:
+      title: Comunidade
+      description:
+        proposal: Participar da comunidade de utilizadores desta proposta.
+        investment: Participar da comunidade de utilizadores deste investimento.
+      button_to_access: Aceder à comunidade
+    show:
+      title:
+        proposal: Proposta da comunidade
+        investment: Comunidade de investimento orçamental
+      description:
+        proposal: Participe na comunidade desta proposta. Uma comunidade ativa pode ajudar a melhorar o conteúdo da proposta e aumentar a sua divulgação para obter mais apoio.
+        investment: Participe na comunidade deste investimento orçamental. Uma comunidade ativa pode ajudar a melhorar o conteúdo do investimento orçamental e aumentar a sua divulgação para obter mais apoio.
+      create_first_community_topic:
+        first_theme_not_logged_in: Nenhum tema disponível, participe criando o primeiro.
+        first_theme: Crie o primeiro tópico da comunidade
+        sub_first_theme: "Para criar um tema tem que %{sign_in} ou %{sign_up}."
+      tab:
+        participants: Participantes
+      sidebar:
+        participate: Participe
+        new_topic: Criar tópico
+      topic:
+        edit: Editar tópico
+        destroy: Eliminar tópico
+      author: Autor
+      back: Regressar a %{community} %{proposal}
+    topic:
+      create: Criar um tópico
+      edit: Editar tópico
+      form:
+        new:
+          submit_button: Criar tópico
+        edit:
+          submit_button: Editar tópico
+        create:
+          submit_button: Criar tópico
+        update:
+          submit_button: Atualizar tópico
+      show:
+        tab:
+          comments_tab: Comentários
+      sidebar:
+        recommendations_title: Recomendações para criar um tópico
+        recommendation_one: Não escreva o título do tópico ou frases inteiras em letras maiúsculas. Na Internet isso é considerado como grito. E ninguém gosta que lhe gritem.
+        recommendation_two: Qualquer tópico ou comentário que implique uma ação ilegal será removido, assim como aqueles que pretenderem perturbar os espaços de discussão, o resto é permitido.
+        recommendation_three: Aproveite este espaço, as vozes que o enchem, é também a sua.

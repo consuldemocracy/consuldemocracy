@@ -40,7 +40,7 @@
 // NOTE: If you are **not** using mulitenancy, we recommend overwriting
 // SCSS variables in the `_consul_custom_overrides.scss` file instead
 
-.tenant-dev2 {
+.tenant-public {
   --brand: #FF3366;
   --main-header: #EC407A;
   --footer: #FCE4EC;
@@ -108,4 +108,39 @@
   --top-links-contrast: #FFFFFF;
    @import "cosla_shared";
    @include shared-styles;
+}
+
+.tenant-edi {
+  --brand:     #6D3465;
+  --brand-secondary: #492445;
+  --brand-contrast: #FFFFFF;
+  --footer: #D0E0F4;
+  --main-header-contrast: #FFFFFF;
+   --top-links: var(--brand-secondary);
+  --top-links-contrast: #FFFFFF;
+  @import "cosla_shared";
+   @include shared-styles;
+}
+
+.tenant-aberdeen {
+    --main-header: #EF5D9E;
+    --brand: #45D3A1;
+    --brand-secondary: #6CBEEC;
+    --brand-contrast: #FF;
+    --footer: #eee6db;
+    --main-header-contrast: #FFFFFF;
+    --top-links: #eee6db;
+    --top-links-contrast: #FF;
+}
+
+.tenant-sac {
+  --brand:     #005293;
+  --brand-secondary: #002F59;
+  --footer: #CEDBEA;
+  --brand-contrast: #FFFFFF;
+  --main-header-contrast: #FFFFFF;
+  --top-links: var(--brand-secondary);
+  --top-links-contrast: #FFFFFF;
+  @import "cosla_shared"; 
+  @include shared-styles;
 }

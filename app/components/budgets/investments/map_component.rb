@@ -27,7 +27,8 @@ class Budgets::Investments::MapComponent < ApplicationComponent
       [
         {
           outline_points: heading.geozone.outline_points,
-          color: heading.geozone.color
+          color: heading.geozone.color,
+          name: heading.name
         }
       ]
     end

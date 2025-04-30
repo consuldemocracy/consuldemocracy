@@ -16,6 +16,8 @@ sv:
       unmark_featured: Ta bort markering som utvald
       edit: Redigera
       configure: Inställningar
+      select: Välj
+      show_to_valuators: "Visa %{name} för bedömare"
     officing_booth:
       title: "Du är valarbetare för röstbåset på %{booth}. Om detta inte stämmer, fortsätt inte utan ring hjälptelefonnumret. Tack."
     banners:
@@ -233,12 +235,14 @@ sv:
         title: "%{budget}-faser"
     budget_investments:
       index:
+        basic_filters:
+          valuator_or_group: Bedömare eller grupp
+          title_or_id: Titel eller ID
         heading_filter_all: Alla områden
         administrator_filter_all: Alla administratörer
         valuator_filter_all: Alla bedömare
         tags_filter_all: Alla taggar
         advanced_filters: Avancerade filter
-        placeholder: Sök projekt
         filters:
           all: Alla
           without_admin: Utan tilldelad administratör
@@ -268,7 +272,6 @@ sv:
           unfeasible: "Ej genomförbart"
           undecided: "Ej beslutat"
         selected: "Vald"
-        select: "Välj"
         list:
           id: ID
           title: Titel
@@ -710,6 +713,11 @@ sv:
       milestones:
         index:
           title: Följer
+    locales:
+      default_help_text: "Detta är programmets standardspråk och om det ändras kommer det att ha en <strong>inverkan på varje användare</strong> som kommer till webbplatsen för första gången."
+      enabled_help_text: Standardspråket, som valts ovan, omfattas automatiskt.
+      update:
+        notice: Språk har uppdaterats
     managers:
       index:
         title: Medborgarguider
@@ -732,6 +740,7 @@ sv:
       proposals_topics: Förslag till ämnen
       budgets: Medborgarbudgetar
       geozones: Hantera geografiska områden
+      locales: Språk
       hidden_comments: Dolda kommentarer
       hidden_debates: Dolda debatter
       hidden_proposals: Dolda förslag
@@ -1288,7 +1297,6 @@ sv:
         title: Förslag
         id: ID
         author: Skribent
-        select: Välj
         selected: Valt
         milestones: Milstolpar
         no_proposals: Det finns inga förslag.
@@ -1344,6 +1352,10 @@ sv:
         sdg:
           title: Konfigurering av Globala målen
           how_to_enable: 'För att visa konfigurationsalternativen från Globala mål för hållbar utveckling måste du aktivera "Globala målen" på fliken "Funktioner".'
+        cookies_consent:
+          title: Cookies-samtycke
+        cookies_consent_banner:
+          title: Banner om cookies-samtycke
       remote_census_general_name: Generell information
       remote_census_request_name: Begär data
       remote_census_response_name: Svarsdata
@@ -1609,6 +1621,7 @@ sv:
             subnavigation_right: Huvudnavigering höger
       images:
         index:
+          dimensions: "(%{width} x %{height})"
           title: Anpassade bilder
           update: Uppdatera
           image: Bild
@@ -1651,6 +1664,7 @@ sv:
           create_card: Skapa kort
           no_cards: Det finns inga kort.
           columns_help: "Kortets bredd i antal kolumner. På mobilskärmar är det alltid en bredd om 100 %."
+          order_help: "Du kan ange positionen där detta kort kommer att visas."
           create:
             notice: "Kortet har skapats!"
           update:
@@ -1794,3 +1808,27 @@ sv:
       tags: "Taggar"
       tags_description: "Genererar automatiska taggar på alla objekt som kan taggas."
       title: "AI/maskininlärning"
+    cookies:
+      vendors:
+        empty: Det hittades inga leverantörer
+        third_party_cookies: Tredje parts cookies
+        create_button: Skapa cookie-leverantör
+        create:
+          notice: Cookie-leverantör har skapats
+        new:
+          title: Ny cookie-leverantör
+        edit:
+          title: Redigera cookie-leverantör
+        update:
+          notice: Cookie-leverantör har uppdaterats
+        destroy:
+          notice: Cookie-leverantör har raderats
+        form:
+          name:
+            help_text: Denna information kommer att synas offentligt.
+          cookie:
+            help_text: Denna information kommer att användas internt. Cookie-namnet måste vara unikt, och det kan bara innehålla bokstäver, siffror och understreck.
+          description:
+            help_text: Den här informationen kommer att synas offentligt.
+          script:
+            help_text: Detta är skriptet som ska köras när denna cookie godkänns av användaren. Du kan ange standard-Javascript-kod här och infoga referenser till annan programvaras javascript.

@@ -25,4 +25,5 @@
 #
 # Add your custom gem dependencies here
 gem 'ruby-openai', '~> 3.7'
-
+gem "omniauth-saml"
+gem 'concurrent-ruby', '1.3.4'

@@ -1,20 +1,15 @@
 class Verification::Management::Document
   include ActiveModel::Model
-  include ActiveModel::Dates
+  include ActiveModel::Attributes
 
-  attr_accessor :document_type, :document_number, :date_of_birth, :postal_code
+  attribute :date_of_birth, :date
+  attr_accessor :document_type, :document_number, :postal_code
 
   validates :document_type, :document_number, presence: true
   validates :date_of_birth, presence: true, if: -> { Setting.force_presence_date_of_birth? }
   validates :postal_code, presence: true, if: -> { Setting.force_presence_postal_code? }
 
   delegate :username, :email, to: :user, allow_nil: true
-
-  def initialize(attrs = {})
-    self.date_of_birth = parse_date("date_of_birth", attrs)
-    attrs = remove_date("date_of_birth", attrs)
-    super
-  end
 
   def user
     @user = User.active.by_document(document_type, document_number).first

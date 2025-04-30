@@ -8,10 +8,8 @@
 
 <h2 class="inline-block"><%= @budget.name %> - <%= t("admin.budget_investments.index.title") %></h2>
 
-<%= render "search_form" %>
+<%= render Admin::BudgetInvestments::SearchFormComponent.new(@budget) %>
 
 <%= render "/shared/filter_subnav", i18n_namespace: "admin.budget_investments.index" %>
 
-<div id="investments">
-  <%= render "investments" %>
-</div>
+<%= render Admin::BudgetInvestments::InvestmentsComponent.new(@budget, @investments) %>

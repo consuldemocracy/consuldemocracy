@@ -1,1 +1,50 @@
 pt:
+  sdg_management:
+    actions:
+      edit: "Gerir objetivos e metas"
+    header:
+      title: "Conteúdo ODS"
+    homepage:
+      title: "Configuração da página inicial"
+      header:
+        create: "Criar cabeçalho"
+        no_cards: "Não há cabeçalho"
+        title: "Cabeçalho"
+      create_card: "Criar cartão %{phase}"
+      no_cards: "Não há cartões para esta fase"
+    menu:
+      budget_investments: "Orçamentos participativos"
+      debates: "Debates"
+      legislation_processes: "Processos legislativos"
+      legislation_proposals: "Propostas legislativas"
+      polls: "Votações"
+      proposals: "Propostas"
+      sdg_content: "Objetivos e metas"
+      sdg_homepage: "Página de início ODS"
+    local_targets:
+      create:
+        notice: "Meta local criada com sucesso"
+      destroy:
+        notice: "Meta local eliminada com sucesso"
+      edit:
+        title: "Editar meta local"
+      form:
+        code: "Código deve começar com o código de meta selecionado, seguido por um ponto"
+        description: "A descrição será mostrada como ajuda para os utilizadores."
+      index:
+        new: "Criar meta local"
+      new:
+        title: "Nova meta local"
+      update:
+        notice: "Meta local atualizada com sucesso"
+    relations:
+      index:
+        filter: "Filtro"
+        filters:
+          all: "Todos"
+          pending_sdg_review: "Pendentes"
+          sdg_reviewed: "Marcado como revisto"
+      update:
+        notice: "%{relatable} atualizado com sucesso"
+      update_and_review:
+        notice: "%{relatable} atualizado com sucesso e marcado como revisto"

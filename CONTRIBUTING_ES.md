@@ -37,6 +37,7 @@ Si quieres que revisemos tu código con una sonrisa, por favor sigue nuestras co
 * Ejecuta `bundle exec pronto run` y arregla los problemas de los que informe (si es que hay alguno)
 * Sigue [las siete reglas para un gran mensaje de commit](https://chris.beams.io/posts/git-commit/)
 * Añade o modifica las traducciones i18n sólo en los idiomas base, inglés (en) y español (es); todos los demás idiomas los gestionamos a través de la [integración de Crowdin](https://translate.consuldemocracy.org/).
+* Dale un vistazo a nuestra [documentación sobre convenciones de código](docs/es/open_source/coding_conventions.md) para más información.
 
 Cuando revisemos tu código y te pidamos que cambies alguna cosa, si tienes experiencia con `git rebase` edita los commits existentes en vez de añadir más. Si no tienes experiencia con `git rebase`, puedes saltarte este punto.
 
@@ -47,7 +48,6 @@ Cuando revisemos tu código y te pidamos que cambies alguna cosa, si tienes expe
 * [Javi Martín](https://github.com/javierm)
 * [Raimond García](https://github.com/voodoorai2000)
 * [Sebastià Roig](https://github.com/taitus)
-* [Senén Rodero](https://github.com/Senen)
 
 ## Todos los demás contribuidores
 
@@ -55,4 +55,4 @@ Además del equipo principal, hay [más de cien contribuidores](https://github.c
 
 Finalmente, un agradecimiento especial a los antiguos miembros del equipo principal. Conocidos con cariño como El Alumni:
 
-[Juanjo Bazán](https://github.com/xuanxu), [Enrique García Cota](https://github.com/kikito), [Alberto Calderón](https://github.com/bertocq), [María Checa](https://github.com/mariacheca), [Alberto García](https://github.com/decabeza), [Julián Herrero](https://github.com/microweb10)
+[Juanjo Bazán](https://github.com/xuanxu), [Enrique García Cota](https://github.com/kikito), [Alberto Calderón](https://github.com/bertocq), [María Checa](https://github.com/mariacheca), [Alberto García](https://github.com/decabeza), [Julián Herrero](https://github.com/microweb10), [Senén Rodero](https://github.com/Senen).

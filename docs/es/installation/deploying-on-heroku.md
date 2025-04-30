@@ -58,7 +58,7 @@ Este tutorial asume que ya has conseguido clonar Consul Democracy en tu máquina
 
   **¡Recuerda no añadir el archivo si tienes información sensible en él!**
 
-6. Para que Heroku detecte y utilice correctamente las versiones de node.js y ruby definidas en el proyecto deberemos añadir los siguientes cambios:
+6. Para que Heroku detecte y utilice correctamente la versión de node.js definida en el proyecto deberemos añadir los siguientes cambios:
 
   En el _package.json_  añadir la versión de node.js:
 
@@ -72,18 +72,6 @@ Este tutorial asume que ya has conseguido clonar Consul Democracy en tu máquina
 
   ```bash
   heroku buildpacks:add heroku/nodejs
-  ```
-
-  En el _Gemfile_ añadir la versión de ruby y ejecutar bundle:
-
-  ```Gemfile
-  ruby file: ".ruby-version"
-  ```
-
-  y aplicar:
-
-  ```bash
-  heroku buildpacks:set heroku/ruby
   ```
 
 7. Ahora ya puedes subir tu aplicación utilizando:

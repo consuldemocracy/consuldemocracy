@@ -7,28 +7,25 @@ describe Types::UserType do
     it "does not link debates" do
       create(:debate, author: user)
 
-      response = execute("{ user(id: #{user.id}) { public_debates { edges { node { title } } } } }")
-      received_debates = dig(response, "data.user.public_debates.edges")
+      response = run_graphql_field("User.public_debates", user)
 
-      expect(received_debates).to eq []
+      expect(response.items).to eq []
     end
 
     it "does not link proposals" do
       create(:proposal, author: user)
 
-      response = execute("{ user(id: #{user.id}) { public_proposals { edges { node { title } } } } }")
-      received_proposals = dig(response, "data.user.public_proposals.edges")
+      response = run_graphql_field("User.public_proposals", user)
 
-      expect(received_proposals).to eq []
+      expect(response.items).to eq []
     end
 
     it "does not link comments" do
       create(:comment, author: user)
 
-      response = execute("{ user(id: #{user.id}) { public_comments { edges { node { body } } } } }")
-      received_comments = dig(response, "data.user.public_comments.edges")
+      response = run_graphql_field("User.public_comments", user)
 
-      expect(received_comments).to eq []
+      expect(response.items).to eq []
     end
   end
 

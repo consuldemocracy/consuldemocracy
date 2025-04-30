@@ -1,1 +1,40 @@
 pt:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} criado com sucesso."
+        debate: "Debate criado com sucesso."
+        direct_message: "A sua mensagem foi enviada com sucesso."
+        poll: "Votação criada com sucesso."
+        poll_booth: "Urna criada com sucesso."
+        poll_question_option: "Resposta criada com sucesso"
+        poll_question_option_video: "Video criado com sucesso"
+        poll_question_option_image: "Imagem carregada com sucesso"
+        proposal: "Proposta criada com sucesso."
+        proposal_notification: "A sua mensagem foi enviada corretamente."
+        budget_investment: "Investimento orçamental criado com sucesso."
+        signature_sheet: "Folha de assinaturas criada com sucesso"
+        support: "Investimento apoiado com sucesso"
+        topic: "Tópico criado com sucesso."
+        valuator_group: "Grupo de avaliação criado com sucesso"
+        vote: "Voto criado com sucesso"
+      save_changes:
+        notice: Alterações gravadas
+      update:
+        notice: "%{resource_name} atualizado com êxito."
+        debate: "Debate atualizado com êxito."
+        poll: "Votação atualizada com sucesso."
+        poll_booth: "Urna atualizada com sucesso."
+        active_poll: "Descrição das votações atualizada com sucesso."
+        proposal: "Proposta atualizada com sucesso."
+        budget_investment: "Projeto de investimento atualizado com sucesso."
+        topic: "Tópico atualizado com êxito."
+        valuator_group: "Grupo de avaliação atualizado com sucesso"
+        translation: "Tradução atualizada com sucesso"
+      destroy:
+        budget_investment: "Projeto de investimento eliminado com sucesso."
+        topic: "Tópico eliminado com sucesso."
+        poll_question_option_image: "Imagem eliminada com sucesso."
+        poll_question_option_video: "Vídeo de resposta eliminado com sucesso."
+        valuator_group: "Grupo avaliador eliminado com sucesso"
+        vote: "Voto eliminado com sucesso"

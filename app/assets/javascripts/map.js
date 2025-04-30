@@ -26,12 +26,8 @@
       editable = $(element).data("marker-editable");
       markerClustering = $(element).data("marker-clustering");
 
-      if (markerClustering) {
-        markers = L.markerClusterGroup({ chunkedLoading: true });
-      } else {
-        markers = L.layerGroup();
-      }
-      marker = null;      
+      // Define markers layer
+      markers = markerClustering ? L.markerClusterGroup({ chunkedLoading: true }) : L.layerGroup();
 
       markerIcon = L.divIcon({
         className: "map-marker",
@@ -238,7 +234,6 @@
         });
       }
     },
-
     addGeozone: function(geozone, map, geozoneLayers) {
       // Parse the GeoJSON string
       var geojsonData = JSON.parse(geozone.outline_points);
@@ -268,7 +263,6 @@
 
       // Store the GeoJSON layer in the geozoneLayers object with the actual name
       geozoneLayers[layerName] = geoJsonLayer;
-
 
       // Add the GeoJSON layer to the map
       geoJsonLayer.addTo(map);

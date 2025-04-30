@@ -21,6 +21,7 @@ RSpec.configure do |config|
   config.include(EmailSpec::Matchers)
   config.include(CommonActions)
   config.include(ActiveSupport::Testing::TimeHelpers)
+  config.include GraphQL::Testing::Helpers.for(ConsulSchema)
 
   config.define_derived_metadata(file_path: Regexp.new("/spec/components/")) do |metadata|
     metadata[:type] = :component

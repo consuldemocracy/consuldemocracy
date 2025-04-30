@@ -1,1 +1,89 @@
 pt:
+  officing:
+    header:
+      title: Votação
+    dashboard:
+      index:
+        title: Presidir mesa eleitoral
+        info: Aqui pode validar os documentos do utilizador e guardar os resultados dos votos
+        no_shifts: Não tem turnos como presidente de mesa hoje.
+    menu:
+      voters: Validar documento
+      total_recounts: Recontagem total e resultados
+    polls:
+      final:
+        title: Votações prontas para recontagem final
+        no_polls: Não oficializa recontagens finais em nenhuma votação ativa
+        select_poll: Selecionar votação
+        add_results: Adicionar resultados
+    poll_budgets:
+      see_ballot_sheets: Ver lista de boletins de voto
+      index:
+        title: "%{poll_budget} - Lista de boletins de voto"
+        ballot_sheet: "Boletim de voto %{id}"
+        ballot_sheet_name: Nome
+        ballot_sheet_author: Autor
+        ballot_sheet_creation_date: Data de criação
+        empty_results: Ainda não há boletins de voto para esta votação
+      new:
+        title: "%{poll_budget} - Novo boletim de voto"
+        booth: Urna
+        select_booth: Selecione urna
+        csv_data: Dados CSV
+        submit: Gravar
+      show:
+        created_at: Data de criação
+        author: Autor
+        data: Dados CSV
+    booth:
+      new:
+        title: "Escolha a sua urna"
+    results:
+      flash:
+        create: "Resultados gravados"
+        error_create: "Os resultados NÃO foram gravados. Erro nos dados."
+        error_wrong_booth: "Urna incorreta. Os resultados NÃO foram gravados."
+      new:
+        title: "%{poll} - Adicionar resultados"
+        not_allowed: "Não tem permissão para adicionar resultados para esta votação"
+        booth: "Urna"
+        date: "Data"
+        select_booth: "Selecione urna"
+        ballots_white: "Votos em branco"
+        ballots_null: "Votos inválidos"
+        ballots_total: "Votos Válidos"
+        submit: "Gravar"
+        results_list: "Os seus resultados"
+        see_results: "Ver resultados"
+      index:
+        no_results: "Sem resultados"
+        results: Resultados
+        table_answer: Resposta
+        table_votes: Votos
+        table_whites: "Votos em branco"
+        table_nulls: "Votos inválidos"
+        table_total: "Votos válidos"
+    residence:
+      flash:
+        create: "Documento verificado com o Censo"
+        not_allowed: "Você não tem turnos como presidente de mesa hoje"
+      new:
+        title: Validar documento
+        submit: Validar documento
+        error_verifying_census: "O Censo não conseguiu verificar este documento."
+        form_errors: impediu a verificação deste documento
+    voters:
+      new:
+        title: Votações
+        table_poll: Votação
+        table_status: Estado das votações
+        table_actions: Ações
+        not_to_vote: A pessoa decidiu não votar agora
+      show:
+        can_vote: Pode votar
+        cannot_vote: A pessoa não pode votar porque não está registada na(s) zona(s) em questão.
+        error_already_voted: Já participou nesta votação
+        submit: Confirmar voto
+        success: "Voto introduzido!"
+      can_vote:
+        submit_disable_with: "Aguarde, confirmando o voto..."

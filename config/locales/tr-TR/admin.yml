@@ -16,6 +16,8 @@ tr:
       unmark_featured: Öne çıkarılmış işaretini kaldır
       edit: Düzenle
       configure: Yapılandır
+      select: Seçin
+      show_to_valuators: "%{name} bilirkişilere görüntülensin"
     officing_booth:
       title: "%{booth} konumundaki kabinde görevlisiniz. Bu bilgi doğru değilse ilerlemeyin ve yardım telefon numarasını arayın. Teşekkürler."
     banners:
@@ -233,12 +235,14 @@ tr:
         title: "%{budget} aşamaları"
     budget_investments:
       index:
+        basic_filters:
+          valuator_or_group: Bilirkişi ya da grup
+          title_or_id: Başlık ya da kimlik
         heading_filter_all: Tüm bütçe kalemleri
         administrator_filter_all: Tüm yöneticiler
         valuator_filter_all: Tüm bilirkişiler
         tags_filter_all: Tüm etiketler
         advanced_filters: Gelişmiş süzgeçler
-        placeholder: Proje ara
         filters:
           all: Tümü
           without_admin: Görevlendirilmiş yöneticisi olmayan
@@ -268,7 +272,6 @@ tr:
           unfeasible: "Uygulanabilir bulunmamış"
           undecided: "Kararsız"
         selected: "Seçilmiş"
-        select: "Seçin"
         list:
           id: Kimlik
           title: Başlık
@@ -732,11 +735,11 @@ tr:
     menu:
       activity: Sorumlu işlemi
       admin: Yönetici menüsü
-      banner: Afiş yönetimi
+      banner: Afişler
       proposals: Önergeler
       proposals_topics: Önerge konuları
       budgets: Katılımcı bütçeler
-      geozones: Geozone'ları yönet
+      geozones: Coğrafi bölgeler
       locales: Diller
       hidden_comments: Gizli yorumlar
       hidden_debates: Gizli tartışmalar
@@ -758,7 +761,7 @@ tr:
       polls: Oylamalar
       poll_booths: Kabinlerin konumu
       poll_booth_assignments: Kabin atamaları
-      poll_shifts: Vardiyaları yönet
+      poll_shifts: Vardiya atamaları
       officials: Görevliler
       organizations: Kuruluşlar
       settings: Genel ayarlar
@@ -800,7 +803,7 @@ tr:
       dashboard_actions: Kaynaklar ve işlemler
       debates: "Tartışmalar"
       comments: "Yorumlar"
-      local_census_records: Yerel nüfus sayımını yönet
+      local_census_records: Yerel seçmen bilgi sistemi
       machine_learning: "Yapay Zeka / Makine Öğrenmesi"
       multitenancy: Çok kiracılı
     administrators:
@@ -1238,7 +1241,7 @@ tr:
       show:
         location: "Konum"
       booth:
-        shifts: "Vardiyaları yönet"
+        shifts: "Vardiya atamaları"
     officials:
       edit:
         destroy: '''Görevli'' durumunu kaldır'
@@ -1294,7 +1297,6 @@ tr:
         title: Önergeler
         id: Kimlik
         author: Sahibi
-        select: Seçin
         selected: Seçilmiş
         milestones: Aşamalar
         no_proposals: Herhangi bir önerge yok.
@@ -1350,6 +1352,10 @@ tr:
         sdg:
           title: SKA yapılandırması
           how_to_enable: 'Sürdürülebilir Kalkınma Amaçları ile ilgili yapılandırma seçeneklerini görüntülemek için, "Özellikler" sekmesinden "SKA" özelliğini açmalısınız.'
+        cookies_consent:
+          title: Tanımlama bilgileri onayı
+        cookies_consent_banner:
+          title: Tanımlama bilgileri onayı afişi
       remote_census_general_name: Genel bilgiler
       remote_census_request_name: Veri isteği
       remote_census_response_name: Veri yanıtı
@@ -1493,8 +1499,15 @@ tr:
         polls: Oylamalar
         sdg: SKA
       graph:
-        debate_created: Tartışmalar
-        proposal_created: Vatandaş önerileri
+        budget_investment_created: Oluşturulan bütçe yatırımları
+        budget_investment_supported: Desteklenen bütçe yatırımları
+        debate_created: Başlatılan tartışmalar
+        legislation_annotation_created: Oluşturulan mevzuat notları
+        legislation_answer_created: Oluşturulan mevzuat yanıtları
+        level_3_user: Doğrulanmış 3. düzey kullanıcılar
+        proposal_created: Verilen yurttaş önergeleri
+        title: Çizelgeler
+        visits: Ziyaretler
       budgets:
         no_data_before_balloting_phase: "Oy kullanma aşamasından önce görüntülenecek bir veri yok."
         title: "Katılımcı bütçeler - Katılım istatistikleri"
@@ -1608,6 +1621,7 @@ tr:
             subnavigation_right: Ana gezinme sağ
       images:
         index:
+          dimensions: "(%{width}x%{height})"
           title: Özel görseller
           update: Güncelle
           image: Görsel
@@ -1712,7 +1726,7 @@ tr:
       empty: "Günlüğe kaydedilmiş bir değişiklik yok"
     local_census_records:
       index:
-        title: Yerel vatandaş listesini yönet
+        title: Yerel seçmen bilgi sistemi
         create: Yeni yerel seçmen bilgi sistemi kaydı oluştur
         no_local_census_records: Herhangi bir yerel seçmen bilgi sistemi kaydı yok.
         document_type: Belge türü
@@ -1737,7 +1751,7 @@ tr:
         create:
           notice: Yerel seçmen bilgi sistemi kayıtları içe aktarıldı!
         show:
-          title: Yerel vatandaş listesini yönet
+          title: Yerel seçmen bilgi sistemi
           subtitle: Süreç sonuçlarını içe aktar
           import: Yeniden içe aktar
           errored: Hatalı satırlar
@@ -1794,3 +1808,27 @@ tr:
       tags: "Etiketler"
       tags_description: "Etiketlenebilecek tüm ögelere otomatik olarak etiketler üretir."
       title: "Yapay Zeka / Makine Öğrenmesi"
+    cookies:
+      vendors:
+        empty: Herhangi bir sağlayıcı bulunamadı
+        third_party_cookies: Üçüncü taraf tanımlama bilgileri
+        create_button: Tanımlama bilgileri sağlayıcısı oluştur
+        create:
+          notice: Tanımlama bilgileri sağlayıcısı oluşturuldu
+        new:
+          title: Yeni tanımlama bilgileri sağlayıcısı
+        edit:
+          title: Tanımlama bilgileri sağlayıcısını düzenle
+        update:
+          notice: Tanımlama bilgileri sağlayıcısı güncellendi
+        destroy:
+          notice: Tanımlama bilgileri sağlayıcısı silindi
+        form:
+          name:
+            help_text: Bu bilgiler herkese açık olarak görülebilir.
+          cookie:
+            help_text: Bu bilgiler içeride kullanılır. Tanımlama bilgileri adı benzersiz olmalı ve yalnızca harf, rakam ve alt çizgi karakterlerinden oluşmalıdır.
+          description:
+            help_text: Bu bilgiler herkese açık olarak görülebilir.
+          script:
+            help_text: Bu betik, bu tanımlama bilgileri kullanıcı tarafından onaylandığında çalıştırılır. Buraya vanilla JavaScript kodu yazabilir ve diğer uygulama JavaScript betiklerine referanslar sunabilirsiniz.

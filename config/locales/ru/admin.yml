@@ -149,7 +149,6 @@ ru:
         valuator_filter_all: Все оценщики
         tags_filter_all: Все метки
         advanced_filters: Расширенные фильтры
-        placeholder: Искать в проектах
         filters:
           all: Все
           without_admin: Без назначенного администратора
@@ -178,7 +177,6 @@ ru:
           unfeasible: "Неприемлемая"
           undecided: "Нерешенная"
         selected: "Выбранная"
-        select: "Выбрать"
         list:
           id: ID
           title: Название
@@ -1133,7 +1131,6 @@ ru:
         title: Заявки
         id: ID
         author: Автор
-        select: Выбрать
         selected: Выбрано
         milestones: Основные этапы
         no_proposals: Предложений нет.

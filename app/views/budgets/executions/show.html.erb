@@ -45,7 +45,7 @@
     <%= render Budgets::Executions::FiltersComponent.new(@budget, @statuses) %>
 
     <% if @investments_by_heading.any? %>
-      <%= render "budgets/executions/investments" %>
+      <%= render Budgets::Executions::InvestmentsComponent.new(@investments_by_heading) %>
     <% else %>
       <div class="callout primary clear">
         <%= t("budgets.executions.no_winner_investments") %>
