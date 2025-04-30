@@ -316,6 +316,8 @@ en:
       done: Done
       other: Other
     form:
+      geozone: Area
+      geozone_help: "This is the description of the geozone"
       proposal_responsible_name_note: "(individually or as representative of a collective; will not be displayed publically)"
       proposal_title_note: "Give a suitable name to your proposal"
       proposal_summary_note: "Give a short overview of your proposal(maximum 200 characters)"

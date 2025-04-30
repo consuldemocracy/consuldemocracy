@@ -1,1 +1,8 @@
-<%= render Proposals::VotesComponent.new(proposal, vote_url: local_assigns[:vote_url]) %>
+<% hide_proposal_votes = Tenant.current_secrets.hide_proposal_votes || false %>
+<% if hide_proposal_votes %>
+  <div class="share-supported">
+    <%= render "proposals/social_share", proposal: proposal, share_title: false %>
+  </div>
+<% else %>
+  <%= render Proposals::VotesComponent.new(proposal, vote_url: local_assigns[:vote_url]) %>
+<% end %>
