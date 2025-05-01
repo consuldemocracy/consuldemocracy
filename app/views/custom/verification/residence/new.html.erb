@@ -1,0 +1,76 @@
+<div class="verification account row">
+  <div class="small-12 column">
+
+    <div class="text-center">
+      <div class="small-4 column verification-step is-active">
+        <span class="number">1</span> <%= t("verification.step_1") %>
+      </div>
+    </div>
+
+    <div class="progress small-12 success">
+      <span class="meter" style="width: 33%"></span>
+    </div>
+
+    <%= back_link_to account_path, t("verification.back") %>
+
+    <h1><%= t("verification.residence.new.title") %></h1>
+
+    <div class="user-permissions small-12">
+      <p><%= t("verification.user_permission_info") %></p>
+
+      <%= render Account::PermissionsListComponent.new(User.new(level_two_verified_at: Time.current)) %>
+    </div>
+
+    <%= form_for @residence, as: "residence", url: residence_path do |f| %>
+      <%= render "errors" %>
+
+      <div class="row" style="display: none;">
+        <div class="small-12 medium-8">
+          <div class="small-12 medium-3 column">
+          <%= f.select :document_type, document_types, prompt: "" %>
+          </div>
+          <div class="small-12 medium-5 column end">
+
+          <div class="inline-block">
+            <%= f.label t("verification.residence.new.document_number") %>
+          </div>
+
+          <button type="button" class="inline-block" data-toggle="info-document-number">
+            <span class="icon-help"></span>
+            <span class="show-for-sr"><%= t("verification.residence.new.document_number_help_title") %></span>
+          </button>
+
+          <div class="dropdown-pane" id="info-document-number" data-dropdown
+               data-hover="true" data-hover-pane="true">
+            <%= sanitize(t("verification.residence.new.document_number_help_text")) %>
+          </div>
+
+          <%= f.text_field :document_number, label: false %>
+          </div>
+        </div>
+      </div>
+      <% if Verification::Residence.new.verify_dob %>
+      <div class="date-of-birth small-12 medium-6 clear" >
+        <%= render Shared::DateOfBirthFieldComponent.new(f) %>
+      <% end %>
+
+      <div class="small-12 medium-5 clear">
+        <%= f.text_field :postal_code,
+                         hint: t("verification.residence.new.postal_code_note") %>
+      </div>
+
+      <div class="small-12">
+        <%= f.check_box :terms_of_service,
+                        label: t("verification.residence.new.accept_terms_text",
+                                 terms_url: new_window_link_to(t("verification.residence.new.terms"),
+                                                               page_path("census_terms"))) %>
+      </div>
+
+      <div class="small-12 medium-3 clear">
+        <%= f.submit t("verification.residence.new.verify_residence"),
+                     id: "new_residence_submit",
+                     class: "button success expanded" %>
+      </div>
+    <% end %>
+  </div>
+</div>
