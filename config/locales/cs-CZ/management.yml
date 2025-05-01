@@ -95,6 +95,8 @@ cs:
         unfeasible: Nerealizovatelná investuce
       print:
         print_button: Tisk
+      search:
+        label: "Hledat investice"
       search_results:
         one: " obsahující výraz %{search_term}'"
         few: " obsahující výraz %{search_term}'"

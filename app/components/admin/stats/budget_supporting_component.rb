@@ -1,5 +1,6 @@
 class Admin::Stats::BudgetSupportingComponent < ApplicationComponent
   attr_reader :budget
+  use_helpers :include_stat_graphs_javascript
 
   def initialize(budget)
     @budget = budget

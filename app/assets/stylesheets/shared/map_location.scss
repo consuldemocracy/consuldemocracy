@@ -1,3 +1,5 @@
+@use "sass:color";
+
 .map-location-remove-marker {
   border-bottom: 1px dotted;
   border-radius: 0;
@@ -10,7 +12,7 @@
   &:active,
   &:focus {
     border-bottom-style: solid;
-    color: darken($delete, 10%);
+    color: color.adjust($delete, $lightness: -10%);
   }
 }
 

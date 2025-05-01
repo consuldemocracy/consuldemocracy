@@ -739,7 +739,6 @@ gl:
       see_more: Ver máis recomendacións
       hide: Agochar as recomendacións
     translations:
-      select_language_prompt: Escoller idioma
       remove_language: Eliminar idioma
       add_language: Engadir idioma
       languages_in_use:

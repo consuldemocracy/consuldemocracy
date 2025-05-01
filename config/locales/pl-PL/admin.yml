@@ -150,7 +150,6 @@ pl:
         valuator_filter_all: Wszyscy wyceniający
         tags_filter_all: Wszystkie tagi
         advanced_filters: Zaawansowane filtry
-        placeholder: Wyszukaj projekty
         filters:
           all: Wszystkie
           without_admin: Bez przypisanego administratora
@@ -178,7 +177,6 @@ pl:
           unfeasible: "Niewykonalne"
           undecided: "Niezdecydowany"
         selected: "Wybrany"
-        select: "Wybierz"
         list:
           id: Numer ID
           title: Tytuł
@@ -1075,7 +1073,6 @@ pl:
         title: Wnioski
         id: Numer ID
         author: Autor
-        select: Wybierz
         selected: Wybrany
         milestones: Kamienie milowe
         no_proposals: Brak wniosków.

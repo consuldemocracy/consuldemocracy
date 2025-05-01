@@ -1,0 +1,11 @@
+<div>
+  <p class="name"><strong><%= label %></strong></p>
+  <div class="description"><%= simple_format(description) %></div>
+</div>
+<div class="switch large">
+  <%= check_box_tag name, "1", checked?, class: "switch-input", disabled: disabled?, "aria-label": label %>
+  <label class="switch-paddle" for="<%= name %>">
+    <span class="switch-active" aria-hidden="true"><%= t("shared.yes") %></span>
+    <span class="switch-inactive" aria-hidden="true"><%= t("shared.no") %></span>
+  </label>
+</div>

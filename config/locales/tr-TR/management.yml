@@ -95,6 +95,8 @@ tr:
         unfeasible: Uygulanabilir bulunmayan yatırım
       print:
         print_button: Yazdır
+      search:
+        label: "Yatırım ara"
       search_results:
         one: " '%{search_term} terimi geçen"
         other: " '%{search_term} terimi geçen"

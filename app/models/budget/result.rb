@@ -24,8 +24,8 @@ class Budget
     end
 
     def inside_budget?
-#      available_budget >= @current_investment.price
-       available_budget > @current_investment.price || (available_budget > 0 && @budget.part_fund)
+      #available_budget >= @current_investment.price
+      available_budget >= @current_investment.price || (available_budget > 0 && @budget.part_fund)
     end
 
     def available_budget

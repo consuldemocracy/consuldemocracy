@@ -198,6 +198,7 @@ sv:
       consul: Programvaran CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: CONSUL DEMOCRACY, %{year}
+      cookies_consent_management: Hantera cookies
       description: Den här webbplatsen använder %{consul} som är %{open_source}.
       open_source: en plattform med öppen källkod
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
@@ -643,6 +644,8 @@ sv:
     show:
       back: "Gå tillbaka till min aktivitet"
   shared:
+    actions:
+      label: "%{action} %{name}"
     edit: "Redigera"
     filter: "Filtrera"
     save: "Spara"
@@ -739,7 +742,7 @@ sv:
       see_more: Visa fler rekommendationer
       hide: Dölj rekommendationer
     translations:
-      select_language_prompt: Välj språk
+      current_language: Nuvarande språk
       remove_language: Ta bort språk
       add_language: Lägg till språk
       languages_in_use:
@@ -758,6 +761,8 @@ sv:
     youtube: "%{org} på YouTube"
     telegram: "%{org} på Telegram"
     instagram: "%{org} på Instagram"
+  ip_denied_handler:
+    unauthorized: "Åtkomst nekad. Din IP-adress tillåts inte."
   unauthorized:
     default: Du har inte behörighet att komma åt sidan.
     manage:
@@ -928,3 +933,21 @@ sv:
   machine_learning:
     comments_summary: "Kommentarsammanfattning"
     info_text: "Innehåll har genererats av AI/maskininlärning"
+  cookies_consent:
+    accept_all_cookies: "Godkänn alla"
+    accept_essential_cookies: "Godkänn essentiella cookies"
+    message: "Cookies hjälper oss att leverera våra tjänster. I och med att du använder våra tjänster samtycker du till vår användning av cookies."
+    more_info_link: "Mer information om cookies"
+    management: "Hantera cookies"
+    title: "Cookies-policy"
+  cookies_management:
+    title: Cookies-hantering
+    description: Den här webbplatsen använder egna cookies och cookies från tredje part för att fungera på rätt sätt. Genom att klicka på knappen Godkänn alla samtycker du till användning av denna teknik och bearbetning av dina uppgifter för dessa syften.
+    essentials:
+      title: Essentiella cookies
+      description: De används för många olika syften, t.ex. för att känna igen dig som användare, välja språk eller anpassa hur innehåll visas.
+      hint: Utan dessa kommer grundläggande navigeringsfunktioner att försämras, så de ska alltid vara aktiva.
+    third_party:
+      title: Tredje parts cookies
+      description: Den här webbplatsen använder cookies från tredje part. Dessa cookies kan förbättra funktionerna eller samla in information för att förbättra din upplevelse som användare.
+    save_preferences: Spara inställningar

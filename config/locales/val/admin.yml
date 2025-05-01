@@ -146,7 +146,6 @@ val:
         valuator_filter_all: Tots els avaluadors
         tags_filter_all: Totes les etiquetes
         advanced_filters: Filtres avançats
-        placeholder: Buscar projectes
         filters:
           all: Totes
           without_admin: Sense administrador
@@ -175,7 +174,6 @@ val:
           unfeasible: "Inviable"
           undecided: "Sense decidir"
         selected: "Seleccionades"
-        select: "Seleccionar"
         list:
           id: ID
           title: Títol
@@ -1004,7 +1002,6 @@ val:
         title: Propostes
         id: ID
         author: Autor
-        select: Seleccionar
         selected: Seleccionades
         milestones: Seguiments
         no_proposals: No hi han propostes.

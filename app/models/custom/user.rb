@@ -2,6 +2,18 @@ load Rails.root.join("app", "models", "user.rb")
 
 class User < ApplicationRecord
 
+ has_one :process_manager
+ scope :process_managers,     -> { joins(:process_manager) }
+
+ def process_manager?
+    process_manager.present?
+ end
+
+ def administrator?
+    administrator.present? || process_manager.present?
+ end
+
+
 def self.unlock_in
      security = Tenant.current_secrets[:security]
      lockable = security[:lockable] if security
@@ -54,8 +66,8 @@ def erase(erase_reason = nil)
       password: Devise.friendly_token[0, 20],
       terms_of_service: "1",
       confirmed_at: oauth_email_confirmed ? DateTime.current : nil,
-      verified_at: DateTime.current ,
-      residence_verified_at:  DateTime.current
+      level_two_verified_at: DateTime.current ,
+    #  residence_verified_at:  DateTime.current
     )
   end
   
@@ -169,8 +181,8 @@ def erase(erase_reason = nil)
       password: Devise.friendly_token[0, 20],
       terms_of_service: "1",
       confirmed_at: DateTime.current,
-      verified_at: DateTime.current ,
-      residence_verified_at:  DateTime.current,
+#      verified_at: DateTime.current ,
+#      residence_verified_at:  DateTime.current,
       geozone_id: saml_geozone_id
     )
   end

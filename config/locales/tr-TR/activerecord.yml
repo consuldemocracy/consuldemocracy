@@ -151,6 +151,9 @@ tr:
       votation_type:
         one: Oylama türü
         other: Oylama türleri
+      cookies/vendor:
+        one: tanımlama bilgileri sağlayıcı
+        other: tanımlama bilgileri sağlayıcıları
     attributes:
       budget:
         name: "Ad"
@@ -459,6 +462,15 @@ tr:
       image:
         title: Başlık
         attachment: "Görsel seçin"
+      poll/question/option:
+        title: Yanıt
+        description: Açıklama
+      poll/question/option/translation:
+        title: Yanıt
+        description: "Açıklama (isteğe bağlı)"
+      poll/question/option/video:
+        title: Başlık
+        url: Dış video
       newsletter:
         segment_recipient: Alıcılar
         subject: Konu
@@ -525,6 +537,10 @@ tr:
       votation_type/vote_type:
         unique: Eşsiz yanıt
         multiple: Birden çok yanıt
+      cookies/vendor:
+        name: Sağlayıcı adı
+        cookie: Tanımlama bilgileri adı
+        script: JavaScript kodu
     errors:
       models:
         user:
@@ -542,7 +558,8 @@ tr:
         geozone:
           attributes:
             geojson:
-              invalid: "Belirtilen GeoJSON verilerinin biçimi doğru değil. \"Polygon\" ya da \"MultiPolygon\" tür biçimini izlemeli."
+              invalid: "Belirtilen GeoJSON uygun biçimde değil RFC 7946 standart biçimine uygun olmalıdır"
+              invalid_coordinates: "Belirtilen GeoJSON içinde geçersiz koordinatlar var. Koordinatlar \"Boylam, Enlem\" biçiminde olmalı ve RFC 7946 standart biçimine uygun olmalıdır"
         image:
           attributes:
             attachment:

@@ -45,8 +45,4 @@ class Admin::Legislation::DraftVersionsController < Admin::Legislation::BaseCont
     def allowed_params
       [:status, :final_version, translation_params(Legislation::DraftVersion)]
     end
-
-    def resource
-      @draft_version
-    end
 end

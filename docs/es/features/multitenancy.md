@@ -78,6 +78,21 @@ Nótese que, si estás usando un dominio distinto para una entidad, tendrás que
 
 Al añadir una nueva entidad, se creará automáticamente un usuario con permiso de administrador para esta nueva entidad **cuyos datos de acceso serán una copia de los del administrador que crea la entidad**. Este usuario se almacenará en el esquema de base de datos de la nueva entidad, con lo que cambiar su contraseña en una entidad no cambiará su contraseña en otras entidades.
 
+### Modo de gestión de multientidad
+
+La configuración `multitenancy_management_mode` permite utilizar la entidad principal únicamente para gestionar otras entidades y usuarios administradores, ocultando cualquier otra funcionalidad del panel de administración o contenido público.
+
+Existen dos posibles maneras de habilitar este modo de gestión de multientidad:
+
+* Añadiendo `config.multitenancy_management_mode = true` dentro de la clase `class Application < Rails::Application` del fichero `config/application_custom.rb`
+* Cambiando la línea `multitenancy_management_mode: false` por `multitenancy_management_mode: true` (o añadiéndola si no está ya ahí) en el fichero `config/secrets.yml`
+
+Recomendamos utilizar el mismo método que se ha utilizado para habilitar la funcionalidad de multientidad en la sección [Paso común a todas las instalaciones de Consul Democracy](#paso-común-a-todas-las-instalaciones-de-consul-democracy).
+
+Tras habilitar esta opción, reinicia la aplicación y podrás ver el panel de administración de la siguiente manera:
+
+![El panel de administración sólo contiene enlaces a multientidad y administradores](../../img/multitenancy/management-mode-es.png)
+
 ## Pasos a realizar tras añadir una entidad
 
 ### Certificados SSL

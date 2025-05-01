@@ -4,15 +4,6 @@ describe "Images", :admin do
   let(:future_poll) { create(:poll, :future) }
   let(:current_poll) { create(:poll) }
 
-  it_behaves_like "nested imageable",
-                  "future_poll_question_option",
-                  "new_admin_option_image_path",
-                  { option_id: "id" },
-                  nil,
-                  "Save image",
-                  "Image uploaded successfully",
-                  true
-
   context "Index" do
     scenario "Option with no images" do
       option = create(:poll_question_option)

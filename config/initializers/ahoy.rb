@@ -1,5 +1,3 @@
-Ahoy.api = true
-Ahoy.server_side_visits = :when_needed
 Ahoy.mask_ips = true
 Ahoy.cookies = :none
 
@@ -12,12 +10,6 @@ class Ahoy::Store < Ahoy::DatabaseStore
   def track_visit(data)
     data[:id] = ensure_uuid(data.delete(:visit_token))
     data[:visitor_id] = ensure_uuid(data.delete(:visitor_token))
-    super(data)
-  end
-
-  def track_event(data)
-    data[:id] = ensure_uuid(data.delete(:event_id))
-    data[:ip] = request.ip
     super(data)
   end
 

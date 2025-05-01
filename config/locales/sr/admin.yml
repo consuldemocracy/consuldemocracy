@@ -160,7 +160,6 @@ sr:
         valuator_filter_all: Сви оцењивачи
         tags_filter_all: Све ознаке
         advanced_filters: Унапређени филтери
-        placeholder: Претражите пројекте
         filters:
           all: Све
           without_admin: Без додељеног администратора
@@ -190,7 +189,6 @@ sr:
           unfeasible: "Неизводљиво"
           undecided: "Неодлучено"
         selected: "Изабрано"
-        select: "Изабери"
         list:
           id: ИД
           title: Назив
@@ -1155,7 +1153,6 @@ sr:
         title: Предлози
         id: ИД
         author: Аутор
-        select: Одабрати
         selected: Одабрано
         milestones: Прекретнице
         no_proposals: Нема предлога.

@@ -1,0 +1,19 @@
+.admin .admin-budget-investments {
+  td {
+    &[data-field=supports],
+    &[data-field=valuation_finished],
+    &[data-field=visible_to_valuators],
+    &[data-field=selected],
+    &[data-field=incompatible] {
+      text-align: center;
+    }
+
+    &:not([data-field=id], [data-field=title], [data-field=supports]) {
+      font-size: $small-font-size;
+    }
+  }
+
+  .toggle-switch [aria-pressed] {
+    font-size: inherit;
+  }
+}

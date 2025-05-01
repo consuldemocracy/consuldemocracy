@@ -1,4 +1,4 @@
-FROM ruby:3.2.5-bullseye
+FROM ruby:3.2.6-bookworm
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -46,6 +46,7 @@ RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz
 
 # Use the Gemfiles as Docker cache markers. Always bundle before copying app src.
 # (the src likely changed and we don't want to invalidate Docker's cache too early)
+COPY .ruby-version ./
 COPY Gemfile* ./
 RUN bundle install
 

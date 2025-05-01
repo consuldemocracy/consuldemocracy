@@ -85,7 +85,7 @@
   @include regular-button;
   border-radius: $line-height;
   font-weight: bold;
-  min-width: rem-calc(100);
+  min-width: 6em;
   position: relative;
 
   &::after {
@@ -119,4 +119,14 @@
       left: 0.5em;
     }
   }
+}
+
+@mixin modal-close-button($color: currentcolor) {
+  border: 3px solid $color;
+  border-radius: 50%;
+  color: $color;
+  font-size: rem-calc(23);
+  font-weight: bold;
+  height: rem-calc(30);
+  width: rem-calc(30);
 }

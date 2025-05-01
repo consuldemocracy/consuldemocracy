@@ -235,7 +235,6 @@ ne:
         valuator_filter_all: सबै मूल्याङ्कनकर्ताहरू
         tags_filter_all: सबै ट्यागहरू
         advanced_filters: उन्नत फिल्टरहरू
-        placeholder: परियोजनाहरू खोज्नुहोस्
         filters:
           all: सबै
           without_admin: बिना नियुक्त व्यवस्थापक
@@ -265,7 +264,6 @@ ne:
           unfeasible: "असम्भाव्य"
           undecided: "अनिश्चित"
         selected: "छानिएकाे"
-        select: "छनाेट"
         list:
           id: ID
           title: टाइटल
@@ -1273,7 +1271,6 @@ ne:
         title: प्रस्तावहरू
         id: आईडी
         author: लेखक
-        select: छनाेट
         selected: छानिएकाे
         milestones: माइलस्टोनहरू
         no_proposals: कुनै प्रस्तावहरू छैनन्।

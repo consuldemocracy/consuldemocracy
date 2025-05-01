@@ -34,5 +34,5 @@
   <h3><%= t("admin.geozones.index.geojson_map") %></h3>
   <p class="help-text"><%= t("admin.geozones.index.geojson_map_help") %></p>
 
-  <%= render Shared::MapLocationComponent.new(nil, geozones_data: geozones_data) %>
+  <%= render_map(nil, geozones_data: geozones_data) %>
 </section>

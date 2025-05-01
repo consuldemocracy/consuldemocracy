@@ -207,7 +207,6 @@ ro:
         valuator_filter_all: Toți evaluatorii
         tags_filter_all: Toate etichetele
         advanced_filters: Filtre avansate
-        placeholder: Caută proiecte
         filters:
           all: Toate
           without_admin: Fără administrator atribuit
@@ -237,7 +236,6 @@ ro:
           unfeasible: "Nerealizabil"
           undecided: "Nehotărât"
         selected: "Selectat"
-        select: "Selectează"
         list:
           id: ID
           title: Titlu
@@ -1219,7 +1217,6 @@ ro:
         title: Propuneri
         id: ID
         author: Autor
-        select: Selectează
         selected: Selectat
         milestones: Repere
         no_proposals: Nu există propuneri.

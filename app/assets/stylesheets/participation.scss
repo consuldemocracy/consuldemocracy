@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // Table of Contents
 //
 // 01. Votes and supports
@@ -19,8 +21,8 @@
   position: relative;
 
   .progress {
-    background: lighten($proposals, 35%);
-    border: 1px solid lighten($proposals, 35%);
+    background: color.adjust($proposals, $lightness: 35%);
+    border: 1px solid color.adjust($proposals, $lightness: 35%);
     height: rem-calc(14);
     position: relative;
 
@@ -59,7 +61,7 @@
 
     &:hover,
     &:active {
-      background: lighten($proposals, 25%);
+      background: color.adjust($proposals, $lightness: 25%);
       cursor: pointer;
     }
   }
@@ -899,7 +901,7 @@
 
   a,
   .info {
-    color: lighten($body-font-color, 15%);
+    color: color.adjust($body-font-color, $lightness: 15%);
     font-size: $small-font-size;
   }
 }
@@ -1285,61 +1287,6 @@
     &.budget {
       color: $budget;
     }
-  }
-}
-
-.budget-execution {
-  @include card;
-  border: 1px solid $border;
-  overflow: hidden;
-  position: relative;
-
-  a {
-    color: inherit;
-    display: block;
-
-    img {
-      height: $line-height * 9;
-      max-width: none;
-      min-width: 100%;
-      transition-duration: 0.3s;
-      transition-property: transform;
-    }
-
-    &:hover {
-      text-decoration: none;
-
-      img {
-        transform: scale(1.05);
-      }
-    }
-  }
-
-  h5 {
-    font-size: $base-font-size;
-    margin-bottom: 0;
-  }
-
-  .budget-execution-info {
-    padding: calc(#{$line-height} / 2);
-  }
-
-  .author {
-    color: $text-medium;
-    font-size: $small-font-size;
-  }
-
-  .budget-execution-content {
-    min-height: $line-height * 3;
-  }
-
-  .price {
-    color: $budget;
-    font-size: rem-calc(24);
-  }
-
-  &:hover:not(:focus-within) {
-    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
   }
 }
 

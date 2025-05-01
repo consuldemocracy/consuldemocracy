@@ -37,7 +37,7 @@ module UsersHelper
 
   def show_admin_menu?(user)
     unless namespace == "officing"
-      user&.administrator? || user&.moderator? || user&.valuator? ||
+      user&.administrator? || user&.process_manager? || user&.moderator? || user&.valuator? ||
         (user&.manager? && namespace != "management") || user&.poll_officer? || user&.sdg_manager?
     end
   end

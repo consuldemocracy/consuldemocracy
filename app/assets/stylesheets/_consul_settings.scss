@@ -1,3 +1,5 @@
+@use "sass:color";
+
 //  CONSUL DEMOCRACY Settings
 //  -----------------------------
 //
@@ -12,6 +14,7 @@
 
 $black: #222 !default;
 $white: #fdfdfd !default;
+$dark-gray: #8a8a8a !default;
 
 $body-background: $white;
 $body-font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif !important !default;
@@ -49,6 +52,8 @@ $orbit-caption-background: #eee;
 
 $show-header-for-stacked: true !default;
 
+$switch-background: $dark-gray !default;
+
 // 2. CONSUL DEMOCRACY variables
 // -----------------------------
 
@@ -63,7 +68,7 @@ $tiny-font-size:      rem-calc(12) !default;
 $font-family-serif: Georgia, "Times New Roman", Times, serif !default;
 
 $brand:             #004a83 !default;
-$brand-secondary:   darken($brand, 10%) !default;
+$brand-secondary:   color.adjust($brand, $lightness: -10%) !default;
 
 $text-medium:       #515151 !default;
 $text-light:        #bfbfbf !default;
@@ -154,7 +159,7 @@ $sdg-colors: (
 // ---------------------------------------------------------------
 
 $anchor-color: $brand !default;
-$anchor-color-hover: darken($anchor-color, 20%) !default;
+$anchor-color-hover: color.adjust($anchor-color, $lightness: -20%) !default;
 
 $tab-background-active: $white !default;
 

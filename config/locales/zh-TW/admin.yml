@@ -118,7 +118,6 @@ zh-TW:
         valuator_filter_all: 所有評估員
         tags_filter_all: 所有標籤
         advanced_filters: 高級篩選器
-        placeholder: 搜索項目
         filters:
           all: 所有
           without_admin: 沒有指定的管理員
@@ -146,7 +145,6 @@ zh-TW:
           unfeasible: "不可行"
           undecided: "未定"
         selected: "已選擇"
-        select: "選擇"
         list:
           id: ID
           title: 標題
@@ -948,7 +946,6 @@ zh-TW:
         title: 建議
         id: ID
         author: 作者
-        select: 選擇
         selected: 已選擇
         milestones: 里程碑
     hidden_proposals:

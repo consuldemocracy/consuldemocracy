@@ -115,7 +115,11 @@ describe Abilities::Administrator do
   it { should_not be_able_to(:admin_update, finished_investment) }
   it { should_not be_able_to(:valuate, finished_investment) }
   it { should_not be_able_to(:comment_valuation, finished_investment) }
-  it { should_not be_able_to(:toggle_selection, finished_investment) }
+
+  it { should be_able_to([:select, :deselect], create(:budget_investment, :feasible, :finished)) }
+  it { should_not be_able_to([:select, :deselect], create(:budget_investment, :feasible, :open)) }
+  it { should_not be_able_to([:select, :deselect], create(:budget_investment, :unfeasible, :finished)) }
+  it { should_not be_able_to([:select, :deselect], finished_investment) }
 
   it { should be_able_to(:destroy, proposal_image) }
   it { should be_able_to(:destroy, proposal_document) }
@@ -167,6 +171,10 @@ describe Abilities::Administrator do
   it { should be_able_to(:destroy, SDG::Manager) }
 
   it { should be_able_to(:manage, Widget::Card) }
+
+  it { should be_able_to(:create, Cookies::Vendor) }
+  it { should be_able_to(:update, Cookies::Vendor) }
+  it { should be_able_to(:destroy, Cookies::Vendor) }
 
   describe "tenants" do
     context "with multitenancy disabled" do

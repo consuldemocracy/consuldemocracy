@@ -1,0 +1,5 @@
+<%= back_link_to admin_settings_path(anchor: "tab-cookies-consent") %>
+
+<%= header %>
+
+<%= render Admin::Cookies::Vendors::FormComponent.new(vendor) %>

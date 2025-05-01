@@ -410,7 +410,7 @@ describe "Valuation budget investments" do
       visit valuation_budget_budget_investment_path(budget, investment)
       click_link "Edit dossier"
 
-      accept_confirm { find_field("budget_investment[valuation_finished]").click }
+      accept_confirm { check "Valuation finished" }
       click_button "Save changes"
 
       expect(page).to have_content "Dossier updated"

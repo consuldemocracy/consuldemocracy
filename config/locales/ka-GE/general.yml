@@ -717,7 +717,6 @@ ka:
       see_more: სხვა რეკომენდაციების ნახვა
       hide: რეკომენდაციების დამალვა
     translations:
-      select_language_prompt: ენის არჩევა
       remove_language: ენის წაშლა
       add_language: ენის დამატება
       languages_in_use:

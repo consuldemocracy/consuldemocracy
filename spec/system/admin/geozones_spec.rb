@@ -110,8 +110,16 @@ describe "Admin geozones", :admin do
 
   scenario "Show polygons when a heading is associated with a geozone" do
     Setting["feature.map"] = true
+    geojson = <<~JSON
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[-0.1, 51.5], [-0.2, 51.4], [-0.3, 51.6], [-0.1, 51.5]]]
+        }
+      }
+    JSON
 
-    geojson = '{ "geometry": { "type": "Polygon", "coordinates": [[-0.1,51.5],[-0.2,51.4],[-0.3,51.6]] } }'
     geozone = create(:geozone, name: "Polygon me!")
     budget = create(:budget)
     group = create(:budget_group, budget: budget)
@@ -145,7 +153,16 @@ describe "Admin geozones", :admin do
 
   scenario "Show polygons on geozone admin view" do
     Setting["feature.map"] = true
-    geojson = '{ "geometry": { "type": "Polygon", "coordinates": [[-0.1,51.5],[-0.2,51.4],[-0.3,51.6]] } }'
+    geojson = <<~JSON
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[-0.1, 51.5], [-0.2, 51.4], [-0.3, 51.6], [-0.1, 51.5]]]
+        }
+      }
+    JSON
+
     geozone = create(:geozone, name: "Polygon me!", geojson: geojson)
 
     visit admin_geozones_path
@@ -154,6 +171,78 @@ describe "Admin geozones", :admin do
 
     within ".map-location" do
       expect(page).to have_link "Polygon me!", href: edit_admin_geozone_path(geozone)
+    end
+  end
+
+  scenario "overwrites geozone data with features data" do
+    geojson = <<~JSON
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[-0.1, 51.5], [-0.2, 51.5], [-0.2, 51.6], [-0.1, 51.6], [-0.1, 51.5]]]
+        },
+        "properties": {
+          "color": "#ff5733",
+          "headings": ["Zone 1", "Test zone"]
+        }
+      }
+    JSON
+
+    create(:geozone, color: "#001122", geojson: geojson)
+
+    visit admin_geozones_path
+
+    expect(page).to have_css ".map-polygon[fill='#ff5733']"
+    expect(page).not_to have_css ".map-polygon[fill='#001122']"
+    expect(page).not_to have_content "Zone 1"
+    expect(page).not_to have_content "Test zone"
+
+    find(".map-polygon").click
+
+    expect(page).to have_content "Zone 1\nTest zone"
+  end
+
+  scenario "includes a control to select which geozones to display" do
+    north = <<~JSON
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[-0.1, 51.5], [-0.2, 51.5], [-0.2, 51.6], [-0.1, 51.6], [-0.1, 51.5]]]
+        },
+        "properties": {}
+      }
+    JSON
+
+    south = <<~JSON
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[-0.1, 51.45], [-0.2, 51.45], [-0.2, 51.35], [-0.1, 51.35], [-0.1, 51.45]]]
+        },
+        "properties": {}
+      }
+    JSON
+
+    create(:geozone, name: "North", geojson: north)
+    create(:geozone, name: "South", geojson: south)
+
+    visit admin_geozones_path
+
+    within(".map-location") do
+      expect(page).to have_css ".map-polygon", count: 2
+
+      find(".leaflet-control-layers").click
+      uncheck "South"
+
+      expect(page).to have_css ".map-polygon", count: 1
+
+      find(".map-polygon").click
+
+      expect(page).to have_content "North"
+      expect(page).not_to have_content "South"
     end
   end
 end

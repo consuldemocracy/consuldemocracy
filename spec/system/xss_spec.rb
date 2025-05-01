@@ -170,7 +170,7 @@ describe "Cross-Site Scripting protection" do
   end
 
   scenario "legislation version body filters script tags but not header IDs nor tags like images" do
-    markdown = "# Title 1\n<a href='https://domain.com/url'>link</a><img src='/image.png'>"
+    markdown = "# Title 1\n<a href='https://domain.com/url'>link</a><img src='/image.png' alt='text'>"
     version = create(:legislation_draft_version, :published, body: "#{markdown}#{attack_code}")
 
     visit legislation_process_draft_version_path(version.process, version)
@@ -178,6 +178,6 @@ describe "Cross-Site Scripting protection" do
     expect(page.text).not_to be_empty
     expect(page).to have_css "h1#title-1", text: "Title 1"
     expect(page).to have_link "link", href: "https://domain.com/url"
-    expect(page).to have_css('img[src="/image.png"')
+    expect(page).to have_css('img[src="/image.png"]')
   end
 end

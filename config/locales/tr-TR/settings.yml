@@ -134,6 +134,8 @@ tr:
       remove_investments_supports_description: "Projelerin seçilmesi aşamasında kullanıcılar katılımcı bütçe yatırımlarına desteklerini geri çekebilsin."
       sdg: SKA
       sdg_description: Yönetim menüsünde ve genel ayarlarda Sürdürülebilir Kalkınma Amaçları bölümlerini açın.
+      cookies_consent: Tanımlama bilgileri onayı afişi
+      cookies_consent_description: Kullanıcıları uygulamanın kullandığı tanımlama bilgileri hakkında bilgilendirmek için tanımlama bilgileri onayı afişini etkinleştirin.
     remote_census:
       general:
         endpoint: "Uç nokta"
@@ -226,3 +228,8 @@ tr:
         budgets_description: Katılımcı bütçeler Sürdürülebilir Kalkınma Amaçları ile ilişkilendirilebilsin
         legislation: Katılımcı mevzuatlarla ilgili SKA
         legislation_description: Katılımcı mevzuatlar Sürdürülebilir Kalkınma Amaçları ile ilişkilendirilebilsin
+    cookies_consent:
+      more_info_link: Tanımlama bilgileri ilkesi bağlantısı
+      more_info_link_description: Onay afişinde görüntülenecek çerez ilkesi sayfası bağlantısı.
+      version_name: Sürüm adı
+      version_name_description: Tüm kullanıcıların tanımlama bilgileri onay sürecinden yeniden geçmesini sağlamak için sürüm adını değiştirin. Bu özellik, yeni bir kullanıcı onayı gerektiren köklü tanımlama bilgileri ilkesi değişiklikleri yaparken kullanışlı olabilir.

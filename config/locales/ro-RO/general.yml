@@ -746,7 +746,6 @@ ro:
       see_more: Vezi mai multe recomandări
       hide: Ascunde recomandări
     translations:
-      select_language_prompt: Alege limba
       remove_language: Șterge limbă
       add_language: Adaugă limbă
       languages_in_use:

@@ -725,7 +725,6 @@ ru:
       see_more: Смотреть больше рекомендация
       hide: Скрыть рекомендации
     translations:
-      select_language_prompt: Выбрать язык
       remove_language: Удалить язык
       add_language: Добавить язык
   social:

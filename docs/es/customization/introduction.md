@@ -55,3 +55,7 @@ Así que, en primer lugar, asegúrate de haber [configurado tu "fork"](../gettin
 En caso de que alguno de los tests falle, echa un vistazo a uno de los tests y comprueba si falla por un fallo en el código personalizado o porque el test comprueba un comportamiento que ha cambiado con los cambios personalizados (por ejemplo, puede que modifiques el código para que solamente los usuarios verificados puedan añadir comentarios, pero puede que haya un test que compruebe que cualquier usuario puede añadir comentarios, ya que es el comportamiento por defecto). Si el test falla debido a un fallo en el código personalizado, arréglalo ;). Si falla debido a un comportamiento que ha cambiado, consulta la sección de [personalización de tests](tests.md).
 
 **Recomendamos encarecidamente añadir tests a tus cambios personalizados** para que tengas una forma de comprobar si estos cambios siguen funcionando cuando actualices a una nueva versión de Consul Democracy.
+
+## Convenciones de código
+
+Consul Democracy incluye herramientas (_linters_) para definir convenciones de código Ruby, ERB, JavaScript, SCSS y Markdown. Te recomendamos seguir estas mismas convenciones en tu código para que sea más fácil de mantener. Échale un vistazo a la sección de [convenciones de código](../open_source/coding_conventions.md) para más información.

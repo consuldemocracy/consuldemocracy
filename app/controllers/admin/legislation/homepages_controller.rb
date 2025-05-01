@@ -26,8 +26,4 @@ class Admin::Legislation::HomepagesController < Admin::Legislation::BaseControll
     def allowed_params
       [:homepage, :homepage_enabled, translation_params(::Legislation::Process)]
     end
-
-    def resource
-      @process || ::Legislation::Process.find(params[:id])
-    end
 end

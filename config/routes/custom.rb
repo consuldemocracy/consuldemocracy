@@ -26,3 +26,18 @@
 # over the default routes. So, if you define a route for `/proposals`,
 # the default action for `/proposals` will not be used and the one you
 # define will be used instead.
+namespace :admin do
+  resources :process_managers, only: [:index, :create, :destroy, :edit, :update] do
+    get :search, on: :collection
+  end
+end
+
+
+constraints lambda { |request| !Rails.application.multitenancy_management_mode? } do
+  # The routes defined within this block will not be accessible if multitenancy
+  # management mode is enabled. If you need these routes to be accessible when
+  # using multitenancy management mode, you should define them outside of this block.
+  #
+  # If multitenancy management mode is not being used, routes can be included within
+  # this block and will still be accessible.
+end

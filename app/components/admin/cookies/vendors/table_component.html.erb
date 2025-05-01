@@ -1,0 +1,22 @@
+<h3><%= t("admin.cookies.vendors.third_party_cookies") %></h3>
+
+<% if vendors.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th><%= attribute_name(:name) %></th>
+        <th><%= attribute_name(:cookie) %></th>
+        <th><%= t("admin.shared.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render Admin::Cookies::Vendors::RowComponent.with_collection(vendors) %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="callout primary clear">
+    <%= t("admin.cookies.vendors.empty") %>
+  </div>
+<% end %>
+
+<%= link_to t("admin.cookies.vendors.create_button"), new_admin_cookies_vendor_path, class: "button" %>

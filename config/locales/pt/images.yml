@@ -1,1 +1,17 @@
 pt:
+  images:
+    remove_image: Remover imagem
+    form:
+      title: Imagem descritiva
+      title_placeholder: Adicionar um título descritivo para a imagem
+      delete_button: Eliminar imagem
+      note: "Pode carregar uma imagem dos seguintes tipos: %{accepted_content_types}, até %{max_file_size} MB."
+      add_new_image: Adicionar imagem
+    actions:
+      destroy:
+        notice: Imagem eliminada com sucesso.
+        alert: Não é possível eliminar a imagem.
+    errors:
+      messages:
+        in_between: deve estar entre %{min} e %{max}
+        wrong_content_type: '%{content_type} tipo de conteúdo não corresponde a nenhum dos tipos de conteúdo permitidos %{accepted_content_types}'

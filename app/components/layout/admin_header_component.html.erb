@@ -2,8 +2,10 @@
   <div class="top-links">
     <%= render Layout::LocaleSwitcherComponent.new %>
 
-    <%= link_to root_path do %>
-      <%= t("admin.dashboard.index.back", org: setting["org_name"]) %>
+    <% if show_link_to_root_path? %>
+      <%= link_to root_path do %>
+        <%= t("admin.dashboard.index.back", org: setting["org_name"]) %>
+      <% end %>
     <% end %>
   </div>
 

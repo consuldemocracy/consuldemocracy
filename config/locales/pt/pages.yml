@@ -1,1 +1,173 @@
 pt:
+  pages:
+    census_terms:
+      title: "Termos e condições de acesso ao Censo"
+      description: "Página de informação sobre los termos e condições de acesso ao Censo."
+    conditions:
+      title: Termos e condições de uso
+      subtitle: AVISO LEGAL SOBRE AS CONDIÇÕES DE USO, PRIVACIDADE E PROTEÇÃO DE DADOS PESSOAIS DO PORTAL DO GOVERNO ABERTO
+      description: Página de informações sobre as condições de uso, privacidade e proteção de dados pessoais.
+    help:
+      title: "%{org} é uma plataforma de participação cidadã"
+      guide: "Este guia explica para que servem e como funcionam cada uma das secções de %{org}."
+      menu:
+        debates: "Debates"
+        proposals: "Propostas"
+        budgets: "Orçamentos participativos"
+        polls: "Votações"
+        other: "Outras informações de interesse"
+        processes: "Processos"
+      debates:
+        title: "Debates"
+        description: "Na secção %{link} pode apresentar e compartilhar a sua opinião com outras pessoas sobre questões do seu interesse relacionadas com a cidade. É também um lugar para gerar ideias que, através de outras secções de %{org}, levam a ações concretas pela Câmara Municipal."
+        link: "debates de cidadãos"
+        feature: "Pode abrir debates, comentar e avaliá-los com o <strong>Concordo</strong> ou <strong>Discordo</strong>. Para isso, basta %{link}."
+        feature_link: "registe-se em %{org}"
+        image_alt: "Botões para classificar os debates"
+        figcaption: 'Botões "Concordo" e "Discordo" para classificar os debates.'
+      proposals:
+        title: "Propostas"
+        description: "Na secção %{link} pode fazer propostas para a Câmara Municipal concretizar. As propostas necessitam de apoio e, se alcançam apoio suficiente, são colocadas em votação pública. As propostas aprovadas nestas votações pelos cidadãos são aceites pela Câmara Municipal e realizadas."
+        link: "propostas dos cidadãos"
+        image_alt: "Botão para apoiar uma proposta"
+        figcaption: 'Botão para "Apoiar" uma proposta.'
+      budgets:
+        title: "Orçamento participativo"
+        description: "A secção %{link} auxilia às pessoas a decidirem diretamente qual o destino de uma parte do orçamento municipal."
+        link: "orçamentos participativos"
+        image_alt: "Diferentes fases de um orçamento participativo"
+        figcaption: 'Fases de "Apoio" e "Votação" dos orçamentos participativos.'
+      polls:
+        title: "Votações"
+        description: "A secção %{link} é ativada cada vez que uma proposta atinge 1% de apoio e vai para votação, ou quando a Câmara Municipal propõe uma questão para as pessoas decidirem."
+        link: "votações"
+        feature_1: "Para participar da votação, precisa %{link} e verificar a sua conta."
+        feature_1_link: "registar em %{org_name}"
+      processes:
+        title: "Processos"
+        description: "Na seção %{link}, os cidadãos participam da redação e modificação dos regulamentos que afetam a cidade e podem opinar sobre as políticas municipais em debates anteriores."
+        link: "processos"
+        feature: "Para participar nos processos, necessita de %{link} e verificar a sua conta."
+        feature_link: "registe-se %{org_name}"
+      faq:
+        title: "Problemas técnicos?"
+        description: "Leia as Perguntas Frequentes e resolva as suas dúvidas."
+        button: "Ver perguntas frequentes"
+        page:
+          title: "Perguntas frequentes"
+          description: "Utilize esta página para resolver Perguntas Frequentes dos utilizadores da plataforma."
+      other:
+        title: "Outras informações de interesse"
+        how_to_use: "Use o %{org_name} na sua cidade"
+        sdg: "Objetivos de Desenvolvimento Sustentável - Ajuda"
+      how_to_use:
+        text: |-
+          Use-o em seu governo local ou nos ajude a melhorá-lo, é software livre.
+
+          Este Portal de Governo Aberto usa a [CONSUL DEMOCRACY app] (https://github.com/consuldemocracy/consuldemocracy 'consul democracy github') que é um software livre, com [licença AGPLv3] (http://www.gnu.org/licenses/ agpl-3.0.html 'AGPLv3 gnu'), que significa em palavras simples que qualquer um pode usar o código livremente, copiá-lo, vê-lo em detalhe, modificá-lo e redistribuí-lo ao mundo com as modificações que quiser (permitindo que outros façam o mesmo). Porque pensamos que a cultura é melhor e mais rica quando é libertada.
+
+          Se você é um programador, pode ver o código e nos ajudar a melhorá-lo na [CONSUL DEMOCRACY app](https://github.com/consuldemocracy/consuldemocracy 'consul democracy github').
+      titles:
+        how_to_use: Use-o no seu governo local
+    privacy:
+      title: Política de privacidade
+      subtitle: "Página de informação de privacidade"
+    accessibility:
+      title: Acessibilidade
+      description: |-
+        Acessibilidade Web refere-se à possibilidade de acesso à web e seu conteúdo por todas as pessoas, independentemente de deficiências (físicas, intelectuais ou técnicas), ou dificuldades que derivem do contexto de uso (tecnológico ou ambiental).
+
+        Quando os websites são concebidos tendo em mente a acessibilidade, todos os utilizadores podem aceder ao conteúdo em igualdade de condições, por exemplo:
+      examples:
+        - Fornecendo texto alternativo às imagens, os utilizadores cegos ou com deficiência visual podem utilizar leitores especiais para aceder à informação.
+        - Quando os vídeos têm legendas, os utilizadores com dificuldades auditivas podem compreendê-los totalmente.
+        - Se os conteúdos estiverem escritos numa linguagem simples e ilustrada, os utilizadores com problemas de aprendizagem conseguirão entendê-los com maior facilidade.
+        - Se o utilizador tem problemas motores que dificultem o uso do rato, as alternativas com o teclado ajudam na navegação.
+      keyboard_shortcuts:
+        title: Atalhos de teclado
+        navigation_table:
+          description: Para ser capaz de navegar através desta plataforma de forma acessível, foi programado um grupo de teclas de acesso rápido que reúne as principais secções de interesse geral em que a plataforma é organizada.
+          caption: Atalhos de teclado para o menu de navegação
+          key_header: Tecla
+          page_header: Página
+          rows:
+            - 
+              key_column: 0
+              page_column: Início
+            - 
+              key_column: 1
+              page_column: Debates
+            - 
+              key_column: 2
+              page_column: Propostas
+            - 
+              key_column: 3
+              page_column: Votos
+            - 
+              key_column: 4
+              page_column: Orçamentos participativos
+            - 
+              key_column: 5
+              page_column: Processos legislativos
+        browser_table:
+          description: "Dependendo do sistema operativo e do navegador usado, a combinação de teclas será a seguinte:"
+          caption: Combinação de teclas, dependente do sistema operativo e navegador
+          browser_header: Navegador
+          key_header: Combinação de teclas
+          rows:
+            - 
+              browser_column: Explorer
+              key_column: ALT + atalho, em seguida, ENTER
+            - 
+              browser_column: Firefox
+              key_column: ALT + CAPS + atalho
+            - 
+              browser_column: Chrome
+              key_column: ALT + atalho (CTRL + ALT + atalhos para MAC)
+            - 
+              browser_column: Safari
+              key_column: ALT + atalho (CMD + atalho para MAC)
+            - 
+              browser_column: Opera
+              key_column: CAPS + ESC + atalho
+      textsize:
+        title: Tamanho do texto
+        browser_settings_table:
+          description: O design acessível deste site permite ao utilizador escolher o tamanho do texto que lhe convém. Esta ação pode ser realizada de diferentes formas dependendo do navegador utilizado.
+          browser_header: Navegador
+          action_header: Ação a ser tomada
+          rows:
+            - 
+              browser_column: Explorer
+              action_column: Ver > Tamanho do texto
+            - 
+              browser_column: Firefox
+              action_column: Ver > Tamanho
+            - 
+              browser_column: Chrome
+              action_column: Configurações (ícone) > Opções > Avançado > Conteúdo Web > Tamanho do texto
+            - 
+              browser_column: Safari
+              action_column: Ver > Aumentar Zoom / Diminuir Zoom
+            - 
+              browser_column: Opera
+              action_column: Ver > escala
+        browser_shortcuts_table:
+          description: "Outra maneira de modificar o tamanho do texto é utilizar os atalhos de teclado definidos em navegadores, em especial a combinação de teclas:"
+          rows:
+            - 
+              shortcut_column: CTRL e + (CMD e + no MAC)
+              description_column: Aumenta o tamanho do texto
+            - 
+              shortcut_column: CTRL e - (CMD e - no MAC)
+              description_column: Diminui o tamanho do texto
+      compatibility:
+        title: Compatibilidade com padrões e design visual
+        description: 'Todas as páginas desta plataforma estão de acordo com <strong>Diretrizes de Acessibilidade</strong> ou com os Princípios Gerais de Design Acessível estabelecidos pelo grupo de trabalho <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> pertencentes ao W3C.'
+    titles:
+      help: "O que é %{org}? - Participação de cidadãos"
+    verify:
+      info: "Para verificar a sua conta introduza os seus dados de acesso:"
+      info_code: "Agora introduza o código recebido na carta:"
+      submit: Verificar a minha conta
+      title: Verifique a sua conta

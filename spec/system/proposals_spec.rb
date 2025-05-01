@@ -937,7 +937,7 @@ describe "Proposals" do
           expect(page).to have_content("Medium")
           expect(page).to have_css(".recommendation", count: 3)
 
-          accept_confirm { click_link "Hide recommendations" }
+          accept_confirm { click_button "Hide recommendations" }
         end
 
         expect(page).not_to have_link("recommendations")
@@ -1290,22 +1290,6 @@ describe "Proposals" do
   it_behaves_like "followable", "proposal", "proposal_path", { id: "id" }
 
   it_behaves_like "imageable", "proposal", "proposal_path", { id: "id" }
-
-  it_behaves_like "nested imageable",
-                  "proposal",
-                  "new_proposal_path",
-                  {},
-                  "imageable_fill_new_valid_proposal",
-                  "Create proposal",
-                  "Proposal created successfully"
-
-  it_behaves_like "nested imageable",
-                  "proposal",
-                  "edit_proposal_path",
-                  { id: "id" },
-                  nil,
-                  "Save changes",
-                  "Proposal updated successfully"
 
   it_behaves_like "documentable", "proposal", "proposal_path", { id: "id" }
 

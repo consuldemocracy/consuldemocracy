@@ -1,1 +1,68 @@
 pt:
+  valuation:
+    header:
+      title: Avaliação
+    menu:
+      title: Avaliação
+      budgets: Orçamentos participativos
+    budgets:
+      index:
+        title: Orçamentos participativos
+        filters:
+          current: Aberto
+          finished: Terminados
+        table_name: Nome
+        table_phase: Fase
+        table_assigned_investments_valuation_open: Projetos de investimento atribuídos com avaliação aberta
+        table_actions: Ações
+        evaluate: Avaliar
+        no_budgets: "Não há orçamentos"
+    budget_investments:
+      index:
+        headings_filter_all: Todas as rubricas
+        filters:
+          valuation_open: Aberto
+          valuating: Em avaliação
+          valuation_finished: Avaliação terminada
+        assigned_to: "Atribuído a %{valuator}"
+        title: Projetos de investimento
+        edit: Editar pasta
+        table_id: ID
+        table_title: Título
+        table_heading_name: Nome da rubrica
+        table_actions: Ações
+        no_investments: "Não há projetos de investimento."
+      show:
+        back: Voltar
+        title: Projeto de investimento
+        info: Informação do autor
+        by: Enviado por
+        sent: Enviado em
+        heading: Rubrica
+        dossier: Pasta
+        edit_dossier: Editar pasta
+        price: Custo
+        price_first_year: Custo durante o primeiro ano
+        currency: "€"
+        feasibility: Viabilidade
+        feasible: Viável
+        unfeasible: Inviável
+        undefined: Não definido
+        valuation_finished: Avaliação terminada
+        duration: Prazo de execução
+        responsibles: Responsáveis
+        assigned_admin: Administrador designado
+        assigned_valuators: Avaliadores designados
+        preview: Pré-visualização de investimento
+      edit:
+        dossier: Pasta
+        price: "Custo (%{currency})"
+        price_first_year: "Custo durante o primeiro ano (%{currency})<small>(opcional, dados não públicos)</small>"
+        feasibility: Viabilidade
+        valuation_finished_alert: "Tem certeza que deseja marcar este relatório como concluído? Depois de concluído, o relatório não poderá ser modificado."
+        not_feasible_alert: "Será enviado de imediato um e-mail ao autor do projeto com o relato de inviabilidade."
+        save: Guardar alterações
+      notice:
+        valuate: "Pasta atualizada"
+      valuation_comments: Comentários de avaliação
+      not_in_valuating_phase: Os investimentos só podem ser avaliados quando o Orçamento estiver na fase de avaliação

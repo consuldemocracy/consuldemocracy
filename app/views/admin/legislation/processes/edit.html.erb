@@ -9,5 +9,5 @@
 
   <%= render "subnav", process: @process, active: "info" %>
 
-  <%= render "form" %>
+  <%= render Admin::Legislation::Processes::FormComponent.new(@process) %>
 </div>

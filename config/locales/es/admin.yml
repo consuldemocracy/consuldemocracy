@@ -16,6 +16,8 @@ es:
       unmark_featured: Quitar destacado
       edit: Editar
       configure: Configurar
+      select: Seleccionar
+      show_to_valuators: "Mostrar %{name} a evaluadores"
     officing_booth:
       title: "Estás ahora mismo en la mesa ubicada en %{booth}. Si esto no es correcto no sigas adelante y llama al teléfono de incidencias. Gracias."
     banners:
@@ -233,12 +235,14 @@ es:
         title: "Fases de %{budget}"
     budget_investments:
       index:
+        basic_filters:
+          valuator_or_group: Evaluador o grupo
+          title_or_id: Título o ID
         heading_filter_all: Todas las partidas
         administrator_filter_all: Todos los administradores
         valuator_filter_all: Todos los evaluadores
         tags_filter_all: Todas las etiquetas
         advanced_filters: Filtros avanzados
-        placeholder: Buscar proyectos
         filters:
           all: Todos
           without_admin: Sin administrador
@@ -268,7 +272,6 @@ es:
           unfeasible: "Inviable"
           undecided: "Sin decidir"
         selected: "Seleccionado"
-        select: "Seleccionar"
         list:
           id: ID
           title: Título
@@ -1295,7 +1298,6 @@ es:
         id: ID
         author: Autor
         milestones: Hitos
-        select: Seleccionar
         selected: Seleccionada
         no_proposals: No hay propuestas.
       show:
@@ -1350,6 +1352,10 @@ es:
         sdg:
           title: Configuración ODS
           how_to_enable: 'Para mostrar las opciones de configuración de los Objetivos de Desarrollo Sostenible se debe activar "ODS" en la pestaña "Funcionalidades".'
+        cookies_consent:
+          title: Consentimiento de cookies
+        cookies_consent_banner:
+          title: Banner de consentimiento de cookies
       remote_census_general_name: Datos Generales
       remote_census_request_name: Datos Petición
       remote_census_response_name: Datos Respuesta
@@ -1615,6 +1621,7 @@ es:
             subnavigation_right: Navegación principal derecha
       images:
         index:
+          dimensions: "(%{width}x%{height})"
           title: Personalizar imágenes
           update: Actualizar
           image: Imagen
@@ -1801,3 +1808,27 @@ es:
       tags: "Etiquetas"
       tags_description: "Genera etiquetas automáticas para todos los elementos que pueden ser etiquetados."
       title: "IA / Machine learning"
+    cookies:
+      vendors:
+        empty: No se han encontrado cookies de terceros
+        third_party_cookies: Cookies de terceros
+        create_button: Nueva cookie
+        create:
+          notice: Cookie creada correctamente
+        new:
+          title: Nueva cookie
+        edit:
+          title: Editar cookie
+        update:
+          notice: Cookie actualizada correctamente
+        destroy:
+          notice: Cookie eliminada correctamente
+        form:
+          name:
+            help_text: Esta información será visible públicamente.
+          cookie:
+            help_text: Esta información se utilizará internamente. El nombre de la cookie debe ser único, solo puede contener letras, dígitos y guiones bajos.
+          description:
+            help_text: Esta información será visible públicamente.
+          script:
+            help_text: Este es el script que se ejecutará cuando esta cookie sea aceptada por el usuario. Puede introducir código Javascript aquí e introducir referencias a otro javascript de la aplicación.

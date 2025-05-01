@@ -57,7 +57,7 @@ describe "Officing Results", :with_frozen_time do
 
     expect(page).not_to have_content("Your results")
 
-    select booth.name, from: "officer_assignment_id"
+    select booth.name, from: "Booth"
 
     fill_in "questions[#{question_1.id}][0]", with: "100"
     fill_in "questions[#{question_1.id}][1]", with: "200"
@@ -100,7 +100,7 @@ describe "Officing Results", :with_frozen_time do
     visit new_officing_poll_result_path(poll)
 
     booth_name = partial_result.booth_assignment.booth.name
-    select booth_name, from: "officer_assignment_id"
+    select booth_name, from: "Booth"
 
     fill_in "questions[#{question_1.id}][0]", with: "5555"
     fill_in "questions[#{question_1.id}][1]", with: "200"
