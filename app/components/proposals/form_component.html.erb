@@ -10,7 +10,8 @@
       <div>
         <%= translations_form.text_field :title,
                                          maxlength: Proposal.title_max_length,
-                                         data: suggest_data(proposal) %>
+                                         data: suggest_data(proposal),
+                                         hint: t("proposals.form.proposal_title_note") %>
       </div>
       <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
 
@@ -23,6 +24,7 @@
       <div>
         <%= translations_form.text_area :description,
                                         maxlength: Proposal.description_max_length,
+                                        hint: t("proposals.form.proposal_description_note"),
                                         class: "html-area" %>
       </div>
     <% end %>
@@ -32,6 +34,12 @@
 
   <fieldset>
     <legend><%= t("shared.optional") %></legend>
+
+    <div>
+    <h2> Estimated Cost </h2>
+          <%= f.number_field :price, hint: t("budgets.investments.form.estimated_price_note")%>
+    </div>
+
 
     <div>
       <%= f.text_field :video_url, hint: t("proposals.form.proposal_video_url_note") %>
@@ -48,6 +56,8 @@
     <% if Geozone.any? %>
       <div>
         <%= f.select :geozone_id, geozone_select_options,
+                     label: t("proposals.form.geozone"),
+                     hint: t("proposals.form.geozone_help"),
                      include_blank: t("geozones.none") %>
       </div>
     <% end %>

@@ -1482,13 +1482,6 @@ table {
   }
 }
 
-@include breakpoint(medium) {
-
-  .ssb-telegram,
-  .ssb-whatsapp_app {
-    display: none !important;
-  }
-}
 
 .share-supported {
   text-align: center;

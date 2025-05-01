@@ -64,6 +64,10 @@
               <p><%= proposal.summary %></p>
               <div class="truncate"></div>
             </div>
+            <h4><%= t("budgets.investments.show.estimated_price") %></h4>
+             <p class="investment-project-amount">
+             <%= proposal.price.nil? ? "<em>Not yet known</em>".html_safe : proposal.price %>
+            </p>
             <%= render "shared/tags", taggable: proposal, limit: 5 %>
           <% end %>
         </div>

@@ -8,6 +8,8 @@ class Admin::Settings::FeaturesTabComponent < ApplicationComponent
                           feature.valid_geozone
                           feature.demographics
                           feature.hide_local_login
+                          feature.hide_comments
+                          feature.hide_votes
                         ]
     original_settings + custom_settings
   end

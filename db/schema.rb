@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema[7.0].define(version: 2024_10_26_112901) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -395,6 +397,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_26_112901) do
     t.string "voting_style", default: "knapsack"
     t.boolean "published"
     t.boolean "hide_money", default: false
+    t.boolean "part_fund"
+    t.boolean "stv"
+    t.integer "stv_winners"
     t.boolean "part_fund"
   end
 
@@ -1643,6 +1648,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_26_112901) do
     t.integer "failed_attempts", default: 0, null: false
     t.datetime "locked_at", precision: nil
     t.string "unlock_token"
+    t.boolean "guest", default: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["date_of_birth"], name: "index_users_on_date_of_birth"
     t.index ["email"], name: "index_users_on_email", unique: true

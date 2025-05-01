@@ -30,6 +30,14 @@
 
 <blockquote><%= @proposal.summary %></blockquote>
 
+<div>
+<h4><%= t("budgets.investments.show.estimated_price") %></h4>
+             <p class="investment-project-amount">
+             <%= proposal.price.nil? ? "<em>Not yet known</em>".html_safe : proposal.price %>
+            </p>
+
+</div>
+
 <%= render Shared::EmbeddedVideoComponent.new(@proposal) %>
 
 <%= auto_link_already_sanitized_html wysiwyg(@proposal.description) %>

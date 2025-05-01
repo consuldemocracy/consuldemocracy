@@ -8,7 +8,7 @@ class ProposalsController < ApplicationController
   include Translatable
 
   before_action :load_categories, only: [:index, :map, :summary]
-  before_action :load_geozones, only: [:edit, :map, :summary]
+  before_action :load_geozones #, only: [:edit, :map, :summary]
   before_action :authenticate_user!, except: [:index, :show, :map, :summary]
   before_action :set_view, only: :index
   before_action :proposals_recommendations, only: :index, if: :current_user
@@ -117,7 +117,7 @@ class ProposalsController < ApplicationController
 
     def allowed_params
       attributes = [:video_url, :responsible_name, :tag_list, :terms_of_service,
-                    :geozone_id, :related_sdg_list,
+                    :geozone_id, :related_sdg_list, :price,
                     image_attributes: image_attributes,
                     documents_attributes: document_attributes,
                     map_location_attributes: map_location_attributes]

@@ -21,6 +21,6 @@ module Taggable
   end
 
   def max_number_of_tags
-    errors.add(:tag_list, :less_than_or_equal_to, count: 6) if tag_list.count > 6
+    errors.add(:tag_list, :less_than_or_equal_to, count: 20) if tag_list.count > 10
   end
 end

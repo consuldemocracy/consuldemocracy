@@ -69,6 +69,7 @@ class I18nContent < ApplicationRecord
 
   def self.basic_translations
     %w[
+      attributes.geozone_id
       debates.index.section_footer.title
       debates.index.section_footer.description
       debates.index.section_footer.help_text_1
@@ -83,6 +84,12 @@ class I18nContent < ApplicationRecord
       debates.new.recommendations_title
       devise.sessions.local_sign_in_title
       devise.sessions.local_sign_in_description
+      geozones.none
+      map.title
+      map.proposal_for_district
+      map.start_proposal
+      shared.tags_cloud.districts
+      shared.tags_cloud.districts_list
       proposals.index.section_footer.title
       proposals.index.section_footer.description
       proposals.new.more_info
@@ -96,9 +103,37 @@ class I18nContent < ApplicationRecord
       legislation.processes.index.section_footer.description
       budgets.index.section_footer.title
       budgets.index.section_footer.description
+      dashboard.poster.index.poster_title
+      dashboard.poster.index.poster_subtitle
+      dashboard.poster.index.intro_text
+      dashboard.poster.index.proposal_code
+      dashboard.poster.index.support
+      dashboard.poster.index.footer
+      dashboard.mailer.forward.hi
+      dashboard.mailer.forward.introduction
+      dashboard.mailer.forward.support
+      dashboard.mailer.forward.support_button
+      dashboard.mailer.forward.share
+    ]
+  end
+  
+  def self.dashboard_translations
+    %w[
+      dashboard.poster.index.poster_title
+      dashboard.poster.index.poster_subtitle
+      dashboard.poster.index.intro_text
+      dashboard.poster.index.proposal_code
+      dashboard.poster.index.support
+      dashboard.poster.index.footer
+      dashboard.mailer.forward.hi
+      dashboard.mailer.forward.introduction
+      dashboard.mailer.forward.support
+      dashboard.mailer.forward.support_button
+      dashboard.mailer.forward.share
     ]
   end
 
+  
   def self.machine_learning_translations
     %w[
       admin.machine_learning.title
