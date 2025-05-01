@@ -8,7 +8,7 @@ describe "Verify Letter" do
     login_as(user)
     visit new_letter_path
 
-    click_link "Send me a letter with the code"
+    click_button "Send me a letter with the code"
 
     expect(page).to have_content "Thank you for requesting your maximum security code " \
                                  "(only required for the final votes). In a few days " \
