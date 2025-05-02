@@ -209,7 +209,7 @@ describe "Legislation Draft Versions" do
       first(:css, ".annotator-hl").click
       expect(page).to have_content "this is my annotation"
 
-      visit legislation_process_draft_version_path(draft_version.process, draft_version)
+      refresh
 
       expect(page).to have_css ".annotator-hl"
       first(:css, ".annotator-hl").click

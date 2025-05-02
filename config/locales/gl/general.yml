@@ -567,7 +567,6 @@ gl:
         support: "Tan só tes que facer clic no botón que verás a continuación «Apoiar esta proposta» e directamente poderás consultar os detalles antes de impulsala. Só as propostas que consigan o máximo apoio poderán levarse a cabo por parte do Concello, e pensei que ti seguro que me axudas a conseguilo!"
         share: "E se a maiores, me fas o favor de compartir a miña proposta entre os teus contactos, amigos e familiares, xa sería perfecto!"
   polls:
-    all: "Todo"
     dates: "Desde o %{open_at} a %{closed_at}"
     final_date: "Reconto final/resultados"
     index:

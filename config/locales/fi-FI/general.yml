@@ -236,7 +236,6 @@ fi:
       mailing_options:
         preview: Esikatselu
   polls:
-    all: "Kaikki"
     index:
       filters:
         current: "Avaa"

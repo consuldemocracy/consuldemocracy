@@ -174,11 +174,14 @@ describe "Users" do
       uncheck "account_public_activity"
       click_button "Save changes"
 
+      expect(page).to have_content "Changes saved"
+
       visit user_path(user)
       expect(page).not_to have_content("activity list private")
     end
 
     scenario "is always visible for admins" do
+      admin = create(:administrator).user
       login_as(user)
       visit account_path
 
@@ -188,13 +191,14 @@ describe "Users" do
       expect(page).to have_content "Changes saved"
 
       logout
-      login_as(create(:administrator).user)
+      login_as(admin)
       visit user_path(user)
 
       expect(page).not_to have_content "activity list private"
     end
 
     scenario "is always visible for moderators" do
+      moderator = create(:moderator).user
       login_as(user)
       visit account_path
 
@@ -204,15 +208,13 @@ describe "Users" do
       expect(page).to have_content "Changes saved"
 
       logout
-      login_as(create(:moderator).user)
+      login_as(moderator)
       visit user_path(user)
 
       expect(page).not_to have_content "activity list private"
     end
 
     describe "User email" do
-      let(:user) { create(:user) }
-
       scenario "is not shown if no user logged in" do
         visit user_path(user)
         expect(page).not_to have_content(user.email)

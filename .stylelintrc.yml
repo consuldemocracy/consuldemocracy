@@ -9,9 +9,13 @@ plugins:
   - stylelint-scss
   - "@stylistic/stylelint-plugin"
 rules:
+  at-rule-descriptor-no-unknown: true
+  at-rule-descriptor-value-no-unknown: true
   at-rule-disallowed-list:
     - debug
+  at-rule-no-deprecated: true
   at-rule-no-vendor-prefix: true
+  at-rule-prelude-no-invalid: true
   block-no-empty: true
   color-hex-length: "short"
   color-named: "never"
@@ -62,6 +66,7 @@ rules:
   scss/at-mixin-pattern: "^(-?[a-z][a-z0-9]*)(-[a-z0-9]+)*$"
   scss/dollar-variable-colon-space-before: never
   scss/dollar-variable-pattern: "^(-?[a-z][a-z0-9]*)(-[a-z0-9]+)*$"
+  scss/function-calculation-no-interpolation: true
   scss/load-no-partial-leading-underscore: true
   scss/load-partial-extension: never
   scss/no-unused-private-members: true
@@ -92,9 +97,9 @@ rules:
   "@stylistic/number-leading-zero": "always"
   "@stylistic/selector-list-comma-newline-after": always
 overrides:
-  - files: app/assets/stylesheets/datepicker_overrides.scss
+  - files: app/assets/stylesheets/icons.scss
     rules:
-      scss/selector-no-redundant-nesting-selector: null
+      at-rule-descriptor-value-no-unknown: null
   - files: app/assets/stylesheets/legislation_process.scss
     rules:
       max-nesting-depth: 8

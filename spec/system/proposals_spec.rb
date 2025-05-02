@@ -435,7 +435,7 @@ describe "Proposals" do
     expect(page).to have_field "Full name of the person submitting the proposal", with: "Isabel Garcia"
   end
 
-  scenario "Responsible name field is not shown for verified users" do
+  scenario "Responsible name field is not shown anywhere" do
     author = create(:user, :level_two)
     login_as(author)
 
@@ -453,7 +453,8 @@ describe "Proposals" do
     click_link "No, I want to publish the proposal"
     click_link "Not now, go to my proposal"
 
-    expect(Proposal.last.responsible_name).to eq(author.document_number)
+    expect(page).to have_css "h1", exact_text: "Help refugees"
+    expect(page).not_to have_content author.document_number
   end
 
   scenario "Errors on create" do
@@ -1249,6 +1250,9 @@ describe "Proposals" do
       visit proposals_path
       fill_in "search", with: "Show you got"
       click_button "Search"
+
+      expect(page).to have_content "Search results"
+
       click_link "recommendations"
       expect(page).to have_css "a.is-active", text: "recommendations"
 

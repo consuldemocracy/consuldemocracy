@@ -212,7 +212,6 @@ tr:
         submit: "Bütçe kalemini kaydet"
       group_switcher:
         currently_showing: "<strong>%{group}</strong> grubundaki bütçe kalemleri görüntüleniyor."
-        different_group: "Başka bir gruptaki bütçe kalemlerini yönet"
         the_other_group: "%{group} grubundaki bütçe kalemlerini yönetin."
       index:
         back: "Gruplara dön"
@@ -1134,18 +1133,11 @@ tr:
         multiple_description: "Birden fazla yanıt seçilebilir. En fazla yanıt sayısı ayarlanabilir."
     questions:
       index:
-        title: "Sorular"
         create: "Soru oluştur"
-        no_questions: "Herhangi bir soru yok."
-        filter_poll: Oylamaya göre süz
         select_poll: Oylama seçin
-        questions_tab: "Sorular"
         successful_proposals_tab: "Başarılı önergeler"
         create_question: "Soru oluştur"
         table_proposal: "Önerge"
-        table_question: "Soru"
-        table_poll: "Oylama"
-        poll_not_assigned: "Oylama atanmamış"
       edit:
         title: "Soruyu düzenle"
       form:
@@ -1166,7 +1158,6 @@ tr:
         edit_question: Soruyu düzenle
         valid_answers: Geçerli yanıtlar
         add_answer: Yanıt ekle
-        video_url: Dış video
         answers:
           title: Yanıt
           description: Açıklama

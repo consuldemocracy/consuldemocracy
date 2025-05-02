@@ -329,7 +329,6 @@ ro:
         public_interests: "Păstrați publice etichetele elementelor pe care le urmăresc"
         recommended_debates: "Arată recomandări pentru dezbateri"
         recommended_proposals: "Arată recomandări pentru propuneri"
-        redeemable_code: "Cod de verificare primit prin e-mail"
       direct_message:
         title: "Titlu"
         body: "Mesaj"

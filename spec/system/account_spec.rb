@@ -41,8 +41,9 @@ describe "Account" do
 
     expect(page).to have_content "Changes saved"
 
-    visit account_path
+    refresh
 
+    expect(page).not_to have_content "Changes saved"
     expect(page).to have_css "input[value='Larry Bird']"
     expect(find("#account_email_on_comment")).to be_checked
     expect(find("#account_email_on_comment_reply")).to be_checked
@@ -71,11 +72,7 @@ describe "Account" do
     visit_in_email("Confirm my account")
 
     logout
-    visit root_path
-    click_link "Sign in"
-    fill_in "user_login", with: "new_user_email@example.com"
-    fill_in "user_password", with: "new_password"
-    click_button "Enter"
+    login_through_form_with("new_user_email@example.com", password: "new_password")
 
     expect(page).to have_content "You have been signed in successfully."
 
@@ -96,8 +93,9 @@ describe "Account" do
 
     expect(page).to have_content "Changes saved"
 
-    visit account_path
+    refresh
 
+    expect(page).not_to have_content "Changes saved"
     expect(page).to have_css "input[value='Google']"
     expect(find("#account_email_on_comment")).to be_checked
     expect(find("#account_email_on_comment_reply")).to be_checked
@@ -130,22 +128,26 @@ describe "Account" do
       click_button "Save changes"
       expect(page).to have_content "Changes saved"
 
-      visit account_path
+      refresh
+
+      expect(page).not_to have_content "Changes saved"
       expect(find("#account_official_position_badge")).to be_checked
     end
 
     scenario "Users with official position of level 2 and above" do
-      official_user2 = create(:user, official_level: 2)
-      official_user3 = create(:user, official_level: 3)
+      official_user2 = create(:user, official_level: 2, username: "Official 2")
+      official_user3 = create(:user, official_level: 3, username: "Official 3")
 
       login_as(official_user2)
       visit account_path
 
+      expect(page).to have_field "Username", with: "Official 2"
       expect(page).not_to have_css "#account_official_position_badge"
 
       login_as(official_user3)
-      visit account_path
+      refresh
 
+      expect(page).to have_field "Username", with: "Official 3"
       expect(page).not_to have_css "#account_official_position_badge"
     end
   end
@@ -192,7 +194,9 @@ describe "Account" do
     user.update!(username: "Admin")
     administrators = [create(:administrator, user: user),
                       create(:administrator, user: create(:user, username: "Other admin"))]
+    other_user = administrators.last.user
     budget = create(:budget, administrators: administrators)
+
     visit admin_budget_budget_investments_path(budget)
 
     expect(page).to have_select options: ["All administrators", "Admin", "Other admin"]
@@ -204,7 +208,7 @@ describe "Account" do
 
     expect(page).to have_content "Goodbye! Your account has been cancelled. We hope to see you again soon."
 
-    login_as(administrators.last.user)
+    login_as(other_user)
     visit admin_budget_budget_investments_path(budget)
 
     expect(page).to have_select options: ["All administrators", "Other admin"]

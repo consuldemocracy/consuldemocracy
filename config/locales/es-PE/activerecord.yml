@@ -208,7 +208,6 @@ es-PE:
         official_level: "Nivel del cargo"
         phone_number: "Teléfono"
         public_activity: "Mostrar públicamente mi lista de actividades"
-        redeemable_code: "Código de verificación por carta (opcional)"
       direct_message:
         title: "Título"
         body: "Mensaje"

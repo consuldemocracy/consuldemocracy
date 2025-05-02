@@ -410,7 +410,6 @@ sq:
       forward:
         support_button: Mbështetni këtë projekt
   polls:
-    all: "Të gjithë"
     dates: "Nga %{open_at} tek %{closed_at}"
     final_date: "Raportet përfundimtare / rezultatet"
     index:

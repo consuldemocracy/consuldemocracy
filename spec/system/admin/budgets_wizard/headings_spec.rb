@@ -35,8 +35,7 @@ describe "Budgets wizard, headings step", :admin do
 
       expect(page).not_to have_link "Health"
 
-      click_button "Manage headings from a different group"
-      click_link "Health"
+      click_link "Manage headings from the Health group."
 
       within(".heading") do
         expect(page).to have_content "Hospitals"
@@ -74,11 +73,11 @@ describe "Budgets wizard, headings step", :admin do
 
       click_button "Create new heading"
 
-      expect(page).not_to have_content "Heading created successfully!"
       expect(page).to have_css(".is-invalid-label", text: "Heading name")
       expect(page).to have_content "can't be blank"
       expect(page).to have_button "Create new heading"
       expect(page).to have_button "Cancel"
+      expect(page).not_to have_content "Heading created successfully!"
       expect(page).not_to have_button "Add new heading"
       expect(page).not_to have_content "Continue to phases"
 

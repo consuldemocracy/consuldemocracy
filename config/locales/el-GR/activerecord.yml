@@ -280,7 +280,6 @@ el:
         public_interests: "Κρατήστε τις ετικέτες των στοιχείων που ακολουθώ δημόσια"
         recommended_debates: "Εμφάνιση προτάσεων για δημόσιες συζητήσεις"
         recommended_proposals: "Εμφάνιση συστάσεων για προτάσεις"
-        redeemable_code: "Κωδικός επαλήθευσης που λάβατε μέσω email"
       direct_message:
         title: "Τίτλος"
         body: "Μήνυμα"

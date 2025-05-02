@@ -68,7 +68,9 @@ describe "Admin booths", :admin do
 
     expect(page).to have_content "Booth created successfully"
 
-    visit admin_booths_path
+    refresh
+
+    expect(page).not_to have_content "Booth created successfully"
     expect(page).to have_content "Upcoming booth"
     expect(page).to have_content "39th Street, number 2, ground floor"
   end
@@ -113,17 +115,24 @@ describe "Admin booths", :admin do
   end
 
   scenario "Search" do
-    booth = create(:poll_booth)
+    create(:poll_booth, name: "Consulting Detective", location: "221B Baker Street")
+    create(:poll_booth, name: "World's Greatest Detective", location: "Gotham")
 
     visit admin_booths_path
 
-    fill_in "search", with: booth.name
-    click_button "Search"
-    expect(page).to have_css(".booth", count: 1)
+    expect(page).to have_css ".booth", count: 2
 
-    fill_in "search", with: booth.location
+    fill_in "search", with: "Consulting"
     click_button "Search"
-    expect(page).to have_css(".booth", count: 1)
+    expect(page).not_to have_content "Greatest Detective"
+    expect(page).to have_content "Consulting Detective"
+    expect(page).to have_css ".booth", count: 1
+
+    fill_in "search", with: "Gotham"
+    click_button "Search"
+    expect(page).not_to have_content "Consulting Detective"
+    expect(page).to have_content "Greatest Detective"
+    expect(page).to have_css ".booth", count: 1
 
     fill_in "search", with: "Wrong search criteria"
     click_button "Search"

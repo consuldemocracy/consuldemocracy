@@ -62,11 +62,7 @@ describe "Users" do
       scenario "sign in with email" do
         create(:user, email: "manuela@consul.dev", password: "judgementday")
 
-        visit "/"
-        click_link "Sign in"
-        fill_in "Email or username", with: "manuela@consul.dev"
-        fill_in "Password", with: "judgementday"
-        click_button "Enter"
+        login_through_form_with("manuela@consul.dev", password: "judgementday")
 
         expect(page).to have_content "You have been signed in successfully."
       end
@@ -74,11 +70,7 @@ describe "Users" do
       scenario "Sign in with username" do
         create(:user, username: "中村広", email: "ash@nostromo.dev", password: "xenomorph")
 
-        visit "/"
-        click_link "Sign in"
-        fill_in "Email or username", with: "中村広"
-        fill_in "Password", with: "xenomorph"
-        click_button "Enter"
+        login_through_form_with("中村広", password: "xenomorph")
 
         expect(page).to have_content "You have been signed in successfully."
       end
@@ -87,28 +79,17 @@ describe "Users" do
         u1 = create(:user, username: "Spidey", email: "peter@nyc.dev", password: "greatpower")
         u2 = create(:user, username: "peter@nyc.dev", email: "venom@nyc.dev", password: "symbiote")
 
-        visit "/"
-        click_link "Sign in"
-        fill_in "Email or username", with: "peter@nyc.dev"
-        fill_in "Password", with: "greatpower"
-        click_button "Enter"
+        login_through_form_with("peter@nyc.dev", password: "greatpower")
 
         expect(page).to have_content "You have been signed in successfully."
-
-        visit account_path
-
         expect(page).to have_link "My content", href: user_path(u1)
 
-        visit "/"
+        within("#notice") { click_button "Close" }
         click_link "Sign out"
 
         expect(page).to have_content "You have been signed out successfully."
 
-        within("#notice") { click_button "Close" }
-        click_link "Sign in"
-        fill_in "Email or username", with: "peter@nyc.dev"
-        fill_in "Password", with: "symbiote"
-        click_button "Enter"
+        login_through_form_with("peter@nyc.dev", password: "symbiote")
 
         expect(page).not_to have_content "You have been signed in successfully."
         expect(page).to have_content "Invalid Email or username or password."
@@ -232,7 +213,11 @@ describe "Users" do
         expect(page).to have_current_path(finish_signup_path)
         click_link "Cancel login"
 
+        expect(page).to have_content "You have been signed out successfully"
+
         visit "/"
+
+        expect(page).not_to have_content "You have been signed out successfully"
         expect_not_to_be_signed_in
       end
 
@@ -605,10 +590,7 @@ describe "Users" do
     user = create(:administrator).user
     user.update!(password_changed_at: 1.year.ago)
 
-    visit new_user_session_path
-    fill_in "Email or username", with: user.email
-    fill_in "Password", with: user.password
-    click_button "Enter"
+    login_through_form_as(user)
 
     expect(page).to have_content "Your password is expired"
 
@@ -644,10 +626,7 @@ describe "Users" do
     user = create(:administrator).user
     user.update!(password_changed_at: 1.year.ago, password: "123456789")
 
-    visit new_user_session_path
-    fill_in "Email or username", with: user.email
-    fill_in "Password", with: user.password
-    click_button "Enter"
+    login_through_form_as(user)
 
     expect(page).to have_content "Your password is expired"
 

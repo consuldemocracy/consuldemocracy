@@ -3,7 +3,7 @@
   container-type: inline-size;
   display: flex;
   flex-wrap: wrap;
-  gap: calc(#{$line-height} / 2);
+  gap: calc($line-height / 2);
 
   > :first-child {
     align-items: flex-start;

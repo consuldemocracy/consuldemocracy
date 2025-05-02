@@ -333,7 +333,7 @@ describe "System Emails" do
 
       expect(page).not_to have_content("Proposal A Title")
 
-      visit admin_system_email_preview_pending_path("proposal_notification_digest")
+      refresh
 
       expect(page).to have_content("Proposal B")
       expect(page).not_to have_content("Proposal A Title")
@@ -358,6 +358,8 @@ describe "System Emails" do
       visit admin_system_emails_path
 
       click_button "Send pending"
+
+      expect(page).to have_content "Pending notifications sent successfully"
 
       email = open_last_email
       expect(email).to deliver_to(voter)

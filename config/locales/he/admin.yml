@@ -1004,18 +1004,11 @@ he:
         unable_notice: "לא ניתן למחוק סקר שיש לו הצבעות"
     questions:
       index:
-        title: "שאלות"
         create: "יצירת שאלה חדשה"
-        no_questions: "לא נמצאו שאלות."
-        filter_poll: סנן לפי סקר
         select_poll: בחר סקר
-        questions_tab: "שאלות"
         successful_proposals_tab: "הצעות מוצלחות"
         create_question: "יצירת שאלה חדשה"
         table_proposal: "הצעה"
-        table_question: "שאלה"
-        table_poll: "הצבעה"
-        poll_not_assigned: "לא הוקצה סקר"
       edit:
         title: "ערוך שאלה"
       new:
@@ -1032,7 +1025,6 @@ he:
         edit_question: ערוך שאלה
         valid_answers: תשובות חוקיות
         add_answer: הוסף שאלה
-        video_url: מקור וידאו חיצוני
         answers:
           title: תשובה
           description: תיאור

@@ -70,7 +70,7 @@
       border-top-right-radius: rem-calc(6);
       display: inline-block;
       margin-bottom: 0;
-      margin-right: calc(#{$line-height} / 4);
+      margin-right: calc($line-height / 4);
       margin-top: 0;
 
       &:hover:not(.is-active) {
@@ -84,7 +84,7 @@
 
     a {
       display: block;
-      padding: calc(#{$line-height} / 4) calc(#{$line-height} / 2);
+      padding: calc($line-height / 4) calc($line-height / 2);
 
       @include breakpoint(large) {
         display: inline-block;
@@ -245,9 +245,9 @@
       color: #555;
       cursor: pointer;
       display: inline-block;
-      margin-bottom: calc(#{$line-height} / 2);
+      margin-bottom: calc($line-height / 2);
       margin-right: $line-height;
-      padding: calc(#{$line-height} / 2)  $line-height * 2;
+      padding: calc($line-height / 2)  $line-height * 2;
       position: relative;
     }
 
@@ -455,7 +455,7 @@
 
       @include breakpoint(medium) {
         margin: 0 auto;
-        max-width: calc(3 * #{$grid-row-width} / 4);
+        max-width: calc(3 * $grid-row-width / 4);
         padding: rem-calc(32) rem-calc(32) rem-calc(32) rem-calc(48);
       }
 
@@ -556,19 +556,6 @@
 
     .calc-text {
       border-right: 0;
-
-      .show-comments {
-        background: #fafafa;
-        border: 1px solid $border;
-        margin-bottom: rem-calc(16);
-        padding: rem-calc(4) rem-calc(40) rem-calc(4) rem-calc(4);
-        width: 105%;
-
-        p {
-          margin-bottom: 0;
-        }
-      }
-
     }
 
     .calc-comments {
@@ -609,12 +596,6 @@
           border-bottom: 1px solid $border;
           margin-bottom: rem-calc(16);
           padding-bottom: rem-calc(8);
-
-          a .icon-expand {
-            color: #838383;
-            float: right;
-            font-size: $small-font-size;
-          }
         }
 
         .comments-wrapper {
@@ -626,26 +607,6 @@
           margin-bottom: rem-calc(16);
           margin-top: rem-calc(16);
           padding-bottom: rem-calc(64);
-
-          .comment-advice {
-            background: #dfdfdf;
-            border-left: 1px solid #d0d0d0;
-            border-right: 1px solid #d0d0d0;
-            border-top: 1px solid #d0d0d0;
-            display: inline-block;
-            font-size: $small-font-size;
-            padding: rem-calc(8);
-            width: 100%;
-
-            .icon-proposals {
-              color: #838383;
-            }
-
-            a {
-              color: #87a3b9;
-              text-decoration: underline;
-            }
-          }
 
           textarea {
             border-bottom: 1px solid #d0d0d0;
@@ -672,7 +633,7 @@
           border-bottom: 1px solid $border;
           font-size: $small-font-size;
           margin-bottom: rem-calc(16);
-          padding-bottom: calc(#{$line-height} / 2);
+          padding-bottom: calc($line-height / 2);
 
           .comment-text {
             margin-bottom: rem-calc(8);
@@ -710,16 +671,6 @@
               color: #838383;
               display: inline-block;
               float: right;
-
-              .comment-votes-number {
-                display: inline-block;
-                margin-right: rem-calc(4);
-
-                &::after {
-                  content: "|";
-                  margin-left: rem-calc(4);
-                }
-              }
             }
           }
         }
@@ -743,37 +694,6 @@
       &::before {
         content: "—";
         margin-right: rem-calc(4);
-      }
-    }
-  }
-
-  .changes-link {
-    display: block;
-    font-size: $small-font-size;
-    margin-left: rem-calc(16);
-
-    @include breakpoint(medium) {
-      display: inline-block;
-    }
-
-    a {
-
-      span {
-        text-decoration: underline;
-      }
-
-      .icon-external {
-        color: #999;
-        line-height: 0;
-        margin-left: rem-calc(8);
-        text-decoration: none;
-        vertical-align: sub;
-      }
-
-      &:active,
-      &:focus,
-      &:hover {
-        text-decoration: none;
       }
     }
   }
@@ -886,7 +806,6 @@
 
   .proposal h3 {
     font-size: rem-calc(20);
-    margin-top: 0;
   }
 }
 
@@ -941,7 +860,7 @@
         $margin: rem-calc(map-get($grid-column-gutter, "medium"));
 
         margin-right: $margin;
-        width: calc(75% - #{$margin});
+        width: calc(75% - $margin);
       }
     }
   }
@@ -955,17 +874,17 @@
     padding-top: rem-calc(16);
 
     &:not(:last-child) {
-      margin-bottom: calc(#{$line-height} / 2);
+      margin-bottom: calc($line-height / 2);
     }
   }
 
   .question-title:not(:only-child) {
-    margin-bottom: calc(#{$line-height} / 2);
+    margin-bottom: calc($line-height / 2);
   }
 
   .annotation-title {
-    margin-bottom: calc(#{$line-height} / 2);
-    margin-top: calc(#{$line-height} / 2);
+    margin-bottom: calc($line-height / 2);
+    margin-top: calc($line-height / 2);
   }
 
   .annotation-quote {
@@ -974,7 +893,7 @@
   }
 
   .comment-summary {
-    margin-bottom: calc(#{$line-height} / 2);
+    margin-bottom: calc($line-height / 2);
 
     > :first-child {
       background-color: rgba(217, 216, 243, 0.2);

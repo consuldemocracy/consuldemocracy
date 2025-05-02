@@ -9,13 +9,13 @@
       bottom: 0;
       content: "";
       display: block;
-      margin-left: rem-calc(16);
+      margin-left: 1rem;
       position: absolute;
-      width: calc(100% - #{2 * rem-calc(16)});
+      width: calc(100% - 2 * 1rem);
 
       @include breakpoint(small only) {
-        margin-left: rem-calc(10);
-        width: calc(100% - #{2 * rem-calc(10)});
+        margin-left: 0.625rem;
+        width: calc(100% - 2 * 0.625rem);
       }
     }
 

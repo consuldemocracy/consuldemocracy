@@ -382,7 +382,6 @@ cs:
         public_interests: "Udržet prvky, které sleduji, veřejné"
         recommended_debates: "Zobrazit doporučení k debatám"
         recommended_proposals: "Zobrazit doporučení k návrhům"
-        redeemable_code: "Verification code received via email"
       direct_message:
         title: "Předmět"
         body: "Zpráva"

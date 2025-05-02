@@ -143,19 +143,13 @@ describe "Multitenancy", :seed_tenants do
     Tenant.switch("mars") { create(:user, email: "marty@consul.dev", password: "20151021") }
 
     with_subdomain("mars") do
-      visit new_user_session_path
-      fill_in "Email or username", with: "marty@consul.dev"
-      fill_in "Password", with: "20151021"
-      click_button "Enter"
+      login_through_form_with("marty@consul.dev", password: "20151021")
 
       expect(page).to have_content "You have been signed in successfully."
     end
 
     with_subdomain("venus") do
-      visit new_user_session_path
-      fill_in "Email or username", with: "marty@consul.dev"
-      fill_in "Password", with: "20151021"
-      click_button "Enter"
+      login_through_form_with("marty@consul.dev", password: "20151021")
 
       expect(page).to have_content "Invalid Email or username or password."
     end
@@ -163,10 +157,7 @@ describe "Multitenancy", :seed_tenants do
 
   scenario "Uses the right tenant after failing to sign in" do
     with_subdomain("mars") do
-      visit new_user_session_path
-      fill_in "Email or username", with: "wrong@consul.dev"
-      fill_in "Password", with: "wrong"
-      click_button "Enter"
+      login_through_form_with("wrong@consul.dev", password: "wrong")
 
       expect(page).to have_content "Invalid Email or username or password"
       expect(page).to have_css "html.tenant-mars"

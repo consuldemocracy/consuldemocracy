@@ -553,7 +553,6 @@ ca:
         support: "Només heu de fer clic sobre el botó que veuràs a continuació \"Suport aquesta proposta\" i us podeu informar abans de promocionar-la. L’Ajuntament només portarà a terme les propostes que aconsegueixin el màxim suport i he pensat que vosaltres, estic segur que m’ajudeu a aconseguir-ho!"
         share: "I si també em feu el gran favor de compartir la meva proposta amb els vostres amics, familiars i contactes, seria perfecte!"
   polls:
-    all: "tots"
     dates: "Des de el %{open_at} fins al %{closed_at}"
     final_date: "Recompte final/Resultats"
     index:

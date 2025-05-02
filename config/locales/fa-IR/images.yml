@@ -3,7 +3,6 @@ fa:
     remove_image: حذف تصویر
     form:
       title: تصویر توصيفي
-      title_placeholder: افزودن عنوان توصیفی برای تصویر
       delete_button: حذف تصویر
       note: "شما می توانید یک تصویر از انواع مطالب زیر آپلود کنید: %{accepted_content_types}تا %{max_file_size} مگابایت."
       add_new_image: اضافه کردن تصویر

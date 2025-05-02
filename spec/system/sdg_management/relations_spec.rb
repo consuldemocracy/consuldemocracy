@@ -373,6 +373,9 @@ describe "SDG Relations" do
       within(".amsify-suggestags-input-area") { expect(page).to have_content "1.1.1" }
 
       click_button "Update Process"
+
+      expect(page).to have_content "Process updated successfully and marked as reviewed"
+
       click_link "Marked as reviewed"
 
       within("tr", text: "SDG process") do
@@ -397,6 +400,9 @@ describe "SDG Relations" do
         visit sdg_management_edit_legislation_process_path(process)
         click_sdg_goal(1)
         click_button "Update Process"
+
+        expect(page).to have_content "Process updated successfully and marked as reviewed"
+
         click_link "Marked as reviewed"
 
         within("tr", text: "SDG process") do
@@ -411,6 +417,9 @@ describe "SDG Relations" do
         visit sdg_management_edit_legislation_process_path(process)
         click_sdg_goal(1)
         click_button "Update Process"
+
+        expect(page).to have_content "Process updated successfully and marked as reviewed"
+
         click_link "Marked as reviewed"
 
         within("tr", text: "SDG process") do

@@ -53,12 +53,12 @@ describe "Budgets wizard, groups step", :admin do
 
       click_button "Create new group"
 
-      expect(page).not_to have_content "Group created successfully!"
       expect(page).to have_css ".is-invalid-label", text: "Group name"
       expect(page).to have_css ".creation-timeline"
       expect(page).to have_content "can't be blank"
       expect(page).to have_button "Create new group"
       expect(page).to have_button "Cancel"
+      expect(page).not_to have_content "Group created successfully!"
       expect(page).not_to have_button "Add new group"
       expect(page).not_to have_content "Continue to headings"
     end
@@ -102,6 +102,8 @@ describe "Budgets wizard, groups step", :admin do
       visit admin_budgets_wizard_budget_groups_path(budget, mode: "single")
       fill_in "Group name", with: "Group wiht typo"
       click_button "Continue to headings"
+
+      expect(page).to have_content "Group created successfully"
 
       click_link "Go back to edit group"
 

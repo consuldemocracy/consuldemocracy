@@ -5,7 +5,6 @@ ka:
     additional: დამატებითი დოკუმენტაცია
     form:
       title: დოკუმენტები
-      title_placeholder: აღწერილობითი სათაურის დამატება დოკუმენტზე
       delete_button: დოკუმენტის წაშლა
       cancel_button: გაუქმება
       note: "დასაშვებია მაქსიმუმ %{max_documents_allowed} შემდეგი ტიპის დოკუმენტის ატვირთვა: %{accepted_content_types}, რომელთაგან თითოეული არ აღემატება %{max_file_size} მეგაბაიტს."

@@ -296,7 +296,6 @@ sv:
         public_interests: "Visa etiketterna för de element jag följer offentligt"
         recommended_debates: "Visa rekommenderade debatter"
         recommended_proposals: "Visa rekommenderade förslag"
-        redeemable_code: "Bekräftelsekod mottagen via e-post"
       direct_message:
         title: "Titel"
         body: "Meddelande"

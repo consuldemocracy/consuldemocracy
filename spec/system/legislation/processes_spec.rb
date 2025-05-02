@@ -113,7 +113,7 @@ describe "Legislation" do
         expect(page).to have_content("published")
 
         login_as(administrator)
-        visit legislation_processes_path
+        refresh
         expect(page).not_to have_content("not published")
         expect(page).to have_content("published")
       end
@@ -124,7 +124,7 @@ describe "Legislation" do
         expect(page).to have_content("past published")
 
         login_as(administrator)
-        visit legislation_processes_path(filter: "past")
+        refresh
         expect(page).not_to have_content("not published")
         expect(page).to have_content("past published")
       end
@@ -430,17 +430,7 @@ describe "Legislation" do
         end
       end
 
-      scenario "With main progress bar" do
-        create(:progress_bar, progressable: process)
-
-        visit milestones_legislation_process_path(process)
-
-        within(".tab-milestones") do
-          expect(page).to have_content "Progress"
-        end
-      end
-
-      scenario "With main and secondary progress bar" do
+      scenario "With progress bars" do
         create(:progress_bar, progressable: process)
         create(:progress_bar, :secondary, progressable: process, title: "Build laboratory")
 
@@ -449,17 +439,6 @@ describe "Legislation" do
         within(".tab-milestones") do
           expect(page).to have_content "Progress"
           expect(page).to have_content "Build laboratory"
-        end
-      end
-
-      scenario "No main progress bar" do
-        create(:progress_bar, :secondary, progressable: process, title: "Defeat Evil Lords")
-
-        visit milestones_legislation_process_path(process)
-
-        within(".tab-milestones") do
-          expect(page).not_to have_content "Progress"
-          expect(page).not_to have_content "Defeat Evil Lords"
         end
       end
     end
