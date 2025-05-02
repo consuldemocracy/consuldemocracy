@@ -32,7 +32,8 @@ class Budget::Investment::Exporter
         I18n.t("admin.budget_investments.index.list.valuation_finished"),
         I18n.t("admin.budget_investments.index.list.selected"),
         I18n.t("admin.budget_investments.index.list.visible_to_valuators"),
-        I18n.t("admin.budget_investments.index.list.author_username")
+        I18n.t("admin.budget_investments.index.list.author_username"),
+        I18n.t("admin.budget_investments.index.list.author_email")
       ]
     end
 
@@ -49,7 +50,8 @@ class Budget::Investment::Exporter
         investment.valuation_finished? ? I18n.t("shared.yes") : I18n.t("shared.no"),
         investment.selected? ? I18n.t("shared.yes") : I18n.t("shared.no"),
         investment.visible_to_valuators? ? I18n.t("shared.yes") : I18n.t("shared.no"),
-        investment.author.username
+        investment.author.username,
+        investment.author.email
       ]
     end
 
