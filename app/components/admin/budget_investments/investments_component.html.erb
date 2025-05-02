@@ -8,14 +8,15 @@
   <% end %>
 
   <% if investments.any? %>
-    <h3 class="inline-block"><%= page_entries_info investments %></h3>
+    <h3 class="inline-block"><%= page_entries_info investments %>FFS</h3>
     <%= render "admin/shared/columns_selector",
                cookie: "investments-columns",
-               default: %w[id title supports admin valuator geozone feasibility price valuation_finished visible_to_valuators selected incompatible] %>
+               default: %w[id title supports admin valuator author email geozone feasibility price valuation_finished visible_to_valuators selected incompatible] %>
     <br>
 
-    <%= render "filters_description", i18n_namespace: "admin.budget_investments.index" %>
 
+    <%= render "filters_description", i18n_namespace: "admin.budget_investments.index" %>
+    
     <table class="table-for-mobile column-selectable">
       <thead>
         <tr>
@@ -25,6 +26,9 @@
           <th data-field="admin"><%= t("admin.budget_investments.index.list.admin") %></th>
           <th data-field="author">
             <%= t("admin.budget_investments.index.list.author") %>
+          </th>
+          <th data-field="email">
+            <%= t("admin.budget_investments.index.list.email") %>
           </th>
           <th data-field="valuator">
             <%= t("admin.budget_investments.index.list.valuation_group") %> /
