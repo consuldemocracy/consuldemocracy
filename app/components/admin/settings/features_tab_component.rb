@@ -11,7 +11,6 @@ class Admin::Settings::FeaturesTabComponent < ApplicationComponent
       feature.user.recommendations
       feature.user.recommendations_on_debates
       feature.user.recommendations_on_proposals
-      feature.hide_comments
       feature.user.skip_verification
       feature.community
       feature.resources
