@@ -32,7 +32,9 @@ Puedes acceder a la página principal del proyecto en [http://consuldemocracy.or
 
 ## Configuración para desarrollo y tests
 
-**NOTA**: para unas instrucciones más detalladas, consulta la [documentación de instalación local](docs/es/installation/local_installation.md).
+**NOTA**:
+
+El proceso de instalación varía según el sistema operativo. Por favor, consulta la [documentación de instalación local](docs/es/installation/local_installation.md) apropiada para tu SO.
 
 Prerrequisitos: tener instalado git, Ruby 3.2.8, CMake, pkg-config, Node.js 18.20.3, ImageMagick y PostgreSQL (9.5 o superior).
 

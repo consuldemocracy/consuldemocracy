@@ -2,6 +2,13 @@
 
 Before installing Consul Democracy and having it up and running make sure you have all [prerequisites](prerequisites.md) installed.
 
+The installation process will vary depending on your operative system:
+
+- [Ubuntu Linux](docs/en/installation/ubuntu.md)
+- [Debian Linux](docs/en/installation/debian.md)
+- [macOS](docs/en/installation/macos.md)
+- [Windows](docs/en/installation/windows.md)
+
 1. First, clone the [Consul Democracy Github repository](https://github.com/consuldemocracy/consuldemocracy/) and enter the project folder:
 
 ```bash
