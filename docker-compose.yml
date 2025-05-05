@@ -1,45 +1,73 @@
-services:
-  # service configuration for our database
-  database:
 
-    # use the preferred version of the official Postgres image
-    # see https://hub.docker.com/_/postgres/
-    image: postgres:13.16
+services:
+  # Database service
+  database:
+    image: postgres:13.16-alpine
     environment:
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
-    # persist the database between containers by storing it in a volume
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-password}
     volumes:
       - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
-  # service configuration for our dockerized Rails app
-  app:
+  # Redis for caching and background jobs
+  redis:
+    image: redis:7-alpine
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
-    # use the Dockerfile next to this file
-    build: .
-
-    # rely on the RAILS_ENV value of the host machine
-    # environment:
-    #RAILS_ENV: $RAILS_ENV
-
-    # makes the app container aware of the DB container
+  # Main application
+  app: &app
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    command: bundle exec rails server -b 0.0.0.0
     depends_on:
-      - database
-
-    # expose the port we configured Unicorn to bind to
+      database:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
     ports:
       - "3000:3000"
-    # map our application source code, in full, to the application root of our container
     volumes:
       - .:/var/www/consul
       - bundle:/usr/local/bundle
       - node_modules:/var/www/consul/node_modules
+      - tmp_data:/var/www/consul/tmp
+      - storage_data:/var/www/consul/storage
     environment:
-      - DB_HOST=database # Same name as the database service
-      - PGUSER=postgres
-      - PGPASSWORD=${PGPASSWORD-$POSTGRES_PASSWORD}
-      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+      - RAILS_ENV=${RAILS_ENV:-development}
+      - DB_HOST=database
+      - DB_PORT=5432
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=${POSTGRES_PASSWORD:-password}
+      - REDIS_URL=redis://redis:6379/0
+      - PGPASSWORD=${POSTGRES_PASSWORD:-password}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-password}
+    stdin_open: true
+    tty: true
+
+  # Background job worker
+  worker:
+    <<: *app
+    command: bundle exec rails jobs:work
+    ports: []
+    depends_on:
+      - app
+
 volumes:
-  db_data: {}
-  bundle: {}
-  node_modules: {}
+  db_data:
+  redis_data:
+  bundle:
+  node_modules:
+  tmp_data:
+  storage_data:
