@@ -7,9 +7,34 @@ class Admin::PostcodesController < Admin::BaseController
   load_and_authorize_resource
 
   def index
-    @postcodes = Postcode.all.order(Arel.sql("UPPER(postcode)")).page(params[:page]).per(10)
+  @postcodes = Postcode.all
+  Rails.logger.info "INSIDE POSTCODES CONTROLLER"
+
+  if params[:postcode].present?
+    Rails.logger.info "Filtering by postcode: #{params[:postcode]}"
+    @postcodes = @postcodes.where("postcode LIKE ?", "%#{params[:postcode]}%")
+    Rails.logger.info "Postcodes after filtering by postcode: #{@postcodes.to_sql}"
   end
 
+  Rails.logger.info "PASSED POSTCODE CONDITION"
+
+  if params[:ward].present?
+    Rails.logger.info "Filtering by ward: #{params[:ward]}"
+    @postcodes = @postcodes.where("ward LIKE ?", "%#{params[:ward]}%")
+    Rails.logger.info "Postcodes after filtering by ward: #{@postcodes.to_sql}"
+  end
+
+  if params[:geozone].present?
+    Rails.logger.info "Filtering by geozone: #{params[:geozone]}"
+    @postcodes = @postcodes.joins(:geozone).where("geozones.name LIKE ?", "%#{params[:geozone]}%")
+    Rails.logger.info "Postcodes after filtering by geozone: #{@postcodes.to_sql}"
+  end
+
+  @postcodes = @postcodes.order(Arel.sql("UPPER(postcode)")).page(params[:page]).per(10)
+  Rails.logger.info "Final postcodes query: #{@postcodes.to_sql}"
+end
+
+  
   def new
   end
 
