@@ -26,7 +26,6 @@
   <div class="row">
     <div class="small-12 column">
 
-      <%= f.hidden_field :use_redeemable_code %>
       <%= f.hidden_field :locale, value: I18n.locale %>
 
       <%= f.text_field :username,  autofocus: true, maxlength: User.username_max_length,
