@@ -39,7 +39,7 @@
               <%#= f.label :geozone_id, t("proposals.form.geozone") %>
               <%= f.collection_select :geozone_id, Geozone.all, :id, :name, { include_blank: "Select Geozone",
                   label: t("proposals.form.geozone"), hint: t("proposals.form.geozone_help") },
-                 { class: "geozone-select", disabled: !enabled } %
+                 { class: "geozone-select", disabled: !enabled } %>
 
           <% end %>
           </div>
