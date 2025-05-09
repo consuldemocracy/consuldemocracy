@@ -38,7 +38,7 @@
 
               <%= f.collection_select :geozone_id, Geozone.all, :id, :name,
                   { label: t("proposals.form.geozone"), hint: t("proposals.form.geozone_help") },
-                  { class: "geozone-select", disabled: !enabled } %>
+                  { include_blank: "Select Geozone" }, { class: "geozone-select", disabled: !enabled } %>
 
           <% end %>
           </div>
