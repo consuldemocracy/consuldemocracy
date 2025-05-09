@@ -93,12 +93,11 @@
                                   data: { js_url: suggest_tags_path } %>
     </div>
 
-    <% if current_user.unverified? %>
+    
       <div>
         <%= f.text_field :responsible_name,
                          hint: t("proposals.form.proposal_responsible_name_note") %>
       </div>
-    <% end %>
 
     <%= render SDG::RelatedListSelectorComponent.new(f) %>
   </fieldset>
