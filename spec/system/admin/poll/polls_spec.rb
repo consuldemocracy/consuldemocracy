@@ -129,11 +129,8 @@ describe "Admin polls", :admin do
         accept_confirm { click_button "Delete" }
       end
 
-      expect(page).to     have_content("Poll deleted successfully")
-      expect(page).not_to have_content("Do you support CONSUL?")
-
-      expect(Poll::Question.count).to eq(0)
-      expect(Poll::Question::Option.count).to eq(0)
+      expect(page).to have_content "Poll deleted successfully"
+      expect(page).not_to have_content "Do you support CONSUL?"
     end
 
     scenario "Can destroy polls with options including videos" do
@@ -545,6 +542,9 @@ describe "Admin polls", :admin do
 
       click_sdg_goal(17)
       click_button "Create poll"
+
+      expect(page).to have_content "Poll created successfully"
+
       visit admin_polls_path
 
       within("tr", text: "Upcoming poll with SDG related content") do
@@ -559,6 +559,9 @@ describe "Admin polls", :admin do
 
       remove_sdg_goal_or_target_tag(1)
       click_button "Update poll"
+
+      expect(page).to have_content "Poll updated successfully"
+
       visit admin_polls_path
 
       within("tr", text: "Upcoming poll with SDG related content") do

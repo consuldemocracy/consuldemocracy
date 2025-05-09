@@ -16,7 +16,7 @@ describe "Moderate comments" do
     end
 
     login_as(citizen)
-    visit debate_path(comment.commentable)
+    refresh
 
     expect(page).to have_css(".comment", count: 1)
     expect(page).not_to have_content("This comment has been deleted")

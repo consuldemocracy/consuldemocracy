@@ -5,7 +5,6 @@ en:
     additional: Additional documentation
     form:
       title: Documents
-      title_placeholder: Add a descriptive title for the document
       delete_button: Remove document
       cancel_button: Cancel
       note: "You can upload up to a maximum of %{max_documents_allowed} documents of following content types: %{accepted_content_types}, up to %{max_file_size} MB per file."

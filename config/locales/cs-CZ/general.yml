@@ -596,7 +596,6 @@ cs:
         support: "Stačí kliknout na tlačítko, které se zobrazí pod \"Podpořte tento návrh\", a můžete se informovat před jeho podporou. Pouze návrhy, které získají maximální podporu, budou městskou radou realizovány, a já si myslím, že mi k tomu určitě pomůžete!"
         share: "A pokud mi také prokážete velkou laskavost a podělíte se o můj návrh se svými přáteli, rodinou a kontakty, bude to perfektní!"
   polls:
-    all: "Vše"
     dates: "Od %{open_at} do %{closed_at}"
     final_date: "Konečné přepočty/výsledky"
     index:

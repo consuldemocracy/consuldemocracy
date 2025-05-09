@@ -3,7 +3,6 @@ ru:
     remove_image: Убрать изображение
     form:
       title: Описательное изображение
-      title_placeholder: Добавить описательное название для изображения
       delete_button: Убрать изображение
       note: "Вы можете загрузить одно изображение следующих типов контента: %{accepted_content_types}, до %{max_file_size} Мб."
       add_new_image: Добавить изображение

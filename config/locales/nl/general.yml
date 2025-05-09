@@ -503,7 +503,6 @@ nl:
         support_button: Steun dit voorstel
         hi: "Hallo!"
   polls:
-    all: "Alle"
     dates: "Van %{open_at} tot %{closed_at}"
     final_date: "Definitieve hertelling/resultaten"
     index:

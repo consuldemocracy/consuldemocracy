@@ -5,7 +5,6 @@ zh-CN:
     additional: 附加文档
     form:
       title: 文档
-      title_placeholder: 为此文档添加描述性标题
       delete_button: 删除文档
       cancel_button: 取消
       note: "您最多可以上传%{max_documents_allowed} 个以下内容类型的文档：%{accepted_content_types}，每个文档最大%{max_file_size} MB。"

@@ -1049,18 +1049,11 @@ nl:
         unique_description: "Je kunt de vraag maar één keer beantwoorden."
     questions:
       index:
-        title: "Vragen"
         create: "Stel een vraag"
-        no_questions: "Er zijn geen vragen."
-        filter_poll: Filter op peiling
         select_poll: Selecteer Peiling
-        questions_tab: "Vragen"
         successful_proposals_tab: "Aangenomen voorstellen"
         create_question: "Stel een vraag"
         table_proposal: "Voorstel"
-        table_question: "Vraag"
-        table_poll: "Peiling"
-        poll_not_assigned: "Peiling niet toegewezen"
       edit:
         title: "Bewerk Vraag"
       form:
@@ -1081,7 +1074,6 @@ nl:
         edit_question: Bewerk vraag
         valid_answers: Geldige antwoorden
         add_answer: Voeg antwoord toe
-        video_url: Externe video
         answers:
           title: Antwoord
           description: Beschrijving

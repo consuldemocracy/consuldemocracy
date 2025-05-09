@@ -3,7 +3,6 @@ so:
     remove_image: Kasaar sawirk
     form:
       title: Sawirka sharaxada
-      title_placeholder: Ku dar cidnka sharaxada sawirka
       delete_button: Kasaar sawirk
       note: "Waxaad soo dejin kartaa sawir ka mid ah noocyada mawduucyada soo socda:%{accepted_content_types} ilaa %{max_file_size} MB."
       add_new_image: Sawiir kudar

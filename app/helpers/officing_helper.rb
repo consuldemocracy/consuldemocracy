@@ -6,12 +6,4 @@ module OfficingHelper
     options.sort_by! { |x| x[0] }
     options_for_select(options, params[:oa])
   end
-
-  def answer_result_value(question_id, option_index)
-    return nil if params.blank?
-    return nil if params[:questions].blank?
-    return nil if params[:questions][question_id.to_s].blank?
-
-    params[:questions][question_id.to_s][option_index.to_s]
-  end
 end

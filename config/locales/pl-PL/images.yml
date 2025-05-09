@@ -3,7 +3,6 @@ pl:
     remove_image: Usuń obraz
     form:
       title: Obraz opisujący
-      title_placeholder: Dodaj opisowy tytuł obrazu
       delete_button: Usuń obraz
       note: "Możesz przesłać jeden obraz następujących typów treści: %{accepted_content_types}, do %{max_file_size} MB."
       add_new_image: Dodaj obraz

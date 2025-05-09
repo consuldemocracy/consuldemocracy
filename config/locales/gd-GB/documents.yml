@@ -5,7 +5,6 @@ gd:
     additional: Sgrìobhainnean a bharrachd
     form:
       title: Sgrìobhainnean
-      title_placeholder: Cuir tiotal tuairisgeulach air an sgrìobhainn
       delete_button: Thoir an sgrìobhainn air falbh
       cancel_button: Sguir
       note: "’S urrainn dhut suas ri %{max_documents_allowed} sgrìobhainnean a luchdachadh suas de na seòrsaichean susbaint a leanas: %{accepted_content_types}, suas ri %{max_file_size} MB gach faidhle."

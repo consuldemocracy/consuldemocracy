@@ -9,9 +9,16 @@ describe "Custom information texts", :admin do
     fill_in "contents[content_#{debate_key}]values[value_en]", with: "Custom help with debates"
     click_button "Save"
 
+    expect(page).to have_content "Translation updated successfully"
+
     visit admin_site_customization_information_texts_path(tab: "proposals")
+
+    expect(page).not_to have_content "Translation updated successfully"
+
     fill_in "contents[content_#{proposal_key}]values[value_en]", with: "Custom help with proposals"
     click_button "Save"
+
+    expect(page).to have_content "Translation updated successfully"
 
     visit debates_path
 
@@ -41,6 +48,8 @@ describe "Custom information texts", :admin do
 
     fill_in "contents[content_#{intro_key}]values[value_en]", with: "Custom hi to %{author}"
     click_button "Save"
+
+    expect(page).to have_content "Translation updated successfully"
 
     visit admin_system_email_view_path("budget_investment_created")
 

@@ -7,7 +7,7 @@
     <h3><%= link_to @proposal.title, @proposal %></h3>
 
     <div data-alert class="callout warning">
-     <%= t("proposals.retire_form.warning") %>
+      <%= t("proposals.retire_form.warning") %>
     </div>
 
     <%= render "shared/globalize_locales", resource: @proposal, manage_languages: false %>
@@ -28,7 +28,7 @@
             <%= translations_form.text_area :retired_explanation,
                                             rows: 4,
                                             maxlength: 500,
-                                            placeholder: t("proposals.retire_form.retired_explanation_placeholder") %>
+                                            hint: t("proposals.retire_form.retired_explanation_placeholder") %>
           </div>
         <% end %>
       </div>

@@ -14,13 +14,15 @@ jobs:
           - name: RuboCop
             run: bundle exec rubocop --fail-level convention --display-only-fail-level-offenses -f github
           - name: ERB Lint
-            run: bundle exec erblint .
+            run: bundle exec erb_lint .
           - name: ESLint
             run: npx eslint . --quiet
           - name: Stylelint
             run: npx stylelint app/assets/stylesheets
           - name: Markdownlint
             run: bundle exec mdl *.md docs/
+          - name: HTML Beautifier
+            run: find app/ -name "*.html.erb" -exec bundle exec htmlbeautifier --lint-only --keep-blank-lines 1 -e {} +
     name: ${{ matrix.name }}
     steps:
       - name: Checkout code

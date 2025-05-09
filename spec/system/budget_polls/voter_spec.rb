@@ -6,7 +6,6 @@ describe "BudgetPolls", :with_frozen_time do
   let(:poll) { create(:poll, budget: budget) }
   let(:booth) { create(:poll_booth) }
   let(:officer) { create(:poll_officer) }
-  let(:admin) { create(:administrator) }
   let!(:user) { create(:user, :in_census) }
 
   before do
@@ -16,7 +15,8 @@ describe "BudgetPolls", :with_frozen_time do
 
   context "Offline" do
     scenario "A citizen can cast a paper vote" do
-      login_through_form_as_officer(officer.user)
+      admin = create(:administrator).user
+      login_through_form_as_officer(officer)
 
       visit new_officing_residence_path
       officing_verify_residence
@@ -29,11 +29,8 @@ describe "BudgetPolls", :with_frozen_time do
         expect(page).to have_content "Vote introduced!"
       end
 
-      expect(Poll::Voter.count).to eq(1)
-      expect(Poll::Voter.first.origin).to eq("booth")
-
       logout
-      login_as(admin.user)
+      login_as(admin)
       visit admin_poll_recounts_path(poll)
 
       within("#total_system") do
@@ -46,7 +43,7 @@ describe "BudgetPolls", :with_frozen_time do
     end
 
     scenario "A citizen cannot vote offline again" do
-      login_through_form_as_officer(officer.user)
+      login_through_form_as_officer(officer)
 
       visit new_officing_residence_path
       officing_verify_residence
@@ -66,7 +63,7 @@ describe "BudgetPolls", :with_frozen_time do
     end
 
     scenario "A citizen cannot vote online after voting offline" do
-      login_through_form_as_officer(officer.user)
+      login_through_form_as_officer(officer)
 
       visit new_officing_residence_path
       officing_verify_residence
@@ -110,7 +107,7 @@ describe "BudgetPolls", :with_frozen_time do
         expect(page).to have_content "Remove"
       end
 
-      visit budget_investment_path(budget, investment)
+      refresh
 
       within("#budget_investment_#{investment.id}") do
         expect(page).to have_content "Remove vote"
@@ -127,7 +124,7 @@ describe "BudgetPolls", :with_frozen_time do
       end
 
       logout
-      login_through_form_as_officer(officer.user)
+      login_through_form_as_officer(officer)
 
       visit new_officing_residence_path
       officing_verify_residence

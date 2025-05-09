@@ -207,7 +207,6 @@ de:
         submit: "Rubrik speichern"
       group_switcher:
         currently_showing: "Rubriken aus der Gruppe %{group} anzeigen."
-        different_group: "Rubriken einer anderen Gruppe verwalten"
         the_other_group: "Rubriken aus der Gruppe %{group} verwalten."
       index:
         back: "Zurück zu Gruppen"
@@ -1118,18 +1117,11 @@ de:
         multiple_description: "Erlaubt die Auswahl mehrerer Antworten. Es ist möglich, die maximale Anzahl von Antworten festzulegen."
     questions:
       index:
-        title: "Fragen"
         create: "Frage erstellen"
-        no_questions: "Keine Fragen vorhanden."
-        filter_poll: Filtern nach Abstimmung
         select_poll: Abstimmung auswählen
-        questions_tab: "Fragen"
         successful_proposals_tab: "Erfolgreiche Vorschläge"
         create_question: "Frage erstellen"
         table_proposal: "Vorschlag"
-        table_question: "Frage"
-        table_poll: "Abstimmung"
-        poll_not_assigned: "Abstimmung nicht zugeordnet"
       edit:
         title: "Frage bearbeiten"
       form:
@@ -1150,7 +1142,6 @@ de:
         edit_question: Frage bearbeiten
         valid_answers: Gültige Antworten
         add_answer: Antwort hinzufügen
-        video_url: Externes Video
         answers:
           title: Antwort
           description: Beschreibung

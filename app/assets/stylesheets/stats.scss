@@ -16,7 +16,7 @@
     }
 
     ul {
-      margin-left: calc(#{$line-height} / 2);
+      margin-left: calc($line-height / 2);
       margin-top: 0;
       padding: 0;
     }
@@ -37,7 +37,7 @@
 
     &::before {
       display: inline-block;
-      margin-right: calc(#{$line-height} / 2);
+      margin-right: calc($line-height / 2);
       vertical-align: top;
     }
 
@@ -99,77 +99,13 @@
   .progress {
     background: #ebf0f4;
     border-radius: rem-calc(20);
-    height: calc(#{$line-height} / 2);
+    height: calc($line-height / 2);
   }
 
   .progress-meter {
     background: #52a4ee;
     border-bottom-left-radius: rem-calc(20);
     border-top-left-radius: rem-calc(20);
-  }
-
-  .gender-and-channel {
-
-    thead,
-    tbody {
-      border: 0;
-    }
-
-    thead,
-    tr,
-    th {
-      background-color: transparent;
-    }
-
-    td,
-    th {
-      text-align: center;
-      text-transform: uppercase;
-
-      &::before {
-        display: inline-block;
-        transform: scale(0.6);
-        vertical-align: middle;
-      }
-    }
-
-    th {
-      font-size: rem-calc(21);
-      font-weight: bold;
-
-      &.gender {
-        opacity: 0;
-      }
-
-      &.web::before {
-        content: image-url("stats_web.png");
-      }
-
-      &.booth::before {
-        content: image-url("stats_booth.png");
-      }
-
-      &.mail::before {
-        content: image-url("stats_mail.png");
-      }
-    }
-
-    td {
-
-      &.gender {
-        font-size: rem-calc(21);
-        font-weight: bold;
-        text-align: left;
-      }
-
-      &.male::before {
-        content: image-url("stats_man.png");
-      }
-
-      &.female::before {
-        content: image-url("stats_woman.png");
-      }
-    }
   }
 }
 

@@ -130,8 +130,11 @@ describe "Admin hidden comments", :admin do
 
     visit admin_hidden_comments_path(filter: "with_confirmed_hide", page: 2)
 
+    expect(page).to have_css "tbody tr", count: 2
+
     accept_confirm("Are you sure? Restore") { click_button "Restore", match: :first, exact: true }
 
+    expect(page).to have_css "tbody tr", count: 1
     expect(page).to have_current_path(/filter=with_confirmed_hide/)
     expect(page).to have_current_path(/page=2/)
   end

@@ -55,7 +55,7 @@ describe "Admin budget investments", :admin do
       budget_investment2 = create(:budget_investment, budget: budget,
                                                       valuators: [valuator1, valuator2],
                                                       valuator_groups: [valuator_group])
-      budget_investment3 = create(:budget_investment, budget: budget)
+      budget_investment3 = create(:budget_investment, budget: budget, administrator: admin)
 
       visit admin_budget_budget_investments_path(budget_id: budget.id)
 
@@ -70,9 +70,6 @@ describe "Admin budget investments", :admin do
         expect(page).to have_content("Valuator Miriam")
         expect(page).to have_content("Health")
       end
-
-      budget_investment3.update!(administrator_id: admin.id)
-      visit admin_budget_budget_investments_path(budget_id: budget.id)
 
       within("#budget_investment_#{budget_investment3.id}") do
         expect(page).to have_content("Gema")
@@ -1802,6 +1799,8 @@ describe "Admin budget investments", :admin do
 
       click_button "Columns"
 
+      expect(page).to have_css "button[aria-expanded=true]", exact_text: "Columns"
+
       within("#js-columns-selector-wrapper") do
         uncheck "Title"
         uncheck "Price"
@@ -1814,7 +1813,9 @@ describe "Admin budget investments", :admin do
       expect(cookie_value).to eq("id,supports,admin,geozone,feasibility,valuation_finished," \
                                  "visible_to_valuators,selected,incompatible,author")
 
-      visit admin_budget_budget_investments_path(budget)
+      refresh
+
+      expect(page).to have_css "button[aria-expanded=false]", exact_text: "Columns"
 
       cookie_value = cookie_by_name("investments-columns")[:value]
 

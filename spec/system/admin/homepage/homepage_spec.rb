@@ -8,12 +8,11 @@ describe "Homepage", :admin do
     Setting["feature.user.recommendations"] = false
   end
 
-  let!(:proposals_feed)    { create(:widget_feed, kind: "proposals") }
-  let!(:debates_feed)      { create(:widget_feed, kind: "debates") }
-  let!(:processes_feed)    { create(:widget_feed, kind: "processes") }
+  let!(:proposals_feed) { create(:widget_feed, kind: "proposals") }
+  let!(:debates_feed)   { create(:widget_feed, kind: "debates") }
+  let!(:processes_feed) { create(:widget_feed, kind: "processes") }
 
-  let(:user_recommendations) { Setting.find_by(key: "feature.user.recommendations") }
-  let(:user)                 { create(:user) }
+  let(:user) { create(:user) }
 
   context "Header" do
     scenario "Admin menu links to homepage path" do
@@ -210,6 +209,7 @@ describe "Homepage", :admin do
   scenario "Recomendations" do
     create(:proposal, tag_list: "Sport", followers: [user])
     create(:proposal, tag_list: "Sport")
+    user_recommendations = Setting.find_by(key: "feature.user.recommendations")
 
     visit admin_homepage_path
 

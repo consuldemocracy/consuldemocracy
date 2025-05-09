@@ -401,7 +401,6 @@ eu:
       forward:
         support_button: Proposamen hau babestu
   polls:
-    all: "Guztiak"
     dates: "%{open_at}-tik %{closed_at}-ra"
     final_date: "Azken zenbaketa/Emaitzak"
     index:

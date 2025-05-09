@@ -11,42 +11,33 @@ module Users
     check "user_terms_of_service"
 
     click_button "Register"
+    expect(page).to have_content "Thank you for registering"
   end
 
-  def login_through_form_with_email_and_password(email = "manuela@consul.dev", password = "judgementday")
-    visit root_path
-    click_link "Sign in"
+  def login_through_form_with(email_or_username, password:)
+    visit new_user_session_path
 
-    fill_in "user_login", with: email
-    fill_in "user_password", with: password
+    fill_in "Email or username", with: email_or_username
+    fill_in "Password", with: password
 
     click_button "Enter"
   end
 
   def login_through_form_as(user)
-    visit root_path
-    click_link "Sign in"
-
-    fill_in "user_login", with: user.email
-    fill_in "user_password", with: user.password
-
-    click_button "Enter"
+    login_through_form_with(user.email, password: user.password)
   end
 
-  def login_through_form_as_officer(user)
-    visit root_path
-    click_link "Sign in"
+  def login_through_form_as_officer(officer)
+    login_through_form_as(officer.user)
 
-    fill_in "user_login", with: user.email
-    fill_in "user_password", with: user.password
-
-    click_button "Enter"
-    visit new_officing_residence_path
+    expect(page).to have_content "You have been signed in successfully"
   end
 
   def login_as_manager(manager = create(:manager))
     login_as(manager.user)
     visit management_sign_in_path
+
+    expect(page).to have_content "Management"
   end
 
   def login_managed_user(user)
@@ -72,6 +63,9 @@ module Users
 
     fill_in "user_email", with: "manuela@consul.dev"
     click_button "Send instructions"
+
+    expect(page).to have_content "If your email address is in our database, in a few minutes " \
+                                 "you will receive a link to use to reset your password."
   end
 
   def expect_to_be_signed_in
