@@ -40,10 +40,6 @@
       <%= f.password_field :password_confirmation, autocomplete: "off",
                            label: t("devise_views.users.registrations.new.password_confirmation_label") %>
 
-      <% if resource.use_redeemable_code %>
-        <%= f.text_field :redeemable_code %>
-      <% end %>
-
       <%= f.check_box :terms_of_service,
         title: t("devise_views.users.registrations.new.terms_title"),
         label: t("devise_views.users.registrations.new.terms",
