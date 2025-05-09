@@ -9,7 +9,7 @@ gd:
       - Dih
       - Dis
     abbr_month_names:
-      -
+      - 
       - Faoi
       - Gearr
       - Màrt
@@ -35,7 +35,7 @@ gd:
       long: "%B %d, %Y"
       short: "%b %d"
     month_names:
-      -
+      - 
       - Am Faoilleach
       - An Gearran
       - Am Màrt
