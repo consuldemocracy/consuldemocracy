@@ -1456,6 +1456,7 @@ en:
         csv_title: Postcode - Import CSV file
         csv_button: Import CSV
         csv_import: Import again
+        filter_button: Filter
         no_record: No records found.
       postcode:
         postcode: Postcode
