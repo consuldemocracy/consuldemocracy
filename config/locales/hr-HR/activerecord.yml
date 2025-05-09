@@ -220,6 +220,7 @@ hr:
       geozone:
         name: Ime
         external_code: "Vanjski kod (neobavezno)"
+        color: "Boja (opcionalno)"
         census_code: "Kod cenzusa (neobavezno)"
         html_map_coordinates: "HTML <map> Koordinate (neobavezno)"
       milestone:
