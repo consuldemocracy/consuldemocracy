@@ -6,34 +6,58 @@
 
 <h2 class="inline-block"><%= t("admin.postcodes.index.title") %></h2>
 
+<%= form_with url: admin_postcodes_path, method: :get, local: true, class: "admin-postcodes-search-form" do %>
+
+
+  <div class="basic-filters">
+     <table>
+      <tr>
+        <td>
+          <%= t("admin.postcodes.postcode.postcode") %>
+          <%= text_field_tag :postcode, params[:postcode], placeholder: t("admin.postcodes.postcode.postcode") %>
+        </td>
+        <td>
+          <%= t("admin.postcodes.postcode.ward") %>
+          <%= text_field_tag :ward, params[:ward], placeholder: t("admin.postcodes.postcode.ward") %>
+        </td>
+        <td>
+          <%= t("admin.postcodes.postcode.geozone_id") %>
+          <%= text_field_tag :geozone, params[:geozone], placeholder: t("admin.postcodes.postcode.geozone_id") %>
+        </td>
+      </tr>
+    </table>
+    <div class="filter">
+      <%= submit_tag t("admin.postcodes.index.filter_button"), class: "button expanded" %>
+    </div>
+  </div>
+<% end %>
+
 <% if @postcodes.any? %>
   <h3><%= page_entries_info @postcodes %></h3>
   <table>
-  <thead>
-    <tr>
-      <th><%= t("admin.postcodes.postcode.postcode") %></th>
-      <th><%= t("admin.postcodes.postcode.ward") %></th>
-      <th><%= t("admin.postcodes.postcode.geozone_id") %></th>
-      <th><%= t("admin.actions.actions") %></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @postcodes.each do |postcode| %>
-      <tr id="<%= dom_id(postcode) %>">
-        <td><%= postcode.postcode %></td>
-        <td><%= postcode.ward %></td>
-        <td><!-- <%= postcode.geozone_id %> -->
-        <%= postcode.geozone.name if postcode.geozone %>
-        </td>
-        <td>
-          <%= render Admin::TableActionsComponent.new(postcode) %>
-        </td>
+    <thead>
+      <tr>
+        <th><%= t("admin.postcodes.postcode.postcode") %></th>
+        <th><%= t("admin.postcodes.postcode.ward") %></th>
+        <th><%= t("admin.postcodes.postcode.geozone_id") %></th>
+        <th><%= t("admin.actions.actions") %></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-<h3><%= paginate @postcodes %></h3>
+    </thead>
+
+    <tbody>
+      <% @postcodes.each do |postcode| %>
+        <tr id="<%= dom_id(postcode) %>">
+          <td><%= postcode.postcode %></td>
+          <td><%= postcode.ward %></td>
+          <td><%= postcode.geozone.name if postcode.geozone %></td>
+          <td>
+            <%= render Admin::TableActionsComponent.new(postcode) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <h3><%= paginate @postcodes %></h3>
 <% else %>
   <div class="callout primary">
     <%= t("admin.postcodes.index.no_record") %>
