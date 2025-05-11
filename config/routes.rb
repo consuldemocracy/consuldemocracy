@@ -52,6 +52,8 @@ Rails.application.routes.draw do
 
     # Static pages
     resources :pages, path: "/", only: [:show]
+
+    get 'health', to: 'health#show'
   end
 
   resolve "Budget::Investment" do |investment, options|
