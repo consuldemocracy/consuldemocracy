@@ -16,6 +16,29 @@ module OmniauthTenantSetup
       oauth2(env, secrets.wordpress_oauth2_key, secrets.wordpress_oauth2_secret)
     end
 
+    def saml(env)
+      unless Tenant.default?
+        env["omniauth.strategy"].options[:idp_metadata_url] = secrets.saml_idp_metadata_url
+        env["omniauth.strategy"].options[:idp_cert_fingerprint] = secrets.saml_idp_cert_fingerprint
+      end
+    end
+
+    def openid_connect(env)
+      unless Tenant.default?
+        env["omniauth.strategy"].options[:client_id] = secrets.openid_connect_client_id
+        env["omniauth.strategy"].options[:client_secret] = secrets.openid_connect_client_secret
+        env["omniauth.strategy"].options[:client_options] = {
+          host: secrets.openid_connect_host,
+          identifier: secrets.openid_connect_client_id,
+          secret: secrets.openid_connect_client_secret,
+          redirect_uri: secrets.openid_connect_redirect_uri,
+          authorization_endpoint: "/authorize",
+          token_endpoint: "/token",
+          userinfo_endpoint: "/userinfo"
+        }
+      end
+    end
+
     private
 
       def oauth(env, key, secret)

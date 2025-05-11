@@ -286,6 +286,23 @@ Devise.setup do |config|
                   Rails.application.secrets.wordpress_oauth2_secret,
                   client_options: { site: Rails.application.secrets.wordpress_oauth2_site },
                   setup: ->(env) { OmniauthTenantSetup.wordpress_oauth2(env) }
+  config.omniauth :saml,
+                  Rails.application.secrets.saml_idp_metadata_url,
+                  idp_cert_fingerprint: Rails.application.secrets.saml_idp_cert_fingerprint,
+                  setup: ->(env) { OmniauthTenantSetup.saml(env) }
+  config.omniauth :openid_connect,
+                  Rails.application.secrets.openid_connect_client_id,
+                  Rails.application.secrets.openid_connect_client_secret,
+                  client_options: {
+                    host: Rails.application.secrets.openid_connect_host,
+                    identifier: Rails.application.secrets.openid_connect_client_id,
+                    secret: Rails.application.secrets.openid_connect_client_secret,
+                    redirect_uri: Rails.application.secrets.openid_connect_redirect_uri,
+                    authorization_endpoint: "/authorize",
+                    token_endpoint: "/token",
+                    userinfo_endpoint: "/userinfo"
+                  },
+                  setup: ->(env) { OmniauthTenantSetup.openid_connect(env) }
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

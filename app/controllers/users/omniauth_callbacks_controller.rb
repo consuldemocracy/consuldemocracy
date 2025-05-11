@@ -15,6 +15,14 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     sign_in_with :wordpress_login, :wordpress_oauth2
   end
 
+  def saml
+    sign_in_with :saml_login, :saml
+  end
+
+  def openid_connect
+    sign_in_with :openid_connect_login, :openid_connect
+  end
+
   def after_sign_in_path_for(resource)
     if resource.registering_with_oauth
       finish_signup_path
