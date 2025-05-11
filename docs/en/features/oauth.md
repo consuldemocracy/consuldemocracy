@@ -1,6 +1,6 @@
 # OAuth
 
-You can configure authentication services with external OAuth providers, right now Twitter, Facebook, Google and Wordpress are supported.
+You can configure authentication services with external OAuth providers, right now Twitter, Facebook, Google, Wordpress, SAML and OpenID Connect are supported.
 
 ## 1. Create an App on the platform
 
@@ -19,6 +19,10 @@ They'll ask you for the authentication URL of your Consul Democracy installation
   user_google_oauth2_omniauth_callback GET|POST /users/auth/google_oauth2/callback(.:format) users/omniauth_callbacks#google_oauth2
   user_wordpress_oauth2_omniauth_authorize GET|POST /users/auth/wordpress_oauth2(.:format) users/omniauth_callbacks#passthru
   user_wordpress_oauth2_omniauth_callback GET|POST /users/auth/wordpress_oauth2/callback(.:format) users/omniauth_callbacks#wordpress_oauth2
+  user_saml_omniauth_authorize GET|POST /users/auth/saml(.:format) users/omniauth_callbacks#passthru
+  user_saml_omniauth_callback GET|POST /users/auth/saml/callback(.:format) users/omniauth_callbacks#saml
+  user_openid_connect_omniauth_authorize GET|POST /users/auth/openid_connect(.:format) users/omniauth_callbacks#passthru
+  user_openid_connect_omniauth_callback GET|POST /users/auth/openid_connect/callback(.:format) users/omniauth_callbacks#openid_connect
 ```
 
 So for example the URL for Facebook application would be `yourdomain.com/users/auth/facebook/callback`.
@@ -27,14 +31,23 @@ So for example the URL for Facebook application would be `yourdomain.com/users/a
 
 When you complete the application registration you'll get a *key* and *secret* values, those need to be stored at your `config/secrets.yml` file:
 
-```yml
-  twitter_key: ""
-  twitter_secret: ""
-  facebook_key: ""
-  facebook_secret: ""
-  google_oauth2_key: ""
-  google_oauth2_secret: ""
-  wordpress_oauth2_key: ""
-  wordpress_oauth2_secret: ""
-  wordpress_oauth2_site: ""
+### For SAML:
+```yaml
+saml_idp_metadata_url: "https://your-idp/metadata"
+saml_idp_cert_fingerprint: "your-certificate-fingerprint"
 ```
+
+### For OpenID Connect:
+```yaml
+openid_connect_client_id: "your-client-id"
+openid_connect_client_secret: "your-client-secret"
+openid_connect_host: "https://your-oidc-provider"
+openid_connect_redirect_uri: "https://your-domain/users/auth/openid_connect/callback"
+```
+
+## 4. Enable the feature
+
+Go to the admin panel and enable the feature you want to use:
+
+- For SAML: `feature.saml_login`
+- For OpenID Connect: `feature.openid_connect_login`
