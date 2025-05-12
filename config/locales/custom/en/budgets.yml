@@ -10,7 +10,7 @@ en:
     investments:
       form:
         title: "Submit a Project Proposal"
-        description: "Description"
+        description: "Project Description"
         heading_note: "Select the area this proposal applies to"
         subtitle: "%{heading} (%{price})"
         subtitle_note: "What is your project or application called?"
