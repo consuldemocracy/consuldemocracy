@@ -138,6 +138,8 @@ en:
         price_explanation: Price explanation
         unfeasibility_explanation: Unfeasibility explanation
         code: "Investment project code: <strong>%{code}</strong>"
+        description: "Project Description"
+        summary: "Project Summary"
         location: "Location: <strong>%{location}</strong>"
         organization_name: "Proposed on behalf of: <strong>%{name}</strong>"
         share: Share
