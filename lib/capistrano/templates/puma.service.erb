@@ -16,7 +16,7 @@ After=syslog.target network.target
 
 [Service]
 Type=<%= service_unit_type %>
-WatchdogSec=10
+WatchdogSec=0
 <%="User=#{puma_user(@role)}" if fetch(:puma_systemctl_user) == :system %>
 WorkingDirectory=<%= current_path %>
 ExecStart=<%= expanded_bundle_command %> exec puma -e <%= fetch(:puma_env) %>
