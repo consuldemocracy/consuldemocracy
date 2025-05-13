@@ -49,7 +49,6 @@ set :fnm_setup_command, -> do
 set :fnm_install_node_command, -> { "#{fetch(:fnm_setup_command)} && fnm use --install-if-missing" }
 set :fnm_map_bins, %w[node npm rake yarn]
 
-set :puma_conf, "#{release_path}/config/puma/#{fetch(:rails_env)}.rb"
 set :puma_systemctl_user, :user
 set :puma_enable_socket_service, true
 set :puma_service_unit_env_vars, ["EXECJS_RUNTIME=Disabled"]
