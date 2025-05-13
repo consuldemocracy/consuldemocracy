@@ -53,6 +53,7 @@ set :puma_conf, "#{release_path}/config/puma/#{fetch(:rails_env)}.rb"
 set :puma_systemctl_user, :user
 set :puma_enable_socket_service, true
 set :puma_service_unit_env_vars, ["EXECJS_RUNTIME=Disabled"]
+set :puma_bind, "unix://#{shared_path}/tmp/sockets/puma.sock"
 
 set :delayed_job_workers, 2
 set :delayed_job_roles, :background
