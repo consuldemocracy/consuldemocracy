@@ -170,6 +170,6 @@ task :setup_puma do
     end
   end
 
-  after "setup_puma", "puma:systemd:config"
-  after "setup_puma", "puma:systemd:enable"
+  after "setup_puma", "puma:install"
+  after "setup_puma", "puma:enable"
 end
