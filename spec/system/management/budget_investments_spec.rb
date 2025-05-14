@@ -7,16 +7,6 @@ describe "Budget Investments" do
   let(:heading) { create(:budget_heading, group: group, name: "Health") }
   let(:user)    { create(:user, :level_two) }
 
-  it_behaves_like "nested documentable",
-                  "user",
-                  "budget_investment",
-                  "new_management_budget_investment_path",
-                  { budget_id: "budget_id" },
-                  "documentable_fill_new_valid_budget_investment",
-                  "Create Investment",
-                  "Budget Investment created successfully.",
-                  management: true
-
   it_behaves_like "mappable",
                   "budget_investment",
                   "investment",

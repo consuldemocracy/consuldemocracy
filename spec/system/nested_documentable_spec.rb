@@ -11,7 +11,11 @@ describe "Nested documentable" do
   let!(:user) { create(:user, :level_two) }
   let(:path) do
     case factory
-    when :budget_investment then new_budget_investment_path(budget_id: documentable.budget_id)
+    when :budget_investment
+      [
+        new_budget_investment_path(budget_id: documentable.budget_id),
+        new_management_budget_investment_path(budget_id: documentable.budget_id)
+      ].sample
     when :dashboard_action then new_admin_dashboard_action_path
     end
   end
@@ -35,7 +39,7 @@ describe "Nested documentable" do
       end
 
       scenario "Should show new document link when max documents allowed limit is not reached" do
-        login_as user
+        do_login_for(user, management: management_section?)
         visit path
 
         expect(page).to have_link "Add new document"
@@ -43,7 +47,7 @@ describe "Nested documentable" do
 
       scenario "Should not show new document link when
                 documentable max documents allowed limit is reached" do
-        login_as user
+        do_login_for(user, management: management_section?)
         visit path
 
         documentable.class.max_documents_allowed.times.each do
@@ -54,14 +58,14 @@ describe "Nested documentable" do
       end
 
       scenario "Should not show max documents warning when no documents added" do
-        login_as user
+        do_login_for(user, management: management_section?)
         visit path
 
         expect(page).not_to have_css ".max-documents-notice"
       end
 
       scenario "Should show max documents warning when max documents allowed limit is reached" do
-        login_as user
+        do_login_for(user, management: management_section?)
         visit path
 
         documentable.class.max_documents_allowed.times.each do
@@ -73,7 +77,7 @@ describe "Nested documentable" do
       end
 
       scenario "Should hide max documents warning after any document removal" do
-        login_as user
+        do_login_for(user, management: management_section?)
         visit path
 
         documentable.class.max_documents_allowed.times.each do
@@ -86,7 +90,7 @@ describe "Nested documentable" do
       end
 
       scenario "Should update nested document file name after choosing a file" do
-        login_as user
+        do_login_for(user, management: management_section?)
         visit path
 
         click_link "Add new document"
@@ -101,7 +105,7 @@ describe "Nested documentable" do
 
       scenario "Should update nested document file title with
                 file name after choosing a file when no title defined" do
-        login_as user
+        do_login_for(user, management: management_section?)
         visit path
 
         documentable_attach_new_file(file_fixture("empty.pdf"))
@@ -111,7 +115,7 @@ describe "Nested documentable" do
 
       scenario "Should not update nested document file title with
                 file name after choosing a file when title already defined" do
-        login_as user
+        do_login_for(user, management: management_section?)
         visit path
 
         click_link "Add new document"
@@ -127,7 +131,7 @@ describe "Nested documentable" do
       end
 
       scenario "Should update loading bar style after valid file upload" do
-        login_as user
+        do_login_for(user, management: management_section?)
         visit path
 
         documentable_attach_new_file(file_fixture("empty.pdf"))
@@ -136,7 +140,7 @@ describe "Nested documentable" do
       end
 
       scenario "Should update loading bar style after invalid file upload" do
-        login_as user
+        do_login_for(user, management: management_section?)
         visit path
 
         documentable_attach_new_file(file_fixture("logo_header.gif"), false)
@@ -145,7 +149,7 @@ describe "Nested documentable" do
       end
 
       scenario "Should update document cached_attachment field after valid file upload" do
-        login_as user
+        do_login_for(user, management: management_section?)
         visit path
 
         click_link "Add new document"
@@ -160,7 +164,7 @@ describe "Nested documentable" do
       end
 
       scenario "Should not update document cached_attachment field after invalid file upload" do
-        login_as user
+        do_login_for(user, management: management_section?)
         visit path
 
         documentable_attach_new_file(file_fixture("logo_header.gif"), false)
@@ -170,7 +174,7 @@ describe "Nested documentable" do
       end
 
       scenario "Should show document errors after documentable submit with empty document fields" do
-        login_as user
+        do_login_for(user, management: management_section?)
         visit path
 
         click_link "Add new document"
@@ -182,7 +186,7 @@ describe "Nested documentable" do
       end
 
       scenario "Should delete document after valid file upload and click on remove button" do
-        login_as user
+        do_login_for(user, management: management_section?)
         visit path
 
         documentable_attach_new_file(file_fixture("empty.pdf"))
@@ -192,7 +196,7 @@ describe "Nested documentable" do
       end
 
       scenario "Should show successful notice when resource filled correctly without any nested documents" do
-        login_as user
+        do_login_for(user, management: management_section?)
         visit path
 
         fill_in_required_fields
@@ -202,7 +206,7 @@ describe "Nested documentable" do
       end
 
       scenario "Should show successful notice when resource filled correctly and after valid file uploads" do
-        login_as user
+        do_login_for(user, management: management_section?)
         visit path
 
         fill_in_required_fields
@@ -217,7 +221,7 @@ describe "Nested documentable" do
         let(:factory) { (factories - [:dashboard_action]).sample }
 
         scenario "Should show new document after successful creation with one uploaded file" do
-          login_as user
+          do_login_for(user, management: management_section?)
           visit path
 
           fill_in_required_fields
@@ -236,7 +240,7 @@ describe "Nested documentable" do
 
         scenario "Should show resource with new document after successful creation with
                   maximum allowed uploaded files" do
-          login_as user
+          do_login_for(user, management: management_section?)
           visit path
 
           fill_in_required_fields
@@ -259,7 +263,7 @@ describe "Nested documentable" do
       before { Setting["feature.allow_attached_documents"] = false }
 
       scenario "Add new document button should not be available" do
-        login_as user
+        do_login_for(user, management: management_section?)
         visit path
 
         expect(page).not_to have_content("Add new document")
@@ -287,5 +291,9 @@ describe "Nested documentable" do
 
   def admin_section?
     path.starts_with?("/admin/")
+  end
+
+  def management_section?
+    path.starts_with?("/management/")
   end
 end
