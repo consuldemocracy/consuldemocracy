@@ -52,7 +52,7 @@ describe "Nested imageable" do
 
   context "New and edit path" do
     before do
-      create(:administrator, user: user) if admin_section? || management_section?
+      create(:administrator, user: user) if admin_section?
       imageable.update!(author: user) if edit_path?
       do_login_for(user, management: management_section?)
       visit path
