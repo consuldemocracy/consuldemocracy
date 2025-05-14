@@ -221,7 +221,7 @@ hr:
       geozone:
         name: Ime
         external_code: "Vanjski kod (neobavezno)"
-        color: "Boja (opcionalno)"
+        color: "Boja (neobavezno)"
         census_code: "Kod cenzusa (neobavezno)"
         geojson: "GeoJSON podatci (neobavezno)"
         html_map_coordinates: "HTML <map> Koordinate (neobavezno)"
