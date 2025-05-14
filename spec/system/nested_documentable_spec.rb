@@ -3,7 +3,8 @@ require "rails_helper"
 describe "Nested documentable" do
   factories = [
     :budget_investment,
-    :dashboard_action
+    :dashboard_action,
+    :proposal
   ]
 
   let(:factory) { factories.sample }
@@ -17,18 +18,21 @@ describe "Nested documentable" do
         new_management_budget_investment_path(budget_id: documentable.budget_id)
       ].sample
     when :dashboard_action then new_admin_dashboard_action_path
+    when :proposal then new_proposal_path
     end
   end
   let(:submit_button_text) do
     case factory
     when :budget_investment then "Create Investment"
     when :dashboard_action then "Save"
+    when :proposal then "Create proposal"
     end
   end
   let(:notice_text) do
     case factory
     when :budget_investment then "Budget Investment created successfully."
     when :dashboard_action then "Action created successfully"
+    when :proposal then "Proposal created successfully"
     end
   end
 
@@ -217,7 +221,7 @@ describe "Nested documentable" do
         expect(page).to have_content notice_text
       end
 
-      context "Budget investments" do
+      context "Budget investments and proposals" do
         let(:factory) { (factories - [:dashboard_action]).sample }
 
         scenario "Should show new document after successful creation with one uploaded file" do
@@ -275,6 +279,7 @@ describe "Nested documentable" do
     case factory
     when :budget_investment then fill_budget_investment
     when :dashboard_action then fill_dashboard_action
+    when :proposal then fill_proposal
     end
   end
 
@@ -287,6 +292,12 @@ describe "Nested documentable" do
     fill_in_new_investment_title with: "Budget investment title"
     fill_in_ckeditor "Description", with: "Budget investment description"
     check :budget_investment_terms_of_service
+  end
+
+  def fill_proposal
+    fill_in_new_proposal_title with: "Proposal title #{rand(9999)}"
+    fill_in "Proposal summary", with: "Proposal summary"
+    check :proposal_terms_of_service
   end
 
   def admin_section?

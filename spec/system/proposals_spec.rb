@@ -1300,15 +1300,6 @@ describe "Proposals" do
   it_behaves_like "nested documentable",
                   "user",
                   "proposal",
-                  "new_proposal_path",
-                  {},
-                  "documentable_fill_new_valid_proposal",
-                  "Create proposal",
-                  "Proposal created successfully"
-
-  it_behaves_like "nested documentable",
-                  "user",
-                  "proposal",
                   "edit_proposal_path",
                   { id: "id" },
                   nil,
