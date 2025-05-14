@@ -2,18 +2,38 @@ require "rails_helper"
 
 describe "Nested documentable" do
   factories = [
+    :budget_investment,
     :dashboard_action
   ]
 
   let(:factory) { factories.sample }
   let!(:documentable) { create(factory) }
-  let!(:user) { create(:administrator).user }
-  let(:path) { new_admin_dashboard_action_path }
-  let(:submit_button_text) { "Save" }
-  let(:notice_text) { "Action created successfully" }
+  let!(:user) { create(:user, :level_two) }
+  let(:path) do
+    case factory
+    when :budget_investment then new_budget_investment_path(budget_id: documentable.budget_id)
+    when :dashboard_action then new_admin_dashboard_action_path
+    end
+  end
+  let(:submit_button_text) do
+    case factory
+    when :budget_investment then "Create Investment"
+    when :dashboard_action then "Save"
+    end
+  end
+  let(:notice_text) do
+    case factory
+    when :budget_investment then "Budget Investment created successfully."
+    when :dashboard_action then "Action created successfully"
+    end
+  end
 
   context "New path" do
     describe "When allow attached documents setting is enabled" do
+      before do
+        create(:administrator, user: user) if admin_section?
+      end
+
       scenario "Should show new document link when max documents allowed limit is not reached" do
         login_as user
         visit path
@@ -175,7 +195,7 @@ describe "Nested documentable" do
         login_as user
         visit path
 
-        fill_dashboard_action
+        fill_in_required_fields
         click_button submit_button_text
 
         expect(page).to have_content notice_text
@@ -185,12 +205,53 @@ describe "Nested documentable" do
         login_as user
         visit path
 
-        fill_dashboard_action
+        fill_in_required_fields
 
         documentable_attach_new_file(file_fixture("empty.pdf"))
         click_button submit_button_text
 
         expect(page).to have_content notice_text
+      end
+
+      context "Budget investments" do
+        let(:factory) { (factories - [:dashboard_action]).sample }
+
+        scenario "Should show new document after successful creation with one uploaded file" do
+          login_as user
+          visit path
+
+          fill_in_required_fields
+
+          documentable_attach_new_file(file_fixture("empty.pdf"))
+          click_button submit_button_text
+
+          expect(page).to have_content notice_text
+          expect(page).to have_content "Documents"
+          expect(page).to have_content "empty.pdf"
+
+          # Review
+          # Doble check why the file is stored with a name different to empty.pdf
+          expect(page).to have_link href: /.pdf\Z/
+        end
+
+        scenario "Should show resource with new document after successful creation with
+                  maximum allowed uploaded files" do
+          login_as user
+          visit path
+
+          fill_in_required_fields
+
+          %w[clippy empty logo].take(documentable.class.max_documents_allowed).each do |filename|
+            documentable_attach_new_file(file_fixture("#{filename}.pdf"))
+          end
+
+          expect(page).not_to have_link "Add new document"
+
+          click_button submit_button_text
+
+          expect(page).to have_content notice_text
+          expect(page).to have_content "Documents (#{documentable.class.max_documents_allowed})"
+        end
       end
     end
 
@@ -206,8 +267,25 @@ describe "Nested documentable" do
     end
   end
 
+  def fill_in_required_fields
+    case factory
+    when :budget_investment then fill_budget_investment
+    when :dashboard_action then fill_dashboard_action
+    end
+  end
+
   def fill_dashboard_action
     fill_in :dashboard_action_title, with: "Dashboard title"
     fill_in_ckeditor "Description", with: "Dashboard description"
+  end
+
+  def fill_budget_investment
+    fill_in_new_investment_title with: "Budget investment title"
+    fill_in_ckeditor "Description", with: "Budget investment description"
+    check :budget_investment_terms_of_service
+  end
+
+  def admin_section?
+    path.starts_with?("/admin/")
   end
 end
