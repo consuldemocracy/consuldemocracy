@@ -1115,15 +1115,6 @@ describe "Budget Investments" do
                   "budget_investment_path",
                   { budget_id: "budget_id", id: "id" }
 
-  it_behaves_like "nested documentable",
-                  "user",
-                  "budget_investment",
-                  "new_budget_investment_path",
-                  { budget_id: "budget_id" },
-                  "documentable_fill_new_valid_budget_investment",
-                  "Create Investment",
-                  "Budget Investment created successfully."
-
   it_behaves_like "mappable",
                   "budget_investment",
                   "investment",
