@@ -13,12 +13,4 @@ module Documents
       end
     end
   end
-
-  def expect_document_has_title(index, title)
-    document = all(".document-fields")[index]
-
-    within document do
-      expect(find("input[name$='[title]']").value).to eq title
-    end
-  end
 end

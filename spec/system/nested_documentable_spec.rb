@@ -18,28 +18,43 @@ describe "Nested documentable" do
         new_management_budget_investment_path(budget_id: documentable.budget_id)
       ].sample
     when :dashboard_action then new_admin_dashboard_action_path
-    when :proposal then new_proposal_path
+    when :proposal
+      [
+        new_proposal_path,
+        edit_proposal_path(id: documentable.id)
+      ].sample
     end
   end
   let(:submit_button_text) do
     case factory
     when :budget_investment then "Create Investment"
     when :dashboard_action then "Save"
-    when :proposal then "Create proposal"
+    when :proposal
+      if edit_path?
+        "Save changes"
+      else
+        "Create proposal"
+      end
     end
   end
   let(:notice_text) do
     case factory
     when :budget_investment then "Budget Investment created successfully."
     when :dashboard_action then "Action created successfully"
-    when :proposal then "Proposal created successfully"
+    when :proposal
+      if edit_path?
+        "Proposal updated successfully"
+      else
+        "Proposal created successfully"
+      end
     end
   end
 
-  context "New path" do
+  context "New and edit path" do
     describe "When allow attached documents setting is enabled" do
       before do
         create(:administrator, user: user) if admin_section?
+        documentable.update!(author: user) if edit_path?
       end
 
       scenario "Should show new document link when max documents allowed limit is not reached" do
@@ -263,6 +278,68 @@ describe "Nested documentable" do
       end
     end
 
+    describe "Only for edit path" do
+      let!(:proposal) { create(:proposal, author: user) }
+
+      scenario "Should show persisted documents and remove nested_field" do
+        create(:document, documentable: proposal)
+        login_as user
+        visit edit_proposal_path(proposal)
+
+        expect(page).to have_css ".document-fields", count: 1
+      end
+
+      scenario "Should not show add document button when
+                documentable has reached maximum of documents allowed" do
+        create_list(:document, proposal.class.max_documents_allowed, documentable: proposal)
+        login_as user
+        visit edit_proposal_path(proposal)
+
+        expect(page).not_to have_css "#new_document_link"
+      end
+
+      scenario "Should show add document button after destroy one document" do
+        create_list(:document, proposal.class.max_documents_allowed, documentable: proposal)
+        login_as user
+        visit edit_proposal_path(proposal)
+        last_document = all("#nested-documents .document-fields").last
+        within last_document do
+          click_link "Remove document"
+        end
+
+        expect(page).to have_link "Add new document"
+      end
+
+      scenario "Should remove nested field after remove document" do
+        create(:document, documentable: proposal)
+        login_as user
+        visit edit_proposal_path(proposal)
+        click_link "Remove document"
+
+        expect(page).not_to have_css ".document-fields"
+      end
+
+      scenario "Same attachment URL after editing the title" do
+        login_as user
+        visit edit_proposal_path(proposal)
+
+        documentable_attach_new_file(file_fixture("empty.pdf"))
+        within_fieldset("Documents") { fill_in "Title", with: "Original" }
+        click_button "Save changes"
+
+        expect(page).to have_content "Proposal updated successfully"
+
+        original_url = find_link(text: "Original")[:href]
+
+        visit edit_proposal_path(proposal)
+        within_fieldset("Documents") { fill_in "Title", with: "Updated" }
+        click_button "Save changes"
+
+        expect(page).to have_content "Proposal updated successfully"
+        expect(find_link(text: "Updated")[:href]).to eq original_url
+      end
+    end
+
     describe "When allow attached documents setting is disabled" do
       before { Setting["feature.allow_attached_documents"] = false }
 
@@ -276,6 +353,8 @@ describe "Nested documentable" do
   end
 
   def fill_in_required_fields
+    return if edit_path?
+
     case factory
     when :budget_investment then fill_budget_investment
     when :dashboard_action then fill_dashboard_action
@@ -306,5 +385,17 @@ describe "Nested documentable" do
 
   def management_section?
     path.starts_with?("/management/")
+  end
+
+  def edit_path?
+    path.ends_with?("/edit")
+  end
+
+  def expect_document_has_title(index, title)
+    document = all(".document-fields")[index]
+
+    within document do
+      expect(find("input[name$='[title]']").value).to eq title
+    end
   end
 end
