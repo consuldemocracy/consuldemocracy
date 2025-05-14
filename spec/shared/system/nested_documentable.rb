@@ -201,8 +201,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       expect(page).to have_content documentable_success_notice
     end
 
-    scenario "Should show new document after successful creation with one uploaded file",
-             unless: documentable_factory_name == "dashboard_action" do
+    scenario "Should show new document after successful creation with one uploaded file" do
       do_login_for user_to_login, management: management
       visit send(path, arguments)
       send(fill_resource_method_name) if fill_resource_method_name
@@ -223,7 +222,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
     end
 
     scenario "Should show resource with new document after successful creation with
-              maximum allowed uploaded files", unless: documentable_factory_name == "dashboard_action" do
+              maximum allowed uploaded files" do
       do_login_for user_to_login, management: management
       visit send(path, arguments)
 

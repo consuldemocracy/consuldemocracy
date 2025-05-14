@@ -35,11 +35,6 @@ module Documents
     check :proposal_terms_of_service
   end
 
-  def documentable_fill_new_valid_dashboard_action
-    fill_in :dashboard_action_title, with: "Dashboard title"
-    fill_in_ckeditor "Description", with: "Dashboard description"
-  end
-
   def documentable_fill_new_valid_budget_investment
     fill_in_new_investment_title with: "Budget investment title"
     fill_in_ckeditor "Description", with: "Budget investment description"
