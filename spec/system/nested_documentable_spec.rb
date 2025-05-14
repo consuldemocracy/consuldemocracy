@@ -11,7 +11,11 @@ describe "Nested documentable" do
   let!(:user) { create(:user, :level_two) }
   let(:path) do
     case factory
-    when :budget_investment then new_budget_investment_path(budget_id: documentable.budget_id)
+    when :budget_investment
+      [
+        new_budget_investment_path(budget_id: documentable.budget_id),
+        new_management_budget_investment_path(budget_id: documentable.budget_id)
+      ].sample
     when :dashboard_action then new_admin_dashboard_action_path
     end
   end
@@ -32,7 +36,7 @@ describe "Nested documentable" do
     describe "When allow attached documents setting is enabled" do
       before do
         create(:administrator, user: user) if admin_section?
-        login_as user
+        do_login_for(user, management: management_section?)
         visit path
       end
 
@@ -207,7 +211,7 @@ describe "Nested documentable" do
     describe "When allow attached documents setting is disabled" do
       before do
         Setting["feature.allow_attached_documents"] = false
-        login_as user
+        do_login_for(user, management: management_section?)
         visit path
       end
 
@@ -237,5 +241,9 @@ describe "Nested documentable" do
 
   def admin_section?
     path.starts_with?("/admin/")
+  end
+
+  def management_section?
+    path.starts_with?("/management/")
   end
 end
