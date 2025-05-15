@@ -96,7 +96,7 @@ describe "Nested imageable" do
     end
 
     scenario "Should not update image cached_attachment field after invalid file upload" do
-      imageable_attach_new_file(file_fixture("logo_header.png"), false)
+      imageable_attach_new_file(file_fixture("logo_header.png"), success: false)
 
       cached_attachment_field = find("input[name$='[cached_attachment]']", visible: :hidden)
 

@@ -2,14 +2,13 @@ Dir["./spec/support/common_actions/*.rb"].each { |f| require f }
 Dir["./spec/support/common_actions/custom/*.rb"].each { |f| require f }
 
 module CommonActions
+  include Attachables
   include Budgets
   include Comments
   include Cookies
   include Debates
-  include Documents
   include Emails
   include GraphQLAPI
-  include Images
   include Maps
   include Notifications
   include Polls

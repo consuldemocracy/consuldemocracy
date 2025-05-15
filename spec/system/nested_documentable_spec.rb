@@ -162,7 +162,7 @@ describe "Nested documentable" do
         do_login_for(user, management: management_section?)
         visit path
 
-        documentable_attach_new_file(file_fixture("logo_header.gif"), false)
+        documentable_attach_new_file(file_fixture("logo_header.gif"), success: false)
 
         expect(page).to have_css ".loading-bar.errors"
       end
@@ -186,7 +186,7 @@ describe "Nested documentable" do
         do_login_for(user, management: management_section?)
         visit path
 
-        documentable_attach_new_file(file_fixture("logo_header.gif"), false)
+        documentable_attach_new_file(file_fixture("logo_header.gif"), success: false)
 
         cached_attachment_field = find("input[name$='[cached_attachment]']", visible: :hidden)
         expect(cached_attachment_field.value).to be_empty
