@@ -28,4 +28,27 @@ module Attachables
       end
     end
   end
+
+  def admin_section?(path)
+    path.starts_with?("/admin/")
+  end
+
+  def management_section?(path)
+    path.starts_with?("/management/")
+  end
+
+  def edit_path?(path)
+    path.ends_with?("/edit")
+  end
+
+  def fill_in_required_fields(factory, path)
+    return if edit_path?(path)
+
+    case factory
+    when :budget then fill_in_budget
+    when :budget_investment then fill_in_budget_investment
+    when :dashboard_action then fill_in_dashboard_action
+    when :proposal then fill_in_proposal
+    end
+  end
 end

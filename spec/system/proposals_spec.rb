@@ -559,7 +559,7 @@ describe "Proposals" do
 
     scenario "Default whole city" do
       create(:geozone)
-      author = create(:user)
+      author = create(:user, :level_two)
       login_as(author)
 
       visit new_proposal_path
