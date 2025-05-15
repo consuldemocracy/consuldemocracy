@@ -29,7 +29,7 @@ describe "Nested imageable" do
     when :budget_investment then "Create Investment"
     when :future_poll_question_option then "Save image"
     when :proposal
-      if edit_path?
+      if edit_path?(path)
         "Save changes"
       else
         "Create proposal"
@@ -42,7 +42,7 @@ describe "Nested imageable" do
     when :budget_investment then "Budget Investment created successfully."
     when :future_poll_question_option then "Image uploaded successfully"
     when :proposal
-      if edit_path?
+      if edit_path?(path)
         "Proposal updated successfully"
       else
         "Proposal created successfully"
@@ -52,9 +52,9 @@ describe "Nested imageable" do
 
   context "New and edit path" do
     before do
-      create(:administrator, user: user) if admin_section?
-      imageable.update!(author: user) if edit_path?
-      do_login_for(user, management: management_section?)
+      create(:administrator, user: user) if admin_section?(path)
+      imageable.update!(author: user) if edit_path?(path)
+      do_login_for(user, management: management_section?(path))
       visit path
     end
 
@@ -136,7 +136,7 @@ describe "Nested imageable" do
       let(:factory) { (factories - [:future_poll_question_option]).sample }
 
       scenario "Should show successful notice when resource filled correctly without any nested images" do
-        fill_in_required_fields
+        fill_in_required_fields(factory, path)
 
         click_button submit_button_text
 
@@ -145,7 +145,7 @@ describe "Nested imageable" do
     end
 
     scenario "Should show successful notice when resource filled correctly and after valid file uploads" do
-      fill_in_required_fields
+      fill_in_required_fields(factory, path)
 
       imageable_attach_new_file(file_fixture("clippy.jpg"))
 
@@ -155,7 +155,7 @@ describe "Nested imageable" do
     end
 
     scenario "Should show new image after successful creation with one uploaded file" do
-      fill_in_required_fields
+      fill_in_required_fields(factory, path)
 
       imageable_attach_new_file(file_fixture("clippy.jpg"))
 
@@ -204,43 +204,5 @@ describe "Nested imageable" do
 
       expect(page).to have_css ".image-fields", count: 1, visible: :all
     end
-  end
-
-  def fill_in_required_fields
-    return if edit_path?
-
-    case factory
-    when :budget then fill_budget
-    when :budget_investment then fill_budget_investment
-    when :proposal then fill_proposal
-    end
-  end
-
-  def fill_proposal
-    fill_in_new_proposal_title with: "Proposal title"
-    fill_in "Proposal summary", with: "Proposal summary"
-    check :proposal_terms_of_service
-  end
-
-  def fill_budget
-    fill_in "Name", with: "Budget name"
-  end
-
-  def fill_budget_investment
-    fill_in_new_investment_title with: "Budget investment title"
-    fill_in_ckeditor "Description", with: "Budget investment description"
-    check :budget_investment_terms_of_service
-  end
-
-  def admin_section?
-    path.starts_with?("/admin/")
-  end
-
-  def management_section?
-    path.starts_with?("/management/")
-  end
-
-  def edit_path?
-    path.ends_with?("/edit")
   end
 end
