@@ -102,8 +102,7 @@ describe "Nested documentable" do
 
         click_link "Add new document"
         within "#nested-documents" do
-          input = find("input[name$='[title]']")
-          fill_in input[:id], with: "My Title"
+          fill_in "Title", with: "My Title"
           attach_file "Choose document", file_fixture("empty.pdf")
 
           expect(page).to have_css ".loading-bar.complete"
