@@ -82,12 +82,7 @@ describe "Nested documentable" do
       end
 
       scenario "Should update nested document file name after choosing a file" do
-        click_link "Add new document"
-        within "#nested-documents" do
-          attach_file "Choose document", file_fixture("empty.pdf")
-
-          expect(page).to have_css ".loading-bar.complete"
-        end
+        documentable_attach_new_file(file_fixture("empty.pdf"))
 
         expect(page).to have_css ".file-name", text: "empty.pdf"
       end
