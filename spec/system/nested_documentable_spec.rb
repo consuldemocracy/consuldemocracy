@@ -58,21 +58,15 @@ describe "Nested documentable" do
         documentable.update!(author: user) if edit_path?(path)
       end
 
-      scenario "Should show new document link when max documents allowed limit is not reached" do
+      scenario "Shows or hides new document link depending on max documents limit" do
         do_login_for(user, management: management_section?(path))
         visit path
 
         expect(page).to have_link "Add new document"
-      end
-
-      scenario "Should not show new document link when
-                documentable max documents allowed limit is reached" do
-        do_login_for(user, management: management_section?(path))
-        visit path
 
         click_link "Add new document"
 
-        expect(page).not_to have_css "#new_document_link"
+        expect(page).not_to have_link "Add new document"
       end
 
       scenario "Should not show max documents warning when no documents added" do
