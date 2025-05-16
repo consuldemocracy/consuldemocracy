@@ -53,6 +53,7 @@ describe "Nested documentable" do
   context "New and edit path" do
     describe "When allow attached documents setting is enabled" do
       before do
+        Setting["uploads.documents.max_amount"] = 1
         create(:administrator, user: user) if admin_section?(path)
         documentable.update!(author: user) if edit_path?(path)
       end
@@ -69,9 +70,7 @@ describe "Nested documentable" do
         do_login_for(user, management: management_section?(path))
         visit path
 
-        documentable.class.max_documents_allowed.times.each do
-          click_link "Add new document"
-        end
+        click_link "Add new document"
 
         expect(page).not_to have_css "#new_document_link"
       end
@@ -87,9 +86,7 @@ describe "Nested documentable" do
         do_login_for(user, management: management_section?(path))
         visit path
 
-        documentable.class.max_documents_allowed.times.each do
-          documentable_attach_new_file(file_fixture("empty.pdf"))
-        end
+        documentable_attach_new_file(file_fixture("empty.pdf"))
 
         expect(page).to have_css ".max-documents-notice"
         expect(page).to have_content "Remove document"
@@ -99,9 +96,7 @@ describe "Nested documentable" do
         do_login_for(user, management: management_section?(path))
         visit path
 
-        documentable.class.max_documents_allowed.times.each do
-          click_link "Add new document"
-        end
+        click_link "Add new document"
 
         all("a", text: "Cancel").last.click
 
@@ -259,13 +254,20 @@ describe "Nested documentable" do
 
         scenario "Should show resource with new document after successful creation with
                   maximum allowed uploaded files" do
+          Setting["uploads.documents.max_amount"] = 3
           do_login_for(user, management: management_section?(path))
           visit path
 
           fill_in_required_fields(factory, path)
 
-          %w[clippy empty logo].take(documentable.class.max_documents_allowed).each do |filename|
-            documentable_attach_new_file(file_fixture("#{filename}.pdf"))
+          %w[clippy empty logo].each do |filename|
+            click_link "Add new document"
+
+            attach_file "Choose document", file_fixture("#{filename}.pdf")
+
+            within all(".document-fields").last do
+              expect(page).to have_css ".loading-bar.complete"
+            end
           end
 
           expect(page).not_to have_link "Add new document"
@@ -273,7 +275,7 @@ describe "Nested documentable" do
           click_button submit_button_text
 
           expect(page).to have_content notice_text
-          expect(page).to have_content "Documents (#{documentable.class.max_documents_allowed})"
+          expect(page).to have_content "Documents (3)"
         end
       end
     end
