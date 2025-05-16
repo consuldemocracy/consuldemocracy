@@ -60,12 +60,9 @@ describe "Nested documentable" do
         visit path
       end
 
-      scenario "Should show new document link when max documents allowed limit is not reached" do
+      scenario "Shows or hides new document link depending on max documents limit" do
         expect(page).to have_link id: "new_document_link"
-      end
 
-      scenario "Should not show new document link when
-                documentable max documents allowed limit is reached" do
         click_link "Add new document"
 
         expect(page).not_to have_css "#new_document_link"
