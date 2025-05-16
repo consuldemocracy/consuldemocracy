@@ -218,13 +218,7 @@ describe "Nested documentable" do
 
         expect(page).not_to have_link "Add new document"
         expect(page).to have_css ".document-fields", count: 1
-      end
 
-      scenario "Should remove nested field after remove document" do
-        Setting["uploads.documents.max_amount"] = 1
-        create(:document, documentable: proposal)
-        login_as user
-        visit edit_proposal_path(proposal)
         click_link "Remove document"
 
         expect(page).to have_link "Add new document"
