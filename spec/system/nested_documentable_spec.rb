@@ -69,30 +69,18 @@ describe "Nested documentable" do
         expect(page).not_to have_link "Add new document"
       end
 
-      scenario "Should not show max documents warning when no documents added" do
+      scenario "Shows or hides max documents warning depending on max documents limit" do
         do_login_for(user, management: management_section?(path))
         visit path
 
         expect(page).not_to have_css ".max-documents-notice"
-      end
-
-      scenario "Should show max documents warning when max documents allowed limit is reached" do
-        do_login_for(user, management: management_section?(path))
-        visit path
+        expect(page).not_to have_content "Remove document"
 
         documentable_attach_new_file(file_fixture("empty.pdf"))
 
         expect(page).to have_css ".max-documents-notice"
-        expect(page).to have_content "Remove document"
-      end
 
-      scenario "Should hide max documents warning after any document removal" do
-        do_login_for(user, management: management_section?(path))
-        visit path
-
-        click_link "Add new document"
-
-        all("a", text: "Cancel").last.click
+        click_link "Remove document"
 
         expect(page).not_to have_css ".max-documents-notice"
       end
