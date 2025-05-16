@@ -1,23 +1,18 @@
 module Attachables
   def imageable_attach_new_file(path, success: true)
-    click_link "Add image"
-    within "#nested-image" do
-      attach_file "Choose image", path
-      within ".image-fields" do
-        if success
-          expect(page).to have_css(".loading-bar.complete")
-        else
-          expect(page).to have_css(".loading-bar.errors")
-        end
-      end
-    end
+    attach_new_file("Add image", "nested-image", "image", "Choose image", path, success)
   end
 
   def documentable_attach_new_file(path, success: true)
-    click_link "Add new document"
-    within "#nested-documents" do
-      attach_file "Choose document", path
-      within ".document-fields" do
+    attach_new_file("Add new document", "nested-documents", "document", "Choose document", path, success)
+  end
+
+  def attach_new_file(link_text, wrapper_id, field_class, input_label, path, success)
+    click_link link_text
+
+    within "##{wrapper_id}" do
+      attach_file input_label, path
+      within ".#{field_class}-fields" do
         if success
           expect(page).to have_css ".loading-bar.complete"
         else
