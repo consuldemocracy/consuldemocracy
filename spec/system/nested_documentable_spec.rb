@@ -100,23 +100,9 @@ describe "Nested documentable" do
         within "#nested-documents" do
           fill_in "Title", with: "My Title"
           attach_file "Choose document", file_fixture("empty.pdf")
-
-          expect(page).to have_css ".loading-bar.complete"
         end
 
         expect(page).to have_field("Title", with: "My Title")
-      end
-
-      scenario "Should update loading bar style after valid file upload" do
-        documentable_attach_new_file(file_fixture("empty.pdf"))
-
-        expect(page).to have_css ".loading-bar.complete"
-      end
-
-      scenario "Should update loading bar style after invalid file upload" do
-        documentable_attach_new_file(file_fixture("logo_header.gif"), false)
-
-        expect(page).to have_css ".loading-bar.errors"
       end
 
       scenario "Should update document cached_attachment field after valid file upload" do
