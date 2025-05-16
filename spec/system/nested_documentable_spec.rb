@@ -92,7 +92,7 @@ describe "Nested documentable" do
         documentable_attach_new_file(file_fixture("empty.pdf"))
 
         expect(page).to have_css ".file-name", text: "empty.pdf"
-        expect_document_has_title(0, "empty.pdf")
+        expect(page).to have_field("Title", with: "empty.pdf")
       end
 
       scenario "Should not update nested document file title with
@@ -109,7 +109,7 @@ describe "Nested documentable" do
           expect(page).to have_css ".loading-bar.complete"
         end
 
-        expect_document_has_title(0, "My Title")
+        expect(page).to have_field("Title", with: "My Title")
       end
 
       scenario "Should update loading bar style after valid file upload" do
@@ -319,14 +319,6 @@ describe "Nested documentable" do
 
         expect(page).not_to have_content("Add new document")
       end
-    end
-  end
-
-  def expect_document_has_title(index, title)
-    document = all(".document-fields")[index]
-
-    within document do
-      expect(find("input[name$='[title]']").value).to eq title
     end
   end
 end
