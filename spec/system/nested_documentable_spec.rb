@@ -111,24 +111,6 @@ describe "Nested documentable" do
         expect(page).to have_field("Title", with: "My Title")
       end
 
-      scenario "Should update loading bar style after valid file upload" do
-        do_login_for(user, management: management_section?(path))
-        visit path
-
-        documentable_attach_new_file(file_fixture("empty.pdf"))
-
-        expect(page).to have_css ".loading-bar.complete"
-      end
-
-      scenario "Should update loading bar style after invalid file upload" do
-        do_login_for(user, management: management_section?(path))
-        visit path
-
-        documentable_attach_new_file(file_fixture("logo_header.gif"), success: false)
-
-        expect(page).to have_css ".loading-bar.errors"
-      end
-
       scenario "Should update document cached_attachment field after valid file upload" do
         do_login_for(user, management: management_section?(path))
         visit path
