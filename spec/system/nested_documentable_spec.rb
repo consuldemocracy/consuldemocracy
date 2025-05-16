@@ -167,11 +167,7 @@ describe "Nested documentable" do
 
           expect(page).to have_content notice_text
           expect(page).to have_content "Documents"
-          expect(page).to have_content "empty.pdf"
-
-          # Review
-          # Doble check why the file is stored with a name different to empty.pdf
-          expect(page).to have_link href: /.pdf\Z/
+          expect(page).to have_css "a", text: "empty.pdf"
         end
 
         scenario "Should show resource with new document after successful creation with
