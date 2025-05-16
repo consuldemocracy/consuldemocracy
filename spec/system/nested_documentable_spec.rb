@@ -153,34 +153,11 @@ describe "Nested documentable" do
         documentable_attach_new_file(file_fixture("empty.pdf"))
         click_button submit_button_text
 
-        expect(page).to have_content notice_text
-      end
-
-      context "Budget investments and proposals" do
-        let(:factory) { (factories - [:dashboard_action]).sample }
-
-        scenario "Should show new document after successful creation with one uploaded file" do
-          fill_in_required_fields(factory, path)
-
-          documentable_attach_new_file(file_fixture("empty.pdf"))
-          click_button submit_button_text
-
-          expect(page).to have_content notice_text
-          expect(page).to have_content "Documents"
+        if factory != :dashboard_action
+          expect(page).to have_content "Documents (1)"
           expect(page).to have_css "a", text: "empty.pdf"
         end
-
-        scenario "Should show resource with new document after successful creation with
-                  maximum allowed uploaded files" do
-          fill_in_required_fields(factory, path)
-
-          documentable_attach_new_file(file_fixture("empty.pdf"))
-
-          click_button submit_button_text
-
-          expect(page).to have_content notice_text
-          expect(page).to have_content "Documents (1)"
-        end
+        expect(page).to have_content notice_text
       end
     end
 
