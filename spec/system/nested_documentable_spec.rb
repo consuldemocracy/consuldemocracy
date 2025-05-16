@@ -169,59 +169,33 @@ describe "Nested documentable" do
       end
 
       scenario "Should show successful notice when resource filled correctly and after valid file uploads" do
+        Setting["uploads.documents.max_amount"] = 3
         do_login_for(user, management: management_section?(path))
         visit path
 
         fill_in_required_fields(factory, path)
 
-        documentable_attach_new_file(file_fixture("empty.pdf"))
+        %w[clippy empty logo].each do |filename|
+          click_link "Add new document"
+
+          attach_file "Choose document", file_fixture("#{filename}.pdf")
+
+          within all(".document-fields").last do
+            expect(page).to have_css ".loading-bar.complete"
+          end
+        end
+
+        expect(page).not_to have_link "Add new document"
+
         click_button submit_button_text
 
         expect(page).to have_content notice_text
-      end
-
-      context "Budget investments and proposals" do
-        let(:factory) { (factories - [:dashboard_action]).sample }
-
-        scenario "Should show new document after successful creation with one uploaded file" do
-          do_login_for(user, management: management_section?(path))
-          visit path
-
-          fill_in_required_fields(factory, path)
-
-          documentable_attach_new_file(file_fixture("empty.pdf"))
-          click_button submit_button_text
-
-          expect(page).to have_content notice_text
-          expect(page).to have_content "Documents"
-          expect(page).to have_link text: "empty.pdf"
-          expect(page).to have_link href: /.pdf\Z/
-        end
-
-        scenario "Should show resource with new document after successful creation with
-                  maximum allowed uploaded files" do
-          Setting["uploads.documents.max_amount"] = 3
-          do_login_for(user, management: management_section?(path))
-          visit path
-
-          fill_in_required_fields(factory, path)
-
-          %w[clippy empty logo].each do |filename|
-            click_link "Add new document"
-
-            attach_file "Choose document", file_fixture("#{filename}.pdf")
-
-            within all(".document-fields").last do
-              expect(page).to have_css ".loading-bar.complete"
-            end
-          end
-
-          expect(page).not_to have_link "Add new document"
-
-          click_button submit_button_text
-
-          expect(page).to have_content notice_text
+        if factory != :dashboard_action
           expect(page).to have_content "Documents (3)"
+          expect(page).to have_link href: /.pdf\Z/, count: 3
+          expect(page).to have_link text: "clippy.pdf"
+          expect(page).to have_link text: "empty.pdf"
+          expect(page).to have_link text: "logo.pdf"
         end
       end
     end
