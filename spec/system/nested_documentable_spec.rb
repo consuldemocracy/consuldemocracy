@@ -64,9 +64,13 @@ describe "Nested documentable" do
 
         expect(page).to have_link "Add new document"
 
-        click_link "Add new document"
+        documentable_attach_new_file(file_fixture("empty.pdf"))
 
         expect(page).not_to have_link "Add new document"
+
+        click_link "Remove document"
+
+        expect(page).to have_link "Add new document"
       end
 
       scenario "Shows or hides max documents warning depending on max documents limit" do
@@ -152,7 +156,16 @@ describe "Nested documentable" do
         do_login_for(user, management: management_section?(path))
         visit path
 
-        documentable_attach_new_file(file_fixture("empty.pdf"))
+        click_link "Add new document"
+
+        expect(page).not_to have_link "Add new document"
+
+        within "#nested-documents" do
+          attach_file "Choose document", file_fixture("empty.pdf")
+          within ".document-fields" do
+            expect(page).to have_css ".loading-bar.complete"
+          end
+        end
         click_link "Remove document"
 
         expect(page).not_to have_css("#nested-documents .document-fields")
@@ -204,40 +217,23 @@ describe "Nested documentable" do
       let!(:proposal) { create(:proposal, author: user) }
 
       scenario "Should show persisted documents and remove nested_field" do
+        Setting["uploads.documents.max_amount"] = 1
         create(:document, documentable: proposal)
         login_as user
         visit edit_proposal_path(proposal)
 
+        expect(page).not_to have_link "Add new document"
         expect(page).to have_css ".document-fields", count: 1
       end
 
-      scenario "Should not show add document button when
-                documentable has reached maximum of documents allowed" do
-        create_list(:document, proposal.class.max_documents_allowed, documentable: proposal)
-        login_as user
-        visit edit_proposal_path(proposal)
-
-        expect(page).not_to have_css "#new_document_link"
-      end
-
-      scenario "Should show add document button after destroy one document" do
-        create_list(:document, proposal.class.max_documents_allowed, documentable: proposal)
-        login_as user
-        visit edit_proposal_path(proposal)
-        last_document = all("#nested-documents .document-fields").last
-        within last_document do
-          click_link "Remove document"
-        end
-
-        expect(page).to have_link "Add new document"
-      end
-
       scenario "Should remove nested field after remove document" do
+        Setting["uploads.documents.max_amount"] = 1
         create(:document, documentable: proposal)
         login_as user
         visit edit_proposal_path(proposal)
         click_link "Remove document"
 
+        expect(page).to have_link "Add new document"
         expect(page).not_to have_css ".document-fields"
       end
 
