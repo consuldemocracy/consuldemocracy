@@ -85,27 +85,13 @@ describe "Nested documentable" do
         expect(page).not_to have_css ".max-documents-notice"
       end
 
-      scenario "Should update nested document file name after choosing a file" do
-        do_login_for(user, management: management_section?(path))
-        visit path
-
-        click_link "Add new document"
-        within "#nested-documents" do
-          attach_file "Choose document", file_fixture("empty.pdf")
-
-          expect(page).to have_css ".loading-bar.complete"
-        end
-
-        expect(page).to have_css ".file-name", text: "empty.pdf"
-      end
-
-      scenario "Should update nested document file title with
-                file name after choosing a file when no title defined" do
+      scenario "Should update file name and title after choosing a file with no title defined" do
         do_login_for(user, management: management_section?(path))
         visit path
 
         documentable_attach_new_file(file_fixture("empty.pdf"))
 
+        expect(page).to have_css ".file-name", text: "empty.pdf"
         expect_document_has_title(0, "empty.pdf")
       end
 

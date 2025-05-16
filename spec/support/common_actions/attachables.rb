@@ -15,13 +15,14 @@ module Attachables
 
   def documentable_attach_new_file(path, success: true)
     click_link "Add new document"
-    attach_file "Choose document", path
-
-    within ".document-fields" do
-      if success
-        expect(page).to have_css ".loading-bar.complete"
-      else
-        expect(page).to have_css ".loading-bar.errors"
+    within "#nested-documents" do
+      attach_file "Choose document", path
+      within ".document-fields" do
+        if success
+          expect(page).to have_css ".loading-bar.complete"
+        else
+          expect(page).to have_css ".loading-bar.errors"
+        end
       end
     end
   end
