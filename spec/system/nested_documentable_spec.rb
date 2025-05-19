@@ -198,11 +198,17 @@ describe "Nested documentable" do
 
         expect(page).to have_content notice_text
         if factory != :dashboard_action
-          expect(page).to have_content "Documents (3)"
-          expect(page).to have_link href: /.pdf\Z/, count: 3
-          expect(page).to have_link text: "clippy.pdf"
-          expect(page).to have_link text: "empty.pdf"
-          expect(page).to have_link text: "logo.pdf"
+          within "#documents" do
+            expect(page).to have_content "Documents (3)"
+            expect(page).to have_link href: /.pdf\Z/, count: 3
+            expect(page).to have_link text: "empty.pdf"
+            expect(page).to have_css "a[rel=nofollow]"
+            expect(page).to have_link text: "clippy.pdf"
+            expect(page).to have_css "a[rel=nofollow]"
+            expect(page).to have_link text: "logo.pdf"
+            expect(page).to have_css "a[rel=nofollow]"
+            expect(page).not_to have_css "a[target=_blank]"
+          end
         end
       end
 
