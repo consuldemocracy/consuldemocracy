@@ -158,8 +158,11 @@ describe "Nested documentable" do
         click_button submit_button_text
 
         if factory != :dashboard_action
-          expect(page).to have_content "Documents (1)"
-          expect(page).to have_css "a", text: "empty.pdf"
+          within "#documents" do
+            expect(page).to have_content "Documents (1)"
+            expect(page).to have_css "a[rel=nofollow]", text: "empty.pdf"
+            expect(page).not_to have_css "a[target=_blank]"
+          end
         end
         expect(page).to have_content notice_text
       end
