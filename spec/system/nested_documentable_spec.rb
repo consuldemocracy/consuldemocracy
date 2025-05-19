@@ -291,6 +291,18 @@ describe "Nested documentable" do
 
         expect(page).not_to have_content("Add new document")
       end
+
+      scenario "Documents list should not be available" do
+        create(:administrator, user: user) if admin_section?(path)
+        create(:document, documentable: documentable)
+        documentable.update!(author: user) if edit_path?(path)
+        do_login_for(user, management: management_section?(path))
+        visit path
+
+        click_button submit_button_text
+
+        expect(page).not_to have_css("#documents")
+      end
     end
   end
 end
