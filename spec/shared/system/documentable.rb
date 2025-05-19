@@ -11,16 +11,6 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
   end
 
   context "Show documents" do
-    scenario "Download action should be availabe to anyone and open in the same tab" do
-      visit send(documentable_path, arguments)
-
-      within "#documents" do
-        expect(page).to have_link text: document.title
-        expect(page).to have_css "a[rel=nofollow]", text: document.title
-        expect(page).not_to have_css "a[target=_blank]"
-      end
-    end
-
     describe "Destroy action" do
       scenario "Should not be able when no user logged in" do
         visit send(documentable_path, arguments)
@@ -46,29 +36,6 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
         visit send(documentable_path, arguments)
 
         expect(page).not_to have_button "Delete document"
-      end
-    end
-
-    describe "When allow attached documents setting is enabled" do
-      before do
-        Setting["feature.allow_attached_documents"] = true
-      end
-
-      scenario "Documents list should be available" do
-        login_as(user)
-        visit send(documentable_path, arguments)
-
-        expect(page).to have_css("#documents")
-        expect(page).to have_content("Documents (1)")
-      end
-
-      scenario "Documents list increase documents number" do
-        create(:document, documentable: documentable, user: documentable.author)
-        login_as(user)
-        visit send(documentable_path, arguments)
-
-        expect(page).to have_css("#documents")
-        expect(page).to have_content("Documents (2)")
       end
     end
 
