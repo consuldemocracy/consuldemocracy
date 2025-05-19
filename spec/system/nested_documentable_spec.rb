@@ -244,4 +244,67 @@ describe "Nested documentable" do
       end
     end
   end
+
+  context "Show path" do
+    let(:factory) { (factories - [:dashboard_action]).sample }
+    let(:path) do
+      case factory
+      when :budget_investment
+        budget_investment_path(budget_id: documentable.budget_id, id: documentable.id)
+      when :proposal
+        proposal_path(id: documentable.id)
+      end
+    end
+
+    context "Show documents" do
+      describe "Destroy action" do
+        scenario "Should not be able when no user logged in" do
+          visit path
+
+          expect(page).not_to have_button "Delete document"
+        end
+
+        scenario "Should be able when documentable author is logged in" do
+          create(:document, documentable: documentable)
+          documentable.update!(author: user)
+          do_login_for(user, management: management_section?(path))
+
+          visit path
+
+          expect(page).to have_button "Delete document"
+        end
+
+        scenario "Administrators cannot destroy documentables they have not authored", :admin do
+          visit path
+
+          expect(page).not_to have_button "Delete document"
+        end
+
+        scenario "Users cannot destroy documentables they have not authored" do
+          do_login_for(user, management: management_section?(path))
+          visit path
+
+          expect(page).not_to have_button "Delete document"
+        end
+      end
+    end
+
+    context "Destroy" do
+      scenario "Should show success notice after successful document upload" do
+        create(:document, documentable: documentable)
+        documentable.update!(author: user)
+        do_login_for(user, management: management_section?(path))
+        visit path
+
+        accept_confirm { click_button "Delete document" }
+
+        expect(page).to have_content "Document was deleted successfully."
+        expect(page).not_to have_content "Documents (0)"
+
+        within "##{ActionView::RecordIdentifier.dom_id(documentable)}" do
+          expect(page).to have_css "h1", text: documentable.title
+        end
+      end
+    end
+  end
 end
