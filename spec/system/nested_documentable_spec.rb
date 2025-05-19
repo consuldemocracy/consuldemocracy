@@ -305,4 +305,27 @@ describe "Nested documentable" do
       end
     end
   end
+
+  context "Show path" do
+    let(:factory) { (factories - [:dashboard_action]).sample }
+    let(:path) { polymorphic_path(documentable) }
+
+    context "Destroy" do
+      scenario "Should show success notice after successful document upload" do
+        create(:document, documentable: documentable)
+        documentable.update!(author: user)
+        login_as(user)
+        visit path
+
+        accept_confirm { click_button "Delete document" }
+
+        expect(page).to have_content "Document was deleted successfully."
+        expect(page).not_to have_content "Documents (0)"
+
+        within "##{ActionView::RecordIdentifier.dom_id(documentable)}" do
+          expect(page).to have_css "h1", text: documentable.title
+        end
+      end
+    end
+  end
 end
