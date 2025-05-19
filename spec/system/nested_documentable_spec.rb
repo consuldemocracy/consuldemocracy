@@ -205,6 +205,30 @@ describe "Nested documentable" do
           expect(page).to have_link text: "logo.pdf"
         end
       end
+
+      describe "Metadata" do
+        let(:factory) { (factories - [:dashboard_action]).sample }
+
+        scenario "download document without metadata" do
+          do_login_for(user, management: management_section?(path))
+          visit path
+
+          fill_in_required_fields(factory, path)
+          documentable_attach_new_file(file_fixture("logo_with_metadata.pdf"))
+          click_button submit_button_text
+
+          expect(page).to have_content notice_text
+
+          io = URI.parse(find_link(text: "PDF")[:href]).open
+          reader = PDF::Reader.new(io)
+
+          expect(reader.info[:Keywords]).not_to eq "Test Metadata"
+          expect(reader.info[:Author]).not_to eq "Test Developer"
+          expect(reader.info[:Title]).not_to eq "logo_with_metadata.pdf"
+          expect(reader.info[:Producer]).not_to eq "Test Producer"
+          expect(reader.info).to eq({})
+        end
+      end
     end
 
     describe "Only for edit path" do
