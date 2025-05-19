@@ -228,12 +228,19 @@ describe "Nested documentable" do
     describe "When allow attached documents setting is disabled" do
       before do
         Setting["feature.allow_attached_documents"] = false
+        create(:administrator, user: user) if admin_section?(path)
+        create(:document, documentable: documentable)
+        documentable.update!(author: user) if edit_path?(path)
         do_login_for(user, management: management_section?(path))
         visit path
       end
 
-      scenario "Add new document button should not be available" do
+      scenario "Add new document button and documents list should not be available" do
         expect(page).not_to have_content("Add new document")
+
+        click_button submit_button_text
+
+        expect(page).not_to have_css("#documents")
       end
     end
   end
