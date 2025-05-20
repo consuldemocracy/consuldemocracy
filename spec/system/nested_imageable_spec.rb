@@ -165,4 +165,24 @@ describe "Nested imageable" do
       expect(page).to have_css ".image-fields", count: 1, visible: :all
     end
   end
+
+  context "Show path" do
+    let(:factory) { (factories - [:proposal, :budget, :future_poll_question_option]).sample }
+    let(:path) do
+      case factory
+      when :budget_investment
+        budget_investment_path(budget_id: imageable.budget_id, id: imageable.id)
+      when :proposal
+        proposal_path(id: imageable.id)
+      end
+    end
+    let!(:image) { create(:image, imageable: imageable) }
+
+    scenario "Show descriptive image and image title when exists" do
+      visit path
+
+      expect(page).to have_css("img[alt='#{image.title}'][title='#{image.title}']")
+      expect(page).to have_content image.title
+    end
+  end
 end
