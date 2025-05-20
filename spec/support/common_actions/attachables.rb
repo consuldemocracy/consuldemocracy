@@ -44,4 +44,48 @@ module Attachables
     when :proposal then fill_in_proposal
     end
   end
+
+  def attachable_path_for(factory, attachable)
+    case factory
+    when :budget then new_admin_budgets_wizard_budget_path
+    when :budget_investment
+      [
+        new_budget_investment_path(budget_id: attachable.budget_id),
+        new_management_budget_investment_path(budget_id: attachable.budget_id)
+      ].sample
+    when :dashboard_action then new_admin_dashboard_action_path
+    when :future_poll_question_option then new_admin_option_image_path(option_id: attachable.id)
+    when :proposal then [new_proposal_path, edit_proposal_path(attachable)].sample
+    end
+  end
+
+  def submit_button_text_for(factory, path)
+    case factory
+    when :budget then "Continue to groups"
+    when :budget_investment then "Create Investment"
+    when :dashboard_action then "Save"
+    when :future_poll_question_option then "Save image"
+    when :proposal
+      if edit_path?(path)
+        "Save changes"
+      else
+        "Create proposal"
+      end
+    end
+  end
+
+  def notice_text_for(factory, path)
+    case factory
+    when :budget then "New participatory budget created successfully!"
+    when :budget_investment then "Budget Investment created successfully."
+    when :dashboard_action then "Action created successfully"
+    when :future_poll_question_option then "Image uploaded successfully"
+    when :proposal
+      if edit_path?(path)
+        "Proposal updated successfully"
+      else
+        "Proposal created successfully"
+      end
+    end
+  end
 end

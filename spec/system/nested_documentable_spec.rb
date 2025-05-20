@@ -10,45 +10,9 @@ describe "Nested documentable" do
   let(:factory) { factories.sample }
   let!(:documentable) { create(factory) }
   let!(:user) { create(:user, :level_two) }
-  let(:path) do
-    case factory
-    when :budget_investment
-      [
-        new_budget_investment_path(budget_id: documentable.budget_id),
-        new_management_budget_investment_path(budget_id: documentable.budget_id)
-      ].sample
-    when :dashboard_action then new_admin_dashboard_action_path
-    when :proposal
-      [
-        new_proposal_path,
-        edit_proposal_path(id: documentable.id)
-      ].sample
-    end
-  end
-  let(:submit_button_text) do
-    case factory
-    when :budget_investment then "Create Investment"
-    when :dashboard_action then "Save"
-    when :proposal
-      if edit_path?(path)
-        "Save changes"
-      else
-        "Create proposal"
-      end
-    end
-  end
-  let(:notice_text) do
-    case factory
-    when :budget_investment then "Budget Investment created successfully."
-    when :dashboard_action then "Action created successfully"
-    when :proposal
-      if edit_path?(path)
-        "Proposal updated successfully"
-      else
-        "Proposal created successfully"
-      end
-    end
-  end
+  let(:path) { attachable_path_for(factory, documentable) }
+  let(:submit_button_text) { submit_button_text_for(factory, path) }
+  let(:notice_text) { notice_text_for(factory, path) }
 
   context "New and edit path" do
     describe "When allow attached documents setting is enabled" do
