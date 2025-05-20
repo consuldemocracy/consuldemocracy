@@ -11,44 +11,9 @@ describe "Nested imageable" do
   let(:factory) { factories.sample }
   let!(:imageable) { create(factory) }
   let!(:user) { create(:user, :level_two) }
-  let(:path) do
-    case factory
-    when :budget then new_admin_budgets_wizard_budget_path
-    when :budget_investment
-      [
-        new_budget_investment_path(budget_id: imageable.budget_id),
-        new_management_budget_investment_path(budget_id: imageable.budget_id)
-      ].sample
-    when :future_poll_question_option then new_admin_option_image_path(option_id: imageable.id)
-    when :proposal then [new_proposal_path, edit_proposal_path(imageable)].sample
-    end
-  end
-  let(:submit_button_text) do
-    case factory
-    when :budget then "Continue to groups"
-    when :budget_investment then "Create Investment"
-    when :future_poll_question_option then "Save image"
-    when :proposal
-      if edit_path?(path)
-        "Save changes"
-      else
-        "Create proposal"
-      end
-    end
-  end
-  let(:notice_text) do
-    case factory
-    when :budget then "New participatory budget created successfully!"
-    when :budget_investment then "Budget Investment created successfully."
-    when :future_poll_question_option then "Image uploaded successfully"
-    when :proposal
-      if edit_path?(path)
-        "Proposal updated successfully"
-      else
-        "Proposal created successfully"
-      end
-    end
-  end
+  let(:path) { attachable_path_for(factory, imageable) }
+  let(:submit_button_text) { submit_button_text_for(factory, path) }
+  let(:notice_text) { notice_text_for(factory, path) }
 
   context "New and edit path" do
     before do
