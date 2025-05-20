@@ -4,10 +4,11 @@ require "rails_helper"
 
 describe GraphqlController, type: :request do
   let(:proposal) { create(:proposal) }
+  let(:query_string) { "{ proposal(id: #{proposal.id}) { title } }" }
 
   describe "handles GET request" do
     specify "with query string inside query params" do
-      get "/graphql", params: { query: "{ proposal(id: #{proposal.id}) { title } }" }
+      get "/graphql", params: { query: query_string }
 
       expect(response).to have_http_status(:ok)
       expect(response.parsed_body["data"]["proposal"]["title"]).to eq(proposal.title)
@@ -33,7 +34,7 @@ describe GraphqlController, type: :request do
     let(:json_headers) { { "CONTENT_TYPE" => "application/json" } }
 
     specify "with json-encoded query string inside body" do
-      post "/graphql", params: { query: "{ proposal(id: #{proposal.id}) { title } }" }.to_json,
+      post "/graphql", params: { query: query_string }.to_json,
                        headers: json_headers
 
       expect(response).to have_http_status(:ok)
@@ -42,7 +43,7 @@ describe GraphqlController, type: :request do
 
     specify "with raw query string inside body" do
       graphql_headers = { "CONTENT_TYPE" => "application/graphql" }
-      post "/graphql", params: "{ proposal(id: #{proposal.id}) { title } }",
+      post "/graphql", params: query_string,
                        headers: graphql_headers
 
       expect(response).to have_http_status(:ok)
@@ -66,8 +67,6 @@ describe GraphqlController, type: :request do
   end
 
   describe "correctly parses query variables" do
-    let(:query_string) { "{ proposal(id: #{proposal.id}) { title } }" }
-
     specify "when absent" do
       get "/graphql", params: { query: query_string }
 
@@ -91,8 +90,13 @@ describe GraphqlController, type: :request do
     before { Setting["feature.graphql_api"] = false }
 
     it "is disabled" do
-      expect { get "/graphql" }.to raise_exception(FeatureFlags::FeatureDisabled)
-      expect { post "/graphql" }.to raise_exception(FeatureFlags::FeatureDisabled)
+      get "/graphql", params: { query: query_string }
+
+      expect(response).to have_http_status(:forbidden)
+
+      post "/graphql", params: { query: query_string }
+
+      expect(response).to have_http_status(:forbidden)
     end
   end
 end
