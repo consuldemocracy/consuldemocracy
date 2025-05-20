@@ -170,4 +170,17 @@ describe "Nested imageable" do
       expect(page).to have_css ".image-fields", count: 1, visible: :all
     end
   end
+
+  context "Show path" do
+    let(:factory) { :budget_investment }
+    let(:path) { polymorphic_path(imageable) }
+    let!(:image) { create(:image, imageable: imageable) }
+
+    scenario "Show descriptive image and image title when an image exists" do
+      visit path
+
+      expect(page).to have_css("img[alt='#{image.title}'][title='#{image.title}']")
+      expect(page).to have_content image.title
+    end
+  end
 end

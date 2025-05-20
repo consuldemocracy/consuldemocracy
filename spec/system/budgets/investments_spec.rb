@@ -1105,11 +1105,6 @@ describe "Budget Investments" do
                   "budget_investment_path",
                   { budget_id: "budget_id", id: "id" }
 
-  it_behaves_like "imageable",
-                  "budget_investment",
-                  "budget_investment_path",
-                  { budget_id: "budget_id", id: "id" }
-
   it_behaves_like "mappable",
                   "budget_investment",
                   "investment",
