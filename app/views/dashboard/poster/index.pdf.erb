@@ -18,7 +18,7 @@
     <p class="intro">
       <%= sanitize(t("dashboard.poster.index.intro_text", org: Setting["org_name"])) %>
     </p>
-    <p class="text-center proposal-code">
+    <p class="proposal-code">
       <strong><%= t("dashboard.poster.index.proposal_code", code: proposal.code) %></strong>
     </p>
     <div class="proposal-image">
@@ -29,7 +29,7 @@
       <% end %>
     </div>
     <div class="poster-content">
-      <h2 class="text-center"><strong><%= t("dashboard.poster.index.support") %></strong></h2>
+      <h2><strong><%= t("dashboard.poster.index.support") %></strong></h2>
       <%= wicked_pdf_image_tag "quote_before_blue.png", alt: "" %>
       <h3><strong><%= proposal.title %></strong></h3>
       <%= wicked_pdf_image_tag "quote_after_blue.png", alt: "" %>
