@@ -1,0 +1,49 @@
+service: consul-democracy
+servers:
+  web:
+    hosts:
+      - 192.168.0.1 # Replace with your actual server IP
+    labels:
+      traefik.http.routers.consul.rule: Host(`consul.example.com`) # Replace with your domain
+    env:
+      clear:
+        RAILS_ENV: production
+        RAILS_SERVE_STATIC_FILES: true
+        RAILS_LOG_TO_STDOUT: true
+      secret:
+        - RAILS_MASTER_KEY
+        - SECRET_KEY_BASE
+        - DATABASE_URL
+        - REDIS_URL
+
+registry:
+  server: registry.digitalocean.com # Replace with your registry
+  username: # Add your registry username
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+healthcheck:
+  path: /health
+  port: 3000
+  max_attempts: 10
+  interval: 5s
+
+accessories:
+  db:
+    image: postgres:15
+    host: 192.168.0.1 # Replace with your database server IP
+    port: 5432
+    env:
+      clear:
+        POSTGRES_DB: consul_production
+      secret:
+        - POSTGRES_PASSWORD
+    volumes:
+      - /var/lib/postgresql/data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7
+    host: 192.168.0.1 # Replace with your Redis server IP
+    port: 6379
+    volumes:
+      - /var/lib/redis/data:/data 
