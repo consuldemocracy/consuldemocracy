@@ -85,6 +85,8 @@ module Abilities
         can [:create, :destroy], ActsAsVotable::Vote, voter_id: user.id, votable_type: "Comment"
       end
 
+      can [:budget_headings, :select, :select_headings], Budget
+
       if user.level_two_or_three_verified?
         can :vote, Proposal, &:published?
 
