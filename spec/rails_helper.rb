@@ -97,3 +97,21 @@ def with_subdomain(subdomain, &block)
     Capybara.app_host = app_host
   end
 end
+
+def wait_for_ajax
+  Timeout.timeout(Capybara.default_max_wait_time) do
+    loop until finished_all_ajax_requests?
+  end
+end
+
+def finished_all_ajax_requests?
+  page.evaluate_script('typeof jQuery !== "undefined" && jQuery.active') == 0
+end
+
+RSpec.configure do |config|
+  config.after(:each, type: :system) do
+    if defined?(page) && page.evaluate_script('typeof jQuery !== "undefined"')
+      wait_for_ajax
+    end
+  end
+end
