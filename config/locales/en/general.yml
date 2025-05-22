@@ -761,6 +761,7 @@ en:
         one: "1 language in use"
         other: "%{count} languages in use"
     optional: "Optional fields"
+    optional_note: "Please add additional information below"
     required: "Required fields"
     comments:
       one: "1 comment"
