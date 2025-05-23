@@ -485,7 +485,7 @@ GEM
     puma (5.6.9)
       nio4r (~> 2.0)
     racc (1.8.1)
-    rack (2.2.14)
+    rack (2.2.15)
     rack-accept (0.4.5)
       rack (>= 0.4)
     rack-protection (3.2.0)
@@ -661,8 +661,9 @@ GEM
     social-share-button (1.2.4)
       coffee-rails
     spring (4.2.1)
-    sprockets (4.2.1)
+    sprockets (4.2.2)
       concurrent-ruby (~> 1.0)
+      logger
       rack (>= 2.2.4, < 4)
     sprockets-rails (3.5.2)
       actionpack (>= 6.1)
@@ -826,7 +827,7 @@ DEPENDENCIES
   sitemap_generator (~> 6.3.0)
   social-share-button (~> 1.2.4)
   spring (~> 4.2.1)
-  sprockets (~> 4.2.1)
+  sprockets (~> 4.2.2)
   sprockets-rails (~> 3.5.2)
   turbolinks (~> 5.2.1)
   turnout (~> 2.5.0)
