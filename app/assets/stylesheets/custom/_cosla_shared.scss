@@ -250,5 +250,48 @@ padding-bottom: 5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
+
+.map {
+  --map-height: 650px;
+  --marker-size: 30px;
+  --marker-color: #00cae9;
+  --marker-inner-size: 14px;
+  --marker-inner-color: #fff;
+
+  position: relative;
+  width: 100%;
+  height: var(--map-height);
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+   .map-marker {
+    left: 50%;
+    margin-top: -5px;
+    position: absolute;
+    top: 50%;
+    visibility: visible;
+
+    .map-icon {
+      background: #00cae9;
+      border-radius: 50% 50% 50% 0;
+      height: 30px;
+      transform: rotate(-45deg);
+      width: 30px;
+    }
+
+    .map-icon::after {
+      background: #fff;
+      border-radius: 50%;
+      content: "";
+      height: 14px;
+      margin: 8px 0 0 8px;
+      position: absolute;
+      width: 14px;
+    }
+  }
+}
+
   
 }
