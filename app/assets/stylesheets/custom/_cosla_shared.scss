@@ -250,5 +250,51 @@ padding-bottom: 5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
+
+.map {
+  --map-height: 650px;
+  --marker-size: 30px;
+  --marker-color: #00cae9;
+  --marker-inner-size: 14px;
+  --marker-inner-color: #fff;
+
+  position: relative;
+  width: 100%;
+  height: var(--map-height);
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+  .map-marker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: visible;
+
+    .map-icon {
+      width: var(--marker-size);
+      height: var(--marker-size);
+      background-color: var(--marker-color);
+      border-radius: 50% 50% 50% 0;
+      transform: rotate(-45deg);
+      position: relative;
+
+      &::after {
+        content: "";
+        width: var(--marker-inner-size);
+        height: var(--marker-inner-size);
+        background-color: var(--marker-inner-color);
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
   
 }
