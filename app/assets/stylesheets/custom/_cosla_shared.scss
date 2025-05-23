@@ -266,35 +266,32 @@ padding-bottom: 5rem;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-
-  .map-marker {
+   .map-marker {
+    left: 50%;
+    margin-top: -5px;
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     visibility: visible;
 
     .map-icon {
-      width: var(--marker-size);
-      height: var(--marker-size);
-      background-color: var(--marker-color);
+      background: #00cae9;
       border-radius: 50% 50% 50% 0;
+      height: 30px;
       transform: rotate(-45deg);
-      position: relative;
+      width: 30px;
+    }
 
-      &::after {
-        content: "";
-        width: var(--marker-inner-size);
-        height: var(--marker-inner-size);
-        background-color: var(--marker-inner-color);
-        border-radius: 50%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
+    .map-icon::after {
+      background: #fff;
+      border-radius: 50%;
+      content: "";
+      height: 14px;
+      margin: 8px 0 0 8px;
+      position: absolute;
+      width: 14px;
     }
   }
 }
+
   
 }
