@@ -85,7 +85,7 @@ module Abilities
         can [:create, :destroy], ActsAsVotable::Vote, voter_id: user.id, votable_type: "Comment"
       end
 
-      can :create, Legislation::Answer if  user.organization.verified?
+      can :create, Legislation::Answer if  user.organization&.verified?
 
       if user.level_two_or_three_verified?
         can :vote, Proposal, &:published?
