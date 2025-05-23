@@ -1,42 +1,51 @@
+<%# Row for Title and Administrative Geozones (displayed horizontally) %>
 <div class="row">
-  <div class="small-12 medium-3 column margin-top">
+  <div class="small-12 column">
     <h1><%= t("map.title") %></h1>
 
-    <div class="row">
-      <div class="small-12 column">
-        <ul id="geozones" class="no-bullet">
-          <% @geozones.each do |geozone| %>
-            <li><%= link_to geozone.name, proposals_path(search: geozone.name) %></li>
-          <% end %>
-        </ul>
-      </div>
-
-    </div>
+    <%# Geozones list - will require CSS to display items on one line %>
+    <%# You might have a framework utility class for this, e.g., 'inline-list' or 'horizontal-menu' %>
+    <%# If not, you'll need CSS like:
+        #geozones { display: flex; flex-wrap: wrap; /* or nowrap if you prefer scrolling */ padding-left: 0; list-style: none; }
+        #geozones li { margin-right: 15px; /* Adjust spacing as needed */ }
+    %>
+    <ul id="geozones" class="no-bullet"> <%# Consider adding a class like 'horizontal-list' here %>
+      <% @geozones.each do |geozone| %>
+        <li><%= link_to geozone.name, proposals_path(search: geozone.name) %></li>
+      <% end %>
+    </ul>
   </div>
 </div>
 
+<%# Row for the Map - Full Width %>
 <div class="row">
-  <div class="small-12 medium-9 column">
+  <div class="small-12 column"> <%# Ensures the map container takes full available width %>
     <div class="budget-investments-map">
       <%= render Shared::MapLocationComponent.new(nil, geozones_data: geozones_data) %>
     </div>
   </div>
 </div>
 
+<%# Proposal Form Section - Full width below the map %>
 <div class="row">
   <div class="small-12 column">
     <h2><%= t("map.proposal_for_district") %></h2>
 
     <%= form_for(@proposal, url: new_proposal_path, method: :get) do |f| %>
-      <div class="small-12 medium-4">
-      <%= f.select :geozone_id, geozone_select_options,
-            label: t("proposals.form.geozone"),
-             hint: t("proposals.form.geozone_help"),
-            include_blank: t("geozones.none") %>
+      <div class="row">
+        <div class="small-12 medium-4 column">
+          <%= f.select :geozone_id, geozone_select_options,
+                        label: t("proposals.form.geozone"),
+                        hint: t("proposals.form.geozone_help"),
+                        include_blank: t("geozones.none") %>
+        </div>
+        <%# Other form fields could go in other columns within this row %>
       </div>
 
-      <div class="actions small-12">
-        <%= f.submit(class: "button radius", value: t("map.start_proposal")) %>
+      <div class="row">
+        <div class="actions small-12 column">
+          <%= f.submit(class: "button radius", value: t("map.start_proposal")) %>
+        </div>
       </div>
     <% end %>
   </div>
