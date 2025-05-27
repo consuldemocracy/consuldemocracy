@@ -35,6 +35,6 @@ Restart=on-failure
 <%="StandardOutput=append:#{fetch(:puma_access_log)}" if fetch(:puma_access_log) %>
 <%="StandardError=append:#{fetch(:puma_error_log)}" if fetch(:puma_error_log) %>
 
-SyslogIdentifier=<%= fetch(:puma_service_unit_name) %>
+SyslogIdentifier=puma
 [Install]
 WantedBy=<%=(fetch(:puma_systemctl_user) == :system) ? "multi-user.target" : "default.target"%>
