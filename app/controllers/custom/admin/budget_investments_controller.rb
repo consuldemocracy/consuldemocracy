@@ -1,3 +1,4 @@
+load Rails.root.join("app", "controllers", "admin", "budget_investments_controller.rb")
 class Admin::BudgetInvestmentsController < Admin::BaseController
   include FeatureFlags
   include CommentableActions
