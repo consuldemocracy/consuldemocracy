@@ -5,8 +5,7 @@
 <%= render "shared/globalize_locales", resource: @investment %>
 
 <div class="row">
-  <%= translatable_form_for @investment,
-                            url: admin_budget_budget_investment_path(@budget, @investment) do |f| %>
+  <%= translatable_form_for @investment, url: admin_budget_budget_investment_path(@budget, @investment) do |f| %>
 
     <%= render "shared/errors", resource: @investment %>
 
@@ -17,8 +16,7 @@
     <div class="row expanded">
       <%= f.translatable_fields do |translations_form| %>
         <div class="small-12 column">
-          <%= translations_form.text_field :title,
-                                           maxlength: Budget::Investment.title_max_length %>
+          <%= translations_form.text_field :title, maxlength: Budget::Investment.title_max_length %>
         </div>
 
         <div class="small-12 column">
@@ -35,25 +33,25 @@
       </div>
 
       <div class="small-12 column">
-        <div class="small-12 medium-6">
+        <div class="small-12 medium-6 column">
           <%= f.text_field :external_url %>
         </div>
-
-        <div class="small-12 medium-6">
-          <%= f.select :heading_id, budget_heading_select_options(@budget), include_blank: t("admin.budget_investments.edit.select_heading") %>
+        <div class="small-12 medium-6 column">
+          <%= f.select :heading_id,
+                       budget_heading_select_options(@budget),
+                       include_blank: t("admin.budget_investments.edit.select_heading") %>
         </div>
       </div>
     </div>
 
     <div class="row expanded margin-top">
-
       <div class="small-12 column">
         <h2 id="classification"><%= t("admin.budget_investments.edit.classification") %></h2>
 
-        <div class="small-12 medium-6">
-          <%= f.select(:administrator_id,
+        <div class="small-12 medium-6 column">
+          <%= f.select :administrator_id,
                        @admins.map { |a| [a.description_or_name_and_email, a.id] },
-                       { include_blank: t("admin.budget_investments.edit.undefined") }) %>
+                       include_blank: t("admin.budget_investments.edit.undefined") %>
         </div>
       </div>
 
@@ -72,10 +70,14 @@
       </div>
 
       <div class="small-12 column margin-top">
-        <%= f.label :valuator_ids %>
+        <%= f.label :valuator_group_ids %>
         <ul>
           <%= f.collection_check_boxes :valuator_group_ids, @valuator_groups, :id, :name do |group| %>
-            <li><%= group.label(title: group.object.name) { group.check_box + truncate(group.object.name, length: 60) } %></li>
+            <li>
+              <%= group.label(title: group.object.name) do %>
+                <%= group.check_box + truncate(group.object.name, length: 60) %>
+              <% end %>
+            </li>
           <% end %>
         </ul>
       </div>
@@ -85,33 +87,40 @@
         <%= f.label :valuator_ids, t("admin.budget_investments.edit.assigned_valuators") %>
         <ul>
           <%= f.collection_check_boxes :valuator_ids, @valuators, :id, :email do |b| %>
-            <li><%= b.label(title: valuator_label(b.object)) { b.check_box + truncate(b.object.description_or_email, length: 60) } %></li>
+            <li>
+              <%= b.label(title: valuator_label(b.object)) do %>
+                <%= b.check_box + truncate(b.object.description_or_email, length: 60) %>
+              <% end %>
+            </li>
           <% end %>
         </ul>
       </div>
     </div>
 
+    <!-- Compatibility & Selection -->
     <div class="row expanded margin-top">
-      <% if @investment.incompatible? || @investment.winner? %>
+      <% if @investment.incompatible? %>
         <div class="small-12 medium-3 column">
           <h2 id="incompatible"><%= t("admin.budget_investments.edit.compatibility") %></h2>
-          <%= f.check_box :incompatible,
-                          title: t("admin.budget_investments.edit.compatibility") %>
+          <%= f.check_box :incompatible, title: t("admin.budget_investments.edit.compatibility") %>
         </div>
       <% end %>
+
       <div class="small-12 medium-3 column float-left">
         <h2 id="selected"><%= t("admin.budget_investments.edit.selection") %></h2>
-        <%= f.check_box :selected,
-                        title: t("admin.budget_investments.edit.selection") %>
+        <%= f.check_box :selected, title: t("admin.budget_investments.edit.selection") %>
       </div>
-      <% if @investment.selected?  %>
+    </div>
+
+    <!-- Winner Section -->
+    <% if @investment.selected? %>
+      <div class="row expanded margin-top">
         <div class="small-12 medium-3 column">
           <h2 id="winner"><%= t("admin.budget_investments.edit.winner") %></h2>
-          <%= f.check_box :winner,
-                          title: t("admin.budget_investments.edit.winner") %>
+          <%= f.check_box :winner, title: t("admin.budget_investments.edit.winner") %>
         </div>
-       <% end %>
-    </div>
+      </div>
+    <% end %>
 
     <div class="small-12 column">
       <%= f.text_field :milestone_tag_list,
@@ -119,7 +128,8 @@
     </div>
 
     <div class="small-12 column margin-top">
-      <%= f.submit(class: "button", value: t("admin.budget_investments.edit.submit_button")) %>
+      <%= f.submit class: "button", value: t("admin.budget_investments.edit.submit_button") %>
     </div>
+
   <% end %>
 </div>
