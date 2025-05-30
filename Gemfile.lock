@@ -660,7 +660,7 @@ GEM
       version_gem (~> 1.1, >= 1.1.1)
     social-share-button (1.2.4)
       coffee-rails
-    spring (4.2.1)
+    spring (4.3.0)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -825,7 +825,7 @@ DEPENDENCIES
   simplecov-lcov (~> 0.8.0)
   sitemap_generator (~> 6.3.0)
   social-share-button (~> 1.2.4)
-  spring (~> 4.2.1)
+  spring (~> 4.3.0)
   sprockets (~> 4.2.1)
   sprockets-rails (~> 3.5.2)
   turbolinks (~> 5.2.1)
