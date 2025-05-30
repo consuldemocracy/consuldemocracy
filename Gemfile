@@ -58,7 +58,7 @@ gem "sprockets-rails", "~> 3.5.2", require: "sprockets/railtie"
 gem "turbolinks", "~> 5.2.1"
 gem "turnout", "~> 2.5.0"
 gem "uglifier", "~> 4.2.1"
-gem "uuidtools", "~> 2.2.0"
+gem "uuidtools", "~> 3.0.0"
 gem "view_component", "~> 3.23.1"
 gem "whenever", "~> 1.0.0", require: false
 gem "wicked_pdf", "~> 2.8.2"
