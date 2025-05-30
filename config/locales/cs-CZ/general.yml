@@ -972,3 +972,7 @@ cs:
     info_text: "Obsah generovaný umělou inteligencí / strojovým učením"
   cookies_consent:
     accept_all_cookies: "Přijmout vše"
+    title: "Zásady cookies"
+  cookies_management:
+    title: Správa cookies
+    save_preferences: Uložit předvolby
