@@ -19,6 +19,7 @@ set :default_env, { EXECJS_RUNTIME: "Disabled" }
 set :rvm1_map_bins, -> { fetch(:rvm_map_bins).to_a.concat(%w[rake gem bundle ruby]).uniq }
 
 set :application, deploysecret(:app_name, default: "consul")
+set :puma_service_unit_name, -> { "puma_#{fetch(:application)}_#{fetch(:stage)}" }
 set :deploy_to, deploysecret(:deploy_to)
 set :ssh_options, port: deploysecret(:ssh_port)
 
@@ -53,6 +54,7 @@ set :puma_conf, "#{release_path}/config/puma/#{fetch(:rails_env)}.rb"
 set :puma_systemctl_user, :user
 set :puma_enable_socket_service, true
 set :puma_service_unit_env_vars, ["EXECJS_RUNTIME=Disabled"]
+set :puma_bind, "unix://#{shared_path}/tmp/sockets/puma.sock"
 
 set :delayed_job_workers, 2
 set :delayed_job_roles, :background
@@ -170,6 +172,6 @@ task :setup_puma do
     end
   end
 
-  after "setup_puma", "puma:systemd:config"
-  after "setup_puma", "puma:systemd:enable"
+  after "setup_puma", "puma:install"
+  after "setup_puma", "puma:enable"
 end
