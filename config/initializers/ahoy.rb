@@ -34,12 +34,6 @@ class Ahoy::Store < Ahoy::DatabaseStore
     Visit
   end
 
-  def ensure_uuid(id)
-    UUIDTools::UUID.parse(id).to_s
-  rescue
-    UUIDTools::UUID.sha1_create(UUIDTools::UUID.parse(Ahoy::Tracker::UUID_NAMESPACE), id).to_s
-  end
-
   def exclude?
     false
   end
