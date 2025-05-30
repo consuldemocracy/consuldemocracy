@@ -210,6 +210,7 @@ cs:
       consul: aplikace CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: CONSUL DEMOCRACY, %{year}
+      cookies_consent_management: Spravovat cookies
       description: Tento portál software %{consul}, což je %{open_source}.
       open_source: open source software
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
@@ -969,3 +970,5 @@ cs:
   machine_learning:
     comments_summary: "Souhrn komentářů"
     info_text: "Obsah generovaný umělou inteligencí / strojovým učením"
+  cookies_consent:
+    accept_all_cookies: "Přijmout vše"
