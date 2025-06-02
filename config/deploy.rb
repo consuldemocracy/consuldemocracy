@@ -54,6 +54,8 @@ set :puma_enable_socket_service, true
 set :puma_service_unit_env_vars, ["EXECJS_RUNTIME=Disabled"]
 set :puma_service_unit_name, -> { "puma_#{fetch(:application)}_#{fetch(:stage)}" }
 set :puma_bind, "unix://#{shared_path}/tmp/sockets/puma.sock"
+set :puma_access_log, -> { File.join(shared_path, "log", "puma_access.log") }
+set :puma_error_log, -> { File.join(shared_path, "log", "puma_error.log") }
 
 set :delayed_job_workers, 2
 set :delayed_job_roles, :background
