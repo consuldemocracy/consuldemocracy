@@ -93,7 +93,7 @@ group :development do
   gem "capistrano3-delayed-job", "~> 1.7.6"
   gem "capistrano3-puma", "~> 6.0.0"
   gem "erb_lint", "~> 0.9.0", require: false
-  gem "faraday-retry", "~> 2.2.1", require: false
+  gem "faraday-retry", "~> 2.3.1", require: false
   gem "htmlbeautifier", "~> 1.4.3", require: false
   gem "mdl", "~> 0.13.0", require: false
   gem "pronto", "~> 0.11.2", require: false
