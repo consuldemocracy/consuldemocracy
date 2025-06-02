@@ -539,7 +539,7 @@ GEM
       psych (>= 4.0.0)
     recipient_interceptor (0.3.3)
       mail
-    redcarpet (3.6.0)
+    redcarpet (3.6.1)
     regexp_parser (2.10.0)
     reline (0.5.1)
       io-console (~> 0.5)
@@ -804,7 +804,7 @@ DEPENDENCIES
   puma (~> 5.6.9)
   rails (= 7.1.5.1)
   recipient_interceptor (~> 0.3.3)
-  redcarpet (~> 3.6.0)
+  redcarpet (~> 3.6.1)
   responders (~> 3.1.1)
   rinku (~> 2.0.6)
   ros-apartment (~> 3.2.0)
