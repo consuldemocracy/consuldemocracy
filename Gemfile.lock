@@ -108,9 +108,9 @@ GEM
       activesupport (>= 5.2, < 8.2)
     autoprefixer-rails (10.4.19.0)
       execjs (~> 2)
-    base64 (0.2.0)
+    base64 (0.3.0)
     bcrypt (3.1.20)
-    benchmark (0.4.0)
+    benchmark (0.4.1)
     better_html (2.1.1)
       actionview (>= 6.0)
       activesupport (>= 6.0)
@@ -118,7 +118,7 @@ GEM
       erubi (~> 1.4)
       parser (>= 2.4)
       smart_properties
-    bigdecimal (3.1.9)
+    bigdecimal (3.2.1)
     bindex (0.8.1)
     bing_translator (6.2.0)
       json
@@ -276,8 +276,8 @@ GEM
       base64
       fiber-storage
       logger
-    groupdate (6.5.1)
-      activesupport (>= 7)
+    groupdate (6.6.0)
+      activesupport (>= 7.1)
     gyoku (1.4.0)
       builder (>= 2.1.2)
       rexml (~> 3.0)
@@ -776,7 +776,7 @@ DEPENDENCIES
   globalize-accessors (~> 0.3.0)
   graphiql-rails (~> 1.8.0)
   graphql (~> 2.4.13)
-  groupdate (~> 6.5.1)
+  groupdate (~> 6.6.0)
   htmlbeautifier (~> 1.4.3)
   i18n-tasks (~> 0.9.37)
   image_processing (~> 1.14.0)
