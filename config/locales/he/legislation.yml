@@ -3,7 +3,7 @@ he:
     annotations:
       comments:
         see_all: הצג הכל
-        see_complete: ראה כולל
+        see_complete: ראה עוד
         replies_count:
           one: "%{count} תגובה"
           two: "%{count} תגובות"
