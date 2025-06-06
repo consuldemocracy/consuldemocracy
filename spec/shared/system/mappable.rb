@@ -21,7 +21,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       do_login_for user, management: management
       visit send(mappable_new_path, arguments)
 
-      send("fill_in_#{mappable_factory_name}_form")
+      send("fill_in_#{mappable_factory_name}")
 
       within ".map-location" do
         expect(page).not_to have_css(".map-icon")
@@ -32,7 +32,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       do_login_for user, management: management
       visit send(mappable_new_path, arguments)
 
-      send("fill_in_#{mappable_factory_name}_form")
+      send("fill_in_#{mappable_factory_name}")
       find("#new_map_location").click
 
       within ".map-location" do
@@ -44,7 +44,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       do_login_for user, management: management
       visit send(mappable_new_path, arguments)
 
-      send("fill_in_#{mappable_factory_name}_form")
+      send("fill_in_#{mappable_factory_name}")
       find("#new_map_location").click
       send("submit_#{mappable_factory_name}_form")
 
@@ -57,7 +57,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       do_login_for user, management: management
       visit send(mappable_new_path, arguments)
 
-      send("fill_in_#{mappable_factory_name}_form")
+      send("fill_in_#{mappable_factory_name}")
       expect(page).to have_css ".map-location"
       send("submit_#{mappable_factory_name}_form")
 
@@ -69,7 +69,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       do_login_for user, management: management
       visit send(mappable_new_path, arguments)
 
-      send("fill_in_#{mappable_factory_name}_form")
+      send("fill_in_#{mappable_factory_name}")
       expect(page).not_to have_css ".map-location"
       send("submit_#{mappable_factory_name}_form")
 
@@ -171,7 +171,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       do_login_for user, management: management
       visit send(mappable_new_path, arguments)
 
-      send("fill_in_#{mappable_factory_name}_form")
+      send("fill_in_#{mappable_factory_name}")
       send("submit_#{mappable_factory_name}_form")
 
       expect(page).not_to have_content "Map location can't be blank"

@@ -1,11 +1,5 @@
 module Maps
-  def fill_in_proposal_form
-    fill_in_new_proposal_title with: "Help refugees"
-    fill_in "Proposal summary", with: "In summary, what we want is..."
-  end
-
   def submit_proposal_form
-    check :proposal_terms_of_service
     click_button "Create proposal"
     expect(page).to have_content "Proposal created successfully."
 
@@ -16,14 +10,7 @@ module Maps
     end
   end
 
-  def fill_in_budget_investment_form
-    fill_in_new_investment_title with: "Budget investment title"
-    fill_in_ckeditor "Description", with: "Budget investment description"
-    check :budget_investment_terms_of_service
-  end
-
   def submit_budget_investment_form
-    check :budget_investment_terms_of_service
     click_button "Create Investment"
     expect(page).to have_content "Budget Investment created successfully"
   end
