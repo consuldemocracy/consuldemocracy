@@ -108,6 +108,134 @@ describe "Users" do
   end
 
   context "OAuth authentication" do
+    context "Form buttons" do
+      before do
+        Setting["feature.facebook_login"] = false
+        Setting["feature.twitter_login"] = false
+        Setting["feature.google_login"] = false
+        Setting["feature.wordpress_login"] = false
+        Setting["feature.saml_login"] = false
+      end
+
+      scenario "No button will appear if all features are disabled" do
+        visit new_user_registration_path
+
+        expect(page).not_to have_link "Twitter"
+        expect(page).not_to have_link "Facebook"
+        expect(page).not_to have_link "Google"
+        expect(page).not_to have_link "Wordpress"
+        expect(page).not_to have_link "SAML"
+
+        visit new_user_session_path
+
+        expect(page).not_to have_link "Twitter"
+        expect(page).not_to have_link "Facebook"
+        expect(page).not_to have_link "Google"
+        expect(page).not_to have_link "Wordpress"
+        expect(page).not_to have_link "SAML"
+      end
+
+      scenario "Twitter login button will appear if feature is enabled" do
+        Setting["feature.twitter_login"] = true
+
+        visit new_user_registration_path
+
+        expect(page).to have_link "Twitter"
+        expect(page).not_to have_link "Facebook"
+        expect(page).not_to have_link "Google"
+        expect(page).not_to have_link "Wordpress"
+        expect(page).not_to have_link "SAML"
+
+        visit new_user_session_path
+
+        expect(page).to have_link "Twitter"
+        expect(page).not_to have_link "Facebook"
+        expect(page).not_to have_link "Google"
+        expect(page).not_to have_link "Wordpress"
+        expect(page).not_to have_link "SAML"
+      end
+
+      scenario "Facebook login button will appear if feature is enabled" do
+        Setting["feature.facebook_login"] = true
+
+        visit new_user_registration_path
+
+        expect(page).not_to have_link "Twitter"
+        expect(page).to have_link "Facebook"
+        expect(page).not_to have_link "Google"
+        expect(page).not_to have_link "Wordpress"
+        expect(page).not_to have_link "SAML"
+
+        visit new_user_session_path
+
+        expect(page).not_to have_link "Twitter"
+        expect(page).to have_link "Facebook"
+        expect(page).not_to have_link "Google"
+        expect(page).not_to have_link "Wordpress"
+        expect(page).not_to have_link "SAML"
+      end
+
+      scenario "Google login button will appear if feature is enabled" do
+        Setting["feature.google_login"] = true
+
+        visit new_user_registration_path
+
+        expect(page).not_to have_link "Twitter"
+        expect(page).not_to have_link "Facebook"
+        expect(page).to have_link "Google"
+        expect(page).not_to have_link "Wordpress"
+        expect(page).not_to have_link "SAML"
+
+        visit new_user_session_path
+
+        expect(page).not_to have_link "Twitter"
+        expect(page).not_to have_link "Facebook"
+        expect(page).to have_link "Google"
+        expect(page).not_to have_link "Wordpress"
+        expect(page).not_to have_link "SAML"
+      end
+
+      scenario "Wordpress login button will appear if feature is enabled" do
+        Setting["feature.wordpress_login"] = true
+
+        visit new_user_registration_path
+
+        expect(page).not_to have_link "Twitter"
+        expect(page).not_to have_link "Facebook"
+        expect(page).not_to have_link "Google"
+        expect(page).to have_link "Wordpress"
+        expect(page).not_to have_link "SAML"
+
+        visit new_user_session_path
+
+        expect(page).not_to have_link "Twitter"
+        expect(page).not_to have_link "Facebook"
+        expect(page).not_to have_link "Google"
+        expect(page).to have_link "Wordpress"
+        expect(page).not_to have_link "SAML"
+      end
+
+      scenario "Saml login button will appear if feature is enabled" do
+        Setting["feature.saml_login"] = true
+
+        visit new_user_registration_path
+
+        expect(page).not_to have_link "Twitter"
+        expect(page).not_to have_link "Facebook"
+        expect(page).not_to have_link "Google"
+        expect(page).not_to have_link "Wordpress"
+        expect(page).to have_link "SAML"
+
+        visit new_user_session_path
+
+        expect(page).not_to have_link "Twitter"
+        expect(page).not_to have_link "Facebook"
+        expect(page).not_to have_link "Google"
+        expect(page).not_to have_link "Wordpress"
+        expect(page).to have_link "SAML"
+      end
+    end
+
     context "Twitter" do
       let(:twitter_hash) { { uid: "12345", info: { name: "manuela" }} }
       let(:twitter_hash_with_email) do
@@ -486,6 +614,121 @@ describe "Users" do
 
         visit edit_user_registration_path
         expect(page).to have_field "Email", with: "manuela@consul.dev"
+      end
+    end
+
+    context "Saml" do
+      before { Setting["feature.saml_login"] = true }
+
+      let(:saml_hash_with_email) do
+        {
+          provider: "saml",
+          uid: "ext-tester",
+          info: {
+            name: "samltester",
+            email: "tester@consul.dev"
+          }
+        }
+      end
+
+      let(:saml_hash_with_verified_email) do
+        {
+          provider: "saml",
+          uid: "ext-tester",
+          info: {
+            name: "samltester",
+            email: "tester@consul.dev",
+            verified: "1"
+          }
+        }
+      end
+
+      scenario "Sign up with a confirmed email" do
+        OmniAuth.config.add_mock(:saml, saml_hash_with_verified_email)
+
+        visit new_user_registration_path
+        click_link "Sign up with SAML"
+
+        expect(page).to have_content "Successfully identified as Saml"
+        expect_to_be_signed_in
+
+        within("#notice") { click_button "Close" }
+        click_link "My account"
+
+        expect(page).to have_field "Username", with: "samltester"
+
+        click_link "Change my login details"
+
+        expect(page).to have_field "Email", with: "tester@consul.dev"
+      end
+
+      scenario "Sign up with an unconfirmed email" do
+        OmniAuth.config.add_mock(:saml, saml_hash_with_email)
+
+        visit new_user_registration_path
+        click_link "Sign up with SAML"
+
+        expect(page).to have_content "To continue, please click on the confirmation "\
+                                     "link that we have sent you via email"
+
+        confirm_email
+        expect(page).to have_content "Your account has been confirmed"
+        expect(page).to have_current_path new_user_session_path
+
+        click_link "Sign in with SAML"
+
+        expect(page).to have_content "Successfully identified as Saml"
+        expect_to_be_signed_in
+
+        within("#notice") { click_button "Close" }
+        click_link "My account"
+
+        expect(page).to have_field "Username", with: "samltester"
+
+        click_link "Change my login details"
+
+        expect(page).to have_field "Email", with: "tester@consul.dev"
+      end
+
+      scenario "Sign in with a user with a SAML identity" do
+        user = create(:user, username: "samltester", email: "tester@consul.dev", password: "My123456")
+        create(:identity, uid: "ext-tester", provider: "saml", user: user)
+        OmniAuth.config.add_mock(:saml, { provider: "saml", uid: "ext-tester" })
+
+        visit new_user_session_path
+        click_link "Sign in with SAML"
+
+        expect(page).to have_content "Successfully identified as Saml"
+        expect_to_be_signed_in
+
+        within("#notice") { click_button "Close" }
+        click_link "My account"
+
+        expect(page).to have_field "Username", with: "samltester"
+
+        click_link "Change my login details"
+
+        expect(page).to have_field "Email", with: "tester@consul.dev"
+      end
+
+      scenario "Sign in with a user without a SAML identity keeps the username" do
+        create(:user, username: "tester", email: "tester@consul.dev", password: "My123456")
+        OmniAuth.config.add_mock(:saml, saml_hash_with_verified_email)
+
+        visit new_user_session_path
+        click_link "Sign in with SAML"
+
+        expect(page).to have_content "Successfully identified as Saml"
+        expect_to_be_signed_in
+
+        within("#notice") { click_button "Close" }
+        click_link "My account"
+
+        expect(page).to have_field "Username", with: "tester"
+
+        click_link "Change my login details"
+
+        expect(page).to have_field "Email", with: "tester@consul.dev"
       end
     end
   end
