@@ -99,20 +99,33 @@ describe "Nested documentable" do
         expect(page).to have_field("Title", with: "empty.pdf")
       end
 
-      scenario "Should not update nested document file title with
-                file name after choosing a file when title already defined" do
+      scenario "Should not change existing titles except when removing the document" do
         do_login_for(user, management: management_section?(path))
         visit path
 
         click_link "Add new document"
+
+        expect(page).not_to have_link "Add new document"
+
         within "#nested-documents" do
           fill_in "Title", with: "My Title"
           attach_file "Choose document", file_fixture("empty.pdf")
 
           expect(page).to have_css ".loading-bar.complete"
+          expect(page).to have_field "Title", with: "My Title"
+
+          click_link "Remove document"
+
+          expect(page).not_to have_css ".document-fields"
+          expect(page).not_to have_field "Title"
         end
 
-        expect(page).to have_field("Title", with: "My Title")
+        click_link "Add new document"
+
+        within "#nested-documents" do
+          expect(page).to have_field "Title", with: ""
+          expect(page).not_to have_field "Title", with: "My Title"
+        end
       end
 
       scenario "Should update document cached_attachment field after valid file upload" do
@@ -150,25 +163,6 @@ describe "Nested documentable" do
         within "#nested-documents .document-fields" do
           expect(page).to have_content("can't be blank", count: 2)
         end
-      end
-
-      scenario "Should delete document after valid file upload and click on remove button" do
-        do_login_for(user, management: management_section?(path))
-        visit path
-
-        click_link "Add new document"
-
-        expect(page).not_to have_link "Add new document"
-
-        within "#nested-documents" do
-          attach_file "Choose document", file_fixture("empty.pdf")
-          within ".document-fields" do
-            expect(page).to have_css ".loading-bar.complete"
-          end
-        end
-        click_link "Remove document"
-
-        expect(page).not_to have_css("#nested-documents .document-fields")
       end
 
       scenario "Should show successful notice when resource filled correctly without any nested documents" do
