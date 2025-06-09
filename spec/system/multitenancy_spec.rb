@@ -55,7 +55,7 @@ describe "Multitenancy", :seed_tenants do
 
       expect(page).to have_content "Proposal created successfully."
 
-      click_link "No, I want to publish the proposal"
+      click_button "No, I want to publish the proposal"
 
       expect(page).to have_content "You've created a proposal!"
 

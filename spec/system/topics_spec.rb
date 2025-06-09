@@ -131,7 +131,7 @@ describe "Topics" do
       login_as(user)
       visit community_topic_path(topic.community, topic)
 
-      click_link "Delete topic"
+      click_button "Delete topic"
 
       expect(page).to have_content "Topic deleted successfully."
       expect(page).not_to have_content topic.title
