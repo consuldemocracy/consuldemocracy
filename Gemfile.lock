@@ -110,7 +110,7 @@ GEM
       execjs (~> 2)
     base64 (0.3.0)
     bcrypt (3.1.20)
-    benchmark (0.4.0)
+    benchmark (0.4.1)
     better_html (2.1.1)
       actionview (>= 6.0)
       activesupport (>= 6.0)
@@ -215,6 +215,7 @@ GEM
       htmlentities (~> 4.3.3)
       launchy (>= 2.1, < 4.0)
       mail (~> 2.7)
+    erb (5.0.1)
     erb_lint (0.9.0)
       activesupport
       better_html (>= 2.0.1)
@@ -269,9 +270,8 @@ GEM
     google-protobuf (4.28.3)
       bigdecimal
       rake (>= 13)
-    graphiql-rails (1.8.0)
+    graphiql-rails (1.10.5)
       railties
-      sprockets-rails
     graphql (2.4.13)
       base64
       fiber-storage
@@ -312,9 +312,10 @@ GEM
       ruby-vips (>= 2.0.17, < 3)
     invisible_captcha (2.3.0)
       rails (>= 5.2)
-    io-console (0.7.2)
-    irb (1.12.0)
-      rdoc
+    io-console (0.8.0)
+    irb (1.15.2)
+      pp (>= 0.6.0)
+      rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     json (2.12.2)
     jwt (2.10.1)
@@ -350,7 +351,7 @@ GEM
       railties (>= 6.1)
       rexml
     logger (1.7.0)
-    loofah (2.24.0)
+    loofah (2.24.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
     mail (2.8.1)
@@ -460,6 +461,9 @@ GEM
     pg_search (2.3.7)
       activerecord (>= 6.1)
       activesupport (>= 6.1)
+    pp (0.6.2)
+      prettyprint
+    prettyprint (0.2.0)
     pronto (0.11.3)
       gitlab (>= 4.4.0, < 5.0)
       httparty (>= 0.13.7, < 1.0)
@@ -480,7 +484,8 @@ GEM
     pronto-stylelint (0.11.0)
       pronto (>= 0.10, < 0.12)
       rugged (>= 0.24, < 2.0)
-    psych (5.1.2)
+    psych (5.2.6)
+      date
       stringio
     public_suffix (6.0.1)
     puma (5.6.9)
@@ -515,7 +520,7 @@ GEM
       activesupport (= 7.1.5.1)
       bundler (>= 1.15.0)
       railties (= 7.1.5.1)
-    rails-dom-testing (2.2.0)
+    rails-dom-testing (2.3.0)
       activesupport (>= 5.0.0)
       minitest
       nokogiri (>= 1.6)
@@ -534,15 +539,16 @@ GEM
       thor (~> 1.0, >= 1.2.2)
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
-    rake (13.2.1)
+    rake (13.3.0)
     rbtree3 (0.7.1)
-    rdoc (6.6.3.1)
+    rdoc (6.14.0)
+      erb
       psych (>= 4.0.0)
     recipient_interceptor (0.3.3)
       mail
     redcarpet (3.6.1)
     regexp_parser (2.10.0)
-    reline (0.5.1)
+    reline (0.6.1)
       io-console (~> 0.5)
     request_store (1.7.0)
       rack (>= 1.4)
@@ -676,7 +682,7 @@ GEM
       net-sftp (>= 2.1.2)
       net-ssh (>= 2.8.0)
       ostruct
-    stringio (3.1.0)
+    stringio (3.1.7)
     terminal-table (4.0.0)
       unicode-display_width (>= 1.1.1, < 4)
     terrapin (0.6.0)
@@ -718,7 +724,7 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    webrick (1.8.2)
+    webrick (1.9.1)
     websocket (1.2.11)
     websocket-driver (0.7.7)
       base64
@@ -732,7 +738,7 @@ GEM
     wkhtmltopdf-binary (0.12.6.8)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.7.2)
+    zeitwerk (2.7.3)
 
 PLATFORMS
   ruby
@@ -775,7 +781,7 @@ DEPENDENCIES
   font-awesome-sass (~> 5.15.1)
   globalize (~> 7.0.0)
   globalize-accessors (~> 0.3.0)
-  graphiql-rails (~> 1.8.0)
+  graphiql-rails (~> 1.10.5)
   graphql (~> 2.4.13)
   groupdate (~> 6.5.1)
   htmlbeautifier (~> 1.4.3)
