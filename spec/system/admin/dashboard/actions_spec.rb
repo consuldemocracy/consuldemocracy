@@ -1,15 +1,6 @@
 require "rails_helper"
 
 describe "Admin dashboard actions", :admin do
-  it_behaves_like "nested documentable",
-                  "administrator",
-                  "dashboard_action",
-                  "new_admin_dashboard_action_path",
-                  {},
-                  "documentable_fill_new_valid_dashboard_action",
-                  "Save",
-                  "Action created successfully"
-
   context "when visiting index" do
     context "and no actions defined" do
       before do

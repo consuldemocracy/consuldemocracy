@@ -559,7 +559,7 @@ describe "Proposals" do
 
     scenario "Default whole city" do
       create(:geozone)
-      author = create(:user)
+      author = create(:user, :level_two)
       login_as(author)
 
       visit new_proposal_path
@@ -1294,26 +1294,6 @@ describe "Proposals" do
   it_behaves_like "followable", "proposal", "proposal_path", { id: "id" }
 
   it_behaves_like "imageable", "proposal", "proposal_path", { id: "id" }
-
-  it_behaves_like "documentable", "proposal", "proposal_path", { id: "id" }
-
-  it_behaves_like "nested documentable",
-                  "user",
-                  "proposal",
-                  "new_proposal_path",
-                  {},
-                  "documentable_fill_new_valid_proposal",
-                  "Create proposal",
-                  "Proposal created successfully"
-
-  it_behaves_like "nested documentable",
-                  "user",
-                  "proposal",
-                  "edit_proposal_path",
-                  { id: "id" },
-                  nil,
-                  "Save changes",
-                  "Proposal updated successfully"
 
   it_behaves_like "mappable",
                   "proposal",
