@@ -53,15 +53,15 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  # Rotate logger
-  logger = ActiveSupport::Logger.new(config.default_log_file, "daily")
-  logger.formatter = config.log_formatter
-  config.logger = ActiveSupport::TaggedLogging.new(logger)
-
   # Log to STDOUT if enabled
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     config.logger = ActiveSupport::Logger.new(STDOUT)
       .tap  { |logger| logger.formatter = ::Logger::Formatter.new }
+      .then { |logger| ActiveSupport::TaggedLogging.new(logger) }
+  else
+    # Rotate logger
+    config.logger = ActiveSupport::Logger.new(config.default_log_file, "daily")
+      .tap  { |logger| logger.formatter = config.log_formatter }
       .then { |logger| ActiveSupport::TaggedLogging.new(logger) }
   end
 

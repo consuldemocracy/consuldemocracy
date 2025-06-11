@@ -5,7 +5,7 @@
       <% group.headings.sort_by_name.each do |heading| %>
         <li class="heading">
           <%= link_to_unless(
-            (budget.informing? || budget.finished?),
+            budget.informing? || budget.finished?,
             heading.name,
             budget_investments_path(budget.id, heading_id: heading.id)
           ) %>
