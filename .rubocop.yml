@@ -725,6 +725,9 @@ Style/ClassVars:
 Style/CollectionMethods:
   Enabled: true
 
+Style/ComparableBetween:
+  Enabled: true
+
 Style/DigChain:
   Enabled: true
 
