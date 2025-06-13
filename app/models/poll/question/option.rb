@@ -30,7 +30,7 @@ class Poll::Question::Option < ApplicationRecord
 
   def self.order_options(ordered_array)
     ordered_array.each_with_index do |option_id, order|
-      find(option_id).update_column(:given_order, (order + 1))
+      find(option_id).update_column(:given_order, order + 1)
     end
   end
 

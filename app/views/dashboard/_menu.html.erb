@@ -72,7 +72,7 @@
         <% resources.each do |resource| %>
           <li>
             <%= link_to new_request_proposal_dashboard_action_path(proposal, resource),
-                        class: ("submenu-active" if is_request_active(resource.id)) do %>
+                        class: ("submenu-active" if request_active?(resource.id)) do %>
               <span data-tooltip title="<%= resource.short_description %>">
                 <%= resource.title %>
               </span>

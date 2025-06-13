@@ -61,8 +61,8 @@ Rails.application.configure do
   # Log to STDOUT if enabled
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     config.logger = ActiveSupport::Logger.new(STDOUT)
-      .tap  { |logger| logger.formatter = ::Logger::Formatter.new }
-      .then { |logger| ActiveSupport::TaggedLogging.new(logger) }
+      .tap  { |log| log.formatter = ::Logger::Formatter.new }
+      .then { |log| ActiveSupport::TaggedLogging.new(log) }
   end
 
   # Prepend all log lines with the following tags.

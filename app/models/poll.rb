@@ -116,7 +116,7 @@ class Poll < ApplicationRecord
   end
 
   def current?(timestamp = Time.current)
-    starts_at <= timestamp && timestamp <= ends_at
+    timestamp.between?(starts_at, ends_at)
   end
 
   def expired?(timestamp = Time.current)
