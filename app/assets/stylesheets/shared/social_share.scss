@@ -58,6 +58,16 @@
   }
 }
 
+.button.button-saml {
+  @include has-fa-icon(lock, solid);
+  background: #eafee9;
+  border-left: 3px solid #3b9857;
+
+  &::before {
+    color: #3b9857;
+  }
+}
+
 @include breakpoint(medium) {
 
   .ssb-telegram,
