@@ -35,14 +35,14 @@ class Shared::VoteButtonComponent < ApplicationComponent
     end
 
     def vote
-      @vote ||= Vote.find_or_initialize_by(votable: votable, voter: current_user, vote_flag: parsed_value)
+      @vote ||= Vote.find_or_initialize_by(votable: votable, voter: current_user, vote_flag: parsed_value?)
     end
 
     def already_voted?
       vote.persisted?
     end
 
-    def parsed_value
+    def parsed_value?
       value == "yes"
     end
 end
