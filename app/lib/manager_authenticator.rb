@@ -22,7 +22,7 @@ class ManagerAuthenticator
         message: { ub: { user_key: @manager[:user_key], date: @manager[:date] }}
       ).body
 
-      parsed_response = parser.parse((response[:get_status_user_data_response][:get_status_user_data_return]))
+      parsed_response = parser.parse(response[:get_status_user_data_response][:get_status_user_data_return])
       @manager[:login] == parsed_response["USUARIO"]["LOGIN"]
     rescue
       false
