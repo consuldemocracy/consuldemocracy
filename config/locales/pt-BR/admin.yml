@@ -39,12 +39,16 @@ pt-BR:
           sdg: ODS (SDG)
       create:
         notice: "\"Banner\" criado com sucesso"
+      destroy:
+        notice: "Banner excluído com sucesso"
       edit:
         editing: Editar banner
         form:
           submit_button: Salvar alterações
       new:
         creating: Criar banner
+      update:
+        notice: "Banner atualizado com sucesso"
     activity:
       show:
         action: Ação
@@ -68,8 +72,15 @@ pt-BR:
     budgets:
       actions:
         ballots: "Criar urnas"
+        confirm:
+          ballots: "Tem certeza? Essa ação só é necessária se você for usar uma urna presencial durante a fase final de votação. Cidadãos poderão votar pela internet com ou sem urnas presenciais."
+          destroy: "Tem certeza? Essa ação irá deletar o orçamento e todos os grupos associados e seus cabeçalhos. Essa ação não poderá ser desfeita."
+        descriptions:
+          ballots: "Isso irá permitir que você gerencie os votos impressos. Apenas use essa opção se você utilizará urnas físicas para coletar os votos durante a fase final de votação."
+          destroy: "Essa ação só é necessária se você for usar uma urna presencial durante a fase final de votação. Cidadãos poderão votar pela internet com ou sem urnas presenciais."
         edit: "Editar orçamento"
         preview: "Prévia"
+        preview_results: "Pré-visualizar resultados"
       index:
         title: Orçamentos participativos
         new_link: Criar novo orçamento
@@ -80,9 +91,14 @@ pt-BR:
           finished: Finalizados
         budget_investments: Gerenciar projetos
         table_budget_type: "Tipo"
+        table_completed: Finalizado
         table_draft: "Rascunho"
+        table_duration: "Duração"
         table_name: Nome
         table_phase: Estágio
+        type_multiple: "Múltiplos cabeçalhos"
+        type_pending: "Pendente: Sem cabeçalhos"
+        type_single: "Cabeçalho individual"
         admin_ballots: Administrar cédulas
         no_budgets: "Não há orçamentos."
       create:
