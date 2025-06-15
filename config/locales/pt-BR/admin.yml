@@ -10,6 +10,7 @@ pt-BR:
       confirm_hide: Confirmar a moderação
       delete: "Apagar"
       hide: Ocultar
+      label: "%{action}%{name}"
       restore: Restaurar
       mark_featured: Destacado
       unmark_featured: Desmarcar destaques
@@ -112,6 +113,7 @@ pt-BR:
       edit:
         title: Editar Orçamento participativo
         drafting: "O orçamento participatório estão em modo de rascunho, apenas os administradores poderão vê-lo no domínio público. Uma vez publicado ele não poderá retornar ao modo de rascunho."
+        publish: "Publicar orçamento"
         delete: Deletar orçamento
         phase: Estágio
         phases_caption: "Fases"
@@ -119,6 +121,7 @@ pt-BR:
         duration: "Duração"
         enabled: Habilitado
         actions: Ações
+        enable_phase: "Habilitar fase %{phase}"
         active: Ativo
         blank_dates: Datas estão em branco
         administrators:
@@ -132,12 +135,20 @@ pt-BR:
         empty_administrators: "Não há administradores"
         empty_valuators: "Não há avaliadores"
         name_description: "Esse é o nome do orçamento participatório usado no cabeçalho e nos cartões, em qualquer momento que estiver ativo"
+        image_description: "Se uma imagem for carregada, ela será utilizada como banner nesse orçamento participatório, caso contrário a cor padrão para orçamentos será utilizada."
+        main_call_to_action: "Chamada para ação (opcional)"
+        main_call_to_action_description: "Esse endereço irá aparecer no banner principal deste orçamento participatório e encorajará o usuário à realizar uma ação específica como: criar uma proposta, votar em propostas existentes ou aprender mais sobre o processo."
         info:
           budget_settings: "Configurações de orçamento participatório gerais"
+          staff_settings: "Administradores e Avaliadores alocados para o orçamento"
+        hide_money: "Esconder montante"
       destroy:
         success_notice: Orçamento excluído com sucesso
         unable_notice: Você não pode destruir um orçamento que tem investimentos associados
         unable_notice_polls: Não é possível excluir um orçamento com uma votação associada
+      new:
+        title_multiple: Novo cabeçalho de orçamentos múltiplos
+        title_single: Novo cabeçalho de orçamento único
       show:
         add_heading: "Adicionar título"
         groups_and_headings: "Grupos de títulos"
