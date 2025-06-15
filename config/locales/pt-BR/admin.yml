@@ -142,6 +142,7 @@ pt-BR:
           budget_settings: "Configurações de orçamento participatório gerais"
           staff_settings: "Administradores e Avaliadores alocados para o orçamento"
         hide_money: "Esconder montante"
+        hide_money_help_text: "Se essa opção estiver marcada, todos os campos mostrando a quantidade do montante serão escondidos através do processo."
       destroy:
         success_notice: Orçamento excluído com sucesso
         unable_notice: Você não pode destruir um orçamento que tem investimentos associados
@@ -149,13 +150,26 @@ pt-BR:
       new:
         title_multiple: Novo cabeçalho de orçamentos múltiplos
         title_single: Novo cabeçalho de orçamento único
+      help:
+        budgets: "Orçamentos participatórios permitem aos cidadãos a propor e decidir diretamente como aplicar parte do orçamento, com monitoramento e avaliação rigorosa das propostas pela instituição."
+        groups:
+          multiple: "Grupos tem a finalidade de organizar os cabeçalhos. Depois que um grupo é criado e ele contém cabeçalhos, é possível determinar em quantos cabeçalhos um usuário pode votar por grupo."
+          single: "Grupos tem a finalidade de organizar rubricas, já que esse orçamento irá conter apenas uma rubrica, o mesmo nome pode ser utilizado já que ele não irá aparecer em nenhum outro local. Você pode continuar para a próxima etapa."
+        headings:
+          multiple: "Rubricas tem a finalidade de separar o dinheiro do orçamento participatório. Aqui você pode adicionar rubricas para este grupo e determinar à quantidade de dinheiro que será utilizado em cada rúbrica."
+          single: "Rubricas tem a finalidade de separar o dinheiro do orçamento participatório. Já que esse orçamento irá conter apenas uma rubrica, este é o lugar onde você determinará o dinheiro que será gasto neste orçamento participatório."
+        phases: "Orçamentos participatórios tem etapas diferentes. Aqui você pode habilitar ou desabilitar etapas e também customizar cada etapa individualmente. A configuração destas etapas é utilizada apenas para fins informacionais e será exibida na página pública deste orçamento participatório."
       show:
+        add_group: "Adicionar grupo"
         add_heading: "Adicionar título"
         groups_and_headings: "Grupos de títulos"
+        headings_caption: "Cabeçalho em %{group}"
       winners:
         calculate: Calcular os investimentos vencedores
         calculated: Vencedores sendo calculados, pode demorar um minuto.
         recalculate: Recalcular os investimentos vencedores
+      ballots:
+        feature_disabled: 'A função <strong>Votações</strong> deve estar habilitada para se criar urnas. Você pode habilitá-la na página <a href="%{link}">configurações</a>.'
     budget_groups:
       name: "Nome"
       headings_name: "Títulos"
@@ -179,6 +193,7 @@ pt-BR:
       index:
         new_button: "Adicionar novo grupo"
     budget_headings:
+      no_headings: "Não há cabeçalhos no grupo <strong>%{group}</strong>."
       create:
         notice: "Título criado com sucesso!"
       update:
@@ -187,6 +202,7 @@ pt-BR:
         success_notice: "Título excluído com sucesso"
         unable_notice: "Não é possível excluir um título com investimentos associados"
       form:
+        geozone_info: "Quando uma rúbrica é associada com uma zona geográfica, esta irá aparecer no mapa do orçamento se a zona geográfica incluir os dados GeoJSON."
         max_ballot_lines_info: 'Número máximo de projetos em que um usuário pode votar neste título durante a fase de "Votação de projetos". Apenas para orçamentos com votação aprovada.'
         population_info: "O campo \"população\" do Título do Orçamento é usado para fins Estatísticos ao final do Orçamento, para mostrar a porcentagem votante da população da área de cada Título. O campo é opcional, então você pode deixá-lo vazio se não se aplicar."
         coordinates_info: "Se houver dados de latitude e longitude, aparecerá um mapa na página de investimentos deste título, cujo centro estará ajustado a essas coordenadas."
@@ -194,8 +210,12 @@ pt-BR:
         create: "Criar novo título"
         edit: "Editar Títulos"
         submit: "Salvar título"
+      group_switcher:
+        currently_showing: "Exibir rubricas do grupo <strong>%{group}</strong>."
+        the_other_group: "Gerenciar cabeçalhos do grupo %{group}."
       index:
         back: "Voltar a grupos"
+        new_button: "Adicionar novo cabeçalho"
         title: "%{budget}/%{group} cabeçalhos"
     budget_phases:
       edit:
@@ -203,10 +223,18 @@ pt-BR:
         dates_help_text: "Apenas para propósitos informativos"
         description_help_text: Esse texto será exibido no cabeçalho quando a fase estiver ativa
         duration: "Duração da fase"
+        duration_description: "Estes campos são usados apenas para fins informacionais e <strong>não ativam a atualização automática da etapa ativa.</strong> Para que você atualize-o, edite o orçamento e selecione a etapa ativa."
         enabled_help_text: Esta fase será pública no cronograma de fases do orçamento, bem como ativa para qualquer outra finalidade
+        image_description: "Se uma imagem for carregada ela será exibida próxima à descrição desta etapa."
+        main_call_to_action: "Chamada para ação (opcional)"
         save_changes: Salvar alterações
+      index:
+        title: "Fases do %{budget}"
     budget_investments:
       index:
+        basic_filters:
+          valuator_or_group: Avaliação ou grupo
+          title_or_id: Título ou IDENTIFICADOR
         heading_filter_all: Todos os títulos
         administrator_filter_all: Todos administradores
         valuator_filter_all: Todos avaliadores
@@ -257,6 +285,7 @@ pt-BR:
           incompatible: Incompatível
           price: Preço
           author: Autor
+        cannot_calculate_winners: O orçamento tem que permanecer na fase %{phase} para ser possível determinar os projetos vencedores
         see_results: "Exibir resultados"
         milestone_tags_filter_all: "Todos os status de andamento"
       show:
@@ -317,6 +346,13 @@ pt-BR:
           description: "Crie um processo com múltiplos grupos, distritos ou temas. Imagine que você tem várias \"bolsas de dinheiro\". Por exemplo, € 25.000 para o \"Distrito Norte\", € 30.000 para o \"Distrito Centro\", € 28.000 para o \"Distrito Sul\" e um valor para toda a cidade. Ou para vários temas como esporte, cultura ou saúde."
           link: "Criar orçamento com diversos cabeçalhos"
           title: "<strong>Múltiplos cabeçalhos</strong>orçamento"
+        single:
+          description: "Crie um processo com um grupo, distrito ou tópico. Você tem um montante disponível de dinheiro. Por exemplo, R$ 25.000 para o distrito ou R$ 10.000 para cultura."
+          link: "Criar cabeçalho de orçamento único"
+        title: "Tipo de orçamento participatório"
+      phases:
+        multiple:
+          back: "Retornar para rubricas"
     milestones:
       index:
         table_id: "ID"
@@ -660,6 +696,11 @@ pt-BR:
       milestones:
         index:
           title: Seguindo
+    locales:
+      default_help_text: "Este é o idioma padrão da aplicação e mudá-lo irá <strong>afetar todo usuário</strong> visitando este site pela primeira vez."
+      enabled_help_text: O idioma padrão, selecionado acima, será incluído automaticamente.
+      update:
+        notice: Idiomas atualizados como sucesso
     managers:
       index:
         title: Gerentes
@@ -682,6 +723,7 @@ pt-BR:
       proposals_topics: Tópicos de propostas
       budgets: Orçamentos participativos
       geozones: Gerenciar geozonas
+      locales: Idiomas
       hidden_comments: Comentários ocultos
       hidden_debates: Debates ocultos
       hidden_proposals: Propostas ocultas
@@ -721,7 +763,10 @@ pt-BR:
           community: "Comunidade"
           proposals: "Propostas"
           polls: "Votações"
+          legislation: "Legislação colaborativa"
+          budgets: "Orçamentos"
           layouts: "Layouts"
+          machine_learning: "I. A / Aprendizado de Máquina"
           mailers: "E-mails"
           management: "Gerenciamento"
           welcome: "Bem-vindo"
@@ -742,6 +787,8 @@ pt-BR:
       debates: "Debates"
       comments: "Comentários"
       local_census_records: Gerenciar censo local
+      machine_learning: "I. A / Aprendizado de Máquina"
+      multitenancy: Multilocação
     administrators:
       index:
         title: Administradores
@@ -1064,6 +1111,10 @@ pt-BR:
         alert: "Esta ação excluirá a votação e todas as perguntas associadas a ela."
         success_notice: "Votação excluída com sucesso"
         unable_notice: "Não é possível excluir votações com votos"
+      votation_type:
+        title: "Forma de votação"
+        unique_description: "É possível apenas responder uma vez à pergunta."
+        multiple_description: "Permitir a escolha de múltiplas respostas. É possível determinar o número máximo de respostas."
     questions:
       index:
         create: "Criar questão"
@@ -1073,9 +1124,13 @@ pt-BR:
         table_proposal: "Proposta"
       edit:
         title: "Editar pergunta"
+      form:
+        poll_help: "Você só pode selecionar votações que não começaram ainda"
       new:
         title: "Criar questão para pesquisa %{poll}"
         title_proposal: "Criar pergunta"
+      destroy:
+        notice: "Questão excluída com sucesso"
       answers:
         images:
           add_image: "Adicionar imagem"
@@ -1098,11 +1153,17 @@ pt-BR:
           documents_list: Lista de documentos
           document_title: Título
           document_actions: Ações
+      no_edit: "No momento que a votação tiver começado não será possível criar, editar ou excluir perguntas, respostas ou qualquer conteúdo associado com a votação."
     answers:
       new:
         title: Nova resposta
       edit:
         title: Editar resposta
+      destroy:
+        success_notice: "Resposta excluída com sucesso"
+      images:
+        index:
+          title: Imagens
       videos:
         index:
           title: Vídeos
@@ -1266,6 +1327,10 @@ pt-BR:
         sdg:
           title: Configuração de ODSs
           how_to_enable: 'Para mostrar as opções de configuração de Objetivos de Desenvolvimento Sustentável, é preciso habilitar "ODS" na aba "Características".'
+        cookies_consent:
+          title: Consentimento para cookies
+        cookies_consent_banner:
+          title: Banner de consentimento para cookies
       remote_census_general_name: Informações gerais
       remote_census_request_name: Solicitação - Dados
       remote_census_response_name: Respostas - Dados
@@ -1311,10 +1376,12 @@ pt-BR:
       color_help: Formato hexadecimal
       show_results_and_stats: "Exibir resultados e estatísticas"
       results_and_stats_reminder: "Ao marcar estas caixas de seleção, os resultado e/ou estatísticas estarão disponíveis publicamente e qualquer usuário poderá vê-los."
+      close_modal: Fechar modal
     geozones:
       index:
         title: Geozona
         create: Criar geozona
+        geojson_map: Mapa GeoJSON
       geozone:
         name: Nome
         external_code: Código externo
@@ -1322,6 +1389,7 @@ pt-BR:
         code_help: Código de resposta para esta zona na API do censo
         coordinates: Coordenadas
         coordinates_help: Coordenadas que vão gerar uma zona clicável num mapa de imagem HTML
+        geojson: GeoJSON disponível
       edit:
         form:
           submit_button: Salvar alterações
@@ -1553,6 +1621,13 @@ pt-BR:
             notice: "Cartão atualizado com sucesso"
           destroy:
             notice: "Cartão excluído com sucesso"
+    tenants:
+      new:
+        title: Novo Inquilino
+      restore:
+        notice: Inquilino habilitado com sucesso
+      update:
+        notice: Inquilino atualizado com sucesso
     homepage:
       title: Página inicial
       description: Os módulos ativos aparecem na página inical na mesma ordem que aqui.
@@ -1622,6 +1697,43 @@ pt-BR:
         local_census_records:
           no_records_found: Nenhum registro encontrado.
     machine_learning:
+      cancel: "Cancelar operação"
+      comments_summary: "Sumário de comentários"
+      error: "Erro:"
+      execute_script: "Executar script"
+      executed_script: "Script executado:"
+      feature_disabled_link: "página de configurações"
+      help:
+        title_1: "O que é I. A / Aprendizado de Máquina?"
+        title_3: "Como utilizar esse módulo"
+        title_4: "Como implementar novos scripts de I. A / Aprendizado de Máquina"
+        description_4: "Por favor utilize scripts anteriores como exemplo."
+      no_content: "Nenhum conteúdo gerado ainda"
       related_content: "Conteúdo relacionado"
       tab_help: "Ajuda"
       tags: "Marcação"
+      title: "I. A / Aprendizado de Máquina"
+    cookies:
+      vendors:
+        empty: Nenhum fornecedor encontrado
+        third_party_cookies: Cookies de terceiros
+        create_button: Criar novo fornecedor de cookies
+        create:
+          notice: Fornecedor de cookies criado com sucesso
+        new:
+          title: Novo fornecedor de cookies
+        edit:
+          title: Editar fornecedor de cookies
+        update:
+          notice: Fornecedor de cookies atualizado com sucesso
+        destroy:
+          notice: Fornecedor de cookies excluído com sucesso
+        form:
+          name:
+            help_text: Esta informação será visível publicamente.
+          cookie:
+            help_text: Esta informação será utilizada internamente. O nome deste cookie deve ser único, e só pode conter letras, números e sublinhado.
+          description:
+            help_text: Esta informação será visível publicamente.
+          script:
+            help_text: Este é o script a ser executado quando o cookie é aceitado pelo usuário. Você pode inserir o código de Javascript comum aqui e introduzir referências para outras aplicações de javascript.
