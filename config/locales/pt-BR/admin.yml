@@ -100,8 +100,8 @@ pt-BR:
         table_phase: Estágio
         table_phase_progress: "%{current_phase_number}%{total_phases}"
         type_multiple: "Múltiplos cabeçalhos"
-        type_pending: "Pendente: Sem cabeçalhos"
-        type_single: "Cabeçalho individual"
+        type_pending: "Pendente: Sem rubrica"
+        type_single: "Rubrica individual"
         admin_ballots: Administrar cédulas
         no_budgets: "Não há orçamentos."
       create:
@@ -148,12 +148,12 @@ pt-BR:
         unable_notice: Você não pode destruir um orçamento que tem investimentos associados
         unable_notice_polls: Não é possível excluir um orçamento com uma votação associada
       new:
-        title_multiple: Novo cabeçalho de orçamentos múltiplos
-        title_single: Novo cabeçalho de orçamento único
+        title_multiple: Nova rubrica de orçamentos múltiplos
+        title_single: Nova rubrica de orçamento único
       help:
         budgets: "Orçamentos participatórios permitem aos cidadãos a propor e decidir diretamente como aplicar parte do orçamento, com monitoramento e avaliação rigorosa das propostas pela instituição."
         groups:
-          multiple: "Grupos tem a finalidade de organizar os cabeçalhos. Depois que um grupo é criado e ele contém cabeçalhos, é possível determinar em quantos cabeçalhos um usuário pode votar por grupo."
+          multiple: "Grupos tem a finalidade de organizar os cabeçalhos. Depois que um grupo é criado e ele contém rubricas, é possível determinar em quantos cabeçalhos um usuário pode votar por grupo."
           single: "Grupos tem a finalidade de organizar rubricas, já que esse orçamento irá conter apenas uma rubrica, o mesmo nome pode ser utilizado já que ele não irá aparecer em nenhum outro local. Você pode continuar para a próxima etapa."
         headings:
           multiple: "Rubricas tem a finalidade de separar o dinheiro do orçamento participatório. Aqui você pode adicionar rubricas para este grupo e determinar à quantidade de dinheiro que será utilizado em cada rúbrica."
@@ -227,6 +227,8 @@ pt-BR:
         enabled_help_text: Esta fase será pública no cronograma de fases do orçamento, bem como ativa para qualquer outra finalidade
         image_description: "Se uma imagem for carregada ela será exibida próxima à descrição desta etapa."
         main_call_to_action: "Chamada para ação (opcional)"
+        main_call_to_action_description: "Esse endereço irá aparecer no banner principal deste orçamento participatório e encorajará o usuário à realizar uma ação específica como: criar uma proposta, votar em propostas existentes ou aprender mais sobre o processo."
+        name_help_text: "Este é o título da etapa que os usuários irão ler no cabeçalho no momento em que a etapa estiver ativa."
         save_changes: Salvar alterações
       index:
         title: "Fases do %{budget}"
@@ -349,10 +351,14 @@ pt-BR:
         single:
           description: "Crie um processo com um grupo, distrito ou tópico. Você tem um montante disponível de dinheiro. Por exemplo, R$ 25.000 para o distrito ou R$ 10.000 para cultura."
           link: "Criar cabeçalho de orçamento único"
+          title: "Orçamento <strong>rubrica única</strong>"
         title: "Tipo de orçamento participatório"
       phases:
+        continue: "Finalizar"
         multiple:
           back: "Retornar para rubricas"
+        single:
+          back: "Retornar para editar cabeçalhos"
     milestones:
       index:
         table_id: "ID"
@@ -447,6 +453,15 @@ pt-BR:
         back: Voltar para %{org}
         title: Administração
         description: Bem-vindo ao painel de administração %{org}.
+        info: |-
+          <p>Este é o lugar em que você, como administrador, irá implementar e supervisionar o processo de participação dos cidadãos na sua cidade ou região.</p>
+          <p>Você agora faz parte das centenas de governos e municípios ao redor do mundo que estão usando a plataforma CONSULADO DA DEMOCRACIA para por a participação popular em prática. Parabéns!</p>
+
+          <p>A Fundação CONSULADO DA DEMOCRACIA está no centro da comunidade global de usuário. Nós gostaríamos que você entre em contato para que possamos entender quem está utilizando o programa e ver formas de como pode ajudar no seu uso e implementação. Mal podemos esperar para dar as boas vinda a você na comunidade.</p>
+
+          <p>Feliz administração!</p>
+
+          <p>Saudações do time da Fundação CONSULADO DA DEMOCRACIA.</p>
       actions:
         index:
           description: "Quando os usuários criam propostas, eles podem acessar um painel com o progresso da sua proposta, no qual é possível propor-lhes recursos y recomendações para conseguir apoios para as suas ideias."
@@ -1350,14 +1365,17 @@ pt-BR:
         label:
           booths: "Buscar urna por nome"
           budget_investments: "Buscar investimentos por título, descrição ou cabeçalho"
+          comments: "Pesquisar comentários"
           debates: "Buscar debates por título ou descrição"
           legislation_processes: "Buscar processos por título ou descrição"
+          legislation_proposals: "Pesquisar propostas pelo título ou descrição"
           local_census_records: "Pesquisar por número de documento"
           organizations: "Nome, e-mail ou número de telefone"
           poll_officers: "Buscar presidentes das votações"
           poll_questions: "Buscar perguntas"
           polls: "Buscar votações por nome ou descrição"
           proposals: "Buscar propostas por título, código, descrição ou pergunta"
+          proposal_notifications: "Pesquisar notificações pelo título ou descrição"
           users: "Pesquisar usuário por nome ou pelo email"
         search: "Buscar"
       search_results: "Buscar resultados"
@@ -1377,16 +1395,19 @@ pt-BR:
       show_results_and_stats: "Exibir resultados e estatísticas"
       results_and_stats_reminder: "Ao marcar estas caixas de seleção, os resultado e/ou estatísticas estarão disponíveis publicamente e qualquer usuário poderá vê-los."
       close_modal: Fechar modal
+      example_url: "Por exemplo, https://consuldemocracy.org ou /ajuda"
     geozones:
       index:
         title: Geozona
         create: Criar geozona
         geojson_map: Mapa GeoJSON
+        geojson_map_help: "Se as coordenadas do GeoJSON estão disponíveis elas serão exibidas no mapa abaixo"
       geozone:
         name: Nome
         external_code: Código externo
         census_code: Código do censo
         code_help: Código de resposta para esta zona na API do censo
+        color_help: "Cor da zona no mapa do orçamento. %{format_help}"
         coordinates: Coordenadas
         coordinates_help: Coordenadas que vão gerar uma zona clicável num mapa de imagem HTML
         geojson: GeoJSON disponível
