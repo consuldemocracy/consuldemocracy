@@ -77,6 +77,7 @@ pt-BR:
           destroy: "Tem certeza? Essa ação irá deletar o orçamento e todos os grupos associados e seus cabeçalhos. Essa ação não poderá ser desfeita."
         descriptions:
           ballots: "Isso irá permitir que você gerencie os votos impressos. Apenas use essa opção se você utilizará urnas físicas para coletar os votos durante a fase final de votação."
+          calculate_winners: 'Após calcular os resultados, apenas os administradores poderão acessá-los. Eles se tornarão públicos após o projeto alcançar a %{phase} fase <strong>se a opção "Mostrar resultados" estiver habilitada</strong> durante a edição do orçamento.'
           destroy: "Essa ação só é necessária se você for usar uma urna presencial durante a fase final de votação. Cidadãos poderão votar pela internet com ou sem urnas presenciais."
         edit: "Editar orçamento"
         preview: "Prévia"
@@ -96,6 +97,7 @@ pt-BR:
         table_duration: "Duração"
         table_name: Nome
         table_phase: Estágio
+        table_phase_progress: "%{current_phase_number}%{total_phases}"
         type_multiple: "Múltiplos cabeçalhos"
         type_pending: "Pendente: Sem cabeçalhos"
         type_single: "Cabeçalho individual"
@@ -105,10 +107,16 @@ pt-BR:
         notice: Novo orçamento participativo criado com sucesso!
       update:
         notice: Orçamento participativo atualizado com sucesso
+      publish:
+        notice: "Orçamento de participação publicado com sucesso"
       edit:
         title: Editar Orçamento participativo
+        drafting: "O orçamento participatório estão em modo de rascunho, apenas os administradores poderão vê-lo no domínio público. Uma vez publicado ele não poderá retornar ao modo de rascunho."
         delete: Deletar orçamento
         phase: Estágio
+        phases_caption: "Fases"
+        phases_table_help_text: "A configurações dessas fases são utilizada apenas para fins de informação. Sua função é para definir as fases de informação exibidas na página pública do orçamento participatório."
+        duration: "Duração"
         enabled: Habilitado
         actions: Ações
         active: Ativo
@@ -123,6 +131,9 @@ pt-BR:
           other: "%{count} avaliadores selecionados"
         empty_administrators: "Não há administradores"
         empty_valuators: "Não há avaliadores"
+        name_description: "Esse é o nome do orçamento participatório usado no cabeçalho e nos cartões, em qualquer momento que estiver ativo"
+        info:
+          budget_settings: "Configurações de orçamento participatório gerais"
       destroy:
         success_notice: Orçamento excluído com sucesso
         unable_notice: Você não pode destruir um orçamento que tem investimentos associados
