@@ -65,7 +65,7 @@ describe ProgressBar do
   end
 
   it "dynamically validates the percentage range" do
-    stub_const("#{ProgressBar}::RANGE", (-99..99))
+    stub_const("#{ProgressBar}::RANGE", -99..99)
 
     progress_bar.percentage = -99
 

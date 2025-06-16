@@ -27,7 +27,7 @@ describe "Legislation Proposals" do
 
       create_list(
         :legislation_proposal,
-        (Legislation::Proposal.default_per_page + 2),
+        Legislation::Proposal.default_per_page + 2,
         process: process
       )
     end

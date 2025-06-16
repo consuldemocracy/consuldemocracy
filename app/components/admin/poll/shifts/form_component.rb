@@ -20,7 +20,7 @@ class Admin::Poll::Shifts::FormComponent < ApplicationComponent
     def shift_vote_collection_dates
       return [] if voting_polls.blank?
 
-      date_options((voting_start_date..voting_end_date), Poll::Shift.tasks[:vote_collection])
+      date_options(voting_start_date..voting_end_date, Poll::Shift.tasks[:vote_collection])
     end
 
     def shift_recount_scrutiny_dates
