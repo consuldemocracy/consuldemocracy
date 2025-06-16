@@ -825,6 +825,9 @@ Style/RaiseArgs:
 Style/RedundantArgument:
   Enabled: true
 
+Style/RedundantArrayFlatten:
+  Enabled: true
+
 Style/RedundantBegin:
   Enabled: true
 
