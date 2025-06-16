@@ -354,6 +354,14 @@ Naming/BlockForwarding:
     - "app/controllers/management/base_controller.rb"
     - "app/controllers/subscriptions_controller.rb"
 
+Naming/PredicateMethod:
+  Enabled: true
+  Exclude:
+    - "app/models/local_census_records/import.rb"
+    - "app/models/user.rb"
+    - "app/models/verification/management/email.rb"
+    - "config/initializers/foundation_form_builder.rb"
+
 Naming/RescuedExceptionsVariableName:
   Enabled: true
 

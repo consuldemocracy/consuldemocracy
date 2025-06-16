@@ -11,7 +11,7 @@ class SDG::Goals::HelpPageComponent < ApplicationComponent
 
   private
 
-    def is_active?(goal)
+    def active_class(goal)
       "is-active" if goal.code == 1
     end
 end
