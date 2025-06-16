@@ -739,6 +739,9 @@ Style/ComparableBetween:
 Style/DigChain:
   Enabled: true
 
+Style/EmptyStringInsideInterpolation:
+  Enabled: true
+
 Style/FileRead:
   Enabled: true
 
