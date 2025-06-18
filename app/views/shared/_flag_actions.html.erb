@@ -4,11 +4,12 @@
       <span class="divider">&nbsp;|&nbsp;</span>
     <% end %>
 
-    <button type="button" data-toggle="flag-drop-<%= dom_id(flaggable) %>" title="<%= t("shared.flag") %>">
+    <button type="button" id="upper-flag-button" data-toggle="flag-drop-<%= dom_id(flaggable) %>" title="<%= t("shared.flag") %>">
       <span class="icon-flag flag-disable"></span>
     </button>
     <span class="dropdown-pane" id="flag-drop-<%= dom_id(flaggable) %>" data-dropdown data-auto-focus="true">
-      <%= link_to t("shared.flag"), polymorphic_path(flaggable, action: :flag), method: :put, remote: true %>
+      <%= button_to t("shared.flag"), polymorphic_path(flaggable, action: :flag),
+                    id: "lower-flag-button", method: :put, remote: true %>
     </span>
   <% end %>
 
@@ -17,11 +18,12 @@
       <span class="divider">&nbsp;|&nbsp;</span>
     <% end %>
 
-    <button type="button" data-toggle="unflag-drop-<%= dom_id(flaggable) %>" title="<%= t("shared.unflag") %>">
+    <button type="button" id="upper-unflag-button" data-toggle="unflag-drop-<%= dom_id(flaggable) %>" title="<%= t("shared.unflag") %>">
       <span class="icon-flag flag-active"></span>
     </button>
     <span class="dropdown-pane" id="unflag-drop-<%= dom_id(flaggable) %>" data-dropdown data-auto-focus="true">
-      <%= link_to t("shared.unflag"), polymorphic_path(flaggable, action: :unflag), method: :put, remote: true %>
+      <%= button_to t("shared.unflag"), polymorphic_path(flaggable, action: :unflag),
+                    id: "lower-unflag-button", method: :put, remote: true %>
     </span>
   <% end %>
 </span>

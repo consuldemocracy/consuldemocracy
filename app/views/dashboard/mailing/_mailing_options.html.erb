@@ -5,8 +5,7 @@
                 class: "button expanded" %>
   <% end %>
 
-  <%= link_to t("dashboard.mailing.mailing_options.send", address: current_user.email),
-              proposal_dashboard_mailing_index_path(proposal),
-              method: :post,
-              class: "button expanded" %>
+  <%= button_to t("dashboard.mailing.mailing_options.send", address: current_user.email),
+                proposal_dashboard_mailing_index_path(proposal),
+                class: "button expanded" %>
 </div>

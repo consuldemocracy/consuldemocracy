@@ -1696,7 +1696,7 @@ describe "Budget Investments" do
         within("aside") do
           expect(page).not_to have_content "Author"
           expect(page).not_to have_link "Edit"
-          expect(page).not_to have_link "Remove image"
+          expect(page).not_to have_button "Remove image"
         end
       end
 
@@ -1709,7 +1709,7 @@ describe "Budget Investments" do
         within("aside") do
           expect(page).to have_content "AUTHOR"
           expect(page).to have_link "Edit"
-          expect(page).not_to have_link "Remove image"
+          expect(page).not_to have_button "Remove image"
         end
       end
 
@@ -1723,7 +1723,7 @@ describe "Budget Investments" do
         within("aside") do
           expect(page).to have_content "AUTHOR"
           expect(page).not_to have_link "Edit"
-          expect(page).to have_link "Remove image"
+          expect(page).to have_button "Remove image"
         end
       end
     end
