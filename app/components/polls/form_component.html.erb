@@ -1,1 +1,3 @@
-<%= render Polls::Questions::QuestionComponent.with_collection(questions) %>
+<% questions.each do |question| %>
+  <%= render Polls::Questions::QuestionComponent.new(question) %>
+<% end %>

@@ -7,7 +7,7 @@ describe Polls::Questions::QuestionComponent do
     option_b = create(:poll_question_option, question: question, title: "Answer B")
     allow_any_instance_of(Poll::Question::Option).to receive(:with_read_more?).and_return(true)
 
-    render_inline Polls::Questions::QuestionComponent.new(question: question)
+    render_inline Polls::Questions::QuestionComponent.new(question)
 
     poll_question = page.find("#poll_question_#{question.id}")
     expect(poll_question).to have_content("Read more about")
