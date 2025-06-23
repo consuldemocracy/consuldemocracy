@@ -197,43 +197,57 @@ describe "Polls" do
       expect(page).to have_content("This poll has finished")
     end
 
-    scenario "Level 2 users answering" do
+    scenario "Level 2 users answering" do # TODO: add another question
       poll.update!(geozone_restricted_to: [geozone])
+      create(:poll_question, :yes_no, poll: poll, title: "Do you agree?")
 
-      question = create(:poll_question, :yes_no, poll: poll)
-      user = create(:user, :level_two, geozone: geozone)
-
-      login_as user
+      login_as(create(:user, :level_two, geozone: geozone))
       visit poll_path(poll)
 
-      within("#poll_question_#{question.id}_options") do
-        click_button "Vote Yes"
+      within_fieldset("Do you agree?") { choose "Yes" }
+      click_button "Vote"
 
-        expect(page).to have_button "You have voted Yes"
-        expect(page).to have_button "Vote No"
+      expect(page).to have_content "Thank you for voting!"
+      expect(page).to have_content "You have already participated in this poll. " \
+                                   "If you vote again it will be overwritten."
+
+      within_fieldset("Do you agree?") do
+        expect(page).to have_field "Yes", type: :radio, checked: true
       end
+
+      expect(page).to have_button "Vote"
     end
 
-    scenario "Level 2 users changing answer" do
-      poll.update!(geozone_restricted_to: [geozone])
-
-      question = create(:poll_question, :yes_no, poll: poll)
+    scenario "Level 2 users changing answer" do # TODO: add another question
       user = create(:user, :level_two, geozone: geozone)
+      question = create(:poll_question, :yes_no, poll: poll, title: "Do you agree?")
+      option = question.question_options.find_by(title: "Yes")
+
+      poll.update!(geozone_restricted_to: [geozone])
+      create(:poll_answer, author: user, question: question, option: option)
+      create(:poll_voter, poll: poll, user: user)
 
       login_as user
       visit poll_path(poll)
 
-      within("#poll_question_#{question.id}_options") do
-        click_button "Yes"
+      expect(page).to have_content "You have already participated in this poll. " \
+                                   "If you vote again it will be overwritten."
 
-        expect(page).to have_button "You have voted Yes"
-        expect(page).to have_button "Vote No"
+      within_fieldset("Do you agree?") do
+        expect(page).to have_field "Yes", type: :radio, checked: true
 
-        click_button "No"
-
-        expect(page).to have_button "Vote Yes"
-        expect(page).to have_button "You have voted No"
+        choose "No"
       end
+
+      click_button "Vote"
+
+      expect(page).to have_content "Thank you for voting!"
+
+      within_fieldset("Do you agree?") do
+        expect(page).to have_field "No", type: :radio, checked: true
+      end
+
+      expect(page).to have_button "Vote"
     end
 
     scenario "Shows SDG tags when feature is enabled" do
