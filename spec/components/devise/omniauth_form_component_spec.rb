@@ -22,8 +22,8 @@ describe Devise::OmniauthFormComponent do
 
       render_inline component
 
-      expect(page).to have_link "Twitter"
-      expect(page).to have_link count: 1
+      expect(page).to have_button "Twitter"
+      expect(page).to have_button count: 1
     end
 
     it "renders the facebook link when the feature is enabled" do
@@ -31,8 +31,8 @@ describe Devise::OmniauthFormComponent do
 
       render_inline component
 
-      expect(page).to have_link "Facebook"
-      expect(page).to have_link count: 1
+      expect(page).to have_button "Facebook"
+      expect(page).to have_button count: 1
     end
 
     it "renders the google link when the feature is enabled" do
@@ -40,8 +40,8 @@ describe Devise::OmniauthFormComponent do
 
       render_inline component
 
-      expect(page).to have_link "Google"
-      expect(page).to have_link count: 1
+      expect(page).to have_button "Google"
+      expect(page).to have_button count: 1
     end
 
     it "renders the wordpress link when the feature is enabled" do
@@ -49,8 +49,8 @@ describe Devise::OmniauthFormComponent do
 
       render_inline component
 
-      expect(page).to have_link "Wordpress"
-      expect(page).to have_link count: 1
+      expect(page).to have_button "Wordpress"
+      expect(page).to have_button count: 1
     end
   end
 end

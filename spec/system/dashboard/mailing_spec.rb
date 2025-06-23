@@ -13,11 +13,11 @@ describe "Mailing" do
   end
 
   scenario "Has a link to send the mail" do
-    expect(page).to have_link("Send to #{proposal.author.email}")
+    expect(page).to have_button("Send to #{proposal.author.email}")
   end
 
   scenario "User receives feedback after the email is sent" do
-    click_link "Send to #{proposal.author.email}"
+    click_button "Send to #{proposal.author.email}"
     expect(page).to have_content("The email has been sent")
   end
 
@@ -31,6 +31,6 @@ describe "Mailing" do
     click_link "Preview"
 
     expect(page).not_to have_link("Preview")
-    expect(page).to have_link("Send to #{proposal.author.email}")
+    expect(page).to have_button("Send to #{proposal.author.email}")
   end
 end

@@ -28,7 +28,7 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
       visit send(followable_path, arguments)
 
       within "##{dom_id(followable)}" do
-        expect(page).to have_link("Follow #{followable.model_name.human.downcase}")
+        expect(page).to have_button("Follow #{followable.model_name.human.downcase}")
       end
     end
 
@@ -37,7 +37,7 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
       login_as(user)
 
       visit send(followable_path, arguments)
-      expect(page).to have_link("Follow #{followable.model_name.human.downcase}")
+      expect(page).to have_button("Follow #{followable.model_name.human.downcase}")
     end
 
     scenario "Should display unfollow after user clicks on follow button" do
@@ -46,7 +46,7 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
 
       visit send(followable_path, arguments)
       within "##{dom_id(followable)}" do
-        click_link("Follow #{followable.model_name.human.downcase}")
+        click_button("Follow #{followable.model_name.human.downcase}")
 
         expect(page).not_to have_link("Follow")
         expect(page).to have_link("Following")
@@ -59,7 +59,7 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
 
       visit send(followable_path, arguments)
       within "##{dom_id(followable)}" do
-        click_link("Follow #{followable.model_name.human.downcase}")
+        click_button("Follow #{followable.model_name.human.downcase}")
       end
 
       expect(page).to have_content "We will notify you of changes as they occur"
@@ -83,7 +83,7 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
         click_link("Unfollow #{followable.model_name.human.downcase}")
 
         expect(page).not_to have_link("Unfollow")
-        expect(page).to have_link("Follow #{followable.model_name.human.downcase}")
+        expect(page).to have_button("Follow #{followable.model_name.human.downcase}")
       end
     end
 

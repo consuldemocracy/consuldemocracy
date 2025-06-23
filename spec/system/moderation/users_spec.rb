@@ -39,7 +39,7 @@ describe "Moderate users" do
     expect(page).to have_css "h1", exact_text: debate3.title
     expect(page).not_to have_content(comment3.body)
 
-    click_link "Sign out"
+    click_button "Sign out"
 
     expect(page).to have_content "You have been signed out successfully"
 
