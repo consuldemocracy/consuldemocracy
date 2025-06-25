@@ -28,15 +28,15 @@ describe Poll::WebVote do
     end
 
     it "updates a poll_voter with user and poll data" do
-      create(:poll_answer, question: question, author: user, option: option_yes)
+      answer = create(:poll_answer, question: question, author: user, option: option_yes)
 
       web_vote.update(question.id.to_s => { option_id: option_no.id.to_s })
 
       expect(poll.reload.voters.size).to eq 1
       expect(question.reload.answers.size).to eq 1
+      expect(question.answers.first).to eq answer.reload
 
       voter = poll.voters.first
-      answer = question.answers.first
 
       expect(answer.author).to eq user
       expect(answer.option).to eq option_no

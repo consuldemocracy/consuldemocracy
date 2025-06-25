@@ -71,4 +71,33 @@ describe "Poll Votation Type" do
     expect(page).to have_field "Answer B", type: :checkbox, checked: false
     expect(page).to have_field "Answer C", type: :checkbox, checked: true
   end
+
+  scenario "Too many answers", :no_js do
+    create(:poll_question_multiple, :abcde, poll: poll, max_votes: 2, title: "Which ones are correct?")
+
+    visit poll_path(poll)
+    check "Answer A"
+    check "Answer B"
+    check "Answer D"
+    click_button "Vote"
+
+    within_fieldset("Which ones are correct?") do
+      expect(page).to have_content "you've selected 3 answers, but the maximum you can select is 2"
+      expect(page).to have_field "Answer A", type: :checkbox, checked: true
+      expect(page).to have_field "Answer B", type: :checkbox, checked: true
+      expect(page).to have_field "Answer C", type: :checkbox, checked: false
+      expect(page).to have_field "Answer D", type: :checkbox, checked: true
+      expect(page).to have_field "Answer E", type: :checkbox, checked: false
+    end
+
+    expect(page).not_to have_content "Thank you for voting!"
+
+    visit poll_path(poll)
+
+    expect(page).not_to have_content "but the maximum you can select"
+
+    within_fieldset("Which ones are correct?") do
+      expect(page).to have_field type: :checkbox, checked: false, count: 5
+    end
+  end
 end
