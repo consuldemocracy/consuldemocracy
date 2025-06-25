@@ -15,7 +15,7 @@ Denmark
 
 * Aarhus Kommune platform 'Sammen om Aarhus'
   * platform: [https://www.sammenomaarhus.dk/](https://www.sammenomaarhus.dk/)
-  * code base: [https://github.com/bellcom/consul](https://github.com/bellcom/consul)
+  * code base: [https://github.com/OS2Consul/os2consul](https://github.com/OS2Consul/os2consul); [https://github.com/bellcom/consul](https://github.com/bellcom/consul)
   * maintainer: Bellcom ([https://www.bellcom.dk/](https://www.bellcom.dk/))&#x20;
 
 Germany
