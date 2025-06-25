@@ -1,10 +1,10 @@
 class Polls::Questions::QuestionComponent < ApplicationComponent
-  attr_reader :question, :disabled
+  attr_reader :question, :form, :disabled
   alias_method :disabled?, :disabled
-  use_helpers :current_user
 
-  def initialize(question, disabled: false)
+  def initialize(question, form:, disabled: false)
     @question = question
+    @form = form
     @disabled = disabled
   end
 
@@ -69,6 +69,6 @@ class Polls::Questions::QuestionComponent < ApplicationComponent
     end
 
     def checked?(option)
-      question.answers.where(author: current_user, option: option).any?
+      form.object.answers[question.id].find { |answer| answer.option_id == option.id }
     end
 end

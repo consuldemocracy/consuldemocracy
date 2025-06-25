@@ -53,31 +53,36 @@ describe Polls::FormComponent do
   context "geozone restricted poll" do
     let(:poll) { create(:poll, geozone_restricted: true) }
     let(:geozone) { create(:geozone) }
+    before { poll.geozones << geozone }
 
-    it "renders disabled fields for users from another geozone" do
-      poll.geozones << geozone
-      sign_in(user)
+    context "user from another geozone" do
+      let(:user) { create(:user, :level_two) }
+      before { sign_in(user) }
 
-      render_inline Polls::FormComponent.new(web_vote)
+      it "renders disabled fields" do
+        render_inline Polls::FormComponent.new(web_vote)
 
-      page.find("fieldset[disabled]") do |fieldset|
-        expect(fieldset).to have_field "Yes"
-        expect(fieldset).to have_field "No"
+        page.find("fieldset[disabled]") do |fieldset|
+          expect(fieldset).to have_field "Yes"
+          expect(fieldset).to have_field "No"
+        end
+
+        expect(page).to have_button "Vote", disabled: true
       end
-
-      expect(page).to have_button "Vote", disabled: true
     end
 
-    it "renders enabled fields for same-geozone users" do
-      poll.geozones << geozone
-      sign_in(create(:user, :level_two, geozone: geozone))
+    context "user from the same geozone" do
+      let(:user) { create(:user, :level_two, geozone: geozone) }
+      before { sign_in(user) }
 
-      render_inline Polls::FormComponent.new(web_vote)
+      it "renders enabled answers" do
+        render_inline Polls::FormComponent.new(web_vote)
 
-      expect(page).not_to have_css "fieldset[disabled]"
-      expect(page).to have_field "Yes"
-      expect(page).to have_field "No"
-      expect(page).to have_button "Vote"
+        expect(page).not_to have_css "fieldset[disabled]"
+        expect(page).to have_field "Yes"
+        expect(page).to have_field "No"
+        expect(page).to have_button "Vote"
+      end
     end
   end
 end

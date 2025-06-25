@@ -5,11 +5,14 @@ describe Polls::Questions::QuestionComponent do
   let(:question) { create(:poll_question, :yes_no, poll: poll) }
   let(:option_yes) { question.question_options.find_by(title: "Yes") }
   let(:option_no) { question.question_options.find_by(title: "No") }
+  let(:user) { User.new }
+  let(:web_vote) { Poll::WebVote.new(poll, user) }
+  let(:form) { ConsulFormBuilder.new(:web_vote, web_vote, ApplicationController.new.view_context, {}) }
 
   it "renders more information links when any question option has additional information" do
     allow_any_instance_of(Poll::Question::Option).to receive(:with_read_more?).and_return(true)
 
-    render_inline Polls::Questions::QuestionComponent.new(question)
+    render_inline Polls::Questions::QuestionComponent.new(question, form: form)
 
     page.find("#poll_question_#{question.id}") do |poll_question|
       expect(poll_question).to have_content "Read more about"
@@ -20,13 +23,13 @@ describe Polls::Questions::QuestionComponent do
   end
 
   it "renders answers in given order" do
-    render_inline Polls::Questions::QuestionComponent.new(question)
+    render_inline Polls::Questions::QuestionComponent.new(question, form: form)
 
     expect("Yes").to appear_before("No")
   end
 
   it "renders disabled answers when given the disabled parameter" do
-    render_inline Polls::Questions::QuestionComponent.new(question, disabled: true)
+    render_inline Polls::Questions::QuestionComponent.new(question, form: form, disabled: true)
 
     page.find("fieldset[disabled]") do |fieldset|
       expect(fieldset).to have_field "Yes"
@@ -39,7 +42,7 @@ describe Polls::Questions::QuestionComponent do
     before { sign_in(user) }
 
     it "renders radio buttons for single-choice questions" do
-      render_inline Polls::Questions::QuestionComponent.new(question)
+      render_inline Polls::Questions::QuestionComponent.new(question, form: form)
 
       expect(page).to have_field "Yes", type: :radio
       expect(page).to have_field "No", type: :radio
@@ -47,7 +50,9 @@ describe Polls::Questions::QuestionComponent do
     end
 
     it "renders checkboxes for multiple-choice questions" do
-      render_inline Polls::Questions::QuestionComponent.new(create(:poll_question_multiple, :abc))
+      question = create(:poll_question_multiple, :abc, poll: poll)
+
+      render_inline Polls::Questions::QuestionComponent.new(question, form: form)
 
       expect(page).to have_field "Answer A", type: :checkbox
       expect(page).to have_field "Answer B", type: :checkbox
@@ -59,7 +64,7 @@ describe Polls::Questions::QuestionComponent do
     it "selects the option when users have already voted" do
       create(:poll_answer, author: user, question: question, option: option_yes)
 
-      render_inline Polls::Questions::QuestionComponent.new(question)
+      render_inline Polls::Questions::QuestionComponent.new(question, form: form)
 
       expect(page).to have_field "Yes", type: :radio, checked: true
       expect(page).to have_field "No", type: :radio, checked: false
