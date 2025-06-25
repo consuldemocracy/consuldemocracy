@@ -22,4 +22,4 @@ jobs:
       - name: Install node packages
         run: npm clean-install
       - name: Run pronto
-        run: PRONTO_PULL_REQUEST_ID="$(jq --raw-output .number "$GITHUB_EVENT_PATH")" PRONTO_GITHUB_ACCESS_TOKEN="${{ github.token }}" bundle exec pronto run -f github_status github_pr -c origin/${{ github.base_ref }}
+        run: PRONTO_PULL_REQUEST_ID="$(jq --raw-output .number "$GITHUB_EVENT_PATH")" PRONTO_GITHUB_ACCESS_TOKEN="${{ github.token }}" bundle exec pronto run -f github_status github_pr -c ${{ github.event.pull_request.base.ref }}
