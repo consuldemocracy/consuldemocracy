@@ -575,6 +575,7 @@ es:
     final_date: "Recuento final/Resultados"
     form:
       vote: "Votar"
+      maximum_exceeded: "has seleccionado %{given} respuesta, pero el máximo que puedes seleccionar es %{maximum}"
     index:
       filters:
         current: "Abiertas"

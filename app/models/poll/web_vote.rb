@@ -1,6 +1,7 @@
 class Poll::WebVote
   include ActiveModel::Validations
   attr_reader :poll, :user
+  delegate :t, to: "ApplicationController.helpers"
 
   validate :max_answers
 
@@ -13,8 +14,14 @@ class Poll::WebVote
     poll.questions.for_render.sort_for_list
   end
 
+  def answers
+    @answers ||= questions.to_h do |question|
+      [question.id, question.answers.where(author: user)]
+    end
+  end
+
   def update(params)
-    self.answers = answers_for(params)
+    self.answers = given_answers(params)
     all_valid = true
 
     user.with_lock do
@@ -46,11 +53,8 @@ class Poll::WebVote
 
     attr_writer :answers
 
-    def answers
-      @answers ||= {}
-    end
-
-    def answers_for(params)
+    def given_answers(params)
+      # TODO: what if they leave everything blank?
       questions.to_h do |question|
         [question.id, answers_for_question(question, params[question.id.to_s])]
       end
@@ -67,7 +71,10 @@ class Poll::WebVote
     def max_answers
       questions.each do |question|
         if answers[question.id].count > question.max_votes
-          errors.add(:"question_#{question.id}", "TEM ERPR")
+          errors.add(
+            :"question_#{question.id}",
+            t("polls.form.maximum_exceeded", maximum: question.max_votes, given: answers[question.id].count)
+          )
         end
       end
     end
