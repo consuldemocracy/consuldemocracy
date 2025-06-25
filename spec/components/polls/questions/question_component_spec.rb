@@ -3,13 +3,15 @@ require "rails_helper"
 describe Polls::Questions::QuestionComponent do # TODO
   let(:poll) { create(:poll) }
   let(:question) { create(:poll_question, :yes_no, poll: poll) }
+  let(:web_vote) { Poll::WebVote.new(poll, User.new) }
+  let(:form) { ConsulFormBuilder.new(:web_vote, web_vote, ApplicationController.new.view_context, {}) }
 
   it "renders more information links when any question option has additional information" do
     option_yes = question.question_options.find_by(title: "Yes")
     option_no = question.question_options.find_by(title: "No")
     allow_any_instance_of(Poll::Question::Option).to receive(:with_read_more?).and_return(true)
 
-    render_inline Polls::Questions::QuestionComponent.new(question)
+    render_inline Polls::Questions::QuestionComponent.new(question, form: form)
 
     page.find("#poll_question_#{question.id}") do |poll_question|
       expect(poll_question).to have_content "Read more about"

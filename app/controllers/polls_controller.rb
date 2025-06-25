@@ -9,7 +9,7 @@ class PollsController < ApplicationController
   load_and_authorize_resource
 
   has_filters %w[current expired]
-  has_orders %w[most_voted newest oldest], only: :show
+  has_orders %w[most_voted newest oldest], only: [:show, :answer]
 
   def index
     @polls = Kaminari.paginate_array(

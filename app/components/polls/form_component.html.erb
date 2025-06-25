@@ -1,6 +1,6 @@
-<%= form_for poll, form_attributes do |f| %>
+<%= form_for web_vote, form_attributes do |f| %>
   <% questions.each do |question| %>
-    <%= render Polls::Questions::QuestionComponent.new(question) %>
+    <%= render Polls::Questions::QuestionComponent.new(question, form: f) %>
   <% end %>
 
   <%= f.submit(class: "button", value: t("polls.form.vote")) %>

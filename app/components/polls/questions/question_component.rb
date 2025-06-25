@@ -1,9 +1,10 @@
 class Polls::Questions::QuestionComponent < ApplicationComponent
-  attr_reader :question
+  attr_reader :question, :form
   use_helpers :cannot?, :current_user
 
-  def initialize(question)
+  def initialize(question, form:)
     @question = question
+    @form = form
   end
 
   private
