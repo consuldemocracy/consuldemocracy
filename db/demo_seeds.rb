@@ -38,6 +38,14 @@ def add_image(image, imageable)
   imageable.save
 end
 
+def demo_seed_image_attachment(image_path)
+  Rack::Test::UploadedFile.new(Rails.root.join("db", "demo_seeds", "images", image_path))
+end
+
+def demo_seed_document_attachment(document_path)
+  Rack::Test::UploadedFile.new(Rails.root.join("db", "demo_seeds", "documents", document_path))
+end
+
 log "Creating demo seeds for tenant #{Tenant.current_schema}" unless Tenant.default?
 load Rails.root.join("db", "seeds.rb")
 
