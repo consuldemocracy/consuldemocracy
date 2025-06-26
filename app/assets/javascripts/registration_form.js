@@ -5,12 +5,16 @@
       var clearUsernameMessage, showUsernameMessage, usernameInput, validateUsername;
       usernameInput = $("form#new_user[action=\"/users\"] input#user_username");
       clearUsernameMessage = function() {
-        $("small").remove();
+        $("form#new_user .username-message").remove();
       };
       showUsernameMessage = function(response) {
         var klass;
         klass = response.available ? "no-error" : "error";
-        usernameInput.after($("<small class=\"" + klass + "\" style=\"margin-top: -16px;\">" + response.message + "</small>"));
+        usernameInput.after($(
+          "<small class=\"username-message " + klass + "\" style=\"margin-top: -16px;\">" +
+            response.message +
+            "</small>"
+        ));
       };
       validateUsername = function(username) {
         var request;
