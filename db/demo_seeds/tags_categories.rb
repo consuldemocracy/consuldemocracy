@@ -13,4 +13,3 @@ section "Creating DEMO Tags Categories" do
     ActsAsTaggableOn::Tag.category.create!(name: tag)
   end
 end
-
