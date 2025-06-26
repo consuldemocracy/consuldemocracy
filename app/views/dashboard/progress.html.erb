@@ -38,4 +38,4 @@
   <%= render "summary_recommended_actions" %>
 <% end %>
 
-<%= render "resources" %>
+<%= render Dashboard::ResourcesComponent.new(active_resources) %>

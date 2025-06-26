@@ -157,7 +157,7 @@ describe "Proposal's dashboard" do
                          required_supports: proposal.votes_for.size + 1_000)
 
     visit progress_proposal_dashboard_path(proposal)
-    within "div#available-resources-section" do
+    within ".dashboard-resources" do
       expect(page).to have_content("Polls")
       expect(page).to have_content("E-mail")
       expect(page).to have_content("Poster")
@@ -204,7 +204,7 @@ describe "Proposal's dashboard" do
                          required_supports: proposal.votes_for.size + 1_000)
 
     visit progress_proposal_dashboard_path(proposal)
-    within "div#available-resources-section" do
+    within ".dashboard-resources" do
       expect(page).to have_content("Polls")
       expect(page).to have_content("E-mail")
       expect(page).to have_content("Poster")
@@ -239,7 +239,7 @@ describe "Proposal's dashboard" do
 
     visit progress_proposal_dashboard_path(proposal)
 
-    within "div#available-resources-section" do
+    within ".dashboard-resources" do
       expect(page).to have_content("Polls")
       expect(page).to have_content("E-mail")
       expect(page).to have_content("Poster")
