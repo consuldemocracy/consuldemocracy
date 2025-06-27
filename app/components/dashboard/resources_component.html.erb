@@ -1,7 +1,7 @@
-<div id="available-resources-section">
+<div class="available-resources-section">
   <h3 class="title"><%= t("dashboard.resources.available_resources") %></h3>
 
-  <div data-equalizer="resources" data-equalize-on="medium">
+  <div class="resources">
     <% default_resources.each do |resource| %>
       <%= render Dashboard::DefaultResourceComponent.new(resource, proposal) %>
     <% end %>
