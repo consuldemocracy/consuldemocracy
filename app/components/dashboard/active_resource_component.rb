@@ -1,8 +1,10 @@
 class Dashboard::ActiveResourceComponent < ApplicationComponent
+  with_collection_parameter :resource
+
   attr_reader :resource, :proposal, :new_actions_since_last_login
   use_helpers :is_new_action_since_last_login?
 
-  def initialize(resource, proposal, new_actions_since_last_login)
+  def initialize(resource:, proposal:, new_actions_since_last_login:)
     @resource = resource
     @proposal = proposal
     @new_actions_since_last_login = new_actions_since_last_login
