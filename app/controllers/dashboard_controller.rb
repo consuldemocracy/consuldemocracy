@@ -1,5 +1,5 @@
 class DashboardController < Dashboard::BaseController
-  helper_method :dashboard_action, :active_resources, :course
+  helper_method :dashboard_action, :course
   before_action :set_done_and_pending_actions, only: [:recommended_actions, :progress]
   before_action :authorize_dashboard, except: :publish
 
@@ -29,13 +29,6 @@ class DashboardController < Dashboard::BaseController
   end
 
   private
-
-    def active_resources
-      @active_resources ||= Dashboard::Action.active
-                                             .resources
-                                             .by_proposal(proposal)
-                                             .order(required_supports: :asc, day_offset: :asc)
-    end
 
     def course
       @course ||= Dashboard::Action.course_for(proposal)

@@ -5,6 +5,8 @@
     <% default_resources.each do |resource| %>
       <%= render Dashboard::DefaultResourceComponent.new(resource, proposal) %>
     <% end %>
-    <%= render partial: "resource", collection: active_resources %>
+    <% active_resources.each do |resource| %>
+      <%= render Dashboard::ActiveResourceComponent.new(resource, proposal, new_actions_since_last_login) %>
+    <% end %>
   </div>
 </div>
