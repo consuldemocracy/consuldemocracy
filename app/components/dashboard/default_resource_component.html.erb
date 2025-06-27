@@ -1,0 +1,10 @@
+<div class="small-12 medium-6 large-3 column end">
+  <div class="resource-card" data-equalizer-watch="resources">
+    <h4><%= t("dashboard.menu.#{resource}") %></h4>
+    <p class="resource-description"><%= resource_description %></p>
+
+    <div class="small-12 column small-centered margin-top">
+      <%= link_to t("dashboard.resource.view_resource"), resource_path, class: "button expanded" %>
+    </div>
+  </div>
+</div>
