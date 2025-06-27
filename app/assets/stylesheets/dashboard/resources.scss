@@ -1,54 +1,58 @@
 .dashboard-resources {
-  .resource-card {
-    background: #d1f5eb;
-    border-radius: rem-calc(4);
-    margin-bottom: $line-height;
-    min-height: $line-height * 9;
-    padding: $line-height * 2 $line-height $line-height;
-    position: relative;
-    text-align: center;
+  .resources {
+    display: grid;
+    gap: $line-height;
+    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 
-    &.alert {
-      background: #feeaeb;
+    .resource-card {
+      background: #d1f5eb;
+      border-radius: rem-calc(4);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: $line-height * 2 $line-height $line-height;
+      position: relative;
+      text-align: center;
+
+      &.alert {
+        background: #feeaeb;
+
+        &::before {
+          color: #fb9497;
+          content: "\74";
+        }
+      }
 
       &::before {
-        color: #fb9497;
-        content: "\74";
+        border: 2px solid;
+        border-radius: rem-calc(40);
+        color: #00cb96;
+        content: "\6c";
+        font-family: "icons";
+        font-size: rem-calc(20);
+        height: rem-calc(36);
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        width: rem-calc(36);
       }
-    }
 
-    &::before {
-      border: 2px solid;
-      border-radius: rem-calc(40);
-      color: #00cb96;
-      content: "\6c";
-      font-family: "icons";
-      font-size: rem-calc(20);
-      height: rem-calc(36);
-      position: absolute;
-      right: 12px;
-      top: 12px;
-      width: rem-calc(36);
-    }
+      .label {
+        left: 0;
+        position: absolute;
+        top: 20px;
+      }
 
-    .label {
-      left: 0;
-      position: absolute;
-      top: 20px;
-    }
+      h4 {
+        margin-top: $line-height;
+      }
 
-    h4 {
-      margin-top: $line-height;
-    }
-
-    .resource-description {
-      min-height: $line-height * 4;
-    }
-
-    .button {
-      background: #00cb96;
-      color: #000;
-      font-weight: bold;
+      .button {
+        background: #00cb96;
+        color: #000;
+        font-weight: bold;
+      }
     }
   }
 }
