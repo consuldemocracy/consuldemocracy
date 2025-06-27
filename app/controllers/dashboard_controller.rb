@@ -30,13 +30,6 @@ class DashboardController < Dashboard::BaseController
 
   private
 
-    def active_resources
-      @active_resources ||= Dashboard::Action.active
-                                             .resources
-                                             .by_proposal(proposal)
-                                             .order(required_supports: :asc, day_offset: :asc)
-    end
-
     def course
       @course ||= Dashboard::Action.course_for(proposal)
     end
