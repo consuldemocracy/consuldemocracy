@@ -1,7 +1,8 @@
-.dashboard-poll .poll-card {
+.dashboard-poll {
   background: #e7f3fd;
   border-radius: rem-calc(4);
-  margin-bottom: $line-height;
+  display: flex;
+  flex-direction: column;
   min-height: $line-height * 9;
   padding: $line-height;
   position: relative;

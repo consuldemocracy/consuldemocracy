@@ -1,4 +1,4 @@
-<div class="row expanded margin-top" data-equalizer="poll-cards" data-equalize-on="medium">
+<div class="dashboard-polls">
   <% polls.each do |poll| %>
     <%= render Dashboard::PollComponent.new(poll) %>
   <% end %>
