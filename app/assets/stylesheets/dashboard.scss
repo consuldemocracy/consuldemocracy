@@ -6,7 +6,6 @@
 // 05. Sidebar
 // 06. Community
 // 07. Graph
-// 08. Polls
 // 09. Email preview
 // 10. Poster preview
 // 11. Poster PDF
@@ -355,49 +354,6 @@
       fill: #005c92;
     }
   }
-}
-
-// 08. Polls
-// ---------
-
-.question-fields {
-  border-bottom: 1px solid $border;
-  margin-bottom: $line-height;
-}
-
-.option-fields {
-  background: #fbfbfb;
-  border: 1px solid $border;
-  margin-bottom: $line-height;
-  padding: $line-height;
-}
-
-.poll-card {
-  background: #e7f3fd;
-  border-radius: rem-calc(4);
-  margin-bottom: $line-height;
-  min-height: $line-height * 9;
-  padding: $line-height;
-  position: relative;
-  text-align: center;
-
-  .button {
-    font-weight: bold;
-  }
-
-  button {
-    cursor: pointer;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
-
-.community-poll {
-  border-bottom: 1px solid $border;
-  margin-bottom: $line-height;
-  padding-bottom: calc($line-height / 2);
 }
 
 // 09. Email preview
