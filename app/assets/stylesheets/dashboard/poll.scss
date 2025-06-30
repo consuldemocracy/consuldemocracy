@@ -10,14 +10,30 @@
   padding: $line-height;
 }
 
+.polls-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $line-height;
+  margin-top: $line-height;
+}
+
 .poll-card {
   background: #e7f3fd;
   border-radius: rem-calc(4);
-  margin-bottom: $line-height;
+  display: flex;
+  flex-direction: column;
   min-height: $line-height * 9;
   padding: $line-height;
   position: relative;
   text-align: center;
+
+  @include breakpoint(medium) {
+    flex-basis: calc(50% - $line-height / 2);
+  }
+
+  @include breakpoint(large) {
+    flex-basis: calc(33% - $line-height * 0.75);
+  }
 
   .button {
     font-weight: bold;

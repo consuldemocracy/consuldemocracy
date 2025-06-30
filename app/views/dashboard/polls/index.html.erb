@@ -4,7 +4,7 @@
     <%= Setting["proposals.poll_description"] %>
 
     <% if @polls.any? %>
-      <div class="row expanded margin-top" data-equalizer="poll-cards" data-equalize-on="medium">
+      <div class="polls-wrapper">
         <% @polls.each do |poll| %>
           <%= render Dashboard::PollComponent.new(poll, proposal) %>
         <% end %>
