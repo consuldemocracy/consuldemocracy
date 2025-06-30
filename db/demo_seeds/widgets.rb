@@ -1,5 +1,4 @@
 section "Creating DEMO homepage widgets" do
-
   card = Widget::Card.create!(link_url: "/budgets",
                               header: true,
                               created_at: 1.week.ago,
@@ -12,7 +11,7 @@ section "Creating DEMO homepage widgets" do
 
   card.image = Image.create!(imageable: card,
                              title: card.title,
-                             attachment: Rack::Test::UploadedFile.new(Rails.root.join("db", "demo_seeds", "images", "widgets", "homepage-card.jpg")),
+                             attachment: demo_seed_image_attachment("widgets/homepage-card.jpg"),
                              user_id: 1)
 
   card = Widget::Card.create!(link_url: "/legislation/processes/2/draft_versions/1",
@@ -22,12 +21,15 @@ section "Creating DEMO homepage widgets" do
                               columns: 4,
                               label: "",
                               title: "Comment the Animal protection ordinance",
-                              description: "Give your opinion about the new Regulatory Ordinance of the tenancy and protection of the animals.",
+                              description: "Give your opinion about the new Regulatory Ordinance " \
+                                           "of the tenancy and protection of the animals.",
                               link_text: "Comment on the text")
 
   card.image = Image.create!(imageable: card,
                              title: card.title,
-                             attachment: Rack::Test::UploadedFile.new(Rails.root.join("db", "demo_seeds", "images", "widgets", "comment-the-animal-protection-ordinance.jpg")),
+                             attachment: demo_seed_image_attachment(
+                               "widgets/comment-the-animal-protection-ordinance.jpg"
+                             ),
                              user_id: 1)
 
   card = Widget::Card.create!(link_url: "/polls/refurbishment-of-the-north-square",
@@ -37,12 +39,15 @@ section "Creating DEMO homepage widgets" do
                               columns: 4,
                               label: "",
                               title: "Decide which should be the new square",
-                              description: "This is one of the 10 squares that have been selected for a possible remodeling to improve its use for the population.",
+                              description: "This is one of the 10 squares that have been selected " \
+                                           "for a possible remodeling to improve its use for the population.",
                               link_text: "Decide on the new square")
 
   card.image = Image.create!(imageable: card,
                              title: card.title,
-                             attachment: Rack::Test::UploadedFile.new(Rails.root.join("db", "demo_seeds", "images", "widgets", "decide-which-should-be-the-new-square.jpg")),
+                             attachment: demo_seed_image_attachment(
+                               "widgets/decide-which-should-be-the-new-square.jpg"
+                             ),
                              user_id: 1)
 
   Widget::Feed.create!(kind: "proposals",
