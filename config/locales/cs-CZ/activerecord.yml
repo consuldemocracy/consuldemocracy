@@ -622,6 +622,8 @@ cs:
       votation_type/vote_type:
         unique: Jedinečná odpověď
         multiple: Více odpovědí
+      cookies/vendor:
+        script: Javascript kód
     errors:
       models:
         user:
