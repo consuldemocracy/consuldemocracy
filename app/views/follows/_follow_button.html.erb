@@ -8,12 +8,12 @@
                   class: "button expanded" %>
 
     <% else %>
-      <%= link_to follow_text(follow.followable),
-                  follows_path(followable_id: follow.followable.id,
-                               followable_type: follow.followable.class.name),
-                  method: :post, remote: true,
-                  title: follow_text(follow.followable),
-                  class: "button hollow expanded" %>
+      <%= button_to follow_text(follow.followable),
+                    follows_path(followable_id: follow.followable.id,
+                                 followable_type: follow.followable.class.name),
+                    remote: true,
+                    title: follow_text(follow.followable),
+                    class: "button hollow expanded" %>
     <% end %>
   </span>
 </div>

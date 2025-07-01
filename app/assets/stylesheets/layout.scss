@@ -492,6 +492,7 @@ button,
 .delete {
   border-bottom: 1px dotted;
   color: $delete;
+  cursor: pointer;
   font-size: $small-font-size;
 
   &:hover,
@@ -499,6 +500,7 @@ button,
   &:focus {
     border-bottom-color: transparent;
     color: color.adjust($delete, $lightness: -10%);
+    text-decoration: underline;
   }
 }
 
@@ -859,6 +861,7 @@ footer {
 
   p,
   a,
+  button,
   .checkbox {
     font-size: $small-font-size;
   }
@@ -876,6 +879,16 @@ footer {
     padding: 0 calc($line-height / 2);
     position: relative;
     top: calc(-1 * $line-height / 2);
+  }
+}
+
+.button-as-link {
+  color: $anchor-color;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
   }
 }
 
@@ -1144,6 +1157,10 @@ form {
       line-height: rem-calc(120);
       vertical-align: top;
     }
+
+    button {
+      @include link;
+    }
   }
 }
 
@@ -1190,9 +1207,17 @@ form {
   @include breakpoint(medium) {
 
     .mark-notification {
+      @include anchor-color;
+      cursor: pointer;
       position: absolute;
       right: 12px;
       top: 12px;
+
+      &:hover,
+      &:active,
+      &:focus {
+        @include anchor-color-hover;
+      }
     }
   }
 
@@ -1803,7 +1828,8 @@ table {
   color: $delete;
 }
 
-.dropdown-pane a {
+.dropdown-pane a,
+button {
   color: $text-medium;
 }
 
@@ -2126,7 +2152,7 @@ table {
     text-align: center;
   }
 
-  a {
+  button {
     font-weight: bold;
     margin-right: $line-height;
     text-decoration: none;
@@ -2143,6 +2169,10 @@ table {
 
     &::before {
       margin-right: $font-icon-margin;
+    }
+
+    &:hover {
+      cursor: pointer;
     }
   }
 }

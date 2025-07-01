@@ -32,14 +32,20 @@
       width: auto;
     }
 
-    a {
+    a,
+    button {
       color: inherit;
+      cursor: pointer;
       line-height: inherit;
       padding-left: 0;
 
       @include breakpoint(medium) {
         font-size: $small-font-size;
         padding: rem-calc(8) rem-calc(16);
+      }
+
+      &:hover {
+        text-decoration: underline;
       }
     }
 
