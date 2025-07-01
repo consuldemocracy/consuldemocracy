@@ -1,4 +1,4 @@
-section "Creating DEMO collaborative legislation" do
+section "Creating DEMO Collaborative Legislation Process 1" do
   process = Legislation::Process.create!(
     title: "Air Quality and Climate Change Plan",
     summary: "In the City Council we are designing a new Air Quality and Climate Change Plan. " \
@@ -49,7 +49,7 @@ section "Creating DEMO collaborative legislation" do
   up_voters.each do |voter|
     comment.vote_by(voter: voter, vote: true)
   end
-  comment.update(updated_at: 6.days.ago)
+  comment.update!(updated_at: 6.days.ago)
 
   comment = question.comments.create!(body: "What is that figure based on?",
                                       ancestry: Comment.last.id,
@@ -59,24 +59,23 @@ section "Creating DEMO collaborative legislation" do
   up_voters.each do |voter|
     comment.vote_by(voter: voter, vote: true)
   end
-  comment.update(updated_at: 5.days.ago)
+  comment.update!(updated_at: 5.days.ago)
 
-  comment = question.comments.create!(body: "For sure it would do it with the noise levels. " \
-                                            "And that is reason enough to do it.",
+  comment = question.comments.create!(body: "For sure it would do it with the noise levels." \
+                                            " And that is reason enough to do it.",
                                       user_id: 10,
                                       created_at: 4.days.ago)
   up_voters = users.sample(2)
   up_voters.each do |voter|
     comment.vote_by(voter: voter, vote: true)
   end
-  comment.update(updated_at: 3.days.ago)
+  comment.update!(updated_at: 3.days.ago)
 
-  question.update(updated_at: 3.days.ago)
+  question.update!(updated_at: 3.days.ago)
 
-  question = process.questions.create!(title: "Do you think that in order to improve pedestrian " \
-                                              "mobility in the neighbourhoods of your district " \
-                                              "it would be positive to limit the speed of " \
-                                              "vehicles to 30 km/h?\r\n",
+  question = process.questions.create!(title: "Do you think that in order to improve pedestrian mobility" \
+                                              " in the neighbourhoods of your district it would be" \
+                                              " positive to limit the speed of vehicles to 30 km/h?\r\n",
                                        author_id: 1,
                                        created_at: 1.week.ago)
 
@@ -87,16 +86,17 @@ section "Creating DEMO collaborative legislation" do
   up_voters.each do |voter|
     comment.vote_by(voter: voter, vote: true)
   end
-  comment.update(updated_at: 6.days.ago)
+  comment.update!(updated_at: 6.days.ago)
 
-  comment = question.comments.create!(body: "Yes, this has proven to drastically reduce accidents in cities.",
+  comment = question.comments.create!(body: "Yes, this has proven to drastically" \
+                                            " reduce accidents in cities.",
                                       user_id: 4,
                                       created_at: 5.days.ago)
   up_voters = users.sample(2)
   up_voters.each do |voter|
     comment.vote_by(voter: voter, vote: true)
   end
-  comment.update(updated_at: 5.days.ago)
+  comment.update!(updated_at: 5.days.ago)
 
   comment = question.comments.create!(body: "It would be enough 40 km/h",
                                       user_id: 6,
@@ -105,7 +105,7 @@ section "Creating DEMO collaborative legislation" do
   up_voters.each do |voter|
     comment.vote_by(voter: voter, vote: true)
   end
-  comment.update(updated_at: 4.days.ago)
+  comment.update!(updated_at: 4.days.ago)
 
   comment = question.comments.create!(body: "I think it's a too low speed. It would also have " \
                                             "a big impact on our schedules.",
@@ -115,7 +115,7 @@ section "Creating DEMO collaborative legislation" do
   down_voters.each do |voter|
     comment.vote_by(voter: voter, vote: false)
   end
-  comment.update(updated_at: 3.days.ago)
+  comment.update!(updated_at: 3.days.ago)
 
   comment = question.comments.create!(body: "Our safety should be over our working times.",
                                       ancestry: Comment.last.id,
@@ -125,12 +125,14 @@ section "Creating DEMO collaborative legislation" do
   up_voters.each do |voter|
     comment.vote_by(voter: voter, vote: true)
   end
-  comment.update(updated_at: 2.days.ago)
+  comment.update!(updated_at: 2.days.ago)
 
-  question.update(updated_at: 2.days.ago)
+  question.update!(updated_at: 2.days.ago)
 
-  process.update(updated_at: 4.days.ago)
+  process.update!(updated_at: 4.days.ago)
+end
 
+section "Creating DEMO Collaborative Legislation Process 2" do
   process = Legislation::Process.create!(
     title: "Ordinance regulating the holding and protection of animals.",
     summary: "Review with us the new proposal of Regulatory Ordinance contributing with your comments.\r\n",
@@ -161,7 +163,8 @@ section "Creating DEMO collaborative legislation" do
     created_at: 10.days.ago
   )
 
-  body = File.read(Rails.root.join("db", "demo_seeds", "documents", "legislation", "processes", "draft.html"))
+  body = File.read(Rails.root.join("db", "demo_seeds", "documents", "legislation", "processes",
+                                   "draft.html"))
   draft = process.draft_versions.create!(title: "Proposal for a new Ordinance regulating the " \
                                                 "holding and protection of animals.",
                                          body: body,
@@ -200,7 +203,7 @@ section "Creating DEMO collaborative legislation" do
   up_voters.each do |voter|
     comment.vote_by(voter: voter, vote: true)
   end
-  comment.update(updated_at: 9.days.ago)
+  comment.update!(updated_at: 9.days.ago)
 
   annotation.comments.create!(body: "I agree. That should be included in article 4.",
                               user_id: 9,
@@ -211,7 +214,9 @@ section "Creating DEMO collaborative legislation" do
                               user_id: 9,
                               created_at: 8.days.ago,
                               updated_at: 8.days.ago)
+end
 
+section "Creating DEMO Collaborative Legislation Process 3" do
   process = Legislation::Process.create!(
     title: "Human Rights Plan for the City",
     summary: "The City Council wants to reinforce its commitment to Human Rights with the " \
@@ -275,7 +280,7 @@ section "Creating DEMO collaborative legislation" do
       (Madrid-Natura Programme, FREVUE Programme and others), as a coherent public policy
       coordinated with other existing plans (Air Quality Plan, Mobility Plan and Renewable
       Energy Plan); better monitoring of episodes of atmospheric pollution and extreme
-      temperatures (cold and heat), as a basis for launching emergency plans;  measures to
+      temperatures (cold and heat), as a basis for launching emergency plans; measures to
       ensure the conservation and expansion of the city's green heritage (planting of trees,
       plant cover, vertical gardens, urban orchards, etc.); Framework Plan for the prevention
       and sustainable management of waste in the municipality of Madrid 2017-2022 (with
@@ -291,12 +296,12 @@ section "Creating DEMO collaborative legislation" do
     created_at: 11.days.ago
   )
 
-  supporters = users.sample(1)
+  supporters = users.sample(2)
   supporters.each do |supporter|
     proposal.vote_by(voter: supporter, vote: true)
   end
 
-  proposal.update(updated_at: 11.days.ago)
+  proposal.update!(updated_at: 10.days.ago)
 
   author = users.sample
   proposal = process.proposals.create!(
@@ -324,7 +329,7 @@ section "Creating DEMO collaborative legislation" do
     proposal.vote_by(voter: supporter, vote: true)
   end
 
-  proposal.update(updated_at: 10.days.ago)
+  proposal.update!(updated_at: 10.days.ago)
 
   author = users.sample
   proposal = process.proposals.create!(
@@ -362,7 +367,7 @@ section "Creating DEMO collaborative legislation" do
     proposal.vote_by(voter: supporter, vote: true)
   end
 
-  proposal.update(updated_at: 9.days.ago)
+  proposal.update!(updated_at: 9.days.ago)
 
   author = users.sample
   proposal = process.proposals.create!(
@@ -399,7 +404,7 @@ section "Creating DEMO collaborative legislation" do
     proposal.vote_by(voter: supporter, vote: true)
   end
 
-  proposal.update(updated_at: 8.days.ago)
+  proposal.update!(updated_at: 8.days.ago)
 
   author = users.sample
   proposal = process.proposals.create!(
@@ -435,7 +440,7 @@ section "Creating DEMO collaborative legislation" do
     proposal.vote_by(voter: supporter, vote: true)
   end
 
-  proposal.update(updated_at: 1.week.ago)
+  proposal.update!(updated_at: 1.week.ago)
 
   author = users.sample
   proposal = process.proposals.create!(
@@ -453,7 +458,7 @@ section "Creating DEMO collaborative legislation" do
       Madrid, reinforcing the funds destined to cover temporary and social emergency aid, with
       the "Madrid te alimenta" programme, speeding up the deadlines for achieving the minimum
       insertion income, being measures that reinforce people's economic autonomy and respect for
-      their beliefs;  promoting compliance with the Milan Pact, promoting sustainable, inclusive
+      their beliefs; promoting compliance with the Milan Pact, promoting sustainable, inclusive
       and safe food systems, and guaranteeing the most sustainable management of natural food
       resources; improving health and food quality control, ensuring that private sector and
       civil society activities (such as municipal markets) are in line with adequate food;
@@ -476,5 +481,372 @@ section "Creating DEMO collaborative legislation" do
     proposal.vote_by(voter: supporter, vote: true)
   end
 
-  proposal.update(updated_at: 6.days.ago)
+  proposal.update!(updated_at: 6.days.ago)
+end
+
+section "Creating DEMO Collaborative Legislation Process 4" do
+  process = Legislation::Process.create!(
+    title: "Strategic Mobility Plan 2025-2035",
+    summary: "The Strategic Mobility Plan 2025-2035 will be written together with our citizens.\r\n",
+    description: "The Strategic Mobility Plan 2025-2035 will be written" \
+                 " together with our citizens. You can participate in the" \
+                 " drafting of the Plan during three consecutive phases:\r\n" \
+                 "1. Join the discussion about what are the most important" \
+                 " mobility themes for the city\r\n" \
+                 "2. Submit proposals or ideas for Mobility projects or regulations in the city\r\n" \
+                 "3. Comment on the first and second draft of the Strategic Mobility Plan 2025-2035\r\n",
+    homepage: <<~HOMEPAGE,
+      <p>Participation in the city has a few rules and guidelines. These are:</p>
+       <ol>
+       <li>What happens with my input? Your input will be used to write up the Strategic
+       Mobility Plan 2025-2035, as long as the suggestions, proposals and comments are feasible
+       and fit within the wider Mobility Framework of the city. Participants will receive structural
+       feedback before and after each phase of the process.</li>
+       <li>What is the Strategic Mobility Plan about? The Strategic Mobility Plan 2025-2035 will
+       define the priorities and policy choices of the city for the next ten years. It will define
+       sustainability variables and projects, determine which modes of transport and which
+       districts of the city get prioritized, and it will set a timeline for completion of projects</li>
+       <li>Are there any rules for participation? Yes, we carefully enforce certain rules
+       for participation.
+          <ul>
+            <li>Collaboration. It is important to look at other people's contribution. We will look at
+            everything but will eventually accept proposals with the most support and/or votes.
+            </li>
+            <li>Be concise. We value short and concise contributions, which will positively affect the
+            chances of proposals being integrated in the Strategic Mobility Plan 2025-2035.
+            </li>
+            <li>No discrimination. Offensive languages will not be tolerated and comments.</li>
+          </ul>
+        </li>
+       </ol>
+    HOMEPAGE
+    additional_info: "",
+    start_date: 4.days.ago,
+    end_date: 6.months.from_now,
+    published: true,
+    homepage_enabled: true,
+    debate_start_date: 1.week.ago,
+    debate_end_date: 10.months.from_now,
+    debate_phase_enabled: true,
+    proposals_phase_start_date: 12.days.ago,
+    proposals_phase_end_date: 4.months.from_now,
+    proposals_phase_enabled: true,
+    draft_publication_date: 10.days.ago,
+    draft_publication_enabled: true,
+    allegations_start_date: 10.days.ago,
+    allegations_end_date: 9.months.from_now,
+    allegations_phase_enabled: true,
+    created_at: 12.days.ago
+  )
+
+  document = demo_seed_document_attachment("legislation/processes/eurocities-policy-statement-2024.pdf")
+  process.documents.create!(title: "A better mobility starts in cities", attachment: document, user_id: 1)
+
+  author = users.sample
+  proposal = process.proposals.create!(
+    title: "Shared electric cars in Northern districts",
+    summary: "I propose the installation of an electric car sharing station within our neighborhood. " \
+             "With the growing demand for sustainable transportation and the increasing number of " \
+             "residents prioritizing enviro",
+    description: <<~DESCRIPTION,
+      <p>I propose the installation of an electric car sharing station within our neighborhood. With the
+      growing demand for sustainable transportation and the increasing number of residents prioritizing
+      environmentally conscious choices, a car sharing station would offer an affordable, practical, and
+      eco-friendly alternative to car ownership. It would significantly reduce traffic congestion, lower
+      carbon emissions, and support the city's climate goals, while also providing residents—especially
+      those without personal vehicles—convenient access to reliable transportation for errands,
+      appointments, and daily commutes.</p><p>I recommend the station be located in a central, accessible
+      area near public transit lines and residential buildings, ensuring it serves the broadest possible
+      portion of the community. This initiative aligns with broader trends in urban mobility and
+      sustainability, and I believe our neighborhood can be a model for future development. I encourage
+      the municipality to collaborate with electric car sharing providers and explore potential grants or
+      incentives to support this project. I, along with many fellow residents, would be eager to support
+      and utilize such a service.</p>\r\n
+    DESCRIPTION
+    tag_list: "Sustainability car district",
+    author_id: author.id,
+    responsible_name: author.username,
+    terms_of_service: "1",
+    created_at: 11.days.ago
+  )
+  supporters = users.sample(5)
+  supporters.each do |supporter|
+    proposal.vote_by(voter: supporter, vote: true)
+  end
+  comment = proposal.comments.create!(body: "Thanks to all for supporting my proposal!",
+                                      user_id: author.id, created_at: 6.days.ago)
+  up_voters = users.sample(1)
+  up_voters.each do |voter|
+    comment.vote_by(voter: voter, vote: true)
+  end
+  comment.update!(updated_at: 1.day.ago)
+
+  proposal.update!(updated_at: 1.week.ago)
+
+  question = process.questions.create!(
+    title: "What do you think are the most important challenges of mobility in our city?\r\n",
+    author_id: 1,
+    created_at: 1.week.ago
+  )
+  question.question_options.create!(
+    value: "Transport hubs and timelines and not well connected"
+  )
+  question.question_options.create!(
+    value: "Limited capacity of public transport"
+  )
+  question.question_options.create!(
+    value: "High congestion of mobility networks during busy hours"
+  )
+  question.question_options.create!(
+    value: "Limited accessibility of private mobility for low-income groups"
+  )
+  question.question_options.create!(
+    value: "Underperformance on sustainability goals"
+  )
+  comment = question.comments.create!(
+    body: "Buses and train stations are too far apart in the East district!",
+    user_id: 12,
+    created_at: 6.days.ago
+  )
+  up_voters = users.sample(2)
+  up_voters.each do |voter|
+    comment.vote_by(voter: voter, vote: true)
+  end
+  comment.update!(updated_at: 6.days.ago)
+  comment = question.comments.create!(
+    body: "The city needs high ambitions when it comes to climate policies",
+    user_id: 8,
+    created_at: 6.days.ago
+  )
+  up_voters = users.sample(1)
+  up_voters.each do |voter|
+    comment.vote_by(voter: voter, vote: true)
+  end
+  comment.update!(updated_at: 6.days.ago)
+
+  question = process.questions.create!(
+    title: "Which modes of transport should have priority in the city?\r\n",
+    author_id: 1,
+    created_at: 1.week.ago
+  )
+  question.question_options.create!(value: "Car")
+  question.question_options.create!(value: "Tram and bus")
+  question.question_options.create!(value: "Metro and train")
+  question.question_options.create!(value: "Bicycle")
+  question.question_options.create!(value: "Pedestrian")
+  question.question_options.create!(value: "Scooter")
+  comment = question.comments.create!(
+    body: "Tram is the oldest and most original form of " \
+          "transport in this city, that's why we should invest in it",
+    user_id: 3,
+    created_at: 6.days.ago
+  )
+  up_voters = users.sample(1)
+  up_voters.each do |voter|
+    comment.vote_by(voter: voter, vote: true)
+  end
+  comment.update!(updated_at: 6.days.ago)
+
+  comment = question.comments.create!(
+    body: "We need more metro stations to facilitate fast mobility " \
+          " across the city's districts including outskirts!",
+    user_id: 4,
+    created_at: 6.days.ago
+  )
+  up_voters = users.sample(1)
+  up_voters.each do |voter|
+    comment.vote_by(voter: voter, vote: true)
+  end
+
+  down_voters = users.sample(1)
+  down_voters.each do |voter|
+    comment.vote_by(voter: voter, vote: false)
+  end
+  comment.update!(updated_at: 3.days.ago)
+
+  question = process.questions.create!(
+    title: "Which of the current projects of the city do you see as promising?\r\n",
+    author_id: 1,
+    created_at: 1.week.ago
+  )
+  question.question_options.create!(
+    value: "15-Minute City Plan"
+  )
+  question.question_options.create!(
+    value: "Development of all-in-1 public transport mobile application"
+  )
+  question.question_options.create!(
+    value: "Redevelopment of central station into modern and central transport hub"
+  )
+  question.question_options.create!(
+    value: "Bike Only Streets Plan"
+  )
+  question.question_options.create!(
+    value: "District-based mobility"
+  )
+
+  comment = question.comments.create!(
+    body: "Bike Only Streets is already a working concept" \
+          " in cities like Valencia, Spain, and Montreal, Canada",
+    user_id: 5,
+    created_at: 6.days.ago
+  )
+  up_voters = users.sample(2)
+  up_voters.each do |voter|
+    comment.vote_by(voter: voter, vote: true)
+  end
+
+  comment = question.comments.create!(
+    body: "Districts should become mobility centers in themselves " \
+          "because local communities will benefit the most from that",
+    user_id: 7,
+    created_at: 6.days.ago
+  )
+  up_voters = users.sample(1)
+  up_voters.each do |voter|
+    comment.vote_by(voter: voter, vote: true)
+  end
+  comment.update!(updated_at: 3.days.ago)
+
+  body = File.read(Rails.root.join("db", "demo_seeds", "documents", "legislation", "processes",
+                                   "draft-mobility.html"))
+  draft = process.draft_versions.create!(title: "Draft of the Strategic Mobility Plan 2025-2035",
+                                         body: body,
+                                         created_at: 10.days.ago,
+                                         updated_at: 10.days.ago,
+                                         status: "published")
+
+  draft.annotations.create!(
+    quote: "STRATEGIC MOBILITY PLAN 2025-2035",
+    ranges: [{
+      "start" => "/p[1]",
+      "startOffset" => 0,
+      "end" => "/p[1]",
+      "endOffset" => 36
+    }],
+    text: "Maybe we can give it a better sounding name, like Mobility and " \
+          "Transport for All, Sustainable and Efficient. How about that?",
+    author_id: 3,
+    range_start: "/p[1]",
+    range_start_offset: 0,
+    range_end: "/p[1]",
+    range_end_offset: 36,
+    context: "<span class=annotator>STRATEGIC MOBILITY PLAN 2025-2035</span>",
+    created_at: 9.days.ago,
+    updated_at: 9.days.ago
+  )
+  comment = Comment.last
+  up_voters = users.sample(1)
+  up_voters.each do |voter|
+    comment.vote_by(voter: voter, vote: true)
+  end
+
+  draft.annotations.create!(
+    quote: "In five years, zero-emission mobility",
+    ranges: [{
+      "start" => "/p[3]",
+      "startOffset" => 0,
+      "end" => "/p[3]",
+      "endOffset" => 40
+    }],
+    text: "I think this is a very good ambition but I think the texts " \
+          "lacks sufficient proposals to make this a reality",
+    author_id: 3,
+    range_start: "/p[3]",
+    range_start_offset: 0,
+    range_end: "/p[3]",
+    range_end_offset: 40,
+    context: "<span class=annotator>In five years, zero-emission mobility</span>",
+    created_at: 9.days.ago,
+    updated_at: 9.days.ago
+  )
+  draft.annotations.create!(
+    quote: "Eurocities manifesto",
+    ranges: [{
+      "start" => "/p[5]",
+      "startOffset" => 21,
+      "end" => "/p[5]",
+      "endOffset" => 41
+    }],
+    text: "If you read the manifesto, there is more inspiration, also about transitioning car " \
+          "mobility into zero-cost emission sectors and concrete policy proposals on how to " \
+          "accomplish that.",
+    author_id: 3,
+    range_start: "/p[5]",
+    range_start_offset: 20,
+    range_end: "/p[5]",
+    range_end_offset: 41,
+    context: "<span class=annotator>Eurocities manifesto</span>",
+    created_at: 9.days.ago,
+    updated_at: 9.days.ago
+  )
+  draft.annotations.create!(
+    quote: "climate, road safety, air quality, noise",
+    ranges: [{
+      "start" => "/p[2]",
+      "startOffset" => 340,
+      "end" => "/p[2]",
+      "endOffset" => 380
+    }],
+    text: "I think we should add accessibility in terms of costs to these goals",
+    author_id: 3,
+    range_start: "/p[2]",
+    range_start_offset: 340,
+    range_end: "/p[2]",
+    range_end_offset: 380,
+    context: "The task of the next EU policymakers will revolve around keeping the EU on track to meet " \
+             "its targets for 2030 and beyond in terms of " \
+             "<span class=annotator>climate, road safety, air quality," \
+             " noise</span> and other Green Deal objectives.",
+    created_at: 9.days.ago,
+    updated_at: 9.days.ago
+  )
+  draft.annotations.create!(
+    quote: "enhanced city involvement in decision-making.",
+    ranges: [{
+      "start" => "/p[3]",
+      "startOffset" => 657,
+      "end" => "/p[3]",
+      "endOffset" => 704
+    }],
+    text: "Very much agree with this. People have the best ideas!",
+    author_id: 3,
+    range_start: "/p[3]",
+    range_start_offset: 657,
+    range_end: "/p[3]",
+    range_end_offset: 704,
+    context: "<span class=annotator>enhanced city involvement in decision-making.</span>",
+    created_at: 9.days.ago,
+    updated_at: 9.days.ago
+  )
+
+  milestone = process.milestones.create!(
+    publication_date: 10.days.ago,
+    description: "Draft of the Strategic Mobility Plan 2025-2035 published",
+    title: "Draft of the Strategic Mobility Plan 2025-2035 published",
+  )
+  image = Rack::Test::UploadedFile.new(Rails.root.join("db", "demo_seeds", "images", "legislation",
+                                                       "processes", "opening.jpg"))
+  milestone.image = Image.create!({
+    imageable: milestone,
+    title: milestone.title,
+    attachment: image,
+    user: User.first
+  })
+  milestone.save!
+
+  milestone = process.milestones.create!(
+    publication_date: 1.day.ago,
+    description: "1000 active citizens in the first phase of the participation process!",
+    title: "1000 active citizens in the first phase of the participation process!",
+  )
+  image = Rack::Test::UploadedFile.new(Rails.root.join("db", "demo_seeds", "images", "legislation",
+                                                       "processes", "first-phase.jpg"))
+  milestone.image = Image.create!({
+    imageable: milestone,
+    title: milestone.title,
+    attachment: image,
+    user: User.first
+  })
+  milestone.save!
 end
