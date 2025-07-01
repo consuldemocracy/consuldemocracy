@@ -79,7 +79,7 @@ group :test do
   gem "email_spec", "~> 2.3.0"
   gem "pdf-reader", "~> 2.14.1"
   gem "rspec-rails", "~> 7.1.1"
-  gem "selenium-webdriver", "~> 4.33.0"
+  gem "selenium-webdriver", "~> 4.34.0"
   gem "simplecov", "~> 0.22.0", require: false
   gem "simplecov-lcov", "~> 0.8.0", require: false
 end
