@@ -103,7 +103,7 @@ group :development do
   gem "rubocop", "~> 1.76.1", require: false
   gem "rubocop-capybara", "~> 2.21.0", require: false
   gem "rubocop-factory_bot", "~> 2.26.1", require: false
-  gem "rubocop-performance", "~> 1.23.1", require: false
+  gem "rubocop-performance", "~> 1.25.0", require: false
   gem "rubocop-rails", "~> 2.29.1", require: false
   gem "rubocop-rspec", "~> 3.4.0", require: false
   gem "rubocop-rspec_rails", "~> 2.30.0", require: false
