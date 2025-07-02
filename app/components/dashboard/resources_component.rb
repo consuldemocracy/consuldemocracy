@@ -1,7 +1,7 @@
 class Dashboard::ResourcesComponent < ApplicationComponent
   attr_reader :proposal, :new_actions_since_last_login
 
-  def initialize(proposal, new_actions_since_last_login)
+  def initialize(proposal, new_actions_since_last_login = [])
     @proposal = proposal
     @new_actions_since_last_login = new_actions_since_last_login
   end
