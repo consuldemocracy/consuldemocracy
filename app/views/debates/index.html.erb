@@ -18,9 +18,7 @@
   <%= render "shared/section_header", i18n_namespace: "debates.index.section_header", image: "debates" %>
 <% end %>
 
-<%= render Shared::RecommendedIndexComponent.new(@recommended_debates,
-                                                 disable_recommendations_path: recommendations_disable_debates_path,
-                                                 namespace: "debates") %>
+<%= render Shared::RecommendedIndexComponent.new(@recommended_debates, namespace: "debates") %>
 
 <div class="row">
   <div id="debates" class="debates-list small-12 medium-9 column">
