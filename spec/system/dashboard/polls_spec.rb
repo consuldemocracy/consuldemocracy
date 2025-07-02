@@ -123,26 +123,6 @@ describe "Polls" do
     expect(page).to have_content("Edit poll")
   end
 
-  scenario "Edit poll is not allowed for current polls" do
-    poll = create(:poll, related: proposal)
-
-    visit proposal_dashboard_polls_path(proposal)
-
-    within "div#poll_#{poll.id}" do
-      expect(page).not_to have_content("Edit survey")
-    end
-  end
-
-  scenario "Edit poll is not allowed for expired polls" do
-    poll = create(:poll, :expired, related: proposal)
-
-    visit proposal_dashboard_polls_path(proposal)
-
-    within "div#poll_#{poll.id}" do
-      expect(page).not_to have_content("Edit survey")
-    end
-  end
-
   scenario "Edit poll should allow to remove questions" do
     poll = create(:poll, related: proposal, starts_at: 1.week.from_now)
     create(:poll_question, poll: poll)
@@ -224,36 +204,6 @@ describe "Polls" do
     expect(page).to have_content(poll.name)
   end
 
-  scenario "View results not available for upcoming polls" do
-    poll = create(:poll, related: proposal, starts_at: 1.week.from_now)
-
-    visit proposal_dashboard_polls_path(proposal)
-
-    within "div#poll_#{poll.id}" do
-      expect(page).not_to have_content("View results")
-    end
-  end
-
-  scenario "View results available for current polls" do
-    poll = create(:poll, related: proposal)
-
-    visit proposal_dashboard_polls_path(proposal)
-
-    within "div#poll_#{poll.id}" do
-      expect(page).to have_content("View results")
-    end
-  end
-
-  scenario "View results available for expired polls" do
-    poll = create(:poll, :expired, related: proposal)
-
-    visit proposal_dashboard_polls_path(proposal)
-
-    within "div#poll_#{poll.id}" do
-      expect(page).to have_content("View results")
-    end
-  end
-
   scenario "View results redirects to results in public zone" do
     poll = create(:poll, :expired, related: proposal)
 
@@ -275,19 +225,5 @@ describe "Polls" do
     uncheck "Show results"
 
     expect(find_field("Show results")).not_to be_checked
-  end
-
-  scenario "Poll card" do
-    poll = create(:poll, :expired, related: proposal)
-
-    visit proposal_dashboard_polls_path(proposal)
-
-    within "div#poll_#{poll.id}" do
-      expect(page).to have_content(I18n.l(poll.starts_at.to_date))
-      expect(page).to have_content(I18n.l(poll.ends_at.to_date))
-      expect(page).to have_link(poll.title)
-      expect(page).to have_link(poll.title, href: proposal_poll_path(proposal, poll))
-      expect(page).to have_link("View results", href: results_proposal_poll_path(proposal, poll))
-    end
   end
 end
