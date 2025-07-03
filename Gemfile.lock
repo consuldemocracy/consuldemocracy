@@ -485,7 +485,7 @@ GEM
     psych (5.1.2)
       stringio
     public_suffix (6.0.1)
-    puma (6.0.2)
+    puma (6.1.1)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (2.2.17)
@@ -807,7 +807,7 @@ DEPENDENCIES
   pronto-eslint (~> 0.11.1)
   pronto-rubocop (~> 0.11.6)
   pronto-stylelint (~> 0.11.1)
-  puma (~> 6.0.0)
+  puma (~> 6.1.0)
   rails (= 7.1.5.1)
   recipient_interceptor (~> 0.3.3)
   redcarpet (~> 3.6.1)
