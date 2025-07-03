@@ -24,4 +24,6 @@ on_restart do
   ENV["BUNDLE_GEMFILE"] = ""
 end
 
-systemd_enabled true
+if respond_to?(:systemd_enabled) && Rails.env.staging?
+  systemd_enabled true
+end
