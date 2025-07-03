@@ -22,9 +22,10 @@ set :application, deploysecret(:app_name, default: "consul")
 set :deploy_to, deploysecret(:deploy_to)
 set :ssh_options, port: deploysecret(:ssh_port)
 
-set :repo_url, "https://github.com/consuldemocracy/consuldemocracy.git"
+set :repo_url, "https://github.com/Anamika1608/consuldemocracy.git"
 
 set :revision, `git rev-parse --short #{fetch(:branch)}`.strip
+set :puma_enable_lingering, false
 
 set :log_level, :info
 set :pty, true

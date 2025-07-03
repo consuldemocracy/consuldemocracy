@@ -4,6 +4,7 @@ class Admin::Settings::FeaturesTabComponent < ApplicationComponent
       feature.featured_proposals
       feature.facebook_login
       feature.google_login
+      feature.saml_login
       feature.twitter_login
       feature.wordpress_login
       feature.signature_sheets
