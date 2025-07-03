@@ -23,3 +23,5 @@ on_restart do
   puts "Refreshing Gemfile"
   ENV["BUNDLE_GEMFILE"] = ""
 end
+
+systemd_enabled true
