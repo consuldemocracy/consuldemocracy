@@ -1,0 +1,11 @@
+<div class="card">
+  <div class="card-header">Two Factor Authentication</div>
+  <div class="card-body">
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), method: :post) do |f| %>
+      <%= f.input :otp_attempt, label: 'OTP' %>
+      <div class="actions">
+        <%= f.submit 'Login', class: 'button' %>
+      </div>
+    <% end %>
+  </div>
+</div>
