@@ -1,42 +1,58 @@
-<div class="small-12 column">
-  <h1>Two-Factor Authentication</h1>
-  <p>This works with any authenticator app, including Google Authenticator and Authy. You can download an authenticator app from the links below:</p>
-  <div style="display: flex; justify-content: space-between; gap: 20px;">
-    <div>
-      <h2>
-        <%= image_tag 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Google_Authenticator_%28April_2023%29.svg/1024px-Google_Authenticator_%28April_2023%29.svg.png', alt: 'Google Authenticator Icon', width: 30 %>
-        Google Authenticator
-      </h2>
-      <%= link_to 'https://apps.apple.com/us/app/google-authenticator/id388497605', target: '_blank' do %>
-        <%= image_tag 'https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg', alt: 'Download on the App Store', width: 150 %>
-      <% end %>
-      <%= link_to 'https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2', target: '_blank' do %>
-        <%= image_tag 'https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg', alt: 'Get it on Google Play', width: 150 %>
-      <% end %>
+<%# app/views/two_factor_authentications/show.html.erb %>
+
+<h1><%= t("two_factor_authentication.show.title") %></h1>
+
+<div class="two-factor-setup">
+  <p><%= t("two_factor_authentication.show.description") %></p>
+
+  <div class="authenticator-options">
+    <div class="authenticator-app">
+      <div class="app-icon">
+        <img src="https://cdn.simpleicons.org/googleauthenticator/4285F4" alt="Google Authenticator logo" width="32" height="32">
+      </div>
+      <div class="app-details">
+        <%# Brand names often don't need translation, but you can if you want %>
+        <strong><%= t("two_factor_authentication.show.google_authenticator") %></strong>
+        <div class="store-links">
+          <a href="..." target="_blank" class="store-link">
+            <img src="https://cdn.simpleicons.org/apple/000000" alt="Apple App Store logo" class="store-logo" width="16" height="16"> <%= t(".app_store") %>
+          </a>
+          <a href="..." target="_blank" class="store-link">
+            <img src="https://cdn.simpleicons.org/googleplay/3DDC84" alt="Google Play Store logo" class="store-logo" width="16" height="16"> <%= t(".google_play") %>
+          </a>
+        </div>
+      </div>
     </div>
-    <div>
-      <h2>
-        <%= image_tag 'https://play-lh.googleusercontent.com/NxyEuJRx4jjR1Q9PXOPGExFQXDKr_pZJ61Cb15eR0aX3UTZKAxWsXvK9Gh4K-NUd5A=s48-rw', alt: 'Authy Icon', width: 30 %>
-        Authy
-      </h2>
-      <%= link_to 'https://apps.apple.com/us/app/authy/id494168017', target: '_blank' do %>
-        <%= image_tag 'https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg', alt: 'Download on the App Store', width: 150 %>
-      <% end %>
-      <%= link_to 'https://play.google.com/store/apps/details?id=com.authy.authy', target: '_blank' do %>
-        <%= image_tag 'https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg', alt: 'Get it on Google Play', width: 150 %>
-      <% end %>
+
+    <div class="authenticator-app">
+      <div class="app-icon">
+        <img src="https://cdn.simpleicons.org/authy/E51F33" alt="Authy logo" width="32" height="32">
+      </div>
+      <div class="app-details">
+        <strong><%= t("two_factor_authentication.show.authy") %></strong>
+        <div class="store-links">
+          <a href="..." target="_blank" class="store-link">
+            <img src="https://cdn.simpleicons.org/apple/000000" alt="Apple App Store logo" class="store-logo" width="16" height="16"> <%= t(".app_store") %>
+          </a>
+          <a href="..." target="_blank" class="store-link">
+            <img src="https://cdn.simpleicons.org/googleplay/3DDC84" alt="Google Play Store logo" class="store-logo" width="16" height="16"> <%= t(".google_play") %>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
-  <br>
-  <div class="small-12 column">
-    <h1>Get Started</h1>
-    <p>To set up, scan this QR code with your authenticator app:</p>
-    <img src="<%= @qr_code %>" alt="QR Code">
-    <%= form_with url: enable_two_factor_authentication_path, method: :post do |f| %>
-      <p>If you cannot scan, please enter the following code manually: <code><%= current_user.otp_secret %></code></p>
-      <%= f.text_field :otp_attempt, label: 'Enter the 6-Digit Code from your authenticator app' %>
-      <%= f.submit 'Enable' %>
-    </div>
-    <% end %>
+  <div class="qr-code-container">
+    <img src="<%= @qr_code %>" alt="QR Code for Two-Factor Authentication">
   </div>
+
+  <%= form_with url: enable_account_two_factor_authentication_path, method: :post, html: { class: "otp-form" } do |f| %>
+    <%= f.text_field :otp_attempt,
+                   label: t("two_factor_authentication.show.otp_label"),
+                   autocomplete: "one-time-code",
+                   inputmode: "numeric",
+                   pattern: "[0-9]*",
+                   maxlength: "6" %>
+    <%# The f.submit helper also takes a translation key %>
+    <%= f.submit t("two_factor_authentication.show.enable_button"), class: "button primary" %>
+  <% end %>
 </div>

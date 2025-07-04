@@ -283,6 +283,35 @@
   }
 }
 
+.icon-google,      /* New */
+.icon-apple,       /* New */
+.icon-google-play { /* New */
+
+  &::before {
+    font-family: "Font Awesome 5 Brands";
+    font-weight: 400; /* Brands are typically a normal font-weight */
+  }
+}
+
+.icon-google::before {
+  content: "\f1a0";
+}
+
+.icon-apple::before {
+  content: "\f179";
+}
+
+.icon-google-play::before {
+  content: "\f3ab";
+}
+
+
+.icon-shield::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900; /* Solid icons require a heavy font-weight */
+  content: "\f3ed";   /* This is the code for 'shield-alt' */
+}
+
 .icon-quote-before::before {
   background-image: url("quote_before_blue.png");
   background-repeat: no-repeat;

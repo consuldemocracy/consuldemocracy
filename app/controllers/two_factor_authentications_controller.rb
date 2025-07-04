@@ -1,5 +1,4 @@
-THIS_IS_AN_INTENTIONAL_ERROR
-class TwoFactorAuthenticationController < ApplicationController
+class TwoFactorAuthenticationsController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource class: false
 

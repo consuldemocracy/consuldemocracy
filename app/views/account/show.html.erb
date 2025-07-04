@@ -96,20 +96,10 @@
         <h2><%= t("account.show.two_factor") %></h2>
        <% if current_user.otp_required_for_login %>
       <p>Two factor authentication is enabled.</p>
-      <p><%= link_to('Disable Two Factor Authentication', two_factor_authentication_path, class: 'button', method: :delete, data: {confirm: 'Are you sure you want to disable two factor authentication?'}) %></p>
-    <div class="card-deck">
-        <div class="card">
-          <div class="card-header">
-            Backup Codes
-          </div>
-          <div class="card-body">
-            <p>Keep these backup codes safe in case you lose access to your authenticator app:</p>
-            <hr />
-          </div>
-        </div>
+      <p><%= link_to("Disable Two Factor Authentication", account_two_factor_authentication_path, class: "button", method: :delete, data: { confirm: "Are you sure you want to disable two factor authentication?" }) %></p>
      <% else %>
       <p>Two factor authentication is NOT enabled.</p>
-      <p><%= link_to('Enable Two Factor Authentication', two_factor_authentication_path, class: 'button') %></p>
+      <p><%= link_to("Enable Two Factor Authentication", account_two_factor_authentication_path, class: "button") %></p>
     <% end %>
           <h2><%= t("account.show.user_permission_title") %></h2>
 
