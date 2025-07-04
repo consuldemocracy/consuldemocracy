@@ -23,6 +23,7 @@ class Admin::Settings::FeaturesTabComponent < ApplicationComponent
       feature.graphql_api
       feature.sdg
       feature.machine_learning
+      feature.force_2factor
       feature.remove_investments_supports
       feature.dashboard.notification_emails
     ]

@@ -110,6 +110,8 @@ class ApplicationController < ActionController::Base
     end
     
       def enforce_two_factor_for_admins
+      return unless Setting.otp_enabled?
+
     # 1. First, do nothing if no user is signed in.
     return unless user_signed_in?
 
