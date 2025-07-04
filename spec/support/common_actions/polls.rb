@@ -1,13 +1,14 @@
 module Polls
-  def vote_for_poll_via_web(poll, question, option)
+  def vote_for_poll_via_web(poll, questions_with_options)
     visit poll_path(poll)
 
-    within("#poll_question_#{question.id}_options") do
-      click_button option
-
-      expect(page).to have_button("You have voted #{option}")
-      expect(page).not_to have_button("Vote #{option}")
+    questions_with_options.each do |question, option|
+      within_fieldset(question.title) { choose option }
     end
+
+    click_button "Vote"
+
+    expect(page).to have_content "Thank you for voting!"
   end
 
   def vote_for_poll_via_booth
