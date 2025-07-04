@@ -141,7 +141,9 @@ module Abilities
 
       can :manage, LocalCensusRecord
       can [:create, :read], LocalCensusRecords::Import
-
+      
+      can [:read, :enable, :manage, :show], :two_factor_authentication 
+      
       if Rails.application.config.multitenancy && Tenant.default?
         can [:create, :read, :update, :hide, :restore], Tenant
       end

@@ -10,10 +10,19 @@ class Admin::AdministratorsController < Admin::BaseController
   end
 
   def create
-    @administrator.user_id = params[:user_id]
-    @administrator.save!
+    user = User.find(params[:user_id])
+    if user.can_be_administrator?
+      @administrator.user_id = user.id
+      @administrator.save!
+      redirect_to admin_administrators_path, notice: 'Administrator was successfully created.'
+    else
+      redirect_to admin_administrators_path, alert: 'User is not allowed to be an administrator.'
+    end
 
-    redirect_to admin_administrators_path
+#    @administrator.user_id = params[:user_id]
+#    @administrator.save!
+
+#    redirect_to admin_administrators_path
   end
 
   def destroy

@@ -13,6 +13,12 @@ devise_scope :user do
   delete "users/registrations", to: "users/registrations#delete"
   get :finish_signup, to: "users/registrations#finish_signup"
   patch :do_finish_signup, to: "users/registrations#do_finish_signup"
+
+  # Two-Factor Authentication routes
+  # Two-Factor Authentication routes
+#  resource :two_factor_authentication, only: [:show, :create, :destroy] do
+#    post :enable, on: :collection
+#  end
 end
 
 devise_for :organizations, class_name: "User",
