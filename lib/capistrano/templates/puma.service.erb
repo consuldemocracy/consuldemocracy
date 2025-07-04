@@ -15,7 +15,9 @@ Description=Puma HTTP Server for <%= "#{fetch(:application)} (#{fetch(:stage)})"
 After=network.target
 
 [Service]
-Type=<%= service_unit_type %>
+<% supports_notify = defined?(Puma::DSL) && Puma::DSL.instance_methods.include?(:systemd_enabled) %>
+<% default_type = supports_notify ? "notify" : "simple" %>
+Type=<%= fetch(:puma_service_unit_type, default_type) %>
 WatchdogSec=0
 <%="User=#{puma_user(@role)}" if fetch(:puma_systemctl_user) == :system %>
 WorkingDirectory=<%= current_path %>

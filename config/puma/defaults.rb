@@ -24,6 +24,14 @@ on_restart do
   ENV["BUNDLE_GEMFILE"] = ""
 end
 
-if respond_to?(:systemd_enabled) && Rails.env.staging?
+# if respond_to?(:systemd_enabled)
+#   systemd_enabled true
+# end
+#
+# if defined?(Puma::DSL) && Puma::DSL.instance_methods.include?(:systemd_enabled)
+#   systemd_enabled true
+# end
+
+if Puma::DSL.instance_methods.include?(:systemd_enabled)
   systemd_enabled true
 end
