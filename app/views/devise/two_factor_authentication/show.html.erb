@@ -4,19 +4,14 @@
 
 <p>Open your authenticator app and enter the code below to complete your sign-in.</p>
 
-<%# This form posts to a different URL provided by the devise-two-factor gem %>
-<%= form_with url: two_factor_authentication_path, method: :post, local: true, class: "otp-form" do |f| %>
-
-  <%# This hidden field is crucial - it sends a token to identify the user %>
-  <%= f.hidden_field :token, value: @token %>
-
-  <%= f.label :code, "6-Digit Code" %>
-  <%= f.text_field :code, autocomplete: "one-time-code", inputmode: "numeric", pattern: "[0-9]*", maxlength: "6", autofocus: true %>
-
-  <%= f.submit "Verify and Sign In", class: "button primary" %>
-<% end %>
-
-<%# You might also want a link to a backup code entry page %>
-<p>
-  <%= link_to "Use a backup code instead", new_two_factor_authentication_backup_code_path %>
-</p>
+<div class="card">
+  <div class="card-header">Two Factor Authentication</div>
+  <div class="card-body">
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), method: :post) do |f| %>
+      <%= f.input :otp_attempt, label: 'OTP' %>
+      <div class="actions">
+        <%= f.submit 'Login', class: 'btn btn-primary mt-2' %>
+      </div>
+    <% end %>
+  </div>
+</div>

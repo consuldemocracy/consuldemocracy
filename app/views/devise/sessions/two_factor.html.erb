@@ -1,10 +1,15 @@
 <div class="card">
-  <div class="card-header">Two Factor Authentication</div>
+  <div class="card-header"><%= t('devise.sessions.otp.header') %></div>
   <div class="card-body">
-    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), method: :post) do |f| %>
-      <%= f.input :otp_attempt, label: 'OTP' %>
+    <%# The form's url and method are kept exactly as you have them %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), method: :post) do |f| %>
+
+      <%# The label text now comes from the locale file %>
+      <%= f.text_field :otp_attempt, label: t('devise.sessions.otp.label'), hint: t('devise.sessions.otp.backup_code_hint') %>
+
       <div class="actions">
-        <%= f.submit 'Login', class: 'button' %>
+        <%# The button text now comes from the locale file %>
+        <%= f.submit t('devise.sessions.otp.login_button'), class: 'button' %>
       </div>
     <% end %>
   </div>
