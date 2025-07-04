@@ -46,6 +46,12 @@ en:
       update_needs_confirmation: "Your account has been updated successfully; however, we need to verify your new email address. Please check your email and click on the link to complete the confirmation of your new email address."
       updated: "Your account has been updated successfully."
     sessions:
+      otp:
+        header: "Two Factor Authentication"
+        label: "Six Digit Code"
+        login_button: "Login"
+        backup_code_hint: "Lost your device? You can use one of your single-use backup codes."
+        backup_code_link_text: "Use a backup code"
       signed_in: "You have been signed in successfully."
       signed_out: "You have been signed out successfully."
       already_signed_out: "You have been signed out successfully."
