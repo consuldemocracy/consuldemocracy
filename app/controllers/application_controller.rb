@@ -12,7 +12,9 @@ class ApplicationController < ActionController::Base
   before_action :ensure_signup_complete
   around_action :switch_locale
   before_action :set_return_url
-
+  
+  before_action :enforce_two_factor_for_admins
+  
   check_authorization unless: :devise_controller?
   self.responder = ApplicationResponder
 
@@ -106,4 +108,35 @@ class ApplicationController < ActionController::Base
 
       redirect_to path, response_status
     end
+    
+      def enforce_two_factor_for_admins
+    # 1. First, do nothing if no user is signed in.
+    return unless user_signed_in?
+
+    # 2. Next, do nothing if the user is not an admin.
+    return unless current_user.administrator?
+
+    # 3. If the admin has already enabled 2FA, we're done. Do nothing.
+    return if current_user.otp_two_factor_enabled?
+
+    # 4. CRITICAL: To prevent an infinite redirect loop, we must NOT redirect
+    #    if the user is already on a page needed for the setup process.
+    return if on_an_allowed_page?
+
+    # 5. If all checks fail, the user is an admin who needs to set up 2FA.
+    #    Redirect them to the setup page with an alert.
+    redirect_to account_two_factor_authentication_path,
+                alert: 'As an administrator, you must enable two-factor authentication to continue.'
+  end
+  
+  # Helper method to define the pages an admin can visit during setup.
+  def on_an_allowed_page?
+    # Allow access to any Devise-related controller (sessions, registrations, etc.)
+    # so they can log out if needed.
+    return true if devise_controller?
+
+    # Allow access to the two_factor_authentication controller itself.
+    allowed_controllers = ["two_factor_authentication", "two_factor_authentications"]
+    return true if allowed_controllers.include?(controller_name)
+  end
 end
