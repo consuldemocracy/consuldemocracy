@@ -1,4 +1,11 @@
 class Users::SessionsController < Devise::SessionsController
+  prepend_before_action :authenticate_with_otp, only: [:create]
+  
+    
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_in, keys: [:otp_attempt])
+  end
+  
   def destroy
     @stored_location = stored_location_for(:user)
     super
@@ -26,4 +33,16 @@ class Users::SessionsController < Devise::SessionsController
       stored_path = session[stored_location_key_for(resource)] || ""
       stored_path[0..5] == "/email"
     end
+    
+    def authenticate_with_otp
+    user = User.find_by(email: params[:user][:email])
+    return unless user&.requires_2fa?
+
+    if user.validate_and_consume_otp!(params[:user][:otp_attempt])
+      sign_in user
+    else
+      flash[:alert] = 'Invalid OTP'
+      redirect_to new_user_session_path
+    end
+  end
 end
