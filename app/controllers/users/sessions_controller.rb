@@ -1,12 +1,11 @@
-class Users::SessionsController < Devise::SessionsController
-#  prepend_before_action :authenticate_with_otp_two_factor, only: [:create]
+class Users::SessionsController <Devise::SessionsController
   prepend_before_action :authenticate_with_otp_two_factor,
-                        if: -> { action_name == 'create' && otp_two_factor_enabled? }  
-    
+                        if: -> { action_name == 'create' && otp_two_factor_enabled? }
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_in, keys: [:otp_attempt])
   end
-  
+
   def destroy
     @stored_location = stored_location_for(:user)
     super
@@ -34,14 +33,10 @@ class Users::SessionsController < Devise::SessionsController
       stored_path = session[stored_location_key_for(resource)] || ""
       stored_path[0..5] == "/email"
     end
-    
+
   def authenticate_with_otp_two_factor
   Rails.logger.info "[2FA LOGIC] ==> Starting authentication process."
-
-  # Find the user based on the login parameters
   user = self.resource = find_user
-
-  # Log whether a user was found
   if user.present?
     Rails.logger.info "[2FA LOGIC]     User found: ID #{user.id}, Email: #{user.email}"
   else
@@ -52,14 +47,10 @@ class Users::SessionsController < Devise::SessionsController
 
   # This is the second step of the login, where the user has submitted their OTP
   if user_params[:otp_attempt].present? && session[:otp_user_id]
-    Rails.logger.info "[2FA LOGIC]     Detected OTP attempt. Session OTP User ID: #{session[:otp_user_id]}."
-    Rails.logger.info "[2FA LOGIC]     Calling 'authenticate_user_with_otp_two_factor'..."
     authenticate_user_with_otp_two_factor(user)
 
   # This is the first step, where the user has just submitted their password
   elsif user.valid_password?(user_params[:password])
-    Rails.logger.info "[2FA LOGIC]     Password for User ID #{user.id} is valid."
-    Rails.logger.info "[2FA LOGIC]     Calling 'prompt_for_otp_two_factor'..."
     prompt_for_otp_two_factor(user)
 
   # This else block is important for debugging
@@ -105,10 +96,7 @@ end
   def find_user
     if session[:otp_user_id]
       User.find(session[:otp_user_id])
- #   elsif user_params[:email]
- #     User.find_by(email: user_params[:email])
      elsif params[:user]
-    # This part is for the first (password) step
     login = user_params[:login].downcase
     User.find_by("lower(email) = :login OR username = :login", { login: login })
     end
