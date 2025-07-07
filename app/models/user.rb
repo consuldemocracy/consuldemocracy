@@ -14,7 +14,7 @@ class User < ApplicationRecord
          otp_secret_encryption_key: ENV["DEVISE_OTP_ENCRYPTION_KEY"]
 
   # If you want to use backup codes
-  serialize :otp_backup_codes, Array
+  serialize :otp_backup_codes, type: Array
 
   acts_as_voter
   acts_as_paranoid column: :hidden_at
@@ -99,10 +99,8 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :organization, update_only: true
 
   attr_accessor :skip_password_validation, :login
-#  attr_accessor :skip_password_validation, :use_redeemable_code, :login
 #  attr_accessor :otp_backup_codes
 #  attr_accessor :otp_plain_backup_codes
-  attr_accessor :skip_password_validation, :use_redeemable_code, :login
 
   scope :administrators, -> { joins(:administrator) }
   scope :moderators,     -> { joins(:moderator) }
@@ -458,11 +456,11 @@ class User < ApplicationRecord
     username.to_s.parameterize
   end
 
-  def otp_provisioning_uri(account, options = {})
-    issuer = options[:issuer]
-    secret = self.otp_secret
-    "otpauth://totp/#{issuer}:#{account}?secret=#{secret}&issuer=#{issuer}"
-  end
+ # def otp_provisioning_uri(account, options = {})
+ #   issuer = options[:issuer]
+ #   secret = self.otp_secret
+ #   "otpauth://totp/#{issuer}:#{account}?secret=#{secret}&issuer=#{issuer}"
+ # end
 
   def otp_qr_code
     issuer = Tenant.current_secrets.server_name.to_s #this needs changed to server name
