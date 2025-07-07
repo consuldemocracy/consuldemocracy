@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  devise :two_factor_authenticatable
   include Verification
   attribute :registering_from_web, default: false
 
@@ -8,13 +7,14 @@ class User < ApplicationRecord
          authentication_keys: [:login]
   devise :lockable if Rails.application.config.devise_lockable
 
-  devise :two_factor_authenticatable,
-         :two_factor_backupable,
-         otp_number_of_backup_codes: 10,
+  devise :two_factor_authenticatable
+  
+  devise :two_factor_backupable,
+         otp_number_of_backup_codes: 5,
          otp_secret_encryption_key: ENV["DEVISE_OTP_ENCRYPTION_KEY"]
 
   # If you want to use backup codes
-  #  serialize :otp_backup_codes, JSON
+  serialize :otp_backup_codes, Array
 
   acts_as_voter
   acts_as_paranoid column: :hidden_at
@@ -100,8 +100,9 @@ class User < ApplicationRecord
 
   attr_accessor :skip_password_validation, :login
 #  attr_accessor :skip_password_validation, :use_redeemable_code, :login
-  attr_accessor :otp_backup_codes
-  attr_accessor :otp_plain_backup_codes
+#  attr_accessor :otp_backup_codes
+#  attr_accessor :otp_plain_backup_codes
+  attr_accessor :skip_password_validation, :use_redeemable_code, :login
 
   scope :administrators, -> { joins(:administrator) }
   scope :moderators,     -> { joins(:moderator) }
@@ -510,8 +511,8 @@ class User < ApplicationRecord
 
   def can_be_administrator?
     self.otp_required_for_login
-  end   
-  
+  end
+
   private
 
     def clean_document_number
