@@ -1,4 +1,4 @@
-class User < ApplicationRecord
+class User <ApplicationRecord
   include Verification
   attribute :registering_from_web, default: false
 
@@ -8,12 +8,9 @@ class User < ApplicationRecord
   devise :lockable if Rails.application.config.devise_lockable
 
   devise :two_factor_authenticatable
-  
-  devise :two_factor_backupable,
-         otp_number_of_backup_codes: 5,
-         otp_secret_encryption_key: ENV["DEVISE_OTP_ENCRYPTION_KEY"]
 
-  # If you want to use backup codes
+  devise :two_factor_backupable
+
   serialize :otp_backup_codes, type: Array
 
   acts_as_voter
