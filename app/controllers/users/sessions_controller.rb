@@ -35,32 +35,29 @@ class Users::SessionsController <Devise::SessionsController
     end
 
   def authenticate_with_otp_two_factor
-  Rails.logger.info "[2FA LOGIC] ==> Starting authentication process."
-  user = self.resource = find_user
-  if user.present?
-    Rails.logger.info "[2FA LOGIC]     User found: ID #{user.id}, Email: #{user.email}"
-  else
-    Rails.logger.info "[2FA LOGIC]     User not found with provided login details. Aborting."
-    # The standard Devise flow will handle the 'invalid login' message from here.
-    return
+    Rails.logger.info "[2FA LOGIC] ==> Starting authentication process."
+    user = self.resource = find_user
+    if user.present?
+      Rails.logger.info "[2FA LOGIC]     User found: ID #{user.id}, Email: #{user.email}"
+    else
+      Rails.logger.info "[2FA LOGIC]     User not found with provided login details. Aborting."
+      # The standard Devise flow will handle the 'invalid login' message from here.
+      return
+    end
+    # This is the second step of the login, where the user has submitted their OTP
+    if user_params[:otp_attempt].present? && session[:otp_user_id]
+      authenticate_user_with_otp_two_factor(user)
+
+    # This is the first step, where the user has just submitted their password
+    elsif user.valid_password?(user_params[:password])
+      prompt_for_otp_two_factor(user)
+
+    # This else block is important for debugging
+    else
+      Rails.logger.info "[2FA LOGIC]     Password was invalid, or another condition was not met."
+      # Let Devise's normal flow continue, which will result in an "Invalid email or password" error.
+    end
   end
-
-  # This is the second step of the login, where the user has submitted their OTP
-  if user_params[:otp_attempt].present? && session[:otp_user_id]
-    authenticate_user_with_otp_two_factor(user)
-
-  # This is the first step, where the user has just submitted their password
-  elsif user.valid_password?(user_params[:password])
-    prompt_for_otp_two_factor(user)
-
-  # This else block is important for debugging
-  else
-    Rails.logger.info "[2FA LOGIC]     Password was invalid, or another condition was not met."
-    # Let Devise's normal flow continue, which will result in an "Invalid email or password" error.
-  end
-
-  Rails.logger.info "[2FA LOGIC] ==> Finished authentication process."
-end
 
   def valid_otp_attempt?(user)
     user.validate_and_consume_otp!(user_params[:otp_attempt]) ||

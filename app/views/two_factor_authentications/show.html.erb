@@ -47,11 +47,11 @@
 
   <%= form_with url: enable_account_two_factor_authentication_path, method: :post, html: { class: "otp-form" } do |f| %>
     <%= f.text_field :otp_attempt,
-                   label: t("two_factor_authentication.show.otp_label"),
-                   autocomplete: "one-time-code",
-                   inputmode: "numeric",
-                   pattern: "[0-9]*",
-                   maxlength: "6" %>
+                     label: t("two_factor_authentication.show.otp_label"),
+                     autocomplete: "one-time-code",
+                     inputmode: "numeric",
+                     pattern: "[0-9]*",
+                     maxlength: "6" %>
     <%# The f.submit helper also takes a translation key %>
     <%= f.submit t("two_factor_authentication.show.enable_button"), class: "button primary" %>
   <% end %>
