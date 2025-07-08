@@ -90,7 +90,7 @@ group :development do
   gem "capistrano-npm", "~> 1.0.3", require: false
   gem "capistrano-rails", "~> 1.7.0", require: false
   gem "capistrano3-delayed-job", "~> 1.7.6"
-  gem "capistrano3-puma", "~> 6.0.0"
+  gem "capistrano3-puma", "~> 6.2.0"
   gem "erb_lint", "~> 0.9.0", require: false
   gem "faraday-retry", "~> 2.3.1", require: false
   gem "htmlbeautifier", "~> 1.4.3", require: false
