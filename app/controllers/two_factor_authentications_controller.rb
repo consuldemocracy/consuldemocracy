@@ -5,7 +5,7 @@ class TwoFactorAuthenticationsController < ApplicationController
   def show
     authorize! :show, :two_factor_authentication
     Rails.logger.info "Inside show action for user #{current_user.id}"
-    current_user.generate_two_factor_secret_if_missing! 
+    current_user.generate_two_factor_secret_if_missing!
     @qr_code = current_user.otp_qr_code
   end
 
@@ -19,14 +19,13 @@ class TwoFactorAuthenticationsController < ApplicationController
       plain_backup_codes = current_user.generate_otp_backup_codes!
       current_user.save!
       flash[:backup_codes] = plain_backup_codes
-      flash[:notice] = 'Two-factor authentication enabled'
+      flash[:notice] = "Two-factor authentication enabled"
       redirect_to backup_codes_account_two_factor_authentication_path
     else
-      flash.now[:alert] = 'Invalid OTP'
+      flash.now[:alert] = "Invalid OTP"
       render :show
     end
   end
-  
   
   def backup_codes
     # We retrieve them from the flash hash where the 'enable' action stored them.
@@ -39,10 +38,9 @@ class TwoFactorAuthenticationsController < ApplicationController
     end
   end
 
-
   def destroy
-    current_user.update(otp_required_for_login: false)
-    current_user.update(otp_secret: nil)
-    redirect_to root_path, notice: 'Two-factor authentication disabled'
+    current_user.update!(otp_required_for_login: false)
+    current_user.update!(otp_secret: nil)
+    redirect_to root_path, notice: "Two-factor authentication disabled"
   end
 end
