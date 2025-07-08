@@ -120,6 +120,7 @@
 //= require datepicker
 //= require authenticity_token_refresh
 //= require_tree ./admin
+//= require_tree ./polls
 //= require_tree ./sdg
 //= require_tree ./sdg_management
 //= require_tree ./custom
@@ -178,6 +179,7 @@ var initialize_modules = function() {
   App.BudgetEditAssociations.initialize();
   App.BudgetHideMoney.initialize();
   App.Datepicker.initialize();
+  App.PollsForm.initialize();
   App.SDGRelatedListSelector.initialize();
   App.SDGManagementRelationSearch.initialize();
   App.AuthenticityTokenRefresh.initialize();
