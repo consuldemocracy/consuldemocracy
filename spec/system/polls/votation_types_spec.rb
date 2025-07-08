@@ -2,13 +2,13 @@ require "rails_helper"
 
 describe "Poll Votation Type" do
   let(:author) { create(:user, :level_two) }
+  let(:poll) { create(:poll) }
 
   before do
     login_as(author)
   end
 
   scenario "Unique and multiple answers" do
-    poll = create(:poll)
     create(:poll_question_unique, :yes_no, poll: poll, title: "Is it that bad?")
     create(:poll_question_multiple, :abcde, poll: poll, max_votes: 3, title: "Which ones do you prefer?")
 
@@ -40,5 +40,35 @@ describe "Poll Votation Type" do
     end
 
     expect(page).to have_button "Vote"
+  end
+
+  scenario "Maximum votes has been reached" do
+    question = create(:poll_question_multiple, :abc, poll: poll, max_votes: 2)
+    create(:poll_answer, author: author, question: question, answer: "Answer A")
+
+    visit poll_path(poll)
+
+    expect(page).to have_field "Answer A", type: :checkbox, checked: true
+    expect(page).to have_field "Answer B", type: :checkbox, checked: false
+    expect(page).to have_field "Answer C", type: :checkbox, checked: false
+
+    check "Answer C"
+
+    expect(page).to have_field "Answer A", type: :checkbox, checked: true
+    expect(page).to have_field "Answer B", type: :checkbox, checked: false, disabled: true
+    expect(page).to have_field "Answer C", type: :checkbox, checked: true
+
+    click_button "Vote"
+
+    expect(page).to have_content "Thank you for voting!"
+    expect(page).to have_field "Answer A", type: :checkbox, checked: true
+    expect(page).to have_field "Answer B", type: :checkbox, checked: false, disabled: true
+    expect(page).to have_field "Answer C", type: :checkbox, checked: true
+
+    uncheck "Answer A"
+
+    expect(page).to have_field "Answer A", type: :checkbox, checked: false
+    expect(page).to have_field "Answer B", type: :checkbox, checked: false
+    expect(page).to have_field "Answer C", type: :checkbox, checked: true
   end
 end

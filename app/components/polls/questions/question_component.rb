@@ -14,8 +14,17 @@ class Polls::Questions::QuestionComponent < ApplicationComponent
       tag.attributes(
         id: dom_id(question),
         disabled: ("disabled" if disabled?),
+        class: fieldset_class,
         data: { max_votes: question.max_votes }
       )
+    end
+
+    def fieldset_class
+      if multiple_choice?
+        "multiple-choice"
+      else
+        "single-choice"
+      end
     end
 
     def options_read_more_links

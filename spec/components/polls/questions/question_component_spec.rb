@@ -34,21 +34,6 @@ describe Polls::Questions::QuestionComponent do
     end
   end
 
-  skip "disables fields when maximum votes has been reached" do # TODO: requires JavaScript
-    user = create(:user, :verified)
-    question = create(:poll_question_multiple, :abc, max_votes: 2, author: user)
-
-    create(:poll_answer, author: user, question: question, answer: "Answer A")
-    create(:poll_answer, author: user, question: question, answer: "Answer C")
-    sign_in(user)
-
-    render_inline Polls::Questions::QuestionComponent.new(question)
-
-    expect(page).to have_field "Answer A", type: :checkbox, checked: true
-    expect(page).to have_field "Answer B", type: :checkbox, checked: false
-    expect(page).to have_field "Answer C", type: :checkbox, checked: true
-  end
-
   context "Verified user" do
     let(:user) { create(:user, :level_two) }
     before { sign_in(user) }
