@@ -22,7 +22,6 @@
 
   <ul class="backup-code-list">
     <% @backup_codes.each do |code| %>
-      <%# The codes are often formatted, e.g., "xxxx-xxxx". %>
       <li class="backup-code"><%= code %></li>
     <% end %>
   </ul>
@@ -32,7 +31,6 @@
   </div>
 </div>
 
-<%# Optional: Some styling to make it look good %>
 <style>
   .two-factor-backup-codes { max-width: 600px; margin: 2rem auto; text-align: center; }
   .callout.warning { background-color: #fff3cd; border: 1px solid #ffeeba; padding: 1rem; border-radius: 4px; margin-bottom: 2rem; }

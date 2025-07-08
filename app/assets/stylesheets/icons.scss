@@ -307,9 +307,9 @@
 
 
 .icon-shield::before {
+  content: "\f3ed";   /* This is the code for 'shield-alt' */
   font-family: "Font Awesome 5 Free";
   font-weight: 900; /* Solid icons require a heavy font-weight */
-  content: "\f3ed";   /* This is the code for 'shield-alt' */
 }
 
 .icon-quote-before::before {
