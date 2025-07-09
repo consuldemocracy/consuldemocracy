@@ -69,7 +69,6 @@ pl:
         new_confirmation: Nie zostałeś poinstruowany aby aktywować swoje konto?
         new_password: Zapomniałeś hasła?
         new_unlock: Nie otrzymałeś instrukcji odblokowania?
-        signin_with_provider: Zaloguj się za pomocą %{provider}
         signup: Nie masz konta? %{signup_link}
         signup_link: Zarejestruj się
     unlocks:
