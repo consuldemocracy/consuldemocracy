@@ -63,9 +63,10 @@
     <fieldset class="small-12 column">
       <legend><%= attribute_name(:status) %></legend>
       <% ::Legislation::DraftVersion::VALID_STATUSES.each do |status| %>
-        <%= f.radio_button :status, status %>
-        <span class="help-text"><%= t("admin.legislation.draft_versions.form.hints.status.#{status}") %></span>
-        <br>
+        <span class="radio-and-label">
+          <%= f.radio_button :status, status %>
+          <span class="help-text"><%= t("admin.legislation.draft_versions.form.hints.status.#{status}") %></span>
+        </span>
       <% end %>
     </fieldset>
 

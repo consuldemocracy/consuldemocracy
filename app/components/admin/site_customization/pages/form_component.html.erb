@@ -13,8 +13,9 @@
       <fieldset>
         <legend><%= attribute_name(:status) %></legend>
         <% ::SiteCustomization::Page::VALID_STATUSES.each do |status| %>
-          <%= f.radio_button :status, status %>
-          <br>
+          <span class="radio-and-label">
+            <%= f.radio_button :status, status %>
+          </span>
         <% end %>
       </fieldset>
 

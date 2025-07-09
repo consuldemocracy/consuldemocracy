@@ -85,4 +85,12 @@
       }
     }
   }
+
+  .radio-and-label {
+    @include radio-or-checkbox-and-label-alignment;
+
+    span {
+      margin-left: 1ch;
+    }
+  }
 }

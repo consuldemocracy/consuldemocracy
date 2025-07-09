@@ -1,0 +1,5 @@
+.site-customization-pages-form {
+  .radio-and-label {
+    @include radio-or-checkbox-and-label-alignment;
+  }
+}

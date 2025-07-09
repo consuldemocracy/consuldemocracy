@@ -199,3 +199,9 @@
     text-transform: uppercase;
   }
 }
+
+@mixin radio-or-checkbox-and-label-alignment {
+  align-items: baseline;
+  display: flex;
+  max-width: max-content;
+}

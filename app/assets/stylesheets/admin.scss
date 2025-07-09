@@ -168,6 +168,10 @@ $table-header:   #ecf1f6;
       font-weight: bold;
     }
 
+    .radio {
+      @include radio-or-checkbox-and-label-alignment;
+    }
+
     select {
       height: $input-height;
     }

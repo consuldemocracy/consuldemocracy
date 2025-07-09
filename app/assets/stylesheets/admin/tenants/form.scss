@@ -5,7 +5,7 @@
   }
 
   .radio-and-label {
-    display: flex;
+    @include radio-or-checkbox-and-label-alignment;
     margin-bottom: calc($line-height / 3);
 
     &:last-of-type {
