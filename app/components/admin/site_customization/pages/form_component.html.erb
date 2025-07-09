@@ -1,7 +1,7 @@
-<%= render "shared/globalize_locales", resource: @page %>
+<%= render "shared/globalize_locales", resource: page %>
 
-<%= translatable_form_for [:admin, @page], html: { class: "edit_page" } do |f| %>
-  <%= render "shared/errors", resource: @page %>
+<%= translatable_form_for [:admin, page], html: { class: "site-customization-pages-form" } do |f| %>
+  <%= render "shared/errors", resource: page %>
 
   <div class="row">
     <div class="small-12 column">
