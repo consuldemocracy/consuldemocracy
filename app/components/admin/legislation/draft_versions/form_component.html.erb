@@ -1,12 +1,6 @@
 <%= render "shared/globalize_locales", resource: draft_version %>
 
-<%= translatable_form_for [:admin, process, draft_version], url: url,
-                                                            html: {
-                                                              data: {
-                                                                markdown_changes_message: I18n.t("admin.legislation.draft_versions.edit.markdown_changes_message")
-                                                              },
-                                                              class: "legislation-draft-versions-form"
-                                                            } do |f| %>
+<%= translatable_form_for [:admin, process, draft_version], form_attributes do |f| %>
   <%= render "shared/errors", resource: draft_version %>
 
   <div class="row">
@@ -81,7 +75,7 @@
     </div>
 
     <div class="small-12 medium-3 column clear end margin-top">
-      <%= f.submit(class: "button success expanded", value: t("admin.legislation.draft_versions.#{admin_submit_action(draft_version)}.submit_button")) %>
+      <%= f.submit(class: "button success expanded", value: submit_button_text) %>
     </div>
   </div>
 <% end %>
