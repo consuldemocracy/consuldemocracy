@@ -2,7 +2,7 @@
   <%= t("admin.header.title") %> - <%= t("admin.menu.legislation") %> - <%= @process.title %> - <%= t("admin.legislation.draft_versions.index.title") %> - <%= t("admin.legislation.draft_versions.new.title") %>
 <% end %>
 
-<div class="legislation-draft-versions-new legislation-draft-versions-form">
+<div class="legislation-draft-versions-new">
   <div class="small-12 column">
     <%= back_link_to admin_legislation_process_draft_versions_path(@process),
                      t("admin.legislation.draft_versions.new.back") %>
@@ -13,6 +13,9 @@
 
     <h3><%= t("admin.legislation.draft_versions.new.title") %></h3>
 
-    <%= render "form", url: admin_legislation_process_draft_versions_path(@process) %>
+    <%= render Admin::Legislation::DraftVersions::FormComponent.new(
+      @draft_version,
+      url: admin_legislation_process_draft_versions_path(@process)
+    ) %>
   </div>
 </div>
