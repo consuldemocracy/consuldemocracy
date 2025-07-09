@@ -69,7 +69,6 @@ sq:
         new_confirmation: Nuk keni marrë udhëzime për të aktivizuar llogarinë tuaj?
         new_password: Harrruat fjalëkalimin?
         new_unlock: Nuk keni marrë udhëzime për zhbllokimin?
-        signin_with_provider: Kycu në me %{provider}
         signup: Nuk keni llogari? %{signup_link}
         signup_link: Rregjistrohu
     unlocks:
