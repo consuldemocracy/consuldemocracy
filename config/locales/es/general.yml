@@ -604,6 +604,7 @@ es:
     show:
       already_voted_in_booth: "Ya has participado en esta votación en urnas presenciales, no puedes volver a participar."
       already_voted_in_web: "Ya has participado en esta votación. Si vuelves a votar se sobreescribirá tu resultado anterior."
+      already_voted_blank_in_web: "Ya has participado en esta votación mediante un voto en blanco. Si vuelves a votar se sobreescribirá tu resultado anterior."
       back: Volver a votaciones
       cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar."
       comments_tab: Comentarios

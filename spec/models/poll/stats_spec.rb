@@ -14,8 +14,6 @@ describe Poll::Stats do
   end
 
   describe "total participants" do
-    before { allow(stats).to receive(:total_web_white).and_return(1) }
-
     it "supports every channel" do
       3.times { create(:poll_voter, :from_web, poll: poll) }
       create(:poll_recount, :from_booth, poll: poll,
@@ -49,12 +47,26 @@ describe Poll::Stats do
   end
 
   describe "#total_web_valid" do
-    before { allow(stats).to receive(:total_web_white).and_return(1) }
+    it "returns only votes containing answers" do
+      question = create(:poll_question, :yes_no, poll: poll)
 
-    it "returns only valid votes" do
-      3.times { create(:poll_voter, :from_web, poll: poll) }
+      2.times do
+        voter = create(:poll_voter, :from_web, poll: poll)
+        create(:poll_answer, author: voter.user, question: question)
+      end
+      create(:poll_voter, :from_web, poll: poll)
 
       expect(stats.total_web_valid).to eq(2)
+    end
+  end
+
+  describe "#total_web_white" do
+    it "returns voters with no answers" do
+      question = create(:poll_question, :yes_no, poll: poll)
+      3.times { create(:poll_voter, :from_web, poll: poll) }
+      create(:poll_answer, author: poll.voters.last.user, question: question)
+
+      expect(stats.total_web_white).to eq(2)
     end
   end
 
@@ -93,8 +105,8 @@ describe Poll::Stats do
 
   describe "valid percentage by channel" do
     it "is relative to the total amount of valid votes" do
+      allow(stats).to receive(:total_web_valid).and_return(1)
       create(:poll_recount, :from_booth, poll: poll, total_amount: 2)
-      create(:poll_voter, :from_web, poll: poll)
 
       expect(stats.valid_percentage_web).to eq(33.333)
       expect(stats.valid_percentage_booth).to eq(66.667)
@@ -123,7 +135,7 @@ describe Poll::Stats do
 
   describe "#total_valid_votes" do
     it "counts valid votes from every channel" do
-      2.times { create(:poll_voter, :from_web, poll: poll) }
+      allow(stats).to receive(:total_web_valid).and_return(2)
       create(:poll_recount, :from_booth, poll: poll, total_amount: 3, white_amount: 10)
       create(:poll_recount, :from_booth, poll: poll, total_amount: 4, null_amount: 20)
 
@@ -150,10 +162,9 @@ describe Poll::Stats do
   end
 
   describe "total percentage by type" do
-    before { allow(stats).to receive(:total_web_white).and_return(1) }
+    before { allow(stats).to receive_messages(total_web_white: 1, total_web_valid: 2) }
 
     it "is relative to the total amount of votes" do
-      3.times { create(:poll_voter, :from_web, poll: poll) }
       create(:poll_recount, :from_booth, poll: poll,
                                          total_amount: 8,
                                          white_amount: 5,

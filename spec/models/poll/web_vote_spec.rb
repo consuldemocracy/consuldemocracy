@@ -55,20 +55,21 @@ describe Poll::WebVote do
       expect(question.answers).to be_blank
     end
 
-    it "does not create voters or answers when leaving everything blank" do
+    it "creates a voter but does not create answers when leaving everything blank" do
       web_vote.update({})
 
-      expect(poll.reload.voters.size).to eq 0
+      expect(poll.reload.voters.size).to eq 1
       expect(question.reload.answers.size).to eq 0
     end
 
-    it "deletes existing answers and voter when no answers are given" do
+    it "deletes existing answers but keeps voters when no answers are given" do
       create(:poll_answer, question: question, author: user, option: option_yes)
       create(:poll_voter, poll: poll, user: user)
 
       web_vote.update({})
 
-      expect(poll.reload.voters.size).to eq 0
+      expect(poll.reload.voters.size).to eq 1
+      expect(poll.voters.first.user).to eq user
       expect(question.reload.answers.size).to eq 0
     end
 

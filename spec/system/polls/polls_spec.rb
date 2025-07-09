@@ -247,8 +247,9 @@ describe "Polls" do
       within_fieldset("Which ones are better?") { uncheck "Answer A" }
       click_button "Vote"
 
-      expect(page).to have_content "Thank you for voting!"
-      expect(page).not_to have_content "You have already participated"
+      expect(page).to have_content "Thank you for voting! Your vote has been registered as a blank vote."
+      expect(page).to have_content "You have already participated in this poll by casting a blank vote. " \
+                                   "If you vote again it will be overwritten."
 
       within_fieldset("Which ones are better?") do
         expect(page).to have_field type: :checkbox, checked: false, count: 3

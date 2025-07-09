@@ -26,7 +26,11 @@ class PollsController < ApplicationController
     @web_vote = Poll::WebVote.new(@poll, current_user)
 
     if @web_vote.update(answer_params)
-      redirect_to @poll, notice: t("flash.actions.create.poll_voter")
+      if answer_params.blank?
+        redirect_to @poll, notice: t("flash.actions.create.poll_voter_blank")
+      else
+        redirect_to @poll, notice: t("flash.actions.create.poll_voter")
+      end
     else
       @comment_tree = CommentTree.new(@poll, params[:page], @current_order)
       render :show
