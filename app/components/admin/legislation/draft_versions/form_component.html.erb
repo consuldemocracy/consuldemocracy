@@ -1,12 +1,7 @@
-<%= render "shared/globalize_locales", resource: @draft_version %>
+<%= render "shared/globalize_locales", resource: draft_version %>
 
-<%= translatable_form_for [:admin, @process, @draft_version], url: url,
-                                                              html: {
-                                                                data: {
-                                                                  markdown_changes_message: I18n.t("admin.legislation.draft_versions.edit.markdown_changes_message")
-                                                                }
-                                                              } do |f| %>
-  <%= render "shared/errors", resource: @draft_version %>
+<%= translatable_form_for [:admin, process, draft_version], form_attributes do |f| %>
+  <%= render "shared/errors", resource: draft_version %>
 
   <div class="row">
     <%= f.translatable_fields do |translations_form| %>
@@ -35,12 +30,12 @@
         <div class="small-12 medium-8 column fullscreen-container">
           <div class="markdown-editor-header truncate">
             <%= sanitize(t("admin.legislation.draft_versions.form.title",
-                           draft_version_title: @draft_version.title,
-                           process_title: @process.title)) %>
+                           draft_version_title: draft_version.title,
+                           process_title: process.title)) %>
           </div>
 
           <div class="markdown-editor-buttons">
-            <%= f.submit(class: "button", value: t("admin.legislation.draft_versions.#{admin_submit_action(@draft_version)}.submit_button")) %>
+            <%= f.submit(class: "button", value: t("admin.legislation.draft_versions.#{admin_submit_action(draft_version)}.submit_button")) %>
           </div>
 
           <%= link_to "#", class: "fullscreen-toggle" do %>
@@ -65,14 +60,15 @@
   </div>
 
   <div class="row">
-    <div class="small-12 medium-9 column">
-      <%= f.label :status %>
+    <fieldset class="small-12 column">
+      <legend><%= attribute_name(:status) %></legend>
       <% ::Legislation::DraftVersion::VALID_STATUSES.each do |status| %>
-        <%= f.radio_button :status, status %>
-        <span class="help-text"><%= t("admin.legislation.draft_versions.form.hints.status.#{status}") %></span>
-        <br>
+        <span class="radio-and-label">
+          <%= f.radio_button :status, status %>
+          <span class="help-text"><%= t("admin.legislation.draft_versions.form.hints.status.#{status}") %></span>
+        </span>
       <% end %>
-    </div>
+    </fieldset>
 
     <div class="small-12 medium-9 column">
       <%= f.check_box :final_version %>
@@ -80,7 +76,7 @@
     </div>
 
     <div class="small-12 medium-3 column clear end margin-top">
-      <%= f.submit(class: "button success expanded", value: t("admin.legislation.draft_versions.#{admin_submit_action(@draft_version)}.submit_button")) %>
+      <%= f.submit(class: "button success expanded", value: submit_button_text) %>
     </div>
   </div>
 <% end %>

@@ -168,6 +168,11 @@ $table-header:   #ecf1f6;
       font-weight: bold;
     }
 
+    .radio {
+      align-items: baseline;
+      display: inline-flex;
+    }
+
     select {
       height: $input-height;
     }

@@ -1,0 +1,12 @@
+.dashboard-action-form {
+  .collection-radio-buttons {
+    column-gap: $line-height;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .radio-and-label {
+    align-items: baseline;
+    display: inline-flex;
+  }
+}
