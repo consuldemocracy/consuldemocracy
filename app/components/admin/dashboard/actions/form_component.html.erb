@@ -3,14 +3,14 @@
     <%= render "shared/errors" %>
 
     <div class="row expanded">
-      <div class="small-12 medium-4 column">
-        <%= f.label :action_type %>
+      <fieldset class="small-12 medium-4 column">
+        <legend><%= attribute_name(:action_type) %></legend>
         <% ::Dashboard::Action.action_types.keys.each do |action_type_value| %>
           <span class="margin-right">
             <%= f.radio_button :action_type, action_type_value %>
           </span>
         <% end %>
-      </div>
+      </fieldset>
 
       <div class="small-12 column margin-top">
         <%= f.check_box :active %>

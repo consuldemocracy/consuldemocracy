@@ -60,14 +60,14 @@
   </div>
 
   <div class="row">
-    <div class="small-12 medium-9 column">
-      <%= f.label :status %>
+    <fieldset class="small-12 column">
+      <legend><%= attribute_name(:status) %></legend>
       <% ::Legislation::DraftVersion::VALID_STATUSES.each do |status| %>
         <%= f.radio_button :status, status %>
         <span class="help-text"><%= t("admin.legislation.draft_versions.form.hints.status.#{status}") %></span>
         <br>
       <% end %>
-    </div>
+    </fieldset>
 
     <div class="small-12 medium-9 column">
       <%= f.check_box :final_version %>

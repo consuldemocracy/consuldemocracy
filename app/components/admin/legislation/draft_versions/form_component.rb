@@ -11,6 +11,10 @@ class Admin::Legislation::DraftVersions::FormComponent < ApplicationComponent
 
   private
 
+    def attribute_name(attribute)
+      Legislation::DraftVersion.human_attribute_name(attribute)
+    end
+
     def process
       draft_version.process
     end
