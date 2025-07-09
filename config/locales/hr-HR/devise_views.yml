@@ -69,7 +69,6 @@ hr:
         new_confirmation: Niste primili upute za aktivaciju Vašeg računa?
         new_password: Zaboravili ste zaporku?
         new_unlock: Jeste li primili upute za otključavanje?
-        signin_with_provider: Prijavi se s %{provider}
         signup: Nemate račun? %{signup_link}
         signup_link: Registrirajte se
     unlocks:
