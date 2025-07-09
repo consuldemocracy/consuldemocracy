@@ -69,7 +69,6 @@ ar:
         new_confirmation: لم تتلق تعليمات لتنشيط حسابك؟
         new_password: هل نسيت كلمة المرور؟
         new_unlock: لم تتلق تعليمات الغاء القفل؟
-        signin_with_provider: تسجيل الدخول باستخدام %{provider}
         signup: لا تمتلك حساب؟ %{signup_link}
         signup_link: انشاء حساب
     unlocks:
