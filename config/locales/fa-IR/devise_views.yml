@@ -69,7 +69,6 @@ fa:
         new_confirmation: دستورالعمل هایی برای فعال کردن حساب کاربری خود دریافت نکرده اید؟
         new_password: رمز عبور را فراموش کرده اید؟
         new_unlock: دستورالعمل باز کردن را دریافت نکرده اید؟
-        signin_with_provider: ' ثبت نام با %{provider}'
         signup: حساب کاربری ندارید؟ %{signup_link}
         signup_link: ثبت نام
     unlocks:
