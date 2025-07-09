@@ -1,4 +1,14 @@
-<% unless can?(:answer, poll) %>
+<% if can?(:answer, poll) %>
+  <% if poll.voted_in_booth?(current_user) %>
+    <div class="callout warning">
+      <%= t("polls.show.already_voted_in_booth") %>
+    </div>
+  <% elsif poll.voted_in_web?(current_user) %>
+    <div class="callout warning">
+      <%= t("polls.show.already_voted_in_web") %>
+    </div>
+  <% end %>
+<% else %>
   <% if current_user.nil? %>
     <div class="callout primary">
       <%= sanitize(t("polls.show.cant_answer_not_logged_in",
