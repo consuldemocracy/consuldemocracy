@@ -4,7 +4,7 @@ describe "Budgets wizard, groups step", :admin do
   let(:budget) { create(:budget, :drafting) }
 
   describe "New" do
-    scenario "create group" do
+    scenario "create group with errors and then without errors" do
       visit admin_budgets_wizard_budget_groups_path(budget)
 
       within "#side_menu" do
@@ -15,6 +15,17 @@ describe "Budgets wizard, groups step", :admin do
       expect(page).not_to have_link "Continue to headings"
 
       click_button "Add new group"
+
+      click_button "Create new group"
+
+      expect(page).to have_css ".is-invalid-label", text: "Group name"
+      expect(page).to have_css ".creation-timeline"
+      expect(page).to have_content "can't be blank"
+      expect(page).to have_button "Create new group"
+      expect(page).to have_button "Cancel"
+      expect(page).not_to have_content "Group created successfully!"
+      expect(page).not_to have_button "Add new group"
+      expect(page).not_to have_content "Continue to headings"
 
       fill_in "Group name", with: "All City"
 
@@ -46,26 +57,10 @@ describe "Budgets wizard, groups step", :admin do
       expect(page).not_to have_button "Cancel"
       expect(page).to have_content "Continue to headings"
     end
-
-    scenario "submit the form with errors" do
-      visit admin_budgets_wizard_budget_groups_path(budget)
-      click_button "Add new group"
-
-      click_button "Create new group"
-
-      expect(page).to have_css ".is-invalid-label", text: "Group name"
-      expect(page).to have_css ".creation-timeline"
-      expect(page).to have_content "can't be blank"
-      expect(page).to have_button "Create new group"
-      expect(page).to have_button "Cancel"
-      expect(page).not_to have_content "Group created successfully!"
-      expect(page).not_to have_button "Add new group"
-      expect(page).not_to have_content "Continue to headings"
-    end
   end
 
   describe "Edit" do
-    scenario "update group" do
+    scenario "update group with errors and then without errors" do
       create(:budget_group, budget: budget, name: "Group wiht a typo")
 
       visit admin_budgets_wizard_budget_groups_path(budget)
@@ -73,18 +68,6 @@ describe "Budgets wizard, groups step", :admin do
       expect(page).to have_css ".creation-timeline"
 
       within("tr", text: "Group wiht a typo") { click_link "Edit" }
-      fill_in "Group name", with: "Group without typos"
-      click_button "Save group"
-
-      expect(page).to have_content "Group updated successfully"
-      expect(page).to have_css ".creation-timeline"
-      expect(page).to have_css "td", exact_text: "Group without typos"
-    end
-
-    scenario "submit the form with errors and then without errors" do
-      group = create(:budget_group, budget: budget, name: "Group wiht a typo")
-
-      visit edit_admin_budgets_wizard_budget_group_path(budget, group)
       fill_in "Group name", with: ""
       click_button "Save group"
 
