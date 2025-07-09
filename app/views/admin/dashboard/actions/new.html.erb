@@ -3,8 +3,4 @@
   <h2><%= t("admin.dashboard.actions.new.creating") %></h2>
 </div>
 
-<div class="dashboard-action-form ">
-  <%= form_for dashboard_action, url: { action: "create" } do |f| %>
-    <%= render "form", f: f %>
-  <% end %>
-</div>
+<%= render Admin::Dashboard::Actions::FormComponent.new(dashboard_action, url_action: "create") %>
