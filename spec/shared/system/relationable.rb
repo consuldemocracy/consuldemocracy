@@ -146,10 +146,10 @@ shared_examples "relationable" do |relationable_model_name|
     visit polymorphic_path(relationable)
 
     within("#related-content-list") do
-      click_link "Yes"
+      click_button "Yes"
 
-      expect(page).not_to have_link "Yes"
-      expect(page).not_to have_link "No"
+      expect(page).not_to have_button "Yes"
+      expect(page).not_to have_button "No"
     end
   end
 
@@ -163,10 +163,10 @@ shared_examples "relationable" do |relationable_model_name|
     visit polymorphic_path(relationable)
 
     within("#related-content-list") do
-      click_link "No"
+      click_button "No"
 
-      expect(page).not_to have_link "Yes"
-      expect(page).not_to have_link "No"
+      expect(page).not_to have_button "Yes"
+      expect(page).not_to have_button "No"
     end
   end
 

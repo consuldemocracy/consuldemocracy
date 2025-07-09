@@ -27,18 +27,18 @@ shared_examples "flaggable" do |factory_name, admin: false|
 
     within "##{dom_id(flaggable)} .flag-content" do
       click_button "Flag as inappropriate"
-      click_link "Flag as inappropriate"
+      within("form") { click_button "Flag as inappropriate" }
 
       expect(page).to have_button "Unflag"
-      expect(page).to have_link "Unflag", visible: :hidden
-      expect(page).not_to have_link "Flag as inappropriate", visible: :all
+      expect(page).to have_button "Unflag", visible: :hidden
+      expect(page).not_to have_button "Flag as inappropriate", visible: :all
     end
 
     refresh
 
     within "##{dom_id(flaggable)} .flag-content" do
-      expect(page).to have_link "Unflag", visible: :hidden
-      expect(page).not_to have_link "Flag as inappropriate", visible: :all
+      expect(page).to have_button "Unflag", visible: :hidden
+      expect(page).not_to have_button "Flag as inappropriate", visible: :all
     end
   end
 
@@ -52,18 +52,18 @@ shared_examples "flaggable" do |factory_name, admin: false|
       expect(page).to have_button "Unflag"
 
       click_button "Unflag"
-      click_link "Unflag"
+      within("form") { click_button "Unflag" }
 
       expect(page).not_to have_button "Unflag"
-      expect(page).to have_link "Flag as inappropriate", visible: :hidden
-      expect(page).not_to have_link "Unflag", visible: :all
+      expect(page).to have_button "Flag as inappropriate", visible: :hidden
+      expect(page).not_to have_button "Unflag", visible: :all
     end
 
     visit path
 
     within "##{dom_id(flaggable)} .flag-content" do
-      expect(page).to have_link "Flag as inappropriate", visible: :hidden
-      expect(page).not_to have_link "Unflag", visible: :all
+      expect(page).to have_button "Flag as inappropriate", visible: :hidden
+      expect(page).not_to have_button "Unflag", visible: :all
     end
   end
 
@@ -73,12 +73,12 @@ shared_examples "flaggable" do |factory_name, admin: false|
 
     within "##{dom_id(flaggable)} .flag-content" do
       click_button "Flag as inappropriate"
-      click_link "Flag as inappropriate"
+      within("form") { click_button "Flag as inappropriate" }
 
       expect(page).to have_button "Unflag"
 
       click_button "Unflag"
-      click_link "Unflag"
+      within("form") { click_button "Unflag" }
 
       expect(page).not_to have_button "Unflag"
     end
@@ -86,8 +86,8 @@ shared_examples "flaggable" do |factory_name, admin: false|
     visit path
 
     within "##{dom_id(flaggable)} .flag-content" do
-      expect(page).to have_link "Flag as inappropriate", visible: :hidden
-      expect(page).not_to have_link "Unflag", visible: :all
+      expect(page).to have_button "Flag as inappropriate", visible: :hidden
+      expect(page).not_to have_button "Unflag", visible: :all
     end
   end
 
@@ -99,7 +99,7 @@ shared_examples "flaggable" do |factory_name, admin: false|
 
     within "##{dom_id(flaggable)} > .comment-body .flag-content" do
       click_button "Flag as inappropriate"
-      click_link "Flag as inappropriate"
+      within("form") { click_button "Flag as inappropriate" }
 
       expect(page).to have_button "Unflag"
     end

@@ -8,10 +8,9 @@
   <div class="oauth-logins small-12">
     <% oauth_logins.each do |login| %>
       <div class="oauth-login">
-        <%= link_to t("omniauth.#{login}.name"), send("user_#{login}_omniauth_authorize_path"),
-                    title: t("omniauth.#{login}.#{action}"),
-                    class: "button-#{login.to_s.delete_suffix("_oauth2")} button expanded",
-                    method: :post %>
+        <%= button_to t("omniauth.#{login}.name"), send("user_#{login}_omniauth_authorize_path"),
+                      title: t("omniauth.#{login}.#{action}"),
+                      class: "button-#{login.to_s.delete_suffix("_oauth2")} button expanded" %>
       </div>
     <% end %>
   </div>

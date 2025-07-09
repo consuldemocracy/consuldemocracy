@@ -69,7 +69,6 @@ en:
         new_confirmation: Haven't received instructions to activate your account?
         new_password: Forgotten your password?
         new_unlock: Haven't received unlocking instructions?
-        signin_with_provider: Sign in with %{provider}
         signup: Don't have an account? %{signup_link}
         signup_link: Sign up
     unlocks:
