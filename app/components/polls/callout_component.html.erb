@@ -1,4 +1,4 @@
-<% unless can?(:answer, @poll) %>
+<% unless can?(:answer, poll) %>
   <% if current_user.nil? %>
     <div class="callout primary">
       <%= sanitize(t("polls.show.cant_answer_not_logged_in",
@@ -10,7 +10,7 @@
       <%= sanitize(t("polls.show.cant_answer_verify",
                      verify_link: link_to(t("polls.show.verify_link"), verification_path))) %>
     </div>
-  <% elsif @poll.expired? %>
+  <% elsif poll.expired? %>
     <div class="callout alert">
       <%= t("polls.show.cant_answer_expired") %>
     </div>
