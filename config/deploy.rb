@@ -30,7 +30,7 @@ set :log_level, :info
 set :pty, true
 set :use_sudo, false
 
-set :linked_files, %w[config/database.yml config/secrets.yml]
+set :linked_files, %w[config/database.yml config/secrets.yml config/credentials/production.key config/credentials/production.yml.enc]
 set :linked_dirs, %w[.bundle log tmp public/system public/assets
                      public/ckeditor_assets public/machine_learning/data storage]
 

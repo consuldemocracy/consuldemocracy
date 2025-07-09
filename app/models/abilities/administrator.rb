@@ -144,6 +144,9 @@ module Abilities
 
       can :manage, Cookies::Vendor
 
+      
+      can [:read, :enable, :manage, :show], :two_factor_authentication 
+      
       if Rails.application.config.multitenancy && Tenant.default?
         can [:create, :read, :update, :hide, :restore], Tenant
       end

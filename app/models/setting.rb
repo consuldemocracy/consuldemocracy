@@ -87,6 +87,7 @@ class Setting < ApplicationRecord
         "feature.graphql_api": true,
         "feature.sdg": true,
         "feature.machine_learning": false,
+        "feature.force_2factor": false,
         "feature.remove_investments_supports": true,
         "feature.cookies_consent": false,
         "homepage.widgets.feeds.debates": true,
@@ -238,6 +239,10 @@ class Setting < ApplicationRecord
       locale = Setting["locales.default"].to_s.strip.to_sym
 
       ([locale] & I18n.available_locales).first || I18n.default_locale
+    end
+
+    def otp_enabled?
+      Setting["feature.force_2factor"] == "active"
     end
   end
 end
