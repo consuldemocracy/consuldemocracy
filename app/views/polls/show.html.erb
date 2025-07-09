@@ -17,20 +17,6 @@
   <div class="row margin">
     <div class="small-12 medium-9 column">
       <%= render Polls::CalloutComponent.new(@poll) %>
-
-      <% if @poll.voted_in_booth?(current_user) %>
-        <div class="callout warning">
-          <%= t("polls.show.already_voted_in_booth") %>
-        </div>
-      <% else %>
-
-        <% if current_user && @poll.voted_in_web?(current_user) && !@poll.expired? %>
-          <div class="callout warning">
-            <%= t("polls.show.already_voted_in_web") %>
-          </div>
-        <% end %>
-      <% end %>
-
       <%= render Polls::FormComponent.new(@web_vote) %>
     </div>
   </div>
