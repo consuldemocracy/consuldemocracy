@@ -89,7 +89,7 @@ describe "Budgets wizard, headings step", :admin do
   end
 
   describe "Edit" do
-    scenario "update heading" do
+    scenario "update heading with errors and then without errors" do
       create(:budget_heading, group: group, name: "Heading wiht a typo")
 
       visit admin_budgets_wizard_budget_group_headings_path(budget, group)
@@ -97,18 +97,6 @@ describe "Budgets wizard, headings step", :admin do
       expect(page).to have_css ".creation-timeline"
 
       within("tr", text: "Heading wiht a typo") { click_link "Edit" }
-      fill_in "Heading name", with: "Heading without typos"
-      click_button "Save heading"
-
-      expect(page).to have_content "Heading updated successfully"
-      expect(page).to have_css ".creation-timeline"
-      expect(page).to have_css "td", exact_text: "Heading without typos"
-    end
-
-    scenario "submit the form with errors and then without errors" do
-      heading = create(:budget_heading, group: group, name: "Heading wiht a typo")
-
-      visit edit_admin_budgets_wizard_budget_group_heading_path(budget, group, heading)
       fill_in "Heading name", with: ""
       click_button "Save heading"
 
