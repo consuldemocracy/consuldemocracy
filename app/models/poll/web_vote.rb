@@ -14,10 +14,6 @@ class Poll::WebVote
     all_valid = true
 
     user.with_lock do
-      unless questions.any? { |question| params.dig(question.id.to_s, :option_id).present? }
-        Poll::Voter.find_by(user: user, poll: poll, origin: "web")&.destroy!
-      end
-
       questions.each do |question|
         question.answers.where(author: user).destroy_all
         next unless params[question.id.to_s]

@@ -16,6 +16,10 @@ class Polls::CalloutComponent < ApplicationComponent
       poll.voted_in_web?(current_user)
     end
 
+    def voted_blank?
+      poll.answers.where(author: current_user).none?
+    end
+
     def callout(text, html_class: "warning")
       tag.div(text, class: "callout #{html_class}")
     end

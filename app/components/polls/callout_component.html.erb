@@ -2,7 +2,11 @@
   <% if voted_in_booth? %>
     <%= callout(t("polls.show.already_voted_in_booth")) %>
   <% elsif voted_in_web? %>
-    <%= callout(t("polls.show.already_voted_in_web")) %>
+    <% if voted_blank? %>
+      <%= callout(t("polls.show.already_voted_blank_in_web")) %>
+    <% else %>
+      <%= callout(t("polls.show.already_voted_in_web")) %>
+    <% end %>
   <% end %>
 <% else %>
   <% if current_user.nil? %>
