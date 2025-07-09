@@ -69,7 +69,6 @@ de:
         new_confirmation: Haben Sie keine Anweisungen zur Aktivierung Ihres Kontos erhalten?
         new_password: Haben Sie Ihr Passwort vergessen?
         new_unlock: Haben Sie keine Anweisung zur Entsperrung erhalten?
-        signin_with_provider: Anmelden mit %{provider}
         signup: Sie haben noch kein Konto? %{signup_link}
         signup_link: Registrierung
     unlocks:
