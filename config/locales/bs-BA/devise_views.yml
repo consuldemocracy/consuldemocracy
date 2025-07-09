@@ -69,7 +69,6 @@ bs:
         new_confirmation: Niste dobili uputstvo kako da aktivirate svoj nalog?
         new_password: Zaboravili ste lozinku?
         new_unlock: Niste dobili uputstvo za otključavanje?
-        signin_with_provider: Prijava sa %{provider}
         signup: Nemate nalog? (link za otvaranje naloga) %{signup_link}
         signup_link: Otvorite nalog
     unlocks:
