@@ -69,7 +69,6 @@ pt-BR:
         new_confirmation: Ainda não recebeu as instruções para ativar sua conta?
         new_password: Senha esquecida?
         new_unlock: Ainda não recebeu as instruções de desbloqueio?
-        signin_with_provider: Conecte-se com %{provider}
         signup: Não tem uma conta? %{signup_link}
         signup_link: Inscrever
     unlocks:

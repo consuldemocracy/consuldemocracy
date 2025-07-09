@@ -69,7 +69,6 @@ mk:
         new_confirmation: Не добивте инструкции за активација на вашиот профил?
         new_password: Ја заборавивте лозинката?
         new_unlock: Не добивте инструкции за отклучување?
-        signin_with_provider: Логирај се со %{provider}
         signup: Немате профил? %{signup_link}
         signup_link: Логирај се
     unlocks:

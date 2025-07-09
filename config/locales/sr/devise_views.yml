@@ -69,7 +69,6 @@ sr:
         new_confirmation: Нисте добили инструкције за активацију вашег налога?
         new_password: Заборавили сте лозинку?
         new_unlock: Нисте добили инструкције за закључавање?
-        signin_with_provider: Упиши се са %{provider}
         signup: Немаш налог? %{signup_link}
         signup_link: Упиши се
     unlocks:

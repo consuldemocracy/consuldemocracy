@@ -69,7 +69,6 @@ ka:
         new_confirmation: არ მიგიღიათ ანგარიშის გასააქტიურებელი ინსტრუქცია?
         new_password: დაგავიწყდა პაროლი?
         new_unlock: არ მიგიღიათ ანგარიშის განბლოკვის ინსტრუქცია?
-        signin_with_provider: '%{provider}-ის მეშვეობით ავტორიზაცია'
         signup: არ გაქვთ ანგარიში? %{signup_link}
         signup_link: რეგისტრაცია
     unlocks:

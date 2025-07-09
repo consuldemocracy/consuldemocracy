@@ -39,6 +39,9 @@ hr:
         year_of_birth: "Godina rođenja"
       local_census_records/import:
         file: Datoteka
+      setting/locales_settings:
+        default: Zadani jezik
+        enabled: Omogućeni jezici
     errors:
       models:
         local_census_records/import:
