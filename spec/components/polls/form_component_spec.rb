@@ -20,6 +20,19 @@ describe Polls::FormComponent do
     expect(page).to have_button "Vote", disabled: true
   end
 
+  it "renders disabled answers to unverified users" do
+    sign_in(create(:user, :incomplete_verification))
+
+    render_inline Polls::FormComponent.new(web_vote)
+
+    page.find("fieldset[disabled]") do |fieldset|
+      expect(fieldset).to have_field "Yes"
+      expect(fieldset).to have_field "No"
+    end
+
+    expect(page).to have_button "Vote", disabled: true
+  end
+
   context "expired poll" do
     let(:poll) { create(:poll, :expired) }
 

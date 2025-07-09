@@ -168,14 +168,6 @@ describe "Polls" do
       end
     end
 
-    scenario "Non-logged in users" do
-      create(:poll_question, :yes_no, poll: poll)
-
-      visit poll_path(poll)
-
-      expect(page).to have_content("You must sign in or sign up to participate")
-    end
-
     scenario "Level 1 users" do
       poll.update!(geozone_restricted_to: [geozone])
       create(:poll_question, :yes_no, poll: poll)
@@ -184,17 +176,6 @@ describe "Polls" do
       visit poll_path(poll)
 
       expect(page).to have_content("You must verify your account in order to answer")
-    end
-
-    scenario "Level 2 users in an expired poll" do
-      expired_poll = create(:poll, :expired)
-      create(:poll_question, :yes_no, poll: expired_poll)
-
-      login_as(create(:user, :level_two, geozone: geozone))
-
-      visit poll_path(expired_poll)
-
-      expect(page).to have_content("This poll has finished")
     end
 
     scenario "Level 2 users answering" do

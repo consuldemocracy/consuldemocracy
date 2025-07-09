@@ -28,22 +28,6 @@ describe "Voter" do
                                    "If you vote again it will be overwritten."
     end
 
-    scenario "Voting via web as unverified user" do
-      user = create(:user, :incomplete_verification)
-
-      login_as user
-      visit poll_path(poll)
-
-      within_fieldset "Is this question stupid?" do
-        expect(page).to have_field "Yes", type: :radio, disabled: true
-        expect(page).to have_field "No", type: :radio, disabled: true
-      end
-
-      expect(page).to have_content "You must verify your account in order to answer"
-      expect(page).not_to have_content "You have already participated in this poll. " \
-                                       "If you vote again it will be overwritten"
-    end
-
     scenario "Voting in booth" do
       admin_user = admin.user
       login_through_form_as_officer(officer)

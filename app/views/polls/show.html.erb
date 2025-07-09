@@ -16,7 +16,7 @@
 
   <div class="row margin">
     <div class="small-12 medium-9 column">
-      <%= render "callout" %>
+      <%= render Polls::CalloutComponent.new(@poll) %>
 
       <% if @poll.voted_in_booth?(current_user) %>
         <div class="callout warning">
