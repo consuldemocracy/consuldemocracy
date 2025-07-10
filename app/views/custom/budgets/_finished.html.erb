@@ -35,6 +35,12 @@
                               budget_executions_path(budget),
                               class: "button" %>
                   <% end %>
+				  <% if Setting["budget_winners_url_#{budget.id}"].present? %>
+                                        <%= link_to t("budgets.index.download"),
+                                                Setting["budget_winners_url_#{budget.id}"],
+                                                target: "_blank",
+                                                class: "button" %>
+                  <% end %>
                 </div>
               </div>
             </div>
