@@ -233,6 +233,8 @@ es:
           incompatible: Incompatible
           price: Precio
           author: Autor
+          physical_votes: Votos Presenciales
+          total_votes: Total Votos
         cannot_calculate_winners: El presupuesto debe estar en las fases "Votación final", "Votación finalizada" o "Resultados" para poder calcular las propuestas ganadoras
         see_results: "Ver resultados"
         milestone_tags_filter_all: "Todas las etiquetas de seguimiento"
@@ -1398,6 +1400,7 @@ es:
           verified_users_who_didnt_vote_proposals: Usuarios verificados que no han votado propuestas
           visits: Visitas
           votes: Votos
+          physical_votes: Votos presenciales
         budgets_title: Presupuestos participativos
         participatory_budgets: Presupuestos Participativos
         direct_messages: Mensajes directos
