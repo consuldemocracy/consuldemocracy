@@ -1,0 +1,25 @@
+<%= link_to t("admin.dashboard.index.back", org: setting['org_name']), root_path, class: "button float-right" %>
+
+<h2 class="inline-block"><%= t("consultation.dashboard.index.title") %></h2>
+
+<p>Desde aquí puedes hacer consultas en el sistema, a través de las siguientes acciones:<p>
+
+<div class="small-12 medium-9">
+  <ul class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
+
+    <li class="accordion-item" data-accordion-item>
+      <a href="#" class="accordion-title">Códigos de acceso</a>
+      <div class="accordion-content" data-tab-content>
+        <p>En este apartado se puede obtener el código de acceso de la aplicación de un determinado usuario, introduciendo los siguientes datos:</p>
+
+        <ul>
+          <li>Tipo de documento</li>
+          <li>Número de documento</li>
+          <li>Fecha de nacimiento</li>
+          <li>Código postal</li>
+          <li>Aceptación de los términos de acceso al padrón.</li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,55 @@
+he:
+  community:
+    sidebar:
+      title: קהילה
+      description:
+        proposal: השתתפות בקהילת המשתמשים של הצעה זו.
+        investment: השתתפות בקהילת המשתמשים של השקעה זו.
+      button_to_access: הצטרפות לקהילה
+    show:
+      title:
+        proposal: הצעת הקהילה
+        investment: תקציב ההשקעה בקהילה
+      description:
+        proposal: השתתפות בהצעה של קהילה זו. קהילה פעילה יכול לעזור לשפר את התוכן של ההצעה ולהגביר את הפצתה בכדי לקבל תמיכה נוספת.
+        investment: השתתפות בהצעה של קהילה זו. קהילה פעילה יכול לעזור לשפר את התוכן של ההצעה ולהגביר את הפצתה בכדי לקבל תמיכה נוספת.
+      create_first_community_topic:
+        first_theme_not_logged_in: אין נושאים פתוחים, השתתף ביצירת הנושא הראשון.
+        first_theme: צור את הנושא הקהילתי הראשון
+        sub_first_theme: "כדי ליצור ערכת נושא עליך %{sign_in} או %{sign_up}."
+      tab:
+        participants: משתתפים
+      sidebar:
+        participate: משתתף
+        new_topic: יצירת נושא
+      topic:
+        edit: ערוך נושא
+        destroy: מחיקת הנושא
+        comments:
+          zero: אין תגובות
+          one: תגובה אחת
+          two: "%{count} תגובות"
+          many: "%{count} תגובות"
+          other: "%{count} תגובות"
+      author: מחבר/ת
+      back: חזרה ל- %{community} %{proposal}
+    topic:
+      create: יצירת נושא
+      edit: ערוך נושא
+      form:
+        new:
+          submit_button: יצירת נושא
+        edit:
+          submit_button: ערוך נושא
+        create:
+          submit_button: יצירת נושא
+        update:
+          submit_button: עריכת נושא
+      show:
+        tab:
+          comments_tab: הערות
+      sidebar:
+        recommendations_title: המלצות ליצירת נושא
+        recommendation_one: לא כותבים כותרת נושא או משפטים שלמים באותיות מודגשות. באינטרנט זה נחשב לצעוק. אף אחד לא אוהב שצועקים.
+        recommendation_two: כל נושא או תגובה המרמזת על פעולה לא חוקית תימחק, גם אלו המתכננים לחבל בנושא, כל השאר מותר.
+        recommendation_three: מרחב הדיבור חופשי, הקולות אשר ממלאים אותו, הם גם שלך.

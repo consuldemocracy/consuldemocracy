@@ -1,0 +1,53 @@
+fr:
+  community:
+    sidebar:
+      title: Communauté
+      description:
+        proposal: Participer à la communauté d'utilisateurs de cette proposition.
+        investment: Participer à la communauté d'utilisateurs de cet investissement.
+      button_to_access: Accéder à la communauté
+    show:
+      title:
+        proposal: Communauté de la proposition
+        investment: Communauté de l'investissement
+      description:
+        proposal: Intégrez la communauté de cette proposition. Une communauté active peut aider à améliorer le contenu de la proposition et stimuler sa diffusion pour recueillir davantage de soutien.
+        investment: Intégrez la communauté de cette investissement. Une communauté active peut aider à améliorer le contenu de l'investissement et stimuler sa diffusion pour recueillir davantage de soutien.
+      create_first_community_topic:
+        first_theme_not_logged_in: Aucun thème, créez le premier.
+        first_theme: Créez le premier sujet de la communauté
+        sub_first_theme: "Pour créer un thème, il est nécessaire de %{sign_in} ou %{sign_up}."
+      tab:
+        participants: Participants
+      sidebar:
+        participate: Participer
+        new_topic: Créer un sujet
+      topic:
+        edit: Modifier le sujet
+        destroy: Supprimer un sujet
+        comments:
+          zero: Aucun commentaires
+          one: 1 commentaire
+          other: "%{count} commentaires"
+      author: Auteur
+      back: Retour à %{community} %{proposal}
+    topic:
+      create: Créer un sujet
+      edit: Modifier le sujet
+      form:
+        new:
+          submit_button: Créer un sujet
+        edit:
+          submit_button: Modifier le sujet
+        create:
+          submit_button: Créer un sujet
+        update:
+          submit_button: Mettre à jour le sujet
+      show:
+        tab:
+          comments_tab: Commentaires
+      sidebar:
+        recommendations_title: Recommandations pour créer une sujet
+        recommendation_one: N'écrivez pas le titre de votre sujet ou des phrases entières en majuscules. Sur Internet, cela équivaut à crier. Et personne n'aime se faire crier dessus.
+        recommendation_two: Tout sujet ou commentaire impliquant une action illégale ou cherchant à porter atteinte aux débat sera supprimé, tout le reste est autorisé.
+        recommendation_three: Appréciez cet espace de parole, les voix qui le remplissent, c'est aussi le vôtre.

@@ -1,0 +1,33 @@
+<div class="small-12 column">
+  <% if @search_terms && @resources.any? %>
+    <div class="callout warning">
+      <p>
+        <strong>
+          <%= t("shared.suggest.#{resource_name}.found",
+              count: @resources.count,
+              query: @search_terms) %>
+        </strong>
+      </p>
+
+      <ul>
+        <% @resources.limit(@limit).each do |resource| %>
+          <li><%= link_to resource.title, @resource_path_method.present? ? send(@resource_path_method, resource) : resource %></li>
+        <% end %>
+      </ul>
+
+      <% if @resources.count > @limit %>
+        <p>
+          <strong>
+            <%= t("shared.suggest.#{resource_name}.message",
+                count: @resources.count,
+                query: @search_terms,
+                limit: @limit) %>
+          </strong>
+          <%= link_to t("shared.suggest.#{resource_name}.see_all"),
+                      polymorphic_path(resource_model, search: @search_terms) %>
+        </p>
+      <% end %>
+
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,32 @@
+<% if @users.any? %>
+  <h3 class="margin"><%= page_entries_info @users %></h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th scope="col"><%= t("admin.users.columns.name") %></th>
+        <th scope="col"><%= t("admin.users.columns.email") %></th>
+        <th scope="col"><%= t("admin.users.columns.document_number") %></th>
+        <th scope="col"><%= t("admin.users.columns.roles") %></th>
+        <th scope="col"><%= t("admin.users.columns.verification_level") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= link_to user.name, user_path(user), target: "_blank" %></td>
+          <td><%= user.email %></td>
+          <td><%= user.document_number %></td>
+          <td><%= display_user_roles(user) %></td>
+          <td><%= user.user_type %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate @users %>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.users.index.no_users") %>
+  </div>
+<% end %>

@@ -1,0 +1,32 @@
+id:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} berhasil diciptakan."
+        debate: "Diskusi berhasil dibuat."
+        direct_message: "Pesan anda telah berhasil dikirim."
+        poll: "Jumlah suara berhasil dibuat."
+        poll_booth: "Stan berhasil dibuat."
+        poll_question_answer: "Jawaban berhasil dibuat"
+        poll_question_answer_video: "Video berhasil dibuat"
+        poll_question_answer_image: "Gambar berhasil diunggah"
+        proposal: "Proposal berhasil dibuat."
+        proposal_notification: "Pesan anda telah terkirim dengan benar."
+        budget_investment: "Anggaran Investasi yang berhasil dibuat."
+        signature_sheet: "Lembar tanda tangan dengan berhasil dibuat"
+        topic: "Tema berhasil dibuat."
+      save_changes:
+        notice: Perubahan tersimpan
+      update:
+        notice: "%{resource_name} berhasil diperbarui."
+        debate: "Diskusi telah berhasil dibuat."
+        poll: "Jumlah suara berhasil diperbarui."
+        poll_booth: "Stan berhasil diperbarui."
+        proposal: "Proposal berhasil diperbarui."
+        budget_investment: "Proyek investasi diperbarui berhasil."
+        topic: "Topik berhasil diperbarui."
+      destroy:
+        budget_investment: "Proyek investasi berhasil dihapus."
+        error: "Tidak bisa menghapus"
+        topic: "Tema berhasil dihapus."
+        poll_question_answer_video: "Jawaban video dengan berhasil dihapus."

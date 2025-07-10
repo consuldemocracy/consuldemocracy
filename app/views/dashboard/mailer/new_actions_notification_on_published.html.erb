@@ -1,0 +1,64 @@
+<td style="padding-bottom: 20px;padding-left: 10px;font-size: 14px;font-weight: normal;
+           font-family:'Open Sans',arial,sans-serif;line-height: 24px; text-align: justify;">
+
+  <p>
+    <%= t("mailers.new_actions_notification_on_published.hi",
+            name: @proposal.author.name,
+            title: @proposal.title) %>
+  </p>
+  <p>
+    <%= t("mailers.new_actions_notification_on_published.text_1") %>
+    <br>
+    <%= t("mailers.new_actions_notification_on_published.text_2") %>
+  </p>
+  <p><%= t("mailers.new_actions_notification_on_published.text_3") %></p>
+  <p><%= t("mailers.new_actions_notification_on_published.text_4") %></p>
+  <p><%= t("mailers.new_actions_notification_on_published.text_5") %></p>
+  <p><%= t("mailers.new_actions_notification_on_published.text_6") %></p>
+  <ul>
+    <li><%= t("mailers.new_actions_notification_on_published.list_1") %></li>
+    <li><%= t("mailers.new_actions_notification_on_published.list_2") %></li>
+  </ul>
+  <br>
+
+  <p><%= t("mailers.new_actions_notification_on_published.text_7") %></p>
+  <% first_resource = @new_actions.resources.first %>
+  <% if first_resource.present? %>
+    <p><%= t("mailers.new_actions_notification_on_published.text_8") %></p>
+    <ul>
+      <li><%= first_resource.title %></li>
+    </ul>
+  <% end %>
+
+  <% first_proposed_action = @new_actions.proposed_actions.first %>
+  <% if first_proposed_action.present? %>
+    <p><%= t("mailers.new_actions_notification_on_published.text_9") %></p>
+    <ul>
+      <li><%= first_proposed_action.title %></li>
+      <% if first_proposed_action.short_description.present? %>
+        <p><%= first_proposed_action.short_description %></p>
+      <% end %>
+    </ul>
+  <% end %>
+  <br>
+
+  <p><%= t("mailers.new_actions_notification_on_published.text_10") %></p>
+
+  <table style="width: 100%;">
+    <tbody>
+      <tr>
+        <td style="padding-bottom: 12px; padding-top: 24px; text-align: center;">
+          <%= link_to progress_proposal_dashboard_url(@proposal),
+                    style: "font-family: 'Open Sans',arial,sans-serif; background: #3700fd;
+                      border-radius: 6px; color: #fff !important; font-weight: bold;
+                      padding: 17px 20px; text-align: center; text-decoration: none;
+                      font-size: 20px; min-width: 200px; display: inline-block;",
+                      target: "_blank" do %>
+            <%= t("mailers.new_actions_notification_on_published.dashboard_button") %>
+          <% end %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</td>

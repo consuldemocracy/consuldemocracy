@@ -1,0 +1,14 @@
+<div id="tag-cloud">
+  <div class="sidebar-divider"></div>
+  <h2 class="sidebar-title"><%= t("shared.tags_cloud.tags") %></h2>
+  <br>
+  <ul class="no-bullet tag-cloud">
+    <% @tag_cloud.tags.each do |tag| %>
+      <li class="inline-block">
+        <%= link_to taggables_path(taggable, tag.name) do %>
+          <span class="tag"><%= tag.name %></span>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>

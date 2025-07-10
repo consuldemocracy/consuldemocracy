@@ -1,0 +1,13 @@
+<% if feature?(:map) %>
+  <h2><%= t("admin.settings.index.map.title") %></h2>
+
+  <%= render "settings_table", settings: @map_configuration_settings, setting_name: "setting", tab: "#tab-map-configuration" %>
+
+  <p><%= t("admin.settings.index.map.help") %></p>
+
+  <%= render "map_form" %>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.settings.index.map.how_to_enable") %>
+  </div>
+<% end %>

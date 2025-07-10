@@ -1,0 +1,33 @@
+<%= render "shared/globalize_locales", resource: @admin_notification %>
+
+<%= translatable_form_for [:admin, @admin_notification] do |f| %>
+  <%= render "shared/errors", resource: @admin_notification %>
+
+  <div class="row">
+    <div class="small-12 column">
+      <%= f.select :segment_recipient, options_for_select(user_segments_options,
+                                                          @admin_notification[:segment_recipient]) %>
+    </div>
+    <div class="small-12 column">
+      <%= f.text_field :link %>
+    </div>
+  </div>
+
+  <div class="row">
+    <%= f.translatable_fields do |translations_form| %>
+      <div class="small-12 column">
+        <%= translations_form.text_field :title %>
+      </div>
+      <div class="small-12 column">
+        <%= translations_form.text_area :body %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="small-12 column margin-top">
+      <%= f.submit t("admin.admin_notifications.#{admin_submit_action(@admin_notification)}.submit_button"),
+                   class: "button success" %>
+    </div>
+  </div>
+<% end %>

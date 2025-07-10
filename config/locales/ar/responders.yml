@@ -1,0 +1,37 @@
+ar:
+  flash:
+    actions:
+      create:
+        notice: "تم إنشاء %{resource_name} بنجاح."
+        debate: "تم إنشاء المناقشة بنجاح."
+        direct_message: "تم إرسال رسالتك بنجاح."
+        poll: "تم إنشاء الاستطلاع بنجاح."
+        poll_booth: "تم إنشاء مكتب الإقتراع بنجاح."
+        poll_question_answer: "تم إنشاء الإجابة بنجاح"
+        poll_question_answer_video: "تم إنشاء الفيديو بنجاح"
+        poll_question_answer_image: "تم رفع الصورة بنجاح"
+        proposal: "تم إنشاء الإقتراح بنجاح."
+        proposal_notification: "تم إرسال رسالتك بشكل صحيح."
+        budget_investment: "تم إنشاء ميزانية الإستثمار بنجاح."
+        signature_sheet: "تم إنشاء ورقة التوقيع بنجاح"
+        topic: "تم إنشاء الموضوع بنجاح."
+        valuator_group: "تم إنشاء مجموعة المقيّمين بنجاح"
+      save_changes:
+        notice: تم حفظ التغييرات
+      update:
+        notice: "تم تحديث %{resource_name} بنجاح."
+        debate: "تم تحديث المناقشة بنجاح."
+        poll: "تم تحديث الاستطلاع بنجاح."
+        poll_booth: "تم تحديث مكتب الإقتراع بنجاح."
+        active_poll: "تم تحديث وصف الاستطلاعات بنجاح."
+        proposal: "تم تحديث المقترح بنجاح."
+        budget_investment: "تم تحديث مشروع الاستثمار بنجاح."
+        topic: "تم تحديث الموضوع بنجاح."
+        valuator_group: "تم تحديث مجموعة المقيّمين بنجاح"
+        translation: "تم تحديث الترجمة بنجاح"
+      destroy:
+        budget_investment: "تم حذف مشروع الاستثمار بنجاح."
+        error: "لا يمكن الحذف"
+        topic: "تم حذف الموضوع بنجاح."
+        poll_question_answer_video: "تم حذف إجابة الفيديو بنجاح."
+        valuator_group: "تم حذف مجموعة المقيّمين بنجاح"

@@ -1,0 +1,22 @@
+tr:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: Paylaşımlar
+        one: Girdi
+        other: Girdiler
+      more_pages:
+        display_entries: <strong>%{total}%{entry_name}</strong> 'in <strong>%{first}&nbsp;&nbsp;%{last}</strong> 'i gösteriliyor
+      one_page:
+        display_entries:
+          zero: "%{entry_name} bulunamıyor"
+          one: Şurada <strong>1 %{entry_name}</strong> var
+          other: Şurada <strong>%{count} %{entry_name}</strong> var
+  views:
+    pagination:
+      current: Sayfadasınız
+      first: İlk
+      last: Son
+      next: Sonraki
+      previous: Önceki
+      truncate: "&hellip;"

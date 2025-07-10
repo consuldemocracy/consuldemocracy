@@ -1,0 +1,53 @@
+so:
+  community:
+    sidebar:
+      title: Bulsho
+      description:
+        proposal: Ka-qayb-galka bulshada isticmaalaha ee soo jeedintaas.
+        investment: Ka qaybqaado bulshada isticmaala maalgashadaan.
+      button_to_access: Helitaanka bulshada
+    show:
+      title:
+        proposal: Soojedinta Bulshada
+        investment: Misaniyada Malgashiga bulshada
+      description:
+        proposal: Ka qaybgal bulshada dhexdeeda soo jeedinta. Bulsho firfircoon waxay gacan ka geysan kartaa hagaajinta waxyaabaha soo jeedinta iyo kordhinta faafinta si ay u helaan taageero dheeraad ah.
+        investment: Ka qaybqaado bulshada ka tirsan maalgashiga miisaaniyadda. Bulsho firfircoon waxay gacan ka geysan kartaa hagaajinta miisaaniyadda maaliyadeed iyo kor u qaadida faafinta si ay u hesho taageero dheeraad ah.
+      create_first_community_topic:
+        first_theme_not_logged_in: Wax arin ah looma helin, ka qaybqaado abuurida koowaad.
+        first_theme: Saame Mowducii ugu horeyey ee bulshada
+        sub_first_theme: "Si aad u abuurto duluc waa inaad%{sign_in} ama%{sign_up}."
+      tab:
+        participants: Kaqayb galayaal
+      sidebar:
+        participate: Kaqayb gal
+        new_topic: Abuur moowduuc
+      topic:
+        edit: Tafatir moowduuca
+        destroy: Burburi moowduuca
+        comments:
+          zero: Falooyin majiraan
+          one: 1 faalo
+          other: "%{count} falooyinka"
+      author: Qoraa
+      back: Kulaabo ila%{community}%{proposal}
+    topic:
+      create: Saame mowduuc
+      edit: Tafatir moowduuc
+      form:
+        new:
+          submit_button: Abuur moowduuc
+        edit:
+          submit_button: Tafatir moowduuca
+        create:
+          submit_button: Abuur moowduuc
+        update:
+          submit_button: Cusboneysii mowduuc
+      show:
+        tab:
+          comments_tab: Faalo
+      sidebar:
+        recommendations_title: Talooyin si loo abuuro mowduuc
+        recommendation_one: Ha qorin mawduuca mawduuca ama jumlada oo dhan xarfaha waaweyn. Internetka oo loo tixgelinayo in la qaylinayo. Oo ciduna ma jeclaan doonto inuu qayliyo.
+        recommendation_two: Mawduuc kasta oo faallo ah ama faallooyin ah oo la xidhiidha tallaabo sharci darro ah ayaa la tirtirayaa, sidoo kale kuwa doonaya inay khalkhal galiyaan meelaha maadada, wax walba oo kale waa la oggol yahay.
+        recommendation_three: Ku raaxee meeshan, codadka buuxiya, waa waliba.

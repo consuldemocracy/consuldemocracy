@@ -1,0 +1,8 @@
+cs:
+  milestones:
+    index:
+      no_milestones: Milníky nejsou definovány
+      progress: Průběh
+    show:
+      publication_date: "Publikované %{publication_date}"
+      status_changed: Stav změněn na

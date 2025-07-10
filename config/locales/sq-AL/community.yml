@@ -1,0 +1,53 @@
+sq:
+  community:
+    sidebar:
+      title: Komunitet
+      description:
+        proposal: Merr pjesë në komunitetin e përdoruesit të këtij propozimi.
+        investment: Merr pjesë në komunitetin e përdoruesit të këtij investimi.
+      button_to_access: Hyni në komunitet
+    show:
+      title:
+        proposal: Komuniteti i propozimeve
+        investment: Komuniteti i Investimeve Buxhetore
+      description:
+        proposal: Merrni pjesë në komunitetin e këtij propozimi. Një komunitet aktiv mund të ndihmojë për të përmirësuar përmbajtjen e propozimit dhe për të rritur shpërndarjen e tij për të marrë më shumë mbështetje.
+        investment: Merrni pjesë në komunitetin e këtij propozimi. Një komunitet aktiv mund të ndihmojë për të përmirësuar përmbajtjen e investimeve buxhetore dhe për të rritur shpërndarjen e tij për të marrë më shumë mbështetje.
+      create_first_community_topic:
+        first_theme_not_logged_in: Asnje çështje e disponueshme, mer pjesë duke krijuar të parën.
+        first_theme: Krijo temën e parë të komunitetit
+        sub_first_theme: "Për të krijuar një temë që ju duhet të %{sign_in} ose %{sign_up}."
+      tab:
+        participants: Pjesëmarrësit
+      sidebar:
+        participate: Mer pjesë
+        new_topic: Krijo një temë
+      topic:
+        edit: Ndryshoni temën
+        destroy: Fshi temën
+        comments:
+          zero: Nuk ka komente
+          one: 1 koment
+          other: "%{count} komente"
+      author: Autor
+      back: Kthehu mbrapsht te %{community}%{proposal}
+    topic:
+      create: Krijo një temë
+      edit: Ndryshoni temën
+      form:
+        new:
+          submit_button: Krijo një temë
+        edit:
+          submit_button: Ndryshoni temën
+        create:
+          submit_button: Krijo një temë
+        update:
+          submit_button: Përditëso temën
+      show:
+        tab:
+          comments_tab: Komentet
+      sidebar:
+        recommendations_title: Rekomandime për të krijuar një temë
+        recommendation_one: Mos shkruaj titullin e temës ose fjalitë e plota në shkronja të mëdha. Në internet kjo konsiderohet "e  bërtitur" . Dhe askush nuk i pëlqen kjo gjë.
+        recommendation_two: Çdo temë ose koment që nënkupton një veprim të paligjshëm do të eliminohet, gjithashtu ata që synojnë të sabotojnë hapësirat e subjektit, gjithçka tjetër lejohet.
+        recommendation_three: Gëzoni këtë hapësirë, zërat që e mbushin atë, është edhe juaji.

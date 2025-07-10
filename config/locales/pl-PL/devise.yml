@@ -1,0 +1,63 @@
+#Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+pl:
+  devise:
+    password_expired:
+      expire_password: "Hasło wygasło"
+      change_required: "Twoje hasło wygasło"
+      change_password: "Zmień hasło"
+      new_password: "Nowe hasło"
+      updated: "Hasło pomyślnie zaktualizowane"
+    confirmations:
+      confirmed: "Twoje konto zostało potwierdzone."
+      send_instructions: "W ciągu kilku minut otrzymasz e-mail zawierający instrukcje dotyczące resetowania hasła."
+      send_paranoid_instructions: "Jeśli Twój adres e-mail znajduje się w naszej bazie danych, w ciągu kilku minut otrzymasz e-mail zawierający instrukcje dotyczące resetowania hasła."
+    failure:
+      already_authenticated: "Jesteś już zalogowany."
+      inactive: "Twoje konto nie zostało jeszcze aktywowane."
+      invalid: "Nieprawidłowe %{authentication_keys} lub hasło."
+      locked: "Twoje konto zostało zablokowane."
+      last_attempt: "Pozostała Ci jedna próba zanim Twoje konto zostanie zablokowane."
+      not_found_in_database: "Nieprawidłowe %{authentication_keys} lub hasło."
+      timeout: "Sesja wygasła. Proszę zalogować się ponownie by kontynuować."
+      unauthenticated: "Musisz się zalogować lub zarejestrować, by kontynuować."
+      unconfirmed: "Aby kontynuować, proszę kliknąć link potwierdzający, który wysłaliśmy Ci przez e-mail"
+    mailer:
+      confirmation_instructions:
+        subject: "Instrukcje potwierdzenia"
+      reset_password_instructions:
+        subject: "Instrukcje dotyczące resetowania hasła"
+      unlock_instructions:
+        subject: "Odblokowanie instrukcji"
+    omniauth_callbacks:
+      failure: "Nie była możliwa autoryzacja Ciebie jako %{kind} ponieważ \"%{reason}\"."
+      success: "Pomyślnie zidentyfikowany jako %{kind}."
+    passwords:
+      no_token: "Nie masz dostępu do tej strony, chyba że poprzez link do zresetowania hasła. Jeśli dostałeś się na nią poprzez link do zresetowania hasła, upewnij się, że adres URL jest kompletny."
+      send_instructions: "W ciągu kilku minut otrzymasz e-mail zawierający instrukcje dotyczące resetowania hasła."
+      send_paranoid_instructions: "Jeśli Twój adres e-mail znajduje się w naszej bazie danych, w ciągu kilku minut otrzymasz link, którego możesz użyć w celu zresetowania hasła."
+      updated: "Twoje hasło zostało zmienione pomyślnie. Uwierzytelnienie pomyślne."
+      updated_not_active: "Twoje hasło zostało zmienione pomyślnie."
+    registrations:
+      destroyed: "Do Widzenia! Twoje konto zostało anulowane. Mamy nadzieję wkrótce zobaczyć Cię ponownie."
+      signed_up: "Witaj! Zostałeś potwierdzony."
+      signed_up_but_inactive: "Twoja rejestracja powiodła się, ale nie mogłeś/łaś się zalogować, ponieważ Twoje konto nie zostało jeszcze aktywowane."
+      signed_up_but_locked: "Twoja rejestracja powiodła się, ale nie mogłeś/łaś się zalogować, ponieważ Twoje konto jest zablokowane."
+      signed_up_but_unconfirmed: "Wysłano Ci wiadomość zawierającą link weryfikacyjny. Kliknij w niego, aby aktywować swoje konto."
+      update_needs_confirmation: "Aktualizacja Twojego konta powiodła się; musimy jednak zweryfikować Twój nowy adres e-mail. Sprawdź swoją skrzynkę pocztową i kliknij w link, aby ukończyć potwierdzanie Twojego nowego adresu e-mail."
+      updated: "Twoje konto zostało uaktualnione pomyślnie."
+    sessions:
+      signed_in: "Zostałeś zalogowany pomyślnie."
+      signed_out: "Zostałeś wylogowany pomyślnie."
+      already_signed_out: "Zostałeś wylogowany pomyślnie."
+    unlocks:
+      send_instructions: "Za kilka minut otrzymasz e-mail zawierający instrukcje dotyczące odblokowania Twojego konta."
+      send_paranoid_instructions: "Jeśli posiadasz konto, za kilka minut otrzymasz e-mail zawierający instrukcje dotyczące odblokowania Twojego konta."
+      unlocked: "Twoje konto zostało odblokowane. Zaloguj się, by kontynuować."
+  errors:
+    messages:
+      already_confirmed: "Zostałeś/łaś już zweryfikowany/a; spróbuj się zalogować."
+      confirmation_period_expired: "Musisz zostać zweryfikowany/a w ciągu %{period}; proszę wysłać ponowny wniosek."
+      expired: "utracił/a ważność; proszę wysłać ponowny wniosek."
+      not_found: "nie znaleziono."
+      not_locked: "nie był zablokowany."
+      equal_to_current_password: "musi być inne niż stare hasło."

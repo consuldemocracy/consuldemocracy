@@ -1,0 +1,36 @@
+<h2 class="inline-block"><%= t("valuation.budgets.index.title") %></h2>
+
+<% if @budget.present? %>
+  <table>
+    <thead>
+      <tr>
+        <th><%= t("valuation.budgets.index.table_name") %></th>
+        <th><%= t("valuation.budgets.index.table_phase") %></th>
+        <th><%= t("valuation.budgets.index.table_assigned_investments_valuation_open") %></th>
+        <th><%= t("valuation.budgets.index.table_actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="<%= dom_id(@budget) %>" class="budget">
+        <td>
+          <%= @budget.name %>
+        </td>
+        <td>
+          <%= t("budgets.phase.#{@budget.phase}") %>
+        </td>
+        <td>
+          <%= @investments.count %>
+        </td>
+        <td>
+          <%= link_to t("valuation.budgets.index.evaluate"),
+                      valuation_budget_budget_investments_path(budget_id: @budget.id),
+                      class: "button hollow expanded" %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<% else %>
+  <div class="callout primary clear">
+    <%= t("valuation.budgets.index.no_budgets") %>
+  </div>
+<% end %>

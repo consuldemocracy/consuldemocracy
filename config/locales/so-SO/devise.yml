@@ -1,0 +1,66 @@
+#Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+so:
+  devise:
+    password_expired:
+      expire_password: "Furaha wa dhacay"
+      change_required: "Furahaga waa mid dhacay"
+      change_password: "Furahaga bedel"
+      new_password: "Fure cusub"
+      updated: "Furahaga sirta ah si guul ah ayaa lo cusboneysiyey"
+    confirmations:
+      confirmed: "Your account has been confirmed."
+      send_instructions: "Dhowr daqiiqadood waxaad heli doontaa email ah oo leh tilmaamo ku saabsan sida dib loogu bilaabo eraygaaga sirta ah."
+      send_paranoid_instructions: "Haddii cinwaanka emailkaaga uu ku jiro xogtanada, dhowr daqiiqo waxaad heli doontaa email ah oo leh tilmaamo ku saabsan sida dib loogu bilaabo eraygaaga sirta ah."
+    failure:
+      already_authenticated: "Adigu horey ayaad saxiixday."
+      inactive: "Koontadaadu weli wali ma shaqayn."
+      invalid: "An la isticmaali karin%{authentication_keys} ama fure firta ah."
+      locked: "Akoonkaga waa la xiray."
+      last_attempt: "Waxaad haysataa hal isku day dheeraad ah ka hor inta aan xisaabtaada la xirin."
+      not_found_in_database: "An la isticmaali karin%{authentication_keys} ama fure firta ah."
+      timeout: "Kulankaaga ayaa dhacay. Fadlan mar kale saxiix si aad u sii wadato."
+      unauthenticated: "Waa inaad saxiixdaa ama isdiiwaangalisaa si aad u sii waddo."
+      unconfirmed: "Si aad u sii wado, fadlan guji xiriirka xaqiijinta ee aan kuugu soo dirnay email ahaan"
+    mailer:
+      confirmation_instructions:
+        subject: "Tilmaamaha xaqiijinta"
+      reset_password_instructions:
+        subject: "Tilmaan ku saabsan dib u habeynta eraygaaga sirta ah"
+      unlock_instructions:
+        subject: "Tilmaamaha furitaanka"
+    omniauth_callbacks:
+      failure: "Maquul hayn in laydiin ogolada sida%{kind} sabab%{reason}."
+      success: "Siguul ah ayaa loo aqoonsaday sida%{kind}."
+    passwords:
+      no_token: "Ma heli kartid boggan marka laga reebo isku-xirka sirta ee sirta. Haddii aad ku heshay xiriirka lambarka sirta ah, fadlan hubi in URL dhamaystiran yahay."
+      send_instructions: "Dhowr daqiiqo, waxaad heli doontaa email ah oo leh tilmaamo ku saabsan dib u dejinta eraygaaga sirta ah."
+      send_paranoid_instructions: "Haddii cinwaanka emailkaaga uu ku jiro xogta nada, dhowr daqiiqo waxaad heli doontaa link ah si ay u isticmaalaan si ay u dejiyaan lambar sireedkaga."
+      updated: "Furaha sirtaada waa la bedelay. Aqoonsi ayaa ku guulaystay."
+      updated_not_active: "Lambar sireedkaga si guul ah ayaa loo bedelay."
+    registrations:
+      destroyed: "Nabadgelyo! Koontadaada waa la joojiyay. Waxaan rajeyneynaa inaan mar dhow kuu aragno."
+      signed_up: "So dhowow wa lugu xaqijiyey."
+      signed_up_but_inactive: "Diiwaangelintaadu way guulaysatay, laakiin laguma saxeexi karo sababtoo ah koontadaada lama hawlgalin."
+      signed_up_but_locked: "Diiwaangelintaadu way guulaysatay, laakiin laguma saxeexi karo sababtoo ah koontadaadu waa la xiray."
+      signed_up_but_unconfirmed: "Waxaa laguu diray farriin ay ku jirto xiriir xaqiijin ah. Fadlan riix linkkan si aad udhaqaajiso koontadaada."
+      update_needs_confirmation: "Koontadaada si guul leh ayaa loo cusbooneysiiyey; Si kastaba ha ahaatee, waxaan u baahanahay inaan xaqiijino cinwaankaaga cusub ee emailka. Fadlan calaamadee emailkaaga oo riix bogga si aad u buuxiso xaqiijinta cinwaanka emailkaaga cusub."
+      updated: "Koontadaada si guul leh ayey u cusbooneysiisay."
+    sessions:
+      signed_in: "Waxaa laguu saxeexay si guul leh."
+      signed_out: "Siguul ah ayaad u saxeexay."
+      already_signed_out: "Siguul ah ayaad u saxeexay."
+    unlocks:
+      send_instructions: "Dhowr daqiiqo, waxaad heli doontaa email ah oo leh tilmaamo lagu furayo xisaabtaada."
+      send_paranoid_instructions: "Haddii aad leedahay xisaab, dhowr daqiiqadood waxaad heli doontaa email ah oo leh tilmaamo lagu furayo xisaabtaada."
+      unlocked: "Koontadaada ayaa la furay. Fadlan gal si aad u sii wadato."
+  errors:
+    messages:
+      already_confirmed: "Horeyba waa laguu xaqiijiyey; fadlan iskuday inaad saxiixdo."
+      confirmation_period_expired: "Waxaad ubaahan tahay in lagu xaqiijiyo gudaha boqolkiiba %{period} fadlan samee codsi ku celin."
+      expired: "wuu dhacay; fadlan samee codsi ku celin."
+      not_found: "lama helin."
+      not_locked: "lama xirin."
+      not_saved:
+        one: "1 qalad ayaa ka hortagey tan%{resource} in laga badbaadiyo. Fadlan calaamadee beeraha calaamadeeyay si aad u ogaatid sida loo saxo:"
+        other: "%{count} qalad ayaa ka hortagey tan%{resource} in laga badbaadiyo. Fadlan calaamadee beeraha calaamadeeyay si aad u ogaatid sida loo saxo:"
+      equal_to_current_password: "waa inuu kaduwayahy lamabar siredka hada."

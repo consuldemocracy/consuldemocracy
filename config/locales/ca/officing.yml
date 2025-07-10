@@ -1,0 +1,57 @@
+ca:
+  officing:
+    header:
+      title: votacions
+    dashboard:
+      index:
+        title: Presidir taula de votacions
+        info: Aquí pots validar documents de ciutadans i guardar els resultats de les urnes
+    menu:
+      voters: validar document
+    polls:
+      final:
+        title: Llistat de votacions finalitzades
+        no_polls: No tens permís per recompte final a cap votació recent
+        select_poll: Selecciona votació
+        add_results: Afegir resultats
+    results:
+      flash:
+        create: "dades guardats"
+        error_create: "Resultats NO afegits. Error en les dades"
+        error_wrong_booth: "Urna incorrecta. Resultats NO guardats."
+      new:
+        title: "%{poll} - Afegir resultats"
+        booth: "urna"
+        date: "data"
+        select_booth: "Tria urna"
+        ballots_null: "paperetes nul·les"
+        submit: "Desar"
+        results_list: "Els teus resultats"
+        see_results: "veure resultats"
+      index:
+        no_results: "No hi ha resultats"
+        results: resultats
+        table_answer: Resposta
+        table_votes: Votacions
+        table_nulls: "paperetes nul·les"
+    residence:
+      flash:
+        create: "Document verificat amb el Padró"
+        not_allowed: "Avui no tens torn de president de taula"
+      new:
+        title: validar document
+        document_number: "Número de document (incloent-hi lletres)"
+        submit: validar document
+        error_verifying_census: "El Padró no va poder verificar aquest document."
+        form_errors: van evitar verificar aquest document
+    voters:
+      new:
+        title: votacions
+        table_poll: votació
+        table_status: Estat de les votacions
+        table_actions: Accions
+      show:
+        can_vote: pot votar
+        error_already_voted: Ja ha participat en aquesta votació.
+        submit: Confirma vot
+        success: "¡Vot introduït!"

@@ -1,0 +1,32 @@
+<% if @officers.blank? %>
+  <div class="callout alert margin-bottom">
+    <%= t("admin.shared.no_search_results") %>
+  </div>
+<% else %>
+  <h3><%= t("admin.shared.search_results") %></h3>
+<% end %>
+
+<% if @officers.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th><%= t("admin.poll_officer_assignments.index.table_name") %></th>
+        <th><%= t("admin.poll_officer_assignments.index.table_email") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @officers.each do |user| %>
+      <tr>
+        <td>
+          <strong>
+            <%= link_to user.name, by_officer_admin_poll_officer_assignments_path(@poll, officer_id: user.id) %>
+          </strong>
+        </td>
+        <td>
+          <%= user.email %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

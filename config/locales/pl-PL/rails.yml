@@ -1,0 +1,231 @@
+pl:
+  date:
+    abbr_day_names:
+      - "N"
+      - Pon
+      - Wt
+      - Śr
+      - Czw
+      - Pt
+      - Sob
+    abbr_month_names:
+      - 
+      - STY
+      - LUT
+      - MAR
+      - KWI
+      - Maj
+      - CZE
+      - LIP
+      - SIE
+      - WRZ
+      - PAŹ
+      - LIS
+      - GRU
+    day_names:
+      - Niedziela
+      - Poniedziałek
+      - Wtorek
+      - Środa
+      - Czwartek
+      - Piątek
+      - Sobota
+    formats:
+      default: "%d-%m-%Y"
+      long: "%d %B %Y"
+      short: "%d %b"
+    month_names:
+      - 
+      - Styczeń
+      - Luty
+      - Marzec
+      - Kwiecień
+      - MAJ
+      - Czerwiec
+      - Lipiec
+      - Sierpień
+      - Wrzesień
+      - Październik
+      - Listopad
+      - Grudzień
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: około 1 godziny
+        few: około %{count} godzin
+        many: około %{count} godzin
+        other: około %{count} godzin
+      about_x_months:
+        one: około 1 miesiąca
+        few: około %{count} miesięcy
+        many: około %{count} miesięcy
+        other: około %{count} miesięcy
+      about_x_years:
+        one: około 1 roku
+        few: około %{count} lat
+        many: około %{count} lat
+        other: około %{count} lat
+      almost_x_years:
+        one: prawie 1 rok
+        few: prawie %{count} lata
+        many: prawie %{count} lat
+        other: prawie %{count} lat
+      half_a_minute: pół minuty
+      less_than_x_minutes:
+        one: mniej niż minuta
+        few: mniej niż %{count} minuty
+        many: mniej niż %{count} minut
+        other: mniej niż %{count} minut
+      less_than_x_seconds:
+        one: mniej niż 1 sekundę
+        few: mniej niż %{count} sekundy
+        many: mniej niż %{count} sekund
+        other: mniej niż %{count} sekund
+      over_x_years:
+        one: ponad 1 rok
+        few: ponad %{count} lata
+        many: ponad %{count} lat
+        other: ponad %{count} lat
+      x_days:
+        one: 1 dzień
+        few: "%{count} dni"
+        many: "%{count} dni"
+        other: "%{count} dni"
+      x_minutes:
+        one: 1 minuta
+        few: "%{count} minuty"
+        many: "%{count} minut"
+        other: "%{count} minut"
+      x_months:
+        one: 1 miesiąc
+        few: "%{count} miesiące"
+        many: "%{count} miesięcy"
+        other: "%{count} miesięcy"
+      x_years:
+        one: 1 rok
+        few: "%{count} lata"
+        many: "%{count} lat"
+        other: "%{count} lat"
+      x_seconds:
+        one: 1 sekunda
+        few: "%{count} sekundy"
+        many: "%{count} sekund"
+        other: "%{count} sekund"
+    prompts:
+      day: Dzień
+      hour: Godzina
+      minute: Minuta
+      month: Miesiąc
+      second: Sekundy
+      year: Rok
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: musi być zaakceptowane
+      blank: nie może być puste
+      present: musi być puste
+      confirmation: nie pasuje do %{attribute}
+      empty: nie może być puste
+      equal_to: musi się równać %{count}
+      even: musi być równe
+      exclusion: jest zarezerwowane
+      greater_than: musi być większe niż %{count}
+      greater_than_or_equal_to: musi być większe lub równe %{count}
+      inclusion: nie znajduje się na liście
+      invalid: jest nieprawidłowe
+      less_than: musi być mniejsze niż %{count}
+      less_than_or_equal_to: musi być mniejsze lub równe %{count}
+      model_invalid: "Walidacja nie powiodła się: %{errors}"
+      not_a_number: nie jest liczbą
+      not_an_integer: musi być liczbą całkowitą
+      odd: musi być nieparzysta
+      required: musi istnieć
+      taken: jest zajęte
+      too_long:
+        one: jest zbyt długie (maksymalnie 1 znak)
+        few: jest zbyt długie (maksymalnie %{count} znaki)
+        many: jest zbyt długie (maksymalnie %{count} znaków)
+        other: jest zbyt długie (maksymalnie %{count} znaków)
+      too_short:
+        one: jest zbyt krótkie (minimalnie 1 znak)
+        few: jest zbyt krótkie (minimalnie %{count} znaki)
+        many: jest zbyt krótkie (minimalnie %{count} znaków)
+        other: jest zbyt krótkie (minimalnie %{count} znaków)
+      wrong_length:
+        one: jest złej długości (powinno zawierać 1 znak)
+        few: jest złej długości (powinno zawierać %{count} znaki)
+        many: jest złej długości (powinno zawierać %{count} znaków)
+        other: jest złej długości (powinno zawierać %{count} znaków)
+      other_than: musi być inne niż %{count}
+    template:
+      body: "Wystąpiły problemy z następującymi polami:"
+      header:
+        one: 1 błąd uniemożliwił zapis tego %{model}
+        few: "%{count} błędy uniemożliwiły zapis tego %{model}"
+        many: "%{count} błędów uniemożliwiło zapis tego %{model}"
+        other: "%{count} błędów uniemożliwiło zapis tego %{model}"
+  helpers:
+    select:
+      prompt: Proszę wybrać
+    submit:
+      create: Stwórz %{model}
+      submit: Zapisz %{model}
+      update: Zaktualizuj %{model}
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%n %u"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "zł"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Miliard
+          million: Milion
+          quadrillion: Biliard
+          thousand: Tysiąc
+          trillion: Bilion
+      format:
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Bajt
+            few: Bajty
+            many: Bajtów
+            other: Bajtów
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n %"
+  support:
+    array:
+      last_word_connector: ", i "
+      two_words_connector: " i "
+      words_connector: ", "
+  time:
+    am: rano
+    formats:
+      datetime: "%d/%m/%Y %H:%M:%S"
+      default: "%a, %d %b %Y %H:%M:%S %Z"
+      long: "%d %B %Y %H:%M"
+      short: "%d %b %H:%M"
+      api: "%d-%m-%Y %H"
+    pm: po południu

@@ -1,0 +1,31 @@
+fi:
+  community:
+    sidebar:
+      title: Yhteisö
+    show:
+      sidebar:
+        participate: Osallistu
+        new_topic: Luo aihe
+      topic:
+        edit: Muokkaa aihetta
+        destroy: Tuhoa aihe
+        comments:
+          zero: Ei kommentteja
+          one: 1 kommentti
+          other: "%{count} kommenttia"
+      author: Tekijä
+    topic:
+      create: Luo aihe
+      edit: Muokkaa aihetta
+      form:
+        new:
+          submit_button: Luo aihe
+        edit:
+          submit_button: Muokkaa aihetta
+        create:
+          submit_button: Luo aihe
+        update:
+          submit_button: Päivitä aihe
+      show:
+        tab:
+          comments_tab: Kommentit

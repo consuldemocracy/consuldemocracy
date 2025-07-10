@@ -1,0 +1,13 @@
+<% provide :title do %><%= @process.title %><% end %>
+
+<%= render "legislation/processes/header", process: @process, header: :full %>
+
+<%= render "documents/additional_documents", documents: @process.documents %>
+
+<%= render "key_dates", process: @process, phase: :homepage %>
+
+<div class="row margin-top">
+  <div class="small-12 medium-9 column">
+    <%= AdminWYSIWYGSanitizer.new.sanitize(@process.homepage) %>
+  </div>
+</div>

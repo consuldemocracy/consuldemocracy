@@ -1,0 +1,36 @@
+engines:
+  rubocop:
+    enabled: true
+    channel: rubocop-0-74
+  duplication:
+    enabled: true
+    config:
+      languages:
+        ruby:
+        javascript:
+  brakeman:
+    enabled: true
+  bundler-audit:
+    enabled: true
+  coffeelint:
+    enabled: true
+  scss-lint:
+    enabled: true
+  fixme:
+    enabled: true
+  markdownlint:
+    enabled: true
+ratings:
+  paths:
+  - app/**/*
+  - lib/**/*
+exclude_paths:
+- app/assets/fonts/
+- app/assets/images/
+- bin/rails
+- bin/rake
+- db/
+- files/
+- public/
+- tmp/
+- vendor/

@@ -1,0 +1,35 @@
+<% if can?(:stats, @poll) || can?(:results, @poll) %>
+  <div class="row margin-top">
+    <div class="small-12 column">
+      <ul class="menu simple clear">
+        <% if can?(:results, @poll) %>
+          <% if results_menu? %>
+            <li class="is-active">
+              <h2><%= t("polls.show.results_menu") %></h2>
+            </li>
+          <% else %>
+            <li><%= link_to t("polls.show.results_menu"), results_poll_path(id: @poll.slug || @poll.id) %></li>
+          <% end %>
+        <% end %>
+
+        <% if can?(:stats, @poll) %>
+          <% if stats_menu? %>
+            <li class="is-active">
+              <h2><%= t("polls.show.stats_menu") %></h2>
+            </li>
+          <% else %>
+            <li><%= link_to t("polls.show.stats_menu"), stats_poll_path(id: @poll.slug || @poll.id) %></li>
+          <% end %>
+        <% end %>
+
+        <% if info_menu? %>
+          <li class="is-active">
+            <h2><%= t("polls.show.info_menu") %></h2>
+          </li>
+        <% else %>
+          <li><%= link_to t("polls.show.info_menu"), poll_path(id: @poll.slug || @poll.id) %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>

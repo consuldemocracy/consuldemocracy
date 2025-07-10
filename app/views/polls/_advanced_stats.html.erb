@@ -1,0 +1,92 @@
+<div id="advanced_statistics">
+  <h3 class="section-title"><%= t("stats.advanced") %></h3>
+
+  <div id="stats_by_channel" class="stats-group">
+    <h4><%= t("stats.polls.by_channel") %></h4>
+
+    <% stats.channels.each do |channel| %>
+      <%= number_with_info_tags(
+        stats.send("total_participants_#{channel}"),
+        t("stats.polls.#{channel}_percentage",
+          percentage: number_to_stats_percentage(stats.send(:"total_participants_#{channel}_percentage"))
+        ),
+        html_class: channel
+      ) %>
+    <% end %>
+  </div>
+
+  <div id="vote_stats_by_channel" class="stats-group">
+    <h4><%= t("stats.polls.vote_by_channel") %></h4>
+
+    <table class="stack">
+      <thead>
+        <tr>
+          <th scope="col"><%= t("polls.show.stats.votes") %></th>
+          <% stats.channels.each do |channel| %>
+            <th scope="col"><%= t("polls.show.stats.#{channel}") %></th>
+          <% end %>
+          <th scope="col"><%= t("polls.show.stats.total") %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"><%= t("polls.show.stats.valid") %></th>
+
+          <% stats.channels.each do |channel| %>
+            <td>
+              <%= stats.send(:"total_#{channel}_valid") %>
+              <small><em>(<%= stats.send(:"valid_percentage_#{channel}").round(2) %>%)</em></small>
+            </td>
+          <% end %>
+
+          <td>
+            <%= stats.total_valid_votes %>
+            <small><em>(<%= stats.total_valid_percentage.round(2) %>%)</em></small>
+          </td>
+
+        </tr>
+        <tr>
+          <th scope="row"><%= t("polls.show.stats.white") %></th>
+
+          <% stats.channels.each do |channel| %>
+            <td>
+              <%= stats.send(:"total_#{channel}_white") %>
+              <small><em>(<%= stats.send(:"white_percentage_#{channel}").round(2) %>%)</em></small>
+            </td>
+          <% end %>
+
+          <td><%= stats.total_white_votes %>
+            <small><em>(<%= stats.total_white_percentage.round(2) %>%)</em></small>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row"><%= t("polls.show.stats.null_votes") %></th>
+
+          <% stats.channels.each do |channel| %>
+            <td>
+              <%= stats.send(:"total_#{channel}_null") %>
+              <small><em>(<%= stats.send(:"null_percentage_#{channel}").round(2) %>%)</em></small>
+            </td>
+          <% end %>
+
+          <td>
+            <%= stats.total_null_votes %>
+            <small><em>(<%= stats.total_null_percentage.round(2) %>%)</em></small>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row"><%= t("polls.show.stats.total") %></th>
+
+          <% stats.channels.each do |channel| %>
+            <td>
+              <%= stats.send(:"total_participants_#{channel}") %>
+              <small><em>(<%= stats.send(:"total_participants_#{channel}_percentage").round(2) %>%)</em></small>
+            </td>
+          <% end %>
+
+          <td><%= stats.total_participants %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

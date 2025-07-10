@@ -1,0 +1,17 @@
+<div id="participation_statistics">
+  <h3 class="section-title"><%= t("stats.title") %></h3>
+
+  <div id="total_participants" class="stats-group">
+    <h4><%= t("stats.total_participants") %></h4>
+
+    <%= number_with_info_tags(
+      stats.total_participants,
+      "",
+      html_class: "participants total-participants"
+    ) %>
+  </div>
+
+  <% stats.participations.each do |participation| %>
+    <%= render "shared/stats/#{participation}", stats: stats %>
+  <% end %>
+</div>

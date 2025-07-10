@@ -1,0 +1,117 @@
+gl:
+  moderation:
+    comments:
+      index:
+        block_authors: Bloquear autores
+        confirm: Queres continuar?
+        filter: Filtro
+        filters:
+          all: Todo
+          pending_flag_review: Pendentes
+          with_ignored_flag: Marcados como revisados
+        headers:
+          comment: Comentar
+          moderate: Moderar
+        hide_comments: Ocultar comentarios
+        ignore_flags: Marcar como revisadas
+        order: Orde
+        orders:
+          flags: Máis denunciadas
+          newest: Máis novos
+        title: Comentarios
+    dashboard:
+      index:
+        title: Moderar
+    debates:
+      index:
+        block_authors: Bloquear autores/as
+        confirm: Queres continuar?
+        filter: Filtro
+        filters:
+          all: Todo
+          pending_flag_review: Pendentes
+          with_ignored_flag: Marcado como revisado
+        headers:
+          debate: o debate
+          moderate: Moderar
+        hide_debates: Ocultar debates
+        ignore_flags: Marcar como revisado
+        order: Orde
+        orders:
+          created_at: Máis novos
+          flags: Máis denunciadas
+        title: Debates
+    header:
+      title: Moderar
+    menu:
+      flagged_comments: Comentarios
+      flagged_debates: Debates
+      flagged_investments: Proxectos de orzamentos participativos
+      proposals: Propostas cidadás
+      proposal_notifications: Notificacións de propostas
+      users: Bloquear usuarios
+    proposals:
+      index:
+        block_authors: Bloquear autores/as
+        confirm: Queres continuar?
+        filter: Filtro
+        filters:
+          all: Todo
+          pending_flag_review: Pendentes de revisión
+          with_ignored_flag: Marcar como revisado
+        headers:
+          moderate: Moderar
+          proposal: a proposta
+        hide_proposals: Ocultar propostas
+        ignore_flags: Marcar como revisado
+        order: Ordenar por
+        orders:
+          created_at: Máis recentes
+          flags: Máis denunciadas
+        title: Propostas cidadás
+    budget_investments:
+      index:
+        block_authors: Bloquear autores/as
+        confirm: Queres continuar?
+        filter: Filtro
+        filters:
+          all: Todo
+          pending_flag_review: Pendentes
+          with_ignored_flag: Marcado como revisado
+        headers:
+          moderate: Moderar
+          budget_investment: Proposta de investimento
+        hide_budget_investments: Agochar investimentos orzamentarios
+        ignore_flags: Marcar como revisado
+        order: Ordenar por
+        orders:
+          created_at: Máis recentes
+          flags: Máis denunciadas
+        title: Proxectos de orzamentos participativos
+    proposal_notifications:
+      index:
+        block_authors: Bloquear autores/as
+        confirm: Queres continuar?
+        filter: Filtro
+        filters:
+          all: Todo
+          pending_review: Pendentes de revisión
+          ignored: Marcar como revisado
+        headers:
+          moderate: Moderar
+          proposal_notification: Aviso de proposta
+        hide_proposal_notifications: Agochar propostas
+        ignore_flags: Marcar como revisado
+        order: Ordenar por
+        orders:
+          created_at: Máis recentes
+          moderated: Moderado
+        title: Notificacións das propostas
+    users:
+      index:
+        hidden: Bloqueado
+        hide: Bloquear
+        search: Procurar
+        search_placeholder: correo electrónico ou nome de usuario
+        title: Bloquear usuarios
+      notice_hide: Usuario bloqueado. Ocultáronse todos os seus debates e comentarios.

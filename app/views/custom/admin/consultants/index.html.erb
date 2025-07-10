@@ -1,0 +1,51 @@
+<h2><%= t("admin.consultants.index.title") %></h2>
+
+<%= render "admin/shared/user_search", url: search_admin_consultants_path %>
+
+<div id="consultants">
+  <% if @consultants.any? %>
+    <h3 class="margin"><%= page_entries_info @consultants %></h3>
+
+    <table>
+      <thead>
+        <th scope="col"><%= t("admin.consultants.index.name") %></th>
+        <th scope="col"><%= t("admin.consultants.index.email") %></th>
+        <th scope="col" class="small-3"><%= t("admin.shared.actions") %></th>
+      </thead>
+      <tbody>
+        <% @consultants.each do |consultant| %>
+          <tr>
+            <td>
+              <%= consultant.name %>
+            </td>
+            <td>
+              <%= consultant.email %>
+            </td>
+            <td>
+              <% if consultant.persisted? %>
+                <%= link_to t("admin.consultants.consultant.delete"),
+                  admin_consultant_path(consultant),
+                  method: :delete,
+                  class: "button hollow alert expanded"
+                %>
+              <% else %>
+                <%= link_to t("admin.consultants.consultant.add"),
+                             { controller: "admin/consultants",
+                               action: :create,
+                               user_id: consultant.user_id },
+                               method: :post,
+                               class: "button success expanded" %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= paginate @consultants %>
+  <% else %>
+    <div class="callout primary">
+      <%= t("admin.consultants.index.no_consultants") %>
+    </div>
+  <% end %>
+</div>

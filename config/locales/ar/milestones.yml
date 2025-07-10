@@ -1,0 +1,8 @@
+ar:
+  milestones:
+    index:
+      no_milestones: لا توجد معالم محددة
+      progress: تقدم
+    show:
+      publication_date: "تم نشرها %{publication_date}"
+      status_changed: تم تغيير حالة الستثمار الى

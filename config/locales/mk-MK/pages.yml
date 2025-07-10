@@ -1,0 +1,53 @@
+mk:
+  pages:
+    help:
+      menu:
+        debates: "Дебати"
+        proposals: "Предлози"
+        polls: "Анкети"
+        other: "Други информации"
+        processes: "Процеси"
+      debates:
+        title: "Дебати"
+        link: "граѓански дебати"
+        feature_link: "регистрирај се во %{org}"
+        image_alt: "Копчиња за оценување на дебатите"
+        figcaption: '"Се сложувам" и "Не се сложувам" копчиња за оценување на дебатите.'
+      proposals:
+        title: "Предлози"
+    accessibility:
+      keyboard_shortcuts:
+        navigation_table:
+          rows:
+            - 
+            - 
+              page_column: Дебати
+            - 
+              key_column: 2
+              page_column: Предлози
+            - 
+              key_column: 3
+              page_column: Гласања
+            - 
+              key_column: 4
+              page_column: Буџети
+            - 
+              key_column: 5
+              page_column: Легислативни процеси
+        browser_table:
+          browser_header: Прелистувач
+          key_header: Комбинација на копчиња
+          rows:
+            - 
+              browser_column: Прегледувач
+              key_column: ALT + кратенка, потоа ENTER
+            - 
+              browser_column: Firefox
+              key_column: ALT + CAPS + кратенка
+            - 
+              browser_column: Chrome
+            - 
+            - 
+    verify:
+      submit: Потврди ја мојата корисничка сметка
+      title: Потврди ја твојата корисничка сметка

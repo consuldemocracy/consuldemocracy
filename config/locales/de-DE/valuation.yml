@@ -1,0 +1,68 @@
+de:
+  valuation:
+    header:
+      title: Bewertung
+    menu:
+      title: Bewertung
+      budgets: Bürgerhaushalte
+    budgets:
+      index:
+        title: Bürgerhaushalte
+        filters:
+          current: Offen
+          finished: Abgeschlossen
+        table_name: Name
+        table_phase: Phase
+        table_assigned_investments_valuation_open: Zugeordnete Investmentprojekte mit offener Bewertung
+        table_actions: Aktionen
+        evaluate: Bewerten
+        no_budgets: "Kein Bürgerhaushalte vorhanden"
+    budget_investments:
+      index:
+        headings_filter_all: Alle Rubriken
+        filters:
+          valuation_open: Offen
+          valuating: Unter Bewertung
+          valuation_finished: Begutachtung abgeschlossen
+        assigned_to: "%{valuator} zugewiesen"
+        title: Ausgabenvorschläge
+        edit: Bericht bearbeiten
+        table_id: ID
+        table_title: Titel
+        table_heading_name: Name der Rubrik
+        table_actions: Aktionen
+        no_investments: "Keine Ausgabenvorschläge vorhanden."
+      show:
+        back: Zurück
+        title: Investitionsprojekt
+        info: Autor info
+        by: Gesendet von
+        sent: Gesendet um
+        heading: Rubrik
+        dossier: Bericht
+        edit_dossier: Bericht bearbeiten
+        price: Preis
+        price_first_year: Kosten im ersten Jahr
+        currency: "€"
+        feasibility: Durchführbarkeit
+        feasible: Durchführbar
+        unfeasible: Undurchführbar
+        undefined: Undefiniert
+        valuation_finished: Begutachtung abgeschlossen
+        duration: Zeitrahmen
+        responsibles: Verantwortliche
+        assigned_admin: Zugewiesener Admin
+        assigned_valuators: Zugewiesene Begutachter*innen
+        preview: Investitionsvorschau
+      edit:
+        dossier: Bericht
+        price: "Preis (%{currency})"
+        price_first_year: "Kosten im ersten Jahr (%{currency}) <small>(optional, nicht öffentliche Daten)</small>"
+        feasibility: Durchführbarkeit
+        valuation_finished_alert: "Sind Sie sicher, dass Sie diesen Bericht als erledigt markieren möchten? Hiernach können Sie keine Änderungen mehr vornehmen."
+        not_feasible_alert: "Der Autor des Projekts erhält sofort eine E-Mail mit einem Bericht zur Undurchführbarkeit."
+        save: Änderungen speichern
+      notice:
+        valuate: "Dossier aktualisiert"
+      valuation_comments: Bewertungskommentare
+      not_in_valuating_phase: Investitionen können nur bewertet werden, wenn das Budget in der Bewertungsphase ist

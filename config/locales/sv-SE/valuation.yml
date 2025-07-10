@@ -1,0 +1,64 @@
+sv:
+  valuation:
+    header:
+      title: Bedömning
+    menu:
+      title: Bedömning
+      budgets: Medborgarbudgetar
+    budgets:
+      index:
+        title: Medborgarbudgetar
+        filters:
+          current: Öppna
+          finished: Avslutade
+        table_name: Namn
+        table_phase: Fas
+        table_assigned_investments_valuation_open: Tilldelade budgetförslag öppna för bedömning
+        table_actions: Åtgärder
+        evaluate: Utvärdera
+    budget_investments:
+      index:
+        headings_filter_all: Alla områden
+        filters:
+          valuation_open: Öppna
+          valuating: Under kostnadsberäkning
+          valuation_finished: Kostnadsberäkning avslutad
+        assigned_to: "Tilldelad %{valuator}"
+        title: Budgetförslag
+        edit: Redigera rapport
+        table_id: ID
+        table_title: Titel
+        table_heading_name: Område
+        table_actions: Åtgärder
+        no_investments: "Det finns inga budgetförslag."
+      show:
+        back: Tillbaka
+        title: Budgetförslag
+        info: Om förslagslämnaren
+        by: Skickat av
+        sent: Registrerat
+        heading: Område
+        dossier: Rapport
+        edit_dossier: Redigera rapport
+        price: Kostnad
+        price_first_year: Kostnad för första året
+        currency: "kr"
+        feasibility: Genomförbarhet
+        feasible: Genomförbart
+        unfeasible: Ej genomförbart
+        undefined: Odefinierat
+        valuation_finished: Kostnadsberäkning avslutad
+        duration: Tidsram
+        responsibles: Ansvariga
+        assigned_admin: Ansvarig administratör
+        assigned_valuators: Ansvariga bedömare
+      edit:
+        dossier: Rapport
+        feasibility: Genomförbarhet
+        valuation_finished_alert: "Är du säker på att du vill markera rapporten som färdig? Efter det kan du inte längre göra ändringar."
+        not_feasible_alert: "Förslagslämnaren får ett e-postmeddelande om varför projektet inte är genomförbart."
+        save: Spara ändringar
+      notice:
+        valuate: "Uppdaterad rapport"
+      valuation_comments: Kommentarer från bedömning
+      not_in_valuating_phase: Budgetförslag kan endast kostnadsberäknas när budgeten är i kostnadsberäkningsfasen

@@ -1,0 +1,50 @@
+<h3 class="inline-block"><%= t("admin.polls.show.questions_title") %></h3>
+
+<%= link_to t("admin.questions.index.create"), new_admin_question_path(poll_id: @poll.id),
+            class: "button float-right" %>
+
+<% if @poll.questions.empty? %>
+  <div class="callout primary margin-top">
+    <%= t("admin.polls.show.no_questions") %>
+  </div>
+<% else %>
+  <table class="fixed margin">
+    <thead>
+      <tr>
+        <th><%= t("admin.polls.show.table_title") %></th>
+        <th class="small-6"><%= t("admin.actions.actions") %></th>
+      </tr>
+    </thead>
+    <% @poll.questions.each do |question| %>
+      <tr id="<%= dom_id(question) %>">
+        <td>
+          <strong>
+            <%= link_to question.title, admin_question_path(question) %>
+          </strong>
+          <% if question.proposal.present? %>
+            <small>
+              <%= link_to t("admin.polls.show.see_proposal"),
+                          proposal_path(question.proposal),
+                          target: "_blank" %>
+            </small>
+          <% end %>
+        </td>
+        <td>
+          <div class="small-4 column">
+            <%= link_to t("admin.polls.show.edit_answers"), admin_question_path(question),
+                                                            class: "button hollow expanded" %>
+          </div>
+          <div class="small-4 column">
+            <%= link_to t("shared.edit"), edit_admin_question_path(question),
+                                          class: "button hollow expanded" %>
+          </div>
+          <div class="small-4 column">
+            <%= link_to t("shared.delete"), admin_question_path(question),
+                                            class: "button hollow alert expanded",
+                                            method: :delete %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

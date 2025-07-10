@@ -1,0 +1,37 @@
+es:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} creado correctamente."
+        debate: "Debate creado correctamente."
+        direct_message: "Tu mensaje ha sido enviado correctamente."
+        poll: "Votación creada correctamente."
+        poll_booth: "Urna creada correctamente."
+        poll_question_answer: "Respuesta creada correctamente"
+        poll_question_answer_video: "Vídeo creado correctamente"
+        poll_question_answer_image: "Imagen cargada correctamente"
+        proposal: "Propuesta creada correctamente."
+        proposal_notification: "Tu mensaje ha sido enviado correctamente."
+        budget_investment: "Proyecto de gasto creado correctamente."
+        signature_sheet: "Hoja de firmas creada correctamente"
+        topic: "Tema creado correctamente."
+        valuator_group: "Grupo de evaluadores creado correctamente"
+      save_changes:
+        notice: Cambios guardados
+      update:
+        notice: "%{resource_name} actualizado correctamente."
+        debate: "Debate actualizado correctamente."
+        poll: "Votación actualizada correctamente."
+        poll_booth: "Urna actualizada correctamente."
+        active_poll: "Descripción general de votaciones actualizada correctamente."
+        proposal: "Propuesta actualizada correctamente."
+        budget_investment: "Proyecto de gasto actualizado correctamente"
+        topic: "Tema actualizado correctamente."
+        valuator_group: "Grupo de evaluadores actualizado correctamente"
+        translation: "Traducción actualizada correctamente"
+      destroy:
+        budget_investment: "Proyecto de gasto eliminado."
+        error: "No se pudo borrar"
+        topic: "Tema eliminado."
+        poll_question_answer_video: "Vídeo de respuesta eliminado."
+        valuator_group: "Grupo de evaluadores eliminado correctamente"

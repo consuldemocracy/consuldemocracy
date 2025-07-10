@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="small-12 medium-9 column">
+    <%= back_link_to user_path(@direct_message.receiver) %>
+
+    <div class="clear"></div>
+
+    <div class="margin-top">
+      <span><strong><%= t("users.direct_messages.show.receiver",
+      receiver: @direct_message.receiver.name) %></strong></span>
+    </div>
+
+    <h1><%= @direct_message.title %></h1>
+    <p><%= simple_format sanitize_and_auto_link(@direct_message.body), {}, sanitize: false %></p>
+  </div>
+</div>

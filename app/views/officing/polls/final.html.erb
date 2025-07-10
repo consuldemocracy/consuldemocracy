@@ -1,0 +1,39 @@
+<h2><%= t("officing.polls.final.title") %></h2>
+
+<% if @polls.any? %>
+  <table>
+    <thead>
+      <th colspan="2"><%= t("officing.polls.final.select_poll") %></th>
+    </thead>
+    <tbody>
+      <% @polls.each do |poll| %>
+        <tr id="<%= dom_id(poll) %>" class="poll">
+          <td>
+            <strong>
+              <%= poll.name %>
+            </strong>
+          </td>
+          <td class="text-right">
+            <% if poll.budget.present? %>
+              <%= link_to t("officing.poll_budgets.see_ballot_sheets"),
+                          officing_poll_ballot_sheets_path(poll),
+                          class: "button" %>
+
+                <%= link_to t("officing.polls.final.add_results"),
+                            new_officing_poll_ballot_sheet_path(poll),
+                            class: "button hollow" %>
+            <% else %>
+              <%= link_to t("officing.polls.final.add_results"),
+                          new_officing_poll_result_path(poll),
+                          class: "button hollow" %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="callout primary">
+    <%= t("officing.polls.final.no_polls") %>
+  </div>
+<% end %>

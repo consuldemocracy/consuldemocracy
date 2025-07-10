@@ -1,0 +1,43 @@
+eu:
+  date:
+    abbr_day_names:
+      - Sun
+      - Astl
+      - Mar
+      - Astk
+      - Ost
+      - Osti
+      - Lar
+    abbr_month_names:
+      - 
+      - Iga
+      - Ots
+      - Mar
+      - Apr
+      - May
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Oct
+      - Nov
+      - Dec
+    month_names:
+      - 
+      - January
+      - February
+      - March
+      - April
+      - May
+      - June
+      - July
+      - August
+      - September
+      - October
+      - November
+      - December
+  number:
+    human:
+      format:
+        significant: true
+        strip_insignificant_zeros: true

@@ -1,0 +1,6 @@
+id:
+  milestones:
+    index:
+      no_milestones: Tidak mempunyai tonggak yang jelas
+    show:
+      publication_date: "Diterbitkan %{publication_date}"

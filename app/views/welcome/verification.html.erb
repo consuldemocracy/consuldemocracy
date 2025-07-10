@@ -1,0 +1,14 @@
+<h2><%= t("welcome.verification.title") %></h2>
+
+<div class="text-center margin-top">
+  <h3><%= t("welcome.verification.question", org_name: setting["org_name"]) %></h3>
+  <br>
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= link_to(t("welcome.verification.i_have_an_account"), verification_path, class: "button success radius expand") %>
+    </div>
+    <div class="small-12 medium-6 column">
+      <%= link_to(t("welcome.verification.i_dont_have_an_account"), new_user_registration_path(use_redeemable_code: true), class: "button radius expand") %>
+    </div>
+  </div>
+</div>

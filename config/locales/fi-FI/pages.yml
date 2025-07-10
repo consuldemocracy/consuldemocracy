@@ -1,0 +1,78 @@
+fi:
+  pages:
+    conditions:
+      title: Ehdot ja käyttöehdot
+    help:
+      menu:
+        proposals: "Ehdotukset"
+        polls: "Kyselyt"
+        other: "Muita kiinnostavia tietoja"
+        processes: "Prosessit"
+      proposals:
+        title: "Ehdotukset"
+      polls:
+        title: "Kyselyt"
+      processes:
+        title: "Prosessit"
+        link: "prosessit"
+      faq:
+        title: "Teknisiä ongelmia?"
+        page:
+          title: "Usein Kysytyt Kysymykset"
+      other:
+        title: "Muita kiinnostavia tietoja"
+    privacy:
+      title: Tietosuojakäytäntö
+    accessibility:
+      keyboard_shortcuts:
+        navigation_table:
+          page_header: Sivu
+          rows:
+            - 
+              key_column: 0
+              page_column: Koti
+            - 
+              key_column: 1
+            - 
+              key_column: 2
+              page_column: Ehdotukset
+            - 
+              key_column: 3
+              page_column: Äänet
+            - 
+              key_column: 4
+            - 
+              key_column: 5
+        browser_table:
+          browser_header: Selain
+          rows:
+            - 
+              browser_column: Explorer
+            - 
+              browser_column: Firefox
+            - 
+              browser_column: Chrome
+            - 
+              browser_column: Safari
+            - 
+              browser_column: Opera
+      textsize:
+        title: Tekstin koko
+        browser_settings_table:
+          browser_header: Selain
+          rows:
+            - 
+              browser_column: Explorer
+              action_column: Näytä > Tekstin koko
+            - 
+              browser_column: Firefox
+              action_column: Näytä > Koko
+            - 
+              browser_column: Chrome
+            - 
+              browser_column: Safari
+            - 
+              browser_column: Opera
+    verify:
+      submit: Vahvista tilini
+      title: Vahvista tilisi

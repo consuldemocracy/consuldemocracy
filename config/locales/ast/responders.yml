@@ -1,0 +1,25 @@
+ast:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} creado correctamente."
+        debate: "Debate creado correctamente."
+        direct_message: "Tu mensaje ha sido enviado correctamente."
+        poll: "Votación creada correctamente."
+        poll_booth: "Urna creada correctamente."
+        proposal: "Propuesta creada correctamente."
+        proposal_notification: "Tu message ha sido enviado correctamente."
+        budget_investment: "Propuesta de inversión creada correctamente."
+        signature_sheet: "Hoja de firmas creada correctamente"
+      save_changes:
+        notice: Cambios guardados
+      update:
+        notice: "%{resource_name} actualizado correctamente."
+        debate: "Debate actualizado correctamente."
+        poll: "Votación actualizada correctamente."
+        poll_booth: "Urna actualizada correctamente."
+        proposal: "Propuesta actualizada correctamente."
+        budget_investment: "Propuesta de inversión actualizada correctamente."
+      destroy:
+        budget_investment: "Propuesta de inversión eliminada."
+        error: "No se pudo borrar"

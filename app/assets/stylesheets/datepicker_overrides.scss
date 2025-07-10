@@ -1,0 +1,102 @@
+// Overrides styles of jquery-ui/datepicker
+//
+
+.ui-datepicker-header {
+  background: $brand;
+  color: #fff;
+  font-weight: bold;
+}
+
+.ui-datepicker-calendar {
+
+  .ui-state-default {
+    background: $highlight;
+    color: $text;
+  }
+
+  .ui-state-hover,
+  .ui-state-active {
+    background: $brand;
+    color: #fff;
+  }
+
+  thead {
+
+    tr th {
+      border: 1px solid $brand;
+    }
+  }
+}
+
+.ui-datepicker {
+  padding: 0;
+  z-index: 4 !important;
+
+  .ui-datepicker-prev,
+  .ui-datepicker-next {
+    color: #fff;
+    cursor: pointer;
+    font-family: "icons" !important;
+    font-size: rem-calc(24);
+    font-weight: normal;
+    height: rem-calc(30);
+    line-height: $line-height;
+    position: absolute;
+    top: 4px;
+    width: rem-calc(30);
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .ui-datepicker-prev::after {
+    content: "\62";
+  }
+
+  .ui-datepicker-next::after {
+    content: "\63";
+  }
+
+  table {
+    border: 1px solid $border;
+    border-top: 0;
+  }
+
+  tr {
+    border-bottom: 1px solid $border;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    &:nth-child(odd) {
+      background: none;
+    }
+  }
+
+  td {
+    padding: 0;
+    border-right: 1px solid $border;
+
+    &:last-child {
+      border-right: 0;
+    }
+
+    span,
+    a {
+      text-align: center;
+      line-height: $line-height;
+      color: $text;
+    }
+  }
+}
+
+.ui-datepicker-unselectable.ui-state-disabled {
+  background: #fff;
+
+  .ui-state-default {
+    background: #f8f8f8;
+    color: $text-medium;
+  }
+}

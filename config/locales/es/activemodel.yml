@@ -1,0 +1,47 @@
+es:
+  activemodel:
+    models:
+      verification:
+        residence: "Residencia"
+        sms: "SMS"
+      local_census_records/import:
+        one: Importación de registros del censo local
+        other: Importaciones de registros del censo local
+    attributes:
+      verification:
+        residence:
+          document_type: "Tipo de documento"
+          document_number: "Número de documento (incluida letra)"
+          date_of_birth: "Fecha de nacimiento"
+          postal_code: "Código postal"
+        sms:
+          phone: "Teléfono"
+          confirmation_code: "Código de confirmación"
+        email:
+          recipient: "Email"
+      verification/letter:
+        email: "Email"
+        password: "Contraseña"
+        verification_code: "Código que has recibido en tu carta"
+      verification/management/document:
+        document_type: "Tipo de documento"
+        document_number: "Número de documento"
+      verification/residence:
+        date_of_birth: "Fecha de nacimiento"
+        document_type: "Tipo de documento"
+        postal_code: "Código postal"
+      verification/sms:
+        confirmation_code: "Introduce el código que has recibido en tu móvil"
+      officing/residence:
+        document_type: "Tipo de documento"
+        document_number: "Número de documento (incluida letra)"
+        year_of_birth: "Año de nacimiento"
+      local_census_records/import:
+        file: Archivo
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "El formato del fichero es incorrecto. El formato de archivo permitido es: %{valid_extensions}."
+              headers: "Las cabeceras del fichero son incorrectas. Las cabeceras del fichero deben tener los nombres siguientes: %{required_headers}."

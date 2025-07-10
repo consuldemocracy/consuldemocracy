@@ -1,0 +1,37 @@
+gl:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} creado correctamente."
+        debate: "Debate creado correctamente."
+        direct_message: "A mensaxe enviouse correctamente."
+        poll: "A votación creouse correctamente."
+        poll_booth: "A urna creouse correctamente."
+        poll_question_answer: "A resposta creouse correctamente"
+        poll_question_answer_video: "O vídeo creouse correctamente"
+        poll_question_answer_image: "A imaxe subiuse correctamente"
+        proposal: "Proposta creada correctamente."
+        proposal_notification: "A mensaxe enviouse correctamente."
+        budget_investment: "A proposta de investimento creouse correctamente."
+        signature_sheet: "A folla de sinaturas creouse correctamente"
+        topic: "O tema creouse correctamente."
+        valuator_group: "O grupo de avaliadores creouse correctamente"
+      save_changes:
+        notice: Cambios gardados
+      update:
+        notice: "%{resource_name} actualizado correctamente."
+        debate: "Debate actualizado correctamente."
+        poll: "A votación actualizouse correctamente."
+        poll_booth: "A urna actualizouse correctamente."
+        active_poll: "A descrición das votacións foi actualizada correctamente."
+        proposal: "Proposta actualizada correctamente."
+        budget_investment: "A proposta de investimento actualizouse correctamente."
+        topic: "O tema actualizouse correctamente."
+        valuator_group: "O grupo de avaliadores actualizouse correctamente"
+        translation: "A traducción actualizouse correctamente"
+      destroy:
+        budget_investment: "O proxecto de investimento actualizouse correctamente."
+        error: "Non se puido eliminar"
+        topic: "O tema borrouse correctamente."
+        poll_question_answer_video: "O vídeo borrouse correctamente."
+        valuator_group: "O grupo de avaliadores eliminouse correctamente"

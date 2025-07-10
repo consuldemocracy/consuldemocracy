@@ -1,0 +1,12 @@
+<div class="small-12 medium-3 column">
+  <% if action_name != "index" %>
+    <%= link_to t("dashboard.poster.options.preview"),
+                proposal_dashboard_poster_index_path(proposal),
+                class: "button expanded" %>
+  <% end %>
+
+  <%= link_to t("dashboard.poster.options.download"),
+              proposal_dashboard_poster_index_path(proposal, format: :pdf),
+              target: "_blank",
+              class: "button expanded" %>
+</div>

@@ -1,0 +1,4 @@
+<% dom_id = parent_or_commentable_dom_id(@comment.parent_id, @commentable) %>
+
+var field_with_errors = "#js-comment-form-<%= dom_id %> #comment-body-<%= dom_id %>";
+App.Comments.display_error(field_with_errors, "<%= j render("comments/errors") %>");

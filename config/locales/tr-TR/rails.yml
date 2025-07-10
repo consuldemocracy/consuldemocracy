@@ -1,0 +1,197 @@
+tr:
+  date:
+    abbr_day_names:
+      - Pzr
+      - Pzt
+      - Sal
+      - Çrş
+      - Prş
+      - Cum
+      - Cts
+    abbr_month_names:
+      - 
+      - Ock
+      - Şub
+      - Mar
+      - Nis
+      - Mayıs 
+      - Haz
+      - Tem
+      - Ağu
+      - Eyl
+      - Eki
+      - Kas
+      - Ara
+    day_names:
+      - Pazar
+      - Pazartesi
+      - Salı
+      - Çarşamba
+      - Perşembe
+      - Cuma
+      - Cumartesi
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d,%Y"
+      short: "%b %d"
+    month_names:
+      - 
+      - Ocak
+      - Şubat
+      - Mart
+      - Nisan
+      - Mayıs 
+      - Haziran
+      - Temmuz
+      - Ağustos
+      - Eylül
+      - Ekim
+      - Kasım
+      - Aralık
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: yaklaşık 1 saat
+        other: yaklaşık %{count} saatler
+      about_x_months:
+        one: yaklaşık 1 ay
+        other: yaklaşık %{count} ay
+      about_x_years:
+        one: yaklaşık 1 yıl
+        other: yaklaşık %{count} yıl
+      almost_x_years:
+        one: neredeyse 1 yıl
+        other: neredeyse %{count} yıl
+      half_a_minute: yarım dakika
+      less_than_x_minutes:
+        one: bir dakikadan az
+        other: '%{count} dakikadan az'
+      less_than_x_seconds:
+        one: 1 saniyeden kısa
+        other: '%{count} saniyelerden az'
+      over_x_years:
+        one: 1 yıldan fazla
+        other: '%{count} yıldan fazla'
+      x_days:
+        one: 1 gün
+        other: "%{count} günler"
+      x_minutes:
+        one: Bir dakika
+        other: "%{count} dakikalar"
+      x_months:
+        one: 1 ay
+        other: "%{count} ay"
+      x_years:
+        one: 1 yıl
+        other: "%{count} yıl"
+      x_seconds:
+        one: 1 saniye
+        other: "%{count} saniye"
+    prompts:
+      day: Gün
+      hour: Saat
+      minute: Dakika
+      month: Ay
+      second: Saniye
+      year: Yıl
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: kabul edilmeli
+      blank: boş bırakılamaz
+      present: boş bırakılmalıdır
+      confirmation: '%{attribute} ile uyumlu değil'
+      empty: boş bırakılamaz
+      equal_to: '%{count}''a eşit olmalıdır'
+      even: denk olmalı
+      exclusion: ayrılmıştır
+      greater_than: '%{count}''dan büyük olmalıdır'
+      greater_than_or_equal_to: '%{count}''dan daha büyük veya eşit olmalıdır'
+      inclusion: listeye dahil değildir
+      invalid: geçersizdir
+      less_than: '%{count}''dan daha az olmalıdır'
+      less_than_or_equal_to: '%{count}''dan daha az veya eşit olmalıdır'
+      model_invalid: "Doğrulama başarısız: %{errors}"
+      not_a_number: bir sayı değil
+      not_an_integer: tam sayı olmalıdır
+      odd: tek sayı olmalıdır
+      required: mevcut olmalıdır
+      taken: daha önce alındı
+      too_long:
+        one: çok uzun (en fazla 1 karakter)
+        other: çok uzun (en fazla %{count} karakter)
+      too_short:
+        one: çok kısa (en az 1 karakter)
+        other: çok kısa (en az %{count} karakter)
+      wrong_length:
+        one: hatalı uzunluk (1 karakter olmalı)
+        other: hatalı uzunluk (%{count} karakter olmalı)
+      other_than: '%{count}''dan farklı olmalıdır'
+    template:
+      body: "Aşağıdaki alanlar ile ilgili sorunlar vardır:"
+      header:
+        one: 1 hata bu %{model}'in kaydedilmesini engelledi
+        other: "%{count} hatalar bu %{model}'in kaydedilmesini engelledi"
+  helpers:
+    select:
+      prompt: Lütfen seçiniz
+    submit:
+      create: '%{model} Oluştur'
+      submit: '%{model} Kaydet'
+      update: '%{model} Güncelle'
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Milyar
+          million: Milyon
+          quadrillion: Katrilyon
+          thousand: Bin
+          trillion: Trilyon
+      format:
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Bayt
+            other: Bayt
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
+  support:
+    array:
+      last_word_connector: ", ve "
+      two_words_connector: " ve "
+      words_connector: ", "
+  time:
+    am: öö
+    formats:
+      datetime: "%Y-%m-%d %H:%M:%S"
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+      api: "%Y-%m-%d %H"
+    pm: ös

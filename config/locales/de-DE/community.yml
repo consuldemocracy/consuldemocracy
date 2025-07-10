@@ -1,0 +1,53 @@
+de:
+  community:
+    sidebar:
+      title: Community
+      description:
+        proposal: Beteiligen Sie sich in der Nutzergemeinde für diesen Vorschlag.
+        investment: Beteiligen Sie sich in der Nutzergemeinde dieser Investition.
+      button_to_access: Treten Sie der Community bei
+    show:
+      title:
+        proposal: Vorschlags-Community
+        investment: Budgetinvestitions-Gemeinschaft
+      description:
+        proposal: Beteiligen Sie sich an der Community dieses Antrags. Eine aktive Gemeinschaft kann dazu beitragen, den Inhalt des Vorschlags zu verbessern und seine Verbreitung zu fördern, um mehr Unterstützung zu erhalten.
+        investment: Beteiligen Sie sich an der Community dieser Budget-Investition. Eine aktive Gemeinschaft kann dazu beitragen, den Inhalt der Haushaltsinvestitionen zu verbessern und ihre Verbreitung zu fördern, um mehr Unterstützung zu erhalten.
+      create_first_community_topic:
+        first_theme_not_logged_in: Es ist kein Anliegen verfügbar, beteiligen Sie sich, indem Sie das erste erstellen.
+        first_theme: Erstellen Sie das erste Community-Thema
+        sub_first_theme: "Um ein Thema zu erstellen, müssen Sie %{sign_in} o %{sign_up}."
+      tab:
+        participants: Teilnehmer*innen
+      sidebar:
+        participate: Teilnehmen
+        new_topic: Thema erstellen
+      topic:
+        edit: Thema bearbeiten
+        destroy: Thema löschen
+        comments:
+          zero: Keine Kommentare
+          one: 1 Kommentar
+          other: "%{count} Kommentare"
+      author: Autor
+      back: Zurück zu %{community} %{proposal}
+    topic:
+      create: Ein Thema erstellen
+      edit: Thema bearbeiten
+      form:
+        new:
+          submit_button: Thema erstellen
+        edit:
+          submit_button: Thema bearbeiten
+        create:
+          submit_button: Thema erstellen
+        update:
+          submit_button: Thema aktualisieren
+      show:
+        tab:
+          comments_tab: Kommentare
+      sidebar:
+        recommendations_title: Empfehlungen zum Erstellen eines Themas
+        recommendation_one: Schreiben Sie den Themen-Titel oder ganze Sätze nicht in Großbuchstaben. Im Internet wird dies als Geschrei betrachtet. Und niemand wird gerne angeschrien.
+        recommendation_two: Themen oder Kommentare, die illegale Handlungen beinhalten, werden gelöscht. Auch diejenigen, die die Diskussionen absichtlich sabotieren. Alles andere ist erlaubt.
+        recommendation_three: Genießen Sie diesen Ort, die Stimmen, die ihn füllen, sind auch Ihre.

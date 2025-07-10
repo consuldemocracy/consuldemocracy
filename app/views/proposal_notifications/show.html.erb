@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="small-12 medium-9">
+    <%= back_link_to user_path(current_user), t("proposal_notifications.show.back") %>
+
+    <h2><%= @notification.title %></h2>
+    <p><%= @notification.body %></p>
+  </div>
+</div>

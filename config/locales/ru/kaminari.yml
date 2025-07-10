@@ -1,0 +1,26 @@
+ru:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: Записи
+        one: Запись
+        few: Записи
+        many: Записи
+        other: Записи
+      more_pages:
+        display_entries: Отображаются <strong>%{first}&nbsp;-&nbsp;%{last}</strong> из <strong>%{total} %{entry_name}</strong>
+      one_page:
+        display_entries:
+          zero: "%{entry_name} не найдены"
+          one: Есть <strong>1 %{entry_name}</strong>
+          few: Есть <strong>%{count} %{entry_name}</strong>
+          many: Есть <strong>%{count} %{entry_name}</strong>
+          other: Есть <strong>%{count} %{entry_name}</strong>
+  views:
+    pagination:
+      current: Вы находитесь на странице
+      first: Первая
+      last: Последняя
+      next: Следующая
+      previous: Предыдущая
+      truncate: "&hellip;"

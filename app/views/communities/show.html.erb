@@ -1,0 +1,49 @@
+<div class="communities-show">
+
+  <div class="jumbo light">
+    <div class="row">
+      <div class="small-12 column">
+        <span class="uppercase"><%= community_text(@community) %></span>
+        <h2><%= link_to community_title(@community), community_back_link_path(@community) %></h2>
+      </div>
+
+      <div class="small-12 medium-9 column end">
+        <p><%= community_description(@community) %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <aside class="small-12 column show-for-small-only">
+      <div class="sidebar-divider"></div>
+      <h2><%= t("community.show.sidebar.participate") %></h2>
+      <%= link_to t("community.show.sidebar.new_topic"),
+                  create_topic_link(@community), class: "button expanded" %>
+    </aside>
+
+    <div class="small-12 medium-9 column">
+      <div id="topics" class="topics-list">
+        <%= render "topics/topics", topics: @topics %>
+      </div>
+      <%= paginate @topics %>
+    </div>
+
+    <aside class="small-12 medium-3 column hide-for-small-only">
+      <div class="sidebar-divider"></div>
+      <h2><%= t("community.show.sidebar.participate") %></h2>
+      <%= link_to t("community.show.sidebar.new_topic"),
+                  create_topic_link(@community), class: "button expanded" %>
+
+      <% if @community.proposal&.polls&.current&.any? %>
+        <div class="sidebar-divider"></div>
+        <h2><%= t("communities.show.surveys") %></h2>
+        <%= link_to t("communities.show.complete_survey"),
+                    proposal_poll_path(@community.proposal,
+                                       @community.proposal.polls.current.first),
+                    class: "button expanded hollow" %>
+      <% end %>
+    </aside>
+  </div>
+</div>
+
+<%= render "subnav" %>

@@ -1,0 +1,8 @@
+ru:
+  milestones:
+    index:
+      no_milestones: Не имеет определенных основных этапов
+      progress: Ход выполнения
+    show:
+      publication_date: "Опубликованные %{publication_date}"
+      status_changed: Инвестиционный статус изменен на

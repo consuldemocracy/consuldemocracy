@@ -1,0 +1,19 @@
+<%= form_tag(admin_site_customization_update_heading_content_block_path(@content_block.id), method: "put") do %>
+  <%= render "shared/errors", resource: @content_block %>
+
+  <div class="small-12 medium-6 column">
+    <%= label_tag :name %>
+    <%= select_tag :name, options_for_select(valid_blocks, @selected_content_block) %>
+  </div>
+  <div class="small-12 medium-6 column">
+    <%= label_tag :locale %>
+    <%= select_tag :locale, options_for_select(I18n.available_locales, @content_block.locale.to_sym) %>
+  </div>
+  <div class="small-12 column">
+    <%= label_tag :body %>
+    <%= text_area_tag :body, @content_block.body, rows: 10 %>
+    <div class="small-12 medium-6 large-3">
+      <%= button_tag t("admin.menu.site_customization.buttons.content_block.update"), class: "button success expanded" %>
+    </div>
+  </div>
+<% end %>

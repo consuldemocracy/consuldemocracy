@@ -1,0 +1,28 @@
+<tr id="<%= dom_id(poll) %>" class="poll">
+  <td>
+    <strong>
+      <%= link_to poll.name, admin_poll_path(poll) %>
+    </strong>
+  </td>
+  <td class="text-center">
+    <%= l poll.starts_at.to_date %>
+  </td>
+  <td class="text-center">
+    <%= l poll.ends_at.to_date %>
+  </td>
+  <td>
+    <%= link_to t("admin.actions.edit"),
+                edit_admin_poll_path(poll),
+                class: "button hollow" %>
+
+    <%= link_to t("admin.actions.delete"),
+            admin_poll_path(poll),
+            method: :delete,
+            "data-confirm": t("admin.polls.destroy.alert"),
+            class: "button hollow alert" %>
+
+    <%= link_to t("admin.actions.configure"),
+                admin_poll_path(poll),
+                class: "button hollow " %>
+  </td>
+</tr>

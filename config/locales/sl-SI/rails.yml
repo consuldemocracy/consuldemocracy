@@ -1,0 +1,104 @@
+sl:
+  date:
+    abbr_day_names:
+      - Ned
+      - Pon
+      - Tor
+      - Sre
+      - Čet
+      - Pet
+      - Sob
+    abbr_month_names:
+      - 
+      - Jan
+      - Feb
+      - Mar
+      - Apr
+      - Maj
+      - Jun
+      - Jul
+      - Avg
+      - Sep
+      - Okt
+      - Nov
+      - Dec
+    day_names:
+      - Nedelja
+      - Ponedeljek
+      - Torek
+      - Sreda
+      - Četrtek
+      - Petek
+      - Sobota
+    month_names:
+      - 
+      - Januar
+      - Februar
+      - Marec
+      - April
+      - Maj
+      - Junij
+      - Julij
+      - Avgust
+      - September
+      - Oktober
+      - November
+      - December
+  datetime:
+    distance_in_words:
+      half_a_minute: pol minute
+    prompts:
+      day: Dan
+      hour: Ura
+      minute: Minuta
+      month: Mesec
+      second: Sekunda
+      year: Leto
+  errors:
+    messages:
+      accepted: mora biti sprejet
+      blank: ne sme biti prazen
+      present: mora biti prazen
+      confirmation: ne ustreza %{attribute}
+      empty: ne more biti prazen
+      equal_to: mora biti enak %{count}
+      even: mora biti sodo število
+      exclusion: je rezerviran
+      greater_than: mora biti večje od %{count}
+      greater_than_or_equal_to: mora biti večje od ali enako %{count}
+      inclusion: ni vključen na seznamu
+      invalid: ni veljaven
+      less_than: mora biti manj od %{count}
+      less_than_or_equal_to: mora biti manj ali enako %{count}
+      model_invalid: "Potrditev spodletela: %{errors}"
+      not_a_number: ni število
+      not_an_integer: mora biti celo število
+      odd: mora biti liho
+      required: mora obstajati
+      taken: je že zasedeno
+      other_than: mora biti drugačen kot %{count}
+    template:
+      body: "V naslednjih poljih so težave:"
+  helpers:
+    select:
+      prompt: Izberi
+    submit:
+      create: Ustvari %{model}
+      submit: Shrani %{model}
+      update: Posodobi %{model}
+  number:
+    human:
+      decimal_units:
+        units:
+          billion: milijarda
+          million: milijon
+          quadrillion: bilijarda
+          thousand: tisoč
+          trillion: bilijon
+      format:
+        significant: true
+        strip_insignificant_zeros: true
+  support:
+    array:
+      last_word_connector: " in "
+      two_words_connector: " in "

@@ -1,0 +1,50 @@
+<h2><%= t("admin.homepage.title") %></h2>
+
+<p><%= t("admin.homepage.description") %></p>
+
+<div id="header">
+  <h3 class="inline-block"><%= t("admin.homepage.header_title") %></h3>
+
+  <div class="float-right">
+    <%= link_to t("admin.homepage.create_header"), new_admin_widget_card_path(header_card: true), class: "button" %>
+  </div>
+
+  <% if @header.present? %>
+    <%= render "cards", cards: @header %>
+  <% else %>
+    <div class="callout primary clear">
+      <%= t("admin.homepage.no_header") %>
+    </div>
+  <% end %>
+</div>
+
+<hr>
+
+<div id="cards">
+  <h3 class="inline-block"><%= t("admin.homepage.cards_title") %></h3>
+
+  <div class="float-right">
+    <%= link_to t("admin.homepage.create_card"), new_admin_widget_card_path, class: "button" %>
+  </div>
+
+  <% if @cards.present? %>
+    <%= render "cards", cards: @cards %>
+  <% else %>
+    <div class="callout primary clear">
+      <%= t("admin.homepage.no_cards") %>
+    </div>
+  <% end %>
+</div>
+
+<hr>
+
+<% @feeds.each do |feed| %>
+  <%= render "feed", feed: feed %>
+<% end %>
+
+<div class="small-12 medium-6 large-4 column end">
+  <div class="callout">
+    <h3 class="inline-block"><%= t("settings.#{@recommendations.key}") %></h3>
+    <%= render "setting", setting: @recommendations %>
+  </div>
+</div>

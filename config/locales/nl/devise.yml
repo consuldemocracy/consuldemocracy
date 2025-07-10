@@ -1,0 +1,66 @@
+#Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+nl:
+  devise:
+    password_expired:
+      expire_password: "Wachtwoord is verlopen"
+      change_required: "Uw wachtwoord is verlopen"
+      change_password: "Wijzig je wachtwoord"
+      new_password: "Nieuw wachtwoord"
+      updated: "Wachtwoord is aangepast"
+    confirmations:
+      confirmed: "Uw account is bevestigd."
+      send_instructions: "U ontvangt via e-mail instructies om uw account te bevestigen."
+      send_paranoid_instructions: "Als uw e-mailadres bestaat in de database, ontvangt u via e-mail instructies hoe u uw account kunt bevestigen."
+    failure:
+      already_authenticated: "U bent al ingelogd."
+      inactive: "Uw account is nog niet geactiveerd."
+      invalid: "Ongeldig %{authentication_keys} of wachtwoord."
+      locked: "Uw account is vergrendeld."
+      last_attempt: "U hebt nog één poging over voordat uw account wordt geblokkeerd."
+      not_found_in_database: "Ongeldig %{authentication_keys} of wachtwoord."
+      timeout: "Uw sessie is verlopen, log a.u.b. opnieuw in."
+      unauthenticated: "U dient in te loggen of u in te schrijven."
+      unconfirmed: "U dient eerst uw account te bevestigen."
+    mailer:
+      confirmation_instructions:
+        subject: "Bevestiging mailadres"
+      reset_password_instructions:
+        subject: "Wachtwoord resetten"
+      unlock_instructions:
+        subject: "Instructies voor ontgrendelen"
+    omniauth_callbacks:
+      failure: "Het was niet mogelijk om je te autoriseren als %{kind} omdat \"%{reason}\"."
+      success: "Successvol aangemeld met uw %{kind} account."
+    passwords:
+      no_token: "U kunt deze pagina niet benaderen zonder een \"wachtwoord reset e-mail\"."
+      send_instructions: "U ontvangt via e-mail instructies hoe u uw account kunt ontgrendelen."
+      send_paranoid_instructions: "Als uw e-mailadres bij ons bekend is, ontvangt u via e-mail instructies hoe u uw account kan ontgrendelen."
+      updated: "Uw wachtwoord is gewijzigd. U bent nu ingelogd."
+      updated_not_active: "Uw wachtwoord is gewijzigd."
+    registrations:
+      destroyed: "Tot ziens! Uw account is geannuleerd. Wij hopen u snel weer te zien."
+      signed_up: "U bent inschreven."
+      signed_up_but_inactive: "U bent inschreven. U kon alleen niet automatisch ingelogd worden omdat uw account nog niet geactiveerd is."
+      signed_up_but_locked: "U bent inschreven. U kon alleen niet automatisch ingelogd worden omdat uw account geblokkeerd is."
+      signed_up_but_unconfirmed: "U ontvangt via e-mail instructies hoe u uw account kunt activeren."
+      update_needs_confirmation: "U hebt uw e-mailadres succesvol gewijzigd, maar we moeten uw nieuwe mailadres nog verifiëren. Controleer uw e-mail en klik op de link in de mail om uw mailadres te verifiëren."
+      updated: "Uw accountgegevens zijn opgeslagen."
+    sessions:
+      signed_in: "U bent ingelogd."
+      signed_out: "U bent uitgelogd."
+      already_signed_out: "Je bent uitgelogd."
+    unlocks:
+      send_instructions: "U ontvangt via e-mail instructies hoe u uw account kunt ontgrendelen."
+      send_paranoid_instructions: "Als uw e-mailadres bij ons bekend is, ontvangt u via e-mail instructies hoe u uw account kan ontgrendelen."
+      unlocked: "uw account is ontgrendeld. U kunt nu weer inloggen."
+  errors:
+    messages:
+      already_confirmed: "is reeds bevestigd"
+      confirmation_period_expired: "moet worden bevestigd binnen %{period}, probeer het a.u.b. nog een keer"
+      expired: "is verlopen, vraag een nieuwe aan\""
+      not_found: "niet gevonden"
+      not_locked: "is niet gesloten"
+      not_saved:
+        one: "1 error voorkwam dat dit %{resource} werd opgeslagen. Check alsjeblieft de gemarkeerde velden om ze te corrigeren."
+        other: "%{count} errors voorkwamen dat deze %{resource} werden opgeslagen. Check alsjeblieft de gemarkeerde velden om ze te corrigeren:"
+      equal_to_current_password: "moet anders zijn dan het vorige wachtwoord"

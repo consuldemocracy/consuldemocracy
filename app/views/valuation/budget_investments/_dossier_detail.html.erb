@@ -1,0 +1,34 @@
+<% budget = investment.budget %>
+<p>
+  <h3><%= Budget::Investment.human_attribute_name(:valuation_finished) %></h3>
+</p>
+<p>
+  <strong><%= t("valuation.budget_investments.edit.feasibility") %>:</strong>
+  <%= t("admin.budget_investments.index.feasibility.#{investment.feasibility}") %>
+</p>
+<p>
+  <strong>
+    <%= sanitize(Budget::Investment.human_attribute_name(:unfeasibility_explanation)) %>:
+  </strong>
+  <%= investment.unfeasibility_explanation.presence || "-" %>
+</p>
+<p>
+  <strong>
+    <%= sanitize(t("valuation.budget_investments.edit.price", currency: budget.currency_symbol)) %>:
+  </strong>
+  <%= investment.price.presence || "-" %>
+</p>
+<p>
+  <strong><%= t("valuation.budget_investments.show.price_first_year", currency: budget.currency_symbol) %>:</strong>
+  <%= investment.price_first_year.presence || "-" %>
+</p>
+<p>
+  <strong>
+    <%= sanitize(Budget::Investment.human_attribute_name(:price_explanation)) %>:
+  </strong>
+  <%= investment.price_explanation.presence || "-" %>
+</p>
+<p>
+  <strong><%= sanitize(Budget::Investment.human_attribute_name(:duration)) %>:</strong>
+  <%= investment.duration.presence || "-" %>
+</p>

@@ -1,0 +1,9 @@
+<div class="small-12 medium-8 column">
+  <%= back_link_to %>
+
+  <h2><%= t("management.user_invites.create.title") %></h2>
+
+  <div class="callout success">
+    <%= sanitize(t("management.user_invites.create.success", count: @emails.count)) %>
+  </div>
+</div>

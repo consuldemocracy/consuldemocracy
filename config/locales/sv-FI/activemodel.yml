@@ -1,0 +1,11 @@
+sv-FI:
+  activemodel:
+    models:
+      verification:
+        sms: "SMS"
+    attributes:
+      verification:
+        residence:
+          date_of_birth: "Födelsedatum"
+      officing/residence:
+        year_of_birth: "Födelseår"

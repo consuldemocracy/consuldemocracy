@@ -1,0 +1,557 @@
+de:
+  attributes:
+    geozone_id: "Rahmen der Operation"
+    results_enabled: "Ergebnisse anzeigen"
+    stats_enabled: "Statistiken anzeigen"
+    advanced_stats_enabled: "Erweiterte Statistiken anzeigen"
+  activerecord:
+    models:
+      activity:
+        one: "Aktivität"
+        other: "Aktivitäten"
+      budget:
+        one: "Bürgerhaushalt"
+        other: "Bürgerhaushalte"
+      budget/investment:
+        one: "Investitionsvorschlag"
+        other: "Ausgabenvorschläge"
+      milestone:
+        one: "Meilenstein"
+        other: "Meilensteine"
+      milestone/status:
+        one: "Status des Ausgabenvorschlags"
+        other: "Status der Ausgabenvorschläge"
+      progress_bar:
+        one: "Fortschrittsbalken"
+        other: "Fortschrittsbalken"
+      comment:
+        one: "Kommentar"
+        other: "Kommentare"
+      debate:
+        one: "Debatte"
+        other: "Diskussionen"
+      tag:
+        one: "Tag"
+        other: "Tags"
+      user:
+        one: "Benutzer*in"
+        other: "Benutzer*innen"
+      moderator:
+        one: "Moderator*in"
+        other: "Moderator*innen"
+      administrator:
+        one: "Administrator*in"
+        other: "Administrator*innen"
+      valuator:
+        one: "Begutachter*in"
+        other: "Begutachter*innen"
+      valuator_group:
+        one: "Begutachtungsgruppe"
+        other: "Begutachtungsgruppen"
+      manager:
+        one: "Manager*in"
+        other: "Manager*innen"
+      newsletter:
+        one: "Newsletter"
+        other: "Newsletter"
+      vote:
+        one: "Abstimmen"
+        other: "Bewertung"
+      organization:
+        one: "Organisation"
+        other: "Organisationen"
+      poll/booth:
+        one: "Wahlkabine"
+        other: "Wahlkabinen"
+      poll/officer:
+        one: "Beamter/in"
+        other: "Beamte/innen"
+      poll/ballot_sheet:
+        one: Stimmzettel
+        other: Stimmzettel
+      proposal:
+        one: "Bürgervorschlag"
+        other: "Bürgervorschläge"
+      site_customization/page:
+        one: Meine Seite
+        other: Meine Seiten
+      site_customization/image:
+        one: Bild
+        other: Benutzer*definierte Bilder
+      site_customization/content_block:
+        one: Benutzerspezifischer Inhaltsdatenblock
+        other: Benutzer*definierte Inhaltsdatenblöcke
+      document:
+        one: Dokument
+        other: Dokumente
+      legislation/process:
+        one: "Beteiligungsverfahren"
+        other: "Beteiligungsverfahren"
+      legislation/proposal:
+        one: "Vorschlag"
+        other: "Vorschläge"
+      legislation/draft_versions:
+        one: "Entwurfsfassung"
+        other: "Entwurfsversionen"
+      legislation/questions:
+        one: "Frage"
+        other: "Fragen"
+      legislation/question_options:
+        one: "Antwortmöglichkeit"
+        other: "Antwortmöglichkeiten"
+      legislation/answers:
+        one: "Antwort"
+        other: "Antworten"
+      documents:
+        one: "Dokument"
+        other: "Dokumente"
+      images:
+        one: "Bild"
+        other: "Bilder"
+      topic:
+        one: "Thema"
+        other: "Inhalte"
+      poll:
+        one: "Abstimmung"
+        other: "Umfragen"
+      proposal_notification:
+        one: "Antrags-Benachrichtigung"
+        other: "Benachrichtigungen zu einem Vorschlag"
+      dashboard/action:
+        one: Aktion im Vorschlags-Dashboard
+        other: Aktionen im Vorschlags-Dashboard
+      dashboard/administrator_task:
+        one: Aufgabe
+        other: Aufgaben
+      link:
+        one: Link
+        other: Links
+      local_census_record:
+        one: Import von Datensatz aus dem Melderegister
+        other: Import von Datensätzen aus dem Melderegister
+    attributes:
+      budget:
+        name: "Name"
+        description_accepting: "Beschreibung während der Vorschlagsphase"
+        description_reviewing: "Beschreibung während der internen Überprüfungsphase"
+        description_selecting: "Beschreibung während der Auswahlphase"
+        description_valuating: "Beschreibung während der Begutachtungsphase"
+        description_balloting: "Beschreibung während der Abstimmungsphase"
+        description_reviewing_ballots: "Beschreibung während der Überprüfungsphase der Abstimmungen"
+        description_finished: "Beschreibung, wenn der Bürgerhaushalt beschlossen ist"
+        phase: "Phase"
+        currency_symbol: "Währung"
+      budget/translation:
+        name: "Name"
+      budget/investment:
+        heading_id: "Rubrik"
+        title: "Titel"
+        description: "Beschreibung"
+        external_url: "Link zur weiteren Dokumentation"
+        administrator_id: "Administrator*in"
+        location: "Standort (optional)"
+        organization_name: "Wenn Sie einen Vorschlag im Namen einer Gruppe, Organisation oder mehreren Personen einreichen, nennen Sie bitte dessen/deren Name/n"
+        image: "Beschreibendes Bild zum Ausgabenvorschlag"
+        image_title: "Bildtitel"
+        duration: "Zeitrahmen"
+        feasibility_feasible: "Durchführbar"
+        feasibility_undecided: "Undefiniert"
+        feasibility_unfeasible: "Undurchführbar"
+        incompatible: "Als inkompatibel markieren"
+        milestone_tag_list: "Status des Ausgabenvorschlags"
+        price_explanation: "Erläuterung der Kosten"
+        selected: "Als ausgewählt markieren"
+        selected_true: "Ausgewählt"
+        selected_false: "Nicht ausgewählt"
+        unfeasibility_explanation: "Erläuterung der Durchführbarkeit"
+        valuation_finished: "Begutachtung abgeschlossen"
+        valuator_ids: "Gruppen"
+        valuation_tag_list: "Tags"
+      budget/investment/translation:
+        title: "Titel"
+        description: "Beschreibung"
+      geozone:
+        name: Name
+        external_code: "Externer Code (optional)"
+        census_code: "Register Code (optional)"
+        html_map_coordinates: "HTML <map> Koordinaten (optional)"
+      milestone:
+        status_id: "Aktueller Status (optional)"
+        title: "Titel"
+        description: "Beschreibung (optional, wenn kein Status zugewiesen ist)"
+        publication_date: "Datum der Veröffentlichung"
+      milestone/translation:
+        description: "Beschreibung"
+      milestone/status:
+        name: "Name"
+        description: "Beschreibung (optional)"
+      progress_bar:
+        kind: "Typ"
+        title: "Titel"
+        percentage: "Aktueller Fortschritt"
+      progress_bar/kind:
+        primary: "Primär"
+        secondary: "Sekundär"
+      budget/group:
+        max_votable_headings: "Maximale Anzahl von Rubriken, in der ein*e Benutzer*in abstimmen kann"
+      budget/group/translation:
+        name: "Name der Gruppe"
+      budget/heading:
+        allow_custom_content: "Inhaltsdatenblock zulassen"
+        latitude: "Breitengrad (optional)"
+        longitude: "Längengrad (optional)"
+        name: "Name der Rubrik"
+        price: "Preis"
+        population: "Bevölkerung"
+      budget/heading/translation:
+        name: "Name der Rubrik"
+      budget/phase:
+        enabled: "Phase aktiviert"
+        ends_at: "Enddatum des Verfahrens"
+        starts_at: "Anfangsdatum"
+      budget/phase/translation:
+        description: "Beschreibung"
+        summary: "Zusammenfassung"
+      comment:
+        body: "Kommentar"
+        user: "Benutzer*in"
+      debate:
+        author: "Autor"
+        description: "Beitrag"
+        tag_list: "Inhalte"
+        terms_of_service: "Nutzungsbedingungen"
+        title: "Titel"
+      debate/translation:
+        title: "Titel der Debatte"
+        description: "Initialer Debattenbeitrag"
+      proposal:
+        author: "Autor"
+        title: "Titel"
+        question: "Frage"
+        description: "Beschreibung"
+        responsible_name: "Vollständiger Name der Person, die den Vorschlag einreicht"
+        retired_reason: "Grund für das Zurückziehen des Antrags"
+        selected: "Als ausgewählt markieren"
+        terms_of_service: "Nutzungsbedingungen"
+        video_url: "Externes Video URL"
+      proposal/translation:
+        title: "Titel des Vorschlages"
+        description: "Vorschlagstext"
+        summary: "Zusammenfassung Vorschlag"
+        retired_explanation: "Erläuterung"
+      user:
+        login: "E-Mail oder Benutzer*innenname"
+        email: "E-Mail"
+        username: "Benutzer*innenname"
+        password_confirmation: "Bestätigen Sie das Passwort "
+        password: "Passwort"
+        current_password: "Aktuelles Passwort"
+        email_digest: "Benachrichtigungen mit Zusammenfassung über Vorschlag erhalten"
+        email_on_comment: "Benachrichtigen Sie mich per E-Mail, wenn jemand meine Vorschläge oder Diskussionen kommentiert"
+        email_on_comment_reply: "Benachrichtigen Sie mich per E-Mail, wenn jemand auf meine Kommentare antwortet"
+        email_on_direct_message: "E-Mails über direkte Nachrichten empfangen"
+        newsletter: "Per E-Mail Webseite relevante Informationen erhalten"
+        official_position: "Beamte/in"
+        official_position_badge: "Kennzeichen des Benutzertyps anzeigen"
+        official_level: "Amtsebene"
+        phone_number: "Telefonnummer"
+        public_activity: "Meine Liste an Aktivitäten öffentlich zugänglich machen"
+        public_interests: "Die Bezeichnungen der Elemente denen ich folge öffentlich zugänglich halten"
+        recommended_debates: "Debatten-Empfehlungen anzeigen"
+        recommended_proposals: "Antrags-Empfehlungen anzeigen"
+        redeemable_code: "Bestätigungscode per Post (optional)"
+      direct_message:
+        title: "Titel"
+        body: "Nachricht"
+      organization:
+        name: "Name der Organisation"
+        responsible_name: "Der/die* Gruppenverantwortliche"
+      poll:
+        name: "Name"
+        starts_at: "Anfangsdatum"
+        ends_at: "Enddatum"
+        geozone_restricted: "Beschränkt auf Gebiete"
+        summary: "Zusammenfassung"
+        description: "Beschreibung"
+      active_poll/translation:
+        description: "Beschreibung"
+      poll/booth:
+        name: "Name"
+        location: "Lage"
+      poll/translation:
+        name: "Name"
+        summary: "Zusammenfassung"
+        description: "Beschreibung"
+      poll/question:
+        poll_id: "Abstimmung"
+        title: "Frage"
+        summary: "Zusammenfassung"
+        description: "Beschreibung"
+        external_url: "Link zu zusätzlicher Dokumentation"
+      poll/question/translation:
+        title: "Frage"
+      poll/ballot_sheet:
+        data: CSV Daten
+        poll_id: Abstimmung
+        officer_assignment_id: Zuordnung Verwaltung
+      poll/shift:
+        task: "Aufgabe"
+      proposal_notification:
+        body: "Nachricht"
+        title: "Titel"
+      signature_sheet:
+        signable_type: "Unterschriftentyp"
+        signable_id: "ID des Bürgervorschlags/Ausgabenvorschlags"
+        document_numbers: "Dokumentennummern"
+      site_customization/page:
+        content: Inhalt
+        created_at: Erstellt am
+        subtitle: Untertitel
+        slug: URL
+        status: Status
+        status_draft: "Entwurf"
+        status_published: "Veröffentlicht"
+        title: Titel
+        updated_at: Letzte Aktualisierung
+        more_info_flag: Auf der Hilfeseite anzeigen
+        print_content_flag: Taste Inhalt drucken
+        locale: Sprache
+      site_customization/page/translation:
+        title: Titel
+        subtitle: Untertitel
+        content: Inhalt
+      site_customization/image:
+        name: Name
+        image: Bild
+      site_customization/content_block:
+        name: Name
+        locale: Sprache
+        body: Inhalt
+      tag:
+        name: "Geben Sie den Namen des Themas ein"
+      topic:
+        title: "Titel"
+        description: "Anfangstext"
+      banner:
+        background_color: Hintergrundfarbe
+        font_color: Schriftfarbe
+        post_ended_at: "Ende der Veröffentlichung"
+        post_started_at: "Beginn der Veröffentlichung"
+        target_url: "Link"
+      banner/translation:
+        title: "Titel"
+        description: "Beschreibung"
+      legislation/process:
+        title: Titel des Beteiligungsverfahrens
+        summary: Zusammenfassung
+        description: Beschreibung
+        additional_info: Zusätzliche Information
+        start_date: Anfangsdatum
+        end_date: Enddatum
+        debate_start_date: Anfangsdatum Diskussion
+        debate_end_date: Enddatum Diskussion
+        draft_start_date: Anfangsdatum Entwurfsphase
+        draft_end_date: Enddatum Entwurfsphase
+        draft_publication_date: Veröffentlichungsdatum des Entwurfs
+        allegations_start_date: Anfangsdatum Überprüfung
+        allegations_end_date: Enddatum Überprüfung
+        proposals_phase_start_date: Anfang
+        proposals_phase_end_date: Ende
+        result_publication_date: Veröffentlichungsdatum Endergebnis
+        background_color: Hintergrundfarbe
+        font_color: Schriftfarbe
+        homepage_enabled: "Homepage aktiviert"
+      legislation/process/translation:
+        title: Titel des Beteiligungsverfahrens
+        summary: Zusammenfassung
+        description: Beschreibung
+        additional_info: Zusätzliche Information
+        homepage: "Beschreibung"
+        milestones_summary: Zusammenfassung
+      legislation/proposal:
+        description: "Vorschlagstext"
+        summary: "Zusammenfassung Vorschlag"
+        title: "Titel des Vorschlages"
+        video_url: "Link zu externem Video"
+      legislation/draft_version:
+        title: Titel der Fassung
+        body: Text
+        changelog: Änderungen
+        status: Status
+        status_draft: "Entwurf"
+        status_published: "Veröffentlicht"
+        final_version: Endgültige Version
+      legislation/draft_version/translation:
+        title: Titel der Fassung
+        body: Text
+        changelog: Änderungen
+      legislation/question:
+        title: Titel
+        question_options: Antwortmöglichkeiten
+      legislation/question/translation:
+        title: Frage
+      legislation/question_option:
+        value: Wert
+      legislation/annotation:
+        text: Kommentar
+      document:
+        title: Titel
+        attachment: "Anhang"
+      image:
+        title: Titel
+        attachment: "Anhang"
+      poll/question/answer:
+        title: Antwort
+        description: Beschreibung
+      poll/question/answer/translation:
+        title: Antwort
+        description: Beschreibung
+      poll/question/answer/video:
+        title: Titel
+        url: Externes Video
+      newsletter:
+        segment_recipient: Empfänger*innen
+        subject: Betreff
+        from: "Von"
+        body: Inhalt der E-Mail
+      admin_notification:
+        segment_recipient: Empfänger*innen
+        title: Titel
+        link: Link
+        body: Text
+      admin_notification/translation:
+        title: Titel
+        body: Text
+      widget/card:
+        label: Tag (optional)
+        title: Titel
+        description: Beschreibung
+        link_text: Linktext
+        link_url: URL des Links
+        columns: Anzahl der Spalten
+      widget/card/translation:
+        label: Tag (optional)
+        title: Titel
+        description: Beschreibung
+        link_text: Linktext
+      widget/feed:
+        limit: Anzahl der Elemente
+      dashboard/action:
+        title: Titel
+        short_description: Kurze Beschreibung
+        description: Beschreibung
+        link: Externer Link
+        request_to_administrators: Aufnahme einer Schaltfläche um die Entscheidung von Administratoren anzufordern
+        day_offset: Wie viele Tage nach der Erstellung des Vorschlags möchten Sie, dass er aktiviert wird?
+        required_supports: Wie viel Unterstützung muss der Antrag erhalten, um aktiviert zu werden?
+        order: Sie können die Position eingeben, an der diese Aktion dem Benutzer in der Liste der Aktionen angezeigt wird
+        active: Aktiv
+        action_type: Typ
+        action_type_proposed_action: "Vorgeschlagene Aktion"
+        action_type_resource: "Ressource"
+        published_proposal: "Für veröffentlichte Vorschläge?"
+      dashboard/administrator_task:
+        source: Quelle
+        user: Ausgeführt von
+      link:
+        label: Titel
+        url: Link
+      valuator:
+        description: Beschreibung
+        valuator_group_id: Begutachtungsgruppe
+        can_comment: Kann Kommentare abgeben
+        can_edit_dossier: Kann Dossiers bearbeiten
+      valuator_group:
+        name: "Name der Gruppe"
+      local_census_record:
+        document_type: Dokumententyp
+        document_number: Dokumentennummer
+        date_of_birth: Geburtsdatum
+        postal_code: Postleitzahl
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Diese*r Benutzer*in hat bereits ein Passwort"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "Tags müssen kleiner oder gleich %{count} sein"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Sie haben die maximale Anzahl an persönlichen Nachrichten pro Tag erreicht"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Die Bildbreite muss mindestens %{required_min_width}px betragen"
+              min_image_height: "Die Bildhöhe muss mindestens %{required_min_height}px betragen"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "Das Empfänger*innensegment ist ungültig"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "Das Benutzer*innensegment ist ungültig"
+        map_location:
+          attributes:
+            map:
+              invalid: Der Kartenstandort darf nicht leer sein. Platzieren Sie einen Marker oder aktivieren Sie das Kontrollkästchen, wenn eine Standorterkennung nicht möglich ist
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Dieses Dokument scheint nicht im Melderegister auf"
+              has_voted: "Der/die Benutzer*in hat bereits abgestimmt"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: muss an oder nach dem Anfangsdatum sein
+            debate_end_date:
+              invalid_date_range: muss an oder nach dem Anfangsdatum der Diskussion sein
+            draft_end_date:
+              invalid_date_range: muss an oder nach dem Anfangsdatum der Entwurfsphase sein
+            allegations_end_date:
+              invalid_date_range: muss an oder nach dem Anfangsdatum der Überprüfung sein
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: ist nicht in der Liste enthalten, zulässig sind die Werte 1 für Personalausweis, 2 für Reisepass und 3 für Aufenthaltsberechtigung.
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "Tags müssen kleiner oder gleich %{count} sein"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "Tags müssen kleiner oder gleich %{count} sein"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Sie müssen mindestens %{interval} Tage zwischen Benachrichtigungen warten"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: "Nicht durch das Melderegister überprüft"
+              already_voted: "Hat bereits für diesen Vorschlag abgestimmt"
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "muss Buchstaben, Ziffern, _ und - enthalten"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Die Breite muss %{required_width}px betragen"
+              image_height: "Die Höhe muss %{required_height}px betragen"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: "Eine Überprüfung kann nicht kommentiert werden"
+      messages:
+        translations_too_short: Ist verpflichtet, mindestens eine Übersetzung zur Verfügung zu stellen
+        record_invalid: "Validierung fehlgeschlagen: %{errors}"
+        another_poll_active: Es gibt eine andere Abstimmung, die für den angegebenen Zeitraum aktiv ist
+        restrict_dependent_destroy:
+          has_one: "Der Eintrag kann nicht gelöscht werden, da dieser mit %{record} verbunden ist"
+          has_many: "Der Eintrag kann nicht gelöscht werden, da dieser mit %{record} verbunden ist"

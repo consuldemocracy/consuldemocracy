@@ -1,0 +1,4 @@
+<%= form_for verified_user, url: url, method: :post do |f| %>
+  <%= f.hidden_field :id %>
+  <%= f.submit t("verification.verified_user.form.submit_button"), class: "button success small" %>
+<% end %>

@@ -1,0 +1,9 @@
+<% provide(:title) { t("devise_views.users.registrations.success.title") } %>
+<h2><%= t("devise_views.users.registrations.success.title") %></h2>
+<p><%= sanitize(t("devise_views.users.registrations.success.thank_you")) %></p>
+<p><%= sanitize(t("devise_views.users.registrations.success.instructions_1")) %></p>
+<p><%= t("devise_views.users.registrations.success.instructions_2") %></p>
+<p>
+  <%= link_to t("devise_views.users.registrations.success.back_to_index"),
+      root_path, class: "button margin-top expanded" %>
+</p>

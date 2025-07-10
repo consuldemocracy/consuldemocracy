@@ -1,0 +1,8 @@
+tr:
+  milestones:
+    index:
+      no_milestones: Tanımlanmış kilometre taşı bulunmamaktadır
+      progress: İlerleme
+    show:
+      publication_date: "%{publication_date} tarihinde yayınlandı"
+      status_changed: Durum şöyle değiştirildi

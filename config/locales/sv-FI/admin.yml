@@ -1,0 +1,7 @@
+sv-FI:
+  admin:
+    menu:
+      admin_notifications: Meddelanden
+    admin_notifications:
+      index:
+        section_title: Meddelanden

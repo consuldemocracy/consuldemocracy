@@ -1,0 +1,78 @@
+ast:
+  pages:
+    conditions:
+      title: Condiciones de uso
+    help:
+      menu:
+        debates: "Alderique"
+        proposals: "Propuestes"
+        budgets: "Presupuestu participativu"
+        polls: "Votaciones"
+        other: "Otra información de interés"
+        processes: "Procesos"
+      debates:
+        title: "Alderique"
+        image_alt: "Botones para valorar los debates"
+        figcaption: 'Botones "Estoy de acuerdo" y "No estoy de acuerdo" para valorar los debates.'
+      proposals:
+        title: "Propuestes"
+        image_alt: "Botón para apoyar una propuesta"
+      budgets:
+        title: "Presupuestos participativos"
+        image_alt: "Diferentes fases de un presupuesto participativo"
+      polls:
+        title: "Votaciones"
+      processes:
+        title: "Procesos"
+      faq:
+        title: "¿Problemas técnicos?"
+        description: "Lee las preguntas frecuentes y resuelve tus dudas."
+        button: "Ver preguntas frecuentes"
+        page:
+          title: "Preguntas Frecuentes"
+          description: "Utiliza esta página para resolver las Preguntas frencuentes a los usuarios del sitio."
+      other:
+        title: "Otra información de interés"
+        how_to_use: "Utiliza %{org_name} en tu municipio"
+      titles:
+        how_to_use: Utilízalo en tu municipio
+    privacy:
+      title: Política de Privacidad
+    accessibility:
+      title: Accesibilidad
+      keyboard_shortcuts:
+        navigation_table:
+          rows:
+            - 
+            - 
+              page_column: Alderique
+            - 
+              key_column: 2
+              page_column: Propuestes
+            - 
+              key_column: 3
+              page_column: Votos
+            - 
+              page_column: Presupuestu participativu
+            - 
+        browser_table:
+          rows:
+            - 
+            - 
+              browser_column: Firefox
+            - 
+            - 
+            - 
+      textsize:
+        browser_settings_table:
+          rows:
+            - 
+            - 
+              browser_column: Firefox
+            - 
+            - 
+            - 
+    verify:
+      info_code: "Ahora introduce el código que has recibido en tu carta:"
+      submit: Verificar mi cuenta
+      title: Verifica tu cuenta

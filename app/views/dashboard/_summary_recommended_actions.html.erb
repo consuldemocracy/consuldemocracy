@@ -1,0 +1,4 @@
+<h2 class="title"><%= t("dashboard.recommended_actions.title") %></h2>
+
+<%= render "recommended_actions_by_status", status: "pending", actions: @pending_actions, toggle: false %>
+<%= render "recommended_actions_by_status", status: "done", actions: @done_actions, toggle: false %>

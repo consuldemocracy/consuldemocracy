@@ -1,0 +1,52 @@
+eu:
+  activerecord:
+    models:
+      activity:
+        one: "jarduera"
+        other: "jarduerak"
+      legislation/questions:
+        one: "Galdera"
+        other: "Galderak"
+      legislation/answers:
+        one: "Erantzuna"
+        other: "Erantzunak"
+      documents:
+        one: "Dokumentua"
+        other: "Dokumentuak"
+      images:
+        one: "Irudia"
+        other: "Irudiak"
+    attributes:
+      budget:
+        name: "Izena"
+      milestone/status:
+        name: "Izena"
+      comment:
+        body: "Iruzkin"
+        user: "Erabiltzailea"
+      proposal:
+        question: "Galdera"
+      user:
+        email: "E-mail"
+      poll:
+        name: "Izena"
+      poll/translation:
+        name: "Izena"
+      poll/question:
+        title: "Galdera"
+      poll/question/translation:
+        title: "Galdera"
+      site_customization/image:
+        name: Izena
+        image: Irudia
+      site_customization/content_block:
+        name: Izena
+      legislation/process:
+        proposals_phase_start_date: Hasi
+        proposals_phase_end_date: Amaitu
+      legislation/annotation:
+        text: Iruzkin
+      poll/question/answer:
+        title: Erantzuna
+      poll/question/answer/translation:
+        title: Erantzuna

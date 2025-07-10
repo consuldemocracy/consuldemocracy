@@ -1,0 +1,36 @@
+sq:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name}krijuar me sukses."
+        debate: "Debati u krijua me sukses"
+        direct_message: "Mesazhi është dërguar me sukses."
+        poll: "Sondazhi u krijua me sukses"
+        poll_booth: "Kabina u krijua me sukses."
+        poll_question_answer: "Përgjigja është krijuar me sukses"
+        poll_question_answer_video: "VIdeo u krijua me sukses"
+        poll_question_answer_image: "Imazhi u ngarkua me sukses"
+        proposal: "Propozimi u krijua me sukses"
+        proposal_notification: "Mesazhi është dërguar me sukses."
+        budget_investment: "\nInvestimet Buxhetore janë krijuar me sukses."
+        signature_sheet: "Tabela e nënshkrimeve u krijua me sukses"
+        topic: "Tematika u krijua me sukses"
+        valuator_group: "Vlerësuesi u krijua  me sukses"
+      save_changes:
+        notice: Ndryshimet u  ruajten
+      update:
+        notice: "%{resource_name}u perditesua me sukses."
+        debate: "Debati u perditesua me sukses"
+        poll: "Sondazhi u perditesua me sukses"
+        poll_booth: "Kabina u perditesua me sukses."
+        proposal: "Propozimi u perditesua me sukses"
+        budget_investment: "\nProjekti i investimeve u perditesua me sukses."
+        topic: "Tematika u perditesua me sukses"
+        valuator_group: "Vlerësuesi u përditesua  me sukses"
+        translation: "\nPërkthimi u përditësua me sukses"
+      destroy:
+        budget_investment: "\nProjekti i investimeve u fshi me sukses."
+        error: "\nNuk mund të fshihej"
+        topic: "Tematika u fshi me sukses"
+        poll_question_answer_video: "\nPërgjigjja e videos u fshi me sukses."
+        valuator_group: "\nGrupi i vlerësuesve u fshi me sukses"

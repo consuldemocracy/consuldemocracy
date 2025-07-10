@@ -1,0 +1,37 @@
+da:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} blev oprettet."
+        debate: "Debatindlægget blev oprettet."
+        direct_message: "Din besked blev sendt."
+        poll: "Meningsmålingen blev oprettet."
+        poll_booth: "Valgstedet blev oprettet."
+        poll_question_answer: "Du har indsendt dit svar"
+        poll_question_answer_video: "Videoen blev oprettet"
+        poll_question_answer_image: "Billedet blev uploadet"
+        proposal: "Forslaget blev oprettet."
+        proposal_notification: "Din besked blev sendt korrekt."
+        budget_investment: "Din idé blev oprettet."
+        signature_sheet: "Signaturarket blev oprettet"
+        topic: "Emnet blev oprettet."
+        valuator_group: "Evaluatorgruppen blev oprettet"
+      save_changes:
+        notice: Ændringerne blev gemt
+      update:
+        notice: "%{resource_name} blev opdateret."
+        debate: "Debatindlægget blev opdateret."
+        poll: "Afstemningen blev opdateret."
+        poll_booth: "Valgstedet blev opdateret."
+        active_poll: "Beskrivelsen af afstemningen blev opdateret."
+        proposal: "Forslaget blev opdateret."
+        budget_investment: "Projektet blev opdateret."
+        topic: "Emnet blev opdateret."
+        valuator_group: "Evaluatorgruppen blev opdateret"
+        translation: "Oversættelsen blev opdateret"
+      destroy:
+        budget_investment: "Projektet blev slettet."
+        error: "Kunne ikke slettes"
+        topic: "Emne blev slettet."
+        poll_question_answer_video: "Svarvideoen blev slettet."
+        valuator_group: "Evaluatorgruppen blev slettet"

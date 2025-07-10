@@ -1,0 +1,35 @@
+sl:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} uspešno ustvarjen."
+        debate: "Razprava uspešno ustvarjena."
+        direct_message: "Tvoje sporočilo je bilo uspešno poslano."
+        poll: "Glasovanje uspešno ustvarjeno."
+        poll_booth: "Volišče uspešno ustvarjeno."
+        poll_question_answer: "Odgovor uspešno ustvarjen."
+        poll_question_answer_video: "Video uspešno ustvarjen."
+        poll_question_answer_image: "Slika uspešno naložena"
+        proposal: "Predlog uspešno ustvarjen."
+        proposal_notification: "Tvoje sporočilo je bilo uspešno poslano."
+        budget_investment: "Proračunska naložba uspešno ustvarjena."
+        signature_sheet: "Podpisni list uspešno ustvarjen."
+        topic: "Tema uspešno ustvarjena."
+        valuator_group: "Skupina cenilcev uspešno ustvarjena."
+      save_changes:
+        notice: Spremembe shranjene
+      update:
+        notice: "%{resource_name} uspešno posodobljen."
+        debate: "Razprava uspešno posodobljena."
+        poll: "Glasovanje uspešno posodobljeno."
+        poll_booth: "Volišče uspešno posodobljeno."
+        proposal: "Predlog uspešno posodobljen."
+        budget_investment: "Naložbeni projekt uspešno posodobljen."
+        topic: "Tema uspešno posodobljena."
+        valuator_group: "Cenilska skupina uspešno posodobljena"
+      destroy:
+        budget_investment: "Naložbeni projekt uspešno izbrisan."
+        error: "Izbris ni mogoč"
+        topic: "Tema uspešno izbrisana."
+        poll_question_answer_video: "Video odgovora uspešno izbrisan."
+        valuator_group: "Cenilska skupina uspešno izbrisana"

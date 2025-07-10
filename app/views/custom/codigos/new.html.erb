@@ -1,0 +1,20 @@
+<div class='small-9 medium-7 small-centered column'>
+<div class='padding auth-form'>
+	<h2><%= t("pages.login.codigos.title") %></h2>
+	<p><%= t("pages.login.codigos.instructions") %></p>
+	<%= form_tag(codigos_path, method: :post) do %>
+		<%= label_tag("clave", t("pages.login.codigos.form.label_key")) %>
+		<%= text_field_tag("clave") %>
+		<%= label_tag("valor", t("pages.login.codigos.form.label_value")) %>
+		<%= password_field_tag("valor") %>
+		<%= submit_tag nil, :class => 'button expanded' %>
+	<% end %>
+	<p>
+		<%= raw t("pages.login.codigos.help",
+					login: link_to(t("pages.login.codigos.help_login"), new_user_session_path),
+					register: link_to(t("pages.login.codigos.help_register"), new_user_registration_path)
+				)
+		%>
+	</p>
+</div>
+</div>

@@ -1,0 +1,37 @@
+he:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} נוצר בהצלחה"
+        debate: "הדיון נוסף בהצלחה"
+        direct_message: "הודעתך נשלחה בהצלחה"
+        poll: "הסקר נוצר בהצלחה."
+        poll_booth: "הדוכן נוצר בהצלחה."
+        poll_question_answer: "התשובה נוצרו בהצלחה"
+        poll_question_answer_video: "וידאו נוצר בהצלחה"
+        poll_question_answer_image: "התמונה הועלתה בהצלחה"
+        proposal: "הצעתך נוספה בהצלחה"
+        proposal_notification: "הודעתך נשלחה כראוי"
+        budget_investment: "תקצוב ההשקעות נוצר בהצלחה"
+        signature_sheet: "גיליון חתימות נוצר בהצלחה"
+        topic: "הנושא נוצר בהצלחה."
+        valuator_group: "קבוצת המעריכים נוצרה בהצלחה"
+      save_changes:
+        notice: השינויים נשמרו
+      update:
+        notice: "%{resource_name} עודכן בהצלחה"
+        debate: "הדיון עודכן בהצלחה"
+        poll: "הסקר עודכן בהצלחה."
+        poll_booth: "הדוכן עודכן בהצלחה."
+        active_poll: "תיאור סקרים עודכן בהצלחה."
+        proposal: "ההצעה עודכנה בהצלחה"
+        budget_investment: "מיזם ההשקעות עודכן בהצלחה"
+        topic: "הנושא עודכן בהצלחה."
+        valuator_group: "קבוצת המעריכים עודכנה בהצלחה"
+        translation: "התרגום עודכן בהצלחה"
+      destroy:
+        budget_investment: "מיזם ההשקעות נמחק בהצלחה"
+        error: "אין אפשרות למחוק"
+        topic: "הנושא נמחק בהצלחה."
+        poll_question_answer_video: "תשובת הוידאו נמחק בהצלחה."
+        valuator_group: "קבוצת המעריכים נמחקה בהצלחה"

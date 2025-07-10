@@ -1,0 +1,117 @@
+he:
+  moderation:
+    comments:
+      index:
+        block_authors: חסימת כותבים
+        confirm: האם את/ה בטוח/ה?
+        filter: סינון
+        filters:
+          all: הכל
+          pending_flag_review: ממתין לאישור
+          with_ignored_flag: סומנו שנראו
+        headers:
+          comment: הערות
+          moderate: מנחה
+        hide_comments: הסתר הערות
+        ignore_flags: סימון כמסמך שנצפה
+        order: הזמן
+        orders:
+          flags: הנצפה ביותר
+          newest: החדש ביותר
+        title: הערות
+    dashboard:
+      index:
+        title: הנחייה
+    debates:
+      index:
+        block_authors: חסימת הכותב/ת
+        confirm: האם את/ה בטוח/ה?
+        filter: סינון
+        filters:
+          all: כולם
+          pending_flag_review: ממתין לאישור
+          with_ignored_flag: סומנו שנראו
+        headers:
+          debate: דיון
+          moderate: מנחה
+        hide_debates: הסתירו את הדיון
+        ignore_flags: סימון כמסמך שנצפה
+        order: הזמן
+        orders:
+          created_at: החדש ביותר
+          flags: הנצפה ביותר
+        title: דיונים
+    header:
+      title: הנחייה
+    menu:
+      flagged_comments: הערות
+      flagged_debates: דיונים
+      flagged_investments: השקעות בתקציב
+      proposals: הצעות
+      proposal_notifications: התראות להצעות
+      users: חסימת משתמשים
+    proposals:
+      index:
+        block_authors: חסימת הכותב/ת
+        confirm: האם את/ה בטוח/ה?
+        filter: סינון
+        filters:
+          all: כולם
+          pending_flag_review: בהמתנה לבדיקה
+          with_ignored_flag: סימון כמסמך שנצפה
+        headers:
+          moderate: מנחה
+          proposal: הצעה
+        hide_proposals: הסתרת הצעות
+        ignore_flags: סימון כמסמך שנצפה
+        order: הזמנה באמצעות
+        orders:
+          created_at: האחרון
+          flags: הנצפה ביותר
+        title: הצעות
+    budget_investments:
+      index:
+        block_authors: חסימת הכותב/ת
+        confirm: האם את/ה בטוח/ה?
+        filter: סינון
+        filters:
+          all: כולם
+          pending_flag_review: ממתין
+          with_ignored_flag: סומנו שנראו
+        headers:
+          moderate: מנחה
+          budget_investment: השקעות בתקציב
+        hide_budget_investments: הסתר השקעות תקציביות
+        ignore_flags: סימון כמסמך שנצפה
+        order: הזמנה באמצעות
+        orders:
+          created_at: האחרון
+          flags: הנצפה ביותר
+        title: השקעות בתקציב
+    proposal_notifications:
+      index:
+        block_authors: חסימת הכותב/ת
+        confirm: האם את/ה בטוח/ה?
+        filter: סינון
+        filters:
+          all: כולם
+          pending_review: צפיות בהמתנה
+          ignored: סימון כמסמך שנצפה
+        headers:
+          moderate: מנחה
+          proposal_notification: התראות להצעות
+        hide_proposal_notifications: הסתרת הצעות
+        ignore_flags: סימון כמסמך שנצפה
+        order: הזמנה באמצעות
+        orders:
+          created_at: האחרון
+          moderated: מונחה
+        title: הצעת התראות
+    users:
+      index:
+        hidden: מוסתרים
+        hide: הסתרה
+        search: חיפוש
+        search_placeholder: דוא"ל או שם משתמש
+        title: חסימת משתמשים
+      notice_hide: המשתמש/ת נחסם/ה. כל הדיונים וההערות של המשתמש/ת הוסתרו.

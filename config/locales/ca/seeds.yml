@@ -1,0 +1,8 @@
+ca:
+  seeds:
+    categories:
+      participation: Participació
+      transparency: Transparència
+    budgets:
+      groups:
+        districts: Districtes

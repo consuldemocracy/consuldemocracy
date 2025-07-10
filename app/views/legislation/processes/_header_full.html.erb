@@ -1,0 +1,19 @@
+<% if @process.description.present? %>
+  <p class="title"><%= t("legislation.processes.header.description") %></p>
+  <%= markdown @process.description %>
+<% end %>
+
+<% if @process.additional_info.present? %>
+  <div id="additional_info" class="is-hidden" data-toggler=".is-hidden">
+    <hr>
+    <p class="title"><%= t("legislation.processes.header.additional_info") %></p>
+    <%= markdown @process.additional_info if @process.additional_info %>
+  </div>
+
+  <a class="button" data-toggle="additional_info"
+    <% if banner_color? %>
+      style="background:<%= process.font_color %>; color:<%= process.background_color %>;"
+    <% end %>>
+    <%= t("legislation.processes.header.additional_info") %>
+  </a>
+<% end %>

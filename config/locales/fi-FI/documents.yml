@@ -1,0 +1,13 @@
+fi:
+  documents:
+    title: Asiakirjat
+    form:
+      title: Asiakirjat
+      cancel_button: Peruuta
+    actions:
+      destroy:
+        notice: Asiakirja poistettu onnistuneesti.
+    errors:
+      messages:
+        in_between: pitää olla %{min} ja %{max} väliltä
+        wrong_content_type: tiedostomuoto %{content_type} ei vastaa hyväksyttyjä muotoja %{accepted_content_types}

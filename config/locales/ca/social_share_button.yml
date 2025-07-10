@@ -1,0 +1,4 @@
+ca:
+  social_share_button:
+    share_to: "Compartir a %{name}"
+    email: "El teu correu electrònic"

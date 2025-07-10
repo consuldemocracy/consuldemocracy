@@ -1,0 +1,53 @@
+pt-BR:
+  community:
+    sidebar:
+      title: Comunidade
+      description:
+        proposal: Participar da comunidade de usuários desta proposta.
+        investment: Participar da comunidade de usuários deste investimento.
+      button_to_access: Acesse a comunidade
+    show:
+      title:
+        proposal: Proposta da comunidade
+        investment: Comunidade de investimento orçamentário
+      description:
+        proposal: Participe da comunidade desta proposta. Uma comunidade ativa pode ajudar a melhorar o conteúdo da proposta e aumentar sua disseminação para obter mais apoio.
+        investment: Participe da comunidade deste investimento orçamentário. Uma comunidade ativa pode ajudar a melhorar o conteúdo do investimento orçamentário e aumentar sua disseminação para obter mais apoio.
+      create_first_community_topic:
+        first_theme_not_logged_in: Nenhum tema disponível, participe criando o primeiro.
+        first_theme: Crie o primeiro tópico da comunidade
+        sub_first_theme: "Para criar um tema você precisa %{sign_in} ou %{sign_up}."
+      tab:
+        participants: Participantes
+      sidebar:
+        participate: Participar
+        new_topic: Criar tópico
+      topic:
+        edit: Editar tópico
+        destroy: Deletar tópico
+        comments:
+          zero: Nenhum comentário
+          one: 1 comentário
+          other: "%{count} comentários"
+      author: Autor
+      back: Voltar para %{community} %{proposal}
+    topic:
+      create: Criar um tópico
+      edit: Editar tópico
+      form:
+        new:
+          submit_button: Criar tópico
+        edit:
+          submit_button: Editar tópico
+        create:
+          submit_button: Criar tópico
+        update:
+          submit_button: Atualizar tópico
+      show:
+        tab:
+          comments_tab: Comentários
+      sidebar:
+        recommendations_title: Recomendações para criar um tópico
+        recommendation_one: Não escreva o título do tópico ou frases inteiras em letras maiúsculas. Na internet isso é considerado como grito. E ninguém gosta de gritos.
+        recommendation_two: Qualquer tópico ou comentário que implique uma ação ilegal será removido, assim como aqueles que pretenderem perturbar os espaços de discussão, todo o resto é permitido.
+        recommendation_three: Aproveite este espaço, ele é seu também.

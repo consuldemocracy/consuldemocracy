@@ -1,0 +1,25 @@
+<% description = local_assigns.fetch(:description, "") %>
+<% description = truncate(ActionView::Base.full_sanitizer.sanitize(description), length: 140) %>
+<% mobile = local_assigns[:mobile] %>
+<% mobile_url = mobile.present? ? "#{mobile.gsub(/\s+/, "%20")}%20" : "" %>
+<%
+  sharedUrl = '';
+  if(request.headers['X-Proxy-Management'] == 'proxy' || session[:iframed])
+    sharedUrl = Rails.application.secrets.participacion_iframe_source+'#'+ (u local_assigns[:url][local_assigns[:url].index('/',local_assigns[:url].index('//')+2) .. -1])
+  else
+    sharedUrl = local_assigns[:url]
+  end
+%>
+
+<% if local_assigns[:share_title].present? %>
+  <div id="social-share" class="sidebar-divider"></div>
+  <p class="sidebar-title"><%= share_title %></p>
+<% end %>
+<div class="social-share-full">
+  <%= social_share_button_tag("#{title} #{setting["twitter_hashtag"]} #{setting["twitter_handle"]}",
+                              url: sharedUrl,
+                              image: local_assigns.fetch(:image_url, ""),
+                              desc: description,
+                              "data-twitter-title": local_assigns[:mobile],
+                              "data-telegram-title": local_assigns[:mobile]) %>
+</div>

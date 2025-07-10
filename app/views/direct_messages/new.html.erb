@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="small-12 medium-9 column">
+    <%= back_link_to %>
+
+    <h1>
+      <%= t("users.direct_messages.new.title", receiver: @receiver.name) %>
+    </h1>
+
+    <% if not current_user %>
+      <div class="callout primary">
+        <p>
+          <%= sanitize(t("users.login_to_continue",
+            signin: link_to_signin, signup: link_to_signup)) %>
+        </p>
+      </div>
+    <% elsif not @receiver.email_on_direct_message? %>
+      <div class="callout primary">
+        <p>
+          <%= t("users.direct_messages.new.direct_messages_bloqued") %>
+        </p>
+      </div>
+    <% elsif can? :create, @direct_message %>
+      <%= form_for [@receiver, @direct_message] do |f| %>
+        <%= render "shared/errors", resource: @direct_message %>
+
+        <%= f.text_field :title %>
+        <%= f.text_area :body, rows: "3" %>
+
+        <div class="small-12 medium-4">
+          <%= f.submit t("users.direct_messages.new.submit_button"), class: "button expanded" %>
+        </div>
+      <% end %>
+    <% else %>
+      <div class="callout warning">
+        <p>
+          <%= sanitize(t("users.direct_messages.new.verified_only",
+                verify_account: link_to_verify_account)) %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+</div>

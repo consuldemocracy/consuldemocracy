@@ -1,0 +1,47 @@
+<%= back_link_to %>
+
+<h2><%= t("admin.stats.proposal_notifications.title") %></h2>
+
+<div class="stats">
+  <div class="row stats-numbers">
+    <div class="small-12 medium-3 column">
+      <p class="featured">
+        <%= t("admin.stats.proposal_notifications.total") %><br>
+        <span id="proposal_notifications_count" class="number">
+          <%= @proposal_notifications.count %>
+        </span>
+      </p>
+    </div>
+
+    <div class="small-12 medium-6 column end">
+      <p>
+        <%= t("admin.stats.proposal_notifications.proposals_with_notifications") %><br>
+        <span id="proposals_with_notifications_count" class="number">
+          <%= @proposals_with_notifications %>
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<table id="proposal_notifications">
+  <tbody>
+    <% @proposal_notifications.each do |notification| %>
+      <tr class="proposal_notification">
+        <td>
+          <h3>
+            <%= notification.title %>
+            <small>
+              <% if notification.proposal.present? %>
+                <%= link_to notification.proposal.title, proposal_path(notification.proposal) %>
+              <% else %>
+                <%= t("admin.stats.proposal_notifications.not_available") %><br>
+              <% end %>
+            </small>
+          </h3>
+          <p><%= notification.body %></p>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

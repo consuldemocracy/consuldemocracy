@@ -1,0 +1,21 @@
+<% by_question = @partial_results.group_by(&:question_id) %>
+<% @poll.questions.each do |question| %>
+  <h3><%= question.title %></h3>
+  <table class="margin">
+    <thead>
+      <tr>
+        <th><%= t("admin.results.result.table_answer") %></th>
+        <th class="text-center"><%= t("admin.results.result.table_votes") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% question.question_answers.each_with_index do |answer, i| %>
+        <% by_answer = by_question[question.id].present? ? by_question[question.id].group_by(&:answer) : {} %>
+        <tr id="question_<%= question.id %>_<%= i %>_result">
+          <td><%= answer.title %></td>
+          <td class="text-center"><%= by_answer[answer.title].present? ? by_answer[answer.title].sum(&:amount) : 0 %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

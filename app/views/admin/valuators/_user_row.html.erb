@@ -1,0 +1,14 @@
+<tr>
+  <td><%= link_to user.name, user_path(user), target: "_blank" %></td>
+  <td><%= user.email %></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>
+    <%= form_for Valuator.new(user: user), url: admin_valuators_path do |f| %>
+      <%= f.hidden_field :user_id %>
+      <%= f.submit t("admin.valuators.valuator.add"),
+                   class: "button success expanded" %>
+    <% end %>
+  </td>
+</tr>

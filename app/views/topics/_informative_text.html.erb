@@ -1,0 +1,12 @@
+<p class="lead"><%= t("community.show.create_first_community_topic.first_theme") %></p>
+
+<% if user_signed_in? %>
+  <div class="callout primary">
+    <%= t("community.show.create_first_community_topic.first_theme_not_logged_in") %>
+  </div>
+<% else %>
+  <div class="callout primary">
+    <%= sanitize(t("community.show.create_first_community_topic.sub_first_theme",
+          sign_in: link_to_signin, sign_up: link_to_signup)) %>
+  </div>
+<% end %>

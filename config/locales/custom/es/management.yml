@@ -1,0 +1,5 @@
+---
+es:
+  management:
+    document_type_label: Tipo de documento
+    document_number: Número de documento

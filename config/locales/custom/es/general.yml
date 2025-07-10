@@ -1,0 +1,66 @@
+---
+es:
+  account:
+    show:
+      back: Volver
+  codigos:
+    errors:
+      census: "El padrón no ha podido verificar tus datos, revisa los datos introducidos o contacta con el ayuntamiento."
+      form: "Revisa los datos introducidos, todos los campos son obligatorios."
+      not_found: "Se ha encontrado al usuario en el padrón pero no se ha podido obtener el código de acceso. Contacta con el servicio técnico del ayuntamiento para solucionarlo."
+    comprobation:
+      access_code: "El código de acceso del usuario es: "
+      access_with_code: El usuario puede identificarse con su código y número de documento para votar en el <a href="%{link}">siguiente enlace</a>
+  consultation:
+    codes:
+      form:
+        title: "Rellena el formulario para obtener el código de acceso del usuario"
+        accept_terms_text: "El usuario acepta %{terms_url} al Padrón"
+    dashboard:
+      index:
+        title: "Consultas"
+    header:
+      title: "Consultas"
+    menu:
+      codes: "Códigos de acceso"
+  debates:
+    index:
+      featured_debates: Destacados
+  restriction:
+    dashboard:
+      index:
+        title: Bloqueo voto presencial
+    header:
+      title: Bloqueo voto presencial
+    locked_users:
+      index:
+        submit: "Validar documento"
+  errors:
+    budget:
+      locked_user: "Ya has votado presencialmente"
+    messages:
+      document_number_and_document_type: "Numero de documento inválido"
+  layouts:
+    footer:
+      consul: aplicación CONSUL
+      description: Este portal es una adaptación de la %{consul} de %{open_source} desarrollada por el Ayuntamiento de Madrid y adaptada por el Ayuntamiento de Valladolid.
+      open_source: software libre
+      contact_us: Puedes consultar las preguntas más frecuentes de este portal en %{contact_us_url}
+      copyright: "Ayuntamiento de Valladolid, %{year}"
+      contact_us_link_text: Asistencia técnica
+      participation_title: "Participación"
+      participation_text: "Decide cómo debe ser la ciudad que quieres."
+      participation_url: "http://www.valladolid.es/participacion/es"
+      transparency_title: "Transparencia"
+      transparency_text: "Obtén cualquier información sobre la ciudad."
+      transparency_url: "http://www.valladolid.es/es/ayuntamiento/portal-transparencia"
+      open_data_title: "Datos abiertos"
+      open_data_text: "Todos los datos del Ayuntamiento son tuyos."
+      open_data_url: "http://www.valladolid.es/es/temas/hacemos/open-data-datos-abiertos"
+    header:
+      consultation: "Consultas"
+      signature_sheet_officer: "Gestión voto presencial"
+      help: "Más información"
+  omniauth:
+    finish_signup:
+      username_warning: "No es posible iniciar sesión con tu cuenta. Existe otra cuenta en el sistema verificada que impide el acceso con los datos que has introducido. Por favor utiliza la cuenta inicial."

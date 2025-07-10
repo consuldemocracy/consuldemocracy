@@ -1,0 +1,17 @@
+#Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+fi:
+  devise:
+    password_expired:
+      expire_password: "Salasana vanhentunut"
+      change_required: "Salasanasi on vanhentunut"
+      change_password: "Vaihda salasanasi"
+      new_password: "Uusi salasana"
+      updated: "Salasana päivitetty onnistuneesti"
+    confirmations:
+      confirmed: "Tilisi on vahvistettu."
+    failure:
+      already_authenticated: "Olet jo kirjautunut sisään."
+      inactive: "Tiliäsi ei ole vielä aktivoitu."
+      invalid: "Virheellinen %{authentication_keys} tai salasana."
+      locked: "Tilisi on lukittu."
+      not_found_in_database: "Virheellinen %{authentication_keys} tai salasana."

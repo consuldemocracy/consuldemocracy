@@ -1,0 +1,58 @@
+<%= back_link_to new_officing_poll_result_path(@poll) %>
+<h2><%= @poll.name %> - <%= t("officing.results.index.results") %></h2>
+
+<% if @partial_results.present? %>
+  <div class="callout primary">
+    <h3>
+      <%= @booth_assignment.booth.name %> - <%= l @partial_results.first.date, format: :long %>
+    </h3>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-9 column">
+      <table>
+        <thead>
+          <tr>
+            <th><%= t("officing.results.index.table_whites") %></th>
+            <th><%= t("officing.results.index.table_nulls") %></th>
+            <th><%= t("officing.results.index.table_total") %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="white_results"><%= @recounts.sum(:white_amount) %></td>
+            <td id="null_results"><%= @recounts.sum(:null_amount) %></td>
+            <td id="total_results"><%= @recounts.sum(:total_amount) %></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <% by_question = @partial_results.group_by(&:question_id) %>
+      <% @poll.questions.each do |question| %>
+        <h3><%= question.title %></h3>
+
+        <table>
+          <thead>
+            <tr>
+              <th><%= t("officing.results.index.table_answer") %></th>
+              <th><%= t("officing.results.index.table_votes") %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% question.question_answers.each_with_index do |answer, i| %>
+              <% by_answer = by_question[question.id].present? ? by_question[question.id].group_by(&:answer) : {} %>
+              <tr id="question_<%= question.id %>_<%= i %>_result">
+                <td><%= answer.title %></td>
+                <td><%= by_answer[answer.title].present? ? by_answer[answer.title].first.amount : 0 %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <div class="callout primary">
+    <%= t("officing.results.index.no_results") %>
+  </div>
+<% end %>

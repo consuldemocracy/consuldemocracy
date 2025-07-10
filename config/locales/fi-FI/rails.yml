@@ -1,0 +1,197 @@
+fi:
+  date:
+    abbr_day_names:
+      - Su
+      - Ma
+      - Ti
+      - Ke
+      - To
+      - Pe
+      - La
+    abbr_month_names:
+      - 
+      - Tammi
+      - Helmi
+      - Maalis
+      - Huhti
+      - Toukokuu
+      - Kesä
+      - Heinä
+      - Elo
+      - Syys
+      - Loka
+      - Marras
+      - Joulu
+    day_names:
+      - Sunnuntai
+      - Maanantai
+      - Tiistai
+      - Keskiviikko
+      - Torstai
+      - Perjantai
+      - Lauantai
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names:
+      - 
+      - Tammikuu
+      - Helmikuu
+      - Maaliskuu
+      - Huhtikuu
+      - Touko
+      - Kesäkuu
+      - Heinäkuu
+      - Elokuu
+      - Syyskuu
+      - Lokakuu
+      - Marraskuu
+      - Joulukuu
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: noin 1 tunti
+        other: noint %{count} tuntia
+      about_x_months:
+        one: noin 1 kuukausi
+        other: noin %{count} kuukautta
+      about_x_years:
+        one: noin 1 vuosi
+        other: noin %{count} vuotta
+      almost_x_years:
+        one: melkein 1 vuosi
+        other: melkein %{count} vuotta
+      half_a_minute: puoli minuuttia
+      less_than_x_minutes:
+        one: alle minuutti
+        other: alle %{count} minuuttia
+      less_than_x_seconds:
+        one: alle 1 sekunti
+        other: alle %{count} sekuntia
+      over_x_years:
+        one: yli 1 vuosi
+        other: yli %{count} vuotta
+      x_days:
+        one: 1 päivä
+        other: "%{count} päivää"
+      x_minutes:
+        one: 1 minuutti
+        other: "%{count} minuuttia"
+      x_months:
+        one: 1 kuukausi
+        other: "%{count} kuukautta"
+      x_years:
+        one: 1 vuosi
+        other: "%{count} vuotta"
+      x_seconds:
+        one: 1 sekunti
+        other: "%{count} sekuntia"
+    prompts:
+      day: Päivä
+      hour: Tunti
+      minute: Minuutti
+      month: Kuukausi
+      second: Sekuntia
+      year: Vuosi
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: on oltava hyväksytty
+      blank: ei voi olla tyhjä
+      present: on oltava tyhjä
+      confirmation: ei vastaa %{attribute}
+      empty: ei voi olla tyhjä
+      equal_to: on oltava yhtä suuri kuin %{count}
+      even: on oltava parillinen
+      exclusion: on varattu
+      greater_than: on oltava suurempi kuin %{count}
+      greater_than_or_equal_to: on oltava suurempi tai yhtä suuri kuin %{count}
+      inclusion: ei sisälly luetteloon
+      invalid: ei kelpaa
+      less_than: on oltava pienempi kuin %{count}
+      less_than_or_equal_to: on oltava pienempi tai yhtä suuri kuin %{count}
+      model_invalid: "Vahvistaminen epäonnistui: %{errors}"
+      not_a_number: ei ole numero
+      not_an_integer: on oltava kokonaisluku
+      odd: on oltava pariton
+      required: on oltava
+      taken: on jo käytössä
+      too_long:
+        one: on liian pitkä (maksimi on 1 merkki)
+        other: on liian pitkä (maksimi on %{count} merkkiä)
+      too_short:
+        one: on liian lyhyt (minimi on 1 merkki)
+        other: on liian lyhyt (minimi on %{count} merkkiä)
+      wrong_length:
+        one: on väärän pituinen (pitäisi olla 1 merkki)
+        other: on väärän pituinen (pitäisi olla %{count} merkkiä)
+      other_than: on oltava muu kuin %{count}
+    template:
+      body: "Seuraavissa kentissä oli ongelmia:"
+      header:
+        one: 1 virhe esti tämän %{model} tallentamisen
+        other: "%{count} virheettä esti tämän %{model} tallentamisen"
+  helpers:
+    select:
+      prompt: Valitse
+    submit:
+      create: Luo %{model}
+      submit: Tallenna %{model}
+      update: Päivitä %{model}
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Miljardi
+          million: Miljoona
+          quadrillion: Kvadriljoona
+          thousand: Tuhat
+          trillion: Biljoona
+      format:
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Tavu
+            other: Tavua
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
+  support:
+    array:
+      last_word_connector: ", ja "
+      two_words_connector: " ja "
+      words_connector: ", "
+  time:
+    am: aamupäivä
+    formats:
+      datetime: "%Y-%m-%d %H:%M:%S"
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+      api: "%Y-%m-%d %H"
+    pm: iltapäivä

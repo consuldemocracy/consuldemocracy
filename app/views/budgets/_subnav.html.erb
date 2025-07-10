@@ -1,0 +1,17 @@
+<div class="row margin-top">
+  <div class="small-12 column">
+    <ul class="tabs">
+      <% budget_subnav_items_for(budget).each do |item| %>
+        <% if item[:active] %>
+          <li class="tabs-title is-active">
+            <span class="show-for-sr"><%= t("shared.you_are_in") %></span>
+
+            <%= link_to item[:text], item[:url], class: "is-active" %>
+          </li>
+        <% else %>
+          <li class="tabs-title"><%= link_to item[:text], item[:url] %></li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>

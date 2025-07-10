@@ -1,0 +1,21 @@
+<div class="next-goal">
+  <div class="goal-supports">
+    <strong>
+      <%= t("dashboard.goal.target_supports",
+          count: number_with_precision(goal.required_supports,
+          delimiter: ".", precision: 0)) %>
+    </strong>
+  </div>
+
+  <div class="goal-resource">
+    <strong><%= goal.title %></strong>
+    <span class="help-text"><%= t("dashboard.goal.locked_resource") %></span>
+  </div>
+
+  <% if goal.day_offset.positive? %>
+    <div class="goal-days">
+      <strong><%= t("dashboard.goal.days", count: goal.day_offset) %></strong>
+      <span class="help-text"><%= t("dashboard.goal.ideal_time") %></span>
+    </div>
+  <% end %>
+</div>

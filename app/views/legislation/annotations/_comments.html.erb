@@ -1,0 +1,29 @@
+<% annotation.comments.roots.sort_by_most_voted.
+   limit(Legislation::Annotation::COMMENTS_PAGE_SIZE).each do |comment| %>
+  <div class="comment">
+    <div class="comment-text">
+      <p><%= truncate comment.body, length: 250 %></p>
+    </div>
+    <div class="comment-meta">
+      <div class="comment-more-info">
+        <% if comment.body.length > 250 %>
+          <div class="comment-expand">
+            <%= link_to legislation_process_draft_version_annotation_path(annotation.draft_version.process, annotation.draft_version, annotation) do %>
+              <%= t("legislation.annotations.comments.see_complete") %>
+            <% end %>
+          </div>
+        <% end %>
+        <div class="comment-replies" id="annotation-<%= annotation.id %>-comments">
+          <%= link_to legislation_process_draft_version_annotation_path(annotation.draft_version.process, annotation.draft_version, annotation, anchor: "comment_#{comment.id}") do %>
+            <%= t("legislation.annotations.comments.replies_count", count: comment.children.size) %>
+          <% end %>
+        </div>
+      </div>
+      <div class="comment-votes">
+        <div id="<%= dom_id(comment) %>_votes" class="comment-votes float-right">
+          <%= render "comments/votes", comment: comment %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

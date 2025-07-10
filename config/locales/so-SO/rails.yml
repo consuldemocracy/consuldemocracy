@@ -1,0 +1,197 @@
+so:
+  date:
+    abbr_day_names:
+      - Axad
+      - Isniin
+      - Talado
+      - Arboco
+      - Khamiis
+      - Jimce
+      - Sabti
+    abbr_month_names:
+      - 
+      - Janaayo
+      - Febarayo
+      - Marso
+      - Abril
+      - Maay
+      - Jun
+      - Luliyo
+      - Ogosto
+      - Sebtembar
+      - Oktobar
+      - Nofembar
+      - Disembar
+    day_names:
+      - Malinta Axada
+      - Malinta Isninta
+      - Malinta Taladada
+      - Malinta Arbacada
+      - Malinta Khamista
+      - Malinta Jimcaha
+      - Malinta Sabtiida
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%d%d"
+    month_names:
+      - 
+      - Janaayo
+      - Fabaraayo
+      - Marso
+      - Abril
+      - Maay
+      - Juun
+      - Luliyo
+      - Agoosto
+      - Sabteembar
+      - Oktobar
+      - Nofeembar
+      - Desenbar
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: ilaa 1 saax
+        other: ilaa %{count} sacado
+      about_x_months:
+        one: ilaa 1 biil
+        other: ilaa %{count} bilo
+      about_x_years:
+        one: ilaa halsano
+        other: ilaa %{count} sanado
+      almost_x_years:
+        one: kudhowaad%{count} sanado
+        other: kudhowaad%{count} sanado
+      half_a_minute: mis miniid
+      less_than_x_minutes:
+        one: wax ka yar hal daqiiqo
+        other: wax ka yar %{count} daqiiqo
+      less_than_x_seconds:
+        one: wax kayar hal ilbirisi
+        other: wax kayar %{count} ilbirisiyo
+      over_x_years:
+        one: in ka badan 1 sano
+        other: in ka badan %{count} sanado
+      x_days:
+        one: Hal malin
+        other: "%{count} Hal malin"
+      x_minutes:
+        one: 1 minid
+        other: "%{count} minidyo"
+      x_months:
+        one: 1bil
+        other: "%{count} bilo"
+      x_years:
+        one: 1 saano
+        other: "%{count} saano"
+      x_seconds:
+        one: 1 Ilbiriqsi
+        other: "%{count} Ilbiriqsiyo"
+    prompts:
+      day: Malin
+      hour: Sacad
+      minute: Daqiiqad
+      month: Bil
+      second: Ilbiriqsiyo
+      year: Sanad
+  errors:
+    format: "%{attribute}%{message}"
+    messages:
+      accepted: waa in la aqbala
+      blank: ma noqon karto mid madhan
+      present: waa inu bananda
+      confirmation: maciyaarin%{attribute}
+      empty: mamarnan karo
+      equal_to: waa inay la mid noqotaa%{count}
+      even: waa inay noqotaa xitaa
+      exclusion: waa la keydiyay
+      greater_than: waa inuu ka weynaadaa%{count}
+      greater_than_or_equal_to: waa inuu ka weynaadaa ama la mid yahay%{count}
+      inclusion: laguma darin liiska
+      invalid: waa mid aan sharci ahayn
+      less_than: waa inuu ka yaryahay%{count}
+      less_than_or_equal_to: waa inuu ka yaryahay ama la mid yahay%{count}
+      model_invalid: "Xaqiijinta ayaa ku fashilantay%{errors}"
+      not_a_number: mahan tiro
+      not_an_integer: waa inuu noqdaa mid dareen leh
+      odd: waa inay ahaato mid shaki leh
+      required: waa inuu jiraa
+      taken: horay ayaa loo qaaday
+      too_long:
+        one: waa mid aad u dheer (ugu badnaan waa 1 qof)
+        other: waa mid aad u dheer%{count} (ugu badnaan waa qof)
+      too_short:
+        one: waa mid aad u gaaban (ugu yaraan waa 1 qof)
+        other: waa mid aad u gaaba%{count} n (ugu yaraan waa 1 qofaf)
+      wrong_length:
+        one: waa dherer khaldan (waa inay ahaataa 1 dabeecadood)
+        other: waa dherer khaldan (waa inay ahaataa%{count} xarfaha)
+      other_than: waa inay ahaataa mid ka duwan%{count}
+    template:
+      body: "Waxaa jiray dhibaatooyin dhinacyada soo socda:"
+      header:
+        one: 1 qalad ayaa ka mamnuucday%{model} laga bilaabo kaydka
+        other: "%{count} qalad ayaa ka mamnuucday%{model} laga bilaabo kaydka"
+  helpers:
+    select:
+      prompt: Fadlaan dooro
+    submit:
+      create: Abuur%{model}
+      submit: Kaydi%{model}
+      update: Cusboneysi%{model}
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: ",."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "&"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n"
+        units:
+          billion: Bilyaan
+          million: Malyaan
+          quadrillion: Quadrillion
+          thousand: Kumanan
+          trillion: Tiriliyaan
+      format:
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%u%u"
+        units:
+          byte:
+            one: Byte
+            other: Byte
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
+  support:
+    array:
+      last_word_connector: ", iyo "
+      two_words_connector: " iyo "
+      words_connector: ", "
+  time:
+    am: ahay
+    formats:
+      datetime: "%Y-%m-%d%H:%M:%S"
+      default: "%a%d%b%Y%H:%M:%S"
+      long: "%B%d%Y%H:%M"
+      short: "%d%b%H:%M"
+      api: "%Y-%m-%d%H"
+    pm: pm

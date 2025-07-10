@@ -1,0 +1,14 @@
+<% provide :title do %>
+  <%= t("admin.header.title") %> - <%= t("admin.menu.site_customization.pages") %> - <%= @page.title %>
+<% end %>
+
+<%= back_link_to admin_site_customization_pages_path %>
+<div class="row">
+  <div class="small-12 column">
+    <h2 class="inline-block"><%= t("admin.site_customization.pages.edit.title", page_title: @page.title) %></h2>
+
+    <%= link_to t("admin.site_customization.pages.index.delete"), admin_site_customization_page_path(@page), method: :delete, class: "delete float-right" %>
+  </div>
+</div>
+
+<%= render "form" %>

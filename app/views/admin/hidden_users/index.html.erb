@@ -1,0 +1,44 @@
+<h2><%= t("admin.hidden_users.index.title") %></h2>
+<p><%= t("admin.shared.moderated_content") %></p>
+
+<%= render "shared/filter_subnav", i18n_namespace: "admin.hidden_users.index" %>
+
+<% if @users.any? %>
+  <h3 class="margin"><%= page_entries_info @users %></h3>
+
+  <table>
+    <thead>
+      <th scope="col" class="small-8"><%= t("admin.hidden_users.index.user") %></th>
+      <th scope="col"><%= t("admin.shared.actions") %></th>
+    </thead>
+    <tbody>
+    <% @users.each do |user| %>
+      <tr id="<%= dom_id(user) %>">
+        <td>
+          <p><%= link_to user.name, admin_hidden_user_path(user) %></p>
+        </td>
+
+        <td>
+          <%= link_to t("admin.actions.restore"),
+                restore_admin_hidden_user_path(user, request.query_parameters),
+                method: :put,
+                data: { confirm: t("admin.actions.confirm") },
+                class: "button hollow warning" %>
+          <% unless user.confirmed_hide? %>
+            <%= link_to t("admin.actions.confirm_hide"),
+                confirm_hide_admin_hidden_user_path(user, request.query_parameters),
+                method: :put,
+                class: "button" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate @users %>
+<% else %>
+ <div class="callout primary margin">
+    <%= t("admin.hidden_users.index.no_hidden_users") %>
+  </div>
+<% end %>

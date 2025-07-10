@@ -1,0 +1,3 @@
+$("#comments-box-<%= @annotation.id %>").replaceWith("<%= j render("comments_box", annotation: @annotation) %>").show();
+
+<%= render "comments_box_form", comment: @comment, annotation: @annotation %>

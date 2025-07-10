@@ -1,0 +1,14 @@
+<% if documents.any? %>
+  <div class="document-divider no-margin-top margin-bottom padding">
+    <div class="row">
+      <div class="small-12 column">
+        <div class="additional-document-link">
+          <p>
+            <strong><%= t("documents.additional") %></strong>
+          </p>
+          <%= render partial: "documents/additional_document", collection: documents, as: :document %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

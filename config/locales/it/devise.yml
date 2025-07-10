@@ -1,0 +1,66 @@
+#Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+it:
+  devise:
+    password_expired:
+      expire_password: "Password scaduta"
+      change_required: "La password è scaduta"
+      change_password: "Cambia la password"
+      new_password: "Nuova password"
+      updated: "Password aggiornata correttamente"
+    confirmations:
+      confirmed: "Il tuo account è stato confermato."
+      send_instructions: "Tra pochi minuti riceverai un'e-mail contenente le istruzioni su come reimpostare la password."
+      send_paranoid_instructions: "Se il tuo indirizzo email è nel nostro archivio, in pochi minuti riceverai un'e-mail contenente le istruzioni su come reimpostare la password."
+    failure:
+      already_authenticated: "Sei già iscritto."
+      inactive: "Il tuo account non è ancora stato attivato."
+      invalid: "%{authentication_keys} o password non validi."
+      locked: "Il tuo account è stato bloccato."
+      last_attempt: "Hai sono un altro tentativo prima che il tuo account sia bloccato."
+      not_found_in_database: "%{authentication_keys} o password non validi."
+      timeout: "La sessione è scaduta. Per favore accedi nuovamente per continuare."
+      unauthenticated: "È necessario eseguire il log in o registrarsi per continuare."
+      unconfirmed: "Per proseguire, per favore clicca sul link di conferma che ti abbiamo inviato via mail"
+    mailer:
+      confirmation_instructions:
+        subject: "Istruzioni di conferma"
+      reset_password_instructions:
+        subject: "Istruzioni per reimpostare la password"
+      unlock_instructions:
+        subject: "Istruzioni di sblocco"
+    omniauth_callbacks:
+      failure: "Non è stato possibile autorizzarti in quanto %{kind} perché “%{reason}”."
+      success: "Correttamente identificato come %{kind}."
+    passwords:
+      no_token: "Non è possibile accedere a questa pagina se non attraverso un link di reset password. Se ci sei arrivato tramite un link di reset password, per favore assicurati che l’URL sia completo."
+      send_instructions: "Tra qualche minuto, riceverai una email contenente le istruzioni per resettare la password."
+      send_paranoid_instructions: "Se il tuo indirizzo email è nel nostro database, tra pochi minuti riceverai un link da usare per resettare la password."
+      updated: "La password è stata cambiata con successo. Autenticazione effettuata."
+      updated_not_active: "La password è stata cambiata con successo."
+    registrations:
+      destroyed: "Arrivederci! Il tuo account è stato cancellato. Speriamo di rivederti presto."
+      signed_up: "Benvenuto! Sei stato autenticato."
+      signed_up_but_inactive: "La registrazione è avvenuta con successo, ma non è stato possibile eseguire il log in perché l’account non è ancora stato attivato."
+      signed_up_but_locked: "La registrazione è avvenuta con successo, ma non è stato possibile eseguire il log in perché l’account è bloccato."
+      signed_up_but_unconfirmed: "Ti è stato inviato un messaggio contenente un link di verifica. Per favore, clicca sul link per attivare il tuo account."
+      update_needs_confirmation: "Il tuo account è stato aggiornato correttamente; tuttavia, abbiamo bisogno di verificare il tuo nuovo indirizzo email. Per favore, controlla la tua casella di posta e clicca sul link per completare la conferma del nuovo indirizzo email."
+      updated: "Il tuo account è stato aggiornato con successo."
+    sessions:
+      signed_in: "Ti sei connesso correttamente."
+      signed_out: "Sei stato disconnesso correttamente."
+      already_signed_out: "Sei stato disconnesso correttamente."
+    unlocks:
+      send_instructions: "Tra qualche minuto riceverai una email contenente le istruzioni per sbloccare il tuo account."
+      send_paranoid_instructions: "Se disponi di un account, tra qualche minuto riceverai una email contenente le istruzioni per sbloccarlo."
+      unlocked: "Il tuo account è stato sbloccato. Per favore, accedi per continuare."
+  errors:
+    messages:
+      already_confirmed: "Hai già eseguito questa verifica; per favore, prova ad eseguire il log in."
+      confirmation_period_expired: "È necessario provvedere alla verifica entro %{period}; per favore, esegui nuovamente la richiesta."
+      expired: "è scaduto; per cortesia, ripeti la richiesta."
+      not_found: "non reperibile."
+      not_locked: "non è stato bloccato."
+      not_saved:
+        one: "1 errore ha impedito a questa %{resource} di essere salvata. Si prega di verificare i campi contrassegnati per capire come correggerli:"
+        other: "%{count} errori hanno impedito a questa %{resource} di essere salvata. Si prega di verificare i campi contrassegnati per capire come correggerli:"
+      equal_to_current_password: "deve essere diversa dalla password attuale."

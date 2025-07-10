@@ -1,0 +1,9 @@
+<% if documents.any? %>
+  <div id="documents" class="documents">
+    <h2><%= t("documents.title") %>&nbsp;<span>(<%= documents.count %>)</span></h2>
+
+    <ul class="no-bullet document-link">
+      <%= render partial: "documents/document", collection: documents %>
+    </ul>
+  </div>
+<% end %>

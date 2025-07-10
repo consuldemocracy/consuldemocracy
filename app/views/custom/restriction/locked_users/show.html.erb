@@ -1,0 +1,13 @@
+<h2><%= t("restriction.locked_users.show.title") %></h2>
+
+
+<h3 class="inline-block"><%= @locked_user.budget.name %></h2>
+
+<h3 id="document_count" class="block">
+  <%= t("restriction.locked_users.document") %>
+  <%= humanize_document_type(@locked_user.document_type) %> / <%= @locked_user.document_number %>
+</h3>
+
+<div data-alert class="callout success">
+  <%= t("restriction.locked_users.user_locked") %>
+</div>

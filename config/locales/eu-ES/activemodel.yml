@@ -1,0 +1,22 @@
+eu:
+  activemodel:
+    models:
+      verification:
+        residence: "Bizilekua"
+        sms: "SMS"
+    attributes:
+      verification:
+        residence:
+          document_type: "Agiri mota"
+          document_number: "Dokumentu zenbakia (letrak barne)"
+          date_of_birth: "Jaiotze data"
+          postal_code: "Posta-kodea"
+        sms:
+          phone: "Telefonoa"
+          confirmation_code: "Konfirmazio kodea"
+        email:
+          recipient: "E-mail"
+      officing/residence:
+        document_type: "Agiri mota"
+        document_number: "Dokumentu zenbakia (letrak barne)"
+        year_of_birth: "Jaiotako urtea"

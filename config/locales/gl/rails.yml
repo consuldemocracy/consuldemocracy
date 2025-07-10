@@ -1,0 +1,197 @@
+gl:
+  date:
+    abbr_day_names:
+      - dom
+      - lun
+      - mar
+      - mér
+      - xov
+      - ven
+      - sáb
+    abbr_month_names:
+      - 
+      - xan
+      - feb
+      - mar
+      - abr
+      - maio
+      - xuñ
+      - xul
+      - ago
+      - set
+      - out
+      - nov
+      - dec
+    day_names:
+      - domingo
+      - luns
+      - martes
+      - mércores
+      - xoves
+      - venres
+      - sábado
+    formats:
+      default: "%d/%m/%Y"
+      long: "%d de %B de %Y"
+      short: "%d de %b"
+    month_names:
+      - 
+      - xaneiro
+      - febreiro
+      - marzo
+      - abril
+      - Mai
+      - xuño
+      - xullo
+      - agosto
+      - setembro
+      - outubro
+      - novembro
+      - decembro
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: arredor de 1 hora
+        other: arredor de %{count} horas
+      about_x_months:
+        one: arredor de 1 mes
+        other: arredor de %{count} meses
+      about_x_years:
+        one: arredor de 1 ano
+        other: arredor de %{count} anos
+      almost_x_years:
+        one: case 1 ano
+        other: case %{count} anos
+      half_a_minute: medio minuto
+      less_than_x_minutes:
+        one: menos de 1 minuto
+        other: menos de %{count} minutos
+      less_than_x_seconds:
+        one: menos de 1 segundo
+        other: menos de %{count} segundos
+      over_x_years:
+        one: máis de 1 ano
+        other: máis de %{count} anos
+      x_days:
+        one: 1 día
+        other: "%{count} días"
+      x_minutes:
+        one: 1 minuto
+        other: "%{count} minutos"
+      x_months:
+        one: 1 mes
+        other: "%{count} meses"
+      x_years:
+        one: 1 ano
+        other: "%{count} anos"
+      x_seconds:
+        one: 1 segundo
+        other: "%{count} segundos"
+    prompts:
+      day: Día
+      hour: Hora
+      minute: Minutos
+      month: Mes
+      second: Segundos
+      year: Ano
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: debe ser aceptado
+      blank: non pode estar en branco
+      present: debe estar en branco
+      confirmation: non coincide %{attribute}
+      empty: non pode estar baleiro
+      equal_to: debe ser igual a %{count}
+      even: debe ser par
+      exclusion: está reservado
+      greater_than: debe ser maior que %{count}
+      greater_than_or_equal_to: debe ser maior que ou igual a %{count}
+      inclusion: non está incluído na lista
+      invalid: non é válido
+      less_than: debe ser menor que %{count}
+      less_than_or_equal_to: debe ser menor que ou igual a %{count}
+      model_invalid: "Erro de validación: %{errors}"
+      not_a_number: non é un número
+      not_an_integer: debe ser un enteiro
+      odd: debe ser impar
+      required: debe existir
+      taken: xa está en uso
+      too_long:
+        one: demasiado longo (o máximo é 1 carácter)
+        other: é moi longo (máximo %{count} caracteres)
+      too_short:
+        one: é moi curto (mínimo 1 carácter)
+        other: é moi curto (mínimo %{count} caracteres)
+      wrong_length:
+        one: a lonxitude non é correcta (ten de ter 1 carácter)
+        other: a lonxitude non é correcta (ten de ter %{count} caracteres)
+      other_than: debe ser distinto de %{count}
+    template:
+      body: "Houbo problemas cos seguintes campos:"
+      header:
+        one: Non se puido gardar este/a %{model} porque se atopou 1 erro
+        other: "Non se puido gardar este/a %{model} porque se atoparon %{count} erros"
+  helpers:
+    select:
+      prompt: Por favor seleccione
+    submit:
+      create: Crear %{model}
+      submit: Gardar %{model}
+      update: Actualizar %{model}
+  number:
+    currency:
+      format:
+        delimiter: "."
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "€"
+    format:
+      delimiter: "."
+      precision: 1
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: mil millóns
+          million: millón
+          quadrillion: mil billóns
+          thousand: mil
+          trillion: billón
+      format:
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
+  support:
+    array:
+      last_word_connector: " e "
+      two_words_connector: " e "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      datetime: "%d/%m/%Y %H:%M:%S"
+      default: "%A, %d de %B de %Y %H:%M:%S %z"
+      long: "%d de %B de %Y %H:%M"
+      short: "%d de %b %H:%M"
+      api: "%d/%m/%Y %H"
+    pm: pm

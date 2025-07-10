@@ -1,0 +1,20 @@
+files:
+  - source: /config/locales/en/**.yml
+    translation: /config/locales/%locale%/%original_file_name%
+    ignore:
+      - /config/locales/**/rails_date_order.yml
+    update_option: update_without_changes
+    languages_mapping:
+      locale:
+        ar: ar
+        ast: ast
+        ca: ca
+        es-ES: es
+        fr: fr
+        gl: gl
+        he: he
+        it: it
+        nl: nl
+        pt-PT: pt
+        ru: ru
+        val-ES: val

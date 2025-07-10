@@ -1,0 +1,68 @@
+es:
+  valuation:
+    header:
+      title: Evaluación
+    menu:
+      title: Evaluación
+      budgets: Presupuestos participativos
+    budgets:
+      index:
+        title: Presupuestos participativos
+        filters:
+          current: Abiertos
+          finished: Terminados
+        table_name: Nombre
+        table_phase: Fase
+        table_assigned_investments_valuation_open: Prop. Inv. asignadas en evaluación
+        table_actions: Acciones
+        evaluate: Evaluar
+        no_budgets: "No hay presupuestos"
+    budget_investments:
+      index:
+        headings_filter_all: Todas las partidas
+        filters:
+          valuation_open: Abiertas
+          valuating: En evaluación
+          valuation_finished: Evaluación finalizada
+        assigned_to: "Asignadas a %{valuator}"
+        title: Proyectos de gasto
+        edit: Editar informe
+        table_id: ID
+        table_title: Título
+        table_heading_name: Nombre de la partida
+        table_actions: Acciones
+        no_investments: "No hay proyectos de gasto."
+      show:
+        back: Volver
+        title: Proyecto de gasto
+        info: Datos de envío
+        by: Enviada por
+        sent: Fecha de creación
+        heading: Partida
+        dossier: Informe
+        edit_dossier: Editar informe
+        price: Coste
+        price_first_year: Coste en el primer año
+        currency: "€"
+        feasibility: Viabilidad
+        feasible: Viable
+        unfeasible: Inviable
+        undefined: Sin definir
+        valuation_finished: Informe finalizado
+        duration: Plazo de ejecución
+        responsibles: Responsables
+        assigned_admin: Administrador asignado
+        assigned_valuators: Evaluadores asignados
+        preview: Vista previa de presupuesto
+      edit:
+        dossier: Informe
+        price: "Coste (%{currency}) <small>(dato público)</small>"
+        price_first_year: "Coste en el primer año (%{currency}) <small>(opcional, dato no público)</small>"
+        feasibility: Viabilidad
+        valuation_finished_alert: "¿Estás seguro/a de querer marcar este informe como completado? Una vez hecho, no se puede deshacer la acción."
+        not_feasible_alert: "Un email será enviado inmediatamente al autor del proyecto con el informe de inviabilidad."
+        save: Guardar cambios
+      notice:
+        valuate: "Dossier actualizado"
+      valuation_comments: Comentarios de evaluación
+      not_in_valuating_phase: Los proyectos sólo pueden ser evaluados cuando el Presupuesto esté en fase de evaluación

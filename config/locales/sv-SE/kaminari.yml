@@ -1,0 +1,22 @@
+sv:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: Inlägg
+        one: Inlägg
+        other: Inlägg
+      more_pages:
+        display_entries: Visar <strong>%{first}&nbsp;-&nbsp;%{last}</strong> av <strong>%{total} %{entry_name}</strong>
+      one_page:
+        display_entries:
+          zero: "%{entry_name} kan inte hittas"
+          one: Det finns <strong>1 %{entry_name}</strong>
+          other: Det finns <strong>%{count} %{entry_name}</strong>
+  views:
+    pagination:
+      current: Du är på sidan
+      first: Första
+      last: Sista
+      next: Kommande
+      previous: Föregående
+      truncate: "&hellip;"

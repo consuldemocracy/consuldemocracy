@@ -1,0 +1,66 @@
+#Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+sq:
+  devise:
+    password_expired:
+      expire_password: "Fjalëkalimi ka skaduar"
+      change_required: "Fjalëkalimi juaj ka skaduar"
+      change_password: "Ndrysho fjalëkalimin tënd"
+      new_password: "Fjalëkalim i ri"
+      updated: "Fjalëkalimi u përditësua"
+    confirmations:
+      confirmed: "Llogaria jote është konfirmuar."
+      send_instructions: "Në pak minuta do të merrni një email që përmban udhëzime se si të rivendosni fjalëkalimin tuaj."
+      send_paranoid_instructions: "Nëse adresa juaj e e-mail është në bazën tonë të të dhënave, brenda pak minutash do të merrni një email që përmban udhëzime se si të rivendosni fjalëkalimin tuaj."
+    failure:
+      already_authenticated: "Ju tashmë jeni të regjistruar."
+      inactive: "Llogaria jote ende nuk është aktivizuar."
+      invalid: "%{authentication_keys}i  gabuar ose fjalëkalim."
+      locked: "Llogaria juaj është bllokuar."
+      last_attempt: "Ju keni dhe një mundësi tjetër  para se bllokohet llogaria juaj."
+      not_found_in_database: "%{authentication_keys}i  gabuar ose fjalëkalim."
+      timeout: "Sesioni yt ka skaduar. Identifikohu përsëri për të vazhduar."
+      unauthenticated: "Duhet të identifikohesh ose të regjistrohesh për të vazhduar."
+      unconfirmed: "Për të vazhduar, ju lutemi klikoni në lidhjen e konfirmimit që ne ju kemi dërguar përmes emailit."
+    mailer:
+      confirmation_instructions:
+        subject: "Udhëzimet e konfirmimit"
+      reset_password_instructions:
+        subject: "Udhëzime për rivendosjen e fjalëkalimit tuaj"
+      unlock_instructions:
+        subject: "Udhëzimet e Zhbllokimit"
+    omniauth_callbacks:
+      failure: "Nuk ka qenë e mundur të ju  autorizojmë si %{kind} sepse \"%{reason}\"."
+      success: "Identifikuar me sukses si %{kind}."
+    passwords:
+      no_token: "Ju nuk mund të hyni në këtë faqe përveçse përmes një lidhje të rivendosjes së fjalëkalimit. Nëse e keni vizituar atë përmes një lidhje të rivendosjes së fjalëkalimit, kontrolloni nëse URL është e plotë."
+      send_instructions: "Në pak minuta do të merrni një email që përmban udhëzime se si të rivendosni fjalëkalimin tuaj."
+      send_paranoid_instructions: "Nëse adresa juaj e e-mail është në bazën tonë të të dhënave, brenda pak minutash do të merrni një email që përmban udhëzime se si të rivendosni fjalëkalimin tuaj."
+      updated: "Fjalëkalimi juaj është ndryshuar me sukses. Autentifikimi është i suksesshëm."
+      updated_not_active: "Fjalëkalimi juaj është ndryshuar me sukses."
+    registrations:
+      destroyed: "Mirupafshim! Llogaria jote është anuluar. Shpresojmë t'ju shohim së shpejti."
+      signed_up: "Mirë se vini! Ju jeni autorizuar."
+      signed_up_but_inactive: "Regjistrimi juaj ishte i suksesshëm, por nuk mund të identifikohesh, sepse llogaria jote nuk është aktivizuar."
+      signed_up_but_locked: "Regjistrimi juaj ishte i suksesshëm, por nuk mund të identifikohesh, sepse llogaria jote është e kycur."
+      signed_up_but_unconfirmed: "Ju kemi dërguar një mesazh që përmban një lidhje verifikimi. Ju lutemi klikoni në këtë link për të aktivizuar llogarinë tuaj."
+      update_needs_confirmation: "Llogaria juaj është përditësuar me sukses; megjithatë, ne duhet të verifikojmë adresën tuaj të re të postës elektronike. Ju lutemi kontrolloni email-in tuaj dhe klikoni në linkun për të përfunduar konfirmimin e adresës tuaj të re të postës elektronike."
+      updated: "Llogaria juaj është përditësuar me sukses."
+    sessions:
+      signed_in: "Ju jeni kycur me sukses."
+      signed_out: "Ju jeni c'kycur me sukses."
+      already_signed_out: "Ju jeni c'kycur me sukses."
+    unlocks:
+      send_instructions: "Në pak minuta do të merrni një email që përmban udhëzime se si të zhbllokoni llogarinë tuaj."
+      send_paranoid_instructions: "Nëse ke një llogari, në pak minuta do të marrësh një email që përmban udhëzime për zhbllokimin e llogarisë tënde."
+      unlocked: "Llogaria juaj është hapur. Identifikohu për të vazhduar."
+  errors:
+    messages:
+      already_confirmed: "Ju tashmë jeni verifikuar; lutemi të përpiqeni të identifikohesh."
+      confirmation_period_expired: "Duhet të verifikohesh brenda %{period}; ju lutemi bëni një kërkesë të përsëritur."
+      expired: "ka skaduar; ju lutemi bëni një kërkesë të përsëritur."
+      not_found: "nuk u gjet."
+      not_locked: "nuk u mbyll."
+      not_saved:
+        one: "1 gabim e pengoi këtë %{resource} pë tu ruajtur. Ju lutemi kontrolloni fushat e shënuara për të ditur se si t'i korrigjoni ato:"
+        other: "%{count} 1 gabim e pengoi këtë %{resource} pë tu ruajtur. Ju lutemi kontrolloni fushat e shënuara për të ditur se si t'i korrigjoni ato:"
+      equal_to_current_password: "duhet të jetë ndryshe nga fjalëkalimi aktual."

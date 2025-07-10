@@ -1,0 +1,22 @@
+<% description = local_assigns[:social_description] || setting["meta_description"] %>
+<% description = truncate(ActionView::Base.full_sanitizer.sanitize(description), length: 140) %>
+<!-- Twitter -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="<%= setting["twitter_handle"] %>" />
+<meta name="twitter:title" content="<%= local_assigns[:social_title] || setting["meta_title"] %>" />
+<meta name="twitter:description" content="<%= description %>" />
+<meta name="twitter:image" content="<%= root_url + (local_assigns[:twitter_image_url] || "social_media_icon_twitter.png") %>" />
+<!-- Facebook OG -->
+<meta id="ogtitle" property="og:title" content="<%= local_assigns[:social_title] || setting["meta_title"] %>" />
+<% if setting["url"] %>
+  <meta property="article:publisher" content="<%= setting["url"] %>" />
+<% end %>
+<% if setting["facebook_handle"] %>
+  <meta property="article:author" content="https://www.facebook.com/<%= setting["facebook_handle"] %>" />
+<% end %>
+<meta property="og:type" content="article" />
+<meta id="ogurl" property="og:url" content="<%= social_url %>" />
+<meta id="ogimage" property="og:image" content="<%= root_url + (local_assigns[:og_image_url] || "social_media_icon.png") %>" />
+<meta property="og:site_name" content="<%= setting["org_name"] %>" />
+<meta id="ogdescription" property="og:description" content="<%= description %>" />
+<meta property="fb:app_id" content="<%= Rails.application.secrets.facebook_key %>" />

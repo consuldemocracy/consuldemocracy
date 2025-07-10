@@ -1,0 +1,46 @@
+<div class="small-12 medium-6 column <%= key %> ">
+  <div class="card small-centered <%= key %>-inner">
+
+    <h3><%= t("welcome.recommended.#{key.underscore}.title") %></h3>
+
+    <div class="orbit" role="region" data-orbit data-use-m-u-i="false" data-timer-delay="4000">
+      <div class="orbit-wrapper">
+
+        <ul class="orbit-container no-bullet" tabindex="0">
+          <% recommendeds.each_with_index do |recommended, index| %>
+
+            <li class="orbit-slide <%= is_active_class(index) %>" data-slide="<%= index %>" style="position: relative; <%= slide_display(index) %>" aria-live="polite">
+              <div class="card">
+                <%= render_recommendation_image(recommended, image_default) %>
+                <div class="card-section">
+                  <%= link_to recommended_path(recommended) do %>
+                    <h4 class="truncate-horizontal-text"><%= recommended.title %></h4>
+                  <% end %>
+                  <%= wysiwyg(recommended.description) %>
+                </div>
+              </div>
+            </li>
+
+          <% end %>
+        </ul>
+        <div class="truncate"></div>
+
+      </div>
+
+      <div class="orbit-bullets">
+        <% recommendeds.each_with_index do |recommended, index| %>
+          <button class="<%= is_active_class(index) %>"
+                  title="<%= t("welcome.recommended.slide", title: recommended.title) %>"
+                  data-slide="<%= index %>">
+            <span class="show-for-sr">
+              <%= t("welcome.recommended.slide", title: recommended.title) %>
+            </span>
+          </button>
+        <% end %>
+      </div>
+
+    </div>
+
+  </div>
+  <%= link_to btn_text_link, btn_path_link %>
+</div>

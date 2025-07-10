@@ -1,0 +1,21 @@
+<%= back_link_to %>
+
+<h2><%= t("admin.stats.direct_messages.title") %></h2>
+
+<div class="stats">
+  <div class="row stats-numbers">
+    <div class="small-12 medium-3 column">
+      <p class="featured">
+        <%= t("admin.stats.direct_messages.total") %><br>
+        <span id="direct_messages_count" class="number"><%= @direct_messages %></span>
+      </p>
+    </div>
+
+    <div class="small-12 medium-6 column end">
+      <p>
+        <%= t("admin.stats.direct_messages.users_who_have_sent_message") %><br>
+        <span id="users_who_have_sent_message_count" class="number"><%= @users_who_have_sent_message %></span>
+      </p>
+    </div>
+  </div>
+</div>

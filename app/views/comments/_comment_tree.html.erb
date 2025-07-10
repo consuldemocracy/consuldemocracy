@@ -1,0 +1,53 @@
+<% commentable = comment_tree.commentable %>
+<% valuation = local_assigns.fetch(:valuation, false) %>
+<% allow_comments = local_assigns.fetch(:allow_comments, true) %>
+<% admin_layout = local_assigns.fetch(:admin_layout, false) %>
+<% cache [locale_and_user_status, comment_tree.order, commentable_cache_key(commentable), comment_tree.comments, comment_tree.comment_authors, commentable.comments_count, comment_flags, admin_layout] do %>
+  <section class="expanded comments">
+    <div class="row">
+      <div id="comments" class="small-12 column">
+        <% if display_comments_count %>
+          <h2>
+            <%= comment_tree_title_text(commentable) %>
+            <span class="js-comments-count">(<%= commentable.comments_count %>)</span>
+          </h2>
+        <% end %>
+
+        <%= render "shared/wide_order_selector", i18n_namespace: "comments" %>
+
+        <% if user_signed_in? %>
+          <% if comments_closed_for_commentable?(commentable) %>
+            <br>
+            <div data-alert class="callout primary">
+              <%= comments_closed_text(commentable) %>
+            </div>
+          <% elsif require_verified_resident_for_commentable?(commentable, current_user) %>
+            <br>
+            <div data-alert class="callout primary">
+              <%= sanitize(t("comments.verified_only", verify_account: link_to_verify_account)) %>
+            </div>
+          <% elsif allow_comments %>
+            <%= render "comments/form", { commentable: commentable,
+                                          parent_id: nil,
+                                          toggeable: false,
+                                          valuation: valuation } %>
+          <% end %>
+        <% else %>
+          <br>
+          <%= render "shared/login_to_comment" %>
+        <% end %>
+
+        <% comment_tree.root_comments.each do |comment| %>
+          <%= render "comments/comment", { comment: comment,
+                                           comment_flags: comment_flags,
+                                           valuation: valuation,
+                                           allow_votes: !valuation,
+                                           allow_actions: !valuation,
+                                           allow_comments: allow_comments,
+                                           admin_layout: admin_layout } %>
+        <% end %>
+        <%= paginate comment_tree.root_comments %>
+      </div>
+    </div>
+  </section>
+<% end %>

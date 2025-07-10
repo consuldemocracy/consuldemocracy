@@ -1,0 +1,197 @@
+pt-BR:
+  date:
+    abbr_day_names:
+      - Dom
+      - Seg
+      - Ter
+      - Qua
+      - Qui
+      - Sex
+      - Sab
+    abbr_month_names:
+      - 
+      - Jan
+      - Fev
+      - Mar
+      - Abr
+      - Maio
+      - Jun
+      - Jul
+      - Ago
+      - Set
+      - Out
+      - Nov
+      - Dez
+    day_names:
+      - Domingo
+      - Segunda-feira
+      - Terça-feira
+      - Quarta-feira
+      - Quinta-feira
+      - Sexta-feira
+      - Sábado
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names:
+      - 
+      - Janeiro
+      - Fevereiro
+      - Março
+      - Abril
+      - Mai
+      - Junho
+      - Julho
+      - Agosto
+      - Setembro
+      - Outubro
+      - Novembro
+      - Dezembro
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: aproximadamente uma hora
+        other: aproximadamente %{count} horas
+      about_x_months:
+        one: aproximadamente um mês
+        other: aproximadamente %{count} meses
+      about_x_years:
+        one: aproximadamente um ano
+        other: aproximadamente %{count} anos
+      almost_x_years:
+        one: quase um ano
+        other: quase %{count} anos
+      half_a_minute: meio minuto
+      less_than_x_minutes:
+        one: menos de um minuto
+        other: menos de %{count} minutos
+      less_than_x_seconds:
+        one: menos de um segundo
+        other: menos de %{count} segundos
+      over_x_years:
+        one: mais de um ano
+        other: mais de %{count} anos
+      x_days:
+        one: um dia
+        other: "%{count} dias"
+      x_minutes:
+        one: um minuto
+        other: "%{count} minutos"
+      x_months:
+        one: um mês
+        other: "%{count} meses"
+      x_years:
+        one: um ano
+        other: "%{count} anos"
+      x_seconds:
+        one: um segundo
+        other: "%{count} segundos"
+    prompts:
+      day: Dia
+      hour: Hora
+      minute: Minuto
+      month: Mês
+      second: Segundos
+      year: Ano
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: deve ser aceito
+      blank: não pode estar em branco
+      present: deve estar em branco
+      confirmation: não combina com %{attribute}
+      empty: não pode estar vazio
+      equal_to: deve ser igual a %{count}
+      even: deve ser par
+      exclusion: está reservado
+      greater_than: deve ser maior que %{count}
+      greater_than_or_equal_to: deve ser maior ou igual a %{count}
+      inclusion: não está incluído na lista
+      invalid: é inválido
+      less_than: deve ser menor que %{count}
+      less_than_or_equal_to: deve ser menor ou igual a %{count}
+      model_invalid: "Validação falhou: %{errors}"
+      not_a_number: não é um número
+      not_an_integer: deve ser um número inteiro
+      odd: deve ser ímpar
+      required: deve existir
+      taken: já foi escolhido
+      too_long:
+        one: é muito longo (o máximo é 1 caractere)
+        other: é muito longo (o máximo é %{count} caracteres)
+      too_short:
+        one: é muito curto (mínimo é 1 caractere)
+        other: é muito curto (mínimo é %{count} caracteres)
+      wrong_length:
+        one: comprimento errado (deve ter 1 caractere)
+        other: comprimento errado (deve ter %{count} caracteres)
+      other_than: deve ser maior que %{count}
+    template:
+      body: "Houve problemas com os seguintes campos:"
+      header:
+        one: 1 erro impediu este %{model} de ser salvo
+        other: "%{count} erro impediu este %{model} de ser salvo"
+  helpers:
+    select:
+      prompt: Por favor selecione
+    submit:
+      create: Criar %{model}
+      submit: Salve %{model}
+      update: Atualizar %{model}
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Bilhão
+          million: Milhão
+          quadrillion: Quadrilhão
+          thousand: Mil
+          trillion: Trilhão
+      format:
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
+  support:
+    array:
+      last_word_connector: ", e "
+      two_words_connector: " e "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      datetime: "%Y-%m-%d %H:%M:%S"
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+      api: "%Y-%m-%d %H"
+    pm: pm

@@ -1,0 +1,43 @@
+<div class="verification account row">
+  <div class="small-12 column">
+
+    <%= back_link_to account_path, t("verification.back") %>
+
+    <h1><%= t("verification.verified_user.show.title") %></h1>
+
+    <p><%= t("verification.verified_user.show.explanation") %></p>
+
+    <% if @verified_users.map(&:email).any? %>
+      <h2><%= t("verification.verified_user.show.email_title") %></h2>
+      <ul class="verification-list">
+        <% @verified_users.each do |verified_user| %>
+          <% if verified_user.email.present? %>
+            <li id="<%= dom_id(verified_user) %>_email">
+                <span><%= mask_email(verified_user.email) %></span>
+                <span><%= render "form", url: email_path, verified_user: verified_user %></span>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <% if @verified_users.map(&:phone).any? %>
+      <h2><%= t("verification.verified_user.show.phone_title") %></h2>
+      <ul class="verification-list">
+        <% @verified_users.each do |verified_user| %>
+          <% if verified_user.phone.present? %>
+            <li id="<%= dom_id(verified_user) %>_phone" class="float-left">
+              <span><%= mask_phone(verified_user.phone) %></span>
+              <span><%= render "form", url: sms_path, verified_user: verified_user %></span>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <div class="margin clear">
+      <%= link_to t("verification.verified_user.show.use_another_phone"), new_sms_path %>
+    </div>
+
+  </div>
+</div>

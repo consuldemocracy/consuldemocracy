@@ -1,0 +1,68 @@
+#Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+he:
+  devise:
+    password_expired:
+      expire_password: "הסיסמה פגה"
+      change_required: "תוקף סיסמתך פג"
+      change_password: "שנה את הסיסמה"
+      new_password: "סיסמה חדשה"
+      updated: "הסיסמה עודכנה בהצלחה"
+    confirmations:
+      confirmed: "חשבונך אושר בהצלחה. כעת הנך מחובר/ת."
+      send_instructions: "בדקות הקרובות יגיע אליך אימייל עם הנחיות כיצד לאשר את הרשמתך."
+      send_paranoid_instructions: "אם כתובת הדואר האלקטרוני שלך נמצאת במאגר שלנו, בעוד כמה דקות תקבל הודעת דוא\"ל המכילה הוראות כיצד לאפס את סיסמתך."
+    failure:
+      already_authenticated: "אתה כבר מחובר."
+      inactive: "חשבונך טרם הופעל."
+      invalid: "שגוי %{authentication_keys} או סיסמה."
+      locked: "חשבונך נחסם."
+      last_attempt: "יש עוד ניסיון אחד לפני שהחשבון שלך יחסם."
+      not_found_in_database: "שגוי %{authentication_keys} או סיסמה."
+      timeout: "זמן החיבור שלך תם, התחבר שוב בכדי להמשיך."
+      unauthenticated: "עליך להתחבר או להירשם כדי להמשיך."
+      unconfirmed: "כדי להמשיך, לחץ על קישור האישור ששלחנו אליך בדוא\"ל"
+    mailer:
+      confirmation_instructions:
+        subject: "הסבר להוראות האישור"
+      reset_password_instructions:
+        subject: "הוראות לאיפוס סיסמתך"
+      unlock_instructions:
+        subject: "הסבר לשחרור מנעילה"
+    omniauth_callbacks:
+      failure: "לא ניתן היה לאשר אותך בתור%{kind} מכיוון ש-%{reason}."
+      success: "זוהה בהצלחה כ-%{kind}."
+    passwords:
+      no_token: "לא ניתן לגשת לדף זה אלא באמצעות קישור לאיפוס סיסמה. אם יש לך גישה אליו באמצעות קישור לאיפוס סיסמה, ודא שכתובת האתר מלאה."
+      send_instructions: "בדקות הקרובות יגיע אליך אימייל עם הנחיות כיצד לאפס את סיסמתך."
+      send_paranoid_instructions: "אם כתובת הדואר האלקטרוני שלך נמצאת במאגר שלנו, בעוד כמה דקות תקבל הודעת דוא\"ל המכילה הוראות כיצד לאפס את סיסמתך."
+      updated: "סיסמתך שונתה בהצלחה. האימות הצליח."
+      updated_not_active: "סיסמתך שונתה בהצלחה."
+    registrations:
+      destroyed: "הֱיה שלום! החשבון שלך בוטל. אנחנו מקווים לראותך שוב בקרוב."
+      signed_up: "נרשמת בהצלחה, האימות שלך אושר."
+      signed_up_but_inactive: "ההרשמה בוצעה בהצלחה, אך לא ניתן להיכנס משום שחשבונך טרם הופעל."
+      signed_up_but_locked: "ההרשמה בוצעה בהצלחה, אך לא ניתן להיכנס משום שחשבונך נעול."
+      signed_up_but_unconfirmed: "נשלחה אליך הודעה המכילה קישור לאימות. לחץ על קישור זה כדי להפעיל את חשבונך."
+      update_needs_confirmation: "החשבון שלך עודכן בהצלחה; עם זאת, עלינו לאמת את כתובת הדוא\"ל החדשה שלך. בדוק את הדוא\"ל שלך ולחץ על הקישור כדי להשלים את האישור של כתובת הדוא\"ל החדשה שלך."
+      updated: "חשבונך עודכן בהצלחה."
+    sessions:
+      signed_in: "התחברת בהצלחה"
+      signed_out: "התנתקת בהצלחה."
+      already_signed_out: "התנתקת בהצלחה."
+    unlocks:
+      send_instructions: "בדקות הקרובות יישלח אליך אימייל עם הנחיות כיצד להסיר את הנעילה מחשבונך."
+      send_paranoid_instructions: "אם יש לך חשבון, תוך מספר דקות תקבל הודעת דוא\"ל המכילה הוראות לביטול הנעילה של חשבונך."
+      unlocked: "הנעילה הוסרה בהצלחה. התחבר בכדי להמשיך."
+  errors:
+    messages:
+      already_confirmed: "החשבון כבר אומת; נסה להיכנס."
+      confirmation_period_expired: "חשבונך צריך להיות מופעל בתוך מסגרת הזמן %{period}; אנא חזור על הבקשה."
+      expired: "הזמן פג, אנא חזור על הבקשה."
+      not_found: "לא נמצא."
+      not_locked: "אינו נעול."
+      not_saved:
+        one: "שגיאה אחת מנעה את שמירת ה- %{resource}. בדוק את השדות המסומנים כדי לדעת כיצד לתקן אותם:"
+        two: "%{count} שגיאות מנעו את שמירת ה- %{resource}. בדוק את השדות המסומנים כדי לדעת כיצד לתקן אותם:"
+        many: "%{count} שגיאות מנעו את שמירת ה- %{resource}. בדוק את השדות המסומנים כדי לדעת כיצד לתקן אותם:"
+        other: "%{count} שגיאות מנעו את שמירת ה- %{resource}. בדוק את השדות המסומנים כדי לדעת כיצד לתקן אותם:"
+      equal_to_current_password: "צריכה להיות שונה מהסיסמא הנוכחית."

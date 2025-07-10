@@ -1,0 +1,11 @@
+<% can_display_html = %w[ debates.index.section_footer.description debates.index.section_footer.help_text_1 debates.index.section_footer.help_text_2 legislation.processes.index.section_footer.description budgets.index.section_footer.description polls.index.section_footer.description proposals.index.section_footer.description ] %>
+
+<% globalize(locale) do %>
+  <%= hidden_field_tag "contents[content_#{content.key}][id]", content.key %>
+  <%= text_area_tag "contents[content_#{content.key}]values[value_#{locale}]",
+                    translation_for_locale(content, locale) || t(content.key, locale: locale),
+                    rows: 5,
+                    class: (can_display_html.include?(content.key) ? "js-globalize-attribute html-area admin" : "js-globalize-attribute"),
+                    style: site_customization_display_translation_style(locale),
+                    data:  { locale: locale } %>
+<% end %>

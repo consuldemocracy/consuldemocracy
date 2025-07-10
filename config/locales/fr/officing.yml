@@ -1,0 +1,86 @@
+fr:
+  officing:
+    header:
+      title: Votes
+    dashboard:
+      index:
+        title: Bureaux de vote
+        info: Ici vous pouvez valider les documents des utilisateurs et enregistrer les résultats des votes
+        no_shifts: Vous n'avez pas de votes à superviser aujourd'hui.
+    menu:
+      voters: Valider le document
+      total_recounts: Dépouillements finaux et résultats
+    polls:
+      final:
+        title: Liste des votes finaux
+        no_polls: Vous n'êtes responsable d'aucun dépouillement final pour aucun des votes actifs
+        select_poll: Sélectionner un vote
+        add_results: Ajouter les résultats
+    poll_budgets:
+      see_ballot_sheets: Voir la liste de feuilles de bulletin de vote
+      index:
+        title: "%{poll_budget} - liste des feuilles de bulletin de vote"
+        ballot_sheet: "Bulletin de vote %{id}"
+        ballot_sheet_name: Nom
+        ballot_sheet_author: Auteur
+        ballot_sheet_creation_date: Date de création
+        empty_results: Il n’y a pas encore de feuille de bulletins de vote pour ce sondage
+      new:
+        title: "%{poll_budget} - Nouvelle feuille de bulletins de vote"
+        booth: Bureau de vote
+        select_booth: Sélectionner un bureau de vote
+        csv_data: Données CSV
+        submit: Sauvegarder
+      show:
+        created_at: Date de création
+        author: Auteur
+        data: Données CSV
+    results:
+      flash:
+        create: "Résultats sauvegardés"
+        error_create: "Résultats NON sauvegardés. Erreur dans les données."
+        error_wrong_booth: "Mauvaise urne. Résultats NON sauvegardés."
+      new:
+        title: "%{poll} - Ajouter des résultats"
+        not_allowed: "Vous n'êtes pas autorisé à ajouter des résultats pour ce vote"
+        booth: "Urne"
+        date: "Date"
+        select_booth: "Sélectionner une bureau de vote"
+        ballots_white: "Votes blancs"
+        ballots_null: "Votes invalides"
+        ballots_total: "Total des bulletins"
+        submit: "Sauvegarder"
+        results_list: "Vos résultats"
+        see_results: "Voir les résultats"
+      index:
+        no_results: "Pas de résultats"
+        results: Résultats
+        table_answer: Réponse
+        table_votes: Votes
+        table_whites: "Votes blancs"
+        table_nulls: "Votes invalides"
+        table_total: "Total des bulletins"
+    residence:
+      flash:
+        create: "Document vérifié avec le recensement"
+        not_allowed: "Vous n'avez pas de votes à superviser aujourd'hui"
+      new:
+        title: Valider le document
+        document_number: "Numéro du document (incluant les lettres)"
+        submit: Valider le document
+        error_verifying_census: "Le recensement n'a pas pu vérifier ce document."
+        form_errors: a empêché la vérification de ce document
+    voters:
+      new:
+        title: Votes
+        table_poll: Vote
+        table_status: Statut des votes
+        table_actions: Actions
+        not_to_vote: La personne a décidé de ne pas voter pour le moment
+      show:
+        can_vote: Peut voter
+        error_already_voted: a déjà participé à ce vote
+        submit: Confirmer le vote
+        success: "A voté !"
+      can_vote:
+        submit_disable_with: "Patientez, le vote est en cours de confirmation..."

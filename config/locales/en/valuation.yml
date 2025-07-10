@@ -1,0 +1,68 @@
+en:
+  valuation:
+    header:
+      title: Valuation
+    menu:
+      title: Valuation
+      budgets: Participatory budgets
+    budgets:
+      index:
+        title: Participatory budgets
+        filters:
+          current: Open
+          finished: Finished
+        table_name: Name
+        table_phase: Phase
+        table_assigned_investments_valuation_open: Investment projects assigned with valuation open
+        table_actions: Actions
+        evaluate: Evaluate
+        no_budgets: "There are no budgets"
+    budget_investments:
+      index:
+        headings_filter_all: All headings
+        filters:
+          valuation_open: Open
+          valuating: Under valuation
+          valuation_finished: Valuation finished
+        assigned_to: "Assigned to %{valuator}"
+        title: Investment projects
+        edit: Edit dossier
+        table_id: ID
+        table_title: Title
+        table_heading_name: Heading name
+        table_actions: Actions
+        no_investments: "There are no investment projects."
+      show:
+        back: Back
+        title: Investment project
+        info: Author info
+        by: Sent by
+        sent: Sent at
+        heading: Heading
+        dossier: Dossier
+        edit_dossier: Edit dossier
+        price: Price
+        price_first_year: Cost during the first year
+        currency: "€"
+        feasibility: Feasibility
+        feasible: Feasible
+        unfeasible: Unfeasible
+        undefined: Undefined
+        valuation_finished: Valuation finished
+        duration: Time scope
+        responsibles: Responsibles
+        assigned_admin: Assigned admin
+        assigned_valuators: Assigned valuators
+        preview: Investment preview
+      edit:
+        dossier: Dossier
+        price: "Price (%{currency})"
+        price_first_year: "Cost during the first year (%{currency}) <small>(optional, data not public)</small>"
+        feasibility: Feasibility
+        valuation_finished_alert: "Are you sure you want to mark this report as completed? If you do it, it can no longer be modified."
+        not_feasible_alert: "An email will be sent immediately to the author of the project with the report of unfeasibility."
+        save: Save changes
+      notice:
+        valuate: "Dossier updated"
+      valuation_comments: Valuation comments
+      not_in_valuating_phase: Investments can only be valuated when Budget is in valuating phase

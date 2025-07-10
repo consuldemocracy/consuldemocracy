@@ -1,0 +1,26 @@
+<%= back_link_to admin_valuators_path %>
+
+<h2><%= t("admin.valuators.form.edit_title") %></h2>
+
+<div class="callout highlight">
+  <strong><%= @valuator.name %></strong><br>
+  <%= @valuator.email %>
+</div>
+
+<div class="margin-top">
+  <%= form_for [:admin, @valuator] do |f| %>
+    <%= f.text_field :description %>
+    <div class="small-12 medium-6">
+      <%= f.select :valuator_group_id,
+                   @valuator_groups.map { |group| [group.name, group.id] },
+                   { include_blank: true } %>
+    </div>
+    <div>
+      <div class="filter">
+        <%= f.check_box :can_comment %>
+        <%= f.check_box :can_edit_dossier %>
+      </div>
+    </div>
+    <%= f.submit class: "button success" %>
+  <% end %>
+</div>

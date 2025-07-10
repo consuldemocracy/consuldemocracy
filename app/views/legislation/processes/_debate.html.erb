@@ -1,0 +1,17 @@
+<div class="small-12 medium-9 column">
+  <div class="debate-list">
+    <% if process.questions.empty? %>
+      <p><%= t("legislation.processes.debate.empty_questions") %></p>
+    <% else %>
+      <%= render process.questions %>
+    <% end %>
+  </div>
+</div>
+
+<% if process.questions.any? %>
+  <div class="small-12 medium-3 column">
+    <div class="callout success">
+      <p><%= t("legislation.processes.debate.participate") %></p>
+    </div>
+  </div>
+<% end %>

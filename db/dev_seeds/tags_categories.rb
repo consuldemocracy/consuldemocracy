@@ -1,0 +1,17 @@
+section "Creating Tags Categories" do
+  Tag.category.create!(name: I18n.t("seeds.categories.associations"))
+  Tag.category.create!(name: I18n.t("seeds.categories.culture"))
+  Tag.category.create!(name: I18n.t("seeds.categories.sports"))
+  Tag.category.create!(name: I18n.t("seeds.categories.social_rights"))
+  Tag.category.create!(name: I18n.t("seeds.categories.economy"))
+  Tag.category.create!(name: I18n.t("seeds.categories.employment"))
+  Tag.category.create!(name: I18n.t("seeds.categories.equity"))
+  Tag.category.create!(name: I18n.t("seeds.categories.sustainability"))
+  Tag.category.create!(name: I18n.t("seeds.categories.participation"))
+  Tag.category.create!(name: I18n.t("seeds.categories.mobility"))
+  Tag.category.create!(name: I18n.t("seeds.categories.media"))
+  Tag.category.create!(name: I18n.t("seeds.categories.health"))
+  Tag.category.create!(name: I18n.t("seeds.categories.transparency"))
+  Tag.category.create!(name: I18n.t("seeds.categories.security_emergencies"))
+  Tag.category.create!(name: I18n.t("seeds.categories.environment"))
+end

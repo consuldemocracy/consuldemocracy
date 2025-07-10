@@ -1,0 +1,10 @@
+eu:
+  moderation:
+    comments:
+      index:
+        headers:
+          comment: Iruzkin
+    debates:
+      index:
+        headers:
+          debate: Eztabaida

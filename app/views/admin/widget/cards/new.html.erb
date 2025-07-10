@@ -1,0 +1,9 @@
+<h2>
+  <% if @card.header? %>
+    <%= t("admin.homepage.new.header_title") %>
+  <% else %>
+    <%= t("admin.homepage.new.card_title") %>
+  <% end %>
+</h2>
+
+<%= render "form" %>

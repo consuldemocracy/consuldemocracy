@@ -1,0 +1,7 @@
+val:
+  milestones:
+    index:
+      no_milestones: No hi ha fites definides
+    show:
+      publication_date: "Publicat el %{publication_date}"
+      status_changed: Estat canviat a

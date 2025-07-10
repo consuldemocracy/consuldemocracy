@@ -1,0 +1,12 @@
+<div class="row section-content">
+  <div class="small-12 column">
+    <h3 id="processes" data-magellan-target="processes">
+      <%= t("pages.help.processes.title") %>
+    </h3>
+
+    <p>
+      <% link = link_to(t("pages.help.processes.link"), legislation_processes_path) %>
+      <%= sanitize(t("pages.help.processes.description", link: link)) %>
+    </p>
+  </div>
+</div>

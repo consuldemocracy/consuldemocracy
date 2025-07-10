@@ -1,0 +1,65 @@
+#Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+zh-TW:
+  devise:
+    password_expired:
+      expire_password: "密碼已過期"
+      change_required: "您的密碼已過期"
+      change_password: "更改您的密碼"
+      new_password: "新密碼"
+      updated: "密碼已成功更新"
+    confirmations:
+      confirmed: "您的帳戶已被確認。"
+      send_instructions: "幾分鐘後，您將收到一封電郵，內中包含如何重置密碼的說明。"
+      send_paranoid_instructions: "如果您的電郵地址已在我們的數據庫中，您將在幾分鐘內收到一封電郵，內中包含如何重置密碼的說明。"
+    failure:
+      already_authenticated: "您已登錄了。"
+      inactive: "您的帳戶尚未啟動。"
+      invalid: "%{authentication_keys} 或密碼無效。"
+      locked: "你的賬戶被鎖了。"
+      last_attempt: "在您的帳戶被禁用之前，您還剩餘一次嘗試的機會。"
+      not_found_in_database: "%{authentication_keys} 或密碼無效。"
+      timeout: "您的會話已過期。 請再次登錄以繼續。"
+      unauthenticated: "您必須登錄或註冊才能繼續。"
+      unconfirmed: "要繼續，請點擊我們通過電郵發送給您的確認鏈接"
+    mailer:
+      confirmation_instructions:
+        subject: "確認說明"
+      reset_password_instructions:
+        subject: "重置密碼的說明"
+      unlock_instructions:
+        subject: "解鎖的說明"
+    omniauth_callbacks:
+      failure: "無法將您授權為%{kind}，因為 \"%{reason}\"。"
+      success: "成功識別為 %{kind}。"
+    passwords:
+      no_token: "除非通過重置密碼鏈接，否則無法訪問此頁面。 如果您已通過重置密碼鏈接來訪問，請檢查URL是否完整。"
+      send_instructions: "幾分鐘後，您將收到一封電郵，內中包含重置密碼的說明。"
+      send_paranoid_instructions: "如果您的電郵地址已在我們的數據庫中，幾分鐘後您將收到一個用來重置密碼的鏈接。"
+      updated: "您已成功更改密碼。 驗證成功。"
+      updated_not_active: "您已成功更改密碼。"
+    registrations:
+      destroyed: "再見！ 您的帳戶已被取消。 我們希望很快會再見。"
+      signed_up: "歡迎！ 您已通過驗證。"
+      signed_up_but_inactive: "您已註冊成功，但您無法登錄，因為您的帳戶尚未啟動。"
+      signed_up_but_locked: "您已註冊成功，但您無法登錄，因為您的帳戶已被鎖了。"
+      signed_up_but_unconfirmed: "包含驗證鏈接的消息已發送給您。 請點擊此鏈接啟動您的帳戶。"
+      update_needs_confirmation: "您的帳戶已成功更新；但是，我們需要驗證您的新電郵地址。 請檢查您的電郵，然後單擊鏈接以完成確認新電郵地址。"
+      updated: "您的帳戶已成功更新。"
+    sessions:
+      signed_in: "您已成功登錄。"
+      signed_out: "您已成功登出。"
+      already_signed_out: "您已成功登出。"
+    unlocks:
+      send_instructions: "幾分鐘後，您將收到一封電郵，內中包含解鎖帳戶的說明。"
+      send_paranoid_instructions: "如果您已有帳戶，幾分鐘後，您將收到一封電郵，內中包含解鎖帳戶的說明。"
+      unlocked: "您的帳戶已解鎖。 請登錄以繼續。"
+  errors:
+    messages:
+      already_confirmed: "你已經被核實了；請嘗試登錄。"
+      confirmation_period_expired: "您要在%{period} 內被核實；請提出重複請求。"
+      expired: "已過期；請提出重複請求。"
+      not_found: "未找到。"
+      not_locked: "未被鎖。"
+      not_saved:
+        other: "%{count} 個錯誤阻止了此%{resource} 的儲存。 請檢查標記的字段以了解如何更正它們："
+      equal_to_current_password: "必須與當前密碼不同。"

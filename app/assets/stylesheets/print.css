@@ -1,0 +1,87 @@
+/* Styles for print */
+
+/* Print proposals */
+
+.admin-content { margin-top: 0 !important; }
+
+.tags a { display: none !important; }
+
+.supports { display: none !important; }
+
+.label-proposal { display: none !important; }
+
+#print_link { display: none !important; }
+
+#responsive_menu { display: none !important; }
+
+.admin-sidebar { display: none !important; }
+
+img.left { display: none !important; }
+
+.proposal-info a { display: none !important; }
+
+.icon-comments { display: none !important; }
+
+.menu-icon { display: none !important; }
+
+.icon-proposals { display: none !important; }
+
+li.name  { display: none !important; }
+
+li.kind  { display: none !important; }
+
+p.proposal-info span:nth-child(3) { display: none !important; }
+
+.top-links { display: none !important; }
+
+.button { display: none !important; }
+
+.change-user { display: none !important; }
+
+input[type="submit"] { display: none !important; }
+
+.filters h2 { margin: 0 !important; font-size: 20px !important; line-height: 20px !important; width: auto !important; }
+
+.admin h2 { font-size: 20px !important; line-height: 20px !important; }
+
+.select-order {
+  border: 0 !important;
+  font-size: 20px !important;
+  font-weight: bold !important;
+  line-height: 20px !important;
+  margin-left: 10px !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-right: 0 !important;
+  padding: 0 !important;
+}
+
+p.proposal-info { margin-left: -6px; }
+
+a { text-decoration: none !important; }
+
+a:after { content: none !important; }
+
+.proposal .panel { min-height: auto !important; margin:  0 !important; padding-bottom: 0 !important; padding-left: 0 !important; }
+
+.proposal .panel .proposal-content { min-height: auto !important; }
+
+.proposal .panel h3 { min-height: auto !important; font-size: 16px !important; }
+
+.proposal .panel .proposal-description { height: auto !important; margin-bottom: 0 !important; }
+
+.proposal .panel {
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-top: 0 !important;
+}
+
+.for-print-only { display: block !important; }
+
+.for-print-only p { font-size: 14px !important; line-height: 24px !important; }
+
+.not-print { display: none !important; }
+
+.date-for-print { font-size: 14px !important; line-height: 20px !important; }
+
+.filters { height: 48px !important;}

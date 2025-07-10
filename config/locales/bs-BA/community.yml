@@ -1,0 +1,54 @@
+bs:
+  community:
+    sidebar:
+      title: Grupa
+      description:
+        proposal: Učestvuj u korisničkoj grupi koja podržava ovaj prijedlog.
+        investment: Učestvuj u korisničkoj grupi koja podržava ovu investiciju.
+      button_to_access: Pristupi grupi
+    show:
+      title:
+        proposal: Grupa koja podržava prijedlog
+        investment: Grupa koja podržava budžetsku investiciju
+      description:
+        proposal: Učestvuj u grupi koja podržava ovaj prijedlog. Aktivna grupa može pomoći da se poboljša sadržaj prijedloga i pojača njegova promocija, kako bi se dobila što veća podrška.
+        investment: Učestvuj u grupi koja podržava ovu budžetsku investiciju. Aktivna grupa može pomoći da se poboljša sadržaj predložene budžetske investicije i pojača njena promocija, kako bi se dobila što veća podrška.
+      create_first_community_topic:
+        first_theme_not_logged_in: Nema tema, učestvuj tako što ćeš pokrenuti prvu temu.
+        first_theme: Pokreni prvu temu za grupnu podršku
+        sub_first_theme: "Kako bi pokrenuo/la temu, moraš se prijaviti %{sign_in} ili otvoriti nalog %{sign_up}."
+      tab:
+        participants: Učesnici
+      sidebar:
+        participate: Učestvuj
+        new_topic: Formuliši temu
+      topic:
+        edit: Edituj temu
+        destroy: Ukloni temu
+        comments:
+          zero: Nema komentara
+          one: 1 komentar
+          few: "%{count} komentara"
+          other: "%{count} komentara"
+      author: Autor
+      back: Vrati se na (grupu) %{community} (prijedlog) %{proposal}
+    topic:
+      create: Formuliši temu
+      edit: Edituj temu
+      form:
+        new:
+          submit_button: Formuliši temu
+        edit:
+          submit_button: Edituj temu
+        create:
+          submit_button: Formuliši temu
+        update:
+          submit_button: Ažuriraj temu
+      show:
+        tab:
+          comments_tab: Komentari
+      sidebar:
+        recommendations_title: Preporuke za pokretanje teme
+        recommendation_one: Ne piši naziv teme ili cijele rečenice velikim slovima. Na internetu se to smatra za deranje. Niko ne voli da se neko dere na njega/nju.
+        recommendation_two: Ukloniće se svaka tema ili komentar koji implicira kršenje zakona. Isto važi za sabotažu prostora za raspravu o temi. Sve ostalo je dozvoljeno.
+        recommendation_three: Uživaj u ovom prostoru i različitim glasovima koji ga prožimaju, on pripada i tebi.

@@ -1,0 +1,15 @@
+# See http://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
+#
+# To ban all spiders from the entire site uncomment the next two lines:
+# Disallow: /
+
+User-agent: *
+Disallow: /users/
+Disallow: /comments/
+
+Disallow: /*?*locale
+Disallow: /*?*order
+Disallow: /*?*search
+Disallow: /*?*locale-switcher
+Disallow: /*?*filter
+Disallow: user_id

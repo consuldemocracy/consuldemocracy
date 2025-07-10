@@ -1,0 +1,11 @@
+<% milestone = first_milestone_with_image(investment) %>
+
+<% if milestone&.image.present? %>
+  <%= image_tag milestone.image_url(:large), alt: milestone.image.title %>
+<% elsif investment.image.present? %>
+  <%= image_tag investment.image_url(:large), alt: investment.image.title %>
+<% elsif SiteCustomization::Image.find_by_name('budget_execution_no_image')&.image&.exists? %>
+  <%= image_tag image_path_for('budget_execution_no_image'), alt: investment.title %>
+<% else %>
+  <%= image_tag "budget_execution_no_image.jpg", alt: investment.title %>
+<% end %>

@@ -1,0 +1,6 @@
+sv-FI:
+  mailers:
+    comment:
+      new_comment_by: Det finns en ny kommentar från <strong>%{commenter}</strong>
+    reply:
+      new_reply_by: Det finns ett nytt svar från <strong>%{commenter}</strong> till din kommentar på

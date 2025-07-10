@@ -1,0 +1,35 @@
+<% provide :title do %>
+  <%= t("admin.header.title") %> - <%= t("admin.menu.proposals") %> - <%= @proposal.title %>
+<% end %>
+
+<div class="proposal-show">
+  <h2 class="inline-block"><%= @proposal.title %></h2>
+
+  <% if @proposal.successful? %>
+    <div class="callout success">
+      <%= t("proposals.proposal.successful") %>
+
+      <div class="float-right">
+        <%= link_to t("admin.proposals.show.create_question"),
+                    new_admin_question_path(proposal_id: @proposal.id),
+                    class: "button medium" %>
+      </div>
+    </div>
+  <% else %>
+    <div class="float-right">
+      <%= link_to t("admin.proposals.show.create_question"),
+                  new_admin_question_path(proposal_id: @proposal.id),
+                  class: "button hollow medium" %>
+    </div>
+  <% end %>
+
+  <%= render "proposals/info", proposal: @proposal %>
+</div>
+
+<div class="small-12 column">
+  <hr>
+  <%= render "form" %>
+  <hr>
+</div>
+
+<%= render "admin/milestones/milestones", milestoneable: @proposal %>

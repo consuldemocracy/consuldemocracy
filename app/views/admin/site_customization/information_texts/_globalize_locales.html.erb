@@ -1,0 +1,4 @@
+<%= render "shared/common_globalize_locales",
+  resource: nil,
+  display_style: lambda { |locale| site_customization_display_translation_style(locale) },
+  manage_languages: defined?(manage_languages) ? manage_languages : true %>

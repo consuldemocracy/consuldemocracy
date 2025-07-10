@@ -1,0 +1,46 @@
+<div class="topic-show">
+  <div class="row margin-bottom">
+    <div class="small-12 medium-9 column">
+
+      <%= back_link_to community_path(@community), t("community.show.back",
+                       community: community_text(@community),
+                       proposal: community_title(@community)) %>
+
+      <h1><%= @topic.title %></h1>
+
+      <div class="topic-info margin-bottom">
+        <%= render "/shared/author_info", resource: @topic %>
+
+        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+        <%= l(@topic.created_at.to_date) %>
+        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+        <span class="icon-comments"></span>&nbsp;
+        <%= link_to t("community.show.topic.comments", count: @topic.comments_count),
+                    community_topic_path(@community, @topic, anchor: "comments") %>
+      </div>
+      <br>
+      <p><%= @topic.description %></p>
+    </div>
+
+    <% if @topic.author == current_user %>
+      <aside class="small-12 medium-3 column">
+        <div class="sidebar-divider"></div>
+        <h2><%= t("community.show.author") %></h2>
+        <%= link_to t("community.show.topic.edit"),
+                    edit_community_topic_path(@community.id, @topic),
+                    class: "button hollow expanded" %>
+
+        <%= link_to t("community.show.topic.destroy"),
+                    community_topic_path(@community.id, @topic), method: :delete,
+                    class: "button hollow expanded alert" %>
+      </aside>
+    <% end %>
+  </div>
+
+  <div class="tabs-content" data-tabs-content="topics-tabs">
+    <%= render "topics/filter_subnav" %>
+    <div class="tabs-panel is-active" id="tab-comments">
+      <%= render "topics/comments" %>
+    </div>
+  </div>
+</div>

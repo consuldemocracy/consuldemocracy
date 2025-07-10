@@ -1,0 +1,27 @@
+<% if user_signed_in? %>
+  <li>
+    <%= layout_menu_link_to t("layouts.header.my_activity_link"),
+                              user_path(current_user),
+                              controller_name == "users",
+                              rel: "nofollow",
+                              title: t("shared.go_to_page") +
+                                     t("layouts.header.my_activity_link") %>
+  </li>
+  <li>
+    <%= layout_menu_link_to t("layouts.header.my_account_link"),
+                              account_path,
+                              controller_name == "account",
+                              rel: "nofollow",
+                              title: t("shared.go_to_page") +
+                                     t("layouts.header.my_account_link") %>
+  </li>
+  <li>
+    <%= link_to t("devise_views.menu.login_items.logout"),
+                destroy_user_session_path, rel: "nofollow", method: :delete %>
+  </li>
+<% else %>
+  <li id="login-va">
+    <%= link_to t("devise_views.menu.login_items.login"),
+                user_codigo_omniauth_authorize_path, rel: "nofollow", class: "button", method: :post %>
+  </li>
+<% end %>

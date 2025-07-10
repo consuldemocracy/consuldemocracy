@@ -1,0 +1,37 @@
+<%= back_link_to new_officing_residence_path %>
+
+<h2><%= t("officing.voters.new.title") %></h2>
+
+<% if @polls.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th><%= t("officing.voters.new.table_poll") %></th>
+        <th><%= t("officing.voters.new.table_status") %></th>
+        <th class="text-center"><%= t("officing.voters.new.table_actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @polls.each do |poll| %>
+      <tr id="<%= dom_id(poll) %>">
+        <td>
+          <%= poll.name %>
+        </td>
+        <% if poll.votable_by?(@user) %>
+          <%= render "can_vote", poll: poll %>
+        <% elsif poll.voted_by?(@user) || poll.user_has_an_online_ballot?(@user) %>
+          <%= render "already_voted" %>
+        <% else %>
+          <%= render "cannot_vote" %>
+        <% end %>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<% if Poll.votable_by(@user).any? %>
+  <div id="not_voted">
+    <%= link_to t("officing.voters.new.not_to_vote"), namespaced_root_path, class: "button" %>
+  </div>
+<% end %>

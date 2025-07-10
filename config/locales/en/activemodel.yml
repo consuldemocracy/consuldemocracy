@@ -1,0 +1,47 @@
+en:
+  activemodel:
+    models:
+      verification:
+        residence: "Residence"
+        sms: "SMS"
+      local_census_records/import:
+        one: Local census record import
+        other: Local census records imports
+    attributes:
+      verification:
+        residence:
+          document_type: "Document type"
+          document_number: "Document number (including letters)"
+          date_of_birth: "Date of birth"
+          postal_code: "Postcode"
+        sms:
+          phone: "Telephone"
+          confirmation_code: "Confirmation code"
+        email:
+          recipient: "Email"
+      verification/letter:
+        email: "Email"
+        password: "Password"
+        verification_code: "Code you received in letter"
+      verification/management/document:
+        document_type: "Document type:"
+        document_number: "Document number"
+      verification/residence:
+        date_of_birth: "Date of birth"
+        document_type: "Document type"
+        postal_code: "Postcode"
+      verification/sms:
+        confirmation_code: "Enter the code you received on your mobile"
+      officing/residence:
+        document_type: "Document type"
+        document_number: "Document number (including letters)"
+        year_of_birth: "Year born"
+      local_census_records/import:
+        file: File
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "Given file format is wrong. The allowed file format is: %{valid_extensions}."
+              headers: "Given file headers are wrong. The file headers must have the following names: %{required_headers}."

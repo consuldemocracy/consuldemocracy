@@ -1,0 +1,16 @@
+sv-FI:
+  account:
+    show:
+      notifications: Meddelanden
+  comments_helper:
+    comment_link: Kommentit
+  layouts:
+    header:
+      notification_item:
+        notifications: Meddelanden
+  notifications:
+    index:
+      title: Meddelanden
+  proposals:
+    show:
+      notifications_tab: Meddelanden

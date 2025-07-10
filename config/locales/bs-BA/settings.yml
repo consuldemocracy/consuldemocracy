@@ -1,0 +1,141 @@
+bs:
+  settings:
+    comments_body_max_length: "Maksimalna dužina komentara"
+    comments_body_max_length_description: "Broj karaktera"
+    official_level_1_name: "Anketar, 1. stupanj"
+    official_level_1_name_description: "Tag na korisnicima označenim kao anketari 1. stupnja"
+    official_level_2_name: "Anketar, 2. stupanj"
+    official_level_2_name_description: "Tag na korisnicima označenim kao anketari 2. stupnja"
+    official_level_3_name: "Anketar, 3. stupanj"
+    official_level_3_name_description: "Tag na korisnicima označenim kao anketari 3. stupnja"
+    official_level_4_name: "Anketar, 4. stupanj"
+    official_level_4_name_description: "Tag na korisnicima označenim kao anketari 4. stupnja"
+    official_level_5_name: "Anketar, 5. stupanj"
+    official_level_5_name_description: "Tag na korisnicima označenim kao anketari 5. stupnja"
+    max_ratio_anon_votes_on_debates: "Maksimalni omjer anonimnih glasova po debati"
+    max_ratio_anon_votes_on_debates_description: "Anonimni glasovi dolaze od registrovanih korisnika sa nepotvrđenim nalozima"
+    max_votes_for_proposal_edit: "Broj prikupljenih glasova podrške nakon kojeg se prijedlog više ne može mijenjati"
+    max_votes_for_proposal_edit_description: "Broj prikupljenih glasova podrške nakon kojeg autor više ne može mijenjati prijedlog"
+    max_votes_for_debate_edit: "Broj prikupljenih glasova nakon kojeg se debata više ne može mijenjati"
+    max_votes_for_debate_edit_description: "Broj prikupljenih glasova nakon kojeg autor više ne može mijenjati debatu"
+    proposal_code_prefix: "Prefiks za šifre prijedloga"
+    proposal_code_prefix_description: "Prefiks za prijedlog prethodi datumu nastanka i identifikacionom broju prijedloga"
+    featured_proposals_number: "Broj glavnih prijedloga"
+    featured_proposals_number_description: "Broj glavnih prijedloga koji je prikazan ako je opcija \"Glavni prijedlozi\" aktivna"
+    votes_for_proposal_success: "Broj glasova podrške neophodnih za prihvatanje prijedloga"
+    votes_for_proposal_success_description: "Kada prijedlog dobije ovoliko glasova podrške, više se ne može glasati za njega i smatra se uspješnim"
+    months_to_archive_proposals: "Mjeseci za arhiviranje prijedloga"
+    months_to_archive_proposals_description: "Nakon što prođe ovoliko mjeseci, prijedlozi se arhiviraju i za njih se više ne mogu dati glasovi podrške"
+    email_domain_for_officials: "Email domena za anketare"
+    email_domain_for_officials_description: "Profili svih korisnika registrovanih na ovoj domeni podliježu verifikaciji prije registracije"
+    twitter_handle: "Ime na Twitteru"
+    twitter_handle_description: "Ako se upiše, stajaće na kraju teksta"
+    twitter_hashtag: "Hashtag na Twitteru"
+    twitter_hashtag_description: "Hashtag kada se postavlja sadržaj na Twitteru"
+    facebook_handle: "Ime na Facebook profilu"
+    facebook_handle_description: "Ako se upiše, stajaće na kraju teksta"
+    youtube_handle: "Ime na YouTube"
+    youtube_handle_description: "Ako se upiše, stajaće na kraju teksta"
+    telegram_handle: "Ime na Telegramu"
+    telegram_handle_description: "Ako se upiše, stajaće na kraju teksta"
+    instagram_handle: "Ime na Instagramu"
+    instagram_handle_description: "Ako se upiše, stajaće na kraju teksta"
+    url: "Glavni URL"
+    url_description: "Glavni URL vaše web-stranice"
+    org_name: "Ime stranice"
+    org_name_description: "Ovo ime će biti navedeno u nazivu maila, stranama za pomoć..."
+    related_content_score_threshold: "Prag za broj vezanih sadržaja"
+    related_content_score_threshold_description: "U skladu s ocjenom glasova u vezanom sadržaju, sakriva sadržaj koji korisnik označi kao nevezan"
+    hot_score_period_in_days: "Period (dani) koji koristi filter \"najaktivnije\""
+    hot_score_period_in_days_description: "Filter \"najaktivnije\", koji se koristi u više odjeljaka, je zasnovan na broju glasova u proteklih X dana"
+    mailer_from_name: "Ime pošiljatelja emaila"
+    mailer_from_name_description: "Ovo ime će biti navedeno kao ime pošiljatelja u emailovima koji se šalju iz aplikacije"
+    mailer_from_address: "Email adresa pošiljatelja"
+    mailer_from_address_description: "Ova email adresa je navedena u emailovima poslanim iz aplikacije"
+    meta_title: "Naziv sajta (SEO)"
+    meta_title_description: "Naziv za sajt <title>, koristi se za poboljšanje SEO"
+    meta_description: "Opis sajta (SEO)"
+    meta_description_description: 'Opis sajta <meta name="description">, koristi se za poboljšanje SEO'
+    meta_keywords: "Ključne riječi (SEO)"
+    meta_keywords_description: 'Ključne riječi <meta name="keywords">, koriste se za poboljšanje SEO'
+    min_age_to_participate: Najmanja starosna dob za učešće
+    min_age_to_participate_description: "Korisnici koji su napunili toliko godina mogu učestvovati u svim procesima za koje je potreban verifikovan korisnički nalog"
+    proposals:
+      successful_proposal_id: Uspješan prijedlog
+      successful_proposal_id_description: Ovaj prijedlog se koristi kao referentni uspješni prijedlog po broju glasova podrške, i kao takav će biti izložen na grafikonu kontrolne ploče.
+      poll_short_title: Glasačke ankete
+      poll_short_title_description: Kratki opis anketne funkcije. Omogućava korisnicima da naprave anketu u vezi prijedloga
+      poll_description: Opis glasačkih anketa
+      poll_description_description: Detaljni opis anketne funkcije
+      poll_link: Link za dodatne informacije
+      poll_link_description: Añade un enlace de información adicional a la funcionalidad de encuestas del panel de control
+      email_short_title: Email
+      email_short_title_description: 'Kratki opis email funkcije. Omogućava korisnicima da šalju emailove kako bi promovisali svoje prijedloge'
+      email_description: Opis emaila
+      email_description_description: Detaljni opis email funkcije
+      poster_short_title: Poster
+      poster_short_title_description: 'Kratki opis postera. Omogućava korisnicima da preuzmu poster u PDF-formatu kako bi promovisali svoje prijedloge'
+      poster_description: Opis postera
+      poster_description_description: Detaljni opis postera
+    analytics_url: "URL za analitiku"
+    proposal_notification_minimum_interval_in_days: "Minimalni interval (mjeren u danima) za autore prijedloga da pošalju nove obavijesti o prijedlozima"
+    proposal_notification_minimum_interval_in_days_description: "Broj dana tokom kojih korisnik može poslati obavijest svima koji su podržali njegov prijedlog"
+    direct_message_max_per_day: "Maksimalni broj direktnih poruka po danu"
+    direct_message_max_per_day_description: "Maksimalni broj direktnih poruka koje korisnik može poslati u jednom danu"
+    feature:
+      twitter_login: "Prijava preko Twittera"
+      twitter_login_description: "Omogući korisnicima da se prijave preko Twitter profila"
+      facebook_login: "Prijava preko Facebooka"
+      facebook_login_description: "Omogući korisnicima da se prijave preko Facebook profila"
+      google_login: "Prijava preko Googlea"
+      google_login_description: "Omogući korisnicima da se prijave preko Google profila"
+      featured_proposals: "Istaknuti prijedlozi"
+      featured_proposals_description: "Pokazuje istaknute prijedloge na strani sa indeksom prijedloga"
+      signature_sheets: "Potpisni listovi"
+      signature_sheets_description: "Omogućava dodavanje iz Admin panela potpisa prikupljenih na sajtu za prijedloge i investicione projekte za participativne budžete"
+      user:
+        recommendations: "Preporuke"
+        recommendations_description: "Pokazuje korisnicima preporuke na početnoj strani, na osnovu tagova za teme koje se prate"
+        skip_verification: "Preskoči verifikaciju korisnika"
+        skip_verification_description: "Ovo će onemogućiti verifikaciju korisnika i svi registrovani korisnici će moći učestvovati u svim procesima"
+        recommendations_on_debates: "Preporuke za debate"
+        recommendations_on_debates_description: "Pokazuje preporuke korisnicima u debatama, na osnovu tagova za teme koje se prate"
+        recommendations_on_proposals: "Preporuke za prijedloge"
+        recommendations_on_proposals_description: "Pokazuje preporuke korisnicima na stranicama sa prijedlozima, na osnovu tagova za teme koje se prate"
+      community: "Grupa za prijedloge i investicije"
+      community_description: "Omogućuje funkcionisanje grupnog odjeljka u prijedlozima i investicionim projektima za participativne budžete"
+      map: "Područje na koje se odnose prijedlozi i budžetske investicije"
+      map_description: "Omogućava geolociranje prijedloga i investicionih projekata"
+      allow_images: "Omogući učitanje i pokaži slike"
+      allow_images_description: "Omogućava korisnicima da učitaju slike kada kreiraju prijedloge i investicione projekte za participativne budžete"
+      allow_attached_documents: "Omogući učitanje i pokaži dokumente u prilogu"
+      allow_attached_documents_description: "Omogućava korisnicima da učitaju dokumente kada kreiraju prijedloge i investicione projekte za participativne budžete"
+      guides: "Vodiči za kreiranje prijedloga i investicionih projekata"
+      guides_description: "Pokazuje vodič u vezi razlika između prijedloga i investicionih projekata, u slučaju postojanja aktivnog participativnog budžeta"
+      public_stats: "Javna statistika"
+      public_stats_description: "Pokaži javnu statistiku u admin panelu"
+      help_page: "Strana za pomoć"
+      help_page_description: 'Pokazuje meni za pomoć, koji sadrži stranu sa osnovnim informacijama o svakom uključenom elementu. Prilagođene stranice i meniji se mogu napraviti u "Prilagođenim stranama" i "Prilagođenim blokovima sadržaja"'
+    map:
+      latitude: "Širina"
+      latitude_description: "Širina za pokazivanje pozicije na mapi"
+      longitude: "Dužina"
+      longitude_description: "Dužina za pokazivanje pozicije na mapi"
+      zoom: "Uvećaj"
+      zoom_description: "Uvećaj za pokazivanje pozicije na mapi"
+    process:
+      debates: "Debate"
+      debates_description: "Prostor za građanske debate je obezbjeđen za svakoga ko želi predstaviti svoja pitanja i probleme i razmijeniti mišljenja s drugima"
+      proposals: "Prijedlozi"
+      proposals_description: "Građanski prijedlozi predstavljaju priliku za susjede i zajednice da neposredno odlučuju kakvo društvo žele imati, nakon što dobiju neophodnu podršku i podnesu prijedlog građanima na glasanje"
+      polls: "Glasačke ankete"
+      polls_description: "Glasačke ankete građana predstavljaju participativni mehanizam putem kojeg građani s pravom glasa mogu donositi neposredne odluke"
+      budgets: "Participativno budžetiranje"
+      budgets_description: "S participativnim budžetima, građani odlučuju koji će projekti, predloženi od strane njihovih susjeda, dobiti sredstva iz budžeta"
+      legislation: "Zakonski propisi"
+      legislation_description: "U participativnom procesu, građani imaju priliku da učestvuju u izradi i izmjeni propisa koji imaju društvenu dimenziju, te da daju mišljenja u vezi određenih aktivnosti koje su u planu"
+    html:
+      per_page_code_head: "Kod na svakoj strani (<head>)"
+      per_page_code_head_description: "Kod se pojavljuje u etiketi <head>. Korisno za unošenje prilagođenih skripti, analitike..."
+      per_page_code_body: "Kod na svakoj strani (<body>)"
+      per_page_code_body_description: "Kod se pojavljuje u etiketi <body>. Korisno za unošenje prilagođenih skripti, analitike..."

@@ -1,0 +1,24 @@
+de:
+  documents:
+    title: Dokumente
+    max_documents_allowed_reached: Sie haben die maximale Anzahl an erlaubten Dokumenten erreicht! <strong>Um weitere hochladen zu können, müssen sie zuerst ein vorhandenes Dokument löschen.</strong>
+    additional: Zusätzliche Dokumentation
+    form:
+      title: Dokumente
+      title_placeholder: Fügen Sie einen aussagekräftigen Titel zum Dokument hinzu
+      delete_button: Dokument entfernen
+      cancel_button: Abbrechen
+      note: "Sie können maximal bis zu %{max_documents_allowed} Dokumente des folgenden Inhalttyps hochladen: %{accepted_content_types}, bis zu %{max_file_size} MB pro Datei."
+      add_new_document: Neues Dokument hinzufügen
+    actions:
+      destroy:
+        notice: Das Dokument wurde erfolgreich gelöscht.
+        alert: Das Dokument kann nicht gelöscht werden.
+        confirm: Sind Sie sicher, dass Sie dieses Dokument löschen möchten? Diese Aktion kann nicht rückgängig gemacht werden!
+    buttons:
+      download_document: Datei herunterladen
+      destroy_document: Dokument löschen
+    errors:
+      messages:
+        in_between: muss zwischen %{min} und %{max} liegen
+        wrong_content_type: Inhaltstyp %{content_type} stimmt mit keiner der akzeptierten Inhaltstypen überein %{accepted_content_types}

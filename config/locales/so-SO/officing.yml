@@ -1,0 +1,67 @@
+so:
+  officing:
+    header:
+      title: Codeynta
+    dashboard:
+      index:
+        title: Liisanka codka
+        info: Halkan waxaad ku ansixin kartaa dukumiintiga isticmaalaha iyo kaydinta natiijooyinka codbixinta
+        no_shifts: Adigu ma haysid wax isbeddel ah maanta.
+    menu:
+      voters: Ansixinta dukumentiga
+      total_recounts: Wadarta dib u tirintanada natijooyinka
+    polls:
+      final:
+        title: Doorashooyinka diyaar u ah dhammaystirka ugu dambeeya
+        no_polls: Adigu maahan inaad dib u soo celisid ugu dambeyn ra'yi ururin kasta oo firfircoon
+        select_poll: Xuulo doorshada
+        add_results: Ku dar Natijada
+    results:
+      flash:
+        create: "Kaydi natijada"
+        error_create: "Natiijooyinka MA HELI Xaaladda xogta."
+        error_wrong_booth: "Labadaba waa khalad. Natiijooyinka MA HELI."
+      new:
+        title: "%{poll} kudar natijoyinka"
+        not_allowed: "Laguuma ogola inaad ku darto natiijooyinka ra'yiururintan"
+        booth: "Labadaba"
+        date: "Tariikh"
+        select_booth: "Dooro labadaba"
+        ballots_white: "Wadarta Warqadaha codbixinta ee banan"
+        ballots_null: "Warqadaha aan sharci ahayn"
+        ballots_total: "Wadarta Warqadaha dorashada"
+        submit: "Badbaado"
+        results_list: "Natijoyinkaga"
+        see_results: "Arag Natijada"
+      index:
+        no_results: "Wax natijooyina malaha"
+        results: Natiijoyin
+        table_answer: Jawaab
+        table_votes: Codaad
+        table_whites: "Wadarta Warqadaha codbixinta ee banan"
+        table_nulls: "Warqadaha aan sharci ahayn"
+        table_total: "Wadarta Warqadaha dorashada"
+    residence:
+      flash:
+        create: "Dukumiinti la xaqiijiyay Tirakoobka"
+        not_allowed: "Adigu ma haysid wax isbeddel ah maanta"
+      new:
+        title: Ansixinta dukumentiga
+        document_number: "Lambarka dukumentiga (oo lugu daray warqadaha)"
+        submit: Ansixinta dukumentiga
+        error_verifying_census: "Tirakoobku ma awoodin inuu caddeeyo dokumentigan."
+        form_errors: hortaagan xaqiijinta dukumintigan
+    voters:
+      new:
+        title: Doorashooyinka
+        table_poll: Dorasho
+        table_status: Xaaladda codbixinta
+        table_actions: Tilaabooyin
+        not_to_vote: Qofku wuxuu go'aansaday inuusan cod bixin waqtigan
+      show:
+        can_vote: Codayn kara
+        error_already_voted: Horeyba uga qaybqaatay doorashadan
+        submit: Xaqiiji cod bixinta
+        success: "Codbixinta la soo bandhigay!"
+      can_vote:
+        submit_disable_with: "Sug, codeyn xaqiijin..."

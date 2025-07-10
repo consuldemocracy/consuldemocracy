@@ -1,0 +1,37 @@
+// Overrides and adds customized foundation settings in this file
+// Read more on documentation:
+// * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
+// * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
+//
+
+// 0. CONSUL variables
+// --------------------
+
+$brand:             #E6118F;
+$brand_secondary:   #FFDB0A;
+$dark:              darken($brand, 10%);
+
+$budget:            #BC237E;
+
+$highlight:         #FFFFFF;
+
+$info-bg:           #F7D9EA;
+$info-border:       #F1BCDA;
+
+// 1. Global
+// ---------
+
+$body-font-family: 'Nunito Light', 'Open Sans', 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif !important;
+
+// 4. Base Typography
+// ------------------
+
+$header-font-family: 'Nunito Bold', $body-font-family;
+$header-color: $brand;
+$small-font-size: rem-calc(12);
+
+// 11. Button
+// ----------
+
+$button-background: $brand;
+$button-background-hover: scale-color($brand, $lightness: -15%);

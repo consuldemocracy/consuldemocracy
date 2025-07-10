@@ -1,0 +1,92 @@
+<% if @officer_assignments.any? %>
+  <h2><%= t("officing.results.new.title", poll: @poll.name) %></h2>
+
+  <%= form_tag(officing_poll_results_path(@poll), { id: "officer_assignment_form" }) do %>
+    <div class="row">
+      <div class="small-12 medium-6 column">
+        <label><%= t("officing.results.new.booth") %></label>
+        <%= select_tag :officer_assignment_id,
+                        booths_for_officer_select_options(@officer_assignments),
+                        { prompt: t("officing.results.new.select_booth") } %>
+      </div>
+    </div>
+
+    <% @poll.questions.each do |question| %>
+      <div class="row">
+        <div class="small-12 column">
+          <h3><%= question.title %></h3>
+        </div>
+        <% question.question_answers.each_with_index do |answer, i| %>
+          <div class="small-12 medium-6 large-3 column end">
+            <label><%= answer.title %></label>
+            <%= text_field_tag "questions[#{question.id}][#{i}]", answer_result_value(question.id, i), placeholder: "0" %>
+          </div>
+        <% end %>
+      </div>
+      <hr>
+    <% end %>
+
+    <div class="row">
+      <div class="small-12 medium-6 large-3 column">
+        <h3><%= t("officing.results.new.ballots_white") %></h3>
+        <%= text_field_tag :whites, params[:whites].presence, placeholder: "0" %>
+      </div>
+
+      <div class="small-12 medium-6 large-3 column end">
+        <h3><%= t("officing.results.new.ballots_null") %></h3>
+        <%= text_field_tag :nulls, params[:nulls].presence, placeholder: "0" %>
+      </div>
+
+      <div class="small-12 medium-6 large-3 column end">
+        <h3><%= t("officing.results.new.ballots_total") %></h3>
+        <%= text_field_tag :total, params[:total].presence, placeholder: "0" %>
+      </div>
+    </div>
+    <hr>
+
+    <div class="row">
+      <div class="small-12 medium-6 large-3 column">
+        <%= submit_tag t("officing.results.new.submit"), class: "button expanded" %>
+      </div>
+    </div>
+  <% end %>
+
+<% else %>
+  <h2><%= @poll.name %></h2>
+  <div class="callout alert">
+    <%= t("officing.results.new.not_allowed") %>
+  </div>
+<% end %>
+
+<% if @partial_results.present? %>
+
+  <hr>
+  <h3><%= t("officing.results.new.results_list") %></h3>
+
+  <table>
+    <thead>
+      <th><%= t("officing.results.new.date") %></th>
+      <th><%= t("officing.results.new.booth") %></th>
+      <th>&nbsp;</th>
+    </thead>
+    <tbody>
+      <% results_by_booth = @partial_results.group_by(&:booth_assignment_id) %>
+      <% results_by_booth.keys.each do |booth_assignment| %>
+        <% results_by_booth[booth_assignment].group_by(&:date).keys.each do |date| %>
+          <tr id="results_<%= booth_assignment %>_<%= date.strftime("%Y%m%d") %>">
+            <td>
+              <%= l(date, format: :long) %>
+            </td>
+            <td>
+              <%= results_by_booth[booth_assignment].first.booth_assignment.booth.name %>
+            </td>
+            <td>
+            <%= link_to t("officing.results.new.see_results"), officing_poll_results_path(@poll, date: l(date), booth_assignment_id: booth_assignment) %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+
+<% end %>

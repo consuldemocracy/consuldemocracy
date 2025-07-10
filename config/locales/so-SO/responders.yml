@@ -1,0 +1,36 @@
+so:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} Losameyey Siguula."
+        debate: "Dooda si guula ayaa lo sameyey."
+        direct_message: "Fariintada Siguula ah ayey u dirsantay."
+        poll: "Dorshada sigula ayaa loo Sameyey."
+        poll_booth: "Siguula ayaa lo Abuuray."
+        poll_question_answer: "Jawaabta Siguula ayaa Losameyey"
+        poll_question_answer_video: "Fidyoowga siguul ah ayaa lo sameyey"
+        poll_question_answer_image: "Sawirka si guul ah ayaa losorogay"
+        proposal: "Soo jeedinta ayaa si guul leh loo abuuray."
+        proposal_notification: "Farriintaada ayaa si sax ah loo soo saxay."
+        budget_investment: "Misaniya malagashiga ayaa si guul ah loo dejiyey."
+        signature_sheet: "Warqadda saxiixa ayaa si guul leh u soo baxday"
+        topic: "Mowduuca sigula ayaa loo Sameyey."
+        valuator_group: "Kooxda qimwynta ayaa si guul ah so abuuray"
+      save_changes:
+        notice: Isbedelada lakaydiyey
+      update:
+        notice: "%{resource_name} lo cusboneysiyey Siguula."
+        debate: "Dooda si guula ayaa lo cusboneysiyey."
+        poll: "Dorsha ayaa si guul ah loo cusboneysiyey."
+        poll_booth: "Siguula ayaa lo cusboneysiyey."
+        proposal: "Soo jeedinta ayaa si guul leh lo cusboneysiyey."
+        budget_investment: "Mashruuca Maalgashiga oo si guul leh loo cusbooneysiiyey."
+        topic: "Mowduuca sigula ayaa loo Cusboneysiyey."
+        valuator_group: "Kooxda qimwynta ayaa si guul ah lo cusboneysiyey"
+        translation: "Turjubaan ayaa si guul leh u cusbooneysiiyay"
+      destroy:
+        budget_investment: "Mashruuca maalgelinta si guul leh ayaa loo tirtiray."
+        error: "An la tir tiri karin"
+        topic: "Mawduucii waa la tirtiray si guul leh."
+        poll_question_answer_video: "Kajawaab Fidyoowga sida gusha ah loo tir tiray."
+        valuator_group: "Kooxda qimwynta ayaa si guul ah tirtiray"

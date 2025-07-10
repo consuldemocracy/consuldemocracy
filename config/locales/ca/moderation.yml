@@ -1,0 +1,110 @@
+ca:
+  moderation:
+    comments:
+      index:
+        block_authors: Bloquejar autors
+        confirm: '¿Estás segur?'
+        filter: Filtrar
+        filters:
+          all: tots
+          pending_flag_review: Sense decidir
+          with_ignored_flag: Marcats com revisats
+        headers:
+          comment: Comentar
+          moderate: Moderar
+        hide_comments: Ocultar comentaris
+        ignore_flags: Marcar como revisades
+        order: Ordre
+        orders:
+          flags: Més denunciades
+          newest: Més nous
+        title: Comentarios
+    dashboard:
+      index:
+        title: Moderación
+    debates:
+      index:
+        block_authors: Bloquejar autors
+        confirm: '¿Estás segur?'
+        filter: Filtrar
+        filters:
+          all: tots
+          pending_flag_review: Sense decidir
+          with_ignored_flag: Marcats com revisats
+        headers:
+          debate: debat previ
+          moderate: Moderar
+        hide_debates: Ocultar debats
+        ignore_flags: Marcar como revisades
+        order: Ordre
+        orders:
+          created_at: Més nous
+          flags: Més denunciades
+        title: Debats
+    header:
+      title: Moderación
+    menu:
+      flagged_comments: Comentarios
+      flagged_debates: Debats
+      proposals: Propostes ciutadanes
+      users: Bloquejar usuaris
+    proposals:
+      index:
+        block_authors: Bloquejar autors
+        confirm: '¿Estás segur?'
+        filter: Filtrar
+        filters:
+          all: tots
+          pending_flag_review: Pendents de revisió
+          with_ignored_flag: Marcar como revisades
+        headers:
+          moderate: Moderar
+          proposal: la proposta
+        hide_proposals: Ocultar Propostes
+        ignore_flags: Marcar como revisades
+        order: Ordenar per
+        orders:
+          created_at: Més recents
+          flags: Més denunciades
+        title: Propostes ciutadanes
+    budget_investments:
+      index:
+        block_authors: Bloquejar autors
+        confirm: '¿Estás segur?'
+        filter: Filtrar
+        filters:
+          all: tots
+          pending_flag_review: Sense decidir
+          with_ignored_flag: Marcats com revisats
+        headers:
+          moderate: Moderar
+        ignore_flags: Marcar como revisades
+        order: Ordenar per
+        orders:
+          created_at: Més recents
+          flags: Més denunciades
+    proposal_notifications:
+      index:
+        block_authors: Bloquejar autors
+        confirm: '¿Estás segur?'
+        filter: Filtrar
+        filters:
+          all: tots
+          pending_review: Pendents de revisió
+          ignored: Marcar como revisades
+        headers:
+          moderate: Moderar
+        hide_proposal_notifications: Ocultar Propostes
+        ignore_flags: Marcar como revisades
+        order: Ordenar per
+        orders:
+          created_at: Més recents
+        title: Notificacions de propostes
+    users:
+      index:
+        hidden: Bloquejat
+        hide: Bloquejar
+        search: Buscar
+        search_placeholder: email o nom d'usuari
+        title: Bloquejar usuaris
+      notice_hide: Usuari bloquejat. S'han ocultat tots els seus debats i comentaris.

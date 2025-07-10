@@ -1,0 +1,11 @@
+<% provide :title do %>
+  <%= t("admin.header.title") %> - <%= t("admin.menu.legislation") %> - <%= t("admin.legislation.processes.new.title") %>
+<% end %>
+
+<div class="legislation-process-new">
+  <%= back_link_to admin_legislation_processes_path, t("admin.legislation.processes.new.back") %>
+
+  <h2><%= t("admin.legislation.processes.new.title") %></h2>
+
+  <%= render "form" %>
+</div>

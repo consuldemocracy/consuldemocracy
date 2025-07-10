@@ -1,0 +1,45 @@
+<% provide(:title) do %>
+  <%= t("admin.header.title") %> - <%= t("admin.comments.index.title") %>
+<% end %>
+
+<h2><%= t("admin.comments.index.title") %></h2>
+
+<% if @comments.any? %>
+
+  <h3 class="inline-block"><%= page_entries_info @comments %></h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th class="text-center"><%= t("admin.comments.index.id") %></th>
+        <th><%= t("admin.comments.index.content") %></th>
+        <th><%= t("admin.comments.index.author") %></th>
+        <th><%= t("admin.comments.index.commentable_type") %></th>
+        <th><%= t("admin.comments.index.table_link") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @comments.each do |comment| %>
+        <tr id="<%= dom_id(comment) %>" class="debates">
+          <td class="text-center"><%= comment.id %></td>
+          <td><%= comment.body %></td>
+          <td><%= comment.author.username %></td>
+          <td><%= comment.commentable_type.constantize.model_name.human %></td>
+          <td>
+            <% if comment.commentable.hidden? %>
+              (<%= t("admin.comments.index.hidden_#{comment.commentable_type.downcase}") %>: <%= comment.commentable.title %>)
+            <% else %>
+              <%= link_to comment.commentable.title, commentable_path(comment) %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate @comments %>
+<% else %>
+  <div class="callout primary margin">
+    <%= t("admin.comments.index.no_comments") %>
+  </div>
+<% end %>

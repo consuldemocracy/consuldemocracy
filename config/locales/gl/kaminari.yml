@@ -1,0 +1,22 @@
+gl:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: Entradas
+        one: Entrada
+        other: Entradas
+      more_pages:
+        display_entries: Amósanse <strong>%{first}&nbsp;&nbsp;%{last}</strong> dun total de <strong>%{total}%{entry_name}</strong>
+      one_page:
+        display_entries:
+          zero: "Non se atopou a entrada %{entry_name}"
+          one: Hai <strong>1 %{entry_name}</strong>
+          other: Hai <strong>%{count} %{entry_name}</strong>
+  views:
+    pagination:
+      current: Estás na páxina
+      first: Primeira
+      last: Última
+      next: Proximamente
+      previous: Anterior
+      truncate: "&hellip;"

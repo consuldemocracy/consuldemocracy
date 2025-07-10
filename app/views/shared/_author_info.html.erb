@@ -1,0 +1,31 @@
+<% if resource.author.hidden? || resource.author.erased? %>
+  <span class="icon-deleted author-deleted"></span>
+  <span class="author deleted">
+      <%= t("shared.author_info.author_deleted") %>
+  </span>
+<% else %>
+  <%= avatar_image(resource.author, seed: resource.author_id, size: 32, class: "author-photo") %>
+  <span class="author">
+      <%= link_to resource.author.name, user_path(resource.author) %>
+  </span>
+
+  <% if resource.respond_to?(:association_name) && resource.association_name.present? %>
+    <span>
+      <%= "(#{resource.association_name})" %>
+    </span>
+  <% end %>
+
+  <% if resource.author.display_official_position_badge? %>
+    &nbsp;&bull;&nbsp;
+    <span class="label round level-<%= resource.author.official_level %>">
+      <%= resource.author.official_position %>
+    </span>
+  <% end %>
+<% end %>
+
+<% if resource.author.verified_organization? %>
+  &nbsp;&bull;&nbsp;
+  <span class="label round is-association">
+    <%= t("shared.collective") %>
+  </span>
+<% end %>

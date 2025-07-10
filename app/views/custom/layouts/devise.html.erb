@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+  <head>
+    <%= render "layouts/common_head", default_title: setting["org_name"] %>
+    <%= render "layouts/meta_tags" %>
+    <%= raw setting["html.per_page_code_head"] %>
+  </head>
+
+  <body class="auth-page">
+    <%= raw setting["html.per_page_code_body"] %>
+    <div class="wrapper">
+      <div class="auth-image small-12 medium-3 column hide-for-small-only">
+        <h1 class="logo margin">
+          <%= link_to root_path do %>
+            <%= image_tag(image_path_for("logos_login.png"), class: "float-left", alt: t("layouts.header.logo")) %>
+          <% end %>
+          <%= image_tag("auth_bg.jpg", class: "") %>
+        </h1>
+      </div>
+
+      <div class="small-12 medium-9 column">
+        <div class="row">
+          <div class="small-12 medium-9 large-7 small-centered column">
+            <div class="auth-form margin">
+              <%= render "layouts/flash" %>
+
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="push"></div>
+    </div>
+
+    <div class="footer">
+      <%= render "layouts/footer" %>
+    </div>
+  </body>
+</html>

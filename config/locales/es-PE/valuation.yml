@@ -1,0 +1,60 @@
+es-PE:
+  valuation:
+    header:
+      title: Evaluación
+    menu:
+      title: Evaluación
+      budgets: Presupuestos participativos
+    budgets:
+      index:
+        title: Presupuestos participativos
+        filters:
+          current: Abierto
+          finished: Finalizadas
+        table_name: Nombre
+        table_phase: Fase
+        table_assigned_investments_valuation_open: Prop. Inv. asignadas en evaluación
+        table_actions: Acciones
+        evaluate: Evaluar
+    budget_investments:
+      index:
+        headings_filter_all: Todas las partidas
+        filters:
+          valuation_open: Abierto
+          valuating: En evaluación
+          valuation_finished: Informe finalizado
+        assigned_to: "Asignadas a %{valuator}"
+        title: Propuestas de inversión
+        edit: Editar informe
+        table_title: Título
+        table_heading_name: Nombre de la partida
+        table_actions: Acciones
+        no_investments: "No hay proyectos de inversión."
+      show:
+        back: Volver
+        title: Propuesta de inversión
+        info: Datos de envío
+        by: Enviada por
+        sent: Fecha de creación
+        heading: Partida
+        dossier: Informe
+        edit_dossier: Editar informe
+        price: Coste
+        price_first_year: Coste en el primer año
+        feasibility: Viabilidad
+        feasible: Viable
+        unfeasible: Inviable
+        undefined: Sin definir
+        valuation_finished: Informe finalizado
+        duration: Plazo de ejecución <small>(opcional, dato no público)</small>
+        responsibles: Responsables
+        assigned_admin: Administrador asignado
+        assigned_valuators: Evaluadores asignados
+      edit:
+        dossier: Informe
+        feasibility: Viabilidad
+        valuation_finished_alert: "¿Estás seguro/a de querer marcar este informe como completado? Una vez hecho, no se puede deshacer la acción."
+        not_feasible_alert: "Un email será enviado inmediatamente al autor del proyecto con el informe de inviabilidad."
+        save: Guardar cambios
+      notice:
+        valuate: "Informe actualizado"

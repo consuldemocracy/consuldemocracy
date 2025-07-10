@@ -1,0 +1,165 @@
+he:
+  settings:
+    comments_body_max_length: "אורך תגובה מקסימלי"
+    comments_body_max_length_description: "במספר תווים"
+    official_level_1_name: "נושא משרה ברמה 1"
+    official_level_1_name_description: "תג יופיע למשתמשים המסומנים בתפקיד נושאי משרה ברמה 1"
+    official_level_2_name: "נושא משרה ברמה 2"
+    official_level_2_name_description: "תג יופיע למשתמשים המסומנים בתפקיד נושאי משרה ברמה 2"
+    official_level_3_name: "נושא משרה ברמה 3"
+    official_level_3_name_description: "תג יופיע למשתמשים המסומנים בתפקיד נושאי משרה ברמה 3"
+    official_level_4_name: "נושא משרה ברמה 4"
+    official_level_4_name_description: "תג יופיע למשתמשים המסומנים בתפקיד נושאי משרה ברמה 4"
+    official_level_5_name: "נושא משרה ברמה 5"
+    official_level_5_name_description: "תג יופיע למשתמשים המסומנים בתפקיד נושאי משרה ברמה 5"
+    max_ratio_anon_votes_on_debates: "יחס המרבי של הצבעות אנונימית לכל דיון"
+    max_ratio_anon_votes_on_debates_description: "הצבעות אנונימיות על ידי משתמשים רשומים עם חשבון לא מאומת"
+    max_votes_for_proposal_edit: "מספר התמיכות שממנה לא ניתן עוד לערוך הצעה"
+    max_votes_for_proposal_edit_description: "מהמספר הזה של ההצבעות מחבר ההצעה לא יכול לערוך אותה יותר"
+    max_votes_for_debate_edit: "מספר ההצבעות שממנה לא ניתן עוד לערוך את הדיון"
+    max_votes_for_debate_edit_description: "מהמספר הזה של הצבעות, המחבר של הדיון כבר לא יכול לערוך אותו"
+    proposal_code_prefix: "קידומת עבור קודי הצעה"
+    proposal_code_prefix_description: "קידומת זו תופיעו בהצעות לפני תאריך יצירה ו- ID שלה"
+    featured_proposals_number: "מספר ההצעות המוצעות"
+    featured_proposals_number_description: "ממספר ההצעות המוצעות אשר יוצגו אם הפעלת התכונה במצב פעיל"
+    votes_for_proposal_success: "מספר תומכים הדרושים לאישור הצעה"
+    votes_for_proposal_success_description: "כאשר הצעה מגיעה למספר תומכים מסוים, לא ניתן להוסיף תמיכות נוספות בהצעה והיא תחשב כהצעה מוצלחת"
+    months_to_archive_proposals: "מספר החודשים לאחסון ההצעות בארכיון"
+    months_to_archive_proposals_description: "לאחר מספר חודשים ההצעות יאוחסנו בארכיון, כבר לא תהיה אפשרות לקבלת הצבעות תמיכה"
+    email_domain_for_officials: "דומיין דוא\"ל עבור נושאי משרה ציבורית"
+    email_domain_for_officials_description: "כל המשתמשים הרשומים עם שם מתחם זה החשבון שלהם יאומת במועד ההרשמה"
+    twitter_handle: "בערוץ טוויטר"
+    twitter_handle_description: "אם נכתב פה, יופיע בכותרת התחתונה של הדף"
+    twitter_hashtag: "סולמית טוויטר"
+    twitter_hashtag_description: "סולמית אשר תופיע בעת שיתוף תוכן בטוויטר"
+    facebook_handle: "בערוץ פייסבוק"
+    facebook_handle_description: "אם נכתב פה, יופיע בכותרת התחתונה של הדף"
+    youtube_handle: "בערוץ יוטיוב"
+    youtube_handle_description: "אם נכתב פה, יופיע בכותרת התחתונה של הדף"
+    telegram_handle: "בערוץ טלגרם"
+    telegram_handle_description: "אם נכתב פה, יופיע בכותרת התחתונה של הדף"
+    instagram_handle: "בערוץ אינסטגרם"
+    instagram_handle_description: "אם נכתב פה, יופיע בכותרת התחתונה של הדף"
+    url: "כתובת האתר הראשי"
+    url_description: "ראשי ה-URL של אתר האינטרנט שלך"
+    org_name: "שם האתר"
+    org_name_description: "שם זה יופיע בנושא פרסומי, דפי עזרה..."
+    related_content_score_threshold: "סף ציון תוכן קשור"
+    related_content_score_threshold_description: "על פי הדירוג של ההצבעות בתוכן הקשור, תוכן מוסתר אשר סומן על ידי המשתמשים כאינו קשור"
+    hot_score_period_in_days: "תקופה (ימים) בשימוש המסנן 'הכי פעיל'"
+    hot_score_period_in_days_description: "המסנן 'הכי פעיל' בשימוש במספר מקטעים יתבסס על ההצבעות במהלך ה - X ימים אחרונים"
+    mailer_from_name: "כתובת דוא\"ל השולח"
+    mailer_from_name_description: "שם זה יופיע בתור שם השולח דוא\"ל שנשלחו מיישום זה"
+    mailer_from_address: "כתובת דוא\"ל של השולח"
+    mailer_from_address_description: "כתובת הדוא\"ל תופיע מהודעות דוא\"ל שנשלחו מיישום זה"
+    meta_title: "כותרת האתר (SEO)"
+    meta_title_description: "כותרת עבור האתר <title>, משמשים כדי לשפר SEO"
+    meta_description: "תיאור אתר (SEO)"
+    meta_description_description: 'תיאור האתר <meta name="description">, המשמש בכדי לשפר SEO'
+    meta_keywords: "מילות מפתח (SEO)"
+    meta_keywords_description: 'מילות מפתח <meta name="keywords">, משמשים בכדי לשפר SEO'
+    min_age_to_participate: הגיל המינימלי הדרוש בכדי להשתתף
+    min_age_to_participate_description: "משתמשים מעל גיל זה יכול להשתתף בכל התהליכים שבהם נדרש חשבון משתמש מאומת"
+    proposals:
+      successful_proposal_id: הצעה מוצלחת
+      successful_proposal_id_description: הצעה זו משמשת כדוגמא להצעה מוצלחת במספרי התמיכה בה ותוצג בתרשים לוח המחוונים.
+      poll_short_title: סקרים
+      poll_short_title_description: תיאור קצר של תכונות הסקר. מאפשר למשתמשים ליצור סקרים על הצעות
+      poll_description: תיאור הסקרים
+      poll_description_description: תיאור מפורט של תכונת הסקר
+      poll_link: קישור למידע נוסף
+      poll_link_description: הוספת קישור למידע נוסף לפונקציונליות הסקר של לוח הבקרה
+      email_short_title: דואר אלקטרוני
+      email_short_title_description: 'תיאור קצר של תכונות הדוא"ל. מאפשר למשתמשים לשלוח דוא"ל כדי לקדם את ההצעה שלהם'
+      email_description: תיאור הדוא"ל
+      email_description_description: תיאור מפורט של תכונות הדוא"ל
+      poster_short_title: פוסטר
+      poster_short_title_description: 'תיאור קצר של תכונות הפוסטר. מאפשר למשתמשים להוריד את הפוסטר ב - PDF כדי לקדם את ההצעה שלהם'
+      poster_description: תיאור הפוסטר
+      poster_description_description: תיאור מפורט של תכונות הפוסטר
+    analytics_url: "ניתוח כתובת URL"
+    proposal_notification_minimum_interval_in_days: "מרווח מינימלי (בימים) עבור מחברי הצעות בכדי לשלוח הצעה חדשה"
+    proposal_notification_minimum_interval_in_days_description: "מספר הימים בהם משתמש יכול לשלוח הודעה לכל התומכים בהצעות"
+    direct_message_max_per_day: "הודעה ישירה, מקסימום הודעות ליום"
+    direct_message_max_per_day_description: "מקסימום הודעות שמשתמש אחד יכול לשלוח ביום"
+    feature:
+      twitter_login: "טוויטר כניסה"
+      twitter_login_description: "לאפשר למשתמשים להירשם עם חשבון הטוויטר שלהם"
+      facebook_login: "כניסה עם חשבון פייסבוק"
+      facebook_login_description: "לאפשר למשתמשים להירשם עם חשבון הפייסבוק שלהם"
+      google_login: "כניסה עם חשבון גוגל"
+      google_login_description: "לאפשר למשתמשים להירשם עם חשבון הגוגל שלהם"
+      featured_proposals: "הצעות מוצעות"
+      featured_proposals_description: "מציג הצעות מובלטות בדף הבית של ההצעות"
+      signature_sheets: "דפי חתימות"
+      signature_sheets_description: "מאפשר להוסיף מתוך פאנל ניהול החתימות אשר נאספו באתר עבור ההצעות והצעות ההשקעה של התקציבים ההשתתפותיים"
+      user:
+        recommendations: "המלצות"
+        recommendations_description: "מראה המלצות משתמשים בדף הבית בהתבסס על התגים של הפריטים הבאים"
+        skip_verification: "דלג על אימות משתמש"
+        skip_verification_description: "יגרום להשבתת אימות משתמש, כל משתמשים הרשומים יוכלו להשתתף בכל התהליכים"
+        recommendations_on_debates: "המלצות על דיונים"
+        recommendations_on_debates_description: "מראה המלצות משתמשים המשתמשים בדף הדיונים בהתבסס על התגים של הפריטים אחריו"
+        recommendations_on_proposals: "המלצות על הצעות"
+        recommendations_on_proposals_description: "מראה המלצות למשתמשים בדף ההצעות בהתבסס על התגים של הפריטים אחריו"
+      community: "דעת הקהילה על הצעות והשקעות"
+      community_description: "מאפשר לקהילה באיזור ההצעות ובפרויקטים להשקעה וכן בתקציבים השתתפותיים"
+      map: "הצעות ותקציב השקעות באיזור גאוגרפי"
+      map_description: "מאפשר הצעות ופרויקטים להשקעה על פי איזור גאוגרפי"
+      allow_images: "אפשר להעלות ולהציג תמונות"
+      allow_images_description: "מאפשר למשתמשים להעלות תמונות בעת יצירת הצעות ופרויקטים של השקעות של בתקציבים השתתפותיים"
+      allow_attached_documents: "אפשר להעלות ולהציג מסמכים מצורפים"
+      allow_attached_documents_description: "מאפשר למשתמשים להעלות תמונות בעת יצירת הצעות ופרויקטים של השקעות בתקציבים השתתפותיים"
+      guides: "מדריכים ליצירת הצעות או פרויקטים להשקעות"
+      guides_description: "מציג מדריך להבדלים בין הצעות ופרויקטים של השקעות, אם יש תקציב השתתפותי פעיל"
+      public_stats: "סטטיסטיקה ציבורית"
+      public_stats_description: "הצגת סטטיסטיקה ציבורית בלוח ניהול"
+      help_page: "דף עזרה"
+      help_page_description: 'מציג תפריט עזרה המכיל דף עם מקטע מידע לגבי כל תכונה זמינה. גם דפים מותאמים אישית ותפריטים יכולים להיווצר ב "דפים מותאמים אישית", ו "בלוקים מותאמים אישית"'
+      valuation_comment_notification: "התראת תגובה להערכה"
+      valuation_comment_notification_description: "שלח אימייל לכל המשתמשים המשויכים למעט מעריכים שהגיבו להשקעה בתקציב, כאשר נוצרת הערה חדשה להערכה"
+    map:
+      latitude: "קו רוחב"
+      latitude_description: "קו רוחב להצגת המיקום מפה"
+      longitude: "קו אורך"
+      longitude_description: "קו אורך להצגת המיקום במפה"
+      zoom: "זום"
+      zoom_description: "זום להצגת המיקום מפה"
+    process:
+      debates: "דיונים"
+      debates_description: "מרחב הדיון של האזרחים מכוונת לכל מי שיכול להציג בעיות זה נוגע להם, על מה הם רוצים לשתף אחרים את עמדותיהם"
+      proposals: "הצעות"
+      proposals_description: "הצעותיהם של האזרחים הן הזדמנות לשכנים ולקולקטיבים להחליט באופן ישיר כיצד הם רוצים שהקהילה תיראה, לאחר קבלת תמיכה מספקת והגשתה להצבעת אזרחים"
+      polls: "סקרים"
+      polls_description: "סקרי האזרחים הם מנגנון שיתופי שבו האזרחים עם זכויות הצבעה יכולים להחליט החלטות ישירות"
+      budgets: "תקציב השתתפותי"
+      budgets_description: "עם תקציבים השתתפותיים, אזרחים יכולים להחליט אילו פרויקטים שהוצגו על ידי שכניהם יקבלו חלק מהתקציב"
+      legislation: "חקיקה"
+      legislation_description: "בתהליכים השתתפותיים, מוצעים לאזרחים הזדמנות להשתתף בשינויים ושינויים בתקנות המשפיעים על החברה ולתת את דעתם על פעולות מסוימות המתוכננות להתבצע"
+    html:
+      per_page_code_head: "קוד שייכלל בכל דף (<head>)"
+      per_page_code_head_description: "קוד זה יופיע בתוך תווית ה- <head>. שימושי עבור הזנת סקריפטים מותאמים אישית, אנליטיקה..."
+      per_page_code_body: "קוד שייכלל בכל דף (<body>)"
+      per_page_code_body_description: "קוד זה יופיע בתוך תווית ה- <body>. שימושי עבור הזנת סקריפטים מותאמים אישית, ואנליטיקה..."
+    uploads:
+      images:
+        min_width: "רוחב תמונה מינימלי"
+        min_width_description: "רוחב תמונה מינימלי להעלאת תמונה ( בפיקסלים)"
+        min_height: "גובה תמונה מינימלי"
+        min_height_description: "גובה תמונה מינימלי להעלאה ( בפיקסלים)"
+        max_size: "גודל תמונה מקסימלי"
+        max_size_description: "גודל תמונה מקסימלי להעלאה ( במגה בייט)"
+        content_types: "פורמט מותר עבור תמונות"
+        content_types_description: "בחר את הפורמט המותר להעלאת תמונות"
+        title:
+          min_length: "אורך מינימלי לכותרת התמונה"
+          min_length_description: "כותרת שסופקה על ידי המשתמש בעת העלאת תמונה (משמשת כתכונת alt HTML)"
+          max_length: "אורך מקסימלי לכותרת תמונה"
+          max_length_description: "כותרת שסופקה על ידי המשתמש בעת העלאת תמונה (משמשת כתכונת alt HTML)"
+      documents:
+        max_amount: "מספר מסמכים מקסימלי"
+        max_amount_description: "מספר מרבי של מסמכים שניתן לצרף להצעה, להשקעה..."
+        max_size: "משקל מקסימלי למסמך"
+        max_size_description: "הגודל המרבי המותר למסמך שהועלה (ב- מגה בייט/ MB)"
+        content_types: "סוגי תוכן שאושרו עבור מסמכים"
+        content_types_description: "בחר את כל סוגי התוכן המותרים עבור מסמכים שהועלו"

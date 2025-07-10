@@ -1,0 +1,77 @@
+sl:
+  moderation:
+    comments:
+      index:
+        block_authors: Blokiraj avtorje
+        confirm: Si prepričan/-a?
+        filter: Filtriraj
+        filters:
+          all: Vsi
+          pending_flag_review: V teku
+          with_ignored_flag: Označeni kot videni
+        headers:
+          comment: Komentiraj
+          moderate: Moderiraj
+        hide_comments: Zbriši komentarje
+        ignore_flags: Označi kot videne
+        order: Vrstni red
+        orders:
+          flags: Najbolj označeni
+          newest: Najnovejši
+        title: Komentarji
+    dashboard:
+      index:
+        title: Moderacija
+    debates:
+      index:
+        block_authors: Blokiraj avtorje
+        confirm: Si prepričan/-a?
+        filter: Filtriraj
+        filters:
+          all: Vsi
+          pending_flag_review: V teku
+          with_ignored_flag: Označeni kot videni
+        headers:
+          debate: Razprava
+          moderate: Moderiraj
+        hide_debates: Skrij razprave
+        ignore_flags: Označi kot videne
+        order: Vrstni red
+        orders:
+          created_at: Najnovejše
+          flags: Najbolj označene
+        title: Razprave
+    header:
+      title: Moderacija
+    menu:
+      flagged_comments: Komentarji
+      flagged_debates: Razprave
+      proposals: Predlogi
+      users: Blokiraj uporabnike
+    proposals:
+      index:
+        block_authors: Blokiraj avtorje
+        confirm: Si prepričan/-a?
+        filter: Filtriraj
+        filters:
+          all: Vsi
+          pending_flag_review: Čakajoči na pregled
+          with_ignored_flag: Označi kot videne
+        headers:
+          moderate: Moderiraj
+          proposal: Predlog
+        hide_proposals: Skrij predloge
+        ignore_flags: Označi kot videne
+        order: Sortiraj po
+        orders:
+          created_at: Najnovejši
+          flags: Najbolj označeni
+        title: Predlogi
+    users:
+      index:
+        hidden: Blokirani
+        hide: Blokiraj
+        search: Išči
+        search_placeholder: e-naslov ali ime uporabnika/-ce
+        title: Blokiraj uporabnike/-ce
+      notice_hide: Uporabnik/-ca blokiran/-a. Vse razprave in komentarji tega uporabniškega računa so bili skriti.

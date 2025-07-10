@@ -1,0 +1,16 @@
+<% if can?(:manage_mailing, proposal) %>
+  <div class="small-12 medium-6 large-3 column end">
+    <div class="resource-card" data-equalizer-watch="resources">
+      <h4><%= t("dashboard.menu.mailing") %></h4>
+      <p class="resource-description">
+        <%= Setting["proposals.email_short_title"] %>
+      </p>
+
+      <div class="small-12 column small-centered margin-top">
+        <%= link_to t("dashboard.resource.view_resource"),
+                      new_proposal_dashboard_mailing_path(proposal.to_param),
+                      class: "button expanded" %>
+      </div>
+    </div>
+  </div>
+<% end %>

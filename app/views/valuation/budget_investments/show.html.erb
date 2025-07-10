@@ -1,0 +1,61 @@
+<%= back_link_to valuation_budget_budget_investments_path %>
+
+<br>
+
+<h2 class="inline-block"><%= t("admin.budget_investments.show.preview") %></h2>
+<% if can?(:valuate, @investment) %>
+  <div class="float-right">
+    <%= link_to t("admin.budget_investments.show.edit"),
+                edit_valuation_budget_budget_investment_path(
+                  @budget,
+                  @investment,
+                  Budget::Investment.filter_params(params)
+                ),
+                class: "button hollow" %>
+  </div>
+<% end %>
+
+<hr>
+<%= render "/budgets/investments/investment_detail", investment: @investment, preview: true %>
+</hr>
+
+<% if @investment.external_url.present? %>
+  <p><%= sanitize_and_auto_link @investment.external_url %></p>
+<% end %>
+
+<hr>
+
+<h2><%= t("valuation.budget_investments.show.responsibles") %></h2>
+
+<p><strong><%= t("valuation.budget_investments.show.assigned_admin") %>:</strong>
+  <% if @investment.administrator.present? %>
+    <%= @investment.administrator.name_and_email %>
+  <% else %>
+    <%= t("valuation.budget_investments.show.undefined") %>
+  <% end %>
+</p>
+
+<p><strong><%= t("valuation.budget_investments.show.assigned_valuators") %>:</strong></p>
+<div id="assigned_valuators">
+  <ul>
+    <% @investment.valuators.each do |valuator| %>
+      <li><%= valuator.name_and_email %></li>
+    <% end %>
+
+    <% if @investment.valuators.empty? %>
+      <li><%= t("valuation.budget_investments.show.undefined") %></li>
+    <% end %>
+  </ul>
+</div>
+
+<hr>
+
+<h2><%= t("valuation.budget_investments.show.dossier") %></h2>
+<p>
+  <%= link_to t("valuation.budget_investments.show.edit_dossier"), edit_valuation_budget_budget_investment_path(@budget, @investment) %>
+</p>
+<%= render "dossier" %>
+
+<hr>
+
+<%= render "valuation/budget_investments/valuation_comments" %>

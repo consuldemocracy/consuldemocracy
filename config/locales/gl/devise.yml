@@ -1,0 +1,66 @@
+#Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+gl:
+  devise:
+    password_expired:
+      expire_password: "Contrasinal caducado"
+      change_required: "O teu contrasinal caducou"
+      change_password: "Cambia o teu contrasinal"
+      new_password: "Contrasinal novo"
+      updated: "O contrasinal actualizouse con éxito"
+    confirmations:
+      confirmed: "A túa conta foi confirmada. Por favor, autentifícate coa túa rede social ou o teu usuario e contrasinal"
+      send_instructions: "Recibirás un correo electrónico nuns minutos con instrucións sobre como restablecer o teu contrasinal."
+      send_paranoid_instructions: "Se o teu correo electrónico existe na nosa base de datos recibirás un correo nuns minutos con instrucións sobre como restablecer o teu contrasinal."
+    failure:
+      already_authenticated: "Xa iniciaches sesión."
+      inactive: "A túa conta inda non foi activada."
+      invalid: "%{authentication_keys} ou contrasinal inválidos."
+      locked: "A túa conta foi bloqueada."
+      last_attempt: "Tes un último intento antes de que a túa conta sexa bloqueada."
+      not_found_in_database: "Contrasinal ou %{authentication_keys} inválidos."
+      timeout: "A túa sesión expirou, por favor, inicia sesión novamente para continuar."
+      unauthenticated: "Necesitas iniciar sesión ou rexistrarte para continuar."
+      unconfirmed: "Para continuar, por favor, preme no enlace de confirmación que che enviamos á túa conta de correo."
+    mailer:
+      confirmation_instructions:
+        subject: "Instrucións de confirmación"
+      reset_password_instructions:
+        subject: "Instrucións para restablecer o teu contrasinal"
+      unlock_instructions:
+        subject: "Instrucións de desbloqueo"
+    omniauth_callbacks:
+      failure: "Non foi posible a autorización como %{kind} polo seguinte motivo «%{reason}»."
+      success: "Identificado correctamente vía %{kind}."
+    passwords:
+      no_token: "Non podes acceder a esta páxina se non é a través dun enlace para restablecer o contrasinal. Se accediches dende o enlace para restablecer o contrasinal, asegúrate de que a URL estea completa."
+      send_instructions: "Recibirás un correo electrónico con instrucións sobre como restablecer o teu contrasinal nuns minutos."
+      send_paranoid_instructions: "Se o teu correo electrónico existe na nosa base de datos, recibirás un enlace para restablecer o contrasinal nuns minutos."
+      updated: "O teu contrasinal cambiou correctamente. Fuches identificado correctamente."
+      updated_not_active: "O teu contrasinal cambiouse correctamente."
+    registrations:
+      destroyed: "Ata pronto! A súa conta foi desactivada. Agardamos poder velo de novo."
+      signed_up: "Benvido! Fuches identificado."
+      signed_up_but_inactive: "Rexistrácheste correctamente, pero non puideches iniciar sesión porque a túa conta non foi activada."
+      signed_up_but_locked: "Rexistrácheste correctamente, pero non puideches iniciar sesión porque a túa conta está bloqueada."
+      signed_up_but_unconfirmed: "Envióuseche unha mensaxe cun enlace de confirmación. Por favor, visita o enlace para activar a túa conta."
+      update_needs_confirmation: "Actualizaches a túa conta correctamente, non obstante necesitamos verificar a túa nova conta de correo. Por favor, revisa o teu correo electrónico e visita o enlace para finalizar a confirmación do teu novo enderezo de correo."
+      updated: "Actualizaches a túa conta correctamente."
+    sessions:
+      signed_in: "Iniciaches sesión correctamente."
+      signed_out: "Cerraches a sesión correctamente."
+      already_signed_out: "Pechaches a sesión correctamente."
+    unlocks:
+      send_instructions: "Recibirás un correo electrónico nuns minutos con instrucións sobre como desbloquear a túa conta."
+      send_paranoid_instructions: "Se a túa conta existe, recibirás un correo electrónico nuns minutos con instrucións sobre como desbloquear a túa conta."
+      unlocked: "A túa conta foi desbloqueada. Por favor, inicia sesión para continuar."
+  errors:
+    messages:
+      already_confirmed: "xa fuches confirmado, por favor intenta iniciar sesión."
+      confirmation_period_expired: "necesitas ser confirmado en %{period}, por favor vólvea solicitar."
+      expired: "expirou, por favor vólvea solicitar."
+      not_found: "non se encontrou."
+      not_locked: "non estaba bloqueado."
+      not_saved:
+        one: "1 erro impediu que este %{resource} se gardase. Podes revisar os campos marcados para saberes como corrixilos:"
+        other: "%{count} erros impediron que este %{resource} se gardase. Podes revisar os campos marcados para saberes como corrixilos:"
+      equal_to_current_password: "ten de ser diferente que o contrasinal actual."
