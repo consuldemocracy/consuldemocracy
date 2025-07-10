@@ -54,12 +54,13 @@ es:
       investment_proyects: Ver lista completa de proyectos de gasto
       unfeasible_investment_proyects: Ver lista de proyectos de gasto inviables
       not_selected_investment_proyects: Ver lista de proyectos de gasto no seleccionados para la votación final
-      finished_budgets: Presupuestos participativos terminados
+      finished_budgets: Presupuestos participativos
       see_results: Ver resultados
       section_footer:
         title: Ayuda sobre presupuestos participativos
         description: Con los presupuestos participativos la ciudadanía decide a qué proyectos va destinada una parte del presupuesto.
       milestones: Seguimiento de proyectos
+      download: Estado de Ejecución
     investments:
       form:
         tag_category_label: "Categorías"

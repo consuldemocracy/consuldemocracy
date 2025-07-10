@@ -638,7 +638,7 @@ es:
       already_voted_in_booth: "Ya has participado en esta votación en urnas presenciales, no puedes volver a participar."
       already_voted_in_web: "Ya has participado en esta votación. Si vuelves a votar se sobreescribirá tu resultado anterior."
       back: Volver a votaciones
-      cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar."
+      cant_answer_not_logged_in: "Necesitas %{signin} para participar."
       comments_tab: Comentarios
       cant_answer_verify: "Por favor %{verify_link} para poder responder."
       verify_link: "verifica tu cuenta"
@@ -863,13 +863,13 @@ es:
   votes:
     agree: Estoy de acuerdo
     anonymous: Demasiados votos anónimos, para poder votar %{verify_account}.
-    comment_unauthenticated: Necesitas %{signin} o %{signup} para poder votar.
+    comment_unauthenticated: Necesitas %{signin} para poder votar.
     disagree: No estoy de acuerdo
     organizations: Las organizaciones no pueden votar.
     supports: Apoyos
     verified_only: Las propuestas sólo pueden ser votadas por usuarios verificados, %{verify_account}.
     budget_investments:
-      not_logged_in: Necesitas %{signin} o %{signup} para continuar.
+      not_logged_in: Necesitas %{signin} para continuar.
       not_verified: Los proyectos de gasto sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
       organization: Las organizaciones no pueden votar.
       unfeasible: No se pueden votar propuestas inviables.
