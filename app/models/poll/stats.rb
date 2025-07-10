@@ -42,11 +42,11 @@ class Poll::Stats
   end
 
   def total_web_valid
-    voters.where(origin: "web").count - total_web_white
+    voters.where(origin: "web", user_id: poll.answers.select(:author_id).distinct).count
   end
 
   def total_web_white
-    0
+    voters.where(origin: "web").count - total_web_valid
   end
 
   def total_web_null

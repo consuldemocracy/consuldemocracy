@@ -10,6 +10,8 @@ en:
         poll_question_option: "Answer created successfully"
         poll_question_option_video: "Video created successfully"
         poll_question_option_image: "Image uploaded successfully"
+        poll_voter: "Thank you for voting!"
+        poll_voter_blank: "Thank you for voting! Your vote has been registered as a blank vote."
         proposal: "Proposal created successfully."
         proposal_notification: "Your message has been sent correctly."
         budget_investment: "Budget Investment created successfully."

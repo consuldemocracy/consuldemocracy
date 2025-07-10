@@ -1,0 +1,21 @@
+<% if can?(:answer, poll) %>
+  <% if voted_in_booth? %>
+    <%= callout(t("polls.show.already_voted_in_booth")) %>
+  <% elsif voted_in_web? %>
+    <% if voted_blank? %>
+      <%= callout(t("polls.show.already_voted_blank_in_web")) %>
+    <% else %>
+      <%= callout(t("polls.show.already_voted_in_web")) %>
+    <% end %>
+  <% end %>
+<% else %>
+  <% if current_user.nil? %>
+    <%= callout(not_logged_in_text, html_class: "primary") %>
+  <% elsif current_user.unverified? %>
+    <%= callout(unverified_text) %>
+  <% elsif poll.expired? %>
+    <%= callout(t("polls.show.cant_answer_expired"), html_class: "alert") %>
+  <% else %>
+    <%= callout(t("polls.show.cant_answer_wrong_geozone")) %>
+  <% end %>
+<% end %>
