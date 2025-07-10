@@ -1,7 +1,0 @@
-en-US:
-  activerecord:
-    attributes:
-      user:
-        email: "Email"
-      link:
-        url: Link

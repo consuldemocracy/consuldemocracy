@@ -1,6 +1,0 @@
----
-es:
-  flash:
-    actions:
-      create:
-        physical_final_vote: "Votos físicos asignados correctamente"

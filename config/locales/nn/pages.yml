@@ -1,8 +1,0 @@
-nn:
-  pages:
-    conditions:
-      title: Vilkår og betingelser
-      subtitle: Juridisk meddelelse om bruksbetingelser, privatpolitikk og beskyttelse av personopplysninger på open governance-portalen
-      description: Informasjonsside om forhold knyttet til bruk og beskyttelse av personlig data.
-    help:
-      title: "%{org} er en plattform for innbyggerinvolvering"

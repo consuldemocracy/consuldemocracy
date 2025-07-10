@@ -1,6 +1,0 @@
-id:
-  date:
-    order:
-      - :year
-      - :month
-      - :day

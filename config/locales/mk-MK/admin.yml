@@ -1,5 +1,0 @@
-mk:
-  admin:
-    signature_sheets:
-      new:
-        document_numbers_note: "Con i numeri separati da punto e virgola (;)"

@@ -1,8 +1,0 @@
----
-es:
-  devise:
-    confirmations:
-      confirmed: "Tu cuenta ha sido confirmada. Por favor autentifícate con tu usuario y contraseña"
-    omniauth_callbacks:
-      failure_ldap: "Datos de acceso incorrectos."
-      failure_codigo: "Datos de acceso incorrectos."
