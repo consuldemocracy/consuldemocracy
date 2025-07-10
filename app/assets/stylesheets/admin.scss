@@ -589,23 +589,6 @@ table {
 
 .legislation-draft-versions-form {
 
-  .control {
-    cursor: pointer;
-    margin-bottom: 1rem;
-
-    small {
-      color: $text-medium;
-      display: block;
-      margin-top: -1rem;
-
-      @include breakpoint(medium) {
-        display: inline-block;
-        margin-left: 0.25rem;
-        margin-top: 0;
-      }
-    }
-  }
-
   .fullscreen-container {
     background: #ccdbe6;
     text-align: center;
