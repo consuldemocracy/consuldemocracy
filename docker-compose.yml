@@ -39,6 +39,7 @@ services:
       - PGUSER=postgres
       - PGPASSWORD=${PGPASSWORD-$POSTGRES_PASSWORD}
       - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+      - SECRET_KEY_BASE=$SECRET_KEY_BASE
 volumes:
   db_data: {}
   bundle: {}

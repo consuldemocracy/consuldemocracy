@@ -28,6 +28,9 @@ tmp/
 /public/tenants/*/machine_learning/data/
 /node_modules/
 
+# Dotenv files
+.env
+
 # Bundler config, cache and gemsets
 .bundle/
 .ruby-gemset
