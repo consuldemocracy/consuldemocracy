@@ -34,3 +34,4 @@ exclude_paths:
 - public/
 - tmp/
 - vendor/
+
