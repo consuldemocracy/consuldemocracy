@@ -4,5 +4,5 @@ FactoryBot.define do
     fullname "MyString"
     email "MyString"
     validated false
-  end
+  end  
 end
