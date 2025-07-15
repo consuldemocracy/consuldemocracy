@@ -31,8 +31,8 @@ set :pty, true
 set :use_sudo, false
 
 #set :linked_files, %w[config/database.yml config/secrets.yml config/credentials/production.key config/credentials/production.yml.enc]
-#set :linked_dirs, %w[.bundle log tmp public/system public/assets
-#                     public/ckeditor_assets public/machine_learning/data storage]
+set :linked_dirs, %w[.bundle log tmp public/system public/assets
+                     public/ckeditor_assets public/machine_learning/data storage]
 
 # Required and optional linked files
 required_files = %w[config/database.yml config/secrets.yml]
