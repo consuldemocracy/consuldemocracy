@@ -1,4 +1,5 @@
 require "rails_helper"
+require 'devise_two_factor/spec_helpers'
 
 describe User do
   describe "#headings_voted_within_group" do
@@ -1082,6 +1083,91 @@ describe User do
         allow(Tenant).to receive(:current_schema).and_return("superstrict")
 
         expect(User.unlock_in).to eq 50.hours
+      end
+    end
+  end
+  it_behaves_like "two_factor_authenticatable"
+  it_behaves_like "two_factor_backupable"
+  describe 'custom two-factor authentication logic' do
+    let(:user) { create(:user) }
+    let(:administrator) { create(:administrator).user } # Assumes you have an :administrator factory
+
+    describe '#generate_two_factor_secret_if_missing!' do
+      it 'generates an otp_secret if one does not exist' do
+        user.otp_secret = nil
+        expect { user.generate_two_factor_secret_if_missing! }.to change(user, :otp_secret).from(nil)
+      end
+      it 'does not generate a new otp_secret if one already exists' do
+        # Arrange: set an initial secret
+        user.update!(otp_secret: 'an_existing_secret')
+
+        # Act: call the method again and reload the user to check persisted state
+        user.generate_two_factor_secret_if_missing!
+        user.reload
+
+        # Assert: the secret should be the same as the initial one
+        expect(user.otp_secret).to eq('an_existing_secret')
+      end
+
+    end
+
+    describe '#enable_two_factor!' do
+      it 'sets otp_required_for_login to true' do
+        user.enable_two_factor!
+        expect(user.otp_required_for_login).to be(true)
+      end
+    end
+
+    describe '#disable_two_factor!' do
+      before do
+        user.enable_two_factor!
+        user.generate_otp_backup_codes!
+        user.save!
+      end
+
+      it 'sets otp_required_for_login to false' do
+        user.disable_two_factor!
+        expect(user.otp_required_for_login).to be(false)
+      end
+
+      it 'clears the otp_secret' do
+        user.disable_two_factor!
+        expect(user.otp_secret).to be_nil
+      end
+
+      it 'clears the otp_backup_codes' do
+        user.disable_two_factor!
+        expect(user.otp_backup_codes).to be_empty
+      end
+    end
+
+#    describe '#otp_provisioning_uri' do
+#      it 'returns a correctly formatted URI' do
+#        user.otp_secret = 'BASE32SECRET'
+#        uri = user.otp_provisioning_uri('test@example.com', issuer: 'TestApp')
+#        expect(uri).to eq('otpauth://totp/TestApp:test@example.com?secret=BASE32SECRET&issuer=TestApp')
+#      end
+#    end
+
+    describe '#requires_2fa?' do
+      it 'returns true if the user is an administrator' do
+        expect(administrator.requires_2fa?).to be(true)
+      end
+
+      it 'returns false if the user is not an administrator' do
+        expect(user.requires_2fa?).to be(false)
+      end
+    end
+
+    describe '#can_be_administrator?' do
+      it 'returns true if 2FA is enabled' do
+        user.otp_required_for_login = true
+        expect(user.can_be_administrator?).to be(true)
+      end
+
+      it 'returns false if 2FA is not enabled' do
+        user.otp_required_for_login = false
+        expect(user.can_be_administrator?).to be(false)
       end
     end
   end

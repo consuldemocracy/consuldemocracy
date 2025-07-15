@@ -35,7 +35,7 @@ Rails.application.configure do
   end
 
   # Allow accessing the application through a domain so subdomains can be used
-  config.hosts << "lvh.me"
+  config.hosts << "consuldev.communitychoices.scot"
   config.hosts << /.*\.lvh\.me/
 
   # Don't care if the mailer can't send.
@@ -75,12 +75,25 @@ Rails.application.configure do
 
   config.eager_load_paths << "#{Rails.root}/spec/mailers/previews"
   config.action_mailer.preview_paths << "#{Rails.root}/spec/mailers/previews"
+  config.action_mailer.preview_path = "#{Rails.root}/spec/mailers/previews"
+
+  config.log_level = :debug
+
+  # Limit size of local logs
+  # TODO: replace with config.log_file_size after upgrading to Rails 7.1
+  logger = ActiveSupport::Logger.new(config.default_log_file, 1, 100.megabytes)
+  logger.formatter = config.log_formatter
+  config.logger = ActiveSupport::TaggedLogging.new(logger)
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 
-  # Raise error when a before_action's only/except options reference missing actions
-  # config.action_controller.raise_on_missing_callback_actions = true
+      # Copy the generate key set and set them as environment variables
+    puts "SALT COMINGUP #{ENV['ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT']}"
+    config.active_record.encryption.primary_key = ENV['ACTIVE_RECORD_PRIMARY_KEY']
+    config.active_record.encryption.deterministic_key = ENV['ACTIVE_RECORD_DETERMINISTIC_KEY']
+    config.active_record.encryption.key_derivation_salt = ENV['ACTIVE_RECORD_KEY_SALT']
+
 end
 
 require Rails.root.join("config", "environments", "custom", "development")

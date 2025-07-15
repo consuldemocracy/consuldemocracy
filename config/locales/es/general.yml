@@ -953,3 +953,16 @@ es:
       title: Cookies de terceros
       description: Esta web usa cookies de terceros. Estas cookies pueden recopilar información para mejorar tu experiencia de usuario.
     save_preferences: Guardar preferencias
+  two_factor_authentication:
+    show:
+      title: "Autenticación de Dos Factores"
+      description: "Para habilitar la autenticación de dos factores, escanee el código QR a continuación con una aplicación de autenticación en su teléfono. Recomendamos una de las siguientes:"
+      google_authenticator: "Google Authenticator"
+      authy: "Authy"
+      app_store: "App Store"
+      google_play: "Google Play"
+      otp_label: "Introduzca el código de 6 dígitos de su aplicación"
+      enable_button: "Habilitar Autenticación de Dos Factores"
+    enable:
+      success_notice: "Autenticación de dos factores habilitada con éxito."
+      invalid_otp_alert: "OTP inválido"

@@ -1,0 +1,58 @@
+<%# app/views/two_factor_authentications/show.html.erb %>
+
+<h1><%= t("two_factor_authentication.show.title") %></h1>
+
+<div class="two-factor-setup">
+  <p><%= t("two_factor_authentication.show.description") %></p>
+
+  <div class="authenticator-options">
+    <div class="authenticator-app">
+      <div class="app-icon">
+        <img src="https://cdn.simpleicons.org/googleauthenticator/4285F4" alt="Google Authenticator logo" width="32" height="32">
+      </div>
+      <div class="app-details">
+        <%# Brand names often don't need translation, but you can if you want %>
+        <strong><%= t("two_factor_authentication.show.google_authenticator") %></strong>
+        <div class="store-links">
+          <a href="..." target="_blank" class="store-link">
+            <img src="https://cdn.simpleicons.org/apple/000000" alt="Apple App Store logo" class="store-logo" width="16" height="16"> <%= t(".app_store") %>
+          </a>
+          <a href="..." target="_blank" class="store-link">
+            <img src="https://cdn.simpleicons.org/googleplay/3DDC84" alt="Google Play Store logo" class="store-logo" width="16" height="16"> <%= t(".google_play") %>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="authenticator-app">
+      <div class="app-icon">
+        <img src="https://cdn.simpleicons.org/authy/E51F33" alt="Authy logo" width="32" height="32">
+      </div>
+      <div class="app-details">
+        <strong><%= t("two_factor_authentication.show.authy") %></strong>
+        <div class="store-links">
+          <a href="..." target="_blank" class="store-link">
+            <img src="https://cdn.simpleicons.org/apple/000000" alt="Apple App Store logo" class="store-logo" width="16" height="16"> <%= t(".app_store") %>
+          </a>
+          <a href="..." target="_blank" class="store-link">
+            <img src="https://cdn.simpleicons.org/googleplay/3DDC84" alt="Google Play Store logo" class="store-logo" width="16" height="16"> <%= t(".google_play") %>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="qr-code-container">
+    <img src="<%= @qr_code %>" alt="QR Code for Two-Factor Authentication">
+  </div>
+
+  <%= form_with url: enable_account_two_factor_authentication_path, method: :post, html: { class: "otp-form" } do |f| %>
+    <%= f.text_field :otp_attempt,
+                     label: t("two_factor_authentication.show.otp_label"),
+                     autocomplete: "one-time-code",
+                     inputmode: "numeric",
+                     pattern: "[0-9]*",
+                     maxlength: "6" %>
+    <%# The f.submit helper also takes a translation key %>
+    <%= f.submit t("two_factor_authentication.show.enable_button"), class: "button primary" %>
+  <% end %>
+</div>

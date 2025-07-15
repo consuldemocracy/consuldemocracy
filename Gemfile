@@ -71,6 +71,7 @@ group :development, :test do
   gem "knapsack_pro", "~> 8.3.0"
   gem "launchy", "~> 3.1.1"
   gem "letter_opener_web", "~> 3.0.0"
+  gem "dotenv-rails"
 end
 
 group :test do

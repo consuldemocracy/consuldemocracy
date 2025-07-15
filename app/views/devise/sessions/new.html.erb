@@ -19,11 +19,15 @@
       <%= link_to t("devise_views.shared.links.new_password"), new_password_path(resource_name), class: "float-right" %>
     </div>
 
+    <div class="small-12 column">
+      <%#= f.text_field :otp_attempt, label: t("devise_views.sessions.new.otp_label"), placeholder: "6-DIGIT CODE" %>
+    </div>
+
     <% if devise_mapping.rememberable? -%>
       <div class="small-12 column">
         <%= f.check_box :remember_me, label: t("devise_views.sessions.new.remember_me") %>
       </div>
-    <% end -%>
+    <% end %>
 
     <div class="small-12 medium-6 small-centered">
       <%= f.submit(t("devise_views.sessions.new.submit"), class: "button expanded") %>

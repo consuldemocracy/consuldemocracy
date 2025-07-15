@@ -12,6 +12,7 @@ en:
       save_changes_submit: Save changes
       recommendations: Recommendations
       title: My account
+      two_factor: Two Factor Authentication
       user_permission_info: With your account you can...
       user_permission_title: Participation
       user_permission_verify: To perform all the actions verify your account.
@@ -953,3 +954,16 @@ en:
       title: Third party cookies
       description: This website use third-party cookies. These cookies can enhance functionality or collect information to improve your user experience.
     save_preferences: Save preferences
+  two_factor_authentication:
+    show:
+      title: "Two-Factor Authentication"
+      description: "To enable two-factor authentication, scan the QR code below with an authenticator app on your phone. We recommend one of the following:"
+      google_authenticator: "Google Authenticator"
+      authy: "Authy"
+      app_store: "App Store"
+      google_play: "Google Play"
+      otp_label: "Enter the 6-Digit Code from your app"
+      enable_button: "Enable Two-Factor Authentication"
+    enable:
+      success_notice: "Two-factor authentication enabled successfully."
+      invalid_otp_alert: "Invalid OTP"

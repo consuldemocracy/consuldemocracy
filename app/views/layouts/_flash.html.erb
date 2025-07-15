@@ -5,8 +5,14 @@
         <span aria-hidden="true">&times;</span>
       </button>
       <div class="notice-text">
-        <%= sanitize(flash_message) %>
-      </div>
+  <% if flash_message.is_a?(Array) %>
+    <%# If it's an array, it's now safe to join it. %>
+    <%= sanitize(flash_message.join("<br>")) %>
+  <% else %>
+    <%# If it's just a regular string, display it directly. %>
+    <%= sanitize(flash_message) %>
+  <% end %>
+</div>
     </div>
   </div>
 <% end %>
