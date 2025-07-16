@@ -71,11 +71,16 @@ describe "Admin poll questions", :admin do
         poll = create(:poll, :future)
         visit admin_poll_path(poll)
         click_link "Create question"
+        expect(page).to have_content "It's only possible to answer one time to the question."
       end
 
       scenario "Unique" do
         fill_in "Question", with: "Question with unique answer"
         select "Unique answer", from: "Votation type"
+
+        expect(page).to have_content "It's only possible to answer one time to the question."
+        expect(page).not_to have_content "Allows to choose multiple answers."
+        expect(page).not_to have_field "Maximum number of votes"
 
         click_button "Save"
 
@@ -86,6 +91,10 @@ describe "Admin poll questions", :admin do
       scenario "Multiple" do
         fill_in "Question", with: "Question with multiple answers"
         select "Multiple answers", from: "Votation type"
+
+        expect(page).not_to have_content "It's only possible to answer one time to the question."
+        expect(page).to have_content "Allows to choose multiple answers."
+
         fill_in "Maximum number of votes", with: 6
         click_button "Save"
 
