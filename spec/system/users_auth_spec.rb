@@ -601,6 +601,355 @@ describe "Users" do
         click_link "Change my login details"
 
         expect(page).to have_field "Email", with: "tester@consul.dev"
+
+        click_on "Go back"
+        
+        click_link "Sign out"
+      end
+
+      scenario "Different SAML authentication configurations for different tenants", :seed_tenants do
+        # Create tenants
+        create(:tenant, schema: "mars")
+        create(:tenant, schema: "venus")
+
+        # Enable SAML login for both tenants
+        Tenant.switch("mars") { Setting["feature.saml_login"] = true }
+        Tenant.switch("venus") { Setting["feature.saml_login"] = true }
+
+        # Mock different SAML secrets for each tenant
+        mars_secrets = {
+          saml_sp_entity_id: "https://mars.consul.dev/saml/metadata",
+          saml_idp_metadata_url: "https://mars-idp.example.com/metadata",
+          saml_idp_sso_service_url: "https://mars-idp.example.com/sso"
+        }
+
+        venus_secrets = {
+          saml_sp_entity_id: "https://venus.consul.dev/saml/metadata",
+          saml_idp_metadata_url: "https://venus-idp.example.com/metadata",
+          saml_idp_sso_service_url: "https://venus-idp.example.com/sso"
+        }
+
+        # Mock authentication responses from different IdPs
+        mars_saml_hash = {
+          provider: "saml",
+          uid: "mars-user-123",
+          info: {
+            name: "Mars User",
+            email: "mars.user@mars.gov",
+            verified: "1"
+          },
+          extra: {
+            raw_info: {
+              issuer: "https://mars-idp.example.com"
+            }
+          }
+        }
+
+        venus_saml_hash = {
+          provider: "saml",
+          uid: "venus-user-456",
+          info: {
+            name: "Venus User",
+            email: "venus.user@venus.gov",
+            verified: "1"
+          },
+          extra: {
+            raw_info: {
+              issuer: "https://venus-idp.example.com"
+            }
+          }
+        }
+
+        # Test Mars tenant authentication
+        with_subdomain("mars") do
+          Tenant.switch("mars") do
+           
+            expect_any_instance_of(OmniauthTenantSetup).to receive(:secrets).and_return(mars_secrets)
+
+            allow_any_instance_of(OneLogin::RubySaml::IdpMetadataParser).to receive(:parse_remote_to_hash).and_return({})
+
+            expect(mars_saml_hash[:extra][:raw_info][:issuer]).to eq("https://mars-idp.example.com")
+
+
+            OmniAuth.config.add_mock(:saml, mars_saml_hash)
+
+            visit new_user_registration_path
+            click_link "Sign up with SAML"
+
+            expect(page).to have_content "Successfully identified as Saml"
+            expect_to_be_signed_in
+
+            within("#notice") { click_button "Close" }
+            click_link "My account"
+
+            expect(page).to have_field "Username", with: "Mars User"
+
+            click_link "Change my login details"
+            expect(page).to have_field "Email", with: "mars.user@mars.gov"
+
+          end
+        end
+
+        with_subdomain("venus") do
+          Tenant.switch("venus") do
+
+            expect_any_instance_of(OmniauthTenantSetup).to receive(:secrets).and_return(mars_secrets)
+
+            allow_any_instance_of(OneLogin::RubySaml::IdpMetadataParser).to receive(:parse_remote_to_hash).and_return({})
+
+            expect(venus_saml_hash[:extra][:raw_info][:issuer]).to eq("https://venus-idp.example.com")
+
+            OmniAuth.config.add_mock(:saml, venus_saml_hash)
+
+            visit new_user_registration_path
+            click_link "Sign up with SAML"
+
+            expect(page).to have_content "Successfully identified as Saml"
+            expect_to_be_signed_in
+
+            within("#notice") { click_button "Close" }
+            click_link "My account"
+
+            expect(page).to have_field "Username", with: "Venus User"
+
+            click_link "Change my login details"
+            expect(page).to have_field "Email", with: "venus.user@venus.gov"
+
+          end
+        end
+      end
+
+      scenario "SAML user from one tenant cannot sign in to another tenant", :seed_tenants do
+        create(:tenant, schema: "mars")
+        create(:tenant, schema: "venus")
+  
+        # Enable SAML for both tenants
+        Tenant.switch("mars") { Setting["feature.saml_login"] = true }
+        Tenant.switch("venus") { Setting["feature.saml_login"] = true }
+  
+        # Create a user in Mars tenant with SAML identity
+        mars_user = nil
+        Tenant.switch("mars") do
+          mars_user = create(:user, username: "marsuser", email: "mars@consul.dev", password: "My123456")
+          create(:identity, uid: "mars-saml-123", provider: "saml", user: mars_user)
+        end
+  
+        mars_saml_hash = {
+          provider: "saml",
+          uid: "mars-saml-123",
+          info: {
+            name: "marsuser",
+            email: "mars@consul.dev"
+          }
+        }
+  
+        # User can sign in to Mars tenant
+        with_subdomain("mars") do
+          OmniAuth.config.add_mock(:saml, mars_saml_hash)
+    
+          visit new_user_session_path
+          click_link "Sign in with SAML"
+    
+          expect(page).to have_content "Successfully identified as Saml"
+          expect_to_be_signed_in
+    
+          within("#notice") { click_button "Close" }
+
+          click_link "My account"
+    
+          expect(page).to have_field "Username", with: "marsuser"
+    
+          click_link "Change my login details"
+    
+          expect(page).to have_field "Email", with: "mars@consul.dev"
+
+        end
+  
+        # Same user cannot sign in to Venus tenant (will create new account)
+        with_subdomain("venus") do
+          OmniAuth.config.add_mock(:saml, mars_saml_hash)
+    
+          visit new_user_registration_path
+          click_link "Sign up with SAML"
+
+          expect(page).to have_content "To continue, please click on the confirmation " \
+                                     "link that we have sent you via email"
+
+          confirm_email
+          expect(page).to have_content "Your account has been confirmed"
+          expect(page).to have_current_path new_user_session_path
+
+          click_link "Sign in with SAML"
+          # This should create a new user in Venus tenant, not sign in the Mars user
+          expect(page).to have_content "Successfully identified as Saml"
+          expect_to_be_signed_in
+    
+          within("#notice") { click_button "Close" }
+          click_link "My account"
+    
+          expect(page).to have_field "Username", with: "marsuser"
+          expect(page).to have_css "html.tenant-venus"
+    
+        end
+  
+        # Verify that two separate users were created
+        mars_user_count = nil
+        venus_user_count = nil
+  
+        Tenant.switch("mars") do
+          mars_user_count = User.where(email: "mars@consul.dev").count
+        end
+  
+        Tenant.switch("venus") do
+          venus_user_count = User.where(email: "mars@consul.dev").count
+        end
+  
+        expect(mars_user_count).to eq(1)
+        expect(venus_user_count).to eq(1)
+      end
+
+      scenario "Different SAML secrets are applied for different tenants" do
+        create(:tenant, schema: "mars")
+        create(:tenant, schema: "venus")
+
+        stub_secrets(
+          saml_sp_entity_id: "https://default.consul.dev/saml/metadata",
+          saml_idp_metadata_url: "https://default-idp.example.com/metadata",
+          saml_idp_sso_service_url: "https://default-idp.example.com/sso",
+          tenants: {
+            mars: {
+              saml_sp_entity_id: "https://mars.consul.dev/saml/metadata",
+              saml_idp_metadata_url: "https://mars-idp.example.com/metadata",
+              saml_idp_sso_service_url: "https://mars-idp.example.com/sso"
+            },
+            venus: {
+              saml_sp_entity_id: "https://venus.consul.dev/saml/metadata",
+              saml_idp_metadata_url: "https://venus-idp.example.com/metadata",
+              saml_idp_sso_service_url: "https://venus-idp.example.com/sso"
+            }
+          }
+        )
+
+        with_subdomain("mars") do
+          Tenant.switch("mars") do
+            # Mock environment for Mars
+            mars_strategy_options = {}
+            mars_strategy = double("mars_strategy", options: mars_strategy_options)
+            mars_env = {
+              "omniauth.strategy" => mars_strategy,
+              "HTTP_HOST" => "mars.consul.dev"
+            }
+
+            # Apply SAML configuration for Mars
+            OmniauthTenantSetup.saml(mars_env)
+        
+            # Verify Mars-specific configuration
+            expect(mars_strategy_options[:sp_entity_id]).to eq("https://mars.consul.dev/saml/metadata")
+            expect(mars_strategy_options[:idp_metadata_url]).to eq("https://mars-idp.example.com/metadata")
+            expect(mars_strategy_options[:idp_sso_service_url]).to eq("https://mars-idp.example.com/sso")
+          end
+        end
+
+        with_subdomain("venus") do
+          Tenant.switch("venus") do
+            # Mock environment for Venus
+            venus_strategy_options = {}
+            venus_strategy = double("venus_strategy", options: venus_strategy_options)
+            venus_env = {
+              "omniauth.strategy" => venus_strategy,
+              "HTTP_HOST" => "venus.consul.dev"
+            }
+
+            # Apply SAML configuration for Venus
+            OmniauthTenantSetup.saml(venus_env)
+
+            # Verify Venus-specific configuration
+            expect(venus_strategy_options[:sp_entity_id]).to eq("https://venus.consul.dev/saml/metadata")
+            expect(venus_strategy_options[:idp_metadata_url]).to eq("https://venus-idp.example.com/metadata")
+            expect(venus_strategy_options[:idp_sso_service_url]).to eq("https://venus-idp.example.com/sso")
+          end
+        end
+      end
+
+      scenario "Tenant overwriting SAML secrets" do
+        stub_secrets(
+          saml_sp_entity_id: "https://default.consul.dev/saml/metadata",
+          saml_idp_metadata_url: "https://default-idp.example.com/metadata",
+          saml_idp_sso_service_url: "https://default-idp.example.com/sso",
+          tenants: {
+            mars: {
+              saml_sp_entity_id: "https://mars.consul.dev/saml/metadata",
+              saml_idp_metadata_url: "https://mars-idp.example.com/metadata",
+              saml_idp_sso_service_url: "https://mars-idp.example.com/sso"
+            },
+            venus: {
+              saml_sp_entity_id: "https://venus.consul.dev/saml/metadata",
+              saml_idp_metadata_url: "https://venus-idp.example.com/metadata",
+              saml_idp_sso_service_url: "https://venus-idp.example.com/sso"
+            }
+          }
+        )
+
+        # Test default tenant
+        allow(Tenant).to receive(:current_schema).and_return("public")
+        secrets = Tenant.current_secrets
+        expect(secrets.saml_sp_entity_id).to eq "https://default.consul.dev/saml/metadata"
+        expect(secrets.saml_idp_metadata_url).to eq "https://default-idp.example.com/metadata"
+        expect(secrets.saml_idp_sso_service_url).to eq "https://default-idp.example.com/sso"
+
+        # Test Mars tenant with overrides
+        create(:tenant, schema: "mars")
+        allow(Tenant).to receive(:current_schema).and_return("mars")
+        secrets = Tenant.current_secrets
+        expect(secrets.saml_sp_entity_id).to eq "https://mars.consul.dev/saml/metadata"
+        expect(secrets.saml_idp_metadata_url).to eq "https://mars-idp.example.com/metadata"
+        expect(secrets.saml_idp_sso_service_url).to eq "https://mars-idp.example.com/sso"
+
+        # Test Venus tenant with overrides
+        create(:tenant, schema: "venus")
+        allow(Tenant).to receive(:current_schema).and_return("venus")
+        secrets = Tenant.current_secrets
+        expect(secrets.saml_sp_entity_id).to eq "https://venus.consul.dev/saml/metadata"
+        expect(secrets.saml_idp_metadata_url).to eq "https://venus-idp.example.com/metadata"
+        expect(secrets.saml_idp_sso_service_url).to eq "https://venus-idp.example.com/sso"
+
+        # Test Earth tenant without overrides (should use defaults)
+        create(:tenant, schema: "earth")
+        allow(Tenant).to receive(:current_schema).and_return("earth")
+        secrets = Tenant.current_secrets
+        expect(secrets.saml_sp_entity_id).to eq "https://default.consul.dev/saml/metadata"
+        expect(secrets.saml_idp_metadata_url).to eq "https://default-idp.example.com/metadata"
+        expect(secrets.saml_idp_sso_service_url).to eq "https://default-idp.example.com/sso"
+      end
+
+      scenario "SAML configuration setup with default secrets for non-overridden tenant" do
+        stub_secrets(
+          saml_sp_entity_id: "https://default.consul.dev/saml/metadata",
+          saml_idp_metadata_url: "https://default-idp.example.com/metadata",
+          saml_idp_sso_service_url: "https://default-idp.example.com/sso"
+        )
+
+        create(:tenant, schema: "earth")
+
+        with_subdomain("earth") do
+          Tenant.switch("earth") do
+            # Mock environment for Earth
+            earth_strategy_options = {}
+            earth_strategy = double("earth_strategy", options: earth_strategy_options)
+            earth_env = {
+              "omniauth.strategy" => earth_strategy,
+              "HTTP_HOST" => "earth.consul.dev"
+            }
+
+            # Apply SAML configuration for Earth
+            OmniauthTenantSetup.saml(earth_env)
+
+            # Verify Earth uses default configuration
+            expect(earth_strategy_options[:sp_entity_id]).to eq("https://default.consul.dev/saml/metadata")
+            expect(earth_strategy_options[:idp_metadata_url]).to eq("https://default-idp.example.com/metadata")
+            expect(earth_strategy_options[:idp_sso_service_url]).to eq("https://default-idp.example.com/sso")
+          end
+        end
       end
     end
   end
