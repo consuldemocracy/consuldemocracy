@@ -294,7 +294,7 @@ Devise.setup do |config|
     saml_settings[:sp_entity_id] = Rails.application.secrets.saml_sp_entity_id
     saml_settings[:allowed_clock_drift] = 1.minute
   end
-  config.omniauth :saml, saml_settings
+  config.omniauth :saml, saml_settings.merge(setup: ->(env) { OmniauthTenantSetup.saml(env) })
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

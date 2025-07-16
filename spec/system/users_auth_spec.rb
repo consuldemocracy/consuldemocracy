@@ -602,6 +602,48 @@ describe "Users" do
 
         expect(page).to have_field "Email", with: "tester@consul.dev"
       end
+
+      scenario "SAML user from one tenant cannot sign in to another tenant", :seed_tenants do
+        %w[mars venus].each do |schema|
+          create(:tenant, schema: schema)
+          Tenant.switch(schema) { Setting["feature.saml_login"] = true }
+        end
+
+        Tenant.switch("mars") do
+          mars_user = create(:user, username: "marsuser", email: "mars@consul.dev")
+          create(:identity, uid: "mars-saml-123", provider: "saml", user: mars_user)
+        end
+
+        mars_saml_hash = {
+          provider: "saml",
+          uid: "mars-saml-123",
+          info: {
+            name: "marsuser",
+            email: "mars@consul.dev"
+          }
+        }
+        OmniAuth.config.add_mock(:saml, mars_saml_hash)
+
+        with_subdomain("mars") do
+          visit new_user_session_path
+          click_button "Sign in with SAML"
+
+          expect(page).to have_content "Successfully identified as Saml"
+
+          within("#notice") { click_button "Close" }
+          click_link "My account"
+
+          expect(page).to have_field "Username", with: "marsuser"
+        end
+
+        with_subdomain("venus") do
+          visit new_user_session_path
+          click_button "Sign in with SAML"
+
+          expect(page).to have_content "To continue, please click on the confirmation " \
+                                       "link that we have sent you via email"
+        end
+      end
     end
   end
 
