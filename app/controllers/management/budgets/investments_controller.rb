@@ -66,7 +66,7 @@ class Management::Budgets::InvestmentsController < Management::BaseController
 
     def investment_params
       attributes = [:external_url, :heading_id, :tag_list,
-                    :organization_name, :location, :skip_map,
+                    :organization_name, :location, :skip_map,:zona_mesa,:zona_mesa,
                     image_attributes: image_attributes,
                     documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
                     map_location_attributes: [:latitude, :longitude, :zoom]]

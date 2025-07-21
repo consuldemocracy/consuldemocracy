@@ -42,6 +42,11 @@
     <%= sanitize(t("budgets.investments.show.organization_name", name: investment.organization_name)) %>
   </p>
 <% end %>
+<% if investment.zona_mesa.present? %>
+  <p>
+    <%= sanitize(t("budgets.investments.show.tags_zona_mesa", name: investment.zona_mesa)) %>
+  </p>
+<% end %>
 
 <% if feature?(:allow_attached_documents) %>
   <%= render "documents/documents",

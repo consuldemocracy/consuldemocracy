@@ -66,6 +66,11 @@
       <%= f.text_field :organization_name %>
     </div>
 
+   <div class="small-12 column">
+    <%= f.check_box :zona_mesa, 
+                        label: t("budgets.investments.form.tags_zona_mesa") %>    
+</div>
+
     <div class="small-12 column">
       <%= f.label :tag_list, t("budgets.investments.form.tags_label") %>
       <p class="help-text" id="tags-list-help-text"><%= t("budgets.investments.form.tags_instructions") %></p>

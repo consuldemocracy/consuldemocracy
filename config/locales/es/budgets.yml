@@ -71,6 +71,7 @@ es:
         map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
         map_remove_marker: "Eliminar el marcador"
         map_skip_checkbox: "Este proyecto no tiene una ubicación concreta o no la conozco."
+        tags_zona_mesa: "Quiero participar en la mesa de zona de mi propuesta."
       index:
         title: Presupuestos participativos
         unfeasible: Proyectos de gasto no viables
@@ -115,6 +116,7 @@ es:
         code: "Código proyecto de gasto: <strong>%{code}</strong>"
         location: "Ubicación: <strong>%{location}</strong>"
         organization_name: "Propuesto en nombre de: <strong>%{name}</strong>"
+        tags_zona_mesa: "Quiero participar en la mesa de zona de mi propuesta."
         share: Compartir
         title: Proyecto de gasto
         supports: Apoyos

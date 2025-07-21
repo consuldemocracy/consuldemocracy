@@ -91,7 +91,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       attributes = [:external_url, :heading_id, :administrator_id, :tag_list,
                     :valuation_tag_list, :incompatible, :visible_to_valuators, :selected,
                     :milestone_tag_list,
-                    :organization_name, :location, :skip_map,
+                    :organization_name, :location, :skip_map, :zona_mesa,
                     image_attributes: image_attributes,
                     documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
                     map_location_attributes: [:latitude, :longitude, :zoom], valuator_ids: [], valuator_group_ids: []]
