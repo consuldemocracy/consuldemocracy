@@ -1,0 +1,2 @@
+ALTER TABLE budget_investments
+ADD COLUMN zona_mesa BOOLEAN DEFAULT FALSE;
