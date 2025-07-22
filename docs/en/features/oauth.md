@@ -1,10 +1,10 @@
-# OAuth
+# Authentication with external services (OAuth)
 
-You can configure authentication services with external OAuth providers, right now Twitter, Facebook, Google and Wordpress are supported.
+You can configure authentication services with external OAuth providers. Right now, Twitter, Facebook, Google, Wordpress and SAML are supported.
 
 ## 1. Create an App on the platform
 
-For each platform, go to their developers section and follow their guides to create an app.
+For Twitter, Facebook, Google and Wordpress, go to their developers section and follow their guides to create an app. For SAML, you'll have to configure an Identity Provider (IdP).
 
 ## 2. Set the authentication URL of your Consul Democracy installation
 
@@ -19,6 +19,8 @@ user_google_oauth2_omniauth_authorize GET|POST /users/auth/google_oauth2(.:forma
 user_google_oauth2_omniauth_callback GET|POST /users/auth/google_oauth2/callback(.:format) users/omniauth_callbacks#google_oauth2
 user_wordpress_oauth2_omniauth_authorize GET|POST /users/auth/wordpress_oauth2(.:format) users/omniauth_callbacks#passthru
 user_wordpress_oauth2_omniauth_callback GET|POST /users/auth/wordpress_oauth2/callback(.:format) users/omniauth_callbacks#wordpress_oauth2
+user_saml_omniauth_authorize GET|POST /users/auth/saml(.:format) users/omniauth_callbacks#passthru
+user_saml_omniauth_callback GET|POST /users/auth/saml/callback(.:format) users/omniauth_callbacks#saml
 ```
 
 So for example the URL for Facebook application would be `yourdomain.com/users/auth/facebook/callback`.
@@ -37,4 +39,7 @@ When you complete the application registration you'll get a *key* and *secret* v
   wordpress_oauth2_key: ""
   wordpress_oauth2_secret: ""
   wordpress_oauth2_site: ""
+  saml_sp_entity_id: "https://yoursp.org/entityid"
+  saml_idp_metadata_url: "https://youridp.org/api/saml/metadata"
+  saml_idp_sso_service_url: "https://youridp.org/api/saml/sso"
 ```
