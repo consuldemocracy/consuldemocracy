@@ -36,6 +36,8 @@
         <%= f.text_field :redeemable_code, placeholder: t("devise_views.users.registrations.new.redeemable_code") %>
       <% end %>
 
+      <%= f.select :gender, gender_select_options, label: t("devise_views.users.registrations.new.sexo") %>
+
       <%= f.check_box :terms_of_service,
         title: t("devise_views.users.registrations.new.terms_title"),
         label: t("devise_views.users.registrations.new.terms",

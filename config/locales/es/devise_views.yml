@@ -120,7 +120,13 @@ es:
           username_is_available: Nombre de usuario disponible
           username_is_not_available: Nombre de usuario ya existente
           username_label: Nombre de usuario
-          username_note: Nombre público que aparecerá en tus publicaciones
+          username_note: Nombre público que aparecerá en tus publicaciones 
+          sexo: Sexo         
+          gender:
+            select: "Seleccione su género"
+            male: "Masculino"
+            female: "Femenino"
+            no_answer: "Prefiero no decirlo"
         success:
           back_to_index: Entendido, volver a la página principal
           instructions_1: Por favor <b>revisa tu correo electrónico</b> - te hemos enviado un <b>enlace para confirmar tu cuenta</b>.

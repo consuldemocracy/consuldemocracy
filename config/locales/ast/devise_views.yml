@@ -115,6 +115,6 @@ ast:
           username_is_available: Nombre de usuario disponible
           username_is_not_available: Nombre de usuario ya existente
           username_label: Nome d'usuariu
-          username_note: Nombre público que aparecerá en tus publicaciones
+          username_note: Nombre público que aparecerá en tus publicaciones         
         success:
           back_to_index: Entendío; volver a la páxina principal
