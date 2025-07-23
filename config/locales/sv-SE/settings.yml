@@ -91,6 +91,8 @@ sv:
       google_login_description: "Tillåt användare att logga in med sitt Google-konto"
       wordpress_login: "Wordpress-inloggning"
       wordpress_login_description: "Tillåt användare att logga in med sitt Wordpress-konto"
+      saml_login: "SAML-inloggning"
+      saml_login_description: "Tillåt att användare registrerar sig genom SAML"
       featured_proposals: "Uppmärksammade förslag"
       featured_proposals_description: "Visar uppmärksammade förslag på indexsidan för förslag"
       signature_sheets: "Namninsamlingar"
