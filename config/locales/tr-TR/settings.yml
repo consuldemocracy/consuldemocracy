@@ -91,6 +91,8 @@ tr:
       google_login_description: "Kullanıcılar Google hesapları ile hesap açabilsin"
       wordpress_login: "Wordpress ile oturum açma"
       wordpress_login_description: "Kullanıcılar WordPress hesapları ile hesap açabilsin"
+      saml_login: "SAML oturumu aç"
+      saml_login_description: "Kullanıcılar SAML ile hesap açabilsin"
       featured_proposals: "Öne çıkarılmış önergeler"
       featured_proposals_description: "Önerge dizini sayfasında öne çıkarılmış önergeleri gösterir"
       signature_sheets: "İmza toplama sayfaları"
