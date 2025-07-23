@@ -8,17 +8,17 @@ Para cada plataforma, sigue las instrucciones en la sección de desarrolladores 
 
 ## 2. Establece la URL de autenticación de tu instalación de Consul Democracy
 
-Te preguntarán por la URL de autenticación de tu instalación de Consul Democracy, y como podrás comprobar corriendo la tarea `rails routes |grep omniauth` en tu repositorio local:
+Te preguntarán por la URL de autenticación de tu instalación de Consul Democracy, y como podrás comprobar corriendo la tarea `rails routes | grep omniauth` en tu repositorio local:
 
 ```bash
-  user_twitter_omniauth_authorize GET|POST /users/auth/twitter(.:format) users/omniauth_callbacks#passthru
-  user_twitter_omniauth_callback GET|POST /users/auth/twitter/callback(.:format) users/omniauth_callbacks#twitter
-  user_facebook_omniauth_authorize GET|POST /users/auth/facebook(.:format) users/omniauth_callbacks#passthru
-  user_facebook_omniauth_callback GET|POST /users/auth/facebook/callback(.:format) users/omniauth_callbacks#facebook
-  user_google_oauth2_omniauth_authorize GET|POST /users/auth/google_oauth2(.:format) users omniauth_callbacks#passthru
-  user_google_oauth2_omniauth_callback GET|POST /users/auth/google_oauth2/callback(.:format) users/omniauth_callbacks#google_oauth2
-  user_wordpress_oauth2_omniauth_authorize GET|POST /users/auth/wordpress_oauth2(.:format) users/omniauth_callbacks#passthru
-  user_wordpress_oauth2_omniauth_callback GET|POST /users/auth/wordpress_oauth2/callback(.:format) users/omniauth_callbacks#wordpress_oauth2
+user_twitter_omniauth_authorize GET|POST /users/auth/twitter(.:format) users/omniauth_callbacks#passthru
+user_twitter_omniauth_callback GET|POST /users/auth/twitter/callback(.:format) users/omniauth_callbacks#twitter
+user_facebook_omniauth_authorize GET|POST /users/auth/facebook(.:format) users/omniauth_callbacks#passthru
+user_facebook_omniauth_callback GET|POST /users/auth/facebook/callback(.:format) users/omniauth_callbacks#facebook
+user_google_oauth2_omniauth_authorize GET|POST /users/auth/google_oauth2(.:format) users/omniauth_callbacks#passthru
+user_google_oauth2_omniauth_callback GET|POST /users/auth/google_oauth2/callback(.:format) users/omniauth_callbacks#google_oauth2
+user_wordpress_oauth2_omniauth_authorize GET|POST /users/auth/wordpress_oauth2(.:format) users/omniauth_callbacks#passthru
+user_wordpress_oauth2_omniauth_callback GET|POST /users/auth/wordpress_oauth2/callback(.:format) users/omniauth_callbacks#wordpress_oauth2
 ```
 
 Por ejemplo para Facebook la URL sería `yourdomain.com/users/auth/facebook/callback`.
