@@ -278,6 +278,10 @@ sv:
     info:
       sign_in: "Logga in med:"
       sign_up: "Registrera dig genom:"
+    saml:
+      sign_in: Logga in med SAML
+      sign_up: Registrera dig genom SAML
+      name: SAML
     or_fill: "Eller fyll i följande formulär:"
   proposals:
     create:
