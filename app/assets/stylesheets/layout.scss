@@ -1392,7 +1392,8 @@ table {
 .button.button-twitter,
 .button.button-facebook,
 .button.button-google,
-.button.button-wordpress {
+.button.button-wordpress,
+.button.button-saml {
   color: inherit;
   font-weight: bold;
 
@@ -1441,6 +1442,17 @@ table {
     color: #2f2f33;
   }
 }
+
+.button.button-saml {
+  @include has-fa-icon(lock, solid);
+  background: #eafee9;
+  border-left: 3px solid #3b9857;
+
+  &::before {
+    color: #3b9857;
+  }
+}
+
 
 // 14. Verification
 // ----------------
