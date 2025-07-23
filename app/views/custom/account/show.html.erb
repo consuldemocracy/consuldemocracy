@@ -31,6 +31,12 @@
             <% end %>
           </div>
 
+          <div class="small-12 medium-10">
+              <% unless @account.organization? %>
+		<%= f.select :gender, gender_select_options, { prompt: t("devise_views.users.registrations.new.gender.select"), label: t("devise_views.users.registrations.new.sexo") }, { required: true } %>
+              <% end %>
+          </div>
+
           <div>
             <%= f.check_box :public_activity %>
           </div>

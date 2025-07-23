@@ -88,8 +88,15 @@ class User < ApplicationRecord
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
   validates_associated :organization, message: false
-  validates :gender, presence: { message: "Por favor, selecciona tu género" }
+  
+  validates :gender, presence: { message: "Por favor, selecciona tu género" }, if: :requires_gender?
 
+  def requires_gender?
+      !organization? && !administrator?
+  end
+
+  
+  
   accepts_nested_attributes_for :organization, update_only: true
 
   attr_accessor :skip_password_validation

@@ -74,13 +74,13 @@ module UsersHelper
     Budget::Phase::PHASE_KINDS.map { |ph| [t("budgets.phase.#{ph}"), ph] }
   end
 
+  
   def gender_select_options
-  [
-    [t("devise_views.users.registrations.new.gender.select"), ''],
+   [
     [t("devise_views.users.registrations.new.gender.male"), 'male'],
     [t("devise_views.users.registrations.new.gender.female"), 'female'],
     [t("devise_views.users.registrations.new.gender.no_answer"), 'no_answer']
-  ]
+   ]
   end
 
   def interests_title_text(user)
