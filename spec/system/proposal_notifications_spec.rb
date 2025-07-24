@@ -2,13 +2,16 @@ require "rails_helper"
 
 describe "Proposal Notifications" do
   scenario "Send a notification" do
-    author = create(:user, :with_proposal)
+    author = create(:user)
+    proposal = create(:proposal, author: author)
 
     login_as(author)
     visit root_path
 
     click_link "My content"
-    click_link "Dashboard"
+    within("#proposal_#{proposal.id}") do
+      click_link "Dashboard"
+    end
 
     within("#side_menu") do
       click_link "Message to users"
@@ -142,26 +145,6 @@ describe "Proposal Notifications" do
   end
 
   context "Permissions" do
-    scenario "Link to send the message" do
-      author = create(:user)
-      proposal = create(:proposal, author: author)
-
-      login_as(author)
-      visit root_path
-
-      click_link "My content"
-
-      within("#proposal_#{proposal.id}") do
-        click_link "Dashboard"
-      end
-
-      within("#side_menu") do
-        click_link "Message to users"
-      end
-
-      expect(page).to have_link "Send notification to proposal followers"
-    end
-
     scenario "Accessing form directly" do
       user = create(:user)
       author = create(:user)
