@@ -24,6 +24,9 @@
       </div>
     </div>
 
-    <%= render "form", url: admin_legislation_process_draft_version_path(@process, @draft_version) %>
+    <%= render Admin::Legislation::DraftVersions::FormComponent.new(
+      @draft_version,
+      url: admin_legislation_process_draft_version_path(@process, @draft_version)
+    ) %>
   </div>
 </div>

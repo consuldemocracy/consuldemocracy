@@ -13,6 +13,9 @@
 
     <h3><%= t("admin.legislation.draft_versions.new.title") %></h3>
 
-    <%= render "form", url: admin_legislation_process_draft_versions_path(@process) %>
+    <%= render Admin::Legislation::DraftVersions::FormComponent.new(
+      @draft_version,
+      url: admin_legislation_process_draft_versions_path(@process)
+    ) %>
   </div>
 </div>

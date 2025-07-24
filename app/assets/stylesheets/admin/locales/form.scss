@@ -1,6 +1,7 @@
 .admin .locales-form {
   label {
-    display: table;
+    align-items: baseline;
+    display: flex;
   }
 
   select {
