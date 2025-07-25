@@ -10,8 +10,12 @@
   color: $brand-secondary;
 }
 
-strong, b, a, .ava-link {
-  color: $brand;
+strong, b {
+color: $brand;
+}
+
+a, .ava-link {
+text-decoration: underline;
 }
 
 .callout.primary a {
@@ -556,7 +560,7 @@ body.management .admin-content {
           }
           background-size: contain;
         }*/
-
+       }     
     }
   }
   .description {
