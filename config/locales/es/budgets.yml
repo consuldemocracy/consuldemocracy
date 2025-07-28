@@ -105,6 +105,7 @@ es:
           unfeasible: Ver los proyectos inviables
           my_count: "Ya ha creado un proyecto de gasto, si quiere cambiarlo vaya a %{link_my_count}."
           link_my_count: Mi contenido
+          message_error_my_count: "No tienes permiso para acceder a esta página."
         orders:
           random: Aleatorios
           confidence_score: Mejor valorados
