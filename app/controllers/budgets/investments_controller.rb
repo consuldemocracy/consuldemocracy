@@ -11,6 +11,9 @@ module Budgets
 
     before_action :authenticate_user!, except: [:index, :show, :json_data]
     before_action :load_budget, except: :json_data
+    
+    before_action :verificar_permiso_creacion, only: [:new, :create]
+
 
     load_and_authorize_resource :budget, except: :json_data
     load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment",
@@ -220,5 +223,12 @@ module Budgets
       def load_map
         @map_location = MapLocation.load_from_heading(@heading)
       end
+      
+      def verificar_permiso_creacion             
+          if Budget::Investment.valuating_investment(current_user, @budget.id).exists?           
+            redirect_to budgets_path, alert: t("budgets.investments.index.sidebar.message_error_my_count")
+          end        
+      end
+
   end
 end

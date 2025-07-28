@@ -1067,3 +1067,26 @@ body.iframed {
     }
   }
 }
+
+.my_count-link {
+  color: $tertiary-contrast;
+  font-weight: 600;
+  font-size: $base-font-size;
+  text-decoration: none;
+  &:not([class^="icon-"]) {
+    text-decoration: none;
+  }
+  &:hover,
+  &:active,
+  &:focus,
+  &:active:hover,
+  &:active:focus {
+    color: $secondary;
+    text-decoration: inherit;
+  }
+  .icon-angle-left {
+    color: inherit;
+  }
+	text-transform: none;
+}
+
