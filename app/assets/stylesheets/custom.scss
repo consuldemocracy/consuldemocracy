@@ -158,9 +158,194 @@ a.back {
 // 02. Header
 
 // Color de fondo de la cabecera
-header, .top-bar {
-  background: #ebebeb !important;
+/*header, .top-bar {
+  background: linear-gradient(to top, #232526, #414345) !important;
+}*/
+
+header {
+  background: linear-gradient(to top, #232526, #414345) !important;
 }
+
+.top-bar, .top-bar ul{
+	  background-color: transparent;
+} 
+
+.top-bar-gradient {
+  /*background: $brand !important;*/
+  color: #fff;
+  padding-bottom: 0;
+  padding-top: 0;
+
+  @include breakpoint(medium) {
+    padding: 0;
+  }
+
+  ul {
+    /*background: none;*/
+    padding-right: rem-calc(15);
+  }
+
+  .menu .menu-text {
+    padding: 0;
+
+    a {
+      color: #fff;
+      display: inline-block;
+      font-family: "Lato" !important;
+      font-size: rem-calc(24);
+      font-weight: lighter;
+      line-height: $line-height * 2;
+      padding: 0;
+
+      @include breakpoint(medium) {
+        line-height: rem-calc(80);
+        margin-top: 0;
+      }
+
+      img {
+
+        @include breakpoint(medium) {
+          margin-right: $line-height / 2;
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  .menu > li {
+    display: block;
+    width: 100%;
+
+    @include breakpoint(medium) {
+      width: auto;
+    }
+
+    a {
+      color: #fff;
+      padding-left: 0;
+
+      @include breakpoint(medium) {
+        font-size: $small-font-size;
+        padding: rem-calc(11) rem-calc(16);
+      }
+    }
+
+    .button {
+      background: none;
+      text-align: left;
+
+      @include breakpoint(medium) {
+        background: #fff;
+        color: $brand;
+        text-align: center;
+      }
+    }
+  }
+
+  .has-submenu {
+
+    &.is-active a {
+      color: #fff;
+      font-weight: bold;
+    }
+  }
+
+  .menu {
+
+    &.is-dropdown-submenu {
+      background: #fff;
+      margin: 0;
+      margin-top: rem-calc(-12);
+      padding: 0;
+      z-index: 9;
+    }
+
+    .is-submenu-item {
+      display: block;
+      height: auto;
+      margin-bottom: 0;
+
+      a {
+        color: $text;
+      }
+    }
+  }
+
+  .top-bar-title {
+    line-height: $line-height;
+
+    a img {
+      height: rem-calc(48);
+      margin: 0;
+      width: auto;
+
+      @include breakpoint(medium up) {
+        height: auto;
+      }
+    }
+  }
+}
+
+.padding_top_15{
+	padding-top: 15px;
+}
+
+.padding_top_bottom{
+	padding: 20px 0 20px 0;
+}
+
+.custom-logo-imagen {
+  height: 60px !important;
+  width: 61px !important;
+}
+
+.custom-logo-texto {
+  height: 43px !important;
+  width: 122px !important;
+  margin-top: 10px !important;
+}
+
+
+.gradiente{
+	background: /*#ebebeb*/ linear-gradient(to top, #232526, #414345) !important;
+}
+
+.menuTitleHeader{
+  display: flex;
+  justify-content: right; /*space-between;  o 'flex-start' si prefieres alinearlos a la izquierda */
+  align-items: center;
+
+}
+.menuTitleHeader a{
+	color: #fff !important;
+	text-shadow: #000 1px 1px 1px !important; 
+	font-size: 12px !important;
+	font-weight: 600 !important; 
+	text-decoration: none;
+}
+
+
+.menuTitleHeader ul.external-links {
+  display: flex;
+  gap: 10px; /* Espacio entre enlaces */
+  list-style: none;
+  margin: 0;
+  flex-wrap: nowrap;
+  float: left;
+}
+
+.entrar {
+  text-align: right;
+  font-size: 12px;
+  display: block;
+  color: #fff !important;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: transparent;
+  font-weight: 600;
+  font-family: "Open Sans",sans-serif;
+}
+
 
 // Color de fondo de los enlaces en la parte superior de la cabecera
 .top-links {
@@ -188,12 +373,21 @@ header, .top-bar {
 
 // Menú principal de la página
 .subnavigation {
-  background-color: $brand-secondary;
+  /*background-color: $brand-secondary;*/
+  background: linear-gradient(to top, #232526, #414345) !important;
 }
 
 .subnavigation {
   a {
     color: #FFFFFF;
+	font-size: 16px;
+	font-weight: 600; 
+	letter-spacing: -0.14px; 
+	line-height: 22px;
+	padding-bottom: 5px;
+	text-shadow: #000 1px 1px 1px;
+	text-decoration: none; 
+	
   }
 
   a:hover, a:active, a.is-active {
@@ -237,10 +431,20 @@ header, .top-bar {
   }
 
   #login-va a.button {
-    background: $brand;
+    /*background: $brand;
     color: $brand_secondary;
     text-align: center;
-    font-weight: bold;
+    font-weight: bold;*/
+	
+	text-align: right;
+    font-size: 12px;
+    display: block;
+    color: #fff !important;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: transparent;
+    font-weight: 600;
+    font-family: "Open Sans",sans-serif;
   }
 }
 

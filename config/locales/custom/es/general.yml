@@ -46,7 +46,10 @@ es:
       description: Este portal es una adaptación de la %{consul} de %{open_source} desarrollada por el Ayuntamiento de Madrid y adaptada por el Ayuntamiento de Valladolid.
       open_source: software libre
       contact_us: Puedes consultar las preguntas más frecuentes de este portal en %{contact_us_url}
-      copyright: "Ayuntamiento de Valladolid, %{year}"
+      copyright: "Copyright %{year} - Ayuntamiento de Valladolid"
+      direccion: Plaza Mayor, 1. 47001 Valladolid, España.
+      tlf: "Teléfono: "
+      tlf_numero: "+34 983 426 100"
       contact_us_link_text: Asistencia técnica
       participation_title: "Participación"
       participation_text: "Decide cómo debe ser la ciudad que quieres."
@@ -57,6 +60,8 @@ es:
       open_data_title: "Datos abiertos"
       open_data_text: "Todos los datos del Ayuntamiento son tuyos."
       open_data_url: "http://www.valladolid.es/es/temas/hacemos/open-data-datos-abiertos"
+      valladolid: "valladolid.es"
+      otras_webs: "Otras webs del ayuntamiento"
     header:
       consultation: "Consultas"
       signature_sheet_officer: "Gestión voto presencial"

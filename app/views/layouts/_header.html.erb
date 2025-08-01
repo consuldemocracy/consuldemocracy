@@ -3,16 +3,7 @@
     <%= render "shared/remote_translations_button", remote_translations: @remote_translations %>
   <% end %>
 
-  <div class="top-links">
-    <div class="row">
-      <%= render "shared/locale_switcher" %>
-      <div class="hide-for-small-only">
-        <%= render "shared/top_links" %>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
+  <div class="row padding_top_bottom">
     <div class="top-bar">
 
       <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="float-right">
@@ -20,10 +11,53 @@
         <%= t("application.menu") %>
       </span>
 
+
       <div class="top-bar-title">
         <%= link_to root_path, accesskey: "0" do %>
-          <%= image_tag(image_path_for("logo_header.png"), class: "float-left", alt: t("layouts.header.logo")) %>
+          <%= image_tag(image_path_for("logoavatopheader.png"), class: "float-left custom-logo-imagen", alt: t("layouts.header.logo")) %>
+          <%= image_tag(image_path_for("logoaytowhite.png"), class: "float-left custom-logo-texto", alt: t("layouts.header.logo")) %>
         <% end %>
+      </div>
+	  
+	  <div class="hide-for-small-only small-12 medium-8 menuTitleHeader">
+        <%= render "shared/top_links" %>
+		
+		<div class="small-12 medium-4 column ">
+			<div class="text-right">
+				<ul>
+				   <% if setting["youtube_handle"] %>
+					<li class="inline-block padding_top_15">
+					  <%= link_to "https://www.youtube.com/#{setting["youtube_handle"]}", target: "_blank",
+								  title: t("shared.go_to_page") + t("social.youtube", org: setting["org_name"]) + t("shared.target_blank") do %>
+								  <span class="show-for-sr"><%= t("social.youtube", org: setting["org_name"]) %></span>
+								  <span class="icon-youtube fa_youtube_blanco" aria-hidden="true"></span>
+					  <% end %>
+					</li>
+				  <% end %>
+				  
+				  <% if setting["twitter_handle"] %>
+					<li class="inline-block padding_top_15">
+					  <%= link_to "https://twitter.com/#{setting["twitter_handle"]}", target: "_blank",
+								   title: t("shared.go_to_page") + t("social.twitter", org: setting["org_name"]) + t("shared.target_blank") do %>
+									  <span class="show-for-sr"><%= t("social.twitter", org: setting["org_name"]) %></span>
+									  <span class="icon-twitter fa_twitter_blanco" aria-hidden="true"></span>
+					  <% end %>
+					</li>
+				  <% end %>
+				  
+				  <% if setting["facebook_handle"] %>
+					<li class="inline-block padding_top_15">
+					  <%= link_to "https://www.facebook.com/#{setting["facebook_handle"]}/", target: "_blank",
+								  title: t("shared.go_to_page") + t("social.facebook", org: setting["org_name"]) + t("shared.target_blank") do %>
+								  <span class="show-for-sr"><%= t("social.facebook", org: setting["org_name"]) %></span>
+								  <span class="icon-facebook fa_facebook_blanco" aria-hidden="true"></span>
+					  <% end %>
+					</li>
+				  <% end %>
+			
+				</ul>
+			</div>
+		</div>
       </div>
 
       <div id="responsive-menu">
@@ -44,11 +78,12 @@
           </div>
         </div>
       </div>
+	  
     </div>
   </div>
 
   <div id="navigation_bar" class="subnavigation expanded">
-    <div class="row">
+    <div class="row padding_top_bottom">
       <div class="hide-for-small-only">
         <%= render "shared/subnavigation" %>
       </div>
@@ -57,4 +92,6 @@
       </div>
     </div>
   </div>
+
+  
 </header>

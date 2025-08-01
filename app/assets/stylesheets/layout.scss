@@ -515,8 +515,9 @@ header {
   }
 }
 
+
 .top-bar {
-  background: $brand !important;
+  /*background: $brand !important;*/
   color: #fff;
   padding-bottom: 0;
   padding-top: 0;
@@ -526,7 +527,7 @@ header {
   }
 
   ul {
-    background: none;
+    /*background: none;*/
     padding-right: rem-calc(15);
   }
 
@@ -857,7 +858,7 @@ footer {
   a:active,
   a:focus {
     color: $text;
-    text-decoration: underline;
+    text-decoration: none;
 
     &:hover {
       color: $text-medium;
@@ -871,19 +872,156 @@ footer {
   .title {
     font-weight: bold;
     text-decoration: none;
+	border-bottom: none;
   }
 }
 
 .footer {
-  background: #f1f1f1;
-  margin-top: $line-height * 2;
-  padding-top: $line-height;
+	background: #ffffff;
+	margin-top: rem-calc(28) * 2;
+	padding-top: $line-height;
+	/*padding-top: 12px;
+	margin-top: 60px;*/
+	padding-bottom: 12px;
+	border-top: 1px solid rgba(163,163,163,0.49);
+	border-bottom: 1px solid rgba(163,163,163,0.49);
+
 }
 
 .subfooter {
-  border-top: 1px solid $text-light;
+  /*border-top: 1px solid $text-light;*/
   font-size: $small-font-size;
   padding-top: $line-height / 2;
+}
+
+.direccionFooter{
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 17px;
+  color: #1E1E1E;
+}
+
+.tlfFooter {
+  color: #980046;
+  text-decoration: none;
+}
+
+.copyright {
+  margin-top: 15px;
+  color: #1E1E1E;
+  font-family: "Open Sans",sans-serif;
+  font-weight:400;
+  font-size: 12px;
+  letter-spacing: -.1px;
+  line-height: 17px;
+}
+
+.footerBarraIzq {
+  border-left: 1px solid rgba(163,163,163,0.49);
+}
+
+.titleValladolid {
+  margin-bottom: 18px;
+  color: #1E1E1E;
+  font-family: "Open Sans",sans-serif;
+  font-weight:400;
+  font-size: 20px;
+  letter-spacing: -.13px;
+  line-height: 18px;
+}
+
+.titleElemColumna {
+  text-decoration: none;
+  color: #767677;
+  font-family: "Open Sans",sans-serif;
+  font-weight:400;
+  font-size: 16px;
+  letter-spacing: -.15px;
+  line-height: 28px;
+}
+
+.accesibilidad_condiciones_politica {
+  text-decoration: none;
+  color: #1E1E1E;
+  font-family: "Open Sans",sans-serif;
+  font-weight:700;
+  font-size: 14px;
+  letter-spacing: .64px;
+  /*line-height: 16px;*/
+  text-transform: uppercase;
+}
+
+.otrasWebs {
+  text-decoration: none;
+  color: #5068c0;
+  font-family: "Open Sans",sans-serif;
+  font-weight:400;
+  font-size: 14px;
+  letter-spacing: -.1px;
+  line-height: 18px;
+  float: right;
+}
+
+.fa_facebook {
+  color: #3f51b5;
+  font-size: 24px !important;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  margin-left: 20px;
+}
+
+.fa_youtube {
+  color: red;
+  font-size: 24px !important;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  margin-right: 20px;
+}
+
+.fa_twitter{
+  color: #1E1E1E;
+  font-size: 24px !important;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.fa_facebook_blanco {
+  color: #fff;
+  font-size: 24px !important;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  margin-left: 20px;
+}
+
+.fa_youtube_blanco {
+  color: #fff;
+  font-size: 24px !important;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  margin-right: 20px;
+}
+
+.fa_twitter_blanco{
+  color: #fff;
+  font-size: 24px !important;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.logoMargen {
+  margin-bottom: 25px;
 }
 
 // 04. Tags
