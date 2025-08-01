@@ -124,7 +124,7 @@ Scotland
   * platform: [https://glasgow.communitychoices.scot/](https://glasgow.communitychoices.scot/)
 * East Lothian Council platform 'Community Choices':
   * platform: [https://eastlothian.communitychoices.scot/](https://eastlothian.communitychoices.scot/)
-  * code base:
+  * code base: [https://github.com/CoslaDigital/consul-latest](https://github.com/CoslaDigital/consul-latest)
   * maintainer of all Scottish repos: Cosla ([https://www.cosla.gov.uk/](https://www.cosla.gov.uk/))
 
 
