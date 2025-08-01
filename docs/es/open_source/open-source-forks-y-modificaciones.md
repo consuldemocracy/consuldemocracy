@@ -124,7 +124,7 @@ Scotland
   * platform: [https://glasgow.communitychoices.scot/](https://glasgow.communitychoices.scot/)
 * East Lothian Council platform 'Community Choices':
   * platform: [https://eastlothian.communitychoices.scot/](https://eastlothian.communitychoices.scot/)
-  * repositorio de código compartido:
+  * repositorio de código compartido: [https://github.com/CoslaDigital/consul-latest](https://github.com/CoslaDigital/consul-latest)
   * mantenedor del repositorio: Cosla ([https://www.cosla.gov.uk/](https://www.cosla.gov.uk/))
 
 Uruguay
