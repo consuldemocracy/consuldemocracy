@@ -170,6 +170,10 @@ header {
 	  background-color: transparent;
 } 
 
+.subnavigation, .subnavigation ul{
+	  background-color: transparent;
+} 
+
 .top-bar-gradient {
   /*background: $brand !important;*/
   color: #fff;
@@ -374,7 +378,8 @@ header {
 // Menú principal de la página
 .subnavigation {
   /*background-color: $brand-secondary;*/
-  background: linear-gradient(to top, #232526, #414345) !important;
+  /*background: linear-gradient(to top, #232526, #414345) !important;*/
+  background-color: transparent;
 }
 
 .subnavigation {
@@ -387,11 +392,20 @@ header {
 	padding-bottom: 5px;
 	text-shadow: #000 1px 1px 1px;
 	text-decoration: none; 
-	
+	background-color: transparent;
   }
 
   a:hover, a:active, a.is-active {
-    color: $orange-hover-menu;
+    color: #FFFFFF;
+	border-bottom: 3px solid #FFFFFF;
+	font-size: 16px;
+	font-weight: 600; 
+	letter-spacing: -0.14px; 
+	line-height: 22px;
+	padding-bottom: 5px;
+	text-shadow: #000 1px 1px 1px;
+	text-decoration: none; 
+	background-color: transparent;
   }
 }
 

@@ -62,6 +62,7 @@ es:
       open_data_url: "http://www.valladolid.es/es/temas/hacemos/open-data-datos-abiertos"
       valladolid: "valladolid.es"
       otras_webs: "Otras webs del ayuntamiento"
+      otras_webs_url: "https://www.valladolid.es/es/ayuntamiento/webs-municipales"
     header:
       consultation: "Consultas"
       signature_sheet_officer: "Gestión voto presencial"
