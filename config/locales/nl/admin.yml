@@ -16,6 +16,8 @@ nl:
       unmark_featured: Verwijder uitgelicht
       edit: Bewerk
       configure: Configureer
+      select: Selecteer
+      show_to_valuators: "Maak %{name} zichtbaar voor beoordelaars"
     officing_booth:
       title: "Je bent toegewezen aan de stemlocatie op %{booth}. Indien dit niet juist is, bel dan met het opgegeven telefoonnummer voor hulp."
     banners:
@@ -110,6 +112,7 @@ nl:
         notice: "Burgerbegroting succesvol gepubliceerd!"
       edit:
         title: Bewerk begroting
+        drafting: "De burgerbegroting staat in conceptmodus en is alleen zichtbaar voor administrators. Zodra het proces is gepubliceerd, kan niet worden teruggegaan naar conceptmodus."
         publish: "Budget publiceren"
         delete: Verwijder begroting
         phase: Fase
@@ -131,7 +134,15 @@ nl:
           other: "%{count} beoordelaars geselecteerd"
         empty_administrators: "Er zijn geen beheerders"
         empty_valuators: "Er zijn geen beoordelaars"
+        name_description: "Dit is de naam van de burgerbegroting die wordt gebruikt voor rubrieken (deelbudgetten) en tegels"
+        image_description: "Een afbeelding wordt na uploaden gebruikt als banner bovenaan de landingspagina van de burgerbegroting. Als er niets wordt geüpload, wordt de standaardkleur van het platform gebruikt."
+        main_call_to_action: "Oproep tot actie (optioneel)"
+        main_call_to_action_description: "Deze link verschijnt op de hoofdbanner van de burgerbegroting en verwijst naar een specifieke fase in de begroting, zoals de voorstel- of stemfase."
+        info:
+          budget_settings: "Algemene instellingen burgerbegroting"
+          staff_settings: "Administrators en Beoordelaar toegewezen aan deze begroting"
         hide_money: "Bedragen verbergen"
+        hide_money_help_text: "Wanneer dit vakje is aangevinkt, zullen alle velden met geldbedragen worden verborgen."
       destroy:
         success_notice: Begroting verwijderd
         unable_notice: U kunt een begroting met voorstellen niet verwijderen
@@ -139,6 +150,15 @@ nl:
       new:
         title_multiple: Nieuw budget met meerdere rubrieken
         title_single: Nieuw budget met één rubriek
+      help:
+        budgets: "Burgerbegrotingen laten deelnemers voorstellen doen en stemmen op die voorstellen over waaraan de begroting dient te worden besteed, met rigoureuze tussentijdse evaluatie door de (publieke) organisatie."
+        groups:
+          multiple: "Groepen zijn bedoeld om rubrieken (deelbegrotingen) te organiseren. Wanneer een groep is gecreëerd en die groep bevat rubrieken, is het mogelijk om te bepalen in hoeveel rubrieken een deelnemer mag stemmen, en in welke."
+          single: "Groepen zijn bedoeld om rubrieken (deelbegrotingen) te organiseren. Omdat deze burgerbegroting slechts één rubriek bevat, kan dezelfde naam worden gebruikt; die naam zal nergens zichtbaar zijn."
+        headings:
+          multiple: "Rubrieken zijn bedoeld om deelbegrotingen te maken binnen een burgerbegroting. Hier kunnen rubrieken worden toegevoegd inclusief een geldbedrag per rubriek."
+          single: "Rubrieken zijn bedoeld om deelbegrotingen te maken binnen een burgerbegroting. Omdat deze begroting slechts één rubriek heeft, bepaalt het ingevoerde geldbedrag hier het bedrag van de hele burgerbegroting."
+        phases: "Burgerbegrotingen hebben verschillende fases. Activeer, deactiveer of configureer hier de afzonderlijke fases."
       show:
         add_group: "Groep toevoegen"
         add_heading: "Rubriek toevoegen"
@@ -148,6 +168,8 @@ nl:
         calculate: Bereken gewonnen bestemmingen
         calculated: Bestemmingen worden berekend, kan even duren.
         recalculate: Herbereken gewonnen investeringen
+      ballots:
+        feature_disabled: 'Om stemhokjes aan te maken moet de functionaliteit <strong>Polls</strong> geactiveerd zijn. Dat kan op de <a href="%{link}">settings configuration</a> pagina.'
     budget_groups:
       name: "Naam"
       headings_name: "Rubrieken"
@@ -166,10 +188,12 @@ nl:
       form:
         create: "Nieuwe groep"
         edit: "Bewerk groep"
+        max_votable_headings_info: "Is alleen van toepassing op de \"Voorstellen selecteren\" fase."
         submit: "Sla op"
       index:
         new_button: "Nieuwe groep toevoegen"
     budget_headings:
+      no_headings: "Er zijn geen rubrieken in de <strong>%{group}</strong> groep."
       create:
         notice: "Rubriek aangemaakt"
       update:
@@ -178,12 +202,17 @@ nl:
         success_notice: "Rubriek verwijderd"
         unable_notice: "Een rubriek met investeringen kan niet worden verwijderd"
       form:
+        geozone_info: "De geozone verschijnt op de kaart van de deelbegroting wanneer de rubriek (deelbegroting) met een geozone is geassocieerd en GeoJSON data bevat."
+        max_ballot_lines_info: 'Maximum aantal projecten waarop een deelnemer kan stemmen in deze rubriek tijdens de Stemming-fase. Gebruik alleen wanneer bij stemwijze "Goedkeuring" gekozen is.'
         population_info: "Het veld rubriek wordt gebruikt voor statistische doeleinden. Na afloop van de begroting kan voor elke rubriek en per gebied worden weergegeven door welk percentage is gestemd. Het veld is optioneel, dus u kunt het leeg laten als het niet van toepassing is."
         coordinates_info: "Als lengte- en breedtegraad zijn ingevuld, zal voor deze rubriek een kaart worden getoond. Deze kaart wordt gecentreerd met behulp van de opgegeven coördinaten."
         content_blocks_info: "Als inhoudsblokken zijn toegestaan kan aangepaste inhoud gerelateerd aan deze rubriek worden geplaatst via de sectie Instellingen > aangepaste inhoud. De aangepaste inhoud wordt weergegeven op de pagina voor de rubriek."
         create: "Nieuwe rubriek aanmaken"
         edit: "Rubriek bewerken"
         submit: "Bewaar kop"
+      group_switcher:
+        currently_showing: "Rubrieken uit de <strong>%{group}</strong> groep."
+        the_other_group: "Beheer rubrieken uit de %{group} groep."
       index:
         back: "Terug naar groepen"
         new_button: "Nieuwe rubriek toevoegen"
@@ -194,12 +223,20 @@ nl:
         dates_help_text: "Alleen ter informatie"
         description_help_text: Deze tekst verschijnt in de kop wanneer de fase actief is
         duration: "Duur van de fase"
+        duration_description: "Deze velden worden gebruikt voor informatiedoeleinden en <strong> leidt niet tot een automatische update van de actieve fase. </strong> Bewerk hiervoor de begroting en selecteer de actieve fase."
         enabled_help_text: Deze fase is openbaar in de tijdlijn van de budgetfasen, maar ook actief voor andere doeleinden
+        image_description: "Wanneer een afbeelding is toegevoegd, verschijnt die naast de beschrijving van de fase."
+        main_call_to_action: "Oproep tot actie (optioneel)"
+        main_call_to_action_description: "Deze link verschijnt op de hoofdbanner van de burgerbegroting wanneer deze fase is geactiveerd en verwijst naar een specifieke fase in de begroting, zoals de voorstel- of stemfase."
+        name_help_text: "Dit is de titel van de fase in het fase-overzicht die verschijnt wanneer deze fase actief is. Gebruik één of enkele woorden."
         save_changes: Bewaar wijzigingen
       index:
         title: "%{budget} fasen"
     budget_investments:
       index:
+        basic_filters:
+          valuator_or_group: Beoordelaar of groep
+          title_or_id: Titel of ID
         heading_filter_all: Alle koppen
         administrator_filter_all: Alle beheerders
         valuator_filter_all: Alle beoordelaars
@@ -250,6 +287,7 @@ nl:
           incompatible: Onverenigbaar
           price: Bedrag
           author: Auteur
+        cannot_calculate_winners: De begroting moet in de %{phase} fase zijn om de winnende projecten te bepalen
         see_results: "Bekijk resultaten"
         milestone_tags_filter_all: "Alle mijlpaaltags"
       show:
@@ -335,6 +373,7 @@ nl:
         documents: "Documenten"
         milestone: Mijlpaal
         new_milestone: Nieuwe mijlpaal
+        milestone_tags: Mijlpaaltags
       form:
         admin_statuses: Statussen beheren
         no_statuses_defined: Er zijn nog geen gedefinieerde investeringsstatussen
@@ -396,6 +435,7 @@ nl:
         author: "Auteur"
         commentable_type: "Type"
         title: Reacties
+        no_comments: Er zijn geen reacties.
         table_link: "Link"
     hidden_comments:
       index:
@@ -407,6 +447,7 @@ nl:
         hidden_debate: Verborgen debat
         hidden_proposal: Verborgen voorstel
         title: Verborgen commentaar
+        no_hidden_comments: Er zijn geen verborgen reacties.
     dashboard:
       index:
         back: Terug naar %{org}
@@ -424,17 +465,24 @@ nl:
           <p>Groeten van het CONSUL DEMOCRACY Foundation team.</p>
       actions:
         index:
+          description: "Wanneer deelnemers voorstellen aanmaken, krijgen ze toegang tot een speciaal voorstel-controlepaneel met hulpmiddelen en aanbevelingen om steun te krijgen voor hun idee."
+          create: Creëer hulpmiddel of actie
           active: 'Ja'
           inactive: 'Nee'
+          title: Hulpmiddelen en acties
           action_title: Title
           action_type: Type
+          required_supports: Aantal benodigde steunbetuigingen
+          day_offset: Aantal benodigde dagen
           action_active: Actieve
           order: order
+          published_proposal: Gepubliceerd voorstel
           default:
             email: E-mail
             polls: Polls
             poster: Poster
         new:
+          creating: Actie voor het voorstelcontrolepaneel bewerken
           back: Terug naar lijst
         create:
           notice: Actie succesvol aangemaakt
@@ -449,14 +497,24 @@ nl:
           published_proposal_help_text: Vink dit hokje aan om de actie alleen voor gepubliceerde voorstellen aan te maken
       administrator_tasks:
         index:
+          title: Hulpmiddelen aangevraagd
           solve: Los op
+          no_records: Er zijn geen hulpmiddelen aangevraagd
           source: Bron
+          resource: Hulpmiddel aangevraagd
           filter: Filter
           filters:
             pending: In afwachting
             done: Opgelost
+        edit:
+          back: Terug naar lijst van taken in uitvoering
+          solving: Taak in uitvoering afgerond
         form:
+          solve: Markeer als afgerond
           proposal: Proposal
+          request: Hulpmiddel aangevraagd
+        update:
+          success: De taak is gemarkeerd als afgerond.
     debates:
       index:
         id: ID
