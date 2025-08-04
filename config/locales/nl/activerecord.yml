@@ -585,6 +585,10 @@ nl:
               invalid_date_range: dient later te zijn dan de begindatum
             allegations_end_date:
               invalid_date_range: moet op of na de begindatum zijn
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: komt niet voor in de lijst, toegestane waarden zijn 1 voor burgerservicenummer, 2 voor paspoort en 3 voor identiteitskaart.
         proposal:
           attributes:
             tag_list:
@@ -624,6 +628,7 @@ nl:
             code:
               invalid: "moet starten met dezelfde code als het doel gevolgd met een put en eindigen op een nummer"
       messages:
+        translations_too_short: Tenminste één vertaling is verplicht
         record_invalid: "Validatie mislukt: %{errors}"
         another_poll_active: Er is een andere verkiezing actief in de gekozen periode
         restrict_dependent_destroy:
