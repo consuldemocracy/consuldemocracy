@@ -80,8 +80,8 @@ nl:
         one: "doel"
         other: "doelen"
       sdg/local_target:
-        one: "lokale doelstelling"
-        other: "lokale doelstellingen"
+        one: "lokale doelen"
+        other: "lokale doelen"
       sdg/manager:
         one: "SDG manager"
         other: "SDG managers"
@@ -134,7 +134,7 @@ nl:
         one: "Notificatie"
         other: "Voorstelnotificaties"
       dashboard/action:
-        one: Voorsteldashboard actie
+        one: Voorstellencontrolepaneel actie
         other: Voorsteldashboard acties
       dashboard/administrator_task:
         one: Taak
@@ -148,6 +148,9 @@ nl:
       votation_type:
         one: Stemvorm
         other: Stemvormen
+      cookies/vendor:
+        one: cookieleverancier
+        other: cookiebedrijven
     attributes:
       budget:
         name: "Naam"
@@ -530,6 +533,10 @@ nl:
       votation_type/vote_type:
         unique: Uniek antwoord
         multiple: Meerdere antwoorden
+      cookies/vendor:
+        name: Naam leverancier
+        cookie: Naam cookie
+        script: JavaScript code
     errors:
       models:
         user:
@@ -544,6 +551,11 @@ nl:
           attributes:
             max_per_day:
               invalid: "U heeft het maximum aan privéberichten per dag bereikt"
+        geozone:
+          attributes:
+            geojson:
+              invalid: "De opgegeven GeoJSON data hebben niet het juiste sjabloon. Gebruik het RFC 7946-sjabloon"
+              invalid_coordinates: "De opgegeven GeoJSON data bevatten onjuiste coördinaten. Gebruik het \"Lengtegraad, Breedtegraad\"-sjabloon en volg de RFC 7946 standaard"
         image:
           attributes:
             attachment:
