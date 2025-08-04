@@ -28,7 +28,7 @@ gem "font-awesome-sass", "~> 5.15.1" # Remember to update vendor/assets/images/f
 gem "globalize", "~> 7.0.0"
 gem "globalize-accessors", "~> 0.3.0"
 gem "graphiql-rails", "~> 1.8.0"
-gem "graphql", "~> 2.5.9"
+gem "graphql", "~> 2.5.11"
 gem "groupdate", "~> 6.7.0"
 gem "image_processing", "~> 1.14.0"
 gem "invisible_captcha", "~> 2.3.0"
