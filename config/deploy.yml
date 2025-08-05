@@ -1,6 +1,11 @@
 service: consuldemocracy
 image: consuldemocracy-app
 
+registry:
+  username: your_personal_dockerhub_username  # REPLACE WITH YOUR ACTUAL USERNAME
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
 servers:
   web:
     - vps2583611.fastwebserver.de
@@ -29,3 +34,8 @@ env:
     DB_HOST: db
     PGUSER: postgres
     PGPASSWORD: password
+
+hooks:
+  post-deploy:
+    - docker exec $KAMAL_CONTAINER_NAME bundle exec rails db:migrate
+    - docker exec $KAMAL_CONTAINER_NAME bundle exec rails db:seed
