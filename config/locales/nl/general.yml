@@ -22,6 +22,7 @@ nl:
     menu: Menu
   comments:
     actions:
+      confirm_delete: "Weet je het zeker? Dit zal de reactie definitief verwijderen."
       delete: "Reactie verwijderen"
     comments_closed: Reageren is niet langer mogelijk
     verified_only: ' %{verify_account} om deel te nemen'
@@ -134,9 +135,13 @@ nl:
         submit_button: Bewaar wijzigingen
   errors:
     messages:
+      allowed_file_content_types: "content type moet een van %{types} zijn"
       user_not_found: Gebruiker niet gevonden
       invalid_date_range: "Ongeldige periode"
       past_date: "Mag geen datum in het verleden zijn"
+      cannot_change_date:
+        poll_started: "Kan niet worden aangepast als stemming gestart is"
+        poll_ended: "Kan niet worden aangepast als stemming is afgelopen"
   form:
     accept_terms: Ik accepteer het %{policy} en de %{conditions}
     conditions: Gebruiksvoorwaarden
@@ -164,8 +169,11 @@ nl:
     document: Document
     topic: Onderwerp
     image: Afbeelding
+    local_census_record: Lokaal censusdossier
+    local_census_records/import: Import van lokale censusdossiers
     site_customization/content_block: inhoudsblok
     site_customization/page: pagina
+    sdg/local_target: lokale target
   geozones:
     none: Hele stad
   layouts:
@@ -175,7 +183,11 @@ nl:
         draft: Concept
         retired: Teruggetrokken
       proposal_totals:
+        active_resources: Actieve hulpmiddelen
         community: Deelnemers in jouw community
+        show_proposal: Toon voorstel
+        preview_proposal: Bekijk conceptvoorstel
+        current_goal: Huidig doel
         supports:
           zero: Geen steunbetuigingen
           one: 1 steunbetuiging
@@ -186,6 +198,7 @@ nl:
       consul: CONSUL DEMOCRACY
       consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: CONSUL DEMOCRACY, %{year}
+      cookies_consent_management: Beheer cookies
       description: Deze site gebruikt %{consul}, wat %{open_source} is.
       open_source: open-source software
       open_source_url: https://www.gnu.org/licenses/agpl-3.0.html
@@ -215,6 +228,8 @@ nl:
           one: U heeft een nieuwe melding
           other: U heeft %{count} nieuwe meldingen
         notifications: Notificaties
+      sdg: "SDG"
+    skip_to_main_content: "Ga verder naar content"
   notifications:
     index:
       empty_notifications: U heeft geen nieuwe meldingen.
@@ -263,11 +278,17 @@ nl:
     info:
       sign_in: "Aanmelden met:"
       sign_up: "Registreren met:"
+    saml:
+      sign_in: Log in met SAML
+      sign_up: Registreer met SAML
+      name: SAML
     or_fill: "Of vul het volgende in:"
   proposals:
     create:
       form:
         submit_button: Voorstel indienen
+    created:
+      title: Gefeliciteerd! Je hebt de eerste stap genomen.
     share:
       dashboard: Bekijk meer informatie
       message: "Ik heb op het voorstel %{title} in %{handle} gestemd. Stem ook!"
