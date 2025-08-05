@@ -1,16 +1,87 @@
-# Default admin user (change password after first deploy to a server!)
-if Administrator.count == 0 && (!Rails.env.test? || !Tenant.default?)
-  admin = User.create!(username: "admin", email: "admin@consul.dev", password: "12345678",
-                       password_confirmation: "12345678", confirmed_at: Time.current,
-                       terms_of_service: "1")
-  admin.create_administrator
+# Minimal, structured production seeds for municipalities
+# This file mirrors the structure of db/dev_seeds.rb, but only creates minimal, real data.
+# SAFE TO RUN MULTIPLE TIMES - idempotent operations only
+
+# Helper methods (copied from dev_seeds.rb, but simplified for minimal data)
+def section(section_title)
+  puts section_title
+  yield
+  puts " ✅"
 end
 
-Setting.reset_defaults
-load Rails.root.join("db", "web_sections.rb")
+def log(msg)
+  puts "#{msg}\n"
+end
 
-# Default custom pages
-load Rails.root.join("db", "pages.rb")
+# --- Admin User ---
+section "Admin User" do
+  # Only create if no admin exists (safe to run multiple times)
+  if Administrator.count == 0
+    admin = User.create!(username: "admin", email: "admin@consul.dev", password: "changeme",
+                         password_confirmation: "changeme", confirmed_at: Time.current,
+                         terms_of_service: "1")
+    admin.create_administrator
+    log "Created default admin user (admin@consul.dev / changeme)"
+  else
+    log "Admin user already exists, skipping creation"
+  end
+end
 
-# Sustainable Development Goals
-load Rails.root.join("db", "sdg.rb")
+# --- Settings ---
+section "Settings" do
+  # Reset defaults is safe to run multiple times
+  Setting.reset_defaults
+  log "Default settings loaded."
+end
+
+# --- Web Sections ---
+section "Web Sections" do
+  # Only load if not already loaded (safe to run multiple times)
+  unless WebSection.exists?
+    load Rails.root.join("db", "web_sections.rb")
+  else
+    log "Web sections already exist, skipping"
+  end
+end
+
+# --- Pages ---
+section "Pages" do
+  # Only load if not already loaded (safe to run multiple times)
+  unless Page.exists?
+    load Rails.root.join("db", "pages.rb")
+  else
+    log "Pages already exist, skipping"
+  end
+end
+
+# --- Sustainable Development Goals ---
+section "SDG" do
+  # Only load if not already loaded (safe to run multiple times)
+  unless Sdg::Goal.exists?
+    load Rails.root.join("db", "sdg.rb")
+  else
+    log "SDG data already exists, skipping"
+  end
+end
+
+# --- Example Project/Section (if your app needs one for UI) ---
+section "Example Project" do
+  if defined?(Project) && Project.count == 0
+    Project.create!(title: "Welcome Project", description: "This is an example project. Edit or add more!")
+    log "Created example project."
+  else
+    log "Projects already exist, skipping example creation"
+  end
+end
+
+# --- Example Community (if needed) ---
+section "Example Community" do
+  if defined?(Community) && Community.count == 0
+    Community.create!(name: "Welcome Community", description: "This is an example community.")
+    log "Created example community."
+  else
+    log "Communities already exist, skipping example creation"
+  end
+end
+
+log "Minimal production seeds loaded safely. Ready for municipalities!"

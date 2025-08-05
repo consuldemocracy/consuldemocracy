@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Run database creation and migrations after every deploy.
+# This ensures the DB is ready for the app, but does NOT seed demo data.
+
+echo "Running db:create and db:migrate on deployed app..."
+
+kamal exec web bundle exec rails db:create db:migrate
+
+echo "Database setup and migrations complete."
+
+# (Optional) Load Demo Data
+
+# If you want demo/mock data, run after deploy:
+
+# kamal exec web bundle exec rails db:seed
