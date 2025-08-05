@@ -52,14 +52,14 @@
           <% end %>
 		  
           <% if setting["twitter_handle"] %>
-            <li class="inline-block">
-              <%= link_to "https://twitter.com/#{setting["twitter_handle"]}", target: "_blank",
-                           title: t("shared.go_to_page") + t("social.twitter", org: setting["org_name"]) + t("shared.target_blank") do %>
-                              <span class="show-for-sr"><%= t("social.twitter", org: setting["org_name"]) %></span>
-                              <span class="icon-twitter fa_twitter" aria-hidden="true"></span>
-              <% end %>
-            </li>
-          <% end %>
+					<li class="inline-block padding_top_15">
+					  <%= link_to "https://twitter.com/#{setting["twitter_handle"]}", target: "_blank",
+								   title: t("shared.go_to_page") + t("social.twitter", org: setting["org_name"]) + t("shared.target_blank") do %>
+									  <span class="show-for-sr"><%= t("social.twitter", org: setting["org_name"]) %></span>									  
+									  <%= image_tag(image_path_for("twitter_x_negro.png"), class: "custom-logo-twitter_negro", alt: t("social.twitter")) %>
+					  <% end %>
+					</li>
+		  <% end %>
 		  
           <% if setting["facebook_handle"] %>
             <li class="inline-block">

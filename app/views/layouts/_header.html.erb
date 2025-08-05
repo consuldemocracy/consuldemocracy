@@ -39,8 +39,8 @@
 					<li class="inline-block padding_top_15">
 					  <%= link_to "https://twitter.com/#{setting["twitter_handle"]}", target: "_blank",
 								   title: t("shared.go_to_page") + t("social.twitter", org: setting["org_name"]) + t("shared.target_blank") do %>
-									  <span class="show-for-sr"><%= t("social.twitter", org: setting["org_name"]) %></span>
-									  <span class="icon-twitter fa_twitter_blanco" aria-hidden="true"></span>
+									  <span class="show-for-sr"><%= t("social.twitter", org: setting["org_name"]) %></span>									  
+									  <%= image_tag(image_path_for("twitter_x.png"), class: "custom-logo-twitter", alt: t("social.twitter")) %>
 					  <% end %>
 					</li>
 				  <% end %>
@@ -54,7 +54,7 @@
 					  <% end %>
 					</li>
 				  <% end %>
-			
+				
 				</ul>
 			</div>
 		</div>

@@ -40,9 +40,9 @@
 }
 
 .icon-twitter::before {
-  content: "\f099";
-  /*font-family: "Font Awesome 6 Brands" !important;
-  content: "\e900" !important;*/
+  /*content: "\f099";*/
+  font-family: "Font Awesome 6 Brands" !important;
+  content: "\e900" !important;
 }
 
 .icon-calendar::before {
