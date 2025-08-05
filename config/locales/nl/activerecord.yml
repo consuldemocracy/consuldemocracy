@@ -124,6 +124,9 @@ nl:
       images:
         one: "Afbeelding"
         other: "Afbeeldingen"
+      tenant:
+        one: "gebruiker"
+        other: "gebruikers"
       topic:
         one: "Onderwerp"
         other: "Onderwerpen"
