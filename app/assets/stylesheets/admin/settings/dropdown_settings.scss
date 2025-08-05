@@ -1,0 +1,19 @@
+.admin .dropdown-settings-form {
+  label {
+    display: table;
+  }
+
+  select {
+    width: auto;
+  }
+
+  .help-text {
+    display: block;
+  }
+
+  [type="submit"] {
+    @include regular-button;
+    display: block;
+    margin-top: $line-height;
+  }
+}

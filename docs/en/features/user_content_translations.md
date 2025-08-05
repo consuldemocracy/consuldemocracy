@@ -4,7 +4,21 @@
 
 The aim of this service is to be able to offer all the dynamic contents of the application (proposals, debates, budget investments and comments) in different languages automatically.
 
-When a user visits a page with a language where there is untranslated content, they will have a button to request the translation of all the content. This content will be sent to an automatic translator (in this case [Microsoft TranslatorText](https://azure.microsoft.com/en-us/products/cognitive-services/translator/)) and as soon as the response is obtained, all these translations will be available to any user.
+When a user visits a page with a language where there is untranslated content, they will have a button to request the translation of all the content. This content will be sent to an automatic translator (as) and as soon as the response is obtained, all these translations will be available to any user.
+
+## Selecting your translations provider
+
+You can choose 2 different approaches to enable content translation, depending on your preference.
+
+### 1. Microsoft TranslatorText Translation
+
+* Probably preferable if you are already and Azure customer or when you prefer a dedicated translation API.
+
+### 2. LLM Translation
+
+* Probably preferable if when you already provision an LLM (AI) service, or when you want to take more control of your translations - customizing the translation prompt.
+
+## 1. Using Microsoft TranslatorText Translation
 
 ### Getting started
 
@@ -138,3 +152,44 @@ Depending on whether we enable or disable the **Translation Interface** feature 
   When this feature is disabled users will see standard forms without the translation interface and without highlighted translation fields.
 
   ![Translations interface disabled](../../img/translations/interface_translations/translations-interface-disabled-en.png)
+
+## 2. Using LLM Translation
+
+### Getting started
+
+In order to use this functionality, the following steps are necessary:
+
+1. Create an account with your LLM provider of choice (OpenAI, Anthropic, ...), or set up a self-hosted Ollama LLM endpoint.
+2. Obtain an authentication / API key for the service. This step differs for each provider, so you will have to look it up yourself.
+
+### Configuration
+
+To enable the translation service in your application you must complete the following steps:
+
+#### Add api key in the application's credentials
+
+Once your LLM API credentials are available, you have to configure the service correctly in your application by using the section `apis:` and subsection `llm:` of the `secrets.yml` file, with the key `{provider}_api_key` as follows:
+
+* Add a `llm:` subsection into the `apis:` subsection:
+
+```yml
+apis: &apis
+  llm:
+    # Provide keys for the LLM providers you intend to use.
+    # consult RubyLLM https://rubyllm.com/configuration#global-configuration-rubyllmconfigure configuration for all supported providers and use the same key names here.
+    deepseek_api_key: "1234567890"
+```
+
+#### Configuring LLM provider, model
+
+Boot up your application, then navigate to Admin > Global Settings and choose LLM Settings tab. LLM provider, model can be selected here, depending on which configuration requirements you met inside `secrets.yml` file. If you configured a provider, but it's still greyed out, it means that it's not satifying [RubyLLM's requirement for your provider](https://rubyllm.com/configuration#global-configuration-rubyllmconfigure).
+
+<img width="1288" height="928" alt="Consul LLM Settings" src="../../img/translations/remote_translations/display-llm-translations.png" />
+
+#### Configuring LLM prompt
+
+Use `config/llm_prompts.yml` and edit `remote_translation_prompt` to set up your own translation prompt. Ensure that the prompt returns the resulting translation as it's expected to be viewed by the end user.
+
+#### Enabling the feature
+
+Once we have configured everything in LLM Settings tab, we can proceed to enable the feature. To enable it, in the administration area access the section **Settings > Global settings > Features** and enable the **Remote translation** feature. From this point onwards, your users will receive a bar

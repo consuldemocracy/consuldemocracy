@@ -14,10 +14,6 @@ class RemoteTranslations::Microsoft::AvailableLocales
     app_locale_to_remote_locale_map[locale] || locale
   end
 
-  def self.include_locale?(locale)
-    locales.include?(locale.to_s)
-  end
-
   private
 
     def self.remote_locale_to_app_locale(locale)
