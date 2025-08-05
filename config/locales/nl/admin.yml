@@ -520,6 +520,7 @@ nl:
         id: ID
         author: Auteur
         title: Discussie
+        no_debates: Er zijn geen discussies.
     hidden_debates:
       index:
         filter: Filter
@@ -528,6 +529,7 @@ nl:
           with_confirmed_hide: Bevestigd
           without_confirmed_hide: In afwachting
         title: Verborgen debatten
+        no_hidden_debates: Er zijn geen verborgen discussies.
     documents:
       new:
         title: "Bestand uploaden"
@@ -648,6 +650,7 @@ nl:
           back: Terug
           submit_button: Bewaar wijzigingen
           warning: U hebt de tekst bewerkt, vergeet niet op 'Opslaan' te klikken om de wijzigingen permanent op te slaan.
+          markdown_changes_message: "Je hebt de tekst bewerkt zonder op te slaan. Wil je de pagina verlaten?"
         form:
           title: 'Aanpassen van <span class="strong">%{draft_version_title}</span> van het proces <span class="strong">%{process_title}</span>'
           launch_text_editor: Open tekst editor
@@ -708,6 +711,11 @@ nl:
       milestones:
         index:
           title: Volgend
+    locales:
+      default_help_text: "Dit is de standaardtaal van het platform. De taal veranderen zal zichtbaar<strong> zijn voor elke bezoeker</strong>."
+      enabled_help_text: De hierboven geselecteerde standaardtaal zal automatisch worden meegenomen.
+      update:
+        notice: Taal succesvol aangepast
     managers:
       index:
         title: Beheerders
@@ -765,10 +773,12 @@ nl:
         content_blocks: Aangepaste inhoudsblokken
         information_texts: Aangepaste informatieteksten
         information_texts_menu:
+          basic: "Basisaanpassingen"
           debates: "Discussie"
           community: "Community"
           proposals: "Voorstellen"
           polls: "Peilingen"
+          legislation: "Plannen"
           budgets: "Burgerbegrotingen"
           layouts: "Lay-outs"
           machine_learning: "AI / Machine Learning"
@@ -786,8 +796,12 @@ nl:
       title_booths: Stemhokjes
       legislation: Plannen
       users: Deelnemers
+      dashboard: Voorstellencontrolepaneel
+      administrator_tasks: Hulpmiddelen aangevraagd
+      dashboard_actions: Hulpmiddelen en acties
       debates: "Discussie"
       comments: "Reacties"
+      local_census_records: Lokale census
       machine_learning: "AI / Machine Learning"
       multitenancy: Multitenancy
     administrators:
@@ -814,6 +828,7 @@ nl:
     segment_recipient:
       all_users: Alle deelnemers
       administrators: Beheerders
+      all_proposal_authors: Indieners voorstellen (inclusief gearchiveerd en ingetrokken)
       proposal_authors: Voorstel schrijvers
       investment_authors: Voorstel schrijvers in de huidige burgerbegroting
       feasible_and_undecided_investment_authors: "Auteurs van sommige investeringen in het huidige budget die niet voldoen: [beoordeling afgerond onhaalbaar]"
@@ -838,6 +853,7 @@ nl:
         empty_newsletters: Er zijn geen nieuwsbrieven om te tonen
       new:
         title: Nieuwe nieuwsbrief
+        header_footer_help_text: "De heading en footer zijn hetzelfde voor alle e-mails en zijn aan te passen in <code>app/views/layouts/mailer_header</code> en <code>app/views/layouts/mailer_footer</code>.<br>Je kunt de header afbeelding vervangen met %{link}."
         image_link: "aangepaste afbeeldingen"
       edit:
         title: Bewerk nieuwsbrief
@@ -932,6 +948,9 @@ nl:
       user_invite:
         title: "Uitnodiging"
         description: "Verzonden naar de persoon die is uitgenodigd om zich te registreren."
+      evaluation_comment:
+        title: "Nieuw beoordelingsreactie"
+        description: "Verzonden naar gerelateerde beheerders en beoordelaars"
       edit_info: "Je kunt deze email bewerken in"
       message_title: "Berichttitel"
       message_body: "Dit is een voorbeeld van de inhoud van een bericht."
@@ -939,6 +958,7 @@ nl:
         no_investments: "Er zijn geen budget investeringen aangemaakt. Er kan geen voorbeeld email worden getoond."
         no_comments: "Er zijn nog geen reacties. Er kan geen voorbeeld email worden getoond."
         no_replies: "Er zijn nog geen antwoorden. Er kan geen voorbeeld email worden getoond."
+        no_evaluation_comments: "Er zijn nog geen reacties. Er kan geen voorbeelde-mail worden getoond."
     emails_download:
       index:
         title: E-mails downloaden
@@ -956,6 +976,7 @@ nl:
         valuator_groups: "Beoordelingsgroepen"
         group: "Groep"
         no_group: "Geen groep"
+        abilities: "Capaciteiten"
         can_comment: "Kan reageren"
         can_edit_dossier: "Kan dossier bewerken"
       valuator:
@@ -969,8 +990,10 @@ nl:
         description: "Beschrijving"
         email: "E-mail"
         group: "Groep"
+        abilities: "Capaciteiten"
         no_description: "Zonder beschrijving"
         no_group: "Geen groep"
+        no_abilities: "Zonder capaciteiten"
     valuator_groups:
       index:
         title: "Evaluatiegroepen"
@@ -996,10 +1019,11 @@ nl:
       search:
         email_placeholder: Zoek gebruiker via email
         user_not_found: Gebruiker niet gevonden
+        help: "Om Stemmentellers toe te voegen, gebruik het zoekformulier hieronder."
     poll_officer_assignments:
       index:
         officers_title: "Lijst van beambten"
-        no_officers: "There are no officers assigned to this poll."
+        no_officers: "Er zijn geen stemmentellers toegewezen aan deze peiling."
         table_name: "Naam"
         table_email: "E-mail"
       by_officer:
