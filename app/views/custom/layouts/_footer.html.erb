@@ -66,7 +66,7 @@
               <%= link_to "https://www.facebook.com/#{setting["facebook_handle"]}/", target: "_blank",
                           title: t("shared.go_to_page") + t("social.facebook", org: setting["org_name"]) + t("shared.target_blank") do %>
                           <span class="show-for-sr"><%= t("social.facebook", org: setting["org_name"]) %></span>
-                          <span class="icon-facebook fa_facebook" aria-hidden="true"></span>
+                          <%= image_tag(image_path_for("facebook_fondo.png"), class: "custom-logo-facebook", alt: t("social.twitter")) %>
               <% end %>
             </li>
           <% end %>
