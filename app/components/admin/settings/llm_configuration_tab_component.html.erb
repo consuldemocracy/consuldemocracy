@@ -1,0 +1,42 @@
+<h2><%= t("settings.llm.title") %></h2>
+
+<%= render Admin::Settings::TableComponent.new(setting_name: "setting") do %>
+
+  <tr>
+    <td>
+      <strong><%= t("settings.llm.provider") %></strong>
+    </td>
+    <td>
+      <%= render Admin::Settings::DropdownSettingComponent.new(
+          provider_setting,
+          options: providers,
+          tab: tab,
+          blank_option: sanitize(t("settings.llm.provider_blank_option")),
+          hint: sanitize(t("settings.llm.default_help_text")),
+          onchange: "this.form.submit();"
+        ) %>
+    </td>
+  </tr>
+
+  <% if Setting["llm.provider"].present? %>
+    <tr>
+      <td>
+        <strong><%= t("settings.llm.model") %></strong>
+      </td>
+      <td>
+        <%= render Admin::Settings::DropdownSettingComponent.new(
+            model_setting,
+            options: models,
+            tab: tab,
+            blank_option: sanitize(t("settings.llm.model_blank_option")),
+            onchange: "this.form.submit();"
+          ) %>
+      </td>
+    </tr>
+  <% end %>
+
+  <% if Setting["llm.provider"].present? && Setting["llm.model"].present? %>
+    <%= render Admin::Settings::RowComponent.new("llm.use_llm_for_translations", type: :feature, tab: tab) %>
+  <% end %>
+
+<% end %>

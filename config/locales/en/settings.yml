@@ -235,3 +235,13 @@ en:
       more_info_link_description: Link shown in the consent banner to the cookie policy page.
       version_name: Version name
       version_name_description: Change the version name to force all users to go through the cookie consent process again. This feature can be handy when introducing drastic cookie policy changes requiring a new user acknowledgement.
+    llm:
+      title: LLM Settings
+      provider: "LLM Provider"
+      default_help_text: "Providers will be <strong>disabled</strong> until credentials are configured in the secrets.yml."
+      provider_blank_option: "None"
+      model_blank_option: "None"
+      use_llm_for_translations: "Content Translation"
+      use_llm_for_translations_description: "Use LLM for content translations and take precedence over Microsoft translation services."
+      model: "Model"
+      model_description: "The LLM model to use."

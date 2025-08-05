@@ -235,3 +235,13 @@ es:
       more_info_link_description: Enlace que se muestra en el banner de consentimiento a la página de política de cookies
       version_name: Nombre de la versión
       version_name_description: Cambia el nombre de la versión para obligar a todos los usuarios a realizar el proceso de consentimiento de cookies de nuevo. Esto puede ser particularmente útil cuando se introducen cambios drásticos en la política de cookies que requieren de un nuevo consentimiento explícito por parte de los usuarios.
+    llm:
+      title: Configuración LLM
+      provider: "Proveedor LLM"
+      default_help_text: "Los proveedores estarán <strong>deshabilitados</strong> hasta que se configuren las credenciales en secrets.yml."
+      provider_blank_option: "Seleccionar un proveedor..."
+      model_blank_option: "Seleccionar un modelo..."
+      use_llm_for_translations: "Traducción de Contenido"
+      use_llm_for_translations_description: "Usar LLM para traducciones de contenido y tomar precedencia sobre los servicios de traducción de Microsoft."
+      model: "Modelo"
+      model_description: "El modelo LLM a usar."

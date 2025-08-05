@@ -1,0 +1,17 @@
+<%= form_for([:admin, setting], remote: true, authenticity_token: true, html: { remote: true, class: "dropdown-settings-form" }) do |f| %>
+  <%= hidden_field_tag "id", setting.id, id: dom_id(setting, :id) %>
+  <%= hidden_field_tag :tab, tab if tab %>
+
+  <%= f.select :value,
+               options.keys,
+               {
+                 label: "&nbsp;",
+                 include_blank: blank_option,
+                 hint: hint,
+                 disabled: options.reject { |k, v| v[:enabled] }.keys
+               },
+               {
+                 class: "dropdown-settings-form",
+                 onchange: onchange
+               } %>
+<% end %>
