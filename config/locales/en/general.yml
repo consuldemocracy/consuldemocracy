@@ -644,6 +644,8 @@ en:
   poll_questions:
     description:
       multiple: "You can select a maximum of %{maximum} answers."
+    form:
+      change_votation_type: "can't change to essay type because options already exist"
     read_more_about: "Read more about:"
   proposal_notifications:
     new:

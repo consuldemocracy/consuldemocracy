@@ -644,6 +644,8 @@ es:
   poll_questions:
     description:
       multiple: "Puedes seleccionar un máximo de %{maximum} respuestas."
+    form:
+      change_votation_type: "no se puede cambiar a respuesta abierta el tipo de votación porque ya existen opciones"
     read_more_about: "Leer más:"
   proposal_notifications:
     new:
