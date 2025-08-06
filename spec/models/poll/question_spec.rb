@@ -46,4 +46,66 @@ RSpec.describe Poll::Question do
       end
     end
   end
+
+  describe "#validate_votation_type_essay" do
+    it "question unique to essay without options is valid" do
+      poll_question = create(:poll_question_unique)
+
+      poll_question.votation_type.update!(vote_type: :essay)
+
+      expect(poll_question).to be_valid
+    end
+
+    it "question unique to essay with options is invalid" do
+      poll_question = create(:poll_question_unique)
+      create(:poll_question_option, question: poll_question)
+
+      poll_question.votation_type.update!(vote_type: :essay)
+
+      expect(poll_question).not_to be_valid
+      error = poll_question.errors[:votation_type].first
+      expect(error).to eq "can't change to essay type because multiple type options already exist"
+    end
+
+    it "question multiple to essay without options is valid" do
+      poll_question = create(:poll_question_multiple)
+
+      poll_question.votation_type.update!(vote_type: :essay)
+
+      expect(poll_question).to be_valid
+    end
+
+    it "question multiple to essay with options is invalid" do
+      poll_question = create(:poll_question_multiple)
+      create(:poll_question_option, question: poll_question)
+
+      poll_question.votation_type.update!(vote_type: :essay)
+
+      expect(poll_question).not_to be_valid
+      error = poll_question.errors[:votation_type].first
+      expect(error).to eq "can't change to essay type because multiple type options already exist"
+    end
+  end
+
+  describe "#validate_votation_type_from_essay" do
+    it "question essay to unique is invalid" do
+      poll_question = create(:poll_question_essay)
+
+      poll_question.votation_type.update!(vote_type: :unique)
+
+      expect(poll_question).not_to be_valid
+      error = poll_question.errors[:votation_type].first
+      expect(error).to eq "can't change from essay type because essay options already exist"
+    end
+
+    it "question essay to multiple is invalid" do
+      poll_question = create(:poll_question_essay)
+
+      poll_question.votation_type.update!(vote_type: :multiple, max_votes: 2)
+
+      expect(poll_question).not_to be_valid
+      error = poll_question.errors[:votation_type].first
+      expect(error).to eq "can't change from essay type because essay options already exist"
+    end
+  end
 end
