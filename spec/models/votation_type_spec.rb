@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe VotationType do
-  let(:vote_types) { %i[votation_type_unique votation_type_multiple] }
+  let(:vote_types) { %i[votation_type_unique votation_type_multiple votation_type_open] }
   let(:votation_type) { build(vote_types.sample) }
 
   it "is valid" do
@@ -24,6 +24,10 @@ describe VotationType do
   it "is not valid when max_votes is undefined for multiple votation_type" do
     votation_type.max_votes = nil
     votation_type.vote_type = "unique"
+
+    expect(votation_type).to be_valid
+
+    votation_type.vote_type = "open"
 
     expect(votation_type).to be_valid
 

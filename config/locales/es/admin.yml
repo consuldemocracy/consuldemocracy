@@ -1131,6 +1131,7 @@ es:
         title: "Tipo de votación"
         unique_description: "Solo se puede responder a la pregunta con una única respuesta."
         multiple_description: "Permite elegir más de una respuesta. Se puede elegir el número máximo de respuestas."
+        open_description: "Pregunta abierta que permite al usuario dar una única respuesta con sus propias palabras."
     questions:
       index:
         create: "Crear pregunta ciudadana"

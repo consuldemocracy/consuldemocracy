@@ -9,6 +9,10 @@ FactoryBot.define do
       max_votes { 3 }
     end
 
+    factory :votation_type_open do
+      vote_type { "open" }
+    end
+
     questionable factory: :poll_question
   end
 end

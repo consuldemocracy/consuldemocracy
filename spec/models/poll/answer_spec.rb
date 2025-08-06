@@ -30,6 +30,13 @@ describe Poll::Answer do
       expect(answer).not_to be_valid
     end
 
+    it "is not valid without an answer when question is open-ended" do
+      answer.question = create(:poll_question_open)
+      answer.answer = nil
+
+      expect(answer).not_to be_valid
+    end
+
     it "is not valid if there's already an answer to that question" do
       author = create(:user)
       question = create(:poll_question, :yes_no)

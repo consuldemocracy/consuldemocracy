@@ -534,6 +534,7 @@ en:
         max_votes: Maximum number of votes
         vote_type: Votation type
       votation_type/vote_type:
+        open: Open-ended
         unique: Unique answer
         multiple: Multiple answers
       cookies/vendor:

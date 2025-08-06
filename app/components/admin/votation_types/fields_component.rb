@@ -10,7 +10,8 @@ class Admin::VotationTypes::FieldsComponent < ApplicationComponent
     def descriptions
       {
         unique: t("admin.polls.votation_type.unique_description"),
-        multiple: t("admin.polls.votation_type.multiple_description")
+        multiple: t("admin.polls.votation_type.multiple_description"),
+        open: t("admin.polls.votation_type.open_description")
       }
     end
 
