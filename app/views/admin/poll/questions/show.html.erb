@@ -48,8 +48,10 @@
 
 <div class="clear">
   <% if can?(:create, Poll::Question::Option.new(question: @question)) %>
-    <%= link_to t("admin.questions.show.add_answer"), new_admin_question_option_path(@question),
-                class: "button float-right" %>
+    <% if !@question.essay? || (@question.essay? && @question.question_options.count == 0) %>
+      <%= link_to t("admin.questions.show.add_answer"), new_admin_question_option_path(@question),
+                  class: "button float-right" %>
+    <% end %>
   <% else %>
     <div class="callout warning">
       <strong><%= t("admin.questions.no_edit") %></strong>
