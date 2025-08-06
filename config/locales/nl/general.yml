@@ -289,7 +289,13 @@ nl:
         submit_button: Voorstel indienen
     created:
       title: Gefeliciteerd! Je hebt de eerste stap genomen.
+      motivation: "Een campagne is belangrijk bij het onder de aandacht brengen van je voorstel, met name tijdens de eerste paar dagen na publicatie."
+      motivation_2: "<strong>Laat het voorstel in conceptversie staan als je aanbevelingen wilt over publicatie.</strong>"
+      publish: Nee, ik wil het voorstel publiceren
+      dashboard: Ja, geef me de aanbevelingen en ik publiceer later
+      preview_title: Dit is hoe je voorstel eruit ziet wanneer je het publiceert
     share:
+      improve_it: Verbeter je campagne en krijg meer steun.
       dashboard: Bekijk meer informatie
       message: "Ik heb op het voorstel %{title} in %{handle} gestemd. Stem ook!"
     edit:
@@ -379,6 +385,7 @@ nl:
       start_new: Doe nieuw voorstel
     notice:
       retired: Voorstel teruggetrokken
+      published: Het voorstel is gepubliceerd
     proposal:
       created: "Je hebt een voorstel gedaan!"
       share:
@@ -387,6 +394,7 @@ nl:
         view_proposal: Niet nu, door naar mijn voorstel
       already_supported: U steunt dit voorstel al. Deel het!
       support: Steun
+      support_label: "Steun %{proposal}"
       support_title: Steun dit voorstel
       supports:
         zero: Geen steunbetuigingen
@@ -417,6 +425,7 @@ nl:
       embed_video_title: "Video voor %{proposal}"
       title_video_url: "Externe video"
       author: Auteur
+      draft: Voorstel in conceptversie en kan nog geen supports ontvangen, noch wordt het getoond in de lijst met voorstellen.
     update:
       form:
         submit_button: Bewaar wijzigingen
@@ -434,10 +443,17 @@ nl:
       related_content: Gerelateerde inhoud
     form:
       request: Verzoek
+    create_request:
+      success: De aanvraag is verstuurd. We nemen zo snel mogelijk contact met je op.
+      archived: Het voorstel is gearchiveerd en hulpmiddelen aanvragen is niet mogelijk.
     progress:
+      title: Afbeelding
       group_by_month: Maandelijks
       group_by_week: Wekelijks
+      group_by_date: Dagelijks
+      progress: Totale vooruitgang
       supports: Steunt
+      success: Gewenste vooruitgang
       new_action: Nieuw
     index:
       title: Editie
@@ -446,33 +462,55 @@ nl:
       retire: Trek voorstel terug
     new_request:
       links: Links
+    resources:
+      available_resources: Beschikbare hulpmiddelen
     resource:
       required_days: "%{days} dagen nodig"
+      required_supports: "%{supports} steunbetuigingen nodig"
       and: en
+      view_resource: Zie hulpmiddel
+      resource_requested: Hulpmiddel al aangevraagd
+      request_resource: Vraag hulpmiddel aan
+      resource_locked: Hulpmiddel niet beschikbaar
     recommended_actions:
       title: Aanbevolen acties
       goto_proposed_actions: Ga naar aanbevolen acties
+      see_proposed_actions: Bekijk aanbevolen acties
+      hide_proposed_actions: Verberg aanbevolen acties
       pending_title: In afwachting
+      execute: "Markeer %{name} als afgerond"
+      unexecute: "Markeer %{name} als niet afgerond"
       show_description: Toon beschrijving
+      without_pending_actions: Geen aanbevolen acties uitstaand
       done_title: Is al gereed
+      without_done_actions: Geen aanbevolen acties afgerond
     next_goal:
       title: Doel
+      see_complete_course: Bekijk de complete training
+      hide_course: Verberg training
     goal:
       days:
         one: "%{count} dag"
         other: "%{count} dagen"
+      locked_resource: Hulpmiddel niet beschikbaar
+      ideal_time: Gewenste tijd
     community:
       access_community: Naar de community
+      latest_activity: "Laatste activiteit in de gemeenschap: %{at}"
       participants: deelnemers
       debates: Discussie
       comments: Reacties
       latest_comments: Nieuwste berichten
     messages:
+      send_notification: Verstuur notificatie naar voorstelvolgers
       previous_notifications: Bekijk vorige notificaties
     polls:
       index:
         title: Polls
         create: Nieuwe peiling
+        count:
+          one: Je heb %{count} peiling aangemaakt.
+          other: Je hebt %{count} peilingen aangemaakt.
         links: Links
         additiontal_information: Aanvullende informatie
       new:
@@ -486,6 +524,7 @@ nl:
           other: "%{count} reacties"
         view_results: Bekijk resultaten
         edit_poll: Bewerk enquête
+        show_results_help: Vink dit vakje aan om de resultaten te publiceren
         delete: Verwijder enquête
         success_notice: Enquête succesvol verwijderd
         unable_notice: Je kan een vragenlijst met antwoorden niet verwijderen
