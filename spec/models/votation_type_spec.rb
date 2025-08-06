@@ -36,4 +36,26 @@ describe VotationType do
     expect(votation_type).not_to be_valid
     expect(votation_type.errors[:max_votes]).to include "can't be blank"
   end
+
+  describe "#cannot_be_open_ended_if_question_has_options" do
+    it "allows changing to open-ended when the question has no options" do
+      votation_type = create(:votation_type_unique)
+
+      votation_type.vote_type = :open
+
+      expect(votation_type).to be_valid
+    end
+
+    it "blocks changing to open-ended when the question has options" do
+      votation_type = create(:votation_type_unique)
+      create(:poll_question_option, question: votation_type.questionable)
+
+      votation_type.vote_type = :open
+
+      expect(votation_type).not_to be_valid
+      error = votation_type.errors[:vote_type].first
+      expect(error).to eq "can't change to open-ended type " \
+                          "because you've already defined possible valid answers for this question"
+    end
+  end
 end

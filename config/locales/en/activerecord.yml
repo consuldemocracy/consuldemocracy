@@ -629,6 +629,10 @@ en:
           attributes:
             code:
               invalid: "must start with the same code as its target followed by a dot and end with a number"
+        votation_type:
+          attributes:
+            vote_type:
+              cannot_change_to_open_ended: "can't change to open-ended type because you've already defined possible valid answers for this question"
       messages:
         translations_too_short: Is mandatory to provide one translation at least
         record_invalid: "Validation failed: %{errors}"
