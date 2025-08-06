@@ -101,7 +101,7 @@ module Abilities
       end
       can [:read, :order_options], Poll::Question::Option
       can [:create, :update, :destroy], Poll::Question::Option do |option|
-        can?(:update, option.question)
+        can?(:update, option.question) && option.question.accepts_options?
       end
       can :read, Poll::Question::Option::Video
       can [:create, :update, :destroy], Poll::Question::Option::Video do |video|

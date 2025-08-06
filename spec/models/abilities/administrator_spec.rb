@@ -20,6 +20,8 @@ describe Abilities::Administrator do
   let(:future_poll) { create(:poll, :future) }
   let(:current_poll_question) { create(:poll_question) }
   let(:future_poll_question) { create(:poll_question, poll: future_poll) }
+  let(:future_poll_question_open) { create(:poll_question_open, poll: future_poll) }
+  let(:future_poll_question_option_open) { future_poll_question_open.question_options.new }
   let(:current_poll_question_option) { create(:poll_question_option) }
   let(:future_poll_question_option) { create(:poll_question_option, poll: future_poll) }
   let(:current_poll_option_video) { create(:poll_option_video, option: current_poll_question_option) }
@@ -143,6 +145,9 @@ describe Abilities::Administrator do
   it { should_not be_able_to(:create, current_poll_question_option) }
   it { should_not be_able_to(:update, current_poll_question_option) }
   it { should_not be_able_to(:destroy, current_poll_question_option) }
+  it { should_not be_able_to(:create,  future_poll_question_option_open) }
+  it { should_not be_able_to(:update,  future_poll_question_option_open) }
+  it { should_not be_able_to(:destroy, future_poll_question_option_open) }
 
   it { should be_able_to(:create, future_poll_option_video) }
   it { should be_able_to(:update, future_poll_option_video) }

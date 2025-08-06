@@ -9,6 +9,10 @@ class VotationType < ApplicationRecord
   validates :questionable_type, inclusion: { in: ->(*) { QUESTIONABLE_TYPES }}
   validates :max_votes, presence: true, if: :max_votes_required?
 
+  def accepts_options?
+    !open?
+  end
+
   private
 
     def max_votes_required?

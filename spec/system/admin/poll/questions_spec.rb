@@ -89,6 +89,8 @@ describe "Admin poll questions", :admin do
         expect(page).to have_content "Question with unique answer"
         expect(page).to have_content "Unique answer"
         expect(page).not_to have_content "Maximum number of votes"
+        expect(page).to have_link "Add answer"
+        expect(page).to have_table "Valid answers"
       end
 
       scenario "Multiple" do
@@ -106,6 +108,8 @@ describe "Admin poll questions", :admin do
         expect(page).to have_content "Question with multiple answers"
         expect(page).to have_content "Multiple answers"
         expect(page).to have_text "Maximum number of votes 6", normalize_ws: true
+        expect(page).to have_link "Add answer"
+        expect(page).to have_table "Valid answers"
       end
 
       scenario "Open-ended" do
@@ -122,6 +126,8 @@ describe "Admin poll questions", :admin do
         expect(page).to have_content "What do you want?"
         expect(page).to have_content "Open-ended"
         expect(page).not_to have_content "Maximum number of votes"
+        expect(page).not_to have_link "Add answer"
+        expect(page).not_to have_table "Valid answers"
       end
     end
   end
