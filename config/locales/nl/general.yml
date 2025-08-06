@@ -405,6 +405,7 @@ nl:
         one: 1 stem
         other: "%{count} stemmen"
       supports_necessary: "%{number} steunbetuigingen nodig"
+      reason_for_supports_necessary: ""
       total_percent: 100%
       archived: "Dit voorstel is gearchiveerd en kan niet worden gesteund."
       successful: "Dit voorstel heeft de vereiste ondersteuning bereikt."
@@ -526,6 +527,7 @@ nl:
         edit_poll: Bewerk enquête
         show_results_help: Vink dit vakje aan om de resultaten te publiceren
         delete: Verwijder enquête
+        alert_notice: Deze actie zal de vragenlijst verwijderen.
         success_notice: Enquête succesvol verwijderd
         unable_notice: Je kan een vragenlijst met antwoorden niet verwijderen
       form:
@@ -541,8 +543,10 @@ nl:
         title: Poster preview
         poster_title: "Blijf niet kijken"
         poster_subtitle: "maar steun me! ;)"
+        intro_text: "<strong> Ik doe mee met %{org}</strong> met mijn eigen burgervoorstel en alleen met jouw steun kunnen we de stad beter maken"
         proposal_code: "Code van het voorstel: %{code}"
         support: Steun mijn voorstel
+        footer: "<strong>Bezoek %{link} en steun dit voorstel.</strong> Hoe meer, hoe beter. Laten we dit samen doen. Dank je!"
       new:
         title: Poster van je voorstel
       options:
@@ -560,8 +564,13 @@ nl:
         sent: De e-mail is verstuurd
     mailer:
       forward:
+        subtitle: "Als je me steunt, <br> maken we dit voorstel realiteit."
         support_button: Steun dit voorstel
+        share_in: Deel in
         hi: "Hallo!"
+        introduction: Ik schrijf je om je te laten weten dat ik deelneem aan %{org}, het platform waarop we kunnen beslissen welke stad we willen. Ik heb daar mijn eigen burgervoorstel gemaakt en nu heb ik je steun nodig.
+        support: "Je hoeft alleen maar op de knop ‘Steun dit voorstel’ te klikken. Voordat je het voorstel promoot, kun je het lezen en erover leren. Alleen de voorstellen die de maximale steun krijgen, worden door de gemeente uitgevoerd, en ik hoop dat jij me wil helpen om dat te bereiken!"
+        share: "Het zou geweldig zijn als je het voorstel met je buren, vrienden of familie zou willen delen!"
   polls:
     dates: "Van %{open_at} tot %{closed_at}"
     final_date: "Definitieve hertelling/resultaten"
@@ -633,10 +642,13 @@ nl:
     new:
       title: "Stuur bericht"
       submit_button: "Stuur bericht"
+      info_about_receivers: "Deze notificatie wordt verstuurd naar <strong>%{count} mensen</strong> en het zal zichtbaar zijn in %{proposal_page}.<br> Notificaties over voorstellen worden niet individueel verstuurd aan gebruikers, maar gezamenlijk."
       proposal_page: "pagina van het voorstel"
     show:
       back: "Terug naar mijn bijdragen"
   shared:
+    actions:
+      label: "%{action} %{name}"
     edit: "Wijzig"
     filter: "Filter"
     save: "Opslaan"
@@ -659,6 +671,7 @@ nl:
       goal_blank: "Kies een doel"
       search: "Filter"
       target: "Op doel"
+      target_blank: "Selecteer een doelstelling"
       title: "Geavanceerd zoeken"
       to: "Aan"
     author_info:
@@ -672,6 +685,17 @@ nl:
     follow: "Volg"
     following: "Volgend"
     follow_entity: "Volg %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice: "Je volgt nu dit begrotingsvoorstel! <br> We brengen je op de hoogte als er updates zijn."
+        destroy:
+          notice: "Je volgt dit begrotingsvoorstel niet meer. <br> Je ontvangt geen notificaties meer over dit voorstel."
+      proposal:
+        create:
+          notice: "Je volgt nu dit begrotingsvoorstel.<br> We brengen je op de hoogte als er updates zijn."
+        destroy:
+          notice: "Je volgt dit voorstel niet meer. <br> Je zult geen updates over dit voorstel meer ontvangen."
     print:
       print_button: Print this info
     search: Zoek
@@ -721,6 +745,7 @@ nl:
       see_more: Meer aanbevelingen bekijken
       hide: Verborgen aanbevelingen
     translations:
+      current_language: Huidige taal
       remove_language: Verwijder taal
       add_language: Taal toevoegen
       languages_in_use:
@@ -739,6 +764,8 @@ nl:
     youtube: "%{org} YouTube"
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
+  ip_denied_handler:
+    unauthorized: "Toegang geweigerd. Je IP-adres is niet toegestaan."
   unauthorized:
     default: U heeft geen toestemming deze pagina te bezoeken.
     manage:
@@ -795,10 +822,13 @@ nl:
       published: Gepubliceerd
       see: "Bekijk voorstel"
       actions: Activiteiten
+      retired_help_text: Controlepaneel niet beschikbaar voor ingetrokken voorstellen
   votes:
     agree: Ik ben het eens
+    agree_label: "Ik ben het eens met %{title}"
     anonymous: Er zijn al te veel anonieme stemmen; %{verify_account}.
     disagree: Ik ben het oneens
+    disagree_label: "Ik ben het niet eens met %{title}"
     organizations: Organisaties kunnen niet stemmen
     supports: Steunt
     verified_only: Alleen geverifieerde deelnemers kunnen stemmen op voorstellen; %{verify_account}.
@@ -817,6 +847,8 @@ nl:
         proposals: Alle voorstellen
         processes: Alle plannen
       no_items:
+        debates: Er zijn geen discussies
+        proposals: Er zijn geen voorstellen
         processes: Er zijn op dit moment geen open processen
       process_label: Proces
       see_process: Zie proces
@@ -852,6 +884,7 @@ nl:
     help: "Je kunt links toevoegen van %{models} in %{org}."
     submit: "Voeg toe"
     error: "Link niet geldig. Begin met %{url}."
+    error_duplicate: "De content die je toevoegt bestaat al."
     error_itself: "De link is niet geldig. Je kunt niet relateren aan dezelfde inhoud."
     success: "Je hebt nieuwe gerelateerde inhoud toegevoegd"
     is_related: "Is het gerelateerde inhoud?"
@@ -876,8 +909,45 @@ nl:
     nested_links:
       title: Links
       note: Voeg relevante links toe
+      add_new_link: Nieuwe link toevoegen
   communities:
+    show:
+      surveys: Vragenlijsten
+      complete_survey: Vul de vragenlijst in
     subnav:
       surveys: Enquetes
+    poll:
+      take_part: Doe mee van %{from} tot %{to}
   remote_translations:
+    text: De content van deze pagina is niet beschikbaar in jouw taal
+    all_remote_translations_enqueued_text: Spoedig zal de content van de pagina in jouw taal beschikbaar zijn.
+    create:
+      enqueue_remote_translation: Vertalingen zijn aangevraagd.
     button: Vertaal pagina
+  tags:
+    list:
+      filter:
+        more:
+          one: "Nog een label"
+          other: "Nog %{count} labels"
+  machine_learning:
+    comments_summary: "Samenvatting reacties"
+    info_text: "Content gegenereerd door AI / Machine Learning"
+  cookies_consent:
+    accept_all_cookies: "Accepteer alle"
+    accept_essential_cookies: "Accepteer noodzakelijke cookies"
+    message: "Cookies helpen ons de dienstverlening te verbeteren. Bij het gebruiken van de dienstverlening, accepteer je het gebruik van cookies."
+    more_info_link: "Meer informatie over cookies"
+    management: "Beheer cookies"
+    title: "Cookiesbeleid"
+  cookies_management:
+    title: Cookiesbeheer
+    description: Deze website maakt gebruik van eigen cookies en cookies van derden om goed te kunnen functioneren. Door op de knop ‘Alles accepteren’ te klikken, ga je akkoord met het gebruik van deze technologieën en de verwerking van uw gegevens voor deze doeleinden.
+    essentials:
+      title: Noodzakelijke cookies
+      description: Ze worden voor veel verschillende doeleinden gebruikt, zoals het herkennen van jou als gebruiker, het kiezen van de taal of het aanpassen van de manier waarop inhoud wordt weergegeven.
+      hint: Zonder deze functies worden de basisnavigatiefuncties beperkt, daarom moeten ze altijd actief zijn.
+    third_party:
+      title: Cookies van derde partijen
+      description: Deze website maakt gebruik van cookies van derden. Deze cookies kunnen de functionaliteit verbeteren of informatie verzamelen om uw gebruikerservaring te verbeteren.
+    save_preferences: Sla voorkeuren op
