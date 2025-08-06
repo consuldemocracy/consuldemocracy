@@ -63,7 +63,13 @@ class Poll::WebVote
       return [] unless question_params
 
       Array(question_params[:option_id]).map do |option_id|
-        question.find_or_initialize_user_answer(user, option_id)
+        text_answer = nil
+
+        if question_params[option_id] && question_params[option_id]["text_answer"]
+          text_answer = question_params[option_id]["text_answer"]
+        end
+
+        question.find_or_initialize_user_answer(user, option_id, text_answer)
       end
     end
 

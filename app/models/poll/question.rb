@@ -62,6 +62,10 @@ class Poll::Question < ApplicationRecord
     question_options.select(&:with_read_more?)
   end
 
+  def essay_option
+    question_options.where(open_text: true).first
+  end
+
   def unique?
     votation_type.nil? || votation_type.unique?
   end
@@ -78,12 +82,15 @@ class Poll::Question < ApplicationRecord
     end
   end
 
-  def find_or_initialize_user_answer(user, option_id)
+  def find_or_initialize_user_answer(user, option_id, text_answer)
     option = question_options.find(option_id)
 
     answer = answers.find_or_initialize_by(find_by_attributes(user, option))
     answer.option = option
     answer.answer = option.title
+    if option.open_text && text_answer
+      answer.text_answer = text_answer
+    end
     answer
   end
 
@@ -95,6 +102,8 @@ class Poll::Question < ApplicationRecord
         { author: user }
       when "multiple"
         { author: user, answer: option.title }
+      when "essay"
+        { author: user, option: option }
       end
     end
 

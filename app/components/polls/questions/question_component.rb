@@ -33,6 +33,13 @@ class Polls::Questions::QuestionComponent < ApplicationComponent
       end, ", ")
     end
 
+    def existing_answer(question, option)
+      answer = question.answers.where(author: current_user, option: option).first
+      return answer.text_answer if answer&.text_answer?
+
+      ""
+    end
+
     def multiple_choice?
       question.multiple?
     end
