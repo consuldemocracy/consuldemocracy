@@ -20,7 +20,7 @@ class Poll::Answer < ApplicationRecord
   private
 
     def max_votes
-      return if !question || !author || persisted?
+      return if question.blank? || !author || persisted? || question.max_votes.blank?
 
       if question.answers.by_author(author).count >= question.max_votes
         errors.add(:answer, "Maximum number of votes per user exceeded")

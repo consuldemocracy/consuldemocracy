@@ -70,7 +70,7 @@ class Poll::WebVote
 
     def max_answers
       questions.each do |question|
-        if answers[question.id].count > question.max_votes
+        if question.max_votes && answers[question.id].count > question.max_votes
           errors.add(
             :"question_#{question.id}",
             t("polls.form.maximum_exceeded", maximum: question.max_votes, given: answers[question.id].count)
