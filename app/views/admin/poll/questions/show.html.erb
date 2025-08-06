@@ -63,6 +63,7 @@
     <tr>
       <th><%= t("admin.questions.show.answers.title") %></th>
       <th scope="col" class="medium-7"><%= t("admin.questions.show.answers.description") %></th>
+      <th scope="col" class="medium-2"><%= t("admin.questions.show.answers.open_text") %></th>
       <th scope="col" class="text-center"><%= t("admin.questions.show.answers.images") %></th>
       <th scope="col" class="text-center"><%= t("admin.questions.show.answers.documents") %></th>
       <th scope="col" class="text-center"><%= t("admin.questions.show.answers.videos") %></th>
@@ -75,6 +76,7 @@
       <tr id="<%= dom_id(option) %>" class="poll_question_option" data-option-id="<%= option.id %>">
         <td class="align-top"><%= option.title %></td>
         <td class="align-top break"><%= wysiwyg(option.description) %></td>
+        <td class="align-top break"><%= t("admin.questions.show.answers.open_text_#{option.open_text}") %></td>
         <td class="align-top text-center">
           (<%= option.images.count %>)
           <br>

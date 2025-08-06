@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_03_13_014205) do
+ActiveRecord::Schema[7.1].define(version: 2025_07_16_111406) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -1113,6 +1113,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_13_014205) do
     t.integer "question_id"
     t.integer "given_order", default: 1
     t.boolean "most_voted", default: false
+    t.boolean "open_text", default: false
     t.index ["question_id"], name: "index_poll_question_answers_on_question_id"
   end
 
