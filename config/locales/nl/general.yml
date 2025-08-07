@@ -490,6 +490,9 @@ nl:
       see_complete_course: Bekijk de complete training
       hide_course: Verberg training
     goal:
+      target_supports:
+        one: Krijg %{count} steunbetuiging voor je voorstel
+        other: Krijg %{count} steunbetuigingen voor je voorstel
       days:
         one: "%{count} dag"
         other: "%{count} dagen"
@@ -836,6 +839,9 @@ nl:
       not_verified: Alleen geverifieerde gebruikers mogen stemmen op begrotingsvoorstellen; %{verify_account}.
       unfeasible: Onhaalbare voorstellen kunnen niet gesteund worden.
       not_voting_allowed: Stemronde is gesloten.
+      different_heading_assigned:
+        one: "Je kunt alleen begrotingsvoorstellen steunen in het %{count} district. Je hebt al voorstellen gesteund in %{supported_headings}."
+        other: "Je kunt alleen begrotingsvoorstellen steunen in de %{count} districten. Je hebt al voorstellen gesteund in %{supported_headings}."
   welcome:
     feed:
       most_active:
