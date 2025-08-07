@@ -69,7 +69,6 @@ nl:
         new_confirmation: Geen activeringsinstructies voor uw account ontvangen?
         new_password: Wachtwoord vergeten?
         new_unlock: Geen de-blokkeer instructies ontvangen?
-        signin_with_provider: Log in met %{provider}
         signup: Geen account? %{signup_link}
         signup_link: Registreer
     unlocks:

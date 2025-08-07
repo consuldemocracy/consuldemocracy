@@ -69,7 +69,6 @@ fr:
         new_confirmation: Vous n'avez pas reçu les instructions pour activer votre compte ?
         new_password: Vous avez oublié votre mot de passe ?
         new_unlock: Vous n'avez pas reçu les instructions pour débloquer votre compte?
-        signin_with_provider: Se connecter avec %{provider}
         signup: Vous n'avez pas encore de compte ? %{signup_link}
         signup_link: S'inscrire
     unlocks:

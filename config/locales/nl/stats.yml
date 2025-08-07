@@ -2,7 +2,7 @@ nl:
   stats:
     title: "Data over deelname"
     advanced: "Geavanceerde statistieken"
-    total_participants: "deelnemers"
+    total_participants: "Deelnemers"
     by_gender: "Deelnemers per geslacht"
     by_age: "Deelnemers bij leeftijd"
     by_geozone: "Deelnemers per regio"
@@ -13,6 +13,9 @@ nl:
     age_range: "%{start} - %{finish} jaar oud"
     total: "Totaal"
     geozone: "Regio's"
+    no_demographic_data:
+      one: "Een\n* Er zijn geen demografische gegevens voor 1 deelnemer.\nAndere\n* Er zijn geen demografische gegevens voor %{count} deelnemers."
+      other: "Er zijn geen demografische gegevens voor %{count} deelnemers."
     budgets:
       link: "Statistieken"
       page_title: "%{budget} - deelname statistieken"
@@ -24,7 +27,13 @@ nl:
       total: "Totaal"
       heading: "Partida"
       investments_sent: "Verzonden investeringsvoorstellen"
+      participants_support_phase: "Deelnemers die voorstellen steunen"
+      participants_vote_phase: "Deelnemers die stemden op voorstellen"
       participants_every_phase: "Aantal deelnemers"
+      percent_total_participants: "% totaal aantal deelnemers"
+      percent_heading_census: "% kop census"
+      participatory_disclaimer: "** Het totale aantal deelnemers verwijst naar personen die investeringsvoorstellen hebben aangemaakt, gesteund of erop hebben gestemd."
+      heading_disclaimer: "*** Gegevens over koppen hebben betrekking op de kop waar een deelnemer stemde, niet noodzakelijkerwijs de kop waarop hij of zij staat geregistreerd."
     polls:
       by_channel: "Deelnemers per kanaal"
       vote_by_channel: "Stem type per kanaal"

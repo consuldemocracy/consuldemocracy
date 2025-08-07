@@ -278,6 +278,10 @@ tr:
     info:
       sign_in: "Şununla oturum açın:"
       sign_up: "Şununla hesap açın:"
+    saml:
+      sign_in: SAML ile oturum aç
+      sign_up: SAML ile hesap açın
+      name: SAML
     or_fill: "Ya da aşağıdaki formu doldurun:"
   proposals:
     create:
