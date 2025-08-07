@@ -21,6 +21,11 @@ module OmniauthTenantSetup
                 secrets.saml_idp_metadata_url, secrets.saml_idp_sso_service_url)
     end
 
+    def oidc(env)
+      oidc_auth(env, secrets.oidc_client_id,
+                secrets.oidc_client_secret, secrets.oidc_issuer, secrets.oidc_redirect_uri)
+    end
+
     private
 
       def oauth(env, key, secret)
@@ -52,6 +57,17 @@ module OmniauthTenantSetup
           if strategy.options[:idp_metadata].present? && idp_metadata_url.present?
             strategy.options[:idp_metadata] = idp_metadata_url
           end
+        end
+      end
+
+      def oidc_auth(env, client_id, client_secret, issuer, redirect_uri)
+        unless Tenant.default?
+          strategy = env["omniauth.strategy"]
+
+          strategy.options[:client_id] = client_id if client_id.present?
+          strategy.options[:client_secret] = client_secret if client_secret.present?
+          strategy.options[:issuer] = issuer if issuer.present?
+          strategy.options[:redirect_uri] = redirect_uri if redirect_uri.present?
         end
       end
 

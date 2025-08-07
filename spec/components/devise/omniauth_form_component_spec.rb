@@ -10,6 +10,7 @@ describe Devise::OmniauthFormComponent do
       Setting["feature.google_login"] = false
       Setting["feature.wordpress_login"] = false
       Setting["feature.saml_login"] = false
+      Setting["feature.oidc_login"] = false
     end
 
     it "is not rendered when all authentications are disabled" do
@@ -60,6 +61,15 @@ describe Devise::OmniauthFormComponent do
       render_inline component
 
       expect(page).to have_button "SAML"
+      expect(page).to have_button count: 1
+    end
+
+    it "renders the OIDC link when the feature is enabled" do
+      Setting["feature.oidc_login"] = true
+
+      render_inline component
+
+      expect(page).to have_button "OIDC"
       expect(page).to have_button count: 1
     end
   end

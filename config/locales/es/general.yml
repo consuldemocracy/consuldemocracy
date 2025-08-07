@@ -279,6 +279,10 @@ es:
       sign_in: Entra con SAML
       sign_up: Regístrate con SAML
       name: SAML
+    oidc:
+      sign_in: Entra con OIDC
+      sign_up: Regístrate con OIDC
+      name: OIDC
     info:
       sign_in: "Entra con:"
       sign_up: "Regístrate con:"
