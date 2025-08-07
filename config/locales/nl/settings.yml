@@ -59,8 +59,10 @@ nl:
     min_age_to_participate: Minimum age needed to participate
     min_age_to_participate_description: "Gebruikers van deze leeftijd kunnen deelnemen aan alle processen"
     postal_codes: "Postcodes"
+    postal_codes_description: "Een door komma's gescheiden lijst met geldige postcodes; u kunt ook geldige reeksen invoeren die worden gescheiden door een dubbele punt. Voorbeeld: 1010AB:1010HG,1014EF,1016EF,1017AT:1017CD staat postcodes tussen 1010AB en 1010HG toe, de postcode 1014EF, de postcode 1016EF en postcodes tussen 1017AT en 1017CD. Als u dit veld leeg laat, zijn alle postcodes geldig."
     proposals:
       successful_proposal_id: Aangenomen voorstel
+      successful_proposal_id_description: Dit voorstel wordt gebruikt als referentie voor een succesvol voorstel en wordt getoond in de grafiek van het controlepaneel.
       poll_short_title: Polls
       poll_description: Omschrijving van de peiling
       poll_description_description: Uitgebreide beschrijving van de enquêtefunctie
