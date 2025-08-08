@@ -63,8 +63,17 @@ class Poll::WebVote
     def answers_for_question(question, question_params)
       return [] unless question_params
 
-      Array(question_params[:option_id]).map do |option_id|
-        question.find_or_initialize_user_answer(user, option_id)
+      if question.open?
+        answer_text = question_params[:answer].to_s.strip
+        if answer_text.present?
+          [question.find_or_initialize_user_answer(user, answer_text: answer_text)]
+        else
+          []
+        end
+      else
+        Array(question_params[:option_id]).map do |option_id|
+          question.find_or_initialize_user_answer(user, option_id: option_id)
+        end
       end
     end
 

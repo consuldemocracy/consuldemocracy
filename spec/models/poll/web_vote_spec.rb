@@ -156,5 +156,47 @@ describe Poll::WebVote do
         expect(Poll::Answer.count).to be 2
       end
     end
+
+    context "Open-ended questions" do
+      let!(:open_ended_question) { create(:poll_question_open, poll: poll) }
+
+      it "creates one answer when text is present" do
+        web_vote.update(open_ended_question.id.to_s => { answer: "  Hi  " })
+
+        expect(poll.reload.voters.size).to eq 1
+        open_answer = open_ended_question.reload.answers.find_by(author: user)
+
+        expect(open_answer.answer).to eq "Hi"
+        expect(open_answer.option_id).to be nil
+      end
+
+      it "does not create an answer but create voters when text is blank or only spaces" do
+        web_vote.update(open_ended_question.id.to_s => { answer: "   " })
+
+        expect(poll.reload.voters.size).to eq 1
+        expect(open_ended_question.reload.answers.where(author: user)).to be_empty
+      end
+
+      it "deletes existing answer but keeps voters when leaving open-ended blank" do
+        create(:poll_answer, question: open_ended_question, author: user, answer: "Old answer")
+
+        web_vote.update(open_ended_question.id.to_s => { answer: "  " })
+
+        expect(poll.reload.voters.size).to eq 1
+        expect(open_ended_question.reload.answers.where(author: user)).to be_empty
+      end
+
+      it "updates existing open answer without creating duplicates" do
+        existing = create(:poll_answer, question: open_ended_question, author: user, answer: "Old text")
+
+        web_vote.update(open_ended_question.id.to_s => { answer: "  New text  " })
+
+        updated = open_ended_question.reload.answers.find_by(author: user)
+        expect(updated.id).to eq existing.id
+        expect(updated.answer).to eq "New text"
+        expect(updated.option_id).to be nil
+        expect(poll.reload.voters.size).to eq 1
+      end
+    end
   end
 end

@@ -73,23 +73,27 @@ class Poll::Question < ApplicationRecord
     end
   end
 
-  def find_or_initialize_user_answer(user, option_id)
-    option = question_options.find(option_id)
+  def find_or_initialize_user_answer(user, option_id: nil, answer_text: nil)
+    answer = answers.find_or_initialize_by(find_by_attributes(user, option_id))
 
-    answer = answers.find_or_initialize_by(find_by_attributes(user, option))
-    answer.option = option
-    answer.answer = option.title
+    if accepts_options?
+      option = question_options.find(option_id)
+      answer.option = option
+      answer.answer = option.title
+    else
+      answer.answer = answer_text
+    end
+
     answer
   end
 
   private
 
-    def find_by_attributes(user, option)
-      case vote_type
-      when "unique", nil
+    def find_by_attributes(user, option_id)
+      if multiple?
+        { author: user, option_id: option_id }
+      else
         { author: user }
-      when "multiple"
-        { author: user, option: option }
       end
     end
 end

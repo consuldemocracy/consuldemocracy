@@ -100,7 +100,7 @@ RSpec.describe Poll::Question do
         existing_answer = create(:poll_answer, question: question, author: user, option: answer_a)
         create(:poll_answer, question: question, author: other_user, option: answer_b)
 
-        answer = question.find_or_initialize_user_answer(user, answer_b.id)
+        answer = question.find_or_initialize_user_answer(user, option_id: answer_b.id)
 
         expect(answer).to eq existing_answer
         expect(answer.author).to eq user
@@ -111,12 +111,24 @@ RSpec.describe Poll::Question do
       it "initializes a new answer when only another user has answered" do
         create(:poll_answer, question: question, author: other_user, option: answer_a)
 
-        answer = question.find_or_initialize_user_answer(user, answer_a.id)
+        answer = question.find_or_initialize_user_answer(user, option_id: answer_a.id)
 
         expect(answer).to be_new_record
         expect(answer.author).to eq user
         expect(answer.option).to eq answer_a
         expect(answer.answer).to eq "Answer A"
+      end
+
+      it "raises when option_id is invalid" do
+        expect do
+          question.find_or_initialize_user_answer(user, option_id: 999999)
+        end.to raise_error(ActiveRecord::RecordNotFound)
+      end
+
+      it "raises when option_id is nil" do
+        expect do
+          question.find_or_initialize_user_answer(user, answer_text: "ignored")
+        end.to raise_error(ActiveRecord::RecordNotFound)
       end
     end
 
@@ -129,7 +141,7 @@ RSpec.describe Poll::Question do
         existing_answer = create(:poll_answer, question: question, author: user, option: answer_a)
         create(:poll_answer, question: question, author: other_user, option: answer_a)
 
-        answer = question.find_or_initialize_user_answer(user, answer_a.id)
+        answer = question.find_or_initialize_user_answer(user, option_id: answer_a.id)
 
         expect(answer).to eq existing_answer
         expect(answer.author).to eq user
@@ -141,12 +153,38 @@ RSpec.describe Poll::Question do
         create(:poll_answer, question: question, author: user, option: answer_a)
         create(:poll_answer, question: question, author: other_user, option: answer_b)
 
-        answer = question.find_or_initialize_user_answer(user, answer_b.id)
+        answer = question.find_or_initialize_user_answer(user, option_id: answer_b.id)
 
         expect(answer).to be_new_record
         expect(answer.author).to eq user
         expect(answer.option).to eq answer_b
         expect(answer.answer).to eq "Answer B"
+      end
+    end
+
+    context "Open-ended question" do
+      let(:question) { create(:poll_question_open) }
+
+      it "ignores invalid option_id and uses answer_text" do
+        answer = question.find_or_initialize_user_answer(user, option_id: 999999, answer_text: "Hi")
+        expect(answer.option).to be nil
+        expect(answer.answer).to eq "Hi"
+      end
+
+      it "ignores option_id when nil and assigns answer with option set to nil" do
+        answer = question.find_or_initialize_user_answer(user, answer_text: "Hi")
+
+        expect(answer.option).to be nil
+        expect(answer.answer).to eq "Hi"
+      end
+
+      it "reuses the existing poll answer for the user and updates answer" do
+        existing = create(:poll_answer, question: question, author: user, answer: "Before")
+
+        answer = question.find_or_initialize_user_answer(user, answer_text: "After")
+        expect(answer).to eq existing
+        expect(answer.author).to eq user
+        expect(answer.answer).to eq "After"
       end
     end
   end
