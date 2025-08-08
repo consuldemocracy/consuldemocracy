@@ -61,6 +61,15 @@ describe Polls::Questions::QuestionComponent do
       expect(page).not_to have_field type: :checkbox, checked: true
     end
 
+    it "renders text area for essay questions" do
+      question = create(:poll_question_essay, poll: poll, title: "What do you want?")
+      create(:poll_answer, author: user, question: question, text_answer: "I don't know")
+
+      render_inline Polls::Questions::QuestionComponent.new(question, form: form)
+
+      expect(page).to have_field "What do you want?", type: :textarea, with: "I don't know"
+    end
+
     it "selects the option when users have already voted" do
       create(:poll_answer, author: user, question: question, option: option_yes)
 

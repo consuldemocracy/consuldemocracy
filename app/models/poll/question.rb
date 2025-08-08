@@ -75,12 +75,21 @@ class Poll::Question < ApplicationRecord
     end
   end
 
-  def find_or_initialize_user_answer(user, option_id)
-    option = question_options.find(option_id)
+  def find_or_initialize_user_answer(user, option_id, text_answer)
+    option = question_options.find_by(id: option_id) if option_id.present?
 
     answer = answers.find_or_initialize_by(find_by_attributes(user, option))
-    answer.option = option
-    answer.answer = option.title
+
+    if essay?
+      answer.option = nil
+      answer.answer = nil
+      answer.text_answer = text_answer
+    else
+      answer.option = option
+      answer.answer = option&.title
+      answer.text_answer = nil
+    end
+
     answer
   end
 
@@ -91,7 +100,9 @@ class Poll::Question < ApplicationRecord
       when "unique", nil
         { author: user }
       when "multiple"
-        { author: user, answer: option.title }
+        { author: user, answer: option&.title }
+      when "essay"
+        { author: user, option_id: nil }
       end
     end
 end
