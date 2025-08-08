@@ -46,4 +46,53 @@ RSpec.describe Poll::Question do
       end
     end
   end
+
+  describe "#find_or_initialize_user_answer" do
+    let(:user) { create(:user) }
+
+    context "non essay question" do
+      let(:question) { create(:poll_question_multiple, :abc) }
+      let(:answer_a) { question.question_options.find_by(title: "Answer A") }
+      let(:answer_b) { question.question_options.find_by(title: "Answer B") }
+
+      it "sets option and answer (title) and clears text_answer" do
+        answer = question.find_or_initialize_user_answer(user, answer_a.id, nil)
+
+        expect(answer.option).to eq(answer_a)
+        expect(answer.answer).to eq(answer_a.title)
+        expect(answer.text_answer).to be nil
+      end
+
+      it "sets option and answer to nil when option_id is invalid or nil" do
+        invalid = question.find_or_initialize_user_answer(user, 999999, nil)
+        expect(invalid.option).to be nil
+        expect(invalid.answer).to be nil
+        expect(invalid.text_answer).to be nil
+
+        blank = question.find_or_initialize_user_answer(user, nil, "ignored")
+        expect(blank.option).to be nil
+        expect(blank.answer).to be nil
+        expect(blank.text_answer).to be nil
+      end
+    end
+
+    context "essay question" do
+      let(:question) { create(:poll_question_essay) }
+
+      it "ignores option_id and assigns only text_answer, with option and answer set to nil" do
+        answer = question.find_or_initialize_user_answer(user, 123, "Hi")
+        expect(answer.option).to be nil
+        expect(answer.answer).to be nil
+        expect(answer.text_answer).to eq("Hi")
+      end
+
+      it "reuses the existing answer for the user and updates text_answer" do
+        existing = create(:poll_answer, question: question, author: user, text_answer: "Before")
+
+        result = question.find_or_initialize_user_answer(user, nil, "After")
+        expect(result).to eq(existing)
+        expect(result.text_answer).to eq("After")
+      end
+    end
+  end
 end
