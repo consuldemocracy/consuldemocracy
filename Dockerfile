@@ -3,6 +3,7 @@ FROM ruby:3.3.8-bookworm AS build
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV RAILS_ENV=production NODE_ENV=production
+ENV RAILS_MASTER_KEY=dummy_key_for_build_only
 
 # Install build dependencies
 RUN apt-get update -qq && apt-get install -y \
@@ -33,6 +34,7 @@ FROM ruby:3.3.8-bookworm
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV RAILS_ENV=production NODE_ENV=production
+ENV PATH=/usr/local/node/bin:$PATH
 
 WORKDIR /app
 

@@ -2,7 +2,7 @@ service: consuldemocracy
 image: consuldemocracy-app
 
 registry:
-  username: your_personal_dockerhub_username  # REPLACE WITH YOUR ACTUAL USERNAME
+  username: ruslich  # REPLACE WITH YOUR ACTUAL USERNAME
   password:
     - KAMAL_REGISTRY_PASSWORD
 
@@ -38,4 +38,5 @@ env:
 hooks:
   post-deploy:
     - docker exec $KAMAL_CONTAINER_NAME bundle exec rails db:migrate
+    # Note: db:seed is safe to run multiple times (idempotent) but only run once per deployment
     - docker exec $KAMAL_CONTAINER_NAME bundle exec rails db:seed

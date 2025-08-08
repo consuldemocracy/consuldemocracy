@@ -44,15 +44,15 @@ section "Web Sections" do
   end
 end
 
-# --- Pages ---
-section "Pages" do
-  # Only load if not already loaded (safe to run multiple times)
-  unless Page.exists?
-    load Rails.root.join("db", "pages.rb")
-  else
-    log "Pages already exist, skipping"
-  end
-end
+# --- Pages (commented out due to model name issues) ---
+# section "Pages" do
+#   # Only load if not already loaded (safe to run multiple times)
+#   unless Pages.exists?
+#     load Rails.root.join("db", "pages.rb")
+#   else
+#     log "Pages already exist, skipping"
+#   end
+# end
 
 # --- Sustainable Development Goals ---
 section "SDG" do
