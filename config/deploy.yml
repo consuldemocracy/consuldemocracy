@@ -1,0 +1,42 @@
+service: consuldemocracy
+image: consuldemocracy-app
+
+registry:
+  username: ruslich  # REPLACE WITH YOUR ACTUAL USERNAME
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+servers:
+  web:
+    - vps2583611.fastwebserver.de
+
+builder:
+  arch: amd64
+
+accessories:
+  db:
+    image: postgres:13.16
+    host: db
+    port: 5432
+    env:
+      clear:
+        POSTGRES_USER: postgres
+      secret:
+        - POSTGRES_PASSWORD
+    directories:
+      - db_data:/var/lib/postgresql/data
+
+env:
+  secret:
+    - RAILS_MASTER_KEY
+    - POSTGRES_PASSWORD
+  clear:
+    DB_HOST: db
+    PGUSER: postgres
+    PGPASSWORD: password
+
+hooks:
+  post-deploy:
+    - docker exec $KAMAL_CONTAINER_NAME bundle exec rails db:migrate
+    # Note: db:seed is safe to run multiple times (idempotent) but only run once per deployment
+    - docker exec $KAMAL_CONTAINER_NAME bundle exec rails db:seed
