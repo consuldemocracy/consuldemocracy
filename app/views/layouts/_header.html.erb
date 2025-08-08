@@ -60,24 +60,6 @@
 		</div>
       </div>
 
-      <div id="responsive-menu">
-        <div class="top-bar-right">
-          <ul class="menu" data-responsive-menu="medium-dropdown">
-            <%= render "shared/admin_login_items" %>
-            <%= render "layouts/notification_item" %>
-            <%= render "devise/menu/login_items" %>
-          </ul>
-
-          <div class="show-for-small-only">
-            <div class="subnavigation row">
-              <%= render "shared/subnavigation" %>
-              <div class="small-12 column">
-                <%= render "shared/top_links" %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 	  
 	  
     </div>
@@ -94,5 +76,26 @@
     </div>
   </div>
 
+  
+  <div class="top-bar">
+    <div id="responsive-menu" class="moverDerecha">
+        <div class="top-bar-right">
+          <ul class="menu menuTitleHeader2" data-responsive-menu="medium-dropdown">
+            <%= render "shared/admin_login_items" %>
+            <%= render "layouts/notification_item" %>
+            <%= render "devise/menu/login_items" %>
+          </ul>
+
+          <div class="show-for-small-only">
+            <div class="subnavigation row">
+              <%= render "shared/subnavigation" %>
+              <div class="small-12 column">
+                <%= render "shared/top_links" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
   
 </header>

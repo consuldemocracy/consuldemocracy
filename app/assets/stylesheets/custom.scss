@@ -174,6 +174,31 @@ header {
 	  background-color: transparent;
 } 
 
+.menuDerechaEntrar{
+  display: flex;
+  justify-content: right; /*space-between;  o 'flex-start' si prefieres alinearlos a la izquierda */
+  align-items: center;
+
+}
+.menuDerechaEntrar a{
+	color: #fff !important;
+	text-shadow: #000 1px 1px 1px !important; 
+	font-size: 12px !important;
+	font-weight: 600 !important; 
+	text-decoration: none !important;
+}
+
+
+.menuDerechaEntrar ul.external-links {
+  display: flex;
+  gap: 10px; /* Espacio entre enlaces */
+  list-style: none;
+  margin: 0;
+  flex-wrap: nowrap;
+  float: left;
+  text-decoration: none !important;
+}
+
 .top-bar-gradient {
   /*background: $brand !important;*/
   color: #fff;
@@ -356,6 +381,38 @@ header {
   float: left;
 }
 
+.menuTitleHeader2{
+  display: flex;
+  justify-content: right; /*space-between;  o 'flex-start' si prefieres alinearlos a la izquierda */
+  align-items: center;
+
+}
+.menuTitleHeader2 a{
+	color: #fff;
+	text-shadow: #000 1px 1px 1px; 
+	font-size: 12px !important;
+	font-weight: 600 !important; 
+	text-decoration: none;
+}
+
+.menuTitleHeader2 ul.external-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  flex-wrap: nowrap;
+  float: right;
+}
+
+.moverDerecha{
+	margin-left: auto;
+	margin-right: 150px;
+}
+
+
+.top-bar .menu .is-submenu-item a{
+	text-shadow: none;
+}
+
 .entrar {
   text-align: right;
   font-size: 12px;
@@ -366,6 +423,13 @@ header {
   background-color: transparent;
   font-weight: 600;
   font-family: "Open Sans",sans-serif;
+}
+
+
+.contenedor-del-menu {
+  display: flex;
+  justify-content: flex-end;
+
 }
 
 
@@ -381,7 +445,7 @@ header {
 
 // Color enlaces menú usuario
 .top-bar ul.menu > li a {
-    color: #4d4d4d;
+    color: #fff;
 }
 
 // Tamaño fuente icóno notificación
@@ -409,12 +473,12 @@ header {
 	line-height: 22px;
 	padding-bottom: 5px;
 	text-shadow: #000 1px 1px 1px;
-	text-decoration: none; 
+	text-decoration: none !important; 
 	background-color: transparent;
   }
 
   a:hover, a:active, a.is-active {
-    color: #FFFFFF;
+    color: #FFFFFF !important;
 	border-bottom: 3px solid #FFFFFF;
 	font-size: 16px;
 	font-weight: 600; 
@@ -427,6 +491,12 @@ header {
   }
 }
 
+
+.subnavigation ul li a {
+    text-decoration: none !important;
+}
+
+
 // Dropdown menú del usuario
 .dropdown.menu > li {
   a {
@@ -434,7 +504,7 @@ header {
   }
 
   &.is-active > a {
-    color: #000;
+    /*color: #000;*/
   }
 
   &.is-dropdown-submenu-parent > a::after {
