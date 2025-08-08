@@ -1,63 +1,81 @@
-FROM ruby:3.3.8-bookworm
+# syntax=docker/dockerfile:1
+# check=error=true
 
-ENV DEBIAN_FRONTEND=noninteractive
+# This Dockerfile is designed for production, not development. Use with Kamal or build'n'run by hand:
+# docker build -t consuldemocracy .
+# docker run -d -p 80:3000 -e RAILS_SECRET_KEY_BASE=<secret_key_base> --name consuldemocracy consuldemocracy
 
-# Install essential Linux packages
-RUN apt-get update -qq \
- && apt-get install -y \
-    build-essential \
-    cmake \
-    imagemagick \
-    libappindicator1 \
-    libpq-dev \
-    libxss1 \
-    memcached \
-    pkg-config \
-    postgresql-client \
-    sudo \
-    unzip
+# For a containerized dev environment, see Dev Containers: https://guides.rubyonrails.org/getting_started_with_devcontainer.html
 
-# Install Chromium for E2E integration tests
-RUN apt-get update -qq && apt-get install -y chromium chromium-driver
+# Make sure RUBY_VERSION matches the Ruby version in .ruby-version
+ARG RUBY_VERSION=3.3.8
+FROM docker.io/library/ruby:$RUBY_VERSION-slim AS base
 
-# Files created inside the container repect the ownership
-RUN adduser --shell /bin/bash --disabled-password --gecos "" consul \
- && adduser consul sudo \
- && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-
-RUN echo 'Defaults secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bundle/bin:/usr/local/node/bin"' > /etc/sudoers.d/secure_path
-RUN chmod 0440 /etc/sudoers.d/secure_path
-
-# Define where our application will live inside the image
+# Rails app lives here
 ENV RAILS_ROOT=/var/www/consul
-
-# Create application home. App server will need the pids dir so just create everything in one shot
-RUN mkdir -p $RAILS_ROOT/tmp/pids
-
-# Set our working directory inside the image
 WORKDIR $RAILS_ROOT
 
-# Install Node
+# Install base packages
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y curl libjemalloc2 libvips postgresql-client && \
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+# Set production environment
+ENV RAILS_ENV="production" \
+    BUNDLE_DEPLOYMENT="1" \
+    BUNDLE_PATH="/usr/local/bundle" \
+    BUNDLE_WITHOUT="development"
+
+# Throw-away build stage to reduce size of final image
+FROM base AS build
+
+# Install packages needed to build gems and node modules
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y build-essential git libpq-dev libyaml-dev node-gyp pkg-config python-is-python3 && \
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+# Install JavaScript dependencies
 COPY .node-version ./
 ENV PATH=/usr/local/node/bin:$PATH
 RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz -C /tmp/ && \
     /tmp/node-build-master/bin/node-build `cat .node-version` /usr/local/node && \
     rm -rf /tmp/node-build-master
 
-# Use the Gemfiles as Docker cache markers. Always bundle before copying app src.
-# (the src likely changed and we don't want to invalidate Docker's cache too early)
-COPY .ruby-version ./
-COPY Gemfile* ./
-RUN bundle install
+# Install application gems
+COPY Gemfile* .ruby-version ./
+RUN bundle install && \
+    rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git
 
-COPY package* ./
-RUN npm install
+# Install node modules
+COPY package*.json ./
+RUN npm install --production
 
-# Copy the Rails application into place
+# Copy application code
 COPY . .
 
-ENTRYPOINT ["./docker-entrypoint.sh"]
-# Define the script we want run once the container boots
-# Use the "exec" form of CMD so our script shuts down gracefully on SIGTERM (i.e. `docker stop`)
-# CMD [ "config/containers/app_cmd.sh" ]
-CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
+# Precompiling assets for production without requiring secret SECRET_KEY_BASE
+RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
+
+
+RUN rm -rf node_modules
+
+
+# Final stage for app image
+FROM base
+
+# Copy built artifacts: gems, application
+COPY --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"
+COPY --from=build $RAILS_ROOT $RAILS_ROOT
+
+# Run and own only the runtime files as a non-root user for security
+RUN groupadd --system --gid 1000 consul && \
+    useradd consul --uid 1000 --gid 1000 --create-home --shell /bin/bash && \
+    chown -R consul:consul db log storage tmp
+USER 1000:1000
+
+# Entrypoint prepares the database.
+ENTRYPOINT ["/var/www/consul/bin/docker-entrypoint"]
+
+# Start the server by default, this can be overwritten at runtime
+EXPOSE 3000
+CMD ["./bin/rails", "server"]
