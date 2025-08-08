@@ -54,7 +54,7 @@ RUN npm install --production
 COPY . .
 
 # Precompiling assets for production without requiring secret SECRET_KEY_BASE
-RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
+RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rake assets:precompile
 
 
 RUN rm -rf node_modules
