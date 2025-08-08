@@ -1,6 +1,7 @@
 class Polls::Questions::QuestionComponent < ApplicationComponent
   attr_reader :question, :form, :disabled
   alias_method :disabled?, :disabled
+  use_helpers :current_user
 
   def initialize(question, form:, disabled: false)
     @question = question
@@ -31,6 +32,13 @@ class Polls::Questions::QuestionComponent < ApplicationComponent
       safe_join(question.options_with_read_more.map do |option|
         link_to option.title, "#option_#{option.id}"
       end, ", ")
+    end
+
+    def existing_answer
+      answer = question.answers.where(author: current_user).first
+      return answer.text_answer if answer&.text_answer?
+
+      ""
     end
 
     def multiple_choice?
