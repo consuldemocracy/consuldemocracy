@@ -71,11 +71,17 @@ describe "Admin poll questions", :admin do
         poll = create(:poll, :future)
         visit admin_poll_path(poll)
         click_link "Create question"
+        expect(page).to have_content "It's only possible to answer one time to the question."
       end
 
       scenario "Unique" do
         fill_in "Question", with: "Question with unique answer"
         select "Unique answer", from: "Votation type"
+
+        expect(page).to have_content "It's only possible to answer one time to the question."
+        expect(page).not_to have_content "Allows to choose multiple answers."
+        expect(page).not_to have_field "Maximum number of votes"
+        expect(page).not_to have_content "Open ended question that allows the user to provide"
 
         click_button "Save"
 
@@ -86,11 +92,30 @@ describe "Admin poll questions", :admin do
       scenario "Multiple" do
         fill_in "Question", with: "Question with multiple answers"
         select "Multiple answers", from: "Votation type"
+
+        expect(page).not_to have_content "It's only possible to answer one time to the question."
+        expect(page).to have_content "Allows to choose multiple answers."
+        expect(page).not_to have_content "Open ended question that allows the user to provide"
+
         fill_in "Maximum number of votes", with: 6
         click_button "Save"
 
         expect(page).to have_content "Question with multiple answers"
         expect(page).to have_content "Multiple answers"
+      end
+
+      scenario "Essay" do
+        fill_in "Question", with: "Question with essay answer"
+        select "Single essay answer", from: "Votation type"
+
+        expect(page).not_to have_content "Allows to choose multiple answers."
+        expect(page).not_to have_field "Maximum number of votes"
+        expect(page).to have_content "Open ended question that allows the user to provide a single answer"
+
+        click_button "Save"
+
+        expect(page).to have_content "Question with essay answer"
+        expect(page).to have_content "Single essay answer"
       end
     end
   end

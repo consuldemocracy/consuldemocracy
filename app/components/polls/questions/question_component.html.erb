@@ -7,9 +7,23 @@
     <% question.question_options.each do |option| %>
       <%= multiple_choice_field(option) %>
     <% end %>
-  <% else %>
+  <% elsif question.unique? %>
     <% question.question_options.each do |option| %>
       <%= single_choice_field(option) %>
+    <% end %>
+  <% else %>
+    <%= label_tag "web_vote_option_#{question.essay_option.id}" do %>
+      <%= check_box_tag "web_vote[#{question.id}][option_id][]",
+                        question.essay_option.id,
+                        true,
+                        id: "web_vote_option_#{question.essay_option.id}",
+                        hidden: true,
+                        class: "hidden" %>
+      <%= text_area "web_vote[#{question.id}][#{question.essay_option.id}]",
+                    "text_answer",
+                    value: existing_answer(question, question.essay_option),
+                    rows: 3,
+                    class: "open_text_field" %>
     <% end %>
   <% end %>
 
