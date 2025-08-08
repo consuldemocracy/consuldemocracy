@@ -73,6 +73,8 @@ RUN groupadd --system --gid 1000 consul && \
     chown -R consul:consul db log storage tmp
 USER 1000:1000
 
+ENV EXECJS_RUNTIME="Disabled"
+
 # Entrypoint prepares the database.
 ENTRYPOINT ["/var/www/consul/bin/docker-entrypoint"]
 
