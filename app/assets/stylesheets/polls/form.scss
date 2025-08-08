@@ -1,11 +1,13 @@
 .poll-form {
-  fieldset {
+  fieldset,
+  .poll-question-essay {
     border: 1px solid $border;
     border-radius: $global-radius;
     padding: $line-height;
   }
 
-  fieldset + fieldset {
+  fieldset + *,
+  .poll-question-essay + * {
     margin-top: calc($line-height / 2);
   }
 
@@ -28,6 +30,18 @@
       content: "\A";
       margin-top: calc($line-height / 2);
       white-space: pre;
+    }
+  }
+
+  .poll-question-essay {
+    label {
+      @include header-font-size(h3);
+      font-weight: bold;
+      line-height: 1.5;
+    }
+
+    textarea {
+      margin-top: calc($line-height / 2);
     }
   }
 
