@@ -1,6 +1,6 @@
 .admin .locales-form {
   label {
-    display: table;
+    @include radio-or-checkbox-and-label-alignment;
   }
 
   select {
