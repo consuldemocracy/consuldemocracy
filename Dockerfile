@@ -4,6 +4,7 @@
 # This Dockerfile is designed for production, not development. Use with Kamal or build'n'run by hand:
 # docker build -t consuldemocracy .
 # docker run -d -p 80:3000 -e RAILS_SECRET_KEY_BASE=<secret_key_base> --name consuldemocracy consuldemocracy
+# Note that running by hand won't work when using postgresql.
 
 # For a containerized dev environment, see Dev Containers: https://guides.rubyonrails.org/getting_started_with_devcontainer.html
 
