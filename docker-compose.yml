@@ -35,12 +35,11 @@ services:
       - bundle:/usr/local/bundle
       - node_modules:/var/www/consul/node_modules
     environment:
-      - DB_HOST=${DB_HOST}
-      - PGUSER=${PGUSER}
-      - PGPASSWORD=${PGPASSWORD}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-      - RAILS_MASTER_KEY=${RAILS_MASTER_KEY}
-
+      - DB_HOST=database # Same name as the database service
+      - PGUSER=postgres
+      - PGPASSWORD=${PGPASSWORD-$POSTGRES_PASSWORD}
+      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+      - SECRET_KEY_BASE=$SECRET_KEY_BASE
 volumes:
   db_data: {}
   bundle: {}

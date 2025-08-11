@@ -69,7 +69,6 @@ es:
         new_confirmation: '¿No has recibido instrucciones para confirmar tu cuenta?'
         new_password: '¿Olvidaste tu contraseña?'
         new_unlock: '¿No has recibido instrucciones para desbloquear?'
-        signin_with_provider: Entrar con %{provider}
         signup: '¿No tienes una cuenta? %{signup_link}'
         signup_link: Regístrate
     unlocks:

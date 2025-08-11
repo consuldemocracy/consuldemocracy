@@ -11,50 +11,15 @@ describe "Nested imageable" do
   let(:factory) { factories.sample }
   let!(:imageable) { create(factory) }
   let!(:user) { create(:user, :level_two) }
-  let(:path) do
-    case factory
-    when :budget then new_admin_budgets_wizard_budget_path
-    when :budget_investment
-      [
-        new_budget_investment_path(budget_id: imageable.budget_id),
-        new_management_budget_investment_path(budget_id: imageable.budget_id)
-      ].sample
-    when :future_poll_question_option then new_admin_option_image_path(option_id: imageable.id)
-    when :proposal then [new_proposal_path, edit_proposal_path(imageable)].sample
-    end
-  end
-  let(:submit_button_text) do
-    case factory
-    when :budget then "Continue to groups"
-    when :budget_investment then "Create Investment"
-    when :future_poll_question_option then "Save image"
-    when :proposal
-      if edit_path?
-        "Save changes"
-      else
-        "Create proposal"
-      end
-    end
-  end
-  let(:notice_text) do
-    case factory
-    when :budget then "New participatory budget created successfully!"
-    when :budget_investment then "Budget Investment created successfully."
-    when :future_poll_question_option then "Image uploaded successfully"
-    when :proposal
-      if edit_path?
-        "Proposal updated successfully"
-      else
-        "Proposal created successfully"
-      end
-    end
-  end
+  let(:path) { attachable_path_for(factory, imageable) }
+  let(:submit_button_text) { submit_button_text_for(factory, path) }
+  let(:notice_text) { notice_text_for(factory, path) }
 
   context "New and edit path" do
     before do
-      create(:administrator, user: user) if admin_section? || management_section?
-      imageable.update!(author: user) if edit_path?
-      do_login_for(user, management: management_section?)
+      create(:administrator, user: user) if admin_section?(path)
+      imageable.update!(author: user) if edit_path?(path)
+      do_login_for(user, management: management_section?(path))
       visit path
     end
 
@@ -96,7 +61,7 @@ describe "Nested imageable" do
     end
 
     scenario "Should not update image cached_attachment field after invalid file upload" do
-      imageable_attach_new_file(file_fixture("logo_header.png"), false)
+      imageable_attach_new_file(file_fixture("logo_header.png"), success: false)
 
       cached_attachment_field = find("input[name$='[cached_attachment]']", visible: :hidden)
 
@@ -136,7 +101,7 @@ describe "Nested imageable" do
       let(:factory) { (factories - [:future_poll_question_option]).sample }
 
       scenario "Should show successful notice when resource filled correctly without any nested images" do
-        fill_in_required_fields
+        fill_in_required_fields(factory, path)
 
         click_button submit_button_text
 
@@ -145,7 +110,7 @@ describe "Nested imageable" do
     end
 
     scenario "Should show successful notice when resource filled correctly and after valid file uploads" do
-      fill_in_required_fields
+      fill_in_required_fields(factory, path)
 
       imageable_attach_new_file(file_fixture("clippy.jpg"))
 
@@ -155,7 +120,7 @@ describe "Nested imageable" do
     end
 
     scenario "Should show new image after successful creation with one uploaded file" do
-      fill_in_required_fields
+      fill_in_required_fields(factory, path)
 
       imageable_attach_new_file(file_fixture("clippy.jpg"))
 
@@ -206,41 +171,16 @@ describe "Nested imageable" do
     end
   end
 
-  def fill_in_required_fields
-    return if edit_path?
+  context "Show path" do
+    let(:factory) { :budget_investment }
+    let(:path) { polymorphic_path(imageable) }
+    let!(:image) { create(:image, imageable: imageable) }
 
-    case factory
-    when :budget then fill_budget
-    when :budget_investment then fill_budget_investment
-    when :proposal then fill_proposal
+    scenario "Show descriptive image and image title when an image exists" do
+      visit path
+
+      expect(page).to have_css("img[alt='#{image.title}'][title='#{image.title}']")
+      expect(page).to have_content image.title
     end
-  end
-
-  def fill_proposal
-    fill_in_new_proposal_title with: "Proposal title"
-    fill_in "Proposal summary", with: "Proposal summary"
-    check :proposal_terms_of_service
-  end
-
-  def fill_budget
-    fill_in "Name", with: "Budget name"
-  end
-
-  def fill_budget_investment
-    fill_in_new_investment_title with: "Budget investment title"
-    fill_in_ckeditor "Description", with: "Budget investment description"
-    check :budget_investment_terms_of_service
-  end
-
-  def admin_section?
-    path.starts_with?("/admin/")
-  end
-
-  def management_section?
-    path.starts_with?("/management/")
-  end
-
-  def edit_path?
-    path.ends_with?("/edit")
   end
 end

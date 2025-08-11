@@ -49,10 +49,13 @@ set :fnm_setup_command, -> do
 set :fnm_install_node_command, -> { "#{fetch(:fnm_setup_command)} && fnm use --install-if-missing" }
 set :fnm_map_bins, %w[node npm rake yarn]
 
-set :puma_conf, "#{release_path}/config/puma/#{fetch(:rails_env)}.rb"
 set :puma_systemctl_user, :user
 set :puma_enable_socket_service, true
 set :puma_service_unit_env_vars, ["EXECJS_RUNTIME=Disabled"]
+set :puma_service_unit_name, -> { "puma_#{fetch(:application)}_#{fetch(:stage)}" }
+set :puma_access_log, -> { File.join(shared_path, "log", "puma_access.log") }
+set :puma_error_log, -> { File.join(shared_path, "log", "puma_error.log") }
+set :puma_systemd_watchdog_sec, 0
 
 set :delayed_job_workers, 2
 set :delayed_job_roles, :background
@@ -170,6 +173,6 @@ task :setup_puma do
     end
   end
 
-  after "setup_puma", "puma:systemd:config"
-  after "setup_puma", "puma:systemd:enable"
+  after "setup_puma", "puma:install"
+  after "setup_puma", "puma:enable"
 end

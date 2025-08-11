@@ -2,6 +2,7 @@
 EnableDefaultLinters: false
 exclude:
   - '**/vendor/**/*'
+  - 'lib/capistrano/templates/*'
 linters:
   AllowedScriptType:
     enabled: true

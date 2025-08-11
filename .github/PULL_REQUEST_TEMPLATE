@@ -1,6 +1,19 @@
+# Before creating a pull request
+
+Please make sure to read and follow the coding conventions shown in [CONTRIBUTING](https://github.com/consuldemocracy/consuldemocracy/blob/master/CONTRIBUTING.md)
+For more information please view [Coding Conventions](https://github.com/consuldemocracy/consuldemocracy/blob/master/docs/en/open_source/coding_conventions.md)
+
+**Here's a quick summary of some points to check**
+
+* Include specs to test any changes you've made
+* Our CI will check whether the rest of the application is still working properly; check its build and make sure all tests are passing
+* Run `bundle exec pronto run` and fix any issues it reports; these issues will also be automatically reported on the pull request
+* Follow [the seven rules of a great commit message](https://chris.beams.io/posts/git-commit/)
+* Add or modify i18n translations only in the base languages, English (en) and Spanish (es); we manage all other languages through the [Crowdin integration](https://translate.consuldemocracy.org/).
+
 ## References
 
-> Related Issues/Pull Requests/errors/etc...
+> Reference any related issues/Pull Requests/errors/etc... to your work.
 
 ## Objectives
 
@@ -8,10 +21,10 @@
 
 ## Visual Changes
 
-> Any visual changes? please attach screenshots (or gifs) showing them.
-> If modified views are public (not the admin panel), try them in mobile display (with your browser's developer console) and add screenshots.
+* Any visual changes? please attach screenshots (or gifs) showing them.
+* If modified views are public (not the admin panel), try them in mobile display (with your browser's developer console) and add screenshots.
 
 ## Notes
 
-> Mention rake tasks or actions to be done when deploying this changes to a server (if any).
-> Explain any caveats, or important things to notice like deprecations (if any).
+* Mention rake tasks or actions to be done when deploying this changes to a server (if any).
+* Explain any caveats, or important things to notice like deprecations (if any).

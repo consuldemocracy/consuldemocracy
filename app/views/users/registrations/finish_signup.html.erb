@@ -20,7 +20,7 @@
   <% end %>
 
   <%= f.submit t("devise_views.users.registrations.new.submit"), class: "button expanded" %>
-  <div class="text-center">
-    <%= link_to t("devise_views.users.registrations.new.cancel"), destroy_user_session_path, class: "delete", method: :delete %>
-  </div>
 <% end %>
+<div class="text-center">
+  <%= button_to t("devise_views.users.registrations.new.cancel"), destroy_user_session_path, class: "delete cancel-button", method: :delete %>
+</div>

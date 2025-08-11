@@ -11,11 +11,11 @@
     "markdown-it": "^13.0.2"
   },
   "devDependencies": {
-    "@stylistic/stylelint-plugin": "^3.1.1",
+    "@stylistic/stylelint-plugin": "^3.1.2",
     "eslint": "^8.57.0",
     "postcss-scss": "^4.0.9",
-    "stylelint": "^16.14.1",
-    "stylelint-order": "^6.0.4",
-    "stylelint-scss": "^6.11.0"
+    "stylelint": "^16.20.0",
+    "stylelint-order": "^7.0.0",
+    "stylelint-scss": "^6.12.0"
   }
 }

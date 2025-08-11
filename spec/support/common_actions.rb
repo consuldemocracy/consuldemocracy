@@ -2,14 +2,13 @@ Dir["./spec/support/common_actions/*.rb"].each { |f| require f }
 Dir["./spec/support/common_actions/custom/*.rb"].each { |f| require f }
 
 module CommonActions
+  include Attachables
   include Budgets
   include Comments
   include Cookies
   include Debates
-  include Documents
   include Emails
   include GraphQLAPI
-  include Images
   include Maps
   include Notifications
   include Polls
@@ -43,12 +42,24 @@ module CommonActions
   end
 
   def fill_in_proposal
-    fill_in_new_proposal_title with: "Help refugees"
-    fill_in "Proposal summary", with: "In summary, what we want is..."
-    fill_in_ckeditor "Proposal text", with: "This is very important because..."
-    fill_in "External video URL", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
-    fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
-    check "I agree to the Privacy Policy and the Terms and conditions of use"
+    fill_in_new_proposal_title with: "Proposal title"
+    fill_in "Proposal summary", with: "Proposal summary"
+    check :proposal_terms_of_service
+  end
+
+  def fill_in_budget
+    fill_in "Name", with: "Budget name"
+  end
+
+  def fill_in_dashboard_action
+    fill_in :dashboard_action_title, with: "Dashboard title"
+    fill_in_ckeditor "Description", with: "Dashboard description"
+  end
+
+  def fill_in_budget_investment
+    fill_in_new_investment_title with: "Budget investment title"
+    fill_in_ckeditor "Description", with: "Budget investment description"
+    check :budget_investment_terms_of_service
   end
 
   def fill_in_new_proposal_title(with:)

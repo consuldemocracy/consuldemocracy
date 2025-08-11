@@ -294,7 +294,7 @@ describe "Polls" do
       expect(page).to have_content "Vote introduced!"
 
       within("#notice") { click_button "Close" }
-      click_link "Sign out"
+      click_button "Sign out"
 
       expect(page).to have_content "You must sign in or register to continue."
 

@@ -74,7 +74,7 @@ describe "Tags" do
     click_button "Create proposal"
 
     expect(page).to have_content "Proposal created successfully."
-    click_link "No, I want to publish the proposal"
+    click_button "No, I want to publish the proposal"
     click_link "Not now, go to my proposal"
 
     expect(page).to have_content "Economía"
@@ -99,7 +99,7 @@ describe "Tags" do
     click_button "Create proposal"
 
     expect(page).to have_content "Proposal created successfully."
-    click_link "No, I want to publish the proposal"
+    click_button "No, I want to publish the proposal"
     click_link "Not now, go to my proposal"
 
     expect(page).to have_css "h1", exact_text: "Help refugees"
@@ -144,7 +144,7 @@ describe "Tags" do
     click_button "Create proposal"
 
     expect(page).to have_content "Proposal created successfully."
-    click_link "No, I want to publish the proposal"
+    click_button "No, I want to publish the proposal"
     click_link "Not now, go to my proposal"
 
     expect(page).to have_content "user_id1"

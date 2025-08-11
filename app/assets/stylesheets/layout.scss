@@ -821,6 +821,16 @@ footer {
 
 .auth-page {
 
+  .cancel-button {
+    cursor: pointer;
+
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
   .footer {
     margin-top: 0;
   }
@@ -1144,6 +1154,10 @@ form {
       line-height: rem-calc(120);
       vertical-align: top;
     }
+
+    button {
+      @include link;
+    }
   }
 }
 
@@ -1190,9 +1204,17 @@ form {
   @include breakpoint(medium) {
 
     .mark-notification {
+      @include anchor-color;
+      cursor: pointer;
       position: absolute;
       right: 12px;
       top: 12px;
+
+      &:hover,
+      &:active,
+      &:focus {
+        @include anchor-color-hover;
+      }
     }
   }
 
@@ -1370,7 +1392,8 @@ table {
 .button.button-twitter,
 .button.button-facebook,
 .button.button-google,
-.button.button-wordpress {
+.button.button-wordpress,
+.button.button-saml {
   color: inherit;
   font-weight: bold;
 
@@ -1419,6 +1442,17 @@ table {
     color: #2f2f33;
   }
 }
+
+.button.button-saml {
+  @include has-fa-icon(lock, solid);
+  background: #eafee9;
+  border-left: 3px solid #3b9857;
+
+  &::before {
+    color: #3b9857;
+  }
+}
+
 
 // 14. Verification
 // ----------------
@@ -1803,8 +1837,11 @@ table {
   color: $delete;
 }
 
-.dropdown-pane a {
-  color: $text-medium;
+.dropdown-pane {
+  a,
+  button {
+    color: $text-medium;
+  }
 }
 
 // 17. Activity
@@ -2126,7 +2163,7 @@ table {
     text-align: center;
   }
 
-  a {
+  button {
     font-weight: bold;
     margin-right: $line-height;
     text-decoration: none;
@@ -2144,6 +2181,14 @@ table {
     &::before {
       margin-right: $font-icon-margin;
     }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  form {
+    display: inline;
   }
 }
 

@@ -1105,25 +1105,6 @@ describe "Budget Investments" do
                   "budget_investment_path",
                   { budget_id: "budget_id", id: "id" }
 
-  it_behaves_like "imageable",
-                  "budget_investment",
-                  "budget_investment_path",
-                  { budget_id: "budget_id", id: "id" }
-
-  it_behaves_like "documentable",
-                  "budget_investment",
-                  "budget_investment_path",
-                  { budget_id: "budget_id", id: "id" }
-
-  it_behaves_like "nested documentable",
-                  "user",
-                  "budget_investment",
-                  "new_budget_investment_path",
-                  { budget_id: "budget_id" },
-                  "documentable_fill_new_valid_budget_investment",
-                  "Create Investment",
-                  "Budget Investment created successfully."
-
   it_behaves_like "mappable",
                   "budget_investment",
                   "investment",
@@ -1715,7 +1696,7 @@ describe "Budget Investments" do
         within("aside") do
           expect(page).not_to have_content "Author"
           expect(page).not_to have_link "Edit"
-          expect(page).not_to have_link "Remove image"
+          expect(page).not_to have_button "Remove image"
         end
       end
 
@@ -1728,7 +1709,7 @@ describe "Budget Investments" do
         within("aside") do
           expect(page).to have_content "AUTHOR"
           expect(page).to have_link "Edit"
-          expect(page).not_to have_link "Remove image"
+          expect(page).not_to have_button "Remove image"
         end
       end
 
@@ -1742,7 +1723,7 @@ describe "Budget Investments" do
         within("aside") do
           expect(page).to have_content "AUTHOR"
           expect(page).not_to have_link "Edit"
-          expect(page).to have_link "Remove image"
+          expect(page).to have_button "Remove image"
         end
       end
     end

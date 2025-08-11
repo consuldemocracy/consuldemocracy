@@ -44,7 +44,7 @@
   * [Tests](customization/tests.md)
 
 * [Funcionalidades Técnicas](features/features.md)
-  * [OAuth](features/oauth.md)
+  * [Autenticación con servicios externos (OAuth)](features/oauth.md)
   * [GraphQL](features/graphql.md)
   * [Recomendaciones de debates y propuestas](features/recommendations.md)
   * [Configurar conexión con el Censo](features/census_configuration.md)
