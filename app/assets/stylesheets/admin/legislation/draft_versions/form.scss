@@ -90,7 +90,7 @@
     @include radio-or-checkbox-and-label-alignment;
 
     span {
-      margin-left: 1ch;
+      margin-#{$global-left}: 1ch;
     }
   }
 }
