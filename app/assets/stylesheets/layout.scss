@@ -1712,17 +1712,22 @@ table {
   height: $line-height * 2 !important;
   position: relative;
   width: $line-height * 2 !important;
-
+  
   &::before {
-    content: "f";
-    font-family: "icons" !important;
-    font-size: rem-calc(24);
-    left: 50%;
-    line-height: $line-height * 2;
-    margin-left: rem-calc(-11);
-    position: absolute;
-    top: 0;
-  }
+      content: "";
+	  background-image: image-url("twitter_gris.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      display: block;
+      width: 24px; 
+      height: 24px;
+      left: 50%;
+      line-height: $line-height * 2;
+      margin-left: rem-calc(-11);
+	  margin-top: rem-calc(11);
+      position: absolute;
+      top: 0;
+    }
 
   &:hover,
   &:focus {
@@ -1911,17 +1916,23 @@ table {
     height: $line-height;
     position: relative;
     width: $line-height * 2;
-
+	
     &::before {
-      content: "f";
-      font-family: "icons" !important;
-      font-size: rem-calc(24);
+      content: "";
+	  background-image: image-url("twitter_gris.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      display: block;
+      width: 24px; 
+      height: 24px;
       left: 50%;
       line-height: $line-height * 2;
       margin-left: rem-calc(-11);
       position: absolute;
       top: 0;
     }
+	
+
 
     &:hover,
     &:focus {
