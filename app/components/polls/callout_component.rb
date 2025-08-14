@@ -22,8 +22,8 @@ class Polls::CalloutComponent < ApplicationComponent
 
     def not_logged_in_text
       sanitize(t("polls.show.cant_answer_not_logged_in",
-                 signin: link_to_signin(class: "probe-message"),
-                 signup: link_to_signup(class: "probe-message")))
+                 signin: link_to_signin,
+                 signup: link_to_signup))
     end
 
     def unverified_text
