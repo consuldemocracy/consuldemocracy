@@ -634,11 +634,7 @@ nl:
     poll_header:
       back_to_proposal: Terug naar voorstel
   poll_questions:
-    show:
-      vote_answer: "Stem %{answer}"
-      voted: "U heeft %{answer} gestemd"
     description:
-      unique: "Je kan maximaal 1 antwoord selecteren."
       multiple: "Je kan maximaal %{maximum} antwoorden selecteren."
     read_more_about: "Lees meer over:"
   proposal_notifications:
