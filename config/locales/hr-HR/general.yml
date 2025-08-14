@@ -628,10 +628,6 @@ hr:
         most_voted_answer: "Najviše izglasan odgovor: "
     poll_header:
       back_to_proposal: Nazad na prijedlog
-  poll_questions:
-    show:
-      vote_answer: "Glas %{answer}"
-      voted: "Vi ste glasali %{answer}"
   proposal_notifications:
     new:
       title: "Pošalji poruku"
