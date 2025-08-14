@@ -642,10 +642,6 @@ he:
         most_voted_answer: "התשובות הכי מוצבעות: "
     poll_header:
       back_to_proposal: חזור להצעה
-  poll_questions:
-    show:
-      vote_answer: "הצבעה %{answer}"
-      voted: "עליך להצביע %{answer}"
   proposal_notifications:
     new:
       title: "שלח הודעה"
