@@ -96,7 +96,7 @@ describe "Polls" do
 
       expect(page).not_to have_css ".already-answer"
 
-      vote_for_poll_via_web(poll_with_question, question, "Yes")
+      vote_for_poll_via_web(poll_with_question, question => "Yes")
 
       visit polls_path
 
@@ -168,14 +168,6 @@ describe "Polls" do
       end
     end
 
-    scenario "Non-logged in users" do
-      create(:poll_question, :yes_no, poll: poll)
-
-      visit poll_path(poll)
-
-      expect(page).to have_content("You must sign in or sign up to participate")
-    end
-
     scenario "Level 1 users" do
       poll.update!(geozone_restricted_to: [geozone])
       create(:poll_question, :yes_no, poll: poll)
@@ -186,54 +178,85 @@ describe "Polls" do
       expect(page).to have_content("You must verify your account in order to answer")
     end
 
-    scenario "Level 2 users in an expired poll" do
-      expired_poll = create(:poll, :expired)
-      create(:poll_question, :yes_no, poll: expired_poll)
-
-      login_as(create(:user, :level_two, geozone: geozone))
-
-      visit poll_path(expired_poll)
-
-      expect(page).to have_content("This poll has finished")
-    end
-
     scenario "Level 2 users answering" do
       poll.update!(geozone_restricted_to: [geozone])
+      create(:poll_question, :yes_no, poll: poll, title: "Do you agree?")
 
-      question = create(:poll_question, :yes_no, poll: poll)
-      user = create(:user, :level_two, geozone: geozone)
-
-      login_as user
+      login_as(create(:user, :level_two, geozone: geozone))
       visit poll_path(poll)
 
-      within("#poll_question_#{question.id}_options") do
-        click_button "Vote Yes"
+      within_fieldset("Do you agree?") { choose "Yes" }
+      click_button "Vote"
 
-        expect(page).to have_button "You have voted Yes"
-        expect(page).to have_button "Vote No"
+      expect(page).to have_content "Thank you for voting!"
+      expect(page).to have_content "You have already participated in this poll. " \
+                                   "If you vote again it will be overwritten."
+
+      within_fieldset("Do you agree?") do
+        expect(page).to have_field "Yes", type: :radio, checked: true
       end
+
+      expect(page).to have_button "Vote"
     end
 
     scenario "Level 2 users changing answer" do
-      poll.update!(geozone_restricted_to: [geozone])
-
-      question = create(:poll_question, :yes_no, poll: poll)
       user = create(:user, :level_two, geozone: geozone)
+      question = create(:poll_question, :yes_no, poll: poll, title: "Do you agree?")
+
+      poll.update!(geozone_restricted_to: [geozone])
+      create(:poll_answer, author: user, question: question, answer: "Yes")
+      create(:poll_voter, poll: poll, user: user)
 
       login_as user
       visit poll_path(poll)
 
-      within("#poll_question_#{question.id}_options") do
-        click_button "Yes"
+      expect(page).to have_content "You have already participated in this poll. " \
+                                   "If you vote again it will be overwritten."
 
-        expect(page).to have_button "You have voted Yes"
-        expect(page).to have_button "Vote No"
+      within_fieldset("Do you agree?") do
+        expect(page).to have_field "Yes", type: :radio, checked: true
 
-        click_button "No"
-
-        expect(page).to have_button "Vote Yes"
-        expect(page).to have_button "You have voted No"
+        choose "No"
       end
+
+      click_button "Vote"
+
+      expect(page).to have_content "Thank you for voting!"
+
+      within_fieldset("Do you agree?") do
+        expect(page).to have_field "No", type: :radio, checked: true
+        expect(page).to have_field "Yes", type: :radio, checked: false
+      end
+
+      expect(page).to have_button "Vote"
+    end
+
+    scenario "Level 2 users deleting their answer" do
+      user = create(:user, :level_two, geozone: geozone)
+      question = create(:poll_question_multiple, :abc, poll: poll, title: "Which ones are better?")
+
+      create(:poll_answer, author: user, question: question, answer: "Answer A")
+      create(:poll_voter, poll: poll, user: user)
+
+      login_as user
+      visit poll_path(poll)
+
+      expect(page).to have_content "You have already participated in this poll. " \
+                                   "If you vote again it will be overwritten."
+
+      within_fieldset("Which ones are better?") { uncheck "Answer A" }
+      click_button "Vote"
+
+      expect(page).to have_content "Thank you for voting! Your vote has been registered as a blank vote."
+      expect(page).to have_content "You have already participated in this poll by casting a blank vote. " \
+                                   "If you vote again it will be overwritten."
+
+      within_fieldset("Which ones are better?") do
+        expect(page).to have_field type: :checkbox, checked: false, count: 3
+        expect(page).not_to have_field type: :checkbox, checked: true
+      end
+
+      expect(page).to have_button "Vote"
     end
 
     scenario "Shows SDG tags when feature is enabled" do
@@ -259,20 +282,6 @@ describe "Polls" do
       expect("Not restricted").to appear_before("Geozone Poll")
       expect("Geozone Poll").to appear_before("A Poll")
     end
-
-    scenario "Level 2 users answering in a browser without javascript", :no_js do
-      question = create(:poll_question, :yes_no, poll: poll)
-      user = create(:user, :level_two)
-      login_as user
-      visit poll_path(poll)
-
-      within("#poll_question_#{question.id}_options") do
-        click_button "Yes"
-
-        expect(page).to have_button "You have voted Yes"
-        expect(page).to have_button "No"
-      end
-    end
   end
 
   context "Booth & Website", :with_frozen_time do
@@ -283,7 +292,7 @@ describe "Polls" do
     scenario "Already voted on booth cannot vote on website" do
       create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
       create(:poll_officer_assignment, officer: officer, poll: poll, booth: booth, date: Date.current)
-      question = create(:poll_question, :yes_no, poll: poll)
+      create(:poll_question, :yes_no, poll: poll, title: "Have you voted using a booth?")
       user = create(:user, :level_two, :in_census)
 
       login_as(officer.user)
@@ -304,12 +313,9 @@ describe "Polls" do
       expect(page).to have_content "You have already participated in a physical booth. " \
                                    "You can not participate again."
 
-      within("#poll_question_#{question.id}_options") do
-        expect(page).to have_content("Yes")
-        expect(page).to have_content("No")
-
-        expect(page).not_to have_button "Yes"
-        expect(page).not_to have_button "No"
+      within_fieldset("Have you voted using a booth?") do
+        expect(page).to have_field "Yes", type: :radio, disabled: true
+        expect(page).to have_field "No", type: :radio, disabled: true
       end
     end
   end

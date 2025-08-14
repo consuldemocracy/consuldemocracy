@@ -1,0 +1,56 @@
+.poll-form {
+  fieldset {
+    border: 1px solid $border;
+    border-radius: $global-radius;
+    padding: $line-height;
+  }
+
+  fieldset + fieldset {
+    margin-top: calc($line-height / 2);
+  }
+
+  legend {
+    @include header-font-size(h3);
+    float: $global-left;
+    margin-bottom: 0;
+
+    + * {
+      clear: $global-left;
+    }
+  }
+
+
+  label {
+    @include radio-or-checkbox-and-label-alignment;
+    font-weight: normal;
+
+    &:first-of-type::before {
+      content: "\A";
+      margin-top: calc($line-height / 2);
+      white-space: pre;
+    }
+  }
+
+  .help-text {
+    display: block;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: bold;
+  }
+
+  .read-more-links {
+    margin-top: calc($line-height / 2);
+
+    * {
+      margin-bottom: 0;
+    }
+
+    * + * {
+      margin-top: calc($line-height / 4);
+    }
+  }
+
+  [type=submit] {
+    margin-top: calc($line-height * 3 / 4);
+  }
+}

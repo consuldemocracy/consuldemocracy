@@ -17,18 +17,15 @@ describe "Poll Results" do
     option5 = create(:poll_question_option, question: question2, title: "Yellow")
 
     login_as user1
-    vote_for_poll_via_web(poll, question1, "Yes")
-    vote_for_poll_via_web(poll, question2, "Blue")
+    vote_for_poll_via_web(poll, question1 => "Yes", question2 => "Blue")
     logout
 
     login_as user2
-    vote_for_poll_via_web(poll, question1, "Yes")
-    vote_for_poll_via_web(poll, question2, "Green")
+    vote_for_poll_via_web(poll, question1 => "Yes", question2 => "Green")
     logout
 
     login_as user3
-    vote_for_poll_via_web(poll, question1, "No")
-    vote_for_poll_via_web(poll, question2, "Yellow")
+    vote_for_poll_via_web(poll, question1 => "No", question2 => "Yellow")
     logout
 
     travel_to(poll.ends_at + 1.day)

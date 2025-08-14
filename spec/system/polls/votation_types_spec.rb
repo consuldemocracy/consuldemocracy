@@ -2,68 +2,102 @@ require "rails_helper"
 
 describe "Poll Votation Type" do
   let(:author) { create(:user, :level_two) }
+  let(:poll) { create(:poll) }
 
   before do
     login_as(author)
   end
 
-  scenario "Unique answer" do
-    question = create(:poll_question_unique, :yes_no)
+  scenario "Unique and multiple answers" do
+    create(:poll_question_unique, :yes_no, poll: poll, title: "Is it that bad?")
+    create(:poll_question_multiple, :abcde, poll: poll, max_votes: 3, title: "Which ones do you prefer?")
 
-    visit poll_path(question.poll)
+    visit poll_path(poll)
 
-    expect(page).to have_content "You can select a maximum of 1 answer."
-    expect(page).to have_content(question.title)
-    expect(page).to have_button("Vote Yes")
-    expect(page).to have_button("Vote No")
+    within_fieldset("Is it that bad?") { choose "Yes" }
 
-    within "#poll_question_#{question.id}_options" do
-      click_button "Yes"
-
-      expect(page).to have_button("You have voted Yes")
-      expect(page).to have_button("Vote No")
-
-      click_button "No"
-
-      expect(page).to have_button("Vote Yes")
-      expect(page).to have_button("You have voted No")
+    within_fieldset("Which ones do you prefer?") do
+      check "Answer A"
+      check "Answer C"
     end
+
+    click_button "Vote"
+
+    expect(page).to have_content "Thank you for voting!"
+    expect(page).to have_content "You have already participated in this poll. " \
+                                 "If you vote again it will be overwritten."
+
+    within_fieldset("Is it that bad?") do
+      expect(page).to have_field "Yes", type: :radio, checked: true
+    end
+
+    within_fieldset("Which ones do you prefer?") do
+      expect(page).to have_field "Answer A", type: :checkbox, checked: true
+      expect(page).to have_field "Answer B", type: :checkbox, checked: false
+      expect(page).to have_field "Answer C", type: :checkbox, checked: true
+      expect(page).to have_field "Answer D", type: :checkbox, checked: false
+      expect(page).to have_field "Answer E", type: :checkbox, checked: false
+    end
+
+    expect(page).to have_button "Vote"
   end
 
-  scenario "Multiple answers" do
-    question = create(:poll_question_multiple, :abc, max_votes: 2)
-    visit poll_path(question.poll)
+  scenario "Maximum votes has been reached" do
+    question = create(:poll_question_multiple, :abc, poll: poll, max_votes: 2)
+    create(:poll_answer, author: author, question: question, answer: "Answer A")
 
-    expect(page).to have_content "You can select a maximum of 2 answers."
-    expect(page).to have_content(question.title)
-    expect(page).to have_button("Vote Answer A")
-    expect(page).to have_button("Vote Answer B")
-    expect(page).to have_button("Vote Answer C")
+    visit poll_path(poll)
 
-    within "#poll_question_#{question.id}_options" do
-      click_button "Vote Answer A"
+    expect(page).to have_field "Answer A", type: :checkbox, checked: true
+    expect(page).to have_field "Answer B", type: :checkbox, checked: false
+    expect(page).to have_field "Answer C", type: :checkbox, checked: false
 
-      expect(page).to have_button("You have voted Answer A")
+    check "Answer C"
 
-      click_button "Vote Answer C"
+    expect(page).to have_field "Answer A", type: :checkbox, checked: true
+    expect(page).to have_field "Answer B", type: :checkbox, checked: false, disabled: true
+    expect(page).to have_field "Answer C", type: :checkbox, checked: true
 
-      expect(page).to have_button("You have voted Answer C")
-      expect(page).to have_button("Vote Answer B", disabled: true)
+    click_button "Vote"
 
-      click_button "You have voted Answer A"
+    expect(page).to have_content "Thank you for voting!"
+    expect(page).to have_field "Answer A", type: :checkbox, checked: true
+    expect(page).to have_field "Answer B", type: :checkbox, checked: false, disabled: true
+    expect(page).to have_field "Answer C", type: :checkbox, checked: true
 
-      expect(page).to have_button("Vote Answer A")
-      expect(page).to have_button("Vote Answer B")
+    uncheck "Answer A"
 
-      click_button "You have voted Answer C"
+    expect(page).to have_field "Answer A", type: :checkbox, checked: false
+    expect(page).to have_field "Answer B", type: :checkbox, checked: false
+    expect(page).to have_field "Answer C", type: :checkbox, checked: true
+  end
 
-      expect(page).to have_button("Vote Answer C")
+  scenario "Too many answers", :no_js do
+    create(:poll_question_multiple, :abcde, poll: poll, max_votes: 2, title: "Which ones are correct?")
 
-      click_button "Vote Answer B"
+    visit poll_path(poll)
+    check "Answer A"
+    check "Answer B"
+    check "Answer D"
+    click_button "Vote"
 
-      expect(page).to have_button("You have voted Answer B")
-      expect(page).to have_button("Vote Answer A")
-      expect(page).to have_button("Vote Answer C")
+    within_fieldset("Which ones are correct?") do
+      expect(page).to have_content "you've selected 3 answers, but the maximum you can select is 2"
+      expect(page).to have_field "Answer A", type: :checkbox, checked: true
+      expect(page).to have_field "Answer B", type: :checkbox, checked: true
+      expect(page).to have_field "Answer C", type: :checkbox, checked: false
+      expect(page).to have_field "Answer D", type: :checkbox, checked: true
+      expect(page).to have_field "Answer E", type: :checkbox, checked: false
+    end
+
+    expect(page).not_to have_content "Thank you for voting!"
+
+    visit poll_path(poll)
+
+    expect(page).not_to have_content "but the maximum you can select"
+
+    within_fieldset("Which ones are correct?") do
+      expect(page).to have_field type: :checkbox, checked: false, count: 5
     end
   end
 end

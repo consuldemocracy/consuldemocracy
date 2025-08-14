@@ -577,6 +577,9 @@ es:
   polls:
     dates: "Desde el %{open_at} hasta el %{closed_at}"
     final_date: "Recuento final/Resultados"
+    form:
+      vote: "Votar"
+      maximum_exceeded: "has seleccionado %{given} respuestas, pero el máximo que puedes seleccionar es %{maximum}"
     index:
       filters:
         current: "Abiertas"
@@ -602,6 +605,7 @@ es:
     show:
       already_voted_in_booth: "Ya has participado en esta votación en urnas presenciales, no puedes volver a participar."
       already_voted_in_web: "Ya has participado en esta votación. Si vuelves a votar se sobreescribirá tu resultado anterior."
+      already_voted_blank_in_web: "Ya has participado en esta votación mediante un voto en blanco. Si vuelves a votar se sobreescribirá tu resultado anterior."
       back: Volver a votaciones
       cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar."
       comments_tab: Comentarios
@@ -634,11 +638,7 @@ es:
     poll_header:
       back_to_proposal: Volver a la propuesta
   poll_questions:
-    show:
-      vote_answer: "Votar %{answer}"
-      voted: "Has votado %{answer}"
     description:
-      unique: "Puedes seleccionar un máximo de 1 respuesta."
       multiple: "Puedes seleccionar un máximo de %{maximum} respuestas."
     read_more_about: "Leer más:"
   proposal_notifications:
