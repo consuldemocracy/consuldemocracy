@@ -253,9 +253,6 @@ fi:
         votes: "ÄÄNET"
       results:
         title: "Kysymykset"
-  poll_questions:
-    show:
-      vote_answer: "Äänestä %{answer}"
   proposal_notifications:
     new:
       title: "Lähetä viesti"
