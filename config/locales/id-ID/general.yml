@@ -442,10 +442,6 @@ id:
       results:
         title: "Pertanyaan"
         most_voted_answer: "Jawaban paling banyak suara: "
-  poll_questions:
-    show:
-      vote_answer: "Suara %{answer}"
-      voted: "Anda telah suara %{answer}"
   proposal_notifications:
     new:
       title: "Kirim pesan"

@@ -69,7 +69,6 @@ sl:
         new_confirmation: Nisi prejel navodil, kako aktivirati svoj račun?
         new_password: Pozabljeno geslo?
         new_unlock: Nisi prejel navodil, kako odkleniti svoj račun?
-        signin_with_provider: Vpiši se z/s %{provider}
         signup: Nimaš računa? %{signup_link}
         signup_link: Registriraj se
     unlocks:

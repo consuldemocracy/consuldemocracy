@@ -613,10 +613,6 @@ pt-BR:
         most_voted_answer: "Resposta mais votada: "
     poll_header:
       back_to_proposal: Voltar à proposta
-  poll_questions:
-    show:
-      vote_answer: "Votar %{answer}"
-      voted: "Você votou %{answer}"
   proposal_notifications:
     new:
       title: "Enviar mensagem"

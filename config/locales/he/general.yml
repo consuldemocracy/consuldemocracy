@@ -20,6 +20,9 @@ he:
     close: סגירה
     menu: תפריט
   comments:
+    actions:
+      confirm_delete: "אתה בטוח? פעולה זו תמחק את התגובה. לא ניתן לשחזר פעולה זו."
+      delete: "מחיקת תגובה"
     comments_closed: לא ניתן להגיב
     verified_only: בכדי להשתתף %{verify_account}
     comment:
@@ -143,6 +146,10 @@ he:
     messages:
       user_not_found: משתמש/ת לא נמצא/ה
       invalid_date_range: "טווח תאריכים לא חוקי"
+      past_date: "אסור שיהיה תאריך בעבר"
+      cannot_change_date:
+        poll_started: "לא ניתן לשינוי אם הצבעה כבר החלה"
+        poll_ended: "לא ניתן לשינוי אם הצבעה כבר הסתיימה"
   form:
     accept_terms: אני מאשר/ת את %{policy} ואת %{conditions}
     conditions: כללים ותנאי שימוש
@@ -152,12 +159,17 @@ he:
     errors: שגיאות אלו מונעות
     not_saved: "מנעו מ %{resource} להישמר. <br>בדוק את השדות המסומנים בכדי לתקן אותם:"
     policy: מדיניות הפרטיות
+    banner: באנר
     proposal: הצעה
     proposal_notification: "התראות"
     budget/investment: השקעה
     budget/group: תקציב הקבוצה
     budget/heading: כותרת התקציב
+    legislation/draft_version: טיוטה
+    legislation/process: תהליך
+    legislation/question: שאלה
     poll/shift: משמרת
+    poll/question/option: תשובה
     user: חשבון משתמש/ת
     verification/sms: מספר טלפון
     signature_sheet: גיליון חתימה
@@ -630,10 +642,6 @@ he:
         most_voted_answer: "התשובות הכי מוצבעות: "
     poll_header:
       back_to_proposal: חזור להצעה
-  poll_questions:
-    show:
-      vote_answer: "הצבעה %{answer}"
-      voted: "עליך להצביע %{answer}"
   proposal_notifications:
     new:
       title: "שלח הודעה"
@@ -731,6 +739,12 @@ he:
     translations:
       remove_language: הסרת שפה
       add_language: הוספת שפה
+    comments:
+      zero: "אין תגובות"
+      one: "1 תגובה"
+      two: "%{count} תגובות"
+      many: "%{count} תגובות"
+      other: "%{count} תגובות"
   social:
     facebook: "%{org} פייסבוק"
     twitter: "%{org} טוויטר"
@@ -897,3 +911,5 @@ he:
       surveys: סקרים
     poll:
       take_part: קח חלק מ- %{from} ל- %{to}
+  machine_learning:
+    comments_summary: "סיכום תגובות"

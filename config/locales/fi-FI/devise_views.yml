@@ -44,7 +44,6 @@ fi:
     shared:
       links:
         new_password: Oletko unohtanut salasanasi?
-        signin_with_provider: Kirjaudu sisään käyttäen %{provider}
         signup_link: Rekisteröidy
     unlocks:
       new:

@@ -465,10 +465,6 @@ sq:
       results:
         title: "Pyetjet"
         most_voted_answer: "Përgjigja më e votuar:"
-  poll_questions:
-    show:
-      vote_answer: "Votim %{answer}"
-      voted: "Ju keni votuar %{answer}"
   proposal_notifications:
     new:
       title: "Dërgoni mesazh"

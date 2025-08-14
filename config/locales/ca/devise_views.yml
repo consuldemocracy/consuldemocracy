@@ -69,7 +69,6 @@ ca:
         new_confirmation: No has rebut instruccions per confirmar el teu compte?
         new_password: Heu perdut la contrasenya?
         new_unlock: No has rebut instruccions per desbloquejar?
-        signin_with_provider: Entrar amb el %{provider}
         signup: No tens un compte? %{signup_link}
         signup_link: registrar-
     unlocks:

@@ -645,10 +645,6 @@ uk-UA:
         most_voted_answer: "Запитання, яке отримало найбільше голосів: "
     poll_header:
       back_to_proposal: Повернутися до пропозиції
-  poll_questions:
-    show:
-      vote_answer: "Голосувати за %{answer}"
-      voted: "Ми проголосували за%{answer}"
   proposal_notifications:
     new:
       title: "Надіслати повідомлення"

@@ -10,6 +10,8 @@ sv:
         poll_question_option: "Svaret har skapats"
         poll_question_option_video: "Videon har skapats"
         poll_question_option_image: "Bilden har laddats upp"
+        poll_voter: "Tack för din röst!"
+        poll_voter_blank: "Tack för din röst! Din röst har registrerats som en blank röst."
         proposal: "Förslaget har skapats."
         proposal_notification: "Ditt meddelande har skickats."
         budget_investment: "Budgetinvesteringen har skapats."

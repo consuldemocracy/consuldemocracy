@@ -69,7 +69,6 @@ sv:
         new_confirmation: Har du inte fått instruktioner för att aktivera ditt konto?
         new_password: Har du glömt ditt lösenord?
         new_unlock: Har du inte fått instruktioner för att låsa upp ditt konto?
-        signin_with_provider: Logga in med %{provider}
         signup: Har du inte ett konto? %{signup_link}
         signup_link: Registrera dig
     unlocks:
