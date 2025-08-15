@@ -21,6 +21,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     sign_in_with :saml_login, :saml
   end
 
+  def oidc
+    sign_in_with :oidc_login, :oidc
+  end
+
   def after_sign_in_path_for(resource)
     if resource.registering_with_oauth
       finish_signup_path

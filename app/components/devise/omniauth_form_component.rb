@@ -17,7 +17,8 @@ class Devise::OmniauthFormComponent < ApplicationComponent
         (:facebook if feature?(:facebook_login)),
         (:google_oauth2 if feature?(:google_login)),
         (:wordpress_oauth2 if feature?(:wordpress_login)),
-        (:saml if feature?(:saml_login))
+        (:saml if feature?(:saml_login)),
+        (:oidc if feature?(:oidc_login))
       ].compact
     end
 end
