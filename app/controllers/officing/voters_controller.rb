@@ -14,18 +14,28 @@ class Officing::VotersController < Officing::BaseController
     @poll = Poll.find(voter_params[:poll_id])
     @user = User.find(voter_params[:user_id])
 
-    @user.with_lock do
-      @voter = Poll::Voter.new(document_type: @user.document_type,
-                               document_number: @user.document_number,
-                               user: @user,
-                               poll: @poll,
-                               origin: "booth",
-                               officer: current_user.poll_officer,
-                               booth_assignment: current_booth.booth_assignments.find_by(poll: @poll),
-                               officer_assignment: officer_assignment(@poll))
-
-      @voter.save!
+    unless @poll.answerable_by?(@user)
+      return redirect_to(officing_root_path, alert: t("officing.officers.show.cannot_vote"))
     end
+
+    if @poll.voted_by?(@user) || @poll.user_has_an_online_ballot?(@user)
+      return redirect_to(officing_root_path, alert: t("officing.officers.show.error_already_voted"))
+    end
+
+    @voter = Poll::Voter.create_with(
+      document_type: @user.document_type,
+      document_number: @user.document_number,
+      origin: "booth",
+      officer: current_user.poll_officer,
+      booth_assignment: current_booth.booth_assignments.find_by(poll: @poll),
+      officer_assignment: officer_assignment(@poll)
+    ).find_or_create_by!(user: @user, poll: @poll)
+
+    unless @voter.previously_new_record?
+      return redirect_to(officing_root_path, alert: t("officing.officers.show.error_already_voted"))
+    end
+
+    redirect_to officing_root_path, notice: t("officing.officers.show.success")
   end
 
   private
