@@ -815,7 +815,7 @@ DEPENDENCIES
   pronto-rubocop (~> 0.11.6)
   pronto-stylelint (~> 0.11.1)
   puma (~> 6.6.0)
-  rails (= 7.1.5.1)
+  rails (~> 7.1.5.1)
   recipient_interceptor (~> 0.3.3)
   redcarpet (~> 3.6.1)
   responders (~> 3.1.1)
