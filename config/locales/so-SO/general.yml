@@ -465,10 +465,6 @@ so:
       results:
         title: "Sualo"
         most_voted_answer: "Ita badan jawabah codayey: "
-  poll_questions:
-    show:
-      vote_answer: "Cod%{answer}"
-      voted: "Wad codeysay%{answer}"
   proposal_notifications:
     new:
       title: "Fariin dir"

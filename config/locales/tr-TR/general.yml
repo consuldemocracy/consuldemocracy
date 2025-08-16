@@ -278,6 +278,10 @@ tr:
     info:
       sign_in: "Şununla oturum açın:"
       sign_up: "Şununla hesap açın:"
+    saml:
+      sign_in: SAML ile oturum aç
+      sign_up: SAML ile hesap açın
+      name: SAML
     or_fill: "Ya da aşağıdaki formu doldurun:"
   proposals:
     create:
@@ -629,11 +633,7 @@ tr:
     poll_header:
       back_to_proposal: Önergeye dön
   poll_questions:
-    show:
-      vote_answer: "%{answer} için oy ver"
-      voted: "%{answer} için oy verdiniz"
     description:
-      unique: "En fazla 1 yanıt seçebilirsiniz."
       multiple: "En fazla %{maximum} yanıt seçebilirsiniz."
     read_more_about: "Ayrıntılı bilgi alın:"
   proposal_notifications:

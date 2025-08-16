@@ -657,11 +657,7 @@ gd:
     poll_header:
       back_to_proposal: Air ais dhan mholadh
   poll_questions:
-    show:
-      vote_answer: "Bhòt %{answer}"
-      voted: "Tha thu air bhòtadh %{answer}"
     description:
-      unique: "Faodaidh tu suas ri 1 freagairt a thaghadh."
       multiple: "Faodaidh tu suas ri %{maximum} freagairtean a thaghadh."
     read_more_about: "Leugh barrachd mu dhèidhinn:"
   proposal_notifications:

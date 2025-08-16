@@ -69,7 +69,6 @@ el:
         new_confirmation: Δεν έχετε λάβει οδηγίες για να ενεργοποιήσετε το λογαριασμό σας;
         new_password: Ξεχάσατε τον κωδικό σας;
         new_unlock: Δεν έχετε λάβει οδηγίες ξεκλειδώματος;
-        signin_with_provider: Συνδεθείτε με %{provider}
         signup: Δεν έχετε λογαριασμό; %{signup_link}
         signup_link: Εγγραφή
     unlocks:

@@ -623,11 +623,7 @@ ne:
     poll_header:
       back_to_proposal: प्रस्तावमा फर्कनुहोस्
   poll_questions:
-    show:
-      vote_answer: "%{answer} मा मत दिन्नुस्"
-      voted: "तपाईंले %{answer} मत दिनुभयो"
     description:
-      unique: "तपाईं अधिकतम १ जवाफ चयन गर्न सक्नुहुन्छ।"
       multiple: "तपाईले अधिकतम %{maximum} जवाफहरू चयन गर्न सक्नुहुन्छ।"
     read_more_about: "बारे थप पढ्नुहोस्:"
   proposal_notifications:

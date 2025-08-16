@@ -616,10 +616,6 @@ bg:
         most_voted_answer: "Най-често гласуван отговор: "
     poll_header:
       back_to_proposal: Назад към предложението
-  poll_questions:
-    show:
-      vote_answer: "Глас %{answer}"
-      voted: "Вие гласувахте %{answer}"
   proposal_notifications:
     new:
       title: "Изпратете съобщение"

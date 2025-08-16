@@ -69,7 +69,6 @@ ru:
         new_confirmation: Не поличали инструкции по активации вашего аккаунта?
         new_password: Забыли ваш пароль?
         new_unlock: Не получали инструкции по разблокировке?
-        signin_with_provider: Войти при помощи %{provider}
         signup: У вас есть аккаунт? %{signup_link}
         signup_link: Регистрация
     unlocks:
