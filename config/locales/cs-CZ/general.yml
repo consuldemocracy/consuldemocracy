@@ -293,6 +293,8 @@ cs:
     info:
       sign_in: "Přihlásit se pomocí:"
       sign_up: "Přihlásit se pomocí:"
+    saml:
+      name: SAML
     or_fill: "Nebo vyplňte následující formulář:"
   proposals:
     create:
@@ -968,7 +970,16 @@ cs:
     info_text: "Obsah generovaný umělou inteligencí / strojovým učením"
   cookies_consent:
     accept_all_cookies: "Přijmout vše"
+    management: "Spravovat cookies"
     title: "Zásady cookies"
   cookies_management:
     title: Správa cookies
+    description: Tato webová stránka používá pro své správné fungování vlastní soubory cookie a soubory cookie třetích stran. Kliknutím na tlačítko Přijmout vše souhlasíte s používáním těchto technologií a zpracováním vašich dat pro tyto účely.
+    essentials:
+      title: Nezbytné soubory cookie
+      description: Používají se k mnoha různým účelům, například k rozpoznání vás jako uživatele, výběru jazyka nebo přizpůsobení způsobu zobrazení obsahu.
+      hint: Bez nich budou základní navigační funkce omezeny, proto by měly být vždy aktivní.
+    third_party:
+      title: Soubory cookie třetích stran
+      description: Tato webová stránka používá soubory cookie třetích stran. Tyto soubory cookie mohou vylepšovat funkčnost nebo shromažďovat informace za účelem zlepšení uživatelského zážitku.
     save_preferences: Uložit předvolby
