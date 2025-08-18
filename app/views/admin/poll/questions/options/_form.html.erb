@@ -19,6 +19,15 @@
   </div>
 
   <div class="row">
+    <div class="column">
+      <%= f.check_box :open_text, checked: @option.open_text? %>
+      <span class="help-text">
+        <%= t("admin.questions.show.answers.open_text.help") %>
+      </span>
+    </div>
+  </div>
+
+  <div class="row">
     <div class="small-12 medium-4 large-2 margin-top column">
       <%= f.submit(class: "button success expanded", value: t("shared.save")) %>
     </div>

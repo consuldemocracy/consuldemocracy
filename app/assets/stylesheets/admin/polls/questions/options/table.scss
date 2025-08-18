@@ -6,7 +6,8 @@
       vertical-align: top;
     }
 
-    &.description {
+    &.description,
+    &.open-text {
       overflow-wrap: anywhere;
     }
   }
@@ -15,6 +16,12 @@
     &.description {
       @include breakpoint(medium) {
         width: calc(100% * 7 / 12);
+      }
+    }
+
+    &.open-text {
+      @include breakpoint(medium) {
+        width: calc(100% * 2 / 12);
       }
     }
   }

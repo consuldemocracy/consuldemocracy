@@ -46,6 +46,27 @@ describe "Poll question options", :admin do
 
       expect("First").to appear_before("Second")
     end
+
+    scenario "Create option with open text enabled" do
+      question = create(:poll_question, poll: future_poll)
+
+      visit admin_question_path(question)
+      click_link "Add answer"
+
+      expect(page).to have_unchecked_field "Allow entering text as answer"
+
+      fill_in "Answer", with: "Other (please specify)"
+      check "Allow entering text as answer"
+
+      expect(page).to have_checked_field "Allow entering text as answer"
+
+      click_button "Save"
+
+      expect(page).to have_content "Answer created successfully"
+      within "tr", text: "Other (please specify)" do
+        expect(page).to have_css "td", exact_text: "Yes"
+      end
+    end
   end
 
   scenario "Update" do
