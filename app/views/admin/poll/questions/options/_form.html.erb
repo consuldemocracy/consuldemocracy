@@ -19,6 +19,16 @@
   </div>
 
   <div class="row">
+    <div class="column">
+      <% allows_custom_text_help_id = f.field_id(:allows_custom_text, :help) %>
+      <%= f.check_box :allows_custom_text, aria: { describedby: allows_custom_text_help_id } %>
+      <span class="help-text" id="<%= allows_custom_text_help_id %>">
+        <%= t("admin.questions.show.answers.allows_custom_text.help") %>
+      </span>
+    </div>
+  </div>
+
+  <div class="row">
     <div class="small-12 medium-4 large-2 margin-top column">
       <%= f.submit(class: "button success expanded", value: t("shared.save")) %>
     </div>

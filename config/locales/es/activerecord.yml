@@ -462,6 +462,7 @@ es:
       poll/question/option:
         title: Respuesta
         description: Descripción
+        allows_custom_text: "Permitir texto libre"
       poll/question/option/translation:
         title: Respuesta
         description: "Descripción (opcional)"

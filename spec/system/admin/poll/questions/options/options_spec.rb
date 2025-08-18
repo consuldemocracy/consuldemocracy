@@ -46,6 +46,33 @@ describe "Poll question options", :admin do
 
       expect("First").to appear_before("Second")
     end
+
+    scenario "Create option that allows custom text" do
+      question = create(:poll_question, poll: future_poll)
+
+      visit admin_question_path(question)
+      click_link "Add answer"
+
+      checkbox = find_field("Allow custom text")
+      help_id = checkbox[:"aria-describedby"]
+      expect(help_id).to be_present
+      expect(page).to have_css(
+        "##{help_id}",
+        text: "Allows users to write their own answer when selecting this option"
+      )
+
+      expect(page).to have_field "Allow custom text", checked: false
+
+      fill_in "Answer", with: "Other (please specify)"
+      check "Allow custom text"
+
+      click_button "Save"
+
+      expect(page).to have_content "Answer created successfully"
+      within "tr", text: "Other (please specify)" do
+        expect(page).to have_css "td", exact_text: "Yes"
+      end
+    end
   end
 
   scenario "Update" do
