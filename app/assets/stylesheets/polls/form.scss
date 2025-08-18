@@ -23,6 +23,7 @@
 
     label {
       @include radio-or-checkbox-and-label-alignment;
+      flex-wrap: wrap;
       font-weight: normal;
 
       &:first-of-type::before {
@@ -30,6 +31,11 @@
         margin-top: calc($line-height / 2);
         white-space: pre;
       }
+    }
+
+    .open-text {
+      margin-left: $line-height * 0.8;
+      width: calc(100% - $line-height * 0.8);
     }
   }
 

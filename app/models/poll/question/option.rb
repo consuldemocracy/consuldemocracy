@@ -51,6 +51,10 @@ class Poll::Question::Option < ApplicationRecord
     description.present? || images.any? || documents.any? || videos.any?
   end
 
+  def allows_custom_text?
+    open_text?
+  end
+
   def possible_answers
     translations.pluck(:title)
   end

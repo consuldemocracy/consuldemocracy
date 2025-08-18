@@ -1,7 +1,7 @@
 <% if question.open? %>
   <div class="poll-question-open-ended">
     <%= fields_for "web_vote[#{question.id}]" do |f| %>
-      <%= f.text_area :answer, label: question.title, value: existing_answer, rows: 3 %>
+      <%= f.text_area :answer, label: question.title, value: existing_answer, rows: 3, maxlength: Poll::Answer.answer_max_length %>
     <% end %>
   </div>
 <% else %>

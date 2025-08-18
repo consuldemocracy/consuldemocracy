@@ -648,6 +648,7 @@ en:
     description:
       multiple: "You can select a maximum of %{maximum} answers."
     read_more_about: "Read more about:"
+    open_text_aria_label: "Specify answer for %{option}"
   proposal_notifications:
     new:
       title: "Send notification"
