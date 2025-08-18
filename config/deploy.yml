@@ -1,0 +1,45 @@
+service: consuldemocracy
+image: consuldemocracy-app
+
+registry:
+  username: your_personal_dockerhub_username  # REPLACE WITH YOUR ACTUAL USERNAME
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+# servers:
+  # web:
+  #   - vps2583611.fastwebserver.de
+
+servers:
+  - 127.0.0.1   
+  
+
+builder:
+  arch: amd64
+
+accessories:
+  db:
+    image: postgres:13.16
+    host: db
+    port: 5432
+    env:
+      clear:
+        POSTGRES_USER: postgres
+        POSTGRES_DB: "consul_production"
+      secret:
+        - POSTGRES_PASSWORD
+    directories:
+      - db_data:/var/lib/postgresql/data
+
+env:
+  secret:
+    - SECRET_KEY_BASE
+    - POSTGRES_PASSWORD
+  clear:
+    DB_HOST: db
+    PGUSER: postgres
+    PGPASSWORD: password
+
+hooks:
+  post-deploy:
+    - ./post-deploy

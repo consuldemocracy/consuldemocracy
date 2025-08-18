@@ -15,6 +15,7 @@ log/*
 !log/.keep
 tmp/
 
+
 # Files attached by users
 /public/system/
 /public/ckeditor_assets/
@@ -28,6 +29,12 @@ tmp/
 /public/tenants/*/machine_learning/data/
 /node_modules/
 
+# Dotenv files
+.env
+
+# Kamal
+.kamal/secrets
+
 # Bundler config, cache and gemsets
 .bundle/
 .ruby-gemset
@@ -39,3 +46,7 @@ tmp/
 # Test results
 /spec/examples.txt
 /coverage/
+
+/config/master.key
+
+.kamal/secrets
