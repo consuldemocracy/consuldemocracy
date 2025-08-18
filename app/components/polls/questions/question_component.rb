@@ -48,27 +48,23 @@ class Polls::Questions::QuestionComponent < ApplicationComponent
       )
     end
 
-    def multiple_choice_field(option)
-      choice_field(option) do
+    def choice_field(option)
+      label_tag("web_vote_option_#{option.id}") do
+        input_tag(option) + option.title
+      end
+    end
+
+    def input_tag(option)
+      if multiple_choice?
         check_box_tag "web_vote[#{question.id}][option_id][]",
                       option.id,
                       checked?(option),
                       id: "web_vote_option_#{option.id}"
-      end
-    end
-
-    def single_choice_field(option)
-      choice_field(option) do
+      else
         radio_button_tag "web_vote[#{question.id}][option_id]",
                          option.id,
                          checked?(option),
                          id: "web_vote_option_#{option.id}"
-      end
-    end
-
-    def choice_field(option, &block)
-      label_tag("web_vote_option_#{option.id}") do
-        block.call + option.title
       end
     end
 
