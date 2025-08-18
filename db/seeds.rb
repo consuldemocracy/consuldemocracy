@@ -57,7 +57,7 @@ end
 # --- Sustainable Development Goals ---
 section "SDG" do
   # Only load if not already loaded (safe to run multiple times)
-  unless Sdg::Goal.exists?
+  unless SDG::Goal.exists?
     load Rails.root.join("db", "sdg.rb")
   else
     log "SDG data already exists, skipping"
@@ -76,11 +76,13 @@ end
 
 # --- Example Community (if needed) ---
 section "Example Community" do
-  if defined?(Community) && Community.count == 0
+  # Some installs have a minimal communities table without name/description.
+  # Create only if compatible, otherwise skip safely.
+  if defined?(Community) && Community.count == 0 && Community.column_names.include?("name")
     Community.create!(name: "Welcome Community", description: "This is an example community.")
     log "Created example community."
   else
-    log "Communities already exist, skipping example creation"
+    log "Skipping community creation (incompatible schema or already present)."
   end
 end
 

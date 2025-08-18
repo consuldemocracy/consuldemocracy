@@ -13,4 +13,6 @@ echo "Database setup and migrations complete."
 
 # If you want demo/mock data, run after deploy:
 
-# kamal exec web bundle exec rails db:seed
+kamal exec web bundle exec rails db:seed
+
+echo "Database seeding complete."

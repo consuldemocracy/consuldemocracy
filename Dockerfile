@@ -42,30 +42,21 @@ RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz
     /tmp/node-build-master/bin/node-build `cat .node-version` /usr/local/node && \
     rm -rf /tmp/node-build-master
 
-<<<<<<< HEAD
-COPY .ruby-version ./
-COPY Gemfile* ./
-RUN bundle install
-=======
 # Install application gems
 COPY Gemfile* .ruby-version ./
 RUN bundle install && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git
->>>>>>> 4e0344f99cec7bf81b1447c5198470b3d4f86259
 
 # Install node modules
 COPY package*.json ./
 RUN npm install --production
 
-<<<<<<< HEAD
-=======
 # Copy application code
->>>>>>> 4e0344f99cec7bf81b1447c5198470b3d4f86259
 COPY . .
 COPY config/database.yml.example config/database.yml
 
 # Precompiling assets for production without requiring secret SECRET_KEY_BASE
-RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rake assets:precompile
+# RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rake assets:precompile
 
 
 RUN rm -rf node_modules
@@ -74,6 +65,9 @@ RUN rm -rf node_modules
 # Final stage for app image
 FROM base
 
+# Set bundle path for final stage
+ENV BUNDLE_PATH="/usr/local/bundle"
+
 # Copy built artifacts: gems, application
 COPY --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"
 COPY --from=build $RAILS_ROOT $RAILS_ROOT
@@ -81,6 +75,7 @@ COPY --from=build $RAILS_ROOT $RAILS_ROOT
 # Run and own only the runtime files as a non-root user for security
 RUN groupadd --system --gid 1000 consul && \
     useradd consul --uid 1000 --gid 1000 --create-home --shell /bin/bash && \
+    mkdir -p tmp && \
     chown -R consul:consul db log storage tmp
 USER 1000:1000
 
@@ -90,45 +85,6 @@ ENV RAILS_SERVE_STATIC_FILES=true
 # Entrypoint prepares the database.
 ENTRYPOINT ["/var/www/consul/bin/docker-entrypoint"]
 
-<<<<<<< HEAD
-# RUN bundle exec rails assets:precompile
-
-# ---- Final Stage ----
-FROM ruby:3.3.8-bookworm
-
-ENV DEBIAN_FRONTEND=noninteractive
-ENV RAILS_ENV=production NODE_ENV=production
-ENV PATH=/usr/local/node/bin:$PATH
-
-WORKDIR /app
-
-# Install runtime dependencies only (no build-essential, etc.)
-RUN apt-get update -qq && apt-get install -y \
-  imagemagick libappindicator1 libpq-dev libxss1 memcached pkg-config postgresql-client sudo unzip chromium chromium-driver
-
-# Create user, set up permissions, etc. (repeat as in your original Dockerfile)
-RUN adduser --shell /bin/bash --disabled-password --gecos "" consul \
- && adduser consul sudo \
- && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-
-RUN echo 'Defaults secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bundle/bin:/usr/local/node/bin"' > /etc/sudoers.d/secure_path
-RUN chmod 0440 /etc/sudoers.d/secure_path
-
-RUN mkdir -p /app/tmp/pids
-
-# Copy only what you need from the build stage
-COPY --from=build /usr/local/node /usr/local/node
-COPY --from=build /usr/local/bundle /usr/local/bundle
-COPY --from=build /app /app
-RUN mkdir -p /app/tmp/cache && chown -R consul:consul /app/tmp
-
-# Set permissions for master.key
-RUN chmod 600 /app/config/master.key && chown consul:consul /app/config/master.key
-
-ENTRYPOINT ["./docker-entrypoint.sh"]
-CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
-=======
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
 CMD ["./bin/rails", "server"]
->>>>>>> 4e0344f99cec7bf81b1447c5198470b3d4f86259

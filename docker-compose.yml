@@ -29,18 +29,24 @@ services:
     # expose the port we configured Unicorn to bind to
     ports:
       - "3000:3000"
-    # map our application source code, in full, to the application root of our container
+    # To avoid masking gems and node modules installed in the image, keep these mounts commented out.
+    # Uncomment only if you know you need them in your workflow.
     volumes:
-      - .:/var/www/consul
-      - bundle:/usr/local/bundle
-      - node_modules:/var/www/consul/node_modules
+      # Provide Rails master key to the container (read-only)
+      - ./config/master.key:/var/www/consul/config/master.key:ro
+      # Mount the full source tree (useful for live code edits in dev-only workflows)
+      # - .:/var/www/consul
+      # Persist Ruby gems on the host; WARNING: overrides image-bundled gems and can cause Bundler errors
+      # - bundle:/usr/local/bundle
+      # Persist node modules on the host; WARNING: overrides image-installed node modules
+      # - node_modules:/var/www/consul/node_modules
     environment:
       - DB_HOST=database # Same name as the database service
       - PGUSER=postgres
       - PGPASSWORD=${PGPASSWORD-$POSTGRES_PASSWORD}
       - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
-      - SECRET_KEY_BASE=$SECRET_KEY_BASE
+      - SECRET_KEY_BASE=${SECRET_KEY_BASE:-development_secret}
 volumes:
   db_data: {}
-  bundle: {}
-  node_modules: {}
+  # bundle: {}
+  # node_modules: {}

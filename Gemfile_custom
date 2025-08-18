@@ -26,6 +26,6 @@
 # Add your custom gem dependencies here
 
 # Temporarily exclude autoprefixer-rails from production to avoid JavaScript runtime issues
-group :development, :test do
-  gem "autoprefixer-rails", "~> 10.4.19"
-end
+# group :development, :test do
+#   gem "autoprefixer-rails", "~> 10.4.19"
+# end

@@ -6,9 +6,13 @@ registry:
   password:
     - KAMAL_REGISTRY_PASSWORD
 
+# servers:
+  # web:
+  #   - vps2583611.fastwebserver.de
+
 servers:
-  web:
-    - vps2583611.fastwebserver.de
+  - 127.0.0.1   
+  
 
 builder:
   arch: amd64
@@ -21,6 +25,7 @@ accessories:
     env:
       clear:
         POSTGRES_USER: postgres
+        POSTGRES_DB: "consul_production"
       secret:
         - POSTGRES_PASSWORD
     directories:
@@ -28,11 +33,7 @@ accessories:
 
 env:
   secret:
-<<<<<<< HEAD
-    - RAILS_MASTER_KEY
-=======
     - SECRET_KEY_BASE
->>>>>>> 4e0344f99cec7bf81b1447c5198470b3d4f86259
     - POSTGRES_PASSWORD
   clear:
     DB_HOST: db
@@ -41,9 +42,4 @@ env:
 
 hooks:
   post-deploy:
-    - docker exec $KAMAL_CONTAINER_NAME bundle exec rails db:migrate
-<<<<<<< HEAD
-    # Note: db:seed is safe to run multiple times (idempotent) but only run once per deployment
-=======
->>>>>>> 4e0344f99cec7bf81b1447c5198470b3d4f86259
-    - docker exec $KAMAL_CONTAINER_NAME bundle exec rails db:seed
+    - ./post-deploy

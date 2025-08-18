@@ -700,11 +700,7 @@ GEM
       net-sftp (>= 2.1.2)
       net-ssh (>= 2.8.0)
       ostruct
-<<<<<<< HEAD
-    stringio (3.1.7)
-=======
     stringio (3.1.1)
->>>>>>> 4e0344f99cec7bf81b1447c5198470b3d4f86259
     terminal-table (4.0.0)
       unicode-display_width (>= 1.1.1, < 4)
     terrapin (0.6.0)
