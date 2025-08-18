@@ -65,13 +65,13 @@ describe Poll::Question::Option do
     it "defaults to false" do
       option = create(:poll_question_option)
 
-      expect(option.open_text).to eq false
+      expect(option.open_text).to be false
     end
 
     it "can be enabled" do
       option = create(:poll_question_option, open_text: true)
 
-      expect(option.open_text).to eq true
+      expect(option.open_text).to be true
     end
   end
 end

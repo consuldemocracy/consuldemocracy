@@ -96,7 +96,11 @@ class Poll::Question < ApplicationRecord
     else
       answer.option = option
       answer.answer = option&.title
-      answer.text_answer = nil
+      if option&.open_text?
+        answer.text_answer = text_answer
+      else
+        answer.text_answer = nil
+      end
     end
 
     answer

@@ -54,7 +54,9 @@ class Polls::Questions::QuestionComponent < ApplicationComponent
 
     def choice_field(option)
       label_tag("web_vote_option_#{option.id}") do
-        input_tag(option) + option.title
+        html = input_tag(option) + option.title
+        html += open_text_tag(option) if option.open_text?
+        html
       end
     end
 
@@ -70,6 +72,24 @@ class Polls::Questions::QuestionComponent < ApplicationComponent
                          checked?(option),
                          id: "web_vote_option_#{option.id}"
       end
+    end
+
+    def open_text_tag(option)
+      text_field_tag(
+        "web_vote[#{question.id}][text_answer][#{option.id}]",
+        existing_text_for(option),
+        id: "web_vote_option_#{option.id}_text",
+        disabled: disabled?,
+        class: "open-text",
+        data: { selects: "web_vote_option_#{option.id}" }
+      )
+    end
+
+    def existing_text_for(option)
+      answer = question.answers.where(author: current_user, option: option).first
+      return answer.text_answer if answer&.text_answer?
+
+      ""
     end
 
     def checked?(option)
