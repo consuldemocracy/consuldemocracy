@@ -8,16 +8,10 @@
   <fieldset <%= fieldset_attributes %>>
     <legend><%= question.title %></legend>
 
-    <% if multiple_choice? %>
-      <%= multiple_choice_help_text %>
+    <%= multiple_choice_help_text if multiple_choice? %>
 
-      <% question.question_options.each do |option| %>
-        <%= multiple_choice_field(option) %>
-      <% end %>
-    <% else %>
-      <% question.question_options.each do |option| %>
-        <%= single_choice_field(option) %>
-      <% end %>
+    <% question.question_options.each do |option| %>
+      <%= choice_field(option) %>
     <% end %>
 
     <% if question.options_with_read_more? %>
