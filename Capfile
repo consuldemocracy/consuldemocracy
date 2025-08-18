@@ -1,8 +1,5 @@
 # Load DSL and set up stages
 require "capistrano/setup"
- 
-# Desactiva el hook por defecto de capistrano3-delayed-job  # CHANGE
-set :delayed_job_default_hooks, false                        # CHANGE
 
 # Include default deployment tasks
 require "capistrano/deploy"
@@ -11,7 +8,7 @@ require "capistrano/bundler"
 require "capistrano/rails/assets"
 require "capistrano/rails/migrations"
 #require "capistrano/passenger"
-require "capistrano/delayed_job" # seguirá cargando tareas, pero sin hook
+require "capistrano/delayed_job"
 require "whenever/capistrano"
 require "rvm1/capistrano3"
 
