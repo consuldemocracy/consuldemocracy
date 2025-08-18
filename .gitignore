@@ -48,3 +48,5 @@ tmp/
 /coverage/
 
 /config/master.key
+
+.kamal/secrets
