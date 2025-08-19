@@ -1,7 +1,7 @@
 class SensemakerService
   attr_reader :job
 
-  SENSEMAKING_FOLDER = Rails.root.join("vendor", "sensemaking-tools").freeze
+  SENSEMAKING_FOLDER = Rails.root.join(Tenant.current_secrets.sensemaker_folder).freeze
 
   def initialize(job)
     @job = job
@@ -9,8 +9,8 @@ class SensemakerService
 
   def run
     prepare_input_data
-    return unless check_dependencies
-    return unless execute_script
+    return unless check_dependencies?
+    return if execute_script.blank?
 
     process_output
     job.update!(finished_at: Time.current)
@@ -25,7 +25,7 @@ class SensemakerService
   end
 
   def key_file
-    "#{SENSEMAKING_FOLDER}/sensemaker-key.json" # TODO we'll get this from the config
+    Rails.root.join(Tenant.current_secrets.sensemaker_key_file)
   end
 
   def output_file
@@ -36,6 +36,17 @@ class SensemakerService
     "#{SENSEMAKING_FOLDER}/library/runner-cli/#{job.script}"
   end
 
+  def parse_key_file
+    key_file_content = File.read(key_file)
+    JSON.parse(key_file_content)
+  rescue JSON::ParserError
+    {}
+  end
+
+  def project_id
+    parse_key_file.fetch("project_id", "")
+  end
+
   private
 
     def prepare_input_data
@@ -44,7 +55,7 @@ class SensemakerService
       # No export logic needed at this stage
     end
 
-    def check_dependencies
+    def check_dependencies?
       # Check if Node.js and NPX are available
       unless system("which node > /dev/null 2>&1")
         error_message = "Node.js not found. Please install Node.js to use the Sensemaker feature."
@@ -82,6 +93,20 @@ class SensemakerService
         return false
       end
 
+      if parse_key_file.blank?
+        error_message = "Key file is invalid: #{key_file}"
+        job.update!(finished_at: Time.current, error: error_message)
+        Rails.logger.error(error_message)
+        return false
+      end
+
+      if project_id.blank?
+        error_message = "Key file is missing project_id: #{key_file}"
+        job.update!(finished_at: Time.current, error: error_message)
+        Rails.logger.error(error_message)
+        return false
+      end
+
       unless File.exist?(script_file)
         error_message = "Script file not found: #{script_file}"
         job.update!(finished_at: Time.current, error: error_message)
@@ -97,11 +122,11 @@ class SensemakerService
     end
 
     def execute_script
-      model_name = "gemini-2.5-flash-lite" # TODO we'll get this from the config
+      model_name = Tenant.current_secrets.sensemaker_model_name
       additional_context = job.additional_context.presence
-      # Construct the command with proper paths and parameters # TODO get vars from the config
+
       command = %Q(npx ts-node #{script_file} \
-                 --vertexProject "sensemaker-466109" \
+                 --vertexProject #{project_id} \
                  --outputFile #{output_file} \
                  --inputFile #{input_file} \
                  --modelName #{model_name} \
@@ -113,12 +138,12 @@ class SensemakerService
       result = process_exit_status
 
       if result.eql?(0)
-        true
+        output
       else
         # Error
         job.update!(finished_at: Time.current, error: output)
         Rails.logger.error("SensemakerService error: #{output}")
-        false
+        nil
       end
     end
 
@@ -128,15 +153,15 @@ class SensemakerService
         # parse the output and potentially store results in the database OR just check it was ok
 
         # For now, just update the SensemakerInfo record
-        SensemakerInfo.find_or_create_by!(kind: "categorization",
-                                          commentable_type: job.commentable_type,
-                                          commentable_id: job.commentable_id)
-                      .update!(generated_at: job.started_at, script: job.script)
+        sensemaker_info = SensemakerInfo.find_or_create_by!(kind: "categorization",
+                                                            commentable_type: job.commentable_type,
+                                                            commentable_id: job.commentable_id)
+        sensemaker_info.update!(generated_at: job.started_at, script: job.script)
 
-        true
+        sensemaker_info
       else
         job.update!(finished_at: Time.current, error: "Output file not found")
-        false
+        nil
       end
     end
 

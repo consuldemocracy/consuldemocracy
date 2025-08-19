@@ -11,7 +11,7 @@ class CreateSensemakerInfos < ActiveRecord::Migration[7.1]
     end
 
     add_index :sensemaker_infos, [:commentable_type, :commentable_id]
-    add_index :sensemaker_infos, [:kind, :commentable_type, :commentable_id], unique: true,
-                                                                              name: "index_sensemaker_infos_on_kind_and_commentable"
+    add_index :sensemaker_infos, [:kind, :commentable_type, :commentable_id],
+              unique: true, name: "index_sensemaker_infos_on_kind_and_commentable"
   end
 end
