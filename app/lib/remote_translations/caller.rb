@@ -1,6 +1,27 @@
 class RemoteTranslations::Caller
   attr_reader :remote_translation
 
+  def self.available_locales
+    translation_provider::AvailableLocales.locales
+  end
+
+  def self.llm?
+    [Setting["llm.provider"], Setting["llm.model"],
+     Setting["llm.use_llm_for_translations"]].all?(&:present?)
+  end
+
+  def self.microsoft?
+    Tenant.current_secrets.microsoft_api_key.present? && Setting["feature.remote_translations"].present?
+  end
+
+  def self.translation_provider
+    if llm?
+      RemoteTranslations::Llm
+    elsif microsoft?
+      RemoteTranslations::Microsoft
+    end
+  end
+
   def initialize(remote_translation)
     @remote_translation = remote_translation
   end
@@ -24,7 +45,7 @@ class RemoteTranslations::Caller
     def destroy_remote_translation
       if resource.valid?
         remote_translation.destroy
-        resource.save!
+        resource.save
       else
         remote_translation.update(error_message: resource.errors.messages)
       end
@@ -35,7 +56,7 @@ class RemoteTranslations::Caller
     end
 
     def translations
-      @translations ||= RemoteTranslations::Microsoft::Client.new.call(fields_values, locale)
+      @translations ||= self.class.translation_provider::Client.new.call(fields_values, locale)
     end
 
     def fields_values

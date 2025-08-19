@@ -12,10 +12,8 @@ class Admin::Settings::LlmConfigurationTabComponent < ApplicationComponent
   end
 
   def providers
-    RubyLLM::Providers.constants.each_with_object({}) do |provider, hash|
-      hash[provider] = {
-        enabled: RubyLLM::Providers.const_get(provider).configured?
-      }
+    ::RemoteTranslations::Llm::Config.providers.transform_values do |props|
+      { id: props[:id], enabled: props[:enabled] }
     end
   end
 
@@ -25,6 +23,7 @@ class Admin::Settings::LlmConfigurationTabComponent < ApplicationComponent
 
     RubyLLM.models.by_provider(provider.downcase.to_sym).each_with_object({}) do |model, hash|
       hash[model.name] = {
+        id: model.id,
         enabled: true
       }
     end

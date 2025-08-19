@@ -3,6 +3,7 @@ require "rails_helper"
 describe RemoteTranslations::Caller, :remote_translations do
   before do
     RemoteTranslation.skip_callback(:create, :after, :enqueue_remote_translation)
+    allow(RemoteTranslations::Caller).to receive(:microsoft?).and_return(true)
   end
 
   after do

@@ -3,12 +3,11 @@
   <%= hidden_field_tag :tab, tab if tab %>
 
   <%= f.select :value,
-               options.keys,
+               options_for_select(options.map { |k, v| [k, v[:id].presence || k] }, selected: setting.value, disabled: options.reject { |k, v| v[:enabled] }.keys),
                {
                  label: "&nbsp;",
                  include_blank: blank_option,
-                 hint: hint,
-                 disabled: options.reject { |k, v| v[:enabled] }.keys
+                 hint: hint
                },
                {
                  class: "dropdown-settings-form",
