@@ -18,10 +18,10 @@ describe SensemakerService do
 
     before do
       allow(service).to receive(:prepare_input_data)
-      allow(service).to receive(:check_dependencies).and_return(true)
       allow(File).to receive(:exist?).and_return(true)
       allow(service).to receive(:system).with("which node > /dev/null 2>&1").and_return(true)
       allow(service).to receive(:system).with("which npx > /dev/null 2>&1").and_return(true)
+      allow(service).to receive_messages(check_dependencies?: true, project_id: "sensemaker-466109")
     end
 
     it "runs the script and processes the output" do
@@ -34,8 +34,8 @@ describe SensemakerService do
       expect(job.finished_at).to be_present
     end
 
-    it "stops if check_dependencies returns false" do
-      allow(service).to receive(:check_dependencies).and_return(false)
+    it "stops if check_dependencies? returns false" do
+      allow(service).to receive(:check_dependencies?).and_return(false)
       expect(service).not_to receive(:execute_script)
 
       service.run
@@ -59,24 +59,25 @@ describe SensemakerService do
     end
   end
 
-  describe "#check_dependencies" do
+  describe "#check_dependencies?" do
     let(:service) { SensemakerService.new(job) }
 
     before do
       allow(service).to receive(:system).with("which node > /dev/null 2>&1").and_return(true)
       allow(service).to receive(:system).with("which npx > /dev/null 2>&1").and_return(true)
       allow(File).to receive(:exist?).and_return(true)
+      allow(File).to receive(:read).with(service.key_file).and_return('{"project_id": "sensemaker-466109"}')
     end
 
     it "returns true when all dependencies are available" do
-      result = service.send(:check_dependencies)
+      result = service.send(:check_dependencies?)
       expect(result).to be true
     end
 
     it "returns false when Node.js is not available" do
       allow(service).to receive(:system).with("which node > /dev/null 2>&1").and_return(false)
 
-      result = service.send(:check_dependencies)
+      result = service.send(:check_dependencies?)
 
       expect(result).to be false
       job.reload
@@ -87,7 +88,7 @@ describe SensemakerService do
     it "returns false when NPX is not available" do
       allow(service).to receive(:system).with("which npx > /dev/null 2>&1").and_return(false)
 
-      result = service.send(:check_dependencies)
+      result = service.send(:check_dependencies?)
 
       expect(result).to be false
       job.reload
@@ -98,7 +99,7 @@ describe SensemakerService do
     it "returns false when the sensemaking folder does not exist" do
       allow(File).to receive(:exist?).with(SensemakerService::SENSEMAKING_FOLDER).and_return(false)
 
-      result = service.send(:check_dependencies)
+      result = service.send(:check_dependencies?)
 
       expect(result).to be false
       job.reload
@@ -110,7 +111,7 @@ describe SensemakerService do
       allow(File).to receive(:exist?).with(SensemakerService::SENSEMAKING_FOLDER).and_return(true)
       allow(File).to receive(:exist?).with(service.input_file).and_return(false)
 
-      result = service.send(:check_dependencies)
+      result = service.send(:check_dependencies?)
 
       expect(result).to be false
       job.reload
@@ -123,12 +124,40 @@ describe SensemakerService do
       allow(File).to receive(:exist?).with(service.input_file).and_return(true)
       allow(File).to receive(:exist?).with(service.key_file).and_return(false)
 
-      result = service.send(:check_dependencies)
+      result = service.send(:check_dependencies?)
 
       expect(result).to be false
       job.reload
       expect(job.finished_at).to be_present
       expect(job.error).to include("Key file not found")
+    end
+
+    it "returns false when the key file is invalid JSON" do
+      allow(File).to receive(:exist?).with(SensemakerService::SENSEMAKING_FOLDER).and_return(true)
+      allow(File).to receive(:exist?).with(service.input_file).and_return(true)
+      allow(File).to receive(:exist?).with(service.key_file).and_return(true)
+      allow(File).to receive(:read).with(service.key_file).and_return("invalid json")
+
+      result = service.send(:check_dependencies?)
+
+      expect(result).to be false
+      job.reload
+      expect(job.finished_at).to be_present
+      expect(job.error).to include("Key file is invalid")
+    end
+
+    it "returns false when the key file is missing project_id" do
+      allow(File).to receive(:exist?).with(SensemakerService::SENSEMAKING_FOLDER).and_return(true)
+      allow(File).to receive(:exist?).with(service.input_file).and_return(true)
+      allow(File).to receive(:exist?).with(service.key_file).and_return(true)
+      allow(File).to receive(:read).with(service.key_file).and_return('{"type": "service_account"}')
+
+      result = service.send(:check_dependencies?)
+
+      expect(result).to be false
+      job.reload
+      expect(job.finished_at).to be_present
+      expect(job.error).to include("Key file is missing project_id")
     end
 
     it "returns false when the script file does not exist" do
@@ -137,7 +166,7 @@ describe SensemakerService do
       allow(File).to receive(:exist?).with(service.key_file).and_return(true)
       allow(File).to receive(:exist?).with(service.script_file).and_return(false)
 
-      result = service.send(:check_dependencies)
+      result = service.send(:check_dependencies?)
 
       expect(result).to be false
       job.reload
@@ -151,9 +180,10 @@ describe SensemakerService do
 
     before do
       allow(File).to receive(:exist?).and_return(true)
+      allow(service).to receive(:project_id).and_return("sensemaker-466109")
     end
 
-    it "returns true when the script executes successfully" do
+    it "returns value when the script executes successfully" do
       # Mock the backtick method to simulate successful execution
       expected_command = %r{cd .* && npx ts-node .*categorization_runner\.ts}
       expect(service).to receive(:`).with(expected_command).and_return("Success output")
@@ -162,10 +192,10 @@ describe SensemakerService do
 
       result = service.send(:execute_script)
 
-      expect(result).to be true
+      expect(result).to be_present
     end
 
-    it "returns false and updates the job when the script fails" do
+    it "returns nil and updates the job when the script fails" do
       # Mock the backtick method to simulate failed execution
       expected_command = %r{cd .* && npx ts-node .*categorization_runner\.ts}
       expect(service).to receive(:`).with(expected_command).and_return("Error output")
@@ -174,7 +204,7 @@ describe SensemakerService do
 
       result = service.send(:execute_script)
 
-      expect(result).to be false
+      expect(result).to be nil
 
       job.reload
       expect(job.finished_at).to be_present
@@ -196,7 +226,7 @@ describe SensemakerService do
 
       result = service.send(:process_output)
 
-      expect(result).to be true
+      expect(result).to be_present
 
       # Check that a SensemakerInfo record was created
       info = SensemakerInfo.find_by(
@@ -209,13 +239,13 @@ describe SensemakerService do
       expect(info.generated_at).to eq(job.started_at)
     end
 
-    it "returns false and updates the job when the output file does not exist" do
+    it "returns nil and updates the job when the output file does not exist" do
       # Mock the File.exist? method to return false for the output file
       allow(File).to receive(:exist?).with(service.output_file).and_return(false)
 
       result = service.send(:process_output)
 
-      expect(result).to be false
+      expect(result).to be nil
 
       # Check that the job is updated with the error
       job.reload
