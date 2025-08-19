@@ -64,20 +64,8 @@
 	  
     </div>
   </div>
-
-  <div id="navigation_bar" class="subnavigation expanded">
-    <div class="row padding_top_bottom">
-      <div class="hide-for-small-only">
-        <%= render "shared/subnavigation" %>
-      </div>
-      <div class="small-12 medium-3 column">
-        <%= yield :header_addon %>
-      </div>
-    </div>
-  </div>
-
   
-  <div class="top-bar">
+    <div class="top-bar">
     <div id="responsive-menu" class="moverDerecha">
         <div class="top-bar-right">
           <ul class="menu menuTitleHeader2" data-responsive-menu="medium-dropdown">
@@ -96,6 +84,20 @@
           </div>
         </div>
       </div>
-</div>
+	</div>
+
+  <div id="navigation_bar" class="subnavigation expanded">
+    <div class="row padding_top_bottom">
+      <div class="hide-for-small-only">
+        <%= render "shared/subnavigation" %>
+      </div>
+      <div class="small-12 medium-3 column">
+        <%= yield :header_addon %>
+      </div>
+    </div>
+  </div>
+
+  
+
   
 </header>

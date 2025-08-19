@@ -1,5 +1,5 @@
 <footer>
-  <div class="row">
+  <div class="row textoCentrado">
     <div class="small-12 large-3 column">
       <div class="logo logoMargen">
         <%= image_tag("logo_valladolid.png", size: "124x41", alt:"Ayuntamiento de Valladolid")  %><br>
@@ -17,72 +17,76 @@
 	  </div>
     </div>
 
-    <div class="footer-sections small-12 large-9 column">
-      <div class="small-12 medium-8 column footerBarraIzq">
-		<div class="titleValladolid">
-			<%= t("layouts.footer.valladolid") %>
-	    </div>
-		
-        <%= link_to t("layouts.footer.participation_title"), setting['participation_url'].presence || t("layouts.footer.participation_url"), class: "titleElemColumna" %>
-        <p><%= t("layouts.footer.participation_text") %></p>
-      
-	  
-        <%= link_to t("layouts.footer.transparency_title"), setting['transparency_url'].presence || t("layouts.footer.transparency_url"), class: "titleElemColumna", rel: "nofollow" %>
-        <p><%= t("layouts.footer.transparency_text") %></p>
-      
-	  
-        <%= link_to t("layouts.footer.open_data_title"), setting['opendata_url'].presence || t("layouts.footer.open_data_url"), class: "titleElemColumna", rel: "nofollow" %>
-        <p><%= t("layouts.footer.open_data_text") %></p>
-		
-		<%= link_to t("layouts.footer.otras_webs"), t("layouts.footer.otras_webs_url"), target: "_blank", class: "otrasWebs" %>
+    
+  <div class="small-12 large-6 column footerBarraIzq">
+	<div class="titleValladolid titleValladolidCentrado">
+		<%= t("layouts.footer.valladolid") %>
+	</div>
+	
+	<%= link_to t("layouts.footer.participation_title"), setting['participation_url'].presence || t("layouts.footer.participation_url"), class: "titleElemColumna" %>
+	<p><%= t("layouts.footer.participation_text") %></p>
+  
+  
+	<%= link_to t("layouts.footer.transparency_title"), setting['transparency_url'].presence || t("layouts.footer.transparency_url"), class: "titleElemColumna", rel: "nofollow" %>
+	<p><%= t("layouts.footer.transparency_text") %></p>
+  
+  
+	<%= link_to t("layouts.footer.open_data_title"), setting['opendata_url'].presence || t("layouts.footer.open_data_url"), class: "titleElemColumna", rel: "nofollow" %>
+	<p><%= t("layouts.footer.open_data_text") %></p>
+	
+	<%= link_to t("layouts.footer.otras_webs"), t("layouts.footer.otras_webs_url"), target: "_blank", class: "otrasWebs" %>
 
-      </div>
-	  
-	  <div class="small-12 medium-4 column footerBarraIzq ">
-		<div class="text-right">
-		<ul>
-		   <% if setting["youtube_handle"] %>
-            <li class="inline-block">
-              <%= link_to "https://www.youtube.com/#{setting["youtube_handle"]}", target: "_blank",
-                          title: t("shared.go_to_page") + t("social.youtube", org: setting["org_name"]) + t("shared.target_blank") do %>
-                          <span class="show-for-sr"><%= t("social.youtube", org: setting["org_name"]) %></span>
-                          <span class="icon-youtube fa_youtube" aria-hidden="true"></span>
-              <% end %>
-            </li>
-          <% end %>
-		  
-          <% if setting["twitter_handle"] %>
-					<li class="inline-block padding_top_15">
-					  <%= link_to "https://twitter.com/#{setting["twitter_handle"]}", target: "_blank",
-								   title: t("shared.go_to_page") + t("social.twitter", org: setting["org_name"]) + t("shared.target_blank") do %>
-									  <span class="show-for-sr"><%= t("social.twitter", org: setting["org_name"]) %></span>									  
-									  <%= image_tag(image_path_for("twitter_x_negro.png"), class: "custom-logo-twitter_negro", alt: t("social.twitter")) %>
-					  <% end %>
-					</li>
+  </div>
+  
+  <div class="small-12 large-3 column footerBarraIzq ">
+	<div class="text-right">
+	<ul>
+	   <% if setting["youtube_handle"] %>
+		<li class="inline-block">
+		  <%= link_to "https://www.youtube.com/#{setting["youtube_handle"]}", target: "_blank",
+					  title: t("shared.go_to_page") + t("social.youtube", org: setting["org_name"]) + t("shared.target_blank") do %>
+					  <span class="show-for-sr"><%= t("social.youtube", org: setting["org_name"]) %></span>
+					  <span class="icon-youtube fa_youtube" aria-hidden="true"></span>
 		  <% end %>
-		  
-          <% if setting["facebook_handle"] %>
-            <li class="inline-block">
-              <%= link_to "https://www.facebook.com/#{setting["facebook_handle"]}/", target: "_blank",
-                          title: t("shared.go_to_page") + t("social.facebook", org: setting["org_name"]) + t("shared.target_blank") do %>
-                          <span class="show-for-sr"><%= t("social.facebook", org: setting["org_name"]) %></span>
-                          <%= image_tag(image_path_for("facebook_fondo.png"), class: "custom-logo-facebook", alt: t("social.twitter")) %>
-              <% end %>
-            </li>
-          <% end %>
-         
-          
-          <%= raw content_block("footer", I18n.locale) %>
-        </ul>
+		</li>
+	  <% end %>
+	  
+	  <% if setting["twitter_handle"] %>
+				<li class="inline-block padding_top_15">
+				  <%= link_to "https://twitter.com/#{setting["twitter_handle"]}", target: "_blank",
+							   title: t("shared.go_to_page") + t("social.twitter", org: setting["org_name"]) + t("shared.target_blank") do %>
+								  <span class="show-for-sr"><%= t("social.twitter", org: setting["org_name"]) %></span>									  
+								  <%= image_tag(image_path_for("twitter_x_negro.png"), class: "custom-logo-twitter_negro", alt: t("social.twitter")) %>
+				  <% end %>
+				</li>
+	  <% end %>
+	  
+	  <% if setting["facebook_handle"] %>
+		<li class="inline-block">
+		  <%= link_to "https://www.facebook.com/#{setting["facebook_handle"]}/", target: "_blank",
+					  title: t("shared.go_to_page") + t("social.facebook", org: setting["org_name"]) + t("shared.target_blank") do %>
+					  <span class="show-for-sr"><%= t("social.facebook", org: setting["org_name"]) %></span>
+					  <%= image_tag(image_path_for("facebook_fondo.png"), class: "custom-logo-facebook", alt: t("social.twitter")) %>
+		  <% end %>
+		</li>
+	  <% end %>
+	 
+	  
+	  <%= raw content_block("footer", I18n.locale) %>
+	</ul>
+	</div>
+	
+	<div class="accesibilidad_condiciones_politica">
+		<div class="accesibilidad_condiciones_politica_content">
+			<%= link_to t("layouts.footer.accessibility"), page_path("accessibility") %><br>
+			<%= link_to t("layouts.footer.conditions"), page_path("conditions") %><br>
+			<%= link_to t("layouts.footer.privacy"), page_path("privacy") %><br>
 		</div>
-		<br><br><br><br><br><br><br>
-		<div class="accesibilidad_condiciones_politica">
-        <%= link_to t("layouts.footer.accessibility"), page_path("accessibility") %><br>
-        <%= link_to t("layouts.footer.conditions"), page_path("conditions") %><br>
-        <%= link_to t("layouts.footer.privacy"), page_path("privacy") %><br>
-        </div>
-      </div>
-    </div>
+	</div>
+
+	
+  </div>
+  
   </div>
 
 </footer>

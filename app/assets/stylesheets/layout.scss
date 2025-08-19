@@ -922,12 +922,26 @@ footer {
 
 .titleValladolid {
   margin-bottom: 18px;
+  /*margin-top: 18px;*/
   color: #1E1E1E;
   font-family: "Open Sans",sans-serif;
   font-weight:400;
   font-size: 20px;
   letter-spacing: -.13px;
   line-height: 18px;
+}
+
+@media screen and (max-width: 64em){
+	.titleValladolidCentrado{
+	  margin-bottom: 18px;
+	  margin-top: 18px;
+	  color: #1E1E1E;
+	  font-family: "Open Sans",sans-serif;
+	  font-weight:400;
+	  font-size: 20px;
+	  letter-spacing: -.13px;
+	  line-height: 18px;
+	}
 }
 
 .titleElemColumna {
@@ -949,6 +963,14 @@ footer {
   letter-spacing: .64px;
   /*line-height: 16px;*/
   text-transform: uppercase;
+  min-height: 200px;
+  position: relative;
+}
+
+.accesibilidad_condiciones_politica_content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 .otrasWebs {
@@ -961,6 +983,29 @@ footer {
   line-height: 18px;
   float: right;
 }
+
+
+@media screen and (max-width: 64em){
+	.accesibilidad_condiciones_politica_content {
+		position: relative;
+		bottom: 0;
+		left: 0;
+	}
+	
+	.otrasWebs {
+	  text-decoration: none;
+	  color: #5068c0;
+	  font-family: "Open Sans",sans-serif;
+	  font-weight:400;
+	  font-size: 14px;
+	  letter-spacing: -.1px;
+	  line-height: 18px;
+	  float: none;
+	}
+
+}
+
+
 
 .fa_facebook {
   color: #3f51b5;
