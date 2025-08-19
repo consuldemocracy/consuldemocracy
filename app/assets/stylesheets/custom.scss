@@ -508,19 +508,19 @@ header {
   }
 
   &.is-dropdown-submenu-parent > a::after {
-    border-color: #000 transparent transparent;
+    border-color: #fff transparent transparent;
   }
 }
 
 @media screen and (max-width: 39.999em) {
   .top-bar span {
-    color: #000;
+    /*color: #fff;*/
   }
 
   .top-bar .menu-icon::after {
-    background: #000;
+    /*background: #000;*/
     box-shadow: 0 7px 0 #000, 0 14px 0 #000;
-    -webkit-box-shadow: 0 7px 0 #000, 0 14px 0 #000;
+    -webkit-box-shadow: 0 7px 0 #fff, 0 14px 0 #fff;
   }
 }
 
@@ -589,6 +589,15 @@ header {
 // Color de los títulos de las tarjetas
 .figure-card h3 {
   color: #FFFFFF;
+}
+
+@media screen and (max-width: 64em){
+	.textoCentrado{
+		text-align: center;
+	}
+	.text-right{
+		text-align: center;
+	}
 }
 
 // 05. custom pages
