@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_03_13_014205) do
+ActiveRecord::Schema[7.1].define(version: 2025_08_19_115526) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -1436,6 +1436,34 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_13_014205) do
     t.index ["goal_id"], name: "index_sdg_targets_on_goal_id"
   end
 
+  create_table "sensemaker_infos", force: :cascade do |t|
+    t.string "kind"
+    t.datetime "generated_at"
+    t.string "script"
+    t.string "commentable_type", null: false
+    t.integer "commentable_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["commentable_type", "commentable_id"], name: "index_sensemaker_infos_on_commentable_type_and_commentable_id"
+    t.index ["kind", "commentable_type", "commentable_id"], name: "index_sensemaker_infos_on_kind_and_commentable", unique: true
+  end
+
+  create_table "sensemaker_jobs", force: :cascade do |t|
+    t.datetime "started_at"
+    t.datetime "finished_at"
+    t.string "script"
+    t.integer "pid"
+    t.text "error"
+    t.bigint "user_id", null: false
+    t.string "commentable_type", null: false
+    t.integer "commentable_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "additional_context"
+    t.index ["commentable_type", "commentable_id"], name: "index_sensemaker_jobs_on_commentable_type_and_commentable_id"
+    t.index ["user_id"], name: "index_sensemaker_jobs_on_user_id"
+  end
+
   create_table "settings", id: :serial, force: :cascade do |t|
     t.string "key"
     t.string "value"
@@ -1813,6 +1841,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_13_014205) do
   add_foreign_key "related_content_scores", "related_contents"
   add_foreign_key "related_content_scores", "users"
   add_foreign_key "sdg_managers", "users"
+  add_foreign_key "sensemaker_jobs", "users"
   add_foreign_key "users", "geozones"
   add_foreign_key "valuators", "users"
 end
