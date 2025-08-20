@@ -16,7 +16,9 @@
     </div>
 
     <div>
-      <%= render Polls::Results::QuestionComponent.with_collection(poll.questions) %>
+      <% poll.questions.each do |question| %>
+        <%= render Polls::Results::QuestionComponent.new(question) %>
+      <% end %>
     </div>
   </div>
 </div>
