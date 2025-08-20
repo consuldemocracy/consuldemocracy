@@ -282,6 +282,10 @@ en:
       sign_in: Sign in with SAML
       sign_up: Sign up with SAML
       name: SAML
+    oidc:
+      sign_in: Sign in with OIDC
+      sign_up: Sign up with OIDC
+      name: OIDC
     or_fill: "Or fill the following form:"
   proposals:
     create:
