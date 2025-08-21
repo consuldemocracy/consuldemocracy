@@ -1425,6 +1425,7 @@
 
       &.win {
         background: #009fde;
+        border: 1px solid $border;
       }
     }
 
@@ -1432,6 +1433,7 @@
 
       &.win {
         background: #ccedf8;
+        border: 1px solid $border;
         font-weight: bold;
       }
     }

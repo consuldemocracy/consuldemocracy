@@ -45,8 +45,9 @@ class Poll::Question < ApplicationRecord
     question_options.reduce(0) { |total, question_option| total + question_option.total_votes }
   end
 
-  def most_voted_option_id
-    question_options.max_by(&:total_votes)&.id
+  def most_voted_option_ids
+    max_votes = question_options.map(&:total_votes).max
+    question_options.select { |option| option.total_votes == max_votes }.map(&:id)
   end
 
   def options_with_read_more?
