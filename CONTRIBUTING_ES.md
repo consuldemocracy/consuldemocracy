@@ -26,7 +26,7 @@ Cuando quieras resolver una incidencia mediante código:
 * Avisa de que vas a trabajar en esta incidencia añadiendo un comentario.
 * Envía una *pull request* al repositorio principal indicando qué incidencia estás resolviendo y siguiendo nuestras [convenciones de código](#convenciones-de-código)
 
-**¿Es tu primer Pull Request?** Puedes aprender en este curso gratuito (en inglés) sobre [cómo contribuir a un proyecto OpenSource en GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
+**¿Es tu primer Pull Request?** Puedes aprender en este curso gratuito (en inglés) sobre [cómo contribuir a un proyecto OpenSource en GitHub](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)
 
 ## Convenciones de código
 

@@ -26,7 +26,7 @@ If you want to contribute code to solve an issue:
 * Add a comment to tell everyone you are working on the issue.
 * Open a *pull request* to the main repository describing what issue you are addressing and following our [coding conventions](#coding-conventions)
 
-**Working on your first Pull Request?** You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
+**Working on your first Pull Request?** You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)
 
 ## Coding conventions
 

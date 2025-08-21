@@ -25,11 +25,12 @@ We suggest to follow these steps to keep a good track of the changes you're abou
 - Create a feature branch based on the `master` branch. To make it easier to identify, you can name it with the issue number followed by a concise and descriptive name (e.g. `123-fix_proposals_link`).
 - Check our [coding conventions](coding_conventions.md) to help you decide how to write your code.
 - Work in your branch committing there your changes.
+- If possible, we prefer small PRs.
 - Make sure all tests are passing. In case you're extending or creating a new feature, consider adding its own specs.
 - Once you've finished, send a **pull request** to the [Consul Democracy repository](https://github.com/consuldemocracy/consuldemocracy/) describing your solution to help us understand it. It's also important to tell what issue you're addressing, so specify it in the pull request description's first line (e.g. `Fixes #123`).
 - Our core team will review your PR and suggest changes if necessary. If everything looks good, your changes will be merged :)
 
-> **Working on your first Pull Request?** You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github).
+> **Working on your first Pull Request?** You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github).
 
 ## Other ways of contributing
 
