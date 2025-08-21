@@ -1347,6 +1347,8 @@ es:
           title: Consentimiento de cookies
         cookies_consent_banner:
           title: Banner de consentimiento de cookies
+        llm:
+          title: Configuración LLM
       remote_census_general_name: Datos Generales
       remote_census_request_name: Datos Petición
       remote_census_response_name: Datos Respuesta
