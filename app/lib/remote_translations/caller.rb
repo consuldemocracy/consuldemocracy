@@ -2,7 +2,7 @@ class RemoteTranslations::Caller
   attr_reader :remote_translation
 
   def self.available_locales
-    translation_provider::AvailableLocales.locales
+    translation_provider ? translation_provider::AvailableLocales.locales : []
   end
 
   def self.llm?
