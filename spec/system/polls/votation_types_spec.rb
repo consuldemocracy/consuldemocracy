@@ -9,7 +9,7 @@ describe "Poll Votation Type" do
   end
 
   scenario "Unique, multiple and open answers" do
-    create(:poll_question_unique, :yes_no, poll: poll, title: "Is it that bad?")
+    create(:poll_question, :yes_no, poll: poll, title: "Is it that bad?")
     create(:poll_question_multiple, :abcde, poll: poll, max_votes: 3, title: "Which ones do you prefer?")
     create(:poll_question_open, poll: poll, title: "What do you think?")
 

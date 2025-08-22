@@ -60,6 +60,7 @@ FactoryBot.define do
 
     trait :yes_no do
       after(:create) do |question|
+        create(:votation_type_unique, questionable: question)
         create(:poll_question_option, question: question, title: "Yes")
         create(:poll_question_option, question: question, title: "No")
       end

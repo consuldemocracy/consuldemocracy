@@ -58,4 +58,20 @@ describe VotationType do
                           "because you've already defined possible valid answers for this question"
     end
   end
+
+  describe "scopes" do
+    describe ".accepts_options" do
+      it "includes unique and multiple, excludes open_ended" do
+        question_unique = create(:poll_question_unique)
+        question_multiple = create(:poll_question_multiple)
+        question_open_ended = create(:poll_question_open)
+
+        accepts_options = VotationType.accepts_options
+
+        expect(accepts_options).to match_array [question_unique.votation_type,
+                                                question_multiple.votation_type]
+        expect(accepts_options).not_to include question_open_ended.votation_type
+      end
+    end
+  end
 end

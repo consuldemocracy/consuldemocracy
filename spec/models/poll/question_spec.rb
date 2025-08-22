@@ -189,6 +189,21 @@ RSpec.describe Poll::Question do
     end
   end
 
+  describe "scopes" do
+    describe ".for_physical_votes" do
+      it "returns unique and multiple, but not open_ended" do
+        question_unique = create(:poll_question_unique)
+        question_multiple = create(:poll_question_multiple)
+        question_open_ended = create(:poll_question_open)
+
+        result = Poll::Question.for_physical_votes
+
+        expect(result).to match_array [question_unique, question_multiple]
+        expect(result).not_to include question_open_ended
+      end
+    end
+  end
+
   context "open-ended results" do
     let(:poll) { create(:poll) }
     let!(:question_open) { create(:poll_question_open, poll: poll) }

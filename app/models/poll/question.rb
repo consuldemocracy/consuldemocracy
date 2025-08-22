@@ -31,6 +31,7 @@ class Poll::Question < ApplicationRecord
 
   scope :sort_for_list, -> { order(Arel.sql("poll_questions.proposal_id IS NULL"), :created_at) }
   scope :for_render,    -> { includes(:author, :proposal) }
+  scope :for_physical_votes, -> { left_joins(:votation_type).merge(VotationType.accepts_options) }
 
   def copy_attributes_from_proposal(proposal)
     if proposal.present?
