@@ -87,6 +87,26 @@ class Poll::Question < ApplicationRecord
     answer
   end
 
+  def open_ended_valid_answers_count
+    answers.count
+  end
+
+  def open_ended_blank_answers_count
+    poll.voters.count - open_ended_valid_answers_count
+  end
+
+  def open_ended_valid_percentage
+    return 0.0 if open_ended_total_answers.zero?
+
+    (open_ended_valid_answers_count * 100.0) / open_ended_total_answers
+  end
+
+  def open_ended_blank_percentage
+    return 0.0 if open_ended_total_answers.zero?
+
+    (open_ended_blank_answers_count * 100.0) / open_ended_total_answers
+  end
+
   private
 
     def find_by_attributes(user, option_id)
@@ -95,5 +115,9 @@ class Poll::Question < ApplicationRecord
       else
         { author: user }
       end
+    end
+
+    def open_ended_total_answers
+      open_ended_valid_answers_count + open_ended_blank_answers_count
     end
 end

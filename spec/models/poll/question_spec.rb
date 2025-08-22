@@ -188,4 +188,87 @@ RSpec.describe Poll::Question do
       end
     end
   end
+
+  context "open-ended results" do
+    let(:poll) { create(:poll) }
+    let!(:question_open) { create(:poll_question_open, poll: poll) }
+
+    it "includes voters who didn't answer any questions in blank answers count" do
+      create(:poll_voter, poll: poll)
+
+      expect(question_open.open_ended_blank_answers_count).to eq 1
+      expect(question_open.open_ended_valid_answers_count).to eq 0
+    end
+
+    describe "#open_ended_valid_answers_count" do
+      it "returns 0 when there are no answers" do
+        expect(question_open.open_ended_valid_answers_count).to eq 0
+      end
+
+      it "counts answers" do
+        create(:poll_answer, question: question_open, answer: "Hello")
+        create(:poll_answer, question: question_open, answer: "Bye")
+
+        expect(question_open.open_ended_valid_answers_count).to eq 2
+      end
+    end
+
+    describe "#open_ended_blank_answers_count" do
+      let(:another_question) { create(:poll_question, :yes_no, poll: poll) }
+      let(:option_yes) { another_question.question_options.find_by(title: "Yes") }
+      let(:option_no) { another_question.question_options.find_by(title: "No") }
+
+      it "counts valid participants of the poll who did not answer the open-ended question" do
+        voters = create_list(:poll_voter, 3, poll: poll)
+        voters.each do |voter|
+          create(:poll_answer, question: another_question, author: voter.user, option: option_yes)
+        end
+        create(:poll_answer, question: question_open, author: voters.sample.user, answer: "Free text")
+
+        expect(question_open.open_ended_valid_answers_count).to eq 1
+        expect(question_open.open_ended_blank_answers_count).to eq 2
+      end
+
+      it "returns 0 when there are no valid participants in the poll" do
+        expect(question_open.open_ended_blank_answers_count).to eq 0
+      end
+
+      it "counts every user one time even if they answered many questions" do
+        multiple_question = create(:poll_question_multiple, :abc, poll: poll)
+        option_a = multiple_question.question_options.find_by(title: "Answer A")
+        option_b = multiple_question.question_options.find_by(title: "Answer B")
+        another_question_open = create(:poll_question_open, poll: poll)
+
+        voter = create(:poll_voter, poll: poll)
+
+        create(:poll_answer, question: multiple_question, author: voter.user, option: option_a)
+        create(:poll_answer, question: multiple_question, author: voter.user, option: option_b)
+        create(:poll_answer, question: another_question, author: voter.user, option: option_yes)
+        create(:poll_answer, question: another_question_open, author: voter.user, answer: "Free text")
+
+        expect(question_open.open_ended_blank_answers_count).to eq 1
+      end
+    end
+
+    describe "percentages" do
+      it "returns 0.0 when there aren't any answers" do
+        expect(question_open.open_ended_valid_percentage).to eq 0.0
+        expect(question_open.open_ended_blank_percentage).to eq 0.0
+      end
+
+      it "calculates valid and blank percentages based on counts" do
+        another_question = create(:poll_question, :yes_no, poll: poll)
+        option_yes = another_question.question_options.find_by(title: "Yes")
+
+        voters = create_list(:poll_voter, 4, poll: poll)
+        voters.each do |voter|
+          create(:poll_answer, question: another_question, author: voter.user, option: option_yes)
+        end
+        create(:poll_answer, question: question_open, author: voters.sample.user, answer: "A")
+
+        expect(question_open.open_ended_valid_percentage).to eq 25.0
+        expect(question_open.open_ended_blank_percentage).to eq 75.0
+      end
+    end
+  end
 end
