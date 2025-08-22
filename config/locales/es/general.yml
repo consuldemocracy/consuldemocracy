@@ -639,6 +639,9 @@ es:
       results:
         title: "Preguntas"
         most_voted_answer: "Respuesta más votada: "
+        essay:
+          with_answer: Con respuesta
+          without_answer: Sin respuesta
     poll_header:
       back_to_proposal: Volver a la propuesta
   poll_questions:
