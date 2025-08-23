@@ -43,6 +43,13 @@ When you complete the application registration you'll get a *key* and *secret* v
   saml_idp_metadata_url: "https://youridp.org/api/saml/metadata"
   saml_idp_sso_service_url: "https://youridp.org/api/saml/sso"
   saml_additional_parameters: {}
+  saml_certificate: |
+    -----BEGIN CERTIFICATE-----
+    -----END CERTIFICATE-----
+
+  saml_private_key: |
+    -----BEGIN PRIVATE KEY-----
+    -----END PRIVATE KEY-----
 ```
 
 ### About `saml_additional_parameters`
@@ -69,4 +76,25 @@ If you don’t need extra parameters, you can safely leave it empty:
 
 ```yml
 saml_additional_parameters: { }
+```
+
+### About `saml_certificate` and `saml_private_key`
+
+To generate the keypair for SAML:
+
+#### Step 1: Generate a private key
+
+```bash
+openssl genrsa -out sp-private.key 2048
+```
+
+#### Step 2: Generate a self-signed certificate using that private key
+
+```bash
+openssl req -new -x509 -key sp-private.key -out sp-public.crt -days 3650 -subj "/CN=your-app-name"
+```
+
+* `sp-private.key` → This is your `saml_private_key`.
+* `sp-public.crt` → This is your `saml_certificate`.
+
 ```
