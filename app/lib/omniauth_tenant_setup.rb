@@ -18,7 +18,8 @@ module OmniauthTenantSetup
 
     def saml(env)
       saml_auth(env, secrets.saml_sp_entity_id,
-                secrets.saml_idp_metadata_url, secrets.saml_idp_sso_service_url)
+                secrets.saml_idp_metadata_url, secrets.saml_idp_sso_service_url,
+                secrets.saml_additional_parameters)
     end
 
     private
@@ -37,7 +38,7 @@ module OmniauthTenantSetup
         end
       end
 
-      def saml_auth(env, sp_entity_id, idp_metadata_url, idp_sso_service_url)
+      def saml_auth(env, sp_entity_id, idp_metadata_url, idp_sso_service_url, additional_parameters)
         unless Tenant.default?
           strategy = env["omniauth.strategy"]
 
@@ -51,6 +52,12 @@ module OmniauthTenantSetup
 
           if strategy.options[:idp_metadata].present? && idp_metadata_url.present?
             strategy.options[:idp_metadata] = idp_metadata_url
+          end
+
+          if additional_parameters.present? && additional_parameters.is_a?(Hash)
+            additional_parameters.each do |key, value|
+              strategy.options[key.to_sym] = value if value.present?
+            end
           end
         end
       end
