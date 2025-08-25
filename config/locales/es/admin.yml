@@ -1170,6 +1170,10 @@ es:
           documents_list: Lista de documentos
           document_title: Título
           document_actions: Acciones
+          open_text:
+            field: Texto libre
+            true: "Si"
+            false: "No"
       no_edit: "Una vez comenzada la votación no será posible crear, editar o eliminar preguntas, respuestas o cualquier contenido asociado a la votación."
     answers:
       new:

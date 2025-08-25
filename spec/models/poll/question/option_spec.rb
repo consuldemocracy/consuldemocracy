@@ -60,4 +60,18 @@ describe Poll::Question::Option do
       expect(option.with_read_more?).to be_truthy
     end
   end
+
+  describe "#open_text" do
+    it "defaults to false" do
+      option = create(:poll_question_option)
+
+      expect(option.open_text).to be false
+    end
+
+    it "can be enabled" do
+      option = create(:poll_question_option, open_text: true)
+
+      expect(option.open_text).to be true
+    end
+  end
 end
