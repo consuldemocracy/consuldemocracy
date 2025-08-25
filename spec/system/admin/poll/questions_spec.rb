@@ -71,26 +71,64 @@ describe "Admin poll questions", :admin do
         poll = create(:poll, :future)
         visit admin_poll_path(poll)
         click_link "Create question"
+        expect(page).to have_content "It's only possible to answer one time to the question."
       end
 
       scenario "Unique" do
         fill_in "Question", with: "Question with unique answer"
         select "Unique answer", from: "Votation type"
 
+        expect(page).to have_content "It's only possible to answer one time to the question."
+        expect(page).not_to have_content "Allows to choose multiple answers."
+        expect(page).not_to have_field "Maximum number of votes"
+        expect(page).not_to have_content "Open ended question that allows the user to provide"
+
         click_button "Save"
 
         expect(page).to have_content "Question with unique answer"
         expect(page).to have_content "Unique answer"
+        expect(page).to have_content "Maximum number of votes\n1"
+        expect(page).to have_link "Add answer"
+        within("table") do
+          expect(page).to have_css "caption", text: "Valid answers"
+        end
       end
 
       scenario "Multiple" do
         fill_in "Question", with: "Question with multiple answers"
         select "Multiple answers", from: "Votation type"
+
+        expect(page).not_to have_content "It's only possible to answer one time to the question."
+        expect(page).to have_content "Allows to choose multiple answers."
+        expect(page).not_to have_content "Open ended question that allows the user to provide"
+
         fill_in "Maximum number of votes", with: 6
         click_button "Save"
 
         expect(page).to have_content "Question with multiple answers"
         expect(page).to have_content "Multiple answers"
+        expect(page).to have_content "Maximum number of votes\n6"
+        expect(page).to have_link "Add answer"
+        within("table") do
+          expect(page).to have_css "caption", text: "Valid answers"
+        end
+      end
+
+      scenario "Essay" do
+        fill_in "Question", with: "Question with essay answer"
+        select "Single essay answer", from: "Votation type"
+
+        expect(page).not_to have_content "Allows to choose multiple answers."
+        expect(page).not_to have_field "Maximum number of votes"
+        expect(page).to have_content "Open ended question that allows the user to provide a single answer"
+
+        click_button "Save"
+
+        expect(page).to have_content "Question with essay answer"
+        expect(page).to have_content "Single essay answer"
+        expect(page).not_to have_content "Maximum number of votes"
+        expect(page).not_to have_link "Add answer"
+        expect(page).not_to have_css "table", text: "Valid answers"
       end
     end
   end
@@ -134,7 +172,7 @@ describe "Admin poll questions", :admin do
 
   scenario "Update" do
     poll = create(:poll, :future)
-    question = create(:poll_question, poll: poll)
+    question = create(:poll_question_essay, poll: poll)
     old_title = question.title
     new_title = "Vegetables are great and everyone should have one"
 
@@ -145,6 +183,11 @@ describe "Admin poll questions", :admin do
     end
 
     expect(page).to have_link "Go back", href: admin_poll_path(poll)
+    expect(page).to have_select "Votation type", selected: "Single essay answer"
+    expect(page).not_to have_content "Allows to choose multiple answers."
+    expect(page).not_to have_field "Maximum number of votes"
+    expect(page).to have_content "Open ended question that allows the user to provide a single answer"
+
     fill_in "Question", with: new_title
 
     click_button "Save"

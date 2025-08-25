@@ -635,11 +635,16 @@ en:
       results:
         title: "Questions"
         most_voted_answer: "Most voted answer: "
+        essay:
+          with_answer: With answer
+          without_answer: Without answer
     poll_header:
       back_to_proposal: Back to proposal
   poll_questions:
     description:
       multiple: "You can select a maximum of %{maximum} answers."
+    form:
+      change_votation_type: "can't change to essay type because options already exist"
     read_more_about: "Read more about:"
   proposal_notifications:
     new:

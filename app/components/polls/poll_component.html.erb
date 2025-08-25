@@ -27,13 +27,9 @@
       </div>
     </div>
     <div class="small-12 medium-6 column" data-equalizer-watch>
-      <% if poll.questions.one? %>
-        <h4><%= link_to_poll poll.questions.first.title, poll %></h4>
-        <div class="dates"><%= dates %></div>
-      <% else %>
-        <h4><%= link_to_poll poll.name, poll %></h4>
-        <div class="dates"><%= dates %></div>
-
+      <h4><%= link_to text_for_poll_header, path %></h4>
+      <div class="dates"><%= dates %></div>
+      <% if poll.questions.many? %>
         <ul class="margin-top">
           <% poll.questions.sort_for_list.each do |question| %>
             <li><%= question.title %></li>
@@ -45,11 +41,7 @@
     </div>
     <div class="small-12 medium-3 column table" data-equalizer-watch>
       <div class="table-cell align-middle">
-        <% if poll.expired? %>
-          <%= link_to_poll t("polls.index.participate_button_expired"), poll, class: "button hollow expanded" %>
-        <% else %>
-          <%= link_to_poll t("polls.index.participate_button"), poll, class: "button hollow expanded" %>
-        <% end %>
+        <%= link_to text_for_poll_button, path, class: "button hollow expanded" %>
       </div>
     </div>
   </div>
