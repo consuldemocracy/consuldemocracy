@@ -5,8 +5,8 @@ describe Dashboard::ResourcesComponent do
   before { sign_in(proposal.author) }
 
   describe "Available resources section" do
-    let!(:available) { create(:dashboard_action, :resource, :active) }
-    let(:requested) { create(:dashboard_action, :resource, :admin_request, :active) }
+    let!(:available) { create(:dashboard_action, :resource, :active, title: "Available!") }
+    let(:requested) { create(:dashboard_action, :resource, :admin_request, :active, title: "Requested!") }
     let(:executed_action) do
       create(
         :dashboard_executed_action,
@@ -15,7 +15,7 @@ describe Dashboard::ResourcesComponent do
         executed_at: Time.current
       )
     end
-    let(:solved) { create(:dashboard_action, :resource, :admin_request, :active) }
+    let(:solved) { create(:dashboard_action, :resource, :admin_request, :active, title: "Solved!") }
     let(:executed_solved_action) do
       create(
         :dashboard_executed_action,
@@ -29,7 +29,8 @@ describe Dashboard::ResourcesComponent do
         :dashboard_action,
         :resource,
         :active,
-        required_supports: proposal.votes_for.size + 1_000
+        required_supports: proposal.votes_for.size + 1_000,
+        title: "Unavailable!"
       )
     end
 
@@ -49,19 +50,19 @@ describe Dashboard::ResourcesComponent do
       expect(page).to have_content requested.title
       expect(page).to have_content solved.title
 
-      page.find("div#dashboard_action_#{available.id}") do |dashboard_action_available|
+      page.find(".resource-card", text: "Available!") do |dashboard_action_available|
         expect(dashboard_action_available).to have_link "See resource"
       end
 
-      page.find("div#dashboard_action_#{requested.id}") do |dashboard_action_requested|
+      page.find(".resource-card", text: "Requested!") do |dashboard_action_requested|
         expect(dashboard_action_requested).to have_content "Resource already requested"
       end
 
-      page.find("div#dashboard_action_#{unavailable.id}") do |dashboard_action_unavailable|
+      page.find(".resource-card", text: "Unavailable!") do |dashboard_action_unavailable|
         expect(dashboard_action_unavailable).to have_content "1.000 supports required"
       end
 
-      page.find("div#dashboard_action_#{solved.id}") do |dashboard_action_solved|
+      page.find(".resource-card", text: "Solved!") do |dashboard_action_solved|
         expect(dashboard_action_solved).to have_link "See resource"
       end
     end
@@ -79,19 +80,19 @@ describe Dashboard::ResourcesComponent do
       expect(page).to have_content requested.title
       expect(page).to have_content solved.title
 
-      page.find("div#dashboard_action_#{available.id}") do |dashboard_action_available|
+      page.find(".resource-card", text: "Available!") do |dashboard_action_available|
         expect(dashboard_action_available).to have_link "See resource"
       end
 
-      page.find("div#dashboard_action_#{requested.id}") do |dashboard_action_requested|
+      page.find(".resource-card", text: "Requested!") do |dashboard_action_requested|
         expect(dashboard_action_requested).to have_content "Resource already requested"
       end
 
-      page.find("div#dashboard_action_#{unavailable.id}") do |dashboard_action_unavailable|
+      page.find(".resource-card", text: "Unavailable!") do |dashboard_action_unavailable|
         expect(dashboard_action_unavailable).to have_content "1.000 supports required"
       end
 
-      page.find("div#dashboard_action_#{solved.id}") do |dashboard_action_solved|
+      page.find(".resource-card", text: "Solved!") do |dashboard_action_solved|
         expect(dashboard_action_solved).to have_link "See resource"
       end
     end
@@ -112,17 +113,17 @@ describe Dashboard::ResourcesComponent do
 
   describe "Tags for new actions" do
     it "displays tag 'new' only when resource is detected like new action" do
-      new_resource = create(:dashboard_action, :resource, :active)
-      old_resource = create(:dashboard_action, :resource, :active)
+      create(:dashboard_action, :resource, :active, title: "Old!")
+      new_resource = create(:dashboard_action, :resource, :active, title: "Recent!")
       new_actions_since_last_login = [new_resource.id]
 
       render_inline Dashboard::ResourcesComponent.new(proposal, new_actions_since_last_login)
 
-      page.find("div#dashboard_action_#{new_resource.id}") do |dashboard_action_new_resource|
+      page.find(".resource-card", text: "Recent!") do |dashboard_action_new_resource|
         expect(dashboard_action_new_resource).to have_content "New"
       end
 
-      page.find("div#dashboard_action_#{old_resource.id}") do |dashboard_action_old_resource|
+      page.find(".resource-card", text: "Old!") do |dashboard_action_old_resource|
         expect(dashboard_action_old_resource).not_to have_content "New"
       end
     end
