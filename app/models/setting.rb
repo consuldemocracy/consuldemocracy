@@ -150,6 +150,7 @@ class Setting < ApplicationRecord
         "twitter_hashtag": nil,
         "youtube_handle": nil,
         "org_name": default_org_name,
+        "instance_repository_url": nil,
         "meta_title": nil,
         "meta_description": nil,
         "meta_keywords": nil,
