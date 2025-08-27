@@ -2,6 +2,7 @@ class SensemakerService
   attr_reader :job
 
   SENSEMAKING_FOLDER = Rails.root.join(Tenant.current_secrets.sensemaker_folder).freeze
+  SENSEMAKING_DATA_FOLDER = Rails.root.join(Tenant.current_secrets.sensemaker_folder, "data").freeze
 
   def initialize(job)
     @job = job
@@ -21,7 +22,7 @@ class SensemakerService
   handle_asynchronously :run, queue: "sensemaking"
 
   def input_file
-    "#{SENSEMAKING_FOLDER}/sensemaker-input.csv"
+    "#{SENSEMAKING_DATA_FOLDER}/sensemaker-input.csv"
   end
 
   def key_file
@@ -29,7 +30,7 @@ class SensemakerService
   end
 
   def output_file
-    "#{SENSEMAKING_FOLDER}/sensemaker-output.csv"
+    "#{SENSEMAKING_DATA_FOLDER}/sensemaker-output.csv"
   end
 
   def script_file
@@ -74,6 +75,13 @@ class SensemakerService
       # Check if the required files exist
       unless File.exist?(SENSEMAKING_FOLDER)
         error_message = "Sensemaking folder not found: #{SENSEMAKING_FOLDER}"
+        job.update!(finished_at: Time.current, error: error_message)
+        Rails.logger.error(error_message)
+        return false
+      end
+
+      unless File.exist?(SENSEMAKING_DATA_FOLDER)
+        error_message = "Sensemaking data folder not found: #{SENSEMAKING_FOLDER}/data"
         job.update!(finished_at: Time.current, error: error_message)
         Rails.logger.error(error_message)
         return false
