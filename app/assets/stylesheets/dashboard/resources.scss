@@ -1,9 +1,6 @@
 .dashboard-resources {
   .resources {
-    display: grid;
-    gap: $line-height;
-    grid-auto-rows: 1fr;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    @include dynamic-grid;
 
     .resource-card {
       background: #d1f5eb;

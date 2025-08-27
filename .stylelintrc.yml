@@ -83,6 +83,7 @@ rules:
   "@stylistic/indentation":
     - 2
     - ignore:
+      - param
       - value
   "@stylistic/media-feature-parentheses-space-inside": never
   "@stylistic/no-eol-whitespace": true

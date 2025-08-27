@@ -17,10 +17,10 @@
   }
 
   ul {
-    display: grid;
+    $row-gap: calc($line-height / 4);
+    @include dynamic-grid($row-gap: $row-gap);
+    @include grid-column-gutter;
     font-weight: bold;
-    grid-auto-rows: 1fr;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     list-style: none;
     margin: 0;
 
@@ -30,13 +30,9 @@
       }
     }
 
-    > li,
     + * {
       @include grid-column-gutter;
-    }
-
-    > li {
-      margin-bottom: calc($line-height / 4);
+      margin-top: $row-gap;
     }
   }
 
