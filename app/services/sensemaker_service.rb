@@ -1,11 +1,16 @@
 class SensemakerService
   attr_reader :job
 
-  SENSEMAKING_FOLDER = Rails.root.join(Tenant.current_secrets.sensemaker_folder).freeze
-  SENSEMAKING_DATA_FOLDER = Rails.root.join(Tenant.current_secrets.sensemaker_folder, "data").freeze
-
   def initialize(job)
     @job = job
+  end
+
+  def self.sensemaker_folder
+    Rails.root.join(Tenant.current_secrets.sensemaker_folder)
+  end
+
+  def self.sensemaker_data_folder
+    Rails.root.join(Tenant.current_secrets.sensemaker_folder, "data")
   end
 
   def run
@@ -22,7 +27,7 @@ class SensemakerService
   handle_asynchronously :run, queue: "sensemaking"
 
   def input_file
-    "#{SENSEMAKING_DATA_FOLDER}/sensemaker-input.csv"
+    "#{self.class.sensemaker_data_folder}/sensemaker-input.csv"
   end
 
   def key_file
@@ -30,11 +35,11 @@ class SensemakerService
   end
 
   def output_file
-    "#{SENSEMAKING_DATA_FOLDER}/sensemaker-output.csv"
+    "#{self.class.sensemaker_data_folder}/sensemaker-output.csv"
   end
 
   def script_file
-    "#{SENSEMAKING_FOLDER}/library/runner-cli/#{job.script}"
+    "#{self.class.sensemaker_folder}/library/runner-cli/#{job.script}"
   end
 
   def parse_key_file
@@ -73,15 +78,15 @@ class SensemakerService
       end
 
       # Check if the required files exist
-      unless File.exist?(SENSEMAKING_FOLDER)
-        error_message = "Sensemaking folder not found: #{SENSEMAKING_FOLDER}"
+      unless File.exist?(self.class.sensemaker_folder)
+        error_message = "Sensemaking folder not found: #{self.class.sensemaker_folder}"
         job.update!(finished_at: Time.current, error: error_message)
         Rails.logger.error(error_message)
         return false
       end
 
-      unless File.exist?(SENSEMAKING_DATA_FOLDER)
-        error_message = "Sensemaking data folder not found: #{SENSEMAKING_FOLDER}/data"
+      unless File.exist?(self.class.sensemaker_data_folder)
+        error_message = "Sensemaking data folder not found: #{self.class.sensemaker_data_folder}"
         job.update!(finished_at: Time.current, error: error_message)
         Rails.logger.error(error_message)
         return false
@@ -142,7 +147,7 @@ class SensemakerService
       command += " --additionalContext \"#{additional_context}\"" if additional_context.present?
 
       # Execute the command
-      output = `cd #{SENSEMAKING_FOLDER} && #{command} 2>&1`
+      output = `cd #{self.class.sensemaker_folder} && #{command} 2>&1`
       result = process_exit_status
 
       if result.eql?(0)

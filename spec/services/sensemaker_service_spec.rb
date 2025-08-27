@@ -97,7 +97,7 @@ describe SensemakerService do
     end
 
     it "returns false when the sensemaking folder does not exist" do
-      allow(File).to receive(:exist?).with(SensemakerService::SENSEMAKING_FOLDER).and_return(false)
+      allow(File).to receive(:exist?).with(SensemakerService.sensemaker_folder).and_return(false)
 
       result = service.send(:check_dependencies?)
 
@@ -107,8 +107,19 @@ describe SensemakerService do
       expect(job.error).to include("Sensemaking folder not found")
     end
 
+    it "returns false when the sensemaking data folder does not exist" do
+      allow(File).to receive(:exist?).with(SensemakerService.sensemaker_data_folder).and_return(false)
+
+      result = service.send(:check_dependencies?)
+
+      expect(result).to be false
+      job.reload
+      expect(job.finished_at).to be_present
+      expect(job.error).to include("Sensemaking data folder not found")
+    end
+
     it "returns false when the input file does not exist" do
-      allow(File).to receive(:exist?).with(SensemakerService::SENSEMAKING_FOLDER).and_return(true)
+      allow(File).to receive(:exist?).with(SensemakerService.sensemaker_folder).and_return(true)
       allow(File).to receive(:exist?).with(service.input_file).and_return(false)
 
       result = service.send(:check_dependencies?)
@@ -120,7 +131,7 @@ describe SensemakerService do
     end
 
     it "returns false when the key file does not exist" do
-      allow(File).to receive(:exist?).with(SensemakerService::SENSEMAKING_FOLDER).and_return(true)
+      allow(File).to receive(:exist?).with(SensemakerService.sensemaker_folder).and_return(true)
       allow(File).to receive(:exist?).with(service.input_file).and_return(true)
       allow(File).to receive(:exist?).with(service.key_file).and_return(false)
 
@@ -133,7 +144,7 @@ describe SensemakerService do
     end
 
     it "returns false when the key file is invalid JSON" do
-      allow(File).to receive(:exist?).with(SensemakerService::SENSEMAKING_FOLDER).and_return(true)
+      allow(File).to receive(:exist?).with(SensemakerService.sensemaker_folder).and_return(true)
       allow(File).to receive(:exist?).with(service.input_file).and_return(true)
       allow(File).to receive(:exist?).with(service.key_file).and_return(true)
       allow(File).to receive(:read).with(service.key_file).and_return("invalid json")
@@ -147,7 +158,7 @@ describe SensemakerService do
     end
 
     it "returns false when the key file is missing project_id" do
-      allow(File).to receive(:exist?).with(SensemakerService::SENSEMAKING_FOLDER).and_return(true)
+      allow(File).to receive(:exist?).with(SensemakerService.sensemaker_folder).and_return(true)
       allow(File).to receive(:exist?).with(service.input_file).and_return(true)
       allow(File).to receive(:exist?).with(service.key_file).and_return(true)
       allow(File).to receive(:read).with(service.key_file).and_return('{"type": "service_account"}')
@@ -161,7 +172,7 @@ describe SensemakerService do
     end
 
     it "returns false when the script file does not exist" do
-      allow(File).to receive(:exist?).with(SensemakerService::SENSEMAKING_FOLDER).and_return(true)
+      allow(File).to receive(:exist?).with(SensemakerService.sensemaker_folder).and_return(true)
       allow(File).to receive(:exist?).with(service.input_file).and_return(true)
       allow(File).to receive(:exist?).with(service.key_file).and_return(true)
       allow(File).to receive(:exist?).with(service.script_file).and_return(false)
