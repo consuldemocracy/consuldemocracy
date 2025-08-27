@@ -85,9 +85,11 @@ namespace :sensemaker do
 
         # Check if the symlink exists and points to the right place
         unless File.symlink?(sensemaker_path) && File.directory?(sensemaker_path)
-          logger.warn "WARNING: vendor/sensemaking-tools is not properly linked to shared/vendor/sensemaking-tools"
-          logger.warn "Make sure 'vendor/sensemaking-tools' is included in :linked_dirs in config/deploy.rb"
-          logger.warn "Changes to sensemaking-tools will be lost on next deployment if this is not fixed"
+          logger.warn %(
+            "WARNING: vendor/sensemaking-tools is not properly linked to shared/vendor/sensemaking-tools"
+            "Make sure 'vendor/sensemaking-tools' is included in :linked_dirs in config/deploy.rb"
+            "Changes to sensemaking-tools will be lost on next deployment if this is not fixed"
+          )
         end
       end
 
