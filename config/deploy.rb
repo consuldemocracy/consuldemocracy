@@ -32,7 +32,8 @@ set :use_sudo, false
 
 set :linked_files, %w[config/database.yml config/secrets.yml]
 set :linked_dirs, %w[.bundle log tmp public/system public/assets
-                     public/ckeditor_assets public/machine_learning/data storage]
+                     public/ckeditor_assets public/machine_learning/data storage
+                     vendor/sensemaking-tools]
 
 set :keep_releases, 5
 
@@ -72,6 +73,9 @@ namespace :deploy do
   after "deploy:migrate", "add_new_settings"
 
   after :publishing, "setup_puma"
+
+  after :publishing, "setup_sensemaker"
+
   after :finished, "refresh_sitemap"
 
   desc "Deploys and runs the tasks needed to upgrade to a new release"
@@ -175,4 +179,15 @@ task :setup_puma do
 
   after "setup_puma", "puma:install"
   after "setup_puma", "puma:enable"
+end
+
+desc "Setup Sensemaker"
+task :setup_sensemaker do
+  on roles(:app) do
+    within release_path do
+      with rails_env: fetch(:rails_env) do
+        execute :rake, "sensemaker:setup" if fetch(:setup_sensemaker, false)
+      end
+    end
+  end
 end
