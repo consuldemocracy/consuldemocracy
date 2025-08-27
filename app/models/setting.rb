@@ -88,6 +88,7 @@ class Setting < ApplicationRecord
         "feature.saml_login": false,
         "feature.sdg": true,
         "feature.machine_learning": false,
+        "feature.sensemaking": false,
         "feature.remove_investments_supports": true,
         "feature.cookies_consent": false,
         "homepage.widgets.feeds.debates": true,

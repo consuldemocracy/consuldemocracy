@@ -4,34 +4,24 @@ namespace :sensemaker do
     logger = ApplicationLogger.new
     logger.info "Setting up Sensemaking Tools..."
 
-    # Try to get paths from SensemakerService, but provide fallbacks for installation/setup
-    begin
-      sensemaker_path = SensemakerService.sensemaker_folder
-      data_path = SensemakerService.sensemaker_data_folder
-    rescue => e
-      logger.warn "Could not get paths from SensemakerService: #{e.message}"
-      logger.warn "Using default paths instead"
+    tenant_schema = ENV["CONSUL_TENANT"]
 
-      sensemaker_path = Rails.root.join("vendor/sensemaking-tools")
-      data_path = Rails.root.join("vendor/sensemaking-tools/data")
+    if tenant_schema.present?
+      logger.info "Setting up for tenant: #{tenant_schema}"
+
+              unless Tenant.exists?(schema: tenant_schema)
+          err_msg = "Tenant '#{tenant_schema}' not found. Available: #{Tenant.pluck(:schema).join(", ")}"
+          logger.warn err_msg
+          raise "Tenant '#{tenant_schema}' not found"
+        end
+
+      Tenant.switch(tenant_schema) do
+        setup_for_tenant(logger)
+      end
+    else
+      logger.info "No tenant specified, using default tenant"
+      setup_for_tenant(logger)
     end
-
-    logger.info "Using sensemaker path: #{sensemaker_path}"
-    logger.info "Using data path: #{data_path}"
-
-    check_dependencies(logger)
-
-    setup_directories(sensemaker_path, data_path, logger)
-
-    clone_or_update_repository(sensemaker_path, logger)
-
-    install_dependencies(sensemaker_path, logger)
-
-    set_file_permissions(sensemaker_path, data_path, logger)
-
-    add_feature_flag(logger)
-
-    logger.info "Sensemaking Tools setup complete!"
   end
 
   desc "Check if Sensemaking Tools dependencies are available"
@@ -40,28 +30,166 @@ namespace :sensemaker do
     check_dependencies(logger)
   end
 
+  desc "Verify Sensemaker installation"
+  task verify: :environment do
+    logger = ApplicationLogger.new
+    logger.info "Verifying Sensemaker installation..."
+
+    tenant_schema = ENV["CONSUL_TENANT"]
+
+    if tenant_schema.present?
+      logger.info "Verifying for tenant: #{tenant_schema}"
+      Tenant.switch(tenant_schema) do
+        verify_installation(logger)
+      end
+    else
+      logger.info "No tenant specified, using default tenant"
+      verify_installation(logger)
+    end
+  end
+
   private
+
+    def verify_installation(logger)
+      check_dependencies(logger)
+      check_directories(logger)
+      check_key_file(logger)
+      check_repository(logger)
+      check_is_enabled(logger)
+    end
+
+    def check_is_enabled(logger)
+      setting = Setting.find_by(key: "feature.sensemaking")
+      if setting.present?
+        logger.info "✓ Sensemaking setting found"
+      else
+        logger.warn "✗ Sensemaking setting not found"
+        raise "Sensemaking setting not found"
+      end
+
+      if SensemakerService.enabled?
+        logger.info "✓ Sensemaking is enabled via feature.sensemaking setting"
+      else
+        logger.warn "✗ Sensemaking is disabled via feature.sensemaking setting"
+        raise "Sensemaking is disabled via feature.sensemaking setting"
+      end
+    end
+
+    def check_repository(logger)
+      sensemaker_path = SensemakerService.sensemaker_folder
+
+      if File.directory?(sensemaker_path) && File.directory?(File.join(sensemaker_path, ".git"))
+        logger.info "✓ Sensemaker repository found: #{sensemaker_path}"
+        Dir.chdir(sensemaker_path) do
+          logger.info "  Current branch: #{`git rev-parse --abbrev-ref HEAD`.strip} "
+          logger.info "  Latest commit: #{`git log -1 --pretty=format:"%h %s"`.strip}"
+          logger.info "  Last updated: #{`git log -1 --pretty=format:"%ci"`.strip}"
+        end
+      else
+        logger.warn "✗ Sensemaker repository not found at: #{sensemaker_path}"
+        raise "Sensemaker repository not found at: #{sensemaker_path}"
+      end
+    end
+
+    def check_key_file(logger)
+      key_file = SensemakerService.key_file
+
+      if File.exist?(key_file)
+        logger.info "✓ Key file found: #{key_file}"
+      else
+        logger.warn "✗ Key file not found: #{key_file}"
+        raise "Key file not found: #{key_file}"
+      end
+
+      parsed_file = SensemakerService.parse_key_file
+
+      if parsed_file.blank?
+        logger.warn "Key file is invalid: #{key_file}"
+        raise "Key file is invalid: #{key_file}"
+      else
+        logger.info "✓ Key file is valid: #{key_file}"
+      end
+
+      if parsed_file.fetch("project_id", "").blank?
+        logger.warn "✗ Key file is missing project_id: #{key_file}"
+        raise "Key file is missing project_id: #{key_file}"
+      else
+        logger.info "✓ Key file has project_id: #{parsed_file["project_id"]}"
+      end
+    end
+
+    def check_directories(logger)
+      sensemaker_path = SensemakerService.sensemaker_folder
+      data_path = SensemakerService.sensemaker_data_folder
+
+      if File.directory?(sensemaker_path)
+        logger.info "✓ Sensemaker path found: #{sensemaker_path}"
+      else
+        logger.warn "✗ Sensemaker path not found: #{sensemaker_path}"
+        raise "Sensemaker path not found: #{sensemaker_path}"
+      end
+
+      if File.directory?(data_path)
+        logger.info "✓ Data path found: #{data_path}"
+      else
+        logger.warn "✗ Data path not found: #{data_path}"
+        raise "Data path not found: #{data_path}"
+      end
+
+      logger.info "✓ Directories found."
+    end
+
+    def setup_for_tenant(logger)
+      # Try to get paths from SensemakerService, but provide fallbacks for installation/setup
+      begin
+        sensemaker_path = SensemakerService.sensemaker_folder
+        data_path = SensemakerService.sensemaker_data_folder
+      rescue => e
+        logger.warn "Could not get paths from SensemakerService: #{e.message}"
+        logger.warn "Using default paths instead"
+
+        sensemaker_path = Rails.root.join("vendor/sensemaking-tools")
+        data_path = Rails.root.join("vendor/sensemaking-tools/data")
+      end
+
+      logger.info "Using sensemaker path: #{sensemaker_path}"
+      logger.info "Using data path: #{data_path}"
+
+      check_dependencies(logger)
+
+      setup_directories(sensemaker_path, data_path, logger)
+
+      clone_or_update_repository(sensemaker_path, logger)
+
+      install_dependencies(sensemaker_path, logger)
+
+      set_file_permissions(sensemaker_path, data_path, logger)
+
+      add_feature_flag(logger)
+
+      logger.info "Sensemaking Tools setup complete!"
+    end
 
     def check_dependencies(logger)
       logger.info "Checking environment dependencies..."
 
       # Check if Node.js is available
       unless system("which node > /dev/null 2>&1")
-        logger.error "Node.js not found. Please install Node.js to use the Sensemaker feature."
+        logger.warn "Node.js not found. Please install Node.js to use the Sensemaker feature."
         raise "Node.js not found. Please install Node.js to use the Sensemaker feature."
       end
       logger.info "✓ Node.js found: #{`node --version`.strip}"
 
       # Check if npm is available
       unless system("which npm > /dev/null 2>&1")
-        logger.error "npm not found. Please install npm to use the Sensemaker feature."
+        logger.warn "npm not found. Please install npm to use the Sensemaker feature."
         raise "npm not found. Please install npm to use the Sensemaker feature."
       end
       logger.info "✓ npm found: #{`npm --version`.strip}"
 
       # Check if npx is available
       unless system("which npx > /dev/null 2>&1")
-        logger.error "npx not found. Please install npx to use the Sensemaker feature."
+        logger.warn "npx not found. Please install npx to use the Sensemaker feature."
         raise "npx not found. Please install npx to use the Sensemaker feature."
       end
       logger.info "✓ npx found: #{`npx --version`.strip}"
@@ -114,7 +242,7 @@ namespace :sensemaker do
           if $?.success?
             logger.info "Repository updated successfully."
           else
-            logger.error "Failed to update repository."
+            logger.warn "Failed to update repository."
             raise "Failed to update repository."
           end
         end
@@ -125,7 +253,7 @@ namespace :sensemaker do
         if $?.success?
           logger.info "Repository cloned successfully."
         else
-          logger.error "Failed to clone repository."
+          logger.warn "Failed to clone repository."
           raise "Failed to clone repository."
         end
       end
@@ -143,12 +271,12 @@ namespace :sensemaker do
           if $?.success?
             logger.info "Dependencies installed successfully."
           else
-            logger.error "Failed to install dependencies."
+            logger.warn "Failed to install dependencies."
             raise "Failed to install dependencies."
           end
         end
       else
-        logger.error "Library directory not found at #{library_path}"
+        logger.warn "Library directory not found at #{library_path}"
         raise "Library directory not found at #{library_path}"
       end
 
@@ -159,7 +287,7 @@ namespace :sensemaker do
         if $?.success?
           logger.info "Sensemaker CLI tool is working correctly."
         else
-          logger.error "Failed to run sensemaker CLI tool. Please check the installation."
+          logger.warn "Failed to run sensemaker CLI tool. Please check the installation."
           raise "Failed to run sensemaker CLI tool. Please check the installation."
         end
       end
@@ -178,16 +306,16 @@ namespace :sensemaker do
     end
 
     def add_feature_flag(logger)
-      if defined?(Setting) && !Setting.where(key: "feature.sensemaker").exists?
-        logger.info "Adding sensemaker feature flag..."
-        Setting.create!(
-          key: "feature.sensemaker",
-          value: nil,
-          kind: "boolean"
-        )
+      setting = Setting.find_or_initialize_by(key: "feature.sensemaking")
+      if setting.new_record?
+        logger.info "Adding sensemaking feature flag..."
+        setting.value = "true"
+        setting.save!
         logger.info "Feature flag added."
       else
-        logger.info "Feature flag already exists."
+        logger.info "Feature flag already exists, enabling sensemaking..."
+        setting.update!(value: "true")
+        logger.info "Sensemaking enabled using feature.sensemaking setting."
       end
     end
 end

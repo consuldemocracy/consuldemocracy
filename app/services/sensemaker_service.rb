@@ -30,10 +30,6 @@ class SensemakerService
     "#{self.class.sensemaker_data_folder}/sensemaker-input.csv"
   end
 
-  def key_file
-    Rails.root.join(Tenant.current_secrets.sensemaker_key_file)
-  end
-
   def output_file
     "#{self.class.sensemaker_data_folder}/sensemaker-output.csv"
   end
@@ -42,7 +38,11 @@ class SensemakerService
     "#{self.class.sensemaker_folder}/library/runner-cli/#{job.script}"
   end
 
-  def parse_key_file
+  def self.key_file
+    Rails.root.join(Tenant.current_secrets.sensemaker_key_file)
+  end
+
+  def self.parse_key_file
     key_file_content = File.read(key_file)
     JSON.parse(key_file_content)
   rescue JSON::ParserError
@@ -51,6 +51,18 @@ class SensemakerService
 
   def project_id
     parse_key_file.fetch("project_id", "")
+  end
+
+  def key_file
+    SensemakerService.key_file
+  end
+
+  def parse_key_file
+    SensemakerService.parse_key_file
+  end
+
+  def self.enabled?
+    Setting["feature.sensemaking"].present?
   end
 
   private
