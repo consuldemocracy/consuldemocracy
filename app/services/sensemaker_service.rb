@@ -6,11 +6,11 @@ class SensemakerService
   end
 
   def self.sensemaker_folder
-    Rails.root.join(Tenant.current_secrets.sensemaker_folder)
+    Rails.root.join("vendor/sensemaking-tools")
   end
 
   def self.sensemaker_data_folder
-    Rails.root.join(Tenant.current_secrets.sensemaker_folder, "data")
+    Rails.root.join(Tenant.current_secrets.sensemaker_data_folder)
   end
 
   def run

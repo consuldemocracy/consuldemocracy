@@ -4,9 +4,20 @@ namespace :sensemaker do
     logger = ApplicationLogger.new
     logger.info "Setting up Sensemaking Tools..."
 
-    vendor_path = Rails.root.join("vendor")
-    sensemaker_path = vendor_path.join("sensemaking-tools")
-    data_path = sensemaker_path.join("data")
+    # Try to get paths from SensemakerService, but provide fallbacks for installation/setup
+    begin
+      sensemaker_path = SensemakerService.sensemaker_folder
+      data_path = SensemakerService.sensemaker_data_folder
+    rescue => e
+      logger.warn "Could not get paths from SensemakerService: #{e.message}"
+      logger.warn "Using default paths instead"
+
+      sensemaker_path = Rails.root.join("vendor/sensemaking-tools")
+      data_path = Rails.root.join("vendor/sensemaking-tools/data")
+    end
+
+    logger.info "Using sensemaker path: #{sensemaker_path}"
+    logger.info "Using data path: #{data_path}"
 
     check_dependencies(logger)
 
