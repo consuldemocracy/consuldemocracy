@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 ruby file: ".ruby-version"
 
-gem "rails", "~> 7.1.5.1"
+gem "rails", "~> 7.2.2.2"
 
 gem "acts-as-taggable-on", "~> 12.0.0"
 gem "acts_as_votable", "~> 0.14.0"
@@ -34,6 +34,7 @@ gem "image_processing", "~> 1.14.0"
 gem "invisible_captcha", "~> 2.3.0"
 gem "kaminari", "~> 1.2.2"
 gem "mini_magick", "~> 4.13.2"
+# ActiveSupport::MessagePack requires the msgpack gem, version 1.7.0 or later. Please add it to your Gemfile: `gem "msgpack", ">= 1.7.0"
 gem "omniauth", "~> 2.1.3"
 gem "omniauth-facebook", "~> 10.0.0"
 gem "omniauth-google-oauth2", "~> 1.2.1"
