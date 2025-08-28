@@ -28,5 +28,18 @@ describe PollsController do
 
       expect(Poll::Answer.count).to eq 1
     end
+
+    it "denies access when users have already voted in a booth" do
+      poll = create(:poll)
+      user = create(:user, :level_two)
+      create(:poll_voter, :from_booth, poll: poll, user: user)
+
+      sign_in(user)
+
+      post :answer, params: { id: poll.id, web_vote: {}}
+
+      expect(response).to redirect_to "/"
+      expect(flash[:alert]).to eq "You do not have permission to access this page."
+    end
   end
 end
