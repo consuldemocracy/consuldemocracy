@@ -73,6 +73,18 @@ describe Poll::WebVote do
       expect(question.reload.answers.size).to eq 0
     end
 
+    it "raises an exception when the user has already voted in a booth" do
+      create(:poll_voter, :from_booth, poll: poll, user: user)
+
+      expect do
+        web_vote.update(question.id.to_s => { option_id: option_yes.id.to_s })
+      end.to raise_error(ActiveRecord::RecordNotFound)
+
+      expect(poll.reload.voters.size).to eq 1
+      expect(poll.voters.first.user).to eq user
+      expect(question.reload.answers.size).to eq 0
+    end
+
     context "creating answers at the same time", :race_condition do
       it "does not create two voters or two answers for two different answers" do
         [option_yes, option_no].map do |option|

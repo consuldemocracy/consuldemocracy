@@ -23,6 +23,8 @@ class PollsController < ApplicationController
   end
 
   def answer
+    raise CanCan::AccessDenied if @poll.voted_in_booth?(current_user)
+
     @web_vote = Poll::WebVote.new(@poll, current_user)
 
     if @web_vote.update(answer_params)
