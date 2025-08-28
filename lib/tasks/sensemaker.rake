@@ -222,8 +222,9 @@ namespace :sensemaker do
       if File.exist?(SensemakerService.key_file)
         logger.info "Service account key file found at: #{SensemakerService.key_file}"
         logger.info "Sensemaker setup complete!"
+        logger.info "To verify your installation, run: rake sensemaker:verify"
       else
-        logger.info "IMPORTANT: Setup complete you need to provide a Google Cloud service account key file"
+        logger.info "IMPORTANT: Setup complete but you must provide a Google Cloud service account key file"
         logger.info "Location: #{SensemakerService.key_file}"
         logger.info ""
         logger.info "To create a service account key:"
@@ -236,6 +237,8 @@ namespace :sensemaker do
         logger.info ""
         logger.info "For more details, visit: https://cloud.google.com/iam/docs/keys-create-delete"
         logger.info ""
+        logger.info "Once you have provided the account key file you can verify your installation by running:"
+        logger.info "$ bundle exec rake sensemaker:verify"
       end
     end
 
