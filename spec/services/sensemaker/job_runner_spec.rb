@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe SensemakerService do
+describe Sensemaker::JobRunner do
   let(:user) { create(:user) }
   let(:debate) { create(:debate) }
   let(:job) do
@@ -14,7 +14,7 @@ describe SensemakerService do
   end
 
   describe "#run" do
-    let(:service) { SensemakerService.new(job) }
+    let(:service) { Sensemaker::JobRunner.new(job) }
 
     before do
       allow(service).to receive(:prepare_input_data)
@@ -60,13 +60,13 @@ describe SensemakerService do
   end
 
   describe "#check_dependencies?" do
-    let(:service) { SensemakerService.new(job) }
+    let(:service) { Sensemaker::JobRunner.new(job) }
 
     before do
       allow(service).to receive(:system).with("which node > /dev/null 2>&1").and_return(true)
       allow(service).to receive(:system).with("which npx > /dev/null 2>&1").and_return(true)
       allow(File).to receive(:exist?).and_return(true)
-      allow(File).to receive(:read).with(SensemakerService.key_file)
+      allow(File).to receive(:read).with(Sensemaker::JobRunner.key_file)
                                    .and_return('{"project_id": "sensemaker-466109"}')
       allow(File).to receive(:read).with(service.key_file)
                                    .and_return('{"project_id": "sensemaker-466109"}')
@@ -99,30 +99,30 @@ describe SensemakerService do
       expect(job.error).to include("NPX not found")
     end
 
-    it "returns false when the sensemaking folder does not exist" do
-      allow(File).to receive(:exist?).with(SensemakerService.sensemaker_folder).and_return(false)
+    it "returns false when the sensemaking-tools folder does not exist" do
+      allow(File).to receive(:exist?).with(Sensemaker::JobRunner.sensemaker_folder).and_return(false)
 
       result = service.send(:check_dependencies?)
 
       expect(result).to be false
       job.reload
       expect(job.finished_at).to be_present
-      expect(job.error).to include("Sensemaking folder not found")
+      expect(job.error).to include("sensemaking-tools folder not found")
     end
 
     it "returns false when the sensemaking data folder does not exist" do
-      allow(File).to receive(:exist?).with(SensemakerService.sensemaker_data_folder).and_return(false)
+      allow(File).to receive(:exist?).with(Sensemaker::JobRunner.sensemaker_data_folder).and_return(false)
 
       result = service.send(:check_dependencies?)
 
       expect(result).to be false
       job.reload
       expect(job.finished_at).to be_present
-      expect(job.error).to include("Sensemaking data folder not found")
+      expect(job.error).to include("Sensemaker data folder not found")
     end
 
     it "returns false when the input file does not exist" do
-      allow(File).to receive(:exist?).with(SensemakerService.sensemaker_folder).and_return(true)
+      allow(File).to receive(:exist?).with(Sensemaker::JobRunner.sensemaker_folder).and_return(true)
       allow(File).to receive(:exist?).with(service.input_file).and_return(false)
 
       result = service.send(:check_dependencies?)
@@ -134,7 +134,7 @@ describe SensemakerService do
     end
 
     it "returns false when the key file does not exist" do
-      allow(File).to receive(:exist?).with(SensemakerService.sensemaker_folder).and_return(true)
+      allow(File).to receive(:exist?).with(Sensemaker::JobRunner.sensemaker_folder).and_return(true)
       allow(File).to receive(:exist?).with(service.input_file).and_return(true)
       allow(File).to receive(:exist?).with(service.key_file).and_return(false)
 
@@ -147,7 +147,7 @@ describe SensemakerService do
     end
 
     it "returns false when the key file is invalid JSON" do
-      allow(File).to receive(:exist?).with(SensemakerService.sensemaker_folder).and_return(true)
+      allow(File).to receive(:exist?).with(Sensemaker::JobRunner.sensemaker_folder).and_return(true)
       allow(File).to receive(:exist?).with(service.input_file).and_return(true)
       allow(File).to receive(:exist?).with(service.key_file).and_return(true)
       allow(File).to receive(:read).with(service.key_file).and_return("invalid json")
@@ -161,7 +161,7 @@ describe SensemakerService do
     end
 
     it "returns false when the key file is missing project_id" do
-      allow(File).to receive(:exist?).with(SensemakerService.sensemaker_folder).and_return(true)
+      allow(File).to receive(:exist?).with(Sensemaker::JobRunner.sensemaker_folder).and_return(true)
       allow(File).to receive(:exist?).with(service.input_file).and_return(true)
       allow(File).to receive(:exist?).with(service.key_file).and_return(true)
       allow(File).to receive(:read).with(service.key_file).and_return('{"type": "service_account"}')
@@ -175,7 +175,7 @@ describe SensemakerService do
     end
 
     it "returns false when the script file does not exist" do
-      allow(File).to receive(:exist?).with(SensemakerService.sensemaker_folder).and_return(true)
+      allow(File).to receive(:exist?).with(Sensemaker::JobRunner.sensemaker_folder).and_return(true)
       allow(File).to receive(:exist?).with(service.input_file).and_return(true)
       allow(File).to receive(:exist?).with(service.key_file).and_return(true)
       allow(File).to receive(:exist?).with(service.script_file).and_return(false)
@@ -190,7 +190,7 @@ describe SensemakerService do
   end
 
   describe "#execute_script" do
-    let(:service) { SensemakerService.new(job) }
+    let(:service) { Sensemaker::JobRunner.new(job) }
 
     before do
       allow(File).to receive(:exist?).and_return(true)
@@ -227,14 +227,14 @@ describe SensemakerService do
   end
 
   describe "#process_output" do
-    let(:service) { SensemakerService.new(job) }
+    let(:service) { Sensemaker::JobRunner.new(job) }
 
     before do
       # Set a default stub for File.exist? to avoid unexpected calls
       allow(File).to receive(:exist?).and_return(true)
     end
 
-    it "creates a SensemakerInfo record when the output file exists" do
+    it "creates a Sensemaker::Info record when the output file exists" do
       # Mock the File.exist? method to return true for the output file
       allow(File).to receive(:exist?).with(service.output_file).and_return(true)
 
@@ -242,8 +242,8 @@ describe SensemakerService do
 
       expect(result).to be_present
 
-      # Check that a SensemakerInfo record was created
-      info = SensemakerInfo.find_by(
+      # Check that a Sensemaker::Info record was created
+      info = Sensemaker::Info.find_by(
         kind: "categorization",
         commentable_type: job.commentable_type,
         commentable_id: job.commentable_id

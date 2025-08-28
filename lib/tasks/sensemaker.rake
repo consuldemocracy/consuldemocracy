@@ -83,17 +83,17 @@ namespace :sensemaker do
 
     def check_sensemaker_cli(logger)
       model_name = Tenant.current_secrets.sensemaker_model_name
-      sensemaker_folder = SensemakerService.sensemaker_folder
-      project_id = SensemakerService.parse_key_file.fetch("project_id")
-      output_file = "#{SensemakerService.sensemaker_data_folder}/verify-output-#{Time.current.to_i}.txt"
+      sensemaker_folder = Sensemaker::JobRunner.sensemaker_folder
+      project_id = Sensemaker::JobRunner.parse_key_file.fetch("project_id")
+      output_file = "#{Sensemaker::JobRunner.sensemaker_data_folder}/verify-output-#{Time.current.to_i}.txt"
 
       command = %Q(npx ts-node #{sensemaker_folder}/library/runner-cli/health_check_runner.ts \
         --vertexProject #{project_id} \
         --outputFile #{output_file} \
         --modelName #{model_name} \
-        --keyFilename #{SensemakerService.key_file})
+        --keyFilename #{Sensemaker::JobRunner.key_file})
 
-      output = `cd #{SensemakerService.sensemaker_folder} && #{command} 2>&1`
+      output = `cd #{Sensemaker::JobRunner.sensemaker_folder} && #{command} 2>&1`
       result = $?.exitstatus
 
       if result.eql?(0)
@@ -115,7 +115,7 @@ namespace :sensemaker do
         raise "Sensemaker setting not found"
       end
 
-      if SensemakerService.enabled?
+      if Sensemaker::JobRunner.enabled?
         logger.info "✓ Sensemaker is enabled via feature.sensemaker setting"
       else
         logger.warn "✗ Sensemaker is disabled via feature.sensemaker setting"
@@ -124,7 +124,7 @@ namespace :sensemaker do
     end
 
     def check_repository(logger)
-      sensemaker_path = SensemakerService.sensemaker_folder
+      sensemaker_path = Sensemaker::Service.sensemaker_folder
 
       if File.directory?(sensemaker_path) && File.directory?(File.join(sensemaker_path, ".git"))
         logger.info "✓ sensemaking-tools repository found: #{sensemaker_path}"
@@ -140,22 +140,20 @@ namespace :sensemaker do
     end
 
     def check_key_file(logger)
-      key_file = SensemakerService.key_file
+      key_file = Sensemaker::JobRunner.key_file
 
       if File.exist?(key_file)
         logger.info "✓ Key file found: #{key_file}"
       else
         logger.warn "✗ Key file not found: #{key_file}"
-        raise "Key file not found: #{key_file}"
+        raise "Key file is not found: #{key_file}"
       end
 
-      parsed_file = SensemakerService.parse_key_file
+      parsed_file = Sensemaker::JobRunner.parse_key_file
 
       if parsed_file.blank?
         logger.warn "Key file is invalid: #{key_file}"
         raise "Key file is invalid: #{key_file}"
-      else
-        logger.info "✓ Key file is valid: #{key_file}"
       end
 
       if parsed_file.fetch("project_id", "").blank?
@@ -167,8 +165,8 @@ namespace :sensemaker do
     end
 
     def check_directories(logger)
-      sensemaker_path = SensemakerService.sensemaker_folder
-      data_path = SensemakerService.sensemaker_data_folder
+      sensemaker_path = Sensemaker::JobRunner.sensemaker_folder
+      data_path = Sensemaker::JobRunner.sensemaker_data_folder
 
       if File.directory?(sensemaker_path)
         logger.info "✓ Sensemaker path found: #{sensemaker_path}"
@@ -188,12 +186,12 @@ namespace :sensemaker do
     end
 
     def setup_for_tenant(logger)
-      # Try to get paths from SensemakerService, but provide fallbacks for installation/setup
+      # Try to get paths from Sensemaker::JobRunner, but provide fallbacks for installation/setup
       begin
-        sensemaker_path = SensemakerService.sensemaker_folder
-        data_path = SensemakerService.sensemaker_data_folder
+        sensemaker_path = Sensemaker::JobRunner.sensemaker_folder
+        data_path = Sensemaker::JobRunner.sensemaker_data_folder
       rescue => e
-        logger.warn "Could not get paths from SensemakerService: #{e.message}"
+        logger.warn "Could not get paths from Sensemaker::JobRunner: #{e.message}"
         logger.warn "Using default paths instead"
 
         sensemaker_path = Rails.root.join("vendor/sensemaking-tools")
@@ -219,13 +217,13 @@ namespace :sensemaker do
 
       add_feature_flag(logger)
 
-      if File.exist?(SensemakerService.key_file)
-        logger.info "Service account key file found at: #{SensemakerService.key_file}"
+      if File.exist?(Sensemaker::JobRunner.key_file)
+        logger.info "Service account key file found at: #{Sensemaker::JobRunner.key_file}"
         logger.info "Sensemaker setup complete!"
         logger.info "To verify your installation, run: rake sensemaker:verify"
       else
         logger.info "IMPORTANT: Setup complete but you must provide a Google Cloud service account key file"
-        logger.info "Location: #{SensemakerService.key_file}"
+        logger.info "Location: #{Sensemaker::JobRunner.key_file}"
         logger.info ""
         logger.info "To create a service account key:"
         logger.info "1. In the Google Cloud console, go to the Service accounts page"
