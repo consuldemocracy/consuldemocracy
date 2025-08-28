@@ -530,8 +530,6 @@ el:
           attributes:
             document_number:
               not_in_census: "Έγγραφο το οποίο δεν υπάρχει στην απογραφή"
-            user_id:
-              has_voted: "Ο χρήστης έχει ήδη ψηφίσει"
         legislation/process:
           attributes:
             end_date:
@@ -539,7 +537,7 @@ el:
             debate_end_date:
               invalid_date_range: πρέπει να είναι κατά ή μετά την ενδεικτική ημερομηνία έναρξης
             draft_end_date:
-              invalid_date_range: πρέπει να είναι κατά ή μετά την ενδεικτική ημερομηνία έναρξης
+              invalid_date_range: πρέπει να είναι κατά ή μετά την ενδεικτική ημερομηνία έναρξης 
             allegations_end_date:
               invalid_date_range: πρέπει να είναι κατά ή μετά την ημερομηνία έναρξης των σχολίων
         local_census_record:
