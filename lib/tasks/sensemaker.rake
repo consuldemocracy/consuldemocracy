@@ -64,7 +64,7 @@ namespace :sensemaker do
       model_name = Tenant.current_secrets.sensemaker_model_name
       sensemaker_folder = SensemakerService.sensemaker_folder
       project_id = SensemakerService.parse_key_file.fetch("project_id")
-      output_file = "#{sensemaker_folder}/testoutput.txt"
+      output_file = "#{SensemakerService.sensemaker_data_folder}/verify-output-#{Time.current.to_i}.txt"
 
       command = %Q(npx ts-node #{sensemaker_folder}/library/runner-cli/health_check_runner.ts \
         --vertexProject #{project_id} \
