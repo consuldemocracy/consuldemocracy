@@ -66,8 +66,10 @@ describe SensemakerService do
       allow(service).to receive(:system).with("which node > /dev/null 2>&1").and_return(true)
       allow(service).to receive(:system).with("which npx > /dev/null 2>&1").and_return(true)
       allow(File).to receive(:exist?).and_return(true)
-      allow(File).to receive(:read).with(SensemakerService.key_file).and_return('{"project_id": "sensemaker-466109"}')
-      allow(File).to receive(:read).with(service.key_file).and_return('{"project_id": "sensemaker-466109"}')
+      allow(File).to receive(:read).with(SensemakerService.key_file)
+                                   .and_return('{"project_id": "sensemaker-466109"}')
+      allow(File).to receive(:read).with(service.key_file)
+                                   .and_return('{"project_id": "sensemaker-466109"}')
     end
 
     it "returns true when all dependencies are available" do
