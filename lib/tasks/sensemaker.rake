@@ -51,6 +51,7 @@ namespace :sensemaker do
   private
 
     def verify_installation(logger)
+      check_env_variables(logger)
       check_dependencies(logger)
       check_directories(logger)
       check_key_file(logger)
@@ -58,6 +59,26 @@ namespace :sensemaker do
       check_is_enabled(logger)
       check_sensemaker_cli(logger)
       logger.info "Sensemaker installation verified you can now use the Sensemaker Tools."
+    end
+
+    def check_env_variables(logger)
+      logger.info "Checking environment variables..."
+      sensemaker_data_folder = Tenant.current_secrets.sensemaker_data_folder
+      sensemaker_key_file = Tenant.current_secrets.sensemaker_key_file
+      sensemaker_model_name = Tenant.current_secrets.sensemaker_model_name
+
+      any_missing = [sensemaker_data_folder, sensemaker_key_file, sensemaker_model_name].any?(&:blank?)
+
+      if any_missing
+        logger.warn "✗ Sensemaker environment variables not found"
+        logger.warn "Provide the following environment variables in the tenant secrets:"
+        logger.warn "  sensemaker_data_folder: <path to the data folder>"
+        logger.warn "  sensemaker_key_file: <path to the service account key file>"
+        logger.warn "  sensemaker_model_name: <model name>"
+        raise "Sensemaker environment variables not found"
+      else
+        logger.info "✓ Sensemaker environment variables found"
+      end
     end
 
     def check_sensemaker_cli(logger)
