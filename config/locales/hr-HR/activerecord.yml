@@ -577,8 +577,6 @@ hr:
           attributes:
             document_number:
               not_in_census: "Dokument nije u cenzusu"
-            user_id:
-              has_voted: "Korisnik je već glasovao"
         legislation/process:
           attributes:
             end_date:
