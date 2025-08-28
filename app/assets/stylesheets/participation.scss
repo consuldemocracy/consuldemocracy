@@ -1390,12 +1390,6 @@
   }
 }
 
-.image-container {
-  background: #fafafa;
-  overflow: hidden;
-  position: relative;
-}
-
 .public .poll {
   border: 1px solid $border;
   margin-bottom: calc($line-height / 2);
@@ -1415,7 +1409,8 @@
 // 09. Polls results and stats
 // ---------------------------
 
-.polls-results-stats {
+.polls-results,
+.polls-stats {
 
   table {
     table-layout: fixed;

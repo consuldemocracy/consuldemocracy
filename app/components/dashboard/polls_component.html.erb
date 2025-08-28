@@ -1,0 +1,5 @@
+<div class="dashboard-polls">
+  <% polls.each do |poll| %>
+    <%= render Dashboard::PollComponent.new(poll) %>
+  <% end %>
+</div>

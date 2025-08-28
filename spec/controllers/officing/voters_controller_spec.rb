@@ -2,12 +2,12 @@ require "rails_helper"
 
 describe Officing::VotersController do
   describe "POST create" do
+    let(:officer) { create(:poll_officer) }
+    before { sign_in(officer.user) }
+
     it "does not create two records with two simultaneous requests", :race_condition do
-      officer = create(:poll_officer)
       poll = create(:poll, officers: [officer])
       user = create(:user, :level_two)
-
-      sign_in(officer.user)
 
       2.times.map do
         Thread.new do
@@ -15,7 +15,6 @@ describe Officing::VotersController do
             voter: { poll_id: poll.id, user_id: user.id },
             format: :js
           }
-        rescue ActiveRecord::RecordInvalid
         end
       end.each(&:join)
 
@@ -24,7 +23,6 @@ describe Officing::VotersController do
     end
 
     it "stores officer and booth information" do
-      officer = create(:poll_officer)
       user = create(:user, :in_census)
       poll1 = create(:poll, name: "Would you be interested in XYZ?")
       poll2 = create(:poll, name: "Testing polls")
@@ -37,7 +35,6 @@ describe Officing::VotersController do
 
       validate_officer
       set_officing_booth(booth)
-      sign_in(officer.user)
 
       post :create, params: {
         voter: { poll_id: poll1.id, user_id: user.id },
@@ -60,6 +57,21 @@ describe Officing::VotersController do
       voter2 = Poll::Voter.last
       expect(voter2.booth_assignment).to eq(assignment2)
       expect(voter2.officer_assignment).to eq(assignment2.officer_assignments.first)
+    end
+
+    it "does not overwrite non key attributes when a web voter already exists" do
+      user = create(:user, :level_two, document_number: "11223344Z")
+      poll = create(:poll, officers: [officer])
+      existing = create(:poll_voter, poll: poll, user: user, origin: "web")
+
+      expect do
+        post :create, params: { voter: { poll_id: poll.id, user_id: user.id }, format: :js }
+        expect(response).to be_successful
+      end.not_to change { Poll::Voter.count }
+
+      existing.reload
+      expect(existing.origin).to eq "web"
+      expect(existing.document_number).to eq "11223344Z"
     end
   end
 end

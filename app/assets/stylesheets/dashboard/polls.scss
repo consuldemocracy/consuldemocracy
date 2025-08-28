@@ -1,0 +1,4 @@
+.dashboard-polls {
+  @include dynamic-grid;
+  margin-top: $line-height;
+}
