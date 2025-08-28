@@ -2,7 +2,6 @@
 //
 // 01. Dashboard global
 // 02. Actions
-// 03. Resources
 // 04. Goals
 // 05. Sidebar
 // 06. Community
@@ -162,62 +161,6 @@
 .proposed-actions {
   button {
     @include link;
-  }
-}
-
-// 03. Resources
-// -------------
-
-.resource-card {
-  background: #d1f5eb;
-  border-radius: rem-calc(4);
-  margin-bottom: $line-height;
-  min-height: $line-height * 9;
-  padding: $line-height * 2 $line-height $line-height;
-  position: relative;
-  text-align: center;
-
-  &.alert {
-    background: #feeaeb;
-
-    &::before {
-      color: #fb9497;
-      content: "\74";
-    }
-  }
-
-  &::before {
-    border: 2px solid;
-    border-radius: rem-calc(40);
-    color: #00cb96;
-    content: "\6c";
-    font-family: "icons";
-    font-size: rem-calc(20);
-    height: rem-calc(36);
-    position: absolute;
-    right: 12px;
-    top: 12px;
-    width: rem-calc(36);
-  }
-
-  .label {
-    left: 0;
-    position: absolute;
-    top: 20px;
-  }
-
-  h4 {
-    margin-top: $line-height;
-  }
-
-  .resource-description {
-    min-height: $line-height * 4;
-  }
-
-  .button {
-    background: #00cb96;
-    color: #000;
-    font-weight: bold;
   }
 }
 
@@ -427,28 +370,6 @@
   border: 1px solid $border;
   margin-bottom: $line-height;
   padding: $line-height;
-}
-
-.poll-card {
-  background: #e7f3fd;
-  border-radius: rem-calc(4);
-  margin-bottom: $line-height;
-  min-height: $line-height * 9;
-  padding: $line-height;
-  position: relative;
-  text-align: center;
-
-  .button {
-    font-weight: bold;
-  }
-
-  button {
-    cursor: pointer;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
 }
 
 .community-poll {

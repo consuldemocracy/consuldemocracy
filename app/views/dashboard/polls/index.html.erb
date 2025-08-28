@@ -3,11 +3,7 @@
   <div class="small-12 medium-9 column">
     <%= Setting["proposals.poll_description"] %>
 
-    <% if @polls.any? %>
-      <div class="row expanded margin-top" data-equalizer="poll-cards" data-equalize-on="medium">
-        <%= render @polls %>
-      </div>
-    <% end %>
+    <%= render Dashboard::PollsComponent.new(@polls) %>
   </div>
 
   <div class="small-12 medium-3 column">
