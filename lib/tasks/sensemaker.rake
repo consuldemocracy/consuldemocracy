@@ -1,8 +1,8 @@
 namespace :sensemaker do
-  desc "Setup Sensemaking Tools"
+  desc "Setup Sensemaker Integration"
   task setup: :environment do
     logger = ApplicationLogger.new
-    logger.info "Setting up Sensemaking Tools..."
+    logger.info "Setting up Sensemaker Integration..."
 
     tenant_schema = ENV["CONSUL_TENANT"]
 
@@ -24,7 +24,7 @@ namespace :sensemaker do
     end
   end
 
-  desc "Check if Sensemaking Tools dependencies are available"
+  desc "Check if sensemaker-tools dependencies are available"
   task check_dependencies: :environment do
     logger = ApplicationLogger.new
     check_dependencies(logger)
@@ -57,7 +57,7 @@ namespace :sensemaker do
       check_repository(logger)
       check_is_enabled(logger)
       check_sensemaker_cli(logger)
-      logger.info "Sensemaker integration verified you can now use the Sensemaker Tools."
+      logger.info "Sensemaker installation verified you can now use the Sensemaker Tools."
     end
 
     def check_sensemaker_cli(logger)
@@ -76,29 +76,29 @@ namespace :sensemaker do
       result = $?.exitstatus
 
       if result.eql?(0)
-        logger.info "✓ Sensemaker Tools are working correctly."
+        logger.info "✓ Sensemaker CLI is working correctly."
         logger.info output
       else
-        logger.warn "✗ Sensemaker Tools are not working correctly."
+        logger.warn "✗ Sensemaker CLI is not working correctly."
         logger.warn output
-        raise "Sensemaker Tools are not working correctly."
+        raise "Sensemaker CLI is not working correctly."
       end
     end
 
     def check_is_enabled(logger)
-      setting = Setting.find_by(key: "feature.sensemaking")
+      setting = Setting.find_by(key: "feature.sensemaker")
       if setting.present?
-        logger.info "✓ Sensemaking setting found"
+        logger.info "✓ Sensemaker setting found"
       else
-        logger.warn "✗ Sensemaking setting not found"
-        raise "Sensemaking setting not found"
+        logger.warn "✗ Sensemaker setting not found"
+        raise "Sensemaker setting not found"
       end
 
       if SensemakerService.enabled?
-        logger.info "✓ Sensemaking is enabled via feature.sensemaking setting"
+        logger.info "✓ Sensemaker is enabled via feature.sensemaker setting"
       else
-        logger.warn "✗ Sensemaking is disabled via feature.sensemaking setting"
-        raise "Sensemaking is disabled via feature.sensemaking setting"
+        logger.warn "✗ Sensemaker is disabled via feature.sensemaker setting"
+        raise "Sensemaker is disabled via feature.sensemaker setting"
       end
     end
 
@@ -106,15 +106,15 @@ namespace :sensemaker do
       sensemaker_path = SensemakerService.sensemaker_folder
 
       if File.directory?(sensemaker_path) && File.directory?(File.join(sensemaker_path, ".git"))
-        logger.info "✓ Sensemaker repository found: #{sensemaker_path}"
+        logger.info "✓ sensemaking-tools repository found: #{sensemaker_path}"
         Dir.chdir(sensemaker_path) do
           logger.info "  Current branch: #{`git rev-parse --abbrev-ref HEAD`.strip} "
           logger.info "  Latest commit: #{`git log -1 --pretty=format:"%h %s"`.strip}"
           logger.info "  Last updated: #{`git log -1 --pretty=format:"%ci"`.strip}"
         end
       else
-        logger.warn "✗ Sensemaker repository not found at: #{sensemaker_path}"
-        raise "Sensemaker repository not found at: #{sensemaker_path}"
+        logger.warn "✗ sensemaking-tools repository not found at: #{sensemaker_path}"
+        raise "sensemaking-tools repository not found at: #{sensemaker_path}"
       end
     end
 
@@ -179,7 +179,7 @@ namespace :sensemaker do
         data_path = Rails.root.join("vendor/sensemaking-tools/data")
       end
 
-      logger.info "Using sensemaker path: #{sensemaker_path}"
+      logger.info "Using sensemaking-tools path: #{sensemaker_path}"
       logger.info "Using data path: #{data_path}"
 
       check_dependencies(logger)
@@ -198,7 +198,24 @@ namespace :sensemaker do
 
       add_feature_flag(logger)
 
-      logger.info "Sensemaking Tools setup complete!"
+      if File.exist?(SensemakerService.key_file)
+        logger.info "Service account key file found at: #{SensemakerService.key_file}"
+        logger.info "Sensemaker setup complete!"
+      else
+        logger.info "IMPORTANT: Setup complete you need to provide a Google Cloud service account key file"
+        logger.info "Location: #{SensemakerService.key_file}"
+        logger.info ""
+        logger.info "To create a service account key:"
+        logger.info "1. In the Google Cloud console, go to the Service accounts page"
+        logger.info "2. Select a project"
+        logger.info "3. Click the email address of the service account that you want to create a key for"
+        logger.info "4. Click the Keys tab"
+        logger.info "5. Click the Add key drop-down menu, then select Create new key"
+        logger.info "6. Select JSON as the Key type and click Create"
+        logger.info ""
+        logger.info "For more details, visit: https://cloud.google.com/iam/docs/keys-create-delete"
+        logger.info ""
+      end
     end
 
     def check_dependencies(logger)
@@ -229,7 +246,7 @@ namespace :sensemaker do
     end
 
     def setup_sensemaker_directory(sensemaker_path, logger)
-      logger.info "Setting up sensemaker directory..."
+      logger.info "Setting up sensemaking-tools directory..."
 
       # Check if we're in a Capistrano deployment
       shared_path = Rails.root.join("../../shared")
@@ -325,8 +342,8 @@ namespace :sensemaker do
           logger.info "Sensemaker CLI tool is working correctly."
         else
           logger.warn output
-          logger.warn "Failed to run sensemaker CLI tool. Please check the installation."
-          raise "Failed to run sensemaker CLI tool. Please check the installation."
+          logger.warn "Failed to run Sensemaker CLI tool. Please check the installation."
+          raise "Failed to run Sensemaker CLI tool. Please check the installation."
         end
       end
     end
@@ -344,16 +361,16 @@ namespace :sensemaker do
     end
 
     def add_feature_flag(logger)
-      setting = Setting.find_or_initialize_by(key: "feature.sensemaking")
+      setting = Setting.find_or_initialize_by(key: "feature.sensemaker")
       if setting.new_record?
-        logger.info "Adding sensemaking feature flag..."
+        logger.info "Adding sensemaker feature flag..."
         setting.value = "true"
         setting.save!
         logger.info "Feature flag added."
       else
-        logger.info "Feature flag already exists, enabling sensemaking..."
+        logger.info "Feature flag already exists, enabling sensemaker..."
         setting.update!(value: "true")
-        logger.info "Sensemaking enabled using feature.sensemaking setting."
+        logger.info "Sensemaker enabled using feature.sensemaker setting."
       end
     end
 end

@@ -36,7 +36,7 @@ class Setting < ApplicationRecord
 
     def remove(key)
       setting = find_by(key: key)
-      setting.destroy if setting.present?
+      setting.destroy! if setting.present?
     end
 
     def accepted_content_types_for(group)
@@ -88,7 +88,7 @@ class Setting < ApplicationRecord
         "feature.saml_login": false,
         "feature.sdg": true,
         "feature.machine_learning": false,
-        "feature.sensemaking": false,
+        "feature.sensemaker": false,
         "feature.remove_investments_supports": true,
         "feature.cookies_consent": false,
         "homepage.widgets.feeds.debates": true,

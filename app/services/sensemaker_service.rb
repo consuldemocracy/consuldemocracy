@@ -62,7 +62,7 @@ class SensemakerService
   end
 
   def self.enabled?
-    Setting["feature.sensemaking"].present?
+    Setting["feature.sensemaker"].present?
   end
 
   private
@@ -91,14 +91,14 @@ class SensemakerService
 
       # Check if the required files exist
       unless File.exist?(self.class.sensemaker_folder)
-        error_message = "Sensemaking folder not found: #{self.class.sensemaker_folder}"
+        error_message = "sensemaking-tools folder not found: #{self.class.sensemaker_folder}"
         job.update!(finished_at: Time.current, error: error_message)
         Rails.logger.error(error_message)
         return false
       end
 
       unless File.exist?(self.class.sensemaker_data_folder)
-        error_message = "Sensemaking data folder not found: #{self.class.sensemaker_data_folder}"
+        error_message = "Sensemaker data folder not found: #{self.class.sensemaker_data_folder}"
         job.update!(finished_at: Time.current, error: error_message)
         Rails.logger.error(error_message)
         return false
