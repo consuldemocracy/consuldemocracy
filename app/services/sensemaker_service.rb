@@ -142,10 +142,6 @@ class SensemakerService
       true
     end
 
-    def test_hello
-      system("echo \"Hello, world!\"")
-    end
-
     def execute_script
       model_name = Tenant.current_secrets.sensemaker_model_name
       additional_context = job.additional_context.presence

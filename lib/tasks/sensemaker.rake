@@ -9,11 +9,11 @@ namespace :sensemaker do
     if tenant_schema.present?
       logger.info "Setting up for tenant: #{tenant_schema}"
 
-              unless Tenant.exists?(schema: tenant_schema)
-          err_msg = "Tenant '#{tenant_schema}' not found. Available: #{Tenant.pluck(:schema).join(", ")}"
-          logger.warn err_msg
-          raise "Tenant '#{tenant_schema}' not found"
-        end
+      unless Tenant.exists?(schema: tenant_schema)
+        err_msg = "Tenant '#{tenant_schema}' not found. Available: #{Tenant.pluck(:schema).join(", ")}"
+        logger.warn err_msg
+        raise "Tenant '#{tenant_schema}' not found"
+      end
 
       Tenant.switch(tenant_schema) do
         setup_for_tenant(logger)
@@ -56,6 +56,32 @@ namespace :sensemaker do
       check_key_file(logger)
       check_repository(logger)
       check_is_enabled(logger)
+      check_sensemaker_cli(logger)
+    end
+
+    def check_sensemaker_cli(logger)
+      model_name = Tenant.current_secrets.sensemaker_model_name
+      sensemaker_folder = SensemakerService.sensemaker_folder
+      project_id = SensemakerService.parse_key_file.fetch("project_id")
+      output_file = "#{sensemaker_folder}/testoutput.txt"
+
+      command = %Q(npx ts-node #{sensemaker_folder}/library/runner-cli/health_check_runner.ts \
+        --vertexProject #{project_id} \
+        --outputFile #{output_file} \
+        --modelName #{model_name} \
+        --keyFilename #{SensemakerService.key_file})
+
+      output = `cd #{SensemakerService.sensemaker_folder} && #{command} 2>&1`
+      result = $?.exitstatus
+
+      if result.eql?(0)
+        logger.info "✓ Sensemaker Tools are working correctly."
+        logger.info output
+      else
+        logger.warn "✗ Sensemaker Tools are not working correctly."
+        logger.warn output
+        raise "Sensemaker Tools are not working correctly."
+      end
     end
 
     def check_is_enabled(logger)
@@ -157,13 +183,17 @@ namespace :sensemaker do
 
       check_dependencies(logger)
 
-      setup_directories(sensemaker_path, data_path, logger)
+      setup_sensemaker_directory(sensemaker_path, logger)
 
       clone_or_update_repository(sensemaker_path, logger)
+
+      setup_data_directory(data_path, logger)
 
       install_dependencies(sensemaker_path, logger)
 
       set_file_permissions(sensemaker_path, data_path, logger)
+
+      verify_cli_available(sensemaker_path, logger)
 
       add_feature_flag(logger)
 
@@ -197,8 +227,8 @@ namespace :sensemaker do
       logger.info "All dependencies are available."
     end
 
-    def setup_directories(sensemaker_path, data_path, logger)
-      logger.info "Setting up directory structure..."
+    def setup_sensemaker_directory(sensemaker_path, logger)
+      logger.info "Setting up sensemaker directory..."
 
       # Check if we're in a Capistrano deployment
       shared_path = Rails.root.join("../../shared")
@@ -224,10 +254,13 @@ namespace :sensemaker do
       # Create directory if it doesn't exist (for both Capistrano and non-Capistrano environments)
       FileUtils.mkdir_p(sensemaker_path) unless File.directory?(sensemaker_path)
 
-      # Create data directory if it doesn't exist
-      FileUtils.mkdir_p(data_path) unless File.directory?(data_path)
+      logger.info "Sensemaker directory created."
+    end
 
-      logger.info "Directory structure created."
+    def setup_data_directory(data_path, logger)
+      logger.info "Setting up data directory..."
+      FileUtils.mkdir_p(data_path) unless File.directory?(data_path)
+      logger.info "Data directory created."
     end
 
     def clone_or_update_repository(sensemaker_path, logger)
@@ -279,14 +312,18 @@ namespace :sensemaker do
         logger.warn "Library directory not found at #{library_path}"
         raise "Library directory not found at #{library_path}"
       end
+    end
 
-      # Verify installation by running a test command
+    def verify_cli_available(sensemaker_path, logger)
+      library_path = File.join(sensemaker_path, "library")
+
       Dir.chdir(library_path) do
-        system("npx ts-node ./runner-cli/categorization_runner.ts --help > /dev/null 2>&1")
+        output = `npx ts-node ./runner-cli/health_check_runner.ts --help`
 
         if $?.success?
           logger.info "Sensemaker CLI tool is working correctly."
         else
+          logger.warn output
           logger.warn "Failed to run sensemaker CLI tool. Please check the installation."
           raise "Failed to run sensemaker CLI tool. Please check the installation."
         end
