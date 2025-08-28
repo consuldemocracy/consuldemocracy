@@ -57,6 +57,7 @@ namespace :sensemaker do
       check_repository(logger)
       check_is_enabled(logger)
       check_sensemaker_cli(logger)
+      logger.info "Sensemaker integration verified you can now use the Sensemaker Tools."
     end
 
     def check_sensemaker_cli(logger)
