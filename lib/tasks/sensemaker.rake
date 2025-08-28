@@ -124,7 +124,7 @@ namespace :sensemaker do
     end
 
     def check_repository(logger)
-      sensemaker_path = Sensemaker::Service.sensemaker_folder
+      sensemaker_path = Sensemaker::JobRunner.sensemaker_folder
 
       if File.directory?(sensemaker_path) && File.directory?(File.join(sensemaker_path, ".git"))
         logger.info "✓ sensemaking-tools repository found: #{sensemaker_path}"
