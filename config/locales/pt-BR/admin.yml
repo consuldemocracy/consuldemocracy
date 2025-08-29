@@ -1728,6 +1728,7 @@ pt-BR:
       help:
         title_1: "O que é I. A / Aprendizado de Máquina?"
         title_3: "Como utilizar esse módulo"
+        description_3: "Para utilizá-lo pela primeira vez, é necessário seguir as instruções disponíveis na documentação do CONSUL DEMOCRACY para ativar corretamente este módulo. Uma vez que o módulo esteja ativado corretamente, os programas são executados a partir da aba \"Executar scripts\". Antes da execução, é possível visualizar nessa mesma aba uma estimativa do tempo de execução e outras informações relevantes. Ao final da execução, podemos ativar o conteúdo que será exibido no CONSUL DEMOCRACY através da aba \"Configurações\", além de baixar outros arquivos gerados que possam ser úteis."
         title_4: "Como implementar novos scripts de I. A / Aprendizado de Máquina"
         description_4: "Por favor utilize scripts anteriores como exemplo."
       no_content: "Nenhum conteúdo gerado ainda"
