@@ -1411,6 +1411,7 @@ pt-BR:
         coordinates: Coordenadas
         coordinates_help: Coordenadas que vão gerar uma zona clicável num mapa de imagem HTML
         geojson: GeoJSON disponível
+        geojson_help: "Deve seguir o formato do tipo 'Polígono' ou 'Multi Polígono' no mapa de um orçamento, um polígono baseado nesses dados aparecerá quando um título estiver associado a essa zona geográfica"
       edit:
         form:
           submit_button: Salvar alterações
