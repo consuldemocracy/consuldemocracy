@@ -91,6 +91,8 @@ sv:
       google_login_description: "Tillåt användare att logga in med sitt Google-konto"
       wordpress_login: "Wordpress-inloggning"
       wordpress_login_description: "Tillåt användare att logga in med sitt Wordpress-konto"
+      oidc_login: "OpenID Connect-inloggning"
+      oidc_login_description: "Tillåt att användare registrerar sig genom OpenID Connect (OIDC)"
       saml_login: "SAML-inloggning"
       saml_login_description: "Tillåt att användare registrerar sig genom SAML"
       featured_proposals: "Uppmärksammade förslag"
