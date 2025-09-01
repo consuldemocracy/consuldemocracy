@@ -18,6 +18,7 @@ cs:
           reseted: Heslo bylo úspěšně resetováno
           random: Vytvořit náhodné heslo
           save: Uložit heslo
+          show: Zobrazit heslo
           print: Tisknout heslo
           print_help: Když je heslo uložené, můžete ho vytisknout.
     account_info:

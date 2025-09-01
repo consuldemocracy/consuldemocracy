@@ -534,8 +534,6 @@ bg:
           attributes:
             document_number:
               not_in_census: "Документът не е в преброяване"
-            user_id:
-              has_voted: "Потребителят вече е гласувал"
         legislation/process:
           attributes:
             end_date:

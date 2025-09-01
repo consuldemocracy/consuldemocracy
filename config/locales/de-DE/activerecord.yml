@@ -546,8 +546,6 @@ de:
           attributes:
             document_number:
               not_in_census: "Dieses Dokument scheint nicht im Melderegister auf"
-            user_id:
-              has_voted: "Nutzer hat bereit abgestimmt"
         legislation/process:
           attributes:
             end_date:

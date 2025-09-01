@@ -1,4 +1,8 @@
 el:
   sdg:
+    goals:
+      goal_1:
+        title_in_two_lines: "Μηδενική φτώχεια"
+        description: "Δίνουμε τέλος σε όλες τις μορφές της φτώχειας, παντού."
     related_list_selector:
       remove_tag: "Κατάργηση"

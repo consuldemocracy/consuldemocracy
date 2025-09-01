@@ -657,8 +657,6 @@ ar:
           attributes:
             document_number:
               not_in_census: "الوثيقة ليست في التعداد"
-            user_id:
-              has_voted: "هذا المستخدم قد صوت بالفعل"
         legislation/process:
           attributes:
             end_date:

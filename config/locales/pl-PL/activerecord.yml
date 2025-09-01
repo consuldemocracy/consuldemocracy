@@ -552,8 +552,6 @@ pl:
           attributes:
             document_number:
               not_in_census: "Brak dokumentu w spisie"
-            user_id:
-              has_voted: "Użytkownik już zagłosował"
         legislation/process:
           attributes:
             end_date:

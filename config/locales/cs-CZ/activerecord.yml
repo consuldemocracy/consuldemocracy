@@ -622,6 +622,8 @@ cs:
       votation_type/vote_type:
         unique: Jedinečná odpověď
         multiple: Více odpovědí
+      cookies/vendor:
+        script: Javascript kód
     errors:
       models:
         user:
@@ -657,8 +659,6 @@ cs:
           attributes:
             document_number:
               not_in_census: "Document not in census"
-            user_id:
-              has_voted: "Uživatel již hlasoval"
         legislation/process:
           attributes:
             end_date:

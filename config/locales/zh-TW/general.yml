@@ -461,10 +461,6 @@ zh-TW:
       results:
         title: "問題"
         most_voted_answer: "得最多投票的答案： "
-  poll_questions:
-    show:
-      vote_answer: "投票%{answer}"
-      voted: "您已投票%{answer}"
   proposal_notifications:
     new:
       title: "發送消息"

@@ -628,10 +628,6 @@ sr:
         most_voted_answer: "Најизгласанији одговор: "
     poll_header:
       back_to_proposal: Назад на предлоге
-  poll_questions:
-    show:
-      vote_answer: "Гласајте %{answer}"
-      voted: "Гласали сте%{answer}"
   proposal_notifications:
     new:
       title: "Пошаљите поруку"

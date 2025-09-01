@@ -655,10 +655,6 @@ ar:
         most_voted_answer: "الإجابة الأكثر تصويتًا:"
     poll_header:
       back_to_proposal: العودة إلى المقترح
-  poll_questions:
-    show:
-      vote_answer: "صوّت على %{answer}"
-      voted: "لقد قمت بالتصويت على %{answer}"
   proposal_notifications:
     new:
       title: "إرسال رسالة"

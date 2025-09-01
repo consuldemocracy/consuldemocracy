@@ -452,10 +452,6 @@ eu:
       results:
         title: "Galderak"
         most_voted_answer: "Gehien bozkatutako erantzuna: "
-  poll_questions:
-    show:
-      vote_answer: "%{answer} bozkatu"
-      voted: "%{answer} bozkatu duzu"
   proposal_notifications:
     new:
       title: "Mezua bidali"

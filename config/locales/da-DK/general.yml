@@ -623,11 +623,7 @@ da:
     poll_header:
       back_to_proposal: Tilbage til forslag
   poll_questions:
-    show:
-      vote_answer: "Stem %{answer}"
-      voted: "Du har stemt %{answer}"
     description:
-      unique: "Du kan maksimalt vælge et svar."
       multiple: "Du kan maksimalt vælge %{maximum} svar."
     read_more_about: "Læs mere om:"
   proposal_notifications:

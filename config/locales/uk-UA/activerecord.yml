@@ -591,8 +591,6 @@ uk-UA:
           attributes:
             document_number:
               not_in_census: "Документ відсутній у переписі"
-            user_id:
-              has_voted: "Користувач вже проголосував"
         legislation/process:
           attributes:
             end_date:

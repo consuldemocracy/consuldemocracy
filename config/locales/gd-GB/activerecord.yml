@@ -641,8 +641,6 @@ gd:
           attributes:
             document_number:
               not_in_census: "Chan eil an sgrìobhainn sa chunntas-sluaigh"
-            user_id:
-              has_voted: "Tha an cleachdaiche air bhòtadh mar-thà"
         legislation/process:
           attributes:
             end_date:

@@ -579,8 +579,6 @@ ro:
           attributes:
             document_number:
               not_in_census: "Acest document nu apare în recensământ"
-            user_id:
-              has_voted: "Utilizatorul a votat deja"
         legislation/process:
           attributes:
             end_date:

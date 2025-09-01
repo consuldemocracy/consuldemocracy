@@ -12,7 +12,7 @@ sq:
       reasons_for_not_balloting:
         not_verified: Vetëm përdoruesit e verifikuar mund të votojnë për investimet; %{verify_account}.
         not_selected: Projektet e investimeve të pazgjedhura nuk mund të mbështeten.
-        not_enough_money: "Ju tashmë keni caktuar buxhetin në dispozicion. <small> Mos harroni që ju mund të %{change_ballot} në cdo kohë </small>"
+        not_enough_money: "Ju tashmë keni caktuar buxhetin në dispozicion. <br><small> Mos harroni që ju mund të %{change_ballot} në cdo kohë</small>"
         no_ballots_allowed: Faza e zgjedhjes është e mbyllur
         different_heading_assigned: "Ju keni votuar tashmë një titull tjetër: %{heading_link}"
         change_ballot: Ndryshoni votat tuaja

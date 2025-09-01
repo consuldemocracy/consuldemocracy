@@ -69,7 +69,6 @@ da:
         new_confirmation: Har du ikke modtaget instruktioner i, hvordan du aktiverer din konto?
         new_password: Har du glemt din adgangskode?
         new_unlock: Har du ikke modtaget instruktioner i at genåbne din konto?
-        signin_with_provider: Log ind med %{provider}
         signup: Har du ikke en konto? %{signup_link}
         signup_link: Tilmeld dig
     unlocks:

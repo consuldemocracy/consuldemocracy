@@ -64,7 +64,6 @@ eu:
         new_confirmation: Ez duzu zure kontua egiaztatzeko argibiderik jaso?
         new_password: Pasahitza ahaztu duzu?
         new_unlock: Ez duzu desblokeatzeko argibiderik jaso?
-        signin_with_provider: '%{provider} erabiliz sartu'
         signup: Ez duzu konturik? %{signup_link}
         signup_link: Erregistratu zaitez
     unlocks:

@@ -598,10 +598,6 @@ el:
         most_voted_answer: "Απάντηση με τις περισσότερες ψήφους:"
     poll_header:
       back_to_proposal: Πίσω στην πρόταση
-  poll_questions:
-    show:
-      vote_answer: "Ψήφισε %{answer}"
-      voted: "Έχετε ψηφίσει %{answer}"
   proposal_notifications:
     new:
       title: "Αποστολή μηνύματος"

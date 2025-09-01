@@ -576,8 +576,6 @@ sv:
           attributes:
             document_number:
               not_in_census: "Finns inte i adressregistret"
-            user_id:
-              has_voted: "Användaren har redan röstat"
         legislation/process:
           attributes:
             end_date:
