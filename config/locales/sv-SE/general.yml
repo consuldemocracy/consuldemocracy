@@ -282,6 +282,10 @@ sv:
       sign_in: Logga in med SAML
       sign_up: Registrera dig genom SAML
       name: SAML
+    oidc:
+      sign_in: Logga in med OIDC
+      sign_up: Registrera dig genom OIDC
+      name: OIDC
     or_fill: "Eller fyll i följande formulär:"
   proposals:
     create:
