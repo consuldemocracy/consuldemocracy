@@ -293,6 +293,22 @@ Devise.setup do |config|
     saml_settings[:idp_sso_service_url] = Rails.application.secrets.saml_idp_sso_service_url
     saml_settings[:sp_entity_id] = Rails.application.secrets.saml_sp_entity_id
     saml_settings[:allowed_clock_drift] = 1.minute
+
+    saml_settings[:certificate] = Rails.application.secrets.saml_certificate
+    saml_settings[:private_key] = Rails.application.secrets.saml_private_key
+    saml_settings[:security] =
+      {
+        authn_requests_signed: false,
+        want_assertions_signed: false,
+        want_assertions_encrypted: true,
+        metadata_signed: false,
+        embed_sign: false,
+        digest_method: XMLSecurity::Document::SHA1,
+        signature_method: XMLSecurity::Document::RSA_SHA1
+      }
+    if Rails.application.secrets.saml_additional_parameters.present?
+      saml_settings.merge!(Rails.application.secrets.saml_additional_parameters)
+    end
   end
   config.omniauth :saml, saml_settings.merge(setup: ->(env) { OmniauthTenantSetup.saml(env) })
 
