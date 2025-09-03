@@ -2,6 +2,13 @@ module Sensemaker
   class JobRunner
     attr_reader :job
 
+    SCRIPTS = [
+      "health_check_runner.ts",
+      "runner.ts",
+      "advanced_runner.ts",
+      "categorization_runner.ts"
+    ].freeze
+
     def initialize(job)
       @job = job
     end

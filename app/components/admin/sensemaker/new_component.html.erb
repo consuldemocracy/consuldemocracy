@@ -1,0 +1,9 @@
+<%= header %>
+
+<%= form_for @sensemaker_job, url: admin_sensemaker_jobs_path, method: :post do |f| %>
+  <%= f.select :commentable_type, Comment::COMMENTABLE_TYPES %>
+  <%= f.text_field :commentable_id %>
+
+  <%= f.select :script, Sensemaker::JobRunner::SCRIPTS %>
+  <%= f.submit "Create" %>
+<% end %>
