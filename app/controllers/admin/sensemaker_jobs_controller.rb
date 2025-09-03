@@ -13,10 +13,10 @@ class Admin::SensemakerJobsController < Admin::BaseController
 
   def create
     @sensemaker_job = Sensemaker::Job.create!(script: params[:script],
-                                  user: current_user,
-                                  started_at: Time.current,
-                                  finished_at: nil,
-                                  error: nil)
+                                              user: current_user,
+                                              started_at: Time.current,
+                                              finished_at: nil,
+                                              error: nil)
 
     Sensemaker::JobRunner.new(@sensemaker_job).run
 
