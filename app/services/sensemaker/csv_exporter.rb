@@ -21,6 +21,15 @@ module Sensemaker
       file_path
     end
 
+    def export_to_string
+      CSV.generate(headers: true) do |csv|
+        csv << csv_headers
+        export_data.each do |row|
+          csv << row
+        end
+      end
+    end
+
     private
 
       def csv_headers

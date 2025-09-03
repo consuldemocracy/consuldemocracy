@@ -310,6 +310,7 @@ namespace :admin do
     end
 
     resources :sensemaker_jobs, only: [:index, :new, :create] do
+      post :preview, on: :collection
       delete :cancel, on: :collection
     end
 

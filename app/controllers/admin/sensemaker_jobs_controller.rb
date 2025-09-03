@@ -23,6 +23,18 @@ class Admin::SensemakerJobsController < Admin::BaseController
                 notice: t("admin.sensemaker.script_info", email: current_user.email)
   end
 
+  def preview
+    valid_params = sensemaker_job_params.to_h
+    valid_params.merge!(user: current_user, started_at: Time.current)
+    sensemaker_job = Sensemaker::Job.new(valid_params)
+
+    result = Sensemaker::JobRunner.compile_context(sensemaker_job.commentable)
+    result += "\n\n---------Input CSV--------\n\n"
+    result += Sensemaker::CsvExporter.new(sensemaker_job.commentable).export_to_string
+
+    render plain: result, layout: false
+  end
+
   def cancel
     Delayed::Job.where(queue: "sensemaker").destroy_all
     Sensemaker::Job.unfinished.destroy_all

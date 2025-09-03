@@ -8,4 +8,7 @@
 
   <%= f.select :script, Sensemaker::JobRunner::SCRIPTS %>
   <%= f.submit "Create" %>
+  <%= f.submit "Preview input",
+      formaction: preview_admin_sensemaker_jobs_path,
+      class: "button" %>
 <% end %>
