@@ -66,12 +66,59 @@ module Sensemaker
       Setting["feature.sensemaker"].present?
     end
 
+    # TODO: add test coverage for Debates and Proposals
+    def self.compile_context(commentable)
+      parts = []
+
+      commentable_type = commentable.class.name.humanize
+      parts << "Analyzing citizen #{commentable_type} from Consul Democracy platform"
+      parts << "#{commentable_type}: #{commentable.title}"
+
+      if commentable.respond_to?(:summary)
+        parts << "Summary: #{commentable.summary}"
+      end
+
+      if commentable.description.present?
+        parts << "Description: #{commentable.description}" # TODO: consider strip tags?
+      end
+
+      if commentable.author.present?
+        parts << "Author: #{commentable.author.username}"
+      end
+
+      if commentable.respond_to?(:geozone) && commentable.geozone.present?
+        parts << "Location: #{commentable.geozone.name}"
+      end
+
+      if commentable.respond_to?(:tag_list) && commentable.tag_list.any?
+        parts << "Tags: #{commentable.tag_list.join(', ')}"
+      end
+
+      parts << "Support votes: #{commentable.cached_votes_up || 0}"
+
+      if commentable.respond_to?(:cached_votes_down)
+        parts << "Opposition votes: #{commentable.cached_votes_down || 0}"
+      end
+
+      parts << "Comments: #{commentable.comments_count || 0}"
+
+      parts << "Created: #{commentable.created_at.strftime('%B %d, %Y')}"
+
+      if commentable.respond_to?(:published?) && commentable.published?
+        parts << "Published: #{commentable.published_at.strftime('%B %d, %Y')}"
+      end
+
+      parts.join("\n")
+    end
+
     private
 
       def prepare_input_data
-        # For the initial implementation, we assume the input data is already prepared
-        # at a fixed location with the name sensemaker-input.csv
-        # No export logic needed at this stage
+        # Export the input data to a CSV file
+        Sensemaker::CsvExporter.export(job.commentable)
+
+        # Compile context for the sensemaker tool
+        job.update!(additional_context: self.class.compile_context(job.commentable))
       end
 
       def check_dependencies?
