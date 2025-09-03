@@ -91,6 +91,8 @@ es:
       google_login_description: "Permitir que los usuarios se registren con su cuenta de Google"
       wordpress_login: "Registro con Wordpress"
       wordpress_login_description: "Permitir que los usuarios se registren con su cuenta de Wordpress"
+      oidc_login: "Registro con OpenID Connect"
+      oidc_login_description: "Permitir que los usuarios se registren usando OpenID Connect (OIDC)"
       saml_login: "Registro con SAML"
       saml_login_description: "Permitir que los usuarios se registren usando SAML"
       featured_proposals: "Propuestas destacadas"

@@ -296,6 +296,20 @@ Devise.setup do |config|
   end
   config.omniauth :saml, saml_settings.merge(setup: ->(env) { OmniauthTenantSetup.saml(env) })
 
+  config.omniauth :openid_connect,
+                  name: :oidc,
+                  scope: [:openid, :email, :profile],
+                  response_type: :code,
+                  issuer: Rails.application.secrets.oidc_issuer,
+                  discovery: true,
+                  client_auth_method: :basic,
+                  client_options: {
+                    identifier: Rails.application.secrets.oidc_client_id,
+                    secret: Rails.application.secrets.oidc_client_secret,
+                    redirect_uri: Rails.application.secrets.oidc_redirect_uri
+                  },
+                  setup: ->(env) { OmniauthTenantSetup.oidc(env) }
+
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

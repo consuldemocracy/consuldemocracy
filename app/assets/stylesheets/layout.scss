@@ -1384,7 +1384,8 @@ table {
 .button.button-facebook,
 .button.button-google,
 .button.button-wordpress,
-.button.button-saml {
+.button.button-saml,
+.button.button-oidc {
   color: inherit;
   font-weight: bold;
 
@@ -1441,6 +1442,16 @@ table {
 
   &::before {
     color: #3b9857;
+  }
+}
+
+.button.button-oidc {
+  @include has-fa-icon(openid, brands);
+  background: #fdf9f1;
+  border-left: 3px solid #f7931e;
+
+  &::before {
+    color: #f7931e;
   }
 }
 
