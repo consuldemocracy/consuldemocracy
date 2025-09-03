@@ -94,7 +94,7 @@ module Sensemaker
       end
 
       if commentable.respond_to?(:tag_list) && commentable.tag_list.any?
-        parts << "Tags: #{commentable.tag_list.join(', ')}"
+        parts << "Tags: #{commentable.tag_list.join(", ")}"
       end
 
       if commentable.respond_to?(:cached_votes_up)
@@ -107,10 +107,10 @@ module Sensemaker
 
       parts << "Comments: #{commentable.comments_count || 0}"
 
-      parts << "Created: #{commentable.created_at.strftime('%B %d, %Y')}"
+      parts << "Created: #{commentable.created_at.strftime("%B %d, %Y")}"
 
       if commentable.respond_to?(:published?) && commentable.published?
-        parts << "Published: #{commentable.published_at.strftime('%B %d, %Y')}"
+        parts << "Published: #{commentable.published_at.strftime("%B %d, %Y")}"
       end
 
       parts.join("\n")

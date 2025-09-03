@@ -29,7 +29,8 @@ class Admin::MenuComponent < ApplicationComponent
         stats_link,
         settings_links,
         dashboard_links,
-        (machine_learning_link if ::MachineLearning.enabled?)
+        (machine_learning_link if ::MachineLearning.enabled?),
+        (sensemaker_link if feature?(:sensemaker))
       ]
     end
 
@@ -564,6 +565,15 @@ class Admin::MenuComponent < ApplicationComponent
         admin_machine_learning_path,
         controller_name == "machine_learning",
         class: "ml-link"
+      ]
+    end
+
+    def sensemaker_link
+      [
+        t("admin.menu.sensemaker"),
+        "#",
+        controller_name == "sensemaker",
+        class: "sensemaker-link"
       ]
     end
 

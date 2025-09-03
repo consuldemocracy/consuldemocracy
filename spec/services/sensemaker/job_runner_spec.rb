@@ -276,7 +276,7 @@ describe Sensemaker::JobRunner do
 
       commentable_types.each do |commentable_type|
         commentable_factory = commentable_type.downcase.gsub("::", "_").to_sym
-        commentable = create(commentable_factory)
+        commentable = create!(commentable_factory)
         3.times do
           create(:comment, commentable: commentable, user: user)
         end
@@ -284,7 +284,6 @@ describe Sensemaker::JobRunner do
         expect(context_result).to be_present, "Failed to compile context for #{commentable_factory}"
         expect(context_result).to include("Comments: #{commentable.comments_count}")
       end
-
     end
   end
 end

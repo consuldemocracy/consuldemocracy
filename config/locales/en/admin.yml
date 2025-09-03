@@ -783,6 +783,7 @@ en:
           budgets: "Budgets"
           layouts: "Layouts"
           machine_learning: "AI / Machine Learning"
+          sensemaker: "Sensemaker"
           mailers: "Emails"
           management: "Management"
           welcome: "Welcome"
@@ -804,6 +805,7 @@ en:
       comments: "Comments"
       local_census_records: Local census
       machine_learning: "AI / Machine learning"
+      sensemaker: "Sensemaker"
       multitenancy: Multitenancy
     administrators:
       index:
