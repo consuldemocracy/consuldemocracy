@@ -1,6 +1,8 @@
 <%= header %>
 
 <%= form_for @sensemaker_job, url: admin_sensemaker_jobs_path, method: :post do |f| %>
+  <%# TODO: Perhaps add a run preview to see context %>
+
   <%= f.select :commentable_type, Comment::COMMENTABLE_TYPES %>
   <%= f.text_field :commentable_id %>
 

@@ -204,14 +204,15 @@ module Sensemaker
 
       def execute_script
         model_name = Tenant.current_secrets.sensemaker_model_name
-        additional_context = job.additional_context.presence
+        additional_context = nil
+        additional_context = job.additional_context.presence unless job.script == "health_check_runner.ts"
 
         command = %Q(npx ts-node #{script_file} \
                    --vertexProject #{project_id} \
                    --outputFile #{output_file} \
-                   --inputFile #{input_file} \
                    --modelName #{model_name} \
                    --keyFilename #{key_file})
+        command += " --inputFile #{input_file}" unless job.script == "health_check_runner.ts"
         command += " --additionalContext \"#{additional_context}\"" if additional_context.present?
 
         # Execute the command
