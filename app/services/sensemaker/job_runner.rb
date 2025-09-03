@@ -66,7 +66,6 @@ module Sensemaker
       Setting["feature.sensemaker"].present?
     end
 
-    # TODO: add test coverage for Debates and Proposals
     def self.compile_context(commentable)
       parts = []
 
@@ -78,8 +77,12 @@ module Sensemaker
         parts << "Summary: #{commentable.summary}"
       end
 
-      if commentable.description.present?
+      if commentable.respond_to?(:description) && commentable.description.present?
         parts << "Description: #{commentable.description}" # TODO: consider strip tags?
+      end
+
+      if commentable.respond_to?(:text) && commentable.text.present?
+        parts << "Text: #{commentable.text}"
       end
 
       if commentable.author.present?
@@ -94,7 +97,9 @@ module Sensemaker
         parts << "Tags: #{commentable.tag_list.join(', ')}"
       end
 
-      parts << "Support votes: #{commentable.cached_votes_up || 0}"
+      if commentable.respond_to?(:cached_votes_up)
+        parts << "Support votes: #{commentable.cached_votes_up || 0}"
+      end
 
       if commentable.respond_to?(:cached_votes_down)
         parts << "Opposition votes: #{commentable.cached_votes_down || 0}"

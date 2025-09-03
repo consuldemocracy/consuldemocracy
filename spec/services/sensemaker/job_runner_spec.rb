@@ -267,4 +267,24 @@ describe Sensemaker::JobRunner do
       expect(job.error).to eq("Output file not found")
     end
   end
+
+  describe ".compile_context" do
+    let(:service) { Sensemaker::JobRunner.new(job) }
+
+    it "can compile context for each commentable type" do
+      commentable_types = Comment::COMMENTABLE_TYPES
+
+      commentable_types.each do |commentable_type|
+        commentable_factory = commentable_type.downcase.gsub("::", "_").to_sym
+        commentable = create(commentable_factory)
+        3.times do
+          create(:comment, commentable: commentable, user: user)
+        end
+        context_result = service.class.compile_context(commentable)
+        expect(context_result).to be_present, "Failed to compile context for #{commentable_factory}"
+        expect(context_result).to include("Comments: #{commentable.comments_count}")
+      end
+
+    end
+  end
 end
