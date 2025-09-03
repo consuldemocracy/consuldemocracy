@@ -25,7 +25,7 @@ module Sensemaker
       handle_error(e)
       raise e
     end
-    handle_asynchronously :run, queue: "sensemaking"
+    handle_asynchronously :run, queue: "sensemaker"
 
     def input_file
       "#{self.class.sensemaker_data_folder}/sensemaker-input.csv"

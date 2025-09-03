@@ -309,6 +309,10 @@ namespace :admin do
       delete :cancel, on: :collection
     end
 
+    resources :sensemaker_jobs, only: [:index, :new, :create] do
+      delete :cancel, on: :collection
+    end
+
     namespace :cookies do
       resources :vendors, except: [:index, :show]
     end

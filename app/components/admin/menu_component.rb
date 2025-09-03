@@ -571,8 +571,8 @@ class Admin::MenuComponent < ApplicationComponent
     def sensemaker_link
       [
         t("admin.menu.sensemaker"),
-        "#",
-        controller_name == "sensemaker",
+        admin_sensemaker_jobs_path,
+        controller_name == "sensemaker_jobs",
         class: "sensemaker-link"
       ]
     end

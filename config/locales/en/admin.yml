@@ -1751,6 +1751,36 @@ en:
           created: Created records
         local_census_records:
           no_records_found: No records found.
+    sensemaker:
+      cancel: "Cancel operation"
+      cancel_alert: "This action will cancel the current script and it will be necessary to run the script again."
+      comments_summary: "Comments summary"
+      comments_summary_description: "Displays an automatically generated comment summary on all items that can be commented on."
+      data_folder_content: "Data folder content"
+      error: "Error:"
+      execute_script: "Execute script"
+      executed_by: "Executed by:"
+      executed_script: "Executed script:"
+      feature_disabled: "This feature is disabled. To use Sensemaker you can enable it from the %{link}."
+      feature_disabled_link: "settings page"
+      help_text: "This functionality is experimental."
+      index:
+        title: Understand conversations with Sensemaker
+      help:
+        title_1: "What is Sensemaker?"
+        description_1: "Sensemaker is a tool that helps you make sense of large-scale conversations."
+        title_2: "How does Sensemaker work?"
+        description_2: "Sensemaker uses machine learning to analyze conversations and identify patterns."
+        title_3: "How to use Sensemaker?"
+        description_3: "To use Sensemaker, you need to upload a conversation and select the Sensemaker tool."
+      notice:
+        cancelled_jobs: "All sensemaker jobs have been cancelled."
+        script_info: "The script has been executed successfully."
+        script_name: "Script name:"
+        select_script: "Select script to execute"
+        started_at: "Started at:"
+        tab_help: "Help"
+        tab_scripts: "Execute script"
     machine_learning:
       cancel: "Cancel operation"
       cancel_alert: "This action will cancel the current script and it will be necessary to run the script again."

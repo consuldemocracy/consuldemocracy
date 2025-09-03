@@ -1,0 +1,77 @@
+<%= header %>
+
+
+<div class="sensemaker-jobs">
+  <% if enabled? %>
+    <div class="callout primary experimental-feature">
+      <strong><%= sanitize(t("admin.sensemaker.help_text")) %></strong>
+    </div>
+    <hr>
+
+    <h3 class="flex-between">
+      <span>Currently Running</span>
+      <%= button_to "Cancel", admin_sensemaker_jobs_path, class: "button", method: :delete, data: { confirm: t("admin.sensemaker.cancel_alert") } %>
+    </h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Script</th>
+          <th>Started at</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% running_jobs.each do |sensemaker_job| %>
+          <tr>
+            <td><%= sensemaker_job.commentable.title %></td>
+            <td><%= sensemaker_job.script %></td>
+            <td><%= sensemaker_job.started_at %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <hr>
+
+    <h3 class="flex-between">
+      <span>Past Runs</span>
+      <%= link_to "New Run", new_admin_sensemaker_job_path, class: "button" %>
+    </h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Script</th>
+          <th>Started at</th>
+          <th>Finished at</th>
+          <th>Errored</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% sensemaker_jobs.each do |sensemaker_job| %>
+          <tr>
+            <td><%= sensemaker_job.commentable.title %></td>
+            <td><%= sensemaker_job.script %></td>
+            <td><%= sensemaker_job.started_at %></td>
+            <td><%= sensemaker_job.finished_at %></td>
+            <td><%= sensemaker_job.errored? ? "Yes" : "No" %></td>
+          </tr>
+          <% if Rails.env.development? %>
+          <tr><td style="font-size: 12px;" colspan="5"><%= sensemaker_job.error %></td></tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+
+  <% else %>
+    <div class="callout primary">
+      <p>
+        <%= sanitize(t("admin.sensemaker.feature_disabled",
+                      link: link_to(t("admin.sensemaker.feature_disabled_link"),
+                                    admin_settings_path(anchor: "tab-feature-flags")))) %>
+      </p>
+    </div>
+  <% end %>
+</div>
