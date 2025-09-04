@@ -119,5 +119,34 @@ describe Poll::WebVote do
         expect(Poll::Answer.count).to be 2
       end
     end
+
+    context "essay questions" do
+      let!(:essay_question) { create(:poll_question_essay, poll: poll) }
+
+      it "creates one answer when text is present" do
+        web_vote.update(essay_question.id.to_s => { text_answer: "  Hi  " })
+
+        expect(poll.reload.voters.size).to eq 1
+        essay_answer = essay_question.reload.answers.find_by(author: user)
+        expect(essay_answer.text_answer).to eq "Hi"
+        expect(essay_answer.option_id).to be nil
+      end
+
+      it "does not create an answer but create voters when text is blank or only spaces" do
+        web_vote.update(essay_question.id.to_s => { text_answer: "   " })
+
+        expect(poll.reload.voters.size).to eq 1
+        expect(essay_question.reload.answers.where(author: user)).to be_empty
+      end
+
+      it "deletes existing answer but keeps voters when leaving essay blank" do
+        create(:poll_answer, question: essay_question, author: user, text_answer: "Old answer")
+
+        web_vote.update(essay_question.id.to_s => { text_answer: "  " })
+
+        expect(poll.reload.voters.size).to eq 1
+        expect(essay_question.reload.answers.where(author: user)).to be_empty
+      end
+    end
   end
 end

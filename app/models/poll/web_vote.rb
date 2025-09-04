@@ -63,14 +63,21 @@ class Poll::WebVote
     def answers_for_question(question, question_params)
       return [] unless question_params
 
-      Array(question_params[:option_id]).map do |option_id|
-        question.find_or_initialize_user_answer(user, option_id)
+      if question.essay?
+        text = question_params[:text_answer].to_s.strip
+        return [] if text.blank?
+
+        [question.find_or_initialize_user_answer(user, nil, text)]
+      else
+        Array(question_params[:option_id]).map do |option_id|
+          question.find_or_initialize_user_answer(user, option_id, nil)
+        end
       end
     end
 
     def max_answers
       questions.each do |question|
-        if answers[question.id].count > question.max_votes
+        if question.max_votes && answers[question.id].count > question.max_votes
           errors.add(
             :"question_#{question.id}",
             t("polls.form.maximum_exceeded", maximum: question.max_votes, given: answers[question.id].count)

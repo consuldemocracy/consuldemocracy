@@ -28,7 +28,7 @@
       </table>
 
       <% by_question = @partial_results.group_by(&:question_id) %>
-      <% @poll.questions.each do |question| %>
+      <% @poll.questions.for_physical_votes.each do |question| %>
         <h3><%= question.title %></h3>
 
         <table>

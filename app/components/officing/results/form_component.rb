@@ -12,4 +12,8 @@ class Officing::Results::FormComponent < ApplicationComponent
     def answer_result_value(question_id, option_index)
       params.dig(:questions, question_id.to_s, option_index.to_s).to_i
     end
+
+    def questions_for_physical_votes
+      poll.questions.for_physical_votes
+    end
 end
