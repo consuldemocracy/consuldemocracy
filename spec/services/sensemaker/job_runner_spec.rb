@@ -10,7 +10,7 @@ describe Sensemaker::JobRunner do
            script: "categorization_runner.ts",
            user: user,
            started_at: Time.current,
-           additional_context: "Test context")
+           additional_context: "")
   end
 
   describe "#run" do
@@ -276,7 +276,8 @@ describe Sensemaker::JobRunner do
 
       commentable_types.each do |commentable_type|
         commentable_factory = commentable_type.downcase.gsub("::", "_").to_sym
-        commentable = create!(commentable_factory)
+        commentable = create(commentable_factory)
+        expect(commentable.persisted?).to be true
         3.times do
           create(:comment, commentable: commentable, user: user)
         end
@@ -284,6 +285,21 @@ describe Sensemaker::JobRunner do
         expect(context_result).to be_present, "Failed to compile context for #{commentable_factory}"
         expect(context_result).to include("Comments: #{commentable.comments_count}")
       end
+    end
+  end
+
+  describe "#prepare_input_data" do
+    let(:service) { Sensemaker::JobRunner.new(job) }
+
+    it "prepares input data by calling CsvExporter and updating the job with the additional context" do
+      expect(Sensemaker::CsvExporter).to receive(:export_to_csv).with(job.commentable)
+      expect(job.additional_context).to be_blank
+
+      service.send(:prepare_input_data)
+
+      job.reload
+      expect(job.additional_context).to be_present
+      expect(job.additional_context).to include("Comments: #{job.commentable.comments_count}")
     end
   end
 end

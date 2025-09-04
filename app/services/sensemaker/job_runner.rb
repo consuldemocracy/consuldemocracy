@@ -126,10 +126,7 @@ module Sensemaker
     private
 
       def prepare_input_data
-        # Export the input data to a CSV file
-        Sensemaker::CsvExporter.export(job.commentable)
-
-        # Compile context for the sensemaker tool
+        Sensemaker::CsvExporter.export_to_csv(job.commentable)
         job.update!(additional_context: self.class.compile_context(job.commentable))
       end
 
