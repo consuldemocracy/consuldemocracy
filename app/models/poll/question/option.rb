@@ -39,8 +39,10 @@ class Poll::Question::Option < ApplicationRecord
   end
 
   def total_votes
-    Poll::Answer.where(question_id: question, answer: title).count +
-      ::Poll::PartialResult.where(question: question).where(answer: title).sum(:amount)
+    web = Poll::Answer.where(option_id: id).count
+    titles = translations.pluck(:title).uniq
+    partials = ::Poll::PartialResult.where(question_id: question_id, answer: titles).sum(:amount)
+    web + partials
   end
 
   def total_votes_percentage
