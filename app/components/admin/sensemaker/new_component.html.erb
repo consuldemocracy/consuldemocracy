@@ -2,8 +2,6 @@
 
 <div class="sensemaker">
   <%= form_for @sensemaker_job, url: admin_sensemaker_jobs_path, method: :post do |f| %>
-    <%# TODO: Perhaps add a run preview to see context %>
-
     <%= f.label :commentable_type, "Target" %>
     <%= f.select :commentable_type, Comment::COMMENTABLE_TYPES, label: false %>
     <%= f.label :commentable_id, "Target ID" %>
@@ -13,12 +11,14 @@
 
     <%= f.submit "Preview input",
         formaction: preview_admin_sensemaker_jobs_path,
-        data: { remote: true, disable_with: false },
+        type: "submit",
+        data: { remote: true, temp_disable: true, disable_with: false },
         class: "button" %>
     <%= f.submit "Download input CSV",
+        type: "submit",
         formaction: preview_admin_sensemaker_jobs_path(format: :csv),
-        class: "button", data: { disable_with: false } %>
-    <%= f.submit "Run", data: { disable_with: false } %>
+        class: "button", data: { temp_disable: true, disable_with: false } %>
+    <%= f.submit "Run", data: { temp_disable: true, disable_with: false } %>
   <% end %>
 
   <%= content_tag "pre", id: "input-preview" do %>

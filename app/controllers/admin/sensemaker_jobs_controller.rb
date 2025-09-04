@@ -29,6 +29,7 @@ class Admin::SensemakerJobsController < Admin::BaseController
     sensemaker_job = Sensemaker::Job.new(valid_params)
 
     @result = ""
+    status = 200
     begin
       @result += Sensemaker::JobRunner.compile_context(sensemaker_job.commentable)
       @result += "\n\n---------Input CSV--------\n\n"
@@ -36,12 +37,13 @@ class Admin::SensemakerJobsController < Admin::BaseController
       filename = "#{sensemaker_job.commentable_type}-#{sensemaker_job.commentable_id}".parameterize
     rescue Exception => e
       @result += "Error: #{e.message}"
+      status = 500
     end
 
     respond_to do |format|
-      format.html { render plain: @result, layout: false }
+      format.html { render plain: @result, layout: false, status: status }
       format.js
-      format.csv { send_data @result, filename: "#{filename}-input.csv" }
+      format.csv { send_data @result, filename: "#{filename}-input.csv", status: status }
     end
   end
 
