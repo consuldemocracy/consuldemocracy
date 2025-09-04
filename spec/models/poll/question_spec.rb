@@ -46,4 +46,20 @@ RSpec.describe Poll::Question do
       end
     end
   end
+
+  describe "#options_total_votes" do
+    let!(:question) { create(:poll_question) }
+    let!(:option_yes) { create(:poll_question_option, question: question, title_en: "Yes", title_es: "Sí") }
+    let!(:option_no) { create(:poll_question_option, question: question, title_en: "No", title_es: "No") }
+
+    before do
+      create(:poll_answer, question: question, option: option_yes, answer: "Sí")
+      create(:poll_answer, question: question, option: option_yes, answer: "Yes")
+      create(:poll_answer, question: question, option: option_no, answer: "No")
+    end
+
+    it "has the same options_total_votes in :es and :en" do
+      expect(question.options_total_votes).to eq(3)
+    end
+  end
 end
