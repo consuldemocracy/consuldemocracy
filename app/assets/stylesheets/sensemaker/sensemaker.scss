@@ -17,4 +17,17 @@
     color: #6d6d6d;
     font-size: $small-font-size;
   }
+
+  #input-preview {
+    font-size: $small-font-size;
+    text-wrap: auto;
+    overflow: hidden;
+    overflow-y: scroll;
+    max-height: 40vh;
+    border: 1px solid $border;
+    border-radius: $button-radius;
+    background: #EFEFEF;
+    color: #555;
+    padding: 6px;
+  }
 }

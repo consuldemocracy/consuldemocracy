@@ -3,7 +3,7 @@
 <div class="sensemaker">
   <%= form_for @sensemaker_job, url: admin_sensemaker_jobs_path, method: :post do |f| %>
     <%= f.label :commentable_type, "Target" %>
-    <%= f.select :commentable_type, Comment::COMMENTABLE_TYPES, label: false, include_blank: "Select a target...", required: true %>
+    <%= f.select :commentable_type, Comment::COMMENTABLE_TYPES, include_blank: "Select a target...", label: false, required: true %>
     <%= f.label :commentable_id, "Target ID" %>
     <%= f.text_field :commentable_id, label: false, placeholder: "Enter a target ID...", required: true %>
 
@@ -28,6 +28,7 @@
   <% end %>
 
   <%= content_tag "pre", id: "input-preview" do %>
+    <em>input preview</em>
     <%# content of the preview result goes here %>
   <% end %>
 </div>

@@ -31,10 +31,16 @@ class Admin::SensemakerJobsController < Admin::BaseController
     @result = ""
     status = 200
     begin
+      raise ActiveRecord::RecordNotFound unless sensemaker_job.commentable.present? && sensemaker_job.commentable.persisted?
+
+      @result += "---------Additional context---------\n\n"
       @result += Sensemaker::JobRunner.compile_context(sensemaker_job.commentable)
       @result += "\n\n---------Input CSV--------\n\n"
       @result += Sensemaker::CsvExporter.new(sensemaker_job.commentable).export_to_string
       filename = "#{sensemaker_job.commentable_type}-#{sensemaker_job.commentable_id}".parameterize
+    rescue ActiveRecord::RecordNotFound
+      @result += "Error: Target not found"
+      status = 404
     rescue Exception => e
       @result += "Error: #{e.message}"
       status = 500
@@ -49,7 +55,7 @@ class Admin::SensemakerJobsController < Admin::BaseController
 
   def destroy
     @sensemaker_job = Sensemaker::Job.find(params[:id])
-    @sensemaker_job.destroy
+    @sensemaker_job.destroy!
 
     redirect_to admin_sensemaker_jobs_path,
                 notice: t("admin.sensemaker.notice.deleted_job")

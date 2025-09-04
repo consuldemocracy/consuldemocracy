@@ -24,14 +24,24 @@
     },
 
     remoteSubmit: function(form, submitter) {
-      const tempForm = form.clone();
-      if (submitter.attr("formaction")) {
-        tempForm.attr("action", submitter.attr("formaction"));
-      }
-      tempForm.attr("data-remote", "true");
-      tempForm.appendTo('body');
-      $.rails.fire(tempForm, 'submit');
-      tempForm.remove();
+      // Serialize the form data
+      const formData = form.serialize();
+      const formAction = submitter.attr("formaction") || form.attr("action");
+      const formMethod = form.attr("method") || "POST";
+      
+      // Submit via AJAX
+      $.ajax({
+        url: formAction,
+        type: formMethod,
+        data: formData,
+        dataType: "script", // This tells Rails to expect JavaScript response
+        success: function(response) {
+          console.log("Form submitted successfully");
+        },
+        error: function(xhr, status, error) {
+          console.error("Form submission failed:", error);
+        }
+      });
     },
   };
 }).call(this);

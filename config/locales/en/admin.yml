@@ -1767,7 +1767,7 @@ en:
       index:
         title: Understand conversations with Sensemaker
       new:
-        title: New analysis job
+        title: New Sensemaker analysis
       help:
         title_1: "What is Sensemaker?"
         description_1: "Sensemaker is a tool that helps you make sense of large-scale conversations."
