@@ -52,17 +52,21 @@ class Polls::Questions::QuestionComponent < ApplicationComponent
       )
     end
 
-    def multiple_choice_field(option)
-      choice_field(option) do
+    def choice_field(option)
+      label_tag("web_vote_option_#{option.id}") do
+        html = input_tag(option) + option.title
+        html += open_text_tag(option) if option.open_text?
+        html
+      end
+    end
+
+    def input_tag(option)
+      if multiple_choice?
         check_box_tag "web_vote[#{question.id}][option_id][]",
                       option.id,
                       checked?(option),
                       id: "web_vote_option_#{option.id}"
-      end
-    end
-
-    def single_choice_field(option)
-      choice_field(option) do
+      else
         radio_button_tag "web_vote[#{question.id}][option_id]",
                          option.id,
                          checked?(option),
@@ -70,10 +74,22 @@ class Polls::Questions::QuestionComponent < ApplicationComponent
       end
     end
 
-    def choice_field(option, &block)
-      label_tag("web_vote_option_#{option.id}") do
-        block.call + option.title
-      end
+    def open_text_tag(option)
+      text_field_tag(
+        "web_vote[#{question.id}][text_answer][#{option.id}]",
+        existing_text_for(option),
+        id: "web_vote_option_#{option.id}_text",
+        disabled: disabled?,
+        class: "open-text",
+        data: { selects: "web_vote_option_#{option.id}" }
+      )
+    end
+
+    def existing_text_for(option)
+      answer = question.answers.where(author: current_user, option: option).first
+      return answer.text_answer if answer&.text_answer?
+
+      ""
     end
 
     def checked?(option)
