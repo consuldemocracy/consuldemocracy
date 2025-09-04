@@ -10,18 +10,18 @@
     <%= f.select :script, Sensemaker::JobRunner::SCRIPTS, include_blank: "Select a script...", required: true %>
 
     <div class="flex-between">
-      <%= link_to "&larr; Cancel".html_safe, admin_sensemaker_jobs_path, class: "" %>
+      <%= link_to "← Cancel", admin_sensemaker_jobs_path, class: "" %>
 
       <div>
         <%= f.submit "Preview input",
-            formaction: preview_admin_sensemaker_jobs_path,
-            type: "submit",
-            data: { remote: true, temp_disable: true, disable_with: false },
-            class: "button" %>
+                     formaction: preview_admin_sensemaker_jobs_path,
+                     type: "submit",
+                     data: { remote: true, temp_disable: true, disable_with: false },
+                     class: "button" %>
         <%= f.submit "Download input CSV",
-            type: "submit",
-            formaction: preview_admin_sensemaker_jobs_path(format: :csv),
-            class: "button", data: { temp_disable: true, disable_with: false } %>
+                     type: "submit",
+                     formaction: preview_admin_sensemaker_jobs_path(format: :csv),
+                     class: "button", data: { temp_disable: true, disable_with: false } %>
         <%= f.submit "Run", data: { temp_disable: true, disable_with: false } %>
       </div>
     </div>
