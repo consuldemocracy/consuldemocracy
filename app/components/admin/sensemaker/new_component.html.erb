@@ -1,14 +1,27 @@
 <%= header %>
 
-<%= form_for @sensemaker_job, url: admin_sensemaker_jobs_path, method: :post do |f| %>
-  <%# TODO: Perhaps add a run preview to see context %>
+<div class="sensemaker">
+  <%= form_for @sensemaker_job, url: admin_sensemaker_jobs_path, method: :post do |f| %>
+    <%# TODO: Perhaps add a run preview to see context %>
 
-  <%= f.select :commentable_type, Comment::COMMENTABLE_TYPES %>
-  <%= f.text_field :commentable_id %>
+    <%= f.label :commentable_type, "Target" %>
+    <%= f.select :commentable_type, Comment::COMMENTABLE_TYPES, label: false %>
+    <%= f.label :commentable_id, "Target ID" %>
+    <%= f.text_field :commentable_id, label: false %>
 
-  <%= f.select :script, Sensemaker::JobRunner::SCRIPTS %>
-  <%= f.submit "Create" %>
-  <%= f.submit "Preview input",
-      formaction: preview_admin_sensemaker_jobs_path,
-      class: "button" %>
-<% end %>
+    <%= f.select :script, Sensemaker::JobRunner::SCRIPTS %>
+
+    <%= f.submit "Preview input",
+        formaction: preview_admin_sensemaker_jobs_path,
+        data: { remote: true, disable_with: false },
+        class: "button" %>
+    <%= f.submit "Download input CSV",
+        formaction: preview_admin_sensemaker_jobs_path(format: :csv),
+        class: "button", data: { disable_with: false } %>
+    <%= f.submit "Run", data: { disable_with: false } %>
+  <% end %>
+
+  <%= content_tag "pre", id: "input-preview" do %>
+    <%# content of the preview result goes here %>
+  <% end %>
+</div>

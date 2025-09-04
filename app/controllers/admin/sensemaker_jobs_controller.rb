@@ -28,11 +28,21 @@ class Admin::SensemakerJobsController < Admin::BaseController
     valid_params.merge!(user: current_user, started_at: Time.current)
     sensemaker_job = Sensemaker::Job.new(valid_params)
 
-    result = Sensemaker::JobRunner.compile_context(sensemaker_job.commentable)
-    result += "\n\n---------Input CSV--------\n\n"
-    result += Sensemaker::CsvExporter.new(sensemaker_job.commentable).export_to_string
+    @result = ""
+    begin
+      @result += Sensemaker::JobRunner.compile_context(sensemaker_job.commentable)
+      @result += "\n\n---------Input CSV--------\n\n"
+      @result += Sensemaker::CsvExporter.new(sensemaker_job.commentable).export_to_string
+      filename = "#{sensemaker_job.commentable_type}-#{sensemaker_job.commentable_id}".parameterize
+    rescue Exception => e
+      @result += "Error: #{e.message}"
+    end
 
-    render plain: result, layout: false
+    respond_to do |format|
+      format.html { render plain: @result, layout: false }
+      format.js
+      format.csv { send_data @result, filename: "#{filename}-input.csv" }
+    end
   end
 
   def cancel
