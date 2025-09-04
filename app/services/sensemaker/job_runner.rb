@@ -35,11 +35,11 @@ module Sensemaker
     handle_asynchronously :run, queue: "sensemaker"
 
     def input_file
-      "#{self.class.sensemaker_data_folder}/input-#{job.id}-#{Time.now.to_i}.csv"
+      "#{self.class.sensemaker_data_folder}/input-#{job.id}.csv"
     end
 
     def output_file
-      "#{self.class.sensemaker_data_folder}/output-#{job.id}-#{Time.now.to_i}.csv"
+      "#{self.class.sensemaker_data_folder}/output-#{job.id}.csv"
     end
 
     def script_file
