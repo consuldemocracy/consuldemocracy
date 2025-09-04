@@ -14,11 +14,19 @@ module Sensemaker
     end
 
     def self.sensemaker_folder
-      Rails.root.join("vendor/sensemaking-tools")
+      if Rails.env.test?
+        Rails.root.join("tmp/sensemaker_test_folder")
+      else
+        Rails.root.join("vendor/sensemaking-tools")
+      end
     end
 
     def self.sensemaker_data_folder
-      Rails.root.join(Tenant.current_secrets.sensemaker_data_folder)
+      if Rails.env.test?
+        Rails.root.join("tmp/sensemaker_test_folder/data")
+      else
+        Rails.root.join(Tenant.current_secrets.sensemaker_data_folder)
+      end
     end
 
     def run

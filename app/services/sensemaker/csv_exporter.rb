@@ -11,6 +11,7 @@ module Sensemaker
 
     def export_to_csv(file_path = nil)
       file_path ||= default_file_path
+      FileUtils.mkdir_p(File.dirname(file_path))
 
       CSV.open(file_path, "w", write_headers: true, headers: csv_headers) do |csv|
         export_data.each do |row|
