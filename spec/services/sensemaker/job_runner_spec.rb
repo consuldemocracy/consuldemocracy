@@ -17,7 +17,6 @@ describe Sensemaker::JobRunner do
     let(:service) { Sensemaker::JobRunner.new(job) }
 
     before do
-      allow(service).to receive(:prepare_input_data)
       allow(File).to receive(:exist?).and_return(true)
       allow(service).to receive(:system).with("which node > /dev/null 2>&1").and_return(true)
       allow(service).to receive(:system).with("which npx > /dev/null 2>&1").and_return(true)
@@ -25,6 +24,8 @@ describe Sensemaker::JobRunner do
     end
 
     it "runs the script and processes the output" do
+      allow(service).to receive(:prepare_input_data)
+
       expect(service).to receive(:execute_script).and_return(true)
       expect(service).to receive(:process_output)
 
@@ -290,16 +291,34 @@ describe Sensemaker::JobRunner do
 
   describe "#prepare_input_data" do
     let(:service) { Sensemaker::JobRunner.new(job) }
+    let(:mock_exporter) { instance_double(Sensemaker::CsvExporter) }
+    let(:input_file_path) { "/path/to/input-file.csv" }
 
-    it "prepares input data by calling CsvExporter and updating the job with the additional context" do
-      expect(Sensemaker::CsvExporter).to receive(:export_to_csv).with(job.commentable)
-      expect(job.additional_context).to be_blank
+    before do
+      allow(service).to receive(:input_file).and_return(input_file_path)
+      allow(Sensemaker::CsvExporter).to receive(:new).and_return(mock_exporter)
+      allow(mock_exporter).to receive(:export_to_csv)
+    end
 
+    it "creates a CsvExporter with the job's commentable" do
+      service.send(:prepare_input_data)
+
+      expect(Sensemaker::CsvExporter).to have_received(:new).with(job.commentable)
+    end
+
+    it "exports CSV data to the input file" do
+      service.send(:prepare_input_data)
+
+      expect(mock_exporter).to have_received(:export_to_csv).with(input_file_path)
+    end
+
+    it "updates the job with additional context" do
       service.send(:prepare_input_data)
 
       job.reload
       expect(job.additional_context).to be_present
-      expect(job.additional_context).to include("Comments: #{job.commentable.comments_count}")
+      expect(job.additional_context).to include("Analyzing citizen Debate")
+      expect(job.additional_context).to include(debate.title)
     end
   end
 end

@@ -35,11 +35,11 @@ module Sensemaker
     handle_asynchronously :run, queue: "sensemaker"
 
     def input_file
-      "#{self.class.sensemaker_data_folder}/sensemaker-input.csv"
+      "#{self.class.sensemaker_data_folder}/input-#{job.id}-#{Time.now.to_i}.csv"
     end
 
     def output_file
-      "#{self.class.sensemaker_data_folder}/sensemaker-output.csv"
+      "#{self.class.sensemaker_data_folder}/output-#{job.id}-#{Time.now.to_i}.csv"
     end
 
     def script_file
@@ -126,7 +126,8 @@ module Sensemaker
     private
 
       def prepare_input_data
-        Sensemaker::CsvExporter.export_to_csv(job.commentable)
+        exporter = Sensemaker::CsvExporter.new(job.commentable)
+        exporter.export_to_csv(input_file)
         job.update!(additional_context: self.class.compile_context(job.commentable))
       end
 
