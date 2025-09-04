@@ -47,6 +47,20 @@ class Admin::SensemakerJobsController < Admin::BaseController
     end
   end
 
+  def destroy
+    @sensemaker_job = Sensemaker::Job.find(params[:id])
+    @sensemaker_job.destroy
+
+    redirect_to admin_sensemaker_jobs_path,
+                notice: t("admin.sensemaker.notice.deleted_job")
+  end
+
+  def download
+    @sensemaker_job = Sensemaker::Job.find(params[:id])
+    job_runner = Sensemaker::JobRunner.new(@sensemaker_job)
+    send_file job_runner.output_file, filename: job_runner.output_file_name
+  end
+
   def cancel
     Delayed::Job.where(queue: "sensemaker").destroy_all
     Sensemaker::Job.unfinished.destroy_all

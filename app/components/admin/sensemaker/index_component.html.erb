@@ -46,6 +46,7 @@
           <th>Started at</th>
           <th>Finished at</th>
           <th>Errored</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -56,6 +57,10 @@
             <td><%= sensemaker_job.started_at %></td>
             <td><%= sensemaker_job.finished_at %></td>
             <td><%= sensemaker_job.errored? ? "Yes" : "No" %></td>
+            <td>
+              <%= link_to("Download Output", download_admin_sensemaker_job_path(sensemaker_job), class: "button") if sensemaker_job.finished? && !sensemaker_job.errored? %>
+              <%= link_to "Delete", admin_sensemaker_job_path(sensemaker_job), class: "button", method: :delete, data: { confirm: t("admin.sensemaker.delete_alert") } %>
+            </td>
           </tr>
           <% if Rails.env.development? %>
           <tr><td style="font-size: 12px;" colspan="5"><%= sensemaker_job.error %></td></tr>

@@ -38,8 +38,16 @@ module Sensemaker
       "#{self.class.sensemaker_data_folder}/input-#{job.id}.csv"
     end
 
+    def output_file_name
+      if job.script == "health_check_runner.ts"
+        "health-check-#{job.id}.txt"
+      else
+        "output-#{job.id}.csv"
+      end
+    end
+
     def output_file
-      "#{self.class.sensemaker_data_folder}/output-#{job.id}.csv"
+      "#{self.class.sensemaker_data_folder}/#{output_file_name}"
     end
 
     def script_file

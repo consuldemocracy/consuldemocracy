@@ -3,11 +3,11 @@
 <div class="sensemaker">
   <%= form_for @sensemaker_job, url: admin_sensemaker_jobs_path, method: :post do |f| %>
     <%= f.label :commentable_type, "Target" %>
-    <%= f.select :commentable_type, Comment::COMMENTABLE_TYPES, label: false %>
+    <%= f.select :commentable_type, Comment::COMMENTABLE_TYPES, label: false, include_blank: "Select a target...", required: true %>
     <%= f.label :commentable_id, "Target ID" %>
-    <%= f.text_field :commentable_id, label: false %>
+    <%= f.text_field :commentable_id, label: false, placeholder: "Enter a target ID...", required: true %>
 
-    <%= f.select :script, Sensemaker::JobRunner::SCRIPTS %>
+    <%= f.select :script, Sensemaker::JobRunner::SCRIPTS, include_blank: "Select a script...", required: true %>
 
     <%= f.submit "Preview input",
         formaction: preview_admin_sensemaker_jobs_path,
