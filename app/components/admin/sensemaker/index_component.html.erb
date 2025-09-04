@@ -72,7 +72,9 @@
             </td>
           </tr>
           <% if Rails.env.development? %>
-          <tr><td style="font-size: 12px;" colspan="5"><%= sensemaker_job.error %></td></tr>
+            <tr>
+              <td style="font-size: 12px;" colspan="5"><%= sensemaker_job.error %></td>
+            </tr>
           <% end %>
         <% end %>
       </tbody>

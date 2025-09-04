@@ -1,9 +1,9 @@
 .sensemaker {
   .flex-between {
-    justify-content: space-between;
     align-items: center;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
   }
 
   .flex-row {
@@ -18,16 +18,16 @@
     font-size: $small-font-size;
   }
 
-  #input-preview {
-    font-size: $small-font-size;
-    text-wrap: auto;
-    overflow: hidden;
-    overflow-y: scroll;
-    max-height: 40vh;
+  .input-preview {
+    background: #efefef;
     border: 1px solid $border;
     border-radius: $button-radius;
-    background: #EFEFEF;
     color: #555;
+    font-size: $small-font-size;
+    max-height: 40vh;
+    overflow: hidden;
+    overflow-y: scroll;
     padding: 6px;
+    text-wrap: auto;
   }
 }
