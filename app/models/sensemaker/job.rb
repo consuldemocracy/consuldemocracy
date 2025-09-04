@@ -22,6 +22,18 @@ module Sensemaker
       error.present?
     end
 
+    def status
+      if errored?
+        "Failed"
+      elsif finished?
+        "Completed"
+      elsif started?
+        "Running"
+      else
+        "Pending"
+      end
+    end
+
     def self.unfinished
       where(finished_at: nil)
     end

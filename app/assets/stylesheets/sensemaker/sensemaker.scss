@@ -5,4 +5,16 @@
     display: flex;
     flex-direction: row;
   }
+
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    justify-content: flex-end;
+  }
+
+  .meta {
+    color: #6d6d6d;
+    font-size: $small-font-size;
+  }
 }

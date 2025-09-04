@@ -9,7 +9,7 @@
 
     <h3 class="flex-between">
       <span>Currently Running</span>
-      <%= button_to "Cancel", admin_sensemaker_jobs_path, class: "button", method: :delete, data: { confirm: t("admin.sensemaker.cancel_alert") } %>
+      <%= button_to "Cancel all", admin_sensemaker_jobs_path, class: "button", method: :delete, data: { confirm: t("admin.sensemaker.cancel_alert") } %>
     </h3>
 
     <table>
@@ -43,10 +43,8 @@
         <tr>
           <th>Item</th>
           <th>Script</th>
-          <th>Started at</th>
-          <th>Finished at</th>
-          <th>Errored</th>
-          <th>Actions</th>
+          <th>Status</th>
+          <th style="text-align: right;">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -54,12 +52,23 @@
           <tr>
             <td><%= sensemaker_job.commentable.title %></td>
             <td><%= sensemaker_job.script %></td>
-            <td><%= sensemaker_job.started_at %></td>
-            <td><%= sensemaker_job.finished_at %></td>
-            <td><%= sensemaker_job.errored? ? "Yes" : "No" %></td>
             <td>
-              <%= link_to("Download Output", download_admin_sensemaker_job_path(sensemaker_job), class: "button") if sensemaker_job.finished? && !sensemaker_job.errored? %>
-              <%= link_to "Delete", admin_sensemaker_job_path(sensemaker_job), class: "button", method: :delete, data: { confirm: t("admin.sensemaker.delete_alert") } %>
+              <%= content_tag :span, sensemaker_job.status %><br>
+              <% if sensemaker_job.status.eql?("Completed") %>
+                <%= content_tag :span, "Completed at #{sensemaker_job.finished_at.strftime("%Y-%m-%d %H:%M")}", class: "meta" %>
+              <% elsif sensemaker_job.status.eql?("Failed") %>
+                <%= content_tag :span, "Failed at #{sensemaker_job.finished_at.strftime("%Y-%m-%d %H:%M")}", class: "meta" %>
+              <% elsif sensemaker_job.status.eql?("Running") %>
+                <%= content_tag :span, "Started at #{sensemaker_job.started_at.strftime("%Y-%m-%d %H:%M")}", class: "meta" %>
+              <% else %>
+                <%= content_tag :span, "Created at #{sensemaker_job.created_at.strftime("%Y-%m-%d %H:%M")}", class: "meta" %>
+              <% end %>
+            </td>
+            <td>
+              <div class="flex-row">
+                <%= link_to("Download Output", download_admin_sensemaker_job_path(sensemaker_job), class: "button small inline-block") if sensemaker_job.finished? && !sensemaker_job.errored? %>
+                <%= link_to "Delete", admin_sensemaker_job_path(sensemaker_job), class: "button error small inline-block", method: :delete, data: { confirm: t("admin.sensemaker.delete_alert") } %>
+              </div>
             </td>
           </tr>
           <% if Rails.env.development? %>

@@ -58,7 +58,12 @@ class Admin::SensemakerJobsController < Admin::BaseController
   def download
     @sensemaker_job = Sensemaker::Job.find(params[:id])
     job_runner = Sensemaker::JobRunner.new(@sensemaker_job)
-    send_file job_runner.output_file, filename: job_runner.output_file_name
+    if File.exist?(job_runner.output_file)
+      send_file job_runner.output_file, filename: job_runner.output_file_name
+    else
+      redirect_to admin_sensemaker_jobs_path,
+                  alert: t("admin.sensemaker.notice.output_file_not_found")
+    end
   end
 
   def cancel
