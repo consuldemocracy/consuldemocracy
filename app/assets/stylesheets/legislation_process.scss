@@ -178,7 +178,7 @@
       padding: $line-height;
 
       @include breakpoint(medium) {
-        height: $line-height * 4;
+        min-height: $line-height * 4;
       }
     }
 
