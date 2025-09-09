@@ -22,8 +22,7 @@ module OmniauthTenantSetup
     end
 
     def oidc(env)
-      oidc_auth(env, secrets.oidc_client_id,
-                secrets.oidc_client_secret, secrets.oidc_issuer, secrets.oidc_redirect_uri)
+      oidc_auth(env, secrets.oidc_client_id, secrets.oidc_client_secret, secrets.oidc_issuer)
     end
 
     private
@@ -60,14 +59,18 @@ module OmniauthTenantSetup
         end
       end
 
-      def oidc_auth(env, client_id, client_secret, issuer, redirect_uri)
+      def oidc_auth(env, client_id, client_secret, issuer)
         strategy = env["omniauth.strategy"]
 
         strategy.options[:issuer] = issuer if issuer.present?
         strategy.options[:client_options] ||= {}
         strategy.options[:client_options][:identifier] = client_id if client_id.present?
         strategy.options[:client_options][:secret] = client_secret if client_secret.present?
-        strategy.options[:client_options][:redirect_uri] = redirect_uri if redirect_uri.present?
+        strategy.options[:client_options][:redirect_uri] = oidc_redirect_uri if oidc_redirect_uri.present?
+      end
+
+      def oidc_redirect_uri
+        Rails.application.routes.url_helpers.user_oidc_omniauth_callback_url(Tenant.current_url_options)
       end
 
       def secrets
