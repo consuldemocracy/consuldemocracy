@@ -119,11 +119,12 @@ describe OmniauthTenantSetup do
 
         OmniauthTenantSetup.oidc(mars_env)
         mars_strategy_options = mars_env["omniauth.strategy"].options
+        mars_client_options = mars_strategy_options[:client_options]
 
-        expect(mars_strategy_options[:client_id]).to eq "mars-client-id"
-        expect(mars_strategy_options[:client_secret]).to eq "mars-client-secret"
         expect(mars_strategy_options[:issuer]).to eq "https://mars-oidc.example.com"
-        expect(mars_strategy_options[:redirect_uri]).to eq "https://mars.consul.dev/auth/oidc/callback"
+        expect(mars_client_options[:secret]).to eq "mars-client-secret"
+        expect(mars_client_options[:identifier]).to eq "mars-client-id"
+        expect(mars_client_options[:redirect_uri]).to eq "https://mars.consul.dev/auth/oidc/callback"
       end
 
       Tenant.switch("venus") do
@@ -134,11 +135,12 @@ describe OmniauthTenantSetup do
 
         OmniauthTenantSetup.oidc(venus_env)
         venus_strategy_options = venus_env["omniauth.strategy"].options
+        venus_client_options = venus_strategy_options[:client_options]
 
-        expect(venus_strategy_options[:client_id]).to eq "venus-client-id"
-        expect(venus_strategy_options[:client_secret]).to eq "venus-client-secret"
         expect(venus_strategy_options[:issuer]).to eq "https://venus-oidc.example.com"
-        expect(venus_strategy_options[:redirect_uri]).to eq "https://venus.consul.dev/auth/oidc/callback"
+        expect(venus_client_options[:identifier]).to eq "venus-client-id"
+        expect(venus_client_options[:secret]).to eq "venus-client-secret"
+        expect(venus_client_options[:redirect_uri]).to eq "https://venus.consul.dev/auth/oidc/callback"
       end
     end
 
@@ -168,11 +170,12 @@ describe OmniauthTenantSetup do
 
         OmniauthTenantSetup.oidc(earth_env)
         earth_strategy_options = earth_env["omniauth.strategy"].options
+        earth_client_options = earth_strategy_options[:client_options]
 
-        expect(earth_strategy_options[:client_id]).to eq "default-client-id"
-        expect(earth_strategy_options[:client_secret]).to eq "default-client-secret"
         expect(earth_strategy_options[:issuer]).to eq "https://default-oidc.example.com"
-        expect(earth_strategy_options[:redirect_uri]).to eq "https://default.consul.dev/auth/oidc/callback"
+        expect(earth_client_options[:identifier]).to eq "default-client-id"
+        expect(earth_client_options[:secret]).to eq "default-client-secret"
+        expect(earth_client_options[:redirect_uri]).to eq "https://default.consul.dev/auth/oidc/callback"
       end
     end
   end
