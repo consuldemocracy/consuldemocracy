@@ -64,10 +64,11 @@ module OmniauthTenantSetup
         unless Tenant.default?
           strategy = env["omniauth.strategy"]
 
-          strategy.options[:client_id] = client_id if client_id.present?
-          strategy.options[:client_secret] = client_secret if client_secret.present?
           strategy.options[:issuer] = issuer if issuer.present?
-          strategy.options[:redirect_uri] = redirect_uri if redirect_uri.present?
+          strategy.options[:client_options] ||= {}
+          strategy.options[:client_options][:identifier] = client_id if client_id.present?
+          strategy.options[:client_options][:secret] = client_secret if client_secret.present?
+          strategy.options[:client_options][:redirect_uri] = redirect_uri if redirect_uri.present?
         end
       end
 
