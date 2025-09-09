@@ -300,14 +300,8 @@ Devise.setup do |config|
                   name: :oidc,
                   scope: [:openid, :email, :profile],
                   response_type: :code,
-                  issuer: Rails.application.secrets.oidc_issuer,
                   discovery: true,
                   client_auth_method: :basic,
-                  client_options: {
-                    identifier: Rails.application.secrets.oidc_client_id,
-                    secret: Rails.application.secrets.oidc_client_secret,
-                    redirect_uri: Rails.application.secrets.oidc_redirect_uri
-                  },
                   setup: ->(env) { OmniauthTenantSetup.oidc(env) }
 
   # ==> Warden configuration
