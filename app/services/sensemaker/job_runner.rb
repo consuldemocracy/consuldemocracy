@@ -89,51 +89,67 @@ module Sensemaker
       Setting["feature.sensemaker"].present?
     end
 
-    def self.compile_context(commentable)
+    def self.compile_context(target)
       parts = []
 
-      commentable_type = commentable.class.name.humanize
-      parts << "Analyzing citizen #{commentable_type} from Consul Democracy platform"
-      parts << "#{commentable_type}: #{commentable.title}"
+      target_type = target.class.name.humanize
+      parts << "Analyzing citizen #{target_type} from Consul Democracy platform"
 
-      if commentable.respond_to?(:summary)
-        parts << "Summary: #{commentable.summary}"
+      if target.respond_to?(:title)
+        parts << "Title: #{target.title}"
+      elsif target.respond_to?(:name)
+        parts << "Name: #{target.name}"
+      else
+        raise "Target #{target.class.name} does not respond to title or name"
       end
 
-      if commentable.respond_to?(:description) && commentable.description.present?
-        parts << "Description: #{commentable.description}" # TODO: consider strip tags?
+      if target.respond_to?(:summary)
+        parts << "Summary: #{target.summary}"
       end
 
-      if commentable.respond_to?(:text) && commentable.text.present?
-        parts << "Text: #{commentable.text}"
+      if target.respond_to?(:description) && target.description.present?
+        parts << "Description: #{target.description}" # TODO: consider strip tags?
       end
 
-      if commentable.author.present?
-        parts << "Author: #{commentable.author.username}"
+      if target.respond_to?(:text) && target.text.present?
+        parts << "Text: #{target.text}"
       end
 
-      if commentable.respond_to?(:geozone) && commentable.geozone.present?
-        parts << "Location: #{commentable.geozone.name}"
+      case target.class.name
+      when "Poll"
+        parts << "Questions and Responses:" if target.questions.any?
+        target.questions.each do |question|
+          parts << "\nQ: #{question.title}:"
+          question.question_options.each do |question_option|
+            parts << " - #{question_option.title} (#{question_option.total_votes} responses)"
+          end
+        end
+      when "Proposal"
+        parts << "This proposal has #{target.total_votes} votes out of #{Proposal.votes_needed_for_success} required to be successful"
+      when "Debate"
+        parts << "This debate has #{target.cached_votes_up} votes for and #{target.cached_votes_down} votes against"
+      when "Legislation::Question"
+        parts << "This question is part of the legislation process, \"#{target.process.title}\""
+        parts << "Question Responses:" if target.question_options.any?
+        target.question_options.each do |option|
+          parts << " - #{option.value} (#{option.answers_count} responses)"
+        end
+      when "Legislation::Proposal"
+        parts << "This proposal is part of the legislation process, \"#{target.process.title}\""
+        parts << "This proposal has #{target.cached_votes_up} votes for and #{target.cached_votes_down} votes against"
       end
 
-      if commentable.respond_to?(:tag_list) && commentable.tag_list.any?
-        parts << "Tags: #{commentable.tag_list.join(", ")}"
+      parts << "--Meta--"
+      if target.respond_to?(:geozone) && target.geozone.present?
+        parts << "Location: #{target.geozone.name}"
       end
-
-      if commentable.respond_to?(:cached_votes_up)
-        parts << "Support votes: #{commentable.cached_votes_up || 0}"
+      if target.respond_to?(:tag_list) && target.tag_list.any?
+        parts << "Tags: #{target.tag_list.join(", ")}"
       end
-
-      if commentable.respond_to?(:cached_votes_down)
-        parts << "Opposition votes: #{commentable.cached_votes_down || 0}"
-      end
-
-      parts << "Comments: #{commentable.comments_count || 0}"
-
-      parts << "Created: #{commentable.created_at.strftime("%B %d, %Y")}"
-
-      if commentable.respond_to?(:published?) && commentable.published?
-        parts << "Published: #{commentable.published_at.strftime("%B %d, %Y")}"
+      parts << "Comments: #{target.comments_count || 0}"
+      parts << "Created: #{target.created_at.strftime("%B %d, %Y")}"
+      if target.respond_to?(:published?) && target.published?
+        parts << "Published: #{target.published_at.strftime("%B %d, %Y")}"
       end
 
       parts.join("\n")

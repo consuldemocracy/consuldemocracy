@@ -272,9 +272,80 @@ describe Sensemaker::JobRunner do
   describe ".compile_context" do
     let(:service) { Sensemaker::JobRunner.new(job) }
 
-    it "can compile context for each commentable type" do
-      commentable_types = Comment::COMMENTABLE_TYPES
+    it "can compile context for Poll" do
+      answer_one = create(:poll_answer)
+      answer_two = create(:poll_answer)
+      poll = answer_one.poll
 
+      expect(answer_one.persisted?).to be true
+      expect(answer_two.persisted?).to be true
+      expect(poll.persisted?).to be true
+
+      context_result = service.class.compile_context(poll)
+
+      expect(context_result).to be_present
+      expect(context_result).to include("Questions and Responses:")
+      expect(context_result).to include("Q: #{poll.questions.first.title}:")
+      expect(context_result).to include(" - #{answer_one.option.title}")
+      expect(context_result).to include(" - #{answer_two.option.title}")
+    end
+
+    it "can compile context for Proposal" do
+      proposal = create(:proposal)
+      expect(proposal.persisted?).to be true
+
+      context_result = service.class.compile_context(proposal)
+      expect(context_result).to be_present
+      expect(context_result).to include("This proposal has #{proposal.total_votes} votes out of #{Proposal.votes_needed_for_success} required to be successful")
+    end
+
+    it "can compile context for Debate" do
+      debate = create(:debate)
+      expect(debate.persisted?).to be true
+
+      context_result = service.class.compile_context(debate)
+      expect(context_result).to be_present
+      expect(context_result).to include("This debate has #{debate.cached_votes_up} votes for and #{debate.cached_votes_down} votes against")
+    end
+
+    it "can compile context for Legislation::Proposal" do
+      proposal = create(:legislation_proposal)
+      expect(proposal.persisted?).to be true
+
+      context_result = service.class.compile_context(proposal)
+      expect(context_result).to be_present
+      expect(context_result).to include("This proposal is part of the legislation process, \"#{proposal.process.title}\"")
+    end
+
+    it "can compile context for Legislation::Question without question options" do
+      question = create(:legislation_question)
+      expect(question.persisted?).to be true
+
+      context_result = service.class.compile_context(question)
+      expect(context_result).to be_present
+      expect(context_result).to include("This question is part of the legislation process, \"#{question.process.title}\"")
+      expect(context_result).not_to include("Question Responses:")
+    end
+
+    it "can compile context for Legislation::Question with question options" do
+      question = create(:legislation_question)
+      2.times do
+        create(:legislation_question_option, question: question)
+      end
+      3.times do
+        create(:legislation_answer, question: question, question_option: question.question_options.sample)
+      end
+      expect(question.persisted?).to be true
+
+      context_result = service.class.compile_context(question)
+      expect(context_result).to be_present
+      expect(context_result).to include("Question Responses:")
+      expect(context_result).to include(" - #{question.question_options.first.value}")
+      expect(context_result).to include(" - #{question.question_options.last.value}")
+    end
+
+    it "can compile context for other commentable types" do
+      commentable_types = Comment::COMMENTABLE_TYPES - ["Poll", "Legislation::Question", "Legislation::Proposal", "Debate"]
       commentable_types.each do |commentable_type|
         commentable_factory = commentable_type.downcase.gsub("::", "_").to_sym
         commentable = create(commentable_factory)
