@@ -296,7 +296,9 @@ describe Sensemaker::JobRunner do
 
       context_result = service.class.compile_context(proposal)
       expect(context_result).to be_present
-      expect(context_result).to include("This proposal has #{proposal.total_votes} votes out of #{Proposal.votes_needed_for_success} required to be successful")
+      expect(context_result).to include(
+        "This proposal has #{proposal.total_votes} votes out of #{Proposal.votes_needed_for_success} required"
+      )
     end
 
     it "can compile context for Debate" do
@@ -305,7 +307,9 @@ describe Sensemaker::JobRunner do
 
       context_result = service.class.compile_context(debate)
       expect(context_result).to be_present
-      expect(context_result).to include("This debate has #{debate.cached_votes_up} votes for and #{debate.cached_votes_down} votes against")
+      expect(context_result).to include(
+        "This debate has #{debate.cached_votes_up} votes for and #{debate.cached_votes_down} votes against"
+      )
     end
 
     it "can compile context for Legislation::Proposal" do
@@ -314,7 +318,9 @@ describe Sensemaker::JobRunner do
 
       context_result = service.class.compile_context(proposal)
       expect(context_result).to be_present
-      expect(context_result).to include("This proposal is part of the legislation process, \"#{proposal.process.title}\"")
+      expect(context_result).to include(
+        "This proposal is part of the legislation process, \"#{proposal.process.title}\""
+      )
     end
 
     it "can compile context for Legislation::Question without question options" do
@@ -323,7 +329,9 @@ describe Sensemaker::JobRunner do
 
       context_result = service.class.compile_context(question)
       expect(context_result).to be_present
-      expect(context_result).to include("This question is part of the legislation process, \"#{question.process.title}\"")
+      expect(context_result).to include(
+        "This question is part of the legislation process, \"#{question.process.title}\""
+      )
       expect(context_result).not_to include("Question Responses:")
     end
 
@@ -345,7 +353,8 @@ describe Sensemaker::JobRunner do
     end
 
     it "can compile context for other commentable types" do
-      commentable_types = Comment::COMMENTABLE_TYPES - ["Poll", "Legislation::Question", "Legislation::Proposal", "Debate"]
+      commentable_types = Comment::COMMENTABLE_TYPES - ["Poll", "Legislation::Question",
+                                                        "Legislation::Proposal", "Debate"]
       commentable_types.each do |commentable_type|
         commentable_factory = commentable_type.downcase.gsub("::", "_").to_sym
         commentable = create(commentable_factory)

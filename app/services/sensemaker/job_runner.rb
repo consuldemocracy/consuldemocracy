@@ -93,66 +93,88 @@ module Sensemaker
       parts = []
 
       target_type = target.class.name.humanize
-      parts << "Analyzing citizen #{target_type} from Consul Democracy platform"
+      parts << I18n.t("sensemaker.context.base", type: target_type)
 
       if target.respond_to?(:title)
-        parts << "Title: #{target.title}"
+        parts << I18n.t("sensemaker.context.title", title: target.title)
       elsif target.respond_to?(:name)
-        parts << "Name: #{target.name}"
+        parts << I18n.t("sensemaker.context.name", name: target.name)
       else
         raise "Target #{target.class.name} does not respond to title or name"
       end
 
       if target.respond_to?(:summary)
-        parts << "Summary: #{target.summary}"
+        parts << I18n.t("sensemaker.context.summary", summary: target.summary)
       end
 
       if target.respond_to?(:description) && target.description.present?
-        parts << "Description: #{target.description}" # TODO: consider strip tags?
+        parts << I18n.t("sensemaker.context.description", description: target.description)
       end
 
       if target.respond_to?(:text) && target.text.present?
-        parts << "Text: #{target.text}"
+        parts << I18n.t("sensemaker.context.text", text: target.text)
       end
 
-      case target.class.name
-      when "Poll"
-        parts << "Questions and Responses:" if target.questions.any?
-        target.questions.each do |question|
-          parts << "\nQ: #{question.title}:"
-          question.question_options.each do |question_option|
-            parts << " - #{question_option.title} (#{question_option.total_votes} responses)"
-          end
-        end
-      when "Proposal"
-        parts << "This proposal has #{target.total_votes} votes out of #{Proposal.votes_needed_for_success} required to be successful"
-      when "Debate"
-        parts << "This debate has #{target.cached_votes_up} votes for and #{target.cached_votes_down} votes against"
-      when "Legislation::Question"
-        parts << "This question is part of the legislation process, \"#{target.process.title}\""
-        parts << "Question Responses:" if target.question_options.any?
-        target.question_options.each do |option|
-          parts << " - #{option.value} (#{option.answers_count} responses)"
-        end
-      when "Legislation::Proposal"
-        parts << "This proposal is part of the legislation process, \"#{target.process.title}\""
-        parts << "This proposal has #{target.cached_votes_up} votes for and #{target.cached_votes_down} votes against"
-      end
+      parts.concat(compile_class_specific_context(target))
 
       parts << "--Meta--"
       if target.respond_to?(:geozone) && target.geozone.present?
-        parts << "Location: #{target.geozone.name}"
+        parts << I18n.t("sensemaker.context.location", location: target.geozone.name)
       end
       if target.respond_to?(:tag_list) && target.tag_list.any?
-        parts << "Tags: #{target.tag_list.join(", ")}"
+        parts << I18n.t("sensemaker.context.tags", tags: target.tag_list.join(", "))
       end
-      parts << "Comments: #{target.comments_count || 0}"
-      parts << "Created: #{target.created_at.strftime("%B %d, %Y")}"
+      parts << I18n.t("sensemaker.context.comments", count: target.comments_count || 0)
+      parts << I18n.t("sensemaker.context.created", date: target.created_at.strftime("%B %d, %Y"))
       if target.respond_to?(:published?) && target.published?
-        parts << "Published: #{target.published_at.strftime("%B %d, %Y")}"
+        parts << I18n.t("sensemaker.context.published", date: target.published_at.strftime("%B %d, %Y"))
       end
 
       parts.join("\n")
+    end
+
+    def compile_class_specific_context(target)
+      parts = []
+
+      case target.class.name
+      when "Poll"
+        parts << I18n.t("sensemaker.context.poll.questions_header") if target.questions.any?
+        target.questions.each do |question|
+          parts << I18n.t("sensemaker.context.poll.question_title", title: question.title)
+          question.question_options.each do |question_option|
+            parts << I18n.t("sensemaker.context.poll.question_option",
+                            title: question_option.title,
+                            total_votes: question_option.total_votes)
+          end
+        end
+      when "Proposal"
+        parts << I18n.t("sensemaker.context.proposal.votes",
+                        total_votes: target.total_votes,
+                        required_votes: Proposal.votes_needed_for_success)
+      when "Debate"
+        parts << I18n.t("sensemaker.context.debate.votes",
+                        votes_up: target.cached_votes_up,
+                        votes_down: target.cached_votes_down)
+      when "Legislation::Question"
+        parts << I18n.t("sensemaker.context.legislation_question.process",
+                        process_title: target.process.title)
+        if target.question_options.any?
+          parts << I18n.t("sensemaker.context.legislation_question.responses_header")
+          target.question_options.each do |option|
+            parts << I18n.t("sensemaker.context.legislation_question.option",
+                            value: option.value,
+                            answers_count: option.answers_count)
+          end
+        end
+      when "Legislation::Proposal"
+        parts << I18n.t("sensemaker.context.legislation_proposal.process",
+                        process_title: target.process.title)
+        parts << I18n.t("sensemaker.context.legislation_proposal.votes",
+                        votes_up: target.cached_votes_up,
+                        votes_down: target.cached_votes_down)
+      end
+
+      parts
     end
 
     private
