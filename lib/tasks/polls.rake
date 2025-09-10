@@ -107,4 +107,44 @@ namespace :polls do
       end
     end
   end
+
+  desc "Removes duplicate poll partial results"
+  task remove_duplicate_partial_results: :environment do
+    logger = ApplicationLogger.new
+    duplicate_records_logger = DuplicateRecordsLogger.new
+
+    logger.info "Removing duplicate partial results in polls"
+
+    Tenant.run_on_each do
+      duplicate_ids = Poll::PartialResult.where(option_id: nil)
+                                         .select(:question_id, :booth_assignment_id, :date, :answer)
+                                         .group(:question_id, :booth_assignment_id, :date, :answer)
+                                         .having("count(*) > 1")
+                                         .pluck(:question_id, :booth_assignment_id, :date, :answer)
+
+      duplicate_ids.each do |question_id, booth_assignment_id, date, answer|
+        partial_results = Poll::PartialResult.where(
+          question_id: question_id,
+          booth_assignment_id: booth_assignment_id,
+          date: date,
+          answer: answer,
+          option_id: nil
+        )
+
+        partial_results.excluding(partial_results.first).each do |partial_result|
+          partial_result.delete
+
+          tenant_info = " on tenant #{Tenant.current_schema}" unless Tenant.default?
+          log_message = "Deleted duplicate record with ID #{partial_result.id} " \
+                        "from the #{Poll::PartialResult.table_name} table " \
+                        "with question_id #{question_id}, " \
+                        "booth_assignment_id #{booth_assignment_id}, " \
+                        "date #{date} " \
+                        "and answer #{answer}" + tenant_info.to_s
+          logger.info(log_message)
+          duplicate_records_logger.info(log_message)
+        end
+      end
+    end
+  end
 end

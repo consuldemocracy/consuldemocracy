@@ -223,4 +223,88 @@ describe "polls tasks" do
       end
     end
   end
+
+  describe "polls:remove_duplicate_partial_results" do
+    before { Rake::Task["polls:remove_duplicate_partial_results"].reenable }
+
+    let(:booth_assignment) { create(:poll_booth_assignment) }
+    let(:other_booth_assignment) { create(:poll_booth_assignment) }
+
+    it "removes duplicate partial results" do
+      question = create(:poll_question_multiple, :abcde, poll: poll, max_votes: 4)
+
+      result_attributes = {
+        question_id: question.id,
+        booth_assignment_id: booth_assignment.id,
+        date: Date.current,
+        answer: "Answer A",
+        option_id: nil
+      }
+      other_result_attributes = result_attributes.merge(answer: "Answer B")
+
+      result = create(:poll_partial_result, result_attributes)
+      other_result = create(:poll_partial_result, other_result_attributes)
+      other_booth_result = create(:poll_partial_result,
+                                  result_attributes.merge(booth_assignment_id: other_booth_assignment.id))
+
+      2.times { insert(:poll_partial_result, result_attributes) }
+      insert(:poll_partial_result, other_result_attributes)
+      insert(:poll_partial_result, result_attributes.merge(booth_assignment_id: other_booth_assignment.id))
+
+      expect(Poll::PartialResult.count).to eq 7
+
+      Rake.application.invoke_task("polls:remove_duplicate_partial_results")
+
+      expect(Poll::PartialResult.count).to eq 3
+      expect(Poll::PartialResult.all).to match_array [result, other_result, other_booth_result]
+    end
+
+    it "does not remove partial results with the same text and different options" do
+      question = create(:poll_question_multiple, :abcde, max_votes: 4)
+      option_a = question.question_options.find_by(title: "Answer A")
+      option_b = question.question_options.find_by(title: "Answer B")
+
+      result_attributes = {
+        question: question,
+        booth_assignment_id: booth_assignment.id,
+        date: Date.current,
+        answer: "Answer A"
+      }
+      create(:poll_partial_result, result_attributes.merge(option: option_a))
+      insert(:poll_partial_result, result_attributes.merge(option_id: option_b.id))
+
+      expect(Poll::PartialResult.count).to eq 2
+
+      Rake.application.invoke_task("polls:remove_duplicate_partial_results")
+
+      expect(Poll::PartialResult.count).to eq 2
+    end
+
+    it "removes duplicate partial results on tenants" do
+      create(:tenant, schema: "partial_results")
+
+      Tenant.switch("partial_results") do
+        question = create(:poll_question_multiple, :abc)
+        booth_assignment = create(:poll_booth_assignment)
+
+        result_attributes = {
+          question_id: question.id,
+          booth_assignment_id: booth_assignment.id,
+          date: Date.current,
+          answer: "Answer A",
+          option_id: nil
+        }
+        create(:poll_partial_result, result_attributes)
+        insert(:poll_partial_result, result_attributes)
+
+        expect(Poll::PartialResult.count).to eq 2
+      end
+
+      Rake.application.invoke_task("polls:remove_duplicate_partial_results")
+
+      Tenant.switch("partial_results") do
+        expect(Poll::PartialResult.count).to eq 1
+      end
+    end
+  end
 end
