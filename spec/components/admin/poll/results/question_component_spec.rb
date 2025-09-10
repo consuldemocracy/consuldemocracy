@@ -3,11 +3,8 @@ require "rails_helper"
 describe Admin::Poll::Results::QuestionComponent do
   let(:poll) { create(:poll) }
   let(:question) { create(:poll_question, poll: poll, title: "What do you want?") }
-
-  before do
-    create(:poll_question_option, question: question, title: "Yes")
-    create(:poll_question_option, question: question, title: "No")
-  end
+  let!(:option_yes) { create(:poll_question_option, question: question, title: "Yes") }
+  let!(:option_no) { create(:poll_question_option, question: question, title: "No") }
 
   it "renders question title and headers" do
     render_inline Admin::Poll::Results::QuestionComponent.new(question, poll.partial_results)
@@ -25,10 +22,10 @@ describe Admin::Poll::Results::QuestionComponent do
     expect(page).to have_css "td", text: "No"
   end
 
-  it "sums votes by answer title" do
-    create(:poll_partial_result, question: question, answer: "Yes", amount: 2)
-    create(:poll_partial_result, question: question, answer: "Yes", amount: 1)
-    create(:poll_partial_result, question: question, answer: "No", amount: 5)
+  it "sums votes by option" do
+    create(:poll_partial_result, question: question, option: option_yes, amount: 2, date: Date.current)
+    create(:poll_partial_result, question: question, option: option_yes, amount: 1, date: Date.yesterday)
+    create(:poll_partial_result, question: question, option: option_no, amount: 5)
 
     render_inline Admin::Poll::Results::QuestionComponent.new(question, question.partial_results)
 

@@ -7,13 +7,6 @@ class Admin::Poll::Results::QuestionComponent < ApplicationComponent
   end
 
   def votes_for(option)
-    grouped = by_answer[option.title] || []
-    grouped.sum(&:amount)
+    partial_results.where(option: option).sum(:amount)
   end
-
-  private
-
-    def by_answer
-      @by_answer ||= partial_results.where(question: question).group_by(&:answer)
-    end
 end

@@ -11,8 +11,8 @@ class Poll::Answer < ApplicationRecord
   validates :option, uniqueness: { scope: :author_id }, allow_nil: true
   validate :max_votes
 
-  validates :answer, inclusion: { in: ->(a) { a.question.possible_answers }},
-                     unless: ->(a) { a.question.blank? }
+  validates :answer, inclusion: { in: ->(poll_answer) { poll_answer.option.possible_answers }},
+                     if: ->(poll_answer) { poll_answer.option.present? }
 
   scope :by_author, ->(author_id) { where(author_id: author_id) }
   scope :by_question, ->(question_id) { where(question_id: question_id) }

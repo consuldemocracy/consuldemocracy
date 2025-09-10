@@ -42,7 +42,7 @@ describe "polls tasks" do
 
       answer_attributes = { question: question, author: user, answer: "Answer A" }
       create(:poll_answer, answer_attributes.merge(option: option_a))
-      create(:poll_answer, answer_attributes.merge(option: option_b))
+      insert(:poll_answer, answer_attributes.merge(option_id: option_b.id))
 
       expect(Poll::Answer.count).to eq 2
 
@@ -126,10 +126,11 @@ describe "polls tasks" do
 
       answer = create(:poll_answer, question: yes_no_question, author: user, answer: "Yes", option: nil)
       abc_answer = create(:poll_answer, question: abc_question, author: user, answer: "Answer A", option: nil)
-      answer_with_inconsistent_option = create(:poll_answer, question: abc_question,
-                                                             author: user,
-                                                             answer: "Answer A",
-                                                             option: option_b)
+      insert(:poll_answer, question: abc_question,
+                           author: user,
+                           answer: "Answer A",
+                           option_id: option_b.id)
+      answer_with_inconsistent_option = Poll::Answer.find_by!(option: option_b)
       answer_with_invalid_option = build(:poll_answer, question: abc_question,
                                                        author: user,
                                                        answer: "Non existing",
