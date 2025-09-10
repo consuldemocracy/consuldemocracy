@@ -18,7 +18,7 @@ en:
         votes: "This proposal has %{total_votes} votes out of %{required_votes} required to be successful"
       
       legislation_proposal:
-        process: "This proposal is part of the %{process_title} legislation process"
+        process: "This proposal is part of the legislation process, \"%{process_title}\""
         votes: "This proposal has %{votes_up} votes for and %{votes_down} votes against"
       
       debate:
@@ -28,7 +28,7 @@ en:
         process: "This question is part of the legislation process, \"%{process_title}\""
         options_header: "Question Options:"
         responses_header: "Question Responses:"
-        option: "- %{value} (%{answers_count} responses)"
+        option: " - %{value} (%{answers_count} responses)"
       
       legislation_annotation:
         quote: "Quote: \"%{quote}\""

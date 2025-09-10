@@ -117,7 +117,7 @@ module Sensemaker
 
       parts.concat(compile_class_specific_context(target))
 
-      parts << "--Meta--"
+      parts << "\n--Meta--"
       if target.respond_to?(:geozone) && target.geozone.present?
         parts << I18n.t("sensemaker.context.location", location: target.geozone.name)
       end
@@ -133,7 +133,7 @@ module Sensemaker
       parts.join("\n")
     end
 
-    def compile_class_specific_context(target)
+    def self.compile_class_specific_context(target)
       parts = []
 
       case target.class.name
