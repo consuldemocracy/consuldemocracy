@@ -3,6 +3,8 @@ require "rails_helper"
 describe "polls tasks" do
   let(:poll) { create(:poll) }
   let(:user) { create(:user, :level_two) }
+  let(:booth_assignment) { create(:poll_booth_assignment) }
+  let(:other_booth_assignment) { create(:poll_booth_assignment) }
 
   describe "polls:remove_duplicate_answers" do
     before { Rake::Task["polls:remove_duplicate_answers"].reenable }
@@ -227,9 +229,6 @@ describe "polls tasks" do
   describe "polls:remove_duplicate_partial_results" do
     before { Rake::Task["polls:remove_duplicate_partial_results"].reenable }
 
-    let(:booth_assignment) { create(:poll_booth_assignment) }
-    let(:other_booth_assignment) { create(:poll_booth_assignment) }
-
     it "removes duplicate partial results" do
       question = create(:poll_question_multiple, :abcde, poll: poll, max_votes: 4)
 
@@ -304,6 +303,129 @@ describe "polls tasks" do
 
       Tenant.switch("partial_results") do
         expect(Poll::PartialResult.count).to eq 1
+      end
+    end
+  end
+
+  describe "polls:populate_partial_results_option_id" do
+    before do
+      Rake::Task["polls:remove_duplicate_partial_results"].reenable
+      Rake::Task["polls:populate_partial_results_option_id"].reenable
+    end
+
+    it "populates the option_id column of existing partial results when there's one valid option" do
+      yes_no_question = create(:poll_question, :yes_no, poll: poll)
+      abc_question = create(:poll_question_multiple, :abc, poll: poll)
+      option_a = abc_question.question_options.find_by(title: "Answer A")
+      option_b = abc_question.question_options.find_by(title: "Answer B")
+
+      result = create(:poll_partial_result,
+                      question: yes_no_question,
+                      booth_assignment_id: booth_assignment.id,
+                      date: Date.current,
+                      answer: "Yes",
+                      option: nil)
+      abc_result = create(:poll_partial_result,
+                          question: abc_question,
+                          booth_assignment_id: booth_assignment.id,
+                          date: Date.current,
+                          answer: "Answer A",
+                          option: nil)
+      insert(:poll_partial_result,
+             question: abc_question,
+             booth_assignment_id: booth_assignment.id,
+             date: Date.current,
+             answer: "Answer A",
+             option_id: option_b.id)
+      inconsistent_result = Poll::PartialResult.find_by!(option: option_b)
+      invalid_result = build(:poll_partial_result,
+                             question: abc_question,
+                             booth_assignment_id: booth_assignment.id,
+                             date: Date.current,
+                             answer: "Non existing",
+                             option: nil)
+      invalid_result.save!(validate: false)
+
+      Rake.application.invoke_task("polls:populate_partial_results_option_id")
+      result.reload
+      abc_result.reload
+      inconsistent_result.reload
+      invalid_result.reload
+
+      expect(result.option_id).to eq yes_no_question.question_options.find_by(title: "Yes").id
+      expect(abc_result.option_id).to eq option_a.id
+      expect(inconsistent_result.option_id).to eq option_b.id
+      expect(invalid_result.option_id).to be nil
+    end
+
+    it "does not populate the option_id column when there are several valid options" do
+      question = create(:poll_question, title: "How do you pronounce it?")
+
+      create(:poll_question_option, question: question, title_en: "A", title_es: "EI")
+      create(:poll_question_option, question: question, title_en: "E", title_es: "I")
+      create(:poll_question_option, question: question, title_en: "I", title_es: "AI")
+
+      result = create(:poll_partial_result,
+                      question: question,
+                      booth_assignment_id: booth_assignment.id,
+                      date: Date.current,
+                      answer: "I",
+                      option: nil)
+
+      Rake.application.invoke_task("polls:populate_partial_results_option_id")
+      result.reload
+
+      expect(result.option_id).to be nil
+    end
+
+    it "removes duplicate partial results before populating the option_id column" do
+      question = create(:poll_question_multiple, :abc)
+
+      result_attributes = {
+        question_id: question.id,
+        booth_assignment_id: booth_assignment.id,
+        date: Date.current,
+        answer: "Answer A",
+        option_id: nil
+      }
+      result = create(:poll_partial_result, result_attributes)
+      insert(:poll_partial_result, result_attributes)
+
+      result.reload
+      expect(result.option_id).to be nil
+
+      Rake.application.invoke_task("polls:populate_partial_results_option_id")
+      result.reload
+
+      expect(Poll::PartialResult.count).to eq 1
+      expect(result.option_id).to eq question.question_options.find_by(title: "Answer A").id
+    end
+
+    it "populates the option_id column on tenants" do
+      create(:tenant, schema: "partial_results")
+
+      Tenant.switch("partial_results") do
+        question = create(:poll_question_multiple, :abc)
+        booth_assignment = create(:poll_booth_assignment)
+
+        create(:poll_partial_result,
+               question: question,
+               booth_assignment_id: booth_assignment.id,
+               date: Date.current,
+               answer: "Answer A",
+               option: nil)
+      end
+
+      Rake.application.invoke_task("polls:populate_partial_results_option_id")
+
+      Tenant.switch("partial_results") do
+        expect(Poll::Question.count).to eq 1
+        expect(Poll::PartialResult.count).to eq 1
+
+        question = Poll::Question.first
+        option_a = question.question_options.find_by(title: "Answer A")
+
+        expect(Poll::PartialResult.first.option_id).to eq option_a.id
       end
     end
   end

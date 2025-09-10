@@ -147,4 +147,41 @@ namespace :polls do
       end
     end
   end
+
+  desc "populates the poll_partial_results option_id column"
+  task populate_partial_results_option_id: :remove_duplicate_partial_results do
+    logger = ApplicationLogger.new
+    logger.info "Updating option_id column in poll_partial_results"
+
+    Tenant.run_on_each do
+      Poll::Question.find_each do |question|
+        options = question.question_options.joins(:translations).reorder(:id)
+        existing_choices = question.partial_results.where(option_id: nil).distinct.pluck(:answer)
+
+        choices_map = existing_choices.to_h do |choice|
+          [choice, options.where("lower(title) = lower(?)", choice).distinct.ids]
+        end
+
+        manageable_choices, unmanageable_choices = choices_map.partition { |choice, ids| ids.count == 1 }
+
+        manageable_choices.each do |choice, ids|
+          question.partial_results.where(option_id: nil, answer: choice).update_all(option_id: ids.first)
+        end
+
+        unmanageable_choices.each do |choice, ids|
+          tenant_info = " on tenant #{Tenant.current_schema}" unless Tenant.default?
+
+          if ids.count == 0
+            logger.warn "Skipping poll_partial_results with the text \"#{choice}\" for the poll_question " \
+                        "with ID #{question.id}. This question has no poll_question_answers " \
+                        "containing the text \"#{choice}\"" + tenant_info.to_s
+          else
+            logger.warn "Skipping poll_partial_results with the text \"#{choice}\" for the poll_question " \
+                        "with ID #{question.id}. The text \"#{choice}\" could refer to any of these " \
+                        "IDs in the poll_question_answers table: #{ids.join(", ")}" + tenant_info.to_s
+          end
+        end
+      end
+    end
+  end
 end
