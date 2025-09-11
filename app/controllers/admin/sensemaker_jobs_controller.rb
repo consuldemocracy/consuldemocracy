@@ -10,6 +10,34 @@ class Admin::SensemakerJobsController < Admin::BaseController
 
   def new
     @sensemaker_job = Sensemaker::Job.new
+
+    if params[:target_type].present?
+      @sensemaker_job.commentable_type = params[:target_type]
+      @sensemaker_job.commentable_id = params[:target_id] if params[:target_id].present?
+    end
+
+    @search_results = []
+    target_query = params.fetch(:query, nil)
+    if target_query.present?
+      case params[:query_type]
+      when "Legislation::Process"
+        processes = Legislation::Process.includes(:questions, :proposals).search(target_query)
+        processes.each do |process|
+          next if process.proposals.empty?
+
+          @search_results << { group_title: process.title + " Proposals", results: process.proposals }
+          next if process.questions.empty?
+
+          @search_results << { group_title: process.title + " Questions", results: process.questions }
+        end
+      else
+        to_group = params[:query_type].constantize.search(target_query)
+        @search_results = [{
+          group_title: I18n.t("activerecord.models.#{params[:query_type].underscore}.other"),
+          results: to_group
+        }]
+      end
+    end
   end
 
   def create
@@ -31,7 +59,8 @@ class Admin::SensemakerJobsController < Admin::BaseController
     @result = ""
     status = 200
     begin
-      raise ActiveRecord::RecordNotFound unless sensemaker_job.commentable.present? && sensemaker_job.commentable.persisted?
+      is_persisted = sensemaker_job.commentable.present? && sensemaker_job.commentable.persisted?
+      raise ActiveRecord::RecordNotFound unless is_persisted
 
       @result += "---------Additional context---------\n\n"
       @result += Sensemaker::JobRunner.compile_context(sensemaker_job.commentable)

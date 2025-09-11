@@ -1,4 +1,10 @@
-.sensemaker {
+.admin .sensemaker {
+  fieldset {
+    border: 1px solid $border;
+    border-radius: $button-radius;
+    padding: 1rem;
+  }
+
   .flex-between {
     align-items: center;
     display: flex;
@@ -11,6 +17,15 @@
     flex-direction: row;
     gap: 2px;
     justify-content: flex-end;
+  }
+
+  .flex-row-between {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    justify-content: flex-start;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .meta {
@@ -30,4 +45,114 @@
     padding: 6px;
     text-wrap: auto;
   }
+
+  .target-search-group {
+    border: 1px solid $border;
+    padding: 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    margin-bottom: 1rem;
+
+    .select-wrapper {
+      position: relative;
+    }
+
+    .select-wrapper::after {
+      content: "▼";
+      font-size: 0.6rem;
+      color: $white;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    select {
+      border: none;
+      border-radius: 0;
+      flex: 1;
+      max-width: 12rem;
+      margin: 0;
+      padding-left: 1rem;
+      background: $brand;
+      color: $white;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    select:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    input[type="text"] {
+      box-shadow: none;
+      border: none;
+      padding: 1rem;
+      flex: 1;
+      margin: 0;
+    }
+
+    input[type="text"]:focus {
+      border-radius: 0;
+    }
+
+    .button {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      margin: 0;
+    }
+  }
+
+  .target-search-results {
+    padding: 1rem;
+    margin: 0;
+    margin-bottom: 1rem;
+    border: 1px solid $border;
+    border-radius: 0.5rem;
+    overflow: hidden;
+
+    li.result-group {
+      margin-bottom: 1rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    li.result-group > span {
+      font-weight: bold;
+    }
+  }
+
+  .target-type-option {
+    padding: 0;
+    margin: 0;
+  }
+
+  .target-type-option input {
+    display: none;
+  }
+
+  .target-type-option span {
+    cursor: pointer;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid $border;
+    border-radius: 1rem;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: $white;
+  }
+
+  .target-type-option input:checked + span {
+    background: $brand;
+    color: $white;
+    border-color: transparent;
+  }
+
 }

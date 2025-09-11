@@ -352,19 +352,19 @@ describe Sensemaker::JobRunner do
       expect(context_result).to include(" - #{question.question_options.last.value}")
     end
 
-    it "can compile context for other commentable types" do
-      commentable_types = Comment::COMMENTABLE_TYPES - ["Poll", "Legislation::Question",
-                                                        "Legislation::Proposal", "Debate"]
-      commentable_types.each do |commentable_type|
-        commentable_factory = commentable_type.downcase.gsub("::", "_").to_sym
-        commentable = create(commentable_factory)
-        expect(commentable.persisted?).to be true
+    it "can compile context for other target types" do
+      target_types = Sensemaker::Job::TARGET_TYPES - ["Poll", "Legislation::Question",
+                                                      "Legislation::Proposal", "Debate"]
+      target_types.each do |target_type|
+        target_factory = target_type.downcase.gsub("::", "_").to_sym
+        target = create(target_factory)
+        expect(target.persisted?).to be true
         3.times do
-          create(:comment, commentable: commentable, user: user)
+          create(:comment, commentable: target, user: user)
         end
-        context_result = service.class.compile_context(commentable)
-        expect(context_result).to be_present, "Failed to compile context for #{commentable_factory}"
-        expect(context_result).to include("Comments: #{commentable.comments_count}")
+        context_result = service.class.compile_context(target)
+        expect(context_result).to be_present, "Failed to compile context for #{target_factory}"
+        expect(context_result).to include("Comments: #{target.comments_count}")
       end
     end
   end
@@ -380,7 +380,7 @@ describe Sensemaker::JobRunner do
       allow(mock_exporter).to receive(:export_to_csv)
     end
 
-    it "creates a CsvExporter with the job's commentable" do
+    it "creates a CsvExporter with the job's target" do
       service.send(:prepare_input_data)
 
       expect(Sensemaker::CsvExporter).to have_received(:new).with(job.commentable)

@@ -109,7 +109,7 @@ en:
       legislation/draft_versions:
         one: "Draft version"
         other: "Draft versions"
-      legislation/questions:
+      legislation/question:
         one: "Question"
         other: "Questions"
       legislation/question_options:

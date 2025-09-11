@@ -2,6 +2,17 @@ module Sensemaker
   class Job < ApplicationRecord
     self.table_name = "sensemaker_jobs"
 
+    TARGET_TYPES = [
+      "Debate",
+      "Proposal",
+      "Poll",
+      "Topic",
+      "Legislation::Question",
+      "Legislation::Proposal"
+    ].freeze
+
+    validates :commentable_type, inclusion: { in: TARGET_TYPES }
+
     belongs_to :user, optional: false
 
     # For storing the reference to the commentable object
