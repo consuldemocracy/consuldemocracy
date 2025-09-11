@@ -258,6 +258,60 @@ describe "polls tasks" do
       expect(Poll::PartialResult.all).to match_array [result, other_result, other_booth_result]
     end
 
+    it "removes duplicate partial results in different languages" do
+      question = create(:poll_question_multiple, max_votes: 2)
+
+      create(:poll_question_option, question: question, title_en: "Yes", title_de: "Ja")
+      create(:poll_question_option, question: question, title_en: "No",  title_de: "Nein")
+      create(:poll_question_option, question: question, title_en: "Maybe", title_de: "Vielleicht")
+
+      create(:poll_partial_result,
+             question: question,
+             booth_assignment_id: booth_assignment.id,
+             date: Date.current,
+             answer: "Yes",
+             option: nil)
+      create(:poll_partial_result,
+             question: question,
+             booth_assignment_id: booth_assignment.id,
+             date: Date.current,
+             answer: "Ja",
+             option: nil)
+
+      expect(Poll::PartialResult.count).to eq 2
+
+      Rake.application.invoke_task("polls:remove_duplicate_partial_results")
+
+      expect(Poll::PartialResult.count).to eq 1
+    end
+
+    it "does not remove duplicate partial results when many options are possible" do
+      question = create(:poll_question, title: "How do you pronounce it?")
+
+      create(:poll_question_option, question: question, title_en: "A", title_es: "EI")
+      create(:poll_question_option, question: question, title_en: "E", title_es: "I")
+      create(:poll_question_option, question: question, title_en: "I", title_es: "AI")
+
+      create(:poll_partial_result,
+             question: question,
+             booth_assignment_id: booth_assignment.id,
+             date: Date.current,
+             answer: "I",
+             option: nil)
+      create(:poll_partial_result,
+             question: question,
+             booth_assignment_id: booth_assignment.id,
+             date: Date.current,
+             answer: "AI",
+             option: nil)
+
+      expect(Poll::PartialResult.count).to eq 2
+
+      Rake.application.invoke_task("polls:remove_duplicate_partial_results")
+
+      expect(Poll::PartialResult.count).to eq 2
+    end
+
     it "does not remove partial results with the same text and different options" do
       question = create(:poll_question_multiple, :abcde, max_votes: 4)
       option_a = question.question_options.find_by(title: "Answer A")
@@ -304,6 +358,34 @@ describe "polls tasks" do
       Tenant.switch("partial_results") do
         expect(Poll::PartialResult.count).to eq 1
       end
+    end
+
+    it "removes duplicates in different languages even when amounts differ" do
+      question = create(:poll_question_multiple, max_votes: 2)
+
+      create(:poll_question_option, question: question, title_en: "Yes", title_de: "Ja")
+
+      create(:poll_partial_result,
+             question: question,
+             booth_assignment_id: booth_assignment.id,
+             date: Date.current,
+             answer: "Yes",
+             option: nil,
+             amount: 3)
+
+      create(:poll_partial_result,
+             question: question,
+             booth_assignment_id: booth_assignment.id,
+             date: Date.current,
+             answer: "Ja",
+             option: nil,
+             amount: 5)
+
+      expect(Poll::PartialResult.count).to eq 2
+
+      Rake.application.invoke_task("polls:remove_duplicate_partial_results")
+
+      expect(Poll::PartialResult.count).to eq 1
     end
   end
 
@@ -381,6 +463,11 @@ describe "polls tasks" do
     it "removes duplicate partial results before populating the option_id column" do
       question = create(:poll_question_multiple, :abc)
 
+      localized_question = create(:poll_question_multiple)
+      create(:poll_question_option, question: localized_question, title_en: "Yes", title_de: "Ja")
+      create(:poll_question_option, question: localized_question, title_en: "No",  title_de: "Nein")
+      create(:poll_question_option, question: localized_question, title_en: "Maybe", title_de: "Vielleicht")
+
       result_attributes = {
         question_id: question.id,
         booth_assignment_id: booth_assignment.id,
@@ -391,14 +478,28 @@ describe "polls tasks" do
       result = create(:poll_partial_result, result_attributes)
       insert(:poll_partial_result, result_attributes)
 
+      localized_result_attributes = {
+        question: localized_question,
+        booth_assignment_id: booth_assignment.id,
+        date: Date.current,
+        option: nil
+      }
+      localized_result = create(:poll_partial_result, localized_result_attributes.merge(answer: "Yes"))
+      create(:poll_partial_result, localized_result_attributes.merge(answer: "Ja"))
+
       result.reload
+      localized_result.reload
+
       expect(result.option_id).to be nil
+      expect(localized_result.option_id).to be nil
 
       Rake.application.invoke_task("polls:populate_partial_results_option_id")
       result.reload
+      localized_result.reload
 
-      expect(Poll::PartialResult.count).to eq 1
+      expect(Poll::PartialResult.count).to eq 2
       expect(result.option_id).to eq question.question_options.find_by(title: "Answer A").id
+      expect(localized_result.option_id).to eq localized_question.question_options.find_by(title: "Yes").id
     end
 
     it "populates the option_id column on tenants" do

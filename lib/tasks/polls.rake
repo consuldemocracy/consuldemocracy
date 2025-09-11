@@ -116,33 +116,54 @@ namespace :polls do
     logger.info "Removing duplicate partial results in polls"
 
     Tenant.run_on_each do
-      duplicate_ids = Poll::PartialResult.where(option_id: nil)
-                                         .select(:question_id, :booth_assignment_id, :date, :answer)
-                                         .group(:question_id, :booth_assignment_id, :date, :answer)
-                                         .having("count(*) > 1")
-                                         .pluck(:question_id, :booth_assignment_id, :date, :answer)
+      Poll::Question.find_each do |question|
+        manageable_titles = PollPartialResultOptionFinder.new(question).manageable_choices.keys
 
-      duplicate_ids.each do |question_id, booth_assignment_id, date, answer|
-        partial_results = Poll::PartialResult.where(
-          question_id: question_id,
-          booth_assignment_id: booth_assignment_id,
-          date: date,
-          answer: answer,
-          option_id: nil
-        )
+        question.question_options.each do |option|
+          titles = option.translations.where(title: manageable_titles).select(:title).distinct
 
-        partial_results.excluding(partial_results.first).each do |partial_result|
-          partial_result.delete
+          groups = question.partial_results.where(option_id: nil, answer: titles)
+                           .select(:booth_assignment_id, :date)
+                           .group(:booth_assignment_id, :date)
+                           .having("count(*) > 1")
+                           .pluck(:booth_assignment_id, :date)
 
-          tenant_info = " on tenant #{Tenant.current_schema}" unless Tenant.default?
-          log_message = "Deleted duplicate record with ID #{partial_result.id} " \
-                        "from the #{Poll::PartialResult.table_name} table " \
-                        "with question_id #{question_id}, " \
-                        "booth_assignment_id #{booth_assignment_id}, " \
-                        "date #{date} " \
-                        "and answer #{answer}" + tenant_info.to_s
-          logger.info(log_message)
-          duplicate_records_logger.info(log_message)
+          groups.each do |booth_assignment_id, date|
+            partial_results = question.partial_results.where(
+              option_id: nil,
+              booth_assignment_id: booth_assignment_id,
+              date: date,
+              answer: titles
+            )
+
+            tenant_info = " on tenant #{Tenant.current_schema}" unless Tenant.default?
+
+            amounts_by_id = partial_results.pluck(:id, :amount).to_h
+            if amounts_by_id.values.uniq.size > 1
+              log_message = "Found duplicate partial results with different amounts " \
+                            "for question_id #{question.id}, " \
+                            "booth_assignment_id #{booth_assignment_id} " \
+                            "and date #{date}. " \
+                            "Keeping ID #{partial_results.first.id} " \
+                            "with amount #{partial_results.first.amount}. " \
+                            "Deleting partial results with these IDs and amounts: " \
+                            "#{amounts_by_id.except(partial_results.first.id)}" + tenant_info.to_s
+              logger.info(log_message)
+              duplicate_records_logger.info(log_message)
+            end
+
+            partial_results.excluding(partial_results.first).each do |partial_result|
+              partial_result.delete
+
+              log_message = "Deleted duplicate record with ID #{partial_result.id} " \
+                            "from the #{Poll::PartialResult.table_name} table " \
+                            "with question_id #{question.id}, " \
+                            "booth_assignment_id #{booth_assignment_id} " \
+                            "and date #{date}" + tenant_info.to_s
+              logger.info(log_message)
+              duplicate_records_logger.info(log_message)
+            end
+          end
         end
       end
     end
