@@ -155,20 +155,13 @@ namespace :polls do
 
     Tenant.run_on_each do
       Poll::Question.find_each do |question|
-        options = question.question_options.joins(:translations).reorder(:id)
-        existing_choices = question.partial_results.where(option_id: nil).distinct.pluck(:answer)
+        option_finder = PollPartialResultOptionFinder.new(question)
 
-        choices_map = existing_choices.to_h do |choice|
-          [choice, options.where("lower(title) = lower(?)", choice).distinct.ids]
-        end
-
-        manageable_choices, unmanageable_choices = choices_map.partition { |choice, ids| ids.count == 1 }
-
-        manageable_choices.each do |choice, ids|
+        option_finder.manageable_choices.each do |choice, ids|
           question.partial_results.where(option_id: nil, answer: choice).update_all(option_id: ids.first)
         end
 
-        unmanageable_choices.each do |choice, ids|
+        option_finder.unmanageable_choices.each do |choice, ids|
           tenant_info = " on tenant #{Tenant.current_schema}" unless Tenant.default?
 
           if ids.count == 0
