@@ -65,7 +65,7 @@
               <% end %>
             </td>
             <td>
-              <div class="flex-row">
+              <div class="flex-row-end">
                 <%= link_to("Download Output", download_admin_sensemaker_job_path(sensemaker_job), class: "button small inline-block") if sensemaker_job.finished? && !sensemaker_job.errored? %>
                 <%= link_to "Delete", admin_sensemaker_job_path(sensemaker_job), class: "button error small inline-block", method: :delete, data: { confirm: t("admin.sensemaker.delete_alert") } %>
               </div>

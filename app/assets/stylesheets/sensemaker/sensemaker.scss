@@ -5,6 +5,23 @@
     padding: 1rem;
   }
 
+  .primary.callout {
+    margin-bottom: 1.5rem;
+  }
+
+  summary {
+    margin-bottom: 0.5rem;
+  }
+
+  .tip {
+    @include has-fa-icon(info-circle, solid);
+    margin-right: 0.5rem;
+  }
+
+  h4 {
+    margin-bottom: 0.8rem;
+  }
+
   .flex-between {
     align-items: center;
     display: flex;
@@ -16,16 +33,19 @@
     display: flex;
     flex-direction: row;
     gap: 2px;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    align-items: center;
   }
 
-  .flex-row-between {
+  .flex-grow {
+    flex: 1;
+  }
+
+  .flex-row-end {
     display: flex;
     flex-direction: row;
     gap: 2px;
-    justify-content: flex-start;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
 
   .meta {
@@ -115,6 +135,18 @@
     border: 1px solid $border;
     border-radius: 0.5rem;
     overflow: hidden;
+    background: #f2f2f2;
+
+    span.small {
+      opacity: 0.7;
+      font-style: italic;
+    }
+
+    .result-action {
+      padding: 0.2rem 0.5rem;
+      min-width: 7rem;
+      text-align: left;
+    }
 
     li.result-group {
       margin-bottom: 1rem;
@@ -124,6 +156,15 @@
 
     li.result-group > span {
       font-weight: bold;
+    }
+
+    li.result-row.selected {
+      opacity: 1;
+      a { color: black; }
+      a:hover { text-decoration: none; }
+    }
+    li.result-row {
+      opacity: 0.8;
     }
   }
 

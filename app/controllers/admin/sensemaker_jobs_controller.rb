@@ -14,6 +14,7 @@ class Admin::SensemakerJobsController < Admin::BaseController
     if params[:target_type].present?
       @sensemaker_job.commentable_type = params[:target_type]
       @sensemaker_job.commentable_id = params[:target_id] if params[:target_id].present?
+      @sensemaker_job.additional_context = Sensemaker::JobRunner.compile_context(@sensemaker_job.commentable)
     end
 
     @search_results = []
@@ -31,11 +32,11 @@ class Admin::SensemakerJobsController < Admin::BaseController
           @search_results << { group_title: process.title + " Questions", results: process.questions }
         end
       else
-        to_group = params[:query_type].constantize.search(target_query)
+        results = params[:query_type].constantize.search(target_query)
         @search_results = [{
           group_title: I18n.t("activerecord.models.#{params[:query_type].underscore}.other"),
-          results: to_group
-        }]
+          results: results
+        }] unless results.empty?
       end
     end
   end

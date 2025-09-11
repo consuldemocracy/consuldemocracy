@@ -1,6 +1,17 @@
 <%= header %>
 
 <div class="sensemaker">
+  <div class="callout primary flex-row">
+    <i class="tip" aria-hidden="true"></i>
+    <% if @sensemaker_job.commentable.present? %>
+      <p>Review your target and additional context, then select a script to run.</p>
+    <% elsif params[:query_type].present? %>
+      <p>Select a target from the search results.</p>
+    <% else %>
+      <p>Start by searching for a target to analyse.</p>
+    <% end %>
+  </div>
+
   <%= form_tag new_admin_sensemaker_job_path, method: :get do %>
     <div class="target-search-group">
       <div class="select-wrapper">
@@ -13,54 +24,68 @@
       <%= submit_tag "Search", class: "success button" %>
     </div>
 
-    <% if @search_results.any? %>
+    <details open>
+      <summary>Search results</summary>
       <ul class="target-search-results">
+        <%= content_tag :span, "Results will appear here", class: "small" unless params[:query].present? %>
+
         <% @search_results.each do |result_group| %>
           <li class="result-group">
             <%= content_tag :span, result_group[:group_title] %>
             <ul>
               <% result_group[:results].each do |result| %>
-                <li class="flex-row-between">
-                  <%= content_tag :span, result.title %>
-                  <%= link_to "Select →", new_admin_sensemaker_job_path(query_type: params[:query_type], query: params[:query], target_type: result.class.name, target_id: result.id) %>
+                <% is_selected = "#{result.class.name}/#{result.id}".eql? "#{params[:target_type]}/#{params[:target_id]}" %>
+                <li class="result-row <%= "selected" if is_selected %>">
+                  <%= link_to new_admin_sensemaker_job_path(query_type: params[:query_type], query: params[:query], target_type: result.class.name, target_id: result.id), class: "flex-row" do %>
+                    <%= content_tag :span, result.title, class: "flex-grow" %>
+                    <% if is_selected %>
+                      <%= content_tag :span, "Selected", class: "" %>
+                    <% else %>
+                      <%= content_tag :span, "Select", class: "" %>
+                    <% end %>
+                  <% end %>
                 </li>
               <% end %>
             </ul>
           </li>
         <% end %>
       </ul>
-    <% end %>
+    </details>
   <% end %>
 
-  <%= form_for @sensemaker_job, url: admin_sensemaker_jobs_path, method: :post do |f| %>
-    <%= f.label :commentable_type, "Target" %>
-    <%= f.select :commentable_type, Sensemaker::Job::TARGET_TYPES, include_blank: "Select a target...", label: false, required: true %>
+  <% if @sensemaker_job.commentable.present? %>
+    <br>
+    <%= form_for @sensemaker_job, url: admin_sensemaker_jobs_path, method: :post do |f| %>
+      <%= f.hidden_field :commentable_type, label: false, required: true %>
+      <%= f.hidden_field :commentable_id, label: false, required: true %>
 
-    <%= f.label :commentable_id, "Target ID" %>
-    <%= f.text_field :commentable_id, label: false, placeholder: "Enter a target ID...", required: true %>
+      <h4><%= @sensemaker_job.commentable.title %></h4>
+      <%= f.text_area :additional_context, label: "Additional context", rows: 10 %>
 
-    <%= f.select :script, Sensemaker::JobRunner::SCRIPTS, include_blank: "Select a script...", required: true %>
+      <%= f.select :script, Sensemaker::JobRunner::SCRIPTS, include_blank: "Select a script...", required: true %>
 
-    <div class="flex-between">
-      <%= link_to "← Cancel", admin_sensemaker_jobs_path, class: "" %>
+      <div class="flex-between">
+        <%= link_to "← Cancel", admin_sensemaker_jobs_path, class: "" %>
 
-      <div>
-        <%= f.submit "Preview input",
-                     formaction: preview_admin_sensemaker_jobs_path,
-                     type: "submit",
-                     data: { remote: true, temp_disable: true, disable_with: false },
-                     class: "button" %>
-        <%= f.submit "Download input CSV",
-                     type: "submit",
-                     formaction: preview_admin_sensemaker_jobs_path(format: :csv),
-                     class: "button", data: { temp_disable: true, disable_with: false } %>
-        <%= f.submit "Run", data: { temp_disable: true, disable_with: false } %>
+        <div>
+          <%#= f.submit "Preview input",
+                      formaction: preview_admin_sensemaker_jobs_path,
+                      type: "submit",
+                      data: { remote: true, temp_disable: true, disable_with: false },
+                      class: "button" %>
+          <%= f.submit "Download input CSV",
+                      type: "submit",
+                      formaction: preview_admin_sensemaker_jobs_path(format: :csv),
+                      class: "button", data: { temp_disable: true, disable_with: false } %>
+          <%= f.submit "Run", data: { temp_disable: true, disable_with: false } %>
+        </div>
       </div>
-    </div>
-  <% end %>
+      <% end %>
+    <% end %>
 
-  <%= content_tag "pre", id: "input-preview", class: "input-preview" do %>
+ <!--
+  <%#= content_tag "pre", id: "input-preview", class: "input-preview" do %>
     <em>input preview</em>
     <%# content of the preview result goes here %>
-  <% end %>
+  <%# end %> -->
 </div>
