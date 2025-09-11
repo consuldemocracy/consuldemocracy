@@ -1777,7 +1777,7 @@ en:
         description_3: "To use Sensemaker, you need to upload a conversation and select the Sensemaker tool."
       notice:
         cancelled_jobs: "All sensemaker jobs have been cancelled."
-        script_info: "The script has been executed successfully."
+        script_info: "The script has been queued successfully."
         script_name: "Script name:"
         select_script: "Select script to execute"
         started_at: "Started at:"

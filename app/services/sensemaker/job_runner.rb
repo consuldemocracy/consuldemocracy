@@ -182,7 +182,9 @@ module Sensemaker
       def prepare_input_data
         exporter = Sensemaker::CsvExporter.new(job.commentable)
         exporter.export_to_csv(input_file)
-        job.update!(additional_context: self.class.compile_context(job.commentable))
+        if job.additional_context.blank?
+          job.update!(additional_context: self.class.compile_context(job.commentable))
+        end
       end
 
       def check_dependencies?

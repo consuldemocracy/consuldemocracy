@@ -49,7 +49,7 @@ class Admin::SensemakerJobsController < Admin::BaseController
     Sensemaker::JobRunner.new(@sensemaker_job).run
 
     redirect_to admin_sensemaker_jobs_path,
-                notice: t("admin.sensemaker.script_info", email: current_user.email)
+                notice: t("admin.sensemaker.script_info")
   end
 
   def preview
@@ -113,6 +113,6 @@ class Admin::SensemakerJobsController < Admin::BaseController
   private
 
     def sensemaker_job_params
-      params.require(:sensemaker_job).permit(:commentable_type, :commentable_id, :script)
+      params.require(:sensemaker_job).permit(:commentable_type, :commentable_id, :script, :additional_context)
     end
 end
