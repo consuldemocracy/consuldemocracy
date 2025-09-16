@@ -11,7 +11,7 @@
       <% question.question_options.each_with_index do |option, i| %>
         <tr id="question_<%= question.id %>_<%= i %>_result">
           <td><%= option.title %></td>
-          <td class="text-center"><%= by_answer[option.title].present? ? by_answer[option.title].sum(&:amount) : 0 %></td>
+          <td class="text-center"><%= votes_for(option) %></td>
         </tr>
       <% end %>
     </tbody>
