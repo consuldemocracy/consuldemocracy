@@ -7,12 +7,6 @@ class Admin::Poll::Results::QuestionComponent < ApplicationComponent
   end
 
   def by_answer
-    @by_answer ||= by_question[question.id].present? ? by_question[question.id].group_by(&:answer) : {}
+    @by_answer ||= partial_results.where(question: question).group_by(&:answer)
   end
-
-  private
-
-    def by_question
-      @by_question ||= partial_results.group_by(&:question_id)
-    end
 end
