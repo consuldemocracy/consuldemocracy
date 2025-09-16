@@ -1,0 +1,20 @@
+<div class="admin-poll-results-question">
+  <h3><%= question.title %></h3>
+  <table class="margin">
+    <thead>
+      <tr>
+        <th><%= t("admin.results.result.table_answer") %></th>
+        <th class="text-center"><%= t("admin.results.result.table_votes") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% question.question_options.each_with_index do |option, i| %>
+        <% by_answer = by_question[question.id].present? ? by_question[question.id].group_by(&:answer) : {} %>
+        <tr id="question_<%= question.id %>_<%= i %>_result">
+          <td><%= option.title %></td>
+          <td class="text-center"><%= by_answer[option.title].present? ? by_answer[option.title].sum(&:amount) : 0 %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
