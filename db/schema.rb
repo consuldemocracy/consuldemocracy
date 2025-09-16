@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_09_09_145207) do
+ActiveRecord::Schema[7.1].define(version: 2025_10_09_084919) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -1609,7 +1609,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_09_09_145207) do
     t.string "erase_reason"
     t.datetime "erased_at", precision: nil
     t.boolean "public_activity", default: true
-    t.boolean "newsletter", default: true
+    t.boolean "newsletter"
     t.integer "notifications_count", default: 0
     t.boolean "registering_with_oauth", default: false
     t.string "locale"
@@ -1617,8 +1617,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_09_09_145207) do
     t.integer "geozone_id"
     t.string "gender", limit: 10
     t.datetime "date_of_birth", precision: nil
-    t.boolean "email_digest", default: true
-    t.boolean "email_on_direct_message", default: true
+    t.boolean "email_digest"
+    t.boolean "email_on_direct_message"
     t.boolean "official_position_badge", default: false
     t.datetime "password_changed_at", precision: nil, default: "2015-01-01 01:01:01", null: false
     t.boolean "created_from_signature", default: false

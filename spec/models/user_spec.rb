@@ -105,20 +105,44 @@ describe User do
     end
 
     describe "subscription_to_website_newsletter" do
-      it "is true by default" do
-        expect(subject.newsletter).to be true
+      it "is true by default when the consent for notifications setting is disabled" do
+        Setting["feature.gdpr.require_consent_for_notifications"] = false
+
+        expect(build(:user).newsletter).to be true
+      end
+
+      it "is false by default when the consent for notifications setting is enabled" do
+        Setting["feature.gdpr.require_consent_for_notifications"] = true
+
+        expect(build(:user).newsletter).to be false
       end
     end
 
     describe "email_digest" do
-      it "is true by default" do
-        expect(subject.email_digest).to be true
+      it "is true by default when the consent for notifications setting is disabled" do
+        Setting["feature.gdpr.require_consent_for_notifications"] = false
+
+        expect(build(:user).email_digest).to be true
+      end
+
+      it "is false by default when the consent for notifications setting is enabled" do
+        Setting["feature.gdpr.require_consent_for_notifications"] = true
+
+        expect(build(:user).email_digest).to be false
       end
     end
 
     describe "email_on_direct_message" do
-      it "is true by default" do
-        expect(subject.email_on_direct_message).to be true
+      it "is true by default when the consent for notifications setting is disabled" do
+        Setting["feature.gdpr.require_consent_for_notifications"] = false
+
+        expect(build(:user).email_on_direct_message).to be true
+      end
+
+      it "is false by default when the consent for notifications setting is enabled" do
+        Setting["feature.gdpr.require_consent_for_notifications"] = true
+
+        expect(build(:user).email_on_direct_message).to be false
       end
     end
 
