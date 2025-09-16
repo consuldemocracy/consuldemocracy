@@ -1,0 +1,41 @@
+<% provide :main_class, "officing-results-index" %>
+
+<%= back_link_to new_officing_poll_result_path(poll) %>
+<h2><%= poll.name %> - <%= t("officing.results.index.results") %></h2>
+
+<% if partial_results.present? %>
+  <div class="callout primary">
+    <h3>
+      <%= booth_assignment.booth.name %> - <%= l partial_results.first.date, format: :long %>
+    </h3>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-9 column">
+      <table>
+        <thead>
+          <tr>
+            <th><%= t("officing.results.index.table_whites") %></th>
+            <th><%= t("officing.results.index.table_nulls") %></th>
+            <th><%= t("officing.results.index.table_total") %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="white_results"><%= recounts.sum(:white_amount) %></td>
+            <td id="null_results"><%= recounts.sum(:null_amount) %></td>
+            <td id="total_results"><%= recounts.sum(:total_amount) %></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <% @poll.questions.each do |question| %>
+        <%= render Admin::Poll::Results::QuestionComponent.new(question, @partial_results) %>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <div class="callout primary">
+    <%= t("officing.results.index.no_results") %>
+  </div>
+<% end %>
