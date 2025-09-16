@@ -7,6 +7,9 @@
     </div>
   <% else %>
     <%= render "admin/poll/results/recount", resource: @booth_assignment %>
-    <%= render "admin/poll/results/result" %>
+
+    <% @poll.questions.each do |question| %>
+      <%= render Admin::Poll::Results::QuestionComponent.new(question, @partial_results) %>
+    <% end %>
   <% end %>
 </div>
