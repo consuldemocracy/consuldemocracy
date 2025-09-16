@@ -2,6 +2,7 @@ section "Creating Settings" do
   Setting.reset_defaults
 
   {
+    "feature.notifications": true,
     "facebook_handle": "CONSULDEMOCRACY",
     "feature.featured_proposals": "true",
     "feature.map": "true",
