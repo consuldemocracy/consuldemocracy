@@ -6,14 +6,15 @@ describe "Officing Results", :with_frozen_time do
   let(:poll_officer) { create(:poll_officer) }
   let(:question_1) { create(:poll_question, poll: poll) }
   let(:question_2) { create(:poll_question, poll: poll) }
+  let!(:option_yes) { create(:poll_question_option, title: "Yes", question: question_1, given_order: 1) }
+  let!(:option_no) { create(:poll_question_option, title: "No", question: question_1, given_order: 2) }
+  let!(:option_today) { create(:poll_question_option, title: "Today", question: question_2, given_order: 1) }
+  let!(:option_tomorrow) do
+    create(:poll_question_option, title: "Tomorrow", question: question_2, given_order: 2)
+  end
 
   before do
     create(:poll_shift, :recount_scrutiny_task, officer: poll_officer, booth: booth, date: Date.current)
-    create(:poll_question_option, title: "Yes", question: question_1, given_order: 1)
-    create(:poll_question_option, title: "No", question: question_1, given_order: 2)
-
-    create(:poll_question_option, title: "Today", question: question_2, given_order: 1)
-    create(:poll_question_option, title: "Tomorrow", question: question_2, given_order: 2)
 
     login_as(poll_officer.user)
     set_officing_booth(booth)
@@ -143,6 +144,7 @@ describe "Officing Results", :with_frozen_time do
            booth_assignment: booth_assignment,
            date: poll.ends_at,
            question: question_1,
+           answer: "Yes",
            amount: 33)
 
     create(:poll_recount,
@@ -161,13 +163,25 @@ describe "Officing Results", :with_frozen_time do
     expect(page).to have_content(booth.name)
 
     expect(page).to have_content(question_1.title)
-    question_1.question_options.each_with_index do |answer, i|
-      within("#question_#{question_1.id}_#{i}_result") { expect(page).to have_content(answer.title) }
+    page.find("tr#question_#{question_1.id}_0_result") do |yes_result|
+      expect(yes_result).to have_css "td", text: "Yes"
+      expect(yes_result).to have_css "td", text: "33"
+    end
+
+    page.find("tr#question_#{question_1.id}_1_result") do |no_result|
+      expect(no_result).to have_css "td", text: "No"
+      expect(no_result).to have_css "td", text: "0"
     end
 
     expect(page).to have_content(question_2.title)
-    question_2.question_options.each_with_index do |answer, i|
-      within("#question_#{question_2.id}_#{i}_result") { expect(page).to have_content(answer.title) }
+    page.find("tr#question_#{question_2.id}_0_result") do |today_result|
+      expect(today_result).to have_css "td", text: "Today"
+      expect(today_result).to have_css "td", text: "0"
+    end
+
+    page.find("tr#question_#{question_2.id}_1_result") do |tomorrow_result|
+      expect(tomorrow_result).to have_css "td", text: "Tomorrow"
+      expect(tomorrow_result).to have_css "td", text: "0"
     end
 
     within("#white_results") { expect(page).to have_content("21") }
