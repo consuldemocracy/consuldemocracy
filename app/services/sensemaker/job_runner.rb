@@ -1,5 +1,7 @@
 module Sensemaker
   class JobRunner
+
+    TIMEOUT = 900 # 15 minutes
     attr_reader :job
 
     SCRIPTS = [
@@ -30,6 +32,7 @@ module Sensemaker
     end
 
     def run
+      job.update_attribute(:started_at, Time.current)
       prepare_input_data
       return unless check_dependencies?
       return if execute_script.blank?
@@ -279,13 +282,14 @@ module Sensemaker
       end
 
       def execute_script
-        # Execute the command
-        output = `cd #{self.class.sensemaker_folder} && #{build_command} 2>&1`
+        Rails.logger.info("Executing script: #{build_command}")
+        output = `cd #{self.class.sensemaker_folder} && timeout #{TIMEOUT} #{build_command} 2>&1`
         result = process_exit_status
 
         if result.eql?(0)
           output
         else
+          output = "Timeout: #{TIMEOUT} seconds\n#{output}" if result.eql?(124)
           job.update!(finished_at: Time.current, error: output)
           Rails.logger.error("Sensemaker::JobRunner error: #{output}")
           nil

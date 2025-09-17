@@ -43,7 +43,7 @@ class Admin::SensemakerJobsController < Admin::BaseController
 
   def create
     valid_params = sensemaker_job_params.to_h
-    valid_params.merge!(user: current_user, started_at: Time.current)
+    valid_params.merge!(user: current_user)
     @sensemaker_job = Sensemaker::Job.create!(valid_params)
 
     Sensemaker::JobRunner.new(@sensemaker_job).run
@@ -54,7 +54,7 @@ class Admin::SensemakerJobsController < Admin::BaseController
 
   def preview
     valid_params = sensemaker_job_params.to_h
-    valid_params.merge!(user: current_user, started_at: Time.current)
+    valid_params.merge!(user: current_user)
     sensemaker_job = Sensemaker::Job.new(valid_params)
 
     @result = ""; csv_result = ""
