@@ -24,12 +24,12 @@ class Admin::SensemakerJobsController < Admin::BaseController
       when "Legislation::Process"
         processes = Legislation::Process.includes(:questions, :proposals).search(target_query)
         processes.each do |process|
-          next if process.proposals.empty?
-
-          @search_results << { group_title: process.title + " Proposals", results: process.proposals }
-          next if process.questions.empty?
-
-          @search_results << { group_title: process.title + " Questions", results: process.questions }
+          unless process.proposals.empty?
+            @search_results << { group_title: process.title + " Proposals", results: process.proposals }
+          end
+          unless process.questions.empty?
+            @search_results << { group_title: process.title + " Questions", results: process.questions }
+          end
         end
       else
         results = params[:query_type].constantize.search(target_query)
@@ -57,7 +57,7 @@ class Admin::SensemakerJobsController < Admin::BaseController
     valid_params.merge!(user: current_user, started_at: Time.current)
     sensemaker_job = Sensemaker::Job.new(valid_params)
 
-    @result = ""
+    @result = ""; csv_result = ""
     status = 200
     begin
       is_persisted = sensemaker_job.commentable.present? && sensemaker_job.commentable.persisted?
@@ -66,7 +66,8 @@ class Admin::SensemakerJobsController < Admin::BaseController
       @result += "---------Additional context---------\n\n"
       @result += Sensemaker::JobRunner.compile_context(sensemaker_job.commentable)
       @result += "\n\n---------Input CSV--------\n\n"
-      @result += Sensemaker::CsvExporter.new(sensemaker_job.commentable).export_to_string
+      csv_result = Sensemaker::CsvExporter.new(sensemaker_job.commentable).export_to_string
+      @result += csv_result
       filename = "#{sensemaker_job.commentable_type}-#{sensemaker_job.commentable_id}".parameterize
     rescue ActiveRecord::RecordNotFound
       @result += "Error: Target not found"
@@ -79,7 +80,7 @@ class Admin::SensemakerJobsController < Admin::BaseController
     respond_to do |format|
       format.html { render plain: @result, layout: false, status: status }
       format.js
-      format.csv { send_data @result, filename: "#{filename}-input.csv", status: status }
+      format.csv { send_data csv_result, filename: "#{filename}-input.csv", status: status }
     end
   end
 
