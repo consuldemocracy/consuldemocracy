@@ -31,11 +31,11 @@
       <% @poll.questions.each do |question| %>
         <h3><%= question.title %></h3>
 
-        <table>
+        <table class="margin">
           <thead>
             <tr>
-              <th><%= t("officing.results.index.table_answer") %></th>
-              <th><%= t("officing.results.index.table_votes") %></th>
+              <th><%= t("admin.results.result.table_answer") %></th>
+              <th class="text-center"><%= t("admin.results.result.table_votes") %></th>
             </tr>
           </thead>
           <tbody>
@@ -43,7 +43,7 @@
               <% by_answer = by_question[question.id].present? ? by_question[question.id].group_by(&:answer) : {} %>
               <tr id="question_<%= question.id %>_<%= i %>_result">
                 <td><%= option.title %></td>
-                <td><%= by_answer[option.title].present? ? by_answer[option.title].first.amount : 0 %></td>
+                <td class="text-center"><%= by_answer[option.title].present? ? by_answer[option.title].sum(&:amount) : 0 %></td>
               </tr>
             <% end %>
           </tbody>

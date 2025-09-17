@@ -57,8 +57,6 @@ en:
       index:
         no_results: "No results"
         results: Results
-        table_answer: Answer
-        table_votes: Votes
         table_whites: "Totally blank ballots"
         table_nulls: "Invalid ballots"
         table_total: "Valid ballots"
