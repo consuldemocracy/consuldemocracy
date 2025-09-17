@@ -319,7 +319,13 @@ module Sensemaker
       end
 
       def process_output
-        if File.exist?(output_file)
+        if job.script == "advanced_runner.ts"
+          path_to_check = "#{output_file}-summary.json"
+        else
+          path_to_check = output_file
+        end
+
+        if File.exist?(path_to_check)
           # Process the output file - in a real implementation, this would
           # parse the output and potentially store results in the database OR just check it was ok
           # For now, just update the Sensemaker::Info record
