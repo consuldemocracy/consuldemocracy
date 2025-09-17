@@ -98,12 +98,12 @@ class User < ApplicationRecord
   scope :officials,      -> { where(official_level: 1..) }
   scope :male,           -> { where(gender: "male") }
   scope :female,         -> { where(gender: "female") }
-  scope :newsletter,     -> { where(newsletter: true) }
+  scope :newsletter,     -> { Setting['feature.notifications'] ? where(newsletter: true) : none }
   scope :for_render,     -> { includes(:organization) }
   scope :by_document,    ->(document_type, document_number) do
     where(document_type: document_type, document_number: document_number)
   end
-  scope :email_digest,   -> { where(email_digest: true) }
+  scope :email_digest,   -> { Setting['feature.notifications'] ? where(email_digest: true) : none }
   scope :erased,         -> { where.not(erased_at: nil) }
   scope :active,         -> { excluding(erased) }
   scope :public_for_api, -> { all }
@@ -124,6 +124,25 @@ class User < ApplicationRecord
 
   before_validation :clean_document_number
 
+  def newsletter
+    with_notification_setting { super }
+  end
+
+  def email_digest
+    with_notification_setting { super }
+  end
+
+  def email_on_direct_message
+    with_notification_setting { super }
+  end
+
+  def email_on_comment_reply
+    with_notification_setting { super }
+  end
+
+  def email_on_comment
+    with_notification_setting { super }
+  end
   # Get the existing user by email if the provider gives us a verified email.
   def self.first_or_initialize_for_oauth(auth)
     oauth_email           = auth.info.email
@@ -442,6 +461,11 @@ class User < ApplicationRecord
   end
 
   private
+
+    def with_notification_setting
+      return false unless Setting['feature.notifications']
+      yield
+    end
 
     def clean_document_number
       return if document_number.blank?
