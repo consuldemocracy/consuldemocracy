@@ -200,7 +200,7 @@ describe Sensemaker::JobRunner do
 
     it "returns value when the script executes successfully" do
       # Mock the backtick method to simulate successful execution
-      expected_command = %r{cd .* && npx ts-node .*categorization_runner\.ts}
+      expected_command = %r{cd .* && timeout #{Sensemaker::JobRunner::TIMEOUT} npx ts-node .*categorization_runner\.ts}
       expect(service).to receive(:`).with(expected_command).and_return("Success output")
 
       allow(service).to receive(:process_exit_status).and_return(0)
@@ -212,7 +212,7 @@ describe Sensemaker::JobRunner do
 
     it "returns nil and updates the job when the script fails" do
       # Mock the backtick method to simulate failed execution
-      expected_command = %r{cd .* && npx ts-node .*categorization_runner\.ts}
+      expected_command = %r{cd .* && timeout #{Sensemaker::JobRunner::TIMEOUT} npx ts-node .*categorization_runner\.ts}
       expect(service).to receive(:`).with(expected_command).and_return("Error output")
 
       allow(service).to receive(:process_exit_status).and_return(1)
@@ -255,7 +255,7 @@ describe Sensemaker::JobRunner do
   describe "#output_file_name" do
     let(:service) { Sensemaker::JobRunner.new(job) }
     it "returns the correct output file name" do
-      expect(service.send(:output_file_name)).to eq("output-#{job.id}.csv")
+      expect(service.send(:output_file_name)).to eq("categorization-output-#{job.id}.csv")
       job.script = "advanced_runner.ts"
       expect(service.send(:output_file_name)).to eq("output-#{job.id}")
       job.script = "runner.ts"

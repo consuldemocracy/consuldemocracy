@@ -33,9 +33,23 @@ module Sensemaker
 
     def run
       job.update_attribute(:started_at, Time.current)
+
+      is_advanced = job.script.eql?("advanced_runner.ts")
+      if is_advanced
+        # Run as categorization first to get input for advanced runner
+        job.script = "categorization_runner.ts"
+      end
+
       prepare_input_data
       return unless check_dependencies?
       return if execute_script.blank?
+
+      if is_advanced
+        # Switch back to advanced runner
+        job.script = "advanced_runner.ts"
+        return unless check_dependencies?
+        return if execute_script.blank?
+      end
 
       process_output
       job.update!(finished_at: Time.current)
@@ -46,7 +60,11 @@ module Sensemaker
     handle_asynchronously :run, queue: "sensemaker"
 
     def input_file
-      "#{self.class.sensemaker_data_folder}/input-#{job.id}.csv"
+      if job.script == "advanced_runner.ts"
+        "#{self.class.sensemaker_data_folder}/categorization-output-#{job.id}.csv"
+      else
+        "#{self.class.sensemaker_data_folder}/input-#{job.id}.csv"
+      end
     end
 
     def output_file_name
@@ -54,6 +72,8 @@ module Sensemaker
         "health-check-#{job.id}.txt"
       elsif job.script == "advanced_runner.ts"
         "output-#{job.id}" # advanced runner has multiple output files
+      elsif job.script == "categorization_runner.ts"
+        "categorization-output-#{job.id}.csv"
       else
         "output-#{job.id}.csv"
       end
@@ -282,8 +302,10 @@ module Sensemaker
       end
 
       def execute_script
-        Rails.logger.info("Executing script: #{build_command}")
-        output = `cd #{self.class.sensemaker_folder} && timeout #{TIMEOUT} #{build_command} 2>&1`
+        command = build_command
+        Rails.logger.debug("Executing script: #{command}")
+
+        output = `cd #{self.class.sensemaker_folder} && timeout #{TIMEOUT} #{command} 2>&1`
         result = process_exit_status
 
         if result.eql?(0)
