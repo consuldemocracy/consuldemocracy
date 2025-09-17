@@ -230,7 +230,7 @@ describe Sensemaker::JobRunner do
   describe "#build_command" do
     let(:service) { Sensemaker::JobRunner.new(job) }
     it "returns the correct command for the categorization runner" do
-      command = service.send(:build_command)
+      command = service.build_command
       expect(command).to include("npx ts-node #{service.script_file}")
       expect(command).to include("--vertexProject #{service.project_id}")
       expect(command).to include("--modelName #{Tenant.current_secrets.sensemaker_model_name}")
@@ -241,7 +241,7 @@ describe Sensemaker::JobRunner do
 
     it "returns the correct command for the advanced runner" do
       service.job.script = "advanced_runner.ts"
-      command = service.send(:build_command)
+      command = service.build_command
       expect(command).to include("npx ts-node #{service.script_file}")
       expect(command).to include("--vertexProject #{service.project_id}")
       expect(command).to include("--modelName #{Tenant.current_secrets.sensemaker_model_name}")

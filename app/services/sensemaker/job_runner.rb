@@ -179,6 +179,26 @@ module Sensemaker
       parts
     end
 
+    def build_command
+      model_name = Tenant.current_secrets.sensemaker_model_name
+      additional_context = nil
+      additional_context = job.additional_context.presence unless job.script == "health_check_runner.ts"
+
+      command = %Q(npx ts-node #{script_file} \
+                 --vertexProject #{project_id} \
+                 --modelName #{model_name} \
+                 --keyFilename #{key_file})
+      command += " --inputFile #{input_file}" unless job.script == "health_check_runner.ts"
+      command += " --additionalContext \"#{additional_context}\"" if additional_context.present?
+      if job.script == "advanced_runner.ts"
+        command += " --outputBasename #{output_file}"
+      else
+        command += " --outputFile #{output_file}"
+      end
+
+      command
+    end
+
     private
 
       def prepare_input_data
@@ -256,26 +276,6 @@ module Sensemaker
         end
 
         true
-      end
-
-      def build_command
-        model_name = Tenant.current_secrets.sensemaker_model_name
-        additional_context = nil
-        additional_context = job.additional_context.presence unless job.script == "health_check_runner.ts"
-
-        command = %Q(npx ts-node #{script_file} \
-                   --vertexProject #{project_id} \
-                   --modelName #{model_name} \
-                   --keyFilename #{key_file})
-        command += " --inputFile #{input_file}" unless job.script == "health_check_runner.ts"
-        command += " --additionalContext \"#{additional_context}\"" if additional_context.present?
-        if job.script == "advanced_runner.ts"
-          command += " --outputBasename #{output_file}"
-        else
-          command += " --outputFile #{output_file}"
-        end
-
-        command
       end
 
       def execute_script

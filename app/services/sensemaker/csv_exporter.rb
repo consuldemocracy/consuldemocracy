@@ -34,7 +34,7 @@ module Sensemaker
     private
 
       def csv_headers
-        %w[comment_id comment_text agrees disagrees passes]
+        ["comment-id", "comment_text", "agrees", "disagrees", "passes"]
       end
 
       def export_data

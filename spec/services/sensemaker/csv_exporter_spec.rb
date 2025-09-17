@@ -24,7 +24,7 @@ describe Sensemaker::CsvExporter do
       csv_content = File.read(file_path)
 
       expect(csv_content).to include("Test comment")
-      expect(csv_content).to include("comment_id,comment_text,agrees,disagrees,passes")
+      expect(csv_content).to include("comment-id,comment_text,agrees,disagrees,passes")
     end
   end
 
@@ -34,7 +34,7 @@ describe Sensemaker::CsvExporter do
       result = csv_exporter.export_to_string
 
       expect(result).to include("Test comment")
-      expect(result).to include("comment_id,comment_text,agrees,disagrees,passes")
+      expect(result).to include("comment-id,comment_text,agrees,disagrees,passes")
     end
   end
 end
