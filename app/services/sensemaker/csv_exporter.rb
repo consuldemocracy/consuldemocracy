@@ -34,7 +34,7 @@ module Sensemaker
     private
 
       def csv_headers
-        ["comment-id", "comment_text", "agrees", "disagrees", "passes"]
+        [ "comment-id", "comment_text", "agrees", "disagrees", "passes", "author-id" ]
       end
 
       def export_data
@@ -52,7 +52,8 @@ module Sensemaker
             comment.body,
             comment.cached_votes_up || 0,
             comment.cached_votes_down || 0,
-            comment_votes_neutral(comment)
+            comment_votes_neutral(comment),
+            comment.user_id
           ]
         end
       end
