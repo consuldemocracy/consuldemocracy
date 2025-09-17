@@ -43,7 +43,7 @@
               <% by_answer = by_question[question.id].present? ? by_question[question.id].group_by(&:answer) : {} %>
               <tr id="question_<%= question.id %>_<%= i %>_result">
                 <td><%= option.title %></td>
-                <td><%= by_answer[option.title].present? ? by_answer[option.title].first.amount : 0 %></td>
+                <td><%= by_answer[option.title].present? ? by_answer[option.title].sum(&:amount) : 0 %></td>
               </tr>
             <% end %>
           </tbody>

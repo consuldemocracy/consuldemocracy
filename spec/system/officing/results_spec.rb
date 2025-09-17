@@ -147,6 +147,14 @@ describe "Officing Results", :with_frozen_time do
            answer: "Yes",
            amount: 33)
 
+    create(:poll_partial_result,
+           officer_assignment: officer_assignment,
+           booth_assignment: booth_assignment,
+           date: poll.ends_at,
+           question: question_1,
+           answer: "Yes",
+           amount: 7)
+
     create(:poll_recount,
            officer_assignment: officer_assignment,
            booth_assignment: booth_assignment,
@@ -165,7 +173,7 @@ describe "Officing Results", :with_frozen_time do
     expect(page).to have_content(question_1.title)
     page.find("tr#question_#{question_1.id}_0_result") do |yes_result|
       expect(yes_result).to have_css "td", text: "Yes"
-      expect(yes_result).to have_css "td", text: "33"
+      expect(yes_result).to have_css "td", text: "40"
     end
 
     page.find("tr#question_#{question_1.id}_1_result") do |no_result|
