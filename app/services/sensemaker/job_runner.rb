@@ -49,6 +49,8 @@ module Sensemaker
     def output_file_name
       if job.script == "health_check_runner.ts"
         "health-check-#{job.id}.txt"
+      elsif job.script == "advanced_runner.ts"
+        "output-#{job.id}" # advanced runner has multiple output files
       else
         "output-#{job.id}.csv"
       end
@@ -256,21 +258,29 @@ module Sensemaker
         true
       end
 
-      def execute_script
+      def build_command
         model_name = Tenant.current_secrets.sensemaker_model_name
         additional_context = nil
         additional_context = job.additional_context.presence unless job.script == "health_check_runner.ts"
 
         command = %Q(npx ts-node #{script_file} \
                    --vertexProject #{project_id} \
-                   --outputFile #{output_file} \
                    --modelName #{model_name} \
                    --keyFilename #{key_file})
         command += " --inputFile #{input_file}" unless job.script == "health_check_runner.ts"
         command += " --additionalContext \"#{additional_context}\"" if additional_context.present?
+        if job.script == "advanced_runner.ts"
+          command += " --outputBasename #{output_file}"
+        else
+          command += " --outputFile #{output_file}"
+        end
 
+        command
+      end
+
+      def execute_script
         # Execute the command
-        output = `cd #{self.class.sensemaker_folder} && #{command} 2>&1`
+        output = `cd #{self.class.sensemaker_folder} && #{build_command} 2>&1`
         result = process_exit_status
 
         if result.eql?(0)

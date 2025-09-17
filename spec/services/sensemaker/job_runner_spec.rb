@@ -227,6 +227,44 @@ describe Sensemaker::JobRunner do
     end
   end
 
+  describe "#build_command" do
+    let(:service) { Sensemaker::JobRunner.new(job) }
+    it "returns the correct command for the categorization runner" do
+      command = service.send(:build_command)
+      expect(command).to include("npx ts-node #{service.script_file}")
+      expect(command).to include("--vertexProject #{service.project_id}")
+      expect(command).to include("--modelName #{Tenant.current_secrets.sensemaker_model_name}")
+      expect(command).to include("--keyFilename #{service.key_file}")
+      expect(command).to include("--inputFile #{service.input_file}")
+      expect(command).to include("--outputFile #{service.output_file}")
+    end
+
+    it "returns the correct command for the advanced runner" do
+      service.job.script = "advanced_runner.ts"
+      command = service.send(:build_command)
+      expect(command).to include("npx ts-node #{service.script_file}")
+      expect(command).to include("--vertexProject #{service.project_id}")
+      expect(command).to include("--modelName #{Tenant.current_secrets.sensemaker_model_name}")
+      expect(command).to include("--keyFilename #{service.key_file}")
+      expect(command).to include("--inputFile #{service.input_file}")
+      expect(command).not_to include("--outputFile")
+      expect(command).to include("--outputBasename #{service.output_file}")
+    end
+  end
+
+  describe "#output_file_name" do
+    let(:service) { Sensemaker::JobRunner.new(job) }
+    it "returns the correct output file name" do
+      expect(service.send(:output_file_name)).to eq("output-#{job.id}.csv")
+      job.script = "advanced_runner.ts"
+      expect(service.send(:output_file_name)).to eq("output-#{job.id}")
+      job.script = "runner.ts"
+      expect(service.send(:output_file_name)).to eq("output-#{job.id}.csv")
+      job.script = "health_check_runner.ts"
+      expect(service.send(:output_file_name)).to eq("health-check-#{job.id}.txt")
+    end
+  end
+
   describe "#process_output" do
     let(:service) { Sensemaker::JobRunner.new(job) }
 
