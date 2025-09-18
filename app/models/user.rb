@@ -463,7 +463,7 @@ class User < ApplicationRecord
   private
 
     def with_notification_setting
-      return false unless Setting['feature.notifications']
+      return false if Setting['feature.notifications']
       yield
     end
 
