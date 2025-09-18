@@ -98,12 +98,12 @@ class User < ApplicationRecord
   scope :officials,      -> { where(official_level: 1..) }
   scope :male,           -> { where(gender: "male") }
   scope :female,         -> { where(gender: "female") }
-  scope :newsletter,     -> { Setting["feature.notifications"] ? where(newsletter: true) : none }
+  scope :newsletter,     -> { Setting["feature.gdpr_compliant"] ? where(newsletter: true) : none }
   scope :for_render,     -> { includes(:organization) }
   scope :by_document,    ->(document_type, document_number) do
     where(document_type: document_type, document_number: document_number)
   end
-  scope :email_digest,   -> { Setting["feature.notifications"] ? where(email_digest: true) : none }
+  scope :email_digest,   -> { Setting["feature.gdpr_compliant"] ? where(email_digest: true) : none }
   scope :erased,         -> { where.not(erased_at: nil) }
   scope :active,         -> { excluding(erased) }
   scope :public_for_api, -> { all }
@@ -463,7 +463,7 @@ class User < ApplicationRecord
   private
 
     def with_notification_setting
-      return false if Setting["feature.notifications"]
+      return false if Setting["feature.gdpr_compliant"]
 
       yield
     end

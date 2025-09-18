@@ -106,7 +106,7 @@ describe User do
 
     describe "subscription_to_website_newsletter" do
       context "when GDPR-compliant default settings are off" do
-        before { Setting["feature.notifications"] = false }
+        before { Setting["feature.gdpr_compliant"] = false }
 
         it "is false by default" do
           expect(subject.newsletter).to be false
@@ -122,7 +122,7 @@ describe User do
       end
 
       context "when GDPR-compliant default settings are on" do
-        before { Setting["feature.notifications"] = true }
+        before { Setting["feature.gdpr_compliant"] = true }
 
         it "is false by GDPR-compliant default settings" do
           expect(subject.newsletter).to be false
@@ -140,7 +140,7 @@ describe User do
 
     describe "email_digest" do
       context "when GDPR-compliant default settings are off" do
-        before { Setting["feature.notifications"] = false }
+        before { Setting["feature.gdpr_compliant"] = false }
 
         it "is false by default" do
           expect(subject.email_digest).to be false
@@ -156,7 +156,7 @@ describe User do
       end
 
       context "when GDPR-compliant default settings are on" do
-        before { Setting["feature.notifications"] = true }
+        before { Setting["feature.gdpr_compliant"] = true }
 
         it "is false by GDPR-compliant default settings" do
           expect(subject.email_digest).to be false
@@ -174,7 +174,7 @@ describe User do
 
     describe "email_on_direct_message" do
       context "when GDPR-compliant default settings are off" do
-        before { Setting["feature.notifications"] = false }
+        before { Setting["feature.gdpr_compliant"] = false }
 
         it "is false by GDPR-compliant default settings" do
           expect(subject.email_on_direct_message).to be false
@@ -190,7 +190,7 @@ describe User do
       end
 
       context "when GDPR-compliant default settings are on" do
-        before { Setting["feature.notifications"] = true }
+        before { Setting["feature.gdpr_compliant"] = true }
 
         it "is false by GDPR-compliant default settings" do
           expect(subject.email_on_direct_message).to be false

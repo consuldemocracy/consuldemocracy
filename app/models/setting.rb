@@ -65,7 +65,7 @@ class Setting < ApplicationRecord
 
     def defaults
       {
-        "feature.notifications": true,
+        "feature.gdpr_compliant": true,
         "feature.featured_proposals": nil,
         "feature.facebook_login": true,
         "feature.google_login": true,

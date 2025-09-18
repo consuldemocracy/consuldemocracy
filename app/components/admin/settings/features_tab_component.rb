@@ -1,7 +1,7 @@
 class Admin::Settings::FeaturesTabComponent < ApplicationComponent
   def settings
     %w[
-      feature.notifications
+      feature.gdpr_compliant
       feature.featured_proposals
       feature.facebook_login
       feature.google_login

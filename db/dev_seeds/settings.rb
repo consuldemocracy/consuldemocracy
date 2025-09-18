@@ -2,7 +2,7 @@ section "Creating Settings" do
   Setting.reset_defaults
 
   {
-    "feature.notifications": true,
+    "feature.gdpr_compliant": true,
     "facebook_handle": "CONSULDEMOCRACY",
     "feature.featured_proposals": "true",
     "feature.map": "true",

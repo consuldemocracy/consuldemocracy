@@ -45,25 +45,25 @@
             <h2><%= t("account.show.notifications") %></h2>
 
             <div>
-              <%= f.check_box :email_on_comment, disabled: Setting["feature.notifications"] %>
+              <%= f.check_box :email_on_comment, disabled: Setting["feature.gdpr_compliant"] %>
             </div>
 
             <div>
-              <%= f.check_box :email_on_comment_reply, disabled: Setting["feature.notifications"] %>
+              <%= f.check_box :email_on_comment_reply, disabled: Setting["feature.gdpr_compliant"] %>
             </div>
 
             <div>
-              <%= f.check_box :newsletter, disabled: Setting["feature.notifications"] %>
+              <%= f.check_box :newsletter, disabled: Setting["feature.gdpr_compliant"] %>
             </div>
 
             <% if feature?(:proposals) %>
               <div>
-                <%= f.check_box :email_digest, disabled: Setting["feature.notifications"] %>
+                <%= f.check_box :email_digest, disabled: Setting["feature.gdpr_compliant"] %>
               </div>
             <% end %>
 
             <div>
-              <%= f.check_box :email_on_direct_message, disabled: Setting["feature.notifications"] %>
+              <%= f.check_box :email_on_direct_message, disabled: Setting["feature.gdpr_compliant"] %>
             </div>
           <% end %>
 
