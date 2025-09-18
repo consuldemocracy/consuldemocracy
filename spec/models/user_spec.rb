@@ -105,20 +105,104 @@ describe User do
     end
 
     describe "subscription_to_website_newsletter" do
-      it "is true by default" do
-        expect(subject.newsletter).to be true
+      context "when GDPR-compliant default settings are off" do
+        before { Setting["feature.notifications"] = false }
+
+        it "is false by default" do
+          expect(subject.newsletter).to be false
+        end
+
+        context "when a user has activated newsletter" do
+          subject { build(:user, newsletter: true) }
+
+          it "is true by user" do
+            expect(subject.newsletter).to be true
+          end
+        end
+      end
+
+      context "when GDPR-compliant default settings are on" do
+        before { Setting["feature.notifications"] = true }
+
+        it "is false by GDPR-compliant default settings" do
+          expect(subject.newsletter).to be false
+        end
+
+        context "when a user has activated newsletter" do
+          subject { build(:user, newsletter: true) }
+
+          it "is false by GDPR-compliant default settings" do
+            expect(subject.newsletter).to be false
+          end
+        end
       end
     end
 
     describe "email_digest" do
-      it "is true by default" do
-        expect(subject.email_digest).to be true
+      context "when GDPR-compliant default settings are off" do
+        before { Setting["feature.notifications"] = false }
+
+        it "is false by default" do
+          expect(subject.email_digest).to be false
+        end
+
+        context "when a user has activated email_digest" do
+          subject { build(:user, email_digest: true) }
+
+          it "is true by user" do
+            expect(subject.email_digest).to be true
+          end
+        end
+      end
+
+      context "when GDPR-compliant default settings are on" do
+        before { Setting["feature.notifications"] = true }
+
+        it "is false by GDPR-compliant default settings" do
+          expect(subject.email_digest).to be false
+        end
+
+        context "when a user has activated email_digest" do
+          subject { build(:user, email_digest: true) }
+
+          it "is false by GDPR-compliant default settings" do
+            expect(subject.email_digest).to be false
+          end
+        end
       end
     end
 
     describe "email_on_direct_message" do
-      it "is true by default" do
-        expect(subject.email_on_direct_message).to be true
+      context "when GDPR-compliant default settings are off" do
+        before { Setting["feature.notifications"] = false }
+
+        it "is false by GDPR-compliant default settings" do
+          expect(subject.email_on_direct_message).to be false
+        end
+
+        context "when a user has activated email_on_direct_message" do
+          subject { build(:user, email_on_direct_message: true) }
+
+          it "is true by user" do
+            expect(subject.email_on_direct_message).to be true
+          end
+        end
+      end
+
+      context "when GDPR-compliant default settings are on" do
+        before { Setting["feature.notifications"] = true }
+
+        it "is false by GDPR-compliant default settings" do
+          expect(subject.email_on_direct_message).to be false
+        end
+
+        context "when a user has activated email_on_direct_message" do
+          subject { build(:user, email_on_direct_message: true) }
+
+          it "is false by GDPR-compliant default settings" do
+            expect(subject.email_on_direct_message).to be false
+          end
+        end
       end
     end
 
