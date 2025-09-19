@@ -42,6 +42,8 @@ es:
     instagram_handle_description: "Si está rellenado aparecerá en el pie de página"
     org_name: "Nombre del sitio"
     org_name_description: "Este nombre aparecerá en el asunto de emails, páginas de ayuda..."
+    instance_repository_url: "URL del repositorio de la instancia"
+    instance_repository_url_description: "Enlace al repositorio de código fuente de esta instancia de Consul Democracy (p. ej., tu fork en GitHub). Se mostrará en el pie de página."
     related_content_score_threshold: "Umbral de puntuación de contenido relacionado"
     related_content_score_threshold_description: "Según la puntuación de votos en un contenido relacionado, oculta el contenido que los usuarios marquen como no relacionado"
     hot_score_period_in_days: "Periodo (días) usado para el filtro 'Más Activos'"
