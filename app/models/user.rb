@@ -98,12 +98,12 @@ class User < ApplicationRecord
   scope :officials,      -> { where(official_level: 1..) }
   scope :male,           -> { where(gender: "male") }
   scope :female,         -> { where(gender: "female") }
-  scope :newsletter,     -> { Setting["feature.gdpr_compliant"] ? where(newsletter: true) : none }
+  scope :newsletter, -> { notification_manageable_scope.where(newsletter: true) }
   scope :for_render,     -> { includes(:organization) }
   scope :by_document,    ->(document_type, document_number) do
     where(document_type: document_type, document_number: document_number)
   end
-  scope :email_digest,   -> { Setting["feature.gdpr_compliant"] ? where(email_digest: true) : none }
+  scope :email_digest, -> { notification_manageable_scope.where(email_digest: true) }
   scope :erased,         -> { where.not(erased_at: nil) }
   scope :active,         -> { excluding(erased) }
   scope :public_for_api, -> { all }
@@ -124,6 +124,14 @@ class User < ApplicationRecord
 
   before_validation :clean_document_number
 
+  def self.notification_manageable_scope
+    if Setting["feature.disable_notifications"]
+      where(created_at: ...Rails.application.config.disable_notifications_at)
+    else
+      all
+    end
+  end
+
   def newsletter
     with_notification_setting { super }
   end
@@ -143,6 +151,7 @@ class User < ApplicationRecord
   def email_on_comment
     with_notification_setting { super }
   end
+
   # Get the existing user by email if the provider gives us a verified email.
   def self.first_or_initialize_for_oauth(auth)
     oauth_email           = auth.info.email
@@ -463,7 +472,8 @@ class User < ApplicationRecord
   private
 
     def with_notification_setting
-      return false if Setting["feature.gdpr_compliant"]
+      applyable_user = created_at >= Rails.application.config.disable_notifications_at
+      return false if applyable_user && Setting["feature.disable_notifications"]
 
       yield
     end
