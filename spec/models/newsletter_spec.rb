@@ -68,6 +68,7 @@ describe Newsletter do
     let!(:newsletter) { create(:newsletter, segment_recipient: "proposal_authors") }
 
     before do
+      User.update_all(newsletter: true)
       create(:debate)
       reset_mailer
     end
@@ -130,8 +131,8 @@ describe Newsletter do
 
     it "skips invalid emails" do
       Proposal.destroy_all
-      create(:user, :with_proposal, email: "valid@consul.dev")
-      create(:user, :with_proposal, email: "invalid@consul..dev")
+      create(:user, :with_notifications, :with_proposal, email: "valid@consul.dev")
+      create(:user, :with_notifications, :with_proposal, email: "invalid@consul..dev")
 
       newsletter.deliver
 

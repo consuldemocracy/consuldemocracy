@@ -6,8 +6,8 @@ describe "Direct messages" do
   end
 
   scenario "Create" do
-    sender   = create(:user, :level_two)
-    receiver = create(:user, :level_two)
+    sender   = create(:user, :with_notifications, :level_two)
+    receiver = create(:user, :with_notifications, :level_two)
 
     login_as(sender)
     visit user_path(receiver)
@@ -92,8 +92,8 @@ describe "Direct messages" do
 
   context "Limits" do
     scenario "Can only send a maximum number of direct messages per day" do
-      sender   = create(:user, :level_two)
-      receiver = create(:user, :level_two)
+      sender   = create(:user, :with_notifications, :level_two)
+      receiver = create(:user, :with_notifications, :level_two)
 
       3.times { create(:direct_message, sender: sender) }
 

@@ -40,7 +40,9 @@ describe "Emails" do
   end
 
   context "Comment replies" do
-    let(:user) { create(:user, email_on_comment_reply: true, subscriptions_token: "commenter_token") }
+    let(:user) do
+      create(:user, :with_notifications, email_on_comment_reply: true, subscriptions_token: "commenter_token")
+    end
     let(:debate) { create(:debate, title: "Controversial topic") }
     let!(:comment) { create(:comment, commentable: debate, user: user) }
 
@@ -90,8 +92,9 @@ describe "Emails" do
 
   context "Direct Message" do
     scenario "Receiver email" do
-      sender   = create(:user, :level_two, username: "John")
-      receiver = create(:user, :level_two, username: "Paul", subscriptions_token: "receiver_token")
+      sender   = create(:user, :with_notifications, :level_two, username: "John")
+      receiver = create(:user, :with_notifications, :level_two, username: "Paul",
+                                                                subscriptions_token: "receiver_token")
 
       login_as(sender)
       visit user_path(receiver)
@@ -123,8 +126,8 @@ describe "Emails" do
     end
 
     scenario "Sender email" do
-      sender   = create(:user, :level_two)
-      receiver = create(:user, :level_two, username: "Keith")
+      sender   = create(:user, :with_notifications, :level_two)
+      receiver = create(:user, :with_notifications, :level_two, username: "Keith")
 
       login_as(sender)
       visit user_path(receiver)
@@ -152,7 +155,7 @@ describe "Emails" do
   context "Proposal notification digest" do
     scenario "notifications for proposals that I'm following", :no_js do
       Setting["org_name"] = "CONSUL"
-      user = create(:user, email_digest: true)
+      user = create(:user, :with_notifications)
 
       proposal1 = create(:proposal, followers: [user])
       proposal2 = create(:proposal, followers: [user])
@@ -222,7 +225,7 @@ describe "Emails" do
   end
 
   context "Budgets" do
-    let(:author) { create(:user, :level_two) }
+    let(:author) { create(:user, :with_notifications, :level_two) }
     let(:budget) { create(:budget) }
     before { create(:budget_heading, name: "More hospitals", budget: budget) }
 
@@ -270,9 +273,9 @@ describe "Emails" do
     end
 
     scenario "Selected investment" do
-      author1 = create(:user)
-      author2 = create(:user)
-      author3 = create(:user)
+      author1 = create(:user, :with_notifications)
+      author2 = create(:user, :with_notifications)
+      author3 = create(:user, :with_notifications)
 
       investment1 = create(:budget_investment, :selected,   author: author1, budget: budget)
       investment2 = create(:budget_investment, :selected,   author: author2, budget: budget)
@@ -292,9 +295,9 @@ describe "Emails" do
     end
 
     scenario "Unselected investment" do
-      author1 = create(:user)
-      author2 = create(:user)
-      author3 = create(:user)
+      author1 = create(:user, :with_notifications)
+      author2 = create(:user, :with_notifications)
+      author3 = create(:user, :with_notifications)
 
       investment1 = create(:budget_investment, :unselected, author: author1, budget: budget)
       investment2 = create(:budget_investment, :unselected, author: author2, budget: budget)
@@ -316,7 +319,8 @@ describe "Emails" do
 
   context "Polls" do
     scenario "Send email on poll comment reply" do
-      user = create(:user, email_on_comment_reply: true, subscriptions_token: "user_token")
+      user = create(:user, :with_notifications, email_on_comment_reply: true,
+                                                subscriptions_token: "user_token")
       poll = create(:poll, author: create(:user), name: "Important questions")
       comment = create(:comment, commentable: poll, author: user)
 
