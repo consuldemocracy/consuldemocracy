@@ -148,7 +148,7 @@ describe "Admin newsletter emails", :admin do
     end
   end
 
-  context "Counter of emails sent" do
+  context "without sending emails by default" do
     scenario "Display counter" do
       newsletter = create(:newsletter, segment_recipient: "administrators")
       visit admin_newsletter_path(newsletter)
@@ -157,8 +157,70 @@ describe "Admin newsletter emails", :admin do
 
       expect(page).to have_content "Newsletter sent successfully"
 
-      expect(page).to have_content "1 affected users"
-      expect(page).to have_content "1 email sent"
+      expect(page).to have_content "0 affected users"
+      expect(page).to have_content "0 emails sent"
+    end
+  end
+
+  context "when disabel_notification is on" do
+    before do
+      Rails.application.config.disable_notifications_at = 3.days.before
+      Setting["feature.disable_notifications"] = true
+    end
+
+    context "when users with activated newsletter" do
+      scenario "Display counter" do
+        newsletter = create(:newsletter, segment_recipient: "administrators")
+        User.first.update!(newsletter: true, created_at: 2.days.before)
+        create(:administrator).user.update!(newsletter: true, created_at: 4.days.before)
+        visit admin_newsletter_path(newsletter)
+
+        accept_confirm { click_button "Send" }
+
+        expect(page).to have_content "Newsletter sent successfully"
+
+        expect(page).to have_content "1 affected users"
+        expect(page).to have_content "1 email sent"
+      end
+    end
+
+    context "when old user without activated newsletter" do
+      scenario "Display counter" do
+        newsletter = create(:newsletter, segment_recipient: "administrators")
+        expect(User.count).to eq(1)
+        User.first.update!(newsletter: false, created_at: 4.days.before)
+        visit admin_newsletter_path(newsletter)
+
+        accept_confirm { click_button "Send" }
+
+        expect(page).to have_content "Newsletter sent successfully"
+
+        expect(page).to have_content "0 affected users"
+        expect(page).to have_content "0 emails sent"
+      end
+    end
+  end
+
+  context "when disabel_notification is off" do
+    before do
+      Setting["feature.disable_notifications"] = false
+    end
+
+    scenario "Display counter" do
+      newsletter = create(:newsletter, segment_recipient: "administrators")
+      User.first.update!(newsletter: true, created_at: 2.days.before)
+      create(:administrator).user.update!(newsletter: true, created_at: 4.days.before)
+
+      expect(User.count).to eq(2)
+      visit admin_newsletter_path(newsletter)
+
+      User.newsletter
+      accept_confirm { click_button "Send" }
+
+      expect(page).to have_content "Newsletter sent successfully"
+
+      expect(page).to have_content "2 affected users"
+      expect(page).to have_content "2 emails sent"
     end
   end
 

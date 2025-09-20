@@ -2,13 +2,13 @@ require "rails_helper"
 
 describe Admin::EmailsDownloadController do
   before do
-    admin = create(:administrator, user: create(:user, email: "admin@consul.dev"))
+    admin = create(:administrator, user: create(:user, email: "admin@consul.dev", newsletter: true))
     sign_in(admin.user)
   end
 
   describe "GET generate_csv" do
     it "sends a list of emails in a comma-separated format" do
-      create(:user, email: "user@consul.dev")
+      create(:user, email: "user@consul.dev", newsletter: true)
 
       get :generate_csv, params: { users_segment: "all_users" }
 
