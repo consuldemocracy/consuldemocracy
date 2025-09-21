@@ -101,11 +101,25 @@ describe "Account" do
     expect(find("#account_email_on_comment_reply")).to be_checked
   end
 
+  describe "Notifications" do
+    context "when proposals process is enabled and notifications are disabled" do
+      before do
+        Setting["feature.disable_notifications"] = true
+      end
+
+      scenario "Hides Notifications" do
+        visit account_path
+
+        expect(page).to have_no_selector("h2", text: "Notifications")
+      end
+    end
+  end
+
   describe "Email digest checkbox" do
     scenario "Appears when the proposals process is enabled" do
       visit account_path
 
-      expect(page).to have_field "Receive a summary of proposal notifications", checked: true
+      expect(page).to have_field "Receive a summary of proposal notifications", checked: false
     end
 
     scenario "Does not appear when the proposals process is disabled" do
