@@ -91,8 +91,7 @@ describe "Emails" do
   context "Direct Message" do
     scenario "Receiver email" do
       sender   = create(:user, :level_two, username: "John")
-      receiver = create(:user, :level_two, username: "Paul",
-                                                                subscriptions_token: "receiver_token")
+      receiver = create(:user, :level_two, username: "Paul", subscriptions_token: "receiver_token")
 
       login_as(sender)
       visit user_path(receiver)
@@ -317,8 +316,7 @@ describe "Emails" do
 
   context "Polls" do
     scenario "Send email on poll comment reply" do
-      user = create(:user, email_on_comment_reply: true,
-                                                subscriptions_token: "user_token")
+      user = create(:user, email_on_comment_reply: true, subscriptions_token: "user_token")
       poll = create(:poll, author: create(:user), name: "Important questions")
       comment = create(:comment, commentable: poll, author: user)
 

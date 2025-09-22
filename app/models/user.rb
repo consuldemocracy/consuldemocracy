@@ -122,8 +122,8 @@ class User < ApplicationRecord
     where(date_of_birth: start_date.beginning_of_day..end_date.end_of_day)
   end
 
-  before_validation :clean_document_number
   after_initialize :set_defaults, if: :new_record?
+  before_validation :clean_document_number
 
   def self.notification_manageable_scope
     if Setting["feature.disable_notifications"]
