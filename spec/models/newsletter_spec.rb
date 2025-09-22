@@ -68,7 +68,6 @@ describe Newsletter do
     let!(:newsletter) { create(:newsletter, segment_recipient: "proposal_authors") }
 
     before do
-      User.update_all(newsletter: true)
       create(:debate)
       reset_mailer
     end

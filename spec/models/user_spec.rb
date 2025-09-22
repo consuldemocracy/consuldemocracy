@@ -97,17 +97,17 @@ describe User do
         Rails.application.config.disable_notifications_at = Time.zone.now
       end
 
-      context "when GDPR-compliant default settings are off" do
-        let(:old_user) { build(:user, created_at: 1.day.ago) }
-        let(:new_user) { build(:user, created_at: 1.day.after) }
+      context "when GDPR-compliant settings are off" do
+        let(:old_user) { build(:user, email_on_comment: true, created_at: 1.day.ago) }
+        let(:new_user) { build(:user, email_on_comment: true, created_at: 1.day.after) }
 
         before do
           Setting["feature.disable_notifications"] = false
         end
 
-        it "is false by default" do
-          expect(old_user.email_on_comment).to be false
-          expect(new_user.email_on_comment).to be false
+        it "has expected values" do
+          expect(old_user.email_on_comment).to be true
+          expect(new_user.email_on_comment).to be true
         end
 
         context "when a user has activated email_on_comment" do
@@ -304,7 +304,7 @@ describe User do
         end
       end
 
-      context "when GDPR-compliant default settings are on" do
+      context "when GDPR-compliant settings are on" do
         let(:old_user) { create(:user, :with_notifications, created_at: 1.day.ago) }
         let(:new_user) { create(:user, :with_notifications, created_at: 1.day.after) }
 
