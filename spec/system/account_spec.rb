@@ -124,7 +124,7 @@ describe "Account" do
     scenario "Appears when the proposals process is enabled" do
       visit account_path
 
-      expect(page).to have_field "Receive a summary of proposal notifications", checked: false
+      expect(page).to have_field "Receive a summary of proposal notifications", checked: true
     end
 
     scenario "Does not appear when the proposals process is disabled" do

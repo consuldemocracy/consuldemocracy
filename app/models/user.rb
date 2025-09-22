@@ -481,7 +481,7 @@ class User < ApplicationRecord
     end
 
     def with_notification_setting
-      applyable_user = created_at >= Rails.application.config.disable_notifications_at
+      applyable_user = created_at && created_at >= Rails.application.config.disable_notifications_at
       return false if applyable_user && Setting["feature.disable_notifications"]
 
       yield

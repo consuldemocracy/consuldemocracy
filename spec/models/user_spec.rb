@@ -214,8 +214,8 @@ describe User do
         end
 
         it "is false by default" do
-          expect(old_user.newsletter).to be false
-          expect(new_user.newsletter).to be false
+          expect(old_user.newsletter).to be true
+          expect(new_user.newsletter).to be true
         end
 
         context "when a user has activated newsletter" do
@@ -236,23 +236,23 @@ describe User do
         end
       end
 
-      context "when GDPR-compliant default settings are on" do
-        let(:old_user) { build(:user, created_at: 1.day.ago) }
-        let(:new_user) { build(:user, created_at: 1.day.after) }
+      context "when GDPR-compliant settings are on" do
+        let(:old_user) { create(:user, :with_notifications, created_at: 1.day.ago) }
+        let(:new_user) { create(:user, :with_notifications, created_at: 1.day.after) }
 
         before do
           Setting["feature.disable_notifications"] = true
         end
 
-        it "is false by default" do
-          expect(old_user.newsletter).to be false
+        it "has expected values" do
+          expect(old_user.newsletter).to be true
           expect(new_user.newsletter).to be false
         end
 
         context "when a user has activated newsletter" do
           let!(:old_user_off) { create(:user, newsletter: false, created_at: 1.day.ago) }
-          let!(:old_user) { create(:user, newsletter: true, created_at: 1.day.ago) }
-          let!(:new_user) { create(:user, newsletter: true, created_at: 1.day.after) }
+          let!(:old_user) { create(:user, :with_notifications, created_at: 1.day.ago) }
+          let!(:new_user) { create(:user, :with_notifications, created_at: 1.day.after) }
 
           it "has values by activation" do
             expect(old_user.newsletter).to be true
@@ -281,9 +281,9 @@ describe User do
           Setting["feature.disable_notifications"] = false
         end
 
-        it "is false by default" do
-          expect(old_user.email_digest).to be false
-          expect(new_user.email_digest).to be false
+        it "has expected values" do
+          expect(old_user.email_digest).to be true
+          expect(new_user.email_digest).to be true
         end
 
         context "when a user has activated email_digest" do
@@ -305,22 +305,22 @@ describe User do
       end
 
       context "when GDPR-compliant default settings are on" do
-        let(:old_user) { build(:user, created_at: 1.day.ago) }
-        let(:new_user) { build(:user, created_at: 1.day.after) }
+        let(:old_user) { create(:user, :with_notifications, created_at: 1.day.ago) }
+        let(:new_user) { create(:user, :with_notifications, created_at: 1.day.after) }
 
         before do
           Setting["feature.disable_notifications"] = true
         end
 
         it "is false by default" do
-          expect(old_user.email_digest).to be false
+          expect(old_user.email_digest).to be true
           expect(new_user.email_digest).to be false
         end
 
         context "when a user has activated email_digest" do
           let!(:old_user_off) { create(:user, email_digest: false, created_at: 1.day.ago) }
-          let!(:old_user) { create(:user, email_digest: true, created_at: 1.day.ago) }
-          let!(:new_user) { create(:user, email_digest: true, created_at: 1.day.after) }
+          let!(:old_user) { create(:user, :with_notifications, created_at: 1.day.ago) }
+          let!(:new_user) { create(:user, :with_notifications, created_at: 1.day.after) }
 
           it "has values by activation" do
             expect(old_user.email_digest).to be true
@@ -349,9 +349,9 @@ describe User do
           Setting["feature.disable_notifications"] = false
         end
 
-        it "is false by default" do
-          expect(old_user.email_on_direct_message).to be false
-          expect(new_user.email_on_direct_message).to be false
+        it "has expected values" do
+          expect(old_user.email_on_direct_message).to be true
+          expect(new_user.email_on_direct_message).to be true
         end
 
         context "when a user has activated email_on_direct_message" do
@@ -373,8 +373,8 @@ describe User do
           Setting["feature.disable_notifications"] = true
         end
 
-        it "is false by default" do
-          expect(old_user.email_on_direct_message).to be false
+        it "has expected values" do
+          expect(old_user.email_on_direct_message).to be true
           expect(new_user.email_on_direct_message).to be false
         end
 

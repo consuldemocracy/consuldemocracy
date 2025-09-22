@@ -148,7 +148,7 @@ describe "Admin newsletter emails", :admin do
     end
   end
 
-  context "without sending emails by default" do
+  context "Counter of emails sent" do
     scenario "Display counter" do
       newsletter = create(:newsletter, segment_recipient: "administrators")
       visit admin_newsletter_path(newsletter)
@@ -157,8 +157,8 @@ describe "Admin newsletter emails", :admin do
 
       expect(page).to have_content "Newsletter sent successfully"
 
-      expect(page).to have_content "0 affected users"
-      expect(page).to have_content "0 emails sent"
+      expect(page).to have_content "1 affected users"
+      expect(page).to have_content "1 email sent"
     end
   end
 
@@ -169,10 +169,14 @@ describe "Admin newsletter emails", :admin do
     end
 
     context "when users with activated newsletter" do
-      scenario "Display counter" do
-        newsletter = create(:newsletter, segment_recipient: "administrators")
+      let(:newsletter) { create(:newsletter, segment_recipient: "administrators") }
+
+      before do
         User.first.update!(newsletter: true, created_at: 2.days.before)
         create(:administrator).user.update!(newsletter: true, created_at: 4.days.before)
+      end
+
+      scenario "Display counter" do
         visit admin_newsletter_path(newsletter)
 
         accept_confirm { click_button "Send" }
