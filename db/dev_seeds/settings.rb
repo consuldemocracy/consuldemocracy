@@ -2,7 +2,7 @@ section "Creating Settings" do
   Setting.reset_defaults
 
   {
-    "feature.disable_notifications": true,
+    "feature.disable_notifications": false,
     "facebook_handle": "CONSULDEMOCRACY",
     "feature.featured_proposals": "true",
     "feature.map": "true",
