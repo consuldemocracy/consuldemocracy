@@ -110,7 +110,7 @@ describe "Account" do
       scenario "Hides Notifications" do
         visit account_path
 
-        expect(page).to have_no_selector("h2", text: "Notifications")
+        expect(page).not_to have_selector("h2", text: "Notifications")
       end
     end
   end

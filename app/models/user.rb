@@ -98,12 +98,12 @@ class User < ApplicationRecord
   scope :officials,      -> { where(official_level: 1..) }
   scope :male,           -> { where(gender: "male") }
   scope :female,         -> { where(gender: "female") }
-  scope :newsletter, -> { notification_manageable_scope.where(newsletter: true) }
+  scope :newsletter,     -> { notification_manageable_scope.where(newsletter: true) }
   scope :for_render,     -> { includes(:organization) }
   scope :by_document,    ->(document_type, document_number) do
     where(document_type: document_type, document_number: document_number)
   end
-  scope :email_digest, -> { notification_manageable_scope.where(email_digest: true) }
+  scope :email_digest,   -> { notification_manageable_scope.where(email_digest: true) }
   scope :erased,         -> { where.not(erased_at: nil) }
   scope :active,         -> { excluding(erased) }
   scope :public_for_api, -> { all }

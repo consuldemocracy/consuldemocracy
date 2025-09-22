@@ -43,6 +43,7 @@
 
           <% if @account.email.present? && !Setting["feature.disable_notifications"] %>
             <h2><%= t("account.show.notifications") %></h2>
+
             <div>
               <%= f.check_box :email_on_comment %>
             </div>
