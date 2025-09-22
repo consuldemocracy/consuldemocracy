@@ -110,7 +110,12 @@ describe "Account" do
       scenario "Hides Notifications" do
         visit account_path
 
-        expect(page).not_to have_selector("h2", text: "Notifications")
+        expect(page).not_to have_css("h2", text: "Notifications")
+        expect(page).not_to have_field "Notify me by email when someone comments on my contents"
+        expect(page).not_to have_field "Notify me by email when someone replies to my comments"
+        expect(page).not_to have_field "Receive relevant information by email"
+        expect(page).not_to have_field "Receive a summary of proposal notifications"
+        expect(page).not_to have_field "Receive emails about direct messages"
       end
     end
   end
