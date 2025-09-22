@@ -123,6 +123,7 @@ class User < ApplicationRecord
   end
 
   before_validation :clean_document_number
+  after_initialize :set_defaults, if: :new_record?
 
   def self.notification_manageable_scope
     if Setting["feature.disable_notifications"]
@@ -470,6 +471,14 @@ class User < ApplicationRecord
   end
 
   private
+
+    def set_defaults
+      if Setting["feature.disable_notifications"]
+        self.newsletter ||= false
+        self.email_digest ||= false
+        self.email_on_direct_message ||= false
+      end
+    end
 
     def with_notification_setting
       applyable_user = created_at >= Rails.application.config.disable_notifications_at

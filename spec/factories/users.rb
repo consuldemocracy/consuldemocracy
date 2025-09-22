@@ -27,12 +27,6 @@ FactoryBot.define do
       geozone
     end
 
-    trait :with_notifications do
-      newsletter { true }
-      email_digest { true }
-      email_on_direct_message { true }
-    end
-
     trait :level_three do
       verified_at { Time.current }
       document_type { "1" }

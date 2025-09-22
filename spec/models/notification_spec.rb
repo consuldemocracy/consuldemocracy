@@ -170,9 +170,9 @@ describe Notification do
   end
 
   describe ".send_pending", :delay_jobs do
-    let!(:user1) { create(:user, :with_notifications) }
-    let!(:user2) { create(:user, :with_notifications) }
-    let!(:user3) { create(:user, :with_notifications) }
+    let!(:user1) { create(:user) }
+    let!(:user2) { create(:user) }
+    let!(:user3) { create(:user) }
     let!(:proposal_notification) { create(:proposal_notification) }
 
     before do
