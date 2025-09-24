@@ -4,6 +4,7 @@ section "Creating Settings" do
   {
     "facebook_handle": "CONSULDEMOCRACY",
     "feature.featured_proposals": "true",
+    "feature.warning_for_linkouts": nil,
     "feature.map": "true",
     "instagram_handle": "CONSULDEMOCRACY",
     "meta_description": "Citizen participation tool for an open, " \

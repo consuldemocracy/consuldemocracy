@@ -1,5 +1,7 @@
 es:
   valuation:
+    modal:
+      warning_for_linkouts: Al confirmar, aceptas salir del sitio web.
     header:
       title: Evaluación
     menu:

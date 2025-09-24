@@ -13,7 +13,8 @@
     <%= raw setting["html.per_page_code_head"] %>
     <%= render Layout::CookiesConsent::Vendors::ScriptsComponent.new %>
   </head>
-  <body class="<%= yield(:body_class) %> public">
+  <body class="<%= yield(:body_class) %> public"
+    data-warning-for-linkouts="<%= !!Setting["feature.warning_for_linkouts"] ? t("valuation.modal.warning_for_linkouts") : "" %>">
     <%= render Layout::SkipToMainContentComponent.new %>
     <%= raw setting["html.per_page_code_body"] %>
 
