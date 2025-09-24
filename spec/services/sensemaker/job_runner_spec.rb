@@ -13,6 +13,13 @@ describe Sensemaker::JobRunner do
            additional_context: "")
   end
 
+  describe "#initialize" do
+    it "initializes target_input_file as nil" do
+      service = Sensemaker::JobRunner.new(job)
+      expect(service.target_input_file).to be(nil)
+    end
+  end
+
   describe "#run" do
     let(:service) { Sensemaker::JobRunner.new(job) }
 
@@ -249,6 +256,51 @@ describe Sensemaker::JobRunner do
       expect(command).to include("--inputFile #{service.input_file}")
       expect(command).not_to include("--outputFile")
       expect(command).to include("--outputBasename #{service.output_file}")
+    end
+  end
+
+  describe "#input_file" do
+    let(:service) { Sensemaker::JobRunner.new(job) }
+
+    it "returns the standard input file for categorization_runner.ts" do
+      job.script = "categorization_runner.ts"
+      expected_file = "#{Sensemaker::JobRunner.sensemaker_data_folder}/input-#{job.id}.csv"
+      expect(service.input_file).to eq(expected_file)
+    end
+
+    it "returns the standard input file for runner.ts" do
+      job.script = "runner.ts"
+      expected_file = "#{Sensemaker::JobRunner.sensemaker_data_folder}/input-#{job.id}.csv"
+      expect(service.input_file).to eq(expected_file)
+    end
+
+    it "returns the standard input file for health_check_runner.ts" do
+      job.script = "health_check_runner.ts"
+      expected_file = "#{Sensemaker::JobRunner.sensemaker_data_folder}/input-#{job.id}.csv"
+      expect(service.input_file).to eq(expected_file)
+    end
+
+    context "when script is advanced_runner.ts" do
+      before do
+        job.script = "advanced_runner.ts"
+      end
+
+      it "returns the categorization output file when target_input_file is not set" do
+        service.target_input_file = nil
+        expected_file = "#{Sensemaker::JobRunner.sensemaker_data_folder}/categorization-output-#{job.id}.csv"
+        expect(service.input_file).to eq(expected_file)
+      end
+
+      it "returns the target_input_file when it is set" do
+        custom_file = "/custom/path/to/input.csv"
+        service.target_input_file = custom_file
+        expect(service.input_file).to eq(custom_file)
+      end
+
+      it "returns the target_input_file even when it is an empty string" do
+        service.target_input_file = ""
+        expect(service.input_file).to eq("")
+      end
     end
   end
 

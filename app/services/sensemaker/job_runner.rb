@@ -1,8 +1,8 @@
 module Sensemaker
   class JobRunner
-
     TIMEOUT = 900 # 15 minutes
     attr_reader :job
+    attr_accessor :target_input_file
 
     SCRIPTS = [
       "health_check_runner.ts",
@@ -13,6 +13,7 @@ module Sensemaker
 
     def initialize(job)
       @job = job
+      @target_input_file = nil
     end
 
     def self.sensemaker_folder
@@ -31,48 +32,38 @@ module Sensemaker
       end
     end
 
+    def self.visualization_folder
+      if Rails.env.test?
+        Rails.root.join("tmp/sensemaker_test_folder/web-ui")
+      else
+        Rails.root.join("vendor/sensemaking-tools/web-ui")
+      end
+    end
+
     def run
-      job.update_attribute(:started_at, Time.current)
-
-      is_advanced = job.script.eql?("advanced_runner.ts")
-      if is_advanced
-        # Run as categorization first to get input for advanced runner
-        job.script = "categorization_runner.ts"
-      end
-
-      prepare_input_data
-      return unless check_dependencies?
-      return if execute_script.blank?
-
-      if is_advanced
-        # Switch back to advanced runner
-        job.script = "advanced_runner.ts"
-        return unless check_dependencies?
-        return if execute_script.blank?
-      end
-
-      process_output
-      job.update!(finished_at: Time.current)
-    rescue Exception => e
-      handle_error(e)
-      raise e
+      execute_job_workflow
     end
     handle_asynchronously :run, queue: "sensemaker"
 
+    def run_synchronously
+      execute_job_workflow
+    end
+
     def input_file
       if job.script == "advanced_runner.ts"
-        "#{self.class.sensemaker_data_folder}/categorization-output-#{job.id}.csv"
+        target_input_file || "#{self.class.sensemaker_data_folder}/categorization-output-#{job.id}.csv"
       else
         "#{self.class.sensemaker_data_folder}/input-#{job.id}.csv"
       end
     end
 
     def output_file_name
-      if job.script == "health_check_runner.ts"
+      case job.script
+      when "health_check_runner.ts"
         "health-check-#{job.id}.txt"
-      elsif job.script == "advanced_runner.ts"
+      when "advanced_runner.ts"
         "output-#{job.id}" # advanced runner has multiple output files
-      elsif job.script == "categorization_runner.ts"
+      when "categorization_runner.ts"
         "categorization-output-#{job.id}.csv"
       else
         "output-#{job.id}.csv"
@@ -224,11 +215,48 @@ module Sensemaker
 
     private
 
+      def execute_job_workflow
+        job.update_attribute(:started_at, Time.current)
+
+        prepare_input_data
+        return unless check_dependencies?
+        return if execute_script.blank?
+
+        process_output
+        job.update!(finished_at: Time.current)
+      rescue Exception => e
+        handle_error(e)
+        raise e
+      end
+
+      def prepare_with_categorization_job
+        categorization_job = Sensemaker::Job.create!(
+          user: job.user,
+          commentable: job.commentable,
+          script: "categorization_runner.ts",
+          additional_context: job.additional_context
+        )
+
+        categorization_runner = Sensemaker::JobRunner.new(categorization_job)
+        categorization_runner.run_synchronously
+
+        if categorization_job.reload.errored?
+          raise "Preparation job #{categorization_job.id} failed"
+        end
+
+        self.target_input_file = categorization_runner.output_file
+      end
+
       def prepare_input_data
-        exporter = Sensemaker::CsvExporter.new(job.commentable)
-        exporter.export_to_csv(input_file)
         if job.additional_context.blank?
           job.update!(additional_context: self.class.compile_context(job.commentable))
+        end
+
+        if job.script.eql?("advanced_runner.ts")
+          prepare_with_categorization_job
+        else
+          exporter = Sensemaker::CsvExporter.new(job.commentable)
+          exporter.export_to_csv(input_file)
         end
       end
 
