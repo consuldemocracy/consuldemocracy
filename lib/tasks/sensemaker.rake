@@ -63,21 +63,31 @@ namespace :sensemaker do
 
     def check_env_variables(logger)
       logger.info "Checking environment variables..."
-      sensemaker_data_folder = Tenant.current_secrets.sensemaker_data_folder
-      sensemaker_key_file = Tenant.current_secrets.sensemaker_key_file
-      sensemaker_model_name = Tenant.current_secrets.sensemaker_model_name
 
-      any_missing = [sensemaker_data_folder, sensemaker_key_file, sensemaker_model_name].any?(&:blank?)
+      required_secrets = {
+        sensemaker_data_folder: "<path to the data folder>",
+        sensemaker_key_file: "<path to the service account key file>",
+        sensemaker_model_name: "<model name>"
+      }
 
+      any_missing = false
+
+      # Check each secret individually
+      required_secrets.each do |key, description|
+        value = Tenant.current_secrets.send(key)
+        if value.present?
+          logger.info "✓ #{key} found"
+        else
+          logger.warn "✗ #{key} not found. Please provide it in the tenant secrets: #{key}: #{description}"
+          any_missing = true
+        end
+      end
+
+      # raise an error if any were missing
       if any_missing
-        logger.warn "✗ Sensemaker environment variables not found"
-        logger.warn "Provide the following environment variables in the tenant secrets:"
-        logger.warn "  sensemaker_data_folder: <path to the data folder>"
-        logger.warn "  sensemaker_key_file: <path to the service account key file>"
-        logger.warn "  sensemaker_model_name: <model name>"
-        raise "Sensemaker environment variables not found"
+        abort "Error: One or more Sensemaker environment variables not found. Please check the logs."
       else
-        logger.info "✓ Sensemaker environment variables found"
+        logger.info "✓ All Sensemaker environment variables are present."
       end
     end
 
