@@ -64,6 +64,8 @@ set :delayed_job_monitor, true
 
 set :whenever_roles, -> { :app }
 
+set :setup_sensemaker, ENV["SETUP_SENSEMAKER"] == "true"
+
 namespace :deploy do
   after "rvm1:hook", "map_node_bins"
 
