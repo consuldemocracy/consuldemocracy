@@ -199,6 +199,7 @@ namespace :sensemaker do
       # Try to get paths from Sensemaker::JobRunner, but provide fallbacks for installation/setup
       begin
         sensemaker_path = Sensemaker::JobRunner.sensemaker_folder
+        visualization_path = Sensemaker::JobRunner.visualization_folder
         data_path = Sensemaker::JobRunner.sensemaker_data_folder
       rescue => e
         logger.warn "Could not get paths from Sensemaker::JobRunner: #{e.message}"
@@ -219,9 +220,9 @@ namespace :sensemaker do
 
       setup_data_directory(data_path, logger)
 
-      install_dependencies(sensemaker_path, logger)
+      install_dependencies(sensemaker_path, visualization_path, logger)
 
-      #set_file_permissions(sensemaker_path, data_path, logger)
+      # set_file_permissions(sensemaker_path, data_path, logger)
 
       verify_cli_available(sensemaker_path, logger)
 
@@ -342,17 +343,20 @@ namespace :sensemaker do
       end
     end
 
-    def install_dependencies(sensemaker_path, logger)
-      logger.info "Installing npm dependencies..."
+    def install_dependencies(sensemaker_path, visualization_path, logger)
+      install_main_dependencies(sensemaker_path, logger)
+      install_visualization_dependencies(visualization_path, logger)
+    end
 
-      # Install dependencies at the root level (this handles all workspaces)
+    def install_main_dependencies(sensemaker_path, logger)
+      logger.info "Installing npm dependencies for sensemaking-tools..."
       if File.exist?(File.join(sensemaker_path, "package.json"))
         Dir.chdir(sensemaker_path) do
-          logger.info "Installing dependencies for all workspaces..."
+          logger.info "Installing dependencies for sensemaking-tools..."
           system("npm install")
 
           if $?.success?
-            logger.info "Dependencies installed successfully for all workspaces."
+            logger.info "Dependencies installed successfully for sensemaking-tools."
           else
             logger.warn "Failed to install dependencies."
             raise "Failed to install dependencies."
@@ -361,6 +365,26 @@ namespace :sensemaker do
       else
         logger.warn "package.json not found at #{sensemaker_path}"
         raise "package.json not found at #{sensemaker_path}"
+      end
+    end
+
+    def install_visualization_dependencies(visualization_path, logger)
+      logger.info "Installing npm dependencies for sensemaker-tools/web-ui..."
+      if File.exist?(File.join(visualization_path, "package.json"))
+        Dir.chdir(visualization_path) do
+          logger.info "Installing dependencies for web-ui..."
+          system("npm install")
+
+          if $?.success?
+            logger.info "Dependencies installed successfully for web-ui."
+          else
+            logger.warn "Failed to install dependencies."
+            raise "Failed to install dependencies."
+          end
+        end
+      else
+        logger.warn "package.json not found at #{visualization_path}"
+        raise "package.json not found at #{visualization_path}"
       end
     end
 
