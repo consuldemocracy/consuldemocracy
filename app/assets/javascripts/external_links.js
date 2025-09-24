@@ -1,8 +1,9 @@
-let linkoutHandler = null;
+var linkoutHandler = null;
 
 function setupExternalLinkWarning() {
-  const enabled = document.body.dataset.warningForLinkouts === "true";
-  const currentHost = window.location.host;
+  "use strict";
+  var enabled = document.body.dataset.warningForLinkouts === "true";
+  var currentHost = window.location.host;
 
   if (!enabled && linkoutHandler) {
     document.removeEventListener("click", linkoutHandler, true);
@@ -10,15 +11,19 @@ function setupExternalLinkWarning() {
     return;
   }
 
-  if (!enabled || linkoutHandler) return;
+  if (!enabled || linkoutHandler) {
+    return;
+  }
 
   linkoutHandler = function(event) {
-    const link = event.target.closest("a[href]");
-    if (!link) return;
+    var link = event.target.closest("a[href]");
+    if (!link) {
+      return;
+    }
 
-    const url = new URL(link.href, window.location.origin);
+    var url = new URL(link.href, window.location.origin);
     if (url.host !== currentHost) {
-      const message = "By confirming, you agree to leave the website.";
+      var message = "By confirming, you agree to leave the website.";
       if (!confirm(message)) {
         event.preventDefault();
       }
