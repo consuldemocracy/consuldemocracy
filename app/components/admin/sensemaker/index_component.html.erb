@@ -23,7 +23,7 @@
       <tbody>
         <% running_jobs.each do |sensemaker_job| %>
           <tr>
-            <td><%= sensemaker_job.commentable.title %></td>
+            <td><%= sensemaker_job.commentable&.title %></td>
             <td><%= sensemaker_job.script %></td>
             <td><%= sensemaker_job.started_at %></td>
           </tr>
@@ -50,7 +50,7 @@
       <tbody>
         <% sensemaker_jobs.each do |sensemaker_job| %>
           <tr>
-            <td><%= sensemaker_job.commentable.title %></td>
+            <td><%= sensemaker_job.commentable.present? ? sensemaker_job.commentable.title : "(deleted)" %></td>
             <td><%= sensemaker_job.script %></td>
             <td>
               <%= content_tag :span, sensemaker_job.status %><br>
