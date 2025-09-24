@@ -221,7 +221,7 @@ namespace :sensemaker do
 
       install_dependencies(sensemaker_path, logger)
 
-      set_file_permissions(sensemaker_path, data_path, logger)
+      #set_file_permissions(sensemaker_path, data_path, logger)
 
       verify_cli_available(sensemaker_path, logger)
 
@@ -345,22 +345,22 @@ namespace :sensemaker do
     def install_dependencies(sensemaker_path, logger)
       logger.info "Installing npm dependencies..."
 
-      # Install dependencies in the library directory
-      library_path = File.join(sensemaker_path, "library")
-      if File.directory?(library_path)
-        Dir.chdir(library_path) do
+      # Install dependencies at the root level (this handles all workspaces)
+      if File.exist?(File.join(sensemaker_path, "package.json"))
+        Dir.chdir(sensemaker_path) do
+          logger.info "Installing dependencies for all workspaces..."
           system("npm install")
 
           if $?.success?
-            logger.info "Dependencies installed successfully."
+            logger.info "Dependencies installed successfully for all workspaces."
           else
             logger.warn "Failed to install dependencies."
             raise "Failed to install dependencies."
           end
         end
       else
-        logger.warn "Library directory not found at #{library_path}"
-        raise "Library directory not found at #{library_path}"
+        logger.warn "package.json not found at #{sensemaker_path}"
+        raise "package.json not found at #{sensemaker_path}"
       end
     end
 
