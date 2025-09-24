@@ -1,0 +1,29 @@
+.video-placeholder {
+  background: #706f6f;
+  margin: 0 auto;
+  padding: 20% 10%;
+  position: relative;
+
+  .video-warning {
+    color: #fff;
+    line-height: 1.5;
+  }
+
+  .video-accept {
+    background: #004a83;
+    color: #fff;
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0 auto;
+    padding: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    width: 120px;
+
+    &:hover {
+      background: #286fc0;
+    }
+  }
+}
