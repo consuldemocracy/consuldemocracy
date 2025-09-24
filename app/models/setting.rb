@@ -66,6 +66,7 @@ class Setting < ApplicationRecord
     def defaults
       {
         "feature.featured_proposals": nil,
+        "feature.warning_for_linkouts": nil,
         "feature.facebook_login": true,
         "feature.google_login": true,
         "feature.twitter_login": true,
