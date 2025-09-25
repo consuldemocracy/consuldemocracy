@@ -15,6 +15,8 @@ module Sensemaker
 
     belongs_to :user, optional: false
     belongs_to :parent_job, class_name: "Sensemaker::Job", optional: true
+    has_many :children, class_name: "Sensemaker::Job", foreign_key: :parent_job_id, inverse_of: :parent_job,
+                        dependent: :nullify
 
     # For storing the reference to the commentable object
     validates :commentable_type, presence: true

@@ -14,9 +14,9 @@ describe Sensemaker::JobRunner do
   end
 
   describe "#initialize" do
-    it "initializes target_input_file as nil" do
+    it "initializes with the provided job" do
       service = Sensemaker::JobRunner.new(job)
-      expect(service.target_input_file).to be(nil)
+      expect(service.job).to eq(job)
     end
   end
 
@@ -207,7 +207,8 @@ describe Sensemaker::JobRunner do
 
     it "returns value when the script executes successfully" do
       # Mock the backtick method to simulate successful execution
-      expected_command = %r{cd .* && timeout #{Sensemaker::JobRunner::TIMEOUT} npx ts-node .*categorization_runner\.ts}
+      timeout = Sensemaker::JobRunner::TIMEOUT
+      expected_command = %r{cd .* && timeout #{timeout} npx ts-node .*categorization_runner\.ts}
       expect(service).to receive(:`).with(expected_command).and_return("Success output")
 
       allow(service).to receive(:process_exit_status).and_return(0)
@@ -219,7 +220,8 @@ describe Sensemaker::JobRunner do
 
     it "returns nil and updates the job when the script fails" do
       # Mock the backtick method to simulate failed execution
-      expected_command = %r{cd .* && timeout #{Sensemaker::JobRunner::TIMEOUT} npx ts-node .*categorization_runner\.ts}
+      timeout = Sensemaker::JobRunner::TIMEOUT
+      expected_command = %r{cd .* && timeout #{timeout} npx ts-node .*categorization_runner\.ts}
       expect(service).to receive(:`).with(expected_command).and_return("Error output")
 
       allow(service).to receive(:process_exit_status).and_return(1)
@@ -285,21 +287,21 @@ describe Sensemaker::JobRunner do
         job.script = "advanced_runner.ts"
       end
 
-      it "returns the categorization output file when target_input_file is not set" do
-        service.target_input_file = nil
+      it "returns the categorization output file when job.input_file is not set" do
+        job.input_file = nil
         expected_file = "#{Sensemaker::JobRunner.sensemaker_data_folder}/categorization-output-#{job.id}.csv"
         expect(service.input_file).to eq(expected_file)
       end
 
-      it "returns the target_input_file when it is set" do
+      it "returns the job.input_file when it is set" do
         custom_file = "/custom/path/to/input.csv"
-        service.target_input_file = custom_file
+        job.input_file = custom_file
         expect(service.input_file).to eq(custom_file)
       end
 
-      it "returns the target_input_file even when it is an empty string" do
-        service.target_input_file = ""
-        expect(service.input_file).to eq("")
+      it "returns the default path when it is an empty string" do
+        job.input_file = ""
+        expect(service.input_file).not_to eq("")
       end
     end
   end

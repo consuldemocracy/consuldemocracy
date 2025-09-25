@@ -2,18 +2,17 @@ module Sensemaker
   class JobRunner
     TIMEOUT = 900 # 15 minutes
     attr_reader :job
-    attr_accessor :target_input_file
 
     SCRIPTS = [
       "health_check_runner.ts",
       "runner.ts",
       "advanced_runner.ts",
-      "categorization_runner.ts"
+      "categorization_runner.ts",
+      "site-build.ts"
     ].freeze
 
     def initialize(job)
       @job = job
-      @target_input_file = nil
     end
 
     def self.sensemaker_folder
@@ -50,8 +49,12 @@ module Sensemaker
     end
 
     def input_file
-      if job.script == "advanced_runner.ts"
-        target_input_file || "#{self.class.sensemaker_data_folder}/categorization-output-#{job.id}.csv"
+      if job.input_file.present?
+        job.input_file
+      elsif job.script == "advanced_runner.ts"
+        "#{self.class.sensemaker_data_folder}/categorization-output-#{job.id}.csv"
+      elsif job.script == "site-build.ts"
+        "#{self.class.sensemaker_data_folder}/advanced-output"
       else
         "#{self.class.sensemaker_data_folder}/input-#{job.id}.csv"
       end
@@ -65,17 +68,27 @@ module Sensemaker
         "output-#{job.id}" # advanced runner has multiple output files
       when "categorization_runner.ts"
         "categorization-output-#{job.id}.csv"
+      when "site-build.ts"
+        "summary.json"
       else
         "output-#{job.id}.csv"
       end
     end
 
     def output_file
-      "#{self.class.sensemaker_data_folder}/#{output_file_name}"
+      if job.script == "site-build.ts"
+        "#{self.class.visualization_folder}/data/#{output_file_name}"
+      else
+        "#{self.class.sensemaker_data_folder}/#{output_file_name}"
+      end
     end
 
     def script_file
-      "#{self.class.sensemaker_folder}/library/runner-cli/#{job.script}"
+      if job.script == "site-build.ts"
+        "#{self.class.visualization_folder}/site-build.ts"
+      else
+        "#{self.class.sensemaker_folder}/library/runner-cli/#{job.script}"
+      end
     end
 
     def self.key_file
@@ -194,6 +207,15 @@ module Sensemaker
     end
 
     def build_command
+      if job.script == "site-build.ts"
+        # title = job.commentable.respond_to?(:title) ? job.commentable.title : job.commentable.name
+        return %Q(npx ts-node #{script_file} \
+                 --topics #{input_file}-topic-stats.json \
+                 --summary #{input_file}-summary.json \
+                 --comments #{input_file}-comments-with-scores.json \
+                 --reportTitle "Report for #{job.commentable.class.name} #{job.commentable.id}")
+      end
+
       model_name = Tenant.current_secrets.sensemaker_model_name
       additional_context = nil
       additional_context = job.additional_context.presence unless job.script == "health_check_runner.ts"
@@ -216,7 +238,7 @@ module Sensemaker
     private
 
       def execute_job_workflow
-        job.update_attribute(:started_at, Time.current)
+        job.update!(started_at: Time.current)
 
         prepare_input_data
         return unless check_dependencies?
@@ -232,6 +254,7 @@ module Sensemaker
       def prepare_with_categorization_job
         categorization_job = Sensemaker::Job.create!(
           user: job.user,
+          parent_job: job,
           commentable: job.commentable,
           script: "categorization_runner.ts",
           additional_context: job.additional_context
@@ -244,7 +267,28 @@ module Sensemaker
           raise "Preparation job #{categorization_job.id} failed"
         end
 
-        self.target_input_file = categorization_runner.output_file
+        job.input_file = categorization_runner.output_file
+        job.save!
+      end
+
+      def prepare_with_advanced_runner_job
+        advanced_job = Sensemaker::Job.create!(
+          user: job.user,
+          parent_job: job,
+          commentable: job.commentable,
+          script: "advanced_runner.ts",
+          additional_context: job.additional_context
+        )
+
+        advanced_runner = Sensemaker::JobRunner.new(advanced_job)
+        advanced_runner.run_synchronously
+
+        if advanced_job.reload.errored?
+          raise "Preparation job #{advanced_job.id} failed"
+        end
+
+        job.input_file = advanced_runner.output_file
+        job.save!
       end
 
       def prepare_input_data
@@ -252,8 +296,10 @@ module Sensemaker
           job.update!(additional_context: self.class.compile_context(job.commentable))
         end
 
-        if job.script.eql?("advanced_runner.ts")
+        if job.input_file.blank? && job.script.eql?("advanced_runner.ts")
           prepare_with_categorization_job
+        elsif job.input_file.blank? && job.script.eql?("site-build.ts")
+          prepare_with_advanced_runner_job
         else
           exporter = Sensemaker::CsvExporter.new(job.commentable)
           exporter.export_to_csv(input_file)
@@ -277,33 +323,26 @@ module Sensemaker
         end
 
         # Check if the required files exist
-        unless File.exist?(self.class.sensemaker_folder)
-          error_message = "sensemaking-tools folder not found: #{self.class.sensemaker_folder}"
-          job.update!(finished_at: Time.current, error: error_message)
-          Rails.logger.error(error_message)
-          return false
+        return false unless file_exists?(self.class.sensemaker_folder,
+                                         description: "sensemaking-tools folder")
+        return false unless file_exists?(self.class.sensemaker_data_folder,
+                                         description: "Sensemaker data folder")
+
+        # Input file might just be a base name so we need to handle that case
+        if job.script == "site-build.ts"
+          return false unless file_exists?(self.class.visualization_folder,
+                                           description: "Visualization folder")
+          return false unless file_exists?(input_file + "-topic-stats.json",
+                                           description: "Input file - topic stats")
+          return false unless file_exists?(input_file + "-summary.json",
+                                           description: "Input file - summary")
+          return false unless file_exists?(input_file + "-comments-with-scores.json",
+                                           description: "Input file - comments with scores")
+        else
+          return false unless file_exists?(input_file, description: "Input file")
         end
 
-        unless File.exist?(self.class.sensemaker_data_folder)
-          error_message = "Sensemaker data folder not found: #{self.class.sensemaker_data_folder}"
-          job.update!(finished_at: Time.current, error: error_message)
-          Rails.logger.error(error_message)
-          return false
-        end
-
-        unless File.exist?(input_file)
-          error_message = "Input file not found: #{input_file}"
-          job.update!(finished_at: Time.current, error: error_message)
-          Rails.logger.error(error_message)
-          return false
-        end
-
-        unless File.exist?(key_file)
-          error_message = "Key file not found: #{key_file}"
-          job.update!(finished_at: Time.current, error: error_message)
-          Rails.logger.error(error_message)
-          return false
-        end
+        return false unless file_exists?(key_file, description: "Key file")
 
         if parse_key_file.blank?
           error_message = "Key file is invalid: #{key_file}"
@@ -319,12 +358,7 @@ module Sensemaker
           return false
         end
 
-        unless File.exist?(script_file)
-          error_message = "Script file not found: #{script_file}"
-          job.update!(finished_at: Time.current, error: error_message)
-          Rails.logger.error(error_message)
-          return false
-        end
+        return false unless file_exists?(script_file, description: "Script file")
 
         true
       end
@@ -333,7 +367,12 @@ module Sensemaker
         command = build_command
         Rails.logger.debug("Executing script: #{command}")
 
-        output = `cd #{self.class.sensemaker_folder} && timeout #{TIMEOUT} #{command} 2>&1`
+        if job.script == "site-build.ts"
+          output = `cd #{self.class.visualization_folder} && timeout #{TIMEOUT} #{command} 2>&1`
+        else
+          output = `cd #{self.class.sensemaker_folder} && timeout #{TIMEOUT} #{command} 2>&1`
+        end
+
         result = process_exit_status
 
         if result.eql?(0)
@@ -378,6 +417,15 @@ module Sensemaker
 
       def process_exit_status
         $?.exitstatus
+      end
+
+      def file_exists?(file_path, description: "File or directory")
+        return true if File.exist?(file_path)
+
+        error_message = "#{description} not found: #{file_path}"
+        job.update!(finished_at: Time.current, error: error_message)
+        Rails.logger.error(error_message)
+        false
       end
   end
 end
