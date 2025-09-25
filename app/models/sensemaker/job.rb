@@ -14,6 +14,7 @@ module Sensemaker
     validates :commentable_type, inclusion: { in: TARGET_TYPES }
 
     belongs_to :user, optional: false
+    belongs_to :parent_job, class_name: "Sensemaker::Job", optional: true
 
     # For storing the reference to the commentable object
     validates :commentable_type, presence: true

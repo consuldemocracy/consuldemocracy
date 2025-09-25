@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_08_19_115526) do
+ActiveRecord::Schema[7.1].define(version: 2025_09_25_154634) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -1461,7 +1461,9 @@ ActiveRecord::Schema[7.1].define(version: 2025_08_19_115526) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "additional_context"
+    t.bigint "parent_job_id"
     t.index ["commentable_type", "commentable_id"], name: "index_sensemaker_jobs_on_commentable_type_and_commentable_id"
+    t.index ["parent_job_id"], name: "index_sensemaker_jobs_on_parent_job_id"
     t.index ["user_id"], name: "index_sensemaker_jobs_on_user_id"
   end
 
@@ -1842,6 +1844,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_08_19_115526) do
   add_foreign_key "related_content_scores", "related_contents"
   add_foreign_key "related_content_scores", "users"
   add_foreign_key "sdg_managers", "users"
+  add_foreign_key "sensemaker_jobs", "sensemaker_jobs", column: "parent_job_id"
   add_foreign_key "sensemaker_jobs", "users"
   add_foreign_key "users", "geozones"
   add_foreign_key "valuators", "users"
