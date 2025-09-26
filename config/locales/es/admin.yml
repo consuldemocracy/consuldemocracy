@@ -1347,6 +1347,13 @@ es:
           title: Consentimiento de cookies
         cookies_consent_banner:
           title: Banner de consentimiento de cookies
+        llm:
+          title: Configuración LLM
+          provider: "Proveedor LLM"
+          default_help_text: "Los proveedores estarán <strong>deshabilitados</strong> hasta que se configuren las credenciales en secrets.yml."
+          provider_blank_option: "Seleccionar un proveedor..."
+          model_blank_option: "Seleccionar un modelo..."
+          model: "Modelo"
       remote_census_general_name: Datos Generales
       remote_census_request_name: Datos Petición
       remote_census_response_name: Datos Respuesta

@@ -5,8 +5,8 @@ describe Layout::RemoteTranslationsButtonComponent do
   let(:component) { Layout::RemoteTranslationsButtonComponent.new(translations) }
 
   before do
-    allow(RemoteTranslations::Microsoft::AvailableLocales).to receive(:remote_available_locales)
-                                                          .and_return(%w[de en es fr pt zh-Hans])
+    allow(RemoteTranslations::Caller).to receive(:available_locales)
+      .and_return(%w[de en es fr pt zh-Hans zh-CN pt-BR])
   end
 
   context "locale with English as a fallback" do
@@ -25,6 +25,7 @@ describe Layout::RemoteTranslationsButtonComponent do
     it "displays the text in English with a locale needing parsing" do
       I18n.with_locale(:"zh-CN") { render_inline component }
 
+      expect(component.render?).to be true
       expect(page).to have_css ".remote-translations-button"
       expect(page).to have_content "The content of this page is not available in your language"
     end
@@ -46,6 +47,7 @@ describe Layout::RemoteTranslationsButtonComponent do
     it "displays the text in Spanish with a locale needing parsing" do
       I18n.with_locale(:"pt-BR") { render_inline component }
 
+      expect(component.render?).to be true
       expect(page).to have_css ".remote-translations-button"
       expect(page).to have_content "El contenido de esta página no está disponible en tu idioma"
     end
