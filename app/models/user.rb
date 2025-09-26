@@ -449,6 +449,8 @@ class User < ApplicationRecord
         self.newsletter = false
         self.email_digest = false
         self.email_on_direct_message = false
+        self.recommended_debates = false
+        self.recommended_proposals = false
       end
     end
 

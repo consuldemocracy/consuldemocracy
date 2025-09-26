@@ -145,7 +145,7 @@ describe User do
     end
 
     describe "newsletter" do
-      context 'when scope' do
+      context "when scope" do
         let!(:user_1) { create(:user, email_digest: true) }
         let!(:user_2) { create(:user, email_digest: false) }
 
@@ -181,7 +181,7 @@ describe User do
     end
 
     describe "email_digest" do
-      context 'when scope' do
+      context "when scope" do
         let!(:user_1) { create(:user, email_digest: true) }
         let!(:user_2) { create(:user, email_digest: false) }
 
@@ -238,6 +238,58 @@ describe User do
 
         it "is false by default" do
           expect(new_user.email_on_direct_message).to be false
+        end
+      end
+    end
+
+    describe "recommended_debates" do
+      context "when GDPR-compliant settings are off" do
+        let(:new_user) { build(:user) }
+
+        before do
+          Setting["feature.disable_notifications"] = false
+        end
+
+        it "has expected values" do
+          expect(new_user.recommended_debates).to be true
+        end
+      end
+
+      context "when GDPR-compliant default settings are on" do
+        let(:new_user) { build(:user) }
+
+        before do
+          Setting["feature.disable_notifications"] = true
+        end
+
+        it "is false by default" do
+          expect(new_user.recommended_debates).to be false
+        end
+      end
+    end
+
+    describe "recommended_proposals" do
+      context "when GDPR-compliant settings are off" do
+        let(:new_user) { build(:user) }
+
+        before do
+          Setting["feature.disable_notifications"] = false
+        end
+
+        it "has expected values" do
+          expect(new_user.recommended_proposals).to be true
+        end
+      end
+
+      context "when GDPR-compliant default settings are on" do
+        let(:new_user) { build(:user) }
+
+        before do
+          Setting["feature.disable_notifications"] = true
+        end
+
+        it "is false by default" do
+          expect(new_user.recommended_proposals).to be false
         end
       end
     end
