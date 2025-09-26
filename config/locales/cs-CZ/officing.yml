@@ -41,7 +41,6 @@ cs:
     results:
       flash:
         create: "Výsledky byly uloženy"
-        error_create: "Výsledky NEJSOU uloženy. Chyba v datech."
         error_wrong_booth: "Nesprávná volební booth. Výsledky NEJSOU uloženy."
       new:
         title: "%{poll} - přidat výsledky"
@@ -58,8 +57,6 @@ cs:
       index:
         no_results: "Žádné výsledky"
         results: Výsledky
-        table_answer: Answer
-        table_votes: Hlasů
         table_whites: "Naprosto prázdné hlasovací lístky"
         table_nulls: "Neplatné hlasovací lístky"
         table_total: "Celkový počet hlasovacích lístků"

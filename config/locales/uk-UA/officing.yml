@@ -41,7 +41,6 @@ uk-UA:
     results:
       flash:
         create: "Результати збережено"
-        error_create: "Результати НЕ збережено. Помилка даних."
         error_wrong_booth: "Неправильна кабінка. Результати НЕ збережено."
       new:
         title: "%{poll} - Додати результати"
@@ -58,8 +57,6 @@ uk-UA:
       index:
         no_results: "Результати відсутні"
         results: Результати
-        table_answer: Відповідь
-        table_votes: Голоси
         table_whites: "Порожні бюлетені"
         table_nulls: "Недійсні бюлетені"
         table_total: "Дійсні бюлетені"

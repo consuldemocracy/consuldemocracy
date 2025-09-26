@@ -41,7 +41,6 @@ ca:
     results:
       flash:
         create: "dades guardats"
-        error_create: "Resultats NO afegits. Error en les dades"
         error_wrong_booth: "Urna incorrecta. Resultats NO guardats."
       new:
         title: "%{poll} - Afegir resultats"
@@ -58,8 +57,6 @@ ca:
       index:
         no_results: "No hi ha resultats"
         results: resultats
-        table_answer: Resposta
-        table_votes: Votacions
         table_whites: "Paperetes totalment en blanc"
         table_nulls: "paperetes nul·les"
         table_total: "Paperetes vàlides"

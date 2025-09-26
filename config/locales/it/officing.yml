@@ -41,7 +41,6 @@ it:
     results:
       flash:
         create: "Risultati salvati"
-        error_create: "Risultati non salvati. Errore nei dati."
         error_wrong_booth: "Seggio sbagliato. Risultati non salvati."
       new:
         title: "%{poll} - Aggiungi risultati"
@@ -58,8 +57,6 @@ it:
       index:
         no_results: "Nessun risultato"
         results: Risultati
-        table_answer: Risposta
-        table_votes: Voti
         table_whites: "Schede totalmente bianche"
         table_nulls: "Voti non validi"
         table_total: "Totale schede"

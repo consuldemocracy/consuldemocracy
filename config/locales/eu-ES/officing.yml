@@ -31,7 +31,6 @@ eu:
     results:
       flash:
         create: "Datuak gordeta"
-        error_create: "Emaitzak EZ dira gehitu. Errorea datuetan."
         error_wrong_booth: "Hautetsontzi okerra. Emaitzak ez dira gorde."
       new:
         title: "%{poll} - Emaitzak gehitu"
@@ -48,8 +47,6 @@ eu:
       index:
         no_results: "Ez dago emaitzik"
         results: Emaitzak
-        table_answer: Erantzuna
-        table_votes: Bozkak
         table_whites: "Bozka zuriak"
         table_nulls: "Baliogabeko bozkak"
         table_total: "Bozkak guztira"

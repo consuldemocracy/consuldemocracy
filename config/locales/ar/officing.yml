@@ -41,7 +41,6 @@ ar:
     results:
       flash:
         create: "تم حفظ النتائج"
-        error_create: "لم تم حفظ النتائج. هناك خظأ في البيانات."
         error_wrong_booth: "هناك خطأ. لم يتم حفظ البيانات."
       new:
         title: "%{poll} - إضافة النتائج"
@@ -58,8 +57,6 @@ ar:
       index:
         no_results: "لا توجد نتائج"
         results: النتائج
-        table_answer: إجابة
-        table_votes: اصوات
         table_whites: "أوراق فارغة"
         table_nulls: "أوراق غير صالحة"
         table_total: "مجموع الأوراق"

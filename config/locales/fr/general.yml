@@ -626,11 +626,7 @@ fr:
     poll_header:
       back_to_proposal: Retour à la proposition
   poll_questions:
-    show:
-      vote_answer: "Voter %{answer}"
-      voted: "Vous avez voté %{answer}"
     description:
-      unique: "Vous pouvez sélectionner au plus 1 réponse."
       multiple: "Vous pouvez sélectionner au plus %{maximum} réponses."
     read_more_about: "Lire plus :"
   proposal_notifications:

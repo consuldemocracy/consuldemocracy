@@ -611,10 +611,6 @@ ka:
         most_voted_answer: "ყველაზე მეტი ხმის მქონე პასუხი: "
     poll_header:
       back_to_proposal: ინიციატივაში დაბრუნება
-  poll_questions:
-    show:
-      vote_answer: "%{answer}-ზე ხმის მიცემა"
-      voted: "%{answer}-ზე თქვენ უკვე მიეცით ხმა"
   proposal_notifications:
     new:
       title: "შეტყობინების გაგზავნა"

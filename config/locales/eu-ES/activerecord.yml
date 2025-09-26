@@ -385,8 +385,6 @@ eu:
           attributes:
             document_number:
               not_in_census: "Agiri hau ez da erroldan ageri"
-            user_id:
-              has_voted: "Erabiltzailea honek bozkatu du"
         legislation/process:
           attributes:
             end_date:

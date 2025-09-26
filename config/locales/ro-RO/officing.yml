@@ -41,7 +41,6 @@ ro:
     results:
       flash:
         create: "Rezultate salvate"
-        error_create: "Rezultatele NU au fost salvate. Eroare în baza de date."
         error_wrong_booth: "Cabină de vot greșită. Rezultatele nu au fost salvate."
       new:
         title: "%{poll} - Adaugă rezultate"
@@ -58,8 +57,6 @@ ro:
       index:
         no_results: "Nu există rezultate"
         results: Rezultate
-        table_answer: Răspuns
-        table_votes: Voturi
         table_whites: "Buletinele de vot total necompletate"
         table_nulls: "Buletine de vot invalide"
         table_total: "Buletine de vot valide"

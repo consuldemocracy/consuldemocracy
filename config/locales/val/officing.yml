@@ -31,7 +31,6 @@ val:
     results:
       flash:
         create: "Resultats guardats"
-        error_create: "Resultats NO afegits. Error en les dades."
         error_wrong_booth: "Urna incorrecta. Resultats NO guardats."
       new:
         title: "%{poll} - Afegir resultats"
@@ -48,8 +47,6 @@ val:
       index:
         no_results: "No hi ha resultats"
         results: Resultats
-        table_answer: Resposta
-        table_votes: Vots
         table_whites: "Vots en blanc"
         table_nulls: "Paperetes nules"
         table_total: "Paperetes totals"

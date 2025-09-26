@@ -41,7 +41,6 @@ pt-BR:
     results:
       flash:
         create: "Resultados salvos"
-        error_create: "Resultados NÃO foram salvos. Erro nas informações."
         error_wrong_booth: "Cabine incorreta. Resultados NÃO foram salvos."
       new:
         title: "%{poll} - Adicionar resultados"
@@ -58,8 +57,6 @@ pt-BR:
       index:
         no_results: "Nenhum resultado"
         results: Resultados
-        table_answer: Responda
-        table_votes: Votos
         table_whites: "Cédulas completamente em branco"
         table_nulls: "Cédulas inválidas"
         table_total: "Total de células"

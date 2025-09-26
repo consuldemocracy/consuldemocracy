@@ -69,7 +69,6 @@ id:
         new_confirmation: Belum menerima instruksi untuk bisa mengatifkan akun anda?
         new_password: Lupa kata sandi anda?
         new_unlock: Belum menerima instruksi untuk membuka kunci?
-        signin_with_provider: Masuk dengan %{provider}
         signup: Belum punya akun? %{signup_link}
         signup_link: Daftar
     unlocks:

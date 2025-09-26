@@ -550,8 +550,6 @@ sr:
           attributes:
             document_number:
               not_in_census: "Документ није у попису"
-            user_id:
-              has_voted: "Корисник је већ гласао"
         legislation/process:
           attributes:
             end_date:

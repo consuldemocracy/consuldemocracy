@@ -41,7 +41,6 @@ gd:
     results:
       flash:
         create: "Toraidhean air an sàbhaladh"
-        error_create: "CHA DEACH na toraidhean a shàbhaladh. Mearachd dàta."
         error_wrong_booth: "Am bothan ceàrr. CHA DEACH toraidhean a shàbhaladh."
       new:
         title: "%{poll} - Cuir toraidhean ris"
@@ -58,8 +57,6 @@ gd:
       index:
         no_results: "Chan eil toraidhean ann"
         results: Toraidhean
-        table_answer: Freagairt
-        table_votes: Bhòtaichean
         table_whites: "Baileatan a tha gu tur ban"
         table_nulls: "Baileatan mì-dhligheach"
         table_total: "Baileatan dligheach"

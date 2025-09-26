@@ -189,6 +189,7 @@ hr:
         voting_style_knapsack: "\"Knapsack\""
         voting_style_approval: "Odobravanje"
       budget/translation:
+        main_link_url: "Link vas vodi do (dodajte link)"
         name: "Ime"
       budget/investment:
         heading_id: "Naslov"
@@ -220,7 +221,9 @@ hr:
       geozone:
         name: Ime
         external_code: "Vanjski kod (neobavezno)"
+        color: "Boja (neobavezno)"
         census_code: "Kod cenzusa (neobavezno)"
+        geojson: "GeoJSON podatci (neobavezno)"
         html_map_coordinates: "HTML <map> Koordinate (neobavezno)"
       milestone:
         status_id: "Trenutni status (neobavezno)"
@@ -261,6 +264,8 @@ hr:
         name: "Ime"
         description: "Opis"
         summary: "Sažetak"
+        main_link_text: "Tekst na linku"
+        main_link_url: "Link vodi na (dodajte link)"
       comment:
         body: "Komentar"
         user: "Korisnik"
@@ -354,14 +359,22 @@ hr:
         signable_id: "Potpis ID"
         document_numbers: "Broj dukumenata"
       sdg/goal:
+        code: "Kod"
         title: "Naziv"
         description: "Opis"
       sdg/local_target:
+        code: "Kod"
+        target_id: "Cilj"
         title: "Naziv"
       sdg/local_target/translation:
         title: "Naziv"
         description: "Opis"
+      sdg/phase/kind:
+        sensitization: "Senzibilizacija"
+        planning: "Planiranje"
+        monitoring: "Praćenje"
       sdg/target:
+        code: "Kod"
         title: "Naziv"
       site_customization/page:
         content: Sadržaj
@@ -389,6 +402,11 @@ hr:
         body: Tijelo
       tag:
         name: "Upišite naslov teme"
+      tenant:
+        domain: "Domena"
+        schema: "Domena/Poddomena"
+        subdomain: "Poddomena"
+        url: "URL"
       topic:
         title: "Naslov"
         description: "Početni tekst"
@@ -460,6 +478,15 @@ hr:
       image:
         title: Naziv
         attachment: "Prilog"
+      poll/question/option:
+        title: Odgovor
+        description: Opis
+      poll/question/option/translation:
+        title: Odgovor
+        description: "Opis (neobavezno)"
+      poll/question/option/video:
+        title: Naslov
+        url: Vanjski video
       newsletter:
         segment_recipient: Primatelji
         subject: Predmet
@@ -550,8 +577,6 @@ hr:
           attributes:
             document_number:
               not_in_census: "Dokument nije u cenzusu"
-            user_id:
-              has_voted: "Korisnik je već glasovao"
         legislation/process:
           attributes:
             end_date:

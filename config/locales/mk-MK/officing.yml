@@ -41,7 +41,6 @@ mk:
     results:
       flash:
         create: "Зачувани резултати"
-        error_create: "Резултатите НЕ се зачувани. Грешка во податоците."
         error_wrong_booth: "Погрешна кабина. Резултатите НЕ се зачувани."
       new:
         title: "%{poll} - Додади резултати"
@@ -58,8 +57,6 @@ mk:
       index:
         no_results: "Нема резултати"
         results: Резултати
-        table_answer: Одговор
-        table_votes: Гласови
         table_whites: "Целосно празни ливчиња"
         table_nulls: "Невалидни ливчиња"
         table_total: "Валидни ливчиња"

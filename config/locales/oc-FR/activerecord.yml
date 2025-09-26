@@ -505,8 +505,6 @@ oc:
           attributes:
             document_number:
               not_in_census: "Aquel documenti pas aparece en lo censo"
-            user_id:
-              has_voted: "Aquel usuario ya a votado"
         legislation/process:
           attributes:
             end_date:

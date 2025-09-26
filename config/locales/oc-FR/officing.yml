@@ -41,7 +41,6 @@ oc:
     results:
       flash:
         create: "de donadas gardadas"
-        error_create: "Resultats PAS aponduts. Error en las donadas"
         error_wrong_booth: "Urna incorrècta. Resultats PAS gardats."
       new:
         title: "%{poll} - Apondre de resultats"
@@ -58,8 +57,6 @@ oc:
       index:
         no_results: "I a pas resultats"
         results: de resultats
-        table_answer: Responsa
-        table_votes: de Votacions
         table_whites: "de Bilhetas totalament en blanc"
         table_nulls: "de bilhetas nullas"
         table_total: "de Bilhetas validas"

@@ -41,7 +41,6 @@ pt:
     results:
       flash:
         create: "Resultados gravados"
-        error_create: "Os resultados NÃO foram gravados. Erro nos dados."
         error_wrong_booth: "Urna incorreta. Os resultados NÃO foram gravados."
       new:
         title: "%{poll} - Adicionar resultados"
@@ -58,8 +57,6 @@ pt:
       index:
         no_results: "Sem resultados"
         results: Resultados
-        table_answer: Resposta
-        table_votes: Votos
         table_whites: "Votos em branco"
         table_nulls: "Votos inválidos"
         table_total: "Votos válidos"

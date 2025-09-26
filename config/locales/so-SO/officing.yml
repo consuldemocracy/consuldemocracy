@@ -31,7 +31,6 @@ so:
     results:
       flash:
         create: "Kaydi natijada"
-        error_create: "Natiijooyinka MA HELI Xaaladda xogta."
         error_wrong_booth: "Labadaba waa khalad. Natiijooyinka MA HELI."
       new:
         title: "%{poll} kudar natijoyinka"
@@ -48,8 +47,6 @@ so:
       index:
         no_results: "Wax natijooyina malaha"
         results: Natiijoyin
-        table_answer: Jawaab
-        table_votes: Codaad
         table_whites: "Wadarta Warqadaha codbixinta ee banan"
         table_nulls: "Warqadaha aan sharci ahayn"
         table_total: "Wadarta Warqadaha dorashada"

@@ -69,7 +69,6 @@ ne:
         new_confirmation: आफ्नो खाता सक्रिय गर्न निर्देशनहरू प्राप्त गर्नुभएको छैन?
         new_password: तपाईँको पासवर्ड बिर्सनुभयो?
         new_unlock: अनलक निर्देशनहरू प्राप्त गर्नुभएको छैन?
-        signin_with_provider: '%{provider} सँग साइन इन गर्नुहोस्'
         signup: खाता छैन? %{signup_link}
         signup_link: साइन अप्प
     unlocks:

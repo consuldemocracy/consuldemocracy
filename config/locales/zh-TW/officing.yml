@@ -31,7 +31,6 @@ zh-TW:
     results:
       flash:
         create: "結果已儲存"
-        error_create: "結果未儲存。 數據錯誤。"
         error_wrong_booth: "錯誤的投票亭。 結果未被儲存。"
       new:
         title: "%{poll} - 添加结果"
@@ -48,8 +47,6 @@ zh-TW:
       index:
         no_results: "沒有結果"
         results: 結果
-        table_answer: 答案
-        table_votes: 票
         table_whites: "完全空白的選票"
         table_nulls: "無效選票"
         table_total: "選票總數"

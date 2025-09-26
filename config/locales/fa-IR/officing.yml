@@ -30,7 +30,6 @@ fa:
     results:
       flash:
         create: "نتایج ذخیره شده"
-        error_create: "نتایج ذخیره نشد. خطا در داده ها."
         error_wrong_booth: "غرفه های اشتباه. نتایج ذخیره نشد."
       new:
         title: "%{poll} - اضافه کردن نتایج"
@@ -47,8 +46,6 @@ fa:
       index:
         no_results: "هیچ نتیجه ای"
         results: نتایج
-        table_answer: پاسخ
-        table_votes: آرا
         table_whites: "صندوق کاملا خالی"
         table_nulls: "برگه های نامعتبر"
         table_total: "کل آراء"
@@ -65,7 +62,7 @@ fa:
       new:
         title: نظر سنجی ها
         table_poll: نظرسنجی
-        table_status: وضعیت نظرسنجی ها
+        table_status: وضعیت نظرسنجی ها 
         table_actions: اقدامات
       show:
         can_vote: می توانید رای بدهید

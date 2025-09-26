@@ -41,7 +41,6 @@ ne:
     results:
       flash:
         create: "परिणामहरू सुरक्षित गरियो"
-        error_create: "परिणामहरू सुरक्षित गरिएको छैन। डाटा मा त्रुटि।"
         error_wrong_booth: "गलत बुथ। परिणामहरू सुरक्षित गरिएको छैन।"
       new:
         title: "%{poll} - परिणामहरू थप्नुहोस्"
@@ -58,8 +57,6 @@ ne:
       index:
         no_results: "कुनै परिणाम छैन"
         results: परिणामहरू
-        table_answer: जवाफ
-        table_votes: मतहरू
         table_whites: "पूर्ण रूपमा खाली मतपत्रहरू"
         table_nulls: "अमान्य मतपत्रहरू"
         table_total: "मान्य मतपत्रहरू"

@@ -16,6 +16,8 @@ nl:
       unmark_featured: Verwijder uitgelicht
       edit: Bewerk
       configure: Configureer
+      select: Selecteer
+      show_to_valuators: "Maak %{name} zichtbaar voor beoordelaars"
     officing_booth:
       title: "Je bent toegewezen aan de stemlocatie op %{booth}. Indien dit niet juist is, bel dan met het opgegeven telefoonnummer voor hulp."
     banners:
@@ -73,11 +75,11 @@ nl:
         ballots: "Stemhokjes aanmaken"
         confirm:
           ballots: "Weet je het zeker? Dit is alleen relevant wanneer je fysieke (papieren) stemmen gaat inzamelen, in de stemfase. Inwoners kunnen altijd online hun stem uitbrengen, ook mét de aanwezigheid van een fysiek stemhokje."
-          destroy: "Weet je het zeker? Je verwijdert dan de begroting en alle bijbehorende groepen en rubrieken. Deze actie kan je niet ongedaan maken."
+          destroy: "Weet je het zeker? Je verwijdert dan de begroting en alle bijbehorende groepen en koppen. Deze actie kan je niet ongedaan maken."
         descriptions:
           ballots: "Hiermee kan je fysieke stemmen beheren. Activeer deze optie alleen als je fysieke stemhokjes gebruikt om fysieke (papieren) te verzamelen in de stemfase."
           calculate_winners: 'Nadat de uitslag is berekend kunnen alleen admins de uitslag zien. De uitslag is openbaar zodra de "%{phase}" fase actief is en <strong>de optie "Toon resultaten" is aangezet</strong> bij het bewerken van de begroting.'
-          destroy: "Je verwijdert de begroting en alle bijbehorende groepen en rubrieken. Deze actie kan je niet ongedaan maken."
+          destroy: "Je verwijdert de begroting en alle bijbehorende groepen en koppen. Deze actie kun je niet ongedaan maken."
         edit: "Bewerk begroting"
         preview: "Preview"
         preview_results: "Preview resultaten"
@@ -97,9 +99,9 @@ nl:
         table_name: Titel
         table_phase: Fase
         table_phase_progress: "(%{current_phase_number}/%{total_phases})"
-        type_multiple: "Meerdere rubrieken"
-        type_pending: "In afwachting: Nog geen rubrieken"
-        type_single: "Enkele rubriek"
+        type_multiple: "Meerdere koppen"
+        type_pending: "In afwachting: Nog geen koppen"
+        type_single: "Enkele kop"
         admin_ballots: Papieren stemmen
         no_budgets: "Er zijn geen budgetten."
       create:
@@ -110,6 +112,7 @@ nl:
         notice: "Burgerbegroting succesvol gepubliceerd!"
       edit:
         title: Bewerk begroting
+        drafting: "De burgerbegroting staat in conceptmodus en is alleen zichtbaar voor administrators. Zodra het proces is gepubliceerd, kan niet worden teruggegaan naar conceptmodus."
         publish: "Budget publiceren"
         delete: Verwijder begroting
         phase: Fase
@@ -131,26 +134,45 @@ nl:
           other: "%{count} beoordelaars geselecteerd"
         empty_administrators: "Er zijn geen beheerders"
         empty_valuators: "Er zijn geen beoordelaars"
+        name_description: "Dit is de naam van de burgerbegroting die wordt gebruikt voor koppen (deelbudgetten) en tegels"
+        image_description: "Een afbeelding wordt na uploaden gebruikt als banner bovenaan de landingspagina van de burgerbegroting. Als er niets wordt geüpload, wordt de standaardkleur van het platform gebruikt."
+        main_call_to_action: "Oproep tot actie (optioneel)"
+        main_call_to_action_description: "Deze link verschijnt op de hoofdbanner van de burgerbegroting en verwijst naar een specifieke fase in de begroting, zoals de voorstel- of stemfase."
+        info:
+          budget_settings: "Algemene instellingen burgerbegroting"
+          staff_settings: "Administrators en Beoordelaar toegewezen aan deze begroting"
         hide_money: "Bedragen verbergen"
+        hide_money_help_text: "Wanneer dit vakje is aangevinkt, zullen alle velden met geldbedragen worden verborgen."
       destroy:
         success_notice: Begroting verwijderd
         unable_notice: U kunt een begroting met voorstellen niet verwijderen
         unable_notice_polls: Je kunt geen budget verwijderen waaraan een peiling is gekoppeld
       new:
-        title_multiple: Nieuw budget met meerdere rubrieken
-        title_single: Nieuw budget met één rubriek
+        title_multiple: Creëer meervoudige begroting
+        title_single: Creëer enkelvoudig begroting
+      help:
+        budgets: "Burgerbegrotingen laten deelnemers voorstellen doen en stemmen op die voorstellen over waaraan de begroting dient te worden besteed, met rigoureuze tussentijdse evaluatie door de (publieke) organisatie."
+        groups:
+          multiple: "Groepen zijn bedoeld om koppen (deelbegrotingen) te organiseren. Wanneer een groep is gecreëerd en die groep bevat koppen, is het mogelijk om te bepalen in hoeveel koppen een deelnemer mag stemmen, en in welke."
+          single: "Groepen zijn bedoeld om koppen (deelbegrotingen) te organiseren. Omdat deze burgerbegroting slechts één kop bevat, kan dezelfde naam worden gebruikt; die naam zal nergens zichtbaar zijn."
+        headings:
+          multiple: "Koppen zijn bedoeld om deelbegrotingen te maken binnen een burgerbegroting. Hier kunnen koppen worden toegevoegd inclusief een geldbedrag per kop."
+          single: "Koppen zijn bedoeld om deelbegrotingen te maken binnen een burgerbegroting. Omdat deze begroting slechts één kop heeft, bepaalt het ingevoerde geldbedrag hier het bedrag van de hele burgerbegroting."
+        phases: "Burgerbegrotingen hebben verschillende fases. Activeer, deactiveer of configureer hier de afzonderlijke fases."
       show:
         add_group: "Groep toevoegen"
-        add_heading: "Rubriek toevoegen"
-        groups_and_headings: "Instellingen voor groepen en rubrieken"
-        headings_caption: "Rubrieken in %{group}"
+        add_heading: "Kop toevoegen"
+        groups_and_headings: "Instellingen voor groepen en koppen"
+        headings_caption: "Koppen in %{group}"
       winners:
         calculate: Bereken gewonnen bestemmingen
         calculated: Bestemmingen worden berekend, kan even duren.
         recalculate: Herbereken gewonnen investeringen
+      ballots:
+        feature_disabled: 'Om stemhokjes aan te maken moet de functionaliteit <strong>Polls</strong> geactiveerd zijn. Dat kan op de <a href="%{link}">settings configuration</a> pagina.'
     budget_groups:
       name: "Naam"
-      headings_name: "Rubrieken"
+      headings_name: "Koppen"
       headings_manage: "Rubrieken beheren"
       no_groups: "Er zijn geen groepen."
       amount:
@@ -166,40 +188,55 @@ nl:
       form:
         create: "Nieuwe groep"
         edit: "Bewerk groep"
+        max_votable_headings_info: "Is alleen van toepassing op de \"Voorstellen selecteren\" fase."
         submit: "Sla op"
       index:
         new_button: "Nieuwe groep toevoegen"
     budget_headings:
+      no_headings: "Er zijn geen koppen in de <strong>%{group}</strong> groep."
       create:
         notice: "Rubriek aangemaakt"
       update:
-        notice: "Rubriek gewijzigd"
+        notice: "Kop gewijzigd"
       destroy:
-        success_notice: "Rubriek verwijderd"
-        unable_notice: "Een rubriek met investeringen kan niet worden verwijderd"
+        success_notice: "Kop verwijderd"
+        unable_notice: "Een kop met gekoppelde voorstellen kan niet worden verwijderd"
       form:
-        population_info: "Het veld rubriek wordt gebruikt voor statistische doeleinden. Na afloop van de begroting kan voor elke rubriek en per gebied worden weergegeven door welk percentage is gestemd. Het veld is optioneel, dus u kunt het leeg laten als het niet van toepassing is."
-        coordinates_info: "Als lengte- en breedtegraad zijn ingevuld, zal voor deze rubriek een kaart worden getoond. Deze kaart wordt gecentreerd met behulp van de opgegeven coördinaten."
-        content_blocks_info: "Als inhoudsblokken zijn toegestaan kan aangepaste inhoud gerelateerd aan deze rubriek worden geplaatst via de sectie Instellingen > aangepaste inhoud. De aangepaste inhoud wordt weergegeven op de pagina voor de rubriek."
-        create: "Nieuwe rubriek aanmaken"
-        edit: "Rubriek bewerken"
+        geozone_info: "De geozone verschijnt op de kaart van de deelbegroting wanneer de kop (deelbegroting) met een geozone is geassocieerd en GeoJSON data bevat."
+        max_ballot_lines_info: 'Maximum aantal projecten waarop een deelnemer kan stemmen in deze kop tijdens de Stemming-fase. Gebruik alleen wanneer bij stemwijze "Goedkeuring" gekozen is.'
+        population_info: "Het veld Populatie Kop wordt gebruikt voor statistische doeleinden. Na afloop van de begroting kan voor elke kop en per gebied worden weergegeven door welk percentage is gestemd. Het veld is optioneel, dus u kunt het leeg laten als het niet van toepassing is."
+        coordinates_info: "Als lengte- en breedtegraad zijn ingevuld, zal voor deze kop een kaart worden getoond. Deze kaart wordt gecentreerd met behulp van de opgegeven coördinaten."
+        content_blocks_info: "Als inhoudsblokken zijn toegestaan kan aangepaste inhoud gerelateerd aan deze kop worden geplaatst via de sectie Instellingen > aangepaste inhoud. De aangepaste inhoud wordt weergegeven op de pagina voor de kop."
+        create: "Nieuwe kop aanmaken"
+        edit: "Kop bewerken"
         submit: "Bewaar kop"
+      group_switcher:
+        currently_showing: "Kop uit de <strong>%{group}</strong> groep."
+        the_other_group: "Beheer koppen uit de %{group} groep."
       index:
         back: "Terug naar groepen"
-        new_button: "Nieuwe rubriek toevoegen"
-        title: "%{budget} / %{group} rubrieken"
+        new_button: "Nieuwe kop toevoegen"
+        title: "%{budget} / %{group} koppen"
     budget_phases:
       edit:
         title: "Bewerk fase"
         dates_help_text: "Alleen ter informatie"
         description_help_text: Deze tekst verschijnt in de kop wanneer de fase actief is
         duration: "Duur van de fase"
+        duration_description: "Deze velden worden gebruikt voor informatiedoeleinden en <strong> leidt niet tot een automatische update van de actieve fase. </strong> Bewerk hiervoor de begroting en selecteer de actieve fase."
         enabled_help_text: Deze fase is openbaar in de tijdlijn van de budgetfasen, maar ook actief voor andere doeleinden
+        image_description: "Wanneer een afbeelding is toegevoegd, verschijnt die naast de beschrijving van de fase."
+        main_call_to_action: "Oproep tot actie (optioneel)"
+        main_call_to_action_description: "Deze link verschijnt op de hoofdbanner van de burgerbegroting wanneer deze fase is geactiveerd en verwijst naar een specifieke fase in de begroting, zoals de voorstel- of stemfase."
+        name_help_text: "Dit is de titel van de fase in het fase-overzicht die verschijnt wanneer deze fase actief is. Gebruik één of enkele woorden."
         save_changes: Bewaar wijzigingen
       index:
         title: "%{budget} fasen"
     budget_investments:
       index:
+        basic_filters:
+          valuator_or_group: Beoordelaar of groep
+          title_or_id: Titel of ID
         heading_filter_all: Alle koppen
         administrator_filter_all: Alle beheerders
         valuator_filter_all: Alle beoordelaars
@@ -250,6 +287,7 @@ nl:
           incompatible: Onverenigbaar
           price: Bedrag
           author: Auteur
+        cannot_calculate_winners: De begroting moet in de %{phase} fase zijn om de winnende projecten te bepalen
         see_results: "Bekijk resultaten"
         milestone_tags_filter_all: "Alle mijlpaaltags"
       show:
@@ -294,13 +332,13 @@ nl:
       creation_timeline:
         budget: Budget
         groups: Groepen
-        headings: Rubrieken
+        headings: Koppen
         phases: Fases
       budgets:
         continue: "Door naar groepen"
       groups:
         back: "Ga terug"
-        continue: "Door naar rubrieken"
+        continue: "Door naar koppen"
       headings:
         continue: "Door naar fases"
         single:
@@ -335,6 +373,7 @@ nl:
         documents: "Documenten"
         milestone: Mijlpaal
         new_milestone: Nieuwe mijlpaal
+        milestone_tags: Mijlpaaltags
       form:
         admin_statuses: Statussen beheren
         no_statuses_defined: Er zijn nog geen gedefinieerde investeringsstatussen
@@ -396,6 +435,7 @@ nl:
         author: "Auteur"
         commentable_type: "Type"
         title: Reacties
+        no_comments: Er zijn geen reacties.
         table_link: "Link"
     hidden_comments:
       index:
@@ -407,6 +447,7 @@ nl:
         hidden_debate: Verborgen debat
         hidden_proposal: Verborgen voorstel
         title: Verborgen commentaar
+        no_hidden_comments: Er zijn geen verborgen reacties.
     dashboard:
       index:
         back: Terug naar %{org}
@@ -424,17 +465,24 @@ nl:
           <p>Groeten van het CONSUL DEMOCRACY Foundation team.</p>
       actions:
         index:
+          description: "Wanneer deelnemers voorstellen aanmaken, krijgen ze toegang tot een speciaal voorstel-controlepaneel met hulpmiddelen en aanbevelingen om steun te krijgen voor hun idee."
+          create: Creëer hulpmiddel of actie
           active: 'Ja'
           inactive: 'Nee'
+          title: Hulpmiddelen en acties
           action_title: Title
           action_type: Type
+          required_supports: Aantal benodigde steunbetuigingen
+          day_offset: Aantal benodigde dagen
           action_active: Actieve
           order: order
+          published_proposal: Gepubliceerd voorstel
           default:
             email: E-mail
             polls: Polls
             poster: Poster
         new:
+          creating: Actie voor het voorstelcontrolepaneel bewerken
           back: Terug naar lijst
         create:
           notice: Actie succesvol aangemaakt
@@ -449,19 +497,30 @@ nl:
           published_proposal_help_text: Vink dit hokje aan om de actie alleen voor gepubliceerde voorstellen aan te maken
       administrator_tasks:
         index:
+          title: Hulpmiddelen aangevraagd
           solve: Los op
+          no_records: Er zijn geen hulpmiddelen aangevraagd
           source: Bron
+          resource: Hulpmiddel aangevraagd
           filter: Filter
           filters:
             pending: In afwachting
             done: Opgelost
+        edit:
+          back: Terug naar lijst van taken in uitvoering
+          solving: Taak in uitvoering afgerond
         form:
+          solve: Markeer als afgerond
           proposal: Proposal
+          request: Hulpmiddel aangevraagd
+        update:
+          success: De taak is gemarkeerd als afgerond.
     debates:
       index:
         id: ID
         author: Auteur
         title: Discussie
+        no_debates: Er zijn geen discussies.
     hidden_debates:
       index:
         filter: Filter
@@ -470,6 +529,7 @@ nl:
           with_confirmed_hide: Bevestigd
           without_confirmed_hide: In afwachting
         title: Verborgen debatten
+        no_hidden_debates: Er zijn geen verborgen discussies.
     documents:
       new:
         title: "Bestand uploaden"
@@ -532,7 +592,7 @@ nl:
           proposals_phase: Voorstelfase
           use_markdown: Gebruik Markdown voor de vormgeving
           homepage_description: Hier kun je de stappen van het proces uitleggen
-          banner_title: Rubriekkleuren
+          banner_title: Kleuren voor koppen
         index:
           create: Nieuw plan
           title: Plannen
@@ -590,6 +650,7 @@ nl:
           back: Terug
           submit_button: Bewaar wijzigingen
           warning: U hebt de tekst bewerkt, vergeet niet op 'Opslaan' te klikken om de wijzigingen permanent op te slaan.
+          markdown_changes_message: "Je hebt de tekst bewerkt zonder op te slaan. Wil je de pagina verlaten?"
         form:
           title: 'Aanpassen van <span class="strong">%{draft_version_title}</span> van het proces <span class="strong">%{process_title}</span>'
           launch_text_editor: Open tekst editor
@@ -650,6 +711,11 @@ nl:
       milestones:
         index:
           title: Volgend
+    locales:
+      default_help_text: "Dit is de standaardtaal van het platform. De taal veranderen zal zichtbaar<strong> zijn voor elke bezoeker</strong>."
+      enabled_help_text: De hierboven geselecteerde standaardtaal zal automatisch worden meegenomen.
+      update:
+        notice: Taal succesvol aangepast
     managers:
       index:
         title: Beheerders
@@ -707,10 +773,12 @@ nl:
         content_blocks: Aangepaste inhoudsblokken
         information_texts: Aangepaste informatieteksten
         information_texts_menu:
+          basic: "Basisaanpassingen"
           debates: "Discussie"
           community: "Community"
           proposals: "Voorstellen"
           polls: "Peilingen"
+          legislation: "Plannen"
           budgets: "Burgerbegrotingen"
           layouts: "Lay-outs"
           machine_learning: "AI / Machine Learning"
@@ -728,8 +796,12 @@ nl:
       title_booths: Stemhokjes
       legislation: Plannen
       users: Deelnemers
+      dashboard: Voorstellencontrolepaneel
+      administrator_tasks: Hulpmiddelen aangevraagd
+      dashboard_actions: Hulpmiddelen en acties
       debates: "Discussie"
       comments: "Reacties"
+      local_census_records: Lokale census
       machine_learning: "AI / Machine Learning"
       multitenancy: Multitenancy
     administrators:
@@ -756,6 +828,7 @@ nl:
     segment_recipient:
       all_users: Alle deelnemers
       administrators: Beheerders
+      all_proposal_authors: Indieners voorstellen (inclusief gearchiveerd en ingetrokken)
       proposal_authors: Voorstel schrijvers
       investment_authors: Voorstel schrijvers in de huidige burgerbegroting
       feasible_and_undecided_investment_authors: "Auteurs van sommige investeringen in het huidige budget die niet voldoen: [beoordeling afgerond onhaalbaar]"
@@ -780,6 +853,7 @@ nl:
         empty_newsletters: Er zijn geen nieuwsbrieven om te tonen
       new:
         title: Nieuwe nieuwsbrief
+        header_footer_help_text: "De heading en footer zijn hetzelfde voor alle e-mails en zijn aan te passen in <code>app/views/layouts/mailer_header</code> en <code>app/views/layouts/mailer_footer</code>.<br>Je kunt de header afbeelding vervangen met %{link}."
         image_link: "aangepaste afbeeldingen"
       edit:
         title: Bewerk nieuwsbrief
@@ -874,6 +948,9 @@ nl:
       user_invite:
         title: "Uitnodiging"
         description: "Verzonden naar de persoon die is uitgenodigd om zich te registreren."
+      evaluation_comment:
+        title: "Nieuw beoordelingsreactie"
+        description: "Verzonden naar gerelateerde beheerders en beoordelaars"
       edit_info: "Je kunt deze email bewerken in"
       message_title: "Berichttitel"
       message_body: "Dit is een voorbeeld van de inhoud van een bericht."
@@ -881,6 +958,7 @@ nl:
         no_investments: "Er zijn geen budget investeringen aangemaakt. Er kan geen voorbeeld email worden getoond."
         no_comments: "Er zijn nog geen reacties. Er kan geen voorbeeld email worden getoond."
         no_replies: "Er zijn nog geen antwoorden. Er kan geen voorbeeld email worden getoond."
+        no_evaluation_comments: "Er zijn nog geen reacties. Er kan geen voorbeelde-mail worden getoond."
     emails_download:
       index:
         title: E-mails downloaden
@@ -898,6 +976,7 @@ nl:
         valuator_groups: "Beoordelingsgroepen"
         group: "Groep"
         no_group: "Geen groep"
+        abilities: "Capaciteiten"
         can_comment: "Kan reageren"
         can_edit_dossier: "Kan dossier bewerken"
       valuator:
@@ -911,8 +990,10 @@ nl:
         description: "Beschrijving"
         email: "E-mail"
         group: "Groep"
+        abilities: "Capaciteiten"
         no_description: "Zonder beschrijving"
         no_group: "Geen groep"
+        no_abilities: "Zonder capaciteiten"
     valuator_groups:
       index:
         title: "Evaluatiegroepen"
@@ -938,10 +1019,11 @@ nl:
       search:
         email_placeholder: Zoek gebruiker via email
         user_not_found: Gebruiker niet gevonden
+        help: "Om Stemmentellers toe te voegen, gebruik het zoekformulier hieronder."
     poll_officer_assignments:
       index:
         officers_title: "Lijst van beambten"
-        no_officers: "There are no officers assigned to this poll."
+        no_officers: "Er zijn geen stemmentellers toegewezen aan deze peiling."
         table_name: "Naam"
         table_email: "E-mail"
       by_officer:
@@ -1047,6 +1129,7 @@ nl:
       votation_type:
         title: "Stemvorm"
         unique_description: "Je kunt de vraag maar één keer beantwoorden."
+        multiple_description: "Meerkeuze-antwoorden toestaan. Een maximum aantal antwoorden is mogelijk."
     questions:
       index:
         create: "Stel een vraag"
@@ -1085,6 +1168,7 @@ nl:
           documents_list: Documentenlijst
           document_title: Titel
           document_actions: Acties
+      no_edit: "Zodra de peiling gestart is, is het niet langer mogelijk om vragen, antwoorden of andere content aan te passen."
     answers:
       new:
         title: Nieuw antwoord
@@ -1210,6 +1294,8 @@ nl:
         create_question: Voeg dit voorstel toe aan de peiling om te kunnen stemmen
       form:
         update: Voorstel bijwerken
+      update:
+        notice: Voorstel is bijgewerkt
     hidden_proposals:
       index:
         filter: Filter
@@ -1248,7 +1334,21 @@ nl:
           form:
             submit: Sla op
           how_to_enable: 'Om de kaart te tonen aan gebruikers moet "Voorstellen en begroting investeringen geolocation" zijn ingeschakeld op tabblad "Voorzieningen".'
+        dashboard:
+          title: Voorstellencontrolepaneel
+        remote_census:
+          title: Remote Census configuratie
+          how_to_enable: 'Om de Remote Census (SOAP) aan te passen, moet de "Configureer verbinding naar remote census (SOAP)" in de "Modules" tab worden geactiveerd.'
+        sdg:
+          title: SDG-configuratie
+          how_to_enable: 'Om de configuratie-opties voor de Sustainable Development Goals te tonen, moet de "SDG"-optie in de "Modules" tab worden geactiveerd.'
+        cookies_consent:
+          title: Cookies consent
+        cookies_consent_banner:
+          title: Cookies consent banner
       remote_census_general_name: Algemene Informatie
+      remote_census_request_name: Gegevens opvragen
+      remote_census_response_name: Reponse data
       setting: Functie
       setting_name: Instelling
       setting_value: Waarde
@@ -1264,13 +1364,18 @@ nl:
             label: "Op doel"
         label:
           booths: "Zoek stemhokje op naam"
+          budget_investments: "Zoek voorstellen op naam, beschrijving of kop"
           comments: "Reacties zoeken"
+          debates: "Zoek discussies op naam of beschrijving"
+          legislation_processes: "Zoek plannen op naam of beschrijving"
+          legislation_proposals: "Zoek voorstellen op naam of beschrijving"
           local_census_records: "Zoeken op documentnummer"
           organizations: "Name, email or phone number"
           poll_officers: "Search poll officers"
           poll_questions: "Zoek peilingvragen"
           polls: "Zoek peilingen op naam of beschrijving"
           proposals: "Zoek voorstellen op titel, code, omschrijving of vraag"
+          proposal_notifications: "Zoek notificaties op naam of beschrijving"
           users: "Zoek gebruiker op naam of email"
         search: "Search"
       search_results: "Zoekresultaten"
@@ -1288,18 +1393,27 @@ nl:
       created_at: Created at
       color_help: Hexadecimale notatie
       show_results_and_stats: "Toon resultaten en statistieken"
+      results_and_stats_reminder: "Vink deze vakjes aan als u de resultaten en statistieken wilt publiceren. Ze zijn dan zichtbaar voor alle gebruikers."
+      close_modal: Close modal
+      example_url: "Bijvoorbeeld, https://consuldemocracy.org of /help"
     geozones:
       index:
         title: Geozone
         create: Nieuwe geozone
+        geojson_map: GeoJSON kaart
+        geojson_map_help: "Als GeoJSON coördinaten beschikbaar zijn, worden die getoond op de kaart beneden"
       geozone:
         name: Naam
         external_code: Externe code
         census_code: Census code
         code_help: Responscode voor het gebied van de census API
+        color_help: "Kleur van de zone in een begrotingskaart. %{format_help}"
         coordinates: Coördinaten beschikbaar
         coordinates_help: Coördinaten die een klikbaar gebied op een HTML-afbeelding met hyperlinks genereert
         geojson: GeoJSON beschikbaar
+        geojson_help: "Moet het Polygon- of MultiPolygon-sjabloon volgen. Een polygon wordt getoond op de begrotingskaart als de kop met deze geozone is gekoppeld"
+      create:
+        notice: "Geozone aangemaakt"
       edit:
         form:
           submit_button: Bewaar wijzigingen
@@ -1311,6 +1425,8 @@ nl:
       delete:
         success: Geozone verwijderd
         error: Deze geozone kan niet worden verwijderd omdat er elementen aan gekoppeld zijn
+      update:
+        notice: "Geozone bijgewerkt"
     signature_sheets:
       author: Auteur
       created_at: Aanmaakdatum
@@ -1324,8 +1440,10 @@ nl:
         document_numbers_note: "Voeg nummers toe, gescheiden door komma's (,)"
         submit: Niewe handtekeningenlijst
         text_help:
+          required_fields_note: "Om een gebruiker te verifiëren, heb je nodig: Documentnummer"
           date_of_birth_note: ", Geboortedatum (dd/mm/jjjj)"
           postal_code_note: " en Postcode"
+          required_fields_structure_note: "De verplichte velden voor elke gebruiker moeten worden gescheiden door komma's en gebruikers moeten worden gescheiden door puntkomma's."
           example_text: "Voorbeeld: "
       show:
         created_at: Aangemaakt
@@ -1339,6 +1457,8 @@ nl:
           one: "Er is %{count} ongeldige handtekening"
           other: "Er zijn %{count} ongeldige handtekeningen"
         unverified_error: (Niet geverifieerd door de telling)
+        voted:
+          zero: "Er zijn geen stemmen van de geverifieerde handtekeningen."
         loading: "Handtekeningen worden nog geverifieerd; ververs de pagina over enkele ogenblikken"
     stats:
       show:
@@ -1367,16 +1487,29 @@ nl:
         polls: Peilingen
         sdg: SDG
       graph:
+        budget_investment_created: Voorstellen aangemaakt
+        budget_investment_supported: Voorstellen gesteund
         debate_created: Discussie
+        legislation_annotation_created: Documentcommentaren aangemaakt
+        legislation_answer_created: Planreacties aangemaakt
+        level_3_user: Niveau 3 gebruikers geverifieerd
         proposal_created: Voorstellen
         title: Grafieken
         visits: Bezoeken
+      budgets:
+        no_data_before_balloting_phase: "Er is geen data om te tonen."
+        title: "Burgerbegroting participatiestatistieken"
+        supporting_phase: Support fase
+        balloting_phase: Definitieve stemming
       budget_balloting:
+        title: "Definitieve stemming statistieken"
         vote_count: Votes
         participant_count: deelnemers
+        votes_per_heading: Stemmen per kop
         participants_per_district: Deelnemers per regio
       budget_supporting:
-        headings: Rubrieken
+        title: "Support fase statistieken"
+        headings: Koppen
         users: Deelnemer
         vote_count: Votes
         participant_count: deelnemers
@@ -1401,9 +1534,14 @@ nl:
           origin_web: Web deelnemers
           origin_total: Aantal deelnemers
       sdg:
+        budget_investments:
+          amount: "Goedgekeurd bedrag"
+          winners: "Gekozen voorstellen"
+          sent: "Ontvangen investeringsvoorstellen"
         debates: "Discussie"
         polls: "Polls"
         proposals: "Proposals"
+        title: "Sustainable Development Goals - Statistieken"
     tags:
       create: Onderwerp aanmaken
       index:
@@ -1466,10 +1604,12 @@ nl:
           names:
             top_links: Top links
             footer: Voettekst
+            footer_legal: Footer (wettelijke voorwaarden)
             subnavigation_left: Hoofd navigatie links
             subnavigation_right: Hoofd navigatie rechts
       images:
         index:
+          dimensions: "(%{width}x%{height})"
           title: Aangepaste afbeeldingen
           update: Sla op
           image: Afbeelding
@@ -1499,6 +1639,7 @@ nl:
           see_page: Bekijken
         new:
           title: Nieuwe aangepaste pagina
+          slug_help: "Tekst om deze pagina met een URL te identificeren, bijvoorbeeld <code>https://consuldemocracy.org/page-slug</code>"
         page:
           created_at: Aanmaakdatum
           status: Status
@@ -1511,6 +1652,7 @@ nl:
           create_card: Kaart aanmaken
           no_cards: Er zijn geen tegels.
           columns_help: "Breedte van de tegel in aantal kolommen. Op mobiele schermen worden tegels altijd op 100% breedte getoond."
+          order_help: "Bepaal de positie van de tegel."
           create:
             notice: "Tegel aangemaakt"
           update:
@@ -1540,7 +1682,7 @@ nl:
       title: Homepage
       description: De actieve modules worden weergegeven op de homepage in dezelfde volgorde als hier.
       header_title: Koptekst
-      no_header: Er zijn geen rubrieken.
+      no_header: Er zijn geen koppen.
       create_header: Koptekst maken
       cards_title: Tegels
       create_card: Kaart aanmaken
@@ -1569,26 +1711,90 @@ nl:
       edited_at: "Bewerkt op"
       edited_by: "Bewerkt door"
       actions: "Activiteiten"
+      empty: "Er zijn geen gelogde aanpassingen"
     local_census_records:
       index:
+        title: Lokale census
+        create: Maak nieuw lokaal censusdossier aan
+        no_local_census_records: Er zijn geen lokale censusdossiers.
         document_type: Documentsoort
         document_number: Documentnummer
         date_of_birth: Date of birth
         postal_code: Postcode
         import: Importeer CSV
+      new:
+        creating: Maak nieuw lokaal censusdossier aan
+      create:
+        notice: Nieuw lokaal censusdossier aangemaakt!
+      edit:
+        editing: Bewerk lokaal censusdossier
+      update:
+        notice: Lokaal censusdossier bijgewerkt!
+      destroy:
+        notice: Lokaal censusdossier verwijderd!
       imports:
         new:
+          title: Lokale censusdossiers
           subtitle: CSV-bestand importeren
+        create:
+          notice: Lokale censusdossiers geïmporteerd!
         show:
+          title: Lokale census
+          subtitle: Importeren afgerond
           import: Opnieuw importeren
           errored: Rijen met fouten
+          created: Dossiers aangemaakt
+        local_census_records:
+          no_records_found: Geen dossiers gevonden.
     machine_learning:
+      cancel: "Operatie stoppen"
+      cancel_alert: "Deze actie zal het huidige script beëindigen en een nieuw script zal noodzakelijk zijn."
+      comments_summary: "Samenvatting reacties"
+      comments_summary_description: "Toont een automatisch gegenereerde samenvatting van de reacties op alle onderwerpen waarop reactie mogelijk is."
+      data_folder_content: "Content gegevensmap"
       error: "Fout:"
+      execute_script: "Script uitvoeren"
       executed_by: "Uitgevoerd door:"
+      executed_script: "Uitgevoerd script:"
+      feature_disabled: "Deze functionaliteit is gedeactiveerd. Om Machine Leerling te gebruiken, activeer die via %{link}."
+      feature_disabled_link: "instellingen"
       help:
         title_1: "Wat is AI / Machine Learning?"
+        description_1: "Traditioneel worden computerprogramma's ontworpen door precieze regels vast te stellen over wat het programma in elke situatie moet doen en hoe de beschikbare informatie op elk moment moet worden verwerkt. Wat algemeen bekend staat als AI/machine learning is een type programma waarbij precies wordt vastgesteld wat de uit te voeren taak is en hoe wordt beoordeeld of de taak beter of slechter wordt uitgevoerd. Maar in tegenstelling tot het eerste systeem ontdekt of leert het systeem wat de meest geschikte methode is om de taak uit te voeren."
+        title_2: "Wat doet de AI / Machine Learning module in Consul Democracy?"
+        description_2: "Met deze module kunnen alle soorten AI/machine learning-programma's worden geïmplementeerd in CONSUL DEMOCRACY. De programma's kunnen de informatie verwerken die beschikbaar is in CONSUL DEMOCRACY en resultaten produceren die zowel gebruikers als beheerders helpen om effectievere en intelligentere burgerparticipatie te realiseren. De module is ontwikkeld om het eenvoudig te maken om nieuwe programma's te implementeren en uit te voeren, waarbij de algemene code van CONSUL DEMOCRACY en de code van deze nieuwe programma's onafhankelijk van elkaar blijven."
+        title_3: "Hoe gebruik ik deze module"
+        description_3: "Om het voor het eerst te gebruiken, moet u de instructies in de documentatie van CONSUL DEMOCRACY volgen om deze module correct te activeren. Zodra de module correct is geactiveerd, worden de programma's uitgevoerd vanuit het tabblad “Scripts uitvoeren”. Voordat we het uitvoeren, kunnen we in hetzelfde tabblad een schatting van de uitvoeringstijd en andere relevante informatie zien. Aan het einde van de uitvoering kunnen we de inhoud die in CONSUL DEMOCRACY wordt weergegeven, activeren vanuit het tabblad “Instellingen”, en andere gegenereerde bestanden downloaden die voor ons nuttig kunnen zijn."
+        title_4: "Hoe implementeer ik nieuwe AI / Machine Learning scripts"
+        description_4: "Gebruik a. u. b. eerdere scripts als voorbeeld."
+        description_4b: "De nieuwe scripts dienen zich te bevinden in de map <code>public/machine_learning/scripts</code>"
       related_content: "Gerelateerde inhoud"
       started_at: "Gestart op:"
       tab_help: "Help"
       tags: "Tags"
+      tags_description: "Genereert automatische labels voor alle te labelen content."
       title: "AI / Machine learning"
+    cookies:
+      vendors:
+        empty: Geen leveranciers gevonden
+        third_party_cookies: Cookies derde partijen
+        create_button: Maak cookieleverancier aan
+        create:
+          notice: Cookieleverancier aangemaakt
+        new:
+          title: Nieuwe cookieleverancier
+        edit:
+          title: Bewerk cookieleverancier
+        update:
+          notice: Cookieleverancier bijgewerkt
+        destroy:
+          notice: Cookieleverancier verwijderd
+        form:
+          name:
+            help_text: Deze informatie zal voor iedere gebruiker zichtbaar zijn.
+          cookie:
+            help_text: Deze informatie wordt intern gebruikt. De naam van de cookie moet uniek zijn en mag alleen letters, cijfers en onderstrepingstekens bevatten.
+          description:
+            help_text: Deze informatie zal voor iedere gebruiker zichtbaar zijn.
+          script:
+            help_text: Dit is het script dat wordt uitgevoerd wanneer deze cookie door de gebruiker wordt geaccepteerd. U kunt hier standaard JavaScript-code invoeren en verwijzingen naar andere JavaScript-toepassingen toevoegen.
