@@ -31,6 +31,10 @@ class Poll::Question < ApplicationRecord
 
   scope :sort_for_list, -> { order(Arel.sql("poll_questions.proposal_id IS NULL"), :created_at) }
   scope :for_render,    -> { includes(:author, :proposal) }
+  scope :for_physical_votes, -> {
+    left_outer_joins(:votation_type)
+      .where.not(votation_types: { vote_type: "essay" })
+  }
 
   def copy_attributes_from_proposal(proposal)
     if proposal.present?
@@ -45,8 +49,9 @@ class Poll::Question < ApplicationRecord
     question_options.reduce(0) { |total, question_option| total + question_option.total_votes }
   end
 
-  def most_voted_option_id
-    question_options.max_by(&:total_votes)&.id
+  def most_voted_option_ids
+    max_votes = question_options.map(&:total_votes).max
+    question_options.select { |option| option.total_votes == max_votes }.map(&:id)
   end
 
   def options_with_read_more?
@@ -61,20 +66,35 @@ class Poll::Question < ApplicationRecord
     votation_type.nil? || votation_type.unique?
   end
 
+  def essay?
+    votation_type&.essay?
+  end
+
   def max_votes
     if multiple?
       votation_type.max_votes
-    else
+    elsif unique?
       1
+    elsif essay?
+      nil
     end
   end
 
-  def find_or_initialize_user_answer(user, option_id)
-    option = question_options.find(option_id)
+  def find_or_initialize_user_answer(user, option_id, text_answer)
+    option = question_options.find_by(id: option_id) if option_id.present?
 
     answer = answers.find_or_initialize_by(find_by_attributes(user, option))
-    answer.option = option
-    answer.answer = option.title
+
+    if essay?
+      answer.option = nil
+      answer.answer = nil
+      answer.text_answer = text_answer
+    else
+      answer.option = option
+      answer.answer = option&.title
+      answer.text_answer = nil
+    end
+
     answer
   end
 
@@ -85,7 +105,9 @@ class Poll::Question < ApplicationRecord
       when "unique", nil
         { author: user }
       when "multiple"
-        { author: user, answer: option.title }
+        { author: user, answer: option&.title }
+      when "essay"
+        { author: user, option_id: nil }
       end
     end
 end

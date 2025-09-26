@@ -94,6 +94,12 @@ FactoryBot.define do
         create(:votation_type_multiple, questionable: question, max_votes: evaluator.max_votes)
       end
     end
+
+    factory :poll_question_essay do
+      after(:create) do |question|
+        create(:votation_type_essay, questionable: question)
+      end
+    end
   end
 
   factory :poll_question_option, class: "Poll::Question::Option" do

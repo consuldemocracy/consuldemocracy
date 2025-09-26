@@ -1015,6 +1015,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_09_09_145207) do
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
     t.bigint "option_id"
+    t.text "text_answer"
     t.index ["author_id"], name: "index_poll_answers_on_author_id"
     t.index ["option_id", "author_id"], name: "index_poll_answers_on_option_id_and_author_id", unique: true
     t.index ["option_id"], name: "index_poll_answers_on_option_id"

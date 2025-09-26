@@ -25,8 +25,28 @@ describe Poll::Answer do
       expect(answer).not_to be_valid
     end
 
-    it "is not valid without an answer" do
+    it "is not valid without an answer when question is not essay" do
       answer.answer = nil
+      expect(answer).not_to be_valid
+    end
+
+    it "is valid without a text_answer when question is not essay" do
+      answer.text_answer = nil
+      expect(answer).to be_valid
+    end
+
+    it "is valid without an answer when question is essay" do
+      answer.question = create(:poll_question_essay)
+      answer.answer = nil
+      answer.text_answer = "Open text answer"
+
+      expect(answer).to be_valid
+    end
+
+    it "is not valid without an text_answer when question is essay" do
+      answer.question = create(:poll_question_essay)
+      answer.text_answer = nil
+
       expect(answer).not_to be_valid
     end
 
