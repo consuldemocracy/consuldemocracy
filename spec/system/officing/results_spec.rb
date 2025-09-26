@@ -123,6 +123,9 @@ describe "Officing Results", :with_frozen_time do
       click_link "See results"
     end
 
+    expect(page).to have_content(I18n.l(Date.current.to_date, format: :long))
+    expect(page).to have_content(booth_name)
+
     within("#question_#{question_1.id}_0_result") do
       expect(page).to have_content("5555")
       expect(page).not_to have_content("7777")
@@ -133,51 +136,5 @@ describe "Officing Results", :with_frozen_time do
     within("#total_results") { expect(page).to have_content("8") }
     within("#question_#{question_1.id}_0_result") { expect(page).to have_content("5555") }
     within("#question_#{question_1.id}_1_result") { expect(page).to have_content("200") }
-  end
-
-  scenario "Index lists all questions and answers" do
-    officer_assignment = poll_officer.officer_assignments.first
-    booth_assignment = officer_assignment.booth_assignment
-    booth = booth_assignment.booth
-
-    create(
-      :poll_partial_result,
-      officer_assignment: officer_assignment,
-      booth_assignment: booth_assignment,
-      date: poll.ends_at,
-      question: question_1,
-      amount: 33
-    )
-
-    create(
-      :poll_recount,
-      officer_assignment: officer_assignment,
-      booth_assignment: booth_assignment,
-      date: poll.ends_at,
-      white_amount: 21,
-      null_amount: 44,
-      total_amount: 66
-    )
-
-    visit officing_poll_results_path(poll,
-                                     date: I18n.l(poll.ends_at.to_date),
-                                     booth_assignment_id: officer_assignment.booth_assignment_id)
-
-    expect(page).to have_content(I18n.l(poll.ends_at.to_date, format: :long))
-    expect(page).to have_content(booth.name)
-
-    expect(page).to have_content(question_1.title)
-    question_1.question_options.each_with_index do |answer, i|
-      within("#question_#{question_1.id}_#{i}_result") { expect(page).to have_content(answer.title) }
-    end
-
-    expect(page).to have_content(question_2.title)
-    question_2.question_options.each_with_index do |answer, i|
-      within("#question_#{question_2.id}_#{i}_result") { expect(page).to have_content(answer.title) }
-    end
-
-    within("#white_results") { expect(page).to have_content("21") }
-    within("#null_results") { expect(page).to have_content("44") }
-    within("#total_results") { expect(page).to have_content("66") }
   end
 end

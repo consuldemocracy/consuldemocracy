@@ -49,10 +49,6 @@ class Poll::Question < ApplicationRecord
     question_options.max_by(&:total_votes)&.id
   end
 
-  def possible_answers
-    question_options.joins(:translations).pluck(:title)
-  end
-
   def options_with_read_more?
     options_with_read_more.any?
   end

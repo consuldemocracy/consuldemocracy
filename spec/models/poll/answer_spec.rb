@@ -89,17 +89,18 @@ describe Poll::Answer do
       expect { answer.save }.not_to raise_error
     end
 
-    it "is valid for answers included in the Poll::Question's question_options list" do
+    it "is valid for answers included in the list of titles for the option" do
       question = create(:poll_question)
-      create(:poll_question_option, title: "One", question: question)
+      option = create(:poll_question_option, title_en: "One", title_es: "Uno", question: question)
+
       create(:poll_question_option, title: "Two", question: question)
-      create(:poll_question_option, title: "Three", question: question)
+      create(:poll_question_option, title: "Three", question: create(:poll_question, poll: create(:poll)))
 
-      expect(build(:poll_answer, question: question, answer: "One")).to be_valid
-      expect(build(:poll_answer, question: question, answer: "Two")).to be_valid
-      expect(build(:poll_answer, question: question, answer: "Three")).to be_valid
-
-      expect(build(:poll_answer, question: question, answer: "Four")).not_to be_valid
+      expect(build(:poll_answer, option: option, answer: "One")).to be_valid
+      expect(build(:poll_answer, option: option, answer: "Uno")).to be_valid
+      expect(build(:poll_answer, option: option, answer: "Two")).not_to be_valid
+      expect(build(:poll_answer, option: option, answer: "Three")).not_to be_valid
+      expect(build(:poll_answer, option: option, answer: "Any")).not_to be_valid
     end
   end
 end
