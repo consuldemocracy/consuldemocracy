@@ -13,9 +13,6 @@ fi:
         date: "Päivämäärä"
         submit: "Tallenna"
         see_results: "Näytä tulokset"
-      index:
-        table_answer: Vastaus
-        table_votes: Äänet
     voters:
       new:
         title: Kyselyt
