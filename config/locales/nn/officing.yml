@@ -10,8 +10,6 @@ nn:
     results:
       new:
         submit: "Lagre"
-      index:
-        table_answer: Svar
     voters:
       new:
         title: Avstemninger
