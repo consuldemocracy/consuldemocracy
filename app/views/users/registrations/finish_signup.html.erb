@@ -19,6 +19,12 @@
     <%= f.hidden_field :email %>
   <% end %>
 
+  <% if current_user.errors.include? :gender %>
+    <%= f.select :gender, gender_select_options, { prompt: t("devise_views.users.registrations.new.gender.select"), label: t("devise_views.users.registrations.new.sexo") }, { required: true } %>
+  <% else %>
+    <%= f.hidden_field :gender %>
+  <% end %>
+
   <%= f.submit t("devise_views.users.registrations.new.submit"), class: "button expanded" %>
   <div class="text-center">
     <%= link_to t("devise_views.users.registrations.new.cancel"), destroy_user_session_path, class: "delete", method: :delete %>
