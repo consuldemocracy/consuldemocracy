@@ -93,299 +93,151 @@ describe User do
 
   describe "preferences" do
     describe "email_on_comment" do
-      before do
-        Rails.application.config.disable_notifications_at = Time.zone.now
-      end
-
       context "when GDPR-compliant settings are off" do
-        let(:old_user) { build(:user, email_on_comment: true, created_at: 1.day.ago) }
-        let(:new_user) { build(:user, email_on_comment: true, created_at: 1.day.after) }
+        let(:new_user) { build(:user) }
 
         before do
           Setting["feature.disable_notifications"] = false
         end
 
         it "has expected values" do
-          expect(old_user.email_on_comment).to be true
-          expect(new_user.email_on_comment).to be true
-        end
-
-        context "when a user has activated email_on_comment" do
-          let(:old_user) { build(:user, email_on_comment: true, created_at: 1.day.ago) }
-          let(:new_user) { build(:user, email_on_comment: true, created_at: 1.day.after) }
-
-          it "has true by activation" do
-            expect(old_user.email_on_comment).to be true
-            expect(new_user.email_on_comment).to be true
-          end
+          expect(new_user.email_on_comment).to be false
         end
       end
 
       context "when GDPR-compliant default settings are on" do
-        let(:old_user) { build(:user, created_at: 1.day.ago) }
-        let(:new_user) { build(:user, created_at: 1.day.after) }
+        let(:new_user) { build(:user) }
 
         before do
           Setting["feature.disable_notifications"] = true
         end
 
         it "is false by default" do
-          expect(old_user.email_on_comment).to be false
           expect(new_user.email_on_comment).to be false
-        end
-
-        context "when a user has activated email_on_comment" do
-          let(:old_user) { build(:user, email_on_comment: true, created_at: 1.day.ago) }
-          let(:new_user) { build(:user, email_on_comment: true, created_at: 1.day.after) }
-
-          it "has values by activation" do
-            expect(old_user.email_on_comment).to be true
-            expect(new_user.email_on_comment).to be false
-          end
         end
       end
     end
 
     describe "email_on_comment_reply" do
-      before do
-        Rails.application.config.disable_notifications_at = Time.zone.now
-      end
-
-      context "when GDPR-compliant default settings are off" do
-        let(:old_user) { build(:user, created_at: 1.day.ago) }
-        let(:new_user) { build(:user, created_at: 1.day.after) }
+      context "when GDPR-compliant settings are off" do
+        let(:new_user) { build(:user) }
 
         before do
           Setting["feature.disable_notifications"] = false
         end
 
-        it "is false by default" do
-          expect(old_user.email_on_comment_reply).to be false
+        it "has expected values" do
           expect(new_user.email_on_comment_reply).to be false
-        end
-
-        context "when a user has activated email_on_comment_reply" do
-          let(:old_user) { build(:user, email_on_comment_reply: true, created_at: 1.day.ago) }
-          let(:new_user) { build(:user, email_on_comment_reply: true, created_at: 1.day.after) }
-
-          it "has true by activation" do
-            expect(old_user.email_on_comment_reply).to be true
-            expect(new_user.email_on_comment_reply).to be true
-          end
         end
       end
 
       context "when GDPR-compliant default settings are on" do
-        let(:old_user) { build(:user, created_at: 1.day.ago) }
-        let(:new_user) { build(:user, created_at: 1.day.after) }
+        let(:new_user) { build(:user) }
 
         before do
           Setting["feature.disable_notifications"] = true
         end
 
         it "is false by default" do
-          expect(old_user.email_on_comment_reply).to be false
           expect(new_user.email_on_comment_reply).to be false
-        end
-
-        context "when a user has activated email_on_comment_reply" do
-          let(:old_user) { build(:user, email_on_comment_reply: true, created_at: 1.day.ago) }
-          let(:new_user) { build(:user, email_on_comment_reply: true, created_at: 1.day.after) }
-
-          it "has values by activation" do
-            expect(old_user.email_on_comment_reply).to be true
-            expect(new_user.email_on_comment_reply).to be false
-          end
         end
       end
     end
 
-    describe "subscription_to_website_newsletter" do
-      before do
-        Rails.application.config.disable_notifications_at = Time.zone.now
+    describe "newsletter" do
+      context 'when scope' do
+        let!(:user_1) { create(:user, email_digest: true) }
+        let!(:user_2) { create(:user, email_digest: false) }
+
+        it "has correct users" do
+          expect(User.email_digest.to_a).to include(user_1)
+          expect(User.email_digest.to_a).not_to include(user_2)
+        end
       end
 
-      context "when GDPR-compliant default settings are off" do
-        let(:old_user) { build(:user, created_at: 1.day.ago) }
-        let(:new_user) { build(:user, created_at: 1.day.after) }
+      context "when GDPR-compliant settings are off" do
+        let(:new_user) { build(:user) }
 
         before do
           Setting["feature.disable_notifications"] = false
         end
 
-        it "is false by default" do
-          expect(old_user.newsletter).to be true
+        it "has expected values" do
           expect(new_user.newsletter).to be true
-        end
-
-        context "when a user has activated newsletter" do
-          let!(:old_user_off) { create(:user, newsletter: false, created_at: 1.day.ago) }
-          let!(:old_user) { create(:user, newsletter: true, created_at: 1.day.ago) }
-          let!(:new_user) { create(:user, newsletter: true, created_at: 1.day.after) }
-
-          it "has true by activation" do
-            expect(old_user.newsletter).to be true
-            expect(new_user.newsletter).to be true
-          end
-
-          it "has scope" do
-            expect(User.newsletter).to include(old_user)
-            expect(User.newsletter).to include(new_user)
-            expect(User.newsletter).not_to include(old_user_off)
-          end
         end
       end
 
-      context "when GDPR-compliant settings are on" do
-        let(:old_user) { create(:user, :with_notifications, created_at: 1.day.ago) }
-        let(:new_user) { create(:user, :with_notifications, created_at: 1.day.after) }
+      context "when GDPR-compliant default settings are on" do
+        let(:new_user) { build(:user) }
 
         before do
           Setting["feature.disable_notifications"] = true
         end
 
-        it "has expected values" do
-          expect(old_user.newsletter).to be true
+        it "is false by default" do
           expect(new_user.newsletter).to be false
-        end
-
-        context "when a user has activated newsletter" do
-          let!(:old_user_off) { create(:user, newsletter: false, created_at: 1.day.ago) }
-          let!(:old_user) { create(:user, :with_notifications, created_at: 1.day.ago) }
-          let!(:new_user) { create(:user, :with_notifications, created_at: 1.day.after) }
-
-          it "has values by activation" do
-            expect(old_user.newsletter).to be true
-            expect(new_user.newsletter).to be false
-          end
-
-          it "has scope" do
-            expect(User.newsletter).to include(old_user)
-            expect(User.newsletter).not_to include(new_user)
-            expect(User.newsletter).not_to include(old_user_off)
-          end
         end
       end
     end
 
     describe "email_digest" do
-      before do
-        Rails.application.config.disable_notifications_at = Time.zone.now
+      context 'when scope' do
+        let!(:user_1) { create(:user, email_digest: true) }
+        let!(:user_2) { create(:user, email_digest: false) }
+
+        it "has correct users" do
+          expect(User.email_digest.to_a).to include(user_1)
+          expect(User.email_digest.to_a).not_to include(user_2)
+        end
       end
 
-      context "when GDPR-compliant default settings are off" do
-        let(:old_user) { build(:user, created_at: 1.day.ago) }
-        let(:new_user) { build(:user, created_at: 1.day.after) }
+      context "when GDPR-compliant settings are off" do
+        let(:new_user) { build(:user) }
 
         before do
           Setting["feature.disable_notifications"] = false
         end
 
         it "has expected values" do
-          expect(old_user.email_digest).to be true
           expect(new_user.email_digest).to be true
-        end
-
-        context "when a user has activated email_digest" do
-          let!(:old_user_off) { create(:user, email_digest: false, created_at: 1.day.ago) }
-          let!(:old_user) { create(:user, email_digest: true, created_at: 1.day.ago) }
-          let!(:new_user) { create(:user, email_digest: true, created_at: 1.day.after) }
-
-          it "has true by activation" do
-            expect(old_user.email_digest).to be true
-            expect(new_user.email_digest).to be true
-          end
-
-          it "has scope" do
-            expect(User.email_digest).to include(old_user)
-            expect(User.email_digest).to include(new_user)
-            expect(User.email_digest).not_to include(old_user_off)
-          end
         end
       end
 
-      context "when GDPR-compliant settings are on" do
-        let(:old_user) { create(:user, :with_notifications, created_at: 1.day.ago) }
-        let(:new_user) { create(:user, :with_notifications, created_at: 1.day.after) }
+      context "when GDPR-compliant default settings are on" do
+        let(:new_user) { build(:user) }
 
         before do
           Setting["feature.disable_notifications"] = true
         end
 
         it "is false by default" do
-          expect(old_user.email_digest).to be true
           expect(new_user.email_digest).to be false
-        end
-
-        context "when a user has activated email_digest" do
-          let!(:old_user_off) { create(:user, email_digest: false, created_at: 1.day.ago) }
-          let!(:old_user) { create(:user, :with_notifications, created_at: 1.day.ago) }
-          let!(:new_user) { create(:user, :with_notifications, created_at: 1.day.after) }
-
-          it "has values by activation" do
-            expect(old_user.email_digest).to be true
-            expect(new_user.email_digest).to be false
-          end
-
-          it "has scope" do
-            expect(User.email_digest).to include(old_user)
-            expect(User.email_digest).not_to include(new_user)
-            expect(User.email_digest).not_to include(old_user_off)
-          end
         end
       end
     end
 
     describe "email_on_direct_message" do
-      before do
-        Rails.application.config.disable_notifications_at = Time.zone.now
-      end
-
-      context "when GDPR-compliant default settings are off" do
-        let(:old_user) { build(:user, created_at: 1.day.ago) }
-        let(:new_user) { build(:user, created_at: 1.day.after) }
+      context "when GDPR-compliant settings are off" do
+        let(:new_user) { build(:user) }
 
         before do
           Setting["feature.disable_notifications"] = false
         end
 
         it "has expected values" do
-          expect(old_user.email_on_direct_message).to be true
           expect(new_user.email_on_direct_message).to be true
-        end
-
-        context "when a user has activated email_on_direct_message" do
-          let(:old_user) { build(:user, email_on_direct_message: true, created_at: 1.day.ago) }
-          let(:new_user) { build(:user, email_on_direct_message: true, created_at: 1.day.after) }
-
-          it "has true by activation" do
-            expect(old_user.email_on_direct_message).to be true
-            expect(new_user.email_on_direct_message).to be true
-          end
         end
       end
 
       context "when GDPR-compliant default settings are on" do
-        let(:old_user) { build(:user, created_at: 1.day.ago) }
-        let(:new_user) { build(:user, created_at: 1.day.after) }
+        let(:new_user) { build(:user) }
 
         before do
           Setting["feature.disable_notifications"] = true
         end
 
-        it "has expected values" do
-          expect(old_user.email_on_direct_message).to be true
+        it "is false by default" do
           expect(new_user.email_on_direct_message).to be false
-        end
-
-        context "when a user has activated email_on_direct_message" do
-          let(:old_user) { build(:user, email_on_direct_message: true, created_at: 1.day.ago) }
-          let(:new_user) { build(:user, email_on_direct_message: true, created_at: 1.day.after) }
-
-          it "has values by activation" do
-            expect(old_user.email_on_direct_message).to be true
-            expect(new_user.email_on_direct_message).to be false
-          end
         end
       end
     end

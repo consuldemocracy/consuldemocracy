@@ -101,25 +101,6 @@ describe "Account" do
     expect(find("#account_email_on_comment_reply")).to be_checked
   end
 
-  describe "Notifications" do
-    context "when proposals process is enabled and notifications are disabled" do
-      before do
-        Setting["feature.disable_notifications"] = true
-      end
-
-      scenario "Hides Notifications" do
-        visit account_path
-
-        expect(page).not_to have_css("h2", text: "Notifications")
-        expect(page).not_to have_field "Notify me by email when someone comments on my contents"
-        expect(page).not_to have_field "Notify me by email when someone replies to my comments"
-        expect(page).not_to have_field "Receive relevant information by email"
-        expect(page).not_to have_field "Receive a summary of proposal notifications"
-        expect(page).not_to have_field "Receive emails about direct messages"
-      end
-    end
-  end
-
   describe "Email digest checkbox" do
     scenario "Appears when the proposals process is enabled" do
       visit account_path

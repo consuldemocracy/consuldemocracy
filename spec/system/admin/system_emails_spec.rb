@@ -347,79 +347,25 @@ describe "System Emails" do
       end
     end
 
-    context "with disabel_notification is on" do
-      before do
-        Rails.application.config.disable_notifications_at = 3.days.before
-        Setting["feature.disable_notifications"] = true
-      end
+    scenario "#send_pending" do
+      proposal = create(:proposal)
+      proposal_notification = create(:proposal_notification, proposal: proposal,
+                                                             title: "Proposal A Title",
+                                                             body: "Proposal A Notification Body")
+      voter = create(:user, :level_two, followables: [proposal])
+      create(:notification, notifiable: proposal_notification, user: voter, emailed_at: nil)
 
-      context "when new user with activated email_digest" do
-        scenario "#send_pending" do
-          proposal = create(:proposal)
-          proposal_notification = create(:proposal_notification, proposal: proposal,
-                                                                 title: "Proposal A Title",
-                                                                 body: "Proposal A Notification Body")
-          voter = create(:user, :level_two, followables: [proposal], email_digest: true,
-                                            created_at: 2.days.before)
-          create(:notification, notifiable: proposal_notification, user: voter, emailed_at: nil)
+      visit admin_system_emails_path
 
-          visit admin_system_emails_path
-          click_button "Send pending"
+      click_button "Send pending"
 
-          expect(page).to have_content "Pending notifications sent successfully"
+      expect(page).to have_content "Pending notifications sent successfully"
 
-          expect { open_last_email }.to raise_error("No email has been sent!")
-        end
-      end
+      email = open_last_email
+      expect(email).to deliver_to(voter)
+      expect(email).to have_body_text(proposal_notification.body)
 
-      context "when old user with activated email_digest" do
-        scenario "#send_pending" do
-          proposal = create(:proposal)
-          proposal_notification = create(:proposal_notification, proposal: proposal,
-                                                                 title: "Proposal A Title",
-                                                                 body: "Proposal A Notification Body")
-          voter = create(:user, :level_two, followables: [proposal], email_digest: true,
-                                            created_at: 4.days.ago)
-          create(:notification, notifiable: proposal_notification, user: voter, emailed_at: nil)
-
-          visit admin_system_emails_path
-          click_button "Send pending"
-
-          expect(page).to have_content "Pending notifications sent successfully"
-
-          email = open_last_email
-          expect(email).to deliver_to(voter)
-          expect(email).to have_body_text(proposal_notification.body)
-
-          expect(page).to have_content("Pending notifications sent successfully")
-        end
-      end
-    end
-
-    context "when disabel_notification is off" do
-      before do
-        Setting["feature.disable_notifications"] = false
-      end
-
-      scenario "#send_pending" do
-        proposal = create(:proposal)
-        proposal_notification = create(:proposal_notification, proposal: proposal,
-                                                               title: "Proposal A Title",
-                                                               body: "Proposal A Notification Body")
-        voter = create(:user, :level_two, followables: [proposal], email_digest: true)
-        create(:notification, notifiable: proposal_notification, user: voter, emailed_at: nil)
-
-        visit admin_system_emails_path
-        click_button "Send pending"
-
-        expect(page).to have_content "Pending notifications sent successfully"
-
-        email = open_last_email
-        expect(email).to deliver_to(voter)
-        expect(email).to have_body_text(proposal_notification.body)
-
-        expect(page).to have_content("Pending notifications sent successfully")
-      end
+      expect(page).to have_content("Pending notifications sent successfully")
     end
   end
 end

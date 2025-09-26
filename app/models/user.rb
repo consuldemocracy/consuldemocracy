@@ -98,12 +98,12 @@ class User < ApplicationRecord
   scope :officials,      -> { where(official_level: 1..) }
   scope :male,           -> { where(gender: "male") }
   scope :female,         -> { where(gender: "female") }
-  scope :newsletter,     -> { notification_manageable_scope.where(newsletter: true) }
+  scope :newsletter,     -> { where(newsletter: true) }
   scope :for_render,     -> { includes(:organization) }
   scope :by_document,    ->(document_type, document_number) do
     where(document_type: document_type, document_number: document_number)
   end
-  scope :email_digest,   -> { notification_manageable_scope.where(email_digest: true) }
+  scope :email_digest,   -> { where(email_digest: true) }
   scope :erased,         -> { where.not(erased_at: nil) }
   scope :active,         -> { excluding(erased) }
   scope :public_for_api, -> { all }
@@ -124,34 +124,6 @@ class User < ApplicationRecord
 
   after_initialize :set_defaults, if: :new_record?
   before_validation :clean_document_number
-
-  def self.notification_manageable_scope
-    if Setting["feature.disable_notifications"]
-      where(created_at: ...Rails.application.config.disable_notifications_at)
-    else
-      all
-    end
-  end
-
-  def newsletter
-    with_notification_setting { super }
-  end
-
-  def email_digest
-    with_notification_setting { super }
-  end
-
-  def email_on_direct_message
-    with_notification_setting { super }
-  end
-
-  def email_on_comment_reply
-    with_notification_setting { super }
-  end
-
-  def email_on_comment
-    with_notification_setting { super }
-  end
 
   # Get the existing user by email if the provider gives us a verified email.
   def self.first_or_initialize_for_oauth(auth)
@@ -474,17 +446,10 @@ class User < ApplicationRecord
 
     def set_defaults
       if Setting["feature.disable_notifications"]
-        self.newsletter ||= false
-        self.email_digest ||= false
-        self.email_on_direct_message ||= false
+        self.newsletter = false
+        self.email_digest = false
+        self.email_on_direct_message = false
       end
-    end
-
-    def with_notification_setting
-      applyable_user = created_at && created_at >= Rails.application.config.disable_notifications_at
-      return false if applyable_user && Setting["feature.disable_notifications"]
-
-      yield
     end
 
     def clean_document_number
