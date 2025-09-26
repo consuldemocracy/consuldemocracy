@@ -93,32 +93,204 @@ describe User do
 
   describe "preferences" do
     describe "email_on_comment" do
-      it "is false by default" do
-        expect(subject.email_on_comment).to be false
+      context "when GDPR-compliant settings are off" do
+        let(:new_user) { build(:user) }
+
+        before do
+          Setting["feature.disable_notifications"] = false
+        end
+
+        it "has expected values" do
+          expect(new_user.email_on_comment).to be false
+        end
+      end
+
+      context "when GDPR-compliant default settings are on" do
+        let(:new_user) { build(:user) }
+
+        before do
+          Setting["feature.disable_notifications"] = true
+        end
+
+        it "is false by default" do
+          expect(new_user.email_on_comment).to be false
+        end
       end
     end
 
     describe "email_on_comment_reply" do
-      it "is false by default" do
-        expect(subject.email_on_comment_reply).to be false
+      context "when GDPR-compliant settings are off" do
+        let(:new_user) { build(:user) }
+
+        before do
+          Setting["feature.disable_notifications"] = false
+        end
+
+        it "has expected values" do
+          expect(new_user.email_on_comment_reply).to be false
+        end
+      end
+
+      context "when GDPR-compliant default settings are on" do
+        let(:new_user) { build(:user) }
+
+        before do
+          Setting["feature.disable_notifications"] = true
+        end
+
+        it "is false by default" do
+          expect(new_user.email_on_comment_reply).to be false
+        end
       end
     end
 
-    describe "subscription_to_website_newsletter" do
-      it "is true by default" do
-        expect(subject.newsletter).to be true
+    describe "newsletter" do
+      context "when scope" do
+        let!(:user_1) { create(:user, email_digest: true) }
+        let!(:user_2) { create(:user, email_digest: false) }
+
+        it "has correct users" do
+          expect(User.email_digest.to_a).to include(user_1)
+          expect(User.email_digest.to_a).not_to include(user_2)
+        end
+      end
+
+      context "when GDPR-compliant settings are off" do
+        let(:new_user) { build(:user) }
+
+        before do
+          Setting["feature.disable_notifications"] = false
+        end
+
+        it "has expected values" do
+          expect(new_user.newsletter).to be true
+        end
+      end
+
+      context "when GDPR-compliant default settings are on" do
+        let(:new_user) { build(:user) }
+
+        before do
+          Setting["feature.disable_notifications"] = true
+        end
+
+        it "is false by default" do
+          expect(new_user.newsletter).to be false
+        end
       end
     end
 
     describe "email_digest" do
-      it "is true by default" do
-        expect(subject.email_digest).to be true
+      context "when scope" do
+        let!(:user_1) { create(:user, email_digest: true) }
+        let!(:user_2) { create(:user, email_digest: false) }
+
+        it "has correct users" do
+          expect(User.email_digest.to_a).to include(user_1)
+          expect(User.email_digest.to_a).not_to include(user_2)
+        end
+      end
+
+      context "when GDPR-compliant settings are off" do
+        let(:new_user) { build(:user) }
+
+        before do
+          Setting["feature.disable_notifications"] = false
+        end
+
+        it "has expected values" do
+          expect(new_user.email_digest).to be true
+        end
+      end
+
+      context "when GDPR-compliant default settings are on" do
+        let(:new_user) { build(:user) }
+
+        before do
+          Setting["feature.disable_notifications"] = true
+        end
+
+        it "is false by default" do
+          expect(new_user.email_digest).to be false
+        end
       end
     end
 
     describe "email_on_direct_message" do
-      it "is true by default" do
-        expect(subject.email_on_direct_message).to be true
+      context "when GDPR-compliant settings are off" do
+        let(:new_user) { build(:user) }
+
+        before do
+          Setting["feature.disable_notifications"] = false
+        end
+
+        it "has expected values" do
+          expect(new_user.email_on_direct_message).to be true
+        end
+      end
+
+      context "when GDPR-compliant default settings are on" do
+        let(:new_user) { build(:user) }
+
+        before do
+          Setting["feature.disable_notifications"] = true
+        end
+
+        it "is false by default" do
+          expect(new_user.email_on_direct_message).to be false
+        end
+      end
+    end
+
+    describe "recommended_debates" do
+      context "when GDPR-compliant settings are off" do
+        let(:new_user) { build(:user) }
+
+        before do
+          Setting["feature.disable_notifications"] = false
+        end
+
+        it "has expected values" do
+          expect(new_user.recommended_debates).to be true
+        end
+      end
+
+      context "when GDPR-compliant default settings are on" do
+        let(:new_user) { build(:user) }
+
+        before do
+          Setting["feature.disable_notifications"] = true
+        end
+
+        it "is false by default" do
+          expect(new_user.recommended_debates).to be false
+        end
+      end
+    end
+
+    describe "recommended_proposals" do
+      context "when GDPR-compliant settings are off" do
+        let(:new_user) { build(:user) }
+
+        before do
+          Setting["feature.disable_notifications"] = false
+        end
+
+        it "has expected values" do
+          expect(new_user.recommended_proposals).to be true
+        end
+      end
+
+      context "when GDPR-compliant default settings are on" do
+        let(:new_user) { build(:user) }
+
+        before do
+          Setting["feature.disable_notifications"] = true
+        end
+
+        it "is false by default" do
+          expect(new_user.recommended_proposals).to be false
+        end
       end
     end
 

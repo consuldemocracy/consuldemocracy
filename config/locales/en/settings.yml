@@ -94,6 +94,8 @@ en:
       oidc_login: "OpenID Connect login"
       oidc_login_description: "Allow users to sign up with OpenID Connect (OIDC)"
       saml_login: "SAML login"
+      disable_notifications: "GDPR-compliant default settings"
+      disable_notifications_description: Activate the GDPR-compliant default settings to ensure “privacy by design”.
       saml_login_description: "Allow users to sign up with SAML"
       featured_proposals: "Featured proposals"
       featured_proposals_description: "Shows featured proposals on index proposals page"

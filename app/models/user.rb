@@ -122,6 +122,7 @@ class User < ApplicationRecord
     where(date_of_birth: start_date.beginning_of_day..end_date.end_of_day)
   end
 
+  after_initialize :set_defaults, if: :new_record?
   before_validation :clean_document_number
 
   # Get the existing user by email if the provider gives us a verified email.
@@ -442,6 +443,16 @@ class User < ApplicationRecord
   end
 
   private
+
+    def set_defaults
+      if Setting["feature.disable_notifications"]
+        self.newsletter = false
+        self.email_digest = false
+        self.email_on_direct_message = false
+        self.recommended_debates = false
+        self.recommended_proposals = false
+      end
+    end
 
     def clean_document_number
       return if document_number.blank?
