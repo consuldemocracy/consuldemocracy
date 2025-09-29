@@ -89,7 +89,7 @@ class Poll::Question < ApplicationRecord
       when "unique", nil
         { author: user }
       when "multiple"
-        { author: user, answer: option.title }
+        { author: user, option: option }
       end
     end
 end
