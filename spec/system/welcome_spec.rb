@@ -34,7 +34,7 @@ describe "Welcome screen" do
   end
 
   scenario "a regular user does not see it when coing to /email" do
-    plain, encrypted = Devise.token_generator.generate(User, :email_verification_token)
+    encrypted, plain = Devise.token_generator.generate(User, :email_verification_token)
 
     user = create(:user, email_verification_token: plain)
 
