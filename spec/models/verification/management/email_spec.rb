@@ -60,7 +60,7 @@ describe Verification::Management::Email do
       allow(Devise.token_generator).to(receive(:generate)
                                        .with(User, :email_verification_token)
                                        .and_return(["1", "2"]))
-      allow(Mailer).to receive(:email_verification).with(user, user.email, "2", "1", "1234").and_return(mail)
+      allow(Mailer).to receive(:email_verification).with(user, user.email, "1", "1", "1234").and_return(mail)
 
       validation.save!
 

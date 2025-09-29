@@ -3,6 +3,8 @@ require "rails_helper"
 describe "Users" do
   context "Regular authentication" do
     context "Sign up" do
+      include ActiveSupport::Testing::TimeHelpers
+
       scenario "Success" do
         message = "You have been sent a message containing a verification link. " \
                   "Please click on this link to activate your account."
@@ -22,6 +24,17 @@ describe "Users" do
         confirm_email
 
         expect(page).to have_content "Your account has been confirmed."
+      end
+
+      scenario "confirmation link is expired" do
+        raw_token, db_token = Devise.token_generator.generate(User, :confirmation_token)
+        user = create(:user)
+        user.update!(confirmation_token: db_token, confirmed_at: nil, confirmation_sent_at: 4.days.ago)
+
+        visit user_confirmation_path(confirmation_token: raw_token)
+
+        expect(page).to have_content "Re-send confirmation instructions"
+        expect(user.reload.confirmed?).to be(false)
       end
 
       scenario "Errors on sign up" do
