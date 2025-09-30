@@ -173,13 +173,25 @@
   .quiz-header {
     margin-bottom: $line-height;
 
+    @include breakpoint(medium) {
+      display: flex;
+
+      > * {
+        @include grid-column-gutter;
+      }
+
+      .quiz-title {
+        flex-basis: 75%;
+      }
+
+      .quiz-next {
+        flex-basis: 25%;
+      }
+    }
+
     .quiz-title,
     .quiz-next {
       padding: $line-height;
-
-      @include breakpoint(medium) {
-        height: $line-height * 4;
-      }
     }
 
     .quiz-title {
@@ -200,16 +212,15 @@
     }
 
     .quiz-next-link {
-      display: block;
+      @include anchor-color;
 
       &:hover,
       &:active {
-        text-decoration: none;
+        @include anchor-color-hover;
       }
     }
 
     .quiz-next {
-      @include brand-color;
       background: #ccdbe5;
       font-size: $small-font-size;
       font-weight: bold;
@@ -219,12 +230,6 @@
 
       .icon-angle-right {
         vertical-align: middle;
-      }
-
-      &:hover,
-      &:active {
-        @extend %brand-background;
-        text-decoration: none;
       }
     }
   }
@@ -247,7 +252,7 @@
       display: inline-block;
       margin-bottom: calc($line-height / 2);
       margin-right: $line-height;
-      padding: calc($line-height / 2)  $line-height * 2;
+      padding: calc($line-height / 2) $line-height * 2;
       position: relative;
     }
 
