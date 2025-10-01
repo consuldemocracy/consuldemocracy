@@ -68,5 +68,24 @@ describe Sensemaker::Job do
         expect(job.errored?).to be false
       end
     end
+
+    describe "#has_output?" do
+      it "returns true when persisted_output is present and file exists" do
+        job.persisted_output = "/path/to/existing/file.txt"
+        allow(File).to receive(:exist?).with("/path/to/existing/file.txt").and_return(true)
+        expect(job.has_output?).to be true
+      end
+
+      it "returns false when persisted_output is nil" do
+        job.persisted_output = nil
+        expect(job.has_output?).to be false
+      end
+
+      it "returns false when persisted_output is present but file does not exist" do
+        job.persisted_output = "/path/to/nonexistent/file.txt"
+        allow(File).to receive(:exist?).with("/path/to/nonexistent/file.txt").and_return(false)
+        expect(job.has_output?).to be false
+      end
+    end
   end
 end

@@ -246,7 +246,6 @@ module Sensemaker
         return if execute_script.blank?
 
         process_output
-        job.update!(finished_at: Time.current)
       rescue Exception => e
         handle_error(e)
         raise e
@@ -301,39 +300,14 @@ module Sensemaker
           prepare_with_categorization_job
         elsif job.input_file.blank? && job.script.eql?("single-html-build.js")
           prepare_with_advanced_runner_job
-        else
+        elsif job.input_file.blank?
           exporter = Sensemaker::CsvExporter.new(job.commentable)
           exporter.export_to_csv(input_file)
         end
 
-        filter_zero_vote_comments_from_csv(input_file) if job.script.eql?("advanced_runner.ts")
-      end
-
-      def filter_zero_vote_comments_from_csv(csv_file_path)
-        return unless File.exist?(csv_file_path)
-
-        # Read the CSV and filter out rows with zero votes
-        filtered_rows = []
-        CSV.foreach(csv_file_path, headers: true) do |row|
-          agrees = (row["agrees"] || 0).to_i
-          disagrees = (row["disagrees"] || 0).to_i
-          passes = (row["passes"] || 0).to_i
-
-          # Only include rows that have at least one vote
-          if agrees > 0 || disagrees > 0 || passes > 0
-            filtered_rows << row
-          end
+        if job.script.eql?("advanced_runner.ts")
+          Sensemaker::CsvExporter.filter_zero_vote_comments_from_csv(input_file)
         end
-
-        # Write the filtered data back to the same file
-        CSV.open(csv_file_path, "w", write_headers: true,
-                                     headers: ["comment-id", "comment_text", "agrees", "disagrees", "passes", "author-id", "topics"]) do |csv|
-          filtered_rows.each do |row|
-            csv << row
-          end
-        end
-
-        Rails.logger.debug("Filtered CSV: #{filtered_rows.length} comments with votes (removed zero-vote comments)")
       end
 
       def check_dependencies?
@@ -423,15 +397,15 @@ module Sensemaker
         end
 
         if File.exist?(path_to_check)
-          # Process the output file - in a real implementation, this would
-          # parse the output and potentially store results in the database OR just check it was ok
-          # For now, just update the Sensemaker::Info record
-          sensemaker_info = Sensemaker::Info.find_or_create_by!(kind: "categorization",
-                                                                commentable_type: job.commentable_type,
-                                                                commentable_id: job.commentable_id)
-          sensemaker_info.update!(generated_at: job.started_at, script: job.script)
+          if job.script == "single-html-build.js"
+            final_output_path = "#{self.class.sensemaker_data_folder}/report-#{job.id}.html"
+            FileUtils.cp(path_to_check, final_output_path)
+            job.update!(finished_at: Time.current, persisted_output: final_output_path)
+          else
+            job.update!(finished_at: Time.current, persisted_output: path_to_check)
+          end
 
-          sensemaker_info
+          true
         else
           job.update!(finished_at: Time.current, error: "Output file not found")
           nil

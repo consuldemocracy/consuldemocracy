@@ -36,6 +36,10 @@ module Sensemaker
       error.present?
     end
 
+    def has_output?
+      persisted_output.present? && File.exist?(persisted_output)
+    end
+
     def status
       if errored?
         "Failed"
@@ -50,6 +54,10 @@ module Sensemaker
 
     def self.unfinished
       where(finished_at: nil)
+    end
+
+    def self.successful
+      where(error: nil).where.not(finished_at: nil)
     end
   end
 end

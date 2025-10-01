@@ -46,7 +46,11 @@ class Admin::SensemakerJobsController < Admin::BaseController
     valid_params.merge!(user: current_user)
     @sensemaker_job = Sensemaker::Job.create!(valid_params)
 
-    Sensemaker::JobRunner.new(@sensemaker_job).run
+    if Rails.env.test?
+      Sensemaker::JobRunner.new(@sensemaker_job).run_synchronously
+    else
+      Sensemaker::JobRunner.new(@sensemaker_job).run
+    end
 
     redirect_to admin_sensemaker_jobs_path,
                 notice: t("admin.sensemaker.script_info")
@@ -94,9 +98,9 @@ class Admin::SensemakerJobsController < Admin::BaseController
 
   def download
     @sensemaker_job = Sensemaker::Job.find(params[:id])
-    job_runner = Sensemaker::JobRunner.new(@sensemaker_job)
-    if File.exist?(job_runner.output_file)
-      send_file job_runner.output_file, filename: job_runner.output_file_name
+    if File.exist?(@sensemaker_job.persisted_output)
+      filename = File.basename(@sensemaker_job.persisted_output)
+      send_file @sensemaker_job.persisted_output, filename: filename
     else
       redirect_to admin_sensemaker_jobs_path,
                   alert: t("admin.sensemaker.notice.output_file_not_found")

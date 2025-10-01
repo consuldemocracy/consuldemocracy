@@ -30,15 +30,16 @@ describe Sensemaker::JobRunner do
       allow(service).to receive_messages(check_dependencies?: true, project_id: "sensemaker-466109")
     end
 
-    it "runs the script and processes the output" do
-      allow(service).to receive(:prepare_input_data)
+    it "runs the complete workflow successfully" do
+      # Set up real file system mocks
+      allow(File).to receive(:exist?).and_return(true)
+      allow(service).to receive(:system).and_return(true)
 
-      expect(service).to receive(:execute_script).and_return(true)
-      expect(service).to receive(:process_output)
-
+      # Let it run the real workflow
       service.run
 
       job.reload
+      expect(job.started_at).to be_present
       expect(job.finished_at).to be_present
     end
 
@@ -327,23 +328,35 @@ describe Sensemaker::JobRunner do
       allow(File).to receive(:exist?).and_return(true)
     end
 
-    it "creates a Sensemaker::Info record when the output file exists" do
+    it "returns true and sets persisted_output when the output file exists" do
       # Mock the File.exist? method to return true for the output file
       allow(File).to receive(:exist?).with(service.output_file).and_return(true)
 
       result = service.send(:process_output)
 
-      expect(result).to be_present
+      expect(result).to be true
 
-      # Check that a Sensemaker::Info record was created
-      info = Sensemaker::Info.find_by(
-        kind: "categorization",
-        commentable_type: job.commentable_type,
-        commentable_id: job.commentable_id
-      )
-      expect(info).to be_present
-      expect(info.script).to eq(job.script)
-      expect(info.generated_at).to eq(job.started_at)
+      # Check that persisted_output is set to the output file path
+      job.reload
+      expect(job.persisted_output).to eq(service.output_file)
+    end
+
+    it "sets persisted_output to the copied report file for single-html-build.js script" do
+      job.update!(script: "single-html-build.js")
+      service = Sensemaker::JobRunner.new(job)
+
+      # Mock the File.exist? method to return true for the output file
+      allow(File).to receive(:exist?).with(service.output_file).and_return(true)
+      allow(FileUtils).to receive(:cp)
+
+      result = service.send(:process_output)
+
+      expect(result).to be true
+
+      # Check that persisted_output is set to the final report path
+      job.reload
+      expected_path = "#{Sensemaker::JobRunner.sensemaker_data_folder}/report-#{job.id}.html"
+      expect(job.persisted_output).to eq(expected_path)
     end
 
     it "returns nil and updates the job when the output file does not exist" do
@@ -461,96 +474,6 @@ describe Sensemaker::JobRunner do
     end
   end
 
-  describe "#filter_zero_vote_comments_from_csv" do
-    let(:service) { Sensemaker::JobRunner.new(job) }
-    let(:csv_file_path) { "/tmp/test-categorization-output.csv" }
-    let(:temp_csv_file) { Tempfile.new(["test-categorization-output", ".csv"]) }
-
-    before do
-      # Create a temporary CSV file with test data
-      temp_csv_file.write("comment-id,comment_text,agrees,disagrees,passes,author-id,topics\n")
-      temp_csv_file.write("comment_1,First comment,5,2,1,user_1,Transportation:PublicTransit\n")
-      temp_csv_file.write("comment_2,Second comment,0,0,0,user_2,Transportation:Parking\n")
-      temp_csv_file.write("comment_3,Third comment,3,0,0,user_3,Technology:Internet\n")
-      temp_csv_file.write("comment_4,Fourth comment,0,4,0,user_4,Transportation:Cycling\n")
-      temp_csv_file.write("comment_5,Fifth comment,0,0,2,user_5,Technology:Mobile\n")
-      temp_csv_file.write("comment_6,Sixth comment,0,0,0,user_6,Transportation:Walking\n")
-      temp_csv_file.close
-
-      # Copy the temp file to our test path
-      FileUtils.cp(temp_csv_file.path, csv_file_path)
-    end
-
-    after do
-      temp_csv_file.unlink
-      FileUtils.rm_f(csv_file_path)
-    end
-
-    it "preserves all columns in the filtered CSV" do
-      service.send(:filter_zero_vote_comments_from_csv, csv_file_path)
-
-      filtered_data = CSV.read(csv_file_path, headers: true)
-      first_row = filtered_data.first
-
-      # Check that all expected columns are present
-      expect(first_row.headers).to include("comment-id", "comment_text", "agrees", "disagrees", "passes",
-                                           "author-id", "topics")
-    end
-
-    it "preserves the topics column from categorization" do
-      service.send(:filter_zero_vote_comments_from_csv, csv_file_path)
-
-      filtered_data = CSV.read(csv_file_path, headers: true)
-      topics = filtered_data.map { |row| row["topics"] }
-
-      expect(topics).to include("Transportation:PublicTransit", "Technology:Internet",
-                                "Transportation:Cycling", "Technology:Mobile")
-    end
-
-    it "filters out all zero votes" do
-      # Create a new temp file for this test
-      temp_file = Tempfile.new(["test-pass", ".csv"])
-      temp_file.write("comment-id,comment_text,agrees,disagrees,passes,author-id,topics\n")
-      temp_file.write("comment_pass,Pass only,0,0,1,user_1,Transportation:PublicTransit\n")
-      temp_file.write("comment_disagree,Disagree only,0,2,0,user_1,Transportation:PublicTransit\n")
-      temp_file.write("comment_zero,Zero votes,0,0,0,user_2,Transportation:Parking\n")
-      temp_file.close
-      FileUtils.cp(temp_file.path, csv_file_path)
-
-      service.send(:filter_zero_vote_comments_from_csv, csv_file_path)
-
-      filtered_data = CSV.read(csv_file_path, headers: true)
-      expect(filtered_data.length).to eq(2)
-      expect(filtered_data.first["comment-id"]).to eq("comment_pass")
-
-      temp_file.unlink
-    end
-
-    it "handles empty CSV files gracefully" do
-      # Create an empty CSV file
-      temp_file = Tempfile.new(["test-pass", ".csv"])
-      temp_file.write("comment-id,comment_text,agrees,disagrees,passes,author-id,topics\n")
-      temp_file.close
-      FileUtils.cp(temp_file.path, csv_file_path)
-
-      expect { service.send(:filter_zero_vote_comments_from_csv, csv_file_path) }.not_to raise_error
-
-      filtered_data = CSV.read(csv_file_path, headers: true)
-      expect(filtered_data.length).to eq(0)
-
-      temp_file.unlink
-    end
-
-    it "returns early if the CSV file does not exist" do
-      non_existent_file = "/tmp/non-existent-file.csv"
-
-      expect(File).to receive(:exist?).with(non_existent_file).and_return(false)
-      expect(CSV).not_to receive(:foreach)
-
-      service.send(:filter_zero_vote_comments_from_csv, non_existent_file)
-    end
-  end
-
   describe "#prepare_input_data" do
     let(:service) { Sensemaker::JobRunner.new(job) }
     let(:mock_exporter) { instance_double(Sensemaker::CsvExporter) }
@@ -589,8 +512,8 @@ describe Sensemaker::JobRunner do
         job.input_file = "/tmp/categorization-output.csv"
       end
 
-      it "calls filter_zero_vote_comments_from_csv" do
-        expect(service).to receive(:filter_zero_vote_comments_from_csv).with(input_file_path)
+      it "calls CsvExporter.filter_zero_vote_comments_from_csv" do
+        expect(Sensemaker::CsvExporter).to receive(:filter_zero_vote_comments_from_csv).with(input_file_path)
         service.send(:prepare_input_data)
       end
     end

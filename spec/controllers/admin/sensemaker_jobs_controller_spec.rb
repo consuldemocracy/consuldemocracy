@@ -68,7 +68,11 @@ describe Admin::SensemakerJobsController do
     end
 
     it "creates a new sensemaker job and runs it" do
-      expect(Sensemaker::JobRunner).to receive(:new).and_return(double(run: true))
+      # Mock external dependencies to allow the real workflow to run
+      allow_any_instance_of(Sensemaker::JobRunner).to receive(:check_dependencies?).and_return(false)
+      allow_any_instance_of(Sensemaker::JobRunner).to receive(:prepare_input_data)
+      allow_any_instance_of(Sensemaker::JobRunner).to receive(:execute_script).and_return("")
+      allow_any_instance_of(Sensemaker::JobRunner).to receive(:process_output)
 
       expect do
         post :create, params: valid_params
@@ -82,7 +86,7 @@ describe Admin::SensemakerJobsController do
     end
 
     it "redirects to index with success notice" do
-      allow(Sensemaker::JobRunner).to receive(:new).and_return(double(run: true))
+      allow(Sensemaker::JobRunner).to receive(:new).and_return(double(run_synchronously: true))
 
       post :create, params: valid_params
 
