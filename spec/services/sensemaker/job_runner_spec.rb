@@ -233,7 +233,8 @@ describe Sensemaker::JobRunner do
 
       job.reload
       expect(job.finished_at).to be_present
-      expect(job.error).to eq("Error output")
+      expect(job.error).to include("Command:")
+      expect(job.error).to include("Error output")
     end
   end
 

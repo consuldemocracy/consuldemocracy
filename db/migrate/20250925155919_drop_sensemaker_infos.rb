@@ -13,8 +13,10 @@ class DropSensemakerInfos < ActiveRecord::Migration[7.1]
       t.datetime :created_at, null: false
       t.datetime :updated_at, null: false
 
-      t.index [:commentable_type, :commentable_id], name: "index_sensemaker_infos_on_commentable_type_and_commentable_id"
-      t.index [:kind, :commentable_type, :commentable_id], name: "index_sensemaker_infos_on_kind_and_commentable", unique: true
+      t.index [:commentable_type, :commentable_id],
+              name: "index_sensemaker_infos_on_commentable_type_and_commentable_id"
+      t.index [:kind, :commentable_type, :commentable_id],
+              name: "index_sensemaker_infos_on_kind_and_commentable", unique: true
     end
   end
 end
