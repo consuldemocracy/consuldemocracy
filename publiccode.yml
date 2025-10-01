@@ -1,0 +1,125 @@
+publiccodeYmlVersion: "0.4"
+
+name: Consul Democracy
+url: "https://github.com/consuldemocracy/consuldemocracy.git"
+softwareVersion: "2.3.1"
+releaseDate: "2025-04-08"
+logo: "https://github.com/consuldemocracy/consuldemocracy/blob/master/public/consul_logo.svg"
+
+platforms:
+  - web
+
+categories:
+  - budgeting
+  - collaboration
+  - communications
+  - content-management
+  - digital-citizenship
+  - online-community
+  - project-collaboration
+  - regulations-and-directives
+  - survey
+  - web-collaboration
+
+developmentStatus: stable
+
+softwareType: "standalone/web"
+
+description:
+  en:
+    shortDescription: >
+       Complete citizen participation tool platform made in Ruby on Rails
+       for an open, transparent and democratic government.
+
+    longDescription: >
+      Consul Democracy is a Free and Open-Source software for digital and hybrid participation.
+      From 2016 onwards, governments and other public organizations from across the globe started using it, implementing one or
+      several of its main features or customizing the software further, allowed under the Affero GPL version 3 license.
+      Currently the CONSUL DEMOCRACY community consists of around 250 cities, regional governments, and regional and tech partners.
+      The Consul-project was originally developed for the Madrid City Government, and now is maintained by
+      the Consul Democracy Foundation and its community.
+
+    documentation: "https://docs.consuldemocracy.org/index/"
+
+    features:
+      - "Debates: Open up spaces for debate and discussion among citizens, invite opinions and ideas and pave the way for informed decision-making."
+      - "Citizen Proposals: Invite citizen proposals for the next strategic city plan or policy-making cycle, stimulate debate and see which enjoy the most support."
+      - "Voting Polls: Successfully collected proposals or ideas? Wrap up the participatory process by letting the most vibrant topics go to a vote."
+      - "Participatory Budgeting: Create a direct democratic process around spending (a part of) the government’s budget next year and guide the process in a transparent way."
+      - "Collaborative Legislation: Empower citizens by collaboratively drafting legislation, project plans or any other texts that will affect their lives."
+      - "Sustainable Development Goals: Make the Sustainable Development Goals central to the citizen participation process by using our special SDG feature."
+      - "Multi-tenancy: Create two or more separate participation platforms for different institutions using one single installation with the multi-tenancy feature."
+    awards:
+      - 2025 Top rated participation platform (91/100) by People Powered
+      - 2024 Recognized as a Digital Public Good by the Digital Public Good Alliance
+      - 2020 Collaboration with the United Nations Development Programme (UNDP) on Sustainable Development Goals (SDG) module
+      - 2019 European Commission Sharing & Reuse Award in the category "Open source software with the biggest impact on businesses and citizens"
+      - 2019 Fukuoka Ruby Award
+      - 2018 United Nations Public Service Award
+
+legal:
+  license: AGPL-3.0-or-later
+  repoOwner: Consul Democracy Foundation
+
+maintenance:
+  type: "internal"
+
+  contacts:
+    - name: Lucía Luzuriaga
+    - name: Javier Martín
+    - name: Sebastià Roig
+
+localisation:
+  localisationReady: true
+  availableLanguages:
+    - ar
+    - bg
+    - bs
+    - ca
+    - cs
+    - da
+    - de
+    - el
+    - en
+    - es
+    - es-PE
+    - eu
+    - fa
+    - fr
+    - gd
+    - gl
+    - he
+    - hr
+    - id
+    - it
+    - ka
+    - ne
+    - nl
+    - oc
+    - pl
+    - pt
+    - pt-BR
+    - ro
+    - ru
+    - sl
+    - sq
+    - so
+    - sr
+    - sv
+    - tr
+    - uk
+    - ca-ES-valencia
+    - zh-CN
+    - zh-TW
+
+dependsOn:
+  open:
+    - name: Ruby
+      version: "3.3.8"
+    - name: Rails
+      version: "7.1.5.1"
+    - name: Node.js
+      version: "20.19.2"
+    - name: PostgreSQL
+      versionMin: "9.5"
+    - name: ImageMagick
