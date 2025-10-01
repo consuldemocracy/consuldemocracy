@@ -383,7 +383,8 @@ module Sensemaker
         else
           output = "Timeout: #{TIMEOUT} seconds\n#{output}" if result.eql?(124)
           output = output.truncate(20000)
-          job.update!(finished_at: Time.current, error: output)
+          error_message = "Command: #{command}\n\n#{output}"
+          job.update!(finished_at: Time.current, error: error_message)
           Rails.logger.error("Sensemaker::JobRunner error: #{output}")
           nil
         end

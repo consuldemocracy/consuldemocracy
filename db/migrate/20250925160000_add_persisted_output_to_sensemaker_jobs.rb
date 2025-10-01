@@ -3,6 +3,7 @@ class AddPersistedOutputToSensemakerJobs < ActiveRecord::Migration[7.1]
     add_column :sensemaker_jobs, :persisted_output, :string
 
     for job in Sensemaker::Job.all
+      next if job.persisted_output.present?
       job.update!(persisted_output: Sensemaker::JobRunner.new(job).output_file) if !job.errored? && job.finished?
     end
   end
