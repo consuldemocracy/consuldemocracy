@@ -46,4 +46,44 @@ RSpec.describe Poll::Question do
       end
     end
   end
+
+  describe "#options_total_votes" do
+    let!(:question) { create(:poll_question) }
+    let!(:option_yes) { create(:poll_question_option, question: question, title_en: "Yes", title_es: "Sí") }
+    let!(:option_no) { create(:poll_question_option, question: question, title_en: "No", title_es: "No") }
+
+    before do
+      create(:poll_answer, question: question, option: option_yes, answer: "Sí")
+      create(:poll_answer, question: question, option: option_yes, answer: "Yes")
+      create(:poll_answer, question: question, option: option_no, answer: "No")
+    end
+
+    it "includes answers in every language" do
+      expect(question.options_total_votes).to eq 3
+    end
+
+    it "includes partial results counted by option_id" do
+      booth_assignment = create(:poll_booth_assignment, poll: question.poll)
+      create(:poll_partial_result,
+             booth_assignment: booth_assignment,
+             question: question,
+             option: option_yes,
+             amount: 4)
+
+      expect(question.options_total_votes).to eq 7
+    end
+
+    it "does not include votes from other questions even with same answer text" do
+      other_question = create(:poll_question, poll: question.poll)
+      other_option_yes = create(:poll_question_option,
+                                question: other_question,
+                                title_en: "Yes",
+                                title_es: "Sí")
+
+      create(:poll_partial_result, question: other_question, option: other_option_yes, amount: 4)
+      create(:poll_answer, question: other_question, option: other_option_yes, answer: "Yes")
+
+      expect(question.options_total_votes).to eq 3
+    end
+  end
 end

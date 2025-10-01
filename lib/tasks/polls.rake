@@ -107,4 +107,95 @@ namespace :polls do
       end
     end
   end
+
+  desc "Removes duplicate poll partial results"
+  task remove_duplicate_partial_results: :environment do
+    logger = ApplicationLogger.new
+    duplicate_records_logger = DuplicateRecordsLogger.new
+
+    logger.info "Removing duplicate partial results in polls"
+
+    Tenant.run_on_each do
+      Poll::Question.find_each do |question|
+        manageable_titles = PollPartialResultOptionFinder.new(question).manageable_choices.keys
+
+        question.question_options.each do |option|
+          titles = option.translations.where(title: manageable_titles).select(:title).distinct
+
+          groups = question.partial_results.where(option_id: nil, answer: titles)
+                           .select(:booth_assignment_id, :date)
+                           .group(:booth_assignment_id, :date)
+                           .having("count(*) > 1")
+                           .pluck(:booth_assignment_id, :date)
+
+          groups.each do |booth_assignment_id, date|
+            partial_results = question.partial_results.where(
+              option_id: nil,
+              booth_assignment_id: booth_assignment_id,
+              date: date,
+              answer: titles
+            )
+
+            tenant_info = " on tenant #{Tenant.current_schema}" unless Tenant.default?
+
+            amounts_by_id = partial_results.pluck(:id, :amount).to_h
+            if amounts_by_id.values.uniq.size > 1
+              log_message = "Found duplicate partial results with different amounts " \
+                            "for question_id #{question.id}, " \
+                            "booth_assignment_id #{booth_assignment_id} " \
+                            "and date #{date}. " \
+                            "Keeping ID #{partial_results.first.id} " \
+                            "with amount #{partial_results.first.amount}. " \
+                            "Deleting partial results with these IDs and amounts: " \
+                            "#{amounts_by_id.except(partial_results.first.id)}" + tenant_info.to_s
+              logger.info(log_message)
+              duplicate_records_logger.info(log_message)
+            end
+
+            partial_results.excluding(partial_results.first).each do |partial_result|
+              partial_result.delete
+
+              log_message = "Deleted duplicate record with ID #{partial_result.id} " \
+                            "from the #{Poll::PartialResult.table_name} table " \
+                            "with question_id #{question.id}, " \
+                            "booth_assignment_id #{booth_assignment_id} " \
+                            "and date #{date}" + tenant_info.to_s
+              logger.info(log_message)
+              duplicate_records_logger.info(log_message)
+            end
+          end
+        end
+      end
+    end
+  end
+
+  desc "populates the poll_partial_results option_id column"
+  task populate_partial_results_option_id: :remove_duplicate_partial_results do
+    logger = ApplicationLogger.new
+    logger.info "Updating option_id column in poll_partial_results"
+
+    Tenant.run_on_each do
+      Poll::Question.find_each do |question|
+        option_finder = PollPartialResultOptionFinder.new(question)
+
+        option_finder.manageable_choices.each do |choice, ids|
+          question.partial_results.where(option_id: nil, answer: choice).update_all(option_id: ids.first)
+        end
+
+        option_finder.unmanageable_choices.each do |choice, ids|
+          tenant_info = " on tenant #{Tenant.current_schema}" unless Tenant.default?
+
+          if ids.count == 0
+            logger.warn "Skipping poll_partial_results with the text \"#{choice}\" for the poll_question " \
+                        "with ID #{question.id}. This question has no poll_question_answers " \
+                        "containing the text \"#{choice}\"" + tenant_info.to_s
+          else
+            logger.warn "Skipping poll_partial_results with the text \"#{choice}\" for the poll_question " \
+                        "with ID #{question.id}. The text \"#{choice}\" could refer to any of these " \
+                        "IDs in the poll_question_answers table: #{ids.join(", ")}" + tenant_info.to_s
+          end
+        end
+      end
+    end
+  end
 end

@@ -226,7 +226,14 @@ FactoryBot.define do
     question factory: [:poll_question, :yes_no]
     author factory: :user
     origin { "web" }
-    answer { question.question_options.sample.title }
+    option do
+      if answer
+        question.question_options.find_by(title: answer)
+      else
+        question.question_options.sample
+      end
+    end
+    after(:build) { |poll_partial_result| poll_partial_result.answer ||= poll_partial_result.option&.title }
   end
 
   factory :poll_recount, class: "Poll::Recount" do

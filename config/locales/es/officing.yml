@@ -41,7 +41,6 @@ es:
     results:
       flash:
         create: "Datos guardados"
-        error_create: "Resultados NO añadidos. Error en los datos"
         error_wrong_booth: "Urna incorrecta. Resultados NO guardados."
       new:
         title: "%{poll} - Añadir resultados"
@@ -58,8 +57,6 @@ es:
       index:
         no_results: "No hay resultados"
         results: Resultados
-        table_answer: Respuesta
-        table_votes: Votos
         table_whites: "Papeletas totalmente en blanco"
         table_nulls: "Papeletas nulas"
         table_total: "Papeletas válidas"

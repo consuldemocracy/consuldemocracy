@@ -12,6 +12,7 @@ class Poll::Question::Option < ApplicationRecord
 
   belongs_to :question, class_name: "Poll::Question"
   has_many :answers, class_name: "Poll::Answer", dependent: :nullify
+  has_many :partial_results, class_name: "Poll::PartialResult", dependent: :nullify
   has_many :videos, class_name: "Poll::Question::Option::Video",
                     dependent: :destroy,
                     foreign_key: "answer_id",
@@ -39,8 +40,7 @@ class Poll::Question::Option < ApplicationRecord
   end
 
   def total_votes
-    Poll::Answer.where(question_id: question, answer: title).count +
-      ::Poll::PartialResult.where(question: question).where(answer: title).sum(:amount)
+    answers.count + partial_results.sum(:amount)
   end
 
   def total_votes_percentage
@@ -49,5 +49,9 @@ class Poll::Question::Option < ApplicationRecord
 
   def with_read_more?
     description.present? || images.any? || documents.any? || videos.any?
+  end
+
+  def possible_answers
+    translations.pluck(:title)
   end
 end

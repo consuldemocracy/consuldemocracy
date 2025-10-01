@@ -13,7 +13,11 @@
 
   <% if @partial_results.present? %>
     <%= render "recount", resource: @poll %>
-    <%= render "result" %>
+
+    <% @poll.questions.each do |question| %>
+      <%= render Admin::Poll::Results::QuestionComponent.new(question, @partial_results) %>
+    <% end %>
+
     <%= render "results_by_booth" %>
   <% end %>
 
