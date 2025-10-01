@@ -240,6 +240,14 @@ describe Sensemaker::JobRunner do
 
   describe "#build_command" do
     let(:service) { Sensemaker::JobRunner.new(job) }
+
+    before do
+      allow(File).to receive(:read).with(Sensemaker::JobRunner.key_file)
+                                   .and_return('{"project_id": "sensemaker-466109"}')
+      allow(File).to receive(:read).with(service.key_file)
+                                   .and_return('{"project_id": "sensemaker-466109"}')
+    end
+
     it "returns the correct command for the categorization runner" do
       command = service.build_command
       expect(command).to include("npx ts-node #{service.script_file}")
