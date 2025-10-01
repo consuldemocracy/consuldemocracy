@@ -8,7 +8,7 @@ module Sensemaker
       "runner.ts",
       "advanced_runner.ts",
       "categorization_runner.ts",
-      "site-build.ts"
+      "single-html-build.js"
     ].freeze
 
     def initialize(job)
@@ -53,7 +53,7 @@ module Sensemaker
         job.input_file
       elsif job.script == "advanced_runner.ts"
         "#{self.class.sensemaker_data_folder}/categorization-output-#{job.id}.csv"
-      elsif job.script == "site-build.ts"
+      elsif job.script == "single-html-build.js"
         "#{self.class.sensemaker_data_folder}/advanced-output"
       else
         "#{self.class.sensemaker_data_folder}/input-#{job.id}.csv"
@@ -68,24 +68,24 @@ module Sensemaker
         "output-#{job.id}" # advanced runner has multiple output files
       when "categorization_runner.ts"
         "categorization-output-#{job.id}.csv"
-      when "site-build.ts"
-        "summary.json"
+      when "single-html-build.js"
+        "report.html"
       else
         "output-#{job.id}.csv"
       end
     end
 
     def output_file
-      if job.script == "site-build.ts"
-        "#{self.class.visualization_folder}/data/#{output_file_name}"
+      if job.script == "single-html-build.js"
+        "#{self.class.visualization_folder}/dist/bundled/report.html"
       else
         "#{self.class.sensemaker_data_folder}/#{output_file_name}"
       end
     end
 
     def script_file
-      if job.script == "site-build.ts"
-        "#{self.class.visualization_folder}/site-build.ts"
+      if job.script == "single-html-build.js"
+        "#{self.class.visualization_folder}/single-html-build.js"
       else
         "#{self.class.sensemaker_folder}/library/runner-cli/#{job.script}"
       end
@@ -207,13 +207,14 @@ module Sensemaker
     end
 
     def build_command
-      if job.script == "site-build.ts"
+      if job.script == "single-html-build.js"
         # title = job.commentable.respond_to?(:title) ? job.commentable.title : job.commentable.name
-        return %Q(npx ts-node #{script_file} \
+        return %Q(npx ts-node site-build.ts \
                  --topics #{input_file}-topic-stats.json \
                  --summary #{input_file}-summary.json \
                  --comments #{input_file}-comments-with-scores.json \
-                 --reportTitle "Report for #{job.commentable.class.name} #{job.commentable.id}")
+                 --reportTitle "Report for #{job.commentable.class.name} #{job.commentable.id}" && \
+                 npx ts-node single-html-build.js)
       end
 
       model_name = Tenant.current_secrets.sensemaker_model_name
@@ -298,12 +299,41 @@ module Sensemaker
 
         if job.input_file.blank? && job.script.eql?("advanced_runner.ts")
           prepare_with_categorization_job
-        elsif job.input_file.blank? && job.script.eql?("site-build.ts")
+        elsif job.input_file.blank? && job.script.eql?("single-html-build.js")
           prepare_with_advanced_runner_job
         else
           exporter = Sensemaker::CsvExporter.new(job.commentable)
           exporter.export_to_csv(input_file)
         end
+
+        filter_zero_vote_comments_from_csv(input_file) if job.script.eql?("advanced_runner.ts")
+      end
+
+      def filter_zero_vote_comments_from_csv(csv_file_path)
+        return unless File.exist?(csv_file_path)
+
+        # Read the CSV and filter out rows with zero votes
+        filtered_rows = []
+        CSV.foreach(csv_file_path, headers: true) do |row|
+          agrees = (row["agrees"] || 0).to_i
+          disagrees = (row["disagrees"] || 0).to_i
+          passes = (row["passes"] || 0).to_i
+
+          # Only include rows that have at least one vote
+          if agrees > 0 || disagrees > 0 || passes > 0
+            filtered_rows << row
+          end
+        end
+
+        # Write the filtered data back to the same file
+        CSV.open(csv_file_path, "w", write_headers: true,
+                                     headers: ["comment-id", "comment_text", "agrees", "disagrees", "passes", "author-id", "topics"]) do |csv|
+          filtered_rows.each do |row|
+            csv << row
+          end
+        end
+
+        Rails.logger.debug("Filtered CSV: #{filtered_rows.length} comments with votes (removed zero-vote comments)")
       end
 
       def check_dependencies?
@@ -329,7 +359,7 @@ module Sensemaker
                                          description: "Sensemaker data folder")
 
         # Input file might just be a base name so we need to handle that case
-        if job.script == "site-build.ts"
+        if job.script == "single-html-build.js"
           return false unless file_exists?(self.class.visualization_folder,
                                            description: "Visualization folder")
           return false unless file_exists?(input_file + "-topic-stats.json",
@@ -364,21 +394,21 @@ module Sensemaker
       end
 
       def execute_script
-        command = build_command
-        Rails.logger.debug("Executing script: #{command}")
-
-        if job.script == "site-build.ts"
-          output = `cd #{self.class.visualization_folder} && timeout #{TIMEOUT} #{command} 2>&1`
+        if job.script == "single-html-build.js"
+          command = "cd #{self.class.visualization_folder} && timeout #{TIMEOUT} #{build_command}"
         else
-          output = `cd #{self.class.sensemaker_folder} && timeout #{TIMEOUT} #{command} 2>&1`
+          command = "cd #{self.class.sensemaker_folder} && timeout #{TIMEOUT} #{build_command}"
         end
+        Rails.logger.debug("Executing script: #{command}")
+        output = `#{command} 2>&1`
 
         result = process_exit_status
-
         if result.eql?(0)
+          Rails.logger.debug("Script executed successfully: #{output}")
           output
         else
           output = "Timeout: #{TIMEOUT} seconds\n#{output}" if result.eql?(124)
+          output = output.truncate(20000)
           job.update!(finished_at: Time.current, error: output)
           Rails.logger.error("Sensemaker::JobRunner error: #{output}")
           nil

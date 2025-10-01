@@ -16,7 +16,7 @@
     <div class="target-search-group">
       <div class="select-wrapper">
         <% options = @query_types.map { |type| [I18n.t("activerecord.models.#{type.underscore}.other"), type] } %>
-        <%= select_tag :query_type, options_for_select(options, params[:query_type] || "Legislation::Process" ) %>
+        <%= select_tag :query_type, options_for_select(options, params[:query_type] || "Legislation::Process") %>
       </div>
 
       <%= text_field_tag :query, params[:query], placeholder: "Search for a target..." %>
@@ -27,7 +27,7 @@
     <details open>
       <summary>Search results</summary>
       <ul class="target-search-results">
-        <%= content_tag :span, "Results will appear here", class: "small" unless params[:query].present? %>
+        <%= content_tag :span, "Results will appear here", class: "small" if params[:query].blank? %>
 
         <% @search_results.each do |result_group| %>
           <li class="result-group">
@@ -74,9 +74,9 @@
                       data: { remote: true, temp_disable: true, disable_with: false },
                       class: "button" %>
           <%= f.submit "Download input CSV",
-                      type: "submit",
-                      formaction: preview_admin_sensemaker_jobs_path(format: :csv),
-                      class: "button", data: { temp_disable: true, disable_with: false } %>
+                       type: "submit",
+                       formaction: preview_admin_sensemaker_jobs_path(format: :csv),
+                       class: "button", data: { temp_disable: true, disable_with: false } %>
           <%= f.submit "Run", data: { temp_disable: true, disable_with: false } %>
         </div>
       </div>
