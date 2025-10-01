@@ -1752,6 +1752,7 @@ en:
         local_census_records:
           no_records_found: No records found.
     sensemaker:
+      script_info: "The script has been queued successfully."
       cancel: "Cancel operation"
       cancel_alert: "This action will cancel the current script and it will be necessary to run the script again."
       comments_summary: "Comments summary"
