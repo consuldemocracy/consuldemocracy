@@ -92,19 +92,19 @@ describe User do
   end
 
   describe "preferences" do
-    describe "email_on_comment" do
+    describe "#email_on_comment" do
       it "is false by default" do
         expect(subject.email_on_comment).to be false
       end
     end
 
-    describe "email_on_comment_reply" do
+    describe "#email_on_comment_reply" do
       it "is false by default" do
         expect(subject.email_on_comment_reply).to be false
       end
     end
 
-    describe "subscription_to_website_newsletter" do
+    describe "#newsletter" do
       it "is true by default when the consent for notifications setting is disabled" do
         Setting["feature.gdpr.require_consent_for_notifications"] = false
 
@@ -118,7 +118,7 @@ describe User do
       end
     end
 
-    describe "email_digest" do
+    describe "#email_digest" do
       it "is true by default when the consent for notifications setting is disabled" do
         Setting["feature.gdpr.require_consent_for_notifications"] = false
 
@@ -132,7 +132,7 @@ describe User do
       end
     end
 
-    describe "email_on_direct_message" do
+    describe "#email_on_direct_message" do
       it "is true by default when the consent for notifications setting is disabled" do
         Setting["feature.gdpr.require_consent_for_notifications"] = false
 
@@ -146,7 +146,7 @@ describe User do
       end
     end
 
-    describe "official_position_badge" do
+    describe "#official_position_badge" do
       it "is false by default" do
         expect(subject.official_position_badge).to be false
       end
