@@ -146,6 +146,20 @@ describe User do
       end
     end
 
+    describe "#public_activity" do
+      it "is true by default when the consent for notifications setting is disabled" do
+        Setting["feature.gdpr.require_consent_for_notifications"] = false
+
+        expect(build(:user).public_activity).to be true
+      end
+
+      it "is false by default when the consent for notifications setting is enabled" do
+        Setting["feature.gdpr.require_consent_for_notifications"] = true
+
+        expect(build(:user).public_activity).to be false
+      end
+    end
+
     describe "#recommended_debates" do
       it "is true by default when the consent for notifications setting is disabled" do
         Setting["feature.gdpr.require_consent_for_notifications"] = false

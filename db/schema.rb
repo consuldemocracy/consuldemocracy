@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_10_09_085327) do
+ActiveRecord::Schema[7.1].define(version: 2025_10_09_085528) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -1608,7 +1608,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_10_09_085327) do
     t.datetime "level_two_verified_at", precision: nil
     t.string "erase_reason"
     t.datetime "erased_at", precision: nil
-    t.boolean "public_activity", default: true
+    t.boolean "public_activity"
     t.boolean "newsletter"
     t.integer "notifications_count", default: 0
     t.boolean "registering_with_oauth", default: false
