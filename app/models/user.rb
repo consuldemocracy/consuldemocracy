@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   include Verification
   attribute :registering_from_web, default: false
-  %i[newsletter email_digest email_on_direct_message].each do |field|
+  %i[newsletter email_digest email_on_direct_message recommended_debates
+     recommended_proposals].each do |field|
     attribute field, :boolean, default: -> { !Setting["feature.gdpr.require_consent_for_notifications"] }
   end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_10_09_084919) do
+ActiveRecord::Schema[7.1].define(version: 2025_10_09_085327) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -1625,8 +1625,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_10_09_084919) do
     t.integer "failed_email_digests_count", default: 0
     t.text "former_users_data_log", default: ""
     t.boolean "public_interests", default: false
-    t.boolean "recommended_debates", default: true
-    t.boolean "recommended_proposals", default: true
+    t.boolean "recommended_debates"
+    t.boolean "recommended_proposals"
     t.string "subscriptions_token"
     t.integer "failed_attempts", default: 0, null: false
     t.datetime "locked_at", precision: nil

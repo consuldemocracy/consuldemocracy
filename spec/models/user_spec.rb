@@ -146,6 +146,34 @@ describe User do
       end
     end
 
+    describe "#recommended_debates" do
+      it "is true by default when the consent for notifications setting is disabled" do
+        Setting["feature.gdpr.require_consent_for_notifications"] = false
+
+        expect(build(:user).recommended_debates).to be true
+      end
+
+      it "is false by default when the consent for notifications setting is enabled" do
+        Setting["feature.gdpr.require_consent_for_notifications"] = true
+
+        expect(build(:user).recommended_debates).to be false
+      end
+    end
+
+    describe "#recommended_proposals" do
+      it "is true by default when the consent for notifications setting is disabled" do
+        Setting["feature.gdpr.require_consent_for_notifications"] = false
+
+        expect(build(:user).recommended_proposals).to be true
+      end
+
+      it "is false by default when the consent for notifications setting is enabled" do
+        Setting["feature.gdpr.require_consent_for_notifications"] = true
+
+        expect(build(:user).recommended_proposals).to be false
+      end
+    end
+
     describe "#official_position_badge" do
       it "is false by default" do
         expect(subject.official_position_badge).to be false
