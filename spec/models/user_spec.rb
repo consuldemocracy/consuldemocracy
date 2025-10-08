@@ -402,6 +402,26 @@ describe User do
       end
     end
 
+    describe ".newsletter" do
+      it "returns users subscribed to the newsletter" do
+        create(:user, newsletter: true, username: "Subscriber1")
+        create(:user, newsletter: true, username: "Subscriber2")
+        create(:user, newsletter: false, username: "NonSubscriber")
+
+        expect(User.newsletter.pluck(:username)).to eq ["Subscriber1", "Subscriber2"]
+      end
+    end
+
+    describe ".email_digest" do
+      it "returns users subscribed to email digests" do
+        create(:user, email_digest: true, username: "Digester1")
+        create(:user, email_digest: true, username: "Digester2")
+        create(:user, email_digest: false, username: "NonDigester")
+
+        expect(User.email_digest.pluck(:username)).to eq ["Digester1", "Digester2"]
+      end
+    end
+
     describe ".by_username_email_or_document_number" do
       let!(:larry) do
         create(:user, email: "larry@consul.dev", username: "Larry Bird", document_number: "12345678Z")
