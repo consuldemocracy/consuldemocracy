@@ -6,7 +6,7 @@ class Sensemaker::ReportComponent < ApplicationComponent
   end
 
   def render?
-    feature?(:sensemaker) && latest_successful_job.present?
+    feature?(:sensemaker) && latest_successful_job.present? && report_available?
   end
 
   def report_url
