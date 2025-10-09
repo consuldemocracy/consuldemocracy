@@ -25,7 +25,7 @@ describe Sensemaker::ReportComponent do
       after do
         # Clean up the test file
         test_file = Rails.root.join("tmp", "test-report.html")
-        FileUtils.rm_f(test_file) if File.exist?(test_file)
+        FileUtils.rm_f(test_file)
       end
 
       it "returns true" do
