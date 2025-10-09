@@ -149,9 +149,14 @@ describe Admin::SensemakerJobsController do
   end
 
   describe "POST #cancel" do
-    it "destroys all delayed jobs and unfinished sensemaker jobs" do
-      expect(Delayed::Job).to receive(:where).with(queue: "sensemaker").and_return(double(destroy_all: true))
-      expect(Sensemaker::Job).to receive(:unfinished).and_return(double(destroy_all: true))
+    it "destroys all delayed jobs and cancels running sensemaker jobs" do
+      expect(Delayed::Job).to receive(:where)
+        .with(queue: "sensemaker").and_return(double(destroy_all: true))
+
+      running_jobs_double = double("running_jobs")
+      expect(Sensemaker::Job).to receive(:running).and_return(running_jobs_double)
+      expect(running_jobs_double).to receive(:all).and_return([sensemaker_job])
+      expect(sensemaker_job).to receive(:cancel!)
 
       post :cancel
 

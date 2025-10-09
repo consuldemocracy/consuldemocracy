@@ -1,11 +1,7 @@
 class Admin::SensemakerJobsController < Admin::BaseController
   def index
-    @sensemaker_jobs = Sensemaker::Job.order(created_at: :desc)
-    @running_jobs = Sensemaker::Job.where.not(started_at: nil).where(finished_at: nil)
-    # TODO: It would be better to get these from the Delayed::Job table with the sensemaker queue
-    # @running_jobs = Delayed::Job.where(queue: "sensemaker").where(run_at: nil..Time.current)
-    # puts "Running jobs: #{@running_jobs.inspect}"
-    # NB - delayed_job_config.rb is set up to run jobs synchronoushly in development so this won't quite work
+    @running_jobs = Sensemaker::Job.running.order(created_at: :desc)
+    @sensemaker_jobs = Sensemaker::Job.where.not(id: @running_jobs.pluck(:id)).order(created_at: :desc)
   end
 
   def new
@@ -43,7 +39,7 @@ class Admin::SensemakerJobsController < Admin::BaseController
 
   def create
     valid_params = sensemaker_job_params.to_h
-    valid_params.merge!(user: current_user)
+    valid_params.merge!(user: current_user, started_at: Time.current)
     @sensemaker_job = Sensemaker::Job.create!(valid_params)
 
     if Rails.env.test?
@@ -109,7 +105,8 @@ class Admin::SensemakerJobsController < Admin::BaseController
 
   def cancel
     Delayed::Job.where(queue: "sensemaker").destroy_all
-    Sensemaker::Job.unfinished.destroy_all
+    running_jobs = Sensemaker::Job.running.all
+    running_jobs.each(&:cancel!)
 
     redirect_to admin_sensemaker_jobs_path,
                 notice: t("admin.sensemaker.notice.cancelled_jobs")

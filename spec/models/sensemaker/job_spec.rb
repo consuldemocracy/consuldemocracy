@@ -58,6 +58,22 @@ describe Sensemaker::Job do
       end
     end
 
+    describe "#cancelled?" do
+      it "returns true when finished_at is present and error is 'Cancelled'" do
+        job.finished_at = Time.current
+        job.error = "Cancelled"
+        expect(job.cancelled?).to be true
+      end
+    end
+
+    describe "cancel!" do
+      it "updates the job with finished_at and error 'Cancelled'" do
+        job.cancel!
+        expect(job.finished_at).to be_present
+        expect(job.error).to eq("Cancelled")
+      end
+    end
+
     describe "#errored?" do
       it "returns true when error is present" do
         job.error = "Some error occurred"

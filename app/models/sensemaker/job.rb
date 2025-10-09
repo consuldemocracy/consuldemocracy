@@ -41,24 +41,42 @@ module Sensemaker
       persisted_output.present? && File.exist?(persisted_output)
     end
 
+    def cancelled?
+      finished_at.present? && error.eql?("Cancelled")
+    end
+
     def status
-      if errored?
+      if cancelled?
+        "Cancelled"
+      elsif errored?
         "Failed"
       elsif finished?
         "Completed"
       elsif started?
         "Running"
       else
-        "Pending"
+        "Unstarted"
       end
     end
 
-    def self.unfinished
-      where(finished_at: nil)
+    def self.unstarted
+      where(started_at: nil).where(finished_at: nil)
+    end
+
+    def self.running
+      where.not(started_at: nil).where(finished_at: nil)
     end
 
     def self.successful
       where(error: nil).where.not(finished_at: nil)
+    end
+
+    def self.failed
+      where.not(error: nil).where.not(finished_at: nil)
+    end
+
+    def cancel!
+      update!(finished_at: Time.current, error: "Cancelled")
     end
 
     private
