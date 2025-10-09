@@ -49,3 +49,8 @@ en:
       
       topic:
         type: "Community Topic"
+    
+    analysis:
+      title: "Sensemaker Analysis"
+      description: "This %{subject} has been analysed using sensemaker tools."
+      view_report: "View Report"

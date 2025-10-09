@@ -1,0 +1,7 @@
+<div class="sidebar-divider"></div>
+<h2><%= analysis_title %></h2>
+<p><%= analysis_description %></p>
+
+<% if report_available? %>
+  <%= link_to view_report_text, report_url, class: "button small", target: "_blank" %>
+<% end %>
