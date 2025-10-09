@@ -23,33 +23,17 @@ en:
       
       debate:
         votes: "This debate has %{votes_up} votes for and %{votes_down} votes against"
-      
+
       legislation_question:
         process: "This question is part of the legislation process, \"%{process_title}\""
-        options_header: "Question Options:"
         responses_header: "Question Responses:"
         option: " - %{value} (%{answers_count} responses)"
-      
-      legislation_annotation:
-        quote: "Quote: \"%{quote}\""
-        context: "Context: %{context}"
-      
-      budget_investment:
-        price: "Price: %{price}"
-        feasibility: "Feasibility: %{feasibility}"
-        price_explanation: "Price Explanation: %{explanation}"
-        organization: "Organization: %{organization}"
-      
+
       poll:
-        period: "Poll Period: %{start_date} to %{end_date}"
-        geozone_restricted: "This poll is restricted to specific geographic areas"
         questions_header: "Questions and Responses:"
         question_title: "Q: %{title}:"
         question_option: " - %{title} (%{total_votes} responses)"
-      
-      topic:
-        type: "Community Topic"
-    
+
     analysis:
       title: "Sensemaker Analysis"
       description: "This %{subject} has been analysed using sensemaker tools."

@@ -315,6 +315,7 @@ namespace :admin do
       end
       post :preview, on: :collection
       delete :cancel, on: :collection
+      get :help, on: :collection
     end
 
     namespace :cookies do

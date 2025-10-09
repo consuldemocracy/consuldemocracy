@@ -49,7 +49,7 @@ class Admin::SensemakerJobsController < Admin::BaseController
     end
 
     redirect_to admin_sensemaker_jobs_path,
-                notice: t("admin.sensemaker.script_info")
+                notice: I18n.t("admin.sensemaker.notice.script_info")
   end
 
   def preview
@@ -89,7 +89,7 @@ class Admin::SensemakerJobsController < Admin::BaseController
     @sensemaker_job.destroy!
 
     redirect_to admin_sensemaker_jobs_path,
-                notice: t("admin.sensemaker.notice.deleted_job")
+                notice: I18n.t("admin.sensemaker.notice.deleted_job")
   end
 
   def download
@@ -99,7 +99,7 @@ class Admin::SensemakerJobsController < Admin::BaseController
       send_file @sensemaker_job.persisted_output, filename: filename
     else
       redirect_to admin_sensemaker_jobs_path,
-                  alert: t("admin.sensemaker.notice.output_file_not_found")
+                  alert: I18n.t("admin.sensemaker.notice.output_file_not_found")
     end
   end
 
@@ -109,7 +109,11 @@ class Admin::SensemakerJobsController < Admin::BaseController
     running_jobs.each(&:cancel!)
 
     redirect_to admin_sensemaker_jobs_path,
-                notice: t("admin.sensemaker.notice.cancelled_jobs")
+                notice: I18n.t("admin.sensemaker.notice.cancelled_jobs")
+  end
+
+  def help
+    # Help action for sensemaker documentation
   end
 
   private

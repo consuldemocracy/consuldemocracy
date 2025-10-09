@@ -68,11 +68,6 @@
         <%= link_to "← Cancel", admin_sensemaker_jobs_path, class: "" %>
 
         <div>
-          <%#= f.submit "Preview input",
-                      formaction: preview_admin_sensemaker_jobs_path,
-                      type: "submit",
-                      data: { remote: true, temp_disable: true, disable_with: false },
-                      class: "button" %>
           <%= f.submit "Download input CSV",
                        type: "submit",
                        formaction: preview_admin_sensemaker_jobs_path(format: :csv),
@@ -82,10 +77,4 @@
       </div>
     <% end %>
   <% end %>
-
-  <!--
-  <%#= content_tag "pre", id: "input-preview", class: "input-preview" do %>
-    <em>input preview</em>
-    <%# content of the preview result goes here %>
-  <%# end %> -->
 </div>

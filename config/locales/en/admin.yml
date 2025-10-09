@@ -1752,16 +1752,7 @@ en:
         local_census_records:
           no_records_found: No records found.
     sensemaker:
-      script_info: "The script has been queued successfully."
-      cancel: "Cancel operation"
       cancel_alert: "This action will cancel the current script and it will be necessary to run the script again."
-      comments_summary: "Comments summary"
-      comments_summary_description: "Displays an automatically generated comment summary on all items that can be commented on."
-      data_folder_content: "Data folder content"
-      error: "Error:"
-      execute_script: "Execute script"
-      executed_by: "Executed by:"
-      executed_script: "Executed script:"
       feature_disabled: "This feature is disabled. To use Sensemaker you can enable it from the %{link}."
       feature_disabled_link: "settings page"
       help_text: "This functionality is experimental."
@@ -1779,11 +1770,6 @@ en:
       notice:
         cancelled_jobs: "All sensemaker jobs have been cancelled."
         script_info: "The script has been queued successfully."
-        script_name: "Script name:"
-        select_script: "Select script to execute"
-        started_at: "Started at:"
-        tab_help: "Help"
-        tab_scripts: "Execute script"
         output_file_not_found: "Output file not found"
         deleted_job: "Analysis job deleted successfully"
       delete_alert: "Are you sure you want to delete this analysis? This action can't be undone"
