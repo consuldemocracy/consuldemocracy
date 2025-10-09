@@ -1,6 +1,6 @@
 module Sensemaker
   class JobRunner
-    TIMEOUT = 900 # 15 minutes
+    TIMEOUT = 900
     attr_reader :job
 
     SCRIPTS = [
