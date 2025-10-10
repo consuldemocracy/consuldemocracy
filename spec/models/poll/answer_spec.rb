@@ -37,27 +37,6 @@ describe Poll::Answer do
       expect(answer).not_to be_valid
     end
 
-    it "is not valid if there's already an answer to that question" do
-      author = create(:user)
-      question = create(:poll_question, :yes_no)
-
-      create(:poll_answer, author: author, question: question)
-
-      answer = build(:poll_answer, author: author, question: question)
-
-      expect(answer).not_to be_valid
-    end
-
-    it "is not valid when user already reached multiple answers question max votes" do
-      author = create(:user)
-      question = create(:poll_question_multiple, :abc, max_votes: 2)
-      create(:poll_answer, author: author, question: question, answer: "Answer A")
-      create(:poll_answer, author: author, question: question, answer: "Answer B")
-      answer = build(:poll_answer, author: author, question: question, answer: "Answer C")
-
-      expect(answer).not_to be_valid
-    end
-
     it "is not valid when there are two identical answers" do
       author = create(:user)
       question = create(:poll_question_multiple, :abc)

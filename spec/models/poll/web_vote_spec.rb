@@ -44,6 +44,21 @@ describe Poll::WebVote do
       expect(voter.poll_id).to eq answer.poll.id
     end
 
+    it "updates existing multiple options instead of adding new ones" do
+      question = create(:poll_question_multiple, :abc, poll: poll, max_votes: 2)
+      option_a = question.question_options.find_by(title: "Answer A")
+      option_b = question.question_options.find_by(title: "Answer B")
+      option_c = question.question_options.find_by(title: "Answer C")
+
+      create(:poll_answer, author: user, question: question, option: option_a)
+      create(:poll_answer, author: user, question: question, option: option_b)
+
+      web_vote.update(question.id.to_s => { option_id: [option_c.id.to_s] })
+
+      expect(question.reload.answers.size).to eq 1
+      expect(question.reload.answers.first.option).to eq option_c
+    end
+
     it "does not save the answer if the voter is invalid" do
       allow_any_instance_of(Poll::Voter).to receive(:valid?).and_return(false)
 
@@ -51,6 +66,28 @@ describe Poll::WebVote do
         web_vote.update(question.id.to_s => { option_id: option_yes.id.to_s })
       end.to raise_error(ActiveRecord::RecordInvalid)
 
+      expect(poll.voters).to be_blank
+      expect(question.answers).to be_blank
+    end
+
+    it "does not save the answer if it exceeds the allowed max votes" do
+      question = create(:poll_question_multiple, :abc, poll: poll, max_votes: 2)
+
+      result = web_vote.update(question.id.to_s => { option_id: question.question_options.ids.map(&:to_s) })
+
+      expect(result).to be false
+      expect(poll.voters).to be_blank
+      expect(question.answers).to be_blank
+    end
+
+    it "does not save the answer if unique question receives multiple options" do
+      question = create(:poll_question, :yes_no, poll: poll)
+
+      result = web_vote.update(
+        question.id.to_s => { option_id: question.question_options.ids.map(&:to_s) }
+      )
+
+      expect(result).to be false
       expect(poll.voters).to be_blank
       expect(question.answers).to be_blank
     end
