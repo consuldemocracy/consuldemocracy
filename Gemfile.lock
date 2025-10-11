@@ -521,7 +521,7 @@ GEM
     puma (6.6.0)
       nio4r (~> 2.0)
     racc (1.8.1)
-    rack (2.2.19)
+    rack (2.2.20)
     rack-accept (0.4.5)
       rack (>= 0.4)
     rack-oauth2 (2.2.1)
