@@ -35,7 +35,7 @@
         <br>
         <%= VotationType.human_attribute_name("vote_type.#{@question.vote_type}") %>
       </p>
-      <% if @question.max_votes.present? %>
+      <% if @question.multiple? %>
         <p>
           <strong><%= VotationType.human_attribute_name("max_votes") %></strong>
           <br>
