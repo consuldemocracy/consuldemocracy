@@ -85,6 +85,7 @@ rules:
     - ignore:
       - param
       - value
+  "@stylistic/max-empty-lines": 1
   "@stylistic/media-feature-parentheses-space-inside": never
   "@stylistic/no-eol-whitespace": true
   "@stylistic/no-missing-end-of-source-newline": true
