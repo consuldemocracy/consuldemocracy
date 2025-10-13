@@ -158,9 +158,11 @@ section "Creating Poll Voters" do
     poll.questions.each do |question|
       next unless [true, false].sample
 
+      option = question.question_options.sample
       Poll::Answer.create!(question_id: question.id,
                            author: user,
-                           answer: question.question_options.sample.title)
+                           option: option,
+                           answer: option.title)
     end
   end
 
