@@ -27,7 +27,10 @@ class SubscriptionsController < ApplicationController
     end
 
     def allowed_params
-      [:email_on_comment, :email_on_comment_reply, :email_on_direct_message, :email_digest, :newsletter]
+      [
+        :email_on_comment, :email_on_comment_reply, :email_on_direct_message, :email_digest, :newsletter,
+        :receive_poll_notifications
+      ]
     end
 
     def set_user_locale(&action)

@@ -6,6 +6,21 @@ es:
       info: "Hemos recibido una solicitud para enviarte instrucciones para confirmar tu cuenta. Sin embargo, tu cuenta ya está confirmada, por lo que no es necesario volver a hacerlo."
       new_password: "Si has olvidado tu contraseña, puedes restablecerla en el siguiente enlace:"
       subject: Tu cuenta ya está confirmada
+    poll_notification:
+      body: |
+        Hola <strong>%{user_name}</strong>,<br><br>
+
+        ¡La votación “%{poll_title}” ha comenzado!<br>
+        Ahora puedes emitir tu voto en línea.<br><br>
+
+        Período de votación: %{poll_start_date} - %{poll_end_date}<br>
+        Ir a la votación: <a href="%{poll_url}" target="_blank">%{poll_title}</a><br><br>
+
+        ¡Gracias por participar en este proceso democrático!<br><br>
+
+        Saludos cordiales,<br>
+        El equipo de Consul
+      subject: 'Nueva encuesta iniciada: "%{poll_title}"'
     comment:
       hi: Hola
       new_comment_by: Hay un nuevo comentario de <strong>%{commenter}</strong> en
