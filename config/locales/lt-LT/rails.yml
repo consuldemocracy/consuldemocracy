@@ -1,4 +1,107 @@
 lt:
+  date:
+    abbr_day_names:
+      - Sek
+      - Pir
+      - Ant
+      - Tre
+      - Ket
+      - Pen
+      - Šeš
+    abbr_month_names:
+      - 
+      - Sau
+      - Vas
+      - Kov
+      - Bal
+      - Geg
+      - Bir
+      - Lie
+      - Rug
+      - Rgs
+      - Spa
+      - Lap
+      - Gru
+    day_names:
+      - Sekmadienis
+      - Pirmadienis
+      - Antradienis
+      - Trečiadienis
+      - Ketvirtadienis
+      - Penktadienis
+      - Šeštadienis
+    formats:
+      default: "%Y-%m-%d"
+      long: "%Y %B %d"
+      short: "%b %d"
+    month_names:
+      - 
+      - Sausis
+      - Vasaris
+      - Kovas
+      - Balandis
+      - Gegužė
+      - Birželis
+      - Liepa
+      - Rugpjūtis
+      - Rugsėjis
+      - Spalis
+      - Lapkritis
+      - Gruodis
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: apie 1 valandą
+        few: apie %{count} valandų
+        many: apie %{count} valandų
+        other: apie %{count} valandų
+      about_x_months:
+        one: apie 1 mėnesį
+        few: apie %{count} mėnesius
+        many: apie %{count} mėnesių
+        other: apie %{count} mėnesių
+      about_x_years:
+        one: apie 1 metus
+        few: apie %{count} metus
+        many: apie %{count} metų
+        other: apie %{count} metų
+      almost_x_years:
+        one: beveik 1 metai
+        few: beveik %{count} metai
+        many: beveik %{count} metų
+        other: beveik %{count} metų
+      half_a_minute: pusė minutės
+      less_than_x_minutes:
+        one: mažiau kaip minutė
+        few: mažiau kaip %{count} minutės
+        many: mažiau kaip %{count} minučių
+        other: mažiau kaip %{count} minučių
+      less_than_x_seconds:
+        one: mažiau kaip 1 sekundė
+        few: mažiau kaip %{count} sekundės
+        many: mažiau kaip %{count} sekundžių
+        other: mažiau kaip %{count} sekundžių
+      over_x_years:
+        one: virš 1 metų
+        few: virš %{count} metų
+        many: virš %{count} metų
+        other: virš %{count} metų
+      x_days:
+        one: 1 diena
+        few: "%{count} dienos"
+        many: "%{count} dienų"
+        other: "%{count} dienų"
+  errors:
+    messages:
+      accepted: turi būti priimtas
+      blank: negali būti tuščias
+      required: turi egzistuoti
+      taken: jau buvo paimtas
+    template:
+      body: "Šiose srityse kilo problemų:"
+  helpers:
+    select:
+      prompt: Pasirinkite
   number:
     currency:
       format:
@@ -8,6 +111,44 @@ lt:
       significant: false
       strip_insignificant_zeros: false
     human:
+      decimal_units:
+        units:
+          billion: Milijardas
+          million: Milijonas
+          quadrillion: Kvadrilijonas
+          thousand: Tūkstantis
+          trillion: Trilijonas
       format:
+        precision: 3
         significant: true
         strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Baitas
+            few: Baitai
+            many: Baitų
+            other: Baitų
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
+  support:
+    array:
+      last_word_connector: ", ir "
+      two_words_connector: " ir "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      datetime: "%Y-%m-%d %H:%M:%S"
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+      short_datetime: "%Y-%m-%d %H:%M"
+      api: "%Y-%m-%d %H"
+    pm: pm
