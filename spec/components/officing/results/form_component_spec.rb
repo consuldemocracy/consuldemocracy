@@ -16,4 +16,13 @@ describe Officing::Results::FormComponent do
     expect(page).to have_field "Invalid ballots", with: 0, type: :number
     expect(page).to have_field "Valid ballots", with: 0, type: :number
   end
+
+  it "does not render open-ended questions" do
+    create(:poll_question_open, poll: poll, title: "What do you want?")
+
+    render_inline Officing::Results::FormComponent.new(poll, Poll::OfficerAssignment.none)
+
+    expect(page).not_to have_content "What do you want?"
+    expect(page).to have_css "fieldset", text: "Agreed?"
+  end
 end

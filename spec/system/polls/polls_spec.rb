@@ -180,15 +180,11 @@ describe "Polls" do
 
     scenario "Level 2 users answering" do
       poll.update!(geozone_restricted_to: [geozone])
-      create(:poll_question, :yes_no, poll: poll, title: "Do you agree?")
+      question = create(:poll_question, :yes_no, poll: poll, title: "Do you agree?")
 
       login_as(create(:user, :level_two, geozone: geozone))
-      visit poll_path(poll)
+      vote_for_poll_via_web(poll, question => "Yes")
 
-      within_fieldset("Do you agree?") { choose "Yes" }
-      click_button "Vote"
-
-      expect(page).to have_content "Thank you for voting!"
       expect(page).to have_content "You have already participated in this poll. " \
                                    "If you vote again it will be overwritten."
 

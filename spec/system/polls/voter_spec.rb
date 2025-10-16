@@ -18,12 +18,9 @@ describe "Voter" do
       user = create(:user, :level_two)
 
       login_as user
-      visit poll_path(poll)
 
-      within_fieldset("Is this question stupid?") { choose "Yes" }
-      click_button "Vote"
+      vote_for_poll_via_web(poll, question => "Yes")
 
-      expect(page).to have_content "Thank you for voting!"
       expect(page).to have_content "You have already participated in this poll. " \
                                    "If you vote again it will be overwritten."
     end

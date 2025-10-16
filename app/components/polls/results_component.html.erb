@@ -3,7 +3,7 @@
 <div class="polls-results">
   <%= render Polls::PollHeaderComponent.new(poll) %>
 
-  <%= render "poll_subnav" %>
+  <%= render "polls/poll_subnav" %>
 
   <div class="polls-results-content">
     <div>
@@ -16,7 +16,9 @@
     </div>
 
     <div>
-      <%= render Polls::Results::QuestionComponent.with_collection(poll.questions) %>
+      <% poll.questions.each do |question| %>
+        <%= render Polls::Results::QuestionComponent.new(question) %>
+      <% end %>
     </div>
   </div>
 </div>

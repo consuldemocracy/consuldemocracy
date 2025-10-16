@@ -29,7 +29,7 @@
         </tbody>
       </table>
 
-      <% @poll.questions.each do |question| %>
+      <% @poll.questions.for_physical_votes.each do |question| %>
         <%= render Admin::Poll::Results::QuestionComponent.new(question, @partial_results) %>
       <% end %>
     </div>

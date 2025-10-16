@@ -8,9 +8,10 @@ describe "Poll Votation Type" do
     login_as(author)
   end
 
-  scenario "Unique and multiple answers" do
-    create(:poll_question_unique, :yes_no, poll: poll, title: "Is it that bad?")
+  scenario "Unique, multiple and open answers" do
+    create(:poll_question, :yes_no, poll: poll, title: "Is it that bad?")
     create(:poll_question_multiple, :abcde, poll: poll, max_votes: 3, title: "Which ones do you prefer?")
+    create(:poll_question_open, poll: poll, title: "What do you think?")
 
     visit poll_path(poll)
 
@@ -19,6 +20,10 @@ describe "Poll Votation Type" do
     within_fieldset("Which ones do you prefer?") do
       check "Answer A"
       check "Answer C"
+    end
+
+    within(".poll-question-open-ended") do
+      fill_in "What do you think?", with: "I believe it's great"
     end
 
     click_button "Vote"
@@ -37,6 +42,10 @@ describe "Poll Votation Type" do
       expect(page).to have_field "Answer C", type: :checkbox, checked: true
       expect(page).to have_field "Answer D", type: :checkbox, checked: false
       expect(page).to have_field "Answer E", type: :checkbox, checked: false
+    end
+
+    within(".poll-question-open-ended") do
+      expect(page).to have_field "What do you think?", with: "I believe it's great"
     end
 
     expect(page).to have_button "Vote"

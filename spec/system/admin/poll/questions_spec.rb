@@ -71,26 +71,63 @@ describe "Admin poll questions", :admin do
         poll = create(:poll, :future)
         visit admin_poll_path(poll)
         click_link "Create question"
+        expect(page).to have_content "It's only possible to answer one time to the question."
       end
 
       scenario "Unique" do
         fill_in "Question", with: "Question with unique answer"
         select "Unique answer", from: "Votation type"
 
+        expect(page).to have_content "It's only possible to answer one time to the question."
+        expect(page).not_to have_content "Allows to choose multiple answers."
+        expect(page).not_to have_field "Maximum number of votes"
+        expect(page).not_to have_content "Open-ended question that allows users to provide " \
+                                         "a single answer in their own words."
+
         click_button "Save"
 
         expect(page).to have_content "Question with unique answer"
         expect(page).to have_content "Unique answer"
+        expect(page).not_to have_content "Maximum number of votes"
+        expect(page).to have_link "Add answer"
+        expect(page).to have_table "Valid answers"
       end
 
       scenario "Multiple" do
         fill_in "Question", with: "Question with multiple answers"
         select "Multiple answers", from: "Votation type"
+
+        expect(page).not_to have_content "It's only possible to answer one time to the question."
+        expect(page).to have_content "Allows to choose multiple answers."
+        expect(page).not_to have_content "Open-ended question that allows users to provide " \
+                                         "a single answer in their own words."
+
         fill_in "Maximum number of votes", with: 6
         click_button "Save"
 
         expect(page).to have_content "Question with multiple answers"
         expect(page).to have_content "Multiple answers"
+        expect(page).to have_text "Maximum number of votes 6", normalize_ws: true
+        expect(page).to have_link "Add answer"
+        expect(page).to have_table "Valid answers"
+      end
+
+      scenario "Open-ended" do
+        fill_in "Question", with: "What do you want?"
+        select "Open-ended", from: "Votation type"
+
+        expect(page).not_to have_content "Allows to choose multiple answers."
+        expect(page).not_to have_field "Maximum number of votes"
+        expect(page).to have_content "Open-ended question that allows users to provide " \
+                                     "a single answer in their own words."
+
+        click_button "Save"
+
+        expect(page).to have_content "What do you want?"
+        expect(page).to have_content "Open-ended"
+        expect(page).not_to have_content "Maximum number of votes"
+        expect(page).not_to have_link "Add answer"
+        expect(page).not_to have_table "Valid answers"
       end
     end
   end
@@ -134,7 +171,7 @@ describe "Admin poll questions", :admin do
 
   scenario "Update" do
     poll = create(:poll, :future)
-    question = create(:poll_question, poll: poll)
+    question = create(:poll_question_open, poll: poll)
     old_title = question.title
     new_title = "Vegetables are great and everyone should have one"
 
@@ -145,6 +182,12 @@ describe "Admin poll questions", :admin do
     end
 
     expect(page).to have_link "Go back", href: admin_poll_path(poll)
+    expect(page).to have_select "Votation type", selected: "Open-ended"
+    expect(page).not_to have_content "Allows to choose multiple answers."
+    expect(page).not_to have_field "Maximum number of votes"
+    expect(page).to have_content "Open-ended question that allows users to provide " \
+                                 "a single answer in their own words."
+
     fill_in "Question", with: new_title
 
     click_button "Save"
