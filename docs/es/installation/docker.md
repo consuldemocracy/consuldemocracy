@@ -93,7 +93,7 @@ Deberías obtener algo similar a:
 ```bash
 CONTAINER ID   IMAGE                 COMMAND                  CREATED          STATUS          PORTS      NAMES
 603ec83b78a6   consuldemocracy-app   "./docker-entrypoint…"   23 seconds ago   Up 22 seconds              consuldemocracy-app-run-afb6d68e2d99
-d57fdd9637d6   postgres:13.16        "docker-entrypoint.s…"   50 minutes ago   Up 22 seconds   5432/tcp   consuldemocracy-database-1
+d57fdd9637d6   postgres:14.19        "docker-entrypoint.s…"   50 minutes ago   Up 22 seconds   5432/tcp   consuldemocracy-database-1
 ```
 
 ## Ejecutar tests con RSpec
