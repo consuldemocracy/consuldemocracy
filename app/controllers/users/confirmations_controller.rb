@@ -38,8 +38,9 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
   # GET /resource/confirmation?confirmation_token=abcdef
   def show
     # In the default implementation, this already confirms the resource:
-    # self.resource = self.resource = resource_class.confirm_by_token(params[:confirmation_token])
-    self.resource = resource_class.find_by!(confirmation_token: params[:confirmation_token])
+    self.resource = resource_class.confirm_by_token(params[:confirmation_token])
+    # self.resource = resource_class.find_by!(confirmation_token: params[:confirmation_token])
+    raise ActiveRecord::RecordNotFound unless resource.persisted?
 
     yield resource if block_given?
 
@@ -50,7 +51,7 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
     elsif resource.errors.empty?
       set_official_position if resource.has_official_email?
 
-      if resource.confirm
+      if resource.confirmed?
         set_flash_message(:notice, :confirmed) if is_flashing_format?
 
         respond_with_navigational(resource) do
@@ -62,7 +63,7 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
         end
       end
     else
-      respond_with_navigational(resource.errors, status: :unprocessable_entity) { render :new }
+      respond_with_navigational(resource.errors) { render :new, status: :unprocessable_entity }
     end
   end
 
