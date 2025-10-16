@@ -1131,6 +1131,7 @@ sv:
         title: "Omröstningstyp"
         unique_description: "Det går bara att svara på frågan en gång."
         multiple_description: "Gör det möjligt att välja flera svar. Det går att ställa in maximalt antal svar."
+        open_description: "Öppen fråga som låter användare ge ett enda svar med egna ord."
     questions:
       index:
         create: "Skapa fråga"
