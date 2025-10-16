@@ -638,6 +638,9 @@ sv:
       results:
         title: "Frågor"
         most_voted_answer: "Högst rankade svar: "
+        open_ended:
+          valid: Giltigt
+          blank: Tomt
     poll_header:
       back_to_proposal: Tillbaka till förslaget
   poll_questions:
