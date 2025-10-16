@@ -290,7 +290,8 @@ GEM
       rexml (~> 3.0)
     hashery (2.1.2)
     hashie (5.0.0)
-    highline (2.0.3)
+    highline (3.1.2)
+      reline
     htmlbeautifier (1.4.3)
     htmlentities (4.3.4)
     httparty (0.23.1)
