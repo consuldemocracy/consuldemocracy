@@ -121,5 +121,5 @@ dependsOn:
     - name: Node.js
       version: "20.19.2"
     - name: PostgreSQL
-      versionMin: "9.5"
+      versionMin: "13"
     - name: ImageMagick

@@ -19,7 +19,7 @@ jobs:
     timeout-minutes: 60
     services:
       postgres:
-        image: postgres:13.16
+        image: postgres:14.19
         ports: ["5432:5432"]
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
         env:
