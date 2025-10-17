@@ -35,7 +35,7 @@ You can access the main website of the project at [http://consuldemocracy.org](h
 **NOTE**:
 The installation process will vary depending on your operating system. Please make sure to follow the [Local Installation Guide](docs/en/installation/local_installation.md) appropriate for your OS.
 
-Prerequisites: install git, Ruby 3.3.8, CMake, pkg-config, Node.js 20.19.2, ImageMagick and PostgreSQL (>=13).
+Prerequisites: install git, Ruby 3.3.9, CMake, pkg-config, Node.js 20.19.2, ImageMagick and PostgreSQL (>=13).
 
 **Note**: The `bin/setup` command below might fail if you've configured a username and password for PostgreSQL. If that's the case, edit the lines containing `username:` and `password:` (adding your credentials) in the `config/database.yml` file and run `bin/setup` again.
 
