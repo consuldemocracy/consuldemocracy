@@ -64,7 +64,7 @@ Este tutorial asume que ya has conseguido clonar Consul Democracy en tu máquina
 
   ```json
   "engines": {
-    "node": "20.19.2"
+    "node": "20.19.5"
   }
   ```
 
