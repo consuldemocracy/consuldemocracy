@@ -295,6 +295,8 @@ cs:
       sign_up: "Přihlásit se pomocí:"
     saml:
       name: SAML
+    oidc:
+      name: OIDC
     or_fill: "Nebo vyplňte následující formulář:"
   proposals:
     create:
