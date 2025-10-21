@@ -482,7 +482,7 @@ GEM
     parallel (1.27.0)
     paranoia (3.0.1)
       activerecord (>= 6, < 8.1)
-    parser (3.3.8.0)
+    parser (3.3.9.0)
       ast (~> 2.4.1)
       racc
     pdf-reader (2.14.1)
@@ -901,7 +901,7 @@ DEPENDENCIES
   wkhtmltopdf-binary (~> 0.12.6)
 
 RUBY VERSION
-   ruby 3.3.8p144
+   ruby 3.3.9p170
 
 BUNDLED WITH
    2.5.22
