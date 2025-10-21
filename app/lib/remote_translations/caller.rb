@@ -2,13 +2,11 @@ class RemoteTranslations::Caller
   attr_reader :remote_translation
 
   def self.available_locales
-    translation_provider ? translation_provider::AvailableLocales.locales : []
+    translation_provider::AvailableLocales.locales
   end
 
   def self.configured?
-    return true if llm?
-
-    Setting["feature.remote_translations"].present? && Tenant.current_secrets.microsoft_api_key.present?
+    llm? || Tenant.current_secrets.microsoft_api_key.present?
   end
 
   def self.llm?

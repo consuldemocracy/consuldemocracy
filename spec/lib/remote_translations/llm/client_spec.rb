@@ -30,14 +30,4 @@ describe RemoteTranslations::Llm::Client do
 
     expect(result).to eq(["translated", "translated"])
   end
-
-  it "raises when prompt exceeds model context window" do
-    allow(RubyLLM).to receive_message_chain(:models, :find).and_return(double(context_window: 1))
-
-    client = RemoteTranslations::Llm::Client.new
-
-    expect do
-      client.call(["A very long text" * 500], "es")
-    end.to raise_error(RemoteTranslations::Llm::Client::LLMTranslationError)
-  end
 end

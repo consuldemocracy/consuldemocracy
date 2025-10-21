@@ -8,9 +8,9 @@ module RemoteTranslations
       class LLMTranslationError < StandardError; end
 
       def initialize
-        @context = Config.context
-        @chat = @context.chat(provider: Setting["llm.provider"].downcase.to_sym, model: Setting["llm.model"])
-        @prompt = YAML.load_file("config/llm_prompts.yml", aliases: true)["remote_translation_prompt"]
+        @context = build_context
+        @chat = build_chat
+        @prompt = load_prompt
       end
 
       def call(fields_values, locale)
@@ -21,18 +21,21 @@ module RemoteTranslations
 
       private
 
-        def request_translation(text, locale)
-          text_placeholders = {
-            input_text: text,
-            output_locale: locale
-          }
-          text_prompt = prompt % text_placeholders
+        def build_context
+          Config.context
+        end
 
-          if text_prompt.size * TOKENS_PER_WORD < RubyLLM.models.find(Setting["llm.model"]).context_window
-            chat.ask(text_prompt).content
-          else
-            raise LLMTranslationError, "Text to translate is too long for the model context window"
-          end
+        def build_chat
+          build_context.chat(provider: Setting["llm.provider"].downcase.to_sym, model: Setting["llm.model"])
+        end
+
+        def load_prompt
+          YAML.load_file("config/llm_prompts.yml", aliases: true)["remote_translation_prompt"]
+        end
+
+        def request_translation(text, locale)
+          text_prompt = prompt % { input_text: text, output_locale: locale }
+          chat.ask(text_prompt).content
         end
     end
   end

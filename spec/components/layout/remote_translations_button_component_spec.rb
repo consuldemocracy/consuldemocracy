@@ -25,7 +25,6 @@ describe Layout::RemoteTranslationsButtonComponent do
     it "displays the text in English with a locale needing parsing" do
       I18n.with_locale(:"zh-CN") { render_inline component }
 
-      expect(component.render?).to be true
       expect(page).to have_css ".remote-translations-button"
       expect(page).to have_content "The content of this page is not available in your language"
     end
@@ -47,7 +46,6 @@ describe Layout::RemoteTranslationsButtonComponent do
     it "displays the text in Spanish with a locale needing parsing" do
       I18n.with_locale(:"pt-BR") { render_inline component }
 
-      expect(component.render?).to be true
       expect(page).to have_css ".remote-translations-button"
       expect(page).to have_content "El contenido de esta página no está disponible en tu idioma"
     end

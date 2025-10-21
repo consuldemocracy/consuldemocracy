@@ -3,18 +3,16 @@ class Admin::Settings::LlmConfigurationTabComponent < ApplicationComponent
     "#tab-llm-configuration"
   end
 
-  def provider_setting
-    Setting.find_by!(key: "llm.provider")
-  end
-
-  def model_setting
-    Setting.find_by!(key: "llm.model")
-  end
-
   def providers
-    ::RemoteTranslations::Llm::Config.providers.transform_values do |props|
-      { id: props[:id], enabled: props[:enabled] }
-    end
+    RemoteTranslations::Llm::Config.providers
+  end
+
+  def provider_options
+    current = Setting["llm.provider"]
+    options_values = providers.keys.map { |key| [key.to_s, key.to_s] }
+    disabled_values = providers.reject { |_key, value| value[:enabled] }.keys
+
+    options_for_select(options_values, selected: current, disabled: disabled_values)
   end
 
   def models
@@ -27,5 +25,20 @@ class Admin::Settings::LlmConfigurationTabComponent < ApplicationComponent
         enabled: true
       }
     end
+  end
+
+  def model_options
+    current = Setting["llm.model"]
+    options_values = models.map { |name, value| [name, value[:id]] }
+
+    options_for_select(options_values, selected: current)
+  end
+
+  def model_disabled?
+    Setting["llm.provider"].blank?
+  end
+
+  def feature_disabled?
+    Setting["llm.provider"].blank? || Setting["llm.model"].blank?
   end
 end
