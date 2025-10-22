@@ -97,6 +97,8 @@ en:
       saml_login_description: "Allow users to sign up with SAML"
       featured_proposals: "Featured proposals"
       featured_proposals_description: "Shows featured proposals on index proposals page"
+      warning_for_linkouts: Warning for linkouts
+      warning_for_linkouts_description: Enable a pop-up that warns the user before linking to an external website.
       signature_sheets: "Signature sheets"
       signature_sheets_description: "It allows adding from the Administration panel signatures collected on-site to Proposals and investment projects of the Participative Budgets"
       user:

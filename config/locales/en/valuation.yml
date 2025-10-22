@@ -1,5 +1,7 @@
 en:
   valuation:
+    modal:
+      warning_for_linkouts: By confirming, you agree to leave the website.
     header:
       title: Valuation
     menu:
