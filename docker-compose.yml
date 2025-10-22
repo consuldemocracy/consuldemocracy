@@ -4,7 +4,7 @@ services:
 
     # use the preferred version of the official Postgres image
     # see https://hub.docker.com/_/postgres/
-    image: postgres:13.16
+    image: postgres:14.19-bookworm
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=$POSTGRES_PASSWORD

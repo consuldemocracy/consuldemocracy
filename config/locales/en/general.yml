@@ -639,6 +639,9 @@ en:
       results:
         title: "Questions"
         most_voted_answer: "Most voted answer: "
+        open_ended:
+          valid: Valid
+          blank: Blank
     poll_header:
       back_to_proposal: Back to proposal
   poll_questions:

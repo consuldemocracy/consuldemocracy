@@ -115,11 +115,11 @@ localisation:
 dependsOn:
   open:
     - name: Ruby
-      version: "3.3.8"
+      version: "3.3.9"
     - name: Rails
-      version: "7.1.5.1"
+      version: "7.1.5.2"
     - name: Node.js
-      version: "20.19.2"
+      version: "20.19.5"
     - name: PostgreSQL
-      versionMin: "9.5"
+      versionMin: "13"
     - name: ImageMagick

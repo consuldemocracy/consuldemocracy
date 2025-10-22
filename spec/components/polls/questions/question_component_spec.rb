@@ -69,5 +69,26 @@ describe Polls::Questions::QuestionComponent do
       expect(page).to have_field "Yes", type: :radio, checked: true
       expect(page).to have_field "No", type: :radio, checked: false
     end
+
+    context "Open-ended question" do
+      let(:question) { create(:poll_question_open, poll: poll, title: "What do you want?") }
+      before { create(:poll_answer, author: user, question: question, answer: "I don't know") }
+
+      it "renders text area with persisted answer" do
+        render_inline Polls::Questions::QuestionComponent.new(question, form: form)
+
+        expect(page).to have_field "What do you want?", type: :textarea, with: "I don't know"
+      end
+
+      it "renders unsaved form text over the persisted value" do
+        web_vote.answers[question.id] = [
+          build(:poll_answer, question: question, author: user, answer: "Typed (unsaved)")
+        ]
+
+        render_inline Polls::Questions::QuestionComponent.new(question, form: form)
+
+        expect(page).to have_field "What do you want?", type: :textarea, with: "Typed (unsaved)"
+      end
+    end
   end
 end

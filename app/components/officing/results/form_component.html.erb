@@ -8,7 +8,7 @@
     </div>
   </div>
 
-  <% poll.questions.each do |question| %>
+  <% poll.questions.for_physical_votes.each do |question| %>
     <fieldset class="row">
       <legend class="column"><%= question.title %></legend>
       <% question.question_options.each_with_index do |option, i| %>

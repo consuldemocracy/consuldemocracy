@@ -47,5 +47,4 @@ When you complete the application registration you'll get a *key* and *secret* v
   oidc_client_id: "your-oidc-client-id"
   oidc_client_secret: "your-oidc-client-secret"
   oidc_issuer: "https://your-oidc-provider.com"
-  oidc_redirect_uri: "https://yourapp.com/users/auth/oidc/callback"
 ```

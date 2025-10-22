@@ -52,6 +52,7 @@ end
 section "Creating Poll Questions & Options" do
   Poll.find_each do |poll|
     (3..5).to_a.sample.times do
+      vote_type = VotationType.vote_types.keys.sample
       question_title = Faker::Lorem.sentence(word_count: 3).truncate(60) + "?"
       question = Poll::Question.new(author: User.sample,
                                     title: question_title,
@@ -62,30 +63,26 @@ section "Creating Poll Questions & Options" do
         end
       end
       question.save!
-      Faker::Lorem.words(number: (2..4).to_a.sample).each_with_index do |title, index|
-        description = "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>"
-        option = Poll::Question::Option.new(question: question,
-                                            title: title.capitalize,
-                                            description: description,
-                                            given_order: index + 1)
-        Setting.enabled_locales.map do |locale|
-          Globalize.with_locale(locale) do
-            option.title = "#{title} (#{locale})"
-            option.description = "#{description} (#{locale})"
+
+      question.create_votation_type!(vote_type: vote_type, max_votes: (3 if vote_type == "multiple"))
+
+      if question.accepts_options?
+        Faker::Lorem.words(number: (2..4).to_a.sample).each_with_index do |title, index|
+          description = "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>"
+          option = Poll::Question::Option.new(question: question,
+                                              title: title.capitalize,
+                                              description: description,
+                                              given_order: index + 1)
+          Setting.enabled_locales.map do |locale|
+            Globalize.with_locale(locale) do
+              option.title = "#{title} (#{locale})"
+              option.description = "#{description} (#{locale})"
+            end
           end
+          option.save!
         end
-        option.save!
       end
     end
-  end
-end
-
-section "Creating Poll Votation types" do
-  poll = Poll.first
-
-  poll.questions.each do |question|
-    vote_type = VotationType.vote_types.keys.sample
-    question.create_votation_type!(vote_type: vote_type, max_votes: (3 unless vote_type == "unique"))
   end
 end
 
@@ -158,9 +155,16 @@ section "Creating Poll Voters" do
     poll.questions.each do |question|
       next unless [true, false].sample
 
-      Poll::Answer.create!(question_id: question.id,
-                           author: user,
-                           answer: question.question_options.sample.title)
+      if question.accepts_options?
+        option = question.question_options.sample
+        Poll::Answer.create!(question_id: question.id,
+                             author: user,
+                             option: option,
+                             answer: option.title)
+      else
+        text = Faker::Lorem.sentence(word_count: (6..14).to_a.sample)
+        Poll::Answer.create!(question_id: question.id, author: user, answer: text)
+      end
     end
   end
 
@@ -252,6 +256,7 @@ section "Creating Poll Questions from Proposals" do
       end
       option.save!
     end
+    question.create_votation_type!(vote_type: "unique")
   end
 end
 

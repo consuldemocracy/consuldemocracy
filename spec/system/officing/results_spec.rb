@@ -4,8 +4,8 @@ describe "Officing Results", :with_frozen_time do
   let(:poll) { create(:poll, ends_at: 1.day.ago) }
   let(:booth) { create(:poll_booth, polls: [poll]) }
   let(:poll_officer) { create(:poll_officer) }
-  let(:question_1) { create(:poll_question, poll: poll) }
-  let(:question_2) { create(:poll_question, poll: poll) }
+  let(:question_1) { create(:poll_question_unique, poll: poll) }
+  let(:question_2) { create(:poll_question_unique, poll: poll) }
 
   before do
     create(:poll_shift, :recount_scrutiny_task, officer: poll_officer, booth: booth, date: Date.current)
@@ -14,6 +14,8 @@ describe "Officing Results", :with_frozen_time do
 
     create(:poll_question_option, title: "Today", question: question_2, given_order: 1)
     create(:poll_question_option, title: "Tomorrow", question: question_2, given_order: 2)
+
+    create(:poll_question_open, poll: poll, title: "What do you want?")
 
     login_as(poll_officer.user)
     set_officing_booth(booth)
@@ -69,6 +71,8 @@ describe "Officing Results", :with_frozen_time do
       fill_in "Tomorrow", with: "444"
     end
 
+    expect(page).not_to have_css "fieldset", text: "What do you want?"
+
     fill_in "Totally blank ballots", with: "66"
     fill_in "Invalid ballots", with: "77"
     fill_in "Valid ballots", with: "88"
@@ -100,6 +104,7 @@ describe "Officing Results", :with_frozen_time do
                                      booth_assignment_id: partial_result.booth_assignment_id)
 
     within("#question_#{question_1.id}_0_result") { expect(page).to have_content("7777") }
+    expect(page).not_to have_content "What do you want?"
 
     visit new_officing_poll_result_path(poll)
 
@@ -136,5 +141,6 @@ describe "Officing Results", :with_frozen_time do
     within("#total_results") { expect(page).to have_content("8") }
     within("#question_#{question_1.id}_0_result") { expect(page).to have_content("5555") }
     within("#question_#{question_1.id}_1_result") { expect(page).to have_content("200") }
+    expect(page).not_to have_content "What do you want?"
   end
 end

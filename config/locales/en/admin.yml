@@ -1133,6 +1133,7 @@ en:
         title: "Votation type"
         unique_description: "It's only possible to answer one time to the question."
         multiple_description: "Allows to choose multiple answers. It's possible to set the maximum number of answers."
+        open_description: "Open-ended question that allows users to provide a single answer in their own words."
     questions:
       index:
         create: "Create question"

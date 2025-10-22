@@ -9,21 +9,9 @@ class Poll::Answer < ApplicationRecord
   validates :author, presence: true
   validates :answer, presence: true
   validates :option, uniqueness: { scope: :author_id }, allow_nil: true
-  validate :max_votes
-
   validates :answer, inclusion: { in: ->(poll_answer) { poll_answer.option.possible_answers }},
                      if: ->(poll_answer) { poll_answer.option.present? }
 
   scope :by_author, ->(author_id) { where(author_id: author_id) }
   scope :by_question, ->(question_id) { where(question_id: question_id) }
-
-  private
-
-    def max_votes
-      return if !question || !author || persisted?
-
-      if question.answers.by_author(author).count >= question.max_votes
-        errors.add(:answer, "Maximum number of votes per user exceeded")
-      end
-    end
 end

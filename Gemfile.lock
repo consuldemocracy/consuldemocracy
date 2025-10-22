@@ -290,7 +290,8 @@ GEM
       rexml (~> 3.0)
     hashery (2.1.2)
     hashie (5.0.0)
-    highline (2.0.3)
+    highline (3.1.2)
+      reline
     htmlbeautifier (1.4.3)
     htmlentities (4.3.4)
     httparty (0.23.1)
@@ -481,7 +482,7 @@ GEM
     parallel (1.27.0)
     paranoia (3.0.1)
       activerecord (>= 6, < 8.1)
-    parser (3.3.8.0)
+    parser (3.3.9.0)
       ast (~> 2.4.1)
       racc
     pdf-reader (2.14.1)
@@ -521,7 +522,7 @@ GEM
     puma (6.6.0)
       nio4r (~> 2.0)
     racc (1.8.1)
-    rack (2.2.18)
+    rack (2.2.20)
     rack-accept (0.4.5)
       rack (>= 0.4)
     rack-oauth2 (2.2.1)
@@ -865,7 +866,7 @@ DEPENDENCIES
   pronto-rubocop (~> 0.11.6)
   pronto-stylelint (~> 0.11.1)
   puma (~> 6.6.0)
-  rails (~> 7.1.5.1)
+  rails (~> 7.1.5.2)
   recipient_interceptor (~> 0.3.3)
   redcarpet (~> 3.6.1)
   responders (~> 3.1.1)
@@ -900,7 +901,7 @@ DEPENDENCIES
   wkhtmltopdf-binary (~> 0.12.6)
 
 RUBY VERSION
-   ruby 3.3.8p144
+   ruby 3.3.9p170
 
 BUNDLED WITH
    2.5.22

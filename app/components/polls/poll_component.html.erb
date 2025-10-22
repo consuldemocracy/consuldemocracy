@@ -8,13 +8,9 @@
   </div>
 
   <div class="poll-info">
-    <% if poll.questions.one? %>
-      <h4><%= link_to_poll poll.questions.first.title, poll %></h4>
-      <div class="dates"><%= dates %></div>
-    <% else %>
-      <h4><%= link_to_poll poll.name, poll %></h4>
-      <div class="dates"><%= dates %></div>
-
+    <h4><%= link_to header_text, path %></h4>
+    <div class="dates"><%= dates %></div>
+    <% if poll.questions.many? %>
       <ul class="margin-top">
         <% poll.questions.sort_for_list.each do |question| %>
           <li><%= question.title %></li>
@@ -25,9 +21,5 @@
     <%= render SDG::TagListComponent.new(poll, limit: 5, linkable: false) %>
   </div>
 
-  <% if poll.expired? %>
-    <%= link_to_poll t("polls.index.participate_button_expired"), poll, class: "button hollow expanded" %>
-  <% else %>
-    <%= link_to_poll t("polls.index.participate_button"), poll, class: "button hollow expanded" %>
-  <% end %>
+  <%= link_to link_text, path, class: "button hollow expanded" %>
 </div>

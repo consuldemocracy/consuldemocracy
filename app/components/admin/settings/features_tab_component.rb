@@ -27,6 +27,7 @@ class Admin::Settings::FeaturesTabComponent < ApplicationComponent
       feature.machine_learning
       feature.sensemaker
       feature.remove_investments_supports
+      feature.gdpr.require_consent_for_notifications
       feature.dashboard.notification_emails
     ]
   end

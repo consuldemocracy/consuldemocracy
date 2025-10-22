@@ -33,6 +33,10 @@ class Polls::Questions::QuestionComponent < ApplicationComponent
       end, ", ")
     end
 
+    def existing_answer
+      form.object.answers[question.id]&.first&.answer
+    end
+
     def multiple_choice?
       question.multiple?
     end

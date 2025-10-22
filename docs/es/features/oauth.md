@@ -47,5 +47,4 @@ Cuando completes el registro de la aplicación en su plataforma te darán un *ke
   oidc_client_id: "tu-id-de-cliente-oidc"
   oidc_client_secret: "tu-secreto-de-cliente-oidc"
   oidc_issuer: "https://tu-proveedor-oidc.com"
-  oidc_redirect_uri: "https://tuaplicacion.com/users/auth/oidc/callback"
 ```

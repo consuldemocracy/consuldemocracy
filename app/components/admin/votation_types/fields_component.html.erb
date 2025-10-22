@@ -4,12 +4,9 @@
 
 <div class="small-12 column">
   <div class="callout primary">
-    <span class="description-unique">
-      <%= t("admin.polls.votation_type.unique_description") %>
-    </span>
-    <span class="description-multiple hidden">
-      <%= t("admin.polls.votation_type.multiple_description") %>
-    </span>
+    <% descriptions.each do |vote_type, text| %>
+      <%= description_tag(vote_type, text) %>
+    <% end %>
   </div>
 </div>
 
