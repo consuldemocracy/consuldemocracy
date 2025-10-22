@@ -34,7 +34,6 @@ describe OmniauthTenantSetup do
         mars_strategy_options = mars_env["omniauth.strategy"].options
 
         expect(mars_strategy_options[:sp_entity_id]).to eq "https://mars.consul.dev/saml/metadata"
-        expect(mars_strategy_options[:idp_metadata_url]).to eq "https://mars-idp.example.com/metadata"
         expect(mars_strategy_options[:idp_sso_service_url]).to eq "https://mars-idp.example.com/sso"
       end
 
@@ -48,7 +47,6 @@ describe OmniauthTenantSetup do
         venus_strategy_options = venus_env["omniauth.strategy"].options
 
         expect(venus_strategy_options[:sp_entity_id]).to eq "https://venus.consul.dev/saml/metadata"
-        expect(venus_strategy_options[:idp_metadata_url]).to eq "https://venus-idp.example.com/metadata"
         expect(venus_strategy_options[:idp_sso_service_url]).to eq "https://venus-idp.example.com/sso"
       end
     end
@@ -79,7 +77,6 @@ describe OmniauthTenantSetup do
         earth_strategy_options = earth_env["omniauth.strategy"].options
 
         expect(earth_strategy_options[:sp_entity_id]).to eq "https://default.consul.dev/saml/metadata"
-        expect(earth_strategy_options[:idp_metadata_url]).to eq "https://default-idp.example.com/metadata"
         expect(earth_strategy_options[:idp_sso_service_url]).to eq "https://default-idp.example.com/sso"
       end
     end

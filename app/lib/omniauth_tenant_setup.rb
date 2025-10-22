@@ -46,16 +46,7 @@ module OmniauthTenantSetup
           strategy = env["omniauth.strategy"]
 
           strategy.options[:sp_entity_id] = sp_entity_id if sp_entity_id.present?
-          strategy.options[:idp_metadata_url] = idp_metadata_url if idp_metadata_url.present?
           strategy.options[:idp_sso_service_url] = idp_sso_service_url if idp_sso_service_url.present?
-
-          if strategy.options[:issuer].present? && sp_entity_id.present?
-            strategy.options[:issuer] = sp_entity_id
-          end
-
-          if strategy.options[:idp_metadata].present? && idp_metadata_url.present?
-            strategy.options[:idp_metadata] = idp_metadata_url
-          end
         end
       end
 
