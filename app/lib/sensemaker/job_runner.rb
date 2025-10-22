@@ -237,6 +237,7 @@ module Sensemaker
     end
 
     private
+
       def execute_job_workflow
         job.update!(started_at: Time.current)
 

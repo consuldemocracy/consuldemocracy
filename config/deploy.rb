@@ -48,7 +48,7 @@ set :fnm_setup_command, -> do
                             "cd #{release_path} && fnm env > /dev/null && eval \"$(fnm env)\""
                         end
 set :fnm_install_node_command, -> { "#{fetch(:fnm_setup_command)} && fnm use --install-if-missing" }
-set :fnm_map_bins, %w[node npm rake yarn]
+set :fnm_map_bins, %w[node npm rake yarn delayed_job]
 
 set :puma_systemctl_user, :user
 set :puma_enable_socket_service, true
