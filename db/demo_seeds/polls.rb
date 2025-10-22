@@ -42,6 +42,7 @@ section "Creating DEMO polls" do
   users.first(6).each do |user|
     Poll::Answer.create!(question_id: question.id,
                          author: user,
+                         option: option,
                          answer: option.title)
     Poll::Voter.create!(document_type: user.document_type,
                         document_number: user.document_number,
@@ -54,6 +55,7 @@ section "Creating DEMO polls" do
   users.last(4).each do |user|
     Poll::Answer.create!(question_id: question.id,
                          author: user,
+                         option: option,
                          answer: option.title)
     Poll::Voter.create!(document_type: user.document_type,
                         document_number: user.document_number,
@@ -97,6 +99,7 @@ section "Creating DEMO polls" do
   users.first(6).each do |user|
     Poll::Answer.create!(question_id: question.id,
                          author: user,
+                         option: option,
                          answer: option.title)
   end
 
@@ -149,6 +152,7 @@ section "Creating DEMO polls" do
   users.last(4).each do |user|
     Poll::Answer.create!(question_id: question.id,
                          author: user,
+                         option: option,
                          answer: option.title)
   end
 
