@@ -474,7 +474,7 @@ describe User do
         create(:user, newsletter: true, username: "Subscriber2")
         create(:user, newsletter: false, username: "NonSubscriber")
 
-        expect(User.newsletter.pluck(:username)).to eq ["Subscriber1", "Subscriber2"]
+        expect(User.newsletter.pluck(:username)).to match_array ["Subscriber1", "Subscriber2"]
       end
     end
 
@@ -484,7 +484,7 @@ describe User do
         create(:user, email_digest: true, username: "Digester2")
         create(:user, email_digest: false, username: "NonDigester")
 
-        expect(User.email_digest.pluck(:username)).to eq ["Digester1", "Digester2"]
+        expect(User.email_digest.pluck(:username)).to match_array ["Digester1", "Digester2"]
       end
     end
 
