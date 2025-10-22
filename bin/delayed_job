@@ -1,4 +1,11 @@
 #!/usr/bin/env ruby
+fnm_path = File.expand_path("~/.fnm")
+if File.exist?(fnm_path)
+  ENV['PATH'] = "#{fnm_path}:#{ENV['PATH']}"
+  if File.exist?("#{fnm_path}/fnm")
+    system("eval \"$(#{fnm_path}/fnm env)\"")
+  end
+end
 
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "config", "environment"))
 require "delayed/command"
