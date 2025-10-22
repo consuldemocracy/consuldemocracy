@@ -1,1 +1,43 @@
 lt:
+  moderation:
+    actions:
+      confirm_action: "Ar Jūs tikras? %{action}"
+    comments:
+      index:
+        block_authors: Blokuoti autorius
+        filter: Filtras
+        filters:
+          all: Visi
+          pending_flag_review: Laukiama
+          with_ignored_flag: Pažymėta kaip peržiūrėta
+        headers:
+          comment: Komentaras
+          moderate: Moderuoti
+        hide: Paslėpti komentarus
+        ignore_flags: Pažymėti kaip peržiūrėta
+        orders:
+          flags: Daugiausiai pažymėti
+          newest: Naujausi
+        title: Komentarai
+    dashboard:
+      index:
+        title: Moderavimas
+    debates:
+      index:
+        block_authors: Blokuoti autorius
+        filter: Filtras
+        filters:
+          all: Visi
+          pending_flag_review: Laukia patvirtinimo
+          with_ignored_flag: Pažymėti kaip peržiūrėta
+        headers:
+          debate: Debatai
+          moderate: Moderuoti
+        hide: Paslėpti debatus
+        ignore_flags: Pažymėti kaip peržiūrėta
+        orders:
+          created_at: Naujausi
+          flags: Daugiausiai pažymėti
+        title: Debatai
+    users:
+      notice_hide: Vartotojas buvo paslėptas. Šio vartotojo turinys vis dar yra.

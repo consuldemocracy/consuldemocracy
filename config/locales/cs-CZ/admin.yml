@@ -1353,6 +1353,8 @@ cs:
         sdg:
           title: SDG konfigurace
           how_to_enable: 'Chcete-li zobrazit možnosti konfigurace z Cílů udržitelného rozvoje, musíte povolit "SDG" na kartě "Funkce".'
+        cookies_consent:
+          title: Souhlas s používáním souborů cookie
       remote_census_general_name: Obecné informace
       remote_census_request_name: Žádost o data
       remote_census_response_name: Údaje o reakci

@@ -278,6 +278,14 @@ sv:
     info:
       sign_in: "Logga in med:"
       sign_up: "Registrera dig genom:"
+    saml:
+      sign_in: Logga in med SAML
+      sign_up: Registrera dig genom SAML
+      name: SAML
+    oidc:
+      sign_in: Logga in med OIDC
+      sign_up: Registrera dig genom OIDC
+      name: OIDC
     or_fill: "Eller fyll i följande formulär:"
   proposals:
     create:
@@ -572,6 +580,9 @@ sv:
   polls:
     dates: "Från %{open_at} till %{closed_at}"
     final_date: "Slutresultat"
+    form:
+      vote: "Rösta"
+      maximum_exceeded: "du har valt %{given} svar, men det mesta du kan välja är %{maximum}"
     index:
       filters:
         current: "Öppna"
@@ -597,6 +608,7 @@ sv:
     show:
       already_voted_in_booth: "Du har redan röstat i ett fysiskt röstbås. Du kan inte rösta igen."
       already_voted_in_web: "Du har redan deltagit i den här omröstningen. Om du röstar igen kommer din föregående röst att skrivas över."
+      already_voted_blank_in_web: "Du har redan deltagit i denna omröstning genom att lägga en blank röst. Om du röstar igen kommer den att skrivas över."
       back: Tillbaka till omröstningar
       cant_answer_not_logged_in: "Du behöver %{signin} eller %{signup} för att kunna delta."
       comments_tab: Kommentarer
@@ -626,14 +638,13 @@ sv:
       results:
         title: "Frågor"
         most_voted_answer: "Högst rankade svar: "
+        open_ended:
+          valid: Giltigt
+          blank: Tomt
     poll_header:
       back_to_proposal: Tillbaka till förslaget
   poll_questions:
-    show:
-      vote_answer: "Rösta på %{answer}"
-      voted: "Du har röstat på %{answer}"
     description:
-      unique: "Du kan välja maximalt 1 svar."
       multiple: "Du kan välja maximalt %{maximum} svar."
     read_more_about: "Läs mer om:"
   proposal_notifications:

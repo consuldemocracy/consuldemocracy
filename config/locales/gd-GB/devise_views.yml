@@ -69,7 +69,6 @@ gd:
         new_confirmation: Nach d’ fhuair thu stiùireadh gus do chunntas a chur an gnìomh?
         new_password: An do dhiochuimhnich thu am facal-faire agad?
         new_unlock: Nach d’ fhuair thu stiùireadh mu bhith a’ neo-ghlasadh do chunntais?
-        signin_with_provider: Clàraich a-steach le %{provider}
         signup: Nach eil cunntas agad? %{signup_link}
         signup_link: Clàraich
     unlocks:

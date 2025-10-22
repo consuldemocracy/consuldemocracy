@@ -32,7 +32,6 @@ id:
     results:
       flash:
         create: "Hasil disimpan"
-        error_create: "Hasil yang TIDAK diselamatkan. Kesalahan dalam data."
         error_wrong_booth: "Salah booth. Hasil yang TIDAK diselamatkan."
       new:
         title: "%{poll} - Tambahkan hasil"
@@ -49,8 +48,6 @@ id:
       index:
         no_results: "Tidak ada hasil"
         results: Hasil
-        table_answer: Jawaban
-        table_votes: Suara
         table_whites: "Benar-benar kosong surat suara"
         table_nulls: "Surat suara yang tidak sah"
         table_total: "Total surat suara"

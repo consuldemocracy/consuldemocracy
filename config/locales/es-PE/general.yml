@@ -432,10 +432,6 @@ es-PE:
       results:
         title: "Preguntas ciudadanas"
         most_voted_answer: "Respuesta más votada: "
-  poll_questions:
-    show:
-      vote_answer: "Votar %{answer}"
-      voted: "Has votado %{answer}"
   proposal_notifications:
     new:
       title: "Enviar mensaje"

@@ -509,8 +509,6 @@ ca:
           attributes:
             document_number:
               not_in_census: "Este documento no aparece en el censo"
-            user_id:
-              has_voted: "L'usuari ja ha votat"
         legislation/process:
           attributes:
             end_date:

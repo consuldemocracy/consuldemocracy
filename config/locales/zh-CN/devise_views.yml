@@ -69,7 +69,6 @@ zh-CN:
         new_confirmation: 尚未收到激活账号的说明吗？
         new_password: 忘记密码？
         new_unlock: 尚未收到解锁说明吗？
-        signin_with_provider: 用%{provider} 登录
         signup: 没有账号？%{signup_link}
         signup_link: 注册
     unlocks:

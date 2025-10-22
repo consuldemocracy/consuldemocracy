@@ -41,7 +41,6 @@ sv:
     results:
       flash:
         create: "Resultatet har sparats"
-        error_create: "Resultatet har INTE sparats. Felaktig data."
         error_wrong_booth: "Fel röststation. Resultatet sparades INTE."
       new:
         title: "%{poll} - Lägg till resultat"
@@ -58,8 +57,6 @@ sv:
       index:
         no_results: "Inget resultat"
         results: Resultat
-        table_answer: Svar
-        table_votes: Röster
         table_whites: "Blankröster"
         table_nulls: "Ogiltiga röster"
         table_total: "Giltiga röster"

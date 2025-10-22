@@ -41,7 +41,6 @@ fr:
     results:
       flash:
         create: "Résultats sauvegardés"
-        error_create: "Résultats NON sauvegardés. Erreur dans les données."
         error_wrong_booth: "Mauvaise urne. Résultats NON sauvegardés."
       new:
         title: "%{poll} - Ajouter des résultats"
@@ -58,8 +57,6 @@ fr:
       index:
         no_results: "Pas de résultats"
         results: Résultats
-        table_answer: Réponse
-        table_votes: Votes
         table_whites: "Votes blancs"
         table_nulls: "Votes invalides"
         table_total: "Total des bulletins"

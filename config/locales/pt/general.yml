@@ -626,11 +626,7 @@ pt:
     poll_header:
       back_to_proposal: Voltar à proposta
   poll_questions:
-    show:
-      vote_answer: "Votar %{answer}"
-      voted: "Votou %{answer}"
     description:
-      unique: "Pode selecionar no máximo 1 resposta."
       multiple: "Pode selecionar no máximo  %{maximum} respostas."
     read_more_about: "Ler mais sobre:"
   proposal_notifications:

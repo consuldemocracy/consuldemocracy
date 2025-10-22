@@ -576,8 +576,6 @@ tr:
           attributes:
             document_number:
               not_in_census: "Belge seçmen bilgi sistemi üzerinde yok"
-            user_id:
-              has_voted: "Kullanıcı zaten oy kullanmış"
         legislation/process:
           attributes:
             end_date:

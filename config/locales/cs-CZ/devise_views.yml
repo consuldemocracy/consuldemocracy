@@ -69,7 +69,6 @@ cs:
         new_confirmation: Nedostali jste pokyny k aktivaci účtu?
         new_password: Zapoměli jste heslo?
         new_unlock: Nezískali jste pokyny k odemknutí?
-        signin_with_provider: Přihlaste se pomocí služby %{provider}
         signup: Nemáte ještě účet? %{signup_link}
         signup_link: Registrovat
     unlocks:

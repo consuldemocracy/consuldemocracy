@@ -1,5 +1,17 @@
 hr:
   seeds:
+    admin_notifications:
+      budget:
+        body: "Požurite i kreirajte prijedlog prije nego što istekne u sljedećih nekoliko dana!"
+      help:
+        title: "Pomozite nam prevesti Consul Democracy"
+        body: "Ako ste vješti u jezicima, pomozite nam prevesti Consul Democracy!"
+      map:
+        title: "Sada možete geolocirati prijedloge i ulaganja"
+        body: "Kada kreirate prijedlog ili investiciju, sada možete odrediti točku na karti."
+      proposal:
+        title: "Imate li prijedlog?"
+        body: ""
     settings:
       official_level_1_name: Službna pozicija 1
       official_level_2_name: Službna pozicija 2

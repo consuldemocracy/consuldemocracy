@@ -31,7 +31,6 @@ sq:
     results:
       flash:
         create: "\nRezultatet u ruajtën"
-        error_create: "\nRezultatet nuk u ruajtën. Gabim në të dhënat."
         error_wrong_booth: "\nKabinë e gabuar. Rezultatet nuk u ruajtën."
       new:
         title: "%{poll}Shto rezultate"
@@ -48,8 +47,6 @@ sq:
       index:
         no_results: "Nuk ka rezultate"
         results: Rezultatet
-        table_answer: Përgjigjet
-        table_votes: Votim
         table_whites: "Vota të plota"
         table_nulls: "Votat e pavlefshme"
         table_total: "Totali i fletëvotimeve"

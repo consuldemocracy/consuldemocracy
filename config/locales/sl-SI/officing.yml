@@ -30,7 +30,6 @@ sl:
     results:
       flash:
         create: "Rezultati shranjeni"
-        error_create: "Rezultati NISO bili shranjeni. Napaka v podatkih."
         error_wrong_booth: "Napačno volišče. Rezultati NISO bili shranjeni."
       new:
         title: "%{poll} - Dodaj rezultate"
@@ -47,8 +46,6 @@ sl:
       index:
         no_results: "Ni rezultatov"
         results: Rezultati
-        table_answer: Odgovor
-        table_votes: Glasovi
         table_whites: "Popolnoma prazne glasovnice"
         table_nulls: "Neveljavne glasovnice"
         table_total: "Skupaj glasovnic"

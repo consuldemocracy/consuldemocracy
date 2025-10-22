@@ -29,7 +29,6 @@ ast:
     results:
       flash:
         create: "Datos guardados"
-        error_create: "Resultados NO añadidos. Error en los datos"
         error_wrong_booth: "Urna incorrecta. Resultados NO guardados."
       new:
         title: "%{poll} - Añadir resultados"
@@ -43,8 +42,6 @@ ast:
       index:
         no_results: "No hay resultados"
         results: Resultancies
-        table_answer: Respuesta
-        table_votes: Votos
         table_nulls: "Papeletes nules"
     residence:
       flash:

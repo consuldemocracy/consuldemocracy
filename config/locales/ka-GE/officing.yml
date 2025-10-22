@@ -41,7 +41,6 @@ ka:
     results:
       flash:
         create: "შედეგები შენახულია"
-        error_create: "შედეგების შენახვა ვერ მოხერხდა. მონაცემებში შეცდომაა."
         error_wrong_booth: "კაბინა არასწორია. შედეგების შენახვა ვერ მოხერხდა."
       new:
         title: "%{poll} - შედეგების დამატება"
@@ -58,8 +57,6 @@ ka:
       index:
         no_results: "შედეგები არ მოიძებნა"
         results: შედეგები
-        table_answer: პასუხი
-        table_votes: ხმები
         table_whites: "სრულიად ცარიელი ბიულეტენები"
         table_nulls: "ბათილი ბიულეტენები"
         table_total: "მოქმედი ბიულეტინები"
