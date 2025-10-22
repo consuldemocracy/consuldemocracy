@@ -43,7 +43,6 @@ describe Sensemaker::CsvExporter do
     let(:temp_csv_file) { Tempfile.new(["test-categorization-output", ".csv"]) }
 
     before do
-      # Create a temporary CSV file with test data
       temp_csv_file.write("comment-id,comment_text,agrees,disagrees,passes,author-id,topics\n")
       temp_csv_file.write("comment_1,First comment,5,2,1,user_1,Transportation:PublicTransit\n")
       temp_csv_file.write("comment_2,Second comment,0,0,0,user_2,Transportation:Parking\n")
@@ -69,7 +68,6 @@ describe Sensemaker::CsvExporter do
       filtered_data = CSV.read(csv_file_path, headers: true)
       first_row = filtered_data.first
 
-      # Check that all expected columns are present
       expect(first_row.headers).to include("comment-id", "comment_text", "agrees", "disagrees", "passes",
                                            "author-id", "topics")
     end
@@ -85,7 +83,6 @@ describe Sensemaker::CsvExporter do
     end
 
     it "filters out all zero votes" do
-      # Create a new temp file for this test
       temp_file = Tempfile.new(["test-pass", ".csv"])
       temp_file.write("comment-id,comment_text,agrees,disagrees,passes,author-id,topics\n")
       temp_file.write("comment_pass,Pass only,0,0,1,user_1,Transportation:PublicTransit\n")
@@ -104,7 +101,6 @@ describe Sensemaker::CsvExporter do
     end
 
     it "handles empty CSV files gracefully" do
-      # Create an empty CSV file
       temp_file = Tempfile.new(["test-pass", ".csv"])
       temp_file.write("comment-id,comment_text,agrees,disagrees,passes,author-id,topics\n")
       temp_file.close
@@ -132,17 +128,14 @@ describe Sensemaker::CsvExporter do
 
       expect(File.exist?("#{csv_file_path}.unfiltered")).to be true
 
-      # Check that the unfiltered file contains all original rows
       unfiltered_data = CSV.read("#{csv_file_path}.unfiltered", headers: true)
-      expect(unfiltered_data.length).to eq(6) # All original rows
+      expect(unfiltered_data.length).to eq(6)
 
-      # Check that the filtered file has fewer rows
       filtered_data = CSV.read(csv_file_path, headers: true)
-      expect(filtered_data.length).to eq(4) # Only rows with votes
+      expect(filtered_data.length).to eq(4)
     end
 
     it "does not create an unfiltered backup when no filtering is required" do
-      # Create a CSV with all rows having votes
       temp_file = Tempfile.new(["test-all-votes", ".csv"])
       temp_file.write("comment-id,comment_text,agrees,disagrees,passes,author-id,topics\n")
       temp_file.write("comment_1,First comment,5,2,1,user_1,Transportation:PublicTransit\n")
@@ -159,7 +152,6 @@ describe Sensemaker::CsvExporter do
     end
 
     it "handles missing vote columns gracefully" do
-      # Create a CSV with missing vote columns
       temp_file = Tempfile.new(["test-missing-votes", ".csv"])
       temp_file.write("comment-id,comment_text,author-id,topics\n")
       temp_file.write("comment_1,First comment,user_1,Transportation:PublicTransit\n")
@@ -169,7 +161,6 @@ describe Sensemaker::CsvExporter do
 
       expect { Sensemaker::CsvExporter.filter_zero_vote_comments_from_csv(csv_file_path) }.not_to raise_error
 
-      # All rows should be filtered out since they have no votes
       filtered_data = CSV.read(csv_file_path, headers: true)
       expect(filtered_data.length).to eq(0)
 

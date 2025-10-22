@@ -31,11 +31,9 @@ describe Sensemaker::JobRunner do
     end
 
     it "runs the complete workflow successfully" do
-      # Set up real file system mocks
       allow(File).to receive(:exist?).and_return(true)
       allow(service).to receive(:system).and_return(true)
 
-      # Let it run the real workflow
       service.run
 
       job.reload
@@ -84,6 +82,39 @@ describe Sensemaker::JobRunner do
     it "returns true when all dependencies are available" do
       result = service.send(:check_dependencies?)
       expect(result).to be true
+    end
+
+    it "returns false when sensemaker_data_folder is not configured" do
+      allow(Tenant.current_secrets).to receive(:sensemaker_data_folder).and_return(nil)
+
+      result = service.send(:check_dependencies?)
+
+      expect(result).to be false
+      job.reload
+      expect(job.finished_at).to be_present
+      expect(job.error).to include("Sensemaker data folder not configured")
+    end
+
+    it "returns false when sensemaker_key_file is not configured" do
+      allow(Tenant.current_secrets).to receive(:sensemaker_key_file).and_return(nil)
+
+      result = service.send(:check_dependencies?)
+
+      expect(result).to be false
+      job.reload
+      expect(job.finished_at).to be_present
+      expect(job.error).to include("Sensemaker key file not configured")
+    end
+
+    it "returns false when sensemaker_model_name is not configured" do
+      allow(Tenant.current_secrets).to receive(:sensemaker_model_name).and_return(nil)
+
+      result = service.send(:check_dependencies?)
+
+      expect(result).to be false
+      job.reload
+      expect(job.finished_at).to be_present
+      expect(job.error).to include("Sensemaker model name not configured")
     end
 
     it "returns false when Node.js is not available" do
@@ -333,19 +364,16 @@ describe Sensemaker::JobRunner do
     let(:service) { Sensemaker::JobRunner.new(job) }
 
     before do
-      # Set a default stub for File.exist? to avoid unexpected calls
       allow(File).to receive(:exist?).and_return(true)
     end
 
     it "returns true and sets persisted_output when the output file exists" do
-      # Mock the File.exist? method to return true for the output file
       allow(File).to receive(:exist?).with(service.output_file).and_return(true)
 
       result = service.send(:process_output)
 
       expect(result).to be true
 
-      # Check that persisted_output is set to the output file path
       job.reload
       expect(job.persisted_output).to eq(service.output_file)
     end
@@ -354,7 +382,6 @@ describe Sensemaker::JobRunner do
       job.update!(script: "single-html-build.js")
       service = Sensemaker::JobRunner.new(job)
 
-      # Mock the File.exist? method to return true for the output file
       allow(File).to receive(:exist?).with(service.output_file).and_return(true)
       allow(FileUtils).to receive(:cp)
 
@@ -362,21 +389,18 @@ describe Sensemaker::JobRunner do
 
       expect(result).to be true
 
-      # Check that persisted_output is set to the final report path
       job.reload
       expected_path = "#{Sensemaker::JobRunner.sensemaker_data_folder}/report-#{job.id}.html"
       expect(job.persisted_output).to eq(expected_path)
     end
 
     it "returns nil and updates the job when the output file does not exist" do
-      # Mock the File.exist? method to return false for the output file
       allow(File).to receive(:exist?).with(service.output_file).and_return(false)
 
       result = service.send(:process_output)
 
       expect(result).to be nil
 
-      # Check that the job is updated with the error
       job.reload
       expect(job.finished_at).to be_present
       expect(job.error).to eq("Output file not found")

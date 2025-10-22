@@ -311,28 +311,46 @@ module Sensemaker
       end
 
       def check_dependencies?
-        # Check if Node.js and NPX are available
+        if Tenant.current_secrets.sensemaker_data_folder.blank?
+          message = "Sensemaker data folder not configured. Add 'sensemaker_data_folder' to your secrets.yml"
+          job.update!(finished_at: Time.current, error: message)
+          Rails.logger.error(message)
+          return false
+        end
+
+        if Tenant.current_secrets.sensemaker_key_file.blank?
+          message = "Sensemaker key file not configured. Add 'sensemaker_key_file' to your secrets.yml"
+          job.update!(finished_at: Time.current, error: message)
+          Rails.logger.error(message)
+          return false
+        end
+
+        if Tenant.current_secrets.sensemaker_model_name.blank?
+          message = "Sensemaker model name not configured. Add 'sensemaker_model_name' to your secrets.yml"
+          job.update!(finished_at: Time.current, error: message)
+          Rails.logger.error(message)
+          return false
+        end
+
         unless system("which node > /dev/null 2>&1")
-          error_message = "Node.js not found. Please install Node.js to use the Sensemaker feature."
-          job.update!(finished_at: Time.current, error: error_message)
-          Rails.logger.error(error_message)
+          message = "Node.js not found. Install Node.js to use the Sensemaker feature."
+          job.update!(finished_at: Time.current, error: message)
+          Rails.logger.error(message)
           return false
         end
 
         unless system("which npx > /dev/null 2>&1")
-          error_message = "NPX not found. Please install NPX to use the Sensemaker feature."
-          job.update!(finished_at: Time.current, error: error_message)
-          Rails.logger.error(error_message)
+          message = "NPX not found. Install NPX to use the Sensemaker feature."
+          job.update!(finished_at: Time.current, error: message)
+          Rails.logger.error(message)
           return false
         end
 
-        # Check if the required files exist
         return false unless file_exists?(self.class.sensemaker_folder,
                                          description: "sensemaking-tools folder")
         return false unless file_exists?(self.class.sensemaker_data_folder,
                                          description: "Sensemaker data folder")
 
-        # Input file might just be a base name so we need to handle that case
         if job.script == "single-html-build.js"
           return false unless file_exists?(self.class.visualization_folder,
                                            description: "Visualization folder")
@@ -349,16 +367,16 @@ module Sensemaker
         return false unless file_exists?(key_file, description: "Key file")
 
         if parse_key_file.blank?
-          error_message = "Key file is invalid: #{key_file}"
-          job.update!(finished_at: Time.current, error: error_message)
-          Rails.logger.error(error_message)
+          message = "Key file is invalid: #{key_file}"
+          job.update!(finished_at: Time.current, error: message)
+          Rails.logger.error(message)
           return false
         end
 
         if project_id.blank?
-          error_message = "Key file is missing project_id: #{key_file}"
-          job.update!(finished_at: Time.current, error: error_message)
-          Rails.logger.error(error_message)
+          message = "Key file is missing project_id: #{key_file}"
+          job.update!(finished_at: Time.current, error: message)
+          Rails.logger.error(message)
           return false
         end
 
@@ -383,8 +401,8 @@ module Sensemaker
         else
           output = "Timeout: #{TIMEOUT} seconds\n#{output}" if result.eql?(124)
           output = output.truncate(20000)
-          error_message = "Command: #{command}\n\n#{output}"
-          job.update!(finished_at: Time.current, error: error_message)
+          message = "Command: #{command}\n\n#{output}"
+          job.update!(finished_at: Time.current, error: message)
           Rails.logger.error("Sensemaker::JobRunner error: #{output}")
           nil
         end
@@ -427,9 +445,9 @@ module Sensemaker
       def file_exists?(file_path, description: "File or directory")
         return true if File.exist?(file_path)
 
-        error_message = "#{description} not found: #{file_path}"
-        job.update!(finished_at: Time.current, error: error_message)
-        Rails.logger.error(error_message)
+        message = "#{description} not found: #{file_path}"
+        job.update!(finished_at: Time.current, error: message)
+        Rails.logger.error(message)
         false
       end
   end
