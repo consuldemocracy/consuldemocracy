@@ -5,7 +5,7 @@
     <%= content_for :head %>
   </head>
 
-  <body class="admin">
+  <body class="admin" data-warning-for-linkouts="<%= !!Setting["feature.warning_for_linkouts"] ? t("valuation.modal.warning_for_linkouts") : "" %>">
     <%= render Layout::SkipToMainContentComponent.new %>
     <%= render Layout::AdminHeaderComponent.new(current_user) %>
 

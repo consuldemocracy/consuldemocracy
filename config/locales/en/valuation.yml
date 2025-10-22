@@ -1,5 +1,9 @@
 en:
   valuation:
+    iframe:
+      two_clicks_for_iframes_modal_warning: By accessing the content, you agree that your data may be transferred to third-party providers and that you have read the privacy policy.
+    modal:
+      warning_for_linkouts: By confirming, you agree to leave the website.
     header:
       title: Valuation
     menu:
