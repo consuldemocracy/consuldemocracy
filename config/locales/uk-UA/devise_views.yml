@@ -69,7 +69,6 @@ uk-UA:
         new_confirmation: Не отримали інструкції щодо активації вашого облікового запису?
         new_password: Забули пароль?
         new_unlock: Не отримали інструкції щодо розблокування?
-        signin_with_provider: Увійдіть з %{provider}
         signup: Не маєте облікового запису? %{signup_link}
         signup_link: Увійти
     unlocks:

@@ -633,10 +633,6 @@ ro:
         most_voted_answer: "Cel mai votat răspuns: "
     poll_header:
       back_to_proposal: Înapoi la propunere
-  poll_questions:
-    show:
-      vote_answer: "Votează %{answer}"
-      voted: "Ați votat %{answer}"
   proposal_notifications:
     new:
       title: "Trimite mesaj"

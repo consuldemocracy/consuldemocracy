@@ -40,6 +40,7 @@ nl:
         file: Bestand
       setting/locales_settings:
         default: Standaard taal
+        enabled: Geactiveerde talen
     errors:
       models:
         local_census_records/import:

@@ -41,7 +41,6 @@ ru:
     results:
       flash:
         create: "Результаты сохранены"
-        error_create: "Результаты НЕ сохранены. Ошибка в данных."
         error_wrong_booth: "Неправильная кабинка. Результаты НЕ сохранены."
       new:
         title: "%{poll} - Добавить результаты"
@@ -58,8 +57,6 @@ ru:
       index:
         no_results: "Нет результатов"
         results: Результаты
-        table_answer: Ответ
-        table_votes: Голоса
         table_whites: "Полностью пустые бюллетени"
         table_nulls: "Недействительные бюллетени"
         table_total: "Всего бюллетеней"

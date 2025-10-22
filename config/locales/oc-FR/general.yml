@@ -611,10 +611,6 @@ oc:
         most_voted_answer: "Responsa mai votada: "
     poll_header:
       back_to_proposal: Tornar a la proposicion
-  poll_questions:
-    show:
-      vote_answer: "Votar %{answer}"
-      voted: "As votat %{answer}"
   proposal_notifications:
     new:
       title: "Enviar messatge"

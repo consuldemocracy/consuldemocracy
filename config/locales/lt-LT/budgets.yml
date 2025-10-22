@@ -1,1 +1,10 @@
 lt:
+  budgets:
+    ballots:
+      show:
+        title: Tavo balsavimas
+        amount_progress: "%{amount_spent} / %{amount_limit}"
+        amount_available:
+          knapsack: "Vis dar prieinamas jums <span>%{count}</span>"
+          approval:
+            zero: "Vis tiek galite skirti <span>%{count}</span> balsus."

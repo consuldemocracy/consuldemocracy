@@ -509,8 +509,6 @@ ka:
           attributes:
             document_number:
               not_in_census: "დოკუმენტი არ შედის აღწერაში"
-            user_id:
-              has_voted: "მომხმარებელმა უკვე მისცა ხმა"
         legislation/process:
           attributes:
             end_date:

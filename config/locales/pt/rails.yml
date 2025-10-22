@@ -9,7 +9,7 @@ pt:
       - Sex
       - Sab
     abbr_month_names:
-      -
+      - 
       - Jan
       - Fev
       - Mar
@@ -35,7 +35,7 @@ pt:
       long: "%d %B %Y"
       short: "%d %b"
     month_names:
-      -
+      - 
       - Janeiro
       - Fevereiro
       - Março

@@ -69,7 +69,6 @@ ro:
         new_confirmation: Nu ați primit instrucțiuni pentru a va activa contul?
         new_password: V-ați uitat parola?
         new_unlock: Nu ați primit instrucțiunile de deblocare?
-        signin_with_provider: Conectare cu %{provider}
         signup: Nu aveți un cont? %{signup_link}
         signup_link: Înregistrare
     unlocks:

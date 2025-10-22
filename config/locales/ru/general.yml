@@ -625,10 +625,6 @@ ru:
         most_voted_answer: "Самый голосуемый ответ: "
     poll_header:
       back_to_proposal: Вернуться к предложению
-  poll_questions:
-    show:
-      vote_answer: "Голосовать по %{answer}"
-      voted: "Вы проголосовали по %{answer}"
   proposal_notifications:
     new:
       title: "Отправить сообщение"

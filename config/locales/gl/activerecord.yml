@@ -568,8 +568,6 @@ gl:
           attributes:
             document_number:
               not_in_census: "Este documento non está no censo"
-            user_id:
-              has_voted: "Este usuario xa votou"
         legislation/process:
           attributes:
             end_date:

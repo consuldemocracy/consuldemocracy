@@ -31,7 +31,6 @@ pl:
     results:
       flash:
         create: "Wyniki zapisane"
-        error_create: "Wyniki NIE zapisane. Błąd w danych."
         error_wrong_booth: "Zła kabina wyborcza. Wyniki NIE zapisane."
       new:
         title: "%{poll} - Dodaj wyniki"
@@ -48,8 +47,6 @@ pl:
       index:
         no_results: "Brak wyników"
         results: Wyniki
-        table_answer: Odpowiedź
-        table_votes: Głosów
         table_whites: "Całkowicie puste karty do głosowania"
         table_nulls: "Nieprawidłowe karty do głosowania"
         table_total: "Całkowita liczba kart do głosowania"

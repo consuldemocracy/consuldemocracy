@@ -91,6 +91,10 @@ sv:
       google_login_description: "Tillåt användare att logga in med sitt Google-konto"
       wordpress_login: "Wordpress-inloggning"
       wordpress_login_description: "Tillåt användare att logga in med sitt Wordpress-konto"
+      oidc_login: "OpenID Connect-inloggning"
+      oidc_login_description: "Tillåt att användare registrerar sig genom OpenID Connect (OIDC)"
+      saml_login: "SAML-inloggning"
+      saml_login_description: "Tillåt att användare registrerar sig genom SAML"
       featured_proposals: "Uppmärksammade förslag"
       featured_proposals_description: "Visar uppmärksammade förslag på indexsidan för förslag"
       signature_sheets: "Namninsamlingar"
@@ -136,6 +140,9 @@ sv:
       sdg_description: Aktivera delarna Globala mål för hållbar utveckling i administrationsmenyn och i Globala inställningar.
       cookies_consent: Banner om cookies-samtycke
       cookies_consent_description: Aktivera bannern om cookies-samtycke för att informera användare om cookies som programvaran använder.
+      gdpr:
+        require_consent_for_notifications: Uttryckligt samtycke för aviseringar
+        require_consent_for_notifications_description: Begär uttryckligt användarsamtycke för att kunna skicka nyhetsbrev och liknande information som krävs enligt allmänna dataskyddsförordningen (DSF).
     remote_census:
       general:
         endpoint: "Slutpunkt"

@@ -2,7 +2,7 @@ sq:
   devise_views:
     confirmations:
       new:
-        submit: Ridergo instruksionet
+        submit: Ridergo instruksionet 
         title: Ridërgo udhëzimet e konfirmimit
       show:
         instructions: Konfirmimi i llogarisë me email %{email}
@@ -56,7 +56,7 @@ sq:
         password_label: Fjalëkalim i ri
         title: Ndrysho fjalëkalimin tënd
       new:
-        send_submit: Dërgo instruksionet
+        send_submit: Dërgo instruksionet 
         title: Harrruat fjalëkalimin?
     sessions:
       new:
@@ -69,7 +69,6 @@ sq:
         new_confirmation: Nuk keni marrë udhëzime për të aktivizuar llogarinë tuaj?
         new_password: Harrruat fjalëkalimin?
         new_unlock: Nuk keni marrë udhëzime për zhbllokimin?
-        signin_with_provider: Kycu në me %{provider}
         signup: Nuk keni llogari? %{signup_link}
         signup_link: Rregjistrohu
     unlocks:
@@ -84,7 +83,7 @@ sq:
           info: Ky veprim nuk mund të zhbëhet. Ju lutemi sigurohuni që kjo është ajo që ju dëshironi.
           info_reason: Nëse dëshironi, na lini një arsye (opsionale)
           submit: Fshi llogarinë time
-          title: Fshi llogarinë
+          title: Fshi llogarinë 
         edit:
           current_password_label: Fjalëkalimi aktual
           edit: Ndrysho

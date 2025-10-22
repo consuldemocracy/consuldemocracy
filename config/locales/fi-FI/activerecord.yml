@@ -255,10 +255,6 @@ fi:
         date_of_birth: Syntymäaika
     errors:
       models:
-        poll/voter:
-          attributes:
-            user_id:
-              has_voted: "Käyttäjä on jo äänestänyt"
         site_customization/image:
           attributes:
             image:

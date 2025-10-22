@@ -69,7 +69,6 @@ bg:
         new_confirmation: Не сте получили инструкции за активиране на вашия профил?
         new_password: Забравили сте паролата си?
         new_unlock: Не сте получили инструкции за отключване?
-        signin_with_provider: Влезте с %{provider}
         signup: Нямате профил? %{signup_link}
         signup_link: Регистрирайте се
     unlocks:

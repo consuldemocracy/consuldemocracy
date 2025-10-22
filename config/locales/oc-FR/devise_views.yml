@@ -69,7 +69,6 @@ oc:
         new_confirmation: As pas recebut d'instruccions per confirmar lo tieu compte?
         new_password: Avètz perdut la contrasenya?
         new_unlock: As pas recebut d'instruccions per desblocar?
-        signin_with_provider: Dintrar amb çò %{provider}
         signup: As pas un compte? %{signup_link}
         signup_link: enregistrar-
     unlocks:

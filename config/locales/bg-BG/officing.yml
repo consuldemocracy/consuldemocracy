@@ -41,7 +41,6 @@ bg:
     results:
       flash:
         create: "Резултатите са запазени"
-        error_create: "Резултатите на са запазени. Грешка в данните."
         error_wrong_booth: "Грешна кабинка. Резултатите НЕ са запазени."
       new:
         title: "%{poll} - Добавете резултати"
@@ -58,8 +57,6 @@ bg:
       index:
         no_results: "Няма резултати"
         results: Резултати
-        table_answer: Отговор
-        table_votes: Гласове
         table_whites: "Напълно празни бюлетини"
         table_nulls: "Невалидни бюлетини"
         table_total: "Валидни бюлетини"

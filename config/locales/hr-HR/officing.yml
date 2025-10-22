@@ -41,7 +41,6 @@ hr:
     results:
       flash:
         create: "Spremljeni rezultati"
-        error_create: "Rezultati NISU spremljeni. Greška u podacima."
         error_wrong_booth: "Pogrešno glasačko mjesto. Rezultati nisu spremljeni."
       new:
         title: "%{poll} - Dodaj rezultate"
@@ -58,8 +57,6 @@ hr:
       index:
         no_results: "Nema rezultata"
         results: Rezultati
-        table_answer: Odgovor
-        table_votes: Glasovi
         table_whites: "Ukupno praznih glasova"
         table_nulls: "Nevažeći glasovi"
         table_total: "Ukupno glasova"

@@ -503,10 +503,6 @@ pl:
       results:
         title: "Pytania"
         most_voted_answer: "Najczęściej wybierana odpowiedź: "
-  poll_questions:
-    show:
-      vote_answer: "Głosuj %{answer}"
-      voted: "Głosowałeś %{answer}"
   proposal_notifications:
     new:
       title: "Wyślij wiadomość"

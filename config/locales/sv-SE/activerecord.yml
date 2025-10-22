@@ -534,6 +534,7 @@ sv:
         max_votes: Högsta antalet röster
         vote_type: Omröstningstyp
       votation_type/vote_type:
+        open: Öppen fråga
         unique: Unikt svar
         multiple: Flera svar
       cookies/vendor:
@@ -576,8 +577,6 @@ sv:
           attributes:
             document_number:
               not_in_census: "Finns inte i adressregistret"
-            user_id:
-              has_voted: "Användaren har redan röstat"
         legislation/process:
           attributes:
             end_date:
@@ -630,6 +629,10 @@ sv:
           attributes:
             code:
               invalid: "måste börja med samma kod som sitt delmål, följt av en punkt, och sluta med ett tal"
+        votation_type:
+          attributes:
+            vote_type:
+              cannot_change_to_open_ended: "kan inte byta till öppen typ av fråga eftersom du redan har definierat möjliga giltiga svar på denna fråga"
       messages:
         translations_too_short: Det krävs minst en översättning
         record_invalid: "Felmeddelanden: %{errors}"

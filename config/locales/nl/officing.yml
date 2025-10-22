@@ -41,7 +41,6 @@ nl:
     results:
       flash:
         create: "Resultaten opgeslagen"
-        error_create: "Resultaten NIET opgeslagen. Foutmelding in data"
         error_wrong_booth: "Verkeerd stemhokje. Resultaten NIET opgeslagen."
       new:
         title: "%{poll} - Voeg resultaten toe"
@@ -58,8 +57,6 @@ nl:
       index:
         no_results: "Geen resultaten"
         results: Resultaten
-        table_answer: Antwoord
-        table_votes: Stemmen
         table_whites: "Blanco stemmen"
         table_nulls: "Invalid ballots"
         table_total: "Totaal stemmen"

@@ -604,10 +604,6 @@ nn:
         most_voted_answer: "Mest populære svar: "
     poll_header:
       back_to_proposal: Tilbake til forslag
-  poll_questions:
-    show:
-      vote_answer: "Stem %{answer}"
-      voted: "Du har stemt%{answer}"
   proposal_notifications:
     new:
       title: "Send melding"
