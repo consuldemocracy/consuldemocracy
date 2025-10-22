@@ -39,7 +39,7 @@ class Admin::SensemakerJobsController < Admin::BaseController
 
   def create
     valid_params = sensemaker_job_params.to_h
-    valid_params.merge!(user: current_user, started_at: Time.current, path: ENV["PATH"])
+    valid_params.merge!(user: current_user, started_at: Time.current)
     @sensemaker_job = Sensemaker::Job.create!(valid_params)
 
     if Rails.env.test?

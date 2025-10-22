@@ -1,5 +1,13 @@
 #!/usr/bin/env ruby
 
+# Load the fnm context
+if File.exist?("load_fnm_context.sh")
+  result = system("load_fnm_context.sh")
+  if result == false
+    puts "Warning: Failed to load fnm context for delayed job"
+  end
+end
+
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "config", "environment"))
 require "delayed/command"
 Delayed::Command.new(ARGV).daemonize

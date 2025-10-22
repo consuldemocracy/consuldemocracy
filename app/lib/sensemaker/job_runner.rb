@@ -40,7 +40,6 @@ module Sensemaker
     end
 
     def run
-      setup_environment
       execute_job_workflow
     end
     handle_asynchronously :run, queue: "sensemaker"
@@ -238,13 +237,6 @@ module Sensemaker
     end
 
     private
-
-      def setup_environment
-        return if job.path.blank?
-
-        ENV["PATH"] = job.path
-      end
-
       def execute_job_workflow
         job.update!(started_at: Time.current)
 
@@ -264,8 +256,7 @@ module Sensemaker
           parent_job: job,
           commentable: job.commentable,
           script: "categorization_runner.ts",
-          additional_context: job.additional_context,
-          path: job.path
+          additional_context: job.additional_context
         )
 
         categorization_runner = Sensemaker::JobRunner.new(categorization_job)
@@ -285,8 +276,7 @@ module Sensemaker
           parent_job: job,
           commentable: job.commentable,
           script: "advanced_runner.ts",
-          additional_context: job.additional_context,
-          path: job.path
+          additional_context: job.additional_context
         )
 
         advanced_runner = Sensemaker::JobRunner.new(advanced_job)
