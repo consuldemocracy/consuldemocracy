@@ -24,6 +24,7 @@ module Sensemaker
     belongs_to :commentable, polymorphic: true
 
     after_destroy :cleanup_associated_files
+    before_create :snapshot_path_if_blank
 
     def started?
       started_at.present?
@@ -80,6 +81,16 @@ module Sensemaker
     end
 
     private
+
+      def snapshot_path_if_blank
+        if path.blank?
+          if parent_job.present? && parent_job.path.present?
+            self.path = parent_job.path
+          else
+            self.path = ENV['PATH']
+          end
+        end
+      end
 
       def cleanup_associated_files
         data_folder = Sensemaker::JobRunner.sensemaker_data_folder

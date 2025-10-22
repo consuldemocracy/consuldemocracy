@@ -40,6 +40,7 @@ module Sensemaker
     end
 
     def run
+      setup_environment
       execute_job_workflow
     end
     handle_asynchronously :run, queue: "sensemaker"
@@ -238,6 +239,12 @@ module Sensemaker
 
     private
 
+      def setup_environment
+        return if job.path.blank?
+
+        ENV["PATH"] = job.path
+      end
+
       def execute_job_workflow
         job.update!(started_at: Time.current)
 
@@ -257,7 +264,8 @@ module Sensemaker
           parent_job: job,
           commentable: job.commentable,
           script: "categorization_runner.ts",
-          additional_context: job.additional_context
+          additional_context: job.additional_context,
+          path: job.path
         )
 
         categorization_runner = Sensemaker::JobRunner.new(categorization_job)
@@ -277,7 +285,8 @@ module Sensemaker
           parent_job: job,
           commentable: job.commentable,
           script: "advanced_runner.ts",
-          additional_context: job.additional_context
+          additional_context: job.additional_context,
+          path: job.path
         )
 
         advanced_runner = Sensemaker::JobRunner.new(advanced_job)
@@ -334,6 +343,7 @@ module Sensemaker
 
         unless system("which node > /dev/null 2>&1")
           message = "Node.js not found. Install Node.js to use the Sensemaker feature."
+          message += "\nPATH: #{ENV["PATH"]}"
           job.update!(finished_at: Time.current, error: message)
           Rails.logger.error(message)
           return false
@@ -341,6 +351,7 @@ module Sensemaker
 
         unless system("which npx > /dev/null 2>&1")
           message = "NPX not found. Install NPX to use the Sensemaker feature."
+          message += "\nPATH: #{ENV["PATH"]}"
           job.update!(finished_at: Time.current, error: message)
           Rails.logger.error(message)
           return false
