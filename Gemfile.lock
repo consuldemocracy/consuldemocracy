@@ -820,6 +820,7 @@ DEPENDENCIES
   caxlsx_rails (~> 0.6.4)
   ckeditor (~> 4.3.0)
   cocoon (~> 1.2.15)
+  csv (~> 3.3.5)
   daemons (~> 1.4.1)
   dalli (~> 3.2.8)
   debug (~> 1.9.2)

@@ -1,5 +1,4 @@
 class Budget::Investment::Exporter
-  require "csv"
   include JsonExporter
 
   def initialize(investments)
