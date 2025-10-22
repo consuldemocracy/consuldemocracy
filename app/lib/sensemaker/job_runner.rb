@@ -386,11 +386,10 @@ module Sensemaker
       end
 
       def execute_script
-        if job.script == "single-html-build.js"
-          command = "cd #{self.class.visualization_folder} && timeout #{TIMEOUT} #{build_command}"
-        else
-          command = "cd #{self.class.sensemaker_folder} && timeout #{TIMEOUT} #{build_command}"
-        end
+        target_folder = self.class.sensemaker_folder
+        target_folder = self.class.visualization_folder if job.script == "single-html-build.js"
+
+        command = "cd #{target_folder} && timeout #{TIMEOUT} #{build_command}"
         Rails.logger.debug("Executing script: #{command}")
         output = `#{command} 2>&1`
 

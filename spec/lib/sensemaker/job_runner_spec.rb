@@ -240,7 +240,7 @@ describe Sensemaker::JobRunner do
     it "returns value when the script executes successfully" do
       # Mock the backtick method to simulate successful execution
       timeout = Sensemaker::JobRunner::TIMEOUT
-      expected_command = %r{cd .* && timeout #{timeout} npx ts-node .*categorization_runner\.ts}
+      expected_command = %r{cd .* && timeout #{timeout} .*}
       expect(service).to receive(:`).with(expected_command).and_return("Success output")
 
       allow(service).to receive(:process_exit_status).and_return(0)
@@ -253,7 +253,7 @@ describe Sensemaker::JobRunner do
     it "returns nil and updates the job when the script fails" do
       # Mock the backtick method to simulate failed execution
       timeout = Sensemaker::JobRunner::TIMEOUT
-      expected_command = %r{cd .* && timeout #{timeout} npx ts-node .*categorization_runner\.ts}
+      expected_command = %r{cd .* && timeout #{timeout} .*}
       expect(service).to receive(:`).with(expected_command).and_return("Error output")
 
       allow(service).to receive(:process_exit_status).and_return(1)

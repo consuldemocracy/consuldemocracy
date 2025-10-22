@@ -61,6 +61,7 @@ set :puma_systemd_watchdog_sec, 0
 set :delayed_job_workers, 2
 set :delayed_job_roles, :background
 set :delayed_job_monitor, true
+set :delayed_job_env_vars, -> { ["PATH=#{fetch(:fnm_path)}:$PATH"] }
 
 set :whenever_roles, -> { :app }
 
