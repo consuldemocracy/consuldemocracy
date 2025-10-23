@@ -1,0 +1,12 @@
+---
+es:
+  moderation:
+    menu:
+      flagged_investments: Propuestas de proyectos de inversión
+    budget_investments:
+      index:
+        headers:
+          moderate: Moderar
+          budget_investment: Propuesta de proyecto de inversión
+        hide_budget_investments: Ocultar propuesta de proyecto de inversión
+        title: Propuestas de proyectos de inversión

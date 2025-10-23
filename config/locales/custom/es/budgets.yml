@@ -2,9 +2,39 @@
 es:
   budgets:
     ballots:
+      show:
+        no_balloted_group_yet: "Todavía no has votado propuestas de este grupo, ¡vota!"
+        voted:
+          one: "Has votado <span>una</span> propuesta."
+          other: "Has votado <span>%{count}</span> propuestas."
+        zero: Todavía no has votado ninguna propuesta.
       reasons_for_not_balloting:
         user_locked: "Ya has votado presencialmente"
+        not_verified: Las propuestas de proyectos de inversión sólo pueden ser apoyados por usuarios verificados, %{verify_account}.
+        not_selected: No se pueden votar propuestas inviables.
+        different_heading_assigned: "Ya has votado propuestas de otra partida: %{heading_link}"
+    groups:
+      show:
+        unfeasible_title: Propuestas de proyectos de inversión inviables
+        unfeasible: Ver propuestas inviables
+        unselected_title: Prouestas no seleccionadas para la votación final
+        unselected: Ver los prouestas no seleccionadas para la votación final
+    phase:
+      accepting: Presentación de propuestas
+      reviewing: Revisión interna de propuestas
+      valuating: Evaluación de propuestas
+    index:
+      map: Propuestas de proyectos localizables geográficamente
+      investment_proyects: Ver lista completa de propuestas de proyectos de inversión
+      unfeasible_investment_proyects: Ver lista de propuestas de proyectos de inversión inviables
+      not_selected_investment_proyects: Ver lista de propuestas de proyectos de inversión no seleccionados para la votación final
+      section_footer:
+        description: Con los presupuestos participativos la ciudadanía decide a qué proyectos va destinada una parte del presupuesto.
+      milestones: Seguimiento de proyectos
     investments:
+      form:
+        tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
+        map_skip_checkbox: "Esta propuesta no tiene una ubicación concreta o no la conozco."
       index:
         orders:
           random: Aleatorias
@@ -16,6 +46,64 @@ es:
         unfeasible_text_link: "ver definiciones aquí"
         unselected_text: "En este listado se publican las propuestas que no han alcanzado la puntuación suficiente en la fase de priorización de propuestas"
         unselected: "Propuestas de inversión con ámbito"
+        unfeasible: Propuestas de proyectos de inversión no viables
+        by_heading: "Propuestas de proyectos de inversión con ámbito: %{heading}"
+        search_form:
+          placeholder: Buscar propuestas de proyectos de inversión...
+        sidebar:
+          voted:
+            one: "<strong>Has votado una propuesta por un valor de %{amount_spent}</strong>"
+            other: "<strong>Has votado %{count} propuestas por un valor de %{amount_spent}</strong>"
+          different_heading_assigned: "Ya apoyaste propuestas de otra sección del presupuesto: %{heading_link}"
+          zero: Todavía no has votado ninguna propuesta de proyecto de inversión en este ámbito del presupuesto.
+          verified_only: "Para crear una nueva propuesta de proyecto de inversión %{verify}."
+          create: "Crear propuesta de proyecto de inversión"
+          not_logged_in: "Para crear una nueva propuesta de proyecto de inversión debes %{sign_in} o %{sign_up}."
+          feasible: Ver las propuestas viables
+          unfeasible: Ver las propuestas inviables
+          my_count: "Ya ha creado una propuesta de proyecto de inversión, si quiere cambiarlo vaya a %{link_my_count}."
+      share:
+        message: "He presentado la propuesta de proyecto de inversión %{title} en %{handle}. ¡Presenta una propuesta tú también!"
+      show:
+        code: "Código de propuesta de proyecto de inversión: <strong>%{code}</strong>"
+        title: Propuesta de proyecto de inversión
+        project_unfeasible: "Esta propuesta de proyecto de inversión <strong>ha sido marcada como inviable</strong> y no pasará a la fase de votación."
+        project_selected: "Esta propuesta de proyecto de inversión <strong>ha sido seleccionada</strong> para la fase de votación."
+        project_winner: "Propuesta de proyecto de inversión ganador"
+        project_not_selected: "Esta propuesta de proyecto de inversión <strong>no ha sido seleccionada</strong> para la fase de votación."
+      investment:
+        already_added: Ya has añadido esta propuesta de proyecto de inversión
+        already_supported: Ya has apoyado esta propuesta de proyecto de inversión. ¡Compártela!
+        support_title: Apoyar esta propuesta
+        confirm_group:
+          one: "Sólo puedes apoyar propuestas en %{count} distrito. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro/a?"
+          other: "Sólo puedes apoyar propuestas en %{count} distritos. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro/a?"
+      header:
+        different_heading_assigned: "Ya apoyaste propuestas de otra sección del presupuesto: %{heading_link}"
+    show:
+      unfeasible_title: Propuesta de proyecto de inversión inviables
+      unfeasible: Ver las propuestas inviables
+      unselected_title: Propuestas no seleccionadas para la votación final
+      unselected: Ver las propuestas no seleccionadas para la votación final
+    results:
+      accepted: "Propuesta de proyecto de inversión aceptada: "
+      discarded: "Propuesta de proyecto de inversión descartada: "
+      incompatibles: Incompatibles
+      investment_title: Título de la propuesta de proyecto de inversión
+      investment_proyects: Ver lista completa de propuestas de proyectos de inversión
+      unfeasible_investment_proyects: Ver lista de propuestas de proyectos de inversión inviables
+      not_selected_investment_proyects: Ver lista de propuestas de proyectos de inversión no seleccionadas para la votación final
+    executions:
+      page_title: "%{budget} - Seguimiento de proyectos"
+      heading: "Seguimiento de proyectos"
+      no_winner_investments: "No hay proyectos de inversión ganadores en este estado"
+      filters:
+        status:
+          label: "Estado actual del proyecto"
+          all: "Todos (%{count})"
+        milestone_tag:
+          label: "Etiquetas de Seguimiento"
+          all: "Todos (%{count})"
     shared:
       select_area: "Selecciona una Zona"
       budget_areas: "Zonas de participación"

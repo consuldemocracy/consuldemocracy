@@ -1,0 +1,7 @@
+---
+es:
+  seeds:
+    budgets:
+      statuses:
+        studying_project: Estudiando la propuesta
+        executing_project: Ejecutando el proyecto

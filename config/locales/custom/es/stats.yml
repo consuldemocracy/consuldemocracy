@@ -1,0 +1,7 @@
+---
+es:
+  stats:
+    budgets:
+      total_investments: "Total propuestas de proyectos de inversión"
+      total_selected_investments: "Propuestas en la fase final"
+      total_unfeasible_investments: "Propuestas inviables"

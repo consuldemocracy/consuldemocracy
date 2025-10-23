@@ -35,11 +35,36 @@ es:
     locked_users:
       index:
         submit: "Validar documento"
+  form:
+    budget/investment: la propuesta de proyecto de inversión
   errors:
     budget:
       locked_user: "Ya has votado presencialmente"
     messages:
       document_number_and_document_type: "Numero de documento inválido"
+  shared:
+    followable:
+      budget_investment:
+        create:
+          notice: "¡Ahora estás siguiendo esta propuesta de proyecto de inversión! <br> Te notificaremos los cambios a medida que se produzcan para que estés al día."
+        destroy:
+          notice: "¡Has dejado de seguir esta propuesta de proyecto de inversión! <br> Ya no recibirás más notificaciones relacionadas con esta propuesta."
+    suggest:
+      budget_investment:
+        found:
+          one: "Existe una propuesta de proyecto de inversión con el término '%{query}', puedes participar en ella en vez de crear una nueva."
+          other: "Existen propuestas de proyectos de inversión con el término '%{query}', puedes participar en ellas en vez de crear una nueva."
+        message: "Estás viendo %{limit} de %{count} propuestas de proyectos de inversión que contienen el término '%{query}'"
+        see_all: "Ver todas"
+  users:
+    show:
+      deleted_budget_investment: Esta propuesta de proyecto de inversión ha sido eliminada
+      budget_investments: Propuestas de proyectos de presupuestos participativos
+      filters:
+        budget_investments:
+          one: 1 Proyecto de presupuestos participativos
+          other: "%{count} Proyectos de presupuestos participativos"
+      delete_alert: "¿Estás seguro de que deseas borrar tu propuesta de proyecto de inversión? Esta acción no se puede deshacer"
   layouts:
     footer:
       consul: aplicación CONSUL

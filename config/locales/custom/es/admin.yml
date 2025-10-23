@@ -1,6 +1,37 @@
 ---
 es:
   admin:
+    budgets:
+      index:
+        budget_investments: Gestionar propuestas
+        table_investments: Propuestas de proyectos
+        unable_notice: No se puede eliminar un presupuesto con propuestas asociadas
+      winners:
+        calculate: Calcular propuestas ganadoras
+        recalculate: Recalcular propuestas ganadoras
+      destroy:
+        unable_notice: "No se puede eliminar una partida presupuestaria con propuestas de proyectos asociadas"
+    budget_headings:
+      form:
+        coordinates_info: "Si se añaden los campos latitud y longitud, en la página de propuestas de esta partida aparecerá un mapa, que estará centrado en esas coordenadas."
+        content_blocks_info: "Si se permite el bloque de contenidos, se tendrá la oportunidad de crear bloques de contenido relativos a esta partida desde la sección Configuración > Personalizar bloques. Este contenido aparecerá en la página de propuestas de esta partida."
+    physical_final_votes:
+      index:
+        placeholder: Buscar propuestas
+        table_admin_ballots: Propuestas de proyecto de inversión
+        admin_ballots: Gestionar propuestas de proyecto
+    budget_investments:
+      index:
+        placeholder: Buscar propuestas
+        no_budget_investments: "No hay propuestas de proyectos de inversión."
+        title: Propuestas de proyectos de inversión
+        physical_final_votes_count: Votos presenciales
+        final_total_votes: Total votos
+        tooltip_download: El fichero está codificado en UTF-8, para abrirlo, importe los datos desde una hoja de Excel
+      show:
+        info: "%{budget_name} - Grupo: %{group_name} - Propuesta de proyecto de inversión %{id}"
+      edit:
+        selection_help: Al seleccionar la propuesta de proyecto de inversión como seleccionado se mandará un correo al propietario del mismo
     consultants:
       consultant:
         add: "Añadir"
@@ -14,6 +45,10 @@ es:
         email_placeholder: "Email"
         search: "Buscar"
         user_not_found: "Usuario no encontrado"
+    hidden_budget_investments:
+      index:
+        title: Propuestas de proyectos de inversión ocultas
+        no_hidden_budget_investments: No hay propuestas de proyectos de inversión ocultas
     signature_sheet_officers:
       signature_sheet_officer:
         add: "Añadir"
@@ -29,21 +64,11 @@ es:
         user_not_found: "Usuario no encontrado"
     menu:
       consultants: Consultores
+      hidden_budget_investments: Propuestas de proyectos de inversión ocultos
       signature_sheet_officers: "Gestores de votación presencial"
       physical_final_votes: Votos finales presenciales
-    stats:
-      budget_balloting:
-        vote_total_physical_count: "Votos totales / Presenciales"
-      show:
-        summary:
-          budget_votes: "PROYECTOS VOTADOS DEL PRESUPUESTO ACTUAL"
-          budget_voters: "VOTOS DEL PRESUPUESTO ACTUAL"
-          physical_votes: "VOTOS FINALES PRESENCIALES"
-          vote_total_physical_count: "VOTOS TOTALES / PRESENCIALES *"
-          num_votes: "NÚMERO VOTACIONES *"
-          note: "* DEL PRESUPUESTO TOTAL"
     physical_final_votes:
-      name: Proyecto
+      name: Propuesta
       booth: Mesa electoral
       total_votes: Votos totales
       created_at: Creado el
@@ -66,8 +91,40 @@ es:
         created_at: "Creado el "
       flash:
         destroyed: 'Registro eliminado correctamente'
-    budget_investments:
+    segment_recipient:
+      investment_authors: Usuarios autores de propuestas de proyectos de inversión en los actuales presupuestos
+      feasible_and_undecided_investment_authors: "Usuarios autores de alguna propuestas de proyectos de inversión en los actuales presupuestos que no cumpla: [evaluación finalizada inviable]"
+      selected_investment_authors: Usuarios autores de propuestas de proyectos de inversión seleccionadas en los actuales presupuestos
+      winner_investment_authors: Usuarios autores de propuestas de proyectos de inversión ganadoras en los actuales presupuestos
+      not_supported_on_current_budget: Usuarios que no han apoyado propuestas de proyectos de inversión de los actuales presupuestos
+    stats:
+      budget_balloting:
+        vote_total_physical_count: "Votos totales / Presenciales"
+      show:
+        summary:
+          budget_votes: "PROPUESTAS VOTADAS DEL PRESUPUESTO ACTUAL"
+          budget_voters: "VOTOS DEL PRESUPUESTO ACTUAL"
+          physical_votes: "VOTOS FINALES PRESENCIALES"
+          vote_total_physical_count: "VOTOS TOTALES / PRESENCIALES *"
+          num_votes: "NÚMERO VOTACIONES *"
+          note: "* DEL PRESUPUESTO TOTAL"
+          budget_investments: Propuestas de proyectos de inversión
+    system_emails:
+      budget_investment_created:
+        title: "Propuesta de proyecto de inversión creado"
+        description: "Enviado cuando un usuario crea una propuesta de proyecto de inversión de presupuestos participativos."
+      budget_investment_selected:
+        title: "Propuesta de proyecto de inversión seleccionado"
+        description: "Enviado al autor de una propuesta de proyecto de inversión de presupuestos participativos que ha sido seleccionado."
+      budget_investment_unfeasible:
+        title: "Propuesta de proyecto de inversión inviable"
+        description: "Enviado al autor de una propuesta de proyecto de inversión de presupuestos participativos que ha sido marcado como inviable."
+      budget_investment_unselected:
+        title: "Propuesta de proyecto de inversión no seleccionado"
+        description: "Enviado al autor de una propuesta de proyecto de inversión de presupuestos participativos que no ha sido seleccionado para la fase de votación."
+      alert:
+        no_investments: "No se ha creado ninguna propuesta de proyecto de inversión. Se necesita algún ejemplo para poder previsualizar el email."
+    settings:
       index:
-        physical_final_votes_count: Votos presenciales
-        final_total_votes: Total votos
-        tooltip_download: El fichero está codificado en UTF-8, para abrirlo, importe los datos desde una hoja de Excel
+        map:
+          how_to_enable: 'Para mostrar el mapa a los usuarios se debe de activar "Geolocalización de propuestas y propuestas de proyectos de inversión" en la pestaña "Funcionalidades".'

@@ -3,4 +3,9 @@ es:
   flash:
     actions:
       create:
+        budget_investment: "Propuesta de proyecto de inversión creada correctamente."
         physical_final_vote: "Votos físicos asignados correctamente"
+      update:
+        budget_investment: "Propuesta de proyecto de inversión actualizada correctamente"
+      destroy:
+        budget_investment: "Propuesta de proyecto de inversión eliminada."
