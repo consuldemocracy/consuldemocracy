@@ -194,36 +194,14 @@ task :setup_sensemaker do
   end
 end
 
-namespace :delayed_job do
-  def worker_args
-    args = []
-    args << "-m" if fetch(:delayed_job_monitor)
-    args << "-n #{fetch(:delayed_job_workers)}" unless fetch(:delayed_job_workers).nil?
-    args << "--queues=#{fetch(:delayed_job_queues).join(',')}" unless fetch(:delayed_job_queues).nil?
-    args.join(' ')
-  end
-
-  desc "Start delayed_job workers with fnm available"
-  task :start do
-    on roles(fetch(:delayed_job_roles)) do
-      within release_path do
-        with rails_env: fetch(:rails_env) do
-          fnm_setup = fetch(:fnm_setup_command)
-          execute "#{fnm_setup} && EXECJS_RUNTIME='' bundle exec bin/delayed_job #{worker_args} start"
-        end
-      end
-    end
-  end
-
-  desc "Restart delayed_job workers with fnm available"
-  task :restart do
-    on roles(fetch(:delayed_job_roles)) do
-      within release_path do
-        with rails_env: fetch(:rails_env) do
-          fnm_setup = fetch(:fnm_setup_command)
-          execute "#{fnm_setup} && EXECJS_RUNTIME='' bundle exec bin/delayed_job #{worker_args} restart"
-        end
-      end
-    end
+task :setup_delayed_job_environment do
+  on roles(fetch(:delayed_job_roles)) do
+    fnm_setup = fetch(:fnm_setup_command)
+    SSHKit.config.command_map.prefix[:bundle].unshift(-> { "#{fnm_setup} && EXECJS_RUNTIME='' " })
   end
 end
+
+before "delayed_job:start", "setup_delayed_job_environment"
+before "delayed_job:restart", "setup_delayed_job_environment"
+before "delayed_job:stop", "setup_delayed_job_environment"
+before "delayed_job:status", "setup_delayed_job_environment"
