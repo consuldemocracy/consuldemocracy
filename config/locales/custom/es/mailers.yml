@@ -1,0 +1,26 @@
+---
+es:
+  mailers:
+    budget_investment_created:
+      subject: "¡Gracias por crear una propuesta de proyecto de inversión!"
+      title: "¡Gracias por crear una propuesta de proyecto de inversión!"
+      intro: "Hola <strong>%{author}</strong>,"
+      text: "Muchas gracias por crear tu propuesta de proyecto de inversión <strong>%{investment}</strong> para los Presupuestos Participativos <strong>%{budget}</strong>."
+      text2: "También puedes <strong>formar parte del proceso de elección de proyectos</strong>, apuntándote a las mesas de zona. Para ello, asegúrate de marcar la opción en tu propuesta de proyecto de inversión."
+      share: "Comparte tu propuesta"
+    budget_investment_unfeasible:
+      new: "Por todo ello, te invitamos a que elabores una <strong>nueva propuesta de proyecto de inversión</strong> que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: %{url}."
+      new_href: "nueva propuesta de proyecto de inversión"
+      subject: "Tu propuesta de proyecto de inversión '%{code}' ha sido marcado como inviable"
+      url: "https://www10.ava.es/presupuestosparticipativos"
+      url_lugar: "https://www10.ava.es/presupuestosparticipativos"
+      url_votacion: "https://www10.ava.es/presupuestosparticipativos"
+    budget_investment_selected:
+      subject: "Tu propuesta de proyecto de inversión '%{code}' ha sido seleccionada"
+      share: "Empieza ya a conseguir votos, comparte tu propuesta de proyecto de inversión en redes sociales. La difusión es fundamental para conseguir que se haga realidad."
+      share_button: "Comparte tu propuesta"
+      url: "https://www10.ava.es/presupuestosparticipativos"
+      url_lugar: "https://www10.ava.es/presupuestosparticipativos"
+      url_votacion: "https://www10.ava.es/presupuestosparticipativos"
+    budget_investment_unselected:
+      subject: "Tu propuesta de proyecto de inversión '%{code}' no ha sido seleccionada"

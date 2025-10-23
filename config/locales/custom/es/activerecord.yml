@@ -13,6 +13,9 @@ es:
       user:
         login: "Correo electrónico"
     models:
+      budget/investment:
+        one: "Propuesta de proyecto de inversión"
+        other: "Propuestas de proyectos de inversión"
       consultant:
         one: "Consultor"
         other: "Consultores"
@@ -22,3 +25,13 @@ es:
       physical_final_vote:
         one: "Voto final presencial"
         other: "Votos finales presenciales"
+      signature_sheet_officer:
+        one: "Gestor de votación presencial"
+        other: "Gestores de votación presencial"
+    attributes:
+      budget:
+        description_accepting: "Descripción durante la fase de presentación de propuestas de proyectos"
+      budget/investment:
+        image: "Imagen descriptiva de la propuesta de proyecto de inversión"
+      signature_sheet:
+        signable_id: "ID Propuesta ciudadana/Propuesta de proyecto de inversión"

@@ -1,0 +1,12 @@
+---
+es:
+  valuation:
+    budget_investments:
+      index:
+        title: Propuestas de proyectos de inversión
+        no_investments: "No hay propuestas de proyectos de inversión."
+      show:
+        title: Propuestas de proyectos de inversión
+      edit:
+        not_feasible_alert: "Un email será enviado inmediatamente al autor de la propuestas con el informe de inviabilidad."
+      not_in_valuating_phase: Las propuestas sólo pueden ser evaluados cuando el Presupuesto esté en fase de evaluación
