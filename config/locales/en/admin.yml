@@ -1765,9 +1765,11 @@ en:
         title_1: "What is Sensemaker?"
         description_1: "Sensemaker is a tool that helps you make sense of large-scale conversations."
         title_2: "How does Sensemaker work?"
-        description_2: "Sensemaker uses machine learning to analyze conversations and identify patterns."
+        description_2: "Sensemaker uses LLMs (large language models) to analyse conversations and identify patterns. Sensemaker will perform an analysis on the comments associated with a target resource e.g. a debate, proposal, poll, topic, legislation process. Details about the target resource (e.g. title, description) will be used as additional context to support the analysis."
         title_3: "How to use Sensemaker?"
-        description_3: "To use Sensemaker, you need to upload a conversation and select the Sensemaker tool."
+        description_3: "To use Sensemaker, go to the Sensemaker Analysis tab, then click the 'New Run' button. Search for a target resource and select it. Add any additional context if needed and select a script to run."
+        title_4: "Available scripts"
+        description_4: "The following scripts are available:"
       notice:
         cancelled_jobs: "All sensemaker jobs have been cancelled."
         script_info: "The script has been queued successfully."

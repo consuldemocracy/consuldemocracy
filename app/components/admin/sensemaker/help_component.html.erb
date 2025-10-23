@@ -8,5 +8,16 @@
 
     <h3><%= t("admin.sensemaker.help.title_3") %></h3>
     <p><%= t("admin.sensemaker.help.description_3") %></p>
+
+    <h3><%= t("admin.sensemaker.help.title_4") %></h3>
+    <p><%= t("admin.sensemaker.help.description_4") %></p>
+    <ul class="script-list">
+      <% Sensemaker::JobRunner::SCRIPTS.each do |script| %>
+        <li>
+          <strong><%= t("sensemaker.scripts.#{script.parameterize.underscore}.title") %></strong> - 
+          <%= t("sensemaker.scripts.#{script.parameterize.underscore}.description") %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </div>

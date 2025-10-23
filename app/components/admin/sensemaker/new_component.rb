@@ -10,7 +10,7 @@ class Admin::Sensemaker::NewComponent < ApplicationComponent
       "Proposal",
       "Poll",
       "Topic",
-      "Legislation::Process" # From here we can list all the nested Question and Proposal models
+      "Legislation::Process"
     ]
   end
 

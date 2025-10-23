@@ -5,9 +5,9 @@ module Sensemaker
 
     SCRIPTS = [
       "health_check_runner.ts",
+      "categorization_runner.ts",
       "runner.ts",
       "advanced_runner.ts",
-      "categorization_runner.ts",
       "single-html-build.js"
     ].freeze
 

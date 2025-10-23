@@ -62,7 +62,8 @@
       <h4><%= @sensemaker_job.commentable.title %></h4>
       <%= f.text_area :additional_context, label: "Additional context", rows: 10 %>
 
-      <%= f.select :script, Sensemaker::JobRunner::SCRIPTS, include_blank: "Select a script...", required: true %>
+      <% script_options = Sensemaker::JobRunner::SCRIPTS.map { |script| [I18n.t("sensemaker.scripts.#{script.parameterize.underscore}.title"), script] } %>
+      <%= f.select :script, script_options, include_blank: "Select a script...", required: true %>
 
       <div class="flex-between">
         <%= link_to "← Cancel", admin_sensemaker_jobs_path, class: "" %>
