@@ -1405,3 +1405,12 @@ body.iframed {
 	text-transform: none;
 }
 
+
+.highlighted {
+    font-weight: bold;
+}
+
+.highlighted + span {
+    color: #990A42;
+    font-weight: bold;
+}
