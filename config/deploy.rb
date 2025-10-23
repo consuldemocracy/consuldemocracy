@@ -48,7 +48,7 @@ set :fnm_setup_command, -> do
                             "cd #{release_path} && fnm env > /dev/null && eval \"$(fnm env)\""
                         end
 set :fnm_install_node_command, -> { "#{fetch(:fnm_setup_command)} && fnm use --install-if-missing" }
-set :fnm_map_bins, %w[node npm rake yarn delayed_job]
+set :fnm_map_bins, %w[node npm rake yarn]
 
 set :puma_systemctl_user, :user
 set :puma_enable_socket_service, true
@@ -189,6 +189,40 @@ task :setup_sensemaker do
     within release_path do
       with rails_env: fetch(:rails_env) do
         execute :rake, "sensemaker:setup" if fetch(:setup_sensemaker, false)
+      end
+    end
+  end
+end
+
+namespace :delayed_job do
+  def worker_args
+    args = []
+    args << "-m" if fetch(:delayed_job_monitor)
+    args << "-n #{fetch(:delayed_job_workers)}" unless fetch(:delayed_job_workers).nil?
+    args << "--queues=#{fetch(:delayed_job_queues).join(',')}" unless fetch(:delayed_job_queues).nil?
+    args.join(' ')
+  end
+
+  desc "Start delayed_job workers with fnm available"
+  task :start do
+    on roles(fetch(:delayed_job_roles)) do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          fnm_setup = fetch(:fnm_setup_command)
+          execute "#{fnm_setup} && EXECJS_RUNTIME='' bundle exec bin/delayed_job #{worker_args} start"
+        end
+      end
+    end
+  end
+
+  desc "Restart delayed_job workers with fnm available"
+  task :restart do
+    on roles(fetch(:delayed_job_roles)) do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          fnm_setup = fetch(:fnm_setup_command)
+          execute "#{fnm_setup} && EXECJS_RUNTIME='' bundle exec bin/delayed_job #{worker_args} restart"
+        end
       end
     end
   end
