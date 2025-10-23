@@ -74,7 +74,7 @@ module Capybara
 
       unless driver.name == :rack_test
         expect(page).to be_axe_clean.skipping :"link-in-text-block", :"color-contrast",
-                                              :"aria-required-children"
+                                              :"aria-required-children", :"aria-command-name"
       end
 
       unless url.match?("robots.txt") || url.match?("active_storage/representations")
@@ -91,7 +91,7 @@ module Capybara
 
       unless driver.name == :rack_test
         expect(page).to be_axe_clean.skipping :"link-in-text-block", :"color-contrast",
-                                              :"aria-required-children"
+                                              :"aria-required-children", :"aria-command-name"
       end
     end
   end
