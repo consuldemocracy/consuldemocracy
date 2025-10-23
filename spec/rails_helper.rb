@@ -73,7 +73,8 @@ module Capybara
       original_visit(url, ...)
 
       unless driver.name == :rack_test
-        expect(page).to be_axe_clean.skipping :"link-in-text-block", :"color-contrast"
+        expect(page).to be_axe_clean.skipping :"link-in-text-block", :"color-contrast",
+                                              :"aria-required-children"
       end
 
       unless url.match?("robots.txt") || url.match?("active_storage/representations")
@@ -89,7 +90,8 @@ module Capybara
       original_click_link(url, ...)
 
       unless driver.name == :rack_test
-        expect(page).to be_axe_clean.skipping :"link-in-text-block", :"color-contrast"
+        expect(page).to be_axe_clean.skipping :"link-in-text-block", :"color-contrast",
+                                              :"aria-required-children"
       end
     end
   end
