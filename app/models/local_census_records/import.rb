@@ -1,5 +1,3 @@
-require "csv"
-
 class LocalCensusRecords::Import
   include ActiveModel::Model
 
