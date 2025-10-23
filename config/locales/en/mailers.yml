@@ -6,6 +6,20 @@ en:
       info: "We've received a request to send you instructions to confirm your account. However, your account is already confirmed, so there's no need to do so again."
       new_password: "If you've forgotten your password, you can reset it at the following link:"
       subject: Your account is already confirmed
+    poll_notification:
+      body: |
+        Hello <strong>%{user_name}</strong>,<br><br>
+
+        The poll “%{poll_title}” has started!<br>
+        You can now cast your vote online.<br><br>
+
+        Voting period: %{poll_start_date} - %{poll_end_date}.<br>
+        Go to poll: <a href="%{poll_url}" target="_blank">%{poll_title}</a><br><br>
+
+        Thank you for taking part in this democratic process!<br><br>
+        Best regards,<br>
+        The Consul team
+      subject: 'New poll started: "%{poll_title}"'
     comment:
       hi: Hi
       new_comment_by: There is a new comment from <strong>%{commenter}</strong>

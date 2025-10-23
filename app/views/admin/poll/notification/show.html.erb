@@ -1,0 +1,32 @@
+<%= render "/admin/poll/polls/poll_header" %>
+
+<div id="poll-resources">
+  <%= render "/admin/poll/polls/subnav" %>
+  <form action="<%= admin_poll_notification_deliver_path(@poll) %>" method="post">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <button type="submit" class="button" id="send-poll-notification-emails"
+      <%= "disabled" if @poll.notifications_sent_at %>>
+      <%= t("admin.poll_notification.show.send_btn") %>
+    </button>
+    </form>
+    <% if @poll.notifications_sent_at %>
+      <div class="p-4 bg-white rounded-lg shadow w-[30%]">
+        <div class="mt-4 border rounded-lg overflow-hidden">
+          <table class="text-left border-collapse" style="width: 20%; margin-top:12px;">
+            <tbody>
+              <tr class="bg-gray-50">
+                <td class="px-4 py-2 text-gray-900 text-center align-middle">
+                  <%= t("admin.poll_notification.show.send_at") %>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 text-gray-900 text-center align-middle">
+                  <%= I18n.l @poll.notifications_sent_at, format: :long %>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    <% end %>
+  </div>

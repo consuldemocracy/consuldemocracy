@@ -1231,6 +1231,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_10_09_085528) do
     t.string "related_type"
     t.integer "related_id"
     t.tsvector "tsv"
+    t.datetime "notifications_sent_at", precision: nil
     t.index ["budget_id"], name: "index_polls_on_budget_id", unique: true
     t.index ["geozone_restricted"], name: "index_polls_on_geozone_restricted"
     t.index ["related_type", "related_id"], name: "index_polls_on_related_type_and_related_id"
@@ -1631,6 +1632,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_10_09_085528) do
     t.integer "failed_attempts", default: 0, null: false
     t.datetime "locked_at", precision: nil
     t.string "unlock_token"
+    t.boolean "receive_poll_notifications", default: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["date_of_birth"], name: "index_users_on_date_of_birth"
     t.index ["email"], name: "index_users_on_email", unique: true
