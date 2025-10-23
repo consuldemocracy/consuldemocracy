@@ -9,6 +9,8 @@
     margin-bottom: 1.5rem;
   }
 
+  .margin-bottom { margin-bottom: 1rem; }
+
   summary {
     margin-bottom: 0.5rem;
   }
@@ -22,11 +24,23 @@
     margin-bottom: 0.8rem;
   }
 
+  .grid-two-column {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+
+    div {
+      width: 100%;
+    }
+  }
+
   .flex-between {
     align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    .button { margin-bottom: 0; }
   }
 
   .flex-row {

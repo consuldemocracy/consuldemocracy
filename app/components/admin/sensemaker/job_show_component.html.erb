@@ -6,7 +6,7 @@
       <strong><%= sanitize(t("admin.sensemaker.help_text")) %></strong>
     </div>
 
-    <section class="job-details">
+    <section class="job-details margin-bottom">
       <div class="flex-between">
         <h3>Details</h3>
         <div>
@@ -16,8 +16,8 @@
         </div>
       </div>
 
-      <div class="job-info">
-        <div class="small-12 medium-6 column">
+      <div class="grid-two-column">
+        <div class="column">
           <table class="job-details-table">
             <tr>
               <td><strong>Job ID</strong></td>
@@ -77,7 +77,7 @@
     </section>
 
     <% if has_error? %>
-      <section>
+      <section class="margin-bottom">
         <h3>Error report</h3>
         <div>
           <details class="small">
@@ -89,7 +89,7 @@
     <% end %>
 
     <% if has_children? %>
-      <section class="child-jobs">
+      <section class="child-jobs margin-bottom">
         <h3>Prerequisite Jobs</h3>
         <p class="help-text">These jobs were created as prerequisites for this job</p>
 
