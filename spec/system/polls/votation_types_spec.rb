@@ -51,6 +51,63 @@ describe "Poll Votation Type" do
     expect(page).to have_button "Vote"
   end
 
+  scenario "Unique and multiple with open text options" do
+    create(:poll_question_unique, :yes_no_open_text, poll: poll, title: "Is it that bad?")
+    create(:poll_question_multiple, :abc_open_text, poll: poll, max_votes: 2, title: "What do you want?")
+
+    visit poll_path(poll)
+
+    within_fieldset("Is it that bad?") do
+      expect(page).to have_field "Yes", type: :text, disabled: false
+      expect(page).to have_field "No", type: :text, disabled: false
+
+      choose "Yes"
+
+      expect(page).to have_field "Yes", type: :text, disabled: false
+      expect(page).to have_field "No", type: :text, disabled: true
+
+      fill_in "Yes", with: "because yes"
+    end
+
+    within_fieldset("What do you want?") do
+      expect(page).to have_field "Answer A", type: :text, disabled: false
+      expect(page).to have_field "Answer B", type: :text, disabled: false
+      expect(page).to have_field "Answer C", type: :text, disabled: false
+
+      check "Answer A"
+      check "Answer C"
+
+      expect(page).to have_field "Answer A", type: :text, disabled: false
+      expect(page).to have_field "Answer B", type: :text, disabled: true
+      expect(page).to have_field "Answer C", type: :text, disabled: false
+
+      fill_in "Answer A", with: "because A"
+      fill_in "Answer C", with: "because C"
+    end
+
+    click_button "Vote"
+
+    expect(page).to have_content "Thank you for voting!"
+    expect(page).to have_content "You have already participated in this poll. " \
+                                 "If you vote again it will be overwritten."
+
+    within_fieldset("Is it that bad?") do
+      expect(page).to have_field "Yes", type: :radio, checked: true
+      expect(page).to have_field "Yes", type: :text, with: "because yes"
+      expect(page).to have_field "No", type: :radio, checked: false
+    end
+
+    within_fieldset("What do you want?") do
+      expect(page).to have_field "Answer A", type: :checkbox, checked: true
+      expect(page).to have_field "Answer A", type: :text, with: "because A"
+      expect(page).to have_field "Answer B", type: :checkbox, checked: false, disabled: true
+      expect(page).to have_field "Answer C", type: :checkbox, checked: true
+      expect(page).to have_field "Answer C", type: :text, with: "because C"
+    end
+
+    expect(page).to have_button "Vote"
+  end
+
   scenario "Maximum votes has been reached" do
     question = create(:poll_question_multiple, :abc, poll: poll, max_votes: 2)
     create(:poll_answer, author: author, question: question, answer: "Answer A")

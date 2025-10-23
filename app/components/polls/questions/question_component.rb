@@ -33,8 +33,12 @@ class Polls::Questions::QuestionComponent < ApplicationComponent
       end, ", ")
     end
 
+    def answers_for_question
+      form.object.answers[question.id] || []
+    end
+
     def existing_answer
-      form.object.answers[question.id]&.first&.answer
+      answers_for_question.first&.answer
     end
 
     def multiple_choice?
@@ -48,17 +52,21 @@ class Polls::Questions::QuestionComponent < ApplicationComponent
       )
     end
 
-    def multiple_choice_field(option)
-      choice_field(option) do
+    def choice_field(option)
+      label_tag("web_vote_option_#{option.id}") do
+        html = input_tag(option) + option.title
+        html += open_text_tag(option) if option.open_text?
+        html
+      end
+    end
+
+    def input_tag(option)
+      if multiple_choice?
         check_box_tag "web_vote[#{question.id}][option_id][]",
                       option.id,
                       checked?(option),
                       id: "web_vote_option_#{option.id}"
-      end
-    end
-
-    def single_choice_field(option)
-      choice_field(option) do
+      else
         radio_button_tag "web_vote[#{question.id}][option_id]",
                          option.id,
                          checked?(option),
@@ -66,13 +74,26 @@ class Polls::Questions::QuestionComponent < ApplicationComponent
       end
     end
 
-    def choice_field(option, &block)
-      label_tag("web_vote_option_#{option.id}") do
-        block.call + option.title
-      end
+    def open_text_tag(option)
+      text_field_tag(
+        "web_vote[#{question.id}][answer][#{option.id}]",
+        existing_text_for(option),
+        id: "web_vote_option_#{option.id}_text",
+        disabled: disabled?,
+        class: "open-text",
+        data: { selects: "web_vote_option_#{option.id}" }
+      )
+    end
+
+    def existing_text_for(option)
+      answer_for(option)&.answer.to_s
     end
 
     def checked?(option)
-      form.object.answers[question.id].find { |answer| answer.option_id == option.id }
+      answer_for(option).present?
+    end
+
+    def answer_for(option)
+      answers_for_question.find { |a| a.option_id == option.id }
     end
 end

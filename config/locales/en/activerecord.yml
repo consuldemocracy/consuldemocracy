@@ -464,6 +464,7 @@ en:
       poll/question/option:
         title: Answer
         description: Description
+        open_text: "Allow entering text as answer"
       poll/question/option/translation:
         title: Answer
         description: "Description (optional)"
