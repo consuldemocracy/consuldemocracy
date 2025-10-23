@@ -68,8 +68,10 @@
 
    <div class="small-12 column">
     <%= f.check_box :zona_mesa, 
-                        label: t("budgets.investments.form.tags_zona_mesa") %>    
-</div>
+                        label: t("budgets.investments.form.tags_zona_mesa"),
+                        class: "highlighted"
+                        %>
+   </div>
 
     <div class="small-12 column">
       <%= f.label :tag_list, t("budgets.investments.form.tags_label") %>

@@ -9,7 +9,9 @@
       <p><%= t("verification.user_permission_info") %></p>
 
       <ul>
-        <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_debates") %></li>
+        <% if feature?(:debates) %>
+          <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_debates") %></li>
+        <% end %>
         <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_proposal") %></li>
         <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_support_proposal") %></li>
         <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_votes") %></li>
