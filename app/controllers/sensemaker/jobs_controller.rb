@@ -3,6 +3,7 @@ class Sensemaker::JobsController < ApplicationController
 
   def show
     job = Sensemaker::Job.find(params[:id])
+    authorize! :read, job
 
     if job.has_output?
       send_file job.persisted_output,

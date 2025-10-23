@@ -31,6 +31,16 @@ describe Sensemaker::ReportComponent do
       end
     end
 
+    context "when sensemaker feature is enabled and but job is unpublished" do
+      before do
+        create(:sensemaker_job, :unpublished, commentable: debate)
+      end
+
+      it "returns false" do
+        expect(component.render?).to be false
+      end
+    end
+
     context "when sensemaker feature is disabled" do
       before do
         Setting["feature.sensemaker"] = nil
@@ -108,6 +118,16 @@ describe Sensemaker::ReportComponent do
 
       it "returns true" do
         expect(component.report_available?).to be true
+      end
+    end
+
+    context "when job is unpublished" do
+      before do
+        create(:sensemaker_job, :unpublished, commentable: debate)
+      end
+
+      it "returns false" do
+        expect(component.report_available?).to be false
       end
     end
 

@@ -8,5 +8,14 @@ FactoryBot.define do
     commentable_type { "Debate" }
     commentable_id { create(:debate).id }
     additional_context { "Test context" }
+    published { true }
+
+    trait :unpublished do
+      published { false }
+    end
+
+    trait :published do
+      published { true }
+    end
   end
 end

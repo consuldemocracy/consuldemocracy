@@ -31,6 +31,12 @@ describe Abilities::Everyone do
   it { should_not be_able_to(:create, LocalCensusRecords::Import) }
   it { should_not be_able_to(:show, LocalCensusRecords::Import) }
 
+  it { should be_able_to(:read, create(:sensemaker_job, :published)) }
+  it { should_not be_able_to(:read, create(:sensemaker_job, :unpublished)) }
+  it { should_not be_able_to(:manage, create(:sensemaker_job)) }
+  it { should_not be_able_to(:publish, create(:sensemaker_job)) }
+  it { should_not be_able_to(:unpublish, create(:sensemaker_job)) }
+
   it { should be_able_to(:results, create(:poll, :expired, results_enabled: true)) }
   it { should_not be_able_to(:results, create(:poll, :expired, results_enabled: false)) }
   it { should_not be_able_to(:results, create(:poll, results_enabled: true)) }

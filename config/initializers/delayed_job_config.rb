@@ -15,15 +15,6 @@ Delayed::Worker.default_queue_name = "default"
 Delayed::Worker.raise_signal_exceptions = :term
 Delayed::Worker.logger = Logger.new(File.join(Rails.root, "log", "delayed_job.log"))
 
-if Delayed::Worker.delay_jobs
-  Delayed::Worker.logger.warn "=== DELAYED JOB WORKER STARTING ==="
-  Delayed::Worker.logger.warn "Current PATH: #{ENV['PATH']}"
-  Delayed::Worker.logger.warn "Current working directory: #{Dir.pwd}"
-  Delayed::Worker.logger.warn "Node location: #{`which node 2>/dev/null`.strip}"
-  Delayed::Worker.logger.warn "NPX location: #{`which npx 2>/dev/null`.strip}"
-  Delayed::Worker.logger.warn "====================================="
-end
-
 class ApartmentDelayedJobPlugin < Delayed::Plugin
   callbacks do |lifecycle|
     lifecycle.before(:enqueue) { |job| job.tenant = Tenant.current_schema }

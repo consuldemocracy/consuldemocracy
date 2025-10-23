@@ -16,7 +16,7 @@ class Sensemaker::ReportComponent < ApplicationComponent
   end
 
   def report_available?
-    latest_successful_job&.has_output?
+    latest_successful_job.present? && latest_successful_job.has_output?
   end
 
   def analysis_title
@@ -38,6 +38,7 @@ class Sensemaker::ReportComponent < ApplicationComponent
       @latest_successful_job ||= Sensemaker::Job
                                  .where(commentable: analysable_resource)
                                  .successful
+                                 .published
                                  .order(finished_at: :desc)
                                  .first
     end

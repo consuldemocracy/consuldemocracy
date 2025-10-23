@@ -12,17 +12,27 @@ describe Sensemaker::JobsController do
   end
 
   before do
-    # Create a test file
     FileUtils.mkdir_p(File.dirname(job.persisted_output))
     File.write(job.persisted_output, "<html><body>Test Report</body></html>")
   end
 
   after do
-    # Clean up test file
     FileUtils.rm_f(job.persisted_output) if job.persisted_output.present?
   end
 
   describe "GET #show" do
+    context "when job is unpublished" do
+      before do
+        job.update!(published: false)
+      end
+
+      it "returns 302 and redirects to root path" do
+        get :show, params: { id: job.id }
+        expect(response).to have_http_status(:redirect)
+        expect(response).to redirect_to(root_path)
+      end
+    end
+
     context "when job exists and has output" do
       it "sends the file with correct headers" do
         get :show, params: { id: job.id }
