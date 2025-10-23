@@ -19,6 +19,14 @@ describe Admin::SensemakerJobsController do
     end
   end
 
+  describe "GET #show" do
+    it "returns successful response" do
+      get :show, params: { id: sensemaker_job.id }
+
+      expect(response).to have_http_status(:ok)
+    end
+  end
+
   describe "GET #new" do
     it "returns successful response" do
       get :new

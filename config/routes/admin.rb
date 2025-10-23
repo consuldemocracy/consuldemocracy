@@ -309,7 +309,7 @@ namespace :admin do
       delete :cancel, on: :collection
     end
 
-    resources :sensemaker_jobs, only: [:index, :new, :create, :destroy] do
+    resources :sensemaker_jobs, only: [:index, :show, :new, :create, :destroy] do
       member do
         get :download
       end

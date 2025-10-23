@@ -1,7 +1,15 @@
 class Admin::SensemakerJobsController < Admin::BaseController
   def index
-    @running_jobs = Sensemaker::Job.running.order(created_at: :desc)
-    @sensemaker_jobs = Sensemaker::Job.where.not(id: @running_jobs.pluck(:id)).order(created_at: :desc)
+    @running_jobs = Sensemaker::Job.running.includes(:children).order(created_at: :desc)
+    @sensemaker_jobs = Sensemaker::Job.where(parent_job_id: nil)
+                                      .includes(:children)
+                                      .where.not(id: @running_jobs.pluck(:id))
+                                      .order(created_at: :desc)
+  end
+
+  def show
+    @sensemaker_job = Sensemaker::Job.find(params[:id])
+    @child_jobs = @sensemaker_job.children.includes(:commentable).order(:created_at)
   end
 
   def new

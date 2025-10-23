@@ -48,6 +48,10 @@ module Sensemaker
       finished_at.present? && error.eql?("Cancelled")
     end
 
+    def running?
+      started? && !finished?
+    end
+
     def status
       if cancelled?
         "Cancelled"

@@ -50,7 +50,7 @@
 
   .meta {
     color: #6d6d6d;
-    font-size: $small-font-size;
+    font-size: 90%;
   }
 
   .input-preview {
@@ -197,4 +197,78 @@
     color: $white;
   }
 
+  .job-row {
+    &.parent-job {
+      background-color: #f8f9fa;
+    }
+
+    &.child-job {
+      background-color: #fff;
+
+      td:first-child {
+        padding-left: 1rem;
+      }
+    }
+  }
+
+  // Hover effects for better UX
+  .job-row:hover {
+    background-color: #f1f3f4;
+  }
+
+  .child-job:hover {
+    background-color: #f8f9fa;
+  }
+
+  // Job links styling
+  .job-link {
+    color: $brand;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  // Job details styling
+  .job-details-table {
+    border-collapse: collapse;
+    width: 100%;
+
+    td {
+      border-bottom: 1px solid #e9ecef;
+      padding: 0.5rem;
+
+      &:first-child {
+        font-weight: bold;
+        width: 30%;
+      }
+    }
+  }
+
+  .job-status-indicator {
+    background-color: $brand;
+    border-radius: 100%;
+    display: inline-block;
+    height: 0.5rem;
+    margin-right: 0.1rem;
+    width: 0.5rem;
+
+    &.job-status-completed {
+      background-color: $color-success;
+    }
+
+    &.job-status-failed {
+      background-color: $color-alert;
+    }
+
+    &.job-status-cancelled {
+      background-color: $color-warning;
+    }
+
+    &.job-status-unstarted {
+      background-color: $color-info;
+    }
+  }
 }

@@ -1,0 +1,122 @@
+<%= header %>
+
+<div class="sensemaker">
+  <% if enabled? %>
+    <div class="callout primary experimental-feature">
+      <strong><%= sanitize(t("admin.sensemaker.help_text")) %></strong>
+    </div>
+
+    <section class="job-details">
+      <div class="flex-between">
+        <h3>Details</h3>
+        <div>
+          <%= link_to "Back to Jobs", admin_sensemaker_jobs_path, class: "margin-right" %>
+          <%= link_to("Download Output", download_admin_sensemaker_job_path(sensemaker_job), class: "button") if can_download? %>
+          <%= link_to "Delete", admin_sensemaker_job_path(sensemaker_job), class: "button error", method: :delete, data: { confirm: t("admin.sensemaker.delete_alert") } %>
+        </div>
+      </div>
+
+      <div class="job-info">
+        <div class="small-12 medium-6 column">
+          <table class="job-details-table">
+            <tr>
+              <td><strong>Job ID</strong></td>
+              <td>#<%= sensemaker_job.id %></td>
+            </tr>
+            <tr>
+              <td><strong>Script</strong></td>
+              <td><%= sensemaker_job.script %></td>
+            </tr>
+            <tr>
+              <td><strong>Status</strong></td>
+              <td>
+                <span class="job-status-indicator <%= job_status_class %>"></span>
+                <%= sensemaker_job.status %>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Created</strong></td>
+              <td><%= sensemaker_job.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+            </tr>
+            <% if sensemaker_job.started_at.present? %>
+              <tr>
+                <td><strong>Started</strong></td>
+                <td><%= sensemaker_job.started_at.strftime("%Y-%m-%d %H:%M") %></td>
+              </tr>
+            <% end %>
+            <% if sensemaker_job.finished_at.present? %>
+              <tr>
+                <td><strong>Finished</strong></td>
+                <td><%= sensemaker_job.finished_at.strftime("%Y-%m-%d %H:%M") %></td>
+              </tr>
+            <% end %>
+            <% unless parent_job? %>
+              <tr>
+                <td><strong>Parent Job</strong></td>
+                <td>
+                  Job spawned by <%= link_to "Job ##{parent_job.id}", admin_sensemaker_job_path(parent_job) %>
+                </td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+
+        <div class="small-12 medium-6 column">
+          <table class="job-details-table">
+            <tr>
+              <td><strong>Target Type</strong></td>
+              <td><%= sensemaker_job.commentable_type %></td>
+            </tr>
+            <tr>
+              <td><strong>Target Title</strong></td>
+              <td><%= commentable_title %></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <% if has_error? %>
+      <section>
+        <h3>Error report</h3>
+        <div>
+          <details class="small">
+            <summary>Error Log</summary>
+            <%= sensemaker_job.error %>
+          </details>
+        </div>
+      </section>
+    <% end %>
+
+    <% if has_children? %>
+      <section class="child-jobs">
+        <h3>Prerequisite Jobs</h3>
+        <p class="help-text">These jobs were created as prerequisites for this job</p>
+
+        <table class="job-table">
+          <thead>
+            <tr>
+              <th>Job ID</th>
+              <th>Script</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% child_jobs.each do |child_job| %>
+              <%= render Admin::Sensemaker::JobRowComponent.new(child_job) %>
+            <% end %>
+          </tbody>
+        </table>
+      </section>
+    <% end %>
+  <% else %>
+    <div class="callout primary">
+      <p>
+        <%= sanitize(t("admin.sensemaker.feature_disabled",
+                       link: link_to(t("admin.sensemaker.feature_disabled_link"),
+                                     admin_settings_path(anchor: "tab-feature-flags")))) %>
+      </p>
+    </div>
+  <% end %>
+</div>
