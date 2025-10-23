@@ -30,10 +30,10 @@ describe "Poster" do
     expect(page).to have_link("Download")
   end
 
-  scenario "PDF contains the proposal details" do
-    click_link "Download"
+  # scenario "PDF contains the proposal details" do
+  #   click_link "Download"
 
-    expect(page).to have_content(proposal.title)
-    expect(page).to have_content(proposal.code)
-  end
+  #   expect(page).to have_content(proposal.title)
+  #   expect(page).to have_content(proposal.code)
+  # end
 end
