@@ -378,4 +378,75 @@ describe "Admin activity" do
       end
     end
   end
+
+  context "Budget investments" do
+    scenario "Shows moderation activity on budget investments" do
+      investment = create(:budget_investment, description: "<p>Investment description</p>")
+
+      visit budget_investment_path(investment.budget, investment)
+
+      within "#budget_investment_#{investment.id}" do
+        accept_confirm("Are you sure? Hide") { click_button "Hide" }
+      end
+
+      expect(page).to have_css "#budget_investment_#{investment.id}.faded"
+
+      visit admin_activity_path
+
+      within first("tbody tr") do
+        expect(page).to have_content(investment.title)
+        expect(page).to have_content("Hidden")
+        expect(page).to have_content(admin.user.username)
+        expect(page).to have_css("p", exact_text: "Investment description")
+      end
+    end
+
+    scenario "Shows moderation activity from moderation screen" do
+      investment1 = create(:budget_investment)
+      investment2 = create(:budget_investment)
+      investment3 = create(:budget_investment)
+
+      visit moderation_budget_investments_path(filter: "all")
+
+      within "#investment_#{investment1.id}" do
+        check "budget_investment_#{investment1.id}_check"
+      end
+
+      within "#investment_#{investment3.id}" do
+        check "budget_investment_#{investment3.id}_check"
+      end
+
+      accept_confirm("Are you sure? Hide budget investments") do
+        click_button "Hide budget investments"
+      end
+
+      expect(page).not_to have_content(investment1.title)
+
+      visit admin_activity_path(filter: "on_budget_investments")
+
+      expect(page).to have_content(investment1.title)
+      expect(page).not_to have_content(investment2.title)
+      expect(page).to have_content(investment3.title)
+    end
+
+    scenario "Shows admin restores" do
+      investment = create(:budget_investment, :hidden)
+
+      visit admin_hidden_budget_investments_path
+
+      within "#budget_investment_#{investment.id}" do
+        accept_confirm("Are you sure? Restore") { click_button "Restore" }
+      end
+
+      expect(page).to have_content "There are no hidden budget investments"
+
+      visit admin_activity_path
+
+      within first("tbody tr") do
+        expect(page).to have_content(investment.title)
+        expect(page).to have_content("Restored")
+        expect(page).to have_content(admin.user.username)
+      end
+    end
+  end
 end
