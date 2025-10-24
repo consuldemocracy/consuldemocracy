@@ -15,7 +15,6 @@ class Poll::PartialResult < ApplicationRecord
   validates :origin, inclusion: { in: ->(*) { VALID_ORIGINS }}
   validates :option, uniqueness: { scope: [:booth_assignment_id, :date] }, allow_nil: true
 
-  scope :by_author, ->(author_id) { where(author_id: author_id) }
   scope :by_question, ->(question_id) { where(question_id: question_id) }
 
   before_save :update_logs
