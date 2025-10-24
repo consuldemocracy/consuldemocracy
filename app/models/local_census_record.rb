@@ -1,5 +1,5 @@
 class LocalCensusRecord < ApplicationRecord
-  before_validation :sanitize
+  normalizes :document_type, :document_number, :postal_code, with: ->(value) { value.strip }
 
   validates :document_number, presence: true
   validates :document_type, presence: true
@@ -13,12 +13,4 @@ class LocalCensusRecord < ApplicationRecord
   def title
     "#{ApplicationController.helpers.humanize_document_type(document_type)} #{document_number}"
   end
-
-  private
-
-    def sanitize
-      self.document_type   = document_type&.strip
-      self.document_number = document_number&.strip
-      self.postal_code     = postal_code&.strip
-    end
 end
