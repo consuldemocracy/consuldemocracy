@@ -40,6 +40,7 @@ Rails.application.routes.draw do
     get "/consul.json", to: "installation#details"
     get "robots.txt", to: "robots#index"
 
+    resources :newsletter_recipients, only: %i[create new edit destroy], param: :token
     resources :images, only: [:destroy]
     resources :documents, only: [:destroy]
     resources :follows, only: [:create, :destroy]

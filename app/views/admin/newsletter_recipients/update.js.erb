@@ -1,0 +1,7 @@
+var form = $("<%= j render Admin::Settings::FeaturedSettingsFormComponent.new(
+  @setting,
+  tab: params[:tab],
+  describedby: params[:setting][:describedby]
+) %>");
+
+$("#" + form.attr("id")).html(form.html()).find("[type='submit']").focus();

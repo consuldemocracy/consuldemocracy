@@ -8,6 +8,7 @@ class WelcomeController < ApplicationController
   layout "devise", only: :welcome
 
   def index
+    @current_user = warden.authenticate(scope: :user)
     @header = Widget::Card.header.first
     @feeds = Widget::Feed.active
     @cards = Widget::Card.body

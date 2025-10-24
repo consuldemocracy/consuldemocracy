@@ -749,6 +749,7 @@ en:
       administrators: Administrators
       managers: Managers
       sdg_managers: SDG Managers
+      newsletter_recipients: Newsletter recipients
       moderators: Moderators
       messaging_users: Messages to users
       newsletters: Newsletters
@@ -828,6 +829,7 @@ en:
         title: "Moderators: User search"
     segment_recipient:
       all_users: All users
+      all_users_plus_newsletter_recipients: All users + newsletter recipients
       administrators: Administrators
       all_proposal_authors: Proposal authors (including archived and withdrawn)
       proposal_authors: Proposal authors
@@ -1552,6 +1554,19 @@ en:
         title: Proposal topics
         topic: Topic
         help: "When a user creates a proposal, the following topics are suggested as default tags."
+    newsletter_recipients:
+      columns:
+        active: Active
+        email: Email
+        confirmation: Confirmation Status
+      email:
+        non_confirmed: Confirmed
+        confirmed: Not confirmed
+      index:
+        title: Newsletter recipients
+        no_records: There are no records.
+      search:
+        placeholder: Search records by email only
     users:
       columns:
         id: ID

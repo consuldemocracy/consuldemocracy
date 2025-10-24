@@ -81,6 +81,15 @@ class Mailer < ApplicationMailer
     end
   end
 
+  def newsletter_recipients_invitation(newsletter_recipient)
+    @newsletter_recipient = newsletter_recipient
+    @email_to = @newsletter_recipient.email
+
+    I18n.with_locale(Setting.default_locale) do
+      mail(to: @email_to, subject: t("mailers.user_invite.subject", org_name: Setting["org_name"]))
+    end
+  end
+
   def budget_investment_created(investment)
     @investment = investment
     @email_to = @investment.author.email

@@ -445,6 +445,12 @@ class User < ApplicationRecord
     username.to_s.parameterize
   end
 
+  def newsletter_recipient
+    return nil unless email
+
+    NewsletterRecipient.find_by(email: email)
+  end
+
   private
 
     def clean_document_number
