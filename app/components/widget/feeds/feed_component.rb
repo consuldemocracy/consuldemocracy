@@ -1,9 +1,10 @@
 class Widget::Feeds::FeedComponent < ApplicationComponent
-  attr_reader :feed
+  attr_reader :feed, :current_user
   delegate :kind, to: :feed
 
-  def initialize(feed)
+  def initialize(feed, current_user = nil)
     @feed = feed
+    @current_user = current_user
   end
 
   def see_all_path

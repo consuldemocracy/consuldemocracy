@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_10_09_085528) do
+ActiveRecord::Schema[7.1].define(version: 2025_10_15_181413) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -976,6 +976,19 @@ ActiveRecord::Schema[7.1].define(version: 2025_10_09_085528) do
   create_table "moderators", id: :serial, force: :cascade do |t|
     t.integer "user_id"
     t.index ["user_id"], name: "index_moderators_on_user_id"
+  end
+
+  create_table "newsletter_recipients", force: :cascade do |t|
+    t.string "email", null: false
+    t.string "token", null: false
+    t.datetime "confirmed_at", precision: nil
+    t.boolean "active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["active"], name: "index_newsletter_recipients_on_active"
+    t.index ["confirmed_at"], name: "index_newsletter_recipients_on_active_confirmed", where: "((active = true) AND (confirmed_at IS NOT NULL))"
+    t.index ["email"], name: "index_newsletter_recipients_on_email", unique: true
+    t.index ["token"], name: "index_newsletter_recipients_on_token", unique: true
   end
 
   create_table "newsletters", id: :serial, force: :cascade do |t|

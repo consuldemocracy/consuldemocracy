@@ -1,4 +1,6 @@
 en:
+  attributes:
+    email: E-Mail
   account:
     show:
       last_sign_in: "Last login: %{last_sign_in_at} from IP %{last_sign_in_ip}"
@@ -851,6 +853,15 @@ en:
         other: "You can only support investment projects in %{count} districts. You have already supported investments in %{supported_headings}."
   welcome:
     feed:
+      newsletters_receptions:
+        subscribed: You have successfully subscribed!
+        confirmation_failed: Confirmation failed.
+        confirmation_success: Email is successfully confirmed.
+        stop_subscription_failed: Unsubscribtion failed!
+        stop_subscription_success: You have successfully unsubscribed.
+        opt_in_title: Newsletter
+        opt_in_sub_title: Not registered yet? Subscribe for newsletter now
+        submit_btn: Register
       most_active:
         debates: "Most active debates"
         proposals: "Most active proposals"

@@ -48,6 +48,7 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
     if resource.encrypted_password.blank?
       respond_with_navigational(resource) { render :show }
     elsif resource.errors.empty?
+      adopt_newsletter_recipient
       set_official_position if resource.has_official_email?
 
       if resource.confirm
@@ -77,6 +78,14 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
     end
 
   private
+
+    def adopt_newsletter_recipient
+      newsletter_recipient = NewsletterRecipient.find_by(email: resource.email)
+      return unless newsletter_recipient
+
+      resource.newsletter = newsletter_recipient.active
+      newsletter_recipient.destroy!
+    end
 
     def set_official_position
       resource.add_official_position!(Setting["official_level_1_name"], 1)

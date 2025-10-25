@@ -1,0 +1,4 @@
+var $button = $(".featured-settings-form button");
+var isPressed = $button.attr("aria-pressed") === "true";
+
+$button.attr("aria-pressed", !isPressed);

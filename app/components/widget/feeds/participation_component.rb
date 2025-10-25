@@ -1,8 +1,9 @@
 class Widget::Feeds::ParticipationComponent < ApplicationComponent
-  attr_reader :feeds
+  attr_reader :feeds, :current_user
 
-  def initialize(feeds)
+  def initialize(feeds, current_user = nil)
     @feeds = feeds
+    @current_user = current_user
   end
 
   private

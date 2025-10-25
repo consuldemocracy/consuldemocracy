@@ -7,11 +7,15 @@ class AccountController < ApplicationController
   end
 
   def update
-    if @account.update(account_params)
-      redirect_to account_path, notice: t("flash.actions.save_changes.notice")
-    else
-      @account.errors.delete(:organization)
-      render :show
+    respond_to do |format|
+      if @account.update(account_params)
+        format.html { redirect_to account_path, notice: t("flash.actions.save_changes.notice") }
+        format.js
+      else
+        @account.errors.delete(:organization)
+        format.html { render :show }
+      end
+      format.js
     end
   end
 
