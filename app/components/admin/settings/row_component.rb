@@ -1,11 +1,13 @@
 class Admin::Settings::RowComponent < ApplicationComponent
-  attr_reader :key, :tab, :type
+  attr_reader :key, :tab, :type, :options, :disabled
   use_helpers :dom_id
 
-  def initialize(key, type: :text, tab: nil)
+  def initialize(key, type: :text, tab: nil, options: nil, disabled: false)
     @key = key
     @type = type
     @tab = tab
+    @options = options
+    @disabled = disabled
   end
 
   def setting
@@ -18,5 +20,9 @@ class Admin::Settings::RowComponent < ApplicationComponent
 
   def featured_setting?
     type == :feature
+  end
+
+  def dropdown_setting?
+    type == :dropdown
   end
 end
