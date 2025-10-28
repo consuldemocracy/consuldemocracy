@@ -10,6 +10,11 @@
                        open_source: open_source_link,
                        consul: repository_link),
                      attributes: allowed_link_attributes) %>
+        <% if instance_repository_link.present? %>
+          <%= sanitize(t("layouts.footer.description_with_instance_repository",
+                         instance_repository: instance_repository_link),
+                       attributes: allowed_link_attributes) %>
+        <% end %>
       </p>
     </div>
 
