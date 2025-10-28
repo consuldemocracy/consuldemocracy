@@ -7,10 +7,10 @@ class Poll::Answer < ApplicationRecord
 
   validates :question, presence: true
   validates :author, presence: true
-  validates :answer, presence: true
+  validates :answer, presence: true, unless: ->(poll_answer) { poll_answer.option&.open_text? }
   validates :option, uniqueness: { scope: :author_id }, allow_nil: true
   validates :answer, inclusion: { in: ->(poll_answer) { poll_answer.option.possible_answers }},
-                     if: ->(poll_answer) { poll_answer.option.present? }
+                     if: ->(poll_answer) { poll_answer.option.present? && !poll_answer.option.open_text? }
 
   scope :by_author, ->(author_id) { where(author_id: author_id) }
   scope :by_question, ->(question_id) { where(question_id: question_id) }
