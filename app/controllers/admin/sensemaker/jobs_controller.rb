@@ -1,4 +1,4 @@
-class Admin::SensemakerJobsController < Admin::BaseController
+class Admin::Sensemaker::JobsController < Admin::BaseController
   def index
     @running_jobs = Sensemaker::Job.running.includes(:children).order(created_at: :desc)
     @sensemaker_jobs = Sensemaker::Job.where(parent_job_id: nil)
@@ -130,3 +130,4 @@ class Admin::SensemakerJobsController < Admin::BaseController
       params.require(:sensemaker_job).permit(:commentable_type, :commentable_id, :script, :additional_context)
     end
 end
+

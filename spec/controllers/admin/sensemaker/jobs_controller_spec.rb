@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Admin::SensemakerJobsController do
+describe Admin::Sensemaker::JobsController do
   let(:admin) { create(:administrator).user }
   let(:user) { create(:user) }
   let(:debate) { create(:debate) }
@@ -194,3 +194,4 @@ describe Admin::SensemakerJobsController do
     end
   end
 end
+

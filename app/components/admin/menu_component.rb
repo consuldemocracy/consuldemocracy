@@ -572,7 +572,7 @@ class Admin::MenuComponent < ApplicationComponent
       [
         t("admin.menu.sensemaker"),
         admin_sensemaker_jobs_path,
-        controller_name == "sensemaker_jobs",
+        controller_name == "jobs" && controller.class.module_parent == Admin::Sensemaker,
         class: "sensemaker-link"
       ]
     end

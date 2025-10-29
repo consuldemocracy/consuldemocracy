@@ -309,13 +309,15 @@ namespace :admin do
       delete :cancel, on: :collection
     end
 
-    resources :sensemaker_jobs, only: [:index, :show, :new, :create, :destroy] do
-      member do
-        get :download
+    namespace :sensemaker do
+      resources :jobs, only: [:index, :show, :new, :create, :destroy] do
+        member do
+          get :download
+        end
+        post :preview, on: :collection
+        delete :cancel, on: :collection
+        get :help, on: :collection
       end
-      post :preview, on: :collection
-      delete :cancel, on: :collection
-      get :help, on: :collection
     end
 
     namespace :cookies do
