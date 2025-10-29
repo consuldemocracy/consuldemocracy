@@ -14,7 +14,7 @@
     <ul class="script-list">
       <% Sensemaker::JobRunner::SCRIPTS.each do |script| %>
         <li>
-          <strong><%= t("sensemaker.scripts.#{script.parameterize.underscore}.title") %></strong> - 
+          <strong><%= t("sensemaker.scripts.#{script.parameterize.underscore}.title") %></strong> -
           <%= t("sensemaker.scripts.#{script.parameterize.underscore}.description") %>
         </li>
       <% end %>

@@ -17,6 +17,14 @@ module Admin::Sensemaker::JobComponentHelpers
     job.finished? && !job.errored?
   end
 
+  def can_publish?
+    job.script == "single-html-build.js" && job.finished? && !job.errored? && job.has_output?
+  end
+
+  def is_published?
+    job.published?
+  end
+
   def status_text
     case job.status
     when "Completed"

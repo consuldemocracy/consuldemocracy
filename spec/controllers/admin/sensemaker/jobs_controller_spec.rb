@@ -76,7 +76,6 @@ describe Admin::Sensemaker::JobsController do
     end
 
     it "creates a new sensemaker job and runs it" do
-      # Mock external dependencies to allow the real workflow to run
       allow_any_instance_of(Sensemaker::JobRunner).to receive(:check_dependencies?).and_return(false)
       allow_any_instance_of(Sensemaker::JobRunner).to receive(:prepare_input_data)
       allow_any_instance_of(Sensemaker::JobRunner).to receive(:execute_script).and_return("")
@@ -173,6 +172,210 @@ describe Admin::Sensemaker::JobsController do
     end
   end
 
+  describe "PATCH #publish" do
+    let(:successful_job) do
+      output_path = Rails.root.join("tmp", "test-report-#{SecureRandom.hex}.html").to_s
+      FileUtils.mkdir_p(File.dirname(output_path))
+      File.write(output_path, "<html><body>Test Report</body></html>")
+
+      create(:sensemaker_job,
+             user: admin,
+             commentable_type: "Debate",
+             commentable_id: debate.id,
+             script: "single-html-build.js",
+             started_at: 1.hour.ago,
+             finished_at: Time.current,
+             error: nil,
+             published: false,
+             persisted_output: output_path)
+    end
+
+    after do
+      if successful_job&.persisted_output.present?
+        FileUtils.rm_f(successful_job.persisted_output)
+      end
+    end
+
+    context "when job is eligible for publishing" do
+      it "publishes the job" do
+        patch :publish, params: { id: successful_job.id }
+
+        successful_job.reload
+        expect(successful_job.published).to be true
+      end
+
+      it "redirects to job show page with success notice" do
+        patch :publish, params: { id: successful_job.id }
+
+        expect(response).to redirect_to(admin_sensemaker_job_path(successful_job))
+        expect(flash[:notice]).to be_present
+      end
+    end
+
+    context "when job is not finished" do
+      let(:unfinished_job) do
+        create(:sensemaker_job,
+               user: admin,
+               commentable_type: "Debate",
+               commentable_id: debate.id,
+               script: "single-html-build.js",
+               started_at: Time.current,
+               finished_at: nil,
+               error: nil,
+               published: false)
+      end
+
+      it "does not publish the job" do
+        patch :publish, params: { id: unfinished_job.id }
+
+        unfinished_job.reload
+        expect(unfinished_job.published).to be false
+      end
+
+      it "redirects with alert message" do
+        patch :publish, params: { id: unfinished_job.id }
+
+        expect(response).to redirect_to(admin_sensemaker_job_path(unfinished_job))
+        expect(flash[:alert]).to be_present
+      end
+    end
+
+    context "when job has error" do
+      let(:errored_job) do
+        create(:sensemaker_job,
+               user: admin,
+               commentable_type: "Debate",
+               commentable_id: debate.id,
+               script: "single-html-build.js",
+               started_at: 1.hour.ago,
+               finished_at: Time.current,
+               error: "Some error occurred",
+               published: false)
+      end
+
+      it "does not publish the job" do
+        patch :publish, params: { id: errored_job.id }
+
+        errored_job.reload
+        expect(errored_job.published).to be false
+      end
+
+      it "redirects with alert message" do
+        patch :publish, params: { id: errored_job.id }
+
+        expect(response).to redirect_to(admin_sensemaker_job_path(errored_job))
+        expect(flash[:alert]).to be_present
+      end
+    end
+
+    context "when job has no output" do
+      let(:job_without_output) do
+        create(:sensemaker_job,
+               user: admin,
+               commentable_type: "Debate",
+               commentable_id: debate.id,
+               script: "single-html-build.js",
+               started_at: 1.hour.ago,
+               finished_at: Time.current,
+               error: nil,
+               published: false,
+               persisted_output: nil)
+      end
+
+      it "does not publish the job" do
+        patch :publish, params: { id: job_without_output.id }
+
+        job_without_output.reload
+        expect(job_without_output.published).to be false
+      end
+
+      it "redirects with alert message" do
+        patch :publish, params: { id: job_without_output.id }
+
+        expect(response).to redirect_to(admin_sensemaker_job_path(job_without_output))
+        expect(flash[:alert]).to be_present
+      end
+    end
+
+    context "when job script is not single-html-build.js" do
+      let(:wrong_script_job) do
+        output_path = Rails.root.join("tmp", "test-report-#{SecureRandom.hex}.html").to_s
+        FileUtils.mkdir_p(File.dirname(output_path))
+        File.write(output_path, "<html><body>Test Report</body></html>")
+
+        create(:sensemaker_job,
+               user: admin,
+               commentable_type: "Debate",
+               commentable_id: debate.id,
+               script: "categorization_runner.ts",
+               started_at: 1.hour.ago,
+               finished_at: Time.current,
+               error: nil,
+               published: false,
+               persisted_output: output_path)
+      end
+
+      after do
+        if wrong_script_job&.persisted_output.present?
+          FileUtils.rm_f(wrong_script_job.persisted_output)
+        end
+      end
+
+      it "allows publishing regardless of script type" do
+        patch :publish, params: { id: wrong_script_job.id }
+
+        wrong_script_job.reload
+        expect(wrong_script_job.published).to be true
+      end
+
+      it "redirects to job show page with success notice" do
+        patch :publish, params: { id: wrong_script_job.id }
+
+        expect(response).to redirect_to(admin_sensemaker_job_path(wrong_script_job))
+        expect(flash[:notice]).to be_present
+      end
+    end
+  end
+
+  describe "PATCH #unpublish" do
+    let(:published_job) do
+      output_path = Rails.root.join("tmp", "test-report-#{SecureRandom.hex}.html").to_s
+      FileUtils.mkdir_p(File.dirname(output_path))
+      File.write(output_path, "<html><body>Test Report</body></html>")
+
+      create(:sensemaker_job,
+             user: admin,
+             commentable_type: "Debate",
+             commentable_id: debate.id,
+             script: "single-html-build.js",
+             started_at: 1.hour.ago,
+             finished_at: Time.current,
+             error: nil,
+             published: true,
+             persisted_output: output_path)
+    end
+
+    after do
+      if published_job&.persisted_output.present?
+        FileUtils.rm_f(published_job.persisted_output)
+      end
+    end
+
+    it "unpublishes the job" do
+      patch :unpublish, params: { id: published_job.id }
+
+      published_job.reload
+      expect(published_job.published).to be false
+    end
+
+    it "redirects to job show page with success notice" do
+      patch :unpublish, params: { id: published_job.id }
+
+      expect(response).to redirect_to(admin_sensemaker_job_path(published_job))
+      expect(flash[:notice]).to be_present
+    end
+  end
+
   describe "private methods" do
     describe "#sensemaker_job_params" do
       it "permits required parameters" do
@@ -194,4 +397,3 @@ describe Admin::Sensemaker::JobsController do
     end
   end
 end
-

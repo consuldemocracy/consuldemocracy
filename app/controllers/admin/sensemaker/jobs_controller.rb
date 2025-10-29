@@ -120,6 +120,27 @@ class Admin::Sensemaker::JobsController < Admin::BaseController
                 notice: I18n.t("admin.sensemaker.notice.cancelled_jobs")
   end
 
+  def publish
+    @sensemaker_job = Sensemaker::Job.find(params[:id])
+
+    unless @sensemaker_job.finished? && !@sensemaker_job.errored? && @sensemaker_job.has_output?
+      redirect_to admin_sensemaker_job_path(@sensemaker_job),
+                  alert: I18n.t("admin.sensemaker.notice.cannot_publish")
+      return
+    end
+
+    @sensemaker_job.update!(published: true)
+    redirect_to admin_sensemaker_job_path(@sensemaker_job),
+                notice: I18n.t("admin.sensemaker.notice.published")
+  end
+
+  def unpublish
+    @sensemaker_job = Sensemaker::Job.find(params[:id])
+    @sensemaker_job.update!(published: false)
+    redirect_to admin_sensemaker_job_path(@sensemaker_job),
+                notice: I18n.t("admin.sensemaker.notice.unpublished")
+  end
+
   def help
     # Help action for sensemaker documentation
   end
@@ -130,4 +151,3 @@ class Admin::Sensemaker::JobsController < Admin::BaseController
       params.require(:sensemaker_job).permit(:commentable_type, :commentable_id, :script, :additional_context)
     end
 end
-

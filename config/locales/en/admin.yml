@@ -1809,6 +1809,9 @@ en:
       last_execution: "Last execution"
       no_content: "No content generated yet."
       notice:
+        cannot_publish: "The analysis cannot be published because it is not finished or has errors or does not have an output file."
+        published: "The analysis has been published successfully."
+        unpublished: "The analysis has been unpublished successfully."
         success: "The last script has been executed successfully."
         error: "An error has occurred. You can see the details below."
         working: "The script is running. The administrator who executed it will receive an email when it is finished."
