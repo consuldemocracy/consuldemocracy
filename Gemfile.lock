@@ -194,7 +194,7 @@ GEM
     daemons (1.4.1)
     dalli (3.2.8)
     date (3.4.1)
-    debug (1.9.2)
+    debug (1.11.0)
       irb (~> 1.10)
       reline (>= 0.3.8)
     delayed_job (4.1.13)
@@ -500,7 +500,7 @@ GEM
     pp (0.6.3)
       prettyprint
     prettyprint (0.2.0)
-    prism (1.4.0)
+    prism (1.5.1)
     pronto (0.11.4)
       gitlab (>= 4.4.0, < 5.0)
       httparty (>= 0.13.7, < 1.0)
@@ -832,7 +832,7 @@ DEPENDENCIES
   csv (~> 3.3.5)
   daemons (~> 1.4.1)
   dalli (~> 3.2.8)
-  debug (~> 1.9.2)
+  debug (~> 1.11.0)
   delayed_job_active_record (~> 4.1.11)
   devise (~> 4.9.4)
   devise-security (~> 0.18.0)
@@ -911,7 +911,7 @@ DEPENDENCIES
   wkhtmltopdf-binary (~> 0.12.6)
 
 RUBY VERSION
-   ruby 3.3.10p183
+   ruby 3.4.7p58
 
 BUNDLED WITH
-   2.5.22
+   2.6.9

@@ -21,7 +21,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 - **Documentation:** Add links to OS-specific installation guides in README [#5967](https://github.com/consuldemocracy/consuldemocracy/pull/5967)
 - **Maintenance-CI:** Update Pull Request template [#6011](https://github.com/consuldemocracy/consuldemocracy/pull/6011)
 - **Maintenance-Deployment:** Update Node.js from 18.20.3 to 20.19.5 [#5916](https://github.com/consuldemocracy/consuldemocracy/pull/5916) and [#6117](https://github.com/consuldemocracy/consuldemocracy/pull/6117)
-- **Maintenance-Deployment:** Upgrade Ruby to version 3.3.10 [#5915](https://github.com/consuldemocracy/consuldemocracy/pull/5915), [#6116](https://github.com/consuldemocracy/consuldemocracy/pull/6116), [#6121](https://github.com/consuldemocracy/consuldemocracy/pull/6121) and [#6127](https://github.com/consuldemocracy/consuldemocracy/pull/6127)
+- **Maintenance-Deployment:** Upgrade Ruby to version 3.4.7 [#5915](https://github.com/consuldemocracy/consuldemocracy/pull/5915), [#6116](https://github.com/consuldemocracy/consuldemocracy/pull/6116), [#6121](https://github.com/consuldemocracy/consuldemocracy/pull/6121) and [#6127](https://github.com/consuldemocracy/consuldemocracy/pull/6127)
 - **Maintenance-Docker:** Use postgreSQL 14 as postgres Docker image [#6112](https://github.com/consuldemocracy/consuldemocracy/pull/6112)
 - **Maintenance-Gems:** Bump highline from 2.0.3 to 3.1.2 [#6082](https://github.com/consuldemocracy/consuldemocracy/pull/6082)
 - **Maintenance-Gems:** Bump rexml from 3.4.1 to 3.4.2 [#6075](https://github.com/consuldemocracy/consuldemocracy/pull/6075)
