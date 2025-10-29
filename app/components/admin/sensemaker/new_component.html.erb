@@ -28,7 +28,9 @@
     <details open>
       <summary>Search results</summary>
       <ul class="target-search-results">
-        <%= content_tag :span, "Results will appear here", class: "small" if params[:query].blank? %>
+        <% if params[:query].blank? %>
+          <%= content_tag :span, "Results will appear here", class: "small" %>
+        <% end %>
 
         <% @search_results.each do |result_group| %>
           <li class="result-group">
@@ -36,9 +38,10 @@
             <ul>
               <% result_group[:results].each do |result| %>
                 <% is_selected = "#{result.class.name}/#{result.id}".eql? "#{params[:target_type]}/#{params[:target_id]}" %>
+                <% display_name = result.respond_to?(:title) ? result.title : result.name %>
                 <li class="result-row <%= "selected" if is_selected %>">
                   <%= link_to new_admin_sensemaker_job_path(query_type: params[:query_type], query: params[:query], target_type: result.class.name, target_id: result.id), class: "flex-row" do %>
-                    <%= content_tag :span, result.title, class: "flex-grow" %>
+                    <%= content_tag :span, display_name, class: "flex-grow" %>
                     <% if is_selected %>
                       <%= content_tag :span, "Selected", class: "" %>
                     <% else %>
@@ -52,6 +55,8 @@
         <% end %>
       </ul>
     </details>
+
+    <%= link_to "Analyse all proposals", new_admin_sensemaker_job_path(target_type: "Proposal", target_id: nil), class: "button" if params[:query_type].eql?("Proposal") %>
   <% end %>
 
   <% conversation = @sensemaker_job.conversation if @sensemaker_job.analysable_type.present? %>

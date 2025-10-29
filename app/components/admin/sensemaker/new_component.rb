@@ -10,7 +10,8 @@ class Admin::Sensemaker::NewComponent < ApplicationComponent
       "Proposal",
       "Poll",
       "Topic",
-      "Legislation::Process"
+      "Legislation::Process",
+      "Budget"
     ]
   end
 

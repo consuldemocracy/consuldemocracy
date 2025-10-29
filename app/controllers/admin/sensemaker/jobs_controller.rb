@@ -38,6 +38,22 @@ class Admin::Sensemaker::JobsController < Admin::BaseController
             @search_results << { group_title: process.title + " Questions", results: process.questions }
           end
         end
+      when "Budget"
+        budgets = Budget.published
+                       .with_translations(Globalize.fallbacks(I18n.locale))
+                       .where("budget_translations.name ILIKE ?", "%#{target_query}%")
+                       .order(created_at: :desc)
+        budgets.each do |budget|
+          budget_results = []
+          budget_results << budget
+          #budget.groups.includes(:translations).each do |group|
+          #  budget_results << group
+          #end
+          @search_results << {
+            group_title: budget.name,
+            results: budget_results
+          } unless budget_results.empty?
+        end
       else
         results = params[:query_type].constantize.search(target_query)
         @search_results = [{
@@ -87,6 +103,7 @@ class Admin::Sensemaker::JobsController < Admin::BaseController
       @result += "Error: Target not found"
       status = 404
     rescue Exception => e
+      Rails.logger.error "Error: #{e.message}"
       @result += "Error: #{e.message}"
       status = 500
     end

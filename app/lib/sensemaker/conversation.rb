@@ -47,7 +47,7 @@ module Sensemaker
             body: "#{proposal.title}\n\n#{proposal.description}",
             cached_votes_up: proposal.cached_votes_up || 0,
             cached_votes_down: 0,
-            cached_votes_total: proposal.cached_votes_total || 0,
+            cached_votes_total: proposal.total_votes || 0,
             user_id: proposal.author_id
           )
         end
@@ -60,7 +60,7 @@ module Sensemaker
     def compile_context
       if @target.is_a?(Legislation::QuestionOption)
         # Use question context + add note about filtering
-        question_context = self.class.compile_context_for_target(@target.question)
+        question_context = self.class.compile_context_for_target(@target.question, comments_count: comments.size)
         filter_note = I18n.t("sensemaker.context.question_option.filter_note", option_value: @target.value)
         "#{question_context}\n\n#{filter_note}"
       elsif @analysable_type == "Proposal" && @analysable_id.nil?
@@ -68,7 +68,7 @@ module Sensemaker
         I18n.t("sensemaker.context.proposals.all")
       else
         # Use standard context compilation (Budget, Budget::Group, or other commentables)
-        self.class.compile_context_for_target(@target)
+        self.class.compile_context_for_target(@target, comments_count: comments.size)
       end
     end
 
@@ -120,7 +120,7 @@ module Sensemaker
 
     private
 
-      def self.compile_context_for_target(target)
+      def self.compile_context_for_target(target, comments_count: nil)
         parts = []
 
         target_type = target.class.name.humanize
@@ -155,9 +155,10 @@ module Sensemaker
         if target.respond_to?(:tag_list) && target.tag_list.any?
           parts << I18n.t("sensemaker.context.tags", tags: target.tag_list.join(", "))
         end
-        parts << I18n.t("sensemaker.context.comments", count: target.comments_count || 0)
+        comment_count = comments_count || (target.respond_to?(:comments_count) ? target.comments_count : 0) || 0
+        parts << I18n.t("sensemaker.context.comments", count: comment_count)
         parts << I18n.t("sensemaker.context.created", date: target.created_at.strftime("%B %d, %Y"))
-        if target.respond_to?(:published?) && target.published?
+        if target.respond_to?(:published?) && target.respond_to?(:published_at) && target.published?
           parts << I18n.t("sensemaker.context.published", date: target.published_at.strftime("%B %d, %Y"))
         end
 
