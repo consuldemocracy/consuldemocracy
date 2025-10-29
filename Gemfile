@@ -59,7 +59,6 @@ gem "social-share-button", "~> 1.2.4"
 gem "sprockets", "~> 4.2.2"
 gem "sprockets-rails", "~> 3.5.2", require: "sprockets/railtie"
 gem "turbolinks", "~> 5.2.1"
-gem "turnout", "~> 2.5.0"
 gem "uglifier", "~> 4.2.1"
 gem "view_component", "~> 3.23.2"
 gem "whenever", "~> 1.0.0", require: false
