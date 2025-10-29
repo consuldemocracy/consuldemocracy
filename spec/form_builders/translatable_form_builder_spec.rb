@@ -37,7 +37,7 @@ describe TranslatableFormBuilder do
 
   def render(content)
     @content ||= ""
-    @content << content
+    @content += content
   end
 
   def page

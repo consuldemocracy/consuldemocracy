@@ -198,7 +198,7 @@ class MachineLearning
     end
 
     def description_from(script_filename)
-      description = ""
+      description = "" # TODO
       delimiter = '"""'
       break_line = "<br>"
       comment_found = false

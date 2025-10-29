@@ -16,7 +16,7 @@ describe "Imports", :admin do
 
     scenario "Should show success notice after successful import" do
       within "form#new_local_census_records_import" do
-        path = base_files_path << "valid.csv"
+        path = base_files_path + "valid.csv"
         file = file_fixture(path)
         attach_file("local_census_records_import_file", file)
         click_button "Save"
@@ -45,7 +45,7 @@ describe "Imports", :admin do
 
     scenario "Should show successfully created local census records at created group" do
       within "form#new_local_census_records_import" do
-        path = base_files_path << "valid.csv"
+        path = base_files_path + "valid.csv"
         file = file_fixture(path)
         attach_file("local_census_records_import_file", file)
         click_button "Save"
@@ -57,7 +57,7 @@ describe "Imports", :admin do
 
     scenario "Should show invalid local census records at errored group" do
       within "form#new_local_census_records_import" do
-        path = base_files_path << "invalid.csv"
+        path = base_files_path + "invalid.csv"
         file = file_fixture(path)
         attach_file("local_census_records_import_file", file)
         click_button "Save"
@@ -69,7 +69,7 @@ describe "Imports", :admin do
 
     scenario "Should show error messages inside cells at errored group" do
       within "form#new_local_census_records_import" do
-        path = base_files_path << "invalid.csv"
+        path = base_files_path + "invalid.csv"
         file = file_fixture(path)
         attach_file("local_census_records_import_file", file)
         click_button "Save"
