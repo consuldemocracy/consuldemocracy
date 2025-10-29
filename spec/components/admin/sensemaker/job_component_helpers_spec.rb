@@ -14,7 +14,9 @@ describe Admin::Sensemaker::JobComponentHelpers do
 
   let(:user) { create(:user) }
   let(:debate) { create(:debate) }
-  let(:sensemaker_job) { create(:sensemaker_job, user: user, commentable: debate) }
+  let(:sensemaker_job) do
+    create(:sensemaker_job, user: user, analysable_type: "Debate", analysable_id: debate.id)
+  end
   let(:component) { test_class.new(sensemaker_job) }
 
   describe "#job_status_class" do
@@ -43,18 +45,18 @@ describe Admin::Sensemaker::JobComponentHelpers do
     end
   end
 
-  describe "#commentable_title" do
-    it "returns the commentable title" do
-      expect(component.commentable_title).to eq(debate.title)
+  describe "#analysable_title" do
+    it "returns the analysable title" do
+      expect(component.analysable_title).to eq(debate.title)
     end
 
-    context "when commentable is deleted" do
+    context "when analysable is deleted" do
       before do
-        allow(sensemaker_job).to receive(:commentable).and_return(nil)
+        allow(sensemaker_job).to receive(:analysable).and_return(nil)
       end
 
       it "returns deleted message" do
-        expect(component.commentable_title).to eq("(deleted)")
+        expect(component.analysable_title).to eq("(deleted)")
       end
     end
   end

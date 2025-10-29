@@ -6,7 +6,7 @@ describe Admin::Sensemaker::JobsController do
   let(:debate) { create(:debate) }
   let(:proposal) { create(:proposal) }
   let(:sensemaker_job) do
-    create(:sensemaker_job, user: admin, commentable_type: "Debate", commentable_id: debate.id)
+    create(:sensemaker_job, user: admin, analysable_type: "Debate", analysable_id: debate.id)
   end
 
   before { sign_in(admin) }
@@ -36,8 +36,6 @@ describe Admin::Sensemaker::JobsController do
 
     context "with target_type and target_id params" do
       it "processes target parameters successfully" do
-        allow(Sensemaker::JobRunner).to receive(:compile_context).with(debate).and_return("Test context")
-
         get :new, params: { target_type: "Debate", target_id: debate.id }
 
         expect(response).to have_http_status(:ok)
@@ -67,8 +65,8 @@ describe Admin::Sensemaker::JobsController do
     let(:valid_params) do
       {
         sensemaker_job: {
-          commentable_type: "Debate",
-          commentable_id: debate.id,
+          analysable_type: "Debate",
+          analysable_id: debate.id,
           script: "categorization_runner.ts",
           additional_context: "Test context"
         }
@@ -87,7 +85,8 @@ describe Admin::Sensemaker::JobsController do
 
       job = Sensemaker::Job.last
       expect(job.user).to eq(admin)
-      expect(job.commentable).to eq(debate)
+      expect(job.analysable_type).to eq("Debate")
+      expect(job.analysable_id).to eq(debate.id)
       expect(job.script).to eq("categorization_runner.ts")
       expect(job.started_at).to be_present
     end
@@ -105,35 +104,30 @@ describe Admin::Sensemaker::JobsController do
     let(:valid_params) do
       {
         sensemaker_job: {
-          commentable_type: "Debate",
-          commentable_id: debate.id,
+          analysable_type: "Debate",
+          analysable_id: debate.id,
           script: "categorization_runner.ts"
         }
       }
     end
 
-    it "renders preview for valid commentable" do
-      allow(Sensemaker::JobRunner).to receive(:compile_context).and_return("Context")
-      allow(Sensemaker::CsvExporter).to receive(:new).and_return(double(export_to_string: "CSV data"))
-
+    it "renders preview for valid analysable" do
       get :preview, params: valid_params, format: :html
 
       expect(response).to have_http_status(:ok)
-      expect(response.body).to include("Context")
-      expect(response.body).to include("CSV data")
+      expect(response.body).to include("Additional context")
+      expect(response.body).to include("Input CSV")
+      expect(response.body).to include("comment-id,comment_text")
     end
 
-    it "handles missing commentable" do
-      get :preview, params: { sensemaker_job: { commentable_type: "Debate", commentable_id: 999 }}
+    it "handles missing analysable" do
+      get :preview, params: { sensemaker_job: { analysable_type: "Debate", analysable_id: 999 }}
 
       expect(response).to have_http_status(:not_found)
       expect(response.body).to include("Error: Target not found")
     end
 
     it "responds with CSV format" do
-      allow(Sensemaker::JobRunner).to receive(:compile_context).and_return("Context")
-      allow(Sensemaker::CsvExporter).to receive(:new).and_return(double(export_to_string: "CSV data"))
-
       get :preview, params: valid_params, format: :csv
 
       expect(response.content_type).to include("text/csv")
@@ -180,8 +174,8 @@ describe Admin::Sensemaker::JobsController do
 
       create(:sensemaker_job,
              user: admin,
-             commentable_type: "Debate",
-             commentable_id: debate.id,
+             analysable_type: "Debate",
+             analysable_id: debate.id,
              script: "single-html-build.js",
              started_at: 1.hour.ago,
              finished_at: Time.current,
@@ -216,8 +210,8 @@ describe Admin::Sensemaker::JobsController do
       let(:unfinished_job) do
         create(:sensemaker_job,
                user: admin,
-               commentable_type: "Debate",
-               commentable_id: debate.id,
+               analysable_type: "Debate",
+               analysable_id: debate.id,
                script: "single-html-build.js",
                started_at: Time.current,
                finished_at: nil,
@@ -244,8 +238,8 @@ describe Admin::Sensemaker::JobsController do
       let(:errored_job) do
         create(:sensemaker_job,
                user: admin,
-               commentable_type: "Debate",
-               commentable_id: debate.id,
+               analysable_type: "Debate",
+               analysable_id: debate.id,
                script: "single-html-build.js",
                started_at: 1.hour.ago,
                finished_at: Time.current,
@@ -272,8 +266,8 @@ describe Admin::Sensemaker::JobsController do
       let(:job_without_output) do
         create(:sensemaker_job,
                user: admin,
-               commentable_type: "Debate",
-               commentable_id: debate.id,
+               analysable_type: "Debate",
+               analysable_id: debate.id,
                script: "single-html-build.js",
                started_at: 1.hour.ago,
                finished_at: Time.current,
@@ -305,8 +299,8 @@ describe Admin::Sensemaker::JobsController do
 
         create(:sensemaker_job,
                user: admin,
-               commentable_type: "Debate",
-               commentable_id: debate.id,
+               analysable_type: "Debate",
+               analysable_id: debate.id,
                script: "categorization_runner.ts",
                started_at: 1.hour.ago,
                finished_at: Time.current,
@@ -345,8 +339,8 @@ describe Admin::Sensemaker::JobsController do
 
       create(:sensemaker_job,
              user: admin,
-             commentable_type: "Debate",
-             commentable_id: debate.id,
+             analysable_type: "Debate",
+             analysable_id: debate.id,
              script: "single-html-build.js",
              started_at: 1.hour.ago,
              finished_at: Time.current,
@@ -381,8 +375,8 @@ describe Admin::Sensemaker::JobsController do
       it "permits required parameters" do
         params = ActionController::Parameters.new({
           sensemaker_job: {
-            commentable_type: "Debate",
-            commentable_id: "123",
+            analysable_type: "Debate",
+            analysable_id: "123",
             script: "test.ts",
             additional_context: "context"
           }
@@ -391,7 +385,7 @@ describe Admin::Sensemaker::JobsController do
         controller.params = params
         permitted = controller.send(:sensemaker_job_params)
 
-        expect(permitted.keys).to include("commentable_type", "commentable_id", "script",
+        expect(permitted.keys).to include("analysable_type", "analysable_id", "script",
                                           "additional_context")
       end
     end

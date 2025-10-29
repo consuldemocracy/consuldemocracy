@@ -1,7 +1,7 @@
 <tr class="<%= css_classes %>" data-job-id="<%= job.id %>">
   <td style="max-width: 40rem;">
     <%= link_to "Job ##{job.id}", admin_sensemaker_job_path(job), class: "job-link" %>
-    <%= content_tag :p, commentable_title, style: "" %>
+    <%= content_tag :p, analysable_title, style: "" %>
   </td>
   <td class="small"><%= t("sensemaker.scripts.#{job.script.parameterize.underscore}.title") %></td>
   <% if job.running? %>

@@ -5,8 +5,8 @@ describe Sensemaker::JobRunner do
   let(:debate) { create(:debate) }
   let(:job) do
     create(:sensemaker_job,
-           commentable_type: "Debate",
-           commentable_id: debate.id,
+           analysable_type: "Debate",
+           analysable_id: debate.id,
            script: "categorization_runner.ts",
            user: user,
            started_at: Time.current,
@@ -407,7 +407,7 @@ describe Sensemaker::JobRunner do
     end
   end
 
-  describe ".compile_context" do
+  describe "compile_context via Conversation" do
     let(:service) { Sensemaker::JobRunner.new(job) }
 
     it "can compile context for Poll" do
@@ -419,7 +419,8 @@ describe Sensemaker::JobRunner do
       expect(answer_two.persisted?).to be true
       expect(poll.persisted?).to be true
 
-      context_result = service.class.compile_context(poll)
+      conversation = Sensemaker::Conversation.new("Poll", poll.id)
+      context_result = conversation.compile_context
 
       expect(context_result).to be_present
       expect(context_result).to include("Questions and Responses:")
@@ -432,7 +433,8 @@ describe Sensemaker::JobRunner do
       proposal = create(:proposal)
       expect(proposal.persisted?).to be true
 
-      context_result = service.class.compile_context(proposal)
+      conversation = Sensemaker::Conversation.new("Proposal", proposal.id)
+      context_result = conversation.compile_context
       expect(context_result).to be_present
       expect(context_result).to include(
         "This proposal has #{proposal.total_votes} votes out of #{Proposal.votes_needed_for_success} required"
@@ -443,7 +445,8 @@ describe Sensemaker::JobRunner do
       debate = create(:debate)
       expect(debate.persisted?).to be true
 
-      context_result = service.class.compile_context(debate)
+      conversation = Sensemaker::Conversation.new("Debate", debate.id)
+      context_result = conversation.compile_context
       expect(context_result).to be_present
       expect(context_result).to include(
         "This debate has #{debate.cached_votes_up} votes for and #{debate.cached_votes_down} votes against"
@@ -454,7 +457,8 @@ describe Sensemaker::JobRunner do
       proposal = create(:legislation_proposal)
       expect(proposal.persisted?).to be true
 
-      context_result = service.class.compile_context(proposal)
+      conversation = Sensemaker::Conversation.new("Legislation::Proposal", proposal.id)
+      context_result = conversation.compile_context
       expect(context_result).to be_present
       expect(context_result).to include(
         "This proposal is part of the legislation process, \"#{proposal.process.title}\""
@@ -465,7 +469,8 @@ describe Sensemaker::JobRunner do
       question = create(:legislation_question)
       expect(question.persisted?).to be true
 
-      context_result = service.class.compile_context(question)
+      conversation = Sensemaker::Conversation.new("Legislation::Question", question.id)
+      context_result = conversation.compile_context
       expect(context_result).to be_present
       expect(context_result).to include(
         "This question is part of the legislation process, \"#{question.process.title}\""
@@ -483,7 +488,8 @@ describe Sensemaker::JobRunner do
       end
       expect(question.persisted?).to be true
 
-      context_result = service.class.compile_context(question)
+      conversation = Sensemaker::Conversation.new("Legislation::Question", question.id)
+      context_result = conversation.compile_context
       expect(context_result).to be_present
       expect(context_result).to include("Question Responses:")
       expect(context_result).to include(" - #{question.question_options.first.value}")
@@ -491,8 +497,10 @@ describe Sensemaker::JobRunner do
     end
 
     it "can compile context for other target types" do
-      target_types = Sensemaker::Job::TARGET_TYPES - ["Poll", "Legislation::Question",
-                                                      "Legislation::Proposal", "Debate"]
+      target_types = Sensemaker::Job::ANALYSABLE_TYPES - ["Poll", "Legislation::Question",
+                                                          "Legislation::Proposal", "Debate",
+                                                          "Legislation::QuestionOption",
+                                                          "Budget", "Budget::Group"]
       target_types.each do |target_type|
         target_factory = target_type.downcase.gsub("::", "_").to_sym
         target = create(target_factory)
@@ -500,7 +508,8 @@ describe Sensemaker::JobRunner do
         3.times do
           create(:comment, commentable: target, user: user)
         end
-        context_result = service.class.compile_context(target)
+        conversation = Sensemaker::Conversation.new(target_type, target.id)
+        context_result = conversation.compile_context
         expect(context_result).to be_present, "Failed to compile context for #{target_factory}"
         expect(context_result).to include("Comments: #{target.comments_count}")
       end
@@ -518,10 +527,10 @@ describe Sensemaker::JobRunner do
       allow(mock_exporter).to receive(:export_to_csv)
     end
 
-    it "creates a CsvExporter with the job's target" do
+    it "creates a CsvExporter with the job's conversation" do
       service.send(:prepare_input_data)
 
-      expect(Sensemaker::CsvExporter).to have_received(:new).with(job.commentable)
+      expect(Sensemaker::CsvExporter).to have_received(:new).with(job.conversation)
     end
 
     it "exports CSV data to the input file" do

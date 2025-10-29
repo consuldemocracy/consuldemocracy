@@ -9,16 +9,19 @@ class Admin::Sensemaker::JobsController < Admin::BaseController
 
   def show
     @sensemaker_job = Sensemaker::Job.find(params[:id])
-    @child_jobs = @sensemaker_job.children.includes(:commentable).order(:created_at)
+    @child_jobs = @sensemaker_job.children.includes(:analysable).order(:created_at)
   end
 
   def new
     @sensemaker_job = Sensemaker::Job.new
 
     if params[:target_type].present?
-      @sensemaker_job.commentable_type = params[:target_type]
-      @sensemaker_job.commentable_id = params[:target_id] if params[:target_id].present?
-      @sensemaker_job.additional_context = Sensemaker::JobRunner.compile_context(@sensemaker_job.commentable)
+      @sensemaker_job.analysable_type = params[:target_type]
+      @sensemaker_job.analysable_id = params[:target_id] if params[:target_id].present?
+      if @sensemaker_job.analysable_type.present?
+        conversation = @sensemaker_job.conversation
+        @sensemaker_job.additional_context = conversation.compile_context if conversation.target.present?
+      end
     end
 
     @search_results = []
@@ -68,15 +71,18 @@ class Admin::Sensemaker::JobsController < Admin::BaseController
     @result = ""; csv_result = ""
     status = 200
     begin
-      is_persisted = sensemaker_job.commentable.present? && sensemaker_job.commentable.persisted?
-      raise ActiveRecord::RecordNotFound unless is_persisted
+      conversation = sensemaker_job.conversation
+      target_persisted = conversation.target.is_a?(Class) ||
+                         (conversation.target.present? && conversation.target.persisted?)
+      raise ActiveRecord::RecordNotFound unless target_persisted
 
       @result += "---------Additional context---------\n\n"
-      @result += Sensemaker::JobRunner.compile_context(sensemaker_job.commentable)
+      @result += conversation.compile_context
       @result += "\n\n---------Input CSV--------\n\n"
-      csv_result = Sensemaker::CsvExporter.new(sensemaker_job.commentable).export_to_string
+      csv_result = Sensemaker::CsvExporter.new(conversation).export_to_string
       @result += csv_result
-      filename = "#{sensemaker_job.commentable_type}-#{sensemaker_job.commentable_id}".parameterize
+
+      filename = conversation.target_filename_label.parameterize
     rescue ActiveRecord::RecordNotFound
       @result += "Error: Target not found"
       status = 404
@@ -148,6 +154,6 @@ class Admin::Sensemaker::JobsController < Admin::BaseController
   private
 
     def sensemaker_job_params
-      params.require(:sensemaker_job).permit(:commentable_type, :commentable_id, :script, :additional_context)
+      params.require(:sensemaker_job).permit(:analysable_type, :analysable_id, :script, :additional_context)
     end
 end

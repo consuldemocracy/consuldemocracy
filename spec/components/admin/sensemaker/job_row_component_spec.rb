@@ -3,7 +3,9 @@ require "rails_helper"
 describe Admin::Sensemaker::JobRowComponent do
   let(:user) { create(:user) }
   let(:debate) { create(:debate) }
-  let(:sensemaker_job) { create(:sensemaker_job, user: user, commentable: debate) }
+  let(:sensemaker_job) do
+    create(:sensemaker_job, user: user, analysable_type: "Debate", analysable_id: debate.id)
+  end
   let(:component) { Admin::Sensemaker::JobRowComponent.new(sensemaker_job) }
 
   describe "#initialize" do
@@ -32,7 +34,7 @@ describe Admin::Sensemaker::JobRowComponent do
   describe "shared helper methods" do
     it "includes JobComponentHelpers methods" do
       expect(component).to respond_to(:job_status_class)
-      expect(component).to respond_to(:commentable_title)
+      expect(component).to respond_to(:analysable_title)
       expect(component).to respond_to(:has_error?)
       expect(component).to respond_to(:can_download?)
       expect(component).to respond_to(:status_text)

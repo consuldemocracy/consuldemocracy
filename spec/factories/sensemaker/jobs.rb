@@ -5,8 +5,8 @@ FactoryBot.define do
     started_at { Time.current }
     finished_at { nil }
     error { nil }
-    commentable_type { "Debate" }
-    commentable_id { create(:debate).id }
+    analysable_type { "Debate" }
+    analysable_id { create(:debate).id }
     additional_context { "Test context" }
     published { true }
 

@@ -36,7 +36,8 @@ class Sensemaker::ReportComponent < ApplicationComponent
 
     def latest_successful_job
       @latest_successful_job ||= Sensemaker::Job
-                                 .where(commentable: analysable_resource)
+                                 .where(analysable_type: analysable_resource.class.name,
+                                        analysable_id: analysable_resource.id)
                                  .successful
                                  .published
                                  .order(finished_at: :desc)

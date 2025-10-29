@@ -3,7 +3,8 @@
 <div class="sensemaker">
   <div class="callout primary flex-row">
     <i class="tip" aria-hidden="true"></i>
-    <% if @sensemaker_job.commentable.present? %>
+    <% conversation = @sensemaker_job.conversation if @sensemaker_job.analysable_type.present? %>
+    <% if conversation&.target.present? %>
       <p>Review your target and additional context, then select a script to run.</p>
     <% elsif params[:query_type].present? %>
       <p>Select a target from the search results.</p>
@@ -53,13 +54,14 @@
     </details>
   <% end %>
 
-  <% if @sensemaker_job.commentable.present? %>
+  <% conversation = @sensemaker_job.conversation if @sensemaker_job.analysable_type.present? %>
+  <% if conversation&.target.present? || (conversation&.target.is_a?(Class) && conversation.target == Proposal) %>
     <br>
     <%= form_for @sensemaker_job, url: admin_sensemaker_jobs_path, method: :post do |f| %>
-      <%= f.hidden_field :commentable_type, label: false, required: true %>
-      <%= f.hidden_field :commentable_id, label: false, required: true %>
+      <%= f.hidden_field :analysable_type, label: false, required: true %>
+      <%= f.hidden_field :analysable_id, label: false, required: false %>
 
-      <h4><%= @sensemaker_job.commentable.title %></h4>
+      <h4><%= conversation.target_label(format: :short) %></h4>
       <%= f.text_area :additional_context, label: "Additional context", rows: 10 %>
 
       <% script_options = Sensemaker::JobRunner::SCRIPTS.map { |script| [I18n.t("sensemaker.scripts.#{script.parameterize.underscore}.title"), script] } %>

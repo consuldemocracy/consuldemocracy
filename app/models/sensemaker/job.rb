@@ -2,26 +2,29 @@ module Sensemaker
   class Job < ApplicationRecord
     self.table_name = "sensemaker_jobs"
 
-    TARGET_TYPES = [
+    ANALYSABLE_TYPES = [
       "Debate",
       "Proposal",
       "Poll",
       "Topic",
       "Legislation::Question",
-      "Legislation::Proposal"
+      "Legislation::Proposal",
+      "Legislation::QuestionOption",
+      "Budget",
+      "Budget::Group"
     ].freeze
 
-    validates :commentable_type, inclusion: { in: TARGET_TYPES }
+    validates :analysable_type, inclusion: { in: ANALYSABLE_TYPES }
 
     belongs_to :user, optional: false
     belongs_to :parent_job, class_name: "Sensemaker::Job", optional: true
     has_many :children, class_name: "Sensemaker::Job", foreign_key: :parent_job_id, inverse_of: :parent_job,
                         dependent: :nullify
 
-    validates :commentable_type, presence: true
-    validates :commentable_id, presence: true
+    validates :analysable_type, presence: true
+    validates :analysable_id, presence: true, unless: -> { analysable_type == "Proposal" }
 
-    belongs_to :commentable, polymorphic: true
+    belongs_to :analysable, polymorphic: true, optional: true
 
     after_destroy :cleanup_associated_files
 
@@ -84,6 +87,10 @@ module Sensemaker
 
     def cancel!
       update!(finished_at: Time.current, error: "Cancelled")
+    end
+
+    def conversation
+      @conversation ||= Sensemaker::Conversation.new(analysable_type, analysable_id)
     end
 
     private

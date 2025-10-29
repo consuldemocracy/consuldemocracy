@@ -29,6 +29,20 @@ en:
         responses_header: "Question Responses:"
         option: " - %{value} (%{answers_count} responses)"
 
+      question_option:
+        filter_note: "Note: Comments in this analysis are filtered to only include comments from users who selected the option \"%{option_value}\" in their response to this question."
+
+      budget:
+        name: "Budget: %{name}"
+        phase: "Phase: %{phase}"
+
+      budget_group:
+        name: "Budget Group: %{name}"
+        budget: "Part of budget: %{budget_name}"
+
+      proposals:
+        all: "These are the proposals that have been submitted to the consul citizen participation platform. Citizens' proposals are an opportunity for neighbours and collectives to decide directly how they want their city to be, after getting sufficient support and submitting to a citizens' vote."
+
       poll:
         questions_header: "Questions and Responses:"
         question_title: "Q: %{title}:"

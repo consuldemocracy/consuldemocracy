@@ -5,7 +5,8 @@ describe Sensemaker::JobsController do
   let(:debate) { create(:debate) }
   let(:job) do
     create(:sensemaker_job,
-           commentable: debate,
+           analysable_type: "Debate",
+           analysable_id: debate.id,
            user: user,
            finished_at: Time.current,
            persisted_output: Rails.root.join("tmp", "test-report.html").to_s)

@@ -2,7 +2,8 @@ require "rails_helper"
 
 describe Sensemaker::CsvExporter do
   let(:commentable) { create(:debate) }
-  let(:csv_exporter) { Sensemaker::CsvExporter.new(commentable) }
+  let(:conversation) { Sensemaker::Conversation.new("Debate", commentable.id) }
+  let(:csv_exporter) { Sensemaker::CsvExporter.new(conversation) }
 
   describe "#export_to_csv" do
     it "exports the comments to a CSV file" do

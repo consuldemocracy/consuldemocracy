@@ -5,8 +5,12 @@ module Admin::Sensemaker::JobComponentHelpers
     "job-status-#{job.status.downcase}"
   end
 
-  def commentable_title
-    job.commentable.present? ? job.commentable.title : "(deleted)"
+  def analysable_title
+    if job.analysable.present?
+      job.conversation.target_label(format: :short)
+    else
+      "(deleted)"
+    end
   end
 
   def has_error?

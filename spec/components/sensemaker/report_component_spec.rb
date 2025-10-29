@@ -14,7 +14,8 @@ describe Sensemaker::ReportComponent do
     context "when sensemaker feature is enabled and job exists" do
       before do
         job = create(:sensemaker_job,
-                     commentable: debate,
+                     analysable_type: "Debate",
+                     analysable_id: debate.id,
                      finished_at: Time.current,
                      persisted_output: Rails.root.join("tmp", "test-report.html").to_s)
         FileUtils.mkdir_p(File.dirname(job.persisted_output))
@@ -33,7 +34,7 @@ describe Sensemaker::ReportComponent do
 
     context "when sensemaker feature is enabled and but job is unpublished" do
       before do
-        create(:sensemaker_job, :unpublished, commentable: debate)
+        create(:sensemaker_job, :unpublished, analysable_type: "Debate", analysable_id: debate.id)
       end
 
       it "returns false" do
@@ -44,7 +45,7 @@ describe Sensemaker::ReportComponent do
     context "when sensemaker feature is disabled" do
       before do
         Setting["feature.sensemaker"] = nil
-        create(:sensemaker_job, commentable: debate)
+        create(:sensemaker_job, analysable_type: "Debate", analysable_id: debate.id)
       end
 
       it "returns false" do
@@ -63,7 +64,8 @@ describe Sensemaker::ReportComponent do
     context "when job has output" do
       let(:job) do
         create(:sensemaker_job,
-               commentable: debate,
+               analysable_type: "Debate",
+               analysable_id: debate.id,
                finished_at: Time.current,
                persisted_output: Rails.root.join("tmp", "test-report.html").to_s)
       end
@@ -87,7 +89,8 @@ describe Sensemaker::ReportComponent do
     context "when job has no output" do
       before do
         create(:sensemaker_job,
-               commentable: debate,
+               analysable_type: "Debate",
+               analysable_id: debate.id,
                finished_at: Time.current,
                persisted_output: nil)
       end
@@ -108,7 +111,8 @@ describe Sensemaker::ReportComponent do
     context "when job has output" do
       before do
         job = create(:sensemaker_job,
-                     commentable: debate,
+                     analysable_type: "Debate",
+                     analysable_id: debate.id,
                      finished_at: Time.current,
                      persisted_output: Rails.root.join("tmp", "test-report.html").to_s)
         # Create the actual file so has_output? returns true
@@ -123,7 +127,7 @@ describe Sensemaker::ReportComponent do
 
     context "when job is unpublished" do
       before do
-        create(:sensemaker_job, :unpublished, commentable: debate)
+        create(:sensemaker_job, :unpublished, analysable_type: "Debate", analysable_id: debate.id)
       end
 
       it "returns false" do
@@ -134,7 +138,8 @@ describe Sensemaker::ReportComponent do
     context "when job has no output" do
       before do
         create(:sensemaker_job,
-               commentable: debate,
+               analysable_type: "Debate",
+               analysable_id: debate.id,
                finished_at: Time.current,
                persisted_output: nil)
       end
@@ -149,7 +154,8 @@ describe Sensemaker::ReportComponent do
     context "when report is available" do
       before do
         job = create(:sensemaker_job,
-                     commentable: debate,
+                     analysable_type: "Debate",
+                     analysable_id: debate.id,
                      finished_at: Time.current,
                      persisted_output: Rails.root.join("tmp", "test-report.html").to_s)
         FileUtils.mkdir_p(File.dirname(job.persisted_output))

@@ -2,10 +2,13 @@ require "csv"
 
 module Sensemaker
   class CsvExporter
-    attr_reader :resource, :include_votes
+    attr_reader :conversation, :include_votes
 
-    def initialize(resource, options = {})
-      @resource = resource
+    def initialize(conversation, options = {})
+      raise ArgumentError,
+            "conversation must be a Sensemaker::Conversation" unless conversation.is_a?(Conversation)
+
+      @conversation = conversation
       @include_votes = options.fetch(:include_votes, true)
     end
 
@@ -78,34 +81,39 @@ module Sensemaker
       end
 
       def comments_as_rows
-        resource.comments.includes(:user)
-                .where(hidden_at: nil)
-                .map do |comment|
+        items = @conversation.comments
+
+        items.map do |item|
+          # Works with both Comment AR objects and CommentLikeItem Data objects
           [
-            "comment_#{comment.id}",
-            comment.body,
-            comment.cached_votes_up || 0,
-            comment.cached_votes_down || 0,
-            comment_votes_neutral(comment),
-            comment.user_id
+            item_id(item),
+            item.body,
+            item.cached_votes_up || 0,
+            item.cached_votes_down || 0,
+            item_votes_neutral(item),
+            item.user_id
           ]
         end
       end
 
-      def comment_votes_neutral(comment)
-        total = comment.cached_votes_total || 0
-        up = comment.cached_votes_up || 0
-        down = comment.cached_votes_down || 0
+      def item_id(item)
+        if item.is_a?(CommentLikeItem)
+          "item_#{item.id}"
+        else
+          "comment_#{item.id}"
+        end
+      end
+
+      def item_votes_neutral(item)
+        total = item.cached_votes_total || 0
+        up = item.cached_votes_up || 0
+        down = item.cached_votes_down || 0
         [total - up - down, 0].max
       end
 
       def default_file_path
         data_folder = Sensemaker::JobRunner.sensemaker_data_folder
         File.join(data_folder, "sensemaker-input.csv")
-      end
-
-      def self.export(resource, options = {})
-        new(resource, options).export_to_csv
       end
   end
 end

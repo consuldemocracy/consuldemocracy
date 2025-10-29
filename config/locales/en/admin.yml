@@ -1775,6 +1775,9 @@ en:
         script_info: "The script has been queued successfully."
         output_file_not_found: "Output file not found"
         deleted_job: "Analysis job deleted successfully"
+        cannot_publish: "The analysis cannot be published because it is not finished or has errors or does not have an output file."
+        published: "The analysis has been published successfully."
+        unpublished: "The analysis has been unpublished successfully."
       delete_alert: "Are you sure you want to delete this analysis? This action can't be undone"
     machine_learning:
       cancel: "Cancel operation"
@@ -1809,9 +1812,6 @@ en:
       last_execution: "Last execution"
       no_content: "No content generated yet."
       notice:
-        cannot_publish: "The analysis cannot be published because it is not finished or has errors or does not have an output file."
-        published: "The analysis has been published successfully."
-        unpublished: "The analysis has been unpublished successfully."
         success: "The last script has been executed successfully."
         error: "An error has occurred. You can see the details below."
         working: "The script is running. The administrator who executed it will receive an email when it is finished."

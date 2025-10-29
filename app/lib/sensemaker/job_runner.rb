@@ -118,102 +118,16 @@ module Sensemaker
       Setting["feature.sensemaker"].present?
     end
 
-    def self.compile_context(target)
-      parts = []
-
-      target_type = target.class.name.humanize
-      parts << I18n.t("sensemaker.context.base", type: target_type)
-
-      if target.respond_to?(:title)
-        parts << I18n.t("sensemaker.context.title", title: target.title)
-      elsif target.respond_to?(:name)
-        parts << I18n.t("sensemaker.context.name", name: target.name)
-      else
-        raise "Target #{target.class.name} does not respond to title or name"
-      end
-
-      if target.respond_to?(:summary)
-        parts << I18n.t("sensemaker.context.summary", summary: target.summary)
-      end
-
-      if target.respond_to?(:description) && target.description.present?
-        parts << I18n.t("sensemaker.context.description", description: target.description)
-      end
-
-      if target.respond_to?(:text) && target.text.present?
-        parts << I18n.t("sensemaker.context.text", text: target.text)
-      end
-
-      parts.concat(compile_class_specific_context(target))
-
-      parts << "\n--Meta--"
-      if target.respond_to?(:geozone) && target.geozone.present?
-        parts << I18n.t("sensemaker.context.location", location: target.geozone.name)
-      end
-      if target.respond_to?(:tag_list) && target.tag_list.any?
-        parts << I18n.t("sensemaker.context.tags", tags: target.tag_list.join(", "))
-      end
-      parts << I18n.t("sensemaker.context.comments", count: target.comments_count || 0)
-      parts << I18n.t("sensemaker.context.created", date: target.created_at.strftime("%B %d, %Y"))
-      if target.respond_to?(:published?) && target.published?
-        parts << I18n.t("sensemaker.context.published", date: target.published_at.strftime("%B %d, %Y"))
-      end
-
-      parts.join("\n")
-    end
-
-    def self.compile_class_specific_context(target)
-      parts = []
-
-      case target.class.name
-      when "Poll"
-        parts << I18n.t("sensemaker.context.poll.questions_header") if target.questions.any?
-        target.questions.each do |question|
-          parts << I18n.t("sensemaker.context.poll.question_title", title: question.title)
-          question.question_options.each do |question_option|
-            parts << I18n.t("sensemaker.context.poll.question_option",
-                            title: question_option.title,
-                            total_votes: question_option.total_votes)
-          end
-        end
-      when "Proposal"
-        parts << I18n.t("sensemaker.context.proposal.votes",
-                        total_votes: target.total_votes,
-                        required_votes: Proposal.votes_needed_for_success)
-      when "Debate"
-        parts << I18n.t("sensemaker.context.debate.votes",
-                        votes_up: target.cached_votes_up,
-                        votes_down: target.cached_votes_down)
-      when "Legislation::Question"
-        parts << I18n.t("sensemaker.context.legislation_question.process",
-                        process_title: target.process.title)
-        if target.question_options.any?
-          parts << I18n.t("sensemaker.context.legislation_question.responses_header")
-          target.question_options.each do |option|
-            parts << I18n.t("sensemaker.context.legislation_question.option",
-                            value: option.value,
-                            answers_count: option.answers_count)
-          end
-        end
-      when "Legislation::Proposal"
-        parts << I18n.t("sensemaker.context.legislation_proposal.process",
-                        process_title: target.process.title)
-        parts << I18n.t("sensemaker.context.legislation_proposal.votes",
-                        votes_up: target.cached_votes_up,
-                        votes_down: target.cached_votes_down)
-      end
-
-      parts
-    end
-
     def build_command
       if job.script == "single-html-build.js"
-        # title = job.commentable.respond_to?(:title) ? job.commentable.title : job.commentable.name
+        conversation = job.conversation
+        target_label = conversation.target_label(format: :full)
+
         return %Q(npx ts-node site-build.ts \
                  --topics #{input_file}-topic-stats.json \
                  --summary #{input_file}-summary.json \
                  --comments #{input_file}-comments-with-scores.json \
-                 --reportTitle "Report for #{job.commentable.class.name} #{job.commentable.id}" && \
+                 --reportTitle "Report for #{target_label}" && \
                  npx ts-node single-html-build.js)
       end
 
@@ -255,7 +169,8 @@ module Sensemaker
         categorization_job = Sensemaker::Job.create!(
           user: job.user,
           parent_job: job,
-          commentable: job.commentable,
+          analysable_type: job.analysable_type,
+          analysable_id: job.analysable_id,
           script: "categorization_runner.ts",
           additional_context: job.additional_context
         )
@@ -275,7 +190,8 @@ module Sensemaker
         advanced_job = Sensemaker::Job.create!(
           user: job.user,
           parent_job: job,
-          commentable: job.commentable,
+          analysable_type: job.analysable_type,
+          analysable_id: job.analysable_id,
           script: "advanced_runner.ts",
           additional_context: job.additional_context
         )
@@ -292,8 +208,10 @@ module Sensemaker
       end
 
       def prepare_input_data
+        conversation = job.conversation
+
         if job.additional_context.blank?
-          job.update!(additional_context: self.class.compile_context(job.commentable))
+          job.update!(additional_context: conversation.compile_context)
         end
 
         if job.input_file.blank? && job.script.eql?("advanced_runner.ts")
@@ -301,7 +219,7 @@ module Sensemaker
         elsif job.input_file.blank? && job.script.eql?("single-html-build.js")
           prepare_with_advanced_runner_job
         elsif job.input_file.blank?
-          exporter = Sensemaker::CsvExporter.new(job.commentable)
+          exporter = Sensemaker::CsvExporter.new(conversation)
           exporter.export_to_csv(input_file)
         end
 

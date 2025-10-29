@@ -5,8 +5,8 @@ describe Sensemaker::Job do
   let(:debate) { create(:debate) }
   let(:job) do
     create(:sensemaker_job,
-           commentable_type: "Debate",
-           commentable_id: debate.id,
+           analysable_type: "Debate",
+           analysable_id: debate.id,
            script: "categorization_runner.ts",
            user: user,
            started_at: Time.current,
@@ -18,14 +18,20 @@ describe Sensemaker::Job do
       expect(job).to be_valid
     end
 
-    it "requires commentable_type" do
-      job.commentable_type = nil
+    it "requires analysable_type" do
+      job.analysable_type = nil
       expect(job).not_to be_valid
     end
 
-    it "requires commentable_id" do
-      job.commentable_id = nil
+    it "requires analysable_id for non-Proposal types" do
+      job.analysable_id = nil
       expect(job).not_to be_valid
+    end
+
+    it "allows nil analysable_id for Proposal type" do
+      job.analysable_type = "Proposal"
+      job.analysable_id = nil
+      expect(job).to be_valid
     end
   end
 
