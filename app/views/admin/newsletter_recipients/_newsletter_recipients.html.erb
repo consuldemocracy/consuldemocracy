@@ -1,0 +1,36 @@
+<%= render "shared/filter_subnav", i18n_namespace: "admin.newsletter_recipients.index" %>
+
+<% if @newsletter_recipients.any? %>
+  <h3><%= page_entries_info @newsletter_recipients %></h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th scope="col"><%= t("admin.newsletter_recipients.columns.email") %></th>
+        <th scope="col"><%= t("admin.newsletter_recipients.columns.active") %></th>
+        <th scope="col"><%= t("admin.newsletter_recipients.columns.confirmation") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @newsletter_recipients.each do |newsletter_recipient| %>
+        <tr>
+          <td><%= newsletter_recipient.email %></td>
+          <td><%= newsletter_recipient.active %></td>
+          <td>
+            <% if newsletter_recipient.confirmed_at? %>
+              <%= t("admin.newsletter_recipients.email.non_confirmed") %>
+            <% else %>
+              <%= t("admin.newsletter_recipients.email.confirmed") %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate @newsletter_recipients %>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.newsletter_recipients.index.no_records") %>
+  </div>
+<% end %>

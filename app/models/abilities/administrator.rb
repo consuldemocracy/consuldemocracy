@@ -59,6 +59,7 @@ module Abilities
       can [:search, :create, :index, :destroy], ::Manager
       can [:create, :read, :destroy], ::SDG::Manager
       can [:search, :index], ::User
+      can [:search, :index], ::NewsletterRecipient
 
       can :manage, Dashboard::Action
 

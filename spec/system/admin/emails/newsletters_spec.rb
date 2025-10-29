@@ -58,19 +58,24 @@ describe "Admin newsletter emails", :admin do
   end
 
   scenario "Create" do
+    segment_recipient = I18n.t("admin.segment_recipient.#{UserSegments.segments.sample}")
     visit admin_newsletters_path
     click_link "New newsletter"
 
     expect(page).to have_link "Go back", href: admin_newsletters_path
 
+    within("#newsletter_segment_recipient") do
+      expect(page).to have_css("option", text: "All users + newsletter recipients")
+    end
+
     fill_in_newsletter_form(subject: "This is a subject",
-                            segment_recipient: "Proposal authors",
+                            segment_recipient: segment_recipient,
                             body: "This is a body")
     click_button "Create Newsletter"
 
     expect(page).to have_content "Newsletter created successfully"
     expect(page).to have_content "This is a subject"
-    expect(page).to have_content "Proposal authors"
+    expect(page).to have_content segment_recipient
     expect(page).to have_content "no-reply@consul.dev"
     expect(page).to have_content "This is a body"
   end

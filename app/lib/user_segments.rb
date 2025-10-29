@@ -1,6 +1,7 @@
 class UserSegments
   def self.segments
     %w[all_users
+       all_users_plus_newsletter_recipients
        administrators
        all_proposal_authors
        proposal_authors
@@ -71,7 +72,15 @@ class UserSegments
     end
   end
 
+  def self.all_users_plus_newsletter_recipients
+    user_emails = all_users.newsletter.pluck(:email).compact
+    newsletter_recipients_emails = NewsletterRecipient.active.pluck(:email)
+    user_emails + newsletter_recipients_emails
+  end
+
   def self.user_segment_emails(segment)
+    return all_users_plus_newsletter_recipients if "all_users_plus_newsletter_recipients" == segment
+
     recipients(segment).newsletter.order(:created_at).pluck(:email).compact
   end
 
