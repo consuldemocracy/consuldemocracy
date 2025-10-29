@@ -69,7 +69,6 @@ tr:
         new_confirmation: Hesabınızı etkinleştirme yönergelerini almadınız mı?
         new_password: Parolamı unuttum
         new_unlock: Kilit açma yönergelerini almadınız mı?
-        signin_with_provider: '%{provider} ile oturum aç'
         signup: Bir hesabınız yok mu? %{signup_link}
         signup_link: Hesap açın
     unlocks:

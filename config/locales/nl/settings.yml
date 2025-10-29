@@ -59,9 +59,12 @@ nl:
     min_age_to_participate: Minimum age needed to participate
     min_age_to_participate_description: "Gebruikers van deze leeftijd kunnen deelnemen aan alle processen"
     postal_codes: "Postcodes"
+    postal_codes_description: "Een door komma's gescheiden lijst met geldige postcodes; u kunt ook geldige reeksen invoeren die worden gescheiden door een dubbele punt. Voorbeeld: 1010AB:1010HG,1014EF,1016EF,1017AT:1017CD staat postcodes tussen 1010AB en 1010HG toe, de postcode 1014EF, de postcode 1016EF en postcodes tussen 1017AT en 1017CD. Als u dit veld leeg laat, zijn alle postcodes geldig."
     proposals:
       successful_proposal_id: Aangenomen voorstel
+      successful_proposal_id_description: Dit voorstel wordt gebruikt als referentie voor een succesvol voorstel en wordt getoond in de grafiek van het controlepaneel.
       poll_short_title: Polls
+      poll_short_title_description: Korte beschrijving van de peilingfunctionaliteit. Geeft gebruikers de mogelijk peilingen aan te maken voor een voorstel
       poll_description: Omschrijving van de peiling
       poll_description_description: Uitgebreide beschrijving van de enquêtefunctie
       poll_link: Link naar aanvullende informatie
@@ -88,6 +91,8 @@ nl:
       google_login_description: "Sta gebruikers to om aan te melden met hun Google account"
       wordpress_login: "Wordpress login"
       wordpress_login_description: "Sta gebruikers to om aan te melden met hun Wordpress account"
+      saml_login: "SAML login"
+      saml_login_description: "Laat gebruikers zich registeren met SAML"
       featured_proposals: "Uitgelichte voorstellen"
       featured_proposals_description: "Toon de uitgelichte voorstellen op de voorstellen-pagina"
       signature_sheets: "Handtekeninglijsten"
@@ -104,6 +109,7 @@ nl:
       community: "Community van voorstellen en investeringen"
       community_description: "De sectie van de gemeenschap in de voorstellen en de investeringsprojecten die de participatieve budgetten in staat stelt"
       machine_learning: "AI / Machine learning"
+      machine_learning_description: "Activeer de AI / Machine Learning sectie om python scripts uit te voeren en content automatisch te verrijken."
       map: "Voorstellen en inversteringen geolocatie"
       map_description: "Maakt geolocatie van voorstellen en investeringsprojecten mogelijk"
       allow_images: "Sta uploads en tonen van afbeeldingen toe"
@@ -114,14 +120,60 @@ nl:
       guides_description: "Geeft een gids weer voor verschillen tussen voorstellen en investeringsprojecten als er een actief participatiebudget is"
       help_page: "Help-pagina"
       help_page_description: 'Toont informatie over alle beschikbare functionaliteit'
+      remote_translations: "Remote vertaling"
+      remote_translations_description: "Toont een knop die gebruikers een vertaling laat aanvragen wanneer die er niet is."
       translation_interface: "Vertaalinterface"
+      translation_interface_description: "Geeft de handmatige vertaalinterface weer waarmee gebruikers hun inhoud in alle beschikbare talen van de applicatie kunnen invoeren. Deze optie heeft alleen invloed op gebruikersformulieren en is altijd actief in het controlepaneel."
       remote_census: "Stel de verbinding naar de telling op afstand in (SOAP)"
+      remote_census_description: "Geeft de mogelijkheid de verbinding met de remote census te configureren"
+      valuation_comment_notification: "Notificatie beoordelingsreactie"
+      valuation_comment_notification_description: "Stuur een e-mail naar alle betrokken gebruikers bij het begrotingsvoorstel wanneer een nieuwe beoordelingsreactie is aangemaakt"
+      graphql_api: "GraphQL API"
+      dashboard:
+        notification_emails: "Notificatie-emails controlepaneel"
+        notification_emails_description: "Activeer verzenden van controlepaneelnotificaties naar schrijvers voorstellen"
+      remove_investments_supports: "Sta intrekken van steunbetuigingen op begrotingsvoorstellen toe"
+      remove_investments_supports_description: "Sta toe het intrekken van steunbetuigingen op begrotingsvoorstellen tijdens de 'Selecteer voorstellen'-fase."
       sdg: SDG
+      sdg_description: Activeer Sustainable Development Goals-sectie in het controlepaneel en in de Instellingen.
+      cookies_consent: Cookies consentbanner
+      cookies_consent_description: Activeer de cookies consentbanner om gebruikers te informeren over het gebruik van cookies.
     remote_census:
+      general:
+        endpoint: "Eindpunt"
+        endpoint_description: "Hostnaam wanneer de census beschikbaar is (wsdl)"
       request:
         method_name: "Naam van de aanvraagmethode"
+        method_name_description: "Vraag methodenaam van de City Census WebService aan."
         structure: "Aanvraagstructuur"
+        structure_description: 'Structuur van het verzoek dat naar de Census WebService van de gemeenteraad moet worden verzonden. De “statische” waarden van dit verzoek moeten worden ingevuld. Waarden met betrekking tot documenttype, documentnummer, geboortedatum en postcode moeten null zijn. Voorbeeld van een geldig formaat: { “request”: { “code_instelling”: 1, “code_portal”: 1, “code_gebruiker”: 1, “document”: null, “type_document”: null, ‘code_taal’: 102, “nivel”: 3 } }'
+        document_type: "Pad voor Documenttype"
+        document_type_description: "Pad in de verzoekstructuur dat het documenttype verzendt. Niet invullen als de webservice het documenttype niet nodig heeft om een gebruiker te verifiëren."
+        document_number: "Pad voor Documentnummer"
+        document_number_description: "Pad in de verzoekstructuur dat het documenttype verzendt. Niet invullen als de webservice het Documentnummer niet nodig heeft om een gebruiker te verifiëren."
+        date_of_birth: "Pad voor Geboortedatum"
+        date_of_birth_description: "Pad in de verzoekstructuur dat het documenttype verzendt. Niet invullen als de webservice de geboortedatum niet nodig heeft om een gebruiker te verifiëren."
+        postal_code: "Pad voor Postcode"
+        postal_code_description: "Pad in de verzoekstructuur dat het documenttype verzendt. Niet invullen als de webservice de Postcode niet nodig heeft om een gebruiker te verifiëren."
+      response:
+        date_of_birth: "Pad voor Geboortedatum"
+        date_of_birth_description: "In welk antwoordpad staat Geboortedatum?"
+        postal_code: "Pad voor Postcode"
+        postal_code_description: "In welk antwoordpad staat Postcode?"
+        district: "Pad voor District"
+        district_description: "In welk antwoordpad staat District?"
+        gender: "Pad voor Geslacht"
+        gender_description: "In welk antwoordpad staat Geslacht?"
+        name: "Pad voor Naam"
+        name_description: "In welk antwoordpad staat Naam?"
+        surname: "Pad voor Achternaam"
+        surname_description: "In welk antwoordpad staat Achternaam?"
+        valid: "Voorwaarde voor het detecteren van een geldig antwoord"
+        valid_description: "Welk antwoordpad moet worden ingevuld voor een geldig antwoord en succesvolle verificatie gebruiker"
     map:
+      feature:
+        marker_clustering: "Clusteren van kaartmarkeringen"
+        marker_clustering_description: "Activeert clusteren van kaartmarkeringen. Nuttig bij een groot aantal markeringen."
       latitude: "Breedte"
       latitude_description: "Breedtegraad om de kaartpositie te tonen"
       longitude: "Lengte"
@@ -145,8 +197,41 @@ nl:
       per_page_code_body: "Code die ingevoegd wordt op elke pagina(<body>)"
       per_page_code_body_description: "Deze code verschijnt in het <body> -label. Dit kan handig zijn voor het invoeren van aangepaste scripts en analyses."
     uploads:
+      images:
+        min_width: "Minimumbreedte afbeeldingen"
+        min_width_description: "Minimumbreedte voor geüploade afbeeldingen (in pixels)"
+        min_height: "Minimumlengte afbeelding"
+        min_height_description: "Minimumlengte voor geüploade afbeeldingen (in pixels)"
+        max_size: "Maximumgrootte afbeeldingen"
+        max_size_description: "Maximumgrootte voor geüploade afbeeldingen (in pixels)"
+        content_types: "Geaccepteerde bestandstypen voor afbeeldingen"
+        content_types_description: "Selecteer alle bestandsformaten voor geüploade afbeeldingen"
+        title:
+          min_length: "Minimumlengte titel afbeeldingen"
+          min_length_description: "Titel van geüploade afbeeldingen (gebruikt als alt HMTL attribuut)"
+          max_length: "Maximumlengte titel afbeeldingen"
+          max_length_description: "Titel van geüploade afbeeldingen (gebruikt als alt HMTL attribuut)"
       documents:
         max_amount: "Maximum aantal bestanden"
         max_amount_description: "Maximum aantal bestanden die kunnen worden toegevoegd aan een voorstel, idee..."
         max_size: "Maximumgrootte bestand"
         max_size_description: "Toegestane maximumgrootte voor een geüpload bestand (in Megabytes/MB)"
+        content_types: "Geaccepteerde bestandstypen voor documenten"
+        content_types_description: "Selecteer alle bestandsformaten voor geüploade documenten"
+    sdg:
+      process:
+        debates: Gerelateerde SDG's in discussies
+        debates_description: Sta toe dat discussies worden gekoppeld aan Sustainable Development Goals
+        proposals: Gerelateerde SDG's in voorstellen
+        proposals_description: Sta toe dat voorstellen worden gekoppeld aan Sustainable Development Goals
+        polls: Gerelateerde SDG's in peilingen
+        polls_description: Sta toe dat peilingen worden gekoppeld aan Sustainable Development Goals
+        budgets: Gerelateerde SDG's in burgerbegrotingen
+        budgets_description: Sta toe dat burgerbegrotingen worden gekoppeld aan Sustainable Development Goals
+        legislation: Gerelateerde SDG's in plannen
+        legislation_description: Sta toe dat plannen worden gekoppeld aan Sustainable Development Goals
+    cookies_consent:
+      more_info_link: Link naar cookiesbeleid
+      more_info_link_description: Link naar de cookiesbeleidpagina in de consentbanner.
+      version_name: Versienaam
+      version_name_description: Wijzig de versienaam om alle gebruikers te dwingen het cookietoestemmingsproces opnieuw te doorlopen. Deze functie kan handig zijn wanneer er ingrijpende wijzigingen in het cookiebeleid worden doorgevoerd waarvoor een nieuwe bevestiging van gebruikers noodzakelijk is.

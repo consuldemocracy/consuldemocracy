@@ -38,10 +38,13 @@ pt-BR:
         year_of_birth: "Ano de nascimento"
       local_census_records/import:
         file: Arquivo
+      setting/locales_settings:
+        default: Idioma padrão
+        enabled: Idiomas habilitados
     errors:
       models:
         local_census_records/import:
           attributes:
             file:
               extension: "Formato de arquivo inválido. O formato permitido é: %{valid_extensions}."
-              headers: "Headers dos arquivos inválidos. Os headers devem ter os seguintes nomes: %{required_headers}."
+              headers: "Cabeçalhos dos arquivos inválidos. Os cabeçalhos devem ter os seguintes nomes: %{required_headers}."

@@ -482,7 +482,7 @@ GEM
     parallel (1.27.0)
     paranoia (3.0.1)
       activerecord (>= 6, < 8.1)
-    parser (3.3.9.0)
+    parser (3.3.10.0)
       ast (~> 2.4.1)
       racc
     pdf-reader (2.14.1)
@@ -820,6 +820,7 @@ DEPENDENCIES
   caxlsx_rails (~> 0.6.4)
   ckeditor (~> 4.3.0)
   cocoon (~> 1.2.15)
+  csv (~> 3.3.5)
   daemons (~> 1.4.1)
   dalli (~> 3.2.8)
   debug (~> 1.9.2)
@@ -901,7 +902,7 @@ DEPENDENCIES
   wkhtmltopdf-binary (~> 0.12.6)
 
 RUBY VERSION
-   ruby 3.3.9p170
+   ruby 3.3.10p183
 
 BUNDLED WITH
    2.5.22

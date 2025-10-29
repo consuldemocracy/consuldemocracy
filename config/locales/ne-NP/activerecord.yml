@@ -549,8 +549,6 @@ ne:
           attributes:
             document_number:
               not_in_census: "कागजात जनगणनामा छैन"
-            user_id:
-              has_voted: "प्रयोगकर्ताले पहिले नै मतदान गरिसकेका छन्"
         legislation/process:
           attributes:
             end_date:

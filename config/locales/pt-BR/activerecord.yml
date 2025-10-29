@@ -145,6 +145,12 @@ pt-BR:
       local_census_record:
         one: Registro de censo local
         other: Registros de censo local
+      votation_type:
+        one: Forma de votação
+        other: Formas de votação
+      cookies/vendor:
+        one: fornecedor do cookie
+        other: fornecedores do cookie
     attributes:
       budget:
         name: "Nome"
@@ -160,6 +166,7 @@ pt-BR:
         voting_style: "Estilo final de votação"
         voting_style_knapsack: "Mochila"
         voting_style_approval: "Aprovação"
+        hide_money: "Esconda o montante de dinheiro para esse orçamento"
       budget/translation:
         main_link_text: "Texto no link"
         main_link_url: "O link te leva para (adicionar link)"
@@ -194,7 +201,9 @@ pt-BR:
       geozone:
         name: Nome
         external_code: "Código externo (opcional)"
+        color: "Colorir(opcional)"
         census_code: "Código do censo (opcional)"
+        geojson: "Dados GeoJSON (opcional)"
         html_map_coordinates: "Coordenadas HTML <map> (opcional)"
       milestone:
         status_id: "Status atual do investimento (opcional)"
@@ -272,7 +281,7 @@ pt-BR:
         password: "Senha"
         current_password: "Senha atual"
         email_digest: "Receber resumo de notificações sobre propostas"
-        email_on_comment: "Notificar-me por email quando alguém comentar sobre minhas propostas ou debates"
+        email_on_comment: "Notificar-me por e-mail quando alguém comentar sobre minhas propostas ou debates"
         email_on_comment_reply: "Notificar-me por email quando alguém responder meus comentários"
         email_on_direct_message: "Receber emails concernentes a mensagens diretas"
         newsletter: "Receber por email informações relevantes deste site"
@@ -373,6 +382,11 @@ pt-BR:
         body: Corpo
       tag:
         name: "Digite o nome do tópico"
+      tenant:
+        domain: "Domínio"
+        schema: "Domínio / Subdomínio "
+        subdomain: "Subdomínio"
+        url: "URL"
       topic:
         title: "Título"
         description: "Texto inicial"
@@ -444,6 +458,15 @@ pt-BR:
       image:
         title: Título
         attachment: "Anexo"
+      poll/question/option:
+        title: Resposta
+        description: Descrição
+      poll/question/option/translation:
+        title: Resposta
+        description: "Descrição (opcional)"
+      poll/question/option/video:
+        title: Título
+        url: Vídeo externo
       newsletter:
         segment_recipient: Destinatários
         subject: Assunto
@@ -464,6 +487,7 @@ pt-BR:
         link_text: Texto do link
         link_url: Link da URL
         columns: Número de colunas
+        order: Posição
       widget/card/translation:
         label: Protocolo (opcional)
         title: Título
@@ -503,6 +527,16 @@ pt-BR:
         document_number: Número do documento
         date_of_birth: Data de nascimento
         postal_code: CEP
+      votation_type:
+        max_votes: Número máximo de votos
+        vote_type: Forma de Votação
+      votation_type/vote_type:
+        unique: Resposta única
+        multiple: Múltiplas respostas
+      cookies/vendor:
+        name: Nome do fornecedor
+        cookie: Código cookie
+        script: Código Javascript
     errors:
       models:
         user:
@@ -517,6 +551,11 @@ pt-BR:
           attributes:
             max_per_day:
               invalid: "Você atingiu o número máximo de mensagens privadas por dia"
+        geozone:
+          attributes:
+            geojson:
+              invalid: "O GeoJSON inserido não segue o formato correto. Deve ser conforme o formato padrão RFC 7946"
+              invalid_coordinates: "O GeoJSON inserido contém coordenadas inválidas; as coordenadas devem ser no formato: \"Longitude, Latitude\" e seguir o formato padrão RFC 7946"
         image:
           attributes:
             attachment:
@@ -534,8 +573,6 @@ pt-BR:
           attributes:
             document_number:
               not_in_census: "Documento não está no censo"
-            user_id:
-              has_voted: "Usuário já votou"
         legislation/process:
           attributes:
             end_date:

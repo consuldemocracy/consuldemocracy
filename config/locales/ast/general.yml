@@ -367,10 +367,6 @@ ast:
       info_menu: "Información"
       results:
         title: "Entruges"
-  poll_questions:
-    show:
-      vote_answer: "Votar %{answer}"
-      voted: "Has votado %{answer}"
   proposal_notifications:
     new:
       title: "Enviar mensaje"

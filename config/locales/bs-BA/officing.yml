@@ -41,7 +41,6 @@ bs:
     results:
       flash:
         create: "Rezultati spašeni"
-        error_create: "Rezultati NISU spašeni. Greška u podacima."
         error_wrong_booth: "Pogrešna kabina. Rezultati NISU spašeni."
       new:
         title: "%{poll} - Dodaj rezultate"
@@ -58,8 +57,6 @@ bs:
       index:
         no_results: "Nema rezultata"
         results: Rezultati
-        table_answer: Odgovor
-        table_votes: Glasovi
         table_whites: "Potpuno prazni glasački listići"
         table_nulls: "Nevažeći glasački listići"
         table_total: "Ukupno glasačkih listića"

@@ -41,7 +41,6 @@ sr:
     results:
       flash:
         create: "Резултати су сачувани"
-        error_create: "Резултати НИСУ сачувани. Грешка у подацима."
         error_wrong_booth: "Погрешно гласачко место. Резултати НИСУ сачувани."
       new:
         title: "%{poll} - Додајте резултате"
@@ -58,8 +57,6 @@ sr:
       index:
         no_results: "Нема резултата"
         results: Резултати
-        table_answer: Одговор
-        table_votes: Гласови
         table_whites: "Укупно празних листића"
         table_nulls: "Неважећи листићи"
         table_total: "Важећи листићи"

@@ -417,10 +417,6 @@ sl:
       results:
         title: "Vprašanja"
         most_voted_answer: "Najbolj izglasovan odgovor: "
-  poll_questions:
-    show:
-      vote_answer: "Glasuj %{answer}"
-      voted: "Glasoval/-a si %{answer}"
   proposal_notifications:
     new:
       title: "Pošlji sporočilo"

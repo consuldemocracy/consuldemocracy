@@ -41,7 +41,6 @@ tr:
     results:
       flash:
         create: "Sonuçlar kaydedildi"
-        error_create: "Sonuçlar KAYDEDİLMEDİ. Veriler hatalı."
         error_wrong_booth: "Kabin doğru değil. Sonuçlar KAYDEDİLMEDİ."
       new:
         title: "%{poll} - Sonuçları ekle"
@@ -58,8 +57,6 @@ tr:
       index:
         no_results: "Henüz bir sonuç yok"
         results: Sonuçlar
-        table_answer: Yanıt
-        table_votes: Oylar
         table_whites: "Boş oy"
         table_nulls: "Geçersiz oy"
         table_total: "Toplam oy"

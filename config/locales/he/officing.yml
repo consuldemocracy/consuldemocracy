@@ -41,7 +41,6 @@ he:
     results:
       flash:
         create: "התוצאות נשמרו"
-        error_create: "התוצאות לא נשמרו. שגיאת נתונים."
         error_wrong_booth: "דוכן לא נכון. תוצאות לא נשמרו."
       new:
         title: "%{poll} - הוסף תוצאות"
@@ -58,8 +57,6 @@ he:
       index:
         no_results: "אין תוצאות"
         results: תוצאות
-        table_answer: תשובה
-        table_votes: הצבעות
         table_whites: "הצבעות ריקות לחלוטין"
         table_nulls: "הצבעות לא חוקיות"
         table_total: "סך כל ההצבעות"

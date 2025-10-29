@@ -2,7 +2,7 @@ publiccodeYmlVersion: "0.4"
 
 name: Consul Democracy
 url: "https://github.com/consuldemocracy/consuldemocracy.git"
-softwareVersion: "2.3.1"
+softwareVersion: "2.4.0"
 releaseDate: "2025-04-08"
 logo: "https://github.com/consuldemocracy/consuldemocracy/blob/master/public/consul_logo.svg"
 
@@ -115,7 +115,7 @@ localisation:
 dependsOn:
   open:
     - name: Ruby
-      version: "3.3.9"
+      version: "3.3.10"
     - name: Rails
       version: "7.1.5.2"
     - name: Node.js

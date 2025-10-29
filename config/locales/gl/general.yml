@@ -626,11 +626,7 @@ gl:
     poll_header:
       back_to_proposal: Volver á proposta
   poll_questions:
-    show:
-      vote_answer: "Votar %{answer}"
-      voted: "Votaches %{answer}"
     description:
-      unique: "Podes seleccionar un máximo de 1 resposta."
       multiple: "Podes seleccionar un máximo de %{maximum} respostas."
     read_more_about: "Ler máis:"
   proposal_notifications:

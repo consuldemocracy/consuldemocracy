@@ -69,7 +69,6 @@ he:
         new_confirmation: לא קיבלת הוראות להפעלת החשבון שלך?
         new_password: שכחת את הסיסמה?
         new_unlock: לא קיבלת הוראות לביטול נעילה?
-        signin_with_provider: הרשמה עם %{provider}
         signup: אין לך חשבון? %{signup_link}
         signup_link: הרשמה
     unlocks:

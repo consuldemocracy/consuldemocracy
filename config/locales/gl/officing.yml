@@ -41,7 +41,6 @@ gl:
     results:
       flash:
         create: "Gardaronse os resultados"
-        error_create: "Os resultados non se gardaron pois houbo un erro nos datos."
         error_wrong_booth: "A urna non é correcta e os resultados non se gardaron."
       new:
         title: "%{poll} - Engadir resultados"
@@ -58,8 +57,6 @@ gl:
       index:
         no_results: "Ningún resultado"
         results: Resultados
-        table_answer: Resposta
-        table_votes: Votos
         table_whites: "Papeletas totalmente en blanco"
         table_nulls: "Papeletas nulas"
         table_total: "Papeletas totais"

@@ -10,6 +10,7 @@ pt-BR:
       confirm_hide: Confirmar a moderação
       delete: "Apagar"
       hide: Ocultar
+      label: "%{action}%{name}"
       restore: Restaurar
       mark_featured: Destacado
       unmark_featured: Desmarcar destaques
@@ -39,12 +40,16 @@ pt-BR:
           sdg: ODS (SDG)
       create:
         notice: "\"Banner\" criado com sucesso"
+      destroy:
+        notice: "Banner excluído com sucesso"
       edit:
         editing: Editar banner
         form:
           submit_button: Salvar alterações
       new:
         creating: Criar banner
+      update:
+        notice: "Banner atualizado com sucesso"
     activity:
       show:
         action: Ação
@@ -68,8 +73,16 @@ pt-BR:
     budgets:
       actions:
         ballots: "Criar urnas"
+        confirm:
+          ballots: "Tem certeza? Essa ação só é necessária se você for usar uma urna presencial durante a fase final de votação. Cidadãos poderão votar pela internet com ou sem urnas presenciais."
+          destroy: "Tem certeza? Essa ação irá deletar o orçamento e todos os grupos associados e seus cabeçalhos. Essa ação não poderá ser desfeita."
+        descriptions:
+          ballots: "Isso irá permitir que você gerencie os votos impressos. Apenas use essa opção se você utilizará urnas físicas para coletar os votos durante a fase final de votação."
+          calculate_winners: 'Após calcular os resultados, apenas os administradores poderão acessá-los. Eles se tornarão públicos após o projeto alcançar a %{phase} fase <strong>se a opção "Mostrar resultados" estiver habilitada</strong> durante a edição do orçamento.'
+          destroy: "Essa ação só é necessária se você for usar uma urna presencial durante a fase final de votação. Cidadãos poderão votar pela internet com ou sem urnas presenciais."
         edit: "Editar orçamento"
         preview: "Prévia"
+        preview_results: "Pré-visualizar resultados"
       index:
         title: Orçamentos participativos
         new_link: Criar novo orçamento
@@ -80,21 +93,35 @@ pt-BR:
           finished: Finalizados
         budget_investments: Gerenciar projetos
         table_budget_type: "Tipo"
+        table_completed: Finalizado
         table_draft: "Rascunho"
+        table_duration: "Duração"
         table_name: Nome
         table_phase: Estágio
+        table_phase_progress: "%{current_phase_number}%{total_phases}"
+        type_multiple: "Múltiplos cabeçalhos"
+        type_pending: "Pendente: Sem rubrica"
+        type_single: "Rubrica individual"
         admin_ballots: Administrar cédulas
         no_budgets: "Não há orçamentos."
       create:
         notice: Novo orçamento participativo criado com sucesso!
       update:
         notice: Orçamento participativo atualizado com sucesso
+      publish:
+        notice: "Orçamento de participação publicado com sucesso"
       edit:
         title: Editar Orçamento participativo
+        drafting: "O orçamento participatório estão em modo de rascunho, apenas os administradores poderão vê-lo no domínio público. Uma vez publicado ele não poderá retornar ao modo de rascunho."
+        publish: "Publicar orçamento"
         delete: Deletar orçamento
         phase: Estágio
+        phases_caption: "Fases"
+        phases_table_help_text: "A configurações dessas fases são utilizada apenas para fins de informação. Sua função é para definir as fases de informação exibidas na página pública do orçamento participatório."
+        duration: "Duração"
         enabled: Habilitado
         actions: Ações
+        enable_phase: "Habilitar fase %{phase}"
         active: Ativo
         blank_dates: Datas estão em branco
         administrators:
@@ -107,17 +134,42 @@ pt-BR:
           other: "%{count} avaliadores selecionados"
         empty_administrators: "Não há administradores"
         empty_valuators: "Não há avaliadores"
+        name_description: "Esse é o nome do orçamento participatório usado no cabeçalho e nos cartões, em qualquer momento que estiver ativo"
+        image_description: "Se uma imagem for carregada, ela será utilizada como banner nesse orçamento participatório, caso contrário a cor padrão para orçamentos será utilizada."
+        main_call_to_action: "Chamada para ação (opcional)"
+        main_call_to_action_description: "Esse endereço irá aparecer no banner principal deste orçamento participatório e encorajará o usuário à realizar uma ação específica como: criar uma proposta, votar em propostas existentes ou aprender mais sobre o processo."
+        info:
+          budget_settings: "Configurações de orçamento participatório gerais"
+          staff_settings: "Administradores e Avaliadores alocados para o orçamento"
+        hide_money: "Esconder montante"
+        hide_money_help_text: "Se essa opção estiver marcada, todos os campos mostrando a quantidade do montante serão escondidos através do processo."
       destroy:
         success_notice: Orçamento excluído com sucesso
         unable_notice: Você não pode destruir um orçamento que tem investimentos associados
         unable_notice_polls: Não é possível excluir um orçamento com uma votação associada
+      new:
+        title_multiple: Nova rubrica de orçamentos múltiplos
+        title_single: Nova rubrica de orçamento único
+      help:
+        budgets: "Orçamentos participatórios permitem aos cidadãos a propor e decidir diretamente como aplicar parte do orçamento, com monitoramento e avaliação rigorosa das propostas pela instituição."
+        groups:
+          multiple: "Grupos tem a finalidade de organizar os cabeçalhos. Depois que um grupo é criado e ele contém rubricas, é possível determinar em quantos cabeçalhos um usuário pode votar por grupo."
+          single: "Grupos tem a finalidade de organizar rubricas, já que esse orçamento irá conter apenas uma rubrica, o mesmo nome pode ser utilizado já que ele não irá aparecer em nenhum outro local. Você pode continuar para a próxima etapa."
+        headings:
+          multiple: "Rubricas tem a finalidade de separar o dinheiro do orçamento participatório. Aqui você pode adicionar rubricas para este grupo e determinar à quantidade de dinheiro que será utilizado em cada rúbrica."
+          single: "Rubricas tem a finalidade de separar o dinheiro do orçamento participatório. Já que esse orçamento irá conter apenas uma rubrica, este é o lugar onde você determinará o dinheiro que será gasto neste orçamento participatório."
+        phases: "Orçamentos participatórios tem etapas diferentes. Aqui você pode habilitar ou desabilitar etapas e também customizar cada etapa individualmente. A configuração destas etapas é utilizada apenas para fins informacionais e será exibida na página pública deste orçamento participatório."
       show:
+        add_group: "Adicionar grupo"
         add_heading: "Adicionar título"
         groups_and_headings: "Grupos de títulos"
+        headings_caption: "Cabeçalho em %{group}"
       winners:
         calculate: Calcular os investimentos vencedores
         calculated: Vencedores sendo calculados, pode demorar um minuto.
         recalculate: Recalcular os investimentos vencedores
+      ballots:
+        feature_disabled: 'A função <strong>Votações</strong> deve estar habilitada para se criar urnas. Você pode habilitá-la na página <a href="%{link}">configurações</a>.'
     budget_groups:
       name: "Nome"
       headings_name: "Títulos"
@@ -141,6 +193,7 @@ pt-BR:
       index:
         new_button: "Adicionar novo grupo"
     budget_headings:
+      no_headings: "Não há cabeçalhos no grupo <strong>%{group}</strong>."
       create:
         notice: "Título criado com sucesso!"
       update:
@@ -149,6 +202,7 @@ pt-BR:
         success_notice: "Título excluído com sucesso"
         unable_notice: "Não é possível excluir um título com investimentos associados"
       form:
+        geozone_info: "Quando uma rúbrica é associada com uma zona geográfica, esta irá aparecer no mapa do orçamento se a zona geográfica incluir os dados GeoJSON."
         max_ballot_lines_info: 'Número máximo de projetos em que um usuário pode votar neste título durante a fase de "Votação de projetos". Apenas para orçamentos com votação aprovada.'
         population_info: "O campo \"população\" do Título do Orçamento é usado para fins Estatísticos ao final do Orçamento, para mostrar a porcentagem votante da população da área de cada Título. O campo é opcional, então você pode deixá-lo vazio se não se aplicar."
         coordinates_info: "Se houver dados de latitude e longitude, aparecerá um mapa na página de investimentos deste título, cujo centro estará ajustado a essas coordenadas."
@@ -156,8 +210,12 @@ pt-BR:
         create: "Criar novo título"
         edit: "Editar Títulos"
         submit: "Salvar título"
+      group_switcher:
+        currently_showing: "Exibir rubricas do grupo <strong>%{group}</strong>."
+        the_other_group: "Gerenciar cabeçalhos do grupo %{group}."
       index:
         back: "Voltar a grupos"
+        new_button: "Adicionar novo cabeçalho"
         title: "%{budget}/%{group} cabeçalhos"
     budget_phases:
       edit:
@@ -165,10 +223,20 @@ pt-BR:
         dates_help_text: "Apenas para propósitos informativos"
         description_help_text: Esse texto será exibido no cabeçalho quando a fase estiver ativa
         duration: "Duração da fase"
+        duration_description: "Estes campos são usados apenas para fins informacionais e <strong>não ativam a atualização automática da etapa ativa.</strong> Para que você atualize-o, edite o orçamento e selecione a etapa ativa."
         enabled_help_text: Esta fase será pública no cronograma de fases do orçamento, bem como ativa para qualquer outra finalidade
+        image_description: "Se uma imagem for carregada ela será exibida próxima à descrição desta etapa."
+        main_call_to_action: "Chamada para ação (opcional)"
+        main_call_to_action_description: "Esse endereço irá aparecer no banner principal deste orçamento participatório e encorajará o usuário à realizar uma ação específica como: criar uma proposta, votar em propostas existentes ou aprender mais sobre o processo."
+        name_help_text: "Este é o título da etapa que os usuários irão ler no cabeçalho no momento em que a etapa estiver ativa."
         save_changes: Salvar alterações
+      index:
+        title: "Fases do %{budget}"
     budget_investments:
       index:
+        basic_filters:
+          valuator_or_group: Avaliação ou grupo
+          title_or_id: Título ou IDENTIFICADOR
         heading_filter_all: Todos os títulos
         administrator_filter_all: Todos administradores
         valuator_filter_all: Todos avaliadores
@@ -219,6 +287,7 @@ pt-BR:
           incompatible: Incompatível
           price: Preço
           author: Autor
+        cannot_calculate_winners: O orçamento tem que permanecer na fase %{phase} para ser possível determinar os projetos vencedores
         see_results: "Exibir resultados"
         milestone_tags_filter_all: "Todos os status de andamento"
       show:
@@ -279,6 +348,17 @@ pt-BR:
           description: "Crie um processo com múltiplos grupos, distritos ou temas. Imagine que você tem várias \"bolsas de dinheiro\". Por exemplo, € 25.000 para o \"Distrito Norte\", € 30.000 para o \"Distrito Centro\", € 28.000 para o \"Distrito Sul\" e um valor para toda a cidade. Ou para vários temas como esporte, cultura ou saúde."
           link: "Criar orçamento com diversos cabeçalhos"
           title: "<strong>Múltiplos cabeçalhos</strong>orçamento"
+        single:
+          description: "Crie um processo com um grupo, distrito ou tópico. Você tem um montante disponível de dinheiro. Por exemplo, R$ 25.000 para o distrito ou R$ 10.000 para cultura."
+          link: "Criar cabeçalho de orçamento único"
+          title: "Orçamento <strong>rubrica única</strong>"
+        title: "Tipo de orçamento participatório"
+      phases:
+        continue: "Finalizar"
+        multiple:
+          back: "Retornar para rubricas"
+        single:
+          back: "Retornar para editar cabeçalhos"
     milestones:
       index:
         table_id: "ID"
@@ -373,6 +453,15 @@ pt-BR:
         back: Voltar para %{org}
         title: Administração
         description: Bem-vindo ao painel de administração %{org}.
+        info: |-
+          <p>Este é o lugar em que você, como administrador, irá implementar e supervisionar o processo de participação dos cidadãos na sua cidade ou região.</p>
+          <p>Você agora faz parte das centenas de governos e municípios ao redor do mundo que estão usando a plataforma CONSULADO DA DEMOCRACIA para por a participação popular em prática. Parabéns!</p>
+
+          <p>A Fundação CONSULADO DA DEMOCRACIA está no centro da comunidade global de usuário. Nós gostaríamos que você entre em contato para que possamos entender quem está utilizando o programa e ver formas de como pode ajudar no seu uso e implementação. Mal podemos esperar para dar as boas vinda a você na comunidade.</p>
+
+          <p>Feliz administração!</p>
+
+          <p>Saudações do time da Fundação CONSULADO DA DEMOCRACIA.</p>
       actions:
         index:
           description: "Quando os usuários criam propostas, eles podem acessar um painel com o progresso da sua proposta, no qual é possível propor-lhes recursos y recomendações para conseguir apoios para as suas ideias."
@@ -622,6 +711,11 @@ pt-BR:
       milestones:
         index:
           title: Seguindo
+    locales:
+      default_help_text: "Este é o idioma padrão da aplicação e mudá-lo irá <strong>afetar todo usuário</strong> visitando este site pela primeira vez."
+      enabled_help_text: O idioma padrão, selecionado acima, será incluído automaticamente.
+      update:
+        notice: Idiomas atualizados como sucesso
     managers:
       index:
         title: Gerentes
@@ -644,6 +738,7 @@ pt-BR:
       proposals_topics: Tópicos de propostas
       budgets: Orçamentos participativos
       geozones: Gerenciar geozonas
+      locales: Idiomas
       hidden_comments: Comentários ocultos
       hidden_debates: Debates ocultos
       hidden_proposals: Propostas ocultas
@@ -683,7 +778,10 @@ pt-BR:
           community: "Comunidade"
           proposals: "Propostas"
           polls: "Votações"
+          legislation: "Legislação colaborativa"
+          budgets: "Orçamentos"
           layouts: "Layouts"
+          machine_learning: "I. A / Aprendizado de Máquina"
           mailers: "E-mails"
           management: "Gerenciamento"
           welcome: "Bem-vindo"
@@ -704,6 +802,8 @@ pt-BR:
       debates: "Debates"
       comments: "Comentários"
       local_census_records: Gerenciar censo local
+      machine_learning: "I. A / Aprendizado de Máquina"
+      multitenancy: Multilocação
     administrators:
       index:
         title: Administradores
@@ -1026,6 +1126,10 @@ pt-BR:
         alert: "Esta ação excluirá a votação e todas as perguntas associadas a ela."
         success_notice: "Votação excluída com sucesso"
         unable_notice: "Não é possível excluir votações com votos"
+      votation_type:
+        title: "Forma de votação"
+        unique_description: "É possível apenas responder uma vez à pergunta."
+        multiple_description: "Permitir a escolha de múltiplas respostas. É possível determinar o número máximo de respostas."
     questions:
       index:
         create: "Criar questão"
@@ -1035,9 +1139,13 @@ pt-BR:
         table_proposal: "Proposta"
       edit:
         title: "Editar pergunta"
+      form:
+        poll_help: "Você só pode selecionar votações que não começaram ainda"
       new:
         title: "Criar questão para pesquisa %{poll}"
         title_proposal: "Criar pergunta"
+      destroy:
+        notice: "Questão excluída com sucesso"
       answers:
         images:
           add_image: "Adicionar imagem"
@@ -1060,11 +1168,17 @@ pt-BR:
           documents_list: Lista de documentos
           document_title: Título
           document_actions: Ações
+      no_edit: "No momento que a votação tiver começado não será possível criar, editar ou excluir perguntas, respostas ou qualquer conteúdo associado com a votação."
     answers:
       new:
         title: Nova resposta
       edit:
         title: Editar resposta
+      destroy:
+        success_notice: "Resposta excluída com sucesso"
+      images:
+        index:
+          title: Imagens
       videos:
         index:
           title: Vídeos
@@ -1228,6 +1342,10 @@ pt-BR:
         sdg:
           title: Configuração de ODSs
           how_to_enable: 'Para mostrar as opções de configuração de Objetivos de Desenvolvimento Sustentável, é preciso habilitar "ODS" na aba "Características".'
+        cookies_consent:
+          title: Consentimento para cookies
+        cookies_consent_banner:
+          title: Banner de consentimento para cookies
       remote_census_general_name: Informações gerais
       remote_census_request_name: Solicitação - Dados
       remote_census_response_name: Respostas - Dados
@@ -1247,14 +1365,17 @@ pt-BR:
         label:
           booths: "Buscar urna por nome"
           budget_investments: "Buscar investimentos por título, descrição ou cabeçalho"
+          comments: "Pesquisar comentários"
           debates: "Buscar debates por título ou descrição"
           legislation_processes: "Buscar processos por título ou descrição"
+          legislation_proposals: "Pesquisar propostas pelo título ou descrição"
           local_census_records: "Pesquisar por número de documento"
           organizations: "Nome, e-mail ou número de telefone"
           poll_officers: "Buscar presidentes das votações"
           poll_questions: "Buscar perguntas"
           polls: "Buscar votações por nome ou descrição"
           proposals: "Buscar propostas por título, código, descrição ou pergunta"
+          proposal_notifications: "Pesquisar notificações pelo título ou descrição"
           users: "Pesquisar usuário por nome ou pelo email"
         search: "Buscar"
       search_results: "Buscar resultados"
@@ -1273,17 +1394,24 @@ pt-BR:
       color_help: Formato hexadecimal
       show_results_and_stats: "Exibir resultados e estatísticas"
       results_and_stats_reminder: "Ao marcar estas caixas de seleção, os resultado e/ou estatísticas estarão disponíveis publicamente e qualquer usuário poderá vê-los."
+      close_modal: Fechar modal
+      example_url: "Por exemplo, https://consuldemocracy.org ou /ajuda"
     geozones:
       index:
         title: Geozona
         create: Criar geozona
+        geojson_map: Mapa GeoJSON
+        geojson_map_help: "Se as coordenadas do GeoJSON estão disponíveis elas serão exibidas no mapa abaixo"
       geozone:
         name: Nome
         external_code: Código externo
         census_code: Código do censo
         code_help: Código de resposta para esta zona na API do censo
+        color_help: "Cor da zona no mapa do orçamento. %{format_help}"
         coordinates: Coordenadas
         coordinates_help: Coordenadas que vão gerar uma zona clicável num mapa de imagem HTML
+        geojson: GeoJSON disponível
+        geojson_help: "Deve seguir o formato do tipo 'Polígono' ou 'Multi Polígono' no mapa de um orçamento, um polígono baseado nesses dados aparecerá quando um título estiver associado a essa zona geográfica"
       edit:
         form:
           submit_button: Salvar alterações
@@ -1515,6 +1643,13 @@ pt-BR:
             notice: "Cartão atualizado com sucesso"
           destroy:
             notice: "Cartão excluído com sucesso"
+    tenants:
+      new:
+        title: Novo Inquilino
+      restore:
+        notice: Inquilino habilitado com sucesso
+      update:
+        notice: Inquilino atualizado com sucesso
     homepage:
       title: Página inicial
       description: Os módulos ativos aparecem na página inical na mesma ordem que aqui.
@@ -1584,6 +1719,44 @@ pt-BR:
         local_census_records:
           no_records_found: Nenhum registro encontrado.
     machine_learning:
+      cancel: "Cancelar operação"
+      comments_summary: "Sumário de comentários"
+      error: "Erro:"
+      execute_script: "Executar script"
+      executed_script: "Script executado:"
+      feature_disabled_link: "página de configurações"
+      help:
+        title_1: "O que é I. A / Aprendizado de Máquina?"
+        title_3: "Como utilizar esse módulo"
+        description_3: "Para utilizá-lo pela primeira vez, é necessário seguir as instruções disponíveis na documentação do CONSUL DEMOCRACY para ativar corretamente este módulo. Uma vez que o módulo esteja ativado corretamente, os programas são executados a partir da aba \"Executar scripts\". Antes da execução, é possível visualizar nessa mesma aba uma estimativa do tempo de execução e outras informações relevantes. Ao final da execução, podemos ativar o conteúdo que será exibido no CONSUL DEMOCRACY através da aba \"Configurações\", além de baixar outros arquivos gerados que possam ser úteis."
+        title_4: "Como implementar novos scripts de I. A / Aprendizado de Máquina"
+        description_4: "Por favor utilize scripts anteriores como exemplo."
+      no_content: "Nenhum conteúdo gerado ainda"
       related_content: "Conteúdo relacionado"
       tab_help: "Ajuda"
       tags: "Marcação"
+      title: "I. A / Aprendizado de Máquina"
+    cookies:
+      vendors:
+        empty: Nenhum fornecedor encontrado
+        third_party_cookies: Cookies de terceiros
+        create_button: Criar novo fornecedor de cookies
+        create:
+          notice: Fornecedor de cookies criado com sucesso
+        new:
+          title: Novo fornecedor de cookies
+        edit:
+          title: Editar fornecedor de cookies
+        update:
+          notice: Fornecedor de cookies atualizado com sucesso
+        destroy:
+          notice: Fornecedor de cookies excluído com sucesso
+        form:
+          name:
+            help_text: Esta informação será visível publicamente.
+          cookie:
+            help_text: Esta informação será utilizada internamente. O nome deste cookie deve ser único, e só pode conter letras, números e sublinhado.
+          description:
+            help_text: Esta informação será visível publicamente.
+          script:
+            help_text: Este é o script a ser executado quando o cookie é aceitado pelo usuário. Você pode inserir o código de Javascript comum aqui e introduzir referências para outras aplicações de javascript.

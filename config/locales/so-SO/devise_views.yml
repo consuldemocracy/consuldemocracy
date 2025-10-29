@@ -69,7 +69,6 @@ so:
         new_confirmation: Ma helin tilmaamo si aad udhaqaajiso xisaabtaada?
         new_password: Ma ilowday eraygaaga sirta ah?
         new_unlock: Ma helin tilmaamo xadhig ah?
-        signin_with_provider: Ku saxiix %{provider}
         signup: Malaha akoon%{signup_link}
         signup_link: Saxiixid
     unlocks:

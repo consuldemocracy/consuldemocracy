@@ -477,10 +477,6 @@ val:
       results:
         title: "Preguntes"
         most_voted_answer: "Resposta més votada: "
-  poll_questions:
-    show:
-      vote_answer: "Votar %{answer}"
-      voted: "Has votat %{answer}"
   proposal_notifications:
     new:
       title: "Enviar missatge"

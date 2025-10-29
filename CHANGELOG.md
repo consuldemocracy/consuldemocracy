@@ -2,6 +2,97 @@
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
+## [2.4.0](https://github.com/consuldemocracy/consuldemocracy/tree/2.4.0) (2025-10-27)
+
+[Full Changelog](https://github.com/consuldemocracy/consuldemocracy/compare/2.3.1...2.4.0)
+
+### Added
+
+- **Authentication:** Add support for OIDC authentication [#6046](https://github.com/consuldemocracy/consuldemocracy/pull/6046) and [#6083](https://github.com/consuldemocracy/consuldemocracy/pull/6083)
+- **Authentication:** Add support for SAML authentication [#6010](https://github.com/consuldemocracy/consuldemocracy/pull/6010) and [#6113](https://github.com/consuldemocracy/consuldemocracy/pull/6113)
+- **Documentation:** Create publiccode.yml [#6079](https://github.com/consuldemocracy/consuldemocracy/pull/6079)
+- **Legal:** Add setting to require consent for notifications [#6076](https://github.com/consuldemocracy/consuldemocracy/pull/6076) and [#6118](https://github.com/consuldemocracy/consuldemocracy/pull/6118)
+- **Polls:** Add support for open-ended poll questions [#6061](https://github.com/consuldemocracy/consuldemocracy/pull/6061)
+- **Translations:** Update translations from Crowdin [#6119](https://github.com/consuldemocracy/consuldemocracy/pull/6119)
+
+### Changed
+
+- **Demo:** Add new Collaborative Process demo seeds [#6017](https://github.com/consuldemocracy/consuldemocracy/pull/6017)
+- **Documentation:** Add links to OS-specific installation guides in README [#5967](https://github.com/consuldemocracy/consuldemocracy/pull/5967)
+- **Maintenance-CI:** Update Pull Request template [#6011](https://github.com/consuldemocracy/consuldemocracy/pull/6011)
+- **Maintenance-Deployment:** Update Node.js from 18.20.3 to 20.19.5 [#5916](https://github.com/consuldemocracy/consuldemocracy/pull/5916) and [#6117](https://github.com/consuldemocracy/consuldemocracy/pull/6117)
+- **Maintenance-Deployment:** Upgrade Ruby to version 3.3.10 [#5915](https://github.com/consuldemocracy/consuldemocracy/pull/5915), [#6116](https://github.com/consuldemocracy/consuldemocracy/pull/6116), [#6121](https://github.com/consuldemocracy/consuldemocracy/pull/6121) and [#6127](https://github.com/consuldemocracy/consuldemocracy/pull/6127)
+- **Maintenance-Docker:** Use postgreSQL 14 as postgres Docker image [#6112](https://github.com/consuldemocracy/consuldemocracy/pull/6112)
+- **Maintenance-Gems:** Bump highline from 2.0.3 to 3.1.2 [#6082](https://github.com/consuldemocracy/consuldemocracy/pull/6082)
+- **Maintenance-Gems:** Bump rexml from 3.4.1 to 3.4.2 [#6075](https://github.com/consuldemocracy/consuldemocracy/pull/6075)
+- **Maintenance-Gems:** \[Security\] Bump activestorage from 7.1.5.1 to 7.1.5.2 [#6063](https://github.com/consuldemocracy/consuldemocracy/pull/6063) and [#6115](https://github.com/consuldemocracy/consuldemocracy/pull/6115)
+- **Maintenance-Gems:** Relax Rails dependency to allow security updates [#6062](https://github.com/consuldemocracy/consuldemocracy/pull/6062)
+- **Maintenance-Gems:** Bump ruby-saml from 1.18.0 to 1.18.1 [#6048](https://github.com/consuldemocracy/consuldemocracy/pull/6048)
+- **Maintenance-Gems:** \[Security\] Bump thor from 1.3.2 to 1.4.0 [#6044](https://github.com/consuldemocracy/consuldemocracy/pull/6044)
+- **Maintenance-Gems:** Bump puma from 5.6.9 to 6.6.0 [#6023](https://github.com/consuldemocracy/consuldemocracy/pull/6023)
+- **Maintenance-Gems:** Upgrade default gems included in Ruby 3.3.8 [#6014](https://github.com/consuldemocracy/consuldemocracy/pull/6014)
+- **Maintenance-Gems:** Bump graphql from 2.4.13 to 2.5.9 [#6007](https://github.com/consuldemocracy/consuldemocracy/pull/6007)
+- **Maintenance-Gems:** Bump rubocop from 1.71.2 to 1.76.1 [#6006](https://github.com/consuldemocracy/consuldemocracy/pull/6006)
+- **Maintenance-Gems:** Bump pronto from 0.11.3 to 0.11.4 [#6005](https://github.com/consuldemocracy/consuldemocracy/pull/6005)
+- **Maintenance-Gems:** Bump knapsack_pro from 7.8.0 to 8.3.0 [#6004](https://github.com/consuldemocracy/consuldemocracy/pull/6004)
+- **Maintenance-Gems:** Bump groupdate from 6.5.1 to 6.7.0 [#6001](https://github.com/consuldemocracy/consuldemocracy/pull/6001)
+- **Maintenance-Gems:** Bump acts-as-taggable-on from 11.0.0 to 12.0.0 [#5999](https://github.com/consuldemocracy/consuldemocracy/pull/5999)
+- **Maintenance-Gems:** Bump wkhtmltopdf-binary from 0.12.6.8 to 0.12.6.9 [#5998](https://github.com/consuldemocracy/consuldemocracy/pull/5998)
+- **Maintenance-Gems:** Bump exiftool_vendored from 12.97.0 to 13.30.0 [#5997](https://github.com/consuldemocracy/consuldemocracy/pull/5997)
+- **Maintenance-Gems:** Bump selenium-webdriver from 4.29.1 to 4.33.0 [#5996](https://github.com/consuldemocracy/consuldemocracy/pull/5996)
+- **Maintenance-Gems:** \[Security\] Bump rack from 2.2.13 to 2.2.20 [#5984](https://github.com/consuldemocracy/consuldemocracy/pull/5984), [#6078](https://github.com/consuldemocracy/consuldemocracy/pull/6078), [#6109](https://github.com/consuldemocracy/consuldemocracy/pull/6109) and [#6110](https://github.com/consuldemocracy/consuldemocracy/pull/6110)
+- **Maintenance-Gems:** Bump autoprefixer-rails from 10.4.19.0 to 10.4.21.0 [#5983](https://github.com/consuldemocracy/consuldemocracy/pull/5983)
+- **Maintenance-Gems:** Bump pronto-stylelint from 0.11.0 to 0.11.1 [#5982](https://github.com/consuldemocracy/consuldemocracy/pull/5982)
+- **Maintenance-Gems:** Bump faraday-retry from 2.2.1 to 2.3.1 [#5977](https://github.com/consuldemocracy/consuldemocracy/pull/5977)
+- **Maintenance-Gems:** Bump sprockets from 4.2.1 to 4.2.2 [#5976](https://github.com/consuldemocracy/consuldemocracy/pull/5976)
+- **Maintenance-Gems:** Bump net-imap from 0.5.6 to 0.5.7 [#5971](https://github.com/consuldemocracy/consuldemocracy/pull/5971)
+- **Maintenance-Gems:** \[Security\] Bump nokogiri from 1.18.4 to 1.18.9 [#5969](https://github.com/consuldemocracy/consuldemocracy/pull/5969) and [#6045](https://github.com/consuldemocracy/consuldemocracy/pull/6045)
+- **Maintenance-Gems:** Vendor foundation_rails_helper/form_builder.rb to drop gem dependency [#5966](https://github.com/consuldemocracy/consuldemocracy/pull/5966)
+- **Maintenance-Gems:** Bump image_processing from 1.13.0 to 1.14.0 [#5948](https://github.com/consuldemocracy/consuldemocracy/pull/5948)
+- **Maintenance-Gems:** Bump redcarpet from 3.6.0 to 3.6.1 [#5946](https://github.com/consuldemocracy/consuldemocracy/pull/5946)
+- **Maintenance-Gems:** Bump view_component from 3.11.0 to 3.23.2 [#5939](https://github.com/consuldemocracy/consuldemocracy/pull/5939) and [#6003](https://github.com/consuldemocracy/consuldemocracy/pull/6003)
+- **Maintenance-Gems:** Bump omniauth from 2.1.2 to 2.1.3 [#5907](https://github.com/consuldemocracy/consuldemocracy/pull/5907)
+- **Maintenance-Gems:** Bump paranoia from 3.0.0 to 3.0.1 [#5870](https://github.com/consuldemocracy/consuldemocracy/pull/5870)
+- **Maintenance-Gems:** Bump ros-apartment from 2.11.0 to 3.2.0 [#5867](https://github.com/consuldemocracy/consuldemocracy/pull/5867)
+- **Maintenance-Gems:** Bump omniauth-google-oauth2 from 1.2.0 to 1.2.1 [#5864](https://github.com/consuldemocracy/consuldemocracy/pull/5864)
+- **Maintenance-Gems:** Bump ahoy_matey from 5.2.0 to 5.4.0 [#5862](https://github.com/consuldemocracy/consuldemocracy/pull/5862)
+- **Maintenance-Gems:** Bump capistrano3-puma from 5.2.0 to 6.2.0 [#5842](https://github.com/consuldemocracy/consuldemocracy/pull/5842) and [#6022](https://github.com/consuldemocracy/consuldemocracy/pull/6022)
+- **Maintenance-Gems:** Bump caxlsx from 4.1.0 to 4.2.0 [#5837](https://github.com/consuldemocracy/consuldemocracy/pull/5837)
+- **Maintenance-Gems:** Bump airbrake from 13.0.4 to 13.0.5 [#5831](https://github.com/consuldemocracy/consuldemocracy/pull/5831)
+- **Maintenance-Gems:** Bump globalize from 6.3.0 to 7.0.0 [#5830](https://github.com/consuldemocracy/consuldemocracy/pull/5830)
+- **Maintenance-Gems:** Bump delayed_job_active_record from 4.1.10 to 4.1.11 [#5804](https://github.com/consuldemocracy/consuldemocracy/pull/5804)
+- **Maintenance-Gems:** Bump audited from 5.7.0 to 5.8.0 [#5799](https://github.com/consuldemocracy/consuldemocracy/pull/5799)
+- **Maintenance-Gems:** Bump pg from 1.5.8 to 1.5.9 [#5785](https://github.com/consuldemocracy/consuldemocracy/pull/5785)
+- **Maintenance-Gems:** Bump wicked_pdf from 2.8.1 to 2.8.2 [#5769](https://github.com/consuldemocracy/consuldemocracy/pull/5769)
+- **Maintenance-Gems:** Upgrade to Rails 7.1 [#5496](https://github.com/consuldemocracy/consuldemocracy/pull/5496)
+- **Maintenance-JavaScript:** Bump brace-expansion from 1.1.11 to 1.1.12 [#6012](https://github.com/consuldemocracy/consuldemocracy/pull/6012)
+- **Maintenance-JavaScript:** Bump stylelint from 16.14.1 to 16.20.0 [#6008](https://github.com/consuldemocracy/consuldemocracy/pull/6008)
+- **Maintenance-JavaScript:** Bump stylelint-order from 6.0.4 to 7.0.0 [#5973](https://github.com/consuldemocracy/consuldemocracy/pull/5973)
+- **Maintenance-JavaScript:** Bump @stylistic/stylelint-plugin from 3.1.1 to 3.1.2 [#5904](https://github.com/consuldemocracy/consuldemocracy/pull/5904)
+- **Maintenance-JavaScript:** Bump stylelint-scss from 6.11.0 to 6.12.0 [#5902](https://github.com/consuldemocracy/consuldemocracy/pull/5902)
+- **Maintenance-Specs:** Regroup all tests related with imageable [#5990](https://github.com/consuldemocracy/consuldemocracy/pull/5990)
+- **Maintenance-Specs:** Make nested documentable specs faster [#5989](https://github.com/consuldemocracy/consuldemocracy/pull/5989)
+- **UX:** Use checkboxes and radio buttons on poll forms [#5540](https://github.com/consuldemocracy/consuldemocracy/pull/5540)
+
+### Fixed
+
+- **Accessibility:** Replace links with buttons for non-GET requests [#5955](https://github.com/consuldemocracy/consuldemocracy/pull/5955)
+- **Dashboard:** Fix PDF poster generated in dashboard [#5991](https://github.com/consuldemocracy/consuldemocracy/pull/5991)
+- **Demo:** Fix linters in demo seeds [#6019](https://github.com/consuldemocracy/consuldemocracy/pull/6019)
+- **Demo:** Avoid side-effects when removing username message [#6018](https://github.com/consuldemocracy/consuldemocracy/pull/6018)
+- **Documentation:** Update CONTRIBUTING and README with latest links and suggestions [#6067](https://github.com/consuldemocracy/consuldemocracy/pull/6067)
+- **Legislation:** Adjust legislation title height to prevent a layout break [#6071](https://github.com/consuldemocracy/consuldemocracy/pull/6071)
+- **Polls:** Fix total votes in multilingual polls [#6070](https://github.com/consuldemocracy/consuldemocracy/pull/6070)
+- **Security:** Avoid duplicate records in partial results [#6072](https://github.com/consuldemocracy/consuldemocracy/pull/6072)
+- **Security:** Add unique index to poll voters table [#5762](https://github.com/consuldemocracy/consuldemocracy/pull/5762)
+- **UX:** Correctly align radio buttons with their labels [#6041](https://github.com/consuldemocracy/consuldemocracy/pull/6041)
+- **UX:** Use flex and grid layouts instead of data-equalizer [#5897](https://github.com/consuldemocracy/consuldemocracy/pull/5897)
+
+### Removed
+
+- **Maintenance-Gems:** Remove Ahoy ensure_uuid logic and uuidtools dependency [#5994](https://github.com/consuldemocracy/consuldemocracy/pull/5994)
+- **Maintenance-Gems:** Remove Spring from the project [#5995](https://github.com/consuldemocracy/consuldemocracy/pull/5995)
+
 ## [2.3.1](https://github.com/consuldemocracy/consuldemocracy/tree/2.3.1) (2025-04-08)
 
 [Full Changelog](https://github.com/consuldemocracy/consuldemocracy/compare/2.3.0...2.3.1)

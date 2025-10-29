@@ -69,7 +69,6 @@ gl:
         new_confirmation: Non recibiches instrucións para confirmar a túa conta?
         new_password: Esqueciches o teu contrasinal?
         new_unlock: Non recibiches instrucións para desbloquear?
-        signin_with_provider: Entrar con %{provider}
         signup: Non tes unha conta? %{signup_link}
         signup_link: Rexístrate
     unlocks:

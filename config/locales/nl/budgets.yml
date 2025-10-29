@@ -35,7 +35,7 @@ nl:
         not_selected: Niet-geselecteerde voorstellen kunnen niet worden gesteund
         not_enough_money: "Je hebt al het beschikbare budget toegewezen.<br><small>Je kunt op elk gewenst moment %{change_ballot}</small>"
         no_ballots_allowed: De selectiefase is voorbij
-        different_heading_assigned: "Je hebt al gestemd in een andere rubriek: %{heading_link}"
+        different_heading_assigned: "Je hebt al gestemd in een andere begroting: %{heading_link}"
         not_enough_available_votes: "Je hebt het maximum aantal stemmen bereikt"
         change_ballot: wijzig uw stem
         casted_offline: Je hebt al offline deelgenomen
@@ -159,7 +159,7 @@ nl:
         different_heading_assigned: "Je steunt al in een ander onderdeel van het voorstel: %{heading_link}"
         change_ballot: "Als je je bedenkt kan je je stemmen in %{check_ballot} verwijderen en opnieuw beginnen."
         check_ballot_link: "bekijk mijn stemmen"
-        price: "Deze rubriek heeft een budget van"
+        price: "Deze begroting heeft een budget van"
       votes:
         already_supported: "Je hebt dit begrotingsvoorstel al gesteund. Deel het!"
         confirm_group:

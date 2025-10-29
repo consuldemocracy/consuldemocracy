@@ -69,7 +69,6 @@ zh-TW:
         new_confirmation: 尚未收到啟動您的帳戶的說明？
         new_password: 忘記您的密碼？
         new_unlock: 尚未有收到解鎖說明？
-        signin_with_provider: 用%{provider} 登錄
         signup: 沒有賬戶？%{signup_link}
         signup_link: 登記
     unlocks:

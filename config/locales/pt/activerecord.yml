@@ -568,8 +568,6 @@ pt:
           attributes:
             document_number:
               not_in_census: "O documento não está no censo"
-            user_id:
-              has_voted: "O utilizador já votou"
         legislation/process:
           attributes:
             end_date:
