@@ -170,6 +170,7 @@ GEM
     caxlsx_rails (0.6.4)
       actionpack (>= 3.1)
       caxlsx (>= 3.0)
+    cgi (0.4.2)
     chef-utils (18.4.2)
       concurrent-ruby
     childprocess (5.1.0)
@@ -194,7 +195,7 @@ GEM
     daemons (1.4.1)
     dalli (3.2.8)
     date (3.4.1)
-    debug (1.9.2)
+    debug (1.11.0)
       irb (~> 1.10)
       reline (>= 0.3.8)
     delayed_job (4.1.13)
@@ -220,6 +221,8 @@ GEM
       mail (~> 2.7)
     email_validator (2.2.4)
       activemodel
+    erb (4.0.4)
+      cgi (>= 0.3.3)
     erb_lint (0.9.0)
       activesupport
       better_html (>= 2.0.1)
@@ -320,8 +323,8 @@ GEM
       ruby-vips (>= 2.0.17, < 3)
     invisible_captcha (2.3.0)
       rails (>= 5.2)
-    io-console (0.7.2)
-    irb (1.13.1)
+    io-console (0.8.1)
+    irb (1.14.3)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     json (2.12.2)
@@ -495,7 +498,7 @@ GEM
     pg_search (2.3.7)
       activerecord (>= 6.1)
       activesupport (>= 6.1)
-    prism (1.4.0)
+    prism (1.5.1)
     pronto (0.11.4)
       gitlab (>= 4.4.0, < 5.0)
       httparty (>= 0.13.7, < 1.0)
@@ -516,7 +519,8 @@ GEM
     pronto-stylelint (0.11.1)
       pronto (>= 0.10, < 0.12)
       rugged (>= 0.24, < 2.0)
-    psych (5.1.2)
+    psych (5.2.2)
+      date
       stringio
     public_suffix (6.0.1)
     puma (6.6.0)
@@ -579,13 +583,14 @@ GEM
     rainbow (3.1.1)
     rake (13.3.0)
     rbtree3 (0.7.1)
-    rdoc (6.6.3.1)
+    rdoc (6.14.0)
+      erb
       psych (>= 4.0.0)
     recipient_interceptor (0.3.3)
       mail
     redcarpet (3.6.1)
     regexp_parser (2.10.0)
-    reline (0.5.10)
+    reline (0.6.0)
       io-console (~> 0.5)
     request_store (1.7.0)
       rack (>= 1.4)
@@ -724,7 +729,7 @@ GEM
       net-sftp (>= 2.1.2)
       net-ssh (>= 2.8.0)
       ostruct
-    stringio (3.1.1)
+    stringio (3.1.2)
     swd (2.0.3)
       activesupport (>= 3)
       attr_required (>= 0.0.5)
@@ -755,7 +760,7 @@ GEM
     unicode-display_width (3.1.4)
       unicode-emoji (~> 4.0, >= 4.0.4)
     unicode-emoji (4.0.4)
-    uri (1.0.3)
+    uri (1.0.4)
     validate_url (1.0.15)
       activemodel (>= 3.0.0)
       public_suffix
@@ -823,7 +828,7 @@ DEPENDENCIES
   csv (~> 3.3.5)
   daemons (~> 1.4.1)
   dalli (~> 3.2.8)
-  debug (~> 1.9.2)
+  debug (~> 1.11.0)
   delayed_job_active_record (~> 4.1.11)
   devise (~> 4.9.4)
   devise-security (~> 0.18.0)
@@ -902,7 +907,7 @@ DEPENDENCIES
   wkhtmltopdf-binary (~> 0.12.6)
 
 RUBY VERSION
-   ruby 3.3.10p183
+   ruby 3.4.7p58
 
 BUNDLED WITH
-   2.5.22
+   2.6.9
