@@ -64,6 +64,7 @@ class Management::UsersController < Management::BaseController
       @user.newsletter = false
       @user.email_digest = false
       @user.email_on_direct_message = false
+      @user.receive_poll_notifications = false
       @user.email_on_comment = false
       @user.email_on_comment_reply = false
     end

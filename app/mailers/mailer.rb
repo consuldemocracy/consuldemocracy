@@ -4,6 +4,16 @@ class Mailer < ApplicationMailer
   helper :text_with_links
   helper :users
 
+  def poll_notification(poll, user)
+    @poll = poll
+    @user = user
+    manage_subscriptions_token(user)
+
+    with_user(@user) do
+      mail(to: @user.email, subject: t("mailers.poll_notification.subject", poll_title: @poll.title))
+    end
+  end
+
   def comment(comment)
     @comment = comment
     @commentable = comment.commentable
