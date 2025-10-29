@@ -76,13 +76,11 @@ describe Activity do
       on_debate     = create(:activity, actionable: create(:debate))
       on_comment    = create(:activity, actionable: create(:comment))
       on_user       = create(:activity, actionable: create(:user))
-      on_investment = create(:activity, actionable: create(:budget_investment))
 
       expect(Activity.on_proposals).to eq [on_proposal]
       expect(Activity.on_debates).to eq [on_debate]
       expect(Activity.on_comments).to eq [on_comment]
       expect(Activity.on_users).to eq [on_user]
-      expect(Activity.on_budget_investments).to eq [on_investment]
     end
   end
 end

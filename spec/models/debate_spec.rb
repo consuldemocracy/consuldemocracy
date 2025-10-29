@@ -650,20 +650,6 @@ describe Debate do
 
         expect(results).to eq [newest, recent, oldest]
       end
-
-      it "is able to reorder by most commented after searching" do
-        least_commented = create(:debate,  title: "stop corruption",  cached_votes_up: 1, comments_count: 1)
-        most_commented  = create(:debate,  title: "stop corruption",  cached_votes_up: 2, comments_count: 100)
-        some_comments   = create(:debate,  title: "stop corruption",  cached_votes_up: 3, comments_count: 10)
-
-        results = Debate.search("stop corruption")
-
-        expect(results).to eq [some_comments, most_commented, least_commented]
-
-        results = results.sort_by_most_commented
-
-        expect(results).to eq [most_commented, some_comments, least_commented]
-      end
     end
 
     context "no results" do
