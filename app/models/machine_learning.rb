@@ -198,7 +198,7 @@ class MachineLearning
     end
 
     def description_from(script_filename)
-      description = ""
+      description = []
       delimiter = '"""'
       break_line = "<br>"
       comment_found = false
@@ -206,17 +206,17 @@ class MachineLearning
         if line.start_with?(delimiter) && !comment_found
           comment_found = true
           line.slice!(delimiter)
-          description << line.strip.concat(break_line) if line.present?
+          description << line.strip if line.present?
         elsif line.include?(delimiter)
           line.slice!(delimiter)
           description << line.strip if line.present?
           break
         elsif comment_found
-          description << line.strip.concat(break_line)
+          description << line.strip
         end
       end
 
-      description.delete_suffix(break_line)
+      description.join(break_line)
     end
   end
 
