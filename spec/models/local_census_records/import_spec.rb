@@ -24,7 +24,7 @@ describe LocalCensusRecords::Import do
       end
 
       it "is csv it should be valid" do
-        path = base_files_path << "valid.csv"
+        path = base_files_path + "valid.csv"
         file = fixture_file_upload(path)
         import = build(:local_census_records_import, file: file)
 
@@ -34,7 +34,7 @@ describe LocalCensusRecords::Import do
 
     context "When file headers" do
       it "are all missing it should not be valid" do
-        path = base_files_path << "valid-without-headers.csv"
+        path = base_files_path + "valid-without-headers.csv"
         file = fixture_file_upload(path)
         import = build(:local_census_records_import, file: file)
 
@@ -63,7 +63,7 @@ describe LocalCensusRecords::Import do
     end
 
     it "Add invalid local census records to invalid_records array" do
-      path = base_files_path << "invalid.csv"
+      path = base_files_path + "invalid.csv"
       file = fixture_file_upload(path)
       import.file = file
 
