@@ -8,26 +8,25 @@ en:
       description: "Description: %{description}"
       text: "Text: %{text}"
       location: "Location: %{location}"
-      tags: "Tags: %{tags}"
-      comments: "Comments: %{count}"
-      created: "Created: %{date}"
-      published: "Published: %{date}"
-      
-      # Model-specific context
+      tags: "- Tags: %{tags}"
+      comments: "- Comments: %{count}"
+      created: "- Created: %{date}"
+      published: "- Published: %{date}"
+
       proposal:
         votes: "This proposal has %{total_votes} votes out of %{required_votes} required to be successful"
-      
+
       legislation_proposal:
         process: "This proposal is part of the legislation process, \"%{process_title}\""
         votes: "This proposal has %{votes_up} votes for and %{votes_down} votes against"
-      
+
       debate:
         votes: "This debate has %{votes_up} votes for and %{votes_down} votes against"
 
       legislation_question:
         process: "This question is part of the legislation process, \"%{process_title}\""
-        responses_header: "Question Responses:"
-        option: " - %{value} (%{answers_count} responses)"
+        responses_header: "### Question Responses"
+        option: "- %{value} (%{answers_count} responses)"
 
       question_option:
         filter_note: "Note: Comments in this analysis are filtered to only include comments from users who selected the option \"%{option_value}\" in their response to this question."
@@ -44,9 +43,9 @@ en:
         all: "These are the proposals that have been submitted to the consul citizen participation platform. Citizens' proposals are an opportunity for neighbours and collectives to decide directly how they want their city to be, after getting sufficient support and submitting to a citizens' vote."
 
       poll:
-        questions_header: "Questions and Responses:"
-        question_title: "Q: %{title}:"
-        question_option: " - %{title} (%{total_votes} responses)"
+        questions_header: "### Questions and Responses"
+        question_title: "#### Q: %{title}"
+        question_option: "- %{title} (%{total_votes} responses)"
 
     analysis:
       title: "Sensemaker Analysis"

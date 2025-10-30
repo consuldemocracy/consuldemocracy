@@ -82,35 +82,40 @@ module Sensemaker
         case format
         when :name_only, :full
           @target.name
-        else # :short
+        else
           "All #{@target.name.pluralize}"
         end
       elsif @target.respond_to?(:title)
         case format
         when :full
           "#{@target.class.name} #{@target.id}: #{@target.title}"
-        else # :short
+        else
           @target.title
         end
       elsif @target.respond_to?(:name)
         case format
         when :full
           "#{@target.class.name} #{@target.id}: #{@target.name}"
-        else # :short
+        else
           @target.name
         end
+      elsif @target.respond_to?(:value)
+        case format
+        when :full
+          "#{@target.class.name} #{@target.id}: #{@target.value}"
+        else
+          @target.value
+        end
       else
-        # Fallback: use analysable_type
         case format
         when :full
           "#{@analysable_type}#{" #{@analysable_id}" if @analysable_id.present?}"
-        else # :short
+        else
           @analysable_type
         end
       end
     end
 
-    # Returns a filename-safe label for the target (for file naming)
     def target_filename_label
       if @target.respond_to?(:id)
         "#{@analysable_type}-#{@analysable_id}"
@@ -149,7 +154,7 @@ module Sensemaker
 
         parts.concat(compile_class_specific_context(target))
 
-        parts << "\n--Meta--"
+        parts << "\n## Meta"
         if target.respond_to?(:geozone) && target.geozone.present?
           parts << I18n.t("sensemaker.context.location", location: target.geozone.name)
         end

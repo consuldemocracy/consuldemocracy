@@ -24,42 +24,93 @@ class Admin::Sensemaker::JobsController < Admin::BaseController
       end
     end
 
-    @search_results = []
     target_query = params.fetch(:query, nil)
-    if target_query.present?
-      case params[:query_type]
-      when "Legislation::Process"
-        processes = Legislation::Process.includes(:questions, :proposals).search(target_query)
-        processes.each do |process|
-          unless process.proposals.empty?
-            @search_results << { group_title: process.title + " Proposals", results: process.proposals }
-          end
-          unless process.questions.empty?
-            @search_results << { group_title: process.title + " Questions", results: process.questions }
-          end
-        end
-      when "Budget"
-        budgets = Budget.published
-                       .with_translations(Globalize.fallbacks(I18n.locale))
-                       .where("budget_translations.name ILIKE ?", "%#{target_query}%")
-                       .order(created_at: :desc)
-        budgets.each do |budget|
-          budget_results = []
-          budget_results << budget
-          #budget.groups.includes(:translations).each do |group|
-          #  budget_results << group
-          #end
-          @search_results << {
-            group_title: budget.name,
-            results: budget_results
-          } unless budget_results.empty?
-        end
+    query_type = params.fetch(:query_type, "Legislation::Process")
+    limit = 20
+
+    @search_results = []
+    @result_count = 0
+
+    case query_type
+    when "Legislation::Process"
+      scope = Legislation::Process.includes(:questions, :proposals)
+      if target_query.present?
+        processes = scope.search(target_query)
       else
-        results = params[:query_type].constantize.search(target_query)
+        processes = scope.order(created_at: :desc).limit(limit)
+      end
+
+      processes.each do |process|
+        collection = []
+
+        unless process.proposals.empty?
+          collection << {
+            title: "Proposals",
+            collection: process.proposals.map { |p| { title: result_title_for(p), object: p } }
+          }
+          @result_count += process.proposals.count
+        end
+
+        unless process.questions.empty?
+          question_collection = []
+
+          process.questions.each do |q|
+            @result_count += 1
+            question_collection << { title: result_title_for(q), object: q }
+            question_options = q.question_options.map { |qo| { title: result_title_for(qo), object: qo } }
+            @result_count += question_options.size
+            question_collection << { title: "Segment by option",
+                                     collection: question_options } unless question_options.empty?
+          end
+
+          collection << { title: "Questions",
+                          collection: question_collection } unless question_collection.empty?
+        end
+
+        @search_results << {
+          title: process.title,
+          collection: collection
+        }
+      end
+    when "Budget"
+      scope = Budget.published.with_translations(Globalize.fallbacks(I18n.locale))
+      if target_query.present?
+        budgets = scope.where("budget_translations.name ILIKE ?", "%#{target_query}%")
+      else
+        budgets = scope.order(created_at: :desc).limit(limit)
+      end
+
+      collection = []
+      budgets.each do |budget|
+        collection << { title: result_title_for(budget), object: budget }
+        @result_count += 1
+
+        group_entries = budget.groups.includes(:translations).map do |group|
+          { title: result_title_for(group), object: group }
+        end
+        unless group_entries.empty?
+          @result_count += group_entries.size
+          collection << { title: "Groups", collection: group_entries }
+        end
+      end
+
+      @search_results << {
+        title: "Budgets",
+        collection: collection
+      }
+    else
+      if target_query.present?
+        results = query_type.constantize.search(target_query)
+      else
+        results = query_type.constantize.order(created_at: :desc).limit(limit)
+      end
+
+      unless results.empty?
         @search_results = [{
-          group_title: I18n.t("activerecord.models.#{params[:query_type].underscore}.other"),
-          results: results
-        }] unless results.empty?
+          title: I18n.t("activerecord.models.#{query_type.underscore}.other"),
+          collection: results.map { |obj| { title: result_title_for(obj), object: obj } }
+        }]
+        @result_count += results.size
       end
     end
   end
@@ -177,12 +228,23 @@ class Admin::Sensemaker::JobsController < Admin::BaseController
   end
 
   def help
-    # Help action for sensemaker documentation
   end
 
   private
 
     def sensemaker_job_params
       params.require(:sensemaker_job).permit(:analysable_type, :analysable_id, :script, :additional_context)
+    end
+
+    def result_title_for(obj)
+      if obj.respond_to?(:title) && obj.title.present?
+        "##{obj.id} #{obj.title}"
+      elsif obj.respond_to?(:name) && obj.name.present?
+        "##{obj.id} #{obj.name}"
+      elsif obj.respond_to?(:value) && obj.value.present?
+        "##{obj.id} #{obj.value}"
+      else
+        "##{obj.id} #{obj}"
+      end
     end
 end

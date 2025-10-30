@@ -1,63 +1,52 @@
 <%= header %>
 
+<% selected_query_type = params[:query_type] || "Legislation::Process" %>
+
 <div class="sensemaker">
-  <div class="callout primary flex-row">
-    <i class="tip" aria-hidden="true"></i>
-    <% conversation = @sensemaker_job.conversation if @sensemaker_job.analysable_type.present? %>
-    <% if conversation&.target.present? %>
-      <p>Review your target and additional context, then select a script to run.</p>
-    <% elsif params[:query_type].present? %>
-      <p>Select a target from the search results.</p>
-    <% else %>
-      <p>Start by searching for a target to analyse.</p>
-    <% end %>
-  </div>
-
-  <%= form_tag new_admin_sensemaker_job_path, method: :get do %>
-    <div class="target-search-group">
-      <div class="select-wrapper">
-        <% options = @query_types.map { |type| [I18n.t("activerecord.models.#{type.underscore}.other"), type] } %>
-        <%= select_tag :query_type, options_for_select(options, params[:query_type] || "Legislation::Process") %>
-      </div>
-
-      <%= text_field_tag :query, params[:query], placeholder: "Search for a target..." %>
-
-      <%= submit_tag "Search", class: "success button" %>
+  <div class="search-control">
+    <div class="flex-row">
+      <% @query_types.each do |type| %>
+        <% selected = (selected_query_type == type) %>
+        <%= link_to new_admin_sensemaker_job_path(query_type: type, query: params[:query]), class: "query-type-tab #{"active" if selected}" do %>
+          <span><%= I18n.t("activerecord.models.#{type.underscore}.other") %></span>
+        <% end %>
+      <% end %>
     </div>
 
-    <details open>
-      <summary>Search results</summary>
-      <ul class="target-search-results">
-        <% if params[:query].blank? %>
-          <%= content_tag :span, "Results will appear here", class: "small" %>
-        <% end %>
+    <%= form_tag new_admin_sensemaker_job_path, class: "", method: :get do %>
+      <% conversation = @sensemaker_job.conversation if @sensemaker_job.analysable_type.present? %>
+      <% unless conversation&.target.present? %>
+        <p>Select a target from the results <%= link_to "or analyse all proposals", new_admin_sensemaker_job_path(target_type: "Proposal", target_id: nil), class: "bold" if selected_query_type.eql?("Proposal") %>.</p>
+      <% end %>
 
-        <% @search_results.each do |result_group| %>
-          <li class="result-group">
-            <%= content_tag :span, result_group[:group_title] %>
-            <ul>
-              <% result_group[:results].each do |result| %>
-                <% is_selected = "#{result.class.name}/#{result.id}".eql? "#{params[:target_type]}/#{params[:target_id]}" %>
-                <% display_name = result.respond_to?(:title) ? result.title : result.name %>
-                <li class="result-row <%= "selected" if is_selected %>">
-                  <%= link_to new_admin_sensemaker_job_path(query_type: params[:query_type], query: params[:query], target_type: result.class.name, target_id: result.id), class: "flex-row" do %>
-                    <%= content_tag :span, display_name, class: "flex-grow" %>
-                    <% if is_selected %>
-                      <%= content_tag :span, "Selected", class: "" %>
-                    <% else %>
-                      <%= content_tag :span, "Select", class: "" %>
-                    <% end %>
-                  <% end %>
-                </li>
-              <% end %>
-            </ul>
-          </li>
-        <% end %>
-      </ul>
-    </details>
+      <div class="target-search-group">
+        <%= hidden_field_tag :query_type, selected_query_type %>
+        <% model_label = I18n.t("activerecord.models.#{(selected_query_type || "Legislation::Process").underscore}.other", default: "targets") %>
+        <%= text_field_tag :query, params[:query], placeholder: "Search for #{model_label}..." %>
+        <%= submit_tag "Search", class: "success button" %>
+      </div>
 
-    <%= link_to "Analyse all proposals", new_admin_sensemaker_job_path(target_type: "Proposal", target_id: nil), class: "button" if params[:query_type].eql?("Proposal") %>
-  <% end %>
+      <details <% unless params[:target_type].present? %> open<% end %>>
+        <summary>
+          <%= @result_count %> results
+        </summary>
+        <ul class="target-search-results">
+          <% if @search_results.blank? %>
+            <%= content_tag :span, "No results found.", class: "small italic" %>
+            &nbsp;
+            <%= link_to "Clear search", new_admin_sensemaker_job_path(query_type: selected_query_type), class: "small italic" %>
+          <% end %>
+
+          <% @search_results.each do |result_group| %>
+            <%= render Admin::Sensemaker::ResultComponent.new(
+                  result_group: result_group,
+                  selected_query_type: selected_query_type
+                ) %>
+          <% end %>
+        </ul>
+      </details>
+    <% end %>
+  </div>
 
   <% conversation = @sensemaker_job.conversation if @sensemaker_job.analysable_type.present? %>
   <% if conversation&.target.present? || (conversation&.target.is_a?(Class) && conversation.target == Proposal) %>
@@ -66,7 +55,9 @@
       <%= f.hidden_field :analysable_type, label: false, required: true %>
       <%= f.hidden_field :analysable_id, label: false, required: false %>
 
-      <h4><%= conversation.target_label(format: :short) %></h4>
+      <h4>Analysing <%= conversation.target_label(format: :short) %></h4>
+      <p>Review the additional context, then select a script to run.</p>
+
       <%= f.text_area :additional_context, label: "Additional context", rows: 10 %>
 
       <% script_options = Sensemaker::JobRunner::SCRIPTS.map { |script| [I18n.t("sensemaker.scripts.#{script.parameterize.underscore}.title"), script] } %>

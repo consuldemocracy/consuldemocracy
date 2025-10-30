@@ -162,8 +162,6 @@ module Sensemaker
       def cleanup_output_files(data_folder)
         result = []
         case script
-        when "health_check_runner.ts"
-          result << FileUtils.rm_f("#{data_folder}/#{output_file_name}")
         when "advanced_runner.ts"
           result << FileUtils.rm_f("#{data_folder}/#{output_file_name}-summary.json")
           result << FileUtils.rm_f("#{data_folder}/#{output_file_name}-topic-stats.json")

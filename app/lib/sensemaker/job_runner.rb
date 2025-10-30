@@ -1,3 +1,5 @@
+require "shellwords"
+
 module Sensemaker
   class JobRunner
     TIMEOUT = 900
@@ -125,7 +127,9 @@ module Sensemaker
                  --modelName #{model_name} \
                  --keyFilename #{key_file})
       command += " --inputFile #{input_file}" unless job.script == "health_check_runner.ts"
-      command += " --additionalContext \"#{additional_context}\"" if additional_context.present?
+      if additional_context.present?
+        command += " --additionalContext #{Shellwords.escape(additional_context.to_s)}"
+      end
       if ["advanced_runner.ts", "runner.ts"].include?(job.script)
         command += " --outputBasename #{output_file}"
       else

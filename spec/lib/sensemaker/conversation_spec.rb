@@ -17,10 +17,10 @@ describe Sensemaker::Conversation do
       context_result = conversation.compile_context
 
       expect(context_result).to be_present
-      expect(context_result).to include("Questions and Responses:")
-      expect(context_result).to include("Q: #{poll.questions.first.title}:")
-      expect(context_result).to include(" - #{answer_one.option.title}")
-      expect(context_result).to include(" - #{answer_two.option.title}")
+      expect(context_result).to include("### Questions and Responses")
+      expect(context_result).to include("#### Q: #{poll.questions.first.title}")
+      expect(context_result).to include("- #{answer_one.option.title}")
+      expect(context_result).to include("- #{answer_two.option.title}")
     end
 
     it "can compile context for Proposal" do
@@ -69,7 +69,7 @@ describe Sensemaker::Conversation do
       expect(context_result).to include(
         "This question is part of the legislation process, \"#{question.process.title}\""
       )
-      expect(context_result).not_to include("Question Responses:")
+      expect(context_result).not_to include("### Question Responses")
     end
 
     it "can compile context for Legislation::Question with question options" do
@@ -85,9 +85,9 @@ describe Sensemaker::Conversation do
       conversation = Sensemaker::Conversation.new("Legislation::Question", question.id)
       context_result = conversation.compile_context
       expect(context_result).to be_present
-      expect(context_result).to include("Question Responses:")
-      expect(context_result).to include(" - #{question.question_options.first.value}")
-      expect(context_result).to include(" - #{question.question_options.last.value}")
+      expect(context_result).to include("### Question Responses")
+      expect(context_result).to include("- #{question.question_options.first.value}")
+      expect(context_result).to include("- #{question.question_options.last.value}")
     end
 
     it "can compile context for other target types" do
@@ -105,7 +105,7 @@ describe Sensemaker::Conversation do
         conversation = Sensemaker::Conversation.new(target_type, target.id)
         context_result = conversation.compile_context
         expect(context_result).to be_present, "Failed to compile context for #{target_factory}"
-        expect(context_result).to include("Comments: #{conversation.comments.size}")
+        expect(context_result).to include("- Comments: #{conversation.comments.size}")
       end
     end
   end
