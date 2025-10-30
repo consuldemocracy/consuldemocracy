@@ -8,6 +8,8 @@ module Admin::Sensemaker::JobComponentHelpers
   def analysable_title
     if job.analysable.present?
       job.conversation.target_label(format: :short)
+    elsif job.analysable_type == "Proposal" && job.analysable_id.nil?
+      "All Proposals"
     else
       "(deleted)"
     end

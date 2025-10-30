@@ -38,17 +38,24 @@ describe Admin::Sensemaker::JobShowComponent do
     end
 
     context "when job can be downloaded" do
+      let(:artefact_path) do
+        File.join(Sensemaker::JobRunner.sensemaker_data_folder, sensemaker_job.output_file_name)
+      end
       before do
         sensemaker_job.update!(
           finished_at: Time.current,
-          persisted_output: "/path/to/output.html"
+          error: nil
         )
+
+        data_folder = Sensemaker::JobRunner.sensemaker_data_folder
+        FileUtils.mkdir_p(data_folder)
+        File.write(artefact_path, "test")
       end
 
-      it "renders download button" do
+      it "renders a download link for the output file" do
         render_inline(component)
 
-        expect(page).to have_link("Download Output")
+        expect(page).to have_link(File.basename(artefact_path))
       end
     end
 
