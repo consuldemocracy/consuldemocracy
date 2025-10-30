@@ -61,26 +61,11 @@ module Sensemaker
     end
 
     def output_file_name
-      case job.script
-      when "health_check_runner.ts"
-        "health-check-#{job.id}.txt"
-      when "advanced_runner.ts"
-        "output-#{job.id}" # advanced runner has multiple output files
-      when "categorization_runner.ts"
-        "categorization-output-#{job.id}.csv"
-      when "single-html-build.js"
-        "report.html"
-      else
-        "output-#{job.id}.csv"
-      end
+      job.output_file_name
     end
 
     def output_file
-      if job.script == "single-html-build.js"
-        "#{self.class.visualization_folder}/dist/bundled/report.html"
-      else
-        "#{self.class.sensemaker_data_folder}/#{output_file_name}"
-      end
+      "#{self.class.sensemaker_data_folder}/#{output_file_name}"
     end
 
     def script_file
@@ -128,7 +113,7 @@ module Sensemaker
                  --summary #{input_file}-summary.json \
                  --comments #{input_file}-comments-with-scores.json \
                  --reportTitle "Report for #{target_label}" && \
-                 npx ts-node single-html-build.js)
+                 npx ts-node single-html-build.js --outputFile #{output_file})
       end
 
       model_name = Tenant.current_secrets.sensemaker_model_name
@@ -141,7 +126,7 @@ module Sensemaker
                  --keyFilename #{key_file})
       command += " --inputFile #{input_file}" unless job.script == "health_check_runner.ts"
       command += " --additionalContext \"#{additional_context}\"" if additional_context.present?
-      if job.script == "advanced_runner.ts"
+      if ["advanced_runner.ts", "runner.ts"].include?(job.script)
         command += " --outputBasename #{output_file}"
       else
         command += " --outputFile #{output_file}"
@@ -328,21 +313,14 @@ module Sensemaker
       end
 
       def process_output
-        if job.script == "advanced_runner.ts"
+        if job.script == "advanced_runner.ts" || job.script == "runner.ts"
           path_to_check = "#{output_file}-summary.json"
         else
           path_to_check = output_file
         end
 
         if File.exist?(path_to_check)
-          if job.script == "single-html-build.js"
-            final_output_path = "#{self.class.sensemaker_data_folder}/report-#{job.id}.html"
-            FileUtils.cp(path_to_check, final_output_path)
-            job.update!(finished_at: Time.current, persisted_output: final_output_path)
-          else
-            job.update!(finished_at: Time.current, persisted_output: path_to_check)
-          end
-
+          job.update!(finished_at: Time.current, persisted_output: path_to_check)
           true
         else
           job.update!(finished_at: Time.current, error: "Output file not found")

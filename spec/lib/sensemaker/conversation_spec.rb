@@ -110,4 +110,3 @@ describe Sensemaker::Conversation do
     end
   end
 end
-

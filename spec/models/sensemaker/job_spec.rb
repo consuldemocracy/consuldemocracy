@@ -42,6 +42,25 @@ describe Sensemaker::Job do
   end
 
   describe "instance methods" do
+    describe "#output_file_name" do
+      it "returns the correct output file name for each script" do
+        job.script = "categorization_runner.ts"
+        expect(job.output_file_name).to eq("categorization-output-#{job.id}.csv")
+
+        job.script = "advanced_runner.ts"
+        expect(job.output_file_name).to eq("output-#{job.id}")
+
+        job.script = "runner.ts"
+        expect(job.output_file_name).to eq("output-#{job.id}")
+
+        job.script = "health_check_runner.ts"
+        expect(job.output_file_name).to eq("health-check-#{job.id}.txt")
+
+        job.script = "single-html-build.js"
+        expect(job.output_file_name).to eq("report-#{job.id}.html")
+      end
+    end
+
     describe "#started?" do
       it "returns true when started_at is present" do
         expect(job.started?).to be true
@@ -173,11 +192,14 @@ describe Sensemaker::Job do
         end
       end
 
-      context "when script is default" do
+      context "when script is runner.ts" do
         let(:job) { create(:sensemaker_job, script: "runner.ts") }
 
-        it "cleans up default output file" do
-          expect(FileUtils).to receive(:rm_f).with("#{data_folder}/output-#{job.id}.csv")
+        it "cleans up all runner summary output files" do
+          expect(FileUtils).to receive(:rm_f).with("#{data_folder}/output-#{job.id}-summary.json")
+          expect(FileUtils).to receive(:rm_f).with("#{data_folder}/output-#{job.id}-summary.html")
+          expect(FileUtils).to receive(:rm_f).with("#{data_folder}/output-#{job.id}-summary.md")
+          expect(FileUtils).to receive(:rm_f).with("#{data_folder}/output-#{job.id}-summaryAndSource.csv")
 
           job.send(:cleanup_output_files, data_folder)
         end

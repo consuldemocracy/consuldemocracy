@@ -300,6 +300,33 @@ describe Sensemaker::JobRunner do
       expect(command).not_to include("--outputFile")
       expect(command).to include("--outputBasename #{service.output_file}")
     end
+
+    it "returns the correct command for the runner (summary) script" do
+      service.job.script = "runner.ts"
+      command = service.build_command
+      expect(command).to include("npx ts-node #{service.script_file}")
+      expect(command).to include("--vertexProject #{service.project_id}")
+      expect(command).to include("--modelName #{Tenant.current_secrets.sensemaker_model_name}")
+      expect(command).to include("--keyFilename #{service.key_file}")
+      expect(command).to include("--inputFile #{service.input_file}")
+      expect(command).not_to include("--outputFile")
+      expect(command).to include("--outputBasename #{service.output_file}")
+    end
+
+    it "returns the correct command for the single-html-build script" do
+      service.job.update!(script: "single-html-build.js")
+      allow(service.job.conversation).to receive(:target_label).with(format: :full).and_return("Test Label")
+
+      command = service.build_command
+
+      expect(command).to include("npx ts-node site-build.ts")
+      expect(command).to include("--topics #{service.input_file}-topic-stats.json")
+      expect(command).to include("--summary #{service.input_file}-summary.json")
+      expect(command).to include("--comments #{service.input_file}-comments-with-scores.json")
+      expect(command).to include('--reportTitle "Report for Test Label"')
+
+      expect(command).to include("npx ts-node single-html-build.js --outputFile #{service.output_file}")
+    end
   end
 
   describe "#input_file" do
@@ -347,19 +374,6 @@ describe Sensemaker::JobRunner do
     end
   end
 
-  describe "#output_file_name" do
-    let(:service) { Sensemaker::JobRunner.new(job) }
-    it "returns the correct output file name" do
-      expect(service.send(:output_file_name)).to eq("categorization-output-#{job.id}.csv")
-      job.script = "advanced_runner.ts"
-      expect(service.send(:output_file_name)).to eq("output-#{job.id}")
-      job.script = "runner.ts"
-      expect(service.send(:output_file_name)).to eq("output-#{job.id}.csv")
-      job.script = "health_check_runner.ts"
-      expect(service.send(:output_file_name)).to eq("health-check-#{job.id}.txt")
-    end
-  end
-
   describe "#process_output" do
     let(:service) { Sensemaker::JobRunner.new(job) }
 
@@ -378,20 +392,32 @@ describe Sensemaker::JobRunner do
       expect(job.persisted_output).to eq(service.output_file)
     end
 
-    it "sets persisted_output to the copied report file for single-html-build.js script" do
-      job.update!(script: "single-html-build.js")
+    it "uses the summary.json file for runner.ts outputs" do
+      job.update!(script: "runner.ts")
       service = Sensemaker::JobRunner.new(job)
-
-      allow(File).to receive(:exist?).with(service.output_file).and_return(true)
-      allow(FileUtils).to receive(:cp)
+      summary_path = "#{service.output_file}-summary.json"
+      allow(File).to receive(:exist?).with(summary_path).and_return(true)
 
       result = service.send(:process_output)
 
       expect(result).to be true
 
       job.reload
-      expected_path = "#{Sensemaker::JobRunner.sensemaker_data_folder}/report-#{job.id}.html"
-      expect(job.persisted_output).to eq(expected_path)
+      expect(job.persisted_output).to eq(summary_path)
+    end
+
+    it "sets persisted_output to the output file for single-html-build.js script" do
+      job.update!(script: "single-html-build.js")
+      service = Sensemaker::JobRunner.new(job)
+
+      allow(File).to receive(:exist?).with(service.output_file).and_return(true)
+
+      result = service.send(:process_output)
+
+      expect(result).to be true
+
+      job.reload
+      expect(job.persisted_output).to eq(service.output_file)
     end
 
     it "returns nil and updates the job when the output file does not exist" do

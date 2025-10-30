@@ -93,6 +93,21 @@ module Sensemaker
       @conversation ||= Sensemaker::Conversation.new(analysable_type, analysable_id)
     end
 
+    def output_file_name
+      case script
+      when "health_check_runner.ts"
+        "health-check-#{id}.txt"
+      when "advanced_runner.ts", "runner.ts"
+        "output-#{id}"
+      when "categorization_runner.ts"
+        "categorization-output-#{id}.csv"
+      when "single-html-build.js"
+        "report-#{id}.html"
+      else
+        "output-#{id}.csv"
+      end
+    end
+
     private
 
       def cleanup_associated_files
@@ -122,17 +137,18 @@ module Sensemaker
         result = []
         case script
         when "health_check_runner.ts"
-          result << FileUtils.rm_f("#{data_folder}/health-check-#{id}.txt")
+          result << FileUtils.rm_f("#{data_folder}/#{output_file_name}")
         when "advanced_runner.ts"
-          result << FileUtils.rm_f("#{data_folder}/output-#{id}-summary.json")
-          result << FileUtils.rm_f("#{data_folder}/output-#{id}-topic-stats.json")
-          result << FileUtils.rm_f("#{data_folder}/output-#{id}-comments-with-scores.json")
-        when "categorization_runner.ts"
-          result << FileUtils.rm_f("#{data_folder}/categorization-output-#{id}.csv")
-        when "single-html-build.js"
-          result << FileUtils.rm_f("#{data_folder}/report-#{id}.html")
+          result << FileUtils.rm_f("#{data_folder}/#{output_file_name}-summary.json")
+          result << FileUtils.rm_f("#{data_folder}/#{output_file_name}-topic-stats.json")
+          result << FileUtils.rm_f("#{data_folder}/#{output_file_name}-comments-with-scores.json")
+        when "runner.ts"
+          result << FileUtils.rm_f("#{data_folder}/#{output_file_name}-summary.json")
+          result << FileUtils.rm_f("#{data_folder}/#{output_file_name}-summary.html")
+          result << FileUtils.rm_f("#{data_folder}/#{output_file_name}-summary.md")
+          result << FileUtils.rm_f("#{data_folder}/#{output_file_name}-summaryAndSource.csv")
         else
-          result << FileUtils.rm_f("#{data_folder}/output-#{id}.csv")
+          result << FileUtils.rm_f("#{data_folder}/#{output_file_name}")
         end
         result
       end
