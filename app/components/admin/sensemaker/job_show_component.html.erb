@@ -11,7 +11,6 @@
         <h3>Details</h3>
         <div>
           <%= link_to "Back to Jobs", admin_sensemaker_jobs_path, class: "margin-right" %>
-          <%= link_to("Download Output", download_admin_sensemaker_job_path(sensemaker_job), class: "button") if can_download? %>
           <% if can_publish? %>
             <% if is_published? %>
               <%= button_to "Unpublish", unpublish_admin_sensemaker_job_path(sensemaker_job), form_class: "inline", class: "button", method: :patch %>
@@ -115,6 +114,22 @@
             <% end %>
           </tbody>
         </table>
+      </section>
+    <% end %>
+
+    <% if sensemaker_job.finished? && !has_error? %>
+      <section class="margin-bottom">
+        <h3>Output files</h3>
+        <p class="help-text">Select a file to download.</p>
+        <ul>
+          <% sensemaker_job.output_artifact_paths.each do |path| %>
+            <% if File.exist?(path) %>
+              <li>
+                <%= link_to File.basename(path), download_admin_sensemaker_job_path(sensemaker_job, artefact: File.basename(path)) %>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
       </section>
     <% end %>
   <% else %>

@@ -42,6 +42,24 @@ describe Sensemaker::Job do
   end
 
   describe "instance methods" do
+    describe "#has_multiple_outputs?" do
+      it "returns true for advanced_runner.ts and runner.ts" do
+        job.script = "advanced_runner.ts"
+        expect(job.has_multiple_outputs?).to be true
+        job.script = "runner.ts"
+        expect(job.has_multiple_outputs?).to be true
+      end
+
+      it "returns false for single output scripts" do
+        job.script = "categorization_runner.ts"
+        expect(job.has_multiple_outputs?).to be false
+        job.script = "health_check_runner.ts"
+        expect(job.has_multiple_outputs?).to be false
+        job.script = "single-html-build.js"
+        expect(job.has_multiple_outputs?).to be false
+      end
+    end
+
     describe "#output_file_name" do
       it "returns the correct output file name for each script" do
         job.script = "categorization_runner.ts"

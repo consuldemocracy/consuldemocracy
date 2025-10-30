@@ -108,6 +108,32 @@ module Sensemaker
       end
     end
 
+    def has_multiple_outputs?
+      ["advanced_runner.ts", "runner.ts"].include?(script)
+    end
+
+    def output_artifact_paths
+      base = File.join(Sensemaker::JobRunner.sensemaker_data_folder, output_file_name)
+
+      case script
+      when "advanced_runner.ts"
+        [
+          "#{base}-summary.json",
+          "#{base}-topic-stats.json",
+          "#{base}-comments-with-scores.json"
+        ]
+      when "runner.ts"
+        [
+          "#{base}-summary.json",
+          "#{base}-summary.html",
+          "#{base}-summary.md",
+          "#{base}-summaryAndSource.csv"
+        ]
+      else
+        [File.join(Sensemaker::JobRunner.sensemaker_data_folder, output_file_name)]
+      end
+    end
+
     private
 
       def cleanup_associated_files

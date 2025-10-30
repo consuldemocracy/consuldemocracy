@@ -13,7 +13,6 @@
     </td>
     <td>
       <div class="flex-row-end">
-        <%= link_to("Download Output", download_admin_sensemaker_job_path(job), class: "button small inline-block") if can_download? %>
         <% if can_publish? %>
           <% if is_published? %>
             <%= button_to "Unpublish", unpublish_admin_sensemaker_job_path(job), class: "button small inline-block", method: :patch %>

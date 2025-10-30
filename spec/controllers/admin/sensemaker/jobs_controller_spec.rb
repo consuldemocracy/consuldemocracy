@@ -27,6 +27,78 @@ describe Admin::Sensemaker::JobsController do
     end
   end
 
+  describe "GET #download" do
+    let(:job) { sensemaker_job }
+
+    context "when artefact param is provided and valid" do
+      let(:data_folder) { Sensemaker::JobRunner.sensemaker_data_folder.to_s }
+      let(:basename) { "artifact-#{SecureRandom.hex}.json" }
+      let(:tmp_file) { File.join(data_folder, basename) }
+
+      before do
+        FileUtils.mkdir_p(File.dirname(tmp_file))
+        File.write(tmp_file, "{}")
+        allow_any_instance_of(Sensemaker::Job).to receive(:output_artifact_paths)
+          .and_return([tmp_file])
+      end
+
+      after do
+        FileUtils.rm_f(tmp_file)
+      end
+
+      it "sends the requested artefact file" do
+        get :download, params: { id: job.id, artefact: basename }
+
+        expect(response).to have_http_status(:ok)
+        expect(response.header["Content-Disposition"]).to include(basename)
+      end
+    end
+
+    context "when artefact param is invalid" do
+      it "redirects to show with alert" do
+        allow_any_instance_of(Sensemaker::Job).to receive(:output_artifact_paths)
+          .and_return([])
+
+        get :download, params: { id: job.id, artefact: "nonexistent.json" }
+
+        expect(response).to redirect_to(admin_sensemaker_job_path(job))
+        expect(flash[:alert]).to be_present
+      end
+    end
+
+    context "when no artefact param and persisted_output exists" do
+      let(:tmp_file) { Rails.root.join("tmp", "persisted-#{SecureRandom.hex}.html").to_s }
+
+      before do
+        FileUtils.mkdir_p(File.dirname(tmp_file))
+        File.write(tmp_file, "<html></html>")
+        job.update!(persisted_output: tmp_file)
+      end
+
+      after do
+        FileUtils.rm_f(tmp_file)
+      end
+
+      it "sends the persisted_output file" do
+        get :download, params: { id: job.id }
+
+        expect(response).to have_http_status(:ok)
+        expect(response.header["Content-Disposition"]).to include(File.basename(tmp_file))
+      end
+    end
+
+    context "when no artefact param and no persisted_output" do
+      it "redirects to index with not found alert" do
+        allow_any_instance_of(Sensemaker::Job).to receive(:persisted_output).and_return(nil)
+
+        get :download, params: { id: job.id }
+
+        expect(response).to redirect_to(admin_sensemaker_jobs_path)
+        expect(flash[:alert]).to be_present
+      end
+    end
+  end
+
   describe "GET #new" do
     it "returns successful response" do
       get :new
