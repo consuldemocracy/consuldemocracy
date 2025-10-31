@@ -1,6 +1,6 @@
 module DebatesHelper
   def has_featured?
-    Debate.all.featured.count > 0
+    Debate.all.featured.any?
   end
 
   def empty_recommended_debates_message_text(user)

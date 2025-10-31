@@ -37,7 +37,7 @@ class Budget
     end
 
     def has_lines_with_no_heading?
-      investments.no_heading.count > 0
+      investments.no_heading.any?
     end
 
     def has_lines_with_heading?
