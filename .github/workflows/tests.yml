@@ -51,7 +51,7 @@ jobs:
       - name: Remove image-bundled Chrome
         run: sudo apt-get purge google-chrome-stable
       - name: Setup Chrome/Chromium 128
-        uses: browser-actions/setup-chrome@v1
+        uses: browser-actions/setup-chrome@v2
         with:
           chrome-version: 128
           install-chromedriver: true
