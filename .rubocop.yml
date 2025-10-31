@@ -747,6 +747,9 @@ Style/ClassVars:
 Style/CollectionMethods:
   Enabled: true
 
+Style/CollectionQuerying:
+  Enabled: true
+
 Style/ComparableBetween:
   Enabled: true
 

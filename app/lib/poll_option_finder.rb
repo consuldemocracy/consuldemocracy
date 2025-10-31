@@ -6,11 +6,11 @@ class PollOptionFinder
   end
 
   def manageable_choices
-    choices_map.select { |choice, ids| ids.count == 1 }
+    choices_map.select { |choice, ids| ids.one? }
   end
 
   def unmanageable_choices
-    choices_map.reject { |choice, ids| ids.count == 1 }
+    choices_map.reject { |choice, ids| ids.one? }
   end
 
   private
