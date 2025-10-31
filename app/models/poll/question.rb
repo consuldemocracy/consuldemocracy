@@ -12,7 +12,7 @@ class Poll::Question < ApplicationRecord
 
   has_many :comments, as: :commentable, inverse_of: :commentable
   has_many :answers, class_name: "Poll::Answer"
-  has_many :question_options, -> { order "given_order asc" },
+  has_many :question_options, -> { order :given_order },
            class_name: "Poll::Question::Option",
            inverse_of: :question,
            dependent: :destroy

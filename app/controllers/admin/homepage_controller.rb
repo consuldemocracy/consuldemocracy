@@ -21,6 +21,6 @@ class Admin::HomepageController < Admin::BaseController
     end
 
     def load_feeds
-      @feeds = Widget::Feed.order("created_at")
+      @feeds = Widget::Feed.order(:created_at)
     end
 end
