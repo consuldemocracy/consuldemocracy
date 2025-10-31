@@ -17,7 +17,7 @@ shared_examples "notifiable" do
   end
 
   describe "notifiable_available?" do
-    it "returns true when it's a root comment and the notifiable is available" do
+    it "returns true if the resource is present, not hidden, nor retired" do
       notification = create(:notification, notifiable: notifiable)
 
       expect(notification.notifiable_available?).to be true
@@ -30,7 +30,7 @@ shared_examples "notifiable" do
       expect(notification.notifiable_available?).to be true
     end
 
-    it "returns false when it's a root comment and the notifiable has been hidden" do
+    it "returns false if the resource is hidden" do
       notification = create(:notification, notifiable: notifiable)
 
       notifiable.hide
@@ -48,24 +48,12 @@ shared_examples "notifiable" do
 
       expect(notification.notifiable_available?).to be false
     end
-  end
-
-  describe "check_availability" do
-    it "returns true if the resource is present, not hidden, nor retired" do
-      notification = create(:notification, notifiable: notifiable)
-      expect(notification.check_availability(notifiable)).to be true
-    end
 
     it "returns false if the resource is not present" do
       notification = create(:notification, notifiable: notifiable)
       notifiable.really_destroy!
-      expect(notification.check_availability(notifiable)).to be false
-    end
 
-    it "returns false if the resource is not hidden" do
-      notification = create(:notification, notifiable: notifiable)
-      notifiable.hide
-      expect(notification.check_availability(notifiable)).to be false
+      expect(notification.notifiable_available?).to be false
     end
 
     it "returns false if the resource is retired" do
@@ -74,7 +62,7 @@ shared_examples "notifiable" do
       if notifiable.respond_to?(:retired_at)
         notifiable.update!(retired_at: Time.current, retired_reason: "unfeasible",
                            retired_explanation: "Unfeasibility explanation ...")
-        expect(notification.check_availability(notifiable)).to be false
+        expect(notification.notifiable_available?).to be false
       end
     end
   end
