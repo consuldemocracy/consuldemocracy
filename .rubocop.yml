@@ -735,6 +735,9 @@ Style/ArrayCoercion:
 Style/ArrayIntersect:
   Enabled: true
 
+Style/ArrayIntersectWithSingleElement:
+  Enabled: true
+
 Style/BlockDelimiters:
   Enabled: true
 
