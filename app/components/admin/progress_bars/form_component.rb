@@ -1,6 +1,7 @@
 class Admin::ProgressBars::FormComponent < ApplicationComponent
   include TranslatableFormHelper
   include GlobalizeHelper
+
   attr_reader :progress_bar
 
   def initialize(progress_bar)

@@ -1,6 +1,7 @@
 class Management::BudgetsController < Management::BaseController
   include FeatureFlags
   include HasFilters
+
   feature_flag :budgets
 
   before_action :only_verified_users, except: :print_investments

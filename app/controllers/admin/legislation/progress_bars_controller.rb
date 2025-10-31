@@ -1,5 +1,6 @@
 class Admin::Legislation::ProgressBarsController < Admin::ProgressBarsController
   include FeatureFlags
+
   feature_flag :legislation
 
   def index

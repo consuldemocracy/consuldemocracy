@@ -2,6 +2,7 @@ require "rails_helper"
 
 describe Shared::ModerationActionsComponent do
   include Rails.application.routes.url_helpers
+
   before { sign_in(create(:administrator).user) }
 
   describe "Hide button" do

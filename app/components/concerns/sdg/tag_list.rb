@@ -1,5 +1,6 @@
 module SDG::TagList
   extend ActiveSupport::Concern
+
   attr_reader :record, :limit
 
   def initialize(record, limit: nil)

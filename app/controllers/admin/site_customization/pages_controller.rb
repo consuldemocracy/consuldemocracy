@@ -1,5 +1,6 @@
 class Admin::SiteCustomization::PagesController < Admin::SiteCustomization::BaseController
   include Translatable
+
   load_and_authorize_resource :page, class: "SiteCustomization::Page"
 
   def index

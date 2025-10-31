@@ -1,5 +1,6 @@
 class SDGManagement::Relations::SearchComponent < ApplicationComponent
   include SDG::OptionsForSelect
+
   attr_reader :label
 
   def initialize(label:)

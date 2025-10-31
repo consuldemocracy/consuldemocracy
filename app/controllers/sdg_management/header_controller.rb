@@ -1,5 +1,6 @@
 class SDGManagement::HeaderController < SDGManagement::BaseController
   include Admin::Widget::CardsActions
+
   helper_method :index_path
 
   before_action :load_cardable

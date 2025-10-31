@@ -1,5 +1,6 @@
 class SDGManagement::Relations::IndexComponent < ApplicationComponent
   include Header
+
   attr_reader :records
 
   def initialize(records)

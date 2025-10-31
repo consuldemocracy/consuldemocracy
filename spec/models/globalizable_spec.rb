@@ -10,6 +10,7 @@ describe Globalizable do
 
       translates :title, touch: true
       include Globalizable
+
       has_many :translations, class_name: "DummyBanner::Translation", foreign_key: "banner_id"
 
       validates_translation :title, length: { minimum: 7 }

@@ -2,6 +2,7 @@ require "rails_helper"
 
 describe Polls::Questions::ReadMoreComponent do
   include Rails.application.routes.url_helpers
+
   let(:poll) { create(:poll) }
   let(:question) { create(:poll_question, poll: poll, title: "Question title?") }
   let(:option) { create(:poll_question_option, question: question) }

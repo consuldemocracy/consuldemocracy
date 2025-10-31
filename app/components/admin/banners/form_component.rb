@@ -1,6 +1,7 @@
 class Admin::Banners::FormComponent < ApplicationComponent
   include TranslatableFormHelper
   include GlobalizeHelper
+
   attr_reader :banner
 
   def initialize(banner)

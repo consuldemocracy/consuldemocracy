@@ -1,5 +1,6 @@
 class Budgets::Groups::IndexComponent < ApplicationComponent
   include Header
+
   attr_reader :budget
 
   def initialize(budget)

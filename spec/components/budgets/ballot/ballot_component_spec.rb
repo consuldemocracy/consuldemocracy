@@ -2,6 +2,7 @@ require "rails_helper"
 
 describe Budgets::Ballot::BallotComponent do
   include Rails.application.routes.url_helpers
+
   before { vc_test_request.session[:ballot_referer] = "/" }
   let(:budget) { create(:budget, :balloting) }
   let(:ballot) { create(:budget_ballot, user: create(:user), budget: budget) }

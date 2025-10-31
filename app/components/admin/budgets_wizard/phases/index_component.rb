@@ -1,5 +1,6 @@
 class Admin::BudgetsWizard::Phases::IndexComponent < Admin::BudgetsWizard::BaseComponent
   include Header
+
   attr_reader :budget
 
   def initialize(budget)

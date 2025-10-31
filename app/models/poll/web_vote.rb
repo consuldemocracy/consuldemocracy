@@ -1,5 +1,6 @@
 class Poll::WebVote
   include ActiveModel::Validations
+
   attr_reader :poll, :user
   delegate :t, to: "ApplicationController.helpers"
 

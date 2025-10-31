@@ -1,5 +1,6 @@
 class Admin::Dashboard::ActionsController < Admin::Dashboard::BaseController
   include DocumentAttributes
+
   helper_method :dashboard_action, :resource
 
   def index

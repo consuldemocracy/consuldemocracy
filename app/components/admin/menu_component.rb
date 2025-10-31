@@ -1,5 +1,6 @@
 class Admin::MenuComponent < ApplicationComponent
   include LinkListHelper
+
   use_helpers :can?
 
   def links
