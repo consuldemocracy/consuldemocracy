@@ -441,6 +441,9 @@ Rails/FindBy:
   Exclude:
     - "config/initializers/ahoy.rb"
 
+Rails/FindByOrAssignmentMemoization:
+  Enabled: true
+
 Rails/FindEach:
   Enabled: true
 

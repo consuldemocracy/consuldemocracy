@@ -11,7 +11,9 @@ class Verification::Management::Email
   delegate :username, to: :user, allow_nil: true
 
   def user
-    @user ||= User.find_by(email: email)
+    return @user if defined?(@user)
+
+    @user = User.find_by(email: email)
   end
 
   def user?
