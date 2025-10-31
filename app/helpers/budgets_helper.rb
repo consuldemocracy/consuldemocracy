@@ -16,7 +16,7 @@ module BudgetsHelper
     Budget::Ballot.find_by(user: current_user, budget: @budget)
   end
 
-  def unfeasible_or_unselected_filter
+  def unfeasible_or_unselected_filter?
     ["unselected", "unfeasible"].include?(@current_filter)
   end
 
