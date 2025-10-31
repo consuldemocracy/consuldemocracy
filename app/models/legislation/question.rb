@@ -27,7 +27,7 @@ class Legislation::Question < ApplicationRecord
   validates :process, presence: true
   validates_translation :title, presence: true
 
-  scope :sorted, -> { order("id ASC") }
+  scope :sorted, -> { order(:id) }
 
   def next_question_id
     @next_question_id ||= process.questions.where("id > ?", id).sorted.limit(1).ids.first

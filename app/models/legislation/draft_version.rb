@@ -19,7 +19,7 @@ class Legislation::DraftVersion < ApplicationRecord
   validates_translation :body, presence: true
   validates :status, presence: true, inclusion: { in: ->(*) { VALID_STATUSES }}
 
-  scope :published, -> { where(status: "published").order("id DESC") }
+  scope :published, -> { where(status: "published").order(id: :desc) }
 
   def body_html
     MarkdownConverter.new(body, with_toc_data: true).render

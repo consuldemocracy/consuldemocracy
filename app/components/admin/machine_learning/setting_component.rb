@@ -8,7 +8,7 @@ class Admin::MachineLearning::SettingComponent < ApplicationComponent
   private
 
     def setting
-      @setting ||= Setting.find_by(key: "machine_learning.#{kind}")
+      @setting ||= Setting.find_by!(key: "machine_learning.#{kind}")
     end
 
     def ml_info

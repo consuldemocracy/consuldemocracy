@@ -1,8 +1,9 @@
+plugins:
+  - rubocop-rails
 require:
   - rubocop-capybara
   - rubocop-factory_bot
   - rubocop-performance
-  - rubocop-rails
   - rubocop-rspec
   - rubocop-rspec_rails
 
@@ -438,6 +439,9 @@ Rails/FindBy:
   Exclude:
     - "config/initializers/ahoy.rb"
 
+Rails/FindByOrAssignmentMemoization:
+  Enabled: true
+
 Rails/FindEach:
   Enabled: true
 
@@ -465,6 +469,9 @@ Rails/NotNullColumn:
   Enabled: true
   Exclude:
     - "db/migrate/201[5-7]*"
+
+Rails/OrderArguments:
+  Enabled: true
 
 Rails/OutputSafety:
   Enabled: true
