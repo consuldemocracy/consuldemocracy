@@ -103,7 +103,7 @@ group :development do
   gem "pronto-eslint", "~> 0.11.1", require: false
   gem "pronto-rubocop", "~> 0.11.6", require: false
   gem "pronto-stylelint", "~> 0.11.1", require: false
-  gem "rubocop", "~> 1.76.1", require: false
+  gem "rubocop", "~> 1.81.7", require: false
   gem "rubocop-capybara", "~> 2.22.1", require: false
   gem "rubocop-factory_bot", "~> 2.27.1", require: false
   gem "rubocop-performance", "~> 1.26.1", require: false
