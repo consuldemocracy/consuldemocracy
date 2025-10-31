@@ -1,5 +1,6 @@
-require:
+plugins:
   - rubocop-capybara
+require:
   - rubocop-factory_bot
   - rubocop-performance
   - rubocop-rails
@@ -23,9 +24,8 @@ Bundler/OrderedGems:
   Enabled: true
   ConsiderPunctuation: true
 
-Capybara/ClickLinkOrButtonStyle:
+Capybara/AmbiguousClick:
   Enabled: true
-  EnforcedStyle: strict
 
 Capybara/CurrentPathExpectation:
   Enabled: true
