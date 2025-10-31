@@ -146,7 +146,7 @@ describe "Legislation" do
 
   context "process page" do
     context "show" do
-      include_examples "not published permissions", :legislation_process_path
+      it_behaves_like "not published permissions", :legislation_process_path
 
       scenario "show view has document present on all phases" do
         process = create(:legislation_process)
@@ -311,7 +311,7 @@ describe "Legislation" do
         expect(page).not_to have_content("This phase is not open yet")
       end
 
-      include_examples "not published permissions", :debate_legislation_process_path
+      it_behaves_like "not published permissions", :debate_legislation_process_path
     end
 
     context "draft publication phase" do
@@ -331,7 +331,7 @@ describe "Legislation" do
         expect(page).to have_content("Nothing published yet")
       end
 
-      include_examples "not published permissions", :draft_publication_legislation_process_path
+      it_behaves_like "not published permissions", :draft_publication_legislation_process_path
     end
 
     context "allegations phase" do
@@ -355,7 +355,7 @@ describe "Legislation" do
         expect(page).to have_content("Nothing published yet")
       end
 
-      include_examples "not published permissions", :allegations_legislation_process_path
+      it_behaves_like "not published permissions", :allegations_legislation_process_path
     end
 
     context "final version publication phase" do
@@ -375,7 +375,7 @@ describe "Legislation" do
         expect(page).to have_content("Nothing published yet")
       end
 
-      include_examples "not published permissions", :result_publication_legislation_process_path
+      it_behaves_like "not published permissions", :result_publication_legislation_process_path
     end
 
     context "proposals phase" do
@@ -395,7 +395,7 @@ describe "Legislation" do
         expect(page).to have_content("There are no proposals")
       end
 
-      include_examples "not published permissions", :legislation_process_proposals_path
+      it_behaves_like "not published permissions", :legislation_process_proposals_path
     end
 
     context "Milestones" do
