@@ -386,6 +386,9 @@ Performance/StartWith:
 Performance/Sum:
   Enabled: true
 
+Performance/ZipWithoutBlock:
+  Enabled: true
+
 Rails/ActionControllerFlashBeforeRender:
   Enabled: true
 
