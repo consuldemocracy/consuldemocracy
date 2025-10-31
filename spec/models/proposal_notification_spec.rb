@@ -126,27 +126,21 @@ describe ProposalNotification do
 
         expect(notification.notifiable_available?).to be false
       end
-    end
-
-    describe "check_availability" do
-      it "returns true if the resource is present, not hidden, nor retired" do
-        notification = create(:notification, notifiable: notifiable)
-
-        expect(notification.check_availability(proposal)).to be true
-      end
 
       it "returns false if the resource is not present" do
         notification = create(:notification, notifiable: notifiable)
 
         notifiable.proposal.really_destroy!
-        expect(notification.check_availability(proposal)).to be false
+
+        expect(notification.notifiable_available?).to be false
       end
 
       it "returns false if the resource is hidden" do
         notification = create(:notification, notifiable: notifiable)
 
         notifiable.proposal.hide
-        expect(notification.check_availability(proposal)).to be false
+
+        expect(notification.notifiable_available?).to be false
       end
 
       it "returns false if the resource is retired" do
@@ -155,7 +149,8 @@ describe ProposalNotification do
         notifiable.proposal.update!(retired_at: Time.current,
                                     retired_explanation: "Unfeasible reason explanation",
                                     retired_reason: "unfeasible")
-        expect(notification.check_availability(proposal)).to be false
+
+        expect(notification.notifiable_available?).to be false
       end
     end
 

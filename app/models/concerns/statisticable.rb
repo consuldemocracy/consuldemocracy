@@ -1,5 +1,6 @@
 module Statisticable
   extend ActiveSupport::Concern
+
   PARTICIPATIONS = %w[gender age geozone].freeze
 
   included do

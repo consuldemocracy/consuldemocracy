@@ -1,6 +1,7 @@
 class ApplicationRecord < ActiveRecord::Base
   include HumanName
   include SkipValidation
+
   self.abstract_class = true
 
   def self.sample(count = 1)

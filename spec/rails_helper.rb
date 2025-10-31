@@ -40,6 +40,7 @@ end
 Rails.application.load_tasks if Rake::Task.tasks.empty?
 
 include Warden::Test::Helpers
+
 Warden.test_mode!
 
 ActiveRecord::Migration.maintain_test_schema!

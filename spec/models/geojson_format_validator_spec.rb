@@ -4,6 +4,7 @@ describe GeojsonFormatValidator do
   before do
     dummy_model = Class.new do
       include ActiveModel::Model
+
       attr_accessor :geojson
       validates :geojson, geojson_format: true
     end

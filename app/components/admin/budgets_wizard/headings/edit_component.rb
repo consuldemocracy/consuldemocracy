@@ -1,5 +1,6 @@
 class Admin::BudgetsWizard::Headings::EditComponent < ApplicationComponent
   include Header
+
   attr_reader :heading
 
   def initialize(heading)

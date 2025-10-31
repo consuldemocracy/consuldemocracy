@@ -1,5 +1,6 @@
 class SDG::ProcessEnabled
   include SettingsHelper
+
   attr_reader :record_or_name
 
   def initialize(record_or_name)

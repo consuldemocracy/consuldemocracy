@@ -4,6 +4,7 @@ class Milestone < ApplicationRecord
 
   translates :title, :description, touch: true
   include Globalizable
+
   translation_class_delegate :status_id
 
   belongs_to :milestoneable, polymorphic: true

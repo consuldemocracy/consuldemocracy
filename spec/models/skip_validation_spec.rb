@@ -6,6 +6,7 @@ describe SkipValidation do
       dummy_model = Class.new do
         include ActiveModel::Model
         include SkipValidation
+
         attr_accessor :title, :description
 
         validates :title, presence: true, length: { in: 10..60, allow_nil: true }
@@ -58,6 +59,7 @@ describe SkipValidation do
         translates :title, touch: true
         translates :description, touch: true
         include Globalizable
+
         has_many :translations, class_name: "DummyBanner::Translation", foreign_key: "banner_id"
 
         validates_translation :title, presence: true

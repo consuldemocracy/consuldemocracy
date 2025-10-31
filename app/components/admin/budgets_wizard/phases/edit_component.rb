@@ -1,5 +1,6 @@
 class Admin::BudgetsWizard::Phases::EditComponent < ApplicationComponent
   include Header
+
   attr_reader :phase
 
   def initialize(phase)

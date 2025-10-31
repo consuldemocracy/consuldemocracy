@@ -5,7 +5,7 @@ class Verification::EmailController < ApplicationController
   skip_authorization_check
 
   def show
-    if Verification::Email.find(current_user, params[:email_verification_token])
+    if Verification::Email.valid_token?(current_user, params[:email_verification_token])
       current_user.update!(verified_at: Time.current)
       redirect_to account_path, notice: t("verification.email.show.flash.success")
     else

@@ -89,9 +89,8 @@ module ProposalsDashboardHelper
   end
 
   def new_resources_since_last_login?(resources, new_actions_since_last_login)
-    if resources.present?
+    resources.present? &&
       resources.ids.any? { |id| new_actions_since_last_login.include?(id) }
-    end
   end
 
   def active_resources_for(proposal)

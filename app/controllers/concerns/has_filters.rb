@@ -1,5 +1,6 @@
 module HasFilters
   extend ActiveSupport::Concern
+
   attr_reader :valid_filters, :current_filter
 
   included do

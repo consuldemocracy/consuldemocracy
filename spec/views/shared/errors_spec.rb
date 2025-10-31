@@ -4,6 +4,7 @@ describe "shared errors" do
   before do
     dummy_model = Class.new do
       include ActiveModel::Model
+
       attr_accessor :title, :description, :days
 
       validates :title, presence: true

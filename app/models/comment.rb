@@ -11,6 +11,7 @@ class Comment < ApplicationRecord
 
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
+
   acts_as_votable
   has_ancestry touch: true
 

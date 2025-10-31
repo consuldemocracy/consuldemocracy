@@ -1,5 +1,6 @@
 class Moderation::Users::IndexComponent < ApplicationComponent
   include Header
+
   attr_reader :users
 
   def initialize(users)

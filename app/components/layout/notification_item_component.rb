@@ -16,7 +16,7 @@ class Layout::NotificationItemComponent < ApplicationComponent
     end
 
     def notifications_class
-      if unread_notifications.count > 0
+      if unread_notifications.any?
         "unread-notifications"
       else
         "no-notifications"

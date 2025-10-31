@@ -4,6 +4,7 @@ describe Shared::DateOfBirthFieldComponent do
   before do
     dummy_model = Class.new do
       include ActiveModel::Model
+
       attr_accessor :date_of_birth
     end
 

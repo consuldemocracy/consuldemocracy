@@ -1,5 +1,6 @@
 class Budget::Stats
   include Statisticable
+
   alias_method :budget, :resource
 
   def self.stats_methods

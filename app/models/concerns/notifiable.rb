@@ -17,20 +17,20 @@ module Notifiable
   end
 
   def notifiable_available?
-    case self.class.name
-    when "ProposalNotification"
-      check_availability(proposal)
-    when "Comment"
-      check_availability(commentable)
-    else
-      check_availability(self)
-    end
+    notifiable_resource.present? &&
+      !(notifiable_resource.respond_to?(:hidden?) && notifiable_resource.hidden?) &&
+      !(notifiable_resource.respond_to?(:retired?) && notifiable_resource.retired?)
   end
 
-  def check_availability(resource)
-    resource.present? &&
-      !(resource.respond_to?(:hidden?) && resource.hidden?) &&
-      !(resource.respond_to?(:retired?) && resource.retired?)
+  def notifiable_resource
+    case self.class.name
+    when "ProposalNotification"
+      proposal
+    when "Comment"
+      commentable
+    else
+      self
+    end
   end
 
   def linkable_resource

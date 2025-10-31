@@ -4,6 +4,7 @@ class Management::Budgets::InvestmentsController < Management::BaseController
   include DocumentAttributes
   include MapLocationAttributes
   include FeatureFlags
+
   feature_flag :budgets
 
   before_action :load_budget

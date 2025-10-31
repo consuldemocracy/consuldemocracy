@@ -1,5 +1,6 @@
 class SDG::GoalsController < ApplicationController
   include FeatureFlags
+
   feature_flag :sdg
   load_and_authorize_resource find_by: :code, id_param: :code
 
