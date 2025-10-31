@@ -27,7 +27,9 @@ class Dashboard::SuccessfulSupportsController < Dashboard::BaseController
     end
 
     def successful_proposal
-      @successful_proposal ||= Proposal.find_by(id: Setting["proposals.successful_proposal_id"])
+      return @successful_proposal if defined?(@successful_proposal)
+
+      @successful_proposal = Proposal.find_by(id: Setting["proposals.successful_proposal_id"])
     end
 
     def days_diff
