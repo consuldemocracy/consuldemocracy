@@ -624,6 +624,9 @@ RSpec/Focus:
 RSpec/HookArgument:
   Enabled: true
 
+RSpec/IncludeExamples:
+  Enabled: true
+
 RSpec/InstanceVariable:
   Enabled: true
   Exclude:
