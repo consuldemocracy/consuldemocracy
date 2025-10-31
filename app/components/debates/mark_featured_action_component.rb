@@ -6,7 +6,7 @@ class Debates::MarkFeaturedActionComponent < ApplicationComponent
     @debate = debate
   end
 
-  def render
+  def render?
     can? :mark_featured, debate
   end
 end
