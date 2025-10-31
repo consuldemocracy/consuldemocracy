@@ -1,5 +1,6 @@
 class Admin::SiteCustomization::Images::IndexComponent < ApplicationComponent
   include Header
+
   attr_reader :images
 
   def initialize(images)

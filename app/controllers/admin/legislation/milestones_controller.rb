@@ -1,5 +1,6 @@
 class Admin::Legislation::MilestonesController < Admin::MilestonesController
   include FeatureFlags
+
   feature_flag :legislation
 
   def index

@@ -1,5 +1,6 @@
 class Admin::Widget::Cards::EditComponent < ApplicationComponent
   include Header
+
   attr_reader :card, :index_path, :form_path
 
   def initialize(card, index_path:, form_path: nil)

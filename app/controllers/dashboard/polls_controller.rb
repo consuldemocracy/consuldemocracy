@@ -1,5 +1,6 @@
 class Dashboard::PollsController < Dashboard::BaseController
   include DocumentAttributes
+
   helper_method :poll
   before_action :authorize_manage_polls
 

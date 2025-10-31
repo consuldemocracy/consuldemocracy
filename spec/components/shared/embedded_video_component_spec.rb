@@ -5,6 +5,7 @@ describe Shared::EmbeddedVideoComponent do
     before do
       dummy_class = Class.new do
         include ActiveModel::Model
+
         attr_accessor :title, :video_url
 
         include Videoable

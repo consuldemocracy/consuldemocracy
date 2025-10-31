@@ -1,5 +1,6 @@
 class Admin::BudgetsWizard::Headings::IndexComponent < Admin::BudgetsWizard::BaseComponent
   include Header
+
   attr_reader :headings, :new_heading
 
   def initialize(headings, new_heading)

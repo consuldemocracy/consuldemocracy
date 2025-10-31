@@ -1,6 +1,7 @@
 module ModerateActions
   extend ActiveSupport::Concern
   include Polymorphic
+
   PER_PAGE = 50
 
   def index

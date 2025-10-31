@@ -1,5 +1,6 @@
 module HasOrders
   extend ActiveSupport::Concern
+
   attr_reader :valid_orders, :current_order
 
   included do

@@ -31,6 +31,7 @@ class Proposal < ApplicationRecord
   translates :summary, touch: true
   translates :retired_explanation, touch: true
   include Globalizable
+
   translation_class_delegate :retired_at
 
   belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :proposals

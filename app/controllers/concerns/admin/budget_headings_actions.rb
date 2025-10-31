@@ -4,6 +4,7 @@ module Admin::BudgetHeadingsActions
   included do
     include Translatable
     include FeatureFlags
+
     feature_flag :budgets
 
     before_action :load_budget

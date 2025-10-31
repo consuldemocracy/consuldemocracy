@@ -4,6 +4,7 @@ describe Statisticable do
   before do
     dummy_stats = Class.new do
       include Statisticable
+
       attr_accessor :total
       stats_cache :total
 

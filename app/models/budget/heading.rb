@@ -6,6 +6,7 @@ class Budget
 
     translates :name, touch: true
     include Globalizable
+
     translation_class_delegate :budget
 
     class Translation
