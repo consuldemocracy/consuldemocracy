@@ -469,6 +469,9 @@ Rails/NotNullColumn:
   Exclude:
     - "db/migrate/201[5-7]*"
 
+Rails/OrderArguments:
+  Enabled: true
+
 Rails/OutputSafety:
   Enabled: true
   Severity: warning

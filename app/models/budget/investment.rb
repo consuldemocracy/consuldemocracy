@@ -69,8 +69,8 @@ class Budget
     scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc, id: :desc) }
     scope :sort_by_ballots,          -> { reorder(ballot_lines_count: :desc, id: :desc) }
     scope :sort_by_price,            -> { reorder(price: :desc, confidence_score: :desc, id: :desc) }
-    scope :sort_by_id,               -> { order("id DESC") }
-    scope :sort_by_supports,         -> { order("cached_votes_up DESC") }
+    scope :sort_by_id,               -> { order(id: :desc) }
+    scope :sort_by_supports,         -> { order(cached_votes_up: :desc) }
 
     scope :valuation_open,              -> { where(valuation_finished: false) }
     scope :with_admin,                  -> { where.not(administrator_id: nil) }

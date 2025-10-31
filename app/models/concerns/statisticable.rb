@@ -216,7 +216,7 @@ module Statisticable
     end
 
     def geozones
-      Geozone.order("name")
+      Geozone.order(:name)
     end
 
     def range_description(start, finish)
