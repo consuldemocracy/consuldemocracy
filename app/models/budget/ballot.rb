@@ -10,7 +10,9 @@ class Budget
     has_many :headings, -> { distinct }, through: :groups
 
     def add_investment(investment)
-      lines.create(investment: investment).persisted?
+      line = lines.create(investment: investment)
+
+      line if line.persisted?
     end
 
     def total_amount_spent
