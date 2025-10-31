@@ -26,10 +26,6 @@ class Verification::Email
     @plain_token, @encrypted_token = Devise.token_generator.generate(User, :email_verification_token)
   end
 
-  def self.find(user, token)
-    valid_token?(user, token)
-  end
-
   def self.valid_token?(user, token)
     Devise.token_generator.digest(User, :email_verification_token, user.email_verification_token) == token
   end
