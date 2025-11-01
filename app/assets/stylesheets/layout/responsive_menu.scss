@@ -1,0 +1,17 @@
+[data-responsive-toggle=responsive_menu] {
+  @include breakpoint(medium) {
+    display: none;
+  }
+
+  .menu-button {
+    border: 1px solid;
+    border-radius: $button-radius;
+    color: inherit;
+    padding: 0.6em;
+  }
+
+  .menu-icon {
+    @include hamburger($color: currentcolor, $color-hover: currentcolor);
+    cursor: inherit;
+  }
+}
