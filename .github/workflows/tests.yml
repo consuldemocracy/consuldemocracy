@@ -40,7 +40,7 @@ jobs:
         with:
           bundler-cache: true
       - name: Setup NPM
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v6
         with:
           cache: "npm"
           node-version-file: ".node-version"
