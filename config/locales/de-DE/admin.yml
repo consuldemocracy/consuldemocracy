@@ -1199,6 +1199,10 @@ de:
         results: Ergebnisse
         see_results: Ergebnisse anzeigen
         title: "Ergebnisse nach Wahlkabine"
+    poll_notification:
+      show:
+        send_btn: E-Mail-Benachrichtigung senden
+        send_at: Sendezeit
     booths:
       index:
         title: "Liste der aktiven Wahlkabinen"

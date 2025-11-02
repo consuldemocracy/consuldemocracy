@@ -182,6 +182,10 @@ namespace :admin do
 
         resources :recounts, only: :index
         resources :results, only: :index
+        scope do
+          post :notification, to: "notification#deliver", as: :notification_deliver
+          get :notification, to: "notification#show", as: :notification_show
+        end
       end
 
       resources :officers, only: [:index, :new, :create, :destroy] do

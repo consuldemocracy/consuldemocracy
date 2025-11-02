@@ -14,6 +14,7 @@ describe "Subscriptions" do
       expect(page).to have_field "Recibir emails con información interesante sobre la web", type: :checkbox
       expect(page).to have_field "Recibir resumen de notificaciones sobre propuestas", type: :checkbox
       expect(page).to have_field "Recibir emails con mensajes privados", type: :checkbox
+      expect(page).to have_field "Receive emails about new polls", type: :checkbox
       expect(page).to have_button "Guardar cambios"
     end
 
@@ -30,6 +31,7 @@ describe "Subscriptions" do
                    email_on_comment_reply: true,
                    newsletter: true,
                    email_digest: false,
+                   receive_poll_notifications: false,
                    email_on_direct_message: true)
       visit edit_subscriptions_path(token: user.subscriptions_token)
 
@@ -46,6 +48,7 @@ describe "Subscriptions" do
       expect(page).to have_field "Receive relevant information by email", checked: false
       expect(page).to have_field "Receive a summary of proposal notifications", checked: true
       expect(page).to have_field "Receive emails about direct messages", checked: false
+      expect(page).to have_field "Receive emails about new polls", checked: false
     end
   end
 end

@@ -1,6 +1,52 @@
 require "rails_helper"
 
 describe Mailer do
+  describe "#poll_notification" do
+    let(:user) { create(:user, locale: locale, receive_poll_notifications: true) }
+    let(:poll) { create(:poll) }
+
+    subject do
+      Mailer.poll_notification(poll, user)
+    end
+
+    before do
+      allow_any_instance_of(ActionMailer::MessageDelivery).to receive(:deliver_later), &:deliver_now
+    end
+
+    context "when de locale" do
+      let(:locale) { "de" }
+
+      it "has subject in de" do
+        decoded_body = subject.body.decoded
+        expect(decoded_body).to include("Sie können jetzt online abstimmen.")
+        expect(subject.message.to).to include(user.email)
+        expect(subject).to have_subject("Neue Umfrage gestartet: \"#{poll.title}\"")
+      end
+    end
+
+    context "when en locale" do
+      let(:locale) { "en" }
+
+      it "has subject in en" do
+        decoded_body = subject.body.decoded
+        expect(decoded_body).to include("You can now cast your vote online.")
+        expect(subject.message.to).to include(user.email)
+        expect(subject).to have_subject("New poll started: \"#{poll.title}\"")
+      end
+    end
+
+    context "when es locale" do
+      let(:locale) { "es" }
+
+      it "has subject in es" do
+        decoded_body = subject.body.decoded
+        expect(decoded_body).to include("Ahora puedes emitir tu voto en línea.")
+        expect(subject.message.to).to include(user.email)
+        expect(subject).to have_subject("Nueva encuesta iniciada: \"#{poll.title}\"")
+      end
+    end
+  end
+
   describe "#comment" do
     before do
       allow_any_instance_of(ActionMailer::MessageDelivery).to receive(:deliver_later), &:deliver_now
