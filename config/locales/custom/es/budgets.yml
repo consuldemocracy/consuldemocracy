@@ -76,8 +76,8 @@ es:
         already_supported: Ya has apoyado esta propuesta de proyecto de inversión. ¡Compártela!
         support_title: Apoyar esta propuesta
         confirm_group:
-          one: "Sólo puedes apoyar propuestas en %{count} distrito. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro/a?"
-          other: "Sólo puedes apoyar propuestas en %{count} distritos. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro/a?"
+          one: "Sólo puedes apoyar propuestas en %{count} distrito. ¿Estás seguro/a?"
+          other: "Sólo puedes apoyar propuestas en %{count} distritos. ¿Estás seguro/a?"
       header:
         different_heading_assigned: "Ya apoyaste propuestas de otra sección del presupuesto: %{heading_link}"
     show:
