@@ -61,15 +61,24 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       end
 
       if registered_user.present? || save_user
-        identity.update!(user: @user)
-        sign_in_and_redirect @user, event: :authentication
-        set_flash_message(:notice, :success, kind: provider.to_s.capitalize) if is_navigational_format?
+       identity.update!(user: @user)
+       if registered_user.gender.nil? && !registered_user.organization?
+          Rails.logger.info "ENTRANDO EN account_path"
+          sign_in @user  # Solo inicia sesión, sin redirect
+          redirect_to account_path  # Redirect manual  
+       else
+          Rails.logger.info "ENTRANDO EN INICIO"          
+          sign_in_and_redirect @user, event: :authentication
+          set_flash_message(:notice, :success, kind: provider.to_s.capitalize) if is_navigational_format?
+       end
       else
         session["devise.#{provider}_data"] = auth
 
         if provider.to_s == "ldap"
+          Rails.logger.info "→ Redirigiendo new_ldap_path"
           redirect new_ldap_path
         else
+          Rails.logger.info "→ redirect_to new_user_registration_url"
           redirect_to new_user_registration_url
         end
       end
