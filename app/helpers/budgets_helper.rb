@@ -92,8 +92,10 @@ module BudgetsHelper
   def display_support_alert?(investment)
     current_user &&
     !current_user.voted_in_group?(investment.group) &&
-    investment.group.headings.count > 1
+    investment.group.headings.count > 1 &&
+    investment.group.max_votable_headings < investment.group.headings.count
   end
+ 
 
   def link_to_create_budget_poll(budget)
     balloting_phase = budget.phases.find_by(kind: "balloting")

@@ -15,9 +15,9 @@ module Budgets
     before_action :verificar_permiso_creacion, only: [:new, :create]
 
 
-    load_and_authorize_resource :budget, except: :json_data
+    load_and_authorize_resource :budget, except: [:json_data, :vote, :unvote]
     load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment",
-                                except: :json_data
+                                except: [:json_data, :vote, :unvote]
 
     before_action :load_ballot, only: [:index, :show]
     before_action :load_heading, only: [:index, :show]
@@ -27,7 +27,7 @@ module Budgets
     before_action :set_view, only: :index
     before_action :load_content_blocks, only: :index
 
-    skip_authorization_check only: :json_data
+    skip_authorization_check only: [:json_data, :unvote, :vote]
 
     feature_flag :budgets
 
@@ -127,6 +127,9 @@ module Budgets
     end
 
     def vote
+      @budget = Budget.find_by_slug_or_id!(params[:budget_id])
+      @investment = @budget.investments.find(params[:id])
+      
       @investment.register_selection(current_user)
       load_investment_votes(@investment)
       respond_to do |format|
@@ -134,7 +137,27 @@ module Budgets
         format.js
       end
     end
-
+    
+    def unvote
+      @budget = Budget.find_by_slug_or_id!(params[:budget_id])
+      @investment = @budget.investments.find(params[:id])
+      
+      Rails.logger.info "="*50
+      Rails.logger.info "ENTRANDO A UNVOTE"
+      Rails.logger.info "Budget: #{@budget.id}"
+      Rails.logger.info "Investment: #{@investment.id}"
+      Rails.logger.info "="*50
+      
+      @investment.unvote_by(current_user)  # ← ESTE ES EL MÉTODO CORRECTO
+      
+      load_investment_votes(@investment)
+      
+      respond_to do |format|
+        format.js { render :vote }
+        format.html { redirect_to budget_investments_path(budget_id: @budget.id, heading_id: @investment.heading&.id) }
+      end
+    end
+    
     def suggest
       @resource_path_method = :namespaced_budget_investment_path
       @resource_relation    = resource_model.where(budget: @budget).apply_filters_and_search(@budget, params, @current_filter)

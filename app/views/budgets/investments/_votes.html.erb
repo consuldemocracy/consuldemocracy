@@ -12,15 +12,23 @@
     <% if user_voted_for %>
       <div class="supported callout success">
         <%= t("budgets.investments.investment.already_supported") %>
+
+        <%= link_to vote_budget_investment_path(investment.budget, investment),
+            class: "button alert small expanded",
+            title: t("budgets.investments.investment.remove_support"),
+            method: :delete,
+            remote: true do %>
+            <%= t("budgets.investments.investment.remove_support") %>
+        <% end %>
       </div>
     <% elsif investment.should_show_votes? %>
-      <%= link_to vote_url,
+      <%= link_to vote_budget_investment_path(investment.budget, investment),
           class: "button button-support small expanded",
           title: t("budgets.investments.investment.support_title"),
-          method: "post",
+          method: :post,
           remote: (display_support_alert?(investment) ? false : true),
-          data:   (display_support_alert?(investment) ? {
-                  confirm: t("budgets.investments.investment.confirm_group", count: investment.group.max_votable_headings) } : nil),
+          data: (display_support_alert?(investment) ? {
+            confirm: t("budgets.investments.investment.confirm_group", count: investment.group.max_votable_headings) } : nil),
           "aria-hidden" => css_for_aria_hidden(reason) do %>
         <%= t("budgets.investments.investment.give_support") %>
       <% end %>

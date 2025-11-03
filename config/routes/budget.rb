@@ -3,6 +3,7 @@ resources :budgets, only: [:show, :index] do
   resources :investments, controller: "budgets/investments" do
     member do
       post :vote
+      delete :vote, action: :unvote
       put :flag
       put :unflag
     end
