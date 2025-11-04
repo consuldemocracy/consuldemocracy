@@ -6,9 +6,17 @@
       <%= link_to t("account.show.erase_account_link"), users_registrations_delete_form_path, class: "delete" %>
     </div>
 
-    <%= avatar_image(@account, seed: @account.id, size: 100, class: "margin-bottom") %>
+    <%= avatar_image(@account, seed: @account.id, size: 100, class: "margin-bottom") %>   
 
     <h1 class="inline-block"><%= t("account.show.title") %></h1>
+
+     <div class="small-12 medium-10">
+            <% if !@account.organization? &&  @account.gender.nil? %>
+               <span style="font-weight:bold; color:#c24040;"><%= t("account.show.sexo_vacio") %></span>
+           <% end %>
+             
+    </div>
+
 
     <%= form_for @account, as: :account, url: account_path do |f| %>
       <%= render "shared/errors", resource: @account %>
@@ -33,7 +41,17 @@
 
           <div class="small-12 medium-10">
               <% unless @account.organization? %>
-		<%= f.select :gender, gender_select_options, { prompt: t("devise_views.users.registrations.new.gender.select"), label: t("devise_views.users.registrations.new.sexo") }, { required: true } %>
+	              <% if  !@account.gender.nil? %>
+                  <%= f.select :gender, gender_select_options, { prompt: t("devise_views.users.registrations.new.gender.select"), label: t("devise_views.users.registrations.new.sexo") }, { required: true } %>
+                <% else %>                
+                    <%= f.label :gender, t("devise_views.users.registrations.new.sexo"), style: "color:#c24040;" %>
+                    <%= f.select :gender,
+                                gender_select_options,
+                                { prompt: t("devise_views.users.registrations.new.gender.select"), label: false },
+                                { required: true } %>
+
+                <% end %> 
+
               <% end %>
           </div>
 
