@@ -480,7 +480,7 @@ GEM
       validate_url
       webfinger (~> 2.0)
     orm_adapter (0.5.0)
-    ostruct (0.6.2)
+    ostruct (0.6.3)
     parallel (1.27.0)
     paranoia (3.0.1)
       activerecord (>= 6, < 8.1)
@@ -664,7 +664,7 @@ GEM
       logger
     rubyzip (2.4.1)
     rugged (1.6.3)
-    rvm1-capistrano3 (1.4.0)
+    rvm1-capistrano3 (1.4.1)
       capistrano (~> 3.0)
       sshkit (>= 1.2)
     safely_block (0.4.1)
@@ -883,7 +883,7 @@ DEPENDENCIES
   rubocop-rails (~> 2.29.1)
   rubocop-rspec (~> 3.4.0)
   rubocop-rspec_rails (~> 2.30.0)
-  rvm1-capistrano3 (~> 1.4.0)
+  rvm1-capistrano3 (~> 1.4.1)
   sassc-embedded (~> 1.77.5)
   sassc-rails (~> 2.1.2)
   savon (~> 2.15.1)
