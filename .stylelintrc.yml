@@ -29,6 +29,7 @@ rules:
   max-nesting-depth: 4
   media-feature-name-no-vendor-prefix: true
   no-invalid-position-declaration: true
+  property-no-deprecated: true
   property-no-unknown: true
   property-no-vendor-prefix: true
   rule-empty-line-before:

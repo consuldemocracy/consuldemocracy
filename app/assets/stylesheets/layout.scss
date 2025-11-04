@@ -2020,7 +2020,7 @@ table {
   position: relative;
 
   a {
-    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   > :first-child {
@@ -2139,7 +2139,7 @@ table {
 
       &.description {
         color: $body-font-color;
-        word-wrap: break-word;
+        overflow-wrap: break-word;
       }
     }
   }
