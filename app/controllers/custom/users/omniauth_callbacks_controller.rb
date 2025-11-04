@@ -61,8 +61,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       end
 
       if registered_user.present? || save_user
-       identity.update!(user: @user)
-       if registered_user.gender.nil? && !registered_user.organization?
+       identity.update!(user: @user)       
+       if @user.gender.nil? && !@user.organization?
           Rails.logger.info "ENTRANDO EN account_path"
           sign_in @user  # Solo inicia sesión, sin redirect
           redirect_to account_path  # Redirect manual  
