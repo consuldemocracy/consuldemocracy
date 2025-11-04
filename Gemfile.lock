@@ -417,7 +417,7 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     net-ssh (7.3.0)
-    nio4r (2.7.4)
+    nio4r (2.7.5)
     nkf (0.2.0)
     nokogiri (1.18.10)
       mini_portile2 (~> 2.8.2)
@@ -525,7 +525,7 @@ GEM
       date
       stringio
     public_suffix (6.0.1)
-    puma (6.6.0)
+    puma (6.6.1)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (2.2.20)
@@ -875,7 +875,7 @@ DEPENDENCIES
   pronto-eslint (~> 0.11.1)
   pronto-rubocop (~> 0.11.6)
   pronto-stylelint (~> 0.11.1)
-  puma (~> 6.6.0)
+  puma (~> 6.6.1)
   rails (~> 7.1.5.2)
   recipient_interceptor (~> 0.3.3)
   redcarpet (~> 3.6.1)
