@@ -58,6 +58,7 @@ namespace :sensemaker do
       check_repository(logger)
       check_is_enabled(logger)
       check_sensemaker_cli(logger)
+      check_web_ui_health(logger)
       logger.info "Sensemaker installation verified you can now use the Sensemaker Tools."
     end
 
@@ -72,7 +73,6 @@ namespace :sensemaker do
 
       any_missing = false
 
-      # Check each secret individually
       required_secrets.each do |key, description|
         value = Tenant.current_secrets.send(key)
         if value.present?
@@ -83,7 +83,6 @@ namespace :sensemaker do
         end
       end
 
-      # raise an error if any were missing
       if any_missing
         abort "Error: One or more Sensemaker environment variables not found. Please check the logs."
       else
@@ -113,6 +112,27 @@ namespace :sensemaker do
         logger.warn "✗ Sensemaker CLI is not working correctly."
         logger.warn output
         raise "Sensemaker CLI is not working correctly."
+      end
+    end
+
+    def check_web_ui_health(logger)
+      logger.info "Checking web-ui health..."
+
+      visualization_path = Sensemaker::JobRunner.visualization_folder
+      output_file = "#{Sensemaker::JobRunner.sensemaker_data_folder}/web-ui-health-check-#{Time.current.to_i}.html"
+
+      command = %Q(node #{visualization_path}/health_check.js --outputFile #{output_file})
+
+      output = `cd #{visualization_path} && #{command} 2>&1`
+      result = $?.exitstatus
+
+      if result.eql?(0)
+        logger.info "✓ Web-ui health check passed."
+        logger.info output
+      else
+        logger.warn "✗ Web-ui health check failed."
+        logger.warn output
+        raise "Web-ui health check failed."
       end
     end
 
@@ -196,7 +216,6 @@ namespace :sensemaker do
     end
 
     def setup_for_tenant(logger)
-      # Try to get paths from Sensemaker::JobRunner, but provide fallbacks for installation/setup
       begin
         sensemaker_path = Sensemaker::JobRunner.sensemaker_folder
         visualization_path = Sensemaker::JobRunner.visualization_folder
@@ -254,21 +273,18 @@ namespace :sensemaker do
     def check_dependencies(logger)
       logger.info "Checking environment dependencies..."
 
-      # Check if Node.js is available
       unless system("which node > /dev/null 2>&1")
         logger.warn "Node.js not found. Please install Node.js to use the Sensemaker feature."
         raise "Node.js not found. Please install Node.js to use the Sensemaker feature."
       end
       logger.info "✓ Node.js found: #{`node --version`.strip}"
 
-      # Check if npm is available
       unless system("which npm > /dev/null 2>&1")
         logger.warn "npm not found. Please install npm to use the Sensemaker feature."
         raise "npm not found. Please install npm to use the Sensemaker feature."
       end
       logger.info "✓ npm found: #{`npm --version`.strip}"
 
-      # Check if npx is available
       unless system("which npx > /dev/null 2>&1")
         logger.warn "npx not found. Please install npx to use the Sensemaker feature."
         raise "npx not found. Please install npx to use the Sensemaker feature."
@@ -281,18 +297,14 @@ namespace :sensemaker do
     def setup_sensemaker_directory(sensemaker_path, logger)
       logger.info "Setting up sensemaking-tools directory..."
 
-      # Check if we're in a Capistrano deployment
       shared_path = Rails.root.join("../../shared")
       in_capistrano = File.directory?(shared_path)
 
       if in_capistrano
         logger.info "Detected Capistrano deployment structure"
 
-        # In Capistrano, vendor/sensemaking-tools should be a symlink to shared/vendor/sensemaking-tools
-        # Check if the directory exists in the shared path
         File.join(shared_path, "vendor/sensemaking-tools")
 
-        # Check if the symlink exists and points to the right place
         unless File.symlink?(sensemaker_path) && File.directory?(sensemaker_path)
           logger.warn %(
             "WARNING: vendor/sensemaking-tools is not properly linked to shared/vendor/sensemaking-tools"
@@ -302,7 +314,6 @@ namespace :sensemaker do
         end
       end
 
-      # Create directory if it doesn't exist (for both Capistrano and non-Capistrano environments)
       FileUtils.mkdir_p(sensemaker_path) unless File.directory?(sensemaker_path)
 
       logger.info "Sensemaker directory created."
@@ -406,13 +417,8 @@ namespace :sensemaker do
 
     def set_file_permissions(sensemaker_path, data_path, logger)
       logger.info "Setting file permissions..."
-
-      # Set permissions for the sensemaker directory
       FileUtils.chmod_R(0755, sensemaker_path)
-
-      # Set permissions for the data directory
       FileUtils.chmod_R(0755, data_path)
-
       logger.info "File permissions set."
     end
 
