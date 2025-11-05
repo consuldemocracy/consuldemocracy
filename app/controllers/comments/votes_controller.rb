@@ -1,37 +1,50 @@
-module Comments
-  class VotesController < ApplicationController
-    before_action :authenticate_user!
-    load_and_authorize_resource :comment
-    load_and_authorize_resource through: :comment, through_association: :votes_for, only: :destroy
-    before_action :verify_comments_open!
+# app/controllers/comments/votes_controller.rb
+class Comments::VotesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :load_comment
+  load_and_authorize_resource through: :comment, through_association: :votes_for, only: [:destroy, :update]
 
-    def create
-      authorize! :create, Vote.new(voter: current_user, votable: @comment)
-      @comment.vote_by(voter: current_user, vote: params[:value])
+  # POST /comments/:comment_id/votes
+  def create
+    authorize! :create, Vote.new(voter: current_user, votable: @comment)
 
-      respond_to do |format|
-        format.html { redirect_to request.referer, notice: I18n.t("flash.actions.create.vote") }
-        format.js { render :show }
-      end
+    # --- THIS IS THE FINAL FIX ---
+    #
+    # We read the `params[:value]` from the URL (sent by our smart component)
+    # and use the standard `acts_as_votable` methods.
+    #
+    if params[:value] == "yes"
+      @comment.vote_up(current_user)
+    elsif params[:value] == "no"
+      @comment.vote_down(current_user)
     end
+    # --- END OF FINAL FIX ---
 
-    def destroy
-      @comment.unvote_by(current_user)
+    respond_to { |format| format.js { render :show } }
+  end
 
-      respond_to do |format|
-        format.html { redirect_to request.referer, notice: I18n.t("flash.actions.destroy.vote") }
-        format.js { render :show }
-      end
-    end
+  # PATCH /comments/:comment_id/votes/:id
+  # This action is correct and uses the new `vote_params` logic
+  def update
+    @vote.update(vote_params)
+    respond_to { |format| format.js { render :show } }
+  end
 
-    private
+  # DELETE /comments/:comment_id/votes/:id
+  # This action is correct
+  def destroy
+    @vote.destroy
+    respond_to { |format| format.js { render :show } }
+  end
 
-      def verify_comments_open!
-        return if current_user.administrator? || current_user.moderator?
+  private
 
-        if @comment.commentable.respond_to?(:comments_closed?) && @comment.commentable.comments_closed?
-          redirect_to polymorphic_path(@comment.commentable), alert: t("comments.comments_closed")
-        end
-      end
+  def load_comment
+    @comment = Comment.find(params[:comment_id])
+  end
+
+  # This is needed by the `update` action
+  def vote_params
+    params.require(:vote).permit(:vote_weight, :vote_flag)
   end
 end

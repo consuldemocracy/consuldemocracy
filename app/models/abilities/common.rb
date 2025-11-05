@@ -81,8 +81,11 @@ module Abilities
       can [:create, :destroy], DirectUpload
 
       unless user.organization?
-        can [:create, :destroy], ActsAsVotable::Vote, voter_id: user.id, votable_type: "Debate"
-        can [:create, :destroy], ActsAsVotable::Vote, voter_id: user.id, votable_type: "Comment"
+        can [:create, :update, :destroy], ActsAsVotable::Vote, voter_id: user.id, votable_type: "Debate"
+        can [:create, :update, :destroy], ActsAsVotable::Vote, voter_id: user.id, votable_type: "Comment"
+
+        can [:create, :update, :destroy], Vote, voter_id: user.id, votable_type: "Debate"
+        can [:create, :update, :destroy], Vote, voter_id: user.id, votable_type: "Comment"
       end
 
       if user.level_two_or_three_verified?

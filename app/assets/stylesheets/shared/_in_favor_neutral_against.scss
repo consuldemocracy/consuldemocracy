@@ -1,0 +1,94 @@
+/* app/assets/stylesheets/shared/_in_favor_neutral_against.scss */
+
+// CHANGE 1: Rename this class to match your new component
+.in-favor-neutral-against {
+  @include flex-with-gap($line-height * 0.75);
+
+  &,
+  .in-favor,
+  .against,
+  .neutral, // <-- Add .neutral here
+  form {
+    display: inline-block;
+  }
+
+  button {
+    background: #fff;
+    border-radius: rem-calc(3);
+    color: $dark-gray;
+    display: inline-block;
+    font-size: rem-calc(30);
+    line-height: rem-calc(30);
+    padding: rem-calc(3) rem-calc(6) rem-calc(6);
+    position: relative;
+
+    &[aria-pressed=true] {
+      border-style: inset;
+      border-width: 3px 2px 2px 3px;
+
+      &:active {
+        border-style: outset;
+        border-width: 2px 3px 3px 2px;
+      }
+    }
+
+    &[aria-pressed=false] {
+      border-style: outset;
+      border-width: 2px 3px 3px 2px;
+
+      &:active {
+        border-style: inset;
+        border-width: 3px 2px 2px 3px;
+      }
+    }
+  }
+
+  // This is the SASS mixin from your file. No change needed.
+  @mixin like-unlike-icon($icon, $pressed-color) {
+    @include has-fa-icon($icon, regular);
+
+    &:not([disabled]) {
+      cursor: pointer;
+
+      &[aria-pressed=false]:hover,
+      &[aria-pressed=false]:active {
+        @include has-fa-icon($icon, solid);
+      }
+
+      &[aria-pressed=true] {
+        @include has-fa-icon($icon, solid);
+        background: $pressed-color;
+        border-color: $pressed-color;
+        color: #fff;
+
+        &:hover,
+        &:active {
+          @include has-fa-icon($icon, regular);
+        }
+      }
+    }
+  }
+
+  .in-favor button {
+    @include like-unlike-icon(thumbs-up, $like);
+  }
+
+  .against button {
+    @include like-unlike-icon(thumbs-down, $unlike);
+  }
+
+  // CHANGE 2: Add this new rule for the "Don't Know" button
+  .neutral button {
+    // We use the 'question-circle' icon from Font Awesome 5
+    // and assume you have a $neutral or $medium-gray color variable.
+    // Use $dark-gray as a fallback if $neutral isn't defined.
+    $neutral-color: if(global-variable-exists(neutral), $neutral, $dark-gray);
+    @include like-unlike-icon(question-circle, $neutral-color);
+  }
+
+  .percentage {
+    display: block;
+    font-size: $small-font-size;
+    line-height: $line-height;
+  }
+}
