@@ -20,7 +20,9 @@ es:
         unselected_title: Prouestas no seleccionadas para la votación final
         unselected: Ver los prouestas no seleccionadas para la votación final
     phase:
+      informing: Asambleas informativas
       accepting: Presentación de propuestas
+      selecting: Recogida de apoyos
       reviewing: Revisión interna de propuestas
       valuating: Evaluación de propuestas
     index:
