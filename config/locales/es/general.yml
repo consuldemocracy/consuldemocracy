@@ -25,7 +25,7 @@ es:
       username_label: Nombre de usuario
       verified_account: Cuenta verificada
       verify_my_account: Verificar mi cuenta
-      sexo_vacio: 'Por favor, indique su sexo o la opción "Prefiero no contestar".'
+      sexo_vacio: 'Por favor, indique su sexo o la opción "Prefiero no contestar" y pulse "Guardar cambios" para continuar.'
   application:
     close: Cerrar
     menu: Menú
