@@ -1,9 +1,9 @@
 plugins:
   - rubocop-capybara
   - rubocop-factory_bot
+  - rubocop-performance
   - rubocop-rspec
 require:
-  - rubocop-performance
   - rubocop-rails
   - rubocop-rspec_rails
 
@@ -384,6 +384,9 @@ Performance/StartWith:
   Enabled: true
 
 Performance/Sum:
+  Enabled: true
+
+Performance/ZipWithoutBlock:
   Enabled: true
 
 Rails/ActionControllerFlashBeforeRender:
