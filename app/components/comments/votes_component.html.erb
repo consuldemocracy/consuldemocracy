@@ -1,20 +1,25 @@
 <%# app/components/comments/votes_component.html.erb %>
 
 <div class="votes">
-  <%= t("comments.comment.votes", count: comment.total_votes) %>
+  <strong><%= t("comments.comment.votes", count: comment.total_votes) %></strong>
   &nbsp;|&nbsp;
 
-  <div class="in-favor">
-    <%= render Shared::VoteButtonComponent.new(comment,
-                                               value: "yes",
-                                               title: t("votes.agree")) %>
-    <%= comment.total_likes %>
-  </div>
+      <div class="in-favor">
+        <%= render Shared::VoteButtonComponent.new(@comment,
+                                                   weight: 1,
+                                                   title: t("votes.agree")) %>
+      </div>
+      
+      <div class="neutral">
+        <%= render Shared::VoteButtonComponent.new(@comment,
+                                                   weight: 0,
+                                                   title: t("votes.dont_know", default: "Don't Know")) %>
+      </div>
 
-  <div class="against">
-    <%= render Shared::VoteButtonComponent.new(comment,
-                                               value: "no",
-                                               title: t("votes.disagree")) %>
-    <%= comment.total_dislikes %>
-  </div>
+      <div class="against">
+        <%= render Shared::VoteButtonComponent.new(@comment,
+                                                   weight: -1,
+                                                   title: t("votes.disagree")) %>
+      </div>
+
 </div>

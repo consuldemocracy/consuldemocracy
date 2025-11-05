@@ -1,6 +1,5 @@
 /* app/assets/stylesheets/shared/_in_favor_neutral_against.scss */
 
-// CHANGE 1: Rename this class to match your new component
 .in-favor-neutral-against {
   @include flex-with-gap($line-height * 0.75);
 
@@ -43,7 +42,6 @@
     }
   }
 
-  // This is the SASS mixin from your file. No change needed.
   @mixin like-unlike-icon($icon, $pressed-color) {
     @include has-fa-icon($icon, regular);
 
@@ -77,7 +75,6 @@
     @include like-unlike-icon(thumbs-down, $unlike);
   }
 
-  // CHANGE 2: Add this new rule for the "Don't Know" button
   .neutral button {
     // We use the 'question-circle' icon from Font Awesome 5
     // and assume you have a $neutral or $medium-gray color variable.

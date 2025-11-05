@@ -8,30 +8,23 @@ class Comments::VotesController < ApplicationController
   def create
     authorize! :create, Vote.new(voter: current_user, votable: @comment)
 
-    # --- THIS IS THE FINAL FIX ---
-    #
-    # We read the `params[:value]` from the URL (sent by our smart component)
-    # and use the standard `acts_as_votable` methods.
-    #
-    if params[:value] == "yes"
-      @comment.vote_up(current_user)
-    elsif params[:value] == "no"
-      @comment.vote_down(current_user)
-    end
-    # --- END OF FINAL FIX ---
+    # This expects `vote_params` from the button, not `params[:value]`.
+    @comment.vote_by(
+      voter: current_user,
+      vote_weight: vote_params[:vote_weight],
+      vote_flag: vote_params[:vote_flag]
+    )
 
     respond_to { |format| format.js { render :show } }
   end
 
   # PATCH /comments/:comment_id/votes/:id
-  # This action is correct and uses the new `vote_params` logic
   def update
     @vote.update(vote_params)
     respond_to { |format| format.js { render :show } }
   end
 
   # DELETE /comments/:comment_id/votes/:id
-  # This action is correct
   def destroy
     @vote.destroy
     respond_to { |format| format.js { render :show } }
@@ -43,7 +36,6 @@ class Comments::VotesController < ApplicationController
     @comment = Comment.find(params[:comment_id])
   end
 
-  # This is needed by the `update` action
   def vote_params
     params.require(:vote).permit(:vote_weight, :vote_flag)
   end

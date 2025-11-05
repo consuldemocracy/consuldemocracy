@@ -1780,7 +1780,8 @@ table {
   }
 
   .in-favor,
-  .against {
+  .against,
+  .neutral {
     display: inline;
   }
 
@@ -1790,6 +1791,10 @@ table {
 
   .against button {
     @include like-unlike-icon(thumbs-down, $unlike);
+  }
+
+  .neutral button {
+    @include like-unlike-icon(question-circle, $dark-gray);
   }
 }
 
