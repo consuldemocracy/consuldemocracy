@@ -7,7 +7,7 @@
     }
 
     &.description {
-      word-break: break-word;
+      overflow-wrap: anywhere;
     }
   }
 
