@@ -58,47 +58,5 @@
     <% end %>
   </div>
 
-  <table class="margin-top">
-    <caption><%= t("admin.questions.show.valid_answers") %></caption>
-    <thead>
-      <tr>
-        <th><%= t("admin.questions.show.answers.title") %></th>
-        <th scope="col" class="medium-7"><%= t("admin.questions.show.answers.description") %></th>
-        <th scope="col" class="text-center"><%= t("admin.questions.show.answers.images") %></th>
-        <th scope="col" class="text-center"><%= t("admin.questions.show.answers.documents") %></th>
-        <th scope="col" class="text-center"><%= t("admin.questions.show.answers.videos") %></th>
-        <th><%= t("admin.actions.actions") %></th>
-      </tr>
-    </thead>
-
-    <tbody class="sortable" data-js-url="<%= admin_question_options_order_options_path(@question.id) %>">
-      <% @question.question_options.each do |option| %>
-        <tr id="<%= dom_id(option) %>" class="poll_question_option" data-option-id="<%= option.id %>">
-          <td class="align-top"><%= option.title %></td>
-          <td class="align-top break"><%= wysiwyg(option.description) %></td>
-          <td class="align-top text-center">
-            (<%= option.images.count %>)
-            <br>
-            <%= link_to t("admin.questions.show.answers.images_list"),
-                        admin_option_images_path(option) %>
-          </td>
-          <td class="align-top text-center">
-            (<%= option.documents.count rescue 0 %>)
-            <br>
-            <%= link_to t("admin.questions.show.answers.documents_list"),
-                        admin_option_documents_path(option) %>
-          </td>
-          <td class="align-top text-center">
-            (<%= option.videos.count %>)
-            <br>
-            <%= link_to t("admin.questions.show.answers.video_list"),
-                        admin_option_videos_path(option) %>
-          </td>
-          <td>
-            <%= render Admin::Poll::Questions::Options::TableActionsComponent.new(option) %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <%= render Admin::Poll::Questions::Options::TableComponent.new(@question) %>
 <% end %>
