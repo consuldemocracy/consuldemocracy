@@ -1,3 +1,19 @@
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Bloquear navegación mientras gender sea nil en BD
+    var genderRequired = <%= @account.gender.nil? %>;
+    
+    if (genderRequired) {
+      document.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          alert('Debe seleccionar su sexo y guardar los cambios antes de continuar.');
+          document.querySelector('[name*="[gender]"]').focus();
+        });
+      });      
+    }
+  });
+</script>
 <div class="row account">
   <div class="small-12 column">
     <div class="float-right text-right">
