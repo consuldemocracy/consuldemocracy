@@ -3,7 +3,7 @@ class Admin::SiteCustomization::PagesController < Admin::SiteCustomization::Base
   load_and_authorize_resource :page, class: "SiteCustomization::Page"
 
   def index
-    @pages = SiteCustomization::Page.order("slug").page(params[:page])
+    @pages = SiteCustomization::Page.order(:slug).page(params[:page])
   end
 
   def create

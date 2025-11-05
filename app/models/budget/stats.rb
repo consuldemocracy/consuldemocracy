@@ -75,7 +75,7 @@ class Budget::Stats
 
   def headings
     groups = Hash.new(0)
-    budget.headings.order("id ASC").each do |heading|
+    budget.headings.order(:id).each do |heading|
       groups[heading.id] = Hash.new(0).merge(calculate_heading_totals(heading))
     end
 
