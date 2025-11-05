@@ -1,4 +1,8 @@
 namespace :sensemaker do
+  def self.git_tag
+    "v1.0.0"
+  end
+
   desc "Setup Sensemaker Integration"
   task setup: :environment do
     logger = ApplicationLogger.new
@@ -159,9 +163,15 @@ namespace :sensemaker do
       if File.directory?(sensemaker_path) && File.directory?(File.join(sensemaker_path, ".git"))
         logger.info "✓ sensemaking-tools repository found: #{sensemaker_path}"
         Dir.chdir(sensemaker_path) do
-          logger.info "  Current branch: #{`git rev-parse --abbrev-ref HEAD`.strip} "
-          logger.info "  Latest commit: #{`git log -1 --pretty=format:"%h %s"`.strip}"
-          logger.info "  Last updated: #{`git log -1 --pretty=format:"%ci"`.strip}"
+          current_tag = `git describe --exact-match --tags HEAD 2>/dev/null`.strip
+          if current_tag.eql?(self.class.git_tag)
+            logger.info "✓ sensemaking-tools repository is using the expected tag: #{self.class.git_tag}"
+          else
+            logger.warn "⚠ sensemaking-tools repository tag is '#{current_tag}', not '#{self.class.git_tag}'"
+          end
+          logger.info " - Current branch: #{`git rev-parse --abbrev-ref HEAD`.strip} "
+          logger.info " - Latest commit: #{`git log -1 --pretty=format:"%h %s"`.strip}"
+          logger.info " - Last updated: #{`git log -1 --pretty=format:"%ci"`.strip}"
         end
       else
         logger.warn "✗ sensemaking-tools repository not found at: #{sensemaker_path}"
@@ -329,24 +339,24 @@ namespace :sensemaker do
       repo_url = "https://github.com/CoslaDigital/sensemaking-tools.git"
 
       if File.directory?(File.join(sensemaker_path, ".git"))
-        logger.info "Repository already exists, updating..."
+        logger.info "Repository already exists, updating to tag #{self.class.git_tag}..."
         Dir.chdir(sensemaker_path) do
-          system("git fetch --all")
-          system("git reset --hard origin/main")
+          system("git fetch --all --tags")
+          system("git checkout #{self.class.git_tag}")
 
           if $?.success?
-            logger.info "Repository updated successfully."
+            logger.info "Repository updated successfully to tag #{self.class.git_tag}."
           else
-            logger.warn "Failed to update repository."
-            raise "Failed to update repository."
+            logger.warn "Failed to update repository to tag #{self.class.git_tag}."
+            raise "Failed to update repository to tag #{self.class.git_tag}."
           end
         end
       else
-        logger.info "Cloning sensemaking-tools repository..."
-        system("git clone #{repo_url} #{sensemaker_path}")
+        logger.info "Cloning sensemaking-tools repository (tag #{self.class.git_tag})..."
+        system("git clone -b #{self.class.git_tag} #{repo_url} #{sensemaker_path}")
 
         if $?.success?
-          logger.info "Repository cloned successfully."
+          logger.info "Repository cloned successfully with tag #{self.class.git_tag}."
         else
           logger.warn "Failed to clone repository."
           raise "Failed to clone repository."
