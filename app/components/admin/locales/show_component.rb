@@ -1,5 +1,6 @@
 class Admin::Locales::ShowComponent < ApplicationComponent
   include Header
+
   attr_reader :locales_settings
 
   def initialize(locales_settings)

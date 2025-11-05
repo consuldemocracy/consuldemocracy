@@ -1,6 +1,7 @@
 class Management::BaseController < ActionController::Base
   include TenantVariants
   include GlobalizeFallbacks
+
   layout "management"
   default_form_builder ConsulFormBuilder
 

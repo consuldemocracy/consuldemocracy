@@ -1,6 +1,7 @@
 class Budgets::Investments::FormComponent < ApplicationComponent
   include TranslatableFormHelper
   include GlobalizeHelper
+
   attr_reader :investment, :url
   use_helpers :current_user, :budget_heading_select_options, :suggest_data
 

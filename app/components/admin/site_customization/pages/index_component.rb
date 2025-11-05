@@ -1,5 +1,6 @@
 class Admin::SiteCustomization::Pages::IndexComponent < ApplicationComponent
   include Header
+
   attr_reader :pages
 
   def initialize(pages)

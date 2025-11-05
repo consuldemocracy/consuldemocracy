@@ -3,6 +3,7 @@ require "rails_helper"
 describe HasFilters do
   controller(ActionController::Base) do
     include HasFilters
+
     has_filters ["all", "pending", "reviewed"], only: :index
 
     def index

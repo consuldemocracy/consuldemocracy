@@ -1,5 +1,6 @@
 class Admin::ActionComponent < ApplicationComponent
   include Admin::Namespace
+
   attr_reader :action, :record, :options
 
   def initialize(action, record, **options)

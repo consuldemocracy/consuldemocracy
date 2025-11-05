@@ -1,6 +1,7 @@
 class SiteCustomization::Page < ApplicationRecord
   VALID_STATUSES = %w[draft published].freeze
   include Cardable
+
   translates :title,       touch: true
   translates :subtitle,    touch: true
   translates :content,     touch: true

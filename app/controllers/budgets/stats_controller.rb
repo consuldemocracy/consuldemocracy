@@ -1,6 +1,7 @@
 module Budgets
   class StatsController < ApplicationController
     include FeatureFlags
+
     feature_flag :budgets
 
     before_action :load_budget

@@ -1,5 +1,6 @@
 class Admin::Tenants::EditComponent < ApplicationComponent
   include Header
+
   attr_reader :tenant
 
   def initialize(tenant)

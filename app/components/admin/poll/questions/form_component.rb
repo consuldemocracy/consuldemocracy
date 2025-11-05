@@ -1,6 +1,7 @@
 class Admin::Poll::Questions::FormComponent < ApplicationComponent
   include TranslatableFormHelper
   include GlobalizeHelper
+
   attr_reader :question, :url
   use_helpers :can?
 

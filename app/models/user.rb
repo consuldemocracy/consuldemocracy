@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   include Verification
+
   attribute :registering_from_web, default: false
   %i[newsletter email_digest email_on_direct_message public_activity recommended_debates
      recommended_proposals].each do |field|

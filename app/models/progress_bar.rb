@@ -8,6 +8,7 @@ class ProgressBar < ApplicationRecord
 
   translates :title, touch: true
   include Globalizable
+
   translation_class_delegate :primary?
 
   validates :progressable, presence: true

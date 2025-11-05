@@ -101,6 +101,9 @@ Layout/EmptyLineBetweenDefs:
 Layout/EmptyLines:
   Enabled: true
 
+Layout/EmptyLinesAfterModuleInclusion:
+  Enabled: true
+
 Layout/EmptyLinesAroundAccessModifier:
   Enabled: true
 
@@ -732,6 +735,9 @@ Style/ArrayCoercion:
 Style/ArrayIntersect:
   Enabled: true
 
+Style/ArrayIntersectWithSingleElement:
+  Enabled: true
+
 Style/BlockDelimiters:
   Enabled: true
 
@@ -745,6 +751,9 @@ Style/ClassVars:
   Enabled: true
 
 Style/CollectionMethods:
+  Enabled: true
+
+Style/CollectionQuerying:
   Enabled: true
 
 Style/ComparableBetween:

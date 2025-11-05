@@ -1,6 +1,7 @@
 class Proposals::FormComponent < ApplicationComponent
   include TranslatableFormHelper
   include GlobalizeHelper
+
   attr_reader :proposal, :url
   use_helpers :current_user, :suggest_data, :geozone_select_options
 
