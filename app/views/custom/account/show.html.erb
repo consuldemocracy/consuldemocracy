@@ -10,12 +10,19 @@
 
     <h1 class="inline-block"><%= t("account.show.title") %></h1>
 
-     <div class="small-12 medium-10">
-            <% if !@account.organization? &&  @account.gender.nil? %>
-               <span style="font-weight:bold; color:#c24040;"><%= t("account.show.sexo_vacio") %></span>
-           <% end %>
-             
-    </div>
+       <div class="small-12 medium-7">
+        <% if !@account.organization? &&  @account.gender.nil? %>
+          <div id="sexo_vacio" data-alert class="callout warning" data-closable>
+            <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <strong>    
+              <span><%= t("account.show.sexo_vacio") %></span>           
+            </strong>
+          </div>
+           
+         <% end %>
+      </div>
 
 
     <%= form_for @account, as: :account, url: account_path do |f| %>
@@ -48,7 +55,7 @@
                     <%= f.select :gender,
                                 gender_select_options,
                                 { prompt: t("devise_views.users.registrations.new.gender.select"), label: false },
-                                { required: true } %>
+                                { required: true, style: "color:#c24040;" } %>
 
                 <% end %> 
 
