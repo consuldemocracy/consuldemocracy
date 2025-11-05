@@ -21,6 +21,6 @@ class Shared::InFavorNeutralAgainstComponent < ApplicationComponent
   end
 
   def neutral_aria_label
-    t("votes.neutral_label", title: votable.title, default: "Vote 'Don't Know' on #{votable.title}")
+    t("votes.neutral_label", title: votable.title)
   end
 end

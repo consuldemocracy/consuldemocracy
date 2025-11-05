@@ -16,7 +16,7 @@
     <%= render Shared::VoteButtonComponent.new(votable,
                                                weight: 0,
                                                "aria-label": neutral_aria_label,
-                                               title: t("votes.dont_know", default: "Don't Know")) %>
+                                               title: t("votes.dont_know")) %>
     <span class="percentage"><%= vote_percentage_for_weight(votable, 0) %></span>
   </div>
 

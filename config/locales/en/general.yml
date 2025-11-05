@@ -839,6 +839,8 @@ en:
     anonymous: Too many anonymous votes to admit vote %{verify_account}.
     disagree: I disagree
     disagree_label: "I don't agree with %{title}"
+    dont_know: Not Sure
+    neutral_label: "Vote 'Not Sure' on %{title}"
     organizations: Organizations are not permitted to vote
     supports: Supports
     verified_only: Only verified users can vote on proposals; %{verify_account}.
