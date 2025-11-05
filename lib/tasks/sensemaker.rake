@@ -119,7 +119,7 @@ namespace :sensemaker do
       logger.info "Checking web-ui health..."
 
       visualization_path = Sensemaker::JobRunner.visualization_folder
-      output_file = "#{Sensemaker::JobRunner.sensemaker_data_folder}/web-ui-health-check-#{Time.current.to_i}.html"
+      output_file = "#{Sensemaker::JobRunner.sensemaker_data_folder}/health-check-#{Time.current.to_i}.html"
 
       command = %Q(node #{visualization_path}/health_check.js --outputFile #{output_file})
 
