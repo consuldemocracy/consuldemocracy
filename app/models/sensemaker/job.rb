@@ -26,6 +26,7 @@ module Sensemaker
 
     belongs_to :analysable, polymorphic: true, optional: true
 
+    before_save :set_persisted_output_if_successful
     after_destroy :cleanup_associated_files
 
     scope :published, -> { where(published: true) }
@@ -41,10 +42,6 @@ module Sensemaker
 
     def errored?
       error.present?
-    end
-
-    def has_output?
-      persisted_output.present? && File.exist?(persisted_output)
     end
 
     def cancelled?
@@ -112,29 +109,50 @@ module Sensemaker
       ["advanced_runner.ts", "runner.ts"].include?(script)
     end
 
+    def default_output_path
+      File.join(Sensemaker::JobRunner.sensemaker_data_folder, output_file_name)
+    end
+
     def output_artifact_paths
-      base = File.join(Sensemaker::JobRunner.sensemaker_data_folder, output_file_name)
+      if persisted_output.present?
+        base_path = persisted_output
+      else
+        base_path = default_output_path
+      end
 
       case script
       when "advanced_runner.ts"
         [
-          "#{base}-summary.json",
-          "#{base}-topic-stats.json",
-          "#{base}-comments-with-scores.json"
+          "#{base_path}-summary.json",
+          "#{base_path}-topic-stats.json",
+          "#{base_path}-comments-with-scores.json"
         ]
       when "runner.ts"
         [
-          "#{base}-summary.json",
-          "#{base}-summary.html",
-          "#{base}-summary.md",
-          "#{base}-summaryAndSource.csv"
+          "#{base_path}-summary.json",
+          "#{base_path}-summary.html",
+          "#{base_path}-summary.md",
+          "#{base_path}-summaryAndSource.csv"
         ]
       else
-        [File.join(Sensemaker::JobRunner.sensemaker_data_folder, output_file_name)]
+        [base_path]
       end
     end
 
+    def has_outputs?
+      output_artifact_paths.all? { |path| File.exist?(path) }
+    end
+
     private
+
+      def set_persisted_output_if_successful
+        return unless finished_at.present? && error.nil?
+        return if persisted_output.present?
+
+        if has_outputs?
+          self.persisted_output = default_output_path
+        end
+      end
 
       def cleanup_associated_files
         data_folder = Sensemaker::JobRunner.sensemaker_data_folder

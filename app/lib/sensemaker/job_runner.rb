@@ -148,7 +148,9 @@ module Sensemaker
         return unless check_dependencies?
         return if execute_script.blank?
 
-        process_output
+        attribs = { finished_at: Time.current }
+        attribs = attribs.merge(error: "Output file(s) not found") unless job.has_outputs?
+        job.update!(attribs)
       rescue Exception => e
         handle_error(e)
         raise e
@@ -312,22 +314,6 @@ module Sensemaker
           message = "Command: #{command}\n\n#{output}"
           job.update!(finished_at: Time.current, error: message)
           Rails.logger.error("Sensemaker::JobRunner error: #{output}")
-          nil
-        end
-      end
-
-      def process_output
-        if job.script == "advanced_runner.ts" || job.script == "runner.ts"
-          path_to_check = "#{output_file}-summary.json"
-        else
-          path_to_check = output_file
-        end
-
-        if File.exist?(path_to_check)
-          job.update!(finished_at: Time.current, persisted_output: path_to_check)
-          true
-        else
-          job.update!(finished_at: Time.current, error: "Output file not found")
           nil
         end
       end

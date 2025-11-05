@@ -149,7 +149,6 @@ describe Admin::Sensemaker::JobsController do
       allow_any_instance_of(Sensemaker::JobRunner).to receive(:check_dependencies?).and_return(false)
       allow_any_instance_of(Sensemaker::JobRunner).to receive(:prepare_input_data)
       allow_any_instance_of(Sensemaker::JobRunner).to receive(:execute_script).and_return("")
-      allow_any_instance_of(Sensemaker::JobRunner).to receive(:process_output)
 
       expect do
         post :create, params: valid_params

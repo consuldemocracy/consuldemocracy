@@ -50,7 +50,6 @@ describe Sensemaker::JobRunner do
 
     it "stops if execute_script returns false" do
       expect(service).to receive(:execute_script).and_return(false)
-      expect(service).not_to receive(:process_output)
 
       service.run
     end
@@ -374,62 +373,112 @@ describe Sensemaker::JobRunner do
     end
   end
 
-  describe "#process_output" do
+  describe "#execute_job_workflow" do
     let(:service) { Sensemaker::JobRunner.new(job) }
+    let(:data_folder) { "/tmp/sensemaker_test_folder/data" }
 
     before do
+      allow(Sensemaker::JobRunner).to receive(:sensemaker_data_folder).and_return(data_folder)
       allow(File).to receive(:exist?).and_return(true)
+      allow(service).to receive(:system).with("which node > /dev/null 2>&1").and_return(true)
+      allow(service).to receive(:system).with("which npx > /dev/null 2>&1").and_return(true)
+      allow(service).to receive_messages(project_id: "sensemaker-466109", check_dependencies?: true,
+                                         execute_script: "success")
+      allow(service).to receive(:prepare_input_data)
     end
 
-    it "returns true and sets persisted_output when the output file exists" do
-      allow(File).to receive(:exist?).with(service.output_file).and_return(true)
+    context "when all output files exist" do
+      it "sets finished_at and does not set error" do
+        allow(job).to receive(:has_outputs?).and_return(true)
 
-      result = service.send(:process_output)
+        service.send(:execute_job_workflow)
 
-      expect(result).to be true
+        job.reload
+        expect(job.finished_at).to be_present
+        expect(job.error).to be(nil)
+      end
 
-      job.reload
-      expect(job.persisted_output).to eq(service.output_file)
+      it "triggers the callback to set persisted_output" do
+        job.script = "categorization_runner.ts"
+        output_path = "#{data_folder}/categorization-output-#{job.id}.csv"
+        allow(File).to receive(:exist?).with(output_path).and_return(true)
+        allow(job).to receive(:has_outputs?).and_return(true)
+
+        service.send(:execute_job_workflow)
+
+        job.reload
+        expect(job.persisted_output).to eq(job.default_output_path)
+      end
     end
 
-    it "uses the summary.json file for runner.ts outputs" do
-      job.update!(script: "runner.ts")
-      service = Sensemaker::JobRunner.new(job)
-      summary_path = "#{service.output_file}-summary.json"
-      allow(File).to receive(:exist?).with(summary_path).and_return(true)
+    context "when output files do not exist" do
+      it "sets finished_at and error message" do
+        allow(job).to receive(:has_outputs?).and_return(false)
 
-      result = service.send(:process_output)
+        service.send(:execute_job_workflow)
 
-      expect(result).to be true
+        job.reload
+        expect(job.finished_at).to be_present
+        expect(job.error).to eq("Output file(s) not found")
+      end
 
-      job.reload
-      expect(job.persisted_output).to eq(summary_path)
+      it "does not set persisted_output" do
+        allow(job).to receive(:has_outputs?).and_return(false)
+
+        service.send(:execute_job_workflow)
+
+        job.reload
+        expect(job.persisted_output).to be(nil)
+      end
     end
 
-    it "sets persisted_output to the output file for single-html-build.js script" do
-      job.update!(script: "single-html-build.js")
-      service = Sensemaker::JobRunner.new(job)
+    context "for advanced_runner.ts" do
+      let(:service) { Sensemaker::JobRunner.new(job) }
 
-      allow(File).to receive(:exist?).with(service.output_file).and_return(true)
+      before do
+        job.update!(script: "advanced_runner.ts")
+        allow(service).to receive_messages(check_dependencies?: true, execute_script: "success")
+        allow(service).to receive(:prepare_input_data)
+      end
 
-      result = service.send(:process_output)
+      it "checks all output files exist" do
+        base_path = "#{data_folder}/output-#{job.id}"
+        allow(File).to receive(:exist?).with("#{base_path}-summary.json").and_return(true)
+        allow(File).to receive(:exist?).with("#{base_path}-topic-stats.json").and_return(true)
+        allow(File).to receive(:exist?).with("#{base_path}-comments-with-scores.json").and_return(true)
 
-      expect(result).to be true
+        service.send(:execute_job_workflow)
 
-      job.reload
-      expect(job.persisted_output).to eq(service.output_file)
+        job.reload
+        expect(job.finished_at).to be_present
+        expect(job.error).to be(nil)
+        expect(job.persisted_output).to eq(job.default_output_path)
+      end
     end
 
-    it "returns nil and updates the job when the output file does not exist" do
-      allow(File).to receive(:exist?).with(service.output_file).and_return(false)
+    context "for runner.ts" do
+      let(:service) { Sensemaker::JobRunner.new(job) }
 
-      result = service.send(:process_output)
+      before do
+        job.update!(script: "runner.ts")
+        allow(service).to receive_messages(check_dependencies?: true, execute_script: "success")
+        allow(service).to receive(:prepare_input_data)
+      end
 
-      expect(result).to be nil
+      it "checks all output files exist" do
+        base_path = "#{data_folder}/output-#{job.id}"
+        allow(File).to receive(:exist?).with("#{base_path}-summary.json").and_return(true)
+        allow(File).to receive(:exist?).with("#{base_path}-summary.html").and_return(true)
+        allow(File).to receive(:exist?).with("#{base_path}-summary.md").and_return(true)
+        allow(File).to receive(:exist?).with("#{base_path}-summaryAndSource.csv").and_return(true)
 
-      job.reload
-      expect(job.finished_at).to be_present
-      expect(job.error).to eq("Output file not found")
+        service.send(:execute_job_workflow)
+
+        job.reload
+        expect(job.finished_at).to be_present
+        expect(job.error).to be(nil)
+        expect(job.persisted_output).to eq(job.default_output_path)
+      end
     end
   end
 

@@ -128,24 +128,165 @@ describe Sensemaker::Job do
       end
     end
 
-    describe "#has_output?" do
-      it "returns true when persisted_output is present and file exists" do
-        job.persisted_output = "/path/to/existing/file.txt"
-        allow(File).to receive(:exist?).and_return(false) # default
-        allow(File).to receive(:exist?).with("/path/to/existing/file.txt").and_return(true)
-        expect(job.has_output?).to be true
+    describe "#default_output_path" do
+      let(:data_folder) { "/tmp/sensemaker_test_folder/data" }
+
+      before do
+        allow(Sensemaker::JobRunner).to receive(:sensemaker_data_folder).and_return(data_folder)
       end
 
-      it "returns false when persisted_output is nil" do
-        job.persisted_output = nil
-        expect(job.has_output?).to be false
+      it "returns the correct path for categorization_runner.ts" do
+        job.script = "categorization_runner.ts"
+        expect(job.default_output_path).to eq("#{data_folder}/categorization-output-#{job.id}.csv")
       end
 
-      it "returns false when persisted_output is present but file does not exist" do
-        job.persisted_output = "/path/to/nonexistent/file.txt"
-        allow(File).to receive(:exist?).and_return(false) # default
-        allow(File).to receive(:exist?).with("/path/to/nonexistent/file.txt").and_return(false)
-        expect(job.has_output?).to be false
+      it "returns the correct path for advanced_runner.ts" do
+        job.script = "advanced_runner.ts"
+        expect(job.default_output_path).to eq("#{data_folder}/output-#{job.id}")
+      end
+
+      it "returns the correct path for runner.ts" do
+        job.script = "runner.ts"
+        expect(job.default_output_path).to eq("#{data_folder}/output-#{job.id}")
+      end
+    end
+
+    describe "#output_artifact_paths" do
+      let(:data_folder) { "/tmp/sensemaker_test_folder/data" }
+      let(:base_path) { "#{data_folder}/output-#{job.id}" }
+
+      before do
+        allow(Sensemaker::JobRunner).to receive(:sensemaker_data_folder).and_return(data_folder)
+      end
+
+      context "when persisted_output is not set" do
+        it "uses default_output_path for single output scripts" do
+          job.script = "categorization_runner.ts"
+          expected_path = "#{data_folder}/categorization-output-#{job.id}.csv"
+          expect(job.output_artifact_paths).to eq([expected_path])
+        end
+
+        it "uses default_output_path for advanced_runner.ts" do
+          job.script = "advanced_runner.ts"
+          expect(job.output_artifact_paths).to eq([
+            "#{base_path}-summary.json",
+            "#{base_path}-topic-stats.json",
+            "#{base_path}-comments-with-scores.json"
+          ])
+        end
+
+        it "uses default_output_path for runner.ts" do
+          job.script = "runner.ts"
+          expect(job.output_artifact_paths).to eq([
+            "#{base_path}-summary.json",
+            "#{base_path}-summary.html",
+            "#{base_path}-summary.md",
+            "#{base_path}-summaryAndSource.csv"
+          ])
+        end
+      end
+
+      context "when persisted_output is set" do
+        let(:persisted_path) { "/historical/path/output-#{job.id}" }
+
+        before do
+          job.persisted_output = persisted_path
+        end
+
+        it "uses persisted_output for single output scripts" do
+          job.script = "categorization_runner.ts"
+          expect(job.output_artifact_paths).to eq([persisted_path])
+        end
+
+        it "uses persisted_output for advanced_runner.ts" do
+          job.script = "advanced_runner.ts"
+          expect(job.output_artifact_paths).to eq([
+            "#{persisted_path}-summary.json",
+            "#{persisted_path}-topic-stats.json",
+            "#{persisted_path}-comments-with-scores.json"
+          ])
+        end
+
+        it "uses persisted_output for runner.ts" do
+          job.script = "runner.ts"
+          expect(job.output_artifact_paths).to eq([
+            "#{persisted_path}-summary.json",
+            "#{persisted_path}-summary.html",
+            "#{persisted_path}-summary.md",
+            "#{persisted_path}-summaryAndSource.csv"
+          ])
+        end
+      end
+    end
+
+    describe "#has_outputs?" do
+      let(:data_folder) { "/tmp/sensemaker_test_folder/data" }
+
+      before do
+        allow(Sensemaker::JobRunner).to receive(:sensemaker_data_folder).and_return(data_folder)
+        allow(File).to receive(:exist?).and_return(false)
+      end
+
+      context "when script has single output" do
+        before do
+          job.script = "categorization_runner.ts"
+        end
+
+        it "returns true when the output file exists" do
+          output_path = "#{data_folder}/categorization-output-#{job.id}.csv"
+          allow(File).to receive(:exist?).with(output_path).and_return(true)
+          expect(job.has_outputs?).to be true
+        end
+
+        it "returns false when the output file does not exist" do
+          expect(job.has_outputs?).to be false
+        end
+      end
+
+      context "when script has multiple outputs (advanced_runner.ts)" do
+        before do
+          job.script = "advanced_runner.ts"
+        end
+
+        it "returns true when all output files exist" do
+          base_path = "#{data_folder}/output-#{job.id}"
+          allow(File).to receive(:exist?).with("#{base_path}-summary.json").and_return(true)
+          allow(File).to receive(:exist?).with("#{base_path}-topic-stats.json").and_return(true)
+          allow(File).to receive(:exist?).with("#{base_path}-comments-with-scores.json").and_return(true)
+          expect(job.has_outputs?).to be true
+        end
+
+        it "returns false when not all output files exist" do
+          base_path = "#{data_folder}/output-#{job.id}"
+          allow(File).to receive(:exist?).with("#{base_path}-summary.json").and_return(true)
+          allow(File).to receive(:exist?).with("#{base_path}-topic-stats.json").and_return(true)
+          allow(File).to receive(:exist?).with("#{base_path}-comments-with-scores.json").and_return(false)
+          expect(job.has_outputs?).to be false
+        end
+      end
+
+      context "when script has multiple outputs (runner.ts)" do
+        before do
+          job.script = "runner.ts"
+        end
+
+        it "returns true when all output files exist" do
+          base_path = "#{data_folder}/output-#{job.id}"
+          allow(File).to receive(:exist?).with("#{base_path}-summary.json").and_return(true)
+          allow(File).to receive(:exist?).with("#{base_path}-summary.html").and_return(true)
+          allow(File).to receive(:exist?).with("#{base_path}-summary.md").and_return(true)
+          allow(File).to receive(:exist?).with("#{base_path}-summaryAndSource.csv").and_return(true)
+          expect(job.has_outputs?).to be true
+        end
+
+        it "returns false when not all output files exist" do
+          base_path = "#{data_folder}/output-#{job.id}"
+          allow(File).to receive(:exist?).with("#{base_path}-summary.json").and_return(true)
+          allow(File).to receive(:exist?).with("#{base_path}-summary.html").and_return(true)
+          allow(File).to receive(:exist?).with("#{base_path}-summary.md").and_return(true)
+          allow(File).to receive(:exist?).with("#{base_path}-summaryAndSource.csv").and_return(false)
+          expect(job.has_outputs?).to be false
+        end
       end
     end
 
@@ -285,6 +426,111 @@ describe Sensemaker::Job do
   end
 
   describe "callbacks" do
+    describe "before_save :set_persisted_output_if_successful" do
+      let(:data_folder) { "/tmp/sensemaker_test_folder/data" }
+
+      before do
+        allow(Sensemaker::JobRunner).to receive(:sensemaker_data_folder).and_return(data_folder)
+        allow(File).to receive(:exist?).and_return(false)
+      end
+
+      context "when job is successful (finished_at present, no error)" do
+        context "when persisted_output is not set" do
+          context "when all output files exist" do
+            it "sets persisted_output to default_output_path" do
+              job.script = "categorization_runner.ts"
+              output_path = "#{data_folder}/categorization-output-#{job.id}.csv"
+              allow(File).to receive(:exist?).with(output_path).and_return(true)
+
+              job.finished_at = Time.current
+              job.error = nil
+              job.save!
+
+              expect(job.persisted_output).to eq(job.default_output_path)
+            end
+
+            it "sets persisted_output for advanced_runner.ts when all files exist" do
+              job.script = "advanced_runner.ts"
+              base_path = "#{data_folder}/output-#{job.id}"
+              allow(File).to receive(:exist?).with("#{base_path}-summary.json").and_return(true)
+              allow(File).to receive(:exist?).with("#{base_path}-topic-stats.json").and_return(true)
+              allow(File).to receive(:exist?).with("#{base_path}-comments-with-scores.json").and_return(true)
+
+              job.finished_at = Time.current
+              job.error = nil
+              job.save!
+
+              expect(job.persisted_output).to eq(job.default_output_path)
+            end
+
+            it "sets persisted_output for runner.ts when all files exist" do
+              job.script = "runner.ts"
+              base_path = "#{data_folder}/output-#{job.id}"
+              allow(File).to receive(:exist?).with("#{base_path}-summary.json").and_return(true)
+              allow(File).to receive(:exist?).with("#{base_path}-summary.html").and_return(true)
+              allow(File).to receive(:exist?).with("#{base_path}-summary.md").and_return(true)
+              allow(File).to receive(:exist?).with("#{base_path}-summaryAndSource.csv").and_return(true)
+
+              job.finished_at = Time.current
+              job.error = nil
+              job.save!
+
+              expect(job.persisted_output).to eq(job.default_output_path)
+            end
+          end
+
+          context "when not all output files exist" do
+            it "does not set persisted_output" do
+              job.script = "advanced_runner.ts"
+              base_path = "#{data_folder}/output-#{job.id}"
+              allow(File).to receive(:exist?).with("#{base_path}-summary.json").and_return(true)
+              allow(File).to receive(:exist?).with("#{base_path}-topic-stats.json").and_return(true)
+              allow(File).to receive(:exist?).with("#{base_path}-comments-with-scores.json").and_return(false)
+
+              job.finished_at = Time.current
+              job.error = nil
+              job.save!
+
+              expect(job.persisted_output).to be(nil)
+            end
+          end
+        end
+
+        context "when persisted_output is already set" do
+          it "does not overwrite existing persisted_output" do
+            existing_path = "/existing/path/output-#{job.id}"
+            job.persisted_output = existing_path
+
+            job.finished_at = Time.current
+            job.error = nil
+            job.save!
+
+            expect(job.persisted_output).to eq(existing_path)
+          end
+        end
+      end
+
+      context "when job is not finished" do
+        it "does not set persisted_output" do
+          job.finished_at = nil
+          job.error = nil
+          job.save!
+
+          expect(job.persisted_output).to be(nil)
+        end
+      end
+
+      context "when job has an error" do
+        it "does not set persisted_output" do
+          job.finished_at = Time.current
+          job.error = "Some error occurred"
+          job.save!
+
+          expect(job.persisted_output).to be(nil)
+        end
+      end
+    end
+
     describe "after_destroy" do
       let(:data_folder) { "/tmp/sensemaker_test_folder/data" }
 
