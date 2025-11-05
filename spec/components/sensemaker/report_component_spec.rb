@@ -71,7 +71,6 @@ describe Sensemaker::ReportComponent do
       end
 
       before do
-        # Create the actual file so has_output? returns true
         FileUtils.mkdir_p(File.dirname(job.persisted_output))
         File.write(job.persisted_output, "<html><body>Test Report</body></html>")
       end
@@ -115,7 +114,6 @@ describe Sensemaker::ReportComponent do
                      analysable_id: debate.id,
                      finished_at: Time.current,
                      persisted_output: Rails.root.join("tmp", "test-report.html").to_s)
-        # Create the actual file so has_output? returns true
         FileUtils.mkdir_p(File.dirname(job.persisted_output))
         File.write(job.persisted_output, "<html><body>Test Report</body></html>")
       end

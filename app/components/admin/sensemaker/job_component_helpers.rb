@@ -24,7 +24,7 @@ module Admin::Sensemaker::JobComponentHelpers
   end
 
   def can_publish?
-    job.script == "single-html-build.js" && job.finished? && !job.errored? && job.has_output?
+    job.script == "single-html-build.js" && job.finished? && !job.errored? && job.has_outputs?
   end
 
   def is_published?

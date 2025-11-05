@@ -10,13 +10,13 @@ class Sensemaker::ReportComponent < ApplicationComponent
   end
 
   def report_url
-    return nil unless latest_successful_job&.has_output?
+    return nil unless latest_successful_job&.has_outputs?
 
     sensemaker_job_path(latest_successful_job.id)
   end
 
   def report_available?
-    latest_successful_job.present? && latest_successful_job.has_output?
+    latest_successful_job.present? && latest_successful_job.has_outputs?
   end
 
   def analysis_title

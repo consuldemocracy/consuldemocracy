@@ -5,7 +5,7 @@ class Sensemaker::JobsController < ApplicationController
     job = Sensemaker::Job.find(params[:id])
     authorize! :read, job
 
-    if job.has_output?
+    if job.has_outputs?
       send_file job.persisted_output,
                 filename: File.basename(job.persisted_output),
                 disposition: "inline",
