@@ -1,5 +1,6 @@
 class Admin::Sensemaker::NewComponent < ApplicationComponent
   include Header
+
   attr_reader :sensemaker_job
 
   def initialize(sensemaker_job, search_results, result_count)

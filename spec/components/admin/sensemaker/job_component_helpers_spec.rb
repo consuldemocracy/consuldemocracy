@@ -4,6 +4,7 @@ describe Admin::Sensemaker::JobComponentHelpers do
   let(:test_class) do
     Class.new do
       include Admin::Sensemaker::JobComponentHelpers
+
       attr_reader :job
 
       def initialize(job)

@@ -1,7 +1,7 @@
 class Admin::Sensemaker::IndexComponent < ApplicationComponent
   include Header
-  attr_reader :sensemaker_jobs
-  attr_reader :running_jobs
+
+  attr_reader :sensemaker_jobs, :running_jobs
 
   def initialize(sensemaker_jobs, running_jobs)
     @sensemaker_jobs = sensemaker_jobs
