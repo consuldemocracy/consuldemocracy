@@ -18,7 +18,6 @@ module Sensemaker
 
     def comments
       if @target.is_a?(Legislation::QuestionOption)
-        # Case 2: Filter comments by users who selected this option
         user_ids = @target.answers.pluck(:user_id)
         if user_ids.any?
           @target.question.comments.includes(:user).where(hidden_at: nil, user_id: user_ids)
@@ -26,7 +25,6 @@ module Sensemaker
           Comment.none
         end
       elsif @target.is_a?(Budget) || @target.is_a?(Budget::Group)
-        # Case 3: Return investments wrapped as comment-like items
         investments = @target.investments.includes(:author).where(hidden_at: nil)
         investments.map do |investment|
           CommentLikeItem.new(
@@ -39,7 +37,6 @@ module Sensemaker
           )
         end
       elsif @analysable_type == "Proposal" && @analysable_id.nil?
-        # Case 4: All proposals (class without ID)
         proposals = Proposal.includes(:author).where(hidden_at: nil)
         proposals.map do |proposal|
           CommentLikeItem.new(
@@ -52,7 +49,6 @@ module Sensemaker
           )
         end
       else
-        # Case 1: Standard commentables
         @target.comments.includes(:user).where(hidden_at: nil)
       end
     end
@@ -70,10 +66,6 @@ module Sensemaker
       end
     end
 
-    # Returns a human-readable label for the target
-    # Options:
-    #   :format - :short (default, for UI display), :full (with class name and ID),
-    #             :name_only (just the class name for Class targets)
     def target_label(format: :short)
       if @target.is_a?(Class)
         case format

@@ -68,3 +68,25 @@ en:
       single_html_build_js:
         title: "Report"
         description: "Analyse and generate a report in HTML format"
+
+    report_view:
+      title: "Sensemaker Report"
+      intro_text: "Here you can find the output of an analysis produced using %{link}."
+      sensemaker_tools_link: "Sensemaker tools"
+      explanatory_text:
+        poll: "The comments for the poll titled \"%{poll_name}\" were analysed to produce a report."
+        debate: "The comments for the debate titled \"%{debate_title}\" were analysed to produce a report."
+        proposal: "The comments for the proposal titled \"%{proposal_title}\" were analysed to produce a report."
+        legislation_proposal: "The comments for the legislation proposal titled \"%{proposal_title}\" were analysed to produce a report."
+        legislation_question: "The comments for the debate titled \"%{question_name}\" were analysed to produce a report."
+        legislation_question_option: "The comments segmented by people who chose the \"%{option_value}\" option were analysed for the debate titled \"%{question_name}\"."
+        budget: "The proposed investments for the budget titled \"%{budget_name}\" were analysed to produce a report."
+        budget_group: "The proposed investments for the budget group titled \"%{group_name}\" were analysed to produce a report."
+        generic: "The text for \"%{resource_name}\" was analysed to produce a report. "
+        all_proposals: "The text for all citizen proposals were analysed to produce a report."
+      metadata_title: "Analysis Details"
+      run_timestamp_label: "Analysis run on"
+      comments_analysed_label: "Comments analysed"
+      comments_count_placeholder: "Information not available"
+      report_description: "The report contains detailed analysis of the conversation, including topic identification, categorization, and areas of agreement and disagreement."
+      view_report: "View Report"

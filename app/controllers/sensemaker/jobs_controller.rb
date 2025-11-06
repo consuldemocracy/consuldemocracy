@@ -2,6 +2,18 @@ class Sensemaker::JobsController < ApplicationController
   skip_authorization_check
 
   def show
+    @sensemaker_job = Sensemaker::Job.find(params[:id])
+    authorize! :read, @sensemaker_job
+
+    unless @sensemaker_job.has_outputs?
+      head :not_found
+      nil
+    end
+  rescue ActiveRecord::RecordNotFound
+    head :not_found
+  end
+
+  def serve_report
     job = Sensemaker::Job.find(params[:id])
     authorize! :read, job
 

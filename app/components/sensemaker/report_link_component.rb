@@ -1,4 +1,4 @@
-class Sensemaker::ReportComponent < ApplicationComponent
+class Sensemaker::ReportLinkComponent < ApplicationComponent
   attr_reader :analysable_resource
 
   def initialize(analysable_resource)
