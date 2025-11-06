@@ -1,0 +1,43 @@
+<table class="poll-question-options-table">
+  <caption><%= t("admin.questions.show.valid_answers") %></caption>
+  <thead>
+    <tr>
+      <th><%= t("admin.questions.show.answers.title") %></th>
+      <th scope="col" class="description"><%= t("admin.questions.show.answers.description") %></th>
+      <th scope="col" class="association-count"><%= t("admin.questions.show.answers.images") %></th>
+      <th scope="col" class="association-count"><%= t("admin.questions.show.answers.documents") %></th>
+      <th scope="col" class="association-count"><%= t("admin.questions.show.answers.videos") %></th>
+      <th><%= t("admin.actions.actions") %></th>
+    </tr>
+  </thead>
+
+  <tbody data-js-url="<%= admin_question_options_order_options_path(question.id) %>">
+    <% question.question_options.each do |option| %>
+      <tr id="<%= dom_id(option) %>" class="poll_question_option" data-option-id="<%= option.id %>">
+        <td><%= option.title %></td>
+        <td class="description"><%= wysiwyg(option.description) %></td>
+        <td class="association-count">
+          (<%= option.images.count %>)
+          <br>
+          <%= link_to t("admin.questions.show.answers.images_list"),
+                      admin_option_images_path(option) %>
+        </td>
+        <td class="association-count">
+          (<%= option.documents.count rescue 0 %>)
+          <br>
+          <%= link_to t("admin.questions.show.answers.documents_list"),
+                      admin_option_documents_path(option) %>
+        </td>
+        <td class="association-count">
+          (<%= option.videos.count %>)
+          <br>
+          <%= link_to t("admin.questions.show.answers.video_list"),
+                      admin_option_videos_path(option) %>
+        </td>
+        <td>
+          <%= render Admin::Poll::Questions::Options::TableActionsComponent.new(option) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

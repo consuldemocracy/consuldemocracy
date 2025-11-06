@@ -94,7 +94,7 @@ describe "Poll question options", :admin do
 
     visit admin_question_path(question)
 
-    within("tbody.sortable") do
+    within(".poll-question-options-table tbody") do
       expect("First").to appear_before("Last")
 
       find("tr", text: "Last").drag_to(find("tr", text: "First"))
