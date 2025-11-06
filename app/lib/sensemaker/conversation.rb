@@ -59,16 +59,13 @@ module Sensemaker
 
     def compile_context
       if @target.is_a?(Legislation::QuestionOption)
-        # Use question context + add note about filtering
         question_context = self.class.compile_context_for_target(@target.question,
                                                                  comments_count: comments.size)
         filter_note = I18n.t("sensemaker.context.question_option.filter_note", option_value: @target.value)
         "#{question_context}\n\n#{filter_note}"
       elsif @analysable_type == "Proposal" && @analysable_id.nil?
-        # Generic "all Proposals" context
         I18n.t("sensemaker.context.proposals.all")
       else
-        # Use standard context compilation (Budget, Budget::Group, or other commentables)
         self.class.compile_context_for_target(@target, comments_count: comments.size)
       end
     end

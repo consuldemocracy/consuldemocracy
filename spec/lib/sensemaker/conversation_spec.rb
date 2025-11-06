@@ -90,6 +90,40 @@ describe Sensemaker::Conversation do
       expect(context_result).to include("- #{question.question_options.last.value}")
     end
 
+    it "can compile context for Budget with investments" do
+      budget = create(:budget)
+      expect(budget.persisted?).to be true
+
+      3.times do
+        create(:budget_investment, budget: budget)
+      end
+
+      conversation = Sensemaker::Conversation.new("Budget", budget.id)
+      context_result = conversation.compile_context
+
+      expect(context_result).to be_present
+      expect(context_result).to include("- Comments: #{conversation.comments.size}")
+      expect(conversation.comments.size).to eq(3)
+    end
+
+    it "can compile context for Budget::Group with investments" do
+      budget = create(:budget)
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group)
+      expect(group.persisted?).to be true
+
+      3.times do
+        create(:budget_investment, heading: heading)
+      end
+
+      conversation = Sensemaker::Conversation.new("Budget::Group", group.id)
+      context_result = conversation.compile_context
+
+      expect(context_result).to be_present
+      expect(context_result).to include("- Comments: #{conversation.comments.size}")
+      expect(conversation.comments.size).to eq(3)
+    end
+
     it "can compile context for other target types" do
       target_types = Sensemaker::Job::ANALYSABLE_TYPES - ["Poll", "Legislation::Question",
                                                           "Legislation::Proposal", "Debate",
