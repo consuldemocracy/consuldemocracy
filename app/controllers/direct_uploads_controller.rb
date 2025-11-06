@@ -1,6 +1,7 @@
 class DirectUploadsController < ApplicationController
   include DirectUploadsHelper
   include ActionView::Helpers::UrlHelper
+
   before_action :authenticate_user!
 
   skip_authorization_check only: :create

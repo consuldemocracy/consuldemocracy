@@ -2,6 +2,7 @@ class Admin::BudgetsWizard::BudgetsController < Admin::BudgetsWizard::BaseContro
   include Translatable
   include ImageAttributes
   include FeatureFlags
+
   feature_flag :budgets
 
   load_and_authorize_resource

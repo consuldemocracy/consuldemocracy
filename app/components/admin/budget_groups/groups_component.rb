@@ -1,5 +1,6 @@
 class Admin::BudgetGroups::GroupsComponent < ApplicationComponent
   include Admin::Namespace
+
   attr_reader :groups
 
   def initialize(groups)

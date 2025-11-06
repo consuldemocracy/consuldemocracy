@@ -1,4 +1,4 @@
-require:
+plugins:
   - rubocop-capybara
   - rubocop-factory_bot
   - rubocop-performance
@@ -23,9 +23,8 @@ Bundler/OrderedGems:
   Enabled: true
   ConsiderPunctuation: true
 
-Capybara/ClickLinkOrButtonStyle:
+Capybara/AmbiguousClick:
   Enabled: true
-  EnforcedStyle: strict
 
 Capybara/CurrentPathExpectation:
   Enabled: true
@@ -100,6 +99,9 @@ Layout/EmptyLineBetweenDefs:
   Enabled: true
 
 Layout/EmptyLines:
+  Enabled: true
+
+Layout/EmptyLinesAfterModuleInclusion:
   Enabled: true
 
 Layout/EmptyLinesAroundAccessModifier:
@@ -386,6 +388,9 @@ Performance/StartWith:
 Performance/Sum:
   Enabled: true
 
+Performance/ZipWithoutBlock:
+  Enabled: true
+
 Rails/ActionControllerFlashBeforeRender:
   Enabled: true
 
@@ -438,6 +443,9 @@ Rails/FindBy:
   Exclude:
     - "config/initializers/ahoy.rb"
 
+Rails/FindByOrAssignmentMemoization:
+  Enabled: true
+
 Rails/FindEach:
   Enabled: true
 
@@ -465,6 +473,9 @@ Rails/NotNullColumn:
   Enabled: true
   Exclude:
     - "db/migrate/201[5-7]*"
+
+Rails/OrderArguments:
+  Enabled: true
 
 Rails/OutputSafety:
   Enabled: true
@@ -623,6 +634,9 @@ RSpec/Focus:
 RSpec/HookArgument:
   Enabled: true
 
+RSpec/IncludeExamples:
+  Enabled: true
+
 RSpec/InstanceVariable:
   Enabled: true
   Exclude:
@@ -721,6 +735,9 @@ Style/ArrayCoercion:
 Style/ArrayIntersect:
   Enabled: true
 
+Style/ArrayIntersectWithSingleElement:
+  Enabled: true
+
 Style/BlockDelimiters:
   Enabled: true
 
@@ -734,6 +751,9 @@ Style/ClassVars:
   Enabled: true
 
 Style/CollectionMethods:
+  Enabled: true
+
+Style/CollectionQuerying:
   Enabled: true
 
 Style/ComparableBetween:

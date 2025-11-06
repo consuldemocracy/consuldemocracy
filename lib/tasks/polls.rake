@@ -94,7 +94,7 @@ namespace :polls do
         option_finder.unmanageable_choices.each do |choice, ids|
           tenant_info = " on tenant #{Tenant.current_schema}" unless Tenant.default?
 
-          if ids.count == 0
+          if ids.none?
             logger.warn "Skipping poll_answers with the text \"#{choice}\" for the poll_question " \
                         "with ID #{question.id}. This question has no poll_question_answers " \
                         "containing the text \"#{choice}\"" + tenant_info.to_s
@@ -185,7 +185,7 @@ namespace :polls do
         option_finder.unmanageable_choices.each do |choice, ids|
           tenant_info = " on tenant #{Tenant.current_schema}" unless Tenant.default?
 
-          if ids.count == 0
+          if ids.none?
             logger.warn "Skipping poll_partial_results with the text \"#{choice}\" for the poll_question " \
                         "with ID #{question.id}. This question has no poll_question_answers " \
                         "containing the text \"#{choice}\"" + tenant_info.to_s

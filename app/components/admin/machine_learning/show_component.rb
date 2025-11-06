@@ -1,5 +1,6 @@
 class Admin::MachineLearning::ShowComponent < ApplicationComponent
   include Header
+
   attr_reader :machine_learning_job
 
   def initialize(machine_learning_job)

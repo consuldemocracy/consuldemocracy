@@ -1,5 +1,6 @@
 class Poll::Stats
   include Statisticable
+
   alias_method :poll, :resource
 
   CHANNELS = Poll::Voter::VALID_ORIGINS

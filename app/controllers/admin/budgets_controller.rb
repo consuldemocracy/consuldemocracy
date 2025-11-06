@@ -3,6 +3,7 @@ class Admin::BudgetsController < Admin::BaseController
   include ReportAttributes
   include ImageAttributes
   include FeatureFlags
+
   feature_flag :budgets
 
   has_filters %w[all open finished], only: :index

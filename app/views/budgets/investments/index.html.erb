@@ -45,7 +45,7 @@
 
     <%= render Shared::AdvancedSearchComponent.new %>
 
-    <% if unfeasible_or_unselected_filter %>
+    <% if unfeasible_or_unselected_filter? %>
       <ul class="no-bullet submenu">
         <li class="inline-block">
           <%= link_to current_path_with_query_params(order: "random", page: 1),

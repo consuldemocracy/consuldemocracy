@@ -11,7 +11,9 @@ class Verification::Management::Email
   delegate :username, to: :user, allow_nil: true
 
   def user
-    @user ||= User.find_by(email: email)
+    return @user if defined?(@user)
+
+    @user = User.find_by(email: email)
   end
 
   def user?
@@ -40,7 +42,7 @@ class Verification::Management::Email
   private
 
     def validate_user
-      return if errors.count > 0
+      return if errors.any?
 
       if !user?
         errors.add(:email, I18n.t("errors.messages.user_not_found"))
@@ -50,7 +52,7 @@ class Verification::Management::Email
     end
 
     def validate_document_number
-      return if errors.count > 0
+      return if errors.any?
 
       if document_number_mismatch?
         errors.add(

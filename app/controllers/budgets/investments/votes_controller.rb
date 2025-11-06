@@ -2,6 +2,7 @@ module Budgets
   module Investments
     class VotesController < ApplicationController
       include FeatureFlags
+
       feature_flag :remove_investments_supports, only: :destroy
 
       load_and_authorize_resource :budget

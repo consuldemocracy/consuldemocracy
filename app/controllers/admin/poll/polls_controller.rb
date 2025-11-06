@@ -2,6 +2,7 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
   include Translatable
   include ImageAttributes
   include ReportAttributes
+
   load_and_authorize_resource
 
   before_action :load_geozones, only: [:new, :create, :edit, :update]

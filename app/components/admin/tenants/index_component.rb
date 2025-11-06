@@ -1,5 +1,6 @@
 class Admin::Tenants::IndexComponent < ApplicationComponent
   include Header
+
   attr_reader :tenants
 
   def initialize(tenants)

@@ -29,6 +29,6 @@ class Widget::Feed < ApplicationRecord
   end
 
   def processes
-    Legislation::Process.open.published.order("created_at DESC").limit(limit)
+    Legislation::Process.open.published.order(created_at: :desc).limit(limit)
   end
 end

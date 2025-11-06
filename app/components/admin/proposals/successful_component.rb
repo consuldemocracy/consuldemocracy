@@ -1,5 +1,6 @@
 class Admin::Proposals::SuccessfulComponent < ApplicationComponent
   include Header
+
   attr_reader :proposals
 
   def initialize(proposals)

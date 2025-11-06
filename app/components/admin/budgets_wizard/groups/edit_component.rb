@@ -1,5 +1,6 @@
 class Admin::BudgetsWizard::Groups::EditComponent < ApplicationComponent
   include Header
+
   attr_reader :group
 
   def initialize(group)

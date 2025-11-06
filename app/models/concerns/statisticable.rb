@@ -1,5 +1,6 @@
 module Statisticable
   extend ActiveSupport::Concern
+
   PARTICIPATIONS = %w[gender age geozone].freeze
 
   included do
@@ -216,7 +217,7 @@ module Statisticable
     end
 
     def geozones
-      Geozone.order("name")
+      Geozone.order(:name)
     end
 
     def range_description(start, finish)

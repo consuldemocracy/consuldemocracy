@@ -42,7 +42,7 @@ module Search
   end
 
   def search_finish_date
-    (params[:advanced_search][:date_max].to_date rescue Date.current) || Date.current
+    params[:advanced_search][:date_max].to_date rescue Date.current || Date.current
   end
 
   def search_date_range

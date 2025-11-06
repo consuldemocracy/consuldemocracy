@@ -1,5 +1,6 @@
 class SDGManagement::BaseController < ApplicationController
   include FeatureFlags
+
   feature_flag :sdg
 
   layout "admin"

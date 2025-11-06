@@ -35,12 +35,12 @@ jobs:
         ci_node_total: [5]
         ci_node_index: [0, 1, 2, 3, 4]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
       - name: Setup NPM
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           cache: "npm"
           node-version-file: ".node-version"
@@ -51,7 +51,7 @@ jobs:
       - name: Remove image-bundled Chrome
         run: sudo apt-get purge google-chrome-stable
       - name: Setup Chrome/Chromium 128
-        uses: browser-actions/setup-chrome@v1
+        uses: browser-actions/setup-chrome@v2
         with:
           chrome-version: 128
           install-chromedriver: true
@@ -79,7 +79,7 @@ jobs:
           parallel: true
       - name: Upload screenshots
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: screenshots-${{ matrix.ci_node_index }}
           path: tmp/capybara/
