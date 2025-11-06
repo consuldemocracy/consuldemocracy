@@ -68,6 +68,8 @@
 
           <%= render "proposals/support_status", proposal: @proposal %>
 
+          <%= render Sensemaker::ReportLinkComponent.new(@proposal) %>
+
           <%= render "proposals/social_share", proposal: @proposal, share_title: t("proposals.show.share") %>
 
           <% if current_user %>
