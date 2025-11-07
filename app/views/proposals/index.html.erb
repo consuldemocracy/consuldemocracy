@@ -61,10 +61,12 @@
     <div id="proposals-list">
       <% if @proposals.any? || current_user.blank? %>
         <% if proposals_default_view? %>
-          <%= render partial: "proposals/proposal", collection: @proposals %>
+          <% @proposals.each do |proposal| %>
+            <%= render "proposals/proposal", proposal: proposal %>
+          <% end %>
         <% else %>
           <% @proposals.each do |proposal| %>
-            <%= render "/proposals/proposal_minimal", proposal: proposal %>
+            <%= render "proposals/proposal_minimal", proposal: proposal %>
           <% end %>
         <% end %>
       <% else %>
