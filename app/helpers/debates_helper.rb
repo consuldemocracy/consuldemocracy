@@ -10,8 +10,4 @@ module DebatesHelper
       t("debates.index.recommendations.without_interests")
     end
   end
-
-  def debates_secondary_view_path
-    debates_path(view: secondary_view_mode)
-  end
 end

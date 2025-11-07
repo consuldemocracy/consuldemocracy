@@ -29,10 +29,6 @@ module ProposalsHelper
     current_user && proposal.editable_by?(current_user)
   end
 
-  def proposals_secondary_view_path
-    proposals_path(view: secondary_view_mode)
-  end
-
   def show_proposal_votes?
     params[:selected].blank?
   end

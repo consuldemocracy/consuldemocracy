@@ -19,13 +19,6 @@ module BudgetInvestmentsHelper
     current_direction == "desc" ? "asc" : "desc"
   end
 
-  def investments_secondary_view_path
-    budget_investments_path(id: @heading.group.to_param,
-                            heading_id: @heading.to_param,
-                            filter: @current_filter,
-                            view: secondary_view_mode)
-  end
-
   def show_author_actions?(investment)
     can?(:edit, investment) || can_destroy_image?(investment)
   end

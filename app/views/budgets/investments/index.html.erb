@@ -38,7 +38,7 @@
     <% elsif @heading.present? %>
       <div class="row">
         <div class="small-12 column">
-          <%= render "view_mode" %>
+          <%= render Shared::ViewModeComponent.new %>
         </div>
       </div>
     <% end %>
@@ -58,17 +58,13 @@
       <%= render("shared/order_links", i18n_namespace: "budgets.investments.index") %>
     <% end %>
 
-    <% if default_view_mode? %>
-
-      <% @investments.each do |investment| %>
+    <% @investments.each do |investment| %>
+      <% if default_view_mode? %>
         <%= render "/budgets/investments/investment",
                    investment: investment,
                    investment_ids: @investment_ids,
                    ballot: @ballot %>
-      <% end %>
-    <% else %>
-
-      <% @investments.each do |investment| %>
+      <% else %>
         <%= render "/budgets/investments/investment_minimal",
                    investment: investment %>
       <% end %>
