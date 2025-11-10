@@ -34,11 +34,11 @@ module ProposalsHelper
   end
 
   def proposals_default_view?
-    @view == "default"
+    proposals_current_view == "default"
   end
 
   def proposals_current_view
-    @view
+    (params[:view] == "minimal") ? "minimal" : "default"
   end
 
   def proposals_secondary_view

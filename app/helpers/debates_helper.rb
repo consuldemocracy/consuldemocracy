@@ -16,11 +16,11 @@ module DebatesHelper
   end
 
   def debates_default_view?
-    @view == "default"
+    debates_current_view == "default"
   end
 
   def debates_current_view
-    @view
+    (params[:view] == "minimal") ? "minimal" : "default"
   end
 
   def debates_secondary_view

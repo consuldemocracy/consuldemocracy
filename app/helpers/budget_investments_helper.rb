@@ -27,11 +27,11 @@ module BudgetInvestmentsHelper
   end
 
   def investments_default_view?
-    @view == "default"
+    investments_current_view == "default"
   end
 
   def investments_current_view
-    @view
+    (params[:view] == "minimal") ? "minimal" : "default"
   end
 
   def investments_secondary_view

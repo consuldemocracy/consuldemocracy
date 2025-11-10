@@ -22,7 +22,6 @@ module Budgets
     before_action :set_random_seed, only: :index
     before_action :load_categories, only: :index
     before_action :set_default_investment_filter, only: :index
-    before_action :set_view, only: :index
 
     feature_flag :budgets
 
@@ -138,10 +137,6 @@ module Budgets
 
       def load_budget
         @budget = Budget.find_by_slug_or_id! params[:budget_id]
-      end
-
-      def set_view
-        @view = (params[:view] == "minimal") ? "minimal" : "default"
       end
 
       def investments_with_filters
