@@ -2,13 +2,22 @@
   float: $global-right;
 
   ul {
-    margin-bottom: 0;
+    list-style: none;
+    margin: 0;
 
     li {
       align-items: center;
       display: flex;
       gap: 1ch;
       padding: calc($line-height / 4) 0;
+    }
+
+    a {
+      @include anchor-color;
+
+      align-items: center;
+      display: inline-flex;
+      gap: 1ch;
     }
   }
 
@@ -45,8 +54,7 @@
     @include has-fa-icon(th-list, solid);
   }
 
-  .is-active {
-    @include brand-color;
+  [aria-current] {
     @include has-fa-icon(check, solid, after);
 
     &::after {
