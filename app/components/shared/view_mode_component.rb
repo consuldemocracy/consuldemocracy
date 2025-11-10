@@ -4,11 +4,7 @@ class Shared::ViewModeComponent < ApplicationComponent
   private
 
     def view_mode
-      if default_view_mode?
-        "default"
-      else
-        "minimal"
-      end
+      "minimal" unless default_view_mode?
     end
 
     def secondary_view_mode

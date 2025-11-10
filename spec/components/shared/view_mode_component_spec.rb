@@ -2,21 +2,23 @@ require "rails_helper"
 
 describe Shared::ViewModeComponent do
   describe "main element" do
-    it "uses a default class by default" do
+    it "uses no specific view mode class by default" do
       with_request_url("/example") do
         render_inline Shared::ViewModeComponent.new
 
-        expect(page).to have_css ".view-mode.default"
+        expect(page).to have_css ".view-mode"
         expect(page).not_to have_css ".view-mode.minimal"
+        expect(page).not_to have_css ".view-mode.default"
       end
     end
 
-    it "uses a default class when the defaut mode is specified" do
+    it "uses no specific view mode class when the defaut mode is specified" do
       with_request_url("/example?view=default") do
         render_inline Shared::ViewModeComponent.new
 
-        expect(page).to have_css ".view-mode.default"
+        expect(page).to have_css ".view-mode"
         expect(page).not_to have_css ".view-mode.minimal"
+        expect(page).not_to have_css ".view-mode.default"
       end
     end
 

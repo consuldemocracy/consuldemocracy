@@ -23,17 +23,8 @@
 
     &::before {
       color: color-pick-contrast(#eee);
+      content: "\51";
       font-family: "icons";
-    }
-  }
-
-  &.default {
-
-    .button {
-
-      &::before {
-        content: "\51";
-      }
     }
   }
 
