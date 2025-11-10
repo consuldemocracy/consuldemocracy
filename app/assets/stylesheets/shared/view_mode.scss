@@ -5,8 +5,10 @@
     margin-bottom: 0;
 
     li {
+      align-items: center;
+      display: flex;
+      gap: 1ch;
       padding: calc($line-height / 4) 0;
-      padding-left: $line-height;
     }
   }
 
@@ -15,6 +17,8 @@
   }
 
   .button {
+    @include has-fa-icon(th-list, solid);
+
     background: #eee;
     height: rem-calc(36);
     margin-bottom: 0;
@@ -23,51 +27,29 @@
 
     &::before {
       color: color-pick-contrast(#eee);
-      content: "\51";
-      font-family: "icons";
     }
   }
 
   &.minimal {
 
     .button {
-
-      &::before {
-        content: "\22";
-      }
+      @include has-fa-icon(bars, solid);
     }
   }
 
   .view-list {
-    position: relative;
-
-    &::before {
-      content: "\22";
-      font-family: "icons";
-      left: 0;
-      position: absolute;
-      top: 6px;
-    }
+    @include has-fa-icon(bars, solid);
   }
 
   .view-card {
-    position: relative;
-
-    &::before {
-      content: "\51";
-      font-family: "icons";
-      left: 0;
-      position: absolute;
-      top: 6px;
-    }
+    @include has-fa-icon(th-list, solid);
   }
 
   .is-active {
     @include brand-color;
+    @include has-fa-icon(check, solid, after);
 
     &::after {
-      content: "\6c";
-      font-family: "icons";
       font-size: $tiny-font-size;
     }
   }
