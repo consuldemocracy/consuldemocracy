@@ -29,7 +29,7 @@ module ProposalsHelper
     current_user && proposal.editable_by?(current_user)
   end
 
-  def proposals_minimal_view_path
+  def proposals_secondary_view_path
     proposals_path(view: proposals_secondary_view)
   end
 

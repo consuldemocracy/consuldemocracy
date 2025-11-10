@@ -11,7 +11,7 @@ module DebatesHelper
     end
   end
 
-  def debates_minimal_view_path
+  def debates_secondary_view_path
     debates_path(view: debates_secondary_view)
   end
 
