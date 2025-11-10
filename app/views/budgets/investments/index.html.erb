@@ -58,7 +58,7 @@
       <%= render("shared/order_links", i18n_namespace: "budgets.investments.index") %>
     <% end %>
 
-    <% if investments_default_view? %>
+    <% if default_view_mode? %>
 
       <% @investments.each do |investment| %>
         <%= render "/budgets/investments/investment",

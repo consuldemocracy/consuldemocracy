@@ -44,7 +44,7 @@
     </div>
 
     <% if @debates.any? || current_user.blank? %>
-      <% if debates_default_view? %>
+      <% if default_view_mode? %>
         <% @debates.each do |debate| %>
           <%= render "debates/debate", debate: debate %>
         <% end %>

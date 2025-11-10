@@ -23,19 +23,7 @@ module BudgetInvestmentsHelper
     budget_investments_path(id: @heading.group.to_param,
                             heading_id: @heading.to_param,
                             filter: @current_filter,
-                            view: investments_secondary_view)
-  end
-
-  def investments_default_view?
-    investments_current_view == "default"
-  end
-
-  def investments_current_view
-    (params[:view] == "minimal") ? "minimal" : "default"
-  end
-
-  def investments_secondary_view
-    investments_current_view == "default" ? "minimal" : "default"
+                            view: secondary_view_mode)
   end
 
   def show_author_actions?(investment)

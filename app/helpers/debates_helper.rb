@@ -12,18 +12,6 @@ module DebatesHelper
   end
 
   def debates_secondary_view_path
-    debates_path(view: debates_secondary_view)
-  end
-
-  def debates_default_view?
-    debates_current_view == "default"
-  end
-
-  def debates_current_view
-    (params[:view] == "minimal") ? "minimal" : "default"
-  end
-
-  def debates_secondary_view
-    debates_current_view == "default" ? "minimal" : "default"
+    debates_path(view: secondary_view_mode)
   end
 end

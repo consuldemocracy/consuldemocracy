@@ -30,19 +30,7 @@ module ProposalsHelper
   end
 
   def proposals_secondary_view_path
-    proposals_path(view: proposals_secondary_view)
-  end
-
-  def proposals_default_view?
-    proposals_current_view == "default"
-  end
-
-  def proposals_current_view
-    (params[:view] == "minimal") ? "minimal" : "default"
-  end
-
-  def proposals_secondary_view
-    proposals_current_view == "default" ? "minimal" : "default"
+    proposals_path(view: secondary_view_mode)
   end
 
   def show_proposal_votes?

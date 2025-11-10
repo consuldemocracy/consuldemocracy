@@ -60,7 +60,7 @@
 
     <div id="proposals-list">
       <% if @proposals.any? || current_user.blank? %>
-        <% if proposals_default_view? %>
+        <% if default_view_mode? %>
           <% @proposals.each do |proposal| %>
             <%= render "proposals/proposal", proposal: proposal %>
           <% end %>
