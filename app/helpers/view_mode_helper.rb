@@ -4,10 +4,18 @@ module ViewModeHelper
   end
 
   def view_mode
-    (params[:view] == "minimal") ? "minimal" : "default"
+    if default_view_mode?
+      "default"
+    else
+      "minimal"
+    end
   end
 
   def secondary_view_mode
-    view_mode == "default" ? "minimal" : "default"
+    if default_view_mode?
+      "minimal"
+    else
+      "default"
+    end
   end
 end
