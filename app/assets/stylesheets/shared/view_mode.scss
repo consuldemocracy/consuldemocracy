@@ -25,10 +25,11 @@
     width: auto;
   }
 
-  .button {
+  button {
     @include has-fa-icon(th-list, solid);
 
     background: #eee;
+    cursor: pointer;
     height: rem-calc(36);
     margin-bottom: 0;
     padding: calc($line-height / 4);
@@ -41,7 +42,7 @@
 
   &.minimal {
 
-    .button {
+    button {
       @include has-fa-icon(bars, solid);
     }
   }
