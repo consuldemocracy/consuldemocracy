@@ -68,9 +68,9 @@
 
           <%= render "proposals/support_status", proposal: @proposal %>
 
-          <%= render Sensemaker::ReportLinkComponent.new(@proposal) %>
-
           <%= render "proposals/social_share", proposal: @proposal, share_title: t("proposals.show.share") %>
+
+          <%= render Sensemaker::ReportLinkComponent.new(@proposal) %>
 
           <% if current_user %>
             <div class="sidebar-divider"></div>

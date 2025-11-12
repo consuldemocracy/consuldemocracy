@@ -50,7 +50,7 @@ en:
     analysis:
       title: "Sensemaker Analysis"
       description: "This %{subject} has been analysed using sensemaker tools."
-      view_report: "View Report"
+      view_report: "View report"
 
     scripts:
       health_check_runner_ts:
@@ -89,4 +89,4 @@ en:
       comments_analysed_label: "Comments analysed"
       comments_count_placeholder: "Information not available"
       report_description: "The report contains detailed analysis of the conversation, including topic identification, categorization, and areas of agreement and disagreement."
-      view_report: "View Report"
+      view_report: "View report"
