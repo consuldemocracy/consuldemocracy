@@ -7,6 +7,7 @@
         <p><%= explanatory_text %> <%= report_description %></p>
       </section>
 
+      <h2><%= t("sensemaker.report_view.metadata_title") %></h2>
       <%= render Sensemaker::ReportJobMetaComponent.new(@sensemaker_job) %>
     </div>
   </div>

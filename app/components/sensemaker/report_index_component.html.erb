@@ -9,7 +9,7 @@
       <section>
         <% if has_jobs? %>
           <% jobs.each do |job| %>
-            <%#= link_to  %>
+            <h3 class="flex-row"><%= target_resource_link_for(job) %> <span class="job-type-label"><%= t("activerecord.models.#{job.analysable_type.underscore}.one") %></span></h3>
             <%= render Sensemaker::ReportJobMetaComponent.new(job) %>
           <% end %>
         <% else %>

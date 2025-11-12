@@ -1,6 +1,7 @@
 class Sensemaker::ReportViewComponent < ApplicationComponent
+  include Sensemaker::ReportComponentHelpers
+
   attr_reader :sensemaker_job
-  use_helpers :link_to, :polymorphic_path
 
   def initialize(sensemaker_job)
     @sensemaker_job = sensemaker_job
@@ -53,34 +54,7 @@ class Sensemaker::ReportViewComponent < ApplicationComponent
   end
 
   def target_resource_link
-    analysable = @sensemaker_job.analysable
-    return nil if analysable.blank?
-    return nil if @sensemaker_job.analysable_id.nil? && @sensemaker_job.analysable_type == "Proposal"
-
-    link_label = @sensemaker_job.conversation.target_label
-    link_path = case analysable
-    when Poll
-      poll_path(id: analysable.slug || analysable.id)
-    when Legislation::Question
-      legislation_process_question_path(analysable.process, analysable)
-    when Legislation::QuestionOption
-      link_label = analysable.question.title
-      legislation_process_question_path(analysable.question.process, analysable.question)
-    when Debate || Proposal
-      polymorphic_path(analysable)
-    when Budget
-      budget_path(analysable)
-    when Budget::Group
-      budget_path(analysable.budget)
-    when Legislation::Proposal
-      legislation_process_proposal_path(analysable.process, analysable)
-    else
-      return nil
-                end
-
-    link_to(link_label, link_path)
-  rescue
-    nil
+    target_resource_link_for(@sensemaker_job)
   end
 
   def report_description

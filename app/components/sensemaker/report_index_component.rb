@@ -1,6 +1,7 @@
 class Sensemaker::ReportIndexComponent < ApplicationComponent
+  include Sensemaker::ReportComponentHelpers
+
   attr_reader :jobs, :parent_resource
-  use_helpers :link_to
 
   def initialize(jobs:, parent_resource: nil)
     @jobs = jobs

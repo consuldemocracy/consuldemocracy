@@ -1,6 +1,5 @@
 class Sensemaker::ReportJobMetaComponent < ApplicationComponent
   attr_reader :job
-  use_helpers :link_to, :polymorphic_path, :l, :serve_report_sensemaker_job_path
 
   def initialize(job)
     @job = job
@@ -78,4 +77,3 @@ class Sensemaker::ReportJobMetaComponent < ApplicationComponent
     end
   end
 end
-
