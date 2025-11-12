@@ -154,7 +154,7 @@ namespace :sensemaker do
       else
         logger.warn "✗ Angular build test failed."
         logger.warn output
-        raise "Angular build test failed. This may indicate a TypeScript version incompatibility or other compilation issue."
+        raise "This may indicate a TypeScript version incompatibility or other compilation issue."
       end
     end
 

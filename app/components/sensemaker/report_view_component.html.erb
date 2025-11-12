@@ -7,19 +7,7 @@
         <p><%= explanatory_text %> <%= report_description %></p>
       </section>
 
-      <section>
-        <h2><%= t("sensemaker.report_view.metadata_title") %></h2>
-        <dl>
-          <% if run_timestamp %>
-            <dt><%= t("sensemaker.report_view.run_timestamp_label") %></dt>
-            <dd><%= run_timestamp %></dd>
-          <% end %>
-          <dt><%= t("sensemaker.report_view.comments_analysed_label") %></dt>
-          <dd><%= comments_count_placeholder %></dd>
-        </dl>
-
-        <%= link_to view_report_text, report_url, class: "button", target: "_blank" %>
-      </section>
+      <%= render Sensemaker::ReportJobMetaComponent.new(@sensemaker_job) %>
     </div>
   </div>
 </div>

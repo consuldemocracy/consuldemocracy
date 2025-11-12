@@ -1,6 +1,6 @@
-class Sensemaker::ReportJobRowComponent < ApplicationComponent
+class Sensemaker::ReportJobMetaComponent < ApplicationComponent
   attr_reader :job
-  use_helpers :link_to, :polymorphic_path, :l
+  use_helpers :link_to, :polymorphic_path, :l, :serve_report_sensemaker_job_path
 
   def initialize(job)
     @job = job
@@ -43,12 +43,16 @@ class Sensemaker::ReportJobRowComponent < ApplicationComponent
     l(@job.finished_at, format: :long)
   end
 
-  def view_report_link
-    link_to(
-      t("sensemaker.report_job_row.view_report"),
-      sensemaker_job_path(@job),
-      class: "button small"
-    )
+  def comments_count_placeholder
+    t("sensemaker.report_view.comments_count_placeholder")
+  end
+
+  def report_url
+    serve_report_sensemaker_job_path(@job.id)
+  end
+
+  def view_report_text
+    t("sensemaker.report_view.view_report")
   end
 
   def analysable_type_label
@@ -74,3 +78,4 @@ class Sensemaker::ReportJobRowComponent < ApplicationComponent
     end
   end
 end
+

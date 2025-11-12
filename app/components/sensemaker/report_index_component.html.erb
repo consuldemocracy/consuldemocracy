@@ -8,13 +8,10 @@
 
       <section>
         <% if has_jobs? %>
-          <ul class="sensemaker-job-list">
-            <% jobs.each do |job| %>
-              <li>
-                <%= render Sensemaker::ReportJobRowComponent.new(job) %>
-              </li>
-            <% end %>
-          </ul>
+          <% jobs.each do |job| %>
+            <%#= link_to  %>
+            <%= render Sensemaker::ReportJobMetaComponent.new(job) %>
+          <% end %>
         <% else %>
           <div class="callout primary">
             <p><%= empty_message %></p>

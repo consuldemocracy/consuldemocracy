@@ -83,24 +83,6 @@ class Sensemaker::ReportViewComponent < ApplicationComponent
     nil
   end
 
-  def run_timestamp
-    return nil unless @sensemaker_job.finished_at
-
-    l(@sensemaker_job.finished_at, format: :long)
-  end
-
-  def comments_count_placeholder
-    t("sensemaker.report_view.comments_count_placeholder")
-  end
-
-  def report_url
-    serve_report_sensemaker_job_path(@sensemaker_job.id)
-  end
-
-  def view_report_text
-    t("sensemaker.report_view.view_report")
-  end
-
   def report_description
     t("sensemaker.report_view.report_description")
   end
