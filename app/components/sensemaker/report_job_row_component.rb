@@ -1,0 +1,76 @@
+class Sensemaker::ReportJobRowComponent < ApplicationComponent
+  attr_reader :job
+  use_helpers :link_to, :polymorphic_path, :l
+
+  def initialize(job)
+    @job = job
+  end
+
+  def target_resource_link
+    analysable = @job.analysable
+    return nil if analysable.blank?
+    return nil if @job.analysable_id.nil? && @job.analysable_type == "Proposal"
+
+    link_label = @job.conversation.target_label
+    link_path = case analysable
+    when Poll
+      poll_path(id: analysable.slug || analysable.id)
+    when Legislation::Question
+      legislation_process_question_path(analysable.process, analysable)
+    when Legislation::QuestionOption
+      link_label = analysable.question.title
+      legislation_process_question_path(analysable.question.process, analysable.question)
+    when Debate, Proposal
+      polymorphic_path(analysable)
+    when Budget
+      budget_path(analysable)
+    when Budget::Group
+      budget_path(analysable.budget)
+    when Legislation::Proposal
+      legislation_process_proposal_path(analysable.process, analysable)
+    else
+      return nil
+                end
+
+    link_to(link_label, link_path)
+  rescue
+    nil
+  end
+
+  def run_timestamp
+    return nil unless @job.finished_at
+
+    l(@job.finished_at, format: :long)
+  end
+
+  def view_report_link
+    link_to(
+      t("sensemaker.report_job_row.view_report"),
+      sensemaker_job_path(@job),
+      class: "button small"
+    )
+  end
+
+  def analysable_type_label
+    case @job.analysable_type
+    when "Legislation::Proposal"
+      t("sensemaker.report_job_row.analysable_type.legislation_proposal")
+    when "Legislation::Question"
+      t("sensemaker.report_job_row.analysable_type.legislation_question")
+    when "Legislation::QuestionOption"
+      t("sensemaker.report_job_row.analysable_type.legislation_question_option")
+    when "Budget"
+      t("sensemaker.report_job_row.analysable_type.budget")
+    when "Budget::Group"
+      t("sensemaker.report_job_row.analysable_type.budget_group")
+    when "Debate"
+      t("sensemaker.report_job_row.analysable_type.debate")
+    when "Proposal"
+      t("sensemaker.report_job_row.analysable_type.proposal")
+    when "Poll"
+      t("sensemaker.report_job_row.analysable_type.poll")
+    else
+      @job.analysable_type.humanize
+    end
+  end
+end

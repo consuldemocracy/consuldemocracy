@@ -1,12 +1,13 @@
 class Sensemaker::ReportLinkComponent < ApplicationComponent
-  attr_reader :analysable_resource
+  attr_reader :analysable_resource, :link_to_index
 
-  def initialize(analysable_resource)
+  def initialize(analysable_resource, link_to_index: false)
     @analysable_resource = analysable_resource
+    @link_to_index = link_to_index
   end
 
   def render?
-    feature?(:sensemaker) && latest_successful_job.present? && report_available?
+    feature?(:sensemaker) && report_available?
   end
 
   def report_url
@@ -16,7 +17,11 @@ class Sensemaker::ReportLinkComponent < ApplicationComponent
   end
 
   def report_available?
-    latest_successful_job.present? && latest_successful_job.has_outputs?
+    if link_to_index
+      Sensemaker::Job.for_process(analysable_resource).exists?
+    else
+      latest_successful_job.present? && latest_successful_job.has_outputs?
+    end
   end
 
   def analysis_title
@@ -30,6 +35,15 @@ class Sensemaker::ReportLinkComponent < ApplicationComponent
 
   def view_report_text
     t("sensemaker.analysis.view_report")
+  end
+
+  def link_to_analysis
+    if link_to_index
+      link_to view_report_text, [:sensemaker, analysable_resource, :jobs], class: "button hollow expanded",
+                                                                           target: "_blank"
+    else
+      link_to view_report_text, report_url, class: "button hollow expanded", target: "_blank"
+    end
   end
 
   private

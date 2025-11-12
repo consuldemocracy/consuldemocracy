@@ -13,6 +13,15 @@ class Sensemaker::JobsController < ApplicationController
     head :not_found
   end
 
+  def index
+    if params[:process_id].present?
+      @parent_resource = Legislation::Process.find(params[:process_id])
+      @sensemaker_jobs = Sensemaker::Job.published.for_process(@parent_resource).order(finished_at: :desc)
+    else
+      head :not_found
+    end
+  end
+
   def serve_report
     job = Sensemaker::Job.find(params[:id])
     authorize! :read, job

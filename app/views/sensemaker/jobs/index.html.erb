@@ -1,0 +1,10 @@
+<% 
+  index_component = Sensemaker::ReportIndexComponent.new(jobs: @sensemaker_jobs, parent_resource: @parent_resource)
+  provide :title, "Sensemaker Reports"
+%>
+
+<div class="row">
+  <div class="small-12 column">
+    <%= render index_component %>
+  </div>
+</div>

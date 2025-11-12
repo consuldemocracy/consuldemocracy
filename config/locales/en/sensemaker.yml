@@ -50,7 +50,7 @@ en:
     analysis:
       title: "Sensemaker Analysis"
       description: "This %{subject} has been analysed using sensemaker tools."
-      view_report: "View report"
+      view_report: "View analysis"
 
     scripts:
       health_check_runner_ts:
@@ -68,7 +68,16 @@ en:
       single_html_build_js:
         title: "Report"
         description: "Analyse and generate a report in HTML format"
-
+    report_index:
+      title: "Sensemaker Reports"
+      title_with_parent: "Sensemaker Reports for %{parent_name}"
+      intro_text: "Here you can find the output of analyses produced using %{link}."
+      empty: "No analyses have been produced yet."
+      explanatory_text:
+        poll: "The comments for the poll titled \"%{poll_name}\" were analysed to produce a report."
+        debate: "The comments for the debate titled \"%{debate_title}\" were analysed to produce a report."
+        proposal: "The comments for the proposal titled \"%{proposal_title}\" were analysed to produce a report."
+        legislation_proposal: "The comments for the legislation proposal titled \"%{proposal_title}\" were analysed to produce a report."
     report_view:
       title: "Sensemaker Report"
       intro_text: "Here you can find the output of an analysis produced using %{link}."

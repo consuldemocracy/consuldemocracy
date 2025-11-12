@@ -143,6 +143,20 @@ module Sensemaker
       output_artifact_paths.all? { |path| File.exist?(path) }
     end
 
+    def self.for_process(process)
+      proposals_subquery = process.proposals.select(:id)
+      questions_subquery = process.questions.select(:id)
+      question_options_subquery = Legislation::QuestionOption
+                                  .where(legislation_question_id: questions_subquery)
+                                  .select(:id)
+
+      published
+        .where(analysable_type: "Legislation::Proposal", analysable_id: proposals_subquery)
+        .or(published.where(analysable_type: "Legislation::Question", analysable_id: questions_subquery))
+        .or(published.where(analysable_type: "Legislation::QuestionOption",
+                            analysable_id: question_options_subquery))
+    end
+
     private
 
       def set_persisted_output_if_successful

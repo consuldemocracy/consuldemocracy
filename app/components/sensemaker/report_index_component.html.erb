@@ -1,0 +1,26 @@
+<div class="sensemaker">
+  <div class="row">
+    <div class="small-12 column">
+      <section>
+        <h1><%= page_title %></h1>
+        <%= introductory_text %>
+      </section>
+
+      <section>
+        <% if has_jobs? %>
+          <ul class="sensemaker-job-list">
+            <% jobs.each do |job| %>
+              <li>
+                <%= render Sensemaker::ReportJobRowComponent.new(job) %>
+              </li>
+            <% end %>
+          </ul>
+        <% else %>
+          <div class="callout primary">
+            <p><%= empty_message %></p>
+          </div>
+        <% end %>
+      </section>
+    </div>
+  </div>
+</div>

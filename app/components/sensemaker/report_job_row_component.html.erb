@@ -1,0 +1,26 @@
+<div class="sensemaker-job-row">
+  <div class="job-header">
+    <h3>
+      <% if target_resource_link %>
+        <%= target_resource_link %>
+      <% else %>
+        <%= analysable_type_label %>
+      <% end %>
+    </h3>
+    <span class="job-type-label"><%= analysable_type_label %></span>
+  </div>
+  
+  <div class="job-meta">
+    <% if run_timestamp %>
+      <p class="job-timestamp">
+        <strong><%= t("sensemaker.report_job_row.run_timestamp_label") %>:</strong>
+        <%= run_timestamp %>
+      </p>
+    <% end %>
+  </div>
+  
+  <div class="job-actions">
+    <%= view_report_link %>
+  </div>
+</div>
+

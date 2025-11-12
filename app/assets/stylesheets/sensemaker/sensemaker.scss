@@ -343,4 +343,81 @@
   section {
     margin-bottom: 2rem;
   }
+
+  .sensemaker-job-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      border-bottom: 1px solid #e9ecef;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+
+      &:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  .sensemaker-job-row {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    transition: box-shadow 0.2s ease;
+
+    &:hover {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .job-header {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+
+      h3 {
+        flex: 1;
+        margin: 0;
+
+        a {
+          color: $brand;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .job-type-label {
+        background: $brand;
+        border-radius: 0.25rem;
+        color: $white;
+        font-size: 0.75rem;
+        font-weight: normal;
+        margin-left: 1rem;
+        padding: 0.25rem 0.5rem;
+        text-transform: uppercase;
+      }
+    }
+
+    .job-meta {
+      color: #6d6d6d;
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+
+      .job-timestamp {
+        margin: 0;
+      }
+    }
+
+    .job-actions {
+      margin-top: 0.75rem;
+    }
+  }
 }
