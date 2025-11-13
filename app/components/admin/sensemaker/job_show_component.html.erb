@@ -40,6 +40,12 @@
                 <%= sensemaker_job.status %>
               </td>
             </tr>
+            <% if sensemaker_job.comments_analysed.present? && sensemaker_job.comments_analysed > 0 %>
+              <tr>
+                <td><strong>Comments Analysed</strong></td>
+                <td><%= sensemaker_job.comments_analysed %></td>
+              </tr>
+            <% end %>
             <tr>
               <td><strong>Created</strong></td>
               <td><%= sensemaker_job.created_at.strftime("%Y-%m-%d %H:%M") %></td>

@@ -8,9 +8,15 @@
 
       <section>
         <% if has_jobs? %>
+          <% last_job_type = nil %>
           <% jobs.each do |job| %>
-            <h3 class="flex-row"><%= target_resource_link_for(job) %> <span class="job-type-label"><%= t("activerecord.models.#{job.analysable_type.underscore}.one") %></span></h3>
+            <% if last_job_type != job.analysable_type %>
+              <hr />
+              <%= content_tag :h2, t("sensemaker.report_index.group_titles.#{job.analysable_type.underscore}") %>
+            <% end %>
+            <h3><%= target_resource_link_for(job) %></h3>
             <%= render Sensemaker::ReportJobMetaComponent.new(job) %>
+            <% last_job_type = job.analysable_type %>
           <% end %>
         <% else %>
           <div class="callout primary">

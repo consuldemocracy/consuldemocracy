@@ -237,7 +237,6 @@ describe Sensemaker::JobRunner do
     end
 
     it "returns value when the script executes successfully" do
-      # Mock the backtick method to simulate successful execution
       timeout = Sensemaker::JobRunner::TIMEOUT
       expected_command = %r{cd .* && timeout #{timeout} .*}
       expect(service).to receive(:`).with(expected_command).and_return("Success output")
@@ -250,7 +249,6 @@ describe Sensemaker::JobRunner do
     end
 
     it "returns nil and updates the job when the script fails" do
-      # Mock the backtick method to simulate failed execution
       timeout = Sensemaker::JobRunner::TIMEOUT
       expected_command = %r{cd .* && timeout #{timeout} .*}
       expect(service).to receive(:`).with(expected_command).and_return("Error output")
@@ -398,6 +396,16 @@ describe Sensemaker::JobRunner do
         expect(job.error).to be(nil)
       end
 
+      it "sets comments_analysed count when job finishes successfully" do
+        allow(job).to receive(:has_outputs?).and_return(true)
+        allow(service).to receive(:prepare_input_data).and_return(5)
+
+        service.send(:execute_job_workflow)
+
+        job.reload
+        expect(job.comments_analysed).to eq(5)
+      end
+
       it "triggers the callback to set persisted_output" do
         job.script = "categorization_runner.ts"
         output_path = "#{data_folder}/categorization-output-#{job.id}.csv"
@@ -486,17 +494,24 @@ describe Sensemaker::JobRunner do
     let(:service) { Sensemaker::JobRunner.new(job) }
     let(:mock_exporter) { instance_double(Sensemaker::CsvExporter) }
     let(:input_file_path) { "/path/to/input-file.csv" }
+    let(:mock_conversation) { instance_double(Sensemaker::Conversation) }
+    let(:mock_comments) { Array.new(7) { double("comment") } }
 
     before do
       allow(service).to receive(:input_file).and_return(input_file_path)
       allow(Sensemaker::CsvExporter).to receive(:new).and_return(mock_exporter)
       allow(mock_exporter).to receive(:export_to_csv)
+      allow(job).to receive(:conversation).and_return(mock_conversation)
+      allow(mock_conversation).to receive_messages(
+        comments: mock_comments,
+        compile_context: "Test context"
+      )
     end
 
     it "creates a CsvExporter with the job's conversation" do
       service.send(:prepare_input_data)
 
-      expect(Sensemaker::CsvExporter).to have_received(:new).with(job.conversation)
+      expect(Sensemaker::CsvExporter).to have_received(:new).with(mock_conversation)
     end
 
     it "exports CSV data to the input file" do
@@ -506,6 +521,9 @@ describe Sensemaker::JobRunner do
     end
 
     it "updates the job with additional context" do
+      allow(job).to receive(:conversation).and_call_original
+      allow(service).to receive(:input_file).and_return(input_file_path)
+
       service.send(:prepare_input_data)
 
       job.reload
@@ -514,15 +532,92 @@ describe Sensemaker::JobRunner do
       expect(job.additional_context).to include(debate.title)
     end
 
+    it "returns the count of comments from conversation when input_file is blank" do
+      job.input_file = nil
+      result = service.send(:prepare_input_data)
+
+      expect(result).to eq(7)
+    end
+
     context "when script is advanced_runner.ts" do
       before do
         job.script = "advanced_runner.ts"
         job.input_file = "/tmp/categorization-output.csv"
+        allow(File).to receive(:exist?).with(input_file_path).and_return(true)
       end
 
       it "calls CsvExporter.filter_zero_vote_comments_from_csv" do
-        expect(Sensemaker::CsvExporter).to receive(:filter_zero_vote_comments_from_csv).with(input_file_path)
+        expect(Sensemaker::CsvExporter).to receive(:filter_zero_vote_comments_from_csv)
+          .with(input_file_path).and_return(3)
         service.send(:prepare_input_data)
+      end
+
+      it "returns the filtered count from filter_zero_vote_comments_from_csv" do
+        allow(Sensemaker::CsvExporter).to receive(:filter_zero_vote_comments_from_csv)
+          .with(input_file_path).and_return(3)
+        result = service.send(:prepare_input_data)
+
+        expect(result).to eq(3)
+      end
+    end
+
+    context "when script is advanced_runner.ts with blank input_file" do
+      let(:categorization_job) { create(:sensemaker_job, comments_analysed: 10) }
+      let(:categorization_runner) { instance_double(Sensemaker::JobRunner) }
+
+      before do
+        job.script = "advanced_runner.ts"
+        job.input_file = nil
+        allow(service).to receive(:input_file).and_return(input_file_path)
+        allow(File).to receive(:exist?).with(input_file_path).and_return(true)
+      end
+
+      it "calls prepare_with_categorization_job and then filters the CSV" do
+        allow(service).to receive(:prepare_with_categorization_job).and_return(10)
+        allow(Sensemaker::CsvExporter).to receive(:filter_zero_vote_comments_from_csv)
+          .with(input_file_path).and_return(8)
+
+        result = service.send(:prepare_input_data)
+
+        expect(result).to eq(8)
+        expect(Sensemaker::CsvExporter).to have_received(:filter_zero_vote_comments_from_csv)
+          .with(input_file_path)
+      end
+    end
+
+    context "when script is single-html-build.js with blank input_file" do
+      let(:advanced_job) { create(:sensemaker_job, comments_analysed: 15) }
+
+      before do
+        job.script = "single-html-build.js"
+        job.input_file = nil
+      end
+
+      it "calls prepare_with_advanced_runner_job and returns its comments_analysed count" do
+        allow(service).to receive(:prepare_with_advanced_runner_job).and_return(15)
+
+        result = service.send(:prepare_input_data)
+
+        expect(result).to eq(15)
+      end
+    end
+
+    context "when input_file is already set for non-advanced_runner script" do
+      before do
+        job.script = "categorization_runner.ts"
+        job.input_file = "/existing/input.csv"
+      end
+
+      it "returns 0 when input_file is already set" do
+        result = service.send(:prepare_input_data)
+
+        expect(result).to eq(0)
+      end
+
+      it "does not export CSV when input_file is already set" do
+        service.send(:prepare_input_data)
+
+        expect(mock_exporter).not_to have_received(:export_to_csv)
       end
     end
   end

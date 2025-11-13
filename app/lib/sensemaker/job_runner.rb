@@ -144,12 +144,16 @@ module Sensemaker
       def execute_job_workflow
         job.update!(started_at: Time.current)
 
-        prepare_input_data
+        comments_prepared_count = prepare_input_data
         return unless check_dependencies?
         return if execute_script.blank?
 
         attribs = { finished_at: Time.current }
-        attribs = attribs.merge(error: "Output file(s) not found") unless job.has_outputs?
+        if job.has_outputs?
+          attribs[:comments_analysed] = comments_prepared_count
+        else
+          attribs = attribs.merge(error: "Output file(s) not found")
+        end
         job.update!(attribs)
       rescue Exception => e
         handle_error(e)
@@ -175,6 +179,8 @@ module Sensemaker
 
         job.input_file = categorization_runner.output_file
         job.save!
+
+        categorization_job.comments_analysed
       end
 
       def prepare_with_advanced_runner_job
@@ -196,27 +202,33 @@ module Sensemaker
 
         job.input_file = advanced_runner.output_file
         job.save!
+
+        advanced_job.comments_analysed
       end
 
       def prepare_input_data
         conversation = job.conversation
+        comments_prepared_count = 0
 
         if job.additional_context.blank?
           job.update!(additional_context: conversation.compile_context)
         end
 
         if job.input_file.blank? && job.script.eql?("advanced_runner.ts")
-          prepare_with_categorization_job
+          comments_prepared_count = prepare_with_categorization_job
         elsif job.input_file.blank? && job.script.eql?("single-html-build.js")
-          prepare_with_advanced_runner_job
+          comments_prepared_count = prepare_with_advanced_runner_job
         elsif job.input_file.blank?
+          comments_prepared_count = conversation.comments.size
           exporter = Sensemaker::CsvExporter.new(conversation)
           exporter.export_to_csv(input_file)
         end
 
         if job.script.eql?("advanced_runner.ts")
-          Sensemaker::CsvExporter.filter_zero_vote_comments_from_csv(input_file)
+          comments_prepared_count = Sensemaker::CsvExporter.filter_zero_vote_comments_from_csv(input_file)
         end
+
+        comments_prepared_count
       end
 
       def check_dependencies?

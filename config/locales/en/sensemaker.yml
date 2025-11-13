@@ -24,12 +24,12 @@ en:
         votes: "This debate has %{votes_up} votes for and %{votes_down} votes against"
 
       legislation_question:
-        process: "This question is part of the legislation process, \"%{process_title}\""
-        responses_header: "### Question Responses"
+        process: "This debate is part of the legislation process, \"%{process_title}\""
+        responses_header: "### Debate Responses"
         option: "- %{value} (%{answers_count} responses)"
 
       question_option:
-        filter_note: "Note: Comments in this analysis are filtered to only include comments from users who selected the option \"%{option_value}\" in their response to this question."
+        filter_note: "Note: Comments in this analysis are filtered to only include comments from users who selected the option \"%{option_value}\" in their response to this debate."
 
       budget:
         name: "Budget: %{name}"
@@ -68,16 +68,21 @@ en:
       single_html_build_js:
         title: "Report"
         description: "Analyse and generate a report in HTML format"
+
     report_index:
       title: "Sensemaker Reports"
       title_with_parent: "Sensemaker Reports for %{parent_name}"
       intro_text: "Here you can find the output of analyses produced using %{link}."
       empty: "No analyses have been produced yet."
-      explanatory_text:
-        poll: "The comments for the poll titled \"%{poll_name}\" were analysed to produce a report."
-        debate: "The comments for the debate titled \"%{debate_title}\" were analysed to produce a report."
-        proposal: "The comments for the proposal titled \"%{proposal_title}\" were analysed to produce a report."
-        legislation_proposal: "The comments for the legislation proposal titled \"%{proposal_title}\" were analysed to produce a report."
+      group_titles:
+        legislation/proposal: "Proposals"
+        legislation/question: "Debates"
+        legislation/question_option: "Debates segmented by option"
+        budget: "Budgets"
+        budget_group: "Budget groups"
+        proposal: "Proposals"
+        poll: "Polls"
+        debate: "Debates"
     report_view:
       title: "Sensemaker Report"
       intro_text: "Here you can find the output of an analysis produced using %{link}."
@@ -96,6 +101,5 @@ en:
       metadata_title: "Analysis Details"
       run_timestamp_label: "Analysis run on"
       comments_analysed_label: "Comments analysed"
-      comments_count_placeholder: "Information not available"
       report_description: "The report contains detailed analysis of the conversation, including topic identification, categorization, and areas of agreement and disagreement."
       view_report: "View report"

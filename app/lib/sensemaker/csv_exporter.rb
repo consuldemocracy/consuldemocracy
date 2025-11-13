@@ -37,28 +37,30 @@ module Sensemaker
     def self.filter_zero_vote_comments_from_csv(csv_file_path)
       return unless File.exist?(csv_file_path)
 
-      # Read the CSV and filter out rows with zero votes
       filtered_rows = []
       filtering_required = false
+      comments_count = 0
+
       CSV.foreach(csv_file_path, headers: true) do |row|
         agrees = (row["agrees"] || 0).to_i
         disagrees = (row["disagrees"] || 0).to_i
         passes = (row["passes"] || 0).to_i
 
-        # Only include rows that have at least one vote
         if agrees > 0 || disagrees > 0 || passes > 0
           filtered_rows << row
+          comments_count += 1
         else
           filtering_required = true
         end
       end
 
       if filtering_required
-        # Keep an unfiltered copy of the CSV
+        comments_count = 0
         FileUtils.cp(csv_file_path, "#{csv_file_path}.unfiltered")
         headers = CSV.read("#{csv_file_path}.unfiltered", headers: true).headers
         CSV.open(csv_file_path, "w", write_headers: true, headers: headers) do |csv|
           filtered_rows.each do |row|
+            comments_count += 1
             csv << row
           end
         end
@@ -66,6 +68,8 @@ module Sensemaker
       else
         Rails.logger.debug("All comments have votes, no filtering required")
       end
+
+      comments_count
     end
 
     private

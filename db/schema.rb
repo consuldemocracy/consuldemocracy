@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_10_29_153713) do
+ActiveRecord::Schema[7.1].define(version: 2025_11_13_104941) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -1456,6 +1456,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_10_29_153713) do
     t.string "input_file"
     t.string "persisted_output"
     t.boolean "published", default: false
+    t.integer "comments_analysed", default: 0
     t.index ["analysable_type", "analysable_id"], name: "index_sensemaker_jobs_on_analysable_type_and_analysable_id"
     t.index ["parent_job_id"], name: "index_sensemaker_jobs_on_parent_job_id"
     t.index ["user_id"], name: "index_sensemaker_jobs_on_user_id"

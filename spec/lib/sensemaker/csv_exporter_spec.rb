@@ -53,7 +53,6 @@ describe Sensemaker::CsvExporter do
       temp_csv_file.write("comment_6,Sixth comment,0,0,0,user_6,Transportation:Walking\n")
       temp_csv_file.close
 
-      # Copy the temp file to our test path
       FileUtils.cp(temp_csv_file.path, csv_file_path)
     end
 
@@ -92,11 +91,12 @@ describe Sensemaker::CsvExporter do
       temp_file.close
       FileUtils.cp(temp_file.path, csv_file_path)
 
-      Sensemaker::CsvExporter.filter_zero_vote_comments_from_csv(csv_file_path)
+      comments_count = Sensemaker::CsvExporter.filter_zero_vote_comments_from_csv(csv_file_path)
 
       filtered_data = CSV.read(csv_file_path, headers: true)
       expect(filtered_data.length).to eq(2)
       expect(filtered_data.first["comment-id"]).to eq("comment_pass")
+      expect(comments_count).to eq(2)
 
       temp_file.unlink
     end

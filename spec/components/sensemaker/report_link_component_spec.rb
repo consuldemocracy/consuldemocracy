@@ -75,7 +75,7 @@ describe Sensemaker::ReportLinkComponent do
       it "renders the view report link" do
         render_inline component
 
-        expect(page).to have_link("View Report", href: sensemaker_job_path(Sensemaker::Job.last.id))
+        expect(page).to have_link("View analysis", href: sensemaker_job_path(Sensemaker::Job.last.id))
       end
     end
 
@@ -83,7 +83,7 @@ describe Sensemaker::ReportLinkComponent do
       it "does not render the view report link" do
         render_inline component
 
-        expect(page).not_to have_link("View Report")
+        expect(page).not_to have_link("View analysis")
       end
     end
   end

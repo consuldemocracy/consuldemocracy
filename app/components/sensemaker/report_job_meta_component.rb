@@ -42,8 +42,8 @@ class Sensemaker::ReportJobMetaComponent < ApplicationComponent
     l(@job.finished_at, format: :long)
   end
 
-  def comments_count_placeholder
-    t("sensemaker.report_view.comments_count_placeholder")
+  def comments_analysed_count
+    @job.comments_analysed || 0
   end
 
   def report_url
