@@ -67,9 +67,9 @@ describe Sensemaker::Conversation do
       context_result = conversation.compile_context
       expect(context_result).to be_present
       expect(context_result).to include(
-        "This question is part of the legislation process, \"#{question.process.title}\""
+        "This debate is part of the legislation process, \"#{question.process.title}\""
       )
-      expect(context_result).not_to include("### Question Responses")
+      expect(context_result).not_to include("### Debate Responses")
     end
 
     it "can compile context for Legislation::Question with question options" do
@@ -85,7 +85,7 @@ describe Sensemaker::Conversation do
       conversation = Sensemaker::Conversation.new("Legislation::Question", question.id)
       context_result = conversation.compile_context
       expect(context_result).to be_present
-      expect(context_result).to include("### Question Responses")
+      expect(context_result).to include("### Debate Responses")
       expect(context_result).to include("- #{question.question_options.first.value}")
       expect(context_result).to include("- #{question.question_options.last.value}")
     end
@@ -140,6 +140,84 @@ describe Sensemaker::Conversation do
         context_result = conversation.compile_context
         expect(context_result).to be_present, "Failed to compile context for #{target_factory}"
         expect(context_result).to include("- Comments: #{conversation.comments.size}")
+      end
+    end
+  end
+
+  describe "#comments" do
+    describe "avoids filtering out in job run by vote padding" do
+      it "pads Budget investment votes by 1 when votes are 0" do
+        budget = create(:budget)
+        _investment = create(:budget_investment, budget: budget, cached_votes_up: 0)
+
+        conversation = Sensemaker::Conversation.new("Budget", budget.id)
+        comments = conversation.comments
+
+        expect(comments.size).to eq(1)
+        expect(comments.first.cached_votes_up).to eq(1)
+        expect(comments.first.cached_votes_total).to eq(1)
+      end
+
+      it "pads Budget investment votes by 1 when votes exist" do
+        budget = create(:budget)
+        _investment = create(:budget_investment, budget: budget, cached_votes_up: 5)
+
+        conversation = Sensemaker::Conversation.new("Budget", budget.id)
+        comments = conversation.comments
+
+        expect(comments.size).to eq(1)
+        expect(comments.first.cached_votes_up).to eq(6)
+        expect(comments.first.cached_votes_total).to eq(6)
+      end
+
+      it "pads Budget::Group investment votes by 1 when votes are 0" do
+        budget = create(:budget)
+        group = create(:budget_group, budget: budget)
+        heading = create(:budget_heading, group: group)
+        _investment = create(:budget_investment, heading: heading, cached_votes_up: 0)
+
+        conversation = Sensemaker::Conversation.new("Budget::Group", group.id)
+        comments = conversation.comments
+
+        expect(comments.size).to eq(1)
+        expect(comments.first.cached_votes_up).to eq(1)
+        expect(comments.first.cached_votes_total).to eq(1)
+      end
+
+      it "pads Budget::Group investment votes by 1 when votes exist" do
+        budget = create(:budget)
+        group = create(:budget_group, budget: budget)
+        heading = create(:budget_heading, group: group)
+        _investment = create(:budget_investment, heading: heading, cached_votes_up: 3)
+
+        conversation = Sensemaker::Conversation.new("Budget::Group", group.id)
+        comments = conversation.comments
+
+        expect(comments.size).to eq(1)
+        expect(comments.first.cached_votes_up).to eq(4)
+        expect(comments.first.cached_votes_total).to eq(4)
+      end
+
+      it "pads Proposal votes by 1 when votes are 0" do
+        _proposal = create(:proposal, cached_votes_up: 0)
+
+        conversation = Sensemaker::Conversation.new("Proposal", nil)
+        comments = conversation.comments
+
+        expect(comments.size).to eq(1)
+        expect(comments.first.cached_votes_up).to eq(1)
+        expect(comments.first.cached_votes_total).to eq(1)
+      end
+
+      it "pads Proposal votes by 1 when votes exist" do
+        _proposal = create(:proposal, cached_votes_up: 10)
+
+        conversation = Sensemaker::Conversation.new("Proposal", nil)
+        comments = conversation.comments
+
+        expect(comments.size).to eq(1)
+        expect(comments.first.cached_votes_up).to eq(11)
+        expect(comments.first.cached_votes_total).to eq(11)
       end
     end
   end

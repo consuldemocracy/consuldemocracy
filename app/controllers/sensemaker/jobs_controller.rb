@@ -17,6 +17,9 @@ class Sensemaker::JobsController < ApplicationController
     if params[:process_id].present?
       @parent_resource = Legislation::Process.find(params[:process_id])
       @sensemaker_jobs = Sensemaker::Job.published.for_process(@parent_resource).order(finished_at: :desc)
+    elsif params[:budget_id].present?
+      @parent_resource = Budget.find(params[:budget_id])
+      @sensemaker_jobs = Sensemaker::Job.published.for_budget(@parent_resource).order(finished_at: :desc)
     else
       head :not_found
     end

@@ -143,6 +143,13 @@ module Sensemaker
       output_artifact_paths.all? { |path| File.exist?(path) }
     end
 
+    def self.for_budget(budget)
+      group_subquery = budget.groups.select(:id)
+      published.where(analysable_type: "Budget", analysable_id: budget.id).or(
+        published.where(analysable_type: "Budget::Group", analysable_id: group_subquery)
+      )
+    end
+
     def self.for_process(process)
       proposals_subquery = process.proposals.select(:id)
       questions_subquery = process.questions.select(:id)

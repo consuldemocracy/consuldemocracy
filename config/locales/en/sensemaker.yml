@@ -1,7 +1,7 @@
 en:
   sensemaker:
     context:
-      base: "Analyzing citizen %{type} from Consul Democracy platform"
+      base: "Analysing %{type} from the Consul Democracy platform"
       title: "Title: %{title}"
       name: "Name: %{name}"
       summary: "Summary: %{summary}"
@@ -12,7 +12,15 @@ en:
       comments: "- Comments: %{count}"
       created: "- Created: %{date}"
       published: "- Published: %{date}"
-
+      type:
+        budget: "Participatory budget"
+        budget/group: "Participatory budget group"
+        proposal: "Citizen proposal"
+        debate: "Citizen debate"
+        legislation/proposal: "Collaborative legislation proposal"
+        legislation/question: "Collaborative legislation debate"
+        legislation/question_option: "Collaborative legislation debate segmented by option"
+        poll: "Poll"
       proposal:
         votes: "This proposal has %{total_votes} votes out of %{required_votes} required to be successful"
 
@@ -79,10 +87,11 @@ en:
         legislation/question: "Debates"
         legislation/question_option: "Debates segmented by option"
         budget: "Budgets"
-        budget_group: "Budget groups"
+        budget/group: "Budget groups"
         proposal: "Proposals"
         poll: "Polls"
         debate: "Debates"
+
     report_view:
       title: "Sensemaker Report"
       intro_text: "Here you can find the output of an analysis produced using %{link}."

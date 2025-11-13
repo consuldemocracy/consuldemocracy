@@ -18,7 +18,14 @@ class Sensemaker::ReportLinkComponent < ApplicationComponent
 
   def report_available?
     if link_to_index
-      Sensemaker::Job.for_process(analysable_resource).exists?
+      case analysable_resource
+      when Budget
+        Sensemaker::Job.for_budget(analysable_resource).exists?
+      when Legislation::Process
+        Sensemaker::Job.for_process(analysable_resource).exists?
+      else
+        false
+      end
     else
       latest_successful_job.present? && latest_successful_job.has_outputs?
     end

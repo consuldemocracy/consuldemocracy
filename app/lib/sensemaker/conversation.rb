@@ -30,9 +30,9 @@ module Sensemaker
           CommentLikeItem.new(
             id: investment.id,
             body: "#{investment.title}\n\n#{investment.description}",
-            cached_votes_up: 0,
+            cached_votes_up: 1 + investment.cached_votes_up,
             cached_votes_down: 0,
-            cached_votes_total: 0,
+            cached_votes_total: 1 + investment.cached_votes_up,
             user_id: investment.author_id
           )
         end
@@ -42,9 +42,9 @@ module Sensemaker
           CommentLikeItem.new(
             id: proposal.id,
             body: "#{proposal.title}\n\n#{proposal.description}",
-            cached_votes_up: proposal.cached_votes_up || 0,
+            cached_votes_up: 1 + proposal.cached_votes_up,
             cached_votes_down: 0,
-            cached_votes_total: proposal.total_votes || 0,
+            cached_votes_total: 1 + proposal.cached_votes_up,
             user_id: proposal.author_id
           )
         end
@@ -118,7 +118,7 @@ module Sensemaker
       def self.compile_context_for_target(target, comments_count: nil)
         parts = []
 
-        target_type = target.class.name.humanize
+        target_type = I18n.t("sensemaker.context.type.#{target.class.name.underscore}")
         parts << I18n.t("sensemaker.context.base", type: target_type)
 
         if target.respond_to?(:title)
