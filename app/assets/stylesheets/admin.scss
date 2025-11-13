@@ -135,10 +135,6 @@ $table-header:   #ecf1f6;
       }
     }
 
-    .break {
-      word-break: break-word;
-    }
-
     &.fixed {
       table-layout: fixed;
     }
@@ -233,7 +229,7 @@ $table-header:   #ecf1f6;
   display: none;
 }
 
-.sortable thead th:hover {
+.table-sortable thead th:hover {
   cursor: pointer;
   text-decoration: underline;
 }
@@ -593,7 +589,6 @@ table {
 
 // 10. Budgets
 // -----------------
-
 
 .columns-selector {
 

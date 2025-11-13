@@ -105,7 +105,6 @@
 //= require leaflet.markercluster/dist/leaflet.markercluster
 //= require map
 //= require polls
-//= require sortable
 //= require table_sortable
 //= require investment_report_alert
 //= require managers
@@ -160,7 +159,6 @@ var initialize_modules = function() {
   App.TagAutocomplete.initialize();
   App.Map.initialize();
   App.Polls.initialize();
-  App.Sortable.initialize();
   App.TableSortable.initialize();
   App.InvestmentReportAlert.initialize();
   App.Managers.initialize();
@@ -172,11 +170,12 @@ var initialize_modules = function() {
   App.AdminBudgetsWizardCreationStep.initialize();
   App.AdminDashboardActionsForm.initialize();
   App.AdminMachineLearningScripts.initialize();
-  App.AdminSensemakerScripts.initialize();
+  App.AdminPollQuestionOptionsTable.initialize();
   App.AdminPollShiftsForm.initialize();
   App.AdminTenantsForm.initialize();
   App.AdminVotationTypesFields.initialize();
   App.AdminMenu.initialize();
+  App.AdminSensemakerScripts.initialize();
   App.BudgetEditAssociations.initialize();
   App.BudgetHideMoney.initialize();
   App.Datepicker.initialize();

@@ -162,7 +162,7 @@
 
   h1,
   p {
-    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   .callout {
@@ -274,7 +274,7 @@
     position: relative;
 
     a {
-      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
 
     .icon-video {
@@ -316,7 +316,7 @@
 }
 
 .budget-investment-show p {
-  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .proposal-show,
@@ -660,7 +660,7 @@
   }
 
   .investment-external-link a {
-    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 }
 
@@ -1334,7 +1334,7 @@
     }
 
     a {
-      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
   }
 }

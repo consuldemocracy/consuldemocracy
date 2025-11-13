@@ -1,8 +1,8 @@
 (function() {
   "use strict";
-  App.Sortable = {
+  App.AdminPollQuestionOptionsTable = {
     initialize: function() {
-      $(".sortable").sortable({
+      $(".poll-question-options-table tbody").sortable({
         update: function() {
           var new_order;
           new_order = $(this).sortable("toArray", {
