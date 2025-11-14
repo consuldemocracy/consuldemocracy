@@ -8,6 +8,10 @@ class MapLocation < ApplicationRecord
     latitude.present? && longitude.present? && zoom.present?
   end
 
+  def title
+    (proposal || investment)&.title
+  end
+
   def json_data
     {
       investment_id: investment_id,
