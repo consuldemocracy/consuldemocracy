@@ -86,7 +86,6 @@ pl:
         confidence_score: najwyżej oceniane
         created_at: najnowsze
         hot_score: najbardziej aktywne
-        most_commented: najczęściej komentowane
         relevance: stosowność
         recommendations: rekomendacje
       recommendations:
