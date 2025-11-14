@@ -99,7 +99,6 @@ ar:
         confidence_score: اعلى تقييم
         created_at: أحدث
         hot_score: الأكثر نشاطا
-        most_commented: الأكثر تعليقا
         relevance: الأهمية
         recommendations: التوصيات
       recommendations:
