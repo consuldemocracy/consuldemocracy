@@ -25,5 +25,19 @@ describe Users::ConfirmationsController do
 
       expect(response).to redirect_to(new_user_session_path)
     end
+
+    context "with newsletter_recipient" do
+      let(:tokens) { Devise.token_generator.generate(User, :confirmation_token) }
+      let(:user) { create(:user, confirmation_token: tokens[1], confirmed_at: nil, newsletter: false) }
+
+      it "adopts newsletter_recipient to user" do
+        create(:newsletter_recipient, :with_confirmed, email: user.email, active: true)
+
+        get :show, params: { user: user, confirmation_token: tokens[1] }
+
+        expect(response).to have_http_status(302)
+        expect(user.reload.newsletter).to be_truthy
+      end
+    end
   end
 end

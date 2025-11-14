@@ -88,6 +88,7 @@
 //= require markdown_editor
 //= require html_editor
 //= require cocoon
+//= require newsletter_recipient
 //= require options
 //= require questions
 //= require legislation_admin

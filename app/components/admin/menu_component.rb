@@ -63,7 +63,8 @@ class Admin::MenuComponent < ApplicationComponent
     end
 
     def profiles?
-      %w[administrators organizations officials moderators valuators managers users].include?(controller_name)
+      %w[administrators organizations officials moderators valuators managers users newsletter_recipients]
+        .include?(controller_name)
     end
 
     def settings?
@@ -399,7 +400,8 @@ class Admin::MenuComponent < ApplicationComponent
           valuators_link,
           managers_link,
           (sdg_managers_link if feature?(:sdg)),
-          users_link
+          users_link,
+          newsletter_recipients_link
         )
       end
     end
@@ -589,6 +591,13 @@ class Admin::MenuComponent < ApplicationComponent
         t("admin.menu.sdg_managers"),
         admin_sdg_managers_path,
         sdg_managers?
+      ]
+    end
+
+    def newsletter_recipients_link
+      [
+        t("admin.menu.newsletter_recipients"),
+        admin_newsletter_recipients_path
       ]
     end
 

@@ -822,6 +822,15 @@ de:
         other: "Sie können nur Investitionsprojekte in %{count} Bezirken unterstützen. Sie haben bereits Projekte in %{supported_headings} unterstützt."
   welcome:
     feed:
+      newsletters_receptions:
+        subscribed: "Du hast dich erfolgreich angemeldet!"
+        confirmation_failed: "Bestätigung fehlgeschlagen."
+        confirmation_success: "E-Mail wurde erfolgreich bestätigt."
+        stop_subscription_failed: "Abmeldung fehlgeschlagen!"
+        stop_subscription_success: "Du hast dich erfolgreich abgemeldet."
+        opt_in_title: Newsletter
+        opt_in_sub_title: Nicht registriert? Jetzt abonnieren
+        submit_btn: Anmelden
       most_active:
         debates: "Aktivste Debatten"
         proposals: "Aktivste Vorschläge"

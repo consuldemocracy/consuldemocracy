@@ -1,4 +1,6 @@
 es:
+  attributes:
+    email: E-Mail
   account:
     show:
       last_sign_in: "Último acceso efectuado: %{last_sign_in_at} desde la IP %{last_sign_in_ip}"
@@ -851,6 +853,15 @@ es:
         other: "Sólo puedes apoyar proyectos de gasto de %{count} distritos. Ya has apoyado en %{supported_headings}."
   welcome:
     feed:
+      newsletters_receptions:
+        subscribed: "¡Te has suscrito con éxito!"
+        confirmation_failed: "La confirmación ha fallado."
+        confirmation_success: "El correo electrónico se ha confirmado correctamente."
+        stop_subscription_failed: "¡La cancelación de la suscripción ha fallado!"
+        stop_subscription_success: "Te has dado de baja con éxito."
+        opt_in_title: Boletín
+        opt_in_sub_title: ¿No estás registrado? Suscríbete ahora
+        submit_btn: Registrarse
       most_active:
         debates: "Debates más activos"
         proposals: "Propuestas más activas"

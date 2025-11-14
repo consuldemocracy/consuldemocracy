@@ -1,0 +1,10 @@
+<h2><%= t("admin.newsletter_recipients.index.title") %></h2>
+
+<%= render Admin::SearchComponent.new(
+  label: t("admin.newsletter_recipients.search.placeholder"),
+  remote: true
+) %>
+
+<div id="newsletter_recipients">
+  <%= render "newsletter_recipients" %>
+</div>

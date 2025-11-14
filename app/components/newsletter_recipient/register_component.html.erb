@@ -1,0 +1,36 @@
+<div class="sidebar-card js-sidebar-card -collapsed-on-mobile">
+  <div class="sidebar-card-title js-sidebar-card-title">
+    <div class="d-flex sidebar-card-title-inner">
+      <h2 class="sidebar-card-title-text title">
+        <%= t("welcome.feed.newsletters_receptions.opt_in_title") %>
+      </h2>
+    </div>
+    <div class="icon-chevron-down sidebar-collapse-icon"></div>
+  </div>
+  <div class="sidebar-card--content">
+    <div class="sidebar-card--section">
+      <div id="newsletter-subscription-form">
+        <p><%= t("welcome.feed.newsletters_receptions.opt_in_sub_title") %></p>
+        <%= form_for newsletter_recipient,
+                     url: newsletter_recipients_path,
+                     html: {
+                       class: "new_newsletter_recipient",
+                       id: "new_newsletter_recipient",
+                       accept_charset: "UTF-8"
+                     },
+                     remote: true,
+                     method: :post do |f| %>
+
+          <%= f.text_field :email,
+                           label: t("attributes.email"),
+                           placeholder: t("attributes.email") %>
+
+          <%= f.submit t("welcome.feed.newsletters_receptions.submit_btn"),
+                       class: "button",
+                       name: "commit",
+                       data: { disable_with: t("welcome.feed.newsletters_receptions.submit_btn") } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

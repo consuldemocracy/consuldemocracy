@@ -165,6 +165,7 @@ namespace :admin do
     end
 
     resources :users, only: [:index, :show]
+    resources :newsletter_recipients, only: [:index, :show]
 
     scope module: :poll do
       resources :polls do

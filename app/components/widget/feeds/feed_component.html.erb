@@ -1,4 +1,14 @@
 <section id="feed_<%= kind %>" class="widget-feed feed-<%= kind %>">
+  <% if kind == "debates" %>
+    <% if current_user %>
+      <header>
+        <h2 class="title"><%= t("welcome.feed.newsletters_receptions.opt_in_title") %></h2>
+      </header>
+      <%= render NewsletterRecipient::FeaturedSettingsFormComponent.new("newsletter", current_user) %>
+    <% else %>
+      <%= render NewsletterRecipient::RegisterComponent.new %>
+    <% end %>
+  <% end %>
   <header>
     <h2 class="title"><%= t("welcome.feed.most_active.#{kind}") %></h2>
   </header>

@@ -1,0 +1,23 @@
+.sidebar-card {
+  color: #004a83;
+  font-size: 14px;
+  margin-bottom: 15px;
+  position: relative;
+  width: 100%;
+}
+
+.sidebar-card-title {
+  align-items: center;
+  color: #222;
+  display: flex;
+  font-weight: 500;
+  justify-content: space-between;
+  margin-bottom: 0 !important;
+  user-select: none;
+}
+
+.featured-settings-form {
+  [aria-pressed] {
+    @include switch;
+  }
+}

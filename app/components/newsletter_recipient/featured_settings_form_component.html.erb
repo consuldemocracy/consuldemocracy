@@ -1,0 +1,4 @@
+<%= form_for(@user, as: :account, url: account_path, remote: true, authenticity_token: true, html: { class: "featured-settings-form" }) do |f| %>
+  <%= f.hidden_field feature.to_sym, value: (enabled? ? "" : "active") %>
+  <%= f.button text, options %>
+<% end %>

@@ -8,6 +8,32 @@ describe "Home" do
       expect(page).to have_content "CONSUL"
     end
 
+    scenario "Creates a newsletter recipient" do
+      visit root_path
+
+      expect(page).to have_content "Newsletter"
+      expect(page).to have_content "Not registered yet? Subscribe for newsletter now"
+      fill_in "E-Mail", with: "test@test.test"
+      click_button "Register"
+      expect(page).to have_content "You have successfully subscribed!"
+    end
+
+    scenario "Newsletter recipient is already present" do
+      record = [
+        build(:user, email: "test@test.test"),
+        build(:newsletter_recipient, email: "test@test.test")
+      ].sample
+      record.save
+
+      visit root_path
+
+      expect(page).to have_content "Newsletter"
+      expect(page).to have_content "Not registered yet? Subscribe for newsletter now"
+      fill_in "E-Mail", with: "test@test.test"
+      click_button "Register"
+      expect(page).to have_content "has already been taken"
+    end
+
     scenario "Not display recommended section" do
       create(:debate)
 
@@ -49,6 +75,18 @@ describe "Home" do
 
         expect(page).to have_content debate.title
         expect(page).to have_content debate.description
+      end
+
+      scenario "Displays newsletter subscription" do
+        visit root_path
+
+        within(".feeds-participation") do
+          button = find_button("Newsletter recipient")
+          expect(button).to have_text("Yes")
+          button.click
+
+          expect(button).to have_text("No")
+        end
       end
 
       scenario "Display all recommended debates link" do

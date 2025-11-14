@@ -2,6 +2,9 @@ de:
   mailers:
     title: "Open Government"
     no_reply: "Diese Nachricht wurde von einer E-Mail-Adresse gesendet, die keine Antworten akzeptiert."
+    newsletter_recipient_confirmation:
+      confirm: "Bitte klicke auf den folgenden Link, um deine E-Mail-Adresse zu bestätigen:"
+      subject: "Bestätigung deiner Newsletter-Anmeldung"
     already_confirmed:
       info: "Wir haben eine Anfrage erhalten, Ihnen Anweisungen zur Bestätigung Ihres Kontos zu senden. Ihr Konto ist jedoch bereits bestätigt, sodass Sie dies nicht erneut tun müssen."
       new_password: "Wenn Sie Ihr Passwort vergessen haben, können Sie es unter dem folgenden Link zurücksetzen:"
