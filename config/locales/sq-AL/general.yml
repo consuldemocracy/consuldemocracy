@@ -80,7 +80,6 @@ sq:
         confidence_score: më të vlerësuarat
         created_at: më të rejat
         hot_score: më aktive
-        most_commented: më të komentuarit
         relevance: lidhja
         recommendations: rekomandimet
       recommendations:
