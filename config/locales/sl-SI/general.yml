@@ -72,7 +72,6 @@ sl:
         confidence_score: najbolje ocenjene
         created_at: najnovejše
         hot_score: najbolj aktivne
-        most_commented: z največ komentarji
         relevance: najbolj relevantno
         recommendations: priporočeno
       recommendations:
