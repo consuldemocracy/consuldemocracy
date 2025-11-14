@@ -88,7 +88,6 @@ sv:
         confidence_score: populära
         created_at: senaste
         hot_score: mest aktiva
-        most_commented: mest kommenterade
         relevance: relevans
         recommendations: rekommendationer
       recommendations:
