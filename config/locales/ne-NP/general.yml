@@ -87,7 +87,6 @@ ne:
         confidence_score: उच्चतम मूल्याङ्कन
         created_at: नवीनतम
         hot_score: सबैभन्दा सक्रिय
-        most_commented: धेरैले टिप्पणी गरेकाे
         relevance: सान्दर्भिकता
         recommendations: सिफारिसहरू
       recommendations:
