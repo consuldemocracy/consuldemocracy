@@ -49,8 +49,8 @@ class Community < ApplicationRecord
     end
 
     def users_who_topics_author
-      author_ids = topics.pluck(:author_id)
-      User.by_authors(author_ids)
+      ids = topics.pluck(:author_id)
+      User.with_ids(ids)
     end
 
     def author_from_community
