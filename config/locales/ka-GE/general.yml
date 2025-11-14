@@ -84,7 +84,6 @@ ka:
         confidence_score: მაღალი შეფასების მქონე
         created_at: უახლესი
         hot_score: ყველაზე აქტიური
-        most_commented: ყველაზე მეტი კომენტარის მქონე
         relevance: შესაბამისობა
         recommendations: რეკომენდაციები
       recommendations:
