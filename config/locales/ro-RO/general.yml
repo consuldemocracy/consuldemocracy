@@ -92,7 +92,6 @@ ro:
         confidence_score: cea mai votată
         created_at: cea mai nouă
         hot_score: cea mai activă
-        most_commented: cea mai comentată
         relevance: relevanță
         recommendations: recomandări
       recommendations:
