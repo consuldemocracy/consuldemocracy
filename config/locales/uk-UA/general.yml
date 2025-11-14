@@ -94,7 +94,6 @@ uk-UA:
         confidence_score: з найвищим рейтингом
         created_at: найновіші
         hot_score: найактивніші
-        most_commented: найбільш коментовані
         relevance: актуальність
         recommendations: рекомендації
       recommendations:
