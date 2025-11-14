@@ -88,7 +88,6 @@ gl:
         confidence_score: Máis apoiadas
         created_at: Novas
         hot_score: Máis activas hoxe
-        most_commented: Máis comentadas
         relevance: Máis relevantes
         recommendations: recomendacións
       recommendations:
