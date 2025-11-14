@@ -87,7 +87,6 @@ bg:
         confidence_score: най-високо оценени
         created_at: най-нови
         hot_score: най-активни
-        most_commented: най-коментирани
         relevance: приложимост
         recommendations: препоръки
       recommendations:
