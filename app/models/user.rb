@@ -112,7 +112,7 @@ class User < ApplicationRecord
   scope :erased,         -> { where.not(erased_at: nil) }
   scope :active,         -> { excluding(erased) }
   scope :public_for_api, -> { all }
-  scope :by_authors,     ->(author_ids) { where(id: author_ids) }
+  scope :with_ids,       ->(ids) { where(id: ids) }
   scope :by_comments,    ->(commentables) do
     joins(:comments).where("comments.commentable": commentables).distinct
   end
