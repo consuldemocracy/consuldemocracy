@@ -62,6 +62,7 @@ sv:
         filter: Visa
         filters:
           all: Alla
+          on_budget_investments: Budgetförslag
           on_comments: Kommentarer
           on_debates: Debatter
           on_proposals: Förslag
