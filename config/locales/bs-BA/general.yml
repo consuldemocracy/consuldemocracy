@@ -83,7 +83,6 @@ bs:
         confidence_score: sa najvišim ocjenama
         created_at: najnovije
         hot_score: najaktivnije
-        most_commented: sa najviše komentara
         relevance: relevantnost
         recommendations: preporuke
       recommendations:
