@@ -92,8 +92,9 @@ describe "Admin settings", :admin do
 
       visit admin_settings_path
       click_link "Map configuration"
-      find("#admin-map").click
+
       within "#map-form" do
+        find("#admin-map").click
         click_button "Update"
       end
 
