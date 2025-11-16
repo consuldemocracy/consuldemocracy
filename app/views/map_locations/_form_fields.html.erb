@@ -1,6 +1,6 @@
 <% if feature?(:map) %>
-  <div>
-    <%= form.label :map_location, label %>
+  <fieldset>
+    <legend><%= label %></legend>
     <p class="help-text" id="tag-list-help-text"><%= help %></p>
 
     <%= form.fields_for :map_location, map_location do |m_l_fields| %>
@@ -10,5 +10,5 @@
       <%= m_l_fields.hidden_field :longitude %>
       <%= m_l_fields.hidden_field :zoom %>
     <% end %>
-  </div>
+  </fieldset>
 <% end %>

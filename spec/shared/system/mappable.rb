@@ -23,13 +23,11 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
       send("fill_in_#{mappable_factory_name}")
 
-      within ".map-location" do
-        expect(page).not_to have_css(".map-icon")
-      end
+      within_fieldset "Map location" do
+        expect(page).not_to have_css ".map-icon"
 
-      find("#new_map_location").click
+        find("#new_map_location").click
 
-      within ".map-location" do
         expect(page).to have_css ".map-icon"
         expect(page).not_to have_css ".map-icon[aria-label]"
       end
@@ -83,7 +81,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
         go_back
 
-        within ".map-location" do
+        within_fieldset "Map location" do
           expect(page).to have_css(".leaflet-map-pane", count: 1)
         end
       end
@@ -92,15 +90,16 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
         do_login_for user, management: management
         visit send(mappable_new_path, arguments)
 
-        within ".map-location" do
-          expect(page).not_to have_css(".map-icon")
+        within_fieldset "Map location" do
+          expect(page).not_to have_css ".map-icon"
         end
         expect(page.execute_script("return App.Map.maps[0].getZoom();")).to eq(10)
 
         map_zoom_in
-        find("#new_map_location").click
 
-        within ".map-location" do
+        within_fieldset "Map location" do
+          find("#new_map_location").click
+
           expect(page).to have_css(".map-icon")
         end
 
@@ -116,9 +115,9 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
         go_back
 
-        within ".map-location" do
-          expect(page).to have_css(".map-icon")
-          expect(page.execute_script("return App.Map.maps[0].getZoom();")).to eq(11)
+        within_fieldset "Map location" do
+          expect(page).to have_css ".map-icon"
+          expect(page.execute_script("return App.Map.maps[0].getZoom();")).to eq 11
         end
       end
 
@@ -126,14 +125,15 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
         do_login_for user, management: management
         visit send(mappable_new_path, arguments)
 
-        within ".map-location" do
-          expect(page).not_to have_css(".map-icon")
+        within_fieldset "Map location" do
+          expect(page).not_to have_css ".map-icon"
         end
 
         place_map_at(-68.592487, -62.391357)
-        find("#new_map_location").click
 
-        within ".map-location" do
+        within_fieldset "Map location" do
+          find("#new_map_location").click
+
           expect(page).to have_css(".map-icon")
         end
 
@@ -149,8 +149,8 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
         go_back
 
-        within ".map-location" do
-          expect(page).to have_css(".map-icon")
+        within_fieldset "Map location" do
+          expect(page).to have_css ".map-icon"
         end
       end
     end
@@ -196,7 +196,10 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       do_login_for mappable.author, management: management
 
       visit send(mappable_edit_path, id: mappable.id)
-      find(".map-location").click(x: 30, y: 30)
+
+      within_fieldset "Map location" do
+        find(".map-location").click(x: 30, y: 30)
+      end
 
       new_latitude = find_field(
         "#{mappable_factory_name}_map_location_attributes_latitude", type: :hidden
@@ -219,7 +222,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       do_login_for mappable.author, management: management
 
       visit send(mappable_edit_path, id: mappable.id)
-      click_button "Remove map marker"
+      within_fieldset("Map location") { click_button "Remove map marker" }
       click_button "Save changes"
 
       expect(page).not_to have_button "Save changes"
