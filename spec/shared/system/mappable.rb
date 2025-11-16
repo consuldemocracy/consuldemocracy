@@ -17,7 +17,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
   describe "At #{mappable_new_path}" do
     before { set_arguments(arguments, mappable, mappable_path_arguments) }
 
-    scenario "Should not show marker by default on create #{mappable_factory_name}" do
+    scenario "Should show marker and create #{mappable_factory_name} with map" do
       do_login_for user, management: management
       visit send(mappable_new_path, arguments)
 
@@ -26,27 +26,14 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       within ".map-location" do
         expect(page).not_to have_css(".map-icon")
       end
-    end
 
-    scenario "Should show marker on create #{mappable_factory_name} when click on map" do
-      do_login_for user, management: management
-      visit send(mappable_new_path, arguments)
-
-      send("fill_in_#{mappable_factory_name}")
       find("#new_map_location").click
 
       within ".map-location" do
         expect(page).to have_css ".map-icon"
         expect(page).not_to have_css ".map-icon[aria-label]"
       end
-    end
 
-    scenario "Should create #{mappable_factory_name} with map" do
-      do_login_for user, management: management
-      visit send(mappable_new_path, arguments)
-
-      send("fill_in_#{mappable_factory_name}")
-      find("#new_map_location").click
       send("submit_#{mappable_factory_name}_form")
 
       within ".map-location" do
@@ -180,8 +167,9 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
   end
 
   describe "At #{mappable_edit_path}", if: mappable_edit_path.present? do
-    scenario "Should edit map on #{mappable_factory_name} and contain default values" do
+    scenario "Should edit mappable on #{mappable_factory_name} without changing the map" do
       mappable.map_location.update!(latitude: 51.48, longitude: 0.0)
+
       do_login_for mappable.author, management: management
 
       visit send(mappable_edit_path, id: mappable.id)
@@ -191,6 +179,14 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
                                                                                               with: "51.48"
       expect(page).to have_field "#{mappable_factory_name}_map_location_attributes_longitude", type: :hidden,
                                                                                                with: "0.0"
+
+      fill_in "#{mappable_factory_name.camelize} title", with: "New title"
+      click_button "Save changes"
+
+      expect(page).not_to have_button "Save changes"
+      expect(page).to have_css ".map-location"
+      expect(page).to have_css ".map-location[data-marker-latitude='51.48']"
+      expect(page).to have_css ".map-location[data-marker-longitude='0.0']"
     end
 
     scenario "Should edit default values from map on #{mappable_factory_name} edit page" do
@@ -219,22 +215,6 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       expect(page).not_to have_css ".map-location[data-marker-longitude='#{original_longitude}']"
     end
 
-    scenario "Should edit mappable on #{mappable_factory_name} without change map" do
-      original_longitude = map_location.longitude
-      original_latitude = map_location.latitude
-
-      do_login_for mappable.author, management: management
-
-      visit send(mappable_edit_path, id: mappable.id)
-      fill_in "#{mappable_factory_name.camelize} title", with: "New title"
-      click_button "Save changes"
-
-      expect(page).not_to have_button "Save changes"
-      expect(page).to have_css ".map-location"
-      expect(page).to have_css ".map-location[data-marker-latitude='#{original_latitude}']"
-      expect(page).to have_css ".map-location[data-marker-longitude='#{original_longitude}']"
-    end
-
     scenario "Can not display map on #{mappable_factory_name} edit when remove map marker" do
       do_login_for mappable.author, management: management
 
@@ -244,6 +224,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
       expect(page).not_to have_button "Save changes"
       expect(page).not_to have_css ".map-location"
+      expect(page).not_to have_content "Map location can't be blank"
     end
 
     scenario "Can not display map on #{mappable_factory_name} edit when feature.map is disabled" do
@@ -256,17 +237,6 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
       expect(page).not_to have_button "Save changes"
       expect(page).not_to have_css ".map-location"
-    end
-
-    scenario "No need to skip map on update" do
-      do_login_for mappable.author, management: management
-
-      visit send(mappable_edit_path, id: mappable.id)
-      click_button "Remove map marker"
-      click_button "Save changes"
-
-      expect(page).not_to have_button "Save changes"
-      expect(page).not_to have_content "Map location can't be blank"
     end
   end
 
