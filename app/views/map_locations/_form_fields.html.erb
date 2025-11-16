@@ -1,10 +1,14 @@
-<%= form.label :map_location, label %>
-<p class="help-text" id="tag-list-help-text"><%= help %></p>
+<% if feature?(:map) %>
+  <div>
+    <%= form.label :map_location, label %>
+    <p class="help-text" id="tag-list-help-text"><%= help %></p>
 
-<%= form.fields_for :map_location, map_location do |m_l_fields| %>
-  <%= render_map(map_location, form: m_l_fields) %>
+    <%= form.fields_for :map_location, map_location do |m_l_fields| %>
+      <%= render_map(map_location, form: m_l_fields) %>
 
-  <%= m_l_fields.hidden_field :latitude %>
-  <%= m_l_fields.hidden_field :longitude %>
-  <%= m_l_fields.hidden_field :zoom %>
+      <%= m_l_fields.hidden_field :latitude %>
+      <%= m_l_fields.hidden_field :longitude %>
+      <%= m_l_fields.hidden_field :zoom %>
+    <% end %>
+  </div>
 <% end %>
