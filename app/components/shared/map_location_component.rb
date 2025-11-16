@@ -18,6 +18,10 @@ class Shared::MapLocationComponent < ApplicationComponent
       form.present?
     end
 
+    def show_remove_marker_button?
+      editable? && map_location.mappable.present?
+    end
+
     def latitude
       map_location.latitude.presence || Setting["map.latitude"]
     end

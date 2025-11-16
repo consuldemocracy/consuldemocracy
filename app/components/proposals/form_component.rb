@@ -17,6 +17,6 @@ class Proposals::FormComponent < ApplicationComponent
     end
 
     def map_location
-      proposal.map_location || MapLocation.new
+      proposal.map_location || MapLocation.new(proposal: Proposal.new)
     end
 end

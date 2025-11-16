@@ -21,6 +21,6 @@ class Budgets::Investments::FormComponent < ApplicationComponent
     end
 
     def map_location
-      investment.map_location || MapLocation.new
+      investment.map_location || MapLocation.new(investment: Budget::Investment.new)
     end
 end

@@ -26,11 +26,11 @@ describe "Admin settings", :admin do
 
       visit admin_settings_path
 
-      expect(page).not_to have_css "#admin-map.leaflet-container", visible: :all
+      expect(page).not_to have_css ".map-location.leaflet-container", visible: :all
 
       click_link "Map configuration"
 
-      expect(page).to have_css "#admin-map.leaflet-container"
+      expect(page).to have_css ".map-location.leaflet-container"
     end
   end
 
@@ -44,7 +44,7 @@ describe "Admin settings", :admin do
       expect(page).to have_content "To show the map to users you must enable " \
                                    '"Proposals and budget investments geolocation" ' \
                                    'on "Features" tab.'
-      expect(page).not_to have_css("#admin-map")
+      expect(page).not_to have_css ".map-location"
     end
 
     scenario "Should update marker" do
@@ -53,7 +53,7 @@ describe "Admin settings", :admin do
       visit admin_settings_path
       click_link "Map configuration"
 
-      expect(page).to have_css("#admin-map")
+      expect(page).to have_css ".map-location"
       expect(page).not_to have_content "To show the map to users you must enable " \
                                        '"Proposals and budget investments geolocation" ' \
                                        'on "Features" tab.'
@@ -62,7 +62,7 @@ describe "Admin settings", :admin do
       expect(page).to have_field "Longitude", with: "0.0"
 
       within "#map-form" do
-        find("#admin-map").click
+        find(".map-location").click
         click_button "Update"
       end
 

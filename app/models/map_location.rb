@@ -8,8 +8,12 @@ class MapLocation < ApplicationRecord
     latitude.present? && longitude.present? && zoom.present?
   end
 
+  def mappable
+    proposal || investment
+  end
+
   def title
-    (proposal || investment)&.title
+    mappable&.title
   end
 
   def json_data

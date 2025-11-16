@@ -33,4 +33,17 @@ describe Budgets::Investments::FormComponent do
       expect(page).not_to have_field "I agree to the Privacy Policy and the Terms and conditions of use"
     end
   end
+
+  describe "map" do
+    it "renders a button to remove the map marker" do
+      Setting["feature.map"] = true
+
+      render_inline Budgets::Investments::FormComponent.new(
+        budget.investments.new,
+        url: budget_investments_path(budget)
+      )
+
+      expect(page).to have_button "Remove map marker"
+    end
+  end
 end
