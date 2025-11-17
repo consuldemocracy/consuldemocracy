@@ -52,12 +52,7 @@
       </div>
     <% end %>
 
-    <%= render MapLocations::FormFieldsComponent.new(
-      f,
-      map_location: proposal.map_location || MapLocation.new,
-      label: t("proposals.form.map_location"),
-      help: t("proposals.form.map_location_instructions")
-    ) %>
+    <%= render MapLocations::FormFieldsComponent.new(f, map_location: map_location) %>
 
     <div>
       <%= f.label :tag_list, t("proposals.form.tags_label") %>
