@@ -216,7 +216,6 @@ namespace :admin do
       member do
         post :deliver
       end
-      get :users, on: :collection
     end
 
     resources :admin_notifications do
