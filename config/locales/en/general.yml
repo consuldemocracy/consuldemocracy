@@ -328,6 +328,7 @@ en:
       tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
       map_location: "Map location"
       map_location_instructions: "Navigate the map to the location and place the marker."
+      map_marker_coordinates: "Latitude: %{latitude}. Longitude: %{longitude}"
       map_remove_marker: "Remove map marker"
     index:
       featured_proposals: Featured

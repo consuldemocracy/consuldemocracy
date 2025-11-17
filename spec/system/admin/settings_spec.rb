@@ -60,6 +60,7 @@ describe "Admin settings", :admin do
 
       expect(page).to have_field "Latitude", with: "51.48"
       expect(page).to have_field "Longitude", with: "0.0"
+      expect(page).to have_css ".map-icon[aria-label='Latitude: 51.48. Longitude: 0.0']"
 
       within "#map-form" do
         find(".map-location").click
@@ -68,7 +69,9 @@ describe "Admin settings", :admin do
 
       expect(page).to have_content "Map configuration updated successfully"
       expect(page).to have_field "Latitude"
+      expect(page).to have_css ".map-icon"
       expect(page).not_to have_field "Latitude", with: "51.48"
+      expect(page).not_to have_css ".map-icon[aria-label='Latitude: 51.48. Longitude: 0.0']"
     end
   end
 

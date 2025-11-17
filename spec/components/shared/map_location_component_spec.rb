@@ -28,4 +28,48 @@ describe Shared::MapLocationComponent do
       expect(page).to have_button "Remove map marker"
     end
   end
+
+  describe "marker title" do
+    it "uses the mappable title when there's a mappable with a title" do
+      map_location = build(
+        :map_location,
+        proposal: Proposal.new(title: "Meet me here"),
+        latitude: "25.25",
+        longitude: "13.14"
+      )
+
+      render_inline Shared::MapLocationComponent.new(map_location)
+
+      expect(page).to have_css "[data-marker-title='Meet me here']"
+    end
+
+    it "uses the coordinates when there's no mappable" do
+      map_location = build(:map_location, latitude: "25.25", longitude: "13.14")
+
+      render_inline Shared::MapLocationComponent.new(map_location)
+
+      expect(page).to have_css "[data-marker-title='Latitude: 25.25. Longitude: 13.14']"
+    end
+
+    it "uses the coordinates when the mappable has an empty title" do
+      map_location = build(
+        :map_location,
+        proposal: Proposal.new(title: ""),
+        latitude: "25.25",
+        longitude: "13.14"
+      )
+
+      render_inline Shared::MapLocationComponent.new(map_location)
+
+      expect(page).to have_css "[data-marker-title='Latitude: 25.25. Longitude: 13.14']"
+    end
+
+    it "is not present when the map location isn't available" do
+      map_location = build(:map_location, latitude: "25.25", longitude: nil)
+
+      render_inline Shared::MapLocationComponent.new(map_location)
+
+      expect(page).not_to have_css "[data-marker-title]"
+    end
+  end
 end
