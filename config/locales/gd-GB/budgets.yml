@@ -88,8 +88,6 @@ gd:
         tags_instructions: "Tagaich am moladh seo. Faodaidh tu taghadh bho na roinnean a tha air am moladh no do thagaichean fhèin a chur ris"
         tags_label: Tagaichean
         tags_placeholder: "Cuir a-steach na tagaichean a bu toil leat cleachdadh, air an sgaradh le cromagan (',')"
-        map_location: "An t-àite air a’ mhapa"
-        map_location_instructions: "Rach dhan àite cheart air a’ mhapa agus cuir an comharra ann."
       index:
         title: Buidseatan com-pàirteachail
         unfeasible: Pròiseactan tasgaidh nach eil comasach
