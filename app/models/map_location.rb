@@ -16,15 +16,6 @@ class MapLocation < ApplicationRecord
     mappable&.title
   end
 
-  def json_data
-    {
-      investment_id: investment_id,
-      proposal_id: proposal_id,
-      lat: latitude,
-      long: longitude
-    }
-  end
-
   def self.from_heading(heading)
     new(
       zoom: Budget::Heading::OSM_DISTRICT_LEVEL_ZOOM,
