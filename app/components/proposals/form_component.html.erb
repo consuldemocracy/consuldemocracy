@@ -54,7 +54,7 @@
 
     <%= render "map_locations/form_fields",
                form: f,
-               map_location: proposal.map_location || MapLocation.new,
+               map_location: map_location,
                label: t("proposals.form.map_location"),
                help: t("proposals.form.map_location_instructions") %>
 

@@ -46,7 +46,7 @@
 
     <%= render "map_locations/form_fields",
                form: f,
-               map_location: investment.map_location || MapLocation.new,
+               map_location: map_location,
                label: t("budgets.investments.form.map_location"),
                help: t("budgets.investments.form.map_location_instructions") %>
 
