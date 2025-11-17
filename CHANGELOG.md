@@ -2,6 +2,46 @@
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
+## [2.4.1](https://github.com/consuldemocracy/consuldemocracy/tree/2.4.1) (2025-11-17)
+
+[Full Changelog](https://github.com/consuldemocracy/consuldemocracy/compare/2.4.0...2.4.1)
+
+### Changed
+
+- **Linters:** Add and apply stylistic/max-empty-lines rule [#6123](https://github.com/consuldemocracy/consuldemocracy/pull/6123)
+- **Maintenance-CI:** Bump actions/upload-artifact from 4 to 5 [#6138](https://github.com/consuldemocracy/consuldemocracy/pull/6138)
+- **Maintenance-CI:** Bump actions/setup-node from 4 to 6 [#6108](https://github.com/consuldemocracy/consuldemocracy/pull/6108) and [#6139](https://github.com/consuldemocracy/consuldemocracy/pull/6139)
+- **Maintenance-CI:** Bump actions/checkout from 4 to 5 [#6107](https://github.com/consuldemocracy/consuldemocracy/pull/6107)
+- **Maintenance-CI:** Bump browser-actions/setup-chrome from 1 to 2 [#6060](https://github.com/consuldemocracy/consuldemocracy/pull/6060)
+- **Maintenance-Gems:** Bump rubocop-rspec_rails from 2.30.0 to 2.31.0 [#6142](https://github.com/consuldemocracy/consuldemocracy/pull/6142)
+- **Maintenance-Gems:** Bump rails from 7.1.5.2 to 7.1.6 [#6140](https://github.com/consuldemocracy/consuldemocracy/pull/6140)
+- **Maintenance-Gems:** Bump selenium-webdriver from 4.33.0 to 4.38.0 [#6130](https://github.com/consuldemocracy/consuldemocracy/pull/6130)
+- **Maintenance-Gems:** Bump rubocop-rails from 2.29.1 to 2.33.4 [#6106](https://github.com/consuldemocracy/consuldemocracy/pull/6106)
+- **Maintenance-Gems:** Bump knapsack_pro from 8.3.0 to 8.4.0 [#6102](https://github.com/consuldemocracy/consuldemocracy/pull/6102)
+- **Maintenance-Gems:** Bump simplecov-lcov from 0.8.0 to 0.9.0 [#6097](https://github.com/consuldemocracy/consuldemocracy/pull/6097)
+- **Maintenance-Gems:** Bump rubocop-rspec from 3.4.0 to 3.7.0 [#6096](https://github.com/consuldemocracy/consuldemocracy/pull/6096)
+- **Maintenance-Gems:** Bump rubocop from 1.76.1 to 1.81.7 [#6093](https://github.com/consuldemocracy/consuldemocracy/pull/6093)
+- **Maintenance-Gems:** Bump rubocop-performance from 1.23.1 to 1.26.1 [#6090](https://github.com/consuldemocracy/consuldemocracy/pull/6090)
+- **Maintenance-Gems:** Bump factory_bot_rails from 6.4.4 to 6.5.1 [#6089](https://github.com/consuldemocracy/consuldemocracy/pull/6089)
+- **Maintenance-Gems:** Bump puma from 6.6.0 to 6.6.1 [#6056](https://github.com/consuldemocracy/consuldemocracy/pull/6056)
+- **Maintenance-Gems:** Bump rubocop-factory_bot from 2.26.1 to 2.27.1 [#6034](https://github.com/consuldemocracy/consuldemocracy/pull/6034)
+- **Maintenance-Gems:** Bump rubocop-capybara from 2.21.0 to 2.22.1 [#6027](https://github.com/consuldemocracy/consuldemocracy/pull/6027)
+- **Maintenance-Gems:** Bump faker from 3.5.1 to 3.5.2 [#6025](https://github.com/consuldemocracy/consuldemocracy/pull/6025)
+- **Maintenance-Gems:** Bump faraday-retry from 2.3.1 to 2.3.2 [#6021](https://github.com/consuldemocracy/consuldemocracy/pull/6021)
+- **Maintenance-JavaScript:** \[Security\] Bump js-yaml from 4.1.0 to 4.1.1 [#6149](https://github.com/consuldemocracy/consuldemocracy/pull/6149)
+- **Maintenance-JavaScript:** Bump stylelint from 16.20.0 to 16.25.0 [#6134](https://github.com/consuldemocracy/consuldemocracy/pull/6134)
+- **Maintenance-JavaScript:** Bump @stylistic/stylelint-plugin from 3.1.2 to 4.0.0 [#6050](https://github.com/consuldemocracy/consuldemocracy/pull/6050)
+- **Maintenance-JavaScript:** Bump stylelint-scss from 6.12.0 to 6.12.1 [#6035](https://github.com/consuldemocracy/consuldemocracy/pull/6035)
+- **Maintenance-Refactoring:** Remove obsolete Foundation meta generator tag from layout [#6122](https://github.com/consuldemocracy/consuldemocracy/pull/6122)
+- **Maintenance-Specs:** Remove redundant tests [#6040](https://github.com/consuldemocracy/consuldemocracy/pull/6040)
+
+### Fixed
+
+- **Accessibility:** Fix most Axe serious accessibility issues [#6144](https://github.com/consuldemocracy/consuldemocracy/pull/6144) and [#6148](https://github.com/consuldemocracy/consuldemocracy/pull/6148)
+- **Admin:** Add missing investments filter on admin activity page [#6125](https://github.com/consuldemocracy/consuldemocracy/pull/6125)
+- **UX:** Fix mark as featured button being rendered to everyone [#6129](https://github.com/consuldemocracy/consuldemocracy/pull/6129)
+- **UX:** Don't flash the menu button on desktop screens [#6124](https://github.com/consuldemocracy/consuldemocracy/pull/6124)
+
 ## [2.4.0](https://github.com/consuldemocracy/consuldemocracy/tree/2.4.0) (2025-10-27)
 
 [Full Changelog](https://github.com/consuldemocracy/consuldemocracy/compare/2.3.1...2.4.0)
