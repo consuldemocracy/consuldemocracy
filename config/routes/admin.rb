@@ -181,7 +181,7 @@ namespace :admin do
         resources :results, only: :index
       end
 
-      resources :officers, only: [:index, :new, :create, :destroy] do
+      resources :officers, only: [:index, :create, :destroy] do
         get :search, on: :collection
       end
 
