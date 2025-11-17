@@ -1,5 +1,5 @@
 class Admin::TagsController < Admin::BaseController
-  before_action :find_tag, only: [:update, :destroy]
+  before_action :find_tag, only: :destroy
   before_action :tags, only: [:index, :create]
 
   respond_to :html, :js

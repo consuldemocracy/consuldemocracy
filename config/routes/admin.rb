@@ -133,7 +133,7 @@ namespace :admin do
 
     resources :comments, only: :index
 
-    resources :tags, only: [:index, :create, :update, :destroy]
+    resources :tags, only: [:index, :create, :destroy]
 
     resources :officials, only: [:index, :edit, :update, :destroy] do
       get :search, on: :collection
