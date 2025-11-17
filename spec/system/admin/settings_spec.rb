@@ -58,16 +58,17 @@ describe "Admin settings", :admin do
                                        '"Proposals and budget investments geolocation" ' \
                                        'on "Features" tab.'
 
-      expect(find("#latitude", visible: :hidden).value).to eq "51.48"
-      expect(find("#longitude", visible: :hidden).value).to eq "0.0"
+      expect(page).to have_field "Latitude", with: "51.48"
+      expect(page).to have_field "Longitude", with: "0.0"
 
       within "#map-form" do
         find("#admin-map").click
         click_button "Update"
       end
 
-      expect(find("#latitude", visible: :hidden).value).not_to eq "51.48"
       expect(page).to have_content "Map configuration updated successfully"
+      expect(page).to have_field "Latitude"
+      expect(page).not_to have_field "Latitude", with: "51.48"
     end
   end
 
