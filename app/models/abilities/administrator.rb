@@ -83,7 +83,7 @@ module Abilities
 
       can :read_admin_stats, Budget, &:balloting_or_later?
 
-      can [:search, :update, :create, :index, :destroy], Banner
+      can [:update, :create, :index, :destroy], Banner
 
       can [:index, :create, :update, :destroy], Geozone
 

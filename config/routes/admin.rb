@@ -122,9 +122,7 @@ namespace :admin do
 
     resources :signature_sheets, only: [:index, :new, :create, :show]
 
-    resources :banners, only: [:index, :new, :create, :edit, :update, :destroy] do
-      collection { get :search }
-    end
+    resources :banners, only: [:index, :new, :create, :edit, :update, :destroy]
 
     resources :hidden_comments, only: :index do
       member do
