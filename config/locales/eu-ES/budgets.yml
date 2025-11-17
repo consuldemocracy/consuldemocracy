@@ -47,8 +47,6 @@ eu:
         tags_instructions: "Proposamen hau etiketatu. Proosatutako kategorietatik bat aukeratu edo berri bat sartu dezakezu"
         tags_label: Etiketak
         tags_placeholder: "Nahi dituzun etiketak koma artean idatzi behar dituzu (',')"
-        map_location: "Kokapena mapan"
-        map_location_instructions: "Mapatik ibili kokalekura heldu arte eta markagailua jarri."
       index:
         title: Partaidetzazko aurrekontuak
         unfeasible: Gastu proiektu bideragarriezinak
