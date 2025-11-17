@@ -80,8 +80,6 @@ da:
         tags_instructions: "Tilføj tags. Du kan vælge mellem de allerede viste kategorier eller tilføje dine egne"
         tags_label: Tags
         tags_placeholder: "Tilføj de tags du gerne vil anvende og adskil dem med komma (',')"
-        map_location: "Lokation"
-        map_location_instructions: "Naviger kortet til den rette lokation og placer markøren."
       index:
         title: Deltagerbudgetter
         unfeasible: Forslag, som ikke er mulige at gennemføre
