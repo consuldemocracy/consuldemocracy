@@ -55,7 +55,7 @@ module Abilities
 
       can [:search, :create, :index, :destroy, :update], ::Administrator
       can [:search, :create, :index, :destroy], ::Moderator
-      can [:search, :show, :update, :create, :index, :destroy, :summary], ::Valuator
+      can [:search, :show, :update, :create, :index, :destroy], ::Valuator
       can [:search, :create, :index, :destroy], ::Manager
       can [:create, :read, :destroy], ::SDG::Manager
       can [:search, :index], ::User

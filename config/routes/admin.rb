@@ -149,7 +149,6 @@ namespace :admin do
 
     resources :valuators, only: [:show, :index, :edit, :update, :create, :destroy] do
       get :search, on: :collection
-      get :summary, on: :collection
     end
 
     resources :valuator_groups
