@@ -172,7 +172,7 @@ namespace :admin do
           get :manage, on: :collection
         end
 
-        resources :officer_assignments, only: [:index, :create, :destroy] do
+        resources :officer_assignments, only: :index do
           get :search_officers, on: :collection
           get :by_officer, on: :collection
         end
