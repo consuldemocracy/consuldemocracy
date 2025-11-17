@@ -62,7 +62,7 @@ class Shared::MapLocationComponent < ApplicationComponent
         marker_investments_coordinates: investments_coordinates,
         marker_latitude: map_location.latitude.presence,
         marker_longitude: map_location.longitude.presence,
-        marker_title: map_location.title.presence || marker_coordinates_text,
+        marker_title: marker_coordinates_text,
         marker_clustering: feature?("map.feature.marker_clustering"),
         geozones: geozones_data
       }.merge(input_selectors)

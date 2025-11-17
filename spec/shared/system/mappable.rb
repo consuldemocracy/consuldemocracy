@@ -175,6 +175,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       visit send(mappable_edit_path, id: mappable.id)
 
       expect(page).to have_content "Navigate the map to the location and place the marker."
+      expect(page).to have_css ".map-icon[aria-label='Latitude: 51.48. Longitude: 0.0']"
       expect(page).to have_field "#{mappable_factory_name}_map_location_attributes_latitude", type: :hidden,
                                                                                               with: "51.48"
       expect(page).to have_field "#{mappable_factory_name}_map_location_attributes_longitude", type: :hidden,
@@ -255,8 +256,10 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       do_login_for user, management: management if management
       visit send(mappable_show_path, arguments)
 
+      label = "Latitude: #{map_location.latitude}. Longitude: #{map_location.longitude}"
+
       within ".map-location" do
-        expect(page).to have_css ".map-icon[aria-label='#{mappable.title}']"
+        expect(page).to have_css ".map-icon[aria-label='#{label}']"
       end
     end
 
