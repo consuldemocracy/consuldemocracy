@@ -3,12 +3,14 @@ require "rails_helper"
 describe Layout::FooterComponent do
   describe "description links" do
     it "generates links that open in the same tab" do
+      Setting["instance_repository_url"] = "https://example.com/my-fork/consuldemocracy"
+
       render_inline Layout::FooterComponent.new
 
       page.find(".info") do |info|
-        expect(info).to have_css "a", count: 2
-        expect(info).to have_css "a[rel~=nofollow]", count: 2
-        expect(info).to have_css "a[rel~=external]", count: 2
+        expect(info).to have_css "a", count: 3
+        expect(info).to have_css "a[rel~=nofollow]", count: 3
+        expect(info).to have_css "a[rel~=external]", count: 3
         expect(info).not_to have_css "a[target]"
       end
     end
@@ -38,6 +40,32 @@ describe Layout::FooterComponent do
       render_inline Layout::FooterComponent.new
 
       expect(page).not_to have_content "Manage cookies"
+    end
+  end
+
+  describe "instance repository link" do
+    context "when instance_repository_url is present" do
+      before { Setting["instance_repository_url"] = "https://example.com/my-fork/consuldemocracy" }
+
+      it "renders the description with a link to the repository" do
+        render_inline Layout::FooterComponent.new
+
+        page.find(".info") do
+          expect(page).to have_link "this repository", href: "https://example.com/my-fork/consuldemocracy"
+        end
+      end
+    end
+
+    context "when instance_repository_url is blank" do
+      before { Setting["instance_repository_url"] = "" }
+
+      it "does not render the instance repository sentence" do
+        render_inline Layout::FooterComponent.new
+
+        page.find(".info") do
+          expect(page).not_to have_link "this repository"
+        end
+      end
     end
   end
 end
