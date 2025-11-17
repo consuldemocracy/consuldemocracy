@@ -328,6 +328,7 @@ sv:
       tags_placeholder: "Skriv taggarna du vill använda, avgränsade med komma (',')"
       map_location: "Kartposition"
       map_location_instructions: "Navigera till platsen på kartan och placera markören."
+      map_marker_coordinates: "Latitud: %{latitude}. Longitud: %{longitude}"
       map_remove_marker: "Ta bort kartmarkör"
     index:
       featured_proposals: Utvalda
