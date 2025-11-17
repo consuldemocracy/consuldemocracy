@@ -80,8 +80,6 @@ fr:
         tags_instructions: "Étiquetter cette proposition. Vous pouvez choisir parmi\nles catégories proposées ou ajouter la vôtre"
         tags_label: Sujets
         tags_placeholder: "Entrez les étiquettes que vous voudriez utiliser, séparer par des virgules (',')"
-        map_location: "Emplacement sur la carte"
-        map_location_instructions: "Positionnez le marqueur à l'emplacement correspondant sur la carte."
       index:
         title: Budget participatif
         unfeasible: Propositions d'investissement irréalisables
