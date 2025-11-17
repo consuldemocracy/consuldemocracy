@@ -15,4 +15,8 @@ class Proposals::FormComponent < ApplicationComponent
     def categories
       Tag.category.order(:name)
     end
+
+    def map_location
+      proposal.map_location || MapLocation.new(proposal: Proposal.new)
+    end
 end

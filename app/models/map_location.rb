@@ -8,17 +8,12 @@ class MapLocation < ApplicationRecord
     latitude.present? && longitude.present? && zoom.present?
   end
 
-  def title
-    (proposal || investment)&.title
+  def mappable
+    proposal || investment
   end
 
-  def json_data
-    {
-      investment_id: investment_id,
-      proposal_id: proposal_id,
-      lat: latitude,
-      long: longitude
-    }
+  def title
+    mappable&.title
   end
 
   def self.from_heading(heading)

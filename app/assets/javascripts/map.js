@@ -193,7 +193,6 @@
 
           if (App.Map.validCoordinates(coordinates)) {
             marker = createMarker(coordinates.lat, coordinates.long, coordinates.title);
-            marker.options.id = coordinates.investment_id;
             marker.bindPopup(App.Map.getPopupContent(coordinates));
           }
         });

@@ -80,8 +80,6 @@ es:
         tags_instructions: "Etiqueta este proyecto. Puedes elegir entre las categorías propuestas o introducir las que desees"
         tags_label: Etiquetas
         tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
-        map_location: "Ubicación en el mapa"
-        map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
       index:
         title: Presupuestos participativos
         unfeasible: Proyectos de gasto no viables
