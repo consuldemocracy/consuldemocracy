@@ -12,7 +12,6 @@ AllCops:
   Exclude:
     - "db/schema.rb"
     - "app/lib/ckeditor/backend/active_storage.rb"
-    - "config/initializers/disable_active_storage_pdf_auto_previews.rb"
     - "vendor/**/*"
   DisabledByDefault: true
 
