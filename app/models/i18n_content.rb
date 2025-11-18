@@ -121,11 +121,11 @@ class I18nContent < ApplicationRecord
 
   def self.update(contents, enabled_translations = Setting.enabled_locales)
     contents.each do |content|
-      values = content[:values].slice(*translation_params(enabled_translations))
+      values = content.slice(*translation_params(enabled_translations))
 
       unless values.empty?
         values.each do |key, value|
-          locale = key.split("_").last
+          locale = key.split("_").last.delete_suffix("]")
 
           if value.match(/translation missing/)
             next
@@ -146,7 +146,7 @@ class I18nContent < ApplicationRecord
 
   def self.translation_params(enabled_translations)
     translated_attribute_names.product(enabled_translations).map do |attr_name, loc|
-      localized_attr_name_for(attr_name, loc)
+      "values[#{localized_attr_name_for(attr_name, loc)}]"
     end
   end
 end
