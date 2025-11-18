@@ -22,7 +22,7 @@ Rails.application.config.active_support.to_time_preserves_timezone = :zone
 # only consider `If-None-Match` as specified by RFC 7232 Section 6.
 # If set to `false` both conditions need to be satisfied.
 #++
-# Rails.application.config.action_dispatch.strict_freshness = true
+Rails.application.config.action_dispatch.strict_freshness = true
 
 ###
 # Set `Regexp.timeout` to `1`s by default to improve security over Regexp Denial-of-Service attacks.
