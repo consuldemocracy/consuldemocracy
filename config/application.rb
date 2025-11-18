@@ -46,7 +46,7 @@ module Consul
     end
 
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.2
+    config.load_defaults 8.0
 
     # Keep belongs_to fields optional by default, because that's the way
     # Rails 4 models worked
