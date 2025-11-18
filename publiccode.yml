@@ -118,7 +118,7 @@ dependsOn:
     - name: Ruby
       version: "3.4.9"
     - name: Rails
-      version: "7.2.3.1"
+      version: "8.0.5"
     - name: Node.js
       version: "22.22.3"
     - name: PostgreSQL
