@@ -7,12 +7,12 @@ class Signature < ApplicationRecord
   validates :postal_code, presence: true, if: -> { Setting.force_presence_postal_code? }
   validates :signature_sheet, presence: true
 
+  normalizes :document_number, with: ->(document_number) { document_number.gsub(/[^a-z0-9]+/i, "").upcase }
+
   scope :verified,   -> { where(verified: true) }
   scope :unverified, -> { where(verified: false) }
 
   delegate :signable, to: :signature_sheet
-
-  before_validation :clean_document_number
 
   def verify
     if user_exists?
@@ -60,12 +60,6 @@ class Signature < ApplicationRecord
       geozone: Geozone.find_by(census_code: @census_api_response.district_code)
     }
     User.create!(user_params)
-  end
-
-  def clean_document_number
-    return if document_number.blank?
-
-    self.document_number = document_number.gsub(/[^a-z0-9]+/i, "").upcase
   end
 
   def random_password

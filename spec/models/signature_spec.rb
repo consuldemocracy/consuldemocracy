@@ -61,20 +61,19 @@ describe Signature do
     end
   end
 
-  describe "#clean_document_number" do
+  describe "document_number normalization" do
     it "removes non alphanumeric characters" do
-      signature = create(:signature, document_number: "123-[;,9]")
+      signature = Signature.new(document_number: "123-[;,9]")
       expect(signature.document_number).to eq("1239")
     end
 
     it "upcases letter in document number" do
-      signature = create(:signature, document_number: "123a")
+      signature = Signature.new(document_number: "123a")
       expect(signature.document_number).to eq("123A")
     end
 
     it "deals gracefully with empty document numbers" do
-      signature = build(:signature, document_number: "")
-      signature.clean_document_number
+      signature = Signature.new(document_number: "")
       expect(signature.document_number).to eq("")
     end
   end
