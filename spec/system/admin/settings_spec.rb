@@ -370,4 +370,39 @@ describe "Admin settings", :admin do
       expect(page).not_to have_css ".translation_missing"
     end
   end
+
+  describe "LLM settings" do
+    context "Required LLM setup is configured" do
+      before do
+        allow(Llm::Config)
+          .to receive(:providers).and_return({ OpenAI: { enabled: true }})
+        ruby_llm_models = [double("Model", name: "GPT-4.1 mini", id: "gpt-4o-mini")]
+        allow(RubyLLM.models).to receive(:by_provider).with(:openai).and_return(ruby_llm_models)
+      end
+      scenario "Configure provider, model and enable usage" do
+        visit admin_settings_path
+        click_link "LLM Settings"
+        within "tr", text: "LLM Provider" do
+          expect(page).to have_select selected: "None"
+          select "OpenAI"
+          click_button "Update"
+          expect(page).to have_select selected: "OpenAI"
+        end
+        expect(page).to have_content "Value updated"
+        within "tr", text: "Model" do
+          expect(page).to have_select selected: "None"
+          select "GPT-4.1 mini"
+          click_button "Update"
+          expect(page).to have_select selected: "GPT-4.1 mini"
+        end
+        expect(page).to have_content "Value updated"
+        within "tr", text: "Content Translation" do
+          expect(page).to have_button "No"
+          click_button "No"
+          expect(page).to have_button "Yes"
+        end
+        expect(page).to have_content "Value updated"
+      end
+    end
+  end
 end

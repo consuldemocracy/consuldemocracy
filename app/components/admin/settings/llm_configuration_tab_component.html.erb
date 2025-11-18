@@ -1,0 +1,7 @@
+<h2><%= t("admin.settings.index.llm.title") %></h2>
+
+<%= render Admin::Settings::TableComponent.new(setting_name: "setting") do %>
+  <%= render Admin::Settings::RowComponent.new("llm.provider", type: :dropdown, tab: tab, options: provider_options) %>
+  <%= render Admin::Settings::RowComponent.new("llm.model", type: :dropdown, tab: tab, options: model_options, disabled: model_disabled?) %>
+  <%= render Admin::Settings::RowComponent.new("llm.use_llm_for_translations", type: :feature, tab: tab, disabled: feature_disabled?) %>
+<% end %>
