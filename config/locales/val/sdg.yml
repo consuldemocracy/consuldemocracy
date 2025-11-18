@@ -1,4 +1,642 @@
 val:
   sdg:
+    goals:
+      goal_1:
+        title: "Fi de la pobresa"
+        title_in_two_lines: "Fi\nde la probresa"
+        description: "Posar fi a la pobresa en totes les seues formes a tot el món."
+        long_description: '<p>A nivell mundial, el nombre de persones que viuen en situació d''extrema pobresa va disminuir des d''un 36&nbsp;% en 1990 fins a un 10&nbsp;% en 2015. No obstant això, el ritme al qual es produeix aquest canvi està disminuint, i la crisi de la COVID-19 <a href=''https://www.un.org/sites/un2.un.org/files/sg_report_socio-economic_impact_of_covid19.pdf''>posa en risc dècades de progrés</a> en la lluita contra la pobresa. <a href=''https://www.wider.unu.edu/node/237051''>Una nova investigació</a> publicada per l''Institut Mundial d''Investigaciones d''Economia del Desenvolupament de la Universitat de les Nacions Unides adverteix que les conseqüències econòmiques de <a href=''https://www.wider.unu.edu/publication/estimates-impact-covid-19-global-poverty''>la pandèmia mundial podrien incrementar la pobresa a tot el món fins a arribar a afectar a 500&nbsp;milions de persones més</a>, o cosa que és el mateix, a un 8&nbsp;% més de la població total mundial. Aquesta seria la primera vegada que la pobresa augmente a tot el món en 30&nbsp;anys, desde 1990.</p> <p>Més de <a href=''http://www.worldbank.org/en/news/press-release/2018/09/19/decline-of-global-extreme-poverty-continues-but-has-slowed-world-bank''>700&nbsp;milions de persones</a>, o el 10&nbsp;% de la població mundial, encara viu en situació d''extrema pobresa hui dia, amb dificultats per a satisfer les necessitats més bàsiques, com la salut, l''educació i l''accés a aigua i sanejament, per nombrar algunes. La majoria de les persones que viuen amb menys de 1,90&nbsp;dòlars al dia viuen a l''Àfrica subsahariana. A tot el món, els <a href=''https://unstats.un.org/sdgs/report/2019/goal-01/''>índex de pobresa en les àrees rurals són del 17,2&nbsp;%</a>; més del triple dels mateixos índex per a les àrees urbanes.</p> <p>Per als quals treballen, el seu lloc de treball no els garanteix una vida digna. De fet, <a href=''https://unstats.un.org/sdgs/report/2019/goal-01/''>el 8&nbsp;%</a> dels traballadors de tot el món, i les seues famílies, vivien en situació d''extrema pobresa en 2018. Un de cada cinc xiquets viu en situació d''extrema pobresa. Garantir la protecció social de tots els xiquets i altres grups vulnerables resulta crucial per a reduir la pobresa.</p>'
+        targets:
+          target_1_1:
+            long_title: "Per a 2030, erradicar la pobresa extrema per a totes les persones en el món, actualment mesurada per un ingrés per persona inferior a 1,25 dòlars al dia."
+            short_title: "Erradicació de la pobresa extrema"
+          target_1_2:
+            long_title: "Per a 2030, reduir almenys a la meitat la proporció d'homes, dones i xiquets i xiquetes de totes les edats que viuen en la pobresa en totes les seues dimensions conformement a les definicions nacionals."
+            short_title: "Reducció de la pobresa relativa en totes les seues dimensions"
+          target_1_3:
+            long_title: "Posar en pràctica a nivell nacional sistemes i mesures apropiades de protecció social per a tots i, per a 2030, aconseguir una àmplia cobertura dels pobres i els més vulnerables."
+            short_title: "Implantació de sistemes de protecció social"
+          target_1_4:
+            long_title: "Per a 2030, garantir que tots els homes i dones, en particular els pobres i els més vulnerables, tinguen els mateixos drets als recursos econòmics, així com accés als serveis bàsics, la propietat i el control de les terres i altres béns, l'herència, els recursos naturals, les noves tecnologies y els serveis econòmics, inclosa el microfinançament."
+            short_title: "Garantia d'accés a serveis bàsics i recursos financers"
+          target_1_5:
+            long_title: "Per a 2030, fomentar la resiliència dels pobres i les persones que es troben en situacions vulnerables i reduir la seua exposició i vulnerabilitat als fenòmens extrems relacionats amb el clima i a altres desastres econòmics, socials i ambientals."
+            short_title: "Resiliència a desastres ambientals, econòmics i socials"
+          target_1_A:
+            long_title: "Garantir una mobilització important de recursos procedentes de diverses fonts, fins i tot mitjançant la millora de la cooperació per al desenvolupament, a fi de proporcionar mitjans suficients i previsibles per als països en desenvolupament, en particular els països menys avançats, per a posar en pràctica programes i polítiques encaminats a posar fi a la pobresa en totes les seues dimensions."
+            short_title: "Fomentar la resiliència als desastres ambientals, econòmics i socials"
+          target_1_B:
+            long_title: "Crear marcs normatius sòlids en l'àmbit nacional, regional e internacional, sobre la base d'estratègies de desenvolupament en favor dels pobres que tinguen en compte les qúestions de gènere, a fi de donar suport a la inversió accelerada en mesures per a erradicar la pobresa."
+            short_title: "Creació de marcs normatius per a erradicar la pobresa"
+      goal_2:
+        title: "Fam Zero"
+        title_in_two_lines: "Fam\nZero"
+        description: "Posar fi a la fam."
+        long_description: '<p>Després de dècades d''una disminució constant, el nombre de persones que pateixen fam (mesurat per la prevalènça de desnutrició) va començar a augmentar lentament de nou en 2015. Les estimacions actuals indiquen que prop de <a href=''http://www.fao.org/3/ca9699es/CA9699ES.pdf''>690 milions de persones en el món pateixen fam</a>, és a dir, el 8,9 per cent de la població mundial, la qual cosa suposa un augment d''uns 10 milions de persones en un any i d''uns 60 milions en cinc anys.</p> <p>El món no està ben encaminat per a aconseguir l''objetiu de fam zero per a 2030. Si continuen las tendències recents, el nombre de persones afectades per la fam superarà els 840 milions de persones per a 2030.</p> <p>Segons el Programa Mundial d''Aliments, al voltant de <a href=''https://www.wfp.org/publications/2020-global-report-food-crises''>135&nbsp;milions de persones pateixen fam severa</a> <img src=''https://www.un.org/common/images/icons/ico_en.gif'' alt=''Disponible en inglés'' width=''14'' height=''14'' style=''border:none''>, degut principalment als conflictes causats pels éssers humans, el canvi climàtic i les recessions econòmiques. La pandèmia de COVID-19 podria duplicar ara aqueixa xifra i sumar uns 130&nbsp;milions de persones més que estarien en risc de patir fam severa a la fi de 2020.</p> <p>Amb més de <a href=''https://insight.wfp.org/covid-19-will-almost-double-people-in-acute-hunger-by-end-of-2020-59df0c4a8072''>250&nbsp;milions de persones que podrien trobar-se a la vora de la fam</a> <img src=''https://www.un.org/common/images/icons/ico_en.gif'' alt=''Disponible en inglés'' width=''14'' height=''14'' style=''border:none''>, és necessari actuar ràpidament per a proporcionar aliments i ajuda humanitària a les regions que corren més risc.</p> <p>Al mateix temps, és necessari dur a terme un canvi profund en el sistema agroalimentari mundial si volem alimentar a més de 820&nbsp;milions de persones que pateixen fam i als <a href=''https://www.un.org/development/desa/en/news/population/world-population-prospects-2019.html''>2000&nbsp;milions de persones més</a> que viuran en el món en 2050. L''augment de la productivitat agrícola i la producció alimentària sostenible són crucials per a ajudar a alleujar els riscos de la fam.</p>'
+        targets:
+          target_2_1:
+            long_title: "Per a 2030, posar fi a la fam i assegurar l'accés de totes les persones, en particular els pobres i les persones en situacions vulnerables, inclosos els lactants, a una alimentació sana, nutritiva i suficient durant tot l'any."
+            short_title: "Posar fi a la fam"
+          target_2_2:
+            long_title: "Per a 2030, posar fi a totes les formes de malnutrició, fins i tot aconseguint, a tot tardar en 2025, les metes convingudes internacionalment sobre el retard del creixement i l'emaciació dels xiquets menors de 5 anys, i abordar les necessitats de nutrició de les adolescents, les dones embarassades i lactants i les persones d'edat."
+            short_title: "Posar fi a totes les formes de malnutrició"
+          target_2_3:
+            long_title: "Per a 2030, duplicar la productivitat agrícola i els ingressos dels productors d'aliments en xicoteta escala, en particular les dones, els pobles indígenes, els agricultors familiars, els pastors i els pescadors, entre altres coses mitjançant un accés segur i equitatiu a les terres, a altres recursos de producció i inputs, coneixements, serveis financers, mercats i oportunitats per a la generació de valor afegit i ocupacions no agrícoles."
+            short_title: "Duplicació de productivitat i ingressos agrícoles a petita escala"
+          target_2_4:
+            long_title: "Per a 2030, assegurar la sostenibilitat dels sistemes de producció d'aliments i aplicar pràctiques agrícoles resilients que augmenten la productivitat i la producció, contribuïsquen al manteniment dels ecosistemes, enfortisquen la capacitat d'adaptació al canvi climàtic, els fenòmens meteorològics extrems, les sequeres, les inundacions i altres desastres, i milloren progressivament la qualitat del sòl i la terra."
+            short_title: "Pràctiques agrícoles sostenibles i resilients"
+          target_2_5:
+            long_title: "Per a 2020, mantindre la diversitat genètica de les llavors, les plantes cultivades i els animals de granja y domesticats i les seues espècies silvestres connexes, entre altres coses mitjançant una bona gestió i diversificació dels bancs de llavors i plantes a nivell nacional, regional i internacional, i promoure l'accés als beneficis que es deriven de la utilització dels recursos genètics i els coneixements tradicionals i la seua distribució justa i equitativa, com s'ha convingut internacionalment."
+            short_title: "Manteniment de la diversitat genètica de llavors"
+          target_2_A:
+            long_title: "Augmentar les inversions, fins i tot mitjançant una major cooperació internacional, en la infraestructura rural, la investigació agrícola i els serveis d'extensió, el desenvolupament tecnològic i els bancs de gens de plantes i bestiar a fi de millorar la capacitat de producció agrícola als països en desenvolupament, en particular als països menys avançats."
+            short_title: "Augment d'inversions en agricultura"
+          target_2_B:
+            long_title: "Corregir i previndre les restriccions i distorsions comercials en els mercats agropecuaris mundials, entre altres coses mitjançant l'eliminació paral·lela de totes les formes de subvencions a les exportacions agrícoles i totes les mesures d'exportació amb efectes equivalents, de conformitat amb el mandat de la Ronda de Doha per al Desenvolupament."
+            short_title: "Estabilitat mercats agropecuaris mundials"
+          target_2_C:
+            long_title: "Adoptar mesures per a assegurar el bon funcionament dels mercats de productes bàsics alimentaris i els seus derivats i facilitar l'accés oportú a informació sobre els mercats, en particular sobre les reserves d'aliments, a fi d'ajudar a limitar l'extrema volatilitat dels preus dels aliments."
+            short_title: "Control de la volatilitat de preus dels aliments"
+      goal_3:
+        title: "Salut i Benestar"
+        title_in_two_lines: "Salut\ny Benestar"
+        description: "Garantir una vida sana i promoure el benestar per a tots en totes les edats."
+        long_description: '<p>Garantir una vida sana i promoure el benestar en totes les edats és essencial per al desenvolupament sostenible.</p> <p>Actualment, el món s''enfrenta a una <a href=''https://www.un.org/coronavirus''>crisi sanitària mundial</a> sense precedents; la COVID-19 està propagant el sofriment humà, desestabilitzant l''economia mundial i canviant dràsticament les vides de milers de milions de persones a tot el món.</p> <p>Abans de la pandèmia, es van aconseguir grans avanços en <a href=''https://unstats.un.org/sdgs/report/2019/goal-03/''>la millora de la salut de milions de persones</a>. En concret, aquests grans avanços es van aconseguir en augmentar l''esperança de vida i reduir algunes de les causes de mort comunes associades amb la mortalitat infantil i materna. No obstant això, es necessiten més esforços per a erradicar per complet una gran varietat de malalties i abordar un gran nombre de problemas de salut, tant constants com emergents. A través d''un finançament més eficient dels sistemes sanitaris, un major sanejament i higiene, i un major accés al personal mèdic, es podran aconseguir avanços significatius a l''hora d''ajudar a salvar les vides de milions de persones.</p> <p>Les emergències sanitàries, com la derivada de la COVID-19, suposen un risc mundial i han demostrat que la preparació és vital. El Programa de les Nacions Unides per al Desenvolupament va assenyalar les grans diferències relatives a les <a href=''https://www.undp.org/content/undp/en/home/news-centre/news/2020/COVID19_UNDP_data_dashboards_reveal_disparities_among_countries_to_cope_and_recover.html''>capacitats dels països per a bregar amb la crisi de la COVID-19 i recuperar-se d''ella</a>. La pandèmia constitueix un punt d''inflexió referent a la preparació para las emergències sanitàries i la inversió en serveis públics vitals del segle XXI.</p>'
+        targets:
+          target_3_1:
+            long_title: "Per a 2030, reduir la taxa mundial de mortalitat materna a menys de 70 per cada 100.000 nascuts vius."
+            short_title: "Reducció de la taxa de mortalitat materna"
+          target_3_2:
+            long_title: "Per a 2030, posar fi a les morts evitables de nounats i de xiquets menors de 5 anys, aconseguint que tots els països intenten reduir la mortalitat neonatal almenys fins a 12 per cada 1.000 nascuts vius, i la mortalitat de xiquets menors de 5 anys almenys fins a 25 per cada 1.000 nascuts vius."
+            short_title: "Eliminar la mortalitat infantil"
+          target_3_3:
+            long_title: "Per a 2030, poser fi a les epidèmies de la SIDA, la tuberculosi, la malària i les malalties tropicals desateses i combatre l'hepatitis, les malalties transmeses per l'aigua i altres malalties transmissibles."
+            short_title: "Posar fi a les malalties transmissibles"
+          target_3_4:
+            long_title: "Per a 2030, reduir en un terç la mortalitat prematura per malalties no transmissibles mitjançant la prevenció i el tractament i promoure la salut mental i el benestar."
+            short_title: "Reducció de les malalties no transmissibles i salut mental"
+          target_3_5:
+            long_title: "Enfortir la prevenció i el tractament de l'abús de substàncies addictives, inclòs l'ús indegut d'estupefaents i el consum nociu d'alcohol."
+            short_title: "Prevenció i tractament d'abusos de drogues i alcohol"
+          target_3_6:
+            long_title: "Per a 2020, reduir a la meitat el nombre de morts i lesions causades per accidents de trànsit en el món."
+            short_title: "Reducció d'accidents de tràfic"
+          target_3_7:
+            long_title: "Per a 2030, garantir l'accés universal als serveis de salut sexual i reproductiva, inclosos els de planificació de la família, informació i educació, i la integració de la salut reproductiva en les estratègies i els programes nacionals."
+            short_title: "Garantia d'accés a la salut Sexual i reproductiva, i a la planificació familiar"
+          target_3_8:
+            long_title: "Aconseguir la cobertura sanitària universal, en particular la protecció contra els riscos financers, l'accés a serveis de salut essencials de qualitat i l'accés a medicaments i vacunes segurs, eficaces, assequibles i de qualitat per a tots."
+            short_title: "Aconseguir la cobertura universal i accés medicaments"
+          target_3_9:
+            long_title: "Per a 2030, reduir substancialment el nombre de morts i malalties produïdes per productes químics perillosos i la contaminació de l'aire, l'aigua i el sòl."
+            short_title: "Reducció de morts per contaminació química i pol·lució"
+          target_3_A:
+            long_title: "Enfortir l'aplicació del Conveni Marc de l'Organització Mundial de la Salut per al Control del Tabac en tots els països, segons siga procedent."
+            short_title: "Control del tabac"
+          target_3_B:
+            long_title: "Donar suport a les activitats de recerca i desenvolupament de vacunes i medicaments per a les malalties transmissibles i no transmissibles que afecten primordialment els països en desenvolupament i facilitar l'accés a medicaments i vacunes essencials assequibles de conformitat amb la Declaració de Doha relativa a l'Acord sobre els *ADPIC i la Salut Pública, en la qual s'afirma el dret dels països en desenvolupament a utilitzar al màxim les disposicions de l'Acord sobre els Aspectes dels Drets de Propietat Intel·lectual Relacionats amb el Comerç quant a la flexibilitat per a protegir la salut pública i, en particular, proporcionar accés als medicaments per a tots."
+            short_title: "Suport a la I+D de vacunes i medicaments essencials"
+          target_3_C:
+            long_title: "Augmentar substancialment el finançament de la salut i la contractació, el desenvolupament, la capacitació i la retenció del personal sanitari als països en desenvolupament, especialment als països menys avançats i els xicotets Estats insulars en desenvolupament."
+            short_title: "Augment del finançament del sistema sanitari"
+          target_3_D:
+            long_title: "Reforçar la capacitat de tots els països, en particular els països en desenvolupament, en matèria d'alerta primerenca, reducció de riscos i gestió dels riscos per a la salut nacional i mundial."
+            short_title: "Reforç en la gestió de riscos sanitaris"
+      goal_4:
+        title: "Educació de Qualitat"
+        title_in_two_lines: "Educació\nde Qualitat"
+        description: "Garantir una educació inclusiva, equitativa i de qualitat i promoure oportunitats d'aprenentatge durant tota la vida per a tots."
+        long_description: '<p>L''educació permet la mobilitat socioeconòmica ascendent i és clau per a eixir de la pobresa. Durant l''última dècada, es van aconseguir grans avanços a l''hora d''ampliar l''accés a l''educació i les taxes de matriculació a les escoles en tots els nivells, especialment per a les xiquetes. No obstant això, <a href=''http://uis.unesco.org/en/topic/out-school-children-and-youth''>al voltant de 260&nbsp;milions de xiquets encara estaven fora de l''escola</a> en 2018; prop d''una cinquena part de la població mundial d''aqueix grup d''edat. A més, més de la meitat de tots els xiquets i adolescents de tot el món <a href=''https://unstats.un.org/sdgs/report/2019/goal-04/''>no estan aconseguint els estàndards mínims de competència</a> en lectura i matemàtiques.</p> <p>En 2020, a mesura que la pandèmia de la COVID-19 es propagava per tot el planeta, la major part dels països van anunciar el tancament temporal de les escoles, el que va afectar més del 91&nbsp;% dels estudiants a tot el món. En abril de 2020, prop de <a href=''https://en.unesco.org/covid19/educationresponse''>1600&nbsp;milions de xiquets i joves estaven fora de l''escola</a>. Igualment, prop de <a href=''https://www.un.org/sites/un2.un.org/files/policy_brief_on_covid_impact_on_children_16_april_2020.pdf''>369&nbsp;milions de xiquets que depenen dels menjadors escolars</a> van haver de buscar altres fonts de nutrició diària.</p> <p>Mai abans havien estat tants xiquets fora de l''escola al mateix temps, la qual cosa altera el seu aprenentatge i canvia dràsticament les seues vides, especialment les dels xiquets més vulnerables i marginats. La pandèmia mundial té greus conseqüències que poden posar en perill els avanços que tant van costar aconseguir a l''hora de millorar l''educació a nivell mundial.</p>'
+        targets:
+          target_4_1:
+            long_title: "D'ací a 2030, assegurar que totes les xiquetes i tots els xiquets acaben l'ensenyament primari i secundari, que ha de ser gratuïta, equitativa i de qualitat i produir resultats d'aprenentatge pertinents i efectius."
+            short_title: "Assegurar la qualitat de l'educació primària i secundària"
+          target_4_2:
+            long_title: "D'ací a 2030, assegurar que totes les xiquetes i tots els xiquets tinguen accés a serveis d'atenció i desenvolupament en la primera infància i educació preescolar de qualitat, a fi que estiguen preparats per a l'ensenyament primari."
+            short_title: "Assegurar l'accés i qualitat de l'educació Pre-escolar"
+          target_4_3:
+            long_title: "D'ací a 2030, assegurar l'accés igualitari de tots els homes i les dones a una formació tècnica, professional i superior de qualitat, inclosa l'ensenyament universitari."
+            short_title: "Assegurar l'accés igualitari a la formació superior"
+          target_4_4:
+            long_title: "D'ací a 2030, augmentar considerablement el nombre de joves i adults que tenen les competències necessàries, en particular tècniques i professionals, per a accedir a l'ocupació, el treball decent i l'emprenedoria."
+            short_title: "Augment de les competències per a accedir a l'ocupació"
+          target_4_5:
+            long_title: "D'ací a 2030, eliminar les disparitats de gènere en l'educació i assegurar l'accés igualitari a tots els nivells de l'ensenyament i la formació professional per a les persones vulnerables, incloses les persones amb discapacitat, els pobles indígenes i els xiquets en situacions de vulnerabilitat."
+            short_title: "Eliminació Disparitat de gènere i col·lectius vulnerables"
+          target_4_6:
+            long_title: "D'ací a 2030, assegurar que tots els joves i una proporció considerable dels adults, tant homes com dones, estiguen alfabetitzats i tinguen nocions elementals d'aritmètica."
+            short_title: "Assegurar l'alfabetització i coneixement d'aritmètica"
+          target_4_7:
+            long_title: "D'ací a 2030, assegurar que tots els alumnes adquirisquen els coneixements teòrics i pràctics necessaris per a promoure el desenvolupament sostenible, entre altres coses mitjançant l'educació per al desenvolupament sostenible i els estils de vida sostenibles, els drets humans, la igualtat de gènere, la promoció d'una cultura de pau i no violència, la ciutadania mundial i la valoració de la diversitat cultural i la contribució de la cultura al desenvolupament sostenible."
+            short_title: "Fomentar l'educació Global per al Desenvolupament Sostenible"
+          target_4_A:
+            long_title: "Construir i adequar instal·lacions educatives que tinguen en compte les necessitats dels xiquets i les persones amb discapacitat i les diferències de gènere, i que oferisquen entorns d'aprenentatge segurs, no violents, inclusius i eficaços per a tots."
+            short_title: "Millora d'instal·lacions educatives inclusives i segures"
+          target_4_B:
+            long_title: "D'ací a 2020, augmentar considerablement a nivell mundial el nombre de beques disponibles per als països en desenvolupament, en particular els països menys avançats, els xicotets Estats insulars en desenvolupament i els països africans, a fi que els seus estudiants puguen matricular-se en programes d'ensenyament superior, inclosos programes de formació professional i programes tècnics, científics, d'enginyeria i de tecnologia de la informació i les comunicacions, de països desenvolupats i altres països en desenvolupament."
+            short_title: "Augment de beques per a ensenyament superior"
+          target_4_C:
+            long_title: "D'ací a 2030, augmentar considerablement l'oferta de docents qualificats, fins i tot mitjançant la cooperació internacional per a la formació de docents als països en desenvolupament, especialment els països menys avançats i els xicotets Estats insulars en desenvolupament."
+            short_title: "Millorar la qualificació de docents"
+      goal_5:
+        title: "Igualtat de Gènere"
+        title_in_two_lines: "Igualtat\nde Gènere"
+        description: "Aconseguir la igualtat entre els gèneres i empoderar a totes les dones i les xiquetes."
+        long_description: '<p>La igualtat de gènere no sols és un dret humà fonamental, sinó que és un dels fonaments essencials per a construir un món pacífic, pròsper i sostenible.</p> <p>S''han aconseguit alguns <a href=''https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/gender-equality-womens-rights-in-review-key-facts-and-figures-en.pdf?la=en&amp;vs=935''>avanços</a> durant les últimes dècades: més xiquetes estan escolaritzades, i s''obliga a menys xiquetes al matrimoni precoç; hi ha més dones amb càrrecs en parlaments i en posicions de lideratge, i les lleis s''estan reformant per a fomentar la igualtat de gènere.</p> <p>Malgrat aquests assoliments, encara existeixen moltes <a href=''https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/gender-equality-womens-rights-in-review-key-facts-and-figures-en.pdf?la=en&amp;vs=935''>dificultades</a>: les lleis i les normes socials discriminatòries continuen sent generalitzades, les dones segueixen estant infrarepresentades a tots els nivells de lideratge polític, i 1 de cada 5&nbsp;dones i xiquetes d''entre 15 i 49&nbsp;anys afirma haver patit violència sexual o física a les mans d''una parella íntima en un període de 12&nbsp;mesos.</p> <p>Els efectes de <a href=''https://www.un.org/sites/un2.un.org/files/policy_brief_on_covid_impact_on_women_9_apr_2020_updated.pdf''>la pandèmia de la COVID-19 podrien revertir els escassos assoliments</a> que s''han aconseguit en matèria d''igualtat de gènere i drets de les dones.&nbsp; El brot de coronavirus <a href=''https://www.unfpa.org/sites/default/files/resource-pdf/COVID-19_A_Gender_Lens_Guidance_Note.pdf''>agreuja les desigualtats existents</a> per a les dones i xiquetes a nivell mundial; des de la salut i l''economia, fins a la seguretat i la protecció social.</p> <p>Les dones exerceixen un paper desproporcionat en la resposta al virus, fins i tot com a treballadores sanitàries en primera línia i com a cuidadores en la llar. El treball de cures no remunerat de les dones ha augmentat de manera significativa a conseqüència del tancament de les escoles i l''augment de les necessitats dels ancians. Les dones també es veuen més afectades pels efectes econòmics de la COVID-19, ja que treballen, de manera desproporcionada, en mercats laborals insegurs. Prop del 60&nbsp;% de les dones treballa en l''economia informal, el que les exposa encara més a caure en la pobresa.</p> <p>La pandèmia també ha conduït a un fort augment de la <a href=''https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/issue-brief-covid-19-and-ending-violence-against-women-and-girls-en.pdf?la=en&amp;vs=5006''>violència contra les dones i les xiquetes</a>. Amb les mesures de confinament en vigor, moltes dones es troben atrapades a casa amb els seus abusadors, amb dificultats per a accedir a serveis que estan patint retallades i restriccions. Les noves dades mostren que, des del brot de la pandèmia, la violència contra les dones i les xiquetes  (i, especialment, la violència domèstica) s''ha intensificat.</p>'
+        targets:
+          target_5_1:
+            long_title: "Posar fi a totes les formes de discriminació contra totes les dones i les xiquetes a tot el món."
+            short_title: "Posar fi a la discriminació"
+          target_5_2:
+            long_title: "Eliminar totes les formes de violència contra totes les dones i les xiquetes en els àmbits públic i privat, incloses la tracta i l'explotació sexual i altres tipus d'explotació."
+            short_title: "Eliminar totes les formes de violència de gènere"
+          target_5_3:
+            long_title: "Eliminar totes les pràctiques nocives, com el matrimoni infantil, precoç i forçat i la mutilació genital femenina."
+            short_title: "Eliminar matrimoni infantil i mutilació genital femenina"
+          target_5_4:
+            long_title: "Reconéixer i valorar les cures i el treball domèstic no remunerats mitjançant serveis públics, infraestructures i polítiques de protecció social, i promovent la responsabilitat compartida en la llar i la família, segons siga procedent en cada país."
+            short_title: "Reconéixer el treball de cures i domèstic"
+          target_5_5:
+            long_title: "Assegurar la participació plena i efectiva de les dones i la igualtat d'oportunitats de lideratge a tots els nivells decisoris en la vida política, econòmica i pública."
+            short_title: "Assegurar la participació plena de la dona i igualtat oportunitats"
+          target_5_6:
+            long_title: "Assegurar l'accés universal a la salut sexual i reproductiva i els drets reproductius segons els acords de conformitat amb el Programa d'Acció de la Conferència Internacional sobre la Població i el Desenvolupament, la Plataforma d'Acció de Pequín i els documents finals de les seues conferències d'examen."
+            short_title: "Assegurar l'accés salut sexual i reproductiva i drets reproductius"
+          target_5_A:
+            long_title: "Emprendre reformes que atorguen a les dones igualtat de drets als recursos econòmics, així com accés a la propietat i al control de la terra i altres tipus de béns, els serveis financers, l'herència i els recursos naturals, de conformitat amb les lleis nacionals."
+            short_title: "Assegurar la igualtat de drets als recursos econòmics"
+          target_5_B:
+            long_title: "Millorar l'ús de la tecnologia instrumental, en particular la tecnologia de la informació i les comunicacions, per a promoure l'apoderament de les dones."
+            short_title: "Millorar l'ús de tecnologia i TIC"
+          target_5_C:
+            long_title: "Aprovar i enfortir polítiques encertades i lleis aplicables per a promoure la igualtat de gènere i l'apoderament de totes les dones i les xiquetes a tots els nivells."
+            short_title: "Aprovar polítiques i lleis per a la igualtat i l'apoderament"
+      goal_6:
+        title: "Aigua Neta i Sanejament"
+        title_in_two_lines: "Aigua Neta\ni Sanejament"
+        description: "Garantir la disponibilitat d'aigua i la seua gestió sostenible i el sanejament per a tots."
+        long_description: '<p>Si bé s''ha aconseguit progressar de manera substancial a l''hora d''ampliar l''accés a aigua potable i sanejament, existeixen milers de milions de persones (principalment en àrees rurals) que encara manquen d''aquests serveis bàsics. A tot el món, <a href=''https://www.who.int/news-room/detail/18-06-2019-1-in-3-people-globally-do-not-have-access-to-safe-drinking-water-unicef-who''>una de cada tres persones no té accés a aigua potable salubre</a>, <a href=''https://www.unwater.org/water-facts/water-sanitation-and-hygiene/''''>dos de cada cinc persones no disposen d''una instal·lació bàsica destinada a llavar-se les mans</a> amb aigua i sabó, i més de <a href=''https://news.un.org/en/story/2019/11/1051561''>673&nbsp;milions de persones encara defequen a l''aire lliure</a>.</p> <p>La pandèmia de la COVID-19 ha posat de manifest la importància vital del sanejament, la higiene i un accés adequat a aigua neta per a previndre i contindre les malalties. <a href=''https://www.unwater.org/water-facts/handhygiene/''''>La higiene de mans salva vides</a>. D''acord amb l''Organització Mundial de la Salut, <a href=''https://www.who.int/news-room/events/detail/2020/05/05/default-calendar/hand-hygiene-day''>la rentada de mans és una de les accions més efectives que es poden dur a terme</a> per a reduir la propagació de patògens i previndre infeccions, inclòs el virus de la COVID-19. Així i tot, hi ha milers de milions de persones que manquen d''accés a aigua salubre i sanejament, i els fons són insuficients.</p>'
+        targets:
+          target_6_1:
+            long_title: "D'ací a 2030, aconseguir l'accés universal i equitatiu a l'aigua potable a un preu assequible per a tots."
+            short_title: "Aconseguir l'accés a aigua potable"
+          target_6_2:
+            long_title: "D'ací a 2030, aconseguir l'accés a serveis de sanejament i higiene adequats i equitatius per a tots i posar fi a la *defecación a l'aire lliure, prestant especial atenció a les necessitats de les dones i les xiquetes i les persones en situacions de vulnerabilitat."
+            short_title: "Aconseguir l'accés a serveis de sanejament i higiene"
+          target_6_3:
+            long_title: "D'ací a 2030, millorar la qualitat de l'aigua reduint la contaminació, eliminant el *vertimiento i minimitzant l'emissió de productes químics i materials perillosos, reduint a la meitat el percentatge d'aigües residuals sense tractar i augmentant considerablement el reciclatge i la reutilització sense riscos a nivell mundial."
+            short_title: "Millorar la qualitat d'aigua. Reduir la contaminació i aigües residuals"
+          target_6_4:
+            long_title: "D'ací a 2030, augmentar considerablement l'ús eficient dels recursos hídrics en tots els sectors i assegurar la sostenibilitat de l'extracció i el proveïment d'aigua dolça per a fer front a l'escassetat d'aigua i reduir considerablement el nombre de persones que pateixen falta d'aigua."
+            short_title: "Augmentar l'ús eficient de recursos hídrics (extracció d'aigua dolça)"
+          target_6_5:
+            long_title: "D'ací a 2030, implementar la gestió integrada dels recursos hídrics a tots els nivells, fins i tot mitjançant la cooperació transfronterera, segons siga procedent."
+            short_title: "Implementar la gestió integral de recursos hídrics"
+          target_6_6:
+            long_title: "D'ací a 2020, protegir i restablir els ecosistemes relacionats amb l'aigua, inclosos els boscos, les muntanyes, els aiguamolls, els rius, els aqüífers i els llacs."
+            short_title: "Protecció dels ecosistemes relacionats amb aigua"
+          target_6_A:
+            long_title: "D'ací a 2030, ampliar la cooperació internacional i el suport prestat als països en desenvolupament per a la creació de capacitat en activitats i programes relatius a l'aigua i el sanejament, com els de captació d'aigua, dessalinització, ús eficient dels recursos hídrics, tractament d'aigües residuals, reciclatge i tecnologies de reutilització."
+            short_title: "Fomentar la creació de capacitats de gestió"
+          target_6_B:
+            long_title: "Secundar i enfortir la participació de les comunitats locals en la millora de la gestió de l'aigua i el sanejament."
+            short_title: "Donar suport a la participació de les comunitats locals"
+      goal_7:
+        title: "Energia Assequible i No Contaminant"
+        title_in_two_lines: "Energia Sostenible\ni No Contaminant"
+        description: "Garantir l'accés a una energia assequible, segura, sostenible i moderna."
+        long_description: '<p>El món està <a href=''https://unstats.un.org/sdgs/report/2019/goal-07/''>avançant cap a la consecució de l''Objectiu 7</a> amb indicis encoratjadors que l''energia s''està tornant més sostenible i àmpliament disponible. L''accés a l''electricitat als països més pobres ha començat a accelerar-se, l''eficiència energètica continua millorant i l''energia renovable està aconseguint resultats excel·lents en el sector elèctric.</p> <p>Malgrat això, és necessari prestar una major atenció a les millores per a l''accés a combustibles de cuina nets i assegurances, i a tecnologies per a 3000&nbsp;milions de persones, per a expandir l''ús de l''energia renovable més enllà del sector elèctric i incrementar l''electrificació a l''Àfrica subsahariana.</p> <p>El <a href=''https://trackingsdg7.esmap.org/''>informe de progrés en matèria d''energia</a> proporciona un registre mundial del progrés relatiu a l''accés a l''energia, l''eficiència energètica i l''energia renovable. Avalua el progrés aconseguit per cada país en aquests tres pilars i ofereix una panoràmica del camí que ens queda per recórrer per a aconseguir les metes dels Objectius de Desenvolupament Sostenible 2030.</p>'
+        targets:
+          target_7_1:
+            long_title: "D'ací a 2030, garantir l'accés universal a serveis energètics assequibles, fiables i moderns."
+            short_title: "Garantir accés universal a energia"
+          target_7_2:
+            long_title: "D'ací a 2030, augmentar considerablement la proporció d'energia renovable en el conjunt de fonts energètiques."
+            short_title: "Augment de les energies renovables"
+          target_7_3:
+            long_title: "D'ací a 2030, duplicar la taxa mundial de millora de l'eficiència energètica."
+            short_title: "Duplicar la taxa d'eficiència energètica"
+          target_7_A:
+            long_title: "D'ací a 2030, augmentar la cooperació internacional per a facilitar l'accés a la investigació i la tecnologia relatives a l'energia neta, incloses les fonts renovables, l'eficiència energètica i les tecnologies avançades i menys contaminants de combustibles fòssils, i promoure la inversió en infraestructura energètica i tecnologies netes."
+            short_title: "Augment de la investigació i inversió en energies netes"
+          target_7_B:
+            long_title: "D'ací a 2030, ampliar la infraestructura i millorar la tecnologia per a prestar serveis energètics moderns i sostenibles per a tots als països en desenvolupament, en particular els països menys avançats, els xicotets Estats insulars en desenvolupament i els països en desenvolupament sense litoral, d'acord amb els seus respectius programes de suport."
+            short_title: "Ampliar la infraestructura i tecnologia en països en desenvolupament"
+      goal_8:
+        title: "Treball Decent i Creixement Econòmic"
+        title_in_two_lines: "Treball Decent\ni Creixement Econòmic"
+        description: "Promoure el creixement econòmic inclusiu i sostenible, l'ocupació i el treball decent per a tots."
+        long_description: '<p>Un creixement econòmic inclusiu i sostingut pot impulsar el progrés, crear ocupacions decents per a tots i millorar els estàndards de vida.</p> <p>La COVID-19 ha <a href=''https://www.un.org/sites/un2.un.org/files/sg_report_socio-economic_impact_of_covid19.pdf''>alterat milers de milions de vides</a> i ha posat en perill l''economia mundial. El Fons Monetari Internacional (FMI) preveu una <a href=''https://blogs.imf.org/2020/04/14/the-great-lockdown-worst-economic-downturn-since-the-great-depression/''>recessió mundial</a> tan dolenta o pitjor que la de 2009. A mesura que s''intensifica la pèrdua d''ocupació, l''Organització Internacional del Treball estima que <a href=''https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_743036/lang--en/index.htm''>prop de la meitat de tots els treballadors a nivell mundial es troba en risc</a> de perdre els seus mitjans de subsistència.</p> <p><a href=''https://developmentfinance.un.org/press-release-financing-sustainable-development-report-2020''>Fins i tot abans del brot de la COVID-19</a>, era probable que un de cada cinc països (on habiten milers de milions de persones que viuen en situació de pobresa) veren els seus ingressos per càpita estancar-se o reduir-se en 2020. Hui dia, les <a href=''https://developmentfinance.un.org/press-release-financing-sustainable-development-report-2020''>pertorbacions econòmiques i financeres</a> derivades de la COVID-19 (com les alteracions en la producció industrial, la caiguda dels preus dels productes bàsics, la volatilitat del mercat financer i l''augment de la inseguretat) estan desbaratant el ja de per si mateix tebi creixement econòmic i empitjorant els riscos accentuats d''otros factors.</p>'
+        targets:
+          target_8_1:
+            long_title: "Mantindre el creixement econòmic per capita de conformitat amb les circumstàncies nacionals i, en particular, un creixement del producte intern brut d'almenys el 7% anual als països menys avançats."
+            short_title: "Manteniment del creixement econòmic"
+          target_8_2:
+            long_title: "Aconseguir nivells més elevats de productivitat econòmica mitjançant la diversificació, la modernització tecnològica i la innovació, entre altres coses centrant-se en els sectors amb gran valor afegit i un ús intensiu de la mà d'obra."
+            short_title: "Elevar la productivitat a través de la diversificació, tecnologia i innovació"
+          target_8_3:
+            long_title: "Promoure polítiques orientades al desenvolupament que donen suport a les activitats productives, la creació de llocs de treball decents, l'emprenedoria, la creativitat i la innovació, i fomentar la formalització i el creixement de les microempreses i les petites i mitjanes empreses, fins i tot mitjançant l'accés a serveis financers."
+            short_title: "Foment de petita i mitjana empresa"
+          target_8_4:
+            long_title: "Millorar progressivament, d'ací a 2030, la producció i el consum eficients dels recursos mundials i procurar desvincular el creixement econòmic de la degradació del medi ambient, conforme al Marc Decennal de Programes sobre modalitats de Consum i Producció Sostenibles, començant pels països desenvolupats."
+            short_title: "Millora de la producció i consum eficient i respectuós"
+          target_8_5:
+            long_title: "D'ací a 2030, aconseguir l'ocupació plena i productiva i el treball decent per a totes les dones i els homes, inclosos els joves i les persones amb discapacitat, així com la igualtat de remuneració per treball d'igual valor."
+            short_title: "Aconseguir la plena ocupació i treball decent"
+          target_8_6:
+            long_title: "D'ací a 2020, reduir considerablement la proporció de joves que no estan ocupats i no cursen estudis ni reben capacitació."
+            short_title: "Reducció dels joves sense treball ni estudis"
+          target_8_7:
+            long_title: "Adoptar mesures immediates i eficaces per a erradicar el treball forçós, posar fi a les formes contemporànies d'esclavitud i el tràfic de persones i assegurar la prohibició i eliminació de les pitjors formes de treball infantil, inclosos el reclutament i la utilització de xiquets soldats, i, d'ací a 2025, posar fi al treball infantil en totes les seues formes."
+            short_title: "Erradicació l'esclavitud, tracta i treball infantil"
+          target_8_8:
+            long_title: "Protegir els drets laborals i promoure un entorn de treball segur i sense riscos per a tots els treballadors, inclosos els treballadors migrants, en particular les dones migrants i les persones amb ocupacions precàries."
+            short_title: "Protecció dels drets laborals i treball segur"
+          target_8_9:
+            long_title: "D'ací a 2030, elaborar i posar en pràctica polítiques encaminades a promoure un turisme sostenible que cree llocs de treball i promoga la cultura i els productes locals."
+            short_title: "Promoció el turisme sostenible"
+          target_8_10:
+            long_title: "Enfortir la capacitat de les institucions financeres nacionals per a fomentar i ampliar l'accés als serveis bancaris, financers i d'assegurances per a tots."
+            short_title: "Enfortiment la capacitat de les institucions financeres"
+          target_8_A:
+            long_title: "Augmentar el suport a la iniciativa d'ajuda per al comerç als països en desenvolupament, en particular els països menys avançats, fins i tot mitjançant el Marc Integrat Millorat per a l'Assistència Tècnica als Països Menys Avançats en Matèria de Comerç."
+            short_title: "Augmente ajuda per al comerç en països en desenvolupament"
+          target_8_B:
+            long_title: "D'ací a 2020, desenvolupar i posar en marxa una estratègia mundial per a l'ús dels joves i aplicar el Pacte Mundial per a l'Ús de l'Organització Internacional del Treball."
+            short_title: "Desenvolupament de l'estratègia mundial per a ocupació juvenil"
+      goal_9:
+        title: "Indústria, Innovació i Infraestructures"
+        title_in_two_lines: "Indústria, Innovació\ne Infraestructures"
+        description: "Construir infraestructures resilients, promoure la industrialització sostenible i fomentar la innovació."
+        long_description: '<p>La industrialització inclusiva i sostenible, juntament amb la <a href=''https://unstats.un.org/sdgs/report/2019/goal-09/''''>innovació i la infraestructura</a>, poden donar curs a les forces econòmiques dinàmiques i competitives que generen l''ocupació i els ingressos. Aquestes exerceixen un paper clau a l''hora d''introduir i promoure noves tecnologies, facilitar el comerç internacional i permetre l''ús eficient dels recursos.</p> <p>No obstant això, encara queda un llarg camí que recórrer perquè el món puga aprofitar al màxim aquest potencial. Especialment, els països menys desenvolupats necessiten accelerar el desenvolupament dels seus sectors manufacturers si desitgen aconseguir la meta de 2030 i augmentar la inversió en investigació i innovació científiques.</p> <p>El creixement del sector manufacturer a nivell mundial ha anat disminuint constantment, fins i tot abans del brot de la pandèmia de la COVID-19. La pandèmia està <a href=''https://unctad.org/en/pages/newsdetails.aspx?OriginalVersionID=2297''>afectant greument les indústries manufactureres</a> i està provocant alteracions en les cadenes de valor mundials i en el subministrament de productes.</p> <p>La innovació i el progrés tecnològic són claus per a descobrir solucions duradores per als desafiaments econòmics i mediambientals, com l''augment de l''eficiència energètica i de recursos. A nivell mundial, <a href=''https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf''>la inversió en recerca i desenvolupament</a> (I+D), com a percentatge del PIB, va augmentar d''un 1,5&nbsp;% en el 2000 a un 1,7&nbsp;% en el 2015, i va continuar quasi en el mateix nivell en el 2017. No obstant això, a les regions en desenvolupament va ser inferior al 1&nbsp;%.</p> <p>En termes d''infraestructura de comunicacions, més de la meitat de la població mundial està ara connectada i quasi tota la població global viu en un área amb cobertura de xarxa mòbil. S''estima que, en 2019, <a href=''https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf''>el 96,5&nbsp;% de la població tenia cobertura de xarxa, com a mínim, 2G</a>.</p>'
+        targets:
+          target_9_1:
+            long_title: "Desenvolupar infraestructures fiables, sostenibles, resilients i de qualitat, incloses infraestructures regionals i transfrontereres, per a donar suport al desenvolupament econòmic i el benestar humà, posant l'accent principalment en l'accés assequible i equitatiu per a tots."
+            short_title: "Desenvolupament d'Infraestructura sostenible"
+          target_9_2:
+            long_title: "Promoure una industrialització inclusiva i sostenible i, d'ací a 2030, augmentar significativament la contribució de la indústria a l'ocupació i al producte intern brut, d'acord amb les circumstàncies nacionals, i duplicar aqueixa contribució als països menys avançats."
+            short_title: "Promoció d'indústria inclusiva i sostenible"
+          target_9_3:
+            long_title: "Augmentar l'accés de les xicotetes indústries i altres empreses, particularment als països en desenvolupament, als serveis financers, inclosos crèdits assequibles, i la seua integració en les cadenes de valor i els mercats."
+            short_title: "Augment de l'accés PIMES a serveis financers i cadenes de valor"
+          target_9_4:
+            long_title: "D'ací a 2030, modernitzar la infraestructura i reconvertir les indústries perquè siguen sostenibles, utilitzant els recursos amb major eficàcia i promovent l'adopció de tecnologies i processos industrials nets i ambientalment racionals, i aconseguint que tots els països prenguen mesures d'acord amb les seues capacitats respectives."
+            short_title: "Modernització de la infraestructura, tecnologia neta"
+          target_9_5:
+            long_title: "Augmentar la investigació científica i millorar la capacitat tecnològica dels sectors industrials de tots els països, en particular els països en desenvolupament, entre altres coses fomentant la innovació i augmentant considerablement, d'ací a 2030, el nombre de persones que treballen en recerca i desenvolupament per milió d'habitants i les despeses dels sectors públic i privat en recerca i desenvolupament."
+            short_title: "Augment de la investigació científica, capacitat tecnològica"
+          target_9_A:
+            long_title: "Facilitar el desenvolupament d'infraestructures sostenibles i resilients als països en desenvolupament mitjançant un major suport financer, tecnològic i tècnic als països africans, els països menys avançats, els països en desenvolupament sense litoral i els xicotets Estats insulars en desenvolupament."
+            short_title: "Suport a infraestructures sostenibles i resilients"
+          target_9_B:
+            long_title: "Donar suport al desenvolupament de tecnologies, la investigació i la innovació nacionals als països en desenvolupament, fins i tot garantint un entorn normatiu propici a la diversificació industrial i l'addició de valor als productes bàsics, entre altres coses."
+            short_title: "Desenvolupament de la tecnologia, investigació i innovació"
+          target_9_C:
+            long_title: "Augmentar significativament l'accés a la tecnologia de la informació i les comunicacions i esforçar-se per proporcionar accés universal i assequible a Internet als països menys avançats d'ací a 2020."
+            short_title: "Augment de l'accés a TIC i Internet"
+      goal_10:
+        title: "Reducció de les Desigualtats"
+        title_in_two_lines: "Reducció de les\nDesigualtats"
+        description: "Reduir la desigualtat en i entre els països."
+        long_description: '<p>Reduir les desigualtats i garantir que ningú es queda arrere forma part integral de la consecució dels Objectius de Desenvolupament Sostenible.</p> <p>La desigualtat dins dels països i entre aquests és un continu motiu de preocupació. Malgrat l''existència d''alguns indicis positius cap a la reducció de la desigualtat en algunes dimensions, com la reducció de la desigualtat d''ingressos en alguns països i l''estatus comercial preferent que beneficia als països de baixos ingressos, <a href=''https://unstats.un.org/sdgs/report/2019/goal-10/''>la desigualtat encara continua</a>.</p> <p><a href=''https://www.un.org/sustainabledevelopment/goal-of-the-month-may-2020''>La COVID-19 ha intensificat les desigualtats existents</a> i ha afectat més que ningú als pobres i les comunitats més vulnerables. Ha tret a la llum les desigualtats econòmiques i les fràgils xarxes de seguretat social que fan que les comunitats vulnerables hagen de patir les conseqüències de la crisi.&nbsp; Al mateix temps, les desigualtats socials, polítiques i econòmiques han amplificat els efectes de la pandèmia.</p> <p>En el front econòmic, la pandèmia de la COVID-19 ha augmentat significativament la <a href=''https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_743036/lang--en/index.htm''>desocupació</a> mundial i ha retallat dràsticament els ingressos dels treballadors.</p> <p>La COVID-19 també posa en risc els escassos avanços que s''han aconseguit <a href=''https://data.unwomen.org/resources/covid-19-emerging-gender-data-and-why-it-matters''>en matèria d''igualtat de gènere</a> i drets de les dones durant les últimes dècades. Pràcticament en tots els àmbits, des de la salut fins a l''economia, des de la seguretat fins a la protecció social, els efectes de la COVID-19 han agreujat la situació de les dones i les xiquetes simplement a conseqüència del seu sexe.</p> <p>Les desigualtats també estan augmentant per a les <a href=''https://www.un.org/sites/un2.un.org/files/un_policy_brief_on_human_rights_and_covid_23_april_2020.pdf''>poblacions vulnerables</a> en països amb sistemes sanitaris més deficients i en països que s''enfronten a crisis humanitàries existents. Els refugiats i els migrants, així com els pobles indígenes, els ancians, les persones amb discapacitat i els xiquets es troben especialment en risc de ser exclosos. A més, el <a href=''https://www.un.org/en/coronavirus/covid-19-un-counters-pandemic-related-hate-and-xenophobia''>discurs d''odi</a> dirigit als grups vulnerables està en augment.</p>'
+        targets:
+          target_10_1:
+            long_title: "D'ací a 2030, aconseguir progressivament i mantindre el creixement dels ingressos del 40% més pobre de la població a una taxa superior a la mitjana nacional."
+            short_title: "Creixement d'Ingressos del 40% població pobra"
+          target_10_2:
+            long_title: "D'ací a 2030, potenciar i promoure la inclusió social, econòmica i política de totes les persones, independentment de la seua edat, sexe, discapacitat, raça, ètnia, origen, religió o situació econòmica o una altra condició."
+            short_title: "Promoció de la Inclusió social, econòmica i política"
+          target_10_3:
+            long_title: "Garantir la igualtat d'oportunitats i reduir la desigualtat de resultats, fins i tot eliminant les lleis, polítiques i pràctiques discriminatòries i promovent legislacions, polítiques i mesures adequades a aqueix respecte."
+            short_title: "Garantir la igualtat d'oportunitats"
+          target_10_4:
+            long_title: "Adoptar polítiques, especialment fiscals, salarials i de protecció social, i aconseguir progressivament una major igualtat."
+            short_title: "Adopció de polítiques fiscals, salarials i de protecció social"
+          target_10_5:
+            long_title: "Millorar la reglamentació i vigilància de les institucions i els mercats financers mundials i enfortir l'aplicació d'aqueixos reglaments."
+            short_title: "Millorar de la regulació dels mercats financers mundials"
+          target_10_6:
+            long_title: "Assegurar una major representació i intervenció dels països en desenvolupament en les decisions adoptades per les institucions econòmiques i financeres internacionals per a augmentar l'eficàcia, fiabilitat, rendició de comptes i legitimitat d'aqueixes institucions."
+            short_title: "Participació de països en desenvolupament en IFIs i OOII"
+          target_10_7:
+            long_title: "Facilitar la migració i la mobilitat ordenades, segures, regulars i responsables de les persones, fins i tot mitjançant l'aplicació de polítiques migratòries planificades i ben gestionades."
+            short_title: "Facilitar la migració i polítiques migratòries ordenades"
+          target_10_A:
+            long_title: "Aplicar el principi del tracte especial i diferenciat per als països en desenvolupament, en particular els països menys avançats, de conformitat amb els acords de l'Organització Mundial del Comerç."
+            short_title: "Aplicació del principi del tracte especial i diferenciat (OMC)"
+          target_10_B:
+            long_title: "Fomentar l'assistència oficial per al desenvolupament i els corrents financers, inclosa la inversió estrangera directa, per als Estats amb majors necessitats, en particular els països menys avançats, els països africans, els xicotets Estats insulars en desenvolupament i els països en desenvolupament sense litoral, d'acord amb els seus plans i programes nacionals."
+            short_title: "Foment de corrents financers per a països en desenvolupament"
+          target_10_C:
+            long_title: "D'ací a 2030, reduir a menys del 3% els costos de transacció de les remeses dels migrants i eliminar els corredors de remeses amb un cost superior al 5%."
+            short_title: "Reducció de costos de Remeses"
+      goal_11:
+        title: "Ciutats i Comunitats Sostenibles"
+        title_in_two_lines: "Ciutats i Comunitats\nSostenibles"
+        description: "Aconseguir que les ciutats siguen més inclusives, segures, resilients i sostenibles."
+        long_description: '<p>El món cada vegada està més urbanitzat. Des de 2007, <a href=''https://unstats.un.org/sdgs/report/2019/goal-11/''''>més de la meitat de la població mundial ha estat vivint en ciutats</a>, i s''espera que aquesta quantitat augmente fins al 60&nbsp;% per a 2030.</p> <p>Les ciutats i les àrees metropolitanes són centres neuràlgics del creixement econòmic, ja que contribueixen al 60&nbsp;% aproximadament del PIB mundial. No obstant això, també representen al voltant del 70&nbsp;% de les emissions de carboni mundials i més del 60&nbsp;% de l''ús de recursos.</p> <p>La ràpida urbanització està donant com a resultat un nombre creixent d''habitants en barris pobres, infraestructures i serveis inadequats i sobrecarregats (com la recollida de residus i els sistemes d''aigua i sanejament, carreteres i transport), la qual cosa està empitjorant la contaminació de l''aire i el creixement urbà incontrolat.</p> <p><a href=''https://unhabitat.org/coronavirus-will-travel-incredibly-fast-in-africas-slums-un-habitat-chief-warns''>L''impacte de la COVID-19</a> serà més devastador en les zones urbanes pobres i densament poblades, especialment per al mil milió de persones que viu en assentaments informals i en barris marginals a tot el món, on l''amuntegament també dificulta complir amb les mesures recomanades, com el distanciament social i l''autoisolament.</p> <p>L''organisme de les Nacions Unides per als aliments, la FAO, va advertir que la fam i les morts podrien augmentar de manera significativa en les zones urbanes que no compten amb mesures per a garantir que els residents pobres i vulnerables tinguen <a href=''https://news.un.org/en/story/2020/05/1063622''>accés a aliments</a>.</p>'
+        targets:
+          target_11_1:
+            long_title: "D'ací a 2030, assegurar l'accés de totes les persones a habitatges i serveis bàsics adequats, assegurances i assequibles i millorar els barris marginals."
+            short_title: "Assegurar l'accés a l'habitatge"
+          target_11_2:
+            long_title: "D'ací a 2030, proporcionar accés a sistemes de transport segurs, assequibles, accessibles i sostenibles per a tots i millorar la seguretat viària, en particular mitjançant l'ampliació del transport públic, prestant especial atenció a les necessitats de les persones en situació de vulnerabilitat, les dones, els xiquets, les persones amb discapacitat i les persones d'edat."
+            short_title: "Proporcionar l'accés a transport públic"
+          target_11_3:
+            long_title: "D'ací a 2030, augmentar la urbanització inclusiva i sostenible i la capacitat per a la planificació i la gestió participatives, integrades i sostenibles dels assentaments humans en tots els països."
+            short_title: "Augment de la urbanització inclusiva i sostenible"
+          target_11_4:
+            long_title: "Redoblar els esforços per a protegir i salvaguardar el patrimoni cultural i natural del món."
+            short_title: "Protecció del patrimoni cultural i natural"
+          target_11_5:
+            long_title: "D'ací a 2030, reduir significativament el nombre de morts causades pels desastres, inclosos els relacionats amb l'aigua, i de persones afectades per ells, i reduir considerablement les pèrdues econòmiques directes provocades pels desastres en comparació amb el producte intern brut mundial, posant l'accent principalment en la protecció dels pobres i les persones en situacions de vulnerabilitat."
+            short_title: "Reducció del nombre de morts per desastres i reducció de vulnerabilitat"
+          target_11_6:
+            long_title: "D'ací a 2030, reduir l'impacte ambiental negatiu per capita de les ciutats, fins i tot prestant especial atenció a la qualitat de l'aire i la gestió de les deixalles municipals i d'un altre tipus."
+            short_title: "Reducció de l'impacte ambiental en ciutats"
+          target_11_7:
+            long_title: "D'ací a 2030, proporcionar accés universal a zones verdes i espais públics segurs, inclusius i accessibles, en particular per a les dones i els xiquets, les persones d'edat i les persones amb discapacitat."
+            short_title: "Proporcionar l'accés a zones verdes i espais públics segurs"
+          target_11_A:
+            long_title: "Donar suport als vincles econòmics, socials i ambientals positius entre les zones urbanes, periurbanes i rurals enfortint la planificació del desenvolupament nacional i regional."
+            short_title: "Suport a vincles zones urbanes, periurbanes i rurals"
+          target_11_B:
+            long_title: "D'ací a 2020, augmentar considerablement el nombre de ciutats i assentaments humans que adopten i implementen polítiques i plans integrats per a promoure la inclusió, l'ús eficient dels recursos, la mitigació del canvi climàtic i l'adaptació a ell i la resiliència davant els desastres, i desenvolupar i posar en pràctica, d'acord amb el Marc de Sendai per a la Reducció del Risc de Desastres 2015-2030, la gestió integral dels riscos de desastre a tots els nivells."
+            short_title: "Augment de la reducció de riscos de desastres en ciutats"
+          target_11_C:
+            long_title: "Proporcionar suport als països menys avançats, fins i tot mitjançant assistència financera i tècnica, perquè puguen construir edificis sostenibles i resilients utilitzant materials locals."
+            short_title: "Suport a la construcció d'edificis sostenibles i resilients en PMAs"
+      goal_12:
+        title: "Producció i Consum Responsables"
+        title_in_two_lines: "Producció i Consum\nResponsables"
+        description: "Garantir modalitats de consum i producció sostenibles."
+        long_description: '<p>El consum i la producció mundials (forces impulsores de l''economia mundial) depenen de l''ús del medi ambient natural i dels recursos d''una manera que continua tenint efectes destructius sobre el planeta.</p> <p>El progrés econòmic i social aconseguit durant l''últim segle ha estat acompanyat d''una degradació mediambiental que està posant en perill els mateixos sistemes dels quals depén el nostre desenvolupament futur (i certament, la nostra supervivència).</p> <p>Aquests són alguns <a href=''https://www.unenvironment.org/explore-topics/sustainable-development-goals/why-do-sustainable-development-goals-matter/goal-12''>fets i xifres</a>:</p> <ul> <li>Cada any, s''estima que un terç de tot el menjar produït (l''equivalent a 1300&nbsp;milions de tones amb un valor pròxim al bilió de dòlars) acaba podrint-se en els poals de fem dels consumidors i minoristes, o desbaratant-se a causa d''un transport i unes pràctiques de recol·lecció deficients.</li> <li>Si tothom canviara les seues bombetes per unes energèticament eficients, s''estalviarien 120&nbsp;000&nbsp;milions de dòlars estatunidencs a l''any.</li> <li>En cas que la població mundial aconseguisca els 9600&nbsp;milions de persones en 2050, es podria necessitar l''equivalent a quasi tres planetes per a proporcionar els recursos naturals necessaris per a mantindre els estils de vida actuals.</li> </ul> <p>La pandèmia de la COVID-19 ofereix als països l''oportunitat d''elaborar plans de recuperació que revertisquen les tendències actuals i canvien els nostres patrons de consum i producció cap a un futur més sostenible.</p> <p><a href=''https://www.unenvironment.org/explore-topics/resource-efficiency/what-we-do/sustainable-consumption-and-production-policies''>El consum i la producció sostenibles </a>consisteixen a fer més i millor amb menys. També es tracta de desvincular el creixement econòmic de la degradació mediambiental, augmentar l''eficiència de recursos i promoure estils de vida sostenibles.</p> <p>El consum i la producció sostenibles també poden contribuir de manera substancial a la mitigació de la pobresa i a la transició cap a economies verdes i amb baixes emissions de carboni.</p>'
+        targets:
+          target_12_1:
+            long_title: "Aplicar el Marc Decennal de Programes sobre Modalitats de Consum i Producció Sostenibles, amb la participació de tots els països i sota el lideratge dels països desenvolupats, tenint en compte el grau de desenvolupament i les capacitats dels països en desenvolupament."
+            short_title: "Aplicació marc de consum i producció sostenibles"
+          target_12_2:
+            long_title: "D'ací a 2030, aconseguir la gestió sostenible i l'ús eficient dels recursos naturals."
+            short_title: "Aconseguir l'ús eficient de recursos naturals"
+          target_12_3:
+            long_title: "D'ací a 2030, reduir a la meitat el desaprofitament d'aliments per càpita mundial en la venda al detall i a nivell dels consumidors i reduir les pèrdues d'aliments en les cadenes de producció i subministrament, incloses les pèrdues posteriors a la collita."
+            short_title: "Reducció del desaprofitament d'aliments"
+          target_12_4:
+            long_title: "D'ací a 2020, aconseguir la gestió ecològicament racional dels productes químics i de totes les deixalles al llarg del seu cicle de vida, de conformitat amb els marcs internacionals convinguts, i reduir significativament el seu alliberament a l'atmosfera, l'aigua i el sòl a fi de minimitzar els seus efectes adversos en la salut humana i el medi ambient."
+            short_title: "Gestió de deixalles i productes químics"
+          target_12_5:
+            long_title: "D'ací a 2030, reduir considerablement la generació de deixalles mitjançant activitats de prevenció, reducció, reciclatge i reutilització."
+            short_title: "Prevenció, reducció, reciclatge i reutilització de deixalles"
+          target_12_6:
+            long_title: "Encoratjar a les empreses, especialment les grans empreses i les empreses transnacionals, al fet que adopten pràctiques sostenibles i incorporen informació sobre la sostenibilitat en el seu cicle de presentació d'informes."
+            short_title: "Adopció de pràctiques sostenibles en empreses"
+          target_12_7:
+            long_title: "Promoure pràctiques d'adquisició pública que siguen sostenibles, de conformitat amb les polítiques i prioritats nacionals."
+            short_title: "Adquisicions públiques sostenibles"
+          target_12_8:
+            long_title: "D'ací a 2030, assegurar que les persones de tot el món tinguen la informació i els coneixements pertinents per al desenvolupament sostenible i els estils de vida en harmonia amb la naturalesa."
+            short_title: "Assegurar l'educació per al Desenvolupament Sostenible"
+          target_12_A:
+            long_title: "Ajudar els països en desenvolupament a enfortir la seua capacitat científica i tecnològica per a avançar cap a modalitats de consum i producció més sostenibles."
+            short_title: "Enfortiment de ciència i tecnologia per a sostenibilitat"
+          target_12_B:
+            long_title: "Elaborar i aplicar instruments per a vigilar els efectes en el desenvolupament sostenible, a fi d'aconseguir un turisme sostenible que cree llocs de treball i promoga la cultura i els productes locals."
+            short_title: "Aconseguir turisme sostenible"
+          target_12_C:
+            long_title: "Racionalitzar els subsidis ineficients als combustibles fòssils que fomenten el consum antieconòmic eliminant les distorsions del mercat, d'acord amb les circumstàncies nacionals, fins i tot mitjançant la reestructuració dels sistemes tributaris i l'eliminació gradual dels subsidis perjudicials, quan existisquen, per a reflectir el seu impacte ambiental, tenint plenament en compte les necessitats i condicions específiques dels països en desenvolupament i minimitzant els possibles efectes adversos en el seu desenvolupament, de manera que es protegisca els pobres i a les comunitats afectades."
+            short_title: "Regulació de subsidis a combustibles fòssils"
+      goal_13:
+        title: "Acció Pel Clima"
+        title_in_two_lines: "Acció\nPel Clima"
+        description: "Adoptar mesures urgents per a combatre el canvi climàtic i els seus efectes."
+        long_description: '<p>El 2019 va ser el <a href=''https://news.un.org/en/story/2020/03/1059061''>segon any més calorós de tots els temps</a> i va marcar el final de la dècada més calorosa (2010-2019) que s''haja registrat mai.</p> <p>Els nivells de diòxid de carboni (CO₂) i d''uns altres <a href=''https://news.un.org/en/story/2020/04/1062332''>gasos d''efecte d''hivernacle en l''atmosfera</a> van augmentar fins a nivells rècord en 2019.</p> <p>El canvi climàtic està afectant a tots els països de tots els continents. Està alterant les economies nacionals i afectant diferents vides. Els sistemes meteorològics estan canviant, els nivells de la mar estan pujant i els fenòmens meteorològics són cada vegada més extrems.</p> <p>A pesar que s''estima que les emissions de gasos d''efecte d''hivernacle caiguen al voltant d''un 6&nbsp;% en 2020 a causa de les restriccions de moviment i les recessions econòmiques derivades de la pandèmia de la COVID-19, aquesta millora és només temporal. <a href=''https://news.un.org/en/story/2020/04/1062332''>El canvi climàtic no es va a pausar</a>. Una vegada que l''economia mundial comence a recuperar-se de la pandèmia, s''espera que les emissions tornen a nivells majors.</p> <p>És necessari prendre mesures urgents per a abordar tant la pandèmia com l''emergència climàtica amb la finalitat de salvar vides i mitjans de subsistència.</p> <p>L'' <a href=''https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement''>Acord de París</a>, aprovat en 2015, aspira a reforçar la resposta mundial a l''amenaça del canvi climàtic mantenint l''augment global de la temperatura durant aquest segle molt per davall de 2&nbsp;graus Celsius respecte als nivells preindustrials. L''acord també aspira a reforçar la capacitat dels països per a bregar amb els efectes del canvi climàtic mitjançant fluxos financers apropiats, un nou marc tecnològic i un marc de desenvolupament de la capacitat millorat.</p>'
+        targets:
+          target_13_1:
+            long_title: "Enfortir la resiliència i la capacitat d'adaptació als riscos relacionats amb el clima i els desastres naturals en tots els països."
+            short_title: "Enfortiment de la resiliència i adaptació"
+          target_13_2:
+            long_title: "Incorporar mesures relatives al canvi climàtic en les polítiques, estratègies i plans nacionals."
+            short_title: "Incorporació del canvi climàtic en polítiques, estratègies i plans nacionals"
+          target_13_3:
+            long_title: "Millorar l'educació, la sensibilització i la capacitat humana i institucional respecte de la mitigació del canvi climàtic, l'adaptació a ell, la reducció dels seus efectes i l'alerta primerenca."
+            short_title: "Millora de l'Educació i sensibilització mediambiental"
+          target_13_A:
+            long_title: "Complir el compromís dels països desenvolupats que són parts en la Convenció Marc de les Nacions Unides sobre el Canvi Climàtic d'aconseguir per a l'any 2020 l'objectiu de mobilitzar conjuntament 100.000 milions de dòlars anuals procedents de totes les fonts a fi d'atendre les necessitats dels països en desenvolupament respecte de l'adopció de mesures concretes de mitigació i la transparència de la seua aplicació, i posar en ple funcionament el Fons Verd per al Clima capitalitzant-lo al més prompte possible."
+            short_title: "Mobilització de recursos econòmics"
+          target_13_B:
+            long_title: "Promoure mecanismes per a augmentar la capacitat per a la planificació i gestió eficaces en relació amb el canvi climàtic als països menys avançats i els xicotets Estats insulars en desenvolupament, fent particular recalcament en les dones, els joves i les comunitats locals i marginades."
+            short_title: "Gestió canvie climàtic als països menys avançats"
+      goal_14:
+        title: "Vida Submarina"
+        title_in_two_lines: "Vida\nSubmarina"
+        description: "Conservar i utilitzar sosteniblement els oceans, les mars i els recursos marins."
+        long_description: '<p>L''oceà impulsa els sistemes mundials que fan de la Terra un lloc habitable per a l''ésser humà. La nostra pluja, l''aigua potable, el temps, el clima, els litorals, gran part del nostre menjar i fins i tot l''oxigen de l''aire que respirem els proporciona i regula la mar.</p> <p>Una gestió acurada d''aquest <a href=''https://www.unenvironment.org/explore-topics/oceans-seas/why-do-oceans-and-seas-matter''>recurs mundial essencial</a> és una característica clau d''un futur sostenible. No obstant això, en l''actualitat, existeix una deterioració contínua de les aigües costaneres a causa de la contaminació i a l''acidificació dels oceans que està tenint un efecte advers sobre el funcionament dels ecosistemes i la biodiversitat. Així mateix, també està tenint un impacte perjudicial sobre les pesqueres de xicoteta escala.</p> <p>Protegir els nostres oceans ha de continuar sent una prioritat. La biodiversitat marina és vital per a la salut de les persones i del nostre planeta. Les àrees marines protegides s''han de gestionar de manera efectiva, igual que els seus recursos, i s''han de posar en marxa reglaments que reduïsquen la sobrepesca, la contaminació marina i l''acidificació dels oceans.</p>'
+        targets:
+          target_14_1:
+            long_title: "D'ací a 2025, previndre i reduir significativament la contaminació marina de tota mena, en particular la produïda per activitats realitzades en terra, inclosos els detritus marins i la pol·lució per nutrients."
+            short_title: "Prevenció i reducció de la contaminació marina"
+          target_14_2:
+            long_title: "D'ací a 2020, gestionar i protegir sosteniblement els ecosistemes marins i costaners per a evitar efectes adversos importants, fins i tot enfortint la seua resiliència, i adoptar mesures per a restaurar-los a fi de restablir la salut i la productivitat dels oceans."
+            short_title: "Gestió ecosistemes marins i costaners"
+          target_14_3:
+            long_title: "Minimitzar i abordar els efectes de l'acidificació dels oceans, fins i tot mitjançant una major cooperació científica a tots els nivells."
+            short_title: "Minimització de l'acidificació d'oceans"
+          target_14_4:
+            long_title: "D'ací a 2020, reglamentar eficaçment l'explotació pesquera i posar fi a la pesca excessiva, la pesca il·legal, no declarada i no reglamentada i les pràctiques pesqueres destructives, i aplicar plans de gestió amb fonament científic a fi de restablir les poblacions de peixos en el termini més breu possible, almenys aconseguint nivells que puguen produir el màxim rendiment sostenible d'acord amb les seues característiques biològiques."
+            short_title: "Regulació de l'explotació pesquera sostenible"
+          target_14_5:
+            long_title: "D'ací a 2020, conservar almenys el 10% de les zones costaneres i marines, de conformitat amb les lleis nacionals i el dret internacional i sobre la base de la millor informació científica disponible."
+            short_title: "Conservació zones costaneres i marines"
+          target_14_6:
+            long_title: "D'ací a 2020, prohibir unes certes formes de subvencions a la pesca que contribueixen a la sobrecapacitat i la pesca excessiva, eliminar les subvencions que contribueixen a la pesca il·legal, no declarada i no reglamentada i abstindre's d'introduir noves subvencions d'aqueixa índole, reconeixent que la negociació sobre les subvencions a la pesca en el marc de l'Organització Mundial del Comerç ha d'incloure un tracte especial i diferenciat, apropiat i efectiu per als països en desenvolupament i els països menys avançats ¹ (¹ Tenint en compte les negociacions en curs de l'Organització Mundial del Comerç, el Programa de Doha per al Desenvolupament i el mandat de la Declaració Ministerial d'Hong Kong)."
+            short_title: "Combatre la pesca il·legal i excessiva"
+          target_14_7:
+            long_title: "D'ací a 2030, augmentar els beneficis econòmics que els xicotets Estats insulars en desenvolupament i els països menys avançats obtenen de l'ús sostenible dels recursos marins, en particular mitjançant la gestió sostenible de la pesca, l'aqüicultura i el turisme."
+            short_title: "Augment dels beneficis econòmics de la pesca sostenible"
+          target_14_A:
+            long_title: "Augmentar els coneixements científics, desenvolupar la capacitat d'investigació i transferir tecnologia marina, tenint en compte els Criteris i Directrius per a la Transferència de Tecnologia Marina de la Comissió Oceanogràfica Intergovernamental, a fi de millorar la salut dels oceans i potenciar la contribució de la biodiversitat marina al desenvolupament dels països en desenvolupament, en particular els xicotets Estats insulars en desenvolupament i els països menys avançats."
+            short_title: "Suport a la investigació i tecnologia marina"
+          target_14_B:
+            long_title: "Facilitar l'accés dels pescadors artesanals als recursos marins i els mercats."
+            short_title: "Foment de la pesca a petita escala i artesanal"
+          target_14_C:
+            long_title: "Millorar la conservació i l'ús sostenible dels oceans i els seus recursos aplicant el dret internacional reflectit en la Convenció de les Nacions Unides sobre el Dret de la Mar, que constitueix el marc jurídic per a la conservació i la utilització sostenible dels oceans i els seus recursos, com es recorda en el paràgraf 158 del document “El futur que volem”."
+            short_title: "Aplicació Convenció de NNUU sobre el Dret de la Mar"
+      goal_15:
+        title: "Vida d'Ecosistemes Terrestres"
+        title_in_two_lines: "Vida d'Ecosistemes\nTerrestres"
+        description: "Gestionar sosteniblement els boscos, lluitar contra la desertificació, detindre i invertir la degradació de les terres, detindre la pèrdua de biodiversitat."
+        long_description: '<p>El brot de la COVID-19 ressalta la necessitat d'' <a href=''https://www.unenvironment.org/news-and-stories/story/coronavirus-outbreak-highlights-need-address-threats-ecosystems-and-wildlife''>abordar les amenaces a les quals s''enfronten les espècies silvestres i els ecosistemes</a>.</p> <p>En 2016, el Programa de les Nacions Unides per al Medi Ambient (PNUMA) va alertar que un augment mundial de les <a href=''https://www.unenvironment.org/resources/emerging-zoonotic-diseases-and-links-ecosystem-health-unep-frontiers-2016-chapter''>epidèmies zoonòtiques</a> era motiu de preocupació. En concret, va assenyalar que el 75&nbsp;% de totes les malalties infeccioses noves en humans són zoonòtiques i que aquestes malalties estan estretament relacionades amb la salut dels ecosistemes.</p> <p>«Amb la COVID-19, el planeta ha enviat el seu major alerta fins hui indicant que la humanitat ha de canviar», <a href=''https://www.unenvironment.org/news-and-stories/press-release/unep-steps-work-zoonotics-protecting-environment-reduce-pandemic''>ha explicat la Directora Executiva del PNUMA, Inger Andersen</a>.</p> <p>En <a href=''https://wedocs.unep.org/bitstream/handle/20.500.11822/32218/UNEP_COVID.pdf?sequence=1&amp;isAllowed=y''><em>Treballar amb el medi ambient per a protegir les persones</em></a>, el PNUMA detalla com «reconstruir millor», mitjançant una base científica més sòlida, polítiques que contribuïsquen a un planeta més sa i més inversions verdes.</p> <p>La resposta del PNUMA s''ocupa de quatre àrees:</p> <ol> <li>Ajudar les nacions a gestionar les deixalles mèdiques de la COVID-19.</li> <li>Produir un canvi transformatiu per a la naturalesa i les persones.</li> <li>Treballar per a garantir que els paquets de recuperació econòmica creuen resiliència per a crisis futures.</li> <li>Modernitzar la governança ambiental a nivell mundial.</li> </ol> <p>Per a previndre, detindre i revertir la degradació dels ecosistemes de tot el món, les Nacions Unides han declarat la <a href=''http://www.decadeonrestoration.org/''>Dècada per a la Restauració dels Ecosistemes (2021-2030)</a>. Aquesta resposta coordinada a nivell mundial davant la pèrdua i degradació dels hàbitats se centrarà en desenvolupar la voluntat i la capacitat polítiques per a restaurar la relació dels éssers humans amb la naturalesa. Així mateix, es tracta d''una resposta directa a l''avís de la ciència, tal com s''expressa en l'' <a href=''https://www.ipcc.ch/srccl/''''>Informe especial sobre canvi climàtic i terra</a> del Grup Intergovernamental d''Experts sobre el Canvi Climàtic, a les decisions adoptades per tots els Estats membres de les Nacions Unides en les convencions de Riu sobre <a href=''https://unfccc.int/resource/docs/convkp/conveng.pdf''>canvi climàtic</a> i <a href=''https://www.cbd.int/''''>biodiversitat</a> i a la <a href=''https://www.unccd.int/sites/default/files/relevant-links/2017-01/English_0.pdf''>Convenció de les Nacions Unides per a la Lluita contra la Desertificació</a>.</p> <p>Es continua treballant en un nou i ambiciós <a href=''https://www.cbd.int/conferences/post2020''>Marc mundial de diversitat biològica posterior a 2020</a>.</p> <p>Mentre el món respon a l''actual pandèmia i es recupera d''ella, necessitarà un pla sòlid destinat a la protecció de la naturalesa, de manera que la naturalesa puga protegir la humanitat.</p>'
+        targets:
+          target_15_1:
+            long_title: "Per a 2020, vetlar per la conservació, el restabliment i l'ús sostenible dels ecosistemes terrestres i els ecosistemes interiors d'aigua dolça i els serveis que proporcionen, en particular els boscos, els aiguamolls, les muntanyes i les zones àrides, d'acord amb les obligacions contretes en virtut d'acords internacionals."
+            short_title: "Assegurar la Conservació i ús sostenibles dels ecosistemes"
+          target_15_2:
+            long_title: "Per a 2020, promoure la gestió sostenible de tots els tipus de boscos, posar fi a la desforestació, recuperar els boscos degradats i incrementar el repoblament i la reforestació a nivell mundial."
+            short_title: "Gestió sostenibles de boscos"
+          target_15_3:
+            long_title: "Per a 2030, combatre la desertificació, restaurar la terra i el sòl degradats, incloses les terres afectades per la desertificació, la sequera i les inundacions, i esforçar-se per aconseguir un món neutral en la degradació de la terra"
+            short_title: "Lluita contra la desertificació"
+          target_15_4:
+            long_title: "Per a 2030, vetlar per la conservació dels ecosistemes muntanyencs, inclosa la seua diversitat biològica, a fi de millorar la seua capacitat de proporcionar beneficis essencials per al desenvolupament sostenible."
+            short_title: "Assegurar la conservació ecosistemes muntanyencs"
+          target_15_5:
+            long_title: "Adoptar mesures urgents i significatives per a reduir la degradació dels hàbitats naturals, detindre la pèrdua de la diversitat biològica i, per a 2020, protegir les espècies amenaçades i evitar la seua extinció."
+            short_title: "Mesures contra la degradació i pèrdua de biodiversitat"
+          target_15_6:
+            long_title: "Promoure la participació justa i equitativa en els beneficis que es deriven de la utilització dels recursos genètics i promoure l'accés adequat a aqueixos recursos, com s'ha convingut internacionalment."
+            short_title: "Accés i ús adequat dels recursos genètics"
+          target_15_7:
+            long_title: "Adoptar mesures urgents per a posar fi a la caça furtiva i el trànsit d'espècies protegides de flora i fauna i abordar la demanda i l'oferta il·legals de productes silvestres."
+            short_title: "Combatre la caça furtiva i espècies protegides"
+          target_15_8:
+            long_title: "Per a 2020, adoptar mesures per a previndre la introducció d'espècies exòtiques invasores i reduir de manera significativa els seus efectes en els ecosistemes terrestres i aquàtics i controlar o erradicar les espècies prioritàries."
+            short_title: "Prevenció d'espècies invasores"
+          target_15_9:
+            long_title: "Per a 2020, integrar els valors dels ecosistemes i la diversitat biològica en la planificació nacional i local, els processos de desenvolupament, les estratègies de reducció de la pobresa i la comptabilitat."
+            short_title: "Integració de plans sensibles a medi ambient"
+          target_15_A:
+            long_title: "Mobilitzar i augmentar de manera significativa els recursos financers procedents de totes les fonts per a conservar i utilitzar de manera sostenible la diversitat biològica i els ecosistemes."
+            short_title: "Mobilització i augment dels recursos financers"
+          target_15_B:
+            long_title: "Mobilitzar un volum apreciable de recursos procedents de totes les fonts i a tots els nivells per a finançar la gestió forestal sostenible i proporcionar incentius adequats als països en desenvolupament perquè promoguen aquesta gestió, en particular amb la intenció de la conservació i la reforestació."
+            short_title: "Augment de recursos per a gestió forestal"
+          target_15_C:
+            long_title: "Augmentar el suport mundial a la lluita contra la caça furtiva i el trànsit d'espècies protegides, en particular augmentant la capacitat de les comunitats locals per a promoure oportunitats de subsistència sostenibles."
+            short_title: "Donar suport a la lluita contra caça furtiva"
+      goal_16:
+        title: "Pau, Justícia i Institucions Sòlides"
+        title_in_two_lines: "Pau, Justícia i\nInstitucions Sòlides"
+        description: "Promoure societats justes, pacífiques i inclusives."
+        long_description: '<p>Els conflictes, la inseguretat, les institucions febles i l''accés limitat a la justícia continuen suposant una greu amenaça per al desenvolupament sostenible.</p> <p>El nombre de <a href=''https://www.unhcr.org/en-us/news/press/2019/6/5d03b22b4/worldwide-displacement-tops-70-million-un-refugee-chief-urges-greater-solidarity.html''>persones que fugen de les guerres, les persecucions i els conflictes va superar els 70&nbsp;milions</a> en 2018, la xifra més alta registrada per l''Oficina de l''Alt Comissionat de les Nacions Unides per als Refugiats (ACNUR) en quasi 70&nbsp;anys.</p> <p>En 2019, les Nacions Unides registraren <a href=''https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf''>357&nbsp;assassinats i 30&nbsp;desaparicions forçades</a> de defensors dels drets humans, periodistes i sindicalistes en 47&nbsp;països.</p> <p>D''altra banda, els naixements d''al voltant de <a href=''https://data.unicef.org/topic/child-protection/birth-registration/''''>un de cada quatre xiquets</a> a tot el món amb menys de 5&nbsp;anys mai es registren de manera oficial, la qual cosa els priva d''una prova d''identitat legal, que és crucial per a la protecció dels seus drets i per a l''accés a la justícia i als serveis socials.</p>'
+        targets:
+          target_16_1:
+            long_title: "Reduir significativament totes les formes de violència i les corresponents taxes de mortalitat a tot el món."
+            short_title: "Reducció de totes les formes de violència"
+          target_16_2:
+            long_title: "Posar fi al maltractament, l'explotació, la tracta i totes les formes de violència i tortura contra els xiquets."
+            short_title: "Erradicació del maltractament, tracta i explotació infantil"
+          target_16_3:
+            long_title: "Promoure l'estat de dret en els plans nacional i internacional i garantir la igualtat d'accés a la justícia per a tots."
+            short_title: "Promoció de l'Estat de Dret, accés a justícia"
+          target_16_4:
+            long_title: "Per a 2030, reduir significativament els fluxos financers i d'armes il·lícits, enfortir la recuperació i devolució d'actius robats i combatre totes les formes de delinqüència organitzada."
+            short_title: "Reducció dels Corrents financers i d'armes il·lícites"
+          target_16_5:
+            long_title: "Reduir considerablement la corrupció i el suborn en totes les seues formes."
+            short_title: "Reducció de la corrupció i suborn"
+          target_16_6:
+            long_title: "Crear a tots els nivells institucions eficaces i transparents que rendisquen comptes."
+            short_title: "Creació d'institucions eficaces i transparents"
+          target_16_7:
+            long_title: "Garantir l'adopció en tots els nivells de decisions inclusives, participatives i representatives que responguen a les necessitats."
+            short_title: "Foment de la participació ciutadana"
+          target_16_8:
+            long_title: "Ampliar i enfortir la participació dels països en desenvolupament en les institucions de governança mundial."
+            short_title: "Enfortiment de la participació països en desenvolupament en OOII"
+          target_16_9:
+            long_title: "Per a 2030, proporcionar identitat legal per a tots, inclòs el registre de naixement."
+            short_title: "Proporció d'identitat jurídica i registre de naixements"
+          target_16_10:
+            long_title: "Garantir l'accés públic a la informació i protegir les llibertats fonamentals, de conformitat amb les lleis nacionals i els acords internacionals."
+            short_title: "Accés a informació i llibertats fonamentals"
+          target_16_A:
+            long_title: "Enfortir les institucions nacionals pertinents, fins i tot mitjançant la cooperació internacional, per a crear a tots els nivells, particularment als països en desenvolupament, la capacitat de previndre la violència i combatre el terrorisme i la delinqüència."
+            short_title: "Enfortiment institucions en prevenció de la violència"
+          target_16_B:
+            long_title: "Promoure i aplicar lleis i polítiques no discriminatòries en favor del desenvolupament sostenible."
+            short_title: "Promoció i aplicació de lleis i polítiques (DDHH)"
+      goal_17:
+        title: "Aliances per a Aconseguir els Objectius"
+        title_in_two_lines: "Aliances per a\nAconseguir els Objectius"
+        description: "Revitalitzar l'Aliança Mundial per al Desenvolupament Sostenible."
+        long_description: '<p>Els ODS només es poden aconseguir amb associacions mundials sòlides i cooperació.</p> <p>Perquè un programa de desenvolupament es complisca satisfactòriament, és necessari establir associacions inclusives (a nivell mundial, regional, nacional i local) sobre principis i valors, així com sobre una visió i uns objectius compartits que se centren primer en les persones i el planeta.</p> <p>Molts països requereixen assistència oficial per al desenvolupament amb la finalitat de fomentar el creixement i el comerç. Així i tot, <a href=''https://www.un.org/press/en/2019/ga12191.doc.htm''>els nivells d''ajuda estan disminuint</a> i els països donants no han respectat el seu compromís d''augmentar el finançament per al desenvolupament.</p> <p>A causa de la pandèmia de la COVID-19, s''espera que la <a href=''https://www.imf.org/en/Publications/WEO/Issues/2020/04/14/weo-april-2020''>economia mundial</a> es contraga fortament, en un 3&nbsp;%, en 2020, el que constituiria la seua pitjor recessió des de la Gran Depressió.</p> <p>Ara més que mai és necessària una sòlida cooperació internacional amb la finalitat de garantir que els països que posseeixen els mitjans per a recuperar-se de la pandèmia reconstruïsquen millor i aconseguisquen els Objectius de Desenvolupament Sostenible.</p>'
+        targets:
+          target_17_1:
+            long_title: "Enfortir la mobilització de recursos interns, fins i tot mitjançant la prestació de suport internacional als països en desenvolupament, amb la finalitat de millorar la capacitat nacional per a recaptar ingressos fiscals i d'una altra índole."
+            short_title: "Mobilització de recursos domèstics per a recaptació fiscal"
+          target_17_2:
+            long_title: "Vetlar perquè els països desenvolupats complisquen plenament els seus compromisos en relació amb l'assistència oficial per al desenvolupament, inclòs el compromís de nombrosos països desenvolupats d'aconseguir l'objectiu de destinar el 0,7% de l'ingrés nacional brut a l'assistència oficial per al desenvolupament dels països en desenvolupament i entre el 0,15% i el 0,20% de l'ingrés nacional brut a l'assistència oficial per al desenvolupament dels països menys avançats; s'encoratja als proveïdors d'assistència oficial per al desenvolupament al fet que consideren la possibilitat de fixar una meta per a destinar almenys el 0,20% de l'ingrés nacional brut a l'assistència oficial per al desenvolupament dels països menys avançats."
+            short_title: "Compliment del 0,7% AOD"
+          target_17_3:
+            long_title: "Mobilitzar recursos financers addicionals de múltiples fonts per als països en desenvolupament."
+            short_title: "Mobilització de recursos financers addicionals"
+          target_17_4:
+            long_title: "Ajudar els països en desenvolupament a aconseguir la sostenibilitat del deute a llarg termini amb polítiques coordinades orientades a fomentar el finançament, l'alleujament i la reestructuració del deute, segons siga procedent, i fer front al deute extern dels països pobres molt endeutats a fi de reduir l'endeutament excessiu."
+            short_title: "Reestructuració del Deute"
+          target_17_5:
+            long_title: "Adoptar i aplicar sistemes de promoció de les inversions en favor dels països menys avançats."
+            short_title: "Promoció d'inversions en països menys avançats"
+          target_17_6:
+            long_title: "Millorar la cooperació regional i internacional Nord-Sud, Sud-Sud i triangular en matèria de ciència, tecnologia i innovació i l'accés a aquestes, i augmentar l'intercanvi de coneixements en condicions mútuament convingudes, fins i tot millorant la coordinació entre els mecanismes existents, en particular a nivell de les Nacions Unides, i mitjançant un mecanisme mundial de facilitació de la tecnologia."
+            short_title: "Millora del traspàs de tecnologia"
+          target_17_7:
+            long_title: "Promoure el desenvolupament de tecnologies ecològicament racionals i la seua transferència, divulgació i difusió als països en desenvolupament en condicions favorables, fins i tot en condicions concessionàries i preferencials, segons el convingut de mutu acord."
+            short_title: "Promoció de tecnologies ecològicament racionals"
+          target_17_8:
+            long_title: "Posar en ple funcionament, a tot tardar en 2017, el banc de tecnologia i el mecanisme de suport a la creació de capacitat en matèria de ciència, tecnologia i innovació per als països menys avançats i augmentar la utilització de tecnologies instrumentals, en particular la tecnologia de la informació i les comunicacions."
+            short_title: "Creació de banc de tecnologia"
+          target_17_9:
+            long_title: "Augmentar el suport internacional per a realitzar activitats de creació de capacitat eficaces i específiques als països en desenvolupament a fi de recolzar els plans nacionals d'implementació de tots els Objectius de Desenvolupament Sostenible, fins i tot mitjançant la cooperació Nord-Sud, Sud-Sud i triangular."
+            short_title: "Reforç de capacitats d'implementació ODS"
+          target_17_10:
+            long_title: "Promoure un sistema de comerç multilateral universal, basat en normes, obert, no discriminatori i equitatiu en el marc de l'Organització Mundial del Comerç, fins i tot mitjançant la conclusió de les negociacions en el marc del Programa de Doha per al Desenvolupament."
+            short_title: "Promoció de comerç multilateral universal"
+          target_17_11:
+            long_title: "Augmentar significativament les exportacions dels països en desenvolupament, en particular amb la intenció de duplicar la participació dels països menys avançats en les exportacions mundials d'ací a 2020."
+            short_title: "Augment de les exportacions de països en desenvolupament"
+          target_17_12:
+            long_title: "Aconseguir la consecució oportuna de l'accés als mercats lliure de drets i contingents de manera duradora per a tots els països menys avançats, conforme a les decisions de l'Organització Mundial del Comerç, fins i tot vetlant perquè les normes d'origen preferencials aplicables a les importacions dels països menys avançats siguen transparents i senzilles i contribuïsquen a facilitar l'accés als mercats."
+            short_title: "Accés a mercat per a països en desenvolupament"
+          target_17_13:
+            long_title: "Augmentar l'estabilitat macroeconòmica mundial, fins i tot mitjançant la coordinació i coherència de les polítiques."
+            short_title: "Augment de l'estabilitat macroeconòmica mundial"
+          target_17_14:
+            long_title: "Millorar la coherència de les polítiques per al desenvolupament sostenible."
+            short_title: "Millora de la coherència de polítiques"
+          target_17_15:
+            long_title: "Respectar el marge normatiu i el lideratge de cada país per a establir i aplicar polítiques d'erradicació de la pobresa i desenvolupament sostenible."
+            short_title: "Respecte a la Sobirania nacional"
+          target_17_16:
+            long_title: "Millorar l'Aliança Mundial per al Desenvolupament Sostenible, complementada per aliances entre múltiples interessats que mobilitzen i intercanvien coneixements, especialització, tecnologia i recursos financers, a fi de donar suport a l'assoliment dels Objectius de Desenvolupament Sostenible en tots els països, particularment els països en desenvolupament."
+            short_title: "Millorar l'Aliança Mundial per al desenvolupament sostenible"
+          target_17_17:
+            long_title: "Fomentar i promoure la constitució d'aliances eficaces en les esferes pública, públic-privada i de la societat civil, aprofitant l'experiència i les estratègies d'obtenció de recursos de les aliances."
+            short_title: "Foment d'aliances públic-privades"
+          target_17_18:
+            long_title: "D'ací a 2020, millorar el suport a la creació de capacitat prestat als països en desenvolupament, inclosos els països menys avançats i els xicotets Estats insulars en desenvolupament, per a augmentar significativament la disponibilitat de dades oportunes, fiables i de gran qualitat desglossats per ingressos, sexe, edat, raça, origen ètnic, estatus migratori, discapacitat, ubicació geogràfica i altres característiques pertinents en els contextos nacionals."
+            short_title: "Creació de capacitat estadística"
+          target_17_19:
+            long_title: "D'ací a 2030, aprofitar les iniciatives existents per a elaborar indicadors que permeten mesurar els progressos en matèria de desenvolupament sostenible i complementen el producte intern brut, i donar suport a la creació de capacitat estadística als països en desenvolupament."
+            short_title: "Promoció d'indicadors que vagen més enllà del PIB"
+      help:
+        title: "Ajuda Objectius de Desenvolupament Sostenible"
+        description: "Pots alinear les teues aportacions a la comunitat (debats, iniciatives ciutadanes i projectes d'inversió) amb els Objectius de Desenvolupament Sostenible de l'Agenda 2030, això ens permetrà tindre una visió general de la nostra aportació en cadascun dels objectius de desenvolupament sostenible. A continuació pots informar-te de tots els objectius, les seues metes i les metes localitzades."
+      show:
+        read_more: "Llegir més sobre %{goal}"
+        read_less: "Llegir menys sobre %{goal}"
+        targets:
+          no_local_targets: Aquest objectiu no té metes localitzades
+      title: "Objectius de Desenvolupament Sostenible"
+      filter:
+        heading: "Filtres per ODS"
+        link: "Veure %{resources} de l'objectiu %{code}"
+        more:
+          one: "Un objectiu més"
+          other: "%{count} objectius més"
     related_list_selector:
+      goal_identifier: "ODS%{code}"
+      goal_list: "Pots seleccionar un o diversos ODS amb els quals s'alinea el teu %{record}"
+      help:
+        title: "Quins ODS i metes s'alineen amb la meua %{record}?"
+        text: "pàgina d'ajuda de ODS"
+      hint: Pots introduir el codi d'un objectiu/meta específic o un text per a trobar un. Per a més informació visita la %{link}.
       remove_tag: "Eliminar torn"
+      title: "Objectius de Desenvolupament Sostenible i Metes"
+    targets:
+      filter:
+        link: "Veure %{resources} de la meta %{code}"
+        more:
+          one: "Una meta més"
+          other: "%{count} metes més"
