@@ -1,4 +1,4 @@
-shared_examples "sanitizable" do
+shared_examples "taggable" do
   let(:sanitizable) { build(model_name(described_class)) }
 
   describe "#tag_list" do

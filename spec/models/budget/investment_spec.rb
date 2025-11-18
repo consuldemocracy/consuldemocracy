@@ -5,7 +5,7 @@ describe Budget::Investment do
 
   describe "Concerns" do
     it_behaves_like "notifiable"
-    it_behaves_like "sanitizable"
+    it_behaves_like "taggable"
     it_behaves_like "globalizable", :budget_investment
     it_behaves_like "acts as imageable", :budget_investment_image
     it_behaves_like "acts as paranoid", :budget_investment
