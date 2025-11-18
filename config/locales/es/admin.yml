@@ -1326,6 +1326,7 @@ es:
         participation_processes: "Procesos de participación"
         images_and_documents: "Imágenes y documentos"
         feature_flags: Funcionalidades
+        blank_option: "Ninguno"
         features:
           enabled: "Activada"
         map:

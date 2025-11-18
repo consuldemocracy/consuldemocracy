@@ -1,0 +1,22 @@
+<%= form_for([:admin, setting], html: { class: "dropdown-settings-form" }) do |f| %>
+  <%= hidden_field_tag :tab, tab if tab %>
+  <fieldset <%= "disabled" if disabled %>>
+    <div class="small-12 medium-6 large-8 column">
+      <%= f.select :value,
+                   options,
+                   {
+                     include_blank: t("admin.settings.index.blank_option"),
+                     label: false
+                   },
+                   {
+                     id: dom_id(setting, :value),
+                     "aria-labelledby": dom_id(setting, :title),
+                     "aria-describedby": dom_id(setting, :description)
+                   } %>
+    </div>
+
+    <div class="small-12 medium-6 large-4 column">
+      <%= f.submit(t("admin.settings.index.update_setting"), class: "button hollow expanded", disabled: disabled) %>
+    </div>
+  </fieldset>
+<% end %>

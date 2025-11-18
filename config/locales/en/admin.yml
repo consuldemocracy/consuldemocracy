@@ -1326,6 +1326,7 @@ en:
         participation_processes: "Participation processes"
         images_and_documents: "Images and documents"
         feature_flags: Features
+        blank_option: "None"
         features:
           enabled: "Enabled"
         map:

@@ -60,4 +60,24 @@ describe Admin::Settings::FeaturedSettingsFormComponent do
       expect(page).to have_button "No"
     end
   end
+
+  describe "disabled parameter" do
+    it "renders an enabled button by default" do
+      render_inline component
+
+      expect(page).to have_button disabled: false
+    end
+
+    it "renders a disabled button when disabled is true" do
+      render_inline Admin::Settings::FeaturedSettingsFormComponent.new(setting, disabled: true)
+
+      expect(page).to have_button disabled: true
+    end
+
+    it "renders an enabled button when disabled is explicitly false" do
+      render_inline Admin::Settings::FeaturedSettingsFormComponent.new(setting, disabled: false)
+
+      expect(page).to have_button disabled: false
+    end
+  end
 end
