@@ -27,4 +27,4 @@ Rails.application.config.action_dispatch.strict_freshness = true
 ###
 # Set `Regexp.timeout` to `1`s by default to improve security over Regexp Denial-of-Service attacks.
 #++
-# Regexp.timeout = 1
+Regexp.timeout = 1
