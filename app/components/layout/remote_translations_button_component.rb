@@ -7,7 +7,7 @@ class Layout::RemoteTranslationsButtonComponent < ApplicationComponent
 
   def render?
     remote_translations.present? &&
-      RemoteTranslations::Microsoft::AvailableLocales.include_locale?(I18n.locale)
+      RemoteTranslations::Caller.available_locales.include?(I18n.locale.to_s)
   end
 
   private

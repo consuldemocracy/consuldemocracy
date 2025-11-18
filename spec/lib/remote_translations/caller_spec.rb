@@ -226,4 +226,66 @@ describe RemoteTranslations::Caller, :remote_translations do
       caller.call
     end
   end
+
+  describe ".configured?" do
+    it "is true if llm? is true regardless of microsoft key" do
+      allow(RemoteTranslations::Caller).to receive(:llm?).and_return(true)
+      stub_secrets(microsoft_api_key: nil)
+
+      expect(RemoteTranslations::Caller.configured?).to be true
+    end
+
+    it "falls back to microsoft settings when llm? is false" do
+      allow(RemoteTranslations::Caller).to receive(:llm?).and_return(false)
+      stub_secrets(microsoft_api_key: "key")
+
+      expect(RemoteTranslations::Caller.configured?).to be true
+    end
+  end
+
+  describe ".llm?" do
+    it "is true when all LLM settings are present" do
+      Setting["llm.provider"] = "OpenAI"
+      Setting["llm.model"] = "gpt-4o-mini"
+      Setting["llm.use_llm_for_translations"] = true
+
+      expect(RemoteTranslations::Caller.llm?).to be true
+    end
+
+    it "is false when any LLM setting is missing" do
+      Setting["llm.provider"] = "OpenAI"
+      Setting["llm.model"] = nil
+      Setting["llm.use_llm_for_translations"] = true
+
+      expect(RemoteTranslations::Caller.llm?).to be false
+    end
+  end
+
+  describe ".translation_provider" do
+    it "returns Microsoft by default" do
+      expect(RemoteTranslations::Caller.translation_provider).to eq(RemoteTranslations::Microsoft)
+    end
+
+    it "returns Llm when llm? is true" do
+      allow(RemoteTranslations::Caller).to receive(:llm?).and_return(true)
+
+      expect(RemoteTranslations::Caller.translation_provider).to eq(RemoteTranslations::Llm)
+    end
+  end
+
+  describe ".available_locales" do
+    it "returns Microsoft by default" do
+      expect(RemoteTranslations::Caller.available_locales).to eq(
+        RemoteTranslations::Microsoft::AvailableLocales.locales
+      )
+    end
+
+    it "returns Llm when llm? is true" do
+      allow(RemoteTranslations::Caller).to receive(:llm?).and_return(true)
+
+      expect(RemoteTranslations::Caller.available_locales).to eq(
+        RemoteTranslations::Llm::AvailableLocales.locales
+      )
+    end
+  end
 end
