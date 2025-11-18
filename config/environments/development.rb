@@ -71,7 +71,7 @@ Rails.application.configure do
   # config.i18n.raise_on_missing_translations = true
 
   # Annotate rendered view with file names.
-  config.action_view.annotate_rendered_view_with_filenames = true
+  # config.action_view.annotate_rendered_view_with_filenames = true
 
   config.eager_load_paths << "#{Rails.root}/spec/mailers/previews"
   config.action_mailer.preview_paths << "#{Rails.root}/spec/mailers/previews"
