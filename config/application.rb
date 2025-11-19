@@ -46,7 +46,7 @@ module Consul
     end
 
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.2
+    config.load_defaults 8.0
 
     # Keep belongs_to fields optional by default, because that's the way
     # Rails 4 models worked
@@ -73,11 +73,6 @@ module Consul
 
     # Keep reading existing data in the legislation_annotations ranges column
     config.active_record.yaml_column_permitted_classes = [ActiveSupport::HashWithIndifferentAccess, Symbol]
-
-    # Keep using `:never` because it was the default in Rails 7.1
-    # and it will be the default again in Rails 8.0.
-    # TODO: remove after upgrading to Rails 8.0
-    Rails.application.config.active_job.enqueue_after_transaction_commit = :never
 
     ###
     # Enables YJIT on production but not on development/test
