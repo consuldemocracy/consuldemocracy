@@ -22,7 +22,7 @@
       <div class="target-search-group">
         <%= hidden_field_tag :query_type, selected_query_type %>
         <% model_label = I18n.t("activerecord.models.#{(selected_query_type || "Legislation::Process").underscore}.other", default: "targets") %>
-        <%= text_field_tag :query, params[:query], placeholder: "Search for #{model_label}..." %>
+        <%= text_field_tag :query, params[:query], placeholder: "Search for #{model_label}...", autocomplete: "off" %>
         <%= submit_tag "Search", class: "success button" %>
       </div>
 
