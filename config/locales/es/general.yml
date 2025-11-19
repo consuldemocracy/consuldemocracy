@@ -88,7 +88,6 @@ es:
         confidence_score: Mejor valorados
         created_at: Nuevos
         hot_score: Más activos
-        most_commented: Más comentados
         relevance: Más relevantes
         recommendations: Recomendaciones
       recommendations:
@@ -329,6 +328,7 @@ es:
       tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
       map_location: "Ubicación en el mapa"
       map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
+      map_marker_coordinates: "Latitud: %{latitude}. Longitud: %{longitude}"
       map_remove_marker: "Eliminar el marcador"
     index:
       featured_proposals: Destacadas

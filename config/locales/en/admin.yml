@@ -62,6 +62,7 @@ en:
         filter: Show
         filters:
           all: All
+          on_budget_investments: Investment projects
           on_comments: Comments
           on_debates: Debates
           on_proposals: Proposals

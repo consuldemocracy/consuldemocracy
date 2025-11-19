@@ -12,8 +12,6 @@ class Poll::Recount < ApplicationRecord
   scope :booth,  -> { where(origin: "booth") }
   scope :letter, -> { where(origin: "letter") }
 
-  scope :by_author, ->(author_id) { where(author_id: author_id) }
-
   before_save :update_logs
 
   def update_logs

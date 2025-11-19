@@ -21,22 +21,16 @@ describe "Admin settings", :admin do
   end
 
   describe "Map settings initialization" do
-    before do
+    scenario "Map is only initialized when the map settings tab content is shown" do
       Setting["feature.map"] = true
-    end
 
-    scenario "When `Map settings` tab content is hidden map should not be initialized" do
       visit admin_settings_path
 
-      expect(page).not_to have_css("#admin-map.leaflet-container", visible: :all)
-    end
-
-    scenario "When `Map settings` tab content is shown map should be initialized" do
-      visit admin_settings_path
+      expect(page).not_to have_css ".map-location.leaflet-container", visible: :all
 
       click_link "Map configuration"
 
-      expect(page).to have_css("#admin-map.leaflet-container")
+      expect(page).to have_css ".map-location.leaflet-container"
     end
   end
 
@@ -50,41 +44,7 @@ describe "Admin settings", :admin do
       expect(page).to have_content "To show the map to users you must enable " \
                                    '"Proposals and budget investments geolocation" ' \
                                    'on "Features" tab.'
-      expect(page).not_to have_css("#admin-map")
-    end
-
-    scenario "Should be able when map feature activated" do
-      Setting["feature.map"] = true
-
-      visit admin_settings_path
-      click_link "Map configuration"
-
-      expect(page).to have_css("#admin-map")
-      expect(page).not_to have_content "To show the map to users you must enable " \
-                                       '"Proposals and budget investments geolocation" ' \
-                                       'on "Features" tab.'
-    end
-
-    scenario "Should show successful notice" do
-      Setting["feature.map"] = true
-
-      visit admin_settings_path
-      click_link "Map configuration"
-
-      within "#map-form" do
-        click_button "Update"
-      end
-
-      expect(page).to have_content "Map configuration updated successfully"
-    end
-
-    scenario "Should display marker by default" do
-      Setting["feature.map"] = true
-
-      visit admin_settings_path
-
-      expect(find("#latitude", visible: :hidden).value).to eq "51.48"
-      expect(find("#longitude", visible: :hidden).value).to eq "0.0"
+      expect(page).not_to have_css ".map-location"
     end
 
     scenario "Should update marker" do
@@ -92,13 +52,26 @@ describe "Admin settings", :admin do
 
       visit admin_settings_path
       click_link "Map configuration"
-      find("#admin-map").click
+
+      expect(page).to have_css ".map-location"
+      expect(page).not_to have_content "To show the map to users you must enable " \
+                                       '"Proposals and budget investments geolocation" ' \
+                                       'on "Features" tab.'
+
+      expect(page).to have_field "Latitude", with: "51.48"
+      expect(page).to have_field "Longitude", with: "0.0"
+      expect(page).to have_css ".map-icon[aria-label='Latitude: 51.48. Longitude: 0.0']"
+
       within "#map-form" do
+        find(".map-location").click
         click_button "Update"
       end
 
-      expect(find("#latitude", visible: :hidden).value).not_to eq "51.48"
       expect(page).to have_content "Map configuration updated successfully"
+      expect(page).to have_field "Latitude"
+      expect(page).to have_css ".map-icon"
+      expect(page).not_to have_field "Latitude", with: "51.48"
+      expect(page).not_to have_css ".map-icon[aria-label='Latitude: 51.48. Longitude: 0.0']"
     end
   end
 

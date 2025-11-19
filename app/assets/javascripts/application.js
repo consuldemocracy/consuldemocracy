@@ -117,6 +117,7 @@
 //= require budget_edit_associations
 //= require budget_hide_money
 //= require datepicker
+//= require account_menu
 //= require authenticity_token_refresh
 //= require_tree ./admin
 //= require_tree ./polls
@@ -182,6 +183,7 @@ var initialize_modules = function() {
   App.PollsForm.initialize();
   App.SDGRelatedListSelector.initialize();
   App.SDGManagementRelationSearch.initialize();
+  App.AccountMenu.initialize();
   App.AuthenticityTokenRefresh.initialize();
   App.CookiesConsent.initialize();
 };

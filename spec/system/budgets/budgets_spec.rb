@@ -305,9 +305,8 @@ describe "Budgets" do
         {
           lat: map_location[:latitude],
           long: map_location[:longitude],
-          investment_title: investment.title,
-          investment_id: investment.id,
-          budget_id: budget.id
+          title: investment.title,
+          link: "/budgets/#{budget.id}/investments/#{investment.id}"
         }
       end
 
@@ -316,7 +315,8 @@ describe "Budgets" do
       visit budgets_path
 
       within ".map-location" do
-        expect(page).to have_css(".map-icon", count: 1, visible: :all)
+        expect(page).to have_css ".map-icon", count: 1, visible: :all
+        expect(page).to have_css ".map-icon[aria-label='#{investment.title}']", visible: :all
       end
     end
 

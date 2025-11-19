@@ -28,17 +28,19 @@
         markers = L.layerGroup();
       }
       marker = null;
-      markerIcon = L.divIcon({
-        className: "map-marker",
-        iconSize: [30, 30],
-        iconAnchor: [15, 40],
-        html: '<div class="map-icon"></div>'
-      });
-      createMarker = function(latitude, longitude) {
+      markerIcon = function(alt_text) {
+        return L.divIcon({
+          className: "map-marker",
+          iconSize: [30, 30],
+          iconAnchor: [15, 40],
+          html: $('<div class="map-icon"></div>').attr("aria-label", alt_text)[0].outerHTML
+        });
+      };
+      createMarker = function(latitude, longitude, text) {
         var newMarker, markerLatLng;
         markerLatLng = new L.LatLng(latitude, longitude);
         newMarker = L.marker(markerLatLng, {
-          icon: markerIcon,
+          icon: markerIcon(text),
           draggable: editable
         });
         if (editable) {
@@ -71,7 +73,7 @@
 
       markerData = App.Map.markerData(element);
       if (markerData.lat && markerData.long && !investmentsMarkers) {
-        marker = createMarker(markerData.lat, markerData.long);
+        marker = createMarker(markerData.lat, markerData.long, markerData.title);
       }
       if (editable) {
         $(removeMarkerSelector).on("click", removeMarker);
@@ -115,7 +117,8 @@
 
       dataCoordinates = {
         lat: $(element).data("marker-latitude"),
-        long: $(element).data("marker-longitude")
+        long: $(element).data("marker-longitude"),
+        title: $(element).data("marker-title")
       };
       formCoordinates = {
         lat: inputs.lat.val(),
@@ -133,6 +136,7 @@
       return {
         lat: latitude,
         long: longitude,
+        title: dataCoordinates.title,
         zoom: formCoordinates.zoom
       };
     },
@@ -188,8 +192,7 @@
           var marker;
 
           if (App.Map.validCoordinates(coordinates)) {
-            marker = createMarker(coordinates.lat, coordinates.long);
-            marker.options.id = coordinates.investment_id;
+            marker = createMarker(coordinates.lat, coordinates.long, coordinates.title);
             marker.bindPopup(App.Map.getPopupContent(coordinates));
           }
         });

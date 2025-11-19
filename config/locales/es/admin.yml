@@ -62,6 +62,7 @@ es:
         filter: Mostrar
         filters:
           all: Todos
+          on_budget_investments: Proyectos de gasto
           on_comments: Comentarios
           on_debates: Debates
           on_proposals: Propuestas

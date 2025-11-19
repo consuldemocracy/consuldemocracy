@@ -18,6 +18,10 @@ class Shared::MapLocationComponent < ApplicationComponent
       form.present?
     end
 
+    def show_remove_marker_button?
+      editable? && map_location.mappable.present?
+    end
+
     def latitude
       map_location.latitude.presence || Setting["map.latitude"]
     end
@@ -58,9 +62,18 @@ class Shared::MapLocationComponent < ApplicationComponent
         marker_investments_coordinates: investments_coordinates,
         marker_latitude: map_location.latitude.presence,
         marker_longitude: map_location.longitude.presence,
+        marker_title: marker_coordinates_text,
         marker_clustering: feature?("map.feature.marker_clustering"),
         geozones: geozones_data
       }.merge(input_selectors)
+    end
+
+    def marker_coordinates_text
+      return unless map_location.available?
+
+      t("proposals.form.map_marker_coordinates",
+        latitude: map_location.latitude,
+        longitude: map_location.longitude)
     end
 
     def input_selectors

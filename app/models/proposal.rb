@@ -90,7 +90,6 @@ class Proposal < ApplicationRecord
   scope :draft,          -> { excluding(published) }
 
   scope :not_supported_by_user, ->(user) { where.not(id: user.find_voted_items(votable_type: "Proposal")) }
-  scope :created_by,            ->(author) { where(author: author) }
 
   def publish
     update!(published_at: Time.current)

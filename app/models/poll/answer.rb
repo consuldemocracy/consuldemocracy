@@ -12,6 +12,5 @@ class Poll::Answer < ApplicationRecord
   validates :answer, inclusion: { in: ->(poll_answer) { poll_answer.option.possible_answers }},
                      if: ->(poll_answer) { poll_answer.option.present? }
 
-  scope :by_author, ->(author_id) { where(author_id: author_id) }
   scope :by_question, ->(question_id) { where(question_id: question_id) }
 end
