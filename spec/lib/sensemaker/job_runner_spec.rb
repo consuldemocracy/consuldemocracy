@@ -528,7 +528,7 @@ describe Sensemaker::JobRunner do
 
       job.reload
       expect(job.additional_context).to be_present
-      expect(job.additional_context).to include("Analyzing citizen Debate")
+      expect(job.additional_context).to include("Analysing Citizen debate")
       expect(job.additional_context).to include(debate.title)
     end
 

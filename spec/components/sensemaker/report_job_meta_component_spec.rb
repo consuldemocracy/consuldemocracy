@@ -66,15 +66,6 @@ describe Sensemaker::ReportJobMetaComponent do
     end
   end
 
-  describe "#analysable_type_label" do
-    context "when analysable_type is Debate" do
-      it "returns a label when rendered" do
-        render_inline component
-        expect(component).to respond_to(:analysable_type_label)
-      end
-    end
-  end
-
   describe "rendering" do
     it "renders the view report link" do
       render_inline component

@@ -53,27 +53,4 @@ class Sensemaker::ReportJobMetaComponent < ApplicationComponent
   def view_report_text
     t("sensemaker.report_view.view_report")
   end
-
-  def analysable_type_label
-    case @job.analysable_type
-    when "Legislation::Proposal"
-      t("sensemaker.report_job_row.analysable_type.legislation_proposal")
-    when "Legislation::Question"
-      t("sensemaker.report_job_row.analysable_type.legislation_question")
-    when "Legislation::QuestionOption"
-      t("sensemaker.report_job_row.analysable_type.legislation_question_option")
-    when "Budget"
-      t("sensemaker.report_job_row.analysable_type.budget")
-    when "Budget::Group"
-      t("sensemaker.report_job_row.analysable_type.budget_group")
-    when "Debate"
-      t("sensemaker.report_job_row.analysable_type.debate")
-    when "Proposal"
-      t("sensemaker.report_job_row.analysable_type.proposal")
-    when "Poll"
-      t("sensemaker.report_job_row.analysable_type.poll")
-    else
-      @job.analysable_type.humanize
-    end
-  end
 end
