@@ -1,7 +1,6 @@
 class Admin::Poll::OfficerAssignmentsController < Admin::Poll::BaseController
   before_action :load_poll
   before_action :redirect_if_blank_required_params, only: [:by_officer]
-  before_action :load_booth_assignment, only: [:create]
 
   def index
     @officers = ::Poll::Officer
@@ -37,15 +36,6 @@ class Admin::Poll::OfficerAssignmentsController < Admin::Poll::BaseController
 
     def officer_assignment_params
       params.permit(:officer_id)
-    end
-
-    def create_params
-      params.permit(:poll_id, :booth_id, :date, :officer_id)
-    end
-
-    def load_booth_assignment
-      find_params = { poll_id: create_params[:poll_id], booth_id: create_params[:booth_id] }
-      @booth_assignment = ::Poll::BoothAssignment.includes(:poll).find_by(find_params)
     end
 
     def load_poll

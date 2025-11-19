@@ -4,6 +4,7 @@ module Taggable
   included do
     acts_as_taggable_on :tags, :ml_tags
     validate :max_number_of_tags, on: :create
+    before_validation :sanitize_tag_list
   end
 
   def tags_list
@@ -23,4 +24,10 @@ module Taggable
   def max_number_of_tags
     errors.add(:tag_list, :less_than_or_equal_to, count: 6) if tag_list.count > 6
   end
+
+  protected
+
+    def sanitize_tag_list
+      self.tag_list = TagSanitizer.new.sanitize_tag_list(tag_list)
+    end
 end

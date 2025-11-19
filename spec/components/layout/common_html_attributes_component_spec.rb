@@ -36,14 +36,11 @@ describe Layout::CommonHtmlAttributesComponent do
   end
 
   context "RTL languages" do
-    let!(:default_enforce) { I18n.enforce_available_locales }
+    before { allow(I18n).to receive(:available_locales).and_return(%i[ar en es]) }
 
-    before do
-      I18n.enforce_available_locales = false
-      allow(I18n).to receive(:available_locales).and_return(%i[ar en es])
+    around do |example|
+      I18n.with(enforce_available_locales: false) { example.run }
     end
-
-    after { I18n.enforce_available_locales = default_enforce }
 
     context "with multitenancy disabled" do
       before { allow(Rails.application.config).to receive(:multitenancy).and_return(false) }

@@ -3,7 +3,6 @@ class Budget
     SORTING_OPTIONS = { id: "id", supports: "cached_votes_up" }.freeze
 
     include Measurable
-    include Sanitizable
     include Taggable
     include Searchable
     include Reclassification

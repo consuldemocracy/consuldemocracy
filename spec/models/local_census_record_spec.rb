@@ -46,12 +46,10 @@ describe LocalCensusRecord do
       expect(local_census_record).not_to be_valid
     end
 
-    it "sanitizes text attributes values before validation" do
+    it "strips leading and trailing whitespace in text attributes" do
       local_census_record.document_type = " DNI "
       local_census_record.document_number = " #DOCUMENT_NUMBER "
       local_census_record.postal_code = " 07007 "
-
-      local_census_record.valid?
 
       expect(local_census_record.document_type).to eq "DNI"
       expect(local_census_record.document_number).to eq "#DOCUMENT_NUMBER"

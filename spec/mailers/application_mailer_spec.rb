@@ -65,16 +65,10 @@ describe ApplicationMailer do
     end
 
     it "returns the asset host when set manually" do
-      default_asset_host = ActionMailer::Base.asset_host
-
-      begin
-        ActionMailer::Base.asset_host = "http://consulassets.dev"
-
+      ActionMailer::Base.with(asset_host: "http://consulassets.dev") do
         mailer.set_asset_host
 
         expect(mailer.asset_host).to eq "http://consulassets.dev"
-      ensure
-        ActionMailer::Base.asset_host = default_asset_host
       end
     end
   end
