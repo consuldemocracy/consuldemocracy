@@ -122,9 +122,7 @@ namespace :admin do
 
     resources :signature_sheets, only: [:index, :new, :create, :show]
 
-    resources :banners, only: [:index, :new, :create, :edit, :update, :destroy] do
-      collection { get :search }
-    end
+    resources :banners, only: [:index, :new, :create, :edit, :update, :destroy]
 
     resources :hidden_comments, only: :index do
       member do
@@ -135,7 +133,7 @@ namespace :admin do
 
     resources :comments, only: :index
 
-    resources :tags, only: [:index, :create, :update, :destroy]
+    resources :tags, only: [:index, :create, :destroy]
 
     resources :officials, only: [:index, :edit, :update, :destroy] do
       get :search, on: :collection
@@ -151,7 +149,6 @@ namespace :admin do
 
     resources :valuators, only: [:show, :index, :edit, :update, :create, :destroy] do
       get :search, on: :collection
-      get :summary, on: :collection
     end
 
     resources :valuator_groups
@@ -164,7 +161,7 @@ namespace :admin do
       resources :managers, only: [:index, :create, :destroy]
     end
 
-    resources :users, only: [:index, :show]
+    resources :users, only: :index
 
     scope module: :poll do
       resources :polls do
@@ -175,7 +172,7 @@ namespace :admin do
           get :manage, on: :collection
         end
 
-        resources :officer_assignments, only: [:index, :create, :destroy] do
+        resources :officer_assignments, only: :index do
           get :search_officers, on: :collection
           get :by_officer, on: :collection
         end
@@ -184,7 +181,7 @@ namespace :admin do
         resources :results, only: :index
       end
 
-      resources :officers, only: [:index, :new, :create, :destroy] do
+      resources :officers, only: [:index, :create, :destroy] do
         get :search, on: :collection
       end
 
@@ -219,7 +216,6 @@ namespace :admin do
       member do
         post :deliver
       end
-      get :users, on: :collection
     end
 
     resources :admin_notifications do

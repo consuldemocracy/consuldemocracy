@@ -92,6 +92,8 @@ class User < ApplicationRecord
 
   validates_associated :organization, message: false
 
+  normalizes :document_number, with: ->(document_number) { document_number.gsub(/[^a-z0-9]+/i, "").upcase }
+
   accepts_nested_attributes_for :organization, update_only: true
 
   attr_accessor :skip_password_validation, :login
@@ -126,8 +128,6 @@ class User < ApplicationRecord
 
     where(date_of_birth: start_date.beginning_of_day..end_date.end_of_day)
   end
-
-  before_validation :clean_document_number
 
   # Get the existing user by email if the provider gives us a verified email.
   def self.first_or_initialize_for_oauth(auth)
@@ -447,12 +447,6 @@ class User < ApplicationRecord
   end
 
   private
-
-    def clean_document_number
-      return if document_number.blank?
-
-      self.document_number = document_number.gsub(/[^a-z0-9]+/i, "").upcase
-    end
 
     def validate_username_length
       validator = ActiveModel::Validations::LengthValidator.new(

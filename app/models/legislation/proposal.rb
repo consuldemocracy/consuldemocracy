@@ -4,7 +4,6 @@ class Legislation::Proposal < ApplicationRecord
   include Taggable
   include Conflictable
   include Measurable
-  include Sanitizable
   include Searchable
   include Filterable
   include Followable

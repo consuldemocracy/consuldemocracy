@@ -8,7 +8,7 @@ describe Debate do
   describe "Concerns" do
     it_behaves_like "has_public_author"
     it_behaves_like "notifiable"
-    it_behaves_like "sanitizable"
+    it_behaves_like "taggable"
     it_behaves_like "acts as paranoid", :debate
   end
 

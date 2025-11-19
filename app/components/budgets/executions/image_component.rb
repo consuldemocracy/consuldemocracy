@@ -9,9 +9,10 @@ class Budgets::Executions::ImageComponent < ApplicationComponent
   private
 
     def milestone
-      investment.milestones
-                .order_by_publication_date
-                .select { |milestone| milestone.image.present? }
-                .last
+      investment.milestones.where.associated(:image).order_by_publication_date.last
+    end
+
+    def image
+      milestone&.image || investment.image
     end
 end
