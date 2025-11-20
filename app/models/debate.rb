@@ -99,14 +99,17 @@ class Debate < ApplicationRecord
     editable? && author == user
   end
 
-  def register_vote(user, vote_value)
+  def register_vote(user, vote_params)
     if votable_by?(user)
       transaction do
         if user.unverified? && !user.voted_for?(self)
           Debate.increment_counter(:cached_anonymous_votes_total, id)
         end
-
-        vote_by(voter: user, vote: vote_value)
+        vote_by(
+          voter: user,
+          vote_weight: vote_params[:vote_weight],
+          vote_flag: vote_params[:vote_flag]
+        )
       end
     end
   end
