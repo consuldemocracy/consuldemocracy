@@ -1,6 +1,6 @@
 module VotesHelper
   # --- New Refactored Helper ---
-  
+
   # Calculates the percentage of votes for a specific weight (e.g., 1, -1, or 0)
   # for any "votable" item (like a Debate).
   #

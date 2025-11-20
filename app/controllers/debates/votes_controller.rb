@@ -3,14 +3,14 @@ module Debates
   class VotesController < ApplicationController
     before_action :authenticate_user!
     load_and_authorize_resource :debate
-    
+
     load_and_authorize_resource through: :debate, through_association: :votes_for, only: [:destroy, :update]
 
     def create
       authorize! :create, Vote.new(voter: current_user, votable: @debate)
-      
+
       @debate.register_vote(current_user, vote_params)
-      
+
       respond_to do |format|
         format.html { redirect_to request.referer, notice: I18n.t("flash.actions.create.vote") }
         format.js { render :show }
@@ -18,7 +18,7 @@ module Debates
     end
 
     def update
-      @vote.update(vote_params)
+      @vote.update!(vote_params)
 
       respond_to do |format|
         format.html { redirect_to request.referer, notice: I18n.t("flash.actions.update.vote") }
@@ -27,7 +27,7 @@ module Debates
     end
 
     def destroy
-      @vote.destroy
+      @vote.destroy!
 
       respond_to do |format|
         format.html { redirect_to request.referer, notice: I18n.t("flash.actions.destroy.vote") }
@@ -37,8 +37,8 @@ module Debates
 
     private
 
-    def vote_params
-      params.require(:vote).permit(:vote_weight, :vote_flag)
-    end
+      def vote_params
+        params.require(:vote).permit(:vote_weight, :vote_flag)
+      end
   end
 end

@@ -19,7 +19,7 @@ class Comments::VotesController < ApplicationController
   end
 
   def update
-    @vote.update(vote_params)
+    @vote.update!(vote_params)
     respond_to do |format|
       format.html { redirect_to request.referer || @comment, notice: I18n.t("flash.actions.update.vote") }
       format.js { render :show }
@@ -27,7 +27,7 @@ class Comments::VotesController < ApplicationController
   end
 
   def destroy
-    @vote.destroy
+    @vote.destroy!
     respond_to do |format|
       format.html { redirect_to request.referer || @comment, notice: I18n.t("flash.actions.destroy.vote") }
       format.js { render :show }
@@ -36,11 +36,11 @@ class Comments::VotesController < ApplicationController
 
   private
 
-  def load_comment
-    @comment = Comment.find(params[:comment_id])
-  end
+    def load_comment
+      @comment = Comment.find(params[:comment_id])
+    end
 
-  def vote_params
-    params.require(:vote).permit(:vote_weight, :vote_flag)
-  end
+    def vote_params
+      params.require(:vote).permit(:vote_weight, :vote_flag)
+    end
 end
