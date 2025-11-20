@@ -80,7 +80,6 @@ val:
         confidence_score: més avalades
         created_at: noves
         hot_score: més actives hui
-        most_commented: més comentades
         relevance: relevancia
         recommendations: recomanacions
       recommendations:

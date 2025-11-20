@@ -89,7 +89,6 @@ sr:
         confidence_score: највиша ознака
         created_at: најновије
         hot_score: најактивније
-        most_commented: са највише коментара
         relevance: важност
         recommendations: препоруке
       recommendations:

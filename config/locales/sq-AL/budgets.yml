@@ -52,8 +52,6 @@ sq:
         tags_instructions: "Etiketoni këtë propozim. Ju mund të zgjidhni nga kategoritë e propozuara ose të shtoni tuajën"
         tags_label: Etiketë
         tags_placeholder: "Futni etiketimet që dëshironi të përdorni, të ndara me presje (',')"
-        map_location: "Vendndodhja në hartë"
-        map_location_instructions: "Lundroni në hartë në vendndodhje dhe vendosni shënuesin."
       index:
         title: Buxhetet  pjesëmarrës
         unfeasible: Investimet e papranueshme

@@ -16,8 +16,6 @@ bs:
         tags_instructions: "Taguj prijedlog. Možeš birati iz predloženih kategorija ili dodati vlastiti tag"
         tags_label: Tagovi
         tags_placeholder: "Unesite tagove koje želite koristiti, razdvojene zarezima (,)"
-        map_location: "Lokacija mape"
-        map_location_instructions: "Idite mapom do lokacije i stavite marker."
       index:
         title: Participativno budžetiranje
         unfeasible: Neizvodivi investicioni projekti

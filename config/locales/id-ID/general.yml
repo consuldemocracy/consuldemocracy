@@ -76,7 +76,6 @@ id:
         confidence_score: nilai tertinggi
         created_at: terbaru
         hot_score: paling aktif
-        most_commented: paling banyak komentar
         relevance: relevansi
         recommendations: rekomendasi
       recommendations:

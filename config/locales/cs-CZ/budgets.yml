@@ -88,8 +88,6 @@ cs:
         tags_instructions: "Štítek tohoto návrhu. Můžete si vybrat z kategorií nebo přidat vlastní"
         tags_label: Štítky
         tags_placeholder: "Zadejte štítky, které chcete používat, oddělené čárkami (',')"
-        map_location: "Mapa umístění"
-        map_location_instructions: "Nalezněte mapu lokality a umístěte kliknutím značku."
       index:
         title: Participativní rozpočtování
         unfeasible: Nerealizovatelné investiční projekty

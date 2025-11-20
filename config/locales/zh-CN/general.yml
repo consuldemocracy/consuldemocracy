@@ -77,7 +77,6 @@ zh-CN:
         confidence_score: 最高评分
         created_at: 最新
         hot_score: 最活跃
-        most_commented: 最多评论
         relevance: 相关性
         recommendations: 推荐
       recommendations:

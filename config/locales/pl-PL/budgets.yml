@@ -60,8 +60,6 @@ pl:
         tags_instructions: "Otaguj ten wniosek. Możesz wybrać spośród proponowanych kategorii lub dodać własną"
         tags_label: Tagi
         tags_placeholder: "Wprowadź oznaczenia, których chciałbyś użyć, rozdzielone przecinkami (',')"
-        map_location: "Lokalizacja na mapie"
-        map_location_instructions: "Przejdź na mapie do lokalizacji i umieść znacznik."
       index:
         title: Budżetowanie partycypacyjne
         unfeasible: Niewykonalne projekty inwestycyjne

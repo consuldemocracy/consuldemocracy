@@ -84,7 +84,6 @@ el:
         confidence_score: υψηλότερα βαθμολογημένα
         created_at: νεότερα
         hot_score: πιο ενεργοί
-        most_commented: περισσότερο σχολιασμένα
         relevance: συνάφεια
         recommendations: συστάσεις
       recommendations:

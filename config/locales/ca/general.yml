@@ -84,7 +84,6 @@ ca:
         confidence_score: Més avalades
         created_at: Noves
         hot_score: Més actives avui
-        most_commented: Més comentades
         relevance: Més rellevants
         recommendations: recomanacions
       recommendations:

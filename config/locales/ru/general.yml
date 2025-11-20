@@ -86,7 +86,6 @@ ru:
         confidence_score: наивысший рейтинг
         created_at: самые свежие
         hot_score: самые активные
-        most_commented: самые комментируемые
         relevance: соответствие
         recommendations: некомендации
       recommendations:

@@ -72,7 +72,6 @@ fa:
         confidence_score: بالاترین امتیاز
         created_at: جدیدترین
         hot_score: فعال ترین
-        most_commented: بیشترین نظرات
         relevance: ارتباط
         recommendations: توصیه ها
       search_form:

@@ -58,8 +58,6 @@ val:
         tags_instructions: "Etiqueta esta proposta. Pots elegir entre les categories propostes o introduir les que desitges"
         tags_label: Temes
         tags_placeholder: "Escriu les etiquetes que desitges separades per coma (',')"
-        map_location: "Ubicació en el mapa"
-        map_location_instructions: "Navega per el mapa fins la ubicació i deixa el marcador."
       index:
         title: Pressupostos participatius
         unfeasible: Propostes d'inversió no viables

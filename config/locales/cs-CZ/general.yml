@@ -98,7 +98,6 @@ cs:
         confidence_score: nejlépe hodnocené
         created_at: nejnovější
         hot_score: nejaktivnější
-        most_commented: nejvíce komentované
         relevance: závažnost
         recommendations: doporučení
       recommendations:

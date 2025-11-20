@@ -88,7 +88,6 @@ tr:
         confidence_score: en yüksek puanlı
         created_at: en yeni
         hot_score: en etkin
-        most_commented: en çok yorum yapılan
         relevance: ilgili
         recommendations: öneriler
       recommendations:

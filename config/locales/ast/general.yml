@@ -69,7 +69,6 @@ ast:
         confidence_score: meyor valoraes
         created_at: Nuevas
         hot_score: Más activas hoy
-        most_commented: Más comentadas
         relevance: Más relevantes
       search_form:
         button: Atopar

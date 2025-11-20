@@ -73,8 +73,6 @@ ca:
         tags_instructions: "Etiqueta aquesta proposta. Pots triar entre les categories proposades o introduir les que desitges"
         tags_label: Etiquetes
         tags_placeholder: "Escriu les etiquetes que desitges separades per coma (',')"
-        map_location: "Ubicació del mapa"
-        map_location_instructions: "Desplaceu-vos al mapa fins a la ubicació i poseu-hi el marcador."
       index:
         title: Pressupostos ciutadans
         unfeasible: Propostes d'inversió no viables

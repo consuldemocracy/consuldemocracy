@@ -77,7 +77,6 @@ zh-TW:
         confidence_score: 最高評分
         created_at: 最新
         hot_score: 最活躍
-        most_commented: 最多評論
         relevance: 具相關性
         recommendations: 推薦
       recommendations:

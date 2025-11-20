@@ -88,7 +88,6 @@ nl:
         confidence_score: best beoordeeld
         created_at: nieuwste
         hot_score: meest actieve
-        most_commented: meeste reacties
         relevance: relevantie
         recommendations: aanbevolen
       recommendations:

@@ -52,8 +52,6 @@ so:
         tags_instructions: "Tag soojeedintaan. Waxaad kala dooran kartaa qaybaha la soo jeediyey ama ku dar adiga keligaa"
         tags_label: Tagyada
         tags_placeholder: "Geli taagyada ad jeceshahay inaad isticmasho, kana kaxay qooyska(', ')"
-        map_location: "Goobta Khariirada"
-        map_location_instructions: "Ku dhaji khariidada meesha ay ku taallan tahay kuna calaamadee sumadeeyaha."
       index:
         title: Misaaniyada kaqayb qadashada
         unfeasible: Mashaariicda maalgashiga aan macquulka ahayn

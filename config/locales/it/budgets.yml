@@ -80,8 +80,6 @@ it:
         tags_instructions: "Aggiungi etichette a questa proposta. Puoi scegliere tra le categorie proposte a aggiungerne di tue"
         tags_label: Etichette
         tags_placeholder: "Inserisci i tag che desideri utilizzare, separati da virgole (',')"
-        map_location: "Posizione sulla mappa"
-        map_location_instructions: "Scorri la mappa sino a individuare il luogo giusto e posiziona il segnaposto."
       index:
         title: Bilancio partecipativo
         unfeasible: Progetti di investimento irrealizzabili

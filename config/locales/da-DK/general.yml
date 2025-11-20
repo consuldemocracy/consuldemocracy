@@ -87,7 +87,6 @@ da:
         confidence_score: højest rangeret
         created_at: nyeste
         hot_score: mest aktive
-        most_commented: flest kommentarer
         relevance: relevans
         recommendations: anbefalinger
       recommendations:

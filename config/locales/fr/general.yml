@@ -88,7 +88,6 @@ fr:
         confidence_score: la plus votée
         created_at: la plus récente
         hot_score: la plus active
-        most_commented: la plus commentée
         relevance: pertinence
         recommendations: recommandations
       recommendations:

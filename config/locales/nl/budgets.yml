@@ -80,8 +80,6 @@ nl:
         tags_instructions: "Voeg termen toe aan dit voorstel. Je kunt kiezen uit voorgestelde termen of je eigen term kiezen"
         tags_label: Labels
         tags_placeholder: "Voer de labels in die je wilt gebruiken, gescheiden door kommas (',')"
-        map_location: "Locatie"
-        map_location_instructions: "Beweeg de kaart en wijs de locatie aan"
       index:
         title: Burgerbegrotingen
         unfeasible: Onhaalbare voorstellen

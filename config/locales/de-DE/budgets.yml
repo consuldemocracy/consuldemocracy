@@ -80,8 +80,6 @@ de:
         tags_instructions: "Markieren Sie den Vorschlag. Sie können einen Tag auswählen oder selbst erstellen"
         tags_label: Tags
         tags_placeholder: "Geben Sie die Schlagwörter ein, die Sie benutzen möchten, getrennt durch Kommas (',')"
-        map_location: "Kartenposition"
-        map_location_instructions: "Navigieren Sie auf der Karte zum Standort und setzen Sie die Markierung."
       index:
         title: Bürgerhaushalte
         unfeasible: Undurchführbare Investitionsvorschläge
