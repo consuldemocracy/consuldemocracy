@@ -4,30 +4,34 @@ class Comments::VotesController < ApplicationController
   before_action :load_comment
   load_and_authorize_resource through: :comment, through_association: :votes_for, only: [:destroy, :update]
 
-  # POST /comments/:comment_id/votes
   def create
     authorize! :create, Vote.new(voter: current_user, votable: @comment)
 
-    # This expects `vote_params` from the button, not `params[:value]`.
     @comment.vote_by(
       voter: current_user,
       vote_weight: vote_params[:vote_weight],
       vote_flag: vote_params[:vote_flag]
     )
-
-    respond_to { |format| format.js { render :show } }
+    respond_to do |format|
+      format.html { redirect_to request.referer || @comment, notice: I18n.t("flash.actions.create.vote") }
+      format.js { render :show }
+    end
   end
 
-  # PATCH /comments/:comment_id/votes/:id
   def update
     @vote.update(vote_params)
-    respond_to { |format| format.js { render :show } }
+    respond_to do |format|
+      format.html { redirect_to request.referer || @comment, notice: I18n.t("flash.actions.update.vote") }
+      format.js { render :show }
+    end
   end
 
-  # DELETE /comments/:comment_id/votes/:id
   def destroy
     @vote.destroy
-    respond_to { |format| format.js { render :show } }
+    respond_to do |format|
+      format.html { redirect_to request.referer || @comment, notice: I18n.t("flash.actions.destroy.vote") }
+      format.js { render :show }
+    end
   end
 
   private
