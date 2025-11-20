@@ -1794,7 +1794,7 @@ table {
   }
 
   .neutral button {
-    @include like-unlike-icon(question-circle, $dark-gray);
+    @include like-unlike-icon(question-circle, $neutral);
   }
 }
 
