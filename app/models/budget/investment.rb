@@ -95,6 +95,7 @@ class Budget
     scope :sort_by_created_at,          -> { reorder(created_at: :desc) }
     scope :zona_mesa,                   -> { selected.compatible.where(zona_mesa: true) }
     scope :valuating_investment,        ->(user_id, budget_id)  { valuation_open.where(author_id: user_id ).where(budget_id: budget_id).where("hidden_at IS ?", nil) }
+    scope :valuating_investment_number, ->(user_id, budget_id)  { valuation_open.where(author_id: user_id ).where(budget_id: budget_id).where("hidden_at IS ?", nil) }
 
     scope :by_budget,         ->(budget)      { where(budget: budget) }
     scope :by_group,          ->(group_id)    { where(group_id: group_id) }
@@ -108,7 +109,6 @@ class Budget
     def valuating_investment?
       valuating_investment.count > 0
     end
-
 
     def self.by_valuator(valuator_id)
       where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments)

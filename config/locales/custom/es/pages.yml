@@ -378,7 +378,7 @@ es:
         <p>El Ayuntamiento de Valladolid se reserva el derecho de revisar las presentes condiciones de uso y la política de privacidad en cualquier momento y por cualquier razón. En dicho caso, los usuarios registrados serán avisados a través de este espacio en línea y, si continúan utilizando el Portal de eParticipación, se entenderán aceptadas las modificaciones introducidas.</p>
     login:
       codigos:
-        title: "Identifícate para votar"
+        title: "Identifícate"
         instructions: "Introduce tu DNI y el código incluído en el SMS o en la carta que hemos enviado a tu domicilio. Si no dispones de DNI introduce tu NIE o Pasaporte. En todos los casos recuerda introducir el documento incluyendo la letra o letras en mayúsculas, sin incluír puntos, espacios o guiones."
         help: "Si no dispones de código, puedes %{login} con tu cuenta o si no dispones de una, registrarla %{register}, pero recuerda que para poder votar tendrás que verificar dicha cuenta."
         help_login: "acceder"

@@ -247,11 +247,13 @@ module Budgets
         @map_location = MapLocation.load_from_heading(@heading)
       end
       
-      def verificar_permiso_creacion             
-          if Budget::Investment.valuating_investment(current_user, @budget.id).exists?           
-            redirect_to budgets_path, alert: t("budgets.investments.index.sidebar.message_error_my_count")
-          end        
+     def verificar_permiso_creacion
+      if !current_user.organization? && Budget::Investment.valuating_investment(current_user.id, @budget.id).count > 0
+        redirect_to budgets_path, alert: t("budgets.investments.index.sidebar.message_error_my_count")
+      elsif current_user.organization? && Budget::Investment.valuating_investment_number(current_user.id, @budget.id).count > 4
+        redirect_to budgets_path, alert: t("budgets.investments.index.sidebar.message_error_my_propuestas")
       end
+    end
 
   end
 end
