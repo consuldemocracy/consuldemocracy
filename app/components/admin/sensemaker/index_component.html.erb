@@ -1,0 +1,85 @@
+<%= header %>
+
+<div class="sensemaker">
+  <% if enabled? %>
+    <div class="callout primary experimental-feature">
+      <strong><%= sanitize(t("admin.sensemaker.help_text")) %></strong>
+    </div>
+
+    <ul class="tabs" data-tabs id="sensemaker_tabs" data-deep-link="true">
+      <li class="tabs-title is-active">
+        <a href="#jobs">
+          Sensemaker Analysis
+        </a>
+      </li>
+      <li class="tabs-title">
+        <a href="#help">
+          Help
+        </a>
+      </li>
+    </ul>
+
+    <div class="tabs-content" data-tabs-content="sensemaker_tabs">
+      <div class="tabs-panel is-active" id="jobs">
+
+        <% if running_jobs.any? %>
+          <h3 class="flex-between">
+            <span>Currently Running</span>
+            <%= button_to "Cancel all", cancel_admin_sensemaker_jobs_path, class: "button", method: :delete, data: { confirm: t("admin.sensemaker.cancel_alert") } %>
+          </h3>
+
+          <table class="job-table">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Script</th>
+                <th>Started at</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% running_jobs.each do |sensemaker_job| %>
+                <%= render Admin::Sensemaker::JobRowComponent.new(sensemaker_job) %>
+              <% end %>
+            </tbody>
+          </table>
+
+          <hr>
+        <% end %>
+
+        <h3 class="flex-between">
+          <span>Past Runs</span>
+          <%= link_to "New Run", new_admin_sensemaker_job_path, class: "button" %>
+        </h3>
+
+        <table class="job-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Script</th>
+              <th>Status</th>
+              <th style="text-align: right;">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% sensemaker_jobs.each do |sensemaker_job| %>
+              <%= render Admin::Sensemaker::JobRowComponent.new(sensemaker_job) %>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tabs-panel" id="help">
+        <%= render Admin::Sensemaker::HelpComponent.new %>
+      </div>
+    </div>
+
+  <% else %>
+    <div class="callout primary">
+      <p>
+        <%= sanitize(t("admin.sensemaker.feature_disabled",
+                       link: link_to(t("admin.sensemaker.feature_disabled_link"),
+                                     admin_settings_path(anchor: "tab-feature-flags")))) %>
+      </p>
+    </div>
+  <% end %>
+</div>
