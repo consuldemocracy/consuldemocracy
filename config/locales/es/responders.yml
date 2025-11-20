@@ -33,6 +33,7 @@ es:
         topic: "Tema actualizado correctamente."
         valuator_group: "Grupo de evaluadores actualizado correctamente"
         translation: "Traducción actualizada correctamente"
+        vote: "Voto actualizada correctamente"
       destroy:
         budget_investment: "Proyecto de gasto eliminado."
         topic: "Tema eliminado."
