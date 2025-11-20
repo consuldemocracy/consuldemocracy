@@ -804,18 +804,16 @@
 
   &.minimal {
 
-    .panel,
-    .debate-content,
-    .proposal-content,
-    .budget-investment-content {
+    .minimal-content {
+      @extend %panel;
       min-height: 0;
-    }
 
-    .panel h3 {
-      margin: 0 0 calc($line-height / 2);
+      h3 {
+        margin: 0 0 calc($line-height / 2);
 
-      @include breakpoint(medium) {
-        margin: 0;
+        @include breakpoint(medium) {
+          margin: 0;
+        }
       }
     }
   }
