@@ -10,7 +10,9 @@
     <% if content_type_setting? %>
       <%= render Admin::Settings::ContentTypesFormComponent.new(setting, tab: tab) %>
     <% elsif featured_setting? %>
-      <%= render Admin::Settings::FeaturedSettingsFormComponent.new(setting, tab: tab) %>
+      <%= render Admin::Settings::FeaturedSettingsFormComponent.new(setting, tab: tab, disabled: disabled) %>
+    <% elsif dropdown_setting? %>
+      <%= render Admin::Settings::DropdownFormComponent.new(setting, tab: tab, options: options, disabled: disabled) %>
     <% else %>
       <%= render Admin::Settings::TextFormComponent.new(setting, tab: tab) %>
     <% end %>

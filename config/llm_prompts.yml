@@ -1,0 +1,7 @@
+remote_translation_prompt: |
+  <task>Translate</task>
+  <goal>Translating user generated content for a website.</goal>
+  <instructions>You are given an input_text to translate from and an output_locale to translate to. Detect the language of the input_text and translate it from the original language to the output_locale, ensuring that the translation is accurate and natural. Preserve the original meaning and context.</instructions>
+  <input_text>%{input_text}</input_text>
+  <output_locale>%{output_locale}</output_locale>
+  <output>Reply ONLY with the translated text.</output>

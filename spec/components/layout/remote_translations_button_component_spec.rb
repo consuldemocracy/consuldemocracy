@@ -5,8 +5,8 @@ describe Layout::RemoteTranslationsButtonComponent do
   let(:component) { Layout::RemoteTranslationsButtonComponent.new(translations) }
 
   before do
-    allow(RemoteTranslations::Microsoft::AvailableLocales).to receive(:remote_available_locales)
-                                                          .and_return(%w[de en es fr pt zh-Hans])
+    allow(RemoteTranslations::Caller).to receive(:available_locales)
+      .and_return(%w[de en es fr zh-CN pt-BR])
   end
 
   context "locale with English as a fallback" do

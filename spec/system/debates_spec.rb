@@ -4,8 +4,10 @@ describe "Debates" do
   context "Concerns" do
     it_behaves_like "notifiable in-app", :debate
     it_behaves_like "relationable", Debate
-    it_behaves_like "remotely_translatable", :debate, "debates_path", {}
-    it_behaves_like "remotely_translatable", :debate, "debate_path", { id: "id" }
+    it_behaves_like "remotely_translatable", :debate, "debates_path", {}, provider: :microsoft
+    it_behaves_like "remotely_translatable", :debate, "debates_path", {}, provider: :llm
+    it_behaves_like "remotely_translatable", :debate, "debate_path", { id: "id" }, provider: :microsoft
+    it_behaves_like "remotely_translatable", :debate, "debate_path", { id: "id" }, provider: :llm
     it_behaves_like "flaggable", :debate
   end
 
