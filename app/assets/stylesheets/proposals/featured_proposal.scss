@@ -1,6 +1,10 @@
 .proposal-featured {
   min-height: $line-height * 3.5;
 
+  .info > .bullet {
+    display: none;
+  }
+
   .supports {
     @include supports;
     background: none;

@@ -2,21 +2,8 @@
   <div class="small-12 medium-9 column">
     <h3><%= link_to proposal.title, proposal %></h3>
     <div class="info">
-      <% if proposal.author.hidden? || proposal.author.erased? %>
-        <%= t("shared.author_info.author_deleted") %>
-      <% else %>
-        <%= proposal.author.name %>
-      <% end %>
-
+      <%= render Shared::BasicAuthorInfoComponent.new(proposal.author, show_organization: false) %>
       &nbsp;&bull;&nbsp;
-
-      <% if proposal.author.display_official_position_badge? %>
-        <span class="label round level-<%= proposal.author.official_level %>">
-          <%= proposal.author.official_position %>
-        </span>
-        &nbsp;&bull;&nbsp;
-      <% end %>
-
       <strong><%= t("proposals.proposal.supports", count: proposal.total_votes) %></strong>
     </div>
   </div>

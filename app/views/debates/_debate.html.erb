@@ -11,31 +11,7 @@
             url: debate_path(debate, anchor: "comments")
           ) %>
 
-          <% if debate.author.hidden? || debate.author.erased? %>
-            <span class="bullet">&nbsp;&bull;&nbsp;</span>
-            <span class="author">
-              <%= t("shared.author_info.author_deleted") %>
-            </span>
-          <% else %>
-            <span class="bullet">&nbsp;&bull;&nbsp;</span>
-            <span class="author">
-              <%= debate.author.name %>
-            </span>
-            <% if debate.author.display_official_position_badge? %>
-              <span class="bullet">&nbsp;&bull;&nbsp;</span>
-              <span class="label round level-<%= debate.author.official_level %>">
-                <%= debate.author.official_position %>
-              </span>
-            <% end %>
-          <% end %>
-
-          <% if debate.author.verified_organization? %>
-            <span class="bullet">&nbsp;&bull;&nbsp;</span>
-            <span class="label round is-association">
-              <%= t("shared.collective") %>
-            </span>
-          <% end %>
-
+          <%= render Shared::BasicAuthorInfoComponent.new(debate.author) %>
         </p>
         <div class="debate-description">
           <%= wysiwyg(debate.description) %>
