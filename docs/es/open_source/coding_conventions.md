@@ -74,6 +74,20 @@ En lugar de esto, utiliza el método `button_to`, que genera un formulario con u
 
 Por la misma razón, utiliza botones en lugar de enlaces para controles que no generan peticiones HTTP sino que modifican el contenido de la página usando JavaScript (por ejemplo, para mostrar u ocultar cierto contenido).
 
+### Utiliza secretos en vez de credenciales
+
+Rails comenzó a utilizar credenciales ("credentials", en inglés) en la versión 5.2, y declaró obsoletos los secretos ("secrets") en la versión 7.1. Sin embargo, hemos decidido seguir usando el fichero `config/secrets.yml` para almacenar información confidencial, tal y como venimos haciendo durante más de 10 años.
+
+Los motivos son retrocompatibilidad y sencillez.
+
+La ventaja de usar credenciales es que pueden añadirse al control de versiones, ya que son datos cifrados. Si no los incluimos en control de versiones, pasan a ser similares a los secretos, solo que editarlos es un tanto más tedioso; cada que vez quieras editar uno, necesitas un paso adicional. Y el estar cifrados en este caso no sería una ventaja en cuanto a seguridad, ya que cualquiera con acceso al fichero de credenciales tendrá también acceso al fichero que contiene la clave necesaria para descifrarlos.
+
+Sin embargo, incluir credenciales en control de versiones sería peliagudo. Todas las instalaciones de Consul Democracy existentes tendrían que generar el archivo de credenciales, editarlo para añadir el contenido de `config/secrets.yml`, e incluirlo en control de versiones. Nuestro objetivo siempre es que la actualización a una nueva versión de Consul Democracy sea lo más sencilla y tenga los menos riesgos posibles. Migrar a credenciales e incluirlas en control de versiones no cumpliría estas condiciones.
+
+Por estos motivos, no usamos credenciales. Por tanto, utiliza secretos (en concreto, secretos de entidades; ver a continuación) en su lugar.
+
+Si estás interesado, en el fichero `config/application.rb` puedes ver las aproximadamente 15 líneas de código que usamos para que la información definida en `config/secrets.yml` funcione como hasta ahora. Por compatibilidad con dependencias que usan credenciales pero no secretos, hemos definido también el método `credentials` como un alias del método `secrets`.
+
 ### Utiliza secretos de entidades en vez de secretos de Rails
 
 Rails gestiona la información confidencial mediante el archivo `config/secrets.yml`. Normalmente, las aplicaciones de Rails acceden a los contenidos de este fichero utilizando el método `Rails.application.secrets`.
