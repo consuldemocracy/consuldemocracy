@@ -23,7 +23,7 @@ class Verification::Management::Email
   def save
     return false unless valid?
 
-    plain_token, encrypted_token = Devise.token_generator.generate(User, :email_verification_token)
+    encrypted_token, plain_token = Devise.token_generator.generate(User, :email_verification_token)
 
     user.update!(document_type: document_type,
                  document_number: document_number,
