@@ -123,7 +123,6 @@ en:
       share:
         message: "I created the investment project %{title} in %{handle}. Create an investment project too!"
       show:
-        author_deleted: User deleted
         price_explanation: Price explanation
         unfeasibility_explanation: Unfeasibility explanation
         code: "Investment project code: <strong>%{code}</strong>"

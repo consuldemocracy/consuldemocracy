@@ -3,7 +3,7 @@
     <h3><%= link_to proposal.title, proposal %></h3>
     <div class="info">
       <% if proposal.author.hidden? || proposal.author.erased? %>
-        <%= t("proposals.show.author_deleted") %>
+        <%= t("shared.author_info.author_deleted") %>
       <% else %>
         <%= proposal.author.name %>
       <% end %>
