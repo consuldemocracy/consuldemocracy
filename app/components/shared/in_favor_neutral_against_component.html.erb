@@ -1,7 +1,5 @@
 <%# app/components/shared/in_favor_neutral_against_component.html.erb %>
-
 <div class="in-favor-neutral-against">
-  
   <%# "In Favor" Button (Weight: 1) %>
   <div class="in-favor">
     <%= render Shared::VoteButtonComponent.new(votable,
@@ -10,7 +8,6 @@
                                                title: t("votes.agree")) %>
     <span class="percentage"><%= vote_percentage_for_weight(votable, 1) %></span>
   </div>
-
   <%# "Don't Know" Button (Weight: 0) %>
   <div class="neutral">
     <%= render Shared::VoteButtonComponent.new(votable,
@@ -19,7 +16,6 @@
                                                title: t("votes.neutral")) %>
     <span class="percentage"><%= vote_percentage_for_weight(votable, 0) %></span>
   </div>
-
   <%# "Against" Button (Weight: -1) %>
   <div class="against">
     <%= render Shared::VoteButtonComponent.new(votable,
