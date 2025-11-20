@@ -1,0 +1,68 @@
+.proposal-featured {
+  min-height: $line-height * 3.5;
+
+  .supports {
+    @include supports;
+    background: none;
+    border: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+
+    &::after {
+      content: none;
+    }
+
+    .progress,
+    .total-supports {
+      display: none;
+    }
+
+    .button-support {
+      background: $body-font-color;
+      color: $featured;
+      margin-top: 0;
+
+      &:hover {
+        @extend %body-colors;
+      }
+    }
+
+    .participation-not-allowed {
+      background: $featured;
+      padding-top: 0;
+
+      a {
+        color: inherit;
+      }
+
+      p {
+        color: $color-warning;
+        font-size: $small-font-size;
+        line-height: $line-height;
+      }
+    }
+
+    .supported {
+      background: none;
+      border: 0;
+      font-size: $small-font-size;
+      margin-bottom: 0;
+      margin-top: 0;
+      padding: 0;
+    }
+  }
+
+  .share-supported {
+
+    .social-share-button .ssb-icon {
+      background: none;
+      color: inherit;
+      height: rem-calc(33);
+
+      &::before {
+        font-size: rem-calc(18);
+        line-height: rem-calc(33);
+      }
+    }
+  }
+}

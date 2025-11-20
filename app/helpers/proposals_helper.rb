@@ -68,10 +68,6 @@ module ProposalsHelper
     params[:selected].blank?
   end
 
-  def show_featured_proposals?
-    params[:selected].blank? && @featured_proposals.present?
-  end
-
   def show_recommended_proposals?
     params[:selected].blank?
   end
