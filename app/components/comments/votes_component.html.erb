@@ -15,7 +15,7 @@
   <div class="neutral">
     <%= render Shared::VoteButtonComponent.new(@comment,
                                                weight: 0,
-                                               title: t("votes.dont_know"),
+                                               title: t("votes.neutral"),
                                                "aria-label": t("votes.neutral_label", title: votable_title_for_aria_label)) %>
     <%= not_sure_votes_count %> 
   </div>
