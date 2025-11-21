@@ -2,11 +2,11 @@ require "rails_helper"
 
 describe RemoteTranslations::Caller, :remote_translations do
   before do
-    RemoteTranslation.skip_callback(:create, :after, :enqueue_remote_translation)
+    RemoteTranslation.skip_callback(:commit, :after, :enqueue_remote_translation)
   end
 
   after do
-    RemoteTranslation.set_callback(:create, :after, :enqueue_remote_translation)
+    RemoteTranslation.set_callback(:commit, :after, :enqueue_remote_translation)
   end
 
   let(:client) { RemoteTranslations::Microsoft::Client }

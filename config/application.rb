@@ -22,14 +22,31 @@ Bundler.require(*Rails.groups)
 module Consul
   class Application < Rails::Application
     def secrets
-      Rails.deprecator.silence { super }
+      @secrets ||= read_secrets
     end
 
-    def secret_key_base
-      Rails.deprecator.silence { super }
+    def read_secrets
+      secrets = ActiveSupport::OrderedOptions.new
+      path = Rails.root.join("config/secrets.yml")
+      env = Rails.env
+
+      if path.exist?
+        require "erb"
+        parsed_secrets = YAML.unsafe_load(ERB.new(IO.read(path)).result) || {}
+
+        secrets.merge!(parsed_secrets["shared"].deep_symbolize_keys) if parsed_secrets["shared"]
+        secrets.merge!(parsed_secrets[env].deep_symbolize_keys) if parsed_secrets[env]
+      end
+
+      secrets
     end
 
-    config.load_defaults 7.1
+    def credentials
+      secrets
+    end
+
+    # Initialize configuration defaults for originally generated Rails version.
+    config.load_defaults 7.2
 
     # Keep belongs_to fields optional by default, because that's the way
     # Rails 4 models worked
@@ -57,15 +74,31 @@ module Consul
     # Keep reading existing data in the legislation_annotations ranges column
     config.active_record.yaml_column_permitted_classes = [ActiveSupport::HashWithIndifferentAccess, Symbol]
 
+    # Keep using `:never` because it was the default in Rails 7.1
+    # and it will be the default again in Rails 8.0.
+    # TODO: remove after upgrading to Rails 8.0
+    Rails.application.config.active_job.enqueue_after_transaction_commit = :never
+
+    ###
+    # Enables YJIT on production but not on development/test
+    # because this will be the default in Rails 8.1
+    # TODO: remove after upgrading to Rails 8.1
+    Rails.application.config.yjit = !Rails.env.local?
+
     # Handle custom exceptions
     config.action_dispatch.rescue_responses["FeatureFlags::FeatureDisabled"] = :forbidden
     config.action_dispatch.rescue_responses["Apartment::TenantNotFound"] = :not_found
 
-    # Store uploaded files on the local file system (see config/storage.yml for options).
-    config.active_storage.service = :local
+    # Please, add to the `ignore` list any other `lib` subdirectories that do
+    # not contain `.rb` files, or that should not be reloaded or eager loaded.
+    # Common ones are `templates`, `generators`, or `middleware`, for example.
+    # config.autoload_lib(ignore: %w[assets tasks])
 
-    # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
-    # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
+    # Configuration for the application, engines, and railties goes here.
+    #
+    # These settings can be overridden in specific environments using the files
+    # in config/environments, which are processed later.
+    #
     config.time_zone = Rails.application.secrets.time_zone.presence || "Madrid"
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
@@ -143,11 +176,9 @@ module Consul
     config.active_job.queue_adapter = :delayed_job
 
     # CONSUL DEMOCRACY specific custom overrides
-    # Read more on documentation:
-    # * English: https://github.com/consuldemocracy/consuldemocracy/blob/master/CUSTOMIZE_EN.md
-    # * Spanish: https://github.com/consuldemocracy/consuldemocracy/blob/master/CUSTOMIZE_ES.md
-    #
-
+    # You can find more info in the documentation:
+    # * English: docs/en/customization/introduction.md
+    # * Spanish: docs/es/customization/introduction.md
     [
       "app/components/custom",
       "app/controllers/custom",

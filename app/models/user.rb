@@ -111,8 +111,8 @@ class User < ApplicationRecord
     where(document_type: document_type, document_number: document_number)
   end
   scope :email_digest,   -> { where(email_digest: true) }
+  scope :active,         -> { where(erased_at: nil) }
   scope :erased,         -> { where.not(erased_at: nil) }
-  scope :active,         -> { excluding(erased) }
   scope :public_for_api, -> { all }
   scope :with_ids,       ->(ids) { where(id: ids) }
   scope :by_comments,    ->(commentables) do

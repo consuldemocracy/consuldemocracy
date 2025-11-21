@@ -13,7 +13,8 @@ stdout_redirect "#{rails_root}/log/puma_access.log", "#{rails_root}/log/puma_err
 
 bind "unix://#{rails_root}/tmp/sockets/puma.sock"
 
-threads 0, 16
+threads_count = ENV.fetch("RAILS_MAX_THREADS", 3)
+threads threads_count, threads_count
 workers 2
 preload_app!
 

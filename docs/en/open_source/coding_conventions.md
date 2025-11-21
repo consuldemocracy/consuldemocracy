@@ -74,6 +74,20 @@ Instead, use the `button_to` helper, which generates a form with a button with n
 
 Similarly, use buttons instead of links for controls that don't generate any HTTP requests but modify the content of the page using JavaScript (for example, to hide or show certain content).
 
+### Use secrets instead of credentials
+
+Rails started supporting credentials in version 5.2, and deprecated secrets in version 7.1. However, we've decided to keep using the `config/secrets.yml` file and use secrets to store sensitive information the way we've used them for more than 10 years.
+
+The reasons are backwards compatibility and simplicity.
+
+The advantage of using credentials is that they can be added to version control due to them being encrypted. If we don't add them to version control, they're just a more tedious version of secrets; every time you edit a credential you have to do an additional step. And the fact that they're encrypted doesn't provide any additional security in this case, since anyone with access to the credentials file will also have access to the file containing the key needed to decrypt them.
+
+However, adding them to version control would be tricky. Every existing Consul Democracy installation would have to generate the credentials file, edit it to add the content in `config/secrets.yml`, and add it to version control. We always aim to make the upgrade to a new version of Consul Democracy as simple and risk-free as possible. Migrating to credentials and adding them to version control wouldn't meet these conditions.
+
+For these reasons, we don't use credentials. So use secrets (to be more precise, Tenant secrets; see below) instead.
+
+In case you're interested, in `config/application.rb` you can find the approximately 15 lines of code that we use to keep supporting the `config/secrets.yml` file. For compatibility with dependencies that support credentials but not secrets, we've also added a `credentials` method as an alias of the `secrets` method.
+
 ### Use Tenant secrets instead of Rails secrets
 
 Rails manages confidential information by storing it in the `config/secrets.yml` file. Usually, Rails applications access the contents of this file using the `Rails.application.secrets` method.
