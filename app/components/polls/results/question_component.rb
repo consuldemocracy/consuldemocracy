@@ -12,4 +12,8 @@ class Polls::Results::QuestionComponent < ApplicationComponent
   def most_voted_option?(option)
     option.id == question.most_voted_option_id
   end
+
+  def number_with_percentage(number, percentage)
+    safe_join([number, "(#{percentage.round(2)}%)"], " ")
+  end
 end
