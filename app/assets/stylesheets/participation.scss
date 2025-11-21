@@ -504,25 +504,6 @@
     }
   }
 
-  .debate-info,
-  .proposal-info,
-  .investment-project-info,
-  .budget-investment-info,
-  .topic-info {
-    color: $text-medium;
-    font-size: $small-font-size;
-    margin: rem-calc(6) 0 0;
-
-    .icon-comments {
-      font-size: rem-calc(16);
-      vertical-align: top;
-    }
-
-    a {
-      color: $text-medium;
-    }
-  }
-
   .debate-description,
   .proposal-description,
   .investment-project-description {

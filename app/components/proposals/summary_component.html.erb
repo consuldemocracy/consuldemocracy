@@ -14,7 +14,7 @@
                   <div class="proposal-content">
                     <h3><%= link_to proposal.title, namespaced_proposal_path(proposal) %></h3>
 
-                    <p class="proposal-info">
+                    <p class="basic-info">
                       <%= render Shared::BasicAuthorInfoComponent.new(proposal.author, show_organization: false) %>
                     </p>
 

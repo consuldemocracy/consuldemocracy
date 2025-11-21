@@ -23,6 +23,14 @@ module ActionDispatch::Routing::UrlFor
     namespaced_polymorphic_path(:sdg_management, resource, options)
   end
 
+  def management_polymorphic_path(resource, options = {})
+    if resource.class.name == "Budget::Investment"
+      management_budget_investment_path(resource.budget, resource, options)
+    else
+      namespaced_polymorphic_path("management", resource, options)
+    end
+  end
+
   def namespaced_polymorphic_path(namespace, resource, options = {})
     if %w[Budget::Group Budget::Heading Legislation::DraftVersion Legislation::Proposal Legislation::Question
           Poll::Booth Poll::BoothAssignment Poll::Officer Poll::Question Poll::Question::Option

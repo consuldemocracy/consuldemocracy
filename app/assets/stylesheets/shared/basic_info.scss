@@ -1,0 +1,14 @@
+.basic-info {
+  color: $text-medium;
+  font-size: $small-font-size;
+  margin: rem-calc(6) 0 0;
+
+  .icon-comments {
+    font-size: rem-calc(16);
+    vertical-align: top;
+  }
+
+  a {
+    color: $text-medium;
+  }
+}

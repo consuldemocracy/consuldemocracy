@@ -1,0 +1,9 @@
+<p class="basic-info">
+  <%= l record.created_at.to_date %>
+  <span class="bullet">&nbsp;&bull;&nbsp;</span>
+
+  <%= render Shared::CommentsCountComponent.new(record.comments_count, url: comments_path) %>
+  <%= render Shared::BasicAuthorInfoComponent.new(record.author) %>
+
+  <%= content %>
+</p>

@@ -1,14 +1,4 @@
-<p class="investment-project-info">
-  <%= l investment.created_at.to_date %>
-  <span class="bullet">&nbsp;&bull;&nbsp;</span>
-
-  <%= render Shared::CommentsCountComponent.new(
-    investment.comments_count,
-    url: budget_investment_path(investment.budget, investment, anchor: "comments")
-  ) %>
-
-  <%= render Shared::BasicAuthorInfoComponent.new(investment.author) %>
-
+<%= render Shared::BasicInfoComponent.new(investment) do %>
   <span class="bullet">&nbsp;&bull;&nbsp;</span>
   <%= investment.heading.name %>
-</p>
+<% end %>
