@@ -16,7 +16,6 @@
     <%= render Shared::BasicContentComponent.new(proposal) do %>
       <%= render Shared::BasicInfoComponent.new(proposal) do %>
         <% if Geozone.any? %>
-          <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <span class="geozone">
             <%= link_to geozone_name(proposal), legislation_process_proposals_path(proposal.legislation_process_id, search: geozone_name(proposal)) %>
           </span>

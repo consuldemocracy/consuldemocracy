@@ -1,8 +1,13 @@
 .proposal-featured {
   min-height: $line-height * 3.5;
 
-  .info > .bullet {
-    display: none;
+  .info {
+    > :last-child {
+      &::before {
+        @include circle-separator;
+        background: currentcolor;
+      }
+    }
   }
 
   .supports {

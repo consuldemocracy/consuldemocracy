@@ -11,4 +11,18 @@
   a {
     color: $text-medium;
   }
+
+  > * + * {
+    margin-#{$global-left}: 1em;
+    position: relative;
+
+    &::after {
+      @include circle-separator;
+      background: currentcolor;
+      #{$global-left}: -1em;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
 }
