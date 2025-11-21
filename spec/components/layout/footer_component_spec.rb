@@ -41,3 +41,31 @@ describe Layout::FooterComponent do
     end
   end
 end
+
+describe "version method" do
+  it "returns the softwareVersion from publiccode.yml if the file exists" do
+    allow(File).to receive(:exist?).and_return(true)
+    allow(YAML).to receive(:load_file).and_return({ "softwareVersion" => "1.2.3" })
+
+    component = Layout::FooterComponent.new
+
+    expect(component.version).to eq("1.2.3")
+  end
+
+  it "returns 'unknown' if publiccode.yml exists but softwareVersion is not present" do
+    allow(File).to receive(:exist?).and_return(true)
+    allow(YAML).to receive(:load_file).and_return({})
+
+    component = Layout::FooterComponent.new
+
+    expect(component.version).to eq("unknown")
+  end
+
+  it "returns 'unknown' if publiccode.yml does not exist" do
+    allow(File).to receive(:exist?).and_return(false)
+
+    component = Layout::FooterComponent.new
+
+    expect(component.version).to eq("unknown")
+  end
+end
