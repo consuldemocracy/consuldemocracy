@@ -1,5 +1,5 @@
 <div class="detailed-info">
-  <%= render "/shared/author_info", resource: record %>
+  <%= render Shared::DetailedAuthorInfoComponent.new(record.author) %>
 
   <span class="bullet">&nbsp;&bull;&nbsp;</span>
   <%= date %>
