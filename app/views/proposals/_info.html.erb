@@ -4,10 +4,8 @@
   <span class="bullet">&nbsp;&bull;&nbsp;</span>
   <%= l @proposal.created_at.to_date %>
 
-  <% unless @proposal.selected? %>
-    <span class="bullet">&nbsp;&bull;&nbsp;</span>
-    <%= render Shared::CommentsCountComponent.new(@proposal.comments_count, url: "#comments") %>
-  <% end %>
+  <span class="bullet">&nbsp;&bull;&nbsp;</span>
+  <%= render Shared::CommentsCountComponent.new(@proposal.comments_count, url: "#comments") %>
 
   <% if current_user %>
     <span class="bullet">&nbsp;&bull;&nbsp;</span>

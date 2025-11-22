@@ -208,7 +208,7 @@ describe "Proposals" do
       expect(page).not_to have_button("Add related content")
 
       within(".proposal-info") do
-        expect(page).not_to have_link("No comments", href: "#comments")
+        expect(page).to have_link "No comments", href: "#comments"
       end
     end
 
