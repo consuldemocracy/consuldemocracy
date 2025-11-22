@@ -1,4 +1,4 @@
-<table>
+<table class="moderation-table">
   <thead>
     <tr>
       <th><%= model_human_name %></th>
@@ -11,15 +11,15 @@
       <tr id="<%= dom_id(record) %>">
         <td>
           <%= title_and_link_for(record) %>
-          <br>
-          <span class="date"><%= l record.updated_at.to_date %></span>
-          <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <% if flaggable? %>
-            <%= record.flags_count %><span class="icon-flag flag-disable"></span>
-            <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <% end %>
-          <%= record.author.username %>
-          <br>
+          <div class="moderation-info">
+            <span class="date"><%= l record.updated_at.to_date %></span>
+            <% if flaggable? %>
+              <span>
+                <%= record.flags_count %><span class="icon-flag flag-disable"></span>
+              </span>
+            <% end %>
+            <span><%= record.author.username %></span>
+          </div>
           <div class="moderation-description">
             <%= description_for(record) %>
           </div>
