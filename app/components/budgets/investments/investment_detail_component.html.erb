@@ -1,20 +1,8 @@
 <h1><%= investment.title %></h1>
-<div class="budget-investment-info">
-  <%= render "/shared/author_info", resource: investment %>
-
-  <span class="bullet">&nbsp;&bull;&nbsp;</span>
-  <%= l investment.created_at.to_date %>
-  <span class="bullet">&nbsp;&bull;&nbsp;</span>
-  <%= render Shared::CommentsCountComponent.new(investment.comments_count, url: "#comments") %>
+<%= render Shared::DetailedInfoComponent.new(investment, preview: preview) do %>
   <span class="bullet">&nbsp;&bull;&nbsp;</span>
   <%= investment.heading.name %>
-  <span class="bullet">&nbsp;&bull;&nbsp;</span>
-  <% unless preview? %>
-    <span class="js-flag-actions">
-      <%= render "shared/flag_actions", flaggable: investment %>
-    </span>
-  <% end %>
-</div>
+<% end %>
 
 <%= render_image(investment.image, :large, true) if investment.image.present? %>
 

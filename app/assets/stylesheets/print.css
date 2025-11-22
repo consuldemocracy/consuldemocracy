@@ -18,7 +18,7 @@
 
 img.left { display: none !important; }
 
-.proposal-info a,
+.proposal .detailed-info a,
 .proposal .basic-info a {
   display: none !important;
 }

@@ -9,17 +9,7 @@
 
       <h1><%= @topic.title %></h1>
 
-      <div class="topic-info margin-bottom">
-        <%= render "/shared/author_info", resource: @topic %>
-
-        <span class="bullet">&nbsp;&bull;&nbsp;</span>
-        <%= l(@topic.created_at.to_date) %>
-        <span class="bullet">&nbsp;&bull;&nbsp;</span>
-        <%= render Shared::CommentsCountComponent.new(
-          @topic.comments_count,
-          url: community_topic_path(@community, @topic, anchor: "comments")
-        ) %>
-      </div>
+      <%= render Shared::DetailedInfoComponent.new(@topic) %>
       <br>
       <p><%= @topic.description %></p>
     </div>
