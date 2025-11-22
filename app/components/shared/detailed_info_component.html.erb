@@ -1,15 +1,11 @@
 <div class="detailed-info">
   <%= render Shared::DetailedAuthorInfoComponent.new(record.author) %>
-
-  <span class="bullet">&nbsp;&bull;&nbsp;</span>
   <%= date %>
-  <span class="bullet">&nbsp;&bull;&nbsp;</span>
   <%= render Shared::CommentsCountComponent.new(record.comments_count, url: comments_path) %>
 
   <%= content %>
 
   <% if can?(:flag, record) && !preview? %>
-    <span class="bullet">&nbsp;&bull;&nbsp;</span>
     <span class="js-flag-actions">
       <%= render "shared/flag_actions", flaggable: record %>
     </span>

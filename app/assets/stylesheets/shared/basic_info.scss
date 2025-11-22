@@ -1,4 +1,5 @@
 .basic-info {
+  @include circle-separators;
   color: $text-medium;
   font-size: $small-font-size;
   margin: rem-calc(6) 0 0;
@@ -10,19 +11,5 @@
 
   a {
     color: $text-medium;
-  }
-
-  > * + * {
-    margin-#{$global-left}: 1em;
-    position: relative;
-
-    &::after {
-      @include circle-separator;
-      background: currentcolor;
-      #{$global-left}: -1em;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-    }
   }
 }

@@ -1,7 +1,6 @@
 <h1><%= investment.title %></h1>
 <%= render Shared::DetailedInfoComponent.new(investment, preview: preview) do %>
-  <span class="bullet">&nbsp;&bull;&nbsp;</span>
-  <%= investment.heading.name %>
+  <span><%= investment.heading.name %></span>
 <% end %>
 
 <%= render_image(investment.image, :large, true) if investment.image.present? %>

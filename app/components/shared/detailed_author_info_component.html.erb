@@ -10,7 +10,6 @@
   </span>
 
   <% if author.display_official_position_badge? %>
-    &nbsp;&bull;&nbsp;
     <span class="label round level-<%= author.official_level %>">
       <%= author.official_position %>
     </span>
@@ -18,7 +17,6 @@
 <% end %>
 
 <% if author.verified_organization? %>
-  &nbsp;&bull;&nbsp;
   <span class="label round is-association">
     <%= t("shared.collective") %>
   </span>

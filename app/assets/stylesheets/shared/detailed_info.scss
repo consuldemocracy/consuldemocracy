@@ -1,4 +1,5 @@
 .detailed-info {
+  @include circle-separators;
   clear: both;
   color: $text-medium;
   font-size: $small-font-size;
