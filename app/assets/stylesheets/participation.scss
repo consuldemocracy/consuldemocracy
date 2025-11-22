@@ -178,7 +178,7 @@
   .debate-info,
   .proposal-info,
   .investment-project-info,
-  .budget-investment-show,
+  .budget-investment-info,
   .topic-info {
     clear: both;
     color: $text-medium;
@@ -478,7 +478,6 @@
 .debate,
 .proposal,
 .budget-investment,
-.budget-investment-show,
 .legislation,
 .communities-show {
   margin: calc($line-height / 4) 0;
