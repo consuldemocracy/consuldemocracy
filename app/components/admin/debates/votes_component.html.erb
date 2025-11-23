@@ -5,18 +5,14 @@
     <%= t("debates.debate.votes", count: debate.votes_score) %>
   </span>
 
-  <span class="bullet">&nbsp;&bull;&nbsp;</span>
-
-  <div class="in-favor inline-block">
+  <div class="in-favor">
     <span class="icon-like">
       <span class="show-for-sr"><%= t("votes.agree") %></span>
     </span>
     <span class="percentage"><%= votes_percentage("likes", debate) %></span>
   </div>
 
-  <span class="bullet">&nbsp;&bull;&nbsp;</span>
-
-  <div class="against inline-block">
+  <div class="against">
     <span class="icon-unlike">
       <span class="show-for-sr"><%= t("votes.disagree") %></span>
     </span>
