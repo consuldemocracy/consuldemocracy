@@ -22,12 +22,12 @@
   width: 0.25em;
 }
 
-@mixin circle-separators {
+@mixin circle-separators($position: "before") {
   > :not(svg) + * {
     margin-#{$global-left}: 1em;
     position: relative;
 
-    &::after {
+    &::#{$position} {
       @include circle-separator;
       background: currentcolor;
       #{$global-left}: -1em;

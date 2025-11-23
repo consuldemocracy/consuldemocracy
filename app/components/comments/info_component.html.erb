@@ -17,20 +17,17 @@
     <% else %>
       <span class="user-name"><%= link_to comment.user.name, user_path(comment.user) %></span>
       <% if comment.user.display_official_position_badge? %>
-        &nbsp;&bull;&nbsp;
         <span class="label round level-<%= comment.user.official_level %>">
           <%= comment.user.official_position %>
         </span>
       <% end %>
     <% end %>
     <% if comment.user.verified_organization? %>
-      &nbsp;&bull;&nbsp;
       <span class="label round is-association">
         <%= t("shared.collective") %>
       </span>
     <% end %>
     <% if comment.user_id == comment.commentable.author_id %>
-      &nbsp;&bull;&nbsp;
       <span class="label round is-author">
         <%= t("comments.comment.author") %>
       </span>
@@ -38,7 +35,6 @@
 
   <% end %>
 
-  &nbsp;&bull;&nbsp;
   <span>
     <%= link_to comment_path(comment) do %>
       <%= l comment.created_at.to_datetime, format: :datetime %>
