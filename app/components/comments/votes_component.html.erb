@@ -1,7 +1,6 @@
 <div id="<%= dom_id(comment) %>_votes" class="comment-votes float-right">
   <div class="votes">
-    <%= t("comments.comment.votes", count: comment.total_votes) %>
-    &nbsp;|&nbsp;
+    <span class="votes-count"><%= t("comments.comment.votes", count: comment.total_votes) %></span>
 
     <div class="in-favor">
       <%= render Shared::VoteButtonComponent.new(comment,

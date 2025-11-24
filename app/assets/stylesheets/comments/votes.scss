@@ -1,4 +1,10 @@
 .comment-votes {
+  .votes-count {
+    &::after {
+      @include vertical-separator;
+      opacity: 1;
+    }
+  }
 
   button,
   form {
