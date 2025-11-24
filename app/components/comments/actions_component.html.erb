@@ -1,8 +1,7 @@
-<%= render Shared::FlagActionsComponent.new(comment, divider: true) %>
+<%= render Shared::FlagActionsComponent.new(comment) %>
 
 <% if can?(:hide, comment) || can?(:hide, comment.user) %>
   <% if comment.author == current_user %>
-    <span class="divider">&nbsp;&bull;&nbsp;</span>
     <%= button_to t("comments.actions.delete"),
                   hide_comment_path(comment),
                   method: :put, remote: true, class: "delete-comment", form_class: "delete-comment-form",

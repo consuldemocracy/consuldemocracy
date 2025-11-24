@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  include FlagActions
+
   before_action :authenticate_user!, only: [:create, :hide]
   before_action :load_commentable, only: :create
   before_action :verify_resident_for_commentable!, only: :create
@@ -25,23 +27,15 @@ class CommentsController < ApplicationController
     end
   end
 
-  def flag
-    Flag.flag(current_user, @comment)
-
-    render "shared/_refresh_flag_actions", locals: { flaggable: @comment, divider: true }
-  end
-
-  def unflag
-    Flag.unflag(current_user, @comment)
-
-    render "shared/_refresh_flag_actions", locals: { flaggable: @comment, divider: true }
-  end
-
   def hide
     @comment.hide
   end
 
   private
+
+    def resource_model
+      Comment
+    end
 
     def comment_params
       params.require(:comment).permit(allowed_params)

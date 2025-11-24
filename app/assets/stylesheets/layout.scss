@@ -1628,11 +1628,6 @@ table {
     &:empty {
       display: none;
     }
-
-    .divider {
-      color: $text-light;
-      display: inline-block;
-    }
   }
 
   .comment-user {

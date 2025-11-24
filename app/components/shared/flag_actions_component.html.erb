@@ -1,9 +1,5 @@
 <span class="flag-actions">
   <% if show_flag_action? %>
-    <% if divider? %>
-      <span class="divider">&nbsp;|&nbsp;</span>
-    <% end %>
-
     <button type="button" data-toggle="flag-drop-<%= dom_id(flaggable) %>" title="<%= t("shared.flag") %>">
       <span class="icon-flag flag-disable"></span>
     </button>
@@ -14,10 +10,6 @@
   <% end %>
 
   <% if show_unflag_action? %>
-    <% if divider? %>
-      <span class="divider">&nbsp;|&nbsp;</span>
-    <% end %>
-
     <button type="button" data-toggle="unflag-drop-<%= dom_id(flaggable) %>" title="<%= t("shared.unflag") %>">
       <span class="icon-flag flag-active"></span>
     </button>

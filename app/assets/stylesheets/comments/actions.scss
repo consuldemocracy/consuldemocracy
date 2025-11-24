@@ -3,6 +3,13 @@
     display: inline;
   }
 
+  .delete-comment-form,
+  .moderation-actions form {
+    &::before {
+      @include circle-separator($color: $text-light);
+    }
+  }
+
   .delete-comment {
     @include has-fa-icon(trash-alt, regular);
     cursor: pointer;

@@ -10,7 +10,6 @@
   </span>
 
   <% if can_comment? %>
-    <span class="divider">&nbsp;|&nbsp;</span>
     <%= link_to(link_text, "", class: "js-add-comment-link", data: { id: dom_id(comment) }) %>
 
     <% unless valuation %>

@@ -11,10 +11,4 @@
   > * + *::before {
     @include vertical-separator;
   }
-
-  .comment & {
-    > *::before {
-      @include circle-separator($color: $text-light);
-    }
-  }
 }

@@ -1,11 +1,9 @@
 class Shared::FlagActionsComponent < ApplicationComponent
-  attr_reader :flaggable, :divider
-  alias_method :divider?, :divider
+  attr_reader :flaggable
   use_helpers :can?, :current_user
 
-  def initialize(flaggable, divider: nil)
+  def initialize(flaggable)
     @flaggable = flaggable
-    @divider = divider
   end
 
   def render?
