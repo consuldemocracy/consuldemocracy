@@ -18,33 +18,7 @@
           <%= simple_format sanitize_and_auto_link(comment.body), {}, sanitize: false %>
         </div>
 
-        <div id="<%= dom_id(comment) %>_reply" class="reply">
-          <% unless valuation %>
-            <div id="<%= dom_id(comment) %>_votes" class="comment-votes float-right">
-              <%= render Comments::VotesComponent.new(comment) %>
-            </div>
-          <% end %>
-
-          <span class="responses-count">
-            <%= render "comments/responses_count", count: comment.children.size %>
-          </span>
-
-          <% if user_signed_in? && !comments_closed_for_commentable?(comment.commentable) && !require_verified_resident_for_commentable?(comment.commentable, current_user) %>
-            <span class="divider">&nbsp;|&nbsp;</span>
-            <%= link_to(comment_link_text(comment), "",
-                        class: "js-add-comment-link", data: { id: dom_id(comment) }) %>
-
-            <% unless valuation %>
-              <%= render Comments::ActionsComponent.new(comment) %>
-            <% end %>
-
-            <% if !valuation || can?(:comment_valuation, comment.commentable) %>
-              <%= render Comments::FormComponent.new(comment.commentable,
-                                                     parent_id: comment.id,
-                                                     valuation: valuation) %>
-            <% end %>
-          <% end %>
-        </div>
+        <%= render Comments::StatusBarComponent.new(comment, valuation: valuation) %>
       <% end %>
     </div>
 
