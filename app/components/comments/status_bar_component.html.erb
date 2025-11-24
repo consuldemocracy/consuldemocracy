@@ -9,10 +9,9 @@
     <%= render "comments/responses_count", count: comment.children.size %>
   </span>
 
-  <% if current_user && !comments_closed_for_commentable?(comment.commentable) && !require_verified_resident_for_commentable?(comment.commentable, current_user) %>
+  <% if can_comment? %>
     <span class="divider">&nbsp;|&nbsp;</span>
-    <%= link_to(comment_link_text(comment), "",
-                class: "js-add-comment-link", data: { id: dom_id(comment) }) %>
+    <%= link_to(link_text, "", class: "js-add-comment-link", data: { id: dom_id(comment) }) %>
 
     <% unless valuation %>
       <%= render Comments::ActionsComponent.new(comment) %>
