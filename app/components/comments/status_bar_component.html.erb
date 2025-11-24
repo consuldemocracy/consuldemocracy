@@ -1,8 +1,6 @@
 <div id="<%= dom_id(comment) %>_reply" class="status-bar">
   <% unless valuation %>
-    <div id="<%= dom_id(comment) %>_votes" class="comment-votes float-right">
-      <%= render Comments::VotesComponent.new(comment) %>
-    </div>
+    <%= render Comments::VotesComponent.new(comment) %>
   <% end %>
 
   <span class="responses-count">

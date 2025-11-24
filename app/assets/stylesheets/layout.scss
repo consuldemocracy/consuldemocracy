@@ -1693,49 +1693,6 @@ table {
   }
 }
 
-.comment-votes {
-
-  button,
-  form {
-    color: $dark-gray;
-    display: inline-block;
-  }
-
-  button {
-    font-size: $base-font-size;
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
-
-  @mixin like-unlike-icon($icon, $pressed-color) {
-    @include has-fa-icon($icon, regular);
-
-    &[aria-pressed=false]:hover,
-    &[aria-pressed=true]:not(:hover) {
-      @include has-fa-icon($icon, solid);
-    }
-
-    &[aria-pressed=true] {
-      color: $pressed-color;
-    }
-  }
-
-  .in-favor,
-  .against {
-    display: inline;
-  }
-
-  .in-favor button {
-    @include like-unlike-icon(thumbs-up, $like);
-  }
-
-  .against button {
-    @include like-unlike-icon(thumbs-down, $unlike);
-  }
-}
-
 .faded {
   opacity: 0.4;
 }
