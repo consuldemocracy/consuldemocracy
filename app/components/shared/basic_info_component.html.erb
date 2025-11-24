@@ -1,5 +1,5 @@
 <p class="basic-info">
-  <%= l record.created_at.to_date %>
+  <%= date %>
   <span class="bullet">&nbsp;&bull;&nbsp;</span>
 
   <%= render Shared::CommentsCountComponent.new(record.comments_count, url: comments_path) %>

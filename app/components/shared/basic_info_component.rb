@@ -15,4 +15,8 @@ class Shared::BasicInfoComponent < ApplicationComponent
         polymorphic_path(record, anchor: "comments")
       end
     end
+
+    def date
+      time_tag record.created_at.to_date, format: :default
+    end
 end
