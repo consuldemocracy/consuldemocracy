@@ -670,7 +670,8 @@
 
 .proposals-summary {
 
-  .panel {
+  .panel,
+  .proposal-content {
     min-height: 0;
   }
 }
