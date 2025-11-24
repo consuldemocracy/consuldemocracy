@@ -35,7 +35,7 @@
                         class: "js-add-comment-link", data: { id: dom_id(comment) }) %>
 
             <% unless valuation %>
-              <%= render "comments/actions", { comment: comment } %>
+              <%= render Comments::ActionsComponent.new(comment) %>
             <% end %>
 
             <% if !valuation || can?(:comment_valuation, comment.commentable) %>

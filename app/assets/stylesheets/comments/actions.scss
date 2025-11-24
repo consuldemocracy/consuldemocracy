@@ -1,0 +1,19 @@
+.comment-body {
+  .delete-comment-form {
+    display: inline;
+  }
+
+  .delete-comment {
+    @include has-fa-icon(trash-alt, regular);
+    cursor: pointer;
+
+    &:not(:hover):not(:active) {
+      color: $delete;
+    }
+
+    &::before {
+      margin-right: $font-icon-margin;
+      transform: translateY(-1px);
+    }
+  }
+}
