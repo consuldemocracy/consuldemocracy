@@ -8,4 +8,10 @@ class Shared::DetailedInfoComponent < ApplicationComponent
     @comments_path = comments_path
     @preview = preview
   end
+
+  private
+
+    def date
+      time_tag record.created_at.to_date, format: :default
+    end
 end

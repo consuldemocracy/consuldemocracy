@@ -2,7 +2,7 @@
   <%= render "/shared/author_info", resource: record %>
 
   <span class="bullet">&nbsp;&bull;&nbsp;</span>
-  <%= l record.created_at.to_date %>
+  <%= date %>
   <span class="bullet">&nbsp;&bull;&nbsp;</span>
   <%= render Shared::CommentsCountComponent.new(record.comments_count, url: comments_path) %>
 
