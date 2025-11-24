@@ -1,6 +1,6 @@
 <span class="flag-content">
-  <% if show_flag_action?(flaggable) %>
-    <% if local_assigns[:divider] %>
+  <% if show_flag_action? %>
+    <% if divider? %>
       <span class="divider">&nbsp;|&nbsp;</span>
     <% end %>
 
@@ -13,8 +13,8 @@
     </span>
   <% end %>
 
-  <% if show_unflag_action?(flaggable) %>
-    <% if local_assigns[:divider] %>
+  <% if show_unflag_action? %>
+    <% if divider? %>
       <span class="divider">&nbsp;|&nbsp;</span>
     <% end %>
 

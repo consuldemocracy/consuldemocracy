@@ -7,7 +7,7 @@
 
   <% if can?(:flag, record) && !preview? %>
     <span class="js-flag-actions">
-      <%= render "shared/flag_actions", flaggable: record %>
+      <%= render Shared::FlagActionsComponent.new(record) %>
     </span>
   <% end %>
 </div>

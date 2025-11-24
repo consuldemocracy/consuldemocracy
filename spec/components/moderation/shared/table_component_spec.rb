@@ -43,7 +43,7 @@ describe Moderation::Shared::TableComponent do
 
       render_inline Moderation::Shared::TableComponent.new(Debate.all)
 
-      expect(page).to have_css ".flag-disable"
+      expect(page).to have_css ".flags-count"
     end
 
     it "does not show flags for records that cannot be flagged" do
@@ -51,7 +51,7 @@ describe Moderation::Shared::TableComponent do
 
       render_inline Moderation::Shared::TableComponent.new(ProposalNotification.all)
 
-      expect(page).not_to have_css ".flag-disable"
+      expect(page).not_to have_css ".flags-count"
     end
   end
 
