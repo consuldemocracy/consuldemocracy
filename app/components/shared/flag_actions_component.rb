@@ -8,14 +8,18 @@ class Shared::FlagActionsComponent < ApplicationComponent
     @divider = divider
   end
 
+  def render?
+    current_user && !own_flaggable?
+  end
+
   private
 
     def show_flag_action?
-      current_user && !own_flaggable? && !flagged?
+      !flagged?
     end
 
     def show_unflag_action?
-      current_user && !own_flaggable? && flagged?
+      flagged?
     end
 
     def own_flaggable?

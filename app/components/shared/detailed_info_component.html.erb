@@ -6,8 +6,6 @@
   <%= content %>
 
   <% if can?(:flag, record) && !preview? %>
-    <span class="js-flag-actions">
-      <%= render Shared::FlagActionsComponent.new(record) %>
-    </span>
+    <%= render Shared::FlagActionsComponent.new(record) %>
   <% end %>
 </div>

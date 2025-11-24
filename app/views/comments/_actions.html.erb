@@ -1,6 +1,4 @@
-<span class="js-flag-actions">
-  <%= render Shared::FlagActionsComponent.new(comment, divider: true) %>
-</span>
+<%= render Shared::FlagActionsComponent.new(comment, divider: true) %>
 
 <% if can?(:hide, comment) || can?(:hide, comment.user) %>
   <% if comment.author == current_user %>

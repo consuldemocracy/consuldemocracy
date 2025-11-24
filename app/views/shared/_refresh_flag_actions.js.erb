@@ -1,4 +1,5 @@
+var old_flag_element = $("#<%= dom_id(flaggable) %> .flag-actions").first();
 var new_flag_content = "<%= j render(Shared::FlagActionsComponent.new(flaggable,
                                                                       divider: local_assigns[:divider])) %>";
 
-$("#<%= dom_id(flaggable) %> .js-flag-actions").first().html(new_flag_content).foundation();
+$(new_flag_content).replaceAll(old_flag_element).foundation();
