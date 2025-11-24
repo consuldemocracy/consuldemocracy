@@ -81,6 +81,7 @@ es:
         signin_with_provider: Entrar con %{provider}
         signup: '¿No tienes una cuenta? %{signup_link}'
         signup_link: Regístrate
+        acceso_codigo_link: 'Si tienes un código, accede por DNI + código en este enlace.'
     unlocks:
       new:
         email_label: Email

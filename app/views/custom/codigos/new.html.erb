@@ -10,11 +10,12 @@
 		<%= submit_tag nil, :class => 'button expanded' %>
 	<% end %>
 	<p>
-		<%= raw t("pages.login.codigos.help",
-					login: link_to(t("pages.login.codigos.help_login"), new_user_session_path),
-					register: link_to(t("pages.login.codigos.help_register"), new_user_registration_path)
-				)
-		%>
+	   <%= raw t("pages.login.codigos.help",
+    		login: link_to(t("pages.login.codigos.help_login"), new_user_session_path),
+    		register: link_to(t("pages.login.codigos.help_register"), 
+                        new_user_registration_path)
+    		)
+ 	   %>	
 	</p>
 </div>
 </div>
