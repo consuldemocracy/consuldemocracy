@@ -55,11 +55,11 @@ a:after { content: none !important; }
 
 .proposal .panel { min-height: auto !important; margin:  0 !important; padding-bottom: 0 !important; padding-left: 0 !important; }
 
-.proposal .panel .proposal-content { min-height: auto !important; }
+.proposal .panel .basic-content { min-height: auto !important; }
 
 .proposal .panel h3 { min-height: auto !important; font-size: 16px !important; }
 
-.proposal .panel .proposal-description { height: auto !important; margin-bottom: 0 !important; }
+.proposal .panel .basic-description { height: auto !important; margin-bottom: 0 !important; }
 
 .proposal .panel {
   border-left: 0 !important;

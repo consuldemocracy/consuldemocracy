@@ -413,9 +413,7 @@
       }
     }
 
-    .debate-content,
-    .budget-investment-content,
-    .proposal-content {
+    .basic-content {
       flex-basis: calc((35rem - 100%) * 999);
       flex-grow: 1000;
       max-width: 50rem;
@@ -485,14 +483,6 @@
     @extend %panel;
   }
 
-  .debate-content,
-  .proposal-content,
-  .budget-investment-content {
-    margin: 0;
-    min-height: rem-calc(180);
-    position: relative;
-  }
-
   .tags {
     @extend %tags;
   }
@@ -502,27 +492,6 @@
     a {
       font-size: $tiny-font-size;
     }
-  }
-
-  .debate-description,
-  .proposal-description,
-  .investment-project-description {
-    font-size: rem-calc(13);
-    height: rem-calc(72);
-    line-height: $line-height;
-    margin-bottom: rem-calc(12);
-    margin-top: 0;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .truncate {
-    background: image-url("truncate.png");
-    background-repeat: repeat-x;
-    bottom: 0;
-    height: rem-calc(24);
-    position: absolute;
-    width: 100%;
   }
 }
 

@@ -1,17 +1,9 @@
 <% cache [locale_and_user_status, debate, current_user&.voted_as_when_voted_for(debate)] do %>
   <div id="<%= dom_id(debate) %>" class="debate clear" data-type="debate">
     <div class="panel">
-      <div class="debate-content">
-        <h3><%= link_to debate.title, debate %></h3>
-
+      <%= render Shared::BasicContentComponent.new(debate) do %>
         <%= render Shared::BasicInfoComponent.new(debate) %>
-
-        <div class="debate-description">
-          <%= wysiwyg(debate.description) %>
-          <div class="truncate"></div>
-        </div>
-        <%= render "shared/tags", taggable: debate, limit: 5 %>
-      </div>
+      <% end %>
 
       <div id="<%= dom_id(debate) %>_votes">
         <%= render Debates::VotesComponent.new(debate) %>
