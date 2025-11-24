@@ -22,28 +22,23 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     if @comment.valuation && @comment.author != current_user
       raise ActiveRecord::RecordNotFound
-    else
-      set_comment_flags(@comment.subtree)
     end
   end
 
   def flag
     Flag.flag(current_user, @comment)
-    set_comment_flags(@comment)
 
     render "shared/_refresh_flag_actions", locals: { flaggable: @comment, divider: true }
   end
 
   def unflag
     Flag.unflag(current_user, @comment)
-    set_comment_flags(@comment)
 
     render "shared/_refresh_flag_actions", locals: { flaggable: @comment, divider: true }
   end
 
   def hide
     @comment.hide
-    set_comment_flags(@comment.subtree)
   end
 
   private

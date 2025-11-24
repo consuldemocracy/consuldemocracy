@@ -28,7 +28,6 @@ module CommentableActions
   def show
     @commentable = resource
     @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
-    set_comment_flags(@comment_tree.comments)
     set_resource_instance
     @remote_translations = detect_remote_translations([@resource], @comment_tree.comments)
   end

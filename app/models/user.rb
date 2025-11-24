@@ -153,11 +153,6 @@ class User < ApplicationRecord
     organization? ? organization.name : username
   end
 
-  def comment_flags(comments)
-    comment_flags = flags.for_comments(comments)
-    comment_flags.each_with_object({}) { |f, h| h[f.flaggable_id] = true }
-  end
-
   def voted_in_group?(group)
     votes.where(votable: Budget::Investment.where(group: group)).exists?
   end

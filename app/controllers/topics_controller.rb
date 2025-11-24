@@ -25,7 +25,6 @@ class TopicsController < ApplicationController
   def show
     @commentable = @topic
     @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
-    set_comment_flags(@comment_tree.comments)
   end
 
   def edit

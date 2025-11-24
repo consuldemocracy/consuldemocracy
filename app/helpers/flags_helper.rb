@@ -10,11 +10,7 @@ module FlagsHelper
   private
 
     def flagged?(flaggable)
-      if flaggable.is_a? Comment
-        @comment_flags[flaggable.id] unless flaggable.commentable_type == "Poll"
-      else
-        Flag.flagged?(current_user, flaggable)
-      end
+      Flag.flagged?(current_user, flaggable)
     end
 
     def own_flaggable?(flaggable)
