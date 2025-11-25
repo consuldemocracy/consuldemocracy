@@ -1,4 +1,14 @@
 module ApplicationHelper
+
+  include BudgetsHelper
+  
+  def faseapoyo?
+    budget = current_budget
+    return false unless budget
+    
+    budget.phase.in?(['selecting', 'balloting'])
+  end
+  
   # if current path is /debates current_path_with_query_params(foo: "bar") returns /debates?foo=bar
   # notice: if query_params have a param which also exist in current path,
   # it "overrides" (query_params is merged last)
