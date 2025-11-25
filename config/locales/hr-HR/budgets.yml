@@ -168,6 +168,7 @@ hr:
     supports_info:
       different: "Možete podržati koliko god projekata želite."
       next: "Podržite projekte koje bi voljeli vidjeti u idućoj fazi."
+      share: "Možete dijeliti projekte koje ste podržali na društvenim mrežama i tako osigurati veću vidljivost i podršku projektu!"
     results:
       link: Rezultati
       page_title: "%{budget} - Rezultati"
