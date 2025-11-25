@@ -11,6 +11,7 @@ hr:
           knapsack: "%{count}"
         no_balloted_group_yet: "Još niste glasovali u ovoj grupi, glasujte!"
         remove: Ukloni glas
+        remove_label: "Uklonite svoj glas za %{investment}"
         voted:
           one: "Vi ste glasovali za <span>jednu</span> investiciju."
           few: "Vi ste glasovali za <span>%{count}</span> investicije."
@@ -49,6 +50,9 @@ hr:
         title: Participativni budžeti
         help: Pomogni s participativnim budžetima
       all_phases: Investicijkse faze budžeta
+      next_phase: Sljedeća faza
+      prev_phase: Prethodna faza
+      current_phase: Trenutna faza
       map: Prijedlozi investiranja budžeta prema geografskoj lokaciji
       finished_budgets: Dovršeni participativni budžeti
       see_results: Pogledaj rezultate
@@ -59,6 +63,8 @@ hr:
     investments:
       form:
         title: "Stvori investicijski budžet"
+        subtitle: "%{heading} (%{price})"
+        subtitle_without_price: "%{heading}"
         tag_category_label: "Kategorije"
         tags_instructions: "Označi ovaj prijedlog. Možeš birati iz predloženih kategorija ili dodati svoju"
         tags_label: Oznake
@@ -79,6 +85,9 @@ hr:
               one: "<strong>Glasovali ste za prijedlog s iznosom %{amount_spent}</strong>"
               few: "<strong>Vi ste glasali %{count} za prijedloga s iznosom od %{amount_spent}</strong>"
               other: "<strong>Vi ste glasali %{count} za prijedloga s iznosom od %{amount_spent}</strong>"
+          change_vote_info:
+            knapsack: "Možete %{link} u bilo koje vrijeme do %{phase_end_date}. Nema potrebe potrošiti sav dostupan novčani fond."
+            approval: "Možete %{link} u bilo koje vrijeme do %{phase_end_date}."
           change_vote_link: "izmijeni svoj glas"
           different_heading_assigned: "Imate aktivne glasove u drugoj temi: %{heading_link}"
           change_ballot: "Ako se predomislite možete ukloniti vaš glas u %{check_ballot} i započeti ponovno."
@@ -87,9 +96,12 @@ hr:
           verified_only: "Kako bi se stvorio nova investcijski budžet %{verify}."
           create: "Stvori investicijski budžet"
           not_logged_in: "%{sign_in} ili %{sign_up} da biste izradili novo proračunsko ulaganje."
+        filter: "Sortiranje projekata po"
         filters:
+          not_unfeasible: "Aktivno"
           selected: "Odabrano"
           unfeasible: "Nevažeč"
+          unselected: "Nije izabrano za konačno glasanje"
           winners: "Pobjednici"
         orders:
           random: nasumično
@@ -120,6 +132,7 @@ hr:
       wrong_price_format: Samo cijeli brojevi
       investment:
         add: Glas
+        add_label: "Odaberi %{investment}"
         already_added: Vi ste već dodali ovo investicijskom projektu
         support_title: Poduprite ovaj projekt
         supports:
@@ -139,13 +152,22 @@ hr:
           one: "Možete samo poduprijeti investicije u %{count} distriktu. Ako nastavite ne možete glasati za vaš distrikt. Jeste li sigurni?"
           few: "Možete samo poduprijeti investicije u %{count} distriktu. Ako nastavite ne možete glasati za vaš distrikt. Jeste li sigurni?"
           other: "Možete samo poduprijeti investicije u %{count} distriktu. Ako nastavite ne možete glasati za vaš distrikt. Jeste li sigurni?"
+        remove_support: "Ukloni svoju potporu"
+        remove_support_label: "Ukloni svoju potporu za %{investment}"
         support: "Potpora"
+        support_label: "Podrži %{investment}"
     investments_list:
       investment:
         price: "Cijena"
+        read_more: "Pročitajte više"
         supports: "Potpore"
+      see_all: "Pogledajte sva ulaganja"
+      title: "Popis ulaganja"
     show:
       see_results: Pogledaj rezultate
+    supports_info:
+      different: "Možete podržati koliko god projekata želite."
+      next: "Podržite projekte koje bi voljeli vidjeti u idućoj fazi."
     results:
       link: Rezultati
       page_title: "%{budget} - Rezultati"
