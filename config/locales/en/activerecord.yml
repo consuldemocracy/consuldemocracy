@@ -261,6 +261,12 @@ en:
       debate/translation:
         title: "Debate title"
         description: "Initial debate text"
+      event:
+        name: "Event Title"
+        description: "Full Description"
+        starts_at: "Start Date & Time"
+        ends_at: "End Date & Time"
+        image: "Event Image"
       proposal:
         author: "Author"
         title: "Title"

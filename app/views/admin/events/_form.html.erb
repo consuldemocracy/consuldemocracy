@@ -1,0 +1,37 @@
+<%= form_with model: [:admin, @event], builder: ConsulFormBuilder, local: true do |f| %>
+
+  <%= render "shared/errors", resource: @event %>
+
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= f.datetime_field :starts_at, class: "input-group-field" %>
+    </div>
+
+    <div class="small-12 medium-6 column">
+      <%= f.datetime_field :ends_at, class: "input-group-field" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 column">
+      <%= f.text_field :name %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 column">
+      <%= f.text_area :description, rows: 8, class: "html-area" %>
+    </div>
+  </div>
+
+
+
+  <%# SUBMIT BUTTON ROW %>
+  <div class="row">
+    <div class="small-12 medium-6 column end">
+      <%= f.submit t("events.#{action_name}.submit_button", default: "Save Event"),
+                   class: "button success" %>
+    </div>
+  </div>
+
+<% end %>

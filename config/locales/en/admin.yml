@@ -547,6 +547,11 @@ en:
         unable_notice: "Invalid document"
       destroy:
         success_notice: "Document deleted successfully"
+    events:
+      event:
+        name: Name
+        description: Description
+        start_date: Start Date
     hidden_users:
       index:
         filter: Filter

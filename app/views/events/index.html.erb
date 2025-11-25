@@ -1,0 +1,37 @@
+<div class="calendar-container">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="h3">Events Calendar</h1>
+
+    <span class="text-muted"><%= l @start_date, format: "%B %Y" %></span>
+  </div>
+
+  <%= month_calendar(events: @calendar_items, attribute: :calendar_start, start_date: @start_date) do |date, items| %>
+
+    <div class="day-number"><%= date.day %></div>
+
+    <% items.each do |item| %>
+      <div class="event-bar <%= item.calendar_class %>">
+        <%= link_to item.calendar_title, item.calendar_link_url, class: "event-link text-white" %>
+        <%# Quick Actions (Edit/Delete) - Only for Manual Events & Admins %>
+        <% if item.is_a?(Event) && current_user&.administrator? %>
+          <div class="event-actions float-right" style="margin-left: 5px;">
+
+            <%# FIX: Use a block instead of fa_icon helper %>
+            <%= link_to edit_admin_event_path(item), title: "Edit", class: "text-white me-1" do %>
+              <span class="icon-pencil"></span>
+            <% end %>
+
+            <%= link_to admin_event_path(item),
+                        class: "text-white",
+                        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                        title: "Delete" do %>
+              <span class="icon-x"></span>
+            <% end %>
+
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+
+  <% end %>
+</div>

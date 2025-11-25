@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   draw :account
   draw :admin
   draw :devise
+  draw :events
 
   constraints lambda { |request| Rails.application.multitenancy_management_mode? } do
     get "/", to: "admin/tenants#index"

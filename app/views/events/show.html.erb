@@ -1,0 +1,45 @@
+<div class="row margin">
+  <div class="small-12 medium-8 column">
+
+    <%= back_link_to events_path %>
+
+    <header class="margin-bottom clearfix">
+      <%# --- EDIT BUTTON (Admin Only) --- %>
+      <% if current_user&.administrator? %>
+        <%= link_to "Edit Event", edit_admin_event_path(@event), class: "button hollow float-right" %>
+      <% end %>
+
+      <h1 class="h2"><%= @event.name %></h1>
+      <span class="label secondary">Manual Event</span>
+    </header>
+
+    <div class="callout">
+
+      <div class="grid-x grid-margin-x margin-bottom">
+        <div class="cell medium-6">
+          <strong class="text-muted">Starts:</strong>
+          <div>
+            <%= l(@event.starts_at, format: :long) %>
+          </div>
+        </div>
+
+        <% if @event.ends_at.present? %>
+          <div class="cell medium-6">
+            <strong class="text-muted">Ends:</strong>
+            <div>
+              <%= l(@event.ends_at, format: :long) %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <hr>
+
+      <div class="event-description margin-top">
+        <strong class="text-muted">Description:</strong>
+        <%= simple_format @event.description %>
+      </div>
+    </div>
+
+  </div>
+</div>
