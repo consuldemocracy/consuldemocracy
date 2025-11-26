@@ -1,7 +1,14 @@
 .poll-gallery {
   .orbit-next,
   .orbit-previous {
+    @include has-fa-icon(play, solid);
     background: rgba(34, 34, 34, 0.25);
+  }
+
+  .orbit-previous {
+    &::before {
+      transform: scaleX(-1);
+    }
   }
 
   .zoom-link {
