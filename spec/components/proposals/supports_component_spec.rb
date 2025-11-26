@@ -33,7 +33,7 @@ describe Proposals::SupportsComponent do
 
       render_inline Proposals::SupportsComponent.new(proposal)
 
-      expect(page).to have_css ".percentage", text: "0%"
+      expect(page).to have_css ".percentage", exact_text: "0%"
     end
 
     it "is between 0.1 from 1 to 0.1% of needed votes" do
@@ -41,7 +41,7 @@ describe Proposals::SupportsComponent do
 
       render_inline Proposals::SupportsComponent.new(proposal)
 
-      expect(page).to have_css ".percentage", text: "0.1%"
+      expect(page).to have_css ".percentage", exact_text: "0.1%"
     end
 
     it "is between 1 and 100 if there are votes but less than needed" do
@@ -49,7 +49,7 @@ describe Proposals::SupportsComponent do
 
       render_inline Proposals::SupportsComponent.new(proposal)
 
-      expect(page).to have_css ".percentage", text: "50%"
+      expect(page).to have_css ".percentage", exact_text: "50%"
     end
 
     it "is 100 if there are more votes than needed" do
@@ -57,7 +57,7 @@ describe Proposals::SupportsComponent do
 
       render_inline Proposals::SupportsComponent.new(proposal)
 
-      expect(page).to have_css ".percentage", text: "100%"
+      expect(page).to have_css ".percentage", exact_text: "100%"
     end
   end
 end

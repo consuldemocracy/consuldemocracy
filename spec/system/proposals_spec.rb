@@ -1543,7 +1543,8 @@ describe "Successful proposals" do
     successful_proposals.each do |proposal|
       within("#proposal_#{proposal.id}_votes") do
         expect(page).not_to have_link "Support"
-        expect(page).to have_content "100% / 100%"
+
+        within(".progress") { expect(page).to have_content "100%", exact: true }
       end
     end
   end
@@ -1555,7 +1556,8 @@ describe "Successful proposals" do
       visit proposal_path(proposal)
       within("#proposal_#{proposal.id}_votes") do
         expect(page).not_to have_link "Support"
-        expect(page).to have_content "100% / 100%"
+
+        within(".progress") { expect(page).to have_content "100%", exact: true }
       end
     end
   end
