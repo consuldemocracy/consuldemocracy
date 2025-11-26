@@ -8,7 +8,7 @@ class Proposals::SupportsComponent < ApplicationComponent
   private
 
     def progress_bar_percentage
-      case proposal.cached_votes_up
+      case proposal.total_votes
       when 0 then 0
       when 1..Proposal.votes_needed_for_success
         (proposal.total_votes.to_f * 100 / Proposal.votes_needed_for_success).floor
