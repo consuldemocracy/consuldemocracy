@@ -8,21 +8,25 @@ class Proposals::SupportsComponent < ApplicationComponent
   private
 
     def progress_bar_percentage
-      case proposal.total_votes
-      when 0 then 0
-      when 1..Proposal.votes_needed_for_success
-        (proposal.total_votes.to_f * 100 / Proposal.votes_needed_for_success).floor
-      else 100
-      end
+      percentage.floor
     end
 
     def supports_percentage
-      percentage = (proposal.total_votes.to_f * 100 / Proposal.votes_needed_for_success)
-      case percentage
-      when 0 then "0%"
-      when 0..0.1 then "0.1%"
-      when 0.1..100 then number_to_percentage(percentage, strip_insignificant_zeros: true, precision: 1)
-      else "100%"
+      number_to_percentage(percentage, strip_insignificant_zeros: true, precision: 1)
+    end
+
+    def percentage
+      if real_percentage > 0 && real_percentage < 0.1
+        0.1
+      else
+        real_percentage
       end
+    end
+
+    def real_percentage
+      [
+        proposal.total_votes.to_f * 100 / Proposal.votes_needed_for_success,
+        100
+      ].min
     end
 end
