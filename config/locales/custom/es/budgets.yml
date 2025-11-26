@@ -63,7 +63,7 @@ es:
           not_logged_in: "Para crear una nueva propuesta de proyecto de inversión debes %{sign_in} o %{sign_up}."
           feasible: Ver las propuestas viables
           unfeasible: Ver las propuestas inviables
-          my_count: "Ya ha creado una propuesta de proyecto de inversión, si quiere cambiarlo vaya a %{link_my_count}."
+          my_count: "Ya ha creado el máximo de propuestas de proyectos de inversión, si quiere cambiarlo vaya a %{link_my_count}."
       share:
         message: "He presentado la propuesta de proyecto de inversión %{title} en %{handle}. ¡Presenta una propuesta tú también!"
       show:
