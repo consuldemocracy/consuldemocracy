@@ -1,0 +1,29 @@
+<div class="sensemaker">
+  <div class="row">
+    <div class="small-12 column">
+      <section>
+        <h1><%= page_title %></h1>
+        <%= introductory_text %>
+      </section>
+
+      <section>
+        <% if has_jobs? %>
+          <% last_job_type = nil %>
+          <% jobs.each do |job| %>
+            <% if last_job_type != job.analysable_type %>
+              <hr>
+              <%= content_tag :h2, t("sensemaker.report_index.group_titles.#{job.analysable_type.underscore}") %>
+            <% end %>
+            <h3><%= target_resource_link_for(job) %></h3>
+            <%= render Sensemaker::ReportJobMetaComponent.new(job) %>
+            <% last_job_type = job.analysable_type %>
+          <% end %>
+        <% else %>
+          <div class="callout primary">
+            <p><%= empty_message %></p>
+          </div>
+        <% end %>
+      </section>
+    </div>
+  </div>
+</div>

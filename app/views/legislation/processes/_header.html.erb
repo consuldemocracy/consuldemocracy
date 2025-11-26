@@ -72,6 +72,8 @@
           <% end %>
         </p>
       <% end %>
+
+      <%= render Sensemaker::ReportLinkComponent.new(@process, link_to_index: true) %>
     </aside>
   </div>
 </div>
