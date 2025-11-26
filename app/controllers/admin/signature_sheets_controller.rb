@@ -20,7 +20,6 @@ class Admin::SignatureSheetsController < Admin::BaseController
 
   def show
     @signature_sheet = SignatureSheet.find(params[:id])
-    @voted_signatures = Vote.where(signature: @signature_sheet.signatures.verified).count
   end
 
   private
