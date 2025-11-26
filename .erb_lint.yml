@@ -27,6 +27,11 @@ linters:
     enabled: true
   FinalNewline:
     enabled: true
+  HardCodedString:
+    enabled: true
+    exclude:
+      - app/views/mailer/proposal_notification_digest.html.erb
+      - app/views/**/*.js.erb
   NoJavascriptTagHelper:
     enabled: true
   ParserErrors:
