@@ -1,0 +1,25 @@
+.admin-signature-sheets-show {
+  dl {
+    line-height: $global-lineheight;
+
+    dd,
+    dt {
+      display: inline-block;
+    }
+
+    dt {
+      font-weight: normal;
+      margin-bottom: 0;
+    }
+
+    dd {
+      font-weight: bold;
+    }
+
+    dd + dt {
+      &::before {
+        @include circle-separator;
+      }
+    }
+  }
+}
