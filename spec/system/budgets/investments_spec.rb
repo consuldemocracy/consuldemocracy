@@ -16,12 +16,23 @@ describe "Budget Investments" do
     it_behaves_like "remotely_translatable",
                     :budget_investment,
                     "budget_investments_path",
-                    { budget_id: "budget_id" }
-
+                    { budget_id: "budget_id" },
+                    provider: :microsoft
+    it_behaves_like "remotely_translatable",
+                    :budget_investment,
+                    "budget_investments_path",
+                    { budget_id: "budget_id" },
+                    provider: :llm
     it_behaves_like "remotely_translatable",
                     :budget_investment,
                     "budget_investment_path",
-                    { budget_id: "budget_id", id: "id" }
+                    { budget_id: "budget_id", id: "id" },
+                    provider: :microsoft
+    it_behaves_like "remotely_translatable",
+                    :budget_investment,
+                    "budget_investment_path",
+                    { budget_id: "budget_id", id: "id" },
+                    provider: :llm
     it_behaves_like "flaggable", :budget_investment
   end
 

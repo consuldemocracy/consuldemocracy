@@ -2,12 +2,13 @@ module RemotelyTranslatable
   private
 
     def detect_remote_translations(*)
-      return [] unless Setting["feature.remote_translations"].present? && api_key_has_been_set_in_secrets?
+      return [] unless remote_translation_enabled?
 
       RemoteTranslation.for(*)
     end
 
-    def api_key_has_been_set_in_secrets?
-      Tenant.current_secrets.microsoft_api_key.present?
+    def remote_translation_enabled?
+      Setting["feature.remote_translations"].present? &&
+        RemoteTranslations::Caller.configured?
     end
 end

@@ -2,6 +2,7 @@ publiccodeYmlVersion: "0.4"
 
 name: Consul Democracy
 url: "https://github.com/consuldemocracy/consuldemocracy.git"
+landingURL: "https://consuldemocracy.org"
 softwareVersion: "2.4.1"
 releaseDate: "2025-11-17"
 logo: "https://github.com/consuldemocracy/consuldemocracy/blob/master/public/consul_logo.svg"

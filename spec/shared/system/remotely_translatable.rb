@@ -1,6 +1,11 @@
 require "sessions_helper"
 
-shared_examples "remotely_translatable" do |factory_name, path_name, path_arguments|
+shared_examples "remotely_translatable" do |factory_name, path_name, path_arguments, provider: :microsoft|
+  let(:translation_provider) do
+    provider == :llm ? RemoteTranslations::Llm : RemoteTranslations::Microsoft
+  end
+  let(:translation_client_class) { translation_provider::Client }
+  let(:available_locales_class) { translation_provider::AvailableLocales }
   let(:arguments) do
     path_arguments.transform_values { |path_to_value| resource.send(path_to_value) }
   end
@@ -10,11 +15,22 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
 
   before do
     Setting["feature.remote_translations"] = true
-    available_locales_response = %w[de en es fr pt zh-Hans]
-    expect(RemoteTranslations::Microsoft::AvailableLocales)
-      .to receive(:locales).at_most(4).times
-      .and_return(available_locales_response)
-    allow(Rails.application.secrets).to receive(:microsoft_api_key).and_return("123")
+
+    available_locales = %w[de en es fr pt zh-Hans]
+    allow(available_locales_class).to receive(:locales).and_return(available_locales)
+
+    allow(RemoteTranslations::Caller).to receive_messages(translation_provider: translation_provider,
+                                                          llm?: provider == :llm)
+
+    if provider == :llm
+      Setting["llm.provider"] = "OpenAI"
+      Setting["llm.model"] = "gpt-4o"
+      Setting["llm.use_llm_for_translations"] = true
+      stub_secrets(llm: { openai_api_key: "1234" })
+    else
+      Setting["llm.provider"] = Setting["llm.model"] = Setting["llm.use_llm_for_translations"] = nil
+      allow(Rails.application.secrets).to receive(:microsoft_api_key).and_return("123")
+    end
   end
 
   context "Button to request remote translation" do
@@ -151,7 +167,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
     describe "without delayed jobs" do
       scenario "content is immediately translated" do
         response = generate_response(resource)
-        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+        expect_any_instance_of(translation_client_class).to receive(:call).and_return(response)
         visit path_in_spanish
 
         expect(page).not_to have_content response.first
@@ -164,7 +180,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
 
       scenario "request a translation of an already translated text" do
         response = generate_response(resource)
-        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+        expect_any_instance_of(translation_client_class).to receive(:call).and_return(response)
 
         in_browser(:one) do
           visit path_in_spanish

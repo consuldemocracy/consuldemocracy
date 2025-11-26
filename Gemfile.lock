@@ -236,6 +236,7 @@ GEM
       execjs
       multi_json (>= 1.3)
       rake
+    event_stream_parser (1.0.0)
     execjs (2.10.0)
     exiftool (1.2.6)
       json
@@ -254,6 +255,8 @@ GEM
       logger
     faraday-follow_redirects (0.3.0)
       faraday (>= 1, < 3)
+    faraday-multipart (1.1.1)
+      multipart-post (~> 2.0)
     faraday-net_http (3.4.1)
       net-http (>= 0.5.0)
     faraday-retry (2.3.2)
@@ -403,6 +406,7 @@ GEM
     multi_json (1.15.0)
     multi_xml (0.7.2)
       bigdecimal (~> 3.1)
+    multipart-post (2.4.1)
     mutex_m (0.3.0)
     net-http (0.7.0)
       uri
@@ -675,6 +679,15 @@ GEM
     ruby-vips (2.2.3)
       ffi (~> 1.12)
       logger
+    ruby_llm (1.6.4)
+      base64
+      event_stream_parser (~> 1)
+      faraday (>= 1.10.0)
+      faraday-multipart (>= 1)
+      faraday-net_http (>= 1)
+      faraday-retry (>= 1)
+      marcel (~> 1.0)
+      zeitwerk (~> 2)
     rubyzip (2.4.1)
     rugged (1.6.3)
     rvm1-capistrano3 (1.4.0)
@@ -901,6 +914,7 @@ DEPENDENCIES
   rubocop-rails (~> 2.33.4)
   rubocop-rspec (~> 3.7.0)
   rubocop-rspec_rails (~> 2.31.0)
+  ruby_llm (~> 1.6.4)
   rvm1-capistrano3 (~> 1.4.0)
   sassc-embedded (~> 1.77.5)
   sassc-rails (~> 2.1.2)

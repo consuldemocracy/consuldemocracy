@@ -4,7 +4,7 @@ include RemotelyTranslatable
 describe RemotelyTranslatable do
   before do
     Setting["feature.remote_translations"] = true
-    allow(Rails.application.secrets).to receive(:microsoft_api_key).and_return("123")
+    allow(RemoteTranslations::Caller).to receive(:configured?).and_return(true)
   end
 
   describe "#detect_remote_translations" do
@@ -49,8 +49,8 @@ describe RemotelyTranslatable do
       end
     end
 
-    it "When api key has not been set in secrets should not detect remote_translations" do
-      allow(Rails.application.secrets).to receive(:microsoft_api_key).and_return(nil)
+    it "When remote translations are not configured should not detect remote_translations" do
+      allow(RemoteTranslations::Caller).to receive(:configured?).and_return(false)
       proposal = create(:proposal)
       comment = create(:comment, commentable: proposal)
 
