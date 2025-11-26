@@ -2,8 +2,38 @@
 
 <% if can?(:create, Budget::Investment.new(budget: @budget)) %>
   <% if current_user %>
-    <%= link_to t("budgets.investments.index.sidebar.create"),
-               new_budget_investment_path(budget_id: @budget.id), class: "button budget expanded" %>
+     <% if !current_user.organization? && Budget::Investment.valuating_investment(current_user.id, @budget.id).count > 0 %> 
+                      <div class="callout primary margin-top">
+                        <%= sanitize(
+                              t("budgets.investments.index.sidebar.my_count",
+                                link_my_count: link_to(
+                                  t("budgets.investments.index.sidebar.link_my_count"),
+                                  user_path(current_user),
+                                  rel: "nofollow",
+                                  title: t("budgets.investments.index.sidebar.link_my_count"),
+                                  class: "my_count-link #{'active' if controller_name == 'users'}"
+                                )
+                              )
+                            ) %>
+                        </div>
+       <% elsif current_user.organization? && Budget::Investment.valuating_investment_number(current_user.id, @budget.id).count > 4 %> 
+                     <div class="callout primary margin-top">
+                      <%= sanitize(
+                            t("budgets.investments.index.sidebar.my_count",
+                              link_my_count: link_to(
+                                t("budgets.investments.index.sidebar.link_my_count"),
+                                user_path(current_user),
+                                rel: "nofollow",
+                                title: t("budgets.investments.index.sidebar.link_my_count"),
+                                class: "my_count-link #{'active' if controller_name == 'users'}"
+                              )
+                            )
+                          ) %>
+                      </div>
+      <% else %>
+          <%= link_to t("budgets.investments.index.sidebar.create"),
+                new_budget_investment_path(budget_id: @budget.id), class: "button budget expanded" %>
+      <% end %>
   <% else %>
     <div class="callout warning">
       <%= sanitize(t("budgets.investments.index.sidebar.verified_only",

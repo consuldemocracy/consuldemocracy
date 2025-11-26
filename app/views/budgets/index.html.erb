@@ -30,25 +30,36 @@
           <%= link_to t("budgets.index.section_header.all_phases"), "#all_phases" %>
 
           <% if current_budget.accepting? %>
-            <% if current_user %>
-              <% if current_user.level_two_or_three_verified? %>
-                    <%= link_to t("budgets.investments.index.sidebar.create"),
-                                new_budget_investment_path(current_budget),
-                                class: "button margin-top expanded" %>  
-              <% else %>
-                <div class="callout warning margin-top">
-                  <%= sanitize(t("budgets.investments.index.sidebar.verified_only",
-                        verify: link_to_verify_account)) %>
-                </div>
-              <% end %>
-            <% else %>
-              <div class="callout primary margin-top">
-                <%= sanitize(t("budgets.investments.index.sidebar.not_logged_in",
-                      sign_in: link_to_signin, sign_up: link_to_signup)) %>
-              </div>
-            <% end %>
-          <% end %>
-
+			  <% if current_user %>
+			    <% if current_user.level_two_or_three_verified? %>
+			      <%= link_to t("budgets.investments.index.sidebar.create"),
+			                  new_budget_investment_path(current_budget),
+			                  class: "button margin-top expanded" %>  
+			    <% else %>
+			      <div class="callout warning margin-top">
+			        <%= sanitize(t("budgets.investments.index.sidebar.verified_only",
+			                       verify: link_to_verify_account)) %>
+			      </div>
+			    <% end %>
+			  <% else %>
+			    <div class="callout primary margin-top">
+			      <% if faseapoyo? %>
+			        <%= sanitize(t("budgets.investments.index.sidebar.not_logged_in",
+			                       sign_in: link_to(t("users.signin"),
+			                                        user_codigo_omniauth_authorize_path,
+			                                        method: :post,
+			                                        data: { turbo: false }),
+			                       sign_up: link_to_signup)) %>
+			      <% else %>
+			         <%= sanitize(t("budgets.investments.index.sidebar.not_logged_in",
+			                       sign_in: link_to(t("users.signin"),
+			                                        new_user_session_path,
+			                                        rel: "nofollow"),
+			                       sign_up: link_to_signup)) %>	
+			      <% end %>
+			    </div>
+			  <% end %>
+			<% end %>
         <% if can?(:read_results, current_budget) %>
           <%= link_to t("budgets.show.see_results"),
                       budget_results_path(current_budget, heading_id: current_budget.headings.first),

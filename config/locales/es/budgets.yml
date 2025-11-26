@@ -103,7 +103,7 @@ es:
           by_feasibility: Por viabilidad
           feasible: Ver los proyectos viables
           unfeasible: Ver los proyectos inviables
-          my_count: "Ya ha creado un proyecto de gasto, si quiere cambiarlo vaya a %{link_my_count}."
+          my_count: "Ya ha creado el máximo de propuestas de proyectos de inversión, si quiere cambiarlo vaya a %{link_my_count}."
           link_my_count: Mi contenido
           message_error_my_count: "No tienes permiso para acceder a esta página."
           message_error_my_propuestas: "Ya ha creado 5 propuestas de proyecto, no puede crear ninguna propuesta más."

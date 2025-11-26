@@ -72,8 +72,20 @@
               <% end %>
             <% else %>
               <div class="callout primary margin-top">
-                <%= sanitize(t("budgets.investments.index.sidebar.not_logged_in",
-                      sign_in: link_to_signin, sign_up: link_to_signup)) %>
+                <% if faseapoyo? %>
+			        <%= sanitize(t("budgets.investments.index.sidebar.not_logged_in",
+			                       sign_in: link_to(t("users.signin"),
+			                                        user_codigo_omniauth_authorize_path,
+			                                        method: :post,
+			                                        data: { turbo: false }),
+			                       sign_up: link_to_signup)) %>
+			      <% else %>
+			        <%= sanitize(t("budgets.investments.index.sidebar.not_logged_in",
+			                       sign_in: link_to(t("users.signin"),
+			                                        new_user_session_path,
+			                                        rel: "nofollow"),
+			                       sign_up: link_to_signup)) %>	  
+			      <% end %>         
               </div>
             <% end %>
           <% end %>
