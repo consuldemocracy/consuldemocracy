@@ -1,3 +1,6 @@
-<%= button_to path, default_options.merge(options) do %>
+<%# app/components/shared/vote_button_component.html.erb %>
+
+<%= button_to path, component_options.merge(options) do %>
+  <%# This is all you need. The icon will be added by SASS. %>
   <span class="show-for-sr"><%= options[:title] %></span>
 <% end %>

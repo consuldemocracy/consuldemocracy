@@ -839,6 +839,8 @@ es:
     anonymous: Demasiados votos anónimos, para poder votar %{verify_account}.
     disagree: No estoy de acuerdo
     disagree_label: "No estoy de acuerdo con %{title}"
+    neutral: tengo opinión
+    neutral_label: "No tengo opinión sobre %{title}"
     organizations: Las organizaciones no pueden votar.
     supports: Apoyos
     verified_only: Las propuestas sólo pueden ser votadas por usuarios verificados, %{verify_account}.
