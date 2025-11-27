@@ -63,5 +63,14 @@ describe RemoteTranslation, :remote_translations do
     it "after create enqueue Delayed Job" do
       expect { remote_translation.save }.to change { Delayed::Job.count }.by(1)
     end
+
+    it "enqueues the job after committing the transaction" do
+      ActiveRecord::Base.transaction do
+        remote_translation.save!
+        expect(Delayed::Job.count).to eq 0
+      end
+
+      expect(Delayed::Job.count).to eq 1
+    end
   end
 end
