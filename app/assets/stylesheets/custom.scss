@@ -18,6 +18,11 @@ a, .ava-link {
 text-decoration: underline;
 }
 
+.is-association {
+    color: white !important;
+    background: #7BC8C3;
+}
+
 .callout.primary a {
   color: $brand !important;
 }
@@ -1411,5 +1416,10 @@ body.iframed {
 
 .highlighted + span {
     color: #990A42;
+    font-weight: bold;
+}
+
+.highlighted-ava {
+    color: #7BC8C3;
     font-weight: bold;
 }
