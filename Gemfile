@@ -62,7 +62,7 @@ gem "sprockets-rails", "~> 3.5.2", require: "sprockets/railtie"
 gem "turbolinks", "~> 5.2.1"
 gem "turnout", "~> 2.5.0"
 gem "uglifier", "~> 4.2.1"
-gem "view_component", "~> 3.23.2"
+gem "view_component", "~> 4.1.1"
 gem "whenever", "~> 1.0.0", require: false
 gem "wicked_pdf", "~> 2.8.2"
 gem "wkhtmltopdf-binary", "~> 0.12.6"
