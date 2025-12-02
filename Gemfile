@@ -110,7 +110,7 @@ group :development do
   gem "rubocop-performance", "~> 1.26.1", require: false
   gem "rubocop-rails", "~> 2.33.4", require: false
   gem "rubocop-rspec", "~> 3.7.0", require: false
-  gem "rubocop-rspec_rails", "~> 2.31.0", require: false
+  gem "rubocop-rspec_rails", "~> 2.32.0", require: false
   gem "rvm1-capistrano3", "~> 1.4.0", require: false
   gem "web-console", "~> 4.2.1"
 end
