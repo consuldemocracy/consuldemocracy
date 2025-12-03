@@ -121,7 +121,6 @@ pl:
       recommendations_title: Rekomendacje do utworzenia debaty
       start_new: Rozpocznij debatę
     show:
-      author_deleted: Użytkownik usunięty
       comments_title: Komentarze
       edit_debate_link: Edytuj
       flag: Ta debata została oznaczona jako nieodpowiednia przez kilku użytkowników.
@@ -375,7 +374,6 @@ pl:
       archived: "Niniejszy wniosek został zarchiwizowany i nie może zbierać poparcia."
       successful: "Ten wniosek osiągnął wymagane poparcie."
     show:
-      author_deleted: Użytkownik usunięty
       code: "Kod wniosku:"
       comments_tab: Komentarze
       flag: Ten wniosek został oznaczona jako nieodpowiedni przez kilku użytkowników.
