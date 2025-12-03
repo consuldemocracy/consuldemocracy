@@ -104,7 +104,6 @@ ka:
       share:
         message: "მე შევქმენი საინვესტიციო პროექტი %{title} %{handle}-ში. შენც შექმენი საინვესტიციო პროექტი!"
       show:
-        author_deleted: მომხმარებელი წაშლილია
         price_explanation: ფასის განმარტება
         unfeasibility_explanation: განუხორციელებადობის განმარტება
         code: "საინვესტიციო პროექტის კოდი: <strong>%{code}</strong>"
