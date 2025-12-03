@@ -121,7 +121,6 @@ bg:
       share:
         message: "Създадох инвестиционния проект %{title} в %{handle}. Създайте инвестиционен проект също!"
       show:
-        author_deleted: Потребителят е изтрит
         price_explanation: Обяснение на цената
         unfeasibility_explanation: Обяснение на неизпълнимостта
         code: "Код на инвестиционния проект: <strong>%{code}</strong>"
