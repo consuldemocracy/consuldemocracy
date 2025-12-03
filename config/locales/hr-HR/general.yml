@@ -124,7 +124,6 @@ hr:
       recommendations_title: Preporuke za stvaranje rasprave
       start_new: Započnite raspravu
     show:
-      author_deleted: Korisnik obrisan
       comments_title: Kometari
       edit_debate_link: Uredi
       flag: Rasprava je označena kao neprimjerena od strane više korisnika.
@@ -403,7 +402,6 @@ hr:
       successful: "Prijedlog je dobio dovoljno potpore."
       selected: "Odabrani prijedlog"
     show:
-      author_deleted: Korisnik obrisan
       code: "Kod prijedloga:"
       comments_tab: Komentari
       dashboard_proposal_link: Kontrolna ploča
