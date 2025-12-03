@@ -84,7 +84,6 @@ ka:
         confidence_score: მაღალი შეფასების მქონე
         created_at: უახლესი
         hot_score: ყველაზე აქტიური
-        most_commented: ყველაზე მეტი კომენტარის მქონე
         relevance: შესაბამისობა
         recommendations: რეკომენდაციები
       recommendations:
@@ -120,7 +119,6 @@ ka:
       recommendations_title: რეკომენდაციები დებატების შესაქმნელად
       start_new: დებატების დაწყება
     show:
-      author_deleted: მომხმარებელი წაშლილია
       comments_title: კომენტარები
       edit_debate_link: რედაქტირება
       flag: მომხმარებელთა გარკვეულმა ნაწილმა ეს დებატები გაასაჩივრა.
@@ -391,7 +389,6 @@ ka:
       successful: "ამ ინიციატივამ მიაღწია მხარდამჭერთა საჭირო რაოდენობას."
       selected: "შერჩეული ინიციატივა"
     show:
-      author_deleted: მომხმარებელი წაშლილია
       code: "ინიციატივის კოდი:"
       comments_tab: კომენტარები
       dashboard_proposal_link: მოქმედებათა დაფა

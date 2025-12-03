@@ -88,7 +88,6 @@ tr:
         confidence_score: en yüksek puanlı
         created_at: en yeni
         hot_score: en etkin
-        most_commented: en çok yorum yapılan
         relevance: ilgili
         recommendations: öneriler
       recommendations:
@@ -124,7 +123,6 @@ tr:
       recommendations_title: Bir tartışma oluşturmak için öneriler
       start_new: Bir tartışma başlat
     show:
-      author_deleted: Kullanıcı silindi
       comments_title: Yorumlar
       edit_debate_link: Düzenle
       flag: Bu tartışma birkaç kullanıcı tarafından uygunsuz olarak işaretlenmiş.
@@ -410,7 +408,6 @@ tr:
       successful: "Bu önerge gerekli desteği aldı."
       selected: "Seçilmiş önerge"
     show:
-      author_deleted: Kullanıcı silindi
       code: "Önerge kodu:"
       comments_tab: Yorumlar
       dashboard_proposal_link: Pano

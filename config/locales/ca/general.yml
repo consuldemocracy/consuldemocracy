@@ -84,7 +84,6 @@ ca:
         confidence_score: Més avalades
         created_at: Noves
         hot_score: Més actives avui
-        most_commented: Més comentades
         relevance: Més rellevants
         recommendations: recomanacions
       recommendations:
@@ -120,7 +119,6 @@ ca:
       recommendations_title: Recomendacions per a crear un debat
       start_new: Comença un nou debat
     show:
-      author_deleted: Usuari eliminat
       comments_title: Comentarios
       edit_debate_link: Editar proposta
       flag: Aquest debat ha sigut marcat com a inadequat per diversos usuaris.
@@ -391,7 +389,6 @@ ca:
       successful: "Aquesta proposta ha arribat als suports necessaris."
       selected: "Proposta seleccionada"
     show:
-      author_deleted: Usuari eliminat
       code: "Codi de la proposta:"
       comments_tab: Comentarios
       dashboard_proposal_link: Panell

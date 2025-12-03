@@ -77,7 +77,6 @@ zh-CN:
         confidence_score: 最高评分
         created_at: 最新
         hot_score: 最活跃
-        most_commented: 最多评论
         relevance: 相关性
         recommendations: 推荐
       recommendations:
@@ -113,7 +112,6 @@ zh-CN:
       recommendations_title: 创建辩论的建议
       start_new: 开始辩论
     show:
-      author_deleted: 已删除的用户
       comments_title: 评论
       edit_debate_link: 编辑
       flag: 此辩论已被几个用户标记为不恰当。
@@ -342,7 +340,6 @@ zh-CN:
       archived: "此提议已存档，无法再收集支持。"
       successful: "此提议已达到所需要的支持。"
     show:
-      author_deleted: 已删除的用户
       code: "提议编码："
       comments_tab: 评论
       flag: 此提议已被几个用户标记为不恰当。

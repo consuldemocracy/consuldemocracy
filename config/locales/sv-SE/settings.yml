@@ -240,3 +240,11 @@ sv:
       more_info_link_description: Länk som visas i samtyckes-bannern till cookie-policy-sidan.
       version_name: Versionsnamn
       version_name_description: Ändra versionsnamnet för att tvinga alla användare att gå genom cookie-samtyckesprocessen igen. Denna funktion kan vara praktisk när införande av drastiska cookie-policy-ändringar kräver bekräftelse av ny användare.
+    llm:
+      title: LLM-inställningar
+      provider: "LLM-leverantör"
+      provider_description: "Leverantörer inaktiveras tills autentiseringsuppgifter har konfigurerats i secrets.yml."
+      use_llm_for_translations: "Innehållsöversättning"
+      use_llm_for_translations_description: "Använd LLM för innehållsöversättningar och med företräde framför Microsoft-översättningstjänster."
+      model: "Modell"
+      model_description: "LLM-modellen som ska användas."

@@ -80,7 +80,6 @@ sq:
         confidence_score: më të vlerësuarat
         created_at: më të rejat
         hot_score: më aktive
-        most_commented: më të komentuarit
         relevance: lidhja
         recommendations: rekomandimet
       recommendations:
@@ -116,7 +115,6 @@ sq:
       recommendations_title: Rekomandime për krijimin e një debati
       start_new: Filloni një debat
     show:
-      author_deleted: Përdoruesi u fshi
       comments_title: Komentet
       edit_debate_link: Ndrysho
       flag: Ky debat është shënuar si i papërshtatshëm nga disa përdorues.
@@ -351,7 +349,6 @@ sq:
       archived: "Ky propozim është arkivuar dhe nuk mund të mbledhë mbështetje. "
       successful: "Ky propozim ka arritur mbështetjen e kërkuar."
     show:
-      author_deleted: Përdoruesi u fshi
       code: "Kodi Propozimit"
       comments_tab: Komentet
       flag: Ky propozim është shënuar si i papërshtatshëm nga disa përdorues.

@@ -69,7 +69,6 @@ ast:
         confidence_score: meyor valoraes
         created_at: Nuevas
         hot_score: Más activas hoy
-        most_commented: Más comentadas
         relevance: Más relevantes
       search_form:
         button: Atopar
@@ -90,7 +89,6 @@ ast:
       recommendations_title: Recomendaciones para crear un debate
       start_new: Empezar un debate
     show:
-      author_deleted: Usuariu esaniciáu
       comments_title: Comentarios
       edit_debate_link: Editar propuesta
       flag: Este debate ha sido marcado como inapropiado por varios usuarios.
@@ -290,7 +288,6 @@ ast:
       total_percent: 100%
       archived: "Esta propuesta ha sido archivada y ya no puede recoger apoyos."
     show:
-      author_deleted: Usuariu esaniciáu
       code: "Código de la propuesta:"
       comments_tab: Comentarios
       flag: Esta propuesta ha sido marcada como inapropiada por varios usuarios.

@@ -17,6 +17,9 @@ id:
     letter:
       alert:
         unconfirmed_code: Anda belum memasukkan kode verifikasi
+      create:
+        flash:
+          success: Terima kasih telah mengajukan permintaan <b>kode keamanan maksimum (hanya diperlukan untuk tahap akhir pemungutan suara)</b>. Dalam beberapa hari, kami akan mengirimkan kode tersebut ke alamat yang tercatat dalam sistem kami. Jika Anda menginginkan, Anda juga dapat mengambil kode tersebut secara langsung di salah satu Citizen Support Office.
       edit:
         see_all: Melihat proposal
         title: Surat yang diminta
@@ -25,6 +28,7 @@ id:
       new:
         explanation: "Untuk berpartisipasi pada akhir pemungutan suara, anda dapat:"
         go_to_index: Melihat proposal
+        office: Lakukan verifikasi di salah satu Citizen Support Office
         send_letter: Kirimkan saya sebuah surat dengan kode
         title: Selamat!
         user_permission_info: Dengan akun Anda, Anda dapat...
@@ -51,6 +55,7 @@ id:
           spanish_id: DNI
         error_not_allowed_age: Anda tidak memiliki usia yang dibutuhkan untuk berpartisipasi
         error_not_allowed_postal_code: Supaya bisa diverifikasi, anda harus terdaftar.
+        error_verifying_census: Sistem sensus tidak dapat memverifikasi informasi Anda. Harap pastikan bahwa data sensus Anda sudah benar dengan menghubungi Dewan Kota atau mengunjungi salah satu Kantor Layanan Warga.
         form_errors: mencegah verifikasi tempat tinggal anda
         postal_code_note: Untuk memverifikasi akun anda harus terdaftar
         terms: syarat dan ketentuan akses
@@ -68,6 +73,7 @@ id:
       new:
         phone: Masukan nomor ponsel anda untuk menerima kode
         phone_format: "<strong><em>(Contoh: 612345678 atau +34612345678)</em></strong>"
+        phone_note: Kami hanya menggunakan nomor ponsel Anda untuk mengirimkan kode verifikasi, tidak akan menghubungi Anda untuk kepentingan lain.
         submit_button: Kirim
         title: Kirim kode konfirmasi
       update:
@@ -85,6 +91,7 @@ id:
     user_permission_proposal: Membuat proposal baru
     user_permission_support_proposal: Mendukung proposal*
     user_permission_votes: Berpartisipasi pada akhir voting*
+    verification_needed: Verifikasi tambahan diperlukan
     verified_user:
       form:
         submit_button: Kirim kode

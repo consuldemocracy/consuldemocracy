@@ -52,8 +52,6 @@ sq:
         tags_instructions: "Etiketoni këtë propozim. Ju mund të zgjidhni nga kategoritë e propozuara ose të shtoni tuajën"
         tags_label: Etiketë
         tags_placeholder: "Futni etiketimet që dëshironi të përdorni, të ndara me presje (',')"
-        map_location: "Vendndodhja në hartë"
-        map_location_instructions: "Lundroni në hartë në vendndodhje dhe vendosni shënuesin."
       index:
         title: Buxhetet  pjesëmarrës
         unfeasible: Investimet e papranueshme
@@ -88,7 +86,6 @@ sq:
       share:
         message: "Kam krijuar projektin e investimeve%{title} në %{handle}. Krijoni një projekt investimi edhe ju!"
       show:
-        author_deleted: Përdoruesi u fshi
         price_explanation: Shpjegimi i çmimit
         unfeasibility_explanation: Shpjegim i parealizuar
         code: "Kodi i projekteve të investimeve: <strong>%{code}</strong>"
