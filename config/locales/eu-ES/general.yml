@@ -115,7 +115,6 @@ eu:
       recommendations_title: Eztabaida bat sortzeko gomendioak
       start_new: Eztabaida bat hasi
     show:
-      author_deleted: Erabiltzailea ezabatuta
       comments_title: Iruzkinak
       edit_debate_link: Eztabaida editatu
       flag: Eztabaida hau desegoki moduan markatu da zenbait erabiltzaileengaitik.
@@ -341,7 +340,6 @@ eu:
       total_percent: '%100'
       archived: "Proposamen hau artxibatu egin da eta ezin du babesik jaso."
     show:
-      author_deleted: Erabiltzailea ezabatuta
       code: "Proposamen kodea:"
       comments_tab: Iruzkinak
       flag: Eztabaida hau desegoki moduan markatu da zenbait erabiltzaileengaitik.
