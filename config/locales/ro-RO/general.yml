@@ -127,7 +127,6 @@ ro:
       recommendations_title: Recomandări pentru crearea unei dezbateri
       start_new: Începe o dezbatere
     show:
-      author_deleted: Utilizator șters
       comments_title: Comentarii
       edit_debate_link: Editează
       flag: Această dezbatere a fost semnalizată ca fiind inadecvată de mai mulți utilizatori.
@@ -408,7 +407,6 @@ ro:
       successful: "Această propunere a ajuns la numărul de susțineri necesare."
       selected: "Propunere selectată"
     show:
-      author_deleted: Utilizator șters
       code: "Codul propunerii:"
       comments_tab: Comentarii
       dashboard_proposal_link: Tablou de bord
