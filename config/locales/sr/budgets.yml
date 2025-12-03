@@ -116,7 +116,6 @@ sr:
       share:
         message: "Креирао сам инвестициони пројекат %{title} у %{handle}. Креирајте и Ви инвестициони пројекат!"
       show:
-        author_deleted: Корисник избрисан
         price_explanation: Објашњење цене
         unfeasibility_explanation: Неизводљиво објашњење
         code: "Лозинка инвестиционог пројекта: <strong>%{code}</strong>"
