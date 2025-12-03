@@ -115,7 +115,6 @@ val:
       recommendations_title: Recomanacions per a crear un debat
       start_new: Iniciar un debat
     show:
-      author_deleted: Usuari eliminat
       comments_title: Comentaris
       edit_debate_link: Editar
       flag: Este debat ha sigut marcat com a inapropiat per alguns usuaris.
@@ -355,7 +354,6 @@ val:
       archived: "Aquesta proposta ha sigut arxivada i ja no pot recollir avals."
       successful: "Aquesta proposta ha asolit els avals necesaris."
     show:
-      author_deleted: Usuari eliminat
       code: "Codi de la proposta:"
       comments_tab: Comentaris
       dashboard_proposal_link: Panell
