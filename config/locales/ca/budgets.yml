@@ -113,7 +113,6 @@ ca:
       share:
         message: "Vaig crear el projecte d’inversió %{title} a %{handle}. Crea també un projecte d’inversió!"
       show:
-        author_deleted: Usuari eliminat
         price_explanation: Informe de cost <small>(opcional, dada pública)</small>
         unfeasibility_explanation: Informe de inviabilitat
         code: "Codi del projecte d'inversió: <strong>%{code}</strong>"
