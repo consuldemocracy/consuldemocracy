@@ -123,7 +123,6 @@ tr:
       share:
         message: "%{title} konulu %{handle} yatırım projesini oluşturdum. Siz de bir yatırım projesi oluşturun!"
       show:
-        author_deleted: Kullanıcı silindi
         price_explanation: Maliyet açıklaması
         unfeasibility_explanation: Uygulanabilir bulunmama açıklaması
         code: "Yatırım projesi kodu: <strong>%{code}</strong>"
