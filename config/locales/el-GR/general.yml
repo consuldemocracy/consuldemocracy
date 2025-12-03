@@ -119,7 +119,6 @@ el:
       recommendations_title: Συστάσεις για τη δημιουργία μιας συζήτησης
       start_new: Ξεκινήστε μια συζήτηση
     show:
-      author_deleted: Χρήστης διεγραμμένος
       comments_title: Σχόλια
       edit_debate_link: Επεξεργασία
       flag: Αυτή η συζήτηση έχει επισημανθεί ως ακατάλληλη από πολλούς χρήστες.
@@ -379,7 +378,6 @@ el:
       successful: "Η πρόταση αυτή έχει φτάσει τις απαιτούμενες υποστηρίξεις."
       selected: "Επιλεγμένη προτάση"
     show:
-      author_deleted: Ο χρήστης έχει διαγραφεί
       code: "Κωδικός πρότασης:"
       comments_tab: Σχόλια
       dashboard_proposal_link: Πίνακας ελέγχου
