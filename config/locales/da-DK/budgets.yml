@@ -123,7 +123,6 @@ da:
       share:
         message: "Jeg har oprettet et forslag %{title} i %{handle}. Du kan gøre det samme!"
       show:
-        author_deleted: Bruger slettet
         price_explanation: Forklaring på pris
         unfeasibility_explanation: Forklaring på, hvorfor projektet ikke kan gennemføres
         code: "Kode for forslag: <strong>%{code}</strong>"
