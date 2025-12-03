@@ -89,7 +89,6 @@ oc:
       share:
         message: "Creèri lo projècti d’inversion %{title} a %{handle}.	Crèa tanben un projècti d’inversion."
       show:
-        author_deleted: Usatgièr eliminat
         price_explanation: Informe de còst <small>(opcional, dada pública)</small>
         unfeasibility_explanation: Informe de inviabilitat
         code: "Còdi del projècte d'inversion: <strong>%{code}</strong>"
