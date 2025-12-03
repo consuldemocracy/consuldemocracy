@@ -135,7 +135,6 @@ gd:
       share:
         message: "Chruthaich mi am pròiseact tasgaidh %{title} ann an %{handle}. Cruthaich pròiseact tasgaidh cuideachd!"
       show:
-        author_deleted: Cleachdaiche air a sguabadh às
         price_explanation: Mìneachadh air a’ phrìs
         unfeasibility_explanation: Mìneachadh air carson nach eil e comasach
         code: "Còd a’ phròiseact tasgaidh: <strong>%{code}</strong>"
