@@ -132,7 +132,6 @@ gd:
       recommendations_title: Molaidhean airson deasbad a chruthachadh
       start_new: Tòisich deasbad
     show:
-      author_deleted: Cleachdaiche air a sguabadh às
       comments_title: Beachdan
       edit_debate_link: Deasaich
       flag: Tha grunn chleachdaichean air comharrachadh gu bheil an deasbad seo neo-iomchaidh.
@@ -427,7 +426,6 @@ gd:
       successful: "Fhuair am moladh seo an ìre de thaic a tha a dhìth."
       selected: "Moladh taghte"
     show:
-      author_deleted: Cleachdaiche air a sguabadh às
       code: "Còd a’ mholaidh:"
       comments_tab: Beachdan
       dashboard_proposal_link: Deas-bhòrd
