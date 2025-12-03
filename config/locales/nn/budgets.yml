@@ -27,7 +27,6 @@ nn:
         orders:
           confidence_score: mest populære
       show:
-        author_deleted: Brukeren er slettet
         share: Del
         supports: Støtte
         comments_tab: Kommentarer
