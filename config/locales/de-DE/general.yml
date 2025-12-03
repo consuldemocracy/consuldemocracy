@@ -122,7 +122,6 @@ de:
       recommendations_title: Empfehlungen für die Erstellung einer Diskussion
       start_new: Eine Diskussion starten
     show:
-      author_deleted: Benutzer*in gelöscht
       comments_title: Kommentare
       edit_debate_link: Bearbeiten
       flag: Diese Diskussion wurde von verschiedenen Benutzern als unangebracht gemeldet.
@@ -401,7 +400,6 @@ de:
       successful: "Dieser Vorschlag hat die erforderliche Unterstützung erreicht."
       selected: "Ausgewählter Vorschlag"
     show:
-      author_deleted: Benutzer*in gelöscht
       code: "Antrags-Code:"
       comments_tab: Kommentare
       dashboard_proposal_link: Dashboard
