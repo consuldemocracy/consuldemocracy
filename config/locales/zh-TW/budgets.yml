@@ -82,7 +82,6 @@ zh-TW:
           confidence_score: 最高評分
           price: 按價格
       show:
-        author_deleted: 用戶已刪除
         price_explanation: 價格說明
         unfeasibility_explanation: 不可行的解釋
         code: "投資項目代碼： <strong>%{code}</strong>"
