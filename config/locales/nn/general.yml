@@ -119,7 +119,6 @@ nn:
       recommendations_title: Anbefalinger for debattinnlegg
       start_new: Start en debatt
     show:
-      author_deleted: Brukeren er slettet
       comments_title: Kommentarer
       edit_debate_link: Rediger
       flag: Denne debatten har blitt flagget som upassende av flere brukere.
@@ -381,7 +380,6 @@ nn:
       successful: "Dette forslaget har nådd nok støtte."
       selected: "Valgt forslag"
     show:
-      author_deleted: Bruker er slettet
       code: "Forslagskode:"
       comments_tab: Kommentarer
       dashboard_proposal_link: Dashboard
