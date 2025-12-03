@@ -112,7 +112,6 @@ zh-TW:
       recommendations_title: 創建一個辯論的推薦
       start_new: 開始一個辯論
     show:
-      author_deleted: 用戶已刪除
       comments_title: 評論
       edit_debate_link: 編輯
       flag: 此辯論已被一些用戶標記為不適當。
@@ -340,7 +339,6 @@ zh-TW:
       archived: "此建議已存檔，無法再收集支持。"
       successful: "此建議已得到所需的支持。"
     show:
-      author_deleted: 用戶已刪除
       code: "建議編號："
       comments_tab: 評論
       flag: 此建議已被一些用戶標記為不適當。
