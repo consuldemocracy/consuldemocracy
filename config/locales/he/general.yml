@@ -132,7 +132,6 @@ he:
       recommendations_title: המלצות ליצירת דיון
       start_new: פתיחת דיון חדש
     show:
-      author_deleted: משתמש/ת זה/ו נמחק/ה
       comments_title: הערות
       edit_debate_link: ערוך
       flag: דיון זה סומן כבלתי-ראוי על ידי מספר משתמשים
@@ -415,7 +414,6 @@ he:
       successful: "הצעה זו הגיעה לתמיכה הנדרשת."
       selected: "הצעה נבחרת"
     show:
-      author_deleted: משתמש/ת זה/ו נמחק/ה
       code: "קוד ההצעה:"
       comments_tab: הערות
       dashboard_proposal_link: לוח ניהול
