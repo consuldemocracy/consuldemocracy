@@ -118,7 +118,6 @@ bs:
       recommendations_title: Preporuke za pokretanje debate
       start_new: Pokreni debatu
     show:
-      author_deleted: Korisnik obrisan
       comments_title: Komentari
       edit_debate_link: Edituj
       flag: Nekoliko korisnika je označilo debatu neprikladnom.
@@ -379,7 +378,6 @@ bs:
       archived: "Prijedlog je arhiviran, nije moguće dati podršku."
       successful: "Prijedlog je dobio potrebnu podršku."
     show:
-      author_deleted: Korisnik obrisan
       code: "Šifra prijedloga:"
       comments_tab: Komentari
       dashboard_proposal_link: Kontrolna ploča
