@@ -24,7 +24,6 @@ fi:
           random: satunnainen
           confidence_score: korkeimmin arvioitu
       show:
-        author_deleted: Käyttäjä poistettu
         share: Jaa
         votes: Äänet
         price: Hinta
