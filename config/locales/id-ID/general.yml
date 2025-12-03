@@ -107,7 +107,6 @@ id:
       recommendations_title: Rekomendasi untuk membuat topik
       start_new: Memulai debat
     show:
-      author_deleted: Pengguna dihapus
       comments_title: Komentar
       edit_debate_link: Sunting
       flag: Perdebatan ini telah ditandai sebagai tidak pantas oleh beberapa pengguna.
@@ -325,7 +324,6 @@ id:
       total_percent: 100%
       archived: "Proposal ini telah Diarsipkan dan tidak dapat mengumpulkan mendukung."
     show:
-      author_deleted: Pengguna dihapus
       code: "Proposal kode:"
       comments_tab: Komentar
       flag: Perdebatan ini telah ditandai sebagai tidak pantas oleh beberapa pengguna.
