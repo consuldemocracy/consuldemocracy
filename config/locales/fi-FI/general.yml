@@ -71,7 +71,6 @@ fi:
     new:
       more_info: Lisää tietoa
     show:
-      author_deleted: Käyttäjä poistettu
       comments_title: Kommentit
       edit_debate_link: Muokkaa
       share: Jaa
@@ -199,7 +198,6 @@ fi:
         other: "%{count} ääntä"
       total_percent: 100%
     show:
-      author_deleted: Käyttäjä poistettu
       comments_tab: Kommentit
       notifications_tab: Ilmoitukset
       milestones_tab: Tavoitteet
