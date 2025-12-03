@@ -123,7 +123,6 @@ nl:
       recommendations_title: Advies bij het starten van een debat
       start_new: Debat starten
     show:
-      author_deleted: Gebruiker verwijderd
       comments_title: Reacties
       edit_debate_link: Bewerk
       flag: Verschillende mensen vinden de inhoud ongepast.
@@ -410,7 +409,6 @@ nl:
       successful: "Dit voorstel heeft de vereiste ondersteuning bereikt."
       selected: "Geselecteerd voorstel"
     show:
-      author_deleted: Gebruiker verwijderd
       code: "Voorstel code:"
       comments_tab: Reacties
       dashboard_proposal_link: Dashboard
