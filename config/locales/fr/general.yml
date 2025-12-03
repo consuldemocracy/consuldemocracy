@@ -123,7 +123,6 @@ fr:
       recommendations_title: Recommandations pour créer un débat
       start_new: Commencer un débat
     show:
-      author_deleted: Utilisateur effacé
       comments_title: Commentaires
       edit_debate_link: Éditer
       flag: Ce débat a été étiquetté comme inapproprié par plusieurs utilisateurs
@@ -404,7 +403,6 @@ fr:
       successful: "Cette proposition a atteint les soutiens requis."
       selected: "Proposition sélectionnée"
     show:
-      author_deleted: Utilisateur effacé
       code: "Code de la proposition"
       comments_tab: Commentaires
       dashboard_proposal_link: Tableau de bord
