@@ -123,7 +123,6 @@ ne:
       share:
         message: "मैले लगानी परियोजना %{title} %{handle} मा सिर्जना गरें। लगानी परियोजना पनि सिर्जना गर्नुहोस्!"
       show:
-        author_deleted: प्रयोगकर्ता मेटाइयो
         price_explanation: मूल्य व्याख्या
         unfeasibility_explanation: असम्भाव्यता स्पष्टीकरण
         code: "लगानी परियोजना कोड: <strong>%{code}</strong>"
