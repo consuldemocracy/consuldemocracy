@@ -110,7 +110,6 @@ hr:
       share:
         message: "Ja sam storio investicijski projekt%{title} u %{handle}. Stvori i ti investicijski projekt!"
       show:
-        author_deleted: Korisnik obrisan
         price_explanation: Objašnjenje cijene
         unfeasibility_explanation: Objašnjenje neizvedivosti
         code: "Kôd ulagačkog projekta: <strong>%{code}</strong>"
