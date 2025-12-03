@@ -89,7 +89,6 @@ el:
       share:
         message: "Δημιούργησα το σχέδιο επενδύσεων %{title} στο %{handle}. Δημιούργησε και εσύ το δικό σου!"
       show:
-        author_deleted: Ο χρήστης έχει διαγραφεί
         price_explanation: Επεξήγηση τιμής
         unfeasibility_explanation: Επεξήγηση των λόγων για τους οποίους κρίθηκε ως ανέφικτη
         code: "Κωδικός επενδυτικού έργου: <strong>%{code}</strong>"
