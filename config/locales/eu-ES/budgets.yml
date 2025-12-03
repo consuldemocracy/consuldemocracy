@@ -74,7 +74,6 @@ eu:
           confidence_score: Hobekien baloratuta
           price: Kostuarengaitik
       show:
-        author_deleted: Erabiltzailea ezabatuta
         price_explanation: Kostu txostena
         unfeasibility_explanation: Bideragarritsaun txostena
         share: Partekatu
