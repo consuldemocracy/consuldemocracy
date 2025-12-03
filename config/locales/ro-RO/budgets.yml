@@ -124,7 +124,6 @@ ro:
       share:
         message: "Am creat proiectul de investiții %{title} în %{handle}. Creați și un proiect de investiții!"
       show:
-        author_deleted: Utilizator șters
         price_explanation: Explicația prețurilor
         unfeasibility_explanation: Explicație de imposibilitate
         code: "Codul proiectului de investiții: <strong>%{code}</strong>"
