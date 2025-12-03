@@ -88,7 +88,6 @@ fa:
       more_info: اطلاعات بیشتر
       start_new: شروع بحث
     show:
-      author_deleted: کاربر حذف شد
       comments_title: توضیحات
       edit_debate_link: ویرایش
       share: "اشتراک گذاری\n"
@@ -204,7 +203,6 @@ fa:
         one: 1 رای
         other: "%{count} رای"
     show:
-      author_deleted: کاربر حذف شد
       code: "کد طرح:"
       comments_tab: توضیحات
       notifications_tab: اطلاعیه ها
