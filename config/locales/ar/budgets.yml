@@ -96,7 +96,6 @@ ar:
       share:
         message: "لقد أنشأت مشروع استثماري %{title} في %{handle}. أنشىء مشروع الاستثماري أنت أيضاً!"
       show:
-        author_deleted: تم حذف المستخدم
         price_explanation: توضيح الاسعار
         unfeasibility_explanation: تفسير غير مجدي
         code: "رمز مشروع الاستثمار: <strong>%{code}</strong>"
