@@ -86,7 +86,6 @@ so:
       share:
         message: "Waxaan abuuray mashruuca maalgashiga %{title} ee %{handle} Samee mashruuc maal-gashi aad adigu leedahay!"
       show:
-        author_deleted: Isticmalaha la tirtiray
         price_explanation: Faahfaahinta qiimaha
         unfeasibility_explanation: Sharaxaad aan macquul ahayn
         code: "Koodka mashruuca malgashiga<strong>%{code}</strong>"
