@@ -77,7 +77,6 @@ sl:
           confidence_score: najbolje ocenjeni
           price: po ceni
       show:
-        author_deleted: Uporabnik izbrisan
         price_explanation: Razlaga cene
         unfeasibility_explanation: Razlaga neizvedljivosti
         code: "Koda naložbenega projekta: <strong>%{code}</strong>"
