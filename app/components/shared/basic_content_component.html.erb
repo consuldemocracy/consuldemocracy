@@ -1,0 +1,16 @@
+<div class="basic-content">
+  <% cache [locale_and_user_status(record), "index", record, record.author] do %>
+    <h3><%= link_to record.title, path %></h3>
+
+    <%= content %>
+
+    <div class="basic-description">
+      <%= summary %>
+      <div class="truncate"></div>
+    </div>
+
+    <% if show_tags? %>
+      <%= render "shared/tags", taggable: record, limit: 5 %>
+    <% end %>
+  <% end %>
+</div>

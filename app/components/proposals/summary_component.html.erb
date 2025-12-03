@@ -1,0 +1,36 @@
+<div class="row proposals-summary">
+  <div id="proposals" class="proposals-list small-12 medium-9 column">
+    <%= back_link_to %>
+
+    <% proposals.each do |group_name, proposals| %>
+      <div id="<%= group_name.parameterize %>">
+        <h2 class="margin-top"><%= group_name %></h2>
+
+        <% proposals[0..2].each do |proposal| %>
+          <div class="proposal clear">
+            <div class="panel">
+              <div class="row">
+                <div class="small-12 medium-9 column">
+                  <%= render Shared::BasicContentComponent.new(proposal, show_tags: false) do %>
+                    <p class="basic-info">
+                      <%= render Shared::BasicAuthorInfoComponent.new(proposal.author, show_organization: false) %>
+                    </p>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="small-12 medium-3 column">
+    <aside class="sidebar">
+      <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: "button radius expand" %>
+      <%= render "shared/tag_cloud", taggable: "Proposal" %>
+      <%= render "categories" %>
+      <%= render Proposals::GeozonesComponent.new %>
+    </aside>
+  </div>
+</div>

@@ -16,7 +16,7 @@
       <div class="small-12 medium-9 column">
         <%= back_link_to budget_investments_path(investment.budget, heading_id: investment.heading) %>
 
-        <%= render "/budgets/investments/investment_detail", investment: investment %>
+        <%= render Budgets::Investments::InvestmentDetailComponent.new(investment) %>
       </div>
     <% end %>
 

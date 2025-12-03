@@ -1,0 +1,20 @@
+<% if author.hidden? || author.erased? %>
+  <span class="author">
+    <%= t("shared.author_info.author_deleted") %>
+  </span>
+<% else %>
+  <span class="author">
+    <%= author.name %>
+  </span>
+  <% if author.display_official_position_badge? %>
+    <span class="label round level-<%= author.official_level %>">
+      <%= author.official_position %>
+    </span>
+  <% end %>
+<% end %>
+
+<% if show_organization? && author.verified_organization? %>
+  <span class="label round is-association">
+    <%= t("shared.collective") %>
+  </span>
+<% end %>

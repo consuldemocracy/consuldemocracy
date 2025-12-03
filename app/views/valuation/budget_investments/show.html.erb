@@ -16,7 +16,7 @@
 <% end %>
 
 <hr>
-<%= render "/budgets/investments/investment_detail", investment: @investment, preview: true %>
+<%= render Budgets::Investments::InvestmentDetailComponent.new(@investment, preview: true) %>
 
 <hr>
 

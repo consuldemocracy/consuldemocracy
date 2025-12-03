@@ -14,7 +14,7 @@
 
 <h2><%= t("valuation.budget_investments.show.preview") %></h2>
 <hr>
-<%= render "/budgets/investments/investment_detail", investment: @investment, preview: true %>
+<%= render Budgets::Investments::InvestmentDetailComponent.new(@investment, preview: true) %>
 <hr>
 
 <h2><%= t("valuation.budget_investments.show.responsibles") %></h2>

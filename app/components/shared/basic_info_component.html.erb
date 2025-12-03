@@ -1,0 +1,8 @@
+<p class="basic-info">
+  <%= date %>
+
+  <%= render Shared::CommentsCountComponent.new(record.comments_count, url: comments_path) %>
+  <%= render Shared::BasicAuthorInfoComponent.new(record.author) %>
+
+  <%= content %>
+</p>

@@ -123,7 +123,6 @@ es:
       recommendations_title: Recomendaciones para crear un debate
       start_new: Empezar un debate
     show:
-      author_deleted: Usuario eliminado
       comments_title: Comentarios
       edit_debate_link: Editar debate
       flag: Este debate ha sido marcado como inapropiado por varios usuarios.
@@ -415,7 +414,6 @@ es:
       successful: "Esta propuesta ha alcanzado los apoyos necesarios."
       selected: "Propuesta seleccionada"
     show:
-      author_deleted: Usuario eliminado
       code: "Código de la propuesta:"
       comments_tab: Comentarios
       dashboard_proposal_link: Panel de control

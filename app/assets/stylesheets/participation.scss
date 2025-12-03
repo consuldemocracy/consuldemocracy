@@ -175,38 +175,6 @@
     display: inline;
   }
 
-  .debate-info,
-  .proposal-info,
-  .investment-project-info,
-  .budget-investment-show,
-  .topic-info {
-    clear: both;
-    color: $text-medium;
-    font-size: $small-font-size;
-    margin-bottom: calc($line-height / 2);
-    position: relative;
-
-    span:not(.label) {
-      line-height: rem-calc(32); // Same as avatar height
-    }
-
-    a {
-      color: $text-medium;
-    }
-
-    p {
-      font-size: $small-font-size;
-      line-height: $line-height;
-      margin: 0;
-    }
-  }
-
-  .debate-description,
-  .proposal-description {
-    font-size: rem-calc(15);
-    line-height: rem-calc(30);
-  }
-
   ul,
   ol {
 
@@ -420,9 +388,7 @@
       }
     }
 
-    .debate-content,
-    .budget-investment-content,
-    .proposal-content {
+    .basic-content {
       flex-basis: calc((35rem - 100%) * 999);
       flex-grow: 1000;
       max-width: 50rem;
@@ -484,21 +450,12 @@
 .debate,
 .proposal,
 .budget-investment,
-.budget-investment-show,
 .legislation,
 .communities-show {
   margin: calc($line-height / 4) 0;
 
   .panel {
     @extend %panel;
-  }
-
-  .debate-content,
-  .proposal-content,
-  .budget-investment-content {
-    margin: 0;
-    min-height: rem-calc(180);
-    position: relative;
   }
 
   .tags {
@@ -510,46 +467,6 @@
     a {
       font-size: $tiny-font-size;
     }
-  }
-
-  .debate-info,
-  .proposal-info,
-  .investment-project-info,
-  .budget-investment-info,
-  .topic-info {
-    color: $text-medium;
-    font-size: $small-font-size;
-    margin: rem-calc(6) 0 0;
-
-    .icon-comments {
-      font-size: rem-calc(16);
-      vertical-align: top;
-    }
-
-    a {
-      color: $text-medium;
-    }
-  }
-
-  .debate-description,
-  .proposal-description,
-  .investment-project-description {
-    font-size: rem-calc(13);
-    height: rem-calc(72);
-    line-height: $line-height;
-    margin-bottom: rem-calc(12);
-    margin-top: 0;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .truncate {
-    background: image-url("truncate.png");
-    background-repeat: repeat-x;
-    bottom: 0;
-    height: rem-calc(24);
-    position: absolute;
-    width: 100%;
   }
 }
 
@@ -666,13 +583,6 @@
 
 .budget-investment-show .supports {
   border: 0;
-}
-
-.proposals-summary {
-
-  .panel {
-    min-height: 0;
-  }
 }
 
 .budget-investment .no-button,
@@ -811,18 +721,16 @@
 
   &.minimal {
 
-    .panel,
-    .debate-content,
-    .proposal-content,
-    .budget-investment-content {
+    .minimal-content {
+      @extend %panel;
       min-height: 0;
-    }
 
-    .panel h3 {
-      margin: 0 0 calc($line-height / 2);
+      h3 {
+        margin: 0 0 calc($line-height / 2);
 
-      @include breakpoint(medium) {
-        margin: 0;
+        @include breakpoint(medium) {
+          margin: 0;
+        }
       }
     }
   }
@@ -864,79 +772,6 @@
 
 .featured-debates {
   background: $highlight;
-}
-
-.featured-proposals {
-  background: $featured;
-
-  .proposal-featured {
-    min-height: $line-height * 3.5;
-  }
-
-  .supports {
-    @include supports;
-    background: none;
-    border: 0;
-    padding-bottom: 0;
-    padding-top: 0;
-
-    &::after {
-      content: none;
-    }
-
-    .progress,
-    .total-supports {
-      display: none;
-    }
-
-    .button-support {
-      background: $body-font-color;
-      color: $featured;
-      margin-top: 0;
-
-      &:hover {
-        @extend %body-colors;
-      }
-    }
-
-    .participation-not-allowed {
-      background: $featured;
-      padding-top: 0;
-
-      a {
-        color: inherit;
-      }
-
-      p {
-        color: $color-warning;
-        font-size: $small-font-size;
-        line-height: $line-height;
-      }
-    }
-
-    .supported {
-      background: none;
-      border: 0;
-      font-size: $small-font-size;
-      margin-bottom: 0;
-      margin-top: 0;
-      padding: 0;
-    }
-  }
-
-  .share-supported {
-
-    .social-share-button .ssb-icon {
-      background: none;
-      color: inherit;
-      height: rem-calc(33);
-
-      &::before {
-        font-size: rem-calc(18);
-        line-height: rem-calc(33);
-      }
-    }
-  }
 }
 
 // 06. Budgets
