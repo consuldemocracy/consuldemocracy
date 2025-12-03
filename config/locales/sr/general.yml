@@ -124,7 +124,6 @@ sr:
       recommendations_title: Препоруке за креирање расправе
       start_new: Започните расправу
     show:
-      author_deleted: Корисник избрисан
       comments_title: Коментари
       edit_debate_link: Уреди
       flag: Ова дебата је означена као неприкладна од стране неколико корисника.
@@ -403,7 +402,6 @@ sr:
       successful: "Овај предлог је остварио потребну подршку."
       selected: "Одаберите предлог"
     show:
-      author_deleted: Корисник обрисан
       code: "Код предлога:"
       comments_tab: Коментари
       dashboard_proposal_link: Контролна табла
