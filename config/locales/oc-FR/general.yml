@@ -119,7 +119,6 @@ oc:
       recommendations_title: Recomendacions per crear un debat
       start_new: Comença un nòu debat
     show:
-      author_deleted: Usatgièr eliminat
       comments_title: Comentaris
       edit_debate_link: Editar proposicion
       flag: Aquel debat es estat marcat coma inadequat per divèrses usatgièrs.
@@ -390,7 +389,6 @@ oc:
       successful: "Aquela proposicion es arribada als supòrts necessaris."
       selected: "Proposicion seleccionada"
     show:
-      author_deleted: Usatgièr eliminat
       code: "Còdi de la proposicion:"
       comments_tab: Comentaris
       dashboard_proposal_link: panèl
