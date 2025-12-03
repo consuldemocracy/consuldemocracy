@@ -122,7 +122,6 @@ it:
       recommendations_title: Raccomandazioni per la creazione di un dibattito
       start_new: Avvia un dibattito
     show:
-      author_deleted: Utente cancellato
       comments_title: Commenti
       edit_debate_link: Modificare
       flag: Questo dibattito è stato contrassegnato come inappropriato da diversi utenti.
@@ -401,7 +400,6 @@ it:
       successful: "Questa proposta ha raggiunto gli appoggi richiesti."
       selected: "Proposta selezionata"
     show:
-      author_deleted: Utente cancellato
       code: "Codice proposta:"
       comments_tab: Commenti
       dashboard_proposal_link: Pannello di Controllo
