@@ -122,7 +122,6 @@ bg:
       recommendations_title: Препоръки за създаване на дебат
       start_new: Започнете дебат
     show:
-      author_deleted: Потребителят е изтрит
       comments_title: Коментари
       edit_debate_link: Редактирайте
       flag: Този дебат бе означен като неподходящ от няколко потребители.
@@ -395,7 +394,6 @@ bg:
       successful: "Това предложение достигна необходимата подкрепа."
       selected: "Избрано предложение"
     show:
-      author_deleted: Потребителят е изтрит
       code: "Код на предложението:"
       comments_tab: Коментари
       dashboard_proposal_link: Табло
