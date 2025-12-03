@@ -134,7 +134,6 @@ ar:
       recommendations_title: توصيات لإنشاء مناقشة
       start_new: بدء مناقشة
     show:
-      author_deleted: تم حذف المستخدم
       comments_title: تعليقات
       edit_debate_link: تعديل
       flag: تم التبليغ على أنّ هذا النقاش غير لائق من قبل العديد من المستخدمين.
@@ -420,7 +419,6 @@ ar:
       successful: "لقد وصل هذا الاقتراح إلى الدعم المطلوب."
       selected: "المقترح المختار"
     show:
-      author_deleted: تم حذف المستخدم
       code: "رمز المقترح:"
       comments_tab: تعليقات
       dashboard_proposal_link: لوحة القيادة
