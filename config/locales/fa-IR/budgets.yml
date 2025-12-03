@@ -81,7 +81,6 @@ fa:
           confidence_score: بالاترین امتیاز
           price: با قیمت
       show:
-        author_deleted: کاربر حذف شد
         price_explanation: توضیح قیمت
         unfeasibility_explanation: توضیح امکان سنجی
         code: "کد پروژه سرمایه گذاری:<strong>%{code}</strong>"
