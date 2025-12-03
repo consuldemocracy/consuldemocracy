@@ -84,7 +84,6 @@ zh-CN:
       share:
         message: "我在%{handle} 里创建了投资项目%{title}。请您也创建一个投资项目吧！"
       show:
-        author_deleted: 已删除的用户
         price_explanation: 价格说明
         unfeasibility_explanation: 不可行性说明
         code: "投资项目代码：<strong>%{code}</strong>"
