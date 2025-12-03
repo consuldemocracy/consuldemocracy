@@ -110,7 +110,6 @@ pt-BR:
       share:
         message: "Eu criei o projeto de investimento %{title} em %{handle}. Crie um projeto você também!"
       show:
-        author_deleted: Usuário excluído
         price_explanation: Explicação do preço
         unfeasibility_explanation: Explanação da inviabilidade
         code: "Código do projeto de investimento: <strong>%{code}</strong>"
