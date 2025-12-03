@@ -75,7 +75,6 @@ es-PE:
           confidence_score: Mejor valorados
           price: Por coste
       show:
-        author_deleted: Usuario eliminado
         price_explanation: Informe de coste <small>(opcional, dato público)</small>
         unfeasibility_explanation: Informe de inviabilidad
         code: "Código propuesta de gasto: <strong>%{code}</strong>"
