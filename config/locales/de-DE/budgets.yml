@@ -123,7 +123,6 @@ de:
       share:
         message: "Ich habe einen Ausgabenvorschlag %{title} in %{handle} erstellt. Erstellen Sie auch einen Ausgabenvorschlag!"
       show:
-        author_deleted: Benutzer gelöscht
         price_explanation: Preiserklärung
         unfeasibility_explanation: Erläuterung der Undurchführbarkeit
         code: "Code des Ausgabenvorschlags: <strong>%{code}</strong>"
