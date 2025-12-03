@@ -98,7 +98,6 @@ pl:
       share:
         message: "Stworzyłem projekt inwestycji %{title} w %{handle}. Utwórz także projekt inwestycyjny!"
       show:
-        author_deleted: Użytkownik usunięty
         price_explanation: Wyjaśnienie ceny
         unfeasibility_explanation: Wyjaśnienie niewykonalności
         code: "Kod projektu inwestycyjnego: <strong>%{code}</strong>"
