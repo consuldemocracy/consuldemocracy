@@ -122,7 +122,6 @@ ne:
       recommendations_title: बहस सिर्जना गर्न सिफारिसहरू
       start_new: बहस सुरु गर्नुहोस्
     show:
-      author_deleted: प्रयोगकर्ता मेटाइयो
       comments_title: टिप्पणीहरू
       edit_debate_link: सम्पादन
       flag: यो बहस धेरै प्रयोगकर्ताहरू द्वारा अनुपयुक्त रूपमा फ्ल्याग गरिएको छ।
@@ -401,7 +400,6 @@ ne:
       successful: "यो प्रस्ताव आवश्यक समर्थन पुगेको छ।"
       selected: "चयन गरिएका प्रस्ताव"
     show:
-      author_deleted: प्रयोगकर्ता मेटाइयो
       code: "प्रस्ताव कोड:"
       comments_tab: टिप्पणीहरू
       dashboard_proposal_link: ड्यासबोर्ड
