@@ -121,7 +121,6 @@ ru:
       recommendations_title: Рекомендации по созданию дебатов
       start_new: Начать дебаты
     show:
-      author_deleted: Пользователь удален
       comments_title: Комментарии
       edit_debate_link: Редактировать
       flag: Эти дебаты были отмечены несколькими пользователями как неуместная.
@@ -398,7 +397,6 @@ ru:
       successful: "Это предложение достигло требуемого уровня поддержки."
       selected: "Выбранное предложение"
     show:
-      author_deleted: Пользователь удален
       code: "Код предложения:"
       comments_tab: Комментарии
       dashboard_proposal_link: Рабочий стол
