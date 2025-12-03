@@ -135,7 +135,6 @@ cs:
       share:
         message: "Vytvořil(a) jsem investiční projekt %{title} v %{handle}. Vytvořte také investiční projekt!"
       show:
-        author_deleted: Uživatel
         price_explanation: Vysvětlení nákladů
         unfeasibility_explanation: Vysvětlení neproveditelnosti
         code: "Kód investičního projektu: <strong>%{code}</strong>"
