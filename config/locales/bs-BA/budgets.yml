@@ -31,7 +31,6 @@ bs:
         orders:
           confidence_score: sa najvišim ocjenama
       show:
-        author_deleted: Korisnik obrisan
         price_explanation: Objašnjenje za cijenu
         share: Podijeli
         title: Investicioni projekat
