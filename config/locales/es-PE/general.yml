@@ -110,7 +110,6 @@ es-PE:
       recommendations_title: Recomendações para criar um debate
       start_new: Empieza un debate
     show:
-      author_deleted: Usuario eliminado
       comments_title: Comentarios
       edit_debate_link: Editar propuesta
       flag: Este debate foi marcado como inapropriado por vários usuários.
@@ -327,7 +326,6 @@ es-PE:
       supports_necessary: "%{number} apoios necessários"
       archived: "Esta propuesta ha sido archivada y ya no puede recoger apoyos."
     show:
-      author_deleted: Usuario eliminado
       code: "Código da proposta:"
       comments_tab: Comentarios
       flag: Esta proposta já foi marcada como inadequada por vários usuários.
