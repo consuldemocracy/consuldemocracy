@@ -86,7 +86,6 @@ id:
       share:
         message: "Saya telah membuat proposal proyek.%{title}%{handle}. Buat proyek proposal juga!"
       show:
-        author_deleted: Pengguna dihapus
         price_explanation: Harga penjelasan
         unfeasibility_explanation: Unfeasibility penjelasan
         code: "Kode proyek investasi: <strong>%{code}</strong>"
