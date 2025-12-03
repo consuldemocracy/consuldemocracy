@@ -93,7 +93,6 @@ he:
       share:
         message: "יצרתי את פרויקט השקעה %{title} %{handle}. צור פרויקט השקעה גם!"
       show:
-        author_deleted: משתמש/ת זה/ו נמחק/ה
         price_explanation: ראה הסבר תמחור
         unfeasibility_explanation: הסבר לאי ישימות
         code: "קוד פרויקט ההשקעה: <strong>%{code}</strong>"
