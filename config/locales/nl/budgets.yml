@@ -123,7 +123,6 @@ nl:
       share:
         message: "Ik heb investeringsvoorstel %{title} gemaakt in %{handle}. Jij kunt ook een investeringsvoorstel doen!"
       show:
-        author_deleted: Gebruiker verwijderd
         price_explanation: Price explanation
         unfeasibility_explanation: Uitleg haalbaarheid
         code: "Begrotingsvoorstel code: <strong>%{code}</strong>"
