@@ -42,10 +42,14 @@ describe Polls::Questions::QuestionComponent do
     before { sign_in(user) }
 
     it "renders radio buttons for single-choice questions" do
+      option_yes.update!(open_text: true)
+
       render_inline Polls::Questions::QuestionComponent.new(question, form: form)
 
       expect(page).to have_field "Yes", type: :radio
+      expect(page).to have_field "Specify answer for Yes", type: :textarea
       expect(page).to have_field "No", type: :radio
+      expect(page).not_to have_field "Specify answer for No", type: :textarea
       expect(page).to have_field type: :radio, checked: false, count: 2
     end
 
@@ -62,11 +66,13 @@ describe Polls::Questions::QuestionComponent do
     end
 
     it "selects the option when users have already voted" do
-      create(:poll_answer, author: user, question: question, option: option_yes)
+      option_yes.update!(open_text: true)
+      create(:poll_answer, author: user, question: question, option: option_yes, answer: "because yes")
 
       render_inline Polls::Questions::QuestionComponent.new(question, form: form)
 
       expect(page).to have_field "Yes", type: :radio, checked: true
+      expect(page).to have_field "Specify answer for Yes", type: :textarea, with: "because yes"
       expect(page).to have_field "No", type: :radio, checked: false
     end
 

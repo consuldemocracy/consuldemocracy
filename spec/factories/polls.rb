@@ -66,10 +66,25 @@ FactoryBot.define do
       end
     end
 
+    trait :yes_no_open_text do
+      after(:create) do |question|
+        create(:poll_question_option, question: question, title: "Yes", open_text: true)
+        create(:poll_question_option, question: question, title: "No", open_text: true)
+      end
+    end
+
     trait :abc do
       after(:create) do |question|
         %w[A B C].each do |letter|
           create(:poll_question_option, question: question, title: "Answer #{letter}")
+        end
+      end
+    end
+
+    trait :abc_open_text do
+      after(:create) do |question|
+        %w[A B C].each do |letter|
+          create(:poll_question_option, question: question, title: "Answer #{letter}", open_text: true)
         end
       end
     end

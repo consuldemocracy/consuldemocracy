@@ -4,6 +4,7 @@
     <tr>
       <th><%= t("admin.questions.show.answers.title") %></th>
       <th scope="col" class="description"><%= t("admin.questions.show.answers.description") %></th>
+      <th scope="col" class="open-text"><%= t("admin.questions.show.answers.open_text.field") %></th>
       <th scope="col" class="association-count"><%= t("admin.questions.show.answers.images") %></th>
       <th scope="col" class="association-count"><%= t("admin.questions.show.answers.documents") %></th>
       <th scope="col" class="association-count"><%= t("admin.questions.show.answers.videos") %></th>
@@ -16,6 +17,7 @@
       <tr id="<%= dom_id(option) %>" class="poll_question_option" data-option-id="<%= option.id %>">
         <td><%= option.title %></td>
         <td class="description"><%= wysiwyg(option.description) %></td>
+        <td class="open-text"><%= t("admin.questions.show.answers.open_text.#{option.open_text}") %></td>
         <td class="association-count">
           (<%= option.images.count %>)
           <br>

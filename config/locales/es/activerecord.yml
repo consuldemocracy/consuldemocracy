@@ -464,6 +464,7 @@ es:
       poll/question/option:
         title: Respuesta
         description: Descripción
+        open_text: "Permitir introducir un texto como respuesta"
       poll/question/option/translation:
         title: Respuesta
         description: "Descripción (opcional)"

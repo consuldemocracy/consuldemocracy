@@ -65,7 +65,7 @@ describe Poll::Answer do
 
     it "is valid when there are two identical answers and the option is nil" do
       author = create(:user)
-      question = create(:poll_question_multiple, :abc)
+      question = create(:poll_question_open)
 
       create(:poll_answer, author: author, question: question, option: nil, answer: "Answer A")
 
@@ -87,6 +87,20 @@ describe Poll::Answer do
       expect(build(:poll_answer, option: option, answer: "Two")).not_to be_valid
       expect(build(:poll_answer, option: option, answer: "Three")).not_to be_valid
       expect(build(:poll_answer, option: option, answer: "Any")).not_to be_valid
+    end
+
+    it "is not valid when answer exceeds maximum length" do
+      question = create(:poll_question_open)
+      answer = build(:poll_answer, question: question, answer: "a" * (Poll::Answer.answer_max_length + 1))
+
+      expect(answer).not_to be_valid
+    end
+
+    it "is valid when answer is at maximum length" do
+      question = create(:poll_question_open)
+      answer = build(:poll_answer, question: question, answer: "a" * Poll::Answer.answer_max_length)
+
+      expect(answer).to be_valid
     end
   end
 end

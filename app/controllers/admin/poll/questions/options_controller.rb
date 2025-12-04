@@ -47,7 +47,7 @@ class Admin::Poll::Questions::OptionsController < Admin::Poll::BaseController
     end
 
     def allowed_params
-      attributes = [:title, :description, :given_order]
+      attributes = [:title, :description, :given_order, :open_text]
 
       [*attributes, translation_params(Poll::Question::Option)]
     end
