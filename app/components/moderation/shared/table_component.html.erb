@@ -12,7 +12,7 @@
         <td>
           <%= title_and_link_for(record) %>
           <div class="moderation-info">
-            <span class="date"><%= l record.updated_at.to_date %></span>
+            <%= updated_at_date(record) %>
             <% if flaggable? %>
               <span>
                 <%= record.flags_count %><span class="icon-flag flag-disable"></span>

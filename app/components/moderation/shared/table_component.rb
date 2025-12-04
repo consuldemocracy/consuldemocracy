@@ -49,4 +49,8 @@ class Moderation::Shared::TableComponent < ApplicationComponent
         { "aria-label": record.title }
       end
     end
+
+    def updated_at_date(record)
+      time_tag record.created_at.to_date, format: :default, class: "date"
+    end
 end
