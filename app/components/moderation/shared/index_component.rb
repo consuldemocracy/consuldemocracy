@@ -14,7 +14,11 @@ class Moderation::Shared::IndexComponent < ApplicationComponent
     end
 
     def i18n_namespace
-      table_name
+      if table_name == "legislation_proposals"
+        "proposals"
+      else
+        table_name
+      end
     end
 
     def ids_field_name
@@ -38,6 +42,8 @@ class Moderation::Shared::IndexComponent < ApplicationComponent
     def section_name
       if table_name == "budget_investments"
         "budgets/investments"
+      elsif table_name == "legislation_proposals"
+        "legislation/proposals"
       else
         table_name
       end
