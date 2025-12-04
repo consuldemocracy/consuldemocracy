@@ -9,9 +9,9 @@
 <% end %>
 
 <%= form_tag form_path, method: :put do %>
-  <%= render Shared::CheckAllNoneComponent.new(field_name) %>
+  <%= render Shared::CheckAllNoneComponent.new(ids_field_name) %>
 
-  <%= content %>
+  <%= render Moderation::Shared::TableComponent.new(records, ids_field_name: ids_field_name) %>
 
   <%= submit_tag t("moderation.#{i18n_namespace}.index.block_authors"),
                  name: "block_authors",

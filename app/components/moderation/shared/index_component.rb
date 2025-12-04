@@ -14,11 +14,15 @@ class Moderation::Shared::IndexComponent < ApplicationComponent
     end
 
     def i18n_namespace
-      table_name
+      if table_name == "legislation_proposals"
+        "proposals"
+      else
+        table_name
+      end
     end
 
-    def field_name
-      "#{records.model.model_name.singular}_ids[]"
+    def ids_field_name
+      "#{controller.send(:resource_name)}_ids[]"
     end
 
     def form_path
@@ -38,6 +42,8 @@ class Moderation::Shared::IndexComponent < ApplicationComponent
     def section_name
       if table_name == "budget_investments"
         "budgets/investments"
+      elsif table_name == "legislation_proposals"
+        "legislation/proposals"
       else
         table_name
       end
