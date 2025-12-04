@@ -48,6 +48,7 @@ describe "Moderation" do
       :budget_investment,
       :comment,
       :debate,
+      :legislation_proposal,
       :proposal,
       :proposal_notification
     ]
@@ -241,7 +242,7 @@ describe "Moderation" do
         expect(page).to have_content ignored_resource.human_name
       end
 
-      context "Budget Investments, Comments, Debates and Proposals" do
+      context "Budget Investments, Comments, Debates, Legislation Proposals and Proposals" do
         let(:factory) { (factories - [:proposal_notification]).sample }
 
         scenario "Sorting resources" do

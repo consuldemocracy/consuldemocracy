@@ -8,6 +8,7 @@ class Moderation::MenuComponent < ApplicationComponent
       (proposal_notifications_link if feature?(:proposals)),
       (debates_link if feature?(:debates)),
       (budget_investments_link if feature?(:budgets)),
+      (legislation_proposals_link if feature?(:legislation)),
       comments_link,
       users_link
     ]
@@ -23,7 +24,7 @@ class Moderation::MenuComponent < ApplicationComponent
       [
         t("moderation.menu.proposals"),
         moderation_proposals_path,
-        controller_name == "proposals",
+        controller_name == "proposals" && !legislation?,
         class: "proposals-link"
       ]
     end
@@ -71,5 +72,18 @@ class Moderation::MenuComponent < ApplicationComponent
         controller_name == "users",
         class: "users-link"
       ]
+    end
+
+    def legislation_proposals_link
+      [
+        t("sdg_management.menu.legislation_proposals"),
+        moderation_legislation_proposals_path,
+        legislation?,
+        class: "legislation-link"
+      ]
+    end
+
+    def legislation?
+      controller_path.split("/").include?("legislation")
     end
 end
