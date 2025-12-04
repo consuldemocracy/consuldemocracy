@@ -48,4 +48,8 @@ class Moderation::Shared::TableComponent < ApplicationComponent
     def check_box_aria_attributes(record)
       { "aria-label": record.human_name }
     end
+
+    def updated_at_date(record)
+      time_tag record.updated_at.to_date, format: :default, class: "date"
+    end
 end

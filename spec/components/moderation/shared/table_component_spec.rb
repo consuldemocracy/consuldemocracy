@@ -9,6 +9,14 @@ describe Moderation::Shared::TableComponent do
     expect(page).to have_css "thead th", exact_text: "Debate"
   end
 
+  it "uses a <time> tag for the date" do
+    travel_to(Time.zone.local(2019, 6, 15, 17, 20, 0)) { create(:budget_investment) }
+
+    render_inline Moderation::Shared::TableComponent.new(Budget::Investment.all)
+
+    expect(page).to have_css "time", exact_text: "2019-06-15"
+  end
+
   describe "record description" do
     it "shows the description for records having one" do
       create(:proposal, description: "<p>The main changes we need here are...</p>")
