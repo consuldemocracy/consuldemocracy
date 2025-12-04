@@ -7,13 +7,23 @@
     flex-grow: 2;
   }
 
+
   .feed-debates {
     flex-basis: rem-calc(240);
     flex-grow: 1;
   }
 
+
+  /*  set this to match Debates (narrow). Change to 480/2 if you want it wide like Proposals */
+  .feed-upcoming {
+    flex-basis: rem-calc(240);
+    flex-grow: 1;
+  }
+
+
   .feed-proposals,
-  .feed-debates {
+  .feed-debates,
+  .feed-upcoming {
     display: flex;
     flex-direction: column;
     margin-top: $line-height;

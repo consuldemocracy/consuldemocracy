@@ -1,0 +1,42 @@
+<div class="event">
+  <div class="feed-description small-12 column">
+
+    <%# 1. TITLE: Matches the bold link style of Proposals/Debates %>
+    <strong><%= link_to title, url %></strong><br>
+
+    <%# 2. BADGES: Date and Type in a single row beneath the title %>
+    <div class="event-meta" style="margin-top: 0.2rem;">
+
+      <%# Badge A: The Date %>
+    <% if date_object.present? %>
+        <span class="label text-uppercase">
+          <%= date_object.strftime("%d %b") %> <%# e.g., "12 Dec" %>
+        </span>
+    <% end %>
+
+      <%# Badge B: The Type %>
+      <span class="label secondary">
+        <% if @event.is_a?(Budget) || @event.is_a?(Budget::Phase) %>
+          <%= Budget.model_name.human %>
+        <% elsif @event.is_a?(Legislation::Process) %>
+          <%= Legislation::Process.model_name.human %>
+        <% elsif @event.is_a?(Event) %>
+          <%= @event.respond_to?(:human_type) ? @event.human_type : "Manual Event" %>
+        <% elsif defined?(Poll) && @event.is_a?(Poll) %>
+          <%= Poll.model_name.human %>
+        <% else %>
+          <%= @event.class.model_name.human %>
+        <% end %>
+      </span>
+
+      <%# Optional: Location Text %>
+      <% if @event.respond_to?(:location) && @event.location.present? %>
+        <span class="text-muted small" style="margin-left: 5px;">
+          &bull; <%= @event.location %>
+        </span>
+      <% end %>
+
+    </div>
+
+  </div>
+</div>

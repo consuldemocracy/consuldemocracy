@@ -552,6 +552,8 @@ en:
         name: Name
         description: Description
         start_date: Start Date
+        event_type: Type of Event
+        location: Place
     hidden_users:
       index:
         filter: Filter

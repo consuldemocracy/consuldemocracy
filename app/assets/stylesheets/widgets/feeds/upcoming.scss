@@ -1,0 +1,14 @@
+.feed-upcoming .event {
+  // 1. EMULATE PROPOSAL STRUCTURE
+  @include grid-row-nest;
+  clear: both;
+  overflow: hidden;
+  padding-top: rem-calc(10);
+  padding-bottom: rem-calc(10);
+  //  border-bottom: 1px solid #e6e6e6; // Optional: adds a nice separator line like standard feeds
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
