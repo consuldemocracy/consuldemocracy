@@ -22,7 +22,7 @@ class Moderation::Shared::IndexComponent < ApplicationComponent
     end
 
     def ids_field_name
-      "#{records.model.model_name.singular}_ids[]"
+      "#{controller.send(:resource_name)}_ids[]"
     end
 
     def form_path
