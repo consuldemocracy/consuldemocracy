@@ -126,7 +126,7 @@ module Abilities
       can [:create, :update, :destroy], Legislation::Process
       can [:manage], ::Legislation::DraftVersion
       can [:manage], ::Legislation::Question
-      can [:manage], ::Legislation::Proposal
+      can [:create, :read, :update, :destroy, :select, :deselect], ::Legislation::Proposal
       cannot :comment_as_moderator,
              [::Legislation::Question, Legislation::Annotation, ::Legislation::Proposal]
 
