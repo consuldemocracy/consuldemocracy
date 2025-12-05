@@ -14,6 +14,11 @@ module ModerateActions
 
   def hide
     hide_resource resource
+    respond_to do |format|
+      format.js do
+        render "moderation/shared/hide", locals: { resource: resource }
+      end
+    end
   end
 
   def moderate
