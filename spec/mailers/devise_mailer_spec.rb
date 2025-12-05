@@ -10,7 +10,9 @@ describe DeviseMailer do
       end
 
       expect(email.subject).to include("confirmación")
+      expect(email.subject).to include(user.name) # Verifica que incluya el nombre generado
     end
+    
 
     it "reads the from address at runtime" do
       Setting["mailer_from_name"] = "New organization"
