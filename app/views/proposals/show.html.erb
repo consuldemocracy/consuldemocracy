@@ -47,7 +47,7 @@
         <% end %>
 
         <div class="js-moderator-proposal-actions margin">
-          <%= render "proposals/actions", proposal: @proposal %>
+          <%= render Shared::ModerationActionsComponent.new(@proposal) %>
         </div>
       </div>
 

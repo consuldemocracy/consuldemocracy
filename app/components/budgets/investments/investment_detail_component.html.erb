@@ -57,6 +57,6 @@
   <%= render "relationable/related_content", relationable: investment %>
 
   <div class="js-moderator-investment-actions margin">
-    <%= render "budgets/investments/actions", investment: investment %>
+    <%= render Shared::ModerationActionsComponent.new(investment) %>
   </div>
 <% end %>
