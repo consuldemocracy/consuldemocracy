@@ -23,7 +23,7 @@ es:
       unconfirmed: "No has confirmado tu cuenta, por favor pulsa en el enlace de confirmación que hemos enviado a tu correo electrónico."
     mailer:
       confirmation_instructions:
-        subject: "Instrucciones de confirmación"
+        subject: "Instrucciones de confirmación para %{name}"
       reset_password_instructions:
         subject: "Instrucciones para restablecer tu contraseña"
       unlock_instructions:
