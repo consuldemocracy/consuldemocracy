@@ -1,0 +1,21 @@
+<div class="suggested-images-container" role="region" aria-label="<%= t("images.form.suggested_images_container") %>">
+  <% if has_errors? %>
+    <div id="error_explanation" data-alert class="callout alert" data-closable>
+      <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <%= error_messages.join(", ") %>
+    </div>
+  <% else %>
+    <div class="small-12 column">
+      <% suggested_images.each_with_index do |image, index| %>
+        <div class="small-3 column">
+          <button type="button" class="js-attach-suggested-image" data-image-id="<%= image.id %>" data-resource-type="<%= resource_type %>" data-resource-id="<%= resource_id %>" id="suggested-image-<%= image.id %>" aria-label="Attach suggested image <%= index + 1 %> of <%= suggested_images.count %>" aria-describedby="suggested-image-desc-<%= image.id %>">
+            <%= image_tag(image.src["small"], alt: image.user.name, class: "suggested-image") %>
+            <span id="suggested-image-desc-<%= image.id %>" class="show-for-sr"><%= t("images.form.attach_suggested_image") %></span>
+          </button>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

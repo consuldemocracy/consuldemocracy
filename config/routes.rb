@@ -41,6 +41,11 @@ Rails.application.routes.draw do
     get "robots.txt", to: "robots#index"
 
     resources :images, only: [:destroy]
+    resources :image_suggestions, only: [:create] do
+      member do
+        post :attach
+      end
+    end
     resources :documents, only: [:destroy]
     resources :follows, only: [:create, :destroy]
     resources :remote_translations, only: [:create]

@@ -5,3 +5,10 @@ remote_translation_prompt: |
   <input_text>%{input_text}</input_text>
   <output_locale>%{output_locale}</output_locale>
   <output>Reply ONLY with the translated text.</output>
+image_suggestion_prompt: |
+  <task>Produce an image search query</task>
+  <goal>A short and concise image search query, for finding best suited images for the input text</goal>
+  <instructions>Analyze given title and description of a resource, translate sentences to english, extract the meaningful concepts and produce a search query string in english language.</instructions>
+  <title>%{title}</title>
+  <description>%{description}</description>
+  <output>Reply ONLY with a single string.</output>

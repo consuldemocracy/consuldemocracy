@@ -16,8 +16,11 @@
 
     <div class="small-9 column action-add attachment-errors <%= singular_name %>-attachment">
       <%= file_field %>
-    </div>
 
+      <% unless attachable.attachment.attached? && attachable.attachment.image? %>
+        <%= suggested_images_content %>
+      <% end %>
+    </div>
     <div class="small-3 column action-remove text-right">
       <%= destroy_link %>
     </div>
