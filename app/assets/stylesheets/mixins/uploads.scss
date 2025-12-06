@@ -33,6 +33,42 @@
 
         ~ .error {
           display: inline-block;
+          margin-bottom: $line-height;
+        }
+      }
+    }
+
+    .suggested-images-container {
+      display: inline;
+
+      .js-attach-suggested-image {
+        background: none;
+        border: 0;
+        cursor: pointer;
+        padding: 0;
+        position: relative;
+
+        &::before {
+          background-color: rgba(0, 0, 0, 0.3);
+          content: "";
+          height: 100%;
+          left: 0;
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          transition: opacity 0.2s ease;
+          width: 100%;
+          z-index: 1;
+        }
+
+        &:hover::before {
+          opacity: 1;
+        }
+
+        .suggested-image {
+          display: block;
+          position: relative;
+          width: 100%;
         }
       }
     }
