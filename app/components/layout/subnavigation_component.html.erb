@@ -1,6 +1,12 @@
 <nav>
   <ul>
     <%= raw content_block("subnavigation_left") %>
+       <li>
+        <%= layout_menu_link_to t("layouts.header.events"),
+                                events_path,
+                                controller_name == "events",
+                                accesskey: "0" %>
+      </li>
 
     <% if feature?(:debates) %>
       <li>
@@ -50,6 +56,7 @@
                                 accesskey: "6" %>
       </li>
     <% end %>
+    
     <% if feature?(:help_page) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.help"),
