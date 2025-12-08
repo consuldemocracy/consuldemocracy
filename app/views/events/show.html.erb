@@ -39,12 +39,18 @@
         <strong class="text-muted">Description:</strong>
         <%= simple_format @event.description %>
       </div>
-    </div>
+      <%# Show Type Label %>
+      <span class="label secondary"><%= @event.human_type %></span>
+
+      <%# Show Location %>
+      <% if @event.location.present? %>
+        <span class="label success"><%= @event.location %></span>
+      <% end %>
     <hr>
     <% if feature?(:allow_attached_documents) %>
       <%= render Documents::DocumentsComponent.new(@event.documents) %>
     <% end %>
-
+    </div>
 
   </div>
 </div>
