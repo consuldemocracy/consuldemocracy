@@ -18,20 +18,6 @@ describe "Moderate proposals" do
           check proposal.title
         end
 
-        scenario "Block the author" do
-          accept_confirm("Are you sure? Block authors") { click_button "Block authors" }
-
-          expect(page).not_to have_css("#proposal_#{proposal.id}")
-
-          click_link "Block users"
-          fill_in "email or name of user", with: proposal.author.email
-          click_button "Search"
-
-          within "tr", text: proposal.author.name do
-            expect(page).to have_content "Blocked"
-          end
-        end
-
         scenario "Ignore the proposal", :no_js do
           click_button "Mark as viewed"
 

@@ -159,6 +159,20 @@ describe "Moderation" do
               expect(page).to have_button "Block"
             end
           end
+
+          scenario "Block the author" do
+            accept_confirm("Are you sure? Block authors") { click_button "Block authors" }
+
+            expect(page).not_to have_css "##{dom_id(resource)}"
+
+            click_link "Block users"
+            fill_in "email or name of user", with: resource.author.email
+            click_button "Search"
+
+            within "tr", text: resource.author.name do
+              expect(page).to have_content "Blocked"
+            end
+          end
         end
       end
     end
