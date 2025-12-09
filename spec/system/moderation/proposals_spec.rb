@@ -1,26 +1,6 @@
 require "rails_helper"
 
 describe "Moderate proposals" do
-  scenario "Hide" do
-    citizen   = create(:user)
-    proposal  = create(:proposal)
-    moderator = create(:moderator)
-
-    login_as(moderator.user)
-    visit proposal_path(proposal)
-
-    within("#proposal_#{proposal.id}") do
-      accept_confirm("Are you sure? Hide") { click_button "Hide" }
-    end
-
-    expect(page).to have_css("#proposal_#{proposal.id}.faded")
-
-    login_as(citizen)
-    visit proposals_path
-
-    expect(page).to have_css(".proposal", count: 0)
-  end
-
   scenario "Can hide own proposal" do
     moderator = create(:moderator)
     proposal = create(:proposal, author: moderator.user)

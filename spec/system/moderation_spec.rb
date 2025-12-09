@@ -1,5 +1,7 @@
 require "rails_helper"
 
+include ActionView::RecordIdentifier
+
 describe "Moderation" do
   let(:user) { create(:user) }
 
@@ -84,5 +86,36 @@ describe "Moderation" do
 
     expect(page).to have_current_path(moderation_root_path)
     expect(page).not_to have_content "You do not have permission to access this page"
+  end
+
+  describe "Moderate resources" do
+    factories = [
+      :debate,
+      :proposal
+    ]
+
+    let(:factory) { factories.sample }
+    let(:resource) { create(factory) }
+    let(:moderator) { create(:moderator) }
+    let(:index_path) { polymorphic_path(factory.to_s.pluralize) }
+    let(:resource_path) { polymorphic_path(resource) }
+
+    scenario "Hide" do
+      login_as moderator.user
+      visit resource_path
+
+      within "##{dom_id(resource)}" do
+        accept_confirm("Are you sure? Hide") { click_button "Hide" }
+      end
+
+      expect(page).to have_css "##{dom_id(resource)}.faded"
+      expect(page).to have_content resource.title
+
+      login_as user
+      visit index_path
+
+      expect(page).not_to have_content resource.title
+      expect(page).to have_css(".#{factory}", count: 0)
+    end
   end
 end
