@@ -95,7 +95,7 @@ describe "Moderation" do
     ]
 
     let(:factory) { factories.sample }
-    let(:resource) { create(factory) }
+    let!(:resource) { create(factory) }
     let(:moderator) { create(:moderator) }
     let(:index_path) { polymorphic_path(factory.to_s.pluralize) }
     let(:resource_path) { polymorphic_path(resource) }
@@ -171,6 +171,14 @@ describe "Moderation" do
             within "tr", text: resource.author.name do
               expect(page).to have_content "Blocked"
             end
+          end
+
+          scenario "Ignore the resource", :no_js do
+            click_button "Mark as viewed"
+
+            expect(resource.reload).to be_ignored_flag
+            expect(resource.reload).not_to be_hidden
+            expect(resource.author).not_to be_hidden
           end
         end
       end

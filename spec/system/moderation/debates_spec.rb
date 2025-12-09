@@ -8,25 +8,6 @@ describe "Moderate debates" do
     end
 
     describe "moderate in bulk" do
-      describe "When a debate has been selected for moderation" do
-        let!(:debate) { create(:debate) }
-
-        before do
-          visit moderation_debates_path
-          click_link "All"
-
-          check debate.title
-        end
-
-        scenario "Ignore the debate", :no_js do
-          click_button "Mark as viewed"
-
-          expect(debate.reload).to be_ignored_flag
-          expect(debate.reload).not_to be_hidden
-          expect(debate.author).not_to be_hidden
-        end
-      end
-
       scenario "select all/none" do
         create_list(:debate, 2)
 
