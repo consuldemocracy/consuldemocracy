@@ -117,5 +117,17 @@ describe "Moderation" do
       expect(page).not_to have_content resource.title
       expect(page).to have_css(".#{factory}", count: 0)
     end
+
+    scenario "Can not hide own resource" do
+      resource.update(author: moderator.user)
+
+      login_as moderator.user
+      visit resource_path
+
+      within "##{dom_id(resource)}" do
+        expect(page).not_to have_button "Hide"
+        expect(page).not_to have_button "Block author"
+      end
+    end
   end
 end
