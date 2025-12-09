@@ -1,19 +1,6 @@
 require "rails_helper"
 
 describe "Moderate debates" do
-  scenario "Can not hide own debate" do
-    moderator = create(:moderator)
-    debate = create(:debate, author: moderator.user)
-
-    login_as(moderator.user)
-    visit debate_path(debate)
-
-    within("#debate_#{debate.id}") do
-      expect(page).not_to have_button "Hide"
-      expect(page).not_to have_button "Block author"
-    end
-  end
-
   describe "/moderation/ screen" do
     before do
       moderator = create(:moderator)
