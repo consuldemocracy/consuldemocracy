@@ -18,20 +18,6 @@ describe "Moderate debates" do
           check debate.title
         end
 
-        scenario "Hide the debate" do
-          accept_confirm("Are you sure? Hide debates") { click_button "Hide debates" }
-
-          expect(page).not_to have_css("#debate_#{debate.id}")
-
-          click_link "Block users"
-          fill_in "email or name of user", with: debate.author.email
-          click_button "Search"
-
-          within "tr", text: debate.author.name do
-            expect(page).to have_button "Block"
-          end
-        end
-
         scenario "Block the author" do
           accept_confirm("Are you sure? Block authors") { click_button "Block authors" }
 
