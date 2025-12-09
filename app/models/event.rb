@@ -2,6 +2,7 @@ class Event < ApplicationRecord
   # 1. Capabilities
   include CalendarItem
   include Imageable
+  include Documentable
 
   # 2. Validations
   validates :name, :starts_at, presence: true

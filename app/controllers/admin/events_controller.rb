@@ -48,7 +48,10 @@ class Admin::EventsController < Admin::BaseController
       :description,
       :image,
       :starts_at,
-      :ends_at
+      :ends_at,
+      :location,
+      :event_type,
+      documents_attributes: [:id, :title, :user_id, :cached_attachment, :attachment, :_destroy]
     )
   end
 end

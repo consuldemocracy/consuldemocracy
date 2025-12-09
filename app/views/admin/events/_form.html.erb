@@ -24,6 +24,24 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%# Select Dropdown for Type %>
+      <%= f.select :event_type,
+                   Event::TYPES.map { |t| [t("events.types.#{t}", default: t.humanize), t] },
+                   include_blank: "Select an Event Type" %>
+    </div>
+
+    <div class="small-12 medium-6 column">
+      <%# Text field for Location %>
+      <%= f.text_field :location %>
+    </div>
+  </div>
+
+  <% if feature?(:allow_attached_documents) %>
+    <%= render Documents::NestedComponent.new(f) %>
+  <% end %>
+
 
 
   <%# SUBMIT BUTTON ROW %>
