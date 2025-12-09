@@ -131,6 +131,7 @@ describe "Moderation" do
 
     describe "/moderation/ screen" do
       let(:moderation_resource_index_path) { send("moderation_#{factory.to_s.pluralize}_path") }
+      let(:active_link_text) { factory == :proposal ? "Most recent" : "Newest" }
 
       before { login_as moderator.user }
 
@@ -197,6 +198,22 @@ describe "Moderation" do
           within(".check-all-none") { click_button "Select none" }
 
           all(:checkbox).each { |checkbox| expect(checkbox).not_to be_checked }
+        end
+
+        scenario "remembering page, filter and order" do
+          stub_const("#{ModerateActions}::PER_PAGE", 2)
+          create_list(factory, 4)
+
+          visit moderation_resource_index_path(filter: "all", page: "2", order: "created_at")
+
+          accept_confirm("Are you sure? Mark as viewed") { click_button "Mark as viewed" }
+
+          expect(page).to have_link active_link_text, class: "is-active"
+          expect(page).to have_link "Most flagged"
+
+          expect(page).to have_current_path(/filter=all/)
+          expect(page).to have_current_path(/page=2/)
+          expect(page).to have_current_path(/order=created_at/)
         end
       end
     end
