@@ -13,6 +13,7 @@ describe Abilities::Administrator do
   let(:debate) { create(:debate) }
   let(:comment) { create(:comment) }
   let(:proposal) { create(:proposal, author: user) }
+  let(:other_user_proposal) { create(:proposal, author: other_user) }
   let(:budget_investment) { create(:budget_investment) }
   let(:finished_investment) { create(:budget_investment, budget: create(:budget, :finished)) }
   let(:legislation_question) { create(:legislation_question) }
@@ -73,6 +74,9 @@ describe Abilities::Administrator do
   it { should be_able_to(:confirm_hide, hidden_debate) }
   it { should be_able_to(:confirm_hide, hidden_proposal) }
   it { should be_able_to(:confirm_hide, hidden_user) }
+
+  it { should be_able_to(:hide, proposal) }
+  it { should be_able_to(:hide, other_user_proposal) }
 
   it { should be_able_to(:comment_as_administrator, debate) }
   it { should_not be_able_to(:comment_as_moderator, debate) }

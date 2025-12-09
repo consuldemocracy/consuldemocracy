@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Moderate proposals" do
-  scenario "Can hide own proposal" do
+  scenario "Can not hide own proposal" do
     moderator = create(:moderator)
     proposal = create(:proposal, author: moderator.user)
 
@@ -9,7 +9,7 @@ describe "Moderate proposals" do
     visit proposal_path(proposal)
 
     within("#proposal_#{proposal.id}") do
-      expect(page).to have_button "Hide"
+      expect(page).not_to have_button "Hide"
       expect(page).not_to have_button "Block author"
     end
   end
