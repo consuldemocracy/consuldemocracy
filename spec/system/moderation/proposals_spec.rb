@@ -10,23 +10,6 @@ describe "Moderate proposals" do
     describe "moderate in bulk" do
       let!(:proposal) { create(:proposal) }
 
-      describe "When a proposal has been selected for moderation" do
-        before do
-          visit moderation_proposals_path
-          click_link "All"
-
-          check proposal.title
-        end
-
-        scenario "Ignore the proposal", :no_js do
-          click_button "Mark as viewed"
-
-          expect(proposal.reload).to be_ignored_flag
-          expect(proposal.reload).not_to be_hidden
-          expect(proposal.author).not_to be_hidden
-        end
-      end
-
       scenario "select all/none" do
         create_list(:proposal, 2)
 

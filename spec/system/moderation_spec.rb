@@ -173,6 +173,14 @@ describe "Moderation" do
               expect(page).to have_content "Blocked"
             end
           end
+
+          scenario "Ignore the resource", :no_js do
+            click_button "Mark as viewed"
+
+            expect(resource.reload).to be_ignored_flag
+            expect(resource.reload).not_to be_hidden
+            expect(resource.author).not_to be_hidden
+          end
         end
       end
     end
