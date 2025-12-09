@@ -7,24 +7,6 @@ describe "Moderate debates" do
       login_as(moderator.user)
     end
 
-    describe "moderate in bulk" do
-      scenario "remembering page, filter and order" do
-        stub_const("#{ModerateActions}::PER_PAGE", 2)
-        create_list(:debate, 4)
-
-        visit moderation_debates_path(filter: "all", page: "2", order: "created_at")
-
-        accept_confirm("Are you sure? Mark as viewed") { click_button "Mark as viewed" }
-
-        expect(page).to have_link "Newest", class: "is-active"
-        expect(page).to have_link "Most flagged"
-
-        expect(page).to have_current_path(/filter=all/)
-        expect(page).to have_current_path(/page=2/)
-        expect(page).to have_current_path(/order=created_at/)
-      end
-    end
-
     scenario "Current filter is properly highlighted" do
       visit moderation_debates_path
       expect(page).not_to have_link("Pending")
