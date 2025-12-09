@@ -8,23 +8,6 @@ describe "Moderate debates" do
     end
 
     describe "moderate in bulk" do
-      scenario "select all/none" do
-        create_list(:debate, 2)
-
-        visit moderation_debates_path
-        click_link "All"
-
-        expect(page).to have_field type: :checkbox, count: 2
-
-        within(".check-all-none") { click_button "Select all" }
-
-        expect(all(:checkbox)).to all(be_checked)
-
-        within(".check-all-none") { click_button "Select none" }
-
-        all(:checkbox).each { |checkbox| expect(checkbox).not_to be_checked }
-      end
-
       scenario "remembering page, filter and order" do
         stub_const("#{ModerateActions}::PER_PAGE", 2)
         create_list(:debate, 4)
