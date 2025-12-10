@@ -51,9 +51,13 @@ class Moderation::UsersController < Moderation::BaseController
     end
 
     def referer_index_options
-      referer_params.except(:id).merge({
-        controller: "/#{referer_controller}",
-        action: :index
-      })
+      if referer_controller == "legislation/proposals" && referer_params[:process_id]
+        { controller: "/legislation/processes", id: referer_params[:process_id], action: :proposals }
+      else
+        referer_params.except(:id).merge({
+          controller: "/#{referer_controller}",
+          action: :index
+        })
+      end
     end
 end

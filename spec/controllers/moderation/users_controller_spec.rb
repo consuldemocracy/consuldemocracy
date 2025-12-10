@@ -42,5 +42,15 @@ describe Moderation::UsersController do
 
       expect(response).to redirect_to budget_investments_path(investment.budget)
     end
+
+    it "redirects to the index with a legislation proposal" do
+      process = create(:legislation_process)
+      proposal = create(:legislation_proposal, process: process, author: user)
+      request.env["HTTP_REFERER"] = legislation_process_proposal_path(process, proposal)
+
+      put :block, params: { id: user }
+
+      expect(response).to redirect_to legislation_process_proposals_path(process)
+    end
   end
 end
