@@ -784,6 +784,7 @@ en:
           budgets: "Budgets"
           layouts: "Layouts"
           machine_learning: "AI / Machine Learning"
+          sensemaker: "Sensemaker"
           mailers: "Emails"
           management: "Management"
           welcome: "Welcome"
@@ -805,6 +806,7 @@ en:
       comments: "Comments"
       local_census_records: Local census
       machine_learning: "AI / Machine learning"
+      sensemaker: "Sensemaker"
       multitenancy: Multitenancy
     administrators:
       index:
@@ -1754,6 +1756,33 @@ en:
           created: Created records
         local_census_records:
           no_records_found: No records found.
+    sensemaker:
+      cancel_alert: "This action will cancel the current script and it will be necessary to run the script again."
+      feature_disabled: "This feature is disabled. To use Sensemaker you can enable it from the %{link}."
+      feature_disabled_link: "settings page"
+      help_text: "This functionality is experimental."
+      index:
+        title: Understand conversations with Sensemaker
+      new:
+        title: New Sensemaker analysis
+      help:
+        title_1: "What is Sensemaker?"
+        description_1: "Sensemaker is a tool that helps you make sense of large-scale conversations."
+        title_2: "How does Sensemaker work?"
+        description_2: "Sensemaker uses LLMs (large language models) to analyse conversations and identify patterns. Sensemaker will perform an analysis on the comments associated with a target resource e.g. a debate, proposal, poll, topic, legislation process. Details about the target resource (e.g. title, description) will be used as additional context to support the analysis."
+        title_3: "How to use Sensemaker?"
+        description_3: "To use Sensemaker, go to the Sensemaker Analysis tab, then click the 'New Run' button. Search for a target resource and select it. Add any additional context if needed and select a script to run."
+        title_4: "Available scripts"
+        description_4: "The following scripts are available:"
+      notice:
+        cancelled_jobs: "All sensemaker jobs have been cancelled."
+        script_info: "The script has been queued successfully."
+        output_file_not_found: "Output file not found"
+        deleted_job: "Analysis job deleted successfully"
+        cannot_publish: "The analysis cannot be published because it is not finished or has errors or does not have an output file."
+        published: "The analysis has been published successfully."
+        unpublished: "The analysis has been unpublished successfully."
+      delete_alert: "Are you sure you want to delete this analysis? This action can't be undone"
     machine_learning:
       cancel: "Cancel operation"
       cancel_alert: "This action will cancel the current script and it will be necessary to run the script again."
