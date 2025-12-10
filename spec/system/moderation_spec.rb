@@ -90,6 +90,7 @@ describe "Moderation" do
 
   describe "Moderate resources" do
     factories = [
+      :budget_investment,
       :debate,
       :proposal
     ]
@@ -97,7 +98,13 @@ describe "Moderation" do
     let(:factory) { factories.sample }
     let!(:resource) { create(factory) }
     let(:moderator) { create(:moderator) }
-    let(:index_path) { polymorphic_path(factory.to_s.pluralize) }
+    let(:index_path) do
+      if factory == :budget_investment
+        polymorphic_path([resource.budget, :investments])
+      else
+        polymorphic_path(factory.to_s.pluralize)
+      end
+    end
     let(:resource_path) { polymorphic_path(resource) }
 
     scenario "Hide" do
@@ -109,6 +116,7 @@ describe "Moderation" do
       end
 
       expect(page).to have_css "##{dom_id(resource)}.faded"
+      expect(page).to have_css "#comments.faded"
       expect(page).to have_content resource.title
 
       login_as user
@@ -130,7 +138,7 @@ describe "Moderation" do
     end
 
     describe "/moderation/ screen" do
-      let(:active_link_text) { factory == :proposal ? "Most recent" : "Newest" }
+      let(:active_link_text) { factory == :debate ? "Newest" : "Most recent" }
 
       before { login_as moderator.user }
 
@@ -144,8 +152,8 @@ describe "Moderation" do
           end
 
           scenario "Hide the resource" do
-            accept_confirm("Are you sure? Hide #{factory.to_s.pluralize}") do
-              click_button "Hide #{factory.to_s.pluralize}"
+            accept_confirm("Are you sure? Hide #{factory.to_s.pluralize.tr("_", " ")}") do
+              click_button "Hide #{factory.to_s.pluralize.tr("_", " ")}"
             end
 
             expect(page).not_to have_css "##{dom_id(resource)}"
