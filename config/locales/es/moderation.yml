@@ -54,7 +54,7 @@ es:
         filter: Filtro
         filters:
           all: Todas
-          pending_flag_review: Pendientes de revisión
+          pending_flag_review: Pendientes
           with_ignored_flag: Marcadas como revisadas
         headers:
           moderate: Moderar
@@ -71,7 +71,7 @@ es:
         filter: Filtro
         filters:
           all: Todos
-          pending_flag_review: Pendientes de revisión
+          pending_flag_review: Pendientes
           with_ignored_flag: Marcados como revisados
         headers:
           moderate: Moderar
@@ -88,7 +88,7 @@ es:
         filter: Filtro
         filters:
           all: Todas
-          pending_review: Pendientes de revisión
+          pending_review: Pendientes
           ignored: Marcadas como revisadas
         headers:
           moderate: Moderar

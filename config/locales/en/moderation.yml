@@ -54,8 +54,8 @@ en:
         filter: Filter
         filters:
           all: All
-          pending_flag_review: Pending review
-          with_ignored_flag: Mark as viewed
+          pending_flag_review: Pending
+          with_ignored_flag: Marked as viewed
         headers:
           moderate: Moderate
           proposal: Proposal
@@ -88,8 +88,8 @@ en:
         filter: Filter
         filters:
           all: All
-          pending_review: Pending review
-          ignored: Mark as viewed
+          pending_review: Pending
+          ignored: Marked as viewed
         headers:
           moderate: Moderate
           proposal_notification: Proposal notification
