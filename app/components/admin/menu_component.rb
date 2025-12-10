@@ -27,7 +27,7 @@ class Admin::MenuComponent < ApplicationComponent
         profiles_links,
         stats_link,
         settings_links,
-        events_link,
+        (events_link if feature?(:events)),
         dashboard_links,
         (machine_learning_link if ::MachineLearning.enabled?)
       ]

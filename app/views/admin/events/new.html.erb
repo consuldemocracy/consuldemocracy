@@ -1,11 +1,12 @@
 <div class="row">
   <div class="small-12 column">
     <%= back_link_to admin_events_path %>
-
-    <h2><%= t("admin.events.new.title") %></h2>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 medium-8 medium column">
+    <h1><%= t("events.#{action_name}.title", default: "Manage Event") %></h1>
+    <%= render "form" %>
   </div>
 </div>
 
-<div class="polls-form">
-  <%= render "form" %>
-</div>

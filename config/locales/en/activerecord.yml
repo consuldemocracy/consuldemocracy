@@ -263,10 +263,11 @@ en:
         description: "Initial debate text"
       event:
         name: "Event Title"
-        description: "Full Description"
+        description: "Description"
         starts_at: "Start Date & Time"
         ends_at: "End Date & Time"
-        image: "Event Image"
+        location: "Location"
+        event_type: "Event Type"
       proposal:
         author: "Author"
         title: "Title"

@@ -1,33 +1,57 @@
-<h2 class="inline-block">Manage Events</h2>
+<% provide(:title) do %>
+  <%= t("admin.header.title") %> - <%= t("admin.events.index.title") %>
+<% end %>
 
 <div class="float-right">
-  <%# Secondary Action: Jump to Public Calendar %>
-  <%= link_to "View Calendar", events_path, class: "button secondary hollow", style: "margin-right: 0.5rem;" %>
+  <%= link_to t("admin.events.index.view_calendar"),
+              events_path,
+              class: "button secondary hollow",
+              style: "margin-right: 0.5rem;" %>
 
-  <%# Primary Action: Create New %>
-  <%= link_to "New Event", new_admin_event_path, class: "button success" %>
+  <%= link_to t("admin.events.index.new_event"),
+              new_admin_event_path,
+              class: "button success" %>
 </div>
 
-<table>
-  <thead>
-  <tr>
-    <th><%= t("admin.events.event.name") %></th>
-    <th><%= t("admin.events.event.start_date") %></th>
-    <th><%= t("admin.events.event.description") %></th>
-    <th><%= t("admin.actions.actions") %></th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @events.each do |event| %>
+<h2><%= t("admin.events.index.title") %></h2>
+
+<% if @events.any? %>
+
+  <h3 class="inline-block"><%= page_entries_info @events %></h3>
+
+  <table>
+    <thead>
     <tr>
-      <td><%= event.name %></td>
-      <%# Use l (localize) for nicer date formatting %>
-      <td><%= l event.starts_at, format: :short %></td>
-      <td><%= truncate(strip_tags(event.description), length: 100) %></td>
-      <td>
-        <%= render Admin::TableActionsComponent.new(event) %>
-      </td>
+      <th><%= t("admin.events.event.name") %></th>
+      <th><%= t("admin.events.event.start_date") %></th>
+      <th><%= t("admin.events.event.description") %></th>
+      <th><%= t("admin.actions.actions") %></th>
     </tr>
-  <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+    <% @events.each do |event| %>
+      <tr id="<%= dom_id(event) %>">
+        <td><%= event.name %></td>
+        <td><%= l event.starts_at, format: :short %></td>
+        <td><%= truncate(strip_tags(event.description), length: 100) %></td>
+        <td>
+          <%= render Admin::TableActionsComponent.new(event) do |actions| %>
+
+            <%= actions.action(:show,
+                               text: t("admin.actions.view", default: "View"),
+                               path: event_path(event),
+                               target: "_blank") %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate @events %>
+
+<% else %>
+  <div class="callout primary margin">
+    <%= t("admin.events.index.no_events") %>
+  </div>
+<% end %>

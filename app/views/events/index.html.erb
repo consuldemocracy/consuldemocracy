@@ -1,35 +1,39 @@
-<div class="calendar-container">
-  <div class="d-flex justify-content-between align-items-center mb-4">
-    <h1 class="h3">Events Calendar</h1>
+<% provide(:title) do %>
+  <%= t("events.calendar.title", default: "Events Calendar") %>
+<% end %>
 
-    <span class="text-muted"><%= l @start_date, format: "%B %Y" %></span>
+<div class="calendar-container">
+
+  <div class="clearfix mb-4">
+
+    <% if current_user&.administrator? %>
+      <div class="float-right">
+        <%= link_to t("admin.events.index.view_list", default: "View List"),
+                    admin_events_path,
+                    class: "button secondary hollow",
+                    style: "margin-right: 0.5rem;" %>
+
+        <%= link_to t("admin.events.index.new_event"),
+                    new_admin_event_path,
+                    class: "button success" %>
+      </div>
+    <% end %>
+    <h2 class="h3"><%= t("events.calendar.title", default: "Events Calendar") %></h2>
   </div>
 
-  <%= month_calendar(events: @calendar_items, attribute: :calendar_start, start_date: @start_date) do |date, items| %>
-
+  <%#= month_calendar(events: @calendar_items, attribute: :calendar_start, start_date: @start_date) do |date, items| %>
+  <%= month_calendar(events: @calendar_items, attribute: :calendar_start, end_attribute: :calendar_end, start_date: @start_date) do |date, items| %>
     <div class="day-number"><%= date.day %></div>
 
     <% items.each do |item| %>
       <div class="event-bar <%= item.calendar_class %>">
-        <%= link_to item.calendar_title, item.calendar_link_url, class: "event-link text-white" %>
-        <%# Quick Actions (Edit/Delete) - Only for Manual Events & Admins %>
-        <% if item.is_a?(Event) && current_user&.administrator? %>
-          <div class="event-actions float-right" style="margin-left: 5px;">
 
-            <%# FIX: Use a block instead of fa_icon helper %>
-            <%= link_to edit_admin_event_path(item), title: "Edit", class: "text-white me-1" do %>
-              <span class="icon-pencil"></span>
-            <% end %>
+        <%# Event Title Link %>
+        <%= link_to item.calendar_title,
+                    item.calendar_link_url,
+                    class: "event-link text-white text-truncate",
+                    title: item.calendar_title %>
 
-            <%= link_to admin_event_path(item),
-                        class: "text-white",
-                        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                        title: "Delete" do %>
-              <span class="icon-x"></span>
-            <% end %>
-
-          </div>
-        <% end %>
       </div>
     <% end %>
 

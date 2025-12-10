@@ -5,7 +5,7 @@
 </div>
 <div class="row">
   <div class="small-12 medium-8 medium column">
-    <h1>Edit Event</h1>
+    <h1><%= t("events.#{action_name}.title", default: "Manage Event") %></h1>
     <%= render "form", event: @event %>
   </div>
 </div>
