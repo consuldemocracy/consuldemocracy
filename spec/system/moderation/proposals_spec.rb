@@ -7,31 +7,6 @@ describe "Moderate proposals" do
       login_as(moderator.user)
     end
 
-    scenario "Filtering proposals" do
-      create(:proposal, title: "Regular proposal")
-      create(:proposal, :flagged, title: "Pending proposal")
-      create(:proposal, :hidden, title: "Hidden proposal")
-      create(:proposal, :flagged, :with_ignored_flag, title: "Ignored proposal")
-
-      visit moderation_proposals_path(filter: "all")
-      expect(page).to have_content("Regular proposal")
-      expect(page).to have_content("Pending proposal")
-      expect(page).not_to have_content("Hidden proposal")
-      expect(page).to have_content("Ignored proposal")
-
-      visit moderation_proposals_path(filter: "pending_flag_review")
-      expect(page).not_to have_content("Regular proposal")
-      expect(page).to have_content("Pending proposal")
-      expect(page).not_to have_content("Hidden proposal")
-      expect(page).not_to have_content("Ignored proposal")
-
-      visit moderation_proposals_path(filter: "with_ignored_flag")
-      expect(page).not_to have_content("Regular proposal")
-      expect(page).not_to have_content("Pending proposal")
-      expect(page).not_to have_content("Hidden proposal")
-      expect(page).to have_content("Ignored proposal")
-    end
-
     scenario "sorting proposals" do
       flagged_proposal = create(:proposal,
                                 title: "Flagged proposal",

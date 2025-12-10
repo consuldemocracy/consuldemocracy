@@ -245,6 +245,31 @@ describe "Moderation" do
         expect(page).to have_link "Pending"
         expect(page).not_to have_link "Marked as viewed"
       end
+
+      scenario "Filtering resources" do
+        create(factory, title: "Regular resource")
+        create(factory, :flagged, title: "Pending resource")
+        create(factory, :hidden, title: "Hidden resource")
+        create(factory, :flagged, :with_ignored_flag, title: "Ignored resource")
+
+        visit moderation_resource_index_path(filter: "all")
+        expect(page).to have_content "Regular resource"
+        expect(page).to have_content "Pending resource"
+        expect(page).not_to have_content "Hidden resource"
+        expect(page).to have_content "Ignored resource"
+
+        visit moderation_resource_index_path(filter: "pending_flag_review")
+        expect(page).not_to have_content "Regular resource"
+        expect(page).to have_content "Pending resource"
+        expect(page).not_to have_content "Hidden resource"
+        expect(page).not_to have_content "Ignored resource"
+
+        visit moderation_resource_index_path(filter: "with_ignored_flag")
+        expect(page).not_to have_content "Regular resource"
+        expect(page).not_to have_content "Pending resource"
+        expect(page).not_to have_content "Hidden resource"
+        expect(page).to have_content "Ignored resource"
+      end
     end
   end
 
