@@ -270,6 +270,33 @@ describe "Moderation" do
         expect(page).not_to have_content "Hidden resource"
         expect(page).to have_content "Ignored resource"
       end
+
+      scenario "Sorting resources" do
+        flagged_resource = create(factory, title: "Flagged resource", created_at: 1.day.ago, flags_count: 5)
+        flagged_new_resource = create(factory,
+                                      title: "Flagged new resource",
+                                      created_at: 12.hours.ago,
+                                      flags_count: 3)
+        newer_resource = create(factory, title: "Newer resource", created_at: Time.current)
+
+        visit moderation_resource_index_path(order: "created_at")
+
+        expect(flagged_new_resource.title).to appear_before flagged_resource.title
+
+        visit moderation_resource_index_path(order: "flags")
+
+        expect(flagged_resource.title).to appear_before flagged_new_resource.title
+
+        visit moderation_resource_index_path(filter: "all", order: "created_at")
+
+        expect(newer_resource.title).to appear_before flagged_new_resource.title
+        expect(flagged_new_resource.title).to appear_before flagged_resource.title
+
+        visit moderation_resource_index_path(filter: "all", order: "flags")
+
+        expect(flagged_resource.title).to appear_before flagged_new_resource.title
+        expect(flagged_new_resource.title).to appear_before newer_resource.title
+      end
     end
   end
 
