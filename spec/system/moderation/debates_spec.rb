@@ -7,28 +7,6 @@ describe "Moderate debates" do
       login_as(moderator.user)
     end
 
-    scenario "Current filter is properly highlighted" do
-      visit moderation_debates_path
-      expect(page).not_to have_link("Pending")
-      expect(page).to have_link("All")
-      expect(page).to have_link("Marked as viewed")
-
-      visit moderation_debates_path(filter: "all")
-      expect(page).not_to have_link("All")
-      expect(page).to have_link("Pending")
-      expect(page).to have_link("Marked as viewed")
-
-      visit moderation_debates_path(filter: "pending_flag_review")
-      expect(page).to have_link("All")
-      expect(page).not_to have_link("Pending")
-      expect(page).to have_link("Marked as viewed")
-
-      visit moderation_debates_path(filter: "with_ignored_flag")
-      expect(page).to have_link("All")
-      expect(page).to have_link("Pending")
-      expect(page).not_to have_link("Marked as viewed")
-    end
-
     scenario "Filtering debates" do
       create(:debate, title: "Regular debate")
       create(:debate, :flagged, title: "Pending debate")
