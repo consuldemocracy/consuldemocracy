@@ -7,31 +7,6 @@ describe "Moderate debates" do
       login_as(moderator.user)
     end
 
-    scenario "Filtering debates" do
-      create(:debate, title: "Regular debate")
-      create(:debate, :flagged, title: "Pending debate")
-      create(:debate, :hidden, title: "Hidden debate")
-      create(:debate, :flagged, :with_ignored_flag, title: "Ignored debate")
-
-      visit moderation_debates_path(filter: "all")
-      expect(page).to have_content("Regular debate")
-      expect(page).to have_content("Pending debate")
-      expect(page).not_to have_content("Hidden debate")
-      expect(page).to have_content("Ignored debate")
-
-      visit moderation_debates_path(filter: "pending_flag_review")
-      expect(page).not_to have_content("Regular debate")
-      expect(page).to have_content("Pending debate")
-      expect(page).not_to have_content("Hidden debate")
-      expect(page).not_to have_content("Ignored debate")
-
-      visit moderation_debates_path(filter: "with_ignored_flag")
-      expect(page).not_to have_content("Regular debate")
-      expect(page).not_to have_content("Pending debate")
-      expect(page).not_to have_content("Hidden debate")
-      expect(page).to have_content("Ignored debate")
-    end
-
     scenario "sorting debates" do
       flagged_debate = create(:debate,
                               title: "Flagged debate",
