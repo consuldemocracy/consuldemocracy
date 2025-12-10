@@ -37,11 +37,16 @@ class Moderation::UsersController < Moderation::BaseController
     def index_path_options
       if request.referer
         referer_params = Rails.application.routes.recognize_path(request.referer)
+        controller_path = referer_params[:controller]
 
-        referer_params.except(:id).merge({
-          controller: "/#{referer_params[:controller]}",
-          action: :index
-        })
+        if controller_path == "legislation/proposals" && referer_params[:process_id]
+          { controller: "/legislation/processes", id: referer_params[:process_id], action: :proposals }
+        else
+          referer_params.except(:id).merge({
+            controller: "/#{controller_path}",
+            action: :index
+          })
+        end
       else
         { action: :index }
       end
