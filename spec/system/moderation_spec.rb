@@ -131,8 +131,6 @@ describe "Moderation" do
     end
 
     describe "/moderation/ screen" do
-      let(:moderation_resource_index_path) { send("moderation_#{factory.to_s.pluralize}_path") }
-
       before { login_as moderator.user }
 
       describe "moderate in bulk" do
@@ -225,6 +223,32 @@ describe "Moderation" do
           expect(page).to have_current_path(/order=created_at/)
         end
       end
+
+      scenario "Current filter is properly highlighted" do
+        visit moderation_resource_index_path
+        expect(page).not_to have_link "Pending"
+        expect(page).to have_link "All"
+        expect(page).to have_link "Marked as viewed"
+
+        visit moderation_resource_index_path(filter: "all")
+        expect(page).not_to have_link "All"
+        expect(page).to have_link "Pending"
+        expect(page).to have_link "Marked as viewed"
+
+        visit moderation_resource_index_path(filter: "pending_flag_review")
+        expect(page).to have_link "All"
+        expect(page).not_to have_link "Pending"
+        expect(page).to have_link "Marked as viewed"
+
+        visit moderation_resource_index_path(filter: "with_ignored_flag")
+        expect(page).to have_link "All"
+        expect(page).to have_link "Pending"
+        expect(page).not_to have_link "Marked as viewed"
+      end
     end
+  end
+
+  def moderation_resource_index_path(params = {})
+    namespaced_polymorphic_path(:moderation, resource.class, **params)
   end
 end
