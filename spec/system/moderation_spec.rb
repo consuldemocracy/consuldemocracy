@@ -137,6 +137,19 @@ describe "Moderation" do
       end
     end
 
+    scenario "Hiding an resource's author" do
+      login_as(moderator.user)
+      visit resource_path
+
+      accept_confirm("Are you sure? This will hide the user \"#{resource.author.name}\" " \
+                     "and all their contents.") do
+        click_button "Block author"
+      end
+
+      expect(page).to have_current_path(index_path)
+      expect(page).not_to have_content(resource.title)
+    end
+
     describe "/moderation/ screen" do
       let(:active_link_text) { factory == :debate ? "Newest" : "Most recent" }
 
