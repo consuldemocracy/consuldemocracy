@@ -1,0 +1,24 @@
+.basic-content {
+  margin: 0;
+  min-height: rem-calc(180);
+  position: relative;
+
+  .basic-description {
+    font-size: rem-calc(13);
+    height: rem-calc(72);
+    line-height: $line-height;
+    margin-bottom: rem-calc(12);
+    margin-top: 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .truncate {
+    background: image-url("truncate.png");
+    background-repeat: repeat-x;
+    bottom: 0;
+    height: rem-calc(24);
+    position: absolute;
+    width: 100%;
+  }
+}

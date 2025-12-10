@@ -65,6 +65,6 @@ describe Budgets::InvestmentComponent do
 
     expect(page).to have_link investment.title
     expect(page).to have_link "Read more"
-    expect(page).to have_css ".investment-project-info"
+    expect(page).to have_css ".basic-info"
   end
 end

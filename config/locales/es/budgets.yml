@@ -123,7 +123,6 @@ es:
       share:
         message: "He presentado el proyecto %{title} en %{handle}. ¡Presenta un proyecto tú también!"
       show:
-        author_deleted: Usuario eliminado
         price_explanation: Informe de coste
         unfeasibility_explanation: Informe de inviabilidad
         code: "Código proyecto de gasto: <strong>%{code}</strong>"

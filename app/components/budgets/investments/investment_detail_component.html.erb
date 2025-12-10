@@ -1,22 +1,7 @@
 <h1><%= investment.title %></h1>
-<div class="budget-investment-info">
-  <%= render "/shared/author_info", resource: investment %>
-
-  <span class="bullet">&nbsp;&bull;&nbsp;</span>
-  <%= l investment.created_at.to_date %>
-  <span class="bullet">&nbsp;&bull;&nbsp;</span>
-  <%= render Shared::CommentsCountComponent.new(investment.comments_count, url: "#comments") %>
-  <span class="bullet">&nbsp;&bull;&nbsp;</span>
-  <%= investment.heading.name %>
-  <span class="bullet">&nbsp;&bull;&nbsp;</span>
-  <% if local_assigns[:preview].nil? %>
-    <span class="js-flag-actions">
-      <%= render "shared/flag_actions", flaggable: investment %>
-    </span>
-  <% end %>
-</div>
-
-<br>
+<%= render Shared::DetailedInfoComponent.new(investment, preview: preview) do %>
+  <span><%= investment.heading.name %></span>
+<% end %>
 
 <%= render_image(investment.image, :large, true) if investment.image.present? %>
 
@@ -26,7 +11,7 @@
 
 <%= auto_link_already_sanitized_html wysiwyg(investment.description) %>
 
-<% if feature?(:map) && map_location_available?(@investment.map_location) %>
+<% if feature?(:map) && map_location_available?(investment.map_location) %>
   <div class="margin">
     <%= render_map(investment.map_location) %>
   </div>
@@ -68,7 +53,7 @@
   <p><%= investment.price_explanation %></p>
 <% end %>
 
-<% if local_assigns[:preview].nil? %>
+<% unless preview? %>
   <%= render "relationable/related_content", relationable: investment %>
 
   <div class="js-moderator-investment-actions margin">

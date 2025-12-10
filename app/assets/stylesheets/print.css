@@ -18,7 +18,10 @@
 
 img.left { display: none !important; }
 
-.proposal-info a { display: none !important; }
+.proposal .detailed-info a,
+.proposal .basic-info a {
+  display: none !important;
+}
 
 .icon-comments { display: none !important; }
 
@@ -30,7 +33,7 @@ li.name  { display: none !important; }
 
 li.kind  { display: none !important; }
 
-p.proposal-info span:nth-child(3) { display: none !important; }
+.proposal .basic-info span:nth-child(3) { display: none !important; }
 
 .top-links { display: none !important; }
 
@@ -44,7 +47,7 @@ input[type="submit"] { display: none !important; }
 
 .admin h2 { font-size: 20px !important; line-height: 20px !important; }
 
-p.proposal-info { margin-left: -6px; }
+.proposal .basic-info { margin-left: -6px; }
 
 a { text-decoration: none !important; }
 
@@ -52,11 +55,11 @@ a:after { content: none !important; }
 
 .proposal .panel { min-height: auto !important; margin:  0 !important; padding-bottom: 0 !important; padding-left: 0 !important; }
 
-.proposal .panel .proposal-content { min-height: auto !important; }
+.proposal .panel .basic-content { min-height: auto !important; }
 
 .proposal .panel h3 { min-height: auto !important; font-size: 16px !important; }
 
-.proposal .panel .proposal-description { height: auto !important; margin-bottom: 0 !important; }
+.proposal .panel .basic-description { height: auto !important; margin-bottom: 0 !important; }
 
 .proposal .panel {
   border-left: 0 !important;

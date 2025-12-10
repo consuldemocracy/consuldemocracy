@@ -1015,6 +1015,19 @@ describe Proposal do
 
       expect(ActionMailer::Base.deliveries.count).to eq(0)
     end
+
+    it "enqueues the job after committing the transaction", :delay_jobs do
+      create(:dashboard_action, :proposed_action, :active, day_offset: 0, published_proposal: false)
+      create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: false)
+      proposal = build(:proposal, :draft)
+
+      ActiveRecord::Base.transaction do
+        proposal.save!
+        expect(Delayed::Job.count).to eq 0
+      end
+
+      expect(Delayed::Job.count).to eq 1
+    end
   end
 
   describe "#send_new_actions_notification_on_published" do

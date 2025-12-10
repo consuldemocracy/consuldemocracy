@@ -7,19 +7,9 @@
       </div>
     <% end %>
 
-    <div class="budget-investment-content">
-      <% cache [locale_and_user_status(investment), "index", investment, investment.author] do %>
-        <h3><%= link_to investment.title, namespaced_budget_investment_path(investment) %></h3>
-
-        <%= render Budgets::Investments::InfoComponent.new(investment) %>
-
-        <div class="investment-project-description">
-          <%= wysiwyg(investment.description) %>
-          <div class="truncate"></div>
-        </div>
-        <%= render "shared/tags", taggable: investment, limit: 5 %>
-      <% end %>
-    </div>
+    <%= render Shared::BasicContentComponent.new(investment) do %>
+      <%= render Budgets::Investments::InfoComponent.new(investment) %>
+    <% end %>
 
     <% unless investment.unfeasible? %>
       <% if investment.should_show_votes? %>

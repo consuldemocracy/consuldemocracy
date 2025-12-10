@@ -1,0 +1,11 @@
+<div id="featured-proposals" class="row featured-proposals">
+  <div class="small-12 column">
+    <h2>
+      <%= t("proposals.index.featured_proposals") %>
+    </h2>
+  </div>
+
+  <% proposals.each do |proposal| %>
+    <%= render Proposals::FeaturedProposalComponent.new(proposal) %>
+  <% end %>
+</div>

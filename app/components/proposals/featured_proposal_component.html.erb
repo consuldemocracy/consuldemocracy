@@ -1,0 +1,13 @@
+<div id="<%= dom_id(proposal) %>" class="proposal-featured clear">
+  <div class="small-12 medium-9 column">
+    <h3><%= link_to proposal.title, proposal %></h3>
+    <div class="info">
+      <%= render Shared::BasicAuthorInfoComponent.new(proposal.author, show_organization: false) %>
+      <strong><%= t("proposals.proposal.supports", count: proposal.total_votes) %></strong>
+    </div>
+  </div>
+
+  <div id="<%= dom_id(proposal) %>_votes" class="small-12 medium-3 column">
+    <%= render Proposals::VotesComponent.new(proposal) %>
+  </div>
+</div>

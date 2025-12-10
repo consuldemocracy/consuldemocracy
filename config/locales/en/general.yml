@@ -123,7 +123,6 @@ en:
       recommendations_title: Recommendations for creating a debate
       start_new: Start a debate
     show:
-      author_deleted: User deleted
       comments_title: Comments
       edit_debate_link: Edit
       flag: This debate has been flagged as inappropriate by several users.
@@ -415,7 +414,6 @@ en:
       successful: "This proposal has reached the required supports."
       selected: "Selected proposal"
     show:
-      author_deleted: User deleted
       code: "Proposal code:"
       comments_tab: Comments
       dashboard_proposal_link: Dashboard
