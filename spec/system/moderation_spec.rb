@@ -113,7 +113,7 @@ describe "Moderation" do
     end
     let(:resource_path) do
       if factory == :proposal_notification
-        polymorphic_path(resource.proposal)
+        polymorphic_path(resource.proposal, anchor: "tab-notifications")
       else
         polymorphic_path(resource)
       end
@@ -124,8 +124,6 @@ describe "Moderation" do
     scenario "Hide" do
       login_as moderator.user
       visit resource_path
-
-      click_link "Notifications (1)" if factory == :proposal_notification
 
       within "##{dom_id(resource)}" do
         accept_confirm("Are you sure? Hide") { click_button "Hide" }
@@ -155,7 +153,6 @@ describe "Moderation" do
 
       login_as moderator.user
       visit resource_path
-      click_link "Notifications (1)" if factory == :proposal_notification
 
       within "##{dom_id(resource)}" do
         expect(page).not_to have_button "Hide"
@@ -167,12 +164,18 @@ describe "Moderation" do
       login_as(moderator.user)
       visit resource_path
 
-      accept_confirm("Are you sure? This will hide the user \"#{resource.author.name}\" " \
-                     "and all their contents.") do
-        click_button "Block author"
+      within "##{dom_id(resource)}" do
+        accept_confirm("Are you sure? This will hide the user \"#{resource.author.name}\" " \
+                       "and all their contents.") do
+          click_button "Block author"
+        end
       end
 
-      expect(page).to have_current_path index_path
+      if factory == :proposal_notification
+        expect(page).to have_current_path proposals_path
+      else
+        expect(page).to have_current_path index_path
+      end
       expect(page).not_to have_content resource.human_name
     end
 
