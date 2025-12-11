@@ -321,6 +321,20 @@ describe "Moderation" do
         expect(content_for(flagged_resource)).to appear_before(content_for(flagged_new_resource))
         expect(content_for(flagged_new_resource)).to appear_before(content_for(newer_resource))
       end
+
+      scenario "Visit flagged resources" do
+        flagged_resource = create(factory, :flagged)
+        login_as(moderator.user)
+        visit moderation_resource_index_path
+
+        expect(page).to have_content content_for(flagged_resource)
+        expect(page).to have_content flagged_resource.commentable.title if factory == :comment
+
+        click_link link_text_for(flagged_resource)
+
+        expect(page).to have_content content_for(flagged_resource)
+        expect(page).to have_content flagged_resource.commentable.title if factory == :comment
+      end
     end
   end
 
@@ -330,5 +344,9 @@ describe "Moderation" do
 
   def content_for(resource)
     factory == :comment ? resource.body : resource.title
+  end
+
+  def link_text_for(resource)
+    factory == :comment ? resource.commentable.title : resource.title
   end
 end
