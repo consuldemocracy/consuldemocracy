@@ -41,6 +41,12 @@ class Moderation::UsersController < Moderation::BaseController
 
         if controller_path == "legislation/proposals" && referer_params[:process_id]
           { controller: "/legislation/processes", id: referer_params[:process_id], action: :proposals }
+        elsif controller_path == "comments" && referer_params[:id]
+          comment = Comment.with_hidden.find_by(id: referer_params[:id])
+          commentable = comment.commentable
+          commentable_path = polymorphic_path(commentable)
+          commentable_params = Rails.application.routes.recognize_path(commentable_path)
+          commentable_params.merge(controller: "/#{commentable_params[:controller]}")
         else
           referer_params.except(:id).merge({
             controller: "/#{controller_path}",

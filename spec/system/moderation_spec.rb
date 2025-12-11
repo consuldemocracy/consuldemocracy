@@ -152,7 +152,7 @@ describe "Moderation" do
       end
 
       expect(page).to have_current_path(index_path)
-      expect(page).not_to have_content(resource.title)
+      expect(page).not_to have_content(resource_content)
     end
 
     describe "/moderation/ screen" do
