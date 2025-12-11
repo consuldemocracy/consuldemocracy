@@ -227,10 +227,11 @@ describe "Moderation" do
         end
 
         scenario "remembering page, filter and order" do
+          order = factory == :comment ? "newest" : "created_at"
           stub_const("#{ModerateActions}::PER_PAGE", 2)
           create_list(factory, 4)
 
-          visit moderation_resource_index_path(filter: "all", page: "2", order: "created_at")
+          visit moderation_resource_index_path(filter: "all", page: "2", order: order)
 
           within("table") { check first(:checkbox)[:id] }
           accept_confirm("Are you sure? Mark as viewed") { click_button "Mark as viewed" }
@@ -239,7 +240,7 @@ describe "Moderation" do
             all(:checkbox).each { |checkbox| expect(checkbox).not_to be_checked }
           end
 
-          if factory == :debate
+          if factory == :debate || factory == :comment
             expect(page).to have_link "Newest", class: "is-active"
           else
             expect(page).to have_link "Most recent", class: "is-active"
@@ -248,7 +249,7 @@ describe "Moderation" do
 
           expect(page).to have_current_path(/filter=all/)
           expect(page).to have_current_path(/page=2/)
-          expect(page).to have_current_path(/order=created_at/)
+          expect(page).to have_current_path(/order=#{order}/)
         end
       end
 
