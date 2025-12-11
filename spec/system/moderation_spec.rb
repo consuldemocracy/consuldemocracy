@@ -155,6 +155,7 @@ describe "Moderation" do
 
       login_as moderator.user
       visit resource_path
+      click_link "Notifications (1)" if factory == :proposal_notification
 
       within "##{dom_id(resource)}" do
         expect(page).not_to have_button "Hide"
