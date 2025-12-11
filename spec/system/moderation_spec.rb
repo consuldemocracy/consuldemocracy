@@ -100,11 +100,12 @@ describe "Moderation" do
     let!(:resource) { create(factory) }
     let(:moderator) { create(:moderator) }
     let(:index_path) do
-      if factory == :budget_investment
+      case factory
+      when :budget_investment
         polymorphic_path([resource.budget, :investments])
-      elsif factory == :comment
+      when :comment
         polymorphic_path(resource.commentable)
-      elsif factory == :proposal_notification
+      when :proposal_notification
         polymorphic_path(resource.proposal)
       else
         polymorphic_path(factory.to_s.pluralize)
