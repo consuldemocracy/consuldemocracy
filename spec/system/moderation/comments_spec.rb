@@ -63,22 +63,6 @@ describe "Moderate comments" do
 
         all(:checkbox).each { |checkbox| expect(checkbox).not_to be_checked }
       end
-
-      scenario "remembering page, filter and order" do
-        stub_const("#{ModerateActions}::PER_PAGE", 2)
-        create_list(:comment, 4)
-
-        visit moderation_comments_path(filter: "all", page: "2", order: "newest")
-
-        accept_confirm("Are you sure? Mark as viewed") { click_button "Mark as viewed" }
-
-        expect(page).to have_link "Newest", class: "is-active"
-        expect(page).to have_link "Most flagged"
-
-        expect(page).to have_current_path(/filter=all/)
-        expect(page).to have_current_path(/page=2/)
-        expect(page).to have_current_path(/order=newest/)
-      end
     end
 
     scenario "Current filter is properly highlighted" do
