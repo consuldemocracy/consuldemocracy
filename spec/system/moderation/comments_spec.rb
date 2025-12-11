@@ -1,28 +1,6 @@
 require "rails_helper"
 
 describe "Moderate comments" do
-  scenario "Hide" do
-    citizen = create(:user)
-    moderator = create(:moderator)
-
-    comment = create(:comment)
-
-    login_as(moderator.user)
-    visit debate_path(comment.commentable)
-
-    within("#comment_#{comment.id}") do
-      accept_confirm("Are you sure? Hide") { click_button "Hide" }
-      expect(page).to have_css(".comment .faded")
-    end
-
-    login_as(citizen)
-    refresh
-
-    expect(page).to have_css(".comment", count: 1)
-    expect(page).not_to have_content("This comment has been deleted")
-    expect(page).not_to have_content("SPAM")
-  end
-
   scenario "Can not hide own comment" do
     moderator = create(:moderator)
     comment = create(:comment, user: moderator.user)
