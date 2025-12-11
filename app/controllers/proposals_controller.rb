@@ -28,7 +28,6 @@ class ProposalsController < ApplicationController
 
   def show
     super
-    @notifications = @proposal.notifications
     @notifications = @proposal.notifications.not_moderated
 
     if request.path != proposal_path(@proposal)
