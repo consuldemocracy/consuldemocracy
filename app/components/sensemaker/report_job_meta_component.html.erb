@@ -1,0 +1,12 @@
+<section>
+  <dl>
+    <% if run_timestamp %>
+      <dt><%= t("sensemaker.report_view.run_timestamp_label") %></dt>
+      <dd><%= run_timestamp %></dd>
+    <% end %>
+    <dt><%= t("sensemaker.report_view.comments_analysed_label") %></dt>
+    <dd><%= comments_analysed_count %></dd>
+  </dl>
+
+  <%= link_to view_report_text, report_url, class: "button", target: "_blank" %>
+</section>
