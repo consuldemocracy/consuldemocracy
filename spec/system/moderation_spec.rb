@@ -169,7 +169,11 @@ describe "Moderation" do
         click_button "Block author"
       end
 
-      expect(page).to have_current_path(index_path)
+      if factory == :proposal_notification
+        expect(page).to have_current_path(proposals_path)
+      else
+        expect(page).to have_current_path(index_path)
+      end
       expect(page).not_to have_content(resource_content)
     end
 
