@@ -109,6 +109,7 @@ describe "Moderation" do
     end
     let(:resource_path) { polymorphic_path(resource) }
     let(:faded_selector) { factory == :comment ? "> .comment-body.faded" : ".faded" }
+    let(:order) { factory == :comment ? "newest" : "created_at" }
 
     scenario "Hide" do
       login_as moderator.user
@@ -227,7 +228,6 @@ describe "Moderation" do
         end
 
         scenario "remembering page, filter and order" do
-          order = factory == :comment ? "newest" : "created_at"
           stub_const("#{ModerateActions}::PER_PAGE", 2)
           create_list(factory, 4)
 
@@ -301,30 +301,27 @@ describe "Moderation" do
       end
 
       scenario "Sorting resources" do
-        flagged_resource = create(factory, title: "Flagged resource", created_at: 1.day.ago, flags_count: 5)
-        flagged_new_resource = create(factory,
-                                      title: "Flagged new resource",
-                                      created_at: 12.hours.ago,
-                                      flags_count: 3)
-        newer_resource = create(factory, title: "Newer resource", created_at: Time.current)
+        flagged_resource = create(factory, created_at: 1.day.ago, flags_count: 5)
+        flagged_new_resource = create(factory, created_at: 12.hours.ago, flags_count: 3)
+        newer_resource = create(factory, created_at: Time.current)
 
-        visit moderation_resource_index_path(order: "created_at")
+        visit moderation_resource_index_path(order: order)
 
-        expect(flagged_new_resource.title).to appear_before flagged_resource.title
+        expect(content_for(flagged_new_resource)).to appear_before content_for(flagged_resource)
 
         visit moderation_resource_index_path(order: "flags")
 
-        expect(flagged_resource.title).to appear_before flagged_new_resource.title
+        expect(content_for(flagged_resource)).to appear_before content_for(flagged_new_resource)
 
-        visit moderation_resource_index_path(filter: "all", order: "created_at")
+        visit moderation_resource_index_path(filter: "all", order: order)
 
-        expect(newer_resource.title).to appear_before flagged_new_resource.title
-        expect(flagged_new_resource.title).to appear_before flagged_resource.title
+        expect(content_for(newer_resource)).to appear_before content_for(flagged_new_resource)
+        expect(content_for(flagged_new_resource)).to appear_before content_for(flagged_resource)
 
         visit moderation_resource_index_path(filter: "all", order: "flags")
 
-        expect(flagged_resource.title).to appear_before flagged_new_resource.title
-        expect(flagged_new_resource.title).to appear_before newer_resource.title
+        expect(content_for(flagged_resource)).to appear_before content_for(flagged_new_resource)
+        expect(content_for(flagged_new_resource)).to appear_before content_for(newer_resource)
       end
     end
   end

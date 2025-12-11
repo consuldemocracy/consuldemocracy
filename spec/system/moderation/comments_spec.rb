@@ -86,35 +86,5 @@ describe "Moderate comments" do
       expect(page).to have_link("Pending")
       expect(page).not_to have_link("Marked as viewed")
     end
-
-    scenario "sorting comments" do
-      flagged_comment = create(:comment,
-                               body: "Flagged comment",
-                               created_at: 1.day.ago,
-                               flags_count: 5)
-      flagged_new_comment = create(:comment,
-                                   body: "Flagged new comment",
-                                   created_at: 12.hours.ago,
-                                   flags_count: 3)
-      newer_comment = create(:comment, body: "Newer comment", created_at: Time.current)
-
-      visit moderation_comments_path(order: "newest")
-
-      expect(flagged_new_comment.body).to appear_before(flagged_comment.body)
-
-      visit moderation_comments_path(order: "flags")
-
-      expect(flagged_comment.body).to appear_before(flagged_new_comment.body)
-
-      visit moderation_comments_path(filter: "all", order: "newest")
-
-      expect(newer_comment.body).to appear_before(flagged_new_comment.body)
-      expect(flagged_new_comment.body).to appear_before(flagged_comment.body)
-
-      visit moderation_comments_path(filter: "all", order: "flags")
-
-      expect(flagged_comment.body).to appear_before(flagged_new_comment.body)
-      expect(flagged_new_comment.body).to appear_before(newer_comment.body)
-    end
   end
 end
