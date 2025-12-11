@@ -52,5 +52,15 @@ describe Moderation::UsersController do
 
       expect(response).to redirect_to legislation_process_proposals_path(process)
     end
+
+    it "redirects to the commentable when blocking from a comment" do
+      debate = create(:debate)
+      comment = create(:comment, commentable: debate, author: user)
+      request.env["HTTP_REFERER"] = comment_path(comment)
+
+      put :block, params: { id: user }
+
+      expect(response).to redirect_to debate_path(debate)
+    end
   end
 end

@@ -36,7 +36,12 @@ class Moderation::UsersController < Moderation::BaseController
 
     def resources_index_path
       if request.referer
-        path_with_query_params(referer_index_options)
+        if referer_controller == "comments" && referer_params[:id]
+          comment = Comment.with_hidden.find_by(id: referer_params[:id])
+          polymorphic_path(comment.commentable)
+        else
+          path_with_query_params(referer_index_options)
+        end
       else
         path_with_query_params({ action: :index })
       end
