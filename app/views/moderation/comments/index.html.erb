@@ -12,9 +12,7 @@
         <tr id="comment_<%= comment.id %>">
           <td>
             <%= comment.commentable_type.constantize.model_name.human %> -
-            <%= link_to comment.commentable.title,
-                        commentable_path(comment),
-                        id: dom_id(comment, :title) %>
+            <%= link_to comment.commentable.title, commentable_path(comment) %>
             <br>
             <span class="date"><%= l comment.updated_at.to_date %></span>
             <span class="bullet">&nbsp;&bull;&nbsp;</span>
@@ -31,7 +29,7 @@
                               comment.id,
                               nil,
                               id: "#{dom_id(comment)}_check",
-                              "aria-labelledby": dom_id(comment, :title) %>
+                              "aria-label": comment.human_name %>
           </td>
         </tr>
       <% end %>

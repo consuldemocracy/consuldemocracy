@@ -167,7 +167,7 @@ describe "Moderation" do
             visit moderation_resource_index_path
             click_link "All"
 
-            check resource.title
+            check resource.human_name
           end
 
           scenario "Hide the resource" do

@@ -47,59 +47,6 @@ describe "Moderate comments" do
     end
 
     describe "moderate in bulk" do
-      describe "When a comment has been selected for moderation" do
-        let!(:comment) { create(:comment) }
-
-        before do
-          visit moderation_comments_path
-          click_link "All"
-
-          within("#comment_#{comment.id}") do
-            check "comment_#{comment.id}_check"
-          end
-        end
-
-        scenario "Hide the comment" do
-          accept_confirm("Are you sure? Hide comments") do
-            click_button "Hide comments"
-          end
-
-          expect(page).not_to have_css("#comment_#{comment.id}")
-
-          click_link "Block users"
-          fill_in "email or name of user", with: comment.user.email
-          click_button "Search"
-
-          within "tr", text: comment.user.name do
-            expect(page).to have_button "Block"
-          end
-        end
-
-        scenario "Block the user" do
-          accept_confirm("Are you sure? Block authors") do
-            click_button "Block authors"
-          end
-
-          expect(page).not_to have_css("#comment_#{comment.id}")
-
-          click_link "Block users"
-          fill_in "email or name of user", with: comment.user.email
-          click_button "Search"
-
-          within "tr", text: comment.user.name do
-            expect(page).to have_content "Blocked"
-          end
-        end
-
-        scenario "Ignore the comment", :no_js do
-          click_button "Mark as viewed"
-
-          expect(comment.reload).to be_ignored_flag
-          expect(comment.reload).not_to be_hidden
-          expect(comment.user).not_to be_hidden
-        end
-      end
-
       scenario "select all/none" do
         create_list(:comment, 2)
 
