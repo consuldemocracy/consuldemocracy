@@ -39,5 +39,74 @@ id:
             short_title: "Akses Universal terhadap Pangan yang Aman dan Bergizi"
           target_2_2:
             long_title: "Pada tahun 2030, mengakhiri semua bentuk malnutrisi, termasuk mencapai target internasional terkait stunting dan wasting pada anak di bawah 5 tahun pada tahun 2025, serta memenuhi kebutuhan gizi remaja putri, ibu hamil dan menyusui, serta lansia."
+            short_title: "Mengakhiri Semua Bentuk Malnutrisi"
+          target_2_3:
+            long_title: "Pada tahun 2030, menggandakan produktivitas pertanian dan pendapatan produsen pangan skala kecil—khususnya perempuan, masyarakat adat, petani keluarga, penggembala, dan nelayan—melalui akses yang aman dan setara terhadap lahan, sumber daya produktif lainnya, input, pengetahuan, layanan keuangan, pasar, serta peluang peningkatan nilai tambah dan pekerjaan non-pertanian."
+            short_title: "Menggandakan Produktivitas dan Pendapatan Produsen Pangan Skala Kecil"
+          target_2_4:
+            long_title: "Pada tahun 2030, memastikan sistem produksi pangan berkelanjutan serta menerapkan praktik pertanian yang tangguh—yang meningkatkan produktivitas dan hasil produksi, membantu menjaga ekosistem, memperkuat kapasitas adaptasi terhadap perubahan iklim, cuaca ekstrem, kekeringan, banjir, dan bencana lainnya, serta secara bertahap meningkatkan kualitas tanah dan lahan."
+            short_title: "Produksi Pangan Berkelanjutan dan Praktik Pertanian Tangguh"
+          target_2_5:
+            long_title: "Pada tahun 2030, mempertahankan keragaman genetik benih, tanaman budidaya, serta hewan ternak dan domestik beserta spesies liarnya, termasuk melalui pengelolaan yang baik dan diversifikasi bank benih dan tanaman di tingkat nasional, regional, dan internasional, serta mendorong akses dan pembagian manfaat yang adil dan setara dari pemanfaatan sumber daya genetik dan pengetahuan tradisional terkait, sebagaimana disepakati secara internasional."
+            short_title: "Mempertahankan Keragaman Genetik dalam Produksi Pangan"
+          target_2_A:
+            long_title: "Meningkatkan investasi—termasuk melalui kerja sama internasional yang diperkuat—dalam infrastruktur pedesaan, penelitian pertanian, layanan penyuluhan, pengembangan teknologi, serta bank gen tanaman dan ternak, guna meningkatkan kapasitas produktif pertanian di negara berkembang, khususnya negara-negara kurang berkembang."
+            short_title: "Investasi pada Infrastruktur Pedesaan, Penelitian Pertanian, Teknologi, dan Bank Gen"
+          target_2_B:
+            long_title: "Mengoreksi dan mencegah pembatasan serta distorsi perdagangan di pasar pertanian dunia, termasuk melalui penghapusan paralel semua bentuk subsidi ekspor pertanian dan semua langkah ekspor yang memiliki dampak serupa, sesuai dengan mandat Putaran Pembangunan Doha."
+            short_title: "Mencegah Pembatasan Perdagangan Pertanian, Distorsi Pasar, dan Subsidi Ekspor"
+          target_2_C:
+            long_title: "Mengambil langkah-langkah untuk memastikan berfungsinya pasar komoditas pangan dan turunannya secara optimal, serta mempermudah akses tepat waktu terhadap informasi pasar, termasuk terkait cadangan pangan, guna membantu membatasi volatilitas harga pangan yang ekstrem."
+            short_title: "Memastikan Stabilitas Pasar Komoditas Pangan dan Akses Informasi yang Tepat Waktu"
+      goal_3:
+        title: "Kesehatan yang Baik dan Kesejahteraan"
+        title_in_two_lines: "Kesehatan yang Baik \ndan Kesejahteraan"
+        description: "Memastikan kehidupan yang sehat dan mempromosikan kesejahteraan bagi semua orang di semua usia."
+        long_description: '<p>Memastikan kehidupan yang sehat dan meningkatkan kesejahteraan di semua usia merupakan hal yang penting bagi pembangunan berkelanjutan. Saat ini, dunia menghadapi <a href="https://www.un.org/coronavirus">krisis kesehatan global</a> yang belum pernah terjadi sebelumnya — COVID-19 menyebabkan penderitaan manusia, mengacaukan perekonomian global, dan mengubah kehidupan miliaran orang di seluruh dunia.&nbsp;</p><p>Sebelum pandemi, kemajuan besar telah dicapai dalam <a href="https://unstats.un.org/sdgs/report/2019/goal-03/">meningkatkan kesehatan jutaan orang</a>. Langkah penting telah diambil dalam meningkatkan harapan hidup dan menurunkan beberapa penyebab utama kematian anak dan ibu. Namun, upaya lebih lanjut diperlukan untuk sepenuhnya memberantas berbagai penyakit dan menangani banyak masalah kesehatan yang terus berlangsung maupun yang sedang muncul. Dengan berfokus pada pendanaan sistem kesehatan yang lebih efisien, peningkatan sanitasi dan higienitas, serta perluasan akses terhadap tenaga medis, kemajuan signifikan dapat dicapai dalam upaya menyelamatkan jutaan jiwa. </p><p>Kedaruratan kesehatan seperti COVID-19 menimbulkan risiko global dan menyoroti kebutuhan penting akan kesiapsiagaan. Program Pembangunan PBB menyoroti adanya kesenjangan besar dalam <a href="https://www.undp.org/content/undp/en/home/news-centre/news/2020/COVID19_UNDP_data_dashboards_reveal_disparities_among_countries_to_cope_and_recover.html">kemampuan negara-negara dalam menghadapi dan pulih dari krisis COVID-19</a>.Pandemi ini menjadi titik perubahan penting bagi penguatan kesiapsiagaan darurat kesehatan dan investasi pada layanan publik esensial abad ke-21.&nbsp;</p>'
+        targets:
+          target_3_1:
+            long_title: "Pada tahun 2030, kurangi rasio kematian ibu secara global menjadi kurang dari 70 per 100.000 kelahiran hidup."
+            short_title: "Mengurangi Angka Kematian Ibu"
+          target_3_2:
+            long_title: "Pada tahun 2030, akhiri kematian yang dapat dicegah pada bayi baru lahir dan anak di bawah 5 tahun, dengan setiap negara menargetkan penurunan angka kematian neonatal hingga setidaknya 12 per 1.000 kelahiran hidup dan angka kematian balita hingga setidaknya 25 per 1.000 kelahiran hidup."
+            short_title: "Mengakhiri Semua Kematian Balita yang Dapat Dicegah"
+          target_3_3:
+            long_title: "Pada tahun 2030, akhiri epidemi AIDS, tuberkulosis, malaria, dan penyakit tropis terabaikan, serta tangani hepatitis, penyakit akibat air, dan penyakit menular lainnya."
+            short_title: "Memerangi Penyakit Menular"
+          target_3_4:
+            long_title: "Pada tahun 2030, kurangi sepertiga angka kematian dini akibat penyakit tidak menular melalui pencegahan dan pengobatan, serta promosikan kesehatan mental dan kesejahteraan."
+            short_title: "Mengurangi Kematian Akibat Penyakit Tidak Menular dan Meningkatkan Kesehatan Mental"
+          target_3_5:
+            long_title: "Perkuat pencegahan dan pengobatan penyalahgunaan zat, termasuk narkotika dan konsumsi alkohol yang berbahaya."
+            short_title: "Mencegah dan Mengobati Penyalahgunaan Zat"
+          target_3_6:
+            long_title: "Pada tahun 2030, kurangi setengah jumlah kematian dan cedera akibat kecelakaan lalu lintas."
+            short_title: "Mengurangi Cedera dan Kematian di Jalan Raya"
+          target_3_7:
+            long_title: "Pada tahun 2030, pastikan akses universal ke layanan kesehatan seksual dan reproduksi, termasuk perencanaan keluarga, informasi, pendidikan, serta integrasi kesehatan reproduksi ke dalam strategi dan program nasional."
+            short_title: "Akses Universal terhadap Layanan Kesehatan Seksual dan Reproduksi, Perencanaan Keluarga dan Edukasi"
+          target_3_8:
+            long_title: "Capai cakupan kesehatan universal, termasuk perlindungan risiko finansial, akses terhadap layanan kesehatan esensial yang berkualitas, serta obat-obatan dan vaksin yang aman, efektif, berkualitas, dan terjangkau untuk semua."
+            short_title: "Mewujudkan Cakupan Kesehatan Universal"
+          target_3_9:
+            long_title: "Pada tahun 2030, secara signifikan kurangi jumlah kematian dan penyakit akibat bahan kimia berbahaya serta polusi udara, air, dan tanah."
+            short_title: "Mengurangi Penyakit dan Kematian akibat Bahan Kimia Berbahaya dan Polusi"
+          target_3_A:
+            long_title: "Perkuat implementasi Kerangka Kerja WHO untuk Pengendalian Tembakau di semua negara sesuai dengan kebutuhan nasional."
+            short_title: "Mengimplementasikan Kerangka Kerja WHO untuk Pengendalian Tembakau"
+          target_3_B:
+            long_title: "Dukung penelitian, pengembangan, dan akses terhadap obat serta vaksin terjangkau bagi penyakit menular dan tidak menular yang terutama berdampak pada negara berkembang, sesuai Deklarasi Doha tentang TRIPS dan Kesehatan Publik, yang menegaskan hak negara berkembang untuk memanfaatkan fleksibilitas TRIPS demi melindungi kesehatan publik dan memastikan akses obat bagi semua."
+            short_title: "Mendukung Riset, Pengembangan dan Akses Universal terhadap Vaksin dan Obat Terjangkau"
+          target_3_C:
+            long_title: "Secara signifikan tingkatkan pembiayaan kesehatan dan kapasitas perekrutan, pengembangan, pelatihan, serta retensi tenaga kesehatan di negara berkembang, khususnya negara kurang berkembang dan negara pulau kecil."
+            short_title: "Meningkatkan Pembiayaan Kesehatan dan Dukungan bagi Tenaga Kesehatan di Negara Berkembang"
+          target_3_D:
+            long_title: "Perkuat kapasitas semua negara, terutama negara berkembang, dalam sistem peringatan dini, pengurangan risiko, dan penanganan ancaman kesehatan nasional maupun global."
+            short_title: "Meningkatkan Sistem Peringatan Dini untuk Risiko Kesehatan Global"
+      goal_4:
+        title: "Pendidikan Berkualitas"
+        title_in_two_lines: "Pendidikan \nBerkualitas"
+        description: "Pendidikan Berkualitas."
+        long_description: '<p>Pendidikan membuka peluang mobilitas sosial ekonomi dan menjadi kunci untuk keluar dari kemiskinan. Dalam satu dekade terakhir, kemajuan besar telah dicapai dalam meningkatkan akses pendidikan dan angka partisipasi sekolah di semua jenjang, terutama bagi anak perempuan. Namun, <a href="http://uis.unesco.org/en/topic/out-school-children-and-youth">pada tahun 2018, sekitar 260 juta anak masih berada di luar sekolah</a> — hampir seperlima dari populasi global dalam kelompok usia tersebut. Selain itu, lebih dari separuh anak dan remaja di seluruh dunia <a href="https://unstats.un.org/sdgs/report/2019/goal-04/">belum mencapai standar kemahiran minimum</a> dalam membaca dan matematika.&nbsp;</p> <p>Pada tahun 2020, ketika pandemi COVID-19 menyebar ke seluruh dunia, sebagian besar negara mengumumkan penutupan sekolah sementara, yang berdampak pada lebih dari 91 persen siswa secara global. Pada April 2020, hampir <a href="https://en.unesco.org/covid19/educationresponse">1,6 miliar anak dan remaja tidak dapat bersekolah</a>. Selain itu, <a href="https://www.un.org/sites/un2.un.org/files/policy_brief_on_covid_impact_on_children_16_april_2020.pdf">sekitar 369 juta anak yang bergantung pada makanan sekolah</a> harus mencari sumber lain untuk kebutuhan nutrisi harian mereka.&nbsp;<p> <p>Belum pernah sebelumnya begitu banyak anak berada di luar sekolah pada saat yang sama. Situasi ini mengganggu proses belajar dan memengaruhi kehidupan jutaan anak, terutama mereka yang paling rentan dan terpinggirkan. Pandemi global membawa konsekuensi luas yang dapat mengancam capaian penting dalam peningkatan pendidikan di seluruh dunia.</p>'
     related_list_selector:
       remove_tag: "Hapus"
