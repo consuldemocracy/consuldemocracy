@@ -341,11 +341,13 @@ describe "Comments" do
 
       expect(page).not_to have_content "This was a mistake"
       expect(page).not_to have_button "Delete comment"
+      expect(page).not_to have_content "This comment has been deleted"
 
       refresh
 
       expect(page).not_to have_content "This was a mistake"
       expect(page).not_to have_button "Delete comment"
+      expect(page).not_to have_content "This comment has been deleted"
 
       logout
       login_as(admin)
