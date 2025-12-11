@@ -273,28 +273,28 @@ describe "Moderation" do
       end
 
       scenario "Filtering resources" do
-        create(factory, title: "Regular resource")
-        create(factory, :flagged, title: "Pending resource")
-        create(factory, :hidden, title: "Hidden resource")
-        create(factory, :flagged, :with_ignored_flag, title: "Ignored resource")
+        regular_resource = create(factory)
+        pending_resource = create(factory, :flagged)
+        hidden_resource = create(factory, :hidden)
+        ignored_resource = create(factory, :flagged, :with_ignored_flag)
 
         visit moderation_resource_index_path(filter: "all")
-        expect(page).to have_content("Regular resource")
-        expect(page).to have_content("Pending resource")
-        expect(page).not_to have_content("Hidden resource")
-        expect(page).to have_content("Ignored resource")
+        expect(page).to have_content content_for(regular_resource)
+        expect(page).to have_content content_for(pending_resource)
+        expect(page).not_to have_content content_for(hidden_resource)
+        expect(page).to have_content content_for(ignored_resource)
 
         visit moderation_resource_index_path(filter: "pending_flag_review")
-        expect(page).not_to have_content("Regular resource")
-        expect(page).to have_content("Pending resource")
-        expect(page).not_to have_content("Hidden resource")
-        expect(page).not_to have_content("Ignored resource")
+        expect(page).not_to have_content content_for(regular_resource)
+        expect(page).to have_content content_for(pending_resource)
+        expect(page).not_to have_content content_for(hidden_resource)
+        expect(page).not_to have_content content_for(ignored_resource)
 
         visit moderation_resource_index_path(filter: "with_ignored_flag")
-        expect(page).not_to have_content("Regular resource")
-        expect(page).not_to have_content("Pending resource")
-        expect(page).not_to have_content("Hidden resource")
-        expect(page).to have_content("Ignored resource")
+        expect(page).not_to have_content content_for(regular_resource)
+        expect(page).not_to have_content content_for(pending_resource)
+        expect(page).not_to have_content content_for(hidden_resource)
+        expect(page).to have_content content_for(ignored_resource)
       end
 
       scenario "Sorting resources" do
@@ -328,5 +328,9 @@ describe "Moderation" do
 
   def moderation_resource_index_path(params = {})
     send("moderation_#{factory.to_s.pluralize}_path", **params)
+  end
+
+  def content_for(resource)
+    factory == :comment ? resource.body : resource.title
   end
 end
