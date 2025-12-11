@@ -1,31 +1,6 @@
 require "rails_helper"
 
 describe "Moderate proposal notifications" do
-  scenario "Hide" do
-    citizen   = create(:user)
-    proposal  = create(:proposal)
-    proposal_notification = create(:proposal_notification,
-                                   proposal: proposal,
-                                   created_at: Date.current - 4.days)
-    moderator = create(:moderator)
-
-    login_as(moderator.user)
-    visit proposal_path(proposal)
-    click_link "Notifications (1)"
-
-    within("#proposal_notification_#{proposal_notification.id}") do
-      accept_confirm("Are you sure? Hide") { click_button "Hide" }
-    end
-
-    expect(page).to have_css("#proposal_notification_#{proposal_notification.id}.faded")
-
-    logout
-    login_as(citizen)
-    visit proposal_path(proposal)
-
-    expect(page).to have_content "Notifications (0)"
-  end
-
   scenario "Can not hide own proposal notification" do
     moderator = create(:moderator)
     proposal = create(:proposal, author: moderator.user)

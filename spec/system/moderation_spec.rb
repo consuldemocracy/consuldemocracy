@@ -100,15 +100,24 @@ describe "Moderation" do
     let!(:resource) { create(factory) }
     let(:moderator) { create(:moderator) }
     let(:index_path) do
-      if factory == :budget_investment
+      case factory
+      when :budget_investment
         polymorphic_path([resource.budget, :investments])
-      elsif factory == :comment
+      when :comment
         polymorphic_path(resource.commentable)
+      when :proposal_notification
+        polymorphic_path(resource.proposal)
       else
         polymorphic_path(factory.to_s.pluralize)
       end
     end
-    let(:resource_path) { polymorphic_path(resource) }
+    let(:resource_path) do
+      if factory == :proposal_notification
+        polymorphic_path(resource.proposal)
+      else
+        polymorphic_path(resource)
+      end
+    end
     let(:faded_selector) { factory == :comment ? "> .comment-body.faded" : ".faded" }
     let(:order) { factory == :comment ? "newest" : "created_at" }
 
@@ -116,12 +125,16 @@ describe "Moderation" do
       login_as moderator.user
       visit resource_path
 
+      click_link "Notifications (1)" if factory == :proposal_notification
+
       within "##{dom_id(resource)}" do
         accept_confirm("Are you sure? Hide") { click_button "Hide" }
       end
 
       expect(page).to have_css "##{dom_id(resource)}#{faded_selector}"
-      expect(page).to have_css "#comments.faded" unless factory == :comment
+      if factory != :comment && factory != :proposal_notification
+        expect(page).to have_css "#comments.faded"
+      end
       expect(page).to have_content resource.human_name
 
       login_as user
@@ -129,6 +142,8 @@ describe "Moderation" do
 
       if factory == :comment
         expect(page).to have_css(".comment", count: 1)
+      elsif factory == :proposal_notification
+        expect(page).to have_content "Notifications (0)"
       else
         expect(page).to have_css(".#{factory}", count: 0)
       end

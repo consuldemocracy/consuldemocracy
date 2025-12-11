@@ -9,7 +9,7 @@ class Moderation::ProposalNotificationsController < Moderation::BaseController
   load_and_authorize_resource
 
   def hide
-    resource.update(moderated: true)
+    resource.update!(moderated: true)
     respond_to do |format|
       format.js do
         render "moderation/shared/hide", locals: { resource: resource }
