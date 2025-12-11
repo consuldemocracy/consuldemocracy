@@ -80,8 +80,6 @@ fr:
         tags_instructions: "Étiquetter cette proposition. Vous pouvez choisir parmi\nles catégories proposées ou ajouter la vôtre"
         tags_label: Sujets
         tags_placeholder: "Entrez les étiquettes que vous voudriez utiliser, séparer par des virgules (',')"
-        map_location: "Emplacement sur la carte"
-        map_location_instructions: "Positionnez le marqueur à l'emplacement correspondant sur la carte."
       index:
         title: Budget participatif
         unfeasible: Propositions d'investissement irréalisables
@@ -125,7 +123,6 @@ fr:
       share:
         message: "J’ai créé le projet de placement %{title} à %{handle}. Créez vous aussi un projet d’investissement!"
       show:
-        author_deleted: Utilisateur effacé
         price_explanation: Informations sur le coût <small>(optionnel, données publiques)</small>
         unfeasibility_explanation: Explication de l'infaisabilité
         code: "Code du projet d'investissement: <strong>%{code}</strong>"

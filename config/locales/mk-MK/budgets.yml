@@ -15,7 +15,6 @@ mk:
           selected: "Селектирано"
           unfeasible: "Неизводливо"
       show:
-        author_deleted: Избришан корисник
         price_explanation: Објаснување на цена
         share: Сподели
         title: Проекти за инвестирање

@@ -94,7 +94,6 @@ uk-UA:
         confidence_score: з найвищим рейтингом
         created_at: найновіші
         hot_score: найактивніші
-        most_commented: найбільш коментовані
         relevance: актуальність
         recommendations: рекомендації
       recommendations:
@@ -130,7 +129,6 @@ uk-UA:
       recommendations_title: Рекомендації щодо створення обговорень
       start_new: Розпочати обговорення
     show:
-      author_deleted: Користувач видалений
       comments_title: Коментарі
       edit_debate_link: Редагувати
       flag: Це обговорення позначене як недоречне кількома користувачами.
@@ -417,7 +415,6 @@ uk-UA:
       successful: "Ця пропозиція отримала достатню підтримку."
       selected: "Вибрана пропозиція"
     show:
-      author_deleted: Користувача видалено
       code: "Код пропозиції:"
       comments_tab: Коментарі
       dashboard_proposal_link: Інформаційна панель

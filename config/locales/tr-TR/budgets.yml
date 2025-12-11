@@ -80,8 +80,6 @@ tr:
         tags_instructions: "Bu önergeyi etiketleyin. Önerge kategorileri arasından seçim yapabilir ya da yeni bir kategori ekleyebilirsiniz"
         tags_label: Etiketler
         tags_placeholder: "Kullanmak istediğiniz etiketleri virgül (',') ile ayırarak yazın"
-        map_location: "Harita konumu"
-        map_location_instructions: "Harita ile konuma gidin ve işareti yerleştirin."
       index:
         title: Katılımcı bütçeleme
         unfeasible: Uygulanabilir bulunmayan yatırım projeleri
@@ -125,7 +123,6 @@ tr:
       share:
         message: "%{title} konulu %{handle} yatırım projesini oluşturdum. Siz de bir yatırım projesi oluşturun!"
       show:
-        author_deleted: Kullanıcı silindi
         price_explanation: Maliyet açıklaması
         unfeasibility_explanation: Uygulanabilir bulunmama açıklaması
         code: "Yatırım projesi kodu: <strong>%{code}</strong>"

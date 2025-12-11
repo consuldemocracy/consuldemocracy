@@ -84,7 +84,6 @@ pt-BR:
         confidence_score: melhor avaliado
         created_at: mais recente
         hot_score: mais ativa
-        most_commented: mais comentada
         relevance: relevância
         recommendations: recomendações
       recommendations:
@@ -120,7 +119,6 @@ pt-BR:
       recommendations_title: Recomendações para criar um debate
       start_new: Iniciar um debate
     show:
-      author_deleted: Usuário excluído
       comments_title: Comentários
       edit_debate_link: Editar
       flag: Este debate foi marcado como inapropriado por vários usuários.
@@ -393,7 +391,6 @@ pt-BR:
       successful: "Esta proposta tem alcançado os suportes necessários."
       selected: "Proposta selecionada"
     show:
-      author_deleted: Usuário excluído
       code: "Código da proposta:"
       comments_tab: Comentários
       dashboard_proposal_link: Painel de controle

@@ -88,7 +88,6 @@ sv:
         confidence_score: populära
         created_at: senaste
         hot_score: mest aktiva
-        most_commented: mest kommenterade
         relevance: relevans
         recommendations: rekommendationer
       recommendations:
@@ -124,7 +123,6 @@ sv:
       recommendations_title: Rekommendationer för debattinlägg
       start_new: Starta en debatt
     show:
-      author_deleted: Användaren är borttagen
       comments_title: Kommentarer
       edit_debate_link: Redigera
       flag: Denna debatt har flaggats som olämplig av flera användare.
@@ -329,6 +327,7 @@ sv:
       tags_placeholder: "Skriv taggarna du vill använda, avgränsade med komma (',')"
       map_location: "Kartposition"
       map_location_instructions: "Navigera till platsen på kartan och placera markören."
+      map_marker_coordinates: "Latitud: %{latitude}. Longitud: %{longitude}"
       map_remove_marker: "Ta bort kartmarkör"
     index:
       featured_proposals: Utvalda
@@ -414,7 +413,6 @@ sv:
       successful: "Förslaget har fått tillräckligt med stöd."
       selected: "Valt förslag"
     show:
-      author_deleted: Användaren är borttagen
       code: "Förslagskod:"
       comments_tab: Kommentarer
       dashboard_proposal_link: Dashboard

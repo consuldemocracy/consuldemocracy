@@ -73,8 +73,6 @@ pt-BR:
         tags_instructions: "Marque esta proposta. Você pode escolher entre as categorias propostas ou adicionar a sua própria"
         tags_label: Marcação
         tags_placeholder: "Entre com as marcações que você deseja usar, separadas por vírgulas ('s\")"
-        map_location: "Localização no mapa"
-        map_location_instructions: "Navegue no mapa até o local e fixe o marcador."
       index:
         title: Orçamento participativo
         unfeasible: Projetos de investimento inviáveis
@@ -112,7 +110,6 @@ pt-BR:
       share:
         message: "Eu criei o projeto de investimento %{title} em %{handle}. Crie um projeto você também!"
       show:
-        author_deleted: Usuário excluído
         price_explanation: Explicação do preço
         unfeasibility_explanation: Explanação da inviabilidade
         code: "Código do projeto de investimento: <strong>%{code}</strong>"

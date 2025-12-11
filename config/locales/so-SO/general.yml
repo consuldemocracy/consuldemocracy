@@ -80,7 +80,6 @@ so:
         confidence_score: ugu sareeya
         created_at: ugu cusub
         hot_score: ugu firfircoon
-        most_commented: inta badan faaliyey
         relevance: kuhabon
         recommendations: talloyin
       recommendations:
@@ -116,7 +115,6 @@ so:
       recommendations_title: Talooyin ku saabsan abuurista dood
       start_new: Biloow dooda
     show:
-      author_deleted: Isticmalaha la tirtiray
       comments_title: Faalo
       edit_debate_link: Isbedel
       flag: Dooddani waxaa loo calaamadiyay iyada oo aan ku habboonayn dad badan oo isticmaala.
@@ -351,7 +349,6 @@ so:
       archived: "Soo jeedintaas waa la diiwaangeliyey oo ma soo qaadan karo taageerooyinka."
       successful: "Hindisahani wuxuu gaadhay taageerooyinka loo baahan yahay."
     show:
-      author_deleted: Isticmalaha la tirtiray
       code: "Talo soo jeedin:"
       comments_tab: Faalo
       flag: Soo jeedintaas waxaa loo calaamadeeyay sida aan haboonayn dadka isticmaala.

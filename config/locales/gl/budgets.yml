@@ -80,8 +80,6 @@ gl:
         tags_instructions: "Etiqueta esta proposta. Podes elixir entre as categorías propostas ou escribir as que desexares"
         tags_label: Etiquetas
         tags_placeholder: "Escribe as etiquetas que desexes separadas por unha coma (',')"
-        map_location: "Localización no mapa"
-        map_location_instructions: "Navega polo mapa até a localización e coloca o marcador."
       index:
         title: Orzamentos participativos
         unfeasible: Propostas de investimento non viables
@@ -125,7 +123,6 @@ gl:
       share:
         message: "Acabo de crear o proxecto de investimento %{title} en %{handle}. Anímote a crear o teu proxecto de investimento!"
       show:
-        author_deleted: Usuario/a borrado/a
         price_explanation: Informe de custo <small>(opcional, dato público)</small>
         unfeasibility_explanation: Informe de inviabilidade
         code: "Código de proposta de gasto:<strong>%{code}</strong>"

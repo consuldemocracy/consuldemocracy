@@ -63,7 +63,6 @@ fi:
         confidence_score: korkeimmin arvioitu
         created_at: uusin
         hot_score: aktiivisin
-        most_commented: kommentoiduin
         relevance: merkityksellisyys
         recommendations: suositukset
       search_form:
@@ -72,7 +71,6 @@ fi:
     new:
       more_info: Lisää tietoa
     show:
-      author_deleted: Käyttäjä poistettu
       comments_title: Kommentit
       edit_debate_link: Muokkaa
       share: Jaa
@@ -200,7 +198,6 @@ fi:
         other: "%{count} ääntä"
       total_percent: 100%
     show:
-      author_deleted: Käyttäjä poistettu
       comments_tab: Kommentit
       notifications_tab: Ilmoitukset
       milestones_tab: Tavoitteet

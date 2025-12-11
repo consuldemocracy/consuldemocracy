@@ -87,7 +87,6 @@ da:
         confidence_score: højest rangeret
         created_at: nyeste
         hot_score: mest aktive
-        most_commented: flest kommentarer
         relevance: relevans
         recommendations: anbefalinger
       recommendations:
@@ -123,7 +122,6 @@ da:
       recommendations_title: Anbefalinger til oprettelse af debatindlæg
       start_new: Start en debat
     show:
-      author_deleted: Bruger slettet
       comments_title: Kommentarer
       edit_debate_link: Rediger
       flag: Denne debat er blevet markeret som upassende af flere brugere.
@@ -402,7 +400,6 @@ da:
       successful: "Forslaget har opnået den nødvendige støtte."
       selected: "Valgte forslag"
     show:
-      author_deleted: Bruger slettet
       code: "Forslagskode:"
       comments_tab: Kommentarer
       dashboard_proposal_link: Dashboard

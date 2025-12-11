@@ -72,7 +72,6 @@ sl:
         confidence_score: najbolje ocenjene
         created_at: najnovejše
         hot_score: najbolj aktivne
-        most_commented: z največ komentarji
         relevance: najbolj relevantno
         recommendations: priporočeno
       recommendations:
@@ -104,7 +103,6 @@ sl:
       recommendations_title: Nasveti za ustvarjanje razprave
       start_new: Začni razpravo
     show:
-      author_deleted: Uporabnik izbrisan
       comments_title: Komentarji
       edit_debate_link: Uredi
       flag: To razpravo je več uporabnikov označilo kot neprimerno.
@@ -309,7 +307,6 @@ sl:
       archived: "Ta predlog je bil arhiviran in ne more zbirati podpornikov."
       successful: "Ta predlog je dosegel zahtevano podporo."
     show:
-      author_deleted: Uporabnik izbrisan
       code: "Koda predloga:"
       comments_tab: Komentarji
       flag: Ta predlog je več uporabnikov označilo kot neprimeren.

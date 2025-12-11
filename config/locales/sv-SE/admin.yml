@@ -62,6 +62,7 @@ sv:
         filter: Visa
         filters:
           all: Alla
+          on_budget_investments: Budgetförslag
           on_comments: Kommentarer
           on_debates: Debatter
           on_proposals: Förslag
@@ -1326,6 +1327,7 @@ sv:
         participation_processes: "Deltagarprocesser"
         images_and_documents: "Bilder och dokument"
         feature_flags: Funktioner
+        blank_option: "Ingen"
         features:
           enabled: "Aktiverad funktion"
         map:
@@ -1348,6 +1350,8 @@ sv:
           title: Cookies-samtycke
         cookies_consent_banner:
           title: Banner om cookies-samtycke
+        llm:
+          title: LLM-inställningar
       remote_census_general_name: Generell information
       remote_census_request_name: Begär data
       remote_census_response_name: Svarsdata

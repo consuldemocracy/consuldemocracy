@@ -98,7 +98,6 @@ cs:
         confidence_score: nejlépe hodnocené
         created_at: nejnovější
         hot_score: nejaktivnější
-        most_commented: nejvíce komentované
         relevance: závažnost
         recommendations: doporučení
       recommendations:
@@ -134,7 +133,6 @@ cs:
       recommendations_title: Doporučení k vytvoření debaty
       start_new: Zahájit debatu
     show:
-      author_deleted: Uživatel
       comments_title: Komentáře
       edit_debate_link: Upravit
       flag: Tato diskuse byla označena několika uživateli za nevhodnou.
@@ -431,7 +429,6 @@ cs:
       successful: "Tento návrh dosáhl požadované podpory."
       selected: "Vybraný návrh"
     show:
-      author_deleted: Uživatel
       code: "Kód návrhu:"
       comments_tab: Komentáře
       dashboard_proposal_link: Ovládací panel
