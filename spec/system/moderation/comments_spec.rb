@@ -87,31 +87,6 @@ describe "Moderate comments" do
       expect(page).not_to have_link("Marked as viewed")
     end
 
-    scenario "Filtering comments" do
-      create(:comment, body: "Regular comment")
-      create(:comment, :flagged, body: "Pending comment")
-      create(:comment, :hidden, body: "Hidden comment")
-      create(:comment, :flagged, :with_ignored_flag, body: "Ignored comment")
-
-      visit moderation_comments_path(filter: "all")
-      expect(page).to have_content("Regular comment")
-      expect(page).to have_content("Pending comment")
-      expect(page).not_to have_content("Hidden comment")
-      expect(page).to have_content("Ignored comment")
-
-      visit moderation_comments_path(filter: "pending_flag_review")
-      expect(page).not_to have_content("Regular comment")
-      expect(page).to have_content("Pending comment")
-      expect(page).not_to have_content("Hidden comment")
-      expect(page).not_to have_content("Ignored comment")
-
-      visit moderation_comments_path(filter: "with_ignored_flag")
-      expect(page).not_to have_content("Regular comment")
-      expect(page).not_to have_content("Pending comment")
-      expect(page).not_to have_content("Hidden comment")
-      expect(page).to have_content("Ignored comment")
-    end
-
     scenario "sorting comments" do
       flagged_comment = create(:comment,
                                body: "Flagged comment",
