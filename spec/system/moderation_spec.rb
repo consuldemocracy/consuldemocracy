@@ -110,6 +110,7 @@ describe "Moderation" do
     let(:resource_path) { polymorphic_path(resource) }
     let(:faded_selector) { factory == :comment ? ".comment .faded" : ".faded" }
     let(:resource_content) { factory == :comment ? resource.body : resource.title }
+    let(:resource_checkbox_selector) { factory == :comment ? "#{dom_id(resource)}_check" : resource.title }
 
     scenario "Hide" do
       login_as moderator.user
@@ -166,7 +167,7 @@ describe "Moderation" do
             visit moderation_resource_index_path
             click_link "All"
 
-            check resource.title
+            check resource_checkbox_selector
           end
 
           scenario "Hide the resource" do
