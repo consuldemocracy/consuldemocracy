@@ -1,7 +1,7 @@
 class Shared::FlagActionsComponent < ApplicationComponent
   attr_reader :flaggable, :divider
   alias_method :divider?, :divider
-  use_helpers :current_user
+  use_helpers :can?, :current_user
 
   def initialize(flaggable, divider: nil)
     @flaggable = flaggable
@@ -9,7 +9,7 @@ class Shared::FlagActionsComponent < ApplicationComponent
   end
 
   def render?
-    current_user && !own_flaggable?
+    can?(:flag, flaggable)
   end
 
   private
@@ -20,14 +20,6 @@ class Shared::FlagActionsComponent < ApplicationComponent
 
     def show_unflag_action?
       flagged?
-    end
-
-    def own_flaggable?
-      if flaggable.is_a?(Comment)
-        flaggable.user_id == current_user.id
-      else
-        flaggable.author_id == current_user.id
-      end
     end
 
     def flagged?
