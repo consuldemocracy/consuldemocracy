@@ -3,7 +3,7 @@ class ProposalNotification < ApplicationRecord
   include Notifiable
   include Searchable
 
-  belongs_to :author, class_name: "User"
+  belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :proposal_notifications
   belongs_to :proposal
 
   validates :title, presence: true

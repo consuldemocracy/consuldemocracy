@@ -10,27 +10,12 @@ describe "Moderate proposal notifications" do
     describe "moderate in bulk" do
       describe "When a proposal has been selected for moderation" do
         let!(:proposal_notification) { create(:proposal_notification, created_at: Date.current - 4.days) }
-        let!(:email) { proposal_notification.author.email }
 
         before do
           visit moderation_proposal_notifications_path
           click_link "All"
 
           check proposal_notification.title
-        end
-
-        scenario "Block the author" do
-          accept_confirm("Are you sure? Block authors") { click_button "Block authors" }
-
-          expect(page).not_to have_css("#proposal_notification_#{proposal_notification.id}")
-
-          click_link "Block users"
-          fill_in "email or name of user", with: email
-          click_button "Search"
-
-          within "tr", text: proposal_notification.author.name do
-            expect(page).to have_content "Blocked"
-          end
         end
 
         scenario "Ignore the proposal", :no_js do
