@@ -293,12 +293,24 @@ describe "Moderation" do
         expect(page).to have_link "Pending"
         expect(page).to have_link "Marked as viewed"
 
-        visit moderation_resource_index_path(filter: "pending_flag_review")
+        if factory == :proposal_notification
+          pending_filter = "pending_review"
+        else
+          pending_filter = "pending_flag_review"
+        end
+
+        visit moderation_resource_index_path(filter: pending_filter)
         expect(page).to have_link "All"
         expect(page).not_to have_link "Pending"
         expect(page).to have_link "Marked as viewed"
 
-        visit moderation_resource_index_path(filter: "with_ignored_flag")
+        if factory == :proposal_notification
+          ignored_filter = "ignored"
+        else
+          ignored_filter = "with_ignored_flag"
+        end
+
+        visit moderation_resource_index_path(filter: ignored_filter)
         expect(page).to have_link "All"
         expect(page).to have_link "Pending"
         expect(page).not_to have_link "Marked as viewed"
