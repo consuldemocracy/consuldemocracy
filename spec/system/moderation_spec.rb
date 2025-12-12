@@ -342,27 +342,39 @@ describe "Moderation" do
       end
 
       scenario "Sorting resources" do
-        flagged_resource = create(factory, created_at: 1.day.ago, flags_count: 5)
-        flagged_new_resource = create(factory, created_at: 12.hours.ago, flags_count: 3)
+        if factory == :proposal_notification
+          reported_resource = create(factory, :moderated, created_at: 1.day.ago)
+          reported_new_resource = create(factory, :moderated, created_at: 12.hours.ago)
+          old_reported_resource = create(factory, :moderated, created_at: 2.days.ago)
+        else
+          reported_resource = create(factory, created_at: 1.day.ago, flags_count: 5)
+          reported_new_resource = create(factory, created_at: 12.hours.ago, flags_count: 3)
+        end
         newer_resource = create(factory, created_at: Time.current)
 
         visit moderation_resource_index_path(order: order)
 
-        expect(content_for(flagged_new_resource)).to appear_before(content_for(flagged_resource))
+        expect(content_for(reported_new_resource)).to appear_before(content_for(reported_resource))
 
-        visit moderation_resource_index_path(order: "flags")
+        if factory == :proposal_notification
+          visit moderation_resource_index_path(filter: "all", order: "moderated")
 
-        expect(content_for(flagged_resource)).to appear_before(content_for(flagged_new_resource))
+          expect(content_for(old_reported_resource)).to appear_before(content_for(newer_resource))
+        else
+          visit moderation_resource_index_path(order: "flags")
 
-        visit moderation_resource_index_path(filter: "all", order: order)
+          expect(content_for(reported_resource)).to appear_before(content_for(reported_new_resource))
 
-        expect(content_for(newer_resource)).to appear_before(content_for(flagged_new_resource))
-        expect(content_for(flagged_new_resource)).to appear_before(content_for(flagged_resource))
+          visit moderation_resource_index_path(filter: "all", order: order)
 
-        visit moderation_resource_index_path(filter: "all", order: "flags")
+          expect(content_for(newer_resource)).to appear_before(content_for(reported_new_resource))
+          expect(content_for(reported_new_resource)).to appear_before(content_for(reported_resource))
 
-        expect(content_for(flagged_resource)).to appear_before(content_for(flagged_new_resource))
-        expect(content_for(flagged_new_resource)).to appear_before(content_for(newer_resource))
+          visit moderation_resource_index_path(filter: "all", order: "flags")
+
+          expect(content_for(reported_resource)).to appear_before(content_for(reported_new_resource))
+          expect(content_for(reported_new_resource)).to appear_before(content_for(newer_resource))
+        end
       end
 
       scenario "Visit flagged resources" do

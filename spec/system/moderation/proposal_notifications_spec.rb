@@ -25,31 +25,5 @@ describe "Moderate proposal notifications" do
         all(:checkbox).each { |checkbox| expect(checkbox).not_to be_checked }
       end
     end
-
-    scenario "sorting proposal notifications" do
-      moderated_notification = create(:proposal_notification,
-                                      :moderated,
-                                      title: "Moderated notification",
-                                      created_at: 1.day.ago)
-      moderated_new_notification = create(:proposal_notification,
-                                          :moderated,
-                                          title: "Moderated new notification",
-                                          created_at: 12.hours.ago)
-      newer_notification = create(:proposal_notification,
-                                  title: "Newer notification",
-                                  created_at: Time.current)
-      old_moderated_notification = create(:proposal_notification,
-                                          :moderated,
-                                          title: "Older notification",
-                                          created_at: 2.days.ago)
-
-      visit moderation_proposal_notifications_path(filter: "all", order: "created_at")
-
-      expect(moderated_new_notification.title).to appear_before(moderated_notification.title)
-
-      visit moderation_proposal_notifications_path(filter: "all", order: "moderated")
-
-      expect(old_moderated_notification.title).to appear_before(newer_notification.title)
-    end
   end
 end
