@@ -378,17 +378,21 @@ describe "Moderation" do
       end
 
       scenario "Visit flagged resources" do
-        flagged_resource = create(factory, :flagged)
+        if factory == :proposal_notification
+          reported_resource = create(factory, :moderated)
+        else
+          reported_resource = create(factory, :flagged)
+        end
         login_as(moderator.user)
         visit moderation_resource_index_path
 
-        expect(page).to have_content content_for(flagged_resource)
-        expect(page).to have_content flagged_resource.commentable.title if factory == :comment
+        expect(page).to have_content content_for(reported_resource)
+        expect(page).to have_content reported_resource.commentable.title if factory == :comment
 
-        click_link link_text_for(flagged_resource)
+        click_link link_text_for(reported_resource)
 
-        expect(page).to have_content content_for(flagged_resource)
-        expect(page).to have_content flagged_resource.commentable.title if factory == :comment
+        expect(page).to have_content content_for(reported_resource)
+        expect(page).to have_content reported_resource.commentable.title if factory == :comment
       end
     end
   end
