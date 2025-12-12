@@ -180,6 +180,9 @@ describe "Moderation" do
     end
 
     describe "/moderation/ screen" do
+      let(:pending_filter) { factory == :proposal_notification ? "pending_review" : "pending_flag_review" }
+      let(:ignored_filter) { factory == :proposal_notification ? "ignored" : "with_ignored_flag" }
+
       before { login_as moderator.user }
 
       describe "moderate in bulk" do
@@ -293,22 +296,10 @@ describe "Moderation" do
         expect(page).to have_link "Pending"
         expect(page).to have_link "Marked as viewed"
 
-        if factory == :proposal_notification
-          pending_filter = "pending_review"
-        else
-          pending_filter = "pending_flag_review"
-        end
-
         visit moderation_resource_index_path(filter: pending_filter)
         expect(page).to have_link "All"
         expect(page).not_to have_link "Pending"
         expect(page).to have_link "Marked as viewed"
-
-        if factory == :proposal_notification
-          ignored_filter = "ignored"
-        else
-          ignored_filter = "with_ignored_flag"
-        end
 
         visit moderation_resource_index_path(filter: ignored_filter)
         expect(page).to have_link "All"
@@ -318,9 +309,14 @@ describe "Moderation" do
 
       scenario "Filtering resources" do
         regular_resource = create(factory)
-        pending_resource = create(factory, :flagged)
         hidden_resource = create(factory, :hidden)
-        ignored_resource = create(factory, :flagged, :with_ignored_flag)
+        if factory == :proposal_notification
+          pending_resource = create(factory, :moderated)
+          ignored_resource = create(factory, :moderated, :ignored)
+        else
+          pending_resource = create(factory, :flagged)
+          ignored_resource = create(factory, :flagged, :with_ignored_flag)
+        end
 
         visit moderation_resource_index_path(filter: "all")
         expect(page).to have_content content_for(regular_resource)
@@ -328,13 +324,13 @@ describe "Moderation" do
         expect(page).not_to have_content content_for(hidden_resource)
         expect(page).to have_content content_for(ignored_resource)
 
-        visit moderation_resource_index_path(filter: "pending_flag_review")
+        visit moderation_resource_index_path(filter: pending_filter)
         expect(page).not_to have_content content_for(regular_resource)
         expect(page).to have_content content_for(pending_resource)
         expect(page).not_to have_content content_for(hidden_resource)
         expect(page).not_to have_content content_for(ignored_resource)
 
-        visit moderation_resource_index_path(filter: "with_ignored_flag")
+        visit moderation_resource_index_path(filter: ignored_filter)
         expect(page).not_to have_content content_for(regular_resource)
         expect(page).not_to have_content content_for(pending_resource)
         expect(page).not_to have_content content_for(hidden_resource)

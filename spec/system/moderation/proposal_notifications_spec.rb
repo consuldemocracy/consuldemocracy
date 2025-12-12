@@ -26,32 +26,6 @@ describe "Moderate proposal notifications" do
       end
     end
 
-    scenario "Filtering proposals" do
-      proposal = create(:proposal)
-      create(:proposal_notification, title: "Regular proposal", proposal: proposal)
-      create(:proposal_notification, :moderated, title: "Pending proposal", proposal: proposal)
-      create(:proposal_notification, :hidden, title: "Hidden proposal", proposal: proposal)
-      create(:proposal_notification, :moderated, :ignored, title: "Ignored proposal", proposal: proposal)
-
-      visit moderation_proposal_notifications_path(filter: "all")
-      expect(page).to have_content("Regular proposal")
-      expect(page).to have_content("Pending proposal")
-      expect(page).not_to have_content("Hidden proposal")
-      expect(page).to have_content("Ignored proposal")
-
-      visit moderation_proposal_notifications_path(filter: "pending_review")
-      expect(page).not_to have_content("Regular proposal")
-      expect(page).to have_content("Pending proposal")
-      expect(page).not_to have_content("Hidden proposal")
-      expect(page).not_to have_content("Ignored proposal")
-
-      visit moderation_proposal_notifications_path(filter: "ignored")
-      expect(page).not_to have_content("Regular proposal")
-      expect(page).not_to have_content("Pending proposal")
-      expect(page).not_to have_content("Hidden proposal")
-      expect(page).to have_content("Ignored proposal")
-    end
-
     scenario "sorting proposal notifications" do
       moderated_notification = create(:proposal_notification,
                                       :moderated,
