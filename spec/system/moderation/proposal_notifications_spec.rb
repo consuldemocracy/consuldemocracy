@@ -8,25 +8,6 @@ describe "Moderate proposal notifications" do
     end
 
     describe "moderate in bulk" do
-      describe "When a proposal has been selected for moderation" do
-        let!(:proposal_notification) { create(:proposal_notification, created_at: Date.current - 4.days) }
-
-        before do
-          visit moderation_proposal_notifications_path
-          click_link "All"
-
-          check proposal_notification.title
-        end
-
-        scenario "Ignore the proposal", :no_js do
-          click_button "Mark as viewed"
-
-          expect(proposal_notification.reload).to be_ignored
-          expect(proposal_notification.reload).not_to be_hidden
-          expect(proposal_notification.author).not_to be_hidden
-        end
-      end
-
       scenario "select all/none" do
         create_list(:proposal_notification, 2)
 

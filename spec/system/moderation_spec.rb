@@ -224,7 +224,11 @@ describe "Moderation" do
           scenario "Ignore the resource", :no_js do
             click_button "Mark as viewed"
 
-            expect(resource.reload).to be_ignored_flag
+            if factory == :proposal_notification
+              expect(resource.reload).to be_ignored
+            else
+              expect(resource.reload).to be_ignored_flag
+            end
             expect(resource.reload).not_to be_hidden
             expect(resource.author).not_to be_hidden
           end
