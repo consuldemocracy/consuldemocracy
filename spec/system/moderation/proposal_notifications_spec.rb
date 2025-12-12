@@ -19,20 +19,6 @@ describe "Moderate proposal notifications" do
           check proposal_notification.title
         end
 
-        scenario "Hide the proposal" do
-          accept_confirm("Are you sure? Hide proposals") { click_button "Hide proposals" }
-
-          expect(page).not_to have_css("#proposal_notification_#{proposal_notification.id}")
-
-          click_link "Block users"
-          fill_in "email or name of user", with: email
-          click_button "Search"
-
-          within "tr", text: proposal_notification.author.name do
-            expect(page).to have_button "Block"
-          end
-        end
-
         scenario "Block the author" do
           accept_confirm("Are you sure? Block authors") { click_button "Block authors" }
 

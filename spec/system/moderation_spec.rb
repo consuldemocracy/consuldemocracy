@@ -192,8 +192,8 @@ describe "Moderation" do
           end
 
           scenario "Hide the resource" do
-            accept_confirm("Are you sure? Hide #{factory.to_s.pluralize.tr("_", " ")}") do
-              click_button "Hide #{factory.to_s.pluralize.tr("_", " ")}"
+            accept_confirm(/Are you sure\? Hide /) do
+              click_button "Hide ", exact: false
             end
 
             expect(page).not_to have_css "##{dom_id(resource)}"
