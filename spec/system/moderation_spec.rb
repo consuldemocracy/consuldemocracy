@@ -269,7 +269,12 @@ describe "Moderation" do
           else
             expect(page).to have_link "Most recent", class: "is-active"
           end
-          expect(page).to have_link "Most flagged"
+
+          if factory == :proposal_notification
+            expect(page).to have_link "Moderated"
+          else
+            expect(page).to have_link "Most flagged"
+          end
 
           expect(page).to have_current_path(/filter=all/)
           expect(page).to have_current_path(/page=2/)
