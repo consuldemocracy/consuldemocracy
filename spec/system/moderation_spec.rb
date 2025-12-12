@@ -190,6 +190,14 @@ describe "Moderation" do
 
       describe "moderate in bulk" do
         describe "When a resource has been selected for moderation" do
+          let(:hide_button_text) do
+            if factory == :proposal_notification
+              "proposals"
+            else
+              factory.to_s.pluralize.tr("_", " ")
+            end
+          end
+
           before do
             visit moderation_resource_index_path
             click_link "All"
@@ -198,8 +206,8 @@ describe "Moderation" do
           end
 
           scenario "Hide the resource" do
-            accept_confirm("Are you sure? Hide #{factory.to_s.pluralize.tr("_", " ")}") do
-              click_button "Hide #{factory.to_s.pluralize.tr("_", " ")}"
+            accept_confirm("Are you sure? Hide #{hide_button_text}") do
+              click_button "Hide #{hide_button_text}"
             end
 
             expect(page).not_to have_css "##{dom_id(resource)}"
