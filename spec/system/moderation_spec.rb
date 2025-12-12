@@ -337,28 +337,51 @@ describe "Moderation" do
         expect(page).to have_content content_for(ignored_resource)
       end
 
-      scenario "Sorting resources" do
-        flagged_resource = create(factory, created_at: 1.day.ago, flags_count: 5)
-        flagged_new_resource = create(factory, created_at: 12.hours.ago, flags_count: 3)
-        newer_resource = create(factory, created_at: Time.current)
+      context "Budget Investments, Comments, Debates and Proposals" do
+        let(:factory) { (factories - [:proposal_notification]).sample }
 
-        visit moderation_resource_index_path(order: order)
+        scenario "Sorting resources" do
+          flagged_resource = create(factory, created_at: 1.day.ago, flags_count: 5)
+          flagged_new_resource = create(factory, created_at: 12.hours.ago, flags_count: 3)
+          newer_resource = create(factory, created_at: Time.current)
 
-        expect(content_for(flagged_new_resource)).to appear_before content_for(flagged_resource)
+          visit moderation_resource_index_path(order: order)
 
-        visit moderation_resource_index_path(order: "flags")
+          expect(content_for(flagged_new_resource)).to appear_before content_for(flagged_resource)
 
-        expect(content_for(flagged_resource)).to appear_before content_for(flagged_new_resource)
+          visit moderation_resource_index_path(order: "flags")
 
-        visit moderation_resource_index_path(filter: "all", order: order)
+          expect(content_for(flagged_resource)).to appear_before content_for(flagged_new_resource)
 
-        expect(content_for(newer_resource)).to appear_before content_for(flagged_new_resource)
-        expect(content_for(flagged_new_resource)).to appear_before content_for(flagged_resource)
+          visit moderation_resource_index_path(filter: "all", order: order)
 
-        visit moderation_resource_index_path(filter: "all", order: "flags")
+          expect(content_for(newer_resource)).to appear_before content_for(flagged_new_resource)
+          expect(content_for(flagged_new_resource)).to appear_before content_for(flagged_resource)
 
-        expect(content_for(flagged_resource)).to appear_before content_for(flagged_new_resource)
-        expect(content_for(flagged_new_resource)).to appear_before content_for(newer_resource)
+          visit moderation_resource_index_path(filter: "all", order: "flags")
+
+          expect(content_for(flagged_resource)).to appear_before content_for(flagged_new_resource)
+          expect(content_for(flagged_new_resource)).to appear_before content_for(newer_resource)
+        end
+      end
+
+      context "Proposal Notifications" do
+        scenario "Sorting resources" do
+          moderated_notification = create(:proposal_notification, :moderated, created_at: 1.day.ago)
+          moderated_new_notification = create(:proposal_notification, :moderated, created_at: 12.hours.ago)
+          newer_notification = create(:proposal_notification, created_at: Time.current)
+          old_moderated_notification = create(:proposal_notification, :moderated, created_at: 2.days.ago)
+
+          visit moderation_proposal_notifications_path(filter: "all", order: "created_at")
+
+          expect(newer_notification.title).to appear_before moderated_notification.title
+          expect(moderated_new_notification.title).to appear_before moderated_notification.title
+          expect(moderated_notification.title).to appear_before old_moderated_notification.title
+
+          visit moderation_proposal_notifications_path(filter: "all", order: "moderated")
+
+          expect(old_moderated_notification.title).to appear_before newer_notification.title
+        end
       end
 
       scenario "Visit flagged resources" do
