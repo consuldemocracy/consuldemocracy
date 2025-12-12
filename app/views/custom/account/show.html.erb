@@ -1,19 +1,27 @@
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-  // Bloquear navegación mientras gender sea nil en BD (solo para usuarios no organizaciones)
-  var genderRequired = <%= @account.gender.nil? %>;
-  var isOrganization = <%= @account.organization? %>;
-  
-  if (genderRequired && !isOrganization) {
-    document.querySelectorAll('a').forEach(function(link) {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        alert('Debe seleccionar su sexo y guardar los cambios antes de continuar.');
-        document.querySelector('[name*="[gender]"]').focus();
-      });
-    });      
-  }
-});
+  document.addEventListener('DOMContentLoaded', function() {    
+    <% if @account.present? %>
+      var genderRequired = <%= @account.gender.nil?.to_s %>;
+      var isOrganization = <%= @account.organization?.to_s %>;
+      
+      console.log('Gender required:', genderRequired, typeof genderRequired);
+      console.log('Is organization:', isOrganization, typeof isOrganization);
+      
+      if (genderRequired && !isOrganization) {
+        console.log('Bloqueando enlaces...');
+        document.querySelectorAll('a').forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Debe seleccionar su sexo y guardar los cambios antes de continuar.');
+            var genderField = document.querySelector('[name*="[gender]"]');
+            if (genderField) genderField.focus();
+          });
+        });      
+      } else {
+        console.log('No se bloquean enlaces');
+      }
+    <% end %>
+  });
 </script>
 <div class="row account">
   <div class="small-12 column">

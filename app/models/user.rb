@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   include Verification
+  attr_accessor :skip_gender_validation
 
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable,
          :trackable, :validatable, :omniauthable, :password_expirable, :secure_validatable,
@@ -89,13 +90,21 @@ class User < ApplicationRecord
 
   validates_associated :organization, message: false
   
-  validates :gender, presence: { message: "Por favor, selecciona tu gÃ©nero" }, if: :requires_gender?
+  validates :gender, presence: { message: "Por favor, selecciona tu género" }, if: :requires_gender?
 
   def requires_gender?
-      !organization? && !administrator?
-  end
-
+     Rails.logger.info "requires_gender? - skip_gender_validation: #{skip_gender_validation}"
   
+     result = !organization? && !administrator? && !skip_gender_validation
+  
+     # Resetear skip_gender_validation a false después de usarlo
+     if skip_gender_validation
+       self.skip_gender_validation = false
+       Rails.logger.info "skip_gender_validation reseteado a false"
+     end
+  
+     result
+  end 
   
   accepts_nested_attributes_for :organization, update_only: true
 
