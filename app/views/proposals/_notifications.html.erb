@@ -13,7 +13,7 @@
           <p class="more-info"><%= notification.created_at.to_date %></p>
           <%= simple_format sanitize_and_auto_link(notification.body), {}, sanitize: false %>
 
-          <%= render "proposal_notifications/actions", notification: notification %>
+          <div class="reply"><%= render Shared::ModerationActionsComponent.new(notification) %></div>
         </div>
       <% end %>
     </div>

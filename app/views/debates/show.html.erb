@@ -28,8 +28,9 @@
 
         <%= render "relationable/related_content", relationable: @debate %>
 
-        <div class="js-moderator-debate-actions margin">
-          <%= render "actions", debate: @debate %>
+        <div class="margin">
+          <%= render Shared::ModerationActionsComponent.new(@debate) %>
+          <%= render Debates::MarkFeaturedActionComponent.new(@debate) %>
         </div>
       </div>
 

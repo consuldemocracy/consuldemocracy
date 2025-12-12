@@ -73,8 +73,8 @@
 
         <%= render Shared::GeozoneLinkComponent.new(@proposal, legislation_process_proposals_path(@process, search: geozone_name(@proposal))) %>
 
-        <div class="js-moderator-proposal-actions margin">
-          <%= render "legislation/proposals/actions", proposal: @proposal %>
+        <div class="margin">
+          <%= render Shared::ModerationActionsComponent.new(@proposal) %>
         </div>
       </div>
 
