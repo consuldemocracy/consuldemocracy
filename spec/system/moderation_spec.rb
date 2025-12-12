@@ -93,7 +93,8 @@ describe "Moderation" do
       :budget_investment,
       :comment,
       :debate,
-      :proposal
+      :proposal,
+      :proposal_notification
     ]
 
     let(:factory) { factories.sample }
