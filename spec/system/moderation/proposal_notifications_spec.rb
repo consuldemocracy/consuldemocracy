@@ -24,22 +24,6 @@ describe "Moderate proposal notifications" do
 
         all(:checkbox).each { |checkbox| expect(checkbox).not_to be_checked }
       end
-
-      scenario "remembering page, filter and order" do
-        stub_const("#{ModerateActions}::PER_PAGE", 2)
-        create_list(:proposal_notification, 4)
-
-        visit moderation_proposal_notifications_path(filter: "all", page: "2", order: "created_at")
-
-        accept_confirm("Are you sure? Mark as viewed") { click_button "Mark as viewed" }
-
-        expect(page).to have_link "Most recent", class: "is-active"
-        expect(page).to have_link "Moderated"
-
-        expect(page).to have_current_path(/filter=all/)
-        expect(page).to have_current_path(/page=2/)
-        expect(page).to have_current_path(/order=created_at/)
-      end
     end
 
     scenario "Current filter is properly highlighted" do

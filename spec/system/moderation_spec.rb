@@ -274,7 +274,11 @@ describe "Moderation" do
           accept_confirm("Are you sure? Mark as viewed") { click_button "Mark as viewed" }
 
           expect(page).to have_link active_link_text, class: "is-active"
-          expect(page).to have_link "Most flagged"
+          if factory == :proposal_notification
+            expect(page).to have_link "Moderated"
+          else
+            expect(page).to have_link "Most flagged"
+          end
 
           expect(page).to have_current_path(/filter=all/)
           expect(page).to have_current_path(/page=2/)
