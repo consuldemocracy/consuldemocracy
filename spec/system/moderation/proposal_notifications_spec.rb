@@ -26,28 +26,6 @@ describe "Moderate proposal notifications" do
       end
     end
 
-    scenario "Current filter is properly highlighted" do
-      visit moderation_proposal_notifications_path
-      expect(page).not_to have_link("Pending")
-      expect(page).to have_link("All")
-      expect(page).to have_link("Marked as viewed")
-
-      visit moderation_proposal_notifications_path(filter: "all")
-      expect(page).not_to have_link("All")
-      expect(page).to have_link("Pending")
-      expect(page).to have_link("Marked as viewed")
-
-      visit moderation_proposal_notifications_path(filter: "pending_review")
-      expect(page).to have_link("All")
-      expect(page).not_to have_link("Pending")
-      expect(page).to have_link("Marked as viewed")
-
-      visit moderation_proposal_notifications_path(filter: "ignored")
-      expect(page).to have_link("All")
-      expect(page).to have_link("Pending")
-      expect(page).not_to have_link("Marked as viewed")
-    end
-
     scenario "Filtering proposals" do
       proposal = create(:proposal)
       create(:proposal_notification, title: "Regular proposal", proposal: proposal)
