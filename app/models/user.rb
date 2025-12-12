@@ -90,14 +90,14 @@ class User < ApplicationRecord
 
   validates_associated :organization, message: false
   
-  validates :gender, presence: { message: "Por favor, selecciona tu género" }, if: :requires_gender?
+  validates :gender, presence: { message: "Por favor, selecciona tu gÃ©nero" }, if: :requires_gender?
 
   def requires_gender?
      Rails.logger.info "requires_gender? - skip_gender_validation: #{skip_gender_validation}"
   
      result = !organization? && !administrator? && !skip_gender_validation
   
-     # Resetear skip_gender_validation a false después de usarlo
+     # Resetear skip_gender_validation a false despuï¿½s de usarlo
      if skip_gender_validation
        self.skip_gender_validation = false
        Rails.logger.info "skip_gender_validation reseteado a false"
