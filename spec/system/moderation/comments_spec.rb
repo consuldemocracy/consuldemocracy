@@ -11,18 +11,22 @@ describe "Moderate comments" do
     login_as(moderator.user)
     visit moderation_comments_path
 
+    expect(page).to have_content "Moderation"
     expect(page).to have_content("Debate with spam comment")
     expect(page).to have_content("Proposal with spam comment")
     expect(page).to have_content("This is SPAM comment on debate")
     expect(page).to have_content("This is SPAM comment on proposal")
 
     click_link "Debate with spam comment"
+    expect(page).not_to have_content "Moderation"
     expect(page).to have_content("Debate with spam comment")
     expect(page).to have_content("This is SPAM comment on debate")
 
     visit moderation_comments_path
+    expect(page).to have_content "Moderation"
 
     click_link "Proposal with spam comment"
+    expect(page).not_to have_content "Moderation"
     expect(page).to have_content("Proposal with spam comment")
     expect(page).to have_content("This is SPAM comment on proposal")
   end
