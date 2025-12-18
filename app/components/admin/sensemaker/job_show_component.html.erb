@@ -137,6 +137,36 @@
           <% end %>
         </ul>
       </section>
+
+      <% if sensemaker_job.script == "advanced_runner.ts" && sensemaker_job.has_outputs? %>
+        <section class="margin-bottom">
+          <h3>Topics Overview</h3>
+          <p class="help-text">Stacked bar charts show topic distribution and statement counts.</p>
+          <div class="sensemaker-visualization-container">
+            <sensemaker-chart
+              data-source="<%= serve_comments_sensemaker_job_path(sensemaker_job) %>"
+              summary-source="<%= serve_summary_sensemaker_job_path(sensemaker_job) %>"
+              chart-type="topics-overview">
+            </sensemaker-chart>
+          </div>
+        </section>
+
+        <section class="margin-bottom">
+          <h3>Topics Distribution</h3>
+          <p class="help-text">Shows topic and subtopic statement count and aggregated statement alignment.</p>
+          <div class="sensemaker-visualization-container">
+            <sensemaker-chart
+              data-source="<%= serve_comments_sensemaker_job_path(sensemaker_job) %>"
+              summary-source="<%= serve_summary_sensemaker_job_path(sensemaker_job) %>"
+              chart-type="topics-distribution"
+              view="scatter"
+              topic-filter="!other">
+            </sensemaker-chart>
+          </div>
+        </section>
+
+        <%= javascript_include_tag "sensemaker_visualizations", "data-turbolinks-track" => "reload" %>
+      <% end %>
     <% end %>
   <% else %>
     <div class="callout primary">

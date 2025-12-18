@@ -41,6 +41,57 @@ class Sensemaker::JobsController < ApplicationController
     head :not_found
   end
 
+  def serve_comments
+    job = Sensemaker::Job.find(params[:id])
+    authorize! :manage, job
+
+    file_path = find_output_file(job, "comments-with-scores.json")
+    if file_path && File.exist?(file_path)
+      send_file file_path,
+                filename: File.basename(file_path),
+                disposition: "inline",
+                type: determine_content_type(file_path)
+    else
+      head :not_found
+    end
+  rescue ActiveRecord::RecordNotFound
+    head :not_found
+  end
+
+  def serve_summary
+    job = Sensemaker::Job.find(params[:id])
+    authorize! :manage, job
+
+    file_path = find_output_file(job, "summary.json")
+    if file_path && File.exist?(file_path)
+      send_file file_path,
+                filename: File.basename(file_path),
+                disposition: "inline",
+                type: determine_content_type(file_path)
+    else
+      head :not_found
+    end
+  rescue ActiveRecord::RecordNotFound
+    head :not_found
+  end
+
+  def serve_topic_stats
+    job = Sensemaker::Job.find(params[:id])
+    authorize! :manage, job
+
+    file_path = find_output_file(job, "topic-stats.json")
+    if file_path && File.exist?(file_path)
+      send_file file_path,
+                filename: File.basename(file_path),
+                disposition: "inline",
+                type: determine_content_type(file_path)
+    else
+      head :not_found
+    end
+  rescue ActiveRecord::RecordNotFound
+    head :not_found
+  end
+
   private
 
     def determine_content_type(file_path)
@@ -56,5 +107,15 @@ class Sensemaker::JobsController < ApplicationController
       else
         "application/octet-stream"
       end
+    end
+
+    def find_output_file(job, suffix)
+      base_path = if job.persisted_output.present?
+                    job.persisted_output
+                  else
+                    job.default_output_path
+                  end
+      file_path = "#{base_path}-#{suffix}"
+      File.exist?(file_path) ? file_path : nil
     end
 end

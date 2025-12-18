@@ -24,4 +24,12 @@ class Admin::Sensemaker::JobShowComponent < ApplicationComponent
   def has_children?
     child_jobs.any?
   end
+
+  def topic_stats_path
+    sensemaker_job.output_artifact_paths.find { |p| p.end_with?("-topic-stats.json") }
+  end
+
+  def summary_path
+    sensemaker_job.output_artifact_paths.find { |p| p.end_with?("-summary.json") }
+  end
 end
