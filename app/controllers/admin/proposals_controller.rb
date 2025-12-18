@@ -7,10 +7,20 @@ class Admin::ProposalsController < Admin::BaseController
 
   has_orders %w[created_at]
 
-  before_action :load_proposal, except: [:index, :successful]
+  before_action :load_proposal, except: [:index, :successful, :download_csv]
 
   def successful
     @proposals = Proposal.successful.sort_by_confidence_score
+  end
+
+  def download_csv
+    @proposals = Proposal.order(created_at: :asc)
+    respond_to do |format|
+      format.csv do
+        send_data Proposal::Exporter.new(@proposals).to_csv,
+                  filename: "proposals.csv" 
+      end
+    end
   end
 
   def show

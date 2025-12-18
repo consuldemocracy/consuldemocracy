@@ -1293,6 +1293,12 @@ en:
         selected: Selected
         milestones: Milestones
         no_proposals: There are no proposals.
+        download: Download proposals
+        list:
+          id: ID
+          title: Proposal
+          author: Author
+          summary: Summary
       show:
         create_question: Add this proposal to a poll to be voted
       form:

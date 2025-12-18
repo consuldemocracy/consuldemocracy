@@ -1293,6 +1293,12 @@ es:
         milestones: Hitos
         selected: Seleccionada
         no_proposals: No hay propuestas.
+        download: Descargar propuestas
+        list:
+          id: ID
+          title: Propuesta
+          author: Autor
+          summary: Resumen
       show:
         create_question: Añadir esta propuesta a una votación para ser votada
       form:
