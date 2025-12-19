@@ -9,6 +9,7 @@ class Verification::Email
   def initialize(verified_user)
     @verified_user = verified_user
     @recipient = @verified_user&.email
+    generate_token
   end
 
   def save
@@ -23,10 +24,10 @@ class Verification::Email
   end
 
   def generate_token
-    @plain_token, @encrypted_token = Devise.token_generator.generate(User, :email_verification_token)
+    @encrypted_token, @plain_token = Devise.token_generator.generate(User, :email_verification_token)
   end
 
   def self.valid_token?(user, token)
-    Devise.token_generator.digest(User, :email_verification_token, user.email_verification_token) == token
+    Devise.token_generator.digest(User, :email_verification_token, token) == user.email_verification_token
   end
 end
