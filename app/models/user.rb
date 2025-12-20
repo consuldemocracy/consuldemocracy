@@ -2,6 +2,7 @@ class User < ApplicationRecord
   include Verification
 
   attribute :registering_from_web, default: false
+  attribute :receive_poll_notifications, default: true
   %i[newsletter email_digest email_on_direct_message public_activity recommended_debates
      recommended_proposals].each do |field|
     attribute field, :boolean, default: -> { !Setting["feature.gdpr.require_consent_for_notifications"] }
@@ -105,6 +106,7 @@ class User < ApplicationRecord
   scope :officials,      -> { where(official_level: 1..) }
   scope :male,           -> { where(gender: "male") }
   scope :female,         -> { where(gender: "female") }
+  scope :receive_poll_notifications, -> { where(receive_poll_notifications: true) }
   scope :newsletter,     -> { where(newsletter: true) }
   scope :for_render,     -> { includes(:organization) }
   scope :by_document,    ->(document_type, document_number) do

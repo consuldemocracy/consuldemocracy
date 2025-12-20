@@ -333,6 +333,25 @@ describe "Admin polls", :admin do
     end
   end
 
+  context "Notification" do
+    before do
+      allow_any_instance_of(ActionMailer::MessageDelivery).to receive(:deliver_later), &:deliver_now
+    end
+
+    scenario "Show partial results", :js do
+      poll = create(:poll)
+
+      visit admin_poll_notification_show_path(poll)
+
+      expect(page).not_to have_content "Time sent"
+
+      click_button "Send email notification"
+
+      expect(page).to have_current_path(admin_poll_notification_show_path(poll))
+      expect(page).to have_content("Time sent")
+    end
+  end
+
   context "Results" do
     context "Poll show" do
       scenario "No results" do

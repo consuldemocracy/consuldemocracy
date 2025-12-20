@@ -42,6 +42,7 @@ describe "Users" do
 
     expect(page).to have_field "Username", with: "pepe"
     expect(page).to have_content "Account verified"
+    expect(find("#account_receive_poll_notifications")).to be_checked
   end
 
   scenario "Create a level 3 user without email from scratch" do

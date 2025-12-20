@@ -294,6 +294,7 @@ en:
         phone_number: "Phone number"
         public_activity: "Keep my list of activities public"
         public_interests: "Keep the elements I follow public"
+        receive_poll_notifications: "Receive emails about new polls"
         recommended_debates: "Recommend debates to me"
         recommended_proposals: "Recommend proposals to me"
       direct_message:

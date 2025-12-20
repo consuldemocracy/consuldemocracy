@@ -65,6 +65,10 @@
             <div>
               <%= f.check_box :email_on_direct_message %>
             </div>
+
+            <div>
+              <%= f.check_box :receive_poll_notifications %>
+            </div>
           <% end %>
 
           <% if @account.official_level == 1 %>
