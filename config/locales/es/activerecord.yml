@@ -106,22 +106,22 @@ es:
       legislation/proposal:
         one: "Propuesta"
         other: "Propuestas"
-      legislation/draft_versions:
+      legislation/draft_version:
         one: "Versión del borrador"
         other: "Versiones del borrador"
-      legislation/questions:
+      legislation/question:
         one: "Pregunta"
         other: "Preguntas"
-      legislation/question_options:
+      legislation/question_option:
         one: "Opción de respuesta cerrada"
         other: "Opciones de respuesta cerrada"
-      legislation/answers:
+      legislation/answer:
         one: "Respuesta"
         other: "Respuestas"
-      documents:
+      document:
         one: "Documento"
         other: "Documentos"
-      images:
+      image:
         one: "Imagen"
         other: "Imágenes"
       tenant:
