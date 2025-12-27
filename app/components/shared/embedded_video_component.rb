@@ -10,9 +10,14 @@ class Shared::EmbeddedVideoComponent < ApplicationComponent
   end
 
   def embedded_video_code
-    if match && match[2]
-      "<iframe #{iframe_attributes}></iframe>"
-    end
+    <<-HTML.html_safe
+      <div class="video-placeholder" data-src="#{src}" data-title="#{title}">
+        <p class="video-warning">
+          #{t("valuation.iframe.two_clicks_for_iframes_modal_warning")}
+        </p>
+        <button type="button" class="video-accept">Accept</button>
+      </div>
+    HTML
   end
 
   private
@@ -51,9 +56,5 @@ class Shared::EmbeddedVideoComponent < ApplicationComponent
 
     def match
       @match ||= link.match(regex) if regex
-    end
-
-    def iframe_attributes
-      tag.attributes(src: src, style: "border:0;", allowfullscreen: true, title: title)
     end
 end

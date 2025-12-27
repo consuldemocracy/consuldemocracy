@@ -2,6 +2,8 @@ class Admin::Settings::FeaturesTabComponent < ApplicationComponent
   def settings
     %w[
       feature.featured_proposals
+      feature.warning_for_linkouts
+      feature.two_clicks_for_iframes
       feature.facebook_login
       feature.google_login
       feature.oidc_login

@@ -1,5 +1,9 @@
 es:
   valuation:
+    iframe:
+      two_clicks_for_iframes_modal_warning: Al acceder al contenido, usted acepta que sus datos pueden ser transferidos a proveedores externos y confirma que ha leído la política de privacidad.
+    modal:
+      warning_for_linkouts: Al confirmar, aceptas salir del sitio web.
     header:
       title: Evaluación
     menu:

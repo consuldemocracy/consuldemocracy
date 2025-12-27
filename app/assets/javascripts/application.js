@@ -111,6 +111,8 @@
 //= require i18n
 //= require globalize
 //= require settings
+//= require external_links
+//= require iframe
 //= require cookies
 //= require cookies_consent
 //= require columns_selector
