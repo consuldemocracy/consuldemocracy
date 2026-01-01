@@ -280,7 +280,7 @@ GEM
     graphiql-rails (1.8.0)
       railties
       sprockets-rails
-    graphql (2.5.9)
+    graphql (2.5.16)
       base64
       fiber-storage
       logger
@@ -866,7 +866,7 @@ DEPENDENCIES
   globalize (~> 7.0.0)
   globalize-accessors (~> 0.3.0)
   graphiql-rails (~> 1.8.0)
-  graphql (~> 2.5.9)
+  graphql (~> 2.5.16)
   groupdate (~> 6.7.0)
   htmlbeautifier (~> 1.4.3)
   i18n-tasks (~> 0.9.37)
