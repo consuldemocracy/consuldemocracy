@@ -1,5 +1,4 @@
 namespace :sensemaker do
-
   desc "Setup Sensemaker Integration"
   task setup: :environment do
     logger = ApplicationLogger.new
@@ -272,7 +271,6 @@ namespace :sensemaker do
       begin
         package_path = Sensemaker::Paths.sensemaker_package_folder
         sensemaker_path = Sensemaker::Paths.sensemaker_folder
-        visualization_path = Sensemaker::Paths.visualization_folder
         data_path = Sensemaker::Paths.sensemaker_data_folder
       rescue => e
         logger.warn "Could not get paths from Sensemaker::Paths: #{e.message}"
@@ -280,7 +278,6 @@ namespace :sensemaker do
 
         package_path = Rails.root.join("node_modules/@cosla/sensemaking-tools")
         sensemaker_path = Rails.root.join("vendor/sensemaking-tools")
-        visualization_path = Rails.root.join("node_modules/@cosla/sensemaking-web-ui")
         data_path = Rails.root.join("vendor/sensemaking-tools/data")
       end
 
