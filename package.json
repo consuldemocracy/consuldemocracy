@@ -1,6 +1,8 @@
 {
   "name": "consuldemocracy",
   "dependencies": {
+    "@cosla/sensemaking-tools": "^1.0.0",
+    "@cosla/sensemaking-web-ui": "^1.0.7",
     "blueimp-file-upload": "^10.32.0",
     "foundation-sites": "^6.8.1",
     "jquery": "^3.7.1",
