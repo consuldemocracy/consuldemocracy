@@ -15,7 +15,7 @@ class Moderation::UsersController < Moderation::BaseController
   def block
     block_user
 
-    redirect_with_query_params_to index_path_options, { notice: I18n.t("moderation.users.notice_block") }
+    redirect_to resources_index_path, { notice: I18n.t("moderation.users.notice_block") }
   end
 
   private
@@ -34,16 +34,26 @@ class Moderation::UsersController < Moderation::BaseController
       Activity.log(current_user, :block, @user)
     end
 
-    def index_path_options
+    def resources_index_path
       if request.referer
-        referer_params = Rails.application.routes.recognize_path(request.referer)
-
-        referer_params.except(:id).merge({
-          controller: "/#{referer_params[:controller]}",
-          action: :index
-        })
+        path_with_query_params(referer_index_options)
       else
-        { action: :index }
+        path_with_query_params({ action: :index })
       end
+    end
+
+    def referer_params
+      Rails.application.routes.recognize_path(request.referer)
+    end
+
+    def referer_controller
+      referer_params[:controller]
+    end
+
+    def referer_index_options
+      referer_params.except(:id).merge({
+        controller: "/#{referer_controller}",
+        action: :index
+      })
     end
 end
