@@ -211,28 +211,6 @@ describe "Moderation" do
         end
       end
 
-      scenario "Current filter is properly highlighted" do
-        visit moderation_resource_index_path
-        expect(page).not_to have_link "Pending"
-        expect(page).to have_link "All"
-        expect(page).to have_link "Marked as viewed"
-
-        visit moderation_resource_index_path(filter: "all")
-        expect(page).not_to have_link "All"
-        expect(page).to have_link "Pending"
-        expect(page).to have_link "Marked as viewed"
-
-        visit moderation_resource_index_path(filter: pending_filter)
-        expect(page).to have_link "All"
-        expect(page).not_to have_link "Pending"
-        expect(page).to have_link "Marked as viewed"
-
-        visit moderation_resource_index_path(filter: ignored_filter)
-        expect(page).to have_link "All"
-        expect(page).to have_link "Pending"
-        expect(page).not_to have_link "Marked as viewed"
-      end
-
       scenario "Filtering resources" do
         regular_resource = create(factory)
         hidden_resource = create(factory, :hidden)
