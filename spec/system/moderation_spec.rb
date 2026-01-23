@@ -223,22 +223,22 @@ describe "Moderation" do
         end
 
         visit moderation_resource_index_path(filter: "all")
-        expect(page).to have_content content_for(regular_resource)
-        expect(page).to have_content content_for(pending_resource)
-        expect(page).not_to have_content content_for(hidden_resource)
-        expect(page).to have_content content_for(ignored_resource)
+        expect(page).to have_content regular_resource.human_name
+        expect(page).to have_content pending_resource.human_name
+        expect(page).not_to have_content hidden_resource.human_name
+        expect(page).to have_content ignored_resource.human_name
 
         visit moderation_resource_index_path(filter: pending_filter)
-        expect(page).not_to have_content content_for(regular_resource)
-        expect(page).to have_content content_for(pending_resource)
-        expect(page).not_to have_content content_for(hidden_resource)
-        expect(page).not_to have_content content_for(ignored_resource)
+        expect(page).not_to have_content regular_resource.human_name
+        expect(page).to have_content pending_resource.human_name
+        expect(page).not_to have_content hidden_resource.human_name
+        expect(page).not_to have_content ignored_resource.human_name
 
         visit moderation_resource_index_path(filter: ignored_filter)
-        expect(page).not_to have_content content_for(regular_resource)
-        expect(page).not_to have_content content_for(pending_resource)
-        expect(page).not_to have_content content_for(hidden_resource)
-        expect(page).to have_content content_for(ignored_resource)
+        expect(page).not_to have_content regular_resource.human_name
+        expect(page).not_to have_content pending_resource.human_name
+        expect(page).not_to have_content hidden_resource.human_name
+        expect(page).to have_content ignored_resource.human_name
       end
 
       context "Budget Investments, Comments, Debates and Proposals" do
@@ -251,21 +251,21 @@ describe "Moderation" do
 
           visit moderation_resource_index_path(order: order)
 
-          expect(content_for(flagged_new_resource)).to appear_before content_for(flagged_resource)
+          expect(flagged_new_resource.human_name).to appear_before flagged_resource.human_name
 
           visit moderation_resource_index_path(order: "flags")
 
-          expect(content_for(flagged_resource)).to appear_before content_for(flagged_new_resource)
+          expect(flagged_resource.human_name).to appear_before flagged_new_resource.human_name
 
           visit moderation_resource_index_path(filter: "all", order: order)
 
-          expect(content_for(newer_resource)).to appear_before content_for(flagged_new_resource)
-          expect(content_for(flagged_new_resource)).to appear_before content_for(flagged_resource)
+          expect(newer_resource.human_name).to appear_before flagged_new_resource.human_name
+          expect(flagged_new_resource.human_name).to appear_before flagged_resource.human_name
 
           visit moderation_resource_index_path(filter: "all", order: "flags")
 
-          expect(content_for(flagged_resource)).to appear_before content_for(flagged_new_resource)
-          expect(content_for(flagged_new_resource)).to appear_before content_for(newer_resource)
+          expect(flagged_resource.human_name).to appear_before flagged_new_resource.human_name
+          expect(flagged_new_resource.human_name).to appear_before newer_resource.human_name
         end
       end
 
@@ -299,7 +299,7 @@ describe "Moderation" do
         visit moderation_resource_index_path(filter: "all")
 
         expect(page).to have_content "Moderation"
-        expect(page).to have_content content_for(reported_resource)
+        expect(page).to have_content reported_resource.human_name
 
         if factory == :comment
           click_link reported_resource.commentable.title
@@ -308,16 +308,12 @@ describe "Moderation" do
         end
 
         expect(page).not_to have_content "Moderation"
-        expect(page).to have_content content_for(reported_resource)
+        expect(page).to have_content reported_resource.human_name
       end
     end
   end
 
   def moderation_resource_index_path(params = {})
     namespaced_polymorphic_path(:moderation, resource.class, **params)
-  end
-
-  def content_for(resource)
-    factory == :comment ? resource.body : resource.title
   end
 end
