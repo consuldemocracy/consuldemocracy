@@ -1,7 +1,7 @@
 Warden::Manager.after_authentication do |user, auth, opts|
   if Rails.application.config.authentication_logs
     request = auth.request
-    login = request.params.dig(opts[:scope].to_s, "login")
+    login = request.params.dig(opts[:scope].to_s, "login") || user.email
     message = "The user #{login} with IP address: #{request.ip} successfully signed in."
     AuthenticationLogger.log(message)
   end
