@@ -1,14 +1,14 @@
 require "rails_helper"
 
-describe "Nested imageable" do
-  factories = [
-    :budget,
-    :budget_investment,
-    :future_poll_question_option,
-    :proposal
-  ]
+NESTED_IMAGEABLE_FACTORIES = [
+  :budget,
+  :budget_investment,
+  :future_poll_question_option,
+  :proposal
+].freeze
 
-  let(:factory) { factories.sample }
+describe "Nested imageable" do
+  let(:factory) { NESTED_IMAGEABLE_FACTORIES.sample }
   let!(:imageable) { create(factory) }
   let!(:user) { create(:user, :level_two) }
   let(:path) { attachable_path_for(factory, imageable) }
@@ -98,7 +98,7 @@ describe "Nested imageable" do
     end
 
     context "Budgets, investments and proposals" do
-      let(:factory) { (factories - [:future_poll_question_option]).sample }
+      let(:factory) { (NESTED_IMAGEABLE_FACTORIES - [:future_poll_question_option]).sample }
 
       scenario "Should show successful notice when resource filled correctly without any nested images" do
         fill_in_required_fields(factory, path)

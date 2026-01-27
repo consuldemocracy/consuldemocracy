@@ -754,7 +754,7 @@ describe "Budget Investments" do
     end
 
     context "Suggest" do
-      factory = :budget_investment
+      let(:factory) { :budget_investment }
 
       scenario "Show up to 5 suggestions" do
         %w[first second third fourth fifth sixth].each do |ordinal|

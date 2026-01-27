@@ -1,13 +1,13 @@
 require "rails_helper"
 
-describe "Nested documentable" do
-  factories = [
-    :budget_investment,
-    :dashboard_action,
-    :proposal
-  ]
+NESTED_DOCUMENTABLE_FACTORIES = [
+  :budget_investment,
+  :dashboard_action,
+  :proposal
+].freeze
 
-  let(:factory) { factories.sample }
+describe "Nested documentable" do
+  let(:factory) { NESTED_DOCUMENTABLE_FACTORIES.sample }
   let!(:documentable) { create(factory) }
   let!(:user) { create(:user, :level_two) }
   let(:path) { attachable_path_for(factory, documentable) }
@@ -176,7 +176,7 @@ describe "Nested documentable" do
     end
 
     describe "Metadata" do
-      let(:factory) { (factories - [:dashboard_action]).sample }
+      let(:factory) { (NESTED_DOCUMENTABLE_FACTORIES - [:dashboard_action]).sample }
 
       scenario "download document without metadata" do
         do_login_for(user, management: management_section?(path))
@@ -251,7 +251,7 @@ describe "Nested documentable" do
   end
 
   context "Show path" do
-    let(:factory) { (factories - [:dashboard_action]).sample }
+    let(:factory) { (NESTED_DOCUMENTABLE_FACTORIES - [:dashboard_action]).sample }
     let(:path) { polymorphic_path(documentable) }
 
     scenario "Documents list should not be available when allow attached documents setting is disabled" do
