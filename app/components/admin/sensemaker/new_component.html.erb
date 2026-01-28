@@ -16,14 +16,23 @@
     <%= form_tag new_admin_sensemaker_job_path, class: "", method: :get do %>
       <% conversation = @sensemaker_job.conversation if @sensemaker_job.analysable_type.present? %>
       <% unless conversation&.target.present? %>
+<<<<<<< HEAD
         <p><%= t("admin.sensemaker.new.select_target") %> <%= link_to t("admin.sensemaker.new.or_analyse_all_proposals"), new_admin_sensemaker_job_path(target_type: "Proposal", target_id: nil), class: "bold" if selected_query_type.eql?("Proposal") %>.</p>
+=======
+        <p><%= t("admin.sensemaker.new.select_target") %> <%= link_to "or analyse all proposals", new_admin_sensemaker_job_path(target_type: "Proposal", target_id: nil), class: "bold" if selected_query_type.eql?("Proposal") %>.</p>
+>>>>>>> 3d009e84c (Adds views, components, and locale for admin to manage sensemaker jobs)
       <% end %>
 
       <div class="target-search-group">
         <%= hidden_field_tag :query_type, selected_query_type %>
         <% model_label = I18n.t("activerecord.models.#{(selected_query_type || "Legislation::Process").underscore}.other", default: "targets") %>
+<<<<<<< HEAD
         <%= text_field_tag :query, params[:query], placeholder: t("admin.sensemaker.new.search_placeholder", model_label: model_label), autocomplete: "off" %>
         <%= submit_tag t("admin.shared.search.search"), class: "success button" %>
+=======
+        <%= text_field_tag :query, params[:query], placeholder: "Search for #{model_label}...", autocomplete: "off" %>
+        <%= submit_tag "Search", class: "success button" %>
+>>>>>>> 3d009e84c (Adds views, components, and locale for admin to manage sensemaker jobs)
       </div>
 
       <details <% unless params[:target_type].present? %> open<% end %>>
@@ -32,9 +41,15 @@
         </summary>
         <ul class="target-search-results">
           <% if @search_results.blank? %>
+<<<<<<< HEAD
             <%= content_tag :span, t("admin.shared.no_search_results"), class: "small italic" %>
             &nbsp;
             <%= link_to t("admin.sensemaker.new.clear_search"), new_admin_sensemaker_job_path(query_type: selected_query_type), class: "small italic" %>
+=======
+            <%= content_tag :span, "No results found.", class: "small italic" %>
+            &nbsp;
+            <%= link_to "Clear search", new_admin_sensemaker_job_path(query_type: selected_query_type), class: "small italic" %>
+>>>>>>> 3d009e84c (Adds views, components, and locale for admin to manage sensemaker jobs)
           <% end %>
 
           <% @search_results.each do |result_group| %>
