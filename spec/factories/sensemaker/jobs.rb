@@ -8,13 +8,15 @@ FactoryBot.define do
     analysable_type { "Debate" }
     analysable_id { create(:debate).id }
     additional_context { "Test context" }
-    published { true }
+    published { false }
 
     trait :unpublished do
+      script { "runner.ts" }
       published { false }
     end
 
     trait :published do
+      script { "runner.ts" }
       published { true }
     end
   end

@@ -67,11 +67,6 @@ es:
         filter_note: "Nota: Este análisis se centra en la pregunta de la encuesta \"%{question_title}\"."
         open_ended: "Esta es una pregunta de respuesta abierta con %{answers_count} respuestas de texto."
 
-    analysis:
-      title: "Análisis Sensemaker"
-      description: "Este %{subject} ha sido analizado usando herramientas sensemaker."
-      view_report: "Ver análisis"
-
     scripts:
       health_check_runner_ts:
         title: "Realizar verificación de salud"
@@ -88,40 +83,3 @@ es:
       single_html_build_js:
         title: "Informe"
         description: "Analizar y generar un informe en formato HTML"
-
-    report_index:
-      title: "Informes Sensemaker"
-      title_with_parent: "Informes Sensemaker para %{parent_name}"
-      intro_text: "Aquí puedes encontrar la salida de análisis producidos usando %{link}."
-      empty: "Aún no se han producido análisis."
-      group_titles:
-        legislation/proposal: "Propuestas"
-        legislation/question: "Debates"
-        legislation/question_option: "Debates segmentados por opción"
-        budget: "Presupuestos"
-        budget/group: "Grupos de presupuesto"
-        proposal: "Propuestas"
-        poll: "Encuestas"
-        debate: "Debates"
-
-    report_view:
-      title: "Informe Sensemaker"
-      intro_text: "Aquí puedes encontrar la salida de un análisis producido usando %{link}."
-      sensemaker_tools_link: "Herramientas Sensemaker"
-      explanatory_text:
-        poll: "Los comentarios de la encuesta titulada \"%{poll_name}\" fueron analizados para producir un informe."
-        debate: "Los comentarios del debate titulado \"%{debate_title}\" fueron analizados para producir un informe."
-        proposal: "Los comentarios de la propuesta titulada \"%{proposal_title}\" fueron analizados para producir un informe."
-        legislation_proposal: "Los comentarios de la propuesta legislativa titulada \"%{proposal_title}\" fueron analizados para producir un informe."
-        legislation_question: "Los comentarios del debate titulado \"%{question_name}\" fueron analizados para producir un informe."
-        legislation_question_option: "Los comentarios segmentados por personas que eligieron la opción \"%{option_value}\" fueron analizados para el debate titulado \"%{question_name}\"."
-        budget: "Las inversiones propuestas para el presupuesto titulado \"%{budget_name}\" fueron analizadas para producir un informe."
-        budget_group: "Las inversiones propuestas para el grupo de presupuesto titulado \"%{group_name}\" fueron analizadas para producir un informe."
-        generic: "El texto de \"%{resource_name}\" fue analizado para producir un informe. "
-        all_proposals: "El texto de todas las propuestas ciudadanas fue analizado para producir un informe."
-      metadata_title: "Detalles del Análisis"
-      run_timestamp_label: "Análisis ejecutado el"
-      comments_analysed_label: "Comentarios analizados"
-      report_description: "El informe contiene un análisis detallado de la conversación, incluyendo identificación de temas, categorización, y áreas de acuerdo y desacuerdo."
-      view_report: "Ver informe"
-

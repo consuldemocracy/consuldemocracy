@@ -1,0 +1,47 @@
+<li class="result-group">
+  <details open>
+    <summary>
+      <%= content_tag :span, @result_group[:title] %>
+    </summary>
+    <ul>
+      <% entries = @result_group[:collection] || [] %>
+      <% entries.each do |entry| %>
+        <% if entry.is_a?(Hash) && entry[:collection].present? %>
+          <%= render Admin::Sensemaker::ResultComponent.new(
+                result_group: entry,
+                selected_query_type: @selected_query_type
+              ) %>
+        <% else %>
+          <% object = entry[:object] %>
+          <% is_selected = "#{object.class.name}/#{object.id}".eql? "#{params[:target_type]}/#{params[:target_id]}" %>
+          <% is_disabled = entry[:disabled].present? %>
+          <li class="result-row <%= "selected" if is_selected %> <%= "disabled" if is_disabled %>">
+            <% if is_disabled %>
+              <div class="flex-row" title="<%= entry[:disabled] %>">
+                <div class="flex-grow">
+                  <%= content_tag :span, entry[:title], class: "text-muted" %>
+                </div>
+                <%= content_tag :span, "", class: "" %>
+              </div>
+            <% else %>
+              <%= link_to new_admin_sensemaker_job_path(query_type: @selected_query_type,
+                                                        query: params[:query],
+                                                        target_type: object.class.name,
+                                                        target_id: object.id),
+                          class: "flex-row" do %>
+                <div class="flex-grow">
+                  <%= content_tag :span, entry[:title] %>
+                </div>
+                <% if is_selected %>
+                  <%= content_tag :span, "Selected", class: "" %>
+                <% else %>
+                  <%= content_tag :span, "", class: "" %>
+                <% end %>
+              <% end %>
+            <% end %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </details>
+</li>

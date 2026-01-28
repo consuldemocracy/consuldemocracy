@@ -1,0 +1,357 @@
+.admin .sensemaker {
+  fieldset {
+    border: 1px solid $border;
+    border-radius: $button-radius;
+    padding: 1rem;
+  }
+
+  .primary.callout {
+    margin-bottom: 1.5rem;
+  }
+
+  .margin-bottom { margin-bottom: 1rem; }
+
+  summary {
+    margin-bottom: 0.5rem;
+  }
+
+  .bold { font-weight: bold; }
+  .italic { font-style: italic; }
+
+  .tip {
+    @include has-fa-icon(info-circle, solid);
+    margin-right: 0.5rem;
+  }
+
+  h4 {
+    margin-bottom: 0.8rem;
+  }
+
+  .grid-two-column {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+
+    div {
+      width: 100%;
+    }
+  }
+
+  .meta {
+    color: #6d6d6d;
+    font-size: 90%;
+  }
+
+  .search-control {
+    summary { opacity: 0.8; }
+    summary:hover { opacity: 1; }
+    summary div { display: inline-block; }
+
+    .query-type-tab {
+      background: #efefef;
+      border: 1px solid $border;
+      border-radius: $button-radius;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      opacity: 0.8;
+      padding: 1rem;
+      z-index: 2;
+    }
+
+    .query-type-tab.active {
+      border-bottom: none;
+      opacity: 1;
+    }
+
+    form {
+      background: #efefef;
+      border: 1px solid $border;
+      border-radius: $button-radius;
+      border-top: none;
+      padding: 1rem;
+      position: relative;
+      top: -2px;
+      z-index: 1;
+    }
+
+    .target-search-group {
+      border: 1px solid $border;
+      border-radius: 0.5rem;
+      display: flex;
+      flex-direction: row;
+      gap: 0;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      padding: 0;
+
+      .select-wrapper {
+        position: relative;
+      }
+
+      .select-wrapper::after {
+        color: $white;
+        content: "▼";
+        font-size: 0.6rem;
+        position: absolute;
+        right: 0.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      select {
+        background: $brand;
+        border: 0;
+        border-radius: 0;
+        color: $white;
+        flex: 1;
+        margin: 0;
+        max-width: 12rem;
+        overflow: hidden;
+        padding-left: 1rem;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      select:focus {
+        box-shadow: none;
+        outline: none;
+      }
+
+      input[type="text"] {
+        border: 0;
+        box-shadow: none;
+        flex: 1;
+        margin: 0;
+        padding: 1rem;
+      }
+
+      input[type="text"]:focus {
+        border-radius: 0;
+      }
+
+      .button {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        margin: 0;
+      }
+    }
+
+    .target-search-results {
+      background: #f6f6f6;
+      border: 1px solid $border;
+      border-radius: 0.5rem;
+      margin: 0;
+      max-height: 45vh;
+      overflow: hidden;
+      overflow-y: scroll;
+      padding: 0.5rem;
+
+      ul {
+        list-style: none;
+      }
+
+      // (moved to shallower block below)
+
+      li.result-group {
+        list-style: none;
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+        padding: 0;
+      }
+
+      // (moved to shallower block below)
+
+      li.result-row {
+        opacity: 0.8;
+        padding: 0.1rem;
+      }
+
+      li.result-row:hover {
+        opacity: 1;
+      }
+
+      li.result-row:nth-child(even) {
+        background: transparent;
+      }
+
+      li.result-row:nth-child(odd) {
+        background: #f2f2f2;
+      }
+
+      li.result-row.selected {
+        opacity: 1;
+      }
+    }
+  }
+
+  .target-search-results {
+    .result-group > span {
+      font-weight: bold;
+    }
+    .result-group ul { margin-left: 1rem; }
+    .result-row.selected a { color: #000; }
+    .result-row.selected a:hover { text-decoration: none; }
+  }
+
+  .input-preview {
+    background: #efefef;
+    border: 1px solid $border;
+    border-radius: $button-radius;
+    color: #555;
+    font-size: $small-font-size;
+    max-height: 40vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding: 6px;
+    text-wrap: auto;
+  }
+
+  .target-type-option {
+    margin: 0;
+    padding: 0;
+  }
+
+  .target-type-option input {
+    display: none;
+  }
+
+  .target-type-option span {
+    align-items: center;
+    background: $white;
+    border: 1px solid $border;
+    border-radius: 1rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+    padding: 0.2rem 0.6rem;
+  }
+
+  .target-type-option input:checked + span {
+    background: $brand;
+    border-color: transparent;
+    color: $white;
+  }
+
+  .job-row {
+    &.parent-job {
+      background-color: #f8f9fa;
+    }
+
+    &.child-job {
+      background-color: #fff;
+
+      td:first-child {
+        padding-left: 1rem;
+      }
+    }
+  }
+
+  // Hover effects for better UX
+  .job-row:hover {
+    background-color: #f1f3f4;
+  }
+
+  .child-job:hover {
+    background-color: #f8f9fa;
+  }
+
+  // Job links styling
+  .job-link {
+    color: $brand;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  // Job details styling
+  .job-details-table {
+    border-collapse: collapse;
+    width: 100%;
+
+    td {
+      border-bottom: 1px solid #e9ecef;
+      padding: 0.5rem;
+
+      &:first-child {
+        font-weight: bold;
+        width: 30%;
+      }
+    }
+  }
+
+  .job-status-indicator {
+    background-color: $brand;
+    border-radius: 100%;
+    display: inline-block;
+    height: 0.5rem;
+    margin-right: 0.1rem;
+    width: 0.5rem;
+
+    &.job-status-completed {
+      background-color: $color-success;
+    }
+
+    &.job-status-failed {
+      background-color: $color-alert;
+    }
+
+    &.job-status-cancelled {
+      background-color: $color-warning;
+    }
+
+    &.job-status-unstarted {
+      background-color: $color-info;
+    }
+  }
+}
+
+.sensemaker {
+  .flex-between {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .button { margin-bottom: 0; }
+  }
+
+  .flex-row {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    justify-content: flex-start;
+  }
+
+  .flex-grow {
+    flex: 1;
+  }
+
+  .flex-row-end {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    justify-content: flex-end;
+  }
+
+  section {
+    margin-bottom: 2rem;
+  }
+
+  .job-type-label {
+    background: $brand;
+    border-radius: 0.25rem;
+    color: $white;
+    font-size: 0.75rem;
+    font-weight: normal;
+    margin-left: 1rem;
+    padding: 0.25rem 0.5rem;
+    text-transform: uppercase;
+  }
+}
