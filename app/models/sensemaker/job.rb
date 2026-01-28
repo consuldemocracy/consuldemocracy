@@ -15,6 +15,11 @@ module Sensemaker
       "Budget::Group"
     ].freeze
 
+    PUBLISHABLE_SCRIPTS = [
+      "single-html-build.js",
+      "runner.ts"
+    ].freeze
+
     validates :analysable_type, inclusion: { in: ANALYSABLE_TYPES }
 
     belongs_to :user, optional: false
@@ -24,6 +29,7 @@ module Sensemaker
 
     validates :analysable_type, presence: true
     validates :analysable_id, presence: true, unless: -> { analysable_type == "Proposal" }
+    validate :publishing_is_allowed
 
     belongs_to :analysable, polymorphic: true, optional: true
 
@@ -155,6 +161,10 @@ module Sensemaker
       output_artifact_paths.all? { |path| File.exist?(path) }
     end
 
+    def publishable?
+      PUBLISHABLE_SCRIPTS.include?(script) && finished? && !errored? && has_outputs?
+    end
+
     def self.for_budget(budget)
       group_subquery = budget.groups.select(:id)
       published.where(analysable_type: "Budget", analysable_id: budget.id).or(
@@ -177,6 +187,14 @@ module Sensemaker
     end
 
     private
+
+      def publishing_is_allowed
+        return unless published? && published_changed? && !published_was
+
+        unless publishable?
+          errors.add(:published, :not_publishable, message: "cannot be published")
+        end
+      end
 
       def set_persisted_output_if_successful
         return unless finished_at.present? && error.nil?

@@ -1,0 +1,150 @@
+<%= header %>
+
+<div class="sensemaker">
+  <% if enabled? %>
+    <div class="callout primary experimental-feature">
+      <strong><%= sanitize(t("admin.sensemaker.help_text")) %></strong>
+    </div>
+
+    <section class="job-details margin-bottom">
+      <div class="flex-between">
+        <h3><%= t("admin.sensemaker.job_show.details") %></h3>
+        <div>
+          <%= link_to "Back to Jobs", admin_sensemaker_jobs_path, class: "margin-right" %>
+          <% if can_publish? %>
+            <% if is_published? %>
+              <%= button_to "Unpublish", unpublish_admin_sensemaker_job_path(sensemaker_job), form_class: "inline", class: "button", method: :patch %>
+            <% else %>
+              <%= button_to "Publish", publish_admin_sensemaker_job_path(sensemaker_job), form_class: "inline", class: "button success", method: :patch %>
+            <% end %>
+          <% end %>
+          <%= link_to "Delete", admin_sensemaker_job_path(sensemaker_job), class: "button error", method: :delete, data: { confirm: t("admin.sensemaker.delete_alert") } %>
+        </div>
+      </div>
+
+      <div class="grid-two-column">
+        <div class="column">
+          <table class="job-details-table">
+            <tr>
+              <td><strong><%= t("admin.sensemaker.job_show.job_id") %></strong></td>
+              <td>#<%= sensemaker_job.id %></td>
+            </tr>
+            <tr>
+              <td><strong><%= t("admin.sensemaker.job_show.script") %></strong></td>
+              <td><%= sensemaker_job.script %></td>
+            </tr>
+            <tr>
+              <td><strong><%= t("admin.sensemaker.job_show.status") %></strong></td>
+              <td>
+                <span class="job-status-indicator <%= job_status_class %>"></span>
+                <%= sensemaker_job.status %>
+              </td>
+            </tr>
+            <% if sensemaker_job.comments_analysed.present? && sensemaker_job.comments_analysed > 0 %>
+              <tr>
+                <td><strong><%= t("admin.sensemaker.job_show.comments_analysed") %></strong></td>
+                <td><%= sensemaker_job.comments_analysed %></td>
+              </tr>
+            <% end %>
+            <tr>
+              <td><strong><%= t("admin.sensemaker.job_show.created") %></strong></td>
+              <td><%= sensemaker_job.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+            </tr>
+            <% if sensemaker_job.started_at.present? %>
+              <tr>
+                <td><strong><%= t("admin.sensemaker.job_show.started") %></strong></td>
+                <td><%= sensemaker_job.started_at.strftime("%Y-%m-%d %H:%M") %></td>
+              </tr>
+            <% end %>
+            <% if sensemaker_job.finished_at.present? %>
+              <tr>
+                <td><strong><%= t("admin.sensemaker.job_show.finished") %></strong></td>
+                <td><%= sensemaker_job.finished_at.strftime("%Y-%m-%d %H:%M") %></td>
+              </tr>
+            <% end %>
+            <% unless parent_job? %>
+              <tr>
+                <td><strong><%= t("admin.sensemaker.job_show.parent_job") %></strong></td>
+                <td>
+                  <%= t("admin.sensemaker.job_show.job_spawned_by") %> <%= link_to "Job ##{parent_job.id}", admin_sensemaker_job_path(parent_job) %>
+                </td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+
+        <div class="small-12 medium-6 column">
+          <table class="job-details-table">
+            <tr>
+              <td><strong><%= t("admin.sensemaker.job_show.target_type") %></strong></td>
+              <td><%= sensemaker_job.analysable_type %></td>
+            </tr>
+            <tr>
+              <td><strong><%= t("admin.sensemaker.job_show.target_title") %></strong></td>
+              <td><%= analysable_title %></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <% if has_error? %>
+      <section class="margin-bottom">
+        <h3><%= t("admin.sensemaker.job_show.error_report") %></h3>
+        <div>
+          <details class="small">
+            <summary><%= t("admin.sensemaker.job_show.error_log") %></summary>
+            <%= sensemaker_job.error %>
+          </details>
+        </div>
+      </section>
+    <% end %>
+
+    <% if has_children? %>
+      <section class="child-jobs margin-bottom">
+        <h3><%= t("admin.sensemaker.job_show.prerequisite_jobs") %></h3>
+        <p class="help-text"><%= t("admin.sensemaker.job_show.prerequisite_jobs_help") %></p>
+
+        <table class="job-table">
+          <thead>
+            <tr>
+              <th><%= t("admin.sensemaker.job_show.job_id") %></th>
+              <th><%= t("admin.sensemaker.job_show.script") %></th>
+              <th><%= t("admin.sensemaker.job_show.status") %></th>
+              <th><%= t("admin.sensemaker.job_show.actions") %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% child_jobs.each do |child_job| %>
+              <%= render Admin::Sensemaker::JobRowComponent.new(child_job) %>
+            <% end %>
+          </tbody>
+        </table>
+      </section>
+    <% end %>
+
+    <% if sensemaker_job.finished? && !has_error? %>
+      <section class="margin-bottom">
+        <h3><%= t("admin.sensemaker.job_show.output_files") %></h3>
+        <p class="help-text"><%= t("admin.sensemaker.job_show.select_file_download") %></p>
+        <ul>
+          <% sensemaker_job.output_artifact_paths.each do |path| %>
+            <% if File.exist?(path) %>
+              <li>
+                <%= link_to File.basename(path), download_admin_sensemaker_job_path(sensemaker_job, artefact: File.basename(path)) %>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      </section>
+    <% end %>
+  <% else %>
+    <div class="callout primary">
+      <p>
+        <%= sanitize(t("admin.sensemaker.feature_disabled",
+                       link: link_to(t("admin.sensemaker.feature_disabled_link"),
+                                     admin_settings_path(anchor: "tab-feature-flags")))) %>
+      </p>
+    </div>
+  <% end %>
+</div>

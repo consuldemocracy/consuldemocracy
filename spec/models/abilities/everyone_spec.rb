@@ -7,6 +7,7 @@ describe Abilities::Everyone do
   let(:user) { nil }
   let(:debate) { create(:debate) }
   let(:proposal) { create(:proposal) }
+  let(:sensemaker_job) { build(:sensemaker_job, :published) }
 
   it { should be_able_to(:index, Debate) }
   it { should be_able_to(:show, debate) }
@@ -30,6 +31,12 @@ describe Abilities::Everyone do
   it { should_not be_able_to(:manage, LocalCensusRecord) }
   it { should_not be_able_to(:create, LocalCensusRecords::Import) }
   it { should_not be_able_to(:show, LocalCensusRecords::Import) }
+
+  it { should be_able_to(:read, sensemaker_job) }
+  it { should_not be_able_to(:read, create(:sensemaker_job, :unpublished)) }
+  it { should_not be_able_to(:manage, create(:sensemaker_job, :unpublished)) }
+  it { should_not be_able_to(:publish, create(:sensemaker_job, :unpublished)) }
+  it { should_not be_able_to(:unpublish, sensemaker_job) }
 
   it { should be_able_to(:results, create(:poll, :expired, results_enabled: true)) }
   it { should_not be_able_to(:results, create(:poll, :expired, results_enabled: false)) }
