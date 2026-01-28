@@ -1,0 +1,50 @@
+<div class="sensemaker">
+  <div class="row">
+    <div class="small-12 column">
+      <section>
+        <h3>
+          <%= page_title %>
+        </h3>
+        <% if parent_resource_link %>
+          <%= t("sensemaker.job_index.parent_resource_prefix") %> <%= parent_resource_link %>
+        <% end %>
+        <br />
+        <p class="margin-top"><%= introductory_text %></p>
+      </section>
+
+      <section>
+        <% if has_jobs? %>
+          <div class="row small-up-1 medium-up-2 large-up-3">
+            <% jobs.each do |job| %>
+              <div class="column">
+                <div class="card">
+                  <div class="card-section">
+                    <h4>
+                      <%= link_to view_job_text(job), job_path(job) %>
+                    </h4>
+                    <% if formatted_finished_at(job) %>
+                      <p class="small">
+                        <strong><%= t("sensemaker.job_index.completed_at") %>:</strong>
+                        <%= formatted_finished_at(job) %>
+                      </p>
+                    <% end %>
+                    <% if comments_analysed_count(job) > 0 %>
+                      <p class="small">
+                        <strong><%= t("sensemaker.report_view.comments_analysed_label") %>:</strong>
+                        <%= comments_analysed_count(job) %>
+                      </p>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="callout primary">
+            <p><%= empty_message %></p>
+          </div>
+        <% end %>
+      </section>
+    </div>
+  </div>
+</div>

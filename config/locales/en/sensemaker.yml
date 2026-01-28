@@ -67,6 +67,11 @@ en:
         filter_note: "Note: This analysis focuses on the poll question \"%{question_title}\"."
         open_ended: "This is an open-ended question with %{answers_count} text responses."
 
+    analysis:
+      title: "Sensemaker Analysis"
+      description: "This %{subject} has been analysed using sensemaker tools."
+      view_report: "View analysis"
+
     scripts:
       health_check_runner_ts:
         title: "Perform health check"
@@ -83,3 +88,52 @@ en:
       single_html_build_js:
         title: "Report"
         description: "Analyse and generate a report in HTML format"
+
+    report_index:
+      title: "Sensemaker Reports"
+      title_with_parent: "Sensemaker Reports for %{parent_name}"
+      intro_text: "Here you can find the output of analyses produced using %{link}."
+      empty: "No analyses have been produced yet."
+      group_titles:
+        legislation/proposal: "Proposals"
+        legislation/question: "Debates"
+        legislation/question_option: "Debates segmented by option"
+        budget: "Budgets"
+        budget/group: "Budget groups"
+        proposal: "Proposals"
+        poll: "Polls"
+        debate: "Debates"
+
+    job_index:
+      title: "Sensemaker Analyses"
+      title_with_parent: "Sensemaker Analysis for %{parent_name}"
+      title_with_resource: "Sensemaker Analysis: %{resource_name}"
+      parent_resource_prefix: "in"
+      script_type:
+        report: "Report"
+        summary: "Summary"
+      view_job: "View Analysis"
+      view_report: "View Report"
+      view_summary: "View Summary"
+      completed_at: "Completed"
+
+    report_view:
+      title: "Sensemaker Report"
+      intro_text: "Here you can find the output of an analysis produced using %{link}."
+      sensemaker_tools_link: "Sensemaker tools"
+      explanatory_text:
+        poll: "The comments for the poll titled \"%{poll_name}\" were analysed to produce a report."
+        debate: "The comments for the debate titled \"%{debate_title}\" were analysed to produce a report."
+        proposal: "The comments for the proposal titled \"%{proposal_title}\" were analysed to produce a report."
+        legislation_proposal: "The comments for the legislation proposal titled \"%{proposal_title}\" were analysed to produce a report."
+        legislation_question: "The comments for the debate titled \"%{question_name}\" were analysed to produce a report."
+        legislation_question_option: "The comments segmented by people who chose the \"%{option_value}\" option were analysed for the debate titled \"%{question_name}\"."
+        budget: "The proposed investments for the budget titled \"%{budget_name}\" were analysed to produce a report."
+        budget_group: "The proposed investments for the budget group titled \"%{group_name}\" were analysed to produce a report."
+        generic: "The text for \"%{resource_name}\" was analysed to produce a report. "
+        all_proposals: "The text for all citizen proposals were analysed to produce a report."
+      metadata_title: "Analysis Details"
+      run_timestamp_label: "Analysis run on"
+      comments_analysed_label: "Comments analysed"
+      report_description: "The report contains detailed analysis of the conversation, including topic identification, categorization, and areas of agreement and disagreement."
+      view_report: "View report"
