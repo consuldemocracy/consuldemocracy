@@ -1,37 +1,46 @@
-module Comments
-  class VotesController < ApplicationController
-    before_action :authenticate_user!
-    load_and_authorize_resource :comment
-    load_and_authorize_resource through: :comment, through_association: :votes_for, only: :destroy
-    before_action :verify_comments_open!
+# app/controllers/comments/votes_controller.rb
+class Comments::VotesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :load_comment
+  load_and_authorize_resource through: :comment, through_association: :votes_for, only: [:destroy, :update]
 
-    def create
-      authorize! :create, Vote.new(voter: current_user, votable: @comment)
-      @comment.vote_by(voter: current_user, vote: params[:value])
+  def create
+    authorize! :create, Vote.new(voter: current_user, votable: @comment)
 
-      respond_to do |format|
-        format.html { redirect_to request.referer, notice: I18n.t("flash.actions.create.vote") }
-        format.js { render :show }
-      end
+    @comment.vote_by(
+      voter: current_user,
+      vote_weight: vote_params[:vote_weight],
+      vote_flag: vote_params[:vote_flag]
+    )
+    respond_to do |format|
+      format.html { redirect_to request.referer || @comment, notice: I18n.t("flash.actions.create.vote") }
+      format.js { render :show }
     end
-
-    def destroy
-      @comment.unvote_by(current_user)
-
-      respond_to do |format|
-        format.html { redirect_to request.referer, notice: I18n.t("flash.actions.destroy.vote") }
-        format.js { render :show }
-      end
-    end
-
-    private
-
-      def verify_comments_open!
-        return if current_user.administrator? || current_user.moderator?
-
-        if @comment.commentable.respond_to?(:comments_closed?) && @comment.commentable.comments_closed?
-          redirect_to polymorphic_path(@comment.commentable), alert: t("comments.comments_closed")
-        end
-      end
   end
+
+  def update
+    @vote.update!(vote_params)
+    respond_to do |format|
+      format.html { redirect_to request.referer || @comment, notice: I18n.t("flash.actions.update.vote") }
+      format.js { render :show }
+    end
+  end
+
+  def destroy
+    @vote.destroy!
+    respond_to do |format|
+      format.html { redirect_to request.referer || @comment, notice: I18n.t("flash.actions.destroy.vote") }
+      format.js { render :show }
+    end
+  end
+
+  private
+
+    def load_comment
+      @comment = Comment.find(params[:comment_id])
+    end
+
+    def vote_params
+      params.require(:vote).permit(:vote_weight, :vote_flag)
+    end
 end

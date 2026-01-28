@@ -33,6 +33,7 @@ en:
         topic: "Topic updated successfully."
         valuator_group: "Valuator group updated successfully"
         translation: "Translation updated successfully"
+        vote: "Vote updated successfully"
       destroy:
         budget_investment: "Investment project deleted successfully."
         topic: "Topic deleted successfully."
