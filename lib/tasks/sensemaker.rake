@@ -1,8 +1,4 @@
 namespace :sensemaker do
-  def self.git_tag
-    "v1.0.0"
-  end
-
   desc "Setup Sensemaker Integration"
   task setup: :environment do
     logger = ApplicationLogger.new
@@ -62,8 +58,8 @@ namespace :sensemaker do
       check_repository(logger)
       check_is_enabled(logger)
       check_sensemaker_cli(logger)
+      ensure_angular_build_for_web_ui(logger)
       check_web_ui_health(logger)
-      check_angular_build(logger)
       logger.info "Sensemaker installation verified you can now use the Sensemaker Tools."
     end
 
@@ -97,17 +93,19 @@ namespace :sensemaker do
 
     def check_sensemaker_cli(logger)
       model_name = Tenant.current_secrets.sensemaker_model_name
-      sensemaker_folder = Sensemaker::Paths.sensemaker_folder
       project_id = Sensemaker::Paths.parse_key_file.fetch("project_id")
       output_file = "#{Sensemaker::Paths.sensemaker_data_folder}/verify-output-#{Time.current.to_i}.txt"
 
-      command = %Q(npx ts-node #{sensemaker_folder}/library/runner-cli/health_check_runner.ts \
+      package_path = Sensemaker::Paths.sensemaker_package_folder
+      runner_path = package_path.join("runner-cli/health_check_runner.ts")
+
+      command = %Q(npx ts-node #{runner_path} \
         --vertexProject #{project_id} \
         --outputFile #{output_file} \
         --modelName #{model_name} \
         --keyFilename #{Sensemaker::Paths.key_file})
 
-      output = `cd #{Sensemaker::Paths.sensemaker_folder} && #{command} 2>&1`
+      output = `cd #{Rails.root} && #{command} 2>&1`
       result = $?.exitstatus
 
       if result.eql?(0)
@@ -141,20 +139,44 @@ namespace :sensemaker do
       end
     end
 
-    def check_angular_build(logger)
-      logger.info "Testing Angular compilation..."
+    def ensure_angular_build_for_web_ui(logger)
+      logger.info "Ensuring Angular build for web-ui..."
 
       visualization_path = Sensemaker::Paths.visualization_folder
+      dist_path = File.join(visualization_path, "dist/web-ui/browser")
+      build_exists = File.directory?(dist_path) && File.exist?(File.join(dist_path, "index.csr.html"))
 
-      output = `cd #{visualization_path} && npm run build -- --configuration development 2>&1`
+      logger.info "Installing Angular build dependencies..."
+      install_command = "cd #{visualization_path} && npm install --include=dev 2>&1"
+      install_output = `#{install_command}`
+      install_result = $?.exitstatus
+
+      if !install_result.eql?(0)
+        logger.warn "✗ Failed to install dependencies"
+        logger.warn install_output
+        raise "Failed to install Angular build dependencies"
+      end
+
+      logger.info "✓ Dependencies installed"
+
+      if build_exists
+        logger.info "✓ Angular build already exists at: #{dist_path}"
+        logger.info "Skipping build step."
+        return
+      end
+
+      logger.info "Building Angular app..."
+
+      build_command = "cd #{visualization_path} && npm run build -- --configuration development 2>&1"
+      build_output = `#{build_command}`
       result = $?.exitstatus
 
       if result.eql?(0)
-        logger.info "✓ Angular build test passed."
+        logger.info "✓ Angular build for web-ui completed successfully."
       else
-        logger.warn "✗ Angular build test failed."
-        logger.warn output
-        raise "This may indicate a TypeScript version incompatibility or other compilation issue."
+        logger.warn "✗ Angular build for web-ui failed"
+        logger.warn build_output
+        raise "Angular build for web-ui failed."
       end
     end
 
@@ -176,24 +198,20 @@ namespace :sensemaker do
     end
 
     def check_repository(logger)
-      sensemaker_path = Sensemaker::Paths.sensemaker_folder
+      package_path = Sensemaker::Paths.sensemaker_package_folder
 
-      if File.directory?(sensemaker_path) && File.directory?(File.join(sensemaker_path, ".git"))
-        logger.info "✓ sensemaking-tools repository found: #{sensemaker_path}"
-        Dir.chdir(sensemaker_path) do
-          current_tag = `git describe --exact-match --tags HEAD 2>/dev/null`.strip
-          if current_tag.eql?(git_tag)
-            logger.info "✓ sensemaking-tools repository is using the expected tag: #{git_tag}"
-          else
-            logger.warn "⚠ sensemaking-tools repository tag is '#{current_tag}', not '#{git_tag}'"
-          end
-          logger.info " - Current branch: #{`git rev-parse --abbrev-ref HEAD`.strip} "
-          logger.info " - Latest commit: #{`git log -1 --pretty=format:"%h %s"`.strip}"
-          logger.info " - Last updated: #{`git log -1 --pretty=format:"%ci"`.strip}"
+      if File.directory?(package_path)
+        logger.info "✓ sensemaking-tools package found: #{package_path}"
+
+        package_json_path = File.join(package_path, "package.json")
+        if File.exist?(package_json_path)
+          package_json = JSON.parse(File.read(package_json_path))
+          version = package_json["version"]
+          logger.info "✓ Installed version: #{version}"
         end
       else
-        logger.warn "✗ sensemaking-tools repository not found at: #{sensemaker_path}"
-        raise "sensemaking-tools repository not found at: #{sensemaker_path}"
+        logger.warn "✗ sensemaking-tools package not found at: #{package_path}"
+        raise "sensemaking-tools package not found. Run 'npm install' first."
       end
     end
 
@@ -223,14 +241,22 @@ namespace :sensemaker do
     end
 
     def check_directories(logger)
+      package_path = Sensemaker::Paths.sensemaker_package_folder
       sensemaker_path = Sensemaker::Paths.sensemaker_folder
       data_path = Sensemaker::Paths.sensemaker_data_folder
 
-      if File.directory?(sensemaker_path)
-        logger.info "✓ Sensemaker path found: #{sensemaker_path}"
+      if File.directory?(package_path)
+        logger.info "✓ Sensemaker package path found: #{package_path}"
       else
-        logger.warn "✗ Sensemaker path not found: #{sensemaker_path}"
-        raise "Sensemaker path not found: #{sensemaker_path}"
+        logger.warn "✗ Sensemaker package path not found: #{package_path}"
+        raise "Sensemaker package path not found: #{package_path}"
+      end
+
+      if File.directory?(sensemaker_path)
+        logger.info "✓ Sensemaker data folder found: #{sensemaker_path}"
+      else
+        logger.warn "✗ Sensemaker data folder not found: #{sensemaker_path}"
+        raise "Sensemaker data folder not found: #{sensemaker_path}"
       end
 
       if File.directory?(data_path)
@@ -245,34 +271,29 @@ namespace :sensemaker do
 
     def setup_for_tenant(logger)
       begin
+        package_path = Sensemaker::Paths.sensemaker_package_folder
         sensemaker_path = Sensemaker::Paths.sensemaker_folder
-        visualization_path = Sensemaker::Paths.visualization_folder
         data_path = Sensemaker::Paths.sensemaker_data_folder
       rescue => e
         logger.warn "Could not get paths from Sensemaker::Paths: #{e.message}"
         logger.warn "Using default paths instead"
 
+        package_path = Rails.root.join("node_modules/@cosla/sensemaking-tools")
         sensemaker_path = Rails.root.join("vendor/sensemaking-tools")
         data_path = Rails.root.join("vendor/sensemaking-tools/data")
       end
 
-      logger.info "Using sensemaking-tools path: #{sensemaker_path}"
+      logger.info "Using sensemaking-tools package path: #{package_path}"
+      logger.info "Using sensemaking-tools data folder: #{sensemaker_path}"
       logger.info "Using data path: #{data_path}"
 
       check_dependencies(logger)
-
+      ensure_package_in_package_json(logger)
+      ensure_web_ui_package_in_package_json(logger)
+      ensure_angular_build_for_web_ui(logger)
       setup_sensemaker_directory(sensemaker_path, logger)
-
-      clone_or_update_repository(sensemaker_path, logger)
-
       setup_data_directory(data_path, logger)
-
-      install_dependencies(sensemaker_path, visualization_path, logger)
-
-      # set_file_permissions(sensemaker_path, data_path, logger)
-
-      verify_cli_available(sensemaker_path, logger)
-
+      verify_cli_available(package_path, logger)
       add_feature_flag(logger)
 
       if File.exist?(Sensemaker::Paths.key_file)
@@ -323,28 +344,9 @@ namespace :sensemaker do
     end
 
     def setup_sensemaker_directory(sensemaker_path, logger)
-      logger.info "Setting up sensemaking-tools directory..."
-
-      shared_path = Rails.root.join("../../shared")
-      in_capistrano = File.directory?(shared_path)
-
-      if in_capistrano
-        logger.info "Detected Capistrano deployment structure"
-
-        File.join(shared_path, "vendor/sensemaking-tools")
-
-        unless File.symlink?(sensemaker_path) && File.directory?(sensemaker_path)
-          logger.warn %(
-            "WARNING: vendor/sensemaking-tools is not properly linked to shared/vendor/sensemaking-tools"
-            "Make sure 'vendor/sensemaking-tools' is included in :linked_dirs in config/deploy.rb"
-            "Changes to sensemaking-tools will be lost on next deployment if this is not fixed"
-          )
-        end
-      end
-
+      logger.info "Setting up sensemaking-tools data directory..."
       FileUtils.mkdir_p(sensemaker_path) unless File.directory?(sensemaker_path)
-
-      logger.info "Sensemaker directory created."
+      logger.info "Sensemaker data directory created."
     end
 
     def setup_data_directory(data_path, logger)
@@ -353,85 +355,77 @@ namespace :sensemaker do
       logger.info "Data directory created."
     end
 
-    def clone_or_update_repository(sensemaker_path, logger)
-      repo_url = "https://github.com/CoslaDigital/sensemaking-tools.git"
+    def ensure_package_in_package_json(logger)
+      logger.info "Checking package.json for sensemaking-tools dependency..."
 
-      if File.directory?(File.join(sensemaker_path, ".git"))
-        logger.info "Repository already exists, updating to tag #{git_tag}..."
-        Dir.chdir(sensemaker_path) do
-          system("git fetch --all --tags")
-          system("git checkout #{git_tag}")
+      package_json_path = Rails.root.join("package.json")
+      unless File.exist?(package_json_path)
+        logger.warn "✗ package.json not found."
+        logger.info ""
+        logger.info "Please create package.json and add the following dependency:"
+        logger.info '  "@cosla/sensemaking-tools": "^1.0.0"'
+        logger.info ""
+        raise "package.json not found. Please create it and add the required dependencies."
+      end
 
-          if $?.success?
-            logger.info "Repository updated successfully to tag #{git_tag}."
-          else
-            logger.warn "Failed to update repository to tag #{git_tag}."
-            raise "Failed to update repository to tag #{git_tag}."
-          end
-        end
+      package_json = JSON.parse(File.read(package_json_path))
+      package_json["dependencies"] ||= {}
+
+      package_name = "@cosla/sensemaking-tools"
+      current_version = package_json["dependencies"][package_name]
+
+      if current_version.nil?
+        logger.warn "✗ #{package_name} not found in package.json"
+        logger.info ""
+        logger.info "Please add the following to your package.json dependencies:"
+        logger.info '  "@cosla/sensemaking-tools": "^1.0.0"'
+        logger.info ""
+        logger.info "Then run: npm install"
+        logger.info ""
+        raise "#{package_name} not found in package.json. Please add it manually."
       else
-        logger.info "Cloning sensemaking-tools repository (tag #{git_tag})..."
-        system("git clone -b #{git_tag} #{repo_url} #{sensemaker_path}")
-
-        if $?.success?
-          logger.info "Repository cloned successfully with tag #{git_tag}."
-        else
-          logger.warn "Failed to clone repository."
-          raise "Failed to clone repository."
-        end
+        logger.info "✓ #{package_name}@#{current_version} found in package.json"
       end
     end
 
-    def install_dependencies(sensemaker_path, visualization_path, logger)
-      install_main_dependencies(sensemaker_path, logger)
-      install_visualization_dependencies(visualization_path, logger)
-    end
+    def ensure_web_ui_package_in_package_json(logger)
+      logger.info "Checking package.json for sensemaking-web-ui dependency..."
 
-    def install_main_dependencies(sensemaker_path, logger)
-      logger.info "Installing npm dependencies for sensemaking-tools..."
-      if File.exist?(File.join(sensemaker_path, "package.json"))
-        Dir.chdir(sensemaker_path) do
-          logger.info "Installing dependencies for sensemaking-tools..."
-          system("npm install")
+      package_json_path = Rails.root.join("package.json")
+      unless File.exist?(package_json_path)
+        logger.warn "✗ package.json not found."
+        logger.info ""
+        logger.info "Please create package.json and add the following dependency:"
+        logger.info '  "@cosla/sensemaking-web-ui": "^1.0.0"'
+        logger.info ""
+        raise "package.json not found. Please create it and add the required dependencies."
+      end
 
-          if $?.success?
-            logger.info "Dependencies installed successfully for sensemaking-tools."
-          else
-            logger.warn "Failed to install dependencies."
-            raise "Failed to install dependencies."
-          end
-        end
+      package_json = JSON.parse(File.read(package_json_path))
+      package_json["dependencies"] ||= {}
+
+      package_name = "@cosla/sensemaking-web-ui"
+      current_version = package_json["dependencies"][package_name]
+
+      if current_version.nil?
+        logger.warn "✗ #{package_name} not found in package.json"
+        logger.info ""
+        logger.info "Please add the following to your package.json dependencies:"
+        logger.info '  "@cosla/sensemaking-web-ui": "^1.0.0"'
+        logger.info ""
+        logger.info "Then run: npm install"
+        logger.info ""
+        raise "#{package_name} not found in package.json. Please add it manually."
       else
-        logger.warn "package.json not found at #{sensemaker_path}"
-        raise "package.json not found at #{sensemaker_path}"
+        logger.info "✓ #{package_name}@#{current_version} found in package.json"
       end
     end
 
-    def install_visualization_dependencies(visualization_path, logger)
-      logger.info "Installing npm dependencies for sensemaker-tools/web-ui..."
-      if File.exist?(File.join(visualization_path, "package.json"))
-        Dir.chdir(visualization_path) do
-          logger.info "Installing dependencies for web-ui..."
-          system("npm install")
+    def verify_cli_available(package_path, logger)
+      runner_path = File.join(package_path, "runner-cli/health_check_runner.ts")
 
-          if $?.success?
-            logger.info "Dependencies installed successfully for web-ui."
-          else
-            logger.warn "Failed to install dependencies."
-            raise "Failed to install dependencies."
-          end
-        end
-      else
-        logger.warn "package.json not found at #{visualization_path}"
-        raise "package.json not found at #{visualization_path}"
-      end
-    end
-
-    def verify_cli_available(sensemaker_path, logger)
-      library_path = File.join(sensemaker_path, "library")
-
-      Dir.chdir(library_path) do
-        output = `npx ts-node ./runner-cli/health_check_runner.ts --help`
+      Dir.chdir(Rails.root) do
+        output = `npx ts-node #{runner_path} --help 2>&1`
 
         if $?.success?
           logger.info "Sensemaker CLI tool is working correctly."
