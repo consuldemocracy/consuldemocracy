@@ -1,0 +1,68 @@
+en:
+  sensemaker:
+    context:
+      base: "Analysing %{type} from the Consul Democracy platform"
+      title: "Title: %{title}"
+      name: "Name: %{name}"
+      summary: "Summary: %{summary}"
+      description: "Description: %{description}"
+      text: "Text: %{text}"
+      location: "Location: %{location}"
+      tags: "- Tags: %{tags}"
+      comments: "- Comments: %{count}"
+      created: "- Created: %{date}"
+      published: "- Published: %{date}"
+      type:
+        budget: "Participatory budget"
+        budget/group: "Participatory budget group"
+        proposal: "Citizen proposal"
+        debate: "Citizen debate"
+        legislation/proposal: "Collaborative legislation proposal"
+        legislation/question: "Collaborative legislation debate"
+        legislation/question_option: "Collaborative legislation debate segmented by option"
+        poll: "Poll"
+        poll/question: "Poll question"
+      proposal:
+        votes: "This proposal has %{total_votes} votes out of %{required_votes} required to be successful"
+
+      legislation_proposal:
+        process: "This proposal is part of the legislation process, \"%{process_title}\""
+        votes: "This proposal has %{votes_up} votes for and %{votes_down} votes against"
+
+      debate:
+        votes: "This debate has %{votes_up} votes for and %{votes_down} votes against"
+
+      legislation_question:
+        process: "This debate is part of the legislation process, \"%{process_title}\""
+        responses_header: "### Debate Responses"
+        option: "- %{value} (%{answers_count} responses)"
+
+      question_option:
+        filter_note: "Note: Comments in this analysis are filtered to only include comments from users who selected the option \"%{option_value}\" in their response to this debate."
+
+      budget:
+        name: "Budget: %{name}"
+        phase: "Phase: %{phase}"
+
+      budget_group:
+        name: "Budget Group: %{name}"
+        budget: "Part of budget: %{budget_name}"
+
+      proposals:
+        all: "These are the proposals that have been submitted to the consul citizen participation platform. Citizens' proposals are an opportunity for neighbours and collectives to decide directly how they want their city to be, after getting sufficient support and submitting to a citizens' vote."
+
+      poll:
+        questions_header: "This Poll is composed of %{count} question(s). The questions are as follows:"
+        question_with_type: "  Q%{number} (%{type}): %{title}"
+        question_option: "     - Option %{number}: %{title}"
+        question_option_with_votes: "      - Option %{number}: %{title} (%{votes} votes)"
+        combined_answers_note: "The attached comments include each author's answers. These are separated by the pipe \"|\" character and labelled as Q1, Q2, etc.."
+        question_type:
+          unique_choice: "Single choice"
+          multiple_choice: "Multiple choice"
+          open_ended: "Open ended"
+
+      poll_question:
+        question_title: "Question: %{title}"
+        filter_note: "Note: This analysis focuses on the poll question \"%{question_title}\"."
+        open_ended: "This is an open-ended question with %{answers_count} text responses."

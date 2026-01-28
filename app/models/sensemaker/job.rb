@@ -6,6 +6,7 @@ module Sensemaker
       "Debate",
       "Proposal",
       "Poll",
+      "Poll::Question",
       "Topic",
       "Legislation::Question",
       "Legislation::Proposal",
@@ -84,6 +85,10 @@ module Sensemaker
 
     def cancel!
       update!(finished_at: Time.current, error: "Cancelled")
+    end
+
+    def conversation
+      @conversation ||= Sensemaker::Conversation.new(analysable_type, analysable_id)
     end
 
     def output_file_name
