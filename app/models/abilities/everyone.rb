@@ -26,7 +26,7 @@ module Abilities
       can [:read], Legislation::Question
       can [:read, :share], Legislation::Proposal
       can [:search, :comments, :read, :create, :new_comment], Legislation::Annotation
-
+      can :read, Sensemaker::Job, published: true
       can [:read, :help], ::SDG::Goal
       can :read, ::SDG::Phase
     end

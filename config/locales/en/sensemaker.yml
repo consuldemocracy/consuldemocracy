@@ -1,0 +1,139 @@
+en:
+  sensemaker:
+    context:
+      base: "Analysing %{type} from the Consul Democracy platform"
+      title: "Title: %{title}"
+      name: "Name: %{name}"
+      summary: "Summary: %{summary}"
+      description: "Description: %{description}"
+      text: "Text: %{text}"
+      location: "Location: %{location}"
+      tags: "- Tags: %{tags}"
+      comments: "- Comments: %{count}"
+      created: "- Created: %{date}"
+      published: "- Published: %{date}"
+      type:
+        budget: "Participatory budget"
+        budget/group: "Participatory budget group"
+        proposal: "Citizen proposal"
+        debate: "Citizen debate"
+        legislation/proposal: "Collaborative legislation proposal"
+        legislation/question: "Collaborative legislation debate"
+        legislation/question_option: "Collaborative legislation debate segmented by option"
+        poll: "Poll"
+        poll/question: "Poll question"
+      proposal:
+        votes: "This proposal has %{total_votes} votes out of %{required_votes} required to be successful"
+
+      legislation_proposal:
+        process: "This proposal is part of the legislation process, \"%{process_title}\""
+        votes: "This proposal has %{votes_up} votes for and %{votes_down} votes against"
+
+      debate:
+        votes: "This debate has %{votes_up} votes for and %{votes_down} votes against"
+
+      legislation_question:
+        process: "This debate is part of the legislation process, \"%{process_title}\""
+        responses_header: "### Debate Responses"
+        option: "- %{value} (%{answers_count} responses)"
+
+      question_option:
+        filter_note: "Note: Comments in this analysis are filtered to only include comments from users who selected the option \"%{option_value}\" in their response to this debate."
+
+      budget:
+        name: "Budget: %{name}"
+        phase: "Phase: %{phase}"
+
+      budget_group:
+        name: "Budget Group: %{name}"
+        budget: "Part of budget: %{budget_name}"
+
+      proposals:
+        all: "These are the proposals that have been submitted to the consul citizen participation platform. Citizens' proposals are an opportunity for neighbours and collectives to decide directly how they want their city to be, after getting sufficient support and submitting to a citizens' vote."
+
+      poll:
+        questions_header: "This Poll is composed of %{count} question(s). The questions are as follows:"
+        question_with_type: "  Q%{number} (%{type}): %{title}"
+        question_option: "     - Option %{number}: %{title}"
+        question_option_with_votes: "      - Option %{number}: %{title} (%{votes} votes)"
+        combined_answers_note: "The attached comments include each author's answers. These are separated by the pipe \"|\" character and labelled as Q1, Q2, etc.."
+        question_type:
+          unique_choice: "Single choice"
+          multiple_choice: "Multiple choice"
+          open_ended: "Open ended"
+
+      poll_question:
+        question_title: "Question: %{title}"
+        filter_note: "Note: This analysis focuses on the poll question \"%{question_title}\"."
+        open_ended: "This is an open-ended question with %{answers_count} text responses."
+
+    analysis:
+      title: "Sensemaker Analysis"
+      description: "This %{subject} has been analysed using sensemaker tools."
+      view_report: "View analysis"
+
+    scripts:
+      health_check_runner_ts:
+        title: "Perform health check"
+        description: "Health check to verify sensemaker is working"
+      categorization_runner_ts:
+        title: "Categorise"
+        description: "Categorise comments into topics and subtopics"
+      runner_ts:
+        title: "Summarise"
+        description: "Generate a summary of the conversation"
+      advanced_runner_ts:
+        title: "Analyse"
+        description: "Analyse the conversation with statistics"
+      single_html_build_js:
+        title: "Report"
+        description: "Analyse and generate a report in HTML format"
+
+    report_index:
+      title: "Sensemaker Reports"
+      title_with_parent: "Sensemaker Reports for %{parent_name}"
+      intro_text: "Here you can find the output of analyses produced using %{link}."
+      empty: "No analyses have been produced yet."
+      group_titles:
+        legislation/proposal: "Proposals"
+        legislation/question: "Debates"
+        legislation/question_option: "Debates segmented by option"
+        budget: "Budgets"
+        budget/group: "Budget groups"
+        proposal: "Proposals"
+        poll: "Polls"
+        debate: "Debates"
+
+    job_index:
+      title: "Sensemaker Analyses"
+      title_with_parent: "Sensemaker Analysis for %{parent_name}"
+      title_with_resource: "Sensemaker Analysis: %{resource_name}"
+      parent_resource_prefix: "in"
+      script_type:
+        report: "Report"
+        summary: "Summary"
+      view_job: "View Analysis"
+      view_report: "View Report"
+      view_summary: "View Summary"
+      completed_at: "Completed"
+
+    report_view:
+      title: "Sensemaker Report"
+      intro_text: "Here you can find the output of an analysis produced using %{link}."
+      sensemaker_tools_link: "Sensemaker tools"
+      explanatory_text:
+        poll: "The comments for the poll titled \"%{poll_name}\" were analysed to produce a report."
+        debate: "The comments for the debate titled \"%{debate_title}\" were analysed to produce a report."
+        proposal: "The comments for the proposal titled \"%{proposal_title}\" were analysed to produce a report."
+        legislation_proposal: "The comments for the legislation proposal titled \"%{proposal_title}\" were analysed to produce a report."
+        legislation_question: "The comments for the debate titled \"%{question_name}\" were analysed to produce a report."
+        legislation_question_option: "The comments segmented by people who chose the \"%{option_value}\" option were analysed for the debate titled \"%{question_name}\"."
+        budget: "The proposed investments for the budget titled \"%{budget_name}\" were analysed to produce a report."
+        budget_group: "The proposed investments for the budget group titled \"%{group_name}\" were analysed to produce a report."
+        generic: "The text for \"%{resource_name}\" was analysed to produce a report. "
+        all_proposals: "The text for all citizen proposals were analysed to produce a report."
+      metadata_title: "Analysis Details"
+      run_timestamp_label: "Analysis run on"
+      comments_analysed_label: "Comments analysed"
+      report_description: "The report contains detailed analysis of the conversation, including topic identification, categorization, and areas of agreement and disagreement."
+      view_report: "View report"
