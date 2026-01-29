@@ -3,7 +3,7 @@ class Budgets::Investments::FormComponent < ApplicationComponent
   include GlobalizeHelper
 
   attr_reader :investment, :url
-  delegate :budget_heading_select_options, :suggest_data, to: :helpers
+  delegate :budget_heading_select_options, :suggest_data, :invisible_captcha, to: :helpers
 
   def initialize(investment, url:)
     @investment = investment

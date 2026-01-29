@@ -2,6 +2,7 @@ class Admin::Budgets::IndexComponent < ApplicationComponent
   include Header
 
   attr_reader :budgets
+  delegate :page_entries_info, :paginate, to: :helpers
 
   def initialize(budgets)
     @budgets = budgets

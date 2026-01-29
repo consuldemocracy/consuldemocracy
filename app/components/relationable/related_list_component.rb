@@ -1,5 +1,6 @@
 class Relationable::RelatedListComponent < ApplicationComponent
   attr_reader :relationable
+  delegate :paginate, to: :helpers
 
   def initialize(relationable)
     @relationable = relationable

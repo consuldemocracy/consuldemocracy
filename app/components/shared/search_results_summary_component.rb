@@ -1,5 +1,6 @@
 class Shared::SearchResultsSummaryComponent < ApplicationComponent
   attr_reader :results, :search_terms, :advanced_search_terms
+  delegate :page_entries_info, to: :helpers
 
   def initialize(results:, search_terms:, advanced_search_terms:)
     @results = results

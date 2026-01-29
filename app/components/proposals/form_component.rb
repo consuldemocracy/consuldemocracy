@@ -3,7 +3,7 @@ class Proposals::FormComponent < ApplicationComponent
   include GlobalizeHelper
 
   attr_reader :proposal, :url
-  delegate :suggest_data, :geozone_select_options, to: :helpers
+  delegate :suggest_data, :geozone_select_options, :invisible_captcha, to: :helpers
 
   def initialize(proposal, url:)
     @proposal = proposal

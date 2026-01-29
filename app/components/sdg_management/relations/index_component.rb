@@ -2,6 +2,7 @@ class SDGManagement::Relations::IndexComponent < ApplicationComponent
   include Header
 
   attr_reader :records
+  delegate :paginate, to: :helpers
 
   def initialize(records)
     @records = records

@@ -1,5 +1,6 @@
 class Images::NestedComponent < ApplicationComponent
   attr_reader :f, :image_fields
+  delegate :link_to_add_association, to: :helpers
 
   def initialize(f, image_fields: :image)
     @f = f

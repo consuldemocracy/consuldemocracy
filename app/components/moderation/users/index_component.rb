@@ -2,6 +2,7 @@ class Moderation::Users::IndexComponent < ApplicationComponent
   include Header
 
   attr_reader :users
+  delegate :page_entries_info, :paginate, to: :helpers
 
   def initialize(users)
     @users = users
