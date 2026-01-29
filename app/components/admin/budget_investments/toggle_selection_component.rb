@@ -1,6 +1,5 @@
 class Admin::BudgetInvestments::ToggleSelectionComponent < ApplicationComponent
   attr_reader :investment
-  use_helpers :can?
   delegate :selected?, to: :investment
 
   def initialize(investment)

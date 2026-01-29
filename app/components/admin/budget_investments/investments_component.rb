@@ -1,6 +1,6 @@
 class Admin::BudgetInvestments::InvestmentsComponent < ApplicationComponent
   attr_reader :budget, :investments
-  use_helpers :set_direction, :set_sorting_icon
+  delegate :set_direction, :set_sorting_icon, to: :helpers
 
   def initialize(budget, investments)
     @budget = budget

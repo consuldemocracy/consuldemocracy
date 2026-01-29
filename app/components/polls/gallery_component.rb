@@ -1,6 +1,6 @@
 class Polls::GalleryComponent < ApplicationComponent
   attr_reader :option
-  use_helpers :is_active_class
+  delegate :is_active_class, to: :helpers
 
   def initialize(option)
     @option = option

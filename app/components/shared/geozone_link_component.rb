@@ -1,6 +1,6 @@
 class Shared::GeozoneLinkComponent < ApplicationComponent
   attr_reader :geozonable, :link
-  use_helpers :geozone_name
+  delegate :geozone_name, to: :helpers
 
   def initialize(geozonable, link)
     @geozonable = geozonable

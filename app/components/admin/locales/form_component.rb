@@ -1,6 +1,6 @@
 class Admin::Locales::FormComponent < ApplicationComponent
   attr_reader :locales_settings
-  use_helpers :name_for_locale
+  delegate :name_for_locale, to: :helpers
 
   def initialize(locales_settings)
     @locales_settings = locales_settings

@@ -1,6 +1,6 @@
 class MapLocations::FormFieldsComponent < ApplicationComponent
   attr_reader :form, :map_location
-  use_helpers :render_map
+  delegate :render_map, to: :helpers
 
   def initialize(form, map_location:)
     @form = form

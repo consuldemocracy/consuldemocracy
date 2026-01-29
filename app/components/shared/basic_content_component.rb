@@ -1,7 +1,7 @@
 class Shared::BasicContentComponent < ApplicationComponent
   attr_reader :record, :show_tags
   alias_method :show_tags?, :show_tags
-  use_helpers :locale_and_user_status, :namespace, :namespaced_polymorphic_path, :wysiwyg
+  delegate :locale_and_user_status, :namespace, :namespaced_polymorphic_path, :wysiwyg, to: :helpers
 
   def initialize(record, show_tags: true)
     @record = record

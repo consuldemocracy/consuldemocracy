@@ -1,6 +1,6 @@
 class Shared::RecommendedIndexComponent < ApplicationComponent
   attr_reader :recommendations, :namespace
-  use_helpers :current_path_with_query_params
+  delegate :current_path_with_query_params, to: :helpers
 
   def initialize(recommendations, namespace:)
     @recommendations = recommendations

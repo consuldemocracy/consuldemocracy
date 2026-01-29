@@ -1,6 +1,6 @@
 class Legislation::Proposals::VotesComponent < ApplicationComponent
   attr_reader :proposal
-  use_helpers :current_user, :link_to_verify_account, :can?
+  delegate :link_to_verify_account, to: :helpers
 
   def initialize(proposal)
     @proposal = proposal

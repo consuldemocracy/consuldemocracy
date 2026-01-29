@@ -1,6 +1,6 @@
 class Polls::CalloutComponent < ApplicationComponent
   attr_reader :poll
-  use_helpers :can?, :current_user, :link_to_signin, :link_to_signup
+  delegate :link_to_signin, :link_to_signup, to: :helpers
 
   def initialize(poll)
     @poll = poll

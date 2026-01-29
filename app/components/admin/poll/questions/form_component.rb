@@ -3,7 +3,6 @@ class Admin::Poll::Questions::FormComponent < ApplicationComponent
   include GlobalizeHelper
 
   attr_reader :question, :url
-  use_helpers :can?
 
   def initialize(question, url:)
     @question = question

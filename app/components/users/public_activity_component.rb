@@ -1,6 +1,6 @@
 class Users::PublicActivityComponent < ApplicationComponent
   attr_reader :user
-  use_helpers :current_user, :valid_interests_access?, :current_path_with_query_params
+  delegate :valid_interests_access?, :current_path_with_query_params, to: :helpers
 
   def initialize(user)
     @user = user

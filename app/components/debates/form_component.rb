@@ -3,7 +3,7 @@ class Debates::FormComponent < ApplicationComponent
   include GlobalizeHelper
 
   attr_reader :debate
-  use_helpers :suggest_data
+  delegate :suggest_data, to: :helpers
 
   def initialize(debate)
     @debate = debate

@@ -1,6 +1,6 @@
 class Shared::BasicInfoComponent < ApplicationComponent
   attr_reader :record
-  use_helpers :namespace
+  delegate :namespace, to: :helpers
 
   def initialize(record)
     @record = record

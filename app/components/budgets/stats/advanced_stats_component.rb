@@ -1,6 +1,6 @@
 class Budgets::Stats::AdvancedStatsComponent < ApplicationComponent
   attr_reader :stats
-  use_helpers :number_with_info_tags, :number_to_stats_percentage
+  delegate :number_with_info_tags, :number_to_stats_percentage, to: :helpers
 
   def initialize(stats)
     @stats = stats

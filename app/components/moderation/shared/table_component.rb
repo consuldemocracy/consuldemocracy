@@ -1,6 +1,6 @@
 class Moderation::Shared::TableComponent < ApplicationComponent
   attr_reader :records
-  use_helpers :wysiwyg
+  delegate :wysiwyg, to: :helpers
 
   def initialize(records)
     @records = records

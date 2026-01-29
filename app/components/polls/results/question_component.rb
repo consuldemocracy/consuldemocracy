@@ -1,6 +1,6 @@
 class Polls::Results::QuestionComponent < ApplicationComponent
   attr_reader :question
-  use_helpers :number_to_stats_percentage
+  delegate :number_to_stats_percentage, to: :helpers
 
   def initialize(question)
     @question = question
