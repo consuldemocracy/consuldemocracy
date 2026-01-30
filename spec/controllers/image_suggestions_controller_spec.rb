@@ -68,23 +68,6 @@ describe ImageSuggestionsController do
       allow(ImageSuggestions::Pexels).to receive(:download).with(photo_id).and_return(uploaded_file)
     end
 
-    it "creates a direct upload with the downloaded image" do
-      expect(DirectUpload).to receive(:new) do |args|
-        expect(args[:resource_type]).to eq(resource_type)
-        expect(args[:resource_relation]).to eq("image")
-        expect(args[:attachment]).to eq(uploaded_file)
-        expect(args[:user]).to eq(user)
-        # resource_id can be nil or empty string depending on params
-        expect([nil, ""]).to include(args[:resource_id])
-      end.and_call_original
-
-      post :attach, params: {
-        id: photo_id,
-        resource_type: resource_type,
-        resource_id: resource_id
-      }
-    end
-
     context "when download succeeds" do
       let(:direct_upload) do
         instance_double(DirectUpload, valid?: true, relation: relation, errors: errors,
@@ -103,6 +86,25 @@ describe ImageSuggestionsController do
         allow(DirectUpload).to receive(:new).and_return(direct_upload)
         allow(direct_upload.relation).to receive(:set_cached_attachment_from_attachment)
         allow(controller).to receive(:polymorphic_path).and_return("/images/1")
+      end
+
+      it "creates a direct upload with the downloaded image" do
+        allow(direct_upload).to receive(:save_attachment)
+
+        expect(DirectUpload).to receive(:new).with(
+          hash_including(
+            resource_type: resource_type,
+            resource_relation: "image",
+            attachment: uploaded_file,
+            user: user
+          )
+        ).and_return(direct_upload)
+
+        post :attach, params: {
+          id: photo_id,
+          resource_type: resource_type,
+          resource_id: resource_id
+        }
       end
 
       it "saves the attachment and returns success response" do

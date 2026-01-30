@@ -1,16 +1,6 @@
 module ImageSuggestions
   module Llm
     class Client
-      class Response
-        attr_accessor :results
-        attr_reader :errors
-
-        def initialize
-          @results = []
-          @errors = []
-        end
-      end
-
       NUMBER_OF_IMAGES = 4
       attr_reader :model_instance, :chat, :prompt, :response
 
@@ -22,6 +12,7 @@ module ImageSuggestions
         @model_instance = model_instance
         @prompt = load_prompt
         @response = Response.new
+        @chat = build_chat
       end
 
       def call
@@ -40,7 +31,21 @@ module ImageSuggestions
         return response
       end
 
+      class Response
+        attr_accessor :results
+        attr_reader :errors
+
+        def initialize
+          @results = []
+          @errors = []
+        end
+      end
+
       private
+
+        def build_chat
+          ::Llm::Config.context.chat(provider: llm_provider, model: llm_model)
+        end
 
         def generate_search_query
           if title_text.blank? && description_text.blank?
@@ -48,7 +53,6 @@ module ImageSuggestions
             return
           end
 
-          chat = ::Llm::Config.context.chat(provider: llm_provider, model: llm_model)
           text_prompt = prompt % { title: title_text, description: description_text }
           chat.ask(text_prompt).content.strip
         end

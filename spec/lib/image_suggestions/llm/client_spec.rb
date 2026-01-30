@@ -131,10 +131,6 @@ describe ImageSuggestions::Llm::Client do
   describe "#generate_search_query" do
     let(:client) { ImageSuggestions::Llm::Client.new(model_instance) }
 
-    before do
-      allow(client).to receive(:chat).and_return(chat)
-    end
-
     it "interpolates prompt with title and description" do
       query = client.send(:generate_search_query)
       expect(query).to eq(search_query)
