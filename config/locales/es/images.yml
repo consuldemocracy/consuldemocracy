@@ -6,9 +6,12 @@ es:
       delete_button: Eliminar imagen
       note: "Puedes subir una imagen en los formatos: %{accepted_content_types}, y de hasta %{max_file_size} MB por archivo."
       add_new_image: Añadir imagen
-      suggest_image_with_ai: Sugerir una imagen con IA ✨
+      or_separator: o
+      suggest_image_with_ai: Sugerir una imagen con IA
       suggested_images_container: Imágenes sugeridas
       attach_suggested_image: Adjuntar imagen sugerida
+      pick_an_image: "Selecciona una imagen de las sugerencias siguientes:"
+      no_images_found: No se encontraron sugerencias.
       suggested_image_filename: Imagen de %{author_name}.jpg
     actions:
       destroy:

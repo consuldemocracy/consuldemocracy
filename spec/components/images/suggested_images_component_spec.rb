@@ -112,7 +112,7 @@ describe Images::SuggestedImagesComponent do
         render_inline component
 
         expect(page).to have_content("Test error")
-        expect(page).to have_css(".callout.alert")
+        expect(page).to have_css("small.error")
       end
     end
 

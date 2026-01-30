@@ -1,15 +1,14 @@
+require "open-uri"
+
 module ImageSuggestions
   class Pexels
     class PexelsError < StandardError; end
     IMAGE_VARIANT_POSTFIX = "?auto=compress&cs=tinysrgb&h=900".freeze
-    attr_reader :photo
 
-    # returns a search response from Pexels
     def self.search(query, **)
       new.search(query, **)
     end
 
-    # returns an ActionDispatch::Http::UploadedFile of the image from Pexels
     def self.download(photo_id)
       new.download(photo_id)
     end
@@ -25,8 +24,8 @@ module ImageSuggestions
     def download(photo_id)
       photo = get_photo(photo_id)
 
-      uri = URI(photo.src["original"] + IMAGE_VARIANT_POSTFIX)
-      temp_file = download_file(uri)
+      image_url = photo.src["original"] + IMAGE_VARIANT_POSTFIX
+      temp_file = download_file(image_url)
 
       ActionDispatch::Http::UploadedFile.new(
         tempfile: temp_file,
@@ -37,26 +36,13 @@ module ImageSuggestions
 
     private
 
-      # raises Pexels::APIError if the photo is not found or the network request fails
       def get_photo(photo_id)
         @client.photos.find(photo_id)
       end
 
-      def download_file(uri)
-        temp_file = Tempfile.new(uri.path, binmode: true)
-
-        Net::HTTP.start(uri.host, uri.port, use_ssl: true) do |http|
-          http.request(Net::HTTP::Get.new(uri)) do |response|
-            raise PexelsError, "Network request failed" unless response.is_a?(Net::HTTPSuccess)
-
-            response.read_body { |chunk| temp_file.write(chunk) }
-            temp_file.rewind
-          end
-        end
-
-        temp_file
-      rescue => e
-        temp_file.close!
+      def download_file(image_url)
+        URI.open(image_url, "rb") # rubocop:disable Security/Open
+      rescue OpenURI::HTTPError, SocketError => e
         raise PexelsError, "Failed to download image from Pexels: #{e.message}"
       end
   end

@@ -128,17 +128,36 @@
         $(this).closest(".direct-upload").remove();
       });
     },
+    imageSuggestionsParams: function(form, resourceType) {
+      var params;
+      params = form.serializeArray().filter(function(item) {
+        return item.name !== "_method";
+      });
+      params.push({ name: "resource_type", value: resourceType });
+      return $.param(params);
+    },
     initializeSuggestImage: function() {
       // we serialize the entire parent form and submit to the image suggestions endpoint
       $("body").on("click", ".js-suggest-image", function() {
-        var form, resourceType, resourceId, dataString;
-        form = $(this).closest("form");
-        resourceType = $(this).data("resource-type");
-        resourceId = $(this).data("resource-id");
-        dataString = form.serialize() + "&resource_type=" + encodeURIComponent(resourceType);
-        if (resourceId) {
-          dataString += "&resource_id=" + encodeURIComponent(resourceId);
+        var form, resourceType, dataString, button;
+        button = $(this);
+        form = button.closest("form");
+
+        // Add spinner and disable button
+        button.prop("disabled", true);
+        button.prepend('<i class="fa fa-spinner fa-spin" aria-hidden="true"></i> ');
+
+        // Sync CKEditor instances before serializing the form
+        if (typeof CKEDITOR !== "undefined") {
+          for (var name in CKEDITOR.instances) {
+            CKEDITOR.instances[name].updateElement();
+          }
         }
+
+        resourceType = button.data("resource-type");
+        dataString = App.Imageable.imageSuggestionsParams(form, resourceType);
+        var uploadData = App.Imageable.buildData([], $(".direct-upload").first());
+        App.Imageable.clearInputErrors(uploadData);
         $.ajax({
           url: "/image_suggestions",
           type: "POST",
@@ -163,19 +182,14 @@
       App.Imageable.setPreview(data);
       $(data.destroyAttachmentLinkContainer).html(data.result.destroy_link);
       $("#new_image_link").addClass("hide");
+      App.Imageable.clearInputErrors(data);
     },
     attachSuggestedImageError: function(xhr) {
       var data = App.Imageable.buildData([], $(".direct-upload").first());
-      data.jqXHR = {
-        responseJSON: xhr.responseJSON
-      };
-      $(data.cachedAttachmentField).val("");
-      App.Imageable.clearFilename(data);
+      data.jqXHR = xhr;
       App.Imageable.setProgressBar(data, "errors");
       App.Imageable.clearInputErrors(data);
       App.Imageable.setInputErrors(data);
-      App.Imageable.clearPreview(data);
-      $(data.destroyAttachmentLinkContainer).find("a.delete:not(.remove-nested)").remove();
     },
     initializeAttachSuggestedImage: function() {
       $("body").on("click", ".js-attach-suggested-image", function(event) {

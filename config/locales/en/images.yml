@@ -6,9 +6,12 @@ en:
       delete_button: Remove image
       note: "You can upload one image of following content types: %{accepted_content_types}, up to %{max_file_size} MB."
       add_new_image: Add image
-      suggest_image_with_ai: Suggest an image with AI ✨
+      or_separator: or
+      suggest_image_with_ai: Suggest an image with AI
       suggested_images_container: Suggested images
       attach_suggested_image: Attach suggested image
+      pick_an_image: "Select an image from the suggestions below:"
+      no_images_found: No suggestions could be found.
       suggested_image_filename: Image by %{author_name}.jpg
     actions:
       destroy:

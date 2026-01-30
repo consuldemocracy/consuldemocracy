@@ -61,24 +61,16 @@ describe ImageSuggestions::Pexels do
   end
 
   describe "#download" do
-    let(:uri) { URI("https://example.com/image.jpg?auto=compress&cs=tinysrgb&h=900") }
-    let(:http_response) { instance_double(Net::HTTPSuccess, is_a?: true, read_body: nil, code: "200") }
-    let(:temp_file) { instance_double(Tempfile, write: nil, rewind: nil, close!: nil) }
-    let(:http_client) { double("http_client") }
+    let(:image_url) { "https://example.com/image.jpg?auto=compress&cs=tinysrgb&h=900" }
+    let(:temp_file) { instance_double(Tempfile, path: "/tmp/test") }
 
     before do
       allow(photos_client).to receive(:find).with(photo_id).and_return(photo)
-      allow(Tempfile).to receive(:new).and_return(temp_file)
-      allow(Net::HTTP).to receive(:start).and_yield(http_client).and_return(temp_file)
-      allow(http_client).to receive(:request).with(instance_of(Net::HTTP::Get)).and_yield(http_response).and_return(temp_file)
-      allow(http_response).to receive(:is_a?).with(Net::HTTPSuccess).and_return(true)
-      allow(http_response).to receive(:read_body).and_yield("image data")
-      allow(temp_file).to receive(:path).and_return("/tmp/test")
-      allow(temp_file).to receive_messages(path: "/tmp/test", is_a?: true)
+      allow(URI).to receive(:open).with(image_url, "rb").and_return(temp_file)
+      allow(temp_file).to receive(:is_a?).and_return(false)
     end
 
     it "downloads the image and returns an UploadedFile" do
-      allow(temp_file).to receive(:is_a?).and_return(false)
       allow(ActionDispatch::Http::UploadedFile).to receive(:new).and_call_original
 
       result = pexels_instance.download(photo_id)
@@ -87,15 +79,12 @@ describe ImageSuggestions::Pexels do
     end
 
     it "uses the photo's original URL with variant parameters" do
-      expect(URI).to receive(:parse).with(
-        "https://example.com/image.jpg?auto=compress&cs=tinysrgb&h=900"
-      ).and_return(uri)
+      expect(URI).to receive(:open).with(image_url, "rb").and_return(temp_file)
 
       pexels_instance.download(photo_id)
     end
 
     it "sets filename with author name from translation" do
-      allow(temp_file).to receive(:is_a?).and_return(false)
       expect(I18n).to receive(:t).with(
         "images.form.suggested_image_filename",
         author_name: "John Doe"
@@ -118,14 +107,22 @@ describe ImageSuggestions::Pexels do
     end
 
     context "when HTTP response is not successful" do
-      let(:http_error_response) { instance_double(Net::HTTPResponse, code: "404", is_a?: false) }
-      let(:http_client_error) { double("http_client") }
-
       before do
-        allow(Net::HTTP).to receive(:start).and_yield(http_client_error)
-        allow(http_client_error).to receive(:request).with(instance_of(Net::HTTP::Get)).and_yield(http_error_response)
-        allow(http_error_response).to receive(:is_a?).with(Net::HTTPSuccess).and_return(false)
-        allow(http_error_response).to receive(:read_body).and_yield("error body")
+        allow(URI).to receive(:open).with(image_url, "rb")
+                                    .and_raise(OpenURI::HTTPError.new("404 Not Found", nil))
+      end
+
+      it "raises PexelsError" do
+        expect do
+          pexels_instance.download(photo_id)
+        end.to raise_error(ImageSuggestions::Pexels::PexelsError, /Failed to download image/)
+      end
+    end
+
+    context "when network error occurs" do
+      before do
+        allow(URI).to receive(:open).with(image_url, "rb")
+                                    .and_raise(SocketError.new("Connection refused"))
       end
 
       it "raises PexelsError" do
