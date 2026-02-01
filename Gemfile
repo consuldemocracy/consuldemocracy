@@ -20,7 +20,7 @@ gem "cocoon", "~> 1.2.15"
 gem "connection_pool", "~> 2.5" # TODO: remove after upgrading to Rails 8.0
 gem "csv", "~> 3.3.5"
 gem "daemons", "~> 1.4.1"
-gem "dalli", "~> 3.2.8"
+gem "dalli", "~> 4.2.0"
 gem "delayed_job_active_record", "~> 4.1.11"
 gem "devise", "~> 4.9.4"
 gem "devise-security", "~> 0.18.0"
