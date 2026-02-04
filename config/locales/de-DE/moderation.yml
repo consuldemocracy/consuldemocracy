@@ -89,7 +89,7 @@ de:
         filters:
           all: Alle
           pending_review: Ausstehende Bewertung
-          ignored: Als gelesen markieren
+          ignored: Als gesehen markieren
         headers:
           moderate: Moderieren
           proposal_notification: Benachrichtigung zu einem Vorschlag
