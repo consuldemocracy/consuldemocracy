@@ -37,6 +37,8 @@ module Abilities
       can :confirm_hide, Proposal
       cannot :confirm_hide, Proposal, hidden_at: nil
 
+      can :hide, Proposal, author_id: user.id
+
       can :confirm_hide, Legislation::Proposal
       cannot :confirm_hide, Legislation::Proposal, hidden_at: nil
 
