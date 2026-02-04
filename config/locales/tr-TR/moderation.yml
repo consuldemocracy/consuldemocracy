@@ -54,7 +54,7 @@ tr:
         filter: Süz
         filters:
           all: Tümü
-          pending_flag_review: Değerlendirilmeyi bekliyor
+          pending_flag_review: Bekleyen inceleme
           with_ignored_flag: Görüldü olarak işaretle
         headers:
           moderate: Değerlendir
@@ -88,7 +88,7 @@ tr:
         filter: Süz
         filters:
           all: Tümü
-          pending_review: Değerlendirilmeyi bekliyor
+          pending_review: Bekleyen yeniden inceleme
           ignored: Görüldü olarak işaretle
         headers:
           moderate: Değerlendir
