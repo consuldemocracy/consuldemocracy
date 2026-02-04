@@ -33,8 +33,26 @@
 
         ~ .error {
           display: inline-block;
+          margin-bottom: $line-height;
         }
       }
+    }
+
+    .suggested-images-container {
+      display: inline;
+    }
+
+    // remove margin when an error message is present near upload form
+    .image-attachment:has(label.button.error) .js-suggest-image:not(.error) {
+      margin-bottom: 0;
+    }
+    // remove margin when an error message is present near upload form
+    .image-attachment:has(label.button:not(.error)) .js-suggest-image.error {
+      margin: 0 0 1rem;
+    }
+
+    .image-attachment:has(label.button.error) .js-suggest-image.error {
+      margin-bottom: 0;
     }
   }
 
