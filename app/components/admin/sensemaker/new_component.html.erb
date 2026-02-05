@@ -58,10 +58,20 @@
       <h4><%= t("admin.sensemaker.new.analysing") %> <%= conversation.target_label(format: :short) %></h4>
       <p><%= t("admin.sensemaker.new.review_context") %></p>
 
-      <%= f.text_area :additional_context, label: "Additional context", rows: 10 %>
+      <%= f.text_area :additional_context,
+                      label: t("admin.sensemaker.new.additional_context_label"),
+                      hint: t("admin.sensemaker.new.additional_context_hint"),
+                      rows: 10 %>
 
-      <% script_options = Sensemaker::JobRunner::SCRIPTS.map { |script| [I18n.t("admin.sensemaker.scripts.#{script.parameterize.underscore}.title"), script] } %>
-      <%= f.select :script, script_options, include_blank: "Select a script...", required: true %>
+      <details>
+        <summary><%= t("admin.sensemaker.new.advanced_options") %></summary>
+        <p class="small margin-bottom-sm"><%= t("admin.sensemaker.new.expert_options_hint") %></p>
+        <% script_options = Sensemaker::JobRunner::SCRIPTS.map { |script| [I18n.t("sensemaker.scripts.#{script.parameterize.underscore}.title"), script] } %>
+        <div class="flex-between margin-bottom-xl">
+          <%= f.select :script, script_options, { include_blank: "Select a script...", required: false, label: false }, class: "no-margin" %>
+          <%= f.submit "Run", data: { temp_disable: true } %>
+        </div>
+      </details>
 
       <div class="flex-between">
         <%= link_to "← Cancel", admin_sensemaker_jobs_path, class: "" %>
@@ -70,10 +80,16 @@
           <%= f.submit "Download input CSV",
                        type: "submit",
                        formaction: preview_admin_sensemaker_jobs_path(format: :csv),
-                       class: "button", data: { temp_disable: true, disable_with: false } %>
-          <%= f.submit "Run", data: { temp_disable: true, disable_with: false } %>
+                       class: "button", data: { temp_disable: true } %>
+          <%= button_tag t("admin.sensemaker.new.generate_summary"),
+                         type: "submit", name: "quick_action", value: "summary",
+                         class: "button success", data: { temp_disable: true } %>
+          <%= button_tag t("admin.sensemaker.new.generate_report"),
+                         type: "submit", name: "quick_action", value: "report",
+                         class: "button success", data: { temp_disable: true } %>
         </div>
       </div>
+
     <% end %>
   <% end %>
 </div>

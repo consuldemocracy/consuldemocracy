@@ -15,26 +15,26 @@
 
       var forms = $(".admin .sensemaker form");
       forms.on("submit", this.handleTempDisable);
+
+      var busySelector =
+        "button[type='submit'][data-temp-disable='true'], input[type='submit'][data-temp-disable='true']";
+      forms.on("click", busySelector, this.applyBusyState);
     },
 
     handleTempDisable: function() {
-      var form = $(this);
-      var submitButtons = form.find(
-        "button[type='submit'][data-temp-disable='true'], input[type='submit'][data-temp-disable='true']"
-      );
-      submitButtons.attr("disabled", "disabled");
-      setTimeout(function() {
-        submitButtons.removeAttr("disabled");
-      }, 1000);
+      App.AdminSensemakerScripts.applyBusyState.call(this, { currentTarget: this });
+    },
+
+    applyBusyState: function(event) {
+      var form = $(event.currentTarget).closest("form");
+      form.addClass("sensemaker-buttons-busy");
     },
 
     remoteSubmit: function(form, submitter) {
-      // Serialize the form data
       var formData = form.serialize();
       var formAction = submitter.attr("formaction") || form.attr("action");
       var formMethod = form.attr("method") || "POST";
 
-      // Submit via AJAX
       $.ajax({
         url: formAction,
         type: formMethod,
