@@ -1869,6 +1869,7 @@ es:
         output_files: "Archivos de salida"
         select_file_download: "Selecciona un archivo para descargar."
         back_to_jobs: "Volver a trabajos"
+        published_reports_link: "Informe(s) publicado(s)"
         analysable_all_proposals: "Todas las propuestas"
         analysable_deleted: "(eliminado)"
         status_completed_at: "Completado el %{time}"

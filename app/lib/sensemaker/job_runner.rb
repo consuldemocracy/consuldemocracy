@@ -26,6 +26,10 @@ module Sensemaker
       execute_job_workflow
     end
 
+    def max_attempts
+      1
+    end
+
     def input_file
       if job.input_file.present?
         job.input_file

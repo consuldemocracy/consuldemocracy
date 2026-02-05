@@ -1,0 +1,11 @@
+<% provide :title, "Sensemaker Analysis" %>
+
+<div class="row">
+  <div class="small-12 column">
+    <% if action_name == "processes_index" %>
+      <%= render Sensemaker::ProcessJobIndexComponent.new(jobs: @sensemaker_jobs, process: @parent_resource) %>
+    <% else %>
+      <%= render Sensemaker::JobIndexComponent.new(jobs: @sensemaker_jobs, parent_resource: @parent_resource, resource: @resource) %>
+    <% end %>
+  </div>
+</div>
