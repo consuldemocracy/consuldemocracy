@@ -17,10 +17,6 @@ class Moderation::Shared::IndexComponent < ApplicationComponent
       table_name
     end
 
-    def ids_field_name
-      "ids[]"
-    end
-
     def form_path
       url_for(
         request.query_parameters.merge(

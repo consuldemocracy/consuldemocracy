@@ -1,13 +1,16 @@
 class Moderation::Shared::TableComponent < ApplicationComponent
-  attr_reader :records, :ids_field_name
+  attr_reader :records
   use_helpers :wysiwyg
 
-  def initialize(records, ids_field_name: "ids[]")
+  def initialize(records)
     @records = records
-    @ids_field_name = ids_field_name
   end
 
   private
+
+    def ids_field_name
+      "ids[]"
+    end
 
     def model_human_name
       records.model.model_name.human
