@@ -16,6 +16,7 @@ module Abilities
       can [:read], Budget::Group
       can [:read, :print], Budget::Investment
       can :read_results, Budget, id: Budget.finished.results_enabled.ids
+      can :read_sensemaking, Budget, id: Budget.finished.results_enabled.ids
       can :read_stats, Budget, id: Budget.valuating_or_later.stats_enabled.ids
       can :read_executions, Budget, phase: "finished"
       can [:read, :debate, :draft_publication, :allegations, :result_publication,

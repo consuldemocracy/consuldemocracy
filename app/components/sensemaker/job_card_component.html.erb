@@ -1,0 +1,26 @@
+<div class="column">
+  <div class="card report-card">
+    <div class="card-section">
+      <div class="report-header">
+        <span class="analysis-type-badge <%= analysis_type_badge_class(job) %>">
+          <%= script_type_tag(job) %>
+        </span>
+        <h4>
+          <%= link_to view_job_text(job), job_artefact_path(job), class: "report-link", target: "_blank", rel: "noopener" %>
+        </h4>
+      </div>
+      <% if comments_analysed_count(job) > 0 %>
+        <p class="report-meta">
+          <strong><%= t("sensemaker.report_view.comments_analysed_label") %>:</strong>
+          <%= comments_analysed_count(job) %>
+        </p>
+      <% end %>
+      <% if formatted_finished_at(job) %>
+        <p class="report-meta small">
+          <strong><%= t("sensemaker.job_index.completed_at") %>:</strong>
+          <%= formatted_finished_at(job) %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>

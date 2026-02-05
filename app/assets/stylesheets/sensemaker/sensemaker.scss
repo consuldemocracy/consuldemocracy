@@ -322,6 +322,30 @@
 }
 
 .sensemaker {
+
+  // Responsive adjustments
+  @include breakpoint(small only) {
+    .hero-section {
+      h1 {
+        font-size: rem-calc(28);
+      }
+
+      .lead {
+        font-size: rem-calc(16);
+      }
+    }
+
+    .report-card {
+      .card-section {
+        padding: 1rem;
+      }
+    }
+
+    .contextual-info-sidebar {
+      margin-top: 2rem;
+    }
+  }
+
   .flex-between {
     align-items: center;
     display: flex;
@@ -365,5 +389,239 @@
     margin-left: 1rem;
     padding: 0.25rem 0.5rem;
     text-transform: uppercase;
+  }
+
+  // Target header (quiz-header style box)
+  .target-header {
+    margin-bottom: 2.2rem;
+
+    .target-header-title {
+      @include grid-column-gutter;
+      background: $highlight;
+      padding: $line-height;
+      width: 100%;
+    }
+
+    .target-header-label {
+      font-size: $small-font-size;
+      font-weight: 700;
+      margin-bottom: 0;
+      text-transform: uppercase;
+    }
+
+    .target-header-links {
+      margin-bottom: 0.5rem;
+
+      a {
+        @include brand-color;
+        @include header-font-size(h4);
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .target-header-separator {
+      margin: 0 0.35rem;
+      opacity: 0.8;
+    }
+
+    .target-header-description {
+      font-size: rem-calc(15);
+      line-height: 1.6;
+      margin-bottom: 0;
+      margin-top: 0.75rem;
+      opacity: 0.9;
+    }
+  }
+
+  .hero-section {
+    margin-bottom: 2rem;
+    text-align: center;
+
+    @include breakpoint(medium) {
+      text-align: left;
+    }
+
+    h1 {
+      font-size: rem-calc(20);
+      font-weight: 700;
+      margin-bottom: 1rem;
+
+      @include breakpoint(medium) {
+        font-size: rem-calc(28);
+      }
+    }
+
+    .lead {
+      font-size: rem-calc(18);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+
+      @include breakpoint(medium) {
+        font-size: rem-calc(20);
+      }
+    }
+
+    .parent-resource-link {
+      margin-bottom: 1rem;
+    }
+
+    .intro-text {
+      margin-top: 1rem;
+    }
+  }
+
+  .report-card {
+    border: 1px solid $light-gray;
+    border-radius: 4px;
+    height: 100%;
+
+    .card-section {
+      padding: 1.5rem;
+    }
+
+    .report-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+
+      h4 {
+        margin: 0;
+      }
+
+      .report-link {
+        color: $brand;
+        font-weight: 600;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .analysis-type-badge {
+      align-self: flex-start;
+      border-radius: 4px;
+      display: inline-block;
+      font-size: rem-calc(12);
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      text-transform: uppercase;
+
+      &.badge-report {
+        background-color: #1779ba;
+        color: $white;
+      }
+
+      &.badge-summary {
+        background-color: #3adb76;
+        color: $white;
+      }
+
+      &.badge-default {
+        background-color: $medium-gray;
+        color: $white;
+      }
+    }
+
+    .report-meta {
+      color: $dark-gray;
+      font-size: rem-calc(14);
+      margin-bottom: 0.5rem;
+
+      &.small {
+        font-size: rem-calc(12);
+      }
+
+      strong {
+        color: $black;
+      }
+    }
+  }
+
+  .contextual-info-sidebar {
+    margin-top: 2rem;
+
+    @include breakpoint(medium) {
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    .callout {
+      background-color: #f8f9fa;
+      border: 1px solid $light-gray;
+      border-radius: 4px;
+      padding: 1.5rem;
+
+      .contextual-info-details summary {
+        cursor: pointer;
+        font-size: rem-calc(16);
+        font-weight: 700;
+        list-style: none;
+        padding-left: 1.25rem;
+        position: relative;
+
+        @include breakpoint(medium) {
+          font-size: rem-calc(18);
+        }
+
+        &::-webkit-details-marker {
+          display: none;
+        }
+
+        &::marker {
+          display: none;
+        }
+
+        &::before {
+          content: "▶";
+          font-size: rem-calc(12);
+          left: 0;
+          position: absolute;
+          top: 0.25rem;
+          transition: transform 0.2s ease;
+        }
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+
+      .contextual-info-details[open] summary {
+        margin-bottom: 1rem;
+
+        &::before {
+          content: "▼";
+          transform: rotate(0deg);
+        }
+      }
+
+      .contextual-info-details-content {
+        p:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      p {
+        font-size: rem-calc(14);
+        line-height: 1.6;
+        margin-bottom: 1rem;
+
+        &.small {
+          font-size: rem-calc(13);
+        }
+
+        strong {
+          color: $black;
+          display: block;
+          margin-bottom: 0.25rem;
+        }
+      }
+    }
   }
 }

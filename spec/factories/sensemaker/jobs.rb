@@ -19,5 +19,12 @@ FactoryBot.define do
       script { "runner.ts" }
       published { true }
     end
+
+    trait :publishable do
+      script { "single-html-build.js" }
+      finished_at { Time.current }
+      error { nil }
+      published { false }
+    end
   end
 end

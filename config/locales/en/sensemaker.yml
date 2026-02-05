@@ -1,0 +1,97 @@
+en:
+  sensemaker:
+    analysis:
+      title: "Sensemaking"
+      description: "Discover what people are saying. We've analysed %{this_resource} to give clarity on everyone's input."
+      description_all_proposals: "Discover what people are saying. We've analysed these proposals to give clarity on everyone's input."
+      view_report: "View analysis"
+
+    report_index:
+      title: "Sensemaker Reports"
+      title_with_parent: "Sensemaker Reports for %{parent_name}"
+      empty: "No analyses have been produced yet."
+      group_titles:
+        legislation/proposal: "Proposals"
+        legislation/question: "Debates"
+        legislation/question_option: "Debates segmented by option"
+        budget: "Budgets"
+        budget/group: "Budget groups"
+        proposal: "Proposals"
+        poll: "Polls"
+        debate: "Debates"
+
+    job_index:
+      title: "Sensemaker Analyses"
+      title_with_parent: "Sensemaker Analysis for %{parent_name}"
+      title_with_resource: "Sensemaker Analysis: %{resource_name}"
+      hero_title_with_resource: "Discover what citizens are saying about %{resource_type}"
+      hero_title_all_proposals: "Discover what citizens are saying about proposals"
+      page_intro: "Here you can find reports and summaries to better understand everyone's input, produced using %{link}."
+      hero_resource_types:
+        proposal: "this proposal"
+        debate: "this debate"
+        legislation: "this legislation"
+        legislation_question: "this question"
+        legislation_proposal: "this proposal"
+        poll: "this poll"
+        poll_question: "this question"
+        budget: "this budget"
+      breadcrumb:
+        all_proposals: "All proposals"
+        separator: "›"
+      target_header:
+        title: "Understanding conversations"
+      contextual_info:
+        title: "About Sensemaker Analyses"
+        resource_intro:
+          proposal: "Citizens were asked for their input on the proposal \"%{resource_title}\". The comments and discussions from citizens were used as input for Sensemaker analysis."
+          debate: "Citizens were asked for their input on the debate \"%{resource_title}\". The comments and discussions from citizens were used as input for Sensemaker analysis."
+          legislation_proposal: "Citizens were asked for their input on the legislation proposal \"%{resource_title}\". The comments and discussions from citizens were used as input for Sensemaker analysis."
+          legislation_question: "Citizens were asked for their input on the question \"%{resource_title}\". The comments and discussions from citizens were used as input for Sensemaker analysis."
+          legislation_process: "Citizens were asked for their input on the legislation process \"%{resource_title}\". The comments and discussions from citizens were used as input for Sensemaker analysis."
+          poll: "Citizens were asked for their input on the poll \"%{resource_title}\". The comments and discussions from citizens were used as input for Sensemaker analysis."
+          budget: "Citizens were asked for their input on the budget \"%{resource_title}\". The comments and discussions from citizens were used as input for Sensemaker analysis."
+          all_proposals: "Citizens were asked for their input on proposals. The comments and discussions from citizens were used as input for Sensemaker analysis."
+          generic: "Citizens were asked for their input on \"%{resource_title}\". The comments and discussions from citizens were used as input for Sensemaker analysis."
+        how_created: "Sensemaker uses AI to analyze large-scale citizen conversations, helping identify patterns, themes, and areas of agreement and disagreement."
+        what_to_expect: "Reports provide detailed analysis including topic identification, categorization, and insights. Summaries offer concise overviews of key themes and findings."
+        more_info: "For more information, see the %{link}."
+        more_info_link: "Sensemaker homepage"
+      process:
+        reports_and_summaries_available: "%{reports} and %{summaries} available"
+        report_count:
+          zero: "0 reports"
+          one: "1 report"
+          other: "%{count} reports"
+        summary_count:
+          zero: "0 summaries"
+          one: "1 summary"
+          other: "%{count} summaries"
+      script_type:
+        report: "Report"
+        summary: "Summary"
+      view_job: "View Analysis"
+      view_report: "View Report"
+      view_summary: "View Summary"
+      completed_at: "Completed"
+
+    report_view:
+      title: "Sensemaker Report"
+      intro_text: "Here you can find the output of an analysis produced using %{link}."
+      sensemaker_tools_link: "Sensemaker tools"
+      explanatory_text:
+        poll: "The comments for the poll titled \"%{poll_name}\" were analysed to produce a report."
+        debate: "The comments for the debate titled \"%{debate_title}\" were analysed to produce a report."
+        proposal: "The comments for the proposal titled \"%{proposal_title}\" were analysed to produce a report."
+        legislation_proposal: "The comments for the legislation proposal titled \"%{proposal_title}\" were analysed to produce a report."
+        legislation_question: "The comments for the debate titled \"%{question_name}\" were analysed to produce a report."
+        legislation_question_option: "The comments segmented by people who chose the \"%{option_value}\" option were analysed for the debate titled \"%{question_name}\"."
+        budget: "The proposed investments for the budget titled \"%{budget_name}\" were analysed to produce a report."
+        budget_group: "The proposed investments for the budget group titled \"%{group_name}\" were analysed to produce a report."
+        generic: "The text for \"%{resource_name}\" was analysed to produce a report. "
+        all_proposals: "The text for all citizen proposals were analysed to produce a report."
+      metadata_title: "Analysis Details"
+      run_timestamp_label: "Analysis run on"
+      comments_analysed_label: "Comments analysed"
+      report_description: "The report contains detailed analysis of the conversation, including topic identification, categorization, and areas of agreement and disagreement."
+      view_report: "View report"

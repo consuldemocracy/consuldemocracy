@@ -1,0 +1,50 @@
+<div class="sensemaker">
+  <% if breadcrumb_segments.any? %>
+    <div class="target-header row small-collapse">
+      <div class="target-header-title">
+        <p class="target-header-label"><%= t("sensemaker.job_index.target_header.title") %></p>
+        <div class="target-header-links">
+          <% breadcrumb_segments.each_with_index do |segment, index| %>
+            <% if index > 0 %>
+              <span class="target-header-separator"><%= breadcrumb_separator %></span>
+            <% end %>
+            <strong><%= link_to segment[:text], segment[:path] %></strong>
+          <% end %>
+        </div>
+        <p class="target-header-description"><%= contextual_info_resource_intro %></p>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="small-12 medium-9 column">
+      <section class="hero-section">
+        <h1><%= hero_title %></h1>
+        <p class="lead intro-text"><%= introductory_text %></p>
+      </section>
+
+      <section class="reports-section grouped-jobs-section">
+        <% if has_jobs? %>
+          <% grouped_resources_for_process.each do |group| %>
+            <hr>
+            <h2><%= group[:type_label] %></h2>
+            <ul class="no-bullet">
+              <% group[:resources].each do |resource| %>
+                <li>
+                  <%= link_to resource[:title], resource[:path] %>
+                  <p class="small margin-top-none margin-bottom-none"><%= reports_and_summaries_available_text(report_count: resource[:report_count], summary_count: resource[:summary_count]) %></p>
+                </li>
+              <% end %>
+            </ul>
+          <% end %>
+        <% else %>
+          <div class="callout primary">
+            <p><%= empty_message %></p>
+          </div>
+        <% end %>
+      </section>
+    </div>
+
+    <%= render Sensemaker::AboutComponent.new %>
+  </div>
+</div>

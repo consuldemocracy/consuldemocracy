@@ -97,6 +97,12 @@ module Sensemaker
       @conversation ||= Sensemaker::Conversation.new(analysable_type, analysable_id)
     end
 
+    def analysable
+      return Proposal if analysable_type == "Proposal" && analysable_id.nil?
+
+      super
+    end
+
     def output_file_name
       case script
       when "health_check_runner.ts"

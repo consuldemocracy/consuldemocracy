@@ -11,6 +11,7 @@
         <h3><%= t("admin.sensemaker.job_show.details") %></h3>
         <div>
           <%= link_to t("admin.sensemaker.job_show.back_to_jobs"), admin_sensemaker_jobs_path, class: "margin-right" %>
+          <%= link_to t("admin.sensemaker.job_show.published_reports_link"), jobs_index_path_for(sensemaker_job.analysable), class: "margin-right" if is_published? %>
           <% if can_publish? %>
             <% if is_published? %>
               <%= button_to t("admin.sensemaker.job_row.unpublish"), unpublish_admin_sensemaker_job_path(sensemaker_job), form_class: "inline", class: "button", method: :patch %>

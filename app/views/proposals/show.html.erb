@@ -70,6 +70,8 @@
 
           <%= render "proposals/social_share", proposal: @proposal, share_title: t("proposals.show.share") %>
 
+          <%= render Sensemaker::ReportLinkComponent.new(@proposal) %>
+
           <% if current_user %>
             <div class="sidebar-divider"></div>
             <p class="sidebar-title"><%= t("shared.follow") %></p>
