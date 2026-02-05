@@ -641,6 +641,9 @@ RSpec/InstanceVariable:
     - spec/controllers/concerns/has_orders_spec.rb
     - spec/form_builders/translatable_form_builder_spec.rb
 
+RSpec/LeakyLocalVariable:
+  Enabled: true
+
 RSpec/LetBeforeExamples:
   Enabled: true
 
@@ -654,6 +657,9 @@ RSpec/MissingExpectationTargetMethod:
   Enabled: true
 
 RSpec/NotToNot:
+  Enabled: true
+
+RSpec/Output:
   Enabled: true
 
 RSpec/OverwritingSetup:
