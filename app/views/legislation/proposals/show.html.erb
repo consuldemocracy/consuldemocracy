@@ -90,6 +90,7 @@
                    url: legislation_process_proposal_url(process_id: @process),
                    description: @proposal.summary,
                    mobile: @proposal.title %>
+        <%= render Sensemaker::ReportLinkComponent.new(@proposal) %>
       </aside>
     </div>
   </div>
