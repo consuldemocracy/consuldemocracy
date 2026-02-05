@@ -33,7 +33,7 @@
                   <%= content_tag :span, entry[:title] %>
                 </div>
                 <% if is_selected %>
-                  <%= content_tag :span, "Selected", class: "" %>
+                  <%= content_tag :span, t("admin.sensemaker.result.selected"), class: "" %>
                 <% else %>
                   <%= content_tag :span, "", class: "" %>
                 <% end %>

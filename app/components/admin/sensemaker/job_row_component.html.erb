@@ -1,6 +1,6 @@
 <tr class="<%= css_classes %>" data-job-id="<%= job.id %>">
   <td style="max-width: 40rem;">
-    <%= link_to "Job ##{job.id}", admin_sensemaker_job_path(job), class: "job-link" %>
+    <%= link_to t("admin.sensemaker.job_row.job_id_link", id: job.id), admin_sensemaker_job_path(job), class: "job-link" %>
     <%= content_tag :p, analysable_title, style: "" %>
   </td>
   <td class="small"><%= t("sensemaker.scripts.#{job.script.parameterize.underscore}.title") %></td>
@@ -15,12 +15,12 @@
       <div class="flex-row-end">
         <% if can_publish? %>
           <% if is_published? %>
-            <%= button_to "Unpublish", unpublish_admin_sensemaker_job_path(job), class: "button small inline-block", method: :patch %>
+            <%= button_to t("admin.sensemaker.job_row.unpublish"), unpublish_admin_sensemaker_job_path(job), class: "button small inline-block", method: :patch %>
           <% else %>
-            <%= button_to "Publish", publish_admin_sensemaker_job_path(job), class: "button small success inline-block", method: :patch %>
+            <%= button_to t("admin.sensemaker.job_row.publish"), publish_admin_sensemaker_job_path(job), class: "button small success inline-block", method: :patch %>
           <% end %>
         <% end %>
-        <%= link_to "Delete", admin_sensemaker_job_path(job), class: "button error small inline-block", method: :delete, data: { confirm: t("admin.sensemaker.delete_alert") } %>
+        <%= link_to t("admin.actions.delete"), admin_sensemaker_job_path(job), class: "button error small inline-block", method: :delete, data: { confirm: t("admin.sensemaker.delete_alert") } %>
       </div>
     </td>
   <% end %>
