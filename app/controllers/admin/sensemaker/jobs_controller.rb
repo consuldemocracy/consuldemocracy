@@ -148,6 +148,19 @@ class Admin::Sensemaker::JobsController < Admin::BaseController
 
   def create
     valid_params = sensemaker_job_params.to_h
+
+    if params[:quick_action].in?(%w[summary report])
+      valid_params[:script] = params[:quick_action] == "summary" ? "runner.ts" : "single-html-build.js"
+    elsif valid_params[:script].blank?
+      return redirect_to(
+        new_admin_sensemaker_job_path(
+          target_type: valid_params[:analysable_type],
+          target_id: valid_params[:analysable_id]
+        ),
+        alert: I18n.t("admin.sensemaker.notice.script_required")
+      )
+    end
+
     valid_params.merge!(user: current_user, started_at: Time.current)
     @sensemaker_job = Sensemaker::Job.create!(valid_params)
 

@@ -1,15 +1,27 @@
 .admin .sensemaker {
+  form.sensemaker-buttons-busy {
+    button[type="submit"][data-temp-disable="true"],
+    input[type="submit"][data-temp-disable="true"] {
+      cursor: not-allowed;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+  }
+
   fieldset {
     border: 1px solid $border;
     border-radius: $button-radius;
     padding: 1rem;
   }
 
-  .primary.callout {
-    margin-bottom: 1.5rem;
-  }
+  .no-margin { margin: 0; }
+  .margin-bottom-sm { margin-bottom: $line-height * 0.5; }
+  .margin-bottom-lg { margin-bottom: $line-height * 2; }
+  .margin-bottom-xl { margin-bottom: $line-height * 3; }
 
-  .margin-bottom { margin-bottom: 1rem; }
+  .primary.callout {
+    margin-bottom: $line-height * 1.5;
+  }
 
   summary {
     margin-bottom: 0.5rem;
@@ -248,7 +260,6 @@
     }
   }
 
-  // Hover effects for better UX
   .job-row:hover {
     background-color: #f1f3f4;
   }
@@ -315,6 +326,7 @@
     align-items: center;
     display: flex;
     flex-direction: row;
+    gap: 2px;
     justify-content: space-between;
 
     .button { margin-bottom: 0; }

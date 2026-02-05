@@ -169,6 +169,60 @@ describe Admin::Sensemaker::JobsController do
 
       expect(response).to redirect_to(admin_sensemaker_jobs_path)
     end
+
+    context "with quick_action" do
+      it "creates job with runner.ts when quick_action is summary" do
+        allow_any_instance_of(Sensemaker::JobRunner).to receive(:check_dependencies?).and_return(false)
+        allow_any_instance_of(Sensemaker::JobRunner).to receive(:prepare_input_data)
+        allow_any_instance_of(Sensemaker::JobRunner).to receive(:execute_script).and_return("")
+
+        post :create, params: {
+          sensemaker_job: {
+            analysable_type: "Debate",
+            analysable_id: debate.id,
+            additional_context: "Test"
+          },
+          quick_action: "summary"
+        }
+
+        job = Sensemaker::Job.last
+        expect(job.script).to eq("runner.ts")
+      end
+
+      it "creates job with single-html-build.js when quick_action is report" do
+        allow_any_instance_of(Sensemaker::JobRunner).to receive(:check_dependencies?).and_return(false)
+        allow_any_instance_of(Sensemaker::JobRunner).to receive(:prepare_input_data)
+        allow_any_instance_of(Sensemaker::JobRunner).to receive(:execute_script).and_return("")
+
+        post :create, params: {
+          sensemaker_job: {
+            analysable_type: "Debate",
+            analysable_id: debate.id,
+            additional_context: "Test"
+          },
+          quick_action: "report"
+        }
+
+        job = Sensemaker::Job.last
+        expect(job.script).to eq("single-html-build.js")
+      end
+    end
+
+    context "when script is missing and no quick_action" do
+      it "redirects to new with script_required alert" do
+        post :create, params: {
+          sensemaker_job: {
+            analysable_type: "Debate",
+            analysable_id: debate.id,
+            additional_context: "Test"
+          }
+        }
+
+        expect(response).to redirect_to(new_admin_sensemaker_job_path(target_type: "Debate",
+                                                                      target_id: debate.id))
+        expect(flash[:alert]).to eq(I18n.t("admin.sensemaker.notice.script_required"))
+      end
+    end
   end
 
   describe "GET #preview" do
