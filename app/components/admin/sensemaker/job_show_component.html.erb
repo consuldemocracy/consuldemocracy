@@ -10,15 +10,15 @@
       <div class="flex-between">
         <h3><%= t("admin.sensemaker.job_show.details") %></h3>
         <div>
-          <%= link_to "Back to Jobs", admin_sensemaker_jobs_path, class: "margin-right" %>
+          <%= link_to t("admin.sensemaker.job_show.back_to_jobs"), admin_sensemaker_jobs_path, class: "margin-right" %>
           <% if can_publish? %>
             <% if is_published? %>
-              <%= button_to "Unpublish", unpublish_admin_sensemaker_job_path(sensemaker_job), form_class: "inline", class: "button", method: :patch %>
+              <%= button_to t("admin.sensemaker.job_row.unpublish"), unpublish_admin_sensemaker_job_path(sensemaker_job), form_class: "inline", class: "button", method: :patch %>
             <% else %>
-              <%= button_to "Publish", publish_admin_sensemaker_job_path(sensemaker_job), form_class: "inline", class: "button success", method: :patch %>
+              <%= button_to t("admin.sensemaker.job_row.publish"), publish_admin_sensemaker_job_path(sensemaker_job), form_class: "inline", class: "button success", method: :patch %>
             <% end %>
           <% end %>
-          <%= link_to "Delete", admin_sensemaker_job_path(sensemaker_job), class: "button error", method: :delete, data: { confirm: t("admin.sensemaker.delete_alert") } %>
+          <%= link_to t("admin.actions.delete"), admin_sensemaker_job_path(sensemaker_job), class: "button error", method: :delete, data: { confirm: t("admin.sensemaker.delete_alert") } %>
         </div>
       </div>
 
@@ -66,7 +66,7 @@
               <tr>
                 <td><strong><%= t("admin.sensemaker.job_show.parent_job") %></strong></td>
                 <td>
-                  <%= t("admin.sensemaker.job_show.job_spawned_by") %> <%= link_to "Job ##{parent_job.id}", admin_sensemaker_job_path(parent_job) %>
+                  <%= t("admin.sensemaker.job_show.job_spawned_by") %> <%= link_to t("admin.sensemaker.job_row.job_id_link", id: parent_job.id), admin_sensemaker_job_path(parent_job) %>
                 </td>
               </tr>
             <% end %>

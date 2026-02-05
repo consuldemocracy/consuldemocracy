@@ -25,7 +25,7 @@
         <% if running_jobs.any? %>
           <h3 class="flex-between">
             <span><%= t("admin.sensemaker.index.currently_running") %></span>
-            <%= button_to "Cancel all", cancel_admin_sensemaker_jobs_path, class: "button", method: :delete, data: { confirm: t("admin.sensemaker.cancel_alert") } %>
+            <%= button_to t("admin.sensemaker.index.cancel_all"), cancel_admin_sensemaker_jobs_path, class: "button", method: :delete, data: { confirm: t("admin.sensemaker.cancel_alert") } %>
           </h3>
 
           <table class="job-table">
@@ -48,7 +48,7 @@
 
         <h3 class="flex-between">
           <span><%= t("admin.sensemaker.index.past_runs") %></span>
-          <%= link_to "New Run", new_admin_sensemaker_job_path, class: "button" %>
+          <%= link_to t("admin.sensemaker.index.new_run"), new_admin_sensemaker_job_path, class: "button" %>
         </h3>
 
         <table class="job-table">

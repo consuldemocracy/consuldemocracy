@@ -9,9 +9,9 @@ module Admin::Sensemaker::JobComponentHelpers
     if job.analysable.present?
       job.conversation.target_label(format: :short)
     elsif job.analysable_type == "Proposal" && job.analysable_id.nil?
-      "All Proposals"
+      I18n.t("admin.sensemaker.job_show.analysable_all_proposals")
     else
-      "(deleted)"
+      I18n.t("admin.sensemaker.job_show.analysable_deleted")
     end
   end
 
@@ -32,17 +32,18 @@ module Admin::Sensemaker::JobComponentHelpers
   end
 
   def status_text
+    time_format = "%Y-%m-%d %H:%M"
     case job.status
     when "Completed"
-      "Completed at #{job.finished_at.strftime("%Y-%m-%d %H:%M")}"
+      I18n.t("admin.sensemaker.job_show.status_completed_at", time: job.finished_at.strftime(time_format))
     when "Failed"
-      "Failed at #{job.finished_at.strftime("%Y-%m-%d %H:%M")}"
+      I18n.t("admin.sensemaker.job_show.status_failed_at", time: job.finished_at.strftime(time_format))
     when "Running"
-      "Started at #{job.started_at.strftime("%Y-%m-%d %H:%M")}"
+      I18n.t("admin.sensemaker.job_show.status_started_at", time: job.started_at.strftime(time_format))
     when "Cancelled"
-      "Cancelled at #{job.finished_at.strftime("%Y-%m-%d %H:%M")}"
+      I18n.t("admin.sensemaker.job_show.status_cancelled_at", time: job.finished_at.strftime(time_format))
     else
-      "Created at #{job.created_at.strftime("%Y-%m-%d %H:%M")}"
+      I18n.t("admin.sensemaker.job_show.status_created_at", time: job.created_at.strftime(time_format))
     end
   end
 

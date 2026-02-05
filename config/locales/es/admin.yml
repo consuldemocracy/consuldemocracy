@@ -1820,6 +1820,8 @@ es:
         table_started_at: "Iniciado a las"
         table_status: "Estado"
         table_actions: "Acciones"
+        cancel_all: "Cancelar todo"
+        new_run: "Nueva ejecución"
       new:
         title: Nuevo análisis Sensemaker
         select_target: "Selecciona un objetivo de los resultados"
@@ -1835,6 +1837,17 @@ es:
         groups: "Grupos"
         segment_by_option: "Segmentar por opción"
         no_free_text_to_analyse: "No hay texto libre para analizar en esta pregunta"
+        or_analyse_all_proposals: "o analizar todas las propuestas"
+        search_placeholder: "Buscar %{model_label}..."
+        clear_search: "Limpiar búsqueda"
+        select_script_blank: "Seleccionar un script..."
+        run: "Ejecutar"
+        cancel: "← Cancelar"
+        download_input_csv: "Descargar CSV de entrada"
+      job_row:
+        job_id_link: "Trabajo #%{id}"
+        unpublish: "Despublicar"
+        publish: "Publicar"
       job_show:
         details: "Detalles"
         job_id: "ID del trabajo"
@@ -1855,6 +1868,16 @@ es:
         actions: "Acciones"
         output_files: "Archivos de salida"
         select_file_download: "Selecciona un archivo para descargar."
+        back_to_jobs: "Volver a trabajos"
+        analysable_all_proposals: "Todas las propuestas"
+        analysable_deleted: "(eliminado)"
+        status_completed_at: "Completado el %{time}"
+        status_failed_at: "Fallido el %{time}"
+        status_started_at: "Iniciado el %{time}"
+        status_cancelled_at: "Cancelado el %{time}"
+        status_created_at: "Creado el %{time}"
+      result:
+        selected: "Seleccionado"
       help:
         title_1: "¿Qué es Sensemaker?"
         description_1: "Sensemaker es una herramienta que te ayuda a dar sentido a conversaciones a gran escala."
