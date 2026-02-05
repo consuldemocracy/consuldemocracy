@@ -29,6 +29,20 @@ shared_examples "reportable" do
         expect(described_class.stats_enabled).to be_empty
       end
     end
+
+    describe ".sensemaking_enabled" do
+      it "includes records with sensemaking enabled" do
+        reportable.update!(sensemaking_enabled: true)
+
+        expect(described_class.sensemaking_enabled).to eq [reportable]
+      end
+
+      it "does not include records without sensemaking enabled" do
+        reportable.update!(sensemaking_enabled: false)
+
+        expect(described_class.sensemaking_enabled).to be_empty
+      end
+    end
   end
 
   describe "#results_enabled" do
@@ -84,6 +98,34 @@ shared_examples "reportable" do
 
       expect(saved_reportable.stats_enabled?).to be false
       expect(saved_reportable.stats_enabled).to be false
+    end
+  end
+
+  describe "#sensemaking_enabled" do
+    it "can write and read the attribute" do
+      reportable.sensemaking_enabled = true
+
+      expect(reportable.sensemaking_enabled?).to be true
+      expect(reportable.sensemaking_enabled).to be true
+
+      reportable.sensemaking_enabled = false
+
+      expect(reportable.sensemaking_enabled?).to be false
+      expect(reportable.sensemaking_enabled).to be false
+    end
+
+    it "can save the value to the database" do
+      reportable.update!(sensemaking_enabled: true)
+      saved_reportable = described_class.last
+
+      expect(saved_reportable.sensemaking_enabled?).to be true
+      expect(saved_reportable.sensemaking_enabled).to be true
+
+      reportable.update!(sensemaking_enabled: false)
+      saved_reportable = described_class.last
+
+      expect(saved_reportable.sensemaking_enabled?).to be false
+      expect(saved_reportable.sensemaking_enabled).to be false
     end
   end
 end

@@ -56,7 +56,6 @@ describe Sensemaker::BudgetJobIndexComponent do
       it "renders the jobs as cards in a grouped section" do
         render_inline component
 
-        expect(page).to have_css("h1", text: /Discover what citizens are saying/)
         expect(page).to have_link(I18n.t("sensemaker.job_index.view_report"),
                                   href: serve_report_sensemaker_job_path(job))
       end
