@@ -1,5 +1,5 @@
 class Layout::CommonHtmlAttributesComponent < ApplicationComponent
-  use_helpers :rtl?
+  delegate :rtl?, to: :helpers
 
   private
 

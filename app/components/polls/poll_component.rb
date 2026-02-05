@@ -1,6 +1,5 @@
 class Polls::PollComponent < ApplicationComponent
   attr_reader :poll
-  use_helpers :can?
 
   def initialize(poll)
     @poll = poll

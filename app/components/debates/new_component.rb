@@ -2,7 +2,7 @@ class Debates::NewComponent < ApplicationComponent
   include Header
 
   attr_reader :debate
-  use_helpers :new_window_link_to
+  delegate :new_window_link_to, to: :helpers
 
   def initialize(debate)
     @debate = debate

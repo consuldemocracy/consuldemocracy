@@ -1,6 +1,6 @@
 class Layout::LoginItemsComponent < ApplicationComponent
   attr_reader :user
-  use_helpers :layout_menu_link_to
+  delegate :layout_menu_link_to, to: :helpers
 
   def initialize(user)
     @user = user

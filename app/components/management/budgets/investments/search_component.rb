@@ -1,6 +1,6 @@
 class Management::Budgets::Investments::SearchComponent < ApplicationComponent
   attr_reader :budget, :url
-  use_helpers :budget_heading_select_options
+  delegate :budget_heading_select_options, to: :helpers
 
   def initialize(budget, url:)
     @budget = budget

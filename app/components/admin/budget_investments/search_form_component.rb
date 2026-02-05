@@ -1,6 +1,6 @@
 class Admin::BudgetInvestments::SearchFormComponent < ApplicationComponent
   attr_reader :budget
-  use_helpers :budget_heading_select_options
+  delegate :budget_heading_select_options, to: :helpers
 
   def initialize(budget)
     @budget = budget

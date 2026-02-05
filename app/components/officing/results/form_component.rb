@@ -1,6 +1,6 @@
 class Officing::Results::FormComponent < ApplicationComponent
   attr_reader :poll, :officer_assignments
-  use_helpers :booths_for_officer_select_options
+  delegate :booths_for_officer_select_options, to: :helpers
 
   def initialize(poll, officer_assignments)
     @poll = poll

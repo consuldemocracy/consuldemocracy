@@ -1,6 +1,6 @@
 class Admin::SiteCustomization::ContentBlocks::FormContentBlockComponent < ApplicationComponent
   attr_reader :content_block
-  use_helpers :valid_blocks
+  delegate :valid_blocks, to: :helpers
 
   def initialize(content_block)
     @content_block = content_block

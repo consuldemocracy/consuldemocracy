@@ -1,7 +1,7 @@
 class Shared::GlobalizeLocalesComponent < ApplicationComponent
   attr_reader :resource, :manage_languages
-  use_helpers :first_translation, :first_marked_for_destruction_translation,
-              :enabled_locale?, :name_for_locale, :highlight_translation_html_class
+  delegate :first_translation, :first_marked_for_destruction_translation,
+           :enabled_locale?, :name_for_locale, :highlight_translation_html_class, to: :helpers
 
   def initialize(resource = nil, manage_languages: true)
     @resource = resource

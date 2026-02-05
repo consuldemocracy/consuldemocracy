@@ -3,7 +3,7 @@ class Admin::Legislation::Processes::FormComponent < ApplicationComponent
   include GlobalizeHelper
 
   attr_reader :process
-  use_helpers :admin_submit_action
+  delegate :admin_submit_action, to: :helpers
 
   def initialize(process)
     @process = process

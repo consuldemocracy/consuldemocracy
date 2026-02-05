@@ -1,6 +1,5 @@
 class Admin::BudgetInvestments::ToggleVisibleToValuatorsComponent < ApplicationComponent
   attr_reader :investment
-  use_helpers :can?
   delegate :visible_to_valuators?, to: :investment
 
   def initialize(investment)

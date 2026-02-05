@@ -1,6 +1,5 @@
 class Dashboard::DefaultResourceComponent < ApplicationComponent
   attr_reader :resource, :proposal
-  use_helpers :can?
 
   def initialize(resource, proposal)
     @resource = resource

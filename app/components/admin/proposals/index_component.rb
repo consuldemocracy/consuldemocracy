@@ -2,6 +2,7 @@ class Admin::Proposals::IndexComponent < ApplicationComponent
   include Header
 
   attr_reader :proposals
+  delegate :page_entries_info, :paginate, to: :helpers
 
   def initialize(proposals)
     @proposals = proposals

@@ -1,6 +1,5 @@
 class Shared::ModerationActionsComponent < ApplicationComponent
   attr_reader :record
-  use_helpers :can?
 
   def initialize(record)
     @record = record

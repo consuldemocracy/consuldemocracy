@@ -1,5 +1,5 @@
 class Management::MenuComponent < ApplicationComponent
-  use_helpers :managed_user, :link_list
+  delegate :managed_user, :link_list, to: :helpers
 
   def links
     [

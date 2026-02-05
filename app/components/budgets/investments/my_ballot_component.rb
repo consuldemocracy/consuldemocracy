@@ -1,6 +1,6 @@
 class Budgets::Investments::MyBallotComponent < ApplicationComponent
   attr_reader :ballot, :heading, :investment_ids, :assigned_heading
-  use_helpers :can?, :heading_link
+  delegate :heading_link, to: :helpers
 
   def initialize(ballot:, heading:, investment_ids:, assigned_heading: nil)
     @ballot = ballot

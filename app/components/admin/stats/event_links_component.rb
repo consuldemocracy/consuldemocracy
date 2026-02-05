@@ -1,6 +1,6 @@
 class Admin::Stats::EventLinksComponent < ApplicationComponent
   attr_reader :event_names
-  use_helpers :link_list
+  delegate :link_list, to: :helpers
 
   def initialize(event_names)
     @event_names = event_names

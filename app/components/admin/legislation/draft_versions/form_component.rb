@@ -3,7 +3,7 @@ class Admin::Legislation::DraftVersions::FormComponent < ApplicationComponent
   include GlobalizeHelper
 
   attr_reader :draft_version, :url
-  use_helpers :admin_submit_action
+  delegate :admin_submit_action, to: :helpers
 
   def initialize(draft_version, url:)
     @draft_version = draft_version

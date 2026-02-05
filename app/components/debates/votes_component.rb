@@ -1,6 +1,6 @@
 class Debates::VotesComponent < ApplicationComponent
   attr_reader :debate
-  use_helpers :current_user, :link_to_verify_account
+  delegate :link_to_verify_account, to: :helpers
 
   def initialize(debate)
     @debate = debate
