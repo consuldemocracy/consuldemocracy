@@ -8,9 +8,6 @@ so:
           all: Dhamaan
           pending_flag_review: Joojin
           with_ignored_flag: Ku alaamadeysan sida loo arko
-        headers:
-          comment: Faalo
-          moderate: Dhexdhadiye
         hide: Qari Falooyinka
         ignore_flags: Ku calaamadee sida loo arko
         orders:
@@ -28,9 +25,6 @@ so:
           all: Dhamaan
           pending_flag_review: Joojin
           with_ignored_flag: Ku alaamadeysan sida loo arko
-        headers:
-          debate: Dood
-          moderate: Dhexdhadiye
         hide: Qari dodaha
         ignore_flags: Ku calaamadee sida loo arko
         orders:
@@ -56,7 +50,6 @@ so:
           with_ignored_flag: Ku calaamadee sida loo arko
         headers:
           moderate: Dhexdhadiye
-          proposal: Sojeedin
         hide: Qari talooyinka
         ignore_flags: Ku calaamadee sida loo arko
         orders:
@@ -71,9 +64,6 @@ so:
           all: Dhamaan
           pending_flag_review: Joojin
           with_ignored_flag: Ku alaamadeysan sida loo arko
-        headers:
-          moderate: Dhexdhadiye
-          budget_investment: Misaniyada malgashiga
         hide: Qari Misaniyada Malashiyada
         ignore_flags: Ku calaamadee sida loo arko
         orders:
@@ -88,9 +78,6 @@ so:
           all: Dhamaan
           pending_review: Dib u eegidaada
           ignored: Ku calaamadee sida loo arko
-        headers:
-          moderate: Dhexdhadiye
-          proposal_notification: Ogeysiin Sojeedineed
         hide: Qari talooyinka
         ignore_flags: Ku calaamadee sida loo arko
         orders:
