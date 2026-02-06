@@ -71,7 +71,7 @@ gem "wkhtmltopdf-binary", "~> 0.12.6"
 group :development, :test do
   gem "debug", "~> 1.9.2"
   gem "factory_bot_rails", "~> 6.5.1"
-  gem "faker", "~> 3.5.2"
+  gem "faker", "~> 3.6.0"
   gem "i18n-tasks", "~> 0.9.37"
   gem "knapsack_pro", "~> 8.4.0"
   gem "launchy", "~> 3.1.1"
