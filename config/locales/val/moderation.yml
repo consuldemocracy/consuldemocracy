@@ -8,9 +8,6 @@ val:
           all: Totes
           pending_flag_review: Pendents
           with_ignored_flag: Marcats com revisats
-        headers:
-          comment: Comentari
-          moderate: Moderar
         hide: Ocultar comentaris
         ignore_flags: Marcar com revisats
         orders:
@@ -28,9 +25,6 @@ val:
           all: Totes
           pending_flag_review: Pendents
           with_ignored_flag: Marcats com revisats
-        headers:
-          debate: Debat
-          moderate: Moderar
         hide: Ocultar debats
         ignore_flags: Marcar com revisats
         orders:
@@ -56,7 +50,6 @@ val:
           with_ignored_flag: Marcar com revisats
         headers:
           moderate: Moderar
-          proposal: Proposta
         hide: Ocultar propostes
         ignore_flags: Marcar com revisats
         orders:
@@ -71,9 +64,6 @@ val:
           all: Totes
           pending_flag_review: Pendents
           with_ignored_flag: Marcats com revisats
-        headers:
-          moderate: Moderar
-          budget_investment: Pressupost participatiu
         hide: Ocultar propostes d'inversió
         ignore_flags: Marcar com revisats
         orders:
@@ -88,9 +78,6 @@ val:
           all: Totes
           pending_review: Pendents de revisió
           ignored: Marcar com revisats
-        headers:
-          moderate: Moderar
-          proposal_notification: Notificació de proposta
         hide: Ocultar propostes
         ignore_flags: Marcar com revisats
         orders:
