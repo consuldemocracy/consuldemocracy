@@ -6,8 +6,6 @@ nn:
         filters:
           all: Alle
           pending_flag_review: Under behandling
-        headers:
-          comment: Kommenter
         title: Kommentarer
     dashboard:
       index:
@@ -18,8 +16,6 @@ nn:
         filters:
           all: Alle
           pending_flag_review: Under behandling
-        headers:
-          debate: Debatt
         title: Debatter
     header:
       title: Moderering
@@ -33,8 +29,6 @@ nn:
         filter: Filter
         filters:
           all: Alle
-        headers:
-          proposal: Forslag
         title: Forslag
     budget_investments:
       index:
@@ -42,8 +36,6 @@ nn:
         filters:
           all: Alle
           pending_flag_review: Under behandling
-        headers:
-          budget_investment: Budsjettinvesteringer
         title: Budsjettinvesteringer
     proposal_notifications:
       index:
