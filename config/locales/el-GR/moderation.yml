@@ -8,9 +8,6 @@ el:
           all: Όλα
           pending_flag_review: Σε εκκρεμότητα
           with_ignored_flag: Μαρκάρετε ως αναγνωσμένο
-        headers:
-          comment: Σχόλιο
-          moderate: Συντονίζω
         hide: Απόκρυψη σχολίων
         ignore_flags: Μαρκάρετε ως αναγνωσμένο
         orders:
@@ -28,9 +25,6 @@ el:
           all: Όλα
           pending_flag_review: Σε εκκρεμότητα
           with_ignored_flag: Μαρκάρετε ως αναγνωσμένο
-        headers:
-          debate: Συζήτηση
-          moderate: Συντονίζω
         hide: Απόκρυψη συζητήσεων
         ignore_flags: Μαρκάρετε ως αναγνωσμένο
         orders:
@@ -56,7 +50,6 @@ el:
           with_ignored_flag: Μαρκάρετε ως αναγνωσμένο
         headers:
           moderate: Συντονίζω
-          proposal: Πρόταση
         hide: Απόκρυψη προτάσεων
         ignore_flags: Μαρκάρετε ως αναγνωσμένο
         orders:
@@ -71,9 +64,6 @@ el:
           all: Όλα
           pending_flag_review: Σε εκκρεμότητα
           with_ignored_flag: Μαρκάρετε ως αναγνωσμένο
-        headers:
-          moderate: Συντονίζω
-          budget_investment: Επενδύσεις προϋπολογισμού
         hide: Απόκρυψη επενδύσεων προϋπολογισμού
         ignore_flags: Μαρκάρετε ως αναγνωσμένο
         orders:
@@ -88,9 +78,6 @@ el:
           all: Όλα
           pending_review: Σε εκκρεμότητα αναθεώρησης
           ignored: Μαρκάρετε ως αναγνωσμένο
-        headers:
-          moderate: Συντονίζω
-          proposal_notification: Ειδοποιήσεις προτάσεων
         hide: Απόκρυψη προτάσεων
         ignore_flags: Μαρκάρετε ως αναγνωσμένο
         orders:
