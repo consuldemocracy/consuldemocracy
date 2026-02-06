@@ -10,9 +10,6 @@ bg:
           all: Всички
           pending_flag_review: Изчакване
           with_ignored_flag: Маркиран като гледан
-        headers:
-          comment: Коментар
-          moderate: Модериране
         hide: Скриване на коментари
         ignore_flags: Маркиран като гледан
         orders:
@@ -30,9 +27,6 @@ bg:
           all: Всички
           pending_flag_review: Изчакване
           with_ignored_flag: Маркиран като гледан
-        headers:
-          debate: Дискусия
-          moderate: Модериране
         hide: Скриване на дискусии
         ignore_flags: Маркиран като гледан
         orders:
@@ -58,7 +52,6 @@ bg:
           with_ignored_flag: Маркиран като гледан
         headers:
           moderate: Модериране
-          proposal: Предложение
         hide: Скриване на предложенията
         ignore_flags: Маркиран като гледан
         orders:
@@ -73,9 +66,6 @@ bg:
           all: Всички
           pending_flag_review: Изчакване
           with_ignored_flag: Маркиран като гледан
-        headers:
-          moderate: Модериране
-          budget_investment: Бюджетна инвестиция
         hide: Скриване на бюджетните инвестиции
         ignore_flags: Маркиран като гледан
         orders:
@@ -90,9 +80,6 @@ bg:
           all: Всички
           pending_review: Изчакване на преглед
           ignored: Маркиран като гледан
-        headers:
-          moderate: Модериране
-          proposal_notification: Известия за предложения
         hide: Скриване на предложенията
         ignore_flags: Маркиран като гледан
         orders:
