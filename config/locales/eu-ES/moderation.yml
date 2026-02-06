@@ -8,9 +8,6 @@ eu:
           all: Guztiak
           pending_flag_review: Egiteke
           with_ignored_flag: Berrikusitako marka du
-        headers:
-          comment: Iruzkin
-          moderate: Moderatu
         hide: Iruzkinak ezkutatu
         ignore_flags: Berrikusitzat markatu
         orders:
@@ -28,9 +25,6 @@ eu:
           all: Guztiak
           pending_flag_review: Egiteke
           with_ignored_flag: Berrikusitako marka du
-        headers:
-          debate: Eztabaida
-          moderate: Moderatu
         hide: Eztabaidak ezkutatu
         ignore_flags: Berrikusitzat markatu
         orders:
@@ -56,7 +50,6 @@ eu:
           with_ignored_flag: Berrikusitzat markatuta
         headers:
           moderate: Moderatu
-          proposal: Proposamena
         hide: Proposamenak Ezkutatu
         ignore_flags: Berrikusitzat markatu
         orders:
@@ -71,9 +64,6 @@ eu:
           all: Guztiak
           pending_flag_review: Egiteke
           with_ignored_flag: Berrikusitako marka du
-        headers:
-          moderate: Moderatu
-          budget_investment: Gastu proiektua
         ignore_flags: Berrikusitzat markatu
         orders:
           created_at: Berrienak
@@ -87,9 +77,6 @@ eu:
           all: Guztiak
           pending_review: Berrikusteke
           ignored: Ikusitzat markatuta
-        headers:
-          moderate: Moderatu
-          proposal_notification: Proposamen jakinarazpena
         hide: Proposamenak Ezkutatu
         ignore_flags: Berrikusitzat markatu
         orders:
