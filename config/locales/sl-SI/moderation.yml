@@ -8,9 +8,6 @@ sl:
           all: Vsi
           pending_flag_review: V teku
           with_ignored_flag: Označeni kot videni
-        headers:
-          comment: Komentiraj
-          moderate: Moderiraj
         hide: Zbriši komentarje
         ignore_flags: Označi kot videne
         orders:
@@ -28,9 +25,6 @@ sl:
           all: Vsi
           pending_flag_review: V teku
           with_ignored_flag: Označeni kot videni
-        headers:
-          debate: Razprava
-          moderate: Moderiraj
         hide: Skrij razprave
         ignore_flags: Označi kot videne
         orders:
@@ -55,7 +49,6 @@ sl:
           with_ignored_flag: Označi kot videne
         headers:
           moderate: Moderiraj
-          proposal: Predlog
         hide: Skrij predloge
         ignore_flags: Označi kot videne
         orders:
@@ -70,9 +63,6 @@ sl:
           all: Vsi
           pending_flag_review: V teku
           with_ignored_flag: Označeni kot videni
-        headers:
-          moderate: Moderiraj
-          budget_investment: Proračunska naložba
         ignore_flags: Označi kot videne
         orders:
           created_at: Najnovejši
@@ -86,8 +76,6 @@ sl:
           all: Vsi
           pending_review: Čakajoči na pregled
           ignored: Označi kot videne
-        headers:
-          moderate: Moderiraj
         hide: Skrij predloge
         ignore_flags: Označi kot videne
         orders:
