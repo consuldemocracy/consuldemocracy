@@ -8,9 +8,6 @@ ast:
           all: Toes
           pending_flag_review: Pindios
           with_ignored_flag: Marcados como revisados
-        headers:
-          comment: Comentario
-          moderate: Moderar
         hide: Ocultar comentarios
         ignore_flags: Marcar como revisadas
         orders:
@@ -28,9 +25,6 @@ ast:
           all: Toes
           pending_flag_review: Pindios
           with_ignored_flag: Marcados como revisados
-        headers:
-          debate: Alderique
-          moderate: Moderar
         hide: Ocultar debates
         ignore_flags: Marcar como revisadas
         orders:
@@ -54,7 +48,6 @@ ast:
           with_ignored_flag: Marcar como revisadas
         headers:
           moderate: Moderar
-          proposal: la propuesta
         hide: Ocultar Propuestas
         ignore_flags: Marcar como revisadas
         orders:
@@ -69,8 +62,6 @@ ast:
           all: Toes
           pending_flag_review: Pindios
           with_ignored_flag: Marcados como revisados
-        headers:
-          moderate: Moderar
         ignore_flags: Marcar como revisadas
         orders:
           created_at: Más recientes
@@ -83,8 +74,6 @@ ast:
           all: Toes
           pending_review: Pendientes de revisión
           ignored: Marcar como revisadas
-        headers:
-          moderate: Moderar
         hide: Ocultar Propuestas
         ignore_flags: Marcar como revisadas
         orders:
