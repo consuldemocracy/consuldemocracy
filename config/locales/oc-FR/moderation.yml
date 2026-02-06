@@ -8,9 +8,6 @@ oc:
           all: totes
           pending_flag_review: Sens decidir
           with_ignored_flag: Marcats coma revisats
-        headers:
-          comment: Comentar
-          moderate: Moderar
         hide: Amagar de comentaris
         ignore_flags: Marcar como revisadas
         orders:
@@ -28,9 +25,6 @@ oc:
           all: totes
           pending_flag_review: Sens decidir
           with_ignored_flag: Marcats coma revisats
-        headers:
-          debate: debat prealable
-          moderate: Moderar
         hide: Amagar de debats
         ignore_flags: Marcar como revisadas
         orders:
@@ -56,7 +50,6 @@ oc:
           with_ignored_flag: Marcar como revisadas
         headers:
           moderate: Moderar
-          proposal: la proposicion
         hide: Amagar de Proposicions
         ignore_flags: Marcar como revisadas
         orders:
@@ -71,9 +64,6 @@ oc:
           all: totes
           pending_flag_review: Sens decidir
           with_ignored_flag: Marcats coma revisats
-        headers:
-          moderate: Moderar
-          budget_investment: Inversion budgetària
         hide: Amagatz las inversions budgetàrias
         ignore_flags: Marcar como revisadas
         orders:
@@ -88,9 +78,6 @@ oc:
           all: totes
           pending_review: Pendentes de revision
           ignored: Marcar como revisadas
-        headers:
-          moderate: Moderar
-          proposal_notification: Notificacion de la proposicion
         hide: Amagar de Proposicions
         ignore_flags: Marcar como revisadas
         orders:
