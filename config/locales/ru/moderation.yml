@@ -8,9 +8,6 @@ ru:
           all: Все
           pending_flag_review: Ожидают
           with_ignored_flag: Отметить на просмотренное
-        headers:
-          comment: Отзыв
-          moderate: Модерировать
         hide: Скрыть комментарии
         ignore_flags: Отметить как просмотренное
         orders:
@@ -28,9 +25,6 @@ ru:
           all: Все
           pending_flag_review: Ожидают
           with_ignored_flag: отметить как просмотренное
-        headers:
-          debate: Обсуждение
-          moderate: Модерировать
         hide: Скрыть обсуждения
         ignore_flags: Отметить как просмотренное
         orders:
@@ -56,7 +50,6 @@ ru:
           with_ignored_flag: Отметить как просмотренное
         headers:
           moderate: Модерировать
-          proposal: Заявка
         hide: Скрыть предложения
         ignore_flags: Отметить как просмотренное
         orders:
@@ -71,9 +64,6 @@ ru:
           all: Все
           pending_flag_review: Ожидают
           with_ignored_flag: Отмечено как просмотренное
-        headers:
-          moderate: Модерировать
-          budget_investment: Бюджетное инвестирование
         hide: Скрыть бюджетные инвестиции
         ignore_flags: Отметить как просмотренное
         orders:
@@ -88,9 +78,6 @@ ru:
           all: Все
           pending_review: Ожидают рассмотрения
           ignored: Отметить как просмотренное
-        headers:
-          moderate: Модерировать
-          proposal_notification: Уведомление о предложении
         hide: Скрыть предложения
         ignore_flags: Отметить как просмотренное
         orders:
