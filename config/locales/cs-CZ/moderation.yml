@@ -10,9 +10,6 @@ cs:
           all: Vše
           pending_flag_review: Nevyřízený
           with_ignored_flag: Označené jako přečtené
-        headers:
-          comment: Komentář
-          moderate: Moderovat
         hide: Skrýt komentáře
         ignore_flags: Označené jako přečtené
         orders:
@@ -30,9 +27,6 @@ cs:
           all: Vše
           pending_flag_review: Nevyřízený
           with_ignored_flag: Označené jako přečtené
-        headers:
-          debate: Debata
-          moderate: Moderovat
         hide: Skrýt debaty
         ignore_flags: Označit za přečtené
         orders:
@@ -58,7 +52,6 @@ cs:
           with_ignored_flag: Označit za přečtené
         headers:
           moderate: Moderovat
-          proposal: Návrhy
         hide: Skrýt návrhy
         ignore_flags: Označit za přečtené
         orders:
@@ -73,9 +66,6 @@ cs:
           all: Vše
           pending_flag_review: Nevyřízený
           with_ignored_flag: Označené jako přečtené
-        headers:
-          moderate: Moderovat
-          budget_investment: Rozpočet
         hide: Skrýt rozpočtové investice
         ignore_flags: Označit za přečtené
         orders:
@@ -90,9 +80,6 @@ cs:
           all: Vše
           pending_review: Čeká na kontrolu
           ignored: Označit za přečtené
-        headers:
-          moderate: Moderovat
-          proposal_notification: Upozornění k návrhům
         hide: Skrýt návrhy
         ignore_flags: Označit za přečtené
         orders:
