@@ -10,9 +10,6 @@ pl:
           all: Wszystkie
           pending_flag_review: Oczekujące
           with_ignored_flag: Oznaczone jako wyświetlone
-        headers:
-          comment: Komentarz
-          moderate: Moderuj
         hide: Ukryj komentarze
         ignore_flags: Oznacz jako wyświetlone
         orders:
@@ -30,9 +27,6 @@ pl:
           all: Wszystkie
           pending_flag_review: Oczekujące
           with_ignored_flag: Oznaczone jako wyświetlone
-        headers:
-          debate: Debata
-          moderate: Moderuj
         hide: Ukryj debaty
         ignore_flags: Oznacz jako wyświetlone
         orders:
@@ -58,7 +52,6 @@ pl:
           with_ignored_flag: Oznacz jako wyświetlone
         headers:
           moderate: Moderuj
-          proposal: Wniosek
         hide: Ukryj propozycje
         ignore_flags: Oznacz jako wyświetlone
         orders:
@@ -73,9 +66,6 @@ pl:
           all: Wszystkie
           pending_flag_review: Oczekujące
           with_ignored_flag: Oznaczone jako wyświetlone
-        headers:
-          moderate: Moderuj
-          budget_investment: Inwestycje budżetowe
         hide: Ukryj inwestycje budżetowe
         ignore_flags: Oznacz jako wyświetlone
         orders:
@@ -90,9 +80,6 @@ pl:
           all: Wszystkie
           pending_review: Recenzja oczekująca
           ignored: Oznacz jako wyświetlone
-        headers:
-          moderate: Moderuj
-          proposal_notification: Powiadomienie o wniosku
         hide: Ukryj propozycje
         ignore_flags: Oznacz jako wyświetlone
         orders:
