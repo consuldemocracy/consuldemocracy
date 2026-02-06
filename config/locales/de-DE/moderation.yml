@@ -10,9 +10,6 @@ de:
           all: Alle
           pending_flag_review: Ausstehend
           with_ignored_flag: Als gelesen markieren
-        headers:
-          comment: Kommentar
-          moderate: Moderieren
         hide: Kommentare ausblenden
         ignore_flags: Als gelesen markieren
         orders:
@@ -30,9 +27,6 @@ de:
           all: Alle
           pending_flag_review: Ausstehend
           with_ignored_flag: Als gelesen markieren
-        headers:
-          debate: Diskussion
-          moderate: Moderieren
         hide: Diskussionen ausblenden
         ignore_flags: Als gelesen markieren
         orders:
@@ -58,7 +52,6 @@ de:
           with_ignored_flag: Als gelesen markieren
         headers:
           moderate: Moderieren
-          proposal: Vorschlag
         hide: Anträge ausblenden
         ignore_flags: Als gelesen markieren
         orders:
@@ -73,9 +66,6 @@ de:
           all: Alle
           pending_flag_review: Ausstehend
           with_ignored_flag: Als gelesen markieren
-        headers:
-          moderate: Moderieren
-          budget_investment: Haushaltsinvestitionen
         hide: Budgetinvestitionen verbergen
         ignore_flags: Als gelesen markieren
         orders:
@@ -90,9 +80,6 @@ de:
           all: Alle
           pending_review: Ausstehende Bewertung
           ignored: Als gesehen markieren
-        headers:
-          moderate: Moderieren
-          proposal_notification: Benachrichtigung zu einem Vorschlag
         hide: Anträge ausblenden
         ignore_flags: Als gelesen markieren
         orders:
