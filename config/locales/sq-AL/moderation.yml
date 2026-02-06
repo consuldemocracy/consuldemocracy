@@ -8,9 +8,6 @@ sq:
           all: Të gjithë
           pending_flag_review: Në pritje
           with_ignored_flag: Shënuar si të shikuara
-        headers:
-          comment: Koment
-          moderate: Mesatar
         hide: Fshih komentet
         ignore_flags: Shëno si të shikuara
         orders:
@@ -28,9 +25,6 @@ sq:
           all: Të gjithë
           pending_flag_review: Në pritje
           with_ignored_flag: Shënuar si të shikuara
-        headers:
-          debate: Debate
-          moderate: Mesatar
         hide: Fshih debatet
         ignore_flags: Shëno si të shikuara
         orders:
@@ -56,7 +50,6 @@ sq:
           with_ignored_flag: Shëno si të shikuara
         headers:
           moderate: Mesatar
-          proposal: Propozime
         hide: Fshi propozimet
         ignore_flags: Shëno si të shikuara
         orders:
@@ -71,9 +64,6 @@ sq:
           all: Të gjithë
           pending_flag_review: Në pritje
           with_ignored_flag: Shënuar si të shikuara
-        headers:
-          moderate: Mesatar
-          budget_investment: Investim buxhetor
         hide: Fshih investimet buxhetor
         ignore_flags: Shëno si të shikuara
         orders:
@@ -88,9 +78,6 @@ sq:
           all: Të gjithë
           pending_review: Në pritje të rishikimit
           ignored: Shëno si të shikuara
-        headers:
-          moderate: Mesatar
-          proposal_notification: Notifikimi i propozimeve
         hide: Fshi propozimet
         ignore_flags: Shëno si të shikuara
         orders:
