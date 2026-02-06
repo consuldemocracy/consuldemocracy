@@ -8,9 +8,6 @@ da:
           all: Alle
           pending_flag_review: Under behandling
           with_ignored_flag: Markér som set
-        headers:
-          comment: Kommentar
-          moderate: Moderér
         hide: Skjul kommentarer
         ignore_flags: Markér som set
         orders:
@@ -28,9 +25,6 @@ da:
           all: Alle
           pending_flag_review: Under behandling
           with_ignored_flag: Markér som set
-        headers:
-          debate: Debat
-          moderate: Moderér
         hide: Skjul debatindlæg
         ignore_flags: Markér som set
         orders:
@@ -56,7 +50,6 @@ da:
           with_ignored_flag: Markér som set
         headers:
           moderate: Moderér
-          proposal: Borgerforslag
         hide: Skjul forslag
         ignore_flags: Markér som set
         orders:
@@ -71,9 +64,6 @@ da:
           all: Alle
           pending_flag_review: Afventer
           with_ignored_flag: Markér som set
-        headers:
-          moderate: Moderér
-          budget_investment: Budgetidéer
         hide: Skjul
         ignore_flags: Markér som set
         orders:
@@ -88,9 +78,6 @@ da:
           all: Alle
           pending_review: Afventer gennemgang
           ignored: Markér som set
-        headers:
-          moderate: Moderér
-          proposal_notification: Notifikationer om forslag
         hide: Skjul forslag
         ignore_flags: Markér som set
         orders:
