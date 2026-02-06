@@ -181,5 +181,15 @@ FactoryBot.define do
     trait :selected do
       selected { true }
     end
+
+    trait :flagged do
+      after :create do |legislation_proposal|
+        Flag.flag(create(:user), legislation_proposal)
+      end
+    end
+
+    trait :with_ignored_flag do
+      ignored_flag_at { Time.current }
+    end
   end
 end

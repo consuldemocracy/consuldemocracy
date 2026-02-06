@@ -17,6 +17,7 @@ describe Abilities::Administrator do
   let(:budget_investment) { create(:budget_investment) }
   let(:finished_investment) { create(:budget_investment, budget: create(:budget, :finished)) }
   let(:legislation_question) { create(:legislation_question) }
+  let(:legislation_proposal) { create(:legislation_proposal, author: user) }
   let(:current_poll) { create(:poll) }
   let(:future_poll) { create(:poll, :future) }
   let(:current_poll_question) { create(:poll_question) }
@@ -77,6 +78,9 @@ describe Abilities::Administrator do
 
   it { should be_able_to(:hide, proposal) }
   it { should be_able_to(:hide, other_user_proposal) }
+
+  it { should_not be_able_to(:flag, legislation_proposal)   }
+  it { should_not be_able_to(:unflag, legislation_proposal) }
 
   it { should be_able_to(:comment_as_administrator, debate) }
   it { should_not be_able_to(:comment_as_moderator, debate) }
