@@ -8,8 +8,6 @@ fi:
           all: Kaikki
           pending_flag_review: Vireillä
           with_ignored_flag: Merkitty katsotuksi
-        headers:
-          comment: Kommentti
         hide: Piilota kommentit
         ignore_flags: Merkitse katsotuksi
         orders:
@@ -38,8 +36,6 @@ fi:
           all: Kaikki
           pending_flag_review: Odottaa tarkastelua
           with_ignored_flag: Merkitse katsotuksi
-        headers:
-          proposal: Ehdotus
         hide: Piilota ehdotukset
         ignore_flags: Merkitse katsotuksi
         orders:
