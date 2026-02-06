@@ -8,9 +8,6 @@ mk:
           all: Сите
           pending_flag_review: Во исчекување
           with_ignored_flag: Означено како прегледано
-        headers:
-          comment: Коментирај
-          moderate: Модерирај
         hide: Сокриј коментари
         ignore_flags: Означи како прегледано
         orders:
@@ -28,9 +25,6 @@ mk:
           all: Сите
           pending_flag_review: Во исчекување
           with_ignored_flag: Означено како прегледано
-        headers:
-          debate: Дебатирај
-          moderate: Модерирај
         hide: Скриј дебати
         ignore_flags: Означи како прегледано
         orders:
@@ -56,7 +50,6 @@ mk:
           with_ignored_flag: Означи како прегледано
         headers:
           moderate: Модерирај
-          proposal: Предлог
         hide: Скриј предлози
         ignore_flags: Означи како прегледано
         orders:
@@ -71,9 +64,6 @@ mk:
           all: Сите
           pending_flag_review: Во исчекување
           with_ignored_flag: Означи како прегледано
-        headers:
-          moderate: Модерирај
-          budget_investment: Буџетски инвестиции
         ignore_flags: Означи како прегледано
         orders:
           created_at: Најново
@@ -87,9 +77,6 @@ mk:
           all: Сите
           pending_review: Во очекување на извештај
           ignored: Означи како прегледано
-        headers:
-          moderate: Модерирај
-          proposal_notification: Предлог нотификација
         hide: Скриј предлози
         ignore_flags: Означи како прегледано
         orders:
