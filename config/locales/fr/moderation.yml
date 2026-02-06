@@ -10,9 +10,6 @@ fr:
           all: Toutes
           pending_flag_review: Indécis
           with_ignored_flag: Marqué comme vu
-        headers:
-          comment: Commentaire
-          moderate: Modérer
         hide: Masquer les commentaires
         ignore_flags: Marqué comme vu
         orders:
@@ -30,9 +27,6 @@ fr:
           all: Toutes
           pending_flag_review: Indécis
           with_ignored_flag: Marqué comme vu
-        headers:
-          debate: Débat
-          moderate: Modérer
         hide: Masquer les débats
         ignore_flags: Marqué comme vu
         orders:
@@ -58,7 +52,6 @@ fr:
           with_ignored_flag: Marqué comme vu
         headers:
           moderate: Modérer
-          proposal: Proposition
         hide: Masquer les propositions
         ignore_flags: Marqué comme vu
         orders:
@@ -73,9 +66,6 @@ fr:
           all: Toutes
           pending_flag_review: Indécis
           with_ignored_flag: Marqué comme vu
-        headers:
-          moderate: Modérer
-          budget_investment: Proposition d'investissement
         hide: Cacher les propositions d'investissement
         ignore_flags: Marqué comme vu
         orders:
@@ -90,9 +80,6 @@ fr:
           all: Toutes
           pending_review: En attente de revue
           ignored: Marqué comme vu
-        headers:
-          moderate: Modérer
-          proposal_notification: Notification de proposition
         hide: Masquer les propositions
         ignore_flags: Marqué comme vu
         orders:
