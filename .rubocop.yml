@@ -656,6 +656,9 @@ RSpec/MissingExpectationTargetMethod:
 RSpec/NotToNot:
   Enabled: true
 
+RSpec/Output:
+  Enabled: true
+
 RSpec/OverwritingSetup:
   Enabled: true
 
