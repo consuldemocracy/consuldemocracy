@@ -4,7 +4,7 @@
 
   <div id="nested-image">
     <%= f.fields_for image_fields do |image_builder| %>
-      <%= render Images::FieldsComponent.new(image_builder, imageable: imageable) %>
+      <%= render Images::FieldsComponent.new(image_builder, imageable: imageable, suggested_images_content: suggested_images_content) %>
     <% end %>
   </div>
 
@@ -15,7 +15,7 @@
                               class: "button upload-image
                                       #{"hide" if image_fields == :image && imageable.image.present?}",
                               render_options: {
-                                locals: { imageable: imageable }
+                                locals: { imageable: imageable, suggested_images_content: suggested_images_content }
                               },
                               data: {
                                 association_insertion_node: "#nested-image",

@@ -248,3 +248,5 @@ es:
       use_llm_for_translations_description: "Usar LLM para traducir contenido y darle prioridad sobre los servicios de traducción de Microsoft."
       model: "Modelo"
       model_description: "El modelo LLM a usar."
+      use_ai_image_suggestions: "Sugerencias de Imágenes con IA"
+      use_ai_image_suggestions_description: "Permitir a los usuarios usar IA para sugerir imágenes de Pexels, en lugar de subir las suyas propias."

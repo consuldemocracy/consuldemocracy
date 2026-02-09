@@ -51,6 +51,7 @@
   * [Local Census](features/local_census.md)
   * [Multitenancy](features/multitenancy.md)
   * [Traducciones de contenido de usuario](features/user_content_translations.md)
+  * [Sugerencias de Imágenes con IA](features/image_suggestions.md)
 
 * [Proyecto Open Source](open_source/open_source.md)
   * [Código de conducta](open_source/code_of_conduct.md)
