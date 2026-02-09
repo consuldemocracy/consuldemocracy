@@ -49,7 +49,7 @@
 <p>
   <%= link_to t("valuation.budget_investments.show.edit_dossier"), edit_valuation_budget_budget_investment_path(@budget, @investment) %>
 </p>
-<%= render "dossier" %>
+<%= render Valuation::BudgetInvestments::DossierComponent.new(@investment) %>
 
 <hr>
 

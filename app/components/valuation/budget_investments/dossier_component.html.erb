@@ -1,11 +1,11 @@
-<% if @budget.show_money? %>
+<% if budget.show_money? %>
   <p id="price">
     <strong>
       <%= t("valuation.budget_investments.show.price") %>
       (<%= t("valuation.budget_investments.show.currency") %>):
     </strong>
-    <% if @investment.price.present? %>
-      <%= @investment.price %>
+    <% if investment.price.present? %>
+      <%= investment.price %>
     <% else %>
       <%= t("valuation.budget_investments.show.undefined") %>
     <% end %>
@@ -17,20 +17,20 @@
       (<%= t("valuation.budget_investments.show.currency") %>):
     </strong>
 
-    <% if @investment.price_first_year.present? %>
-      <%= @investment.price_first_year %>
+    <% if investment.price_first_year.present? %>
+      <%= investment.price_first_year %>
     <% else %>
       <%= t("valuation.budget_investments.show.undefined") %>
     <% end %>
   </p>
 <% end %>
 
-<%= explanation_field @investment.price_explanation %>
+<%= explanation_field investment.price_explanation %>
 
 <p id="duration">
   <strong><%= t("valuation.budget_investments.show.duration") %>:</strong>
-  <% if @investment.duration.present? %>
-    <%= @investment.duration %>
+  <% if investment.duration.present? %>
+    <%= investment.duration %>
   <% else %>
     <%= t("valuation.budget_investments.show.undefined") %>
   <% end %>
@@ -38,12 +38,12 @@
 
 <p id="feasibility">
   <strong><%= t("valuation.budget_investments.show.feasibility") %>:</strong>
-  <%= t("valuation.budget_investments.show.#{@investment.feasibility}") %>
+  <%= t("valuation.budget_investments.show.#{investment.feasibility}") %>
 </p>
 
-<%= explanation_field @investment.unfeasibility_explanation %>
+<%= explanation_field investment.unfeasibility_explanation %>
 
-<% if @investment.valuation_finished %>
+<% if investment.valuation_finished %>
   <p id="valuation">
     <strong><%= t("valuation.budget_investments.show.valuation_finished") %></strong>
   </p>
