@@ -11,7 +11,7 @@
     "markdown-it": "^13.0.2"
   },
   "devDependencies": {
-    "@stylistic/stylelint-plugin": "^4.0.0",
+    "@stylistic/stylelint-plugin": "^5.0.1",
     "eslint": "^8.57.0",
     "postcss-scss": "^4.0.9",
     "stylelint": "^16.26.1",
