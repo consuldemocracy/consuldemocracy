@@ -23,6 +23,8 @@ class Sensemaker::ReportLinkComponent < ApplicationComponent
       Sensemaker::Job.for_budget(analysable_resource).exists?
     when Legislation::Process
       Sensemaker::Job.for_process(analysable_resource).exists?
+    when Poll
+      Sensemaker::Job.for_poll(analysable_resource).exists?
     when Budget::Group
       Sensemaker::Job.for_budget(analysable_resource.budget).exists?
     else

@@ -227,7 +227,7 @@ describe Sensemaker::JobsController do
     end
   end
 
-  describe "GET #processes_index" do
+  describe "GET #index with legislation_processes resource type" do
     let(:legislation_process) { create(:legislation_process) }
     let(:question) { create(:legislation_question, process: legislation_process) }
     let(:first_proposal) { create(:legislation_proposal, process: legislation_process) }
@@ -244,7 +244,7 @@ describe Sensemaker::JobsController do
     end
 
     it "returns published jobs for the process and its related resources" do
-      get :processes_index, params: { process_id: legislation_process.id }
+      get :index, params: { resource_type: "legislation_processes", resource_id: legislation_process.id }
 
       expect(response).to have_http_status(:ok)
       jobs = controller.instance_variable_get(:@sensemaker_jobs)
@@ -252,7 +252,8 @@ describe Sensemaker::JobsController do
       expect(jobs).to include(proposal_job)
       expect(jobs).to include(option_job)
       expect(jobs).not_to include(other_process_job)
-      expect(controller.instance_variable_get(:@parent_resource)).to eq(legislation_process)
+      expect(controller.instance_variable_get(:@resource)).to eq(legislation_process)
+      expect(controller.instance_variable_get(:@parent_resource)).to be(nil)
     end
   end
 
