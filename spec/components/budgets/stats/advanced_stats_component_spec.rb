@@ -16,4 +16,19 @@ describe Budgets::Stats::AdvancedStatsComponent do
 
     expect(page).not_to be_rendered
   end
+
+  context "budget with headings" do
+    let(:budget) { create(:budget, :finished, advanced_stats_enabled: true) }
+    let(:heading) { create(:budget_heading, budget: budget, name: "Software development") }
+    before { create(:budget_investment, heading: heading) }
+
+    it "renders a table with headings" do
+      stats = Budget::Stats.new(budget)
+
+      render_inline Budgets::Stats::AdvancedStatsComponent.new(stats)
+
+      expect(page).to have_table with_rows: [{ "Heading" => "Software development",
+                                               "Investment proposals sent" => "1" }]
+    end
+  end
 end
