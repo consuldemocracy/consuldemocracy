@@ -13,10 +13,10 @@
       });
     },
     associated_fields: function(element) {
-      if (element.data("field-name")) {
-        return $("[name='" + element.data("field-name") + "']");
-      } else {
+      if (element.closest("fieldset").length) {
         return $("[type='checkbox']", element.closest("fieldset"));
+      } else {
+        return $("[type='checkbox']", element.closest("form"));
       }
     }
   };

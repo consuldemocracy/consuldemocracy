@@ -10,9 +10,6 @@ en:
           all: All
           pending_flag_review: Pending
           with_ignored_flag: Marked as viewed
-        headers:
-          comment: Comment
-          moderate: Moderate
         hide: Hide comments
         ignore_flags: Mark as viewed
         orders:
@@ -30,9 +27,6 @@ en:
           all: All
           pending_flag_review: Pending
           with_ignored_flag: Marked as viewed
-        headers:
-          debate: Debate
-          moderate: Moderate
         hide: Hide debates
         ignore_flags: Mark as viewed
         orders:
@@ -54,11 +48,10 @@ en:
         filter: Filter
         filters:
           all: All
-          pending_flag_review: Pending review
-          with_ignored_flag: Mark as viewed
+          pending_flag_review: Pending
+          with_ignored_flag: Marked as viewed
         headers:
           moderate: Moderate
-          proposal: Proposal
         hide: Hide proposals
         ignore_flags: Mark as viewed
         orders:
@@ -73,9 +66,6 @@ en:
           all: All
           pending_flag_review: Pending
           with_ignored_flag: Marked as viewed
-        headers:
-          moderate: Moderate
-          budget_investment: Budget investment
         hide: Hide budget investments
         ignore_flags: Mark as viewed
         orders:
@@ -88,11 +78,8 @@ en:
         filter: Filter
         filters:
           all: All
-          pending_review: Pending review
-          ignored: Mark as viewed
-        headers:
-          moderate: Moderate
-          proposal_notification: Proposal notification
+          pending_review: Pending
+          ignored: Marked as viewed
         hide: Hide proposals
         ignore_flags: Mark as viewed
         orders:
