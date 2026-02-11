@@ -137,21 +137,21 @@ module Sensemaker::ReportComponentHelpers
 
     case record
     when Proposal
-      t("sensemaker.job_index.hero_resource_types.proposal")
+      t("sensemaker.job_index.resource_type_phrases.proposal")
     when Debate
-      t("sensemaker.job_index.hero_resource_types.debate")
+      t("sensemaker.job_index.resource_type_phrases.debate")
     when Legislation::Question
-      t("sensemaker.job_index.hero_resource_types.legislation_question")
+      t("sensemaker.job_index.resource_type_phrases.legislation_question")
     when Legislation::Proposal
-      t("sensemaker.job_index.hero_resource_types.legislation_proposal")
+      t("sensemaker.job_index.resource_type_phrases.legislation_proposal")
     when Legislation::Process
-      t("sensemaker.job_index.hero_resource_types.legislation")
+      t("sensemaker.job_index.resource_type_phrases.legislation")
     when Poll
-      t("sensemaker.job_index.hero_resource_types.poll")
+      t("sensemaker.job_index.resource_type_phrases.poll")
     when Poll::Question
-      t("sensemaker.job_index.hero_resource_types.poll_question")
+      t("sensemaker.job_index.resource_type_phrases.poll_question")
     when Budget
-      t("sensemaker.job_index.hero_resource_types.budget")
+      t("sensemaker.job_index.resource_type_phrases.budget")
     else
       "this #{record.class.name.humanize.downcase}"
     end
@@ -202,6 +202,8 @@ module Sensemaker::ReportComponentHelpers
       legislation_process_proposal_path(resource.process, resource)
     when Poll::Question
       poll_path(resource.poll)
+    when Legislation::Process
+      legislation_process_path(resource)
     else
       nil
     end
@@ -240,8 +242,6 @@ module Sensemaker::ReportComponentHelpers
     case resource
     when Budget
       budget_sensemaking_path(resource)
-    when Legislation::Process
-      sensemaker_legislation_process_jobs_path(resource.id)
     when Budget::Group
       budget_sensemaking_path(resource.budget)
     else
@@ -273,6 +273,8 @@ module Sensemaker::ReportComponentHelpers
         "polls"
       when "Poll::Question"
         "poll_questions"
+      when "Legislation::Process"
+        "legislation_processes"
       when "Legislation::Question"
         "legislation_questions"
       when "Legislation::Proposal"

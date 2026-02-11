@@ -25,11 +25,23 @@
 
       <section class="reports-section">
         <% if has_jobs? %>
-          <div class="row small-up-1 medium-up-2 large-up-3">
-            <% jobs.each do |job| %>
-              <%= render Sensemaker::JobCardComponent.new(job) %>
-            <% end %>
-          </div>
+          <% jobs_by_type.each_with_index do |type_group, type_index| %>
+            <div class="target-type-group margin-bottom">
+              <% type_key = type_group[0]; target_groups = type_group[1] %>
+              <%= content_tag :h3, segmented_by_heading(type_key), class: "margin-bottom" if (type_key != @resource.class.name.underscore) %>
+
+              <% target_groups.each do |target_group| %>
+                <div class="target-group">
+                  <%= content_tag :h4, target_group[:target_title], class: "margin-bottom" if (target_groups.size > 1) || (type_index > 0) %>
+                  <div class="row small-up-1 medium-up-2 large-up-3">
+                    <% target_group[:jobs].each do |job| %>
+                      <%= render Sensemaker::JobCardComponent.new(job) %>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
         <% else %>
           <div class="callout primary">
             <p><%= empty_message %></p>

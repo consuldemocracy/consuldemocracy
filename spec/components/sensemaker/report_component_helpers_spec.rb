@@ -217,14 +217,14 @@ describe Sensemaker::ReportComponentHelpers do
 
     it "returns translated phrase for a Debate" do
       expect(host.this_resource_phrase_for(debate)).to eq(
-        I18n.t("sensemaker.job_index.hero_resource_types.debate")
+        I18n.t("sensemaker.job_index.resource_type_phrases.debate")
       )
     end
 
     it "returns translated phrase for a Budget" do
       budget = create(:budget, name: "Test Budget")
       expect(host.this_resource_phrase_for(budget)).to eq(
-        I18n.t("sensemaker.job_index.hero_resource_types.budget")
+        I18n.t("sensemaker.job_index.resource_type_phrases.budget")
       )
     end
 

@@ -144,7 +144,7 @@ describe Sensemaker::JobIndexComponent do
         render_inline component
 
         expected_title = I18n.t("sensemaker.job_index.hero_title_with_resource",
-                                resource_type: I18n.t("sensemaker.job_index.hero_resource_types.debate"))
+                                resource_type: I18n.t("sensemaker.job_index.resource_type_phrases.debate"))
         expect(page).to have_content(expected_title)
         expect(page).to have_link(I18n.t("sensemaker.job_index.view_report"),
                                   href: serve_report_sensemaker_job_path(job))

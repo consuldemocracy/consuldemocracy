@@ -14,17 +14,28 @@ class Sensemaker::JobsController < ApplicationController
   end
 
   def index
-    if params[:resource_type].present? && params[:resource_id].present?
-      resource_type = map_resource_type_to_model(params[:resource_type])
-      @resource = resource_type.find(params[:resource_id])
-      @parent_resource = load_parent_resource_for(@resource)
-      @sensemaker_jobs = Sensemaker::Job.published
+    if params[:resource_type].blank? || params[:resource_id].blank?
+      head :not_found
+      return
+    end
+
+    resource_type = map_resource_type_to_model(params[:resource_type])
+    @resource = resource_type.find(params[:resource_id])
+    @parent_resource = load_parent_resource_for(@resource)
+
+    @sensemaker_jobs = case @resource
+                       when Poll
+                         Sensemaker::Job.for_poll(@resource).order(finished_at: :desc)
+                       when Legislation::Question
+                         Sensemaker::Job.for_legislation_question(@resource).order(finished_at: :desc)
+                       when Legislation::Process
+                         Sensemaker::Job.published.for_process(@resource).order(finished_at: :desc)
+                       else
+                         Sensemaker::Job.published
                                         .where(analysable_type: resource_type.name,
                                                analysable_id: params[:resource_id])
                                         .order(finished_at: :desc)
-    else
-      head :not_found
-    end
+                       end
   rescue ActiveRecord::RecordNotFound
     head :not_found
   end
@@ -35,14 +46,6 @@ class Sensemaker::JobsController < ApplicationController
                                       .where(analysable_type: "Proposal", analysable_id: nil)
                                       .order(finished_at: :desc)
     render :index
-  end
-
-  def processes_index
-    @parent_resource = Legislation::Process.find(params[:process_id])
-    @sensemaker_jobs = Sensemaker::Job.published.for_process(@parent_resource).order(finished_at: :desc)
-    render :index
-  rescue ActiveRecord::RecordNotFound
-    head :not_found
   end
 
   def serve_report
@@ -79,6 +82,8 @@ class Sensemaker::JobsController < ApplicationController
         Topic
       when "poll_questions"
         Poll::Question
+      when "legislation_processes"
+        Legislation::Process
       when "legislation_questions"
         Legislation::Question
       when "legislation_proposals"

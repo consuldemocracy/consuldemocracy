@@ -83,4 +83,43 @@ class Sensemaker::JobIndexComponent < ApplicationComponent
   def parent_resource_path
     parent_resource_path_for(@parent_resource)
   end
+
+  def jobs_by_type
+    return [] if @jobs.none?
+
+    grouped = jobs_by_target.group_by { |group| group[:target_type].underscore }
+    return grouped if @resource.blank?
+
+    resource_key = @resource.class.name.underscore
+    return grouped unless grouped.key?(resource_key)
+
+    resource_group_first = { resource_key => grouped[resource_key] }
+    resource_group_first.merge(grouped.except(resource_key))
+  end
+
+  def jobs_by_target
+    return [] if @jobs.none?
+
+    groups = {}
+    @jobs.each do |job|
+      key = [job.analysable_type, job.analysable_id]
+      groups[key] ||= { target_title: nil, target_path: nil, jobs: [] }
+      groups[key][:jobs] << job
+      next if groups[key][:target_title].present?
+
+      groups[key][:target_type] = job.analysable_type
+      groups[key][:target_title] = target_resource_display_label(job)
+      groups[key][:target_path] = target_resource_path(job)
+    end
+    groups.values
+  end
+
+  def segmented_by_heading(type_key)
+    t("sensemaker.job_index.analysed_by", resource_type: segment_type_label(type_key))
+  end
+
+  def segment_type_label(type_key)
+    normalized = type_key.to_s.gsub("/", "_")
+    t("sensemaker.job_index.resource_types.#{normalized}", default: normalized.humanize)
+  end
 end

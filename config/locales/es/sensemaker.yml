@@ -10,15 +10,6 @@ es:
       title: "Informes Sensemaker"
       title_with_parent: "Informes Sensemaker para %{parent_name}"
       empty: "Aún no se han producido análisis."
-      group_titles:
-        legislation/proposal: "Propuestas"
-        legislation/question: "Debates"
-        legislation/question_option: "Debates segmentados por opción"
-        budget: "Presupuestos"
-        budget/group: "Grupos de presupuesto"
-        proposal: "Propuestas"
-        poll: "Encuestas"
-        debate: "Debates"
 
     job_index:
       title: "Análisis Sensemaker"
@@ -27,7 +18,7 @@ es:
       hero_title_with_resource: "Descubre qué dicen los ciudadanos sobre %{resource_type}"
       hero_title_all_proposals: "Descubre qué dicen los ciudadanos sobre las propuestas"
       page_intro: "Aquí puedes encontrar informes y resúmenes para entender mejor la opinión de todos, producidos usando %{link}."
-      hero_resource_types:
+      resource_type_phrases:
         proposal: "esta propuesta"
         debate: "este debate"
         legislation: "esta legislación"
@@ -36,9 +27,22 @@ es:
         poll: "esta encuesta"
         poll_question: "esta pregunta de encuesta"
         budget: "este presupuesto"
+      resource_types:
+        proposal: "propuesta"
+        debate: "debate"
+        legislation: "legislación"
+        legislation_question: "pregunta"
+        legislation_proposal: "propuesta"
+        legislation_question_option: "opción"
+        poll: "encuesta"
+        poll_question: "pregunta"
+        topic: "tema"
+        budget: "presupuesto"
+        budget_group: "grupo"
       breadcrumb:
         all_proposals: "Todas las propuestas"
         separator: "›"
+      analysed_by: "Analizado por %{resource_type}"
       target_header:
         title: "Entender las conversaciones"
       contextual_info:
@@ -57,16 +61,6 @@ es:
         what_to_expect: "Los informes ofrecen un análisis detallado que incluye identificación de temas, categorización e ideas. Los resúmenes ofrecen visiones generales concisas de los temas y hallazgos clave."
         more_info: "Para más información, consulta la %{link}."
         more_info_link: "página principal de Sensemaker"
-      process:
-        reports_and_summaries_available: "%{reports} y %{summaries} disponibles"
-        report_count:
-          zero: "0 informes"
-          one: "1 informe"
-          other: "%{count} informes"
-        summary_count:
-          zero: "0 resúmenes"
-          one: "1 resumen"
-          other: "%{count} resúmenes"
       script_type:
         report: "Informe"
         summary: "Resumen"

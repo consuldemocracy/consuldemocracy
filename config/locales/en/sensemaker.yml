@@ -10,15 +10,6 @@ en:
       title: "Sensemaker Reports"
       title_with_parent: "Sensemaker Reports for %{parent_name}"
       empty: "No analyses have been produced yet."
-      group_titles:
-        legislation/proposal: "Proposals"
-        legislation/question: "Debates"
-        legislation/question_option: "Debates segmented by option"
-        budget: "Budgets"
-        budget/group: "Budget groups"
-        proposal: "Proposals"
-        poll: "Polls"
-        debate: "Debates"
 
     job_index:
       title: "Sensemaker Analyses"
@@ -27,7 +18,7 @@ en:
       hero_title_with_resource: "Discover what citizens are saying about %{resource_type}"
       hero_title_all_proposals: "Discover what citizens are saying about proposals"
       page_intro: "Here you can find reports and summaries to better understand everyone's input, produced using %{link}."
-      hero_resource_types:
+      resource_type_phrases:
         proposal: "this proposal"
         debate: "this debate"
         legislation: "this legislation"
@@ -36,9 +27,22 @@ en:
         poll: "this poll"
         poll_question: "this question"
         budget: "this budget"
+      resource_types:
+        proposal: "proposal"
+        debate: "debate"
+        legislation: "legislation"
+        legislation_question: "question"
+        legislation_proposal: "proposal"
+        legislation_question_option: "option"
+        poll: "poll"
+        poll_question: "question"
+        topic: "topic"
+        budget: "budget"
+        budget_group: "group"
       breadcrumb:
         all_proposals: "All proposals"
         separator: "›"
+      analysed_by: "Analysed by %{resource_type}"
       target_header:
         title: "Understanding conversations"
       contextual_info:
@@ -57,16 +61,6 @@ en:
         what_to_expect: "Reports provide detailed analysis including topic identification, categorization, and insights. Summaries offer concise overviews of key themes and findings."
         more_info: "For more information, see the %{link}."
         more_info_link: "Sensemaker homepage"
-      process:
-        reports_and_summaries_available: "%{reports} and %{summaries} available"
-        report_count:
-          zero: "0 reports"
-          one: "1 report"
-          other: "%{count} reports"
-        summary_count:
-          zero: "0 summaries"
-          one: "1 summary"
-          other: "%{count} summaries"
       script_type:
         report: "Report"
         summary: "Summary"

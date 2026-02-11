@@ -5,7 +5,7 @@
         <p class="lead intro-text"><%= contextual_info_resource_intro %></p>
       </section>
 
-      <section class="reports-section grouped-jobs-section">
+      <section class="reports-section">
         <% if has_jobs? %>
           <% grouped_jobs_for_budget.each do |group| %>
             <h2><%= group[:target_path].present? ? link_to(group[:target_title], group[:target_path]) : group[:target_title] %></h2>
