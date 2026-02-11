@@ -1,3 +1,4 @@
-App.Flaggable.update("<%= dom_id(flaggable) %>",
-  "<%= j render(Shared::FlagActionsComponent.new(flaggable, divider: local_assigns[:divider])) %>"
-);
+var new_flag_content = "<%= j render(Shared::FlagActionsComponent.new(flaggable,
+                                                                      divider: local_assigns[:divider])) %>";
+
+$("#<%= dom_id(flaggable) %> .js-flag-actions").first().html(new_flag_content).foundation();
