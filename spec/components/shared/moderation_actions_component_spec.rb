@@ -65,5 +65,57 @@ describe Shared::ModerationActionsComponent do
         expect(page).to have_button "Hide"
       end
     end
+
+    context "when moderator is the author" do
+      let(:moderator) { create(:moderator) }
+
+      before { sign_in(moderator.user) }
+
+      it "does not show hide button for debates" do
+        debate = create(:debate, author: moderator.user)
+
+        render_inline Shared::ModerationActionsComponent.new(debate)
+
+        expect(page).not_to have_button "Hide"
+        expect(page).not_to have_button "Block author"
+      end
+
+      it "does not show hide button for proposals" do
+        proposal = create(:proposal, author: moderator.user)
+
+        render_inline Shared::ModerationActionsComponent.new(proposal)
+
+        expect(page).not_to have_button "Hide"
+        expect(page).not_to have_button "Block author"
+      end
+
+      it "does not show hide button for budget investments" do
+        investment = create(:budget_investment, author: moderator.user)
+
+        render_inline Shared::ModerationActionsComponent.new(investment)
+
+        expect(page).not_to have_button "Hide"
+        expect(page).not_to have_button "Block author"
+      end
+
+      it "does not show hide button for legislation proposals" do
+        proposal = create(:legislation_proposal, author: moderator.user)
+
+        render_inline Shared::ModerationActionsComponent.new(proposal)
+
+        expect(page).not_to have_button "Hide"
+        expect(page).not_to have_button "Block author"
+      end
+
+      it "does not show hide button for proposal notifications" do
+        proposal = create(:proposal, author: moderator.user)
+        notification = create(:proposal_notification, proposal: proposal)
+
+        render_inline Shared::ModerationActionsComponent.new(notification)
+
+        expect(page).not_to have_button "Hide"
+        expect(page).not_to have_button "Block author"
+      end
+    end
   end
 end

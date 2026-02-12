@@ -1,0 +1,33 @@
+<table class="moderation-table">
+  <thead>
+    <tr>
+      <th><%= model_human_name %></th>
+      <th><%= t("moderation.proposals.index.headers.moderate") %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% records.each do |record| %>
+      <tr id="<%= dom_id(record) %>">
+        <td>
+          <%= title_and_link_for(record) %>
+          <div class="moderation-info">
+            <%= updated_at_date(record) %>
+            <% if flaggable? %>
+              <span>
+                <%= record.flags_count %><span class="icon-flag flag-disable"></span>
+              </span>
+            <% end %>
+            <span><%= record.author.username %></span>
+          </div>
+          <div class="moderation-description">
+            <%= description_for(record) %>
+          </div>
+        </td>
+        <td class="text-center">
+          <%= check_box_tag ids_field_name, record.id, nil, check_box_attributes(record) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
