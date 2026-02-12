@@ -5,31 +5,30 @@
   vertical-align: middle;
 }
 
-@mixin vertical-separator {
+@mixin vertical-separator($color: currentcolor) {
   @include separator;
-  background: currentcolor;
+  background: $color;
   height: 1em;
   opacity: 0.5;
   width: 1px;
 }
 
-@mixin circle-separator {
+@mixin circle-separator($color: currentcolor) {
   @include separator;
-  background: $text-light;
+  background: $color;
   border-radius: 100%;
   height: 0.25em;
   opacity: 1;
   width: 0.25em;
 }
 
-@mixin circle-separators($position: "before") {
+@mixin circle-separators($position: "before", $color: currentcolor) {
   > :not(svg) + * {
     margin-#{$global-left}: 1em;
     position: relative;
 
     &::#{$position} {
-      @include circle-separator;
-      background: currentcolor;
+      @include circle-separator($color: $color);
       #{$global-left}: -1em;
       position: absolute;
       top: 50%;

@@ -14,7 +14,7 @@
 
   .comment & {
     > *::before {
-      @include circle-separator;
+      @include circle-separator($color: $text-light);
     }
   }
 }
