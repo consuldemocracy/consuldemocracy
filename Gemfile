@@ -4,9 +4,9 @@ ruby file: ".ruby-version"
 
 gem "rails", "~> 7.2.3"
 
-gem "acts-as-taggable-on", "~> 12.0.0"
+gem "acts-as-taggable-on", "~> 13.0.0"
 gem "acts_as_votable", "~> 0.14.0"
-gem "ahoy_matey", "~> 5.4.0"
+gem "ahoy_matey", "~> 5.4.1"
 gem "airbrake", "~> 13.0.5"
 gem "ancestry", "~> 4.3.3"
 gem "audited", "~> 5.8.0"
@@ -17,6 +17,7 @@ gem "caxlsx", "~> 4.2.0"
 gem "caxlsx_rails", "~> 0.6.4"
 gem "ckeditor", "~> 4.3.0"
 gem "cocoon", "~> 1.2.15"
+gem "connection_pool", "~> 2.5" # TODO: remove after upgrading to Rails 8.0
 gem "csv", "~> 3.3.5"
 gem "daemons", "~> 1.4.1"
 gem "dalli", "~> 3.2.8"
@@ -34,7 +35,7 @@ gem "groupdate", "~> 6.7.0"
 gem "image_processing", "~> 1.14.0"
 gem "invisible_captcha", "~> 2.3.0"
 gem "kaminari", "~> 1.2.2"
-gem "mini_magick", "~> 4.13.2"
+gem "mini_magick", "~> 5.3.1"
 gem "omniauth", "~> 2.1.3"
 gem "omniauth-facebook", "~> 10.0.0"
 gem "omniauth-google-oauth2", "~> 1.2.1"
@@ -42,13 +43,13 @@ gem "omniauth-rails_csrf_protection", "~> 1.0.2"
 gem "omniauth-saml", "~> 2.2.4"
 gem "omniauth-twitter", "~> 1.4.0"
 gem "omniauth_openid_connect", "~> 0.8.0"
-gem "paranoia", "~> 3.0.1"
+gem "paranoia", "~> 3.1.0"
 gem "pg", "~> 1.5.9"
 gem "pg_search", "~> 2.3.7"
 gem "puma", "~> 6.6.1"
 gem "recipient_interceptor", "~> 0.3.3"
 gem "redcarpet", "~> 3.6.1"
-gem "responders", "~> 3.1.1"
+gem "responders", "~> 3.2.0"
 gem "rinku", "~> 2.0.6", require: "rails_rinku"
 gem "ros-apartment", "~> 3.2.0", require: "apartment"
 gem "ruby_llm", "~> 1.6.4"
@@ -106,7 +107,7 @@ group :development do
   gem "pronto-stylelint", "~> 0.11.1", require: false
   gem "rubocop", "~> 1.81.7", require: false
   gem "rubocop-capybara", "~> 2.22.1", require: false
-  gem "rubocop-factory_bot", "~> 2.27.1", require: false
+  gem "rubocop-factory_bot", "~> 2.28.0", require: false
   gem "rubocop-performance", "~> 1.26.1", require: false
   gem "rubocop-rails", "~> 2.33.4", require: false
   gem "rubocop-rspec", "~> 3.7.0", require: false

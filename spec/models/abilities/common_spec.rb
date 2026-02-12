@@ -120,6 +120,12 @@ describe Abilities::Common do
     it { should be_able_to(:flag, proposal)   }
     it { should be_able_to(:unflag, proposal) }
 
+    it { should be_able_to(:flag, legislation_proposal)   }
+    it { should be_able_to(:unflag, legislation_proposal) }
+
+    it { should be_able_to(:flag, investment_in_accepting_budget)   }
+    it { should be_able_to(:unflag, investment_in_accepting_budget) }
+
     describe "own content" do
       it { should_not be_able_to(:flag, own_comment)   }
       it { should_not be_able_to(:unflag, own_comment) }
@@ -129,6 +135,12 @@ describe Abilities::Common do
 
       it { should_not be_able_to(:flag, own_proposal)   }
       it { should_not be_able_to(:unflag, own_proposal) }
+
+      it { should_not be_able_to(:flag, own_legislation_proposal)   }
+      it { should_not be_able_to(:unflag, own_legislation_proposal) }
+
+      it { should_not be_able_to(:flag, own_investment_in_accepting_budget)   }
+      it { should_not be_able_to(:unflag, own_investment_in_accepting_budget) }
     end
   end
 

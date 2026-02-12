@@ -15,7 +15,7 @@ class Moderation::UsersController < Moderation::BaseController
   def block
     block_user
 
-    redirect_with_query_params_to index_path_options, { notice: I18n.t("moderation.users.notice_block") }
+    redirect_to resources_index_path, { notice: I18n.t("moderation.users.notice_block") }
   end
 
   private
@@ -34,16 +34,35 @@ class Moderation::UsersController < Moderation::BaseController
       Activity.log(current_user, :block, @user)
     end
 
-    def index_path_options
+    def resources_index_path
       if request.referer
-        referer_params = Rails.application.routes.recognize_path(request.referer)
+        if referer_controller == "comments" && referer_params[:id]
+          comment = Comment.with_hidden.find_by(id: referer_params[:id])
+          polymorphic_path(comment.commentable)
+        else
+          path_with_query_params(referer_index_options)
+        end
+      else
+        path_with_query_params({ action: :index })
+      end
+    end
 
+    def referer_params
+      Rails.application.routes.recognize_path(request.referer)
+    end
+
+    def referer_controller
+      referer_params[:controller]
+    end
+
+    def referer_index_options
+      if referer_controller == "legislation/proposals" && referer_params[:process_id]
+        { controller: "/legislation/processes", id: referer_params[:process_id], action: :proposals }
+      else
         referer_params.except(:id).merge({
-          controller: "/#{referer_params[:controller]}",
+          controller: "/#{referer_controller}",
           action: :index
         })
-      else
-        { action: :index }
       end
     end
 end

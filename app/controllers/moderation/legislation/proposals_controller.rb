@@ -16,4 +16,8 @@ class Moderation::Legislation::ProposalsController < Moderation::BaseController
     def resource_model
       Legislation::Proposal
     end
+
+    def resource_name
+      "proposal"
+    end
 end
