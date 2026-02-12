@@ -12,6 +12,28 @@ describe Llm::Config do
 
       expect { Llm::Config.context }.not_to raise_error
     end
+
+    it "sets GOOGLE_APPLICATION_CREDENTIALS when google_application_credentials is present" do
+      stub_secrets(
+        llm: {
+          openai_api_key: "1234",
+          google_application_credentials: "/tmp/dummy.json"
+        }
+      )
+
+      config = instance_double(RubyLLM::Configuration)
+      allow(config).to receive(:openai_api_key=)
+      context = double("RubyLLM::Context", config: config)
+      expect(RubyLLM).to receive(:context).and_yield(config).and_return(context)
+
+      original = ENV["GOOGLE_APPLICATION_CREDENTIALS"]
+      begin
+        Llm::Config.context
+        expect(ENV["GOOGLE_APPLICATION_CREDENTIALS"]).to eq("/tmp/dummy.json")
+      ensure
+        ENV["GOOGLE_APPLICATION_CREDENTIALS"] = original
+      end
+    end
   end
 
   describe ".providers" do
