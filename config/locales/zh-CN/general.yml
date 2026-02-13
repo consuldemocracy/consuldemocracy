@@ -336,7 +336,6 @@ zh-CN:
         zero: 没有投票
         other: "%{count} 个投票"
       supports_necessary: "需要%{number} 个支持"
-      total_percent: 100%
       archived: "此提议已存档，无法再收集支持。"
       successful: "此提议已达到所需要的支持。"
     show:
