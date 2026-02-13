@@ -41,9 +41,6 @@ ca:
         heading: Partida
         dossier: Informe
         edit_dossier: Editar informe
-        price: Cost
-        price_first_year: Cost en el primer any
-        currency: "€"
         feasibility: Viabilitat
         feasible: Viable
         unfeasible: No viables
