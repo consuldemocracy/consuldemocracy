@@ -41,9 +41,6 @@ tr:
         heading: Bütçe kalemi
         dossier: Dosya
         edit_dossier: Dosyayı düzenle
-        price: Maliyet
-        price_first_year: İlk yılın maliyeti
-        currency: "€"
         feasibility: Uygulanabilirlik
         feasible: Uygulanabilir bulunmuş
         unfeasible: Uygulanabilir bulunmamış
