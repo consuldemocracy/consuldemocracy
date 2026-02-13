@@ -321,7 +321,6 @@ id:
         zero: Tidak ada suara
         other: "1 bulan\n\n%{count} bulan"
       supports_necessary: "%{number} mendukung diperlukan"
-      total_percent: 100%
       archived: "Proposal ini telah Diarsipkan dan tidak dapat mengumpulkan mendukung."
     show:
       code: "Proposal kode:"
