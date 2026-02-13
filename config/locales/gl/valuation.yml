@@ -41,9 +41,6 @@ gl:
         heading: Partida do orzamento
         dossier: Informe
         edit_dossier: Editar informe
-        price: Custo
-        price_first_year: Custo no primeiro ano
-        currency: "€"
         feasibility: Viabilidade
         feasible: Viable
         unfeasible: Non viables
