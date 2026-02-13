@@ -403,7 +403,6 @@ tr:
         one: 1 oy
         other: "%{count} oy"
       supports_necessary: "%{number} destek gerekli"
-      total_percent: '%100'
       archived: "Bu önerge arşivlenmiş olduğundan destek alamaz."
       successful: "Bu önerge gerekli desteği aldı."
       selected: "Seçilmiş önerge"
