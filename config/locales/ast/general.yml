@@ -285,7 +285,6 @@ ast:
         one: 1 voto
         other: "%{count} votos"
       supports_necessary: "%{number} apoyos necesarios"
-      total_percent: 100%
       archived: "Esta propuesta ha sido archivada y ya no puede recoger apoyos."
     show:
       code: "Código de la propuesta:"
