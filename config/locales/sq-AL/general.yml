@@ -345,7 +345,6 @@ sq:
         one: 1 Votë
         other: "%{count} Vota"
       supports_necessary: "%{number} mbështetje nevojiten"
-      total_percent: 100%
       archived: "Ky propozim është arkivuar dhe nuk mund të mbledhë mbështetje. "
       successful: "Ky propozim ka arritur mbështetjen e kërkuar."
     show:
