@@ -196,7 +196,6 @@ fi:
         zero: Ei ääniä
         one: 1 ääni
         other: "%{count} ääntä"
-      total_percent: 100%
     show:
       comments_tab: Kommentit
       notifications_tab: Ilmoitukset
