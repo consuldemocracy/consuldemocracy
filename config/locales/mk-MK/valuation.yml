@@ -41,9 +41,6 @@ mk:
         heading: Наслов
         dossier: Досие
         edit_dossier: Измени досие
-        price: Цена
-        price_first_year: Цена за време на првата година
-        currency: "евра"
         feasibility: Изводливост
         feasible: Изводливо
         unfeasible: Неизводливо
