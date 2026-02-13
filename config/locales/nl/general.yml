@@ -404,7 +404,6 @@ nl:
         other: "%{count} stemmen"
       supports_necessary: "%{number} steunbetuigingen nodig"
       reason_for_supports_necessary: ""
-      total_percent: 100%
       archived: "Dit voorstel is gearchiveerd en kan niet worden gesteund."
       successful: "Dit voorstel heeft de vereiste ondersteuning bereikt."
       selected: "Geselecteerd voorstel"
