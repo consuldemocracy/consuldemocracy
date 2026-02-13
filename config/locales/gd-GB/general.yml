@@ -421,7 +421,6 @@ gd:
         few: "%{count} bhòtaichean"
         other: "%{count} bhòtaichean"
       supports_necessary: "%{number} de chomharran taic a dhìth"
-      total_percent: 100%
       archived: "Chaidh am moladh seo a chur dhan tasglann agus chan urrainn dha comharran taic a chruinneachadh tuilleadh."
       successful: "Fhuair am moladh seo an ìre de thaic a tha a dhìth."
       selected: "Moladh taghte"
