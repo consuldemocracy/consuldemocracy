@@ -40,9 +40,6 @@ eu:
         heading: Elementua
         dossier: Txostena
         edit_dossier: Txostena editatu
-        price: Kostua
-        price_first_year: Lehen urteko kostua
-        currency: "€"
         feasibility: Bideragarritasuna
         feasible: Bideragarria
         unfeasible: Bideragabezina
