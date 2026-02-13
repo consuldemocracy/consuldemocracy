@@ -384,7 +384,6 @@ oc:
         one: 1 vòt
         other: "%{count} vòts"
       supports_necessary: "%{number} d'avals necessaris"
-      total_percent: 100%
       archived: "Aquela proposicion es estada arxivada e pòt pas mai amassar d'avals."
       successful: "Aquela proposicion es arribada als supòrts necessaris."
       selected: "Proposicion seleccionada"
