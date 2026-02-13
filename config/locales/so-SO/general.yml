@@ -345,7 +345,6 @@ so:
         one: 1 Cod
         other: "%{count} codadka"
       supports_necessary: "%{number} taageerada loo baahan yahay"
-      total_percent: 100%
       archived: "Soo jeedintaas waa la diiwaangeliyey oo ma soo qaadan karo taageerooyinka."
       successful: "Hindisahani wuxuu gaadhay taageerooyinka loo baahan yahay."
     show:
