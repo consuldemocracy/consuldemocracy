@@ -395,7 +395,6 @@ ne:
         one: १ मत
         other: "%{count} मतहरू"
       supports_necessary: "%{number} समर्थन आवश्यक छ"
-      total_percent: १००%
       archived: "यो प्रस्ताव अभिलेख गरिएको छ र समर्थन सङ्कलन गर्न सक्दैन।"
       successful: "यो प्रस्ताव आवश्यक समर्थन पुगेको छ।"
       selected: "चयन गरिएका प्रस्ताव"
