@@ -350,7 +350,6 @@ val:
         one: 1 vot
         other: "%{count} vots"
       supports_necessary: "%{number} avals necessaris"
-      total_percent: 100%
       archived: "Aquesta proposta ha sigut arxivada i ja no pot recollir avals."
       successful: "Aquesta proposta ha asolit els avals necesaris."
     show:
