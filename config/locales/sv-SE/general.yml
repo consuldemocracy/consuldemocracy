@@ -408,7 +408,6 @@ sv:
         one: 1 röst
         other: "%{count} röster"
       supports_necessary: "behöver stöd från %{number} personer"
-      total_percent: 100 %
       archived: "Förslaget har arkiverats och kan inte längre stödjas."
       successful: "Förslaget har fått tillräckligt med stöd."
       selected: "Valt förslag"
