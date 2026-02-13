@@ -8,7 +8,7 @@ describe "Proposal ballots" do
 
     successful_proposals.each do |proposal|
       within("#proposal_#{proposal.id}_votes .supports .progress") do
-        expect(page).to have_content "100% / 100%"
+        expect(page).to have_content "100%", exact: true
       end
     end
   end
@@ -19,7 +19,7 @@ describe "Proposal ballots" do
     successful_proposals.each do |proposal|
       visit proposal_path(proposal)
       within("#proposal_#{proposal.id}_votes .supports .progress") do
-        expect(page).to have_content "100% / 100%"
+        expect(page).to have_content "100%", exact: true
       end
     end
   end

@@ -1,5 +1,5 @@
 <div class="supports text-center">
-  <%= render "proposals/supports", proposal: proposal %>
+  <%= render Proposals::SupportsComponent.new(proposal) %>
 
   <div class="in-favor">
     <% if voted? %>

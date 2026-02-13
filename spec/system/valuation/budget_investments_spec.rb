@@ -468,14 +468,14 @@ describe "Valuation budget investments" do
         expect(page).not_to have_css "input[id='budget_investment_feasibility_undecided']"
         expect(page).not_to have_css "textarea[id='budget_investment_unfeasibility_explanation']"
         expect(page).not_to have_css "input[name='budget_investment[valuation_finished]']"
-        expect(page).to have_content("Valuation finished")
-        expect(page).to have_content("Feasibility: Feasible")
-        expect(page).to have_content("Feasibility explanation: Explanation is explanatory")
-        expect(page).to have_content("Price (€): 999")
-        expect(page).to have_content("Cost during the first year: 666")
-        expect(page).to have_content("Price explanation: Democracy is not cheap")
-        expect(page).to have_content("Time scope: 1 light year")
-        expect(page).not_to have_button("Save changes")
+        expect(page).to have_content "Valuation finished"
+        expect(page).to have_content "Feasibility: Feasible"
+        expect(page).to have_content "Feasibility explanation: Explanation is explanatory"
+        expect(page).to have_content "Price (€): 999"
+        expect(page).to have_content "Cost during the first year (€): 666"
+        expect(page).to have_content "Price explanation: Democracy is not cheap"
+        expect(page).to have_content "Time scope: 1 light year"
+        expect(page).not_to have_button "Save changes"
       end
     end
 

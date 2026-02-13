@@ -41,9 +41,8 @@ es:
         heading: Partida
         dossier: Informe
         edit_dossier: Editar informe
-        price: Coste
-        price_first_year: Coste en el primer año
-        currency: "€"
+        price_with_currency: Coste (%{currency})
+        price_first_year_with_currency: Coste en el primer año (%{currency})
         feasibility: Viabilidad
         feasible: Viable
         unfeasible: Inviable
