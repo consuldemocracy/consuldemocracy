@@ -5,15 +5,18 @@ describe Polls::Results::QuestionComponent do
     let(:question) { create(:poll_question, :yes_no) }
     let(:option_yes) { question.question_options.find_by(title: "Yes") }
     let(:option_no) { question.question_options.find_by(title: "No") }
+    let(:option_other) { create(:poll_question_option, question: question, title: "Other", open_text: true) }
 
     it "renders results table content" do
-      create(:poll_answer, question: question, option: option_yes)
-      create(:poll_answer, question: question, option: option_no)
+      create_list(:poll_answer, 2, question: question, option: option_yes)
+      create_list(:poll_answer, 2, question: question, option: option_no)
+      create(:poll_answer, question: question, option: option_other)
 
       render_inline Polls::Results::QuestionComponent.new(question)
 
-      expect(page).to have_table with_rows: [{ "Most voted answer: Yes" => "1 (50.0%)",
-                                               "No" => "1 (50.0%)" }]
+      expect(page).to have_table with_rows: [{ "Most voted answer: Yes" => "2 (40.0%)",
+                                               "No" => "2 (40.0%)",
+                                               "Other" => "1 (20.0%)" }]
 
       page.find("table") do |table|
         expect(table).to have_css "th.win", count: 1

@@ -646,6 +646,7 @@ es:
     description:
       multiple: "Puedes seleccionar un máximo de %{maximum} respuestas."
     read_more_about: "Leer más:"
+    open_text_aria_label: "Especificar respuesta para %{option}"
   proposal_notifications:
     new:
       title: "Enviar notificación"

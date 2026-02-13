@@ -51,6 +51,63 @@ describe "Poll Votation Type" do
     expect(page).to have_button "Vote"
   end
 
+  scenario "Unique and multiple with open text options" do
+    create(:poll_question_unique, :yes_no_open_text, poll: poll, title: "Is it that bad?")
+    create(:poll_question_multiple, :abc_open_text, poll: poll, max_votes: 2, title: "What do you want?")
+
+    visit poll_path(poll)
+
+    within_fieldset("Is it that bad?") do
+      expect(page).to have_field "Specify answer for Yes", type: :textarea, disabled: false
+      expect(page).to have_field "Specify answer for No", type: :textarea, disabled: false
+
+      choose "Yes"
+
+      expect(page).to have_field "Specify answer for Yes", type: :textarea, disabled: false
+      expect(page).to have_field "Specify answer for No", type: :textarea, disabled: true
+
+      fill_in "Specify answer for Yes", with: "because yes"
+    end
+
+    within_fieldset("What do you want?") do
+      expect(page).to have_field "Specify answer for Answer A", type: :textarea, disabled: false
+      expect(page).to have_field "Specify answer for Answer B", type: :textarea, disabled: false
+      expect(page).to have_field "Specify answer for Answer C", type: :textarea, disabled: false
+
+      check "Answer A"
+      check "Answer C"
+
+      expect(page).to have_field "Specify answer for Answer A", type: :textarea, disabled: false
+      expect(page).to have_field "Specify answer for Answer B", type: :textarea, disabled: true
+      expect(page).to have_field "Specify answer for Answer C", type: :textarea, disabled: false
+
+      fill_in "Specify answer for Answer A", with: "because A"
+      fill_in "Specify answer for Answer C", with: "because C"
+    end
+
+    click_button "Vote"
+
+    expect(page).to have_content "Thank you for voting!"
+    expect(page).to have_content "You have already participated in this poll. " \
+                                 "If you vote again it will be overwritten."
+
+    within_fieldset("Is it that bad?") do
+      expect(page).to have_field "Yes", type: :radio, checked: true
+      expect(page).to have_field "Specify answer for Yes", type: :textarea, with: "because yes"
+      expect(page).to have_field "No", type: :radio, checked: false
+    end
+
+    within_fieldset("What do you want?") do
+      expect(page).to have_field "Answer A", type: :checkbox, checked: true
+      expect(page).to have_field "Specify answer for Answer A", type: :textarea, with: "because A"
+      expect(page).to have_field "Answer B", type: :checkbox, checked: false, disabled: true
+      expect(page).to have_field "Answer C", type: :checkbox, checked: true
+      expect(page).to have_field "Specify answer for Answer C", type: :textarea, with: "because C"
+    end
+
+    expect(page).to have_button "Vote"
+  end
+
   scenario "Maximum votes has been reached" do
     question = create(:poll_question_multiple, :abc, poll: poll, max_votes: 2)
     create(:poll_answer, author: author, question: question, answer: "Answer A")
@@ -82,21 +139,25 @@ describe "Poll Votation Type" do
   end
 
   scenario "Too many answers", :no_js do
-    create(:poll_question_multiple, :abcde, poll: poll, max_votes: 2, title: "Which ones are correct?")
+    question = create(:poll_question_multiple, :abcde, poll: poll, max_votes: 2, title: "Which are correct?")
+    option_e = question.question_options.find_by(title: "Answer E")
+    option_e.update!(open_text: true)
 
     visit poll_path(poll)
     check "Answer A"
     check "Answer B"
-    check "Answer D"
+    check "Answer E"
+    fill_in "Specify answer for Answer E", with: "my custom answer"
     click_button "Vote"
 
-    within_fieldset("Which ones are correct?") do
+    within_fieldset("Which are correct?") do
       expect(page).to have_content "you've selected 3 answers, but the maximum you can select is 2"
       expect(page).to have_field "Answer A", type: :checkbox, checked: true
       expect(page).to have_field "Answer B", type: :checkbox, checked: true
       expect(page).to have_field "Answer C", type: :checkbox, checked: false
-      expect(page).to have_field "Answer D", type: :checkbox, checked: true
-      expect(page).to have_field "Answer E", type: :checkbox, checked: false
+      expect(page).to have_field "Answer D", type: :checkbox, checked: false
+      expect(page).to have_field "Answer E", type: :checkbox, checked: true
+      expect(page).to have_field "Specify answer for Answer E", type: :textarea, with: "my custom answer"
     end
 
     expect(page).not_to have_content "Thank you for voting!"
@@ -105,7 +166,7 @@ describe "Poll Votation Type" do
 
     expect(page).not_to have_content "but the maximum you can select"
 
-    within_fieldset("Which ones are correct?") do
+    within_fieldset("Which are correct?") do
       expect(page).to have_field type: :checkbox, checked: false, count: 5
     end
   end

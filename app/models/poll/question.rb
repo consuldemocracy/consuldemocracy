@@ -80,7 +80,11 @@ class Poll::Question < ApplicationRecord
     if accepts_options?
       option = question_options.find(option_id)
       answer.option = option
-      answer.answer = option.title
+      if option&.allows_custom_text?
+        answer.answer = answer_text
+      else
+        answer.answer = option.title
+      end
     else
       answer.answer = answer_text
     end

@@ -1171,6 +1171,11 @@ en:
           documents_list: Documents list
           document_title: Title
           document_actions: Actions
+          open_text:
+            field: Open text
+            true: "Yes"
+            false: "No"
+            help: "Allows users to write their own answer when selecting this option. Useful for options like 'Other (please specify)'."
       no_edit: "Once the poll has started it will not be possible to create, edit or delete questions, answers or any content associated with the poll."
     answers:
       new:

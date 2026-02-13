@@ -1,23 +1,17 @@
 <% if question.open? %>
   <div class="poll-question-open-ended">
     <%= fields_for "web_vote[#{question.id}]" do |f| %>
-      <%= f.text_area :answer, label: question.title, value: existing_answer, rows: 3 %>
+      <%= f.text_area :answer, label: question.title, value: existing_answer, rows: 3, maxlength: Poll::Answer.answer_max_length %>
     <% end %>
   </div>
 <% else %>
   <fieldset <%= fieldset_attributes %>>
     <legend><%= question.title %></legend>
 
-    <% if multiple_choice? %>
-      <%= multiple_choice_help_text %>
+    <%= multiple_choice_help_text if multiple_choice? %>
 
-      <% question.question_options.each do |option| %>
-        <%= multiple_choice_field(option) %>
-      <% end %>
-    <% else %>
-      <% question.question_options.each do |option| %>
-        <%= single_choice_field(option) %>
-      <% end %>
+    <% question.question_options.each do |option| %>
+      <%= choice_field(option) %>
     <% end %>
 
     <% if question.options_with_read_more? %>

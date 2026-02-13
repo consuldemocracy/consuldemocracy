@@ -198,5 +198,34 @@ describe Poll::WebVote do
         expect(poll.reload.voters.size).to eq 1
       end
     end
+
+    context "text answer options" do
+      before { option_yes.update!(open_text: true) }
+
+      it "stores text for the selected option when provided" do
+        web_vote.update(
+          question.id.to_s => {
+            option_id: option_yes.id.to_s,
+            answer: { option_yes.id.to_s => "  hello  " }
+          }
+        )
+        answer = question.reload.answers.find_by(author: user, option: option_yes)
+        expect(answer).to be_present
+        expect(answer.answer).to eq "hello"
+      end
+
+      it "ignores custom text for non-open-text options" do
+        option_yes.update(open_text: false)
+        option_no.update(open_text: true)
+        web_vote.update(
+          question.id.to_s => {
+            option_id: option_yes.id.to_s,
+            answer: { option_no.id.to_s => "should be ignored" }
+          }
+        )
+        answer = question.reload.answers.find_by(author: user, option: option_yes)
+        expect(answer.answer).to eq option_yes.title
+      end
+    end
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_10_09_085528) do
+ActiveRecord::Schema[7.2].define(version: 2025_12_03_161647) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -1018,7 +1018,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_10_09_085528) do
     t.index ["author_id"], name: "index_poll_answers_on_author_id"
     t.index ["option_id", "author_id"], name: "index_poll_answers_on_option_id_and_author_id", unique: true
     t.index ["option_id"], name: "index_poll_answers_on_option_id"
-    t.index ["question_id", "answer"], name: "index_poll_answers_on_question_id_and_answer"
     t.index ["question_id"], name: "index_poll_answers_on_question_id"
   end
 
@@ -1116,6 +1115,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_10_09_085528) do
     t.integer "question_id"
     t.integer "given_order", default: 1
     t.boolean "most_voted", default: false
+    t.boolean "open_text", default: false
     t.index ["question_id"], name: "index_poll_question_answers_on_question_id"
   end
 
