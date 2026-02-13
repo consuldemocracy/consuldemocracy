@@ -395,7 +395,6 @@ da:
         one: 1 stemme
         other: "%{count} stemmer"
       supports_necessary: "Skal have %{number} brugere, der bakker forslaget op"
-      total_percent: 100%
       archived: "Forslaget er blevet arkiveret og kan derfor ikke længere modtage støtte."
       successful: "Forslaget har opnået den nødvendige støtte."
       selected: "Valgte forslag"
