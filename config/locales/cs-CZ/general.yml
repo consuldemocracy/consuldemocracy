@@ -424,7 +424,6 @@ cs:
         many: "%{count} hlasů"
         other: "%{count} hlasů"
       supports_necessary: "Potřebuje podporu %{number} lidí"
-      total_percent: 100%
       archived: "Tento návrh byl archivován a nelze jej již podpořit."
       successful: "Tento návrh dosáhl požadované podpory."
       selected: "Vybraný návrh"
