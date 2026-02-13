@@ -374,7 +374,6 @@ bs:
         few: "%{count} glasa/glasova"
         other: "%{count} glasa/glasova"
       supports_necessary: "Potrebno %{number} glasova podrške"
-      total_percent: 100%
       archived: "Prijedlog je arhiviran, nije moguće dati podršku."
       successful: "Prijedlog je dobio potrebnu podršku."
     show:
