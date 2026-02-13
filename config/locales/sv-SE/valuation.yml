@@ -41,6 +41,8 @@ sv:
         heading: Område
         dossier: Rapport
         edit_dossier: Redigera rapport
+        price_with_currency: Pris (%{currency})
+        price_first_year_with_currency: Kostnad under första året (%{currency})
         feasibility: Genomförbarhet
         feasible: Genomförbart
         unfeasible: Ej genomförbart
