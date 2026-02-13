@@ -1,0 +1,19 @@
+.flag-actions {
+
+  button {
+    @include link;
+  }
+
+  .flag-disable,
+  .flag-active {
+    line-height: 0;
+  }
+
+  .flag-disable {
+    color: $text-medium;
+  }
+
+  .flag-active {
+    color: $delete;
+  }
+}

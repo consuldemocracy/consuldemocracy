@@ -24,7 +24,6 @@ class Legislation::AnnotationsController < Legislation::BaseController
     end
 
     @comment_tree = MergedCommentTree.new(annotations, params[:page], @current_order)
-    set_comment_flags(@comment_tree.comments)
   end
 
   def create

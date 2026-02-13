@@ -25,7 +25,7 @@ shared_examples "flaggable" do |factory_name, admin: false|
     login_as(user)
     visit path
 
-    within "##{dom_id(flaggable)} .flag-content" do
+    within "##{dom_id(flaggable)} .flag-actions" do
       click_button "Flag as inappropriate"
       within("form") { click_button "Flag as inappropriate" }
 
@@ -36,7 +36,7 @@ shared_examples "flaggable" do |factory_name, admin: false|
 
     refresh
 
-    within "##{dom_id(flaggable)} .flag-content" do
+    within "##{dom_id(flaggable)} .flag-actions" do
       expect(page).to have_button "Unflag", visible: :hidden
       expect(page).not_to have_button "Flag as inappropriate", visible: :all
     end
@@ -48,7 +48,7 @@ shared_examples "flaggable" do |factory_name, admin: false|
     login_as(user)
     visit path
 
-    within "##{dom_id(flaggable)} .flag-content" do
+    within "##{dom_id(flaggable)} .flag-actions" do
       expect(page).to have_button "Unflag"
 
       click_button "Unflag"
@@ -61,7 +61,7 @@ shared_examples "flaggable" do |factory_name, admin: false|
 
     visit path
 
-    within "##{dom_id(flaggable)} .flag-content" do
+    within "##{dom_id(flaggable)} .flag-actions" do
       expect(page).to have_button "Flag as inappropriate", visible: :hidden
       expect(page).not_to have_button "Unflag", visible: :all
     end
@@ -71,7 +71,7 @@ shared_examples "flaggable" do |factory_name, admin: false|
     login_as(user)
     visit path
 
-    within "##{dom_id(flaggable)} .flag-content" do
+    within "##{dom_id(flaggable)} .flag-actions" do
       click_button "Flag as inappropriate"
       within("form") { click_button "Flag as inappropriate" }
 
@@ -85,7 +85,7 @@ shared_examples "flaggable" do |factory_name, admin: false|
 
     visit path
 
-    within "##{dom_id(flaggable)} .flag-content" do
+    within "##{dom_id(flaggable)} .flag-actions" do
       expect(page).to have_button "Flag as inappropriate", visible: :hidden
       expect(page).not_to have_button "Unflag", visible: :all
     end
@@ -97,14 +97,14 @@ shared_examples "flaggable" do |factory_name, admin: false|
     login_as(user)
     visit path
 
-    within "##{dom_id(flaggable)} > .comment-body .flag-content" do
+    within "##{dom_id(flaggable)} > .comment-body .flag-actions" do
       click_button "Flag as inappropriate"
       within("form") { click_button "Flag as inappropriate" }
 
       expect(page).to have_button "Unflag"
     end
 
-    within "##{dom_id(child_comment)} .flag-content" do
+    within "##{dom_id(child_comment)} .flag-actions" do
       expect(page).not_to have_button "Unflag"
     end
   end

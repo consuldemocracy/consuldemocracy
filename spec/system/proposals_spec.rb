@@ -127,7 +127,7 @@ describe "Proposals" do
     expect(page).to have_content I18n.l(proposal.created_at.to_date)
     expect(page).to have_avatar "M"
     expect(page.html).to include "<title>#{proposal.title}</title>"
-    expect(page).not_to have_css ".js-flag-actions"
+    expect(page).not_to have_css ".flag-actions"
     expect(page).not_to have_css ".js-follow"
   end
 
