@@ -40,9 +40,6 @@ zh-TW:
         heading: 標題
         dossier: 檔案
         edit_dossier: 編輯檔案
-        price: 價格
-        price_first_year: 第一年的成本
-        currency: "€"
         feasibility: 可行性
         feasible: 可行
         unfeasible: 不可行
