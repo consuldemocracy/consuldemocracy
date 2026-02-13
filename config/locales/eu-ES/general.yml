@@ -337,7 +337,6 @@ eu:
         one: Bozka 1
         other: "%{count} bozka"
       supports_necessary: "%{number} babes behar dira"
-      total_percent: '%100'
       archived: "Proposamen hau artxibatu egin da eta ezin du babesik jaso."
     show:
       code: "Proposamen kodea:"
