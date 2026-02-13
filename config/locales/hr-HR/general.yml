@@ -397,7 +397,6 @@ hr:
         few: "%{count} glasove"
         other: "%{count} glasove"
       supports_necessary: "Potrebno je %{number} potpora"
-      total_percent: 100%
       archived: "Ovaj je prijedlog arhiviran i ne može više prikupljati podršku."
       successful: "Prijedlog je dobio dovoljno potpore."
       selected: "Odabrani prijedlog"
