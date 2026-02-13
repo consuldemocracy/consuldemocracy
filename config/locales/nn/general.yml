@@ -375,7 +375,6 @@ nn:
         one: 1 stemme
         other: "%{count} stemmer"
       supports_necessary: "%{number} støtter trengs"
-      total_percent: 100%
       archived: "Dette forslaget har blitt arkivert og kan ikke samle støtte."
       successful: "Dette forslaget har nådd nok støtte."
       selected: "Valgt forslag"
