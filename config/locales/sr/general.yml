@@ -397,7 +397,6 @@ sr:
         few: "%{count} гласова"
         other: "%{count} гласова"
       supports_necessary: "%{number} потребне подршке"
-      total_percent: 100%
       archived: "Овај предлог је архивиран те не може да прикупља подршку."
       successful: "Овај предлог је остварио потребну подршку."
       selected: "Одаберите предлог"
