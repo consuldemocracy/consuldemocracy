@@ -402,7 +402,6 @@ ro:
         few: "%{count} voturi"
         other: "%{count} voturi"
       supports_necessary: "%{number} suporturi necesare"
-      total_percent: 100%
       archived: "Această propunere a fost arhivată și nu poate colecta susțineri."
       successful: "Această propunere a ajuns la numărul de susțineri necesare."
       selected: "Propunere selectată"
