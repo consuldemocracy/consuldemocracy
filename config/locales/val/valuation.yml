@@ -41,9 +41,6 @@ val:
         heading: Partida pressupostària
         dossier: Informe
         edit_dossier: Editar informe
-        price: Cost
-        price_first_year: Cost el primer any
-        currency: "€"
         feasibility: Viabilitat
         feasible: Viable
         unfeasible: Inviable
