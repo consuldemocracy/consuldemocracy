@@ -395,7 +395,6 @@ de:
         one: 1 Stimme
         other: "%{count} Stimmen"
       supports_necessary: "%{number} Unterstützungen benötigt"
-      total_percent: 100 %
       archived: "Dieser Vorschlag wurde archiviert und nicht mehr unterstützt werden."
       successful: "Dieser Vorschlag hat die erforderliche Unterstützung erreicht."
       selected: "Ausgewählter Vorschlag"
