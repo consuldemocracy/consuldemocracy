@@ -398,7 +398,6 @@ gl:
         one: 1 voto
         other: "%{count} votos"
       supports_necessary: "%{number} apoios necesarios"
-      total_percent: 100%
       archived: "Esta proposta foi arquivada e xa non pode recoller apoios."
       successful: "Esta proposta acadou os apoios necesarios."
       selected: "Propostas seleccionadas"
