@@ -414,7 +414,6 @@ ar:
         many: "%{count} أصوات"
         other: "%{count} أصوات"
       supports_necessary: "بحاجة إلى %{number} دعم"
-      total_percent: 100%
       archived: "تمت أرشفة هذا الاقتراح ولا يمكنه جمع الدعم."
       successful: "لقد وصل هذا الاقتراح إلى الدعم المطلوب."
       selected: "المقترح المختار"
