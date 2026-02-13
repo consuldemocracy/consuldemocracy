@@ -335,7 +335,6 @@ zh-TW:
         zero: 沒有投票
         other: "%{count} 個投票"
       supports_necessary: "需要%{number} 個支持"
-      total_percent: 100%
       archived: "此建議已存檔，無法再收集支持。"
       successful: "此建議已得到所需的支持。"
     show:
