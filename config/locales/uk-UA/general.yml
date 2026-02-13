@@ -410,7 +410,6 @@ uk-UA:
         many: "%{count} голосів"
         other: "%{count} голосів"
       supports_necessary: "необхідно %{number} підтримань"
-      total_percent: 100%
       archived: "Ця пропозиція заархівована і не збирає підтримки."
       successful: "Ця пропозиція отримала достатню підтримку."
       selected: "Вибрана пропозиція"
