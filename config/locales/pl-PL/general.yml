@@ -370,7 +370,6 @@ pl:
         many: "%{count} głosów"
         other: "%{count} głosów"
       supports_necessary: "%{number} wymaganych popierających"
-      total_percent: 100%
       archived: "Niniejszy wniosek został zarchiwizowany i nie może zbierać poparcia."
       successful: "Ten wniosek osiągnął wymagane poparcie."
     show:
