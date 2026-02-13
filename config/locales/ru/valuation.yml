@@ -41,9 +41,6 @@ ru:
         heading: Раздел
         dossier: Пакет документов
         edit_dossier: Редактировать пакет документов
-        price: Цена
-        price_first_year: Стоимость в течение первого года
-        currency: "€"
         feasibility: Выполнимость
         feasible: Выполнимо
         unfeasible: Не выполнимо
