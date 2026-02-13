@@ -384,7 +384,6 @@ ca:
         one: 1 vot
         other: "%{count} vots"
       supports_necessary: "%{number} avals necessaris"
-      total_percent: 100%
       archived: "Aquesta proposta ha sigut arxivada i ja no pot arreplegar avals."
       successful: "Aquesta proposta ha arribat als suports necessaris."
       selected: "Proposta seleccionada"
