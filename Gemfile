@@ -109,7 +109,7 @@ group :development do
   gem "rubocop-capybara", "~> 2.22.1", require: false
   gem "rubocop-factory_bot", "~> 2.28.0", require: false
   gem "rubocop-performance", "~> 1.26.1", require: false
-  gem "rubocop-rails", "~> 2.33.4", require: false
+  gem "rubocop-rails", "~> 2.34.3", require: false
   gem "rubocop-rspec", "~> 3.9.0", require: false
   gem "rubocop-rspec_rails", "~> 2.31.0", require: false
   gem "rvm1-capistrano3", "~> 1.4.0", require: false
