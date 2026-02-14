@@ -290,7 +290,8 @@ GEM
       builder (>= 2.1.2)
       rexml (~> 3.0)
     hashery (2.1.2)
-    hashie (5.0.0)
+    hashie (5.1.0)
+      logger
     highline (3.1.2)
       reline
     htmlbeautifier (1.4.3)
@@ -457,7 +458,7 @@ GEM
     omniauth-oauth2 (1.8.0)
       oauth2 (>= 1.4, < 3)
       omniauth (~> 2.0)
-    omniauth-rails_csrf_protection (1.0.2)
+    omniauth-rails_csrf_protection (2.0.1)
       actionpack (>= 4.2)
       omniauth (~> 2.0)
     omniauth-saml (2.2.4)
@@ -503,7 +504,7 @@ GEM
     pp (0.6.3)
       prettyprint
     prettyprint (0.2.0)
-    prism (1.8.0)
+    prism (1.9.0)
     pronto (0.11.4)
       gitlab (>= 4.4.0, < 5.0)
       httparty (>= 0.13.7, < 1.0)
@@ -884,7 +885,7 @@ DEPENDENCIES
   omniauth (~> 2.1.3)
   omniauth-facebook (~> 10.0.0)
   omniauth-google-oauth2 (~> 1.2.1)
-  omniauth-rails_csrf_protection (~> 1.0.2)
+  omniauth-rails_csrf_protection (~> 2.0.1)
   omniauth-saml (~> 2.2.4)
   omniauth-twitter (~> 1.4.0)
   omniauth_openid_connect (~> 0.8.0)
