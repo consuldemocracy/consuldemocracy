@@ -290,7 +290,8 @@ GEM
       builder (>= 2.1.2)
       rexml (~> 3.0)
     hashery (2.1.2)
-    hashie (5.0.0)
+    hashie (5.1.0)
+      logger
     highline (3.1.2)
       reline
     htmlbeautifier (1.4.3)
@@ -439,8 +440,9 @@ GEM
     octokit (10.0.0)
       faraday (>= 1, < 3)
       sawyer (~> 0.9)
-    omniauth (2.1.3)
+    omniauth (2.1.4)
       hashie (>= 3.4.6)
+      logger
       rack (>= 2.2.3)
       rack-protection
     omniauth-facebook (10.0.0)
@@ -881,7 +883,7 @@ DEPENDENCIES
   letter_opener_web (~> 3.0.0)
   mdl (~> 0.13.0)
   mini_magick (~> 5.3.1)
-  omniauth (~> 2.1.3)
+  omniauth (~> 2.1.4)
   omniauth-facebook (~> 10.0.0)
   omniauth-google-oauth2 (~> 1.2.1)
   omniauth-rails_csrf_protection (~> 1.0.2)
