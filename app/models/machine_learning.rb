@@ -229,7 +229,7 @@ class MachineLearning
     def export_proposals_to_json
       create_data_folder
       filename = data_folder.join(MachineLearning.proposals_filename)
-      Proposal::Exporter.new.to_json_file(filename)
+      Proposal::Exporter.new(Proposal.all).to_json_file(filename)
     end
 
     def export_budget_investments_to_json
