@@ -1,19 +1,15 @@
 class Proposal::Exporter
+  include CsvExporter
   include JsonExporter
 
+  attr_reader :records
+
   def initialize(proposals)
-    @proposals = proposals
+    @records = proposals
   end
 
   def model
     Proposal
-  end
-
-  def to_csv
-    CSV.generate(headers: true) do |csv|
-      csv << headers
-      @proposals.each { |proposal| csv << csv_values(proposal) }
-    end
   end
 
   private

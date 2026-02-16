@@ -1,15 +1,11 @@
 class Budget::Investment::Exporter
+  include CsvExporter
   include JsonExporter
 
-  def initialize(investments)
-    @investments = investments
-  end
+  attr_reader :records
 
-  def to_csv
-    CSV.generate(headers: true) do |csv|
-      csv << headers
-      @investments.each { |investment| csv << csv_values(investment) }
-    end
+  def initialize(investments)
+    @records = investments
   end
 
   def model
