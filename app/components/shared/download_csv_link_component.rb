@@ -1,9 +1,8 @@
 class Shared::DownloadCsvLinkComponent < ApplicationComponent
-    attr_reader :path_helper, :i18n_key
+    attr_reader :path_helper
 
-    def initialize(path_helper:, i18n_key:)
+    def initialize(path_helper:)
       @path_helper = path_helper
-      @i18n_key = i18n_key
     end
 
     private
