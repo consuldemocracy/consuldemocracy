@@ -1,12 +1,12 @@
 class Shared::DownloadCsvLinkComponent < ApplicationComponent
+    attr_reader :path_helper, :i18n_key
+
     def initialize(path_helper:, i18n_key:)
       @path_helper = path_helper
       @i18n_key = i18n_key
     end
-  
+
     private
-  
-    attr_reader :path_helper, :i18n_key
   
     def csv_params
       params
