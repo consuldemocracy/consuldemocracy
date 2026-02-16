@@ -18,7 +18,7 @@ class Admin::ProposalsController < Admin::BaseController
     respond_to do |format|
       format.csv do
         send_data Proposal::Exporter.new(@proposals).to_csv,
-                  filename: "proposals.csv" 
+                  filename: "proposals.csv"
       end
     end
   end
