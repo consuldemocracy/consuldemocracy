@@ -1,5 +1,4 @@
 class Proposal::Exporter
-  require "csv"
   include JsonExporter
 
   def initialize(proposals)
