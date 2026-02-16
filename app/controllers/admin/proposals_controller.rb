@@ -14,7 +14,7 @@ class Admin::ProposalsController < Admin::BaseController
   end
 
   def download_csv
-    @proposals = Proposal.order(created_at: :asc)
+    @proposals = Proposal.order(created_at: :desc)
     respond_to do |format|
       format.csv do
         send_data Proposal::Exporter.new(@proposals).to_csv,
