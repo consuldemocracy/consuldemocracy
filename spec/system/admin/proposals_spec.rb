@@ -122,9 +122,9 @@ describe "Admin proposals", :admin do
       expect(header).to match(/filename="proposals.csv"/)
 
       csv_contents = "ID,Proposal,Author,Summary\n" \
-                     "#{first_proposal.id},#{first_proposal.title},#{first_proposal.author.email},#{first_proposal.summary}\n" \
-                     "#{second_proposal.id},#{second_proposal.title},#{second_proposal.author.email},#{second_proposal.summary}\n" \
-                     "#{third_proposal.id},#{third_proposal.title},#{third_proposal.author.email},#{third_proposal.summary}\n" 
+        "#{third_proposal.id},#{third_proposal.title},#{third_proposal.author.email},#{third_proposal.summary}\n" \
+        "#{second_proposal.id},#{second_proposal.title},#{second_proposal.author.email},#{second_proposal.summary}\n" \
+        "#{first_proposal.id},#{first_proposal.title},#{first_proposal.author.email},#{first_proposal.summary}\n"
 
       expect(page.body).to eq(csv_contents)
     end
