@@ -1,5 +1,5 @@
 .basic-info {
-  @include circle-separators;
+  @include circle-separators($position: "after");
   color: $text-medium;
   font-size: $small-font-size;
   margin: rem-calc(6) 0 0;

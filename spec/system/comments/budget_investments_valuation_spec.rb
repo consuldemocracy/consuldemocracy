@@ -112,11 +112,11 @@ describe "Internal valuation comments on Budget::Investments" do
       end
 
       visit valuation_budget_budget_investment_path(budget, investment)
-      expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
+      expect(page).to have_css ".comment.comment.comment.comment.comment.comment.comment.comment"
 
-      expect(page).not_to have_css(".comment-votes")
-      expect(page).not_to have_css(".js-flag-actions")
-      expect(page).not_to have_css(".moderation-actions")
+      expect(page).not_to have_css ".comment-votes"
+      expect(page).not_to have_css ".flag-actions"
+      expect(page).not_to have_css ".moderation-actions"
     end
   end
 

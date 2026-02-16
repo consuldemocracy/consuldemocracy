@@ -30,6 +30,9 @@ class User < ApplicationRecord
   has_many :identities, dependent: :destroy
   has_many :debates, -> { with_hidden }, foreign_key: :author_id, inverse_of: :author
   has_many :proposals, -> { with_hidden }, foreign_key: :author_id, inverse_of: :author
+  has_many :proposal_notifications, -> { with_hidden },
+           foreign_key: :author_id,
+           inverse_of: :author
   has_many :activities
   has_many :budget_investments, -> { with_hidden },
            class_name: "Budget::Investment",
@@ -148,11 +151,6 @@ class User < ApplicationRecord
 
   def name
     organization? ? organization.name : username
-  end
-
-  def comment_flags(comments)
-    comment_flags = flags.for_comments(comments)
-    comment_flags.each_with_object({}) { |f, h| h[f.flaggable_id] = true }
   end
 
   def voted_in_group?(group)

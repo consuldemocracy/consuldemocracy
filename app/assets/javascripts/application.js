@@ -63,12 +63,7 @@
 //= require comments
 //= require foundation_extras
 //= require location_changer
-//= require moderator_comment
-//= require moderator_debates
-//= require moderator_proposals
-//= require moderator_budget_investments
-//= require moderator_proposal_notifications
-//= require moderator_legislation_proposals
+//= require moderator
 //= require gettext
 //= require annotator
 //= require jquery.amsify.suggestags
@@ -96,7 +91,6 @@
 //= require legislation_annotatable
 //= require legislation_draft_versions
 //= require followable
-//= require flaggable
 //= require documentable
 //= require imageable
 //= require tree_navigator

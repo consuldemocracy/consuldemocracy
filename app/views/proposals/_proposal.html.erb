@@ -28,7 +28,7 @@
         <% if proposal.successful? %>
           <div class="padding">
             <div class="supports">
-              <%= render "proposals/supports", proposal: proposal %>
+              <%= render Proposals::SupportsComponent.new(proposal) %>
             </div>
           </div>
         <% elsif proposal.archived? %>

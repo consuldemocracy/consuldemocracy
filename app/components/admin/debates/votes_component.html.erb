@@ -1,0 +1,21 @@
+<div class="admin-debates-votes">
+  <h3><%= t("votes.supports") %></h3>
+
+  <span class="total-votes">
+    <%= t("debates.debate.votes", count: debate.votes_score) %>
+  </span>
+
+  <div class="in-favor">
+    <span class="icon-like">
+      <span class="show-for-sr"><%= t("votes.agree") %></span>
+    </span>
+    <span class="percentage"><%= votes_percentage("likes", debate) %></span>
+  </div>
+
+  <div class="against">
+    <span class="icon-unlike">
+      <span class="show-for-sr"><%= t("votes.disagree") %></span>
+    </span>
+    <span class="percentage"><%= votes_percentage("dislikes", debate) %></span>
+  </div>
+</div>

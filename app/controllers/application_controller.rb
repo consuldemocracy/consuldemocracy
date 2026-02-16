@@ -68,10 +68,6 @@ class ApplicationController < ActionController::Base
       end
     end
 
-    def set_comment_flags(comments)
-      @comment_flags = current_user ? current_user.comment_flags(comments) : {}
-    end
-
     def ensure_signup_complete
       if user_signed_in? && !devise_controller? && current_user.registering_with_oauth
         redirect_to finish_signup_path
@@ -101,9 +97,11 @@ class ApplicationController < ActionController::Base
     end
 
     def redirect_with_query_params_to(options, response_status = {})
-      path_options = { controller: params[:controller] }.merge(options).merge(only_path: true)
-      path = url_for(request.query_parameters.merge(path_options))
+      redirect_to path_with_query_params(options), response_status
+    end
 
-      redirect_to path, response_status
+    def path_with_query_params(options)
+      path_options = { controller: params[:controller] }.merge(options).merge(only_path: true)
+      url_for(request.query_parameters.merge(path_options))
     end
 end

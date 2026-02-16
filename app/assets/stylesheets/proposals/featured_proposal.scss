@@ -5,7 +5,6 @@
     > :last-child {
       &::before {
         @include circle-separator;
-        background: currentcolor;
       }
     }
   }

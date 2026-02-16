@@ -41,9 +41,8 @@ en:
         heading: Heading
         dossier: Dossier
         edit_dossier: Edit dossier
-        price: Price
-        price_first_year: Cost during the first year
-        currency: "€"
+        price_with_currency: Price (%{currency})
+        price_first_year_with_currency: Cost during the first year (%{currency})
         feasibility: Feasibility
         feasible: Feasible
         unfeasible: Unfeasible

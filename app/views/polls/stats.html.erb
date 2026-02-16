@@ -13,7 +13,7 @@
 
     <div class="small-12 medium-9 column stats-content">
       <%= render "shared/stats/participation", stats: @stats %>
-      <%= render "advanced_stats", stats: @stats if @stats.advanced? %>
+      <%= render Polls::AdvancedStatsComponent.new(@stats) %>
 
       <div id="total_no_demographic_data">
         <% if @stats.total_no_demographic_data > 0 %>

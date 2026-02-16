@@ -1,5 +1,5 @@
 class SDGManagement::MenuComponent < ApplicationComponent
-  include LinkListHelper
+  use_helpers :link_list
 
   private
 

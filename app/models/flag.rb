@@ -8,8 +8,6 @@ class Flag < ApplicationRecord
           flaggable_id: flaggable.id)
   end)
 
-  scope :for_comments, ->(comments) { where(flaggable_type: "Comment", flaggable_id: comments) }
-
   def self.flag(user, flaggable)
     return false if flagged?(user, flaggable)
 

@@ -78,10 +78,6 @@
     }
   }
 
-  .divider {
-    margin: 0 rem-calc(6);
-  }
-
   .supported {
     color: inherit;
     margin-top: rem-calc(12);
@@ -279,10 +275,6 @@
   display: block;
 }
 
-.bullet {
-  color: $body-font-color;
-}
-
 .budget-investment-show p {
   overflow-wrap: anywhere;
 }
@@ -416,12 +408,6 @@
     padding-bottom: rem-calc(12);
   }
 
-  @include breakpoint(medium) {
-    .divider {
-      display: inline-block;
-    }
-  }
-
   h3 {
     font-weight: bold;
     margin-top: calc($line-height / 2);
@@ -468,10 +454,6 @@
       font-size: $tiny-font-size;
     }
   }
-}
-
-.divider {
-  display: none;
 }
 
 .more-info {
@@ -1196,33 +1178,6 @@
 .orbit-slide {
   max-height: none !important;
   position: relative;
-}
-
-.orbit-next,
-.orbit-previous {
-  background: rgba(34, 34, 34, 0.25);
-}
-
-.zoom-link {
-  @extend %body-colors;
-  border-radius: rem-calc(48);
-  cursor: pointer;
-  font-size: rem-calc(24);
-  font-weight: bold;
-  height: rem-calc(48);
-  line-height: rem-calc(48);
-  padding-top: rem-calc(4);
-  position: absolute;
-  right: 12px;
-  text-align: center;
-  top: 24px;
-  width: rem-calc(48);
-  z-index: 9;
-
-  &:hover {
-    @include brand-secondary-background;
-    text-decoration: none;
-  }
 }
 
 .public .poll {

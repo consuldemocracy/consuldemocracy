@@ -1,1 +1,1 @@
-$("#<%= dom_id(@comment) %>_votes").html("<%= j render Comments::VotesComponent.new(@comment) %>");
+$("#<%= dom_id(@comment) %>_votes").replaceWith("<%= j render Comments::VotesComponent.new(@comment) %>");
