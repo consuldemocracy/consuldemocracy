@@ -167,7 +167,7 @@ GEM
       actionpack (>= 3.1)
       caxlsx (>= 3.0)
     cgi (0.5.1)
-    chef-utils (18.4.2)
+    chef-utils (19.1.164)
       concurrent-ruby
     childprocess (5.1.0)
       logger (~> 1.5)
@@ -351,8 +351,8 @@ GEM
     kaminari-core (1.2.2)
     knapsack_pro (8.4.0)
       rake
-    kramdown (2.4.0)
-      rexml
+    kramdown (2.5.2)
+      rexml (>= 3.4.4)
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
     language_server-protocol (3.17.0.5)
@@ -379,11 +379,11 @@ GEM
       net-smtp
     marcel (1.0.4)
     matrix (0.4.2)
-    mdl (0.13.0)
+    mdl (0.15.0)
       kramdown (~> 2.3)
       kramdown-parser-gfm (~> 1.1)
-      mixlib-cli (~> 2.1, >= 2.1.1)
-      mixlib-config (>= 2.2.1, < 4)
+      mixlib-cli
+      mixlib-config
       mixlib-shellout
     method_source (1.1.0)
     mime-types (3.4.1)
@@ -398,7 +398,7 @@ GEM
     mixlib-cli (2.1.8)
     mixlib-config (3.0.27)
       tomlrb
-    mixlib-shellout (3.2.7)
+    mixlib-shellout (3.4.10)
       chef-utils
     multi_json (1.15.0)
     multi_xml (0.7.2)
@@ -767,7 +767,7 @@ GEM
     thor (1.5.0)
     tilt (2.0.10)
     timeout (0.6.0)
-    tomlrb (2.0.3)
+    tomlrb (2.0.4)
     tsort (0.2.0)
     ttfunk (1.8.0)
       bigdecimal (~> 3.1)
@@ -881,7 +881,7 @@ DEPENDENCIES
   knapsack_pro (~> 8.4.0)
   launchy (~> 3.1.1)
   letter_opener_web (~> 3.0.0)
-  mdl (~> 0.13.0)
+  mdl (~> 0.15.0)
   mini_magick (~> 5.3.1)
   omniauth (~> 2.1.4)
   omniauth-facebook (~> 10.0.0)
