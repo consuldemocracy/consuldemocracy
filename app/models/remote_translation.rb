@@ -9,7 +9,7 @@ class RemoteTranslation < ApplicationRecord
   after_commit :enqueue_remote_translation, on: :create
 
   def enqueue_remote_translation
-    RemoteTranslations::Caller.new(self).delay.call
+    remote_caller.delay.call
   end
 
   def self.for(*)
@@ -48,5 +48,9 @@ class RemoteTranslation < ApplicationRecord
 
   def already_translated?
     remote_translatable&.translations&.where(locale: locale).present?
+  end
+
+  def remote_caller
+    @remote_caller ||= RemoteTranslations::Caller.new(self)
   end
 end
