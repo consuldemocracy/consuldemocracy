@@ -26,7 +26,7 @@ jobs:
     name: ${{ matrix.name }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - run: |
           git fetch --no-tags --prune origin +refs/heads/*:refs/remotes/origin/*
       - name: Setup Ruby
