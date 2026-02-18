@@ -199,7 +199,7 @@ shared_examples_for "verifiable" do
         user.update!(residence_verified_at: Time.current)
         expect(user.level_two_verified?).to be true
 
-        user.update!(confirmed_phone: "123456789", residence_verified_at: false)
+        user.update!(confirmed_phone: "123456789", residence_verified_at: nil)
         expect(user.level_two_verified?).to be true
       end
     end

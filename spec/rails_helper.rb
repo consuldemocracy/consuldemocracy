@@ -37,6 +37,7 @@ RSpec.configure do |config|
   config.include ViewComponent::TestHelpers, type: :component
 end
 
+require "rake"
 Rails.application.load_tasks if Rake::Task.tasks.empty?
 
 include Warden::Test::Helpers

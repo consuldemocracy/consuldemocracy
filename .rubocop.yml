@@ -163,8 +163,6 @@ Layout/LineLength:
   Max: 110
   Exclude:
     - "Gemfile"
-    - "config/environments/production.rb"
-    - "config/environments/staging.rb"
     - "config/initializers/devise.rb"
     - "db/migrate/*create_delayed_jobs.rb"
     - "db/migrate/*create_active_storage_variant_records.active_storage.rb"
@@ -184,11 +182,6 @@ Layout/MultilineHashKeyLineBreaks:
 
 Layout/MultilineMethodCallBraceLayout:
   Enabled: true
-
-Layout/MultilineMethodCallIndentation:
-  Enabled: true
-  Exclude:
-    - "config/environments/production.rb"
 
 Layout/MultilineOperationIndentation:
   Enabled: true

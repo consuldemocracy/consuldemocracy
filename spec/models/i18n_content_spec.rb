@@ -136,7 +136,7 @@ RSpec.describe I18nContent do
 
   describe ".update" do
     it "stores new keys with a different translation" do
-      I18nContent.update([{ id: "shared.yes", values: { "value_en" => "Oh, yeah" }}])
+      I18nContent.update([{ id: "shared.yes", "values[value_en]" => "Oh, yeah" }])
 
       expect(I18nContent.count).to eq 1
       expect(I18nContent.first.translations.count).to eq 1
@@ -144,7 +144,7 @@ RSpec.describe I18nContent do
     end
 
     it "does not store new keys with the default translation" do
-      I18nContent.update([{ id: "shared.yes", values: { "value_en" => "Yes" }}])
+      I18nContent.update([{ id: "shared.yes", "values[value_en]" => "Yes" }])
 
       expect(I18nContent.all).to be_empty
     end
@@ -152,7 +152,7 @@ RSpec.describe I18nContent do
     it "updates existing keys with the default translation" do
       I18nContent.create!(key: "shared.yes", value_en: "Oh, yeah")
 
-      I18nContent.update([{ id: "shared.yes", values: { "value_en" => "Yes" }}])
+      I18nContent.update([{ id: "shared.yes", "values[value_en]" => "Yes" }])
 
       expect(I18nContent.count).to eq 1
       expect(I18nContent.first.translations.count).to eq 1
@@ -163,7 +163,7 @@ RSpec.describe I18nContent do
       Setting["locales.default"] = "es"
       Setting["locales.enabled"] = "es"
 
-      I18nContent.update([{ id: "shared.yes", values: { "value_en" => "Oh, yeah" }}])
+      I18nContent.update([{ id: "shared.yes", "values[value_en]" => "Oh, yeah" }])
 
       expect(I18nContent.all).to be_empty
     end
@@ -171,7 +171,7 @@ RSpec.describe I18nContent do
     it "uses different enabled translations when given a parameter" do
       Setting["locales.enabled"] = "en es"
 
-      I18nContent.update([{ id: "shared.yes", values: { "value_en" => "Oh, yeah" }}], [:es])
+      I18nContent.update([{ id: "shared.yes", "values[value_en]" => "Oh, yeah" }], [:es])
 
       expect(I18nContent.all).to be_empty
     end
