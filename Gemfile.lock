@@ -232,9 +232,9 @@ GEM
       rake
     event_stream_parser (1.0.0)
     execjs (2.10.0)
-    exiftool (1.2.6)
+    exiftool (1.3.0)
       json
-    exiftool_vendored (13.30.0)
+    exiftool_vendored (13.47.0)
       exiftool (>= 0.7.0)
     factory_bot (6.5.6)
       activesupport (>= 6.1.0)
@@ -863,7 +863,7 @@ DEPENDENCIES
   devise-security (~> 0.18.0)
   email_spec (~> 2.3.0)
   erb_lint (~> 0.9.0)
-  exiftool_vendored (~> 13.30.0)
+  exiftool_vendored (~> 13.47.0)
   factory_bot_rails (~> 6.5.1)
   faker (~> 3.5.2)
   faraday-retry (~> 2.3.2)
