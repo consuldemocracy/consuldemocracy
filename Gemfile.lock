@@ -249,7 +249,7 @@ GEM
       logger
     faraday-follow_redirects (0.3.0)
       faraday (>= 1, < 3)
-    faraday-multipart (1.1.1)
+    faraday-multipart (1.2.0)
       multipart-post (~> 2.0)
     faraday-net_http (3.4.2)
       net-http (~> 0.5)
@@ -377,7 +377,7 @@ GEM
       net-imap
       net-pop
       net-smtp
-    marcel (1.0.4)
+    marcel (1.1.0)
     matrix (0.4.2)
     mdl (0.15.0)
       kramdown (~> 2.3)
@@ -678,15 +678,17 @@ GEM
     ruby-vips (2.2.3)
       ffi (~> 1.12)
       logger
-    ruby_llm (1.6.4)
+    ruby_llm (1.12.0)
       base64
       event_stream_parser (~> 1)
-      faraday (>= 1.10.0)
+      faraday (>= 2.0)
       faraday-multipart (>= 1)
       faraday-net_http (>= 1)
-      faraday-retry (>= 1)
+      faraday-retry (>= 2.0)
       marcel (~> 1.0)
+      ruby_llm-schema (~> 0.2.1)
       zeitwerk (~> 2)
+    ruby_llm-schema (0.2.5)
     rubyzip (2.4.1)
     rugged (1.9.0)
     rvm1-capistrano3 (1.4.0)
@@ -915,7 +917,7 @@ DEPENDENCIES
   rubocop-rails (~> 2.33.4)
   rubocop-rspec (~> 3.9.0)
   rubocop-rspec_rails (~> 2.32.0)
-  ruby_llm (~> 1.6.4)
+  ruby_llm (~> 1.12.0)
   rvm1-capistrano3 (~> 1.4.0)
   sassc-embedded (~> 1.77.5)
   sassc-rails (~> 2.1.2)
