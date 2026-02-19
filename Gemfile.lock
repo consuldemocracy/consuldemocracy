@@ -189,7 +189,8 @@ GEM
     crass (1.0.6)
     csv (3.3.5)
     daemons (1.4.1)
-    dalli (3.2.8)
+    dalli (4.2.0)
+      logger
     date (3.5.1)
     debug (1.9.2)
       irb (~> 1.10)
@@ -856,7 +857,7 @@ DEPENDENCIES
   connection_pool (~> 2.5)
   csv (~> 3.3.5)
   daemons (~> 1.4.1)
-  dalli (~> 3.2.8)
+  dalli (~> 4.2.0)
   debug (~> 1.9.2)
   delayed_job_active_record (~> 4.1.11)
   devise (~> 4.9.4)
