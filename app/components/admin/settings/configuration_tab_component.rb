@@ -21,6 +21,7 @@ class Admin::Settings::ConfigurationTabComponent < ApplicationComponent
       twitter_hashtag
       youtube_handle
       org_name
+      instance_repository_url
       meta_title
       meta_description
       meta_keywords

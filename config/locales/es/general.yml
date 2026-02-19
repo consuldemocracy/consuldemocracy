@@ -198,6 +198,8 @@ es:
       cookies_consent_management: Configuración de cookies
       copyright: CONSUL DEMOCRACY, %{year}
       description: Este portal usa la %{consul} que es %{open_source}.
+      description_with_instance_repository: El código para esta instancia está disponible en %{instance_repository}.
+      instance_repository_text: este repositorio
       open_source: software de código abierto
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Decide cómo debe ser la ciudad que quieres.

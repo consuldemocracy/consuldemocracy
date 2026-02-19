@@ -42,6 +42,8 @@ en:
     instagram_handle_description: "If filled in it will appear in the footer"
     org_name: "Site name"
     org_name_description: "This name will appear on mailers subject, help pages..."
+    instance_repository_url: "Instance repository URL"
+    instance_repository_url_description: "Link to the source code repository of this Consul Democracy instance (e.g. your fork on GitHub). It will appear in the footer."
     related_content_score_threshold: "Related content score threshold"
     related_content_score_threshold_description: "According to the rating of votes in a related content, hides content that users mark as unrelated"
     hot_score_period_in_days: "Period (days) used by the filter 'most active'"
