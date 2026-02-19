@@ -7,6 +7,9 @@
 <% if proposals.any? %>
   <%= render Admin::SearchComponent.new(label: t("admin.shared.search.label.proposals")) %>
 
+  <%= render Shared::DownloadCsvLinkComponent.new(
+      path_helper: :download_csv_admin_proposals_path
+    ) %>
   <h3><%= page_entries_info proposals %></h3>
 
   <table>
