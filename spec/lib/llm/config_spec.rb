@@ -15,10 +15,8 @@ describe Llm::Config do
 
     it "sets GOOGLE_APPLICATION_CREDENTIALS when google_application_credentials is present" do
       stub_secrets(
-        llm: {
-          openai_api_key: "1234",
-          google_application_credentials: "/tmp/dummy.json"
-        }
+        llm: { openai_api_key: "1234" },
+        google_application_credentials: "/tmp/dummy.json"
       )
 
       config = instance_double(RubyLLM::Configuration)
