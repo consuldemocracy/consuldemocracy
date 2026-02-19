@@ -13,7 +13,7 @@ describe Shared::DetailedInfoComponent do
     it "is not shown to anonymous users" do
       render_inline Shared::DetailedInfoComponent.new(create(:debate))
 
-      expect(page).not_to have_css ".flag-content"
+      expect(page).not_to have_css ".flag-actions"
     end
 
     it "is not shown when the record can't be flagged" do
@@ -21,7 +21,7 @@ describe Shared::DetailedInfoComponent do
 
       render_inline Shared::DetailedInfoComponent.new(create(:topic))
 
-      expect(page).not_to have_css ".flag-content"
+      expect(page).not_to have_css ".flag-actions"
     end
 
     it "is not shown on previews" do
@@ -29,7 +29,7 @@ describe Shared::DetailedInfoComponent do
 
       render_inline Shared::DetailedInfoComponent.new(create(:debate), preview: true)
 
-      expect(page).not_to have_css ".flag-content"
+      expect(page).not_to have_css ".flag-actions"
     end
 
     it "is shown to identified users when the record can be flagged" do
@@ -37,7 +37,7 @@ describe Shared::DetailedInfoComponent do
 
       render_inline Shared::DetailedInfoComponent.new(create(:debate))
 
-      expect(page).to have_css ".flag-content"
+      expect(page).to have_css ".flag-actions"
     end
   end
 end

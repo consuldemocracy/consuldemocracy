@@ -51,7 +51,6 @@ module Budgets
     def show
       @commentable = @investment
       @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
-      set_comment_flags(@comment_tree.comments)
       @investment_ids = [@investment.id]
       @remote_translations = detect_remote_translations([@investment], @comment_tree.comments)
     end

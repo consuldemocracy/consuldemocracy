@@ -35,14 +35,15 @@
 
           <% stats.channels.each do |channel| %>
             <td>
-              <%= stats.send(:"total_#{channel}_valid") %>
-              <small><em>(<%= stats.send(:"valid_percentage_#{channel}").round(2) %>%)</em></small>
+              <%= number_with_percentage(
+                stats.send(:"total_#{channel}_valid"),
+                stats.send(:"valid_percentage_#{channel}")
+              ) %>
             </td>
           <% end %>
 
           <td>
-            <%= stats.total_valid_votes %>
-            <small><em>(<%= stats.total_valid_percentage.round(2) %>%)</em></small>
+            <%= number_with_percentage(stats.total_valid_votes, stats.total_valid_percentage) %>
           </td>
 
         </tr>
@@ -51,13 +52,15 @@
 
           <% stats.channels.each do |channel| %>
             <td>
-              <%= stats.send(:"total_#{channel}_white") %>
-              <small><em>(<%= stats.send(:"white_percentage_#{channel}").round(2) %>%)</em></small>
+              <%= number_with_percentage(
+                stats.send(:"total_#{channel}_white"),
+                stats.send(:"white_percentage_#{channel}")
+              ) %>
             </td>
           <% end %>
 
-          <td><%= stats.total_white_votes %>
-            <small><em>(<%= stats.total_white_percentage.round(2) %>%)</em></small>
+          <td>
+            <%= number_with_percentage(stats.total_white_votes, stats.total_white_percentage) %>
           </td>
         </tr>
         <tr>
@@ -65,14 +68,15 @@
 
           <% stats.channels.each do |channel| %>
             <td>
-              <%= stats.send(:"total_#{channel}_null") %>
-              <small><em>(<%= stats.send(:"null_percentage_#{channel}").round(2) %>%)</em></small>
+              <%= number_with_percentage(
+                stats.send(:"total_#{channel}_null"),
+                stats.send(:"null_percentage_#{channel}")
+              ) %>
             </td>
           <% end %>
 
           <td>
-            <%= stats.total_null_votes %>
-            <small><em>(<%= stats.total_null_percentage.round(2) %>%)</em></small>
+            <%= number_with_percentage(stats.total_null_votes, stats.total_null_percentage) %>
           </td>
         </tr>
         <tr>
@@ -80,8 +84,10 @@
 
           <% stats.channels.each do |channel| %>
             <td>
-              <%= stats.send(:"total_participants_#{channel}") %>
-              <small><em>(<%= stats.send(:"total_participants_#{channel}_percentage").round(2) %>%)</em></small>
+              <%= number_with_percentage(
+                stats.send(:"total_participants_#{channel}"),
+                stats.send(:"total_participants_#{channel}_percentage")
+              ) %>
             </td>
           <% end %>
 

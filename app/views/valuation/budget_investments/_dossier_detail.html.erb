@@ -19,7 +19,8 @@
   <%= investment.price.presence || "-" %>
 </p>
 <p>
-  <strong><%= t("valuation.budget_investments.show.price_first_year", currency: budget.currency_symbol) %>:</strong>
+  <strong><%= t("valuation.budget_investments.show.price_first_year_with_currency",
+                currency: budget.currency_symbol) %>:</strong>
   <%= investment.price_first_year.presence || "-" %>
 </p>
 <p>

@@ -97,7 +97,6 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     def load_comments
       @commentable = @investment
       @comment_tree = CommentTree.new(@commentable, params[:page], @current_order, valuations: true)
-      set_comment_flags(@comment_tree.comments)
     end
 
     def resource_model

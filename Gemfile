@@ -37,10 +37,10 @@ gem "image_processing", "~> 1.14.0"
 gem "invisible_captcha", "~> 2.3.0"
 gem "kaminari", "~> 1.2.2"
 gem "mini_magick", "~> 5.3.1"
-gem "omniauth", "~> 2.1.3"
+gem "omniauth", "~> 2.1.4"
 gem "omniauth-facebook", "~> 10.0.0"
 gem "omniauth-google-oauth2", "~> 1.2.1"
-gem "omniauth-rails_csrf_protection", "~> 1.0.2"
+gem "omniauth-rails_csrf_protection", "~> 2.0.1"
 gem "omniauth-saml", "~> 2.2.4"
 gem "omniauth-twitter", "~> 1.4.0"
 gem "omniauth_openid_connect", "~> 0.8.0"
@@ -100,8 +100,8 @@ group :development do
   gem "erb_lint", "~> 0.9.0", require: false
   gem "faraday-retry", "~> 2.3.2", require: false
   gem "htmlbeautifier", "~> 1.4.3", require: false
-  gem "mdl", "~> 0.13.0", require: false
-  gem "pronto", "~> 0.11.4", require: false
+  gem "mdl", "~> 0.15.0", require: false
+  gem "pronto", "~> 0.11.5", require: false
   gem "pronto-erb_lint", "~> 0.1.6", require: false
   gem "pronto-eslint", "~> 0.11.1", require: false
   gem "pronto-rubocop", "~> 0.11.6", require: false
@@ -111,8 +111,8 @@ group :development do
   gem "rubocop-factory_bot", "~> 2.28.0", require: false
   gem "rubocop-performance", "~> 1.26.1", require: false
   gem "rubocop-rails", "~> 2.33.4", require: false
-  gem "rubocop-rspec", "~> 3.7.0", require: false
-  gem "rubocop-rspec_rails", "~> 2.31.0", require: false
+  gem "rubocop-rspec", "~> 3.9.0", require: false
+  gem "rubocop-rspec_rails", "~> 2.32.0", require: false
   gem "rvm1-capistrano3", "~> 1.4.0", require: false
   gem "web-console", "~> 4.2.1"
 end

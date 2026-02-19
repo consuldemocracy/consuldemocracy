@@ -127,7 +127,7 @@ describe "Proposals" do
     expect(page).to have_content I18n.l(proposal.created_at.to_date)
     expect(page).to have_avatar "M"
     expect(page.html).to include "<title>#{proposal.title}</title>"
-    expect(page).not_to have_css ".js-flag-actions"
+    expect(page).not_to have_css ".flag-actions"
     expect(page).not_to have_css ".js-follow"
   end
 
@@ -1543,7 +1543,8 @@ describe "Successful proposals" do
     successful_proposals.each do |proposal|
       within("#proposal_#{proposal.id}_votes") do
         expect(page).not_to have_link "Support"
-        expect(page).to have_content "100% / 100%"
+
+        within(".progress") { expect(page).to have_content "100%", exact: true }
       end
     end
   end
@@ -1555,7 +1556,8 @@ describe "Successful proposals" do
       visit proposal_path(proposal)
       within("#proposal_#{proposal.id}_votes") do
         expect(page).not_to have_link "Support"
-        expect(page).to have_content "100% / 100%"
+
+        within(".progress") { expect(page).to have_content "100%", exact: true }
       end
     end
   end

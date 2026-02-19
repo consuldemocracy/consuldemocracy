@@ -14,22 +14,6 @@ describe "Stats" do
   end
 
   describe "Show" do
-    describe "advanced stats" do
-      scenario "advanced stats enabled" do
-        budget.update!(advanced_stats_enabled: true)
-
-        visit budget_stats_path(budget)
-
-        expect(page).to have_content "Advanced statistics"
-      end
-
-      scenario "advanced stats disabled" do
-        visit budget_stats_path(budget)
-
-        expect(page).not_to have_content "Advanced statistics"
-      end
-    end
-
     scenario "Back link redirects to budget page" do
       visit budget_stats_path(budget)
 

@@ -59,18 +59,27 @@ describe RemoteTranslation, :remote_translations do
     expect(remote_translation).to be_valid
   end
 
-  describe "#enqueue_remote_translation", :delay_jobs do
-    it "after create enqueue Delayed Job" do
+  describe "#enqueue_remote_translation" do
+    it "after create enqueue Delayed Job", :delay_jobs do
       expect { remote_translation.save }.to change { Delayed::Job.count }.by(1)
     end
 
-    it "enqueues the job after committing the transaction" do
+    it "enqueues the job after committing the transaction", :delay_jobs do
       ActiveRecord::Base.transaction do
         remote_translation.save!
         expect(Delayed::Job.count).to eq 0
       end
 
       expect(Delayed::Job.count).to eq 1
+    end
+
+    it "uses the same remote translations caller and client every time" do
+      client_class = RemoteTranslations::Microsoft::Client
+
+      expect_any_instance_of(client_class).to receive(:call).and_return([])
+
+      remote_translation.enqueue_remote_translation
+      remote_translation.enqueue_remote_translation
     end
   end
 end

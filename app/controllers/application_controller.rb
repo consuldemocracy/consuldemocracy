@@ -68,10 +68,6 @@ class ApplicationController < ActionController::Base
       end
     end
 
-    def set_comment_flags(comments)
-      @comment_flags = current_user ? current_user.comment_flags(comments) : {}
-    end
-
     def ensure_signup_complete
       if user_signed_in? && !devise_controller? && current_user.registering_with_oauth
         redirect_to finish_signup_path

@@ -69,8 +69,4 @@ class Management::ProposalsController < Management::BaseController
     def only_verified_users
       check_verified_user t("management.proposals.alert.unverified_user")
     end
-
-    def set_comment_flags(comments)
-      @comment_flags = managed_user ? managed_user.comment_flags(comments) : {}
-    end
 end

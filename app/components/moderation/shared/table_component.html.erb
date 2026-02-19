@@ -14,8 +14,8 @@
           <div class="moderation-info">
             <%= updated_at_date(record) %>
             <% if flaggable? %>
-              <span>
-                <%= record.flags_count %><span class="icon-flag flag-disable"></span>
+              <span class="flags-count">
+                <%= record.flags_count %><span class="icon-flag"></span>
               </span>
             <% end %>
             <span><%= record.author.username %></span>

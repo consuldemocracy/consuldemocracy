@@ -1,0 +1,23 @@
+<div id="<%= dom_id(comment) %>_reply" class="status-bar">
+  <% unless valuation %>
+    <%= render Comments::VotesComponent.new(comment) %>
+  <% end %>
+
+  <span class="responses-count">
+    <%= render "comments/responses_count", count: comment.children.size %>
+  </span>
+
+  <% if can_comment? %>
+    <%= link_to(link_text, "", class: "js-add-comment-link", data: { id: dom_id(comment) }) %>
+
+    <% unless valuation %>
+      <%= render Comments::ActionsComponent.new(comment) %>
+    <% end %>
+
+    <% if !valuation || can?(:comment_valuation, comment.commentable) %>
+      <%= render Comments::FormComponent.new(comment.commentable,
+                                             parent_id: comment.id,
+                                             valuation: valuation) %>
+    <% end %>
+  <% end %>
+</div>

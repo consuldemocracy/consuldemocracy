@@ -1,0 +1,35 @@
+.poll-gallery {
+  .orbit-next,
+  .orbit-previous {
+    @include has-fa-icon(play, solid);
+    background: rgba(34, 34, 34, 0.25);
+  }
+
+  .orbit-previous {
+    &::before {
+      transform: scaleX(-1);
+    }
+  }
+
+  .zoom-link {
+    @extend %body-colors;
+    border-radius: rem-calc(48);
+    cursor: pointer;
+    font-size: rem-calc(24);
+    font-weight: bold;
+    height: rem-calc(48);
+    line-height: rem-calc(48);
+    padding-top: rem-calc(4);
+    position: absolute;
+    right: 12px;
+    text-align: center;
+    top: 24px;
+    width: rem-calc(48);
+    z-index: 9;
+
+    &:hover {
+      @include brand-secondary-background;
+      text-decoration: none;
+    }
+  }
+}

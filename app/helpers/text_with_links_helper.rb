@@ -12,8 +12,4 @@ module TextWithLinksHelper
 
     raw Rinku.auto_link(html, :all, 'rel="nofollow"')
   end
-
-  def simple_format_no_tags_no_sanitize(html)
-    simple_format(html, {}, sanitize: false)
-  end
 end

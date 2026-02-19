@@ -51,7 +51,7 @@
         </tr>
       </thead>
       <tbody id="headings">
-        <% @headings.each do |heading| %>
+        <% headings.each do |heading| %>
           <tr id="<%= heading.name.parameterize %>">
             <td class="border-left">
               <strong><%= heading.name %></strong>

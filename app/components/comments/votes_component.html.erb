@@ -1,18 +1,19 @@
-<div class="votes">
-  <%= t("comments.comment.votes", count: comment.total_votes) %>
-  &nbsp;|&nbsp;
+<div id="<%= dom_id(comment) %>_votes" class="comment-votes float-right">
+  <div class="votes">
+    <span class="votes-count"><%= t("comments.comment.votes", count: comment.total_votes) %></span>
 
-  <div class="in-favor">
-    <%= render Shared::VoteButtonComponent.new(comment,
-                                               value: "yes",
-                                               title: t("votes.agree")) %>
-    <%= comment.total_likes %>
-  </div>
+    <div class="in-favor">
+      <%= render Shared::VoteButtonComponent.new(comment,
+                                                 value: "yes",
+                                                 title: t("votes.agree")) %>
+      <%= comment.total_likes %>
+    </div>
 
-  <div class="against">
-    <%= render Shared::VoteButtonComponent.new(comment,
-                                               value: "no",
-                                               title: t("votes.disagree")) %>
-    <%= comment.total_dislikes %>
+    <div class="against">
+      <%= render Shared::VoteButtonComponent.new(comment,
+                                                 value: "no",
+                                                 title: t("votes.disagree")) %>
+      <%= comment.total_dislikes %>
+    </div>
   </div>
 </div>
