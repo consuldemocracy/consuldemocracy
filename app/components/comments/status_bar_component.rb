@@ -1,8 +1,6 @@
 class Comments::StatusBarComponent < ApplicationComponent
   attr_reader :comment, :valuation
-  use_helpers :current_user, :can?,
-              :comments_closed_for_commentable?,
-              :require_verified_resident_for_commentable?
+  delegate :comments_closed_for_commentable?, :require_verified_resident_for_commentable?, to: :helpers
 
   def initialize(comment, valuation:)
     @comment = comment

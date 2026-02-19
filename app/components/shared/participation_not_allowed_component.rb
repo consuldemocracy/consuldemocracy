@@ -1,6 +1,6 @@
 class Shared::ParticipationNotAllowedComponent < ApplicationComponent
   attr_reader :votable, :cannot_vote_text
-  use_helpers :current_user, :link_to_signin, :link_to_signup
+  delegate :link_to_signin, :link_to_signup, to: :helpers
 
   def initialize(votable, cannot_vote_text:)
     @votable = votable

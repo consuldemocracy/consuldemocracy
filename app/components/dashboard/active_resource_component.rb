@@ -1,6 +1,6 @@
 class Dashboard::ActiveResourceComponent < ApplicationComponent
   attr_reader :resource, :proposal, :new_actions_since_last_login
-  use_helpers :is_new_action_since_last_login?
+  delegate :is_new_action_since_last_login?, to: :helpers
 
   def initialize(resource, proposal, new_actions_since_last_login)
     @resource = resource

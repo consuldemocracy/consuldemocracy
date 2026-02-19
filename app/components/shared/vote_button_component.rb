@@ -1,6 +1,5 @@
 class Shared::VoteButtonComponent < ApplicationComponent
   attr_reader :votable, :value, :options
-  use_helpers :current_user, :can?
 
   def initialize(votable, value:, **options)
     @votable = votable

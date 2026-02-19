@@ -1,6 +1,6 @@
 class ApplicationComponent < ViewComponent::Base
   include SettingsHelper
 
-  use_helpers :back_link_to, :t
+  delegate :back_link_to, :t, :can?, :cannot?, :current_user, to: :helpers
   delegate :default_form_builder, to: :controller
 end

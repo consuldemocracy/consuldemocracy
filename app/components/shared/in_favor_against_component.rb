@@ -1,6 +1,6 @@
 class Shared::InFavorAgainstComponent < ApplicationComponent
   attr_reader :votable
-  use_helpers :votes_percentage
+  delegate :votes_percentage, to: :helpers
 
   def initialize(votable)
     @votable = votable

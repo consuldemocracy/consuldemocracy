@@ -2,8 +2,6 @@ class Valuation::Budgets::RowComponent < ApplicationComponent
   attr_reader :budget
   with_collection_parameter :budget
 
-  use_helpers :current_user
-
   def initialize(budget:)
     @budget = budget
   end

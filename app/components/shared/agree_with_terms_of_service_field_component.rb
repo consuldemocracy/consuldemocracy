@@ -1,6 +1,6 @@
 class Shared::AgreeWithTermsOfServiceFieldComponent < ApplicationComponent
   attr_reader :form
-  use_helpers :new_window_link_to
+  delegate :new_window_link_to, to: :helpers
 
   def initialize(form)
     @form = form

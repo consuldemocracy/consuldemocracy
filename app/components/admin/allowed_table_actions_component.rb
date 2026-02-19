@@ -1,6 +1,5 @@
 class Admin::AllowedTableActionsComponent < ApplicationComponent
   attr_reader :record, :options
-  use_helpers :can?
   delegate :action, to: :table_actions_component
 
   def initialize(record, **options)

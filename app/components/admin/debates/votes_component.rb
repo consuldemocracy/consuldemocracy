@@ -1,6 +1,6 @@
 class Admin::Debates::VotesComponent < ApplicationComponent
   attr_reader :debate
-  use_helpers :votes_percentage
+  delegate :votes_percentage, to: :helpers
 
   def initialize(debate)
     @debate = debate

@@ -1,6 +1,6 @@
 class SDG::RelatedListSelectorComponent < ApplicationComponent
   attr_reader :f
-  use_helpers :new_window_link_to
+  delegate :new_window_link_to, to: :helpers
 
   def initialize(form)
     @f = form

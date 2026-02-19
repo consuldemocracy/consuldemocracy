@@ -1,6 +1,6 @@
 class Admin::Settings::RowComponent < ApplicationComponent
   attr_reader :key, :tab, :type, :options, :disabled
-  use_helpers :dom_id
+  delegate :dom_id, to: :helpers
 
   def initialize(key, type: :text, tab: nil, options: nil, disabled: false)
     @key = key

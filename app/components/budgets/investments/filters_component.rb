@@ -1,5 +1,5 @@
 class Budgets::Investments::FiltersComponent < ApplicationComponent
-  use_helpers :valid_filters, :current_filter, :link_list, :current_path_with_query_params
+  delegate :valid_filters, :current_filter, :link_list, :current_path_with_query_params, to: :helpers
 
   def render?
     valid_filters&.any?

@@ -1,5 +1,5 @@
 class Layout::SocialComponent < ApplicationComponent
-  use_helpers :content_block
+  delegate :content_block, to: :helpers
 
   def render?
     sites.any? || footer_content_block.present?

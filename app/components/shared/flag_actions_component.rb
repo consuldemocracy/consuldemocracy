@@ -1,6 +1,5 @@
 class Shared::FlagActionsComponent < ApplicationComponent
   attr_reader :flaggable
-  use_helpers :can?, :current_user
 
   def initialize(flaggable)
     @flaggable = flaggable

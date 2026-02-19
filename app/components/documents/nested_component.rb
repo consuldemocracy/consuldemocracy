@@ -1,5 +1,6 @@
 class Documents::NestedComponent < ApplicationComponent
   attr_reader :f
+  delegate :link_to_add_association, to: :helpers
 
   def initialize(f)
     @f = f

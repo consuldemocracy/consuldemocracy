@@ -2,6 +2,7 @@ class Moderation::Shared::IndexComponent < ApplicationComponent
   include Header
 
   attr_reader :records
+  delegate :page_entries_info, :paginate, to: :helpers
 
   def initialize(records)
     @records = records

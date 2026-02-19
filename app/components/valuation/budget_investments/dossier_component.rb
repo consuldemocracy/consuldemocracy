@@ -1,6 +1,6 @@
 class Valuation::BudgetInvestments::DossierComponent < ApplicationComponent
   attr_reader :investment
-  use_helpers :sanitize_and_auto_link
+  delegate :sanitize_and_auto_link, to: :helpers
 
   def initialize(investment)
     @investment = investment

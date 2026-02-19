@@ -1,6 +1,6 @@
 class Admin::BudgetsWizard::Headings::GroupSwitcherComponent < ApplicationComponent
   attr_reader :group
-  use_helpers :link_list
+  delegate :link_list, to: :helpers
 
   def initialize(group)
     @group = group

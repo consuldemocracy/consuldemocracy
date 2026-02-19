@@ -1,5 +1,5 @@
 class Layout::FooterComponent < ApplicationComponent
-  use_helpers :content_block
+  delegate :content_block, to: :helpers
 
   def render?
     !Rails.application.multitenancy_management_mode?

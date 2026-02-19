@@ -1,6 +1,5 @@
 class Officing::MenuComponent < ApplicationComponent
   attr_reader :voter_user
-  use_helpers :current_user
 
   def initialize(voter_user:)
     @voter_user = voter_user

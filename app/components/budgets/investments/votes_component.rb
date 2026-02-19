@@ -1,6 +1,6 @@
 class Budgets::Investments::VotesComponent < ApplicationComponent
   attr_reader :investment
-  use_helpers :namespace, :current_user, :image_absolute_url, :link_to_verify_account
+  delegate :namespace, :image_absolute_url, :link_to_verify_account, to: :helpers
 
   def initialize(investment)
     @investment = investment
