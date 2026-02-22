@@ -2,14 +2,15 @@ module ImageSuggestions
   module Llm
     class Client
       NUMBER_OF_IMAGES = 4
-      attr_reader :model_instance, :chat, :prompt, :response
+      attr_reader :chat, :prompt, :response
 
-      def self.call(model_instance)
-        new(model_instance).call
+      def self.call(title:, description:)
+        new(title: title, description: description).call
       end
 
-      def initialize(model_instance)
-        @model_instance = model_instance
+      def initialize(title:, description:)
+        @title = title
+        @description = description
         @prompt = load_prompt
         @response = Response.new
         @chat = build_chat
@@ -22,8 +23,7 @@ module ImageSuggestions
         search_query = generate_search_query
         return response if response.errors.any?
 
-        results = ImageSuggestions::Pexels.search(search_query, size: :small,
-                                                                per_page: NUMBER_OF_IMAGES)
+        results = ImageSuggestions::Pexels.search(search_query, per_page: NUMBER_OF_IMAGES)
         response.results = results
       rescue ::Pexels::APIError, RubyLLM::Error => e
         response.errors << e.message
@@ -48,12 +48,12 @@ module ImageSuggestions
         end
 
         def generate_search_query
-          if title_text.blank? && description_text.blank?
+          if @title.blank? && @description.blank?
             response.errors << I18n.t("images.errors.messages.title_and_description_required")
             return
           end
 
-          text_prompt = prompt % { title: title_text, description: description_text }
+          text_prompt = prompt % { title: @title, description: @description }
           chat.ask(text_prompt).content.strip
         end
 
@@ -65,14 +65,6 @@ module ImageSuggestions
           if llm_provider.blank? || llm_model.blank? || !Setting["llm.use_ai_image_suggestions"]
             response.errors << I18n.t("images.errors.messages.llm_not_configured")
           end
-        end
-
-        def title_text
-          model_instance.respond_to?(:title) ? model_instance.title.to_s : ""
-        end
-
-        def description_text
-          model_instance.respond_to?(:description) ? model_instance.description.to_s : ""
         end
 
         def llm_provider

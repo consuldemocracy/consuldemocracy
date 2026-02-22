@@ -10,6 +10,7 @@ en:
       suggest_image_with_ai: Suggest an image with AI
       suggested_images_container: Suggested images
       attach_suggested_image: Attach suggested image
+      attach_suggested_image_aria_label: "Attach suggested image %{index} of %{count}"
       pick_an_image: "Select an image from the suggestions below:"
       no_images_found: No suggestions could be found.
       suggested_image_filename: Image by %{author_name}.jpg

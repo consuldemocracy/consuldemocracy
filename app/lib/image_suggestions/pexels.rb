@@ -41,7 +41,7 @@ module ImageSuggestions
       end
 
       def download_file(image_url)
-        URI.open(image_url, "rb") # rubocop:disable Security/Open
+        URI.parse(image_url).open("rb")
       rescue OpenURI::HTTPError, SocketError => e
         raise PexelsError, "Failed to download image from Pexels: #{e.message}"
       end

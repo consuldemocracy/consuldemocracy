@@ -130,6 +130,8 @@
     },
     imageSuggestionsParams: function(form, resourceType) {
       var params;
+      // since we abuse the form by submitting it to CREATE image_suggestions
+      // from edit form's data would confuse Rails to search for PATCH/PUT of image_suggestions
       params = form.serializeArray().filter(function(item) {
         return item.name !== "_method";
       });
@@ -139,13 +141,15 @@
     initializeSuggestImage: function() {
       // we serialize the entire parent form and submit to the image suggestions endpoint
       $("body").on("click", ".js-suggest-image", function() {
-        var form, resourceType, dataString, button;
+        var form, dataString, button, wrapper, resourceType;
         button = $(this);
         form = button.closest("form");
+        wrapper = button.closest(".suggested-images-wrapper");
+        resourceType = wrapper.data("resource-type");
 
         // Add spinner and disable button
         button.prop("disabled", true);
-        button.prepend('<i class="fa fa-spinner fa-spin" aria-hidden="true"></i> ');
+        button.addClass("is-loading");
 
         // Sync CKEditor instances before serializing the form
         if (typeof CKEDITOR !== "undefined") {
@@ -154,9 +158,8 @@
           }
         }
 
-        resourceType = button.data("resource-type");
         dataString = App.Imageable.imageSuggestionsParams(form, resourceType);
-        var uploadData = App.Imageable.buildData([], $(".direct-upload").first());
+        var uploadData = App.Imageable.buildData([], button.closest(".image-fields.direct-upload"));
         App.Imageable.clearInputErrors(uploadData);
         $.ajax({
           url: "/image_suggestions",
@@ -167,8 +170,8 @@
       });
     },
     attachSuggestedImageSuccess: function(responseData) {
-      // mimic the direct upload behavior to reuse App.Imageable methods
-      var data = App.Imageable.buildData([], $(".direct-upload").first());
+      // Reuse direct-upload behavior; "this" is .image-fields.direct-upload
+      var data = App.Imageable.buildData([], this);
       data.result = {
         cached_attachment: responseData.cached_attachment,
         filename: responseData.filename,
@@ -177,7 +180,6 @@
       };
       $(data.cachedAttachmentField).val(data.result.cached_attachment);
       App.Imageable.setTitleFromFile(data, data.result.filename);
-      App.Imageable.setProgressBar(data, "complete");
       App.Imageable.setFilename(data, data.result.filename);
       App.Imageable.setPreview(data);
       $(data.destroyAttachmentLinkContainer).html(data.result.destroy_link);
@@ -185,32 +187,29 @@
       App.Imageable.clearInputErrors(data);
     },
     attachSuggestedImageError: function(xhr) {
-      var data = App.Imageable.buildData([], $(".direct-upload").first());
+      var data = App.Imageable.buildData([], this);
       data.jqXHR = xhr;
-      App.Imageable.setProgressBar(data, "errors");
       App.Imageable.clearInputErrors(data);
       App.Imageable.setInputErrors(data);
     },
     initializeAttachSuggestedImage: function() {
-      $("body").on("click", ".js-attach-suggested-image", function(event) {
-        var imageId, resourceType, resourceId, dataString, uploadData;
-        event.stopPropagation();
+      $("body").on("click", ".js-attach-suggested-image", function() {
+        var imageId, resourceType, resourceId, dataString, wrapper;
         imageId = $(this).data("image-id");
-        resourceType = $(this).data("resource-type");
-        resourceId = $(this).data("resource-id");
-        uploadData = App.Imageable.buildData([], $(".direct-upload").first());
-        App.Imageable.clearProgressBar(uploadData);
-        $(uploadData.progressBar).find(".loading-bar").css("width", "100%");
+        wrapper = $(this).closest(".suggested-images-wrapper");
+        resourceType = wrapper.data("resource-type");
+        resourceId = wrapper.data("resource-id");
 
-        dataString = "resource_type=" + encodeURIComponent(resourceType);
+        dataString = { resource_type: resourceType };
         if (resourceId) {
-          dataString += "&resource_id=" + encodeURIComponent(resourceId);
+          dataString.resource_id = resourceId;
         }
         $.ajax({
           url: "/image_suggestions/" + imageId + "/attach",
           type: "POST",
           data: dataString,
           dataType: "json",
+          context: $(this).closest(".image-fields.direct-upload"),
           success: App.Imageable.attachSuggestedImageSuccess,
           error: App.Imageable.attachSuggestedImageError
         });

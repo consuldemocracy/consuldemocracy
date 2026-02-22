@@ -63,10 +63,12 @@ describe ImageSuggestions::Pexels do
   describe "#download" do
     let(:image_url) { "https://example.com/image.jpg?auto=compress&cs=tinysrgb&h=900" }
     let(:temp_file) { instance_double(Tempfile, path: "/tmp/test") }
+    let(:uri_double) { double("URI") }
 
     before do
       allow(photos_client).to receive(:find).with(photo_id).and_return(photo)
-      allow(URI).to receive(:open).with(image_url, "rb").and_return(temp_file)
+      allow(URI).to receive(:parse).with(image_url).and_return(uri_double)
+      allow(uri_double).to receive(:open).with("rb").and_return(temp_file)
       allow(temp_file).to receive(:is_a?).and_return(false)
     end
 
@@ -79,7 +81,8 @@ describe ImageSuggestions::Pexels do
     end
 
     it "uses the photo's original URL with variant parameters" do
-      expect(URI).to receive(:open).with(image_url, "rb").and_return(temp_file)
+      expect(URI).to receive(:parse).with(image_url).and_return(uri_double)
+      expect(uri_double).to receive(:open).with("rb").and_return(temp_file)
 
       pexels_instance.download(photo_id)
     end
@@ -108,8 +111,9 @@ describe ImageSuggestions::Pexels do
 
     context "when HTTP response is not successful" do
       before do
-        allow(URI).to receive(:open).with(image_url, "rb")
-                                    .and_raise(OpenURI::HTTPError.new("404 Not Found", nil))
+        allow(URI).to receive(:parse).with(image_url).and_return(uri_double)
+        allow(uri_double).to receive(:open).with("rb")
+                                           .and_raise(OpenURI::HTTPError.new("404 Not Found", nil))
       end
 
       it "raises PexelsError" do
@@ -121,8 +125,9 @@ describe ImageSuggestions::Pexels do
 
     context "when network error occurs" do
       before do
-        allow(URI).to receive(:open).with(image_url, "rb")
-                                    .and_raise(SocketError.new("Connection refused"))
+        allow(URI).to receive(:parse).with(image_url).and_return(uri_double)
+        allow(uri_double).to receive(:open).with("rb")
+                                           .and_raise(SocketError.new("Connection refused"))
       end
 
       it "raises PexelsError" do

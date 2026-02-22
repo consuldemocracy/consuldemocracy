@@ -10,8 +10,9 @@ describe ImageSuggestionsController do
     let(:resource_id) { nil }
     let(:proposal_params) do
       {
-        title: "Test Proposal",
-        description: "This is a test proposal"
+        translations_attributes: {
+          "0" => { title: "Test Proposal", description: "This is a test proposal" }
+        }
       }
     end
 
@@ -37,7 +38,11 @@ describe ImageSuggestionsController do
     it "handles namespaced resource types" do
       post :create, params: {
         resource_type: "Budget::Investment",
-        budget_investment: { title: "Test Investment" }
+        budget_investment: {
+          translations_attributes: {
+            "0" => { title: "Test Investment", description: "" }
+          }
+        }
       }, format: :js
 
       expect(response).to be_successful

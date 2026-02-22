@@ -1,7 +1,8 @@
 require "rails_helper"
 
 describe ImageSuggestions::Llm::Client do
-  let(:model_instance) { instance_double(Proposal, title: "Test Proposal", description: "Test description") }
+  let(:title) { "Test Proposal" }
+  let(:description) { "Test description" }
   let(:chat) { instance_double(RubyLLM::Chat) }
   let(:context) { instance_double(RubyLLM::Context, chat: chat) }
   let(:prompt_template) { "Generate a search query for: %{title} - %{description}" }
@@ -19,14 +20,17 @@ describe ImageSuggestions::Llm::Client do
   end
 
   describe ".call" do
-    it "creates a new instance and calls it" do
-      expect(ImageSuggestions::Llm::Client).to receive(:new).with(model_instance).and_call_original
-      ImageSuggestions::Llm::Client.call(model_instance)
+    it "creates a new instance and calls it with title and description" do
+      expect(ImageSuggestions::Llm::Client).to receive(:new).with(
+        title: title,
+        description: description
+      ).and_call_original
+      ImageSuggestions::Llm::Client.call(title: title, description: description)
     end
   end
 
   describe "#call" do
-    let(:client) { ImageSuggestions::Llm::Client.new(model_instance) }
+    let(:client) { ImageSuggestions::Llm::Client.new(title: title, description: description) }
 
     it "generates a search query using LLM" do
       expect(chat).to receive(:ask).with(
@@ -39,7 +43,6 @@ describe ImageSuggestions::Llm::Client do
     it "searches Pexels with the generated query" do
       expect(ImageSuggestions::Pexels).to receive(:search).with(
         search_query,
-        size: :small,
         per_page: 4
       ).and_return(pexels_results)
 
@@ -55,7 +58,9 @@ describe ImageSuggestions::Llm::Client do
     end
 
     context "when title and description are blank" do
-      let(:model_instance) { instance_double(Proposal, title: "", description: "") }
+      let(:title) { "" }
+      let(:description) { "" }
+      let(:client) { ImageSuggestions::Llm::Client.new(title: title, description: description) }
 
       it "adds error and returns early" do
         result = client.call
@@ -70,17 +75,13 @@ describe ImageSuggestions::Llm::Client do
       end
     end
 
-    context "when model instance doesn't respond to title" do
-      let(:model_instance) { instance_double(Budget::Investment, description: "Test") }
+    context "when only description is present" do
+      let(:title) { "" }
+      let(:client) { ImageSuggestions::Llm::Client.new(title: title, description: description) }
 
-      before do
-        allow(model_instance).to receive(:respond_to?).with(:title).and_return(false)
-        allow(model_instance).to receive(:respond_to?).with(:description).and_return(true)
-      end
-
-      it "uses empty string for title" do
+      it "uses empty string for title in prompt" do
         expect(chat).to receive(:ask).with(
-          "Generate a search query for:  - Test"
+          "Generate a search query for:  - Test description"
         ).and_return(double(content: search_query))
 
         client.call
@@ -129,7 +130,7 @@ describe ImageSuggestions::Llm::Client do
   end
 
   describe "#generate_search_query" do
-    let(:client) { ImageSuggestions::Llm::Client.new(model_instance) }
+    let(:client) { ImageSuggestions::Llm::Client.new(title: title, description: description) }
 
     it "interpolates prompt with title and description" do
       query = client.send(:generate_search_query)
@@ -144,7 +145,7 @@ describe ImageSuggestions::Llm::Client do
   end
 
   describe "#validate_llm_settings!" do
-    let(:client) { ImageSuggestions::Llm::Client.new(model_instance) }
+    let(:client) { ImageSuggestions::Llm::Client.new(title: title, description: description) }
 
     context "when provider is missing" do
       before { Setting["llm.provider"] = nil }

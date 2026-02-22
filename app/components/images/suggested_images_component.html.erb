@@ -1,10 +1,7 @@
 <div class="suggested-images-container" role="region" aria-label="<%= t("images.form.suggested_images_container") %>">
   <% if has_errors? || suggested_images.blank? %>
     <%= t("images.form.or_separator") %>
-    <button type="button"
-            class="button hollow error js-suggest-image"
-            data-resource-type="<%= resource_type %>"
-            data-resource-id="<%= resource_id %>">
+    <button type="button" class="button hollow error js-suggest-image">
       <%= t("images.form.suggest_image_with_ai") %>
     </button>
   <% end %>
@@ -12,14 +9,12 @@
     <p class="help-text mb-2"><%= t("images.form.pick_an_image") %></p>
     <div class="small-12 column suggested-images-grid">
       <% suggested_images.each_with_index do |image, index| %>
-        <div class="small-3 column">
+        <div class="small-6 medium-3 column suggested-image-cell">
           <button type="button"
-                  class="js-attach-suggested-image"
+                  class="js-attach-suggested-image suggested-image-button"
                   data-image-id="<%= image.id %>"
-                  data-resource-type="<%= resource_type %>"
-                  data-resource-id="<%= resource_id %>"
                   id="suggested-image-<%= image.id %>"
-                  aria-label="Attach suggested image <%= index + 1 %> of <%= suggested_images.count %>"
+                  aria-label="<%= t("images.form.attach_suggested_image_aria_label", index: index + 1, count: suggested_images.count) %>"
                   aria-describedby="suggested-image-desc-<%= image.id %>">
             <%= image_tag(image.src["small"], alt: image.user.name, class: "suggested-image") %>
             <span id="suggested-image-desc-<%= image.id %>" class="show-for-sr">
@@ -29,15 +24,14 @@
         </div>
       <% end %>
     </div>
-  <% end %>
-  <% if suggested_images.blank? %>
+  <% else %>
     <div>
-      <small class='error'><%= t("images.form.no_images_found") %></small>
+      <small class="error"><%= t("images.form.no_images_found") %></small>
     </div>
   <% end %>
   <% if has_errors? %>
     <div>
-      <small class='error'><%= error_messages.join(", ") %></small>
+      <small class="error"><%= error_messages.join(", ") %></small>
     </div>
   <% end %>
 </div>
