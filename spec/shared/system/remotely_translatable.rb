@@ -180,7 +180,11 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
 
       scenario "request a translation of an already translated text" do
         response = generate_response(resource)
-        expect_any_instance_of(translation_client_class).to receive(:call).and_return(response)
+        # Refactored from expect_any_instance to allow_any_instance_of
+        # Since the test possibly uses different browser sessions:
+        # Browser one click translation button → creates a RemoteTranslation job → creates a Client instance
+        # Browser two clicks the translation button → another RemoteTranslation job → creates another Client
+        allow_any_instance_of(translation_client_class).to receive(:call).and_return(response)
 
         in_browser(:one) do
           visit path_in_spanish

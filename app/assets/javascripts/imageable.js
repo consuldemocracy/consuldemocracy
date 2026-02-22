@@ -18,6 +18,8 @@
         App.Imageable.initializeDirectUploadInput(input);
       });
       App.Imageable.initializeRemoveCachedImageLinks();
+      App.Imageable.initializeSuggestImage();
+      App.Imageable.initializeAttachSuggestedImage();
     },
     initializeDirectUploadInput: function(input) {
       var inputData;
@@ -110,7 +112,8 @@
     },
     setPreview: function(data) {
       var image_preview;
-      image_preview = "<div class='small-12 column text-center image-preview'><figure><img src='" + data.result.attachment_url + "' class='cached-image'></figure></div>";
+      image_preview = "<div class='small-12 column text-center image-preview'>" +
+        "<figure><img src='" + data.result.attachment_url + "' class='cached-image'></figure></div>";
       if ($(data.preview).length > 0) {
         $(data.preview).replaceWith(image_preview);
       } else {
@@ -123,6 +126,93 @@
         event.preventDefault();
         $("#new_image_link").removeClass("hide");
         $(this).closest(".direct-upload").remove();
+      });
+    },
+    imageSuggestionsParams: function(form, resourceType) {
+      var params;
+      // since we abuse the form by submitting it to CREATE image_suggestions
+      // from edit form's data would confuse Rails to search for PATCH/PUT of image_suggestions
+      params = form.serializeArray().filter(function(item) {
+        return item.name !== "_method";
+      });
+      params.push({ name: "resource_type", value: resourceType });
+      return $.param(params);
+    },
+    initializeSuggestImage: function() {
+      // we serialize the entire parent form and submit to the image suggestions endpoint
+      $("body").on("click", ".js-suggest-image", function() {
+        var form, dataString, button, wrapper, resourceType;
+        button = $(this);
+        form = button.closest("form");
+        wrapper = button.closest(".suggested-images-wrapper");
+        resourceType = wrapper.data("resource-type");
+
+        // Add spinner and disable button
+        button.prop("disabled", true);
+        button.addClass("is-loading");
+
+        // Sync CKEditor instances before serializing the form
+        if (typeof CKEDITOR !== "undefined") {
+          for (var name in CKEDITOR.instances) {
+            CKEDITOR.instances[name].updateElement();
+          }
+        }
+
+        dataString = App.Imageable.imageSuggestionsParams(form, resourceType);
+        var uploadData = App.Imageable.buildData([], button.closest(".image-fields.direct-upload"));
+        App.Imageable.clearInputErrors(uploadData);
+        $.ajax({
+          url: "/image_suggestions",
+          type: "POST",
+          data: dataString,
+          dataType: "script"
+        });
+      });
+    },
+    attachSuggestedImageSuccess: function(responseData) {
+      // Reuse direct-upload behavior; "this" is .image-fields.direct-upload
+      var data = App.Imageable.buildData([], this);
+      data.result = {
+        cached_attachment: responseData.cached_attachment,
+        filename: responseData.filename,
+        attachment_url: responseData.attachment_url,
+        destroy_link: responseData.destroy_link
+      };
+      $(data.cachedAttachmentField).val(data.result.cached_attachment);
+      App.Imageable.setTitleFromFile(data, data.result.filename);
+      App.Imageable.setFilename(data, data.result.filename);
+      App.Imageable.setPreview(data);
+      $(data.destroyAttachmentLinkContainer).html(data.result.destroy_link);
+      $("#new_image_link").addClass("hide");
+      App.Imageable.clearInputErrors(data);
+    },
+    attachSuggestedImageError: function(xhr) {
+      var data = App.Imageable.buildData([], this);
+      data.jqXHR = xhr;
+      App.Imageable.clearInputErrors(data);
+      App.Imageable.setInputErrors(data);
+    },
+    initializeAttachSuggestedImage: function() {
+      $("body").on("click", ".js-attach-suggested-image", function() {
+        var imageId, resourceType, resourceId, dataString, wrapper;
+        imageId = $(this).data("image-id");
+        wrapper = $(this).closest(".suggested-images-wrapper");
+        resourceType = wrapper.data("resource-type");
+        resourceId = wrapper.data("resource-id");
+
+        dataString = { resource_type: resourceType };
+        if (resourceId) {
+          dataString.resource_id = resourceId;
+        }
+        $.ajax({
+          url: "/image_suggestions/" + imageId + "/attach",
+          type: "POST",
+          data: dataString,
+          dataType: "json",
+          context: $(this).closest(".image-fields.direct-upload"),
+          success: App.Imageable.attachSuggestedImageSuccess,
+          error: App.Imageable.attachSuggestedImageError
+        });
       });
     },
     removeImage: function(id) {

@@ -191,7 +191,8 @@ class Setting < ApplicationRecord
         "sdg.process.legislation": true,
         "llm.provider": nil,
         "llm.model": nil,
-        "llm.use_llm_for_translations": false
+        "llm.use_llm_for_translations": false,
+        "llm.use_ai_image_suggestions": false
       }
     end
 

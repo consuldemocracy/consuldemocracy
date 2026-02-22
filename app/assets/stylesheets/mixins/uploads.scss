@@ -33,8 +33,52 @@
 
         ~ .error {
           display: inline-block;
+          margin-bottom: $line-height;
         }
       }
+    }
+
+    .suggested-images-container,
+    .suggested-images-wrapper {
+      display: inline;
+
+      .help-text {
+        margin-bottom: 1rem;
+      }
+    }
+
+    .suggested-image-button {
+      cursor: pointer;
+    }
+
+    .js-suggest-image.is-loading {
+      @include has-fa-icon(spinner, solid);
+
+      &::before {
+        animation: fa-spin 2s infinite linear;
+      }
+    }
+
+    .suggested-images-grid .suggested-image-cell {
+      margin-bottom: 1rem;
+
+      .suggested-image {
+        height: auto;
+        min-height: rem-calc(120);
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+
+    // since user has chosen not to proceed with AI suggestions, we might as well hide it
+    // keeping it in DOM causes all sorts of trouble with positioning, since .error changes other buttons margins
+    // making it almost impossible for non-errored button to keep up responsively, while keeping inline styling
+    .image-attachment:has(label.button.error) .suggested-images-wrapper {
+      display: none;
+    }
+    // since .error resets bottom margin, but non-error button keeps it, we add it back just for this case
+    .image-attachment:has(label.button:not(.error)) .js-suggest-image.error {
+      margin: 0 0 1rem;
     }
   }
 

@@ -6,11 +6,21 @@ es:
       delete_button: Eliminar imagen
       note: "Puedes subir una imagen en los formatos: %{accepted_content_types}, y de hasta %{max_file_size} MB por archivo."
       add_new_image: Añadir imagen
+      or_separator: o
+      suggest_image_with_ai: Sugerir una imagen con IA
+      suggested_images_container: Imágenes sugeridas
+      attach_suggested_image: Adjuntar imagen sugerida
+      attach_suggested_image_aria_label: "Adjuntar imagen sugerida %{index} de %{count}"
+      pick_an_image: "Selecciona una imagen de las sugerencias siguientes:"
+      no_images_found: No se encontraron sugerencias.
+      suggested_image_filename: Imagen de %{author_name}.jpg
     actions:
       destroy:
         notice: La imagen se ha eliminado correctamente.
         alert: La imagen no se ha podido eliminar.
     errors:
       messages:
+        title_and_description_required: Para sugerir imágenes, por favor escribe primero un título y una descripción.
+        llm_not_configured: El LLM no está configurado correctamente. Por favor, contacta con un administrador.
         in_between: debe estar entre %{min} y %{max}
         wrong_content_type: El tipo de contenido %{content_type} de la imagen no coincide con ninguno de los tipos de contenido aceptados %{accepted_content_types}
