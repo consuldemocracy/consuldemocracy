@@ -577,6 +577,9 @@ tr:
   polls:
     dates: "%{open_at} ile %{closed_at} arasında"
     final_date: "Son yeniden sayımlar/Sonuçlar"
+    form:
+      vote: "Oy ver"
+      maximum_exceeded: "%{given} yanıt seçtiniz ancak en fazla %{maximum} yanıt seçebilirsiniz"
     index:
       filters:
         current: "Açık"
@@ -602,6 +605,7 @@ tr:
     show:
       already_voted_in_booth: "Zaten fiziksel bir kabinde ıy vermişsiniz. Yeniden oy veremezsiniz."
       already_voted_in_web: "Bu oylamaya zaten katılmışsınız. Yeniden oy verirseniz, önceki oyunuz değiştirilir."
+      already_voted_blank_in_web: "Bu oylamaya zaten boş oy vererek katılmışsınız. Yeniden oy verirseniz, önceki oyunuz değiştirilir."
       back: Oylamaya dön
       cant_answer_not_logged_in: "Katılmak için %{signin}ın ya da %{signup}ın."
       comments_tab: Yorumlar
@@ -631,6 +635,9 @@ tr:
       results:
         title: "Sorular"
         most_voted_answer: "En çok oy alan yanıt: "
+        open_ended:
+          valid: Geçerli
+          blank: Boş
     poll_header:
       back_to_proposal: Önergeye dön
   poll_questions:
