@@ -280,6 +280,10 @@ tr:
       sign_in: SAML ile oturum aç
       sign_up: SAML ile hesap açın
       name: SAML
+    oidc:
+      sign_in: OIDC ile oturum aç
+      sign_up: OIDC ile hesap aç
+      name: OIDC
     or_fill: "Ya da aşağıdaki formu doldurun:"
   proposals:
     create:
@@ -323,6 +327,7 @@ tr:
       tags_placeholder: "Kullanmak istediğiniz etiketleri virgül (',') ile ayırarak yazın"
       map_location: "Harita konumu"
       map_location_instructions: "Harita ile konuma gidin ve işareti yerleştirin."
+      map_marker_coordinates: "Enlem: %{latitude}. Boylam: %{longitude}"
       map_remove_marker: "Harita işaretini kaldır"
     index:
       featured_proposals: Öne çıkarılmış
