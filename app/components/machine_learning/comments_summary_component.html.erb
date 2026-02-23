@@ -4,5 +4,29 @@
     <strong><%= t("machine_learning.comments_summary") %></strong>
   </p>
 
-  <p><%= simple_format(body) %></p>
+  <% if sentiment_present? %>
+    <div class="sentiment-dashboard">
+      <div class="sentiment-bar">
+        <div class="bar-segment positive" style="width: <%= sentiment["positive"] %>%;"></div>
+        <div class="bar-segment neutral" style="width: <%= sentiment["neutral"] %>%;"></div>
+        <div class="bar-segment negative" style="width: <%= sentiment["negative"] %>%;"></div>
+      </div>
+
+      <div class="sentiment-legend">
+        <span class="legend-item positive">
+          <span class="dot"></span> <%= sentiment["positive"] %>% <%= t("sentiment.positive", default: "Positive") %>
+        </span>
+        <span class="legend-item neutral">
+          <span class="dot"></span> <%= sentiment["neutral"] %>% <%= t("sentiment.neutral", default: "Neutral") %>
+        </span>
+        <span class="legend-item negative">
+          <span class="dot"></span> <%= sentiment["negative"] %>% <%= t("sentiment.negative", default: "Negative") %>
+        </span>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="markdown-body">
+    <%= helpers.markdown(body) %>
+  </div>
 </div>

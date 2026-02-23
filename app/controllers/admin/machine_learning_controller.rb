@@ -5,21 +5,26 @@ class Admin::MachineLearningController < Admin::BaseController
   end
 
   def execute
-    @machine_learning_job.update!(script: params[:script],
-                                  user: current_user,
-                                  started_at: Time.current,
-                                  finished_at: nil,
-                                  error: nil)
+    # 1. Standardize parameters
+    script = params[:script]
+    is_dry_run = params[:dry_run] == "1" || params[:dry_run] == "true"
 
-    ::MachineLearning.new(@machine_learning_job).run
+    @job = MachineLearningJob.create!(
+      script: script,
+      user: current_user,
+      started_at: Time.current,
+      dry_run: is_dry_run,
+      config: { "force_update" => params[:force_update] }
+    )
 
-    redirect_to admin_machine_learning_path,
-                notice: t("admin.machine_learning.script_info", email: current_user.email)
+    ::MachineLearning.new(@job).delay(queue: "machine_learning").run
+
+    notice_msg = is_dry_run ? "Dry run started (Background)" : "Job started in background."
+    redirect_to admin_machine_learning_path, notice: notice_msg
   end
 
   def cancel
-    Delayed::Job.where(queue: "machine_learning").destroy_all
-    MachineLearningJob.destroy_all
+    MachineLearningJob.delete_all
 
     redirect_to admin_machine_learning_path,
                 notice: t("admin.machine_learning.notice.delete_generated_content")
@@ -28,6 +33,6 @@ class Admin::MachineLearningController < Admin::BaseController
   private
 
     def load_machine_learning_job
-      @machine_learning_job = MachineLearningJob.first_or_initialize
+      @machine_learning_job = MachineLearningJob.order(created_at: :desc).first_or_initialize
     end
 end

@@ -1,5 +1,22 @@
 .admin .machine-learning-scripts {
 
+  // --- Animations ---
+  @keyframes ml-icon-pulse {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(0.85);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  // --- Icon & State Management ---
   .alert > :first-child {
     @include has-fa-icon(ban, solid);
   }
@@ -10,16 +27,37 @@
 
   .warning > :first-child {
     @include has-fa-icon(hourglass-half, solid);
+
+    // Animate the hourglass icon itself
+    &::before {
+      display: inline-block;
+      animation: ml-icon-pulse 2s infinite ease-in-out;
+    }
   }
 
   .alert,
   .success,
   .warning {
+    border-left: 5px solid transparent;
+
+    &.alert {
+      border-left-color: $alert-color;
+    }
+
+    &.success {
+      border-left-color: $success-color;
+    }
+
+    &.warning {
+      border-left-color: $warning-color;
+    }
+
     > :first-child::before {
       margin-right: $font-icon-margin;
     }
   }
 
+  // --- Layout & Typography ---
   dl {
     font-size: $base-font-size;
 
@@ -38,19 +76,85 @@
     max-width: calc($global-width * 3 / 4);
   }
 
+  .actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-top: $line-height;
+  }
+
   select {
     max-width: 100%;
     width: auto;
   }
 
+  // --- Buttons ---
   [type=submit] {
     @include regular-button;
-    display: block;
     margin-bottom: 0;
-    margin-top: $line-height;
+    margin-top: 0;
 
+    // Primary Execution
+    &:not(.dry-run):not(.cancel) {
+      background-color: $success-color;
+
+      &:hover {
+        background-color: darken($success-color, 10%);
+      }
+    }
+
+    // Dry Run: Hollow, warning-colored, and dashed
+    &.dry-run {
+      @include hollow-button($warning-color);
+      border-style: dashed;
+      border-width: 2px;
+      color: darken($warning-color, 15%);
+
+      &:hover {
+        background-color: rgba($warning-color, 0.1);
+        color: darken($warning-color, 25%);
+        border-style: solid;
+      }
+    }
+
+    // Cancel Execution
     &.cancel {
       @include hollow-button($alert-color);
+
+      &:hover {
+        background-color: $alert-color;
+        color: $white;
+      }
     }
+  }
+
+  // --- Metrics Summary (Finished State) ---
+  .ml-job-summary {
+    .columns {
+      border-right: 1px solid $light-gray;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+
+    .text-muted {
+      color: $dark-gray;
+      font-size: 0.85rem;
+    }
+
+    hr {
+      margin: 1rem 0;
+      border-bottom: 1px solid rgba($success-color, 0.2);
+    }
+  }
+
+  // Help text for script descriptions
+  .help-text {
+    background: $light-gray;
+    padding: 1rem;
+    border-radius: $global-radius;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
   }
 }

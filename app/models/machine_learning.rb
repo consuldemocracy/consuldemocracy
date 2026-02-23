@@ -1,167 +1,62 @@
+require "csv"
+require "fileutils"
+
 class MachineLearning
-  attr_reader :user, :script, :previous_modified_date
-  attr_accessor :job
+  attr_reader :job, :ml_config
 
-  SCRIPTS_FOLDER = Rails.root.join("public", "machine_learning", "scripts").freeze
+  # Maps the UI script keys to internal processing methods and categories
+  AVAILABLE_SCRIPTS = {
+    "proposal_tags" => { method: :generate_proposal_tags, kind: "tags" },
+    "proposal_related_content" => {
+      method: :generate_proposal_related_content, kind: "related_content"
+    },
+    "proposal_summary_comments" => {
+      method: :generate_proposal_summary_comments, kind: "comments_summary"
+    },
+    "investment_tags" => { method: :generate_investment_tags, kind: "tags" },
+    "investment_related_content" => {
+      method: :generate_investment_related_content, kind: "related_content"
+    },
+    "investment_summary_comments" => {
+      method: :generate_investment_summary_comments, kind: "comments_summary"
+    },
+    "legislation_summary_comments" => {
+      method: :generate_legislation_summary_comments, kind: "comments_summary"
+    }
+  }.freeze
 
-  def initialize(job)
-    @job = job
-    @user = job.user
-    @previous_modified_date = set_previous_modified_date
-  end
-
-  def data_folder
-    self.class.data_folder
-  end
-
-  def run
-    export_proposals_to_json
-    export_budget_investments_to_json
-    export_comments_to_json
-
-    return unless run_machine_learning_scripts
-
-    if updated_file?(MachineLearning.proposals_taggings_filename) &&
-       updated_file?(MachineLearning.proposals_tags_filename)
-      cleanup_proposals_tags!
-      import_ml_proposals_tags
-      update_machine_learning_info_for("tags")
-    end
-
-    if updated_file?(MachineLearning.investments_taggings_filename) &&
-       updated_file?(MachineLearning.investments_tags_filename)
-      cleanup_investments_tags!
-      import_ml_investments_tags
-      update_machine_learning_info_for("tags")
-    end
-
-    if updated_file?(MachineLearning.proposals_related_filename)
-      cleanup_proposals_related_content!
-      import_proposals_related_content
-      update_machine_learning_info_for("related_content")
-    end
-
-    if updated_file?(MachineLearning.investments_related_filename)
-      cleanup_investments_related_content!
-      import_budget_investments_related_content
-      update_machine_learning_info_for("related_content")
-    end
-
-    if updated_file?(MachineLearning.proposals_comments_summary_filename)
-      cleanup_proposals_comments_summary!
-      import_ml_proposals_comments_summary
-      update_machine_learning_info_for("comments_summary")
-    end
-
-    if updated_file?(MachineLearning.investments_comments_summary_filename)
-      cleanup_investments_comments_summary!
-      import_ml_investments_comments_summary
-      update_machine_learning_info_for("comments_summary")
-    end
-
-    job.update!(finished_at: Time.current)
-    Mailer.machine_learning_success(user).deliver_later
-  rescue Exception => e
-    handle_error(e)
-    raise e
-  end
-  handle_asynchronously :run, queue: "machine_learning"
+  # --- CLASS METHODS (Admin UI & Legacy Support) ---
 
   class << self
     def enabled?
-      Setting["feature.machine_learning"].present?
+      Setting["feature.machine_learning"].present? && Setting["llm.model"].present?
     end
 
-    def proposals_filename
-      "proposals.json"
+    def script_kinds
+      AVAILABLE_SCRIPTS.values.map { |v| v[:kind] }.uniq.sort
     end
 
-    def investments_filename
-      "budget_investments.json"
-    end
-
-    def comments_filename
-      "comments.json"
+    def script_select_options
+      AVAILABLE_SCRIPTS.keys.map do |k|
+        [I18n.t("admin.machine_learning.scripts.#{k}.label", default: k.humanize), k]
+      end
     end
 
     def data_folder
-      Rails.root.join("public", tenant_data_folder)
+      Rails.root.join("public", Tenant.path_with_subfolder("machine_learning/data"))
     end
 
-    def tenant_data_folder
-      Tenant.path_with_subfolder("machine_learning/data")
+    def data_path(filename)
+      "/#{Tenant.path_with_subfolder("machine_learning/data")}/#{filename}"
     end
 
-    def data_output_files
-      files = { tags: [], related_content: [], comments_summary: [] }
-
-      if File.exist?(data_folder.join(proposals_tags_filename))
-        files[:tags] << proposals_tags_filename
-      end
-      if File.exist?(data_folder.join(proposals_taggings_filename))
-        files[:tags] << proposals_taggings_filename
-      end
-      if File.exist?(data_folder.join(investments_tags_filename))
-        files[:tags] << investments_tags_filename
-      end
-      if File.exist?(data_folder.join(investments_taggings_filename))
-        files[:tags] << investments_taggings_filename
-      end
-
-      if File.exist?(data_folder.join(proposals_related_filename))
-        files[:related_content] << proposals_related_filename
-      end
-      if File.exist?(data_folder.join(investments_related_filename))
-        files[:related_content] << investments_related_filename
-      end
-
-      if File.exist?(data_folder.join(proposals_comments_summary_filename))
-        files[:comments_summary] << proposals_comments_summary_filename
-      end
-      if File.exist?(data_folder.join(investments_comments_summary_filename))
-        files[:comments_summary] << investments_comments_summary_filename
-      end
-
-      files
-    end
-
-    def data_intermediate_files
-      excluded = [
-        proposals_filename,
-        investments_filename,
-        comments_filename,
-        proposals_tags_filename,
-        proposals_taggings_filename,
-        investments_tags_filename,
-        investments_taggings_filename,
-        proposals_related_filename,
-        investments_related_filename,
-        proposals_comments_summary_filename,
-        investments_comments_summary_filename
-      ]
-      json = Dir[data_folder.join("*.json")].map do |full_path_filename|
-        full_path_filename.split("/").last
-      end
-      csv = Dir[data_folder.join("*.csv")].map do |full_path_filename|
-        full_path_filename.split("/").last
-      end
-      (json + csv - excluded).sort
-    end
-
+    # Legacy Filename Constants
     def proposals_tags_filename
       "ml_tags_proposals.json"
     end
 
-    def proposals_taggings_filename
-      "ml_taggings_proposals.json"
-    end
-
     def investments_tags_filename
       "ml_tags_budgets.json"
-    end
-
-    def investments_taggings_filename
-      "ml_taggings_budgets.json"
     end
 
     def proposals_related_filename
@@ -180,297 +75,286 @@ class MachineLearning
       "ml_comments_summaries_budgets.json"
     end
 
-    def data_path(filename)
-      "/#{tenant_data_folder}/#{filename}"
+    def legislation_comments_summary_filename
+      "ml_comments_summaries_legislation.json"
     end
 
-    def script_kinds
-      %w[tags related_content comments_summary]
-    end
+    def data_output_files
+      files = { tags: [], related_content: [], comments_summary: [] }
 
-    def scripts_info
-      Dir[SCRIPTS_FOLDER.join("*.py")].map do |full_path_filename|
-        {
-          name: full_path_filename.split("/").last,
-          description: description_from(full_path_filename)
-        }
-      end.sort_by { |script_info| script_info[:name] }
-    end
+      # Mapping our constants to the categories the UI expects
+      mappings = [
+        [proposals_tags_filename, :tags],
+        [investments_tags_filename, :tags],
+        [proposals_related_filename, :related_content],
+        [investments_related_filename, :related_content],
+        [proposals_comments_summary_filename, :comments_summary],
+        [investments_comments_summary_filename, :comments_summary],
+        [legislation_comments_summary_filename, :comments_summary]
+      ]
 
-    def description_from(script_filename)
-      description = ""
-      delimiter = '"""'
-      break_line = "<br>"
-      comment_found = false
-      File.readlines(script_filename).each do |line|
-        if line.start_with?(delimiter) && !comment_found
-          comment_found = true
-          line.slice!(delimiter)
-          description << line.strip.concat(break_line) if line.present?
-        elsif line.include?(delimiter)
-          line.slice!(delimiter)
-          description << line.strip if line.present?
-          break
-        elsif comment_found
-          description << line.strip.concat(break_line)
-        end
+      mappings.each do |filename, kind|
+        # Check if the file actually exists in the tenant's data folder
+        files[kind] << filename if File.exist?(data_folder.join(filename))
       end
 
-      description.delete_suffix(break_line)
+      files.with_indifferent_access
     end
+
+    def data_intermediate_files
+      return [] unless Dir.exist?(data_folder)
+
+      # Collect any JSON/CSV that aren't the main output files
+      all_files = Dir.glob(data_folder.join("*.{json,csv}")).map { |f| File.basename(f) }
+      output_files = [
+        proposals_tags_filename, investments_tags_filename,
+        proposals_related_filename, investments_related_filename,
+        proposals_comments_summary_filename, investments_comments_summary_filename,
+        legislation_comments_summary_filename
+      ]
+
+      (all_files - output_files).sort
+    end
+  end
+
+  # --- INSTANCE METHODS ---
+
+  def initialize(job)
+    @job = job
+    @ml_config = (job.config || {}).with_indifferent_access
+    @force = @ml_config[:force_update] == "1"
+    @dry_run = job.dry_run
+    @total_tokens_used = 0
+    @records_processed = 0
+  end
+
+  def run
+    script_info = AVAILABLE_SCRIPTS[job.script]
+    if script_info
+      clear_existing_ml_data(script_info[:kind]) if @force
+      send(script_info[:method])
+
+      job.update!(
+        finished_at: Time.current,
+        total_tokens: @total_tokens_used,
+        records_processed: @records_processed
+      )
+
+      Mailer.machine_learning_success(job.user).deliver_now unless @dry_run
+    else
+      raise "Unknown script: #{job.script}"
+    end
+  rescue => e
+    job.update!(error: e.message, finished_at: Time.current)
+    Mailer.machine_learning_error(job.user).deliver_later
+    raise e
   end
 
   private
 
-    def create_data_folder
-      FileUtils.mkdir_p data_folder
-    end
+    # --- CORE PROCESSING LOOPS ---
 
-    def export_proposals_to_json
-      create_data_folder
-      filename = data_folder.join(MachineLearning.proposals_filename)
-      Proposal::Exporter.new([]).to_json_file(filename)
-    end
+    def process_tags_for(scope, record_type, filename)
+      export_data = []
+      scope.find_each do |record|
+        next unless should_reprocess_record?(record, "tags")
 
-    def export_budget_investments_to_json
-      create_data_folder
-      filename = data_folder.join(MachineLearning.investments_filename)
-      Budget::Investment::Exporter.new(Array.new).to_json_file(filename)
-    end
-
-    def export_comments_to_json
-      create_data_folder
-      filename = data_folder.join(MachineLearning.comments_filename)
-      Comment::Exporter.new.to_json_file(filename)
-    end
-
-    def run_machine_learning_scripts
-      command = if Tenant.default?
-                  "python #{job.script}"
-                else
-                  "CONSUL_TENANT=#{Tenant.current_schema} python #{job.script}"
-                end
-
-      output = `cd #{SCRIPTS_FOLDER} && #{command} 2>&1`
-      result = $?.success?
-      if result == false
-        job.update!(finished_at: Time.current, error: output)
-        Mailer.machine_learning_error(user).deliver_later
-      end
-      result
-    end
-
-    def cleanup_proposals_tags!
-      Tagging.where(context: "ml_tags", taggable_type: "Proposal").find_each(&:destroy!)
-      Tag.find_each { |tag| tag.destroy! if Tagging.where(tag: tag).empty? }
-    end
-
-    def cleanup_investments_tags!
-      Tagging.where(context: "ml_tags", taggable_type: "Budget::Investment").find_each(&:destroy!)
-      Tag.find_each { |tag| tag.destroy! if Tagging.where(tag: tag).empty? }
-    end
-
-    def cleanup_proposals_related_content!
-      RelatedContent.with_hidden.for_proposals.from_machine_learning.find_each(&:really_destroy!)
-    end
-
-    def cleanup_investments_related_content!
-      RelatedContent.with_hidden.for_investments.from_machine_learning.find_each(&:really_destroy!)
-    end
-
-    def cleanup_proposals_comments_summary!
-      MlSummaryComment.where(commentable_type: "Proposal").find_each(&:destroy!)
-    end
-
-    def cleanup_investments_comments_summary!
-      MlSummaryComment.where(commentable_type: "Budget::Investment").find_each(&:destroy!)
-    end
-
-    def import_ml_proposals_comments_summary
-      json_file = data_folder.join(MachineLearning.proposals_comments_summary_filename)
-      json_data = JSON.parse(File.read(json_file)).each(&:deep_symbolize_keys!)
-      json_data.each do |attributes|
-        attributes.delete(:id)
-        unless MlSummaryComment.find_by(commentable_id: attributes[:commentable_id],
-                                        commentable_type: "Proposal")
-          MlSummaryComment.create!(attributes)
+        result = MlHelper.generate_tags("#{record.title} #{record.description}", 5, config: ml_config)
+        if result && result["tags"]
+          unless @dry_run
+            record.set_tag_list_on(:ml_tags, result["tags"])
+            record.save!(validate: false)
+            export_data << { id: record.id, name: result["tags"].join(", "), kind: record_type }
+          end
+          track_usage(result)
         end
       end
+      finalize_batch("tags", export_data, filename)
     end
 
-    def import_ml_investments_comments_summary
-      json_file = data_folder.join(MachineLearning.investments_comments_summary_filename)
-      json_data = JSON.parse(File.read(json_file)).each(&:deep_symbolize_keys!)
-      json_data.each do |attributes|
-        attributes.delete(:id)
-        unless MlSummaryComment.find_by(commentable_id: attributes[:commentable_id],
-                                        commentable_type: "Budget::Investment")
-          MlSummaryComment.create!(attributes)
-        end
-      end
-    end
+    def process_summaries_for(scope, record_type, filename)
+      export_data = []
+      scope.find_each do |record|
+        comments = Comment.where(commentable: record).pluck(:body).compact_blank
+        next if comments.empty? || !should_reprocess_record?(record, "summary")
 
-    def import_proposals_related_content
-      json_file = data_folder.join(MachineLearning.proposals_related_filename)
-      json_data = JSON.parse(File.read(json_file)).each(&:deep_symbolize_keys!)
-      json_data.each do |related|
-        id = related.delete(:id)
-        score = related.size
-        related.each do |_, related_id|
-          if related_id.present?
-            attributes = {
-              parent_relationable_id: id,
-              parent_relationable_type: "Proposal",
-              child_relationable_id: related_id,
-              child_relationable_type: "Proposal"
+        result = MlHelper.summarize_comments(comments, record.title, config: ml_config)
+        if result && result["summary_markdown"]
+          unless @dry_run
+            summary = MlSummaryComment.find_or_initialize_by(commentable: record)
+            summary.update!(
+              body: result["summary_markdown"],
+              sentiment_analysis: result["sentiment"]
+            )
+            export_data << {
+              commentable_id: record.id, commentable_type: record_type, body: result["summary_markdown"]
             }
-            related_content = RelatedContent.find_by(attributes)
-            if related_content.present?
-              related_content.update!(machine_learning_score: score)
-            else
-              RelatedContent.create!(attributes.merge(machine_learning: true,
-                                                      author: user,
-                                                      machine_learning_score: score))
-            end
           end
-          score -= 1
+          track_usage(result)
+        end
+      end
+      finalize_batch("comments_summary", export_data, filename)
+    end
+
+    def process_related_content_for(scope, record_type, filename)
+      # RAM Safety: Limit candidate pool for comparisons
+      records = scope.order(created_at: :desc).limit(100).to_a
+      export_data = []
+
+      records.each do |record|
+        next unless should_reprocess_record?(record, "related_content")
+
+        candidates = records.reject { |r| r.id == record.id }
+        candidate_texts = candidates.map { |c| "#{c.title} #{c.description}" }
+
+        result = MlHelper.find_similar_content(
+          "#{record.title} #{record.description}", candidate_texts, 3, config: ml_config
+        )
+        if result && result["indices"]
+          related_ids = result["indices"].map { |i| candidates[i]&.id }.compact
+          save_related_content(record, related_ids, record_type) unless @dry_run
+
+          res = { id: record.id }
+          related_ids.each_with_index { |rid, i| res["related_#{i + 1}"] = rid }
+          export_data << res
+          track_usage(result)
+        end
+      end
+      finalize_batch("related_content", export_data, filename)
+    end
+
+    # --- DATA INTEGRITY HELPERS ---
+
+    def save_related_content(record, related_ids, record_type)
+      score = related_ids.size
+      related_ids.each do |child_id|
+        child_id = child_id.to_i
+        next if record.id == child_id
+
+        # UniqueViolation Fix: Check with_hidden because of acts_as_paranoid
+        existing = RelatedContent.with_hidden.find_by(
+          parent_relationable_id: record.id, parent_relationable_type: record_type,
+          child_relationable_id: child_id, child_relationable_type: record_type
+        )
+
+        if existing
+          existing.update!(
+            machine_learning: true, machine_learning_score: score, author_id: job.user_id, hidden_at: nil
+          )
+        else
+          # Callback creates the opposite record automatically
+          RelatedContent.create!(
+            parent_relationable_id: record.id, parent_relationable_type: record_type,
+            child_relationable_id: child_id, child_relationable_type: record_type,
+            machine_learning: true, machine_learning_score: score, author_id: job.user_id
+          )
+        end
+        score -= 1
+      end
+    end
+
+    def clear_existing_ml_data(kind)
+      case kind
+      when "tags"
+        Tagging.where(context: "ml_tags").delete_all
+      when "comments_summary"
+        MlSummaryComment.delete_all
+      when "related_content"
+        ml_scope = RelatedContent.with_hidden.where(machine_learning: true)
+        ml_ids = ml_scope.ids
+        if ml_ids.any?
+          # ForeignKey Fix: Delete scores first
+          RelatedContentScore.where(related_content_id: ml_ids).delete_all
+          # StackLevelTooDeep Fix: Use delete_all to skip recursive callbacks
+          ml_scope.delete_all
         end
       end
     end
 
-    def import_budget_investments_related_content
-      json_file = data_folder.join(MachineLearning.investments_related_filename)
-      json_data = JSON.parse(File.read(json_file)).each(&:deep_symbolize_keys!)
-      json_data.each do |related|
-        id = related.delete(:id)
-        score = related.size
-        related.each do |_, related_id|
-          if related_id.present?
-            attributes = {
-              parent_relationable_id: id,
-              parent_relationable_type: "Budget::Investment",
-              child_relationable_id: related_id,
-              child_relationable_type: "Budget::Investment"
-            }
-            related_content = RelatedContent.find_by(attributes)
-            if related_content.present?
-              related_content.update!(machine_learning_score: score)
-            else
-              RelatedContent.create!(attributes.merge(machine_learning: true,
-                                                      author: user,
-                                                      machine_learning_score: score))
-            end
-          end
-          score -= 1
-        end
+    def should_reprocess_record?(record, type)
+      return true if @force
+
+      case type
+      when "tags" then !record.taggings.where(context: "ml_tags").exists?
+      when "summary" then MlSummaryComment.where(commentable: record).empty?
+      when "related_content"
+        # Bi-directional check: is this record involved in any ML relationship?
+        !RelatedContent.with_hidden.where(machine_learning: true)
+                       .where("parent_relationable_id = :id OR child_relationable_id = :id", id: record.id)
+                       .exists?
+      else true
       end
     end
 
-    def import_ml_proposals_tags
-      ids = {}
-      json_file = data_folder.join(MachineLearning.proposals_tags_filename)
-      json_data = JSON.parse(File.read(json_file)).each(&:deep_symbolize_keys!)
-      json_data.each do |attributes|
-        if attributes[:name].present?
-          attributes.delete(:taggings_count)
-          if attributes[:name].length >= 150
-            attributes[:name] = attributes[:name].truncate(150)
-          end
-          tag = Tag.find_or_create_by!(name: attributes[:name])
-          ids[attributes[:id]] = tag.id
-        end
-      end
+    # --- EXPORT & UTILITY ---
 
-      json_file = data_folder.join(MachineLearning.proposals_taggings_filename)
-      json_data = JSON.parse(File.read(json_file)).each(&:deep_symbolize_keys!)
-      json_data.each do |attributes|
-        if attributes[:tag_id].present?
-          tag_id = ids[attributes[:tag_id]]
-          if Tag.find_by(id: tag_id) && attributes[:taggable_id].present?
-            attributes[:tag_id] = tag_id
-            attributes[:taggable_type] = "Proposal"
-            attributes[:context] = "ml_tags"
-            Tagging.create!(attributes)
-          end
-        end
-      end
+    def finalize_batch(kind, export_data, filename)
+      return if @dry_run
+
+      save_results_to_json(export_data, filename)
+      update_machine_learning_info_for(kind)
     end
 
-    def import_ml_investments_tags
-      ids = {}
-      json_file = data_folder.join(MachineLearning.investments_tags_filename)
-      json_data = JSON.parse(File.read(json_file)).each(&:deep_symbolize_keys!)
-      json_data.each do |attributes|
-        if attributes[:name].present?
-          attributes.delete(:taggings_count)
-          if attributes[:name].length >= 150
-            attributes[:name] = attributes[:name].truncate(150)
-          end
-          tag = Tag.find_or_create_by!(name: attributes[:name])
-          ids[attributes[:id]] = tag.id
-        end
-      end
+    def save_results_to_json(results, filename)
+      return if results.empty?
 
-      json_file = data_folder.join(MachineLearning.investments_taggings_filename)
-      json_data = JSON.parse(File.read(json_file)).each(&:deep_symbolize_keys!)
-      json_data.each do |attributes|
-        if attributes[:tag_id].present?
-          tag_id = ids[attributes[:tag_id]]
-          if Tag.find_by(id: tag_id) && attributes[:taggable_id].present?
-            attributes[:tag_id] = tag_id
-            attributes[:taggable_type] = "Budget::Investment"
-            attributes[:context] = "ml_tags"
-            Tagging.create!(attributes)
-          end
-        end
+      path = self.class.data_folder.join(filename)
+      FileUtils.mkdir_p(File.dirname(path))
+
+      File.write(path, JSON.pretty_generate(results))
+
+      # CSV Mirroring for legacy Open Data support
+      csv_path = path.to_s.sub(".json", ".csv")
+      CSV.open(csv_path, "wb") do |csv|
+        csv << results.first.keys
+        results.each { |r| csv << r.values }
       end
     end
 
     def update_machine_learning_info_for(kind)
-      MachineLearningInfo.find_or_create_by!(kind: kind)
-                         .update!(generated_at: job.started_at, script: job.script)
+      MachineLearningInfo.find_or_create_by!(kind: kind).update!(
+        generated_at: Time.current, script: job.script
+      )
     end
 
-    def set_previous_modified_date
-      proposals_tags_filename = MachineLearning.proposals_tags_filename
-      proposals_taggings_filename = MachineLearning.proposals_taggings_filename
-      investments_tags_filename = MachineLearning.investments_tags_filename
-      investments_taggings_filename = MachineLearning.investments_taggings_filename
-      proposals_related_filename = MachineLearning.proposals_related_filename
-      investments_related_filename = MachineLearning.investments_related_filename
-      proposals_comments_summary_filename = MachineLearning.proposals_comments_summary_filename
-      investments_comments_summary_filename = MachineLearning.investments_comments_summary_filename
-
-      {
-        proposals_tags_filename => last_modified_date_for(proposals_tags_filename),
-        proposals_taggings_filename => last_modified_date_for(proposals_taggings_filename),
-        investments_tags_filename => last_modified_date_for(investments_tags_filename),
-        investments_taggings_filename => last_modified_date_for(investments_taggings_filename),
-        proposals_related_filename => last_modified_date_for(proposals_related_filename),
-        investments_related_filename => last_modified_date_for(investments_related_filename),
-        proposals_comments_summary_filename => last_modified_date_for(proposals_comments_summary_filename),
-        investments_comments_summary_filename => last_modified_date_for(investments_comments_summary_filename)
-      }
+    def track_usage(result)
+      @total_tokens_used += result.dig("usage", "total_tokens").to_i
+      @records_processed += 1
     end
 
-    def last_modified_date_for(filename)
-      return nil unless File.exist? data_folder.join(filename)
+    # --- WRAPPERS ---
 
-      File.mtime data_folder.join(filename)
+    def generate_proposal_tags
+      process_tags_for(Proposal.all, "Proposal", self.class.proposals_tags_filename)
     end
 
-    def updated_file?(filename)
-      return false unless File.exist? data_folder.join(filename)
-      return true if previous_modified_date[filename].blank?
-
-      last_modified_date_for(filename) > previous_modified_date[filename]
+    def generate_proposal_related_content
+      process_related_content_for(Proposal.all, "Proposal", self.class.proposals_related_filename)
     end
 
-    def handle_error(error)
-      message = error.message
-      backtrace = error.backtrace.select { |line| line.include?("machine_learning.rb") }
-      full_error = ([message] + backtrace).join("<br>")
-      job.update!(finished_at: Time.current, error: full_error)
-      Mailer.machine_learning_error(user).deliver_later
+    def generate_proposal_summary_comments
+      process_summaries_for(Proposal.all, "Proposal", self.class.proposals_comments_summary_filename)
+    end
+
+    def generate_investment_tags
+      process_tags_for(Budget::Investment.all, "Budget::Investment", self.class.investments_tags_filename)
+    end
+
+    def generate_investment_related_content
+      process_related_content_for(
+        Budget::Investment.all, "Budget::Investment", self.class.investments_related_filename
+      )
+    end
+
+    def generate_investment_summary_comments
+      process_summaries_for(
+        Budget::Investment.all, "Budget::Investment", self.class.investments_comments_summary_filename
+      )
+    end
+
+    def generate_legislation_summary_comments
+      process_summaries_for(
+        Legislation::Question.all, "Legislation::Question", self.class.legislation_comments_summary_filename
+      )
     end
 end
