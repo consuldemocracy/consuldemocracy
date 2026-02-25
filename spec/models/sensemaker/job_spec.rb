@@ -151,6 +151,48 @@ describe Sensemaker::Job do
       end
     end
 
+    describe "#relative_output_path" do
+      let(:relative_data_folder) { "tmp/sensemaker_test_folder/data" }
+
+      before do
+        allow(Sensemaker::Paths).to receive(:sensemaker_relative_data_folder).and_return(relative_data_folder)
+      end
+
+      it "returns a path relative to Rails.root (no leading slash)" do
+        job.script = "categorization_runner.ts"
+        path = job.relative_output_path
+        expect(path).to eq("#{relative_data_folder}/categorization-output-#{job.id}.csv")
+        expect(path).not_to start_with("/")
+      end
+
+      it "returns the correct relative path for each script type" do
+        job.script = "advanced_runner.ts"
+        expect(job.relative_output_path).to eq("#{relative_data_folder}/output-#{job.id}")
+
+        job.script = "single-html-build.js"
+        expect(job.relative_output_path).to eq("#{relative_data_folder}/report-#{job.id}.html")
+      end
+    end
+
+    describe "#persisted_output_path" do
+      it "returns nil when persisted_output is blank" do
+        job.persisted_output = nil
+        expect(job.persisted_output_path).to be(nil)
+      end
+
+      it "returns nil when persisted_output is empty string" do
+        job.persisted_output = ""
+        expect(job.persisted_output_path).to be(nil)
+      end
+
+      it "resolves relative persisted_output against Rails.root so path survives deploys" do
+        relative_path = "tmp/sensemaker_test_folder/data/output-60"
+        job.persisted_output = relative_path
+        expect(job.persisted_output_path).to eq(Rails.root.join(relative_path))
+        expect(job.persisted_output_path.to_s).to include(Rails.root.to_s)
+      end
+    end
+
     describe "#output_artifact_paths" do
       let(:data_folder) { "/tmp/sensemaker_test_folder/data" }
       let(:base_path) { "#{data_folder}/output-#{job.id}" }
@@ -193,7 +235,7 @@ describe Sensemaker::Job do
           job.persisted_output = persisted_path
         end
 
-        it "uses persisted_output for single output scripts" do
+        it "uses resolved persisted_output_path (absolute) so File.exist? works after deploys" do
           job.script = "categorization_runner.ts"
           expect(job.output_artifact_paths).to eq([persisted_path])
         end
@@ -215,6 +257,20 @@ describe Sensemaker::Job do
             "#{persisted_path}-summary.md",
             "#{persisted_path}-summaryAndSource.csv"
           ])
+        end
+
+        context "when persisted_output is a relative path (post-deploy safe)" do
+          let(:relative_path) { "vendor/sensemaking-tools/data/output-#{job.id}" }
+
+          before do
+            job.persisted_output = relative_path
+          end
+
+          it "returns absolute paths via persisted_output_path so has_outputs? can find files" do
+            job.script = "categorization_runner.ts"
+            expected = Rails.root.join(relative_path).to_s
+            expect(job.output_artifact_paths).to eq([expected])
+          end
         end
       end
     end
@@ -369,11 +425,12 @@ describe Sensemaker::Job do
           before do
             job.persisted_output = "/path/to/output.txt"
             allow(File).to receive(:exist?).and_return(false)
-            allow(File).to receive(:exist?).with("/path/to/output.txt").and_return(true)
+            allow(File).to receive(:exist?).with(Rails.root.join("/path/to/output.txt")).and_return(true)
           end
 
-          it "removes the persisted output file" do
-            expect(FileUtils).to receive(:rm_f).with("/path/to/output.txt")
+          it "removes the persisted output file using resolved path (persisted_output_path)" do
+            resolved = Rails.root.join("/path/to/output.txt")
+            expect(FileUtils).to receive(:rm_f).with(resolved)
 
             job.send(:cleanup_persisted_output)
           end
@@ -437,7 +494,7 @@ describe Sensemaker::Job do
       context "when job is successful (finished_at present, no error)" do
         context "when persisted_output is not set" do
           context "when all output files exist" do
-            it "sets persisted_output to default_output_path" do
+            it "sets persisted_output to relative_output_path so path survives deploys" do
               job.script = "categorization_runner.ts"
               output_path = "#{data_folder}/categorization-output-#{job.id}.csv"
               allow(File).to receive(:exist?).with(output_path).and_return(true)
@@ -446,7 +503,8 @@ describe Sensemaker::Job do
               job.error = nil
               job.save!
 
-              expect(job.persisted_output).to eq(job.default_output_path)
+              expect(job.persisted_output).to eq(job.relative_output_path)
+              expect(job.persisted_output).not_to start_with("/")
             end
 
             it "sets persisted_output for advanced_runner.ts when all files exist" do
@@ -460,7 +518,7 @@ describe Sensemaker::Job do
               job.error = nil
               job.save!
 
-              expect(job.persisted_output).to eq(job.default_output_path)
+              expect(job.persisted_output).to eq(job.relative_output_path)
             end
 
             it "sets persisted_output for runner.ts when all files exist" do
@@ -475,7 +533,7 @@ describe Sensemaker::Job do
               job.error = nil
               job.save!
 
-              expect(job.persisted_output).to eq(job.default_output_path)
+              expect(job.persisted_output).to eq(job.relative_output_path)
             end
           end
 

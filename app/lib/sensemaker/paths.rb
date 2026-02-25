@@ -16,12 +16,16 @@ module Sensemaker
       end
     end
 
-    def self.sensemaker_data_folder
+    def self.sensemaker_relative_data_folder
       if Rails.env.test?
-        Rails.root.join("tmp/sensemaker_test_folder/data")
+        "tmp/sensemaker_test_folder/data"
       else
-        Rails.root.join(Tenant.current_secrets.sensemaker_data_folder)
+        Tenant.current_secrets.sensemaker_data_folder
       end
+    end
+
+    def self.sensemaker_data_folder
+      Rails.root.join(sensemaker_relative_data_folder)
     end
 
     def self.visualization_folder

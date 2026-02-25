@@ -109,9 +109,20 @@ module Sensemaker
       File.join(Sensemaker::Paths.sensemaker_data_folder, output_file_name)
     end
 
+    def relative_output_path
+      File.join(Sensemaker::Paths.sensemaker_relative_data_folder, output_file_name)
+    end
+
+    def persisted_output_path
+      p = read_attribute(:persisted_output)
+      return nil if p.blank?
+
+      Rails.root.join(p)
+    end
+
     def output_artifact_paths
       if persisted_output.present?
-        base_path = persisted_output
+        base_path = persisted_output_path.to_s
       else
         base_path = default_output_path
       end
@@ -167,7 +178,7 @@ module Sensemaker
         return if persisted_output.present?
 
         if has_outputs?
-          self.persisted_output = default_output_path
+          self.persisted_output = relative_output_path
         end
       end
 
@@ -213,9 +224,10 @@ module Sensemaker
       end
 
       def cleanup_persisted_output
-        return unless persisted_output.present? && File.exist?(persisted_output)
+        path = persisted_output_path
+        return unless path.present? && File.exist?(path)
 
-        [FileUtils.rm_f(persisted_output)]
+        [FileUtils.rm_f(path)]
       end
   end
 end
