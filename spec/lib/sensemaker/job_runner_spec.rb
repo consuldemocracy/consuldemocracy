@@ -440,7 +440,7 @@ describe Sensemaker::JobRunner do
         expect(job.comments_analysed).to eq(5)
       end
 
-      it "triggers the callback to set persisted_output" do
+      it "triggers the callback to set persisted_output (relative path for deploy safety)" do
         job.script = "categorization_runner.ts"
         output_path = "#{data_folder}/categorization-output-#{job.id}.csv"
         allow(File).to receive(:exist?).with(output_path).and_return(true)
@@ -449,7 +449,7 @@ describe Sensemaker::JobRunner do
         service.send(:execute_job_workflow)
 
         job.reload
-        expect(job.persisted_output).to eq(job.default_output_path)
+        expect(job.persisted_output).to eq(job.relative_output_path)
       end
     end
 
@@ -494,7 +494,7 @@ describe Sensemaker::JobRunner do
         job.reload
         expect(job.finished_at).to be_present
         expect(job.error).to be(nil)
-        expect(job.persisted_output).to eq(job.default_output_path)
+        expect(job.persisted_output).to eq(job.relative_output_path)
       end
     end
 
@@ -519,7 +519,7 @@ describe Sensemaker::JobRunner do
         job.reload
         expect(job.finished_at).to be_present
         expect(job.error).to be(nil)
-        expect(job.persisted_output).to eq(job.default_output_path)
+        expect(job.persisted_output).to eq(job.relative_output_path)
       end
     end
   end
