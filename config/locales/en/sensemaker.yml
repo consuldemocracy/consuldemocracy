@@ -49,7 +49,7 @@ en:
         title: "About Sensemaker Analyses"
         resource_intro:
           proposal: "Citizens were asked for their input on the proposal \"%{resource_title}\". The comments and discussions from citizens were used as input for Sensemaker analysis."
-          debate: "Citizens were asked for their input on the debate \"%{resource_title}\". The comments and discussions from citizens were used as input for Sensemaker analysis."
+          debate: "Citizens were asked for their input on the debate \"%{debate_title}\". The comments and discussions from citizens were used as input for Sensemaker analysis."
           legislation_proposal: "Citizens were asked for their input on the legislation proposal \"%{resource_title}\". The comments and discussions from citizens were used as input for Sensemaker analysis."
           legislation_question: "Citizens were asked for their input on the question \"%{resource_title}\". The comments and discussions from citizens were used as input for Sensemaker analysis."
           legislation_process: "Citizens were asked for their input on the legislation process \"%{resource_title}\". The comments and discussions from citizens were used as input for Sensemaker analysis."
