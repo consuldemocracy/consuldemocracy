@@ -6,7 +6,11 @@
           <%= script_type_tag(job) %>
         </span>
         <h4>
-          <%= link_to view_job_text(job), job_artefact_path(job), class: "report-link", target: "_blank", rel: "noopener" %>
+          <% if job.has_outputs? %>
+            <%= link_to view_job_text(job), job_artefact_path(job), class: "report-link", target: "_blank", rel: "noopener" %>
+          <% else %>
+            <%= content_tag :span, view_job_text(job), class: "report-unavailable" %>
+          <% end %>
         </h4>
       </div>
       <% if comments_analysed_count(job) > 0 %>

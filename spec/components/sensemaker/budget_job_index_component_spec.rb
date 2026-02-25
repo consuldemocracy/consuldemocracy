@@ -54,6 +54,7 @@ describe Sensemaker::BudgetJobIndexComponent do
       let(:jobs) { [job] }
 
       it "renders the jobs as cards in a grouped section" do
+        allow(job).to receive(:has_outputs?).and_return(true)
         render_inline component
 
         expect(page).to have_link(I18n.t("sensemaker.job_index.view_report"),

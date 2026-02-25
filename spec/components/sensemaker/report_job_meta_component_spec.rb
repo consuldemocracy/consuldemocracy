@@ -67,11 +67,19 @@ describe Sensemaker::ReportJobMetaComponent do
   end
 
   describe "rendering" do
-    it "renders the view report link" do
+    it "renders the view report link when job has outputs" do
+      allow(job).to receive(:has_outputs?).and_return(true)
       render_inline component
 
       expect(page).to have_link(I18n.t("sensemaker.report_view.view_report"),
                                 href: serve_report_sensemaker_job_path(job.id))
+    end
+
+    it "does not render the view report link when job has no outputs" do
+      allow(job).to receive(:has_outputs?).and_return(false)
+      render_inline component
+
+      expect(page).not_to have_link(I18n.t("sensemaker.report_view.view_report"))
     end
 
     it "renders comments analysed count" do

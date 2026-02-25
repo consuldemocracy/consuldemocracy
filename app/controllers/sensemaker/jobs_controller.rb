@@ -53,10 +53,9 @@ class Sensemaker::JobsController < ApplicationController
     authorize! :read, job
 
     if job.has_outputs?
-      report_file_path = job.persisted_output
-      if job.script.eql?("runner.ts")
-        report_file_path = job.output_artifact_paths.select { |path| path.include?("html") }.first
-      end
+      report_file_path = job.output_artefact_paths.find do |p|
+        p.include?("html")
+      end || job.output_artefact_paths.first
       send_file report_file_path,
                 filename: File.basename(report_file_path),
                 disposition: "inline",

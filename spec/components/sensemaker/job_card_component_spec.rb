@@ -18,12 +18,21 @@ describe Sensemaker::JobCardComponent do
   end
 
   describe "rendering" do
-    it "renders a card with report link" do
+    it "renders a card with report link when job has outputs" do
+      allow(job).to receive(:has_outputs?).and_return(true)
       render_inline component
 
       expect(page).to have_link(I18n.t("sensemaker.job_index.view_report"),
                                 href: serve_report_sensemaker_job_path(job),
                                 class: "report-link")
+    end
+
+    it "does not show report link when job has no outputs" do
+      allow(job).to receive(:has_outputs?).and_return(false)
+      render_inline component
+
+      expect(page).not_to have_link(href: serve_report_sensemaker_job_path(job))
+      expect(page).to have_content(I18n.t("sensemaker.job_index.view_report"))
     end
 
     context "when comments_analysed is present" do
@@ -44,7 +53,8 @@ describe Sensemaker::JobCardComponent do
                finished_at: Time.current)
       end
 
-      it "renders View Summary link" do
+      it "renders View Summary link when job has outputs" do
+        allow(job).to receive(:has_outputs?).and_return(true)
         render_inline component
 
         expect(page).to have_link(I18n.t("sensemaker.job_index.view_summary"),

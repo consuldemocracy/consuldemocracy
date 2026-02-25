@@ -283,6 +283,20 @@ describe Sensemaker::JobsController do
         expect(response.body).to include("Test Report")
       end
 
+      it "serves file using resolved path when persisted_output is relative" do
+        relative_path = "tmp/sensemaker_test_folder/data/report-#{job.id}.html"
+        resolved = Rails.root.join(relative_path)
+        FileUtils.mkdir_p(File.dirname(resolved))
+        File.write(resolved, "<html><body>Resolved report</body></html>")
+        job.update!(persisted_output: relative_path)
+
+        get :serve_report, params: { id: job.id }
+
+        expect(response).to have_http_status(:ok)
+        expect(response.body).to include("Resolved report")
+        FileUtils.rm_f(resolved)
+      end
+
       it "determines correct content type for HTML files" do
         get :serve_report, params: { id: job.id }
 
