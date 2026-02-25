@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Sensemaker::Conversation do
+describe Conversation do
   let(:user) { create(:user) }
 
   describe "#compile_context" do
@@ -12,7 +12,7 @@ describe Sensemaker::Conversation do
         create(:comment, commentable: poll, user: user)
       end
 
-      conversation = Sensemaker::Conversation.new("Poll", poll.id)
+      conversation = Conversation.new("Poll", poll.id)
       context_result = conversation.compile_context
 
       expect(context_result).to be_present
@@ -24,7 +24,7 @@ describe Sensemaker::Conversation do
       proposal = create(:proposal)
       expect(proposal.persisted?).to be true
 
-      conversation = Sensemaker::Conversation.new("Proposal", proposal.id)
+      conversation = Conversation.new("Proposal", proposal.id)
       context_result = conversation.compile_context
       expect(context_result).to be_present
       expect(context_result).to include(
@@ -36,7 +36,7 @@ describe Sensemaker::Conversation do
       proposal = create(:proposal,
                         description: "<p>This is a <strong>description</strong> with <em>HTML</em> tags.</p>",
                         summary: "<p>This is a <strong>summary</strong>.</p>")
-      conversation = Sensemaker::Conversation.new("Proposal", proposal.id)
+      conversation = Conversation.new("Proposal", proposal.id)
       context_result = conversation.compile_context
 
       expect(context_result).to include("This is a description with HTML tags.")
@@ -51,7 +51,7 @@ describe Sensemaker::Conversation do
       proposal = create(:proposal,
                         description: "<p>Tell us what matters to you and share your&nbsp;ideas. " \
                                      "You&#39;ve seen this before.</p>")
-      conversation = Sensemaker::Conversation.new("Proposal", proposal.id)
+      conversation = Conversation.new("Proposal", proposal.id)
       context_result = conversation.compile_context
 
       expected_text = "Tell us what matters to you and share your ideas. You've seen this before."
@@ -64,7 +64,7 @@ describe Sensemaker::Conversation do
       debate = create(:debate)
       expect(debate.persisted?).to be true
 
-      conversation = Sensemaker::Conversation.new("Debate", debate.id)
+      conversation = Conversation.new("Debate", debate.id)
       context_result = conversation.compile_context
       expect(context_result).to be_present
       expect(context_result).to include(
@@ -74,7 +74,7 @@ describe Sensemaker::Conversation do
 
     it "sanitizes HTML from Debate description" do
       debate = create(:debate, description: "<p><strong>How do you feel</strong> about <em>safety</em>?</p>")
-      conversation = Sensemaker::Conversation.new("Debate", debate.id)
+      conversation = Conversation.new("Debate", debate.id)
       context_result = conversation.compile_context
 
       expect(context_result).to include("How do you feel about safety?")
@@ -88,7 +88,7 @@ describe Sensemaker::Conversation do
       debate = create(:debate,
                       description: "<p>How do you feel about the overall safety of our community&nbsp; " \
                                    "and what are your biggest concerns?</p>")
-      conversation = Sensemaker::Conversation.new("Debate", debate.id)
+      conversation = Conversation.new("Debate", debate.id)
       context_result = conversation.compile_context
 
       expected_text = "How do you feel about the overall safety of our community and " \
@@ -102,7 +102,7 @@ describe Sensemaker::Conversation do
       proposal = create(:legislation_proposal)
       expect(proposal.persisted?).to be true
 
-      conversation = Sensemaker::Conversation.new("Legislation::Proposal", proposal.id)
+      conversation = Conversation.new("Legislation::Proposal", proposal.id)
       context_result = conversation.compile_context
       expect(context_result).to be_present
       expect(context_result).to include(
@@ -114,7 +114,7 @@ describe Sensemaker::Conversation do
       proposal = create(:legislation_proposal,
                         description: "<p>Legislation <strong>description</strong> with HTML.</p>",
                         summary: "<p>Legislation <em>summary</em>.</p>")
-      conversation = Sensemaker::Conversation.new("Legislation::Proposal", proposal.id)
+      conversation = Conversation.new("Legislation::Proposal", proposal.id)
       context_result = conversation.compile_context
 
       expect(context_result).to include("Legislation description with HTML.")
@@ -128,7 +128,7 @@ describe Sensemaker::Conversation do
       question = create(:legislation_question)
       expect(question.persisted?).to be true
 
-      conversation = Sensemaker::Conversation.new("Legislation::Question", question.id)
+      conversation = Conversation.new("Legislation::Question", question.id)
       context_result = conversation.compile_context
       expect(context_result).to be_present
       expect(context_result).to include(
@@ -140,7 +140,7 @@ describe Sensemaker::Conversation do
     it "sanitizes HTML from Legislation::Question description" do
       question = create(:legislation_question,
                         description: "<p>Question <strong>description</strong> with <em>HTML</em>.</p>")
-      conversation = Sensemaker::Conversation.new("Legislation::Question", question.id)
+      conversation = Conversation.new("Legislation::Question", question.id)
       context_result = conversation.compile_context
 
       expect(context_result).to include("Question description with HTML.")
@@ -159,7 +159,7 @@ describe Sensemaker::Conversation do
       end
       expect(question.persisted?).to be true
 
-      conversation = Sensemaker::Conversation.new("Legislation::Question", question.id)
+      conversation = Conversation.new("Legislation::Question", question.id)
       context_result = conversation.compile_context
       expect(context_result).to be_present
       expect(context_result).to include("### Debate Responses")
@@ -175,7 +175,7 @@ describe Sensemaker::Conversation do
         create(:budget_investment, budget: budget)
       end
 
-      conversation = Sensemaker::Conversation.new("Budget", budget.id)
+      conversation = Conversation.new("Budget", budget.id)
       context_result = conversation.compile_context
 
       expect(context_result).to be_present
@@ -193,7 +193,7 @@ describe Sensemaker::Conversation do
         create(:budget_investment, heading: heading)
       end
 
-      conversation = Sensemaker::Conversation.new("Budget::Group", group.id)
+      conversation = Conversation.new("Budget::Group", group.id)
       context_result = conversation.compile_context
 
       expect(context_result).to be_present
@@ -207,7 +207,7 @@ describe Sensemaker::Conversation do
       create(:poll_question_option, question: question, title: "Option 1")
       create(:poll_question_option, question: question, title: "Option 2")
 
-      conversation = Sensemaker::Conversation.new("Poll::Question", question.id)
+      conversation = Conversation.new("Poll::Question", question.id)
 
       expect { conversation.compile_context }.to raise_error(ArgumentError, /only supported for open-ended Poll::Question/)
     end
@@ -218,7 +218,7 @@ describe Sensemaker::Conversation do
       create(:poll_answer, question: question, answer: "First answer", option: nil)
       create(:poll_answer, question: question, answer: "Second answer", option: nil)
 
-      conversation = Sensemaker::Conversation.new("Poll::Question", question.id)
+      conversation = Conversation.new("Poll::Question", question.id)
       context_result = conversation.compile_context
 
       expect(context_result).to be_present
@@ -240,7 +240,7 @@ describe Sensemaker::Conversation do
         3.times do
           create(:comment, commentable: target, user: user)
         end
-        conversation = Sensemaker::Conversation.new(target_type, target.id)
+        conversation = Conversation.new(target_type, target.id)
         context_result = conversation.compile_context
         expect(context_result).to be_present, "Failed to compile context for #{target_factory}"
         expect(context_result).to include("- Comments: #{conversation.comments.size}")
@@ -254,7 +254,7 @@ describe Sensemaker::Conversation do
         budget = create(:budget)
         _investment = create(:budget_investment, budget: budget, cached_votes_up: 0)
 
-        conversation = Sensemaker::Conversation.new("Budget", budget.id)
+        conversation = Conversation.new("Budget", budget.id)
         comments = conversation.comments
 
         expect(comments.size).to eq(1)
@@ -266,7 +266,7 @@ describe Sensemaker::Conversation do
         budget = create(:budget)
         _investment = create(:budget_investment, budget: budget, cached_votes_up: 5)
 
-        conversation = Sensemaker::Conversation.new("Budget", budget.id)
+        conversation = Conversation.new("Budget", budget.id)
         comments = conversation.comments
 
         expect(comments.size).to eq(1)
@@ -280,7 +280,7 @@ describe Sensemaker::Conversation do
         heading = create(:budget_heading, group: group)
         _investment = create(:budget_investment, heading: heading, cached_votes_up: 0)
 
-        conversation = Sensemaker::Conversation.new("Budget::Group", group.id)
+        conversation = Conversation.new("Budget::Group", group.id)
         comments = conversation.comments
 
         expect(comments.size).to eq(1)
@@ -294,7 +294,7 @@ describe Sensemaker::Conversation do
         heading = create(:budget_heading, group: group)
         _investment = create(:budget_investment, heading: heading, cached_votes_up: 3)
 
-        conversation = Sensemaker::Conversation.new("Budget::Group", group.id)
+        conversation = Conversation.new("Budget::Group", group.id)
         comments = conversation.comments
 
         expect(comments.size).to eq(1)
@@ -305,7 +305,7 @@ describe Sensemaker::Conversation do
       it "pads Proposal votes by 1 when votes are 0" do
         _proposal = create(:proposal, cached_votes_up: 0)
 
-        conversation = Sensemaker::Conversation.new("Proposal", nil)
+        conversation = Conversation.new("Proposal", nil)
         comments = conversation.comments
 
         expect(comments.size).to eq(1)
@@ -316,7 +316,7 @@ describe Sensemaker::Conversation do
       it "pads Proposal votes by 1 when votes exist" do
         _proposal = create(:proposal, cached_votes_up: 10)
 
-        conversation = Sensemaker::Conversation.new("Proposal", nil)
+        conversation = Conversation.new("Proposal", nil)
         comments = conversation.comments
 
         expect(comments.size).to eq(1)
@@ -333,7 +333,7 @@ describe Sensemaker::Conversation do
                title: "Test Investment",
                description: "<p>Investment <strong>description</strong> with <em>HTML</em> tags.</p>")
 
-        conversation = Sensemaker::Conversation.new("Budget", budget.id)
+        conversation = Conversation.new("Budget", budget.id)
         comments = conversation.comments
 
         expect(comments.size).to eq(1)
@@ -350,7 +350,7 @@ describe Sensemaker::Conversation do
                title: "Test Proposal",
                description: "<p>Proposal <strong>description</strong> with <em>HTML</em> tags.</p>")
 
-        conversation = Sensemaker::Conversation.new("Proposal", nil)
+        conversation = Conversation.new("Proposal", nil)
         comments = conversation.comments
 
         expect(comments.size).to eq(1)
@@ -371,7 +371,7 @@ describe Sensemaker::Conversation do
                title: "Group Investment",
                description: "<p>Group <strong>investment</strong> description.</p>")
 
-        conversation = Sensemaker::Conversation.new("Budget::Group", group.id)
+        conversation = Conversation.new("Budget::Group", group.id)
         comments = conversation.comments
 
         expect(comments.size).to eq(1)
@@ -390,7 +390,7 @@ describe Sensemaker::Conversation do
         comment1 = create(:comment, commentable: poll, user: user)
         comment2 = create(:comment, commentable: poll, user: user)
 
-        conversation = Sensemaker::Conversation.new("Poll", poll.id)
+        conversation = Conversation.new("Poll", poll.id)
         comments = conversation.comments
 
         expect(comments.size).to eq(2)
@@ -405,7 +405,7 @@ describe Sensemaker::Conversation do
         visible_comment = create(:comment, commentable: poll, user: user)
         create(:comment, commentable: poll, user: user, hidden_at: Time.current)
 
-        conversation = Sensemaker::Conversation.new("Poll", poll.id)
+        conversation = Conversation.new("Poll", poll.id)
         comments = conversation.comments
 
         expect(comments.size).to eq(1)
@@ -430,7 +430,7 @@ describe Sensemaker::Conversation do
                              author: user1)
         create(:poll_answer, question: question2, answer: "Every day", option: nil, author: user2)
 
-        conversation = Sensemaker::Conversation.new("Poll", poll.id)
+        conversation = Conversation.new("Poll", poll.id)
         comments = conversation.comments
 
         expect(comments.size).to eq(2)
@@ -457,7 +457,7 @@ describe Sensemaker::Conversation do
         question2 = create(:poll_question_open, poll: poll, title: "What other feedback?")
         create(:poll_answer, question: question2, answer: "More cake please", option: nil, author: user1)
 
-        conversation = Sensemaker::Conversation.new("Poll", poll.id)
+        conversation = Conversation.new("Poll", poll.id)
         comments = conversation.comments
 
         expect(comments.size).to eq(1)
@@ -477,7 +477,7 @@ describe Sensemaker::Conversation do
         question2 = create(:poll_question_open, poll: poll, title: "Question 2")
         create(:poll_answer, question: question2, answer: "Answer from user1", option: nil, author: user1)
 
-        conversation = Sensemaker::Conversation.new("Poll", poll.id)
+        conversation = Conversation.new("Poll", poll.id)
         comments = conversation.comments
 
         expect(comments.size).to eq(2)
@@ -497,7 +497,7 @@ describe Sensemaker::Conversation do
         create(:poll_answer, question: question1, answer: "Some answer", option: nil,
                              author: user_with_answer)
 
-        conversation = Sensemaker::Conversation.new("Poll", poll.id)
+        conversation = Conversation.new("Poll", poll.id)
         comments = conversation.comments
 
         expect(comments.size).to eq(1)
@@ -511,7 +511,7 @@ describe Sensemaker::Conversation do
         question = create(:poll_question_unique, poll: poll, title: "Single Question")
         create(:poll_question_option, question: question, title: "Yes")
 
-        conversation = Sensemaker::Conversation.new("Poll::Question", question.id)
+        conversation = Conversation.new("Poll::Question", question.id)
 
         expect { conversation.comments }.to raise_error(ArgumentError, /only supported for open-ended Poll::Question/)
       end
@@ -521,7 +521,7 @@ describe Sensemaker::Conversation do
         question = create(:poll_question_multiple, poll: poll, title: "Multiple Question")
         create(:poll_question_option, question: question, title: "Option A")
 
-        conversation = Sensemaker::Conversation.new("Poll::Question", question.id)
+        conversation = Conversation.new("Poll::Question", question.id)
 
         expect { conversation.comments }.to raise_error(ArgumentError, /only supported for open-ended Poll::Question/)
       end
@@ -531,7 +531,7 @@ describe Sensemaker::Conversation do
         question = create(:poll_question_open, poll: poll, title: "Open Question")
         answer = create(:poll_answer, question: question, answer: "My answer", option: nil)
 
-        conversation = Sensemaker::Conversation.new("Poll::Question", question.id)
+        conversation = Conversation.new("Poll::Question", question.id)
         comments = conversation.comments
 
         expect(comments.size).to eq(1)

@@ -1,5 +1,5 @@
 en:
-  sensemaker:
+  conversation:
     context:
       base: "Analysing %{type} from the Consul Democracy platform"
       title: "Title: %{title}"
