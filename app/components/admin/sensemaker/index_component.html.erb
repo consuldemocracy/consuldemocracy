@@ -48,42 +48,40 @@
 
         <h3 class="flex-between">
           <span><%= t("admin.sensemaker.index.past_runs") %></span>
-<<<<<<< HEAD
+          <<<<<<< HEAD
           <%= link_to t("admin.sensemaker.index.new_run"), new_admin_sensemaker_job_path, class: "button" %>
-=======
-          <%= link_to "New Run", new_admin_sensemaker_job_path, class: "button" %>
->>>>>>> 3d009e84c (Adds views, components, and locale for admin to manage sensemaker jobs)
-        </h3>
+          <%= link_to "New Run", new_admin_sensemaker_job_path, class: "button" %>>>>>>>> 3d009e84c (Adds views, components, and locale for admin to manage sensemaker jobs)
+          </h3>
 
-        <table class="job-table">
-          <thead>
-            <tr>
-              <th><%= t("admin.sensemaker.index.table_item") %></th>
-              <th><%= t("admin.sensemaker.index.table_script") %></th>
-              <th><%= t("admin.sensemaker.index.table_status") %></th>
-              <th style="text-align: right;"><%= t("admin.sensemaker.index.table_actions") %></th>
-            </tr>
-          </thead>
-          <tbody>
-            <% sensemaker_jobs.each do |sensemaker_job| %>
-              <%= render Admin::Sensemaker::JobRowComponent.new(sensemaker_job) %>
-            <% end %>
-          </tbody>
-        </table>
+          <table class="job-table">
+            <thead>
+              <tr>
+                <th><%= t("admin.sensemaker.index.table_item") %></th>
+                <th><%= t("admin.sensemaker.index.table_script") %></th>
+                <th><%= t("admin.sensemaker.index.table_status") %></th>
+                <th style="text-align: right;"><%= t("admin.sensemaker.index.table_actions") %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% sensemaker_jobs.each do |sensemaker_job| %>
+                <%= render Admin::Sensemaker::JobRowComponent.new(sensemaker_job) %>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="tabs-panel" id="help">
+          <%= render Admin::Sensemaker::HelpComponent.new %>
+        </div>
       </div>
 
-      <div class="tabs-panel" id="help">
-        <%= render Admin::Sensemaker::HelpComponent.new %>
-      </div>
-    </div>
-
-  <% else %>
-    <div class="callout primary">
-      <p>
-        <%= sanitize(t("admin.sensemaker.feature_disabled",
+    <% else %>
+      <div class="callout primary">
+        <p>
+          <%= sanitize(t("admin.sensemaker.feature_disabled",
                        link: link_to(t("admin.sensemaker.feature_disabled_link"),
                                      admin_settings_path(anchor: "tab-feature-flags")))) %>
-      </p>
-    </div>
-  <% end %>
-</div>
+        </p>
+      </div>
+    <% end %>
+  </div>
