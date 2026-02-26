@@ -1293,6 +1293,11 @@ sv:
         selected: Valt
         milestones: Milstolpar
         no_proposals: Det finns inga förslag.
+        list:
+          id: ID
+          title: Förslag
+          author: Förslagslämnare
+          summary: Sammanfattning
       show:
         create_question: Lägg till förslaget till en omröstning
       form:
