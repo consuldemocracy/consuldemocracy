@@ -389,7 +389,7 @@ GEM
       net-imap
       net-pop
       net-smtp
-    marcel (1.0.4)
+    marcel (1.1.0)
     matrix (0.4.2)
     mdl (0.15.0)
       kramdown (~> 2.3)
@@ -691,15 +691,17 @@ GEM
     ruby-vips (2.2.3)
       ffi (~> 1.12)
       logger
-    ruby_llm (1.8.2)
+    ruby_llm (1.12.1)
       base64
       event_stream_parser (~> 1)
-      faraday (>= 1.10.0)
+      faraday (>= 2.0)
       faraday-multipart (>= 1)
       faraday-net_http (>= 1)
-      faraday-retry (>= 1)
-      marcel (~> 1.0)
+      faraday-retry (>= 2.0)
+      marcel (~> 1)
+      ruby_llm-schema (~> 0)
       zeitwerk (~> 2)
+    ruby_llm-schema (0.3.0)
     rubyzip (2.4.1)
     rugged (1.9.0)
     rvm1-capistrano3 (1.4.0)
@@ -844,7 +846,7 @@ GEM
     wkhtmltopdf-binary (0.12.6.10)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.7.4)
+    zeitwerk (2.7.5)
 
 PLATFORMS
   ruby
@@ -934,7 +936,7 @@ DEPENDENCIES
   rubocop-rails (~> 2.33.4)
   rubocop-rspec (~> 3.9.0)
   rubocop-rspec_rails (~> 2.32.0)
-  ruby_llm (~> 1.8.2)
+  ruby_llm (~> 1.12.1)
   rvm1-capistrano3 (~> 1.4.0)
   sassc-embedded (~> 1.77.5)
   sassc-rails (~> 2.1.2)
