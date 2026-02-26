@@ -66,20 +66,3 @@ en:
         question_title: "Question: %{title}"
         filter_note: "Note: This analysis focuses on the poll question \"%{question_title}\"."
         open_ended: "This is an open-ended question with %{answers_count} text responses."
-
-    scripts:
-      health_check_runner_ts:
-        title: "Perform health check"
-        description: "Health check to verify sensemaker is working"
-      categorization_runner_ts:
-        title: "Categorise"
-        description: "Categorise comments into topics and subtopics"
-      runner_ts:
-        title: "Summarise"
-        description: "Generate a summary of the conversation"
-      advanced_runner_ts:
-        title: "Analyse"
-        description: "Analyse the conversation with statistics"
-      single_html_build_js:
-        title: "Report"
-        description: "Analyse and generate a report in HTML format"
