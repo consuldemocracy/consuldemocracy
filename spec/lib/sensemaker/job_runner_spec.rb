@@ -13,6 +13,14 @@ describe Sensemaker::JobRunner do
            additional_context: "")
   end
 
+  shared_context "sensemaker paths stubbed" do
+    let(:data_folder) { "/tmp/sensemaker_test_folder/data" }
+
+    before do
+      allow(Sensemaker::Paths).to receive(:sensemaker_data_folder).and_return(data_folder)
+    end
+  end
+
   describe "#initialize" do
     it "initializes with the provided job" do
       service = Sensemaker::JobRunner.new(job)
@@ -83,148 +91,90 @@ describe Sensemaker::JobRunner do
       expect(result).to be true
     end
 
-    it "returns false when sensemaker_data_folder is not configured" do
-      allow(Tenant.current_secrets).to receive(:sensemaker_data_folder).and_return(nil)
-
-      result = service.send(:check_dependencies?)
-
-      expect(result).to be false
-      job.reload
-      expect(job.finished_at).to be_present
-      expect(job.error).to include("Sensemaker data folder not configured")
-    end
-
-    it "returns false when sensemaker_key_file is not configured" do
-      allow(Tenant.current_secrets).to receive(:sensemaker_key_file).and_return(nil)
-
-      result = service.send(:check_dependencies?)
-
-      expect(result).to be false
-      job.reload
-      expect(job.finished_at).to be_present
-      expect(job.error).to include("Sensemaker key file not configured")
-    end
-
-    it "returns false when sensemaker_model_name is not configured" do
-      allow(Tenant.current_secrets).to receive(:sensemaker_model_name).and_return(nil)
-
-      result = service.send(:check_dependencies?)
-
-      expect(result).to be false
-      job.reload
-      expect(job.finished_at).to be_present
-      expect(job.error).to include("Sensemaker model name not configured")
-    end
-
-    it "returns false when Node.js is not available" do
-      allow(service).to receive(:system).with("which node > /dev/null 2>&1").and_return(false)
-
-      result = service.send(:check_dependencies?)
-
-      expect(result).to be false
-      job.reload
-      expect(job.finished_at).to be_present
-      expect(job.error).to include("Node.js not found")
-    end
-
-    it "returns false when NPX is not available" do
-      allow(service).to receive(:system).with("which npx > /dev/null 2>&1").and_return(false)
-
-      result = service.send(:check_dependencies?)
-
-      expect(result).to be false
-      job.reload
-      expect(job.finished_at).to be_present
-      expect(job.error).to include("NPX not found")
-    end
-
-    it "returns false when the sensemaking-tools package folder does not exist" do
-      allow(File).to receive(:exist?).with(Sensemaker::Paths.sensemaker_package_folder).and_return(false)
-
-      result = service.send(:check_dependencies?)
-
-      expect(result).to be false
-      job.reload
-      expect(job.finished_at).to be_present
-      expect(job.error).to include("sensemaking-tools package folder not found")
-    end
-
-    it "returns false when the sensemaking data folder does not exist" do
-      allow(File).to receive(:exist?).with(Sensemaker::Paths.sensemaker_data_folder).and_return(false)
-
-      result = service.send(:check_dependencies?)
-
-      expect(result).to be false
-      job.reload
-      expect(job.finished_at).to be_present
-      expect(job.error).to include("Sensemaker data folder not found")
-    end
-
-    it "returns false when the input file does not exist" do
-      allow(File).to receive(:exist?).with(Sensemaker::Paths.sensemaker_package_folder).and_return(true)
-      allow(File).to receive(:exist?).with(service.input_file).and_return(false)
-
-      result = service.send(:check_dependencies?)
-
-      expect(result).to be false
-      job.reload
-      expect(job.finished_at).to be_present
-      expect(job.error).to include("Input file not found")
-    end
-
-    it "returns false when the key file does not exist" do
-      allow(File).to receive(:exist?).with(Sensemaker::Paths.sensemaker_package_folder).and_return(true)
-      allow(File).to receive(:exist?).with(service.input_file).and_return(true)
-      allow(File).to receive(:exist?).with(service.key_file).and_return(false)
-
-      result = service.send(:check_dependencies?)
-
-      expect(result).to be false
-      job.reload
-      expect(job.finished_at).to be_present
-      expect(job.error).to include("Key file not found")
-    end
-
-    it "returns false when the key file is invalid JSON" do
-      allow(File).to receive(:exist?).with(Sensemaker::Paths.sensemaker_package_folder).and_return(true)
-      allow(File).to receive(:exist?).with(service.input_file).and_return(true)
-      allow(File).to receive(:exist?).with(service.key_file).and_return(true)
-      allow(File).to receive(:read).with(service.key_file).and_return("invalid json")
-
-      result = service.send(:check_dependencies?)
-
-      expect(result).to be false
-      job.reload
-      expect(job.finished_at).to be_present
-      expect(job.error).to include("Key file is invalid")
-    end
-
-    it "returns false when the key file is missing project_id" do
-      allow(File).to receive(:exist?).with(Sensemaker::Paths.sensemaker_package_folder).and_return(true)
-      allow(File).to receive(:exist?).with(service.input_file).and_return(true)
-      allow(File).to receive(:exist?).with(service.key_file).and_return(true)
-      allow(File).to receive(:read).with(service.key_file).and_return('{"type": "service_account"}')
-
-      result = service.send(:check_dependencies?)
-
-      expect(result).to be false
-      job.reload
-      expect(job.finished_at).to be_present
-      expect(job.error).to include("Key file is missing project_id")
-    end
-
-    it "returns false when the script file does not exist" do
-      allow(File).to receive(:exist?).with(Sensemaker::Paths.sensemaker_package_folder).and_return(true)
-      allow(File).to receive(:exist?).with(service.input_file).and_return(true)
-      allow(File).to receive(:exist?).with(service.key_file).and_return(true)
-      allow(File).to receive(:exist?).with(service.script_file).and_return(false)
-
-      result = service.send(:check_dependencies?)
-
-      expect(result).to be false
-      job.reload
-      expect(job.finished_at).to be_present
-      expect(job.error).to include("Script file not found")
+    {
+      "sensemaker_data_folder is not configured" => [
+        -> { allow(Tenant.current_secrets).to receive(:sensemaker_data_folder).and_return(nil) },
+        "Sensemaker data folder not configured"
+      ],
+      "sensemaker_key_file is not configured" => [
+        -> { allow(Tenant.current_secrets).to receive(:sensemaker_key_file).and_return(nil) },
+        "Sensemaker key file not configured"
+      ],
+      "sensemaker_model_name is not configured" => [
+        -> { allow(Tenant.current_secrets).to receive(:sensemaker_model_name).and_return(nil) },
+        "Sensemaker model name not configured"
+      ],
+      "Node.js is not available" => [
+        -> { allow(service).to receive(:system).with("which node > /dev/null 2>&1").and_return(false) },
+        "Node.js not found"
+      ],
+      "NPX is not available" => [
+        -> { allow(service).to receive(:system).with("which npx > /dev/null 2>&1").and_return(false) },
+        "NPX not found"
+      ],
+      "the sensemaking-tools package folder does not exist" => [
+        -> {
+          allow(File).to receive(:exist?).with(Sensemaker::Paths.sensemaker_package_folder).and_return(false)
+        },
+        "sensemaking-tools package folder not found"
+      ],
+      "the sensemaking data folder does not exist" => [
+        -> {
+          allow(File).to receive(:exist?).with(Sensemaker::Paths.sensemaker_data_folder).and_return(false)
+        },
+        "Sensemaker data folder not found"
+      ],
+      "the input file does not exist" => [
+        -> {
+          allow(File).to receive(:exist?).with(Sensemaker::Paths.sensemaker_package_folder).and_return(true)
+          allow(File).to receive(:exist?).with(service.input_file).and_return(false)
+        },
+        "Input file not found"
+      ],
+      "the key file does not exist" => [
+        -> {
+          allow(File).to receive(:exist?).with(Sensemaker::Paths.sensemaker_package_folder).and_return(true)
+          allow(File).to receive(:exist?).with(service.input_file).and_return(true)
+          allow(File).to receive(:exist?).with(service.key_file).and_return(false)
+        },
+        "Key file not found"
+      ],
+      "the key file is invalid JSON" => [
+        -> {
+          allow(File).to receive(:exist?).with(Sensemaker::Paths.sensemaker_package_folder).and_return(true)
+          allow(File).to receive(:exist?).with(service.input_file).and_return(true)
+          allow(File).to receive(:exist?).with(service.key_file).and_return(true)
+          allow(File).to receive(:read).with(service.key_file).and_return("invalid json")
+        },
+        "Key file is invalid"
+      ],
+      "the key file is missing project_id" => [
+        -> {
+          allow(File).to receive(:exist?).with(Sensemaker::Paths.sensemaker_package_folder).and_return(true)
+          allow(File).to receive(:exist?).with(service.input_file).and_return(true)
+          allow(File).to receive(:exist?).with(service.key_file).and_return(true)
+          allow(File).to receive(:read).with(service.key_file).and_return('{"type": "service_account"}')
+        },
+        "Key file is missing project_id"
+      ],
+      "the script file does not exist" => [
+        -> {
+          allow(File).to receive(:exist?).with(Sensemaker::Paths.sensemaker_package_folder).and_return(true)
+          allow(File).to receive(:exist?).with(service.input_file).and_return(true)
+          allow(File).to receive(:exist?).with(service.key_file).and_return(true)
+          allow(File).to receive(:exist?).with(service.script_file).and_return(false)
+        },
+        "Script file not found"
+      ]
+    }.each do |description, (setup, error_substring)|
+      it "returns false when #{description}" do
+        instance_exec(&setup)
+        result = service.send(:check_dependencies?)
+        expect(result).to be false
+        job.reload
+        expect(job.finished_at).to be_present
+        expect(job.error).to include(error_substring)
+      end
     end
   end
 
@@ -276,39 +226,27 @@ describe Sensemaker::JobRunner do
                                    .and_return('{"project_id": "sensemaker-466109"}')
     end
 
-    it "returns the correct command for the categorization runner" do
-      command = service.build_command
-      expect(command).to include("npx ts-node #{service.script_file}")
-      expect(command).to include("--vertexProject #{service.project_id}")
-      expect(command).to include("--modelName #{Tenant.current_secrets.sensemaker_model_name}")
-      expect(command).to include("--keyFilename #{service.key_file}")
-      expect(command).to include("--inputFile #{service.input_file}")
-      expect(command).to include("--outputFile #{service.output_file}")
+    shared_examples "runner command with common flags" do |script_name, use_output_file_flag: true|
+      it "returns the correct command for #{script_name}" do
+        service.job.script = script_name
+        command = service.build_command
+        expect(command).to include("npx ts-node #{service.script_file}")
+        expect(command).to include("--vertexProject #{service.project_id}")
+        expect(command).to include("--modelName #{Tenant.current_secrets.sensemaker_model_name}")
+        expect(command).to include("--keyFilename #{service.key_file}")
+        expect(command).to include("--inputFile #{service.input_file}")
+        if use_output_file_flag
+          expect(command).to include("--outputFile #{service.output_file}")
+        else
+          expect(command).not_to include("--outputFile")
+          expect(command).to include("--outputBasename #{service.output_file}")
+        end
+      end
     end
 
-    it "returns the correct command for the advanced runner" do
-      service.job.script = "advanced_runner.ts"
-      command = service.build_command
-      expect(command).to include("npx ts-node #{service.script_file}")
-      expect(command).to include("--vertexProject #{service.project_id}")
-      expect(command).to include("--modelName #{Tenant.current_secrets.sensemaker_model_name}")
-      expect(command).to include("--keyFilename #{service.key_file}")
-      expect(command).to include("--inputFile #{service.input_file}")
-      expect(command).not_to include("--outputFile")
-      expect(command).to include("--outputBasename #{service.output_file}")
-    end
-
-    it "returns the correct command for the runner (summary) script" do
-      service.job.script = "runner.ts"
-      command = service.build_command
-      expect(command).to include("npx ts-node #{service.script_file}")
-      expect(command).to include("--vertexProject #{service.project_id}")
-      expect(command).to include("--modelName #{Tenant.current_secrets.sensemaker_model_name}")
-      expect(command).to include("--keyFilename #{service.key_file}")
-      expect(command).to include("--inputFile #{service.input_file}")
-      expect(command).not_to include("--outputFile")
-      expect(command).to include("--outputBasename #{service.output_file}")
-    end
+    it_behaves_like "runner command with common flags", "categorization_runner.ts", use_output_file_flag: true
+    it_behaves_like "runner command with common flags", "advanced_runner.ts", use_output_file_flag: false
+    it_behaves_like "runner command with common flags", "runner.ts", use_output_file_flag: false
 
     it "returns the correct command for the single-html-build script" do
       service.job.update!(script: "single-html-build.js")
@@ -329,22 +267,12 @@ describe Sensemaker::JobRunner do
   describe "#input_file" do
     let(:service) { Sensemaker::JobRunner.new(job) }
 
-    it "returns the standard input file for categorization_runner.ts" do
-      job.script = "categorization_runner.ts"
-      expected_file = "#{Sensemaker::Paths.sensemaker_data_folder}/input-#{job.id}.csv"
-      expect(service.input_file).to eq(expected_file)
-    end
-
-    it "returns the standard input file for runner.ts" do
-      job.script = "runner.ts"
-      expected_file = "#{Sensemaker::Paths.sensemaker_data_folder}/input-#{job.id}.csv"
-      expect(service.input_file).to eq(expected_file)
-    end
-
-    it "returns the standard input file for health_check_runner.ts" do
-      job.script = "health_check_runner.ts"
-      expected_file = "#{Sensemaker::Paths.sensemaker_data_folder}/input-#{job.id}.csv"
-      expect(service.input_file).to eq(expected_file)
+    %w[categorization_runner.ts runner.ts health_check_runner.ts].each do |script|
+      it "returns the standard input file for #{script}" do
+        job.script = script
+        expected_file = "#{Sensemaker::Paths.sensemaker_data_folder}/input-#{job.id}.csv"
+        expect(service.input_file).to eq(expected_file)
+      end
     end
 
     context "when script is advanced_runner.ts" do
@@ -374,43 +302,25 @@ describe Sensemaker::JobRunner do
   describe "#script_file" do
     let(:service) { Sensemaker::JobRunner.new(job) }
 
-    it "returns the correct path for categorization_runner.ts" do
-      job.script = "categorization_runner.ts"
-      expected_file = "#{Sensemaker::Paths.sensemaker_package_folder}/runner-cli/categorization_runner.ts"
-      expect(service.script_file).to eq(expected_file)
-    end
-
-    it "returns the correct path for runner.ts" do
-      job.script = "runner.ts"
-      expected_file = "#{Sensemaker::Paths.sensemaker_package_folder}/runner-cli/runner.ts"
-      expect(service.script_file).to eq(expected_file)
-    end
-
-    it "returns the correct path for advanced_runner.ts" do
-      job.script = "advanced_runner.ts"
-      expected_file = "#{Sensemaker::Paths.sensemaker_package_folder}/runner-cli/advanced_runner.ts"
-      expect(service.script_file).to eq(expected_file)
-    end
-
-    it "returns the correct path for health_check_runner.ts" do
-      job.script = "health_check_runner.ts"
-      expected_file = "#{Sensemaker::Paths.sensemaker_package_folder}/runner-cli/health_check_runner.ts"
-      expect(service.script_file).to eq(expected_file)
-    end
-
-    it "returns the correct path for single-html-build.js" do
-      job.script = "single-html-build.js"
-      expected_file = "#{Sensemaker::Paths.visualization_folder}/single-html-build.js"
-      expect(service.script_file).to eq(expected_file)
+    {
+      "categorization_runner.ts" => "#{Sensemaker::Paths.sensemaker_package_folder}/runner-cli/categorization_runner.ts",
+      "runner.ts" => "#{Sensemaker::Paths.sensemaker_package_folder}/runner-cli/runner.ts",
+      "advanced_runner.ts" => "#{Sensemaker::Paths.sensemaker_package_folder}/runner-cli/advanced_runner.ts",
+      "health_check_runner.ts" => "#{Sensemaker::Paths.sensemaker_package_folder}/runner-cli/health_check_runner.ts",
+      "single-html-build.js" => "#{Sensemaker::Paths.visualization_folder}/single-html-build.js"
+    }.each do |script, expected_path|
+      it "returns the correct path for #{script}" do
+        job.script = script
+        expect(service.script_file).to eq(expected_path)
+      end
     end
   end
 
   describe "#execute_job_workflow" do
     let(:service) { Sensemaker::JobRunner.new(job) }
-    let(:data_folder) { "/tmp/sensemaker_test_folder/data" }
+    include_context "sensemaker paths stubbed"
 
     before do
-      allow(Sensemaker::Paths).to receive(:sensemaker_data_folder).and_return(data_folder)
       allow(File).to receive(:exist?).and_return(true)
       allow(service).to receive(:system).with("which node > /dev/null 2>&1").and_return(true)
       allow(service).to receive(:system).with("which npx > /dev/null 2>&1").and_return(true)
@@ -474,20 +384,18 @@ describe Sensemaker::JobRunner do
       end
     end
 
-    context "for advanced_runner.ts" do
-      let(:service) { Sensemaker::JobRunner.new(job) }
-
+    shared_examples "checks all output files exist and sets persisted_output" do |script_name, path_suffixes|
       before do
-        job.update!(script: "advanced_runner.ts")
+        job.update!(script: script_name)
         allow(service).to receive_messages(check_dependencies?: true, execute_script: "success")
         allow(service).to receive(:prepare_input_data)
       end
 
       it "checks all output files exist" do
         base_path = "#{data_folder}/output-#{job.id}"
-        allow(File).to receive(:exist?).with("#{base_path}-summary.json").and_return(true)
-        allow(File).to receive(:exist?).with("#{base_path}-topic-stats.json").and_return(true)
-        allow(File).to receive(:exist?).with("#{base_path}-comments-with-scores.json").and_return(true)
+        path_suffixes.each do |suffix|
+          allow(File).to receive(:exist?).with("#{base_path}#{suffix}").and_return(true)
+        end
 
         service.send(:execute_job_workflow)
 
@@ -498,30 +406,13 @@ describe Sensemaker::JobRunner do
       end
     end
 
-    context "for runner.ts" do
-      let(:service) { Sensemaker::JobRunner.new(job) }
+    it_behaves_like "checks all output files exist and sets persisted_output",
+                    "advanced_runner.ts",
+                    %w[-summary.json -topic-stats.json -comments-with-scores.json]
 
-      before do
-        job.update!(script: "runner.ts")
-        allow(service).to receive_messages(check_dependencies?: true, execute_script: "success")
-        allow(service).to receive(:prepare_input_data)
-      end
-
-      it "checks all output files exist" do
-        base_path = "#{data_folder}/output-#{job.id}"
-        allow(File).to receive(:exist?).with("#{base_path}-summary.json").and_return(true)
-        allow(File).to receive(:exist?).with("#{base_path}-summary.html").and_return(true)
-        allow(File).to receive(:exist?).with("#{base_path}-summary.md").and_return(true)
-        allow(File).to receive(:exist?).with("#{base_path}-summaryAndSource.csv").and_return(true)
-
-        service.send(:execute_job_workflow)
-
-        job.reload
-        expect(job.finished_at).to be_present
-        expect(job.error).to be(nil)
-        expect(job.persisted_output).to eq(job.relative_output_path)
-      end
-    end
+    it_behaves_like "checks all output files exist and sets persisted_output",
+                    "runner.ts",
+                    %w[-summary.json -summary.html -summary.md -summaryAndSource.csv]
   end
 
   describe "#prepare_input_data" do
