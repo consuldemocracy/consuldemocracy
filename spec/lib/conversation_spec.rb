@@ -1,12 +1,24 @@
 require "rails_helper"
 
+HTML_TAGS = %w[<p> <strong> <em> </p>].freeze
+
 describe Conversation do
   let(:user) { create(:user) }
+
+  def expect_no_html_tags(content, tags = HTML_TAGS)
+    tags.each { |tag| expect(content).not_to include(tag) }
+  end
+
+  shared_examples "rejects non-open-ended Poll::Question" do |method_name|
+    it "raises ArgumentError" do
+      conversation = Conversation.new("Poll::Question", question.id)
+      expect { conversation.send(method_name) }.to raise_error(ArgumentError, /only supported for open-ended Poll::Question/)
+    end
+  end
 
   describe "#compile_context" do
     it "can compile context for Poll" do
       poll = create(:poll)
-      expect(poll.persisted?).to be true
 
       3.times do
         create(:comment, commentable: poll, user: user)
@@ -22,7 +34,6 @@ describe Conversation do
 
     it "can compile context for Proposal" do
       proposal = create(:proposal)
-      expect(proposal.persisted?).to be true
 
       conversation = Conversation.new("Proposal", proposal.id)
       context_result = conversation.compile_context
@@ -41,10 +52,7 @@ describe Conversation do
 
       expect(context_result).to include("This is a description with HTML tags.")
       expect(context_result).to include("This is a summary.")
-      expect(context_result).not_to include("<p>")
-      expect(context_result).not_to include("<strong>")
-      expect(context_result).not_to include("<em>")
-      expect(context_result).not_to include("</p>")
+      expect_no_html_tags(context_result)
     end
 
     it "decodes HTML entities like &nbsp; and &#39; from Proposal description" do
@@ -62,7 +70,6 @@ describe Conversation do
 
     it "can compile context for Debate" do
       debate = create(:debate)
-      expect(debate.persisted?).to be true
 
       conversation = Conversation.new("Debate", debate.id)
       context_result = conversation.compile_context
@@ -78,10 +85,7 @@ describe Conversation do
       context_result = conversation.compile_context
 
       expect(context_result).to include("How do you feel about safety?")
-      expect(context_result).not_to include("<p>")
-      expect(context_result).not_to include("<strong>")
-      expect(context_result).not_to include("<em>")
-      expect(context_result).not_to include("</p>")
+      expect_no_html_tags(context_result)
     end
 
     it "decodes HTML entities like &nbsp; from Debate description" do
@@ -100,7 +104,6 @@ describe Conversation do
 
     it "can compile context for Legislation::Proposal" do
       proposal = create(:legislation_proposal)
-      expect(proposal.persisted?).to be true
 
       conversation = Conversation.new("Legislation::Proposal", proposal.id)
       context_result = conversation.compile_context
@@ -119,14 +122,11 @@ describe Conversation do
 
       expect(context_result).to include("Legislation description with HTML.")
       expect(context_result).to include("Legislation summary.")
-      expect(context_result).not_to include("<p>")
-      expect(context_result).not_to include("<strong>")
-      expect(context_result).not_to include("<em>")
+      expect_no_html_tags(context_result, %w[<p> <strong> <em>])
     end
 
     it "can compile context for Legislation::Question without question options" do
       question = create(:legislation_question)
-      expect(question.persisted?).to be true
 
       conversation = Conversation.new("Legislation::Question", question.id)
       context_result = conversation.compile_context
@@ -144,9 +144,7 @@ describe Conversation do
       context_result = conversation.compile_context
 
       expect(context_result).to include("Question description with HTML.")
-      expect(context_result).not_to include("<p>")
-      expect(context_result).not_to include("<strong>")
-      expect(context_result).not_to include("<em>")
+      expect_no_html_tags(context_result, %w[<p> <strong> <em>])
     end
 
     it "can compile context for Legislation::Question with question options" do
@@ -157,7 +155,6 @@ describe Conversation do
       3.times do
         create(:legislation_answer, question: question, question_option: question.question_options.sample)
       end
-      expect(question.persisted?).to be true
 
       conversation = Conversation.new("Legislation::Question", question.id)
       context_result = conversation.compile_context
@@ -169,7 +166,6 @@ describe Conversation do
 
     it "can compile context for Budget with investments" do
       budget = create(:budget)
-      expect(budget.persisted?).to be true
 
       3.times do
         create(:budget_investment, budget: budget)
@@ -187,7 +183,6 @@ describe Conversation do
       budget = create(:budget)
       group = create(:budget_group, budget: budget)
       heading = create(:budget_heading, group: group)
-      expect(group.persisted?).to be true
 
       3.times do
         create(:budget_investment, heading: heading)
@@ -201,15 +196,14 @@ describe Conversation do
       expect(conversation.comments.size).to eq(3)
     end
 
-    it "raises error for Poll::Question with multi-choice options" do
-      poll = create(:poll)
-      question = create(:poll_question_unique, poll: poll, title: "Test Question")
-      create(:poll_question_option, question: question, title: "Option 1")
-      create(:poll_question_option, question: question, title: "Option 2")
-
-      conversation = Conversation.new("Poll::Question", question.id)
-
-      expect { conversation.compile_context }.to raise_error(ArgumentError, /only supported for open-ended Poll::Question/)
+    it_behaves_like "rejects non-open-ended Poll::Question", :compile_context do
+      let(:poll) { create(:poll) }
+      let(:question) do
+        q = create(:poll_question_unique, poll: poll, title: "Test Question")
+        create(:poll_question_option, question: q, title: "Option 1")
+        create(:poll_question_option, question: q, title: "Option 2")
+        q
+      end
     end
 
     it "can compile context for Poll::Question with open-ended question" do
@@ -236,7 +230,6 @@ describe Conversation do
       target_types.each do |target_type|
         target_factory = target_type.downcase.gsub("::", "_").to_sym
         target = create(target_factory)
-        expect(target.persisted?).to be true
         3.times do
           create(:comment, commentable: target, user: user)
         end
@@ -250,78 +243,53 @@ describe Conversation do
 
   describe "#comments" do
     describe "avoids filtering out in job run by vote padding" do
-      it "pads Budget investment votes by 1 when votes are 0" do
-        budget = create(:budget)
-        _investment = create(:budget_investment, budget: budget, cached_votes_up: 0)
-
-        conversation = Conversation.new("Budget", budget.id)
-        comments = conversation.comments
-
-        expect(comments.size).to eq(1)
-        expect(comments.first.cached_votes_up).to eq(1)
-        expect(comments.first.cached_votes_total).to eq(1)
+      shared_examples "pads votes by 1" do |expected_votes|
+        it "pads so cached_votes_up and cached_votes_total are #{expected_votes}" do
+          comments = conversation.comments
+          expect(comments.size).to eq(1)
+          expect(comments.first.cached_votes_up).to eq(expected_votes)
+          expect(comments.first.cached_votes_total).to eq(expected_votes)
+        end
       end
 
-      it "pads Budget investment votes by 1 when votes exist" do
-        budget = create(:budget)
-        _investment = create(:budget_investment, budget: budget, cached_votes_up: 5)
+      context "Budget" do
+        let(:budget) { create(:budget) }
+        let(:conversation) { Conversation.new("Budget", budget.id) }
 
-        conversation = Conversation.new("Budget", budget.id)
-        comments = conversation.comments
+        it_behaves_like "pads votes by 1", 1 do
+          before { create(:budget_investment, budget: budget, cached_votes_up: 0) }
+        end
 
-        expect(comments.size).to eq(1)
-        expect(comments.first.cached_votes_up).to eq(6)
-        expect(comments.first.cached_votes_total).to eq(6)
+        it_behaves_like "pads votes by 1", 6 do
+          before { create(:budget_investment, budget: budget, cached_votes_up: 5) }
+        end
       end
 
-      it "pads Budget::Group investment votes by 1 when votes are 0" do
-        budget = create(:budget)
-        group = create(:budget_group, budget: budget)
-        heading = create(:budget_heading, group: group)
-        _investment = create(:budget_investment, heading: heading, cached_votes_up: 0)
+      context "Budget::Group" do
+        let(:budget) { create(:budget) }
+        let(:group) { create(:budget_group, budget: budget) }
+        let(:heading) { create(:budget_heading, group: group) }
+        let(:conversation) { Conversation.new("Budget::Group", group.id) }
 
-        conversation = Conversation.new("Budget::Group", group.id)
-        comments = conversation.comments
+        it_behaves_like "pads votes by 1", 1 do
+          before { create(:budget_investment, heading: heading, cached_votes_up: 0) }
+        end
 
-        expect(comments.size).to eq(1)
-        expect(comments.first.cached_votes_up).to eq(1)
-        expect(comments.first.cached_votes_total).to eq(1)
+        it_behaves_like "pads votes by 1", 4 do
+          before { create(:budget_investment, heading: heading, cached_votes_up: 3) }
+        end
       end
 
-      it "pads Budget::Group investment votes by 1 when votes exist" do
-        budget = create(:budget)
-        group = create(:budget_group, budget: budget)
-        heading = create(:budget_heading, group: group)
-        _investment = create(:budget_investment, heading: heading, cached_votes_up: 3)
+      context "Proposal" do
+        let(:conversation) { Conversation.new("Proposal", nil) }
 
-        conversation = Conversation.new("Budget::Group", group.id)
-        comments = conversation.comments
+        it_behaves_like "pads votes by 1", 1 do
+          before { create(:proposal, cached_votes_up: 0) }
+        end
 
-        expect(comments.size).to eq(1)
-        expect(comments.first.cached_votes_up).to eq(4)
-        expect(comments.first.cached_votes_total).to eq(4)
-      end
-
-      it "pads Proposal votes by 1 when votes are 0" do
-        _proposal = create(:proposal, cached_votes_up: 0)
-
-        conversation = Conversation.new("Proposal", nil)
-        comments = conversation.comments
-
-        expect(comments.size).to eq(1)
-        expect(comments.first.cached_votes_up).to eq(1)
-        expect(comments.first.cached_votes_total).to eq(1)
-      end
-
-      it "pads Proposal votes by 1 when votes exist" do
-        _proposal = create(:proposal, cached_votes_up: 10)
-
-        conversation = Conversation.new("Proposal", nil)
-        comments = conversation.comments
-
-        expect(comments.size).to eq(1)
-        expect(comments.first.cached_votes_up).to eq(11)
-        expect(comments.first.cached_votes_total).to eq(11)
+        it_behaves_like "pads votes by 1", 11 do
+          before { create(:proposal, cached_votes_up: 10) }
+        end
       end
     end
 
@@ -339,10 +307,7 @@ describe Conversation do
         expect(comments.size).to eq(1)
         expect(comments.first.body).to include("Test Investment")
         expect(comments.first.body).to include("Investment description with HTML tags.")
-        expect(comments.first.body).not_to include("<p>")
-        expect(comments.first.body).not_to include("<strong>")
-        expect(comments.first.body).not_to include("<em>")
-        expect(comments.first.body).not_to include("</p>")
+        expect_no_html_tags(comments.first.body)
       end
 
       it "sanitizes HTML from Proposal description in comments" do
@@ -356,10 +321,7 @@ describe Conversation do
         expect(comments.size).to eq(1)
         expect(comments.first.body).to include("Test Proposal")
         expect(comments.first.body).to include("Proposal description with HTML tags.")
-        expect(comments.first.body).not_to include("<p>")
-        expect(comments.first.body).not_to include("<strong>")
-        expect(comments.first.body).not_to include("<em>")
-        expect(comments.first.body).not_to include("</p>")
+        expect_no_html_tags(comments.first.body)
       end
 
       it "sanitizes HTML from Budget::Group investment description" do
@@ -377,8 +339,7 @@ describe Conversation do
         expect(comments.size).to eq(1)
         expect(comments.first.body).to include("Group Investment")
         expect(comments.first.body).to include("Group investment description.")
-        expect(comments.first.body).not_to include("<p>")
-        expect(comments.first.body).not_to include("<strong>")
+        expect_no_html_tags(comments.first.body, %w[<p> <strong>])
       end
     end
 
@@ -506,24 +467,22 @@ describe Conversation do
     end
 
     describe "handles Poll::Question directly" do
-      it "raises an error for single choice question" do
-        poll = create(:poll)
-        question = create(:poll_question_unique, poll: poll, title: "Single Question")
-        create(:poll_question_option, question: question, title: "Yes")
-
-        conversation = Conversation.new("Poll::Question", question.id)
-
-        expect { conversation.comments }.to raise_error(ArgumentError, /only supported for open-ended Poll::Question/)
+      it_behaves_like "rejects non-open-ended Poll::Question", :comments do
+        let(:poll) { create(:poll) }
+        let(:question) do
+          q = create(:poll_question_unique, poll: poll, title: "Single Question")
+          create(:poll_question_option, question: q, title: "Yes")
+          q
+        end
       end
 
-      it "raises an error for multiple choice question" do
-        poll = create(:poll)
-        question = create(:poll_question_multiple, poll: poll, title: "Multiple Question")
-        create(:poll_question_option, question: question, title: "Option A")
-
-        conversation = Conversation.new("Poll::Question", question.id)
-
-        expect { conversation.comments }.to raise_error(ArgumentError, /only supported for open-ended Poll::Question/)
+      it_behaves_like "rejects non-open-ended Poll::Question", :comments do
+        let(:poll) { create(:poll) }
+        let(:question) do
+          q = create(:poll_question_multiple, poll: poll, title: "Multiple Question")
+          create(:poll_question_option, question: q, title: "Option A")
+          q
+        end
       end
 
       it "handles single open-ended question" do

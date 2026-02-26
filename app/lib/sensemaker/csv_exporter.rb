@@ -2,6 +2,8 @@ require "csv"
 
 module Sensemaker
   class CsvExporter
+    EXPORT_HEADERS = %w[comment-id comment_text agrees disagrees passes author-id].freeze
+
     attr_reader :conversation, :include_votes
 
     def initialize(conversation, options = {})
@@ -16,7 +18,7 @@ module Sensemaker
       file_path ||= default_file_path
       FileUtils.mkdir_p(File.dirname(file_path))
 
-      CSV.open(file_path, "w", write_headers: true, headers: csv_headers) do |csv|
+      CSV.open(file_path, "w", write_headers: true, headers: self.class::EXPORT_HEADERS) do |csv|
         export_data.each do |row|
           csv << row
         end
@@ -27,7 +29,7 @@ module Sensemaker
 
     def export_to_string
       CSV.generate(headers: true) do |csv|
-        csv << csv_headers
+        csv << self.class::EXPORT_HEADERS
         export_data.each do |row|
           csv << row
         end
@@ -73,10 +75,6 @@ module Sensemaker
     end
 
     private
-
-      def csv_headers
-        ["comment-id", "comment_text", "agrees", "disagrees", "passes", "author-id"]
-      end
 
       def export_data
         data = []
