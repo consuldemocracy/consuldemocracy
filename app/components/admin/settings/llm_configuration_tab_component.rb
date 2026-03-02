@@ -16,13 +16,30 @@ class Admin::Settings::LlmConfigurationTabComponent < ApplicationComponent
   end
 
   def models
-    provider = Setting["llm.provider"]
-    return {} if provider.blank?
+    provider_name = Setting["llm.provider"]
+    return {} if provider_name.blank?
 
-    RubyLLM.models.by_provider(provider.downcase.to_sym).each_with_object({}) do |model, hash|
-      hash[model.name] = {
-        id: model.id
-      }
+    provider_sym = provider_name.downcase.to_sym
+    secrets = Tenant.current_secrets.llm || {}
+    url = secrets["ollama_api_base"] || "http://localhost:11434/v1"
+    config = RubyLLM.context { |c| c.ollama_api_base = url }.config
+
+    begin
+      if provider_sym == :ollama
+        provider = RubyLLM::Providers::Ollama.new(config)
+        provider.list_models.each_with_object({}) do |model, hash|
+          # Use ID as both key and value for reliability
+          hash[model.id] = { id: model.id }
+        end
+      else
+        RubyLLM.models.by_provider(provider_sym).all.each_with_object({}) do |model, hash|
+          label = model.name.presence || model.id
+          hash[label] = { id: model.id }
+        end
+      end
+    rescue => e
+      Rails.logger.error "[LlmTab] Failed to fetch #{provider_name} models: #{e.message}"
+      {}
     end
   end
 

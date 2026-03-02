@@ -47,9 +47,12 @@ module MlHelper
       "sentiment" => data["sentiment"] || { "positive" => 0, "negative" => 0, "neutral" => 100 },
       "usage" => data["usage"]
     }
+  rescue RubyLLM::Error => e
+    Rails.logger.error "[MlHelper] Summarization failed after retries: #{e.message}"
+    nil
   end
 
-  #  TAGGING
+  # TAGGING
   def self.generate_tags(text, count = 5, config: nil)
     return nil if text.blank?
 
@@ -67,12 +70,12 @@ module MlHelper
         "total_tokens" => (response.input_tokens || 0) + (response.output_tokens || 0)
       }
     }
-  rescue => e
-    Rails.logger.error "[MlHelper] Tagging Error: #{e.message}"
+  rescue RubyLLM::Error => e
+    Rails.logger.error "[MlHelper] Tagging failed after retries: #{e.message}"
     nil
   end
 
-  # 3. RELATED CONTENT
+  # RELATED CONTENT
   def self.find_similar_content(source_text, candidate_texts, limit = 3, config: nil)
     return nil if source_text.blank? || candidate_texts.blank?
 
@@ -104,8 +107,11 @@ module MlHelper
       "total_tokens" => (response.input_tokens || 0) + (response.output_tokens || 0)
     }
     data
-  rescue => e
-    Rails.logger.error "[MlHelper] AI Call Error: #{e.message}"
+  rescue RubyLLM::Error => e
+    Rails.logger.error "[MlHelper] AI call failed after retries: #{e.message}"
+    nil
+  rescue JSON::ParserError => e
+    Rails.logger.error "[MlHelper] JSON Parsing Error: #{e.message}"
     nil
   end
 
