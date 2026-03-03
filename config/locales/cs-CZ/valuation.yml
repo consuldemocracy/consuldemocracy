@@ -41,6 +41,8 @@ cs:
         heading: Heading
         dossier: Dokumentace
         edit_dossier: Upravit dokumentaci
+        price_with_currency: Náklady (%{currency})
+        price_first_year_with_currency: Náklady během prvního roku (%{currency})
         feasibility: Proveditelnost
         feasible: Proveditelný
         unfeasible: Nerealizovatelné
