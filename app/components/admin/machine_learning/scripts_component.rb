@@ -25,4 +25,18 @@ class Admin::MachineLearning::ScriptsComponent < ApplicationComponent
     def processed_resource_name
       machine_learning_job.script.split("_").first.singularize.capitalize
     end
+
+    def current_provider
+      Setting["llm.provider"]&.capitalize || "None"
+    end
+
+    def current_model
+      Setting["llm.model"] || "None"
+    end
+
+    def progress_percentage
+      return 0 if machine_learning_job.total_records.to_i.zero?
+
+      ((machine_learning_job.records_processed.to_f / machine_learning_job.total_records.to_f) * 100).round
+    end
 end

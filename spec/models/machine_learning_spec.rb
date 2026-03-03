@@ -8,20 +8,22 @@ RSpec.describe MachineLearning do
 
   describe "#run" do
     context "when script is unknown" do
-      it "raises an error and updates job" do
+      it "records the error on the job for unknown scripts" do
         job.update!(script: "invalid_script")
 
-        expect { ml_service.run }.to raise_error(RuntimeError, /Unknown script/)
+        ml_service.run
+
         expect(job.reload.error).to match(/Unknown script/)
       end
     end
 
     context "when a script fails" do
-      it "records the error and re-raises" do
+      it "records the error on the job when a script fails" do
         job.update!(script: "proposal_tags")
         allow(MlHelper).to receive(:generate_tags).and_raise(StandardError, "API Timeout")
 
-        expect { ml_service.run }.to raise_error(StandardError, "API Timeout")
+        ml_service.run
+
         expect(job.reload.error).to eq("API Timeout")
       end
     end
@@ -83,7 +85,7 @@ RSpec.describe MachineLearning do
 
       job.update!(script: "proposal_tags", config: { force_update: "1" })
       allow(MlHelper).to receive(:generate_tags).and_return(
-        { "tags" => ["NewTag"], "usage" => { "total_tokens" => 10 } }
+        { "tags" => ["NewTag"], "usage" => { "total_tokens" => 10 }}
       )
 
       ml_service.run

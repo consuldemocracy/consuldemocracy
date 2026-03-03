@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Machine learning", type: :system do
+RSpec.describe "Machine learning" do
   let(:admin) { create(:administrator) }
 
   before do

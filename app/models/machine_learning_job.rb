@@ -4,6 +4,7 @@ class MachineLearningJob < ApplicationRecord
   def active?
     started?
   end
+
   def started?
     started_at.present? && finished_at.blank? && error.blank?
   end

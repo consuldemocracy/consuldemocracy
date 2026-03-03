@@ -65,9 +65,12 @@
       <%= select_tag "script", options_for_select(script_select_options) %>
 
       <div id="script_descriptions" class="margin-bottom">
-        <p class="help-text"><em><%= t("admin.machine_learning.script_selection_help") %></em></p>
+        <% MachineLearning::AVAILABLE_SCRIPTS.keys.each do |key| %>
+          <p id="<%= key %>" class="help-text hide">
+            <em><%= t("admin.machine_learning.scripts.#{key}.description", default: "") %></em>
+          </p>
+        <% end %>
       </div>
-
       <div class="callout secondary">
         <div class="row">
           <div class="small-12 medium-6 columns">

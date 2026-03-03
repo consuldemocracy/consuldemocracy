@@ -25,8 +25,6 @@ class MachineLearning
     }
   }.freeze
 
-  # --- CLASS METHODS (Admin UI & Legacy Support) ---
-
   class << self
     def enabled?
       Setting["feature.machine_learning"].present? && Setting["llm.model"].present?
@@ -130,8 +128,16 @@ class MachineLearning
 
   def run
     script_info = AVAILABLE_SCRIPTS[job.script]
+
+    job.update!(
+      started_at: Time.current,
+      records_processed: 0
+    )
+
     if script_info
-      clear_existing_ml_data(script_info[:kind]) if @force
+      if @force
+        clear_existing_ml_data(script_info[:kind])
+      end
       send(script_info[:method])
 
       job.update!(
@@ -145,14 +151,17 @@ class MachineLearning
       raise "Unknown script: #{job.script}"
     end
   rescue => e
-    job.update!(error: e.message, finished_at: Time.current)
+    job.update!(
+      error: e.message,
+      finished_at: Time.current,
+      total_tokens: @total_tokens_used,
+      records_processed: @records_processed
+    )
+
     Mailer.machine_learning_error(job.user).deliver_later
-    raise e
   end
 
   private
-
-    # --- CORE PROCESSING LOOPS ---
 
     def process_tags_for(scope, record_type, filename)
       export_data = []
@@ -282,7 +291,8 @@ class MachineLearning
         !RelatedContent.with_hidden.where(machine_learning: true)
                        .where("parent_relationable_id = :id OR child_relationable_id = :id", id: record.id)
                        .exists?
-      else true
+      else
+        true
       end
     end
 

@@ -1801,31 +1801,28 @@ es:
       related_content_description: "Añade contenido relacionado generado automáticamente a propuestas y proyectos de presupuestos participativos."
       script_info: "Recibirá un correo electrónico en %{email} cuando el script termine de ejecutarse."
       script_name: "Nombre del script:"
-      scripts:
-        budget_comments:
-          description: "Genera resúmenes por IA y análisis de sentimiento para los comentarios de Inversiones de Presupuestos."
-          label: "Presupuestos: Resumir comentarios"
-        budget_related:
-          description: "Identifica inversiones de presupuestos similares para evitar duplicidades."
-          label: "Presupuestos: Contenido relacionado"
-        budget_tags:
-          description: "Extrae etiquetas de temas específicos de las inversiones de presupuestos usando IA."
-          label: "Presupuestos: Generar etiquetas"
-        debate_tags:
-          description: "Genera etiquetas de temas para Debates para mejorar su descubrimiento."
-          label: "Debates: Generar etiquetas"
-        legislation_summaries:
-          description: "Genera resúmenes por IA para los comentarios de Preguntas Legislativas."
-          label: "Legislación: Resumir preguntas"
-        proposal_comments:
-          description: "Genera resúmenes por IA y análisis de sentimiento para los comentarios de Propuestas Ciudadanas."
-          label: "Propuestas: Resumir comentarios"
-        proposal_related:
-          description: "Identifica propuestas ciudadanas similares para agrupar ideas relacionadas."
-          label: "Propuestas: Contenido relacionado"
+      sscripts:
         proposal_tags:
           description: "Extrae etiquetas de temas específicos de las propuestas ciudadanas usando IA."
           label: "Propuestas: Generar etiquetas"
+        proposal_related_content:
+          description: "Identifica propuestas ciudadanas similares para agrupar ideas relacionadas."
+          label: "Propuestas: Contenido relacionado"
+        proposal_summary_comments:
+          description: "Genera resúmenes por IA y análisis de sentimiento para los comentarios de Propuestas Ciudadanas."
+          label: "Propuestas: Resumir comentarios"
+        investment_tags:
+          description: "Extrae etiquetas de temas específicos de las inversiones de presupuestos usando IA."
+          label: "Presupuestos: Generar etiquetas"
+        investment_related_content:
+          description: "Identifica inversiones de presupuestos similares para evitar duplicidades."
+          label: "Presupuestos: Contenido relacionado"
+        investment_summary_comments:
+          description: "Genera resúmenes por IA y análisis de sentimiento para los comentarios de Inversiones de Presupuestos."
+          label: "Presupuestos: Resumir comentarios"
+        legislation_summary_comments:
+          description: "Genera resúmenes por IA para los comentarios de Preguntas Legislativas."
+          label: "Legislación: Resumir preguntas"
       select_script: "Selecciona el script de machine learning a ejecutar"
       started_at: "Iniciado el:"
       stats:

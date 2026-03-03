@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe Admin::MachineLearning::ShowComponent, type: :component do
   it "renders the 'Feature Disabled' message when the feature is off" do
     # Stub the component's internal enabled? method to return false
-    component = described_class.new(MachineLearningJob.new)
+    component = Admin::MachineLearning::ShowComponent.new(MachineLearningJob.new)
     allow(component).to receive(:enabled?).and_return(false)
 
     render_inline(component)
@@ -15,7 +15,7 @@ RSpec.describe Admin::MachineLearning::ShowComponent, type: :component do
   end
 
   it "renders the tabs and content when the feature is on" do
-    component = described_class.new(MachineLearningJob.new)
+    component = Admin::MachineLearning::ShowComponent.new(MachineLearningJob.new)
     allow(component).to receive(:enabled?).and_return(true)
 
     render_inline(component)

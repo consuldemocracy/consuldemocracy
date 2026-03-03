@@ -1809,25 +1809,25 @@ en:
       script_info: "You will receive an email in %{email} when the script finishes running."
       script_name: "Script name:"
       scripts:
-        budget_comments:
+        investment_summary_comments:
           description: "Generates AI summaries and sentiment analysis for comments on Budget Investments."
           label: "Budgets: Summarize Comments"
-        budget_related:
+        investment_related_content:
           description: "Identifies similar Budget Investments to prevent duplication."
           label: "Budgets: Related Content"
-        budget_tags:
+        investment_tags:
           description: "Extracts specific topic tags from Budget Investments using the LLM."
           label: "Budgets: Generate Tags"
         debate_tags:
           description: "Generates topic tags for Debates to improve discoverability."
           label: "Debates: Generate Tags"
-        legislation_summaries:
+        legislation_summary_comments:
           description: "Generates AI summaries for comments on Legislation Questions."
           label: "Legislation: Summarize Questions"
-        proposal_comments:
+        proposal_summary_comments:
           description: "Generates AI summaries and sentiment analysis for comments on Citizen Proposals."
           label: "Proposals: Summarize Comments"
-        proposal_related:
+        proposal_related_content:
           description: "Identifies similar Citizen Proposals to group related ideas."
           label: "Proposals: Related Content"
         proposal_tags:

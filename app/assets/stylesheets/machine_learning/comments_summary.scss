@@ -1,7 +1,7 @@
 .machine-learning-comments-summary {
   border-bottom: 1px solid $medium-gray;
-  padding-bottom: 1rem;
   margin-bottom: 1rem;
+  padding-bottom: 1rem;
 
   + * {
     margin-top: 1.5rem; // $line-height * 1.5
@@ -9,20 +9,20 @@
 
   // --- Sentiment Dashboard Styles ---
   .sentiment-dashboard {
-    margin: 1rem 0 1.5rem 0;
-    padding: 1rem;
     background: #f9f9f9;
-    border-radius: 4px;
     border: 1px solid #eee;
+    border-radius: 4px;
+    margin: 1rem 0 1.5rem;
+    padding: 1rem;
   }
 
   .sentiment-bar {
+    background-color: #e9ecef; // Fallback background
+    border-radius: 6px;
     display: flex;
     height: 12px;
-    border-radius: 6px;
-    overflow: hidden;
-    background-color: #e9ecef; // Fallback background
     margin-bottom: 0.5rem;
+    overflow: hidden;
   }
 
   .bar-segment {
@@ -46,16 +46,16 @@
   }
 
   .sentiment-legend {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.85rem;
     color: #555;
+    display: flex;
     flex-wrap: wrap; // Wrap on small mobile screens
+    font-size: 0.85rem;
+    justify-content: space-between;
   }
 
   .legend-item {
-    display: flex;
     align-items: center;
+    display: flex;
     gap: 4px;
 
     &.positive {

@@ -10,6 +10,7 @@ module CommonActions
   include Emails
   include GraphQLAPI
   include Maps
+  include MachineLearningActions
   include Notifications
   include Polls
   include Proposals

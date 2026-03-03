@@ -6,10 +6,12 @@
       opacity: 1;
       transform: scale(1);
     }
+
     50% {
       opacity: 0.5;
       transform: scale(0.85);
     }
+
     100% {
       opacity: 1;
       transform: scale(1);
@@ -30,8 +32,8 @@
 
     // Animate the hourglass icon itself
     &::before {
-      display: inline-block;
       animation: ml-icon-pulse 2s infinite ease-in-out;
+      display: inline-block;
     }
   }
 
@@ -77,9 +79,9 @@
   }
 
   .actions {
+    align-items: center;
     display: flex;
     gap: 1rem;
-    align-items: center;
     margin-top: $line-height;
   }
 
@@ -112,8 +114,8 @@
 
       &:hover {
         background-color: rgba($warning-color, 0.1);
-        color: darken($warning-color, 25%);
         border-style: solid;
+        color: darken($warning-color, 25%);
       }
     }
 
@@ -144,17 +146,17 @@
     }
 
     hr {
-      margin: 1rem 0;
       border-bottom: 1px solid rgba($success-color, 0.2);
+      margin: 1rem 0;
     }
   }
 
   // Help text for script descriptions
   .help-text {
     background: $light-gray;
-    padding: 1rem;
     border-radius: $global-radius;
-    margin-top: 0.5rem;
     font-size: 0.9rem;
+    margin-top: 0.5rem;
+    padding: 1rem;
   }
 }
