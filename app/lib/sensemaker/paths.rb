@@ -31,20 +31,5 @@ module Sensemaker
         Rails.root.join("node_modules/@cosla/sensemaking-web-ui")
       end
     end
-
-    def self.key_file
-      if Rails.env.test?
-        Rails.root.join("tmp/sensemaker_test_folder/default-service-account-key.json")
-      else
-        Rails.root.join(Tenant.current_secrets.sensemaker_key_file)
-      end
-    end
-
-    def self.parse_key_file
-      JSON.parse(File.read(key_file))
-    rescue JSON::ParserError, Errno::ENOENT => e
-      Rails.logger.error "Failed to parse key file: #{e.message}"
-      {}
-    end
   end
 end

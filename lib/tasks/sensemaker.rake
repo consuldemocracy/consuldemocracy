@@ -3,25 +3,7 @@ namespace :sensemaker do
   task setup: :environment do
     logger = ApplicationLogger.new
     logger.info "Setting up Sensemaker Integration..."
-
-    tenant_schema = ENV["CONSUL_TENANT"]
-
-    if tenant_schema.present?
-      logger.info "Setting up for tenant: #{tenant_schema}"
-
-      unless Tenant.exists?(schema: tenant_schema)
-        err_msg = "Tenant '#{tenant_schema}' not found. Available: #{Tenant.pluck(:schema).join(", ")}"
-        logger.warn err_msg
-        raise "Tenant '#{tenant_schema}' not found"
-      end
-
-      Tenant.switch(tenant_schema) do
-        setup_for_tenant(logger)
-      end
-    else
-      logger.info "No tenant specified, using default tenant"
-      setup_for_tenant(logger)
-    end
+    with_sensemaker_tenant(logger, "Setting up") { |lgr| setup_for_tenant(lgr) }
   end
 
   desc "Check if sensemaker-tools dependencies are available"
@@ -34,78 +16,88 @@ namespace :sensemaker do
   task verify: :environment do
     logger = ApplicationLogger.new
     logger.info "Verifying Sensemaker installation..."
-
-    tenant_schema = ENV["CONSUL_TENANT"]
-
-    if tenant_schema.present?
-      logger.info "Verifying for tenant: #{tenant_schema}"
-      Tenant.switch(tenant_schema) do
-        verify_installation(logger)
-      end
-    else
-      logger.info "No tenant specified, using default tenant"
-      verify_installation(logger)
-    end
+    with_sensemaker_tenant(logger, "Verifying") { |lgr| verify_installation(lgr) }
   end
 
   private
+
+    def with_sensemaker_tenant(logger, action_prefix)
+      tenant_schema = ENV["CONSUL_TENANT"]
+      if tenant_schema.present?
+        logger.info "#{action_prefix} for tenant: #{tenant_schema}"
+        unless Tenant.exists?(schema: tenant_schema)
+          err_msg = "Tenant '#{tenant_schema}' not found. Available: #{Tenant.pluck(:schema).join(", ")}"
+          logger.warn err_msg
+          raise "Tenant '#{tenant_schema}' not found"
+        end
+        Tenant.switch(tenant_schema) { yield logger }
+      else
+        logger.info "No tenant specified, using default tenant"
+        yield logger
+      end
+    end
 
     def verify_installation(logger)
       check_env_variables(logger)
       check_dependencies(logger)
       check_directories(logger)
       check_key_file(logger)
-      check_repository(logger)
+      check_package(logger)
       check_is_enabled(logger)
-      check_sensemaker_cli(logger)
       ensure_angular_build_for_web_ui(logger)
       check_web_ui_health(logger)
+      check_sensemaker_cli(logger)
       logger.info "Sensemaker installation verified you can now use the Sensemaker Tools."
     end
 
     def check_env_variables(logger)
       logger.info "Checking environment variables..."
 
-      required_secrets = {
-        sensemaker_data_folder: "<path to the data folder>",
-        sensemaker_key_file: "<path to the service account key file>",
-        sensemaker_model_name: "<model name>"
-      }
-
-      any_missing = false
-
-      required_secrets.each do |key, description|
-        value = Tenant.current_secrets.send(key)
-        if value.present?
-          logger.info "✓ #{key} found"
-        else
-          logger.warn "✗ #{key} not found. Please provide it in the tenant secrets: #{key}: #{description}"
-          any_missing = true
-        end
+      if Tenant.current_secrets.sensemaker_data_folder.blank?
+        logger.warn "✗ sensemaker_data_folder not found. Please provide it in the tenant secrets."
+        abort "Error: sensemaker_data_folder is required. Please check the logs."
       end
+      logger.info "✓ sensemaker_data_folder found"
 
-      if any_missing
-        abort "Error: One or more Sensemaker environment variables not found. Please check the logs."
-      else
-        logger.info "✓ All Sensemaker environment variables are present."
+      context = Llm::Config.context
+      if context.config.vertexai_project_id.blank?
+        logger.warn "✗ Vertex AI is not configured. Please set tenant secrets " \
+                    "llm.vertexai_project_id (and optionally vertexai_location)."
+        abort "Error: Vertex AI configuration not found. Please check the logs."
       end
+      logger.info "✓ Vertex AI configuration (context.config.vertexai_project_id) is present."
+
+      provider = Setting["llm.provider"].to_s
+      unless provider.downcase.include?("vertex")
+        logger.warn "✗ Sensemaker requires Vertex AI as the LLM provider. " \
+                    "Current provider: #{provider.presence || "(not set)"}. Set it in Admin → Settings → LLM."
+        abort "Error: Vertex AI must be selected as the LLM provider. Please check the logs."
+      end
+      logger.info "✓ Vertex AI is selected as the LLM provider."
+
+      if Setting["llm.model"].blank?
+        logger.warn "✗ Sensemaker requires an LLM model to be selected. Set it in Admin → Settings → LLM."
+        abort "Error: No LLM model selected. Please check the logs."
+      end
+      logger.info "✓ LLM model is selected."
     end
 
     def check_sensemaker_cli(logger)
-      model_name = Tenant.current_secrets.sensemaker_model_name
-      project_id = Sensemaker::Paths.parse_key_file.fetch("project_id")
-      output_file = "#{Sensemaker::Paths.sensemaker_data_folder}/verify-output-#{Time.current.to_i}.txt"
+      context = Llm::Config.context
 
+      output_file = "#{Sensemaker::Paths.sensemaker_data_folder}/verify-output-#{Time.current.to_i}.txt"
       package_path = Sensemaker::Paths.sensemaker_package_folder
       runner_path = package_path.join("runner-cli/health_check_runner.ts")
 
       command = %Q(npx ts-node #{runner_path} \
-        --vertexProject #{project_id} \
+        --vertexProject #{context.config.vertexai_project_id} \
         --outputFile #{output_file} \
-        --modelName #{model_name} \
-        --keyFilename #{Sensemaker::Paths.key_file})
+        --modelName #{Setting["llm.model"]})
 
-      output = `cd #{Rails.root} && #{command} 2>&1`
+      full_command = "cd #{Rails.root} && #{command}"
+
+      logger.info "Running command: #{full_command}"
+      output = `#{full_command} 2>&1`
       result = $?.exitstatus
 
       if result.eql?(0)
@@ -197,7 +189,7 @@ namespace :sensemaker do
       end
     end
 
-    def check_repository(logger)
+    def check_package(logger)
       package_path = Sensemaker::Paths.sensemaker_package_folder
 
       if File.directory?(package_path)
@@ -216,27 +208,18 @@ namespace :sensemaker do
     end
 
     def check_key_file(logger)
-      key_file = Sensemaker::Paths.key_file
-
-      if File.exist?(key_file)
-        logger.info "✓ Key file found: #{key_file}"
+      key_path = Rails.application.secrets.google_application_credentials
+      if key_path.present?
+        path = Pathname.new(key_path).absolute? ? key_path : Rails.root.join(key_path).to_s
+        if File.exist?(path)
+          logger.info "✓ Key file found: #{path}"
+        else
+          logger.warn "✗ Key file not found at path apis.google_application_credentials : #{path}"
+          raise "Key file not found: #{path}"
+        end
       else
-        logger.warn "✗ Key file not found: #{key_file}"
-        raise "Key file is not found: #{key_file}"
-      end
-
-      parsed_file = Sensemaker::Paths.parse_key_file
-
-      if parsed_file.blank?
-        logger.warn "Key file is invalid: #{key_file}"
-        raise "Key file is invalid: #{key_file}"
-      end
-
-      if parsed_file.fetch("project_id", "").blank?
-        logger.warn "✗ Key file is missing project_id: #{key_file}"
-        raise "Key file is missing project_id: #{key_file}"
-      else
-        logger.info "✓ Key file has project_id: #{parsed_file["project_id"]}"
+        logger.info "✓ Using Application Default Credentials " \
+                    "(gcloud auth application-default login or metadata server)."
       end
     end
 
@@ -283,64 +266,40 @@ namespace :sensemaker do
         data_path = Rails.root.join("vendor/sensemaking-tools/data")
       end
 
+      check_dependencies(logger)
+      ensure_package_in_package_json(logger, "@cosla/sensemaking-tools")
+      ensure_web_ui_package_in_package_json(logger)
+
       logger.info "Using sensemaking-tools package path: #{package_path}"
       logger.info "Using sensemaking-tools data folder: #{sensemaker_path}"
       logger.info "Using data path: #{data_path}"
 
-      check_dependencies(logger)
-      ensure_package_in_package_json(logger)
-      ensure_web_ui_package_in_package_json(logger)
       ensure_angular_build_for_web_ui(logger)
       setup_sensemaker_directory(sensemaker_path, logger)
       setup_data_directory(data_path, logger)
       verify_cli_available(package_path, logger)
       add_feature_flag(logger)
+      check_key_file(logger)
 
-      if File.exist?(Sensemaker::Paths.key_file)
-        logger.info "Service account key file found at: #{Sensemaker::Paths.key_file}"
-        logger.info "Sensemaker setup complete!"
-        logger.info "To verify your installation, run: rake sensemaker:verify"
-      else
-        logger.info "IMPORTANT: Setup complete but you must provide a Google Cloud service account key file"
-        logger.info "Location: #{Sensemaker::Paths.key_file}"
-        logger.info ""
-        logger.info "To create a service account key:"
-        logger.info "1. In the Google Cloud console, go to the Service accounts page"
-        logger.info "2. Select a project"
-        logger.info "3. Click the email address of the service account that you want to create a key for"
-        logger.info "4. Click the Keys tab"
-        logger.info "5. Click the Add key drop-down menu, then select Create new key"
-        logger.info "6. Select JSON as the Key type and click Create"
-        logger.info ""
-        logger.info "For more details, visit: https://cloud.google.com/iam/docs/keys-create-delete"
-        logger.info ""
-        logger.info "Once you have provided the account key file you can verify your installation by running:"
-        logger.info "$ bundle exec rake sensemaker:verify"
-      end
+      logger.info "Sensemaker setup complete!"
+      logger.info "Ensure tenant secrets include llm.vertexai_project_id (and optionally vertexai_location)."
+      logger.info "To verify your installation, run: bundle exec rake sensemaker:verify"
     end
 
     def check_dependencies(logger)
       logger.info "Checking environment dependencies..."
-
-      unless system("which node > /dev/null 2>&1")
-        logger.warn "Node.js not found. Please install Node.js to use the Sensemaker feature."
-        raise "Node.js not found. Please install Node.js to use the Sensemaker feature."
+      %w[node npm npx].each do |cmd|
+        check_dependency(logger, cmd, cmd == "node" ? "Node.js" : cmd)
       end
-      logger.info "✓ Node.js found: #{`node --version`.strip}"
-
-      unless system("which npm > /dev/null 2>&1")
-        logger.warn "npm not found. Please install npm to use the Sensemaker feature."
-        raise "npm not found. Please install npm to use the Sensemaker feature."
-      end
-      logger.info "✓ npm found: #{`npm --version`.strip}"
-
-      unless system("which npx > /dev/null 2>&1")
-        logger.warn "npx not found. Please install npx to use the Sensemaker feature."
-        raise "npx not found. Please install npx to use the Sensemaker feature."
-      end
-      logger.info "✓ npx found: #{`npx --version`.strip}"
-
       logger.info "All dependencies are available."
+    end
+
+    def check_dependency(logger, cmd, display_name)
+      unless system("which #{cmd} > /dev/null 2>&1")
+        logger.warn "#{display_name} not found. Please install #{display_name} to use the Sensemaker feature."
+        raise "#{display_name} not found. Please install #{display_name} to use the Sensemaker feature."
+      end
+      logger.info "✓ #{display_name} found: #{`#{cmd} --version`.strip}"
     end
 
     def setup_sensemaker_directory(sensemaker_path, logger)
@@ -355,30 +314,28 @@ namespace :sensemaker do
       logger.info "Data directory created."
     end
 
-    def ensure_package_in_package_json(logger)
-      logger.info "Checking package.json for sensemaking-tools dependency..."
+    def ensure_package_in_package_json(logger, package_name, suggested_version: "^1.0.0")
+      logger.info "Checking package.json for #{package_name} dependency..."
 
       package_json_path = Rails.root.join("package.json")
       unless File.exist?(package_json_path)
         logger.warn "✗ package.json not found."
         logger.info ""
         logger.info "Please create package.json and add the following dependency:"
-        logger.info '  "@cosla/sensemaking-tools": "^1.0.0"'
+        logger.info "  \"#{package_name}\": \"#{suggested_version}\""
         logger.info ""
         raise "package.json not found. Please create it and add the required dependencies."
       end
 
       package_json = JSON.parse(File.read(package_json_path))
       package_json["dependencies"] ||= {}
-
-      package_name = "@cosla/sensemaking-tools"
       current_version = package_json["dependencies"][package_name]
 
       if current_version.nil?
         logger.warn "✗ #{package_name} not found in package.json"
         logger.info ""
         logger.info "Please add the following to your package.json dependencies:"
-        logger.info '  "@cosla/sensemaking-tools": "^1.0.0"'
+        logger.info "  \"#{package_name}\": \"#{suggested_version}\""
         logger.info ""
         logger.info "Then run: npm install"
         logger.info ""
@@ -389,36 +346,7 @@ namespace :sensemaker do
     end
 
     def ensure_web_ui_package_in_package_json(logger)
-      logger.info "Checking package.json for sensemaking-web-ui dependency..."
-
-      package_json_path = Rails.root.join("package.json")
-      unless File.exist?(package_json_path)
-        logger.warn "✗ package.json not found."
-        logger.info ""
-        logger.info "Please create package.json and add the following dependency:"
-        logger.info '  "@cosla/sensemaking-web-ui": "^1.0.0"'
-        logger.info ""
-        raise "package.json not found. Please create it and add the required dependencies."
-      end
-
-      package_json = JSON.parse(File.read(package_json_path))
-      package_json["dependencies"] ||= {}
-
-      package_name = "@cosla/sensemaking-web-ui"
-      current_version = package_json["dependencies"][package_name]
-
-      if current_version.nil?
-        logger.warn "✗ #{package_name} not found in package.json"
-        logger.info ""
-        logger.info "Please add the following to your package.json dependencies:"
-        logger.info '  "@cosla/sensemaking-web-ui": "^1.0.0"'
-        logger.info ""
-        logger.info "Then run: npm install"
-        logger.info ""
-        raise "#{package_name} not found in package.json. Please add it manually."
-      else
-        logger.info "✓ #{package_name}@#{current_version} found in package.json"
-      end
+      ensure_package_in_package_json(logger, "@cosla/sensemaking-web-ui")
     end
 
     def verify_cli_available(package_path, logger)
