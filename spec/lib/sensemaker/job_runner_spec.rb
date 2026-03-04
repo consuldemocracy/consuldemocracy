@@ -75,15 +75,17 @@ describe Sensemaker::JobRunner do
 
   describe "#check_dependencies?" do
     let(:service) { Sensemaker::JobRunner.new(job) }
+    let(:llm_config) { double("LLM config", vertexai_project_id: "sensemaker-466109") }
+    let(:llm_context) { double("LLM context", config: llm_config) }
 
     before do
       allow(service).to receive(:system).with("which node > /dev/null 2>&1").and_return(true)
       allow(service).to receive(:system).with("which npx > /dev/null 2>&1").and_return(true)
       allow(File).to receive(:exist?).and_return(true)
-      allow(File).to receive(:read).with(Sensemaker::Paths.key_file)
-                                   .and_return('{"project_id": "sensemaker-466109"}')
-      allow(File).to receive(:read).with(service.key_file)
-                                   .and_return('{"project_id": "sensemaker-466109"}')
+      allow(Llm::Config).to receive(:context).and_return(llm_context)
+      allow(Setting).to receive(:[]).and_call_original
+      allow(Setting).to receive(:[]).with("llm.provider").and_return("VertexAI")
+      allow(Setting).to receive(:[]).with("llm.model").and_return("gemini-2.5-flash-lite")
     end
 
     it "returns true when all dependencies are available" do
@@ -96,13 +98,17 @@ describe Sensemaker::JobRunner do
         -> { allow(Tenant.current_secrets).to receive(:sensemaker_data_folder).and_return(nil) },
         "Sensemaker data folder not configured"
       ],
-      "sensemaker_key_file is not configured" => [
-        -> { allow(Tenant.current_secrets).to receive(:sensemaker_key_file).and_return(nil) },
-        "Sensemaker key file not configured"
+      "Vertex AI project_id is not configured" => [
+        -> { allow(llm_config).to receive(:vertexai_project_id).and_return(nil) },
+        "Vertex AI is not configured"
       ],
-      "sensemaker_model_name is not configured" => [
-        -> { allow(Tenant.current_secrets).to receive(:sensemaker_model_name).and_return(nil) },
-        "Sensemaker model name not configured"
+      "LLM provider is not Vertex" => [
+        -> { allow(Setting).to receive(:[]).with("llm.provider").and_return("OpenAI") },
+        "Sensemaker requires Vertex AI as the LLM provider"
+      ],
+      "LLM model is not selected" => [
+        -> { allow(Setting).to receive(:[]).with("llm.model").and_return(nil) },
+        "Sensemaker requires an LLM model to be selected"
       ],
       "Node.js is not available" => [
         -> { allow(service).to receive(:system).with("which node > /dev/null 2>&1").and_return(false) },
@@ -131,37 +137,20 @@ describe Sensemaker::JobRunner do
         },
         "Input file not found"
       ],
-      "the key file does not exist" => [
+      "apis.google_application_credentials is set but key file does not exist" => [
         -> {
+          allow(Rails.application.secrets).to receive(:google_application_credentials)
+            .and_return("/nonexistent/key.json")
+          allow(File).to receive(:exist?).with("/nonexistent/key.json").and_return(false)
           allow(File).to receive(:exist?).with(Sensemaker::Paths.sensemaker_package_folder).and_return(true)
           allow(File).to receive(:exist?).with(service.input_file).and_return(true)
-          allow(File).to receive(:exist?).with(service.key_file).and_return(false)
         },
-        "Key file not found"
-      ],
-      "the key file is invalid JSON" => [
-        -> {
-          allow(File).to receive(:exist?).with(Sensemaker::Paths.sensemaker_package_folder).and_return(true)
-          allow(File).to receive(:exist?).with(service.input_file).and_return(true)
-          allow(File).to receive(:exist?).with(service.key_file).and_return(true)
-          allow(File).to receive(:read).with(service.key_file).and_return("invalid json")
-        },
-        "Key file is invalid"
-      ],
-      "the key file is missing project_id" => [
-        -> {
-          allow(File).to receive(:exist?).with(Sensemaker::Paths.sensemaker_package_folder).and_return(true)
-          allow(File).to receive(:exist?).with(service.input_file).and_return(true)
-          allow(File).to receive(:exist?).with(service.key_file).and_return(true)
-          allow(File).to receive(:read).with(service.key_file).and_return('{"type": "service_account"}')
-        },
-        "Key file is missing project_id"
+        "Key file (apis.google_application_credentials) not found"
       ],
       "the script file does not exist" => [
         -> {
           allow(File).to receive(:exist?).with(Sensemaker::Paths.sensemaker_package_folder).and_return(true)
           allow(File).to receive(:exist?).with(service.input_file).and_return(true)
-          allow(File).to receive(:exist?).with(service.key_file).and_return(true)
           allow(File).to receive(:exist?).with(service.script_file).and_return(false)
         },
         "Script file not found"
@@ -218,12 +207,13 @@ describe Sensemaker::JobRunner do
 
   describe "#build_command" do
     let(:service) { Sensemaker::JobRunner.new(job) }
+    let(:llm_config) { double("LLM config", vertexai_project_id: "sensemaker-466109") }
+    let(:llm_context) { double("LLM context", config: llm_config) }
 
     before do
-      allow(File).to receive(:read).with(Sensemaker::Paths.key_file)
-                                   .and_return('{"project_id": "sensemaker-466109"}')
-      allow(File).to receive(:read).with(service.key_file)
-                                   .and_return('{"project_id": "sensemaker-466109"}')
+      allow(Llm::Config).to receive(:context).and_return(llm_context)
+      allow(Setting).to receive(:[]).and_call_original
+      allow(Setting).to receive(:[]).with("llm.model").and_return("gemini-2.5-flash-lite")
     end
 
     shared_examples "runner command with common flags" do |script_name, use_output_file_flag: true|
@@ -232,8 +222,8 @@ describe Sensemaker::JobRunner do
         command = service.build_command
         expect(command).to include("npx ts-node #{service.script_file}")
         expect(command).to include("--vertexProject #{service.project_id}")
-        expect(command).to include("--modelName #{Tenant.current_secrets.sensemaker_model_name}")
-        expect(command).to include("--keyFilename #{service.key_file}")
+        expect(command).to include("--modelName gemini-2.5-flash-lite")
+        expect(command).not_to include("--keyFilename")
         expect(command).to include("--inputFile #{service.input_file}")
         if use_output_file_flag
           expect(command).to include("--outputFile #{service.output_file}")

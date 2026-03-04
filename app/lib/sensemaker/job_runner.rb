@@ -55,15 +55,7 @@ module Sensemaker
     end
 
     def project_id
-      parse_key_file.fetch("project_id", "")
-    end
-
-    def key_file
-      Sensemaker::Paths.key_file
-    end
-
-    def parse_key_file
-      Sensemaker::Paths.parse_key_file
+      llm_context.config.vertexai_project_id.to_s
     end
 
     def self.enabled?
@@ -83,14 +75,13 @@ module Sensemaker
                  npx ts-node single-html-build.js --outputFile #{output_file})
       end
 
-      model_name = Tenant.current_secrets.sensemaker_model_name
+      model_name = Setting["llm.model"]
       additional_context = nil
       additional_context = job.additional_context.presence unless job.script == "health_check_runner.ts"
 
       command = %Q(npx ts-node #{script_file} \
                  --vertexProject #{project_id} \
-                 --modelName #{model_name} \
-                 --keyFilename #{key_file})
+                 --modelName #{model_name})
       command += " --inputFile #{input_file}" unless job.script == "health_check_runner.ts"
       if additional_context.present?
         command += " --additionalContext #{Shellwords.escape(additional_context.to_s)}"
@@ -105,6 +96,10 @@ module Sensemaker
     end
 
     private
+
+      def llm_context
+        @llm_context ||= Llm::Config.context
+      end
 
       def execute_job_workflow
         job.update!(started_at: Time.current)
@@ -204,18 +199,35 @@ module Sensemaker
           return false
         end
 
-        if Tenant.current_secrets.sensemaker_key_file.blank?
-          message = "Sensemaker key file not configured. Add 'sensemaker_key_file' to your secrets.yml"
+        if llm_context.config.vertexai_project_id.blank?
+          message = "Vertex AI is not configured. Set tenant secrets llm.vertexai_project_id " \
+                    "(and optionally vertexai_location)."
           job.update!(finished_at: Time.current, error: message)
           Rails.logger.error(message)
           return false
         end
 
-        if Tenant.current_secrets.sensemaker_model_name.blank?
-          message = "Sensemaker model name not configured. Add 'sensemaker_model_name' to your secrets.yml"
+        provider = Setting["llm.provider"].to_s
+        unless provider.downcase.include?("vertex")
+          message = "Sensemaker requires Vertex AI as the LLM provider. " \
+                    "Current provider: #{provider.presence || "(not set)"}. Set it in Admin → Settings → LLM."
           job.update!(finished_at: Time.current, error: message)
           Rails.logger.error(message)
           return false
+        end
+
+        if Setting["llm.model"].blank?
+          message = "Sensemaker requires an LLM model to be selected. Set it in Admin → Settings → LLM."
+          job.update!(finished_at: Time.current, error: message)
+          Rails.logger.error(message)
+          return false
+        end
+
+        key_path = Rails.application.secrets.google_application_credentials
+        if key_path.present?
+          path = (File.expand_path(key_path) == key_path) ? key_path : Rails.root.join(key_path).to_s
+          return false unless file_exists?(path,
+                                           description: "Key file (apis.google_application_credentials)")
         end
 
         unless system("which node > /dev/null 2>&1")
@@ -250,22 +262,6 @@ module Sensemaker
                                            description: "Input file - comments with scores")
         else
           return false unless file_exists?(input_file, description: "Input file")
-        end
-
-        return false unless file_exists?(key_file, description: "Key file")
-
-        if parse_key_file.blank?
-          message = "Key file is invalid: #{key_file}"
-          job.update!(finished_at: Time.current, error: message)
-          Rails.logger.error(message)
-          return false
-        end
-
-        if project_id.blank?
-          message = "Key file is missing project_id: #{key_file}"
-          job.update!(finished_at: Time.current, error: message)
-          Rails.logger.error(message)
-          return false
         end
 
         return false unless file_exists?(script_file, description: "Script file")
