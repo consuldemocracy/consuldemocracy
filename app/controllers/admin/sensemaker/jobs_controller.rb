@@ -220,7 +220,7 @@ class Admin::Sensemaker::JobsController < Admin::BaseController
 
   def download
     @sensemaker_job = Sensemaker::Job.find(params[:id])
-    artefacts = @sensemaker_job.output_artifact_paths.select { |p| File.exist?(p) }
+    artefacts = @sensemaker_job.existing_output_artefact_paths
 
     if params[:artefact].present?
       requested = File.join(Sensemaker::Paths.sensemaker_data_folder, params[:artefact])

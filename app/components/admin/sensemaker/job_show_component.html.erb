@@ -128,12 +128,10 @@
         <h3><%= t("admin.sensemaker.job_show.output_files") %></h3>
         <p class="help-text"><%= t("admin.sensemaker.job_show.select_file_download") %></p>
         <ul>
-          <% sensemaker_job.output_artifact_paths.each do |path| %>
-            <% if File.exist?(path) %>
-              <li>
-                <%= link_to File.basename(path), download_admin_sensemaker_job_path(sensemaker_job, artefact: File.basename(path)) %>
-              </li>
-            <% end %>
+          <% sensemaker_job.existing_output_artefact_paths.each do |path| %>
+            <li>
+              <%= link_to ::File.basename(path), download_admin_sensemaker_job_path(sensemaker_job, artefact: ::File.basename(path)) %>
+            </li>
           <% end %>
         </ul>
       </section>

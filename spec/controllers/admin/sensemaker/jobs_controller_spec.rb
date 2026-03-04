@@ -32,13 +32,13 @@ describe Admin::Sensemaker::JobsController do
 
     context "when artefact param is provided and valid" do
       let(:data_folder) { Sensemaker::Paths.sensemaker_data_folder.to_s }
-      let(:basename) { "artifact-#{SecureRandom.hex}.json" }
+      let(:basename) { "artefact-#{SecureRandom.hex}.json" }
       let(:tmp_file) { File.join(data_folder, basename) }
 
       before do
         FileUtils.mkdir_p(File.dirname(tmp_file))
         File.write(tmp_file, "{}")
-        allow_any_instance_of(Sensemaker::Job).to receive(:output_artifact_paths)
+        allow_any_instance_of(Sensemaker::Job).to receive(:output_artefact_paths)
           .and_return([tmp_file])
       end
 
@@ -56,7 +56,7 @@ describe Admin::Sensemaker::JobsController do
 
     context "when artefact param is invalid" do
       it "redirects to show with alert" do
-        allow_any_instance_of(Sensemaker::Job).to receive(:output_artifact_paths)
+        allow_any_instance_of(Sensemaker::Job).to receive(:output_artefact_paths)
           .and_return([])
 
         get :download, params: { id: job.id, artefact: "nonexistent.json" }

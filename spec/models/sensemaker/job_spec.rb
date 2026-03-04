@@ -248,7 +248,7 @@ describe Sensemaker::Job do
       end
     end
 
-    describe "#output_artifact_paths" do
+    describe "#output_artefact_paths" do
       include_context "sensemaker paths stubbed"
       let(:base_path) { "#{data_folder}/output-#{job.id}" }
 
@@ -256,12 +256,12 @@ describe Sensemaker::Job do
         it "uses default_output_path for single output scripts" do
           job.script = "categorization_runner.ts"
           expected_path = "#{data_folder}/categorization-output-#{job.id}.csv"
-          expect(job.output_artifact_paths).to eq([expected_path])
+          expect(job.output_artefact_paths).to eq([expected_path])
         end
 
         it "uses default_output_path for advanced_runner.ts" do
           job.script = "advanced_runner.ts"
-          expect(job.output_artifact_paths).to eq([
+          expect(job.output_artefact_paths).to eq([
             "#{base_path}-summary.json",
             "#{base_path}-topic-stats.json",
             "#{base_path}-comments-with-scores.json"
@@ -270,7 +270,7 @@ describe Sensemaker::Job do
 
         it "uses default_output_path for runner.ts" do
           job.script = "runner.ts"
-          expect(job.output_artifact_paths).to eq([
+          expect(job.output_artefact_paths).to eq([
             "#{base_path}-summary.json",
             "#{base_path}-summary.html",
             "#{base_path}-summary.md",
@@ -288,12 +288,12 @@ describe Sensemaker::Job do
 
         it "uses resolved persisted_output_path (absolute) so File.exist? works after deploys" do
           job.script = "categorization_runner.ts"
-          expect(job.output_artifact_paths).to eq([persisted_path])
+          expect(job.output_artefact_paths).to eq([persisted_path])
         end
 
         it "uses persisted_output for advanced_runner.ts" do
           job.script = "advanced_runner.ts"
-          expect(job.output_artifact_paths).to eq([
+          expect(job.output_artefact_paths).to eq([
             "#{persisted_path}-summary.json",
             "#{persisted_path}-topic-stats.json",
             "#{persisted_path}-comments-with-scores.json"
@@ -302,7 +302,7 @@ describe Sensemaker::Job do
 
         it "uses persisted_output for runner.ts" do
           job.script = "runner.ts"
-          expect(job.output_artifact_paths).to eq([
+          expect(job.output_artefact_paths).to eq([
             "#{persisted_path}-summary.json",
             "#{persisted_path}-summary.html",
             "#{persisted_path}-summary.md",
@@ -320,9 +320,36 @@ describe Sensemaker::Job do
           it "returns absolute paths via persisted_output_path so has_outputs? can find files" do
             job.script = "categorization_runner.ts"
             expected = Rails.root.join(relative_path).to_s
-            expect(job.output_artifact_paths).to eq([expected])
+            expect(job.output_artefact_paths).to eq([expected])
           end
         end
+      end
+    end
+
+    describe "#existing_output_artefact_paths" do
+      include_context "sensemaker paths stubbed"
+      let(:base_path) { "#{data_folder}/output-#{job.id}" }
+
+      before do
+        allow(File).to receive(:exist?).and_return(false)
+      end
+
+      it "returns only paths for which the file exists" do
+        job.script = "runner.ts"
+        existing_path = "#{base_path}-summary.json"
+        allow(File).to receive(:exist?).with(existing_path).and_return(true)
+
+        expect(job.existing_output_artefact_paths).to eq([existing_path])
+      end
+
+      it "excludes paths for which the file does not exist" do
+        job.script = "runner.ts"
+        path1 = "#{base_path}-summary.json"
+        path2 = "#{base_path}-summary.html"
+        allow(File).to receive(:exist?).with(path1).and_return(true)
+        allow(File).to receive(:exist?).with(path2).and_return(false)
+
+        expect(job.existing_output_artefact_paths).to eq([path1])
       end
     end
 
