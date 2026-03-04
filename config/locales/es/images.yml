@@ -6,6 +6,7 @@ es:
       delete_button: Eliminar imagen
       note: "Puedes subir una imagen en los formatos: %{accepted_content_types}, y de hasta %{max_file_size} MB por archivo."
       add_new_image: Añadir imagen
+      suggested_image_filename: Imagen de %{author_name}.jpg
     actions:
       destroy:
         notice: La imagen se ha eliminado correctamente.
