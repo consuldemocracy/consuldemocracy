@@ -15,7 +15,7 @@
     "eslint": "^8.57.0",
     "postcss-scss": "^4.0.9",
     "stylelint": "^16.26.1",
-    "stylelint-order": "^7.0.0",
+    "stylelint-order": "^7.0.1",
     "stylelint-scss": "^6.12.1"
   }
 }
