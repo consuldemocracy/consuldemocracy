@@ -60,9 +60,29 @@ es:
         title: '¿Has olvidado tu contraseña?'
     sessions:
       new:
+        otp_label: Introduce tu código de 6 dígitos
         remember_me: Recordarme
         submit: Entrar
         title: Iniciar sesión
+      two_factor:
+        enabled: "La autenticación de dos factores está activada."
+        disabled: "La autenticación de dos factores NO está activada."
+        enable_link: "Activar autenticación de dos factores"
+        disable_link: "Desactivar autenticación de dos factores"
+        disable_confirm: "¿Estás seguro de que quieres desactivar la autenticación de dos factores?"
+        authentication:
+          title: "Introduce tu código de autenticación de dos factores"
+          instruction: "Abre tu aplicación de autenticación e introduce el código a continuación para completar tu inicio de sesión."
+          card_title: "Autenticación de Dos Factores"
+          otp_label: "Código de autenticación"
+          submit: "Verificar y entrar"
+        backup_codes:
+          title: "Autenticación de Dos Factores Activada"
+          save_title: "Guarda tus Códigos de Respaldo"
+          instruction: "Trata estos códigos de respaldo como una contraseña. Recomendamos almacenarlos en un gestor de contraseñas seguro."
+          warning: "Cada código solo puede usarse una vez. Estos códigos **no se mostrarán de nuevo**."
+          codes_title: "Tus Códigos de Respaldo"
+          save_button: "He guardado mis códigos"
     shared:
       links:
         login: Entrar

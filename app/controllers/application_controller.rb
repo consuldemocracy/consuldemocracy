@@ -13,6 +13,8 @@ class ApplicationController < ActionController::Base
   around_action :switch_locale
   before_action :set_return_url
 
+  before_action :enforce_two_factor_for_admins
+
   check_authorization unless: :devise_controller?
   self.responder = ApplicationResponder
 
@@ -43,7 +45,7 @@ class ApplicationController < ActionController::Base
       locale = current_locale
 
       if current_user && current_user.locale != locale.to_s
-        current_user.update(locale: locale)
+        current_user.update!(locale: locale)
       end
 
       session[:locale] = locale.to_s
@@ -103,5 +105,36 @@ class ApplicationController < ActionController::Base
     def path_with_query_params(options)
       path_options = { controller: params[:controller] }.merge(options).merge(only_path: true)
       url_for(request.query_parameters.merge(path_options))
+    end
+
+    def enforce_two_factor_for_admins
+      return unless Setting.otp_enabled?
+
+  #  First, do nothing if no user is signed in.
+      return unless user_signed_in?
+
+  #  Next, do nothing if the user is not an admin.
+      return unless current_user.administrator?
+
+  # If the admin has already enabled 2FA, we're done. Do nothing.
+      return if current_user.otp_two_factor_enabled?
+
+  # To prevent an infinite redirect loop, we must NOT redirect
+      return if on_an_allowed_page?
+
+  # If all checks fail, the user is an admin who needs to set up 2FA.
+      redirect_to account_two_factor_authentication_path,
+                  alert: "As an administrator, you must enable two-factor authentication to continue."
+    end
+
+  # Helper method to define the pages an admin can visit during setup.
+    def on_an_allowed_page?
+      # Allow access to any Devise-related controller (sessions, registrations, etc.)
+      # so they can log out if needed.
+      return true if devise_controller?
+
+      # Allow access to the two_factor_authentication controller itself.
+      allowed_controllers = ["two_factor_authentication", "two_factor_authentications"]
+      true if allowed_controllers.include?(controller_name)
     end
 end

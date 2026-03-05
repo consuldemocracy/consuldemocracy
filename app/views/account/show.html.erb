@@ -93,6 +93,21 @@
         </div>
 
         <div class="user-permissions small-12 medium-5 column">
+          <h2><%= t("account.show.two_factor") %></h2>
+
+          <% if current_user.otp_required_for_login %>
+            <p><%= t("devise_views.sessions.two_factor.enabled") %></p>
+            <p><%= link_to(t("devise_views.sessions.two_factor.disable_link"),
+                           account_two_factor_authentication_path,
+                           class: "button",
+                           method: :delete,
+                           data: { confirm: t("devise_views.sessions.two_factor.disable_confirm") }) %></p>
+          <% else %>
+            <p><%= t("devise_views.sessions.two_factor.disabled") %></p>
+            <p><%= link_to(t("devise_views.sessions.two_factor.enable_link"),
+                           account_two_factor_authentication_path,
+                           class: "button") %></p>
+          <% end %>
           <h2><%= t("account.show.user_permission_title") %></h2>
 
           <p><%= t("account.show.user_permission_info") %></p>

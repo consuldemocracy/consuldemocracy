@@ -1,0 +1,62 @@
+<%# app/views/two_factor_authentications/show.html.erb %>
+
+<h1><%= t("two_factor_authentication.show.title") %></h1>
+
+<div class="two-factor-setup">
+  <p><%= t("two_factor_authentication.show.description") %></p>
+
+  <div class="authenticator-options">
+    <div class="authenticator-app">
+      <div class="app-icon">
+        <img src="https://cdn.simpleicons.org/googleauthenticator/4285F4" alt="Google Authenticator" width="32" height="32">
+      </div>
+      <div class="app-details">
+        <strong><%= t("two_factor_authentication.show.google_authenticator") %></strong>
+        <div class="store-links">
+          <a href="https://apps.apple.com/app/google-authenticator/id388497605" target="_blank" class="store-link">
+            <img src="https://cdn.simpleicons.org/apple/000000" alt="App Store" class="store-logo" width="16" height="16">
+            <%= t("two_factor_authentication.show.app_store") %>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2" target="_blank" class="store-link">
+            <img src="https://cdn.simpleicons.org/googleplay/3DDC84" alt="Google Play" class="store-logo" width="16" height="16">
+            <%= t("two_factor_authentication.show.google_play") %>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="authenticator-app">
+      <div class="app-icon">
+
+      </div>
+      <div class="app-details">
+        <strong><%= t("two_factor_authentication.show.authy") %></strong>
+        <div class="store-links">
+          <a href="https://apps.apple.com/app/authy/id494168017" target="_blank" class="store-link">
+            <img src="https://cdn.simpleicons.org/apple/000000" alt="App Store" class="store-logo" width="16" height="16">
+            <%= t("two_factor_authentication.show.app_store") %>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.authy.authy" target="_blank" class="store-link">
+            <img src="https://cdn.simpleicons.org/googleplay/3DDC84" alt="Google Play" class="store-logo" width="16" height="16">
+            <%= t("two_factor_authentication.show.google_play") %>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qr-code-container">
+    <img src="<%= @qr_code %>" alt="<%= t("two_factor_authentication.show.qr_alt") %>">
+  </div>
+
+  <%= form_with url: enable_account_two_factor_authentication_path, method: :post, html: { class: "otp-form" } do |f| %>
+    <%= label_tag :otp_attempt, t("two_factor_authentication.show.otp_label") %>
+    <%= text_field_tag :otp_attempt, nil,
+                       autocomplete: "one-time-code",
+                       inputmode: "numeric",
+                       pattern: "[0-9]*",
+                       maxlength: "6",
+                       class: "form-control" %>
+    <%= submit_tag t("two_factor_authentication.show.enable_button"), class: "button primary" %>
+  <% end %>
+</div>

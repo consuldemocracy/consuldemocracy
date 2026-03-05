@@ -46,6 +46,12 @@ es:
       update_needs_confirmation: "Has actualizado tu cuenta correctamente, sin embargo necesitamos verificar tu nueva cuenta de correo. Por favor revisa tu correo electrónico y visita el enlace para finalizar la confirmación de tu nueva dirección de correo electrónico."
       updated: "Has actualizado tu cuenta correctamente."
     sessions:
+      otp:
+        header: "Autenticación de Dos Factores"
+        label: "OTP"
+        login_button: "Iniciar Sesión"
+        backup_code_hint: "¿Ha perdido su dispositivo? Puede utilizar uno de sus códigos de respaldo de un solo uso."
+        backup_code_link_text: "Usar un código de respaldo"
       signed_in: "Has iniciado sesión correctamente."
       signed_out: "Has cerrado la sesión correctamente."
       already_signed_out: "Has cerrado la sesión correctamente."

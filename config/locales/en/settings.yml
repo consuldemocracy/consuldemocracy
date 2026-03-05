@@ -118,6 +118,8 @@ en:
       allow_images_description: "Allows users to upload images when creating proposals and investment projects from Participatory Budgets"
       allow_attached_documents: "Allow upload and show of attached documents"
       allow_attached_documents_description: "Allows users to upload documents when creating proposals and investment projects from Participatory Budgets"
+      force_2factor: "Force 2FA for Admins"
+      force_2factor_description: "Forces admins to us 2FA on next login"
       guides: "Guides to create proposals or investment projects"
       guides_description: "Displays a guide to differences between proposals and investment projects if there is an active participatory budget"
       help_page: "Help page"

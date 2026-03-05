@@ -1,0 +1,17 @@
+<%# app/views/devise/two_factor_authentication/show.html.erb %>
+
+<h2><%= t("devise_views.sessions.two_factor.authentication.title") %></h2>
+
+<p><%= t("devise_views.sessions.two_factor.authentication.instruction") %></p>
+
+<div class="card">
+  <div class="card-header"><%= t("devise_views.sessions.two_factor.authentication.card_title") %></div>
+  <div class="card-body">
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), method: :post) do |f| %>
+      <%= f.input :otp_attempt, label: t("devise_views.sessions.two_factor.authentication.otp_label") %>
+      <div class="actions">
+        <%= f.submit t("devise_views.sessions.two_factor.authentication.submit"), class: "btn btn-primary mt-2" %>
+      </div>
+    <% end %>
+  </div>
+</div>
