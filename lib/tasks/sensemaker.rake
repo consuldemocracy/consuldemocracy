@@ -3,6 +3,7 @@ namespace :sensemaker do
   task setup: :environment do
     logger = ApplicationLogger.new
     logger.info "Setting up Sensemaker Integration..."
+    setup_sensemaker_app_prerequisites(logger)
     with_sensemaker_tenant(logger, "Setting up") { |lgr| setup_for_tenant(lgr) }
   end
 
@@ -35,6 +36,30 @@ namespace :sensemaker do
         logger.info "No tenant specified, using default tenant"
         yield logger
       end
+    end
+
+    def setup_sensemaker_app_prerequisites(logger)
+      begin
+        package_path = Sensemaker::Paths.sensemaker_package_folder
+        sensemaker_path = Sensemaker::Paths.sensemaker_folder
+      rescue => e
+        logger.warn "Could not get paths from Sensemaker::Paths: #{e.message}"
+        logger.warn "Using default paths instead"
+        package_path = Rails.root.join("node_modules/@cosla/sensemaking-tools")
+        sensemaker_path = Rails.root.join("vendor/sensemaking-tools")
+      end
+
+      check_dependencies(logger)
+      ensure_package_in_package_json(logger, "@cosla/sensemaking-tools")
+      ensure_web_ui_package_in_package_json(logger)
+
+      logger.info "Using sensemaking-tools package path: #{package_path}"
+      logger.info "Using sensemaking-tools folder: #{sensemaker_path}"
+
+      ensure_angular_build_for_web_ui(logger)
+      setup_sensemaker_directory(sensemaker_path, logger)
+      verify_cli_available(package_path, logger)
+      check_key_file(logger)
     end
 
     def verify_installation(logger)
@@ -254,32 +279,16 @@ namespace :sensemaker do
 
     def setup_for_tenant(logger)
       begin
-        package_path = Sensemaker::Paths.sensemaker_package_folder
-        sensemaker_path = Sensemaker::Paths.sensemaker_folder
         data_path = Sensemaker::Paths.sensemaker_data_folder
       rescue => e
-        logger.warn "Could not get paths from Sensemaker::Paths: #{e.message}"
-        logger.warn "Using default paths instead"
-
-        package_path = Rails.root.join("node_modules/@cosla/sensemaking-tools")
-        sensemaker_path = Rails.root.join("vendor/sensemaking-tools")
+        logger.warn "Could not get data path from Sensemaker::Paths: #{e.message}"
+        logger.warn "Using default path instead"
         data_path = Rails.root.join("vendor/sensemaking-tools/data")
       end
 
-      check_dependencies(logger)
-      ensure_package_in_package_json(logger, "@cosla/sensemaking-tools")
-      ensure_web_ui_package_in_package_json(logger)
-
-      logger.info "Using sensemaking-tools package path: #{package_path}"
-      logger.info "Using sensemaking-tools data folder: #{sensemaker_path}"
       logger.info "Using data path: #{data_path}"
-
-      ensure_angular_build_for_web_ui(logger)
-      setup_sensemaker_directory(sensemaker_path, logger)
       setup_data_directory(data_path, logger)
-      verify_cli_available(package_path, logger)
       add_feature_flag(logger)
-      check_key_file(logger)
 
       logger.info "Sensemaker setup complete!"
       logger.info "Ensure tenant secrets include llm.vertexai_project_id (and optionally vertexai_location)."
