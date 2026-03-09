@@ -789,7 +789,7 @@ GEM
     terrapin (0.6.0)
       climate_control (>= 0.0.3, < 1.0)
     thor (1.5.0)
-    tilt (2.0.10)
+    tilt (2.2.0)
     timeout (0.6.0)
     tomlrb (2.0.4)
     tsort (0.2.0)
