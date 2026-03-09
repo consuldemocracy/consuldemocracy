@@ -12,6 +12,8 @@ sv:
       attach_suggested_image: Bifoga föreslagen bild
       attach_suggested_image_aria_label: "Bifoga föreslagen bild %{index} av %{count}"
       pick_an_image: "Välj en bild från förslagen nedan:"
+      no_images_found: Det hittades inga förslag.
+      suggested_image_filename: Bild av %{author_name}.jpg
     actions:
       destroy:
         notice: Bilden har tagits bort.
