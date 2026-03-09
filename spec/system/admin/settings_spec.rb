@@ -351,10 +351,14 @@ describe "Admin settings", :admin do
           .to receive(:providers).and_return({ OpenAI: { enabled: true }})
         ruby_llm_models = [double("Model", name: "GPT-4.1 mini", id: "gpt-4o-mini")]
         allow(RubyLLM.models).to receive(:by_provider).with(:openai).and_return(ruby_llm_models)
+        stub_secrets(pexels_access_key: "test_key")
       end
+
       scenario "Configure provider, model and enable usage" do
         visit admin_settings_path
+
         click_link "LLM Settings"
+
         within "tr", text: "LLM Provider" do
           expect(page).to have_select selected: "None"
           select "OpenAI"
@@ -362,6 +366,7 @@ describe "Admin settings", :admin do
           expect(page).to have_select selected: "OpenAI"
         end
         expect(page).to have_content "Value updated"
+
         within "tr", text: "Model" do
           expect(page).to have_select selected: "None"
           select "GPT-4.1 mini"
@@ -369,7 +374,15 @@ describe "Admin settings", :admin do
           expect(page).to have_select selected: "GPT-4.1 mini"
         end
         expect(page).to have_content "Value updated"
+
         within "tr", text: "Content Translation" do
+          expect(page).to have_button "No"
+          click_button "No"
+          expect(page).to have_button "Yes"
+        end
+        expect(page).to have_content "Value updated"
+
+        within "tr", text: "AI Image Suggestions" do
           expect(page).to have_button "No"
           click_button "No"
           expect(page).to have_button "Yes"

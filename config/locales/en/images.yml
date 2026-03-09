@@ -6,11 +6,21 @@ en:
       delete_button: Remove image
       note: "You can upload one image of following content types: %{accepted_content_types}, up to %{max_file_size} MB."
       add_new_image: Add image
+      or_separator: or
+      suggest_image_with_ai: Suggest an image with AI
+      suggested_images_container: Suggested images
+      attach_suggested_image: Attach suggested image
+      attach_suggested_image_aria_label: "Attach suggested image %{index} of %{count}"
+      pick_an_image: "Select an image from the suggestions below:"
+      no_images_found: No suggestions could be found.
+      suggested_image_filename: Image by %{author_name}.jpg
     actions:
       destroy:
         notice: Image was deleted successfully.
         alert: Cannot delete image.
     errors:
       messages:
+        title_and_description_required: To suggest images, please write a title and description first.
+        llm_not_configured: LLM is not properly configured. Please contact an administrator.
         in_between: must be in between %{min} and %{max}
         wrong_content_type: content type %{content_type} does not match any of accepted content types %{accepted_content_types}
