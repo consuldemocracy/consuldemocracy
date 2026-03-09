@@ -20,5 +20,7 @@ sv:
         alert: Bilden kunde inte raderas.
     errors:
       messages:
+        title_and_description_required: Föreslå bilder genom att skriva en titel och beskrivning först.
+        llm_not_configured: LLM har inte konfigurerats på rätt sätt. Kontakta en administratör.
         in_between: måste vara mellan %{min} och %{max}
         wrong_content_type: innehållstypen %{content_type} finns inte bland de tillåtna innehållstyperna %{accepted_content_types}
