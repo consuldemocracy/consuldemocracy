@@ -818,7 +818,7 @@ GEM
       activemodel (>= 3.0.0)
       public_suffix
     version_gem (1.1.9)
-    view_component (4.2.0)
+    view_component (4.5.0)
       actionview (>= 7.1.0)
       activesupport (>= 7.1.0)
       concurrent-ruby (~> 1)
@@ -957,7 +957,7 @@ DEPENDENCIES
   turbolinks (~> 5.2.1)
   turnout (~> 2.5.0)
   uglifier (~> 4.2.1)
-  view_component (~> 4.2.0)
+  view_component (~> 4.5.0)
   web-console (~> 4.2.1)
   whenever (~> 1.1.2)
   wicked_pdf (~> 2.8.2)
