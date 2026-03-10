@@ -45,7 +45,7 @@ describe "Moderate users" do
 
     login_through_form_as(citizen)
 
-    expect(page).to have_content "Invalid Email or username or password"
+    expect(page).to have_content "Invalid email or username or password"
     expect(page).to have_current_path(new_user_session_path)
   end
 

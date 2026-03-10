@@ -92,7 +92,7 @@ describe "Users" do
         login_through_form_with("peter@nyc.dev", password: "symbiote")
 
         expect(page).not_to have_content "You have been signed in successfully."
-        expect(page).to have_content "Invalid Email or username or password."
+        expect(page).to have_content "Invalid email or username or password."
 
         fill_in "Email or username", with: "venom@nyc.dev"
         fill_in "Password", with: "symbiote"
