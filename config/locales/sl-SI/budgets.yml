@@ -49,8 +49,6 @@ sl:
         tags_instructions: "Označi ta predlog. Izbiraš lahko med predlaganimi kategorijami ali dodaš svojo lastno."
         tags_label: Oznake
         tags_placeholder: "Vnesi oznake, ki jih želiš uporabiti in jih loči z vejico (',')"
-        map_location: "Lokacija na zemljevidu"
-        map_location_instructions: "Na zemljevidu poišči lokacijo in jo označi."
       index:
         title: Participatorni proračun
         unfeasible: Neizvedljivi naložbeni projekti
@@ -79,7 +77,6 @@ sl:
           confidence_score: najbolje ocenjeni
           price: po ceni
       show:
-        author_deleted: Uporabnik izbrisan
         price_explanation: Razlaga cene
         unfeasibility_explanation: Razlaga neizvedljivosti
         code: "Koda naložbenega projekta: <strong>%{code}</strong>"

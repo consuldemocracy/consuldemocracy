@@ -41,9 +41,6 @@ fr:
         heading: Titre
         dossier: Rapport
         edit_dossier: Éditer le rapport
-        price: Coût
-        price_first_year: Coût durant la première année
-        currency: "€"
         feasibility: Faisabilité
         feasible: Faisable
         unfeasible: Infaisable

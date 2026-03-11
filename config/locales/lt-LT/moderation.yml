@@ -10,9 +10,6 @@ lt:
           all: Visi
           pending_flag_review: Laukiama
           with_ignored_flag: Pažymėta kaip peržiūrėta
-        headers:
-          comment: Komentaras
-          moderate: Moderuoti
         hide: Paslėpti komentarus
         ignore_flags: Pažymėti kaip peržiūrėta
         orders:
@@ -30,9 +27,6 @@ lt:
           all: Visi
           pending_flag_review: Laukia patvirtinimo
           with_ignored_flag: Pažymėti kaip peržiūrėta
-        headers:
-          debate: Debatai
-          moderate: Moderuoti
         hide: Paslėpti debatus
         ignore_flags: Pažymėti kaip peržiūrėta
         orders:

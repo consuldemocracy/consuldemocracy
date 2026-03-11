@@ -8,9 +8,6 @@ ca:
           all: tots
           pending_flag_review: Sense decidir
           with_ignored_flag: Marcats com revisats
-        headers:
-          comment: Comentar
-          moderate: Moderar
         hide: Ocultar comentaris
         ignore_flags: Marcar como revisades
         orders:
@@ -28,9 +25,6 @@ ca:
           all: tots
           pending_flag_review: Sense decidir
           with_ignored_flag: Marcats com revisats
-        headers:
-          debate: debat previ
-          moderate: Moderar
         hide: Ocultar debats
         ignore_flags: Marcar como revisades
         orders:
@@ -56,7 +50,6 @@ ca:
           with_ignored_flag: Marcar como revisades
         headers:
           moderate: Moderar
-          proposal: la proposta
         hide: Ocultar Propostes
         ignore_flags: Marcar como revisades
         orders:
@@ -71,9 +64,6 @@ ca:
           all: tots
           pending_flag_review: Sense decidir
           with_ignored_flag: Marcats com revisats
-        headers:
-          moderate: Moderar
-          budget_investment: Inversió pressupostària
         hide: Amagueu les inversions pressupostàries
         ignore_flags: Marcar como revisades
         orders:
@@ -88,9 +78,6 @@ ca:
           all: tots
           pending_review: Pendents de revisió
           ignored: Marcar como revisades
-        headers:
-          moderate: Moderar
-          proposal_notification: Notificació de la proposta
         hide: Ocultar Propostes
         ignore_flags: Marcar como revisades
         orders:

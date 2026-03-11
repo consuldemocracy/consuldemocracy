@@ -39,9 +39,6 @@ ast:
         heading: Partida
         dossier: Informe
         edit_dossier: Editar informe
-        price: Costu
-        price_first_year: Coste en el primer año
-        currency: "€"
         feasibility: Viabilidá
         feasible: Viable
         unfeasible: Invidable

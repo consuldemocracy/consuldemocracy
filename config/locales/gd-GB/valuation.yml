@@ -41,9 +41,6 @@ gd:
         heading: Bann-cinn
         dossier: Dossier
         edit_dossier: Deasaich an dossier
-        price: Prìs
-        price_first_year: Cosgais sa chiad bhliadhna
-        currency: "£"
         feasibility: Comas Dèanamh
         feasible: Comasach Dèanamh
         unfeasible: Eu-comasach Dèanamh

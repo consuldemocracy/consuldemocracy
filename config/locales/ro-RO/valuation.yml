@@ -41,9 +41,6 @@ ro:
         heading: Poziție
         dossier: Dosar
         edit_dossier: Editează dosar
-        price: Preț
-        price_first_year: Costul pe parcursul primului an
-        currency: "Lei"
         feasibility: Fezabilitate
         feasible: Realizabil
         unfeasible: Nerealizabil

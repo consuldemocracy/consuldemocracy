@@ -8,9 +8,6 @@ ro:
           all: Toate
           pending_flag_review: În așteptare
           with_ignored_flag: Marcate ca vizualizate
-        headers:
-          comment: Comentariu
-          moderate: Moderează
         hide: Ascunde comentarii
         ignore_flags: Marchează ca vizualizat
         orders:
@@ -28,9 +25,6 @@ ro:
           all: Toate
           pending_flag_review: În așteptare
           with_ignored_flag: Marcate ca vizualizate
-        headers:
-          debate: Dezbatere
-          moderate: Moderează
         hide: Ascunde dezbaterile
         ignore_flags: Marchează ca vizualizată
         orders:
@@ -56,7 +50,6 @@ ro:
           with_ignored_flag: Marcate ca vizualizate
         headers:
           moderate: Moderează
-          proposal: Propunere
         hide: Ascunde propuneri
         ignore_flags: Marchează ca vizualizată
         orders:
@@ -71,9 +64,6 @@ ro:
           all: Toate
           pending_flag_review: În așteptare
           with_ignored_flag: Marcate ca vizualizate
-        headers:
-          moderate: Moderează
-          budget_investment: Buget de investiție
         hide: Ascunde buget de investiții
         ignore_flags: Marchează ca vizualizat
         orders:
@@ -88,9 +78,6 @@ ro:
           all: Toate
           pending_review: În așteptare
           ignored: Marcate ca vizualizate
-        headers:
-          moderate: Moderează
-          proposal_notification: Notificări propunere
         hide: Ascunde propuneri
         ignore_flags: Marchează ca vizualizată
         orders:

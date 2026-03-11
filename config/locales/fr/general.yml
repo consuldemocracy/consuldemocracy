@@ -88,7 +88,6 @@ fr:
         confidence_score: la plus votée
         created_at: la plus récente
         hot_score: la plus active
-        most_commented: la plus commentée
         relevance: pertinence
         recommendations: recommandations
       recommendations:
@@ -124,7 +123,6 @@ fr:
       recommendations_title: Recommandations pour créer un débat
       start_new: Commencer un débat
     show:
-      author_deleted: Utilisateur effacé
       comments_title: Commentaires
       edit_debate_link: Éditer
       flag: Ce débat a été étiquetté comme inapproprié par plusieurs utilisateurs
@@ -400,12 +398,10 @@ fr:
         one: 1 vote
         other: "%{count} votes"
       supports_necessary: "%{number} soutiens nécessaires"
-      total_percent: 100%
       archived: "Cette proposition a été archivée et ne peut recueillir de soutiens."
       successful: "Cette proposition a atteint les soutiens requis."
       selected: "Proposition sélectionnée"
     show:
-      author_deleted: Utilisateur effacé
       code: "Code de la proposition"
       comments_tab: Commentaires
       dashboard_proposal_link: Tableau de bord

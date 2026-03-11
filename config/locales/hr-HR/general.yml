@@ -89,7 +89,6 @@ hr:
         confidence_score: najviše ocijenjeno
         created_at: najnovije
         hot_score: najaktivnije
-        most_commented: najkomentiranije
         relevance: važnost
         recommendations: preporuke
       recommendations:
@@ -125,7 +124,6 @@ hr:
       recommendations_title: Preporuke za stvaranje rasprave
       start_new: Započnite raspravu
     show:
-      author_deleted: Korisnik obrisan
       comments_title: Kometari
       edit_debate_link: Uredi
       flag: Rasprava je označena kao neprimjerena od strane više korisnika.
@@ -399,12 +397,10 @@ hr:
         few: "%{count} glasove"
         other: "%{count} glasove"
       supports_necessary: "Potrebno je %{number} potpora"
-      total_percent: 100%
       archived: "Ovaj je prijedlog arhiviran i ne može više prikupljati podršku."
       successful: "Prijedlog je dobio dovoljno potpore."
       selected: "Odabrani prijedlog"
     show:
-      author_deleted: Korisnik obrisan
       code: "Kod prijedloga:"
       comments_tab: Komentari
       dashboard_proposal_link: Kontrolna ploča

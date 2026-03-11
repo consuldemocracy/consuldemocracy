@@ -51,8 +51,6 @@ zh-CN:
         tags_instructions: "为此提议加标签。您可以从推荐的类别中选择或者自行添加"
         tags_label: 标签
         tags_placeholder: "输入您希望使用的标签，用逗号 (',') 分割"
-        map_location: "地图位置"
-        map_location_instructions: "将地图导航到该位置并放置标记。"
       index:
         title: 参与性预算
         unfeasible: 不可行的投资项目
@@ -86,7 +84,6 @@ zh-CN:
       share:
         message: "我在%{handle} 里创建了投资项目%{title}。请您也创建一个投资项目吧！"
       show:
-        author_deleted: 已删除的用户
         price_explanation: 价格说明
         unfeasibility_explanation: 不可行性说明
         code: "投资项目代码：<strong>%{code}</strong>"

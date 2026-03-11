@@ -10,6 +10,8 @@ tr:
         poll_question_option: "Yanıt oluşturuldu"
         poll_question_option_video: "Video oluşturuldu"
         poll_question_option_image: "Görsel yüklendi"
+        poll_voter: "Oy verdiğiniz için teşekkürler!"
+        poll_voter_blank: "Oy verdiğiniz için teşekkürler! Oyunuz boş oy olarak kaydedildi."
         proposal: "Önerge oluşturuldu."
         proposal_notification: "İletiniz doğru şekilde gönderildi."
         budget_investment: "Yatırım bütçesi oluşturuldu."

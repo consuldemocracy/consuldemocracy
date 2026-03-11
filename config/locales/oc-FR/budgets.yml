@@ -55,8 +55,6 @@ oc:
         tags_instructions: "Etiqueta aquela proposicion. Pòdes escuélher entre las categorias prepausadas o introdusir las que desiras"
         tags_label: d'Etiquetas
         tags_placeholder: "Escriu las etiquetas que desiras separadas per coma (',')"
-        map_location: "Ubicacion de la mapa"
-        map_location_instructions: "Desplaçatz-vos a la mapa fins a l'ubicacion e metètz-i lo mercado."
       index:
         title: de Budgèts ciutadans
         unfeasible: de Proposicions d'inversion pas viabla
@@ -91,7 +89,6 @@ oc:
       share:
         message: "Creèri lo projècti d’inversion %{title} a %{handle}.	Crèa tanben un projècti d’inversion."
       show:
-        author_deleted: Usatgièr eliminat
         price_explanation: Informe de còst <small>(opcional, dada pública)</small>
         unfeasibility_explanation: Informe de inviabilitat
         code: "Còdi del projècte d'inversion: <strong>%{code}</strong>"

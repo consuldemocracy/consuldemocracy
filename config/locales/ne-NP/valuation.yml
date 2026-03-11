@@ -41,9 +41,6 @@ ne:
         heading: शीर्षक
         dossier: दस्तावेजहरू
         edit_dossier: दस्तावेजहरू सम्पादन गर्नुहोस्
-        price: मूल्य
-        price_first_year: पहिलो वर्षको अवधिमा लागत
-        currency: "ने. रू"
         feasibility: सम्भाव्यता
         feasible: सम्भाव्य
         unfeasible: असम्भाव्य

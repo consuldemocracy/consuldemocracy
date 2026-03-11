@@ -37,11 +37,13 @@ id:
         text_comments: Komentar
     processes:
       header:
+        additional_info: Informasi tambahan
         description: Deskripsi
         more_info: Informasi lebih lanjut dan konteks
       proposals:
         empty_proposals: Tidak ada proposal
         filters:
+          random: Acak
           winners: Dipilih
       debate:
         empty_questions: Tidak ada pertanyaan
@@ -58,6 +60,7 @@ id:
           help: Bantuan tentang undang-undang proses
         section_footer:
           title: Bantuan tentang undang-undang proses
+          description: Ikuti debat dan proses sebelum persetujuan peraturan atau strategi baru. Pendapat Anda akan dipertimbangkan.
       phase_not_open:
         not_open: Help about the legislation process
       phase_empty:
@@ -110,5 +113,17 @@ id:
         other: "1 bulan\n\n%{count} bulan"
       debate_phase: "Masa perdebatan"
       proposals_phase: "Masa proposal"
+      allegations_phase: "Fase komentar"
+      debates:
+        zero: "Tidak ada debat"
+        other: "%{count} debat"
+      proposals:
+        zero: "Tidak ada usulan"
+        other: "%{count} usulan"
+      download: "Unduh ringkasan"
       top_comments:
         zero: "Tidak ada komentar"
+        other: "%{count} komentar \n\nTop Komentar"
+      most_voted_comments: "Komentar paling populer"
+      no_allegation: "Tidak ada komentar"
+      process_empty: "Proses ini tidak mencakup fase partisipasi apa pun"

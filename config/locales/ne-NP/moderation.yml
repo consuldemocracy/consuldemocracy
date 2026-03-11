@@ -10,9 +10,6 @@ ne:
           all: सबै
           pending_flag_review: विचाराधीन
           with_ignored_flag: हेरिएको भनी चिन्ह लगाइयो
-        headers:
-          comment: टिप्पणी
-          moderate: मध्यस्थकर्ता
         hide: लुकाइएका टिप्पणीहरू
         ignore_flags: हेरिएको रूपमा चिन्ह लगाउनुहोस्
         orders:
@@ -30,9 +27,6 @@ ne:
           all: सबै
           pending_flag_review: विचाराधीन
           with_ignored_flag: हेरिएको भनी चिन्ह लगाइयो
-        headers:
-          debate: बहस
-          moderate: मध्यस्थकर्ता
         hide: लुकेका बहसहरू
         ignore_flags: हेरिएको रूपमा चिन्ह लगाउनुहोस्
         orders:
@@ -58,7 +52,6 @@ ne:
           with_ignored_flag: हेरिएको रूपमा चिन्ह लगाउनुहोस्
         headers:
           moderate: मध्यस्थता
-          proposal: प्रस्ताव
         hide: लुकाइएका प्रस्तावहरू
         ignore_flags: हेरिएको रूपमा चिन्ह लगाउनुहोस्
         orders:
@@ -73,9 +66,6 @@ ne:
           all: सबै
           pending_flag_review: विचाराधीन
           with_ignored_flag: हेरिएको भनी चिन्ह लगाइयो
-        headers:
-          moderate: मध्यस्थता
-          budget_investment: बजेट लगानी
         hide: लुकाइएको बजेट लगानीहरू
         ignore_flags: हेरिएको रूपमा चिन्ह लगाउनुहोस्
         orders:
@@ -90,9 +80,6 @@ ne:
           all: सबै
           pending_review: विचाराधीन समीक्षा
           ignored: हेरिएको रूपमा चिन्ह लगाउनुहोस्
-        headers:
-          moderate: मध्यस्थता
-          proposal_notification: प्रस्ताव सूचना
         hide: लुकाइएका प्रस्तावहरू
         ignore_flags: हेरिएको रूपमा चिन्ह लगाउनुहोस्
         orders:

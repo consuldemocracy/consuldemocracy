@@ -40,9 +40,6 @@ zh-CN:
         heading: 标题
         dossier: 档案
         edit_dossier: 编辑档案
-        price: 价格
-        price_first_year: 第一年的成本
-        currency: "€"
         feasibility: 可行性
         feasible: 可行
         unfeasible: 不可行

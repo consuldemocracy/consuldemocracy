@@ -41,9 +41,6 @@ pl:
         heading: Nagłówek
         dossier: Dokumentacja
         edit_dossier: Edytuj dokumentację
-        price: Koszt
-        price_first_year: Kosztów w pierwszym roku
-        currency: "€"
         feasibility: Wykonalność
         feasible: Wykonalne
         unfeasible: Niewykonalne
