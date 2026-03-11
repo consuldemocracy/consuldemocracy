@@ -1,11 +1,5 @@
 name: tests
-on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches-ignore:
-      - i18n_master
+on: push
 
 permissions:
   contents: read
@@ -17,6 +11,7 @@ jobs:
   tests:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
+
     services:
       postgres:
         image: postgres:14.19
@@ -25,43 +20,59 @@ jobs:
         env:
           POSTGRES_USER: consul
           POSTGRES_PASSWORD: password
+
     env:
       PGUSER: consul
       PGPASSWORD: password
       RAILS_ENV: test
+
     strategy:
       fail-fast: false
       matrix:
         ci_node_total: [5]
         ci_node_index: [0, 1, 2, 3, 4]
+
     steps:
       - uses: actions/checkout@v6
+
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+
       - name: Setup NPM
         uses: actions/setup-node@v6
         with:
           cache: "npm"
           node-version-file: ".node-version"
+
       - name: Install node packages
         run: npm clean-install
+
       - name: Install ImageMagick
         run: sudo apt-get update && sudo apt-get install imagemagick
+
       - name: Remove image-bundled Chrome
         run: sudo apt-get purge google-chrome-stable
+
       - name: Setup Chrome/Chromium 128
         uses: browser-actions/setup-chrome@v2
         with:
           chrome-version: 128
           install-chromedriver: true
           install-dependencies: true
+
       - name: Copy secrets and database files
         run: for i in config/*.example; do cp "$i" "${i/.example}"; done
+
       - name: Setup database
         run: bundle exec rake db:setup
+
       - name: Compile assets
         run: bundle exec rake assets:precompile > /dev/null 2>&1
+
+      - name: Prepare rspec log directory
+        run: mkdir -p tmp/rspec
+
       - name: Run test suite
         env:
           KNAPSACK_PRO_TEST_SUITE_TOKEN_RSPEC: ${{ secrets.KNAPSACK_PRO_TEST_SUITE_TOKEN_RSPEC }}
@@ -69,7 +80,16 @@ jobs:
           KNAPSACK_PRO_CI_NODE_INDEX: ${{ matrix.ci_node_index }}
           KNAPSACK_PRO_FIXED_QUEUE_SPLIT: true
           KNAPSACK_PRO_LOG_LEVEL: info
-        run: bin/knapsack_pro_rspec
+        run: |
+          bundle exec rake "knapsack_pro:queue:rspec[--profile 40]" | tee tmp/rspec/rspec-${{ matrix.ci_node_index }}.log
+
+      - name: Upload RSpec logs
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: rspec-log-${{ matrix.ci_node_index }}
+          path: tmp/rspec/rspec-${{ matrix.ci_node_index }}.log
+
       - name: Coveralls Parallel
         if: ${{ env.TEST_COVERAGE == 1 }}
         uses: coverallsapp/github-action@master
@@ -77,12 +97,14 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           flag-name: run-${{ matrix.ci_node_index }}
           parallel: true
+
       - name: Upload screenshots
         if: failure()
         uses: actions/upload-artifact@v7
         with:
           name: screenshots-${{ matrix.ci_node_index }}
           path: tmp/capybara/
+
   coveralls:
     permissions:
       contents: none

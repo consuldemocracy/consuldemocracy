@@ -9,6 +9,7 @@ Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
 Dir["./spec/shared/**/*.rb"].sort.each  { |f| require f }
 
 RSpec.configure do |config|
+  config.profile_examples = 40
   config.use_transactional_fixtures = true
   config.fixture_paths = ["spec/fixtures/files"]
 
