@@ -442,7 +442,19 @@ class User < ApplicationRecord
   end
 
   def self.random_password
-    (0...20).map { ("a".."z").to_a[rand(26)] }.join
+    lowercase = ("a".."z").to_a
+    uppercase = ("A".."Z").to_a
+    digits    = ("0".."9").to_a
+    symbols   = %w[- _ . , : ; ! @ # $ % & *]
+    all_chars = lowercase + uppercase + digits + symbols
+
+    characters = Array.new(password_complexity[:lower]) { lowercase.sample } +
+                 Array.new(password_complexity[:upper]) { uppercase.sample } +
+                 Array.new(password_complexity[:digit]) { digits.sample } +
+                 Array.new(password_complexity[:symbol]) { symbols.sample } +
+                 Array.new(password_length.min + rand(2..4)) { all_chars.sample }
+
+    characters.shuffle.join
   end
 
   def self.maximum_attempts

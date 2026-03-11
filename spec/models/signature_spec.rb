@@ -202,6 +202,14 @@ describe Signature do
 
         expect(Vote.last.signature).to eq(signature)
       end
+
+      it "generates a complex password for the user" do
+        stub_secrets(security: { password_complexity: true })
+
+        signature.verify
+
+        expect(signature.user).to be_valid
+      end
     end
 
     describe "document in census" do

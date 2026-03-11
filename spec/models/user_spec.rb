@@ -1082,6 +1082,32 @@ describe User do
     end
   end
 
+  describe ".random_password" do
+    it "generates passwords at least 2 characters longer than the minimum required size" do
+      10.times do
+        expect(User.random_password.length).to be >= User.password_length.min + 2
+      end
+    end
+
+    it "follows the password complexity requirements" do
+      stub_secrets(security: { password_complexity: true })
+
+      10.times do
+        password = User.random_password
+
+        expect(password).to match(/\p{Lower}/)
+        expect(password).to match(/\p{Upper}/)
+        expect(password).to match(/\p{Digit}/)
+      end
+    end
+
+    it "generates different passwords each time" do
+      10.times do
+        expect(User.random_password).not_to eq User.random_password
+      end
+    end
+  end
+
   describe ".maximum_attempts" do
     it "returns 20 as default when the secrets aren't configured" do
       expect(User.maximum_attempts).to eq 20

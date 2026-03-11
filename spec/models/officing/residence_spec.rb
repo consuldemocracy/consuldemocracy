@@ -220,5 +220,13 @@ describe Officing::Residence do
         year_of_birth: Time.current.year
       )
     end
+
+    it "generates a complex password for the user" do
+      stub_secrets(security: { password_complexity: true })
+
+      residence.save!
+
+      expect(residence.user).to be_valid
+    end
   end
 end
