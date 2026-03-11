@@ -113,7 +113,7 @@ describe Officing::Residence do
 
         expect(FailedCensusCall.count).to eq(1)
         expect(FailedCensusCall.first).to have_attributes(
-          user_id: residence.user.id,
+          user_id: nil,
           poll_officer_id: residence.officer.id,
           document_number: "12345678Z",
           document_type: "1",
@@ -211,7 +211,7 @@ describe Officing::Residence do
 
       expect(FailedCensusCall.count).to eq(1)
       expect(FailedCensusCall.first).to have_attributes(
-        user_id: residence.user.id,
+        user_id: nil,
         poll_officer_id: residence.officer.id,
         document_number: "12345678Z",
         document_type: "1",
