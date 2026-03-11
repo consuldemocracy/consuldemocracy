@@ -149,6 +149,19 @@ class User < ApplicationRecord
     )
   end
 
+  def self.create_from_census_response!(response, params = {})
+    create!({
+      verified_at: Time.current,
+      erased_at: Time.current,
+      password: random_password,
+      terms_of_service: "1",
+      email: nil,
+      gender: response.gender,
+      date_of_birth: response.date_of_birth.in_time_zone.to_datetime,
+      geozone: Geozone.find_by(census_code: response.district_code)
+    }.merge(params))
+  end
+
   def name
     organization? ? organization.name : username
   end
@@ -426,6 +439,10 @@ class User < ApplicationRecord
     else
       { digit: 0, lower: 0, symbol: 0, upper: 0 }
     end
+  end
+
+  def self.random_password
+    (0...20).map { ("a".."z").to_a[rand(26)] }.join
   end
 
   def self.maximum_attempts
