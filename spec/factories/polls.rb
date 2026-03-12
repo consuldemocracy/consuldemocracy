@@ -270,7 +270,6 @@ FactoryBot.define do
   end
 
   factory :officing_residence, class: "Officing::Residence" do
-    user
     officer factory: :poll_officer
     document_number
     document_type    { "1" }

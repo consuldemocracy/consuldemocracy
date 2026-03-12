@@ -45,7 +45,9 @@ describe "Users" do
   end
 
   scenario "Create a level 3 user without email from scratch" do
+    stub_secrets(security: { password_complexity: true })
     login_as_manager
+
     visit management_document_verifications_path
     fill_in "document_verification_document_number", with: "12345678Z"
     click_button "Check document"

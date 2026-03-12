@@ -47,23 +47,9 @@ class Signature < ApplicationRecord
   end
 
   def create_user
-    user_params = {
-      document_number: document_number,
-      created_from_signature: true,
-      verified_at: Time.current,
-      erased_at: Time.current,
-      password: random_password,
-      terms_of_service: "1",
-      email: nil,
-      date_of_birth: @census_api_response.date_of_birth,
-      gender: @census_api_response.gender,
-      geozone: Geozone.find_by(census_code: @census_api_response.district_code)
-    }
-    User.create!(user_params)
-  end
+    user_params = { document_number: document_number, created_from_signature: true }
 
-  def random_password
-    (0...20).map { ("a".."z").to_a[rand(26)] }.join
+    User.create_from_census_response!(@census_api_response, user_params)
   end
 
   def in_census?

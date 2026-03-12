@@ -943,7 +943,7 @@ describe "Users" do
 
   scenario "Sign in, admin with password expired" do
     user = create(:administrator).user
-    user.update!(password_changed_at: 1.year.ago)
+    user.update!(password: "judgmentday", password_changed_at: 1.year.ago)
 
     login_through_form_as(user)
 

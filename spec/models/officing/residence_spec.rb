@@ -113,7 +113,7 @@ describe Officing::Residence do
 
         expect(FailedCensusCall.count).to eq(1)
         expect(FailedCensusCall.first).to have_attributes(
-          user_id: residence.user.id,
+          user_id: nil,
           poll_officer_id: residence.officer.id,
           document_number: "12345678Z",
           document_type: "1",
@@ -211,7 +211,7 @@ describe Officing::Residence do
 
       expect(FailedCensusCall.count).to eq(1)
       expect(FailedCensusCall.first).to have_attributes(
-        user_id: residence.user.id,
+        user_id: nil,
         poll_officer_id: residence.officer.id,
         document_number: "12345678Z",
         document_type: "1",
@@ -219,6 +219,14 @@ describe Officing::Residence do
         postal_code: nil,
         year_of_birth: Time.current.year
       )
+    end
+
+    it "generates a complex password for the user" do
+      stub_secrets(security: { password_complexity: true })
+
+      residence.save!
+
+      expect(residence.user).to be_valid
     end
   end
 end

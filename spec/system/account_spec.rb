@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Account" do
-  let(:user) { create(:user, username: "Manuela Colau") }
+  let(:user) { create(:user, username: "Manuela Colau", password: "judgmentday") }
 
   before do
     login_as(user)

@@ -32,17 +32,10 @@ class Officing::Residence
       user_params = {
         document_number: document_number,
         document_type: document_type,
-        geozone: geozone,
-        date_of_birth: response_date_of_birth.in_time_zone.to_datetime,
-        gender: gender,
-        residence_verified_at: Time.current,
-        verified_at: Time.current,
-        erased_at: Time.current,
-        password: random_password,
-        terms_of_service: "1",
-        email: nil
+        residence_verified_at: Time.current
       }
-      self.user = User.create!(user_params)
+
+      self.user = User.create_from_census_response!(@census_api_response, user_params)
     end
   end
 
@@ -92,18 +85,6 @@ class Officing::Residence
     Age.in_years(response_date_of_birth) >= User.minimum_required_age
   end
 
-  def geozone
-    Geozone.find_by(census_code: district_code)
-  end
-
-  def district_code
-    @census_api_response.district_code
-  end
-
-  def gender
-    @census_api_response.gender
-  end
-
   def response_date_of_birth
     @census_api_response.date_of_birth
   end
@@ -129,9 +110,5 @@ class Officing::Residence
 
     def clean_document_number
       self.document_number = document_number.gsub(/[^a-z0-9]+/i, "").upcase if document_number.present?
-    end
-
-    def random_password
-      (0...20).map { ("a".."z").to_a[rand(26)] }.join
     end
 end

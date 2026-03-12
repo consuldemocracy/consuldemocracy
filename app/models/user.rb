@@ -149,6 +149,19 @@ class User < ApplicationRecord
     )
   end
 
+  def self.create_from_census_response!(response, params = {})
+    create!({
+      verified_at: Time.current,
+      erased_at: Time.current,
+      password: random_password,
+      terms_of_service: "1",
+      email: nil,
+      gender: response.gender,
+      date_of_birth: response.date_of_birth.in_time_zone.to_datetime,
+      geozone: Geozone.find_by(census_code: response.district_code)
+    }.merge(params))
+  end
+
   def name
     organization? ? organization.name : username
   end
@@ -426,6 +439,22 @@ class User < ApplicationRecord
     else
       { digit: 0, lower: 0, symbol: 0, upper: 0 }
     end
+  end
+
+  def self.random_password
+    lowercase = ("a".."z").to_a
+    uppercase = ("A".."Z").to_a
+    digits    = ("0".."9").to_a
+    symbols   = %w[- _ . , : ; ! @ # $ % & *]
+    all_chars = lowercase + uppercase + digits + symbols
+
+    characters = Array.new(password_complexity[:lower]) { lowercase.sample } +
+                 Array.new(password_complexity[:upper]) { uppercase.sample } +
+                 Array.new(password_complexity[:digit]) { digits.sample } +
+                 Array.new(password_complexity[:symbol]) { symbols.sample } +
+                 Array.new(password_length.min + rand(2..4)) { all_chars.sample }
+
+    characters.shuffle.join
   end
 
   def self.maximum_attempts
