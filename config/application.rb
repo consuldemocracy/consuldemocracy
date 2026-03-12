@@ -140,6 +140,7 @@ module Consul
     [
       "app/components/custom",
       "app/controllers/custom",
+      "app/controllers/custom/concerns",
       "app/form_builders/custom",
       "app/graphql/custom",
       "app/lib/custom",
