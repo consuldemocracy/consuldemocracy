@@ -1,7 +1,83 @@
 .machine-learning-comments-summary {
   border-bottom: 1px solid $medium-gray;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
 
   + * {
-    margin-top: $line-height * 1.5;
+    margin-top: 1.5rem; // $line-height * 1.5
+  }
+
+  // --- Sentiment Dashboard Styles ---
+  .sentiment-dashboard {
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin: 1rem 0 1.5rem;
+    padding: 1rem;
+  }
+
+  .sentiment-bar {
+    background-color: #e9ecef; // Fallback background
+    border-radius: 6px;
+    display: flex;
+    height: 12px;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+  }
+
+  .bar-segment {
+    height: 100%;
+
+    &.positive {
+      background-color: #28a745;
+    }
+
+    // Green
+    &.neutral {
+      background-color: #6c757d;
+    }
+
+    // Grey
+    &.negative {
+      background-color: #dc3545;
+    }
+
+    // Red
+  }
+
+  .sentiment-legend {
+    color: #555;
+    display: flex;
+    flex-wrap: wrap; // Wrap on small mobile screens
+    font-size: 0.85rem;
+    justify-content: space-between;
+  }
+
+  .legend-item {
+    align-items: center;
+    display: flex;
+    gap: 4px;
+
+    &.positive {
+      color: #28a745;
+    }
+
+    &.neutral {
+      color: #6c757d;
+    }
+
+    &.negative {
+      color: #dc3545;
+    }
+
+    .dot {
+      font-size: 1.2em;
+      line-height: 0;
+
+      &::before {
+        content: "●";
+        display: inline-block;
+      }
+    }
   }
 }

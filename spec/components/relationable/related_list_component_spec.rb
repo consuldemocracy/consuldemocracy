@@ -7,7 +7,6 @@ describe Relationable::RelatedListComponent do
   let(:component) { Relationable::RelatedListComponent.new(proposal) }
 
   before do
-    Setting["feature.machine_learning"] = true
     Setting["machine_learning.related_content"] = true
 
     create(:related_content, parent_relationable: proposal, child_relationable: user_proposal)
@@ -17,6 +16,7 @@ describe Relationable::RelatedListComponent do
   end
 
   it "displays machine learning and user content when machine learning is enabled" do
+    enable_machine_learning
     render_inline component
 
     expect(page).to have_css "li", count: 2

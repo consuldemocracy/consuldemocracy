@@ -19,6 +19,7 @@ class Legislation::Question < ApplicationRecord
                      dependent: :destroy,
                      inverse_of: :question
   has_many :comments, as: :commentable, inverse_of: :commentable, dependent: :destroy
+  has_one :summary_comment, as: :commentable, class_name: "MlSummaryComment", dependent: :destroy
 
   accepts_nested_attributes_for :question_options,
                                 reject_if: proc { |attributes| attributes.all? { |k, v| v.blank? } },

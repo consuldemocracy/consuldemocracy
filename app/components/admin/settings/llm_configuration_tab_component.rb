@@ -16,19 +16,26 @@ class Admin::Settings::LlmConfigurationTabComponent < ApplicationComponent
   end
 
   def models
-    provider = Setting["llm.provider"]
-    return {} if provider.blank?
+    provider_name = Setting["llm.provider"]
+    return {} if provider_name.blank?
 
-    RubyLLM.models.by_provider(provider.downcase.to_sym).each_with_object({}) do |model, hash|
-      hash[model.name] = {
-        id: model.id
-      }
+    Llm::Config.context
+
+    provider_sym = provider_name.downcase.to_sym
+
+    RubyLLM.models.by_provider(provider_sym).each_with_object({}) do |model, hash|
+      label = model.name.presence || model.id
+      hash[label] = { id: model.id }
     end
+  rescue => e
+    Rails.logger.error "[LlmTab] Failed to fetch #{provider_name} models: #{e.message}"
+    {}
   end
 
   def model_options
     current = Setting["llm.model"]
-    options_values = models.map { |name, value| [name, value[:id]] }
+    # Sort models alphabetically by name for a better UI experience
+    options_values = models.map { |name, value| [name, value[:id]] }.sort
 
     options_for_select(options_values, selected: current)
   end

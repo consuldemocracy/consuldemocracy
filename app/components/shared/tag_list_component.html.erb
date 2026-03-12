@@ -1,4 +1,4 @@
-<% if machine_learning? %>
+<% if machine_learning? && taggable.tag_list_on(:ml_tags).present? %>
   <%= render MachineLearning::InfoComponent.new %>
 <% end %>
 
