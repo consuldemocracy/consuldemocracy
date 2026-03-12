@@ -591,8 +591,8 @@ ActiveRecord::Schema[7.2].define(version: 2025_10_09_085528) do
     t.datetime "ends_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "event_type"
     t.string "location"
+    t.string "event_type"
     t.bigint "author_id"
     t.index ["author_id"], name: "index_events_on_author_id"
   end
