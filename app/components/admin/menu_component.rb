@@ -262,14 +262,15 @@ class Admin::MenuComponent < ApplicationComponent
       ]
     end
 
-  def events_link
-    [
-      t("admin.menu.events"),
-      admin_events_path,
-      controller_name == "events",
-      class: "events-link"
-    ]
-  end
+    def events_link
+      [
+        t("admin.menu.events"),
+        admin_events_path,
+        controller_name == "events",
+        class: "events-link"
+      ]
+    end
+
     def site_customization_links
       section(t("admin.menu.title_site_customization"),
               active: customization?, class: "site-customization-link") do
