@@ -1,25 +1,23 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe Admin::EventsController, type: :controller do
+RSpec.describe Admin::EventsController do
   # Assuming you have an Admin login helper (Devise or similar)
   # If not, remove the `sign_in` line.
   let(:admin) { create(:administrator) }
-  before { sign_in admin }
-
   let!(:event) { create(:event) }
   let(:valid_attributes) do
     {
       name: "New Strategy Meeting",
-      starts_at: Time.current + 1.day,
-      ends_at: Time.current + 2.days,
+      starts_at: 1.day.from_now,
+      ends_at: 2.days.from_now,
       event_type: "workshop",
       description: "Discussing the future."
     }
   end
-
   let(:invalid_attributes) do
     { name: "", starts_at: nil }
   end
+  before { sign_in admin }
 
   describe "GET #index" do
     it "returns success and assigns events" do
@@ -39,9 +37,9 @@ RSpec.describe Admin::EventsController, type: :controller do
   describe "POST #create" do
     context "with valid params" do
       it "creates a new Event" do
-        expect {
+        expect do
           post :create, params: { event: valid_attributes }
-        }.to change(Event, :count).by(1)
+        end.to change(Event, :count).by(1)
       end
 
       it "redirects to the index page" do
@@ -53,9 +51,9 @@ RSpec.describe Admin::EventsController, type: :controller do
 
     context "with invalid params" do
       it "does not create a new Event" do
-        expect {
+        expect do
           post :create, params: { event: invalid_attributes }
-        }.not_to change(Event, :count)
+        end.not_to change(Event, :count)
       end
 
       it "re-renders the new template" do
@@ -91,13 +89,13 @@ RSpec.describe Admin::EventsController, type: :controller do
 
     context "with invalid params" do
       it "does not update the event" do
-        put :update, params: { id: event.id, event: { name: nil } }
+        put :update, params: { id: event.id, event: { name: nil }}
         event.reload
-        expect(event.name).not_to be_nil
+        expect(event.name).not_to be(nil)
       end
 
       it "re-renders the edit template" do
-        put :update, params: { id: event.id, event: { name: nil } }
+        put :update, params: { id: event.id, event: { name: nil }}
         expect(response).to render_template(:edit)
       end
     end
@@ -105,9 +103,9 @@ RSpec.describe Admin::EventsController, type: :controller do
 
   describe "DELETE #destroy" do
     it "destroys the requested event" do
-      expect {
+      expect do
         delete :destroy, params: { id: event.id }
-      }.to change(Event, :count).by(-1)
+      end.to change(Event, :count).by(-1)
     end
 
     it "redirects to the events list" do

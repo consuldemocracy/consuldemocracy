@@ -15,7 +15,7 @@ class Widget::Feeds::ParticipationComponent < ApplicationComponent
       feed.kind == "proposals"
     end
 
-  def feed_upcoming?(feed)
-    feed.kind == "upcoming"
-  end
+    def feed_upcoming?(feed)
+      feed.kind == "upcoming"
+    end
 end

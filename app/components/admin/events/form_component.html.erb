@@ -1,12 +1,11 @@
-<%= form_with model: [:admin, @event], builder: ConsulFormBuilder, local: true do |f| %>
+<%= form_with model: [:admin, event], builder: ConsulFormBuilder, local: true do |f| %>
 
-  <%= render "shared/errors", resource: @event %>
+  <%= render "shared/errors", resource: event %>
 
   <div class="row">
     <div class="small-12 medium-6 column">
       <%= f.datetime_field :starts_at, class: "input-group-field" %>
     </div>
-
     <div class="small-12 medium-6 column">
       <%= f.datetime_field :ends_at, class: "input-group-field" %>
     </div>
@@ -26,12 +25,10 @@
 
   <div class="row">
     <div class="small-12 medium-6 column">
-      <%# The label is handled by the builder; the options are translated here %>
       <%= f.select :event_type,
                    Event::TYPES.map { |type| [I18n.t("events.event_types.#{type}"), type] },
-                   include_blank: t('events.prompts.select_type') %>
+                   include_blank: t("events.prompts.select_type") %>
     </div>
-
     <div class="small-12 medium-6 column">
       <%= f.text_field :location %>
     </div>
@@ -41,11 +38,9 @@
     <%= render Documents::NestedComponent.new(f) %>
   <% end %>
 
-  <%# SUBMIT BUTTON ROW %>
   <div class="row">
     <div class="small-12 medium-6 column end">
-      <%= f.submit t("events.#{action_name}.submit_button", default: t("events.submit.default")),
-                   class: "button success" %>
+      <%= f.submit submit_button_text, class: "button success" %>
     </div>
   </div>
 

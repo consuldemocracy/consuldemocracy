@@ -1,11 +1,1 @@
-<div class="row">
-  <div class="small-12 column">
-    <%= back_link_to admin_events_path %>
-  </div>
-</div>
-<div class="row">
-  <div class="small-12 medium-8 medium column">
-    <h1><%= t("events.#{action_name}.title", default: "Manage Event") %></h1>
-    <%= render "form", event: @event %>
-  </div>
-</div>
+<%= render Admin::Events::EditComponent.new(@event) %>

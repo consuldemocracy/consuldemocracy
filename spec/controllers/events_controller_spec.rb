@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe EventsController, type: :controller do
+RSpec.describe EventsController do
   let!(:event) { create(:event) }
 
   describe "GET #index" do

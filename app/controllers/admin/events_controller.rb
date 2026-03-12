@@ -32,27 +32,26 @@ class Admin::EventsController < Admin::BaseController
   end
 
   def destroy
-    @event.destroy
+    @event.destroy!
     redirect_to admin_events_path, notice: "Event deleted."
   end
 
   private
 
-  def set_event
-    @event = Event.find(params[:id])
-  end
+    def set_event
+      @event = Event.find(params[:id])
+    end
 
-  def event_params
-    params.require(:event).permit(
-      :name,
-      :description,
-      :image,
-      :starts_at,
-      :ends_at,
-      :location,
-      :event_type,
-      documents_attributes: [:id, :title, :user_id, :cached_attachment, :attachment, :_destroy]
-    )
-  end
+    def event_params
+      params.require(:event).permit(
+        :name,
+        :description,
+        :image,
+        :starts_at,
+        :ends_at,
+        :location,
+        :event_type,
+        documents_attributes: [:id, :title, :user_id, :cached_attachment, :attachment, :_destroy]
+      )
+    end
 end
-

@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe Event, type: :model do
+RSpec.describe Event do
   let(:event) { build(:event) }
 
   describe "Validations" do
@@ -25,7 +25,7 @@ RSpec.describe Event, type: :model do
 
     it "is invalid if ends_at is before starts_at" do
       event.starts_at = Date.tomorrow
-      event.ends_at = Date.today
+      event.ends_at = Time.zone.today
       expect(event).not_to be_valid
       expect(event.errors[:starts_at]).to include(I18n.t("errors.messages.invalid_date_range"))
     end

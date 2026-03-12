@@ -558,6 +558,7 @@ en:
         new_event: "New event"
         title: "Manage Events"
         view_calendar: "View Calendar"
+        no_events: "There are no events created yet."
     hidden_users:
       index:
         filter: Filter

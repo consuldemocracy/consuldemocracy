@@ -1,0 +1,60 @@
+<% provide(:title, event.name) %>
+
+<div class="row margin">
+  <div class="small-12 medium-8 column">
+
+    <%= back_link_to events_path %>
+
+    <header class="margin-bottom clearfix">
+      <% if current_user&.administrator? %>
+        <%= link_to t("admin.actions.edit", default: "Edit Event"),
+                    edit_admin_event_path(event),
+                    class: "button hollow float-right" %>
+      <% end %>
+
+      <h1 class="h2"><%= event.name %></h1>
+      <span class="label secondary"><%= t("events.labels.manual_event", default: "Manual Event") %></span>
+    </header>
+
+    <div class="callout">
+      <div class="grid-x grid-margin-x margin-bottom">
+        <div class="cell medium-6">
+          <strong class="text-muted"><%= t("events.event.start_date", default: "Starts:") %></strong>
+          <div>
+            <%= l(event.starts_at, format: :long) %>
+          </div>
+        </div>
+
+        <% if event.ends_at.present? %>
+          <div class="cell medium-6">
+            <strong class="text-muted"><%= t("events.event.end_date", default: "Ends:") %></strong>
+            <div>
+              <%= l(event.ends_at, format: :long) %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <hr>
+
+      <div class="event-description margin-top">
+        <strong class="text-muted"><%= t("events.event.description", default: "Description:") %></strong>
+        <%= simple_format event.description %>
+      </div>
+
+      <span class="label secondary"><%= event.human_type %></span>
+
+      <% if event.location.present? %>
+        <span class="label success"><%= event.location %></span>
+      <% end %>
+
+      <hr>
+
+      <%# Depending on your Consul version, you might need to use helpers.feature? if this throws an error %>
+      <% if feature?(:allow_attached_documents) %>
+        <%= render Documents::DocumentsComponent.new(event.documents) %>
+      <% end %>
+    </div>
+
+  </div>
+</div>
