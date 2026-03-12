@@ -57,6 +57,7 @@ gem "ruby_llm", "~> 1.8.2"
 gem "sassc-embedded", "~> 1.77.5"
 gem "sassc-rails", "~> 2.1.2"
 gem "savon", "~> 2.15.1"
+gem 'simple_calendar', '~>2.4', '>= 2.4.3'
 gem "sitemap_generator", "~> 6.3.0"
 gem "social-share-button", "~> 1.2.4"
 gem "sprockets", "~> 4.2.2"
