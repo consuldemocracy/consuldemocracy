@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_10_09_085528) do
+ActiveRecord::Schema[7.2].define(version: 2026_02_24_085341) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -591,8 +591,8 @@ ActiveRecord::Schema[7.2].define(version: 2025_10_09_085528) do
     t.datetime "ends_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "event_type"
     t.string "location"
+    t.string "event_type"
     t.bigint "author_id"
     t.index ["author_id"], name: "index_events_on_author_id"
   end
@@ -930,6 +930,11 @@ ActiveRecord::Schema[7.2].define(version: 2025_10_09_085528) do
     t.bigint "user_id"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
+    t.boolean "dry_run"
+    t.integer "duration"
+    t.integer "total_tokens"
+    t.jsonb "config", default: {}
+    t.integer "records_processed"
     t.index ["user_id"], name: "index_machine_learning_jobs_on_user_id"
   end
 
@@ -984,6 +989,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_10_09_085528) do
     t.text "body"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
+    t.jsonb "sentiment_analysis"
   end
 
   create_table "moderators", id: :serial, force: :cascade do |t|
@@ -1644,6 +1650,10 @@ ActiveRecord::Schema[7.2].define(version: 2025_10_09_085528) do
     t.integer "failed_attempts", default: 0, null: false
     t.datetime "locked_at", precision: nil
     t.string "unlock_token"
+    t.string "otp_secret"
+    t.integer "consumed_timestep"
+    t.boolean "otp_required_for_login"
+    t.text "otp_backup_codes"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["date_of_birth"], name: "index_users_on_date_of_birth"
     t.index ["email"], name: "index_users_on_email", unique: true
