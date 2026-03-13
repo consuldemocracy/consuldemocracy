@@ -10,9 +10,6 @@ tr:
           all: Tümü
           pending_flag_review: Bekliyor
           with_ignored_flag: Görüldü olarak işaretlendi
-        headers:
-          comment: Yorum
-          moderate: Değerlendir
         hide: Yorumları gizle
         ignore_flags: Görüldü olarak işaretle
         orders:
@@ -30,9 +27,6 @@ tr:
           all: Tümü
           pending_flag_review: Bekliyor
           with_ignored_flag: Görüldü olarak işaretlendi
-        headers:
-          debate: Tartışma
-          moderate: Değerlendir
         hide: Tartışmaları gizle
         ignore_flags: Görüldü olarak işaretle
         orders:
@@ -55,10 +49,9 @@ tr:
         filters:
           all: Tümü
           pending_flag_review: Değerlendirilmeyi bekliyor
-          with_ignored_flag: Görüldü olarak işaretle
+          with_ignored_flag: Görülmüş olarak işaretlendi
         headers:
           moderate: Değerlendir
-          proposal: Önerge
         hide: Önergeleri gizle
         ignore_flags: Görüldü olarak işaretle
         orders:
@@ -73,9 +66,6 @@ tr:
           all: Tümü
           pending_flag_review: Bekliyor
           with_ignored_flag: Görüldü olarak işaretlendi
-        headers:
-          moderate: Değerlendir
-          budget_investment: Bütçe yatırımı
         hide: Bütçe yatırımlarını gizle
         ignore_flags: Görüldü olarak işaretle
         orders:
@@ -89,10 +79,7 @@ tr:
         filters:
           all: Tümü
           pending_review: Değerlendirilmeyi bekliyor
-          ignored: Görüldü olarak işaretle
-        headers:
-          moderate: Değerlendir
-          proposal_notification: Önerge bildirimi
+          ignored: Görülmüş olarak işaretlendi
         hide: Önergeleri gizle
         ignore_flags: Görüldü olarak işaretle
         orders:

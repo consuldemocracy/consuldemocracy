@@ -8,9 +8,6 @@ zh-CN:
           all: 所有
           pending_flag_review: 有待
           with_ignored_flag: 标记为已查看
-        headers:
-          comment: 评论
-          moderate: 审核
         hide: 隐藏评论
         ignore_flags: 标记为已查看
         orders:
@@ -28,9 +25,6 @@ zh-CN:
           all: 所有
           pending_flag_review: 有待
           with_ignored_flag: 标记为已查看
-        headers:
-          debate: 辩论
-          moderate: 审核
         hide: 隐藏辩论
         ignore_flags: 标记为已查看
         orders:
@@ -56,7 +50,6 @@ zh-CN:
           with_ignored_flag: 标记为已查看
         headers:
           moderate: 审核
-          proposal: 提议
         hide: 隐藏提议
         ignore_flags: 标记为已查看
         orders:
@@ -71,9 +64,6 @@ zh-CN:
           all: 所有
           pending_flag_review: 有待
           with_ignored_flag: 标记为已查看
-        headers:
-          moderate: 审核
-          budget_investment: 预算投资
         hide: 隐藏预算投资
         ignore_flags: 标记为已查看
         orders:
@@ -88,9 +78,6 @@ zh-CN:
           all: 所有
           pending_review: 有待审阅
           ignored: 标记为已查看
-        headers:
-          moderate: 审核
-          proposal_notification: 提议通知
         hide: 隐藏提议
         ignore_flags: 标记为已查看
         orders:

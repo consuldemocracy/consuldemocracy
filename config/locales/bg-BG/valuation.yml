@@ -41,9 +41,6 @@ bg:
         heading: Заглавие
         dossier: Досие
         edit_dossier: Редактиране на досието
-        price: Цена
-        price_first_year: Разходи през първата година
-        currency: "€"
         feasibility: Изпълнимост
         feasible: Изпълним
         unfeasible: Неизпълним

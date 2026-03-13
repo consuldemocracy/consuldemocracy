@@ -66,7 +66,6 @@ ast:
           confidence_score: meyor valoraes
           price: por costu
       show:
-        author_deleted: Usuariu esaniciáu
         price_explanation: Informe de costu
         unfeasibility_explanation: Informe de inviabilidá
         code: "Códigu propuesta de gastu: <strong>%{code}</strong>"

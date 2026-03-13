@@ -41,9 +41,6 @@ bs:
         heading: Poglavlje
         dossier: Spis
         edit_dossier: Izmjeni spis
-        price: Cijena
-        price_first_year: Troškovi u prvoj godini
-        currency: "€"
         feasibility: Izvodivost
         feasible: Izvodivo
         unfeasible: Nije izvodivo

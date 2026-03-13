@@ -41,9 +41,6 @@ ka:
         heading: რუბრიკა
         dossier: დოსიე
         edit_dossier: დოსიეს რედაქტირება
-        price: ფასი
-        price_first_year: ღირებულება პირველი წლის მანძილზე
-        currency: "€"
         feasibility: შესრულების შესაძლებლობა
         feasible: განხორციელებადი
         unfeasible: შეუძლებელი

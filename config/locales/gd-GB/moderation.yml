@@ -10,9 +10,6 @@ gd:
           all: Uile
           pending_flag_review: Ri choileanadh
           with_ignored_flag: Comharraich gun deach a leughadh
-        headers:
-          comment: Beachd
-          moderate: Dèan modaratadh
         hide: Falaich beachdan
         ignore_flags: Comharraich gun deach a leughadh
         orders:
@@ -30,9 +27,6 @@ gd:
           all: Uile
           pending_flag_review: Ri choileanadh
           with_ignored_flag: Comharraich gun deach a leughadh
-        headers:
-          debate: Deasbad
-          moderate: Dèan modaratadh
         hide: Falaich deasbadan
         ignore_flags: Comharraich gun deach a leughadh
         orders:
@@ -58,7 +52,6 @@ gd:
           with_ignored_flag: Comharraich gun deach a leughadh
         headers:
           moderate: Dèan modaratadh
-          proposal: Moladh
         hide: Falaich molaidhean
         ignore_flags: Comharraich gun deach a leughadh
         orders:
@@ -73,9 +66,6 @@ gd:
           all: Uile
           pending_flag_review: Ri choileanadh
           with_ignored_flag: Comharraich gun deach a leughadh
-        headers:
-          moderate: Dèan modaratadh
-          budget_investment: Tasgadh buidseit
         hide: Falaich tasgaidhean buidseit
         ignore_flags: Comharraich gun deach a leughadh
         orders:
@@ -90,9 +80,6 @@ gd:
           all: Uile
           pending_review: A’ feitheamh ri ath-sgrùdadh
           ignored: Comharraich gun deach a leughadh
-        headers:
-          moderate: Dèan modaratadh
-          proposal_notification: Brathan mu mholaidhean
         hide: Falaich molaidhean
         ignore_flags: Comharraich gun deach a leughadh
         orders:

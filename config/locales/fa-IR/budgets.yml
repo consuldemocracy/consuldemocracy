@@ -49,8 +49,6 @@ fa:
         tags_instructions: "برچسب این پیشنهاد. شما می توانید از دسته های پیشنهاد شده را انتخاب کنید یا خودتان را اضافه کنید"
         tags_label: برچسب ها
         tags_placeholder: "برچسبهایی را که میخواهید از آن استفاده کنید، با کاما ('،') جدا کنید"
-        map_location: "نقشه محل"
-        map_location_instructions: "نقشه محل حرکت و نشانگر محل."
       index:
         title: بودجه مشارکتی
         unfeasible: سرمایه گذاری غیر قابل پیش بینی
@@ -83,7 +81,6 @@ fa:
           confidence_score: بالاترین امتیاز
           price: با قیمت
       show:
-        author_deleted: کاربر حذف شد
         price_explanation: توضیح قیمت
         unfeasibility_explanation: توضیح امکان سنجی
         code: "کد پروژه سرمایه گذاری:<strong>%{code}</strong>"

@@ -10,9 +10,6 @@ it:
           all: Tutti
           pending_flag_review: In sospeso
           with_ignored_flag: Contrassegna come già visto
-        headers:
-          comment: Commentare
-          moderate: Moderare
         hide: Nascondere i commenti
         ignore_flags: Contrassegna come già visto
         orders:
@@ -30,9 +27,6 @@ it:
           all: Tutti
           pending_flag_review: In sospeso
           with_ignored_flag: Contrassegna come già visto
-        headers:
-          debate: Dibattito
-          moderate: Modera
         hide: Nascondi i dibattiti
         ignore_flags: Contrassegna come già visto
         orders:
@@ -58,7 +52,6 @@ it:
           with_ignored_flag: Contrassegna come già visto
         headers:
           moderate: Modera
-          proposal: Proposta
         hide: Nascondi le proposte
         ignore_flags: Contrassegna come già visto
         orders:
@@ -73,9 +66,6 @@ it:
           all: Tutti
           pending_flag_review: In sospeso
           with_ignored_flag: Contrassegna come già visto
-        headers:
-          moderate: Modera
-          budget_investment: Investimento di bilancio
         hide: Nascondi investimenti di bilancio
         ignore_flags: Contrassegna come già visto
         orders:
@@ -90,9 +80,6 @@ it:
           all: Tutti
           pending_review: In attesa di revisione
           ignored: Contrassegna come già visto
-        headers:
-          moderate: Modera
-          proposal_notification: Notifica di proposta
         hide: Nascondi le proposte
         ignore_flags: Contrassegna come già visto
         orders:

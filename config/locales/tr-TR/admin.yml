@@ -62,6 +62,7 @@ tr:
         filter: Göster
         filters:
           all: Tümü
+          on_budget_investments: Yatırım projeleri
           on_comments: Yorumlar
           on_debates: Tartışmalar
           on_proposals: Önergeler
@@ -1131,6 +1132,7 @@ tr:
         title: "Oylama türü"
         unique_description: "Soru yalnızca bir kez yanıtlanabilir."
         multiple_description: "Birden fazla yanıt seçilebilir. En fazla yanıt sayısı ayarlanabilir."
+        open_description: "Kullanıcıların kendi sözleriyle tek bir yanıt vermelerini sağlayan açık uçlu soru."
     questions:
       index:
         create: "Soru oluştur"
@@ -1325,6 +1327,7 @@ tr:
         participation_processes: "Katılım süreçleri"
         images_and_documents: "Görseller ve belgeler"
         feature_flags: Özellikler
+        blank_option: "Yok"
         features:
           enabled: "Açık"
         map:
@@ -1347,6 +1350,8 @@ tr:
           title: Tanımlama bilgileri onayı
         cookies_consent_banner:
           title: Tanımlama bilgileri onayı afişi
+        llm:
+          title: LLM ayarları
       remote_census_general_name: Genel bilgiler
       remote_census_request_name: Veri isteği
       remote_census_response_name: Veri yanıtı

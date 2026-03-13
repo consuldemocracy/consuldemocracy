@@ -53,8 +53,6 @@ id:
         tags_instructions: "Tag proposal ini. Anda dapat memilih dari yang diusulkan kategori atau menambahkan anda sendiri"
         tags_label: Tag
         tags_placeholder: "Masukkan tag anda ingin gunakan, dipisahkan dengan koma (',')"
-        map_location: "Peta lokasi"
-        map_location_instructions: "Menavigasi peta lokasi dan tempat penanda."
       index:
         title: Penganggaran partisipatif
         unfeasible: Proyek-proyek investasi tidak layak
@@ -88,7 +86,6 @@ id:
       share:
         message: "Saya telah membuat proposal proyek.%{title}%{handle}. Buat proyek proposal juga!"
       show:
-        author_deleted: Pengguna dihapus
         price_explanation: Harga penjelasan
         unfeasibility_explanation: Unfeasibility penjelasan
         code: "Kode proyek investasi: <strong>%{code}</strong>"

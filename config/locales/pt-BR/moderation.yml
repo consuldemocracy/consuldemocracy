@@ -8,9 +8,6 @@ pt-BR:
           all: Tudo
           pending_flag_review: Pendente
           with_ignored_flag: Marcados como visto
-        headers:
-          comment: Comentar
-          moderate: Moderar
         hide: Ocultar comentários
         ignore_flags: Marcar como visto
         orders:
@@ -28,9 +25,6 @@ pt-BR:
           all: Tudo
           pending_flag_review: Pendente
           with_ignored_flag: Marcar como visto
-        headers:
-          debate: Debater
-          moderate: Moderar
         hide: Ocultar os debates
         ignore_flags: Marcar como visto
         orders:
@@ -56,7 +50,6 @@ pt-BR:
           with_ignored_flag: Marcar como visto
         headers:
           moderate: Moderar
-          proposal: Proposta
         hide: Ocultar propostas
         ignore_flags: Marcar como visto
         orders:
@@ -71,9 +64,6 @@ pt-BR:
           all: Tudo
           pending_flag_review: Pendente
           with_ignored_flag: Marcar como visto
-        headers:
-          moderate: Moderar
-          budget_investment: Proposta de investimento
         hide: Ocultar investimentos orçamentários
         ignore_flags: Marcar como visto
         orders:
@@ -88,9 +78,6 @@ pt-BR:
           all: Tudo
           pending_review: Revisão pendente
           ignored: Marcar como visto
-        headers:
-          moderate: Moderar
-          proposal_notification: Notificação de proposta
         hide: Ocultar propostas
         ignore_flags: Marcar como visto
         orders:

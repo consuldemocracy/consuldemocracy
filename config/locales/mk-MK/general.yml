@@ -75,7 +75,6 @@ mk:
       section_header:
         title: Дебати
     show:
-      author_deleted: Избришан корисник
       comments_title: Коментари
       edit_debate_link: Измени
       flag: Оваа дебата беше посочена како несоодветна од повеќе корисници.
@@ -186,7 +185,6 @@ mk:
         one: 1 глас
         other: "%{count} гласови"
     show:
-      author_deleted: Избришан корисник
       comments_tab: Коментари
       notifications_tab: Нотификации
       share: Сподели

@@ -57,8 +57,6 @@ he:
         tags_instructions: "תייג/י את ההצעה הזו והנושאים בהם היא עוסקת. ניתן לבחור תחומים מרשימה או להוסיף תחומים משלך"
         tags_label: תגיות
         tags_placeholder: "נא לרשום את כל התגיות שברצונך להשתמש בהן, עם פסיק (',') מפריד ביניהן"
-        map_location: "מיקום מפה"
-        map_location_instructions: "נווט במפה למיקום ומקם את הסמן."
       index:
         title: מימון השתתפותי
         unfeasible: פרויקטים להשקעה שאינם ברי ביצוע
@@ -95,7 +93,6 @@ he:
       share:
         message: "יצרתי את פרויקט השקעה %{title} %{handle}. צור פרויקט השקעה גם!"
       show:
-        author_deleted: משתמש/ת זה/ו נמחק/ה
         price_explanation: ראה הסבר תמחור
         unfeasibility_explanation: הסבר לאי ישימות
         code: "קוד פרויקט ההשקעה: <strong>%{code}</strong>"

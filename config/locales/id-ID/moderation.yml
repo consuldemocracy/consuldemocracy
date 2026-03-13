@@ -8,9 +8,6 @@ id:
           all: Semua
           pending_flag_review: Tertunda
           with_ignored_flag: Ditandai seperti yang dilihat
-        headers:
-          comment: Komentar
-          moderate: Moderat
         hide: Sembunyikan komentar
         ignore_flags: Tandai seperti yang dilihat
         orders:
@@ -28,9 +25,6 @@ id:
           all: Semua
           pending_flag_review: Tertunda
           with_ignored_flag: Ditandai seperti yang dilihat
-        headers:
-          debate: Perdebatan
-          moderate: Moderat
         hide: Sembunyikan perdebatan
         ignore_flags: Tandai seperti yang dilihat
         orders:
@@ -56,7 +50,6 @@ id:
           with_ignored_flag: Tandai seperti yang dilihat
         headers:
           moderate: Moderat
-          proposal: Usulan
         hide: Sembunyikan usulan
         ignore_flags: Tandai seperti yang dilihat
         orders:
@@ -71,9 +64,6 @@ id:
           all: Semua
           pending_flag_review: Tertunda
           with_ignored_flag: Ditandai seperti yang dilihat
-        headers:
-          moderate: Moderat
-          budget_investment: Anggaran investasi
         hide: Penetapan anggaran investasi
         ignore_flags: Tandai seperti yang dilihat
         orders:
@@ -88,9 +78,6 @@ id:
           all: Semua
           pending_review: Tinjauan tertunda
           ignored: Tandai seperti yang dilihat
-        headers:
-          moderate: Moderat
-          proposal_notification: Proposal pemberitahuan
         hide: Sembunyikan usulan
         ignore_flags: Tandai seperti yang dilihat
         orders:

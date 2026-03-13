@@ -19,8 +19,6 @@ fi:
         back: Takaisin
         info: Tietoa tekijästä
         by: Lähettäjä
-        price: Hinta
-        currency: "€"
         feasibility: Toteutettavuus
         unfeasible: Toteuttamiskelvoton
         undefined: Määrittelemätön

@@ -41,9 +41,6 @@ oc:
         heading: Partida
         dossier: Informe
         edit_dossier: Editar informe
-        price: Còst
-        price_first_year: Còst en lo primièr an
-        currency: "€"
         feasibility: Viabilitat
         feasible: Viable
         unfeasible: Pas viables

@@ -10,9 +10,6 @@ sv:
           all: Alla
           pending_flag_review: Väntande
           with_ignored_flag: Markerad som läst
-        headers:
-          comment: Kommentar
-          moderate: Moderera
         hide: Dölj kommentarer
         ignore_flags: Markera som läst
         orders:
@@ -30,9 +27,6 @@ sv:
           all: Alla
           pending_flag_review: Väntande
           with_ignored_flag: Markerad som läst
-        headers:
-          debate: Debattera
-          moderate: Moderera
         hide: Dölj debatter
         ignore_flags: Markera som läst
         orders:
@@ -58,7 +52,6 @@ sv:
           with_ignored_flag: Markera som läst
         headers:
           moderate: Moderera
-          proposal: Förslag
         hide: Dölj förslag
         ignore_flags: Markera som läst
         orders:
@@ -73,9 +66,6 @@ sv:
           all: Alla
           pending_flag_review: Väntande
           with_ignored_flag: Markerad som läst
-        headers:
-          moderate: Moderera
-          budget_investment: Budgetförslag
         hide: Dölj budgetförslag
         ignore_flags: Markera som läst
         orders:
@@ -90,9 +80,6 @@ sv:
           all: Alla
           pending_review: Inväntar granskning
           ignored: Markera som läst
-        headers:
-          moderate: Moderera
-          proposal_notification: Förslagsavisering
         hide: Dölj förslag
         ignore_flags: Markera som läst
         orders:

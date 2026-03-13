@@ -41,9 +41,6 @@ nl:
         heading: Kop
         dossier: Dossier
         edit_dossier: Bewerk dossier
-        price: Prijs
-        price_first_year: Kosten tijdens het eerste jaar
-        currency: "€"
         feasibility: Haalbaarheid
         feasible: Haalbaar
         unfeasible: Niet haalbaar

@@ -44,8 +44,6 @@ es-PE:
         tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
         tags_label: Etiquetas
         tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
-        map_location: "Ubicación en el mapa"
-        map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
       index:
         title: Presupuestos participativos
         unfeasible: Propuestas de inversión no viables
@@ -77,7 +75,6 @@ es-PE:
           confidence_score: Mejor valorados
           price: Por coste
       show:
-        author_deleted: Usuario eliminado
         price_explanation: Informe de coste <small>(opcional, dato público)</small>
         unfeasibility_explanation: Informe de inviabilidad
         code: "Código propuesta de gasto: <strong>%{code}</strong>"

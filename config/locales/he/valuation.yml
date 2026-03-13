@@ -41,9 +41,6 @@ he:
         heading: כותרת
         dossier: תיק
         edit_dossier: ערוך תיק
-        price: מחיר
-        price_first_year: עלות במהלך השנה הראשונה
-        currency: "שקלים"
         feasibility: סבירות לביצוע
         feasible: בר ביצוע
         unfeasible: אינו בר-ביצוע

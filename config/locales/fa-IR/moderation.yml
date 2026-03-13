@@ -8,9 +8,6 @@ fa:
           all: همه
           pending_flag_review: انتظار
           with_ignored_flag: علامتگذاری به عنوان مشاهده شده
-        headers:
-          comment: توضیح
-          moderate: سردبیر
         hide: پنهان کردن نظرات
         ignore_flags: علامتگذاری به عنوان مشاهده شده
         orders:
@@ -28,9 +25,6 @@ fa:
           all: همه
           pending_flag_review: انتظار
           with_ignored_flag: علامتگذاری به عنوان مشاهده شده
-        headers:
-          debate: بحث
-          moderate: سردبیر
         hide: پنهان کردن بحث
         ignore_flags: علامتگذاری به عنوان مشاهده شده
         orders:
@@ -55,7 +49,6 @@ fa:
           with_ignored_flag: علامتگذاری به عنوان مشاهده شده
         headers:
           moderate: سردبیر
-          proposal: طرح های پیشنهادی
         hide: پنهان کردن پیشنهادات
         ignore_flags: علامتگذاری به عنوان مشاهده شده
         orders:
@@ -70,9 +63,6 @@ fa:
           all: همه
           pending_flag_review: انتظار
           with_ignored_flag: علامتگذاری به عنوان مشاهده شده
-        headers:
-          moderate: سردبیر
-          budget_investment: بودجه سرمایه گذاری
         ignore_flags: علامتگذاری به عنوان مشاهده شده
         orders:
           created_at: جدید ترین
@@ -86,8 +76,6 @@ fa:
           all: همه
           pending_review: بررسی انتظار
           ignored: علامتگذاری به عنوان مشاهده شده
-        headers:
-          moderate: سردبیر
         hide: پنهان کردن پیشنهادات
         ignore_flags: علامتگذاری به عنوان مشاهده شده
         orders:

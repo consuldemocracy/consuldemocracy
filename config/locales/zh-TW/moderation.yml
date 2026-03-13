@@ -8,9 +8,6 @@ zh-TW:
           all: 所有
           pending_flag_review: 有待
           with_ignored_flag: 標記為已查看
-        headers:
-          comment: 評論
-          moderate: 審核
         hide: 隱藏評論
         ignore_flags: 標記為已查看
         orders:
@@ -28,9 +25,6 @@ zh-TW:
           all: 所有
           pending_flag_review: 有待
           with_ignored_flag: 標記為已查看
-        headers:
-          debate: 辯論
-          moderate: 審核
         hide: 隱藏辯論
         ignore_flags: 標記為已查看
         orders:
@@ -56,7 +50,6 @@ zh-TW:
           with_ignored_flag: 標記為已查看
         headers:
           moderate: 審核
-          proposal: 建議
         hide: 隱藏建議
         ignore_flags: 標記為已查看
         orders:
@@ -71,9 +64,6 @@ zh-TW:
           all: 所有
           pending_flag_review: 有待
           with_ignored_flag: 標記為已查看
-        headers:
-          moderate: 審核
-          budget_investment: 預算投資
         hide: 隱藏預算投資
         ignore_flags: 標記為已查看
         orders:
@@ -88,9 +78,6 @@ zh-TW:
           all: 所有
           pending_review: 有待審閱
           ignored: 標記為已查看
-        headers:
-          moderate: 審核
-          proposal_notification: 建議通知
         hide: 隱藏建議
         ignore_flags: 標記為已查看
         orders:

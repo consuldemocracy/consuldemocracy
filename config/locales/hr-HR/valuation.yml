@@ -41,9 +41,6 @@ hr:
         heading: Naslov
         dossier: Dosje
         edit_dossier: Uredi dosje
-        price: Cijena
-        price_first_year: Trošak tijekom prve godine
-        currency: "€"
         feasibility: Izvodljivost
         feasible: Izvodljivo
         unfeasible: Neizvodljivo

@@ -534,6 +534,7 @@ tr:
         max_votes: En fazla oy sayısı
         vote_type: Oylama türü
       votation_type/vote_type:
+        open: Açık uçlu
         unique: Eşsiz yanıt
         multiple: Birden çok yanıt
       cookies/vendor:
@@ -628,6 +629,10 @@ tr:
           attributes:
             code:
               invalid: "hedefindeki kod ile başlamalı, bir nokta ile ilerlemeli ve bir numara ile bitmeli"
+        votation_type:
+          attributes:
+            vote_type:
+              cannot_change_to_open_ended: "bu soru için olası geçerli yanıtları zaten tanımladığınız için tür açık uçlu olarak değiştirilemez"
       messages:
         translations_too_short: En az bir çeviri sağlanması zorunludur
         record_invalid: "Doğrulanamadı: %{errors}"

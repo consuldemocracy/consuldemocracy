@@ -8,9 +8,6 @@ uk-UA:
           all: Усі
           pending_flag_review: В очікуванні
           with_ignored_flag: Позначити як переглянуте
-        headers:
-          comment: Коментар
-          moderate: Модерувати
         hide: Приховати коментарі
         ignore_flags: Позначити як переглянуте
         orders:
@@ -28,9 +25,6 @@ uk-UA:
           all: Усі
           pending_flag_review: В очікуванні
           with_ignored_flag: Позначити як переглянуте
-        headers:
-          debate: Обговорення
-          moderate: Модерувати
         hide: Приховати обговорення
         ignore_flags: Позначити як переглянуте
         orders:
@@ -56,7 +50,6 @@ uk-UA:
           with_ignored_flag: Позначити як переглянуте
         headers:
           moderate: Модерувати
-          proposal: Пропозиція
         hide: Приховати пропозиції
         ignore_flags: Позначити як переглянуте
         orders:
@@ -71,9 +64,6 @@ uk-UA:
           all: Усі
           pending_flag_review: В очікуванні
           with_ignored_flag: Позначити як переглянуте
-        headers:
-          moderate: Модерувати
-          budget_investment: Бюджетна інвестиція
         hide: Приховати бюджетні інвестиції
         ignore_flags: Позначити як переглянуте
         orders:
@@ -88,9 +78,6 @@ uk-UA:
           all: Усі
           pending_review: Очікують на розгляд
           ignored: Позначити як переглянуте
-        headers:
-          moderate: Модерувати
-          proposal_notification: Сповіщення щодо пропозицій
         hide: Приховати пропозиції
         ignore_flags: Позначити як переглянуте
         orders:

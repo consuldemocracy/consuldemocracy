@@ -39,8 +39,6 @@ sl:
         heading: Naslov
         dossier: Dosje
         edit_dossier: Uredi dosje
-        price: Cena
-        price_first_year: Cena tekom prvega leta
         feasibility: Izvedljivost
         feasible: Izvedljiv
         unfeasible: Neizvedljiv

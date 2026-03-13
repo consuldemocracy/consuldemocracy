@@ -97,7 +97,6 @@ gd:
         confidence_score: rangaichte as àirde
         created_at: as ùire
         hot_score: leis a’ ghnìomhachd as motha
-        most_commented: leis an àireamh as motha de bheachdan
         relevance: buntainneas
         recommendations: molaidhean
       recommendations:
@@ -133,7 +132,6 @@ gd:
       recommendations_title: Molaidhean airson deasbad a chruthachadh
       start_new: Tòisich deasbad
     show:
-      author_deleted: Cleachdaiche air a sguabadh às
       comments_title: Beachdan
       edit_debate_link: Deasaich
       flag: Tha grunn chleachdaichean air comharrachadh gu bheil an deasbad seo neo-iomchaidh.
@@ -423,12 +421,10 @@ gd:
         few: "%{count} bhòtaichean"
         other: "%{count} bhòtaichean"
       supports_necessary: "%{number} de chomharran taic a dhìth"
-      total_percent: 100%
       archived: "Chaidh am moladh seo a chur dhan tasglann agus chan urrainn dha comharran taic a chruinneachadh tuilleadh."
       successful: "Fhuair am moladh seo an ìre de thaic a tha a dhìth."
       selected: "Moladh taghte"
     show:
-      author_deleted: Cleachdaiche air a sguabadh às
       code: "Còd a’ mholaidh:"
       comments_tab: Beachdan
       dashboard_proposal_link: Deas-bhòrd

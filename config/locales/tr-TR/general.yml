@@ -88,7 +88,6 @@ tr:
         confidence_score: en yüksek puanlı
         created_at: en yeni
         hot_score: en etkin
-        most_commented: en çok yorum yapılan
         relevance: ilgili
         recommendations: öneriler
       recommendations:
@@ -124,7 +123,6 @@ tr:
       recommendations_title: Bir tartışma oluşturmak için öneriler
       start_new: Bir tartışma başlat
     show:
-      author_deleted: Kullanıcı silindi
       comments_title: Yorumlar
       edit_debate_link: Düzenle
       flag: Bu tartışma birkaç kullanıcı tarafından uygunsuz olarak işaretlenmiş.
@@ -282,6 +280,10 @@ tr:
       sign_in: SAML ile oturum aç
       sign_up: SAML ile hesap açın
       name: SAML
+    oidc:
+      sign_in: OIDC ile oturum aç
+      sign_up: OIDC ile hesap aç
+      name: OIDC
     or_fill: "Ya da aşağıdaki formu doldurun:"
   proposals:
     create:
@@ -325,6 +327,7 @@ tr:
       tags_placeholder: "Kullanmak istediğiniz etiketleri virgül (',') ile ayırarak yazın"
       map_location: "Harita konumu"
       map_location_instructions: "Harita ile konuma gidin ve işareti yerleştirin."
+      map_marker_coordinates: "Enlem: %{latitude}. Boylam: %{longitude}"
       map_remove_marker: "Harita işaretini kaldır"
     index:
       featured_proposals: Öne çıkarılmış
@@ -405,12 +408,10 @@ tr:
         one: 1 oy
         other: "%{count} oy"
       supports_necessary: "%{number} destek gerekli"
-      total_percent: '%100'
       archived: "Bu önerge arşivlenmiş olduğundan destek alamaz."
       successful: "Bu önerge gerekli desteği aldı."
       selected: "Seçilmiş önerge"
     show:
-      author_deleted: Kullanıcı silindi
       code: "Önerge kodu:"
       comments_tab: Yorumlar
       dashboard_proposal_link: Pano
@@ -576,6 +577,9 @@ tr:
   polls:
     dates: "%{open_at} ile %{closed_at} arasında"
     final_date: "Son yeniden sayımlar/Sonuçlar"
+    form:
+      vote: "Oy ver"
+      maximum_exceeded: "%{given} yanıt seçtiniz ancak en fazla %{maximum} yanıt seçebilirsiniz"
     index:
       filters:
         current: "Açık"
@@ -601,6 +605,7 @@ tr:
     show:
       already_voted_in_booth: "Zaten fiziksel bir kabinde ıy vermişsiniz. Yeniden oy veremezsiniz."
       already_voted_in_web: "Bu oylamaya zaten katılmışsınız. Yeniden oy verirseniz, önceki oyunuz değiştirilir."
+      already_voted_blank_in_web: "Bu oylamaya zaten boş oy vererek katılmışsınız. Yeniden oy verirseniz, önceki oyunuz değiştirilir."
       back: Oylamaya dön
       cant_answer_not_logged_in: "Katılmak için %{signin}ın ya da %{signup}ın."
       comments_tab: Yorumlar
@@ -630,6 +635,9 @@ tr:
       results:
         title: "Sorular"
         most_voted_answer: "En çok oy alan yanıt: "
+        open_ended:
+          valid: Geçerli
+          blank: Boş
     poll_header:
       back_to_proposal: Önergeye dön
   poll_questions:

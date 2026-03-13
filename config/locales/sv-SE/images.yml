@@ -6,11 +6,21 @@ sv:
       delete_button: Ta bort bild
       note: "Du kan ladda upp en bild med följande filformat: %{accepted_content_types}. Bildens filstorlek får inte överstiga %{max_file_size} MB."
       add_new_image: Lägg till bild
+      or_separator: eller
+      suggest_image_with_ai: Föreslå en bild med AI
+      suggested_images_container: Föreslagna bilder
+      attach_suggested_image: Bifoga föreslagen bild
+      attach_suggested_image_aria_label: "Bifoga föreslagen bild %{index} av %{count}"
+      pick_an_image: "Välj en bild från förslagen nedan:"
+      no_images_found: Det hittades inga förslag.
+      suggested_image_filename: Bild av %{author_name}.jpg
     actions:
       destroy:
         notice: Bilden har tagits bort.
         alert: Bilden kunde inte raderas.
     errors:
       messages:
+        title_and_description_required: Föreslå bilder genom att skriva en titel och beskrivning först.
+        llm_not_configured: LLM har inte konfigurerats på rätt sätt. Kontakta en administratör.
         in_between: måste vara mellan %{min} och %{max}
         wrong_content_type: innehållstypen %{content_type} finns inte bland de tillåtna innehållstyperna %{accepted_content_types}
