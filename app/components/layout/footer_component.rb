@@ -19,6 +19,13 @@ class Layout::FooterComponent < ApplicationComponent
       external_link_to(t("layouts.footer.consul"), t("layouts.footer.consul_url"))
     end
 
+    def instance_repository_link
+      url = Setting["instance_repository_url"].to_s.strip
+      return if url.blank?
+
+      external_link_to(t("layouts.footer.instance_repository_text"), url)
+    end
+
     def external_link_to(text, url)
       link_to(text, url, rel: "nofollow external")
     end
