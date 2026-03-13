@@ -1,0 +1,91 @@
+es:
+  sensemaker:
+    analysis:
+      title: "Análisis Sensemaking"
+      description: "Descubre qué dice la gente. Hemos analizado %{this_resource} para dar claridad sobre la opinión de todos."
+      description_all_proposals: "Descubre qué dice la gente. Hemos analizado estas propuestas para dar claridad sobre la opinión de todos."
+      view_report: "Ver análisis"
+
+    report_index:
+      title: "Informes Sensemaker"
+      title_with_parent: "Informes Sensemaker para %{parent_name}"
+      empty: "Aún no se han producido análisis."
+
+    job_index:
+      title: "Análisis Sensemaker"
+      title_with_parent: "Análisis Sensemaker para %{parent_name}"
+      title_with_resource: "Análisis Sensemaker: %{resource_name}"
+      hero_title_with_resource: "Descubre qué dicen los ciudadanos sobre %{resource_type}"
+      hero_title_all_proposals: "Descubre qué dicen los ciudadanos sobre las propuestas"
+      page_intro: "Aquí puedes encontrar informes y resúmenes para entender mejor la opinión de todos, producidos usando %{link}."
+      resource_type_phrases:
+        proposal: "esta propuesta"
+        debate: "este debate"
+        legislation: "esta legislación"
+        legislation_question: "esta pregunta"
+        legislation_proposal: "esta propuesta"
+        poll: "esta encuesta"
+        poll_question: "esta pregunta de encuesta"
+        budget: "este presupuesto"
+      resource_types:
+        proposal: "propuesta"
+        debate: "debate"
+        legislation: "legislación"
+        legislation_question: "pregunta"
+        legislation_proposal: "propuesta"
+        legislation_question_option: "opción"
+        poll: "encuesta"
+        poll_question: "pregunta"
+        topic: "tema"
+        budget: "presupuesto"
+        budget_group: "grupo"
+      breadcrumb:
+        all_proposals: "Todas las propuestas"
+        separator: "›"
+      analysed_by: "Analizado por %{resource_type}"
+      target_header:
+        title: "Entender las conversaciones"
+      contextual_info:
+        title: "Sobre los análisis Sensemaker"
+        resource_intro:
+          proposal: "Se pidió a los ciudadanos su opinión sobre la propuesta \"%{resource_title}\". Los comentarios y discusiones de los ciudadanos se utilizaron como entrada para el análisis Sensemaker."
+          debate: "Se pidió a los ciudadanos su opinión sobre el debate \"%{resource_title}\". Los comentarios y discusiones de los ciudadanos se utilizaron como entrada para el análisis Sensemaker."
+          legislation_proposal: "Se pidió a los ciudadanos su opinión sobre la propuesta legislativa \"%{resource_title}\". Los comentarios y discusiones de los ciudadanos se utilizaron como entrada para el análisis Sensemaker."
+          legislation_question: "Se pidió a los ciudadanos su opinión sobre la pregunta \"%{resource_title}\". Los comentarios y discusiones de los ciudadanos se utilizaron como entrada para el análisis Sensemaker."
+          legislation_process: "Se pidió a los ciudadanos su opinión sobre el proceso legislativo \"%{resource_title}\". Los comentarios y discusiones de los ciudadanos se utilizaron como entrada para el análisis Sensemaker."
+          poll: "Se pidió a los ciudadanos su opinión sobre la encuesta \"%{resource_title}\". Los comentarios y discusiones de los ciudadanos se utilizaron como entrada para el análisis Sensemaker."
+          budget: "Se pidió a los ciudadanos su opinión sobre el presupuesto \"%{resource_title}\". Los comentarios y discusiones de los ciudadanos se utilizaron como entrada para el análisis Sensemaker."
+          all_proposals: "Se pidió a los ciudadanos su opinión sobre las propuestas. Los comentarios y discusiones de los ciudadanos se utilizaron como entrada para el análisis Sensemaker."
+          generic: "Se pidió a los ciudadanos su opinión sobre \"%{resource_title}\". Los comentarios y discusiones de los ciudadanos se utilizaron como entrada para el análisis Sensemaker."
+        how_created: "Sensemaker utiliza IA para analizar conversaciones ciudadanas a gran escala, ayudando a identificar patrones, temas y áreas de acuerdo y desacuerdo."
+        what_to_expect: "Los informes ofrecen un análisis detallado que incluye identificación de temas, categorización e ideas. Los resúmenes ofrecen visiones generales concisas de los temas y hallazgos clave."
+        more_info: "Para más información, consulta la %{link}."
+        more_info_link: "página principal de Sensemaker"
+      script_type:
+        report: "Informe"
+        summary: "Resumen"
+      view_job: "Ver Análisis"
+      view_report: "Ver Informe"
+      view_summary: "Ver Resumen"
+      completed_at: "Completado"
+
+    report_view:
+      title: "Informe Sensemaker"
+      intro_text: "Aquí puedes encontrar la salida de un análisis producido usando %{link}."
+      sensemaker_tools_link: "Herramientas Sensemaker"
+      explanatory_text:
+        poll: "Los comentarios de la encuesta titulada \"%{poll_name}\" fueron analizados para producir un informe."
+        debate: "Los comentarios del debate titulado \"%{debate_title}\" fueron analizados para producir un informe."
+        proposal: "Los comentarios de la propuesta titulada \"%{proposal_title}\" fueron analizados para producir un informe."
+        legislation_proposal: "Los comentarios de la propuesta legislativa titulada \"%{proposal_title}\" fueron analizados para producir un informe."
+        legislation_question: "Los comentarios del debate titulado \"%{question_name}\" fueron analizados para producir un informe."
+        legislation_question_option: "Los comentarios segmentados por personas que eligieron la opción \"%{option_value}\" fueron analizados para el debate titulado \"%{question_name}\"."
+        budget: "Las inversiones propuestas para el presupuesto titulado \"%{budget_name}\" fueron analizadas para producir un informe."
+        budget_group: "Las inversiones propuestas para el grupo de presupuesto titulado \"%{group_name}\" fueron analizadas para producir un informe."
+        generic: "El texto de \"%{resource_name}\" fue analizado para producir un informe. "
+        all_proposals: "El texto de todas las propuestas ciudadanas fue analizado para producir un informe."
+      metadata_title: "Detalles del Análisis"
+      run_timestamp_label: "Análisis ejecutado el"
+      comments_analysed_label: "Comentarios analizados"
+      report_description: "El informe contiene un análisis detallado de la conversación, incluyendo identificación de temas, categorización, y áreas de acuerdo y desacuerdo."
+      view_report: "Ver informe"

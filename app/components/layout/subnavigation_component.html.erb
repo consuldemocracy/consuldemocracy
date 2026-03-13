@@ -14,7 +14,7 @@
       <li>
         <%= layout_menu_link_to t("layouts.header.proposals"),
                                 proposals_path,
-                                controller.class == ProposalsController,
+                                controller.class == ProposalsController || (controller.class == Sensemaker::JobsController && action_name == "all_proposals_index"),
                                 accesskey: "2" %>
       </li>
     <% end %>

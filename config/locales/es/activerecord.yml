@@ -4,6 +4,7 @@ es:
     results_enabled: "Mostrar resultados"
     stats_enabled: "Mostrar estadísticas"
     advanced_stats_enabled: "Mostrar estadísticas avanzadas"
+    sensemaking_enabled: "Mostrar análisis de sensemaking"
     name: Nombre
     email: Email
     description: Descripción
