@@ -1,0 +1,95 @@
+<%= header %>
+
+<% selected_query_type = params[:query_type] || "Legislation::Process" %>
+
+<div class="sensemaker">
+  <div class="search-control">
+    <div class="flex-row">
+      <% @query_types.each do |type| %>
+        <% selected = (selected_query_type == type) %>
+        <%= link_to new_admin_sensemaker_job_path(query_type: type, query: params[:query]), class: "query-type-tab #{"active" if selected}" do %>
+          <span><%= I18n.t("activerecord.models.#{type.underscore}.other") %></span>
+        <% end %>
+      <% end %>
+    </div>
+
+    <%= form_tag new_admin_sensemaker_job_path, class: "", method: :get do %>
+      <% conversation = @sensemaker_job.conversation if @sensemaker_job.analysable_type.present? %>
+      <% unless conversation&.target.present? %>
+        <p><%= t("admin.sensemaker.new.select_target") %> <%= link_to t("admin.sensemaker.new.or_analyse_all_proposals"), new_admin_sensemaker_job_path(target_type: "Proposal", target_id: nil), class: "bold" if selected_query_type.eql?("Proposal") %>.</p>
+      <% end %>
+
+      <div class="target-search-group">
+        <%= hidden_field_tag :query_type, selected_query_type %>
+        <% model_label = I18n.t("activerecord.models.#{(selected_query_type || "Legislation::Process").underscore}.other", default: "targets") %>
+        <%= text_field_tag :query, params[:query], placeholder: t("admin.sensemaker.new.search_placeholder", model_label: model_label), autocomplete: "off" %>
+        <%= submit_tag t("admin.shared.search.search"), class: "success button" %>
+      </div>
+
+      <details <% unless params[:target_type].present? %> open<% end %>>
+        <summary>
+          <%= @result_count %> <%= t("admin.sensemaker.new.results") %>
+        </summary>
+        <ul class="target-search-results">
+          <% if @search_results.blank? %>
+            <%= content_tag :span, t("admin.shared.no_search_results"), class: "small italic" %>
+            &nbsp;
+            <%= link_to t("admin.sensemaker.new.clear_search"), new_admin_sensemaker_job_path(query_type: selected_query_type), class: "small italic" %>
+          <% end %>
+
+          <% @search_results.each do |result_group| %>
+            <%= render Admin::Sensemaker::ResultComponent.new(
+                  result_group: result_group,
+                  selected_query_type: selected_query_type
+                ) %>
+          <% end %>
+        </ul>
+      </details>
+    <% end %>
+  </div>
+
+  <% conversation = @sensemaker_job.conversation if @sensemaker_job.analysable_type.present? %>
+  <% if conversation&.target.present? || (conversation&.target.is_a?(Class) && conversation.target == Proposal) %>
+    <br>
+    <%= form_for @sensemaker_job, url: admin_sensemaker_jobs_path, method: :post do |f| %>
+      <%= f.hidden_field :analysable_type, label: false, required: true %>
+      <%= f.hidden_field :analysable_id, label: false, required: false %>
+
+      <h4><%= t("admin.sensemaker.new.analysing") %> <%= conversation.target_label(format: :short) %></h4>
+      <p><%= t("admin.sensemaker.new.review_context") %></p>
+
+      <%= f.text_area :additional_context,
+                      label: t("admin.sensemaker.new.additional_context_label"),
+                      hint: t("admin.sensemaker.new.additional_context_hint"),
+                      rows: 10 %>
+
+      <details>
+        <summary><%= t("admin.sensemaker.new.advanced_options") %></summary>
+        <p class="small margin-bottom-sm"><%= t("admin.sensemaker.new.expert_options_hint") %></p>
+        <% script_options = Sensemaker::JobRunner::SCRIPTS.map { |script| [I18n.t("sensemaker.scripts.#{script.parameterize.underscore}.title"), script] } %>
+        <div class="flex-between margin-bottom-xl">
+          <%= f.select :script, script_options, { include_blank: t("admin.sensemaker.new.select_script_blank"), required: false, label: false }, class: "no-margin" %>
+          <%= f.submit t("admin.sensemaker.new.run"), data: { temp_disable: true } %>
+        </div>
+      </details>
+
+      <div class="flex-between">
+        <%= link_to t("admin.sensemaker.new.cancel"), admin_sensemaker_jobs_path, class: "" %>
+
+        <div>
+          <%= f.submit t("admin.sensemaker.new.download_input_csv"),
+                       type: "submit",
+                       formaction: preview_admin_sensemaker_jobs_path(format: :csv),
+                       class: "button", data: { temp_disable: true } %>
+          <%= button_tag t("admin.sensemaker.new.generate_summary"),
+                         type: "submit", name: "quick_action", value: "summary",
+                         class: "button success", data: { temp_disable: true } %>
+          <%= button_tag t("admin.sensemaker.new.generate_report"),
+                         type: "submit", name: "quick_action", value: "report",
+                         class: "button success", data: { temp_disable: true } %>
+        </div>
+      </div>
+
+    <% end %>
+  <% end %>
+</div>

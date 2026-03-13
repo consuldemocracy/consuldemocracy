@@ -1,0 +1,23 @@
+<div class="sensemaker-help">
+  <div class="help-content">
+    <h3><%= t("admin.sensemaker.help.title_1") %></h3>
+    <p><%= t("admin.sensemaker.help.description_1") %></p>
+
+    <h3><%= t("admin.sensemaker.help.title_2") %></h3>
+    <p><%= t("admin.sensemaker.help.description_2") %></p>
+
+    <h3><%= t("admin.sensemaker.help.title_3") %></h3>
+    <p><%= t("admin.sensemaker.help.description_3") %></p>
+
+    <h3><%= t("admin.sensemaker.help.title_4") %></h3>
+    <p><%= t("admin.sensemaker.help.description_4") %></p>
+    <ul class="script-list">
+      <% Sensemaker::JobRunner::SCRIPTS.each do |script| %>
+        <li>
+          <strong><%= t("admin.sensemaker.scripts.#{script.parameterize.underscore}.title") %></strong> -
+          <%= t("admin.sensemaker.scripts.#{script.parameterize.underscore}.description") %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
