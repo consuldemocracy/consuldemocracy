@@ -1,0 +1,68 @@
+es:
+  conversation:
+    context:
+      base: "Analizando %{type} de la plataforma Consul Democracy"
+      title: "Título: %{title}"
+      name: "Nombre: %{name}"
+      summary: "Resumen: %{summary}"
+      description: "Descripción: %{description}"
+      text: "Texto: %{text}"
+      location: "Ubicación: %{location}"
+      tags: "- Etiquetas: %{tags}"
+      comments: "- Comentarios: %{count}"
+      created: "- Creado: %{date}"
+      published: "- Publicado: %{date}"
+      type:
+        budget: "Presupuesto participativo"
+        budget/group: "Grupo de presupuesto participativo"
+        proposal: "Propuesta ciudadana"
+        debate: "Debate ciudadano"
+        legislation/proposal: "Propuesta legislativa colaborativa"
+        legislation/question: "Debate legislativo colaborativo"
+        legislation/question_option: "Debate legislativo colaborativo segmentado por opción"
+        poll: "Encuesta"
+        poll/question: "Pregunta de encuesta"
+      proposal:
+        votes: "Esta propuesta tiene %{total_votes} votos de los %{required_votes} necesarios para ser exitosa"
+
+      legislation_proposal:
+        process: "Esta propuesta forma parte del proceso legislativo \"%{process_title}\""
+        votes: "Esta propuesta tiene %{votes_up} votos a favor y %{votes_down} votos en contra"
+
+      debate:
+        votes: "Este debate tiene %{votes_up} votos a favor y %{votes_down} votos en contra"
+
+      legislation_question:
+        process: "Este debate forma parte del proceso legislativo \"%{process_title}\""
+        responses_header: "### Respuestas del Debate"
+        option: "- %{value} (%{answers_count} respuestas)"
+
+      question_option:
+        filter_note: "Nota: Los comentarios en este análisis están filtrados para incluir solo los comentarios de usuarios que seleccionaron la opción \"%{option_value}\" en su respuesta a este debate."
+
+      budget:
+        name: "Presupuesto: %{name}"
+        phase: "Fase: %{phase}"
+
+      budget_group:
+        name: "Grupo de Presupuesto: %{name}"
+        budget: "Parte del presupuesto: %{budget_name}"
+
+      proposals:
+        all: "Estas son las propuestas que se han presentado a la plataforma de participación ciudadana consul. Las propuestas ciudadanas son una oportunidad para que los vecinos y colectivos decidan directamente cómo quieren que sea su ciudad, después de obtener suficiente apoyo y someterse a una votación ciudadana."
+
+      poll:
+        questions_header: "Esta Encuesta está compuesta de %{count} pregunta(s). Las preguntas son las siguientes:"
+        question_with_type: "  P%{number} (%{type}): %{title}"
+        question_option: "     - Opción %{number}: %{title}"
+        question_option_with_votes: "      - Opción %{number}: %{title} (%{votes} votos)"
+        combined_answers_note: "Los comentarios adjuntos incluyen las respuestas de cada autor. Estas están separadas por el carácter de barra vertical \"|\" y etiquetadas como P1, P2, etc.."
+        question_type:
+          unique_choice: "Elección única"
+          multiple_choice: "Elección múltiple"
+          open_ended: "Respuesta abierta"
+
+      poll_question:
+        question_title: "Pregunta: %{title}"
+        filter_note: "Nota: Este análisis se centra en la pregunta de la encuesta \"%{question_title}\"."
+        open_ended: "Esta es una pregunta de respuesta abierta con %{answers_count} respuestas de texto."
