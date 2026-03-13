@@ -1217,6 +1217,10 @@ es:
         results: Resultados
         see_results: Ver resultados
         title: "Resultados por urna"
+    poll_notification:
+      show:
+        send_btn: Enviar notificación por correo electrónico
+        send_at: Hora de envío
     booths:
       index:
         title: "Listado de urnas activas"

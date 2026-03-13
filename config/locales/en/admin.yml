@@ -1118,6 +1118,7 @@ en:
         booths_tab: Booths
         officers_tab: Officers
         recounts_tab: Recounting
+        notification_tab: Notification
         results_tab: Results
         no_questions: "There are no questions assigned to this poll."
         questions_title: "List of questions"
@@ -1217,6 +1218,10 @@ en:
         results: Results
         see_results: See results
         title: "Results by booth"
+    poll_notification:
+      show:
+        send_btn: Send email notification
+        send_at: Time sent
     booths:
       index:
         title: "List of active booths"

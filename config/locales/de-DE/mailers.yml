@@ -6,6 +6,21 @@ de:
       info: "Wir haben eine Anfrage erhalten, Ihnen Anweisungen zur Bestätigung Ihres Kontos zu senden. Ihr Konto ist jedoch bereits bestätigt, sodass Sie dies nicht erneut tun müssen."
       new_password: "Wenn Sie Ihr Passwort vergessen haben, können Sie es unter dem folgenden Link zurücksetzen:"
       subject: Ihr Konto ist bereits bestätigt.
+    poll_notification:
+      body: |
+        Hallo <strong>%{user_name}</strong>,<br><br>
+
+        die Abstimmung “%{poll_title}” hat begonnen.<br>
+        Sie können jetzt online abstimmen.<br><br>
+
+        Zeitraum: %{poll_start_date} - %{poll_end_date}<br>
+        Zur Abstimmung: <a href="%{poll_url}" target="_blank">%{poll_title}</a><br><br>
+
+        Vielen Dank für Ihre Teilnahme!<br><br>
+
+        Viele Grüße,<br>
+        Ihr Consul Team
+      subject: 'Neue Umfrage gestartet: "%{poll_title}"'
     comment:
       hi: Hallo
       new_comment_by: Es gibt einen neuen Kommentar von <strong>%{commenter}</strong>
