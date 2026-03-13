@@ -112,6 +112,8 @@ en:
       community_description: "Enables the community section in the proposals and investment projects of the Participatory Budgets"
       machine_learning: "AI / Machine learning"
       machine_learning_description: "Enable the AI / Machine Learning section to run python scripts and enrich content automatically."
+      sensemaker: "Sensemaker"
+      sensemaker_description: "Enable Sensemaker integration to help make sense of large-scale conversations."
       map: "Proposals and budget investments geolocation"
       map_description: "Enables geolocation of proposals and investment projects"
       allow_images: "Allow upload and show images"
