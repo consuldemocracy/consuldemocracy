@@ -1,5 +1,5 @@
-# config valid only for current version of Capistrano
-lock "~> 3.19.1"
+# Avoid using a different version when running `cap` without `bundle exec`
+lock "~> 3.20.0"
 
 def deploysecret(key, default: "")
   @deploy_secrets_yml ||= YAML.load_file("config/deploy-secrets.yml", aliases: true)[fetch(:stage).to_s]
