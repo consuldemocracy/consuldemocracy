@@ -1,0 +1,47 @@
+<%= form_with model: [:admin, event], builder: ConsulFormBuilder, local: true do |f| %>
+
+  <%= render "shared/errors", resource: event %>
+
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= f.datetime_field :starts_at, class: "input-group-field" %>
+    </div>
+    <div class="small-12 medium-6 column">
+      <%= f.datetime_field :ends_at, class: "input-group-field" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 column">
+      <%= f.text_field :name %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 column">
+      <%= f.text_area :description, rows: 8, class: "html-area" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= f.select :event_type,
+                   Event::TYPES.map { |type| [I18n.t("events.event_types.#{type}"), type] },
+                   include_blank: t("events.prompts.select_type") %>
+    </div>
+    <div class="small-12 medium-6 column">
+      <%= f.text_field :location %>
+    </div>
+  </div>
+
+  <% if feature?(:allow_attached_documents) %>
+    <%= render Documents::NestedComponent.new(f) %>
+  <% end %>
+
+  <div class="row">
+    <div class="small-12 medium-6 column end">
+      <%= f.submit submit_button_text, class: "button success" %>
+    </div>
+  </div>
+
+<% end %>

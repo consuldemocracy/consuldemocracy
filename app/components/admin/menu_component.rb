@@ -27,6 +27,7 @@ class Admin::MenuComponent < ApplicationComponent
         profiles_links,
         stats_link,
         settings_links,
+        (events_link if feature?(:events)),
         dashboard_links,
         (machine_learning_link if ::MachineLearning.enabled?)
       ]
@@ -258,6 +259,15 @@ class Admin::MenuComponent < ApplicationComponent
         t("admin.menu.emails_download"),
         admin_emails_download_index_path,
         controller_name == "emails_download"
+      ]
+    end
+
+    def events_link
+      [
+        t("admin.menu.events"),
+        admin_events_path,
+        controller_name == "events",
+        class: "events-link"
       ]
     end
 

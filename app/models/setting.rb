@@ -92,9 +92,11 @@ class Setting < ApplicationRecord
         "feature.remove_investments_supports": true,
         "feature.cookies_consent": false,
         "feature.gdpr.require_consent_for_notifications": false,
+        "feature.events": true,
         "homepage.widgets.feeds.debates": true,
         "homepage.widgets.feeds.processes": true,
         "homepage.widgets.feeds.proposals": true,
+        "homepage.widgets.feeds.upcoming": false,
         # Code to be included at the top (inside <body>) of every page
         "html.per_page_code_body": "",
         # Code to be included at the top (inside <head>) of every page (useful for tracking)

@@ -261,6 +261,13 @@ es:
       debate/translation:
         title: "Título del debate"
         description: "Texto inicial del debate"
+      event:
+        name: "Título del Evento"
+        description: "Descripción"
+        starts_at: "Fecha y Hora de Inicio"
+        ends_at: "Fecha y Hora de Finalización"
+        location: "Ubicación"
+        event_type: "Tipo de Evento"
       proposal:
         author: "Autor"
         title: "Título"

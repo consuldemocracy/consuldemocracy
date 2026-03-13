@@ -1,0 +1,23 @@
+<% provide(:title) do %>
+  <%= t("events.calendar.title", default: "Events Calendar") %>
+<% end %>
+
+<div class="calendar-container">
+  <div class="clearfix mb-4">
+    <% if current_user&.administrator? %>
+      <div class="float-right">
+        <%= link_to t("admin.events.index.view_list", default: "View List"),
+                    admin_events_path,
+                    class: "button secondary hollow",
+                    style: "margin-right: 0.5rem;" %>
+
+        <%= link_to t("admin.events.index.new_event"),
+                    new_admin_event_path,
+                    class: "button success" %>
+      </div>
+    <% end %>
+
+    <h2 class="h3"><%= t("events.calendar.title", default: "Events Calendar") %></h2>
+  </div>
+  <%= content %>
+</div>
