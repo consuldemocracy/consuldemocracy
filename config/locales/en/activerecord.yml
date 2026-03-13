@@ -106,22 +106,22 @@ en:
       legislation/proposal:
         one: "Proposal"
         other: "Proposals"
-      legislation/draft_versions:
+      legislation/draft_version:
         one: "Draft version"
         other: "Draft versions"
-      legislation/questions:
+      legislation/question:
         one: "Question"
         other: "Questions"
-      legislation/question_options:
+      legislation/question_option:
         one: "Question option"
         other: "Question options"
-      legislation/answers:
+      legislation/answer:
         one: "Answer"
         other: "Answers"
-      documents:
+      document:
         one: "Document"
         other: "Documents"
-      images:
+      image:
         one: "Image"
         other: "Images"
       tenant:
