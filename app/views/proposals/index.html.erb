@@ -37,7 +37,7 @@
     <% unless params[:selected].present? %>
       <div class="row">
         <div class="small-12 column">
-          <%= render "view_mode" %>
+          <%= render Shared::ViewModeComponent.new %>
         </div>
       </div>
     <% end %>
@@ -60,11 +60,11 @@
 
     <div id="proposals-list">
       <% if @proposals.any? || current_user.blank? %>
-        <% if proposals_default_view? %>
-          <%= render partial: "proposals/proposal", collection: @proposals %>
-        <% else %>
-          <% @proposals.each do |proposal| %>
-            <%= render "/proposals/proposal_minimal", proposal: proposal %>
+        <% @proposals.each do |proposal| %>
+          <% if default_view_mode? %>
+            <%= render "proposals/proposal", proposal: proposal %>
+          <% else %>
+            <%= render "proposals/proposal_minimal", proposal: proposal %>
           <% end %>
         <% end %>
       <% else %>

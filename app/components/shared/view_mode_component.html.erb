@@ -1,0 +1,15 @@
+<div class="view-mode <%= view_mode %>">
+  <button type="button" data-toggle="view_mode">
+    <span class="show-for-sr"><%= t("shared.view_mode.title") %></span>
+  </button>
+
+  <div class="dropdown-pane" id="view_mode" data-dropdown data-hover="true" data-hover-pane="true">
+    <span class="uppercase">
+      <strong>
+        <%= t("shared.view_mode.title") %>
+      </strong>
+    </span>
+
+    <%= link_list(*links) %>
+  </div>
+</div>

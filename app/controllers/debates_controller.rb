@@ -5,7 +5,6 @@ class DebatesController < ApplicationController
   include Translatable
 
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_view, only: :index
   before_action :debates_recommendations, only: :index, if: :current_user
 
   feature_flag :debates
@@ -69,10 +68,6 @@ class DebatesController < ApplicationController
 
     def resource_model
       Debate
-    end
-
-    def set_view
-      @view = (params[:view] == "minimal") ? "minimal" : "default"
     end
 
     def debates_recommendations

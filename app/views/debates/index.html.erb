@@ -31,7 +31,7 @@
 
     <div class="row">
       <div class="small-12 column">
-        <%= render "view_mode" %>
+        <%= render Shared::ViewModeComponent.new %>
       </div>
     </div>
 
@@ -44,10 +44,10 @@
     </div>
 
     <% if @debates.any? || current_user.blank? %>
-      <% if debates_default_view? %>
-        <%= render @debates %>
-      <% else %>
-        <% @debates.each do |debate| %>
+      <% @debates.each do |debate| %>
+        <% if default_view_mode? %>
+          <%= render "debates/debate", debate: debate %>
+        <% else %>
           <%= render "debates/debate_minimal", debate: debate %>
         <% end %>
       <% end %>

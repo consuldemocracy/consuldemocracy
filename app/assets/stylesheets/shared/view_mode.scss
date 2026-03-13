@@ -1,0 +1,65 @@
+.view-mode {
+  float: $global-right;
+
+  ul {
+    list-style: none;
+    margin: 0;
+
+    li {
+      align-items: center;
+      display: flex;
+      gap: 1ch;
+      padding: calc($line-height / 4) 0;
+    }
+
+    a {
+      @include anchor-color;
+
+      align-items: center;
+      display: inline-flex;
+      gap: 1ch;
+    }
+  }
+
+  .dropdown-pane {
+    width: auto;
+  }
+
+  button {
+    @include has-fa-icon(th-list, solid);
+
+    background: #eee;
+    cursor: pointer;
+    height: rem-calc(36);
+    margin-bottom: 0;
+    padding: calc($line-height / 4);
+    width: rem-calc(36);
+
+    &::before {
+      color: color-pick-contrast(#eee);
+    }
+  }
+
+  &.minimal {
+
+    button {
+      @include has-fa-icon(bars, solid);
+    }
+  }
+
+  .view-list {
+    @include has-fa-icon(bars, solid);
+  }
+
+  .view-card {
+    @include has-fa-icon(th-list, solid);
+  }
+
+  [aria-current] {
+    @include has-fa-icon(check, solid, after);
+
+    &::after {
+      font-size: $tiny-font-size;
+    }
+  }
+}

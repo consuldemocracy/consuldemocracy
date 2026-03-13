@@ -1,0 +1,72 @@
+require "rails_helper"
+
+describe Shared::ViewModeComponent do
+  describe "main element" do
+    it "uses no specific view mode class by default" do
+      with_request_url("/example") do
+        render_inline Shared::ViewModeComponent.new
+
+        expect(page).to have_css ".view-mode"
+        expect(page).not_to have_css ".view-mode.minimal"
+        expect(page).not_to have_css ".view-mode.default"
+      end
+    end
+
+    it "uses no specific view mode class when the defaut mode is specified" do
+      with_request_url("/example?view=default") do
+        render_inline Shared::ViewModeComponent.new
+
+        expect(page).to have_css ".view-mode"
+        expect(page).not_to have_css ".view-mode.minimal"
+        expect(page).not_to have_css ".view-mode.default"
+      end
+    end
+
+    it "uses a minimal class the minimal mode is specified" do
+      with_request_url("/example?view=minimal") do
+        render_inline Shared::ViewModeComponent.new
+
+        expect(page).to have_css ".view-mode.minimal"
+        expect(page).not_to have_css ".view-mode.default"
+      end
+    end
+  end
+
+  describe "view mode list" do
+    it "links to both modes and marks cards mode as current by default" do
+      with_request_url("/example") do
+        render_inline Shared::ViewModeComponent.new
+
+        expect(page).to have_css "li", count: 2
+        expect(page).to have_link count: 2
+        expect(page).to have_link "List", href: "/example?view=minimal"
+        expect(page).to have_link "Cards", href: "/example?view=default"
+        expect(page).to have_css "[aria-current]", exact_text: "Cards", normalize_ws: true
+      end
+    end
+
+    it "links to both modes and marks cards mode as current when default is specified" do
+      with_request_url("/example?view=default") do
+        render_inline Shared::ViewModeComponent.new
+
+        expect(page).to have_css "li", count: 2
+        expect(page).to have_link count: 2
+        expect(page).to have_link "List", href: "/example?view=minimal"
+        expect(page).to have_link "Cards", href: "/example?view=default"
+        expect(page).to have_css "[aria-current]", exact_text: "Cards", normalize_ws: true
+      end
+    end
+
+    it "links to both modes and marks list mode as current when minimal is specified" do
+      with_request_url("/example?view=minimal") do
+        render_inline Shared::ViewModeComponent.new
+
+        expect(page).to have_css "li", count: 2
+        expect(page).to have_link count: 2
+        expect(page).to have_link "List", href: "/example?view=minimal"
+        expect(page).to have_link "Cards", href: "/example?view=default"
+        expect(page).to have_css "[aria-current]", exact_text: "List", normalize_ws: true
+      end
+    end
+  end
+end
