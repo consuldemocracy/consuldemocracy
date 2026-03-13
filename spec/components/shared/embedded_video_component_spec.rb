@@ -29,7 +29,9 @@ describe Shared::EmbeddedVideoComponent do
 
       render_inline component
 
-      expect(page).to have_css "[data-video-code*='src=\"#{embed_url}\"']"
+      expect(page).to have_css(".video-placeholder[data-src='#{embed_url}']")
+      expect(page).to have_css(".video-placeholder button.video-accept", text: "Accept")
+      expect(page).to have_content(I18n.t("valuation.iframe.two_clicks_for_iframes_modal_warning"))
     end
 
     it "embeds a vimeo video for vimeo URLs" do
@@ -38,7 +40,9 @@ describe Shared::EmbeddedVideoComponent do
 
       render_inline component
 
-      expect(page).to have_css "[data-video-code*='src=\"#{embed_url}\"']"
+      expect(page).to have_css(".video-placeholder[data-src='#{embed_url}']")
+      expect(page).to have_css(".video-placeholder button.video-accept", text: "Accept")
+      expect(page).to have_content(I18n.t("valuation.iframe.two_clicks_for_iframes_modal_warning"))
     end
   end
 end

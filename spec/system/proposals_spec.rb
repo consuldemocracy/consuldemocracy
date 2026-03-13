@@ -305,6 +305,7 @@ describe "Proposals" do
       proposal = create(:proposal, video_url: "http://www.youtube.com/watch?v=a7UFm6ErMPU")
 
       visit proposal_path(proposal)
+      click_button "Accept"
 
       within "#js-embedded-video" do
         expect(page).to have_css "iframe[src='https://www.youtube-nocookie.com/embed/a7UFm6ErMPU']"
@@ -315,6 +316,7 @@ describe "Proposals" do
       proposal = create(:proposal, video_url: "https://vimeo.com/7232823")
 
       visit proposal_path(proposal)
+      click_button "Accept"
 
       within "#js-embedded-video" do
         expect(page).to have_css "iframe[src='https://player.vimeo.com/video/7232823?dnt=1']"

@@ -306,20 +306,22 @@ describe "Legislation Proposals" do
   end
 
   context "Embedded video" do
-    scenario "Show YouTube video" do
+    scenario "Show YouTube video", :js do
       proposal = create(:legislation_proposal, video_url: "http://www.youtube.com/watch?v=a7UFm6ErMPU")
 
       visit legislation_process_proposal_path(proposal.process, proposal)
+      click_button "Accept"
 
       within "#js-embedded-video" do
         expect(page).to have_css "iframe[src='https://www.youtube-nocookie.com/embed/a7UFm6ErMPU']"
       end
     end
 
-    scenario "Show Vimeo video" do
+    scenario "Show Vimeo video", :js do
       proposal = create(:legislation_proposal, video_url: "https://vimeo.com/7232823")
 
       visit legislation_process_proposal_path(proposal.process, proposal)
+      click_button "Accept"
 
       within "#js-embedded-video" do
         expect(page).to have_css "iframe[src='https://player.vimeo.com/video/7232823?dnt=1']"
