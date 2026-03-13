@@ -79,7 +79,7 @@ GEM
       activerecord (>= 7.1, < 8.2)
       zeitwerk (>= 2.4, < 3.0)
     acts_as_votable (0.14.0)
-    addressable (2.8.8)
+    addressable (2.8.9)
       public_suffix (>= 2.0.2, < 8.0)
     aes_key_wrap (1.1.0)
     afm (1.0.0)
@@ -283,7 +283,7 @@ GEM
     google-protobuf (4.28.3)
       bigdecimal
       rake (>= 13)
-    googleauth (1.16.1)
+    googleauth (1.16.2)
       faraday (>= 1.0, < 3.a)
       google-cloud-env (~> 2.2)
       google-logging-utils (~> 0.1)
@@ -415,7 +415,7 @@ GEM
       tomlrb
     mixlib-shellout (3.4.10)
       chef-utils
-    multi_json (1.15.0)
+    multi_json (1.19.1)
     multi_xml (0.8.1)
       bigdecimal (>= 3.1, < 5)
     multipart-post (2.4.1)
@@ -897,7 +897,7 @@ DEPENDENCIES
   font-awesome-sass (~> 5.15.1)
   globalize (~> 7.1.1)
   globalize-accessors (~> 0.3.0)
-  googleauth (~> 1.16.1)
+  googleauth (~> 1.16.2)
   graphiql-rails (~> 1.8.0)
   graphql (~> 2.5.20)
   groupdate (~> 6.7.0)
