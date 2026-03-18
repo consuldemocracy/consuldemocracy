@@ -10,6 +10,6 @@ class Admin::Events::EditComponent < ApplicationComponent
   private
 
     def title
-      t("events.edit.title", default: "Manage Event")
+      t("events.edit.title")
     end
 end

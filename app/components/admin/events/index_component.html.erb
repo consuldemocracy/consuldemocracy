@@ -28,7 +28,7 @@
           <td>
             <%= render Admin::TableActionsComponent.new(event) do |actions| %>
               <%= actions.action(:show,
-                                 text: t("admin.actions.view", default: "View"),
+                                 text: t("admin.actions.view"),
                                  path: event_path(event),
                                  target: "_blank") %>
             <% end %>

@@ -13,7 +13,7 @@
       <% end %>
 
       <h1 class="h2"><%= event.name %></h1>
-      <span class="label secondary"><%= t("events.labels.manual_event", default: "Manual Event") %></span>
+      <span class="label secondary"><%= t("events.labels.manual_event") %></span>
     </header>
 
     <div class="callout">
@@ -27,7 +27,7 @@
 
         <% if event.ends_at.present? %>
           <div class="cell medium-6">
-            <strong class="text-muted"><%= t("events.event.end_date", default: "Ends:") %></strong>
+            <strong class="text-muted"><%= t("events.event.end_date") %></strong>
             <div>
               <%= l(event.ends_at, format: :long) %>
             </div>
@@ -38,7 +38,7 @@
       <hr>
 
       <div class="event-description margin-top">
-        <strong class="text-muted"><%= t("events.event.description", default: "Description:") %></strong>
+        <strong class="text-muted"><%= t("events.event.description") %></strong>
         <%= simple_format event.description %>
       </div>
 
@@ -50,7 +50,6 @@
 
       <hr>
 
-      <%# Depending on your Consul version, you might need to use helpers.feature? if this throws an error %>
       <% if feature?(:allow_attached_documents) %>
         <%= render Documents::DocumentsComponent.new(event.documents) %>
       <% end %>

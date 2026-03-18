@@ -10,6 +10,6 @@ class Admin::Events::NewComponent < ApplicationComponent
   private
 
     def title
-      t("events.new.title", default: "Manage Event")
+      t("events.new.title")
     end
 end

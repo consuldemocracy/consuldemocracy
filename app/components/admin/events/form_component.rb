@@ -7,6 +7,6 @@ class Admin::Events::FormComponent < ApplicationComponent
 
   def submit_button_text
     action = event.persisted? ? "edit" : "new"
-    t("events.#{action}.submit_button", default: t("events.submit.default"))
+    t("events.#{action}.submit_button")
   end
 end

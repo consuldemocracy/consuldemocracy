@@ -1,12 +1,12 @@
 <% provide(:title) do %>
-  <%= t("events.calendar.title", default: "Events Calendar") %>
+  <%= t("events.calendar.title") %>
 <% end %>
 
 <div class="calendar-container">
   <div class="clearfix mb-4">
     <% if current_user&.administrator? %>
       <div class="float-right">
-        <%= link_to t("admin.events.index.view_list", default: "View List"),
+        <%= link_to t("admin.events.index.view_list"),
                     admin_events_path,
                     class: "button secondary hollow",
                     style: "margin-right: 0.5rem;" %>

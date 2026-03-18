@@ -16,3 +16,7 @@ en:
     edit:
       title: "Edit Event"
       submit_button: "Update Event"
+    event:
+      description: "Event description"
+      end_date: "Ends"
+      start_date: "Starts"

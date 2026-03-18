@@ -14,3 +14,7 @@ es:
       submit_button: "Actualizar Evento"
     prompts:
       select_type: "Seleccione un tipo de evento"
+    event:
+      description: "Descripción del evento"
+      end_date: "Fin"
+      start_date: "Inicio"
