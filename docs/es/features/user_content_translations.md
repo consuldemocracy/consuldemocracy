@@ -44,21 +44,18 @@ Una vez tenemos la api key en nuestro `secrets.yml` y la funcionalidad activada,
 
 Para aclarar el funcionamiento, se adjuntan unos pantallazos de cómo interactúa la aplicación con nuestros usuarios:
 
-* Cuando un usuario accede a una pantalla en un idioma en el que no están disponibles todas las traducciones, le aparecerá un texto en la parte superior de la pantalla y un botón para poder solicitar la traducción. (**Nota:** *En el caso de acceder con un idioma no soportado por el servicio de traducción no se mostrará ningún texto ni botón de traducción. Ver sección: Idiomas disponibles para la traducción remota*)
+*   Cuando un usuario accede a una pantalla en un idioma en el que no están disponibles todas las traducciones, le aparecerá un texto en la parte superior de la pantalla y un botón para poder solicitar la traducción. (**Nota:** _En el caso de acceder con un idioma no soportado por el servicio de traducción no se mostrará ningún texto ni botón de traducción. Ver sección: Idiomas disponibles para la traducción remota_)
 
-  ![Se muestra el texto "El contenido de esta página no esta disponible en tu idioma" y al lado el botón de traducción "Traducir página" en la parte superior de la página](../../img/translations/remote_translations/display-text-and-button-es.png)
+    ![Se muestra el texto "El contenido de esta página no esta disponible en tu idioma" y al lado el botón de traducción "Traducir página" en la parte superior de la página](../.gitbook/assets/display-text-and-button-es.png)
+*   Una vez el usuario pulsa el botón de `Traducir página` se encolan las traducciones y se recarga la pantalla con un notice (_informando que se han solicitado correctamente las traducciones_) y un texto informativo en la cabecera (_explicando cuándo podrá ver estas traducciones_).
 
-* Una vez el usuario pulsa el botón de `Traducir página` se encolan las traducciones y se recarga la pantalla con un notice (*informando que se han solicitado correctamente las traducciones*) y un texto informativo en la cabecera (*explicando cuándo podrá ver estas traducciones*).
+    ![Se informa al usuario que se han solicitado las traducciones](../.gitbook/assets/display-notice-and-text-after-enqueued-es.png)
+*   Si un usuario accede a una pantalla que no dispone de traducciones pero ya han sido solicitadas por otro usuario, la aplicación no le mostrará el botón de traducir, pero sí un texto informativo en la cabecera (_explicando cuándo podrá ver estas traducciones_).
 
-  ![Se informa al usuario que se han solicitado las traducciones](../../img/translations/remote_translations/display-notice-and-text-after-enqueued-es.png)
+    ![Se informa al usuario que las traducciones están pendientes](../.gitbook/assets/display-text-translations-pending-es.png)
+*   Las peticiones de traducción se delegan a `Delayed Job` y en cuanto haya sido procesada, el usuario después de refrescar su página podrá ver el contenido traducido.
 
-* Si un usuario accede a una pantalla que no dispone de traducciones pero ya han sido solicitadas por otro usuario, la aplicación no le mostrará el botón de traducir, pero sí un texto informativo en la cabecera (*explicando cuándo podrá ver estas traducciones*).
-
-  ![Se informa al usuario que las traducciones están pendientes](../../img/translations/remote_translations/display-text-translations-pending-es.png)
-
-* Las peticiones de traducción se delegan a `Delayed Job` y en cuanto haya sido procesada, el usuario después de refrescar su página podrá ver el contenido traducido.
-
-  ![Se muestra el contenido traducido](../../img/translations/remote_translations/display-translated-content-es.png)
+    ![Se muestra el contenido traducido](../.gitbook/assets/display-translated-content-es.png)
 
 ### Idiomas disponibles para la traducción remota
 
@@ -72,22 +69,21 @@ De todos los idiomas que actualmente tiene Consul Democracy definidos (`availabl
 
 ### Costes
 
-El servicio de traducción utilizado tiene los [precios](https://azure.microsoft.com/es-es/pricing/details/cognitive-services/translator/) más competitivos del mercado.
-El precio por cada 1 Millón de caracteres traducidos asciende a 10 $ y sin ningún tipo de coste fijo al mes.
+El servicio de traducción utilizado tiene los [precios](https://azure.microsoft.com/es-es/pricing/details/cognitive-services/translator/) más competitivos del mercado. El precio por cada 1 Millón de caracteres traducidos asciende a 10 $ y sin ningún tipo de coste fijo al mes.
 
 Aunque se han tomado medidas técnicas para evitar un mal uso de este servicio, recomendamos la creación de Alertas que ofrece Azure para que un Administrador pueda ser notificado en el caso de detectar un uso fuera de lo común del servicio. Este servicio tiene un coste de 0,10 $ al mes.
 
 Para crear una Alerta en Azure debemos seguir los siguientes pasos:
 
 1. Inicia sesión en **Azure Portal**.
-1. Accede al servicio **Traductor** creado anteriormente.
-1. Accede en el menú lateral a **Supervisión > Alertas**:
+2. Accede al servicio **Traductor** creado anteriormente.
+3. Accede en el menú lateral a **Supervisión > Alertas**:
    1. Accedemos a **Crear regla de alertas**
-   1. En **Selección de una señal** seleccionamos `Text Characters Translated`
-   1. Una vez seleccionada debemos definir la lógica de la Alerta para que se ajuste a nuestras necesidades. Ej: Rellena el campo "Operador" con el valor "Mayor que", rellena el campo "Tipo de Agregación" con el valor "Total" y por último rellena el campo "Valor del umbral" por el número de caracteres que consideramos que deben traducirse antes de ser notificados. En esta sección también se puede configurar el periodo de tiempo y la frecuencia de evaluación.
-   1. Para poder ser notificados tenemos que crear un **Grupo de Acciones** y asociarlo a esta Alerta que estamos creando. Para ello accedemos al botón de **Crear** y rellenamos el formulario. Como se puede observar hay diferentes tipos de acciones, debemos seleccionar **Correo electrónico/SMS/Insertar/Voz** y configurar la opción que consideremos conveniente según nuestras necesidades.
-   1. Una vez creado este grupo de acciones, ya queda directamente asociado a la regla que estamos creando.
-   1. Por último ya solo queda añadir un nombre y clicar sobre el botón **Revisar y crear**.
+   2. En **Selección de una señal** seleccionamos `Text Characters Translated`
+   3. Una vez seleccionada debemos definir la lógica de la Alerta para que se ajuste a nuestras necesidades. Ej: Rellena el campo "Operador" con el valor "Mayor que", rellena el campo "Tipo de Agregación" con el valor "Total" y por último rellena el campo "Valor del umbral" por el número de caracteres que consideramos que deben traducirse antes de ser notificados. En esta sección también se puede configurar el periodo de tiempo y la frecuencia de evaluación.
+   4. Para poder ser notificados tenemos que crear un **Grupo de Acciones** y asociarlo a esta Alerta que estamos creando. Para ello accedemos al botón de **Crear** y rellenamos el formulario. Como se puede observar hay diferentes tipos de acciones, debemos seleccionar **Correo electrónico/SMS/Insertar/Voz** y configurar la opción que consideremos conveniente según nuestras necesidades.
+   5. Una vez creado este grupo de acciones, ya queda directamente asociado a la regla que estamos creando.
+   6. Por último ya solo queda añadir un nombre y clicar sobre el botón **Revisar y crear**.
 
 ### Añadir un nuevo servicio de traducción
 
@@ -125,16 +121,14 @@ Para activar la funcionalidad deberas acceder desde el panel de administración 
 
 Dependiendo de si activamos o desactivamos el módulo de **Interfaz de traducción** veremos los formularios de la siguiente manera:
 
-* Cuando la interfaz de traducción está activa:
- Como podemos ver en la imagen a continuación la interfaz de traducción tiene 2 selectores, el primero "Seleccionar idioma" permite cambiar entre los lenguajes activos y el segundo selector "Añadir idioma" permite añadir nuevos idiomas al formulario. Los campos traducibles se pueden distinguir fácilmente mediante un fondo azul de los que no lo son.
+* Cuando la interfaz de traducción está activa: Como podemos ver en la imagen a continuación la interfaz de traducción tiene 2 selectores, el primero "Seleccionar idioma" permite cambiar entre los lenguajes activos y el segundo selector "Añadir idioma" permite añadir nuevos idiomas al formulario. Los campos traducibles se pueden distinguir fácilmente mediante un fondo azul de los que no lo son.
 
- También disponemos de un botón `Eliminar idioma` para eliminar un idioma en caso de necesitarlo. Si un usuario elimina accidentalmente un idioma puede recuperarlo añadiendo dicho idioma otra vez al formulario.
+También disponemos de un botón `Eliminar idioma` para eliminar un idioma en caso de necesitarlo. Si un usuario elimina accidentalmente un idioma puede recuperarlo añadiendo dicho idioma otra vez al formulario.
 
- Esta funcionalidad está visible tanto para las páginas de creación como para las páginas de edición.
+Esta funcionalidad está visible tanto para las páginas de creación como para las páginas de edición.
 
- ![Interfaz de traducción activada](../../img/translations/interface_translations/translations-interface-enabled-es.png)
+![Interfaz de traducción activada](../.gitbook/assets/translations-interface-enabled-es.png)
 
-* Cuando la interfaz de traducción está desactivada:
-  Cuando esta funcionalidad está desactivada los formularios se renderizan sin la interfaz de traducción y sin resaltar los campos traducibles con fondo azul.
+*   Cuando la interfaz de traducción está desactivada: Cuando esta funcionalidad está desactivada los formularios se renderizan sin la interfaz de traducción y sin resaltar los campos traducibles con fondo azul.
 
-  ![Interfaz de traducción desactivada](../../img/translations/interface_translations/translations-interface-disabled-es.png)
+    ![Interfaz de traducción desactivada](../.gitbook/assets/translations-interface-disabled-es.png)

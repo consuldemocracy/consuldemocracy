@@ -1,14 +1,16 @@
-![Logotipo de CONSUL DEMOCRACY](../img/consul_logo.png)
+# Introducción
 
-# CONSUL DEMOCRACY
+![Logotipo de CONSUL DEMOCRACY](.gitbook/assets/consul_logo.png)
+
+## CONSUL DEMOCRACY
 
 Aplicación de Participación Ciudadana y Gobierno Abierto
 
-## Web CONSUL DEMOCRACY Project
+### Web CONSUL DEMOCRACY Project
 
 Puedes acceder a la página principal del proyecto en [http://consuldemocracy.org](http://consuldemocracy.org) donde puedes encontrar documentación sobre el uso de la plataforma, videos y enlaces al espacio de la comunidad.
 
-## Configuración para desarrollo y tests
+### Configuración para desarrollo y tests
 
 **NOTA**: para unas instrucciones más detalladas, consulta la [documentación de instalación local](installation/local_installation.md).
 
@@ -39,22 +41,20 @@ Nota: ejecutar todos los tests en tu máquina puede tardar más de una hora, por
 
 Puedes usar el usuario administrador por defecto del fichero seeds:
 
- **user:** admin@consul.dev
- **pass:** 12345678
+**user:** admin@consul.dev **pass:** 12345678
 
 Pero para ciertas acciones, como apoyar, necesitarás un usuario verificado, el fichero seeds proporciona uno:
 
- **user:** verified@consul.dev
- **pass:** 12345678
+**user:** verified@consul.dev **pass:** 12345678
 
-## Licencia
+### Licencia
 
 El código de este proyecto está publicado bajo la licencia AFFERO GPL v3 (ver [LICENSE-AGPLv3.txt](open_source/license.md))
 
-## Contribuciones
+### Contribuciones
 
-Ver fichero [CONTRIBUTING_ES.md](https://github.com/consuldemocracy/consuldemocracy/blob/master/CONTRIBUTING_ES.md)
+Ver fichero [CONTRIBUTING\_ES.md](https://github.com/consuldemocracy/consuldemocracy/blob/master/CONTRIBUTING_ES.md)
 
-## Desarrollo en local con Docker
+### Desarrollo en local con Docker
 
-Puedes leer la guía en [https://consul_docs.gitbooks.io/docs/content/es/getting_started/docker.html](https://consul_docs.gitbooks.io/docs/content/es/getting_started/docker.html)
+Puedes leer la guía en [https://consul\_docs.gitbooks.io/docs/content/es/getting\_started/docker.html](https://consul_docs.gitbooks.io/docs/content/es/getting_started/docker.html)

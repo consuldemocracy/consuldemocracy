@@ -9,7 +9,7 @@ Brasil
 * Prefeitura de São Paulo platform 'Participe+'
   * platform: [https://participemais.prefeitura.sp.gov.br/](https://participemais.prefeitura.sp.gov.br/)
   * repositorio de código: [https://codigoaberto.prefeitura.sp.gov.br/casacivil/participemais/-/tree/prodam\_12\_08\_24](https://codigoaberto.prefeitura.sp.gov.br/casacivil/participemais/-/tree/prodam_12_08_24)
-  * mantenedor del repositorio: Prefeitura de São Paulo ([https://capital.sp.gov.br/](https://capital.sp.gov.br/))&#x20;
+  * mantenedor del repositorio: Prefeitura de São Paulo ([https://capital.sp.gov.br/](https://capital.sp.gov.br/))
 
 Denmark
 
@@ -68,7 +68,7 @@ Romania
 * Primaria Sinaia platform 'Bugetare Participativ'
   * platform: [https://bugetparticipativ.primaria-sinaia.ro/](https://bugetparticipativ.primaria-sinaia.ro/)
 * Primaria Brasov Elinor platform 'Bugetare Participativ'
-  * platform: [https://bugetareparticipativa.primariabrasovenilor.ro/](https://bugetareparticipativa.primariabrasovenilor.ro/)&#x20;
+  * platform: [https://bugetareparticipativa.primariabrasovenilor.ro/](https://bugetareparticipativa.primariabrasovenilor.ro/)
 * Primaria Dumbravita platform 'Dumbravita Decide'
   * platforms: , [https://dumbravitadecide.ro/](https://dumbravitadecide.ro/)
   * repositorio de código compartido: [https://github.com/code4romania/consul](https://github.com/code4romania/consul)
@@ -111,6 +111,10 @@ Spain
   * platform: [https://decide.laspalmasgc.es/](https://decide.laspalmasgc.es/)
   * code base: [https://github.com/LauraConcepcion/consulLPA](https://github.com/LauraConcepcion/consulLPA)
   * mantenedor del repositorio: Usabi ([https://usabi.es/](https://usabi.es/))
+* Ayuntamiento de Valencia platform 'VLC Participa'
+  * platform: [https://vlcparticipa.valencia.es/](https://vlcparticipa.valencia.es/)
+  * code base: [https://github.com/Osoigo/consuldemocracy](https://github.com/Osoigo/consuldemocracy)
+  * maintainer: Osoigo Next ([https://www.osoigonext.com/](https://www.osoigonext.com/))&#x20;
 
 Scotland
 
@@ -131,4 +135,4 @@ Uruguay
 
 * Intendencia de Montevideo platform 'Montevideo Participa'
   * platform: [https://participa.montevideo.gub.uy/](https://participa.montevideo.gub.uy/)
-  * code base:&#x20;
+  * code base:

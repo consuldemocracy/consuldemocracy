@@ -1,26 +1,26 @@
-# Documentación de la API
+# GraphQL
 
-* [Características](#caracteristicas)
-* [GraphQL](#graphql)
-* [Haciendo peticiones a la API](#haciendo-peticiones-a-la-api)
-  * [Clientes soportados](#clientes-soportados)
-    * [GraphiQL](#graphiql)
-    * [Postman](#postman)
-    * [Librerías HTTP](#librerias-http)
-* [Información disponible](#informacion-disponible)
-* [Ejemplos de consultas](#ejemplos-de-consultas)
-  * [Recuperar un único elemento de una colección](#recuperar-un-unico-elemento-de-una-coleccion)
-  * [Recuperar una colección completa](#recuperar-una-coleccion-completa)
-    * [Paginación](#paginacion)
-  * [Acceder a varios recursos en una única petición](#acceder-a-varios-recursos-en-una-unica-peticion)
-* [Limitaciones de seguridad](#limitaciones-de-seguridad)
-  * [Ejemplo de consulta demasiado profunda](#ejemplo-de-consulta-demasiado-profunda)
-  * [Ejemplo de consulta demasiado compleja](#ejemplo-de-consulta-demasiado-compleja)
-* [Ejemplos de código](#ejemplos-de-codigo)
-  * [Ejemplo sencillo](#ejemplo-sencillo)
-  * [Ejemplo con paginación](#ejemplo-con-paginacion)
+* [Características](graphql.md#caracteristicas)
+* [GraphQL](graphql.md#graphql)
+* [Haciendo peticiones a la API](graphql.md#haciendo-peticiones-a-la-api)
+  * [Clientes soportados](graphql.md#clientes-soportados)
+    * [GraphiQL](graphql.md#graphiql)
+    * [Postman](graphql.md#postman)
+    * [Librerías HTTP](graphql.md#librerias-http)
+* [Información disponible](graphql.md#informacion-disponible)
+* [Ejemplos de consultas](graphql.md#ejemplos-de-consultas)
+  * [Recuperar un único elemento de una colección](graphql.md#recuperar-un-unico-elemento-de-una-coleccion)
+  * [Recuperar una colección completa](graphql.md#recuperar-una-coleccion-completa)
+    * [Paginación](graphql.md#paginacion)
+  * [Acceder a varios recursos en una única petición](graphql.md#acceder-a-varios-recursos-en-una-unica-peticion)
+* [Limitaciones de seguridad](graphql.md#limitaciones-de-seguridad)
+  * [Ejemplo de consulta demasiado profunda](graphql.md#ejemplo-de-consulta-demasiado-profunda)
+  * [Ejemplo de consulta demasiado compleja](graphql.md#ejemplo-de-consulta-demasiado-compleja)
+* [Ejemplos de código](graphql.md#ejemplos-de-codigo)
+  * [Ejemplo sencillo](graphql.md#ejemplo-sencillo)
+  * [Ejemplo con paginación](graphql.md#ejemplo-con-paginacion)
 
-<h2 id="caracteristicas">Características</h2>
+## Características <a href="#caracteristicas" id="caracteristicas"></a>
 
 * API de sólo lectura
 * Acceso público, sin autenticación
@@ -28,13 +28,13 @@
   * El tamaño máximo (y por defecto) de registros por página es 25
   * La profundidad máxima de las consultas es de 8 niveles
   * Como máximo se pueden solicitar 2 colecciones en una misma consulta
-  * Soporte para peticiones GET (consulta dentro del *query string*) y POST (consulta dentro del *body*, como `application/json` o `application/graphql`).
+  * Soporte para peticiones GET (consulta dentro del _query string_) y POST (consulta dentro del _body_, como `application/json` o `application/graphql`).
 
 ## GraphQL
 
 La API de Consul Democracy utiliza [GraphQL](https://graphql.org), en concreto la [implementación en Ruby](http://graphql-ruby.org/). Si no estás familiarizado con este tipo de APIs, te recomendamos consultar la [documentación oficial de GraphQL](https://graphql.org/learn/).
 
-Una de las características que diferencian una API REST de una GraphQL es que con esta última es posible construir *consultas personalizadas*, de forma que el servidor nos devuelva únicamente la información en la que estamos interesados.
+Una de las características que diferencian una API REST de una GraphQL es que con esta última es posible construir _consultas personalizadas_, de forma que el servidor nos devuelva únicamente la información en la que estamos interesados.
 
 Las consultas en GraphQL están escritas siguiendo un formato que presenta ciertas similitudes con el formato JSON, por ejemplo:
 
@@ -72,10 +72,10 @@ Las respuestas son en formato JSON:
 
 Siguiendo las [directrices oficiales](http://graphql.org/learn/serving-over-http/), la API de Consul Democracy soporta los siguientes tipos de peticiones:
 
-* Peticiones GET, con la consulta dentro del *query string*.
+* Peticiones GET, con la consulta dentro del _query string_.
 * Peticiones POST
-  * Con la consulta dentro del *body*, con `Content-Type: application/json`
-  * Con la consulta dentro del *body*, con `Content-Type: application/graphql`
+  * Con la consulta dentro del _body_, con `Content-Type: application/json`
+  * Con la consulta dentro del _body_, con `Content-Type: application/graphql`
 
 ### Clientes soportados
 
@@ -91,7 +91,7 @@ Esta sección contiene algunos ejemplos sobre cómo hacer las peticiones a trav�
 
 [GraphiQL](https://github.com/graphql/graphiql) es una interfaz de navegador para realizar consultas a una API GraphQL, así como una fuente adicional de documentación. Consul Democracy utiliza la gema [graphiql-rails](https://github.com/rmosolgo/graphiql-rails) para acceder a esta interfaz en la ruta `/graphiql`; esta es la mejor forma de familiarizarse con una API basada en GraphQL.
 
-![Interfaz de GraphiQL](../../img/graphql/graphiql.png)
+![Interfaz de GraphiQL](../.gitbook/assets/graphiql.png)
 
 Tiene tres paneles principales:
 
@@ -101,49 +101,49 @@ Tiene tres paneles principales:
 
 #### Postman
 
-Ejemplo de petición `GET`, con la consulta como parte del *query string*:
+Ejemplo de petición `GET`, con la consulta como parte del _query string_:
 
-![Petición GET con Postman, con la consulta en la URL del navegador](../../img/graphql/graphql-postman-get.png)
+![Petición GET con Postman, con la consulta en la URL del navegador](../.gitbook/assets/graphql-postman-get.png)
 
-Ejemplo de petición `POST`, con la consulta como parte del *body* y codificada como `application/json`:
+Ejemplo de petición `POST`, con la consulta como parte del _body_ y codificada como `application/json`:
 
-![Pestaña "Headers" de Postman, con la clave "Content-Type" con valor "application/json"](../../img/graphql/graphql-postman-post-headers.png)
+![Pestaña "Headers" de Postman, con la clave "Content-Type" con valor "application/json"](../.gitbook/assets/graphql-postman-post-headers.png)
 
 La consulta debe estar ubicada en un documento JSON válido, como valor de la clave `"query"`:
 
-![Pestaña "Body" de Postman, con la consulta dentro de la clave "query"](../../img/graphql/graphql-postman-post-body.png)
+![Pestaña "Body" de Postman, con la consulta dentro de la clave "query"](../.gitbook/assets/graphql-postman-post-body.png)
 
-<h4 id="librerias-http">Librerías HTTP</h4>
+#### Librerías HTTP <a href="#librerias-http" id="librerias-http"></a>
 
 Es posible utilizar cualquier librería HTTP de lenguajes de programación.
 
-**IMPORTANTE**: Algunos servidores podrían tener protocolos de seguridad que hagan necesario incluir un *User Agent* perteneciente a un navegador para que la petición no sea descartada. Por ejemplo:
+**IMPORTANTE**: Algunos servidores podrían tener protocolos de seguridad que hagan necesario incluir un _User Agent_ perteneciente a un navegador para que la petición no sea descartada. Por ejemplo:
 
 `User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/116.0`
 
-<h2 id="informacion-disponible">Información disponible</h2>
+## Información disponible <a href="#informacion-disponible" id="informacion-disponible"></a>
 
 El directorio `app/graphql/types/` contiene una lista completa de los modelos (y sus campos) que están expuestos actualmente en la API.
 
 La lista de modelos es la siguiente:
 
-| Modelo                  | Descripción                  |
-| ----------------------- | ---------------------------- |
-| `User`                  | Usuarios                     |
-| `Debate`                | Debates                      |
-| `Proposal`              | Propuestas                   |
-| `Budget`                | Presupuestos participativos  |
-| `Budget::Investment`    | Proyectos de gasto           |
-| `Comment`               | Comentarios en debates, propuestas y otros comentarios |
-| `Milestone`             | Hitos en propuestas, proyectos de gasto y procesos |
-| `Geozone`               | Geozonas (distritos)         |
-| `ProposalNotification`  | Notificaciones asociadas a propuestas |
-| `Tag`                   | Tags en debates y propuestas |
-| `Vote`                  | Información sobre votos      |
+| Modelo                 | Descripción                                            |
+| ---------------------- | ------------------------------------------------------ |
+| `User`                 | Usuarios                                               |
+| `Debate`               | Debates                                                |
+| `Proposal`             | Propuestas                                             |
+| `Budget`               | Presupuestos participativos                            |
+| `Budget::Investment`   | Proyectos de gasto                                     |
+| `Comment`              | Comentarios en debates, propuestas y otros comentarios |
+| `Milestone`            | Hitos en propuestas, proyectos de gasto y procesos     |
+| `Geozone`              | Geozonas (distritos)                                   |
+| `ProposalNotification` | Notificaciones asociadas a propuestas                  |
+| `Tag`                  | Tags en debates y propuestas                           |
+| `Vote`                 | Información sobre votos                                |
 
 ## Ejemplos de consultas
 
-<h3 id="recuperar-un-unico-elemento-de-una-coleccion">Recuperar un único elemento de una colección</h3>
+### Recuperar un único elemento de una colección <a href="#recuperar-un-unico-elemento-de-una-coleccion" id="recuperar-un-unico-elemento-de-una-coleccion"></a>
 
 ```graphql
 {
@@ -169,7 +169,7 @@ Respuesta:
 }
 ```
 
-<h3 id="recuperar-una-coleccion-completa">Recuperar una colección completa</h3>
+### Recuperar una colección completa <a href="#recuperar-una-coleccion-completa" id="recuperar-una-coleccion-completa"></a>
 
 ```graphql
 {
@@ -206,7 +206,7 @@ Respuesta:
 }
 ```
 
-<h4 id="paginacion">Paginación</h4>
+#### Paginación <a href="#paginacion" id="paginacion"></a>
 
 Actualmente el número máximo (y por defecto) de elementos que se devuelven en cada página está establecido a 25. Para poder navegar por las distintas páginas, es necesario solicitar además información relativa al `endCursor`:
 
@@ -263,7 +263,7 @@ Para recuperar la siguiente página, hay que pasar como parámetro el cursor rec
 }
 ```
 
-<h3 id="acceder-a-varios-recursos-en-una-unica-peticion">Acceder a varios recursos en una única petición</h3>
+### Acceder a varios recursos en una única petición <a href="#acceder-a-varios-recursos-en-una-unica-peticion" id="acceder-a-varios-recursos-en-una-unica-peticion"></a>
 
 Esta consulta solicita información relativa a varios modelos distintos en una única petición: `Proposal`, `User`, `Geozone` y `Comment`:
 
@@ -425,7 +425,7 @@ La respuesta:
 }
 ```
 
-<h2 id="ejemplos-de-codigo">Ejemplos de código</h2>
+## Ejemplos de código <a href="#ejemplos-de-codigo" id="ejemplos-de-codigo"></a>
 
 ### Ejemplo sencillo
 
@@ -463,7 +463,7 @@ puts "Response code: #{response.code}"
 puts "Response body: #{response.body}"
 ```
 
-<h3 id="ejemplo-con-paginacion">Ejemplo con paginación</h3>
+### Ejemplo con paginación <a href="#ejemplo-con-paginacion" id="ejemplo-con-paginacion"></a>
 
 Y este es un ejemplo un tanto más complejo usando paginación, una vez más accediendo a la API de la demo de Consul Democracy:
 

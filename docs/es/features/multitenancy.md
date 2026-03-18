@@ -1,4 +1,4 @@
-# Multientidad
+# Multitenancy
 
 ## Qué es multientidad y cómo funciona
 
@@ -60,7 +60,7 @@ Tras habilitar esta opción, reinicia la aplicación.
 
 Una vez habilitada la funcionalidad de multientidad y reiniciada la aplicación, aparecerá una nueva sección "Multientidad" dentro del menú "Configuración" de la administración de Consul Democracy.
 
-![Nueva sección con el listado de entidades, con su nombre y dominio o subdominio](../../img/multitenancy/index-es.png)
+![Nueva sección con el listado de entidades, con su nombre y dominio o subdominio](../.gitbook/assets/index-es.png)
 
 Esta sección solamente estará disponible desde la entidad "principal" (la que se crea por defecto). Las entidades que se creen desde aquí no tendrán acceso a esta sección y por tanto no podrán a su vez añadir o editar nuevas entidades.
 
@@ -68,7 +68,7 @@ Dado que eliminar una entidad borraría **todos** los datos relacionados con esa
 
 La interfaz de administración de entidades es muy sencilla, necesitando solamente un nombre y un subdominio.
 
-![Formulario de edición de entidad, con nombre y dominio o subdominio; es posible seleccionar si se utiliza un dominio o un subdominio](../../img/multitenancy/form-es.png)
+![Formulario de edición de entidad, con nombre y dominio o subdominio; es posible seleccionar si se utiliza un dominio o un subdominio](../.gitbook/assets/form-es.png)
 
 El nombre se usará como nombre del sitio por defecto para nuevas entidades. Nótese que, una vez una entidad se ha creado, cambiar este nombre no tendrá ningún efecto. Para cambiar el nombre del sitio de una entidad existente, edítalo en la sección "Configuración global" de la administración de esa entidad.
 
@@ -87,11 +87,11 @@ Existen dos posibles maneras de habilitar este modo de gestión de multientidad:
 * Añadiendo `config.multitenancy_management_mode = true` dentro de la clase `class Application < Rails::Application` del fichero `config/application_custom.rb`
 * Cambiando la línea `multitenancy_management_mode: false` por `multitenancy_management_mode: true` (o añadiéndola si no está ya ahí) en el fichero `config/secrets.yml`
 
-Recomendamos utilizar el mismo método que se ha utilizado para habilitar la funcionalidad de multientidad en la sección [Paso común a todas las instalaciones de Consul Democracy](#paso-común-a-todas-las-instalaciones-de-consul-democracy).
+Recomendamos utilizar el mismo método que se ha utilizado para habilitar la funcionalidad de multientidad en la sección [Paso común a todas las instalaciones de Consul Democracy](multitenancy.md#paso-común-a-todas-las-instalaciones-de-consul-democracy).
 
 Tras habilitar esta opción, reinicia la aplicación y podrás ver el panel de administración de la siguiente manera:
 
-![El panel de administración sólo contiene enlaces a multientidad y administradores](../../img/multitenancy/management-mode-es.png)
+![El panel de administración sólo contiene enlaces a multientidad y administradores](../.gitbook/assets/management-mode-es.png)
 
 ## Pasos a realizar tras añadir una entidad
 
@@ -121,7 +121,7 @@ Después de esto, actualiza la configuración de tu servidor web (por defecto, `
 
 Para disminuir la probabilidad de que los correos enviados por la aplicación sean identificados como fraudulentos, puede que quieras editar los campos "Nombre email remitente" y "Dirección email remitente" en el panel de administración de la nueva entidad. Los valores por defecto de estos campos son el nombre y el subdominio que se utilizaron al crear la entidad.
 
-![Campos para editar el nombre y la dirección del remitente](../../img/multitenancy/email-settings-es.png)
+![Campos para editar el nombre y la dirección del remitente](../.gitbook/assets/email-settings-es.png)
 
 Si quieres utilizar una configuración de envío de correo electrónico diferente para una entidad, como podría ser una que utilice `jupiter` como subdominio, edita el fichero `config/secrets.yml` de la siguiente manera:
 
@@ -193,7 +193,7 @@ Para definir el idioma por defecto y los idiomas habilitados en una entidad, acc
 
 En esta página encontrarás un formulario para elegir el idioma por defecto y los idiomas habilitados para esta entidad (nota: el formulario es un tanto distinto cuando hay pocos idiomas disponibles):
 
-![Formulario con un selector para el idioma por defecto y una lista de casillas para seleccionar qué idiomas habilitar](../../img/multitenancy/languages-es.png)
+![Formulario con un selector para el idioma por defecto y una lista de casillas para seleccionar qué idiomas habilitar](../.gitbook/assets/languages-es.png)
 
 Tras elegir los idiomas, guarda los cambios, y el selector de idiomas en la parte superior de la página se actualizará de forma inmediata.
 
@@ -241,8 +241,8 @@ El mismo principio funciona también con componentes, solo que en este caso, al 
 Por ejemplo, si estás escribiendo una vista personalizada del componente `admin/action_component` para la entidad `via-lactea` pero no vas a cambiar esta vista para la entidad por defecto:
 
 1. Crea el archivo `app/components/custom/admin/action_component.rb` tal y como se indica en la [documentación de personalización de componentes](../customization/components.md)
-1. Crea la vista personalizada para la entidad `via-lactea` y guárdala en `app/components/custom/admin/action_component.html+via-lactea.erb`
-1. Entra en el directorio `app/components/custom/admin/` y ejecuta `ln -s ../../admin/action_component.html.erb`
+2. Crea la vista personalizada para la entidad `via-lactea` y guárdala en `app/components/custom/admin/action_component.html+via-lactea.erb`
+3. Entra en el directorio `app/components/custom/admin/` y ejecuta `ln -s ../../admin/action_component.html.erb`
 
 ## Limitaciones actuales de multientidad
 
