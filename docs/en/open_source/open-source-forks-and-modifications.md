@@ -16,7 +16,7 @@ Denmark
 * Aarhus Kommune platform 'Sammen om Aarhus'
   * platform: [https://www.sammenomaarhus.dk/](https://www.sammenomaarhus.dk/)
   * code base: [https://github.com/OS2Consul/os2consul](https://github.com/OS2Consul/os2consul); [https://github.com/bellcom/consul](https://github.com/bellcom/consul)
-  * maintainer: Bellcom ([https://www.bellcom.dk/](https://www.bellcom.dk/))&#x20;
+  * maintainer: Bellcom ([https://www.bellcom.dk/](https://www.bellcom.dk/))
 
 Germany
 
@@ -88,7 +88,7 @@ Slovenia
 Spain
 
 * Ayuntamiento de Madrid platform 'Decide Madrid'
-  * platform: https://decide.madrid.es/&#x20;
+  * platform: https://decide.madrid.es/
   * code base: [https://github.com/AyuntamientoMadrid/consul](https://github.com/AyuntamientoMadrid/consul)
   * maintainer: Ayuntamiento de Madrid
 * Ajuntament de Castelló platform 'Decide Castello'
@@ -111,6 +111,10 @@ Spain
   * platform: [https://decide.laspalmasgc.es/](https://decide.laspalmasgc.es/)
   * code base: [https://github.com/LauraConcepcion/consulLPA](https://github.com/LauraConcepcion/consulLPA)
   * maintainer: Usabi ([https://usabi.es/](https://usabi.es/))
+* Ayuntamiento de Valencia platform 'VLC Participa'
+  * platform: [https://vlcparticipa.valencia.es/](https://vlcparticipa.valencia.es/)
+  * code base: [https://github.com/Osoigo/consuldemocracy](https://github.com/Osoigo/consuldemocracy)
+  * maintainer: Osoigo Next ([https://www.osoigonext.com/](https://www.osoigonext.com/))&#x20;
 
 Scotland
 
@@ -127,11 +131,9 @@ Scotland
   * code base: [https://github.com/CoslaDigital/consul-latest](https://github.com/CoslaDigital/consul-latest)
   * maintainer of all Scottish repos: Cosla ([https://www.cosla.gov.uk/](https://www.cosla.gov.uk/))
 
-
-
 Uruguay
 
 * Intendencia de Montevideo platform 'Montevideo Participa':
   * platform: [https://participa.montevideo.gub.uy/](https://participa.montevideo.gub.uy/)
-  * code base:&#x20;
+  * code base:
   * maintainer: Intendencia de Montevideo ([https://montevideo.gub.uy/](https://montevideo.gub.uy/))

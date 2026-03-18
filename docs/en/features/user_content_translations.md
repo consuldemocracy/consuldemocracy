@@ -1,4 +1,4 @@
-# Translations of user content
+# User content translations
 
 ## Remote translations on demand by the user
 
@@ -44,21 +44,18 @@ Once we have the api key in our `secrets.yml` and the feature enabled, users wil
 
 We attach some screenshots of how the application interacts with our users:
 
-* When a user visits a page in a language without translated content, an informative text will appear at the top of the page next to a button to request the translation. (**Note:** *If a user visits a page with a language not supported by the translation service, no text or translation button will be displayed. See section: Available languages for remote translation*)
+*   When a user visits a page in a language without translated content, an informative text will appear at the top of the page next to a button to request the translation. (**Note:** _If a user visits a page with a language not supported by the translation service, no text or translation button will be displayed. See section: Available languages for remote translation_)
 
-  ![The text "The content of this page is not available in your language" is displayed next to a "Translate page" button at the top of the page](../../img/translations/remote_translations/display-text-and-button-en.png)
+    ![The text "The content of this page is not available in your language" is displayed next to a "Translate page" button at the top of the page](../.gitbook/assets/display-text-and-button-en.png)
+*   Once the user clicks the `Translate page` button, the translations are enqueued and the page is reloaded with a notice (_informing that the translations have been requested correctly_) and an informative text in the header (_explaining when you will be able to see these translations_).
 
-* Once the user clicks the `Translate page` button, the translations are enqueued and the page is reloaded with a notice (*informing that the translations have been requested correctly*) and an informative text in the header (*explaining when you will be able to see these translations*).
+    ![Display notice and text after enqueued translations](../.gitbook/assets/display-notice-and-text-after-enqueued-en.png)
+*   If a user visits a page that does not have translations but its translations have already been requested by another user, the application will not show the translate button but an informative text in the header (_explaining when you will be able to see these translations_).
 
-  ![Display notice and text after enqueued translations](../../img/translations/remote_translations/display-notice-and-text-after-enqueued-en.png)
+    ![Display text explaining that translations are pending](../.gitbook/assets/display-text-translations-pending-en.png)
+*   The translation request, response processing and data saving are processed by background jobs and, as soon as they've finished, the user will be able to read them after refreshing the page.
 
-* If a user visits a page that does not have translations but its translations have already been requested by another user, the application will not show the translate button but an informative text in the header (*explaining when you will be able to see these translations*).
-
-  ![Display text explaining that translations are pending](../../img/translations/remote_translations/display-text-translations-pending-en.png)
-
-* The translation request, response processing and data saving are processed by background jobs and, as soon as they've finished, the user will be able to read them after refreshing the page.
-
-  ![Display translated content](../../img/translations/remote_translations/display-translated-content-en.png)
+    ![Display translated content](../.gitbook/assets/display-translated-content-en.png)
 
 ### Available languages for remote translation
 
@@ -72,22 +69,21 @@ Of all the languages currently available in Consul Democracy (`available_locales
 
 ### Pricing
 
-The translation service used has the most competitive [pricing](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/translator/).
-The price for each 1 Million characters translated is $10 and there is no fixed cost per month.
+The translation service used has the most competitive [pricing](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/translator/). The price for each 1 Million characters translated is $10 and there is no fixed cost per month.
 
 Although technical measures have been taken to prevent misuse of this service, we recommend the creation of Alerts offered by Azure so that an Administrator can be notified in the event of detecting unusual use of the service. This service has a cost of $0.10 per month.
 
 To create an Alert in Azure we must follow the following steps:
 
 1. Sign in to the **Azure Portal**.
-1. Access the **Translator** service created earlier.
-1. Go to **Monitoring > Alerts** in the side menu:
+2. Access the **Translator** service created earlier.
+3. Go to **Monitoring > Alerts** in the side menu:
    1. Go to **Create alert rule**.
-   1. In **Select a signal** select `Text Characters Translated`.
-   1. Once selected we must define the logic of the Alert to suit our needs. Ex: Fill "Operator" field with "Greater than" option, fill "Aggregation type" field with "Total" option and fill "Threshold value" field with the number of characters we consider should be translated before being notified. In this section you can also set the time period and frequency of evaluation.
-   1. In order to be notified we have to create an **Action Group** and associate it with this Alert we're creating. To do this, access the button **Create** and fill out the form. As you can see there are different types of actions, we must select **Email/SMS/Push/Voice** and configure the option that we consider convenient according to our needs.
-   1. Once this group of actions has been created, it is directly associated with the rule we are creating.
-   1. Finally, all you have to do is add a name and click on the **Review + create**
+   2. In **Select a signal** select `Text Characters Translated`.
+   3. Once selected we must define the logic of the Alert to suit our needs. Ex: Fill "Operator" field with "Greater than" option, fill "Aggregation type" field with "Total" option and fill "Threshold value" field with the number of characters we consider should be translated before being notified. In this section you can also set the time period and frequency of evaluation.
+   4. In order to be notified we have to create an **Action Group** and associate it with this Alert we're creating. To do this, access the button **Create** and fill out the form. As you can see there are different types of actions, we must select **Email/SMS/Push/Voice** and configure the option that we consider convenient according to our needs.
+   5. Once this group of actions has been created, it is directly associated with the rule we are creating.
+   6. Finally, all you have to do is add a name and click on the **Review + create**
 
 ### Add a new translation service
 
@@ -125,16 +121,13 @@ To enable this feature you must access from the administration panel to the sect
 
 Depending on whether we enable or disable the **Translation Interface** feature we will see the forms as follows:
 
-* When the translation interface is active:
-  As you can see in the image below, the translation interface has two selectors, the first one "Select language" is to switch between enabled languages and the second one "Add language" is to add new languages to the form. Translatable fields appears with a blue background to facilitate users to distinguish between translatable and not translatable fields.
+*   When the translation interface is active: As you can see in the image below, the translation interface has two selectors, the first one "Select language" is to switch between enabled languages and the second one "Add language" is to add new languages to the form. Translatable fields appears with a blue background to facilitate users to distinguish between translatable and not translatable fields.
 
-  Additionally, the interface provides a link `Remove language` to delete the current language shown at "Select language". If a user accidentally removes a translation they can recover it by re-adding it to the form.
+    Additionally, the interface provides a link `Remove language` to delete the current language shown at "Select language". If a user accidentally removes a translation they can recover it by re-adding it to the form.
 
-  This feature is visible during the creation and edition of translatable resources.
+    This feature is visible during the creation and edition of translatable resources.
 
-  ![Translations interface enabled](../../img/translations/interface_translations/translations-interface-enabled-en.png)
+    ![Translations interface enabled](../.gitbook/assets/translations-interface-enabled-en.png)
+*   When the translation interface is disabled: When this feature is disabled users will see standard forms without the translation interface and without highlighted translation fields.
 
-* When the translation interface is disabled:
-  When this feature is disabled users will see standard forms without the translation interface and without highlighted translation fields.
-
-  ![Translations interface disabled](../../img/translations/interface_translations/translations-interface-disabled-en.png)
+    ![Translations interface disabled](../.gitbook/assets/translations-interface-disabled-en.png)
