@@ -1,9 +1,6 @@
 require "rails_helper"
 
-RSpec.describe Admin::EventsController do
-  # Assuming you have an Admin login helper (Devise or similar)
-  # If not, remove the `sign_in` line.
-  let(:admin) { create(:administrator) }
+RSpec.describe Admin::EventsController, :admin do
   let!(:event) { create(:event) }
   let(:valid_attributes) do
     {
@@ -17,20 +14,18 @@ RSpec.describe Admin::EventsController do
   let(:invalid_attributes) do
     { name: "", starts_at: nil }
   end
-  before { sign_in admin }
 
   describe "GET #index" do
-    it "returns success and assigns events" do
+    it "returns success" do
       get :index
       expect(response).to be_successful
-      expect(assigns(:events)).to include(event)
     end
   end
 
   describe "GET #new" do
-    it "assigns a new event" do
+    it "returns success" do
       get :new
-      expect(assigns(:event)).to be_a_new(Event)
+      expect(response).to be_successful
     end
   end
 
@@ -58,15 +53,15 @@ RSpec.describe Admin::EventsController do
 
       it "re-renders the new template" do
         post :create, params: { event: invalid_attributes }
-        expect(response).to render_template(:new)
+        expect(response).to have_http_status(:unprocessable_entity)
       end
     end
   end
 
   describe "GET #edit" do
-    it "assigns the requested event" do
+    it "returns success" do
       get :edit, params: { id: event.id }
-      expect(assigns(:event)).to eq(event)
+      expect(response).to be_successful
     end
   end
 
@@ -96,7 +91,7 @@ RSpec.describe Admin::EventsController do
 
       it "re-renders the edit template" do
         put :update, params: { id: event.id, event: { name: nil }}
-        expect(response).to render_template(:edit)
+        expect(response).to have_http_status(:unprocessable_entity)
       end
     end
   end

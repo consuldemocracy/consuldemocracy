@@ -16,7 +16,7 @@ class Admin::EventsController < Admin::BaseController
     if @event.save
       redirect_to admin_events_path, notice: "Event created successfully."
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -27,7 +27,7 @@ class Admin::EventsController < Admin::BaseController
     if @event.update(event_params)
       redirect_to admin_events_path, notice: "Event updated successfully."
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
