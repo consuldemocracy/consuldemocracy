@@ -123,7 +123,7 @@ id:
       download: "Unduh ringkasan"
       top_comments:
         zero: "Tidak ada komentar"
-        other: "%{count} komentar \n\nTop Komentar"
+        other: "Top Komentar"
       most_voted_comments: "Komentar paling populer"
       no_allegation: "Tidak ada komentar"
       process_empty: "Proses ini tidak mencakup fase partisipasi apa pun"
