@@ -14,8 +14,8 @@ nl:
     total: "Totaal"
     geozone: "Regio's"
     no_demographic_data:
-      one: "Een\n* Er zijn geen demografische gegevens voor 1 deelnemer.\nAndere\n* Er zijn geen demografische gegevens voor %{count} deelnemers."
-      other: "Er zijn geen demografische gegevens voor %{count} deelnemers."
+      one: "* Er zijn geen demografische gegevens voor 1 deelnemer."
+      other: "* Er zijn geen demografische gegevens voor %{count} deelnemers."
     budgets:
       link: "Statistieken"
       page_title: "%{budget} - deelname statistieken"
