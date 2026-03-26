@@ -6,8 +6,9 @@ class MachineLearning::CommentsSummaryComponent < ApplicationComponent
   end
 
   def render?
-    # Ensure this matches your actual Setting key (usually feature.machine_learning)
-    MachineLearning.enabled? && body.present?
+    MachineLearning.enabled? &&
+      Setting["machine_learning.comments_summary"].present? &&
+      body.present?
   end
 
   private
