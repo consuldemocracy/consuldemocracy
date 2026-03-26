@@ -1,6 +1,15 @@
 section "Creating DEMO Participatory Budgets" do
   current_year = Date.current.year
 
+  budget_accepting = Budget.create!(name: "Participatory budgeting #{current_year} (accepting projects)",
+                                    slug: "participatory-budgeting-#{current_year}-accepting",
+                                    currency_symbol: "€",
+                                    phase: "accepting",
+                                    published: true)
+
+  accepting_group = budget_accepting.groups.create!(name: "City projects", slug: "city-projects-accepting")
+  accepting_group.headings.create!(name: "City", slug: "city-accepting", price: 60000000, population: 3000000)
+
   budget = Budget.create!(name: "Participatory budgeting #{current_year}",
                           slug: "participatory-budgeting-#{current_year}",
                           currency_symbol: "€",
