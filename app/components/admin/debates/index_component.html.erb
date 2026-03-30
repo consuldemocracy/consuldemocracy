@@ -5,6 +5,7 @@
 <% if debates.any? %>
   <%= render Admin::SearchComponent.new(label: t("admin.shared.search.label.debates")) %>
 
+  <%= render Shared::DownloadCsvLinkComponent.new(path_helper: :admin_debates_path) %>
   <h3><%= page_entries_info debates %></h3>
 
   <table>

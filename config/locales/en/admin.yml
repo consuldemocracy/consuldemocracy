@@ -523,6 +523,10 @@ en:
         author: Author
         title: Debates
         no_debates: There are no debates.
+        list:
+          id: ID
+          title: Debate
+          author: Author
     hidden_debates:
       index:
         filter: Filter
