@@ -68,8 +68,8 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
         create(:remote_translation, remote_translatable: resource, locale: :es)
         visit path_in_spanish
 
-        expect(page).to have_content "En un breve periodo de tiempo refrescando la página " \
-                                     "podrá ver todo el contenido en su idioma"
+        expect(page).to have_content "Por favor, espera 5 segundos y actualiza la página " \
+                                     "para que se muestre el contenido traducido."
         expect(page).not_to have_button "Traducir página"
       end
     end
@@ -151,15 +151,15 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
 
         expect(page).not_to have_button "Traducir página"
         expect(page).to have_content "Se han solicitado correctamente las traducciones."
-        expect(page).to have_content "En un breve periodo de tiempo refrescando la página " \
-                                     "podrá ver todo el contenido en su idioma"
+        expect(page).to have_content "Por favor, espera 5 segundos y actualiza la página " \
+                                     "para que se muestre el contenido traducido."
 
         refresh
 
         expect(page).not_to have_content "Se han solicitado correctamente las traducciones."
         expect(page).not_to have_button "Traducir página"
-        expect(page).to have_content "En un breve periodo de tiempo refrescando la página " \
-                                     "podrá ver todo el contenido en su idioma"
+        expect(page).to have_content "Por favor, espera 5 segundos y actualiza la página " \
+                                     "para que se muestre el contenido traducido."
       end
     end
 

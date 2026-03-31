@@ -19,14 +19,16 @@ describe Layout::RemoteTranslationsButtonComponent do
       I18n.with_locale(:de) { render_inline component }
 
       expect(page).to have_css ".remote-translations-button"
-      expect(page).to have_content "The content of this page is not available in your language"
+      expect(page).to have_content "The original content is not available in your language. " \
+                                   "Would you like to translate it?"
     end
 
     it "displays the text in English with a locale needing parsing" do
       I18n.with_locale(:"zh-CN") { render_inline component }
 
       expect(page).to have_css ".remote-translations-button"
-      expect(page).to have_content "The content of this page is not available in your language"
+      expect(page).to have_content "The original content is not available in your language. " \
+                                   "Would you like to translate it?"
     end
   end
 
@@ -40,14 +42,16 @@ describe Layout::RemoteTranslationsButtonComponent do
       I18n.with_locale(:fr) { render_inline component }
 
       expect(page).to have_css ".remote-translations-button"
-      expect(page).to have_content "El contenido de esta página no está disponible en tu idioma"
+      expect(page).to have_content "El contenido de esta página no está disponible en tu idioma. " \
+                                   "¿Te gustaría traducirlo?"
     end
 
     it "displays the text in Spanish with a locale needing parsing" do
       I18n.with_locale(:"pt-BR") { render_inline component }
 
       expect(page).to have_css ".remote-translations-button"
-      expect(page).to have_content "El contenido de esta página no está disponible en tu idioma"
+      expect(page).to have_content "El contenido de esta página no está disponible en tu idioma. " \
+                                   "¿Te gustaría traducirlo?"
     end
   end
 
