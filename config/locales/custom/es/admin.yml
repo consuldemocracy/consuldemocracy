@@ -1,5 +1,8 @@
 es:
   admin:
+    budget_headings:
+      form:
+        required_support_info: "Si la propuesta obtiene este número de apoyos se avisará a los usuarios que ya no necesita más para poder pasar a la siguiente fase."
     budget_investments:
       index:
         created_before_filter: YYYY-MM-DD
@@ -7,6 +10,7 @@ es:
         filters:
           created_before: Creada antes de
           created_after: Creada después de
+          enough_support: Apoyos suficientes
           with_comments: Con comentarios
           without_comments: Sin comentarios
         list:

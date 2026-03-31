@@ -1,5 +1,8 @@
 en:
   admin:
+    budget_headings:
+      form:
+        required_support_info: "If the investment has this number of support the users will be notified that it doesn't need more to go to the next phase"
     budget_investments:
       index:
         created_before_filter: YYYY-MM-DD
@@ -7,6 +10,7 @@ en:
         filters:
           created_before: Created before
           created_after: Created after
+          enough_support: Enough support
           with_comments: With comments
           without_comments: Without comments
         list:

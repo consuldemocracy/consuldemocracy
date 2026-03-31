@@ -1,0 +1,5 @@
+es:
+  activerecord:
+    attributes:
+      budget/heading:
+        required_support: "Apoyos necesarios"

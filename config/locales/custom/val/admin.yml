@@ -7,6 +7,7 @@ val:
         filters:
           created_before: Creada abans de
           created_after: Creada després de
+          enough_support: Suports suficients
           with_comments: Amb comentaris
           without_comments: Sense comentaris
         list:

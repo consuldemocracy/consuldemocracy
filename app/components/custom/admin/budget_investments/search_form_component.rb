@@ -12,7 +12,8 @@ class Admin::BudgetInvestments::SearchFormComponent
          params["created_before"].blank? &&
          params["created_after"].blank? &&
          params["min_total_supports"].blank? &&
-         params["max_total_supports"].blank?
+         params["max_total_supports"].blank? &&
+         params["enough_support"].blank?
         "hide"
       else
         ""

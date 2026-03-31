@@ -9,7 +9,7 @@
   <div id="advanced_filters" class="<%= advanced_menu_visibility %>" data-toggler=".hide">
     <div class="small-12 column">
       <div class="advanced-filters-content">
-        <% %w[feasible selected undecided unfeasible without_admin without_valuator under_valuation
+        <% %w[feasible selected undecided unfeasible enough_support without_admin without_valuator under_valuation
               valuation_finished winners with_comments without_comments].each do |filter| %>
           <div class="filter">
             <%= check_box_tag "advanced_filters[]", filter, advanced_filters_params.index(filter), id: "advanced_filters_#{filter}" %>
