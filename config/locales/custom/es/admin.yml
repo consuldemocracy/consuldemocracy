@@ -1,0 +1,14 @@
+es:
+  admin:
+    budget_investments:
+      index:
+        created_before_filter: YYYY-MM-DD
+        created_after_filter: YYYY-MM-DD
+        filters:
+          created_before: Creada antes de
+          created_after: Creada después de
+          with_comments: Con comentarios
+          without_comments: Sin comentarios
+        list:
+          ballots: Votos
+          created_at: Fecha de creación

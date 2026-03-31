@@ -1755,7 +1755,7 @@ describe "Admin budget investments", :admin do
       expect(page).to have_content(investment.title)
     end
 
-    scenario "Set cookie with default columns value if undefined" do
+    scenario "Set cookie with default columns value if undefined", :consul do
       visit admin_budget_budget_investments_path(budget)
 
       cookie_value = cookie_by_name("investments-columns")[:value]
@@ -1794,7 +1794,7 @@ describe "Admin budget investments", :admin do
       end
     end
 
-    scenario "Cookie will be updated after change columns selection" do
+    scenario "Cookie will be updated after change columns selection", :consul do
       visit admin_budget_budget_investments_path(budget)
 
       click_button "Columns"
