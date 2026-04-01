@@ -125,7 +125,7 @@ Para aclarar el funcionamiento, se adjuntan unos pantallazos de cómo interactú
 
 * Cuando un usuario accede a una pantalla en un idioma en el que no están disponibles todas las traducciones, le aparecerá un texto en la parte superior de la pantalla y un botón para poder solicitar la traducción. (**Nota:** *En el caso de acceder con un idioma no soportado por el servicio de traducción no se mostrará ningún texto ni botón de traducción. Ver sección: Idiomas disponibles para la traducción remota*)
 
-  ![Se muestra el texto "El contenido de esta página no esta disponible en tu idioma" y al lado el botón de traducción "Traducir página" en la parte superior de la página](../../img/translations/remote_translations/display-text-and-button-es.png)
+  ![Se muestra el texto "El contenido de esta página no está disponible en tu idioma. ¿Te gustaría traducirlo?" y al lado el botón de traducción "Traducir página" en la parte superior de la página](../../img/translations/remote_translations/display-text-and-button-es.png)
 
 * Una vez el usuario pulsa el botón de `Traducir página` se encolan las traducciones y se recarga la pantalla con un notice (*informando que se han solicitado correctamente las traducciones*) y un texto informativo en la cabecera (*explicando cuándo podrá ver estas traducciones*).
 
