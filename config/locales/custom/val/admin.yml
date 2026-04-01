@@ -4,6 +4,7 @@ val:
       index:
         created_before_filter: YYYY-MM-DD
         created_after_filter: YYYY-MM-DD
+        download_current_selection_xlsx: Descarregar XLSX
         filters:
           created_before: Creada abans de
           created_after: Creada després de

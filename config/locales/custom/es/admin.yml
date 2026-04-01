@@ -7,6 +7,7 @@ es:
       index:
         created_before_filter: YYYY-MM-DD
         created_after_filter: YYYY-MM-DD
+        download_current_selection_xlsx: Descargar XLSX
         filters:
           created_before: Creada antes de
           created_after: Creada después de

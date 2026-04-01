@@ -3,6 +3,10 @@
               admin_budget_budget_investments_path(csv_params),
               class: "float-right small clear" %>
 
+  <%= link_to t("admin.budget_investments.index.download_current_selection_xlsx"),
+              admin_budget_budget_investments_path(xlsx_params),
+              class: "float-right small clear" %>
+
   <% if params[:advanced_filters].include?("winners") %>
     <%= render Admin::Budgets::CalculateWinnersButtonComponent.new(budget, from_investments: true) %>
   <% end %>

@@ -1,0 +1,120 @@
+@headers = ["Número de propuesta",
+            "Fecha de creación",
+            "Título",
+            "Descripción",
+            "Distrito",
+            "Proponente",
+            "Apoyos",
+            "Último apoyo",
+            "Apoyos suficientes",
+            "Votos a favor",
+            # TODO: ballot_negativelines_count
+            # "Votos en contra",
+            # "Puntuación Votos",
+            "Presupuesto",
+            "Evaluadores",
+            "Viabilidad",
+            "Evaluación Finalizada",
+            "Seleccionada",
+            # TODO: unidad
+            # "Servicio",
+            "Fase ejecución",
+            "Porcentaje",
+            "Etiquetas",
+            "Autor ID",
+            "Motivo inviable",
+            "Fecha último comentario",
+            "Comentarios",
+            "",
+            "",
+            "",
+            "",
+            ""]
+
+col_widths = [15, 15, 75, 75, 15, 15, 10, 10, 25, 40, 20, 20, 20, 20, 20, 50, 10, 10, 80, 80, 80, 80, 80, 80,
+              80]
+
+wb = xlsx_package.workbook
+title = wb.styles.add_style(b: true, bg_color: "395870", fg_color: "FFFFFF",
+                            alignment: { horizontal: :center })
+
+text_style = wb.styles.add_style(format_code: "@", alignment: { wrap_text: true })
+
+wb.add_worksheet(name: "Propuestas de inversión") do |sheet|
+  sheet.add_row @headers, style: title
+
+  @investments.each do |investment|
+    comments = Comment.where(commentable: investment.id).order(:created_at).map do |comment|
+      "\b" + comment.user.name + " " + comment.created_at.to_datetime.to_s + " \n " +
+        comment.body + " \n "
+    end
+    last_comment = Comment.where(commentable: investment.id).order(created_at: :desc).first
+    valuators = investment.valuators.includes(:user).map(&:name)
+    viability = investment.feasible? ? "Sí" : "No"
+    valuation_finished = investment.valuation_finished? ? "Sí" : "No"
+    last_vote = investment.votes_for.last
+    if last_vote.present?
+      last_vote = last_vote.created_at.strftime("%d-%m-%Y %H:%M")
+    else
+      last_vote = ""
+    end
+    selected = investment.selected? ? "Sí" : "No"
+
+    # TODO: working_group_investment?
+    # if investment.working_group_investment?
+    #   working_group = "Grupo de trabajo por distrito"
+    # else
+    #   working_group = investment.tag_list.include?('ciudadanía'.mb_chars.upcase) ?
+    #     'Ciudadanía' :
+    #     'Ayuntamiento'
+    # end
+    working_group = "TODO"
+
+    milestone = Milestone.where(milestoneable_type: "Budget::Investment",
+                                milestoneable_id: investment.id).order(status_id: :desc).first
+    phase = 0
+    phase_name = ""
+    if milestone.present? && milestone.status_id.present?
+      phase = milestone.status.id
+      phase_name = milestone.status.name
+    end
+    percent = (phase > 0) ? phase * 25 : 0
+    @body = [investment.id,
+             investment.created_at.strftime("%d-%m-%Y"),
+             investment.title,
+             truncate(strip_tags(investment.description), length: 400),
+             investment.heading&.name,
+             working_group,
+             investment.cached_votes_up,
+             last_vote,
+             investment.has_required_support? ? 1 : 0,
+             investment.ballot_lines_count,
+             # TODO: ballot_negativelines_count
+             # investment.ballot_negativelines_count,
+             # investment.final_score,
+             investment.price ||= 0,
+             valuators.join(", "),
+             viability,
+             valuation_finished,
+             selected,
+             # TODO: unidad
+             # investment.unidad,
+             phase_name,
+             number_to_percentage(percent, precision: 0),
+             investment.tag_list.join("; "),
+             investment.author_id,
+             investment.unfeasibility_explanation]
+    if last_comment.present?
+      @body << last_comment.created_at.strftime("%d-%m-%Y")
+    else
+      @body << ""
+    end
+    comments.each { |comment| @body << comment }
+    if comments.empty?
+      sheet.add_row @body, style: text_style
+    else
+      sheet.add_row @body, style: text_style, height: 60
+    end
+    sheet.column_widths *col_widths
+  end
+end
