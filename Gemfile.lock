@@ -83,8 +83,9 @@ GEM
       public_suffix (>= 2.0.2, < 8.0)
     aes_key_wrap (1.1.0)
     afm (1.0.0)
-    ahoy_matey (5.4.1)
+    ahoy_matey (5.4.2)
       activesupport (>= 7.1)
+      cgi
       device_detector (>= 1)
       safely_block (>= 0.4)
     airbrake (13.0.5)
@@ -851,7 +852,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on (~> 13.0.0)
   acts_as_votable (~> 0.14.0)
-  ahoy_matey (~> 5.4.1)
+  ahoy_matey (~> 5.4.2)
   airbrake (~> 13.0.5)
   ancestry (~> 5.1.0)
   audited (~> 5.8.0)
