@@ -1,7 +1,7 @@
 //= link ckeditor/application.css
 //= link ckeditor/application.js
 //
-//= link_tree ../images
+//= link_directory ../images .png
 //= link application.css
 //= link application-rtl.css
 //= link administration.css
@@ -17,5 +17,5 @@
 //= link noscript.css
 //= link print.css
 //= link pdf_fonts.css
-//= link_tree ../../../vendor/assets/images
+// //= link_tree ../../../vendor/assets/images
 //= link_tree ../../../node_modules/leaflet/dist/images
