@@ -6,6 +6,7 @@ class Legislation::Process < ApplicationRecord
   include Documentable
   include SDG::Relatable
   include Searchable
+  include CalendarItem
 
   acts_as_paranoid column: :hidden_at
   acts_as_taggable_on :customs

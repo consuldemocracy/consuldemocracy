@@ -227,6 +227,7 @@ en:
           zero: "You don't have new notifications"
         notifications: Notifications
       sdg: "SDG"
+      events: "Events"
     skip_to_main_content: "Skip to main content"
   notifications:
     index:

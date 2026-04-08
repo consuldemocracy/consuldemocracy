@@ -48,3 +48,6 @@ en:
             file:
               extension: "Given file format is wrong. The allowed file format is: %{valid_extensions}."
               headers: "Given file headers are wrong. The file headers must have the following names: %{required_headers}."
+  events:
+    labels:
+      manual_event: "Manually Created Event"

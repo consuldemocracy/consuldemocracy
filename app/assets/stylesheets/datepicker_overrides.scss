@@ -1,99 +1,285 @@
-// Overrides styles of jquery-ui/datepicker
-//
+// ---------------------------------------------------------
+// Shared Styles (jQuery UI + Simple Calendar)
+// ---------------------------------------------------------
 
-.ui-datepicker-header {
-  @extend %brand-background;
-  font-weight: bold;
-}
+// 1. The Container
+.ui-datepicker,
+.simple-calendar {
 
-.ui-datepicker-calendar {
-
-  .ui-state-hover,
-  .ui-state-active {
-    @extend %brand-background;
-
-    .ui-state-default:not(&) {
-      background: $highlight;
-    }
-  }
-
-  thead {
-
-    tr th {
-      @include brand-border;
-    }
-  }
-}
-
-.ui-datepicker {
+  // This prevents dates from disappearing if they inherit '#fff' from a parent container.
+  color: #333;
+  font-family: inherit;
   padding: 0;
   z-index: 4 !important;
 
-  .ui-datepicker-prev,
-  .ui-datepicker-next {
-    color: inherit;
-    cursor: pointer;
-    font-family: "icons" !important;
-    font-size: rem-calc(24);
-    font-weight: normal;
-    height: rem-calc(30);
-    line-height: $line-height;
-    position: absolute;
-    top: 4px;
-    width: rem-calc(30);
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
-  .ui-datepicker-prev::after {
-    content: "\62";
-  }
-
-  .ui-datepicker-next::after {
-    content: "\63";
-  }
-
   table {
     border: 1px solid $border;
+    border-collapse: collapse;
     border-top: 0;
+    table-layout: fixed; // Ensures event bars don't stretch the cells weirdly
+    width: 100%;
   }
 
   tr {
     border-bottom: 1px solid $border;
-
-    &:last-child {
-      border-bottom: 0;
-    }
-
-    &:nth-child(odd) {
-      background: none;
-    }
+    &:last-child { border-bottom: 0; }
+    &:nth-child(odd) { background: none; }
   }
 
-  td {
+  td,
+  th {
     border-right: 1px solid $border;
     padding: 0;
+    &:last-child { border-right: 0; }
+  }
 
-    &:last-child {
-      border-right: 0;
-    }
+  //  The Cells (Days)
+  td {
+    vertical-align: top;
 
     span,
-    a {
+    a,
+    .day-number {
       color: inherit;
+      display: block;
       line-height: $line-height;
       text-align: center;
+      text-decoration: none;
+    }
+
+    // Specific height for simple_calendar to allow multiple event bars to stack
+    &.day {
+      height: rem-calc(100);
+      padding: 4px;
     }
   }
 }
 
-.ui-datepicker-unselectable.ui-state-disabled {
-  background: #fff;
+// ---------------------------------------------------------
+// The Header (Month Title & Navigation)
+// ---------------------------------------------------------
 
-  .ui-state-default {
-    background: #f8f8f8;
-    color: $text-medium;
+.ui-datepicker-header,
+.calendar-heading {
+  background-color: $brand;
+  color: #fff;
+
+  font-weight: bold;
+  padding: rem-calc(10) 0;
+  position: relative;
+  text-align: center;
+
+  .calendar-title {
+    color: #fff;
+    display: inline-block; // Ensures it respects centering
+    font-size: rem-calc(16);
+  }
+}
+
+// ---------------------------------------------------------
+// Navigation Buttons (Arrows)
+// ---------------------------------------------------------
+
+%datepicker-nav-shared {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-family: "icons" !important;
+  font-size: rem-calc(24);
+  font-weight: normal;
+  height: rem-calc(30);
+  justify-content: center;
+  line-height: $line-height;
+  position: absolute;
+  top: 4px;
+  width: rem-calc(30);
+
+  &:hover { text-decoration: none; }
+}
+
+.ui-datepicker {
+  .ui-datepicker-prev,
+  .ui-datepicker-next {
+    @extend %datepicker-nav-shared;
+  }
+}
+
+.simple-calendar .calendar-heading {
+  // Hide the text "Previous" and "Next" but keep the link clickable
+  a {
+    @extend %datepicker-nav-shared;
+    color: transparent !important;
+    overflow: hidden;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1); // Subtle hover effect
+      border-radius: 50%;
+    }
+
+    // Inject the Icon Character
+    &::after {
+      color: #fff; // Force icon to be #fff (overriding transparent parent)
+      display: block;
+      font-family: "icons" !important;
+      font-size: 1.5rem;
+      left: 50%;
+      line-height: 1;
+
+      // Absolute center the icon inside the link
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  // Previous Arrow (Left)
+  a:first-child {
+    left: 4px;
+
+    &::after {
+      content: "\62";
+    }
+  }
+
+  // Next Arrow (Right)
+  a:last-child {
+    right: 4px;
+
+    &::after {
+      content: "\63";
+    }
+  }
+}
+
+// ---------------------------------------------------------
+// Active / Today States
+// ---------------------------------------------------------
+
+.ui-datepicker-calendar,
+.simple-calendar {
+
+  thead tr th {
+    @include brand-border;
+    color: #333; // Ensure "Mon", "Tue" are dark and readable
+    padding: rem-calc(10) 0;
+  }
+
+  .ui-state-hover,
+  .ui-state-active,
+  .today .day-number {
+    background-color: $brand;
+    border-radius: 50%;
+    color: #fff;
+    height: 24px;
+    line-height: 24px;
+    margin: 0 auto;
+    width: 24px;
+  }
+}
+
+// ---------------------------------------------------------
+// Event Bars
+// ---------------------------------------------------------
+
+.simple-calendar .event-bar {
+
+  // Default fallback color if no type is found
+  background-color: #666;
+  border-radius: 2px;
+  color: #fff;
+  font-size: rem-calc(12);
+  margin-top: 4px;
+  padding: 2px 4px;
+  text-align: left;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  a.event-link {
+    color: #fff;
+    display: block;
+    overflow: hidden;
+    padding: 0;
+    text-align: left;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  // --- TYPE COLORS ---
+
+  // 1. Manual Events (Created by Admin) -> PURPLE
+  &.type-event {
+    background-color: #9c27b0;
+    border-left: 3px solid #7b1fa2;
+  }
+
+  // 2. Legislation Processes -> BLUE
+  &.type-process {
+    background-color: #0288d1;
+    border-left: 3px solid #01579b;
+  }
+
+  // 3. Budgets (Main Container) -> TEAL
+  &.type-budget {
+    background-color: #009688;
+    border-left: 3px solid #004d40;
+  }
+
+  // 4. Polls -> ORANGE
+  &.type-poll {
+    background-color: #ff9800;
+    border-left: 3px solid #e65100;
+  }
+
+  // --- BUDGET PHASE COLORS ---
+
+  // Disable stylelint class pattern rule for dynamically generated backend names
+  /* stylelint-disable selector-class-pattern */
+  &.phase-drafting { background-color: #78909c; } /* Blue Grey */
+  &.phase-informing { background-color: #42a5f5; } /* Blue */
+  &.phase-accepting { background-color: #66bb6a; } /* Green */
+  &.phase-reviewing { background-color: #ffa726; } /* Orange */
+  &.phase-selecting { background-color: #ab47bc; } /* Purple */
+  &.phase-valuating { background-color: #ec407a; } /* Pink */
+  &.phase-publishing_prices { background-color: #8d6e63; } /* Brown */
+
+  &.phase-balloting,
+  &.phase-Balloting {
+    background-color: #ef5350; /* Red */
+  }
+
+  &.phase-reviewing_ballots { background-color: #ff7043; } /* Deep Orange */
+
+  &.phase-finished {
+    background-color: #b0bec5;
+    opacity: 0.7;
+    text-decoration: line-through;
+  }
+
+  &.phase-Information { background-color: #90a4ae; }
+  /* stylelint-enable selector-class-pattern */
+
+  // --- ACTION BUTTONS (Edit/Delete) ---
+  .event-actions {
+    display: none; // Hidden by default
+    position: absolute;
+    right: 4px;
+    top: 2px;
+
+    a {
+      color: #fff;
+      margin-left: 4px;
+      opacity: 0.8;
+      text-decoration: none;
+      &:hover { opacity: 1; }
+    }
+  }
+
+  // Show actions on hover
+  &:hover .event-actions {
+    display: block;
   }
 }

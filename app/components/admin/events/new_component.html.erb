@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="small-12 column">
+    <%= back_link_to admin_events_path %>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 medium-8 medium column">
+    <%= header %>
+    <%= render Admin::Events::FormComponent.new(event) %>
+  </div>
+</div>

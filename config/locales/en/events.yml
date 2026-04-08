@@ -1,0 +1,22 @@
+en:
+  events:
+    calendar:
+      title: Calendar of Events
+    event_types:
+      public_meeting: "Public Meeting"
+      workshop: "Workshop"
+      consultation: "Consultation"
+      training: "Training"
+      community_event: "Community Council"
+    prompts:
+      select_type: "Select an Event Type"
+    new:
+      title: "New Event"
+      submit_button: "Create Event"
+    edit:
+      title: "Edit Event"
+      submit_button: "Update Event"
+    event:
+      description: "Event description"
+      end_date: "Ends"
+      start_date: "Starts"

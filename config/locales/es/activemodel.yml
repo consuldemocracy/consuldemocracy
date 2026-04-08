@@ -48,3 +48,6 @@ es:
             file:
               extension: "El formato del fichero es incorrecto. El formato de archivo permitido es: %{valid_extensions}."
               headers: "Las cabeceras del fichero son incorrectas. Las cabeceras del fichero deben tener los nombres siguientes: %{required_headers}."
+  events:
+    calendar:
+      title: "Calendario de eventos"

@@ -28,6 +28,7 @@ class Admin::Settings::FeaturesTabComponent < ApplicationComponent
       feature.remove_investments_supports
       feature.gdpr.require_consent_for_notifications
       feature.dashboard.notification_emails
+      feature.events
     ]
   end
 end

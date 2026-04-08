@@ -18,6 +18,7 @@ en:
       configure: Configure
       select: Select
       show_to_valuators: "Show %{name} to valuators"
+      view: "View"
     officing_booth:
       title: "You are officing the booth located at %{booth}. If this is not correct, do not continue and call the help phone number. Thank you."
     banners:
@@ -547,6 +548,17 @@ en:
         unable_notice: "Invalid document"
       destroy:
         success_notice: "Document deleted successfully"
+    events:
+      event:
+        name: Event Name
+        description: Description
+        start_date: Start Date
+      index:
+        new_event: "New event"
+        title: "Manage Events"
+        view_calendar: "View Calendar"
+        no_events: "There are no events created yet."
+        view_list: "View List"
     hidden_users:
       index:
         filter: Filter
@@ -739,6 +751,7 @@ en:
       proposals: Proposals
       proposals_topics: Proposals topics
       budgets: Participatory budgets
+      events: "Events"
       geozones: Geozones
       locales: Languages
       hidden_comments: Hidden comments
@@ -1704,6 +1717,7 @@ en:
         proposals: Proposals
         debates: Debates
         processes: Processes
+        upcoming: Upcoming events
       new:
         header_title: New header
         submit_header: Create header
